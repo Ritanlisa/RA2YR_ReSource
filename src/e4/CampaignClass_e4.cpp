@@ -196,7 +196,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   CCFileClass::Construct(&v33, g_Str_File_coopsave_ini); /*0x49c631*/
   v28.u32_9C = 0; /*0x49c63a*/
   v28.u32_9C = 0; /*0x49c63e*/
-  INISectionList::Constructor((INISectionList *)&v28.u32_9C); /*0x49c642*/
+  ((INISectionList *)&v28.u32_9C)->Constructor(); /*0x49c642*/
   Node::Init((Node *)&v28.u32_9C); /*0x49c64b*/
   v28.u32_9C = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/
@@ -288,9 +288,9 @@ AbstractClass * * CampaignClass::SaveProgress()
   v20 = dword_A8DA84; /*0x49c8ac*/
   if ( dword_A8DA84 ) /*0x49c8b4*/
   {
-    PlayerSide = (void *)SessionClass::GetPlayerSide((int *)*dword_A8DA78); /*0x49c8be*/
+    PlayerSide = (void *)((int *)*dword_A8DA78)->GetPlayerSide(); /*0x49c8be*/
     INIClass::SetHouseName(v28.INIClass, (unsigned __int8 *)Block, aHouse1, PlayerSide); /*0x49c8d2*/
-    PlayerColor = SessionClass::GetPlayerColor((SessionClass *)*dword_A8DA78); /*0x49c8e1*/
+    PlayerColor = ((SessionClass *)*dword_A8DA78)->GetPlayerColor(); /*0x49c8e1*/
     INIClass::SetInt(v28.INIClass, (unsigned __int8 *)Block, aColor1, PlayerColor, 0); /*0x49c8f5*/
     v20 = dword_A8DA84; /*0x49c8fa*/
   }
@@ -326,13 +326,13 @@ LABEL_47:
   v32 = 0; /*0x49ca77*/
   Vector::Clear((int)v31); /*0x49ca7e*/
   *(unsigned int *)v30.CDFileClass = &off_7E1668; /*0x49ca8f*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v30); /*0x49ca96*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
+  ((BufferIOFileClass *)&v30)->Dtor(); /*0x49ca96*/
+  ((INIClass *)&v28)->DestroyHashTableINIClass(); /*0x49ca9f*/
   *(unsigned int *)v33.CDFileClass = &vt_CCFileClass; /*0x49caab*/
   v35 = 0; /*0x49cab2*/
   Vector::Clear((int)v34); /*0x49cab9*/
   *(unsigned int *)v33.CDFileClass = &off_7E1668; /*0x49cac5*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v33); /*0x49cacc*/
+  ((BufferIOFileClass *)&v33)->Dtor(); /*0x49cacc*/
   LOBYTE(this->scenario[17]) = 1; /*0x49cad2*/
   return 1; /*0x49c618*/
 

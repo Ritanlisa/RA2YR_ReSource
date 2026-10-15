@@ -52,7 +52,7 @@ void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
     }
     while ( v3 < dword_8A0218 ); /*0x4a7cf6*/
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x4a7cfa*/
+  ((AbstractClass *)Block)->DTOR(); /*0x4a7cfa*/
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
     operator delete((void *)(Block)); /*0x4a7d07*/
   return Block->tail_0; /*0x4a7d11*/

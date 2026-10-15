@@ -25,7 +25,7 @@ BulletClass::BulletClass()
 
   int v2; // eax
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x466384*/
+  ((ObjectClass *)this)->ctor(); /*0x466384*/
   this->u32_AC = 0; /*0x466391*/
   this->q_B0 = 0; /*0x466397*/
   this->__pad_B4 = 0; /*0x46639d*/
@@ -107,7 +107,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
     }
   }
   if ( byte_A8E9A0 ) /*0x4665e0*/
-    ObjectClass::Undeploy((ObjectClass *)a1); /*0x4665e4*/
+    ((ObjectClass *)a1)->Undeploy(); /*0x4665e4*/
   a1->u32_AC = 0; /*0x4665e9*/
   a1->q_B0 = 0; /*0x4665f3*/
   a1->__pad_154 = 0; /*0x4665fd*/
@@ -123,7 +123,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
       ++v3; /*0x46663e*/
     }
   }
-  return ObjectClass::Dtor((ObjectClass *)a1); /*0x466657*/
+  return ((ObjectClass *)a1)->Dtor(); /*0x466657*/
 }
 }
 // 0x466660

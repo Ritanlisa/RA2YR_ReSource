@@ -470,7 +470,7 @@ LABEL_42:
       v25 = 0; /*0x734cbc*/
       Vector::Clear((int)v24); /*0x734cc3*/
       *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x734ccc*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734cd4*/
+      ((BufferIOFileClass *)&v23)->Dtor(); /*0x734cd4*/
       return (gamemd::AbstractClass **)(1); /*0x734ce8*/
     }
     v1 = 0; /*0x734a04*/
@@ -600,7 +600,7 @@ LABEL_43:
   v25 = 0; /*0x734cf8*/
   Vector::Clear((int)v24); /*0x734cff*/
   *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x734d08*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734d10*/
+  ((BufferIOFileClass *)&v23)->Dtor(); /*0x734d10*/
   return 0; /*0x734cde*/
 
 }
@@ -617,7 +617,7 @@ unsigned int * File::LoadFileVXL(int a2, int a3, void *a3_1)
   *&this->ptr_10 = 0; /*0x755ce4*/
   *&this->__pad_014 = 0; /*0x755ce7*/
   *&this->ptr_18 = 0; /*0x755cea*/
-  if ( !Voxel::SortDepth((int)this, a2, a3) ) /*0x755cf5*/
+  if ( !((int)this)->SortDepth(a2, a3) ) /*0x755cf5*/
     this->__pad_000 = 1; /*0x755cfe*/
   return (unsigned int *)(this->__pad_000); /*0x755d03*/
 
@@ -654,7 +654,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   /* X11: vtable install elided (implicit via WDTState virtuals 0x76acbe) */
   v3 = (File *)operator new(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
-    PaletteData = (gamemd::u_short *)(File::LoadPaletteData(v3, aP1)); /*0x76acdc*/
+    PaletteData = (gamemd::u_short *)((v3)->LoadPaletteData(aP1)); /*0x76acdc*/
   else
     PaletteData = 0; /*0x76ace0*/
   v5 = (char *)(&this->__pad_01C); /*0x76ace6*/
@@ -679,7 +679,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     if ( PaletteData ) /*0x76ad32*/
     {
   LABEL_25:
-      ResultNode::CleanupList((ResultNode *)PaletteData); /*0x76afa4*/
+      ((ResultNode *)PaletteData)->CleanupList(); /*0x76afa4*/
       operator delete((void *)(PaletteData)); /*0x76afac*/
     }
   }
@@ -724,7 +724,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     memset(this->__pad_00C, 0, v16); /*0x76ae75*/
     memset(this->ptr_10, 0, v17); /*0x76ae8c*/
     memset(Block, 0, v14); /*0x76aea4*/
-    File::FindByPrefix((File *)PaletteData, aCmid, &this->ptr_80); /*0x76aeb8*/
+    ((File *)PaletteData)->FindByPrefix(aCmid, &this->ptr_80); /*0x76aeb8*/
     HashTable::FindString((HashTable *)PaletteData, aCyid, &this->ptr_18); /*0x76aec8*/
     if ( this->q048 ) /*0x76aecd*/
       this->ptr_28 = 0; /*0x76aed2*/

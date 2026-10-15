@@ -232,7 +232,7 @@ LABEL_29:
   aP4->unknown38 = v21; /*0x528b41*/
 LABEL_24:
   aP4 = (int)(v19); /*0x528b44*/
-  if ( (unsigned __int8)HashTable::BinarySearch(&aP4->__pad_028, (int *)&aP4) ) /*0x528b4f*/
+  if ( (unsigned __int8)(&aP4->__pad_028)->BinarySearch((int *)&aP4) ) /*0x528b4f*/
     v22 = (int *)(aP4->unknown38 + 4); /*0x528b5b*/
   else
     v22 = (int *)&unk_B7882C; /*0x528b60*/
@@ -262,7 +262,7 @@ LABEL_13:
           v16 = (unsigned __int8 **)v13->u32_10; /*0x528ac6*/
           if ( v16 && *v16 == v11 ) /*0x528acf*/
             goto LABEL_18; /*0x528acf*/
-          v17 = HashTable::BinarySearchAlt(v13, (int *)&aP4); /*0x528ad8*/
+          v17 = (v13)->BinarySearchAlt((int *)&aP4); /*0x528ad8*/
           if ( v17 ) /*0x528adf*/
           {
             v13->u32_10 = v17; /*0x528ae5*/
@@ -285,7 +285,7 @@ LABEL_31:
         v18 = (int *)&unk_B78830; /*0x528b92*/
         goto LABEL_31; /*0x528b92*/
       }
-      v15 = HashTable::BinarySearchAlt(v13, (int *)&aP4); /*0x528aa7*/
+      v15 = (v13)->BinarySearchAlt((int *)&aP4); /*0x528aa7*/
       if ( v15 ) /*0x528aae*/
       {
         v13->u32_10 = v15; /*0x528ab4*/
@@ -305,7 +305,7 @@ LABEL_36:
   }
   strncpy(v6, v23, aP4); /*0x528bd0*/
   v6[aP4 - 1] = 0; /*0x528bde*/
-  String::Trim(v6); /*0x528be3*/
+  (v6)->Trim(); /*0x528be3*/
   return strlen(v6); /*0x528bbe*/
 
 }

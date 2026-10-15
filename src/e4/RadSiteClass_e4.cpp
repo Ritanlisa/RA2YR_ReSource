@@ -24,7 +24,7 @@ RadSiteClass::RadSiteClass()
   int v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x65b1e3*/
+  ((AbstractClass *)this)->Constructor(); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
   this->RadLevelTimer[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b1f3*/
   this->RadLevelTimer[2] = 0; /*0x65b1f6*/

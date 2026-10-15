@@ -91,7 +91,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   BitMask_Red = GetBitMask_Red(); /*0x560c42*/
   BitShift_Blue = (gamemd::XSurface *)((int16_t)(GetBitShift_Blue())); /*0x560c51*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x560c57*/
-  DDraw::WaitForIdle(v18); /*0x560c5a*/
+  (v18)->WaitForIdle(); /*0x560c5a*/
   if ( g_DDraw_Initialized == 1 ) /*0x560c66*/
   {
     *(unsigned int *)&DSurface_WindowBounds = 0; /*0x560c73*/
@@ -150,7 +150,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
       Debug::Log(); /*0x560ee8*/
       SetWindowPos((HWND)(g_hWnd), 0, 0, 0, v2, (*((signed int *)(((unsigned char *)&(v2)) + 4))), 2u); /*0x560efe*/
       Debug::Log(); /*0x560f09*/
-      g_DSurface_Primary = (int)((DSurface *)DSurface::CreatePrimary(0)); /*0x560f18*/
+      g_DSurface_Primary = (int)((DSurface *)(0)->CreatePrimary()); /*0x560f18*/
     }
     Viewport = (int *)(Display::GetViewport(v30));
     rc.left = 0; /*0x560fa3*/
@@ -200,7 +200,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
           0);
       }
       Mission::SetAndCall((MouseClass *)&DataGlobal_87F7E8, 0, 0); /*0x5610bf*/
-      Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x5610cb*/
+      ((int)&DataGlobal_87F7E8)->SetCursor(0, 0); /*0x5610cb*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5610d8*/
     }
     TacticalClass::SetViewDimensions((DisplayClass *)v31); /*0x5610ec*/
@@ -209,7 +209,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     TacticalClass::BuildCommandBar((gamemd::TacticalClass *)((TabClass *)1), v2, v19); /*0x561113*/
     SidebarClass::LoadResources(v20); /*0x56111d*/
     MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x561129*/
-    for ( i = (Dialog *)Dialog::GetCurrent(); i; i = (Dialog *)Dialog::FindByPtr(i) ) /*0x561137*/
+    for ( i = (Dialog *)Dialog::GetCurrent(); i; i = (Dialog *)(i)->FindByPtr() ) /*0x561137*/
     {
       DestroyDialog((ObjectClass *)i); /*0x56113b*/
       ResizeDialogAndEnum((HWND)i,(void *)((LPARAM)&lParam)); /*0x561146*/
@@ -243,7 +243,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   }
   Debug::Log(); /*0x560d19*/
   Debug::Log(); /*0x560d23*/
-  g_DSurface_Primary = (int)((DSurface *)DSurface::CreatePrimary(0)); /*0x560d32*/
+  g_DSurface_Primary = (int)((DSurface *)(0)->CreatePrimary()); /*0x560d32*/
   Debug::Log(); /*0x560d3c*/
   v4 = (MouseClass *)operator new(0x98u); /*0x560d46*/
   if ( v4 ) /*0x560d50*/
@@ -262,7 +262,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
       0);
   }
   Mission::SetAndCall((MouseClass *)&DataGlobal_87F7E8, 0, 0); /*0x560da9*/
-  Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x560db5*/
+  ((int)&DataGlobal_87F7E8)->SetCursor(0, 0); /*0x560db5*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x560dc2*/
   return 0; /*0x560dc7*/
 }
@@ -551,7 +551,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   }
   while ( v12 ); /*0x56b0c7*/
   (*(void (**)(Pipe *))(*(unsigned int *)v17.vtable1 + 4))(&v17); /*0x56b0d1*/
-  LCWPipe::Dtor((LCWPipe *)&v17); /*0x56b0d8*/
+  ((LCWPipe *)&v17)->Dtor(); /*0x56b0d8*/
   return (gamemd::BombClass **)(v11); /*0x56b0df*/
 
 }
@@ -815,7 +815,7 @@ int j_CoordinateTables_Init()
 namespace gamemd {
 int unknown_libname_22()
 {
-  CellClass::DTOR(&unk_ABDC50); /*0x565085*/
+  (&unk_ABDC50)->DTOR(); /*0x565085*/
 }
 } // namespace gamemd
 
@@ -917,7 +917,7 @@ int E4Recv_56AE40::sub_56AE40(int v9)
       v12 = (gamemd::Compress)(LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 3, 1)); /*0x56af0d*/
     v3 += (int)v12; /*0x56af12*/
   }
-  LCWPipe::Dtor((LCWPipe *)v14); /*0x56af23*/
+  ((LCWPipe *)v14)->Dtor(); /*0x56af23*/
   return v3; /*0x56af2a*/
 }
 } // namespace gamemd

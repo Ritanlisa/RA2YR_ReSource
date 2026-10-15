@@ -117,7 +117,7 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
         v21 = (AnimClass *)operator new(0x1C8u); /*0x4b5edf*/
         if ( v21 ) /*0x4b5ee6*/
         {
-          Index = AnimTypeClass::FindIndex(&stru_820320); /*0x4b5eed*/
+          Index = (&stru_820320)->FindIndex(); /*0x4b5eed*/
           ((AnimClass *)(v21))->ctor(*(void **)(FootClass_Array.primaryFacing[3] + 4 * Index), v39, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
         }
       }
@@ -298,7 +298,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
         }
         else
         {
-          Function::Method_4B4D60((int *)&pPStm); /*0x4b6325*/
+          ((int *)&pPStm)->Method_4B4D60(); /*0x4b6325*/
           pPStm = 0; /*0x4b632a*/
         }
         if ( v8 < 0 && v8 != -2147467262 ) /*0x4b6356*/

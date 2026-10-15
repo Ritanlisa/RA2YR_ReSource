@@ -21,7 +21,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a
 
   int v10; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x554763*/
+  ((AbstractClass *)this)->Constructor(); /*0x554763*/
   this->LightTint[0] = a7; /*0x554774*/
   this->LightIntensity = a6; /*0x554777*/
   this->LightTint[1] = a8; /*0x55477e*/
@@ -59,7 +59,7 @@ int LightSourceClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   int v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x554833*/
+  ((AbstractClass *)this)->Constructor(); /*0x554833*/
   this->LightIntensity = 0; /*0x55483d*/
   this->LightTint[0] = 0; /*0x554840*/
   this->LightTint[1] = 0; /*0x554843*/
@@ -188,9 +188,9 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   if ( this->Activated ) /*0x5551bf*/
   {
     this->Activated = 0; /*0x5551ca*/
-    TacticalClass::ScrollView((TacticalClass *)this, 0); /*0x5551ce*/
+    ((TacticalClass *)this)->ScrollView(0); /*0x5551ce*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x5551d5*/
+  ((AbstractClass *)this)->DTOR(); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
     __3_YAXPAX_Z(this); /*0x5551e2*/
   return &this->AbstractClass; /*0x5551ec*/

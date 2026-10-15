@@ -68,7 +68,7 @@ void * Multiplayer::FindStartPositions(void *a1)
   v1 = 0; /*0x688387*/
   v2 = this; /*0x688389*/
   v21 = this; /*0x688391*/
-  VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
+  (&v25)->CellConstructor(0, 0); /*0x688395*/
   v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x68839a*/
   v4 = 10; /*0x6883a0*/
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6883a5) */
@@ -314,7 +314,7 @@ int Multiplayer::ShowProgress(int a2)
             if ( v11 <= 0 ) /*0x69b11e*/
               break; /*0x69b11e*/
             Sleep(0x14u); /*0x69b122*/
-            EventQueue::Process((EventQueue *)dword_87F770); /*0x69b12a*/
+            ((EventQueue *)dword_87F770)->Process(); /*0x69b12a*/
             Stream::ReadPacket((int)&unk_A8EA70); /*0x69b134*/
           }
           break; /*0x69b146*/
@@ -348,7 +348,7 @@ int Multiplayer::ShowProgress(int a2)
             }
           }
           Event::Dispatch(); /*0x69b015*/
-          while ( Network::GetQueueCount(&unk_A8E9C0) > 5 ) /*0x69b027*/
+          while ( (&unk_A8E9C0)->GetQueueCount() > 5 ) /*0x69b027*/
           {
             v8 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/

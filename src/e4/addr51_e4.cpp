@@ -133,7 +133,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
       controlGroup = (int)(v6->controlGroup); /*0x51ffef*/
       Field = FootClass::GetField(v6->veterancy); /*0x52000b*/
       v16 = FromNameIndex((int)queuedMission); /*0x52001b*/
-      v12 = Input::OffsetToDirection(&v24); /*0x52001c*/
+      v12 = (&v24)->OffsetToDirection(); /*0x52001c*/
       v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->vfptr + 110))( /*0x52002b*/
               v6,
               Buffer,
@@ -148,7 +148,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
       v4 = v4 * 256.0; /*0x520050*/
       (*((unsigned short *)&(v14))) = Math::RoundToInt(v4); /*0x520056*/
       sprintf(Source,(const char *const )((const char *const)stru_825538.Type), &owner->plainName[4], v9, v14, v15); /*0x520068*/
-      INIClass::SetString((uint8_t *)(queuedMission), (uint8_t *)&g_INI_Key_Special.SidebarImage, Buffer, Source); /*0x520085*/
+      ((uint8_t *)(queuedMission))->SetString((uint8_t *)&g_INI_Key_Special.SidebarImage, Buffer, Source); /*0x520085*/
       result = i; /*0x52008a*/
     }
     ++result; /*0x520094*/
@@ -655,7 +655,7 @@ int E4Recv_517110::sub_517110()
   (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
   result = MovementAI::StepFootClass((MovementAI *)this, 0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
-    return MovementAI::MainFootClass((MovementAI *)this, 1); /*0x5171b0*/
+    return ((MovementAI *)this)->MainFootClass(1); /*0x5171b0*/
   return result; /*0x5171b5*/
 
 }

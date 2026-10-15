@@ -45,7 +45,7 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   int v2; // ecx
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x629213*/
+  ((AbstractClass *)this)->Constructor(); /*0x629213*/
   *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
   v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x629225*/
@@ -211,7 +211,7 @@ void ParasiteClass::DeploySquad()
   v57 = v4[41]; /*0x629836*/
   v6 = (Cell *)v4->GetCellCoords(); /*0x62983c*/
   v44 = 0x3FF0000000000000LL; /*0x629844*/
-  if ( !v6 || (uint8_t)Cell::IsValidHeight(v6) ) /*0x629854*/
+  if ( !v6 || (uint8_t)(v6)->IsValidHeight() ) /*0x629854*/
   {
     v10 = *(unsigned int *)(v5 + 368); /*0x629898*/
     v11 = (unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 1696); /*0x62989e*/
@@ -222,7 +222,7 @@ void ParasiteClass::DeploySquad()
     {
       case 0u: /*0x6298bc*/
         *(unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 808) = 0; /*0x6298c6*/
-        Index = AnimTypeClass::FindIndex(&stru_83665C); /*0x6298d1*/
+        Index = (&stru_83665C)->FindIndex(); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
           v13 = *(void **)(FootClass_Array.primaryFacing[3] + 4 * Index); /*0x6298e5*/
@@ -254,16 +254,16 @@ void ParasiteClass::DeploySquad()
         _ESI[1].vfptr1 = (void *)1; /*0x629974*/
         _ESI[1].vfptr3 = 0; /*0x62997b*/
         _ESI[1].vfptr2 = 0; /*0x62997e*/
-        BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629981*/
+        ((BuildingClass *)_ESI)->AnimController(); /*0x629981*/
         goto LABEL_47; /*0x629986*/
       case 1u: /*0x6298bc*/
-        if ( BuildingClass::AnimController((BuildingClass *)_ESI) ) /*0x62998d*/
+        if ( ((BuildingClass *)_ESI)->AnimController() ) /*0x62998d*/
         {
           v17 = Random::Range((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
           _ESI[1].vfptr3 = 0; /*0x6299b7*/
           _ESI[1].vfptr1 = (void *)(3 - (v17 != 0)); /*0x6299ba*/
           _ESI[1].vfptr2 = 0; /*0x6299bd*/
-          BuildingClass::AnimController((BuildingClass *)_ESI); /*0x6299c0*/
+          ((BuildingClass *)_ESI)->AnimController(); /*0x6299c0*/
           FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x6299e1*/
         }
         goto LABEL_47; /*0x6299e6*/
@@ -272,12 +272,12 @@ void ParasiteClass::DeploySquad()
         goto LABEL_20; /*0x6299eb*/
       case 3u: /*0x6298bc*/
   LABEL_20:
-        if ( BuildingClass::AnimController((BuildingClass *)_ESI) ) /*0x6299fd*/
+        if ( ((BuildingClass *)_ESI)->AnimController() ) /*0x6299fd*/
         {
           _ESI[1].vfptr1 = (void *)4; /*0x629a08*/
           _ESI[1].vfptr3 = 0; /*0x629a0f*/
           _ESI[1].vfptr2 = 0; /*0x629a12*/
-          BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629a15*/
+          ((BuildingClass *)_ESI)->AnimController(); /*0x629a15*/
         }
         __asm /*0x629a1a*/
         {

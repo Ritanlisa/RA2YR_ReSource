@@ -60,7 +60,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
 
-  ObjectTypeClass::ConstructFull((int *)aP4, a6_2); /*0x5447ce*/
+  ((int *)aP4)->ConstructFull(a6_2); /*0x5447ce*/
   aP4->ArrayIndex = aP4; /*0x5447d9*/
   aP4->Foundation = 0xFFFF; /*0x5447e4*/
   *(unsigned int *)aP4->RadarColor = 0xFFFF; /*0x5447ea*/
@@ -155,7 +155,7 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   int v5; // ecx
   TerrainTypeClass **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int *)aP1, aP1); /*0x71da89*/
+  ((int *)aP1)->ConstructFull(aP1); /*0x71da89*/
   aP1->ArrayIndex = -1; /*0x71da90*/
   aP1->Foundation = 0; /*0x71da9a*/
   aP1->RadarColor[0] = 0; /*0x71daa5*/

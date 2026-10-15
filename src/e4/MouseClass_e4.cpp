@@ -42,7 +42,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
       if ( v3 ) /*0x6d179e*/
       {
         if ( !BYTE1(v3[3].ShapeButtonClass_field_0x08) ) /*0x6d17a0*/
-          GadgetClass::Show((GadgetClass *)v3); /*0x6d17a7*/
+          ((GadgetClass *)v3)->Show(); /*0x6d17a7*/
       }
     }
     return 1; /*0x6d17ac*/

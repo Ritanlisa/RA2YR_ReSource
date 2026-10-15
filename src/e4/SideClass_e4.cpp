@@ -85,7 +85,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
       *((unsigned int *)dword_8874C4 + nn),
       aP0);
   for ( i1 = 0; i1 < g_WeaponTypePool; ++i1 ) /*0x679b82*/
-    WeaponTypeClass::CalculateSpeed(*((WeaponTypeClass **)g_WeaponTypeConfig + i1)); /*0x679b8c*/
+    (*((WeaponTypeClass **)g_WeaponTypeConfig + i1))->CalculateSpeed(); /*0x679b8c*/
   for ( i2 = 0; i2 < dword_A83C78; ++i2 ) /*0x679ba4*/
     nullsub_7(v22); /*0x679baf*/
   for ( i3 = 0; i3 < dword_A8E328; ++i3 ) /*0x679bc7*/
@@ -280,7 +280,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   }
   *((unsigned char *)Block + 165) = 0; /*0x6a49d2*/
   *((unsigned int *)Block + 40) = 0; /*0x6a49d9*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x6a49e3*/
+  ((AbstractTypeClass *)Block)->Dtor(); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     __3_YAXPAX_Z(Block); /*0x6a49f0*/
   return &Block->AbstractClass; /*0x6a49fa*/

@@ -78,7 +78,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     if ( a1 ) /*0x549cce*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)&a2); /*0x549cd8*/
-      IsometricTileTypeClass::Constructor_0((IsometricTileTypeClass *)((char *)a1 + 676), 0, 0); /*0x549ce9*/
+      ((IsometricTileTypeClass *)((char *)a1 + 676))->Constructor_0(0, 0); /*0x549ce9*/
       *((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
@@ -90,7 +90,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a1 + 175); /*0x549d2a*/
     for ( j = 0; j < *(int *)&g_SurfaceAnimState; *(unsigned int *)(*(unsigned int *)&DataGlobal_87F69C + 4 * j - 4) = 0 ) /*0x549d39*/
       ++j; /*0x549d41*/
-    TerrainClass::InitTheatre((TerrainClass *)a1); /*0x549d56*/
+    ((TerrainClass *)a1)->InitTheatre(); /*0x549d56*/
     return 0; /*0x549d5b*/
   }
   return (gamemd::AbstractClass **)(result); /*0x549d5d*/

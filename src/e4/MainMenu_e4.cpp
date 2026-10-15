@@ -73,7 +73,7 @@ long MainMenu_Screen(void * a1, void * a2)
       {
         g_LoadScreenFlag = 0; /*0x531dd0*/
         Screen::Capture(1, 0,(int)(a1), a2); /*0x531dd7*/
-        Frame::Present(0); /*0x531de6*/
+        (0)->Present(); /*0x531de6*/
       }
       if ( (uint16_t)EventQueue::Process(dword_87F770) ) /*0x531df1*/
       {
@@ -112,7 +112,7 @@ long MainMenu_Screen(void * a1, void * a2)
             PlayVocClass(1.0, 0); /*0x531edb*/
             g_LoadScreenFlag = 0; /*0x531ee4*/
             Screen::Capture(1, 0,(int)(a1), a2); /*0x531eeb*/
-            Frame::Present(0); /*0x531efa*/
+            (0)->Present(); /*0x531efa*/
           }
         }
       }

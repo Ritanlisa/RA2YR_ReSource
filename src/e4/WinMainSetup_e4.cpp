@@ -165,10 +165,10 @@ void sub_5B4310()
   if ( dword_ABF00C ) /*0x5b431a*/
   {
     if ( *(unsigned int *)dword_ABF00C ) /*0x5b431c*/
-      Tree::Destructor(*(unsigned int **)dword_ABF00C); /*0x5b4324*/
+      (*(unsigned int **)dword_ABF00C)->Destructor(); /*0x5b4324*/
     v1 = (unsigned int *)v0[1]; /*0x5b4329*/
     if ( v1 ) /*0x5b432e*/
-      Tree::Destructor(v1); /*0x5b4330*/
+      (v1)->Destructor(); /*0x5b4330*/
     operator delete((void *)(v0)); /*0x5b4336*/
   }
   dword_ABF00C = 0; /*0x5b433e*/
@@ -184,7 +184,7 @@ void sub_5BE940()
   v0 = (void *)(dword_ABF294);
   if ( dword_ABF294 ) /*0x5be949*/
   {
-    FileTreeNode::Destroy((void *)(dword_ABF294)); /*0x5be94d*/
+    ((void *)(dword_ABF294))->Destroy(); /*0x5be94d*/
     operator delete((void *)(v0)); /*0x5be953*/
     byte_ABF2DC = 0; /*0x5be95b*/
   }

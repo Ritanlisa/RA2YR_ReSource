@@ -82,7 +82,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
                 --v8; /*0x50b029*/
               }
               while ( v8 ); /*0x50b02a*/
-              if ( BuildingClass::SWAvailable(v6) == i || BuildingClass::SW2Available(v6) == i ) /*0x50b044*/
+              if ( (v6)->SWAvailable() == i || (v6)->SW2Available() == i ) /*0x50b044*/
               {
                 v15 = 1; /*0x50b048*/
                 if ( HasPower ) /*0x50b04d*/
@@ -107,7 +107,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
       Status = HouseClass::GetStatus((HouseClass *)0x39, 0); /*0x50b0ea*/
       if ( !v15 || ownerHouse->defeated ) /*0x50b0f4*/
       {
-        if ( !SuperClass::Lose(*(SuperClass **)(ownerHouse->supersCount + 4 * i)) || !dword_A83D4C ) /*0x50b179*/
+        if ( !(*(SuperClass **)(ownerHouse->supersCount + 4 * i))->Lose() || !dword_A83D4C ) /*0x50b179*/
           goto LABEL_55; /*0x50b179*/
         if ( !v16 ) /*0x50b181*/
           goto LABEL_54; /*0x50b181*/
@@ -115,7 +115,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
   LABEL_52:
           *(unsigned int *)&g_BuildingPlacementState = -1; /*0x50b190*/
   LABEL_53:
-        Sidebar::ActivateTab((int *)&DataGlobal_87F7E8, Status); /*0x50b19a*/
+        ((int *)&DataGlobal_87F7E8)->ActivateTab(Status); /*0x50b19a*/
         goto LABEL_54; /*0x50b1a0*/
       }
       if ( HasPower ) /*0x50b100*/
@@ -126,12 +126,12 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
       {
         v14 = i; /*0x50b108*/
         if ( SuperWeapon::GetField10(*(SuperWeapon **)(ownerHouse->supersCount + 4 * i)) /*0x50b123*/
-          && (uint8_t)SuperClass::SetOnHold(*(unsigned int *)(ownerHouse->supersCount + 4 * i), 1) )
+          && (uint8_t)(*(unsigned int *)(ownerHouse->supersCount + 4 * i))->SetOnHold(1) )
         {
           goto LABEL_45; /*0x50b12a*/
         }
       }
-      if ( !HasPower || !(uint8_t)SuperClass::SetOnHold(*(unsigned int *)(ownerHouse->supersCount + 4 * v14), 0) ) /*0x50b141*/
+      if ( !HasPower || !(uint8_t)(*(unsigned int *)(ownerHouse->supersCount + 4 * v14))->SetOnHold(0) ) /*0x50b141*/
         goto LABEL_55; /*0x50b148*/
   LABEL_45:
       if ( v16 ) /*0x50b150*/

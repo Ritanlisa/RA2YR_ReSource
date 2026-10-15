@@ -139,7 +139,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations(void *a1)
   if ( v15 ) /*0x454b45*/
     CaptureManager::FreeAll(v15); /*0x454b47*/
   if ( this->u32_2AC ) /*0x454b4c*/
-    TechnoClass::EjectPassengers(1); /*0x454b5a*/
+    (1)->EjectPassengers(); /*0x454b5a*/
   v16 = this->u32_520; /*0x454b5f*/
   if ( *(unsigned char *)(v16 + 5831) && this->u32_6EB >= 0 && this->u32_6EC ) /*0x454b79*/
   {
@@ -291,7 +291,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     this = v22; /*0x770570*/
   }
   ((String *)(&v23))->Assign((const char *)(aStartup)); /*0x77060c*/
-  v7 = StaticString::Factory(*(StaticString **)v22); /*0x77061c*/
+  v7 = (*(StaticString **)v22)->Factory(); /*0x77061c*/
   ConcatStringAlloc((gamemd::ObjectClass *)((char **)&v23.headNode), (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
   ((String *)((String *)&aP2))->Assign(&g_INI_DefaultBuffer); /*0x77063e*/
@@ -330,7 +330,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((ObjectClass *)&v23.headNode); /*0x770714*/
   DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
   ((String *)(&v23))->Assign((const char *)(aTerritoryselec)); /*0x77072b*/
-  v14 = StaticString::Factory(*(StaticString **)v22); /*0x77073b*/
+  v14 = (*(StaticString **)v22)->Factory(); /*0x77073b*/
   ConcatStringAlloc((gamemd::ObjectClass *)((char **)&v23.headNode), (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
   ((String *)((String *)&aP2))->Assign(&g_INI_DefaultBuffer); /*0x77075d*/

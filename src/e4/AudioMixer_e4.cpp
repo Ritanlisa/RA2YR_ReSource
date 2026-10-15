@@ -150,7 +150,7 @@ int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
       v2 = 0x4000; /*0x406211*/
     v4 = a1 + 46; /*0x40621f*/
     EndBufferMixer((gamemd::VolumeStruct *)(a1 + 46), (unsigned int)(v2 * (*(((unsigned short *)&(*(unsigned int *)(a1[9] + 28))) + 1))) >> 14); /*0x406236*/
-    return AudioMixer::PlaySample(v4); /*0x40623e*/
+    return (v4)->PlaySample(); /*0x40623e*/
   }
 }
 } // namespace gamemd

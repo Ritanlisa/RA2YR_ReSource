@@ -51,7 +51,7 @@ unsigned int * BinkMovie::Close(char *FullPath, void *a2)
   this->u32_2D = 0; /*0x4326a0*/
   this->u32_28 = -1; /*0x4326a8*/
   this->u32_2C = 1; /*0x4326af*/
-  BinkMovie::InitFromFile((int)this, (LPCSTR *)FullPath); /*0x4326b3*/
+  ((int)this)->InitFromFile((LPCSTR *)FullPath); /*0x4326b3*/
   return (unsigned int *)(this->MovieHandle); /*0x4326ba*/
 
 }
@@ -68,7 +68,7 @@ unsigned int * BinkMovie::Open(char *FullPath, int a3, void *a3_1)
   this->u32_28 = -1; /*0x4326db*/
   this->u32_2C = 1; /*0x4326e2*/
   this->u32_2D = 0; /*0x4326e6*/
-  BinkMovie::InitFromFile((int)this, (LPCSTR *)FullPath); /*0x4326e9*/
+  ((int)this)->InitFromFile((LPCSTR *)FullPath); /*0x4326e9*/
   return (unsigned int *)(this->MovieHandle); /*0x4326f0*/
 
 }
@@ -165,7 +165,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   v6 = (char *)a2_1; /*0x4327ba*/
   v7 = (int)(RawFileClass::Construct(a2_1)); /*0x4327c3*/
   v8 = (*(unsigned __int8 (**)(int, unsigned int))(*(unsigned int *)v7 + 20))(v7, 0) == 1; /*0x4327d6*/
-  RawFileClass::Dtor(v32); /*0x4327d9*/
+  (v32)->Dtor(); /*0x4327d9*/
   if ( v8 ) /*0x4327e0*/
   {
     v9 = (int)(BinkOpen(v6, 0)); /*0x4327e4*/
@@ -325,7 +325,7 @@ int BinkMovie::BinkMovie::Play(void *a1_1)
 
   if ( a1_1->BinkMovie_field_0x4 ) /*0x432c76*/
   {
-    Timer::PumpMessages((Timer *)dword_87F770); /*0x432c9f*/
+    ((Timer *)dword_87F770)->PumpMessages(); /*0x432c9f*/
     v3 = (void (__stdcall *)(HWND, LPPOINT))ClientToScreen; /*0x432caa*/
     *((unsigned char *)a1_1 + 44) = 1; /*0x432cb0*/
     *((unsigned char *)a1_1 + 45) = 0; /*0x432cb4*/
@@ -339,7 +339,7 @@ int BinkMovie::BinkMovie::Play(void *a1_1)
       if ( GameLoopMessagePump(&Msg, 0, 0, 0, 0) ) /*0x432ceb*/
       {
         if ( !IsMessageDialog(&Msg, 0, 0, 0) ) /*0x432d05*/
-          return Timer::PumpMessages((Timer *)dword_87F770); /*0x432d05*/
+          return ((Timer *)dword_87F770)->PumpMessages(); /*0x432d05*/
         TranslateMessage(&Msg); /*0x432d10*/
         DispatchMessageA(&Msg); /*0x432d1b*/
       }
@@ -383,15 +383,15 @@ int BinkMovie::BinkMovie::Play(void *a1_1)
             1);
           v3 = (void (__stdcall *)(HWND, LPPOINT))ClientToScreen; /*0x432def*/
         }
-        if ( EventQueue::Process((EventQueue *)dword_87F770) /*0x432e21*/
+        if ( ((EventQueue *)dword_87F770)->Process() /*0x432e21*/
           && !a1_1->__pad_0[0]
-          && EventQueue::Read((EventQueue *)dword_87F770) == 2075 )
+          && ((EventQueue *)dword_87F770)->Read() == 2075 )
         {
-          return Timer::PumpMessages((Timer *)dword_87F770); /*0x432e21*/
+          return ((Timer *)dword_87F770)->PumpMessages(); /*0x432e21*/
         }
       }
     }
-    return Timer::PumpMessages((Timer *)dword_87F770); /*0x432e27*/
+    return ((Timer *)dword_87F770)->PumpMessages(); /*0x432e27*/
   }
   else
   {
@@ -439,12 +439,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
       {
         GetClientRect(g_hWnd, &Rect); /*0x432ef0*/
         ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x432f02*/
-        BinkMovie::RenderSingleFrame( /*0x432f22*/
-          (BinkMovie *)this,
-          this->u32_C,
-          Rect.left + this->u32_10,
-          Rect.top + this->u32_14,
-          1);
+        (/*0x432f22*/ (BinkMovie *)this)->RenderSingleFrame(this->u32_C, Rect.left + this->u32_10, Rect.top + this->u32_14, 1);
       }
       else
       {
@@ -469,7 +464,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
       this->u32_B4 = 0; /*0x432f6f*/
       if ( v12 ) /*0x432f73*/
       {
-        v13 = BinkMovie::CheckKeyframeTransition(v12, this->u32_24 * *(unsigned int *)(this->u32_4 + 12)); /*0x432f85*/
+        v13 = (v12)->CheckKeyframeTransition(this->u32_24 * *(unsigned int *)(this->u32_4 + 12)); /*0x432f85*/
         if ( v13 ) /*0x432f89*/
           BinkMovie::AdjustSurfaceFormat(aP1); /*0x432f8e*/
       }
@@ -514,7 +509,7 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
   unsigned int BinkMovie_field_0x8; // ecx
 
   if ( a5 ) /*0x4331ff*/
-    BinkMovie::AdjustSurfaceFormat(this, aP1); /*0x433202*/
+    (this)->AdjustSurfaceFormat(aP1); /*0x433202*/
   v6 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x433214*/
   if ( v6 ) /*0x433218*/
   {
@@ -526,7 +521,7 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
     BinkCopyToBuffer(this->u32_4, v6, v7, v8, a3, a4, BinkMovie_field_0x8); /*0x433251*/
     (*(void (**)(int))(*(unsigned int *)aP1 + 96))(aP1); /*0x43325b*/
   }
-  return (unsigned int *)((int)BinkMovie::BlitToTarget(this, aP1)); /*0x433267*/
+  return (unsigned int *)((int)(this)->BlitToTarget(aP1)); /*0x433267*/
 
 }
 }
@@ -647,7 +642,7 @@ int BinkMovie::Cleanup(void *a1_1, void *a2)
   v2 = *(DSurface **)a1_1->__pad_0; /*0x5c01f4*/
   if ( v2 ) /*0x5c01f8*/
   {
-    (*((unsigned char *)&(result))) = DSurface::FlipIfNeeded(v2); /*0x5c01fa*/
+    (*((unsigned char *)&(result))) = (v2)->FlipIfNeeded(); /*0x5c01fa*/
     v4 = *(void **)a1_1->__pad_0; /*0x5c01ff*/
     if ( *(unsigned int *)a1_1->__pad_0 ) /*0x5c01ff*/
     {
@@ -922,7 +917,7 @@ int BinkMovie::InitKeyframeTracking(char * Source, void * aSubtitlemdTxt)
   v6[3] = (int)&v8; /*0x6c9ba4*/
   v7 = 0; /*0x6c9ba8*/
   v6[0] = (int)&vt_FileStraw; /*0x6c9bac*/
-  BinkMovie::VtableDispatch(&v11, (int)v6); /*0x6c9bb4*/
+  (&v11)->VtableDispatch((int)v6); /*0x6c9bb4*/
   v3 = ParseMovieSubtitles(v11.MovieHandle, aSubtitlemdTxt); /*0x6c9bc1*/
   *(unsigned int *)aSubtitlemdTxt->__pad_0 = v3; /*0x6c9bc8*/
   if ( !v3 ) /*0x6c9bd2*/
@@ -977,7 +972,7 @@ int BinkMovie::CheckKeyframeTransition(unsigned int aP1)
         }
         else
         {
-          BinkMovie::ProcessKeyframe(this, v7); /*0x6c9ca4*/
+          (this)->ProcessKeyframe(v7); /*0x6c9ca4*/
           v6 = 1; /*0x6c9ca9*/
         }
         v4 = *(unsigned int *)this->MovieHandle; /*0x6c9cab*/

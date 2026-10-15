@@ -57,7 +57,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   int v5; // eax
   int v7; // [esp+Ch] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4c98b7*/
+  ((AbstractClass *)this)->Constructor(); /*0x4c98b7*/
   this->TeamTypeClass_field_24 = 0; /*0x4c98be*/
   this->TeamTypeClass_field_28 = 0; /*0x4c98c1*/
   v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c98c4*/
@@ -349,14 +349,14 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
                        (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
                        (unsigned __int8 *)&g_INI_Key_Special.SidebarImageFile[1],
                        v4);
-  if ( (unsigned __int8)BuildingType::IsSpecialType(v5) ) /*0x6f10e5*/
+  if ( (unsigned __int8)(v5)->IsSpecialType() ) /*0x6f10e5*/
   {
     *((unsigned int *)aP1 + 50) = (unsigned int)(v5); /*0x6f10ee*/
     *((unsigned int *)aP1 + 49) = 0; /*0x6f10f4*/
   }
   else if ( v5 != (HouseClass *)-1 ) /*0x6f1103*/
   {
-    *((unsigned int *)aP1 + 49) = HouseClass::FindOwner(v5); /*0x6f110c*/
+    *((unsigned int *)aP1 + 49) = (v5)->FindOwner(); /*0x6f110c*/
     *((unsigned int *)aP1 + 50) = -1; /*0x6f1112*/
   }
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x6f112b*/
@@ -556,7 +556,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
          v37,
          v53,
          64) > 0 )
-    *((unsigned int *)aP1 + 53) = (unsigned int)(String::To_Waypoint(v53)); /*0x6f1440*/
+    *((unsigned int *)aP1 + 53) = (unsigned int)((v53)->To_Waypoint()); /*0x6f1440*/
   v38 = Waypoint::To_String(*((unsigned int *)aP1 + 54)); /*0x6f1453*/
   if ( INIClass::GetString( /*0x6f1468*/
          (INIClass *)a2,

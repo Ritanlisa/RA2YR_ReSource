@@ -54,7 +54,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
     PsyDom_Owner = (int)((House *)this); /*0x53ae79*/
     *(unsigned int *)&PsyDom_Coords = a2; /*0x53ae7f*/
     v3 = *(void **)(*(unsigned int *)&g_RulesClass_Instance + 764); /*0x53ae85*/
-    v4 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &PsyDom_Coords); /*0x53ae95*/
+    v4 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&PsyDom_Coords); /*0x53ae95*/
     v5 = (int *)(*(int (**)(void *, unsigned int *))(*(unsigned int *)v4 + 72))(v4, v9); /*0x53aea3*/
     v8[0] = *v5; /*0x53aea8*/
     v8[1] = v5[1]; /*0x53aeb4*/
@@ -82,7 +82,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5, vo
 
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)a1); /*0x6caec3*/
+  ((AbstractClass *)a1)->Constructor(); /*0x6caec3*/
   a1->SuperClass_field_0x24 = (void *)-1; /*0x6caecd*/
   a1->SuperClass_field_0x28 = 0; /*0x6caed0*/
   a1->SuperClass_field_0x2C = 0; /*0x6caed3*/
@@ -131,7 +131,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   int v6; // eax
   int v7; // eax
 
-  AbstractClass::Constructor((AbstractClass *)aP2); /*0x6caf94*/
+  ((AbstractClass *)aP2)->Constructor(); /*0x6caf94*/
   aP2->BufferSize = aP2; /*0x6cafa4*/
   aP2->BufferOffset = -1; /*0x6cafa7*/
   aP2->BufferPosition = a3; /*0x6cafaa*/
@@ -283,7 +283,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
       ++v8; /*0x6cb2bf*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)a1); /*0x6cb2d3*/
+  ((AbstractClass *)a1)->DTOR(); /*0x6cb2d3*/
 
 }
 }
@@ -386,12 +386,12 @@ AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
         *(unsigned char *)(v15 + 405) = 0; /*0x6cb6bf*/
         this->u32_68 = 0; /*0x6cb6cb*/
         this = this; /*0x6cb6ce*/
-        VectorClass::RemoveAt((VectorClass *)stru_B0F5B8, (int)&this); /*0x6cb6d2*/
+        ((VectorClass *)stru_B0F5B8)->RemoveAt((int)&this); /*0x6cb6d2*/
       }
       if ( this->HouseClass_6C ) /*0x6cb6d7*/
       {
         this = this; /*0x6cb6e6*/
-        VectorClass::RemoveAt((VectorClass *)stru_B0F5B8, (int)&this); /*0x6cb6ea*/
+        ((VectorClass *)stru_B0F5B8)->RemoveAt((int)&this); /*0x6cb6ea*/
         this->HouseClass_6C = 0; /*0x6cb6ef*/
       }
       if ( !this->Granted /*0x6cb704*/
@@ -404,7 +404,7 @@ AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
       {
         this->u32_78 = -1; /*0x6cb70f*/
         SuperClass::SetCurrentFrame(&this->q030); /*0x6cb718*/
-        DefaultTimer = Super::GetDefaultTimer((Super *)this); /*0x6cb71f*/
+        DefaultTimer = ((Super *)this)->GetDefaultTimer(); /*0x6cb71f*/
         Timer::Start((Timer *)&v21, DefaultTimer); /*0x6cb729*/
         v17 = v22; /*0x6cb732*/
         v18 = v23; /*0x6cb736*/
@@ -676,12 +676,12 @@ int SuperClass::ClickFire(int a2, short * a3)
         *(unsigned char *)(v28 + 405) = 0; /*0x6cbc01*/
         this->u32_68 = 0; /*0x6cbc0d*/
         a2 = this; /*0x6cbc10*/
-        VectorClass::RemoveAt(&stru_B0F5B8, (int)&a2); /*0x6cbc14*/
+        (&stru_B0F5B8)->RemoveAt((int)&a2); /*0x6cbc14*/
       }
       if ( this->HouseClass_6C ) /*0x6cbc19*/
       {
         a2 = this; /*0x6cbc28*/
-        VectorClass::RemoveAt(&stru_B0F5B8, (int)&a2); /*0x6cbc2c*/
+        (&stru_B0F5B8)->RemoveAt((int)&a2); /*0x6cbc2c*/
         this->HouseClass_6C = 0; /*0x6cbc31*/
       }
       if ( this->Granted /*0x6cbc46*/
@@ -712,7 +712,7 @@ int SuperClass::ClickFire(int a2, short * a3)
   a2 = this; /*0x6cbb41*/
   v22 = (*(int (**)(int *, int *))(stru_A83D50 + 16))(&stru_A83D50, &a2); /*0x6cbb45*/
   if ( v22 != -1 ) /*0x6cbb4b*/
-    SuperClass::RemoveFromPointerArray(&stru_A83D50, v22); /*0x6cbb53*/
+    (&stru_A83D50)->RemoveFromPointerArray(v22); /*0x6cbb53*/
   return 1; /*0x6cb9bc*/
 }
 }

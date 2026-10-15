@@ -159,7 +159,7 @@ int Session::PrepareGame(HWND hWnd)
       *(unsigned int *)Str = 27; /*0x5e7576*/
       break; /*0x5e7576*/
     case 4: /*0x5e7521*/
-      if ( !Dialog::FindByHandle((Dialog *)0xC9) ) /*0x5e7609*/
+      if ( !((Dialog *)0xC9)->FindByHandle() ) /*0x5e7609*/
         goto LABEL_42; /*0x5e7609*/
       v7 = 0; /*0x5e762e*/
       if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e7630*/
@@ -225,7 +225,7 @@ int Session::PrepareGame(HWND hWnd)
         }
         else
         {
-          PreviewClass::ReadPreview((PreviewClass *)g_UIControlState, byte_A8B8E0); /*0x5e78cb*/
+          ((PreviewClass *)g_UIControlState)->ReadPreview(byte_A8B8E0); /*0x5e78cb*/
           return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78d3*/
         }
       }
@@ -247,7 +247,7 @@ int Session::PrepareGame(HWND hWnd)
     }
     if ( v3 ) /*0x5e75cb*/
     {
-      for ( result = Network::GetQueueCount(&unk_A8E9C0); result; result = Network::GetQueueCount(&unk_A8E9C0) ) /*0x5e75e0*/
+      for ( result = (&unk_A8E9C0)->GetQueueCount(); result; result = (&unk_A8E9C0)->GetQueueCount() ) /*0x5e75e0*/
         Event::Dispatch(); /*0x5e75e6*/
       return result; /*0x5e75f7*/
     }
@@ -307,7 +307,7 @@ int Session::StartGame(HWND hWnd)
   else
     v4 = 0; /*0x5ed3bd*/
   g_UIControlState = (int)(v4); /*0x5ed3c6*/
-  Surface::LoadToSurfaceSHP((Surface *)v4, ExistingFileName); /*0x5ed3cb*/
+  ((Surface *)v4)->LoadToSurfaceSHP(ExistingFileName); /*0x5ed3cb*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x5ed3d6*/
     Session::PrepareGame(hWnd); /*0x5ed3dd*/
   return InvalidateRect((HWND)hWnd, 0, 0); /*0x5ed3ed*/

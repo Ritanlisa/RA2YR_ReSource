@@ -337,7 +337,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         v8 = (int)(aP1); /*0x628c27*/
         do /*0x628c38*/
         {
-          Byte::Zero(v5); /*0x628c2c*/
+          (v5)->Zero(); /*0x628c2c*/
           v5 += 65; /*0x628c31*/
           --v8; /*0x628c37*/
         }
@@ -356,7 +356,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
           v15 = (int)(aP1); /*0x628bf4*/
           do /*0x628c0e*/
           {
-            Byte::Zero(v7); /*0x628bfa*/
+            (v7)->Zero(); /*0x628bfa*/
             v7 += 65; /*0x628c03*/
             --v15; /*0x628c0a*/
           }
@@ -701,7 +701,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   *(unsigned int *)aP1->VectorClass = &vt_VectorClass; /*0x4779fa*/
   if ( aP1 != (DynamicVectorClass *)a2 ) /*0x477a00*/
   {
-    VectorClass::Destroy((int)aP1); /*0x477a02*/
+    ((int)aP1)->Destroy(); /*0x477a02*/
     v3 = a2[2]; /*0x477a08*/
     *&aP1->Capacity = v3; /*0x477a0d*/
     if ( v3 ) /*0x477a10*/
@@ -1470,9 +1470,7 @@ char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::IsEqualTo(int a2
     if ( m_8 <= 0 ) /*0x628208*/
       return 1; /*0x628231*/
     for ( i = 0; /*0x62820a*/
-          !DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(
-             (DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode *)(i + *&this->Items),
-             (unsigned char *)(i + *(unsigned int *)(a2 + 4)));
+          !((DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode *)(i + *&this->Items))->HashEntryCompare((unsigned char *)(i + *(unsigned int *)(a2 + 4)));
           i += 3 )
     {
       if ( ++v4 >= this->Capacity ) /*0x628229*/

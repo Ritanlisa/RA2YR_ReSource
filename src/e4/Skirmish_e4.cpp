@@ -127,7 +127,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
     ResourceIDCSF = GetResourceIDCSF(dword_A8DA8C); /*0x46f90e*/
     v4 = (SessionClass *)dword_A8DA90[(unsigned int)v1]; /*0x46f913*/
     v5 = ResourceIDCSF; /*0x46f91a*/
-    if ( (uint8_t)Player::IsObserver((Player *)v4) ) /*0x46f91e*/
+    if ( (uint8_t)((Player *)v4)->IsObserver() ) /*0x46f91e*/
     {
       PlayerColor = *(unsigned int *)&stru_A8B250.__pad_0[4 * (unsigned int)v1 + 108]; /*0x46f927*/
     }
@@ -149,7 +149,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
     }
     else
     {
-      PlayerColor = SessionClass::GetPlayerColor(v4); /*0x46f96e*/
+      PlayerColor = (v4)->GetPlayerColor(); /*0x46f96e*/
     }
     SetupSkirmishSpawnLocations((HWND)hDlg, v5, PlayerColor); /*0x46f978*/
   }
@@ -162,7 +162,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
       v9 = GetResourceIDCSF(v7); /*0x46f98a*/
       v10 = (SessionClass *)v8[2549]; /*0x46f98f*/
       v11 = v9; /*0x46f995*/
-      if ( (uint8_t)Player::IsObserver((Player *)v10) ) /*0x46f999*/
+      if ( (uint8_t)((Player *)v10)->IsObserver() ) /*0x46f999*/
       {
         v12 = *v8; /*0x46f9a2*/
       }
@@ -184,7 +184,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
       }
       else
       {
-        v12 = SessionClass::GetPlayerColor(v10); /*0x46f9e4*/
+        v12 = (v10)->GetPlayerColor(); /*0x46f9e4*/
       }
       SetupSkirmishSpawnLocations((HWND)hDlg, v11, v12); /*0x46f9f0*/
       v1 = v14; /*0x46f9f5*/
@@ -509,7 +509,7 @@ int Skirmish::EnableSpawnButtons(HWND hDlg)
 
   v1 = (gamemd::Skirmish *)(hDlg); /*0x6acd62*/
   if ( !hDlg ) /*0x6acd66*/
-    v1 = (Skirmish *)Dialog::FindByHandle((Dialog *)0x102); /*0x6acd72*/
+    v1 = (Skirmish *)((Dialog *)0x102)->FindByHandle(); /*0x6acd72*/
   v7 = 0; /*0x6acd79*/
   if ( dword_A8B23C ) /*0x6acd80*/
     v7 = dword_A8B23C->ambientSoundController[0]; /*0x6acd85*/
@@ -639,7 +639,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           }
           ((WideString *)(0))->Assign_Alt(); /*0x6ae6c1*/
         }
-        else if ( CountryCombo::IDToIndex(DlgCtrlID) == -1 ) /*0x6ae53b*/
+        else if ( (DlgCtrlID)->IDToIndex() == -1 ) /*0x6ae53b*/
         {
           if ( StartCombo::IDToIndex(v7) != -1 ) /*0x6ae547*/
           {
@@ -760,7 +760,7 @@ AbstractClass * * Skirmish::SetupGame(int hWnd, void *a2)
   HWND v62; // [esp+1Ch] [ebp-4h]
   HWND First; // [esp+1Ch] [ebp-4h]
 
-  Network::processGameEvent((Network *)&stru_A8B250); /*0x6ae6ed*/
+  ((Network *)&stru_A8B250)->processGameEvent(); /*0x6ae6ed*/
   DlgItem = GetDlgItem((HWND)this, 1696); /*0x6ae6f8*/
   v5 = DlgItem; /*0x6ae704*/
   if ( DlgItem ) /*0x6ae708*/

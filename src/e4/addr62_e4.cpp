@@ -1175,7 +1175,7 @@ int SetupDialog(Dialog *hWnd, int a2)
   HashTable::Get((HashTable *)&g_DialogHashMap_Base, lParam, &v14); /*0x622898*/
   if ( v14 ) /*0x6228a3*/
     *(unsigned int *)(v14 + 108) = a2; /*0x6228a5*/
-  if ( !(uint8_t)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x6228ad*/
+  if ( !(uint8_t)((SessionClass *)&dword_A8B238)->GetGameSpeed() ) /*0x6228ad*/
     Control::CreateControlDialog((Control *)hWnd); /*0x6228b8*/
   lParam[0] = (LPARAM)hWnd; /*0x6228cc*/
   v14 = 0; /*0x6228d0*/
@@ -1330,7 +1330,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       Dialog::InitWindow(hWnd, 0); /*0x622f46*/
       ((Dialog *)((Dialog *)hWnd))->GetField(); /*0x622f4d*/
       UI_Helper_60D2C0((int)hWnd, v21); /*0x622f56*/
-      if ( !(uint8_t)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x622f60*/
+      if ( !(uint8_t)((SessionClass *)&dword_A8B238)->GetGameSpeed() ) /*0x622f60*/
         Control::CreateControlDialog((Control *)hWnd); /*0x622f6b*/
       UI_Helper_60CAF0((ObjectClass *)hWnd); /*0x622f72*/
       UI_Helper_60C930((ObjectClass *)hWnd); /*0x622f79*/
@@ -1360,7 +1360,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       HashTable::Get((HashTable *)&g_DialogHashMap_Base, v26, &a4); /*0x622fef*/
       if ( *(unsigned int *)a4.__pad_0 ) /*0x622ffa*/
         *(unsigned int *)(*(unsigned int *)a4.__pad_0 + 108) = 0; /*0x622ffc*/
-      if ( !(uint8_t)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x623004*/
+      if ( !(uint8_t)((SessionClass *)&dword_A8B238)->GetGameSpeed() ) /*0x623004*/
         Control::CreateControlDialog((Control *)hWnd); /*0x62300f*/
       UI_Helper_60CAF0((ObjectClass *)hWnd); /*0x623016*/
       UI_Helper_60C930((ObjectClass *)hWnd); /*0x62301d*/

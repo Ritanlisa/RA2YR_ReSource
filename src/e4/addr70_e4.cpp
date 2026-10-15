@@ -416,7 +416,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     }
     while ( v15 < v13[1] ); /*0x706fe5*/
   }
-  v17 = (float *)(Voxel::RenderFrame(v49));
+  v17 = (float *)((v49)->RenderFrame());
   v18 = *a1; /*0x706ff4*/
   memcpy(v48, v17, sizeof(v48)); /*0x707002*/
   if ( (*(uint8_t (**)(int *))(v18 + 468))(a1)
@@ -816,7 +816,7 @@ void UpdateTimedStateMachine(int * a1)
         if ( !v13 ) /*0x70eb3a*/
         {
   LABEL_31:
-          if ( Timeout::GetRemaining(a1 + 106) >= 158 ) /*0x70eb50*/
+          if ( (a1 + 106)->GetRemaining() >= 158 ) /*0x70eb50*/
           {
             a1[112] = 4; /*0x70eb66*/
             a1[109] = (int)dword_A8ED84; /*0x70eb7a*/
@@ -830,7 +830,7 @@ void UpdateTimedStateMachine(int * a1)
         }
         break; /*0x70eb61*/
       case 6: /*0x70e97d*/
-        if ( Timeout::GetRemaining(a1 + 106) <= 30 ) /*0x70eb96*/
+        if ( (a1 + 106)->GetRemaining() <= 30 ) /*0x70eb96*/
         {
           a1[112] = (int)((unsigned int *)(7));
           v14 = (unsigned int *)(a1 + 109); /*0x70ebab*/

@@ -648,7 +648,7 @@ int HashTable_flat::Find(const char * a1, ConvertClass * aP2)
   const void *v6; // esi
   int v7; // esi
 
-  String::Assign((String *)&a1, a1); /*0x6ba14c*/
+  ((String *)&a1)->Assign(a1); /*0x6ba14c*/
   if ( (byte_B0B930 & 1) == 0 ) /*0x6ba158*/
   {
     dword_B0B948 = 0; /*0x6ba164*/
@@ -706,7 +706,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
   int v15; // esi
   unsigned char v16[784]; // [esp+Ch] [ebp-310h] BYREF
 
-  String::Assign((String *)v16, a2); /*0x6ba247*/
+  ((String *)v16)->Assign(a2); /*0x6ba247*/
   HashTable_field_0x04 = this->u32_4; /*0x6ba24c*/
   *(unsigned int *)&v16[12] = 0; /*0x6ba253*/
   if ( !HashTable_field_0x04 ) /*0x6ba257*/

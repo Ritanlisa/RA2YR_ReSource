@@ -348,7 +348,7 @@ char LoadingScreen::FreeResources(void *a1)
     operator delete((void *)(*(void **)&DataGlobal_B0FC04)); /*0x73040d*/
     *(unsigned int *)&DataGlobal_B0FC04 = 0; /*0x730415*/
   }
-  HashTree::MarkEntry(off_844C08); /*0x730421*/
+  (off_844C08)->MarkEntry(); /*0x730421*/
   if ( *(unsigned int *)&DataGlobal_B0FC08 ) /*0x73042e*/
   {
     (***(void (****)(unsigned int, int))&DataGlobal_B0FC08)( /*0x730434*/
@@ -361,7 +361,7 @@ char LoadingScreen::FreeResources(void *a1)
     operator delete((void *)(*(void **)&DataGlobal_B0FBFC)); /*0x730446*/
     *(unsigned int *)&DataGlobal_B0FBFC = 0; /*0x73044e*/
   }
-  HashTree::MarkEntry(off_844C04); /*0x73045a*/
+  (off_844C04)->MarkEntry(); /*0x73045a*/
   if ( *(unsigned int *)&DataGlobal_B0FC00 ) /*0x730467*/
   {
     (***(void (****)(unsigned int, int))&DataGlobal_B0FC00)( /*0x73046d*/
@@ -374,7 +374,7 @@ char LoadingScreen::FreeResources(void *a1)
     operator delete((void *)(*(void **)&DataGlobal_B0FBF4)); /*0x73047f*/
     *(unsigned int *)&DataGlobal_B0FBF4 = 0; /*0x730487*/
   }
-  HashTree::MarkEntry(off_844C00); /*0x730493*/
+  (off_844C00)->MarkEntry(); /*0x730493*/
   if ( *(unsigned int *)&DataGlobal_B0FBF8 ) /*0x7304a0*/
   {
     (***(void (****)(unsigned int, int))&DataGlobal_B0FBF8)( /*0x7304a6*/
@@ -387,7 +387,7 @@ char LoadingScreen::FreeResources(void *a1)
     operator delete((void *)(*(void **)&DataGlobal_B0FBE4)); /*0x7304b8*/
     *(unsigned int *)&DataGlobal_B0FBE4 = 0; /*0x7304c0*/
   }
-  HashTree::MarkEntry(off_844BF0); /*0x7304cc*/
+  (off_844BF0)->MarkEntry(); /*0x7304cc*/
   if ( *(unsigned int *)&DataGlobal_B0FBE8 ) /*0x7304d9*/
   {
     (***(void (****)(unsigned int, int))&DataGlobal_B0FBE8)( /*0x7304df*/
@@ -400,7 +400,7 @@ char LoadingScreen::FreeResources(void *a1)
     operator delete((void *)(*(void **)&DataGlobal_B0FBEC)); /*0x7304f1*/
     *(unsigned int *)&DataGlobal_B0FBEC = 0; /*0x7304f9*/
   }
-  result = HashTree::MarkEntry(off_844BF4); /*0x730505*/
+  result = (off_844BF4)->MarkEntry(); /*0x730505*/
   if ( *(unsigned int *)&DataGlobal_B0FBF0 ) /*0x730512*/
   {
     result = (***(int (****)(unsigned int, int))&DataGlobal_B0FBF0)( /*0x730518*/

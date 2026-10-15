@@ -100,7 +100,7 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   }
   v4[13] = 0; /*0x488f44*/
   v4->u32_8 = 0; /*0x488f47*/
-  ListClass::Destruct((ListClass *)Block); /*0x488f4a*/
+  ((ListClass *)Block)->Destruct(); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
     operator delete((void *)(Block)); /*0x488f57*/
   return Block->tail_0; /*0x488f61*/

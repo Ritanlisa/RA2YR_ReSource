@@ -172,7 +172,7 @@ void sub_5E2AC0()
       unknown_libname_74(&v5); /*0x5e2b23*/
       if ( v3 > 0 ) /*0x5e2b2a*/
         UI_Assign_623F60(DlgItem, v3 - 1, (void **)&v5); /*0x5e2b36*/
-      if ( (unsigned int)WideString::Length((const wchar_t **)&v5) >= 0x24 ) /*0x5e2b47*/
+      if ( (unsigned int)((const wchar_t **)&v5)->Length() >= 0x24 ) /*0x5e2b47*/
       {
         WideString::Assign_Alt((void **)&v5, asc_831774); /*0x5e2b6e*/
       }
@@ -184,13 +184,13 @@ void sub_5E2AC0()
       v4 = (wchar_t *)(((WideString *)((wchar_t **)&v5))->GetOrEmpty()); /*0x5e2b78*/
       DrawDialogText(-1, v4, DlgItem); /*0x5e2b82*/
       InvalidateRect(DlgItem, 0, 0); /*0x5e2b8c*/
-      DeleteAndZero::Alt((void **)&v5); /*0x5e2b96*/
+      ((void **)&v5)->Alt(); /*0x5e2b96*/
     }
     else
     {
       while ( 1 ) /*0x5e2aee*/
       {
-        v2 = (HWND)Dialog::FindByPtr(Current); /*0x5e2aee*/
+        v2 = (HWND)(Current)->FindByPtr(); /*0x5e2aee*/
         Current = v2; /*0x5e2af3*/
         if ( !v2 ) /*0x5e2af7*/
           break; /*0x5e2af7*/
@@ -290,7 +290,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
   if ( a2 ) /*0x5e2ef5*/
   {
     DlgItem = (HWND)((wchar_t *)(GetDlgItem(hDlg, 1772)));
-    v4 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(a2 + 32))); /*0x5e2f09*/
+    v4 = (wchar_t *)(((wchar_t **)(a2 + 32))->GetOrEmpty_Alt()); /*0x5e2f09*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v4); /*0x5e2f17*/
   }
 }
@@ -583,13 +583,13 @@ int SendMultiplayerStartSignal()
     ((Network *)(Buffer))->SendOptionsGame(); /*0x5e3b55*/
     if ( byte_AC11C2 ) /*0x5e3b66*/
     {
-      v1 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5e3b68*/
+      v1 = (HWND)((void *)0xC2)->FindByHandle(); /*0x5e3b68*/
       if ( !v1 ) /*0x5e3b6f*/
       {
-        v1 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x5e3b76*/
+        v1 = (HWND)((void *)0xC9)->FindByHandle(); /*0x5e3b76*/
         if ( !v1 ) /*0x5e3b7d*/
         {
-          v1 = (HWND)Dialog::FindByHandle((void *)0xBC); /*0x5e3b84*/
+          v1 = (HWND)((void *)0xBC)->FindByHandle(); /*0x5e3b84*/
           if ( !v1 ) /*0x5e3b8b*/
             v1 = (HWND)((Dialog*)(void *)0xBD)->FindByHandle(); /*0x5e3b92*/
         }
@@ -598,15 +598,15 @@ int SendMultiplayerStartSignal()
     }
     else
     {
-      v1 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5e3b9b*/
+      v1 = (HWND)((void *)0xC2)->FindByHandle(); /*0x5e3b9b*/
       if ( !v1 ) /*0x5e3ba2*/
       {
-        v1 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x5e3ba9*/
+        v1 = (HWND)((void *)0xC9)->FindByHandle(); /*0x5e3ba9*/
         if ( !v1 ) /*0x5e3bb0*/
         {
           v1 = (HWND)((Dialog*)(void *)0xBC)->FindByHandle(); /*0x5e3bb7*/
           if ( !v1 ) /*0x5e3bbe*/
-            v1 = (HWND)Dialog::FindByHandle((void *)0xBD); /*0x5e3bc5*/
+            v1 = (HWND)((void *)0xBD)->FindByHandle(); /*0x5e3bc5*/
         }
       }
       v11 = 0; /*0x5e3bca*/
@@ -614,26 +614,26 @@ int SendMultiplayerStartSignal()
     v2 = GetDlgItem; /*0x5e3bcc*/
     DlgItem = GetDlgItem(v1, 1439); /*0x5e3bd8*/
     EnableWindow(DlgItem, v11); /*0x5e3bdb*/
-    v4 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5e3be6*/
+    v4 = (HWND)((void *)0xC2)->FindByHandle(); /*0x5e3be6*/
     if ( v4 ) /*0x5e3bed*/
       goto LABEL_40; /*0x5e3bed*/
-    v4 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x5e3bf8*/
+    v4 = (HWND)((void *)0xC9)->FindByHandle(); /*0x5e3bf8*/
     if ( v4 ) /*0x5e3bff*/
       goto LABEL_40; /*0x5e3bff*/
-    v4 = (HWND)Dialog::FindByHandle((void *)0xBC); /*0x5e3c0a*/
+    v4 = (HWND)((void *)0xBC)->FindByHandle(); /*0x5e3c0a*/
     if ( v4 ) /*0x5e3c11*/
       goto LABEL_40; /*0x5e3c11*/
     goto LABEL_39; /*0x5e3c11*/
   }
-  v5 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5e3c21*/
+  v5 = (HWND)((void *)0xC2)->FindByHandle(); /*0x5e3c21*/
   if ( !v5 ) /*0x5e3c28*/
   {
-    v5 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x5e3c2f*/
+    v5 = (HWND)((void *)0xC9)->FindByHandle(); /*0x5e3c2f*/
     if ( !v5 ) /*0x5e3c36*/
     {
-      v5 = (HWND)Dialog::FindByHandle((void *)0xBC); /*0x5e3c3d*/
+      v5 = (HWND)((void *)0xBC)->FindByHandle(); /*0x5e3c3d*/
       if ( !v5 ) /*0x5e3c44*/
-        v5 = (HWND)Dialog::FindByHandle((void *)0xBD); /*0x5e3c4b*/
+        v5 = (HWND)((void *)0xBD)->FindByHandle(); /*0x5e3c4b*/
     }
   }
   v2 = GetDlgItem; /*0x5e3c50*/
@@ -644,7 +644,7 @@ int SendMultiplayerStartSignal()
     result = (uint8_t)byte_AC11C2; /*0x5e3c6d*/
     if ( byte_AC11C2 ) /*0x5e3c74*/
     {
-      v8 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5e3c7f*/
+      v8 = (HWND)((void *)0xC2)->FindByHandle(); /*0x5e3c7f*/
       if ( !v8 ) /*0x5e3c86*/
       {
         v8 = (HWND)((Dialog*)(void *)0xC9)->FindByHandle(); /*0x5e3c8d*/
@@ -652,7 +652,7 @@ int SendMultiplayerStartSignal()
         {
           v8 = (HWND)((Dialog*)(void *)0xBC)->FindByHandle(); /*0x5e3c9b*/
           if ( !v8 ) /*0x5e3ca2*/
-            v8 = (HWND)Dialog::FindByHandle((void *)0xBD); /*0x5e3ca9*/
+            v8 = (HWND)((void *)0xBD)->FindByHandle(); /*0x5e3ca9*/
         }
       }
       v9 = GetDlgItem(v8, 1439); /*0x5e3cb6*/
@@ -660,14 +660,14 @@ int SendMultiplayerStartSignal()
       v4 = (HWND)((Dialog*)(void *)0xC2)->FindByHandle(); /*0x5e3cc4*/
       if ( v4 ) /*0x5e3ccb*/
         goto LABEL_40; /*0x5e3ccb*/
-      v4 = (HWND)Dialog::FindByHandle((void *)0xC9); /*0x5e3cd2*/
+      v4 = (HWND)((void *)0xC9)->FindByHandle(); /*0x5e3cd2*/
       if ( v4 ) /*0x5e3cd9*/
         goto LABEL_40; /*0x5e3cd9*/
-      v4 = (HWND)Dialog::FindByHandle((void *)0xBC); /*0x5e3ce0*/
+      v4 = (HWND)((void *)0xBC)->FindByHandle(); /*0x5e3ce0*/
       if ( v4 ) /*0x5e3ce7*/
         goto LABEL_40; /*0x5e3ce7*/
   LABEL_39:
-      v4 = (HWND)Dialog::FindByHandle((void *)0xBD); /*0x5e3ce9*/
+      v4 = (HWND)((void *)0xBD)->FindByHandle(); /*0x5e3ce9*/
   LABEL_40:
       v10 = v2(v4, 1439); /*0x5e3cf3*/
       return InvalidateRect(v10, 0, 0); /*0x5e3d00*/

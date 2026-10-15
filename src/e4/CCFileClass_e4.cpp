@@ -28,8 +28,8 @@ AudioController * * CCFileClass::Close(void * a1, void *a2)
   FileClass v3; // eax
 
   if ( !BYTE1(a1->BufferSize) ) /*0x4325c3*/
-    return FileClass::CloseHandle(a1); /*0x432607*/
-  BufferIO::Flush((BufferIO *)a1); /*0x4325ca*/
+    return (a1)->CloseHandle(); /*0x432607*/
+  ((BufferIO *)a1)->Flush(); /*0x4325ca*/
   result = BYTE2(a1->BufferOffset); /*0x4325cf*/
   if ( result ) /*0x4325d4*/
   {
@@ -43,7 +43,7 @@ AudioController * * CCFileClass::Close(void * a1, void *a2)
       BYTE1(a1->BufferOffset) = 0; /*0x4325f0*/
       return (gamemd::AudioController **)(result); /*0x4325f5*/
     }
-    result = FileClass::CloseHandle(a1); /*0x4325f8*/
+    result = (a1)->CloseHandle(); /*0x4325f8*/
     BYTE2(a1->BufferOffset) = 0; /*0x4325fd*/
   }
   BYTE1(a1->BufferOffset) = 0; /*0x432601*/
@@ -60,7 +60,7 @@ int CCFileClass::Destruct(void *a1)
   this->q064 = 0; /*0x535a7c*/
   Vector::Clear((int)&this->u32_160); /*0x535a83*/
   *(unsigned int *)this->CDFileClass = &off_7E1668; /*0x535a8a*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)this); /*0x535a95*/
+  return ((BufferIOFileClass *)this)->Dtor(); /*0x535a95*/
 
 }
 } // namespace gamemd

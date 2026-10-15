@@ -265,7 +265,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     }
     else
     {
-      Function::Method_4B4D60((int *)&pPStm); /*0x75c768*/
+      ((int *)&pPStm)->Method_4B4D60(); /*0x75c768*/
       pPStm = 0; /*0x75c76d*/
     }
     if ( v8 < 0 && v8 != -2147467262 ) /*0x75c797*/
@@ -298,7 +298,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   Piggybackee = (gamemd::ILocomotion *)(this->Piggybackee); /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x75cc06*/
+  ((LocomotionClass *)this)->Construct(); /*0x75cc06*/
   if ( (a2 & 1) != 0 ) /*0x75cc10*/
     __3_YAXPAX_Z(this); /*0x75cc13*/
   return this->LocomotionClass; /*0x75cc1d*/

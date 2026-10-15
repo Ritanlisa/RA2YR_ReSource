@@ -38,7 +38,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
 
   int v5; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
+  ((AbstractClass *)this)->Constructor(); /*0x4717d3*/
   this->owner = (gamemd::TechnoClass *)(1); /*0x4717e2*/
   this->controlNodeCount = 0; /*0x4717e6*/
   this->controlNodeCapacity = 0; /*0x4717e9*/
@@ -183,14 +183,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
           v27[2] = v13 + 100; /*0x471be6*/
           v17 = (int *)__2_YAPAXI_Z(0x100u); /*0x471bea*/
           if ( v17 ) /*0x471bf4*/
-            ParticleSystemClass::Constructor( /*0x471c15*/
-              v17,
-              *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4128),
-              v27,
-              0,
-              0,
-              &dword_89E138,
-              0);
+            (/*0x471c15*/ v17)->Constructor(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4128), v27, 0, 0, &dword_89E138, 0);
           --v22; /*0x471c1f*/
         }
         while ( v22 ); /*0x471c23*/
@@ -604,13 +597,13 @@ void CaptureManagerClass::DecideUnitFate(int aP1, void *a2)
   {
     v5 = aP1->u32_5D4; /*0x4723d1*/
     if ( v5 ) /*0x4723d9*/
-      TeamClass::LiberateMember_Start(v5, aP1, 0xFFFFFFFF, 0); /*0x4723df*/
+      (v5)->LiberateMember_Start(aP1, 0xFFFFFFFF, 0); /*0x4723df*/
   }
   v6 = aP1->q274; /*0x4723e4*/
   if ( v6 && v6->production[1] ) /*0x4723ee*/
-    FactoryClass::CompleteItem(v6); /*0x4723f3*/
+    (v6)->CompleteItem(); /*0x4723f3*/
   if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)aP1 + 132))(aP1) + 1508) ) /*0x472402*/
-    CCINIClass::IterateNodes((CCINIClass *)aP1, 0); /*0x47240f*/
+    ((CCINIClass *)aP1)->IterateNodes(0); /*0x47240f*/
   v7 = aP1->q21C; /*0x472417*/
   v8 = *(unsigned int *)(this->overloadCount + 540); /*0x472422*/
   v29 = v7 != v8; /*0x47242c*/
@@ -820,7 +813,7 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
     if ( v3 ) /*0x472742*/
     {
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x47274b*/
-      CaptureManagerClass::Constructor_473140((CaptureManagerClass *)v3->controlNodes, 0, 0); /*0x472757*/
+      ((CaptureManagerClass *)v3->controlNodes)->Constructor_473140(0, 0); /*0x472757*/
       v3->controlNodes[0] = (int)&vt_DynamicVectorClass; /*0x47275c*/
       *(unsigned int *)&v3->CaptureManagerClass_field_30 = 10; /*0x472762*/
       v3->originalOwner = 0; /*0x472769*/
@@ -1000,7 +993,7 @@ int CaptureManagerClass::PowerDrainUpdate(int a2)
   int overloadCount; // esi
   int v5; // eax
 
-  result = AbstractClass::ProcessPower((AbstractClass *)this); /*0x4726f9*/
+  result = ((AbstractClass *)this)->ProcessPower(); /*0x4726f9*/
   overloadCount = (int)(this->overloadCount); /*0x4726fe*/
   if ( overloadCount ) /*0x472703*/
   {
@@ -1074,7 +1067,7 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   }
   (Block->u8_101) = 0; /*0x472a4f*/
   Block->controlNodeCapacity = 0; /*0x472a53*/
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x472a5a*/
+  ((AbstractClass *)Block)->DTOR(); /*0x472a5a*/
   if ( (a2 & 1) != 0 ) /*0x472a64*/
     operator delete((void *)(Block)); /*0x472a67*/
   return &Block->vfptr; /*0x472a71*/

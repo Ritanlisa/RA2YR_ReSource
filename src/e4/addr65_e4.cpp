@@ -957,7 +957,7 @@ int sub_6586D0(ObjectClass *a1)
 
   Dialog = (Dialog *)CreateDialog(0x73u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Diplomacy::DlgProc, 0); /*0x6586e9*/
   ((unsigned int *)&stru_A8EB00)[440] = 1; /*0x6586eb*/
-  Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x6586f2*/
+  (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x6586f2*/
   if ( Dialog ) /*0x6586f9*/
   {
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
@@ -972,7 +972,7 @@ int sub_6586D0(ObjectClass *a1)
   LABEL_7:
     ((Dialog *)(Dialog))->Destroy(); /*0x658733*/
   }
-  Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x658740*/
+  (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x658740*/
   ((unsigned int *)&stru_A8EB00)[440] = (((unsigned char *)&(((unsigned int *)(dword_A8B230))[381].vfptr3))[2]); /*0x658758*/
   return MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x658763*/
 }
@@ -1130,8 +1130,8 @@ int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
   int v9[2]; // [esp+14h] [ebp-18h] BYREF
   int v10[4]; // [esp+1Ch] [ebp-10h] BYREF
 
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, a2, v9); /*0x6595a8*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, a3, v8); /*0x6595bd*/
+  ((Coord *)g_TacticalClass_Instance)->To_Screen(a2, v9); /*0x6595a8*/
+  ((Coord *)g_TacticalClass_Instance)->To_Screen(a3, v8); /*0x6595bd*/
   v10[0] = DSurface_ViewBounds.field_0; /*0x6595d3*/
   v10[1] = (int)DSurface_ViewBounds.field_4; /*0x6595dd*/
   v10[2] = *(unsigned int *)g_Map_VisibleRectOffset; /*0x6595e5*/
@@ -1598,7 +1598,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   if ( v12 ) /*0x65d9b5*/
     Waypoint_Location = ((ScenarioClass *)((char *)dword_A8B230))->Get_Waypoint_Location(v48, *(int *)v48); /*0x65d9c7*/
   else
-    Waypoint_Location = TechnoClass::GetWaypointCoords((TechnoClass *)v3, v48); /*0x65d9d5*/
+    Waypoint_Location = ((TechnoClass *)v3)->GetWaypointCoords(v48); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/
   v45 = (ScriptActionQueue)v14; /*0x65d9e2*/
   if ( !v43 && (((unsigned int)(unsigned short)(v14)) | ((unsigned int)(unsigned short)(*(uint16_t *)&v45.ObjectClass_2) << 16)) != dword_B04C38 ) /*0x65d9f3*/
@@ -1695,7 +1695,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
     return 1; /*0x65dba5*/
   }
   *(ScriptActionQueue *)v48 = v45; /*0x65dbaf*/
-  v30 = *((unsigned int *)dword_A8B21C + TypeClass::FindByName(&g_INI_Key_PDPLANE)); /*0x65dbc8*/
+  v30 = *((unsigned int *)dword_A8B21C + (&g_INI_Key_PDPLANE)->FindByName()); /*0x65dbc8*/
   ++dword_A8E7AC; /*0x65dbca*/
   v31 = (*(int (**)(int, unsigned int))(*(unsigned int *)v30 + 140))(v30, v10[135]); /*0x65dbd9*/
   v31 = v31; /*0x65dbe5*/
@@ -1705,7 +1705,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   *(unsigned char *)(v31 + 980) = 1; /*0x65dbf2*/
   if ( v3->u8_B1 ) /*0x65dbf9*/
   {
-    TransportWaypoint = TeamTypeClass::GetTransportWaypoint((TeamTypeClass *)v3, &v46); /*0x65dc0a*/
+    TransportWaypoint = ((TeamTypeClass *)v3)->GetTransportWaypoint(&v46); /*0x65dc0a*/
   }
   else
   {
@@ -1743,11 +1743,11 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
     (*(void (**)(int))(*(unsigned int *)v31 + 492))(v31); /*0x65dcf9*/
     v3 = (int)v47; /*0x65dcff*/
   LABEL_49:
-    if ( Techno::GetOwnerHouse(v3) ) /*0x65db71*/
+    if ( (v3)->GetOwnerHouse() ) /*0x65db71*/
     {
       v41 = (void *)dword_A83D4C; /*0x65db80*/
-      OwnerHouse = (void *)Techno::GetOwnerHouse(v3); /*0x65db83*/
-      if ( (uint8_t)HouseClass::IsAlliedWith(OwnerHouse, v41) ) /*0x65db8a*/
+      OwnerHouse = (void *)(v3)->GetOwnerHouse(); /*0x65db83*/
+      if ( (uint8_t)(OwnerHouse)->IsAlliedWith(v41) ) /*0x65db8a*/
         ScriptActionQueue::PushNext(&v45); /*0x65db97*/
     }
     return 1; /*0x65db97*/
@@ -1870,7 +1870,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   }
   else
   {
-    if ( !Techno::GetOwnerHouse(v4) || (v8 = *(unsigned int *)(Techno::GetOwnerHouse(v4) + 480), v8 == -1) ) /*0x65e0b2*/
+    if ( !(v4)->GetOwnerHouse() || (v8 = *(unsigned int *)((v4)->GetOwnerHouse() + 480), v8 == -1) ) /*0x65e0b2*/
       v8 = 0; /*0x65e0b4*/
     v9 = 2 * v8; /*0x65e0b6*/
     v10 = v51; /*0x65e0b9*/

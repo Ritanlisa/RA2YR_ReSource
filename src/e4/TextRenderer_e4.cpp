@@ -151,7 +151,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, v
     v18 = FoundationSize[3] + 6; /*0x642cd8*/
     if ( aP4 ) /*0x642ce2*/
     {
-      Default = BuildingType::FindDefault(0); /*0x642ceb*/
+      Default = (0)->FindDefault(); /*0x642ceb*/
       if ( Default ) /*0x642cef*/
       {
         v9 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
@@ -226,7 +226,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   v15 = FoundationSize[3] + 6; /*0x642f24*/
   if ( a4 ) /*0x642f2e*/
   {
-    Default = BuildingType::FindDefault(0); /*0x642f32*/
+    Default = (0)->FindDefault(); /*0x642f32*/
     v8 = Default; /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {

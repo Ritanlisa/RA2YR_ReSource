@@ -66,7 +66,7 @@ int sub_6863E0(void * a1, void * a2)
     *p_vtable2 = (void *)-1; /*0x68646a*/
     p_vtable2[2] = &v4[v5]; /*0x686472*/
   }
-  AsyncIO::Shutdown(a1); /*0x686475*/
+  (a1)->Shutdown(); /*0x686475*/
   TimerGetTicks(); /*0x68647e*/
   v10 = TimerGetTicks(); /*0x68649d*/
   Theme::Stop((Theme *)&unk_A83D10, 1); /*0x6864b4*/
@@ -75,9 +75,9 @@ int sub_6863E0(void * a1, void * a2)
   StopThemeClass(1); /*0x6864c5*/
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x6864ca*/
   Mission::SetAndCall((MouseClass *)&DataGlobal_87F7E8, 0, 0); /*0x6864d8*/
-  Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x6864e3*/
+  (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x6864e3*/
   ScenarioClass::LoadScenarioAndStart((char *)&((unsigned int *)(dword_A8B230))[130].abstractFlags, 0, a2, dword_A8B230[375].uniqueId); /*0x6864fc*/
-  GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x686506*/
+  ((GameResult *)&stru_8A38E0)->CalcScore(); /*0x686506*/
   while ( 1 ) /*0x68650f*/
   {
     v6 = 60; /*0x68650f*/
@@ -92,7 +92,7 @@ int sub_6863E0(void * a1, void * a2)
       break; /*0x68652d*/
     Event::Dispatch(); /*0x68652f*/
   }
-  Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x686536*/
+  (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x686536*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x68654a*/
     Tooltip::Enable(*(Tooltip **)&g_TacticalRender, stru_A8EB00.vfptr[32]); /*0x686553*/
   return ((TacticalMap *)((GScreenClass *)&DataGlobal_87F7E8))->Redraw(); /*0x686562*/
@@ -124,8 +124,8 @@ AbstractClass * sub_686570(ObjectClass *a1)
     p_vtable2[2] = &v3[v4]; /*0x6865a7*/
   }
   dword_A8B230[130].vfptr3 = (void *)1; /*0x6865b0*/
-  AsyncIO::Shutdown(v9); /*0x6865ba*/
-  Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x6865c5*/
+  (v9)->Shutdown(); /*0x6865ba*/
+  (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x6865c5*/
   (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x6865d9*/
     stru_887598.lineTrailer,
     g_DSurface_Hidden,
@@ -133,9 +133,9 @@ AbstractClass * sub_686570(ObjectClass *a1)
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x6865e4*/
   Mission::SetAndCall((MouseClass *)&DataGlobal_87F7E8, 0, 0); /*0x6865ee*/
   Theme::Stop((Theme *)&unk_A83D10, 1); /*0x6865fa*/
-  Audio::GetFlag((Audio *)g_MixerState); /*0x686605*/
+  ((Audio *)g_MixerState)->GetFlag(); /*0x686605*/
   ((VoxClass *)(&stru_83DB34))->FindAndPlay(-1); /*0x686616*/
-  Audio::WaitForCallback((Audio *)g_MixerState); /*0x686621*/
+  ((Audio *)g_MixerState)->WaitForCallback(); /*0x686621*/
   v5 = *(unsigned int *)&g_PerformanceTickOffset; /*0x68662b*/
   if ( *(unsigned int *)&g_LastPerformanceTick != -1 ) /*0x686634*/
     v5 += TimerGetTicks() - *(unsigned int *)&g_LastPerformanceTick; /*0x686646*/

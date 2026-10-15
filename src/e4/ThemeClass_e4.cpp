@@ -67,11 +67,7 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
   this->u32_289 = Bool_Overwrite; /*0x720540*/
     this->u32_28C = HouseTypeClass::loadCountryData((uint8_t *)(/*0x720554*/                               (HouseTypeClass *)a2),                               (uint8_t *)this,                               (uint8_t *)aSide,                               v6);
   if ( this->u32_288 ) /*0x72055a*/
-    INIClass::GetStringEx( /*0x720577*/
-      (int)a2,
-      (uint8_t *)this,
-      (uint8_t *)g_INI_Key_Name,
-      (wchar_t *)this->q656 + 426),
+    (/*0x720577*/ (int)a2)->GetStringEx((uint8_t *)this, (uint8_t *)g_INI_Key_Name, (wchar_t *)this->q656 + 426),
       0x40u);
   return 1; /*0x72057c*/
 }

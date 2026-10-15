@@ -455,7 +455,7 @@ void sub_53E6B0()
     {
       if ( dword_AA0464 ) /*0x53e6e7*/
       {
-        SampleSize = Audio::GetSampleSize((unsigned int *)dword_AA0464); /*0x53e6eb*/
+        SampleSize = ((unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e6eb*/
         WriteAudioStreamToFile(dword_AA0464,(FILE *)(dword_AA0468), SampleSize, 0); /*0x53e6fd*/
         fflush((FILE *)(dword_AA0468)); /*0x53e708*/
       }

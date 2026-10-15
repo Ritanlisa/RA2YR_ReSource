@@ -61,7 +61,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   v5 = a3; /*0x4fb86b*/
   if ( !a3 ) /*0x4fb871*/
     return 0; /*0x4fb919*/
-  MapClass::UnselectAll_ClearLimboLaunchers(v10); /*0x4fb877*/
+  (v10)->UnselectAll_ClearLimboLaunchers(); /*0x4fb877*/
   BuildingClass::TogglePower2((BuildingClass *)&DataGlobal_87F7E8, 0); /*0x4fb883*/
   BuildingClass::TogglePower((BuildingClass *)&DataGlobal_87F7E8, 0); /*0x4fb88f*/
   DataGlobal_88099A = 0; /*0x4fb894*/
@@ -182,7 +182,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             -1,
             0,
             1);
-    v17 = Input::OffsetToDirection(&this->q040); /*0x54c684*/
+    v17 = (&this->q040)->OffsetToDirection(); /*0x54c684*/
     if ( BuildingPlacement::IsPlacementFlagSet(v5, v17, BYTE1(v5[8].BuildingPlacement_field_0x20) & 1) /*0x54c699*/
       || (v46 = 0, this->u32_90) )
     {
@@ -221,7 +221,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         if ( !*(unsigned char *)(this->q00C + 1709) ) /*0x54c75d*/
         {
           v21 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 72); /*0x54c776*/
-          Value = ProgressTimer::GetValue(&this->q054, &v47); /*0x54c77a*/
+          Value = (&this->q054)->GetValue(&v47); /*0x54c77a*/
           LOBYTE(v23) = 0; /*0x54c77f*/
           HIBYTE(v23) = v21; /*0x54c781*/
           if ( *(unsigned short *)Value != v23 ) /*0x54c786*/
@@ -320,12 +320,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             v48 = *(unsigned int *)(v35 + 156); /*0x54c978*/
             v49 = *(unsigned int *)(v35 + 160); /*0x54c97f*/
             v50 = *(unsigned int *)(v35 + 164); /*0x54c986*/
-            MapClass::RevealArea2( /*0x54c9a2*/
-              (MapClass *)&DataGlobal_87F7E8,
-              &v48,
-              *(unsigned int *)(v35 + 608) - 3,
-              *(unsigned int *)(v35 + 608) + 3,
-              0);
+            (/*0x54c9a2*/ (MapClass *)&DataGlobal_87F7E8)->RevealArea2(&v48, *(unsigned int *)(v35 + 608) - 3, *(unsigned int *)(v35 + 608) + 3, 0);
           }
           v47 = this->q00C; /*0x54c9ac*/
           v36 = v47; /*0x54c9aa*/
@@ -465,7 +460,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   v8 = v7; /*0x594fd1*/
   if ( v7 ) /*0x594fd8*/
   {
-    VectorClass::CellConstructor(v7, 0, 0); /*0x594fde*/
+    (v7)->CellConstructor(0, 0); /*0x594fde*/
     /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x594fe3) */
     v8[1].Items = (void *)10; /*0x594fe9*/
     v8[1].vtable0 = 0; /*0x594ff0*/

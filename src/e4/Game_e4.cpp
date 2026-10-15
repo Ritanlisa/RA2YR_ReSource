@@ -573,7 +573,7 @@ AbstractClass * * Game::DestroyAllObjects()
     v2 = *(void **)dword_AC167C; /*0x5348a5*/
     if ( *(unsigned int *)dword_AC167C ) /*0x5348a5*/
     {
-      BuildingLightQueue::RemoveEntry(*(BuildingLightQueue **)dword_AC167C); /*0x5348ad*/
+      (*(BuildingLightQueue **)dword_AC167C)->RemoveEntry(); /*0x5348ad*/
       __3_YAXPAX_Z(v2); /*0x5348b3*/
     }
   }
@@ -598,7 +598,7 @@ AbstractClass * * Game::DestroyAllObjects()
   ProcessExpiredPointers(v34); /*0x53493a*/
   sub_4C29E0(v35); /*0x53493f*/
   Game_Destroy(v36); /*0x534944*/
-  Game::loadCampaignData(v3); /*0x534949*/
+  (v3)->loadCampaignData(); /*0x534949*/
   while ( dword_A8E978 ) /*0x534954*/
   {
     if ( *(unsigned int *)dword_A8E96C ) /*0x53495b*/
@@ -610,9 +610,9 @@ AbstractClass * * Game::DestroyAllObjects()
       g_TacticalClass_Instance,
       1);
   g_TacticalClass_Instance = 0; /*0x53498b*/
-  MapClass::FreeAllCells((MapClass *)&dword_87F7E8); /*0x534991*/
+  ((MapClass *)&dword_87F7E8)->FreeAllCells(); /*0x534991*/
   ProcessExpiredPointers(v38); /*0x534996*/
-  Game::initScenario((Game *)&g_VisibilitySystem); /*0x5349a0*/
+  ((Game *)&g_VisibilitySystem)->initScenario(); /*0x5349a0*/
   return (gamemd::AbstractClass **)(--dword_A8E7AC); /*0x5349ab*/
 
 }
@@ -729,13 +729,13 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
 
   if ( a3 == 1 ) /*0x5b709b*/
     return 0; /*0x5b709f*/
-  Game::processStartup((Game *)this); /*0x5b70a7*/
+  ((Game *)this)->processStartup(); /*0x5b70a7*/
   dword_A8B54C = 0; /*0x5b70b1*/
   v5 = (int)(__2_YAPAXI_Z(0x85u)); /*0x5b70bb*/
   v6 = v5; /*0x5b70c0*/
   if ( v5 ) /*0x5b70ca*/
   {
-    Waypoint::InitInvalid((Waypoint *)(v5 + 40)); /*0x5b70d3*/
+    ((Waypoint *)(v5 + 40))->InitInvalid(); /*0x5b70d3*/
     BulkCharToWide((unsigned short *)v6, (unsigned __int8 *)unk_A8B380, -1); /*0x5b70e0*/
     v6->u32_4B = dword_A8B3AC; /*0x5b70ea*/
     v6->u32_53 = dword_A8B394; /*0x5b70f3*/
@@ -757,7 +757,7 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
   v9 = v8; /*0x5b715f*/
   if ( v8 ) /*0x5b7166*/
   {
-    Waypoint::InitInvalid((Waypoint *)(v8 + 40)); /*0x5b716f*/
+    ((Waypoint *)(v8 + 40))->InitInvalid(); /*0x5b716f*/
     wcscpy((wchar_t *)v9, (const wchar_t *)(&this->q0282)); /*0x5b7179*/
     *(unsigned int *)(v9 + 75) = this->u32_4C; /*0x5b7184*/
     *(unsigned int *)(v9 + 83) = this->u32_48; /*0x5b718a*/
@@ -781,7 +781,7 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5b721a*/
   v13 = MessageBox; /*0x5b721f*/
   if ( MessageBox ) /*0x5b7223*/
-    Dialog::Show(MessageBox); /*0x5b7227*/
+    (MessageBox)->Show(); /*0x5b7227*/
   v14 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5b7231*/
   if ( *(unsigned int *)&g_LastPerformanceTick != -1 ) /*0x5b7239*/
     v14 += Timer::GetTicks() - *(unsigned int *)&g_LastPerformanceTick; /*0x5b724b*/
@@ -806,8 +806,8 @@ LABEL_31:
     Stream::ReadPacket((int)&unk_A8EA70); /*0x5b72bd*/
   }
   if ( v13 ) /*0x5b72c6*/
-    Dialog::Destroy(v13); /*0x5b72ca*/
-  EventClass::CheckFlag((EventClass *)&unk_A8EA70); /*0x5b72d4*/
+    (v13)->Destroy(); /*0x5b72ca*/
+  ((EventClass *)&unk_A8EA70)->CheckFlag(); /*0x5b72d4*/
   BYTE2(DataGlobal_A8D60C) = 0; /*0x5b72e4*/
   dword_A8B230[130].vtable3 = *(void **)&g_GameRulesOptions; /*0x5b72eb*/
   dword_A8B54C = dword_A8DA84; /*0x5b730b*/
@@ -905,7 +905,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   v15 = 0; /*0x5ba934*/
   Vector::Clear((int)v14); /*0x5ba93f*/
   *(unsigned int *)v13.CDFileClass = &off_7E1668; /*0x5ba94b*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v13); /*0x5ba95b*/
+  return ((BufferIOFileClass *)&v13)->Dtor(); /*0x5ba95b*/
 
 }
 }
@@ -1044,7 +1044,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
     DeleteAndZero((void **)&OptionSessionClass); /*0x5dbbd6*/
   }
   if ( (v2 & 1) != 0 ) /*0x5dbbde*/
-    DeleteAndZero::Alt(&v17); /*0x5dbbe4*/
+    (&v17)->Alt(); /*0x5dbbe4*/
   v16 = dword_A8BB04; /*0x5dbc0a*/
   v14 = (uint8_t)dword_A8BB08; /*0x5dbc0b*/
   v12 = dword_A8BB0C; /*0x5dbc0c*/
@@ -1081,7 +1081,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
       PlayerSideSessionClass = SessionClass::GetPlayerSide(v6); /*0x5dbcb4*/
       PlayerColorSessionClass = SessionClass::GetPlayerColor(v6); /*0x5dbcbd*/
       OptionSessionClass = SessionClass::GetOption(v6); /*0x5dbcc6*/
-      Option2SessionClass = SessionClass::GetOption2(v6); /*0x5dbce2*/
+      Option2SessionClass = (v6)->GetOption2(); /*0x5dbce2*/
       v13 = (void *)OptionSessionClass; /*0x5dbce3*/
       v11 = ToWideStringChar(*(char **)(dword_A8DA78 + 4 * v5)); /*0x5dbcf3*/
       sprintf( /*0x5dbd07*/

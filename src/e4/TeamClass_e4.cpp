@@ -143,7 +143,7 @@ LABEL_7:
   this->ParticleSystemClass_110 = v4; /*0x577c01*/
   this->u32_114 = v4 - 1; /*0x577c0a*/
   this->u32_118 = (v4 << 11) + this->u32_13C + 4; /*0x577c1f*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)this); i; i = LayerClass::CellIteratorNext((LayerClass *)this) ) /*0x577c2c*/
+  for ( i = ((LayerClass *)this)->CellIteratorNext(); i; i = ((LayerClass *)this)->CellIteratorNext() ) /*0x577c2c*/
   {
     v6 = *(unsigned int *)(i + 320) & 0xFFFFFFFC; /*0x577c3d*/
     *(unsigned int *)(i + 300) &= 0xFFFFFFE7; /*0x577c40*/
@@ -151,7 +151,7 @@ LABEL_7:
   }
   HouseClass::RevealShroudForAllies(0, 0); /*0x577c60*/
   dword_A83D4C->visionary = 0; /*0x577c6f*/
-  FogOfWar::Render((FogOfWar *)&DataGlobal_87F7E8); /*0x577c76*/
+  ((FogOfWar *)&DataGlobal_87F7E8)->Render(); /*0x577c76*/
   return (*((int (**)(TeamClass *, int))this->AbstractClass + 14))(this, 2); /*0x577c84*/
 
 }
@@ -199,7 +199,7 @@ int TeamClass::DeployUnit(int a2, int a3)
       if ( *(unsigned int *)&TeamTypeClass_Array - v6 >= ParasiteClass_field_34 ) /*0x62a2b8*/
       {
 LABEL_12:
-        v9 = (int *)(Object::CalculateObjectPlacementPosition((Object *)this, v18)); /*0x62a2ec*/
+        v9 = (int *)(((Object *)this)->CalculateObjectPlacementPosition(v18)); /*0x62a2ec*/
         v17[0] = *v9; /*0x62a303*/
         v10 = v9[1]; /*0x62a307*/
         v17[1] = v10; /*0x62a30a*/
@@ -222,7 +222,7 @@ LABEL_12:
         {
           --dword_A8E7AC; /*0x62a379*/
           v13 = (int)(this->creationFrame); /*0x62a37f*/
-          if ( *(unsigned char *)(v13 + 1074) && (unsigned __int8)House::IsHumanPlayer(*(House **)(v13 + 540)) ) /*0x62a390*/
+          if ( *(unsigned char *)(v13 + 1074) && (unsigned __int8)(*(House **)(v13 + 540))->IsHumanPlayer() ) /*0x62a390*/
           {
             *(unsigned char *)(this->creationFrame + 1074) = 0; /*0x62a39c*/
             (*(void (**)(int))(*(unsigned int *)this->creationFrame + 332))(this->creationFrame); /*0x62a3a7*/
@@ -230,7 +230,7 @@ LABEL_12:
           v14 = (int)(this->creationFrame); /*0x62a3ad*/
           v15 = v14->previousTeam; /*0x62a3b0*/
           if ( v15 ) /*0x62a3b8*/
-            TeamClass::AddMember(v15, v14, 0); /*0x62a3bc*/
+            (v15)->AddMember(v14, 0); /*0x62a3bc*/
           if ( !(*(unsigned __int8 (**)(int))(*(unsigned int *)this->creationFrame + 1196))(this->creationFrame) ) /*0x62a3c6*/
           {
             TechnoClass::SetFocus((TechnoClass *)this->creationFrame, 0); /*0x62a3d4*/
@@ -363,7 +363,7 @@ LABEL_9:
           if ( !LOBYTE(aP1->?) ) /*0x63414b*/
           {
             LOBYTE(aP1->?) = 1; /*0x63415a*/
-            VectorClass::Append((VectorClass *)&g_ScriptConfig, &aP1); /*0x63415e*/
+            ((VectorClass *)&g_ScriptConfig)->Append(&aP1); /*0x63415e*/
           }
         }
       }
@@ -384,7 +384,7 @@ LABEL_9:
     __3_YAXPAX_Z(Block); /*0x6341b1*/
     if ( !aP1->? && aP1 ) /*0x6341c6*/
     {
-      FactoryClass::ClearObjects((FactoryClass *)aP1); /*0x6341ce*/
+      ((FactoryClass *)aP1)->ClearObjects(); /*0x6341ce*/
       aP1 = &aP1->AbstractClass; /*0x6341e3*/
       v15 = (*(int (**)(char *, unsigned int **))(*(unsigned int *)&g_ScriptConfig + 16))( /*0x6341e7*/
               &g_ScriptConfig,
@@ -474,7 +474,7 @@ int TeamClass::FindByMemberType(int a2)
           {
             owner = (gamemd::HouseClass *)(v5->owner); /*0x635acb*/
             relatedTagsCount = (void *)owner->relatedTagsCount; /*0x635acd*/
-            if ( (unsigned __int8)House::IsHumanPlayer((House *)owner) && dword_A83D4C ) /*0x635ae0*/
+            if ( (unsigned __int8)((House *)owner)->IsHumanPlayer() && dword_A83D4C ) /*0x635ae0*/
               relatedTagsCount = dword_A83D4C->relatedTagsCount; /*0x635ae2*/
             v14 = *((unsigned int *)stru_A80220.? + (unsigned int)relatedTagsCount) + 22265; /*0x635af4*/
             LOWORD(v22[0].Color_field_00) = *(unsigned short *)v14; /*0x635afd*/
@@ -494,7 +494,7 @@ int TeamClass::FindByMemberType(int a2)
         return -1; /*0x635b52*/
       v17 = (gamemd::HouseClass *)(v5->owner); /*0x635b61*/
       Object_field_0x30 = (void *)v17->relatedTagsCount; /*0x635b67*/
-      if ( (unsigned __int8)House::IsHumanPlayer((House *)v17) ) /*0x635b6a*/
+      if ( (unsigned __int8)((House *)v17)->IsHumanPlayer() ) /*0x635b6a*/
       {
         if ( dword_A83D4C ) /*0x635b7a*/
           Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x635b7c*/
@@ -557,7 +557,7 @@ int TeamClass::GetMember(void *a1, void *a2)
           {
             owner = (gamemd::HouseClass *)(v4->owner); /*0x635c71*/
             relatedTagsCount = (void *)owner->relatedTagsCount; /*0x635c73*/
-            if ( (unsigned __int8)House::IsHumanPlayer((House *)owner) && dword_A83D4C ) /*0x635c86*/
+            if ( (unsigned __int8)((House *)owner)->IsHumanPlayer() && dword_A83D4C ) /*0x635c86*/
               relatedTagsCount = dword_A83D4C->relatedTagsCount; /*0x635c88*/
             v9 = *((unsigned int *)stru_A80220.? + (unsigned int)relatedTagsCount) + 22265; /*0x635c9b*/
             LOWORD(v15.Color_field_00) = *(unsigned short *)v9; /*0x635ca4*/
@@ -576,7 +576,7 @@ int TeamClass::GetMember(void *a1, void *a2)
         return -1; /*0x635c5a*/
       v12 = (gamemd::HouseClass *)(v4->owner); /*0x635cf7*/
       Object_field_0x30 = (void *)v12->relatedTagsCount; /*0x635cfd*/
-      if ( (unsigned __int8)House::IsHumanPlayer((House *)v12) ) /*0x635d00*/
+      if ( (unsigned __int8)((House *)v12)->IsHumanPlayer() ) /*0x635d00*/
       {
         if ( dword_A83D4C ) /*0x635d10*/
           Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x635d12*/
@@ -675,12 +675,12 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       __3_YAXPAX_Z(Block); /*0x6361e2*/
       if ( !*(unsigned int *)(v4 + 16) && v4 ) /*0x6361f3*/
       {
-        FactoryClass::ClearObjects((FactoryClass *)v4); /*0x6361f7*/
+        ((FactoryClass *)v4)->ClearObjects(); /*0x6361f7*/
         Team_Remove((ObjectClass *)v4); /*0x6361fe*/
         *(unsigned int *)(v4 + 32) = &vt_VectorClass; /*0x636206*/
-        VectorClass::Cleanup2(v4 + 32); /*0x63620c*/
+        (v4 + 32)->Cleanup2(); /*0x63620c*/
         *(unsigned int *)v4 = &vt_VectorClass; /*0x636213*/
-        VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v4); /*0x636219*/
+        ((_VectorClass_PAVPlanningMemberClass *)v4)->Remove(); /*0x636219*/
         __3_YAXPAX_Z((void *)v4); /*0x63621f*/
       }
     }
@@ -691,7 +691,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
     vtable0 = this->AbstractClass; /*0x63624c*/
     v11 = vtable0[135]; /*0x636250*/
     Object_field_0x30 = *(unsigned int *)(v11 + 48); /*0x636256*/
-    if ( (unsigned __int8)House::IsHumanPlayer((House *)v11) && dword_A83D4C ) /*0x636269*/
+    if ( (unsigned __int8)((House *)v11)->IsHumanPlayer() && dword_A83D4C ) /*0x636269*/
       Object_field_0x30 = (unsigned int)dword_A83D4C->relatedTagsCount; /*0x63626b*/
     if ( Object_field_0x30 < 0x18 ) /*0x636270*/
       *(unsigned int *)&stru_AC4B30.__pad_48[4 * Object_field_0x30 + 12] = (*(unsigned int *)&stru_AC4B30.__pad_48[4 * Object_field_0x30 + 12] /*0x63628a*/
@@ -796,7 +796,7 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
         v13 += 108; /*0x63683e*/
         v31 = *(unsigned short *)v13; /*0x636847*/
         v32 = v13[2]; /*0x63684e*/
-        WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v29, aP1); /*0x63684f*/
+        WaypointCoords = ((ScriptAction *)v29)->GetWaypointCoords(aP1); /*0x63684f*/
         *(unsigned int *)&v30[7] = *(unsigned int *)WaypointCoords; /*0x636858*/
         v30[11] = WaypointCoords->vtable2; /*0x63685f*/
         v15 = operator new(0x10u); /*0x636863*/
@@ -927,7 +927,7 @@ LABEL_13:
         v11 += 108; /*0x636a13*/
         v30 = *(unsigned short *)v11; /*0x636a15*/
         v31 = v11[2]; /*0x636a1c*/
-        WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v28, a2); /*0x636a1d*/
+        WaypointCoords = ((ScriptAction *)v28)->GetWaypointCoords(a2); /*0x636a1d*/
         *(unsigned int *)&v29[7] = *(unsigned int *)WaypointCoords; /*0x636a26*/
         v29[11] = WaypointCoords->vtable2; /*0x636a2d*/
         v13 = __2_YAPAXI_Z(0x10u); /*0x636a31*/

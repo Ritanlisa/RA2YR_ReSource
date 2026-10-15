@@ -46,13 +46,13 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
   this->vtable2 = 0; /*0x4c4f10*/
   sscanf(v9, "%d,%s", &Buffer, &v10); /*0x4c4f17*/
   *(unsigned int *)this->vtable1 = (unsigned int)(Buffer); /*0x4c4f27*/
-  ExitCellByName = Factory::FindExitCellByName((Factory *)&v10); /*0x4c4f29*/
+  ExitCellByName = ((Factory *)&v10)->FindExitCellByName(); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
-    Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)&v10); /*0x4c4f4c*/
+    Index = ((BuildingTypeClass *)&v10)->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = (int)(TypeClass::FindByName(&v10)); /*0x4c4f6f*/
+      v8 = (int)((&v10)->FindByName()); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
         this->vtable2 = (void *)(*((unsigned int *)dword_A8B21C + v8)); /*0x4c4f82*/
       return (unsigned int *)(this->vtable1); /*0x4c4f85*/
@@ -202,7 +202,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
     }
     while ( v3 < dword_A8E8E0 ); /*0x6e885d*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x6e8861*/
+  ((AbstractTypeClass *)Block)->Dtor(); /*0x6e8861*/
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
     operator delete((void *)(Block)); /*0x6e886e*/
   return (void **)Block; /*0x6e8878*/
@@ -246,7 +246,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
            v8.q028,
            128) > 0 )
     {
-      v4 = TaskForceClass::ParseUnitCountAndType(&v8, v8.q028); /*0x6e8491*/
+      v4 = (&v8)->ParseUnitCountAndType(v8.q028); /*0x6e8491*/
       v5 = this->Coord_9C; /*0x6e8496*/
       *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
       *(&this->vtable3 * v5 + 42) = v4->vtable2; /*0x6e84a8*/

@@ -106,7 +106,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
       ++v3; /*0x691ffd*/
     }
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)a1); /*0x692011*/
+  ((AbstractTypeClass *)a1)->Dtor(); /*0x692011*/
   if ( (a1 & 1) != 0 ) /*0x69201b*/
     __3_YAXPAX_Z(a1); /*0x69201e*/
   return &a1->AbstractClass; /*0x692028*/
@@ -146,7 +146,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
     {
       v10 = v7++; /*0x6e83cd*/
       sprintf(Buffer, "%d", v10); /*0x6e83d5*/
-      String::Trim(Buffer); /*0x6e83e1*/
+      (Buffer)->Trim(); /*0x6e83e1*/
       INIClass::SetString(a1->__pad_0, g_INI_Key_TaskForces, Buffer, (char *)(v9 + 36)); /*0x6e83f6*/
       (*(void (**)(int, INIClass *))(*(unsigned int *)v9 + 104))(v9, a1); /*0x6e8400*/
     }

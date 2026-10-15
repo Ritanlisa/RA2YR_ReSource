@@ -30,7 +30,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void 
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
 
-  AbstractTypeClass::Constructor((char *)((int)this), aP1); /*0x6e5b6c*/
+  ((char *)((int)this))->Constructor(aP1); /*0x6e5b6c*/
   this->u32_98 = -1; /*0x6e5b78*/
   this->Coord_9C = 0; /*0x6e5b82*/
   this->q0A0 = 0; /*0x6e5b88*/
@@ -157,7 +157,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
-  return AbstractTypeClass::Dtor(a1); /*0x6e5dc9*/
+  return (a1)->Dtor(); /*0x6e5dc9*/
 }
 }
 // 0x6E5E50
@@ -296,7 +296,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(char *Source)
   LABEL_6:
     v3 = (TriggerTypeClass *)operator new(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
-      return TriggerTypeClass::Construct((char *)(v3), Source); /*0x727b11*/
+      return ((char *)(v3))->Construct(Source); /*0x727b11*/
     return 0; /*0x727b05*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.targetLaserTimer[0] + 4 * v2) + 36), Source) ) /*0x727aea*/
@@ -332,7 +332,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x6e6426*/
     {
-      AbstractTypeClass::Init((int)aP0,(void *)((int)&aP1)); /*0x6e642f*/
+      ((int)aP0)->Init((void *)((int)&aP1)); /*0x6e642f*/
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6434) */
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e643a) */
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6441) */

@@ -591,7 +591,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
           v4->u32_E00 = 0; /*0x45eb26*/
           v4->qE04 = 0; /*0x45eb2c*/
         }
-        BuildingTypeClass::LoadAnimations(v4, v1); /*0x45eb35*/
+        (v4)->LoadAnimations(v1); /*0x45eb35*/
       }
       ++v3; /*0x45eb3f*/
     }
@@ -656,7 +656,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     v3 = (int)(SearchMIXFile(Source, 0)); /*0x45f28d*/
     if ( !v3 ) /*0x45f294*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f29a*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f29a*/
       v3 = (int)(SearchMIXFile(Source, 0)); /*0x45f2a5*/
     }
     this->v3 = v3; /*0x45f2ac*/
@@ -702,7 +702,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->DeployingAnim_2 = (gamemd::SHPStruct *)(FileSHP); /*0x45f3a7*/
     if ( !FileSHP ) /*0x45f3ad*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f3b3*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f3b3*/
       if ( *v7 && this->DeployingAnim_2 ) /*0x45f3bc*/
       {
         operator delete((void *)(this->DeployingAnim_2)); /*0x45f3c7*/
@@ -734,7 +734,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->RoofDeployingAnim = (gamemd::SHPStruct *)(v10); /*0x45f47f*/
     if ( !v10 ) /*0x45f485*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f48b*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f48b*/
       if ( *v9 && this->RoofDeployingAnim ) /*0x45f494*/
       {
         operator delete((void *)(this->RoofDeployingAnim)); /*0x45f49f*/
@@ -759,7 +759,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->DoorAnim = v11; /*0x45f52c*/
     if ( !v11 ) /*0x45f532*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f538*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f538*/
       this->DoorAnim = SearchMIXFile(Source, 0); /*0x45f548*/
     }
   }
@@ -785,7 +785,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->UnderDoorAnim_d = v13; /*0x45f5df*/
     if ( !v13 ) /*0x45f5e5*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f5eb*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f5eb*/
       if ( *v12 && this->UnderDoorAnim_d ) /*0x45f5f4*/
       {
         operator delete((void *)(this->UnderDoorAnim_d)); /*0x45f5ff*/
@@ -817,7 +817,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->Rubble_d = v15; /*0x45f6b3*/
     if ( !v15 ) /*0x45f6b9*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f6bf*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f6bf*/
       if ( *v14 && this->Rubble_d ) /*0x45f6c8*/
       {
         operator delete((void *)(this->Rubble_d)); /*0x45f6d3*/
@@ -849,7 +849,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->UnderRoofDoorAnim = v17; /*0x45f78b*/
     if ( !v17 ) /*0x45f791*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f797*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f797*/
       if ( *v16 && this->UnderRoofDoorAnim ) /*0x45f7a0*/
       {
         operator delete((void *)(this->UnderRoofDoorAnim)); /*0x45f7ab*/
@@ -874,7 +874,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->SpecialZOverlay = v18; /*0x45f834*/
     if ( !v18 ) /*0x45f83a*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f840*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f840*/
       this->SpecialZOverlay = SearchMIXFile(Source, 0); /*0x45f850*/
     }
   }
@@ -900,7 +900,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->BibShape = v20; /*0x45f8e7*/
     if ( !v20 ) /*0x45f8ed*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f8f3*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f8f3*/
       if ( *v19 && this->BibShape ) /*0x45f8fc*/
       {
         operator delete((void *)(this->BibShape)); /*0x45f907*/
@@ -934,13 +934,13 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->Image_d = v22; /*0x45fa12*/
     if ( !v22 ) /*0x45fa18*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45fa1e*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45fa1e*/
       strncpy(&this->TheaterSpecificID, Source, 0x13u); /*0x45fa2b*/
       this->Image_d = SearchMIXFile(Source, 0); /*0x45fa3e*/
     }
     if ( !this->Image_d ) /*0x45fa44*/
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45fa50*/
+      ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45fa50*/
       strncpy(&this->TheaterSpecificID, Source, 0x13u); /*0x45fa5d*/
       this->Image_d = SearchMIXFile(Source, 0); /*0x45fa70*/
     }
@@ -1001,7 +1001,7 @@ void BuildingTypeClass::LoadVoxel()
         v3 = (void *)this->BarrelVoxel_d; /*0x45fb55*/
         if ( v3 ) /*0x45fb5d*/
         {
-          WaveClass::Destroy((WaveClass *)this->u32_D2E); /*0x45fb61*/
+          ((WaveClass *)this->u32_D2E)->Destroy(); /*0x45fb61*/
           __3_YAXPAX_Z(v3); /*0x45fb67*/
         }
         v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fb71*/

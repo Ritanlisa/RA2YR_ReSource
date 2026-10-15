@@ -30,7 +30,7 @@ int GaugeClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void *a6,
 namespace gamemd {
 GaugeClass * GaugeClass::QueryInterface(unsigned int * Block, char a2)
 {
-  GadgetClass::Dtor((GadgetClass *)Block); /*0x4e30d3*/
+  ((GadgetClass *)Block)->Dtor(); /*0x4e30d3*/
   if ( (a2 & 1) != 0 ) /*0x4e30dd*/
     operator delete((void *)(Block)); /*0x4e30e0*/
   return Block->tail_0; /*0x4e30ea*/

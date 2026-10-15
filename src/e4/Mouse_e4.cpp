@@ -245,7 +245,7 @@ BOOL Mouse::IsButtonDown(unsigned char a1)
   v1 = a1; /*0x54f5c5*/
   if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 ) /*0x54f5e2*/
     v1 = 2 - (a1 != 1); /*0x54f5eb*/
-  return Mouse::GetKeyState(v1) != 0; /*0x54f600*/
+  return (v1)->GetKeyState() != 0; /*0x54f600*/
 }
 } // namespace gamemd
 

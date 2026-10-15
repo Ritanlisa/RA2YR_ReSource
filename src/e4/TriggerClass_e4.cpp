@@ -134,7 +134,7 @@ int TriggerClass::RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP
   {
     if ( (*(unsigned int *)(aP1 + 64) & (1 << v7)) != 0 /*0x726540*/
       || (v11 = aP1,
-          Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(aP1 + 36) + 164) + 180)),
+          Owner = (*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(aP1 + 36) + 164) + 180))->FindOwner(),
           TEventClass::Execute((TEventClass *)v8, aP1, Owner, aP1_2, (int *)(aP1 + 52), (int)&aP1_3, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
@@ -154,7 +154,7 @@ int TriggerClass::RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP
   {
 LABEL_16:
     if ( aP1 ) /*0x7265a0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)aP1); /*0x7265a4*/
+      ((BuildingClass *)aP1)->ProcessUpgradeEffects(); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
 

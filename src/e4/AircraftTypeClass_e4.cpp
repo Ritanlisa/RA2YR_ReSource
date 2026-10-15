@@ -64,7 +64,7 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   *(unsigned int *)(aP1 + 4) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c906*/
   aP1->VtableStub_8 = &vt_AircraftTypeClass; /*0x41c90c*/
   *(unsigned int *)(aP1 + 12) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c913*/
-  AbstractClass::GenerateUniqueID(aP1 + 4); /*0x41c91a*/
+  (aP1 + 4)->GenerateUniqueID(); /*0x41c91a*/
   v3 = dword_A8B228; /*0x41c91f*/
   if ( dword_A8B228 < dword_A8B220 /*0x41c95d*/
     || (byte_A8B225 || !dword_A8B220)
@@ -174,7 +174,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
          Destination,
          128) )
   {
-    v10 = AnimTypeClass::FindOrCreate(Destination); /*0x41cd26*/
+    v10 = (Destination)->FindOrCreate(); /*0x41cd26*/
   }
   else
   {
@@ -316,8 +316,8 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
       /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce58) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_E00); /*0x41ce6b*/
-    VoxelAnimType::LoadAnim(aP0->TechnoTypeClass); /*0x41ce72*/
-    ObjectTypeClass::Load2DArt(aP0->TechnoTypeClass); /*0x41ce79*/
+    (aP0->TechnoTypeClass)->LoadAnim(); /*0x41ce72*/
+    (aP0->TechnoTypeClass)->Load2DArt(); /*0x41ce79*/
     return 0; /*0x41ce7e*/
   }
   return result; /*0x41ce80*/

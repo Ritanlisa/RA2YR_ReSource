@@ -216,7 +216,7 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   MPCooperative_field_0x40 = (int *)this->u32_40; /*0x5c17e7*/
   if ( MPCooperative_field_0x40 ) /*0x5c17ec*/
   {
-    if ( (unsigned __int8)Movie::GetState(MPCooperative_field_0x40, &v11) ) /*0x5c17f3*/
+    if ( (unsigned __int8)(MPCooperative_field_0x40)->GetState(&v11) ) /*0x5c17f3*/
     {
       v7 = v11; /*0x5c180c*/
     }
@@ -247,7 +247,7 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   v9 = *(unsigned int *)(*(unsigned int *)(v4 + 20) + 4 * v7); /*0x5c1859*/
   if ( *(int *)(v9 + 16) > 0 ) /*0x5c185f*/
   {
-    while ( SideClass::FindByName(*(SideClass **)(*(unsigned int *)(v9 + 4) + 4 * v8)) != a2 ) /*0x5c186e*/
+    while ( (*(SideClass **)(*(unsigned int *)(v9 + 4) + 4 * v8))->FindByName() != a2 ) /*0x5c186e*/
     {
       ++v8; /*0x5c1878*/
       v9 = *(unsigned int *)(*(unsigned int *)(v12 + 20) + 4 * v11); /*0x5c187c*/
@@ -2925,19 +2925,13 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
           WideString::AssignFromPtr((WideString *)&v30.u32_8, ecx0); /*0x5cda2b*/
           ((WideString *)((WideString *)&v30.u32_8))->Erase(0, v3); /*0x5cda37*/
           v18 = ((WideString *)((WideString *)&v35.u32_8))->Assign(asc_830174); /*0x5cda4f*/
-          v19 = WideString::ConcatAlloc( /*0x5cda5e*/
-                  (WideString *)&v31,
-                  (wchar_t **)&v35.q004,
-                  (const wchar_t **)v18);
-          v20 = WideString::ConcatAlloc( /*0x5cda65*/
-                  (WideString *)v19,
-                  (wchar_t **)&v35,
-                  (const wchar_t **)&v30.u32_8);
+          v19 = (/*0x5cda5e*/ (WideString *)&v31)->ConcatAlloc((wchar_t **)&v35.q004, (const wchar_t **)v18);
+          v20 = (/*0x5cda65*/ (WideString *)v19)->ConcatAlloc((wchar_t **)&v35, (const wchar_t **)&v30.u32_8);
           WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v20); /*0x5cda6d*/
-          DeleteAndZero::Alt(&v35); /*0x5cda76*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.q004); /*0x5cda7f*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.u32_8); /*0x5cda88*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v30.u32_8); /*0x5cda91*/
+          (&v35)->Alt(); /*0x5cda76*/
+          ((DeleteAndZero *)&v35.q004)->Alt(); /*0x5cda7f*/
+          ((DeleteAndZero *)&v35.u32_8)->Alt(); /*0x5cda88*/
+          ((DeleteAndZero *)&v30.u32_8)->Alt(); /*0x5cda91*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v31; /*0x5cda96*/
         }
         else
@@ -2947,15 +2941,12 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
           WideString::AssignFromPtr((WideString *)&v30, ecx0); /*0x5cdb06*/
           ((WideString *)((WideString *)&v30))->Erase(0, v3); /*0x5cdb12*/
           v23 = ((WideString *)((WideString *)&v34.u32_8))->Assign(asc_830174); /*0x5cdb2a*/
-          v24 = WideString::ConcatAlloc( /*0x5cdb39*/
-                  (WideString *)&v30.q004,
-                  (wchar_t **)&v34.q004,
-                  (const wchar_t **)v23);
-          v25 = WideString::ConcatAlloc((WideString *)v24, (wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
+          v24 = (/*0x5cdb39*/ (WideString *)&v30.q004)->ConcatAlloc((wchar_t **)&v34.q004, (const wchar_t **)v23);
+          v25 = ((WideString *)v24)->ConcatAlloc((wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
           WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v25); /*0x5cdb48*/
-          DeleteAndZero::Alt(&v34); /*0x5cdb51*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.q004); /*0x5cdb5a*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.u32_8); /*0x5cdb63*/
+          (&v34)->Alt(); /*0x5cdb51*/
+          ((DeleteAndZero *)&v34.q004)->Alt(); /*0x5cdb5a*/
+          ((DeleteAndZero *)&v34.u32_8)->Alt(); /*0x5cdb63*/
           DeleteAndZero::Alt(&v30); /*0x5cdb6c*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v30.q004; /*0x5cdb71*/
         }

@@ -97,7 +97,7 @@ INT_PTR sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
       case 0x497u: /*0x792d68*/
         SendMessageA(hWnd, 0x4A9u, 0, 1); /*0x792d8d*/
         SetTimer(hWnd, 0x45u, uElapse, 0); /*0x792d9e*/
-        HashTable::LookupAndMark(hWnd); /*0x792da6*/
+        (hWnd)->LookupAndMark(); /*0x792da6*/
         DlgItem = GetDlgItem(hWnd, 1961); /*0x792dbf*/
         PostMessageA(DlgItem, 0x4D5u, 0, 0); /*0x792dc9*/
         PostMessageA(DlgItem, 0x4D3u, 0, 0); /*0x792dd5*/
@@ -114,13 +114,13 @@ INT_PTR sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
       return 0; /*0x792d2d*/
     case 0xFu: /*0x792d16*/
       ((Dialog *)(hWnd))->DrawBackground(); /*0x792d48*/
-      Dialog::StopBink(hWnd); /*0x792d4f*/
+      (hWnd)->StopBink(); /*0x792d4f*/
       ValidateRect(hWnd, 0); /*0x792d57*/
       return 0; /*0x792d60*/
     case 0x14u: /*0x792d16*/
       goto LABEL_6;
     case 0x2Bu: /*0x792d16*/
-      Dialog::Resize(a4); /*0x792d34*/
+      (a4)->Resize(); /*0x792d34*/
   LABEL_6:
       result = 1; /*0x792d39*/
       break; /*0x792d3f*/
@@ -169,7 +169,7 @@ int sub_793280(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
       SendMessageA(v9, 0xF1u, 0, 0); /*0x7933ed*/
     }
     SendMessageA(hWnd, 0x4A9u, 0, 1); /*0x793403*/
-    HashTable::LookupAndMark(hWnd); /*0x793407*/
+    (hWnd)->LookupAndMark(); /*0x793407*/
     ShowWindow(hWnd, 5); /*0x79340f*/
     return 0; /*0x793418*/
   }
@@ -180,13 +180,13 @@ int sub_793280(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
       switch ( a2 ) /*0x793297*/
       {
         case 0xFu: /*0x793297*/
-          Dialog::DrawBackground(hWnd); /*0x7932c1*/
+          (hWnd)->DrawBackground(); /*0x7932c1*/
           ValidateRect(hWnd, 0); /*0x7932c9*/
           return 0; /*0x7932d4*/
         case 0x14u: /*0x793297*/
           return 1; /*0x7932b8*/
         case 0x2Bu: /*0x793297*/
-          Dialog::Resize(a4); /*0x7932ab*/
+          (a4)->Resize(); /*0x7932ab*/
           return 1; /*0x7932ab*/
       }
       return 0; /*0x7932a1*/
@@ -462,7 +462,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   TimerGetTicks(); /*0x793d4b*/
   v56 = 1; /*0x793d5f*/
   v75[0] = 0; /*0x793d64*/
-  Waypoint::InitInvalid(&v91); /*0x793d68*/
+  (&v91)->InitInvalid(); /*0x793d68*/
   v66 = 0; /*0x793d74*/
   v57 = 0; /*0x793d7f*/
   Debug::Log(); /*0x793d84*/
@@ -711,14 +711,14 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         v42 = v57; /*0x794403*/
         if ( !v57 ) /*0x794409*/
         {
-          Speed = Connection::GetSpeed(&unk_A8E9C0); /*0x794414*/
+          Speed = (&unk_A8E9C0)->GetSpeed(); /*0x794414*/
           v44 = v66; /*0x794419*/
           if ( v66 >= Speed ) /*0x79441f*/
           {
             v44 = 0; /*0x794421*/
             v66 = 0; /*0x794423*/
           }
-          if ( !Network::SendPacketThunk((int)&unk_A8E9C0, v44, (int)&v96, (int)v75, (int)&v91, (int)&v69 + 2, 0) /*0x79445d*/
+          if ( !((int)&unk_A8E9C0)->SendPacketThunk(v44, (int)&v96, (int)v75, (int)&v91, (int)&v69 + 2, 0) /*0x79445d*/
             || (*(((unsigned short *)&(v69)) + 1)) != 0xAA04 )
           {
             goto LABEL_89; /*0x79445d*/
@@ -743,7 +743,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
                 (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, v92); /*0x794565*/
                 if ( v62 >= 0 && v62 < dword_A8DA84 ) /*0x794576*/
                 {
-                  v46 = (HWND)Dialog::FindByHandle((Dialog *)0x130); /*0x79457d*/
+                  v46 = (HWND)((Dialog *)0x130)->FindByHandle(); /*0x79457d*/
                   v47 = v46; /*0x794582*/
                   if ( v46 ) /*0x794586*/
                   {
@@ -767,7 +767,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
               }
             }
           }
-          Network::receiveData((int)&unk_A8E9C0, v66); /*0x79462a*/
+          ((int)&unk_A8E9C0)->receiveData(v66); /*0x79462a*/
           if ( !v42 ) /*0x794631*/
             goto LABEL_89; /*0x794631*/
         }
@@ -873,7 +873,7 @@ char NetworkLobby_WaitForPlayers()
   ((SessionClass *)((int)dword_A8B238))->SetupNetwork(); /*0x794804*/
   if ( dword_A8DA84 > 0 ) /*0x79480f*/
   {
-    v1 = (HWND)Dialog::FindByHandle((void *)0x130); /*0x79481b*/
+    v1 = (HWND)((void *)0x130)->FindByHandle(); /*0x79481b*/
     if ( v1 ) /*0x79481f*/
     {
       DlgItem = GetDlgItem(v1, dword_84A1F0[0]); /*0x794828*/

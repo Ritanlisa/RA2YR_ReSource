@@ -90,7 +90,7 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
   int v5; // eax
   AnimTypeClass **v6; // ecx
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x42753a*/
+  ((int *)this)->ConstructFull(aP1); /*0x42753a*/
   this->MiddleFrameIndex = -1; /*0x427544*/
   this->MiddleFrameWidth = 0; /*0x42754a*/
   this->MiddleFrameHeight = 0; /*0x427550*/
@@ -243,7 +243,7 @@ void* AnimTypeClass::GetWarhead(int a2)
   {
     if ( this->Theater_d ) /*0x427b67*/
     {
-      LOBYTE(v3) = ObjectTypeClass::Load2DArt((char *)this); /*0x427b71*/
+      LOBYTE(v3) = ((char *)this)->Load2DArt(); /*0x427b71*/
     }
     else
     {
@@ -263,7 +263,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       this->Image = v3; /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
-        ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x427bfc*/
+        ((ObjectTypeClass *)Buffer)->SetRTTI71(); /*0x427bfc*/
         v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427c07*/
         this->Image = v3; /*0x427c0c*/
       }
@@ -393,8 +393,8 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
       a1->? = &vt_AnimTypeClass; /*0x42883e*/
       a1->? = &vt_AnimTypeClass; /*0x428845*/
     }
-    VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
-    ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
+    ((char *)a1)->LoadAnim(); /*0x42884e*/
+    ((char *)a1)->Load2DArt(); /*0x428855*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Next); /*0x428866*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->ExpireAnim); /*0x428877*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TrailerAnim); /*0x428888*/
@@ -544,7 +544,7 @@ int AnimTypeClass::GetDamage()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
     }
     CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
-    v4 = (SHPStruct *)CCFileClass::ReadEntireFile(&v7); /*0x428d0d*/
+    v4 = (SHPStruct *)(&v7)->ReadEntireFile(); /*0x428d0d*/
     this->Image = v4; /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
     {
@@ -552,9 +552,9 @@ int AnimTypeClass::GetDamage()
     }
     else
     {
-      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x428d2c*/
+      ((ObjectTypeClass *)Buffer)->SetRTTI71(); /*0x428d2c*/
       CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
-      v5 = (SHPStruct *)CCFileClass::ReadEntireFile(&v10); /*0x428d46*/
+      v5 = (SHPStruct *)(&v10)->ReadEntireFile(); /*0x428d46*/
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         this->ImageAllocated = 1; /*0x428d55*/
@@ -562,7 +562,7 @@ int AnimTypeClass::GetDamage()
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
       *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
+      ((BufferIOFileClass *)&v10)->Dtor(); /*0x428d87*/
     }
     (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = this->Image; /*0x428da2*/
@@ -570,7 +570,7 @@ int AnimTypeClass::GetDamage()
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x428dcd*/
+    ((BufferIOFileClass *)&v7)->Dtor(); /*0x428dcd*/
     return (int)Image; /*0x428dd2*/
   }
   return result; /*0x428dd4*/

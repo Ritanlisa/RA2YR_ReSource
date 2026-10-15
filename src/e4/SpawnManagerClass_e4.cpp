@@ -36,8 +36,8 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   int v20; // [esp+14h] [ebp-8h]
   int i; // [esp+20h] [ebp+4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6b6c99*/
-  SpawnControlVector::Constructor(0, 0); /*0x6b6ca7*/
+  ((AbstractClass *)this)->Constructor(); /*0x6b6c99*/
+  (0)->Constructor(0); /*0x6b6ca7*/
   this->spawns = (unsigned int)(&vt_DynamicVectorClass); /*0x6b6cb0*/
   this->spawnVectorCapacity = 10; /*0x6b6cb6*/
   this->spawnVectorCount = 0; /*0x6b6cbd*/
@@ -125,7 +125,7 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   int v2; // eax
   int v4; // [esp+10h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)a1); /*0x6b6ea8*/
+  ((AbstractClass *)a1)->Constructor(); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)a1->spawns, 0, 0); /*0x6b6eb6*/
   a1->spawns[0] = (int)&vt_DynamicVectorClass; /*0x6b6ebb*/
   *(unsigned int *)&a1->__pad_48[4] = 10; /*0x6b6ec1*/
@@ -182,7 +182,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7022) */
   /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7029) */
   if ( byte_A8E9A0 ) /*0x6b7037*/
-    TaskManager::Update(this); /*0x6b7039*/
+    (this)->Update(); /*0x6b7039*/
   for ( i = this->spawnVectorCount - 1; i >= 0; --i ) /*0x6b7042*/
   {
     if ( *(unsigned int *)(this->spawnVectorCount + 4 * i) ) /*0x6b7047*/
@@ -211,7 +211,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   }
   this->u32_45 = 0; /*0x6b70e3*/
   this->spawnVectorCapacity = 0; /*0x6b70e7*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6b70ee*/
+  ((AbstractClass *)this)->DTOR(); /*0x6b70ee*/
 
 }
 } // namespace ra2
@@ -305,7 +305,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   TechnoClass *owner; // esi
   int v14; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6b7de9*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x6b7de9*/
   Power::TimerProcess(this->SpawnManagerClass_field_70); /*0x6b7df4*/
   SpawnManagerClass_field_6C = (int)(this->SpawnManagerClass_field_6C); /*0x6b7df9*/
   if ( SpawnManagerClass_field_6C ) /*0x6b7dfe*/
@@ -387,7 +387,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
     if ( v2 ) /*0x6b7f32*/
     {
       AbstractClass::InitVtables((AbstractClass *)v2, (int)&aP1); /*0x6b7f3b*/
-      SpawnManagerClass::Constructor_6B83A0((SpawnManagerClass *)v2->spawns, 0, 0); /*0x6b7f45*/
+      ((SpawnManagerClass *)v2->spawns)->Constructor_6B83A0(0, 0); /*0x6b7f45*/
       *&v2->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       Timer::Start(&v2->SpawnManagerClass_field_5C, 0); /*0x6b7f5a*/

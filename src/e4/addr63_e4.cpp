@@ -606,7 +606,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
                     while ( v7 < (int)dword_A8DB44 ); /*0x630d4f*/
                   }
                   WindowLongA->q008 = 1; /*0x630d53*/
-                  PhoneEditor::PopulateList((HWND *)WindowLongA); /*0x630d57*/
+                  ((HWND *)WindowLongA)->PopulateList(); /*0x630d57*/
                   if ( dword_A8DABC == -1 ) /*0x630d63*/
                   {
                     v8 = GetDlgItem(*(HWND *)WindowLongA, 1509); /*0x630d71*/
@@ -690,7 +690,7 @@ AbstractClass * * E4Recv_631640::sub_631640()
         while ( v3 < (int)dword_A8DB44 ); /*0x6316a0*/
       }
       LOBYTE(this->M8) = 1; /*0x6316a4*/
-      PhoneEditor::PopulateList((PhoneEditor *)this); /*0x6316a8*/
+      ((PhoneEditor *)this)->PopulateList(); /*0x6316a8*/
       if ( dword_A8DABC == -1 ) /*0x6316b4*/
       {
         v4 = GetDlgItem((HWND)this->AbstractClass, 1509); /*0x6316be*/
@@ -773,7 +773,7 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
             if ( (uint16_t)a3 == 1503 && ((*(((unsigned short *)&(a3)) + 1)) == 1281 || (*(((unsigned short *)&(a3)) + 1)) == 512) ) /*0x63182b*/
             {
               SendMessageA(a4, 0x4B5u, 0x40u, (LPARAM)lParam); /*0x631844*/
-              String::Trim((char *)lParam); /*0x63184a*/
+              ((char *)lParam)->Trim(); /*0x63184a*/
               SendMessageA(a4, 0x4B4u, 0, (LPARAM)lParam); /*0x63185c*/
               return 0; /*0x63186a*/
             }
@@ -1183,7 +1183,7 @@ char ExecutePlanningQueue()
       if ( v17 && !v17->u32_1C ) /*0x6373ad*/
       {
         v17->u32_1C = 1; /*0x6373b8*/
-        VectorClass::Append((DynamicVectorClass *)&dword_AC4C98, &v33); /*0x6373c2*/
+        ((DynamicVectorClass *)&dword_AC4C98)->Append(&v33); /*0x6373c2*/
       }
       TeamClass::Cleanup(v4, v5); /*0x6373ca*/
   LABEL_34:
@@ -1204,7 +1204,7 @@ char ExecutePlanningQueue()
     do /*0x637438*/
     {
       v21 = *((unsigned int *)dword_AC4C9C + v20); /*0x637400*/
-      FactoryClass::ClearObjects((FactoryClass *)v21); /*0x637405*/
+      ((FactoryClass *)v21)->ClearObjects(); /*0x637405*/
       v22 = *(unsigned int *)(v21 + 16); /*0x63740a*/
       for ( i = 0; i < v22; ++i ) /*0x637411*/
         ScriptAction::PlaceObject(v21, *(unsigned int **)(*(unsigned int *)(v21 + 4) + 4 * i)); /*0x63741c*/
@@ -1316,7 +1316,7 @@ AbstractClass * * sub_637920()
     while ( 1 ) /*0x63793f*/
     {
       v3 = *(unsigned int *)(*(unsigned int *)&DataGlobal_AC4C9C + 4 * v2); /*0x63793f*/
-      FactoryClass::ClearObjects((FactoryClass *)v3); /*0x637944*/
+      ((FactoryClass *)v3)->ClearObjects(); /*0x637944*/
       v4 = *(unsigned int *)(v3 + 16); /*0x637949*/
       if ( v4 > 0 ) /*0x63794e*/
       {
@@ -1420,7 +1420,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
         && (*(unsigned int *)v36 == -1 || *(unsigned int *)v36 == v10->u32_18) )
       {
         v11 = (TeamClass *)Function::Method_6342D0(v10, 0); /*0x6381db*/
-        LeaderIndex = TeamClass::GetLeaderIndex(v11); /*0x6381e2*/
+        LeaderIndex = (v11)->GetLeaderIndex(); /*0x6381e2*/
         if ( v8 == -1 || v8 == LeaderIndex ) /*0x6381ee*/
           break; /*0x6381ee*/
       }
@@ -1494,7 +1494,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
       *(unsigned int *)v36 = (unsigned int)(ScriptAction::Constructor(v21, (int)v38)); /*0x63834b*/
     else
       *(unsigned int *)v36 = 0; /*0x638351*/
-    ScriptActionVector::PushBack((ScriptActionVector *)&DataGlobal_AC4C78, v36); /*0x638363*/
+    ((ScriptActionVector *)&DataGlobal_AC4C78)->PushBack(v36); /*0x638363*/
     BuildingClass::SetType(v14, *(int *)v36); /*0x63836f*/
     Type = *(ObjectClass **)v36; /*0x638374*/
   }
@@ -1586,7 +1586,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
     {
       v35 = 0; /*0x63853d*/
     }
-    VectorClass::Append((VectorClass *)&stru_AC4B30, &v35); /*0x63854f*/
+    ((VectorClass *)&stru_AC4B30)->Append(&v35); /*0x63854f*/
     v2 = v37; /*0x638554*/
     v14 = v38; /*0x638558*/
   }
@@ -1627,7 +1627,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
   }
   else
   {
-    ScriptAction::CreatePlacementAction(v35, v14, v2); /*0x63858e*/
+    (v35)->CreatePlacementAction(v14, v2); /*0x63858e*/
   }
   if ( v22 ) /*0x638595*/
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 472), 0x2000, 1.0, 0); /*0x6385ae*/
@@ -1679,7 +1679,7 @@ int FactoryClass_ClearProduction(unsigned int * a1, int a2)
               Block = v11; /*0x638763*/
               if ( v11 ) /*0x638767*/
               {
-                FactoryClass::FinishProduction((int *)v9->__pad_0, (int)v11); /*0x63876c*/
+                ((int *)v9->__pad_0)->FinishProduction((int)v11); /*0x63876c*/
                 operator delete((void *)(*((void **)Block + 1))); /*0x638779*/
                 FactoryClass::RemoveItemAt((FactoryClass *)v9, (int)&Block); /*0x638788*/
                 operator delete((void *)(Block)); /*0x638792*/
@@ -1701,7 +1701,7 @@ int FactoryClass_ClearProduction(unsigned int * a1, int a2)
                   Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x6387dd*/
               }
               DecFactoryClassCounter((unsigned int)Object_field_0x30); /*0x6387e2*/
-              VectorClass::EraseAt((VectorClass *)&DataGlobal_AC4C40, (int)&Block); /*0x6387f1*/
+              ((VectorClass *)&DataGlobal_AC4C40)->EraseAt((int)&Block); /*0x6387f1*/
             }
             (*(void (**)(int))(*(unsigned int *)(v6 + 4) + 12))(v6 + 4); /*0x6387fc*/
             v5 = v15; /*0x6387ff*/
@@ -2086,7 +2086,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   v34 = (int)v2; /*0x63982e*/
   v7 = (*(int (**)(int, int *))(v6 + 16))(Type + 4, &v34); /*0x639838*/
   v8 = (TeamClass *)BuildingClass::GetType(v4); /*0x63983f*/
-  TeamClass::UpdateBuildQueue(v8, a1, v7, v8->abstractFlags - v7); /*0x63984b*/
+  (v8)->UpdateBuildQueue(a1, v7, v8->abstractFlags - v7); /*0x63984b*/
   v32 = (ScriptAction *)-1; /*0x639855*/
   v34 = -1; /*0x639859*/
   v33 = 0; /*0x63985d*/
@@ -2113,16 +2113,16 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
           {
             vtable0 = (int)v8->vfptr; /*0x639902*/
             v32 = (ScriptAction *)*((unsigned int *)v8->vfptr2 + (unsigned int)v33); /*0x639903*/
-            v18 = (unsigned char *)ScriptAction::FindItemByValue(v32, vtable0)[1]; /*0x63990c*/
+            v18 = (unsigned char *)(v32)->FindItemByValue(vtable0)[1]; /*0x63990c*/
             memcpy(v39, v18, sizeof(v39)); /*0x639918*/
             v18 += 108; /*0x639918*/
             v40 = *(unsigned short *)v18; /*0x63991a*/
             v41 = v18[2]; /*0x63991c*/
             v19 = v37; /*0x63991d*/
-            WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v38, v37); /*0x639926*/
+            WaypointCoords = ((ScriptAction *)v38)->GetWaypointCoords(v37); /*0x639926*/
             *(unsigned int *)&v39[7] = *(unsigned int *)WaypointCoords; /*0x63992d*/
             v39[11] = WaypointCoords->vtable2; /*0x63993e*/
-            ScriptAction::CreatePlacementAction(v32, v19, v39); /*0x639942*/
+            (v32)->CreatePlacementAction(v19, v39); /*0x639942*/
             v33 = &v33->ScriptAction_1; /*0x63994e*/
           }
           while ( (int)v33 < v7 ); /*0x639952*/
@@ -2163,7 +2163,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   v11->u32_94 = v22; /*0x639995*/
   v11->q098 = 1; /*0x63999b*/
   if ( v2 ) /*0x6399a1*/
-    ScriptAction::FindSquadMember(v2); /*0x6399a5*/
+    (v2)->FindSquadMember(); /*0x6399a5*/
   (*((unsigned char *)&(v23))) = DataGlobal_AC4CD0; /*0x6399aa*/
   if ( !DataGlobal_AC4CD0 ) /*0x6399b1*/
   {
@@ -2506,12 +2506,12 @@ AbstractClass * * ExportSelectionAsScriptAction()
       _63B050 = Team_Load_63B050((ObjectClass *)&v29[132]); /*0x63af61*/
       if ( _63B050 ) /*0x63af68*/
       {
-        WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v29, _63B050); /*0x63af6f*/
+        WaypointCoords = ((ScriptAction *)v29)->GetWaypointCoords(_63B050); /*0x63af6f*/
         v19 = *(unsigned int *)WaypointCoords; /*0x63af74*/
         (*((unsigned char *)&(WaypointCoords))) = WaypointCoords->vtable2; /*0x63af7b*/
         *(unsigned int *)&v23[104] = v19; /*0x63af7f*/
         (*((unsigned char *)&(v24))) = (unsigned char)WaypointCoords; /*0x63af81*/
-        v20 = ScriptAction::GetWaypointCoords((ScriptAction *)&v29[12], v16); /*0x63af88*/
+        v20 = ((ScriptAction *)&v29[12])->GetWaypointCoords(v16); /*0x63af88*/
         ScenarioClass::SetEvent( /*0x63afac*/
           &v29[20],
           (int)dword_A83D4C->relatedTagsCount,

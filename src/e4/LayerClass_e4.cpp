@@ -216,9 +216,9 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
               || (v31 = v84 - 4 * (((unsigned int)v30->u32_140 >> 8) & 1) - v30->u32_11B,
                   (int)(((*(((unsigned int *)&(v31)) + 1)) ^ v31) - (*(((unsigned int *)&(v31)) + 1))) < 2) )
             {
-              if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
+              if ( (!aP12 || (uint8_t)(v30)->IsBuildableAdvanced()) /*0x56de9d*/
                 && (aP13 || ((int)v30->u32_140 & 0x100) == 0)
-                && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v99, -1)) )
+                && (!a17 || (uint8_t)(v17)->IsAreaFree(v99, -1)) )
               {
                 v32 = v87; /*0x56deaa*/
                 v33 = v76; /*0x56deae*/
@@ -275,9 +275,9 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
               || (v40 = v84 - 4 * (((unsigned int)v39->u32_140 >> 8) & 1) - v39->u32_11B,
                   (int)(((*(((unsigned int *)&(v40)) + 1)) ^ v40) - (*(((unsigned int *)&(v40)) + 1))) < 2) )
             {
-              if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
+              if ( (!aP12 || (uint8_t)(v39)->IsBuildableAdvanced()) /*0x56e0b3*/
                 && (aP13 || ((int)v39->u32_140 & 0x100) == 0)
-                && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v98, -1)) )
+                && (!a17 || (uint8_t)(v17)->IsAreaFree(v98, -1)) )
               {
                 v41 = v87; /*0x56e0c0*/
                 v42 = v76; /*0x56e0c4*/
@@ -343,9 +343,9 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
               || (v50 = v84 - 4 * (((unsigned int)v49->u32_140 >> 8) & 1) - v49->u32_11B,
                   (int)(((*(((unsigned int *)&(v50)) + 1)) ^ v50) - (*(((unsigned int *)&(v50)) + 1))) < 2) )
             {
-              if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
+              if ( (!aP12 || (uint8_t)(v49)->IsBuildableAdvanced()) /*0x56e2f6*/
                 && (aP13 || ((int)v49->u32_140 & 0x100) == 0)
-                && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v100, -1)) )
+                && (!a17 || (uint8_t)(v17)->IsAreaFree(v100, -1)) )
               {
                 v51 = v76; /*0x56e303*/
                 v52 = v78; /*0x56e307*/
@@ -397,9 +397,9 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
               || (v57 = v84 - 4 * (((unsigned int)v56->u32_140 >> 8) & 1) - v56->u32_11B,
                   (int)(((*(((unsigned int *)&(v57)) + 1)) ^ v57) - (*(((unsigned int *)&(v57)) + 1))) < 2) )
             {
-              if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/
+              if ( (!aP12 || (uint8_t)(v56)->IsBuildableAdvanced()) /*0x56e4f8*/
                 && (aP13 || ((int)v56->u32_140 & 0x100) == 0)
-                && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v97, -1)) )
+                && (!a17 || (uint8_t)(v17)->IsAreaFree(v97, -1)) )
               {
                 v58 = v76; /*0x56e501*/
                 v59 = v78; /*0x56e505*/
@@ -590,7 +590,7 @@ LABEL_23:
     }
 LABEL_25:
     Radar::UpdateReveal(0, 0); /*0x577efc*/
-    FogOfWar::Render((FogOfWar *)&dword_87F7E8); /*0x577f0d*/
+    ((FogOfWar *)&dword_87F7E8)->Render(); /*0x577f0d*/
     return (void *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/

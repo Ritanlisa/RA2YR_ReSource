@@ -143,7 +143,7 @@ unsigned char * BulletTypeClass::Construct(char *aP1, void *a2, void *a3, void *
   int v3; // eax
   int v4; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x46bbc9*/
+  ((int *)this)->ConstructFull(aP1); /*0x46bbc9*/
   this->Airburst = 0; /*0x46bbd5*/
   this->Floater = 0; /*0x46bbdb*/
   this->SubjectToCliffs = 0; /*0x46bbe1*/
@@ -191,7 +191,7 @@ unsigned char * BulletTypeClass::Construct(char *aP1, void *a2, void *a3, void *
   *&this->Flat_d = &vt_BulletTypeClass; /*0x46bcec*/
   *&this->AbstractClass_E58 = &vt_BulletTypeClass; /*0x46bcf2*/
   /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46bcf9) */
-  AbstractClass::GenerateUniqueID((int)(&this->AbstractClass_E58)); /*0x46bd00*/
+  ((int)(&this->AbstractClass_E58))->GenerateUniqueID(); /*0x46bd00*/
   this->IsLogic_d = 1; /*0x46bd05*/
   this->RadarInvisible_d = 1; /*0x46bd0c*/
   this->Selectable_d = 0; /*0x46bd13*/
@@ -443,7 +443,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
            Destination,
            128) )
     {
-      v22 = AnimTypeClass::FindOrCreate(Destination); /*0x46c226*/
+      v22 = (Destination)->FindOrCreate(); /*0x46c226*/
     }
     else
     {
@@ -544,9 +544,9 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
                            (unsigned __int8 *)&stru_81AF8C.?[7],
                            v4->AnimPalette);
   if ( !v4->Inviso ) /*0x46c3f8*/
-    ObjectTypeClass::Load2DArt((char *)v4); /*0x46c406*/
+    ((char *)v4)->Load2DArt(); /*0x46c406*/
   if ( *&v4->Voxel_d ) /*0x46c40b*/
-    VoxelAnimType::LoadAnim((char *)v4); /*0x46c417*/
+    ((char *)v4)->LoadAnim(); /*0x46c417*/
   return 1; /*0x46c41c*/
 
 }
@@ -651,7 +651,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
     }
     while ( v4 < dword_A83C90 ); /*0x46c946*/
   }
-  ObjectTypeClass::Destruct((void *)((int)a1)); /*0x46c94a*/
+  ((void *)((int)a1))->Destruct(); /*0x46c94a*/
   if ( (a1 & 1) != 0 ) /*0x46c954*/
     __3_YAXPAX_Z((void *)(a1)); /*0x46c957*/
   return (void **)a1; /*0x46c961*/

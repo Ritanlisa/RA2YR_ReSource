@@ -127,7 +127,7 @@ char JumpjetLocomotionClass_Process(int a1)
         || Owner->location[1] != v1->Dest[0]
         || Owner->location[2] != v1->Dest[1] )
       {
-        if ( (uint8_t)TimerClass::Active((void *)((int)Owner->primaryFacing)) ) /*0x4b077b*/
+        if ( (uint8_t)((void *)((int)Owner->primaryFacing))->Active() ) /*0x4b077b*/
         {
           (((unsigned char *)&(v1->TrackIndex))[2]) = 1; /*0x4b0788*/
           goto LABEL_39; /*0x4b0788*/
@@ -198,7 +198,7 @@ char JumpjetLocomotionClass_Process(int a1)
           v27 = *((unsigned int *)v2 + 3); /*0x4b0a29*/
           if ( *(unsigned int *)(v27 + 1432) ) /*0x4b0a2c*/
           {
-            FootClass::ClearPathIndex((FootClass *)v27); /*0x4b0a44*/
+            ((FootClass *)v27)->ClearPathIndex(); /*0x4b0a44*/
             if ( (*(uint8_t (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))( /*0x4b0a51*/
                    v2->u32_C,
                    0,
@@ -230,7 +230,7 @@ char JumpjetLocomotionClass_Process(int a1)
         return 0; /*0x4b06d2*/
       }
     }
-    FootClass::ClearPathIndex(v15); /*0x4b0756*/
+    (v15)->ClearPathIndex(); /*0x4b0756*/
     (*(void (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))(*(&v2->u32_C), 0, 1); /*0x4b0763*/
     return 0; /*0x4b0772*/
   }

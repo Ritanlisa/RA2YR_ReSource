@@ -163,7 +163,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
     v64 = &g_MissionQueueFrame.briefing[130]; /*0x568e90*/
   }
   v63 = 0; /*0x568ea0*/
-  VectorClass::CellConstructor((VectorClass *)&v81, 0, 0); /*0x568ea5*/
+  ((VectorClass *)&v81)->CellConstructor(0, 0); /*0x568ea5*/
   v7 = g_TerrainSoundTable2; /*0x568eae*/
   v8 = g_TerrainSoundConfig; /*0x568eb4*/
   *(unsigned int *)v81.__pad_0 = &vt_DynamicVectorClass; /*0x568ebd*/
@@ -1418,13 +1418,13 @@ void Terrain::ProcessCellModification(int16_t *aP1)
       LOWORD(aP1) = *v2 + v4; /*0x570079*/
       HIWORD(aP1) = v6; /*0x57007e*/
       *(unsigned int *)v76 = (unsigned int)(aP1); /*0x570091*/
-      v7 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v76) + 17); /*0x57009a*/
+      v7 = *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v76) + 17); /*0x57009a*/
       if ( v7 >= 74 && v7 <= 101 ) /*0x5700a5*/
       {
         v8 = v2[1] + v5; /*0x5700b9*/
         LOWORD(aP1) = *v2 + v4; /*0x5700c1*/
         HIWORD(aP1) = v8; /*0x5700c6*/
-        CellClass::ApplyCliffTileModifications((CellClass *)this, (int)&aP1); /*0x5700d6*/
+        ((CellClass *)this)->ApplyCliffTileModifications((int)&aP1); /*0x5700d6*/
         return; /*0x5700e2*/
       }
       ++v5; /*0x5700a7*/
@@ -1543,7 +1543,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
     v31 = (v11[80] & 0x800) != 0 ? 6 : 0;
     *(unsigned int *)v81 = v23; /*0x570382*/
     LOBYTE(aP1) = 0; /*0x570386*/
-    VectorClass::CellConstructor(&v86, 0, 0); /*0x57038b*/
+    (&v86)->CellConstructor(0, 0); /*0x57038b*/
     v32 = *(unsigned int *)v81; /*0x570390*/
     /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x570394) */
     v88 = 10; /*0x57039c*/
@@ -1683,7 +1683,7 @@ LABEL_133:
             v76[0] = v32; /*0x5709ed*/
             v76[1] = v81[1] - 2; /*0x5709fd*/
             *(unsigned int *)v77 = *(unsigned int *)v76; /*0x570a06*/
-            Terrain::ProcessCellModification(v58, v77); /*0x570a0d*/
+            (v58)->ProcessCellModification(v77); /*0x570a0d*/
             v72 = v81[0] + (v81[1] << 9); /*0x570a21*/
             if ( v72 >= 0x40000 || (v73 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v72)) == 0 ) /*0x570a37*/
             {
@@ -1698,7 +1698,7 @@ LABEL_137:
               Terrain::ConnectivityGraph(v53); /*0x570a8e*/
 LABEL_139:
             if ( v87 > 0 ) /*0x570a99*/
-              LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v86); /*0x570aa4*/
+              ((LayerClass *)this)->Update_Pathfinding_2((int)&v86); /*0x570aa4*/
             /* X11: vtable install elided (implicit via VectorClass virtuals 0x570aad) */
             if ( v86.Items ) /*0x570ab7*/
             {
@@ -1775,7 +1775,7 @@ LABEL_101:
           v76[1] = v81[1]; /*0x570717*/
           v76[0] = v32 - 2; /*0x57071c*/
           *(unsigned int *)v77 = *(unsigned int *)v76; /*0x570729*/
-          Terrain::ProcessCellModification(this, v77); /*0x570730*/
+          (this)->ProcessCellModification(v77); /*0x570730*/
           v54 = v81[0] + (v81[1] << 9); /*0x570744*/
           if ( v54 >= 0x40000 || (v55 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v54)) == 0 ) /*0x57075a*/
           {
@@ -1901,7 +1901,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       LOWORD(aP1) = LOWORD(v2->field_0) + v4; /*0x573568*/
       HIWORD(aP1) = v6; /*0x57356d*/
       *(unsigned int *)v85 = aP1; /*0x573580*/
-      v7 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v85) + 17); /*0x573589*/
+      v7 = *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v85) + 17); /*0x573589*/
       if ( v7 >= 205 && v7 <= 232 ) /*0x573598*/
       {
         v8 = HIWORD(v2->field_0) + v5; /*0x5735ab*/

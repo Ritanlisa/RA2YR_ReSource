@@ -536,8 +536,8 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
 
   v31 = 0; /*0x70527a*/
   v32 = 0; /*0x705282*/
-  Coord::To_Screen(g_TacticalClass_Instance, &a1, &v29); /*0x70529b*/
-  Coord::To_Screen(g_TacticalClass_Instance, &a4, &v33); /*0x7052b3*/
+  (g_TacticalClass_Instance)->To_Screen(&a1, &v29); /*0x70529b*/
+  (g_TacticalClass_Instance)->To_Screen(&a4, &v33); /*0x7052b3*/
   v30 += dword_886FA4; /*0x7052ce*/
   v34 += dword_886FA4; /*0x70530d*/
   v8 = ((unsigned __int8)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x705348*/
@@ -636,8 +636,8 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v48 = (v22 * a4 + v23 * a1) / 64; /*0x7056ec*/
     v49 = (v22 * a5 + v23 * a2) / 64; /*0x705705*/
     v50 = (v22 * a6 + v23 * a3) / 64; /*0x705728*/
-    Coord::To_Screen(g_TacticalClass_Instance, &v45, &v29); /*0x705732*/
-    Coord::To_Screen(g_TacticalClass_Instance, &v48, &v33); /*0x705747*/
+    (g_TacticalClass_Instance)->To_Screen(&v45, &v29); /*0x705732*/
+    (g_TacticalClass_Instance)->To_Screen(&v48, &v33); /*0x705747*/
     v30 += dword_886FA4; /*0x705761*/
     v34 += dword_886FA4; /*0x70576e*/
     if ( ClipLine(&v29, &v33, v51) ) /*0x705772*/
@@ -1651,7 +1651,7 @@ char sub_53D850()
   }
   result = dword_AA0128; /*0x53d8b6*/
   for ( i = dword_AA0128 - 1; i >= 0; --i ) /*0x53d8c0*/
-    result = ZBuffer::RenderSprite(*((ZBuffer **)dword_AA011C + i)); /*0x53d8cb*/
+    result = (*((ZBuffer **)dword_AA011C + i))->RenderSprite(); /*0x53d8cb*/
   return result; /*0x53d8d3*/
 }
 }

@@ -1024,7 +1024,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
           {
             v5 = (int *)v2->DamageFireAnims[3]; /*0x5014c5*/
             if ( v5 ) /*0x5014cd*/
-              TeamClass::LiberateMember_Start(v5, (int)v2, 0xFFFFFFFF, 0); /*0x5014d4*/
+              (v5)->LiberateMember_Start((int)v2, 0xFFFFFFFF, 0); /*0x5014d4*/
             (*((void (**)(BuildingClass *, int, unsigned int))v2->vfptr + 122))(v2, 15, 0); /*0x5014e1*/
           }
           else if ( (*((int (**)(BuildingClass *))v2->vfptr + 11))(v2) == 6 /*0x501501*/
@@ -1123,7 +1123,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
         v8 = (int)(aP1); /*0x628967*/
         do /*0x628978*/
         {
-          Byte::Zero(v5); /*0x62896c*/
+          (v5)->Zero(); /*0x62896c*/
           v5 += 65; /*0x628971*/
           --v8; /*0x628977*/
         }
@@ -1142,7 +1142,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
           v14 = (int)(aP1); /*0x628934*/
           do /*0x62894e*/
           {
-            Byte::Zero(v7); /*0x62893a*/
+            (v7)->Zero(); /*0x62893a*/
             v7 += 65; /*0x628943*/
             --v14; /*0x62894a*/
           }
@@ -1295,7 +1295,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
       v8 = aP1; /*0x6dc8bc*/
       do /*0x6dc8d6*/
       {
-        Rect::Set((Rect *)v5, 0, 0, 0, 0); /*0x6dc8c9*/
+        ((Rect *)v5)->Set(0, 0, 0, 0); /*0x6dc8c9*/
         v5->ptr_10 = 0; /*0x6dc8ce*/
         v5 += 20; /*0x6dc8d2*/
         --v8; /*0x6dc8d5*/
@@ -1314,7 +1314,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
       v6 = aP1; /*0x6dc88f*/
       do /*0x6dc8a9*/
       {
-        Rect::Set((Rect *)v5, 0, 0, 0, 0); /*0x6dc89c*/
+        ((Rect *)v5)->Set(0, 0, 0, 0); /*0x6dc89c*/
         v5->ptr_10 = 0; /*0x6dc8a1*/
         v5 += 20; /*0x6dc8a5*/
         --v6; /*0x6dc8a8*/

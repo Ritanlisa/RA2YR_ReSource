@@ -254,10 +254,10 @@ int MapClass::SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2, voi
       LOWORD(a2) = *v4 + v9; /*0x4a95f1*/
       HIWORD(a2) = (unsigned short)v8; /*0x4a95f6*/
       aP1 = a2; /*0x4a9603*/
-      result = LayerClass::CoordinatesLegal((LayerClass *)this, (__int16 *)&aP1); /*0x4a960a*/
+      result = ((LayerClass *)this)->CoordinatesLegal((__int16 *)&aP1); /*0x4a960a*/
       if ( (unsigned char)result ) /*0x4a9611*/
       {
-        result = (int)CellCoord::To_CellObj((CellCoord *)this, (__int16 *)&aP1); /*0x4a961a*/
+        result = (int)((CellCoord *)this)->To_CellObj((__int16 *)&aP1); /*0x4a961a*/
         v10 = result->copyFlags; /*0x4a961f*/
         if ( v7 ) /*0x4a9627*/
           result->copyFlags = v10 | 2; /*0x4a962c*/
@@ -312,7 +312,7 @@ int MapClass::ToggleZoom(int a2)
       if ( v4 ) /*0x4ac9e1*/
       {
         this->q11B4 = 1; /*0x4ac9e3*/
-        return MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x4ac9ea*/
+        return (v7)->UnselectAll_ClearLimboLaunchers(); /*0x4ac9ea*/
       }
       else
       {
@@ -557,12 +557,12 @@ ObjectClass * * MapClass::LoadFileData()
     }
     while ( v5 < *&this->q2E8 * *&this->q2E4 ); /*0x5470cb*/
   }
-  TerrainClass::InitTheatre((TerrainClass *)this); /*0x5470cf*/
+  ((TerrainClass *)this)->InitTheatre(); /*0x5470cf*/
   *(unsigned int *)v12.CDFileClass = &vt_CCFileClass; /*0x5470d8*/
   v14 = 0; /*0x5470e0*/
   Vector::Clear((int)v13); /*0x5470e8*/
   *(unsigned int *)v12.CDFileClass = &off_7E1668; /*0x5470f1*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v12); /*0x5470f9*/
+  ((BufferIOFileClass *)&v12)->Dtor(); /*0x5470f9*/
   return (gamemd::ObjectClass **)(Size); /*0x5470fe*/
 
 }
@@ -577,7 +577,7 @@ int MapClass::ScrollOnce(AbstractClass * aP1)
   if ( (unsigned char)result ) /*0x554a85*/
   {
     this->Activated = 0; /*0x554a8b*/
-    return TacticalClass::ScrollView((char)(aP1)); /*0x554a90*/
+    return ((char)(aP1))->ScrollView(); /*0x554a90*/
   }
   return result; /*0x554a95*/
 }
@@ -872,10 +872,10 @@ void MapClass::Destru_vt07()
 
   Debug::Log(); /*0x5659fa*/
   Event::Dispatch(); /*0x565a02*/
-  MapClass::isCellShrouded((MapClass *)g_ZBufferDescriptor, 0xFFFFu); /*0x565a12*/
-  MapClass::isLocationShrouded((MapClass *)dword_87E8A4, 0x7Fu); /*0x565a1f*/
+  ((MapClass *)g_ZBufferDescriptor)->isCellShrouded(0xFFFFu); /*0x565a12*/
+  ((MapClass *)dword_87E8A4)->isLocationShrouded(0x7Fu); /*0x565a1f*/
   Event::Dispatch(); /*0x565a24*/
-  VectorCursor_uint_DynamicVectorClass_uint____13::Remove((GScreenClass *)this); /*0x565a2b*/
+  ((GScreenClass *)this)->Remove(); /*0x565a2b*/
   Event::Dispatch(); /*0x565a30*/
   v2 = &this->q158; /*0x565a35*/
   v3 = 256; /*0x565a3b*/

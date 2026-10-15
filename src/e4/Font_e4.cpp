@@ -107,8 +107,8 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   v11 = 0; /*0x434cdb*/
   if ( aP0 && (v12 = aP2) != 0 ) /*0x434ceb*/
   {
-    FontRenderer::InitContext((unsigned int *)aP0, (int *)aP1); /*0x434cf8*/
-    Field::Int_Set((unsigned int *)aP0, aP1a); /*0x434d04*/
+    ((unsigned int *)aP0)->InitContext((int *)aP1); /*0x434cf8*/
+    ((unsigned int *)aP0)->Int_Set(aP1a); /*0x434d04*/
     v13 = 0; /*0x434d0f*/
     v14 = 0; /*0x434d11*/
     v15 = aP0->q024; /*0x434d13*/
@@ -176,7 +176,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             if ( v22 == -1 ) /*0x434e84*/
               goto LABEL_73; /*0x434e84*/
             v44 = *v12++; /*0x434e99*/
-            xLeft = FontClass::RenderGlyph(aP0, v44, xLeft, aP4, v22); /*0x434ea6*/
+            xLeft = (aP0)->RenderGlyph(v44, xLeft, aP4, v22); /*0x434ea6*/
             if ( v12 < aP2 ) /*0x434eb0*/
             {
               v19 = (int)(aP8); /*0x434dc0*/
@@ -202,10 +202,10 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           goto LABEL_26; /*0x434f06*/
         default:
   LABEL_26:
-          GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar((unsigned int *)aP0, (uint16_t)v53); /*0x434f0a*/
+          GlyphDataForChar = (uint8_t *)((unsigned int *)aP0)->GetGlyphDataForChar((uint16_t)v53); /*0x434f0a*/
           if ( !GlyphDataForChar ) /*0x434f1a*/
           {
-            GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar((unsigned int *)aP0, 0x3Fu); /*0x434f22*/
+            GlyphDataForChar = (uint8_t *)((unsigned int *)aP0)->GetGlyphDataForChar(0x3Fu); /*0x434f22*/
             if ( !GlyphDataForChar ) /*0x434f29*/
               goto LABEL_55; /*0x434f29*/
           }
@@ -275,7 +275,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         if ( v35 == -1 ) /*0x4350bf*/
           break; /*0x4350bf*/
         v45 = *v12++; /*0x4350d4*/
-        xLeft = FontClass::RenderGlyph(aP0, v45, xLeft, aP4, v35); /*0x4350e1*/
+        xLeft = (aP0)->RenderGlyph(v45, xLeft, aP4, v35); /*0x4350e1*/
         if ( v12 >= aP2 ) /*0x4350eb*/
         {
           v28 = v52; /*0x4350f1*/
@@ -362,7 +362,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           if ( v43 == -1 ) /*0x43529c*/
             break; /*0x43529c*/
           v46 = *v12++; /*0x4352ad*/
-          xLeft = FontClass::RenderGlyph(aP0, v46, xLeft, aP4, v43); /*0x4352ba*/
+          xLeft = (aP0)->RenderGlyph(v46, xLeft, aP4, v43); /*0x4352ba*/
           if ( v12 >= aP2 ) /*0x4352c4*/
             break; /*0x4352c4*/
           v17 = v49; /*0x4352c6*/

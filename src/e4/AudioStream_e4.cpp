@@ -201,7 +201,7 @@ int AudioStream::SetupPlayback()
   if ( (this->u32_18 & 8) == 0 && (*(unsigned char *)(this->q024 + 16) & 0x20) != 0 ) /*0x40478f*/
     return (int)this->q028 + 28; /*0x402030*/
   else
-    return AudioStream::SelectRandom((int)this); /*0x404793*/
+    return ((int)this)->SelectRandom(); /*0x404793*/
 
 }
 }
@@ -318,7 +318,7 @@ void AudioStream::CleanupChannels()
             v6 = &v2->owningHouseIndex; /*0x404f35*/
             do /*0x404f4d*/
             {
-              RefCount::Decrement(*v6); /*0x404f3a*/
+              (*v6)->Decrement(); /*0x404f3a*/
               *v6 = 0; /*0x404f3f*/
               ++v5; /*0x404f47*/
               ++v6; /*0x404f48*/
@@ -426,7 +426,7 @@ void AudioStream::InitNodeFields()
   this->u8_4 = 0; /*0x4084e4*/
   this->u32_14 = 0; /*0x4084e7*/
   this->u32_18 = 0; /*0x4084ea*/
-  DListNode::Init(&this->q008); /*0x4084f0*/
+  (&this->q008)->Init(); /*0x4084f0*/
 
 }
 }
@@ -746,7 +746,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
     return 0; /*0x4bed2e*/
   Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4bed38*/
   v79 = v81; /*0x4bed3f*/
-  SamplePosition = (unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v80, v81 - Stream_field_04); /*0x4bed56*/
+  SamplePosition = (unsigned short *)((int *)g_ZBufferDescriptor)->GetSamplePosition(v80, v81 - Stream_field_04); /*0x4bed56*/
   v32 = *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4); /*0x4bed5c*/
   v79 = v81; /*0x4bed5f*/
   v33 = StreamClass::ReadAndSeek((int)(*(int **)&g_VisibleSurfaceDescriptor), v80, v81 - v32); /*0x4bed67*/
@@ -1526,7 +1526,7 @@ char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream, void *
   }
   v4 = operator new(0xF8u); /*0x4078a6*/
   memset((void *)v4, 0, 0xF8u); /*0x4078b1*/
-  DListNode::InitEmpty((DListNode *)v4); /*0x4078b8*/
+  ((DListNode *)v4)->InitEmpty(); /*0x4078b8*/
   *(unsigned int *)(v4 + 16) = this; /*0x4078c6*/
   v5 = sub_4036C0((int)this, 4096); /*0x4078c9*/
   *(unsigned int *)(v4 + 20) = v5; /*0x4078ce*/
@@ -1536,8 +1536,8 @@ char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream, void *
   *(unsigned int *)(*(unsigned int *)(v4 + 20) + 156) = 0; /*0x4078f3*/
   *(unsigned int *)(v4 + 24) = a2; /*0x4078f9*/
   *(unsigned int *)(v4 + 28) = v3; /*0x4078fc*/
-  AudioStream::InitNodeFields((AudioStream *)(v4 + 60)); /*0x4078ff*/
-  Struct::ZeroInit32((Struct *)(v4 + 92)); /*0x407907*/
+  ((AudioStream *)(v4 + 60))->InitNodeFields(); /*0x4078ff*/
+  ((Struct *)(v4 + 92))->ZeroInit32(); /*0x407907*/
   *(unsigned int *)(v4 + 128) = 0; /*0x40790c*/
   *(unsigned int *)(v4 + 136) = 0; /*0x407912*/
   strcpy((char *)(v4 + 164), aAudioStream); /*0x407937*/
@@ -1557,7 +1557,7 @@ char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream, void *
   }
   else
   {
-    AudioSample::Destructor((AudioSample *)v4); /*0x407984*/
+    ((AudioSample *)v4)->Destructor(); /*0x407984*/
     return 0; /*0x407989*/
   }
 }

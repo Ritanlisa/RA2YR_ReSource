@@ -118,7 +118,7 @@ void sub_40D1B0()
     --v1; /*0x40d1ef*/
   }
   while ( v1 ); /*0x40d1f0*/
-  RadarClass::Destruct((RadarClass *)&DataGlobal_87F7E8); /*0x40d1f7*/
+  ((RadarClass *)&DataGlobal_87F7E8)->Destruct(); /*0x40d1f7*/
 }
 } // namespace gamemd
 
@@ -131,8 +131,8 @@ int sub_59B6D0()
   signed int j; // esi
   unsigned int *NeighbourContent; // edi
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59b6d6*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59b6e0*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x59b6d6*/
+  result = (&dword_87F7E8)->CellIteratorNext(); /*0x59b6e0*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x59b6e9*/
   {
     if ( CellClass::IsTerrainType((gamemd::CellClass *)(i)) ) /*0x59b6ef*/
@@ -140,11 +140,11 @@ int sub_59B6D0()
       for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
       {
         NeighbourContent = (unsigned int *)(Cell::GetNeighbourContent(i, j));
-        if ( Cell::IsEmpty(NeighbourContent) ) /*0x59b706*/
+        if ( (NeighbourContent)->IsEmpty() ) /*0x59b706*/
           NeighbourContent[14] = dword_AA0E18; /*0x59b714*/
       }
     }
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59b724*/
+    result = (&dword_87F7E8)->CellIteratorNext(); /*0x59b724*/
   }
   return result; /*0x59b731*/
 }
@@ -157,8 +157,8 @@ int sub_59C530()
   int result; // eax
   int v1; // ecx
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59c536*/
-  for ( result = LayerClass::CellIteratorNext(&dword_87F7E8); result; result = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x59c549*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x59c536*/
+  for ( result = (&dword_87F7E8)->CellIteratorNext(); result; result = (&dword_87F7E8)->CellIteratorNext() ) /*0x59c549*/
   {
     v1 = result->u32_38; /*0x59c54b*/
     if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x59c55d*/
@@ -180,8 +180,8 @@ char sub_5A1F60()
 
   v0 = 1; /*0x5a1f68*/
   Mouse::SetBounds((int)&dword_87F7E8, 0); /*0x5a1f6a*/
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x5a1f74*/
-  for ( i = LayerClass::CellIteratorNext(&dword_87F7E8); i; i = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x5a1f85*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x5a1f74*/
+  for ( i = (&dword_87F7E8)->CellIteratorNext(); i; i = (&dword_87F7E8)->CellIteratorNext() ) /*0x5a1f85*/
   {
     if ( !v0 ) /*0x5a1f89*/
       break; /*0x5a1f89*/
@@ -198,7 +198,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 
   int v2; // eax
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x5afef3*/
+  ((LocomotionClass *)this)->Init(); /*0x5afef3*/
   this->MovingDestination[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
   this->MovingDestination[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
   this->MovingDestination[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
@@ -221,7 +221,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
   if ( INIClass::GetString((INIClass *)a1, edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67b51e*/
-    return WarheadTypeClass::FindOrCreate((gamemd::ObjectClass *)(Destination)); /*0x67b52b*/
+    return ((gamemd::ObjectClass *)(Destination))->FindOrCreate(); /*0x67b52b*/
   else
     return a4; /*0x67b539*/
 }
@@ -283,16 +283,16 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
     return 0; /*0x6e312d*/
   if ( v7 == 8997 ) /*0x6e3135*/
   {
-    Field11 = Property::GetField11(a6); /*0x6e3137*/
+    Field11 = (a6)->GetField11(); /*0x6e3137*/
   }
   else
   {
     if ( v7 == (HouseClass *)-1 ) /*0x6e3141*/
       return 0; /*0x6e3163*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v7) ) /*0x6e3145*/
+    if ( (uint8_t)(v7)->IsSpecialType() ) /*0x6e3145*/
       Field11 = ((BuildingType *)(v7))->FindOwnerHouse(); /*0x6e3150*/
     else
-      Field11 = HouseClass::FindOwner(v7); /*0x6e3157*/
+      Field11 = (v7)->FindOwner(); /*0x6e3157*/
   }
   if ( !Field11 ) /*0x6e315e*/
     return 0; /*0x6e315e*/
@@ -306,7 +306,7 @@ namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x728a03*/
+  ((LocomotionClass *)this)->Init(); /*0x728a03*/
   this->CurrentState[0] = 0; /*0x728a0d*/
   this->CurrentState[1] = *(unsigned int *)&DataGlobal_B0F910; /*0x728a16*/
   this->CurrentState[2] = *(unsigned int *)&DataGlobal_B0F914; /*0x728a1e*/

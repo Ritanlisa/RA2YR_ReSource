@@ -67,7 +67,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
-      VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
+      (v8)->CellConstructor(0, 0); /*0x5a019b*/
       *v9 = (unsigned int)(&vt_DynamicVectorClass); /*0x5a01a0*/
       v9->u32_14 = 10; /*0x5a01a6*/
       v9->q010 = 0; /*0x5a01ad*/
@@ -109,9 +109,9 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             v17 = (char *)dword_ABED10 + 80 * v14 + 80 * g_MapCellWidth * v15; /*0x5a02a4*/
             v18 = *((unsigned int *)v17 + 14); /*0x5a02a8*/
             v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
-            v20 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v30); /*0x5a02c6*/
+            v20 = (int *)(&dword_87F7E8)->To_CellObj((__int16 *)&v30); /*0x5a02c6*/
             v21 = v20; /*0x5a02cd*/
-            if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
+            if ( (!v18 || v19) && ((v20)->IsEmpty() || v19 && (v21)->IsGroundTypeRange()) ) /*0x5a02e6*/
             {
               v22 = v29->Capacity; /*0x5a02ff*/
               if ( v29->q010 < v22 /*0x5a0324*/
@@ -125,8 +125,8 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
                 *(unsigned int *)(v25 + 4 * v24) = v30; /*0x5a033b*/
               }
               *((unsigned int *)v17 + 14) = a1; /*0x5a0348*/
-              if ( a7 && Cell::IsEmpty(v21) ) /*0x5a034f*/
-                *((unsigned char *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v30) + 283) = a8; /*0x5a036b*/
+              if ( a7 && (v21)->IsEmpty() ) /*0x5a034f*/
+                *((unsigned char *)(&dword_87F7E8)->To_CellObj((__int16 *)&v30) + 283) = a8; /*0x5a036b*/
             }
             else if ( v18 != a1 ) /*0x5a02f3*/
             {
@@ -294,17 +294,17 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
          (char *)&v25.q01C,
          128) )
   {
-    DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
+    ((DynamicVectorClass *)&v25)->AnimTypeConstructor(0, 0); /*0x721b6c*/
     *(unsigned int *)v25.WeaponType = &vt_TypeList; /*0x721b7b*/
     for ( i = strtok((char *)&v25.q01C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
         break; /*0x721b92*/
-      v23 = AnimTypeClass::FindOrCreate(i); /*0x721b9d*/
+      v23 = (i)->FindOrCreate(); /*0x721b9d*/
       if ( v23 ) /*0x721ba1*/
         DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
     }
-    TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
+    (&v24)->AnimTypeCopy(&v25); /*0x721bcd*/
     *(unsigned int *)v25.WeaponType = &vt_VectorClass; /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
@@ -312,7 +312,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   {
     TypeList::AnimTypeCopy(&v24, &v5->u32_C4); /*0x721bf0*/
   }
-  VectorClass::CopyDefault(&v5->u32_C4, &v24); /*0x721c03*/
+  (&v5->u32_C4)->CopyDefault(&v24); /*0x721c03*/
   CapacityIncrement = (int)(((char *)&v24)); /*0x721c0c*/
   unknown_18 = v24.unknown_18; /*0x721c10*/
   *&v5->Debris = (unsigned int)(((char *)&v24)); /*0x721c14*/
@@ -427,7 +427,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     if ( v2 ) /*0x721f92*/
     {
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x721f9b*/
-      DynamicVectorClass::AnimTypeConstructor(&v2->u32_E8, 0, 0); /*0x721fa4*/
+      (&v2->u32_E8)->AnimTypeConstructor(0, 0); /*0x721fa4*/
       v2->GrowthPercentage[1] = (int)&vt_TypeList; /*0x721fb0*/
       Timer::Start((Timer *)v2->SpreadTimer, 0); /*0x721fb6*/
       Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/

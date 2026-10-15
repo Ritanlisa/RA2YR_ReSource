@@ -107,8 +107,8 @@ int E4Recv_5D0190::sub_5D0190(const char * a2)
   int v5; // esi
   char *v6; // [esp+8h] [ebp-4h] BYREF
 
-  String::Assign((String *)&v6, a2); /*0x5d019e*/
-  String::ToLower((String *)&v6); /*0x5d01a7*/
+  ((String *)&v6)->Assign(a2); /*0x5d019e*/
+  ((String *)&v6)->ToLower(); /*0x5d01a7*/
   v3 = 0; /*0x5d01af*/
   if ( this->customSound <= 0 ) /*0x5d01b3*/
   {
@@ -123,7 +123,7 @@ LABEL_5:
       goto LABEL_6; /*0x5d0200*/
   }
   String::AssignFromPtr((String *)&a2, *(const char ***)(this->customSound_controller[2] + 4 * v3)); /*0x5d01d1*/
-  String::ToLower((String *)&a2); /*0x5d01da*/
+  ((String *)&a2)->ToLower(); /*0x5d01da*/
   if ( !(unsigned __int8)String::Compare((String *)&v6, &a2) ) /*0x5d01e8*/
   {
     DeleteAndZero((ObjectClass *)&a2); /*0x5d01f5*/
@@ -151,7 +151,7 @@ char ** E4Recv_5D0240::sub_5D0240(char ** a2, char a3)
   if ( customSound <= 0 ) /*0x5d024a*/
   {
 LABEL_5:
-    String::Assign((String *)a2, 0); /*0x5d0264*/
+    ((String *)a2)->Assign(0); /*0x5d0264*/
     return a2; /*0x5d0271*/
   }
   else
@@ -614,7 +614,7 @@ void* Dialog_MessageLoop()
       result = (HWND)IsMessageDialog(&Msg, 0, 0); /*0x5d4da6*/
       if ( !result ) /*0x5d4dad*/
         break; /*0x5d4dad*/
-      Dialog::MapDialogResource(&Msg); /*0x5d4db7*/
+      (&Msg)->MapDialogResource(); /*0x5d4db7*/
       if ( dword_887368 ) /*0x5d4dc4*/
         HandleToolTipMessage(&Msg); /*0x5d4dcb*/
       v1 = 0; /*0x5d4dd5*/
@@ -688,7 +688,7 @@ char sub_5D6000(HWND hWnd, int a2)
   bool v8; // [esp+13h] [ebp-9h]
   int i; // [esp+14h] [ebp-8h]
 
-  ListBox::Clear(hWnd); /*0x5d600d*/
+  (hWnd)->Clear(); /*0x5d600d*/
   v8 = dword_A8B238[0] == 5; /*0x5d6020*/
   v3 = 0; /*0x5d6027*/
   for ( i = 0; ; v3 = i ) /*0x5d6029*/
@@ -717,7 +717,7 @@ char sub_5D6000(HWND hWnd, int a2)
     v5 = *((unsigned int *)dword_ABFDA4 + v3); /*0x5d60cc*/
     if ( !v8 || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 64))(v5) ) /*0x5d60db*/
     {
-      v6 = WideString::GetOrEmpty_Alt((wchar_t **)(v5 + 32)); /*0x5d60e5*/
+      v6 = ((wchar_t **)(v5 + 32))->GetOrEmpty_Alt(); /*0x5d60e5*/
       v7 = SendMessageA(hWnd, 0x143u, 0, (LPARAM)v6); /*0x5d60f7*/
       if ( *(unsigned int *)(v5 + 40) == a2 ) /*0x5d60ff*/
         SendMessageA(hWnd, 0x14Eu, v7, 0); /*0x5d610a*/
@@ -760,7 +760,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
   {
     v19.health = 0; /*0x5d75ce*/
     v19.estimatedHealth = 0; /*0x5d75d2*/
-    GenericList::Constructor((GenericList *)&v19.isOnMap); /*0x5d75d6*/
+    ((GenericList *)&v19.isOnMap)->Constructor(); /*0x5d75d6*/
     *(unsigned int *)&v19.isOnMap = &vt_List; /*0x5d75e8*/
     memset(&v19.isAliveFlag, 0, 13); /*0x5d75f3*/
     v19.location[1] = 0; /*0x5d760f*/
@@ -768,23 +768,18 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
     *(unsigned int *)&v19.bombVisible = &vt_INIClass; /*0x5d761d*/
     if ( FileStraw::Open((FileStraw *)&v19.bombVisible, (int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
     {
-      v19.customSound_controller[4] = INIClass::FindKey(&v19.bombVisible, v2); /*0x5d763e*/
+      v19.customSound_controller[4] = (&v19.bombVisible)->FindKey(v2); /*0x5d763e*/
       v19.owningHouseIndex = 0; /*0x5d7642*/
       if ( v19.customSound_controller[4] > 0 ) /*0x5d7646*/
       {
         while ( 1 ) /*0x5d766b*/
         {
-          INIClass::GetStringByIndexEx((gamemd::INIClass *)&v19.bombVisible, (char **)&v19.uniqueId, v2, v19.owningHouseIndex); /*0x5d766b*/
+          ((gamemd::INIClass *)&v19.bombVisible)->GetStringByIndexEx((char **)&v19.uniqueId, v2, v19.owningHouseIndex); /*0x5d766b*/
           __1_Timevec_std__QAE_XZ((const char **)&v19.uniqueId); /*0x5d7674*/
           v4 = v3; /*0x5d767d*/
           unknown_libname_73(&v19); /*0x5d767f*/
           ((String *)((String *)&v19.attachedBomb))->Assign(&g_INI_DefaultBuffer); /*0x5d768d*/
-          String = INIClass::ReadString( /*0x5d76b2*/
-                     (INIClass *)&v19.bombVisible,
-                     v2,
-                     (char **)&v19.uniqueId,
-                     (char **)&v19.attachedBomb,
-                     (int)&v19);
+          String = (/*0x5d76b2*/ (INIClass *)&v19.bombVisible)->ReadString(v2, (char **)&v19.uniqueId, (char **)&v19.attachedBomb, (int)&v19);
           DeleteAndZero((ObjectClass *)&v19.attachedBomb); /*0x5d76b4*/
           if ( String <= 0 ) /*0x5d76bb*/
             goto LABEL_49; /*0x5d76bb*/
@@ -816,7 +811,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         {
   LABEL_47:
           DeleteAndZero((ObjectClass *)&v19.vfptr3); /*0x5d7c3e*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v19.referenceCount); /*0x5d7c4b*/
+          ((DeleteAndZero *)&v19.referenceCount)->Alt(); /*0x5d7c4b*/
           goto LABEL_48; /*0x5d7c4b*/
         }
         ((String *)((String *)&v19.ambientSoundController[4]))->Assign(asc_830A14); /*0x5d779a*/
@@ -834,7 +829,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         {
   LABEL_46:
           DeleteAndZero((ObjectClass *)&v19.vfptr2); /*0x5d7c2c*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v19.NeedsSaveOrLink); /*0x5d7c39*/
+          ((DeleteAndZero *)&v19.NeedsSaveOrLink)->Alt(); /*0x5d7c39*/
           goto LABEL_47; /*0x5d7c39*/
         }
         ((String *)((String *)v19.customSound_controller))->Assign(asc_830A14); /*0x5d783a*/

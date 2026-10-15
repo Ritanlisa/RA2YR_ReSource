@@ -291,7 +291,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
         if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, v28) ) /*0x6d76e0*/
         {
           v17 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v28); /*0x6d76fc*/
-          ScreenRect = CellClass::GetScreenRect(v17, v41); /*0x6d7708*/
+          ScreenRect = (v17)->GetScreenRect(v41); /*0x6d7708*/
           v34[0] = *ScreenRect; /*0x6d7711*/
           v34[1] = ScreenRect[1]; /*0x6d771a*/
           v35 = ScreenRect[2]; /*0x6d7721*/
@@ -305,7 +305,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
           v37[0] = *(float *)v38; /*0x6d77aa*/
           v37[1] = *(float *)&v38[1]; /*0x6d77ae*/
           v37[2] = *(float *)&v38[2]; /*0x6d77be*/
-          Coord::To_Screen((Coord *)this, v37, &v22); /*0x6d77c2*/
+          ((Coord *)this)->To_Screen(v37, &v22); /*0x6d77c2*/
           v22 -= 30; /*0x6d77d4*/
           if ( v35 > 0 && v36 > 0 && v20 > 0 && v39 > 0 ) /*0x6d77ec*/
             TacticalClass::CheckCellVisibility(v17->mapCoords, &v22, flags, 0); /*0x6d77ff*/
@@ -341,7 +341,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   if ( unk ) /*0x48035f*/
     return result; /*0x48035f*/
   if ( !*(&this->vtable23) ) /*0x480365*/
-    TacticalClass::SetView(this, 0, 0x10000, 0, 1000, 1000, 1000); /*0x480384*/
+    (this)->SetView(0, 0x10000, 0, 1000, 1000, 1000); /*0x480384*/
   v6 = *(&this->vtable24); /*0x480389*/
   v16 = 0; /*0x48038c*/
   if ( v6 == 0xFFFF ) /*0x480395*/
@@ -357,7 +357,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   v14 = this->u32_1F5); /*0x4803ae*/
   if ( v7[188] > 1 ) /*0x4803b5*/
   {
-    if ( (uint8_t)CellClass::GetTerrainFlag(v7, this->u32_1F5)) ) /*0x4803ba*/
+    if ( (uint8_t)(v7)->GetTerrainFlag(this->u32_1F5)) ) /*0x4803ba*/
       inited = ((unsigned int)*(&this->overlayTypeIndex0) >> 13) & 1; /*0x4803cc*/
     else
       inited = CellClass::InitRandomOffsets(this, *(&this->vtable24), v7[188]); /*0x4803dc*/
@@ -509,9 +509,9 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
                 if ( (uint8_t)LayerClass::CoordinatesLegal(&dword_87F7E8, v45) ) /*0x6d7a28*/
                 {
                   v22 = CellCoord::To_CellObj(&dword_87F7E8, v45); /*0x6d7a44*/
-                  NthOfType = Building::GetNthOfType((int)v22); /*0x6d7a4d*/
+                  NthOfType = ((int)v22)->GetNthOfType(); /*0x6d7a4d*/
                   if ( (v22->u32_12C & 0x10) != 0 /*0x6d7a94*/
-                    && !(uint8_t)CellClass::QuickPassable(v22)
+                    && !(uint8_t)(v22)->QuickPassable()
                     && (v22->u32_EC == 2 || NthOfType)
                     && !v22->u32_E4
                     && (v22->u32_140 & 0x1000) == 0 )
@@ -541,7 +541,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
                     {
                       if ( (uint8_t)TacticalClass::DecrementCounter(v24, v32) ) /*0x6d7af7*/
                       {
-                        ScreenRect = CellClass::GetScreenRect((int)v22, v44); /*0x6d7b0b*/
+                        ScreenRect = ((int)v22)->GetScreenRect(v44); /*0x6d7b0b*/
                         v28 = v24[12] + *ScreenRect + ScreenRect[2] / 2; /*0x6d7b3b*/
                         v29 = v24[13] + ScreenRect[1] + ScreenRect[3] / 2; /*0x6d7b3f*/
                         if ( v28 >= *bounds && v28 < *bounds + bounds[2] ) /*0x6d7b4c*/
@@ -632,7 +632,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a4)
   v39 = v6; /*0x6d7c38*/
   *(float *)&v33 = (float)v6; /*0x6d7c41*/
   *(float *)&v31 = (float)v38; /*0x6d7c4d*/
-  Triple::Set(&v41, v31, v33, 0); /*0x6d7c50*/
+  (&v41)->Set(v31, v33, 0); /*0x6d7c50*/
   v7 = TransformMatrix3x4Point(v47, &a4->TacticalClass_field_DE4, (float *)&v41); /*0x6d7c66*/
   v41 = *(Triple *)v7; /*0x6d7c6d*/
   v42 = v7[1]; /*0x6d7c78*/

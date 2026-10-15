@@ -169,7 +169,7 @@ void* WWMouseClass::captureMouse()
         Debug::Log(); /*0x7b9af8*/
       if ( (unsigned __int8)BSurface::CreateTripleBuffer((int)this) && this->outBuffer ) /*0x7b9b0f*/
       {
-        Rect::Set(&v16, 0, 0, 0, 0); /*0x7b9b26*/
+        (&v16)->Set(0, 0, 0, 0); /*0x7b9b26*/
         if ( this->m_ScrollY ) /*0x7b9b2b*/
         {
           UI_Helper_7BA2C0(); /*0x7b9b32*/
@@ -202,7 +202,7 @@ void* WWMouseClass::captureMouse()
         v17[1] = (char *)this->q_30 + Y; /*0x7b9bcd*/
         v13 = *WWMouseClass_field_0x44; /*0x7b9bd1*/
         WWMouseClass_field_0x24 = this->outBuffer; /*0x7b9bdb*/
-        v14 = Rect::Set(&v18, 0, 0, Width, Height); /*0x7b9be6*/
+        v14 = (&v18)->Set(0, 0, Width, Height); /*0x7b9be6*/
         (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(v13 + 8))( /*0x7b9bef*/
           this->__pad_044,
           v14,
@@ -211,7 +211,7 @@ void* WWMouseClass::captureMouse()
           0,
           1);
       }
-      Mouse::DrawCursor((Mouse *)this, (int *)this->outBuffer, 0, 0); /*0x7b9bfd*/
+      ((Mouse *)this)->DrawCursor((int *)this->outBuffer, 0, 0); /*0x7b9bfd*/
       ReleaseMutex(hMutex); /*0x7b9c09*/
     }
     ShowCursor(0); /*0x7b9c0d*/

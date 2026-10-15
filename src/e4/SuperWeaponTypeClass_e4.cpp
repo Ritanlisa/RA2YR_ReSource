@@ -112,7 +112,7 @@ LABEL_5:
     }
     v9 = *(unsigned int *)(v7 + 4 * v6); /*0x4f65f4*/
   }
-  if ( DynamicVector::GetOrGrow(&this->DynamicVector_5564, *(unsigned int *)(v9 + 3576)) ) /*0x4f65cc*/
+  if ( (&this->DynamicVector_5564)->GetOrGrow(*(unsigned int *)(v9 + 3576)) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return (gamemd::AbstractClass **)(1); /*0x4f65f3*/
@@ -235,7 +235,7 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   SuperWeaponTypeClass **v7; // edx
   SuperWeaponTypeClass **v8; // ecx
 
-  AbstractTypeClass::Constructor((char *)((int *)this), aP1); /*0x5113fa*/
+  ((char *)((int *)this))->Constructor(aP1); /*0x5113fa*/
   v3 = 0; /*0x5113ff*/
   LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
   this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
@@ -275,11 +275,11 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   this->q140 = 1065353216; /*0x5114ea*/
   this->q144 = 1065353216; /*0x5114f0*/
   this->q148 = 1065353216; /*0x5114f6*/
-  InfantryTypeVector::Construct2(&this->q14C, 0, 0); /*0x5114fc*/
+  (&this->q14C)->Construct2(0, 0); /*0x5114fc*/
   this->q160 = 10; /*0x511501*/
   this->q15C = 0; /*0x511508*/
   this->q14C = (unsigned int)(&vt_TypeList); /*0x51150b*/
-  UnitTypeVector::ConstructUnitTypeVectorClass(&this->q168, 0, 0); /*0x51151b*/
+  (&this->q168)->ConstructUnitTypeVectorClass(0, 0); /*0x51151b*/
   this->u32_17C = 10; /*0x511520*/
   this->u32_178 = 0; /*0x511527*/
   this->q168 = (int)(&vt_TypeList); /*0x51152a*/
@@ -397,7 +397,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 
   _EBP = v4; /*0x6cea2f*/
   INIClass::ResetSection((INIClass *)aP1); /*0x6cea33*/
-  if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((uint8_t ***)((AbstractTypeClass *)_EBP), (unsigned __int8 ***)aP1) ) /*0x6cea3b*/
+  if ( !(unsigned __int8)((uint8_t ***)((AbstractTypeClass *)_EBP))->LoadFromINI((unsigned __int8 ***)aP1) ) /*0x6cea3b*/
     return 0; /*0x6cee51*/
   v6 = *(unsigned int *)(_EBP + 156); /*0x6cea4a*/
   if ( INIClass::GetString( /*0x6cea6d*/

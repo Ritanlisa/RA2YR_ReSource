@@ -157,7 +157,7 @@ int ObjectClass::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)
         }
         v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4d7f66*/
         if ( v17 ) /*0x4d7f70*/
-          aP4 = AnimClass::ctor(v17, (void *)dword_8871E0->Normal[6], v43, 0, 1, (void *)0x600, 0, 0); /*0x4d7f98*/
+          aP4 = (v17)->ctor((void *)dword_8871E0->Normal[6], v43, 0, 1, (void *)0x600, 0, 0); /*0x4d7f98*/
         else
           aP4 = 0; /*0x4d7f9e*/
         if ( *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x4d7fb6*/
@@ -193,8 +193,8 @@ LABEL_38:
       if ( aP4 == (void **)g_FootClass_Pool ) /*0x4d8081*/
         return 0; /*0x4d8081*/
       vtable0 = (int)(this->vtable0); /*0x4d8099*/
-      v37 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, aP3); /*0x4d80a6*/
-      v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP4); /*0x4d80ac*/
+      v37 = ((CellCoord *)&dword_87F7E8)->To_CellObj(aP3); /*0x4d80a6*/
+      v21 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP4); /*0x4d80ac*/
 LABEL_51:
       (*(void (**)(TechnoClass *, int, unsigned int, void *, void *))(vtable0 + 888))(this, 2, 0, v21, v37); /*0x4d822a*/
 LABEL_52:
@@ -204,16 +204,16 @@ LABEL_52:
       if ( !(*(unsigned __int8 (**)(TechnoClass *))(this->vtable0 + 160))(this) ) /*0x4d8155*/
         return 0; /*0x4d8155*/
       v27 = (int)(this->vtable0); /*0x4d815b*/
-      v28 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d8165*/
+      v28 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v7); /*0x4d8165*/
       (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v27 + 888))(this, 7, 0, v28, 0); /*0x4d8171*/
       return 1; /*0x4d817f*/
     case 5: /*0x4d7de0*/
     case 63: /*0x4d7de0*/
-      v22 = ObjectClass::processDeath((ObjectClass *)v7); /*0x4d80b3*/
+      v22 = ((ObjectClass *)v7)->processDeath(); /*0x4d80b3*/
       if ( !v22 || *(unsigned char *)(v22 + 256) || *(int *)(v22 + 108) <= 0 ) /*0x4d80cb*/
       {
         v23 = (int)(this->vtable0); /*0x4d80e9*/
-        v24 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d80f5*/
+        v24 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v7); /*0x4d80f5*/
         (*(void (**)(TechnoClass *, int, void *, unsigned int, unsigned int))(v23 + 888))(this, 1, v24, 0, 0); /*0x4d80ff*/
         return 1; /*0x4d8107*/
       }
@@ -224,19 +224,19 @@ LABEL_52:
       }
     case 6: /*0x4d7de0*/
       v14 = (int)(this->vtable0); /*0x4d7e8e*/
-      v15 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d7e98*/
+      v15 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v7); /*0x4d7e98*/
       (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v14 + 888))(this, 10, 0, v15, 0); /*0x4d7ea4*/
       return 1; /*0x4d7eb2*/
     case 9: /*0x4d7de0*/
       if ( !(*(unsigned __int8 (**)(TechnoClass *))(this->vtable0 + 160))(this) ) /*0x4d811c*/
         return 0; /*0x4d811c*/
       v25 = (int)(this->vtable0); /*0x4d8122*/
-      v26 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d812c*/
+      v26 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v7); /*0x4d812c*/
       (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v25 + 888))(this, 8, 0, v26, 0); /*0x4d8138*/
       return 1; /*0x4d8146*/
     case 16: /*0x4d7de0*/
       v29 = (int)(this->vtable0); /*0x4d8182*/
-      v30 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d818c*/
+      v30 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v7); /*0x4d818c*/
       (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v29 + 888))(this, 17, 0, v30, 0); /*0x4d8198*/
       return 1; /*0x4d81a6*/
     case 26: /*0x4d7de0*/
@@ -247,14 +247,14 @@ LABEL_52:
         return 0; /*0x4d7e61*/
       }
       v12 = (int)(this->vtable0); /*0x4d7e67*/
-      v13 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d7e73*/
+      v13 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v7); /*0x4d7e73*/
       (*(void (**)(TechnoClass *, int, void *, unsigned int, unsigned int))(v12 + 888))(this, 11, v13, 0, 0); /*0x4d7e7d*/
       return 1; /*0x4d7e8b*/
     case 35: /*0x4d7de0*/
-      v31 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d81af*/
+      v31 = (InfantryClass *)((CellCoord *)&dword_87F7E8)->To_CellObj(v7); /*0x4d81af*/
       Type = InfantryClass::GetType(v31); /*0x4d81bb*/
       aP2 = *(__int16 **)(Type + 40); /*0x4d81ca*/
-      v33 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP2); /*0x4d81ce*/
+      v33 = (InfantryClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP2); /*0x4d81ce*/
       v34 = *(unsigned int *)(InfantryClass::GetType(v33) + 44) - 4; /*0x4d81e0*/
       aP3 = *(__int16 **)(Type + 40); /*0x4d81e3*/
       v35 = v34 & 7; /*0x4d81e7*/
@@ -265,7 +265,7 @@ LABEL_52:
       LOWORD(aP4) = v36; /*0x4d8204*/
       HIWORD(aP4) = HIWORD(aP3) + v35; /*0x4d8213*/
       *(unsigned int *)v40 = (unsigned int)(aP4); /*0x4d821c*/
-      v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v40); /*0x4d8225*/
+      v21 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v40); /*0x4d8225*/
       goto LABEL_51; /*0x4d8225*/
     case 51: /*0x4d7de0*/
       if ( !(*(unsigned __int8 (**)(TechnoClass *))(this->vtable0 + 160))(this) ) /*0x4d7df3*/
@@ -273,7 +273,7 @@ LABEL_52:
       PlacementCell = (void ***)ObjectClass::FindPlacementCell((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
       v10 = (int)(this->vtable0); /*0x4d7e06*/
       aP4 = *PlacementCell; /*0x4d7e0c*/
-      v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP4); /*0x4d7e18*/
+      v11 = ((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP4); /*0x4d7e18*/
       (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v10 + 888))(this, 25, 0, v11, 0); /*0x4d7e24*/
       return 1; /*0x4d7e32*/
     default:
@@ -444,7 +444,7 @@ LABEL_16:
           {
 LABEL_28:
             aP0->Locomotor = 0; /*0x4db550*/
-            ObjectClass::updateStateFlags(&aP0->Locomotor); /*0x4db55a*/
+            (&aP0->Locomotor)->updateStateFlags(); /*0x4db55a*/
             aP0->Locomotor = 0; /*0x4db566*/
             OleLoadFromStream(v4, &IID_ILocomotion, &aP0->Locomotor); /*0x4db568*/
             aP0->FootClass_field_5A0 = 0; /*0x4db574*/
@@ -754,7 +754,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
     || IsPassable
     || !(unsigned char)a4
     && (!*(unsigned char *)(v7->Vt34Thunk() + 3284) || v35 == 2)
-    && (v25 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v8),
+    && (v25 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v8),
         !MapSeed::CheckTileMatch(
            (MapSeed *)&DataGlobal_87F7E8,
            (__int16 *)(v37 + 36),
@@ -766,7 +766,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   {
     a4 = 0; /*0x4de4d7*/
     v32 = BYTE1(*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v8) + 80)) & 1; /*0x4de4fc*/
-    TileIndex = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, (__int16 *)(v37 + 36), v16, v36[0]); /*0x4de50b*/
+    TileIndex = ((MapClass *)&DataGlobal_87F7E8)->GetTileIndex((__int16 *)(v37 + 36), v16, v36[0]); /*0x4de50b*/
     v26 = v7->Vt34Thunk(); /*0x4de510*/
     v24 = (void **)LayerClass::Pathfinding_Find( /*0x4de528*/
                      &DataGlobal_87F7E8,

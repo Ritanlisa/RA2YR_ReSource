@@ -110,7 +110,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   v15[2] = v10[2]; /*0x5411e2*/
   if ( !vtable1 || !BYTE1(this->M5) ) /*0x5411e8*/
     return 0; /*0x5411af*/
-  if ( a4 && (&v14 == (int *)-16 || Network::IsBroadcastAddr((Network *)v15)) ) /*0x5411ff*/
+  if ( a4 && (&v14 == (int *)-16 || ((Network *)v15)->IsBroadcastAddr()) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
   v13 = (*(int (**)(int, int, int, unsigned int *, int, int, unsigned int))(*(unsigned int *)this->ambientSoundController[3] /*0x541225*/
                                                                          + 44))(
@@ -158,7 +158,7 @@ int E4Recv_542F30::sub_542F30()
         goto LABEL_12; /*0x542f5c*/
       while ( 1 ) /*0x542f5f*/
       {
-        TileIndex = Terrain::GetTileIndex((Terrain *)v6, v5); /*0x542f5f*/
+        TileIndex = ((Terrain *)v6)->GetTileIndex(v5); /*0x542f5f*/
         if ( TileIndex ) /*0x542f66*/
           break; /*0x542f66*/
 LABEL_8:
@@ -1240,7 +1240,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
             {
               if ( !v17->u32_A4 ) /*0x546fc0*/
               {
-                v13 += MapClass::LoadFileData(v17); /*0x546fd1*/
+                v13 += (v17)->LoadFileData(); /*0x546fd1*/
                 ++v12; /*0x546fd3*/
               }
             }

@@ -280,7 +280,7 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* a2)
         v6 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v9)); /*0x6b60d9*/
         v6->q048 = *(&this->q405); /*0x6b60ea*/
         v6->u8_11F = i + this->storedTiberium * v7; /*0x6b60f5*/
-        BuildingClass::CreatePlacementCrater(v6); /*0x6b60fb*/
+        (v6)->CreatePlacementCrater(); /*0x6b60fb*/
       }
       result = ++v7; /*0x6b6115*/
     }
@@ -580,7 +580,7 @@ int UnitClass::Deploy()
         {
           v10 = *(BulletClass **)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[352] + 4 * i); /*0x7193e1*/
           if ( v10->BulletClass_field_0x10C == v2->Owner ) /*0x7193ec*/
-            BulletClass::LoseTarget(v10); /*0x7193ee*/
+            (v10)->LoseTarget(); /*0x7193ee*/
         }
         v11 = (AnimClass *)operator new(0x1C8u); /*0x7193fb*/
         if ( v11 ) /*0x719405*/

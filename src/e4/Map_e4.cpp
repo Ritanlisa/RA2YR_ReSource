@@ -318,8 +318,8 @@ int E4Recv_5ADD10::Map_Delete()
   /* X11: vtable install elided (implicit via MapSelect virtuals 0x5add5b) */
   v2 = ScenarioClass::Load((ScenarioClass *)&v7, (int)this) == 0; /*0x5add71*/
   DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
-  MSEngine::Destructor((MSEngine *)v8); /*0x5add7d*/
-  MSEngine::Destruct(&v7); /*0x5add86*/
+  ((MSEngine *)v8)->Destructor(); /*0x5add7d*/
+  (&v7)->Destruct(); /*0x5add86*/
   if ( v2 )
   {
     StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.ROT, 134); /*0x5addba*/
@@ -522,7 +522,7 @@ char sub_55CF10()
       {
         if ( dword_A8EA0C ) /*0x55cf4c*/
         {
-          NetworkEventQueueClass::WaitForResponse((NetworkEventQueueClass *)&g_NetworkEventQueue); /*0x55cf53*/
+          ((NetworkEventQueueClass *)&g_NetworkEventQueue)->WaitForResponse(); /*0x55cf53*/
           v2 = 480; /*0x55cf61*/
           Ticks = (Network *)TimerGetTicks(); /*0x55cf66*/
           while ( 1 ) /*0x55cf74*/
@@ -537,16 +537,16 @@ char sub_55CF10()
             if ( !v2 ) /*0x55cf90*/
               break; /*0x55cf90*/
             Event::Dispatch(); /*0x55cf92*/
-            if ( Process::WaitForExit((Process *)&g_NetworkEventQueue, 0xAu, 0) ) /*0x55cfa0*/
+            if ( ((Process *)&g_NetworkEventQueue)->WaitForExit(0xAu, 0) ) /*0x55cfa0*/
               break; /*0x55cfa0*/
             v2 = 480; /*0x55cf70*/
           }
         }
         if ( !dword_A8B23C ) /*0x55cfb2*/
-          return Network::SendUnreachable(Ticks); /*0x55cfb2*/
+          return (Ticks)->SendUnreachable(); /*0x55cfb2*/
         result = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vfptr + 2))(dword_A8B23C); /*0x55cfb6*/
         if ( !result ) /*0x55cfbb*/
-          return Network::SendUnreachable(Ticks); /*0x55cfbd*/
+          return (Ticks)->SendUnreachable(); /*0x55cfbd*/
       }
     }
   }
@@ -929,7 +929,7 @@ AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
           v13 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v17); /*0x5a7dba*/
           v14 = *(unsigned int *)(v20 + 4 * (v9 + v7 * v16[185]) + 16); /*0x5a7dcf*/
           if ( v14 /*0x5a7e27*/
-            && (!Cell::IsEmpty(v13) && !sub_4863A0(v13)
+            && (!(v13)->IsEmpty() && !sub_4863A0(v13)
              || v13->u32_470 != *(char *)(v14 + 42)
              || a3 && *((unsigned char *)dword_ABED10 + 80 * (int16_t)v17 + 80 * g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v17)) + 2))) + 70)) )
           {

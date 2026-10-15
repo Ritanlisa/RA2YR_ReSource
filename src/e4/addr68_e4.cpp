@@ -529,7 +529,7 @@ int sub_683FB0()
   int *p_vfptr2; // esi
   AsyncIO *v2; // ecx
 
-  MouseClass::GetPosition((MouseClass *)&dword_87F7E8); /*0x683fb7*/
+  ((MouseClass *)&dword_87F7E8)->GetPosition(); /*0x683fb7*/
   if ( ((unsigned int *)(dword_A8B230))[43].vfptr2 == -1 ) /*0x683fd0*/
   {
     p_vfptr2 = &((unsigned int *)(dword_A8B230))[43].vfptr2; /*0x683fc1*/
@@ -543,7 +543,7 @@ int sub_683FB0()
   EndBufferMixer(&g_MixerState->vfptr, dword_83D834); /*0x684037*/
   (*((unsigned char *)&(v2))) = 0; /*0x68403c*/
   dword_83D834 = 0x4000; /*0x68403e*/
-  AsyncIO::Read(v2); /*0x684048*/
+  (v2)->Read(); /*0x684048*/
   return sub_406F40();
 }
 }
@@ -590,12 +590,12 @@ void * * ScenarioClass_SetTimer(int a1)
     byte_B054CC = dword_A8B230->ScenarioClass_field_35A2; /*0x68411b*/
     if ( !byte_B054CC ) /*0x684120*/
     {
-      Mouse::ReleaseCapture(&dword_87F7E8); /*0x684127*/
+      (&dword_87F7E8)->ReleaseCapture(); /*0x684127*/
       if ( !(*(int (**)(int))(*&dword_887640->q_A0))(dword_887640) ) /*0x684134*/
         (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x684143*/
       dword_A8B230->ScenarioClass_field_35A2 = 1; /*0x68414c*/
       byte_A8ED9C = 1; /*0x684159*/
-      Timer::PumpMessages((HWND *)dword_87F770); /*0x684160*/
+      ((HWND *)dword_87F770)->PumpMessages(); /*0x684160*/
       dword_B07784 = 0; /*0x684165*/
     }
   }
@@ -619,7 +619,7 @@ ScenarioClass * * Mouse_Update()
   }
   (((unsigned char *)&(((unsigned int *)(dword_A8B230))[381].vfptr3))[2]) = 0; /*0x6842cc*/
   ((unsigned int *)&stru_A8EB00)[440] = 0; /*0x6842d9*/
-  result = (int)(Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer)); /*0x6842e0*/
+  result = (int)((*(Timer **)&g_BinkMoviePlayer)->PumpMessages()); /*0x6842e0*/
   dword_B07784 = 0; /*0x6842e5*/
   return (gamemd::ScenarioClass **)(result); /*0x6842ef*/
 }
@@ -696,9 +696,9 @@ int PostLoadInitScenario()
   for ( j = 0; j < g_MultiplayerCleanup; ++j ) /*0x684d50*/
   {
     v7 = (TeamClass *)*((unsigned int *)dword_B0E784 + j); /*0x684d5c*/
-    if ( (Debug::AccumFlags((Debug *)v7) & 4) != 0 ) /*0x684d68*/
+    if ( (((Debug *)v7)->AccumFlags() & 4) != 0 ) /*0x684d68*/
     {
-      v8 = (int)(TeamClass::FindOrCreate(v7));
+      v8 = (int)((v7)->FindOrCreate());
       if ( dword_8B41B8 < dword_8B41B0 /*0x684da9*/
         || (byte_8B41B5 || !dword_8B41B0)
         && dword_8B41BC > 0
@@ -711,9 +711,9 @@ int PostLoadInitScenario()
         *((unsigned int *)dword_8B41AC + v9) = v8; /*0x684dc5*/
       }
     }
-    if ( (Debug::AccumFlags((Debug *)v7) & 0x10) != 0 ) /*0x684dd1*/
+    if ( (((Debug *)v7)->AccumFlags() & 0x10) != 0 ) /*0x684dd1*/
     {
-      v10 = TeamClass::FindOrCreate(v7); /*0x684de0*/
+      v10 = (v7)->FindOrCreate(); /*0x684de0*/
       if ( dword_8B40D8 < dword_8B40D0 /*0x684e13*/
         || (byte_8B40D5 || !dword_8B40D0)
         && dword_8B40DC > 0
@@ -726,9 +726,9 @@ int PostLoadInitScenario()
         *((unsigned int *)dword_8B40CC + v11) = v10; /*0x684e2f*/
       }
     }
-    if ( (Debug::AccumFlags((Debug *)v7) & 8) != 0 ) /*0x684e3b*/
+    if ( (((Debug *)v7)->AccumFlags() & 8) != 0 ) /*0x684e3b*/
     {
-      v12 = TeamClass::FindOrCreate(v7); /*0x684e44*/
+      v12 = (v7)->FindOrCreate(); /*0x684e44*/
       Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(v12->buildingType + 160) + 164) + 184)); /*0x684e5b*/
       if ( Owner ) /*0x684e62*/
       {
@@ -755,9 +755,9 @@ int PostLoadInitScenario()
     do /*0x684efb*/
     {
       v20 = (TagClass *)*((unsigned int *)dword_B0E784 + v19); /*0x684ec8*/
-      if ( TagClass::HasValidHouse(v20) ) /*0x684ecd*/
+      if ( (v20)->HasValidHouse() ) /*0x684ecd*/
       {
-        v21 = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(v20[2].defaultCoords + 164) + 180)); /*0x684ee8*/
+        v21 = (*(HouseClass **)(*(unsigned int *)(v20[2].defaultCoords + 164) + 180))->FindOwner(); /*0x684ee8*/
         ++*(unsigned int *)(v21 + 636); /*0x684eed*/
       }
       ++v19; /*0x684ef8*/
@@ -780,7 +780,7 @@ int PostLoadInitScenario()
           {
             if ( (*(int (__stdcall **)(int *))(v23->arrayIndex + 28))(&v23->arrayIndex) <= 0 ) /*0x684f4d*/
               break; /*0x684f4d*/
-            HouseClass::GiveTiberium_Storage(v23, 1.0, 0); /*0x684f58*/
+            (v23)->GiveTiberium_Storage(1.0, 0); /*0x684f58*/
             v26 = *(unsigned int *)(vtable0 + 184); /*0x684f5d*/
             v24 -= v26; /*0x684f63*/
             __asm { fstp st } /*0x684f67*/
@@ -793,7 +793,7 @@ int PostLoadInitScenario()
     }
   }
   Radar::UpdateReveal(1, 0); /*0x684f89*/
-  Voxel::InitDistanceTable(v34); /*0x684f8e*/
+  (v34)->InitDistanceTable(); /*0x684f8e*/
   LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x684f98*/
   for ( m = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x684fa9*/
         m;
@@ -801,9 +801,9 @@ int PostLoadInitScenario()
   {
     ((House *)(m))->AnnounceUpgrade(-1); /*0x684faf*/
   }
-  MapClass::ProcessRegion((MapClass *)&dword_87F7E8); /*0x684fc7*/
+  ((MapClass *)&dword_87F7E8)->ProcessRegion(); /*0x684fc7*/
   Terrain::ConnectivityGraph((Terrain *)&dword_87F7E8); /*0x684fd1*/
-  MapClass::BuildSubzones((MapClass *)&dword_87F7E8); /*0x684fdb*/
+  ((MapClass *)&dword_87F7E8)->BuildSubzones(); /*0x684fdb*/
   MarkCliffEdgePassability((int)&dword_87F7E8); /*0x684fe5*/
   if ( !dword_A8ED78 ) /*0x684ff0*/
   {
@@ -813,15 +813,8 @@ int PostLoadInitScenario()
       v36 = 2688; /*0x68500f*/
       v37 = 2688; /*0x685013*/
       GroundHeight = 0; /*0x685017*/
-      v29 = (int)(WarheadTypeClass::applyDamage(aGascloudsys)); /*0x68501b*/
-      dword_A8ED78 = (ObjectClass *)ParticleSystemClass::Constructor( /*0x685040*/
-                                      v28,
-                                      *((unsigned int *)dword_A83D6C + v29),
-                                      &v36,
-                                      0,
-                                      0,
-                                      &dword_B05488,
-                                      0);
+      v29 = (int)((aGascloudsys)->applyDamage()); /*0x68501b*/
+      dword_A8ED78 = (ObjectClass *)(/*0x685040*/ v28)->Constructor(*((unsigned int *)dword_A83D6C + v29), &v36, 0, 0, &dword_B05488, 0);
     }
     else
     {
@@ -835,7 +828,7 @@ int PostLoadInitScenario()
           n;
           n = (Building *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
     {
-      if ( Building::GetNthOfType(n) ) /*0x68507a*/
+      if ( (n)->GetNthOfType() ) /*0x68507a*/
       {
         if ( !Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, dword_8871E0[1].AmmoCrateDamage - 1) ) /*0x68509e*/
         {
@@ -843,7 +836,7 @@ int PostLoadInitScenario()
           if ( v31 ) /*0x6850b8*/
           {
             v32 = (int *)(*(int (**)(Building *, int *))(*(unsigned int *)n->__pad_000 + 72))(n, &v36); /*0x6850cd*/
-            AnimClass::ctor(v31, dword_8871E0->DetailMinFrameRateMovie.LargeVisceroid, v32, 0, 1, (void *)0x600, 0, 0); /*0x6850e0*/
+            (v31)->ctor(dword_8871E0->DetailMinFrameRateMovie.LargeVisceroid, v32, 0, 1, (void *)0x600, 0, 0); /*0x6850e0*/
           }
         }
       }
@@ -928,7 +921,7 @@ int ScenarioClass_Reset()
     }
     while ( v3 < *(int *)&((unsigned int *)&stru_A8EB00)[340] ); /*0x6852b2*/
   }
-  MapClass::FreeAllCells((MapClass *)&DataGlobal_87F7E8); /*0x685313*/
+  ((MapClass *)&DataGlobal_87F7E8)->FreeAllCells(); /*0x685313*/
   *(unsigned int *)&DataGlobal_87F848 = 0; /*0x685322*/
   if ( *(unsigned int *)&DataGlobal_87F83C && DataGlobal_87F845 ) /*0x685332*/
   {
@@ -946,7 +939,7 @@ int ScenarioClass_Reset()
     {
       *((unsigned char *)&dword_A8B230[204].vfptr + j) = 0; /*0x68536e*/
       (((unsigned char *)&(v9[374].uniqueId))[2]) = 1; /*0x685377*/
-      HouseClass::UpdateAllTypes(v7); /*0x68537e*/
+      (v7)->UpdateAllTypes(); /*0x68537e*/
     }
     v7 = (HouseClass *)((char *)v7 + 1); /*0x685386*/
   }
@@ -1008,7 +1001,7 @@ int ScenarioClass_Reset()
   CleanupVeinholeSystem(); /*0x685510*/
   BuildingClass::FreeUpgradeQueue(); /*0x685515*/
   BuildingClass::FreeUpgradeQueue2(); /*0x68551a*/
-  Stream::FlushAndReset(&stru_87F5D8); /*0x685524*/
+  (&stru_87F5D8)->FlushAndReset(); /*0x685524*/
   LoadGame::CleanupArray((LoadGame *)&g_MissionQueueFrame); /*0x68552e*/
   LoadGame::ClearAllSlots((LoadGame *)&g_CellClassManager); /*0x685538*/
   PlanningNodeClass::CleanupAll(); /*0x68553d*/
@@ -1049,7 +1042,7 @@ int ScenarioClass_Reset()
   }
   (*((unsigned char *)&(dword_A8B230[14].NeedsSaveOrLink))) = 0; /*0x68563a*/
   Map_Reset_734210(); /*0x685640*/
-  Selection::ClearGlobals(0); /*0x685647*/
+  (0)->ClearGlobals(); /*0x685647*/
   result = Map_Reset_660C50(); /*0x68564c*/
   dword_A8B230[14].referenceCount = 1000000; /*0x685659*/
   return result; /*0x685657*/
@@ -1114,16 +1107,16 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   }
   else
   {
-    CCINIClass::WriteHouses((char *)&v10.vfptr.vfptr1); /*0x687e22*/
+    ((char *)&v10.vfptr.vfptr1)->WriteHouses(); /*0x687e22*/
   }
   MapClass::SaveCellTagsToINI((MapClass *)&dword_87F7E8, (char *)&v10.vfptr.vfptr1); /*0x687e31*/
-  ObjectTypeClass::ReadDestroyAnim((char *)&v10.vfptr.vfptr1); /*0x687e3a*/
+  ((char *)&v10.vfptr.vfptr1)->ReadDestroyAnim(); /*0x687e3a*/
   ReadFootINI((char *)&v10.vfptr.vfptr1); /*0x687e43*/
   SaveInfantryToINI(v7, a3, (int)Source); /*0x687e4c*/
   SaveAircraftToINI((char *)&v10.vfptr.vfptr1); /*0x687e55*/
   sub_44FE60((char *)&v10.vfptr.vfptr1); /*0x687e5e*/
   OverlayClass::WriteINI((char *)&v10.vfptr.vfptr1); /*0x687e67*/
-  UnitTypeClass::ReadINIEntry((char *)&v10.vfptr.vfptr1); /*0x687e70*/
+  ((char *)&v10.vfptr.vfptr1)->ReadINIEntry(); /*0x687e70*/
   InfantryClass::SetMission((char *)&v10.vfptr.vfptr1); /*0x687e79*/
   if ( !a2 || byte_A8ED6B ) /*0x687e8a*/
   {
@@ -1137,7 +1130,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   RawFileClass::Construct((BufferIOFileClass *)&v13, (int)Source); /*0x687ed2*/
   INIClass::WriteDigest((CCINIClass *)&v10.vfptr.vfptr1, (int)&v13, 1); /*0x687ee5*/
   ((RawFileClass *)((BufferIOFileClass *)&v13))->Dtor(); /*0x687ef1*/
-  return HashTable::DestroyHashTableINIClass((INIClass *)&v10.vfptr.vfptr1); /*0x687eff*/
+  return ((INIClass *)&v10.vfptr.vfptr1)->DestroyHashTableINIClass(); /*0x687eff*/
 }
 }
 // 0x687F10
@@ -1221,7 +1214,7 @@ AbstractClass * * SessionClass_AssignHouses()
       {
         ((WideString *)((wchar_t **)&v29))->Assign((wchar_t *)v7); /*0x687fdc*/
         ToWideStringCharAlt((char **)&v29.q004, (const wchar_t **)&v29); /*0x687fe9*/
-        DeleteAndZero::Alt(&v29); /*0x687ff2*/
+        (&v29)->Alt(); /*0x687ff2*/
         v10 = ((String *)((String *)&v29.q004))->GetOrEmpty(); /*0x687ffb*/
         if ( v10 ) /*0x688002*/
         {
@@ -1265,7 +1258,7 @@ AbstractClass * * SessionClass_AssignHouses()
       *(unsigned int *)(v9 + 90196) = SessionClass::GetPlayerColorScheme(v7->q053); /*0x6880d9*/
       HouseClass::GetColor((char *)v9); /*0x6880df*/
       ComputeSessionColorVector((ObjectClass *)v9); /*0x6880e6*/
-      *(unsigned int *)(v9 + 90200) = SessionClass::GetOption((int *)v7); /*0x6880f2*/
+      *(unsigned int *)(v9 + 90200) = ((int *)v7)->GetOption(); /*0x6880f2*/
       *(unsigned int *)(v9 + 90204) = v7->u32_63; /*0x688101*/
       if ( !v28 ) /*0x688107*/
       {
@@ -1353,7 +1346,7 @@ AbstractClass * * SessionClass_AssignHouses()
   v24 = (int *)operator new(0x160B8u); /*0x68832f*/
   if ( v24 ) /*0x688336*/
   {
-    v25 = SuperWeaponTypeClass::FindByName(&g_INI_Key_Special); /*0x68833d*/
+    v25 = (&g_INI_Key_Special)->FindByName(); /*0x68833d*/
     v26 = HouseClass::Construct(v24, *((unsigned int *)dword_A83C9C + v25)); /*0x688356*/
   }
   else

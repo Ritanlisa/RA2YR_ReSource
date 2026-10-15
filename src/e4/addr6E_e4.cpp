@@ -206,8 +206,8 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   v8[1] = (v6[1] << 8) + 128; /*0x6e27d0*/
   v8[0] = (v6[0] << 8) + 128; /*0x6e27da*/
   GroundHeight = Cell::GetGroundHeight(v8); /*0x6e27e3*/
-  if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v6) + 80) & 0x100) != 0 /*0x6e2819*/
-    || (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v6) + 80) & 0x400) != 0 )
+  if ( (*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v6) + 80) & 0x100) != 0 /*0x6e2819*/
+    || (*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v6) + 80) & 0x400) != 0 )
   {
     GroundHeight += dword_B0E6D4; /*0x6e2827*/
   }
@@ -229,16 +229,16 @@ char CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, voi
     return 0; /*0x6e30cd*/
   if ( v7 == 8997 ) /*0x6e30d5*/
   {
-    Field11 = Property::GetField11(a6); /*0x6e30d7*/
+    Field11 = (a6)->GetField11(); /*0x6e30d7*/
   }
   else
   {
     if ( v7 == (HouseClass *)-1 ) /*0x6e30e1*/
       return 0; /*0x6e3103*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v7) ) /*0x6e30e5*/
+    if ( (uint8_t)(v7)->IsSpecialType() ) /*0x6e30e5*/
       Field11 = ((BuildingType *)(v7))->FindOwnerHouse(); /*0x6e30f0*/
     else
-      Field11 = HouseClass::FindOwner(v7); /*0x6e30f7*/
+      Field11 = (v7)->FindOwner(); /*0x6e30f7*/
   }
   if ( !Field11 ) /*0x6e30fe*/
     return 0; /*0x6e30fe*/
@@ -257,7 +257,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   int v9; // [esp+8h] [ebp-8h]
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v7, this->u32_11); /*0x6e339b*/
+  v7 = *((char *)dword_A8B230)->Get_Waypoint_Location(&v7, this->u32_11); /*0x6e339b*/
   GroundHeight = 0; /*0x6e339f*/
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
@@ -352,7 +352,7 @@ int sub_6EC250(int a1, int a2)
     if ( v4 && a2 == v4->owner && *(unsigned int *)(v4->buildingType + 180) < a1 ) /*0x6ec294*/
     {
       for ( j = v4->firstUnit; j; j = v4->firstUnit ) /*0x6ec29b*/
-        TeamClass::LiberateMember_Start(v4, j, 0xFFFFFFFF, 0); /*0x6ec2a4*/
+        (v4)->LiberateMember_Start(j, 0xFFFFFFFF, 0); /*0x6ec2a4*/
       v4->TeamClass_field_7E = 1; /*0x6ec2b0*/
       v4->needsToDisappear = 1; /*0x6ec2b3*/
       dword_A8ED84 = dword_A8ED84; /*0x6ec2bc*/
@@ -479,7 +479,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
     else
     {
       v9 = (gamemd::FootClass *)((int)(aP2));
-      if ( (uint8_t)HouseClass::IsAlliedWith(aP2->owner, v8) /*0x6eec62*/
+      if ( (uint8_t)(aP2->owner)->IsAlliedWith(v8) /*0x6eec62*/
         && !*(unsigned char *)(*(unsigned int *)(v7[135] + 52) + 422) )
       {
         goto LABEL_19; /*0x6eec62*/
@@ -662,7 +662,7 @@ LABEL_23:
   }
   v21 = 0; /*0x6efe32*/
 LABEL_24:
-  DefaultTimer = Super::GetDefaultTimer((Super *)v11); /*0x6efde5*/
+  DefaultTimer = ((Super *)v11)->GetDefaultTimer(); /*0x6efde5*/
   __asm { fild [esp+28h+var_10] } /*0x6efdf3*/
   if ( *(unsigned char *)(v11 + 109) ) /*0x6efdf0*/
   {
@@ -838,7 +838,7 @@ char E4Recv_6E1180::sub_6E1180(int a2, int a3, int a4, int a5)
   int v6; // [esp+0h] [ebp-8h] BYREF
   int v7; // [esp+4h] [ebp-4h] BYREF
 
-  v6 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v7, *&this->M144); /*0x6e11a6*/
+  v6 = *((char *)dword_A8B230)->Get_Waypoint_Location(&v7, *&this->M144); /*0x6e11a6*/
   MapClass::TriggerEVA((__int16 *)&v6); /*0x6e11aa*/
   return 1; /*0x6e11b1*/
 
@@ -918,7 +918,7 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
   v9 = (v6[1] << 8) + 128; /*0x6e3630*/
   v8 = (v6[0] << 8) + 128; /*0x6e363a*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e3643*/
-  if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v6) + 80) & 0x100) != 0 ) /*0x6e365f*/
+  if ( (*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v6) + 80) & 0x100) != 0 ) /*0x6e365f*/
     GroundHeight += dword_B0E6D4; /*0x6e366d*/
   LOWORD(v7) = v8 / 256; /*0x6e3681*/
   HIWORD(v7) = v9 / 256; /*0x6e3696*/

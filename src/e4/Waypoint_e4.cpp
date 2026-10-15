@@ -48,7 +48,7 @@ LABEL_12:
   }
   while ( 1 ) /*0x5023f7*/
   {
-    Element = (unsigned int *)Array::GetElement(v6, v7); /*0x5023f7*/
+    Element = (unsigned int *)(v6)->GetElement(v7); /*0x5023f7*/
     if ( (unsigned __int16)(*Element / 256) == *aP1 && (unsigned __int16)(Element->q004 / 256) == aP1[1] ) /*0x502422*/
       return Element; /*0x502441*/
     v6 = *(unsigned int **)i; /*0x502424*/

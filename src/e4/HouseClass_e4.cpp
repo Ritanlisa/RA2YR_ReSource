@@ -54,7 +54,7 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
   int v11[3]; // [esp+Ch] [ebp-18h] BYREF
   unsigned char v12[12]; // [esp+18h] [ebp-Ch] BYREF
 
-  v6 = (void *)*((unsigned int *)dword_8B4154 + AnimTypeClass::FindIndex(a3)); /*0x43b5fb*/
+  v6 = (void *)*((unsigned int *)dword_8B4154 + (a3)->FindIndex()); /*0x43b5fb*/
   v7 = (int *)(*(int (__thiscall **)(int, unsigned char *))(a2->RandomLoopDelay)(a2, v12); /*0x43b605*/
   v11[0] = *v7; /*0x43b60a*/
   v11[1] = v7[1]; /*0x43b616*/
@@ -65,7 +65,7 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
   else
     v9 = 0; /*0x43b64b*/
   BuildingClass::SetField95((BuildingClass *)v9, arg0); /*0x43b654*/
-  Function::Method_424CA0((Function *)v9, aP0); /*0x43b65c*/
+  ((Function *)v9)->Method_424CA0(aP0); /*0x43b65c*/
   v9->SuperClass_19D = 1; /*0x43b661*/
   return v9; /*0x43b66a*/
 }
@@ -258,54 +258,54 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   char Destination[32]; // [esp+7Ch] [ebp-20h] BYREF
   int v68; // [esp+A0h] [ebp+4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4f54a9*/
+  ((AbstractClass *)this)->Constructor(); /*0x4f54a9*/
   this->vtable4 = (void *)(-1); /*0x4f54b8*/
   this->IsAllocated = a2; /*0x4f54c2*/
   TagClassVector::Construct(&this->conYards, 0, 0); /*0x4f54c5*/
   this->u32_E = (int)&vt_DynamicVectorClass; /*0x4f54cf*/
   this->IsAllocated = 10; /*0x4f54d5*/
   this->q012 = 0; /*0x4f54d8*/
-  VectorClass::BuildingConstructor(&this->abstractFlags, 0, 0); /*0x4f54e2*/
+  (&this->abstractFlags)->BuildingConstructor(0, 0); /*0x4f54e2*/
   this->abstractFlags = (int)&vt_DynamicVectorClass; /*0x4f54e7*/
   this->q019 = 10; /*0x4f54ed*/
   this->nextArrayIndex = 0; /*0x4f54f0*/
-  VectorClass::BuildingConstructor(&this->q01A, 0, 0); /*0x4f54fa*/
+  (&this->q01A)->BuildingConstructor(0, 0); /*0x4f54fa*/
   this->q01A = (int)&vt_DynamicVectorClass; /*0x4f54ff*/
   this->u8_1F = 10; /*0x4f5505*/
   this->u32_1E = 0; /*0x4f5508*/
-  VectorClass::BuildingConstructor(&this->NeedsSaveOrLink, 0, 0); /*0x4f5515*/
+  (&this->NeedsSaveOrLink)->BuildingConstructor(0, 0); /*0x4f5515*/
   this->NeedsSaveOrLink = (void *)((int)&vt_DynamicVectorClass); /*0x4f551a*/
   this->u32_25 = 10; /*0x4f5520*/
   this->vtable5 = 0; /*0x4f5523*/
-  VectorClass::BuildingConstructor(&this->u32_26, 0, 0); /*0x4f5530*/
+  (&this->u32_26)->BuildingConstructor(0, 0); /*0x4f5530*/
   this->u32_26 = (int)&vt_DynamicVectorClass; /*0x4f5535*/
   this->q02B = 10; /*0x4f553b*/
   this->u32_2A = 0; /*0x4f553e*/
-  VectorClass::BuildingConstructor(&this->vtable7, 0, 0); /*0x4f554b*/
+  (&this->vtable7)->BuildingConstructor(0, 0); /*0x4f554b*/
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x4f5550) */
   this->u32_31 = 10; /*0x4f5556*/
   this->relatedTagsCount = 0; /*0x4f5559*/
-  VectorClass::BuildingConstructor(&this->q032, 0, 0); /*0x4f5566*/
+  (&this->q032)->BuildingConstructor(0, 0); /*0x4f5566*/
   this->q032 = (void *)((int)&vt_DynamicVectorClass); /*0x4f556b*/
   this->q037 = 10; /*0x4f5571*/
   this->arrayIndex = 0; /*0x4f5574*/
-  VectorClass::BuildingConstructor(&this->conYards, 0, 0); /*0x4f5581*/
+  (&this->conYards)->BuildingConstructor(0, 0); /*0x4f5581*/
   this->conYards = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f5586*/
   this->u32_3D = 10; /*0x4f558c*/
   this->conYardsCount = 0; /*0x4f558f*/
-  VectorClass::BuildingConstructor(&this->q03E, 0, 0); /*0x4f559c*/
+  (&this->q03E)->BuildingConstructor(0, 0); /*0x4f559c*/
   this->q03E = (int)&vt_DynamicVectorClass; /*0x4f55a1*/
   this->u32_43 = 10; /*0x4f55a7*/
   this->q042 = 0; /*0x4f55aa*/
-  VectorClass::BuildingConstructor(&this->buildings, 0, 0); /*0x4f55b7*/
+  (&this->buildings)->BuildingConstructor(0, 0); /*0x4f55b7*/
   this->buildings = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f55bc*/
   this->u32_49 = 10; /*0x4f55c2*/
   this->buildingsCount = 0; /*0x4f55c5*/
-  VectorClass::BuildingConstructor(&this->u32_4A, 0, 0); /*0x4f55d2*/
+  (&this->u32_4A)->BuildingConstructor(0, 0); /*0x4f55d2*/
   this->u32_4A = (int)&vt_DynamicVectorClass; /*0x4f55d7*/
   this->q04F = 10; /*0x4f55dd*/
   this->q04E = 0; /*0x4f55e0*/
-  VectorClass::BuildingConstructor(&this->unitRepairStations, 0, 0); /*0x4f55ed*/
+  (&this->unitRepairStations)->BuildingConstructor(0, 0); /*0x4f55ed*/
   this->unitRepairStations = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f55f2*/
   this->u32_55 = 10; /*0x4f55f8*/
   this->repairStationsCount = 0; /*0x4f55fb*/
@@ -418,20 +418,20 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->countResourceGatherers = 0; /*0x4f58bb*/
   this->q0BD = 0; /*0x4f58c1*/
   this->u8_BE = 0; /*0x4f58c7*/
-  Delegate::GetField(&this->Delegate_BF); /*0x4f58cd*/
+  (&this->Delegate_BF)->GetField(); /*0x4f58cd*/
   this->q0C3 = 0; /*0x4f58d8*/
   this->countWarfactories = 0; /*0x4f58de*/
-  Delegate::GetField(&this->Delegate_C5); /*0x4f58e4*/
-  HouseClass::ClearStatArray(&this->HouseClass_CA); /*0x4f58ef*/
-  HouseClass::ClearStatArray(&this->aircraftAltOwner); /*0x4f58fa*/
-  HouseClass::ClearStatArray(&this->HouseClass_4CE); /*0x4f5905*/
-  HouseClass::ClearStatArray(&this->q6D0); /*0x4f5910*/
-  HouseClass::ClearStatArray(&this->HouseClass_8D2); /*0x4f591b*/
-  HouseClass::ClearStatArray(&this->HouseClass_AD4); /*0x4f5926*/
-  HouseClass::ClearStatArray(&this->HouseClass_CD6); /*0x4f5931*/
-  HouseClass::ClearStatArray(&this->HouseClass_ED8); /*0x4f593c*/
-  HouseClass::ClearStatArray(&this->HouseClass_10DA); /*0x4f5947*/
-  HouseClass::ClearStatArray(&this->HouseClass_12DC); /*0x4f5952*/
+  (&this->Delegate_C5)->GetField(); /*0x4f58e4*/
+  (&this->HouseClass_CA)->ClearStatArray(); /*0x4f58ef*/
+  (&this->aircraftAltOwner)->ClearStatArray(); /*0x4f58fa*/
+  (&this->HouseClass_4CE)->ClearStatArray(); /*0x4f5905*/
+  (&this->q6D0)->ClearStatArray(); /*0x4f5910*/
+  (&this->HouseClass_8D2)->ClearStatArray(); /*0x4f591b*/
+  (&this->HouseClass_AD4)->ClearStatArray(); /*0x4f5926*/
+  (&this->HouseClass_CD6)->ClearStatArray(); /*0x4f5931*/
+  (&this->HouseClass_ED8)->ClearStatArray(); /*0x4f593c*/
+  (&this->HouseClass_10DA)->ClearStatArray(); /*0x4f5947*/
+  (&this->HouseClass_12DC)->ClearStatArray(); /*0x4f5952*/
   this->u8_14DE = 0; /*0x4f595c*/
   this->u8_14DF = 0; /*0x4f5962*/
   this->q14E0 = 0; /*0x4f5968*/

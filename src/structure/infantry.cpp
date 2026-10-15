@@ -340,7 +340,7 @@ int InfantryClass::ProcessIdleDeploy()
       v4 = this->SequenceAnim[0]; /*0x520165*/
       if ( v4 != 27 && v4 != 28 && v4 != 29 && v4 != 30 ) /*0x52017d*/
       {
-        if ( !(uint8_t)House::IsCurrentPlayer((House *)this->owner) ) /*0x520185*/
+        if ( !(uint8_t)((House *)this->owner)->IsCurrentPlayer() ) /*0x520185*/
           goto LABEL_42; /*0x520185*/
         if ( !this->movementDestination ) /*0x52018e*/
         {
@@ -428,12 +428,12 @@ bool InfantryClass::CanDeployAtCell(int16_t *a2, int16_t *a3)
     return 0; /*0x5221f3*/
   if ( (*((int (__thiscall **)(InfantryClass *))this->vfptr + 114))(this) > 0 ) /*0x522202*/
     return 1; /*0x522202*/
-  if ( (uint8_t)House::IsCurrentPlayer((House *)this->owner) ) /*0x52220e*/
+  if ( (uint8_t)((House *)this->owner)->IsCurrentPlayer() ) /*0x52220e*/
   {
     v5 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x522221*/
     if ( v5 ) /*0x522228*/
     {
-      if ( InfantryClass::ValidateAttackPosition(v5) ) /*0x52222c*/
+      if ( (v5)->ValidateAttackPosition() ) /*0x52222c*/
         return 0; /*0x52223b*/
     }
   }
@@ -450,8 +450,8 @@ bool InfantryClass::CanDeployAtCell(int16_t *a2, int16_t *a3)
   if ( v9 == 1 ) /*0x5222ba*/
     return 0; /*0x5222c2*/
   if ( v9 >= 4 /*0x5222e3*/
-    || !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, a2, 1)
-    || !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, a3, 1) )
+    || !(uint8_t)((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea(a2, 1)
+    || !(uint8_t)((LayerClass *)&DataGlobal_87F7E8)->IsWithinUsableArea(a3, 1) )
   {
     return 1; /*0x52232d*/
   }
@@ -507,7 +507,7 @@ bool InfantryClass::CheckDeployPath()
     sub_7DC720(-2147467261); /*0x521f1d*/
   (*(void (__stdcall **)(unsigned int, int *))(**(unsigned int **)v13.m_Position + 12))(*(unsigned int *)v13.m_Position, &v13.m_Position); /*0x521f2e*/
   v13.m_Data = (void *)(memcmp(&v13.m_Position, &g_CLSID_JumpjetLocomotion, 0x10u) != 0); /*0x521f4e*/
-  result = (AnimClass *)ComPtr::Release_Alt((ComPtr *)&v13); /*0x521f56*/
+  result = (AnimClass *)((ComPtr *)&v13)->Release_Alt(); /*0x521f56*/
   if ( v13.m_Data ) /*0x521f68*/
     goto LABEL_38; /*0x521f68*/
   result = (AnimClass *)*locomotor; /*0x521f6e*/
@@ -523,7 +523,7 @@ bool InfantryClass::CheckDeployPath()
   if ( (*(uint8_t (__stdcall **)(unsigned int))(**(unsigned int **)v13.m_Position + 28))(*(unsigned int *)v13.m_Position) ) /*0x521fa7*/
     goto LABEL_36; /*0x521fac*/
   ppv = 0; /*0x521fbe*/
-  InstanceCOM = CreateInstanceCOM((ObjectClass *)&ppv, (IID *)&g_CLSID_WalkLocomotion, 0, 7u); /*0x521fc2*/
+  InstanceCOM = ((ObjectClass *)&ppv)->CreateInstanceCOM((IID *)&g_CLSID_WalkLocomotion, 0, 7u); /*0x521fc2*/
   if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x521fd0*/
     sub_7DC720(InstanceCOM); /*0x521fd3*/
   if ( !ppv ) /*0x521fde*/
@@ -536,8 +536,8 @@ bool InfantryClass::CheckDeployPath()
     if ( v8 < 0 && v8 != -2147467262 ) /*0x522018*/
       sub_7DC720(v8); /*0x52201b*/
   }
-  COMObject::SwapReference((COMObject *)&v13, (int)v13.m_Data); /*0x522029*/
-  Release2COM((ObjectClass *)&v13.m_Data); /*0x522032*/
+  ((COMObject *)&v13)->SwapReference((int)v13.m_Data); /*0x522029*/
+  ((ObjectClass *)&v13.m_Data)->Release2COM(); /*0x522032*/
   v9 = *(unsigned int *)v13.m_Position; /*0x522037*/
   if ( !*(unsigned int *)v13.m_Position ) /*0x52203d*/
   {

@@ -62,7 +62,7 @@ bool sub_46D650()
   Debug::Log(); /*0x46d666*/
   v0 = dword_A8EB68 != (char)dword_A8D667; /*0x46d67f*/
   dword_A8EB68 = (char)dword_A8D667; /*0x46d686*/
-  v1 = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46d68b*/
+  v1 = (HWND)((void *)0xBC6)->FindByHandle(); /*0x46d68b*/
   if ( v1 ) /*0x46d692*/
   {
     DlgItem = GetDlgItem(v1, 1842); /*0x46d69a*/
@@ -149,7 +149,7 @@ char sub_46D8B0()
   }
   if ( v2 == -1 ) /*0x46d8eb*/
     return 0; /*0x46d8f2*/
-  if ( SessionClass::GetPlayerSide((int *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)&stru_A8D600.__pad_64[7] ) /*0x46d907*/
+  if ( ((int *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerSide() != *(unsigned int *)&stru_A8D600.__pad_64[7] ) /*0x46d907*/
     v1 = 1; /*0x46d909*/
   if ( dword_A8B23C ) /*0x46d913*/
   {
@@ -162,7 +162,7 @@ char sub_46D8B0()
     else if ( dword_A8B23C ) /*0x46d92f*/
     {
       vtable0 = (uint8_t (**)(ObjectClass *, int))dword_A8B23C->vfptr; /*0x46d938*/
-      PlayerSide = SessionClass::GetPlayerSide((int *)((unsigned int *)(dword_A8DA90))[v2]); /*0x46d93a*/
+      PlayerSide = ((int *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerSide(); /*0x46d93a*/
       if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
         v8 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 10))(dword_A8B23C); /*0x46d958*/
@@ -170,11 +170,11 @@ char sub_46D8B0()
       }
     }
   }
-  if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d979*/
+  if ( ((SessionClass *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerColor() != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d979*/
     v1 = 1; /*0x46d97b*/
   if ( IsAvailableColorhWnd(*(int *)DataGlobal_A8D66F) ) /*0x46d97d*/
   {
-    if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d998*/
+    if ( ((SessionClass *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerColor() != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d998*/
     {
       SessionClass::SetPlayerColor((int *)((unsigned int *)(dword_A8DA90))[v2], -2); /*0x46d9a3*/
       v1 = 1; /*0x46d9a8*/
@@ -184,11 +184,11 @@ char sub_46D8B0()
   {
     SessionClass::SetPlayerColor((int *)((unsigned int *)(dword_A8DA90))[v2], *(int *)DataGlobal_A8D66F); /*0x46d9b9*/
   }
-  if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9d2*/
+  if ( ((SessionClass *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerColor() != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9d2*/
     v1 = 1; /*0x46d9d4*/
   if ( sub_4E50A0(*(int *)&DataGlobal_A8D667) ) /*0x46d9d6*/
   {
-    if ( SessionClass::GetOption((int *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9f1*/
+    if ( ((int *)((unsigned int *)(dword_A8DA90))[v2])->GetOption() != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9f1*/
     {
       SessionClass::SetOption((int *)((unsigned int *)(dword_A8DA90))[v2], -2); /*0x46d9fc*/
       return v1; /*0x46da06*/
@@ -270,11 +270,11 @@ void sub_46DA70()
       while ( v11 ); /*0x46db68*/
       *(unsigned int *)((char *)&dword_A8D23C + v5) = v6; /*0x46db6a*/
       *(unsigned int *)((char *)&dword_A8D22C + v5) = v3->u32_5488 + v3->u32_5434; /*0x46db84*/
-      Count = VectorClass::GetCount(&v3->VectorClass_5550); /*0x46db95*/
-      v14 = VectorClass::GetCount(&v3->VectorClass_5564) + Count; /*0x46dba2*/
-      v15 = VectorClass::GetCount(&v3->VectorClass_5578) + v14; /*0x46dbaf*/
+      Count = (&v3->VectorClass_5550)->GetCount(); /*0x46db95*/
+      v14 = (&v3->VectorClass_5564)->GetCount() + Count; /*0x46dba2*/
+      v15 = (&v3->VectorClass_5578)->GetCount() + v14; /*0x46dbaf*/
       *(unsigned int *)((char *)&dword_A8D24C + v5) = v3->u32_5488 /*0x46dbc8*/
-                                              + VectorClass::GetCount(&v3->VectorClass_558C)
+                                              + (&v3->VectorClass_558C)->GetCount()
                                               + v15
                                               + v3->u32_5434;
       v16 = v3->u32_54E8; /*0x46dbce*/
@@ -1129,14 +1129,14 @@ int sub_46D810()
 
   v2 = 51; /*0x46d82c*/
   strcpy(v3,(const char *)(unk_A8B380)); /*0x46d83d*/
-  Option = SessionClass::GetOption((int *)*(unsigned int *)(dword_A8DA78)); /*0x46d859*/
-  PlayerSide = SessionClass::GetPlayerSide((int *)*(unsigned int *)(dword_A8DA78)); /*0x46d864*/
-  PlayerColor = SessionClass::GetPlayerColor((SessionClass *)*(unsigned int *)(dword_A8DA78)); /*0x46d874*/
+  Option = ((int *)*(unsigned int *)(dword_A8DA78))->GetOption(); /*0x46d859*/
+  PlayerSide = ((int *)*(unsigned int *)(dword_A8DA78))->GetPlayerSide(); /*0x46d864*/
+  PlayerColor = ((SessionClass *)*(unsigned int *)(dword_A8DA78))->GetPlayerColor(); /*0x46d874*/
   result = dword_A8DA90; /*0x46d878*/
   if ( dword_A8DA90 ) /*0x46d881*/
   {
     Network::SendToPlayer((int)&unk_A8E9C0, (int)&v2, 455, 1, (wchar_t *)dword_A8DA90); /*0x46d895*/
-    return Network::ReceiveLoop(&unk_A8E9C0); /*0x46d89f*/
+    return (&unk_A8E9C0)->ReceiveLoop(); /*0x46d89f*/
   }
   return result; /*0x46d87d*/
 }
@@ -1148,7 +1148,7 @@ int Lobby_GetPlayerColor(int a1)
   wchar_t *v2; // esi
 
   v2 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x46f814*/
-  if ( Player::IsObserver(v2) ) /*0x46f81d*/
+  if ( (v2)->IsObserver() ) /*0x46f81d*/
     return g_abs_A8B2BC[a1]; /*0x46f826*/
   if ( v2 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x46f836*/
     return -2; /*0x46f839*/
@@ -1168,7 +1168,7 @@ int HouseClass_GetSideIndex(int a1)
   wchar_t *v2; // esi
 
   v2 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x46f884*/
-  if ( Player::IsObserver(v2) ) /*0x46f88d*/
+  if ( (v2)->IsObserver() ) /*0x46f88d*/
     return g_abs_A8B2DC[a1]; /*0x46f896*/
   if ( v2 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x46f8a6*/
     return -2; /*0x46f8a9*/

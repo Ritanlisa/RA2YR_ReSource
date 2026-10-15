@@ -95,9 +95,9 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     v9 = GetDlgItem((HWND)aGrey, ResourceIDHardcodedCSF); /*0x658460*/
     v10 = *((unsigned int *)other + 13); /*0x658466*/
     hWnd = v9; /*0x658469*/
-    Default = (HWND)BuildingType::FindDefault(*(BuildingType **)(v10 + 180)); /*0x658473*/
+    Default = (HWND)(*(BuildingType **)(v10 + 180))->FindDefault(); /*0x658473*/
     if ( other == (void *)HouseClass_Observer ) /*0x65847e*/
-      Default = (HWND)BuildingType::FindDefault((BuildingType *)0xFFFFFFFD); /*0x658485*/
+      Default = (HWND)((BuildingType *)0xFFFFFFFD)->FindDefault(); /*0x658485*/
     CacheDialogInvalidate(hWnd, Default); /*0x658490*/
     if ( *(&dword_83923C + (unsigned int)v29) != -1 ) /*0x65849f*/
     {

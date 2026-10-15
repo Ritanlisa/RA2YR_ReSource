@@ -98,12 +98,12 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1040) ) /*0x718887*/
     {
       v7 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718896*/
-      v6 = HouseClass::GainedPoweredCenter(*(HouseClass **)(this->vtable3 + 540), v7); /*0x7188af*/
+      v6 = (*(HouseClass **)(this->vtable3 + 540))->GainedPoweredCenter(v7); /*0x7188af*/
     }
   }
   v23[0] = a2 / 256; /*0x7188c1*/
   v23[1] = a3 / 256; /*0x7188da*/
-  if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23) + 59) != 2 /*0x718962*/
+  if ( *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v23) + 59) != 2 /*0x718962*/
     || v6
     || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278)
     || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15
@@ -114,14 +114,14 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     v23[0] = a2 / 256; /*0x718a14*/
     v23[1] = a3 / 256; /*0x718a2f*/
     v14 = *vtable3; /*0x718a3c*/
-    v15 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718a46*/
+    v15 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718a46*/
     if ( (*(int (**)(int, void *, int, int, unsigned int, int))(v14 + 428))(this->vtable3, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       v23[0] = a2 / 256; /*0x718a80*/
       v23[1] = a3 / 256; /*0x718a95*/
-      v16 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718aa2*/
-      if ( !(unsigned __int8)Cell::IsGroundTypeRange(v16) /*0x718abd*/
+      v16 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718aa2*/
+      if ( !(unsigned __int8)(v16)->IsGroundTypeRange() /*0x718abd*/
         || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15 )
       {
         v19 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718b23*/
@@ -296,7 +296,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       *(unsigned int *)(v4 + 164) = 0; /*0x71dd18*/
       *(unsigned char *)(v4 + 168) = 0; /*0x71dd23*/
       CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
-      *(unsigned int *)(v4 + 164) = (unsigned int)(CCFileClass::ReadEntireFile(v5)); /*0x71dd3b*/
+      *(unsigned int *)(v4 + 164) = (unsigned int)((v5)->ReadEntireFile()); /*0x71dd3b*/
       v5[0] = (unsigned int)(&vt_CCFileClass); /*0x71dd41*/
       v7 = 0; /*0x71dd49*/
       Vector::Clear((int)v6); /*0x71dd4d*/

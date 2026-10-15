@@ -803,7 +803,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   this->DynamicVectorClass = &vt_VectorClass; /*0x51375a*/
   if ( this != (TypeList *)aP1 ) /*0x513760*/
   {
-    Vector::Destructor((_VectorClass_PBVUnitTypeClass *)this); /*0x513762*/
+    ((_VectorClass_PBVUnitTypeClass *)this)->Destructor(); /*0x513762*/
     v3 = (int)(aP1[2]); /*0x513768*/
     this->u32_8 = v3; /*0x51376d*/
     if ( v3 ) /*0x513770*/

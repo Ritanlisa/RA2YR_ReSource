@@ -51,7 +51,7 @@ void Main::CreateDialog(void *a1, void *a2, void *a3)
     }
     if ( i == 1 ) /*0x4e1d9d*/
     {
-      GameOptions::GameSpeedChanged((GameOptions *)this); /*0x4e1da1*/
+      ((GameOptions *)this)->GameSpeedChanged(); /*0x4e1da1*/
       ScenarioClass::SaveGameOptions((ScenarioClass *)&stru_A8EB00.ObjectTypeClass[24]); /*0x4e1dab*/
     }
     Dialog::Destroy((Dialog *)this->Main_field_00); /*0x4e1db2*/

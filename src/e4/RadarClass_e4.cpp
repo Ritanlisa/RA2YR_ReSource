@@ -78,7 +78,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
   }
   this->u8_1231 = 0; /*0x652cb9*/
   *(unsigned int *)this->__pad_122C = 0; /*0x652cbf*/
-  MapClass::Destruct((char *)this); /*0x652cc5*/
+  ((char *)this)->Destruct(); /*0x652cc5*/
   return result; /*0x652cca*/
 
 }

@@ -208,7 +208,7 @@ int String::TrimLeft(const char **a2, const char **aP1, int a1, int a3, int aP2,
       break; /*0x7b5212*/
   }
   if ( i > 0 ) /*0x7b5219*/
-    return String::Erase(aP1, 0, i); /*0x7b5220*/
+    return (aP1)->Erase(0, i); /*0x7b5220*/
   return result; /*0x7b5225*/
 
 }

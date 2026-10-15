@@ -498,7 +498,7 @@ void * sub_4E3690(HWND hDlg, int a2)
     else
       v8 = -2; /*0x4e37a8*/
   }
-  Default = (HWND)BuildingType::FindDefault((void *)v8); /*0x4e37af*/
+  Default = (HWND)((void *)v8)->FindDefault(); /*0x4e37af*/
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e37b8*/
 }
 }
@@ -662,7 +662,7 @@ void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
     else
       v13 = -2; /*0x4e3f47*/
   }
-  Default = (HWND)BuildingType::FindDefault((void *)v13); /*0x4e3f4e*/
+  Default = (HWND)((void *)v13)->FindDefault(); /*0x4e3f4e*/
   return CacheDialogInvalidate(v10, Default); /*0x4e3f5c*/
 }
 }
@@ -778,7 +778,7 @@ HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
     else
       v12 = -2; /*0x4e4142*/
   }
-  Default = (HWND)BuildingType::FindDefault((void *)v12); /*0x4e4149*/
+  Default = (HWND)((void *)v12)->FindDefault(); /*0x4e4149*/
   return (HWND *)(CacheDialogInvalidate(DlgItem, Default)); /*0x4e4157*/
 }
 }
@@ -1952,7 +1952,7 @@ void unknown_libname_18()
     FileFind::Close(); /*0x5f1663*/
     operator delete((void *)(v0)); /*0x5f1669*/
   }
-  ObjectClass::FreeResources((int)&unk_A8EA70); /*0x5f1673*/
+  ((int)&unk_A8EA70)->FreeResources(); /*0x5f1673*/
   if ( unk_A8EAB0 != -1 ) /*0x5f1680*/
   {
     if ( !g_ClipboardBuffer ) /*0x5f168a*/
@@ -1962,7 +1962,7 @@ void unknown_libname_18()
       (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f169f*/
     g_ClipboardBuffer = 0; /*0x5f16a1*/
     unk_A8EAB0 = -1; /*0x5f16ad*/
-    ObjectClass::FreeResources((int)&unk_A8EA70); /*0x5f16b0*/
+    ((int)&unk_A8EA70)->FreeResources(); /*0x5f16b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f16bd*/
   {
@@ -2424,7 +2424,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     this->M48 = 255; /*0x4e2a8d*/
-    VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)this); /*0x4e2a90*/
+    ((GadgetClass *)this)->MarkDirty(); /*0x4e2a90*/
   }
   v8 = 0; /*0x4e2a99*/
   if ( this->M48 < 0 ) /*0x4e2a9d*/

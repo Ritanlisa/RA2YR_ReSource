@@ -206,7 +206,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   char v51[277]; // [esp+4BBh] [ebp-115h] BYREF
 
   v36 = 0; /*0x693b86*/
-  Waypoint::InitInvalid(v39); /*0x693b8a*/
+  (v39)->InitInvalid(); /*0x693b8a*/
   Debug::Log(aGettingFileFro); /*0x693b94*/
   TimerGetTicks(); /*0x693ba0*/
   Debug::Log(aRequestingFile); /*0x693bb2*/
@@ -477,7 +477,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   nNumberOfBytesToWrite = a2; /*0x6941ae*/
   Ticks = TimerGetTicks(); /*0x6941bb*/
   v35 = 0; /*0x6941bf*/
-  Waypoint::InitInvalid((Waypoint *)v42); /*0x6941c7*/
+  ((Waypoint *)v42)->InitInvalid(); /*0x6941c7*/
   v23 = 0; /*0x6941cc*/
   v6 = (char *)operator new(0x1E7u); /*0x6941e1*/
   Debug::Log(); /*0x6941e3*/
@@ -496,7 +496,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   if ( a4 ) /*0x694279*/
   {
     ((ProgressAnim*)(&dword_AC4F58))->Init(0, 1079574528, 1, 0); /*0x69428f*/
-    SHPClass::Load((int)&dword_AC4F58, g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
+    ((int)&dword_AC4F58)->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
     StringCSF = GetStringCSF((wchar_t *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 355); /*0x6942c2*/
     TextRenderer::MeasureBuilding((int *)g_UIManager, -1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
@@ -511,7 +511,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v35 = v10; /*0x69433f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694343*/
   {
-    IPXManagerClass::createConnection(&unk_A8E9C0); /*0x69434a*/
+    (&unk_A8E9C0)->createConnection(); /*0x69434a*/
     TacticalClass::SetCameraPosition(&unk_A8E9C0, 120, -1, 1200); /*0x69435d*/
   }
   if ( a3 == 3 || (v11 = 10800, a3 != 4) ) /*0x69436f*/
@@ -619,7 +619,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   operator delete((void *)((void *)lpBuffer)); /*0x6946d8*/
   operator delete((void *)(Block)); /*0x6946e2*/
   Debug::Log(); /*0x6946fa*/
-  FileClass::CloseHandle((RawFileClass *)v43); /*0x694706*/
+  ((RawFileClass *)v43)->CloseHandle(); /*0x694706*/
   Debug::Log(); /*0x694710*/
   if ( !v21 && (uint8_t)((FileClass *)((RawFileClass *)v43))->Open(0) ) /*0x694722*/
   {
@@ -758,7 +758,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     if ( dword_A8BB18 <= 0 ) /*0x694927*/
     {
   LABEL_21:
-      while ( Network::GetQueueCount(&unk_A8E9C0) > 0 ) /*0x6949ba*/
+      while ( (&unk_A8E9C0)->GetQueueCount() > 0 ) /*0x6949ba*/
       {
         v14 = 3600; /*0x6949c4*/
         if ( Ticks != -1 ) /*0x6949cb*/
@@ -840,7 +840,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   }
   if ( !v18 ) /*0x694abb*/
     goto LABEL_38; /*0x694abb*/
-  Waypoint::InitInvalid(&v57); /*0x694b10*/
+  (&v57)->InitInvalid(); /*0x694b10*/
   v20 = 0; /*0x694b1c*/
   if ( a3 ) /*0x694b20*/
     v21 = dword_A8DA84 - 1; /*0x694b28*/
@@ -892,8 +892,8 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   v27 = 0; /*0x694c56*/
   if ( a4 ) /*0x694c61*/
   {
-    ProgressAnim::Init((int)&g_UIManager, 0, 1079574528, 1, 0); /*0x694c75*/
-    SHPClass::Load((int)&g_UIManager, g_Str_File_PROGBARM_SHP, 0, 0); /*0x694c86*/
+    ((int)&g_UIManager)->Init(0, 1079574528, 1, 0); /*0x694c75*/
+    ((int)&g_UIManager)->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x694c86*/
     StringCSF = GetStringCSF((wchar_t *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 658); /*0x694ca5*/
     TextRenderer::MeasureBuilding((int *)&g_UIManager, -1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
     Screen::Capture(1, 0, v26, 0); /*0x694cbb*/
@@ -904,7 +904,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   TimerGetTicks(); /*0x694d03*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694d20*/
   {
-    IPXManagerClass::createConnection(&unk_A8E9C0); /*0x694d27*/
+    (&unk_A8E9C0)->createConnection(); /*0x694d27*/
     TacticalClass::SetCameraPosition(&unk_A8E9C0, 240, -1, 1200); /*0x694d3d*/
   }
   if ( v29 == 3 || (v30 = 10800, v29 != 4) ) /*0x694d4f*/
@@ -975,7 +975,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     Event::Dispatch(); /*0x694dc2*/
     if ( v27 < v26 ) /*0x694dce*/
     {
-      if ( Network::GetQueueCount(&unk_A8E9C0) < 10 ) /*0x694ddc*/
+      if ( (&unk_A8E9C0)->GetQueueCount() < 10 ) /*0x694ddc*/
       {
         *(unsigned int *)&v57.u32_C = 18; /*0x694de4*/
         *(unsigned short *)&v57.q024 = v27; /*0x694def*/
@@ -1032,10 +1032,10 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
       }
       goto LABEL_70; /*0x694f92*/
     }
-    if ( Network::GetQueueCount(&unk_A8E9C0) ) /*0x694f97*/
+    if ( (&unk_A8E9C0)->GetQueueCount() ) /*0x694f97*/
       goto LABEL_70; /*0x694f9e*/
   }
-  while ( Network::GetQueueCount(&unk_A8E9C0) ); /*0x694fb0*/
+  while ( (&unk_A8E9C0)->GetQueueCount() ); /*0x694fb0*/
   if ( v45 != -1 ) /*0x6950f5*/
     TimerGetTicks(); /*0x6950fb*/
   Debug::Log(); /*0x695114*/
@@ -1091,7 +1091,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   {
     v7 = *(unsigned int *)(dword_A8B8CC + 4 * v6); /*0x695283*/
     v8 = Game::CheckForGameCD(60); /*0x69528b*/
-    if ( !(uint8_t)ScenarioClass::CheckExists(v8) ) /*0x695293*/
+    if ( !(uint8_t)(v8)->CheckExists() ) /*0x695293*/
     {
       v9 = GameOption::GetField(v7); /*0x69529e*/
       SetSoundWarning(v9); /*0x6952a5*/

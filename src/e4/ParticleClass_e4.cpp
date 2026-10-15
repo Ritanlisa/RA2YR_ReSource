@@ -81,7 +81,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
           v28[0] = *&this->Coord_9C; /*0x62d036*/
           v28[1] = *&this->u32_A0; /*0x62d048*/
           v28[2] = *&this->u32_A4; /*0x62d054*/
-          Coord::To_Screen((Coord *)g_TacticalClass_Instance, v28, &v29); /*0x62d058*/
+          ((Coord *)g_TacticalClass_Instance)->To_Screen(v28, &v29); /*0x62d058*/
           v12 = (char *)DSurface_ViewBounds.field_4 + v30; /*0x62d06b*/
           v30 += (int)DSurface_ViewBounds.field_4; /*0x62d071*/
           if ( v29 >= *a3 && v29 < *a3 + a3[2] ) /*0x62d086*/
@@ -100,7 +100,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                                        - v30)
                     - v16
                     - 50;
-                if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v28[0], v15) ) /*0x62d11e*/
+                if ( v17 < *(unsigned __int16 *)((int *)g_ZBufferDescriptor)->GetSamplePosition(v28[0], v15) ) /*0x62d11e*/
                 {
                   ParticleClass_field_0xB4 = (IUnknown *)(this->u32_B4); /*0x62d124*/
                   if ( ParticleClass_field_0xB4 ) /*0x62d12c*/
@@ -220,7 +220,7 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
   {
     if ( aP1 ) /*0x62d7b6*/
     {
-      ObjectClass::Init((ObjectClass *)aP1, (int)&aP1a); /*0x62d7bf*/
+      ((ObjectClass *)aP1)->Init((int)&aP1a); /*0x62d7bf*/
       *aP1 = &vt_ParticleClass; /*0x62d7c4*/
       aP1[1] = &vt_ParticleClass; /*0x62d7ca*/
       aP1[2] = &vt_ParticleClass; /*0x62d7d1*/

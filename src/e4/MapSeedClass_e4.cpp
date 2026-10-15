@@ -290,8 +290,8 @@ LABEL_18:
                   LOWORD(v32) = v20 + 1; /*0x5a636e*/
                   HIWORD(v32) = WORD1(v20) - 2; /*0x5a6377*/
                   *(unsigned int *)v23 = v32; /*0x5a6386*/
-                  NeighbourContent = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v23); /*0x5a638f*/
-                  if ( Value::InRange((Value *)NeighbourContent) && Value::InRange((Value *)NeighbourContent) ) /*0x5a639e*/
+                  NeighbourContent = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v23); /*0x5a638f*/
+                  if ( ((Value *)NeighbourContent)->InRange() && ((Value *)NeighbourContent)->InRange() ) /*0x5a639e*/
                   {
                     do /*0x5a63c4*/
                     {
@@ -299,7 +299,7 @@ LABEL_18:
                       NeighbourContent->u32_11A = 1; /*0x5a63b4*/
                       NeighbourContent = (Cell *)Cell::GetNeighbourContent(NeighbourContent, 0); /*0x5a63c0*/
                     }
-                    while ( Value::InRange((Value *)NeighbourContent) ); /*0x5a63c4*/
+                    while ( ((Value *)NeighbourContent)->InRange() ); /*0x5a63c4*/
                   }
                   v22 = 0; /*0x5a63cd*/
                 }
@@ -463,7 +463,7 @@ char MapSeedClass::ValidateRectBounds(void *a1)
               v12[1] = v9; /*0x5a7879*/
               v10 = (CellClass *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v12); /*0x5a7883*/
               if ( !(uint8_t)CellClass::InBounds(v10) /*0x5a789d*/
-                && !(uint8_t)Cell::IsEmpty((Cell *)v10)
+                && !(uint8_t)((Cell *)v10)->IsEmpty()
                 && !(uint8_t)CellClass::InMapDataRange(v10) )
               {
                 break; /*0x5a789d*/
@@ -490,7 +490,7 @@ char MapSeedClass::ValidateRectBounds(void *a1)
               v6 = (Value *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v12); /*0x5a7824*/
               Value_field_00 = (int)(v6[14].Value_field_00); /*0x5a7829*/
               if ( (Value_field_00 < g_CellTileTypeCache || Value_field_00 > g_CellTileTypeCache + 1) /*0x5a783d*/
-                && !Value::InRange(v6) )
+                && !(v6)->InRange() )
               {
                 break; /*0x5a783d*/
               }
@@ -531,7 +531,7 @@ wchar_t * MapSeedClass::Validate()
 namespace gamemd {
 MapSeedClass * MapSeedClass::QueryInterface(char a2, int a3)
 {
-  LoadOptions::Cleanup((LoadOptions *)a3); /*0x5ac273*/
+  ((LoadOptions *)a3)->Cleanup(); /*0x5ac273*/
   if ( (a3 & 1) != 0 ) /*0x5ac27d*/
     operator delete((void *)(a3)); /*0x5ac280*/
   return a3->__pad_0; /*0x5ac28a*/

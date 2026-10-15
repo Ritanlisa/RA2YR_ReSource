@@ -149,7 +149,7 @@ int VoxelAnimClass::CleanupMembers(void *a1)
     a1->q108 = 0; /*0x749a71*/
   }
   if ( byte_A8E9A0 ) /*0x749a82*/
-    ObjectClass::Undeploy((ObjectClass *)a1); /*0x749a86*/
+    ((ObjectClass *)a1)->Undeploy(); /*0x749a86*/
   Mixer::ReleaseChannel(&a1->q114); /*0x749a95*/
   Mixer::ReleaseChannel(&a1->q128); /*0x749aa2*/
   AudioFileClass::Release(&a1->q114); /*0x749aa9*/
@@ -170,7 +170,7 @@ int VoxelAnimClass::CleanupMembers(void *a1)
     }
   }
   a1->q104 = 0; /*0x749b02*/
-  return ObjectClass::Dtor((ObjectClass *)a1); /*0x749b11*/
+  return ((ObjectClass *)a1)->Dtor(); /*0x749b11*/
 }
 }
 // 0x749B70
@@ -240,13 +240,13 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
       v29 = dword_B1D1BC + GroundHeight + 1; /*0x749c4a*/
       v27 = v32; /*0x749c4e*/
       v28 = v33; /*0x749c5b*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v27, v38); /*0x749c60*/
+      ((Coord *)g_TacticalClass_Instance)->To_Screen(&v27, v38); /*0x749c60*/
     }
     else
     {
 LABEL_6:
       v35 = GroundHeight; /*0x749c62*/
-      Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v32, v38); /*0x749c76*/
+      ((Coord *)g_TacticalClass_Instance)->To_Screen(&v32, v38); /*0x749c76*/
     }
     LOBYTE(VoxelAnimClass_field_0x104) = this->q13C; /*0x749c7b*/
     if ( !(unsigned char)VoxelAnimClass_field_0x104 ) /*0x749c83*/
@@ -607,7 +607,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
             LOWORD(v89) = v97 / 256 + LOWORD(g_DDrawSurfaceManager.scenario[v42 + 82]); /*0x74a363*/
             HIWORD(v89) = v98 / 256 + HIWORD(g_DDrawSurfaceManager.scenario[v42 + 82]); /*0x74a372*/
             *(unsigned int *)v92 = v89; /*0x74a381*/
-            v43 = (unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v92); /*0x74a38a*/
+            v43 = (unsigned __int8 *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v92); /*0x74a38a*/
             if ( (unsigned __int8)IsCoordValidMap((int)v43, 0) ) /*0x74a390*/
             {
               v44 = *(CellClass **)(g_BuildingLoadQueue_Array.?[2] + 4 * FindBuildingByTiberiumType(127)); /*0x74a3b2*/
@@ -642,9 +642,9 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 }
               }
               v94 = (int)(v43 + 36); /*0x74a482*/
-              CellClass::RegisterForRedraw((short *)(v44), &v43->u32_48); /*0x74a486*/
+              ((short *)(v44))->RegisterForRedraw(&v43->u32_48); /*0x74a486*/
               v43[286] = 0; /*0x74a48f*/
-              StartCoords = House::GetStartCoords((House *)v43, v100); /*0x74a49e*/
+              StartCoords = ((House *)v43)->GetStartCoords(v100); /*0x74a49e*/
               v48 = *StartCoords; /*0x74a4a6*/
               v49 = StartCoords[1] - (unsigned int)DSurface_ViewBounds.field_4; /*0x74a4ab*/
               v50 = StartCoords[2]; /*0x74a4ad*/

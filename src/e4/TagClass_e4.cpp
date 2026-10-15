@@ -65,7 +65,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
       buildingType = a1->buildingType; /*0x6e4f9f*/
       if ( buildingType ) /*0x6e4fa4*/
       {
-        if ( (Debug::AccumFlags((Debug *)buildingType) & 0x10) != 0 ) /*0x6e4fad*/
+        if ( (((Debug *)buildingType)->AccumFlags() & 0x10) != 0 ) /*0x6e4fad*/
         {
           v3 = 0; /*0x6e4fb5*/
           if ( (int)FootClass_Array.? <= 0 ) /*0x6e4fb9*/
@@ -101,7 +101,7 @@ LABEL_9:
         v6 = a1->buildingType; /*0x6e5004*/
         if ( v6 ) /*0x6e5009*/
         {
-          if ( (Debug::AccumFlags((Debug *)v6) & 4) != 0 ) /*0x6e5012*/
+          if ( (((Debug *)v6)->AccumFlags() & 4) != 0 ) /*0x6e5012*/
           {
             v7 = 0; /*0x6e501a*/
             if ( FootClass_Array.?[0] <= 0 ) /*0x6e501e*/
@@ -224,7 +224,7 @@ LABEL_45:
     while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e5212*/
-  return AbstractClass::DTOR((AbstractClass *)a1); /*0x6e521e*/
+  return ((AbstractClass *)a1)->DTOR(); /*0x6e521e*/
 
 }
 }  // G42.18 ns repair
@@ -338,7 +338,7 @@ int TagClass::ProcessTag(int * a2)
   TriggerClass *firstTrigger; // eax
   int v5; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6e56e9*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x6e56e9*/
   v3 = (*((int (**)(void **))this->buildingType->? + 4))(&this->buildingType->?); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
   firstTrigger = this->firstTrigger; /*0x6e5702*/

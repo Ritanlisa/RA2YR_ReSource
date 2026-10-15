@@ -1083,7 +1083,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
     }
     while ( v8 < this->CommBufferClass_field_0x8 ); /*0x48b1db*/
   }
-  Struct::ClearAllMemberFlags((Struct *)this); /*0x48b1df*/
+  ((Struct *)this)->ClearAllMemberFlags(); /*0x48b1df*/
   return this->__pad_0; /*0x48b1e6*/
 
 }
@@ -1200,7 +1200,7 @@ AbstractClass * * Main_Game_Frame()
     }
   }
   LABEL_9:
-  ScenarioClass::CleanupTemporary(v10); /*0x48c918*/
+  (v10)->CleanupTemporary(); /*0x48c918*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x48c925*/
   while ( (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ) /*0x48c930*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x48c93f*/
@@ -1221,7 +1221,7 @@ AbstractClass * * Main_Game_Frame()
           if ( g_MenuStateFlags ) /*0x48cb40*/
           {
   LABEL_34:
-            Network::AddFrameEvent(v9); /*0x48cb42*/
+            (v9)->AddFrameEvent(); /*0x48cb42*/
           }
           else if ( !dword_A83D4C->defeated /*0x48cb7b*/
                  && !dword_A83D4C->isWinner
@@ -1239,7 +1239,7 @@ AbstractClass * * Main_Game_Frame()
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48cc13*/
                 ++stru_A80220.lineTrailer; /*0x48cc19*/
               }
-              Network::AddFrameEvent(v9); /*0x48cc1e*/
+              (v9)->AddFrameEvent(); /*0x48cc1e*/
               g_GameLoopActive = 0; /*0x48cc23*/
             }
           }

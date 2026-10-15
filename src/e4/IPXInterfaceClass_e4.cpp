@@ -170,7 +170,7 @@ LABEL_6:
           }
           else
           {
-            Network::CopyAddress(v7, &a3, (int)&v27); /*0x7b148c*/
+            (v7)->CopyAddress(&a3, (int)&v27); /*0x7b148c*/
             *(unsigned int *)to.sa_data = a3; /*0x7b149e*/
             *(unsigned int *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(unsigned short *)&to.sa_data[8] = v28; /*0x7b14a6*/
@@ -260,7 +260,7 @@ LABEL_6:
   memcpy(&v18[4], &this->q3F078, v26 - 4); /*0x7b1657*/
   if ( (*(unsigned __int8 (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
   {
-    NetworkID::Assign(v18, &a3, (int)&v27, 0); /*0x7b16d0*/
+    (v18)->Assign(&a3, (int)&v27, 0); /*0x7b16d0*/
     v19 = *&this->u32_24; /*0x7b16d5*/
     v20 = this->u32_18; /*0x7b16d8*/
     p_LocalNetwork = (int *)(&this->LocalNetwork); /*0x7b16db*/
@@ -502,7 +502,7 @@ int16_t IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  
   int v14; // edx
   UINT v15; // eax
 
-  v5 = AudioQueue::AllocBuffer((AudioQueue *)this, aP3); /*0x7b24f4*/
+  v5 = ((AudioQueue *)this)->AllocBuffer(aP3); /*0x7b24f4*/
   memcpy(v5 + 32, a1, a3); /*0x7b2505*/
   v5->q010 = a3; /*0x7b250e*/
   this->SetAddress(v5); /*0x7b2516*/
@@ -539,7 +539,7 @@ int16_t IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  
   }
   v15 = this->COMStub_Ret1139(v10); /*0x7b25b9*/
   SendMessageA(g_hWnd, v15, 0, 2); /*0x7b25c3*/
-  return EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer); /*0x7b25d4*/
+  return (*(EventQueue **)&g_BinkMoviePlayer)->Process(); /*0x7b25d4*/
 }
 } // namespace gamemd
 // 0x7B2A20

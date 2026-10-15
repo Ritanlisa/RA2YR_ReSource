@@ -92,7 +92,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
     if ( v8 > 10 ) /*0x55e23d*/
     {
       InputManager_ProcessEvents::Vtable((GScreenClass *)&DataGlobal_87F7E8, &v24, v26, &v25); /*0x55e253*/
-      SyncDelayClass::ProcessNetworkSync(&v24); /*0x55e25c*/
+      (&v24)->ProcessNetworkSync(); /*0x55e25c*/
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55e269*/
       ((TacticalMap *)((GScreenClass *)&DataGlobal_87F7E8))->Redraw(); /*0x55e271*/
       goto LABEL_19; /*0x55e276*/
@@ -122,7 +122,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
   }
   if ( v12 ) /*0x55e2d6*/
   {
-    DDraw::WaitForIdle(v1); /*0x55e2d8*/
+    (v1)->WaitForIdle(); /*0x55e2d8*/
     while ( 1 ) /*0x55e317*/
     {
       while ( 1 ) /*0x55e2e3*/

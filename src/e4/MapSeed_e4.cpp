@@ -70,8 +70,8 @@ int MapSeed::CheckName(void *a1)
   char *v9; // [esp+Ch] [ebp-4h] BYREF
 
   String::AssignFromPtr(&v8, (const char **)this); /*0x79c52b*/
-  String::ToLower(&v8); /*0x79c534*/
-  if ( !String::Length((String *)this) /*0x79c5aa*/
+  (&v8)->ToLower(); /*0x79c534*/
+  if ( !((String *)this)->Length() /*0x79c5aa*/
     || (v7 = String::ToLowerCopy((String *)&g_WebBrowser, &v9),
         v2 = String::ToLowerCopy(&v8, (char **)&v8.ptr_4),
         v3 = String::Compare((String *)v2, (const char **)v7),
@@ -99,7 +99,7 @@ LABEL_12:
         unknown_libname_73(&v8.ptr_4); /*0x79c5d2*/
         if ( v6 >= 0 && v6 < *(int *)g_WindowManager ) /*0x79c5e1*/
           String::Reassign((String *)&v8.ptr_4, (const char **)(*(unsigned int *)g_WOL_LoginQueue + 4 * v6)); /*0x79c5f1*/
-        String::ToLower((String *)&v8.ptr_4); /*0x79c5fa*/
+        ((String *)&v8.ptr_4)->ToLower(); /*0x79c5fa*/
         if ( (unsigned __int8)String::Compare((String *)&v8.ptr_4, (const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
         DeleteAndZero((ObjectClass *)&v8.ptr_4); /*0x79c615*/
@@ -138,12 +138,12 @@ AbstractClass * * MapSeed::InsertName()
     v3 = *(unsigned int *)g_WindowManager; /*0x79c672*/
     if ( *(int *)g_WindowManager >= (int)DataGlobal_B73AAC ) /*0x79c67e*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&g_WindowManager); /*0x79c685*/
+      ((DynamicVector *)&g_WindowManager)->EnsureCapacity(); /*0x79c685*/
       v2 = *(unsigned int *)g_WindowManager; /*0x79c68a*/
     }
     if ( v2 >= (int)DataGlobal_B73AAC ) /*0x79c695*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&g_WindowManager); /*0x79c69c*/
+      ((DynamicVector *)&g_WindowManager)->EnsureCapacity(); /*0x79c69c*/
       v2 = *(unsigned int *)g_WindowManager; /*0x79c6a1*/
     }
     if ( v3 < v2 ) /*0x79c6a8*/
@@ -192,12 +192,12 @@ AbstractClass * * MapSeed::InsertName()
     v9 = *(unsigned int *)g_WOL_BuddyList; /*0x79c780*/
     if ( *(int *)g_WOL_BuddyList >= *(int *)&DataGlobal_B779B4 ) /*0x79c78c*/
     {
-      DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x79c793*/
+      (&g_WOL_BuddyList)->EnsureCapacity(); /*0x79c793*/
       v8 = *(unsigned int *)g_WOL_BuddyList; /*0x79c798*/
     }
     if ( v8 >= *(int *)&DataGlobal_B779B4 ) /*0x79c7a3*/
     {
-      DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x79c7aa*/
+      (&g_WOL_BuddyList)->EnsureCapacity(); /*0x79c7aa*/
       v8 = *(unsigned int *)g_WOL_BuddyList; /*0x79c7af*/
     }
     if ( v9 < v8 ) /*0x79c7b6*/
@@ -215,7 +215,7 @@ AbstractClass * * MapSeed::InsertName()
       v8 = *(unsigned int *)g_WOL_BuddyList; /*0x79c7f7*/
     }
     *(unsigned int *)g_WOL_BuddyList = v8 + 1; /*0x79c802*/
-    if ( String::Length((String *)&g_WOL_AuthObject) ) /*0x79c807*/
+    if ( ((String *)&g_WOL_AuthObject)->Length() ) /*0x79c807*/
     {
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_ParseState) < 5 ) /*0x79c825*/
       {
@@ -223,7 +223,7 @@ AbstractClass * * MapSeed::InsertName()
         DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
         return; /*0x79c8bb*/
       }
-      DeleteAndZero::Alt2((DeleteAndZero *)&g_WOL_AuthObject); /*0x79c830*/
+      ((DeleteAndZero *)&g_WOL_AuthObject)->Alt2(); /*0x79c830*/
     }
     if ( *(unsigned int *)&stru_B76900.needsRedraw ) /*0x79c83c*/
     {

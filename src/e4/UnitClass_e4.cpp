@@ -32,7 +32,7 @@ int UnitClass::ProcessIdleOrders()
           g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b7bfa*/
           g_MissionQueueFrame.nextScenario[1] = v6; /*0x6b7bff*/
           g_MissionQueueFrame.nextScenario[2] = 2; /*0x6b7c05*/
-          UnitClass::ClearTargetRef(**(unsigned int **)(this->ambientSoundController[0] + 4 * v3)); /*0x6b7c16*/
+          (**(unsigned int **)(this->ambientSoundController[0] + 4 * v3))->ClearTargetRef(); /*0x6b7c16*/
         }
       }
       result = this->ambientSoundController[3]; /*0x6b7c1b*/

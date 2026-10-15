@@ -515,14 +515,14 @@ int SaveGame::SaveAudioQueueItems()
   v2 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->q000 + 16))(this, &v11, 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
-    for ( i = AudioQueue::GetNext((AudioQueue *)&stru_B1D290.isAliveFlag); i; i = AudioQueue::GetNextAlt((AudioQueue *)i) )
+    for ( i = ((AudioQueue *)&stru_B1D290.isAliveFlag)->GetNext(); i; i = ((AudioQueue *)i)->GetNextAlt() )
     {
       v4 = -1; /*0x751665*/
       v12[0] = -1; /*0x751668*/
       v5 = *(char **)(i + 20); /*0x75166c*/
       if ( v5 )
       {
-        SampleName = VocClass::GetSampleName(v5); /*0x751678*/
+        SampleName = (v5)->GetSampleName(); /*0x751678*/
         if ( SampleName )
         {
           v4 = 0; /*0x751683*/
@@ -536,7 +536,7 @@ LABEL_11:
             while ( 1 )
             {
               v7 = (char *)**((unsigned int **)g_VocAudioConfig + v4); /*0x751692*/
-              v8 = v7 ? VocClass::GetSampleName(v7) : g_Str_Invalid_Voc;
+              v8 = v7 ? (v7)->GetSampleName() : g_Str_Invalid_Voc;
               if ( !_strcmpi(SampleName, v8) ) /*0x7516a6*/
                 break; /*0x7516a6*/
               if ( ++v4 >= g_VocPlayState ) /*0x7516ba*/

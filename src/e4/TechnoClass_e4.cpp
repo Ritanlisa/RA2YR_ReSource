@@ -104,7 +104,7 @@ int TechnoClass_CanFireAtTarget(TechnoClass *aP0, void * a1, void * a2, void * a
     {
       v7 = *ProgressTimer::GetValue((ProgressTimer *)a1->secondaryFacing, &a5); /*0x41aa2e*/
       if ( (*(int (__stdcall **)(char *))(*((unsigned int *)a1 + 432) + 28))((char *)a1 + 1728) /*0x41aa6a*/
-        || abs16(v7 - *(unsigned short *)ObjectClass::CalcTargetFacing((ObjectClass *)a1, (int *)&a5, (int)a3)) <= 0x800u )
+        || abs16(v7 - *(unsigned short *)((ObjectClass *)a1)->CalcTargetFacing((int *)&a5, (int)a3)) <= 0x800u )
       {
         return 0; /*0x41aa77*/
       }
@@ -269,11 +269,11 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->auxParticles2 = 0; /*0x6f2ebc*/
   this->firingParticles = 0; /*0x6f2ec2*/
   this->waveEffect = (WaveClass *)-1; /*0x6f2ec8*/
-  Delegate::GetField(&this->tiltSidewaysAngle); /*0x6f2ece*/
+  (&this->tiltSidewaysAngle)->GetField(); /*0x6f2ece*/
   TechnoClass::checkCloakState((TechnoClass *)this->storedTiberium); /*0x6f2ed9*/
   FrameSnapshot::InitMax((FrameSnapshot *)this->barrelFacing, 3); /*0x6f2ee6*/
-  FrameSnapshot::Init((FrameSnapshot *)this->primaryFacing); /*0x6f2ef1*/
-  FrameSnapshot::Init((FrameSnapshot *)this->secondaryFacing); /*0x6f2efc*/
+  ((FrameSnapshot *)this->primaryFacing)->Init(); /*0x6f2ef1*/
+  ((FrameSnapshot *)this->secondaryFacing)->Init(); /*0x6f2efc*/
   this->currentBurstIndex = 0; /*0x6f2f01*/
   this->targetLaserTimer[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6f2f0d*/
   this->targetLaserTimer[2] = 0; /*0x6f2f13*/

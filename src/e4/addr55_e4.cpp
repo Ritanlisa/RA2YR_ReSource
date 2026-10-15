@@ -563,8 +563,8 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     *(float *)&v52 = (float)(*((signed int *)(((unsigned char *)&(v62)) + 4))); /*0x551184*/
     *(float *)&v46 = (float)(int)v62; /*0x551193*/
     Tactical::SetCellTransform((char *)v78, 2, v46, v52, v39, 1065353216, 0); /*0x551198*/
-    StructTable::Append(dword_8A0E10, v77); /*0x5511ab*/
-    return StructTable::Append(dword_8A0E10, v78); /*0x5511be*/
+    (dword_8A0E10)->Append(v77); /*0x5511ab*/
+    return (dword_8A0E10)->Append(v78); /*0x5511be*/
   }
   else if ( v53 ) /*0x5511d4*/
   {

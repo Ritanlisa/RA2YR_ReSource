@@ -251,7 +251,7 @@ int WeaponTypeClass::Destructor(void *a1)
   }
   BYTE1(a1->Report[3]) = 0; /*0x772069*/
   a1->Report[2] = 0; /*0x77206f*/
-  return AbstractTypeClass::Dtor((AbstractTypeClass *)a1); /*0x77207a*/
+  return ((AbstractTypeClass *)a1)->Dtor(); /*0x77207a*/
 
 }
 } // namespace gamemd
@@ -362,7 +362,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       WeaponTypeClass::loadWeaponProperties(v5, (int)&aP0); /*0x772d15*/
     if ( v5 != (WeaponTypeClass *)-244 ) /*0x772d23*/
     {
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v5->Anim, 0, 0); /*0x772d2b*/
+      ((DynamicVectorClass *)v5->Anim)->AnimTypeConstructor(0, 0); /*0x772d2b*/
       v5-((unsigned int *)(>Anim))[0] = (int)&vt_TypeList; /*0x772d30*/
     }
     v7->vt_entry_68(&aP0, 4, 0, v4); /*0x772d42*/
@@ -373,7 +373,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     }
     if ( Report ) /*0x772d77*/
     {
-      DynamicVectorClass::Construct((DynamicVectorClass *)Report, 0, 0); /*0x772d7f*/
+      ((DynamicVectorClass *)Report)->Construct(0, 0); /*0x772d7f*/
       *Report = (int)&vt_TypeList; /*0x772d84*/
     }
     v7->vt_entry_68(&a2, 4, 0); /*0x772d97*/
@@ -499,7 +499,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   }
   (((unsigned char *)&(v3[5].abstractFlags))[1]) = 0; /*0x773209*/
   v3[5].uniqueId = 0; /*0x77320f*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)v3); /*0x773215*/
+  ((AbstractTypeClass *)v3)->Dtor(); /*0x773215*/
   if ( ((uint8_t)Block & 1) != 0 ) /*0x77321f*/
     operator delete((void *)(v3)); /*0x773222*/
   return (WeaponTypeClass *)v3; /*0x77322c*/

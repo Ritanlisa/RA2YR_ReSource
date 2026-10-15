@@ -252,9 +252,9 @@ bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool u
   v12 = v13; /*0x4a9ce0*/
   v5->__pad_140 = DisplayClass_field_0x140; /*0x4a9ce4*/
   if ( unk ) /*0x4a9cf2*/
-    DisplayClass::AdvanceFrameCounter(v5); /*0x4a9cf4*/
+    (v5)->AdvanceFrameCounter(); /*0x4a9cf4*/
   else
-    DisplayClass::UpdateDisplayTimer(v5); /*0x4a9cfb*/
+    (v5)->UpdateDisplayTimer(); /*0x4a9cfb*/
   AdjacentPassableMask = Cell::GetAdjacentPassableMask(cell, 0); /*0x4a9d09*/
   if ( AdjacentPassableMask != v5->ZoneIterator_Y ) /*0x4a9d14*/
   {

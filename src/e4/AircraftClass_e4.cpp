@@ -81,7 +81,7 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
           if ( v7 >= v9 ) /*0x413fc1*/
             goto LABEL_9; /*0x413fc1*/
         }
-        Power::ChangedHouse((Power *)v3 + 21, 1); /*0x413fcd*/
+        ((Power *)v3 + 21)->ChangedHouse(1); /*0x413fcd*/
       }
     }
 LABEL_9:
@@ -145,7 +145,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
     LOWORD(v22) = v10; /*0x415b6b*/
     HIWORD(v22) = v7[1] + *(unsigned short *)(v9 + 2); /*0x415b74*/
     v18 = v22; /*0x415b83*/
-    v12 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&v18); /*0x415b87*/
+    v12 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&v18); /*0x415b87*/
     if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v11 + 428))(a2, v12, -1, -1, 0, 1) ) /*0x415b8f*/
       break; /*0x415b97*/
     ++v5; /*0x415b9d*/
@@ -165,7 +165,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
     return 0; /*0x415c57*/
   (*(void (**)(int *, int, unsigned int))(*a2 + 488))(a2, 2, 0); /*0x415c05*/
   v15 = *a2; /*0x415c0b*/
-  v16 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&v18); /*0x415c19*/
+  v16 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&v18); /*0x415c19*/
   (*(void (**)(int *, void *, int))(v15 + 1152))(a2, v16, 1); /*0x415c21*/
   if ( (*((int (**)(AircraftClass *, int, int *))this->FootClass + 158))(this, 2, a2) == 1 ) /*0x415c37*/
     (*((void (**)(AircraftClass *, int))this->FootClass + 157))(this, 9); /*0x415c3f*/

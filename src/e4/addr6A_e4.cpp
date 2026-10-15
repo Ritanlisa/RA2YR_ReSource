@@ -142,8 +142,8 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
   {
     do /*0x6a7570*/
     {
-      Hash::Reset((LinkClass *)(56 * (v5 + 60 * v3[14]) + 11566720)); /*0x6a7545*/
-      Hash::InsertOrdered((GScreenClass *)&DataGlobal_87F7E8, 56 * (v5 + 60 * v3[14]) + 11566720); /*0x6a7568*/
+      ((LinkClass *)(56 * (v5 + 60 * v3[14]) + 11566720))->Reset(); /*0x6a7545*/
+      ((GScreenClass *)&DataGlobal_87F7E8)->InsertOrdered(56 * (v5 + 60 * v3[14]) + 11566720); /*0x6a7568*/
       ++v5; /*0x6a756d*/
     }
     while ( v5 < v6 ); /*0x6a7570*/
@@ -179,8 +179,8 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
   }
 LABEL_7:
   if ( !dword_A8E7AC && a2 != 31 ) /*0x6a882b*/
-    VoxClass::FindAndPlay(&stru_83FA64, -1); /*0x6a8837*/
-  TabCameoListClass::AddCameo_ReplaceItAll((TabCameoListClass *)this, a2, a3); /*0x6a8840*/
+    (&stru_83FA64)->FindAndPlay(-1); /*0x6a8837*/
+  ((TabCameoListClass *)this)->AddCameo_ReplaceItAll(a2, a3); /*0x6a8840*/
   LOBYTE(this->ambientSoundController[0]) = 1; /*0x6a8848*/
   g_CameoRenderFlag = 1; /*0x6a884c*/
   return 1; /*0x6a8847*/
@@ -267,8 +267,8 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   {
     do /*0x6a9494*/
     {
-      Hash::Reset((LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720)); /*0x6a9465*/
-            LOBYTE(v5) = Hash::InsertOrdered((int)(/*0x6a948c*/                      (GScreenClass *)&DataGlobal_87F7E8),                      56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
+      ((LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720))->Reset(); /*0x6a9465*/
+            LOBYTE(v5) = ((int)(/*0x6a948c*/ (GScreenClass *)&DataGlobal_87F7E8))->InsertOrdered(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
       ++v3; /*0x6a9491*/
     }
     while ( v3 < v6 ); /*0x6a9494*/
@@ -528,7 +528,7 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
 
   v10 = v3; /*0x6ae2cc*/
   dwNewLong = -1; /*0x6ae2ce*/
-  RulesClass::LoadCountries(*(RulesClass **)&g_RulesClass_Instance); /*0x6ae2d6*/
+  (*(RulesClass **)&g_RulesClass_Instance)->LoadCountries(); /*0x6ae2d6*/
   RulesClass::ReadDataList(*(RulesClass **)&g_RulesClass_Instance); /*0x6ae2e8*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x6ae2f6*/
     (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
@@ -653,7 +653,7 @@ int TechnoClass::ProcessDeployAction()
         else
         {
           v7 = *(unsigned int *)this->occupant; /*0x6afe87*/
-          v8 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v29); /*0x6afe8e*/
+          v8 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v29); /*0x6afe8e*/
           (*(void (**)(int, void *, int))(v7 + 1152))(this->occupant, v8, 1); /*0x6afe97*/
           LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))(this->occupant, 2, 0); /*0x6afea6*/
           this->customSound_controller[3] = 2; /*0x6afeac*/
@@ -763,7 +763,7 @@ int TechnoClass::ProcessDeployAction()
                                         *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6024) / 256,
                                         1);
           v30 = *BuildingClass::FindPlacementCells2((unsigned int *)((BuildingClass *)this), &v33, *(int *)v29); /*0x6b0100*/
-          v16 = (unsigned int *)(CellStruct::Sub((CellStruct *)&v30, &v34, v29)); /*0x6b0104*/
+          v16 = (unsigned int *)(((CellStruct *)&v30)->Sub(&v34, v29)); /*0x6b0104*/
           v17 = v16->u32_4; /*0x6b0109*/
           v18 = *(__int16 *)v16; /*0x6b010d*/
           v31 = v17; /*0x6b0110*/
@@ -786,7 +786,7 @@ int TechnoClass::ProcessDeployAction()
           v20 = (CellStruct *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->occupant + 440))( /*0x6b014d*/
                                 this->occupant,
                                 v35);
-          v21 = (unsigned int *)(CellStruct::Sub(v20, &v34, v29)); /*0x6b015f*/
+          v21 = (unsigned int *)((v20)->Sub(&v34, v29)); /*0x6b015f*/
           v22 = *(__int16 *)v21; /*0x6b0168*/
           v31 = *((__int16 *)v21 + 1); /*0x6b016b*/
           __asm { fild [esp+38h+var_20] } /*0x6b0172*/

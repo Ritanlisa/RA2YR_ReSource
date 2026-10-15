@@ -410,7 +410,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4dd*/
   (*((void (**)(void **))this->balance + 4))(&this->balance); /*0x4ca4ec*/
   Debug::Log(); /*0x4ca4f5*/
-  v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x4ca504*/
+  v3 = ((AbstractClass *)this)->ProcessPower(); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
   Power::FlagProcess((Power *)a2, v3); /*0x4ca50f*/
   LOBYTE(v4) = this->u8_5D; /*0x4ca514*/
@@ -483,7 +483,7 @@ int FactoryClass::StartProduction_2()
           v10 = v3[3278]; /*0x4ca5ff*/
           v9 = v2; /*0x4ca600*/
           v7 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v3 + 44))(v3); /*0x4ca603*/
-          LOBYTE(v2) = Sidebar::StartSidebarProduction((int)this->owner, v7, v9, v10, 1); /*0x4ca60a*/
+          LOBYTE(v2) = ((int)this->owner)->StartSidebarProduction(v7, v9, v10, 1); /*0x4ca60a*/
         }
       }
     }
@@ -596,7 +596,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   }
   Block->__pad_42[11] = 0; /*0x4ca85f*/
   *&Block->u32_60 = 0; /*0x4ca863*/
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x4ca86a*/
+  ((AbstractClass *)Block)->DTOR(); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
     operator delete((void *)(Block)); /*0x4ca877*/
   return &Block->vfptr; /*0x4ca881*/

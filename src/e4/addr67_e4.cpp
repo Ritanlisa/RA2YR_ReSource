@@ -77,7 +77,7 @@ int sub_679CC0()
     Vector::Clear((int)v8); /*0x679d60*/
     v7[0] = (unsigned int)&off_7E1668; /*0x679d69*/
     ((BufferIOFileClass *)(v7))->Dtor(); /*0x679d71*/
-    HashTable::DestroyHashTableINIClass(v1); /*0x679d7a*/
+    (v1)->DestroyHashTableINIClass(); /*0x679d7a*/
   }
   return dword_B053B4; /*0x679d84*/
 }
@@ -103,7 +103,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
 
   if ( INIClass::GetString((INIClass *)edx0, aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
   {
-    VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
+    (&v17)->BuildingTypeConstructor(0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
     /* X11: vtable install elided (implicit via TypeList virtuals 0x67b5ac) */
@@ -111,7 +111,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     {
       if ( !*i ) /*0x67b5c0*/
         break; /*0x67b5c2*/
-      v7 = BuildingTypeClass::FindOrCreate(i); /*0x67b5cb*/
+      v7 = (i)->FindOrCreate(); /*0x67b5cb*/
       if ( v7 /*0x67b5fb*/
         && (v18 < v17.Capacity
          || (v17.IsAllocated || !v17.Capacity)
@@ -127,7 +127,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     aP0->IsInitialized = 1; /*0x67b633*/
     aP0->IsAllocated = 0; /*0x67b637*/
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b63a) */
-    VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
+    (aP0)->CopyBuilding(&v17); /*0x67b640*/
     /* X11: vtable install elided (implicit via TypeList virtuals 0x67b645) */
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b64b) */
     v9 = (void *)v19; /*0x67b657*/
@@ -260,7 +260,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     *(unsigned int *)aP0 = (unsigned int)(&vt_VectorClass); /*0x67bc66*/
     if ( (unsigned int *)aP0 != a4 ) /*0x67bc6c*/
     {
-      Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)aP0); /*0x67bc70*/
+      ((_VectorClass_PBVInfantryTypeClass *)aP0)->Cleanup(); /*0x67bc70*/
       v13 = a4[2]; /*0x67bc76*/
       aP0->u32_8 = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/
@@ -303,9 +303,9 @@ int RulesClass::sub_674500()
   int result; // eax
   RulesClass *v2; // [esp+Ch] [ebp+4h]
 
-  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674515*/
-  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674527*/
-  result = INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674539*/
+  ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674515*/
+  ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674527*/
+  result = ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674539*/
   (*((unsigned char *)&(result))) = 1; /*0x67453f*/
   return result; /*0x67453e*/
 }

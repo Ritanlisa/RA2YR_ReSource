@@ -516,7 +516,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2, void *a
       v15 = v14[1]; /*0x4a9292*/
       v29 = *v14 - v7; /*0x4a9295*/
       v30 = v15 - (unsigned int)v8; /*0x4a929f*/
-      v3 = (unsigned int *)*Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &aP2, &v29); /*0x4a92af*/
+      v3 = (unsigned int *)*((Tactical *)g_TacticalClass_Instance)->PixelToCell(&aP2, &v29); /*0x4a92af*/
     }
     else
     {
@@ -716,15 +716,15 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
   v54 = v8; /*0x640a4b*/
   if ( *v8 ) /*0x640a46*/
   {
-    LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x640a5d*/
+    ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x640a5d*/
     v10 = 10000; /*0x640a62*/
     v64 = 10000; /*0x640a6c*/
     v58 = 10000; /*0x640a70*/
     v52 = 0; /*0x640a74*/
     v11 = 0; /*0x640a7c*/
-    for ( i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x640a85*/
+    for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x640a85*/
           i;
-          i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+          i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
     {
       v13 = (unsigned int *)(i + 36); /*0x640a8b*/
       if ( (uint8_t)LayerClass::IsWithinUsableArea( /*0x640a96*/
@@ -755,14 +755,14 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
     v17 = 0; /*0x640b62*/
     for ( j = 0; j < 8; ++j ) /*0x640b64*/
     {
-      if ( (uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, j) ) /*0x640b71*/
+      if ( (uint8_t)((char *)dword_A8B230)->Is_Waypoint_Valid(j) ) /*0x640b71*/
         ++v17; /*0x640b7a*/
     }
     v19 = 0; /*0x640b81*/
     v59 = j; /*0x640b83*/
     for ( k = v17; v19 < v17; ++v19 ) /*0x640b8d*/
     {
-      if ( (!v19 || v19 <= j) && (uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, v19) ) /*0x640ba6*/
+      if ( (!v19 || v19 <= j) && (uint8_t)((char *)dword_A8B230)->Is_Waypoint_Valid(v19) ) /*0x640ba6*/
       {
         v56 = (unsigned int *)*((ScenarioClass *)((char *)dword_A8B230))->Get_Waypoint_Location(&v65, v19); /*0x640bc8*/
         v20 = ((*((signed short *)(((unsigned char *)&(v56)) + 2))) << 8) + 128; /*0x640bde*/
@@ -845,7 +845,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
       {
         if ( v40 == 4480 || v38 <= v62 ) /*0x640e84*/
         {
-          if ( (uint8_t)ScenarioClass::Is_Waypoint_Valid(v39, v38) ) /*0x640e8b*/
+          if ( (uint8_t)(v39)->Is_Waypoint_Valid(v38) ) /*0x640e8b*/
           {
             v60 = *((ScenarioClass *)((char *)dword_A8B230))->Get_Waypoint_Location(&a5, v38); /*0x640eb0*/
             v41 = ((*((signed short *)(((unsigned char *)&(v60)) + 2))) << 8) + 128; /*0x640ec2*/
@@ -955,7 +955,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
   {
     v34 = DSurface_ViewBounds + result; /*0x69237c*/
     v35 = v11 + dword_886FA4; /*0x692380*/
-    v12 = Tactical::PixelToCell((int)g_TacticalClass_Instance, &aP1, &v34); /*0x69238e*/
+    v12 = ((int)g_TacticalClass_Instance)->PixelToCell(&aP1, &v34); /*0x69238e*/
     v8 = aP4; /*0x692393*/
   }
   else
@@ -981,7 +981,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
   v16->u32_4 = v14->vtable2; /*0x6923f0*/
   v16->u32_8 = v14->vtable3; /*0x6923f6*/
   result = (int)g_TacticalClass_Instance; /*0x6923f9*/
-  if ( g_TacticalClass_Instance && (result = Tactical::IsCellVisible(&dword_87F7E8, v15), (unsigned char)result) ) /*0x692413*/
+  if ( g_TacticalClass_Instance && (result = (&dword_87F7E8)->IsCellVisible(v15), (unsigned char)result) ) /*0x692413*/
   {
     v17 = v7[1] << 8; /*0x69242d*/
     v37[0] = (*v7 << 8) + 128; /*0x692430*/
@@ -1000,7 +1000,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
     result = *(unsigned int *)dword_A8B230; /*0x6924aa*/
     if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 ) /*0x6924af*/
     {
-      v23 = Coord::To_Cell(&dword_87F7E8, &v34); /*0x6924bb*/
+      v23 = (&dword_87F7E8)->To_Cell(&v34); /*0x6924bb*/
       result = (int)((Cell *)(v23))->IsBridge(); /*0x6924c2*/
       if ( result ) /*0x6924c9*/
       {
@@ -1014,7 +1014,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
     }
     if ( !*v22 && !*v8 ) /*0x692505*/
     {
-      v24 = TacticalClass::IsOccupiedByTechno(g_TacticalClass_Instance, aP0); /*0x692515*/
+      v24 = (g_TacticalClass_Instance)->IsOccupiedByTechno(aP0); /*0x692515*/
       v25 = aP3; /*0x69251a*/
       *aP3 = v24; /*0x692520*/
       result = (int)AbstractClass::IsTechnoType(v24); /*0x692522*/

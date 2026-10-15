@@ -196,7 +196,7 @@ int Delegate::ProcessBitmapAndDispatch()
     v2 = Delegate::Dispatch((Pipe *)this, (int)pad_14, v5); /*0x42df7b*/
     this->field_10 = 0; /*0x42df7d*/
   }
-  return v2 + GameClass::GetRelatedObject((Pipe *)this); /*0x42df8d*/
+  return v2 + ((Pipe *)this)->GetRelatedObject(); /*0x42df8d*/
 
 }
 } // namespace gamemd
@@ -291,7 +291,7 @@ int * Delegate::ClearVectorAndStraw(char a2)
 {
 
   Vector::Clear((int)&this->m_allocated); /*0x52ae76*/
-  Straw::Dtor((Straw *)this); /*0x52ae7d*/
+  ((Straw *)this)->Dtor(); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
     __3_YAXPAX_Z(this); /*0x52ae8a*/
   return (int *)this->m_items; /*0x52ae94*/
@@ -313,7 +313,7 @@ namespace gamemd {
 int * Delegate::DestroyPipe(char a2)
 {
 
-  Pipe::Dtor((Pipe *)this); /*0x52aee3*/
+  ((Pipe *)this)->Dtor(); /*0x52aee3*/
   if ( (a2 & 1) != 0 ) /*0x52aeed*/
     __3_YAXPAX_Z(this); /*0x52aef0*/
   return (int *)this->m_items; /*0x52aefa*/

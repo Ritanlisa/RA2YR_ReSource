@@ -45,7 +45,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source, void *a2, voi
   int v3; // eax
   int v4; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, Source); /*0x74ad89*/
+  ((int *)this)->ConstructFull(Source); /*0x74ad89*/
   this->StartSound = -1; /*0x74ad93*/
   this->StopSound = -1; /*0x74ad99*/
   this->Normalized = 0; /*0x74ad9f*/
@@ -310,7 +310,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v27 = AnimTypeClass::FindOrCreate((char *)&Destination); /*0x74b349*/
+    v27 = ((char *)&Destination)->FindOrCreate(); /*0x74b349*/
   }
   else
   {
@@ -327,7 +327,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v29 = AnimTypeClass::FindOrCreate((char *)&Destination); /*0x74b388*/
+    v29 = ((char *)&Destination)->FindOrCreate(); /*0x74b388*/
   }
   else
   {
@@ -343,7 +343,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v30 = AnimTypeClass::FindOrCreate((char *)&Destination); /*0x74b3c7*/
+    v30 = ((char *)&Destination)->FindOrCreate(); /*0x74b3c7*/
   }
   else
   {

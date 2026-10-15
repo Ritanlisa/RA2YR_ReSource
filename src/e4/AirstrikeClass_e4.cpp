@@ -71,7 +71,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
   HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
   v16 = v19; /*0x41d902*/
-  v8 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v16); /*0x41d907*/
+  v8 = (&dword_87F7E8)->To_CellObj((__int16 *)&v16); /*0x41d907*/
   v15 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
   v9 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)(a2_2 + 76) + 60))(*(unsigned int *)(a2_2 + 76)); /*0x41d91f*/
@@ -142,7 +142,7 @@ int AirstrikeClass::ReassignTarget(int a2, void *a2_2)
       if ( !v4 ) /*0x41da4d*/
         goto LABEL_6; /*0x41da4d*/
     }
-    (*((unsigned char *)&(v8))) = WTFMode::ResetUnitFlags((WTFMode *)a2_2); /*0x41da5c*/
+    (*((unsigned char *)&(v8))) = ((WTFMode *)a2_2)->ResetUnitFlags(); /*0x41da5c*/
   }
   else
   {
@@ -264,7 +264,7 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
     }
     while ( v3 < dword_889FC8 ); /*0x41ddb6*/
   }
-  AbstractClass::DTOR((AbstractClass *)aP1); /*0x41ddba*/
+  ((AbstractClass *)aP1)->DTOR(); /*0x41ddba*/
   if ( (aP1 & 1) != 0 ) /*0x41ddc4*/
     __3_YAXPAX_Z(aP1); /*0x41ddc7*/
   return &aP1->AbstractClass; /*0x41ddd1*/
@@ -353,7 +353,7 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v13; // ecx
   int v14; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
+  ((AbstractClass *)this)->Constructor(); /*0x41d384*/
   /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d389) */
   /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d38f) */
   /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d396) */
@@ -463,7 +463,7 @@ char AirstrikeClass::StartMission(int * a2)
   if ( !this->AirstrikeClass_field_3C ) /*0x41d830*/
     return AirstrikeClass::SpawnAircraft(a2); /*0x41d83c*/
   if ( a2 != *&this->AirstrikeClass_field_50 ) /*0x41d847*/
-    return AirstrikeClass::ReassignTarget((int)a2); /*0x41d84a*/
+    return ((int)a2)->ReassignTarget(); /*0x41d84a*/
   return result; /*0x41d841*/
 }
 } // namespace gamemd

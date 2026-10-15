@@ -572,10 +572,10 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     if ( v2 ) /*0x75e0ff*/
     {
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x75e108*/
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v2->q104, 0, 0); /*0x75e117*/
+      ((DynamicVectorClass *)v2->q104)->AnimTypeConstructor(0, 0); /*0x75e117*/
       *(unsigned int *)v2->q104 = &vt_TypeList; /*0x75e120*/
-      WarheadTypeClass::checkImmunity((WarheadTypeClass *)DebrisTypes, (int)&a1); /*0x75e12d*/
-      WarheadTypeClass::calculateDamage(&v2->WarheadTypeClass_1A8, (int)&a1); /*0x75e139*/
+      ((WarheadTypeClass *)DebrisTypes)->checkImmunity((int)&a1); /*0x75e12d*/
+      (&v2->WarheadTypeClass_1A8)->calculateDamage((int)&a1); /*0x75e139*/
       v2->Deform = &vt_WarheadTypeClass; /*0x75e13e*/
       /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75e144) */
       /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75e14b) */
@@ -583,7 +583,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     }
     if ( v2 != (WarheadTypeClass *)-260 ) /*0x75e161*/
     {
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v2->q104, 0, 0); /*0x75e169*/
+      ((DynamicVectorClass *)v2->q104)->AnimTypeConstructor(0, 0); /*0x75e169*/
       *(unsigned int *)v2->q104 = &vt_TypeList; /*0x75e16e*/
     }
     (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a1, 4, 0); /*0x75e180*/

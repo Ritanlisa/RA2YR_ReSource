@@ -238,21 +238,21 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
         v5 = v4; /*0x673eec*/
         if ( v4 ) /*0x673ef3*/
         {
-          String::Trim(v4); /*0x673ef7*/
+          (v4)->Trim(); /*0x673ef7*/
           dword_81DA8C[v2] = atoi(v5); /*0x673f05*/
         }
         v6 = strtok(0, Str); /*0x673f13*/
         v7 = (GlobalArray *)v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
-          String::Trim(v6); /*0x673f23*/
+          (v6)->Trim(); /*0x673f23*/
           dword_81DAD8[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
         v8 = strtok(0, Str); /*0x673f3d*/
         v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
-          String::Trim(v8); /*0x673f4d*/
+          (v8)->Trim(); /*0x673f4d*/
           if ( _strcmpi(v9, off_825BF8) ) /*0x673f58*/
           {
             if ( !_strcmpi(v9, g_Str_no) ) /*0x673f73*/
@@ -274,7 +274,7 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
           }
           else
           {
-            String::Trim(v10); /*0x673fbc*/
+            (v10)->Trim(); /*0x673fbc*/
             result = atof(v10); /*0x673fc2*/
           }
           __asm { fstp qword ptr [ebp+0] } /*0x673fca*/
@@ -695,7 +695,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
 
   if ( INIClass::GetString((INIClass *)edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
   {
-    RulesClass::readIQ((RulesClass *)&v17, 0, 0); /*0x67be11*/
+    ((RulesClass *)&v17)->readIQ(0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
     v17 = &vt_TypeList; /*0x67be2c*/
@@ -703,7 +703,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     {
       if ( !*i ) /*0x67be40*/
         break; /*0x67be42*/
-      v7 = TerrainTypeClass::FindOrCreate(i); /*0x67be4b*/
+      v7 = (i)->FindOrCreate(); /*0x67be4b*/
       if ( v7 /*0x67be7b*/
         && (v21 < v19
          || (v20 || !v19)
@@ -742,7 +742,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)a1 = &vt_VectorClass; /*0x67bf26*/
     if ( (unsigned int *)a1 != a5 ) /*0x67bf2c*/
     {
-      TypeList_cptr_TerrainTypeClass::TryFreeAndClear((_VectorClass_PBVTerrainTypeClass *)a1); /*0x67bf30*/
+      ((_VectorClass_PBVTerrainTypeClass *)a1)->TryFreeAndClear(); /*0x67bf30*/
       v13 = a5[2]; /*0x67bf36*/
       *(unsigned int *)(a1 + 8) = v13; /*0x67bf3b*/
       if ( v13 ) /*0x67bf3e*/
@@ -876,7 +876,7 @@ int RulesClass::ReadColors(void * aColors)
       v7[0] = 0; /*0x66d404*/
       v7[1] = 0; /*0x66d409*/
       v7[2] = 0; /*0x66d40e*/
-      Color = INIEntry::ReadColor((INIEntry *)v1, (int)&v8, (uint8_t *)aColors, StringByIndex, v7); /*0x66d413*/
+      Color = ((INIEntry *)v1)->ReadColor((int)&v8, (uint8_t *)aColors, StringByIndex, v7); /*0x66d413*/
       (*((unsigned short *)&(v9))) = *(unsigned short *)Color; /*0x66d41b*/
       (((unsigned char *)&(v9))[2]) = *(unsigned char *)(Color + 2); /*0x66d425*/
       System_Read((const char *)StringByIndex, (int)&v9); /*0x66d42d*/

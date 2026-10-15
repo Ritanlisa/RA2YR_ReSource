@@ -79,7 +79,7 @@ void* BuildingClass::LoadFromStream()
   v1 = v33; /*0x453e25*/
   p_vtable1 = &v33->vtable2; /*0x453e2c*/
   v33 = (BuildingClass *)(*((int (**)(void **))v33->vtable2 + 4))(&v33->vtable2); /*0x453e3d*/
-  v3 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, (int *)&v33); /*0x453e41*/
+  v3 = (&g_BuildingLoadQueue_Array)->Dequeue((int *)&v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
   {
@@ -420,7 +420,7 @@ int BuildingClass::AnimController(void *a1)
   int v11; // edx
   unsigned int v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  Value = ProgressTimer::GetValue(&this->LightSource, v12); /*0x629736*/
+  Value = (&this->LightSource)->GetValue(v12); /*0x629736*/
   v3 = this->q048; /*0x62973b*/
   v4 = *Value; /*0x62973e*/
   if ( v3 < 0 ) /*0x629742*/

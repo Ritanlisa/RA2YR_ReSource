@@ -712,7 +712,7 @@ void* JumpjetLocomotion::Land()
   {
     LOWORD(v9) = Math::RoundToInt((double)v53 - *&this->u32_28); /*0x54cb05*/
     v53 = v9; /*0x54cb0a*/
-    v49[0] = *(unsigned short *)ProgressTimer::GetValue(&this->q054, v50) + 11520; /*0x54cb2a*/
+    v49[0] = *(unsigned short *)(&this->q054)->GetValue(v50) + 11520; /*0x54cb2a*/
     FacingClass::Update(&this->q054, v49); /*0x54cb39*/
   }
   v10 = dword_ABC5DC + Cell::GetGroundHeight(&v51); /*0x54cb5e*/
@@ -724,7 +724,7 @@ void* JumpjetLocomotion::Land()
   }
   v49[0] = v51 / 256; /*0x54cba0*/
   v49[1] = v52 / 256; /*0x54cbb5*/
-  if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, v49) ) /*0x54cbc2*/
+  if ( (unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal(v49) ) /*0x54cbc2*/
   {
     RemoveTarget(*(unsigned int *)this->u32_C); /*0x54cbd4*/
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)this->u32_C + 292))(*(unsigned int *)this->u32_C, 0); /*0x54cbe1*/
@@ -743,7 +743,7 @@ void* JumpjetLocomotion::Land()
   v49[0] = *v12 / 256; /*0x54cc66*/
   v49[1] = v12[1] / 256; /*0x54cc7f*/
   *(unsigned int *)v50 = *(unsigned int *)v49; /*0x54cc8d*/
-  v13 = (unsigned int *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v50) + 57); /*0x54cc96*/
+  v13 = (unsigned int *)*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v50) + 57); /*0x54cc96*/
   if ( v13 == *(unsigned int **)this->u32_C ) /*0x54cca1*/
     v13 = (unsigned int *)v13[12]; /*0x54cca3*/
   if ( v13 ) /*0x54cca8*/
@@ -849,12 +849,12 @@ void* JumpjetLocomotion::Land()
   v29 = v27; /*0x54ce3d*/
   if ( v28 /*0x54ce5c*/
     && (*(int (**)(int))(*&v28->u32_B0))(v28) == 2
-    && !(unsigned __int8)Cell::IsBuildable((bool *)v24, 2, 1, 1, -1, 0, -1, 1) )
+    && !(unsigned __int8)((bool *)v24)->IsBuildable(2, 1, 1, -1, 0, -1, 1) )
   {
     v29 = 7; /*0x54ce65*/
   }
   if ( *(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)this->u32_C + 132))(*(unsigned int *)this->u32_C) + 3476) /*0x54ce9a*/
-    && !(unsigned __int8)Cell::IsBuildable((bool *)v24, 2, 1, 1, -1, 0, -1, 1)
+    && !(unsigned __int8)((bool *)v24)->IsBuildable(2, 1, 1, -1, 0, -1, 1)
     || v29 )
   {
     if ( v48 && !v26 ) /*0x54ceae*/
@@ -1111,7 +1111,7 @@ void* JumpjetLocomotion::UpdateFacing()
   }
   else
   {
-    v26 = v19 - JumpjetLocomotionClass::GetFloorZSetContext((JumpjetLocomotionClass *)this); /*0x54d34c*/
+    v26 = v19 - ((JumpjetLocomotionClass *)this)->GetFloorZSetContext(); /*0x54d34c*/
   }
   LODWORD(v61) = v26; /*0x54d358*/
   v57 = 0; /*0x54d35e*/
@@ -1201,7 +1201,7 @@ LABEL_50:
   }
   if ( v57 ) /*0x54d537*/
   {
-    ObjectClass::SetAnim(*(ObjectClass **)this->u32_C, v59); /*0x54d541*/
+    (*(ObjectClass **)this->u32_C)->SetAnim(v59); /*0x54d541*/
     if ( v55 ) /*0x54d54c*/
       (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)this->u32_C + 292))(*(unsigned int *)this->u32_C, 0); /*0x54d554*/
   }
@@ -1211,7 +1211,7 @@ LABEL_50:
   v41 = v40[2]; /*0x54d572*/
   LOWORD(v42) = Math::RoundToInt(v14); /*0x54d575*/
   LODWORD(v60) = v42; /*0x54d57a*/
-  v61 = (double)(*(__int16 *)ProgressTimer::GetValue(&this->q054, &v59) - 0x3FFF) /*0x54d5a2*/
+  v61 = (double)(*(__int16 *)(&this->q054)->GetValue(&v59) - 0x3FFF) /*0x54d5a2*/
       * -0.00009587672516830327;
   v43 = HIDWORD(v61); /*0x54d5aa*/
   v44 = LODWORD(v61); /*0x54d5ae*/
@@ -1239,12 +1239,12 @@ LABEL_50:
        && *&this->q050 == 2
        && (v51 = *(unsigned int *)this->u32_C, *(unsigned int *)(v51 + 692))) )
     {
-      v53 = ObjectClass::CalcTargetFacing((ObjectClass *)v51, (int *)&v61, *(unsigned int *)(v51 + 692)); /*0x54d675*/
+      v53 = ((ObjectClass *)v51)->CalcTargetFacing((int *)&v61, *(unsigned int *)(v51 + 692)); /*0x54d675*/
       FacingClass::Set_SyncLog(&this->q054, v53); /*0x54d679*/
     }
     else
     {
-      Value = ProgressTimer::GetValue(&this->q054, &v61); /*0x54d68b*/
+      Value = (&this->q054)->GetValue(&v61); /*0x54d68b*/
       FacingClass::Set_SyncLog((char *)(*(unsigned int *)this->u32_C + 904), Value); /*0x54d692*/
     }
   }

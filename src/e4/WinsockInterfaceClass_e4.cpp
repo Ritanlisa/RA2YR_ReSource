@@ -36,7 +36,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   /* X11: vtable install elided (implicit via WinsockInterfaceClass virtuals 0x7b1abc) */
   if ( v2 ) /*0x7b1ac4*/
   {
-    NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
+    ((SOCKET *)this)->UnregisterAsync(); /*0x7b1ac6*/
     (*(void (**)(int))(*(unsigned int *)this + 4))(this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
     this->u32_3F068 = 0; /*0x7b1ad8*/

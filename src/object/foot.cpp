@@ -240,7 +240,7 @@ bool FootClass::MovementAI()
     sub_7DC720(-2147467261); /*0x4da684*/
   if ( (*(uint8_t (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da6bb*/
     && (*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 21))(this)
-    && (uint8_t)HouseClass::IsAlliedWith((void *)this->owner, (void *)dword_A83D4C) )
+    && (uint8_t)((void *)this->owner)->IsAlliedWith((void *)dword_A83D4C) )
   {
     v8 = this->sightTimer[0]; /*0x4da6c8*/
     v9 = this->sightTimer[2]; /*0x4da6ce*/

@@ -61,7 +61,7 @@ void sub_72C0B0()
       v1 = *(void **)&DataGlobal_B0FA4C; /*0x72c0c5*/
       if ( *(unsigned int *)&DataGlobal_B0FA4C ) /*0x72c0cd*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FA4C); /*0x72c0d1*/
+        (*(FileTreeNode **)&DataGlobal_B0FA4C)->Destroy(); /*0x72c0d1*/
         operator delete((void *)(v1)); /*0x72c0d7*/
       }
       DataGlobal_B0FD2C = 0; /*0x72c0df*/

@@ -122,7 +122,7 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
     }
   }
 LABEL_5:
-  result = Object::FindClosestObjectCell(this, aP1, aP2, 0); /*0x47c5ca*/
+  result = (this)->FindClosestObjectCell(aP1, aP2, 0); /*0x47c5ca*/
   if ( !result ) /*0x47c5df*/
   {
     if ( byte_A8E9A0 ) /*0x47c5e8*/
@@ -310,7 +310,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18->u32_4; /*0x56c485*/
             v26[2] = v18->u32_8; /*0x56c490*/
-            v16 = Coord::Length((Coord *)v26); /*0x56c494*/
+            v16 = ((Coord *)v26)->Length(); /*0x56c494*/
 LABEL_20:
             if ( v16 >= 0 && (!v21 || v16 < v22) ) /*0x56c4a9*/
             {
@@ -323,7 +323,7 @@ LABEL_20:
           v25[1] = (v10 << 8) + 128; /*0x56c429*/
           v25[2] = 0; /*0x56c431*/
           v15 = Vector3::Subtract((Vector3 *)a2, v27, v25); /*0x56c439*/
-          v16 = Coord::Length((Coord *)v15); /*0x56c440*/
+          v16 = ((Coord *)v15)->Length(); /*0x56c440*/
           if ( v16 <= 181 ) /*0x56c44a*/
             goto LABEL_20; /*0x56c44a*/
         }
@@ -415,7 +415,7 @@ char sub_5902C0(int a1)
             (*(((unsigned short *)&(a1)) + 1)) = v9; /*0x590440*/
             v11 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x590445*/
             v11 = v11; /*0x59044a*/
-            if ( v11->u32_44 != -1 || v11->u32_11B != v16 || !Cell::IsEmpty(v11) && !((Cell *)(v11))->IsGroundTypeRange() ) /*0x59046c*/
+            if ( v11->u32_44 != -1 || v11->u32_11B != v16 || !(v11)->IsEmpty() && !((Cell *)(v11))->IsGroundTypeRange() ) /*0x59046c*/
               break; /*0x59046c*/
             v7 = v1->__pad_008; /*0x590475*/
             v5 = *v1; /*0x590478*/
@@ -438,7 +438,7 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3, void *a4)  // G42.41k: d
   int v7; // ecx
   CellClass *v8; // eax
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x5fc386*/
+  ((ObjectClass *)this)->ctor(); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
   *(unsigned int *)this->attachedTag = (unsigned int)(&vt_OverlayClass); /*0x5fc38f*/
   this->Object_field_0xAC = v5; /*0x5fc395*/
@@ -463,9 +463,9 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3, void *a4)  // G42.41k: d
     v7 = aP2[1]; /*0x5fc444*/
     LOWORD(aP1) = ((*aP2 << 8) + 128) / 256; /*0x5fc469*/
     HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
-    v8 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1); /*0x5fc497*/
+    v8 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1); /*0x5fc497*/
     if ( !CellClass::FindInfantry(v8, 0) ) /*0x5fc4a0*/
-      ObjectClass::Deploy((ObjectClass *)this); /*0x5fc4b1*/
+      ((ObjectClass *)this)->Deploy(); /*0x5fc4b1*/
     dword_8333BC = -1; /*0x5fc4b6*/
   }
   return this; /*0x5fc4c2*/
@@ -638,17 +638,17 @@ LABEL_20:
     }
     else
     {
-      v26 = (__int16 *)Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc21*/
+      v26 = (__int16 *)((Tactical *)g_TacticalClass_Instance)->PixelToCell(&a2, &v30); /*0x5fdc21*/
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, v26) ) /*0x5fdc2c*/
       {
-        v28 = (__int16 *)Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc4a*/
-        v25 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v28)); /*0x5fdc4b*/
+        v28 = (__int16 *)((Tactical *)g_TacticalClass_Instance)->PixelToCell(&a2, &v30); /*0x5fdc4a*/
+        v25 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v28)); /*0x5fdc4b*/
       }
       else
       {
         LOWORD(a2) = 1; /*0x5fdc58*/
         HIWORD(a2) = *(unsigned short *)&g_Cell_PositionLUT; /*0x5fdc5f*/
-        v25 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a2)); /*0x5fdc6a*/
+        v25 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&a2)); /*0x5fdc6a*/
       }
     }
     DrawToSurfaceSHP( /*0x5fdcaa*/
@@ -707,9 +707,9 @@ void * Object::DrawObject(void ** Block, char a2)
     }
   }
   if ( byte_A8E9A0 ) /*0x5fdfe6*/
-    ObjectClass::Undeploy((ObjectClass *)Block); /*0x5fdfea*/
+    ((ObjectClass *)Block)->Undeploy(); /*0x5fdfea*/
   Block->Type = 0; /*0x5fdff1*/
-  ObjectClass::Dtor((ObjectClass *)Block); /*0x5fdffb*/
+  ((ObjectClass *)Block)->Dtor(); /*0x5fdffb*/
   if ( (a2 & 1) != 0 ) /*0x5fe005*/
     __3_YAXPAX_Z(Block); /*0x5fe008*/
   return &Block->ObjectClass; /*0x5fe012*/
@@ -762,9 +762,9 @@ LABEL_39:
     v5->vtable3 = dword_AC4950; /*0x62af3c*/
     return (void **)(result); /*0x62af3c*/
   }
-  if ( !ParasiteClass::CanExistOnVictimCell((ParasiteClass *)this) ) /*0x62ac5a*/
+  if ( !((ParasiteClass *)this)->CanExistOnVictimCell() ) /*0x62ac5a*/
   {
-    v12 = ((unsigned int)((*ProgressTimer::GetValue(&this->ptr_28, &v26) >> 12) /*0x62ad3a*/
+    v12 = ((unsigned int)((*(&this->ptr_28)->GetValue(&v26) >> 12) /*0x62ad3a*/
                         + 1) >> 1)
         & 7;
     v13 = (Cell *)(*(int (**)(unsigned int))(**&this->ptr_28 + 444))(*&this->ptr_28); /*0x62ad43*/
@@ -1746,7 +1746,7 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
   {
     if ( aP1 ) /*0x5fd909*/
     {
-      ObjectClass::Init((ObjectClass *)aP1, (int)&aP1a); /*0x5fd912*/
+      ((ObjectClass *)aP1)->Init((int)&aP1a); /*0x5fd912*/
       *aP1 = &vt_OverlayClass; /*0x5fd917*/
       aP1[1] = &vt_OverlayClass; /*0x5fd91d*/
       aP1[2] = &vt_OverlayClass; /*0x5fd924*/

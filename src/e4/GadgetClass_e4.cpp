@@ -63,7 +63,7 @@ ControlClass GadgetClass::Dtor(void *a1)
     dword_8B3E8C = 0; /*0x4e13cd*/
   if ( this == v1 ) /*0x4e13d5*/
     dword_8B3E90 = 0; /*0x4e13d7*/
-  return LinkClass::Destruct((LinkClass *)this);
+  return ((LinkClass *)this)->Destruct();
 
 }
 }

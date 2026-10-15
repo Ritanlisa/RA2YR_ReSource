@@ -142,7 +142,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   int v23; // [esp+130h] [ebp-8h]
 
   v1 = (int)aUimdIni; /*0x534faa*/
-  VoxClass::SetEVAIndex((VoxClass *)aUimdIni); /*0x534fac*/
+  ((VoxClass *)aUimdIni)->SetEVAIndex(); /*0x534fac*/
   if ( v1 == 2 ) /*0x534fb4*/
     v1 = 1; /*0x534fb6*/
   v2 = v1; /*0x534fbb*/
@@ -252,12 +252,12 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
         dword_884E78 = 0; /*0x5352dd*/
     }
     House_Load(); /*0x5352e3*/
-    Game::InitializeToolTipColor(v16); /*0x5352ec*/
+    (v16)->InitializeToolTipColor(); /*0x5352ec*/
     CCFileClass::Construct(&v21, aUimdIni); /*0x5352fd*/
     if ( CCINIClass::Load(&dword_887208, (int)&v21, 0, 0) ) /*0x535311*/
     {
-      SidebarClass::ReadButtonList((SidebarClass *)dword_8871E0); /*0x53533d*/
-      SidebarClass::LoadButtonSHPs((TabClass *)&dword_87F7E8); /*0x535347*/
+      ((SidebarClass *)dword_8871E0)->ReadButtonList(); /*0x53533d*/
+      ((TabClass *)&dword_87F7E8)->LoadButtonSHPs(); /*0x535347*/
       v21.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535353*/
       v23 = 0; /*0x53535a*/
       Vector::Clear((int)v22); /*0x535361*/
@@ -340,7 +340,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   v6 = 256; /*0x627687*/
   do /*0x627697*/
   {
-    Struct::Zero3(v5); /*0x62768e*/
+    (v5)->Zero3(); /*0x62768e*/
     v5 = &v5->Struct_3; /*0x627693*/
     --v6; /*0x627696*/
   }

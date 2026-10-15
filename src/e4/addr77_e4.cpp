@@ -318,7 +318,7 @@ int Dialog_Close(HWND a1, int a2)
         v7 = g_DialogTrackingList - v5; /*0x775851*/
         do /*0x775870*/
         {
-          DialogQueue::RemoveEntry(*v6); /*0x775855*/
+          (*v6)->RemoveEntry(); /*0x775855*/
           DestroyWindow((HWND)*v6); /*0x77585d*/
           v6 -= 2; /*0x775865*/
           --v7; /*0x775869*/
@@ -932,7 +932,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
           {
             Debug::Log(); /*0x7778da*/
             (*((unsigned char *)&(v19))) = 1; /*0x7778e2*/
-            AsyncIO::Read(v19); /*0x7778e4*/
+            (v19)->Read(); /*0x7778e4*/
             sub_407020(); /*0x7778e9*/
             if ( stru_887598.lineTrailer ) /*0x7778f6*/
             {
@@ -1136,9 +1136,9 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
   BufferIOFile::Constructor((BufferIOFile *)&v17.spawnStatus, g_Str_File_wolinfoMD_ini); /*0x778a3d*/
   if ( !(uint8_t)((File *)((BufferIOFileClass *)&v17.spawnStatus))->IsReady(0) ) /*0x778a4c*/
   {
-    FileClass::Close((RawFileClass *)&v17.spawnStatus); /*0x778a5c*/
+    ((RawFileClass *)&v17.spawnStatus)->Close(); /*0x778a5c*/
     CCFileClass::Close((BufferIOFileClass *)&v17.spawnStatus); /*0x778a68*/
-    CCFileClass::Reopen((CDFileClass *)&v17.spawnStatus, g_Str_File_wolinfoMD_ini, (CHAR *)1); /*0x778a7b*/
+    ((CDFileClass *)&v17.spawnStatus)->Reopen(g_Str_File_wolinfoMD_ini, (CHAR *)1); /*0x778a7b*/
   }
   if ( (uint8_t)((File *)((BufferIOFileClass *)&v17.spawnStatus))->IsReady(0) )
   {
@@ -1147,7 +1147,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     v17.fallRate = 0; /*0x778ac7*/
     v17.nextObject = 0; /*0x778acb*/
     v17.owningHouseIndex = (int)&vt_GenericNode; /*0x778acf*/
-    GenericNode::Constructor((GenericNode *)&v17.attachedTag); /*0x778ad7*/
+    ((GenericNode *)&v17.attachedTag)->Constructor(); /*0x778ad7*/
     LinkedList::Prepend((LinkedList *)&v17.owningHouseIndex, (int)&v17.attachedTag); /*0x778aed*/
     v17.occupant = (int)&vt_List; /*0x778af9*/
     memset(&v17.ambientSoundController[1], 0, 13); /*0x778b07*/
@@ -1163,12 +1163,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     {
       unknown_libname_73(&v17.vfptr3); /*0x778ba4*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Server); /*0x778bb2*/
-      INIClass::ReadString( /*0x778bcf*/
-        (INIClass *)&v17.nextArrayIndex,
-        (char **)&v17.vfptr1,
-        (char **)&v17,
-        (char **)&v17.vfptr3,
-        (int)&v17.vfptr3);
+      (/*0x778bcf*/ (INIClass *)&v17.nextArrayIndex)->ReadString((char **)&v17.vfptr1, (char **)&v17, (char **)&v17.vfptr3, (int)&v17.vfptr3);
       DeleteAndZero(&v17); /*0x778bd8*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Locale); /*0x778be6*/
       Int = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (char **)&v17.vfptr1, (char **)&v17, 0); /*0x778c03*/

@@ -442,7 +442,7 @@ int E4Recv_4C2790::sub_4C2790()
 
   if ( this->owningHouseIndex )
   {
-    Coord::To_Screen((Coord *)g_TacticalClass_Instance, this, v4); /*0x4c27aa*/
+    ((Coord *)g_TacticalClass_Instance)->To_Screen(this, v4); /*0x4c27aa*/
     Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->?, v3); /*0x4c27be*/
     if ( (unsigned __int8)ClipLine(v4, v3, &DSurface_ViewBounds.field_0) )
       Lightning::Draw(
@@ -711,7 +711,7 @@ int DialogFunc(HWND hDlg, UINT, WPARAM, LPARAM)
   if ( a2 == 16 ) /*0x4c83f5*/
   {
     EndDialog(hDlg, 1153); /*0x4c845c*/
-    Object::RemoveObjectArray(hDlg); /*0x4c8464*/
+    (hDlg)->RemoveObjectArray(); /*0x4c8464*/
     return 0; /*0x4c846c*/
   }
   if ( a2 != 272 ) /*0x4c83fc*/
@@ -722,7 +722,7 @@ int DialogFunc(HWND hDlg, UINT, WPARAM, LPARAM)
   if ( g_hWnd ) /*0x4c8433*/
     SetDialogParent(hDlg,(HWND)(g_hWnd)); /*0x4c8437*/
   ShowWindow(hDlg, 1); /*0x4c843f*/
-  TimerPool::AllocSlot(hDlg); /*0x4c8447*/
+  (hDlg)->AllocSlot(); /*0x4c8447*/
   return 0; /*0x4c844e*/
 }
 }
@@ -1044,7 +1044,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     v61 = a5; /*0x4cf1b9*/
     v62 = a6; /*0x4cf1bd*/
     v27 = (int *)(*(int (**)(int *, int *))(*v26 + 72))(v26, v63); /*0x4cf1c8*/
-    v28 = *(unsigned int *)Cell::GetHeight(&v58, v27, (int *)&a4); /*0x4cf1d5*/
+    v28 = *(unsigned int *)(&v58)->GetHeight(v27, (int *)&a4); /*0x4cf1d5*/
     if ( !v55 ) /*0x4cf1dd*/
       goto LABEL_32; /*0x4cf1dd*/
     if ( !(*(int (__stdcall **)(int))(*(unsigned int *)v55 + 24))(v55) ) /*0x4cf1e2*/
@@ -1066,7 +1066,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       v63[0] = v24; /*0x4cf260*/
       v63[1] = a5; /*0x4cf264*/
       v34 = (int *)(*(int (**)(int *, unsigned int *))(*v33 + 72))(v33, v64); /*0x4cf26f*/
-      Height = (float *)Cell::GetHeight(&a4, v34, v63); /*0x4cf277*/
+      Height = (float *)(&a4)->GetHeight(v34, v63); /*0x4cf277*/
       v36 = (char *)(*v6 + 226); /*0x4cf285*/
       v58 = *Height; /*0x4cf28b*/
       FacingClass::Update(v36, &v58); /*0x4cf28f*/
@@ -1093,7 +1093,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     if ( !v55 ) /*0x4cf2e2*/
     {
   LABEL_43:
-      v37 = ObjectClass::CalcTargetFacing(*v6, (int *)&a4, (*v6)[173]); /*0x4cf304*/
+      v37 = (*v6)->CalcTargetFacing((int *)&a4, (*v6)[173]); /*0x4cf304*/
   LABEL_51:
       FacingClass::Update((char *)*v6 + 928, v37); /*0x4cf3c2*/
       goto LABEL_52; /*0x4cf3cb*/

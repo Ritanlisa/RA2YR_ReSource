@@ -266,7 +266,7 @@ LABEL_40:
       {
         do /*0x48c1ae*/
         {
-          TileType = Terrain::GetTileType(v14, v15); /*0x48c1ae*/
+          TileType = (v14)->GetTileType(v15); /*0x48c1ae*/
           if ( TileType ) /*0x48c1b5*/
           {
             v17 = *(unsigned int *)(TileType + 12); /*0x48c1b7*/
@@ -295,7 +295,7 @@ LABEL_40:
               break; /*0x48c257*/
             while ( 1 ) /*0x48c25a*/
             {
-              v23 = Terrain::GetTileType(v21, v22); /*0x48c25a*/
+              v23 = (v21)->GetTileType(v22); /*0x48c25a*/
               if ( v23 ) /*0x48c261*/
               {
                 v24 = *(unsigned int *)(v23 + 12); /*0x48c263*/
@@ -322,7 +322,7 @@ LABEL_40:
   {
     while ( 1 ) /*0x48c08e*/
     {
-      TileIndex = (unsigned int *)Terrain::GetTileIndex((Terrain *)v6, v7); /*0x48c08e*/
+      TileIndex = (unsigned int *)((Terrain *)v6)->GetTileIndex(v7); /*0x48c08e*/
       if ( TileIndex ) /*0x48c095*/
       {
         v9 = TileIndex[5]; /*0x48c097*/
@@ -358,7 +358,7 @@ int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
     return 0; /*0x48c36a*/
   while ( 1 ) /*0x48c333*/
   {
-    TileType = Terrain::GetTileType(PlayerIndex, v4); /*0x48c333*/
+    TileType = (PlayerIndex)->GetTileType(v4); /*0x48c333*/
     if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x48c33f*/
       goto LABEL_7; /*0x48c33f*/
     v7 = *(unsigned int *)(TileType + 12); /*0x48c341*/
@@ -417,7 +417,7 @@ int ConnectionClass::serviceSendQueue()
   {
     do /*0x48c45f*/
     {
-      TileIndex = Terrain::GetTileIndex((Terrain *)PlayerIndex, v2); /*0x48c3fe*/
+      TileIndex = ((Terrain *)PlayerIndex)->GetTileIndex(v2); /*0x48c3fe*/
       v5 = TileIndex; /*0x48c403*/
       if ( (*(unsigned char *)TileIndex & 2) != 0 ) /*0x48c408*/
       {
@@ -441,7 +441,7 @@ int ConnectionClass::serviceSendQueue()
     return 1; /*0x48c46f*/
   do /*0x48c552*/
   {
-    v8 = Terrain::GetTileIndex((Terrain *)this->PlayerIndex, v7); /*0x48c47e*/
+    v8 = ((Terrain *)this->PlayerIndex)->GetTileIndex(v7); /*0x48c47e*/
     if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
       v9 = dword_887340; /*0x48c48e*/

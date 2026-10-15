@@ -78,7 +78,7 @@ LABEL_6:
   {
     v8 = a2[1]; /*0x6d06df*/
     if ( v8 >= v7 && v8 < v7 + 30 ) /*0x6d06f2*/
-      Mouse::SetCursor((int)&dword_87F7E8, 0, 0); /*0x6d06fd*/
+      ((int)&dword_87F7E8)->SetCursor(0, 0); /*0x6d06fd*/
   }
   v9 = *aP1; /*0x6d0706*/
   if ( *aP1 < 32982 || v9 >= 33007 ) /*0x6d0718*/
@@ -116,7 +116,7 @@ LABEL_6:
           (*(void (**)(TabClass *, GadgetClass *))(this->__pad_000 + 52))(this, &stru_B0CC40); /*0x6d0932*/
           HashTable::Remove((HashTable *)dword_887368, 241); /*0x6d0940*/
           this->u32_5544 = 1; /*0x6d0947*/
-          CommandClass::BuildBar((CommandClass *)this); /*0x6d094d*/
+          ((CommandClass *)this)->BuildBar(); /*0x6d094d*/
           v18 = this->__pad_000; /*0x6d0952*/
           this->u32_5545 = 1; /*0x6d0958*/
           (*(void (**)(TabClass *, unsigned int))(v18 + 56))(this, 0); /*0x6d095e*/
@@ -184,16 +184,16 @@ LABEL_6:
         if ( SidebarHasAvailableUnit(v13) ) /*0x6d0808*/
           TacticalClass::ResetView(v13); /*0x6d0813*/
         else
-          TacticalClass::SetObserverView(v13); /*0x6d081d*/
+          (v13)->SetObserverView(); /*0x6d081d*/
       }
       else
       {
-        CreateTeamCommand::performAction_246(v13); /*0x6d07fe*/
+        (v13)->performAction_246(); /*0x6d07fe*/
       }
     }
   }
   CountdownTimer::UpdateDisplay(&this->CountdownTimer_551C, 0); /*0x6d099d*/
-  return SidebarClass::UpdateStrips((SidebarClass *)this, aP1, a2); /*0x6d09af*/
+  return ((SidebarClass *)this)->UpdateStrips(aP1, a2); /*0x6d09af*/
 
 }
 }  // G42.18 ns repair
@@ -287,7 +287,7 @@ TabClass * BlowStraw_29::Read(char * Block, char a2, void *a3)
     --v4; /*0x5bea05*/
   }
   while ( v4 ); /*0x5bea06*/
-  RadarClass::Destruct((RadarClass *)Block); /*0x5bea0a*/
+  ((RadarClass *)Block)->Destruct(); /*0x5bea0a*/
   if ( (a2 & 1) != 0 ) /*0x5bea14*/
     __3_YAXPAX_Z(Block); /*0x5bea17*/
   return (gamemd::TabClass *)((RadarClass *)Block); /*0x5bea1f*/

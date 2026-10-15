@@ -55,8 +55,8 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   {
     v15[0] = 0; /*0x419b44*/
     v15[1] = 0; /*0x419b4c*/
-    v5 = (Object *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x419b54*/
-    ClosestObjectCell = (unsigned int *)Object::FindClosestObjectCell(v5, v15, 0, 0); /*0x419b5b*/
+    v5 = (Object *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x419b54*/
+    ClosestObjectCell = (unsigned int *)(v5)->FindClosestObjectCell(v15, 0, 0); /*0x419b5b*/
     if ( ClosestObjectCell ) /*0x419b62*/
     {
       if ( ClosestObjectCell[180] /*0x419b7c*/
@@ -75,7 +75,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   {
     v16 = 0; /*0x419bc1*/
   }
-  v14 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x419bd1*/
+  v14 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2); /*0x419bd1*/
   v9 = 0; /*0x419bda*/
   if ( FootClass_Array.? <= 0 ) /*0x419bde*/
     return 1; /*0x419c6b*/
@@ -291,7 +291,7 @@ int Cell::GetNeighbourContent(unsigned int a2, void *a2_1)
     v3 = HIWORD(v4) + HIWORD(g_DDrawSurfaceManager.scenario[(a2 & 7) + 82]); /*0x481839*/
     LOWORD(a2) = v4 + LOWORD(g_DDrawSurfaceManager.scenario[(a2 & 7) + 82]); /*0x481841*/
     HIWORD(a2) = v3; /*0x48184a*/
-    return CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a2); /*0x48185d*/
+    return ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&a2); /*0x48185d*/
   }
   return (int)(result); /*0x481863*/
 
@@ -744,7 +744,7 @@ Coord * * Cell::IsValidDestination(short * a2)
   v11 = (*(int (**)(Cell *, int))&this->__pad_000->q084)(this, v10); /*0x4dcf7a*/
   if ( !MapSeed::CheckTileMatch((MapSeed *)&DataGlobal_87F7E8, v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
-  v12 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2)); /*0x4dcfa1*/
+  v12 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a2)); /*0x4dcfa1*/
   return v12->u32_EC == 5 /*0x4dcfc7*/
       && !(*(int (**)(Cell *, unsigned int *, int, int, unsigned int, int))&this->__pad_000->u32_1AC)(
             this,
@@ -906,7 +906,7 @@ char Cell::UpdateTileType(int16_t *aP0, int aP1, int a3)
       return (char)v7; /*0x56e9e5*/
     if ( v7 == 255 ) /*0x56e9f0*/
       return (char)v7; /*0x56e9f0*/
-    (*((unsigned char *)&(v7))) = CellClass::GetTerrainFlag(*((uint8_t *)v6 + 282)); /*0x56ea0a*/
+    (*((unsigned char *)&(v7))) = (*((uint8_t *)v6 + 282))->GetTerrainFlag(); /*0x56ea0a*/
     if ( !(unsigned char)v7 ) /*0x56ea11*/
       return (char)v7; /*0x56ea11*/
     v8 = aP0[1] << 8; /*0x56ea2a*/
@@ -1015,7 +1015,7 @@ char Cell::SetTileType(int16_t *a1, int a2, int a3, int a4, int a5)
     v20 = a4; /*0x56ec7c*/
     v8->u32_38 = v10; /*0x56ec7d*/
     ((House *)((int)v8))->AnnounceUpgrade(v20); /*0x56ec80*/
-    BuildingClass::AddUpgrade(v8 + 9); /*0x56ec8e*/
+    (v8 + 9)->AddUpgrade(); /*0x56ec8e*/
     v13 = 0; /*0x56ec93*/
     a2 = 8; /*0x56ec95*/
     do /*0x56ed23*/
@@ -1072,11 +1072,11 @@ char Cell::IsPassableAllied(int aP0, int16_t *aP1)
   }
   if ( !Object::IsAlliedWithObjectHouse(*(unsigned int **)(v4 + 540), aP0) ) /*0x578b39*/
   {
-    if ( (uint8_t)BuildingClass::IsPoweredOn(v4) ) /*0x578b44*/
+    if ( (uint8_t)(v4)->IsPoweredOn() ) /*0x578b44*/
       return 1; /*0x578b4b*/
     goto LABEL_10; /*0x578b4b*/
   }
-  return BuildingClass::MakeTraversable(v4); /*0x578b58*/
+  return (v4)->MakeTraversable(); /*0x578b58*/
 }
 }
 // 0x579B70
@@ -1383,7 +1383,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
     return 0; /*0x57b29b*/
   }
   a3 = aP1->outBuffer; /*0x57b2c3*/
-  CellData = Tactical::GetCellData((Tactical *)&a3); /*0x57b2c7*/
+  CellData = ((Tactical *)&a3)->GetCellData(); /*0x57b2c7*/
   if ( !CellData[74] ) /*0x57b2cc*/
     return 0; /*0x57b2d6*/
   result = *((unsigned int *)CellData + 16); /*0x57b2df*/
@@ -1493,8 +1493,8 @@ LABEL_15:
       LOWORD(v11) = v6 + *a2; /*0x6b5fbc*/
       HIWORD(v11) = v4 + a2[1]; /*0x6b5fc1*/
       *(unsigned int *)v10 = v11; /*0x6b5fd4*/
-      v7 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v10); /*0x6b5fe3*/
-      result = LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, a2); /*0x6b5fe5*/
+      v7 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v10); /*0x6b5fe3*/
+      result = ((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal(a2); /*0x6b5fe5*/
       if ( !(unsigned char)result ) /*0x6b5fec*/
         break; /*0x6b5fec*/
       if ( v7->u32_11C ) /*0x6b5fee*/
@@ -1506,7 +1506,7 @@ LABEL_15:
         break; /*0x6b6005*/
       if ( !a3 ) /*0x6b600d*/
       {
-        result = (int)Cell::IsBridge((Cell *)v7); /*0x6b6011*/
+        result = (int)((Cell *)v7)->IsBridge(); /*0x6b6011*/
         if ( result ) /*0x6b6018*/
           break; /*0x6b6018*/
       }

@@ -774,11 +774,11 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, aAircraft, v4); /*0x41b14a*/
     INIClass::GetString(a1, aAircraft, StringByIndex, 0, String, 128); /*0x41b164*/
     v6 = strtok(String, Str); /*0x41b173*/
-    v7 = HouseClass::FindByName(v6); /*0x41b182*/
+    v7 = (v6)->FindByName(); /*0x41b182*/
     if ( v7 != -1 ) /*0x41b187*/
     {
       v8 = (int)((TypeClass *)strtok(0, Str));
-      v9 = (int)(TypeClass::FindByName(v8)); /*0x41b1a3*/
+      v9 = (int)((v8)->FindByName()); /*0x41b1a3*/
       if ( v9 != -1 ) /*0x41b1a8*/
       {
         v10 = (int)((IUnknown *)*((unsigned int *)stru_A80220.vfptr3 + v7));
@@ -814,12 +814,12 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
             v21 = strtok(0, Str); /*0x41b2bb*/
             v22 = LookupWaypointName((ObjectClass *)v21); /*0x41b2ca*/
             v23 = strtok(0, Str); /*0x41b2d3*/
-            v24 = (TeamClass *)ObjectTypeClass::FindByName((ObjectTypeClass *)v23); /*0x41b2dd*/
+            v24 = (TeamClass *)((ObjectTypeClass *)v23)->FindByName(); /*0x41b2dd*/
             if ( v24 ) /*0x41b2e4*/
             {
-              v25 = (int)(TeamClass::FindOrCreate(v24));
+              v25 = (int)((v24)->FindOrCreate());
               if ( v25 ) /*0x41b2ef*/
-                ObjectClass::SetReference((ObjectClass *)v12, v25); /*0x41b2f4*/
+                ((ObjectClass *)v12)->SetReference(v25); /*0x41b2f4*/
             }
             v26 = strtok(0, Str); /*0x41b300*/
             if ( v26 ) /*0x41b30a*/

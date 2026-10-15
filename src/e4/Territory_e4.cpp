@@ -86,7 +86,7 @@ namespace gamemd {
 int Territory_WorldDominationTour_8::Read(int a2, int a3, void *a3_1)
 {
 
-  AudioQueue::Update((AudioQueue *)this->field_1C); /*0x771973*/
+  ((AudioQueue *)this->field_1C)->Update(); /*0x771973*/
   return 0; /*0x77197a*/
 
 }
@@ -96,7 +96,7 @@ namespace gamemd {
 void Territory_WorldDominationTour_8::Write(int a2, int a3)
 {
 
-  AudioQueue::Update((AudioQueue *)this->field_1C); /*0x771983*/
+  ((AudioQueue *)this->field_1C)->Update(); /*0x771983*/
 
 }
 }

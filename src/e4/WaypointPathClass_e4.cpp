@@ -25,7 +25,7 @@ int WaypointPathClass::Init(void *a1, void *a2)
 
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x763733*/
+  ((AbstractClass *)this)->Constructor(); /*0x763733*/
   this->idxArray = -1; /*0x76373a*/
   this->waypoints[1] = 0; /*0x763741*/
   this->waypoints[2] = 0; /*0x763744*/
@@ -254,7 +254,7 @@ namespace gamemd {
 int WaypointPathClass::PowerDrainUpdate(int a2)
 {
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x763c09*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x763c09*/
   Power::TimerProcess(this->idxArray); /*0x763c14*/
   return Power::TimerProcess(this->waypoints[4]); /*0x763c24*/
 
@@ -366,7 +366,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   }
   BYTE1(this->waypoints[3]) = 0; /*0x763ec1*/
   this->waypoints[2] = 0; /*0x763ec5*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x763ecc*/
+  ((AbstractClass *)this)->DTOR(); /*0x763ecc*/
   if ( (a2 & 1) != 0 ) /*0x763ed6*/
     __3_YAXPAX_Z(this); /*0x763ed9*/
   return &this->AbstractClass; /*0x763ee3*/

@@ -45,7 +45,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   result = a3; /*0x539eb1*/
   if ( a3 == dword_A9F9F8 ) /*0x539ec3*/
   {
-    for ( ; !LayerClass::CoordinatesLegal(&dword_87F7E8, (__int16 *)&a3); a3 = v12 ) /*0x539edd*/
+    for ( ; !(&dword_87F7E8)->CoordinatesLegal((__int16 *)&a3); a3 = v12 ) /*0x539edd*/
     {
       v7 = Random::Range(&dword_A8B230->u32_218, 0, dword_87F918); /*0x539f04*/
       LOWORD(v12) = Random::Range(&dword_A8B230->u32_218, 0, dword_87F914); /*0x539f1e*/

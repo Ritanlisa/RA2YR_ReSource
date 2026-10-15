@@ -100,13 +100,13 @@ char PlaceCabhutMap(FootClass * aP0)
     (*(((unsigned short *)&(aP0)) + 1)) = v2; /*0x5904e6*/
     v4 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP0)); /*0x5904eb*/
     v4 = v4; /*0x5904f0*/
-    if ( v4->u32_44 == -1 && Cell::IsEmpty(v4) && !v4->u32_E4 ) /*0x590503*/
+    if ( v4->u32_44 == -1 && (v4)->IsEmpty() && !v4->u32_E4 ) /*0x590503*/
       break; /*0x590503*/
     if ( ++v3 >= aP0[2] + *aP0 + 1 ) /*0x59051a*/
       goto LABEL_7; /*0x59051a*/
   }
   v7 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x59053c*/
-  Owner = HouseClass::FindOwner(v7); /*0x59054d*/
+  Owner = (v7)->FindOwner(); /*0x59054d*/
   IndexByName = BuildingTypeClass::FindIndexByName(stru_82BA00); /*0x590559*/
   v10 = operator new(0x720u); /*0x59055b*/
   if ( v10 ) /*0x590565*/
@@ -436,12 +436,12 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v4 = v44[g_MissionQueueFrame.briefing[371]]; /*0x594bb6*/
   (*((unsigned short *)&(v5))) = *(unsigned short *)(*(unsigned int *)&stru_87F5F0.__pad_58[4 * v4 + 440] + 2 * v3); /*0x594bc1*/
   Map_Helper_58CE90(v34); /*0x594bc5*/
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x594bcf*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x594be2*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x594bcf*/
+  for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x594be2*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
+        i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
   {
-    if ( (uint8_t)MapSeed::IsCellInBounds((MapSeed *)(i + 36)) /*0x594c2b*/
+    if ( (uint8_t)((MapSeed *)(i + 36))->IsCellInBounds() /*0x594c2b*/
       && *(unsigned int *)(80 * (*(int16_t *)(i + 36) + g_MapCellWidth * *(int16_t *)(i + 38))
                    + g_MissionQueueFrame.localVariables[163]
                    + 56) == -1
@@ -482,7 +482,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v42 = 0; /*0x594cae*/
   v43 = 0; /*0x594cb3*/
   *(unsigned int *)v45.__tail_10 = 0; /*0x594cb7*/
-  VectorClass_ptr_MapRegionClass::Remove(&v45); /*0x594cbb*/
+  (&v45)->Remove(); /*0x594cbb*/
   for ( j = 0; j < g_MissionQueueFrame.briefing[342]; ++j ) /*0x594cc9*/
   {
     v13 = *(unsigned int *)(*(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * j) + 8) /*0x594ce8*/
@@ -1125,8 +1125,8 @@ int sub_59C630()
   int64_t v11; // [esp+10h] [ebp-10h]
   int64_t v12; // [esp+18h] [ebp-8h]
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59c63a*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59c644*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x59c63a*/
+  result = (&dword_87F7E8)->CellIteratorNext(); /*0x59c644*/
   for ( i = result; result; i = result ) /*0x59c64f*/
   {
     if ( *(unsigned int *)(i + 56) == g_CellPassabilityLUT && !*(unsigned char *)(i + 282) ) /*0x59c668*/
@@ -1179,7 +1179,7 @@ int sub_59C630()
         PlaceMapSeedClassBuildings(v7 + g_CellPassabilityLUT, (unsigned short *)(i + 36), v8, -1); /*0x59c795*/
       }
     }
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59c7e2*/
+    result = (&dword_87F7E8)->CellIteratorNext(); /*0x59c7e2*/
   }
   return result; /*0x59c7f3*/
 }

@@ -454,7 +454,7 @@ int ValidateDialogEvent(int a1, HWND a2)
     if ( v4 != 264 && v4 != 3014 ) /*0x6010b3*/
     {
   LABEL_164:
-      Event::IsValidActionType(v4); /*0x601346*/
+      (v4)->IsValidActionType(); /*0x601346*/
       return 15; /*0x601348*/
     }
     if ( DlgCtrlID != 1746 /*0x601197*/

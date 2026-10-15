@@ -46,7 +46,7 @@ bool TagClass::HasCrossesHorizontalLineEvent() const
   TagTypeClass *buildingType; // ecx
 
   buildingType = this->buildingType; /*0x6e5320*/
-  return buildingType && TagTypeClass::HasCrossesHorizontalLineEvent(buildingType); /*0x6e5335*/
+  return buildingType && (buildingType)->HasCrossesHorizontalLineEvent(); /*0x6e5335*/
 }
 // 0x6e5300
 bool TagClass::HasCrossesVerticalLineEvent() const
@@ -54,7 +54,7 @@ bool TagClass::HasCrossesVerticalLineEvent() const
   TagTypeClass *buildingType; // ecx
 
   buildingType = this->buildingType; /*0x6e5300*/
-  return buildingType && TagTypeClass::HasCrossesVerticalLineEvent(buildingType); /*0x6e5315*/
+  return buildingType && (buildingType)->HasCrossesVerticalLineEvent(); /*0x6e5315*/
 }
 // 0x6e5340
 bool TagClass::HasZoneEntryByEvent() const
@@ -62,7 +62,7 @@ bool TagClass::HasZoneEntryByEvent() const
   TagTypeClass *buildingType; // ecx
 
   buildingType = this->buildingType; /*0x6e5340*/
-  return buildingType && TagTypeClass::HasZoneEntryByEvent(buildingType); /*0x6e5355*/
+  return buildingType && (buildingType)->HasZoneEntryByEvent(); /*0x6e5355*/
 }
 bool TagClass::HasAllowWinAction() const
 {
@@ -280,7 +280,7 @@ bool TagTypeClass::HasCrossesHorizontalLineEvent() const
   v1 = (HouseClass *)this->persistence; /*0x6e6251*/
   if ( !v1 ) /*0x6e6259*/
     return 0; /*0x6e6270*/
-  while ( !(uint8_t)HouseClass::HasType25Building(v1) ) /*0x6e6264*/
+  while ( !(uint8_t)(v1)->HasType25Building() ) /*0x6e6264*/
   {
     v1 = (HouseClass *)v1->psychicDetectionCount; /*0x6e6266*/
     if ( !v1 ) /*0x6e626e*/
@@ -296,7 +296,7 @@ bool TagTypeClass::HasCrossesVerticalLineEvent() const
   v1 = (HouseClass *)this->persistence; /*0x6e6281*/
   if ( !v1 ) /*0x6e6289*/
     return 0; /*0x6e62a0*/
-  while ( !(uint8_t)HouseClass::HasType26Building(v1) ) /*0x6e6294*/
+  while ( !(uint8_t)(v1)->HasType26Building() ) /*0x6e6294*/
   {
     v1 = (HouseClass *)v1->psychicDetectionCount; /*0x6e6296*/
     if ( !v1 ) /*0x6e629e*/
@@ -312,7 +312,7 @@ bool TagTypeClass::HasZoneEntryByEvent() const
   v1 = (HouseClass *)this->persistence; /*0x6e62b1*/
   if ( !v1 ) /*0x6e62b9*/
     return 0; /*0x6e62d0*/
-  while ( !HouseClass::FindType24(v1) ) /*0x6e62c4*/
+  while ( !(v1)->FindType24() ) /*0x6e62c4*/
   {
     v1 = (HouseClass *)v1->psychicDetectionCount; /*0x6e62c6*/
     if ( !v1 ) /*0x6e62ce*/

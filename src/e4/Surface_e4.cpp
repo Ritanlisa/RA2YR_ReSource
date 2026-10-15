@@ -310,7 +310,7 @@ int sub_626C60()
     v5 = v4; /*0x626ccd*/
     if ( v4 ) /*0x626cd4*/
     {
-      VectorClass::ConstructHSV(v4, 0, 0); /*0x626cdc*/
+      (v4)->ConstructHSV(0, 0); /*0x626cdc*/
       *v5 =(unsigned int)(void*)&DynamicVectorClass_HSVClass_vftable; /*0x626ce1*/
       v5->u32_14 = 10; /*0x626ce7*/
       v5->q010 = 0; /*0x626cea*/
@@ -416,7 +416,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
     v11 = 0; /*0x641e82*/
     Vector::Clear((int)v10); /*0x641e8a*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641e93*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641e9b*/
+    ((BufferIOFileClass *)&v9)->Dtor(); /*0x641e9b*/
     return (gamemd::AbstractClass **)(1); /*0x641ea2*/
   }
   else
@@ -426,7 +426,7 @@ LABEL_11:
     v11 = 0; /*0x641eb7*/
     Vector::Clear((int)v10); /*0x641ebf*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641ec8*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641ed0*/
+    ((BufferIOFileClass *)&v9)->Dtor(); /*0x641ed0*/
     return 0; /*0x641ed6*/
   }
 
@@ -531,7 +531,7 @@ LABEL_7:
         v34 = 0; /*0x655368*/
         v31 = 0; /*0x65536d*/
         v32 = 0; /*0x655377*/
-        v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v35); /*0x65537c*/
+        v11 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v35); /*0x65537c*/
         v12 = v39 + v40 * this->u32_1240; /*0x655390*/
         GetCellRadarColors((int)v11, (int)&v33, (int)&v31); /*0x65539e*/
         if ( v5 ) /*0x6553ab*/
@@ -1178,7 +1178,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v13 = (LightConvertClass *)dword_B1D140; /*0x7074fa*/
   else
     v13 = (LightConvertClass *)(*(int (**)(Surface *))(*(unsigned int *)this->vtable1 + 484))(this); /*0x707505*/
-  v43 = (int *)LightConvertClass::SelectRLEBlitter(v13, v12); /*0x707516*/
+  v43 = (int *)(v13)->SelectRLEBlitter(v12); /*0x707516*/
   v42 = 0; /*0x70751a*/
   if ( (v12 & 8) != 0 ) /*0x707522*/
   {
@@ -1400,10 +1400,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
       v10 = this->WaveClass_field_1CC_d; /*0x7603bf*/
       if ( v10 <= 1 || v10 >= 6 ) /*0x7603d1*/
       {
-        SamplePosition = (unsigned short *)Audio::GetSamplePosition( /*0x7606be*/
-                                    (int *)g_ZBufferDescriptor,
-                                    0,
-                                    v8 - (char *)DSurface_ViewBounds.field_4);
+        SamplePosition = (unsigned short *)(/*0x7606be*/ (int *)g_ZBufferDescriptor)->GetSamplePosition(0, v8 - (char *)DSurface_ViewBounds.field_4);
         v35 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 124))(g_DSurface_Hidden_2); /*0x7606c4*/
         (*(((unsigned short *)&(v36)) + 1)) = (*(((unsigned short *)&(g_ZBufferDescriptor)) + 1)); /*0x7606c7*/
         v81 = v9 - (unsigned int)v8; /*0x7606d8*/

@@ -126,7 +126,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
     return (gamemd::AbstractClass **)(1); /*0x47939b*/
   v8 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
   if ( v8 ) /*0x4793aa*/
-    v9 = MixFileClass::FromFile(v8, aMainMix, (int)dword_886980); /*0x4793b8*/
+    v9 = (v8)->FromFile(aMainMix, (int)dword_886980); /*0x4793b8*/
   else
     v9 = 0; /*0x4793bf*/
   dword_884E34 = (int)v9; /*0x4793c1*/
@@ -136,7 +136,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
   Debug::Log(); /*0x4793f6*/
   v11 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
   if ( v11 ) /*0x479407*/
-    g_MixFile_MAPSMDFirst = (int)MixFileClass::FromFile(v11, Buffer, (int)dword_886980); /*0x47941a*/
+    g_MixFile_MAPSMDFirst = (int)(v11)->FromFile(Buffer, (int)dword_886980); /*0x47941a*/
   else
     g_MixFile_MAPSMDFirst = 0; /*0x479421*/
   sprintf(Buffer, "MAPS%02d.MIX", v10); /*0x479432*/
@@ -149,13 +149,13 @@ LABEL_61:
     Debug::Log(); /*0x479664*/
     return 0; /*0x47967c*/
   }
-  g_MixFile_MAPSFirst = (int)MixFileClass::FromFile(v12, Buffer, (int)dword_886980); /*0x479467*/
+  g_MixFile_MAPSFirst = (int)(v12)->FromFile(Buffer, (int)dword_886980); /*0x479467*/
   if ( !g_MixFile_MAPSFirst ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
   Debug::Log(); /*0x479496*/
   v13 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
   if ( v13 ) /*0x4794a7*/
-    g_MixFile_MULTIMD = (int)MixFileClass::FromFile(v13, g_Str_File_MULTIMD_MIX, (int)dword_886980); /*0x4794ba*/
+    g_MixFile_MULTIMD = (int)(v13)->FromFile(g_Str_File_MULTIMD_MIX, (int)dword_886980); /*0x4794ba*/
   else
     g_MixFile_MULTIMD = 0; /*0x4794c1*/
   Debug::Log(); /*0x4794cc*/
@@ -165,7 +165,7 @@ LABEL_61:
     MixFileClass_MULTI = 0; /*0x479514*/
     goto LABEL_61; /*0x47951a*/
   }
-  MixFileClass_MULTI = (int)MixFileClass::FromFile(v14, aMultiMix, (int)dword_886980); /*0x4794f2*/
+  MixFileClass_MULTI = (int)(v14)->FromFile(aMultiMix, (int)dword_886980); /*0x4794f2*/
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v24, g_Str_File_THEMEMD_MIX); /*0x479526*/
@@ -181,7 +181,7 @@ LABEL_61:
     v17 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x479573*/
     if ( v17 ) /*0x47957d*/
     {
-      g_MixFile_THEME = (int)MixFileClass::FromFile(v17, g_Str_File_THEMEMD_MIX, (int)dword_886980); /*0x479590*/
+      g_MixFile_THEME = (int)(v17)->FromFile(g_Str_File_THEMEMD_MIX, (int)dword_886980); /*0x479590*/
       goto LABEL_58; /*0x479595*/
     }
   }
@@ -191,7 +191,7 @@ LABEL_61:
     v18 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
     if ( v18 ) /*0x4795a8*/
     {
-      g_MixFile_THEME = (int)MixFileClass::FromFile(v18, g_Str_File_THEME_MIX, (int)dword_886980); /*0x4795bb*/
+      g_MixFile_THEME = (int)(v18)->FromFile(g_Str_File_THEME_MIX, (int)dword_886980); /*0x4795bb*/
       goto LABEL_58; /*0x4795c0*/
     }
   }
@@ -205,7 +205,7 @@ LABEL_58:
   v27 = 0; /*0x47960f*/
   Vector::Clear((int)&v25); /*0x479616*/
   *(unsigned int *)v24.CDFileClass = &off_7E1668; /*0x47961f*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x479623*/
+  ((BufferIOFileClass *)&v24)->Dtor(); /*0x479623*/
   if ( v20 ) /*0x47962b*/
   {
     Debug::Log(); /*0x479637*/
@@ -222,7 +222,7 @@ LABEL_63:
   if ( !v21 ) /*0x4796b1*/
     goto LABEL_63; /*0x4796b1*/
 LABEL_60:
-  g_MixFile_MOVIES = (int)MixFileClass::FromFile(v21, Buffer, (int)dword_886980); /*0x47964a*/
+  g_MixFile_MOVIES = (int)(v21)->FromFile(Buffer, (int)dword_886980); /*0x47964a*/
   if ( !g_MixFile_MOVIES ) /*0x479662*/
     goto LABEL_61; /*0x479662*/
   return (gamemd::AbstractClass **)(Map_Load_751C30()); /*0x479390*/

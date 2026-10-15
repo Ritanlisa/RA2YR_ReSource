@@ -600,7 +600,7 @@ LABEL_65:
       {
         v107[0] = v51; /*0x58297f*/
         v107[1] = (unsigned short)v115 - 1; /*0x582984*/
-        Radar::ProcessSubzone(this, v47, aP2, aP3, aP4, v107); /*0x582989*/
+        (this)->ProcessSubzone(v47, aP2, aP3, aP4, v107); /*0x582989*/
         goto LABEL_73; /*0x58298e*/
       }
     }
@@ -711,7 +711,7 @@ LABEL_102:
       {
         v105[0] = v9; /*0x582bc3*/
         v105[1] = (unsigned short)v72 + 1; /*0x582bc8*/
-        Radar::ProcessSubzone(this, v68, aP2, aP3, aP4, v105); /*0x582bcd*/
+        (this)->ProcessSubzone(v68, aP2, aP3, aP4, v105); /*0x582bcd*/
       }
       else
       {
@@ -1190,7 +1190,7 @@ LABEL_73:
           }
           while ( v71 < (int)v72 ); /*0x584e25*/
         }
-        MapClass::AllocArrays(&g_AudioInitFlag); /*0x584e30*/
+        (&g_AudioInitFlag)->AllocArrays(); /*0x584e30*/
         return; /*0x584e30*/
       }
     }
@@ -1212,7 +1212,7 @@ LABEL_72:
       {
         v116[0] = v29; /*0x584880*/
         v116[1] = v28; /*0x584885*/
-        v30 = Cell::CoordToIndex((Cell *)v2, v116); /*0x58488a*/
+        v30 = ((Cell *)v2)->CoordToIndex(v116); /*0x58488a*/
         if ( v30 >= 0 ) /*0x584891*/
         {
           v31 = *&v2->q06C; /*0x584897*/
@@ -1227,7 +1227,7 @@ LABEL_72:
         v119[0] = v29; /*0x5848a7*/
         v119[1] = v28; /*0x5848ac*/
         v91 = v32 + 10 * v30; /*0x5848bb*/
-        v33 = Cell::CoordToIndex((Cell *)v2, v119); /*0x5848bf*/
+        v33 = ((Cell *)v2)->CoordToIndex(v119); /*0x5848bf*/
         if ( v33 >= 0 ) /*0x5848c6*/
         {
           v34 = *&v2->q06C; /*0x5848cc*/
@@ -1243,7 +1243,7 @@ LABEL_72:
         {
           v108[0] = v29; /*0x58491b*/
           v108[1] = v28; /*0x584920*/
-          Radar::ProcessSubzone(v2, v91, i, v86, &v104, v108); /*0x584925*/
+          (v2)->ProcessSubzone(v91, i, v86, &v104, v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v122, 0, 0); /*0x584932*/
           /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x58493b) */
           v124 = 10; /*0x584943*/
@@ -1306,7 +1306,7 @@ LABEL_72:
       v77 -= 24; /*0x584d7f*/
     }
     while ( v76 >= 0 ); /*0x584d84*/
-    MapClass::AllocArrays(&g_AudioInitFlag); /*0x584d8b*/
+    (&g_AudioInitFlag)->AllocArrays(); /*0x584d8b*/
     v109 = (WordVector)&vt_VectorClass; /*0x584d94*/
     if ( v110 && v112 ) /*0x584daa*/
       __3_YAXPAX_Z(v110); /*0x584db1*/
@@ -1520,8 +1520,8 @@ MapClass * * Radar::RenderMinimap()
     v91 = 0; /*0x656f0d*/
   v96 = DSurface_ViewBounds.field_0 + dword_886FA8 / 2; /*0x656f28*/
   v97 = dword_886FA4 + dword_886FAC / 2; /*0x656f3e*/
-  v4 = (__int16 *)Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &v101, &v96); /*0x656f4e*/
-  v5 = (int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v4); /*0x656f59*/
+  v4 = (__int16 *)((Tactical *)g_TacticalClass_Instance)->PixelToCell(&v101, &v96); /*0x656f4e*/
+  v5 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v4); /*0x656f59*/
   v6 = this->u32_1490; /*0x656f61*/
   v96 = v5[9]; /*0x656f67*/
   v7 = SHIWORD(v96); /*0x656f71*/

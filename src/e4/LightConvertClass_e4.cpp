@@ -13,7 +13,7 @@ int LightConvertClass::SelectRLEBlitter(int aP1)
 {
 
   if ( !*&this->q008 ) /*0x490e53*/
-    ConvertClass::InitTables((ConvertClass *)this); /*0x490e5a*/
+    ((ConvertClass *)this)->InitTables(); /*0x490e5a*/
   if ( (aP1 & 0x10) != 0 ) /*0x490e65*/
   {
     if ( (aP1 & 0x4000) != 0 ) /*0x490e6a*/

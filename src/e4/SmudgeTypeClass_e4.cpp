@@ -51,7 +51,7 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   int v5; // ecx
   void **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int)a2, a2); /*0x6b5269*/
+  ((int)a2)->ConstructFull(a2); /*0x6b5269*/
   a2->u32_294 = -1; /*0x6b5277*/
   a2->u32_298 = 1; /*0x6b5281*/
   a2->u32_29C = 1; /*0x6b5287*/
@@ -61,7 +61,7 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   *((unsigned int *)a2 + 1) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52a1*/
   a2->VtableStub_8 = &vt_SmudgeTypeClass; /*0x6b52a7*/
   *((unsigned int *)a2 + 3) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52ae*/
-  AbstractClass::GenerateUniqueID((int)(a2 + 4)); /*0x6b52b5*/
+  ((int)(a2 + 4))->GenerateUniqueID(); /*0x6b52b5*/
   a2->u16_22F = 1; /*0x6b52ba*/
   *(a2 + 561) = 0; /*0x6b52c7*/
   *(a2 + 562) = 1; /*0x6b52ce*/
@@ -131,7 +131,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
       v14 += -15 * (a4 / Width + a4 % Width); /*0x6b5659*/
       v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
     }
-    v10 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a6)); /*0x6b5674*/
+    v10 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a6)); /*0x6b5674*/
     v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10->ptr_34, v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
@@ -297,8 +297,8 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
       /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5881) */
       /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5888) */
     }
-    VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
-    ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/
+    ((char *)aP0)->LoadAnim(); /*0x6b5891*/
+    ((char *)aP0)->Load2DArt(); /*0x6b5898*/
     return 0; /*0x6b589d*/
   }
   return result; /*0x6b589f*/

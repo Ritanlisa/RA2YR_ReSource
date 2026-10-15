@@ -52,15 +52,15 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   if ( !v3 ) /*0x690a57*/
   {
     CCFileClass::Construct((char *)(&v5), g_Str_File_FULLFNT3_SHP); /*0x690a62*/
-    this->u32_C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690a74*/
+    this->u32_C = (int)(&v5)->ReadEntireFile(); /*0x690a74*/
     LOBYTE(this->u32_10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
     *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x690a91*/
     v7 = 0; /*0x690a99*/
-    Vector::Clear((void *)((int)v6)); /*0x690a9d*/
+    ((void *)((int)v6))->Clear(); /*0x690a9d*/
     *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x690aa6*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690aae*/
+    ((BufferIOFileClass *)&v5)->Dtor(); /*0x690aae*/
   }
   this->ScoreScreen_field_0x04 = 11; /*0x690ab7*/
   this->ScoreScreen_field_0x14 = aP1; /*0x690abe*/
@@ -93,15 +93,15 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   if ( !v3 ) /*0x690b27*/
   {
     CCFileClass::Construct((char *)(&v5), aBigfontShp); /*0x690b32*/
-    this->u32_C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690b44*/
+    this->u32_C = (int)(&v5)->ReadEntireFile(); /*0x690b44*/
     LOBYTE(this->u32_10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
     *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x690b61*/
     v7 = 0; /*0x690b69*/
-    Vector::Clear((void *)((int)v6)); /*0x690b6d*/
+    ((void *)((int)v6))->Clear(); /*0x690b6d*/
     *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x690b76*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690b7e*/
+    ((BufferIOFileClass *)&v5)->Dtor(); /*0x690b7e*/
   }
   this->ScoreScreen_field_0x04 = 20; /*0x690b87*/
   this->ScoreScreen_field_0x14 = a2; /*0x690b8e*/
@@ -161,7 +161,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
         v10 = v9 - 1; /*0x7712e6*/
         v11 = v8; /*0x7712e7*/
         for ( this->u32_3D0 = v10; v11 < this->u32_3D0; ++v11 ) /*0x7712f1*/
-                    String::Reassign((const char **)(/*0x771301*/             (String *)(this->u32_3C4 + 4 * v11)),             (const char **)(this->u32_3C4 + 4 * v11 + 4));
+                    ((const char **)(/*0x771301*/ (String *)(this->u32_3C4 + 4 * v11)))->Reassign((const char **)(this->u32_3C4 + 4 * v11 + 4));
       }
       v12 = v8--; /*0x771317*/
     }
@@ -191,14 +191,14 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
     {
       v17 = this->u32_3D0; /*0x7713ce*/
       this->u32_3D0 = v17 + 1; /*0x7713d9*/
-      String::Reassign((const char **)((String *)(this->u32_3C4 + 4 * v17)), (const char **)&v25); /*0x7713e2*/
+      ((const char **)((String *)(this->u32_3C4 + 4 * v17)))->Reassign((const char **)&v25); /*0x7713e2*/
     }
     if ( a5 ) /*0x7713ed*/
       ++this->u32_3BC; /*0x7713ef*/
     if ( aP3 )
     {
       v18 = *(unsigned int *)this->__pad_000; /*0x771401*/
-      DeleteAndZero::Alt2(&v25); /*0x771407*/
+      (&v25)->Alt2(); /*0x771407*/
       v19 = *((unsigned int *)v13 + 12); /*0x77140c*/
       if ( v19 > 0 )
       {
@@ -216,7 +216,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
           {
             v23 = this->u32_3D0; /*0x771470*/
             this->u32_3D0 = v23 + 1; /*0x77147b*/
-            String::Reassign((const char **)((String *)(this->u32_3C4 + 4 * v23)), (const char **)&v25); /*0x771484*/
+            ((const char **)((String *)(this->u32_3C4 + 4 * v23)))->Reassign((const char **)&v25); /*0x771484*/
           }
           if ( a5 ) /*0x77148f*/
             ++this->u32_3BC; /*0x771491*/
@@ -343,7 +343,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   }
   /* X11: vtable install elided (implicit via CCFileClass virtuals 0x778461) */
   v40 = 0; /*0x778469*/
-  Vector::Clear((void *)((int)v39)); /*0x778474*/
+  ((void *)((int)v39))->Clear(); /*0x778474*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x77847d) */
   return (gamemd::AbstractClass **)(((gamemd::BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor()); /*0x77848a*/
 }

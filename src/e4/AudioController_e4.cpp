@@ -128,7 +128,7 @@ void AudioController::GetVolume()
       v1 = *(void **)&DataGlobal_B0FAB8; /*0x72d185*/
       if ( *(unsigned int *)&DataGlobal_B0FAB8 ) /*0x72d18d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FAB8); /*0x72d191*/
+        (*(FileTreeNode **)&DataGlobal_B0FAB8)->Destroy(); /*0x72d191*/
         operator delete((void *)(v1)); /*0x72d197*/
       }
       DataGlobal_B0FCCD = 0; /*0x72d19f*/

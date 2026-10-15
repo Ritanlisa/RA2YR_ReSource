@@ -53,7 +53,7 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   v11 = 0; /*0x41eca5*/
   if ( stru_A80220.nextArrayIndex <= 0 ) /*0x41ecaa*/
     return v11; /*0x41ecaa*/
-  while ( *(unsigned int *)(*(unsigned int *)(*((unsigned int *)stru_A80220.vfptr3 + v4) + 52) + 188) != HouseTypeClass::Find(&g_INI_Key_Civilian) ) /*0x41eccc*/
+  while ( *(unsigned int *)(*(unsigned int *)(*((unsigned int *)stru_A80220.vfptr3 + v4) + 52) + 188) != (&g_INI_Key_Civilian)->Find() ) /*0x41eccc*/
   {
     if ( ++v4 >= stru_A80220.nextArrayIndex ) /*0x41ecd6*/
       return 0; /*0x41ece2*/
@@ -222,10 +222,10 @@ int AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
     v8 -= (int)dword_A8ED84 - v7; /*0x41f132*/
   LABEL_12:
     v9 = v8; /*0x41f134*/
-    return 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v9 / (double)Super::GetDefaultTimer((unsigned int *)v6); /*0x41f134*/
+    return 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v9 / (double)((unsigned int *)v6)->GetDefaultTimer(); /*0x41f134*/
   }
   v9 = 0; /*0x41f171*/
-  return 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v9 / (double)Super::GetDefaultTimer((unsigned int *)v6); /*0x41f167*/
+  return 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v9 / (double)((unsigned int *)v6)->GetDefaultTimer(); /*0x41f167*/
 }
 } // namespace gamemd
 // 0x41F180
@@ -263,10 +263,10 @@ int AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
     v8 -= (int)dword_A8ED84 - v7; /*0x41f1e2*/
   LABEL_12:
     v9 = v8; /*0x41f1e4*/
-    return 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v9 / (double)Super::GetDefaultTimer((unsigned int *)v6); /*0x41f1e4*/
+    return 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v9 / (double)((unsigned int *)v6)->GetDefaultTimer(); /*0x41f1e4*/
   }
   v9 = 0; /*0x41f221*/
-  return 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v9 / (double)Super::GetDefaultTimer((unsigned int *)v6); /*0x41f217*/
+  return 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v9 / (double)((unsigned int *)v6)->GetDefaultTimer(); /*0x41f217*/
 }
 } // namespace gamemd
 // 0x41F230
@@ -376,23 +376,23 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
     return 0; /*0x41f620*/
   strncpy((char *)v46, v5, 0x18u); /*0x41f62e*/
   HIBYTE(v46[0].?) = 0; /*0x41f63a*/
-  String::Trim((char *)v46); /*0x41f63e*/
+  ((char *)v46)->Trim(); /*0x41f63e*/
   *((unsigned int *)a2_2 + 55) = 0; /*0x41f643*/
   if ( _strcmpi((char *)v46, (char *)off_818114) ) /*0x41f655*/
-    *((unsigned int *)a2_2 + 55) = TeamTypeClass::FindByName((TeamTypeClass *)v46); /*0x41f66a*/
+    *((unsigned int *)a2_2 + 55) = ((TeamTypeClass *)v46)->FindByName(); /*0x41f66a*/
   v6 = strtok(0, Str); /*0x41f676*/
   if ( !v6 ) /*0x41f680*/
     return 0; /*0x41f680*/
   strncpy((char *)v46, v6, 0x18u); /*0x41f68e*/
   HIBYTE(v46[0].?) = 0; /*0x41f69a*/
-  String::Trim((char *)v46); /*0x41f69e*/
+  ((char *)v46)->Trim(); /*0x41f69e*/
   *((unsigned int *)a2_2 + 40) = 0; /*0x41f6a3*/
   *((unsigned int *)a2_2 + 42) = -1; /*0x41f6a9*/
   if ( _strcmpi((char *)v46, (char *)off_818118) ) /*0x41f6bf*/
   {
     if ( _strcmpi((char *)v46, (char *)off_818114) ) /*0x41f6e2*/
     {
-      v7 = SuperWeaponTypeClass::FindByName(v46); /*0x41f6f2*/
+      v7 = (v46)->FindByName(); /*0x41f6f2*/
       *((unsigned int *)a2_2 + 42) = v7; /*0x41f6fa*/
       if ( v7 != -1 ) /*0x41f700*/
         *((unsigned int *)a2_2 + 40) = 1; /*0x41f702*/
@@ -414,15 +414,15 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
     return 0; /*0x41f75a*/
   strncpy((char *)v46, v9, 0x18u); /*0x41f768*/
   HIBYTE(v46[0].?) = 0; /*0x41f774*/
-  String::Trim((char *)v46); /*0x41f778*/
+  ((char *)v46)->Trim(); /*0x41f778*/
   v10 = 0; /*0x41f781*/
-  ExitCellByName = Factory::FindExitCellByName((Factory *)v46); /*0x41f783*/
+  ExitCellByName = ((Factory *)v46)->FindExitCellByName(); /*0x41f783*/
   if ( ExitCellByName != -1 ) /*0x41f78b*/
   {
     v10 = *((unsigned int *)dword_A8E34C + ExitCellByName); /*0x41f793*/
     goto LABEL_26; /*0x41f796*/
   }
-  Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)v46); /*0x41f79c*/
+  Index = ((BuildingTypeClass *)v46)->FindIndex(); /*0x41f79c*/
   if ( Index != -1 ) /*0x41f7a4*/
   {
     v13 = (unsigned int *)(dword_A83CE4); /*0x41f7a6*/
@@ -430,13 +430,13 @@ LABEL_25:
     v10 = v13[Index]; /*0x41f7db*/
     goto LABEL_26; /*0x41f7db*/
   }
-  v14 = (int)(TypeClass::FindByName((TypeClass *)v46)); /*0x41f7b2*/
+  v14 = (int)(((TypeClass *)v46)->FindByName()); /*0x41f7b2*/
   if ( v14 != -1 ) /*0x41f7ba*/
   {
     v10 = *((unsigned int *)dword_A8B21C + v14); /*0x41f7c2*/
     goto LABEL_26; /*0x41f7c5*/
   }
-  Index = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)v46); /*0x41f7cb*/
+  Index = ((BuildingTypeClass *)v46)->FindIndexByName(); /*0x41f7cb*/
   if ( Index != -1 ) /*0x41f7d3*/
   {
     v13 = (unsigned int *)(dword_A83C6C); /*0x41f7d5*/
@@ -678,7 +678,7 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
     }
     while ( v3 < dword_A8B210 ); /*0x420056*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x42005a*/
+  ((AbstractTypeClass *)Block)->Dtor(); /*0x42005a*/
   if ( (a2 & 1) != 0 ) /*0x420064*/
     operator delete((void *)(Block)); /*0x420067*/
   return Block->tail_0; /*0x420071*/

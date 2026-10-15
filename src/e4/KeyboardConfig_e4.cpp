@@ -101,7 +101,7 @@ int KeyboardConfig::LoadINI()
     Vector::Clear((int)v11); /*0x533ecf*/
     /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x533ed8) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533ee0*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
+    ((INIClass *)&v9)->DestroyHashTableINIClass(); /*0x533ee9*/
     return 1; /*0x533eee*/
   }
   else
@@ -112,7 +112,7 @@ int KeyboardConfig::LoadINI()
     Vector::Clear((int)v11); /*0x533f1c*/
     /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x533f25) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533f2d*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/
+    ((INIClass *)&v9)->DestroyHashTableINIClass(); /*0x533f36*/
     return 0; /*0x533f3b*/
   }
 }  // G42.18 ns repair

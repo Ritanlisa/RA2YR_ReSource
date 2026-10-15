@@ -457,8 +457,8 @@ int BuildingClass::Construct(int a2, int a3)
   this->u32_5BC = 0; /*0x43ba97*/
   this->idleActionTimer_d = 0; /*0x43ba9d*/
   this->q5C4 = 0; /*0x43baa3*/
-  AudioController::Init(&this->Audio7_d); /*0x43baa9*/
-  AudioController::Init(&this->Audio8_2); /*0x43bab4*/
+  (&this->Audio7_d)->Init(); /*0x43baa9*/
+  (&this->Audio8_2)->Init(); /*0x43bab4*/
   (*((unsigned short *)&(a3))) = 0x4000; /*0x43babd*/
   FacingClass::Update(&this->barrelFacing, &a3); /*0x43bacb*/
   this->RepairProgress = 0; /*0x43bad0*/
@@ -470,7 +470,7 @@ int BuildingClass::Construct(int a2, int a3)
     v8 = dword_A8EB50++; /*0x43bb15*/
     *((unsigned int *)dword_A8EB44 + v8) = this; /*0x43bb24*/
   }
-  BuildingClass::Update((BuildingClass *)this); /*0x43bb29*/
+  ((BuildingClass *)this)->Update(); /*0x43bb29*/
   if ( dword_B0F650 < dword_B0F648 /*0x43bb62*/
     || (byte_B0F64D || !dword_B0F648)
     && dword_B0F654 > 0
@@ -536,12 +536,12 @@ int BuildingClass::Construct(int a2, int a3)
     v16 = v15->NumberOfDocks; /*0x43bcbd*/
     if ( v16 < 1 ) /*0x43bcc6*/
       v16 = 1; /*0x43bcc8*/
-    RadioClass::SetLinkCount((RadioClass *)this, v16); /*0x43bcd0*/
+    ((RadioClass *)this)->SetLinkCount(v16); /*0x43bcd0*/
     return this; /*0x43bcd5*/
   }
   else
   {
-    RadioClass::SetLinkCount((RadioClass *)this, 1); /*0x43bce2*/
+    ((RadioClass *)this)->SetLinkCount(1); /*0x43bce2*/
     return this; /*0x43bce7*/
   }
 }
@@ -589,7 +589,7 @@ int BuildingClass::Dtor()
   LightSource = this->LightSource; /*0x43bd3a*/
   if ( LightSource ) /*0x43bd44*/
   {
-    MapClass::ScrollOnce(LightSource, 0); /*0x43bd47*/
+    (LightSource)->ScrollOnce(0); /*0x43bd47*/
     v5 = this->LightSource; /*0x43bd4c*/
     if ( v5 ) /*0x43bd54*/
       (*(void (__thiscall **)(int, int))(this->q634)(v5, 1); /*0x43bd5a*/
@@ -597,17 +597,17 @@ int BuildingClass::Dtor()
   }
   (*((unsigned char *)&(v3))) = 1; /*0x43bd63*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3); /*0x43bd67*/
-  BuildingClass::Sell(this); /*0x43bd6e*/
+  (this)->Sell(); /*0x43bd6e*/
   Vtable3 = (int)this; /*0x43bd83*/
   v6 = dword_A8EB40.vt_slot_16(&Vtable3); /*0x43bd87*/
   if ( v6 != -1 ) /*0x43bd8d*/
-    Vector::RemoveAt(&dword_A8EB40, v6); /*0x43bd95*/
+    (&dword_A8EB40)->RemoveAt(v6); /*0x43bd95*/
   Vtable3 = (int)this; /*0x43bdaa*/
   v7 = dword_8B41E0.vt_slot_16(&Vtable3); /*0x43bdae*/
   if ( v7 != -1 ) /*0x43bdb4*/
-    Vector::RemoveAt(&dword_8B41E0, v7); /*0x43bdbc*/
+    (&dword_8B41E0)->RemoveAt(v7); /*0x43bdbc*/
   BuildingClass::ClearAnims(this, -2); /*0x43bdc5*/
-  BuildingTypeClass::IsPowered((BuildingTypeClass *)this->Type); /*0x43bdd0*/
+  ((BuildingTypeClass *)this->Type)->IsPowered(); /*0x43bdd0*/
   DamageFireAnims = this->DamageFireAnims; /*0x43bdd5*/
   v9 = 8; /*0x43bddb*/
   do /*0x43bdf4*/
@@ -634,7 +634,7 @@ int BuildingClass::Dtor()
           this->CloakRadius[0] = Type->CloakRadiusInCells; /*0x43be2a*/
         this->needsRedraw[0] = 1; /*0x43be34*/
         this->CloakRadius[0] = 1; /*0x43be3b*/
-        BuildingClass::CleanupOccupation(this); /*0x43be42*/
+        (this)->CleanupOccupation(); /*0x43be42*/
       }
     }
   }
@@ -658,8 +658,8 @@ int BuildingClass::Dtor()
     {
       owner = (HouseClass *)this->owner; /*0x43bf29*/
       if ( owner ) /*0x43bf31*/
-        HouseClass::DecrementUnitCount(owner, this); /*0x43bf34*/
-      BuildingClass::Sell(this); /*0x43bf3b*/
+        (owner)->DecrementUnitCount(this); /*0x43bf34*/
+      (this)->Sell(); /*0x43bf3b*/
     }
   }
   Factory = this->Factory; /*0x43bf40*/
@@ -675,7 +675,7 @@ int BuildingClass::Dtor()
   if ( v19 != -1 ) /*0x43bf96*/
     DynamicVector::RemoveItem((DynamicVector *)&dword_B0F640, v19); /*0x43bf9e*/
   Vtable3 = AbstractClass::GetVtable3(&this->vtable2); /*0x43bfac*/
-  v20 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, &Vtable3); /*0x43bfba*/
+  v20 = (&g_BuildingLoadQueue_Array)->Dequeue(&Vtable3); /*0x43bfba*/
   if ( v20 ) /*0x43bfc1*/
   {
     v21 = (v20 - g_BuildingLoadQueue_Array.vfptr) >> 3; /*0x43bfc9*/
@@ -727,7 +727,7 @@ int BuildingClass::ScalarDtor()
 {
   char v3; // [esp+8h] [ebp+4h]
 
-  BuildingClass::Dtor(this); /*0x459f23*/
+  (this)->Dtor(); /*0x459f23*/
   if ( (v3 & 1) != 0 ) /*0x459f2d*/
     operator delete((void *)(this)); /*0x459f30*/
   return (int)this; /*0x459f3a*/
@@ -753,7 +753,7 @@ int BuildingClass::Deactivate()
   LightSource = this->LightSource; /*0x452485*/
   this->StuffEnabled = 0; /*0x45248b*/
   if ( LightSource ) /*0x452494*/
-    MapClass::ScrollOnce((int)LightSource, 0); /*0x452498*/
+    ((int)LightSource)->ScrollOnce(0); /*0x452498*/
   Type = this->Type; /*0x45249d*/
   if ( Type->CloakGenerator ) /*0x4524a3*/
   {

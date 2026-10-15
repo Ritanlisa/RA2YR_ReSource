@@ -98,7 +98,7 @@ int Struct::ZeroInitAndSetup(void *a1)
   a1->PhoneNumber[0] = 0; /*0x48bf2a*/
   (&a1->PhoneNumber)[11] = -1; /*0x48bf30*/
   (&a1->PhoneNumber)[12] = -1; /*0x48bf33*/
-  return Struct::ClearAllMemberFlags((Struct *)a1->PlayerIndex);
+  return ((Struct *)a1->PlayerIndex)->ClearAllMemberFlags();
 }
 } // namespace gamemd
 // 0x4B9BD0

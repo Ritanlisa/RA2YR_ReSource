@@ -71,7 +71,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
       ++v4; /*0x43aa5f*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x43aa73*/
+  ((AbstractClass *)Block)->DTOR(); /*0x43aa73*/
   if ( (a2 & 1) != 0 ) /*0x43aa7d*/
     operator delete((void *)(Block)); /*0x43aa80*/
   return Block->tail_0; /*0x43aa8a*/

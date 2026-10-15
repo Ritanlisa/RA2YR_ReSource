@@ -277,7 +277,7 @@ bool IPXInterfaceClass::Bind(uint32_t network, const uint8_t node[6], uint16_t s
   else
   {
     Debug::Log(); /*0x7b1185*/
-    if ( IPXInterfaceClass::initSocket(network, *((unsigned int *)network + 64702), (int)&name) ) /*0x7b119b*/
+    if ( (network)->initSocket(*((unsigned int *)network + 64702), (int)&name) ) /*0x7b119b*/
     {
       Debug::Log(); /*0x7b1236*/
       v5 = *(unsigned short *)&name.sa_data[8]; /*0x7b123f*/

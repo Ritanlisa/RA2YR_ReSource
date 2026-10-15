@@ -155,7 +155,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   *(float *)&v19 = -v8; /*0x645dcb*/
   *(float *)&v18 = -*&this->M4; /*0x645dd4*/
   *(float *)&v17 = -*&this->M4; /*0x645de0*/
-  v9 = (float *)Int4::Set(v30, v17, v18, v19, v20); /*0x645de3*/
+  v9 = (float *)(v30)->Set(v17, v18, v19, v20); /*0x645de3*/
   v29[0] = *v9; /*0x645dea*/
   v29[1] = v9->q004; /*0x645df1*/
   v29[2] = v9->u32_8; /*0x645df8*/
@@ -346,9 +346,9 @@ AbstractClass * * ProcessNetworkEvents()
   if ( (dword_A8D5F8 & 2) != 0 ) /*0x64726e*/
   {
     v8[0] = 0; /*0x64727a*/
-    if ( EventQueue::Process((EventQueue *)dword_87F770) ) /*0x64727f*/
+    if ( ((EventQueue *)dword_87F770)->Process() ) /*0x64727f*/
     {
-      if ( EventQueue::Read((EventQueue *)dword_87F770) == 27 || (dword_A8D5F8 & 4) != 0 ) /*0x6472a5*/
+      if ( ((EventQueue *)dword_87F770)->Read() == 27 || (dword_A8D5F8 & 4) != 0 ) /*0x6472a5*/
       {
         byte_A8E9A0 = 0; /*0x6472aa*/
         return; /*0x6472b5*/
@@ -372,7 +372,7 @@ AbstractClass * * ProcessNetworkEvents()
       if ( byte_B04880 ) /*0x64734b*/
         LogMultiplayToSync_MPDEBUG(v1 % 256, 0); /*0x64735f*/
       else
-        Multiplay::LogToSYNC_NOMPDEBUG(0); /*0x647368*/
+        (0)->LogToSYNC_NOMPDEBUG(); /*0x647368*/
       GameClass::Shutdown((GameClass *)v6); /*0x64736d*/
       ExitProgram(0); /*0x647374*/
     }
@@ -529,7 +529,7 @@ void RunNetworkGameLoop()
   Debug::Log(); /*0x648404*/
   while ( 2 ) /*0x64840c*/
   {
-    EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer); /*0x64840c*/
+    (*(EventQueue **)&g_BinkMoviePlayer)->Process(); /*0x64840c*/
     v4 = v22; /*0x64841b*/
     if ( Ticks == -1 ) /*0x648424*/
     {
@@ -577,7 +577,7 @@ void RunNetworkGameLoop()
               &v14,
               &v15) )
         break; /*0x6484ce*/
-      EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer); /*0x6484da*/
+      (*(EventQueue **)&g_BinkMoviePlayer)->Process(); /*0x6484da*/
       if ( *(unsigned int *)&dword_A8B238 == 1 || *(unsigned int *)&dword_A8B238 == 2 ) /*0x6484ec*/
       {
         switch ( ProcessNetworkMessage((int)v2, 0) ) /*0x648528*/
@@ -613,7 +613,7 @@ void RunNetworkGameLoop()
     if ( !*(unsigned int *)&((unsigned int *)&stru_A8EB00)[444] ) /*0x6485a1*/
     {
       InputManager_ProcessEvents::Vtable((GScreenClass *)&DataGlobal_87F7E8, &v16, &v18, &v17); /*0x6485b7*/
-      SyncDelayClass::ProcessNetworkSync(&v16); /*0x6485c0*/
+      (&v16)->ProcessNetworkSync(); /*0x6485c0*/
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x6485cd*/
       ((TacticalMap *)((GScreenClass *)&DataGlobal_87F7E8))->Redraw(); /*0x6485d5*/
     }

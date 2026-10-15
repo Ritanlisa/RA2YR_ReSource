@@ -45,7 +45,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   int v2; // eax
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
+  ((AbstractClass *)this)->Constructor(); /*0x71a453*/
   v2 = *(unsigned int *)&TeamTypeClass_Array; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *&this->creationFrame = v2; /*0x71a464*/
@@ -77,7 +77,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   int v3; // eax
   int v5; // [esp+Ch] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
+  ((AbstractClass *)this)->Constructor(); /*0x71a4e7*/
   *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->AbstractClass = &vt_TemporalClass; /*0x71a501*/
@@ -166,7 +166,7 @@ void ** TemporalClass::ProcessTimeWarp()
   {
     v3->temporalTargetingMe = 0; /*0x71a77f*/
     *(unsigned char *)(*(unsigned int *)this->__pad_028 + 624) = 0; /*0x71a78a*/
-    return (void **)TagClass::Unlink((TagClass *)this); /*0x71a790*/
+    return (void **)((TagClass *)this)->Unlink(); /*0x71a790*/
   }
   else
   {
@@ -191,7 +191,7 @@ void ** TemporalClass::ProcessTimeWarp()
     LOWORD(v13) = Math::RoundToInt(v1); /*0x71a827*/
     if ( v13 > *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3936) << 8 )
     {
-      return (void **)FactoryClass::CompleteItem((FactoryClass *)this); /*0x71a841*/
+      return (void **)((FactoryClass *)this)->CompleteItem(); /*0x71a841*/
     }
     else
     {
@@ -269,7 +269,7 @@ LABEL_10:
             v30 = this->u32_3C; /*0x71a9de*/
             if ( v30 ) /*0x71a9e3*/
             {
-              SuperClass::SetOnHold(v30, 0); /*0x71a9e6*/
+              (v30)->SetOnHold(0); /*0x71a9e6*/
               this->u32_3C = 0; /*0x71a9eb*/
             }
             v31 = *(unsigned int **)this->__pad_028; /*0x71a9ee*/
@@ -389,7 +389,7 @@ void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
       ++v3; /*0x71b206*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)aP1); /*0x71b21a*/
+  ((AbstractClass *)aP1)->DTOR(); /*0x71b21a*/
   if ( (aP1 & 1) != 0 ) /*0x71b224*/
     __3_YAXPAX_Z((void *)(aP1)); /*0x71b227*/
   return &aP1->AbstractClass; /*0x71b231*/
@@ -472,7 +472,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
     return 0; /*0x71ae94*/
   if ( (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 1 ) /*0x71aea7*/
   {
-    Member = Team::GetMember((int)(a1), 0); /*0x71aead*/
+    Member = ((int)(a1))->GetMember(0); /*0x71aead*/
     v3 = (unsigned int *)Member; /*0x71aeb2*/
     if ( Member ) /*0x71aeb6*/
     {
@@ -483,7 +483,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
           v5[0] = a1[39]; /*0x71aedc*/
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
-          v4 = Coord::To_Cell(&dword_87F7E8, v5); /*0x71aef8*/
+          v4 = (&dword_87F7E8)->To_Cell(v5); /*0x71aef8*/
           if ( ((Cell *)(v4))->IsBridge() == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/
         }

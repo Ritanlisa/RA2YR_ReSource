@@ -75,14 +75,14 @@ char Credits::Screen()
       CCINIClass::Load(v11, 0, 0); /*0x52cc49*/
       if ( !_strcmpi(cAlternateFileName, aBattlemdIni_0) ) /*0x52cc54*/
         v9 = 1; /*0x52cc60*/
-      CampaignClass::LoadFromINIList(v3); /*0x52cc67*/
+      (v3)->LoadFromINIList(); /*0x52cc67*/
       if ( v3 ) /*0x52cc6e*/
         (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x52cc76*/
       v11[0] = (unsigned int)(&vt_CCFileClass); /*0x52cc7c*/
       v13 = 0; /*0x52cc84*/
-      Vector::Clear(v12); /*0x52cc88*/
+      (v12)->Clear(); /*0x52cc88*/
       v11[0] = (unsigned int)(&off_7E1668); /*0x52cc91*/
-      BufferIOFileClass::Dtor(v11); /*0x52cc99*/
+      (v11)->Dtor(); /*0x52cc99*/
       FirstFileA = v10; /*0x52cc9e*/
     }
   }
@@ -111,14 +111,14 @@ LABEL_15:
       v7->ownsFile = 0; /*0x52cd1c*/
       *v7 = (unsigned int)(&CCINIClass_Vtable); /*0x52cd1f*/
       CCINIClass::Load(v11, 0, 0); /*0x52cd25*/
-      CampaignClass::LoadFromINIList(v7); /*0x52cd2c*/
+      (v7)->LoadFromINIList(); /*0x52cd2c*/
       (*(void (**)(unsigned int *, int))*v7)(v7, 1); /*0x52cd37*/
     }
     v11[0] = (unsigned int)(&vt_CCFileClass); /*0x52cd3d*/
     v13 = 0; /*0x52cd45*/
-    Vector::Clear(v12); /*0x52cd49*/
+    (v12)->Clear(); /*0x52cd49*/
     v11[0] = (unsigned int)(&off_7E1668); /*0x52cd52*/
-    return BufferIOFileClass::Dtor(v11); /*0x52cd5a*/
+    return (v11)->Dtor(); /*0x52cd5a*/
   }
   return result; /*0x52cd5f*/
 

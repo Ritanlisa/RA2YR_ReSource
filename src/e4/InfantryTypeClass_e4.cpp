@@ -393,7 +393,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(unsigned int *)(v4 + 3744) = *v11->Items.VectorClass; /*0x5241d4*/
   *(unsigned int *)v48.ClearAndFree2_ph = &vt_VectorClass; /*0x5241d7*/
-  VectorClass::Destroy((int)&v48); /*0x5241df*/
+  ((int)&v48)->Destroy(); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
          (INIClass *)a2,
          (unsigned __int8 *)(v4 + 36),
@@ -402,17 +402,17 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          String,
          128) )
   {
-    DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x524210*/
+    ((DynamicVectorClass *)&v48)->AnimTypeConstructor(0, 0); /*0x524210*/
     *(unsigned int *)v48.WeaponType = &vt_TypeList; /*0x52421f*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
         break; /*0x524236*/
-      INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate(i); /*0x524241*/
+      INIClassIntList = (DynamicVectorClass *)(i)->FindOrCreate(); /*0x524241*/
       if ( INIClassIntList ) /*0x524245*/
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
     }
-    TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
+    ((TypeList *)&v48.DynamicVector_field_0x1C)->AnimTypeCopy(&v48); /*0x524271*/
     *(unsigned int *)v48.ClearAndFree2_ph = &vt_VectorClass; /*0x52427a*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
   }
@@ -420,7 +420,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   {
     TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v4->qE50); /*0x524294*/
   }
-  VectorClass::CopyDefault(&v4->qE50, &v48.q01C); /*0x5242a6*/
+  (&v4->qE50)->CopyDefault(&v48.q01C); /*0x5242a6*/
   v13 = v50; /*0x5242af*/
   v14 = v51; /*0x5242b3*/
   *(unsigned int *)(v4 + 3680) = v49; /*0x5242b7*/
@@ -436,17 +436,17 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          String,
          128) )
   {
-    DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x5242fa*/
+    ((DynamicVectorClass *)&v48)->AnimTypeConstructor(0, 0); /*0x5242fa*/
     *(unsigned int *)v48.ClearAndFree2_ph = &vt_TypeList; /*0x524309*/
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
         break; /*0x524320*/
-      INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate(j); /*0x52432b*/
+      INIClassIntList = (DynamicVectorClass *)(j)->FindOrCreate(); /*0x52432b*/
       if ( INIClassIntList ) /*0x52432f*/
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x52433a*/
     }
-    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v48); /*0x52435b*/
+    ((TypeList *)&v48.q01C)->AnimTypeCopy(&v48); /*0x52435b*/
     *(unsigned int *)v48.WeaponType = &vt_VectorClass; /*0x524364*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524368*/
   }
@@ -673,11 +673,11 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
   {
     if ( aP0 ) /*0x52499c*/
       ((InfantryTypeClass *)(aP0))->Constructor_523980((int)&aP0); /*0x5249a5*/
-    VoxelAnimType::LoadAnim((char *)aP0); /*0x5249ad*/
-    ObjectTypeClass::Load2DArt((char *)aP0); /*0x5249b4*/
+    ((char *)aP0)->LoadAnim(); /*0x5249ad*/
+    ((char *)aP0)->Load2DArt(); /*0x5249b4*/
     if ( aP0 != (InfantryTypeClass *)-3720 ) /*0x5249c1*/
     {
-      DynamicVectorClass::Construct((DynamicVectorClass *)aP0->VoiceComment, 0, 0); /*0x5249c7*/
+      ((DynamicVectorClass *)aP0->VoiceComment)->Construct(0, 0); /*0x5249c7*/
       aP0->VoiceComment[0] = (int)&vt_TypeList; /*0x5249cc*/
     }
     (*(void (__stdcall **)(int, InfantryTypeClass **, int, unsigned int, int))(aP0->vtable4)(aP0, &aP0, 4, 0, v4); /*0x5249de*/
@@ -693,7 +693,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
     }
     if ( aP0 != (InfantryTypeClass *)-3664 ) /*0x524a13*/
     {
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)aP0->DeadBodies, 0, 0); /*0x524a1b*/
+      ((DynamicVectorClass *)aP0->DeadBodies)->AnimTypeConstructor(0, 0); /*0x524a1b*/
       aP0->DeadBodies[0] = (int)&vt_TypeList; /*0x524a20*/
     }
     (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->vtable4)(aP0, &aP0, 4, 0); /*0x524a33*/

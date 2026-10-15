@@ -87,7 +87,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6,
   int v19; // [esp+10h] [ebp-8h]
   int i; // [esp+1Ch] [ebp+4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
+  ((AbstractClass *)this)->Constructor(); /*0x6af1a8*/
   SlaveControlVector::Constructor(&this->slaves, 0, 0); /*0x6af1b6*/
   this->slaves = (unsigned int)(&vt_DynamicVectorClass); /*0x6af1c3*/
   this->slaveVectorCapacity = 10; /*0x6af1c9*/
@@ -176,7 +176,7 @@ int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   int v2; // eax
   int v4; // [esp+8h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
+  ((AbstractClass *)this)->Constructor(); /*0x6af366*/
   this->slaveVectorCount = 0; /*0x6af371*/
   this->slaveVectorCapacity = 0; /*0x6af374*/
   LOBYTE(this->creationFrame) = 1; /*0x6af377*/
@@ -259,7 +259,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   }
   this->u32_45 = 0; /*0x6af565*/
   this->slaveVectorCapacity = 0; /*0x6af569*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6af570*/
+  ((AbstractClass *)this)->DTOR(); /*0x6af570*/
 
 }
 } // namespace ra2

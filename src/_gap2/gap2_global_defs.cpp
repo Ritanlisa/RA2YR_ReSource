@@ -163,13 +163,13 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
       this->ptr_140 = (ra2::game::AbstractClass *)(v4); /*0x403073*/
     this->ptr_138 = (LineTrail *)(v3); /*0x40307f*/
     p_bombVisible = (char *)(&this->u32_68); /*0x40308b*/
-    Audio::InitChannels(&this->bombVisible); /*0x403094*/
+    (&this->bombVisible)->InitChannels(); /*0x403094*/
     v6 = (char *)this->u32_E8; /*0x403099*/
     if ( v6 ) /*0x4030a1*/
-      Audio::InitChannels(v6); /*0x4030a3*/
+      (v6)->InitChannels(); /*0x4030a3*/
     v7 = (AudioChannel *)this->u32_E8; /*0x4030a8*/
-    if ( !v7 || (IsActive = AudioChannel::IsActive(v7)) == 0 ) /*0x4030bd*/
-      IsActive = AudioChannel::IsActive(&this->u32_E8); /*0x4030c6*/
+    if ( !v7 || (IsActive = (v7)->IsActive()) == 0 ) /*0x4030bd*/
+      IsActive = (&this->u32_E8)->IsActive(); /*0x4030c6*/
     v8 = (ObjectClass *)this->M992; /*0x4030ca*/
     if ( v8 != &this->u32_F8 ) /*0x4030d8*/
     {
@@ -178,14 +178,14 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
         vtable0 = (ObjectClass *)v8->vfptr; /*0x4030de*/
         if ( (v8->location[2] & 1) != 0 && v8[2].uniqueId ) /*0x4030ee*/
         {
-          if ( (Audio::InitChannels(&v8->uniqueId), IsActive) /*0x403158*/
-            || AudioChannel::IsActive(&v8->uniqueId)
-            || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && AudioChannel::IsActive(lastLayer)
-            || (v11 = *&v8->isInLogic) != 0 && AudioChannel::IsActive(v11)
-            || (v12 = (AudioChannel *)v8->location[0]) != 0 && AudioChannel::IsActive(v12)
-            || (v13 = *&v8->isAliveFlag) != 0 && AudioChannel::IsActive(v13) )
+          if ( ((&v8->uniqueId)->InitChannels(), IsActive) /*0x403158*/
+            || (&v8->uniqueId)->IsActive()
+            || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && (lastLayer)->IsActive()
+            || (v11 = *&v8->isInLogic) != 0 && (v11)->IsActive()
+            || (v12 = (AudioChannel *)v8->location[0]) != 0 && (v12)->IsActive()
+            || (v13 = *&v8->isAliveFlag) != 0 && (v13)->IsActive() )
           {
-            ObjectClass::Cleanup(v8); /*0x403163*/
+            (v8)->Cleanup(); /*0x403163*/
             (*(void (**)(ObjectClass *))(v8[1].owningHouseIndex + 32))(v8); /*0x403170*/
           }
         }
@@ -196,8 +196,8 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     }
     v14 = (ObjectClass *)this->u32_E8; /*0x403187*/
     if ( v14 ) /*0x40318f*/
-      ObjectClass::ClearFlags2(v14); /*0x403193*/
-    ObjectClass::ClearFlags2((ObjectClass *)p_bombVisible); /*0x40319a*/
+      (v14)->ClearFlags2(); /*0x403193*/
+    ((ObjectClass *)p_bombVisible)->ClearFlags2(); /*0x40319a*/
   }
   return 0; /*0x402f73*/
 }
@@ -239,7 +239,7 @@ int Gap2Free_3A80::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3)  
   else
     sprintf(Buffer, aChanTypeStateF_0); /*0x403b72*/
   v4(Buffer); /*0x403b7e*/
-  Next = AudioQueue::GetNext((AudioQueue *)this->animation); /*0x403b8b*/
+  Next = ((AudioQueue *)this->animation)->GetNext(); /*0x403b8b*/
   v6 = 0; /*0x403b8d*/
   if ( Next )
   {
@@ -293,7 +293,7 @@ int Gap2Free_3A80::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3)  
       ++v6; /*0x403cb0*/
       if ( !Next ) /*0x403cb3*/
         break; /*0x403cb3*/
-      Next = AudioQueue::GetNextAlt((AudioQueue *)Next); /*0x403cbc*/
+      Next = ((AudioQueue *)Next)->GetNextAlt(); /*0x403cbc*/
     }
     while ( Next );
     v4 = a2; /*0x403cc6*/
@@ -337,7 +337,7 @@ int Gap2Recv_4048B0::PrefetchAudioSamples() {
       p_owningHouseIndex = &this->owningHouseIndex; /*0x4048d3*/
       do /*0x4048ef*/
       {
-        RefCount::Decrement((RefCount *)*p_owningHouseIndex); /*0x4048d8*/
+        ((RefCount *)*p_owningHouseIndex)->Decrement(); /*0x4048d8*/
         *p_owningHouseIndex = 0; /*0x4048dd*/
         ++v4; /*0x4048e9*/
         ++p_owningHouseIndex; /*0x4048ea*/
@@ -554,7 +554,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
         else if ( (this->nextArrayIndex & 1) == 0 ) /*0x4057a7*/
         {
           Voice::DetachChannel((Voice *)this); /*0x4057af*/
-          (*((unsigned int *)&(v2))) = Audio::ReleaseChannelRefs((Audio *)this); /*0x4057b6*/
+          (*((unsigned int *)&(v2))) = ((Audio *)this)->ReleaseChannelRefs(); /*0x4057b6*/
           this->referenceCount = 4; /*0x4057bb*/
           this->currentWeaponSlot = 0; /*0x4057c2*/
           this->temporalTargetingMe = 0; /*0x4057c8*/
@@ -610,7 +610,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
                 p_owningHouseIndex = &this->owningHouseIndex; /*0x405859*/
                 do /*0x405871*/
                 {
-                  RefCount::Decrement((RefCount *)*p_owningHouseIndex); /*0x40585e*/
+                  ((RefCount *)*p_owningHouseIndex)->Decrement(); /*0x40585e*/
                   *p_owningHouseIndex = 0; /*0x405863*/
                   ++v12; /*0x40586b*/
                   ++p_owningHouseIndex; /*0x40586c*/
@@ -634,15 +634,15 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
           v15 = 0; /*0x4058a4*/
           if ( v14 ) /*0x4058a8*/
           {
-            AudioFile::GetCallback((AudioFile *)this->suspendedMission); /*0x4058b0*/
+            ((AudioFile *)this->suspendedMission)->GetCallback(); /*0x4058b0*/
             this->nextArrayIndex &= ~0x40u; /*0x4058bb*/
-            Voice::Stop(v21); /*0x4058c4*/
+            (v21)->Stop(); /*0x4058c4*/
             if ( (*(unsigned char *)(this->occupant + 16) & 0x40) != 0 && (this->nextArrayIndex & 0x10) == 0 ) /*0x4058da*/
             {
               this->referenceCount = 1; /*0x4058dc*/
-              this->ammoReloadTimer = AudioStream::SelectRandom((int)this); /*0x4058ea*/
+              this->ammoReloadTimer = ((int)this)->SelectRandom(); /*0x4058ea*/
               if ( !this->armorMultiplier[0] /*0x405909*/
-                && !Audio::UpdatePlaybackPosition((Audio *)this)
+                && !((Audio *)this)->UpdatePlaybackPosition()
                 && (this->nextArrayIndex & 1) == 0 )
               {
                 Voice::DetachChannel((Voice *)this); /*0x40590d*/
@@ -651,7 +651,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
                   v16 = &this->owningHouseIndex; /*0x40591a*/
                   do /*0x405936*/
                   {
-                    RefCount::Decrement((RefCount *)*v16); /*0x40591f*/
+                    ((RefCount *)*v16)->Decrement(); /*0x40591f*/
                     *v16 = 0; /*0x405924*/
                     ++v15; /*0x405930*/
                     ++v16; /*0x405931*/
@@ -667,7 +667,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
                 this->nextArrayIndex = nextArrayIndex; /*0x405958*/
               }
             }
-            (*((unsigned int *)&(v2))) = AudioStream::Stop(v14); /*0x405961*/
+            (*((unsigned int *)&(v2))) = (v14)->Stop(); /*0x405961*/
           }
           else
           {
@@ -686,7 +686,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
             v19 = &this->owningHouseIndex; /*0x40598d*/
             do /*0x4059a5*/
             {
-              RefCount::Decrement((RefCount *)*v19); /*0x405992*/
+              ((RefCount *)*v19)->Decrement(); /*0x405992*/
               *v19 = 0; /*0x405997*/
               (*((unsigned int *)&(v2))) = this->lineTrailer; /*0x405999*/
               ++v18; /*0x40599f*/
@@ -895,7 +895,7 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
     v24 = ((unsigned int)(v20)); /*0x415d66*/
     v23 = v10; /*0x415d70*/
     v25 = v25; /*0x415d74*/
-    v11 = Coord::To_Cell(&dword_87F7E8, &v23); /*0x415d81*/
+    v11 = (&dword_87F7E8)->To_Cell(&v23); /*0x415d81*/
     if ( v2->vt_slot_428(v11, -1, -1, 0, 1) /*0x415de8*/
       || (v12 = ObjectPlacement::CalcPosition(v11, (int *)&v21, &v23, 0, 0, 0),
           v13 = *v12,
@@ -914,7 +914,7 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
     v21 = this->u64_9C; /*0x415e00*/
       v22 = this->M164;
     StartAudioControllerAt(dword_8871E0->DetailBufferZoneWidth, (int)&v21, 0); /*0x415e21*/
-    v16 = Coord::To_Cell(&dword_87F7E8, &v23); /*0x415e30*/
+    v16 = (&dword_87F7E8)->To_Cell(&v23); /*0x415e30*/
     v17 = (unsigned int *)(*(int (**)(void *, double *))(*(unsigned int *)v16 + 72))(v16, &v21); /*0x415e3e*/
     v20 = ((v20) & 0xFFFF0000u) | ((unsigned int)(*v17 / 256) & 0xFFFFu); /*0x415e51*/
     v20 = ((v20) & 0xFFFFu) | (((unsigned int)(v17[1] / 256) & 0xFFFFu) << 16); /*0x415e65*/

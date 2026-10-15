@@ -152,7 +152,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   void *Block; // [esp+24h] [ebp-14h]
   char v16; // [esp+2Dh] [ebp-Bh]
 
-  Multiplayer::FindStartPositions(v14); /*0x5ca811*/
+  (v14)->FindStartPositions(); /*0x5ca811*/
   v3 = 0; /*0x5ca81c*/
   memset(v13, 0, sizeof(v13)); /*0x5ca824*/
   if ( dword_A8DA84 > 0 ) /*0x5ca836*/
@@ -253,7 +253,7 @@ char MultiplayerSiege::CheckStatus(int a1)
 
   v1 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5ca9b4*/
   if ( v1 ) /*0x5ca9be*/
-    v2 = MPCombatTeam::Constructor(v1); /*0x5ca9c7*/
+    v2 = (v1)->Constructor(); /*0x5ca9c7*/
   else
     v2 = 0; /*0x5ca9cb*/
   MultiplayerSiege_field_08 = a1->MultiplayerSiege_field_08; /*0x5ca9d1*/
@@ -272,7 +272,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   }
   v7 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa0e*/
   if ( v7 ) /*0x5caa18*/
-    v8 = MPCombatTeam::MPTeam(v7); /*0x5caa21*/
+    v8 = (v7)->MPTeam(); /*0x5caa21*/
   else
     v8 = 0; /*0x5caa25*/
   v9 = a1->MultiplayerSiege_field_08; /*0x5caa27*/
@@ -291,7 +291,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   }
   v13 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa64*/
   if ( v13 ) /*0x5caa6e*/
-    v14 = MPCombatTeam::Constructor2(v13); /*0x5caa77*/
+    v14 = (v13)->Constructor2(); /*0x5caa77*/
   else
     v14 = 0; /*0x5caa7b*/
   v15 = a1->MultiplayerSiege_field_08; /*0x5caa7d*/
@@ -375,7 +375,7 @@ MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
 
   this->MultiplayerSiege_field_00 = (int)&vt_MultiplayerSiege; /*0x5cabd3*/
-  MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5cabd9*/
+  ((MultiplayerGameMode *)this)->Dtor(); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     __3_YAXPAX_Z(this); /*0x5cabe6*/
   return (gamemd::MultiplayerSiege *)(&this->MultiplayerSiege_field_00); /*0x5cabf0*/

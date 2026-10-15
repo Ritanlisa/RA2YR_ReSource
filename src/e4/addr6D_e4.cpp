@@ -50,15 +50,15 @@ int sub_6D1130()
   dword_B0CCE0 = 0; /*0x6d115e*/
   dword_B0CCD0 = 5; /*0x6d1164*/
   v0 = (void *)(dword_B0FA90); /*0x6d116c*/
-  Rect_Point::Set(stru_B0CCB0, *(unsigned int *)dword_B0FC60,(void *)(*((unsigned int *)dword_B0FC60 + 1))); /*0x6d118a*/
-  ShapeButton::SetShape((int)stru_B0CCB0, (int)v0, 0, 0); /*0x6d1197*/
+  (stru_B0CCB0)->Set(*(unsigned int *)dword_B0FC60, (void *)(*((unsigned int *)dword_B0FC60 + 1))); /*0x6d118a*/
+  ((int)stru_B0CCB0)->SetShape((int)v0, 0, 0); /*0x6d1197*/
   dword_B0CC64 = 241; /*0x6d11a7*/
   dword_B0CC90 = dword_87F6CC; /*0x6d11b1*/
   byte_B0CC6D = 0; /*0x6d11b6*/
   dword_B0CC70 = 0; /*0x6d11bc*/
   dword_B0CC60 = 5; /*0x6d11c2*/
-  Rect_Point::Set(stru_B0CC40, *(unsigned int *)dword_B0FC64,(void *)(*((unsigned int *)dword_B0FC64 + 1))); /*0x6d11e2*/
-  return ShapeButton::SetShape((int)stru_B0CC40, (int)v0, 0, 0); /*0x6d11f4*/
+  (stru_B0CC40)->Set(*(unsigned int *)dword_B0FC64, (void *)(*((unsigned int *)dword_B0FC64 + 1))); /*0x6d11e2*/
+  return ((int)stru_B0CC40)->SetShape((int)v0, 0, 0); /*0x6d11f4*/
 }
 }  // G42.18 ns repair
 // 0x6D6BB0
@@ -471,7 +471,7 @@ void E4Recv_6D1E80::sub_6D1E80()
   this->M8 = (int)&vt_Tactical; /*0x6d1e8d*/
   this->M12 = (int)&vt_Tactical; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6d1ea5*/
+  ((AbstractClass *)this)->DTOR(); /*0x6d1ea5*/
 
 }
 } // namespace gamemd
@@ -529,7 +529,7 @@ long long sub_6D6A90(unsigned int * a1)
   int v2; // edx
   unsigned int v4[2]; // [esp+4h] [ebp-8h] BYREF
 
-  v1 = Coord::To_Cell(&dword_87F7E8, a1); /*0x6d6a9e*/
+  v1 = (&dword_87F7E8)->To_Cell(a1); /*0x6d6a9e*/
   v2 = a1[1]; /*0x6d6aa5*/
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/

@@ -586,7 +586,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
-    return XSurface::BlitPart((XSurface *)this, (void **)a2, v10, (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
+    return ((XSurface *)this)->BlitPart((void **)a2, v10, (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
   v17 = a2[1]; /*0x4bb2a7*/
   v18 = a2[2]; /*0x4bb2aa*/
   v49 = *a2; /*0x4bb2ad*/
@@ -657,7 +657,7 @@ LABEL_53:
   v33 = (int (**)(DSurface *, int *))v48->vtable1; /*0x4bb41c*/
   v63 = v28; /*0x4bb426*/
   v34 = (int *)v33[30](v48, v68); /*0x4bb439*/
-  Rect::Set(&v43, 0, 0, 0, 0); /*0x4bb43b*/
+  (&v43)->Set(0, 0, 0, 0); /*0x4bb43b*/
   v35 = *v34; /*0x4bb449*/
   v36 = a1[2]; /*0x4bb44b*/
   v37 = v34[1]; /*0x4bb450*/
@@ -767,7 +767,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
            this->DSurface_field_0x1C,
            1) )
     {
-      return XSurface::FillRectEx((XSurface *)this, (unsigned int *)a2, (int *)a3, a4); /*0x4bb81d*/
+      return ((XSurface *)this)->FillRectEx((unsigned int *)a2, (int *)a3, a4); /*0x4bb81d*/
     }
     if ( g_DDraw_Initialized || stru_A8EB00.?[412] ) /*0x4bb690*/
     {

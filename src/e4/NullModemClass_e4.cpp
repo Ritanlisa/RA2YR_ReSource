@@ -136,17 +136,17 @@ void * NullModemClass::QueryInterface(char a2, int a1, int a3, int a4, int a5)
     FileFind::Close(v3); /*0x5f3663*/
     __3_YAXPAX_Z(v3); /*0x5f3669*/
   }
-  ObjectClass::FreeResources((ObjectClass *)a1); /*0x5f3673*/
+  ((ObjectClass *)a1)->FreeResources(); /*0x5f3673*/
   if ( *((unsigned int *)a1 + 16) != -1 ) /*0x5f3680*/
   {
     if ( !g_ClipboardBuffer ) /*0x5f368a*/
       goto LABEL_10; /*0x5f368a*/
-    SerialPort::Close((SerialPort *)g_ClipboardBuffer); /*0x5f368c*/
+    ((SerialPort *)g_ClipboardBuffer)->Close(); /*0x5f368c*/
     if ( g_ClipboardBuffer ) /*0x5f3699*/
       (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/
     *((unsigned int *)a1 + 16) = -1; /*0x5f36ad*/
-    ObjectClass::FreeResources((ObjectClass *)a1); /*0x5f36b0*/
+    ((ObjectClass *)a1)->FreeResources(); /*0x5f36b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f36bd*/
   {
@@ -219,7 +219,7 @@ int NullModemClass::sendData()
     this->u32_1C = Stat.cbInQue; /*0x774789*/
     this->u32_20 = cbOutQue; /*0x77478c*/
     if ( !v7 ) /*0x77478f*/
-      WinModemClass::LogCommErrors((WinModemClass *)this, v4, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
+      ((WinModemClass *)this)->LogCommErrors(v4, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
   }
   return 1; /*0x77470a*/
 
@@ -261,7 +261,7 @@ int NullModemClass::receiveData()
     this->u32_1C = Stat.cbInQue; /*0x774869*/
     this->u32_20 = cbOutQue; /*0x77486c*/
     if ( !v5 ) /*0x77486f*/
-      WinModemClass::LogCommErrors((WinModemClass *)this, v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
+      ((WinModemClass *)this)->LogCommErrors(v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
   return (*(int (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774893*/
 

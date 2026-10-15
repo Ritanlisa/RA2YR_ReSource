@@ -279,23 +279,23 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
     v5 = LinkedList::Next(v2->q008); /*0x401c44*/
     if ( !v5 ) /*0x401c48*/
     {
-      NextEntry = AudioList::GetNextEntry((AudioList *)v4); /*0x401c55*/
+      NextEntry = ((AudioList *)v4)->GetNextEntry(); /*0x401c55*/
       if ( NextEntry ) /*0x401c59*/
       {
         while ( *(unsigned int *)(NextEntry + 12) ) /*0x401c64*/
         {
-          NextEntry = AudioList::GetNextEntry((AudioList *)NextEntry); /*0x401c6d*/
+          NextEntry = ((AudioList *)NextEntry)->GetNextEntry(); /*0x401c6d*/
           if ( !NextEntry ) /*0x401c71*/
             goto LABEL_18; /*0x401c71*/
         }
         if ( *(unsigned int *)(NextEntry + 4) != NextEntry ) /*0x401c96*/
           LinkedList::Init((LinkedList *)NextEntry); /*0x401c9a*/
-        for ( i = (LinkedList *)Queue::GetNext((Queue *)(NextEntry + 36)); /*0x401cad*/
+        for ( i = (LinkedList *)((Queue *)(NextEntry + 36))->GetNext(); /*0x401cad*/
               i;
-              i = (LinkedList *)Queue::GetNext((Queue *)(NextEntry + 36)) )
+              i = (LinkedList *)((Queue *)(NextEntry + 36))->GetNext() )
         {
           LinkedList::Init(i); /*0x401cb1*/
-          AudioNode::Release((AudioNode *)i); /*0x401cb8*/
+          ((AudioNode *)i)->Release(); /*0x401cb8*/
           PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(NextEntry + 60) + 4), (int)i); /*0x401cc5*/
         }
         nullsub_2(v15); /*0x401cda*/
@@ -305,16 +305,16 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       v5 = LinkedList::Next(v2->q008); /*0x401cf4*/
       if ( !v5 ) /*0x401cf8*/
       {
-        AudioStream::ReleaseSubsystem((AudioStream *)*v2); /*0x401cfc*/
+        ((AudioStream *)*v2)->ReleaseSubsystem(); /*0x401cfc*/
         return 0; /*0x401d0a*/
       }
     }
     v5[5] = a2; /*0x401d11*/
     v5[15] = (int)v2; /*0x401d14*/
-    DListNode::InitEmpty((DListNode *)v5); /*0x401d17*/
+    ((DListNode *)v5)->InitEmpty(); /*0x401d17*/
     v5[3] = 0; /*0x401d1c*/
-    AudioStream::InitNodeFields(&v5->AudioStream_7); /*0x401d26*/
-    Struct::ZeroInit32(&v5->u32_40); /*0x401d30*/
+    (&v5->AudioStream_7)->InitNodeFields(); /*0x401d26*/
+    (&v5->u32_40)->ZeroInit32(); /*0x401d30*/
     v5[12] = (int)(v5 + 16); /*0x401d35*/
     v9 = *(unsigned int *)(*v2 + 284); /*0x401d3a*/
     v19 = v9; /*0x401d42*/
@@ -324,7 +324,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       AudioIndex::GetSampleInformation((unsigned int *)*v2, v5[5], v5 + 16); /*0x401e4f*/
       InsertBeforeLinkedList(v2 + 3, v5); /*0x401e62*/
       v5[6] = 1; /*0x401e67*/
-      AudioStream::ReleaseSubsystem((AudioStream *)*v2); /*0x401e70*/
+      ((AudioStream *)*v2)->ReleaseSubsystem(); /*0x401e70*/
       return (gamemd::ObjectClass **)(v5); /*0x401e7e*/
     }
     while ( 1 ) /*0x401d57*/
@@ -348,12 +348,12 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
     }
     while ( 1 ) /*0x401d7b*/
     {
-      v11 = AudioList::GetNextEntry(&v2->q00C); /*0x401d7b*/
+      v11 = (&v2->q00C)->GetNextEntry(); /*0x401d7b*/
       if ( !v11 ) /*0x401d7f*/
         break; /*0x401d7f*/
       while ( v11->u32_C ) /*0x401d8a*/
       {
-        v11 = AudioList::GetNextEntry((AudioList *)v11); /*0x401d93*/
+        v11 = ((AudioList *)v11)->GetNextEntry(); /*0x401d93*/
         if ( !v11 ) /*0x401d97*/
           goto LABEL_38; /*0x401d97*/
       }
@@ -362,7 +362,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       for ( j = (LinkedList *)Queue::GetNext(&v11->Queue_24); j; j = (LinkedList *)Queue::GetNext(&v11->Queue_24) ) /*0x401db9*/
       {
         LinkedList::Init(j); /*0x401dbd*/
-        AudioNode::Release((AudioNode *)j); /*0x401dc4*/
+        ((AudioNode *)j)->Release(); /*0x401dc4*/
         PushFrontLinkedListAlt(*(unsigned int **)(v11->u32_3C + 4), (int)j); /*0x401dd1*/
       }
       nullsub_2(v15); /*0x401de6*/
@@ -378,7 +378,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
     for ( k = (LinkedList *)Queue::GetNext(&v5->Queue_90); k; k = (LinkedList *)Queue::GetNext(&v5->Queue_90) ) /*0x401e99*/
     {
       LinkedList::Init(k); /*0x401e9d*/
-      AudioNode::Release((AudioNode *)k); /*0x401ea4*/
+      ((AudioNode *)k)->Release(); /*0x401ea4*/
       PushFrontLinkedListAlt(*(unsigned int **)(v5[15] + 4), (int)k); /*0x401eb1*/
     }
     nullsub_2(v15); /*0x401ec6*/
@@ -436,7 +436,7 @@ ObjectClass * * sub_402990()
       {
         do /*0x402a35*/
         {
-          v5 = AudioQueue::IteratorNext((AudioQueue *)&v12); /*0x402a2a*/
+          v5 = ((AudioQueue *)&v12)->IteratorNext(); /*0x402a2a*/
           AudioStream::Destructor(v4); /*0x402a2c*/
           v4 = (AudioStream *)v5; /*0x402a33*/
         }
@@ -516,15 +516,15 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     v12 = v4->u32_C; /*0x402cef*/
     v8 = (int *)operator new(0x1E8u); /*0x402cf8*/
     memset(v8, 0, 0x1E8u); /*0x402d03*/
-    DListNode::InitEmpty(v8); /*0x402d0a*/
+    (v8)->InitEmpty(); /*0x402d0a*/
     v8[6] = (int)v4; /*0x402d13*/
     v8[7] = v10; /*0x402d16*/
     v8[4] = 0; /*0x402d19*/
     ++v4->u32_10; /*0x402d20*/
     v4[v10 + 7] = (int)v8; /*0x402d27*/
     v8[116] = *(unsigned int *)(v12 + 36); /*0x402d34*/
-    DListNode::Init(v8 + 62); /*0x402d3a*/
-    AudioMixer::Init(v8 + 26); /*0x402d42*/
+    (v8 + 62)->Init(); /*0x402d3a*/
+    (v8 + 26)->Init(); /*0x402d42*/
     v8[65] = 0; /*0x402d47*/
     v8[67] = (int)ProcessAudioMixerFrame; /*0x402d4d*/
     v8[68] = 0; /*0x402d57*/
@@ -556,10 +556,10 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     v8[71] = 0; /*0x402e1d*/
     v8[76] = 165; /*0x402e23*/
     v8[77] = 0; /*0x402e29*/
-    AudioStream::Reset(v8 + 92); /*0x402e37*/
+    (v8 + 92)->Reset(); /*0x402e37*/
     CoordBounds::Constructor(v8 + 92, 33, 0); /*0x402e40*/
-    Struct::ZeroInit32(v8 + 17); /*0x402e4a*/
-    Struct::ZeroInit32(v8 + 9); /*0x402e52*/
+    (v8 + 17)->ZeroInit32(); /*0x402e4a*/
+    (v8 + 9)->ZeroInit32(); /*0x402e52*/
     if ( a2 ) /*0x402e5d*/
       memcpy(v8 + 17, a2, 0x20u); /*0x402e64*/
     if ( (*(int (__thiscall **)(int *))(v12 + 28))(v8) ) /*0x402e6c*/
@@ -675,7 +675,7 @@ void sub_403FA0(ObjectClass * a1)
             v4 = &v2->owningHouseIndex; /*0x403fdd*/
             do /*0x403ff9*/
             {
-              RefCount::Decrement(*v4); /*0x403fe2*/
+              (*v4)->Decrement(); /*0x403fe2*/
               *v4 = 0; /*0x403fe7*/
               ++v1; /*0x403ff3*/
               ++v4; /*0x403ff4*/
@@ -809,11 +809,11 @@ int Audio_Process()
       DListNode_field_0x04 = v3[4].DListNode_field_0x04; /*0x40421c*/
       if ( *(unsigned int *)(DListNode_field_0x04 + 152) != dword_87E2AC ) /*0x40422b*/
       {
-        DListNode::Init((DListNode *)(DListNode_field_0x04 + 140)); /*0x404233*/
+        ((DListNode *)(DListNode_field_0x04 + 140))->Init(); /*0x404233*/
         *(unsigned int *)(v3[4].DListNode_field_0x04 + 68) = 0; /*0x40423b*/
         *(unsigned int *)(v3[4].DListNode_field_0x04 + 152) = dword_87E2AC; /*0x40424b*/
       }
-      Audio::InitChannels(v3[23].__pad_0); /*0x404257*/
+      (v3[23].__pad_0)->InitChannels(); /*0x404257*/
       if ( v3[3].DListNode_field_0x04 != 4 ) /*0x404262*/
       {
         v5 = v3[4].DListNode_field_0x04; /*0x404268*/
@@ -842,7 +842,7 @@ int Audio_Process()
             }
           }
         }
-        DListNode::InitEmpty((DListNode *)((char *)v3 + 12)); /*0x4042d4*/
+        ((DListNode *)((char *)v3 + 12))->InitEmpty(); /*0x4042d4*/
         InsertAfterDListNode((int)i, &v3[1].DListNode_field_0x04); /*0x4042e2*/
         v10 = *(unsigned int *)(v5 + 72); /*0x4042ea*/
         v11 = *(unsigned int *)(v5 + 68) + 1; /*0x4042ed*/
@@ -854,7 +854,7 @@ int Audio_Process()
           if ( (*(unsigned char *)(v12 + 24) & 1) == 0 ) /*0x404310*/
           {
             ((Voice *)((Voice *)v12))->DetachChannel(); /*0x404314*/
-            Audio::ReleaseChannelRefs((Audio *)v12); /*0x40431b*/
+            ((Audio *)v12)->ReleaseChannelRefs(); /*0x40431b*/
             *(unsigned int *)(v12 + 28) = 4; /*0x404320*/
             *(unsigned int *)(v12 + 312) = 0; /*0x404329*/
             *(unsigned int *)(v12 + 632) = 0; /*0x40432f*/
@@ -888,7 +888,7 @@ int Audio_Process()
     v16 = 10; /*0x404389*/
     do /*0x404399*/
     {
-      DListNode::Init(v14); /*0x404390*/
+      (v14)->Init(); /*0x404390*/
       v14 = &v14->u32_C; /*0x404395*/
       --v16; /*0x404398*/
     }
@@ -918,7 +918,7 @@ int Audio_Process()
         v19 = &v2->owningHouseIndex; /*0x4043ea*/
         do /*0x404402*/
         {
-          RefCount::Decrement(*v19); /*0x4043ef*/
+          (*v19)->Decrement(); /*0x4043ef*/
           *v19 = 0; /*0x4043f4*/
           ++v18; /*0x4043fc*/
           ++v19; /*0x4043fd*/
@@ -960,7 +960,7 @@ int Audio_Process()
       v27 = (unsigned int *)(v21 + 164); /*0x40452f*/
       *(unsigned int *)(v21 + 156) = dword_87E2B0; /*0x404535*/
       *(unsigned int *)(v21 + 176) = v25; /*0x40453b*/
-      DListNode::InitEmpty((DListNode *)(v21 + 164)); /*0x404543*/
+      ((DListNode *)(v21 + 164))->InitEmpty(); /*0x404543*/
   LABEL_53:
       v29 = v27; /*0x404548*/
       v30 = v23 + 12 * v25; /*0x40454d*/
@@ -995,7 +995,7 @@ int Audio_Process()
   v31 = 0x190000u / v42; /*0x404577*/
   LABEL_59:
   RequestBufferMixer((unsigned int *)&stru_87E1B8, v31); /*0x404580*/
-  result = Audio::InitChannels((char *)&stru_87E1B8); /*0x40458f*/
+  result = ((char *)&stru_87E1B8)->InitChannels(); /*0x40458f*/
   v32 = *(DListNode **)g_AudioStreamObject; /*0x404594*/
   if ( *(DListNode **)g_AudioStreamObject == &g_AudioStreamObject ) /*0x4045a0*/
   {
@@ -1013,7 +1013,7 @@ int Audio_Process()
         if ( !result ) /*0x4045c2*/
         {
           PrefetchAudioSamples((ObjectClass *)v32); /*0x4045ca*/
-          v33 = AudioStream::SetupPlayback((AudioStream *)v32); /*0x4045d1*/
+          v33 = ((AudioStream *)v32)->SetupPlayback(); /*0x4045d1*/
           *v32->q0A4.__pad_0 = v33; /*0x4045d8*/
           if ( !v33 ) /*0x4045de*/
           {
@@ -1044,19 +1044,19 @@ int Audio_Process()
                 break; /*0x40464d*/
               v41 = *(DListNode **)v32->vtable1; /*0x404651*/
               PrefetchAudioSamples((ObjectClass *)v32); /*0x404657*/
-              v38 = AudioStream::SetupPlayback((AudioStream *)v32); /*0x40465e*/
+              v38 = ((AudioStream *)v32)->SetupPlayback(); /*0x40465e*/
               *v32->q0A4.__pad_0 = v38; /*0x404665*/
             }
             while ( !v38 ); /*0x40466b*/
           }
-          v39 = AudioStream::SetupPlayback((AudioStream *)v32); /*0x404673*/
+          v39 = ((AudioStream *)v32)->SetupPlayback(); /*0x404673*/
           *v32->q0A4.__pad_0 = v39; /*0x40467a*/
-          if ( !v39 || (result = Audio::UpdatePlaybackPosition((Audio *)v32)) == 0 ) /*0x40468d*/
+          if ( !v39 || (result = ((Audio *)v32)->UpdatePlaybackPosition()) == 0 ) /*0x40468d*/
           {
             if ( (v32[3].__pad_0[0] & 1) == 0 ) /*0x404693*/
             {
               ((Voice *)((Voice *)v32))->DetachChannel(); /*0x404697*/
-              Audio::ReleaseChannelRefs((Audio *)v32); /*0x40469e*/
+              ((Audio *)v32)->ReleaseChannelRefs(); /*0x40469e*/
               v32[3].DListNode_field_0x04 = 4; /*0x4046a3*/
               *v32->location.__pad_0 = 0; /*0x4046aa*/
               *v32->u32_13C.__pad_0 = 0; /*0x4046b0*/

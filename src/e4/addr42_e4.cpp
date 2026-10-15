@@ -485,7 +485,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
   }
   AudioController::Stop(&this->AudioController_1B4); /*0x424d43*/
   if ( !*(unsigned int *)(this->missionTimer[0] + 664) ) /*0x424d4e*/
-    CreateUnitOnCompletion(this); /*0x424d5a*/
+    (this)->CreateUnitOnCompletion(); /*0x424d5a*/
   LOBYTE(v3) = this->ironCurtainTimer[2]; /*0x424d5f*/
   if ( !(unsigned char)v3 ) /*0x424d67*/
   {
@@ -533,9 +533,9 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
           *&dword_8871E0->u32_FA8,
           0,
           0);
-        House::AnnounceUpgrade((int)v5, -1); /*0x424eda*/
+        ((int)v5)->AnnounceUpgrade(-1); /*0x424eda*/
         p_smudgeTypeIndex = &v5->u32_568; /*0x424edf*/
-        Cell::SetRadar((Cell *)&dword_87F7E8, p_smudgeTypeIndex); /*0x424ee8*/
+        ((Cell *)&dword_87F7E8)->SetRadar(p_smudgeTypeIndex); /*0x424ee8*/
         Radar::Update((Radar *)&dword_87F7E8, p_smudgeTypeIndex); /*0x424ef3*/
       }
     }
@@ -574,7 +574,7 @@ unsigned int * ObjectClass::CreateUnitOnCompletion_addr42(TechnoClass *self)
   LOWORD(v17) = *v2 / 256; /*0x424f25*/
   HIWORD(v17) = v2[1] / 256; /*0x424f3e*/
   *(unsigned int *)v19 = v17; /*0x424f4b*/
-  v3 = (int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v19); /*0x424f50*/
+  v3 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v19); /*0x424f50*/
   vtable0 = this->vtable0; /*0x424f55*/
   v5 = 30; /*0x424f57*/
   v21 = v3; /*0x424f5e*/

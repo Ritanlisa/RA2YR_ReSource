@@ -195,7 +195,7 @@ int MPCooperative::WriteCoopSaveINI()
   CCFileClass::Construct(&v19, g_Str_File_coopsave_ini); /*0x49be70*/
   v15.sectionHead = 0; /*0x49be79*/
   v15.sectionHead = 0; /*0x49be7d*/
-  INISectionList::Constructor((INISectionList *)&v15.sectionHead); /*0x49be81*/
+  ((INISectionList *)&v15.sectionHead)->Constructor(); /*0x49be81*/
   Node::Init((Node *)&v15.sectionHead); /*0x49be8a*/
   v15.sectionHead = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
@@ -272,13 +272,13 @@ int MPCooperative::WriteCoopSaveINI()
   v18 = 0; /*0x49c062*/
   Vector::Clear((int)v17); /*0x49c069*/
   *(unsigned int *)v16.CDFileClass = &off_7E1668; /*0x49c077*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x49c07b*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v15); /*0x49c084*/
+  ((BufferIOFileClass *)&v16)->Dtor(); /*0x49c07b*/
+  ((INIClass *)&v15)->DestroyHashTableINIClass(); /*0x49c084*/
   *(unsigned int *)v19.CDFileClass = &vt_CCFileClass; /*0x49c090*/
   v21 = 0; /*0x49c097*/
   Vector::Clear((int)v20); /*0x49c09e*/
   *(unsigned int *)v19.CDFileClass = &off_7E1668; /*0x49c0aa*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x49c0b1*/
+  ((BufferIOFileClass *)&v19)->Dtor(); /*0x49c0b1*/
   return 1; /*0x49c0b7*/
 
 }
@@ -344,7 +344,7 @@ int MPCooperative::ReadCoopSaveINI()
   CCFileClass::Construct(v16, g_Str_File_coopsave_ini); /*0x49d14b*/
   v19[1] = 0; /*0x49d159*/
   v19[2] = 0; /*0x49d15d*/
-  INISectionList::Constructor(v20); /*0x49d164*/
+  (v20)->Constructor(); /*0x49d164*/
   Node::Init(v21); /*0x49d170*/
   v21[5] = 0; /*0x49d183*/
   v22 = 0; /*0x49d18a*/
@@ -352,12 +352,12 @@ int MPCooperative::ReadCoopSaveINI()
   if ( !CCINIClass::Load(v19, (int)v16, 0, 0) ) /*0x49d19d*/
   {
     CCFileClass::Reset(v16); /*0x49d1aa*/
-    HashTable::DestroyHashTableINIClass(v19); /*0x49d1b3*/
+    (v19)->DestroyHashTableINIClass(); /*0x49d1b3*/
     v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d1bc*/
     v18 = 0; /*0x49d1c4*/
     Vector::Clear((int)v17); /*0x49d1c8*/
     v16[0] = (unsigned int)(&off_7E1668); /*0x49d1d1*/
-    BufferIOFileClass::Dtor(v16); /*0x49d1d9*/
+    (v16)->Dtor(); /*0x49d1d9*/
     return 0; /*0x49d1e9*/
   }
   CCFileClass::Reset(v16); /*0x49d1ef*/
@@ -422,12 +422,12 @@ int MPCooperative::ReadCoopSaveINI()
   g_IsWindowed[v10] = 0; /*0x49d30c*/
   strcat(v23, g_IsWindowed); /*0x49d331*/
   v15 = INIClass::BinarySearchSection((int)v19, (unsigned __int8 *)v23) != 0; /*0x49d354*/
-  HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
+  (v19)->DestroyHashTableINIClass(); /*0x49d357*/
   v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d360*/
   v18 = 0; /*0x49d368*/
   Vector::Clear((int)v17); /*0x49d36c*/
   v16[0] = (unsigned int)(&off_7E1668); /*0x49d375*/
-  BufferIOFileClass::Dtor(v16); /*0x49d37d*/
+  (v16)->Dtor(); /*0x49d37d*/
   return v15; /*0x49d1de*/
 
 }
@@ -454,7 +454,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   int v24; // edx
 
   ((MultiplayerGameMode *)this)->Construct( aP1, aP2, aP3, aP4, 0, aP6); /*0x5c1494*/
-  AbstractClass::updateAnimationState(&this->q058, 0, 0); /*0x5c14a0*/
+  (&this->q058)->updateAnimationState(0, 0); /*0x5c14a0*/
   this->q058 = (unsigned int)(&vt_DynamicVectorClass); /*0x5c14a5*/
   this->u32_6C = (void *)10; /*0x5c14ab*/
   this->q068 = 0; /*0x5c14b2*/
@@ -687,7 +687,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1, void *a3)
     v4 = *(void **)(v3 + 4 * i); /*0x5c18b5*/
     if ( v4 ) /*0x5c18ba*/
     {
-      Array::Cleanup(*(Array **)(v3 + 4 * i)); /*0x5c18be*/
+      (*(Array **)(v3 + 4 * i))->Cleanup(); /*0x5c18be*/
       __3_YAXPAX_Z(v4); /*0x5c18c4*/
     }
   }
@@ -703,10 +703,10 @@ int MPCooperative::Read(void *a1_1, void *a2_1, void *a3)
   {
     v8 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c190b*/
     if ( v8 ) /*0x5c1915*/
-      v9 = MissionClass::Init(v8); /*0x5c191e*/
+      v9 = (v8)->Init(); /*0x5c191e*/
     else
       v9 = 0; /*0x5c1922*/
-    Movie::SetupScreen((int)v9, j); /*0x5c1927*/
+    ((int)v9)->SetupScreen(j); /*0x5c1927*/
     v10 = p_MPCooperative_field_0x324->Capacity; /*0x5c192c*/
     if ( p_MPCooperative_field_0x324->q010 >= v10 ) /*0x5c1934*/
     {

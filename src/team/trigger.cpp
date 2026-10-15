@@ -37,9 +37,9 @@ bool TriggerClass::HasCrossesHorizontalLineEvent() const
   nextTrigger = this->nextTrigger; /*0x726253*/
   buildingType = (HouseClass *)this->buildingType; /*0x726256*/
   if ( !nextTrigger ) /*0x72625b*/
-    return HouseClass::HasType25Building(buildingType); /*0x72627d*/
-  return (uint8_t)HouseClass::HasType25Building(buildingType) /*0x726274*/
-      || TriggerClass::HasCrossesHorizontalLineEvent(this->nextTrigger);
+    return (buildingType)->HasType25Building(); /*0x72627d*/
+  return (uint8_t)(buildingType)->HasType25Building() /*0x726274*/
+      || (this->nextTrigger)->HasCrossesHorizontalLineEvent();
 }
 // 0x726290
 bool TriggerClass::HasCrossesVerticalLineEvent() const
@@ -50,9 +50,9 @@ bool TriggerClass::HasCrossesVerticalLineEvent() const
   nextTrigger = this->nextTrigger; /*0x726293*/
   buildingType = (HouseClass *)this->buildingType; /*0x726296*/
   if ( !nextTrigger ) /*0x72629b*/
-    return HouseClass::HasType26Building(buildingType); /*0x7262bd*/
-  return (uint8_t)HouseClass::HasType26Building(buildingType) /*0x7262b4*/
-      || TriggerClass::HasCrossesVerticalLineEvent(this->nextTrigger);
+    return (buildingType)->HasType26Building(); /*0x7262bd*/
+  return (uint8_t)(buildingType)->HasType26Building() /*0x7262b4*/
+      || (this->nextTrigger)->HasCrossesVerticalLineEvent();
 }
 bool TriggerClass::HasZoneEntryByEvent() const
 {
@@ -91,8 +91,8 @@ void TriggerClass::NotifyGlobalChanged(int idx_global)
 
   for ( i = this; i; i = i->nextTrigger ) /*0x7263a5*/
   {
-    if ( HouseClass::FindType2728((HouseClass *)i->buildingType, idx_global) ) /*0x7263b0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)i); /*0x7263bb*/
+    if ( ((HouseClass *)i->buildingType)->FindType2728(idx_global) ) /*0x7263b0*/
+      ((BuildingClass *)i)->ProcessUpgradeEffects(); /*0x7263bb*/
   }
 }
 // 0x7263d0
@@ -102,8 +102,8 @@ void TriggerClass::NotifyLocalChanged(int idx_local)
 
   for ( i = this; i; i = i->nextTrigger ) /*0x7263d5*/
   {
-    if ( TriggerTypeClass::HasLocalSetOrClearedEvent(i->buildingType, idx_local) ) /*0x7263e0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)i); /*0x7263eb*/
+    if ( (i->buildingType)->HasLocalSetOrClearedEvent(idx_local) ) /*0x7263e0*/
+      ((BuildingClass *)i)->ProcessUpgradeEffects(); /*0x7263eb*/
   }
 }
 void TriggerClass::ResetTimers()
@@ -138,12 +138,12 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire
   {
     if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
       || (v11 = source,
-          Owner = HouseClass::FindOwner(*(HouseClass **)(this->buildingType->House + 180)),
+          Owner = (*(HouseClass **)(this->buildingType->House + 180))->FindOwner(),
           TEventClass::Execute((int)((TEventClass *)v8), event, Owner, object, (int *)(&this->abstractFlags2), (int)&persistent, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
         this->house = TriggerClass::GetValue(v8); /*0x726561*/
-      if ( persistent && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
+      if ( persistent && ((TEventClass *)v8)->GetStateA() && ((TEventClass *)v8)->GetStateB_SpyEvent() ) /*0x726579*/
         this->occuredEvents |= 1 << v7; /*0x726582*/
     }
     else
@@ -158,7 +158,7 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire
   {
   LABEL_16:
     if ( persistent ) /*0x7265a0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)this); /*0x7265a4*/
+      ((BuildingClass *)this)->ProcessUpgradeEffects(); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
 }
@@ -209,17 +209,17 @@ TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
   FirstEvent = (gamemd::TEventClass *)(this->FirstEvent); /*0x7271e5*/
   for ( i = 0; FirstEvent; i |= ActionCategoryFlags ) /*0x7271ef*/
   {
-    ActionCategoryFlags = TriggerTypeClass::GetActionCategoryFlags((TriggerTypeClass *)FirstEvent->TEventClass_field_2C); /*0x7271f4*/
+    ActionCategoryFlags = ((TriggerTypeClass *)FirstEvent->TEventClass_field_2C)->GetActionCategoryFlags(); /*0x7271f4*/
     FirstEvent = (TEventClass *)FirstEvent->TEventClass_field_28; /*0x7271f9*/
   }
   for ( j = this->FirstAction; j; i |= v6 ) /*0x72720a*/
   {
-    v6 = TriggerTypeClass::Dispatch((TriggerTypeClass *)j->TActionClass_field_2C); /*0x72720f*/
+    v6 = ((TriggerTypeClass *)j->TActionClass_field_2C)->Dispatch(); /*0x72720f*/
     j = (TActionClass *)j->TActionClass_field_28; /*0x727214*/
   }
   NextTrigger = (gamemd::TriggerTypeClass *)(this->NextTrigger); /*0x72721d*/
   if ( NextTrigger ) /*0x727225*/
-    return i | TriggerTypeClass::GetFlags(NextTrigger); /*0x72722c*/
+    return i | (NextTrigger)->GetFlags(); /*0x72722c*/
   else
     return i; /*0x727232*/
 }

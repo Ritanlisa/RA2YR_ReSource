@@ -177,7 +177,7 @@ int TacticalMap::Redraw()
   }
   if ( *(unsigned int *)&DataGlobal_A8EE70 ) /*0x4f454f*/
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_A8EB00.?[880] + 44))(*(unsigned int *)&stru_A8EB00.?[880], 0); /*0x4f4555*/
-  TacticalMap::DrawCursor((TacticalMap *)&g_GameNetworkObject); /*0x4f455d*/
+  ((TacticalMap *)&g_GameNetworkObject)->DrawCursor(); /*0x4f455d*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x4f456a*/
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&g_TacticalRender + 12))( /*0x4f4570*/
       *(unsigned int *)&g_TacticalRender,
@@ -269,7 +269,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   float v4; // [esp+0h] [ebp-10h]
   float v5; // [esp+0h] [ebp-10h]
 
-  AbstractClass::Constructor((AbstractClass *)a1); /*0x6d1c25*/
+  ((AbstractClass *)a1)->Constructor(); /*0x6d1c25*/
   a1->Tactical_field_0xA8 = (IUnknown *)-1; /*0x6d1c2c*/
   a1->__pad_AC[0] = 0; /*0x6d1c36*/
   a1->__pad_AC[1] = 0; /*0x6d1c3c*/
@@ -316,7 +316,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   *(unsigned int *)&a1->__pad_34[112] = -1; /*0x6d1d7d*/
   Matrix3x4::Identity((Matrix3x4 *)&a1->Tactical_field_0xDB4); /*0x6d1d87*/
   v3 = dbl_B0CD88; /*0x6d1d95*/
-  Matrix3x3::RotateX((int *)&a1->Tactical_field_0xDB4, v3); /*0x6d1d98*/
+  ((int *)&a1->Tactical_field_0xDB4)->RotateX(v3); /*0x6d1d98*/
   v4 = dbl_B0CE98; /*0x6d1da6*/
   Matrix2D::Rotate((int *)&a1->Tactical_field_0xDB4, v4); /*0x6d1da9*/
   v5 = 60.0 / dbl_B0CD78; /*0x6d1dbb*/
@@ -394,7 +394,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v25 = DSurface_ViewBounds.field_0; /*0x6d2be7*/
           v23 = *(unsigned int *)&g_DSurface_WindowOffset; /*0x6d2bf5*/
           v22 = *(unsigned int *)g_Map_VisibleRectOffset; /*0x6d2bfa*/
-          v8 = Coord2D::Sub(&v28, v29, &v25); /*0x6d2c05*/
+          v8 = (&v28)->Sub(v29, &v25); /*0x6d2c05*/
           v9 = (int *)(Rect::Construct(&v35, v8, v22, v23)); /*0x6d2c0f*/
           v34[0] = *v9; /*0x6d2c18*/
           v34[1] = v9->Y; /*0x6d2c21*/
@@ -412,7 +412,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v11[3] = v33; /*0x6d2c80*/
           if ( v32 > 0 && v33 > 0 ) /*0x6d2c91*/
           {
-            TacticalMap::FillScanlinesOpaque((TacticalMap *)g_ZBufferDescriptor, v30, v31, v32, v33); /*0x6d2cee*/
+            ((TacticalMap *)g_ZBufferDescriptor)->FillScanlinesOpaque(v30, v31, v32, v33); /*0x6d2cee*/
           }
           else if ( v6 < g_CraterCreationState ) /*0x6d2c9a*/
           {
@@ -456,7 +456,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
       *(unsigned int *)v28.__pad_000 = *v20 - this->u32_B0 + DSurface_ViewBounds.field_0 - 30; /*0x6d2d8d*/
       v28.q004 = (int)DSurface_ViewBounds.field_4 + v21 - 15; /*0x6d2d9c*/
       if ( g_hWnd ) /*0x6d2da0*/
-        DSurface::Process((int)*v18, (int *)v28.__pad_000, (int *)a2); /*0x6d2db1*/
+        ((int)*v18)->Process((int *)v28.__pad_000, (int *)a2); /*0x6d2db1*/
       result = this->u32_E0; /*0x6d2db6*/
       ++v17; /*0x6d2dbc*/
       ++v18; /*0x6d2dbd*/

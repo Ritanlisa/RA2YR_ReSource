@@ -133,7 +133,7 @@ int WinModemClass::ReadBytes(unsigned char *a2, int a3)
   int v7; // ebp
   void (*v8)(void); // eax
 
-  if ( !WinModemClass::ReadSerial((int)this) ) /*0x774b37*/
+  if ( !((int)this)->ReadSerial() ) /*0x774b37*/
     return 0; /*0x774ba9*/
   v4 = this->u32_58 - this->u32_54; /*0x774b46*/
   v5 = v4 + (v4 < 0 ? 0x2000 : 0);
@@ -380,9 +380,9 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   LOWORD(i) = a3; /*0x77512a*/
   strcpy(Buffer, a2); /*0x77514b*/
   strcat(Buffer, (const char *)&i); /*0x77517a*/
-  WinModemClass::ReadBytes(this, v32, 80); /*0x77518d*/
+  (this)->ReadBytes(v32, 80); /*0x77518d*/
   Sleep(0x64u); /*0x775194*/
-  WinModemClass::ReadBytes(this, v32, 80); /*0x7751a6*/
+  (this)->ReadBytes(v32, 80); /*0x7751a6*/
   for ( i = 0; i < a7; ++i ) /*0x7751bc*/
   {
     Ticks = Timer::GetTicks(); /*0x7751d1*/

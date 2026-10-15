@@ -279,14 +279,14 @@ LABEL_22:
           if ( a2 == TEventClass_field_2C ) /*0x71f1bf*/
           {
             v53 = (HouseClass *)this->TEventClass_field_34; /*0x71f1c1*/
-            if ( v53 == (HouseClass *)-1 || HouseClass::FindOwner(v53) ) /*0x71f1c9*/
+            if ( v53 == (HouseClass *)-1 || (v53)->FindOwner() ) /*0x71f1c9*/
             {
               if ( a4 ) /*0x71f1d8*/
               {
                 v54 = (HouseClass *)this->TEventClass_field_34; /*0x71f1da*/
                 if ( v54 == (HouseClass *)-1 /*0x71f1f5*/
                   || (v55 = (*(int (**)(int))(*(unsigned int *)a4 + 56))(a4),
-                      v55 == *(unsigned int *)(HouseClass::FindOwner(v54) + 48)) )
+                      v55 == *(unsigned int *)((v54)->FindOwner() + 48)) )
                 {
                   *(unsigned char *)a6 = 1; /*0x71f1ff*/
                   this->TEventClass_field_54 = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
@@ -308,12 +308,12 @@ LABEL_139:
               v29 = (HouseClass *)this->TEventClass_field_34; /*0x71ecf5*/
               if ( v29 != (HouseClass *)-1 ) /*0x71ecfb*/
               {
-                if ( HouseClass::FindOwner(v29) ) /*0x71ed01*/
+                if ( (v29)->FindOwner() ) /*0x71ed01*/
                 {
                   if ( (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
                   {
                     v30 = (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
-                    if ( *(unsigned int *)(v30 + 48) == *(unsigned int *)(HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34) /*0x71ed40*/
+                    if ( *(unsigned int *)(v30 + 48) == *(unsigned int *)(((HouseClass *)this->TEventClass_field_34)->FindOwner() /*0x71ed40*/
                                                             + 48) )
                     {
                       *(unsigned char *)a6 = 1; /*0x71ed4d*/
@@ -459,7 +459,7 @@ LABEL_112:
             auxParticles1 = FootClass_Array.?; /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
-            if ( !DynamicVector::GetOrGrow(&a3->DynamicVector_5550, this->TEventClass_field_34) ) /*0x71efb9*/
+            if ( !(&a3->DynamicVector_5550)->GetOrGrow(this->TEventClass_field_34) ) /*0x71efb9*/
               goto LABEL_139; /*0x71efb9*/
             *(unsigned char *)a6 = 1; /*0x71efc3*/
             goto LABEL_122; /*0x71efc6*/
@@ -469,7 +469,7 @@ LABEL_112:
             LOBYTE(v18) = 0; /*0x71ef36*/
             return v18; /*0x71ef3c*/
           case 57: /*0x71eea2*/
-            if ( DynamicVector::GetOrGrow(&a3->DynamicVector_5550, this->TEventClass_field_34) ) /*0x71efd5*/
+            if ( (&a3->DynamicVector_5550)->GetOrGrow(this->TEventClass_field_34) ) /*0x71efd5*/
               goto LABEL_139; /*0x71efdc*/
             *(unsigned char *)a6 = 1; /*0x71efe6*/
             goto LABEL_122; /*0x71efe9*/
@@ -500,7 +500,7 @@ LABEL_91:
         }
       }
 LABEL_122:
-      Owner = HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34); /*0x71f069*/
+      Owner = ((HouseClass *)this->TEventClass_field_34)->FindOwner(); /*0x71f069*/
       if ( Owner ) /*0x71f075*/
       {
         switch ( this->TEventClass_field_2C ) /*0x71f092*/
@@ -516,9 +516,9 @@ LABEL_122:
             LOBYTE(v18) = 0; /*0x71f10c*/
             return v18; /*0x71f112*/
           case 9: /*0x71f092*/
-            if ( VectorClass::GetCount((VectorClass *)(Owner + 21860)) > 0 ) /*0x71f13c*/
+            if ( ((VectorClass *)(Owner + 21860))->GetCount() > 0 ) /*0x71f13c*/
               goto LABEL_139; /*0x71f13c*/
-            if ( VectorClass::GetCount((VectorClass *)(Owner + 21880)) <= 0 ) /*0x71f14b*/
+            if ( ((VectorClass *)(Owner + 21880))->GetCount() <= 0 ) /*0x71f14b*/
               break; /*0x71f14b*/
             LOBYTE(v18) = 0; /*0x71f150*/
             return v18; /*0x71f156*/
@@ -529,8 +529,8 @@ LABEL_122:
             return v18; /*0x71f12c*/
           case 0xB: /*0x71f092*/
             if ( *(int *)(Owner + 752) <= 0 /*0x71f1af*/
-              && VectorClass::GetCount((VectorClass *)(Owner + 21860)) <= 0
-              && VectorClass::GetCount((VectorClass *)(Owner + 21880)) <= 0 )
+              && ((VectorClass *)(Owner + 21860))->GetCount() <= 0
+              && ((VectorClass *)(Owner + 21880))->GetCount() <= 0 )
             {
               break; /*0x71f1af*/
             }
@@ -763,7 +763,7 @@ void * TEventClass::Fire(void ** Block, char a2)
       ++v5; /*0x71fb6f*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)Block); /*0x71fb83*/
+  ((AbstractClass *)Block)->DTOR(); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
     __3_YAXPAX_Z(Block); /*0x71fb90*/
   return &Block->AbstractClass; /*0x71fb9a*/
@@ -780,7 +780,7 @@ int TEventClass::ProcessEvent(int a2)
   int TEventClass_field_30; // eax
   int v6; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x71f829*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x71f829*/
   TEventClass_field_28 = (int)(this->TEventClass_field_28); /*0x71f82e*/
   if ( TEventClass_field_28 ) /*0x71f833*/
   {

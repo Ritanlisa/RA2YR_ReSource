@@ -40,9 +40,9 @@ int Mixer::ReleaseChannel(void *a1)
       v4 = *(unsigned int *)(Mixer_field_00 + 176); /*0x4060a7*/
       if ( v4 && Mixer_field_00 == v4->u32_C0 ) /*0x4060b7*/
       {
-        AudioFile::GetCallback(*(AudioFile **)(Mixer_field_00 + 176)); /*0x4060bb*/
+        (*(AudioFile **)(Mixer_field_00 + 176))->GetCallback(); /*0x4060bb*/
         *(unsigned int *)(Mixer_field_00 + 24) |= 0x60u; /*0x4060c6*/
-        result = AudioStream::Stop(*(AudioStream **)(Mixer_field_00 + 176)); /*0x4060cf*/
+        result = (*(AudioStream **)(Mixer_field_00 + 176))->Stop(); /*0x4060cf*/
         this->Mixer_field_00 = 0; /*0x4060d4*/
         this->u32_8 = 0; /*0x4060d6*/
         return result; /*0x4060dc*/

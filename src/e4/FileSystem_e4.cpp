@@ -122,7 +122,7 @@ LABEL_19:
     {
       v11 = 65 * v9++; /*0x626e7d*/
       v12 = (Flag *)(*(unsigned int *)(v10 + 4) + 4 * v11); /*0x626e80*/
-      if ( !(unsigned __int8)Flag::IsZero(v12) ) /*0x626e85*/
+      if ( !(unsigned __int8)(v12)->IsZero() ) /*0x626e85*/
         break; /*0x626e85*/
       if ( v9 >= *(unsigned int *)(v10 + 16) ) /*0x626e91*/
         goto LABEL_19; /*0x626e91*/
@@ -171,7 +171,7 @@ LABEL_36:
             {
               v24 = 65 * v9++; /*0x626f8d*/
               v25 = (Flag *)(*(unsigned int *)(v23 + 4) + 4 * v24); /*0x626f90*/
-              if ( !(unsigned __int8)Flag::IsZero(v25) ) /*0x626f95*/
+              if ( !(unsigned __int8)(v25)->IsZero() ) /*0x626f95*/
                 break; /*0x626f95*/
               if ( v9 >= *(unsigned int *)(v23 + 16) ) /*0x626fa1*/
               {
@@ -181,7 +181,7 @@ LABEL_36:
             }
             if ( !v25 ) /*0x626fc0*/
               break; /*0x626fc0*/
-            v26 = FileSystem::openFile(*(FileSystem **)&g_FileExtensionState[12], v25->__pad_0); /*0x626fcb*/
+            v26 = (*(FileSystem **)&g_FileExtensionState[12])->openFile(v25->__pad_0); /*0x626fcb*/
             if ( !v26 ) /*0x626fd2*/
               break; /*0x626fd2*/
           }
@@ -203,7 +203,7 @@ void FileSystem::InitPipShapes()
   if ( !FileSystem_PIPBRD_SHP ) /*0x5f76ba*/
   {
     RawFileClass::Construct(v0, (int)aPipbrdShp); /*0x5f76c5*/
-    FileSystem_PIPBRD_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f76da*/
+    FileSystem_PIPBRD_SHP = (int)(v0)->ReadEntireFile(); /*0x5f76da*/
     byte_AC1488 = FileSystem_PIPBRD_SHP != 0; /*0x5f76df*/
     if ( !FileSystem_PIPBRD_SHP ) /*0x5f76e5*/
       FileSystem_PIPBRD_SHP = (int)(SearchMIXFile(aPipbrdShp, 0)); /*0x5f76f3*/
@@ -212,7 +212,7 @@ void FileSystem::InitPipShapes()
   if ( !FileSystem_PIPS_SHP ) /*0x5f7708*/
   {
     RawFileClass::Construct(v0, (int)aPipsShp); /*0x5f7713*/
-    FileSystem_PIPS_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7728*/
+    FileSystem_PIPS_SHP = (int)(v0)->ReadEntireFile(); /*0x5f7728*/
     byte_AC1489 = FileSystem_PIPS_SHP != 0; /*0x5f772d*/
     if ( !FileSystem_PIPS_SHP ) /*0x5f7733*/
       FileSystem_PIPS_SHP = (int)(SearchMIXFile(aPipsShp, 0)); /*0x5f7741*/
@@ -221,7 +221,7 @@ void FileSystem::InitPipShapes()
   if ( !FileSystem_PIPS2_SHP ) /*0x5f7756*/
   {
     RawFileClass::Construct(v0, (int)aPips2Shp); /*0x5f7761*/
-    FileSystem_PIPS2_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7776*/
+    FileSystem_PIPS2_SHP = (int)(v0)->ReadEntireFile(); /*0x5f7776*/
     byte_AC148A = FileSystem_PIPS2_SHP != 0; /*0x5f777b*/
     if ( !FileSystem_PIPS2_SHP ) /*0x5f7781*/
       FileSystem_PIPS2_SHP = (int)(SearchMIXFile(aPips2Shp, 0)); /*0x5f778f*/
@@ -230,7 +230,7 @@ void FileSystem::InitPipShapes()
   if ( !FileSystem_TALKBUBL_SHP ) /*0x5f77a4*/
   {
     RawFileClass::Construct(v0, (int)aTalkbublShp); /*0x5f77af*/
-    FileSystem_TALKBUBL_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f77c4*/
+    FileSystem_TALKBUBL_SHP = (int)(v0)->ReadEntireFile(); /*0x5f77c4*/
     byte_AC148B = FileSystem_TALKBUBL_SHP != 0; /*0x5f77c9*/
     if ( !FileSystem_TALKBUBL_SHP ) /*0x5f77cf*/
       FileSystem_TALKBUBL_SHP = (int)(SearchMIXFile(aTalkbublShp, 0)); /*0x5f77dd*/
@@ -254,7 +254,7 @@ void FileSystem::CleanupTrees()
       v1 = *(void **)&DataGlobal_B0FB34; /*0x72d370*/
       if ( *(unsigned int *)&DataGlobal_B0FB34 ) /*0x72d378*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FB34); /*0x72d37c*/
+        (*(FileTreeNode **)&DataGlobal_B0FB34)->Destroy(); /*0x72d37c*/
         operator delete((void *)(v1)); /*0x72d382*/
       }
       DataGlobal_B0FC70 = 0; /*0x72d38a*/
@@ -265,7 +265,7 @@ void FileSystem::CleanupTrees()
       v2 = *(void **)&DataGlobal_B0FB00; /*0x72d39f*/
       if ( *(unsigned int *)&DataGlobal_B0FB00 ) /*0x72d3a7*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FB00); /*0x72d3ab*/
+        (*(FileTreeNode **)&DataGlobal_B0FB00)->Destroy(); /*0x72d3ab*/
         operator delete((void *)(v2)); /*0x72d3b1*/
       }
       DataGlobal_B0FC71 = 0; /*0x72d3b9*/
@@ -276,7 +276,7 @@ void FileSystem::CleanupTrees()
       v3 = *(void **)&DataGlobal_B0FB30; /*0x72d3ce*/
       if ( *(unsigned int *)&DataGlobal_B0FB30 ) /*0x72d3d6*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FB30); /*0x72d3da*/
+        (*(FileTreeNode **)&DataGlobal_B0FB30)->Destroy(); /*0x72d3da*/
         operator delete((void *)(v3)); /*0x72d3e0*/
       }
       DataGlobal_B0FC72 = 0; /*0x72d3e8*/

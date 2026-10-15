@@ -72,7 +72,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     else
     {
       if ( CChatEventSink::Check((CChatEventSink *)&g_WOL_RequestState, &v33[8], 0) ) /*0x7aa8e4*/
-        CChatEventSink::EnsureCapacity((CChatEventSink *)&g_WOL_RequestState, 0); /*0x7aa8f3*/
+        ((CChatEventSink *)&g_WOL_RequestState)->EnsureCapacity(0); /*0x7aa8f3*/
       if ( a2 < 0 ) /*0x7aa8fa*/
       {
 LABEL_103:
@@ -178,7 +178,7 @@ LABEL_103:
 LABEL_43:
             String::Assign_Bool((String *)v33, v6 + 52); /*0x7aab0c*/
             CChatEventSink::EncodeString((CChatEventSink *)v33, 39); /*0x7aab1f*/
-            String::ToLower((String *)v33); /*0x7aab28*/
+            ((String *)v33)->ToLower(); /*0x7aab28*/
             if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x7aab41*/
             {
               unknown_libname_73(&v33[24]); /*0x7aab4b*/
@@ -192,12 +192,12 @@ LABEL_51:
                   v18 = abstractFlags; /*0x7aab9c*/
                 if ( v18 >= dword_B777A4 ) /*0x7aaba4*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&dword_B777A0); /*0x7aabab*/
+                  ((DynamicVector *)&dword_B777A0)->EnsureCapacity(); /*0x7aabab*/
                   abstractFlags = dword_B777A0; /*0x7aabb0*/
                 }
                 if ( abstractFlags >= dword_B777A4 ) /*0x7aabbb*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&dword_B777A0); /*0x7aabc2*/
+                  ((DynamicVector *)&dword_B777A0)->EnsureCapacity(); /*0x7aabc2*/
                   abstractFlags = dword_B777A0; /*0x7aabc7*/
                 }
                 if ( v18 < abstractFlags ) /*0x7aabce*/
@@ -256,12 +256,12 @@ LABEL_72:
                   v23 = (int)vtable3; /*0x7aacb9*/
                 if ( v23 >= stru_B765EC.? ) /*0x7aacc1*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&dword_B765F8); /*0x7aacc8*/
+                  ((DynamicVector *)&dword_B765F8)->EnsureCapacity(); /*0x7aacc8*/
                   vtable3 = (char *)stru_B765EC.?; /*0x7aaccd*/
                 }
                 if ( (int)vtable3 >= stru_B765EC.? ) /*0x7aacd8*/
                 {
-                  DynamicVector::EnsureCapacity((DynamicVector *)&dword_B765F8); /*0x7aacdf*/
+                  ((DynamicVector *)&dword_B765F8)->EnsureCapacity(); /*0x7aacdf*/
                   vtable3 = (char *)dword_B765F8; /*0x7aace4*/
                 }
                 if ( v23 < (int)vtable3 ) /*0x7aaceb*/
@@ -312,7 +312,7 @@ LABEL_72:
             else
             {
 LABEL_87:
-              strcat(v34, String::GetOrEmpty((String *)v33)); /*0x7aad7a*/
+              strcat(v34, ((String *)v33)->GetOrEmpty()); /*0x7aad7a*/
               strcat(v34, asc_8318B8); /*0x7aadd7*/
               ++*(unsigned int *)&v33[4]; /*0x7aade5*/
             }
@@ -374,7 +374,7 @@ LABEL_88:
     }
     else
     {
-      v27 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x116); /*0x7aaf27*/
+      v27 = (ObjectClass *)((Dialog *)0x116)->FindByHandle(); /*0x7aaf27*/
       if ( v27 ) /*0x7aaf2e*/
         FillBuddyListWOL(v27); /*0x7aaf32*/
       if ( *(unsigned int *)&v33[8] ) /*0x7aaf3d*/
@@ -384,7 +384,7 @@ LABEL_88:
       else
       {
         PopulateWOLLobbyListBox(v32); /*0x7aaf3f*/
-        v28 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x7aaf49*/
+        v28 = (HWND)((Dialog *)0x113)->FindByHandle(); /*0x7aaf49*/
         v29 = v28; /*0x7aaf4e*/
         if ( v28 ) /*0x7aaf52*/
         {

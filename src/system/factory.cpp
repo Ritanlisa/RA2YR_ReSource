@@ -61,7 +61,7 @@ bool * FactoryClass::AbandonProduction()
   this->production = 0; /*0x4ca077*/
   this->isSuspended = 1; /*0x4ca07a*/
   this->u8_5D = 1; /*0x4ca07e*/
-  if ( !(uint8_t)House::IsCurrentPlayer(v8) ) /*0x4ca082*/
+  if ( !(uint8_t)(v8)->IsCurrentPlayer() ) /*0x4ca082*/
   {
     if ( (*(int (__thiscall **)(unsigned int))(**&this->q614 + 44))(this->q058) == 15 ) /*0x4ca096*/
       this->owner->baseDefenseTeamCount = -1; /*0x4ca09b*/

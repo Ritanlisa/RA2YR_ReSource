@@ -131,7 +131,7 @@ void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a
       {
         case 1697:
 LABEL_151:
-          int v70 = CountryCombo::IDToIndex((void *)nIDDlgItem);
+          int v70 = ((void *)nIDDlgItem)->IDToIndex();
           sub_4E3690((HWND)hWnd, v70);
           break;
         case 1450:

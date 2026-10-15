@@ -289,8 +289,8 @@ int ProcessRandomMapCellAdjacency()
   int64_t v15; // [esp+Ch] [ebp-10h]
   int64_t v16; // [esp+14h] [ebp-8h]
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x5a19e9*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a19f3*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x5a19e9*/
+  result = (&dword_87F7E8)->CellIteratorNext(); /*0x5a19f3*/
   for ( i = result; result; i = result )
   {
     NeighbourContent = (void *)(Cell::GetNeighbourContent((unsigned int *)i, 5u)); /*0x5a1a12*/
@@ -301,7 +301,7 @@ int ProcessRandomMapCellAdjacency()
     AdjacencyFlags = (int)(Cell::GetAdjacencyFlags(i)); /*0x5a1a46*/
     if ( AdjacencyFlags == 131 )
     {
-      if ( Cell::GetAdjacencyFlags((int)v2) != 131 || !Cell::IsEmpty(v3) ) /*0x5a1a6e*/
+      if ( Cell::GetAdjacencyFlags((int)v2) != 131 || !(v3)->IsEmpty() ) /*0x5a1a6e*/
         goto LABEL_32; /*0x5a1a6e*/
       do /*0x5a1aa3*/
       {
@@ -348,7 +348,7 @@ int ProcessRandomMapCellAdjacency()
       if ( AdjacencyFlags != 224 /*0x5a1bea*/
         || Cell::GetAdjacencyFlags((int)NeighbourContent) != 224
         || Cell::GetAdjacencyFlags((int)v14) != 224
-        || !Cell::IsEmpty((unsigned int *)i) )
+        || !((unsigned int *)i)->IsEmpty() )
       {
         goto LABEL_32; /*0x5a1bea*/
       }
@@ -363,7 +363,7 @@ int ProcessRandomMapCellAdjacency()
     }
     v7[20 * v9 + 14 + 20 * v10] = v8; /*0x5a1c45*/
   LABEL_32:
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a1c49*/
+    result = (&dword_87F7E8)->CellIteratorNext(); /*0x5a1c49*/
   }
   return result; /*0x5a1c60*/
 }
@@ -425,11 +425,11 @@ int E4Recv_5A1C70::sub_5A1C70()
     do /*0x5a1d4f*/
     {
       *(unsigned int *)v16 = *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x5a1d08*/
-      v7 = (RandomMap *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v16); /*0x5a1d11*/
+      v7 = (RandomMap *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v16); /*0x5a1d11*/
       if ( *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == -1 /*0x5a1d3b*/
         && (*(unsigned short *)(v5 + g_MissionQueueFrame.localVariables[163])
          || *(unsigned short *)(v5 + g_MissionQueueFrame.localVariables[163] + 2))
-        && ((unsigned __int8)Cell::IsGroundTypeRange((Cell *)v7) || (unsigned __int8)Cell::IsShore((Cell *)v7)) )
+        && ((unsigned __int8)((Cell *)v7)->IsGroundTypeRange() || (unsigned __int8)((Cell *)v7)->IsShore()) )
       {
         RandomMap::GenerateTerrain(v7); /*0x5a1d46*/
       }
@@ -500,8 +500,8 @@ int GenerateTerrainHeightMapInternal()
   int v17; // [esp+8h] [ebp-8h]
   int v18; // [esp+Ch] [ebp-4h]
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x5a33f9*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a3403*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x5a33f9*/
+  result = (&dword_87F7E8)->CellIteratorNext(); /*0x5a3403*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x5a340c*/
   {
     if ( CellClass::IsTerrainType((gamemd::CellClass *)(i)) ) /*0x5a3417*/
@@ -521,7 +521,7 @@ int GenerateTerrainHeightMapInternal()
         if ( v6 > v2 && v5 - (*((signed short *)(((unsigned char *)&(v17)) + 2))) < v2 && (*((signed short *)(((unsigned char *)&(v17)) + 2))) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
         {
           v7 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16));
-          if ( Cell::IsEmpty(v7) ) /*0x5a3496*/
+          if ( (v7)->IsEmpty() ) /*0x5a3496*/
           {
             v8 = 80 * ((int16_t)v16 + g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v16)) + 2)))); /*0x5a34cb*/
             *(unsigned int *)((char *)dword_ABED10 + v8 + 8) = 0; /*0x5a34ce*/
@@ -551,7 +551,7 @@ int GenerateTerrainHeightMapInternal()
         if ( v14 > v9 && (int16_t)v18 - v13 < v9 && v13 - (int16_t)v18 < v9 && v14 <= dword_ABED08 ) /*0x5a357e*/
         {
           v15 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16));
-          if ( Cell::IsEmpty(v15) ) /*0x5a3591*/
+          if ( (v15)->IsEmpty() ) /*0x5a3591*/
           {
             *((unsigned char *)dword_ABED10 + 80 * (int16_t)v16 + 80 * g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v16)) + 2))) + 69) = 1; /*0x5a35ca*/
             break; /*0x5a35ca*/
@@ -561,7 +561,7 @@ int GenerateTerrainHeightMapInternal()
       }
     }
   LABEL_24:
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a35cf*/
+    result = (&dword_87F7E8)->CellIteratorNext(); /*0x5a35cf*/
   }
   return result; /*0x5a35e6*/
 }
@@ -721,7 +721,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
     while ( v17 && v41 < v3 ) /*0x5a479f*/
     {
       v20 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v17));
-      if ( Cell::IsEmpty(v20) && !v20[57] && v20[17] == -1 && v20[59] != 3 ) /*0x5a47ec*/
+      if ( (v20)->IsEmpty() && !v20[57] && v20[17] == -1 && v20[59] != 3 ) /*0x5a47ec*/
       {
         v50 = (unsigned int)Random::State(&unk_ABE890); /*0x5a47fc*/
         if ( (double)v50 * 2.328306437080797e-10 < a3 ) /*0x5a4816*/
@@ -737,8 +737,8 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
           if ( v22 ) /*0x5a4885*/
           {
             v48 = v20[9]; /*0x5a488e*/
-            v23 = Terrain::LookupByName(Buffer); /*0x5a4892*/
-            TerrainClass::Construct(v22,(int16_t *)(*((void **)dword_A8E31C + v23)), (int16_t *)&v48); /*0x5a48aa*/
+            v23 = (Buffer)->LookupByName(); /*0x5a4892*/
+            (v22)->Construct((int16_t *)(*((void **)dword_A8E31C + v23)), (int16_t *)&v48); /*0x5a48aa*/
           }
           ++v42; /*0x5a48af*/
         }
@@ -1156,8 +1156,8 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       break; /*0x5a661f*/
     v8 = v45; /*0x5a65d1*/
   }
-  v11 = (void *)SuperWeaponTypeClass::FindByName((void *)(aNeutral)); /*0x5a6626*/
-  Owner = HouseClass::FindOwner(v11); /*0x5a6634*/
+  v11 = (void *)((void *)(aNeutral))->FindByName(); /*0x5a6626*/
+  Owner = (v11)->FindOwner(); /*0x5a6634*/
   if ( v6 > 0 )
   {
     while ( v29 < 2 * v6 && v44 > 1 )
@@ -1172,7 +1172,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
         v32 = v13; /*0x5a669c*/
       }
       while ( v13 > v12 ); /*0x5a66a0*/
-      IndexByName = BuildingTypeClass::FindIndexByName(*((void **)Block + v13)); /*0x5a66b5*/
+      IndexByName = (*((void **)Block + v13))->FindIndexByName(); /*0x5a66b5*/
       v15 = operator new(0x720u); /*0x5a66b7*/
       v16 = v15 ? BuildingClass::Construct((int)v15, *((unsigned int *)dword_A83C6C + IndexByName), Owner) : 0;
       v28 = 0; /*0x5a66db*/
@@ -1293,8 +1293,8 @@ int PlaceRandomNeutralUnits(int a1)
   double v27; // [esp+4Ch] [ebp-14h]
   unsigned int v28[3]; // [esp+54h] [ebp-Ch] BYREF
 
-  v1 = (void *)SuperWeaponTypeClass::FindByName((void *)(aNeutral)); /*0x5a692c*/
-  Owner = (IUnknown *)HouseClass::FindOwner(v1); /*0x5a6938*/
+  v1 = (void *)((void *)(aNeutral))->FindByName(); /*0x5a692c*/
+  Owner = (IUnknown *)(v1)->FindOwner(); /*0x5a6938*/
   v22 = Owner; /*0x5a693c*/
   do /*0x5a696e*/
   {
@@ -1328,16 +1328,16 @@ int PlaceRandomNeutralUnits(int a1)
           v8 = 0; /*0x5a6a2f*/
           goto LABEL_14; /*0x5a6a2f*/
         }
-        Index = BuildingTypeClass::FindIndex(*(&off_82B180 + v5)); /*0x5a6a14*/
-        v8 = (unsigned int *)UnitClass::Construct((int)v9,(LPVOID)(*((unsigned int *)dword_A83CE4 + Index)), Owner); /*0x5a6a2b*/
+        Index = (*(&off_82B180 + v5))->FindIndex(); /*0x5a6a14*/
+        v8 = (unsigned int *)((int)v9)->Construct((LPVOID)(*((unsigned int *)dword_A83CE4 + Index)), Owner); /*0x5a6a2b*/
       }
       else
       {
         v6 = operator new(0x6F0u); /*0x5a69cf*/
         if ( !v6 ) /*0x5a69d6*/
           goto LABEL_13; /*0x5a69d6*/
-        ExitCellByName = Factory::FindExitCellByName(*(&off_82B180 + v5)); /*0x5a69df*/
-        v8 = (unsigned int *)InfantryClass::Construct((int)v6, *((unsigned int *)dword_A8E34C + ExitCellByName), Owner); /*0x5a69f6*/
+        ExitCellByName = (*(&off_82B180 + v5))->FindExitCellByName(); /*0x5a69df*/
+        v8 = (unsigned int *)((int)v6)->Construct(*((unsigned int *)dword_A8E34C + ExitCellByName), Owner); /*0x5a69f6*/
       }
   LABEL_14:
       v11 = 0; /*0x5a6a31*/
@@ -1831,7 +1831,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
               if ( !a3 ) /*0x5a73da*/
                 goto LABEL_31; /*0x5a73da*/
             }
-            else if ( !(uint8_t)Cell::IsEmpty(v12) && !(uint8_t)CellClass::InMapDataRange(v12) ) /*0x5a73eb*/
+            else if ( !(uint8_t)(v12)->IsEmpty() && !(uint8_t)CellClass::InMapDataRange(v12) ) /*0x5a73eb*/
             {
               result = CellClass::InBounds(v12); /*0x5a73f6*/
               if ( !(unsigned char)result ) /*0x5a73fd*/
@@ -1925,7 +1925,7 @@ int MapClass_IsAreaUniform(int * a1, char a2)
               if ( !a2 ) /*0x5a760d*/
                 return 0; /*0x5a760d*/
             }
-            else if ( !Cell::IsEmpty(v11) /*0x5a7603*/
+            else if ( !(v11)->IsEmpty() /*0x5a7603*/
                    && !(uint8_t)CellClass::InMapDataRange(v11)
                    && !(uint8_t)CellClass::InBounds(v11) )
             {
@@ -2200,7 +2200,7 @@ int PlaceNeutralCreeps(unsigned short * a1)
   unsigned int v31[3]; // [esp+50h] [ebp-Ch] BYREF
 
   v1 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a872c*/
-  OwnerHouseClass = (IUnknown *)HouseClass::FindOwner(v1); /*0x5a8738*/
+  OwnerHouseClass = (IUnknown *)(v1)->FindOwner(); /*0x5a8738*/
   v26 = OwnerHouseClass; /*0x5a873c*/
   do /*0x5a876e*/
   {
@@ -2234,7 +2234,7 @@ int PlaceNeutralCreeps(unsigned short * a1)
           v8 = 0; /*0x5a882f*/
           goto LABEL_14; /*0x5a882f*/
         }
-        IndexBuildingTypeClass = BuildingTypeClass::FindIndex(*(&off_82B240 + v5)); /*0x5a8814*/
+        IndexBuildingTypeClass = (*(&off_82B240 + v5))->FindIndex(); /*0x5a8814*/
         v8 = (unsigned int *)UnitClass::Construct( /*0x5a882b*/
                          (int)v9,
                          *((unsigned int *)dword_A83CE4 + IndexBuildingTypeClass),
@@ -2245,11 +2245,8 @@ int PlaceNeutralCreeps(unsigned short * a1)
         v6 = operator new(0x6F0u); /*0x5a87cf*/
         if ( !v6 ) /*0x5a87d6*/
           goto LABEL_13; /*0x5a87d6*/
-        ExitCellByNameFactory = Factory::FindExitCellByName(*(&off_82B240 + v5)); /*0x5a87df*/
-        v8 = (unsigned int *)InfantryClass::Construct( /*0x5a87f6*/
-                         (int)v6,
-                         *((unsigned int *)dword_A8E34C + ExitCellByNameFactory),
-                         OwnerHouseClass);
+        ExitCellByNameFactory = (*(&off_82B240 + v5))->FindExitCellByName(); /*0x5a87df*/
+        v8 = (unsigned int *)(/*0x5a87f6*/ (int)v6)->Construct(*((unsigned int *)dword_A8E34C + ExitCellByNameFactory), OwnerHouseClass);
       }
   LABEL_14:
       v11 = 0; /*0x5a8831*/

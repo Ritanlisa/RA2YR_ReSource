@@ -246,7 +246,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
       LOWORD(v44) = v49 / 256; /*0x70c7f9*/
       HIWORD(v44) = v50 / 256; /*0x70c802*/
       *(unsigned int *)v48 = v44; /*0x70c811*/
-      v13 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v48)); /*0x70c815*/
+      v13 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v48)); /*0x70c815*/
       if ( (v13->u32_140 & 0x100) != 0 && v51 >= g_BuildingLoadQueue_Array.?[1] * (*(&v13->u32_11B) + 4) ) /*0x70c83c*/
         v14 = v13->q0E8; /*0x70c83e*/
       else
@@ -461,7 +461,7 @@ LABEL_55:
       }
       if ( aP3->getAltitude() == 11 ) /*0x70cc01*/
       {
-        if ( (unsigned __int8)CellClass::IsActiveOrNext((CellClass *)aP3) ) /*0x70cc05*/
+        if ( (unsigned __int8)((CellClass *)aP3)->IsActiveOrNext() ) /*0x70cc05*/
         {
           v34 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cc1e*/
           if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v34 ) /*0x70cc31*/
@@ -483,7 +483,7 @@ LABEL_55:
     }
   }
   v26 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v49)); /*0x70cae2*/
-  if ( (unsigned __int8)CellClass::IsActiveOrNext(v26) ) /*0x70cae9*/
+  if ( (unsigned __int8)(v26)->IsActiveOrNext() ) /*0x70cae9*/
   {
     v27 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6092); /*0x70cb01*/
     if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v27 ) /*0x70cb14*/

@@ -105,12 +105,12 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
       v22 = 0; /*0x5f7cb4*/
       Vector::Clear((int)v21); /*0x5f7cbb*/
       *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f7ccc*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f7cd3*/
+      ((BufferIOFileClass *)&v20)->Dtor(); /*0x5f7cd3*/
       *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7cdc*/
       v19 = 0; /*0x5f7ce0*/
       Vector::Clear((int)v18); /*0x5f7ce4*/
       *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7ced*/
-      BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7cf1*/
+      ((BufferIOFileClass *)&v17)->Dtor(); /*0x5f7cf1*/
       return (gamemd::AbstractClass **)(1); /*0x5f7d02*/
     }
     v14 = (void *)*(&this->u32_8 * a3 + 50); /*0x5f7d05*/
@@ -131,7 +131,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     v22 = 0; /*0x5f7d5c*/
     Vector::Clear((int)v21); /*0x5f7d63*/
     *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f7d74*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f7d7b*/
+    ((BufferIOFileClass *)&v20)->Dtor(); /*0x5f7d7b*/
     *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7d84*/
     v19 = 0; /*0x5f7d88*/
     Vector::Clear((int)v18); /*0x5f7d8c*/
@@ -144,7 +144,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     Vector::Clear((int)v18); /*0x5f7b34*/
     *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7b39*/
   }
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7d99*/
+  ((BufferIOFileClass *)&v17)->Dtor(); /*0x5f7d99*/
   return 0; /*0x5f7cf6*/
 
 }
@@ -361,7 +361,7 @@ int VoxelAnimType::LoadAnim(void *a1)
     }
     else
     {
-      Info = VoxelSection::GetInfo(this->u32_B0, 0, 0); /*0x5f822f*/
+      Info = (this->u32_B0)->GetInfo(0, 0); /*0x5f822f*/
       Matrix::Scale(this->u32_B4, *(float *)(Info + 12)); /*0x5f823e*/
     }
     /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f824e) */
@@ -420,7 +420,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         else
         {
-          v32 = VoxelSection::GetInfo(this->u32_B8, 0, 0); /*0x5f87ce*/
+          v32 = (this->u32_B8)->GetInfo(0, 0); /*0x5f87ce*/
           Matrix::Scale(this->u32_BC, *(float *)(v32 + 12)); /*0x5f87dd*/
         }
         /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f87f0) */

@@ -75,7 +75,7 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   do /*0x69908e*/
   {
     sprintf(Buffer, "Slot%02d", v4); /*0x699067*/
-    result = GameSetup::FormatToString(Block, Buffer, *(v5 - 1), *v5, v5[1]); /*0x699082*/
+    result = (Block)->FormatToString(Buffer, *(v5 - 1), *v5, v5[1]); /*0x699082*/
     ++v4; /*0x699087*/
     v5 += 3; /*0x699088*/
   }

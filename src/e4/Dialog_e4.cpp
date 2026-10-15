@@ -341,7 +341,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   hWnd = MessageBox; /*0x5f29d3*/
   if ( !MessageBox ) /*0x5f29d7*/
     return v6; /*0x5f29d7*/
-  Dialog::Show((Dialog *)MessageBox); /*0x5f29df*/
+  ((Dialog *)MessageBox)->Show(); /*0x5f29df*/
   Debug::Log(); /*0x5f29e9*/
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 8))(g_ClipboardBuffer, a3); /*0x5f2a01*/
   Debug::Log(); /*0x5f2a09*/
@@ -368,7 +368,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
 LABEL_34:
         v17 = 0; /*0x5f2c81*/
         Buffer = word_8327A0; /*0x5f2c8d*/
-        WinModemClass::WriteSerial((int *)v13, &Buffer, 2u); /*0x5f2c99*/
+        ((int *)v13)->WriteSerial(&Buffer, 2u); /*0x5f2c99*/
       }
 LABEL_35:
       Debug::Log(); /*0x5f2c9e*/
@@ -437,7 +437,7 @@ LABEL_23:
   {
     Buffer = word_8327A0; /*0x5f2c5c*/
     v17 = 0; /*0x5f2c61*/
-    WinModemClass::WriteSerial((int *)g_ClipboardBuffer, &Buffer, 2u); /*0x5f2c66*/
+    ((int *)g_ClipboardBuffer)->WriteSerial(&Buffer, 2u); /*0x5f2c66*/
   }
   v6 = 5; /*0x5f2c6b*/
 LABEL_36:
@@ -520,9 +520,9 @@ LABEL_5:
      || v4 == 184
      || v4 == 214
      || v4 == 259
-     || (unsigned __int8)Dialog::IsSpecialTemplate(v4))
+     || (unsigned __int8)(v4)->IsSpecialTemplate())
     && DlgCtrlID == 1684
-    || Event::IsValidActionType(v4) && DlgCtrlID == 1685
+    || (v4)->IsValidActionType() && DlgCtrlID == 1685
     || (v4 == 148
      || v4 == 216
      || v4 == 245

@@ -224,28 +224,28 @@ void * WinsockInterface::ProcessPacket(int a2)
   this->u32_3B4 = 0; /*0x7702fc*/
   this->u32_3B8 = 1; /*0x770305*/
   this->u32_3BC = 0; /*0x77030c*/
-  VectorClass::WstringConstructor(&this->u32_3C0, 0, 0); /*0x770312*/
+  (&this->u32_3C0)->WstringConstructor(0, 0); /*0x770312*/
   this->u32_3C0 = &vt_DynamicVectorClass; /*0x770317*/
   this->u32_3D4 = 10; /*0x77031d*/
   this->u32_3D0 = 0; /*0x770324*/
   this->u32_3D8 = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
-  String::Assign((char **)&a2, aOldcycle); /*0x77033b*/
+  ((char **)&a2)->Assign(aOldcycle); /*0x77033b*/
   String::Reassign(&this->ptr_4, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
-  String::Assign((char **)&a2, aHistory); /*0x77035f*/
+  ((char **)&a2)->Assign(aHistory); /*0x77035f*/
   String::Reassignthis->u8_988, (const char **)&a2); /*0x77036f*/
   DeleteAndZero((void **)&a2); /*0x770378*/
-  String::Assign((char **)&a2, aStatus); /*0x770386*/
+  ((char **)&a2)->Assign(aStatus); /*0x770386*/
   String::Reassignthis->u8_12C5, (const char **)&a2); /*0x770396*/
   DeleteAndZero((void **)&a2); /*0x77039f*/
-  String::Assign((char **)&a2, aTerritory); /*0x7703ad*/
+  ((char **)&a2)->Assign(aTerritory); /*0x7703ad*/
   String::Reassignthis->u8_1C02, (const char **)&a2); /*0x7703bd*/
   DeleteAndZero((void **)&a2); /*0x7703c6*/
-  String::Assign((char **)&a2, aGame); /*0x7703d4*/
+  ((char **)&a2)->Assign(aGame); /*0x7703d4*/
   String::Reassignthis->u8_2549, (const char **)&a2); /*0x7703e4*/
   DeleteAndZero((void **)&a2); /*0x7703ed*/
-  String::Assign((char **)&a2, aEvacuate); /*0x7703fb*/
+  ((char **)&a2)->Assign(aEvacuate); /*0x7703fb*/
   String::Reassignthis->u8_2E86, (const char **)&a2); /*0x77040b*/
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/

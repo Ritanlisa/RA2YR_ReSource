@@ -241,7 +241,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
       switch ( (unsigned int)hWnd ) /*0x5e1cd0*/
       {
         case 2u: /*0x5e1cd0*/
-          if ( (uint8_t)LoadScreen::IsActive((LoadScreen *)&g_UIManager) ) /*0x5e1cdc*/
+          if ( (uint8_t)((LoadScreen *)&g_UIManager)->IsActive() ) /*0x5e1cdc*/
             VtableStub::sub_643E70(&g_UIManager); /*0x5e1cea*/
           g_UIControlState = g_UIControlState; /*0x5e1cef*/
           if ( !g_UIControlState ) /*0x5e1cf7*/
@@ -253,16 +253,16 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
         case 0xFu: /*0x5e1cd0*/
           Dialog::DrawBackground((Dialog *)a2); /*0x5e1d41*/
           if ( g_UIControlState ) /*0x5e1d4e*/
-            Skirmish::RenderPreview(g_UIControlState, (HWND)a2); /*0x5e1d51*/
-          if ( (uint8_t)LoadScreen::IsActive((LoadScreen *)&g_UIManager) ) /*0x5e1d5b*/
+            (g_UIControlState)->RenderPreview((HWND)a2); /*0x5e1d51*/
+          if ( (uint8_t)((LoadScreen *)&g_UIManager)->IsActive() ) /*0x5e1d5b*/
             LoadScreen::Render((int)&g_UIManager, v6, a2, NAN); /*0x5e1d71*/
-          Dialog::StopBink((Dialog *)a2); /*0x5e1d78*/
+          ((Dialog *)a2)->StopBink(); /*0x5e1d78*/
           ValidateRect((HWND)a2, 0); /*0x5e1d80*/
           return 0; /*0x5e1d8f*/
         case 0x14u: /*0x5e1cd0*/
           goto LABEL_9;
         case 0x2Bu: /*0x5e1cd0*/
-          Dialog::Resize((char *)v20); /*0x5e1d27*/
+          ((char *)v20)->Resize(); /*0x5e1d27*/
   LABEL_9:
           result = 1; /*0x5e1d2c*/
           break; /*0x5e1d38*/
@@ -306,14 +306,14 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
     if ( *(unsigned int *)v20 && v20->vtable2 != -1 ) /*0x5e221c*/
     {
       DlgCtrlID = (StartCombo *)GetDlgCtrlID(*(HWND *)v20); /*0x5e2229*/
-      if ( Dialog::MapPlayerIDToIndex((Dialog *)DlgCtrlID) == -1 ) /*0x5e2235*/
+      if ( ((Dialog *)DlgCtrlID)->MapPlayerIDToIndex() == -1 ) /*0x5e2235*/
       {
-        if ( CountryCombo::IDToIndex((CountryCombo *)DlgCtrlID) == -1 ) /*0x5e2241*/
+        if ( ((CountryCombo *)DlgCtrlID)->IDToIndex() == -1 ) /*0x5e2241*/
         {
           if ( StartCombo::IDToIndex(DlgCtrlID) != -1 ) /*0x5e224d*/
           {
             ComboBoxSelectedRaw = (gamemd::GameSetup *)((wchar_t *)((GameSetup *)GetComboBoxSelectedRaw((HWND)a2, (int)DlgCtrlID, v20->vtable2)));
-            ColorTooltip = GameSetup::GetColorTooltip(ComboBoxSelectedRaw); /*0x5e2260*/
+            ColorTooltip = (ComboBoxSelectedRaw)->GetColorTooltip(); /*0x5e2260*/
             WideString::Assign_Alt(v36, ColorTooltip); /*0x5e2268*/
             return 1; /*0x5e2279*/
           }
@@ -345,7 +345,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
   {
     if ( hWnd == (HWND)1175 ) /*0x5e1e4d*/
     {
-      SkirmishDialog::FillComboBoxes((SkirmishDialog *)a2); /*0x5e1e59*/
+      ((SkirmishDialog *)a2)->FillComboBoxes(); /*0x5e1e59*/
       InitGameDropdownColors(v45); /*0x5e1e5e*/
       Lobby::FillPlayerFactions((Lobby *)a2); /*0x5e1e65*/
       _cfltcvt_init(); /*0x5e1e6a*/
@@ -361,7 +361,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
       EnableWindow(DlgItem, 0); /*0x5e1ed1*/
       byte_AC11C2 = 0; /*0x5e1edb*/
       SetGameSetupPlayerState(0, 0, v46); /*0x5e1ee2*/
-      GameSetup::DisplayPlayers(v47); /*0x5e1ee9*/
+      (v47)->DisplayPlayers(); /*0x5e1ee9*/
       NetworkLobby::UpdatePlayerList(); /*0x5e1eee*/
       InitSkirmishDialogControls((HWND)a2, 1); /*0x5e1efa*/
       LoadScenarioClassByIndex(-1); /*0x5e1f02*/
@@ -447,9 +447,9 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
   v20 = v20; /*0x5e20e6*/
   v21 = StartCombo::IDToIndex(v17); /*0x5e20ef*/
   a4 = v21; /*0x5e20f3*/
-  v22 = Dialog::SideIDToIndex((Dialog *)v17); /*0x5e20fc*/
+  v22 = ((Dialog *)v17)->SideIDToIndex(); /*0x5e20fc*/
   v48 = (ObjectClass *)v22; /*0x5e2100*/
-  v23 = Dialog::OptionIDToIndex((Dialog *)v17); /*0x5e2104*/
+  v23 = ((Dialog *)v17)->OptionIDToIndex(); /*0x5e2104*/
   v24 = (ObjectClass *)v20; /*0x5e210b*/
   if ( v20 <= v21 ) /*0x5e210d*/
     v24 = (ObjectClass *)v21; /*0x5e210f*/

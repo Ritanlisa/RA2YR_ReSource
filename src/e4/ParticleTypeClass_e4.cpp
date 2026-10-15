@@ -606,8 +606,8 @@ int ParticleTypeClass::ProcessPower(int *a2, void *a2_1)
   Power::TimerProcess(this->NumLoopFrames); /*0x64552f*/
   Power::TimerProcess(this->Translucency_d); /*0x64553d*/
   Power::TimerProcess(this->WindEffect_d); /*0x64554b*/
-  Checksummer::Add_float((Checksummer *)a2, *(unsigned int *)this->u32_2FC); /*0x645559*/
-  Checksummer::Add_float((Checksummer *)a2, this->q300); /*0x645567*/
+  ((Checksummer *)a2)->Add_float(*(unsigned int *)this->u32_2FC); /*0x645559*/
+  ((Checksummer *)a2)->Add_float(this->q300); /*0x645567*/
   Power::TimerProcess(this->Deacc); /*0x645575*/
   LOBYTE(v3) = this->DeleteOnStateLimit_d; /*0x64557a*/
   Power::FlagProcess((Power *)a2, v3); /*0x645583*/
@@ -623,10 +623,7 @@ int ParticleTypeClass::ProcessPower(int *a2, void *a2_1)
   Power::FlagProcess((Power *)a2, v7); /*0x6455db*/
   Power::TimerProcess(this->q310); /*0x6455e9*/
   Power::TimerProcess(this->q314); /*0x6455f7*/
-  return Checksummer::Add_double( /*0x645611*/
-           (Checksummer *)a2,
-           (int)this->__pad_2B0,
-           (int)this->q2B4);
+  return (/*0x645611*/ (Checksummer *)a2)->Add_double((int)this->__pad_2B0, (int)this->q2B4);
 
 }
 }
@@ -673,7 +670,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       if ( (int)a1 <= 0 ) /*0x6456f4*/
       {
   LABEL_14:
-        ObjectTypeClass::Load2DArt((char *)v3); /*0x645783*/
+        ((char *)v3)->Load2DArt(); /*0x645783*/
         return 0; /*0x64578a*/
       }
       else

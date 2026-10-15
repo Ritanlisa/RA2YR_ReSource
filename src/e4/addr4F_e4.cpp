@@ -721,7 +721,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
   ((INIClass *)(a2))->ReadString((char **)(Source), (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
-  if ( String::Length(&v19) ) /*0x4f2d08*/
+  if ( (&v19)->Length() ) /*0x4f2d08*/
   {
     unknown_libname_73(&v19.ptr_4); /*0x4f2d29*/
     ((String *)(&v20))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2d37*/
@@ -729,13 +729,13 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
     ((INIClass *)(a2))->ReadString((char **)(Source), (char **)&v21, (char **)&v20, (int)&v19.ptr_4); /*0x4f2d5c*/
     DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
-    if ( String::Length((String *)&v19.ptr_4) ) /*0x4f2d77*/
+    if ( ((String *)&v19.ptr_4)->Length() ) /*0x4f2d77*/
     {
       v8 = 0; /*0x4f2d9e*/
       v22 = 0; /*0x4f2da9*/
       v23 = 0; /*0x4f2dad*/
       ((String *)(&v21))->Assign((const char *)(aOrigin)); /*0x4f2db1*/
-      CoordPair = (int *)(INIClass::GetCoordPair(a2, &v20, (char *)Source, (char **)&v21, &v22)); /*0x4f2dc8*/
+      CoordPair = (int *)((a2)->GetCoordPair(&v20, (char *)Source, (char **)&v21, &v22)); /*0x4f2dc8*/
       v10 = *CoordPair; /*0x4f2dcd*/
       v11 = CoordPair->headNode; /*0x4f2dcf*/
       v22 = v10; /*0x4f2dd2*/
@@ -751,7 +751,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       v26 = 0; /*0x4f2e11*/
       v27 = 0; /*0x4f2e15*/
       ((String *)((String *)&a4))->Assign(aActiverect); /*0x4f2e19*/
-      Rect = (int *)(INIClass::GetRect(a2, &v20, Source, (char **)&a4, &v24)); /*0x4f2e30*/
+      Rect = (int *)((a2)->GetRect(&v20, Source, (char **)&a4, &v24)); /*0x4f2e30*/
       v24 = *Rect; /*0x4f2e37*/
       v25 = Rect[1]; /*0x4f2e3e*/
       v26 = Rect[2]; /*0x4f2e45*/
@@ -930,11 +930,11 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
   unknown_libname_73this->q084 + 76); /*0x4f34aa*/
   a9 = a9; /*0x4f34af*/
   /* X11: vtable install elided (implicit via GraphicMenuImageItem virtuals 0x4f34b3) */
-  if ( String::Length(a9) && (a3 = operator new(0x10u)) != 0 ) /*0x4f34d4*/
+  if ( (a9)->Length() && (a3 = operator new(0x10u)) != 0 ) /*0x4f34d4*/
   {
     ((String *)((char **)&a2))->Assign(aHighlightsound); /*0x4f34df*/
     v10 = 1; /*0x4f34ee*/
-    v16 = Audio::ParseVolume((int)a3, (const char **)&a2, a9); /*0x4f34f3*/
+    v16 = ((int)a3)->ParseVolume((const char **)&a2, a9); /*0x4f34f3*/
   }
   else
   {
@@ -945,7 +945,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
     DeleteAndZero((void **)&a2); /*0x4f3508*/
   ((String *)((char **)this->q084 + 76)))->Reassign(a10); /*0x4f3515*/
   a7 = a7; /*0x4f351a*/
-  v18 = String::Length(a7); /*0x4f3520*/
+  v18 = (a7)->Length(); /*0x4f3520*/
   a4 = a4; /*0x4f3525*/
   if ( v18 )
   {
@@ -959,7 +959,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
     }
   }
   a6 = a6; /*0x4f3569*/
-  if ( String::Length(a6) )
+  if ( (a6)->Length() )
   {
     v23 = operator new(0x3Cu); /*0x4f357a*/
     v24 = v23 ? MSPCXAnim::Construct(v23, a6, (int)(a3 + 6), a4, 1) : 0;

@@ -51,7 +51,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
   int v12; // [esp+8h] [ebp-4h]
 
   if ( !byte_89F578 ) /*0x49cafc*/
-    CampaignClass::LoadFromINI(&g_DDrawSurfaceManager); /*0x49cb03*/
+    (&g_DDrawSurfaceManager)->LoadFromINI(); /*0x49cb03*/
   v3 = aP1; /*0x49cb08*/
   if ( aP1 < 0 || aP1 >= dword_89F574 ) /*0x49cb1c*/
     return 0; /*0x49cc46*/
@@ -150,11 +150,11 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
 
   if ( Render_Play(a4, Str, 1) && !*(unsigned int *)&dword_A8B238 ) /*0x5bed6a*/
   {
-    Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x5bed76*/
+    (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x5bed76*/
     v8 = strrchr(Str, 46); /*0x5bed82*/
     if ( !v8 || _strcmpi(v8,(const char *)(aBik)) ) /*0x5bed98*/
     {
-      Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x5bef0b*/
+      (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x5bef0b*/
       v9 = 0; /*0x5bef1e*/
       v10 = 0; /*0x5bef20*/
       (*((unsigned short *)&(v11))) = Math::RoundToInt(*(float *)&stru_A8EB00.vfptr[39] * 255.0); /*0x5bef24*/
@@ -223,7 +223,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           }
           (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5bf154*/
           MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x5bf15e*/
-          Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x5bf169*/
+          (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x5bf169*/
         }
         else
         {
@@ -274,10 +274,10 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vfptr + 6))(g_DSurface_Hidden, 0); /*0x5beebc*/
         Frame::Present((void *)((int)g_DSurface_Hidden), 0, a2, a3, 0, v18, v20, v21); /*0x5beec8*/
       }
-      Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x5beed3*/
+      (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x5beed3*/
       (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5beee0*/
       MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x5beeea*/
-      BinkMovie::Stop(&v23); /*0x5beef3*/
+      (&v23)->Stop(); /*0x5beef3*/
     }
   }
 }
@@ -320,7 +320,7 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
           v3 = *(AudioSample **)&a1_1->__pad_28[4]; /*0x720a01*/
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
-          if ( a1_1->__pad_10[1] && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
+          if ( a1_1->__pad_10[1] && !(v3)->IsBuffering() ) /*0x720a0f*/
             Audio::Release(*(Audio **)&a1_1->__pad_28[4]); /*0x720a1b*/
           LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&a1_1->__pad_28[4]) != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/

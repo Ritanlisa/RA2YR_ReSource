@@ -44,8 +44,8 @@ int Theme::QueueSong(int aP1, void *a2)
           if ( this->audioSample ) /*0x720b5f*/
           {
             if ( this->u32_11 && !AudioSample::IsBuffering() ) /*0x720b70*/
-              Audio::Release(this->audioSample); /*0x720b7c*/
-            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720b8b*/
+              (this->audioSample)->Release(); /*0x720b7c*/
+            LOBYTE(IsSoundEnabled) = (this->audioSample)->IsSoundPlaying() != 0; /*0x720b8b*/
             if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
             {
               if ( this->audioSample ) /*0x720b92*/
@@ -84,14 +84,14 @@ int Theme::Stop(char aP1, void *a2)
         v4 = (AudioSample *)this->audioSample; /*0x720edb*/
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
-        if ( this->u32_11 && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
+        if ( this->u32_11 && !(v4)->IsBuffering() ) /*0x720ee9*/
           Audio::Release(this->ptr_41)); /*0x720ef5*/
         if ( Audio::IsSoundPlaying(this->ptr_41)) != 0 ) /*0x720f04*/
         {
           result = Debug::Log(); /*0x720f14*/
           v5 = (ThemeClass *)this->audioSample; /*0x720f19*/
           if ( v5 ) /*0x720f21*/
-            result = ThemeClass::RequestBuffer(v5); /*0x720f23*/
+            result = (v5)->RequestBuffer(); /*0x720f23*/
           this->u32_11 = 1; /*0x720f28*/
         }
         else
@@ -100,7 +100,7 @@ int Theme::Stop(char aP1, void *a2)
           result = Debug::Log(); /*0x720f37*/
           v6 = (Audio *)this->audioSample; /*0x720f3c*/
           if ( v6 ) /*0x720f44*/
-            result = Audio::Release(v6); /*0x720f46*/
+            result = (v6)->Release(); /*0x720f46*/
         }
         *(unsigned int *)this = -1; /*0x720f4b*/
         this->ptr_4 = (gamemd::AbstractClass *)(-1); /*0x720f51*/
@@ -122,7 +122,7 @@ bool Theme::IsPlaying(void *a1)
     return 0; /*0x721002*/
   if ( this->u32_11 ) /*0x720fda*/
   {
-    if ( !AudioSample::IsBuffering(v2) ) /*0x720fe1*/
+    if ( !(v2)->IsBuffering() ) /*0x720fe1*/
       Audio::Release(this->ptr_41)); /*0x720fed*/
   }
   return Audio::IsSoundPlaying(this->ptr_41)) != 0; /*0x720ffe*/

@@ -550,7 +550,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
       }
     }
   }
-  UDPInterfaceClass::connect(this); /*0x7b2f04*/
+  (this)->connect(); /*0x7b2f04*/
   v8 = (void *)this->M259412; /*0x7b2f09*/
   this->M259408 = (unsigned int)(&vt_VectorClass); /*0x7b2f0f*/
   if ( v8 && this->M259421 ) /*0x7b2f1d*/
@@ -940,7 +940,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       0,
       1);
   }
-  Mouse::DrawCursor((Mouse *)this, (int *)this->occupant, 0, 0); /*0x7b966a*/
+  ((Mouse *)this)->DrawCursor((int *)this->occupant, 0, 0); /*0x7b966a*/
   return ReleaseMutex(hMutex); /*0x7b967c*/
 
 }

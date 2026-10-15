@@ -107,9 +107,9 @@ int ObjectClass::Destroy()
 
   attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f65f3*/
   if ( attachedBomb ) /*0x5f65f8*/
-    ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f65fa*/
+    (attachedBomb)->CleanupAudioAndRefs(); /*0x5f65fa*/
   if ( this && (this->abstractFlags & 1) != 0 ) /*0x5f6607*/
-    TechnoClass::CleanupAll((TechnoClass *)this, 0); /*0x5f660d*/
+    ((TechnoClass *)this)->CleanupAll(0); /*0x5f660d*/
   AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5f6616*/
   (*((void (__thiscall **)(ObjectClass *))this->vfptr + 53))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
@@ -271,7 +271,7 @@ void AudioController::Stop()
           if ( v3 && v2 == *(unsigned int *)(v3 + 192) ) /*0x405da9*/
           {
             if ( (*(unsigned char *)(v2 + 24) & 2) != 0 ) /*0x405daf*/
-              Voice::Stop(v6); /*0x405db1*/
+              (v6)->Stop(); /*0x405db1*/
             AudioStream::ReleaseChannel(*(AudioStream **)(v2 + 176)); /*0x405dbc*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 192) = 0; /*0x405dc7*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 188) = 0; /*0x405dd3*/

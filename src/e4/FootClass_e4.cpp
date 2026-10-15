@@ -59,7 +59,7 @@ AbstractClass * FootClass::Destruct(void *a1)
   /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35ac) */
   /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35b3) */
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
-    TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
+    (team)->LiberateMember_Start((int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
   v3 = (*((int (**)(FootClass *, FootClass **))FootClass_Array.TechnoClass + 4))(&FootClass_Array, &v11); /*0x4d35e1*/
   if ( v3 != -1 ) /*0x4d35e7*/
@@ -78,11 +78,11 @@ AbstractClass * FootClass::Destruct(void *a1)
   }
   if ( this->currentJumpjetMapCoords[0] != g_FootClass_Pool ) /*0x4d3646*/
   {
-    v6 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)this->currentJumpjetMapCoords)); /*0x4d365b*/
+    v6 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)this->currentJumpjetMapCoords)); /*0x4d365b*/
     if ( v6->FootClass_E0 == this ) /*0x4d3666*/
       v6->FootClass_E0 = 0; /*0x4d3668*/
   }
-  Mixer::ReleaseChannel((Mixer *)this->audioController7); /*0x4d3677*/
+  ((Mixer *)this->audioController7)->ReleaseChannel(); /*0x4d3677*/
   AudioFileClass::Release((AudioFileClass *)this->audioController7); /*0x4d367e*/
   v7 = this->locomotor[0]; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
@@ -118,12 +118,12 @@ void FootClass::Destroyed(int a2)
   __int64 v3; // rax
   unsigned char v4[4]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( (unsigned __int8)House::IsHumanPlayer((House *)this->u32_D54) /*0x4d98dd*/
+  if ( (unsigned __int8)((House *)this->u32_D54)->IsHumanPlayer() /*0x4d98dd*/
     && !*(unsigned char *)((*((int (**)(FootClass *))this->TechnoClass + 33))(this) + 3412) )
   {
     v3 = ((__int64 (*)(FootClass *, unsigned char *))*((unsigned int *)this->TechnoClass + 110))(this, v4); /*0x4d98f0*/
     if ( (unsigned __int8)CreateTriggerClassIfFarEnough(7, SHIDWORD(v3), *(unsigned int *)v3) ) /*0x4d98fe*/
-      VoxClass::FindAndPlay((VoxClass *)&aEvaUnitlost, -1); /*0x4d9911*/
+      ((VoxClass *)&aEvaUnitlost)->FindAndPlay(-1); /*0x4d9911*/
   }
 
 }
@@ -188,7 +188,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
   {
     v7 = *(TaskManager **)(a2 + 720); /*0x710017*/
     if ( v7 ) /*0x71001f*/
-      TaskManager::Update(v7); /*0x710021*/
+      (v7)->Update(); /*0x710021*/
     v8 = v6->u32_694; /*0x710026*/
     if ( v8 && v8[423] && *(unsigned char *)((*(int (**)(unsigned int *))(*v8 + 132))(v8) + 3278) ) /*0x710042*/
       BuildingClass::Deploy(v27, v4, v5); /*0x710058*/
@@ -272,7 +272,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         if ( v20 < 0 && v20 != -2147467262 ) /*0x710269*/
           WinAPI::Wrapper(v20); /*0x71026c*/
       }
-      COMObject::SwapReference((COMObject *)&v28.m_Data, v28.m_Position); /*0x71027a*/
+      ((COMObject *)&v28.m_Data)->SwapReference(v28.m_Position); /*0x71027a*/
       if ( v28.m_Position ) /*0x710285*/
         (*(void (**)(int))(*(unsigned int *)v28.m_Position + 8))(v28.m_Position); /*0x71028a*/
       if ( v28.m_Data )
@@ -302,7 +302,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         (*(void (**)(unsigned int))(*m_Size->locomotorTarget + 336))(m_Size->locomotorTarget); /*0x710334*/
         v23 = v6->u32_5D4; /*0x71033a*/
         if ( v23 ) /*0x710342*/
-          TeamClass::LiberateMember_Start(v23, (int)v6, 0xFFFFFFFF, 0); /*0x710349*/
+          (v23)->LiberateMember_Start((int)v6, 0xFFFFFFFF, 0); /*0x710349*/
         v6->u32_6AD = 1; /*0x710352*/
         Member = Team::GetMember((Team *)v6, 0); /*0x710359*/
         if ( Member && (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x71036c*/

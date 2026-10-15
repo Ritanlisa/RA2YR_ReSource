@@ -40,7 +40,7 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
 {
 
-  AbstractTypeClass::Init((int)this, a2); /*0x511658*/
+  ((int)this)->Init(a2); /*0x511658*/
   this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)&vt_TypeList); /*0x51165d*/
   *&this->prefix = (char)(&vt_TypeList); /*0x511667*/
   *&this->u32_184 = (unsigned int)(&vt_TypeList); /*0x511671*/
@@ -105,7 +105,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   }
   (((unsigned char *)&(a1->veteranUnitsCount))[1]) = 0; /*0x5117ad*/
   a1->veteranUnits[0] = 0; /*0x5117b3*/
-  return AbstractTypeClass::Dtor((AbstractTypeClass *)a1); /*0x5117be*/
+  return ((AbstractTypeClass *)a1)->Dtor(); /*0x5117be*/
 }
 }
 // 0x511850

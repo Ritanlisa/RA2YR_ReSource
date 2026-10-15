@@ -363,7 +363,7 @@ wchar_t * CreateTeamCommand::Read(void *a1_1, void *a2_1, void * aTxtCreateTeamD
 namespace gamemd {
 void CreateTeamCommand::Undo(int a2)
 {
-  CreateTeamCommand::performAction_246(*&this->__pad_004); /*0x535cc3*/
+  (*&this->__pad_004)->performAction_246(); /*0x535cc3*/
 }
 } // namespace gamemd
 
@@ -433,7 +433,7 @@ char CreateTeamCommand::performAction_6()
   int v2; // eax
   unsigned int *v4; // [esp-4h] [ebp-4h]
 
-  (*((unsigned char *)&(_7342A0))) = PlayerClass::HasPlayers(&stru_880D2C); /*0x535d95*/
+  (*((unsigned char *)&(_7342A0))) = (&stru_880D2C)->HasPlayers(); /*0x535d95*/
   if ( (unsigned char)_7342A0 ) /*0x535d9c*/
   {
     ((SidebarClass*)(&dword_87F7E8))->SwitchTab(0); /*0x535da5*/
@@ -491,7 +491,7 @@ char CreateTeamCommand::performAction_11()
   int v2; // eax
   unsigned int *v4; // [esp-4h] [ebp-4h]
 
-  (*((unsigned char *)&(_7342B0))) = PlayerClass::HasPlayers(&stru_881CC0); /*0x535e55*/
+  (*((unsigned char *)&(_7342B0))) = (&stru_881CC0)->HasPlayers(); /*0x535e55*/
   if ( (unsigned char)_7342B0 ) /*0x535e5c*/
   {
     ((SidebarClass*)(&dword_87F7E8))->SwitchTab(1); /*0x535e65*/
@@ -547,7 +547,7 @@ int CreateTeamCommand::performAction_16()
 {
   int result; // eax
 
-  result = PlayerClass::HasPlayers(&stru_882C54); /*0x535f15*/
+  result = (&stru_882C54)->HasPlayers(); /*0x535f15*/
   if ( (unsigned char)result ) /*0x535f1c*/
     return ((SidebarClass*)(&dword_87F7E8))->SwitchTab(2); /*0x535f25*/
   return result; /*0x535f2a*/
@@ -594,7 +594,7 @@ int CreateTeamCommand::performAction_21()
 {
   int result; // eax
 
-  result = PlayerClass::HasPlayers(&stru_883BE8); /*0x535fa5*/
+  result = (&stru_883BE8)->HasPlayers(); /*0x535fa5*/
   if ( (unsigned char)result ) /*0x535fac*/
     return ((SidebarClass*)(&dword_87F7E8))->SwitchTab(3); /*0x535fb5*/
   return result; /*0x535fba*/
@@ -705,9 +705,9 @@ unsigned char * CreateTeamCommand::performAction_30(void *a1, void *a2)
   v6 = result; /*0x536662*/
   if ( result ) /*0x536666*/
   {
-    MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x536668*/
+    (v7)->UnselectAll_ClearLimboLaunchers(); /*0x536668*/
     (*(void (**)(AnimClass *))(v6->vtable1 + 332))(v6); /*0x536671*/
-    TacticalClass::InterpolateView(v8); /*0x53667c*/
+    (v8)->InterpolateView(); /*0x53667c*/
     return (unsigned char *)((AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1)); /*0x536688*/
   }
   return (unsigned char *)(result); /*0x53668e*/
@@ -1075,9 +1075,9 @@ unsigned char * CreateTeamCommand::performAction_69(void *a1, void *a2)
   v6 = result; /*0x536ad2*/
   if ( result ) /*0x536ad6*/
   {
-    MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x536ad8*/
+    (v7)->UnselectAll_ClearLimboLaunchers(); /*0x536ad8*/
     (*(void (**)(AnimClass *))(v6->vtable1 + 332))(v6); /*0x536ae1*/
-    TacticalClass::InterpolateView(v8); /*0x536aec*/
+    (v8)->InterpolateView(); /*0x536aec*/
     return (unsigned char *)((AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1)); /*0x536af8*/
   }
   return (unsigned char *)(result); /*0x536afe*/

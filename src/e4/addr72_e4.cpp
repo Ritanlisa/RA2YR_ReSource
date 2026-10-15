@@ -275,8 +275,8 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   int v19; // [esp+78h] [ebp-8h]
 
   v3 = (int *)(a2);
-  CCFileClass::Construct((char *)(&v17), Source); /*0x72adf0*/
-  v4 = (char *)CCFileClass::ReadEntireFile(&v17); /*0x72adfe*/
+  ((char *)(&v17))->Construct(Source); /*0x72adf0*/
+  v4 = (char *)(&v17)->ReadEntireFile(); /*0x72adfe*/
   if ( v4 ) /*0x72ae06*/
   {
     v5 = (void *)((int)(operator new(0x300u)));
@@ -325,7 +325,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   }
   /* X11: vtable install elided (implicit via CCFileClass virtuals 0x72aee1) */
   v19 = 0; /*0x72aee9*/
-  Vector::Clear((void *)((int)v18)); /*0x72aef1*/
+  ((void *)((int)v18))->Clear(); /*0x72aef1*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x72aefa) */
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x72af07*/
 }
@@ -410,7 +410,7 @@ int * * LoadingScreen_InitResources()
   if ( !DataGlobal_B0FBE0 ) /*0x72e06b*/
   {
   LABEL_3:
-    AssetClass::ReleaseAndReload((AssetClass *)v1); /*0x72e071*/
+    ((AssetClass *)v1)->ReleaseAndReload(); /*0x72e071*/
         *(unsigned int *)&DataGlobal_B0FAC4 = LoadFileSHP((char *)(/*0x72e091*/                                                              off_844CD4),                                                              (bool *)&DataGlobal_B0FC95);
     *(unsigned int *)&DataGlobal_B0F9DC = LoadFileSHP( /*0x72e0a6*/
                                                              off_844CD8,
@@ -538,7 +538,7 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
 
   if ( !DataGlobal_B0FBE0 ) /*0x72e460*/
   {
-    AssetClass::ReleaseAndReload(v11); /*0x72e462*/
+    (v11)->ReleaseAndReload(); /*0x72e462*/
     Render_Render_72EB50(); /*0x72e467*/
         LoadPaletteSimple((char *)(/*0x72e47c*/       off_844BE4),       (int *)&DataGlobal_B0FBC8,       &DataGlobal_B0FBCC);
         LoadPaletteSimple((char *)(/*0x72e491*/       off_844BE8),       (int *)&DataGlobal_B0FBD0,       &DataGlobal_B0FBD4);

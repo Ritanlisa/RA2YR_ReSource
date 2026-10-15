@@ -495,7 +495,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
     v11 = v8; /*0x638bef*/
     return (unsigned short)v6 == (unsigned short)v8 && (*(((unsigned short *)&(v12)) + 1)) == (*(((unsigned short *)&(v11)) + 1)); /*0x638bef*/
   }
-  v10 = BuildingLoadQueue::Find(&a3); /*0x638bd5*/
+  v10 = (&a3)->Find(); /*0x638bd5*/
   if ( v10 ) /*0x638bdc*/
   {
     v8 = *(unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v10 + 440))(v10, &v11); /*0x638bed*/
@@ -590,12 +590,12 @@ bool Team_Start_76ED10(void * a1, void * a2)
   if ( !*(unsigned int *)((unsigned int)(a1)+ 4) ) /*0x76ed10*/
     return 0; /*0x76ed20*/
   ConstructWDTSelection((int)v13, a1, a2); /*0x76ed31*/
-  State = FileClass::GetState((unsigned int *)(v13[19] + 8)); /*0x76ed3f*/
+  State = ((unsigned int *)(v13[19] + 8))->GetState(); /*0x76ed3f*/
   ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   StringCSF = GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0, g_Str_File_WDTSel_cpp, 1230); /*0x76ed62*/
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
   ((ScoreText *)(v13))->Show((const wchar_t **)&v9); /*0x76ed7a*/
-  DeleteAndZero::Alt((void **)&v9); /*0x76ed83*/
+  ((void **)&v9)->Alt(); /*0x76ed83*/
   Team_Start_76E2F0((int)v13, a2); /*0x76ed8d*/
   ShowWDTTerritorySelection(v13, (int)&v11); /*0x76ed9b*/
   v6 = v12 != 0; /*0x76eda6*/
@@ -648,7 +648,7 @@ int Team_Start_7AFAD0(void * a1, void * a2)
   void *v7; // [esp+8h] [ebp-84h] BYREF
   char Buffer[128]; // [esp+Ch] [ebp-80h] BYREF
 
-  v2 = (char **)(StaticString::Factory(a1));
+  v2 = (char **)((a1)->Factory());
   sprintf(Buffer, "TheaterChoice%sMenu", *v2); /*0x7afae9*/
   ((String *)((char **)&v6))->Assign(Buffer); /*0x7afafa*/
   ((String *)((char **)&v7))->Assign((const char *)(aWdtchoicemdIni)); /*0x7afb08*/
@@ -750,7 +750,7 @@ void Team_Start_76ECD0(int a1, ScoreScreen * a2)
 {
   unsigned char v4[1200]; // [esp+8h] [ebp-4B0h] BYREF
 
-  Timer::PumpMessages((HWND *)dword_87F770); /*0x76ece2*/
+  ((HWND *)dword_87F770)->PumpMessages(); /*0x76ece2*/
   ConstructWDTSelection((int)v4, a1, a2); /*0x76eced*/
   Team_Start_76E750((int)v4, a2); /*0x76ecf7*/
   SelectionInitializeWOL((int)v4); /*0x76ed00*/

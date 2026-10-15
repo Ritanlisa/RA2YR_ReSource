@@ -115,7 +115,7 @@ int GameConfig::ComputeHash()
   v1 = MultiplayerGameMode::ListGet(); /*0x679dac*/
   for ( i = 1; i <= v1; ++i ) /*0x679db7*/
   {
-    v3 = MultiplayerGameMode::Find((void *)i); /*0x679dbb*/
+    v3 = ((void *)i)->Find(); /*0x679dbb*/
     if ( v3 ) /*0x679dc2*/
     {
       v4 = (int)(GameConfig::Constructor(v3)); /*0x679dc6*/
@@ -126,7 +126,7 @@ int GameConfig::ComputeHash()
     return dword_B053B4 + v0; /*0x679ea8*/
   v6[1] = 0; /*0x679de9*/
   v6[2] = 0; /*0x679ded*/
-  GenericList::Constructor(v7); /*0x679df1*/
+  (v7)->Constructor(); /*0x679df1*/
   v7[0] = (unsigned int)(&vt_List); /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/
@@ -143,7 +143,7 @@ int GameConfig::ComputeHash()
   Vector::Clear((int)v13); /*0x679e6f*/
   v12[0] = (unsigned int)&off_7E1668; /*0x679e78*/
   ((BufferIOFileClass *)(v12))->Dtor(); /*0x679e80*/
-  HashTable::DestroyHashTableINIClass(v6); /*0x679e89*/
+  (v6)->DestroyHashTableINIClass(); /*0x679e89*/
   return dword_B053B4 + v0; /*0x679e97*/
 }
 } // namespace gamemd
@@ -172,7 +172,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
       *(unsigned int *)(v2 + 20) = 0; /*0x5d67e6*/
       *(unsigned int *)(v2 + 24) = 0; /*0x5d67e9*/
       *(unsigned int *)(v2 + 16) = (unsigned int)(&vt_GenericNode); /*0x5d67ec*/
-      GenericNode::Constructor((GenericNode *)(v2 + 28)); /*0x5d67f2*/
+      ((GenericNode *)(v2 + 28))->Constructor(); /*0x5d67f2*/
       v3->u32_C = &vt_GenericList; /*0x5d67fa*/
       LinkedList::Prepend(&v3->sectionHead, v3 + 28); /*0x5d6801*/
       v1 = this; /*0x5d6806*/
@@ -198,7 +198,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
     *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x5d6878*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5d6880*/
+    ((BufferIOFileClass *)&v6)->Dtor(); /*0x5d6880*/
   }
   return *&v1->q038; /*0x5d6888*/
 

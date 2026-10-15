@@ -90,7 +90,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
 
   if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.q020, 128) ) /*0x47710a*/
   {
-    DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
+    ((DynamicVectorClass *)&v21)->Construct(0, 0); /*0x477121*/
     /* X11: vtable install elided (implicit via TypeList virtuals 0x47712a) */
     for ( i = strtok(v21.q020, Str); i; i = strtok(0, Str) ) /*0x477144*/
     {
@@ -176,9 +176,9 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       {
         if ( !v13 ) /*0x47738b*/
         {
-          v21.q01C = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)i); /*0x477397*/
+          v21.q01C = ((BuildingTypeClass *)i)->FindIndexByName(); /*0x477397*/
           if ( v21.q01C != -1 ) /*0x47739b*/
-            DynamicVector::Add_Alt((unsigned int *)(&v21), &v21.q01C); /*0x4773a6*/
+            ((unsigned int *)(&v21))->Add_Alt(&v21.q01C); /*0x4773a6*/
         }
       }
       else if ( v21.Count < v21.Capacity /*0x47736a*/
@@ -193,19 +193,19 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         *(unsigned int *)(*(unsigned int *)&v21.Items + 4 * v19) = -6; /*0x477380*/
       }
     }
-    DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
+    (a1)->Copy(&v21); /*0x4773cb*/
     /* X11: vtable install elided (implicit via TypeList virtuals 0x4773d9) */
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x4773df) */
-    VectorClass::Destroy((int)&v21); /*0x4773e3*/
+    ((int)&v21)->Destroy(); /*0x4773e3*/
     a5 = &vt_VectorClass; /*0x4773ef*/
-    VectorClass::Destroy((int)&a5); /*0x4773f6*/
+    ((int)&a5)->Destroy(); /*0x4773f6*/
     return (gamemd::VectorClass_flat **)(a1); /*0x4773fb*/
   }
   else
   {
     VectorClass::Copy(a1, &a5); /*0x477413*/
     a5 = &vt_VectorClass; /*0x47741f*/
-    VectorClass::Destroy((int)&a5); /*0x47742a*/
+    ((int)&a5)->Destroy(); /*0x47742a*/
     return (gamemd::VectorClass_flat **)(a1); /*0x47742f*/
   }
 }
@@ -2020,7 +2020,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
   SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
-  Pipe::Dtor((Pipe *)&v6); /*0x4745df*/
+  ((Pipe *)&v6)->Dtor(); /*0x4745df*/
   INIClass::ReadBase64Data( /*0x4745ee*/
     (char *)this,
     (unsigned __int8 *)g_INI_Key_Digest,

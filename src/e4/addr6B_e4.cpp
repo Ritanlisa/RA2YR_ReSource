@@ -196,22 +196,22 @@ CellClass * * InitializeBuildabilityGrid(int a1)
               v11 = 15 * *((char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v26) + 283) /*0x6b291b*/
                   + *(unsigned int *)*(&off_83FF18 + v15);
               v16 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v26); /*0x6b291d*/
-              if ( !CellClass::IsBuildable((void *)((int)v16)) ) /*0x6b292a*/
+              if ( !((void *)((int)v16))->IsBuildable() ) /*0x6b292a*/
                 goto LABEL_24; /*0x6b292a*/
               v24 = *(unsigned int *)v26 - 0x10000; /*0x6b2959*/
               v17 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v24); /*0x6b295d*/
-              if ( !CellClass::IsBuildable((void *)((int)v17)) ) /*0x6b2966*/
+              if ( !((void *)((int)v17))->IsBuildable() ) /*0x6b2966*/
                 goto LABEL_24; /*0x6b2966*/
               (*((unsigned short *)&(v21))) = v26[0] - 1; /*0x6b2979*/
               (*(((unsigned short *)&(v21)) + 1)) = v26[1] - 1; /*0x6b2982*/
               v24 = v21; /*0x6b2991*/
               v18 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v24); /*0x6b2995*/
-              if ( !CellClass::IsBuildable((void *)((int)v18)) /*0x6b29d6*/
+              if ( !((void *)((int)v18))->IsBuildable() /*0x6b29d6*/
                 || ((*(((unsigned short *)&(v22)) + 1)) = v26[1],
                     (*((unsigned short *)&(v22))) = v26[0] - 1,
                     v24 = v22,
                     v19 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v24),
-                    !CellClass::IsBuildable((void *)((int)v19))) )
+                    !((void *)((int)v19))->IsBuildable()) )
               {
   LABEL_24:
                 v12[4] = 1; /*0x6b29df*/
@@ -386,10 +386,10 @@ AbstractClass * * SlaveManager_InitGrid()
             *(unsigned int *)v32 = v40.q010 - 0x10000; /*0x6b2ceb*/
             v20 = (int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v32); /*0x6b2cf4*/
             *(unsigned int *)v40.__pad_000 = v20->ptr_24; /*0x6b2cfd*/
-            if ( !(uint8_t)MapSeed::IsCellInBounds(&v40) /*0x6b2d4e*/
+            if ( !(uint8_t)(&v40)->IsCellInBounds() /*0x6b2d4e*/
               || v20->u32_44 != -1
               || v20->u32_E4
-              || (v40.q004 = v20->ptr_24, Tactical::GetCellData((Tactical *)&v40.q004)[69])
+              || (v40.q004 = v20->ptr_24, ((Tactical *)&v40.q004)->GetCellData()[69])
               || (v21 = v20->u32_38, v21 < *(int *)&((unsigned int *)&stru_A8EB00)[340])
               && v21 != 0xFFFF
               && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[328] + 4 * v21) + 736) )
@@ -410,7 +410,7 @@ AbstractClass * * SlaveManager_InitGrid()
             v40.q004 = v36; /*0x6b2dbe*/
             v24 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v40.q004); /*0x6b2dc7*/
             *(unsigned int *)v40.__pad_000 = v24->ptr_24; /*0x6b2dd0*/
-            if ( !(uint8_t)MapSeed::IsCellInBounds(&v40) /*0x6b2e21*/
+            if ( !(uint8_t)(&v40)->IsCellInBounds() /*0x6b2e21*/
               || v24->u32_44 != -1
               || v24->u32_E4
               || (*(unsigned int *)v32 = v24->ptr_24, Tactical::GetCellDatav32->Tactical_114)
@@ -435,13 +435,13 @@ AbstractClass * * SlaveManager_InitGrid()
                                         (CellStruct *)&v40.q010,
                                         &v40.q00C,
                                         v37);
-                        v28 = (ObjectClass *)CellCoord::To_CellObj((int16_t *)(/*0x6b2e93*/                                    (CellCoord *)&DataGlobal_87F7E8),                                    (int16_t *)&v40.q008);
+                        v28 = (ObjectClass *)((int16_t *)(/*0x6b2e93*/ (CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v40.q008);
             if ( !System_Init_6B2520(v28) ) /*0x6b2e9c*/
               v30[4] = 1; /*0x6b2ea9*/
           }
-          if ( (uint8_t)MapSeed::IsCellInBounds((MapSeed *)&v40.q010) ) /*0x6b2eb1*/
+          if ( (uint8_t)((MapSeed *)&v40.q010)->IsCellInBounds() ) /*0x6b2eb1*/
           {
-                        v29 = (ObjectClass *)CellCoord::To_CellObj((int16_t *)(/*0x6b2ec4*/                                    (CellCoord *)&DataGlobal_87F7E8),                                    (int16_t *)&v40.q010);
+                        v29 = (ObjectClass *)((int16_t *)(/*0x6b2ec4*/ (CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v40.q010);
             if ( !System_Init_6B2520(v29) ) /*0x6b2ecd*/
               v30[4] = 1; /*0x6b2eda*/
           }
@@ -631,7 +631,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
       (*(((unsigned short *)&(v96)) + 1)) = dword_8759AC + v8; /*0x6b3080*/
       (*((unsigned short *)&(v96))) = dword_8759A8 + v11; /*0x6b308f*/
       v12 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v96)); /*0x6b3099*/
-      if ( !CellClass::IsBuildable((void *)((int)v12)) ) /*0x6b30a8*/
+      if ( !((void *)((int)v12))->IsBuildable() ) /*0x6b30a8*/
         goto LABEL_104; /*0x6b30a8*/
       v13 = v100 * dword_8759A4 + v83; /*0x6b30c5*/
       v10 = (void *)(g_SlaveManagerPool); /*0x6b30c8*/
@@ -1028,8 +1028,8 @@ char ProcessSlaveManagerTerrain()
   int v26; // [esp+10h] [ebp-8h]
   int v27; // [esp+14h] [ebp-4h]
 
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x6b3858*/
-  v1 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x6b3862*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x6b3858*/
+  v1 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x6b3862*/
   for ( i = v1; v1; i = v1 ) /*0x6b386d*/
   {
     v2 = *(unsigned int *)(v1 + 36); /*0x6b3877*/
@@ -1074,7 +1074,7 @@ char ProcessSlaveManagerTerrain()
           && !*(unsigned int *)(i + 228) )
         {
           v23 = v2; /*0x6b3981*/
-          if ( !Tactical::GetCellData((Tactical *)&v23)[69] ) /*0x6b398a*/
+          if ( !((Tactical *)&v23)->GetCellData()[69] ) /*0x6b398a*/
           {
             v13 = *(unsigned int *)(i + 56); /*0x6b3995*/
             if ( v13 >= *(int *)&((unsigned int *)&stru_A8EB00)[340] /*0x6b39b2*/
@@ -1115,7 +1115,7 @@ char ProcessSlaveManagerTerrain()
       }
     }
   LABEL_36:
-    v1 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x6b3a47*/
+    v1 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x6b3a47*/
   }
   operator delete((void *)(g_SlaveManagerPool)); /*0x6b3a68*/
   g_SlaveManagerPool = 0; /*0x6b3a6d*/
@@ -1514,11 +1514,11 @@ int FactoryClass_LoadTheaterSHP(int a1)
     if ( *(unsigned char *)(v4 + 556) ) /*0x6b54b2*/
     {
       _makepath(Buffer, 0, 0, (const char *)(v4 + 36), (const char *)&off_7E1BC6 + 112 * a1); /*0x6b54dc*/
-      CCFileClass::Construct((char *)(v5), Buffer); /*0x6b54ed*/
-      *(unsigned int *)(v4 + 164) = CCFileClass::ReadEntireFile(v5); /*0x6b54ff*/
+      ((char *)(v5))->Construct(Buffer); /*0x6b54ed*/
+      *(unsigned int *)(v4 + 164) = (v5)->ReadEntireFile(); /*0x6b54ff*/
       v5[0] = (unsigned int)(&vt_CCFileClass); /*0x6b5505*/
       v7 = (unsigned int)(0); /*0x6b550d*/
-      Vector::Clear((void *)((int)v6)); /*0x6b5515*/
+      ((void *)((int)v6))->Clear(); /*0x6b5515*/
       v5[0] = (unsigned int)&off_7E1668; /*0x6b551e*/
       ((BufferIOFileClass *)(v5))->Dtor(); /*0x6b5526*/
     }
@@ -1565,7 +1565,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   a0 = a0; /*0x6b59aa*/
   if ( (((unsigned int)(unsigned short)(*a0 / 256)) | ((unsigned int)(unsigned short)(a0[1] / 256) << 16)) == Map_BottomRightCell ) /*0x6b59d5*/
     return 0; /*0x6b59e6*/
-  Game::LockMutex((Game *)&v30, 0, 0); /*0x6b59f4*/
+  ((Game *)&v30)->LockMutex(0, 0); /*0x6b59f4*/
   v6 = 0; /*0x6b59fe*/
   v30 = &vt_DynamicVectorClass; /*0x6b5a02*/
   v35 = 10; /*0x6b5a0a*/
@@ -1577,7 +1577,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
       (*((unsigned short *)&(v20))) = *v4 / 256; /*0x6b5a3f*/
       (*(((unsigned short *)&(v20)) + 1)) = v4[1] / 256; /*0x6b5a57*/
       v20 = v20; /*0x6b5a64*/
-      if ( (uint8_t)Cell::IsWalkable((Cell *)v7, &v20, a4) ) /*0x6b5a6c*/
+      if ( (uint8_t)((Cell *)v7)->IsWalkable(&v20, a4) ) /*0x6b5a6c*/
       {
         if ( i < v32 /*0x6b5a9f*/
           || (v33 || !v32)
@@ -1590,7 +1590,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
       }
     }
   }
-  Game::LockMutex((Game *)&v24, 0, 0); /*0x6b5acc*/
+  ((Game *)&v24)->LockMutex(0, 0); /*0x6b5acc*/
   v9 = 10; /*0x6b5ad1*/
   v10 = 0; /*0x6b5ad6*/
   v11 = i; /*0x6b5ad8*/
@@ -1723,7 +1723,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
     (*((unsigned char *)&(result))) = 0; /*0x6b5cd0*/
     return result; /*0x6b5cd6*/
   }
-  Game::LockMutex((Game *)&v31, 0, 0); /*0x6b5ce4*/
+  ((Game *)&v31)->LockMutex(0, 0); /*0x6b5ce4*/
   v7 = 0; /*0x6b5cee*/
   v31 = &vt_DynamicVectorClass; /*0x6b5cf2*/
   v36 = 10; /*0x6b5cfa*/
@@ -1735,7 +1735,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
       (*((unsigned short *)&(v21))) = *v4 / 256; /*0x6b5d2f*/
       (*(((unsigned short *)&(v21)) + 1)) = v4[1] / 256; /*0x6b5d47*/
       v21 = v21; /*0x6b5d54*/
-      if ( (uint8_t)Cell::IsWalkable((Cell *)v8, &v21, a4) ) /*0x6b5d5c*/
+      if ( (uint8_t)((Cell *)v8)->IsWalkable(&v21, a4) ) /*0x6b5d5c*/
       {
         if ( i < v33 /*0x6b5d8f*/
           || (v34 || !v33)
@@ -1748,7 +1748,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
       }
     }
   }
-  Game::LockMutex((Game *)&v25, 0, 0); /*0x6b5dbc*/
+  ((Game *)&v25)->LockMutex(0, 0); /*0x6b5dbc*/
   v10 = 10; /*0x6b5dc1*/
   v11 = 0; /*0x6b5dc6*/
   v12 = i; /*0x6b5dc8*/
@@ -2233,7 +2233,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
   }
   while ( v7 ); /*0x6b9d2b*/
   v60[0] = 0; /*0x6b9d3b*/
-  CCFileClass::Construct((char *)(v55), Source); /*0x6b9d42*/
+  ((char *)(v55))->Construct(Source); /*0x6b9d42*/
   v9 = DecodeFrameSHP(0, 0); /*0x6b9d59*/
   v10 = (unsigned int *)v9; /*0x6b9d5d*/
   if ( v9 ) /*0x6b9d5f*/

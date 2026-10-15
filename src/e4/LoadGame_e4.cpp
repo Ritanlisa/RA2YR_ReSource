@@ -313,7 +313,7 @@ int LoadGame::RestoreAudioState()
           v5 = (AudioMixer *)**((unsigned int **)g_VocAudioConfig + v18[0]); /*0x7517da*/
           if ( v5 ) /*0x7517de*/
           {
-            if ( AudioMixer::SetVolume(v5) ) /*0x7517e4*/
+            if ( (v5)->SetVolume() ) /*0x7517e4*/
             {
               v6 = v18[1]; /*0x7517f9*/
               v7 = v18[2]; /*0x7517fd*/
@@ -326,7 +326,7 @@ int LoadGame::RestoreAudioState()
                 if ( v8 ) /*0x75181c*/
                 {
                   AudioController::Init((AudioController *)(v8 + 3)); /*0x751823*/
-                  DListNode::InitEmpty((DListNode *)v9); /*0x75182a*/
+                  ((DListNode *)v9)->InitEmpty(); /*0x75182a*/
                   v9->u32_30 = 0; /*0x751831*/
                   v9->u32_2C = 0; /*0x75183a*/
                   v9[8] = v6; /*0x75183d*/
@@ -493,11 +493,11 @@ int sub_721040(int a1)
                 if ( dword_A83D3C ) /*0x7210ea*/
                 {
                   if ( byte_A83D21 && !AudioSample::IsBuffering(dword_A83D3C) ) /*0x7210f5*/
-                    Audio::Release((unsigned int *)dword_A83D3C); /*0x721104*/
-                  if ( Audio::IsSoundPlaying((unsigned int *)dword_A83D3C) != 0 ) /*0x721116*/
+                    ((unsigned int *)dword_A83D3C)->Release(); /*0x721104*/
+                  if ( ((unsigned int *)dword_A83D3C)->IsSoundPlaying() != 0 ) /*0x721116*/
                   {
                     if ( dword_A83D3C ) /*0x721125*/
-                      ThemeClass::RequestBuffer((unsigned int *)dword_A83D3C); /*0x721127*/
+                      ((unsigned int *)dword_A83D3C)->RequestBuffer(); /*0x721127*/
                     byte_A83D21 = 1; /*0x72112c*/
                   }
                 }

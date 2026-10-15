@@ -34,9 +34,9 @@ AbstractClass * * sub_777420(ObjectClass *self)
     if ( DSurface_Alternate ) /*0x77748a*/
       DSurface::RestoreIfLost(DSurface_Alternate); /*0x77748c*/
     if ( g_DSurface_Hidden ) /*0x777499*/
-      DSurface::RestoreIfLost((DSurface *)g_DSurface_Hidden); /*0x77749b*/
+      ((DSurface *)g_DSurface_Hidden)->RestoreIfLost(); /*0x77749b*/
     if ( DSurface_Composite /*0x7774c7*/
-      && DSurface::RestoreIfLost((DSurface *)DSurface_Composite)
+      && ((DSurface *)DSurface_Composite)->RestoreIfLost()
       && (!((unsigned int *)&stru_A8EB00)[376] || *(int *)&((unsigned int *)&stru_A8EB00)[416] > 16) )
     {
       (*(void (**)(AudioStream *, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 24))( /*0x7774d3*/
@@ -71,7 +71,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
   MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x77757c*/
   InvalidateRect((HWND)(g_hWnd), 0, 0); /*0x77758c*/
   (*((unsigned char *)&(v2))) = 0; /*0x777592*/
-  AsyncIO::Read(v2); /*0x777594*/
+  (v2)->Read(); /*0x777594*/
   result = Dialog::GetCurrent(); /*0x777599*/
   if ( result ) /*0x7775a1*/
   {

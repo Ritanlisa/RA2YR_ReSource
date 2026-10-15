@@ -154,11 +154,11 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v2->vtable1, (uint8_t *)aUnits, v4); /*0x7432dd*/
       INIClass::GetString(v2, (uint8_t *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
       v6 = strtok(String, Str); /*0x743305*/
-      v7 = HouseClass::FindByName(v6); /*0x743314*/
+      v7 = (v6)->FindByName(); /*0x743314*/
       if ( v7 != -1 ) /*0x743319*/
       {
         v8 = strtok(0, Str); /*0x743325*/
-        Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)v8); /*0x74333a*/
+        Index = ((BuildingTypeClass *)v8)->FindIndex(); /*0x74333a*/
         v10 = (void *)*((unsigned int *)stru_A80220.vfptr3 + v7); /*0x74333f*/
         if ( Index != -1 ) /*0x743342*/
         {
@@ -195,12 +195,12 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
               v21 = strtok(0, Str); /*0x743448*/
               v22 = LookupWaypointName((ObjectClass *)v21); /*0x743457*/
               v23 = strtok(0, Str); /*0x743460*/
-              v24 = (TeamClass *)ObjectTypeClass::FindByName((ObjectTypeClass *)v23); /*0x74346a*/
+              v24 = (TeamClass *)((ObjectTypeClass *)v23)->FindByName(); /*0x74346a*/
               if ( v24 ) /*0x743471*/
               {
-                v25 = (int)(TeamClass::FindOrCreate(v24));
+                v25 = (int)((v24)->FindOrCreate());
                 if ( v25 ) /*0x74347c*/
-                  ObjectClass::SetReference((ObjectClass *)v12, v25); /*0x743481*/
+                  ((ObjectClass *)v12)->SetReference(v25); /*0x743481*/
               }
               v26 = strtok(0, Str); /*0x74348d*/
               if ( v26 ) /*0x743497*/
@@ -1029,8 +1029,8 @@ int InitializeVeinholeSystem(char a1)
   LABEL_18:
   if ( !v4 ) /*0x74e004*/
     dword_B1D2F0 = (unsigned int)(operator new(v2)); /*0x74e00f*/
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x74e019*/
-  for ( k = LayerClass::CellIteratorNext(&dword_87F7E8); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x74e02f*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x74e019*/
+  for ( k = (&dword_87F7E8)->CellIteratorNext(); k; k = (&dword_87F7E8)->CellIteratorNext() ) /*0x74e02f*/
     *(unsigned int *)(k + 320) &= ~0x8000u; /*0x74e03e*/
   memset(dword_B1D2F0, 0, v2); /*0x74e05c*/
   for ( m = dword_B1D2A0 - 1; m >= 0; --m ) /*0x74e06f*/
@@ -1041,14 +1041,14 @@ int InitializeVeinholeSystem(char a1)
     else
       ProcessVeinholeMonster(v16); /*0x74e08b*/
   }
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x74e098*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x74e0a2*/
+  (&dword_87F7E8)->CellIteratorReset(); /*0x74e098*/
+  result = (&dword_87F7E8)->CellIteratorNext(); /*0x74e0a2*/
   for ( n = result; result; n = result ) /*0x74e0ab*/
   {
-    if ( *(unsigned int *)(n + 68) == 126 && !*((unsigned char *)dword_B1D2F0 + Cell::PosToIndex((int16_t *)(n + 36))) ) /*0x74e0c5*/
+    if ( *(unsigned int *)(n + 68) == 126 && !*((unsigned char *)dword_B1D2F0 + ((int16_t *)(n + 36))->PosToIndex()) ) /*0x74e0c5*/
       *(unsigned int *)(n + 68) = -1; /*0x74e0cb*/
     *(unsigned int *)(n + 320) &= ~0x8000u; /*0x74e0da*/
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x74e0e5*/
+    result = (&dword_87F7E8)->CellIteratorNext(); /*0x74e0e5*/
   }
   return result; /*0x74e0f0*/
 }
@@ -1211,7 +1211,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     {
       BYTE2(this->owningHouseIndex) = 0; /*0x74fb55*/
     }
-    RawFileClass::Dtor(&v9); /*0x74fb5c*/
+    (&v9)->Dtor(); /*0x74fb5c*/
     v2 = this->ambientSoundController[2]; /*0x74fb61*/
     LOBYTE(v2) = v2 | 8; /*0x74fb64*/
     this->ambientSoundController[2] = v2; /*0x74fb66*/
@@ -1245,7 +1245,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     {
       stru_A8EB00.?[294] = 0; /*0x74fc07*/
     }
-    RawFileClass::Dtor(&v9); /*0x74fc11*/
+    (&v9)->Dtor(); /*0x74fc11*/
     v5 = *(unsigned int *)&DataGlobal_A8EC40; /*0x74fc16*/
     LOBYTE(v5) = DataGlobal_A8EC40 | 8; /*0x74fc1b*/
     *(unsigned int *)&DataGlobal_A8EC40 = v5; /*0x74fc1d*/

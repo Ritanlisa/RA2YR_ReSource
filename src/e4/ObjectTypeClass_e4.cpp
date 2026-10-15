@@ -358,7 +358,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
     this->Image_d = 0; /*0x5f7489*/
     this->ImageAllocated = 0; /*0x5f748f*/
   }
-  ObjectTypeClass::CleanupWeapons((char *)this); /*0x5f7497*/
+  ((char *)this)->CleanupWeapons(); /*0x5f7497*/
   __3_YAXPAX_Z(*&this->q280); /*0x5f74a3*/
   this->q280 = 0; /*0x5f74a8*/
   this->u32_284 = 0; /*0x5f74ae*/
@@ -404,7 +404,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
   ObjectTypeClass::ReleaseWaveAndString(&this->u32_C0); /*0x5f757d*/
   ObjectTypeClass::ReleaseWaveAndString(&this->BarrelVoxel_d); /*0x5f7588*/
   ObjectTypeClass::ReleaseWaveAndString(&this->MainVoxel); /*0x5f7593*/
-  return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x5f759f*/
+  return ((AbstractTypeClass *)this)->Dtor(); /*0x5f759f*/
 
 }
 } // namespace gamemd
@@ -452,7 +452,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         do /*0x5f7826*/
         {
           v5 -= 9; /*0x5f781b*/
-          FileTreeNode::Destroy(v5); /*0x5f7820*/
+          (v5)->Destroy(); /*0x5f7820*/
           --v6; /*0x5f7825*/
         }
         while ( v6 ); /*0x5f7826*/
@@ -476,7 +476,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         do /*0x5f7866*/
         {
           v11 -= 9; /*0x5f785b*/
-          FileTreeNode::Destroy(v11); /*0x5f7860*/
+          (v11)->Destroy(); /*0x5f7860*/
           --v12; /*0x5f7865*/
         }
         while ( v12 ); /*0x5f7866*/
@@ -500,7 +500,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         do /*0x5f78a6*/
         {
           v17 -= 9; /*0x5f789b*/
-          FileTreeNode::Destroy(v17); /*0x5f78a0*/
+          (v17)->Destroy(); /*0x5f78a0*/
           --v18; /*0x5f78a5*/
         }
         while ( v18 ); /*0x5f78a6*/
@@ -524,7 +524,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         do /*0x5f78e6*/
         {
           v23 -= 9; /*0x5f78db*/
-          FileTreeNode::Destroy(v23); /*0x5f78e0*/
+          (v23)->Destroy(); /*0x5f78e0*/
           --v24; /*0x5f78e5*/
         }
         while ( v24 ); /*0x5f78e6*/
@@ -749,7 +749,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   v14 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->vtable2, aLegaltarget, LegalTarget); /*0x5f94ae*/
   v29 = this->Armor[0]; /*0x5f94bb*/
   this->LegalTarget = v14; /*0x5f94c2*/
-  this->Armor[0] = ArmorType::FindIndex((ArmorType *)aP1, (unsigned __int8 *)this->Armor, g_INI_Key_Armor, v29); /*0x5f94cd*/
+  this->Armor[0] = ((ArmorType *)aP1)->FindIndex((unsigned __int8 *)this->Armor, g_INI_Key_Armor, v29); /*0x5f94cd*/
   Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)this->vtable2, aStrength, this->Strength); /*0x5f94e2*/
   Immune = this->Immune; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/

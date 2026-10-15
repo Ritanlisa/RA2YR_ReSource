@@ -100,7 +100,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
       v6 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x4229a1*/
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
-    if ( (unsigned __int8)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
+    if ( (unsigned __int8)((ObjectClass *)a2)->Undeploy() ) /*0x4229bb*/
       RemoveTarget((int)a2); /*0x4229ca*/
   }
   v12 = a2; /*0x4229df*/
@@ -121,8 +121,8 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   v8 = (AnimClass *)a2->AnimClass_field_0xC8; /*0x422a18*/
   if ( v8 ) /*0x422a20*/
     AnimClass::FreeRenderBuffer(v8); /*0x422a22*/
-  Mixer::ReleaseChannel((Mixer *)a2->AudioController_1A0); /*0x422a2f*/
-  Mixer::ReleaseChannel(&a2->AudioController_1B4); /*0x422a3c*/
+  ((Mixer *)a2->AudioController_1A0)->ReleaseChannel(); /*0x422a2f*/
+  (&a2->AudioController_1B4)->ReleaseChannel(); /*0x422a3c*/
   AudioFileClass::Release((AudioFileClass *)a2->AudioController_1A0); /*0x422a43*/
   AudioFileClass::Release(&a2->AudioController_1B4); /*0x422a4a*/
   a2->AnimClass_field_0xCC = 0; /*0x422a52*/
@@ -159,7 +159,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
       while ( v10 < dword_A8E9B8 ); /*0x422b0c*/
     }
   }
-  return ObjectClass::Dtor((ObjectClass *)a2); /*0x422abd*/
+  return ((ObjectClass *)a2)->Dtor(); /*0x422abd*/
 
 }
 }  // G42.18 ns repair
@@ -369,8 +369,8 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5, void *a3, void *a4
     Tactical::SetCellTransform(v111.q000, 0, v19, v18, v104, 0, 0); /*0x422f5c*/
     Tactical::SetCellTransform(v111.q000, 1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
     Tactical::SetCellTransform(v111.q000, 2, v89, v18, v104, 1065353216, 0); /*0x422f97*/
-    StructTable::Append(dword_8A0E10, &v110); /*0x422fa7*/
-    StructTable::Append(dword_8A0E10, &v111); /*0x422fba*/
+    (dword_8A0E10)->Append(&v110); /*0x422fa7*/
+    (dword_8A0E10)->Append(&v111); /*0x422fba*/
     return; /*0x422fc9*/
   }
   if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[282] < (unsigned int)PingPongBuffer::GetWriteOffset() /*0x422fe6*/
@@ -483,9 +483,9 @@ LABEL_47:
     LOWORD(v91) = *v30 / 256; /*0x423220*/
     HIWORD(v91) = v30[1] / 256; /*0x423238*/
     *(float *)v100 = v91; /*0x423241*/
-    v31 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)v100); /*0x423250*/
+    v31 = (int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)v100); /*0x423250*/
     if ( !v31[13] ) /*0x423252*/
-      TacticalClass::SetView(v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
+      (v31)->SetView(0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = this->AnimClass_field_0xC8; /*0x42327b*/
     v105[0] = v31[13]; /*0x423281*/
     if ( !v32[2].__pad_C[209] ) /*0x423285*/
@@ -508,7 +508,7 @@ LABEL_47:
       LOWORD(v92) = *v33 / 256; /*0x42331d*/
       HIWORD(v92) = v33[1] / 256; /*0x423336*/
       *(float *)v100 = v92; /*0x423343*/
-      v27 = *((__int16 *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)v100) + 133); /*0x42334d*/
+      v27 = *((__int16 *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)v100) + 133); /*0x42334d*/
 LABEL_77:
       v106 = v27; /*0x423354*/
     }
@@ -549,7 +549,7 @@ LABEL_78:
     goto LABEL_99; /*0x4233fc*/
   v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->vtable1 + 18))(this, &v108); /*0x42340b*/
   v43 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v42)); /*0x423414*/
-  v44 = Cell::IsBridge((Cell *)v43); /*0x42341b*/
+  v44 = ((Cell *)v43)->IsBridge(); /*0x42341b*/
   v93 = v44; /*0x423422*/
   if ( !v44 ) /*0x423426*/
     goto LABEL_99; /*0x423426*/
@@ -641,8 +641,8 @@ LABEL_99:
   LOWORD(v94) = *v60 / 256; /*0x4235ef*/
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   *(unsigned int *)v101 = v94; /*0x423615*/
-  v61 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v101); /*0x42361a*/
-  if ( (unsigned __int8)CellClass::QuickPassable(v61) ) /*0x423621*/
+  v61 = (CellClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v101); /*0x42361a*/
+  if ( (unsigned __int8)(v61)->QuickPassable() ) /*0x423621*/
   {
     v41 = 0.0; /*0x42362a*/
     *(float *)v100 = 0.0; /*0x42362c*/
@@ -1502,11 +1502,11 @@ int AnimClass::ProcessFrame()
   int v4; // eax
   int v6[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  Voxel::TransformMatrix((int)this); /*0x761037*/
+  ((int)this)->TransformMatrix(); /*0x761037*/
   for ( i = 0; i < *&this->q_200; ++i ) /*0x761046*/
   {
     Coords = CellClass::GetCoords(*(CellClass **)(*&this->u32_1F4 + 4 * i), v6); /*0x761056*/
-    WaveClass::DamageArea((WaveClass *)this, Coords); /*0x76105e*/
+    ((WaveClass *)this)->DamageArea(Coords); /*0x76105e*/
   }
   v4 = *&this->q130 - 1; /*0x761074*/
   *&this->q130 = v4; /*0x761075*/
@@ -1542,7 +1542,7 @@ char AnimClass::ProcessAreaEffect(AnimClass * a1)
   CellClass *v2; // esi
   char result; // al
 
-  v1 = Input::OffsetToDirection((Input *)a1); /*0x426314*/
+  v1 = ((Input *)a1)->OffsetToDirection(); /*0x426314*/
   v2 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a1); /*0x426321*/
   if ( Cell::GetGroundHeight((unsigned int *)(a1)) + Map_MaxHeight > (int)a1->vtable3 ) /*0x426335*/
   {

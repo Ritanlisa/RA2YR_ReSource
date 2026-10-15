@@ -92,7 +92,7 @@ namespace gamemd {  // G42.18c ns repair
 UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 {
   *(unsigned int *)&Block->m_Enabled = &vt_UnholyAlliance; /*0x5cb543*/
-  MultiplayerGameMode::Dtor((MultiplayerGameMode *)Block); /*0x5cb549*/
+  ((MultiplayerGameMode *)Block)->Dtor(); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     operator delete((void *)(Block)); /*0x5cb556*/
   return &Block->m_Enabled; /*0x5cb560*/

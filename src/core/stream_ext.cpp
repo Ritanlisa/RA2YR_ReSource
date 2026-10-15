@@ -130,7 +130,7 @@ int Buffer::CreateDirectSound()
   v1[11] = v7; /*0x40a45b*/
   if ( ProcessAudioStream((AudioBuffer *)v1, v1[26]) ) /*0x40a463*/
   {
-    Buffer::UpdateVolumeSettings(this); /*0x40a5cf*/
+    (this)->UpdateVolumeSettings(); /*0x40a5cf*/
     if ( !(*(int (__stdcall **)(unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)*v3 + 48))(*v3, 0, 0, 1) ) /*0x40a5df*/
       return 0; /*0x40a603*/
   }

@@ -62,8 +62,8 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
     (**v5)(v5, 1); /*0x5d7f61*/
   DeleteAndZero((ObjectClass *)((char *)Block + 48)); /*0x5d7f66*/
   DeleteAndZero((ObjectClass *)((char *)Block + 44)); /*0x5d7f6e*/
-  DeleteAndZero::Alt((DeleteAndZero *)Block + 3); /*0x5d7f76*/
-  DeleteAndZero::Alt((DeleteAndZero *)((char *)Block + 32)); /*0x5d7f7e*/
+  ((DeleteAndZero *)Block + 3)->Alt(); /*0x5d7f76*/
+  ((DeleteAndZero *)((char *)Block + 32))->Alt(); /*0x5d7f7e*/
   MultiplayerGameMode_field_0x0C = (void *)Block->u32_C; /*0x5d7f83*/
   Block->u32_8 = (int)&vt_VectorClass; /*0x5d7f86*/
   if ( MultiplayerGameMode_field_0x0C && (Block->u8_15) ) /*0x5d7f90*/

@@ -251,7 +251,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     }
     else
     {
-      SHPFile = CCFileClass::ReadEntireFile((CCFileClass *)&v14.buffer); /*0x5b420a*/
+      SHPFile = ((CCFileClass *)&v14.buffer)->ReadEntireFile(); /*0x5b420a*/
     }
     v9[3] = (unsigned int)(SHPFile); /*0x5b422a*/
     v14.buffer = (int)&vt_CCFileClass; /*0x5b4231*/
@@ -438,14 +438,14 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
           {
             if ( !(*(((unsigned short *)&(a3)) + 1)) ) /*0x5b4bbb*/
             {
-              Game::processStartup(WindowLongA); /*0x5b4bc6*/
+              (WindowLongA)->processStartup(); /*0x5b4bc6*/
               *(unsigned int *)(WindowLongA + 4) = 2; /*0x5b4bcb*/
               return 0; /*0x5b4bde*/
             }
           }
           else if ( (uint16_t)a3 == 1029 && (*(((unsigned short *)&(a3)) + 1)) == 1 ) /*0x5b4b9f*/
           {
-            ModemGame::AdvanceTauntCommand(WindowLongA); /*0x5b4ba7*/
+            (WindowLongA)->AdvanceTauntCommand(); /*0x5b4ba7*/
             return 0; /*0x5b4bb8*/
           }
           return 0; /*0x5b4b9f*/
@@ -719,14 +719,14 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     FileClass::Open2((RawFileClass *)v18, (const CHAR *)2); /*0x5bb4d9*/
     FileClass::Write2((RawFileClass *)v18, &Buffer, 4u); /*0x5bb4e9*/
     FileClass::Write2((RawFileClass *)v18, v6, v8); /*0x5bb4f4*/
-    FileClass::CloseHandle((RawFileClass *)v18); /*0x5bb4fd*/
+    ((RawFileClass *)v18)->CloseHandle(); /*0x5bb4fd*/
     operator delete((void *)(v6)); /*0x5bb503*/
     Debug::Log(); /*0x5bb50d*/
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
     ((RawFileClass *)((RawFileClass *)v18))->Dtor(); /*0x5bb52a*/
     LZOPipe::Destructor((LZOPipe *)&v19); /*0x5bb533*/
     Vector::Clear((int)&v15.q00C); /*0x5bb53c*/
-    Pipe::Dtor(&v15); /*0x5bb545*/
+    (&v15)->Dtor(); /*0x5bb545*/
   }
 }
 }
@@ -868,7 +868,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT, WPARAM, LPARAM)
       case 'l': /*0x5bc78d*/
         if ( AudioSource::Get((int **)dword_ABF224) ) /*0x5bc862*/
         {
-          AudioFile::Stop((unsigned int *)dword_ABF224); /*0x5bc871*/
+          ((unsigned int *)dword_ABF224)->Stop(); /*0x5bc871*/
           return 0; /*0x5bc878*/
         }
         else
@@ -947,14 +947,14 @@ int AudioDebug_DlgProc(HWND hWnd, UINT, WPARAM, LPARAM)
           ++dword_ABF228; /*0x5bc8fc*/
           return 0; /*0x5bc908*/
         }
-        AudioSample::Destructor(*(&dword_ABF114 + dword_ABF228)); /*0x5bc912*/
+        (*(&dword_ABF114 + dword_ABF228))->Destructor(); /*0x5bc912*/
         break; /*0x5bc912*/
       case ']': /*0x5bc78d*/
         if ( dword_ABF228 <= 0 ) /*0x5bc929*/
           return 0; /*0x5bc929*/
         v13 = (unsigned int *)*(&dword_ABF110 + dword_ABF228--); /*0x5bc92b*/
-        Audio::Release(v13); /*0x5bc938*/
-        AudioSample::Destructor(*(&dword_ABF114 + dword_ABF228)); /*0x5bc94a*/
+        (v13)->Release(); /*0x5bc938*/
+        (*(&dword_ABF114 + dword_ABF228))->Destructor(); /*0x5bc94a*/
         return 0; /*0x5bc957*/
       default:
         return 0;

@@ -697,8 +697,8 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
     LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/
-    v4 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v10); /*0x4d5010*/
-    v5 = Cell::IsBridge(v4); /*0x4d5017*/
+    v4 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v10); /*0x4d5010*/
+    v5 = (v4)->IsBridge(); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/
     {

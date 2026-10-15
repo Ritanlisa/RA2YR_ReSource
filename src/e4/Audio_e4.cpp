@@ -84,7 +84,7 @@ int Audio::GetChannelStatus(void *a1_1)
   if ( !*(unsigned int *)&a1_1->__pad_3C[300] ) /*0x402733*/
     return -2147024896; /*0x40273d*/
   Audio::InitChannels(a1_1->__pad_10); /*0x402748*/
-  ObjectClass::Cleanup((ObjectClass *)a1_1); /*0x40274f*/
+  ((ObjectClass *)a1_1)->Cleanup(); /*0x40274f*/
   (*(void (**)(Audio *))(*(unsigned int *)&a1_1->__pad_3C[152] + 40))(a1_1); /*0x40275c*/
   v3 = (*(int (**)(Audio *))(*(unsigned int *)&a1_1->__pad_3C[152] + 12))(a1_1); /*0x40276a*/
   if ( !v3 ) /*0x40276e*/
@@ -117,7 +117,7 @@ int Audio::ReleaseChannelRefs()
     v4 = (gamemd::RefCount **)(&this->q028); /*0x404d91*/
     do /*0x404dad*/
     {
-      RefCount::Decrement(*v4); /*0x404d96*/
+      (*v4)->Decrement(); /*0x404d96*/
       *v4 = 0; /*0x404d9b*/
       result = *&this->u32_A8; /*0x404da1*/
       ++v2; /*0x404da7*/
@@ -145,7 +145,7 @@ int Audio::UpdatePlaybackPosition()
   v2 = *&this->u32_B0; /*0x4054a4*/
   if ( this != *(Audio **)(v2 + 192) ) /*0x4054b0*/
     return 0; /*0x4054b3*/
-  AudioFile::GetCallback((AudioFile *)v2); /*0x4054b7*/
+  ((AudioFile *)v2)->GetCallback(); /*0x4054b7*/
   v4 = (unsigned int *)(*&this->u32_148); /*0x4054bc*/
   v5 = *(unsigned int *)this->q018; /*0x4054c2*/
   LOBYTE(v5) = v5 | 8; /*0x4054c5*/
@@ -188,12 +188,12 @@ void * Audio::ProcessMixerOutput(char * Source)
 
   if ( !g_AudioConfigState ) /*0x4063bb*/
     return 0; /*0x4063be*/
-  Next = (int *)AudioQueue::GetNext(stru_87E250); /*0x4063cc*/
+  Next = (int *)(stru_87E250)->GetNext(); /*0x4063cc*/
   if ( Next ) /*0x4063d0*/
   {
     while ( _strcmpi(Source, Next + 27) ) /*0x4063e1*/
     {
-      Next = (int *)AudioQueue::GetNextAlt(Next); /*0x4063ee*/
+      Next = (int *)(Next)->GetNextAlt(); /*0x4063ee*/
       if ( !Next ) /*0x4063f2*/
         goto LABEL_6; /*0x4063f2*/
     }
@@ -204,7 +204,7 @@ LABEL_6:
   v4 = (unsigned int *)(__2_YAPAXI_Z(0x148u)); /*0x4063f4*/
   memset(v4, 0, 0x148u); /*0x40640a*/
   memset(v4, 0, 0x148u); /*0x406413*/
-  DListNode::InitEmpty(v4); /*0x40641a*/
+  (v4)->InitEmpty(); /*0x40641a*/
   v4[3] = 1; /*0x406427*/
   v4[4] = 0; /*0x40642e*/
   v4[5] = 32; /*0x406435*/
@@ -311,7 +311,7 @@ int Audio::Release(void *a1)
     if ( result ) /*0x407f52*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407f59*/
-      Voice::Stop(v2); /*0x407f62*/
+      (v2)->Stop(); /*0x407f62*/
       LeaveCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407f6c*/
     }
   }
@@ -358,7 +358,7 @@ void sub_53E1D0()
     EnterCriticalSection(&unk_AA0418); /*0x53e1ed*/
     if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 && dword_AA0464 ) /*0x53e210*/
     {
-      SampleSize = Audio::GetSampleSize((unsigned int *)dword_AA0464); /*0x53e213*/
+      SampleSize = ((unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e213*/
       WriteAudioStreamToFile(dword_AA0464, dword_AA0468, SampleSize, 0); /*0x53e225*/
       fflush(dword_AA0468); /*0x53e230*/
     }
@@ -371,7 +371,7 @@ void sub_53E1D0()
         EnterCriticalSection(&unk_AA0418); /*0x53e265*/
         if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 && dword_AA0464 ) /*0x53e288*/
         {
-          v1 = Audio::GetSampleSize((unsigned int *)dword_AA0464); /*0x53e28b*/
+          v1 = ((unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e28b*/
           WriteAudioStreamToFile(dword_AA0464, dword_AA0468, v1, 0); /*0x53e29d*/
           fflush(dword_AA0468); /*0x53e2a9*/
         }
@@ -413,7 +413,7 @@ void sub_53E1D0()
   }
   if ( dword_AA045C ) /*0x53e37f*/
   {
-    AudioSample::InitLinkedList((unsigned int *)dword_AA045C); /*0x53e381*/
+    ((unsigned int *)dword_AA045C)->InitLinkedList(); /*0x53e381*/
     dword_AA045C = 0; /*0x53e386*/
   }
   if ( dword_AA0454 ) /*0x53e392*/
@@ -717,7 +717,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
   char String[2048]; // [esp+38h] [ebp-800h] BYREF
 
   v4 = v3; /*0x7510d9*/
-  DListNode::Init((DListNode *)&unk_B1D320); /*0x7510e0*/
+  ((DListNode *)&unk_B1D320)->Init(); /*0x7510e0*/
   dword_B1D3A4 = (unsigned int)((VtableStub *)AllocLinkedListMemory(200, 60)); /*0x7510f6*/
   dword_B1D3A8 = 0; /*0x751100*/
   dword_B1D3AC = 0; /*0x75110a*/
@@ -794,7 +794,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
         while ( 1 )
         {
           v12 = (char *)**((unsigned int **)g_VocAudioConfig + v11); /*0x75130f*/
-          v13 = v12 ? VocClass::GetSampleName(v12) : g_Str_Invalid_Voc;
+          v13 = v12 ? (v12)->GetSampleName() : g_Str_Invalid_Voc;
           if ( !_strcmpi(Destination, v13) ) /*0x751327*/
             break; /*0x751327*/
           if ( ++v11 >= g_VocPlayState ) /*0x75133b*/
@@ -898,7 +898,7 @@ void sub_752590(int a1, int a2, int a3)
   unsigned int *v5; // esi
 
   v5 = (unsigned int *)(operator new(0x20u)); /*0x75259f*/
-  DListNode::InitEmpty(v5); /*0x7525a6*/
+  (v5)->InitEmpty(); /*0x7525a6*/
   v5->u32_C = a1; /*0x7525af*/
   v5->u32_14 = a3; /*0x7525b2*/
   v5->u32_18 = a2; /*0x7525b5*/
@@ -1542,7 +1542,7 @@ signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
       }
       v11 = *(unsigned int *)(a1 + 296) - v22 - 1; /*0x7beeb1*/
       Audio_Process_7C3950(a1, 60 * v11 / v5); /*0x7beec0*/
-      Position = AudioStream::GetPosition((AudioStream *)a1); /*0x7beec7*/
+      Position = ((AudioStream *)a1)->GetPosition(); /*0x7beec7*/
       v9 = 1; /*0x7beeda*/
       v13 = v11 == 0; /*0x7beee6*/
       v7 = v21; /*0x7beee8*/

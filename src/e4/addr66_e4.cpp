@@ -652,7 +652,7 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
         {
     unsigned int v90 = 0;  /* G37 hoist */
           if ( v111->isAliveFlag )
-                        Coord::ToGridIndex((int)(&((unsigned int *)(stru_87C374))[46356]),               (VectorClass_flat *)v111,               *(VectorClass_flat **)v111[8].q000,               v110);
+                        ((int)(&((unsigned int *)(stru_87C374))[46356]))->ToGridIndex((VectorClass_flat *)v111, *(VectorClass_flat **)v111[8].q000, v110);
         }
         if ( *(int *)(*(unsigned int *)(a1 + 8) + 108) <= 0 )
           ((TechnoClass *)(a1 - 4))->CalculateDamage();

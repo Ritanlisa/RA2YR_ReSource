@@ -43,17 +43,17 @@ void Player::BuildListString(wchar_t * Destination)
       GetPlayerTypeString((char **)&v6.q004, v3); /*0x5e8e2b*/
       v4 = CharStringToWide((wchar_t **)&v6.u32_8, (const char **)&v6.q004); /*0x5e8e38*/
       WideString::Reassign_Alt((void **)&v6, (const wchar_t **)v4); /*0x5e8e42*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v6.u32_8); /*0x5e8e4b*/
+      ((DeleteAndZero *)&v6.u32_8)->Alt(); /*0x5e8e4b*/
       DeleteAndZero((ObjectClass *)&v6.q004); /*0x5e8e54*/
     }
     else
     {
       WideString::Assign_Alt((void **)&v6, v3); /*0x5e8e1e*/
     }
-    v5 = (wchar_t *)(WideString::GetOrEmpty((wchar_t **)&v6)); /*0x5e8e5d*/
+    v5 = (wchar_t *)(((wchar_t **)&v6)->GetOrEmpty()); /*0x5e8e5d*/
     wcscat((wchar_t *)Destination, v5); /*0x5e8e64*/
     wcscat((wchar_t *)Destination, asc_8304FC); /*0x5e8e6f*/
-    DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
+    (&v6)->Alt(); /*0x5e8e7b*/
     ++v2; /*0x5e8e80*/
   }
   while ( (int)v2 < (int)&dword_A8DAB0 ); /*0x5e8e89*/

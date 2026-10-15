@@ -14,6 +14,6 @@ int INoticeSource::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 {
   AbstractClass *v1; // ecx
 
-  return AbstractClass::COMStub_AddRef(v1);
+  return (v1)->COMStub_AddRef();
 }  // G42.18 ns repair
 } // namespace gamemd

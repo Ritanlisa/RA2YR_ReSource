@@ -129,7 +129,7 @@ int sub_5EAA70(int a1)
   {
     return -2; /*0x5eaac2*/
   }
-  return SessionClass::GetOption2(*(&dword_A8DA90 + a1)); /*0x5eaa9a*/
+  return (*(&dword_A8DA90 + a1))->GetOption2(); /*0x5eaa9a*/
 }
 }
 // 0x7A0E50

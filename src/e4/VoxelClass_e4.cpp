@@ -312,7 +312,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) && !v55 ) /*0x73cc59*/
     {
       v34 = *(unsigned int *)a1; /*0x73cc5b*/
-      inited = (float *)AudioConfig::InitDefault(&v76); /*0x73cc75*/
+      inited = (float *)(&v76)->InitDefault(); /*0x73cc75*/
       v36 = MultiplyMatrix3x4((float *)&v73[0].Transform_field_00, inited, (float *)v74); /*0x73cc83*/
       (*(void (**)(Class_7F5C70 *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
         a1,
@@ -327,7 +327,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         10240,
         0);
     }
-    Value = (unsigned int *)(ProgressTimer::GetValue((ProgressTimer *)(a1 + 928), &v60));
+    Value = (unsigned int *)(((ProgressTimer *)(a1 + 928))->GetValue(&v60));
     (*(void (**)(Class_7F5C70 *, int, unsigned int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cd08*/
       a1,
       v15,
@@ -351,7 +351,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       if ( v55 ) /*0x73cd2b*/
       {
         v38 = *(unsigned int *)a1; /*0x73cd2d*/
-        v39 = (float *)AudioConfig::InitDefault(&v76); /*0x73cd47*/
+        v39 = (float *)(&v76)->InitDefault(); /*0x73cd47*/
         v40 = MultiplyMatrix3x4((float *)&v73[0].Transform_field_00, v39, (float *)v74); /*0x73cd55*/
         (*(void (**)(Class_7F5C70 *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/
           a1,
@@ -390,7 +390,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   }
   else if ( *(unsigned char *)(v18 + 3606) /*0x73ce24*/
          && TechnoClass::CheckTargetCell((TechnoClass *)a1)
-         && !TechnoClass::ScanNeighborCells((TechnoClass *)a1) )
+         && !((TechnoClass *)a1)->ScanNeighborCells() )
   {
     return (*(int (**)(Class_7F5C70 *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
              a1,

@@ -449,7 +449,7 @@ AbstractClass * * EventClass::validateEventType()
       while ( v7 < *(unsigned int *)this->Count ); /*0x6644a7*/
     }
   }
-  if ( SessionClass::IsValidHouse((int)&dword_A8B238, 0) /*0x6644d2*/
+  if ( ((int)&dword_A8B238)->IsValidHouse(0) /*0x6644d2*/
     || v1 == -1
     || v1 != dword_A83D4C->relatedTagsCount
     || dword_A8DA84 <= 2 )
@@ -471,7 +471,7 @@ AbstractClass * * EventClass::validateEventType()
     v9 = (Network *)(dword_A8DA78[v10] + 40); /*0x6644fd*/
   }
 LABEL_23:
-  Network::CopyAddress(v9, &v13, (int)v14); /*0x664500*/
+  (v9)->CopyAddress(&v13, (int)v14); /*0x664500*/
   LaunchMultiplayerHost((bool *)this, v14); /*0x664516*/
   return (gamemd::AbstractClass **)(v1); /*0x66451c*/
 

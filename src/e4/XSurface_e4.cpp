@@ -944,7 +944,7 @@ int XSurface::vt_entry_40(int a1)
 {
   AbstractClass *v1; // ecx
 
-  return AbstractClass::COMStub_Release(v1);
+  return (v1)->COMStub_Release();
 }
 } // namespace gamemd
 // 0x411500

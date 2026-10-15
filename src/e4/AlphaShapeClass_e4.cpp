@@ -95,7 +95,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
       ++v4; /*0x4217cf*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)aP0); /*0x4217e3*/
+  ((AbstractClass *)aP0)->DTOR(); /*0x4217e3*/
   if ( (aP0 & 1) != 0 ) /*0x4217ed*/
     __3_YAXPAX_Z(aP0); /*0x4217f0*/
   return aP0->__pad_0; /*0x4217fa*/

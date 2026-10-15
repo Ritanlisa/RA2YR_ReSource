@@ -46,7 +46,7 @@ int RadioClass::ProcessCmd()
 
   if ( !this->inLimbo ) /*0x65aa83*/
     (*((void (**)(RadioClass *, int))this->MissionClass + 160))(this, 3); /*0x65aa91*/
-  return ObjectClass::Undeploy((ObjectClass *)this); /*0x65aa9e*/
+  return ((ObjectClass *)this)->Undeploy(); /*0x65aa9e*/
 
 }
 } // namespace ra2
@@ -63,7 +63,7 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   int v7; // ecx
   int v8; // eax
 
-  AbstractClass::COMStub_13((int)this, aP1); /*0x65ab1a*/
+  ((int)this)->COMStub_13(aP1); /*0x65ab1a*/
   Power::TimerProcess(this->radioLinks[2]); /*0x65ab28*/
   result = this->radioLinks[2]; /*0x65ab2d*/
   for ( i = 0; i < result; ++i ) /*0x65ab37*/
@@ -99,7 +99,7 @@ int RadioClass::LoadState(int aP1, int aP2)
 
   v3 = aP1; /*0x65ab81*/
   v4 = aP2; /*0x65ab87*/
-  result = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x65ab8d*/
+  result = ((ObjectClass *)this)->SaveLoad_Register(); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
     v6 = v3 + 224; /*0x65ab9a*/
@@ -228,7 +228,7 @@ int RadioClass::ExecuteAction(int aP1, char aP2)
   int v7; // edx
   unsigned int *v8; // eax
 
-  Object::Unlink((ObjectClass *)this); /*0x65aacf*/
+  ((ObjectClass *)this)->Unlink(); /*0x65aacf*/
   result = this->radioLinks[2]; /*0x65aad4*/
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {

@@ -72,8 +72,8 @@ char sub_5F0070()
     v5 = 0; /*0x5f0096*/
     v6 = 0; /*0x5f0098*/
     v4[0] = 19; /*0x5f00a5*/
-    Stream::WriteBlock((int)&unk_A8EA70, (int)v4, 111, 0); /*0x5f00aa*/
-    Stream::WriteBlock((int)&unk_A8EA70, (int)v4, 111, 0); /*0x5f00bd*/
+    ((int)&unk_A8EA70)->WriteBlock((int)v4, 111, 0); /*0x5f00aa*/
+    ((int)&unk_A8EA70)->WriteBlock((int)v4, 111, 0); /*0x5f00bd*/
     v1 = dword_887340; /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
       v1 += TimerGetTicks() - dword_887338; /*0x5f00e2*/
@@ -122,7 +122,7 @@ char HandlePlayerDisconnection(int a1, int a2)
         String[0] = 0; /*0x5f01b6*/
         if ( a2 == -1 ) /*0x5f01bd*/
         {
-          ObjectClass::FreeResources((int)&unk_A8EA70); /*0x5f0227*/
+          ((int)&unk_A8EA70)->FreeResources(); /*0x5f0227*/
         }
         else if ( a2 ) /*0x5f01c1*/
         {
@@ -164,7 +164,7 @@ char HandlePlayerDisconnection(int a1, int a2)
           }
         }
   LABEL_20:
-        HouseClass::AIBuildBase((void *)v3); /*0x5f0318*/
+        ((void *)v3)->AIBuildBase(); /*0x5f0318*/
         result = --dword_A8B54C; /*0x5f0324*/
         if ( dword_A8B54C == 1 ) /*0x5f032f*/
         {
@@ -354,7 +354,7 @@ void* sub_5F33B0()
   v1 = v0; /*0x5f33c9*/
   if ( !v0 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
-  Timer::PumpMessages((HWND *)dword_87F770); /*0x5f33d7*/
+  ((HWND *)dword_87F770)->PumpMessages(); /*0x5f33d7*/
   if ( v1 != 27 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
   g_NetworkTestFlag = (int)((void *)(1));
@@ -530,8 +530,8 @@ AbstractClass * * sub_5FDDF0()
   int v12; // [esp+1Ch] [ebp-8h]
   int v13; // [esp+20h] [ebp-4h]
 
-  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x5fddfb*/
-  v1 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x5fde0a*/
+  ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x5fddfb*/
+  v1 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x5fde0a*/
   v2 = 0; /*0x5fde0e*/
   v3 = 1000; /*0x5fde10*/
   Block = 0; /*0x5fde17*/
@@ -557,7 +557,7 @@ AbstractClass * * sub_5FDDF0()
         *(unsigned int *)(v1 + 68) = -1; /*0x5fde8f*/
         *(unsigned char *)(v1 + 286) = 0; /*0x5fde92*/
       }
-      v1 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x5fdea2*/
+      v1 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x5fdea2*/
       if ( !v1 ) /*0x5fdea6*/
         break; /*0x5fdea6*/
       v2 = v9; /*0x5fde3f*/
@@ -629,7 +629,7 @@ int BuildingTypeClass_LoadSHPs(int a1)
     if ( v7 ) /*0x5fe703*/
       goto LABEL_14; /*0x5fe703*/
   LABEL_5:
-    ObjectTypeClass::SetRTTI71(Buffer); /*0x5fe69f*/
+    (Buffer)->SetRTTI71(); /*0x5fe69f*/
     *(unsigned int *)(v4 + 164) = (unsigned int)(SearchMIXFile(Buffer, 1)); /*0x5fe6b3*/
     goto LABEL_14; /*0x5fe6b9*/
   }
@@ -1065,7 +1065,7 @@ int E4Recv_5F1F20::sub_5F1F20()
     return 0; /*0x5f1f5b*/
   while ( 1 ) /*0x5f1f37*/
   {
-    TileIndex = Terrain::GetTileIndex((Terrain *)vtable1, v2); /*0x5f1f37*/
+    TileIndex = ((Terrain *)vtable1)->GetTileIndex(v2); /*0x5f1f37*/
     if ( TileIndex ) /*0x5f1f3e*/
     {
       if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) && (*(unsigned char *)TileIndex & 2) == 0 ) /*0x5f1f4d*/

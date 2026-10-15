@@ -202,14 +202,14 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   LOWORD(v13) = Math::RoundToInt(v4[1]); /*0x439ba5*/
   v51 = v13; /*0x439bad*/
   LOWORD(v14) = Math::RoundToInt(*v4); /*0x439bae*/
-  Coord3D::Set(&v84, v14, v51, (int)v56); /*0x439bb8*/
+  (&v84)->Set(v14, v51, (int)v56); /*0x439bb8*/
   Vector3::AddAssign((int *)v5, a2); /*0x439bc0*/
   LOWORD(v15) = Math::RoundToInt(v4[2]); /*0x439bc8*/
   v57 = v15; /*0x439bd0*/
   LOWORD(v16) = Math::RoundToInt(v4[1]); /*0x439bd1*/
   v52 = v16; /*0x439bd9*/
   LOWORD(v17) = Math::RoundToInt(*v4); /*0x439bda*/
-  Coord3D::Set(&v83, v17, v52, (int)v57); /*0x439be4*/
+  (&v83)->Set(v17, v52, (int)v57); /*0x439be4*/
   GroundHeight = Cell::GetGroundHeight(&v83); /*0x439bfe*/
   v75 = dword_89C76C + GroundHeight; /*0x439c09*/
   v18 = (Cell *)Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v83); /*0x439c17*/
@@ -234,7 +234,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
     v19 = (double)GroundHeight; /*0x439c89*/
     if ( v19 <= v4[2] && v4[2] - 150.0 < v19 ) /*0x439ca9*/
     {
-      v20 = Cell::IsBridge(v18); /*0x439cad*/
+      v20 = (v18)->IsBridge(); /*0x439cad*/
       v72[0] = (gamemd::Triple)((Triple)v20); /*0x439cb4*/
       if ( !v20 ) /*0x439cb8*/
       {
@@ -424,11 +424,11 @@ void* JumpjetLocomotionClass::AdjustClimbFacing(unsigned int *a2, void *a2_1)
       LOWORD(a2) = smudgeTypeIndex + v8; /*0x484916*/
       HIWORD(a2) = HIWORD(v21); /*0x48491b*/
       v11 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v2)->level + 2; /*0x484944*/
-      LOBYTE(a2) = *((char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a2) + 283) >= v11; /*0x484959*/
+      LOBYTE(a2) = *((char *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&a2) + 283) >= v11; /*0x484959*/
       v20[0] = smudgeTypeIndex; /*0x484960*/
       v20[1] = HIWORD(v21) + v7; /*0x484965*/
       v12 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v2)->level + 2; /*0x48498e*/
-      v13 = *((char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v20) + 283); /*0x484996*/
+      v13 = *((char *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v20) + 283); /*0x484996*/
       v15 = __OFSUB__(v13, v12); /*0x48499d*/
       v14 = v13 - v12 < 0; /*0x48499d*/
     }
@@ -437,11 +437,11 @@ void* JumpjetLocomotionClass::AdjustClimbFacing(unsigned int *a2, void *a2_1)
       LOWORD(a2) = smudgeTypeIndex + v7; /*0x4849ab*/
       HIWORD(a2) = HIWORD(v21); /*0x4849b0*/
       v16 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v2)->level + 2; /*0x4849d3*/
-      LOBYTE(a2) = *((char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a2) + 283) >= v16; /*0x4849ee*/
+      LOBYTE(a2) = *((char *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&a2) + 283) >= v16; /*0x4849ee*/
       v20[0] = smudgeTypeIndex; /*0x4849f5*/
       v20[1] = HIWORD(v21) + v8; /*0x4849fa*/
       v17 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v2)->level + 2; /*0x484a23*/
-      v18 = *((char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v20) + 283); /*0x484a2b*/
+      v18 = *((char *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v20) + 283); /*0x484a2b*/
       v15 = __OFSUB__(v18, v17); /*0x484a32*/
       v14 = v18 - v17 < 0; /*0x484a32*/
     }
@@ -496,7 +496,7 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
 LABEL_5:
     v6 = 0; /*0x4850cb*/
     v7 = 0; /*0x4850de*/
-    if ( Object::FindClosestObjectCell((Object *)this, &v6, 0, 0) ) /*0x4850e6*/
+    if ( ((Object *)this)->FindClosestObjectCell(&v6, 0, 0) ) /*0x4850e6*/
       inited += 85; /*0x4850ef*/
     return (gamemd::AbstractClass **)(inited); /*0x4850f3*/
   }
@@ -601,7 +601,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
       }
       Transform = Turret::GetTransform((LocomotionClass *)a1, v60, a3); /*0x4b02d7*/
       Transform::Copy(v59, Transform); /*0x4b02e4*/
-      Matrix3x4::Identity(&v55); /*0x4b02ed*/
+      (&v55)->Identity(); /*0x4b02ed*/
       v33 = a1->Accel; /*0x4b02f2*/
       if ( v33 == 0.0 ) /*0x4b02fb*/
         goto LABEL_48; /*0x4b02fb*/
@@ -655,8 +655,8 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
       goto LABEL_51; /*0x4b03b0*/
     }
   }
-  Matrix3x4::Identity(&v56); /*0x4afff2*/
-  Matrix3x4::Identity(&v57); /*0x4afffe*/
+  (&v56)->Identity(); /*0x4afff2*/
+  (&v57)->Identity(); /*0x4afffe*/
   v11 = *(double *)((*((int (**)(FootClass *))a1->Owner->vfptr + 33))(a1->Owner) + 864); /*0x4b0011*/
   v49 = v11; /*0x4b0019*/
   v51 = *(double *)((*((int (**)(FootClass *))a1->Owner->vfptr + 33))(a1->Owner) + 872); /*0x4b002f*/
@@ -693,7 +693,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
     *a3 = -1; /*0x4b0187*/
   v19 = Turret::GetTransform((LocomotionClass *)a1, v65, a3); /*0x4b0197*/
   Transform::Copy(v58, v19); /*0x4b01a4*/
-  Matrix3x4::Identity(&v55); /*0x4b01ad*/
+  (&v55)->Identity(); /*0x4b01ad*/
   v20 = a1->Accel; /*0x4b01b2*/
   p_Climb = (Timeout *)&a1->Climb; /*0x4b01b5*/
   if ( v20 != 0.0 ) /*0x4b01be*/
@@ -712,7 +712,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
       if ( (*((unsigned int *)&(a1->Accel))) ) /*0x4b01f7*/
       {
         v25 = a1->Accel; /*0x4b0206*/
-        v24 = (double)((*((unsigned int *)&(v25))) - Timeout::GetRemaining(p_Climb)) / (double)(*((signed int *)&(v25))); /*0x4b021c*/
+        v24 = (double)((*((unsigned int *)&(v25))) - (p_Climb)->GetRemaining()) / (double)(*((signed int *)&(v25))); /*0x4b021c*/
       }
       else
       {

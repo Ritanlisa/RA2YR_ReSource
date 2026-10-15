@@ -217,7 +217,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   v34 = 0; /*0x5312c7*/
   if ( (uint8_t)((CCFileClass *)(&v42))->Open(0) ) /*0x5312cb*/
   {
-    v5 = (char *)CCFileClass::ReadEntireFile(&v42); /*0x5312e5*/
+    v5 = (char *)(&v42)->ReadEntireFile(); /*0x5312e5*/
     CCFileClass::Reset(&v42); /*0x5312e7*/
     for ( i = 0; i < 256; ++i ) /*0x5312ec*/
     {
@@ -300,7 +300,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   v22 = Block; /*0x53160e*/
   if ( Block ) /*0x531614*/
   {
-    FileTreeNode::Destroy((FileTreeNode *)Block); /*0x531618*/
+    ((FileTreeNode *)Block)->Destroy(); /*0x531618*/
     operator delete((void *)(v22)); /*0x53161e*/
   }
   if ( v34 ) /*0x531630*/
@@ -342,9 +342,9 @@ char BulkData_Initialize()
   }
   Event::Dispatch(); /*0x5316f9*/
   Event::Dispatch(); /*0x5316fe*/
-  MouseClass::LoadTypeData((MouseClass *)&DataGlobal_87F7E8); /*0x531708*/
+  ((MouseClass *)&DataGlobal_87F7E8)->LoadTypeData(); /*0x531708*/
   nullsub_29(v3); /*0x531712*/
-  BulkData::InitMissionHashing((BulkData *)&dword_A8B238); /*0x53171c*/
+  ((BulkData *)&dword_A8B238)->InitMissionHashing(); /*0x53171c*/
   FileSystem::InitPipShapes(); /*0x531721*/
   nullsub_6(); /*0x531726*/
   FileSystem::InitPipShapes(); /*0x53172b*/

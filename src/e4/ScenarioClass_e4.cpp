@@ -319,7 +319,7 @@ int ScenarioClass::AssignStartPositions(char a1)
   void *Block; // [esp+8h] [ebp-14h]
   char v7; // [esp+11h] [ebp-Bh]
 
-  Multiplayer::FindStartPositions(v5); /*0x5d6bec*/
+  (v5)->FindStartPositions(); /*0x5d6bec*/
   for ( i = 0; i < stru_A80220.nextArrayIndex; ++i ) /*0x5d6bfa*/
   {
     v2 = (HouseClass *)*((unsigned int *)stru_A80220.vfptr3 + i); /*0x5d6c02*/
@@ -397,7 +397,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
     v8 = Game::CheckForGameCD((Game *)0x3C); /*0x683baf*/
     if ( !(uint8_t)ScenarioClass::CheckExists((ScenarioClass *)v7, v8) ) /*0x683bb7*/
     {
-      Field = GameOption::GetField(v7); /*0x683bc7*/
+      Field = (v7)->GetField(); /*0x683bc7*/
   LABEL_13:
       SetSoundWarning(Field); /*0x683bc9*/
     }
@@ -437,7 +437,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
   Vector::Clear((int)v21); /*0x683cd8*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x683ce1) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x683ce9*/
-  HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
+  ((INIClass *)&v19)->DestroyHashTableINIClass(); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
   v11 = StringList::Find((StringList *)&unk_A83D10, &stru_82BA00.DamSmkOffScrnRel); /*0x683d0f*/
   ThemeClass::Play((ThemeClass *)&unk_A83D10, v11); /*0x683d1a*/
@@ -460,7 +460,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
     ChangeVideoMode((&stru_A8EB00.vfptr)[33], (&stru_A8EB00.vfptr)[34]); /*0x683df3*/
   }
   LoadingScreen::FreeResources3(); /*0x683df8*/
-  AudioOptionsClass::ApplySettings((AudioOptionsClass *)&stru_A8EB00.vfptr[24]); /*0x683e02*/
+  ((AudioOptionsClass *)&stru_A8EB00.vfptr[24])->ApplySettings(); /*0x683e02*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vfptr + 6))(g_DSurface_Hidden, 0); /*0x683e10*/
   Frame::Present((void *)((int)g_DSurface_Hidden), 0, (int)v4, v9, 0, (int)v15, v16, v17); /*0x683e1c*/
   if ( dword_A8B230[43].vfptr2 == (void *)-1 ) /*0x683e35*/
@@ -471,7 +471,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
   if ( dword_A8B230[202].vfptr2 == (void *)-1 ) /*0x683e50*/
     Theme::Stop((Theme *)&unk_A83D10, 1); /*0x683e66*/
   else
-    Theme::QueueSong((int)&unk_A83D10, (int)dword_A8B230[202].vfptr2); /*0x683e58*/
+    ((int)&unk_A83D10)->QueueSong((int)dword_A8B230[202].vfptr2); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
   ((unsigned int *)&stru_A8EB00)[376] = 1; /*0x683e75*/
   byte_A8E378 = 1; /*0x683e7f*/
@@ -511,11 +511,11 @@ int ScenarioClass::CleanupTemporary()
     }
   }
   (*((unsigned char *)&(v1))) = 1; /*0x683f4d*/
-  AsyncIO::Read(v1); /*0x683f4f*/
+  (v1)->Read(); /*0x683f4f*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x683f5d*/
     Tooltip::Enable(*(Tooltip **)&g_TacticalRender, 0); /*0x683f61*/
-  Mouse::ReleaseCapture((ScrollClass *)&DataGlobal_87F7E8); /*0x683f6b*/
-  Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x683f79*/
+  ((ScrollClass *)&DataGlobal_87F7E8)->ReleaseCapture(); /*0x683f6b*/
+  ((int)&DataGlobal_87F7E8)->SetCursor(0, 0); /*0x683f79*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683f86*/
   MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x683f90*/
   ((TacticalMap *)((GScreenClass *)&DataGlobal_87F7E8))->Redraw(); /*0x683f9a*/
@@ -548,7 +548,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
         }
         result->ScenarioClass_field_35A2 = 0; /*0x6841ef*/
         stru_A8EB00.?[440] = 0; /*0x6841fc*/
-        Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x684203*/
+        (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x684203*/
         result = (unsigned char *)(dword_A8B230); /*0x684208*/
         dword_B07784 = 0; /*0x68420d*/
       }
@@ -578,7 +578,7 @@ int ScenarioClass_Construct(void * a2)
     *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] = 0; /*0x686765*/
     v5.headNode[0] = 0; /*0x68676b*/
     v5.headNode[1] = 0; /*0x68676f*/
-    GenericList::Constructor((GenericList *)&v5.headNode[2]); /*0x686773*/
+    ((GenericList *)&v5.headNode[2])->Constructor(); /*0x686773*/
     v5.headNode[2] = (int)&vt_List; /*0x68677c*/
     Node::Init((Node *)&v5.needsSave_flag); /*0x686784*/
     v5.INIClass_field_3C = 0; /*0x68678d*/
@@ -595,7 +595,7 @@ int ScenarioClass_Construct(void * a2)
       Vector::Clear((int)v7); /*0x686862*/
       /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x68686b) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x686873*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v5); /*0x68687c*/
+      ((INIClass *)&v5)->DestroyHashTableINIClass(); /*0x68687c*/
       return Map; /*0x686881*/
     }
     else
@@ -606,7 +606,7 @@ int ScenarioClass_Construct(void * a2)
       Vector::Clear((int)v7); /*0x6867ea*/
       /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x6867f3) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x6867fb*/
-      HashTable::DestroyHashTableINIClass((INIClass *)&v5); /*0x686804*/
+      ((INIClass *)&v5)->DestroyHashTableINIClass(); /*0x686804*/
       return 0; /*0x686809*/
     }
   }

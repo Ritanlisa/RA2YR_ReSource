@@ -118,7 +118,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     this->ptr_30 = 1; /*0x438fca*/
     if ( *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 528) != -1 ) /*0x438fde*/
     {
-      if ( (unsigned __int8)House::IsHumanPlayer(aP1->owner) ) /*0x438fe6*/
+      if ( (unsigned __int8)(aP1->owner)->IsHumanPlayer() ) /*0x438fe6*/
       {
         v12[0] = (unsigned int)(aP2[39]); /*0x438ffc*/
         v12[1] = (unsigned int)(aP2[40]); /*0x439007*/
@@ -136,7 +136,7 @@ int AbstractClass::AbstractClass_COMStub_133()
 {
   MissionClass *v2; // [esp+4h] [ebp+4h]
 
-  return IPersistStream::StubReturn450(v2);
+  return (v2)->StubReturn450();
 }
 } // namespace gamemd
 
@@ -146,7 +146,7 @@ int AbstractClass::AbstractClass_COMStub_137()
 {
   MissionClass *v2; // [esp+4h] [ebp+4h]
 
-  return AircraftClass::CheckMissionStatus(v2);
+  return (v2)->CheckMissionStatus();
 }
 } // namespace gamemd
 
@@ -350,7 +350,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
         }
       }
     }
-    HouseClass::CalculateCostMultipliers((float *)v7); /*0x4fbc58*/
+    ((float *)v7)->CalculateCostMultipliers(); /*0x4fbc58*/
   }
   result = &v7->planningPaths; /*0x4fbc5d*/
   v44 = 12; /*0x4fbc63*/
@@ -597,13 +597,13 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       }
       while ( v5 < g_BuildingLoadQueue_Array.Foundation[0] ); /*0x72595f*/
     }
-    AbstractClass::processDetection((AbstractClass *)&stru_87F5D8, (int)a1); /*0x725967*/
-    AbstractClass::processStateTransition((AbstractClass *)&g_MissionQueueFrame, (int)a1); /*0x725972*/
+    ((AbstractClass *)&stru_87F5D8)->processDetection((int)a1); /*0x725967*/
+    ((AbstractClass *)&g_MissionQueueFrame)->processStateTransition((int)a1); /*0x725972*/
     for ( k = dword_8A0218 - 1; k >= 0; --k ) /*0x725981*/
-      DiskLaserClass::PointerGotInvalid(*((DiskLaserClass **)dword_8A020C + k), (int)a1); /*0x72598d*/
+      (*((DiskLaserClass **)dword_8A020C + k))->PointerGotInvalid((int)a1); /*0x72598d*/
     if ( v4 == 15 || v4 == 1 || v4 == 2 ) /*0x7259a2*/
       nullsub_3((int)a1); /*0x7259aa*/
-    AbstractClass::processRadarEvent(a1); /*0x7259b1*/
+    (a1)->processRadarEvent(); /*0x7259b1*/
     if ( g_TacticalClass_Instance ) /*0x7259be*/
       (*(void (**)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)g_TacticalClass_Instance + 40))( /*0x7259c5*/
         g_TacticalClass_Instance,
@@ -639,7 +639,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
             *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.BuildupLoaded + 4 * n),
             a1,
             a2);
-        MapClass::RemoveTriggerRef((MapClass *)&DataGlobal_87F7E8, (int)a1, 1); /*0x725b57*/
+        ((MapClass *)&DataGlobal_87F7E8)->RemoveTriggerRef((int)a1, 1); /*0x725b57*/
         break; /*0x725b61*/
       case 34: /*0x725ab1*/
         for ( ii = 0; ii < g_BuildingLoadQueue_Array.PaletteFile[1]; ++ii ) /*0x725bc3*/
@@ -666,7 +666,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
             *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F61C + 4 * kk),
             a1,
             a2);
-        MapClass::RemoveTriggerRef((MapClass *)&DataGlobal_87F7E8, (int)a1, 1); /*0x725ae5*/
+        ((MapClass *)&DataGlobal_87F7E8)->RemoveTriggerRef((int)a1, 1); /*0x725ae5*/
         Array::RemoveItemByValue((int)a1, a2); /*0x725af1*/
         break; /*0x725afb*/
       case 47: /*0x725ab1*/
@@ -1410,7 +1410,7 @@ int AbstractClass::loadFromStream(int a1)
 namespace gamemd {
 int AbstractClass::computeSize(int a1)
 {
-  return HouseClass::COMStub_Ret1_2(a1 - 4);
+  return (a1 - 4)->COMStub_Ret1_2();
 }
 } // namespace gamemd
 
@@ -1507,7 +1507,7 @@ MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
   /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a69) */
   /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a70) */
   /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a77) */
-  ObjectClass::Dtor((ObjectClass *)Block); /*0x5b3a7e*/
+  ((ObjectClass *)Block)->Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     operator delete((void *)(Block)); /*0x5b3a8b*/
   return &Block->vfptr; /*0x5b3a95*/
@@ -1548,7 +1548,7 @@ unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar
 
   v6 = operator new(0x40u); /*0x5d81f2*/
   if ( v6 ) /*0x5d81fc*/
-    return MPBattleClass::MPSiegeClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d821e*/
+    return (v6)->MPSiegeClass(a1, a2, a3, a4, a5, a6); /*0x5d821e*/
   else
     return 0; /*0x5d8226*/
 }
@@ -1562,7 +1562,7 @@ unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wch
 
   v6 = operator new(0x40u); /*0x5d8232*/
   if ( v6 ) /*0x5d823c*/
-    return MPBattleClass::MPUnholyAllianceClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d825e*/
+    return (v6)->MPUnholyAllianceClass(a1, a2, a3, a4, a5, a6); /*0x5d825e*/
   else
     return 0; /*0x5d8266*/
 }
@@ -1576,7 +1576,7 @@ unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar
 
   v6 = operator new(0x40u); /*0x5d8272*/
   if ( v6 ) /*0x5d827c*/
-    return MPBattleClass::MPFreeForAllClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d829e*/
+    return (v6)->MPFreeForAllClass(a1, a2, a3, a4, a5, a6); /*0x5d829e*/
   else
     return 0; /*0x5d82a6*/
 }

@@ -600,13 +600,13 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
   if ( ((int (__cdecl *)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 4) ) /*0x7c272d*/
   {
   LABEL_21:
-    DSurface::Flip((int)v7); /*0x7c26fb*/
+    ((int)v7)->Flip(); /*0x7c26fb*/
     return -4; /*0x7c270e*/
   }
   if ( v27 != 1095849559 ) /*0x7c2755*/
   {
   LABEL_26:
-    DSurface::Flip((int)v7); /*0x7c2757*/
+    ((int)v7)->Flip(); /*0x7c2757*/
     return -7; /*0x7c276a*/
   }
   while ( 1 ) /*0x7c27d0*/
@@ -626,11 +626,11 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
           switch ( v27 ) /*0x7c28d8*/
           {
             case 0x4943464Du: /*0x7c28d8*/
-              if ( File::ParseAudioFileRIFF(v7) != -1 ) /*0x7c2939*/
+              if ( (v7)->ParseAudioFileRIFF() != -1 ) /*0x7c2939*/
                 goto LABEL_113; /*0x7c2939*/
               break;
             case 0x4943534Du: /*0x7c28d8*/
-              if ( Buffer::AllocateCodecFrameBuffers(v7) != -1 ) /*0x7c2924*/
+              if ( (v7)->AllocateCodecFrameBuffers() != -1 ) /*0x7c2924*/
                 goto LABEL_113; /*0x7c2924*/
               break;
             case 0x50494C43u: /*0x7c28d8*/
@@ -688,15 +688,15 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
   LABEL_56:
       if ( ((int (__cdecl *)(unsigned short *, int, int, unsigned int))*v9)(v7, 7, 1, (v11 + 1) & 0xFFFFFFFE) ) /*0x7c28f2*/
       {
-        DSurface::Flip((int)v7); /*0x7c29e4*/
+        ((int)v7)->Flip(); /*0x7c29e4*/
         return -6; /*0x7c29f5*/
       }
     }
   }
-  if ( Surface::CommitSurfaceBuffersAudio((int)v7) != -1 ) /*0x7c2950*/
+  if ( ((int)v7)->CommitSurfaceBuffersAudio() != -1 ) /*0x7c2950*/
   {
   LABEL_99:
-    DSurface::Flip((int)v7); /*0x7c2b39*/
+    ((int)v7)->Flip(); /*0x7c2b39*/
     return -8; /*0x7c2b3b*/
   }
   if ( Audio_Render_7C1D40(v7, v28) != -1 ) /*0x7c2963*/
@@ -731,7 +731,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
   {
     if ( !*((unsigned int *)v7 + 22) ) /*0x7c29c5*/
     {
-      DSurface::Flip((int)v7); /*0x7c29ce*/
+      ((int)v7)->Flip(); /*0x7c29ce*/
       return -21; /*0x7c29df*/
     }
     if ( (v18 & 0x40) != 0 ) /*0x7c29fa*/
@@ -749,7 +749,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
     v7->u8_3F = v19; /*0x7c2a32*/
     if ( Audio_Render_7BD170(v7) != -1 ) /*0x7c2a3e*/
     {
-      DSurface::Flip((int)v7); /*0x7c2a42*/
+      ((int)v7)->Flip(); /*0x7c2a42*/
       return -13; /*0x7c2a53*/
     }
     sub_4125F0(); /*0x7c2a56*/
@@ -801,7 +801,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
     if ( SeekAudioStream((int)v7, 0, *((unsigned int *)v7 + 71), 0, 0) == -1 ) /*0x7c2bd9*/
       goto LABEL_108; /*0x7c2bd9*/
   LABEL_104:
-    DSurface::Flip((int)v7); /*0x7c2bad*/
+    ((int)v7)->Flip(); /*0x7c2bad*/
     return -23; /*0x7c2bb4*/
   }
   else
@@ -819,7 +819,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
     else
     {
   LABEL_113:
-      DSurface::Flip((int)v7); /*0x7c2c2f*/
+      ((int)v7)->Flip(); /*0x7c2c2f*/
       return -4; /*0x7c2c36*/
     }
   }
@@ -861,9 +861,9 @@ int AudioStream_Process(int a1, int a2, char a3)
     if ( (a1->initialOwner & 0x10) == 0 ) /*0x7c2d30*/
       Audio_Process_7BE4A0((ObjectClass *)a1); /*0x7c2d34*/
     if ( (a1->hasParachute & 1) != 0 && *a1->q794 ) /*0x7c2d48*/
-      AudioStream::SetFlag4C((AudioStream *)a1); /*0x7c2d4f*/
+      ((AudioStream *)a1)->SetFlag4C(); /*0x7c2d4f*/
     CalcAudioStreamOffset(a1, 60 * *(unsigned int *)(a1->ironTintTimer_d + 28) / a1->isOnMap); /*0x7c2d6e*/
-    a1->NeedsSaveOrLink = AudioStream::GetPosition((AudioStream *)a1); /*0x7c2d7a*/
+    a1->NeedsSaveOrLink = ((AudioStream *)a1)->GetPosition(); /*0x7c2d7a*/
     v6 = a1->initialOwner; /*0x7c2d7d*/
     (*((unsigned char *)&(v6))) = v6 | 8; /*0x7c2d83*/
     a1->initialOwner = v6; /*0x7c2d85*/
@@ -893,7 +893,7 @@ int AudioStream_Process(int a1, int a2, char a3)
       (*((unsigned char *)&(v10))) = v10 & 0xBF; /*0x7c2dd8*/
       a1->initialOwner = v10; /*0x7c2dda*/
       if ( (a1->hasParachute & 1) != 0 ) /*0x7c2de8*/
-        AudioStream::SetFlag4C((AudioStream *)a1); /*0x7c2dec*/
+        ((AudioStream *)a1)->SetFlag4C(); /*0x7c2dec*/
       CalcAudioStreamOffset(a1, a1->objectTypeFlags); /*0x7c2df6*/
     }
     v11 = a1->initialOwner; /*0x7c2dfb*/
@@ -923,7 +923,7 @@ int AudioStream_Process(int a1, int a2, char a3)
                 (((unsigned char *)&(v15))[1]) |= 4u; /*0x7c2e9f*/
                 a1->initialOwner = v15; /*0x7c2ea2*/
                 if ( (a1->hasParachute & 1) != 0 ) /*0x7c2eb0*/
-                  AudioStream::SetFlag4C((AudioStream *)a1); /*0x7c2eb4*/
+                  ((AudioStream *)a1)->SetFlag4C(); /*0x7c2eb4*/
               }
             }
             else
@@ -1027,7 +1027,7 @@ int AudioStream_Process(int a1, int a2, char a3)
   {
     (*((unsigned char *)&(v10))) = v10 | 0x40; /*0x7c2fe1*/
     a1->initialOwner = v10; /*0x7c2fe5*/
-    a1->objectTypeFlags = AudioStream::GetPosition((AudioStream *)a1); /*0x7c2ff0*/
+    a1->objectTypeFlags = ((AudioStream *)a1)->GetPosition(); /*0x7c2ff0*/
     if ( (a1->q7BC & 0x40) != 0 ) /*0x7c2ffb*/
       Audio_Process_7BD290((UnitClass *)a1); /*0x7c2fff*/
   }
@@ -1069,7 +1069,7 @@ int AudioStream_Process(int a1, int a2, char a3)
   LABEL_80:
   if ( (a1->initialOwner & 6) == 6 || a2 == 3 ) /*0x7c3097*/
   {
-    a1->objectTypeFlags = AudioStream::GetPosition((AudioStream *)a1); /*0x7c30a0*/
+    a1->objectTypeFlags = ((AudioStream *)a1)->GetPosition(); /*0x7c30a0*/
     if ( (a1->q7BC & 0x40) != 0 ) /*0x7c30ab*/
       Audio_Process_7BD2B0((UnitClass *)a1); /*0x7c30af*/
     return -2; /*0x7c30b4*/

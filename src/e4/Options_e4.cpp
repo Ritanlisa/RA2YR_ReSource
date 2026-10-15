@@ -175,7 +175,7 @@ LABEL_11:
           ShowWindow(hDlg, 0); /*0x4f1364*/
           v13 = LoadOptions::LoadOptions(v27); /*0x4f136a*/
           Options_Run = (unsigned __int8)LoadOptions::Run(v13); /*0x4f137a*/
-          LoadOptions::Cleanup(v27); /*0x4f137c*/
+          (v27)->Cleanup(); /*0x4f137c*/
           if ( (unsigned char)Options_Run ) /*0x4f1383*/
           {
             *WindowLongA = 1310; /*0x4f138a*/
@@ -205,7 +205,7 @@ LABEL_39:
         ((void (*)(wchar_t *))ShowSaveLoadDialog)(Buffer); /*0x4f1470*/
         v16 = v26; /*0x4f1475*/
       }
-      LoadOptions::Cleanup(v16); /*0x4f14b3*/
+      (v16)->Cleanup(); /*0x4f14b3*/
       Options::InitDialogControls(hDlg); /*0x4f14ba*/
       goto LABEL_39; /*0x4f14ba*/
     }
@@ -229,7 +229,7 @@ LABEL_39:
         v19 = (wchar_t *)(3 - SendMessageA(v18, 0x400u, 0, 0)); /*0x4f156e*/
         if ( v19 != dword_A8DB9C ) /*0x4f1577*/
         {
-          if ( Timer::GetRemainingMs(&dword_A8EE40) ) /*0x4f157e*/
+          if ( (&dword_A8EE40)->GetRemainingMs() ) /*0x4f157e*/
           {
             Debug::Log(); /*0x4f15eb*/
           }
@@ -251,7 +251,7 @@ LABEL_39:
         v22 = 6 - SendMessageA(v21, 0x400u, 0, 0); /*0x4f1614*/
         if ( *(unsigned int *)dword_A8EB60 != v22 ) /*0x4f161d*/
         {
-          if ( !Timer::GetRemainingMs(&dword_A8EE30) ) /*0x4f1628*/
+          if ( !(&dword_A8EE30)->GetRemainingMs() ) /*0x4f1628*/
           {
             Timer::Init(v25, 0x384u); /*0x4f163a*/
             dword_A8EE30 = v25[0]; /*0x4f164e*/
@@ -402,7 +402,7 @@ char Options::Screen_Dialog()
       if ( dwNewLong != 1485 ) /*0x55fd14*/
         break; /*0x55fd14*/
       v9 = -1; /*0x55fd2d*/
-      ScenarioClass::LoadNetworkConfig(&dword_A8B238); /*0x55fd31*/
+      (&dword_A8B238)->LoadNetworkConfig(); /*0x55fd31*/
       v3 = (HWND)CreateDialog(0); /*0x55fd42*/
       v4 = v3; /*0x55fd47*/
       if ( v3 ) /*0x55fd4b*/
@@ -682,14 +682,14 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
       }
       v13 = (int)*v5; /*0x6256d0*/
       if ( (int)*v5 >= (int)v5[1] ) /*0x6256d7*/
-        DynamicVector::GrowCapacity((DynamicVector *)v5); /*0x6256db*/
+        ((DynamicVector *)v5)->GrowCapacity(); /*0x6256db*/
       if ( (int)*v5 >= (int)v5[1] ) /*0x6256e7*/
-        DynamicVector::GrowCapacity((DynamicVector *)v5); /*0x6256eb*/
+        ((DynamicVector *)v5)->GrowCapacity(); /*0x6256eb*/
       if ( v13 < (int)*v5 ) /*0x6256f4*/
         memcpy(v5->u32_2 + 24 * v13 + 24, v5->u32_2 + 24 * v13, 24 * (unsigned int)*v5 - 24 * v13); /*0x625713*/
       v14 = (Struct *)(v5->u32_2 + 24 * v13); /*0x625721*/
       if ( v14 ) /*0x625726*/
-        Struct::WideStringCopy(v14, (int)&v18); /*0x62572d*/
+        (v14)->WideStringCopy((int)&v18); /*0x62572d*/
       ++v10; /*0x625739*/
       *v5 = (char *)*v5 + 1; /*0x62573a*/
       v11 = v16 + 24; /*0x625740*/
@@ -755,8 +755,8 @@ HWND Options::InitDialogControls(HWND hDlg)
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x4f1739*/
   {
     v7 = (LoadOptions *)LoadOptions::LoadOptions(&v10); /*0x4f17dd*/
-    v9 = LoadOptions::Check(v7); /*0x4f17ed*/
-    LoadOptions::Cleanup(&v10); /*0x4f17f1*/
+    v9 = (v7)->Check(); /*0x4f17ed*/
+    (&v10)->Cleanup(); /*0x4f17f1*/
     DlgItem = GetDlgItem((HWND)hDlg, 1310); /*0x4f1802*/
     if ( DlgItem ) /*0x4f1810*/
       EnableWindow(DlgItem, v9); /*0x4f181c*/
@@ -1275,8 +1275,8 @@ namespace gamemd {
 void Options::ClearComboBoxes()
 {
 
-  DeleteAndZero::Alt(&this->q008); /*0x624466*/
-  DeleteAndZero::Alt(&this->q004); /*0x62446e*/
+  (&this->q008)->Alt(); /*0x624466*/
+  (&this->q004)->Alt(); /*0x62446e*/
 
 }
 } // namespace gamemd

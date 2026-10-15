@@ -293,7 +293,7 @@ char Mission_e4::ProcessUnitMissionAI()
             v9 = *(unsigned int *)this->__pad_0; /*0x5210b8*/
             v22 = v20; /*0x5210bb*/
             v19 = (*(int (**)(Mission *))(v9 + 800))(this); /*0x5210c9*/
-            v10 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &v21) + 80) >> 8; /*0x5210de*/
+            v10 = *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&v21) + 80) >> 8; /*0x5210de*/
             LOBYTE(v10) = v10 & 1; /*0x5210e1*/
             v11 = (*(int (**)(Mission *, unsigned int, int, int))(*(unsigned int *)this->__pad_0 + 188))( /*0x5210e9*/
                     this,
@@ -325,12 +325,12 @@ char Mission_e4::ProcessUnitMissionAI()
     if ( v13 >= 0 ) /*0x5211aa*/
     {
       v15 = *(unsigned int *)v24; /*0x5211b9*/
-      ComPtr::Release_Alt((ComPtr *)&v22); /*0x5211c1*/
+      ((ComPtr *)&v22)->Release_Alt(); /*0x5211c1*/
       v14 = v15; /*0x5211c6*/
     }
     else
     {
-      ComPtr::Release_Alt((ComPtr *)&v22); /*0x5211b0*/
+      ((ComPtr *)&v22)->Release_Alt(); /*0x5211b0*/
       v14 = 0; /*0x5211b5*/
     }
     v22 = v14; /*0x5211ca*/
@@ -459,7 +459,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
           v8 = ((unsigned int *)&dword_8871E0[1])[1]; /*0x6ed867*/
         else
           v8 = ((unsigned int *)&dword_8871E0[1])[0]; /*0x6ed85a*/
-        if ( ObjectClass::DistanceTo(i, this->ptr_34) <= v8 ) /*0x6ed87a*/
+        if ( (i)->DistanceTo(this->ptr_34) <= v8 ) /*0x6ed87a*/
         {
           i->u8_689 = 1; /*0x6ed8b2*/
         }
@@ -487,7 +487,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   || ((v9 = *SessionClass::GetEntry((unsigned int *)(*(unsigned int *)this->ptr_54 + 76)), &v20), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
                     : (v10 = ((unsigned int *)&dword_8871E0[1])[0]),
-                      ObjectClass::DistanceTo(i, this->ptr_34) <= 2 * v10 || v4 == 11) )
+                      (i)->DistanceTo(this->ptr_34) <= 2 * v10 || v4 == 11) )
                 {
                   v3 = i->u32_2B4; /*0x6eda11*/
                   if ( !v3 ) /*0x6eda19*/

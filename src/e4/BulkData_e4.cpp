@@ -29,7 +29,7 @@ void BulkData::InitMissionHashing(void *a1)
   unsigned int v5; // ebx
   DWORD Time; // [esp+10h] [ebp-4h] BYREF
 
-  SessionClass::LoadMissionList((SessionClass *)this); /*0x697ad7*/
+  ((SessionClass *)this)->LoadMissionList(); /*0x697ad7*/
   Time = timeGetTime(); /*0x697ae2*/
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash(&Time, v2); /*0x697af1*/

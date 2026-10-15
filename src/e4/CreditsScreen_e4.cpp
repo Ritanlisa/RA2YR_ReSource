@@ -65,9 +65,9 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   sprintf(Buffer, "Internal Version %s", ModuleInternalVersion); /*0x531ac7*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531adc*/
   v16[0] = 0; /*0x531aea*/
-  Time::FormatDate(v16); /*0x531af2*/
-  v12 = (const char *)String::CopyConstant(Destination); /*0x531b10*/
-  v10 = (const char *)String::FormatDword(v17); /*0x531b1d*/
+  (v16)->FormatDate(); /*0x531af2*/
+  v12 = (const char *)(Destination)->CopyConstant(); /*0x531b10*/
+  v10 = (const char *)(v17)->FormatDword(); /*0x531b1d*/
   sprintf(Buffer, "Release Build: %s by %s - %s", v10, v12, v16);
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531b42*/
   v14 = 5; /*0x531b51*/

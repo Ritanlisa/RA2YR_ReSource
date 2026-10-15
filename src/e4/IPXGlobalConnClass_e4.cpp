@@ -51,7 +51,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   IPXGlobalConnClass_field_0x04 = (Terrain *)v2->PlayerIndex; /*0x540137*/
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
   {
-    TileType = Terrain::GetTileType(IPXGlobalConnClass_field_0x04, i); /*0x540158*/
+    TileType = (IPXGlobalConnClass_field_0x04)->GetTileType(i); /*0x540158*/
     Debug::Log(); /*0x54015a*/
     if ( TileType ) /*0x540164*/
     {
@@ -90,7 +90,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
           *(unsigned int *)(this->u32_D0 + 4 * v9) = -1; /*0x54021f*/
         }
 LABEL_14:
-        PacketQueue::ReleaseEntry((PacketQueue *)this->PlayerIndex, 0, 0, i--, 0, 0); /*0x540226*/
+        ((PacketQueue *)this->PlayerIndex)->ReleaseEntry(0, 0, i--, 0, 0); /*0x540226*/
       }
       v2 = this; /*0x540277*/
     }
@@ -121,7 +121,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
 
   v7 = this; /*0x5403f4*/
   v16 = this; /*0x5403fc*/
-  Waypoint::InitInvalid((Waypoint *)&v18); /*0x540400*/
+  ((Waypoint *)&v18)->InitInvalid(); /*0x540400*/
   *(unsigned int *)v18.__pad_000 = *a3; /*0x540413*/
   v18.q004 = a3[1]; /*0x54041a*/
   v19 = a3[2]; /*0x540421*/
@@ -129,7 +129,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   {
     ((Network *)((Network *)a3))->CopyAddress(&v15, (int)v17); /*0x540431*/
     v15 = (int)(*aP4); /*0x540442*/
-    NetworkID::Assign(&v18, &v15, (int)v17, 0); /*0x54044c*/
+    (&v18)->Assign(&v15, (int)v17, 0); /*0x54044c*/
   }
   if ( *(unsigned int *)&dword_A8B238 == 4 && !(unsigned char)a6 && byte_A8DBA0 && (*((unsigned char *)&(v7[3].IPXGlobalConnClass_field_0x20))) ) /*0x540477*/
   {
@@ -139,7 +139,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
       v20 = v18; /*0x5404a0*/
       v21 = v19; /*0x5404b6*/
       ((Network *)((Network *)&v20))->CopyAddress(&v15, (int)v17); /*0x5404ba*/
-      NetworkID::Assign(&v20, &v15, (int)v17, aP3); /*0x5404d2*/
+      (&v20)->Assign(&v15, (int)v17, aP3); /*0x5404d2*/
       v9 = -1; /*0x5404dc*/
       v10 = 0; /*0x5404df*/
       if ( dword_A8DA84 > 0 ) /*0x5404e3*/
@@ -214,8 +214,8 @@ int IPXGlobalConnClass::CheckStatus()
   {
     do /*0x540104*/
     {
-      if ( (*(unsigned char *)Terrain::GetTileType(IPXGlobalConnClass_field_0x04, v2) & 2) != 0 ) /*0x5400e9*/
-        PacketQueue::ReleaseEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0); /*0x5400f7*/
+      if ( (*(unsigned char *)(IPXGlobalConnClass_field_0x04)->GetTileType(v2) & 2) != 0 ) /*0x5400e9*/
+        ((PacketQueue *)this->PlayerIndex)->ReleaseEntry(0, 0, v2--, 0, 0); /*0x5400f7*/
       IPXGlobalConnClass_field_0x04 = (Terrain *)this->PlayerIndex; /*0x5400fd*/
       ++v2; /*0x540100*/
     }
@@ -246,10 +246,10 @@ int IPXGlobalConnClass::Send()
   {
     do /*0x540332*/
     {
-      v5 = *(unsigned int *)Terrain::GetTileIndex((Terrain *)IPXGlobalConnClass_field_0x04, v3); /*0x5402ef*/
+      v5 = *(unsigned int *)((Terrain *)IPXGlobalConnClass_field_0x04)->GetTileIndex(v3); /*0x5402ef*/
       if ( (v5 & 4) != 0 && (v5 & 2) == 0 ) /*0x5402f7*/
       {
-        Waypoint::InitInvalid(&v10); /*0x5402fd*/
+        (&v10)->InitInvalid(); /*0x5402fd*/
         v6 = (PacketQueue *)this->PlayerIndex; /*0x54030e*/
         v8 = 12; /*0x54031c*/
         PacketQueue::ExtractEntry(v6, &v10.u32_C, &v9, v3--, &v10, &v8, 0); /*0x540324*/
@@ -286,14 +286,14 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
     return 0; /*0x5403de*/
   do /*0x5403cd*/
   {
-    TileIndex = Terrain::GetTileIndex((Terrain *)IPXGlobalConnClass_field_0x04, v6); /*0x54035f*/
+    TileIndex = ((Terrain *)IPXGlobalConnClass_field_0x04)->GetTileIndex(v6); /*0x54035f*/
     v8 = TileIndex; /*0x540364*/
     if ( (*(unsigned char *)TileIndex & 2) == 0 /*0x540392*/
       && *(unsigned int *)(TileIndex + 24)
       && (unsigned __int8)NetworkID::Compare(*(bool **)(TileIndex + 28), a2)
       && *(unsigned short *)(v8 + 32) == a3 )
     {
-      Waypoint::InitInvalid(&v13); /*0x540398*/
+      (&v13)->InitInvalid(); /*0x540398*/
       v9 = (PacketQueue *)this->PlayerIndex; /*0x5403b3*/
       v11 = 12; /*0x5403b7*/
       PacketQueue::ExtractEntry(v9, &v13.u32_C, &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
@@ -311,7 +311,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
 namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
-  return ConnectionClass::sendAck(a1, aP2, aP3, aP4); /*0x540629*/
+  return (a1)->sendAck(aP2, aP3, aP4); /*0x540629*/
 }
 } // namespace gamemd
 // 0x540630
@@ -348,7 +348,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
     this->u32_CC = 0; /*0x5406a9*/
   }
   *(unsigned int *)this->__pad_0 = &vt_IPXConnClass; /*0x5406b5*/
-  ConnectionClass::dtor((ConnectionClass *)this); /*0x5406bb*/
+  ((ConnectionClass *)this)->dtor(); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(this); /*0x5406c8*/
   return (gamemd::IPXGlobalConnClass *)(this->vtable1); /*0x5406d2*/

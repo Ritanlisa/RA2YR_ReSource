@@ -52,7 +52,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   unsigned int *v27; // [esp+44h] [ebp+4h]
   int v28; // [esp+48h] [ebp+8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d0989*/
+  ((AbstractClass *)this)->Constructor(); /*0x4d0989*/
   this->LastSight = a3; /*0x4d099e*/
   this->House = 0; /*0x4d09a1*/
   this->Cell[0] = a4; /*0x4d09a4*/
@@ -190,7 +190,7 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   int v24; // [esp+20h] [ebp-14h]
   int v25; // [esp+30h] [ebp-4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d0c49*/
+  ((AbstractClass *)this)->Constructor(); /*0x4d0c49*/
   this->LastSight = -1; /*0x4d0c5a*/
   this->House = 0; /*0x4d0c61*/
   this->Cell[0] = 0; /*0x4d0c64*/
@@ -219,7 +219,7 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   this->u32_34 = v23[0]; /*0x4d0cfd*/
   this->u32_38 = v7; /*0x4d0d03*/
   this->u32_3C = v9; /*0x4d0d06*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v23, &v21); /*0x4d0d15*/
+  ((Coord *)g_TacticalClass_Instance)->To_Screen(v23, &v21); /*0x4d0d15*/
   v10 = v21 - 30; /*0x4d0d25*/
   v22 -= 15; /*0x4d0d32*/
   v11 = v22; /*0x4d0d2a*/
@@ -344,7 +344,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   int v57; // [esp+68h] [ebp+8h]
   int v58; // [esp+68h] [ebp+8h]
 
-  AbstractClass::Constructor((AbstractClass *)aP1); /*0x4d0ef9*/
+  ((AbstractClass *)aP1)->Constructor(); /*0x4d0ef9*/
   aP1->objectTypeFlags = (void *)(-1); /*0x4d0f02*/
   v4 = (int)(aP2[135]); /*0x4d0f0c*/
   aP1->fallRate = 0; /*0x4d0f12*/
@@ -359,7 +359,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   v49[1] = v5; /*0x4d0f4d*/
   v50 = v6; /*0x4d0f57*/
   v7 = (int)(aP1 + 92); /*0x4d0f67*/
-  aP1->customSound_controller = *((char *)Coord::To_Cell(&dword_87F7E8, v49) + 283); /*0x4d0f6a*/
+  aP1->customSound_controller = *((char *)(&dword_87F7E8)->To_Cell(v49) + 283); /*0x4d0f6a*/
   aP1->q054 = -1; /*0x4d0f73*/
   aP1->u32_58 = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor(&aP1->q05C, 0, 0); /*0x4d0f81*/
@@ -558,7 +558,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   unsigned int v22[2]; // [esp+10h] [ebp-10h] BYREF
   int v23; // [esp+18h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d1379*/
+  ((AbstractClass *)this)->Constructor(); /*0x4d1379*/
   this->LastSight = -1; /*0x4d1384*/
   this->House = 0; /*0x4d138b*/
   this->Cell[0] = 0; /*0x4d1394*/
@@ -794,7 +794,7 @@ namespace gamemd {
 HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
 {
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x4d2819*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x4d2819*/
   Power::TimerProcess(this->LastSight); /*0x4d2824*/
   Power::TimerProcess(this->Cell[0]); /*0x4d282f*/
   Power::TimerProcess(this->q030); /*0x4d283a*/

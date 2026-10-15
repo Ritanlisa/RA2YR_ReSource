@@ -20,7 +20,7 @@ void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(Dia
   *&Block->ObjectClass_C = (int)&vt_WonlineStringDialogControl; /*0x7ac636*/
   DeleteAndZeroBlock->ObjectClass_C); /*0x7ac63c*/
   *&Block->__pad_000 = (int)&off_7F7624; /*0x7ac643*/
-  OwnerDrawControl::InitVtable((OwnerDrawControl *)Block); /*0x7ac649*/
+  ((OwnerDrawControl *)Block)->InitVtable(); /*0x7ac649*/
   if ( (a2 & 1) != 0 ) /*0x7ac653*/
     operator delete((void *)(Block)); /*0x7ac656*/
   return (void **)Block; /*0x7ac660*/

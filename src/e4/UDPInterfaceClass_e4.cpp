@@ -791,14 +791,14 @@ namespace gamemd {
 short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
 
-  if ( a3 && Network::IsBroadcastAddr((Network *)a3) ) /*0x7b36ce*/
+  if ( a3 && ((Network *)a3)->IsBroadcastAddr() ) /*0x7b36ce*/
     return (*(__int16 (**)(UDPInterfaceClass *, const void *, unsigned int, int))(this->Socket + 16))( /*0x7b36ea*/
              this,
              aP1,
              arg4,
              aP5);
   else
-    return AudioQueue::WriteBuffer((WinsockInterfaceClass *)this, aP1, arg4, a3, a5, aP5, a7, a8); /*0x7b3713*/
+    return ((WinsockInterfaceClass *)this)->WriteBuffer(aP1, arg4, a3, a5, aP5, a7, a8); /*0x7b3713*/
 
 }
 } // namespace gamemd
@@ -833,7 +833,7 @@ int UDPInterfaceClass_Destru_Connect(int a2, const void * a3, unsigned int a4, c
     v23 = (unsigned short *)(v6 + 258896); /*0x7b3745*/
     do /*0x7b3875*/
     {
-      v9 = AudioQueue::AllocBuffer((AudioQueue *)v7, a4); /*0x7b3759*/
+      v9 = ((AudioQueue *)v7)->AllocBuffer(a4); /*0x7b3759*/
       memcpy(v9 + 32, a2, (unsigned int)a3); /*0x7b376a*/
       *((unsigned int *)v9 + 4) = a3; /*0x7b3773*/
       v9[20] = 1; /*0x7b377a*/
@@ -900,7 +900,7 @@ int UDPInterfaceClass_Destru::Receive()
   int result; // eax
   int v6; // [esp+0h] [ebp-Ch]
 
-  if ( IPXInterfaceClass::Receive((WinsockInterfaceClass *)this) && (v2 = 0, this->u32_3F330 > 0) ) /*0x7b38a8*/
+  if ( ((WinsockInterfaceClass *)this)->Receive() && (v2 = 0, this->u32_3F330 > 0) ) /*0x7b38a8*/
   {
     v3 = &this->u32_1F980; /*0x7b38aa*/
     while ( 1 ) /*0x7b38b8*/

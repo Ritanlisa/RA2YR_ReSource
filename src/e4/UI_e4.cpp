@@ -172,7 +172,7 @@ char sub_647040()
     return 0; /*0x647056*/
   if ( dword_A83D4C->isGameOver ) /*0x647060*/
     return 0; /*0x647060*/
-  v1 = (char *)(EventClass::AddEvent((int)(v3), (int)dword_A83D4C->relatedTagsCount, 0xCu)); /*0x647074*/
+  v1 = (char *)(((int)(v3))->AddEvent((int)dword_A83D4C->relatedTagsCount, 0xCu)); /*0x647074*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647083*/
     return 0; /*0x6470dc*/
   memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v1, 0x6Fu); /*0x6470a1*/
@@ -195,7 +195,7 @@ char sub_6470F0()
     return 0; /*0x647106*/
   if ( dword_A83D4C->isGameOver ) /*0x647110*/
     return 0; /*0x647110*/
-  v1 = (char *)(EventClass::AddEvent((int)(v3), (int)dword_A83D4C->relatedTagsCount, 0x22u)); /*0x647124*/
+  v1 = (char *)(((int)(v3))->AddEvent((int)dword_A83D4C->relatedTagsCount, 0x22u)); /*0x647124*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647133*/
     return 0; /*0x64718c*/
   memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v1, 0x6Fu); /*0x647151*/
@@ -310,7 +310,7 @@ void * sub_730F30()
     result = *(wchar_t **)&((unsigned int *)&stru_A8EB00)[416]; /*0x730f51*/
     if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1408) < *(int *)&((unsigned int *)&stru_A8EB00)[416] ) /*0x730f5a*/
     {
-      v2 = (char *)(EventClass::AddEvent((int)(v3), (int)dword_A83D4C->relatedTagsCount, 0x2Du));
+      v2 = (char *)(((int)(v3))->AddEvent((int)dword_A83D4C->relatedTagsCount, 0x2Du));
       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x730f7b*/
       {
         memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v2, 0x6Fu); /*0x730f99*/
@@ -396,7 +396,7 @@ AbstractClass * * sub_7318F0()
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5301)
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5307) )
             {
-              result = (char *)(EventClass::Add2((int)(v2), (int)dword_A83D4C->relatedTagsCount, 3u, (int)result));
+              result = (char *)(((int)(v2))->Add2((int)dword_A83D4C->relatedTagsCount, 3u, (int)result));
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x7319ab*/
               {
                 memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, result, 0x6Fu); /*0x7319c9*/
@@ -794,7 +794,7 @@ int sub_6D0FD0()
   v0 = (int *)&stru_B0C1C0; /*0x6d0fd4*/
   do /*0x6d0fef*/
   {
-    ShapeButton::SetShape((int)v0, 0, 0, 0); /*0x6d0fe1*/
+    ((int)v0)->SetShape(0, 0, 0); /*0x6d0fe1*/
     v0 += 24; /*0x6d0fe6*/
   }
   while ( (int)v0 < (int)&dword_B0CB20 ); /*0x6d0fef*/
@@ -933,12 +933,12 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
   {
     if ( v8 - (int)a2 < 0 ) /*0x5ebe9c*/
       DisableCampaignSlots((HWND)aP0, v8); /*0x5ebea0*/
-    Lobby::SetupPlayerWidgets((HWND)(aP0)); /*0x5ebea7*/
+    ((HWND)(aP0))->SetupPlayerWidgets(); /*0x5ebea7*/
   }
   else
   {
     UpdateMultiplayerLobbySlots((HWND)aP0,(gamemd::ObjectClass *)(a2), v8 - (unsigned int)a2); /*0x5ebe8b*/
-    Lobby::SetupPlayerWidgets((HWND)(aP0)); /*0x5ebe92*/
+    ((HWND)(aP0))->SetupPlayerWidgets(); /*0x5ebe92*/
   }
 }
 }
@@ -1040,7 +1040,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
   lParam[1] = a4; /*0x603f2b*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f2f*/
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v8); /*0x603f3c*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v8); /*0x603f45*/
+  ((DeleteAndZero *)&v8)->Alt(); /*0x603f45*/
   return a1; /*0x603f4c*/
 }
 } // namespace gamemd
@@ -1087,7 +1087,7 @@ LRESULT UI_Assign_623F60(HWND hWnd, WPARAM wParam, void ** a3)
 
   v5 = SendMessageA(hWnd, 0x18Au, wParam, 0); /*0x623f79*/
   if ( v5 <= 0 ) /*0x623f7d*/
-    SafeDelete::Ptr(a3); /*0x623f83*/
+    (a3)->Ptr(); /*0x623f83*/
   v6 = (wchar_t *)operator new(2 * v5 + 4); /*0x623f95*/
   v7 = SendMessageA(hWnd, 0x4B6u, wParam, (LPARAM)v6); /*0x623fa1*/
   WideString::Assign_Alt(a3, v6); /*0x623fa8*/
@@ -1239,7 +1239,7 @@ int E4Recv_642E40::UI_Render_642E40(unsigned int *a1, int *a2)
   int v3; // esi
   int result; // eax
 
-  Default = BuildingType::FindDefault(0); /*0x642e43*/
+  Default = (0)->FindDefault(); /*0x642e43*/
   v3 = Default; /*0x642e48*/
   if ( Default ) /*0x642e4c*/
   {
@@ -1750,7 +1750,7 @@ int sub_731A30()
 
   result = dword_A8B538; /*0x731a30*/
   if ( !dword_A8B538 ) /*0x731a37*/
-    return MapClass::ToggleZoom((int *)&dword_87F7E8, -1); /*0x731a40*/
+    return ((int *)&dword_87F7E8)->ToggleZoom(-1); /*0x731a40*/
   return result; /*0x731a45*/
 }
 }
@@ -1849,7 +1849,7 @@ unsigned short sub_734120()
     v5 = ((int16_t)v1 << 8) + 128; /*0x73418c*/
     v6 = ((*((signed short *)(((unsigned char *)&(v4)) + 2))) << 8) + 128; /*0x73419c*/
     v7 = 0; /*0x7341a0*/
-    v3 = (*((char *)Coord::To_Cell(&dword_87F7E8, &v5) + 283) << 8) / 2; /*0x7341c6*/
+    v3 = (*((char *)(&dword_87F7E8)->To_Cell(&v5) + 283) << 8) / 2; /*0x7341c6*/
     v6 -= v3; /*0x7341cc*/
     v5 -= v3; /*0x7341df*/
     Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, &v5); /*0x7341e3*/

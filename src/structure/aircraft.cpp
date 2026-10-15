@@ -1291,7 +1291,7 @@ int AircraftClass::ProcessPassengerEjection()
 {
   if ( this->currentMission != 30 ) /*0x41b877*/
     this->AircraftClass_field_bool_6D2 = 0; /*0x41b879*/
-  return MissionClass::AdvanceState((MissionClass *)this);
+  return ((MissionClass *)this)->AdvanceState();
 }
 // IDA: 0x41B5C0 (CheckPassengerCount, 23B)
 int AircraftClass::CheckPassengerCount()
@@ -1607,7 +1607,7 @@ int AircraftClass::EvaluateTargetingState()
     }
     else
     {
-      return FootClass::FindAITarget((FootClass *)this); /*0x41a9d5*/
+      return ((FootClass *)this)->FindAITarget(); /*0x41a9d5*/
     }
   }
 
@@ -1811,7 +1811,7 @@ int AircraftClass::IsBelowScreen()
   if ( Type != *(AircraftTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 1248) /*0x41b99d*/
     && Type != *(AircraftTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 1300) )
   {
-    return ObjectClass::IsBelowScreen((IUnknown *)this); /*0x41b9a1*/
+    return ((IUnknown *)this)->IsBelowScreen(); /*0x41b9a1*/
   }
   if ( !this->locomotor ) /*0x41b9a8*/
     WinAPI::Wrapper(-2147467261); /*0x41b9b7*/

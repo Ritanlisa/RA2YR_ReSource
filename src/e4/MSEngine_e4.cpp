@@ -186,7 +186,7 @@ CampaignClass * MSEngine::Destructor(void *a1)
   void *v3; // eax
   void *MSEngine_field_0x4; // eax
 
-  SessionClass::Destruct((SessionClass *)this); /*0x5cee64*/
+  ((SessionClass *)this)->Destruct(); /*0x5cee64*/
   v2 = (void *)this->u32_48; /*0x5cee69*/
   this->u32_44 = &vt_VectorClass; /*0x5cee70*/
   if ( v2 && this->u32_51 ) /*0x5cee79*/

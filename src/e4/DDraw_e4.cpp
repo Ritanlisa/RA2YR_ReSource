@@ -101,7 +101,7 @@ LABEL_7:
   v6[0] = 0; /*0x4a3f52*/
   v6[1] = 1; /*0x4a3f56*/
   v6[2] = 64; /*0x4a3f5e*/
-  DSurface::BlitPart(v7, (int)v6, (int)v7, (int)&v2, 0, 0); /*0x4a3f66*/
+  (v7)->BlitPart((int)v6, (int)v7, (int)&v2, 0, 0); /*0x4a3f66*/
   v2 = 0; /*0x4a3f74*/
   v3 = 5; /*0x4a3f78*/
   if ( XSurface::GetPixel(v7, &v2) ) /*0x4a3f7c*/
@@ -113,7 +113,7 @@ LABEL_7:
   {
     Debug::Log_0(aOk_1); /*0x4a3fac*/
   }
-  return DSurface::Destroy(v7); /*0x4a3fa1*/
+  return (v7)->Destroy(); /*0x4a3fa1*/
 
 }
 } // namespace gamemd
@@ -143,7 +143,7 @@ int DDraw::CleanupSurfaces(void *a1)
   v1 = (gamemd::StructTable *)(dword_8A0E10); /*0x4c19b1*/
   if ( dword_8A0E10 ) /*0x4c19bc*/
   {
-    DDraw::Init((DDraw *)dword_8A0E10); /*0x4c19c0*/
+    ((DDraw *)dword_8A0E10)->Init(); /*0x4c19c0*/
     __3_YAXPAX_Z(v1); /*0x4c19c6*/
     dword_8A0E10 = 0; /*0x4c19ce*/
   }
@@ -164,7 +164,7 @@ int DDraw::CleanupSurfaces(void *a1)
   v4 = (gamemd::AudioStream *)(dword_8A0E04); /*0x4c1a14*/
   if ( dword_8A0E04 ) /*0x4c1a1c*/
   {
-    DDraw::ReleaseSurfaces((DDraw *)dword_8A0E04); /*0x4c1a20*/
+    ((DDraw *)dword_8A0E04)->ReleaseSurfaces(); /*0x4c1a20*/
     __3_YAXPAX_Z(v4); /*0x4c1a26*/
     dword_8A0E04 = 0; /*0x4c1a2e*/
   }

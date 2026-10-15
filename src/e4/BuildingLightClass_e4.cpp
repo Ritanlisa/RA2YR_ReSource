@@ -82,7 +82,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
       {
         HIWORD(v18) = v7 + HIWORD(v25); /*0x436c6c*/
         *(unsigned int *)v23 = v18; /*0x436c7b*/
-        v8 = (unsigned int *)*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v23) + 57); /*0x436c84*/
+        v8 = (unsigned int *)*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v23) + 57); /*0x436c84*/
         if ( v8 ) /*0x436c8c*/
         {
           while ( 1 ) /*0x436c98*/
@@ -145,8 +145,8 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370ca) */
   /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d1) */
   /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d8) */
-  if ( (unsigned __int8)ObjectClass::Undeploy(a1) ) /*0x4370df*/
-    VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)a1); /*0x4370ee*/
+  if ( (unsigned __int8)(a1)->Undeploy() ) /*0x4370df*/
+    ((DynamicVectorClass *)&dword_87F778)->RemoveItem((int)a1); /*0x4370ee*/
   v5 = (gamemd::BuildingLightClass *)(a1); /*0x437103*/
   v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
@@ -158,7 +158,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
     }
     while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }
-  ObjectClass::Dtor(a1); /*0x43713e*/
+  (a1)->Dtor(); /*0x43713e*/
   if ( (a1 & 1) != 0 ) /*0x437148*/
     __3_YAXPAX_Z(a1); /*0x43714b*/
   return (gamemd::BuildingLightClass *)(a1); /*0x437155*/

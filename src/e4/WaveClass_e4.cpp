@@ -55,7 +55,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
   {
     if ( v4 ) /*0x75f672*/
     {
-      ObjectClass::Init((ObjectClass *)v4, (int)&a3); /*0x75f67b*/
+      ((ObjectClass *)v4)->Init((int)&a3); /*0x75f67b*/
       v4->q14C = 0; /*0x75f680*/
       v4->AbstractClass_1A8 = 0; /*0x75f68c*/
       (&v4->u32_1D8)->Init(); /*0x75f692*/
@@ -150,7 +150,7 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   }
   *((unsigned char *)aP1 + 509) = 0; /*0x7632a7*/
   *((unsigned int *)aP1 + 126) = 0; /*0x7632ab*/
-  ObjectClass::Dtor((ObjectClass *)aP1); /*0x7632b2*/
+  ((ObjectClass *)aP1)->Dtor(); /*0x7632b2*/
   if ( (aP1 & 1) != 0 ) /*0x7632be*/
     __3_YAXPAX_Z(aP1); /*0x7632c1*/
   return &aP1->ObjectClass; /*0x7632cb*/
@@ -186,7 +186,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     v16 = v2; /*0x75f34a*/
     LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     HIWORD(aP1) = v5->vtable2 / 256; /*0x75f372*/
-    v6 = (char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&aP1); /*0x75f391*/
+    v6 = (char *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&aP1); /*0x75f391*/
     v7 = (*(int (**)(void *, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
     v8 = *(unsigned int *)v7; /*0x75f39b*/
     v17 = *(unsigned int *)(*(unsigned int *)v7 + 172); /*0x75f3a9*/
@@ -221,7 +221,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       if ( *(unsigned char *)(v12 + 680) ) /*0x75f464*/
         BuildingClass::SellEffects((int)v6, *(unsigned int *)(v8 + 152)); /*0x75f477*/
     }
-    LOBYTE(Owner) = CellClass::IsActiveOrNext((CellClass *)v6); /*0x75f47e*/
+    LOBYTE(Owner) = ((CellClass *)v6)->IsActiveOrNext(); /*0x75f47e*/
     if ( (unsigned char)Owner ) /*0x75f486*/
     {
       v13 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6092); /*0x75f497*/

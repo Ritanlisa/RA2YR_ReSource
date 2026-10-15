@@ -179,7 +179,7 @@ int Scenario::ReadTeams()
       StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_000, (unsigned __int8 *)aStructures, v3); /*0x44f874*/
       INIClass::GetString(v1, (unsigned __int8 *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
       v5 = strtok(String, Str); /*0x44f89e*/
-      v6 = HouseClass::FindByName(v5); /*0x44f8a8*/
+      v6 = (v5)->FindByName(); /*0x44f8a8*/
       if ( v6 != -1 ) /*0x44f8b0*/
       {
         v7 = (Object *)*((unsigned int *)dword_A8022C + v6); /*0x44f8bc*/
@@ -189,7 +189,7 @@ int Scenario::ReadTeams()
           if ( !*(unsigned int *)&dword_A8B238 || v7 != dword_A83D4C ) /*0x44f8db*/
           {
             v8 = strtok(0, Str); /*0x44f8e8*/
-            IndexByName = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)v8); /*0x44f8fa*/
+            IndexByName = ((BuildingTypeClass *)v8)->FindIndexByName(); /*0x44f8fa*/
             if ( IndexByName != -1 ) /*0x44f8fe*/
             {
               v9 = strtok(0, Str); /*0x44f90b*/
@@ -240,7 +240,7 @@ int Scenario::ReadTeams()
               {
                 v24 = strtok(0, Str); /*0x44fa92*/
                 if ( v24 ) /*0x44fa9c*/
-                  *v22 = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)v24); /*0x44faa5*/
+                  *v22 = ((BuildingTypeClass *)v24)->FindIndexByName(); /*0x44faa5*/
                 ++v22; /*0x44faa7*/
                 --v23; /*0x44faaa*/
               }
@@ -259,12 +259,12 @@ int Scenario::ReadTeams()
                 v29 = BuildingClass::Construct(v28, *((unsigned int *)dword_A83C6C + IndexByName), v65); /*0x44fb27*/
                 if ( v29 ) /*0x44fb2b*/
                 {
-                  v30 = (TeamClass *)ObjectTypeClass::FindByName((ObjectTypeClass *)v16); /*0x44fb33*/
+                  v30 = (TeamClass *)((ObjectTypeClass *)v16)->FindByName(); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
-                    v31 = TeamClass::FindOrCreate(v30); /*0x44fb3e*/
+                    v31 = (v30)->FindOrCreate(); /*0x44fb3e*/
                     if ( v31 ) /*0x44fb45*/
-                      ObjectClass::SetReference((ObjectClass *)v29, v31); /*0x44fb4a*/
+                      ((ObjectClass *)v29)->SetReference(v31); /*0x44fb4a*/
                   }
                   v29->BuildingClass_field_bool_6DC = v58; /*0x44fb5b*/
                   v29->Tactical_6CA = v57; /*0x44fb61*/
@@ -313,7 +313,7 @@ int Scenario::ReadTeams()
                         do /*0x44fcda*/
                         {
                           if ( *(unsigned char *)(v41 + *&v29->field_520 + 3980) && *v42 ) /*0x44fcc2*/
-                            VtableStub::Method_425270(*v42); /*0x44fcc9*/
+                            (*v42)->Method_425270(); /*0x44fcc9*/
                           v41 += 68; /*0x44fcce*/
                           ++v42; /*0x44fcd1*/
                         }
@@ -325,8 +325,8 @@ int Scenario::ReadTeams()
                           LOBYTE(v39) = *(unsigned char *)(v43 + 3278); /*0x44fcec*/
                           HouseClass::UpdateProduction(v29->owner, v44, v39, 0); /*0x44fcfc*/
                         }
-                        if ( (unsigned __int8)House::IsHumanPlayer(v29->owner) ) /*0x44fd07*/
-                          VoxClass::FindAndPlay((VoxClass *)&stru_818E00.Next, -1); /*0x44fd1a*/
+                        if ( (unsigned __int8)(v29->owner)->IsHumanPlayer() ) /*0x44fd07*/
+                          ((VoxClass *)&stru_818E00.Next)->FindAndPlay(-1); /*0x44fd1a*/
                       }
                     }
                     else
@@ -779,7 +779,7 @@ LABEL_38:
   *p_nextArrayIndex = v15; /*0x55b26e*/
   p_nextArrayIndex->u32_4 = v20; /*0x55b270*/
   p_nextArrayIndex->u32_8 = v19; /*0x55b278*/
-  MapClass::ProcessVisibilityFlags((MapClass *)&DataGlobal_87F7E8); /*0x55b27b*/
+  ((MapClass *)&DataGlobal_87F7E8)->ProcessVisibilityFlags(); /*0x55b27b*/
   v14 = dword_A8B230; /*0x55b280*/
   v13 = *(unsigned int *)&g_RulesClass_Instance; /*0x55b286*/
 LABEL_41:
@@ -806,7 +806,7 @@ LABEL_50:
         v14[129].vtable0 = (void *)v15; /*0x55b319*/
         v14[129].vtable1 = v24; /*0x55b31b*/
         v14[129].vtable2 = v23; /*0x55b323*/
-        MapClass::ProcessFogTransition((MapClass *)&DataGlobal_87F7E8); /*0x55b326*/
+        ((MapClass *)&DataGlobal_87F7E8)->ProcessFogTransition(); /*0x55b326*/
         v14 = dword_A8B230; /*0x55b32b*/
         v13 = *(unsigned int *)&g_RulesClass_Instance; /*0x55b331*/
         v15 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x55b337*/

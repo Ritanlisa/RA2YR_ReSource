@@ -60,7 +60,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   int v5; // ecx
   OverlayTypeClass **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x5fe259*/
+  ((int *)this)->ConstructFull(aP1); /*0x5fe259*/
   this->Strength = 1; /*0x5fe265*/
   *&this->Wall = 1; /*0x5fe26b*/
   this->Explodes = 1; /*0x5fe271*/
@@ -209,7 +209,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
          Destination,
          128) )
   {
-    v13 = AnimTypeClass::FindOrCreate(Destination); /*0x5fe897*/
+    v13 = (Destination)->FindOrCreate(); /*0x5fe897*/
   }
   else
   {
@@ -283,8 +283,8 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
       a1->? = &vt_OverlayTypeClass; /*0x5feb2e*/
       a1->? = &vt_OverlayTypeClass; /*0x5feb35*/
     }
-    VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
-    ObjectTypeClass::Load2DArt((char *)a1); /*0x5feb45*/
+    ((char *)a1)->LoadAnim(); /*0x5feb3e*/
+    ((char *)a1)->Load2DArt(); /*0x5feb45*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a1->DamageLevels); /*0x5feb56*/
     if ( !a1->DrawFlat ) /*0x5feb5b*/
     {
@@ -332,7 +332,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
     CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
-    v3 = (SHPStruct *)CCFileClass::ReadEntireFile(&v4); /*0x5feead*/
+    v3 = (SHPStruct *)(&v4)->ReadEntireFile(); /*0x5feead*/
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
@@ -340,7 +340,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v4); /*0x5feee5*/
+    ((BufferIOFileClass *)&v4)->Dtor(); /*0x5feee5*/
     return (gamemd::AnimTypeClass **)(v3); /*0x5feeea*/
   }
   return (gamemd::AnimTypeClass **)(result); /*0x5feeed*/
@@ -354,7 +354,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
 
   void *v3; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x6440a9*/
+  ((int *)this)->ConstructFull(aP1); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
   *&this->ChargerBarrels_0x12 = -1; /*0x6440b9*/
   this->ParticleTypeClass_2B8 = -1; /*0x6440bf*/

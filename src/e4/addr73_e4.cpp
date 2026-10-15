@@ -132,10 +132,10 @@ AbstractClass * * ProcessSelectionExperience()
             v9 = (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 44))(v8) == 15 ? (TechnoClass *)v8 : 0;
             v10 = (*(int (**)(unsigned char *))(*(unsigned int *)v8 + 44))(v8) == 1 ? (TechnoClass *)v8 : 0;
             if ( (!v9 /*0x730d06*/
-               || !TechnoClass::GetTypeFlag(v9)
+               || !(v9)->GetTypeFlag()
                || !v12
                || !v13
-               || !(uint8_t)TechnoClass::IsMission27to30(v9))
+               || !(uint8_t)(v9)->IsMission27to30())
               && (!v10 || !*(unsigned char *)(v10[1].ironTintTimer[2] + 3603) || !v12 || !v13 || !Event_Process_746D90(v10)) )
             {
               if ( (*(uint8_t (**)(unsigned char *, int))(*(unsigned int *)v8 + 884))(v8, 9) ) /*0x730d15*/
@@ -158,9 +158,9 @@ AbstractClass * * ProcessSelectionExperience()
       if ( v6 ) /*0x730b9a*/
       {
         if ( (*(int (**)(unsigned int))(v6->vfptr + 44))(*((unsigned int *)dword_A8ECBC + v5)) == 15 /*0x730baa*/
-          && TechnoClass::GetTypeFlag(v6) )
+          && (v6)->GetTypeFlag() )
         {
-          if ( !(uint8_t)TechnoClass::IsMission27to30(v6) ) /*0x730bbc*/
+          if ( !(uint8_t)(v6)->IsMission27to30() ) /*0x730bbc*/
             goto LABEL_17; /*0x730bbc*/
           (*((unsigned char *)&(v1))) = v13; /*0x730bbe*/
           v12 = 1; /*0x730bc2*/
@@ -472,7 +472,7 @@ int TechnoClass_StepCleanupIfHuman(int a1, void * a2)
     v4 = *(unsigned int *)&dword_A8B238
        ? ((House *)(*(House **)(a1 + 540)))->IsHumanPlayer()
        : *(unsigned char *)(*(unsigned int *)(a1 + 540) + 493);
-    if ( v4 && (uint8_t)ObjectClass::StepCleanup((ObjectClass *)a1, a2) ) /*0x7327ad*/
+    if ( v4 && (uint8_t)((ObjectClass *)a1)->StepCleanup(a2) ) /*0x7327ad*/
       return 1; /*0x732782*/
   }
   return result; /*0x7327b6*/
@@ -1019,7 +1019,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
         if ( v13 && (*(unsigned char *)(v13 + 20) & 1) != 0 ) /*0x73350d*/
         {
           v19 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[216] + 4 * v2); /*0x733516*/
-          DynamicVector::AddItem(v11, &v19); /*0x73351a*/
+          (v11)->AddItem(&v19); /*0x73351a*/
         }
         ++v2; /*0x73351f*/
       }
@@ -1663,7 +1663,7 @@ int E4Recv_734F50::sub_734F50()
   result = dword_B1CF84; /*0x734f50*/
   if ( (ObjectClass *)dword_B1CF84 != this ) /*0x734f5a*/
   {
-    WinMain::ShutdownCleanup(v3); /*0x734f5c*/
+    (v3)->ShutdownCleanup(); /*0x734f5c*/
     dword_B1CF84 = (int)this; /*0x734f67*/
     return CSFClass::LoadFile((const char *)dword_B1CF68); /*0x734f6d*/
   }
@@ -1680,7 +1680,7 @@ int E4Recv_734F80::sub_734F80()
   result = dword_B1CF60; /*0x734f80*/
   if ( (ObjectClass *)dword_B1CF60 != this ) /*0x734f8a*/
   {
-    WinMain::ShutdownCleanup(v3); /*0x734f8c*/
+    (v3)->ShutdownCleanup(); /*0x734f8c*/
     dword_B1CF60 = (int)this; /*0x734f97*/
     return CSFClass::LoadFile((const char *)dword_B1CF68); /*0x734f9d*/
   }
@@ -2109,7 +2109,7 @@ char IDTechnoClassMatches(ObjectClass * a1, int a2)
   v4 = 0; /*0x732c39*/
   if ( v3 <= 0 ) /*0x732c3f*/
     return 0; /*0x732c8a*/
-  while ( !(uint8_t)ObjectClass::StepCleanup(a1, *(void **)(*(unsigned int *)(a2 + 4) + 4 * v4)) /*0x732c83*/
+  while ( !(uint8_t)(a1)->StepCleanup(*(void **)(*(unsigned int *)(a2 + 4) + 4 * v4)) /*0x732c83*/
        || !(*((uint8_t (**)(ObjectClass *))a1->vfptr + 79))(a1)
        && (!a1
         || (*((int (**)(ObjectClass *))a1->vfptr + 11))(a1) != 6

@@ -116,7 +116,7 @@ LABEL_14:
     {
       if ( vtable0[7](this, 1) ) /*0x431d02*/
       {
-        this->customSound_controller[0] = FileClass::Seek((RawFileClass *)this, 0, 1u); /*0x431d13*/
+        this->customSound_controller[0] = ((RawFileClass *)this)->Seek(0, 1u); /*0x431d13*/
         v11 = 1; /*0x431d16*/
       }
     }
@@ -126,7 +126,7 @@ LABEL_14:
       if ( this->u32_C == -1 ) /*0x431cc5*/
         this->customSound_controller[0] = (int)v7; /*0x431cd6*/
       else
-        this->customSound_controller[0] = FileClass::Seek((RawFileClass *)this, 0, 1u); /*0x431cd1*/
+        this->customSound_controller[0] = ((RawFileClass *)this)->Seek(0, 1u); /*0x431cd1*/
       if ( this->ambientSoundController[3] > (int)this->attachedTag ) /*0x431ce1*/
       {
         this->ambientSoundController[0] = (int)v7; /*0x431cf8*/
@@ -260,7 +260,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       v71 = v73 + aP1[1]; /*0x437490*/
       v25 = v71 - v24; /*0x437494*/
       v70 = v72 + v23; /*0x43749a*/
-      v61 = StreamClass::ReadAndSeek(v72 + v23, v71 - v24); /*0x4374ac*/
+      v61 = (v72 + v23)->ReadAndSeek(v71 - v24); /*0x4374ac*/
       v21 = (2 * (v25 & 1)) | ((uint8_t)v70 ^ v25) & 1; /*0x4374b7*/
     }
     if ( g_ZBufferDescriptor ) /*0x4374c3*/
@@ -268,7 +268,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       v26 = v72 + *aP1; /*0x4374d6*/
       v27 = *((unsigned int *)g_ZBufferDescriptor + 1); /*0x4374d8*/
       v71 = v73 + aP1[1]; /*0x4374dd*/
-      v63 = Audio::GetSamplePosition(v26, v71 - v27); /*0x4374ea*/
+      v63 = (v26)->GetSamplePosition(v71 - v27); /*0x4374ea*/
       v64 = 0; /*0x4374f2*/
       v28 = aP8->LockCount; /*0x4374fa*/
       v67 = (int)(aP8->Height); /*0x437502*/

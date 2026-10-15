@@ -234,8 +234,8 @@ char WOL_RequestMatch(void * a1)
   ObjectClass *v30; // [esp+0h] [ebp-124h]
   unsigned char v31[276]; // [esp+10h] [ebp-114h] BYREF
 
-  DeleteAndZero::Alt2((DeleteAndZero *)&stru_B76AC4); /*0x7a069f*/
-  v1 = (HWND)Dialog::FindByHandle((Dialog *)0x11F); /*0x7a06a9*/
+  ((DeleteAndZero *)&stru_B76AC4)->Alt2(); /*0x7a069f*/
+  v1 = (HWND)((Dialog *)0x11F)->FindByHandle(); /*0x7a06a9*/
   if ( v1 ) /*0x7a06b2*/
     CloseDialog(v1, 0); /*0x7a06b8*/
   g_NetworkLobbyState = 0; /*0x7a06bd*/
@@ -399,7 +399,7 @@ char WOL_RequestMatch(void * a1)
   }
   LABEL_50:
   String::Append((String *)v31, aRat); /*0x7a0b67*/
-  v19 = (int)(Performance::Profile(v29)); /*0x7a0b75*/
+  v19 = (int)((v29)->Profile()); /*0x7a0b75*/
   v20 = FromStringInt((char **)&v31[4], v19); /*0x7a0b80*/
   String::Append2((String *)v31, v20); /*0x7a0b8a*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b93*/
@@ -552,7 +552,7 @@ Coord * * WOL_ProcessPingRequests()
                 (const void *)(stru_B76AC4.abstractFlags + 4 * (unsigned int)(v11 + 1)),
                 4 * ((int)stru_B76AC4.vfptr3 + 0x3FFFFFFF * (unsigned int)(v11 + 1)));
               if ( 3 * (int)--stru_B76AC4.vfptr3 <= stru_B76AC4.uniqueId ) /*0x7a12ef*/
-                VectorClass::Shrink((VectorClass *)&stru_B76AC4.vfptr3); /*0x7a12f6*/
+                ((VectorClass *)&stru_B76AC4.vfptr3)->Shrink(); /*0x7a12f6*/
             }
           }
           goto LABEL_36; /*0x7a12f6*/
@@ -661,7 +661,7 @@ Coord * * UpdateWOLLobbyPings()
               4 * (stru_B76900.estimatedHealth + 0x3FFFFFFF * (v2 + 1)));
             --stru_B76900.estimatedHealth; /*0x7a140f*/
             if ( 3 * stru_B76900.estimatedHealth <= *(int *)&stru_B76900.isOnMap ) /*0x7a141e*/
-              VectorClass::Shrink((VectorClass *)&stru_B76900.estimatedHealth); /*0x7a1425*/
+              ((VectorClass *)&stru_B76900.estimatedHealth)->Shrink(); /*0x7a1425*/
           }
         }
         ((String *)(&v19))->GetOrEmpty(); /*0x7a142e*/
@@ -719,7 +719,7 @@ Coord * * UpdateWOLLobbyPings()
           v9 = ((String *)(&v23))->Assign(Str); /*0x7a1570*/
           v10 = String::Concat(&v19, &v24, v9); /*0x7a157f*/
           v11 = String::Concat((String *)v10, (char **)&v25.vtable2, v17); /*0x7a1586*/
-          v12 = String::Concat((char **)((String *)v11), (char **)&v22.ptr_4, v18); /*0x7a158d*/
+          v12 = ((char **)((String *)v11))->Concat((char **)&v22.ptr_4, v18); /*0x7a158d*/
           String::Append2((String *)&v19.ptr_4, v12); /*0x7a1597*/
           DeleteAndZero((ObjectClass *)&v22.ptr_4); /*0x7a15a0*/
           DeleteAndZero((ObjectClass *)&v25.vtable2); /*0x7a15a9*/

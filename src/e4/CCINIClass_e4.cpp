@@ -182,7 +182,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_1)
   INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
   SHA1::ComputeThunk(&v12, this->__pad_041); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
-  Pipe::Dtor((Pipe *)&v12); /*0x4742e7*/
+  ((Pipe *)&v12)->Dtor(); /*0x4742e7*/
   v8 = memcmp(v20, this->__pad_041, 0x14u) == 0; /*0x4742fa*/
   v7 = 2; /*0x4742fd*/
   if ( v8 ) /*0x474302*/
@@ -328,7 +328,7 @@ IUnknown * CCINIClass::WriteHouses()
   {
     do /*0x501200*/
     {
-      HouseClass::SaveToINI(*&dword_A8022C->psychicDetectionBuildings, this); /*0x5011f3*/
+      (*&dword_A8022C->psychicDetectionBuildings)->SaveToINI(this); /*0x5011f3*/
       result = dword_A80238; /*0x5011f8*/
       ++v4; /*0x5011fd*/
     }

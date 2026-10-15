@@ -1802,10 +1802,10 @@ int FillScoreScreenStats(IUnknown * Destination, char a2)
   while ( v11 ); /*0x49b885*/
   Destination->q040 = v7; /*0x49b887*/
   Destination->ptr_30 = *(unsigned int *)(v6 + 21640) + *(unsigned int *)(v6 + 21556); /*0x49b89e*/
-  Count = VectorClass::GetCount((unsigned int *)(v6 + 21840)); /*0x49b8ac*/
-  v14 = VectorClass::GetCount((unsigned int *)(v6 + 21860)) + Count; /*0x49b8b9*/
-  v15 = VectorClass::GetCount((unsigned int *)(v6 + 21880)) + v14; /*0x49b8c6*/
-  Destination->u32_50 = VectorClass::GetCount((unsigned int *)(v6 + 21900)) /*0x49b8df*/
+  Count = ((unsigned int *)(v6 + 21840))->GetCount(); /*0x49b8ac*/
+  v14 = ((unsigned int *)(v6 + 21860))->GetCount() + Count; /*0x49b8b9*/
+  v15 = ((unsigned int *)(v6 + 21880))->GetCount() + v14; /*0x49b8c6*/
+  Destination->u32_50 = ((unsigned int *)(v6 + 21900))->GetCount() /*0x49b8df*/
                                 + v15
                                 + *(unsigned int *)(v6 + 21640)
                                 + *(unsigned int *)(v6 + 21556);

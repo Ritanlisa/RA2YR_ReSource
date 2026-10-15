@@ -191,7 +191,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   v5 = *(unsigned int **)(a3 + 4); /*0x764c29*/
   if ( v5[3] ) /*0x764c2c*/
   {
-    OwnerHouse = Conflict::GetOwnerHouse(v5); /*0x764c3a*/
+    OwnerHouse = (v5)->GetOwnerHouse(); /*0x764c3a*/
     ActivateScreenWDT((int)v28, OwnerHouse); /*0x764c47*/
     v7 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 32); /*0x764c58*/
     v8 = v7 - 1; /*0x764c5a*/
@@ -261,7 +261,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   {
     v29[1] = 0; /*0x764dc7*/
     v29[2] = 0; /*0x764dcb*/
-    GenericList::Constructor(v30); /*0x764dcf*/
+    (v30)->Constructor(); /*0x764dcf*/
     v30[0] = (unsigned int)(&vt_List); /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
     (*((unsigned char *)&(v31))) = 0; /*0x764df2*/
@@ -274,7 +274,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     Int = INIClass::ReadIntthis->ptr_48, (char **)&v24, -1); /*0x764e3b*/
     DeleteAndZero((void **)&v24); /*0x764e3d*/
     this->M48 = Int < 0 ? 0 : Int;
-    if ( this->M48 == WDTObject::GetSize(*(unsigned int **)(a3 + 4)) )
+    if ( this->M48 == (*(unsigned int **)(a3 + 4))->GetSize() )
     {
       v18 = &this->M52; /*0x764e60*/
       do
@@ -301,7 +301,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       this->M60 = 0; /*0x764efb*/
       this->M40 = 0; /*0x764efe*/
     }
-    HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/
+    (v29)->DestroyHashTableINIClass(); /*0x764f05*/
   }
   v34[0] = (unsigned int)&off_7E1668; /*0x764f0e*/
   ((BufferIOFileClass *)(v34))->Dtor(); /*0x764f16*/
@@ -325,12 +325,12 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   unsigned int v14[22]; // [esp+58h] [ebp-B0h] BYREF
   unsigned int v15[22]; // [esp+B0h] [ebp-58h] BYREF
 
-  this->M48 = WDTObject::GetSize(this->M48); /*0x76501b*/
-  *&this->u32_4 * (unsigned int)aP1 + 52) = Conflict::GetOwnerHouse(this->M48); /*0x76502c*/
+  this->M48 = (this->M48)->GetSize(); /*0x76501b*/
+  *&this->u32_4 * (unsigned int)aP1 + 52) = (this->M48)->GetOwnerHouse(); /*0x76502c*/
   v8[1] = 0; /*0x765030*/
   v8[2] = 0; /*0x765034*/
-  GenericNode::Constructor(v9); /*0x765038*/
-  GenericNode::Constructor(v10); /*0x765041*/
+  (v9)->Constructor(); /*0x765038*/
+  (v10)->Constructor(); /*0x765041*/
   LinkedList::Prepend(v9, (int)v10); /*0x765057*/
   v8[3] = &vt_List; /*0x765060*/
   memset(&v10[3], 0, 12); /*0x765068*/
@@ -338,13 +338,13 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   v12 = 0; /*0x765078*/
   v13 = 0; /*0x76507c*/
   v8[0] = &vt_INIClass; /*0x765080*/
-  BufferIOFile::Init(v14); /*0x765088*/
-  CCFileClass::Reopen(v14, g_Str_File_WDTHist_ini, 1); /*0x765098*/
+  (v14)->Init(); /*0x765088*/
+  (v14)->Reopen(g_Str_File_WDTHist_ini, 1); /*0x765098*/
   if ( !((File *)(v14))->IsReady(0) ) /*0x7650a2*/
   {
-    FileClass::Close(v14); /*0x7650af*/
+    (v14)->Close(); /*0x7650af*/
     CCFileClass::Close(v14); /*0x7650b8*/
-    CCFileClass::Reopen(v14, g_Str_File_WDTHist_ini, 1); /*0x7650c8*/
+    (v14)->Reopen(g_Str_File_WDTHist_ini, 1); /*0x7650c8*/
   }
   FileStraw::Open(v8, (int)v14, 0); /*0x7650d7*/
   CCFileClass::Close(v14); /*0x7650e0*/
@@ -358,13 +358,13 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   INIClass::SetIntFormat((char *)v8, (char **)this->q114 + 12), (char **)&v6, this->M48, 0); /*0x765141*/
   DeleteAndZero(&v6); /*0x76514a*/
   INIClass::SetIntFormat((char *)v8, (char **)this->q114 + 12), (char **)&v7, *&this->u32_4 * (unsigned int)aP1 + 52), 0); /*0x76515f*/
-  BufferIOFile::Init(v15); /*0x76516b*/
-  CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 2); /*0x76517e*/
+  (v15)->Init(); /*0x76516b*/
+  (v15)->Reopen(g_Str_File_WDTHist_ini, 2); /*0x76517e*/
   INIClass::SaveToPipe(v8, (int)v15); /*0x76518f*/
   v15[0] = (unsigned int)&off_7E1668; /*0x76519b*/
   ((BufferIOFileClass *)(v15))->Dtor(); /*0x7651a6*/
   DeleteAndZero(&v7); /*0x7651af*/
-  return HashTable::DestroyHashTableINIClass(v8); /*0x7651bd*/
+  return (v8)->DestroyHashTableINIClass(); /*0x7651bd*/
 }
 }
 // 0x7651D0
@@ -381,26 +381,26 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   v7.? = 0; /*0x7651e1*/
   v7.? = 0; /*0x7651e5*/
   GenericNode::Constructor((GenericNode *)&v7.?); /*0x7651e9*/
-  GenericNode::Constructor((GenericNode *)&v7.occupant); /*0x7651f2*/
+  ((GenericNode *)&v7.occupant)->Constructor(); /*0x7651f2*/
   LinkedList::Prepend((LinkedList *)&v7.?, (int)&v7.occupant); /*0x765208*/
   v7.? = (int)&vt_List; /*0x765211*/
   memset(&v7.nextObject, 0, 13); /*0x765219*/
   v7.ambientSoundController[1] = 0; /*0x765229*/
   v7.ambientSoundController[2] = 0; /*0x76522d*/
   v7.? = &vt_INIClass; /*0x765231*/
-  BufferIOFile::Init((BufferIOFile *)&v7.ambientSoundController[3]); /*0x765239*/
-  CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
+  ((BufferIOFile *)&v7.ambientSoundController[3])->Init(); /*0x765239*/
+  ((CDFileClass *)&v7.ambientSoundController[3])->Reopen(g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
   if ( !(unsigned __int8)File::IsReady((BufferIOFileClass *)&v7.ambientSoundController[3], 0) ) /*0x765253*/
   {
-    FileClass::Close((RawFileClass *)&v7.ambientSoundController[3]); /*0x765260*/
+    ((RawFileClass *)&v7.ambientSoundController[3])->Close(); /*0x765260*/
     CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765269*/
-    CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765279*/
+    ((CDFileClass *)&v7.ambientSoundController[3])->Reopen(g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765279*/
   }
   FileStraw::Open((FileStraw *)&v7.?, (int)&v7.ambientSoundController[3], 0); /*0x765288*/
   CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765291*/
   v7.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x7652a2*/
-  String::Assign((String *)&v7, g_INI_Key_CampaignID); /*0x7652b0*/
+  ((BufferIOFileClass *)&v7.ambientSoundController[3])->Dtor(); /*0x7652a2*/
+  ((String *)&v7)->Assign(g_INI_Key_CampaignID); /*0x7652b0*/
   v2 = &this->spawnStatus; /*0x7652ba*/
   INIClass::SetIntFormat((char *)&v7.?, &this->spawnStatus, (char **)&v7, 0, 0); /*0x7652c4*/
   DeleteAndZero(&v7); /*0x7652cd*/
@@ -414,7 +414,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
     DeleteAndZero(&v7); /*0x765314*/
   }
   BufferIOFile::Init((BufferIOFile *)&v7.location[1]); /*0x765326*/
-  CCFileClass::Reopen((CDFileClass *)&v7.location[1], g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
+  ((CDFileClass *)&v7.location[1])->Reopen(g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
   INIClass::SaveToPipe((INIClass *)&v7.?, (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.location[1]); /*0x765361*/

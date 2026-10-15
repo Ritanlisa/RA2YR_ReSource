@@ -122,7 +122,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
     {
       if ( (AudioPool *)sub_406310(v7) != v5 ) /*0x75096f*/
       {
-        VocClass::Release(v6); /*0x750973*/
+        (v6)->Release(); /*0x750973*/
         v6 = 0; /*0x750978*/
       }
     }
@@ -133,7 +133,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
     v9 = v8; /*0x75098e*/
     if ( v8 >= 0x4000 ) /*0x750996*/
       v9 = 0x4000; /*0x750998*/
-    if ( v6 || (v6 = (VocClass *)AudioPool::ProcessQueue(v5)) != 0 ) /*0x7509ac*/
+    if ( v6 || (v6 = (VocClass *)(v5)->ProcessQueue()) != 0 ) /*0x7509ac*/
     {
       AudioMixer::PlayBuffer(v6, v9); /*0x7509b2*/
       AudioMixer::RequestOrEndBuffer((int)v6, a2); /*0x7509bd*/
@@ -254,7 +254,7 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
   v5 = (VocClass *)AudioSource::Get(a2); /*0x750d5e*/
-  v6 = VocClass::Check((VocClass *)a2); /*0x750d60*/
+  v6 = ((VocClass *)a2)->Check(); /*0x750d60*/
   v7 = (AudioPool *)v6; /*0x750d65*/
   if ( !v6 ) /*0x750d69*/
     goto LABEL_15; /*0x750d69*/
@@ -263,16 +263,16 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
   {
     if ( v5 ) /*0x750e01*/
     {
-      VocClass::Release(v5); /*0x750e05*/
+      (v5)->Release(); /*0x750e05*/
       v5 = 0; /*0x750e0a*/
     }
     goto LABEL_15; /*0x750e0a*/
   }
   if ( !v5 ) /*0x750d8e*/
   {
-    if ( AudioMixer::SetVolume((AudioMixer *)v7) && VocClass_VoicesEnabled ) /*0x750da2*/
+    if ( ((AudioMixer *)v7)->SetVolume() && VocClass_VoicesEnabled ) /*0x750da2*/
     {
-      v9 = AudioPool::ProcessQueue(v7); /*0x750da6*/
+      v9 = (v7)->ProcessQueue(); /*0x750da6*/
       v5 = (VocClass *)v9; /*0x750dab*/
       if ( !v9 ) /*0x750daf*/
         goto LABEL_15; /*0x750daf*/
@@ -383,7 +383,7 @@ int ThemeManager_Update(int a1, int a2, int a3)
             ThemeClass::ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
-          v7 = (int *)(AudioQueue::FindByData(v5)); /*0x75255e*/
+          v7 = (int *)((v5)->FindByData()); /*0x75255e*/
           if ( !v7 || v7[6] != v4 ) /*0x75256a*/
             Audio_Load((int)v5, v4, a3); /*0x752575*/
           UpdateThemes(); /*0x75257a*/
@@ -517,9 +517,9 @@ void ThemeQueue_ClearPlaylist(int a1)
 
   if ( a1 >= 0 && a1 < g_InfantrySelectState ) /*0x752a4e*/
   {
-    for ( i = AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)); /*0x752a61*/
+    for ( i = (*((unsigned int *)g_InfantryRenderPool + a1))->FindByData(); /*0x752a61*/
           i;
-          i = AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)) )
+          i = (*((unsigned int *)g_InfantryRenderPool + a1))->FindByData() )
     {
       if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/
         LinkedList::Init((unsigned int **)i); /*0x752a6a*/
@@ -964,7 +964,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
       v17 = v10 + 1; /*0x7543f5*/
       do /*0x75440b*/
       {
-        Voxel::ProcessColor(**v16, *v16, &v33); /*0x754402*/
+        (**v16)->ProcessColor(*v16, &v33); /*0x754402*/
         --v16; /*0x754407*/
         --v17; /*0x75440a*/
       }
@@ -979,7 +979,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
       v19 = (unsigned int ***)&unk_B2FE78; /*0x754415*/
       do /*0x754434*/
       {
-        Voxel::ProcessColor(**v19, *v19, &v33); /*0x754424*/
+        (**v19)->ProcessColor(*v19, &v33); /*0x754424*/
         ++v18; /*0x75442e*/
         ++v19; /*0x75442f*/
       }

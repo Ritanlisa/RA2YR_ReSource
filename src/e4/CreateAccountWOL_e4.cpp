@@ -45,7 +45,7 @@ void sub_72C290()
       v1 = *(void **)&DataGlobal_B0FA30; /*0x72c2a5*/
       if ( *(unsigned int *)&DataGlobal_B0FA30 ) /*0x72c2ad*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FA30); /*0x72c2b1*/
+        (*(FileTreeNode **)&DataGlobal_B0FA30)->Destroy(); /*0x72c2b1*/
         operator delete((void *)(v1)); /*0x72c2b7*/
       }
       DataGlobal_B0FD20 = 0; /*0x72c2bf*/
@@ -99,7 +99,7 @@ void sub_72C470()
       v1 = *(void **)&DataGlobal_B0FA64; /*0x72c485*/
       if ( *(unsigned int *)&DataGlobal_B0FA64 ) /*0x72c48d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FA64); /*0x72c491*/
+        (*(FileTreeNode **)&DataGlobal_B0FA64)->Destroy(); /*0x72c491*/
         operator delete((void *)(v1)); /*0x72c497*/
       }
       DataGlobal_B0FD14 = 0; /*0x72c49f*/

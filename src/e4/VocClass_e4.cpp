@@ -26,8 +26,8 @@ int VocClass::Release(void *a1)
     if ( pVoiceChannel && this == pVoiceChannel[48] ) /*0x405311*/
     {
       if ( (this->Volume[0] & 2) != 0 ) /*0x405317*/
-        Voice::Stop(v1); /*0x405319*/
-      AudioStream::ReleaseChannel((AudioStream *)this->pVoiceChannel); /*0x405324*/
+        (v1)->Stop(); /*0x405319*/
+      ((AudioStream *)this->pVoiceChannel)->ReleaseChannel(); /*0x405324*/
       *((unsigned int *)this->pVoiceChannel + 48) = 0; /*0x40532f*/
       *((unsigned int *)this->pVoiceChannel + 47) = 0; /*0x40533b*/
       *((unsigned int *)this->pVoiceChannel + 45) = 0; /*0x405347*/
@@ -44,7 +44,7 @@ int VocClass::Release(void *a1)
       v6 = &this->VocClass_field_98; /*0x405390*/
       do /*0x4053a8*/
       {
-        RefCount::Decrement(*v6); /*0x405395*/
+        (*v6)->Decrement(); /*0x405395*/
         *v6 = 0; /*0x40539a*/
         result = this->ActiveBufferCount; /*0x40539c*/
         ++v5; /*0x4053a2*/

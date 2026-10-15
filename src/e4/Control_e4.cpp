@@ -143,7 +143,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
       if ( v5 == 188 ) /*0x60bc40*/
       {
   LABEL_75:
-        result = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60bce4*/
+        result = ((SessionClass *)&dword_A8B238)->GetGameSpeed(); /*0x60bce4*/
         if ( (unsigned char)result ) /*0x60bcf0*/
           return result; /*0x60bcf0*/
         ++v3; /*0x60bcf6*/
@@ -170,7 +170,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
         {
           goto LABEL_75; /*0x60bcda*/
         }
-        result = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60bd1c*/
+        result = ((SessionClass *)&dword_A8B238)->GetGameSpeed(); /*0x60bd1c*/
         if ( (unsigned char)result ) /*0x60bd23*/
           return result; /*0x60bd23*/
         v3 += 7; /*0x60bd2d*/

@@ -68,11 +68,11 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   MSVQAnim_field_0x1C = (MovieContext *)this->MSVQAnim_field_0x1C; /*0x5cecc6*/
   if ( MSVQAnim_field_0x1C ) /*0x5ceccc*/
   {
-    MovieContext::Cleanup(MSVQAnim_field_0x1C); /*0x5cecce*/
+    (MSVQAnim_field_0x1C)->Cleanup(); /*0x5cecce*/
     v5 = (void *)this->MSVQAnim_field_0x1C; /*0x5cecd3*/
     if ( v5 ) /*0x5cecd8*/
     {
-      BinkMovie::Cleanup((BinkMovie *)this->MSVQAnim_field_0x1C); /*0x5cecdc*/
+      ((BinkMovie *)this->MSVQAnim_field_0x1C)->Cleanup(); /*0x5cecdc*/
       __3_YAXPAX_Z(v5); /*0x5cece2*/
     }
   }

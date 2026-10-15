@@ -362,7 +362,7 @@ wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM)
   lParam[1] = -1; /*0x603f87*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f8f*/
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v7); /*0x603f9c*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v7); /*0x603fa5*/
+  ((DeleteAndZero *)&v7)->Alt(); /*0x603fa5*/
   return a1; /*0x603fac*/
 }
 } // namespace gamemd
@@ -398,7 +398,7 @@ void sub_72BB10()
       v1 = *(void **)&DataGlobal_B0FB2C; /*0x72bb25*/
       if ( *(unsigned int *)&DataGlobal_B0FB2C ) /*0x72bb2d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FB2C); /*0x72bb31*/
+        (*(FileTreeNode **)&DataGlobal_B0FB2C)->Destroy(); /*0x72bb31*/
         operator delete((void *)(v1)); /*0x72bb37*/
       }
       DataGlobal_B0FD50 = 0; /*0x72bb3f*/

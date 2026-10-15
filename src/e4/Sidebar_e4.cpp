@@ -111,7 +111,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
       v21 = 0; /*0x4fa40c*/
       break; /*0x4fa40c*/
   }
-  Sidebar::Dispatch((int)v6, aP3, v7, 0); /*0x4fa41c*/
+  ((int)v6)->Dispatch(aP3, v7, 0); /*0x4fa41c*/
   v9 = TechnoTypeClass::GetByTypeAndIndex((int)v6, aP2); /*0x4fa42a*/
   v24 = 0; /*0x4fa440*/
   if ( !(*(int (**)(int, unsigned int, int, int, int))(*(unsigned int *)v9 + 148))(v9, 0, 1, 1, this) ) /*0x4fa438*/
@@ -157,7 +157,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
     v11 = (TeamTypeClass *)operator new(0x74u); /*0x4fa4e7*/
     if ( !v11 ) /*0x4fa4f1*/
       goto LABEL_40; /*0x4fa4f1*/
-    v10 = TeamTypeClass::Construct(v11); /*0x4fa4fa*/
+    v10 = (v11)->Construct(); /*0x4fa4fa*/
     if ( !v10 ) /*0x4fa4fe*/
       goto LABEL_40; /*0x4fa4fe*/
   }
@@ -384,7 +384,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = (int *)(v6); /*0x63634a*/
     if ( v6 ) /*0x63634e*/
     {
-      FactoryClass::FinishProduction((int *)v4->__pad_000, (int)v6); /*0x636353*/
+      ((int *)v4->__pad_000)->FinishProduction((int)v6); /*0x636353*/
       __3_YAXPAX_Z(*((void **)Block + 1)); /*0x636360*/
       v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_000 + 16))(v4, &Block); /*0x636371*/
       if ( v7 != -1 ) /*0x636377*/
@@ -399,10 +399,10 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = *(void **)Block->tail_0; /*0x6363b1*/
     v8 = *((unsigned int *)Block + 135); /*0x6363b5*/
     Object_field_0x30 = *(void **)(v8 + 48); /*0x6363bb*/
-    if ( (unsigned __int8)House::IsHumanPlayer((House *)v8) && dword_A83D4C ) /*0x6363ce*/
+    if ( (unsigned __int8)((House *)v8)->IsHumanPlayer() && dword_A83D4C ) /*0x6363ce*/
       Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x6363d0*/
     DecFactoryClassCounter((unsigned int)Object_field_0x30); /*0x6363d5*/
-    VectorClass::EraseAt((VectorClass *)&DataGlobal_AC4C40, (int)&Block); /*0x6363e4*/
+    ((VectorClass *)&DataGlobal_AC4C40)->EraseAt((int)&Block); /*0x6363e4*/
   }
   Sidebar_field_0x4 = Block->__pad_004; /*0x6363ec*/
   (*(void (**)(int *))(Block->__pad_004 + 12))(Block->__pad_004); /*0x6363f1*/
@@ -431,9 +431,9 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     if ( v12 ) /*0x63648a*/
     {
       v17 = *(unsigned int *)Block->tail_0; /*0x63648e*/
-      LeaderIndex = TeamClass::GetLeaderIndex((TeamClass *)v17); /*0x636492*/
+      LeaderIndex = ((TeamClass *)v17)->GetLeaderIndex(); /*0x636492*/
       DecFactoryClassCounter(LeaderIndex); /*0x636499*/
-      VectorClass::EraseAt((VectorClass *)&DataGlobal_AC4C40, (int)&v17); /*0x6364a8*/
+      ((VectorClass *)&DataGlobal_AC4C40)->EraseAt((int)&v17); /*0x6364a8*/
     }
     (*(void (**)(int *))(*Sidebar_field_0x4 + 12))(Block->__pad_004); /*0x6364b1*/
     Block->__pad_70[40] = 0; /*0x6364b7*/
@@ -679,7 +679,7 @@ ObjectClass * * Sidebar::Render(char a2, void *a2_1, void *a3, void *a4)
       while ( v11 < *(unsigned int *)this->__pad_1534 ); /*0x63fda0*/
     }
   }
-  LOBYTE(result) = RadarClass::Destru_vt16((RadarClass *)this, a2); /*0x63fdac*/
+  LOBYTE(result) = ((RadarClass *)this)->Destru_vt16(a2); /*0x63fdac*/
   return (gamemd::ObjectClass **)(result); /*0x63fdb1*/
 
 }
@@ -1013,8 +1013,7 @@ LABEL_13:
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
                   (*((unsigned char *)&(v73))) = 1;
-                  IsCliffWall = !SuperClass::ShouldDrawProgress(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 600)
-                                                                          + 4 * v31));
+                  IsCliffWall = !(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 600) + 4 * v31))->ShouldDrawProgress();
                   BufferCount = (size_t)SuperClass::NameReadiness(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 600)
                                                                             + 4 * v31));
                   ProductionState = SidebarClass::GetProductionState(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0

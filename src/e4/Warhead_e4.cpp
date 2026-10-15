@@ -461,7 +461,7 @@ int Warhead::ProcessDamageArea()
   v18 = v16 / v29; /*0x65b73a*/
   this->u32_64 = v18; /*0x65b741*/
   this->u32_68 = v8 / v18; /*0x65b749*/
-  v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &this->u32_80); /*0x65b750*/
+  v19 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&this->u32_80); /*0x65b750*/
   v20 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v35); /*0x65b75e*/
   v31 = *v20; /*0x65b763*/
   v33 = v20[1]; /*0x65b76a*/
@@ -469,7 +469,7 @@ int Warhead::ProcessDamageArea()
   v34 = v20[2]; /*0x65b776*/
   if ( v21 ) /*0x65b77a*/
   {
-    TacticalClass::UpdateScrollTarget(v21, v8, v26, v13, v17, 0); /*0x65b7e8*/
+    (v21)->UpdateScrollTarget(v8, v26, v13, v17, 0); /*0x65b7e8*/
     return RadSiteClass::Radiate((int)this); /*0x65b7ef*/
   }
   else
@@ -481,7 +481,7 @@ int Warhead::ProcessDamageArea()
       v23 = 0; /*0x65b7b9*/
     this->u32_24 = (unsigned int)(v23); /*0x65b7bb*/
     v23->DetailLevel = 0; /*0x65b7be*/
-    Trigger::EnableOnce(this->u32_24, 0); /*0x65b7ca*/
+    (this->u32_24)->EnableOnce(0); /*0x65b7ca*/
     return RadSiteClass::Radiate((int)this); /*0x65b7d1*/
   }
 

@@ -145,7 +145,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
       {
         slaveManager = (FactoryClass *)a1->slaveManager; /*0x4d553d*/
         if ( slaveManager ) /*0x4d5545*/
-          FactoryClass::ResetProductionTimers(slaveManager); /*0x4d5547*/
+          (slaveManager)->ResetProductionTimers(); /*0x4d5547*/
         vtable0 = (void (**)(FootClass *, void *, int))a1->vfptr; /*0x4d554c*/
         v9 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v13); /*0x4d555a*/
         vtable0[288](a1, v9, 1); /*0x4d5562*/
@@ -230,7 +230,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       team = (int *)a1->FootClass_field_5D4; /*0x517df2*/
       if ( team ) /*0x517dfa*/
       {
-        TeamClass::LiberateMember_Start(team, (int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
+        (team)->LiberateMember_Start((int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
         a1->FootClass_field_5D4 = 0; /*0x517e05*/
       }
       slaveOwner = a1->isPlayingDamageSound; /*0x517e0b*/
@@ -240,14 +240,14 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         if ( slaveManager ) /*0x517e1d*/
           SlaveManagerClass::LostSlave(slaveManager, (int)a1); /*0x517e22*/
       }
-      HouseClass::DecrementUnitCount(a1->owner, a1); /*0x517e2e*/
+      (a1->owner)->DecrementUnitCount(a1); /*0x517e2e*/
       if ( !a1->Locomotor ) /*0x517e33*/
         WinAPI::Wrapper(-2147467261); /*0x517e40*/
       (*(void (**)(int))(*(unsigned int *)a1->currentMission + 172))(a1->currentMission); /*0x517e4e*/
       a1->unknown_int_6E8 = 2; /*0x517e56*/
       a1->Crawling = 0; /*0x517e60*/
       a1->SequenceAnim[0] = 0; /*0x517e66*/
-      TechnoClass::CleanupDirection((FootClass *)a1); /*0x517e6c*/
+      ((FootClass *)a1)->CleanupDirection(); /*0x517e6c*/
     }
   }
   AbstractClass::AnnounceExpiredPointer(&a1->FootClass, 1); /*0x517e75*/
@@ -306,7 +306,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     }
   }
   a1->isAliveFlag = 0; /*0x517f83*/
-  return FootClass::Destruct((FootClass *)a1); /*0x517f8e*/
+  return ((FootClass *)a1)->Destruct(); /*0x517f8e*/
 
 }
 }

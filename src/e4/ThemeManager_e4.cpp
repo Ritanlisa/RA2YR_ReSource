@@ -67,7 +67,7 @@ void ThemeManager::Cleanup(void *a1, void *a2)
   v5 = (ThemeClass *)this->u32_2C; /*0x7207b4*/
   if ( v5 ) /*0x7207b9*/
   {
-    ThemeClass::RequestBuffer(v5); /*0x7207bb*/
+    (v5)->RequestBuffer(); /*0x7207bb*/
     ThemeManager::ProcessCallback(*&this->u32_2C); /*0x7207c3*/
     Audio::Release(*&this->u32_2C); /*0x7207cb*/
     AudioSample::Destructor(*&this->u32_2C); /*0x7207d3*/

@@ -375,11 +375,11 @@ void Lobby::UpdatePlayerLabels()
       SendMessageA(DlgItem, 0x151u, v31, (LPARAM)v9); /*0x5eb609*/
       v16 = v36; /*0x5eb60b*/
     }
-    v32 = WideString::GetOrEmpty_Alt((wchar_t **)&v38); /*0x5eb613*/
+    v32 = ((wchar_t **)&v38)->GetOrEmpty_Alt(); /*0x5eb613*/
     SendMessageA(DlgItem, 0x4C0u, 0xFFFFFFFF, (LPARAM)v32); /*0x5eb621*/
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v38); /*0x5eb638*/
+    ((DeleteAndZero *)&v38)->Alt(); /*0x5eb638*/
     v36 = (ObjectClass *)v16->vtable1 + 1); /*0x5eb641*/
   }
   while ( (int)&v16->vfptr + 1 < 8 );
@@ -534,7 +534,7 @@ int Lobby::BuildPlayerList()
       v3 = ToWideStringCharAlt((char **)&v7.vfptr2, (const wchar_t **)&v7.vfptr1); /*0x77dbeb*/
       ((String *)((String *)&v7))->Reassign((const char **)v3); /*0x77dbf5*/
       DeleteAndZero((ObjectClass *)&v7.vfptr2); /*0x77dbfe*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v7.vfptr1); /*0x77dc07*/
+      ((DeleteAndZero *)&v7.vfptr1)->Alt(); /*0x77dc07*/
     }
     else
     {
