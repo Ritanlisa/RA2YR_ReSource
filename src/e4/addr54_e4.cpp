@@ -219,7 +219,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
     if ( dword_87F6A8 < dword_87F6A0 /*0x544fb6*/
       || (byte_87F6A5 || !dword_87F6A0)
       && dword_87F6AC > 0
-      && (*(uint8_t ((int *)(**))(int *, int, unsigned int))(dword_87F698 + 8))(
+      && (*(uint8_t (**)(int *, int, unsigned int))(dword_87F698 + 8))(
            &dword_87F698,
            dword_87F6A0 + dword_87F6AC,
            0) )

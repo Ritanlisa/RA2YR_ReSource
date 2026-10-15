@@ -78,7 +78,7 @@ unsigned int * sub_6B2430(int * a1, int a2)
   if ( g_SlaveMgrPool < dword_B0B658 /*0x6b2475*/
     || (byte_B0B65D || !dword_B0B658)
     && dword_B0B664 > 0
-    && (result = (unsigned int *)(*(int ((int *)(**))(int *, int, unsigned int))(dword_B0B650 + 8))(
+    && (result = (unsigned int *)(*(int (**)(int *, int, unsigned int))(dword_B0B650 + 8))(
                              &dword_B0B650,
                              dword_B0B658 + dword_B0B664,
                              0),
@@ -1204,7 +1204,7 @@ int Terrain_FlowCompute(int a1, char a2, int a3, int a4)
       if ( g_SlaveMgrPool < dword_B0B658 /*0x6b3bba*/
         || (byte_B0B65D || !dword_B0B658)
         && dword_B0B664 > 0
-        && (*(uint8_t ((int *)(**))(int *, int, unsigned int))(dword_B0B650 + 8))(
+        && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0B650 + 8))(
              &dword_B0B650,
              dword_B0B658 + dword_B0B664,
              0) )
@@ -1224,7 +1224,7 @@ int Terrain_FlowCompute(int a1, char a2, int a3, int a4)
     if ( g_SlaveMgrPool < dword_B0B658 /*0x6b3c29*/
       || (byte_B0B65D || !dword_B0B658)
       && dword_B0B664 > 0
-      && (*(uint8_t ((int *)(**))(int *, int, unsigned int))(dword_B0B650 + 8))(
+      && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0B650 + 8))(
            &dword_B0B650,
            dword_B0B664 + dword_B0B658,
            0) )
@@ -1415,7 +1415,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
       if ( g_SlaveMgrPool < dword_B0B658 /*0x6b3f90*/
         || (byte_B0B65D || !dword_B0B658)
         && dword_B0B664 > 0
-        && (*(uint8_t ((int *)(**))(int *, int, unsigned int))(dword_B0B650 + 8))(
+        && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0B650 + 8))(
              &dword_B0B650,
              dword_B0B658 + dword_B0B664,
              0) )

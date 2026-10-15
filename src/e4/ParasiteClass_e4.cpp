@@ -104,7 +104,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   if ( dword_AC4920 < dword_AC4918 /*0x629360*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
-    && (*(uint8_t ((int *)(**))(int *, int, unsigned int))(dword_AC4910 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_AC4910 + 8))(
          &dword_AC4910,
          dword_AC4918 + dword_AC4924,
          0) )
@@ -201,7 +201,7 @@ void ParasiteClass::DeploySquad()
   int savedregs; // [esp+68h] [ebp+0h] BYREF
 
   _ESI = this; /*0x6297fc*/
-  v3 = (unsigned int *)(*(int ((int)(**))(int, unsigned int))(*(unsigned int *)this->creationFrame + 1016))(this->creationFrame, 0); /*0x629807*/
+  v3 = (unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)this->creationFrame + 1016))(this->creationFrame, 0); /*0x629807*/
   v4 = *(int **)_ESI->__pad_28; /*0x62980d*/
   v48[1] = *v3; /*0x629812*/
   v5 = *(unsigned int *)(v48[1] + 172); /*0x629816*/

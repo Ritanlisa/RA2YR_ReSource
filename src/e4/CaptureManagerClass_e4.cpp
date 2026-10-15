@@ -627,7 +627,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1, void *a2)
     {
       __asm { fild dword ptr [ebx+6Ch] } /*0x472497*/
       __asm { fstp [esp+20h+var_8] }
-      _EAX = (*(int ((unsigned char *)(**))(unsigned char *))(*(unsigned int *)_EBX + 132))(_EBX); /*0x4724a2*/
+      _EAX = (*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 132))(_EBX); /*0x4724a2*/
       __asm { fild dword ptr [eax+0A0h] } /*0x4724a8*/
       _ESI = *(unsigned int *)&g_RulesClass_Instance; /*0x4724ae*/
       __asm /*0x4724b4*/
@@ -652,7 +652,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1, void *a2)
   {
 LABEL_22:
     v16 = v24; /*0x472537*/
-    (*(int ((unsigned char *)(**))(unsigned char *))(*(unsigned int *)_EBX + 132))(_EBX); /*0x47253b*/
+    (*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 132))(_EBX); /*0x47253b*/
     Debug::Log(); /*0x472563*/
     overloadCount = (int)(this->overloadCount); /*0x47256f*/
     if ( overloadCount ) /*0x472574*/
@@ -693,10 +693,10 @@ LABEL_22:
         }
 LABEL_34:
         Debug::Log(); /*0x4725e9*/
-        (*(void ((unsigned char *)(**))(unsigned char *, int, unsigned int))(*(unsigned int *)_EBX + 488))(_EBX, 15, 0); /*0x4725fe*/
+        (*(void (**)(unsigned char *, int, unsigned int))(*(unsigned int *)_EBX + 488))(_EBX, 15, 0); /*0x4725fe*/
         return; /*0x4725fe*/
       case 2:
-        v22 = (*(int ((unsigned char *)(**))(unsigned char *))(*(unsigned int *)_EBX + 828))(_EBX); /*0x472617*/
+        v22 = (*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 828))(_EBX); /*0x472617*/
         break;
       case 3:
         v22 = (*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 832))(_EBX); /*0x472628*/
@@ -1339,7 +1339,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 
 // 0x6EA4F0
 namespace gamemd {
-char CaptureManagerClass::AddMember((int)(TechnoClass * aP1), void *a2, void *a3)
+char CaptureManagerClass::AddMember(TechnoClass * aP1, void *a2, void *a3)
 {
   return TeamClass::AddMember(a2, 1); /*0x6ea4fc*/
 }

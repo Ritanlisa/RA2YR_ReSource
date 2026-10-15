@@ -263,7 +263,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       {
         if ( this->u32_444 ) /*0x76d910*/
         {
-          v23 = *(void ((unsigned int)(****))(unsigned int, int))(p_owningHouseIndex[1] + 4 * v27); /*0x76d925*/
+          v23 = *(void (****)(unsigned int, int))(p_owningHouseIndex[1] + 4 * v27); /*0x76d925*/
           if ( v23 ) /*0x76d92a*/
             (**v23)(v23, 1); /*0x76d934*/
         }

@@ -607,7 +607,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
         v19 = aP0->q002_ + v6[1]; /*0x5886b4*/
         while ( 1 ) /*0x5886ca*/
         {
-          v14 = (int *)(*(int ((int)(**))(int, int))(*(unsigned int *)v4 + 140))(v4, aP1); /*0x5886ca*/
+          v14 = (int *)(*(int (**)(int, int))(*(unsigned int *)v4 + 140))(v4, aP1); /*0x5886ca*/
           v23[1] = (v19 << 8) + 128; /*0x5886ef*/
           v23[0] = (v13 << 8) + 128; /*0x5886f7*/
           v15 = *v14; /*0x5886fb*/
@@ -1259,7 +1259,7 @@ AbstractClass * * sub_58EF10()
     {
       do /*0x58f0aa*/
       {
-        v14 = *(void ((unsigned int)(****))(unsigned int, int))(*(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * v13) + 4); /*0x58f088*/
+        v14 = *(void (****)(unsigned int, int))(*(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * v13) + 4); /*0x58f088*/
         if ( v14 ) /*0x58f08d*/
           (**v14)(v14, 1); /*0x58f093*/
         ++v13; /*0x58f09b*/

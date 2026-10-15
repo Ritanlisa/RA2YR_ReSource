@@ -1591,7 +1591,7 @@ LABEL_56:
     ((void (*)(float *, float))Matrix3D::RotateZ)(v145, aP1f);
     ((Matrix3x3 *)(v145))->Multiply( (float *)(&v136));
     float * v34 = (float *)((AudioConfig *)(v148))->InitDefault();
-    memcpy( (void *)(v144), MultiplyMatrix3x4( (ObjectClass *)v147, (float *)(v34), (float *)(v142)), sizeof(v144));
+    memcpy( (void *)(v144), MultiplyMatrix3x4( (ObjectClass *)v147, v34, (float *)(v142)), sizeof(v144));
     float * v35 = (float *)((AudioConfig *)(v147))->InitDefault();
     v33 = (ParticleSystemClass *)MultiplyMatrix3x4( (ObjectClass *)v148, (float *)(v35), (float *)(v145));
   }

@@ -2042,7 +2042,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     v30 = RA2_OPNEW(*(unsigned int *)(v29 + 11)); /*0x64a467*/
     v31 = *(unsigned int *)(v29 + 11); /*0x64a46c*/
     *(unsigned int *)(v29 + 7) = (unsigned int)v30; /*0x64a472*/
-    memcpy( (void *)(v30), (const void *)(v6 + 111), v31); /*0x64a47f*/
+    memcpy( v30, (const void *)(v6 + 111), v31); /*0x64a47f*/
     v32 = *(unsigned int *)(v29 + 11); /*0x64a488*/
     v6 = a2; /*0x64a48f*/
     v26 += v32; /*0x64a493*/

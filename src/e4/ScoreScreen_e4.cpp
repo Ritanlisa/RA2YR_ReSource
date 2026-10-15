@@ -271,7 +271,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   v8 = (int *)(DecodeFrameSHP((int)&v38,(int)(a5), 0, 0)); /*0x778238*/
   if ( v8 ) /*0x77823c*/
   {
-    v28 = (*(int ((int *)(**))(int *, int, int))(*(unsigned int *)(a2) + 124))(a2, a4, a3); /*0x778251*/
+    v28 = (*(int (**)(int *, int, int))(*(unsigned int *)(a2) + 124))(a2, a4, a3); /*0x778251*/
     v9 = (*(int (**)(int *))(*(unsigned int *)(a2) + 128))(a2); /*0x77825b*/
     v33 = 0; /*0x778261*/
     v34 = 0; /*0x778265*/
@@ -293,14 +293,14 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v10 = 0; /*0x7782b5*/
     }
     Render_Draw((int)(v10), &v33, 0); /*0x7782bf*/
-    (*(void ((int)(**))(int *, int, unsigned int, int))(*(unsigned int *)(a2) + 4))(a2, v10, 0, 1); /*0x7782cd*/
+    (*(void (**)(int *, int, unsigned int, int))(*(unsigned int *)(a2) + 4))(a2, v10, 0, 1); /*0x7782cd*/
     if ( v10 ) /*0x7782d2*/
       (**(void (***)(int, int))v10)(v10, 1); /*0x7782da*/
     v11 = 0; /*0x7782e0*/
     v12 = 0; /*0x7782e2*/
     v29 = v8->vt_slot_124(); /*0x7782eb*/
     v30[0] = v8->vt_slot_128(); /*0x7782f5*/
-    if ( (*(int ((int *)(**))(int *))(*(unsigned int *)(a2) + 124))(a2) > 1024 ) /*0x778306*/
+    if ( (*(int (**)(int *))(*(unsigned int *)(a2) + 124))(a2) > 1024 ) /*0x778306*/
     {
       Viewport = (int *)(Display::GetViewport(v37));
       v31[0] = *Viewport; /*0x778319*/
@@ -316,7 +316,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v15 = (void *)((int)(*(unsigned int *)(a2))); /*0x778395*/
       v30[0] = v11; /*0x7783af*/
       v30[1] = v12; /*0x7783b3*/
-      v26 = (*(int ((int *)(**))(int *, int *))(v15 + 120))(a2, v37); /*0x7783c2*/
+      v26 = (*(int (**)(int *, int *))(v15 + 120))(a2, v37); /*0x7783c2*/
       v16 = (unsigned int *)v8->vt_slot_120(); /*0x7783c9*/
       BlitterDrawSHP(a2, (int)v27, v8, v16, v31, v30, v26, 0, 0, 0, 0, 1000, 0); /*0x7783d6*/
       if ( v27 ) /*0x7783dd*/
@@ -334,10 +334,10 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v32[0] = v11; /*0x778414*/
       v21 = (void *)((int)(*(unsigned int *)(a2))); /*0x778418*/
       v32[1] = v12; /*0x77841d*/
-      v22 = (*(int ((int *)(**))(int *, CCFileClass *, unsigned int, int))(v20 + 120))(v8, &v38, 0, 1); /*0x778421*/
+      v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))(v20 + 120))(v8, &v38, 0, 1); /*0x778421*/
       v23 = v8->vt_slot_120(v41, v22); /*0x778431*/
       v24 = (*(int (**)(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))(a2, &retaddr, v32, v8, v23); /*0x778447*/
-      (*(void ((int *)(**))(int *, int))(v21 + 12))(a2, v24); /*0x77844d*/
+      (*(void (**)(int *, int))(v21 + 12))(a2, v24); /*0x77844d*/
     }
     (*(void (**)(int *, int))*v8)(v8, 1); /*0x778456*/
   }

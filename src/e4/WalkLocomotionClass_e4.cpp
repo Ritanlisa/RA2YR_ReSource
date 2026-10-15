@@ -248,7 +248,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   v6 = *(unsigned int *)v3->IStream_field_00; /*0x75c72c*/
   LOBYTE(a3) = 1; /*0x75c738*/
   (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x75c73d*/
-  Piggybackee = (gamemd::ILocomotion *)(v4->Piggybackee); /*0x75c740*/
+  Piggybackee = v4->Piggybackee; /*0x75c740*/
   pPStm = 0; /*0x75c743*/
   if ( Piggybackee ) /*0x75c74d*/
   {
@@ -295,7 +295,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   *(unsigned int *)this->LocomotionClass = &vt_WalkLocomotionClass; /*0x75cbe3*/
   /* X11: vtable install elided (implicit via WalkLocomotionClass virtuals 0x75cbe9) */
   /* X11: vtable install elided (implicit via WalkLocomotionClass virtuals 0x75cbf0) */
-  Piggybackee = (gamemd::ILocomotion *)(this->Piggybackee); /*0x75cbf7*/
+  Piggybackee = this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/
   ((LocomotionClass *)this)->Construct(); /*0x75cc06*/

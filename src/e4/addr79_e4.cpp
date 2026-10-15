@@ -472,7 +472,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   do /*0x793dd5*/
   {
     v5 = (char *)dword_A8DA90[v3]; /*0x793da3*/
-    v6 = (char *)(ToWideStringChar((char *)dword_A8DA78[v4])); /*0x793db4*/
+    v6 = ToWideStringChar((char *)dword_A8DA78[v4]); /*0x793db4*/
     v7 = ToWideStringChar(v5); /*0x793db6*/
     if ( !_strcmpi(v6, v7) ) /*0x793dbd*/
       v62 = (int)(v4); /*0x793dc9*/
