@@ -817,7 +817,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 
 // 0x4204C0
 namespace gamemd {
-void AITriggerTypeClass_40::ddtor()
+void AITriggerTypeClass_40::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4204cd*/
   {

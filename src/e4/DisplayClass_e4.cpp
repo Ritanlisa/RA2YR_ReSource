@@ -42,7 +42,7 @@ extern char aShadowShp[];  // data: 0x820074 truth(IDA G42.57w9)
 
 // 0x487630
 namespace gamemd {  // G42.18 ns repair
-int DisplayClass::UpdateDisplayTimer()
+int DisplayClass::UpdateDisplayTimer(void *a1)
 {
 
   char *v1; // eax
@@ -79,7 +79,7 @@ int DisplayClass::UpdateDisplayTimer()
 } // namespace gamemd
 // 0x487690
 namespace gamemd {  // G42.18c ns repair
-int DisplayClass::AdvanceFrameCounter()  // G42.41n: dup head + misplaced close removed
+int DisplayClass::AdvanceFrameCounter(void *a1)  // G42.41n: dup head + misplaced close removed
 {
 
   void *DisplayClass_field_0x130; // esi
@@ -111,7 +111,7 @@ int DisplayClass::AdvanceFrameCounter()  // G42.41n: dup head + misplaced close 
 }
 // 0x4A8850
 namespace gamemd {
-int DisplayClass::LoadTypeData()
+int DisplayClass::LoadTypeData(void *a1)
 {
 
   int *Viewport; // eax
@@ -1017,7 +1017,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
 } // namespace gamemd
 // 0x4AE6B0
 namespace gamemd {
-HWND DisplayClass::Render(void *a1, void *a2)
+HWND DisplayClass::Render(void *a1, void *a2, void *a3, void *a4)
 {
   int result; // eax
 

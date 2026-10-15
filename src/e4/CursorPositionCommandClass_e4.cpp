@@ -8,7 +8,7 @@
 
 // 0x537E70
 namespace gamemd {  // G42.18 ns repair
-unsigned int * CursorPositionCommandClass::Constructor()
+unsigned int * CursorPositionCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
   /* X11: vtable install elided (implicit via CursorPositionCommandClass virtuals 0x537e72) */
   return (unsigned int *)(this->vtable1); /*0x537e78*/

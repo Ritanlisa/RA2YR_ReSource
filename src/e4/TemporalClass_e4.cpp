@@ -39,7 +39,7 @@
 
 // 0x71A450
 namespace gamemd {  // G42.18 ns repair
-int TemporalClass::Constructor()
+int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   int v2; // eax

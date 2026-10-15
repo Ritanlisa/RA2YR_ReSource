@@ -12,7 +12,7 @@ struct Debug {
     int AccumFlags(void *a1 = 0);  // 0x6E61F0
     char Printf();  // 0x5BD1F0
     static int Log();  // 0x4068E0 raw int 无参真身（cdecl stub；0 参调用形态 + Debug_e4.cpp:102 定义匹配）
-    static void Log_0();  // 0x4A4AC0
+    static void Log_0(void *a1_1 = 0, void *a2_1 = 0);  // 0x4A4AC0
     unsigned int u32_2710;  // 0x2710 (offset-truth)
     unsigned int u32_271C;  // 0x271C (offset-truth)
     unsigned int u32_2720;  // 0x2720 (offset-truth)

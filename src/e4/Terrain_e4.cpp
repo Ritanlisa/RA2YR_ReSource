@@ -3149,7 +3149,7 @@ unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
 
 // 0x71DD80
 namespace gamemd {
-int Terrain::LookupByName()
+int Terrain::LookupByName(void *a1)
 {
 
   int v2; // esi

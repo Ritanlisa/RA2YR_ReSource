@@ -13,7 +13,7 @@ struct DeleteCommandClass_28 {
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x53C4C0
-    int  Seek(int a2);  // 0x53C510
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x53C510
     char  AddRef(int a2);  // 0x53C520
     char  Release(int a2, unsigned int * a3);  // 0x53C560
     void ddtor(void *a1 = 0);  // 0x53C610

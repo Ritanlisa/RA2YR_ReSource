@@ -36,7 +36,7 @@
 
 // 0x4549B0
 namespace gamemd {  // G42.18 ns repair
-BuildingClass * * Animation::UpdateBuildingAnimations()
+BuildingClass * * Animation::UpdateBuildingAnimations(void *a1)
 {
   bool v2; // zf
   int v3; // eax

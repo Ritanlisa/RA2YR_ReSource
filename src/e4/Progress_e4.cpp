@@ -9,7 +9,7 @@
 
 // 0x6433D0
 namespace gamemd {  // G42.18 ns repair
-int Progress::GetAverage()
+int Progress::GetAverage(void *a1)
 {
   int result; // eax
   int v2; // edx

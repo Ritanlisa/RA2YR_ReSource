@@ -10,7 +10,7 @@ struct CampaignProperties_WorldDominationTour_22 {
 // --- flat members (BEGIN) ---
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    int  Seek(int a2);  // 0x5D2770
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x5D2770
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x5D2900
     VectorClass_flat *  QueryInterface(char a2);  // 0x5D2CA0
     int Release(void *a1_1);  // 0x76F1A0

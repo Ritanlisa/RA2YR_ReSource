@@ -31,7 +31,7 @@ int DialogControl::DialogControl::Show(void *a1, void *a2)
 } // namespace gamemd
 // 0x623340
 namespace gamemd {
-unsigned int * DialogControl::Constructor()
+unsigned int * DialogControl::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   unsigned int *v2; // eax

@@ -11,7 +11,7 @@ struct Palette {
     char Palette_field_400[4];  // 0x400
 // --- flat members (END) ---
     static int Preview_Generate(void *aP1, int a2, int a3, void *a4);
-    int CalcColorDistance(unsigned char * a2, void *a2_2);
+    static int CalcColorDistance(unsigned char * a2, void *a2_2);
     int FindClosestColor(Palette *a2, void *a2_1 = 0);
     int LoadFile();
     unsigned char * ConvertIndices(int a2);

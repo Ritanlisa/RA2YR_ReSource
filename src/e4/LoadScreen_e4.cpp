@@ -8,7 +8,7 @@
 
 // 0x643E60
 namespace gamemd {  // G42.18 ns repair
-int LoadScreen::IsActive()
+int LoadScreen::IsActive(void *a1)
 {
   return this->u32_64 != 0; /*0x643e6a*/
 }  // G42.18 ns repair

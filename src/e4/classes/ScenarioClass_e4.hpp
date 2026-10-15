@@ -172,7 +172,7 @@ struct ScenarioClass {
     static int Constructor(void *aP1);
     static char Construct(void *aP1, double a2);
     char ClearFlag();
-    char MissionStubReturnZero2(MPCooperative * aP0);
+    static char MissionStubReturnZero2(MPCooperative * aP0);
     char MissionStubReturnZero4(int a1);
     char StubReturnFalse();
     char StubReturnFalse10();

@@ -21,7 +21,7 @@ struct Game {
     char LoadSaved();
     void initScenario(void *a1_1);  // 0x430980
     int SendCampaignOptions();  // 0x46D4A0
-    AbstractClass * * DestroyAllObjects();  // 0x534450
+    static AbstractClass * * DestroyAllObjects();  // 0x534450
     int MakeScreenshot(int a1);  // 0x537BC0
     HashTable_flat * * StartModemMultiplayer(char a2);  // 0x5B7090
     AbstractClass * * BuildGameSetupPacket();  // 0x5BA660
@@ -38,7 +38,7 @@ struct Game {
     int CreateAIPlayer();  // 0x796DE0
     int CreateAIPlayer_Potato();  // 0x796ED0
     void * shutdownGame();  // 0x72D830
-    int CheckForGameCD(void *a1 = 0);  // 0x4790A0
+    static int CheckForGameCD(void *a1 = 0);  // 0x4790A0
     int loadCampaignData(void *a1_1);  // 0x550000
     void processStartup();
     static char ResetFlags();  // 0x5E8B40

@@ -619,7 +619,7 @@ int WideString::GetOrEmpty()
 
 // 0x7B7140
 namespace gamemd {
-int WideString::GetOrEmpty_Alt()
+int WideString::GetOrEmpty_Alt(void *a1)
 {
 
   wchar_t *result; // eax
@@ -648,7 +648,7 @@ int WideString::GetChar(size_t aP1)
 
 // 0x7B71B0
 namespace gamemd {
-int WideString::Length()
+int WideString::Length(void *a1)
 {
 
   const wchar_t *result; // eax
@@ -686,7 +686,7 @@ short WideString::Reassign(wchar_t * String, void *a2_1)
 
 // 0x7B7D90
 namespace gamemd {
-char WideString::IsASCII()
+char WideString::IsASCII(void *a1)
 {
   int result; // eax
   int v3; // ecx

@@ -9,7 +9,7 @@
 
 // 0x4025B0
 namespace gamemd {  // G42.18 ns repair
-int Voice::Stop()
+int Voice::Stop(void *a1, void *a2)
 {
   int v1; // ecx
   int result; // eax

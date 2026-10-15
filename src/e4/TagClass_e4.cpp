@@ -230,7 +230,7 @@ LABEL_45:
 }  // G42.18 ns repair
 // 0x6E6220
 namespace gamemd {
-char TagClass::HasValidHouse()
+char TagClass::HasValidHouse(void *a1)
 {
   HouseClass *v1; // esi
 
@@ -248,7 +248,7 @@ char TagClass::HasValidHouse()
 }
 // 0x71ADE0
 namespace gamemd {
-int TagClass::Unlink()
+int TagClass::Unlink(void *a1)
 {
   int v2; // eax
   int result; // eax

@@ -2385,7 +2385,7 @@ AbstractClass * * Game::SetupWOLTournament()
 }
 // 0x4790A0
 namespace gamemd {
-int Game::CheckForGameCD()
+int Game::CheckForGameCD(void *a1)
 {
   return AlwaysFindYRCD();
 }
@@ -2615,7 +2615,7 @@ int Game::ResetReadyStates()
 
 // 0x67FDE0
 namespace gamemd {
-int Game::readIniSettings()
+int Game::readIniSettings(void *a1)
 {
 
   int result; // eax

@@ -14,12 +14,12 @@ struct Array {
     int RemoveAt(int a2, void *a2_2);  // 0x63E590
     int Get(int a2, void *a2_1 = 0);  // 0x65AD40
     int ContainsValue(int aP1, void *a2 = 0);  // 0x65ADF0
-    int Zero(void *a1_1);
+    static int Zero(void *a1_1);
     void ByteSwap(void *a1 = 0);  // 0x749150 G42.33 b7 static-form sync
     int GetElement(int aP1);  // 0x763980
     int CleanupArrayWOL(void *a1 = 0);  // 0x7ACD30
     AbstractClass * * InsertElement(const void *a1, int aP2, void *a3 = 0);  // 0x7AD790
-    int ForEach(Array *a1, int a2, int a3, int (* a4)(int));  // G57w11: +static raw 0x004068F0 __stdcall receiver-first (align ForEachReverse)
+    static int ForEach(Array *a1, int a2, int a3, int (* a4)(int));  // G57w11: +static raw 0x004068F0 __stdcall receiver-first (align ForEachReverse)
     static int ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int));
     int Cleanup(void *a1 = 0, void *a2 = 0);  // 0x49B720
     char  GetElementAt(unsigned int * a2, int a3);  // 0x49D070

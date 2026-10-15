@@ -111,10 +111,10 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int tail_15CD8;  // 0x15CD8
 // --- flat members (END) ---
     unsigned int * Constructor(EnumConnectionPointsClass * aP1, void *a2_1, void *a3_1, void *a4 = 0);  // 0x4A0C20
-    int  SetCapacity(int a2);  // 0x4F6A20
-    int  SetCapacity_0(int a2);  // 0x4F6A80
-    int  SetCapacity_1(int a2);  // 0x4F6AE0
-    int  SetCapacity_2(int a2);  // 0x4F6B50
+    int  SetCapacity(int a2, int a2_x = 0);  // 0x4F6A20
+    int  SetCapacity_0(int a2, int a2_x = 0);  // 0x4F6A80
+    int  SetCapacity_1(int a2, int a2_x = 0);  // 0x4F6AE0
+    int  SetCapacity_2(int a2, int a2_x = 0);  // 0x4F6B50
     unsigned int *  SetCapacity_3(unsigned int * a2);  // 0x4F6BC0
     unsigned int *  SetCapacity_4(unsigned int * a2);  // 0x4F6D10
     int SetCapacity_5(int a1);  // 0x501400

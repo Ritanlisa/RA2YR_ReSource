@@ -197,7 +197,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
 } // namespace gamemd
 // 0x658A70
 namespace gamemd {
-void RadarHashVector::ddtor()
+void RadarHashVector::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x658a7d*/
   {

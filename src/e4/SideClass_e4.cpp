@@ -315,7 +315,7 @@ int SideClass::FindByName(void *a1)
 
 // 0x4E38A0
 namespace gamemd {
-wchar_t * SideClass::GetName()
+wchar_t * SideClass::GetName(void *a1)
 {
   if ( this == (SideClass *)-2 ) /*0x4e38a3*/
     return GetStringCSF((wchar_t *)(aSttPlayersider), 0, g_Str_File_GDlgSupp_cpp, 237); /*0x4e38b6*/

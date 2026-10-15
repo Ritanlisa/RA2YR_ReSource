@@ -73,7 +73,7 @@ extern char aSystabcontrol3[];  // data: 0x83581c truth(IDA G42.57w9)
 
 // 0x49F740
 namespace gamemd {  // G42.18 ns repair
-void Dialog::MapDialogResource()
+void Dialog::MapDialogResource(void *a1)
 {
 
   if ( *&this->q004 == 48879 ) /*0x49f74a*/
@@ -287,7 +287,7 @@ int Dialog::GetMode3()
 }
 // 0x5EE350
 namespace gamemd {
-int Dialog::RefreshDialogsGame()
+int Dialog::RefreshDialogsGame(void *a1)
 {
   ObjectClass *v1; // eax
   ObjectClass *v2; // eax
@@ -2476,7 +2476,7 @@ AbstractClass * * Dialog::DrawBackground(HWND hWnd)
 }
 // 0x622720
 namespace gamemd {
-int Dialog::Destroy()
+int Dialog::Destroy(void *a1)
 {
   int result; // eax
   Dialog **i; // ecx
@@ -3059,7 +3059,7 @@ int Dialog::GetCurrentType()
 }
 // 0x4E4EC0
 namespace gamemd {
-int Dialog::SideIDToIndex()
+int Dialog::SideIDToIndex(void *a1)
 {
   int v2; // eax
 
@@ -3225,7 +3225,7 @@ LRESULT Dialog::ShowPlayerName()
 
 // 0x5E9950
 namespace gamemd {
-int Dialog::MapPlayerIDToIndex()
+int Dialog::MapPlayerIDToIndex(void *a1)
 {
   int v2; // eax
 
@@ -3298,7 +3298,7 @@ BOOL Dialog::IsSpecialTemplate()
 
 // 0x60AAA0
 namespace gamemd {
-BOOL Dialog::EnumAndCleanup()
+BOOL Dialog::EnumAndCleanup(void *a1)
 {
   return EnumChildWindows(sub_60AA60, 0); /*0x60aaae*/
 }
@@ -3400,7 +3400,7 @@ char Dialog::PumpMessages()
 
 // 0x7759B0
 namespace gamemd {
-int Dialog::FindByPtr()
+int Dialog::FindByPtr(void *a1)
 {
   int v1; // eax
   Dialog **i; // edx
@@ -3419,7 +3419,7 @@ int Dialog::FindByPtr()
 
 // 0x775BA0
 namespace gamemd {
-BOOL Dialog::GetField()
+BOOL Dialog::GetField(void *a1, void *a2)
 {
   EnumChildWindows(DialogClass::Reposition, 1); /*0x775bab*/
   return DialogClass::Reposition(0); /*0x775bb9*/

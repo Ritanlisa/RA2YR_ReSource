@@ -10,7 +10,7 @@ struct CStreamClass_16 {
 // --- flat members (BEGIN) ---
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    int  Seek(int a2);  // 0x4A4B20
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x4A4B20
     char  AddRef(int a2);  // 0x4A4B30
     char  Release(int a2, unsigned int * a3);  // 0x4A4B70
     int ddtor(void *a1 = 0);  // 0x4A4C20

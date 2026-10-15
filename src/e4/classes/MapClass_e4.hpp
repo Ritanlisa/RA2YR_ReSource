@@ -101,7 +101,7 @@ struct MapClass {
     int SetScrollMode(int a2, int aP1, int a1, int aP2, int a3);
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
-    int  TriggerEVA(IUnknown * aP0);  // G57w10-S raw 0x0057B790 IUnknown 占位清除
+    static int  TriggerEVA(IUnknown * aP0);  // G57w10-S raw 0x0057B790 IUnknown 占位清除
     static int UnselectAll_ClearLimboLaunchers();
     static int UpdateLightingPostProcess();
     int isCellShrouded(uint16_t a2);
@@ -112,7 +112,7 @@ struct MapClass {
     unsigned int * FastCellLookup(short * a2, int a3, char a4);
     unsigned int *  FindPlacementCellsAlt(IUnknown * aP2, void *a3, void *a3_1 = 0);  // G57w10-S raw 0x00703590 IUnknown 占位清除
     unsigned int * InitAllCells();
-    unsigned int * SpiralSearch(void *a1);
+    static unsigned int * SpiralSearch(void *a1);
     unsigned int * allocateMapBuffers();
     unsigned int InitCellVe_vt05(int a2);
     unsigned int TransformCoordToScreen(int a2, unsigned int * a3);
@@ -133,7 +133,7 @@ struct MapClass {
     static int RevealArea1(MapClass *aP1, int *a2, int a3, void *a4, char a5, int a6, char a7, char a8, char a9);
     int RevealArea2(int *coords, int radius, int owner, int arg4);  // 0x567da0
     INIClass * * SaveCellTagsToINI(char * a2, void * aIsomappack, void * aIsomappack2, void * aIsomappack3, void * aIsomappack4, void * aIsomappack5);
-    void MapClass_IsRectInBounds();
+    void MapClass_IsRectInBounds(unsigned short * a2 = 0, int a3 = 0);
     int MarkForRedraw(int a2, void *a2_2);
     MapClass * Destru_vt04(char * Block, char a2);
     VectorClass_flat * InitCellVe_vt00(unsigned int * Block, char a2);

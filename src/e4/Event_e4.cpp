@@ -431,7 +431,7 @@ char Event_Dispatch::Return0()
 }  // G42.18c ns repair
 // 0x601360
 namespace gamemd {
-bool Event::IsValidActionType()
+bool Event::IsValidActionType(void *a1)
 {
   int result; // eax
 

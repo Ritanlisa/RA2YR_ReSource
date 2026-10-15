@@ -53,7 +53,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a
 } // namespace gamemd
 // 0x554830
 namespace gamemd {
-int LightSourceClass::Constructor()
+int LightSourceClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   int v2; // edx

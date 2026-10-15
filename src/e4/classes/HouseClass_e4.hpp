@@ -458,7 +458,7 @@ struct HouseClass {
     AbstractClass * * FindStartPositions(void *a1);
     AbstractClass * * SaveLoad_Prefix(int a1, LPSTREAM pStm);
     BOOL GainedPoweredCenter(int a2);
-    CellStruct * * UpdateAITryFireSW(void *a1);
+    static CellStruct * * UpdateAITryFireSW(void *a1);
     VectorClass_flat * vt_00_(char a2);
     VectorCursor * vt_placeholder_07(char a2);
     char DroppedFlag(UnitClass * aP1, int a3);
@@ -468,7 +468,7 @@ struct HouseClass {
     char Set(void *a1, void *a2, void *a3);
     char UpdateAllSilos(int a2, int a3);
     double GiveTiberium_Storage(float aP1, int aP2);
-    int COMStub_Ret1_1(int a1);
+    static int COMStub_Ret1_1(int a1);
     static int NetworkConvert(void *aP0);  // 0x749100 G42.33 b5 static-form sync
     static int  IncrementStat(int a2);  // 0x749020
     int COMStub_Ret1_2(int a1);
@@ -491,8 +491,8 @@ struct HouseClass {
     int MakeAlly(int a2, char a3);
     int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);
     static int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
-    int QueryInterface_Dispatch();
-    int QueryInterface_Helper();
+    int QueryInterface_Dispatch(int a2 = 0, const IID * a3 = 0, void ** a4 = 0);
+    int QueryInterface_Helper(const void * a2 = 0, unsigned int * a3 = 0);
     int RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4);
     static int RevealShroudForAllies(char a1, int a2);
     int SetPrimaryFactory(int a2);
@@ -511,8 +511,8 @@ struct HouseClass {
     void ** PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3);
     void AcquiredThreatNode();
     int Construct(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
-    void LostPoweredCenter(int a2, void *a2_2);
-    int ResetObjectOrders(char a1, int a2);
+    static void LostPoweredCenter(int a2, void *a2_2);
+    static int ResetObjectOrders(char a1, int a2);
     void vt_03_();
     static int CalcProductionSpeed(HouseClass * aP1);
      int FindByName(void *a1 = 0);

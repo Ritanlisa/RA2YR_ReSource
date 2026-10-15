@@ -28,7 +28,7 @@ char * SelectTeamCommand::AddRef()
 } // namespace gamemd
 // 0x536000
 namespace gamemd {
-wchar_t * SelectTeamCommand::Release()
+wchar_t * SelectTeamCommand::Release(void *a1)
 {
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
@@ -41,7 +41,7 @@ wchar_t * SelectTeamCommand::Release()
 } // namespace gamemd
 // 0x536030
 namespace gamemd {
-wchar_t * SelectTeamCommand::ddtor()
+wchar_t * SelectTeamCommand::ddtor(void *a1)
 {
   return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0, g_Str_File_Init_CPP, 6294); /*0x536046*/
 }

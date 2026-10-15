@@ -125,7 +125,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
 }  // G42.18 ns repair
 // 0x4778A0
 namespace gamemd {
-void FilePipe_30::ddtor()
+void FilePipe_30::ddtor(void *a1)
 {
   void *v2; // eax
 
@@ -291,7 +291,7 @@ char FilePipe_38::AddRef(int a2)
 
 // 0x478440
 namespace gamemd {
-void FilePipe_38::ddtor()
+void FilePipe_38::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x47844d*/
   {

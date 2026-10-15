@@ -164,7 +164,7 @@ LABEL_17:
 }  // G42.18 ns repair
 // 0x754510
 namespace gamemd {
-AbstractClass * Voxel::RenderFrame()
+AbstractClass * Voxel::RenderFrame(void *a1)
 {
   int v1; // edi
   char *v2; // esi

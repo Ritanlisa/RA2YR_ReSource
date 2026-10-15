@@ -1654,7 +1654,7 @@ int Object::ComputeAllocationSize()
 
 // 0x53E420
 namespace gamemd {
-void ** Object::RemoveObjectArray()
+void ** Object::RemoveObjectArray(void *a1)
 {
   void **result; // eax
   int v2; // edx
@@ -1686,7 +1686,7 @@ void ** Object::RemoveObjectArray()
 
 // 0x5F5230
 namespace gamemd {
-int Object::Unlink()
+int Object::Unlink(void *a1)
 {
   int result; // eax
   AnimClass *v2; // [esp+4h] [ebp+4h]

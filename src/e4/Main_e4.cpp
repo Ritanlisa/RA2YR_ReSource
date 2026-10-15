@@ -18,7 +18,7 @@
 
 // 0x4E1D00
 namespace gamemd {  // G42.18 ns repair
-void Main::CreateDialog()
+void Main::CreateDialog(void *a1, void *a2, void *a3)
 {
 
   unsigned __int16 v2; // cx

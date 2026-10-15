@@ -24,6 +24,22 @@ what it needs.  This pass does exactly that, mechanically:
     by fix_socket_typedef below), and anything already declared in the
     file (idempotence).
 
+X28 (C2874 family): a `using ra2::game::X;` emitted by this pass is ILLEGAL
+in any TU whose include closure already declares `gamemd::X` (e.g. the e4
+fwd `struct X;` from _fwd_e4.hpp, or `class X;` from misc_ext.hpp) --
+C2874 "using declaration causes multiple declaration".  TU membership is
+not knowable from the header text, so:
+  * for names with NO other `using` in the corpus (single-user names like
+    BombClass), the TU-stable form is an in-namespace `class X;` fwd --
+    duplicate fwd declarations are legal; future using-ra2 emissions for
+    such names emit the fwd instead of the using (web-safety index below);
+  * names in the shared using-web (ObjectClass/TechnoClass/FootClass/
+    AudioController -- 29/15/6/4 files) cannot be swapped per-file without
+    breaking the other web members; those C2874 sites are skipped and
+    reported (web-coordination change, out of this pass).
+  * existing C2874 error sites are repaired log-driven: the offending
+    `using` line is replaced by the in-namespace fwd when web-safe.
+
 Usage: python fix_member_type_hygiene.py <buildlog> [--apply] [--detail]
 """
 import re
@@ -43,6 +59,11 @@ ERR_RE = re.compile(
     r'^(?P<file>.+?)\((?P<line>\d+)(?:,\d+)?\)\s*:\s*(?:fatal )?error\s+'
     r'(?P<code>C\d+|LNK\d+)\s*:\s*(?P<msg>.*?)(?:\s*\[[^\]]*\])?\s*$')
 CONSUME = {'C2143', 'C4430', 'C2238'}
+C2874_RE = re.compile(r'C2874:\s*using\s*.*?[“"](?P<qname>[^”"]+)[”"]')
+USING_LINE_RE = re.compile(
+    r'^(?P<ind>\s*)using\s+(?:::)?[\w:]*\b(?P<name>\w+)\s*;\s*(?P<tail>//.*)?$')
+USING_ANY_RE = re.compile(r'^\s*using\s+(?:::)?[\w:]*\b(\w+)\s*;', re.M)
+C2874_MARK = '// X28: C2874 fwd (using collided with existing gamemd decl)'
 FWD_MARK = '// X27: member-decl type supply'
 TEMPLATE_FAMILY = {'VectorClass', 'DynamicVectorClass', 'TypeList',
                    'LinkedList'}
@@ -134,12 +155,38 @@ def ns_chain_at(lines, upto):
     return stack
 
 
+def build_using_web():
+    """name -> set of files containing `using ... NAME;` (X28 web index)."""
+    web = defaultdict(set)
+    for hp in list(SRC.rglob('*.hpp')) + list(SRC.rglob('*.h')):
+        try:
+            txt = hp.read_text(encoding='utf-8', errors='replace')
+        except OSError:
+            continue
+        if 'using' not in txt:
+            continue
+        for m in USING_ANY_RE.finditer(txt):
+            web[m.group(1)].add(short(str(hp)))
+    return web
+
+
 def main():
     home = build_type_index()
+    web = build_using_web()
     sites = defaultdict(set)     # file -> {line}
+    c2874 = defaultdict(set)     # file -> {(line, name)}
     for line in LOG.read_text(encoding='utf-8', errors='replace').split('\n'):
         m = ERR_RE.match(line.strip())
-        if not m or m.group('code') not in CONSUME:
+        if not m:
+            continue
+        if m.group('code') == 'C2874':
+            f = short(m.group('file'))
+            if f.endswith(('.hpp', '.h')):
+                q = C2874_RE.search(line)
+                if q:
+                    c2874[f].add((int(m.group('line')),
+                                  q.group('qname').rsplit('::', 1)[-1]))
+        if m.group('code') not in CONSUME:
             continue
         f = short(m.group('file'))
         if not f.endswith(('.hpp', '.h')):
@@ -196,9 +243,44 @@ def main():
         if file_needs:
             plans.append((f, file_needs))
 
+    # ---- X28: C2874 repairs (log-driven; web-safe names only) ----
+    # phase 1: candidate collection (line shape verified)
+    c2874_plan = {}   # file -> {line_index0: (name, indent, tail)}
+    cands = []        # (file, line1, name, indent, tail)
+    for f, items in sorted(c2874.items()):
+        p = ROOT / f
+        if not p.exists():
+            continue
+        lines = p.read_text(encoding='utf-8', errors='replace').split('\n')
+        for (ln, name) in sorted(items):
+            if not (0 < ln <= len(lines)):
+                continue
+            m = USING_LINE_RE.match(lines[ln - 1])
+            if not m or m.group('name') != name:
+                print('  C2874 SKIP (line shape): %s:%d (%s)' % (f, ln, name))
+                continue
+            cands.append((f, ln, name, m.group('ind'),
+                          (m.group('tail') or '').strip()))
+    # phase 2: a name is web-safe iff EVERY corpus file that contains a
+    # `using ... NAME;` is itself a repair candidate (=> after this pass no
+    # using of NAME remains to collide with; single-user names pass, the
+    # 29/15/6/4-file web names do not and are reported).
+    repaired_files = defaultdict(set)
+    for (f, ln, name, _, _) in cands:
+        repaired_files[name].add(f)
+    for (f, ln, name, ind, tail) in cands:
+        remaining = web.get(name, set()) - repaired_files[name]
+        if remaining:
+            print('  C2874 SKIP (web not fully covered; %d file(s) keep '
+                  '`using %s;`): %s:%d' % (len(remaining), name, f, ln))
+            continue
+        c2874_plan.setdefault(f, {})[ln - 1] = (name, ind, tail)
+        print('  C2874 REPLAN: %s:%d  using %s -> class %s;' % (f, ln, name, name))
+
     n_files = len(plans)
     n_decls = sum(len(v) for _, v in plans)
-    print('files to touch: %d ; decls to add: %d' % (n_files, n_decls))
+    print('files to touch: %d ; decls to add: %d ; c2874 repairs: %d'
+          % (n_files, n_decls, sum(len(v) for v in c2874_plan.values())))
     for f, needs in plans:
         print('  %s' % f)
         for (kind, ns, ty), ln in sorted(needs.items(), key=lambda kv: kv[0][2]):
@@ -210,49 +292,65 @@ def main():
         print('DRY RUN (use --apply)')
         return
 
-    for f, needs in plans:
+    written = 0
+    plans_by_file = dict(plans)
+    for f in sorted(set(plans_by_file) | set(c2874_plan)):
         p = ROOT / f
         lines = p.read_text(encoding='utf-8', errors='replace').split('\n')
-        # insertion: after the innermost namespace opening enclosing sites
-        first_ln = min(needs.values())
-        chain = ns_chain_at(lines, first_ln - 1)
-        at = chain[-1][2] + 1 if chain else None
-        if at is None:
-            at = 0
-            for i, l in enumerate(lines):
-                if l.strip().startswith('#include'):
-                    at = i + 1
-            if at == 0 and lines and lines[0].strip() == '#pragma once':
-                at = 1
-        ns_block = ['    // X27: member-decl type supply (log-driven hygiene)']
-        global_block = []
-        for (kind, ns, ty), ln in sorted(needs.items(), key=lambda kv: kv[0][2]):
-            if kind == 'fwd':
-                ns_block.append('    class %s;' % ty)
-            elif kind == 'using-gamemd':
-                # qualified fwd MUST be at global scope: inside a namespace it
-                # would declare a NESTED namespace and shadow ::gamemd.
-                global_block.append('namespace gamemd { class %s; }  %s'
-                                    % (ty, FWD_MARK))
-                ns_block.append('    using ::gamemd::%s;' % ty)
-            elif kind == 'using-global':
-                ns_block.append('    using ::%s;' % ty)
-            else:
-                global_block.append('namespace ra2 { namespace game '
-                                    '{ class %s; } }  %s' % (ty, FWD_MARK))
-                ns_block.append('    using ra2::game::%s;' % ty)
-        lines[at:at] = ns_block
-        if global_block:
-            # global scope: right after the last leading #include block
-            g_at = 0
-            for i, l in enumerate(lines):
-                if l.strip().startswith('#include'):
-                    g_at = i + 1
-            if g_at == 0 and lines and lines[0].strip() == '#pragma once':
-                g_at = 1
-            lines[g_at:g_at] = global_block
+        # X28: 1:1 line replacements first (indices stay valid for inserts)
+        for idx, (name, ind, tail) in sorted(c2874_plan.get(f, {}).items()):
+            lines[idx] = '%sclass %s;  %s' % (ind, name, C2874_MARK)
+        needs = plans_by_file.get(f)
+        if needs:
+            # insertion: after the innermost namespace opening enclosing sites
+            first_ln = min(needs.values())
+            chain = ns_chain_at(lines, first_ln - 1)
+            at = chain[-1][2] + 1 if chain else None
+            if at is None:
+                at = 0
+                for i, l in enumerate(lines):
+                    if l.strip().startswith('#include'):
+                        at = i + 1
+                if at == 0 and lines and lines[0].strip() == '#pragma once':
+                    at = 1
+            ns_block = ['    // X27: member-decl type supply (log-driven hygiene)']
+            global_block = []
+            for (kind, ns, ty), ln in sorted(needs.items(),
+                                             key=lambda kv: kv[0][2]):
+                if kind == 'fwd':
+                    ns_block.append('    class %s;' % ty)
+                elif kind == 'using-gamemd':
+                    # qualified fwd MUST be at global scope: inside a namespace
+                    # it would declare a NESTED namespace and shadow ::gamemd.
+                    global_block.append('namespace gamemd { class %s; }  %s'
+                                        % (ty, FWD_MARK))
+                    ns_block.append('    using ::gamemd::%s;' % ty)
+                elif kind == 'using-global':
+                    ns_block.append('    using ::%s;' % ty)
+                else:
+                    # X28: web-safe single-user names get the TU-stable fwd
+                    # (a `using ra2::game::X;` C2874-collides whenever a
+                    # mixed TU already declares gamemd::X; dup fwd is legal).
+                    if not (web.get(ty, set()) - {f}):
+                        ns_block.append('    class %s;' % ty)
+                    else:
+                        global_block.append('namespace ra2 { namespace game '
+                                            '{ class %s; } }  %s'
+                                            % (ty, FWD_MARK))
+                        ns_block.append('    using ra2::game::%s;' % ty)
+            lines[at:at] = ns_block
+            if global_block:
+                # global scope: right after the last leading #include block
+                g_at = 0
+                for i, l in enumerate(lines):
+                    if l.strip().startswith('#include'):
+                        g_at = i + 1
+                if g_at == 0 and lines and lines[0].strip() == '#pragma once':
+                    g_at = 1
+                lines[g_at:g_at] = global_block
         p.write_text('\n'.join(lines), encoding='utf-8')
-    print('APPLIED to %d file(s)' % n_files)
+        written += 1
+    print('APPLIED to %d file(s)' % written)
 
 
 if __name__ == '__main__':

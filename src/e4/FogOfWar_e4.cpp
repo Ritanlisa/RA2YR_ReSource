@@ -361,7 +361,7 @@ void FogOfWar::RevealCell(unsigned int *aP1)
 } // namespace gamemd
 // 0x657CE0
 namespace gamemd {
-int FogOfWar::Render()
+int FogOfWar::Render(void *a1, void *a2, void *a3, void *a4)
 {
   int *v2; // esi
   int v3; // ebx

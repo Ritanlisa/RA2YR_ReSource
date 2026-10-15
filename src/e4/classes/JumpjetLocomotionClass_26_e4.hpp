@@ -21,7 +21,7 @@ struct JumpjetLocomotionClass_26 {
     VectorClass_flat *  QueryInterface(char a2);  // 0x54EB50
     DynamicVector *  Constructor_VectorClass_KamikazeControl___(char a2);  // 0x54EBA0
     unsigned int  PointerToIndex(int a2);  // 0x54E8C0
-    int  Seek(int a2);  // 0x54E8E0
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x54E8E0
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x54EA10
     unsigned int  Write(int a2);  // 0x54EA50
 

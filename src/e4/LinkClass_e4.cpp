@@ -27,7 +27,7 @@ int LinkClass::Destroy(void *a1)
 } // namespace gamemd
 // 0x5565A0
 namespace gamemd {
-int LinkClass::Destruct()
+int LinkClass::Destruct(void *a1)
 {
 
   LinkClass *Prev; // edi

@@ -11,7 +11,7 @@
 
 // 0x4052F0
 namespace gamemd {  // G42.18 ns repair
-int VocClass::Release()
+int VocClass::Release(void *a1)
 {
 
   Voice *v1; // ebp
@@ -79,7 +79,7 @@ char * VocClass::GetSampleNameByIndex(int a1)
 } // namespace gamemd
 // 0x753250
 namespace gamemd {
-int VocClass::FindByName()
+int VocClass::FindByName(void *a1)
 {
   int v3; // esi
 

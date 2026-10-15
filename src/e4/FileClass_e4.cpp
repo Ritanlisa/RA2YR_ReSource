@@ -365,7 +365,7 @@ LABEL_27:
 } // namespace gamemd
 // 0x65D150
 namespace gamemd {
-int FileClass::Close()
+int FileClass::Close(void *a1, void *a2)
 {
 
   (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d155*/
@@ -404,7 +404,7 @@ char FileClass::Stub(int a1)
 } // namespace gamemd
 // 0x76F020
 namespace gamemd {
-int FileClass::GetState()
+int FileClass::GetState(void *a1)
 {
 
   return this->FilePointer; /*0x76f023*/
@@ -413,7 +413,7 @@ int FileClass::GetState()
 } // namespace gamemd
 // 0x76F070
 namespace gamemd {
-int FileClass::SetState(void *a1)
+int FileClass::SetState(void *a1, void *a2)
 {
   return a1->FilePointer; /*0x76f073*/
 }

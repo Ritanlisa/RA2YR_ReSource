@@ -100,7 +100,7 @@ UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 }  // G42.18c ns repair
 // 0x5CB3F0
 namespace gamemd {  // G42.18c ns repair
-char UnholyAlliance::Read(void *a1, void *a2)
+char UnholyAlliance::Read(void *a1, void *a2, void *a3)
 {
   Bases = 1; /*0x5cb3f2*/
   return 1; /*0x5cb3f7*/

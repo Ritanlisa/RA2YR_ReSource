@@ -140,7 +140,7 @@ BOOL Campaign_WorldDominationTour_24::Release(void *a1_1)
 }
 // 0x765B50
 namespace gamemd {
-BOOL Campaign_WorldDominationTour_24::ddtor()
+BOOL Campaign_WorldDominationTour_24::ddtor(void *a1)
 {
 
   --this->u32_8; /*0x765b52*/
@@ -274,7 +274,7 @@ char Campaign_WorldDominationTour_16::AddRef(int a2)
 
 // 0x765960
 namespace gamemd {
-int Campaign_WorldDominationTour_16::ddtor()
+int Campaign_WorldDominationTour_16::ddtor(void *a1)
 {
   int (***v2)(unsigned int, int); // ecx
   int result; // eax

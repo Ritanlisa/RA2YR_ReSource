@@ -30,7 +30,7 @@ unsigned int * VectorCursor::ddtor(void *a1)
 } // namespace gamemd
 // 0x4F42D0
 namespace gamemd {
-void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
+void VectorCursor_uint_DynamicVectorClass_uint____13::Remove(void *a1, void *a2)
 {
   this->u32_C = 2; /*0x4f42d0*/
 }

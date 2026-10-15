@@ -20,7 +20,7 @@ int Connection::GetSpeed()
 }  // G42.18 ns repair
 // 0x543090
 namespace gamemd {
-int Connection::Close()
+int Connection::Close(void *a1, void *a2)
 {
 
   int result; // eax

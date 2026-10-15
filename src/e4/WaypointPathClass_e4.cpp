@@ -20,7 +20,7 @@
 
 // 0x763730
 namespace gamemd {  // G42.18 ns repair
-int WaypointPathClass::Init()
+int WaypointPathClass::Init(void *a1, void *a2)
 {
 
   int v2; // eax

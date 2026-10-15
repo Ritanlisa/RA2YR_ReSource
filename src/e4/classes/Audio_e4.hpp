@@ -23,7 +23,7 @@ struct Audio {
     int GetSampleSize(void *a1 = 0);  // 0x409320
     ObjectClass * * ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470
     char ** SetSoundFileName(char *Source, int a3, void *a3_1 = 0);  // 0x5D5820
-    int LoadWAVFiles(void *a1_1);  // 0x7207F0
+    static int LoadWAVFiles(void *a1_1);  // 0x7207F0
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2);
     void * LoadSoundINI();  // 0x7513F0
     unsigned int GetSamplePosition(int aP1, int aP2);  // 0x7BD130
@@ -34,7 +34,7 @@ struct Audio {
     static void * GetEnabled();  // 0x407010
     int GetFlag();  // 0x407070
     static int Callback();  // 0x4093B0
-    LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
+    static LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
     static int IsPlaying();  // x4:empty@0x7529e0
     static int SetScoreVolume(Audio * aP1, float a2, int a3);
     static int SetSoundVolume(Audio * aP1, float a2, char a3);

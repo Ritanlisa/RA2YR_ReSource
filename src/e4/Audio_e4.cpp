@@ -298,7 +298,7 @@ int Audio::WaitForCallback()
 }
 // 0x407F40
 namespace gamemd {
-int Audio::Release()
+int Audio::Release(void *a1)
 {
 
   int result; // eax
@@ -321,7 +321,7 @@ int Audio::Release()
 }
 // 0x408070
 namespace gamemd {
-int Audio::IsSoundPlaying()
+int Audio::IsSoundPlaying(void *a1)
 {
 
   return this->u32_C & 1; /*0x408076*/
@@ -339,7 +339,7 @@ int Audio::CalcRate(int a2, int a3)
 }
 // 0x409320
 namespace gamemd {
-int Audio::GetSampleSize()
+int Audio::GetSampleSize(void *a1)
 {
 
   return (char *)this->q034 - (char *)this->q038; /*0x409328*/
@@ -2479,7 +2479,7 @@ int sub_7C3860(int a1, int a2)
 }
 // 0x401080
 namespace gamemd {
-int Audio::InitChannels()
+int Audio::InitChannels(void *a1)
 {
   ((void (*)(void))AudioMixer::PlaySample)(); /*0x401083*/
   this->AudioMixer_28.PlaySample(); /*0x40108b*/

@@ -38,7 +38,7 @@ namespace gamemd {
 
 // 0x7B0D90
 namespace gamemd {  // G42.18 ns repair
-int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
+int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   IPXInterfaceClass::bindSocket((char *)a1); /*0x7b0d93*/

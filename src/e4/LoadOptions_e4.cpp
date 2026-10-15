@@ -160,7 +160,7 @@ char LoadOptions::Read(wchar_t * Destination, int a2, void *a3)
 
 // 0x55A050
 namespace gamemd {
-wchar_t * LoadOptions::Write()
+wchar_t * LoadOptions::Write(void *a1)
 {
   return GetStringCSF((wchar_t *)(aGuiLoadmission), 0, g_Str_File_LoadDlg_CPP, 1216); /*0x55a066*/
 }

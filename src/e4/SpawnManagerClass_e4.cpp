@@ -119,7 +119,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
 
 // 0x6B6EA0
 namespace gamemd {
-void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
+void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   int v2; // eax

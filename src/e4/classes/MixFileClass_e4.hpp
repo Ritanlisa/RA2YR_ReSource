@@ -23,7 +23,7 @@ struct MixFileClass {
     int MemoryDataSize;  // 0x2C
 // --- flat members (END) ---
     static int GetPixelData(void *aP1, int a2, unsigned int a3);
-    void CleanupCache();
+    static void CleanupCache();
     void DestroyCache();
     static void * CacheNode_Dtor(MixFileClass * aP1, char a2);
     unsigned int * FromFile(char *a1, int a2);  // was C2597 interim stub, := truth 0x0x5b3c20

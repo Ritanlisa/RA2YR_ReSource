@@ -10,7 +10,7 @@ struct FactoryClass_33 {
 // --- flat members (BEGIN) ---
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    int  Seek(int a2);  // 0x4CA8E0
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x4CA8E0
     char  AddRef(int a2);  // 0x4CA8F0
     char  Release(int a2, unsigned int * a3);  // 0x4CA930
     wchar_t * ddtor(void *a1 = 0);  // 0x4CA9E0

@@ -103,7 +103,7 @@ int Struct::ZeroInitAndSetup(void *a1)
 } // namespace gamemd
 // 0x4B9BD0
 namespace gamemd {
-unsigned char * Struct::Zero3()
+unsigned char * Struct::Zero3(void *a1)
 {
   (this->Struct_field_00) = 0; /*0x4b9bd4*/
   (this->u32_1) = 0; /*0x4b9bd6*/

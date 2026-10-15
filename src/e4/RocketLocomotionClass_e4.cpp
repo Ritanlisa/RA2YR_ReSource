@@ -102,7 +102,7 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
 }  // G42.18c ns repair
 // 0x6647B0
 namespace gamemd {
-void RocketLocomotionClass_17::ddtor()
+void RocketLocomotionClass_17::ddtor(void *a1)
 {
   void *v2; // eax
 

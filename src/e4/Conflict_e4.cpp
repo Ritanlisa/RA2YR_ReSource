@@ -331,7 +331,7 @@ char Conflict_WorldDominationTour_12::AddRef(int a2)
 
 // 0x766D30
 namespace gamemd {
-int Conflict_WorldDominationTour_12::ddtor()
+int Conflict_WorldDominationTour_12::ddtor(void *a1)
 {
   int (***v2)(unsigned int, int); // ecx
   int result; // eax

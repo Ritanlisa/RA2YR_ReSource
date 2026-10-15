@@ -48,7 +48,7 @@ namespace gamemd { int nullsub_240(void *p_this); }  // x4:ida@0x6f25d0
 
 // 0x4C98B0
 namespace gamemd {  // G42.18 ns repair
-int TeamTypeClass::Construct()
+int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v2; // eax
@@ -1021,7 +1021,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 }
 // 0x6F0FC0
 namespace gamemd {
-int TeamTypeClass::FindByName()
+int TeamTypeClass::FindByName(void *a1)
 {
   int v2; // esi
 

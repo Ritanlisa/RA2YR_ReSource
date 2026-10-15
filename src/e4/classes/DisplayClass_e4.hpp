@@ -49,7 +49,7 @@ struct DisplayClass {
     int SetCoordVisible(DisplayClass *aP0, unsigned int *aP1, char a3);  // G57w10-S raw 0x004A9840 IUnknown 占位清除
     char ddtor(void *a1);
     int * processDisplayMode(char a2);
-    int AdvanceFrameCounter(void *a1 = 0);
+    static int AdvanceFrameCounter(void *a1 = 0);
     int ExitMode();
     int GetCoordDelta(int aP1);
     int GetSurface(unsigned int * a1);

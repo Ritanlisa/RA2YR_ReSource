@@ -600,7 +600,7 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1, void *a2)
 }  // G42.18c ns repair
 // 0x7729F0
 namespace gamemd {  // G42.18c ns repair
-int WeaponTypeClass::CalculateSpeed()
+int WeaponTypeClass::CalculateSpeed(void *a1)
 {
 
   int result; // eax

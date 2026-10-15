@@ -17,7 +17,7 @@ struct SwizzleManagerClass_19 {
     unsigned int *  Lookup(unsigned int * a2, int a3);  // 0x6CF540
     char  AddRef(int a2);  // 0x6CF560
     void ddtor(void *a1 = 0);  // 0x6CF690
-    int  Init(unsigned int * a2, void *a1 = 0);  // 0x6CF6C0
+    int  Init(unsigned int * a2, void *a1 = 0, void *a3_1 = 0, void *a4_1 = 0, void *a5_1 = 0, void *a6_1 = 0, void *a7_1 = 0, void *a8_1 = 0);  // 0x6CF6C0
     int  FindItem(unsigned int * a2);  // 0x6CF820
     VectorClass_flat *  QueryInterface(char a2);  // 0x6CF850
     DynamicVector *  Constructor_VectorClass_SwizzlePointerClass_(char a2);  // 0x6CF8A0

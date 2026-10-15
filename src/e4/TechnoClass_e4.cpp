@@ -581,7 +581,7 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
 
 // 0x6F4500
 namespace gamemd {
-int TechnoClass::DTOR()
+int TechnoClass::DTOR(void *a1)
 {
 
   Sidebar *v2; // ecx

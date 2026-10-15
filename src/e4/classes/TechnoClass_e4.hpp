@@ -402,7 +402,7 @@ struct TechnoClass {
     static int CreateRadarBlip(TechnoClass * aP1, uint8_t *a2, int a3, unsigned int *a4);
     bool  ProcessTarget(int a2);  // 0x50cad0
     static int CleanupAll(TechnoClass * aP1, int a2);
-    int IsOwnedByHuman(void *a1 = 0);  // 0x732580
+    static int IsOwnedByHuman(void *a1 = 0);  // 0x732580
     int  CalcFlashAlpha(int a2);  // 0x70e4b0
     int CleanupDirection();  // 0x4db260
     int IsMission27to30();  // 0x522510
@@ -412,7 +412,7 @@ struct TechnoClass {
     unsigned int *  GetWaypointCoords(unsigned int * a2);  // 0x6f18a0
     int ScanNeighborCells(void *a1 = 0);  // 0x703e70
     int HasDeployFlags(void *a1 = 0);  // 0x746db0
-    char CheckTargetCell(void *a1 = 0);  // 0x703b10
+    static char CheckTargetCell(void *a1 = 0);  // 0x703b10
     int __thiscall DrawPips(void *a1);
     unsigned int q_120;  // +0x120 flat supply (CSP-fed)
     unsigned int q_F20;  // +0xF20 flat supply (CSP-fed)

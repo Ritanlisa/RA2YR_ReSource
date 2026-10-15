@@ -86,7 +86,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
 }  // G42.18 ns repair
 // 0x773E90
 namespace gamemd {
-int WebBrowser::ShowDialog()
+int WebBrowser::ShowDialog(void *a1)
 {
   const char *v1; // ebp
   HWND result; // eax
@@ -287,7 +287,7 @@ int WebBrowser::COMStub_Return0()
 
 // 0x773B10
 namespace gamemd {
-int WebBrowser::Write()
+int WebBrowser::Write(void *a1)
 {
   int v2; // [esp+4h] [ebp+4h]
   int v3; // [esp+Ch] [ebp+Ch]

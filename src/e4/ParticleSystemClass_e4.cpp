@@ -13,7 +13,7 @@
 
 // 0x62FE60
 namespace gamemd {  // G42.18 ns repair
-int ParticleSystemClass::Draw()
+int ParticleSystemClass::Draw(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
   return this->u32_F8 && !this->Owner; /*0x62fe79*/
 }
@@ -124,7 +124,7 @@ void ParticleSystemClass::initParticleArray()
 
 // 0x4E87E0
 namespace gamemd {
-void ParticleSystemClass_32::Destroy()
+void ParticleSystemClass_32::Destroy(void *a1)
 {
   void *v2; // eax
 
@@ -339,7 +339,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
 
 // 0x4EB350
 namespace gamemd {
-void ParticleSystemClass_16::ddtor()
+void ParticleSystemClass_16::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4eb35d*/
   {
@@ -467,7 +467,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
 
 // 0x4EB5B0
 namespace gamemd {
-void ParticleSystemClass_32::ddtor()
+void ParticleSystemClass_32::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4eb5bd*/
   {

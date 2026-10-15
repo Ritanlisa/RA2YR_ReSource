@@ -20,7 +20,7 @@
 
 // 0x697AD0
 namespace gamemd {  // G42.18 ns repair
-void BulkData::InitMissionHashing()
+void BulkData::InitMissionHashing(void *a1)
 {
 
   DWORD v2; // eax

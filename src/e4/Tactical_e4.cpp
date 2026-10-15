@@ -632,7 +632,7 @@ int Tactical::IsCellVisible(IUnknown * aP1)
 }
 // 0x58C2A0
 namespace gamemd {
-void * Tactical::GetCellData()
+void * Tactical::GetCellData(void *a1)
 {
   return (char *)(g_MissionQueueFrame.localVariables[163] /*0x58c2be*/
                 + 80 * (*(int16_t *)this->vtable1 + g_MapCellWidth * *(int16_t *)this->Tactical_field_0x2));

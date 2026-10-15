@@ -370,7 +370,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
 
 // 0x4A4C20
 namespace gamemd {
-int CStreamClass_16::ddtor()
+int CStreamClass_16::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4a4c2d*/
   {

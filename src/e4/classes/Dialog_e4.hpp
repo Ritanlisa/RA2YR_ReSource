@@ -40,7 +40,7 @@ struct Dialog {
     int HandleTabKey(HWND hWnd, LPARAM);  // 0x60A330
     AbstractClass * * DispatchEvent(HWND hWnd, LPARAM);  // 0x60A5B0
     AbstractClass * * InitWindow(int a1, int a2);  // 0x60F760
-    AbstractClass * * InitializeControls(HWND hWnd, LPARAM);  // 0x60F9A0
+    static AbstractClass * * InitializeControls(HWND hWnd, LPARAM);  // 0x60F9A0
     AbstractClass * * DestroyDialogSystem();  // 0x610360
     AbstractClass * * Resize();  // 0x6213A0
     AbstractClass * * DrawBackground(HWND hWnd);  // 0x621E90
@@ -72,7 +72,7 @@ struct Dialog {
     int MapPlayerIDToIndex(void *a1 = 0);  // 0x5E9950
     unsigned int CheckButtonState();  // 0x5F3450
     BOOL IsSpecialTemplate();  // 0x602AE0
-    BOOL EnumAndCleanup(void *a1 = 0);  // 0x60AAA0
+    static BOOL EnumAndCleanup(void *a1 = 0);  // 0x60AAA0
     BOOL SubclassEditControl(HWND hWnd, LPARAM);  // 0x60F320
     HWND Show();  // 0x622800
     static char PumpMessages();  // 0x623120

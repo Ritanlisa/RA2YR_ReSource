@@ -12,7 +12,7 @@
 
 // 0x54F000
 namespace gamemd {  // G42.18 ns repair
-int16_t EventQueue::Process()
+int16_t EventQueue::Process(void *a1)
 {
   int v2; // eax
 
@@ -27,7 +27,7 @@ int16_t EventQueue::Process()
 } // namespace gamemd
 // 0x54F050
 namespace gamemd {
-short EventQueue::Read()
+short EventQueue::Read(void *a1, void *a2, void *a3)
 {
   int v2; // eax
   int v3; // ecx
@@ -98,7 +98,7 @@ short EventQueue::Read()
 } // namespace gamemd
 // 0x54F650
 namespace gamemd {
-int16_t EventQueue::Check()
+int16_t EventQueue::Check(void *a1, void *a2, void *a3)
 {
   int v1; // eax
 

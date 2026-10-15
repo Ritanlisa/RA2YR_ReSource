@@ -44,7 +44,7 @@ struct Cell {
     int Exists(MouseClass * aP1);  // 0x5657E0
     int CoordToIndex(int16_t *aP1);
     int SetRadar(int16_t *aP1);
-    char UpdateTileType(int16_t *aP0, int aP1, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
+    static char UpdateTileType(int16_t *aP0, int aP1, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
     static char SetTileType(int16_t *a1, int a2, int a3, int a4, int a5);  // G57w10-S raw 0x0056EB80 IUnknown 占位清除
     char IsPassableAllied(int aP0, int16_t *aP1);  // G57w10-S raw 0x00578AD0 IUnknown 占位清除
     HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
@@ -58,7 +58,7 @@ struct Cell {
     BOOL IsPassableOffset(int aP1);  // 0x4870D0
     int PosToLinearIndex(IUnknown * aP0);  // G57w10-S raw 0x0056BC50 IUnknown 占位清除
     int DecodeFlags();  // 0x56CB80
-    int GetGroundHeight(unsigned int * a1);
+    static int GetGroundHeight(unsigned int * a1);
     bool IsPassable(IUnknown * aP0);  // 0x586360
     unsigned int * IsBridge();  // 0x47c520
     unsigned int q_4C4;  // +0x4C4 flat supply (final pass)

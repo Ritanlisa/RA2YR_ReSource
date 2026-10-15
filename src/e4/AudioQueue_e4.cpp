@@ -138,7 +138,7 @@ int AudioQueue::FindBestChannel(int a1, int a2)
 }
 // 0x403730
 namespace gamemd {
-int AudioQueue::StopAllVoices()
+int AudioQueue::StopAllVoices(void *a1, void *a2)
 {
   int v1; // edx
   int v2; // ecx
@@ -225,7 +225,7 @@ int AudioQueue::FindByData()
 }
 // 0x771620
 namespace gamemd {
-int AudioQueue::Update()
+int AudioQueue::Update(void *a1, void *a2, void *a3, void *a4)
 {
   int v2; // edi
   int v3; // eax

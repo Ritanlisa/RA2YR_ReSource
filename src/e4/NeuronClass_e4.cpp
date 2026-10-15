@@ -167,7 +167,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
 
 // 0x43AC20
 namespace gamemd {
-int NeuronClass_25::ddtor()
+int NeuronClass_25::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x43ac2d*/
   {

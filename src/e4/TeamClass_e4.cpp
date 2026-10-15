@@ -280,7 +280,7 @@ LABEL_12:
 }
 // 0x6339B0
 namespace gamemd {
-int TeamClass::GetLeaderIndex()
+int TeamClass::GetLeaderIndex(void *a1)
 {
   int v1; // ecx
   int v2; // esi
@@ -1092,7 +1092,7 @@ LABEL_4:
 }
 // 0x6E52A0
 namespace gamemd {
-void * TeamClass::FindOrCreate()
+void * TeamClass::FindOrCreate(void *a1)
 {
   int v2; // ecx
   char *v3; // edx

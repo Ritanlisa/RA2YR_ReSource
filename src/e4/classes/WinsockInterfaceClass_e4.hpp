@@ -18,7 +18,7 @@ struct WinsockInterfaceClass {
     int Destru_vt13();
     int Destru_vt14(int a1);
     int Destru_vt16(int a1, int a2, int a3, int a4);
-    unsigned int * Destru_vt00(SOCKET * Block, char a2);
+    unsigned int * Destru_vt00(unsigned int * Block, char a2);
     unsigned char u32_15;  // 0x15 (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)

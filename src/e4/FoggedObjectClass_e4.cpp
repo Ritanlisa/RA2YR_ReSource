@@ -1232,7 +1232,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 
 // 0x4E0670
 namespace gamemd {
-void FoggedObjectClass_42::ddtor()
+void FoggedObjectClass_42::ddtor(void *a1)
 {
 
   if ( *&this->Items && BYTE1(this->IsInitialized) ) /*0x4e067d*/

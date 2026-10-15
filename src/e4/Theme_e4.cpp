@@ -113,7 +113,7 @@ int Theme::Stop(char aP1, void *a2)
 } // namespace gamemd
 // 0x720FD0
 namespace gamemd {
-bool Theme::IsPlaying()
+bool Theme::IsPlaying(void *a1)
 {
   AudioSample *v2; // ecx
 

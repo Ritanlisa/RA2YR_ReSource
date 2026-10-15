@@ -25,7 +25,7 @@
 
 // 0x4E3560
 namespace gamemd {  // G42.18 ns repair
-int BuildingType::FindDefault()
+int BuildingType::FindDefault(void *a1)
 {
   int result; // eax
 
@@ -106,7 +106,7 @@ int BuildingType::FindOwnerHouse()
 
 // 0x510F60
 namespace gamemd {
-int BuildingType::IsSpecialType()
+int BuildingType::IsSpecialType(void *a1)
 {
   int result; // eax
 

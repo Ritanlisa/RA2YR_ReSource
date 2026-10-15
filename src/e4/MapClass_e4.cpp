@@ -584,7 +584,7 @@ int MapClass::ScrollOnce(AbstractClass * aP1)
 } // namespace gamemd
 // 0x5652C0
 namespace gamemd {
-void* MapClass::Destruct()
+void* MapClass::Destruct(void *a1)
 {
 
   unsigned int *v2; // edi
@@ -4503,7 +4503,7 @@ int MapClass::IsCellPassable(int a1, int a2)
   return ((unsigned int)v3[75] >> 3) & 1; /*0x565725*/
 }
 // 0x565B00
-int MapClass::FreeAllCells()
+int MapClass::FreeAllCells(void *a1)
 {
 
   int i; // ecx

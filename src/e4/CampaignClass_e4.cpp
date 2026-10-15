@@ -67,7 +67,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
 }  // G42.18 ns repair
 // 0x46CE10
 namespace gamemd {
-int CampaignClass::LoadFromINIList()
+int CampaignClass::LoadFromINIList(void *a1)
 {
 
   int result; // eax

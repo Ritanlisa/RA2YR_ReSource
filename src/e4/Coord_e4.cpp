@@ -132,7 +132,7 @@ void * Coord::Subtract(int aP1, int aP2, int aP3, void *a4)
 }
 // 0x41C380
 namespace gamemd {
-int Coord::Length()
+int Coord::Length(void *a1)
 {
 
   double Coord_field_0x8; // st7
@@ -334,7 +334,7 @@ int * Coord::To_ScreenRaw(int *aP0, unsigned int *aP1)
 
 // 0x6D2120
 namespace gamemd {
-long long Coord::ScaleToScreenY()
+long long Coord::ScaleToScreenY(void *a1)
 {
   int64_t result; // rax
   int v2; // kr00_4

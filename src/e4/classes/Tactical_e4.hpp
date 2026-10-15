@@ -46,9 +46,9 @@ ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, 
     Tactical *  UpdateView(char a2);  // 0x6DC470
     char * SetCellTransform(int a2, int aP2, int a4, int aP4, int a6, int a7, void *a7_1 = 0);  // 0x4A35F0
     int  Init(unsigned int * a2, void *a1 = 0);  // 0x6E4970
-    char  SelectObject(int a2);  // 0x4F4450
+    char  SelectObject(int a2, void *a2_2 = 0);  // 0x4F4450
     int *  ScrollMap(int a2);  // 0x6DA560
-    int  InitMap(int a2);  // 0x6DBD20
+    int  InitMap(int a2, int a2_x = 0);  // 0x6DBD20
     int  UpdateMapView(int * a2, int a3);  // 0x6DBE00
     int  ddtor(unsigned int * a2);  // 0x6DBCE0
     int StubReturn56();  // 0x6DC450

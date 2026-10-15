@@ -15,7 +15,7 @@
 
 // 0x406060
 namespace gamemd {  // G42.18 ns repair
-int Mixer::ReleaseChannel()
+int Mixer::ReleaseChannel(void *a1)
 {
 
   int result; // eax

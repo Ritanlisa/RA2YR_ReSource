@@ -568,7 +568,7 @@ LABEL_17:
 } // namespace gamemd
 // 0x5CF5F0
 namespace gamemd {
-int SessionClass::Destruct()
+int SessionClass::Destruct(void *a1)
 {
   int i; // ebx
   int v3; // eax
@@ -863,7 +863,7 @@ unsigned int * SessionClass::GetEntry(unsigned int *aP1)
 } // namespace gamemd
 // 0x6915D0
 namespace gamemd {
-int SessionClass::SetField()
+int SessionClass::SetField(void *a1, void *a2)
 {
   return this->Config[5] < *(unsigned int *)(this->Config[3] + 160); /*0x6915e0*/
 }
@@ -2541,7 +2541,7 @@ int SessionClass::AssignSide(int a2, char aP2)
 }  // G42.18c ns repair
 // 0x69BBE0
 namespace gamemd {  // G42.18c ns repair
-char SessionClass::GetGameSpeed()
+char SessionClass::GetGameSpeed(void *a1)
 {
   int result; // eax
 

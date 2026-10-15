@@ -128,7 +128,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
 
 // 0x4A7E70
 namespace gamemd {
-void Dial8Class_48::ddtor()
+void Dial8Class_48::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4a7e7d*/
   {

@@ -14,7 +14,7 @@ struct TeamTypeClass_28 {
     AbstractClass * *  Release(int a2, int * a3);  // 0x6F22F0
     AbstractClass * *  SetCapacity(int a2, int * a3);  // 0x6F24B0
     void ClearBuffer(void *a1_1);  // 0x6F21B0
-    unsigned int *  Seek(unsigned int * a2, int a3);  // 0x6F2210
+    unsigned int *  Seek(unsigned int * a2, int a3, void *a3_2 = 0);  // 0x6F2210
     char  AddRef(int a2);  // 0x6F2290
     wchar_t * ddtor(void *a1_1, void *a2_1);  // 0x6F2400
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x6F2440

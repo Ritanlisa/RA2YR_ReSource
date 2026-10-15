@@ -27,7 +27,7 @@ struct FileClass {
     int  Write2(int lpBuffer, DWORD nNumberOfBytesToWrite, void *a1 = 0);  // 0x65cdd0
     int  Open2(void * a2, void *a1 = 0);  // 0x65cb50
     static const char * SetName(void * aP0, char * aP1);
-    int Delete(void *a1 = 0);  // 0x65d190
+    static int Delete(void *a1 = 0);  // 0x65d190
     int CloseHandle(void *a1 = 0);  // 0x65cca0
     int OpenWithCDSearch(char *Source);
     char __tail_0[4];  // 0x0 (ml)

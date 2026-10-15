@@ -41,7 +41,7 @@ char ThemeManager::ProcessCallback(void *a1)
 } // namespace gamemd
 // 0x720770
 namespace gamemd {
-void ThemeManager::Cleanup()
+void ThemeManager::Cleanup(void *a1, void *a2)
 {
   int v2; // eax
   int v3; // ecx

@@ -599,7 +599,7 @@ LABEL_25:
 }
 // 0x578290
 namespace gamemd {
-int LayerClass::CellIteratorNext()
+int LayerClass::CellIteratorNext(void *a1)
 {
 
   int v1; // eax
@@ -651,7 +651,7 @@ int LayerClass::CellIteratorNext()
 }
 // 0x578350
 namespace gamemd {
-int LayerClass::CellIteratorReset()
+int LayerClass::CellIteratorReset(void *a1)
 {
   int v1; // eax
   int result; // eax

@@ -9,7 +9,7 @@
 
 // 0x65CA00
 namespace gamemd {  // G42.18 ns repair
-int RawFileClass::Dtor()
+int RawFileClass::Dtor(void *a1)
 {
 
   int result; // eax

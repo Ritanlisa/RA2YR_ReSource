@@ -31,7 +31,7 @@ struct XSurface {
     int entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6);
     int vt_entry_40(int a1);
     int vt_entry_68();
-    void* WalkLine();
+    void* WalkLine(int a2 = 0, unsigned int *a3 = 0, unsigned int *a4 = 0, void (*a5)(int *) = 0, int a5_x = 0, int a6 = 0, int a7 = 0, int a8 = 0, int a9 = 0, int a10 = 0);
     static int Fill(XSurface * aP1, int a2);
     static int GetPixel(XSurface * aP1, unsigned int *a2);
     static int SetPixel(XSurface * aP1, unsigned int *a2, int16_t a3);

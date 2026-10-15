@@ -342,7 +342,7 @@ char SwizzleManagerClass_19::AddRef(int a2)
 
 // 0x6CF690
 namespace gamemd {
-void SwizzleManagerClass_19::ddtor()
+void SwizzleManagerClass_19::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x6cf69d*/
   {

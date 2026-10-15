@@ -111,7 +111,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
 } // namespace gamemd
 // 0x4BA6B0
 namespace gamemd {
-AbstractClass * * DSurface::Destroy()
+AbstractClass * * DSurface::Destroy(void *a1)
 {
 
   char DSurface_field_0x18; // al
@@ -146,7 +146,7 @@ AbstractClass * * DSurface::Destroy()
 } // namespace gamemd
 // 0x4BA770
 namespace gamemd {
-AbstractClass * * DSurface::CreatePrimary()
+AbstractClass * * DSurface::CreatePrimary(void *a1)
 {
 
   char v1; // bl
@@ -438,7 +438,7 @@ int DSurface::GetBytesPerPixel()
 } // namespace gamemd
 // 0x4BB000
 namespace gamemd {
-int DSurface::RestoreIfLost()
+int DSurface::RestoreIfLost(void *a1)
 {
 
   int v3; // eax

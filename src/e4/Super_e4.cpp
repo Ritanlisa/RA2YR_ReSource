@@ -8,7 +8,7 @@
 
 // 0x6CC260
 namespace gamemd {  // G42.18 ns repair
-int Super::GetDefaultTimer()
+int Super::GetDefaultTimer(void *a1)
 {
 
   int result; // eax

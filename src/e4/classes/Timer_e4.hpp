@@ -24,7 +24,7 @@ struct Timer {
     int GetElapsed();  // 0x5F1390
     void * EnableHighPrecision();  // 0x5D5870
     MMRESULT DisableHighPrecision();  // 0x5D5880
-    int UpdateDelta();  // 0x6C8820
+    static int UpdateDelta();  // 0x6C8820
     static DWORD GetTicks();  // 0x6C8C40 [w16g2] static per raw __thiscall receiver-first
     char  SetFlag(char a2);  // 0x7500B0
     unsigned long  longReadTSC(unsigned int * a1);  // 0x7C6064

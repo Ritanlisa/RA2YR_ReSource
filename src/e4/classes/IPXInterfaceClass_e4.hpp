@@ -37,7 +37,7 @@ struct IPXInterfaceClass {
     int Send(int a1, void *a2, void *a3, void *a4, void *a5);
     int SetAddress(unsigned int * a1);
     int initSession(unsigned int * a2);
-    unsigned char * processPacket(void *a1);
+    static unsigned char * processPacket(void *a1);
     int Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     unsigned int resetSocket(int a2);
     void * bindSocket(void *a1);

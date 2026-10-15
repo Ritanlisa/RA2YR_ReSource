@@ -888,7 +888,7 @@ int House::IsHumanPlayer()
 }
 // 0x50B730
 namespace gamemd {
-int House::IsCurrentPlayer()
+int House::IsCurrentPlayer(void *a1)
 {
 
   int result; // eax
@@ -1173,7 +1173,7 @@ int House::LoadMapFileData(int a2, char a3, void *a3_1)
 }
 // 0x69E090
 namespace gamemd {
-void House::Constructor()
+void House::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   void *v2; // eax

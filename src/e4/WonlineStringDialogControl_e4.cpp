@@ -194,7 +194,7 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
 
 // 0x7AD180
 namespace gamemd {
-void WonlineStringDialogControl_12::ddtor()
+void WonlineStringDialogControl_12::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x7ad18d*/
   {

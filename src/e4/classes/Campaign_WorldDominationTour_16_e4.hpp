@@ -14,7 +14,7 @@ struct Campaign_WorldDominationTour_16 {
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x765840
-    unsigned int *  Seek(unsigned int * a2, int a3);  // 0x7656D0
+    unsigned int *  Seek(unsigned int * a2, int a3, void *a3_2 = 0);  // 0x7656D0
     rc_ptr * Constructor(char a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0);  // 0x765710
     rc_ptr *  Constructor_0(char a2);  // 0x765740
     VectorCursor *  Constructor_1(char a2);  // 0x765770

@@ -40,7 +40,7 @@
 
 // 0x4D3590
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * FootClass::Destruct()
+AbstractClass * FootClass::Destruct(void *a1)
 {
 
   int *team; // ecx

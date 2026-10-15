@@ -35,7 +35,7 @@
 
 // 0x688380
 namespace gamemd {  // G42.18 ns repair
-void * Multiplayer::FindStartPositions()
+void * Multiplayer::FindStartPositions(void *a1)
 {
 
   int v1; // esi

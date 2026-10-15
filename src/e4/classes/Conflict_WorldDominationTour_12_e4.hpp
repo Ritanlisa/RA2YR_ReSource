@@ -14,7 +14,7 @@ struct Conflict_WorldDominationTour_12 {
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x766C10
     AbstractClass * *  Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
-    unsigned int *  Seek(unsigned int * a2, int a3);  // 0x766850
+    unsigned int *  Seek(unsigned int * a2, int a3, void *a3_2 = 0);  // 0x766850
     unsigned int * Constructor(char a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0);  // 0x766960
     unsigned int *  Constructor_0(char a2);  // 0x766990
     char  AddRef(int a2);  // 0x766BC0

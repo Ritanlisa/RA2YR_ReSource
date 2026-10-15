@@ -53,7 +53,7 @@ AudioController * * CCFileClass::Close(void * a1, void *a2)
 } // namespace gamemd
 // 0x535A70
 namespace gamemd {
-int CCFileClass::Destruct()
+int CCFileClass::Destruct(void *a1)
 {
 
   *(unsigned int *)this->CDFileClass = &vt_CCFileClass; /*0x535a76*/

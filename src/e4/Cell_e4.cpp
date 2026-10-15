@@ -99,7 +99,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
 }  // G42.18 ns repair
 // 0x42B1C0
 namespace gamemd {
-int Cell::PosToIndex()
+int Cell::PosToIndex(void *a1)
 {
 
   return ((SLOWORD(this->__pad_000) - SHIWORD(this->__pad_000) + *(unsigned int *)&g_Cell_PositionLUT - 1) >> 1) /*0x42b1e3*/
@@ -395,7 +395,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
 }
 // 0x485060
 namespace gamemd {
-int Cell::IsValidHeight()
+int Cell::IsValidHeight(void *a1)
 {
 
   int Cell_field_0x38; // eax
@@ -407,7 +407,7 @@ int Cell::IsValidHeight()
 }
 // 0x486380
 namespace gamemd {
-int Cell::IsEmpty()
+int Cell::IsEmpty(void *a1)
 {
 
   int result; // eax
@@ -438,7 +438,7 @@ int Cell::IsGroundTypeRange()
 }
 // 0x486750
 namespace gamemd {
-int Cell::IsInRange()
+int Cell::IsInRange(void *a1)
 {
   int result; // eax
 
@@ -450,7 +450,7 @@ int Cell::IsInRange()
 }
 // 0x486770
 namespace gamemd {
-int Cell::IsInRange2()
+int Cell::IsInRange2(void *a1)
 {
   int result; // eax
 

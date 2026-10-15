@@ -41,6 +41,6 @@ struct VectorClass_K_8 {
     LONG AddRef(int a1);  // 0x6BEEC0
     LONG  Release(void *a1 = 0);  // 0x6BEEE0
     int  ddtor(int a2, int a3, unsigned int * a4);  // 0x6BEF10
-    int  GetSize(int a2);  // 0x6BEF90
+    int  GetSize(int a2, int a2_x = 0);  // 0x6BEF90
 };
 } // namespace gamemd

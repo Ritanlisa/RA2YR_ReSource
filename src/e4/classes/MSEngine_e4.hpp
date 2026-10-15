@@ -23,7 +23,7 @@ struct MSEngine {
     unsigned int *  Shutdown(unsigned int * a2, int a3);  // 0x5AC570
     char  AddRef(int a2);  // 0x5ACCC0
     CampaignClass * ddtor(void *a1 = 0);  // 0x5ACE20
-    CampaignClass *  Init(unsigned int * a2, void *a1 = 0);  // 0x5ACE50
+    CampaignClass *  Init(unsigned int * a2, void *a1 = 0, void *a3_1 = 0, void *a4_1 = 0, void *a5_1 = 0, void *a6_1 = 0, void *a7_1 = 0, void *a8_1 = 0);  // 0x5ACE50
     int  FindItem(unsigned int * a2);  // 0x5ACFC0
     VectorClass_flat *  QueryInterface(char a2);  // 0x5AD4D0
     CampaignClass * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x5AD520

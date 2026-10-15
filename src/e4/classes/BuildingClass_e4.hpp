@@ -511,19 +511,19 @@ static int GetSHPFrame(BuildingClass * aP1, int a2);
     void  UnloadUnits(char a2, char a3, void *a1 = 0);  // 0x457de0
     unsigned int *  FindPlacementCells2(unsigned int * a2, int a3, void *a1 = 0);  // 0x6b0300
     int  ExecuteTriggers(int a2, char a3);  // 0x7265c0
-    int UpdateDamageAnim(void *a1 = 0);  // 0x459470
-    void RemoveLimpet(void *a1 = 0);  // 0x4593a0
-    void  AnimateUnloadUnits(int a2, void *a1 = 0);  // 0x4585c0
+    static int UpdateDamageAnim(void *a1 = 0);  // 0x459470
+    static void RemoveLimpet(void *a1 = 0);  // 0x4593a0
+    static void  AnimateUnloadUnits(int a2, void *a1 = 0);  // 0x4585c0
     void UpdateAnimationSlots();  // 0x4547c0
     void ProcessAnimationStates();  // 0x4545d0
     char  ValidatePath(unsigned short * a2, int a3);  // 0x716150
     int  TogglePower2(int a2, void *a1 = 0);  // 0x4ac8c0
     int ProcessUpgradeEffects(void *a1 = 0);  // 0x726400
     int  TogglePower(int a2, void *a1 = 0);  // 0x4ac660
-    void VisualizePlacement(void *a1 = 0);  // 0x485af0
+    static void VisualizePlacement(void *a1 = 0);  // 0x485af0
     int CheckAdjacentCells(void *a1 = 0);  // 0x485460
     int  SetSlot(int a2, int a3);  // 0x717890
-    int GetSellPriority(void *a1 = 0);
+    static int GetSellPriority(void *a1 = 0);
     char MakeTraversable();
     int IsPoweredOn();
     unsigned int * Construct(BuildingClass * aP1, BuildingClass * aP2, void *a3_1, void *a4_1, void *a5_1, void *a6_1);

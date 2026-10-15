@@ -2199,7 +2199,7 @@ size_t BuildingTypeClass::Dequeue(int *aP1, void *a2)
 } // namespace gamemd
 // 0x45E7B0
 namespace gamemd {
-int BuildingTypeClass::FindIndexByName()
+int BuildingTypeClass::FindIndexByName(void *a1)
 {
   int v2; // esi
 
@@ -2494,7 +2494,7 @@ int BuildingTypeClass::GetPowerOutput(int aP1)
 } // namespace gamemd
 // 0x747370
 namespace gamemd {
-int BuildingTypeClass::FindIndex()
+int BuildingTypeClass::FindIndex(void *a1)
 {
   int v2; // esi
 

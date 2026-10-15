@@ -406,7 +406,7 @@ int BuildingClass::FindClosestForRepair2(int a1)
 }
 // 0x629720
 namespace gamemd {
-int BuildingClass::AnimController()
+int BuildingClass::AnimController(void *a1)
 {
 
   unsigned int *Value; // eax

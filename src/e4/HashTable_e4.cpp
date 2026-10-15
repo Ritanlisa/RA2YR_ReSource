@@ -301,7 +301,7 @@ LABEL_23:
 } // namespace gamemd
 // 0x625780
 namespace gamemd {
-void HashTable_flat::Shrink2()
+void HashTable_flat::Shrink2(void *a1)
 {
 
   unsigned int HashTable_field_0x08; // esi
@@ -1944,7 +1944,7 @@ LABEL_24:
 } // namespace gamemd
 // 0x7AEC00
 namespace gamemd {
-int HashTable_flat::Shrink()
+int HashTable_flat::Shrink(void *a1)
 {
 
   unsigned int HashTable_field_0x08; // esi

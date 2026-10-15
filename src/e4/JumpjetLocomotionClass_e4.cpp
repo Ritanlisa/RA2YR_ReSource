@@ -3004,7 +3004,7 @@ int JumpjetLocomotionClass_26::FindItem(unsigned int * a2)
 }
 // 0x439A10
 namespace gamemd {  // G42.18 ns repair
-double JumpjetLocomotionClass::ComputeVectorLengthMetric()
+double JumpjetLocomotionClass::ComputeVectorLengthMetric(void *a1)
 {
 
   int v2; // eax
@@ -5136,7 +5136,7 @@ char JumpjetLocomotionClass_26::Release(int a2, unsigned int * a3)
 
 // 0x54E9E0
 namespace gamemd {
-void JumpjetLocomotionClass_26::ddtor()
+void JumpjetLocomotionClass_26::ddtor(void *a1)
 {
 
   if ( *&this->q004 && BYTE1(this->q00C) ) /*0x54e9ed*/

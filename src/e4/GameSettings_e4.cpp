@@ -45,7 +45,7 @@ extern unsigned int dword_A8D608;  // data: 0xa8d608 truth(IDA G42.57w9)
 
 // 0x5FA620
 namespace gamemd {  // G42.18 ns repair
-int GameSettings::Read()
+int GameSettings::Read(void *a1, void *a2, void *a3)
 {
   double v1; // st7
   int Int_Overwrite; // eax

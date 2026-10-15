@@ -259,7 +259,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
 }
 // 0x5F8110
 namespace gamemd {
-int VoxelAnimType::LoadAnim()
+int VoxelAnimType::LoadAnim(void *a1)
 {
   const char *v2; // ebp
   void *v3; // edi

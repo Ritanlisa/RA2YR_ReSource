@@ -1036,7 +1036,7 @@ int Scenario::ClearScreen(void *a1_1)
 }
 // 0x684620
 namespace gamemd {
-char Scenario::LoadWithProgress()
+char Scenario::LoadWithProgress(void *a1, void *a2_x)
 {
   char v2; // al
   wchar_t *v3; // edi

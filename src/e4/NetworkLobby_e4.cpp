@@ -1635,7 +1635,7 @@ int NetworkLobby::InitLobbyDropdowns(SessionClass * hDlg)
 }
 // 0x5EA2A0
 namespace gamemd {
-void * NetworkLobby::Dispatch()
+void * NetworkLobby::Dispatch(void *a1, void *a2, void *a3, void *a4)
 {
   int i; // esi
   int v2; // eax
@@ -2108,7 +2108,7 @@ char NetworkLobby::CheckPlayerNames()
 
 // 0x5EDFC0
 namespace gamemd {
-wchar_t * NetworkLobby::DeleteAndZero()
+wchar_t * NetworkLobby::DeleteAndZero(void *a1, void *a2)
 {
   wchar_t *v2; // esi
   wchar_t *v4; // esi

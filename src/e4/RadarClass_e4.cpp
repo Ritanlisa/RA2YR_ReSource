@@ -30,7 +30,7 @@ namespace gamemd {
 
 // 0x652C00
 namespace gamemd {  // G42.18 ns repair
-CampaignClass * RadarClass::Destruct()
+CampaignClass * RadarClass::Destruct(void *a1)
 {
 
   MapClass **p_RadarClass_field_0x1488; // esi

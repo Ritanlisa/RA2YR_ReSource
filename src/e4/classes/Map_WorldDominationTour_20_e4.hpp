@@ -19,7 +19,7 @@ struct Map_WorldDominationTour_20 {
     int ddtor(void *a1_1);  // 0x769F50
     int Read(int a2, void *a2_2, void *a3 = 0);  // 0x769F80
     VectorClass_flat *  QueryInterface(char a2);  // 0x76A5C0
-    unsigned int *  Seek(unsigned int * a2, int a3);  // 0x769CA0
+    unsigned int *  Seek(unsigned int * a2, int a3, void *a3_2 = 0);  // 0x769CA0
     unsigned int  Write(int a2);  // 0x769FC0
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)

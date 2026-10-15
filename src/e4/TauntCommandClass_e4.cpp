@@ -41,7 +41,7 @@ char * TauntCommandClass::AddRef()
 } // namespace gamemd
 // 0x5362D0
 namespace gamemd {
-wchar_t * TauntCommandClass::Release()
+wchar_t * TauntCommandClass::Release(void *a1)
 {
   wchar_t *StringCSF; // eax
   const wchar_t *TauntCommandClass_field_00; // [esp-4h] [ebp-4h]
@@ -54,7 +54,7 @@ wchar_t * TauntCommandClass::Release()
 } // namespace gamemd
 // 0x536300
 namespace gamemd {
-wchar_t TauntCommandClass::ddtor()
+wchar_t TauntCommandClass::ddtor(void *a1)
 {
   return GetStringCSF((wchar_t *)(aTxtTaunt), 0, g_Str_File_Init_CPP, 6405); /*0x536316*/
 }

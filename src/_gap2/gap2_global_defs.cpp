@@ -15812,7 +15812,7 @@ unsigned char  Gap2Recv_6120::Render_Helper(int a3) {
   return result; /*0x62615a*/
 }
 // 0x62C6E0
-void ParticleClass::Update() {
+void ParticleClass::Update(void *a1, void *a2, void *a3, void *a4) {
   double v2; // st7
   int v3; // eax
   int v4; // eax

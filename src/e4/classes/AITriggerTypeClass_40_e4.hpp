@@ -13,7 +13,7 @@ struct AITriggerTypeClass_40 {
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x420370
-    wchar_t *  Seek(int a2);  // 0x4203C0
+    wchar_t *  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x4203C0
     char  AddRef(int a2);  // 0x4203D0
     char  Release(int a2, unsigned int * a3);  // 0x420410
     wchar_t * ddtor(void *a1 = 0);  // 0x4204C0

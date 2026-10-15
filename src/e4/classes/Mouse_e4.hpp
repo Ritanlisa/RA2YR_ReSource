@@ -39,8 +39,8 @@ struct Mouse {
     HWND ReleaseCapture(void *a1 = 0);  // 0x6938C0
     void DrawCursor(int * aP1, int aP2, int a4);
     SHORT GetKeyState(uint8_t vKey);  // 0x53EC90
-    BOOL IsButtonDown(unsigned char a1);  // 0x54F5C0
-    HWND HideWindow();  // 0x5BC400
+    static BOOL IsButtonDown(unsigned char a1);  // 0x54F5C0
+    static HWND HideWindow();  // 0x5BC400
 
     unsigned int u32_4C;  // X10 supply (member_lookup)
     unsigned int u32_50;  // X10 supply (member_lookup)

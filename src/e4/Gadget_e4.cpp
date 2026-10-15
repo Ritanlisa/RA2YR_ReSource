@@ -8,7 +8,7 @@
 
 // 0x600630
 namespace gamemd {  // G42.18 ns repair
-unsigned int * Gadget::InitProperties()
+unsigned int * Gadget::InitProperties(void *a1)
 {
 
   unknown_libname_74(&this->m_1[3]); /*0x600636*/

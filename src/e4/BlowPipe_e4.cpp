@@ -14,7 +14,7 @@
 
 // 0x63DC20
 namespace gamemd {  // G42.18 ns repair
-void BlowPipe_31::ddtor()
+void BlowPipe_31::ddtor(void *a1)
 {
   void *v2; // eax
 
@@ -394,7 +394,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
 
 // 0x63E740
 namespace gamemd {
-void BlowPipe_23::ddtor()
+void BlowPipe_23::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x63e74d*/
   {

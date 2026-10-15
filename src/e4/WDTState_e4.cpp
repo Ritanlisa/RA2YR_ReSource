@@ -107,7 +107,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 }  // G42.18 ns repair
 // 0x76B710
 namespace gamemd {
-int WDTState_4::ddtor()
+int WDTState_4::ddtor(void *a1)
 {
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
@@ -179,7 +179,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
 
 // 0x76BC60
 namespace gamemd {
-int WDTState_4::Constructor()
+int WDTState_4::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76bc63*/

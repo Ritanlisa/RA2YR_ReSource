@@ -254,7 +254,7 @@ void * WinsockInterface::ProcessPacket(int a2)
 }  // G42.18 ns repair
 // 0x7B1DE0
 namespace gamemd {
-int WinsockInterface::Init()
+int WinsockInterface::Init(void *a1, void *a2)
 {
 
   int result; // eax

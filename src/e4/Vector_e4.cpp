@@ -26,7 +26,7 @@ void Vector::Math_Vector2D_Magnitude()
 }  // G42.18 ns repair
 // 0x512D30
 namespace gamemd {
-int Vector::Cleanup()
+int Vector::Cleanup(void *a1, void *a2)
 {
   int result; // eax
 
@@ -43,7 +43,7 @@ int Vector::Cleanup()
 }
 // 0x513100
 namespace gamemd {
-int Vector::Destructor()
+int Vector::Destructor(void *a1)
 {
   int result; // eax
 
@@ -81,7 +81,7 @@ int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 }
 // 0x67ABE0
 namespace gamemd {
-int Vector::Cleanup2()
+int Vector::Cleanup2(void *a1)
 {
   int result; // eax
 
@@ -131,7 +131,7 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
 
 // 0x43AE50
 namespace gamemd {
-int Vector::Clear()
+int Vector::Clear(void *a1)
 {
   int result; // eax
 

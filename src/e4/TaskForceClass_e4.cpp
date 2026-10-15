@@ -210,7 +210,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 }
 // 0x4C4F90
 namespace gamemd {
-int TaskForceClass::Check()
+int TaskForceClass::Check(void *a1, void *a2, void *a3)
 {
 
   sprintf(byte_8A37A0, "%d,%s", *(unsigned int *)this->vtable1, (const char *)(this->vtable2 + 36)); /*0x4c4fa4*/

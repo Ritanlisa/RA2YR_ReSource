@@ -327,7 +327,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
 } // namespace gamemd
 // 0x5F7400
 namespace gamemd {
-SomeVoxelCache * * ObjectTypeClass::Destruct()
+SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
 {
 
   int v2; // eax
@@ -537,7 +537,7 @@ void ObjectTypeClass::UnloadPipsSHP()
 } // namespace gamemd
 // 0x5F9070
 namespace gamemd {
-AbstractClass * * ObjectTypeClass::Load2DArt()
+AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
 {
   char *v2; // edi
   int v3; // esi
@@ -830,7 +830,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
 } // namespace gamemd
 // 0x5F9710
 namespace gamemd {
-int ObjectTypeClass::SetRTTI71()
+int ObjectTypeClass::SetRTTI71(void *a1)
 {
 
   int result; // eax
@@ -1919,7 +1919,7 @@ int ObjectTypeClass::FreeLoaderBuffer()
 } // namespace gamemd
 // 0x6E5E70
 namespace gamemd {
-int ObjectTypeClass::FindByName()
+int ObjectTypeClass::FindByName(void *a1)
 {
   int v2; // ebx
   int v3; // esi

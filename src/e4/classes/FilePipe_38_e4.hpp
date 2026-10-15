@@ -12,7 +12,7 @@ struct FilePipe_38 {
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, char * a3);  // 0x478340
-    int  Seek(int a2, int a3);  // 0x477960
+    int  Seek(int a2, int a3, void *a3_2 = 0);  // 0x477960
     char  AddRef(int a2);  // 0x4782E0
     void ddtor(void *a1 = 0);  // 0x478440
     int Read(unsigned char * a2, void *a2_2, void *a3 = 0);  // 0x478470

@@ -3364,7 +3364,7 @@ char MPCooperative::Release(int a2, unsigned int * a3)
 
 // 0x5C5220
 namespace gamemd {
-void MPCooperative::ddtor()
+void MPCooperative::ddtor(void *a1)
 {
   if ( this->Items && this->IsAllocated ) /*0x5c522d*/
   {

@@ -25,14 +25,14 @@ struct AudioStream {
     void InitNodeFields();  // 0x4084E0
     int GetChannel();  // 0x408D50
     int ReadStreamAndReturn(void *a1_1);  // 0x409310
-    int ReadSamples(const void * a2, void *a2_2);  // 0x4A33A0
+    static int ReadSamples(const void * a2, void *a2_2);  // 0x4A33A0
     char DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint8_t *a5, int a6, int a7, int a8);  // G57w10-S raw 0x004BEAC0 IUnknown 占位清除
     int SetFlag4C(void *a1 = 0);  // 0x7BD270
     int CalcReadPos();
     int ProcessStream();  // 0x7BEA80
     unsigned int GetPosition(void *a1 = 0);  // 0x7C3960
     void Destructor(unsigned int * Block);  // 0x402550
-    int CheckFormatChanged(int a1, const void * a2);  // 0x402800
+    static int CheckFormatChanged(int a1, const void * a2);  // 0x402800
     int InitListAndCounters(void *a1_1);  // 0x4028B0
     int UpdateTimers();  // 0x404FD0
     static int UpdateCountdowners();

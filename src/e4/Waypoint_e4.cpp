@@ -63,7 +63,7 @@ LABEL_12:
 }  // G42.18 ns repair
 // 0x53ECB0
 namespace gamemd {
-unsigned char * Waypoint::InitInvalid()
+unsigned char * Waypoint::InitInvalid(void *a1)
 {
 
   this->q000 = -1; /*0x53ecb4*/

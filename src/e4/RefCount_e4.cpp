@@ -9,7 +9,7 @@
 
 // 0x401F90
 namespace gamemd {  // G42.18 ns repair
-int32_t RefCount::Decrement()
+int32_t RefCount::Decrement(void *a1)
 {
   int result; // eax
 

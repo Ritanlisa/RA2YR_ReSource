@@ -26,7 +26,7 @@ int BufferIOFile::Constructor(char *Source, void *a2, void *a3, void *a4)
 }  // G42.18 ns repair
 // 0x47AA30
 namespace gamemd {
-int BufferIOFile::Init()
+int BufferIOFile::Init(void *a1, void *a2)
 {
 
   BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa33*/

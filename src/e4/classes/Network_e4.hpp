@@ -54,7 +54,7 @@ int GetSendCount();
     int processQueue();  // 0x5E2BA0
     int CountDisconnectedHouses();  // 0x5E2BE0
     int AddFrameEvent();  // 0x6471A0
-    AbstractClass * * QueueProcessingLoop(void *a1 = 0);  // 0x6475F0
+    static AbstractClass * * QueueProcessingLoop(void *a1 = 0);  // 0x6475F0
     int syncGameState(void *a1_1);  // 0x64AC90
     AbstractClass * *  ProcessEventList(int a1, int * a2, int a3);  // 0x64C380
     AbstractClass * * RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27);  // 0x6521C0
@@ -65,7 +65,7 @@ int GetSendCount();
     void * processAcknowledgment(IUnknown * aP1);  // G57w10-S raw 0x006642A0 IUnknown 占位清除
     void * reconnect(DynamicVector * aP1, short a3);  // 0x664400
     unsigned int * processGameEvent();  // 0x69B540
-    AbstractClass * * SyncPlayerList(void *a1 = 0);  // 0x792F10
+    static AbstractClass * * SyncPlayerList(void *a1 = 0);  // 0x792F10
     int finalizeSession();  // 0x7B2DB0
     char * FormatAddress(uint16_t *aP1, void *a2 = 0);  // 0x53F0E0
     int CleanupOnDisconnect();  // 0x5F0040

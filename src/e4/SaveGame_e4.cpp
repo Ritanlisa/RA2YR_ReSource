@@ -151,7 +151,7 @@ int SaveGame::SaveTriggerEvents()
 }
 // 0x67D300
 namespace gamemd {
-char SaveGame::Start()
+char SaveGame::Start(void *a1, void *a2)
 {
 
   int v2; // ecx

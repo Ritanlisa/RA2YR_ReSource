@@ -63,6 +63,19 @@ def norm_params(ps):
 
 
 def main():
+    # X28: legacy pass first, then the completion pass (read-fresh) handles
+    # the def-side lag + def>decl shapes.  In apply mode the completion runs
+    # twice: round 1 extends defs to the max arity any decl of the same
+    # (class, method) requests; round 2 repairs the pairs whose defs grew.
+    _legacy_main()
+    if APPLY:
+        x28_complete(True)
+        x28_complete(True)
+    else:
+        x28_complete(False)
+
+
+def _legacy_main():
     # 1. collect def signature map
     defs = {}
     def_files = {}
@@ -106,6 +119,11 @@ def main():
             cparams = split_params(dm.group(4))
             if len(cparams) < len(dparams):
                 continue
+            # X28: cast-artifact def params (`(int)(TechnoClass * aP1)`) must
+            # not be copied into the DECL -- as a parameter they parse as a
+            # function type (C2091 'function returning function').
+            if any(_hazard_param(p) for p in dparams):
+                continue
             # unify: decl := def params + defaulted fillers to cparams count
             # T4c fix: taken anchors on the DEF only.  The old set also took
             # the decl's current filler names -- but the rewrite DISCARDS
@@ -136,6 +154,16 @@ def main():
             # (same count, same normalized params) -- the old code rewrote
             # the decl unconditionally, so every re-run was a diff.
             if norm_params(cparams) == norm_params(new_decl_ps):
+                continue
+            # X28: the completion pass (x28_complete) unifies by COUNT+TYPE
+            # with def-verbatim params kept on either side (param NAMES are
+            # free for overload matching).  Do not re-churn those pairs into
+            # this pass's name-normalized form -- it would strip the
+            # ` = 0` defaults the completion pass adds for smaller-arity
+            # call sites and fight the completion to non-convergence.
+            if len(cparams) == len(dparams) and all(
+                    _type_sig(cparams[k]) == _type_sig(dparams[k])
+                    for k in range(len(cparams))):
                 continue
             # X25 dedup: the rewrite can make this decl line IDENTICAL to
             # another decl of the same class already in the file (Buffer
@@ -209,6 +237,297 @@ def main():
             p.write_text('\n'.join(lines), encoding='utf-8')
     print('decls unified: %d, def files extended: %d %s'
           % (n_decl, n_def, '(written)' if APPLY else '(DRY)'))
+
+
+# ---------------------------------------------------------------------------
+# X28 completion: close the def-side lag the legacy rule leaves behind.
+#
+# The legacy rule rewrites DECLs to (def params + fillers) but registers the
+# matching DEF extension only when it actually rewrites the decl line; for
+# pairs whose decl already had the target shape (typically decl = def + one
+# defaulted filler, e.g. `int Dtor(void *a1 = 0);` vs def `int Dtor()`), the
+# norm-equality skip exits BEFORE the def extension -> the def keeps its short
+# param list forever.  MSVC: a def whose param list does not match any
+# declaration is not matched to the member; it falls back to "static" error
+# recovery -> C2511 + one C2671 per `this->` line in the body (X28 finding).
+#
+# Completion rules (params only; return types untouched):
+#   * decl count > def count, prefix types agree  -> extend DEF with the
+#     decl's trailing params (defaults stripped).  Body untouched.
+#   * def count > decl count, prefix types agree  -> extend DECL with the
+#     def's trailing params (+ ` = 0` defaults so smaller-arity call sites
+#     keep compiling).  Def untouched.
+#   * prefix types disagree (receiver-as-first-param static-form defs)
+#     -> deferred/reported (X28: static-form family, needs the C2352 axis).
+# Param NAMES are free for overload matching (MSVC: name-only differences are
+# not an error), so appended names may be renamed on body collision.
+# ---------------------------------------------------------------------------
+
+X28_DEF_RE = DEF_RE
+X28_DECL_RE = DECL_RE
+
+
+def _strip_default(p):
+    return re.sub(r'\s*=\s*[^,]*$', '', p).strip()
+
+
+def _type_sig(p):
+    p = _strip_default(p)
+    p = re.sub(r'\[[^\]]*\]\s*$', '', p).strip()
+    p = re.sub(r'\b([A-Za-z_]\w*)\s*$', '', p).strip()
+    p = re.sub(r'\s+', ' ', p).strip()
+    # X28: SOCKET is typedef'd `unsigned int` in this corpus (e4_protos.h /
+    # winsock UINT_PTR); the micro-hygiene pass normalizes decls to
+    # `unsigned int` while defs may keep `SOCKET` -- equivalence keeps this
+    # pass from "reverting" that normalization back to SOCKET.
+    return re.sub(r'\bSOCKET\b', 'unsigned int', p)
+
+
+def _param_name(p):
+    p = _strip_default(p)
+    m = re.search(r'\(\s*\*\s*([A-Za-z_]\w*)\s*\)', p)   # fn-ptr param name
+    if m:
+        return m.group(1)
+    m = re.search(r'([A-Za-z_]\w*)\s*(\[[^\]]*\])?$', p)
+    return m.group(1) if m else None
+
+
+def _rename_param(p, newname):
+    """Rename the param's identifier (last occurrence of its name)."""
+    old = _param_name(p)
+    if not old:
+        return p
+    i = p.rfind(old)
+    return p[:i] + newname + p[i + len(old):]
+
+
+def _unique_name(base, taken, body=''):
+    cand = base + '_x'
+    k = 1
+    while cand in taken or (body and re.search(r'\b%s\b' % re.escape(cand),
+                                              body)):
+        cand = '%s_x%d' % (base, k)
+        k += 1
+    return cand
+
+
+def _hazard_param(p):
+    """True for cast-artifact param text (`(int)(X * aP1)`) that must not be
+    copied into a DECL (parses as a function-type parameter -> C2091)."""
+    p = _strip_default(p)
+    return bool(re.match(r'^\(', p)) and not re.search(r'\(\s*\*', p)
+
+
+def _def_body_text(lines, di):
+    """Text from the def line to its balanced closing brace (best effort)."""
+    depth = 0
+    started = False
+    out = []
+    for i in range(di, min(di + 6000, len(lines))):
+        l = lines[i]
+        out.append(l)
+        if not started:
+            if '{' in l:
+                started = True
+                depth = l.count('{') - l.count('}')
+        else:
+            depth += l.count('{') - l.count('}')
+        if started and depth <= 0:
+            break
+    return '\n'.join(out)
+
+
+def _rewrite_params(line, params):
+    """Replace the top-level (...) param list of a def/decl line."""
+    o = line.index('(')
+    depth = 0
+    close = None
+    for j in range(o, len(line)):
+        if line[j] == '(':
+            depth += 1
+        elif line[j] == ')':
+            depth -= 1
+            if depth == 0:
+                close = j
+                break
+    if close is None:
+        return None
+    return line[:o] + '(' + ', '.join(params) + ')' + line[close + 1:]
+
+
+def _sig_key(line):
+    """Class-scope declaration identity: line minus default-value tokens and
+    whitespace.  Two decl lines with the same key are the SAME declaration
+    (defaults do not distinguish signatures) -> C2535 if both present."""
+    s = re.sub(r'//.*', '', line)
+    s = re.sub(r'\s*=\s*[^,()]*', '', s)
+    return re.sub(r'\s+', ' ', s).strip()
+
+
+def _same_class_sig_exists(lines, i, cls, new_text):
+    """True if another line inside the SAME `struct cls { ... }` block has the
+    same signature key as new_text (with unchanged lines only)."""
+    cur = None
+    for j, l2 in enumerate(lines):
+        sm = re.match(r'\s*struct\s+(\w+)\s*\{', l2)
+        if sm:
+            cur = sm.group(1)
+            continue
+        if re.match(r'^\s*\};', l2):
+            cur = None
+            continue
+        if j == i or cur != cls:
+            continue
+        if _sig_key(l2) == _sig_key(new_text):
+            return True
+    return False
+
+
+def x28_complete(apply):
+    defs = {}
+    for p in list((ROOT / 'src' / 'e4').glob('*.cpp')) + \
+            list((ROOT / 'src' / '_gap2').glob('*.cpp')):
+        try:
+            lines = p.read_text(encoding='utf-8', errors='replace').split('\n')
+        except OSError:
+            continue
+        for i, l in enumerate(lines):
+            dm = X28_DEF_RE.match(l.strip())
+            if not dm:
+                continue
+            q = dm.group(2)
+            cls, name = q.rsplit('::', 1)
+            if (cls, name) not in defs:
+                defs[(cls, name)] = (p, i)
+    n_def_ext = n_decl_ext = n_deferred = n_dupdanger = n_multidecl = 0
+    def_writes = {}     # def file -> {line_idx: new_line}
+    decl_writes = {}    # header   -> {line_idx: new_line}
+    # X28 safety: extending a decl that shares its (class, name) with another
+    # decl line can create C2535 (same signature) or C2668 (default-argument
+    # ambiguity against a sibling overload).  Only single-declaration names
+    # are extended; multi-decl (overload) names are skipped untouched.
+    decl_count = {}     # (file, cls, name) -> count
+    for hp in sorted((ROOT / 'src' / 'e4' / 'classes').glob('*_e4.hpp')):
+        if hp.name.startswith('_'):
+            continue
+        try:
+            lines = hp.read_text(encoding='utf-8', errors='replace').split('\n')
+        except OSError:
+            continue
+        cls = None
+        for i, l in enumerate(lines):
+            sm = re.match(r'\s*struct\s+(\w+)\s*\{', l)
+            if sm:
+                cls = sm.group(1)
+            if re.match(r'^\s*\};', l):
+                cls = None
+            dm = X28_DECL_RE.match(l)
+            if not dm or not cls:
+                continue
+            decl_count[(hp, cls, dm.group(3))] = \
+                decl_count.get((hp, cls, dm.group(3)), 0) + 1
+        cls = None
+        for i, l in enumerate(lines):
+            sm = re.match(r'\s*struct\s+(\w+)\s*\{', l)
+            if sm:
+                cls = sm.group(1)
+            if re.match(r'^\s*\};', l):
+                cls = None
+            dm = X28_DECL_RE.match(l)
+            if not dm or not cls:
+                continue
+            key = (cls, dm.group(3))
+            if key not in defs:
+                continue
+            if decl_count.get((hp, cls, dm.group(3)), 0) > 1:
+                n_multidecl += 1
+                continue
+            dp, di = defs[key]
+            try:
+                dlines = dp.read_text(encoding='utf-8',
+                                       errors='replace').split('\n')
+            except OSError:
+                continue
+            if di >= len(dlines):
+                continue
+            dhead = X28_DEF_RE.match(dlines[di].strip())
+            if not dhead:
+                continue
+            dps = split_params(dhead.group(3))
+            cps = split_params(dm.group(4))
+            if not dps and not cps:
+                continue
+            nmin = min(len(dps), len(cps))
+            prefix_ok = all(_type_sig(dps[k]) == _type_sig(cps[k])
+                            for k in range(nmin))
+            if len(dps) == len(cps) and prefix_ok:
+                continue
+            if len(cps) > len(dps) and prefix_ok:
+                body = _def_body_text(dlines, di)
+                taken = {_param_name(x) for x in dps if _param_name(x)}
+                extras = []
+                for p in cps[len(dps):]:
+                    pt = _strip_default(p)
+                    nm = _param_name(pt)
+                    if nm and (nm in taken or
+                               re.search(r'\b%s\b' % re.escape(nm), body)):
+                        cand = _unique_name(nm, taken, body)
+                        pt = _rename_param(pt, cand)
+                        taken.add(cand)
+                    elif nm:
+                        taken.add(nm)
+                    extras.append(pt)
+                new_line = _rewrite_params(dlines[di], dps + extras)
+                if new_line and new_line != dlines[di]:
+                    def_writes.setdefault(dp, {})[di] = new_line
+                    n_def_ext += 1
+            elif len(dps) > len(cps) and prefix_ok:
+                if any(_hazard_param(p) for p in dps):
+                    n_deferred += 1
+                    continue
+                taken = {_param_name(x) for x in cps if _param_name(x)}
+                extras = []
+                for p in dps[len(cps):]:
+                    pt = p
+                    nm = _param_name(pt)
+                    if nm and nm in taken:
+                        pt = _rename_param(pt, _unique_name(nm, taken))
+                        nm = _param_name(pt)
+                    if nm:
+                        taken.add(nm)
+                    extras.append(pt + ' = 0')
+                new_params = cps + extras
+                new_text = '%s%s%s(%s);%s' % (
+                    dm.group(1), dm.group(2), dm.group(3),
+                    ', '.join(new_params), dm.group(5) or '')
+                decl_writes.setdefault(hp, {})[i] = (new_text, cls)
+                n_decl_ext += 1
+            else:
+                n_deferred += 1
+
+    total = n_def_ext + n_decl_ext
+    print('X28 complete: def-ext %d, decl-ext %d, deferred(prefix-mismatch) '
+          '%d, multi-decl-skip %d %s' % (n_def_ext, n_decl_ext, n_deferred,
+                                         n_multidecl,
+                                         '(DRY)' if not apply else ''))
+    if not apply or not total:
+        return
+    files = set(def_writes) | set(decl_writes)
+    for p in files:
+        try:
+            lines = p.read_text(encoding='utf-8',
+                                errors='replace').split('\n')
+        except OSError:
+            continue
+        edits = {}
+        edits.update(def_writes.get(p, {}))
+        for idx, (txt, _cls) in decl_writes.get(p, {}).items():
+            edits[idx] = txt
+        for i in edits:
+            if 0 <= i < len(lines):
+                lines[i] = edits[i]
+        p.write_text('\n'.join(lines), encoding='utf-8')
+    print('X28 complete: wrote %d file(s)' % len(files))
 
 
 if __name__ == '__main__':

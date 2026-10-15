@@ -1333,7 +1333,7 @@ int Network::SendPacketThunk2(int a2, int a3, int a4, int a5)
 }
 // 0x541820
 namespace gamemd {
-void * Network::ReceiveLoop()
+void * Network::ReceiveLoop(void *a1)
 {
 
   void *Network_field_0xC; // ebx
@@ -1812,7 +1812,7 @@ LABEL_92:
 }
 // 0x5422D0
 namespace gamemd {
-int Network::GetQueueCount()
+int Network::GetQueueCount(void *a1)
 {
 
   if ( this->Initialized && this->Active ) /*0x5422d7*/
@@ -3582,7 +3582,7 @@ int Network::AddFrameEvent()
 }
 // 0x6475F0
 namespace gamemd {
-AbstractClass * * Network::QueueProcessingLoop()
+AbstractClass * * Network::QueueProcessingLoop(void *a1)
 {
 
   int v1; // eax
@@ -4443,7 +4443,7 @@ unsigned int * Network::processGameEvent()
 }
 // 0x792F10
 namespace gamemd {
-AbstractClass * * Network::SyncPlayerList()
+AbstractClass * * Network::SyncPlayerList(void *a1)
 {
   int owningHouseIndex; // eax
   int v2; // ebp

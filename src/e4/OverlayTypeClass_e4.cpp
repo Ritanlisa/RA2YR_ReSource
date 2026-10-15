@@ -426,7 +426,7 @@ int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4,
 }  // G42.18c ns repair
 // 0x48DF80
 namespace gamemd {  // G42.18c ns repair
-int OverlayTypeClass::LookupByName()
+int OverlayTypeClass::LookupByName(void *a1)
 {
   int v2; // edi
   char **v3; // esi

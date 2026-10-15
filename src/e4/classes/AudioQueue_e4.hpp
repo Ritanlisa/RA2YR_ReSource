@@ -24,7 +24,7 @@ struct AudioQueue {
     int GetNext();  // 0x4073C0
     int GetNextAlt();  // 0x4073E0
     int  IsEmpty(int a1, int a2);  // 0x407B40
-    int  IsNotEmpty(int a1, int a2);  // 0x407B50
+    static int  IsNotEmpty(int a1, int a2);  // 0x407B50
     int HaltVoices(Voice *a1);
     static int * IncrementPriority();  // 0x408200
     static int ReleaseBuffers();  // 0x408270

@@ -18,7 +18,7 @@
 
 // 0x4A3370
 namespace gamemd {  // G42.18 ns repair
-int DDraw::ReleaseSurfaces()
+int DDraw::ReleaseSurfaces(void *a1)
 {
   int v2; // eax
   int result; // eax
@@ -40,7 +40,7 @@ int DDraw::ReleaseSurfaces()
 } // namespace gamemd
 // 0x4A3640
 namespace gamemd {
-void DDraw::Init()
+void DDraw::Init(void *a1, void *a2)
 {
   this->u32_18000 = 0; /*0x4a3640*/
 }
@@ -131,7 +131,7 @@ int DDraw::WaitForIdle()
 } // namespace gamemd
 // 0x4C19B0
 namespace gamemd {
-int DDraw::CleanupSurfaces()
+int DDraw::CleanupSurfaces(void *a1)
 {
 
   StructTable *v1; // esi

@@ -15,7 +15,7 @@ struct WonlineStringDialogControl_12 {
 // --- flat members (END) ---
     void *  Constructor_WonlineStringDialogControl(char a2);  // 0x7AC630
     void ClearBuffer(void *a1_1);  // 0x7AC970
-    int  Seek(int a2);  // 0x7AC9C0
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x7AC9C0
     char  AddRef(int a2);  // 0x7AD090
     char  Release(int a2, unsigned int * a3);  // 0x7AD0D0
     void ddtor(void *a1 = 0);  // 0x7AD180

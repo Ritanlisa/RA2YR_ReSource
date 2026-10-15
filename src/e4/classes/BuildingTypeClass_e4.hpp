@@ -678,7 +678,7 @@ struct BuildingTypeClass {
     size_t Dequeue(int *aP1, void *a2 = 0);
     unsigned int * Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     unsigned int * GetSizeInLeptons(unsigned int * a2);
-    unsigned int * GetUpgradeOffset(unsigned int * a2);
+    unsigned int * GetUpgradeOffset(unsigned int * a2, double a3 = 0, unsigned int * a4 = 0);
     unsigned int * loadBuildingProperty_b_545E520(int aP1);
     unsigned int * loadBuildingProperty_b_5478850(int a2, int a3);
     int IsPowered();

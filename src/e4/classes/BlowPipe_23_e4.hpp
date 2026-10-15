@@ -13,7 +13,7 @@ struct BlowPipe_23 {
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     int Clear(void *a1_1);  // 0x63DC80
-    int  Seek(int a2);  // 0x63DCD0
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x63DCD0
     void Clear_0();  // 0x63DCE0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x63E350
     void Clear_1();  // 0x63E400

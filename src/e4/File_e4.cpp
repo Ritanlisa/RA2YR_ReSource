@@ -205,7 +205,7 @@ AbstractClass * File::LoadFont(char *Source)
 }
 // 0x4CB920
 namespace gamemd {
-char File::Dispatch()
+char File::Dispatch(void *a1, void *a2, void *a3, void *a4)
 {
 
   __int16 v2; // ax

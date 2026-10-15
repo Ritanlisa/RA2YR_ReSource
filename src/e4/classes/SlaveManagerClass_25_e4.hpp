@@ -12,7 +12,7 @@ struct SlaveManagerClass_25 {
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1_1, void *a2_1);  // 0x6B13B0
-    int  Seek(int a2);  // 0x6B1400
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x6B1400
     char  AddRef(int a2);  // 0x6B1470
     char  Release(int a2, unsigned int * a3);  // 0x6B15F0
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x6B16A0

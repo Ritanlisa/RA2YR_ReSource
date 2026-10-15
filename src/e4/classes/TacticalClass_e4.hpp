@@ -109,7 +109,7 @@ struct TacticalClass {
     int FindBuilding(int a1, IUnknown * aP1, IUnknown * aP2);  // G57w10-S raw 0x006D9920 IUnknown 占位清除
     int FindOverlay(int a1, IUnknown * aP1, IUnknown * aP2);  // G57w10-S raw 0x006D97D0 IUnknown 占位清除
     int MapSpecialDrawMode(MouseClass * aP1);
-    int SetPositionThunk(MouseClass * aP0);
+    static int SetPositionThunk(MouseClass * aP0);
     int StubReturnFalse10();
     int StubReturnFalse2();
     int StubReturnFalse3();
@@ -129,7 +129,7 @@ struct TacticalClass {
     void DrawBuildingPlacement(unsigned int *aP1, int *a2);  // G57w10-S raw 0x0047F510 IUnknown 占位清除
     void DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, void *a10_1 = 0);
     void DrawCellTerrainOverlay(int *a2, int *a3);
-    int InterpolateView();
+    static int InterpolateView();
     void StubReturnTrue();
     void StubReturnTrue2();
     void StubReturnTrue3();

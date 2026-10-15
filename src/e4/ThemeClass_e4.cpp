@@ -28,14 +28,14 @@ extern unsigned int aMusicStream;  // data: 0x844750 truth(IDA G42.57w9)
 
 // 0x4080C0
 namespace gamemd {  // G42.18 ns repair
-int ThemeClass::RequestBuffer()
+int ThemeClass::RequestBuffer(void *a1)
 {
   return RequestBufferMixer((gamemd::VolumeStruct *)((unsigned int *)(this->m_Name[3] + 16)), 0);
 }  // G42.18 ns repair
 } // namespace gamemd
 // 0x408140
 namespace gamemd {
-int ThemeClass::GetValue()
+int ThemeClass::GetValue(void *a1, void *a2)
 {
   return *(unsigned long long *)&this->m_Name[6]; /*0x408146*/
 }
@@ -236,7 +236,7 @@ int ThemeClass::ClearQueues()
 } // namespace gamemd
 // 0x752AB0
 namespace gamemd {
-void ThemeClass::GetField(int a1)
+void ThemeClass::GetField(int a1, void *a2)
 {
   dword_846614 = a1; /*0x752ab6*/
   if ( a1 >= 255 ) /*0x752abc*/

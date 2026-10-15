@@ -15,6 +15,12 @@
    (WinsockInterfaceClass_e4.cpp:104) keeps SOCKET (its TU includes
    winsock); `unsigned int` is the same type (UINT_PTR) so C2511 matches.
    Mirrors the X26 e4_protos.h `unsigned int s` precedent.
+   X28 completion: the original regex anchored on a LINE-INITIAL `SOCKET`
+   (return position) and left the `SOCKET * Block` PARAM in place -> the
+   decl itself still C2061 x4 in every consumer TU (the def TU included;
+   its SOCKET-assumption was wrong -- no winsock include there either).
+   Now ALL `SOCKET` tokens on the matching decl line are normalized, so the
+   header no longer depends on any winsock/protos include order.
 
 3. `extern TechnoClass* TechnoClass_Array;` in src/core/globals_core.hpp
    (namespace gamemd) with TechnoClass undeclared -> C2143+C4430 xTUs.
@@ -32,8 +38,7 @@ APPLY = '--apply' in sys.argv
 THIS_PARAM = re.compile(
     r'([\(,]\s*(?:int|char|unsigned\s+int|unsigned\s+char|short|long|float|'
     r'double|void|bool|[A-Za-z_]\w*)\s*\**\s*)this\b(\s*[,\)])')
-SOCKET_DECL = re.compile(
-    r'^(\s*)SOCKET(\s*\*+\s*Destru_vt00\s*\([^;]*\)\s*;.*)$')
+SOCKET_TOKEN = re.compile(r'\bSOCKET\b')
 FWD_MARK = '// X27: member-decl type supply'
 
 
@@ -46,13 +51,15 @@ def fix_this_params(p, dry):
 
 
 def fix_socket_decl(p, dry):
+    # X28: normalize EVERY `SOCKET` token on the identified decl line(s), not
+    # just a line-initial return-position one (completes the R3micro fix --
+    # the `SOCKET * Block` param was left behind -> C2061 x4 at this header).
     text = p.read_text(encoding='utf-8', errors='replace')
     out = []
     n = 0
     for l in text.split('\n'):
-        m = SOCKET_DECL.match(l)
-        if m:
-            out.append(m.group(1) + 'unsigned int' + m.group(2))
+        if 'Destru_vt00' in l and SOCKET_TOKEN.search(l):
+            out.append(SOCKET_TOKEN.sub('unsigned int', l))
             n += 1
         else:
             out.append(l)

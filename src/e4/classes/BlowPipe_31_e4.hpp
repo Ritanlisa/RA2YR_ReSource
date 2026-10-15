@@ -12,7 +12,7 @@ struct BlowPipe_31 {
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     void ddtor(void *a1 = 0);  // 0x63DC20
-    int  Seek(int a2);  // 0x63DC70
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x63DC70
     char  AddRef(int a2);  // 0x63E310
     char  Release(int a2, unsigned int * a3);  // 0x63E490
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x63E620

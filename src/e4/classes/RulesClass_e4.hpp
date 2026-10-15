@@ -579,7 +579,7 @@ struct RulesClass {
     void* readAudioVisual();
      int SaveLoad_Prefix(int *a2);
     static int SaveLoad_Prefix_0(RulesClass * aP1, int i);
-    int ReadDataList(void *a1 = 0);  // 0x672440
+    static int ReadDataList(void *a1 = 0);  // 0x672440
     int LoadCountries(void *a1 = 0);  // 0x6722f0
     int Reset(void *a1 = 0, void *a2 = 0);  // 0x74e6b0
     int  IsTypeBuildable(unsigned int a2, void *a1 = 0);  // 0x721140

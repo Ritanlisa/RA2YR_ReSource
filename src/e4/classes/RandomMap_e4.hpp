@@ -23,12 +23,12 @@ struct RandomMap {
 // --- flat members (END) ---
     int Check(void *a1_1, void *a2_1, void *a3_1);  // 0x486790
     unsigned int * TerrainTileDataConstructor(int a2, void *a2_1 = 0);  // 0x58BF70
-    int GenerateTerrain(RandomMap *self);  // 0x58C800
+    static int GenerateTerrain(RandomMap *self);  // 0x58C800
     MapClass * *  ExpandTerrainCells(int a2, int a3);  // 0x58D1C0
     unsigned int * TerrainAlloc(void *a1_1);  // 0x58D410
-    RandomMap * *  CollectTerrainCells(int a2);  // 0x58E740
-    AbstractClass * * PlaceRandomMapTerrain(RandomMap *self);  // 0x58E9B0
-    void* CollectBorderCells();  // 0x58F0C0
+    RandomMap * *  CollectTerrainCells(int a2, void *a2_2 = 0);  // 0x58E740
+    static AbstractClass * * PlaceRandomMapTerrain(RandomMap *self);  // 0x58E9B0
+    void* CollectBorderCells(RandomMap *self = 0);  // 0x58F0C0
     void*  PlaceBuildings(int a2, int a3);  // 0x58F2C0
     int AllocateArea();  // 0x5905D0
 char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
@@ -64,7 +64,7 @@ char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
     DynamicVector *  QueryInterface(char a2);  // 0x42FBF0
     unsigned int *  Constructor_VectorClass_Cell_(char a2);  // 0x5AC290
     unsigned int * Constructor(int a2, int a3, void *a3_2, void *a4 = 0);  // 0x5AD820
-    unsigned int *  Constructor_0(int a2, int a3);  // 0x5ADA40
+    unsigned int *  Constructor_0(int a2, int a3, void *a3_2 = 0);  // 0x5ADA40
     unsigned int *  Constructor_1(int a2, int a3);  // 0x5ADAB0
     int GenerateTerrainForAllCells();  // 0x58CF90
     unsigned int q04C;  // 0x4C (offset-truth)

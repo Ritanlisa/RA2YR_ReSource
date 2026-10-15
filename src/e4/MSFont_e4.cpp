@@ -168,7 +168,7 @@ int MSFont_18::GetSize(int a2)
 
 // 0x5D50E0
 namespace gamemd {
-void MSFont_18::Destroy()
+void MSFont_18::Destroy(void *a1)
 {
   void *v2; // eax
 
@@ -277,7 +277,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
 
 // 0x5D5240
 namespace gamemd {
-void MSFont_18::ddtor()
+void MSFont_18::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5d524d*/
   {

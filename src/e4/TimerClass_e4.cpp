@@ -10,7 +10,7 @@
 
 // 0x4C9480
 namespace gamemd {  // G42.18 ns repair
-int TimerClass::Active()
+int TimerClass::Active(void *a1)
 {
   int v1; // edx
   int v2; // eax

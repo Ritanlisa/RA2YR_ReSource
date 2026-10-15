@@ -27,7 +27,7 @@ struct DialogClass {
     static unsigned int * CopyTemplateStruct(void *aP1, void *a2);
     static ATOM RegisterWinClasses();
     int GetFlag(void *a1);
-    int Reposition(int hWnd, int a2);
+    static int Reposition(int hWnd, int a2);
 };
 
 } // namespace gamemd

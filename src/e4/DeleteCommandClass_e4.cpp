@@ -58,7 +58,7 @@ wchar_t * DeleteCommandClass::ddtor(void *a1)
 }  // G42.18c ns repair
 // 0x537F70
 namespace gamemd {  // G42.18c ns repair
-wchar_t * DeleteCommandClass::Read(void *a1, void *a2)
+wchar_t * DeleteCommandClass::Read(void *a1, void *a2, void *a3)
 {
   return GetStringCSF((wchar_t *)(aCmndDeletedesc), 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
 }
@@ -182,7 +182,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
 
 // 0x53C610
 namespace gamemd {
-void DeleteCommandClass_28::ddtor()
+void DeleteCommandClass_28::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x53c61d*/
   {

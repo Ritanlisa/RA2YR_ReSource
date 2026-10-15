@@ -20,12 +20,12 @@ struct DDraw {
     unsigned int q628;  // 0x628
     unsigned int u32_2664;  // 0x2664
 // --- flat members (END) ---
-    char CheckCapabilities();
+    static char CheckCapabilities();
     int CapabilityCheck();
-    int CleanupSurfaces(void *a1 = 0);
+    static int CleanupSurfaces(void *a1 = 0);
     int GetStatus(void *a1 = 0);
     int HandleSuspend();
-    void LogError(UINT, int a2);
+    static void LogError(UINT, int a2);
     int ReleaseSurfaces(void *a1 = 0);
     static int WaitForIdle();
     void Init(void *a1 = 0, void *a2 = 0);

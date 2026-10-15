@@ -92,7 +92,7 @@ LABEL_9:
 } // namespace gamemd
 // 0x4109C0
 namespace gamemd {
-int AbstractTypeClass::Dtor()
+int AbstractTypeClass::Dtor(void *a1)
 {
 
   int v2; // eax

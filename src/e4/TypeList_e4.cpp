@@ -270,7 +270,7 @@ VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a
 
 // 0x477840
 namespace gamemd {  // G42.18c ns repair
-void TypeList_flat::ddtor()
+void TypeList_flat::ddtor(void *a1)
 {
   void *v2; // eax
 
@@ -427,7 +427,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
 
 // 0x4780B0
 namespace gamemd {
-void TypeList_TechnoType::ddtor()
+void TypeList_TechnoType::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4780bd*/
   {
@@ -560,7 +560,7 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
 }  // G42.18c ns repair
 // 0x5128A0
 namespace gamemd {
-void TypeList_Infantry::ddtor()
+void TypeList_Infantry::ddtor(void *a1)
 {
 
   void *v2; // eax
@@ -1147,7 +1147,7 @@ CCINIClass * TypeList_flat::VoxelAnimConstructor()
 }  // G42.18c ns repair
 // 0x67A410
 namespace gamemd {
-void TypeList_VoxelAnim::ddtor()
+void TypeList_VoxelAnim::ddtor(void *a1)
 {
 
   void *v2; // eax
@@ -1190,7 +1190,7 @@ int TypeList_VoxelAnim::Clear(int a2)
 
 // 0x67A4F0
 namespace gamemd {  // G42.18c ns repair
-DynamicVector * TypeList_flat::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
+DynamicVector * TypeList_flat::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
   this->u32_4 = 0; /*0x67a4f4*/
   this->DynamicVectorClass = 0; /*0x67a4f7*/

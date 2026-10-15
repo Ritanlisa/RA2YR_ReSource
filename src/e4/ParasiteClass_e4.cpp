@@ -39,7 +39,7 @@
 
 // 0x629210
 namespace gamemd {  // G42.18 ns repair
-int ParasiteClass::Constructor()
+int ParasiteClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   int v2; // ecx
@@ -742,7 +742,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
 
 // 0x62AB40
 namespace gamemd {  // G42.18c ns repair
-int ParasiteClass::CanExistOnVictimCell()
+int ParasiteClass::CanExistOnVictimCell(void *a1)
 {
 
   int v2; // ecx

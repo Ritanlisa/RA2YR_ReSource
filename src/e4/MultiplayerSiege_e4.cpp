@@ -28,7 +28,7 @@ namespace AI { int CreateMCV(int* p0, int p1); }  // x4:signals@0x5d7030
 
 // 0x5CA680
 namespace gamemd {  // G42.18 ns repair
-char MultiplayerSiege::Read(void *a1, void *a2)
+char MultiplayerSiege::Read(void *a1, void *a2, void *a3)
 {
 
   char result; // al

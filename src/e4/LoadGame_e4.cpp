@@ -156,7 +156,7 @@ void LoadGame::RemoveItem(int a2, void *a2_1)
 } // namespace gamemd
 // 0x67E730
 namespace gamemd {
-char LoadGame::Start()
+char LoadGame::Start(void *a1, void *a2)
 {
 
   char result; // al

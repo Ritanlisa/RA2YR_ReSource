@@ -41,7 +41,7 @@ struct SaveGame {
     int CountLinkedList(void *a1_1);  // 0x4073B0
     int  SaveIteratedData(int a2);  // 0x413850
     int  SaveBlock68(int a2);  // 0x4C6340
-    int  WriteObject(int a2);  // 0x513CB0
+    int  WriteObject(int a2, int a2_x = 0);  // 0x513CB0
     bool  SaveAudioData(int a2);  // 0x69B560
     int  VtableDispatch(int a2);  // 0x721010
     int WriteMagicHeader();  // 0x7533B0

@@ -73,7 +73,7 @@ char * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 }
 // 0x5BD5A0
 namespace gamemd {
-int String::Release()
+int String::Release(void *a1)
 {
   int result; // eax
 
@@ -215,7 +215,7 @@ int String::TrimLeft(const char **a2, const char **aP1, int a1, int a3, int aP2,
 }
 // 0x7B54B0
 namespace gamemd {
-unsigned int String::Length()
+unsigned int String::Length(void *a1)
 {
 
   if ( *(unsigned int *)this->q000 ) /*0x7b54b1*/
@@ -688,7 +688,7 @@ unsigned int String::ComputeHash(void *a1_1)
 
 // 0x727CF0
 namespace gamemd {
-char * String::Trim()
+char * String::Trim(void *a1)
 {
   char v2; // al
   const char *v3; // ebx
@@ -1274,7 +1274,7 @@ char * String::GetOrEmpty()
 
 // 0x7B5440
 namespace gamemd {
-char * String::GetOrEmpty_Alt()
+char * String::GetOrEmpty_Alt(void *a1)
 {
 
   char *result; // eax

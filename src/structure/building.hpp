@@ -11,7 +11,7 @@ namespace ra2 { namespace game { class BombClass; } }  // X27: member-decl type 
 
 namespace gamemd {
     // X27: member-decl type supply (log-driven hygiene)
-    using ra2::game::BombClass;
+    class BombClass;  // X28: C2874 fwd (using collided with existing gamemd decl)
     class LineTrail;
     class ParticleSystemClass;
 

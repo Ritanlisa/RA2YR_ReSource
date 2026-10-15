@@ -400,7 +400,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2
 }
 // 0x523C90
 namespace gamemd {
-int Factory::FindExitCellByName()
+int Factory::FindExitCellByName(void *a1)
 {
 
   int v2; // esi

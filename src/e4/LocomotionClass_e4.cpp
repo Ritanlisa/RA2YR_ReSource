@@ -201,7 +201,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
 } // namespace gamemd
 // 0x55A6C0
 namespace gamemd {
-int LocomotionClass::Init()
+int LocomotionClass::Init(void *a1, void *a2)
 {
 
   this->Owner = 0; /*0x55a6c6*/
@@ -217,7 +217,7 @@ int LocomotionClass::Init()
 } // namespace gamemd
 // 0x55A6F0
 namespace gamemd {
-void LocomotionClass::Construct()
+void LocomotionClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   *(unsigned int *)this->ILocomotion = &vt_LocomotionClass; /*0x55a6f0*/

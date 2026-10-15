@@ -384,7 +384,7 @@ LABEL_19:
 }
 // 0x5F19C0
 namespace gamemd {
-int EventClass::CheckFlag()
+int EventClass::CheckFlag(void *a1)
 {
 
   EventClass **EventClass_field_0x38; // eax

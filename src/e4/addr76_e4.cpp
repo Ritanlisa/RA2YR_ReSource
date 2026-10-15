@@ -3310,7 +3310,7 @@ unsigned int* Campaign_WorldDominationTour_24_::ddtor(void *a1)
 }  // G42.18c ns repair
 // 0x76f190
 namespace gamemd {  // G42.18c ns repair
-unsigned int* VectorCursor::ddtor()
+unsigned int* VectorCursor::ddtor(void *a1)
 {
 
   --this->u32_8; /*0x76f192*/
@@ -3330,7 +3330,7 @@ int32_t Count::ddtor()  // G57w17h4 ret-align with Count_e4.hpp carrier decl (ra
 }  // G42.18c ns repair
 // 0x766fb0
 namespace gamemd {  // G42.18c ns repair
-unsigned int* Conflict_WorldDominationTour_26::ddtor()
+unsigned int* Conflict_WorldDominationTour_26::ddtor(void *a1)
 {
 
   --this->RefCount; /*0x766fb2*/
@@ -3339,7 +3339,7 @@ unsigned int* Conflict_WorldDominationTour_26::ddtor()
 }
 }  // G42.18c ns repair
 // 0x76a5b0
-unsigned int* Map_WorldDominationTour_38::ddtor()
+unsigned int* Map_WorldDominationTour_38::ddtor(void *a1_1)
 {
   --this->RefCount; /*0x76a5b2*/
   return this; /*0x76a5b5*/

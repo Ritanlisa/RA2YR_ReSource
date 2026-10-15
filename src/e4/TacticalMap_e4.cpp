@@ -262,7 +262,7 @@ char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
 } // namespace gamemd
 // 0x6D1C20
 namespace gamemd {
-void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
+void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   float v3; // [esp+0h] [ebp-10h]

@@ -21,7 +21,7 @@ struct IPXManagerClass {
     int send(int a2);
     int sendPacket(int a2, int a3, int a4);
     void StubReturnFalse(int a1, int a2);
-    int destroyConnection(void *a1 = 0);  // 0x540d60
+    static int destroyConnection(void *a1 = 0);  // 0x540d60
     unsigned int * createConnection(void *a1 = 0);  // 0x540d40
     int Socket;  // 0x0 (ml)
 

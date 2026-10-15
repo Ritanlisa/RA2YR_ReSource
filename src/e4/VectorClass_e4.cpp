@@ -3176,7 +3176,7 @@ int VectorClass_ptr_Reestablish::Clear(int a2)
 
 // 0x45A270
 namespace gamemd {  // G42.18c ns repair
-void VectorClass_flat::Cleanup(void *a1)
+void VectorClass_flat::Cleanup(void *a1, void *a2)
 {
   if ( *(unsigned int *)(a1 + 4) && *(unsigned char *)(a1 + 13) ) /*0x45a27d*/
   {
@@ -4083,7 +4083,7 @@ DynamicVector * VectorClass_ptr_ConvertClass::Constructor_VectorClass_ConvertCla
 
 // 0x49FB60
 namespace gamemd {  // G42.18c ns repair
-int VectorClass_flat::GetCount()
+int VectorClass_flat::GetCount(void *a1)
 {
 
   return this->Count; /*0x49fb63*/
@@ -9095,7 +9095,7 @@ unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block,
 
 }
 // 0x679F70
-void VectorClass_flat::Dtor()
+void VectorClass_flat::Dtor(void *a1)
 {
 
   void *Items; // eax
@@ -10998,7 +10998,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
 // 0x76BBC0
 
 // 0x7AE730
-char VectorClass_flat::Shrink()
+char VectorClass_flat::Shrink(void *a1)
 {
 
   void *vtable0; // eax

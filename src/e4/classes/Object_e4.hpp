@@ -27,7 +27,7 @@ struct Object {
     void* * CalculateObjectPlacementPosition(int *a2);  // 0x62AC30
     int LoadObject(ObjectClass * aP1, int aP1a);  // 0x5FD8F0
     SessionClass * DtorWithDelete(void ** Block, char a2);  // 0x7AD330
-    int ComputeAllocationSize();  // 0x42B1F0
+    static int ComputeAllocationSize();  // 0x42B1F0
     void ** RemoveObjectArray(void *a1 = 0);  // 0x53E420
     int Unlink(void *a1 = 0);  // 0x5F5230
     char CheckState(IUnknown * aP1, int a3);  // 0x5FD270

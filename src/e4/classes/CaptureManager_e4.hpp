@@ -14,7 +14,7 @@ struct CaptureManager {
     unsigned int q100;  // 0x100
     unsigned int q130;  // 0x130
 // --- flat members (END) ---
-    int __thiscall FreeAll(void *a1 = 0);
+    static int __thiscall FreeAll(void *a1 = 0);
 };
 
 } // namespace gamemd

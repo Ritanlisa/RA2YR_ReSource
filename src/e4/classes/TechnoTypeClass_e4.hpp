@@ -399,7 +399,7 @@ struct TechnoTypeClass {
     void* houseTypesCount;  // 0x0 (no offset truth)
     int SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5, void *a5_1 = 0);
     void Construct(int aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
-    AbstractClass * * GetByTypeAndIndex(int a1, int a2);
+    static AbstractClass * * GetByTypeAndIndex(int a1, int a2);
     DynamicVectorClass_flat * * SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     TechnoTypeClass * ddtor(char a2);
     VectorClass_flat * Constructor_1(ObjectTypeClass * aP1);
@@ -418,7 +418,7 @@ struct TechnoTypeClass {
     unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     unsigned int * Constructor_0(int a2);
     unsigned int * LoadBase(char *aP1, void *a2 = 0);
-    void * ReadINI(char * Source, int a3, void *a3_1 = 0);
+    static void * ReadINI(char * Source, int a3, void *a3_1 = 0);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();
     static int HasVoiceResponse(TechnoTypeClass * aP1, int a2);

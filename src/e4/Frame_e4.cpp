@@ -271,7 +271,7 @@ LABEL_51:
 } // namespace gamemd
 // 0x724C00
 namespace gamemd {
-TechnoTypeClass * Frame::Init()
+TechnoTypeClass * Frame::Init(void *a1, void *a2)
 {
   return this->q004 != 0; /*0x724c0a*/
 }

@@ -27,7 +27,7 @@ int IPersistStream::GetMaxSize()
 
 // 0x5B36E0
 namespace gamemd {
-char IPersistStream::SetField(int a1)
+char IPersistStream::SetField(int a1, void *a2)
 {
   if ( a1 == -1 ) /*0x5b36e3*/
     return 1; /*0x5b36e5*/

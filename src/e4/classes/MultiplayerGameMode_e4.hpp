@@ -13,7 +13,7 @@ struct MultiplayerGameMode {
     void* GetFirst_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon MultiplayerGameMode::GetFirst is a method)
     static unsigned int GetFirst();  // x4:empty@0x5d5e10
     MultiplayerGameMode * QueryInterface(char * Block, char a2);
-    unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3_2);
+    static unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3_2);
      void * Construct(const wchar_t **a2, const wchar_t **a3, const char **a4, const char **a5, char a6, int a7, void *a1 = 0, void *a8 = 0, void *a9 = 0);
      int Find(void *a1 = 0, void *a2 = 0);
      void Dtor(void *a1 = 0);

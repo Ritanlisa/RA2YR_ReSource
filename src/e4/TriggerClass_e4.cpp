@@ -105,7 +105,7 @@ char TriggerClass::FindByEventType(char a1)
 }  // G42.18 ns repair
 // 0x71FA30
 namespace gamemd {
-int TriggerClass::GetValue()
+int TriggerClass::GetValue(void *a1, void *a2)
 {
   return this->u32_54; /*0x71fa33*/
 }

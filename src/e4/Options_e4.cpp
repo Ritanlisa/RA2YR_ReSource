@@ -284,7 +284,7 @@ bool Options::Options::PrepareSaveLoadDlg(const char ** dwNewLong)
 }
 // 0x55FAA0
 namespace gamemd {
-AbstractClass * * Options::Screen_Save()
+AbstractClass * * Options::Screen_Save(void *a1)
 {
 
   HWND DlgItem; // eax
@@ -430,7 +430,7 @@ char Options::Screen_Dialog()
 }
 // 0x6244E0
 namespace gamemd {
-int Options::DeleteAndZero()
+int Options::DeleteAndZero(void *a1, void *a2)
 {
 
   int v2; // ebx
@@ -464,7 +464,7 @@ int Options::DeleteAndZero()
 }
 // 0x6248A0
 namespace gamemd {
-char Options::EnsureCapacity()
+char Options::EnsureCapacity(void *a1)
 {
 
   int v2; // eax

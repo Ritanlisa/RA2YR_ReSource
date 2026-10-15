@@ -324,7 +324,7 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2)
 }
 // 0x533F50
 namespace gamemd {
-CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
+CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame(void *a1)
 {
 
   int result; // eax

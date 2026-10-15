@@ -287,7 +287,7 @@ int DTOR(); // 0x4101F0
     unsigned int  updateSpecialTimer(int a2);  // 0x7642B0
     char  AllocateCoordArray(int a2, int * a3);  // 0x7642E0
     int  processSpecialEffect(unsigned int * a2);  // 0x764420
-    int finalizeDestruction(void *a1 = 0);  // 0x7C35C0
+    static int finalizeDestruction(void *a1 = 0);  // 0x7C35C0
     ObjectClass *  Render_Render_660730(unsigned int * a2);  // 0x660730
     Surface *  getObjectValue(char a2);  // 0x4115D0
     Blitter *  getTileIndex(char a2);  // 0x499CC0
@@ -399,7 +399,7 @@ int DTOR(); // 0x4101F0
     int COMStub_Return0_33();  // 0x5F6BC0
     char updateTeamState();  // 0x65C320
     int updateTargetTracking(int a1);  // 0x6CE1F0
-    char processWeaponFire();  // 0x711E80
+    static char processWeaponFire();  // 0x711E80
     int checkBuildingPlacement();  // 0x74F330
     int computeDistanceSquared();  // 0x410490
     int COMStub_Return0_15();  // 0x4104A0

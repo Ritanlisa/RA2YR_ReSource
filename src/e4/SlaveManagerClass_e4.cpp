@@ -26,7 +26,7 @@ namespace gamemd { int ProcessDeployAction(ObjectClass *p_this); }  // x4:ida@0x
 
 // 0x522D00
 namespace gamemd {  // G42.18 ns repair
-int SlaveManagerClass::Check()
+int SlaveManagerClass::Check(void *a1, void *a2, void *a3)
 {
 
   int result; // eax
@@ -170,7 +170,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6,
 
 // 0x6AF360
 namespace gamemd {
-int SlaveManagerClass::Constructor()
+int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   int v2; // eax

@@ -599,7 +599,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3, void *a3_1)
 
 // 0x7AF000
 namespace gamemd {
-char DynamicVector::EnsureCapacity()
+char DynamicVector::EnsureCapacity(void *a1)
 {
 
   int result; // eax

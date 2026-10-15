@@ -10,7 +10,7 @@
 
 // 0x5D4E70
 namespace gamemd {  // G42.18 ns repair
-int DialogQueue::PushEntry(void *a1)
+int DialogQueue::PushEntry(void *a1, void *a2, void *a3, void *a4)
 {
   int result; // eax
 
@@ -32,7 +32,7 @@ int DialogQueue::PushEntry(void *a1)
 } // namespace gamemd
 // 0x5D4ED0
 namespace gamemd {
-int DialogQueue::RemoveEntry()
+int DialogQueue::RemoveEntry(void *a1)
 {
   int result; // eax
   DialogQueue *v2; // [esp+0h] [ebp-4h] BYREF

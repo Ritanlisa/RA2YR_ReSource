@@ -21,7 +21,7 @@
 
 // 0x5BF450
 namespace gamemd {  // G42.18 ns repair
-char AsyncIO::Shutdown()
+char AsyncIO::Shutdown(void *a1)
 {
 
   int v1; // esi
@@ -64,7 +64,7 @@ char AsyncIO::Shutdown()
 } // namespace gamemd
 // 0x774BC0
 namespace gamemd {
-int AsyncIO::WaitCompletion()
+int AsyncIO::WaitCompletion(void *a1)
 {
   char v2; // al
   int v4; // eax
@@ -105,7 +105,7 @@ int AsyncIO::WaitCompletion()
 } // namespace gamemd
 // 0x5BF500
 namespace gamemd {
-int AsyncIO::Read()
+int AsyncIO::Read(void *a1, void *a2, void *a3)
 {
   int result; // eax
 

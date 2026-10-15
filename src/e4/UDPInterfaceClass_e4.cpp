@@ -130,7 +130,7 @@ void UDPInterfaceClass::GetStatistics(unsigned short a2)
 } // namespace gamemd
 // 0x7B3A20
 namespace gamemd {
-AbstractClass * * UDPInterfaceClass::Flush()
+AbstractClass * * UDPInterfaceClass::Flush(void *a1)
 {
   int v1; // esi
   int v3; // ebx

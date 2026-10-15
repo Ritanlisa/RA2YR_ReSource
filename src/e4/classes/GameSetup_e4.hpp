@@ -14,7 +14,7 @@ struct GameSetup {
     AbstractClass * * WriteINI(CCINIClass * aP1, unsigned char * Block);
     int LookupDialogHash();
     static char FormatToString(GameSetup * aP1, uint8_t *Block, char *a3, int a4, int a5, int a6);
-    wchar_t * GetColorTooltip(void *a1 = 0);  // 0x4e42a0
+    static wchar_t * GetColorTooltip(void *a1 = 0);  // 0x4e42a0
     unsigned int q0104;  // 0x104 (offset-truth)
 
     unsigned char __pad_00C;  // X10 supply (csp_canon_members)

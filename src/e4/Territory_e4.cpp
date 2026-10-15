@@ -72,7 +72,7 @@ signed int Territory_WorldDominationTour_8::Release()
 }
 // 0x771950
 namespace gamemd {
-signed int Territory_WorldDominationTour_8::ddtor()
+signed int Territory_WorldDominationTour_8::ddtor(void *a1)
 {
 
   if ( *&this->Ticks == -1 ) /*0x771957*/

@@ -12,7 +12,7 @@ struct Progress {
     char m_Count[4];  // 0x24
 // --- flat members (END) ---
     int GetAverage(void *a1 = 0);
-    int GetWeighted(int a2, void *a2_1 = 0);
+    static int GetWeighted(int a2, void *a2_1 = 0);
     unsigned char u32_61;  // 0x61 (offset-truth)
 };
 

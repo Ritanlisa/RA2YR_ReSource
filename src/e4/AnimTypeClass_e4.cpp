@@ -627,7 +627,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
 
 // 0x48E050
 namespace gamemd {
-int AnimTypeClass::LookupByName()
+int AnimTypeClass::LookupByName(void *a1)
 {
   int v2; // edi
   char **v3; // esi
@@ -683,7 +683,7 @@ char AnimTypeClass::GetLoopCount(int a2)
 
 // 0x427CB0
 namespace gamemd {
-int AnimTypeClass::FindIndex()
+int AnimTypeClass::FindIndex(void *a1)
 {
   int v2; // esi
 

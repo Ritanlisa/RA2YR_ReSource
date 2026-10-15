@@ -148,7 +148,7 @@ int Mouse::SetCursor(int aP1, char aP2, void *a3)
 }
 // 0x6938C0
 namespace gamemd {
-HWND Mouse::ReleaseCapture()
+HWND Mouse::ReleaseCapture(void *a1)
 {
   int result; // eax
 

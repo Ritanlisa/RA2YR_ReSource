@@ -213,7 +213,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, in
 } // namespace gamemd
 // 0x40BE50
 namespace gamemd {
-void MoveFeedback::Destroy()
+void MoveFeedback::Destroy(void *a1)
 {
   void *v2; // eax
 

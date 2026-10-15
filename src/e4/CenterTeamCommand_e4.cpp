@@ -32,7 +32,7 @@ char * CenterTeamCommand::AddRef()
 } // namespace gamemd
 // 0x5361E0
 namespace gamemd {
-wchar_t * CenterTeamCommand::Release()
+wchar_t * CenterTeamCommand::Release(void *a1)
 {
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]

@@ -113,7 +113,7 @@ int Delegate::Dispatch(int aP1, int aP2, void *a3, void *a4)
 } // namespace gamemd
 // 0x6C95E0
 namespace gamemd {
-unsigned int * Delegate::GetField()
+unsigned int * Delegate::GetField(void *a1, void *a2)
 {
 
   this->m_items = 0; /*0x6c95e6*/

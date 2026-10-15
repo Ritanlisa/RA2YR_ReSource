@@ -871,7 +871,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
 
 // 0x4F9A50
 namespace gamemd {
-int HouseClass::IsAlliedWith()
+int HouseClass::IsAlliedWith(void *a1, void *a2)
 {
   int result; // eax
   int relatedTagsCount; // ecx
@@ -3404,7 +3404,7 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
 
 // 0x4F29D0
 namespace gamemd {
-void HouseClass_24::ddtor()
+void HouseClass_24::ddtor(void *a1)
 {
 
   if ( *&this->q004 && BYTE1(this->q00C) ) /*0x4f29dd*/

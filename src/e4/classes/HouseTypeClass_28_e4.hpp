@@ -12,7 +12,7 @@ struct HouseTypeClass_28 {
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1 = 0);  // 0x512990
-    int  Seek(int a2);  // 0x5129E0
+    int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x5129E0
     TypeList_flat *  QueryInterface(char a2);  // 0x512A90
     char  AddRef(int a2);  // 0x5133E0
     char  Release(int a2, unsigned int * a3);  // 0x513610

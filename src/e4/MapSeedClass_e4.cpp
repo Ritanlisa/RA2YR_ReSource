@@ -656,7 +656,7 @@ char MapSeedClass_18::Release(int a2, unsigned int * a3)
 
 // 0x5ACB50
 namespace gamemd {
-void MapSeedClass_18::ddtor()
+void MapSeedClass_18::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5acb5d*/
   {

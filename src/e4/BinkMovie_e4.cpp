@@ -75,7 +75,7 @@ unsigned int * BinkMovie::Open(char *FullPath, int a3, void *a3_1)
 }
 // 0x432700
 namespace gamemd {
-int BinkMovie::Stop()
+int BinkMovie::Stop(void *a1, void *a2)
 {
 
   void *BinkMovie_field_0x20; // edi

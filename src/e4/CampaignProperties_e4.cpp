@@ -92,7 +92,7 @@ int CampaignProperties_WorldDominationTour_22::Release(void *a1_1)
 
 // 0x76F1B0
 namespace gamemd {
-int CampaignProperties_WorldDominationTour_22::ddtor()
+int CampaignProperties_WorldDominationTour_22::ddtor(void *a1)
 {
 
   --this->u32_8; /*0x76f1b2*/

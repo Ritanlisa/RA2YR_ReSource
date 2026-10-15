@@ -272,7 +272,7 @@ int Session::GetPlayerOption()
 }
 // 0x69B720
 namespace gamemd {
-int Session::GetPlayerColor()
+int Session::GetPlayerColor(void *a1)
 {
 
   int result; // eax

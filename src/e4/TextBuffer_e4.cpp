@@ -16,7 +16,7 @@
 
 // 0x5BCC90
 namespace gamemd {  // G42.18 ns repair
-int TextBuffer::Init()
+int TextBuffer::Init(void *a1, void *a2)
 {
 
   int v1; // edi

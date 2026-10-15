@@ -834,7 +834,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
 
 // 0x4CA9E0
 namespace gamemd {
-void FactoryClass_33::ddtor()
+void FactoryClass_33::ddtor(void *a1)
 {
 
   if ( *&this->q004 && BYTE1(this->q00C) ) /*0x4ca9ed*/

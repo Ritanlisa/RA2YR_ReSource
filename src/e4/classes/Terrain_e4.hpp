@@ -13,7 +13,7 @@ struct Terrain {
     int GetTileIndex(int a2);  // 0x48B720
     int GetTileType(int aP1);  // 0x48B9E0
     void PlaceCliffs(int a2, int a3, int *aP3);  // G57w10-S raw 0x00568E40 IUnknown 占位清除
-    AbstractClass * * ConnectivityGraph(void *a1_1);  // 0x56C510
+    static AbstractClass * * ConnectivityGraph(void *a1_1);  // 0x56C510
     int FloodFillConnectivity(uint8_t *a1, int aP2, unsigned int *aP3, void *a4 = 0);  // 0x56CB90
     void ProcessCellModification(int16_t *aP1);  // G57w10-S raw 0x00570050 IUnknown 占位清除
     AbstractClass * * RecursiveModify(IUnknown * aP1);  // G57w10-S raw 0x00573540 IUnknown 占位清除

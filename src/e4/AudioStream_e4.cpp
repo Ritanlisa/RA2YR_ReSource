@@ -53,14 +53,14 @@ int AudioStream::ReleaseSubsystem()
 }  // G42.18 ns repair
 // 0x4026B0
 namespace gamemd {
-int AudioStream::Stop()
+int AudioStream::Stop(void *a1, void *a2)
 {
   return (*(int (**)(void))(this->u32_D4 + 44))();
 }
 }
 // 0x4026F0
 namespace gamemd {
-int AudioStream::ReleaseChannel()
+int AudioStream::ReleaseChannel(void *a1)
 {
 
   (*(void (**)(void))(this->u32_D4 + 40))(); /*0x4026f9*/
@@ -103,7 +103,7 @@ void AudioStream::DestroyAll(void * Block)
 }
 // 0x403820
 namespace gamemd {
-int AudioStream::Reset()
+int AudioStream::Reset(void *a1, void *a2)
 {
 
   *(unsigned int *)this->__pad_000 = 0; /*0x403822*/
@@ -1023,7 +1023,7 @@ LABEL_52:
 }
 // 0x7BD270
 namespace gamemd {
-int AudioStream::SetFlag4C()
+int AudioStream::SetFlag4C(void *a1)
 {
 
   int result; // eax
@@ -1352,7 +1352,7 @@ int AudioStream::ProcessStream()
 }
 // 0x7C3960
 namespace gamemd {
-unsigned int AudioStream::GetPosition()
+unsigned int AudioStream::GetPosition(void *a1)
 {
 
   return (unsigned int)(60 * ((int (__cdecl *)(AudioStream *))this->q050)(this)) /*0x7c3982*/

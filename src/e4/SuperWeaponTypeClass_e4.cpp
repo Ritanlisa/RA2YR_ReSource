@@ -726,7 +726,7 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * a2, unsigned char * a3, CCINIC
 
 // 0x5117D0
 namespace gamemd {
-int SuperWeaponTypeClass::FindByName()
+int SuperWeaponTypeClass::FindByName(void *a1)
 {
   int v3; // ebx
   int v4; // esi

@@ -77,7 +77,7 @@ char Debug::ScrollText(const char * aP1)
 }  // G42.18 ns repair
 // 0x6E61F0
 namespace gamemd {
-int Debug::AccumFlags()
+int Debug::AccumFlags(void *a1)
 {
 
   TriggerTypeClass *Debug_field_0xA0; // esi

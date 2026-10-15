@@ -9,7 +9,7 @@
 
 // 0x537B40
 namespace gamemd {  // G42.18 ns repair
-unsigned int * ScreenCaptureCommandClass::Constructor()
+unsigned int * ScreenCaptureCommandClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
   /* X11: vtable install elided (implicit via ScreenCaptureCommandClass virtuals 0x537b42) */
   return (unsigned int *)(this->vtable1); /*0x537b48*/
@@ -24,7 +24,7 @@ char ScreenCaptureCommandClass::AddRef(void *a1)
 } // namespace gamemd
 // 0x537B60
 namespace gamemd {
-wchar_t * ScreenCaptureCommandClass::ddtor()
+wchar_t * ScreenCaptureCommandClass::ddtor(void *a1)
 {
   return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 8071); /*0x537b76*/
 }

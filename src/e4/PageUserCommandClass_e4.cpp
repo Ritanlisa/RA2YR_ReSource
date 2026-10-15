@@ -50,14 +50,14 @@ wchar_t * PageUserCommandClass::Release(void *a1)
 }  // G42.18c ns repair
 // 0x537E10
 namespace gamemd {  // G42.18c ns repair
-wchar_t * PageUserCommandClass::ddtor()
+wchar_t * PageUserCommandClass::ddtor(void *a1)
 {
   return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 7565); /*0x537e26*/
 }
 }  // G42.18c ns repair
 // 0x537E30
 namespace gamemd {  // G42.18c ns repair
-wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
+wchar_t * PageUserCommandClass::Read(void *a1, void *a2, void *a3)
 {
   return GetStringCSF((wchar_t *)(aTxtPageuserDes), 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/
 }

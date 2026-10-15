@@ -2346,7 +2346,7 @@ char E4Recv_7B39D0::sub_7B39D0(unsigned int * a2, short a3)
 
 // 0x7B46F0
 namespace gamemd {
-void E4Recv_7B46F0::DeleteAndZero()
+void E4Recv_7B46F0::DeleteAndZero(void *a1, void *a2)
 {
   int result; // eax
 

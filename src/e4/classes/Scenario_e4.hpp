@@ -22,7 +22,7 @@ struct Scenario {
     char LoadOrReloadOptions(int aP1);  // G57w10-S raw 0x00597A10 IUnknown 占位清除
     static int PreGameInit();  // 0x5E7460
     void SetByte96();  // 0x642AD0
-    int ClearScreen(void *a1_1);  // x4:ida@0x684240
+    static int ClearScreen(void *a1_1);  // x4:ida@0x684240
 char LoadWithProgress(void *a1 = 0, void *a2 = 0);
     int FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3);  // 0x4758F0
     void * ResetDisplayArrays();  // 0x5C9700

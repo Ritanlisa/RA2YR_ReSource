@@ -179,7 +179,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 }
 // 0x5CEE60
 namespace gamemd {
-CampaignClass * MSEngine::Destructor()
+CampaignClass * MSEngine::Destructor(void *a1)
 {
 
   void *v2; // eax
@@ -220,7 +220,7 @@ CampaignClass * MSEngine::Destructor()
 }
 // 0x5D1AA0
 namespace gamemd {
-CampaignClass * MSEngine::Construct()
+CampaignClass * MSEngine::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   void **p_MSEngine_field_0x8; // ecx
@@ -258,7 +258,7 @@ CampaignClass * MSEngine::Construct()
 }
 // 0x5D1B30
 namespace gamemd {
-CampaignClass * MSEngine::Destruct()
+CampaignClass * MSEngine::Destruct(void *a1)
 {
 
   int v2; // ebp
@@ -433,7 +433,7 @@ char MSEngine::AddRef(int a2)
 
 // 0x5ACE20
 namespace gamemd {
-CampaignClass * MSEngine::ddtor()
+CampaignClass * MSEngine::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (this->q00E) ) /*0x5ace2d*/
   {

@@ -1100,7 +1100,7 @@ unsigned int * HouseTypeClass::readStartUnit()
 
 // 0x512990
 namespace gamemd {
-wchar_t * HouseTypeClass_28::ddtor()
+wchar_t * HouseTypeClass_28::ddtor(void *a1)
 {
 
   void *v2; // eax
@@ -1734,7 +1734,7 @@ int HouseTypeClass::readLoadoutData(int a1)
 
 // 0x6A46D0
 namespace gamemd {
-int HouseTypeClass::Find()
+int HouseTypeClass::Find(void *a1, void *a2)
 {
   int v1; // esi
 
