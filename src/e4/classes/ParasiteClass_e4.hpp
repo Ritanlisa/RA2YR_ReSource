@@ -19,7 +19,7 @@ struct ParasiteClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    void* creationFrame;  // 0x24 [X30:type_map]
+int creationFrame;  // 0x24 [X35-L7 kind=int]
     char ParasiteClass_field_30[4];  // 0x30
     unsigned int alignmentPadding;  // 0x33
     int ParasiteClass_field_34;  // 0x34 [X30:type_map]
@@ -40,15 +40,15 @@ struct ParasiteClass {
     void DeploySquad();
     void TickDamage();
     void * UpdateParasite(ParasiteClass * Block, char a2);
-    IUnknown* u32_48;  // 0x48 (offset-truth) [X30:type_map]
+unsigned int u32_48;  // 0x48 [X35-L7 kind=unsigned int]
     unsigned int u32_54;  // 0x54 (offset-truth)
 
     unsigned char __pad_028;  // X10 supply (csp_canon_members)
     IUnknown* q04C;  // X10 supply (member_lookup)
     unsigned int u32_44;  // X10 supply (member_lookup)
     int u32_50;  // X10 supply (member_lookup)
-    IUnknown* __pad_038;  // 0x38 [X30:type_map]
-    IUnknown* ParasiteClass_field_38;  // 0x38 [X30:type_map]
+unsigned int __pad_038;  // 0x38 [X35-L7 kind=unsigned int]
+unsigned int ParasiteClass_field_38;  // 0x38 [X35-L7 kind=unsigned int]
 };
 
 } // namespace gamemd

@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Movement {
 // --- flat members (BEGIN) ---
-    char Movement_field_00[4];  // 0x0
+int Movement_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     static void UpdateLocomotion(void *aP1, void *a2);
     int * DivideAndStoreScaled(int * a2, int a3);

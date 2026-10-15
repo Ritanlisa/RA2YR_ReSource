@@ -37,9 +37,9 @@ struct ShipLocomotionClass {
     ShipLocomotionClass * ProcessMove(ILocomotion ** Block, char a2);
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
-    void* Owner;  // 0x8 (ml) [X30:type_map]
+unsigned int Owner;  // 0x8 [X35-L7 kind=unsigned int]
     ILocomotion* Piggybackee;  // 0x68 (ml) [X30:type_map]
-    void* __pad_008;  // 0x8 [X30:type_map]
+unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
     unsigned char __pad_066;  // 0x66 [X30:canon]
 };
 

@@ -30,8 +30,8 @@ struct ParticleClass {
     ObjectClass* nextObject;  // 0x30
     unsigned int alignmentPadding;  // 0x33
     TagClass* attachedTag;  // 0x34
-    char customSound[4];  // 0x64
-    char estimatedHealth[4];  // 0x70
+int customSound;  // 0x64 [X35-L7 kind=int]
+int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     unsigned char alignmentPadding75;  // 0x75
     unsigned int spawnStatus;  // 0x78
     unsigned int visibilityFlags;  // 0x7C
@@ -72,7 +72,7 @@ struct ParticleClass {
     void DrawParticle(int * a2, int * a3);
     void Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // G42.39 supply
     char __pad_B0[4];  // 0xB0 (ml)
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int q0100;  // 0x100 (offset-truth)
     unsigned char q0101;  // 0x101 (offset-truth)
     unsigned char q0103;  // 0x103 (offset-truth)

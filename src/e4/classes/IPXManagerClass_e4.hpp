@@ -23,7 +23,7 @@ struct IPXManagerClass {
     void StubReturnFalse(int a1, int a2);
     static int destroyConnection(void *a1 = 0);  // 0x540d60
     unsigned int * createConnection(void *a1 = 0);  // 0x540d40
-    int Socket;  // 0x0 (ml)
+unsigned int Socket;  // 0x0 [X35-L7 kind=unsigned int]
 
     unsigned int u32_4C;  // X10 supply (member_lookup)
 

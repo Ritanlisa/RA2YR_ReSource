@@ -18,25 +18,25 @@ struct TeamTypeClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    void* TeamTypeClass_field_24;  // 0x24 [X30:type_map]
+int TeamTypeClass_field_24;  // 0x24 [X35-L7 kind=int]
     unsigned char TeamTypeClass_field_28;  // 0x28
     unsigned char pad_29;  // 0x29
     char TeamTypeClass_field_2C[4];  // 0x2C
     char TeamTypeClass_field_30[4];  // 0x30
     unsigned int alignmentPadding;  // 0x33
     int TeamTypeClass_field_34;  // 0x34 [X30:type_map]
-    char TeamTypeClass_field_38[4];  // 0x38
+int TeamTypeClass_field_38;  // 0x38 [X35-L7 kind=int]
     char TeamTypeClass_field_3C[4];  // 0x3C
     unsigned int UINameLabel;  // 0x3D
     unsigned int taskForce;  // 0x40
-    char taskForceCount[4];  // 0x44
-    char taskForceCapacity[4];  // 0x48
-    char TeamTypeClass_field_58[4];  // 0x58
+int taskForceCount;  // 0x44 [X35-L7 kind=int]
+int taskForceCapacity;  // 0x48 [X35-L7 kind=int]
+int TeamTypeClass_field_58;  // 0x58 [X35-L7 kind=int]
     unsigned char TeamTypeClass_field_5C;  // 0x5C
     unsigned char TeamTypeClass_field_5D;  // 0x5D
     unsigned char pad_5E;  // 0x5E
     int TeamTypeClass_field_64;  // 0x64 [X30:type_map]
-    char TeamTypeClass_field_68[4];  // 0x68
+int TeamTypeClass_field_68;  // 0x68 [X35-L7 kind=int]
     char TeamTypeClass_field_6C[4];  // 0x6C
     unsigned char TeamTypeClass_field_70;  // 0x70
     unsigned char TeamTypeClass_field_71;  // 0x71
@@ -84,7 +84,7 @@ struct TeamTypeClass {
     unsigned char __pad_060;  // 0x60 [X30:canon]
     unsigned int FootClass_E0;  // [X30:default]
     unsigned int Tactical_E4;  // [X30:default]
-    int TeamTypeClass_field_60;  // 0x60 [X30:member_lookup]
+unsigned int TeamTypeClass_field_60;  // 0x60 [X35-L7 kind=unsigned int]
     char __pad_4C[12];  // 0x4C [X30:member_lookup]
 };
 

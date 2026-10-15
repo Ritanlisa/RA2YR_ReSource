@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Byte {
 // --- flat members (BEGIN) ---
-    char Byte_field_00[4];  // 0x0
+int Byte_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     unsigned char * Zero();
 };

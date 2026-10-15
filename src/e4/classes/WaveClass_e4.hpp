@@ -13,12 +13,12 @@ struct WaveClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* WaveClass_field_BC;  // 0x10 [X30:type_map]
+unsigned int WaveClass_field_BC;  // 0x10 [X35-L7 kind=unsigned int]
     unsigned char alignmentPadding_3;  // 0x11
     ObjectClass* nextObject;  // 0x12
     bool IsAllocated;  // 0x13
-    void* WaveClass_field_C0;  // 0x14 [X30:type_map]
-    void* WaveClass_field_C4;  // 0x18 [X30:type_map]
+unsigned int WaveClass_field_C0;  // 0x14 [X35-L7 kind=unsigned int]
+unsigned int WaveClass_field_C4;  // 0x18 [X35-L7 kind=unsigned int]
     unsigned int WaveClass_field_C8;  // 0x1C
     unsigned int WaveClass_field_CC;  // 0x20
     unsigned int WaveClass_field_D0;  // 0x24

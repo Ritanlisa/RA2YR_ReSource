@@ -9,10 +9,10 @@ namespace gamemd {
 struct MultiplayerSiege {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char MultiplayerSiege_field_04[4];  // 0x4
-    char MultiplayerSiege_field_08[4];  // 0x8
+int MultiplayerSiege_field_04;  // 0x4 [X35-L7 kind=int]
+int MultiplayerSiege_field_08;  // 0x8 [X35-L7 kind=int]
     char MultiplayerSiege_field_0C[4];  // 0xC
-    char MultiplayerSiege_field_10[4];  // 0x10
+int MultiplayerSiege_field_10;  // 0x10 [X35-L7 kind=int]
 // --- flat members (END) ---
     AbstractClass * * ProcessTurn(char a2);
     MultiplayerSiege * QueryInterface(char a2);

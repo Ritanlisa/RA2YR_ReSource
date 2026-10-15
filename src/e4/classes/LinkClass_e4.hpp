@@ -15,8 +15,8 @@ struct LinkClass {
     LinkClass * Destru_vt00(unsigned int * Block, char a2);
     int Destroy(void *a1);
     int Destruct(void *a1 = 0);
-    unsigned int *q000;  // 0x0 (offset-truth)
-    int __pad_0;  // 0x0 [X30:type_map]
+void* q000;  // 0x0 [X35-L7 kind=void*]
+void* __pad_0;  // 0x0 [X35-L7 kind=void*]
     unsigned char __pad_038;  // 0x38 [X30:member_lookup]
 };
 

@@ -45,7 +45,7 @@ struct InfantryClass {
     BombClass* attachedBomb;  // 0x38
     char ambientSoundController[4];  // 0x3C
     char customSound_controller[4];  // 0x50
-    char customSound[4];  // 0x64
+int customSound;  // 0x64 [X35-L7 kind=int]
     bool bombVisible;  // 0x68
     int health;  // 0x6C [X30:type_map]
     int estimatedHealth;  // 0x70 [X30:type_map]
@@ -86,17 +86,17 @@ struct InfantryClass {
     unsigned int radioQueue;  // 0x110
     char passengers[8];  // 0x114
     TechnoClass* transporter;  // 0x11C
-    char turretChargeTimer[4];  // 0x120
+int turretChargeTimer;  // 0x120 [X35-L7 kind=int]
     void* currentTurretNumber;  // 0x124
-    char secondaryTurretIndex[4];  // 0x128
+int secondaryTurretIndex;  // 0x128 [X35-L7 kind=int]
     AnimClass* behindAnim;  // 0x12C
     AnimClass* deployAnim;  // 0x130
     bool inAirFlag;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
-    char radioQueueCount[4];  // 0x138
+int radioQueueCount;  // 0x138 [X35-L7 kind=int]
     char currentRank[4];  // 0x13C
     void* gattlingStage;  // 0x140
-    char gattlingValue[4];  // 0x144
+int gattlingValue;  // 0x144 [X35-L7 kind=int]
     unsigned int ammoReloadTimer;  // 0x148
     HouseClass* initialOwner;  // 0x14C
     void* veterancy;  // 0x150
@@ -139,7 +139,7 @@ struct InfantryClass {
     unsigned int ammo;  // 0x258
     unsigned int unitValue;  // 0x25C
     int fireParticles;  // 0x260 [X30:type_map]
-    char sparkParticles[4];  // 0x264
+int sparkParticles;  // 0x264 [X35-L7 kind=int]
     void* ambientParticles;  // 0x268
     char isGeneratingGap;  // 0x269
     char damageParticles[4];  // 0x26C
@@ -152,7 +152,7 @@ struct InfantryClass {
     bool firingParticles;  // 0x27C
     unsigned int alignmentPadding27E;  // 0x27E
     unsigned int waveEffect;  // 0x280
-    char tiltSidewaysAngle[4];  // 0x284
+int tiltSidewaysAngle;  // 0x284 [X35-L7 kind=int]
     Coord* tiltForwardsAngle;  // 0x288 [X30:type_map]
     unsigned int tiltSidewaysRate;  // 0x28C
     unsigned int tiltForwardsRate;  // 0x290
@@ -285,7 +285,7 @@ struct InfantryClass {
     char FootClass_field_52E[4];  // 0x52E
     int FootClass_field_530;  // 0x530
     int FootClass_field_534;  // 0x534
-    char FootClass_field_538[4];  // 0x538
+int FootClass_field_538;  // 0x538 [X35-L7 kind=int]
     bool FootClass_field_53C;  // 0x53C
     unsigned int m_padding_53D;  // 0x53D
     int FootClass_field_540;  // 0x540
@@ -325,15 +325,15 @@ struct InfantryClass {
     char FootClass_field_644[4];  // 0x644
     char FootClass_field_648[4];  // 0x648
     char FootClass_field_64C[4];  // 0x64C
-    char FootClass_field_650[4];  // 0x650
-    char FootClass_field_654[4];  // 0x654
+int FootClass_field_650;  // 0x650 [X35-L7 kind=int]
+int FootClass_field_654;  // 0x654 [X35-L7 kind=int]
     char FootClass_field_658[4];  // 0x658
     char FootClass_field_65C[4];  // 0x65C
     char FootClass_field_660[4];  // 0x660
     char FootClass_field_664[4];  // 0x664
     unsigned int FootClass_field_668;  // 0x668
     char FootClass_field_66C[4];  // 0x66C
-    char FootClass_field_670[4];  // 0x670
+int FootClass_field_670;  // 0x670 [X35-L7 kind=int]
     ILocomotion* Locomotor;  // 0x674
     LocomotionClass* Locomotor_ptr;  // 0x678
     IUnknown* IsDeploying;  // 0x67C [X30:type_map]
@@ -349,7 +349,7 @@ struct InfantryClass {
     char shouldEnterAbsorber;  // 0x68F
     char shouldEnterOccupiable;  // 0x690
     char shouldGarrisonStructure;  // 0x691
-    char FootClass_field_694[4];  // 0x694
+int FootClass_field_694;  // 0x694 [X35-L7 kind=int]
     int FootClass_field_698;  // 0x698 [X30:type_map]
     void* FootClass_field_69C;  // 0x69C [X30:type_map]
     char FootClass_field_6A0[4];  // 0x6A0
@@ -443,8 +443,8 @@ struct InfantryClass {
     unsigned char __pad_3D1;  // 0x3D1 [X30:canon]
     bool __pad_3D5;  // 0x3D5 [X30:type_map]
     unsigned char __pad_41C;  // 0x41C [X30:canon]
-    unsigned char __pad_422;  // 0x422 [X30:canon]
-    unsigned char __pad_425;  // 0x425 [X30:canon]
+bool __pad_422;  // 0x422 [X35-L7 kind=bool]
+bool __pad_425;  // 0x425 [X35-L7 kind=bool]
     unsigned char __pad_42C;  // 0x42C [X30:canon]
     unsigned char __pad_434;  // 0x434 [X30:canon]
     unsigned char __pad_43A;  // 0x43A [X30:canon]

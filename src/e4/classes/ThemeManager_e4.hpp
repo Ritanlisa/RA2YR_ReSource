@@ -9,8 +9,8 @@ struct ThemeManager {
 // --- flat members (BEGIN) ---
     unsigned char u8_C;  // 0xC
     unsigned int u32_10;  // 0x10
-    void* u32_14;  // 0x14 [X30:type_map]
-    void* u32_18;  // 0x18 [X30:type_map]
+unsigned int u32_14;  // 0x14 [X35-L7 kind=unsigned int]
+unsigned int u32_18;  // 0x18 [X35-L7 kind=unsigned int]
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int u32_2C;  // 0x2C

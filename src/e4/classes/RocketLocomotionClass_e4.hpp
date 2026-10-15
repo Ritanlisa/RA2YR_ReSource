@@ -36,7 +36,7 @@ struct RocketLocomotionClass {
     int BeginMove(int * a1, int * a2);
     int StubReturn96();
     int ddtor(int a1, unsigned int * a2);
-    void* __pad_008;  // 0x8 [X30:type_map]
+unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
     unsigned char __pad_012;  // 0x12 [X30:canon]
     unsigned char __pad_052;  // 0x52 [X30:canon]
 };

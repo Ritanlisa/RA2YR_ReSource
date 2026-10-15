@@ -17,7 +17,7 @@ struct MissionClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* uniqueId;  // 0x10 [X30:type_map]
+unsigned int uniqueId;  // 0x10 [X35-L7 kind=unsigned int]
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned int AARate;  // 0x18
@@ -33,11 +33,11 @@ struct MissionClass {
     BombClass* attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
-    AudioController* customSound;  // 0x64 [X30:type_map]
+int customSound;  // 0x64 [X35-L7 kind=int]
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     int health;  // 0x6C [X30:type_map]
-    char estimatedHealth[4];  // 0x70
+int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int spawnStatus;  // 0x78

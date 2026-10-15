@@ -27,12 +27,12 @@ struct TActionClass {
     int idxArray;  // 0x24 [X30:type_map]
     void* TActionClass_field_28;  // 0x28
     AbstractClass* TActionClass_field_2C;  // 0x2C [X30:type_map]
-    AbstractClass* TActionClass_field_30;  // 0x30 [X30:type_map]
+void* TActionClass_field_30;  // 0x30 [X35-L7 kind=void*]
     unsigned int alignmentPadding;  // 0x33
-    AnimClass* TActionClass_field_34;  // 0x34 [X30:type_map]
+void* TActionClass_field_34;  // 0x34 [X35-L7 kind=void*]
     void* TActionClass_field_38;  // 0x38
     AbstractClass* TActionClass_field_3C;  // 0x3C [X30:type_map]
-    AbstractClass* TActionClass_field_40;  // 0x40 [X30:type_map]
+void* TActionClass_field_40;  // 0x40 [X35-L7 kind=void*]
     AbstractClass * TActionClass_field_44;  // 0x44
     void* TActionClass_field_48;  // 0x48
     AbstractClass* TActionClass_field_4C;  // 0x4C [X30:type_map]
@@ -110,7 +110,7 @@ char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4
     unsigned int u32_10C;  // 0x10C (offset-truth)
     unsigned char u32_1F7;  // 0x1F7 (offset-truth)
     unsigned int u32_1F8;  // 0x1F8 (offset-truth)
-    IUnknown* u32_298;  // 0x298 (offset-truth) [X30:type_map]
+unsigned int u32_298;  // 0x298 [X35-L7 kind=unsigned int]
     unsigned int u32_53A0;  // 0x53A0 (offset-truth)
     unsigned int u32_5494;  // 0x5494 (offset-truth)
     unsigned int u32_54F0;  // 0x54F0 (offset-truth)

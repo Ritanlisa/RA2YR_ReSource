@@ -32,10 +32,10 @@ struct TeamClass {
     HouseClass* target;  // 0x30
     unsigned int alignmentPadding;  // 0x33
     CellClass* spawnCell;  // 0x34
-    void* unknown38;  // 0x38 [X30:type_map]
+unsigned int unknown38;  // 0x38 [X35-L7 kind=unsigned int]
     AbstractClass* queuedFocus;  // 0x3C
     AbstractClass* focus;  // 0x40
-    AbstractClass* unknown44;  // 0x44 [X30:type_map]
+int unknown44;  // 0x44 [X35-L7 kind=int]
     int totalObjects;  // 0x48 [X30:type_map]
     int totalThreatValue;  // 0x4C [X30:type_map]
     int creationFrame;  // 0x50 [X30:type_map]

@@ -16,14 +16,14 @@ struct Warhead {
     bool q01B;  // 0x1B
     unsigned char q01C;  // 0x1C
     unsigned int q020;  // 0x20
-    void *q24;  // 0x24
+unsigned int q24;  // 0x24 [X35-L7 kind=unsigned int]
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30
-    void* q034;  // 0x34
+unsigned int q034;  // 0x34 [X35-L7 kind=unsigned int]
     unsigned int u32_38;  // 0x38
     unsigned char u8_3C;  // 0x3C
-    void* q040;  // 0x40
-    Warhead* q044;  // 0x44
+unsigned int q040;  // 0x40 [X35-L7 kind=unsigned int]
+unsigned int q044;  // 0x44 [X35-L7 kind=unsigned int]
     unsigned int q048;  // 0x48
     unsigned int q054;  // 0x54
     unsigned int u32_58;  // 0x58

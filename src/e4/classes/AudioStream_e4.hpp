@@ -97,6 +97,6 @@ struct AudioStream {
     int u32_C0;  // X10 supply (member_lookup)
     int u32_D4;  // X10 supply (member_lookup)
     unsigned char u8_4;  // X10 supply (member_lookup)
-    void* u32_70;  // 0x70 [X30:type_map]
+unsigned int u32_70;  // 0x70 [X35-L7 kind=unsigned int]
 };
 } // namespace gamemd

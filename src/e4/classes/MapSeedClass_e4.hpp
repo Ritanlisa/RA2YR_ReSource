@@ -25,10 +25,10 @@ struct MapSeedClass {
     char PlaceCityBlockDiagonal(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
     char PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
     static int Constructor(int aP1);
-    unsigned char *m_1;  // 0x1 (offset-truth)
+unsigned int m_1;  // 0x1 [X35-L7 kind=unsigned int]
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     int __pad_004;  // 0x4 [X30:type_map]
     unsigned char __pad_011;  // 0x11 [X30:canon]
     unsigned char __pad_01A;  // 0x1A [X30:canon]

@@ -9,7 +9,7 @@ namespace gamemd {
 #define GAMEMD_G2_RefCount_DEF 1
 struct RefCount {
 // --- flat members (BEGIN) ---
-    char m_RefCount[4];  // 0x0
+int m_RefCount;  // 0x0 [X35-L7 kind=int]
     int RefCount_field_04;  // 0x4 [X30:type_map]
 // --- flat members (END) ---
     int32_t Decrement(void *a1 = 0);

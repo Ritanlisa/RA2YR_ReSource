@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct MessageListClass {
 // --- flat members (BEGIN) ---
-    char MessageCount[4];  // 0x0
+int MessageCount;  // 0x0 [X35-L7 kind=int]
     int MaxMessageCount;  // 0x4 [X30:type_map]
     int ScrollOffset;  // 0x8 [X30:type_map]
     int TextColorIndex;  // 0xC [X30:type_map]

@@ -38,11 +38,11 @@ struct CellClass {
     unsigned int CellClass_field_5C;  // 0x5C
     unsigned int unknown60;  // 0x60
     unsigned int unknown64;  // 0x64
-    void* unknown68;  // 0x68 [X30:type_map]
+unsigned int unknown68;  // 0x68 [X35-L7 kind=unsigned int]
     unsigned int CellClass_field_6C;  // 0x6C
     unsigned int unknown70;  // 0x70
-    void* unknown74;  // 0x74 [X30:type_map]
-    AbstractClass* cloakedByHouses;  // 0x78 [X30:type_map]
+unsigned int unknown74;  // 0x74 [X35-L7 kind=unsigned int]
+unsigned int cloakedByHouses;  // 0x78 [X35-L7 kind=unsigned int]
     unsigned char sensorsOfHouses;  // 0x7C
     unsigned char disguiseAsType_sensors_of_houses;  // 0xAC
     AbstractClass* baseSpacerOfHouses;  // 0xDC [X30:type_map]
@@ -62,7 +62,7 @@ struct CellClass {
     unsigned short unknown110;  // 0x110
     unsigned short unknown112;  // 0x112
     unsigned short unknown114;  // 0x114
-    char tubeIndex[2];  // 0x116
+short tubeIndex;  // 0x116 [X35-L7 kind=short]
     char unknown118[1];  // 0x118
     char unknown119[1];  // 0x119
     char height[1];  // 0x11A
@@ -79,7 +79,7 @@ struct CellClass {
     unsigned int altOccupationFlags;  // 0x128
     int copyFlags;  // 0x12C [X30:type_map]
     int shroudCounter;  // 0x130 [X30:type_map]
-    AbstractClass* gapsCoveringThisCell;  // 0x134 [X30:type_map]
+unsigned int gapsCoveringThisCell;  // 0x134 [X35-L7 kind=unsigned int]
     bool visibilityChanged;  // 0x138
     unsigned char align139;  // 0x139
     unsigned int CellClass_field_13C;  // 0x13C

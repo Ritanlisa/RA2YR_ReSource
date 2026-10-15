@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Explosion {
 // --- flat members (BEGIN) ---
-    char Explosion_field_00[4];  // 0x0
+int Explosion_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     char RemoveItem(int a2, void *a2_2);
 };

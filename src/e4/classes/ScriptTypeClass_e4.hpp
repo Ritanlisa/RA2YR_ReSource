@@ -25,7 +25,7 @@ struct ScriptTypeClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    void* arrayIndex;  // 0x24 [X30:type_map]
+int arrayIndex;  // 0x24 [X35-L7 kind=int]
     bool isGlobal;  // 0x28
     char actionsCount[4];  // 0x2C
     char scriptActions[400];  // 0x30

@@ -40,7 +40,7 @@ struct AircraftTypeClass {
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    void* BarrelVoxel;  // 0x24 [X30:type_map]
+unsigned int BarrelVoxel;  // 0x24 [X35-L7 kind=unsigned int]
     int TargetEffectivenessCoefficient;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
     bool TargetSpecialThreatCoefficient;  // 0x30
@@ -431,10 +431,10 @@ struct AircraftTypeClass {
     unsigned char __pad_0A9;  // 0xA9 [X30:canon]
     unsigned char __pad_0B8;  // 0xB8 [X30:canon]
     unsigned char __pad_14D;  // 0x14D [X30:canon]
-    unsigned char __pad_211;  // 0x211 [X30:canon]
+bool __pad_211;  // 0x211 [X35-L7 kind=bool]
     unsigned char __pad_22C;  // 0x22C [X30:canon]
-    unsigned char __pad_233;  // 0x233 [X30:canon]
-    unsigned char __pad_237;  // 0x237 [X30:canon]
+bool __pad_233;  // 0x233 [X35-L7 kind=bool]
+bool __pad_237;  // 0x237 [X35-L7 kind=bool]
     unsigned char __pad_296;  // 0x296 [X30:canon]
     unsigned char __pad_2DD;  // 0x2DD [X30:canon]
     unsigned char __pad_2E5;  // 0x2E5 [X30:canon]

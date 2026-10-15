@@ -66,7 +66,7 @@ struct String {
     unsigned char u8_1;  // X10 supply (member_lookup)
     unsigned int AssignFromPtrthis;  // [X30:default]
     unsigned int Reassignthis;  // [X30:default]
-    void* SessionClass_field_14;  // 0x14 [X30:type_map]
+unsigned int SessionClass_field_14;  // 0x14 [X35-L7 kind=unsigned int]
     unsigned int headNode;  // [X30:default]
     ObjectClass * vtable2;  // 0x4 [X30:member_lookup]
 };

@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Control {
 // --- flat members (BEGIN) ---
-    char Control_field_00[4];  // 0x0
+int Control_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     static unsigned int * CreateControlDialog(void *aP1);
     int CheckControlTypeDialog();

@@ -17,18 +17,18 @@ struct AirstrikeClass {
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    char AirstrikeClass_field_24[4];  // 0x24
-    char AirstrikeClass_field_28[4];  // 0x28
+int AirstrikeClass_field_24;  // 0x24 [X35-L7 kind=int]
+int AirstrikeClass_field_28;  // 0x28 [X35-L7 kind=int]
     void* EliteAirstrikeTeamTypeIndex;  // 0x30
     unsigned int alignmentPadding;  // 0x33
     unsigned char AirstrikeClass_field_3C;  // 0x3C
     unsigned char AirstrikeClass_field_3D;  // 0x3D
     unsigned char pad_3E;  // 0x3E
-    char AirstrikeClass_field_44[4];  // 0x44
-    char AirstrikeClass_field_48[4];  // 0x48
+int AirstrikeClass_field_44;  // 0x44 [X35-L7 kind=int]
+int AirstrikeClass_field_48;  // 0x48 [X35-L7 kind=int]
     TechnoClass* owner;  // 0x4C
-    char AirstrikeClass_field_54[4];  // 0x54
-    char AirstrikeClass_field_58[4];  // 0x58
+int AirstrikeClass_field_54;  // 0x54 [X35-L7 kind=int]
+int AirstrikeClass_field_58;  // 0x58 [X35-L7 kind=int]
     int AirstrikeClass_field_5C;  // 0x5C [X30:type_map]
 // --- flat members (END) ---
     AbstractClass * * UpdateAll();
@@ -46,8 +46,8 @@ struct AirstrikeClass {
     unsigned char __pad_02C;  // 0x2C [X30:canon]
     unsigned char __pad_037;  // 0x37 [X30:canon]
     unsigned char __pad_040;  // 0x40 [X30:canon]
-    int __pad_050;  // 0x50 [X30:type_map]
-    int AirstrikeClass_field_50;  // 0x50 [X30:type_map]
+unsigned int __pad_050;  // 0x50 [X35-L7 kind=unsigned int]
+unsigned int AirstrikeClass_field_50;  // 0x50 [X35-L7 kind=unsigned int]
     int32_t vtable22;  // 0x54 [X30:member_lookup]
     void* vtable26;  // 0x64 [X30:member_lookup]
     unsigned int vtable33;  // 0x80 [X30:member_lookup]

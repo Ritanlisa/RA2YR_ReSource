@@ -20,8 +20,8 @@ struct TagTypeClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    TagTypeClass* arrayIndex;  // 0x24 [X30:type_map]
-    char persistence[4];  // 0x28
+int arrayIndex;  // 0x24 [X35-L7 kind=int]
+int persistence;  // 0x28 [X35-L7 kind=int]
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(void *a1);
     AbstractTypeClass * Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);

@@ -110,10 +110,10 @@ struct BuildingClass {
     int deployAnim_d;  // 0x130
     unsigned char inAirFlag_d;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
-    char currentWeaponSlot[4];  // 0x138
+int currentWeaponSlot;  // 0x138 [X35-L7 kind=int]
     unsigned char alignmentPadding139_d;  // 0x139
     void* currentRank;  // 0x140
-    char gattlingStage[4];  // 0x144
+int gattlingStage;  // 0x144 [X35-L7 kind=int]
     unsigned int gattlingValue;  // 0x148
     HouseClass* ammoReloadTimer;  // 0x14C
     void* initialOwner;  // 0x150
@@ -165,7 +165,7 @@ struct BuildingClass {
     int displayProductionTo;  // 0x214 [X30:type_map]
     AbstractClass* Owner;  // 0x218
     DynamicVector* owner;  // 0x21C [X30:type_map]
-    ParticleSystemClass* owner_d;  // 0x220 [X30:type_map]
+unsigned int owner_d;  // 0x220 [X35-L7 kind=unsigned int]
     char cloakState[4];  // 0x224
     unsigned long long cloakProgress;  // 0x228
     unsigned char cloakDelayTimer;  // 0x230
@@ -174,7 +174,7 @@ struct BuildingClass {
     unsigned char alignmentPadding251;  // 0x251
     char lastSightCoords[12];  // 0x254
     int lastSightRange;  // 0x260 [X30:type_map]
-    char lastSightHeight[4];  // 0x264
+int lastSightHeight;  // 0x264 [X35-L7 kind=int]
     void* gapSuperCharged;  // 0x268
     bool isGeneratingGap;  // 0x269
     void* gapRadius;  // 0x26C
@@ -435,16 +435,16 @@ struct BuildingClass {
     void* PrismStage;  // 0x704 [X30:type_map]
     char PrismTargetCoords[12];  // 0x708
     unsigned int DelayBeforeFiring;  // 0x714
-    void* BunkerState;  // 0x718 [X30:type_map]
+int BunkerState;  // 0x718 [X35-L7 kind=int]
     char ProductionTimer[4];  // 0x71C
     bool PlacementAllowed;  // 0x720
     unsigned char ProductionBlocked;  // 0x721
     unsigned char padProd1;  // 0x722
     unsigned char padProd2;  // 0x723
-    char ProductionAccum[4];  // 0x724
-    char ProductionFrame[4];  // 0x728
+int ProductionAccum;  // 0x724 [X35-L7 kind=int]
+int ProductionFrame;  // 0x728 [X35-L7 kind=int]
     char ProductionRate[4];  // 0x72C
-    char ProductionSpeed[4];  // 0x730
+int ProductionSpeed;  // 0x730 [X35-L7 kind=int]
     double CostAccumulator;  // 0x734
     unsigned char PipelineStep;  // 0x73C
     unsigned char padProd3;  // 0x73D
@@ -542,7 +542,7 @@ static int GetSHPFrame(BuildingClass * aP1, int a2);
     static int CheckBridge(int p0, void* p1);  // x4:signals@0x6b0880
     static int GetDrawColor(int p_this);  // x4:ida@0x635830
     static int DrawActionLines(BuildingClass *p_this);  // x4:ida@0x63be60
-    void* u32_898;  // 0x898 (offset-truth) [X30:type_map]
+unsigned int u32_898;  // 0x898 [X35-L7 kind=unsigned int]
     void* u32_8B4;  // 0x8B4 (offset-truth) [X30:type_map]
 
     unsigned int q044;  // X10 supply (member_lookup)

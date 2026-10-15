@@ -21,7 +21,7 @@ struct HouseTypeClass {
     char arrayIndex[4];  // 0x12
     int abstractFlags;  // 0x14 [X30:type_map]
     char arrayIndex2[4];  // 0x16
-    char nextArrayIndex[4];  // 0x18
+int nextArrayIndex;  // 0x18 [X35-L7 kind=int]
     unsigned int referenceCount;  // 0x1C
     double NeedsSaveOrLink;  // 0x20
     char id;  // 0x24
@@ -97,11 +97,11 @@ struct HouseTypeClass {
     float buildtimeDefensesMult_d;  // 0x144
     float incomeMult_d;  // 0x148
     InfantryTypeClass** veteranInfantry_d;  // 0x14C
-    void* veteranInfantryCount_d;  // 0x150 [X30:type_map]
+int veteranInfantryCount_d;  // 0x150 [X35-L7 kind=int]
     UnitTypeClass** veteranUnits_d;  // 0x154
-    char veteranUnitsCount_d[4];  // 0x158
+int veteranUnitsCount_d;  // 0x158 [X35-L7 kind=int]
     AircraftTypeClass** veteranAircraft_d;  // 0x15C
-    char veteranAircraftCount_d[4];  // 0x160
+int veteranAircraftCount_d;  // 0x160 [X35-L7 kind=int]
     char suffix;  // 0x164
     char prefix_d;  // 0x168
     bool multiplay_d;  // 0x169

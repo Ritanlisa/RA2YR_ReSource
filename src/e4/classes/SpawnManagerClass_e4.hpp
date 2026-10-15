@@ -28,14 +28,14 @@ struct SpawnManagerClass {
     int SpawnManagerClass_field_34;  // 0x34 [X30:type_map]
     void *q38;  // 0x38
     int spawnVectorCount;  // 0x3C [X30:type_map]
-    char spawnVectorCapacity[4];  // 0x40
-    char creationFrame[4];  // 0x44
+int spawnVectorCapacity;  // 0x40 [X35-L7 kind=int]
+int creationFrame;  // 0x44 [X35-L7 kind=int]
     int SpawnManagerClass_field_54;  // 0x54 [X30:type_map]
     int SpawnManagerClass_field_58;  // 0x58 [X30:type_map]
     IUnknown* SpawnManagerClass_field_5C;  // 0x5C [X30:type_map]
     int SpawnManagerClass_field_60;  // 0x60 [X30:type_map]
     int SpawnManagerClass_field_64;  // 0x64 [X30:type_map]
-    void* SpawnManagerClass_field_68;  // 0x68 [X30:type_map]
+int SpawnManagerClass_field_68;  // 0x68 [X35-L7 kind=int]
     void* SpawnManagerClass_field_6C;  // 0x6C [X30:type_map]
     int SpawnManagerClass_field_70;  // 0x70 [X30:type_map]
 // --- flat members (END) ---

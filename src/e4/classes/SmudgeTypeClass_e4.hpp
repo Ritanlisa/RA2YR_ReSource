@@ -104,10 +104,10 @@ struct SmudgeTypeClass {
     unsigned char __pad_095;  // 0x95 [X30:canon]
     unsigned char __pad_0A9;  // 0xA9 [X30:canon]
     unsigned char __pad_14C;  // 0x14C [X30:canon]
-    unsigned char __pad_211;  // 0x211 [X30:canon]
+char __pad_211;  // 0x211 [X35-L7 kind=char]
     int __pad_22C;  // 0x22C [X30:type_map]
-    unsigned char __pad_233;  // 0x233 [X30:canon]
-    unsigned char __pad_237;  // 0x237 [X30:canon]
+char __pad_233;  // 0x233 [X35-L7 kind=char]
+char __pad_237;  // 0x237 [X35-L7 kind=char]
     bool __pad_2A1;  // 0x2A1 [X30:type_map]
     unsigned int Theater_d;  // [X30:default]
 };

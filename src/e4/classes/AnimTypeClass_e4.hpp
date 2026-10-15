@@ -29,7 +29,7 @@ struct AnimTypeClass {
     SHPStruct* nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     int NeedsSaveOrLink;  // 0x20
-    void* LoopStart;  // 0x24 [X30:type_map]
+int LoopStart;  // 0x24 [X35-L7 kind=int]
     int LoopEnd;  // 0x28
     int End;  // 0x2C
     int LoopCount;  // 0x30
@@ -134,12 +134,12 @@ struct AnimTypeClass {
     double AnimTypeClass_field_double_320;  // 0x320
     double MaxXYVel;  // 0x328
     WarheadTypeClass* Warhead;  // 0x330
-    void* DamageRadius;  // 0x334 [X30:type_map]
+int DamageRadius;  // 0x334 [X35-L7 kind=int]
     OverlayTypeClass* TiberiumSpawnType;  // 0x338
     void* TiberiumSpreadRadius;  // 0x33C [X30:type_map]
-    void* YSortAdjust;  // 0x340 [X30:type_map]
-    void* YDrawOffset;  // 0x344 [X30:type_map]
-    void* ZAdjust;  // 0x348 [X30:type_map]
+int YSortAdjust;  // 0x340 [X35-L7 kind=int]
+int YDrawOffset;  // 0x344 [X35-L7 kind=int]
+int ZAdjust;  // 0x348 [X35-L7 kind=int]
     void* MakeInfantry;  // 0x34C [X30:type_map]
     int RunningFrames;  // 0x350
     bool IsFlamingGuy;  // 0x354
@@ -197,9 +197,9 @@ struct AnimTypeClass {
     void* GetWarhead(int a2);
     AnimTypeClass * * FindOrCreate(char *Source, int a2, int aP0, int aP1, int aP2, int a1, int a3);
     int ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2);
-    char Flat_flag[1];  // 0x369 (ml)
+bool Flat_flag;  // 0x369 [X35-L7 kind=bool]
     char __pad_98[3];  // 0x98 (ml)
-    void* q024;  // 0x24 (offset-truth) [X30:type_map]
+int q024;  // 0x24 [X35-L7 kind=int]
 
     unsigned char __pad_2A0;  // X10 supply (csp_canon_members)
     IUnknown* q0C4;  // X10 supply (member_lookup)
@@ -214,8 +214,8 @@ struct AnimTypeClass {
     unsigned char __pad_0A9;  // 0xA9 [X30:canon]
     unsigned char __pad_14D;  // 0x14D [X30:canon]
     unsigned char __pad_22D;  // 0x22D [X30:canon]
-    unsigned char __pad_233;  // 0x233 [X30:canon]
-    unsigned char __pad_238;  // 0x238 [X30:canon]
+char __pad_233;  // 0x233 [X35-L7 kind=char]
+char __pad_238;  // 0x238 [X35-L7 kind=char]
     unsigned char __pad_2A5;  // 0x2A5 [X30:canon]
     unsigned char __pad_363;  // 0x363 [X30:canon]
     unsigned int AllowCellContent_d;  // [X30:default]

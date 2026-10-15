@@ -10,15 +10,15 @@ struct GenericNode;  // fix_fwd_type_supply
 struct Delegate {
 // --- flat members (BEGIN) ---
     void* m_items;  // 0x0
-    char m_count[4];  // 0x4
-    char Delegate_field_08[4];  // 0x8
+int m_count;  // 0x4 [X35-L7 kind=int]
+int Delegate_field_08;  // 0x8 [X35-L7 kind=int]
     bool m_allocated;  // 0xC
-    char Delegate_field_10[4];  // 0x10
-    char Delegate_field_14[4];  // 0x14
+int Delegate_field_10;  // 0x10 [X35-L7 kind=int]
+int Delegate_field_14;  // 0x14 [X35-L7 kind=int]
     void* m_straw;  // 0x18
     void* m_pipe;  // 0x1C
-    char Delegate_field_20[4];  // 0x20
-    char Delegate_field_24[4];  // 0x24
+int Delegate_field_20;  // 0x20 [X35-L7 kind=int]
+int Delegate_field_24;  // 0x24 [X35-L7 kind=int]
 // --- flat members (END) ---
     GenericNode * Constructor_GenericNode(char a2);
     int * ClearVectorAndStraw(char a2);
@@ -31,12 +31,12 @@ struct Delegate {
     unsigned int * GetField(void *a1 = 0, void *a2 = 0);
     int Dispatch(int aP1, int aP2, void *a3 = 0, void *a4 = 0);
     int Set(int aP1, void *a2 = 0, void *a3 = 0);
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int q004;  // 0x4 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
+int q004;  // 0x4 [X35-L7 kind=int]
     unsigned int q00C;  // 0xC (offset-truth)
-    unsigned int q010;  // 0x10 (offset-truth)
-    unsigned int q014;  // 0x14 (offset-truth)
-    unsigned int q018;  // 0x18 (offset-truth)
+int q010;  // 0x10 [X35-L7 kind=int]
+int q014;  // 0x14 [X35-L7 kind=int]
+void* q018;  // 0x18 [X35-L7 kind=void*]
     void* field_1C;  // 0x1C
     unsigned char __pad_00D;  // 0xD [X30:canon]
     unsigned int Previous;  // [X30:default]

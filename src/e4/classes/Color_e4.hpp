@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Color {
 // --- flat members (BEGIN) ---
-    char Color_field_00[4];  // 0x0
+int Color_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int ConvertToRGB(int a2, void *a2_1 = 0);
     unsigned char * Lerp2(int a2, int a3, float a4);

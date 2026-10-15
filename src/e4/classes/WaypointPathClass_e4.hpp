@@ -18,8 +18,8 @@ struct WaypointPathClass {
     unsigned char NeedsSaveOrLink;  // 0x20
     int idxArray;  // 0x24 [X30:type_map]
     unsigned int alignmentPadding;  // 0x33
-    char waypointCount[4];  // 0x40
-    char waypointCapacity[4];  // 0x44
+int waypointCount;  // 0x40 [X35-L7 kind=int]
+int waypointCapacity;  // 0x44 [X35-L7 kind=int]
     unsigned char WaypointClass_field_34;  // 0x48
     unsigned char WaypointClass_field_35;  // 0x49
     unsigned char pad_36;  // 0x4A

@@ -19,7 +19,7 @@ struct INIClass {
     int sectionCount;  // 0x1C [X30:type_map]
     int INIClass_field_2C;  // 0x2C [X30:type_map]
     int unknown30;  // 0x30 [X30:type_map]
-    void* u32_14;  // 0x14 [X30:type_map]
+unsigned int u32_14;  // 0x14 [X35-L7 kind=unsigned int]
     INILinkNode* u32_10;  // 0x10 [X30:type_map]
     unsigned int u32_C;  // 0xC
     INILinkNode* u32_8;  // 0x8 [X30:type_map]
@@ -118,7 +118,7 @@ static int WriteToString(INIClass * aP1, int a2);
     static int ParseValue(unsigned int* p0, uint8_t* p1, uint8_t* p2, unsigned int* p3);  // x4:signals@0x527cc0
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q020;  // 0x20 (offset-truth)
-    int __pad_020;  // 0x20 [X30:type_map]
+unsigned int __pad_020;  // 0x20 [X35-L7 kind=unsigned int]
     unsigned char __pad_035;  // 0x35 [X30:canon]
     unsigned int Capacity;  // [X30:default]
     unsigned int IsAllocated;  // [X30:default]

@@ -30,7 +30,7 @@ struct FileClass {
     static int Delete(void *a1 = 0);  // 0x65d190
     int CloseHandle(void *a1 = 0);  // 0x65cca0
     int OpenWithCDSearch(char *Source);
-    char __tail_0[4];  // 0x0 (ml)
+void* __tail_0;  // 0x0 [X35-L7 kind=void*]
     unsigned int u32_58;  // 0x58 (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
 

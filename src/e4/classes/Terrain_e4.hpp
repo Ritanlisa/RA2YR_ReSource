@@ -39,7 +39,7 @@ struct Terrain {
     int Terrain_field_0x13C;  // 0x13C [X30:type_map]
     void* Terrain_field_0x14;  // 0x14 [X30:type_map]
     int Terrain_field_0x38;  // 0x38 [X30:type_map]
-    int Terrain_field_0x60;  // 0x60 [X30:type_map]
+unsigned int Terrain_field_0x60;  // 0x60 [X35-L7 kind=unsigned int]
     int __pad_18;  // 0x18 [X30:type_map]
     char __pad_44[28];  // 0x44 [X30:member_lookup]
     void* __pad_68;  // 0x68 [X30:type_map]

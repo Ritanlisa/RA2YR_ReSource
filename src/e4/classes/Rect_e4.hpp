@@ -8,7 +8,7 @@ namespace gamemd {
 
 struct Rect {
 // --- flat members (BEGIN) ---
-    char X[4];  // 0x0
+int X;  // 0x0 [X35-L7 kind=int]
     int Y;  // 0x4 [X30:type_map]
     int Width;  // 0x8 [X30:type_map]
     Rect* Height;  // 0xC [X30:type_map]

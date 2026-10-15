@@ -32,10 +32,10 @@ struct VoxelAnimClass {
     ObjectClass* nextObject;  // 0x30
     unsigned int alignmentPadding;  // 0x33
     TagClass* attachedTag;  // 0x34
-    char customSound[4];  // 0x64
+int customSound;  // 0x64 [X35-L7 kind=int]
     bool bombVisible;  // 0x68
     char health[4];  // 0x6C
-    char estimatedHealth[4];  // 0x70
+int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int spawnStatus;  // 0x78

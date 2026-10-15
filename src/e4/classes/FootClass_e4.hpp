@@ -48,11 +48,11 @@ struct FootClass {
     BombClass* attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
-    char customSound[4];  // 0x64
+int customSound;  // 0x64 [X35-L7 kind=int]
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     IUnknown* health;  // 0x6C [X30:type_map]
-    char estimatedHealth[4];  // 0x70
+int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     void* spawnStatus;  // 0x78
@@ -104,11 +104,11 @@ struct FootClass {
     int deployAnim_d;  // 0x130
     unsigned char inAirFlag_d;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
-    char radioQueueCount[4];  // 0x138
+int radioQueueCount;  // 0x138 [X35-L7 kind=int]
     unsigned char alignmentPadding139_d;  // 0x139
     char currentWeaponSlot[4];  // 0x13C
     void* currentRank;  // 0x140
-    char gattlingStage[4];  // 0x144
+int gattlingStage;  // 0x144 [X35-L7 kind=int]
     unsigned int gattlingValue;  // 0x148
     HouseClass* ammoReloadTimer;  // 0x14C
     char initialOwner[4];  // 0x150
@@ -329,7 +329,7 @@ struct FootClass {
     HouseClass* disguisedAsHouse;  // 0x51C
     int FootClass_field_520;  // 0x520 [X30:type_map]
     int FootClass_field_524;  // 0x524 [X30:type_map]
-    char FootClass_field_526[2];  // 0x526
+short FootClass_field_526;  // 0x526 [X35-L7 kind=short]
     int FootClass_field_528;  // 0x528 [X30:type_map]
     char FootClass_field_52A[2];  // 0x52A
     char FootClass_field_52C[4];  // 0x52C
@@ -338,7 +338,7 @@ struct FootClass {
     char controlGroup[4];  // 0x532
     ILocomotion* FootClass_field_534;  // 0x534 [X30:type_map]
     AbstractClass* focus;  // 0x536
-    ILocomotion* FootClass_field_538;  // 0x538 [X30:type_map]
+int FootClass_field_538;  // 0x538 [X35-L7 kind=int]
     bool FootClass_field_53C;  // 0x53C
     unsigned char m_padding_53D;  // 0x53D
     IUnknown* FootClass_field_540;  // 0x540 [X30:type_map]
@@ -353,7 +353,7 @@ struct FootClass {
     char FootClass_field_566[4];  // 0x566
     char FootClass_field_568[12];  // 0x568
     ILocomotion* FootClass_field_56C;  // 0x56C [X30:type_map]
-    ILocomotion* FootClass_field_570;  // 0x570 [X30:type_map]
+int FootClass_field_570;  // 0x570 [X35-L7 kind=int]
     unsigned int unused574;  // 0x574
     int FootClass_field_578;  // 0x578 [X30:type_map]
     ILocomotion* FootClass_field_57C;  // 0x57C [X30:type_map]
@@ -381,14 +381,14 @@ struct FootClass {
     int FootClass_field_648;  // 0x648 [X30:type_map]
     int FootClass_field_64C;  // 0x64C [X30:type_map]
     char FootClass_field_650[12];  // 0x650
-    char FootClass_field_654[4];  // 0x654
+int FootClass_field_654;  // 0x654 [X35-L7 kind=int]
     ILocomotion* FootClass_field_658;  // 0x658 [X30:type_map]
     char FootClass_field_65C[12];  // 0x65C
     TechnoClass* FootClass_field_660;  // 0x660 [X30:type_map]
     ILocomotion* FootClass_field_664;  // 0x664 [X30:type_map]
     char FootClass_field_668[12];  // 0x668
     char FootClass_field_66C[4];  // 0x66C
-    ILocomotion* FootClass_field_670;  // 0x670 [X30:type_map]
+int FootClass_field_670;  // 0x670 [X35-L7 kind=int]
     ILocomotion* Locomotor;  // 0x674
     LocomotionClass* Locomotor_ptr;  // 0x678
     bool IsDeploying;  // 0x67C
@@ -407,8 +407,8 @@ struct FootClass {
     bool shouldEnterAbsorber;  // 0x68F
     bool shouldEnterOccupiable;  // 0x690
     bool shouldGarrisonStructure;  // 0x691
-    void* FootClass_field_694;  // 0x694 [X30:type_map]
-    ILocomotion* FootClass_field_698;  // 0x698 [X30:type_map]
+int FootClass_field_694;  // 0x694 [X35-L7 kind=int]
+int FootClass_field_698;  // 0x698 [X35-L7 kind=int]
     int FootClass_field_69C;  // 0x69C [X30:type_map]
     int FootClass_field_6A0;  // 0x6A0 [X30:type_map]
     char FootClass_field_6A4[4];  // 0x6A4
@@ -492,7 +492,7 @@ struct FootClass {
     unsigned char __pad_3D1;  // 0x3D1 [X30:canon]
     bool __pad_3D5;  // 0x3D5 [X30:type_map]
     unsigned char __pad_41D;  // 0x41D [X30:canon]
-    unsigned char __pad_422;  // 0x422 [X30:canon]
+bool __pad_422;  // 0x422 [X35-L7 kind=bool]
     bool __pad_425;  // 0x425 [X30:type_map]
     unsigned char __pad_43A;  // 0x43A [X30:canon]
     unsigned char __pad_458;  // 0x458 [X30:canon]

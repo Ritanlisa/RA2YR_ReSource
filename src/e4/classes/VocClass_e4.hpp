@@ -16,15 +16,15 @@ struct VocClass {
     unsigned int VocClass_field_3C;  // 0x3C
     char Priority[4];  // 0x40
     unsigned int VocClass_field_44;  // 0x44
-    char Limit[4];  // 0x48
+int Limit;  // 0x48 [X35-L7 kind=int]
     char Loop[4];  // 0x4C
-    char Range[4];  // 0x50
+int Range;  // 0x50 [X35-L7 kind=int]
     float MinVolume;  // 0x54
-    char MinDelay[4];  // 0x58
+int MinDelay;  // 0x58 [X35-L7 kind=int]
     char MaxDelay[4];  // 0x5C
-    char MinFDelta[4];  // 0x60
-    char MaxFDelta[4];  // 0x64
-    char VShift[4];  // 0x68
+int MinFDelta;  // 0x60 [X35-L7 kind=int]
+int MaxFDelta;  // 0x64 [X35-L7 kind=int]
+int VShift;  // 0x68 [X35-L7 kind=int]
     char Name;  // 0x6C
     unsigned int VocClass_field_8C;  // 0x8C
     unsigned int VocClass_field_90;  // 0x90
@@ -37,7 +37,7 @@ struct VocClass {
     unsigned int VocClass_field_AC;  // 0xAC
     void* pVoiceChannel;  // 0xB0
     char SampleIndex[128];  // 0xB4
-    char NumSamples[4];  // 0x134
+int NumSamples;  // 0x134 [X35-L7 kind=int]
     int Attack;  // 0x138 [X30:type_map]
     char Decay[4];  // 0x13C
     unsigned int VocClass_field_140;  // 0x140

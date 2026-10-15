@@ -78,7 +78,7 @@ struct IPXInterfaceClass {
     unsigned int Capacity;  // [X30:default]
     unsigned int IsInitialized;  // [X30:default]
     unsigned int Items;  // [X30:default]
-    int __pad_0;  // 0x0 [X30:type_map]
+unsigned int __pad_0;  // 0x0 [X35-L7 kind=unsigned int]
     unsigned int q3F074;  // [X30:default]
 };
 

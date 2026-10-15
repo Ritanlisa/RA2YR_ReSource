@@ -135,9 +135,9 @@ struct DynamicVector {
     DynamicVector * Constructor_VectorClass_MovieHandle___(unsigned int * Block, char a2);
     wchar_t * ddtor(void *a1_1);  // 0x4EA390
     char Remove(signed int Size, char * a3);
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int q00C;  // 0xC (offset-truth)
-    unsigned int q014;  // 0x14 (offset-truth)
+int q014;  // 0x14 [X35-L7 kind=int]
 
     unsigned int DynamicVector_field_0x1;  // X10 supply (member_lookup)
     int q020;  // 0x20  /* char[8] */ [X30:type_map]

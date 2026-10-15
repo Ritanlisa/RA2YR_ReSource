@@ -10,7 +10,7 @@ struct TextBuffer {
     unsigned int u32_320;  // 0x320
     unsigned int u32_FAC;  // 0xFAC
     unsigned int u32_1F40;  // 0x1F40
-    void* q2734;  // 0x2734
+unsigned int q2734;  // 0x2734 [X35-L7 kind=unsigned int]
     unsigned int q8000;  // 0x8000
 // --- flat members (END) ---
     int Init(void *a1 = 0, void *a2 = 0);

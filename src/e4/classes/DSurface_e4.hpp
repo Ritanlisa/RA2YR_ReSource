@@ -112,9 +112,9 @@ struct DSurface {
     uint8_t u8_154;  // X10 supply (member_lookup)
     int u8_EA;  // X10 supply (member_lookup)
     AbstractClass* __pad_004;  // 0x4 [X30:type_map]
-    int DSurface_field_0x18;  // 0x18 [X30:type_map]
+unsigned int DSurface_field_0x18;  // 0x18 [X35-L7 kind=unsigned int]
     void* DSurface_field_0x1C;  // 0x1C [X30:type_map]
-    void* DSurface_field_0x20;  // 0x20 [X30:type_map]
+unsigned int DSurface_field_0x20;  // 0x20 [X35-L7 kind=unsigned int]
     unsigned int Height;  // [X30:default]
     unsigned int LockCount;  // [X30:default]
     unsigned int Width;  // [X30:default]

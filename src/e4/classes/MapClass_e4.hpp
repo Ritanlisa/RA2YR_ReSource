@@ -39,7 +39,7 @@ struct MapClass {
     unsigned int CellIterator_NextCell;  // 0x118
     unsigned int ZoneIterator_X;  // 0x11C
     unsigned int ZoneIterator_Y;  // 0x120
-    void *q138;  // 0x138
+unsigned int q138;  // 0x138 [X35-L7 kind=unsigned int]
     unsigned int Crates;  // 0x148
     unsigned int CellStructs1;  // 0x212
     unsigned int MapRect;  // 0x236
@@ -245,16 +245,16 @@ struct MapClass {
     unsigned int SpawnsTiberium;  // [X30:default]
     unsigned int TemperateOccupationBits;  // [X30:default]
     unsigned int WaterBound;  // [X30:default]
-    int __pad_0;  // 0x0 [X30:type_map]
+void* __pad_0;  // 0x0 [X35-L7 kind=void*]
     unsigned int q001_;  // [X30:default]
     unsigned int q002_6;  // [X30:default]
     int q150;  // 0x150 [X30:type_map]
-    void* q154;  // 0x154 [X30:type_map]
+unsigned int q154;  // 0x154 [X35-L7 kind=unsigned int]
     AbstractClass* q2B4;  // 0x2B4 [X30:member_lookup]
     unsigned char q2EC;  // 0x2EC [X30:member_lookup]
     bool q305;  // 0x305 [X30:member_lookup]
     unsigned int q306;  // 0x306 [X30:member_lookup]
-    int u32_145;  // 0x145 [X30:type_map]
+unsigned int u32_145;  // 0x145 [X35-L7 kind=unsigned int]
     void* u32_708;  // 0x708 [X30:member_lookup]
     unsigned char u8_2E0;  // 0x2E0 [X30:member_lookup]
     unsigned char u8_2E1;  // 0x2E1 [X30:member_lookup]

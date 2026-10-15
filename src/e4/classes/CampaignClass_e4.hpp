@@ -25,12 +25,12 @@ struct CampaignClass {
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C [X30:type_map]
     bool NeedsSaveOrLink;  // 0x20
-    void* idxCd;  // 0x24 [X30:type_map]
+int idxCd;  // 0x24 [X35-L7 kind=int]
     char scenario;  // 0x28
     bool needsSave;  // 0x32
     unsigned int UINameLabel;  // 0x3D
     unsigned int tail_95;  // 0x95
-    char finalMovie[4];  // 0x228
+int finalMovie;  // 0x228 [X35-L7 kind=int]
     char description[256];  // 0x22C
 // --- flat members (END) ---
     AbstractClass * * SaveProgress();
@@ -48,7 +48,7 @@ struct CampaignClass {
     AbstractClass * * sub_48B0E0(int a2, int a3, size_t Size, int a5);
     void sub_48B1F0();
     CampaignClass * * sub_7B2E50();
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int Coord_9C;  // [X30:default]
     unsigned char q174;  // 0x174 [X30:member_lookup]
 };

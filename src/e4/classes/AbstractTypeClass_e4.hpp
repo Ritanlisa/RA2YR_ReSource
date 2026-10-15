@@ -59,8 +59,8 @@ struct AbstractTypeClass {
     void sub_4065D0(int a1 = 0, int a2 = 0);
     void sub_4065E0(int a1 = 0, int a2 = 0);
     void sub_406640(int a1 = 0, int a2 = 0);
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int q008;  // 0x8 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
+void* q008;  // 0x8 [X35-L7 kind=void*]
 
     unsigned int UIName;  // X10 supply (csp_canon_members)
     unsigned char __pad_024;  // X10 supply (csp_canon_members)

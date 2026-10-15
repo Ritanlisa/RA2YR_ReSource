@@ -8,7 +8,7 @@ namespace gamemd {
 struct Palette {
 // --- flat members (BEGIN) ---
     unsigned int m_Colors;  // 0x0
-    char Palette_field_400[4];  // 0x400
+int Palette_field_400;  // 0x400 [X35-L7 kind=int]
 // --- flat members (END) ---
     static int Preview_Generate(void *aP1, int a2, int a3, void *a4);
     static int CalcColorDistance(unsigned char * a2, void *a2_2);

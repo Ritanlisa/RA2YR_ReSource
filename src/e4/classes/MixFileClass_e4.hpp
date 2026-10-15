@@ -16,9 +16,9 @@ struct MixFileClass {
     bool Encryption;  // 0x9
     int CountFiles;  // 0xC
     int FileSize;  // 0x10
-    void* FileStartOffset;  // 0x14 [X30:type_map]
+int FileStartOffset;  // 0x14 [X35-L7 kind=int]
     MixHeaderData* Headers;  // 0x18
-    void* MixFileClass_field_24;  // 0x24 [X30:type_map]
+int MixFileClass_field_24;  // 0x24 [X35-L7 kind=int]
     unsigned char* MemoryData;  // 0x28
     int MemoryDataSize;  // 0x2C
 // --- flat members (END) ---

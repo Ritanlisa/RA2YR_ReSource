@@ -15,7 +15,7 @@ struct Stream {
     char Stream_field_0C[4];  // 0xC
 // --- flat members (END) ---
     unsigned int Stream_field_08;  // 0x8 (G42.42q: truth dword compare @0x491cae; was char[4] mis-type)
-    void* a2;  // 0x0 (no offset truth)
+StreamClass* a2;  // 0x0 [X35-L7 kind=StreamClass*]
     int FlushAndReset();
     int GetChecked();
     int ReadIntArray(int a2);
@@ -29,13 +29,13 @@ struct Stream {
     unsigned int u32_14B0;  // 0x14B0 (offset-truth)
     unsigned int u32_1540;  // 0x1540 (offset-truth)
     unsigned int u32_1544;  // 0x1544 (offset-truth)
-    void *q178;  // 0x178 (offset-truth)
+unsigned int q178;  // 0x178 [X35-L7 kind=unsigned int]
     void *q17C;  // 0x17C (offset-truth)
-    void *q180;  // 0x180 (offset-truth)
+unsigned int q180;  // 0x180 [X35-L7 kind=unsigned int]
     unsigned int u32_184;  // 0x184 (offset-truth)
-    void *q188;  // 0x188 (offset-truth)
-    void *q190;  // 0x190 (offset-truth)
-    void *q194;  // 0x194 (offset-truth)
+unsigned int q188;  // 0x188 [X35-L7 kind=unsigned int]
+unsigned int q190;  // 0x190 [X35-L7 kind=unsigned int]
+unsigned int q194;  // 0x194 [X35-L7 kind=unsigned int]
     unsigned int u32_198;  // 0x198 (offset-truth)
     unsigned int u32_19C;  // 0x19C (offset-truth)
     unsigned int u32_1A0;  // 0x1A0 (offset-truth)
@@ -78,8 +78,8 @@ struct Stream {
     unsigned int u32_70;  // X10 supply (member_lookup)
     unsigned char u8_71;  // X10 supply (member_lookup)
     int u32_18;  // 0x18
-    void* __pad_010;  // 0x10 [X30:type_map]
-    void* Stream_field_10;  // 0x10 [X30:type_map]
+unsigned int __pad_010;  // 0x10 [X35-L7 kind=unsigned int]
+unsigned int Stream_field_10;  // 0x10 [X35-L7 kind=unsigned int]
 };
 
 } // namespace gamemd

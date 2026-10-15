@@ -19,12 +19,12 @@ struct LightSourceClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    TintStruct* LightIntensity;  // 0x24 [X30:type_map]
+int LightIntensity;  // 0x24 [X35-L7 kind=int]
     char LightTint[12];  // 0x28
     unsigned int alignmentPadding;  // 0x33
-    char DetailLevel[4];  // 0x34
+int DetailLevel;  // 0x34 [X35-L7 kind=int]
     char Location[12];  // 0x38
-    TintStruct* LightVisibility;  // 0x44 [X30:type_map]
+int LightVisibility;  // 0x44 [X35-L7 kind=int]
     bool Activated;  // 0x48
     bool tail_49;  // 0x49
 // --- flat members (END) ---

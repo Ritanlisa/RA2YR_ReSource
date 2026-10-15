@@ -32,7 +32,7 @@ struct AnimClass {
     unsigned int u32_2;  // 0x2
     bool IsAllocated;  // 0x13
     unsigned int alignmentPadding;  // 0x33
-    char estimatedHealth[4];  // 0x70
+int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int visibilityFlags;  // 0x7C
@@ -117,7 +117,7 @@ struct AnimClass {
     unsigned int q119;  // X10 supply (member_lookup)
     unsigned int q196;  // X10 supply (member_lookup)
     unsigned int u32_CA;  // 0xCA
-    int __pad_010;  // 0x10 [X30:type_map]
+unsigned int __pad_010;  // 0x10 [X35-L7 kind=unsigned int]
     unsigned char __pad_037;  // 0x37 [X30:canon]
     unsigned char __pad_079;  // 0x79 [X30:canon]
     unsigned char __pad_080;  // 0x80 [X30:canon]
@@ -134,7 +134,7 @@ struct AnimClass {
     unsigned char __pad_27A;  // 0x27A [X30:canon]
     unsigned char __pad_45C;  // 0x45C [X30:canon]
     unsigned char __pad_618;  // 0x618 [X30:canon]
-    int AnimClass_field_0x0;  // 0x0 [X30:type_map]
+void* AnimClass_field_0x0;  // 0x0 [X35-L7 kind=void*]
     float AnimClass_field_0x100;  // 0x100 [X30:type_map]
     int AnimClass_field_0x190;  // 0x190 [X30:type_map]
     int AnimClass_field_0x4;  // 0x4 [X30:type_map]
@@ -145,7 +145,7 @@ struct AnimClass {
     unsigned int SuperClass_19D;  // [X30:default]
     int __pad_118;  // 0x118 [X30:type_map]
     int __pad_178;  // 0x178 [X30:type_map]
-    int __pad_194;  // 0x194 [X30:type_map]
+unsigned int __pad_194;  // 0x194 [X35-L7 kind=unsigned int]
     char __pad_A0[4];  // 0xA0 [X30:member_lookup]
     int __pad_C;  // 0xC [X30:type_map]
     unsigned int ambientSoundController;  // [X30:default]

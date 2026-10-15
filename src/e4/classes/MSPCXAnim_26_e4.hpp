@@ -35,7 +35,7 @@ struct MSPCXAnim_26 {
     DynamicVector *  Constructor_VectorClass_MSAnimEntry___(char a2);  // 0x5D1990
     DynamicVector *  Constructor_VectorClass_MSSfxEntry___(char a2);  // 0x5D1A30
     unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
+int m_10;  // 0x10 [X35-L7 kind=int]
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
 

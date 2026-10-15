@@ -32,7 +32,7 @@ struct BulletTypeClass {
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     unsigned char NeedsSaveOrLink;  // 0x20
-    void* ShrapnelCount;  // 0x24 [X30:type_map]
+unsigned int ShrapnelCount;  // 0x24 [X35-L7 kind=unsigned int]
     bool NoSpawnAlt;  // 0x30
     unsigned char zero_3C;  // 0x3C
     unsigned char UINameLabel;  // 0x3D
@@ -161,10 +161,10 @@ struct BulletTypeClass {
     unsigned char __pad_099;  // 0x99 [X30:canon]
     unsigned char __pad_0A9;  // 0xA9 [X30:canon]
     unsigned char __pad_14C;  // 0x14C [X30:canon]
-    unsigned char __pad_211;  // 0x211 [X30:canon]
+char __pad_211;  // 0x211 [X35-L7 kind=char]
     unsigned char __pad_22C;  // 0x22C [X30:canon]
-    unsigned char __pad_233;  // 0x233 [X30:canon]
-    unsigned char __pad_237;  // 0x237 [X30:canon]
+char __pad_233;  // 0x233 [X35-L7 kind=char]
+char __pad_237;  // 0x237 [X35-L7 kind=char]
     unsigned char __pad_2AA;  // 0x2AA [X30:canon]
     unsigned char __pad_2C1;  // 0x2C1 [X30:canon]
     unsigned char __pad_2ED;  // 0x2ED [X30:canon]

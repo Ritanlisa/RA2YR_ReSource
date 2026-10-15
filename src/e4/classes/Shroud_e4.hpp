@@ -19,9 +19,9 @@ struct Shroud {
     unsigned char __pad_14A0;  // 0x14A0 (offset-truth)
     unsigned char __pad_14A8;  // 0x14A8 (offset-truth)
     unsigned char __pad_C0;  // 0xC0 (offset-truth)
-    unsigned int q1490;  // 0x1490 (offset-truth)
-    unsigned int q1494;  // 0x1494 (offset-truth)
-    unsigned int q1498;  // 0x1498 (offset-truth)
+MapClass* q1490;  // 0x1490 [X35-L7 kind=MapClass*]
+MapClass* q1494;  // 0x1494 [X35-L7 kind=MapClass*]
+MapClass* q1498;  // 0x1498 [X35-L7 kind=MapClass*]
     unsigned int q149C;  // 0x149C (offset-truth)
     unsigned int q14A4;  // 0x14A4 (offset-truth)
 

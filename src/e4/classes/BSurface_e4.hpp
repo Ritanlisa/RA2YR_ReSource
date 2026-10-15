@@ -23,7 +23,7 @@ struct BSurface {
     unsigned int q_4;  // +0x4 flat supply (P5 provenance)
     unsigned int q058;  // @0x7b8cd9 (W16G3 raw-usage vocab)
     unsigned int u32_6C;  // @0x7b8d16 (W16G3 raw-usage vocab)
-    void * ptr_24;  // 0x24 (offset-truth)
+unsigned int ptr_24;  // 0x24 [X35-L7 kind=unsigned int]
     unsigned char q00C6;  // 0xC6 (offset-truth)
     unsigned int q0188;  // 0x188 (offset-truth)
     unsigned int q0208;  // 0x208 (offset-truth)

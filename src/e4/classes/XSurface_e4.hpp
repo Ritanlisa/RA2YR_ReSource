@@ -36,7 +36,7 @@ struct XSurface {
     static int GetPixel(XSurface * aP1, unsigned int *a2);
     static int SetPixel(XSurface * aP1, unsigned int *a2, int16_t a3);
     static int BlitWhole(int* p0, int p1, int p2);  // x4:signals@0x7bbaf0
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned char q014;  // 0x14
 };
 

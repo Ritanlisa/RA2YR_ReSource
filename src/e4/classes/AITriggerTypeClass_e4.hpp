@@ -45,7 +45,7 @@ struct AITriggerTypeClass {
     unsigned char __pad_037;  // 0x37 [X30:canon]
     int AITriggerTypeClass_field_0x18;  // 0x18 [X30:member_lookup]
     int AITriggerTypeClass_field_0x24;  // 0x24 [X30:type_map]
-    int AITriggerTypeClass_field_0x28;  // 0x28 [X30:member_lookup]
+unsigned int AITriggerTypeClass_field_0x28;  // 0x28 [X35-L7 kind=unsigned int]
     unsigned int Coord_9C;  // [X30:default]
     unsigned int Tactical_E4;  // [X30:default]
 };

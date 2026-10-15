@@ -63,7 +63,7 @@ struct RadarClass {
     unsigned char __pad_028;  // 0x28 [X30:canon]
     unsigned char __pad_038;  // 0x38 [X30:canon]
     unsigned char __pad_054;  // 0x54 [X30:canon]
-    int __pad_070;  // 0x70 [X30:type_map]
+unsigned int __pad_070;  // 0x70 [X35-L7 kind=unsigned int]
     unsigned char __pad_0F0;  // 0xF0 [X30:canon]
     unsigned char __pad_100;  // 0x100 [X30:canon]
     unsigned char __pad_124;  // 0x124 [X30:canon]

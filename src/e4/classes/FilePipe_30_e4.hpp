@@ -30,8 +30,8 @@ struct FilePipe_30 {
     unsigned int  GetCount(int a2);  // 0x4B9C10
     unsigned int  GetCount_0(int a2);  // 0x4B9C70
     unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
+int m_10;  // 0x10 [X35-L7 kind=int]
+int m_8;  // 0x8 [X35-L7 kind=int]
     unsigned int m_C;  // 0xC (offset-truth)
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)

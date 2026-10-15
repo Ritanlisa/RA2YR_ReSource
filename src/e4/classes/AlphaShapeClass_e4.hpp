@@ -19,7 +19,7 @@ struct AlphaShapeClass {
     int SD_vt10(int a2, int a3);
     int SD_vt13(int a2);
     static int CTOR(int p0, int p1, int p2);  // x4:signals@0x420960
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned int u32_34;  // 0x34 (offset-truth)

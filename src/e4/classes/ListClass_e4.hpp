@@ -21,7 +21,7 @@ struct ListClass {
     int __pad_004;  // 0x4 [X30:type_map]
     unsigned char __pad_019;  // 0x19 [X30:canon]
     int ListClass_field_0x0C;  // 0xC [X30:type_map]
-    int ListClass_field_0x10;  // 0x10 [X30:type_map]
+unsigned int ListClass_field_0x10;  // 0x10 [X35-L7 kind=unsigned int]
     int __pad_0;  // 0x0 [X30:type_map]
 };
 

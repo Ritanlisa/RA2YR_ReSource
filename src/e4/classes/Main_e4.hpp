@@ -49,7 +49,7 @@ namespace gamemd {
 
 struct Main {
 // --- flat members (BEGIN) ---
-    char Main_field_00[4];  // 0x0
+int Main_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
 void CreateDialog(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 };

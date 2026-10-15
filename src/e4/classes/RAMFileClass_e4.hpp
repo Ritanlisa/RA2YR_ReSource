@@ -19,8 +19,8 @@ struct RAMFileClass {
     unsigned char *  WinMain_Helper_65C250(int a2, int Size);  // 0x65C250
     void WinMain_Helper_65C2A0();  // 0x65C2A0
     char * nullsub_0_5();  // 0x65C550
-    unsigned int *q000;  // 0x0 (offset-truth)
-    AbstractClass* q14;  // 0x14 (offset-truth) [X30:type_map]
+void* q000;  // 0x0 [X35-L7 kind=void*]
+unsigned int q14;  // 0x14 [X35-L7 kind=unsigned int]
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned char u32_1D;  // 0x1D (offset-truth)
@@ -30,6 +30,6 @@ struct RAMFileClass {
     unsigned int u32_14;  // X10 supply (member_lookup)
     unsigned char __pad_004;  // 0x4 [X30:canon]
     AbstractClass* RAMFileClass_field_0x8;  // 0x8 [X30:type_map]
-    int __pad_0;  // 0x0 [X30:type_map]
+void* __pad_0;  // 0x0 [X35-L7 kind=void*]
 };
 } // namespace gamemd

@@ -47,7 +47,7 @@ struct UnitTypeClass {
     int LargeVisceroid;  // 0x21
     unsigned int CarriesCrate;  // 0x22
     unsigned int NonVehicle;  // 0x23
-    void* StandingFrames;  // 0x24 [X30:type_map]
+unsigned int StandingFrames;  // 0x24 [X35-L7 kind=unsigned int]
     int ChargerTurrets_0x12;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
     bool NoSpawnAlt;  // 0x30
@@ -536,10 +536,10 @@ struct UnitTypeClass {
     unsigned char __pad_099;  // 0x99 [X30:canon]
     unsigned char __pad_0A9;  // 0xA9 [X30:canon]
     unsigned char __pad_14C;  // 0x14C [X30:canon]
-    unsigned char __pad_211;  // 0x211 [X30:canon]
+bool __pad_211;  // 0x211 [X35-L7 kind=bool]
     unsigned char __pad_22C;  // 0x22C [X30:canon]
-    unsigned char __pad_233;  // 0x233 [X30:canon]
-    unsigned char __pad_237;  // 0x237 [X30:canon]
+bool __pad_233;  // 0x233 [X35-L7 kind=bool]
+bool __pad_237;  // 0x237 [X35-L7 kind=bool]
     unsigned char __pad_296;  // 0x296 [X30:canon]
     unsigned char __pad_2DD;  // 0x2DD [X30:canon]
     unsigned char __pad_2E5;  // 0x2E5 [X30:canon]

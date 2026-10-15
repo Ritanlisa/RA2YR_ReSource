@@ -55,7 +55,7 @@ struct LoadOptions {
      int Cleanup(void *a1 = 0, void *a2 = 0);
     static int Run(LoadOptions * aP1);
     char Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x559c20
-    unsigned int m_0;  // 0x0 (offset-truth)
+const char* m_0;  // 0x0 [X35-L7 kind=const char*]
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)

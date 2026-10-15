@@ -19,8 +19,8 @@ struct INIClass;  // fix_fwd_type_supply
 
 struct RulesClass {
 // --- flat members (BEGIN) ---
-    char DetailMinFrameRateNormal[4];  // 0x0
-    void* DetailMinFrameRateMovie;  // 0x4 [X30:type_map]
+int DetailMinFrameRateNormal;  // 0x0 [X35-L7 kind=int]
+int DetailMinFrameRateMovie;  // 0x4 [X35-L7 kind=int]
     int DetailBufferZoneWidth;  // 0x8 [X30:type_map]
     char AmmoCrateDamage[4];  // 0xC
     UnitTypeClass* LargeVisceroid;  // 0x10
@@ -29,9 +29,9 @@ struct RulesClass {
     unsigned int Buildable;  // 0x1C
     double TunnelSpeed;  // 0x20
     double TiberiumHeal;  // 0x28
-    void* SelfHealInfantryFrames;  // 0x30 [X30:type_map]
+int SelfHealInfantryFrames;  // 0x30 [X35-L7 kind=int]
     int SelfHealInfantryAmount;  // 0x34 [X30:type_map]
-    void* SelfHealUnitFrames;  // 0x38 [X30:type_map]
+int SelfHealUnitFrames;  // 0x38 [X35-L7 kind=int]
     void* SelfHealUnitAmount;  // 0x3C [X30:type_map]
     bool FreeMCV;  // 0x40
     bool BerzerkAllowed;  // 0x41
@@ -71,35 +71,35 @@ struct RulesClass {
     int GUIMainButtonSound;  // 0xF4 [X30:type_map]
     void* GUIBuildSound;  // 0xF8 [X30:type_map]
     void* GUITabSound;  // 0xFC [X30:type_map]
-    void* GUIOpenSound;  // 0x100 [X30:type_map]
+int GUIOpenSound;  // 0x100 [X35-L7 kind=int]
     void* GUICloseSound;  // 0x104 [X30:type_map]
-    void* GUIMoveOutSound;  // 0x108 [X30:type_map]
+int GUIMoveOutSound;  // 0x108 [X35-L7 kind=int]
     int GUIMoveInSound;  // 0x10C [X30:type_map]
-    char GUIScrollSound[4];  // 0x110
+int GUIScrollSound;  // 0x110 [X35-L7 kind=int]
     int GUIComboOpenSound;  // 0x114 [X30:type_map]
-    char GUIComboCloseSound[4];  // 0x118
+int GUIComboCloseSound;  // 0x118 [X35-L7 kind=int]
     char GUICheckboxSound[4];  // 0x11C
     void* ScoreAnimSound;  // 0x120 [X30:type_map]
-    void* IFVTransformSound;  // 0x124 [X30:type_map]
+int IFVTransformSound;  // 0x124 [X35-L7 kind=int]
     int PsychicSensorDetectSound;  // 0x128 [X30:type_map]
     char BuildingGarrisonedSound[4];  // 0x12C
     int BuildingAbandonedSound;  // 0x130 [X30:type_map]
-    char BuildingRepairedSound[4];  // 0x134
-    char CheerSound[4];  // 0x138
+int BuildingRepairedSound;  // 0x134 [X35-L7 kind=int]
+int CheerSound;  // 0x138 [X35-L7 kind=int]
     void* PlaceBeaconSound;  // 0x13C [X30:type_map]
-    void* DefaultChronoSound;  // 0x140 [X30:type_map]
+int DefaultChronoSound;  // 0x140 [X35-L7 kind=int]
     int StartPlanningModeSound;  // 0x144 [X30:type_map]
-    char AddPlanningModeCommandSound[4];  // 0x148
+int AddPlanningModeCommandSound;  // 0x148 [X35-L7 kind=int]
     int ExecutePlanSound;  // 0x14C [X30:type_map]
-    char EndPlanningModeSound[4];  // 0x150
-    char CrateMoneySound[4];  // 0x154
+int EndPlanningModeSound;  // 0x150 [X35-L7 kind=int]
+int CrateMoneySound;  // 0x154 [X35-L7 kind=int]
     void* CrateRevealSound;  // 0x158 [X30:type_map]
     void* CrateFireSound;  // 0x15C [X30:type_map]
     int CrateArmourSound;  // 0x160 [X30:type_map]
-    char CrateSpeedSound[4];  // 0x164
+int CrateSpeedSound;  // 0x164 [X35-L7 kind=int]
     int CrateUnitSound;  // 0x168 [X30:type_map]
     char CratePromoteSound[4];  // 0x16C
-    char ImpactWaterSound[4];  // 0x170
+int ImpactWaterSound;  // 0x170 [X35-L7 kind=int]
     int ImpactLandSound;  // 0x174 [X30:type_map]
     int SinkingSound;  // 0x178 [X30:type_map]
     int BombTickingSound;  // 0x17C [X30:type_map]
@@ -184,15 +184,15 @@ struct RulesClass {
     double VeteranCap;  // 0x650
     int CloakSound;  // 0x658 [X30:type_map]
     int SellSound;  // 0x65C [X30:type_map]
-    char GameClosed[4];  // 0x660
+int GameClosed;  // 0x660 [X35-L7 kind=int]
     int IncomingMessage;  // 0x664 [X30:type_map]
-    void* SystemError;  // 0x668 [X30:type_map]
+int SystemError;  // 0x668 [X35-L7 kind=int]
     int OptionsChanged;  // 0x66C [X30:type_map]
-    void* GameForming;  // 0x670 [X30:type_map]
-    void* PlayerLeft;  // 0x674 [X30:type_map]
-    void* PlayerJoined;  // 0x678 [X30:type_map]
+int GameForming;  // 0x670 [X35-L7 kind=int]
+int PlayerLeft;  // 0x674 [X35-L7 kind=int]
+int PlayerJoined;  // 0x678 [X35-L7 kind=int]
     void* MessageCharTyped;  // 0x67C [X30:type_map]
-    void* Construction;  // 0x680 [X30:type_map]
+int Construction;  // 0x680 [X35-L7 kind=int]
     unsigned char CreditTicks;  // 0x684
     void* BuildingDieSound;  // 0x69C [X30:type_map]
     int BuildingSlam;  // 0x6A0 [X30:type_map]
@@ -220,7 +220,7 @@ struct RulesClass {
     int WindDirection;  // 0x768 [X30:type_map]
     BuildingTypeClass* CameraRange;  // 0x76C [X30:type_map]
     int FlightLevel;  // 0x770 [X30:type_map]
-    BuildingTypeClass* ParachuteMaxFallRate;  // 0x774 [X30:type_map]
+int ParachuteMaxFallRate;  // 0x774 [X35-L7 kind=int]
     int NoParachuteMaxFallRate;  // 0x778 [X30:type_map]
     BuildingTypeClass* BuildingDrop;  // 0x77C [X30:type_map]
     BuildingTypeClass* GDIGateOne;  // 0x780
@@ -255,21 +255,21 @@ struct RulesClass {
     AnimTypeClass* SmallFire;  // 0x804
     AnimTypeClass* LargeFire;  // 0x808
     InfantryTypeClass* Paratrooper;  // 0x80C
-    char EliteFlashTimer[4];  // 0x810
-    char ChronoDelay[4];  // 0x814
+int EliteFlashTimer;  // 0x810 [X35-L7 kind=int]
+int ChronoDelay;  // 0x814 [X35-L7 kind=int]
     SmudgeTypeVector* ChronoReinfDelay;  // 0x818 [X30:type_map]
     void* ChronoDistanceFactor;  // 0x81C [X30:type_map]
     bool ChronoTrigger;  // 0x820
-    char ChronoMinimumDelay[4];  // 0x824
+int ChronoMinimumDelay;  // 0x824 [X35-L7 kind=int]
     int ChronoRangeMinimum;  // 0x828 [X30:type_map]
     InfantryTypeClass* AlliedDisguise;  // 0x82C
     InfantryTypeClass* SovietDisguise;  // 0x830
     InfantryTypeClass* ThirdDisguise;  // 0x834
-    void* SpyPowerBlackout;  // 0x838 [X30:type_map]
+int SpyPowerBlackout;  // 0x838 [X35-L7 kind=int]
     float SpyMoneyStealPercent;  // 0x83C
     bool AttackCursorOnDisguise;  // 0x840
     float AIMinorSuperReadyPercent;  // 0x844
-    char AISafeDistance[4];  // 0x848
+int AISafeDistance;  // 0x848 [X35-L7 kind=int]
     char HarvesterTooFarDistance[4];  // 0x84C
     void* ChronoHarvTooFarDistance;  // 0x850 [X30:type_map]
     InfantryTypeClass* Technician;  // 0x854
@@ -410,13 +410,13 @@ struct RulesClass {
     char Normal[80];  // 0xB9C
     char Difficult[80];  // 0xBEC
     unsigned int MaxIQLevels_d;  // 0x1434
-    void* SuperWeapons_d;  // 0x1438 [X30:type_map]
+unsigned int SuperWeapons_d;  // 0x1438 [X35-L7 kind=unsigned int]
     void* Production_d;  // 0x143C [X30:type_map]
     unsigned int GuardArea_d;  // 0x1440
-    void* RepairSell_d;  // 0x1444 [X30:type_map]
-    void* AutoCrush_d;  // 0x1448 [X30:type_map]
-    void* ContentScan_d;  // 0x1450 [X30:type_map]
-    void* Aircraft_d;  // 0x1454 [X30:type_map]
+unsigned int RepairSell_d;  // 0x1444 [X35-L7 kind=unsigned int]
+unsigned int AutoCrush_d;  // 0x1448 [X35-L7 kind=unsigned int]
+unsigned int ContentScan_d;  // 0x1450 [X35-L7 kind=unsigned int]
+unsigned int Aircraft_d;  // 0x1454 [X35-L7 kind=unsigned int]
     unsigned int Harvester_d;  // 0x1458
     void* SellBack_d;  // 0x145C [X30:type_map]
     double GrowthRate;  // 0x1638
@@ -431,7 +431,7 @@ struct RulesClass {
     double TimerWarning;  // 0x167C
     double SpeakDelay;  // 0x1684
     double DamageDelay;  // 0x168C
-    char Gravity[4];  // 0x1694
+int Gravity;  // 0x1694 [X35-L7 kind=int]
     int LeptonsPerSightIncrease;  // 0x1698 [X30:type_map]
     char Incoming[4];  // 0x169C
     int MinDamage;  // 0x16A0 [X30:type_map]
@@ -454,31 +454,31 @@ struct RulesClass {
     int HomingScatter;  // 0x1700 [X30:type_map]
     int BallisticScatter;  // 0x1704 [X30:type_map]
     double RefundPercent;  // 0x1708
-    void* BridgeStrength;  // 0x1710 [X30:type_map]
+int BridgeStrength;  // 0x1710 [X35-L7 kind=int]
     double BuildSpeed;  // 0x1714
     double C4Delay;  // 0x171C
-    IUnknown* CreditReserve;  // 0x1724 [X30:type_map]
+int CreditReserve;  // 0x1724 [X35-L7 kind=int]
     double PathDelay;  // 0x1728
-    char BlockagePathDelay[4];  // 0x1730
+int BlockagePathDelay;  // 0x1730 [X35-L7 kind=int]
     double MovieTime;  // 0x1734
     int TiberiumShortScan;  // 0x173C [X30:type_map]
-    char TiberiumLongScan[4];  // 0x1740
-    char LightningDeferment[4];  // 0x1744
-    void* LightningDamage;  // 0x1748 [X30:type_map]
+int TiberiumLongScan;  // 0x1740 [X35-L7 kind=int]
+int LightningDeferment;  // 0x1744 [X35-L7 kind=int]
+int LightningDamage;  // 0x1748 [X35-L7 kind=int]
     int LightningStormDuration;  // 0x174C [X30:type_map]
-    char LightningHitDelay[4];  // 0x1750
-    char LightningScatterDelay[4];  // 0x1754
-    void* LightningCellSpread;  // 0x1758 [X30:type_map]
+int LightningHitDelay;  // 0x1750 [X35-L7 kind=int]
+int LightningScatterDelay;  // 0x1754 [X35-L7 kind=int]
+int LightningCellSpread;  // 0x1758 [X35-L7 kind=int]
     char LightningSeparation[4];  // 0x175C
     bool LightningPrintText;  // 0x1760
     WarheadTypeClass* LightningWarhead;  // 0x1764
-    void* ForceShieldRadius;  // 0x1768 [X30:type_map]
+int ForceShieldRadius;  // 0x1768 [X35-L7 kind=int]
     char ForceShieldDuration[4];  // 0x176C
     int ForceShieldBlackoutDuration;  // 0x1770 [X30:type_map]
-    void* ForceShieldPlayFadeSoundTime;  // 0x1774 [X30:type_map]
+int ForceShieldPlayFadeSoundTime;  // 0x1774 [X35-L7 kind=int]
     bool MutateExplosion;  // 0x1778
     IUnknown* CollapseChance;  // 0x177C [X30:type_map]
-    IUnknown* WeedCapacity;  // 0x1780 [X30:type_map]
+int WeedCapacity;  // 0x1780 [X35-L7 kind=int]
     float ExtraUnitLight;  // 0x1784
     float ExtraInfantryLight;  // 0x1788
     float ExtraAircraftLight;  // 0x178C
@@ -522,7 +522,7 @@ struct RulesClass {
     char LineTrailColorOverride[3];  // 0x1803
     unsigned int RadDurationMultiple_d;  // 0x1804
     char ChronoBeamColor[3];  // 0x1806
-    void* RadApplicationDelay_d;  // 0x1808 [X30:type_map]
+unsigned int RadApplicationDelay_d;  // 0x1808 [X35-L7 kind=unsigned int]
     char MagnaBeamColor[3];  // 0x1809
     void* RadLevelMax_d;  // 0x180C [X30:type_map]
     AnimTypeClass* RadLevelDelay_d;  // 0x1810
@@ -609,7 +609,7 @@ struct RulesClass {
     unsigned char __pad_8BA;  // 0x8BA [X30:canon]
     void* __pad_C3C;  // 0xC3C [X30:type_map]
     int __pad_144C;  // 0x144C [X30:type_map]
-    void* __pad_1460;  // 0x1460 [X30:type_map]
+unsigned int __pad_1460;  // 0x1460 [X35-L7 kind=unsigned int]
     unsigned char __pad_1761;  // 0x1761 [X30:canon]
     unsigned char __pad_1779;  // 0x1779 [X30:canon]
     unsigned char __pad_17DB;  // 0x17DB [X30:canon]

@@ -25,8 +25,8 @@ struct CCINIClass {
     bool ownsFile;  // 0x40
     unsigned char padding45;  // 0x45
     char CCINIClass_field_4C[4];  // 0x4C
-    char unknown50[4];  // 0x50
-    char unknown54[4];  // 0x54
+int unknown50;  // 0x50 [X35-L7 kind=int]
+int unknown54;  // 0x54 [X35-L7 kind=int]
 // --- flat members (END) ---
     static int LoadAndVerifyDigest(void *aP1, int a2, char a3, char a4);
     AITriggerTypeClass * ReadInfantryTypeList(char * a1, int a2);
@@ -44,7 +44,7 @@ CCINIClass();
     unsigned int *q000;  // 0x0 (offset-truth)
     int sectionCount;  // 0x1C (ml)
     int sectionHead[3];  // 0x10 (ml)
-    int unknown38;  // 0x38 (ml)
+unsigned int unknown38;  // 0x38 [X35-L7 kind=unsigned int]
 
     unsigned char __pad_041;  // X10 supply (csp_canon_members)
     unsigned char u32_AC;  // 0xAC
@@ -63,7 +63,7 @@ CCINIClass();
     unsigned int u32_62;  // 0x62
     unsigned int q060;  // 0x60
     int __pad_008;  // 0x8 [X30:type_map]
-    int __pad_038;  // 0x38 [X30:type_map]
+unsigned int __pad_038;  // 0x38 [X35-L7 kind=unsigned int]
     unsigned char __pad_048;  // 0x48 [X30:canon]
     unsigned int BufferCursor;  // [X30:default]
     unsigned int BufferOffset;  // [X30:default]

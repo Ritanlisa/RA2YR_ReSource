@@ -17,8 +17,8 @@ struct INIData;  // ini_class.hpp companion fwd (kept for decl compat)
 
 struct INIEntry {
 // --- flat members (BEGIN) ---
-    unsigned int Key;  // 0x0
-    void* Value;  // 0x4 [X30:type_map]
+const char* Key;  // 0x0 [X35-L7 kind=const char*]
+const char* Value;  // 0x4 [X35-L7 kind=const char*]
     INIEntry* Next;  // 0x8
 // --- flat members (END) ---
     int  Write3Bytes(uint8_t * Block, char * a3, uint8_t * a4);  // 0x474C20

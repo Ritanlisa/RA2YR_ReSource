@@ -13,8 +13,8 @@ struct EventQueue {
     unsigned int q018;  // 0x18
     unsigned int q024;  // 0x24
     unsigned int q034;  // 0x34
-    void* q314;  // 0x314
-    void* q318;  // 0x318
+unsigned int q314;  // 0x314 [X35-L7 kind=unsigned int]
+unsigned int q318;  // 0x318 [X35-L7 kind=unsigned int]
     unsigned int u32_444;  // 0x444
     unsigned int u32_47C;  // 0x47C
     void* q788;  // 0x788

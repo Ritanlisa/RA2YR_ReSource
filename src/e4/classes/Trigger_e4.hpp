@@ -22,7 +22,7 @@ struct Trigger {
     int executeActions(int a2, void *a2_1 = 0);  // 0x76FF20
     char __pad_30[24];  // 0x30 (ml)
     unsigned int q008;  // 0x8 (offset-truth)
-    unsigned int q018;  // 0x18 (offset-truth)
+CampaignClass* q018;  // 0x18 [X35-L7 kind=CampaignClass*]
     unsigned int u32_444;  // 0x444 (offset-truth)
     unsigned int u32_45C;  // 0x45C (offset-truth)
     unsigned int u32_46C;  // 0x46C (offset-truth)
@@ -49,7 +49,7 @@ struct Trigger {
     unsigned char __pad_03A;  // 0x3A [X30:canon]
     ComPtr* ComPtr_488;  // 0x488 [X30:member_lookup]
     int Trigger_field_0x2C;  // 0x2C [X30:member_lookup]
-    int Trigger_field_0x4;  // 0x4 [X30:member_lookup]
+MSAnim* Trigger_field_0x4;  // 0x4 [X35-L7 kind=MSAnim*]
     char __pad_0[4];  // 0x0 [X30:member_lookup]
     unsigned char __pad_494;  // 0x494 [X30:member_lookup]
     char __pad_8[8];  // 0x8 [X30:member_lookup]

@@ -10,9 +10,9 @@ namespace gamemd {
 #define GAMEMD_G2_ThemeClass_DEF 1
 struct ThemeClass {
 // --- flat members (BEGIN) ---
-    char ThemeClass_field_00[4];  // 0x0
+int ThemeClass_field_00;  // 0x0 [X35-L7 kind=int]
     AbstractClass * ptr_4;  // 0x4
-    char ThemeClass_field_28[4];  // 0x28
+int ThemeClass_field_28;  // 0x28 [X35-L7 kind=int]
     int ThemeClass_field_2C;  // 0x2C [X30:type_map]
 // --- flat members (END) ---
     static int ClearQueues();
@@ -36,7 +36,7 @@ struct ThemeClass {
     unsigned int u32_1C;  // X10 supply (member_lookup)
     unsigned int u32_21;  // X10 supply (member_lookup)
     unsigned int u32_24;  // X10 supply (member_lookup)
-    int __pad_008;  // 0x8 [X30:type_map]
+unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
 };
 #endif  // GAMEMD_G2_ThemeClass_DEF
 

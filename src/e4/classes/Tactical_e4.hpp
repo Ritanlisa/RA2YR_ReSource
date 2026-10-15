@@ -56,7 +56,7 @@ ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, 
     int UpdateUIVisibility(void *a1_1);
     int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);
     char __pad_10[32];  // 0x10 (ml)
-    void* q034;  // 0x34 (offset-truth) [X30:type_map]
+unsigned int q034;  // 0x34 [X35-L7 kind=unsigned int]
     unsigned int u32_1178;  // 0x1178 (offset-truth)
     unsigned char u32_117A;  // 0x117A (offset-truth)
     unsigned int u32_117C;  // 0x117C (offset-truth)
@@ -91,7 +91,7 @@ ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, 
     unsigned int u32_BC;  // 0xBC
     unsigned int u32_64;  // 0x64
     unsigned int q04C;  // 0x4C
-    int __pad_010;  // 0x10 [X30:type_map]
+unsigned int __pad_010;  // 0x10 [X35-L7 kind=unsigned int]
     unsigned char __pad_017;  // 0x17 [X30:canon]
     unsigned char __pad_020;  // 0x20 [X30:canon]
     unsigned char __pad_037;  // 0x37 [X30:canon]

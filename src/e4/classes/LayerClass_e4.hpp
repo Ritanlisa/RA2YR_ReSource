@@ -10,7 +10,7 @@ namespace gamemd {
 struct LayerClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* count;  // 0x4 [X30:type_map]
+int count;  // 0x4 [X35-L7 kind=int]
     int capacity;  // 0x8 [X30:type_map]
 // --- flat members (END) ---
     void* Load_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon LayerClass::Load is a method)
@@ -30,7 +30,7 @@ struct LayerClass {
     unsigned int u32_10C;  // 0x10C (offset-truth)
     unsigned int u32_110;  // 0x110 (offset-truth)
     unsigned int u32_114;  // 0x114 (offset-truth)
-    void *q118;  // 0x118 (offset-truth)
+unsigned int q118;  // 0x118 [X35-L7 kind=unsigned int]
     unsigned int u32_13C;  // 0x13C (offset-truth)
     unsigned int u32_F4;  // 0xF4 (offset-truth)
     unsigned int u32_F8;  // 0xF8 (offset-truth)

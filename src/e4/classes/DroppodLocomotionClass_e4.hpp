@@ -30,7 +30,7 @@ struct DroppodLocomotionClass {
 struct DropPodLocomotionClass {
 // --- flat members (live til: DropPodLocomotionClass size=48, IDA 2026-10-06) ---
     char LocomotionClass[24];  // 0x0 LocomotionClass base sub-object (body vocabulary char[24])
-    char __pad_18[4];  // 0x18
+unsigned int __pad_18;  // 0x18 [X35-L7 kind=unsigned int]
     bool IsOutOfMap;  // 0x1C [X30:type_map]
     char __pad_1D[3];  // 0x1D
     int DestinationCoords[3];  // 0x20
@@ -49,7 +49,7 @@ struct DropPodLocomotionClass {
     bool Dirty;  // 0x11 [X30:canon]
     unsigned char __pad_01D;  // 0x1D [X30:canon]
     void* __pad_02C;  // 0x2C [X30:type_map]
-    int q018;  // 0x18 [X30:type_map]
+unsigned int q018;  // 0x18 [X35-L7 kind=unsigned int]
 };
 #endif  // GAMEMD_E4_FLAT_DropPodLocomotionClass
 } // namespace gamemd

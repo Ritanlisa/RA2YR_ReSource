@@ -46,7 +46,7 @@ struct UnitClass {
     BombClass* attachedBomb;  // 0x38
     AudioController* ambientSoundController;  // 0x3C [X30:type_map]
     char customSound_controller[4];  // 0x50
-    char customSound[4];  // 0x64
+int customSound;  // 0x64 [X35-L7 kind=int]
     bool bombVisible;  // 0x68
     int health;  // 0x6C [X30:type_map]
     int estimatedHealth;  // 0x70 [X30:type_map]
@@ -86,9 +86,9 @@ struct UnitClass {
     unsigned int radioQueue;  // 0x110
     PassengersClass* passengers;  // 0x114 [X30:type_map]
     TechnoClass* transporter;  // 0x11C
-    void* turretChargeTimer;  // 0x120 [X30:type_map]
+int turretChargeTimer;  // 0x120 [X35-L7 kind=int]
     void* currentTurretNumber;  // 0x124
-    char secondaryTurretIndex[4];  // 0x128
+int secondaryTurretIndex;  // 0x128 [X35-L7 kind=int]
     AnimClass* behindAnim;  // 0x12C
     AnimClass* deployAnim;  // 0x130
     bool inAirFlag;  // 0x134
@@ -96,7 +96,7 @@ struct UnitClass {
     int radioQueueCount;  // 0x138 [X30:type_map]
     void* currentRank;  // 0x13C [X30:type_map]
     void* gattlingStage;  // 0x140
-    char gattlingValue[4];  // 0x144
+int gattlingValue;  // 0x144 [X35-L7 kind=int]
     unsigned int ammoReloadTimer;  // 0x148
     HouseClass* initialOwner;  // 0x14C
     FootClass* veterancy;  // 0x150 [X30:type_map]
@@ -133,7 +133,7 @@ struct UnitClass {
     bool isChronosphereImmune;  // 0x250
     unsigned int alignmentPadding251;  // 0x251
     unsigned int diskLaserChargeState;  // 0x254
-    char ammo[4];  // 0x258
+int ammo;  // 0x258 [X35-L7 kind=int]
     char unitValue[4];  // 0x25C
     ParticleSystemClass* fireParticles;  // 0x260
     ParticleSystemClass* sparkParticles;  // 0x264
@@ -282,7 +282,7 @@ struct UnitClass {
     char FootClass_field_52E[4];  // 0x52E
     int FootClass_field_530;  // 0x530
     int FootClass_field_534;  // 0x534
-    char FootClass_field_538[4];  // 0x538
+int FootClass_field_538;  // 0x538 [X35-L7 kind=int]
     bool FootClass_field_53C;  // 0x53C
     unsigned int m_padding_53D;  // 0x53D
     int FootClass_field_540;  // 0x540
@@ -321,15 +321,15 @@ struct UnitClass {
     char FootClass_field_644[4];  // 0x644
     char FootClass_field_648[4];  // 0x648
     char FootClass_field_64C[4];  // 0x64C
-    char FootClass_field_650[4];  // 0x650
-    char FootClass_field_654[4];  // 0x654
+int FootClass_field_650;  // 0x650 [X35-L7 kind=int]
+int FootClass_field_654;  // 0x654 [X35-L7 kind=int]
     char FootClass_field_658[4];  // 0x658
     char FootClass_field_65C[4];  // 0x65C
     char FootClass_field_660[4];  // 0x660
     char FootClass_field_664[4];  // 0x664
     unsigned int FootClass_field_668;  // 0x668
     char FootClass_field_66C[4];  // 0x66C
-    char FootClass_field_670[4];  // 0x670
+int FootClass_field_670;  // 0x670 [X35-L7 kind=int]
     ILocomotion* Locomotor;  // 0x674
     LocomotionClass* Locomotor_ptr;  // 0x678
     bool IsDeploying;  // 0x67C
@@ -346,7 +346,7 @@ struct UnitClass {
     char shouldEnterOccupiable;  // 0x690
     char shouldGarrisonStructure;  // 0x691
     void* FootClass_field_694;  // 0x694
-    char FootClass_field_698[4];  // 0x698
+int FootClass_field_698;  // 0x698 [X35-L7 kind=int]
     char FootClass_field_69C[4];  // 0x69C
     char FootClass_field_6A0[4];  // 0x6A0
     char FootClass_field_6A4[4];  // 0x6A4

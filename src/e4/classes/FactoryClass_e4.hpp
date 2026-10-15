@@ -29,7 +29,7 @@ struct FactoryClass {
     bool isDifferent;  // 0x41
     unsigned char m_align_5E;  // 0x5E
     int balance;  // 0x60 [X30:type_map]
-    void* originalBalance;  // 0x64 [X30:type_map]
+int originalBalance;  // 0x64 [X35-L7 kind=int]
     int specialItem;  // 0x68 [X30:type_map]
     HouseClass* owner;  // 0x6C
     int q060;  // 0x60

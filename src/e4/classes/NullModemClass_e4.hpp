@@ -8,7 +8,7 @@ namespace gamemd {
 struct NullModemClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    AbstractClass* PlayerIndex;  // 0x4 [X30:type_map]
+int PlayerIndex;  // 0x4 [X35-L7 kind=int]
     unsigned int m_5;  // 0x5
     String* Active;  // 0x8 [X30:type_map]
     void* LastPacketTime;  // 0xC
@@ -30,10 +30,10 @@ struct NullModemClass {
     int receiveData();
     int sendData();
     void * QueryInterface(char a2, int a1, int a3, int a4, int a5);
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int u32_1C;  // 0x1C (offset-truth)
-    void* u32_34;  // 0x34 (offset-truth) [X30:type_map]
-    void* u32_38;  // 0x38 (offset-truth) [X30:type_map]
+unsigned int u32_34;  // 0x34 [X35-L7 kind=unsigned int]
+unsigned int u32_38;  // 0x38 [X35-L7 kind=unsigned int]
     unsigned int u32_3C;  // 0x3C (offset-truth)
     unsigned char u32_51;  // 0x51 (offset-truth)
     unsigned int u32_5C;  // 0x5C (offset-truth)

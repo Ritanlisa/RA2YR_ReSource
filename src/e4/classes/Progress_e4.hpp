@@ -8,8 +8,8 @@ namespace gamemd {
 struct Progress {
 // --- flat members (BEGIN) ---
     float m_Values;  // 0x0
-    char m_Index[4];  // 0x20
-    char m_Count[4];  // 0x24
+int m_Index;  // 0x20 [X35-L7 kind=int]
+int m_Count;  // 0x24 [X35-L7 kind=int]
 // --- flat members (END) ---
     int GetAverage(void *a1 = 0);
     static int GetWeighted(int a2, void *a2_1 = 0);

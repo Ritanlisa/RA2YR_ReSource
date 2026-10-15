@@ -18,7 +18,7 @@ struct DialogControl {
     unsigned char u32_1E;  // 0x1E (offset-truth)
     unsigned int u32_40;  // 0x40 (offset-truth)
     unsigned int u32_5C;  // 0x5C (offset-truth)
-    BitFont* u32_64;  // 0x64 (offset-truth) [X30:type_map]
+unsigned int u32_64;  // 0x64 [X35-L7 kind=unsigned int]
     unsigned int u32_68;  // 0x68 (offset-truth)
     unsigned int u32_90;  // 0x90 (offset-truth)
 

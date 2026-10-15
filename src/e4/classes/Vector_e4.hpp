@@ -22,7 +22,7 @@ struct Vector {
     char Grow();  // 0x7AEEC0
     static double TwoDMagnitudeMath(Vector * aP1);
     unsigned char *m_1;  // 0x1 (offset-truth)
-    void* m_8;  // 0x8 (offset-truth) [X30:type_map]
+unsigned int m_8;  // 0x8 [X35-L7 kind=unsigned int]
     unsigned int m_C;  // 0xC (offset-truth)
     unsigned int u32_14;  // 0x14 (offset-truth)
     unsigned int u32_18;  // 0x18 (offset-truth)

@@ -9,7 +9,7 @@ struct TechnoTypeClass;  // fix_fwd_type_supply
 
 struct Frame {
 // --- flat members (BEGIN) ---
-    void* q004;  // 0x4
+unsigned int q004;  // 0x4 [X35-L7 kind=unsigned int]
     void* q008;  // 0x8
     void* q00C;  // 0xC
     void* q018;  // 0x18

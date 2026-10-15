@@ -17,7 +17,7 @@ struct TemporalClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    void* creationFrame;  // 0x24 [X30:type_map]
+int creationFrame;  // 0x24 [X35-L7 kind=int]
     char TemporalClass_field_30[4];  // 0x30
     unsigned int alignmentPadding;  // 0x33
     int TemporalClass_field_34;  // 0x34 [X30:type_map]
@@ -33,7 +33,7 @@ struct TemporalClass {
     void * ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2);
     void ** ProcessTimeWarp();
     unsigned int u32_308;  // 0x308 (offset-truth)
-    TechnoClass* u32_38;  // 0x38 (offset-truth) [X30:type_map]
+unsigned int u32_38;  // 0x38 [X35-L7 kind=unsigned int]
     TechnoClass* u32_3C;  // 0x3C (offset-truth) [X30:type_map]
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_4A8;  // 0x4A8 (offset-truth)

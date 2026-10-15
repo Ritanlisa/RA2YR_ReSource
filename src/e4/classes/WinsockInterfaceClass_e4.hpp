@@ -10,7 +10,7 @@ struct WinsockInterfaceClass {
     void* vtable1;  // 0x0
     unsigned short BoundPort;  // 0x6
 // --- flat members (END) ---
-    void* Initialized;  // 0x0 (no offset truth)
+unsigned int Initialized;  // 0x0 [X35-L7 kind=unsigned int]
     unsigned int * Destru_vt00(char a2);
     WinsockInterfaceClass();
     static void Constructor(void *aP1);
@@ -20,10 +20,10 @@ struct WinsockInterfaceClass {
     int Destru_vt16(int a1, int a2, int a3, int a4);
     unsigned int * Destru_vt00(unsigned int * Block, char a2);
     unsigned char u32_15;  // 0x15 (offset-truth)
-    void* u32_24;  // 0x24 (offset-truth) [X30:type_map]
+unsigned int u32_24;  // 0x24 [X35-L7 kind=unsigned int]
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned char u32_2D;  // 0x2D (offset-truth)
-    void* u32_38;  // 0x38 (offset-truth) [X30:type_map]
+unsigned int u32_38;  // 0x38 [X35-L7 kind=unsigned int]
     void* u32_3C;  // 0x3C (offset-truth) [X30:type_map]
     unsigned int u32_40;  // 0x40 (offset-truth)
     unsigned char u32_42;  // 0x42 (offset-truth)
@@ -34,7 +34,7 @@ struct WinsockInterfaceClass {
     int u32_20;  // X10 supply (member_lookup)
     unsigned int u32_3F068;  // X10 supply (member_lookup)
     unsigned char __pad_004;  // 0x4 [X30:canon]
-    int __pad_008;  // 0x8 [X30:type_map]
+unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
 };
 
 } // namespace gamemd

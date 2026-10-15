@@ -60,7 +60,7 @@ struct SessionClass {
     int Color;  // 0x17C [X30:type_map]
     int Color2;  // 0x180 [X30:type_map]
     int Side;  // 0x184 [X30:type_map]
-    void* Side2;  // 0x188 [X30:type_map]
+int Side2;  // 0x188 [X35-L7 kind=int]
     char SkirmishPreferences[124];  // 0x18C
     char LANPreferences[124];  // 0x208
     char WOLPreferences[124];  // 0x284
@@ -156,7 +156,7 @@ struct SessionClass {
     unsigned int q_3086;  // +0x3086 flat supply (three-ban reform)
     char unknown_2854[2180];  // 0x2854 (W13A til SessionClass size 12508 tail; compile-stride carrier, appended at end)
     char __pad_50[272];  // 0x50 (ml)
-    int unknown_14;  // 0x14 (ml)
+unsigned int unknown_14;  // 0x14 [X35-L7 kind=unsigned int]
 
     unsigned char __pad_050;  // X10 supply (csp_canon_members)
     unsigned char __pad_057;  // X10 supply (csp_canon_members)

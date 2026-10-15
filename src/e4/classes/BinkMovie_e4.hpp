@@ -60,8 +60,8 @@ int IsAtEnd(void *a1_1); // def-aligned
     unsigned int u32_B4;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
     int __pad_000;  // 0x0 [X30:type_map]
-    int BinkMovie_field_0x4;  // 0x4 [X30:type_map]
-    int BinkMovie_field_0x8;  // 0x8 [X30:type_map]
+unsigned int BinkMovie_field_0x4;  // 0x4 [X35-L7 kind=unsigned int]
+unsigned int BinkMovie_field_0x8;  // 0x8 [X35-L7 kind=unsigned int]
     int BinkMovie_field_0xC;  // 0xC [X30:type_map]
     int __pad_0;  // 0x0 [X30:type_map]
 };

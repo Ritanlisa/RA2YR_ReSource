@@ -119,9 +119,9 @@ struct ConvertClass {
     int q178;  // X10 supply (member_lookup)
     unsigned int u32_184;  // 0x184
     unsigned int u32_180;  // 0x180
-    char field_2[4];  // 0x2  /* char[4] */
+unsigned int field_2;  // 0x2 [X35-L7 kind=unsigned int]
     int __pad_0;  // 0x0 [X30:type_map]
-    int __pad_174;  // 0x174 [X30:type_map]
+unsigned int __pad_174;  // 0x174 [X35-L7 kind=unsigned int]
 };
 
 } // namespace gamemd

@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Mixer {
 // --- flat members (BEGIN) ---
-    char Mixer_field_00[4];  // 0x0
+int Mixer_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int ReleaseChannel(void *a1 = 0);
     static int RequestAllBuffers();

@@ -361,7 +361,7 @@ struct Gap2Recv_402F60 {
     unsigned int q108;  // 0x108
     CampaignClass * ptr_110;  // 0x110
     CampaignClass * ptr_118;  // 0x118
-    AbstractClass * q120;  // 0x120
+unsigned int q120;  // 0x120 [X35-L7 kind=unsigned int]
     unsigned int q124;  // 0x124
     unsigned int q128;  // 0x128
     unsigned int u32_12C;  // 0x12C
@@ -501,7 +501,7 @@ struct HashTable {
     static int FindString(void *aP0, const char *aP1, unsigned int *aP2);
     unsigned char *__pad_0;  // 0x0
     AbstractClass* __pad_000;  // 0x0 [X30:type_map]
-    int HashTable_field_0x10;  // 0x10 [X30:type_map]
+unsigned int HashTable_field_0x10;  // 0x10 [X35-L7 kind=unsigned int]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (HashTable)
 
@@ -516,7 +516,7 @@ struct KeywordType {
 
 struct Locomotor {
     void* vfptr;
-    char Locomotor_field_00[4];  // 0x0
+int Locomotor_field_00;  // 0x0 [X35-L7 kind=int]
     static int GetSpeed(void *aP1);
 };
 
@@ -849,7 +849,7 @@ struct ObjectClass {
     int sub_77D3F0();  // 0x77D3F0
     // --- W16G3 supply (BEGIN) ---
     char __pad_524[340];  // 0x524 vocab (elem [336] @0x5f41bd) (W16G3 raw-usage vocab)
-    void* field_520;  // 0x520 @0x5f48fa (W16G3 raw-usage vocab) [X30:type_map]
+unsigned int field_520;  // 0x520 [X35-L7 kind=unsigned int]
     char isBerserk[4];  // @0x4d7d58 elem[0] (W16G3 raw-usage vocab)
     unsigned int rockerLinkedUnit;  // @0x4d7d65 (W16G3 raw-usage vocab)
     // --- W16G3 supply (END) ---
@@ -954,26 +954,26 @@ struct ObjectClass {
     String* ptr_8;  // 0x8 [X30:type_map]
     void* q000;  // 0x0 [X30:type_map]
     void* q004;  // 0x4 [X30:type_map]
-    int q100;  // 0x100 [X30:type_map]
-    int q104;  // 0x104 [X30:type_map]
-    int q118;  // 0x118 [X30:type_map]
+unsigned int q100;  // 0x100 [X35-L7 kind=unsigned int]
+unsigned int q104;  // 0x104 [X35-L7 kind=unsigned int]
+unsigned int q118;  // 0x118 [X35-L7 kind=unsigned int]
     int q120;  // 0x120 [X30:type_map]
-    int q124;  // 0x124 [X30:type_map]
-    int q128;  // 0x128 [X30:type_map]
+unsigned int q124;  // 0x124 [X35-L7 kind=unsigned int]
+unsigned int q128;  // 0x128 [X35-L7 kind=unsigned int]
     int q12C;  // 0x12C [X30:type_map]
-    int q130;  // 0x130 [X30:type_map]
-    int q134;  // 0x134 [X30:type_map]
+unsigned int q130;  // 0x130 [X35-L7 kind=unsigned int]
+unsigned int q134;  // 0x134 [X35-L7 kind=unsigned int]
     int q138;  // 0x138 [X30:type_map]
     int q13C;  // 0x13C [X30:type_map]
     unsigned int q146;  // 0x146 [X30:member_lookup]
-    int q148;  // 0x148 [X30:type_map]
+unsigned int q148;  // 0x148 [X35-L7 kind=unsigned int]
     int q150;  // 0x150 [X30:type_map]
     unsigned int q151;  // 0x151 [X30:member_lookup]
     bool q152;  // 0x152 [X30:member_lookup]
     bool q153;  // 0x153 [X30:member_lookup]
-    int q154;  // 0x154 [X30:member_lookup]
+unsigned int q154;  // 0x154 [X35-L7 kind=unsigned int]
     void* q156;  // 0x156 [X30:member_lookup]
-    int q158;  // 0x158 [X30:type_map]
+unsigned int q158;  // 0x158 [X35-L7 kind=unsigned int]
     int q15C;  // 0x15C [X30:type_map]
     unsigned char q16D;  // 0x16D [X30:member_lookup]
     int q170;  // 0x170 [X30:type_map]
@@ -982,13 +982,13 @@ struct ObjectClass {
     unsigned int q176;  // 0x176 [X30:default]
     unsigned char q1E0;  // 0x1E0 [X30:member_lookup]
     unsigned int q45C;  // 0x45C [X30:default]
-    int u32_144;  // 0x144 [X30:type_map]
+unsigned int u32_144;  // 0x144 [X35-L7 kind=unsigned int]
     int u32_14C;  // 0x14C [X30:type_map]
     int u32_178;  // 0x178 [X30:type_map]
     int u32_17C;  // 0x17C [X30:type_map]
     int u32_180;  // 0x180 [X30:type_map]
     int u32_184;  // 0x184 [X30:type_map]
-    int u32_188;  // 0x188 [X30:type_map]
+unsigned int u32_188;  // 0x188 [X35-L7 kind=unsigned int]
     int u32_1C4;  // 0x1C4 [X30:type_map]
     int u32_1C8;  // 0x1C8 [X30:type_map]
     int u32_98;  // 0x98 [X30:type_map]
@@ -1110,7 +1110,7 @@ struct VectorClass {
     void* Items;  // 0x4 [X30:type_map]
     AbstractClass* Capacity;  // 0x8 [X30:type_map]
     int IsInitialized;  // 0xC [X30:type_map]
-    void* VectorClass_18;  // 0x18 [X30:member_lookup]
+unsigned int VectorClass_18;  // 0x18 [X35-L7 kind=unsigned int]
 };
 #endif
 

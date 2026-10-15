@@ -20,10 +20,10 @@ struct TacticalClass {
     void* nextArrayIndex;  // 0x18
     void* referenceCount;  // 0x1C
     void* NeedsSaveOrLink;  // 0x20
-    void* field24;  // 0x24 [X30:type_map]
+unsigned int field24;  // 0x24 [X35-L7 kind=unsigned int]
     unsigned int field28;  // 0x28
     unsigned int TacticalClass_field_2C;  // 0x2C
-    void* field30;  // 0x30 [X30:type_map]
+unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     unsigned int field34;  // 0x34
     unsigned int field38;  // 0x38
     unsigned int TacticalClass_field_3C;  // 0x3C

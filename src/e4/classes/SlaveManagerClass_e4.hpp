@@ -26,12 +26,12 @@ struct SlaveManagerClass {
     int slaveCount;  // 0x34 [X30:type_map]
     void *q38;  // 0x38
     int slaveVectorCount;  // 0x3C [X30:type_map]
-    AbstractClass* slaveVectorCapacity;  // 0x40 [X30:type_map]
-    char creationFrame[4];  // 0x44
+int slaveVectorCapacity;  // 0x40 [X35-L7 kind=int]
+int creationFrame;  // 0x44 [X35-L7 kind=int]
     int SlaveManagerClass_field_54;  // 0x54 [X30:type_map]
     int SlaveManagerClass_field_58;  // 0x58 [X30:type_map]
     int SlaveManagerClass_field_5C;  // 0x5C [X30:type_map]
-    AbstractClass* SlaveManagerClass_field_60;  // 0x60 [X30:type_map]
+int SlaveManagerClass_field_60;  // 0x60 [X35-L7 kind=int]
 // --- flat members (END) ---
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);

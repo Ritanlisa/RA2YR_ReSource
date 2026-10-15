@@ -42,7 +42,7 @@ struct Array {
     unsigned int u32_40;  // X10 supply (member_lookup)
     unsigned int u32_6C;  // X10 supply (member_lookup)
     unsigned int u32_804;  // X10 supply (member_lookup)
-    int Array_field_0x10;  // 0x10 [X30:type_map]
+unsigned int Array_field_0x10;  // 0x10 [X35-L7 kind=unsigned int]
     int Array_field_0x4;  // 0x4 [X30:type_map]
     unsigned int For;  // [X30:default]
     int __pad_0;  // 0x0 [X30:type_map]

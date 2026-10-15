@@ -28,7 +28,7 @@ struct TriggerClass {
     unsigned char align31;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char timer[12];  // 0x34
-    void* occuredEvents;  // 0x40 [X30:type_map]
+unsigned int occuredEvents;  // 0x40 [X35-L7 kind=unsigned int]
     bool enabled;  // 0x44
     unsigned char align45;  // 0x45
 // --- flat members (END) ---

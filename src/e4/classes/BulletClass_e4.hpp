@@ -25,8 +25,8 @@ struct BulletClass {
     bool IsAllocated;  // 0x13
     ObjectClass* nextObject;  // 0x30
     unsigned int alignmentPadding;  // 0x33
-    char customSound[4];  // 0x64
-    char estimatedHealth[4];  // 0x70
+int customSound;  // 0x64 [X35-L7 kind=int]
+int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int visibilityFlags;  // 0x7C
@@ -45,12 +45,12 @@ struct BulletClass {
     unsigned int Bright;  // 0xE0
     unsigned int CourseLock;  // 0x105
     unsigned int InheritedColor;  // 0x114
-    ParticleSystemClass* AnimFrame;  // 0x124 [X30:type_map]
+unsigned int AnimFrame;  // 0x124 [X35-L7 kind=unsigned int]
     unsigned int AnimRateCounter;  // 0x125
-    ParticleSystemClass* WeaponType;  // 0x128 [X30:type_map]
+unsigned int WeaponType;  // 0x128 [X35-L7 kind=unsigned int]
     unsigned int SourceCoords;  // 0x12C
-    ParticleSystemClass* TargetCoords;  // 0x138 [X30:type_map]
-    ParticleSystemClass* DamageMultiplier;  // 0x148 [X30:type_map]
+unsigned int TargetCoords;  // 0x138 [X35-L7 kind=unsigned int]
+unsigned int DamageMultiplier;  // 0x148 [X35-L7 kind=unsigned int]
     CellStruct* NextAnim;  // 0x14C
     unsigned int SpawnNextAnim;  // 0x150
     BulletTypeClass* Type;  // 0x172
@@ -73,11 +73,11 @@ struct BulletClass {
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     static int16_t LoseTarget(BulletClass *p_this);  // x4:ida@0x468430
     char __pad_B4[88];  // 0xB4 (ml)
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int q00C;  // 0xC (offset-truth)
     void* u32_AC;  // 0xAC [X30:type_map]
     unsigned char __pad_010;  // 0x10 [X30:canon]
-    unsigned char __pad_017;  // 0x17 [X30:canon]
+bool __pad_017;  // 0x17 [X35-L7 kind=bool]
     unsigned char __pad_037;  // 0x37 [X30:canon]
     unsigned char __pad_068;  // 0x68 [X30:canon]
     unsigned char __pad_079;  // 0x79 [X30:canon]
@@ -107,7 +107,7 @@ struct BulletClass {
     int q134;  // 0x134 [X30:type_map]
     int q140;  // 0x140 [X30:type_map]
     ParticleSystemClass* q144;  // 0x144 [X30:type_map]
-    int q158;  // 0x158 [X30:type_map]
+unsigned int q158;  // 0x158 [X35-L7 kind=unsigned int]
     unsigned int q_120;  // [X30:default]
     unsigned int q_B0;  // [X30:default]
     void* u16_14E;  // 0x14E [X30:type_map]

@@ -30,8 +30,8 @@ struct ScenarioClass {
     char waypoints[2808];  // 0x632
     void* startX;  // 0x112C [X30:type_map]
     int startY;  // 0x1130 [X30:type_map]
-    void* width;  // 0x1134 [X30:type_map]
-    void* height;  // 0x1138 [X30:type_map]
+int width;  // 0x1134 [X35-L7 kind=int]
+int height;  // 0x1138 [X35-L7 kind=int]
     int numberStartingPoints;  // 0x113C [X30:type_map]
     char startingPoints[64];  // 0x1140
     char houseIndices[64];  // 0x1180
@@ -46,18 +46,18 @@ struct ScenarioClass {
     char iceTimer[12];  // 0x1230
     char ScenarioClass_field_timer_123c[12];  // 0x123C
     char ambientTimer[12];  // 0x1248
-    char techLevel[4];  // 0x1254
+int techLevel;  // 0x1254 [X35-L7 kind=int]
     int theater;  // 0x1258 [X30:type_map]
     char fileName;  // 0x125C
     int name;  // 0x1360 [X30:type_map]
     char uiName;  // 0x13BA
     char uiNameLoaded[90];  // 0x13DA
-    void* AltNextScenario;  // 0x1434 [X30:type_map]
-    unsigned int Brief;  // 0x1438
+const char* AltNextScenario;  // 0x1434 [X35-L7 kind=const char*]
+const char* Brief;  // 0x1438 [X35-L7 kind=const char*]
     unsigned int win;  // 0x143C
-    void* Lose;  // 0x1440 [X30:type_map]
-    unsigned int Action;  // 0x1444
-    unsigned int PostScore;  // 0x1448
+const char* Lose;  // 0x1440 [X35-L7 kind=const char*]
+const char* Action;  // 0x1444 [X35-L7 kind=const char*]
+const char* PostScore;  // 0x1448 [X35-L7 kind=const char*]
     void* PreMapSelect;  // 0x144C [X30:type_map]
     char Name[2048];  // 0x1450
     char briefingCsf;  // 0x1C50
@@ -68,7 +68,7 @@ struct ScenarioClass {
     void* Percent;  // 0x1C84 [X30:type_map]
     char globalVariables[2050];  // 0x1C88
     char localVariables[4100];  // 0x248C
-    void * ptr_2888;  // 0x2888
+unsigned long long* ptr_2888;  // 0x2888 [X35-L7 kind=unsigned long long*]
     char view1[4];  // 0x3490
     char view2[4];  // 0x3494
     char view3[4];  // 0x3498
@@ -113,15 +113,15 @@ struct ScenarioClass {
     char red[4];  // 0x34F8
     char green[4];  // 0x34FC
     int blue;  // 0x3500 [X30:type_map]
-    char ground[4];  // 0x3504
-    char level[4];  // 0x3508
+int ground;  // 0x3504 [X35-L7 kind=int]
+int level;  // 0x3508 [X35-L7 kind=int]
     void* ionAmbient;  // 0x350C [X30:type_map]
     int ionRed;  // 0x3510 [X30:type_map]
-    char ionGreen[4];  // 0x3514
-    char ionBlue[4];  // 0x3518
+int ionGreen;  // 0x3514 [X35-L7 kind=int]
+int ionBlue;  // 0x3518 [X35-L7 kind=int]
     int ionGround;  // 0x351C [X30:type_map]
-    char ionLevel[4];  // 0x3520
-    char nukeAmbient[4];  // 0x3524
+int ionLevel;  // 0x3520 [X35-L7 kind=int]
+int nukeAmbient;  // 0x3524 [X35-L7 kind=int]
     int nukeRed;  // 0x3528 [X30:type_map]
     int nukeGreen;  // 0x352C [X30:type_map]
     int nukeBlue;  // 0x3530 [X30:type_map]
@@ -136,8 +136,8 @@ struct ScenarioClass {
     int dominatorLevel;  // 0x3554 [X30:type_map]
     int dominatorAmbientChangeRate;  // 0x3558 [X30:type_map]
     unsigned int unknown3598;  // 0x355C
-    char initTime[4];  // 0x3560
-    char stage[2];  // 0x3564
+int initTime;  // 0x3560 [X35-L7 kind=int]
+short stage;  // 0x3564 [X35-L7 kind=short]
     void* InitTime;  // 0x359C
     bool ScenarioClass_field_35A2;  // 0x35A2
     unsigned char ScenarioClass_field_35A3;  // 0x35A3
@@ -151,9 +151,9 @@ struct ScenarioClass {
     char lsLoadMessage;  // 0x362C
     char lsBrief;  // 0x364B
     IUnknown* ls640BriefLocX;  // 0x366C [X30:type_map]
-    IUnknown* ls640BriefLocY;  // 0x3670 [X30:type_map]
-    IUnknown* ls800BriefLocX;  // 0x3674 [X30:type_map]
-    IUnknown* ls800BriefLocY;  // 0x3678 [X30:type_map]
+int ls640BriefLocY;  // 0x3670 [X35-L7 kind=int]
+int ls800BriefLocX;  // 0x3674 [X35-L7 kind=int]
+int ls800BriefLocY;  // 0x3678 [X35-L7 kind=int]
     char ls640BkgdName;  // 0x367C
     char ls800BkgdName;  // 0x36BC
     char ls800BkgdPal;  // 0x36FC

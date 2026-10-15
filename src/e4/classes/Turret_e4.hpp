@@ -8,7 +8,7 @@ namespace gamemd {
 
 struct Turret {
 // --- flat members (BEGIN) ---
-    char Turret_field_00[4];  // 0x0
+int Turret_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     AbstractClass * * LoadVoxelTurretAndBarrel();
     float * GetTransform(signed int a1, float * a2, unsigned int * a3);

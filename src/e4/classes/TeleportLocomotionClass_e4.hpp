@@ -26,17 +26,17 @@ struct TeleportLocomotionClass {
     bool Moving;  // 0x34
     bool TeleportLocomotionClass_field_bool_35;  // 0x35
     bool TeleportLocomotionClass_field_bool_36;  // 0x36
-    ILocomotion* State;  // 0x38 [X30:type_map]
+int State;  // 0x38 [X35-L7 kind=int]
     char Timer[12];  // 0x3C
     ILocomotion* Piggybackee;  // 0x48
 // --- flat members (END) ---
     char LocomotionClass[24];  // 0x0 LocomotionClass base sub-object (live til)
     TeleportLocomotionClass();  // 0x718000 sig=csp
     unsigned int q018;  // 0x18 (offset-truth)
-    void* __pad_008;  // 0x8 [X30:type_map]
+unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
     unsigned char __pad_010;  // 0x10 [X30:canon]
     unsigned char __pad_012;  // 0x12 [X30:canon]
-    unsigned char __pad_037;  // 0x37 [X30:canon]
+bool __pad_037;  // 0x37 [X35-L7 kind=bool]
     unsigned int attachedBomb;  // [X30:default]
 };
 

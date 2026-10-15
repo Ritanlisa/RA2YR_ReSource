@@ -41,7 +41,7 @@ struct PKStrawClass {
     PKStrawClass * applyGameSettings(unsigned int * Block, char a2);  // G42.39 supply
     int FindPlayerName(int a1);  // G42.39 supply
     unsigned int m_13C;  // 0x13C (offset-truth)
-    Straw* m_34;  // 0x34 (offset-truth) [X30:type_map]
+unsigned int m_34;  // 0x34 [X35-L7 kind=unsigned int]
     unsigned int q014;  // 0x14 (offset-truth)
     int __pad_004;  // 0x4 [X30:type_map]
 };
@@ -53,7 +53,7 @@ struct GameClass {
     unsigned int u16_A;  // 0xA
     unsigned char q00B;  // 0xB
     unsigned int u32_C;  // 0xC
-    int q10;  // 0x10
+unsigned int q10;  // 0x10 [X35-L7 kind=unsigned int]
     Pipe * ptr_14;  // 0x14
     unsigned int u32_18;  // 0x18
     CampaignClass * ptr_20;  // 0x20
@@ -70,7 +70,7 @@ struct GameClass {
     unsigned int q054;  // 0x54
     unsigned int q060;  // 0x60
     unsigned int q064;  // 0x64
-    unsigned int m_14;  // 0x14
+Pipe* m_14;  // 0x14 [X35-L7 kind=Pipe*]
     unsigned char q068;  // 0x68
     unsigned int q06A;  // 0x6A
     unsigned int q06D;  // 0x6D

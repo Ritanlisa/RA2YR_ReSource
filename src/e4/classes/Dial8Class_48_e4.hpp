@@ -25,7 +25,7 @@ struct Dial8Class_48 {
     unsigned int  PointerToIndex(int a2);  // 0x4A7D50
     unsigned int  Write(int a2);  // 0x4A7EE0
     unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
+int m_10;  // 0x10 [X35-L7 kind=int]
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
 

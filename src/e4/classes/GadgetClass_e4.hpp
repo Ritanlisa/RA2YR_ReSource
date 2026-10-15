@@ -12,10 +12,10 @@ struct GadgetClass {
     int X;  // 0x4
     int Y;  // 0x8
     GadgetClass* Width;  // 0xC [X30:type_map]
-    ControlClass* Height;  // 0x10 [X30:type_map]
+int Height;  // 0x10 [X35-L7 kind=int]
     bool Visible;  // 0x14
     bool Enabled;  // 0x15
-    ControlClass* ID;  // 0x18 [X30:type_map]
+unsigned int ID;  // 0x18 [X35-L7 kind=unsigned int]
 // --- flat members (END) ---
     void* Image;  // 0x0 (no offset truth)
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM);
@@ -32,11 +32,11 @@ struct GadgetClass {
     unsigned int *q000;  // 0x0 (offset-truth)
     GadgetClass* q00C;  // 0xC (offset-truth) [X30:type_map]
     unsigned int q014;  // 0x14 (offset-truth)
-    ControlClass* u32_10;  // 0x10 (offset-truth) [X30:type_map]
+int u32_10;  // 0x10 [X35-L7 kind=int]
     unsigned int u32_16C;  // 0x16C (offset-truth)
     unsigned int u32_170;  // 0x170 (offset-truth)
-    ControlClass* u32_18;  // 0x18 (offset-truth) [X30:type_map]
-    void* u32_28;  // 0x28 (offset-truth) [X30:type_map]
+unsigned int u32_18;  // 0x18 [X35-L7 kind=unsigned int]
+unsigned int u32_28;  // 0x28 [X35-L7 kind=unsigned int]
     unsigned char u32_2D;  // 0x2D (offset-truth)
     unsigned int u32_44;  // 0x44 (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)

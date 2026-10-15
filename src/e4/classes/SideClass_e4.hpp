@@ -13,7 +13,7 @@ struct SideClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    char uniqueId[4];  // 0x10
+int uniqueId;  // 0x10 [X35-L7 kind=int]
     unsigned char alignmentPadding_3;  // 0x11
     void* houseTypes;  // 0x12
     bool IsAllocated;  // 0x13
@@ -29,7 +29,7 @@ struct SideClass {
     unsigned int uiName;  // 0x60
     char name;  // 0x64
     unsigned int tail_95;  // 0x95
-    void* houseTypes_d;  // 0x98
+int* houseTypes_d;  // 0x98 [X35-L7 kind=int*]
     void* houseTypesCount_d;  // 0x9C [X30:type_map]
 // --- flat members (END) ---
     int FindByName(void *a1);

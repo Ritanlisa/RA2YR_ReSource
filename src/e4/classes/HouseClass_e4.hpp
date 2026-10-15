@@ -66,11 +66,11 @@ struct HouseClass {
     int buildingsCount;  // 0x48 [X30:type_map]
     BuildingClass* buildingsCapacity;  // 0x4C [X30:type_map]
     BuildingClass** unitRepairStations;  // 0x50
-    void* repairStationsCount;  // 0x54 [X30:type_map]
+int repairStationsCount;  // 0x54 [X35-L7 kind=int]
     int repairStationsCapacity;  // 0x58 [X30:type_map]
     BuildingClass** grinders;  // 0x5C
     int grindersCount;  // 0x60 [X30:type_map]
-    char grindersCapacity[4];  // 0x64
+int grindersCapacity;  // 0x64 [X35-L7 kind=int]
     BuildingClass** absorbers;  // 0x68
     int absorbersCount;  // 0x6C [X30:type_map]
     int absorbersCapacity;  // 0x70 [X30:type_map]
@@ -78,11 +78,11 @@ struct HouseClass {
     int bunkersCount;  // 0x78 [X30:type_map]
     int bunkersCapacity;  // 0x7C [X30:type_map]
     BuildingClass** occupiables;  // 0x80
-    void* occupiablesCount;  // 0x84 [X30:type_map]
+int occupiablesCount;  // 0x84 [X35-L7 kind=int]
     int occupiablesCapacity;  // 0x88 [X30:type_map]
     BuildingClass** cloningVats;  // 0x8C
     int cloningVatsCount;  // 0x90 [X30:type_map]
-    char cloningVatsCapacity[4];  // 0x94
+int cloningVatsCapacity;  // 0x94 [X35-L7 kind=int]
     BuildingClass** secretLabs;  // 0x98
     int secretLabsCount;  // 0x9C [X30:type_map]
     int secretLabsCapacity;  // 0xA0 [X30:type_map]
@@ -137,11 +137,11 @@ struct HouseClass {
     BuildingClass* buildTimeMultiplier;  // 0x110 [X30:type_map]
     double repairDelay;  // 0x118
     double buildDelay;  // 0x120
-    void* iqLevel;  // 0x128 [X30:type_map]
+int iqLevel;  // 0x128 [X35-L7 kind=int]
     void* techLevel;  // 0x12C [X30:type_map]
     unsigned int altAllies;  // 0x130
     int startingCredits;  // 0x134 [X30:type_map]
-    char startingEdge[4];  // 0x138
+int startingEdge;  // 0x138 [X35-L7 kind=int]
     int techInfiltrationFlags;  // 0x164
     int productionInfiltrationFlags;  // 0x168
     AbstractClass* IQ;  // 0x1D0 [X30:type_map]
@@ -187,11 +187,11 @@ struct HouseClass {
     SuperClass** supers;  // 0x254
     int supersCount;  // 0x258 [X30:type_map]
     int supersCapacity;  // 0x25C [X30:type_map]
-    char lastBuiltBuildingType[4];  // 0x260
+int lastBuiltBuildingType;  // 0x260 [X35-L7 kind=int]
     int lastBuiltInfantryType;  // 0x264 [X30:type_map]
-    char lastBuiltAircraftType[4];  // 0x268
+int lastBuiltAircraftType;  // 0x268 [X35-L7 kind=int]
     char lastBuiltVehicleType[4];  // 0x26C
-    char allowWinBlocks[4];  // 0x270
+int allowWinBlocks;  // 0x270 [X35-L7 kind=int]
     char repairTimer[12];  // 0x274
     char HouseClass_field_timer_28C[12];  // 0x28C
     char savourTimer[12];  // 0x298
@@ -325,9 +325,9 @@ struct HouseClass {
     unsigned char HouseClass_field_53D0;  // 0x53D0
     void* ourFlagCoords;  // 0x53DC [X30:type_map]
     char killedUnitsOfHouses[80];  // 0x53E0
-    char totalKilledUnits[4];  // 0x5430
+int totalKilledUnits;  // 0x5430 [X35-L7 kind=int]
     char killedBuildingsOfHouses[80];  // 0x5434
-    char totalKilledBuildings[4];  // 0x5484
+int totalKilledBuildings;  // 0x5484 [X35-L7 kind=int]
     unsigned int HouseClass_field_548C;  // 0x548C
     void* baseSpawnCell;  // 0x5490 [X30:type_map]
     void* baseCenter;  // 0x5494 [X30:type_map]
@@ -381,15 +381,15 @@ struct HouseClass {
     char scoutNodesCapacity[4];  // 0x5618
     char unkTimer3[12];  // 0x561C
     char unkTimer4[12];  // 0x5628
-    IUnknown* producingBuildingTypeIndex;  // 0x5634 [X30:type_map]
+int producingBuildingTypeIndex;  // 0x5634 [X35-L7 kind=int]
     int producingUnitTypeIndex;  // 0x5638 [X30:type_map]
     int producingInfantryTypeIndex;  // 0x563C [X30:type_map]
-    char producingAircraftTypeIndex[4];  // 0x5640
-    char ratioAiTriggerTeam[4];  // 0x5644
-    char ratioTeamAircraft[4];  // 0x5648
+int producingAircraftTypeIndex;  // 0x5640 [X35-L7 kind=int]
+int ratioAiTriggerTeam;  // 0x5644 [X35-L7 kind=int]
+int ratioTeamAircraft;  // 0x5648 [X35-L7 kind=int]
     int ratioTeamInfantry;  // 0x564C [X30:type_map]
     int ratioTeamBuildings;  // 0x5650 [X30:type_map]
-    DropshipStruct* baseDefenseTeamCount;  // 0x5654 [X30:type_map]
+int baseDefenseTeamCount;  // 0x5654 [X35-L7 kind=int]
     char dropshipData[132];  // 0x5658
     int RatioAITriggerTeam;  // 0x565C
     int RatioTeamAircraft;  // 0x5660
@@ -421,12 +421,12 @@ struct HouseClass {
     char plainName;  // 0x15FF0
     char uiNameString;  // 0x16005
     char uiName[42];  // 0x16026
-    char colorSchemeIndex[4];  // 0x16050
+int colorSchemeIndex;  // 0x16050 [X35-L7 kind=int]
     void* startingCell;  // 0x16054 [X30:type_map]
     unsigned int startingAllies;  // 0x16058
     unsigned int unknown16060;  // 0x1605C
     void** waypointPath;  // 0x16060
-    void* waypointPathCount;  // 0x16064 [X30:type_map]
+int waypointPathCount;  // 0x16064 [X35-L7 kind=int]
     int waypointPathCapacity;  // 0x16068 [X30:type_map]
     unsigned int HouseClass_field_1607C;  // 0x1606C
     unsigned int unknown16080;  // 0x16070
@@ -437,7 +437,7 @@ struct HouseClass {
     float predictionEnemyArmor;  // 0x1608C
     float predictionEnemyAir;  // 0x16090
     float predictionEnemyInfantry;  // 0x16094
-    char totalOwnedInfantryCost[4];  // 0x16098
+int totalOwnedInfantryCost;  // 0x16098 [X35-L7 kind=int]
     char totalOwnedVehicleCost[4];  // 0x1609C
     char totalOwnedAircraftCost[4];  // 0x160A0
     unsigned int HouseClass_field_160B4;  // 0x160A4

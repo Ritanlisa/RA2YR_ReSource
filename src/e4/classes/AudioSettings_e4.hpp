@@ -11,8 +11,8 @@ struct AudioSettings {
     bool m_Flag68;  // 0x0
     bool m_Flag70;  // 0x1
     unsigned char pad_02;  // 0x2
-    char AudioSettings_field_04[4];  // 0x4
-    char AudioSettings_field_08[4];  // 0x8
+int AudioSettings_field_04;  // 0x4 [X35-L7 kind=int]
+int AudioSettings_field_08;  // 0x8 [X35-L7 kind=int]
 // --- flat members (END) ---
     static int ComputeTransform(AudioSettings *pThis, unsigned int a2);
     static int Check(AudioSettings *pThis, unsigned int a2);

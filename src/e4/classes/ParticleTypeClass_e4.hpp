@@ -137,7 +137,7 @@ struct ParticleTypeClass {
     int GetFoundationHeight(char a2);
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
+void* m_8;  // 0x8 [X35-L7 kind=void*]
     unsigned int m_C;  // 0xC (offset-truth)
     void ParticleTypeClass_LoadFromINI(uint8_t *** aP1);  // plateau: def-aligned C2039/C2660
 

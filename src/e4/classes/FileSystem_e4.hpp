@@ -7,20 +7,20 @@ namespace gamemd {
 
 struct FileSystem {
 // --- flat members (BEGIN) ---
-    void* q004;  // 0x4
-    void* q008;  // 0x8
+unsigned int q004;  // 0x4 [X35-L7 kind=unsigned int]
+unsigned int q008;  // 0x8 [X35-L7 kind=unsigned int]
     void* q00C;  // 0xC
     unsigned int u32_D;  // 0xD
-    void* q010;  // 0x10
-    void* q014;  // 0x14
+unsigned int q010;  // 0x10 [X35-L7 kind=unsigned int]
+unsigned int q014;  // 0x14 [X35-L7 kind=unsigned int]
     void* q018;  // 0x18
-    void* q020;  // 0x20
+unsigned int q020;  // 0x20 [X35-L7 kind=unsigned int]
     void* q024;  // 0x24
     unsigned int u32_30;  // 0x30
     unsigned int q048;  // 0x48
     void* q050;  // 0x50
     unsigned int u32_60;  // 0x60
-    void* q100;  // 0x100
+unsigned int q100;  // 0x100 [X35-L7 kind=unsigned int]
     unsigned int q114;  // 0x114
     void* q598;  // 0x598
 // --- flat members (END) ---

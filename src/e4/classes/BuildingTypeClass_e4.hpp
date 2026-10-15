@@ -508,12 +508,12 @@ struct BuildingTypeClass {
     bool UnderRoofDoorAnimLoaded;  // 0x1508
     SHPStruct* DoorAnim;  // 0x150C
     SHPStruct* SpecialZOverlay;  // 0x1510
-    void* SpecialZOverlayZAdjust;  // 0x1514 [X30:type_map]
+int SpecialZOverlayZAdjust;  // 0x1514 [X35-L7 kind=int]
     SHPStruct* BibShape;  // 0x1518
     bool BibShapeLoaded;  // 0x151C
-    SHPStruct* NormalZAdjust;  // 0x1520 [X30:type_map]
-    SHPStruct* AntiAirValue;  // 0x1524 [X30:type_map]
-    SHPStruct* AntiArmorValue;  // 0x1528 [X30:type_map]
+int NormalZAdjust;  // 0x1520 [X35-L7 kind=int]
+int AntiAirValue;  // 0x1524 [X35-L7 kind=int]
+int AntiArmorValue;  // 0x1528 [X35-L7 kind=int]
     SHPStruct* AntiInfantryValue;  // 0x152C [X30:type_map]
     void* ZShapePointMove;  // 0x1530 [X30:type_map]
     int BuildingTypeClass_field_1538;  // 0x1538
@@ -531,11 +531,11 @@ struct BuildingTypeClass {
     bool EligibleForDelayKill;  // 0x1551
     bool NeedsEngineer;  // 0x1552
     int CaptureEvaEvent;  // 0x1554
-    SHPStruct* ProduceCashStartup;  // 0x1558 [X30:type_map]
+int ProduceCashStartup;  // 0x1558 [X35-L7 kind=int]
     SHPStruct* ProduceCashAmount;  // 0x155C [X30:type_map]
-    SHPStruct* ProduceCashDelay;  // 0x1560 [X30:type_map]
-    SHPStruct* InfantryGainSelfHeal;  // 0x1564 [X30:type_map]
-    SHPStruct* UnitsGainSelfHeal;  // 0x1568 [X30:type_map]
+int ProduceCashDelay;  // 0x1560 [X35-L7 kind=int]
+int InfantryGainSelfHeal;  // 0x1564 [X35-L7 kind=int]
+int UnitsGainSelfHeal;  // 0x1568 [X35-L7 kind=int]
     int RefinerySmokeFrames;  // 0x156C
     bool Bib;  // 0x1570
     bool Wall;  // 0x1571
@@ -550,7 +550,7 @@ struct BuildingTypeClass {
     bool ClickRepairable;  // 0x157A
     bool CanBeOccupied;  // 0x157B
     bool CanOccupyFire;  // 0x157C
-    SHPStruct* MaxNumberOccupants;  // 0x1580 [X30:type_map]
+int MaxNumberOccupants;  // 0x1580 [X35-L7 kind=int]
     bool ShowOccupantPips;  // 0x1584
     void* MuzzleFlash;  // 0x1588 [X30:type_map]
     int DamageFireOffset;  // 0x15D8 [X30:type_map]
@@ -747,11 +747,11 @@ struct BuildingTypeClass {
     unsigned char __pad_0A9;  // 0xA9 [X30:canon]
     VoxelStruct* __pad_0B8;  // 0xB8 [X30:type_map]
     unsigned char __pad_14D;  // 0x14D [X30:canon]
-    unsigned char __pad_211;  // 0x211 [X30:canon]
+bool __pad_211;  // 0x211 [X35-L7 kind=bool]
     unsigned char __pad_22C;  // 0x22C [X30:canon]
-    unsigned char __pad_233;  // 0x233 [X30:canon]
-    unsigned char __pad_237;  // 0x237 [X30:canon]
-    unsigned char __pad_239;  // 0x239 [X30:canon]
+bool __pad_233;  // 0x233 [X35-L7 kind=bool]
+bool __pad_237;  // 0x237 [X35-L7 kind=bool]
+bool __pad_239;  // 0x239 [X35-L7 kind=bool]
     unsigned char __pad_296;  // 0x296 [X30:canon]
     unsigned char __pad_2DD;  // 0x2DD [X30:canon]
     unsigned char __pad_2E5;  // 0x2E5 [X30:canon]

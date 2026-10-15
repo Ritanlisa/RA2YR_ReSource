@@ -36,10 +36,10 @@ struct CaptureManagerClass {
     bool CaptureManagerClass_field_40;  // 0x40
     bool CaptureManagerClass_field_41;  // 0x41
     unsigned char pad_42;  // 0x42
-    HouseClass* overloadLimit;  // 0x44 [X30:type_map]
-    void* overloadCount;  // 0x48 [X30:type_map]
+int overloadLimit;  // 0x44 [X35-L7 kind=int]
+int overloadCount;  // 0x48 [X35-L7 kind=int]
     int linkCount;  // 0x4C [X30:type_map]
-    char CaptureManagerClass_field_2C[4];  // 0x50
+int CaptureManagerClass_field_2C;  // 0x50 [X35-L7 kind=int]
 // --- flat members (END) ---
     void DecideUnitFate(int aP1, void *a2 = 0);
     char FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0, int a5);

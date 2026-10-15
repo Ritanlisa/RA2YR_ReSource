@@ -8,7 +8,7 @@ namespace gamemd {
 struct CoordStruct {
 // --- flat members (BEGIN) ---
     int X;  // 0x0
-    int Y;  // 0x4
+unsigned int Y;  // 0x4 [X35-L7 kind=unsigned int]
     int Z;  // 0x8
 // --- flat members (END) ---
     void* vfptr;  // 0x0 (no offset truth)

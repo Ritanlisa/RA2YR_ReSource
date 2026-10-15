@@ -22,14 +22,14 @@ struct LocomotionClass {
     int Init(void *a1 = 0, void *a2 = 0);
     void * UpdateAll();
     int Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
-    int Owner;  // 0x8 (ml)
-    int Powered;  // 0x10 (ml) [X30:type_map]
+unsigned int Owner;  // 0x8 [X35-L7 kind=unsigned int]
+unsigned int Powered;  // 0x10 [X35-L7 kind=unsigned int]
     int RefCount;  // 0x14 (ml)
     unsigned char __pad_50;  // 0x50 (offset-truth)
     unsigned char __pad_89;  // 0x89 (offset-truth)
     unsigned char q015;  // 0x15 (offset-truth)
     bool q074;  // 0x74 (ml)
-    void *q18;  // 0x18 (offset-truth)
+unsigned int q18;  // 0x18 [X35-L7 kind=unsigned int]
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
@@ -58,10 +58,10 @@ struct LocomotionClass {
     unsigned int q044;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)
     unsigned int u32_54;  // X10 supply (member_lookup)
-    int __pad_008;  // 0x8 [X30:type_map]
-    int __pad_010;  // 0x10 [X30:type_map]
+unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
+unsigned int __pad_010;  // 0x10 [X35-L7 kind=unsigned int]
     unsigned char __pad_012;  // 0x12 [X30:canon]
-    int ptr_30;  // 0x30 [X30:type_map]
+unsigned int ptr_30;  // 0x30 [X35-L7 kind=unsigned int]
 };
 
 } // namespace gamemd

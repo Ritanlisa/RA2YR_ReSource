@@ -17,10 +17,10 @@ namespace gamemd {
 struct Math {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
-    void* q008;  // 0x8
+unsigned int q008;  // 0x8 [X35-L7 kind=unsigned int]
     void* q00C;  // 0xC
     unsigned int u32_14;  // 0x14
-    void* q018;  // 0x18
+unsigned int q018;  // 0x18 [X35-L7 kind=unsigned int]
     unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
     unsigned int u32_24;  // 0x24

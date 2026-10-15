@@ -13,7 +13,7 @@ struct WTFMode {
     unsigned int u32_3C;  // 0x3C
     unsigned char u8_3D;  // 0x3D
     void* q040;  // 0x40
-    AudioController* q050;  // 0x50
+unsigned int q050;  // 0x50 [X35-L7 kind=unsigned int]
     unsigned int q054;  // 0x54
     AudioController* q05C;  // 0x5C
     void* q064;  // 0x64

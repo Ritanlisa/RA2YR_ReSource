@@ -8,8 +8,8 @@ namespace gamemd {
 struct unknown {
 // --- flat members (BEGIN) ---
     void* m_Data;  // 0x0
-    char m_Position[4];  // 0x4
-    char m_Size[4];  // 0x8
+int m_Position;  // 0x4 [X35-L7 kind=int]
+int m_Size;  // 0x8 [X35-L7 kind=int]
     char unknown_field_0C[4];  // 0xC
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---

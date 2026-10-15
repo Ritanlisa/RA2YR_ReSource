@@ -16,7 +16,7 @@ struct CommBufferClass {
 
     AbstractClass* CommBufferClass_field_0x10;  // X10 supply (member_types)
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    void* u32_40;  // 0x40 [X30:type_map]
+unsigned int u32_40;  // 0x40 [X35-L7 kind=unsigned int]
     int __pad_034;  // 0x34 [X30:type_map]
     int CommBufferClass_field_0x24;  // 0x24 [X30:type_map]
     int CommBufferClass_field_0x34;  // 0x34 [X30:type_map]

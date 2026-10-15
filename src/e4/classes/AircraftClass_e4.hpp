@@ -49,7 +49,7 @@ struct AircraftClass {
     BombClass* attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
-    char customSound[4];  // 0x64
+int customSound;  // 0x64 [X35-L7 kind=int]
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     int health;  // 0x6C [X30:type_map]
@@ -105,11 +105,11 @@ struct AircraftClass {
     int deployAnim_d;  // 0x130
     unsigned char inAirFlag_d;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
-    char radioQueueCount[4];  // 0x138
+int radioQueueCount;  // 0x138 [X35-L7 kind=int]
     unsigned char alignmentPadding139_d;  // 0x139
     char currentWeaponSlot[4];  // 0x13C
-    char currentRank[4];  // 0x140
-    char gattlingStage[4];  // 0x144
+int currentRank;  // 0x140 [X35-L7 kind=int]
+int gattlingStage;  // 0x144 [X35-L7 kind=int]
     unsigned int gattlingValue;  // 0x148
     HouseClass* ammoReloadTimer;  // 0x14C
     FootClass* initialOwner;  // 0x150 [X30:type_map]
@@ -145,7 +145,7 @@ struct AircraftClass {
     unsigned char reloadTimer;  // 0x200
     unsigned int currentBurstCount;  // 0x208
     unsigned int currentBarrelIndex;  // 0x210
-    char displayProductionTo[4];  // 0x214
+int displayProductionTo;  // 0x214 [X35-L7 kind=int]
     AbstractClass* Owner;  // 0x218
     HouseClass* focus;  // 0x21C
     unsigned int owner;  // 0x220
@@ -160,8 +160,8 @@ struct AircraftClass {
     char lastSightCoords[12];  // 0x254
     unsigned int ammo;  // 0x258
     unsigned int unitValue;  // 0x25C
-    char lastSightRange[4];  // 0x260
-    char lastSightHeight[4];  // 0x264
+int lastSightRange;  // 0x260 [X35-L7 kind=int]
+int lastSightHeight;  // 0x264 [X35-L7 kind=int]
     bool ambientParticles;  // 0x268
     bool isGeneratingGap;  // 0x269
     char gapRadius[4];  // 0x26C
@@ -329,20 +329,20 @@ struct AircraftClass {
     void* planningToken;  // 0x514
     ObjectTypeClass* disguiseAsType;  // 0x518
     HouseClass* disguisedAsHouse;  // 0x51C
-    char planningPathIdx[4];  // 0x520
-    char unknownShort524[2];  // 0x524
-    char unknownShort526[2];  // 0x526
-    char unknownShort528[2];  // 0x528
+int planningPathIdx;  // 0x520 [X35-L7 kind=int]
+short unknownShort524;  // 0x524 [X35-L7 kind=short]
+short unknownShort526;  // 0x526 [X35-L7 kind=short]
+short unknownShort528;  // 0x528 [X35-L7 kind=short]
     char FootClass_field_short_52A[2];  // 0x52A
     char FootClass_field_52C[4];  // 0x52C
     char FootClass_field_52E[4];  // 0x52E
-    char unknown530[4];  // 0x530
+int unknown530;  // 0x530 [X35-L7 kind=int]
     char controlGroup[4];  // 0x532
-    char unknown534[4];  // 0x534
+int unknown534;  // 0x534 [X35-L7 kind=int]
     int unknown538;  // 0x538 [X30:type_map]
     bool FootClass_field_bool_53C;  // 0x53C
     unsigned char m_padding_53D;  // 0x53D
-    char unknown540[4];  // 0x540
+int unknown540;  // 0x540 [X35-L7 kind=int]
     unsigned char audioController7;  // 0x544
     char currentMapCoords[4];  // 0x558
     char FootClass_field_55A[4];  // 0x55A
@@ -354,7 +354,7 @@ struct AircraftClass {
     char FootClass_field_566[4];  // 0x566
     char unknownCoords568[12];  // 0x568
     char FootClass_field_56C[4];  // 0x56C
-    char FootClass_field_570[4];  // 0x570
+int FootClass_field_570;  // 0x570 [X35-L7 kind=int]
     int unused574;  // 0x574
     char currentSpeed_percentage[8];  // 0x578
     char FootClass_field_57C[4];  // 0x57C
@@ -381,14 +381,14 @@ struct AircraftClass {
     char FootClass_field_648[4];  // 0x648
     char FootClass_field_int_64C[4];  // 0x64C
     char FootClass_field_timer_650[12];  // 0x650
-    char FootClass_field_654[4];  // 0x654
+int FootClass_field_654;  // 0x654 [X35-L7 kind=int]
     char FootClass_field_658[4];  // 0x658
     char sightTimer[12];  // 0x65C
     char FootClass_field_660[4];  // 0x660
     char FootClass_field_664[4];  // 0x664
     char blockagePathTimer[12];  // 0x668
     char FootClass_field_66C[4];  // 0x66C
-    char FootClass_field_670[4];  // 0x670
+int FootClass_field_670;  // 0x670 [X35-L7 kind=int]
     ILocomotion* locomotor;  // 0x674
     LocomotionClass* unknownPoint3d678;  // 0x678
     bool IsDeploying;  // 0x67C
@@ -407,8 +407,8 @@ struct AircraftClass {
     char shouldEnterAbsorber;  // 0x68F
     char shouldEnterOccupiable;  // 0x690
     char shouldGarrisonStructure;  // 0x691
-    char parasiteEatingMe[4];  // 0x694
-    char unknown698[4];  // 0x698
+int parasiteEatingMe;  // 0x694 [X35-L7 kind=int]
+int unknown698;  // 0x698 [X35-L7 kind=int]
     char parasiteImUsing[4];  // 0x69C
     char paralysisTimer[12];  // 0x6A0
     char FootClass_field_6A4[4];  // 0x6A4
@@ -493,8 +493,8 @@ struct AircraftClass {
     unsigned char __pad_3D1;  // 0x3D1 [X30:canon]
     unsigned char __pad_3D5;  // 0x3D5 [X30:canon]
     unsigned char __pad_41D;  // 0x41D [X30:canon]
-    unsigned char __pad_422;  // 0x422 [X30:canon]
-    unsigned char __pad_425;  // 0x425 [X30:canon]
+bool __pad_422;  // 0x422 [X35-L7 kind=bool]
+bool __pad_425;  // 0x425 [X35-L7 kind=bool]
     unsigned char __pad_43A;  // 0x43A [X30:canon]
     unsigned char __pad_458;  // 0x458 [X30:canon]
     unsigned char __pad_464;  // 0x464 [X30:canon]

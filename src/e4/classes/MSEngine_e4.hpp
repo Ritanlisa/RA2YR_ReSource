@@ -37,7 +37,7 @@ struct MSEngine {
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q0084;  // 0x84 (offset-truth)
     unsigned int q0108;  // 0x108 (offset-truth)
-    void *q18;  // 0x18 (offset-truth)
+unsigned int q18;  // 0x18 [X35-L7 kind=unsigned int]
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned char u32_25;  // 0x25 (offset-truth)
@@ -63,6 +63,6 @@ struct MSEngine {
     int MSEngine_field_0x8;  // 0x8 [X30:type_map]
     char __pad_0[4];  // 0x0 [X30:member_lookup]
     unsigned int u32_20;  // 0x20 [X30:member_lookup]
-    int u32_40;  // 0x40 [X30:type_map]
+unsigned int u32_40;  // 0x40 [X35-L7 kind=unsigned int]
 };
 } // namespace gamemd

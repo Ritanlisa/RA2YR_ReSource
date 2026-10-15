@@ -23,11 +23,11 @@ struct WarheadTypeClass {
     unsigned char alignmentPadding_3;  // 0x11
     char referenceCount[4];  // 0x12
     bool IsAllocated;  // 0x13
-    void *q14;  // 0x14
+unsigned int q14;  // 0x14 [X35-L7 kind=unsigned int]
     int DeformTreshold;  // 0x16
     char InfDeath[4];  // 0x18
     float CellSpread;  // 0x1C
-    void *q20;  // 0x20
+float q20;  // 0x20 [X35-L7 kind=float]
     bool CausesDelayKill;  // 0x28
     int DelayKillFrames;  // 0x2C
     float DelayKillAtMax;  // 0x30
@@ -43,7 +43,7 @@ struct WarheadTypeClass {
     void * UIName;  // 0x60
     unsigned int Name;  // 0x64
     unsigned int tail_95;  // 0x95
-    void* AmbientDamage;  // 0x98 [X30:type_map]
+int AmbientDamage;  // 0x98 [X35-L7 kind=int]
     unsigned int pad_99;  // 0x99
     unsigned int Burst;  // 0x9C
     unsigned int pad_9D;  // 0x9D
@@ -146,7 +146,7 @@ struct WarheadTypeClass {
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int u32_680;  // 0x680 (offset-truth)
 
     unsigned int AnimList;  // X10 supply (csp_canon_members)
@@ -159,13 +159,13 @@ struct WarheadTypeClass {
     unsigned char __pad_0A1;  // 0xA1 [X30:canon]
     unsigned char __pad_0A9;  // 0xA9 [X30:canon]
     unsigned char __pad_0BC;  // 0xBC [X30:canon]
-    int __pad_111;  // 0x111 [X30:type_map]
+unsigned int __pad_111;  // 0x111 [X35-L7 kind=unsigned int]
     unsigned char __pad_11C;  // 0x11C [X30:canon]
     unsigned char __pad_128;  // 0x128 [X30:canon]
     unsigned char __pad_160;  // 0x160 [X30:canon]
     unsigned char __pad_17F;  // 0x17F [X30:canon]
     void* DebrisTypes;  // 0x18C [X30:type_map]
-    void* __pad_190;  // 0x190 [X30:type_map]
+unsigned int __pad_190;  // 0x190 [X35-L7 kind=unsigned int]
     unsigned char __pad_1A0;  // 0x1A0 [X30:canon]
     unsigned int uniqueId;  // [X30:default]
 };

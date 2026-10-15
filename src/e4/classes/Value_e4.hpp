@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Value {
 // --- flat members (BEGIN) ---
-    char Value_field_00[4];  // 0x0
+int Value_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int InRange();
     unsigned int u32_38;  // 0x38 (offset-truth)

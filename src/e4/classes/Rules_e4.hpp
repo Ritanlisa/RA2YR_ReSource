@@ -18,7 +18,7 @@ struct Rules {
     char * GetProductionTimeMult(int aP1);  // 0x5FB2E0
     unsigned char m_5[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
-    char __tail_10[4];  // 0x10 (ml)
+unsigned int __tail_10;  // 0x10 [X35-L7 kind=unsigned int]
     unsigned int *q000;  // 0x0 (canon-mt)
 
     unsigned int u32_14;  // X10 supply (member_lookup)

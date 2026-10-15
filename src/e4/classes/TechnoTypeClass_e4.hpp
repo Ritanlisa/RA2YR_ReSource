@@ -36,8 +36,8 @@ struct TechnoTypeClass {
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    void* BarrelVoxel;  // 0x24 [X30:type_map]
-    void* TargetEffectivenessCoefficient;  // 0x28 [X30:type_map]
+int BarrelVoxel;  // 0x24 [X35-L7 kind=int]
+int TargetEffectivenessCoefficient;  // 0x28 [X35-L7 kind=int]
     int ChargerBarrels_0x12;  // 0x2C
     int TargetSpecialThreatCoefficient;  // 0x30
     int alignmentPadding;  // 0x33
@@ -92,7 +92,7 @@ struct TechnoTypeClass {
     char VoxelCaches[80];  // 0x244
     bool armed;  // 0x294
     bool hasTurretFlag;  // 0x295
-    void* weaponCount;  // 0x298 [X30:type_map]
+int weaponCount;  // 0x298 [X35-L7 kind=int]
     WeaponTypeClass* weapon1;  // 0x29C
     WeaponTypeClass* weapon2;  // 0x2A0
     WeaponTypeClass* eliteWeapon1;  // 0x2A4
@@ -115,7 +115,7 @@ struct TechnoTypeClass {
     int buildLimit;  // 0x2E8
     void* unknown_double_300;  // 0x300 [X30:type_map]
     double AccelerationFactor;  // 0x308
-    void* CloakingSpeed;  // 0x310 [X30:type_map]
+int CloakingSpeed;  // 0x310 [X35-L7 kind=int]
     unsigned char DebrisTypes;  // 0x314
     CampaignClass* VoxelAnimList_Items;  // 0x318
     unsigned int VoxelAnimList_Capacity;  // 0x31C
@@ -132,7 +132,7 @@ struct TechnoTypeClass {
     double Size;  // 0x380
     double SizeLimit;  // 0x388
     bool HoverAttack;  // 0x390
-    void* VHPScan;  // 0x394 [X30:type_map]
+int VHPScan;  // 0x394 [X35-L7 kind=int]
     int unknown_int_398;  // 0x398
     double RollAngle;  // 0x3A0
     double PitchSpeed;  // 0x3A8
@@ -242,7 +242,7 @@ struct TechnoTypeClass {
     void* BombSight;  // 0x5F8 [X30:type_map]
     int LeadershipRating;  // 0x5FC
     int NavalTargeting;  // 0x600
-    void* LandTargeting;  // 0x604 [X30:type_map]
+int LandTargeting;  // 0x604 [X35-L7 kind=int]
     float BuildTimeMultiplier;  // 0x608
     void* MindControlRingOffset;  // 0x60C [X30:type_map]
     int Cost;  // 0x610
@@ -264,7 +264,7 @@ struct TechnoTypeClass {
     int Points;  // 0x674
     int Speed;  // 0x678
     void* SpeedType;  // 0x67C [X30:type_map]
-    void* InitialAmmo;  // 0x680 [X30:type_map]
+int InitialAmmo;  // 0x680 [X35-L7 kind=int]
     int Ammo;  // 0x684
     int IFVMode;  // 0x688
     void* AirRangeBonus;  // 0x68C [X30:type_map]
@@ -308,7 +308,7 @@ struct TechnoTypeClass {
     int ROT;  // 0x71C
     int TurretOffset;  // 0x720
     bool CanBeHidden;  // 0x724
-    void* Points2;  // 0x728 [X30:type_map]
+int Points2;  // 0x728 [X35-L7 kind=int]
     unsigned char Explosion;  // 0x72C
     unsigned char DestroyAnim;  // 0x748
     double ThreatAvoidanceCoefficient;  // 0x752
@@ -328,11 +328,11 @@ struct TechnoTypeClass {
     char RefinerySmokeOffsetThree[12];  // 0x7E4
     char RefinerySmokeOffsetFour[12];  // 0x7F0
     int ShadowIndex;  // 0x7FC
-    void* Storage;  // 0x800 [X30:type_map]
+int Storage;  // 0x800 [X35-L7 kind=int]
     bool TurretNotExportedOnGround;  // 0x804
     bool Gunner;  // 0x805
     bool HasTurretTooltips;  // 0x806
-    void* TurretCount;  // 0x808 [X30:type_map]
+int TurretCount;  // 0x808 [X35-L7 kind=int]
     void* WeaponCount;  // 0x80C [X30:type_map]
     bool IsChargeTurret;  // 0x810
     int TurretWeapon;  // 0x814
@@ -426,9 +426,9 @@ struct TechnoTypeClass {
     TechnoTypeClass * ddtor(void * Block, char a2);
     unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3);
     TechnoTypeClass * * sub_404BB0();
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int q010;  // 0x10 (offset-truth)
-    void* q024;  // 0x24 (offset-truth) [X30:type_map]
+int q024;  // 0x24 [X35-L7 kind=int]
     int q1504;  // 0x1504 (ml)
     unsigned char q16C2;  // 0x16C2 (offset-truth)
     IUnknown* q1884;  // 0x1884 (ml)
@@ -637,10 +637,10 @@ struct TechnoTypeClass {
     unsigned char __pad_0A9;  // 0xA9 [X30:canon]
     unsigned char __pad_0B8;  // 0xB8 [X30:canon]
     unsigned char __pad_14D;  // 0x14D [X30:canon]
-    unsigned char __pad_211;  // 0x211 [X30:canon]
+bool __pad_211;  // 0x211 [X35-L7 kind=bool]
     unsigned char __pad_22C;  // 0x22C [X30:canon]
-    unsigned char __pad_233;  // 0x233 [X30:canon]
-    unsigned char __pad_237;  // 0x237 [X30:canon]
+bool __pad_233;  // 0x233 [X35-L7 kind=bool]
+bool __pad_237;  // 0x237 [X35-L7 kind=bool]
     unsigned char __pad_35C;  // 0x35C [X30:canon]
     unsigned char __pad_391;  // 0x391 [X30:canon]
     unsigned char __pad_39C;  // 0x39C [X30:canon]

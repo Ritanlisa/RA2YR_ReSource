@@ -8,7 +8,7 @@ namespace gamemd {
 struct UnholyAlliance {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char UnholyAlliance_field_04[4];  // 0x4
+int UnholyAlliance_field_04;  // 0x4 [X35-L7 kind=int]
 // --- flat members (END) ---
     UnholyAlliance * QueryInterface(unsigned int * Block, char a2);
     char Read(void *a1, void *a2, void *a3 = 0);

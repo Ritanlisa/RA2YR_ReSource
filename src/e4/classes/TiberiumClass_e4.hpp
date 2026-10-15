@@ -24,21 +24,21 @@ struct TiberiumClass {
     char Growth[4];  // 0x16
     char nextArrayIndex[4];  // 0x18
     char referenceCount[4];  // 0x1C
-    char NeedsSaveOrLink[4];  // 0x20
-    void* objectTypeFlags;  // 0x24 [X30:type_map]
+int NeedsSaveOrLink;  // 0x20 [X35-L7 kind=int]
+int objectTypeFlags;  // 0x24 [X35-L7 kind=int]
     unsigned int owningHouseIndex;  // 0x28
     OverlayTypeClass* fallRate;  // 0x2C
     int nextObject_d;  // 0x30
     char Power[4];  // 0x32
-    char attachedTag[4];  // 0x34
+int attachedTag;  // 0x34 [X35-L7 kind=int]
     char Color[4];  // 0x36
     MapSeed* attachedBomb;  // 0x38 [X30:type_map]
     char ambientSoundController[20];  // 0x3C
     unsigned int UINameLabel;  // 0x3D
-    char TiberiumClass_field_F4[4];  // 0x40
-    char TiberiumClass_field_F8[4];  // 0x44
+int TiberiumClass_field_F4;  // 0x40 [X35-L7 kind=int]
+int TiberiumClass_field_F8;  // 0x44 [X35-L7 kind=int]
     unsigned char alignmentPadding69_3;  // 0x45
-    char TiberiumClass_field_FC[4];  // 0x48
+int TiberiumClass_field_FC;  // 0x48 [X35-L7 kind=int]
     TimerStruct* SpreadTimer;  // 0x4C [X30:type_map]
     char customSound_controller[20];  // 0x50
     unsigned char alignmentPadding75_3;  // 0x51
@@ -52,14 +52,14 @@ struct TiberiumClass {
     bool isSelected;  // 0x5F
     char TiberiumClass_field_114[4];  // 0x60
     unsigned char alignmentPadding85_3;  // 0x61
-    char customSound[4];  // 0x64
+int customSound;  // 0x64 [X35-L7 kind=int]
     char bombVisible[1];  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     bool wasFallingDown;  // 0x6A
     bool isBomb;  // 0x6B
     char health[4];  // 0x6C
     unsigned char alignmentPadding91_3;  // 0x6D
-    char estimatedHealth[4];  // 0x70
+int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned char alignmentPadding99_2;  // 0x76

@@ -39,7 +39,7 @@ struct TaskForceClass {
     int  ddtor(unsigned int * a2);  // 0x6E8710
     int StubReturn33();  // 0x6E87D0
     int StubReturn212();  // 0x6E87E0
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int q008;  // 0x8 (offset-truth)
 
     int q024;  // X10 supply (member_lookup)

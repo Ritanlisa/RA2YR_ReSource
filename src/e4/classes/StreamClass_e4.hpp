@@ -9,7 +9,7 @@ struct StreamClass {
 // --- flat members (BEGIN) ---
     void* m_Data;  // 0x4
     char m_Size[4];  // 0xC
-    char StreamClass_field_0C[4];  // 0x10
+int StreamClass_field_0C;  // 0x10 [X35-L7 kind=int]
 // --- flat members (END) ---
     void* m_Position;  // 0x0 (no offset truth)
     char GetDirty(int a1);

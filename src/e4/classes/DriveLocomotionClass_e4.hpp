@@ -37,8 +37,8 @@ struct DriveLocomotionClass {
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
     ILocomotion* Piggybackee;  // 0x68 (ml) [X30:type_map]
-    void* __pad_008;  // 0x8 [X30:type_map]
-    int __pad_060;  // 0x60 [X30:type_map]
+unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
+unsigned int __pad_060;  // 0x60 [X35-L7 kind=unsigned int]
     unsigned char __pad_066;  // 0x66 [X30:canon]
 };
 

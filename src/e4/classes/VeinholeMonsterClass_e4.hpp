@@ -20,7 +20,7 @@ struct VeinholeMonsterClass {
     int Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4);
     int ddtor(int a1, unsigned int * a2);
     void UpdateVeinholeMonster();  // G42.39 supply
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
 
     unsigned int u32_104;  // X10 supply (member_lookup)
     unsigned int u32_AC;  // X10 supply (member_lookup)

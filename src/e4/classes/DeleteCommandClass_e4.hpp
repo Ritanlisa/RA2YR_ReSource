@@ -8,8 +8,8 @@ namespace gamemd {
 struct DeleteCommandClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char DeleteCommandClass_field_00[4];  // 0x4
-    char DeleteCommandClass_field_04[4];  // 0x8
+int DeleteCommandClass_field_00;  // 0x4 [X35-L7 kind=int]
+int DeleteCommandClass_field_04;  // 0x8 [X35-L7 kind=int]
 // --- flat members (END) ---
     void* CommandClass;  // 0x0 (no offset truth)
     char * AddRef(void *a1);

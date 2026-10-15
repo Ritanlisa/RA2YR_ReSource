@@ -10,7 +10,7 @@ namespace gamemd {
 struct ConnectionClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    CommBufferClass* PlayerIndex;  // 0x4 [X30:type_map]
+int PlayerIndex;  // 0x4 [X35-L7 kind=int]
     bool Active;  // 0x8
     unsigned int LastPacketTime;  // 0xC
     unsigned int PacketsSent;  // 0x10

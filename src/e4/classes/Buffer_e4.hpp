@@ -11,13 +11,13 @@ struct DynamicVector;  // fix_fwd_type_supply
 #define GAMEMD_G2_Buffer_DEF 1
 struct Buffer {
 // --- flat members (BEGIN) ---
-    void *q0;  // 0x0
-    ObjectClass* Buffer_field_04;  // 0x4 [X30:type_map]
+unsigned int q0;  // 0x0 [X35-L7 kind=unsigned int]
+unsigned int Buffer_field_04;  // 0x4 [X35-L7 kind=unsigned int]
     unsigned int Buffer_field_08;  // 0x8
     unsigned int Buffer_field_0C;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int Buffer_field_10;  // 0x10
-    void* Buffer_field_14;  // 0x14 [X30:type_map]
+unsigned int Buffer_field_14;  // 0x14 [X35-L7 kind=unsigned int]
     unsigned int Buffer_field_18;  // 0x18
     unsigned int Buffer_field_1C;  // 0x1C
     unsigned int Buffer_field_20;  // 0x20
@@ -40,7 +40,7 @@ struct Buffer {
     unsigned int q008;  // 0x8 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
-    void* u32_744;  // 0x744 (offset-truth) [X30:type_map]
+unsigned int u32_744;  // 0x744 [X35-L7 kind=unsigned int]
     unsigned int u32_748;  // 0x748 (offset-truth)
     unsigned int u32_88;  // 0x88 (offset-truth)
 

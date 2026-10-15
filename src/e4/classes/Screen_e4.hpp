@@ -7,14 +7,14 @@ namespace gamemd {
 
 struct Screen {
 // --- flat members (BEGIN) ---
-    void* u32_4;  // 0x4 [X30:type_map]
-    void* q008;  // 0x8
+unsigned int u32_4;  // 0x4 [X35-L7 kind=unsigned int]
+unsigned int q008;  // 0x8 [X35-L7 kind=unsigned int]
     void* u32_C;  // 0xC [X30:type_map]
     unsigned int q00E;  // 0xE
     unsigned int q011;  // 0x11
     unsigned int q014;  // 0x14
     unsigned int q018;  // 0x18
-    void* q020;  // 0x20 [X30:type_map]
+unsigned int q020;  // 0x20 [X35-L7 kind=unsigned int]
     unsigned int q024;  // 0x24
     unsigned int u32_2C;  // 0x2C
     unsigned int q044;  // 0x44

@@ -22,8 +22,8 @@ struct MovementAI {
     void* u32_E4;  // 0xE4 (offset-truth) [X30:type_map]
 
     int u8_19;  // X10 supply (member_lookup)
-    int __pad_010;  // 0x10 [X30:type_map]
-    int MovementAI_field_10;  // 0x10 [X30:type_map]
+unsigned int __pad_010;  // 0x10 [X35-L7 kind=unsigned int]
+unsigned int MovementAI_field_10;  // 0x10 [X35-L7 kind=unsigned int]
 };
 
 } // namespace gamemd

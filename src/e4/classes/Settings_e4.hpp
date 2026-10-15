@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Settings {
 // --- flat members (BEGIN) ---
-    char Settings_field_00[4];  // 0x0
+int Settings_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     static BOOL CheckString();
 };

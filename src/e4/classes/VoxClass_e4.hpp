@@ -14,7 +14,7 @@ struct VoxClass {
     char AlliedVoice;  // 0x3E
     char Priority[4];  // 0x48
     char Type[4];  // 0x4C
-    char voiceIndex[4];  // 0x50
+int voiceIndex;  // 0x50 [X35-L7 kind=int]
 // --- flat members (END) ---
     int FindAndPlay(int a3);
     int SetEVAIndex();  // 0x7534e0

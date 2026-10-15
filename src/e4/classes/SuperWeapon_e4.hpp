@@ -15,7 +15,7 @@ struct SuperWeapon {
     unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
     unsigned int u32_24;  // 0x24
-    void* q028;  // 0x28
+unsigned int q028;  // 0x28 [X35-L7 kind=unsigned int]
     unsigned int q030;  // 0x30
     unsigned int q038;  // 0x38
     unsigned int u32_3C;  // 0x3C
@@ -32,7 +32,7 @@ struct SuperWeapon {
     unsigned int q074;  // 0x74
     unsigned int q078;  // 0x78
     unsigned int q07C;  // 0x7C
-    void* q080;  // 0x80
+unsigned int q080;  // 0x80 [X35-L7 kind=unsigned int]
     unsigned int q084;  // 0x84
     unsigned int u32_98;  // 0x98
     void* q0AC;  // 0xAC
@@ -50,7 +50,7 @@ struct SuperWeapon {
     unsigned int q120;  // 0x120
     unsigned int q124;  // 0x124
     void* q128;  // 0x128
-    void* u32_130;  // 0x130 [X30:type_map]
+unsigned int u32_130;  // 0x130 [X35-L7 kind=unsigned int]
     unsigned int q134;  // 0x134
     unsigned int q150;  // 0x150
     void* q180;  // 0x180

@@ -24,7 +24,7 @@ struct MapSeedClass_18 {
     unsigned int  PointerToIndex(int a2);  // 0x5AC4F0
     unsigned int Generate(int a2, void *a2_1 = 0, void *a3 = 0);  // 0x5ACBC0
     unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
+int m_10;  // 0x10 [X35-L7 kind=int]
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
 

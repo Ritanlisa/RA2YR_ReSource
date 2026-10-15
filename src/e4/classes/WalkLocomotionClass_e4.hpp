@@ -36,7 +36,7 @@ struct WalkLocomotionClass {
     ILocomotion* Piggybackee;  // 0x38 (ml) [X30:type_map]
     unsigned int q018;  // 0x18 (offset-truth)
     unsigned char __pad_00C;  // 0xC [X30:canon]
-    unsigned char __pad_037;  // 0x37 [X30:canon]
+bool __pad_037;  // 0x37 [X35-L7 kind=bool]
 };
 
 } // namespace gamemd

@@ -20,11 +20,11 @@ struct BombClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    void* BombClass_field_28;  // 0x28 [X30:type_map]
+int BombClass_field_28;  // 0x28 [X35-L7 kind=int]
     void* BombClass_field_2C;  // 0x2C [X30:type_map]
     unsigned int audioController;  // 0x30
     unsigned int alignmentPadding;  // 0x33
-    char soundIndex[4];  // 0x44
+int soundIndex;  // 0x44 [X35-L7 kind=int]
     int BombClass_field_54;  // 0x54 [X30:type_map]
     bool BombClass_field_58;  // 0x58
     unsigned char pad_59;  // 0x59

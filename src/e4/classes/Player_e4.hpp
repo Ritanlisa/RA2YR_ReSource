@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Player {
 // --- flat members (BEGIN) ---
-    void* q004;  // 0x4
+unsigned int q004;  // 0x4 [X35-L7 kind=unsigned int]
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_54;  // 0x54

@@ -21,7 +21,7 @@ struct WinModemClass {
     int WriteSerial(LPCVOID lpBuffer, DWORD aP2);
     int ddtor(int a2);
     int SaveToINI(const char * NumberOfBytesWritten, void * aP);
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned char q0083;  // 0x83 (offset-truth)
     unsigned char q0146;  // 0x146 (offset-truth)
     unsigned char q0242;  // 0x242 (offset-truth)
@@ -49,7 +49,7 @@ struct WinModemClass {
     unsigned int u32_CC;  // X10 supply (member_lookup)
 
     unsigned int u32_5C;  // X10 supply (member_lookup)
-    int WinModemClass_field_0x24;  // 0x24 [X30:type_map]
+unsigned int WinModemClass_field_0x24;  // 0x24 [X35-L7 kind=unsigned int]
     int WinModemClass_field_0x2C;  // 0x2C [X30:type_map]
 };
 

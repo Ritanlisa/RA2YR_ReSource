@@ -32,7 +32,7 @@ BOOL Equals(unsigned short * a2, void *a2_2);  // 0x50E470
     unsigned int ScrollOffset;  // [X30:default]
     unsigned int TextColorIndex;  // [X30:default]
     unsigned int field_0;  // [X30:default]
-    void* field_4;  // 0x4 [X30:member_lookup]
+unsigned int field_4;  // 0x4 [X35-L7 kind=unsigned int]
     short u32_2;  // 0x2 [X30:member_lookup]
 };
 #endif // GAMEMD_TREE_UNIVERSE

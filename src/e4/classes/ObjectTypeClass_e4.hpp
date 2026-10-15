@@ -97,7 +97,7 @@ struct ObjectTypeClass {
     bool IgnoresFirestorm_d;  // 0x239
     bool UseLineTrail_d;  // 0x23A
     char LineTrailColor_d[3];  // 0x23B
-    void* LineTrailColor_2;  // 0x240 [X30:type_map]
+int LineTrailColor_2;  // 0x240 [X35-L7 kind=int]
     char VoxelCaches_4[80];  // 0x244
 // --- flat members (END) ---
     void* TechnoTypeClass;  // 0x0 (no offset truth)

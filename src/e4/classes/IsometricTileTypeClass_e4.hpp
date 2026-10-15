@@ -39,7 +39,7 @@ struct IsometricTileTypeClass {
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int u32_294;  // 0x294 (offset-truth)
     unsigned int u32_2BC;  // 0x2BC (offset-truth)
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
@@ -50,7 +50,7 @@ struct IsometricTileTypeClass {
     unsigned char __pad_025;  // 0x25 [X30:canon]
     unsigned char __pad_041;  // 0x41 [X30:canon]
     int IsometricTileTypeClass_field_0x04;  // 0x4 [X30:member_lookup]
-    char __pad_0[4];  // 0x0 [X30:member_lookup]
+void* __pad_0;  // 0x0 [X35-L7 kind=void*]
     unsigned int uniqueId;  // [X30:default]
 };
 

@@ -22,7 +22,7 @@ struct ScriptClass {
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     ScriptTypeClass* buildingType;  // 0x24
-    char field28[4];  // 0x28
+int field28;  // 0x28 [X35-L7 kind=int]
     int idxCurrentLine;  // 0x2C [X30:type_map]
 // --- flat members (END) ---
     static unsigned int * GetNextAction(void *aP1, void *a2);

@@ -16,17 +16,17 @@ struct SuperWeaponTypeClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    char uniqueId[4];  // 0x10
+int uniqueId;  // 0x10 [X35-L7 kind=int]
     unsigned char alignmentPadding_3;  // 0x11
     char ChargingVoice[4];  // 0x12
     bool IsAllocated;  // 0x13
-    char abstractFlags[4];  // 0x14
+int abstractFlags;  // 0x14 [X35-L7 kind=int]
     char ImpatientVoice[4];  // 0x16
-    char nextArrayIndex[4];  // 0x18
+int nextArrayIndex;  // 0x18 [X35-L7 kind=int]
     char referenceCount[4];  // 0x1C
     SHPStruct* NeedsSaveOrLink;  // 0x20
     void* ActionValue;  // 0x24 [X30:type_map]
-    char SpecialSound[4];  // 0x28
+int SpecialSound;  // 0x28 [X35-L7 kind=int]
     char StartSound[4];  // 0x2C
     BuildingTypeClass* AuxBuilding;  // 0x30
     SHPStruct* SidebarImage;  // 0x32
@@ -40,11 +40,11 @@ struct SuperWeaponTypeClass {
     bool AIDefendAgainst;  // 0x40
     bool PreClick;  // 0x41
     bool PostClick;  // 0x42
-    char PreDependent[4];  // 0x44
+int PreDependent;  // 0x44 [X35-L7 kind=int]
     bool ShowTimer;  // 0x48
     bool ManualControl;  // 0x49
     float Range;  // 0x4C
-    char LineMultiplier[4];  // 0x50
+int LineMultiplier;  // 0x50 [X35-L7 kind=int]
     void * UIName;  // 0x60
     unsigned char Name;  // 0x64
     unsigned int tail_95;  // 0x95
@@ -100,7 +100,7 @@ struct SuperWeaponTypeClass {
     unsigned int q10C;  // 0x10C (ml)
     unsigned char q110;  // 0x110 (ml)
     bool q114;  // 0x114 (ml)
-    float q118;  // 0x118 (ml)
+unsigned int q118;  // 0x118 [X35-L7 kind=unsigned int]
     unsigned int q11C;  // 0x11C (ml)
     unsigned char q120;  // 0x120 (ml)
     unsigned int q124;  // 0x124 (ml)
@@ -115,8 +115,8 @@ struct SuperWeaponTypeClass {
     unsigned int q148;  // 0x148 (ml)
     unsigned int q14C;  // 0x14C (offset-truth)
     unsigned int q15C;  // 0x15C (ml)
-    int q160;  // 0x160 (ml)
-    int q168;  // 0x168 (ml)
+unsigned int q160;  // 0x160 [X35-L7 kind=unsigned int]
+unsigned int q168;  // 0x168 [X35-L7 kind=unsigned int]
     void * q184;  // 0x184 (ml)
     unsigned int q194;  // 0x194 (ml)
     unsigned char q198;  // 0x198 (ml)

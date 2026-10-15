@@ -41,7 +41,7 @@ struct Audio {
     static int SetVoiceVolume(Audio * aP1, float a2, char a3);
     static int IsLoud(Audio * aP1);
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aControl, void * aLimit, void * aMinvolume, void * aPriority);
-    char __pad_10[4];  // 0x10 (ml)
+unsigned int __pad_10;  // 0x10 [X35-L7 kind=unsigned int]
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned char q018[28];  /* char[28] */  // X10 supply (member_lookup)

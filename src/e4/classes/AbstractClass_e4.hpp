@@ -175,7 +175,7 @@ struct AbstractClass {
     unsigned int spawns;
     unsigned int *__pad_48;
     unsigned int spawnVectorCount;
-    void* DiskLaserClass_field_0x28;  // 0x28 [X30:type_map]
+unsigned int DiskLaserClass_field_0x28;  // 0x28 [X35-L7 kind=unsigned int]
     void* q090;  // 0x90 [X30:type_map]
     unsigned int q300;  // 0x300
     unsigned char __pad_F70[1453];  // 0xF70
@@ -429,7 +429,7 @@ int DTOR(); // 0x4101F0
     void* u32_B0;  // 0xB0 [X30:type_map]
     unsigned int u32_44;  // 0x44
     void* q040;  // 0x40 [X30:type_map]
-    int u32_38;  // 0x38
+unsigned int u32_38;  // 0x38 [X35-L7 kind=unsigned int]
     int AbstractClass_1;  // 0x1 [X30:type_map]
     unsigned int BibShape;  // [X30:default]
     unsigned int BibShapeLoaded;  // [X30:default]
@@ -451,7 +451,7 @@ int DTOR(); // 0x4101F0
     unsigned int numberStartingPoints;  // [X30:default]
     int ptr_2;  // 0x2 [X30:type_map]
     void* ptr_30;  // 0x30 [X30:type_map]
-    void* q024;  // 0x24 [X30:type_map]
+unsigned int q024;  // 0x24 [X35-L7 kind=unsigned int]
     int q02C;  // 0x2C [X30:type_map]
     unsigned int vfptr;  // [X30:default]
     unsigned int vfptr1;  // [X30:default]

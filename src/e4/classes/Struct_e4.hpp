@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct Struct {
 // --- flat members (BEGIN) ---
-    char Struct_field_00[4];  // 0x0
+int Struct_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
-    void* Active;  // 0x0 (no offset truth)
+int Active;  // 0x0 [X35-L7 kind=int]
     int ClearAllMemberFlags();
     int ZeroInit32();
     int ZeroInitAndSetup(void *a1);
@@ -20,7 +20,7 @@ struct Struct {
     static unsigned int * Zero25(Struct * aP1);
     wchar_t **  WideStringCopy(int a2);  // 0x6247d0
     unsigned int u32_14;  // 0x14 (offset-truth)
-    Struct* u32_18;  // 0x18 (offset-truth) [X30:type_map]
+unsigned int u32_18;  // 0x18 [X35-L7 kind=unsigned int]
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_20;  // 0x20 (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)

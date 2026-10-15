@@ -20,7 +20,7 @@ struct CChatEventSink {
     int ComputeBucketMask(int a2);
     int GrowBuffer();
     int ProcessChatEvent();
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int u32_84;  // 0x84 (offset-truth)
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)

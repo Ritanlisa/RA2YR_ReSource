@@ -15,7 +15,7 @@ struct NeuronClass {
 // --- flat members (END) ---
     NeuronClass();
     void * Reset(unsigned int * Block, char a2);
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)

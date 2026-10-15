@@ -22,7 +22,7 @@ struct DiskLaserClass {
     void * CopyTo(char a2);
     void  PointerGotInvalid(int a2);  // 0x4a7900
     void * CopyTo(unsigned int * Block, char a2);
-    unsigned int *q000;  // 0x0 (offset-truth)
+void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_38;  // 0x38 (offset-truth)

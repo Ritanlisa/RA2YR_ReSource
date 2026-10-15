@@ -24,7 +24,7 @@ struct RadioClass {
     int referenceCount;  // 0x1C
     unsigned char NeedsSaveOrLink;  // 0x20
     unsigned int objectTypeFlags;  // 0x24
-    void* owningHouseIndex;  // 0x28 [X30:type_map]
+unsigned int owningHouseIndex;  // 0x28 [X35-L7 kind=unsigned int]
     char fallRate[4];  // 0x2C
     ObjectClass* nextObject;  // 0x30
     unsigned char needsSave;  // 0x32
@@ -33,11 +33,11 @@ struct RadioClass {
     BombClass* attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
-    char customSound[4];  // 0x64
+int customSound;  // 0x64 [X35-L7 kind=int]
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     int health;  // 0x6C [X30:type_map]
-    char estimatedHealth[4];  // 0x70
+int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int spawnStatus;  // 0x78

@@ -10,11 +10,11 @@ struct BuildingClass;  // fix_fwd_type_supply
 
 struct Animation {
 // --- flat members (BEGIN) ---
-    void* q008;  // 0x8
+unsigned int q008;  // 0x8 [X35-L7 kind=unsigned int]
     bool q00E;  // 0xE
     bool q00F;  // 0xF
-    void* q010;  // 0x10
-    void* q014;  // 0x14
+unsigned int q010;  // 0x10 [X35-L7 kind=unsigned int]
+unsigned int q014;  // 0x14 [X35-L7 kind=unsigned int]
     void* q018;  // 0x18
     unsigned int q019;  // 0x19
     void* q020;  // 0x20
@@ -70,7 +70,7 @@ struct Animation {
     unsigned int u32_3A8;  // 0x3A8
     unsigned int u32_414;  // 0x414
     unsigned int u32_418;  // 0x418
-    void* u32_520;  // 0x520 [X30:type_map]
+unsigned int u32_520;  // 0x520 [X35-L7 kind=unsigned int]
     unsigned int q524;  // 0x524
     unsigned int q534;  // 0x534
     unsigned int q540;  // 0x540

@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Type {
 // --- flat members (BEGIN) ---
-    char Type_field_00[4];  // 0x0
+int Type_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int CheckAmbiguity(int a2, char a3, void *a3_1 = 0);
     unsigned int u32_100;  // 0x100 (offset-truth)
