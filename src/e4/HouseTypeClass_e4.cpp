@@ -192,7 +192,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   INIClass::ResetSection((INIClass *)aP1); /*0x511866*/
   if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)_EBX, (unsigned __int8 ***)aP1) ) /*0x51186e*/
     return 0; /*0x51215c*/
-  INIClass::GetString((INIClass *)aP1, (unsigned __int8 *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
+  ((INIClass *)aP1)->GetString((unsigned __int8 *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
   if ( strlen(Source) ) /*0x51189b*/
   {
     strcpy(&_EBX->q1A0, Source); /*0x5118c3*/
@@ -217,11 +217,11 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   _EBX->wallOwner = BuildingTypeClass::FindAnimByName( /*0x511942*/
                               (BuildingTypeClass *)v4,
                               (unsigned __int8 *)(_EBX + 36),
-                              (unsigned __int8 *)&stru_81AF8C.?[95],
+                              (unsigned __int8 *)&DataGlobal_81AF8C[428],
                               _EBX->wallOwner);
   Source[0] = _EBX->Prefix; /*0x51195a*/
   Source[1] = 0; /*0x511966*/
-  INIClass::GetString((INIClass *)v4, (unsigned __int8 *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
+  ((INIClass *)v4)->GetString((unsigned __int8 *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
   _EBX->Prefix = v81[0]; /*0x511974*/
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aFirepower, _EBX->firepowerMult_d); /*0x511990*/
   v6 = _EBX->u32_D4; /*0x511995*/
@@ -509,7 +509,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   CountryData = HouseTypeClass::loadCountryData( /*0x51209e*/
                   v4,
                   (unsigned __int8 *)(_EBX + 36),
-                  (unsigned __int8 *)&g_INI_Key_Special.?,
+                  (unsigned __int8 *)&DataGlobal_817318[28],
                   v44);
   *(unsigned int *)(_EBX + 188) = CountryData; /*0x5120a5*/
   if ( CountryData != v44 ) /*0x5120ab*/

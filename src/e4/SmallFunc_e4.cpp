@@ -220,7 +220,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a1, edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67b51e*/
+  if ( ((INIClass *)a1)->GetString(edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67b51e*/
     return ((gamemd::ObjectClass *)(Destination))->FindOrCreate(); /*0x67b52b*/
   else
     return a4; /*0x67b539*/
@@ -232,7 +232,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
+  if ( ((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
     return ((BuildingTypeClass *)(Destination))->FindOrCreate(); /*0x67bd0b*/
   else
     return (gamemd::BuildingTypeClass *)(a4); /*0x67bd19*/
@@ -244,7 +244,7 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a1, edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd9e*/
+  if ( ((INIClass *)a1)->GetString(edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd9e*/
     return ((TerrainTypeClass *)(Destination))->FindOrCreate(); /*0x67bdab*/
   else
     return (gamemd::TerrainTypeClass *)(a4); /*0x67bdb9*/
@@ -311,7 +311,7 @@ int E4Recv_728A00::sub_728A00()
   this->CurrentState[1] = *(unsigned int *)&DataGlobal_B0F910; /*0x728a16*/
   this->CurrentState[2] = *(unsigned int *)&DataGlobal_B0F914; /*0x728a1e*/
   this->CurrentState[3] = *(unsigned int *)&DataGlobal_B0F918; /*0x728a27*/
-  this->CurrentState[4] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x728a30*/
+  this->CurrentState[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x728a30*/
   this->CurrentState[6] = 0; /*0x728a33*/
   this->CurrentState[7] = 0; /*0x728a36*/
   LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/

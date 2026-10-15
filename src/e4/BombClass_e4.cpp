@@ -122,7 +122,7 @@ int BombClass::Stat(int * a2)
     Power::TimerProcess(v9); /*0x438ae4*/
   }
   LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
-  return Power::FlagProcess((Power *)a2, v3); /*0x438af4*/
+  return ((Power *)a2)->FlagProcess(v3); /*0x438af4*/
 
 }
 } // namespace ra2

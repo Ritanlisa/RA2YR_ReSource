@@ -717,7 +717,7 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
   BuildingTypeClass::ProcessPower((int)this, a2); /*0x747f79*/
   Power::TimerProcess(this->MovementRestrictedTo[0]); /*0x747f87*/
   LOBYTE(v3) = this->Passive; /*0x747f8c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x747f95*/
+  ((Power *)a2)->FlagProcess(v3); /*0x747f95*/
   LOBYTE(v4) = this->CrateGoodie; /*0x747f9a*/
   v5 = Power::FlagProcess((Power *)a2, v4); /*0x747fa3*/
   LOBYTE(v5) = this->Harvester; /*0x747fa8*/

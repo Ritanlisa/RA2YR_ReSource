@@ -1608,7 +1608,7 @@ MapClass * * Radar::RenderMinimap()
   {
     if ( v91 ) /*0x6571cf*/
       this->u32_14D9 = 0; /*0x6571d1*/
-    Surface::RenderRadar((XSurface *)this); /*0x6571da*/
+    ((XSurface *)this)->RenderRadar(); /*0x6571da*/
     v92 = 0; /*0x6571ea*/
     if ( this->u32_14EC != *v15 /*0x657216*/
       || this->u32_14F0 != this->u32_14E0
@@ -1621,23 +1621,23 @@ MapClass * * Radar::RenderMinimap()
         v28 = i + this->u32_14F0; /*0x65723e*/
         v101 = this->u32_14EC - *v9; /*0x657240*/
         v102 = v28 - v27; /*0x65724d*/
-        FogOfWar::RevealCell((int)this, &v101); /*0x657251*/
+        ((int)this)->RevealCell(&v101); /*0x657251*/
         v29 = i + this->u32_14F0 - this->u32_14A0; /*0x65727c*/
         v101 = this->u32_14F4 + this->u32_14EC - 1 - *v9; /*0x65727e*/
         v102 = v29; /*0x657285*/
-        FogOfWar::RevealCell((int)this, &v101); /*0x657289*/
+        ((int)this)->RevealCell(&v101); /*0x657289*/
       }
       for ( j = 0; j < this->u32_14F4; ++j ) /*0x6572a3*/
       {
         v31 = j + this->u32_14EC - *v9; /*0x6572bd*/
         v102 = this->u32_14F0 - this->u32_14A0; /*0x6572bf*/
         v101 = v31; /*0x6572c3*/
-        FogOfWar::RevealCell((int)this, &v101); /*0x6572ce*/
+        ((int)this)->RevealCell(&v101); /*0x6572ce*/
         v32 = this->u32_14A0; /*0x6572eb*/
         v33 = this->u32_14F0 + this->u32_14F8 - 1; /*0x6572f1*/
         v101 = j + this->u32_14EC - *v9; /*0x6572f5*/
         v102 = v33 - v32; /*0x6572ff*/
-        FogOfWar::RevealCell((int)this, &v101); /*0x657306*/
+        ((int)this)->RevealCell(&v101); /*0x657306*/
       }
       v2 = v100; /*0x657316*/
       v92 = 1; /*0x65731a*/

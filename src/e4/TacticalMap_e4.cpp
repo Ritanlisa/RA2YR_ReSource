@@ -176,7 +176,7 @@ int TacticalMap::Redraw()
     byte_B0B519 = 0; /*0x4f4540*/
   }
   if ( *(unsigned int *)&DataGlobal_A8EE70 ) /*0x4f454f*/
-    (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_A8EB00.?[880] + 44))(*(unsigned int *)&stru_A8EB00.?[880], 0); /*0x4f4555*/
+    (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&DataGlobal_A8EB00[1108] + 44))(*(unsigned int *)&DataGlobal_A8EB00[1108], 0); /*0x4f4555*/
   ((TacticalMap *)&g_GameNetworkObject)->DrawCursor(); /*0x4f455d*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x4f456a*/
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&g_TacticalRender + 12))( /*0x4f4570*/

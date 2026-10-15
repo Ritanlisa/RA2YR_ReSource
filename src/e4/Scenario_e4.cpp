@@ -177,7 +177,7 @@ int Scenario::ReadTeams()
     while ( 1 ) /*0x44f874*/
     {
       StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_000, (unsigned __int8 *)aStructures, v3); /*0x44f874*/
-      INIClass::GetString(v1, (unsigned __int8 *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
+      (v1)->GetString((unsigned __int8 *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
       v5 = strtok(String, Str); /*0x44f89e*/
       v6 = (v5)->FindByName(); /*0x44f8a8*/
       if ( v6 != -1 ) /*0x44f8b0*/
@@ -290,7 +290,7 @@ int Scenario::ReadTeams()
                   {
                     v37 = v29->Spotlight; /*0x44fc07*/
                     if ( v37 ) /*0x44fc0f*/
-                      BuildingLightClass::FindTarget(v37, (unsigned int *)v70); /*0x44fc16*/
+                      (v37)->FindTarget((unsigned int *)v70); /*0x44fc16*/
                     if ( v55 ) /*0x44fc21*/
                     {
                       if ( !v29->HasPower && !v29->empLockRemaining ) /*0x44fc35*/
@@ -419,10 +419,10 @@ int Scenario::CopyLocalScenarioData()
   abstractFlags = dword_A8B230->u8_7F.abstractFlags; /*0x4c61c0*/
   if ( vtable3 != (void *)-1 ) /*0x4c61c9*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)vtable3 >= (int)abstractFlags ) /*0x4c61d5*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - (int)vtable3 >= (int)abstractFlags ) /*0x4c61d5*/
       abstractFlags = 0; /*0x4c61db*/
     else
-      abstractFlags -= *(unsigned int *)&stru_A8EB00.?[416] - (unsigned int)vtable3; /*0x4c61d7*/
+      abstractFlags -= *(unsigned int *)&DataGlobal_A8EB00[644] - (unsigned int)vtable3; /*0x4c61d7*/
   }
   this->q038 = (int)(abstractFlags); /*0x4c61dd*/
   result = *&dword_A83D4C->u32_184; /*0x4c61e6*/
@@ -708,9 +708,9 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
         abstractFlags = dword_A8B230[127].abstractFlags; /*0x55b12c*/
         if ( vtable3 != (void *)-1 ) /*0x55b134*/
         {
-          if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)vtable3 >= abstractFlags ) /*0x55b140*/
+          if ( *(unsigned int *)&DataGlobal_A8EB00[644] - (int)vtable3 >= abstractFlags ) /*0x55b140*/
             break; /*0x55b140*/
-          abstractFlags -= *(unsigned int *)&stru_A8EB00.?[416] - (unsigned int)vtable3; /*0x55b142*/
+          abstractFlags -= *(unsigned int *)&DataGlobal_A8EB00[644] - (unsigned int)vtable3; /*0x55b142*/
         }
         if ( !abstractFlags ) /*0x55b146*/
           break; /*0x55b146*/
@@ -731,13 +731,13 @@ LABEL_24:
   if ( v6 != (void *)-1 ) /*0x55b18b*/
   {
     v8 = v2[127].abstractFlags; /*0x55b18d*/
-    v9 = *(unsigned int *)&stru_A8EB00.?[416] - (unsigned int)v6; /*0x55b19e*/
-    if ( (signed int)(*(unsigned int *)&stru_A8EB00.?[416] - (unsigned int)v2[127].vtable3) >= v8 || v8 == v9 ) /*0x55b1a4*/
+    v9 = *(unsigned int *)&DataGlobal_A8EB00[644] - (unsigned int)v6; /*0x55b19e*/
+    if ( (signed int)(*(unsigned int *)&DataGlobal_A8EB00[644] - (unsigned int)v2[127].vtable3) >= v8 || v8 == v9 ) /*0x55b1a4*/
     {
       if ( *p_vtable3 != (void *)-1 ) /*0x55b1ae*/
       {
         v10 = v2[127].abstractFlags; /*0x55b1b0*/
-        v11 = *(unsigned int *)&stru_A8EB00.?[416] - (unsigned int)*p_vtable3; /*0x55b1b3*/
+        v11 = *(unsigned int *)&DataGlobal_A8EB00[644] - (unsigned int)*p_vtable3; /*0x55b1b3*/
         if ( v11 >= v10 ) /*0x55b1b9*/
           v12 = 0; /*0x55b1bf*/
         else
@@ -761,15 +761,15 @@ LABEL_24:
     goto LABEL_41; /*0x55b28e*/
   }
   v14 = dword_A8B230; /*0x55b228*/
-  v15 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x55b22e*/
+  v15 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x55b22e*/
   nextArrayIndex = dword_A8B230[128].nextArrayIndex; /*0x55b234*/
   NeedsSaveOrLink = dword_A8B230->u32_80.NeedsSaveOrLink; /*0x55b23a*/
   p_nextArrayIndex = &dword_A8B230[128].nextArrayIndex; /*0x55b240*/
   if ( nextArrayIndex == -1 ) /*0x55b249*/
     goto LABEL_38; /*0x55b249*/
-  if ( *(unsigned int *)&stru_A8EB00.?[416] - nextArrayIndex < (int)NeedsSaveOrLink ) /*0x55b251*/
+  if ( *(unsigned int *)&DataGlobal_A8EB00[644] - nextArrayIndex < (int)NeedsSaveOrLink ) /*0x55b251*/
   {
-    NeedsSaveOrLink -= *(unsigned int *)&stru_A8EB00.?[416] - nextArrayIndex; /*0x55b253*/
+    NeedsSaveOrLink -= *(unsigned int *)&DataGlobal_A8EB00[644] - nextArrayIndex; /*0x55b253*/
 LABEL_38:
     if ( NeedsSaveOrLink ) /*0x55b257*/
       goto LABEL_42; /*0x55b257*/
@@ -783,14 +783,14 @@ LABEL_38:
   v14 = dword_A8B230; /*0x55b280*/
   v13 = *(unsigned int *)&g_RulesClass_Instance; /*0x55b286*/
 LABEL_41:
-  v15 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x55b294*/
+  v15 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x55b294*/
 LABEL_42:
   if ( !(v15 % 120) ) /*0x55b2a2*/
   {
     CellSystem::UpdateVisibility((CellSystem *)&DataGlobal_87F7E8); /*0x55b2ad*/
     v14 = dword_A8B230; /*0x55b2b2*/
     v13 = *(unsigned int *)&g_RulesClass_Instance; /*0x55b2b8*/
-    v15 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x55b2be*/
+    v15 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x55b2be*/
   }
   if ( ((int)v14->vtable0 & 0x1000) != 0 && v13->FogRate != 0.0 ) /*0x55b2dd*/
   {
@@ -809,7 +809,7 @@ LABEL_50:
         ((MapClass *)&DataGlobal_87F7E8)->ProcessFogTransition(); /*0x55b326*/
         v14 = dword_A8B230; /*0x55b32b*/
         v13 = *(unsigned int *)&g_RulesClass_Instance; /*0x55b331*/
-        v15 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x55b337*/
+        v15 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x55b337*/
         goto LABEL_51; /*0x55b337*/
       }
       vtable2 -= v15 - (unsigned int)vtable0; /*0x55b2fe*/
@@ -836,14 +836,14 @@ LABEL_57:
     {
       v28 = dword_A8B230[380].vtable2; /*0x55b40e*/
       v29 = dword_A8B230 + 130; /*0x55b414*/
-      dword_A8B230[130].vtable0 = *(void **)&stru_A8EB00.?[416]; /*0x55b41a*/
+      dword_A8B230[130].vtable0 = *(void **)&DataGlobal_A8EB00[644]; /*0x55b41a*/
       v30 = (void *)v65; /*0x55b41c*/
     }
     else
     {
       if ( !(unsigned __int8)PsyDom::IsActive() ) /*0x55b3ab*/
       {
-        v31 = *(void **)&stru_A8EB00.?[416]; /*0x55b3d2*/
+        v31 = *(void **)&DataGlobal_A8EB00[644]; /*0x55b3d2*/
         LOWORD(v32) = Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 5736) * 900.0); /*0x55b3e4*/
         v33 = (void *)v65; /*0x55b3ef*/
         v34 = dword_A8B230 + 130; /*0x55b3f3*/
@@ -854,7 +854,7 @@ LABEL_57:
       }
       v28 = dword_A8B230[381].vtable0; /*0x55b3b8*/
       v29 = dword_A8B230 + 130; /*0x55b3be*/
-      dword_A8B230[130].vtable0 = *(void **)&stru_A8EB00.?[416]; /*0x55b3c4*/
+      dword_A8B230[130].vtable0 = *(void **)&DataGlobal_A8EB00[644]; /*0x55b3c4*/
       v30 = (void *)v65; /*0x55b3c6*/
     }
     v29->vtable1 = v30; /*0x55b420*/
@@ -903,7 +903,7 @@ LABEL_71:
     v42 = v69; /*0x55b520*/
     while ( 1 ) /*0x55b530*/
     {
-      v43 = &FootClass_Array.?->ObjectClass + v40; /*0x55b530*/
+      v43 = &DataGlobal_8B3DC0[812]->ObjectClass + v40; /*0x55b530*/
       if ( v71 < v42 ) /*0x55b539*/
         goto LABEL_79; /*0x55b539*/
       if ( (v70 || !v42) && v41 > 0 ) /*0x55b549*/
@@ -933,7 +933,7 @@ LABEL_82:
   for ( k = dword_B04BE0 - 1; k >= 0; --k ) /*0x55b5d7*/
     (*(void (**)(unsigned int))(**((unsigned int **)dword_B04BD4 + k) + 92))(*((unsigned int *)dword_B04BD4 + k)); /*0x55b5e4*/
   UpdateDeferredLightSurfaces(6, 0); /*0x55b5f1*/
-  LocomotionClass::UpdateAll(v60); /*0x55b5f6*/
+  (v60)->UpdateAll(); /*0x55b5f6*/
   for ( m = 0; m < (int)a1_1->Scenario_field_0x10; ++m ) /*0x55b606*/
   {
     v49 = *((unsigned int *)a1_1->Scenario_field_0x4 + m); /*0x55b60b*/
@@ -948,8 +948,8 @@ LABEL_82:
     }
   }
   ProcessIonCannonEffect(v61); /*0x55b64b*/
-  AirstrikeClass::UpdateAll(v62); /*0x55b650*/
-  CrateClass::Update((MapClass *)&DataGlobal_87F7E8); /*0x55b65a*/
+  (v62)->UpdateAll(); /*0x55b650*/
+  ((MapClass *)&DataGlobal_87F7E8)->Update(); /*0x55b65a*/
   (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55b667*/
   for ( ii = 0; ii < *(int *)&stru_A83D50.__pad_C8[40]; ++ii ) /*0x55b673*/
     (*(void (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * ii) + 92))(*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * ii)); /*0x55b680*/

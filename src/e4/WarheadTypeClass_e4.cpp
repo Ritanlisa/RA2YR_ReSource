@@ -497,38 +497,38 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
 
   v3 = ((AbstractTypeClass *)((AbstractTypeClass *)a2_2))->ProcessPower(a2_2); /*0x75ded0*/
   (*((unsigned char *)&(v3))) = a2_2->pad_144[0]; /*0x75ded5*/
-  Power::FlagProcess((Power *)a2_2, v3); /*0x75dede*/
+  ((Power *)a2_2)->FlagProcess(v3); /*0x75dede*/
   (*((unsigned char *)&(v4))) = a2_2->pad_144[3]; /*0x75dee3*/
-  Power::FlagProcess((Power *)a2_2, v4); /*0x75deec*/
+  ((Power *)a2_2)->FlagProcess(v4); /*0x75deec*/
   (*((unsigned char *)&(v5))) = a2_2->pad_144[4]; /*0x75def1*/
-  v6 = Power::FlagProcess((Power *)a2_2, v5); /*0x75defa*/
+  v6 = ((Power *)a2_2)->FlagProcess(v5); /*0x75defa*/
   (*((unsigned char *)&(v6))) = (&a2_2->pad_149)[0]; /*0x75deff*/
-  Power::FlagProcess((Power *)a2_2, v6); /*0x75df08*/
+  ((Power *)a2_2)->FlagProcess(v6); /*0x75df08*/
   (*((unsigned char *)&(v7))) = (&a2_2->pad_149)[1]; /*0x75df0d*/
-  Power::FlagProcess((Power *)a2_2, v7); /*0x75df16*/
+  ((Power *)a2_2)->FlagProcess(v7); /*0x75df16*/
   (*((unsigned char *)&(v8))) = (&a2_2->pad_149)[2]; /*0x75df1b*/
-  v9 = Power::FlagProcess((Power *)a2_2, v8); /*0x75df24*/
+  v9 = ((Power *)a2_2)->FlagProcess(v8); /*0x75df24*/
   (*((unsigned char *)&(v9))) = (&a2_2->pad_149)[3]; /*0x75df29*/
-  Power::FlagProcess((Power *)a2_2, v9); /*0x75df32*/
+  ((Power *)a2_2)->FlagProcess(v9); /*0x75df32*/
   (*((unsigned char *)&(v10))) = *(unsigned int *)&a2_2->Conventional; /*0x75df37*/
-  Power::FlagProcess((Power *)a2_2, v10); /*0x75df40*/
+  ((Power *)a2_2)->FlagProcess(v10); /*0x75df40*/
   (*((unsigned char *)&(v11))) = *(unsigned int *)&a2_2->Rocker; /*0x75df45*/
-  v12 = Power::FlagProcess((Power *)a2_2, v11); /*0x75df4e*/
+  v12 = ((Power *)a2_2)->FlagProcess(v11); /*0x75df4e*/
   (*((unsigned char *)&(v12))) = *(unsigned int *)&a2_2->IonSensitive; /*0x75df53*/
-  Power::FlagProcess((Power *)a2_2, v12); /*0x75df5c*/
+  ((Power *)a2_2)->FlagProcess(v12); /*0x75df5c*/
   (*((unsigned char *)&(v13))) = *(unsigned int *)&a2_2->Bright; /*0x75df61*/
-  Power::FlagProcess((Power *)a2_2, v13); /*0x75df6a*/
+  ((Power *)a2_2)->FlagProcess(v13); /*0x75df6a*/
   (*((unsigned char *)&(v14))) = *(unsigned int *)&a2_2->CLDisableRed; /*0x75df6f*/
-  v15 = Power::FlagProcess((Power *)a2_2, v14); /*0x75df78*/
+  v15 = ((Power *)a2_2)->FlagProcess(v14); /*0x75df78*/
   (*((unsigned char *)&(v15))) = *(unsigned int *)&a2_2->DrawBoltAsLaser; /*0x75df7d*/
-  Power::FlagProcess((Power *)a2_2, v15); /*0x75df86*/
+  ((Power *)a2_2)->FlagProcess(v15); /*0x75df86*/
   (*((unsigned char *)&(v16))) = *(unsigned int *)&a2_2->CLDisableBlue; /*0x75df8b*/
-  Power::FlagProcess((Power *)a2_2, v16); /*0x75df94*/
+  ((Power *)a2_2)->FlagProcess(v16); /*0x75df94*/
   ((Checksummer *)((Checksummer *)a2_2))->Add_double(*(unsigned int *)&a2_2->pad_44[84], *(unsigned int *)&a2_2->pad_44[88]); /*0x75dfa9*/
   Power::TimerProcess(a2_2->WarheadTypeClass_field_0x100); /*0x75dfb7*/
   ((Checksummer *)((Checksummer *)a2_2))->Add_double((int)a2_2->WarheadTypeClass_field_0xF8, *(unsigned int *)a2_2->__pad_FC); /*0x75dfcc*/
   (*((unsigned char *)&(v17))) = (*(((unsigned char *)&(a2_2->PsychicDamage)) + (sizeof(a2_2->PsychicDamage) - 1))); /*0x75dfd1*/
-  Power::FlagProcess((Power *)a2_2, v17); /*0x75dfda*/
+  ((Power *)a2_2)->FlagProcess(v17); /*0x75dfda*/
   Power::TimerProcess(a2_2->WarheadTypeClass_field_0x17C); /*0x75dfe8*/
   Power::TimerProcess(a2_2->WarheadTypeClass_field_0x180); /*0x75dff6*/
   Power::TimerProcess(a2_2->WarheadTypeClass_field_0x184); /*0x75e004*/

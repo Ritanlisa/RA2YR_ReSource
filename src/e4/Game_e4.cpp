@@ -1439,7 +1439,7 @@ LABEL_14:
             for ( i = 0; i < *(int *)&Instance; ++i ) /*0x67face*/
               ObjectPtr::RegisterForTracking( /*0x67fade*/
                 (int)&SwizzleManagerClass_Instance,
-                (int *)(*(unsigned int *)&stru_A8EB00.?[216] + 4 * i));
+                (int *)(*(unsigned int *)&DataGlobal_A8EB00[444] + 4 * i));
             result = (*(int (**)(Game *, float *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fafc*/
                        this,
                        flt_89EA40,
@@ -1462,7 +1462,7 @@ LABEL_27:
                   for ( j = 0; j < (int)dword_8B40D8; ++j ) /*0x67fbb2*/
                     ObjectPtr::RegisterForTracking( /*0x67fbc2*/
                       (int)&SwizzleManagerClass_Instance,
-                      (int *)&FootClass_Array.?->ObjectClass + j);
+                      (int *)&DataGlobal_8B3DC0[780]->ObjectClass + j);
                   result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_000 + 12))( /*0x67fbdd*/
                              this,
                              &v13,
@@ -1539,7 +1539,7 @@ LABEL_39:
                           break; /*0x67fc03*/
                         if ( FootClass_Array < FootClass_Array.?[6] /*0x67fc3f*/
                           || (BYTE1(FootClass_Array.?[7]) || !FootClass_Array.?[6])
-                          && FootClass_Array.?[1] > 0
+                          && DataGlobal_8B3DC0[1020] > 0
                           && (*(unsigned __int8 (**)(int *, int, unsigned int))(DataGlobal_8B3DC4 + 8))(
                                &DataGlobal_8B3DC4,
                                FootClass_Array.?[6] + FootClass_Array.?[1],
@@ -1594,12 +1594,12 @@ LABEL_39:
                          0);
               if ( result < 0 ) /*0x67fa5c*/
                 break; /*0x67fa5c*/
-              if ( *(int *)&Instance < *(int *)&stru_A8EB00.?[220] /*0x67fa99*/
-                || (stru_A8EB00.?[225] || !*(unsigned int *)&stru_A8EB00.?[220])
-                && *(int *)&stru_A8EB00.?[232] > 0
-                && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.?[212] + 8))(
-                     &stru_A8EB00.?[212],
-                     *(unsigned int *)&stru_A8EB00.?[220] + *(unsigned int *)&stru_A8EB00.?[232],
+              if ( *(int *)&Instance < *(int *)&DataGlobal_A8EB00[448] /*0x67fa99*/
+                || (DataGlobal_A8EB00[453] || !*(unsigned int *)&DataGlobal_A8EB00[448])
+                && *(int *)&DataGlobal_A8EB00[460] > 0
+                && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&DataGlobal_A8EB00[440] + 8))(
+                     &DataGlobal_A8EB00[440],
+                     *(unsigned int *)&DataGlobal_A8EB00[448] + *(unsigned int *)&DataGlobal_A8EB00[460],
                      0) )
               {
                 v4 = (*(unsigned int *)&Instance)++; /*0x67faac*/

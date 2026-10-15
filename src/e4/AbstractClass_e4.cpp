@@ -97,7 +97,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)aP1 + 60))(aP1); /*0x438f62*/
     v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
-    v5[1].uniqueId = *(unsigned int *)&stru_A8EB00.?[416]; /*0x438f75*/
+    v5[1].uniqueId = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x438f75*/
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4048); /*0x438f87*/
     v5[1].vtable3 = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/

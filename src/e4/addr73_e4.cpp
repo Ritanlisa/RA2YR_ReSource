@@ -1018,7 +1018,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
         v13 = *(unsigned int *)(*(unsigned int *)&dword_A8ECBC + 4 * v2); /*0x7334fc*/
         if ( v13 && (*(unsigned char *)(v13 + 20) & 1) != 0 ) /*0x73350d*/
         {
-          v19 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[216] + 4 * v2); /*0x733516*/
+          v19 = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[444] + 4 * v2); /*0x733516*/
           (v11)->AddItem(&v19); /*0x73351a*/
         }
         ++v2; /*0x73351f*/

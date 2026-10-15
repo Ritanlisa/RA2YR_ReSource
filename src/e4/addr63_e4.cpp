@@ -2614,7 +2614,7 @@ AbstractClass * * sub_63B150()
   for ( j = 0; j < (int)Array_field_0x10; ++j ) /*0x63b198*/
   {
     v5 = *((unsigned int *)DataGlobal_AC4B34 + j); /*0x63b1a3*/
-    if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(***(unsigned int ***)(v5 + 4) + 540), (void *)dword_A83D4C) ) /*0x63b1ba*/
+    if ( (uint8_t)(*(void **)(***(unsigned int ***)(v5 + 4) + 540))->IsAlliedWith((void *)dword_A83D4C) ) /*0x63b1ba*/
     {
       DrawColor = BuildingClass::GetDrawColor(v5); /*0x63b1d2*/
       Viewport = Display::GetViewport(v24); /*0x63b1d4*/

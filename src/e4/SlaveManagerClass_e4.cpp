@@ -184,7 +184,7 @@ int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   this->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6af37e*/
   *&this->slaveVectorCapacity = 10; /*0x6af385*/
   *(unsigned int *)this->slaveVectorCount = 0; /*0x6af38c*/
-  *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6af395*/
+  *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
   this->AbstractClass = &vt_SlaveManagerClass; /*0x6af39b*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3a1) */
@@ -195,7 +195,7 @@ int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   this->slaveOwner = 0; /*0x6af3bc*/
   this->slaveType = 0; /*0x6af3bf*/
   this->slaveCount = 0; /*0x6af3c2*/
-  *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6af3cb*/
+  *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6af3cb*/
   this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
   this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -318,7 +318,7 @@ LABEL_4:
       return (char)SlaveManagerClass_field_58; /*0x6af614*/
     goto LABEL_5; /*0x6af614*/
   }
-  if ( *(unsigned int *)&stru_A8EB00.?[416] - v3 < (int)SlaveManagerClass_field_58 ) /*0x6af60e*/
+  if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v3 < (int)SlaveManagerClass_field_58 ) /*0x6af60e*/
   {
     SlaveManagerClass_field_58 = (TechnoClass *)((char *)SlaveManagerClass_field_58 /*0x6af610*/
                                                - (*(unsigned int *)&TeamTypeClass_Array
@@ -326,7 +326,7 @@ LABEL_4:
     goto LABEL_4; /*0x6af610*/
   }
 LABEL_5:
-  *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6af616*/
+  *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6af616*/
   this->SlaveManagerClass_field_54 = v7; /*0x6af622*/
   this->SlaveManagerClass_field_58 = 10; /*0x6af625*/
   SlaveManagerClass_field_58 = this->master; /*0x6af628*/
@@ -768,7 +768,7 @@ int SlaveManagerClass::LostSlave(int aP1, void *a2)
     v5[1] = 6; /*0x6b0a66*/
     slaveType = this->slaveType; /*0x6b0a73*/
     result = (int)(v5 + 2); /*0x6b0a76*/
-    *(unsigned int *)result = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6b0a79*/
+    *(unsigned int *)result = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b0a79*/
     result->u32_4 = v7; /*0x6b0a7f*/
     result->VtableStub_8 = slaveType; /*0x6b0a82*/
   }

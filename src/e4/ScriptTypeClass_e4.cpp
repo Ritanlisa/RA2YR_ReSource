@@ -95,12 +95,12 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
   a1->? = &vt_ScriptTypeClass; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x691fc1*/
   v5 = (gamemd::ScriptTypeClass *)(a1); /*0x691fd6*/
-  v3 = (*(int (**)(int *, ScriptTypeClass **))(FootClass_Array.?[4] + 16))(&FootClass_Array.?[4], &v5); /*0x691fda*/
-  if ( v3 != -1 && v3 < *(int *)&FootClass_Array.? ) /*0x691fea*/
+  v3 = (*(int (**)(int *, ScriptTypeClass **))(DataGlobal_8B3DC0[1032] + 16))(&DataGlobal_8B3DC0[1032], &v5); /*0x691fda*/
+  if ( v3 != -1 && v3 < *(int *)&DataGlobal_8B3DC0[1048] ) /*0x691fea*/
   {
-    --*(unsigned int *)&FootClass_Array.?; /*0x691fef*/
+    --*(unsigned int *)&DataGlobal_8B3DC0[1048]; /*0x691fef*/
     for ( ; /*0x691ff5*/
-          v3 < *(int *)&FootClass_Array.?;
+          v3 < *(int *)&DataGlobal_8B3DC0[1048];
           *(unsigned int *)(FootClass_Array.?[5] + 4 * v3 - 4) = *(unsigned int *)(FootClass_Array.?[5] + 4 * v3) )
     {
       ++v3; /*0x691ffd*/
@@ -133,7 +133,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
-    INIClass::GetString(a1, g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
+    (a1)->GetString(g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/

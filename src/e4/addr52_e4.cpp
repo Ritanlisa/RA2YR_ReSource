@@ -178,7 +178,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   int v24; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x52545c*/
+  if ( ((INIClass *)edx0)->GetString(aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x52545c*/
   {
     VectorClass::Construct(&v22, 0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
@@ -1110,11 +1110,7 @@ LABEL_3:
     for ( kk = 0; kk < 256; ++kk )
     {
       GameDirectoryCD = (unsigned char *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[47684] + 2 * (kk % 256) + kk % 256);
-      v49 = (ObjectClass *)Palette::SixBitTo16Bit(
-                             v81,
-                             4 * *GameDirectoryCD,
-                             4 * GameDirectoryCD[1],
-                             4 * GameDirectoryCD[2]);
+      v49 = (ObjectClass *)(v81)->SixBitTo16Bit(4 * *GameDirectoryCD, 4 * GameDirectoryCD[1], 4 * GameDirectoryCD[2]);
       *(unsigned short *)GameDirectoryCD = *(unsigned short *)v49->vtable1;
       GameDirectoryCD[2] = v49->ptr_2;
     }

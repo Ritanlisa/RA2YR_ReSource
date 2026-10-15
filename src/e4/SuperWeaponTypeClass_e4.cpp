@@ -400,13 +400,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   if ( !(unsigned __int8)((uint8_t ***)((AbstractTypeClass *)_EBP))->LoadFromINI((unsigned __int8 ***)aP1) ) /*0x6cea3b*/
     return 0; /*0x6cee51*/
   v6 = *(unsigned int *)(_EBP + 156); /*0x6cea4a*/
-  if ( INIClass::GetString( /*0x6cea6d*/
-         (INIClass *)aP1,
-         (unsigned __int8 *)(_EBP + 36),
-         aWeapontype,
-         &g_INI_DefaultBuffer,
-         (char *)&v45,
-         128) )
+  if ( (/*0x6cea6d*/ (INIClass *)aP1)->GetString((unsigned __int8 *)(_EBP + 36), aWeapontype, &g_INI_DefaultBuffer, (char *)&v45, 128) )
   {
     v7 = (int)(InfantryTypeClass::Find((char *)&v45)); /*0x6cea7d*/
   }
@@ -440,26 +434,14 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   v16 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)(_EBP + 36), aShowtimer, v37); /*0x6ceb51*/
   v17 = *(unsigned int *)(_EBP + 192); /*0x6ceb56*/
   *(unsigned char *)(_EBP + 244) = v16; /*0x6ceb5c*/
-  if ( !INIClass::GetString( /*0x6ceb94*/
-          (INIClass *)aP1,
-          (unsigned __int8 *)(_EBP + 36),
-          aSpecialsound,
-          &g_INI_DefaultBuffer,
-          (char *)&v45,
-          128)
+  if ( !(/*0x6ceb94*/ (INIClass *)aP1)->GetString((unsigned __int8 *)(_EBP + 36), aSpecialsound, &g_INI_DefaultBuffer, (char *)&v45, 128)
     || (Index = VocClass::FindIndex(&v45), Index == -1) )
   {
     Index = v17; /*0x6ceb96*/
   }
   v19 = *(unsigned int *)(_EBP + 196); /*0x6ceb98*/
   *(unsigned int *)(_EBP + 192) = Index; /*0x6cebb8*/
-  if ( !INIClass::GetString( /*0x6cebd6*/
-          (INIClass *)aP1,
-          (unsigned __int8 *)(_EBP + 36),
-          g_INI_Key_StartSound,
-          &g_INI_DefaultBuffer,
-          (char *)&v45,
-          128)
+  if ( !(/*0x6cebd6*/ (INIClass *)aP1)->GetString((unsigned __int8 *)(_EBP + 36), g_INI_Key_StartSound, &g_INI_DefaultBuffer, (char *)&v45, 128)
     || (v20 = VocClass::FindIndex(&v45), v20 == -1) )
   {
     v20 = v19; /*0x6cebd8*/

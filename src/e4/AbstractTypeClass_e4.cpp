@@ -134,13 +134,7 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   if ( result ) /*0x410a86*/
   {
     Name = this->Name; /*0x410a91*/
-    INIClass::GetString( /*0x410aa0*/
-      (INIClass *)aP1,
-      (unsigned __int8 *)this->__pad_024,
-      (unsigned __int8 *)g_INI_Key_Name,
-      this->Name,
-      Source,
-      49);
+    (/*0x410aa0*/ (INIClass *)aP1)->GetString((unsigned __int8 *)this->__pad_024, (unsigned __int8 *)g_INI_Key_Name, this->Name, Source, 49);
     if ( Source ) /*0x410aab*/
     {
       strncpy(Destination, Source, 0x30u); /*0x410abf*/
@@ -156,13 +150,7 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
       this->Name[48] = v7; /*0x410adf*/
     }
     UINameLabel = this->UINameLabel; /*0x410aeb*/
-    INIClass::GetString( /*0x410afb*/
-      (INIClass *)aP1,
-      (unsigned __int8 *)this->__pad_024,
-      (unsigned __int8 *)g_INI_Key_UIName,
-      this->UINameLabel,
-      Source,
-      32);
+    (/*0x410afb*/ (INIClass *)aP1)->GetString((unsigned __int8 *)this->__pad_024, (unsigned __int8 *)g_INI_Key_UIName, this->UINameLabel, Source, 32);
     if ( Source ) /*0x410b06*/
     {
       strncpy(Destination, Source, 0x1Fu); /*0x410b1a*/

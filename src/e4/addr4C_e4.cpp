@@ -1156,7 +1156,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   *(unsigned int *)(v59 + 56) = *(unsigned int *)(v59 + 36) - Cell::GetGroundHeight((unsigned int *)(v59 + 28)); /*0x4cf3f6*/
   LABEL_60:
   if ( !*(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) /*0x4cf4e8*/
-    && (uint8_t)DamageArea::CheckOccupancyEligibility(v59) )
+    && (uint8_t)(v59)->CheckOccupancyEligibility() )
   {
     if ( v23 >= 128 ) /*0x4cf4f7*/
     {
@@ -1182,7 +1182,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
         *(unsigned int *)(v59 + 68) = 0; /*0x4cf504*/
       }
       if ( !*(unsigned char *)(v59 + 92) && *(double *)(v59 + 72) < 0.05 ) /*0x4cf51c*/
-        LocomotionClass::CheckBridgeBlock(v59); /*0x4cf520*/
+        (v59)->CheckBridgeBlock(); /*0x4cf520*/
     }
   }
   if ( *((unsigned char *)*v6 + 131) ) /*0x4cf55f*/
@@ -2535,7 +2535,7 @@ char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6a48*/
     LOBYTE(this->AbstractClass) = 0; /*0x4c6a4c*/
-    *(void **)this->M3 + 3) = *(void **)&stru_A8EB00.?[416]; /*0x4c6a57*/
+    *(void **)this->M3 + 3) = *(void **)&DataGlobal_A8EB00[644]; /*0x4c6a57*/
     return (char *)this; /*0x4c6a55*/
   }
   else
@@ -2547,7 +2547,7 @@ char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
     *(void **)this->M15 + 3) = 0; /*0x4c6a23*/
     *(unsigned short *)this->M19 + 3) = *a5; /*0x4c6a2d*/
     *(unsigned short *)this->q015 + 1) = a5[1]; /*0x4c6a35*/
-    *(void **)this->M3 + 3) = *(void **)&stru_A8EB00.?[416]; /*0x4c6a3e*/
+    *(void **)this->M3 + 3) = *(void **)&DataGlobal_A8EB00[644]; /*0x4c6a3e*/
     return (char *)this; /*0x4c6a41*/
   }
 
@@ -2564,7 +2564,7 @@ char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6ac8*/
     LOBYTE(this->AbstractClass) = 0; /*0x4c6acc*/
-    *(void **)this->M3 + 3) = *(void **)&stru_A8EB00.?[416]; /*0x4c6ad7*/
+    *(void **)this->M3 + 3) = *(void **)&DataGlobal_A8EB00[644]; /*0x4c6ad7*/
     return (char *)this; /*0x4c6ad5*/
   }
   else
@@ -2576,7 +2576,7 @@ char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short
     *(void **)this->M15 + 3) = 0; /*0x4c6aa3*/
     *(unsigned short *)this->M19 + 3) = *a6; /*0x4c6aad*/
     *(unsigned short *)this->q015 + 1) = a6[1]; /*0x4c6ab5*/
-    *(void **)this->M3 + 3) = *(void **)&stru_A8EB00.?[416]; /*0x4c6abe*/
+    *(void **)this->M3 + 3) = *(void **)&DataGlobal_A8EB00[644]; /*0x4c6abe*/
     return (char *)this; /*0x4c6ac1*/
   }
 
@@ -2601,7 +2601,7 @@ char * E4Recv_4C6BE0::sub_4C6BE0(int a2, char a3, int a4, int a5)
     *(void **)this->M7 + 3) = (void *)a4; /*0x4c6c19*/
     *(void **)this->M11 + 3) = (void *)a5; /*0x4c6c1c*/
   }
-  *(void **)this->M3 + 3) = *(void **)&stru_A8EB00.?[416]; /*0x4c6c27*/
+  *(void **)this->M3 + 3) = *(void **)&DataGlobal_A8EB00[644]; /*0x4c6c27*/
   return (char *)this; /*0x4c6c2a*/
 
 }

@@ -14,7 +14,7 @@ namespace gamemd {
 extern const uint32_t g_ScreenRenderLUT1; // data: 0x879B30
 extern uint16_t g_ScreenRenderLUT2; // data: 0x87B170
 extern char g_ScreenRenderMask[256]; // data: 0x87BC90
-extern uint8_t g_ScreenRenderFlag; // data: 0x87BD90
+extern unsigned char g_ScreenRenderFlag[256];  // X34-L5 array retype (binary width+bound)
 
 //===========================================================================
 // System: CRT / I/O / TLS globals

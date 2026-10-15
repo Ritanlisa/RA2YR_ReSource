@@ -394,7 +394,7 @@ int INIClass::GetBool(uint8_t *aP1, uint8_t *a2, int a4)
   int result; // eax
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( !INIClass::GetString(this, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4757f2*/
+  if ( !(this)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4757f2*/
     return a4; /*0x4757f2*/
   result = LookupNameIndex((ObjectClass *)Destination); /*0x4757ff*/
   if ( result == -1 ) /*0x475807*/

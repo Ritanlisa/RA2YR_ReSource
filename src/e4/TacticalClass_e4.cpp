@@ -197,7 +197,7 @@ void TacticalClass::DrawCellTerrainOverlay(int *a2, int *a3)
   if ( field38 == 0xFFFF ) /*0x4802ae*/
   {
     v5 = 0; /*0x4802df*/
-    v6 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * dword_AA10B0); /*0x4802e1*/
+    v6 = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[556] + 4 * dword_AA10B0); /*0x4802e1*/
   }
   else
   {
@@ -1053,7 +1053,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
         v37 = v40; /*0x6d6eae*/
         do /*0x6d7019*/
         {
-          if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, v32) ) /*0x6d6ebc*/
+          if ( (unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal(v32) ) /*0x6d6ebc*/
           {
             v18 = (House *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v32); /*0x6d6ed3*/
             v19 = (int)v18; /*0x6d6ed8*/
@@ -1113,7 +1113,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
           v34 = v27; /*0x6d7090*/
           do /*0x6d71b7*/
           {
-            if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, v32) ) /*0x6d709e*/
+            if ( (unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal(v32) ) /*0x6d709e*/
             {
               v28 = (BuildingClass *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v32); /*0x6d70b5*/
               v29 = (int)v28; /*0x6d70ba*/

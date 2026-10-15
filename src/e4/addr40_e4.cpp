@@ -138,7 +138,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   if ( v4 ) /*0x401221*/
     *v4 = 0; /*0x401223*/
   strcat(Str, aIdx); /*0x40124d*/
-  CCFileClass::Construct(v19, Str); /*0x401262*/
+  (v19)->Construct(Str); /*0x401262*/
   if ( !((CCFileClass *)(v19))->Open(0) ) /*0x40126c*/
     goto LABEL_30; /*0x40126c*/
   v5 = strrchr(Str, 46); /*0x401283*/
@@ -146,13 +146,13 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
     *v5 = 0; /*0x40128f*/
   strcat(Str, aBag); /*0x4012bc*/
   v6 = (unsigned int *)(operator new(0x6Cu)); /*0x4012c5*/
-  v7 = v6 ? CCFileClass::Construct(v6, Str) : 0;
+  v7 = v6 ? (v6)->Construct(Str) : 0;
   v3->AbstractClass_10C = v7; /*0x4012e4*/
   if ( !(*(uint8_t (__thiscall **)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x4012ef*/
     goto LABEL_30; /*0x4012ef*/
   FileClass::Load(v19, 1); /*0x401300*/
   v3->GetSizeMax(v3->AbstractClass_10C, 1); /*0x40130f*/
-  if ( CCFileClass::Read(v19, Buffer, 12) != 12 ) /*0x401325*/
+  if ( (v19)->Read(Buffer, 12) != 12 ) /*0x401325*/
     goto LABEL_30; /*0x401325*/
   v3->vtable2 = v18; /*0x40132f*/
   if ( v18 <= 0 ) /*0x401338*/
@@ -189,7 +189,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   if ( v3->vtable2 > 0 ) /*0x401379*/
   {
     v11 = 0; /*0x40137b*/
-    while ( CCFileClass::Read(v19, (void *)(*(unsigned int *)v3 + v11), 32) == 32 ) /*0x401393*/
+    while ( (v19)->Read((void *)(*(unsigned int *)v3 + v11), 32) == 32 ) /*0x401393*/
     {
       ++v10; /*0x40139c*/
       *(unsigned int *)(v11 + v3->needsSave = 0; /*0x40139d*/

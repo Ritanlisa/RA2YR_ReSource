@@ -1355,7 +1355,7 @@ int sub_434B40(AbstractClass * a1, int * a2, unsigned short a3, int xLeft, int y
 
   if ( !a1 ) /*0x434b4c*/
     return xLeft; /*0x434b89*/
-  FontRenderer::InitContext(a1, a2); /*0x434b56*/
+  (a1)->InitContext(a2); /*0x434b56*/
   Field::Int_Set(a1, xLeft); /*0x434b5e*/
   v5 = FontClass::RenderGlyph((int)a1, a3, xLeft, yTop, -1); /*0x434b7a*/
   BufferIO::Cleanup(a1, (int)a2); /*0x434b7c*/

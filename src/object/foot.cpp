@@ -328,7 +328,7 @@ bool FootClass::MovementAI()
        || this->target
        && *(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 912)
        && v18
-       && !FootClass::updateScanRange(v18))
+       && !(v18)->updateScanRange())
       && !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]
          % *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 660))
       && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 117))(this)

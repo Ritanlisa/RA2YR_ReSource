@@ -1756,7 +1756,7 @@ AbstractClass * * sub_63B0A0()
   {
     v6 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[152] + 4 * i); /*0x63b12d*/
     if ( (uint8_t)HouseClass::IsAlliedWith(v6->u32_21C, (void *)dword_A83D4C) ) /*0x63b136*/
-      ScriptAction::ProcessIdleAction((ScriptAction *)v6); /*0x63b141*/
+      ((ScriptAction *)v6)->ProcessIdleAction(); /*0x63b141*/
   }
 }
 }
@@ -2043,7 +2043,7 @@ char sub_5FFFA0()
 
   result = dword_AC1688; /*0x5fffa0*/
   for ( i = dword_AC1688 - 1; i >= 0; --i ) /*0x5fffab*/
-    result = BuildingLight::CalculateShading(v4, v1); /*0x5fffb6*/
+    result = (v4)->CalculateShading(v1); /*0x5fffb6*/
   return result; /*0x5fffbe*/
 }
 } // namespace gamemd

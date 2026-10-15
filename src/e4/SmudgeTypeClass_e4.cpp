@@ -163,7 +163,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
     this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                     (bool *)aP1,
                     (unsigned __int8 *)this->?,
-                    (unsigned __int8 *)&stru_82BA00.?[151],
+                    (unsigned __int8 *)&DataGlobal_82BA00[484],
                     Width);
     this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
                      (bool *)aP1,
@@ -272,9 +272,9 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
   LOBYTE(v3) = (unsigned char)(this->Crater); /*0x6b580c*/
-  Power::FlagProcess((Power *)a2, v3); /*0x6b5815*/
+  ((Power *)a2)->FlagProcess(v3); /*0x6b5815*/
   LOBYTE(v4) = this->Burn; /*0x6b581a*/
-  Power::FlagProcess((Power *)a2, v4); /*0x6b5823*/
+  ((Power *)a2)->FlagProcess(v4); /*0x6b5823*/
   Power::TimerProcess(this->Width); /*0x6b5831*/
   return Power::TimerProcess(this->Height); /*0x6b5844*/
 

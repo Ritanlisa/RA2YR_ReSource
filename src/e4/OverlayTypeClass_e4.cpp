@@ -418,7 +418,7 @@ int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4,
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
   v5 = sub_48DFD0(a4); /*0x4754cd*/
-  if ( INIClass::GetString((INIClass *)this, a2, a3, v5, Destination, 128) ) /*0x4754e5*/
+  if ( ((INIClass *)this)->GetString(a2, a3, v5, Destination, 128) ) /*0x4754e5*/
     return ((OverlayTypeClass *)((OverlayTypeClass *)Destination))->LookupByName(); /*0x4754f2*/
   else
     return a4; /*0x475502*/
@@ -544,15 +544,15 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->Strength); /*0x5fea83*/
   Power::TimerProcess(*&this->Wall); /*0x5fea91*/
   LOBYTE(v3) = this->NoUseTileLandType; /*0x5fea96*/
-  Power::FlagProcess((Power *)a2, v3); /*0x5fea9f*/
+  ((Power *)a2)->FlagProcess(v3); /*0x5fea9f*/
   LOBYTE(v4) = this->IsVeinholeMonster; /*0x5feaa4*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x5feaad*/
+  v5 = ((Power *)a2)->FlagProcess(v4); /*0x5feaad*/
   LOBYTE(v5) = this->IsVeins; /*0x5feab2*/
-  Power::FlagProcess((Power *)a2, v5); /*0x5feabb*/
+  ((Power *)a2)->FlagProcess(v5); /*0x5feabb*/
   LOBYTE(v6) = this->ImageLoaded; /*0x5feac0*/
-  Power::FlagProcess((Power *)a2, v6); /*0x5feac9*/
+  ((Power *)a2)->FlagProcess(v6); /*0x5feac9*/
   LOBYTE(v7) = this->IsRubble; /*0x5feace*/
-  return Power::FlagProcess((Power *)a2, v7); /*0x5feadc*/
+  return ((Power *)a2)->FlagProcess(v7); /*0x5feadc*/
 
 }
 }  // G42.18c ns repair

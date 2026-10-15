@@ -27,10 +27,10 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->MovingDestination[0] = dword_B04E38; /*0x661ed1*/
   this->MovingDestination[1] = dword_B04E3C; /*0x661eda*/
   this->MovingDestination[2] = dword_B04E40; /*0x661ee3*/
-  this->MissionTimer[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x661eee*/
+  this->MissionTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x661eee*/
   this->MissionTimer[2] = 0; /*0x661ef1*/
   this->MissionTimer[3] = 0; /*0x661ef4*/
-  v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x661ef7*/
+  v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x661ef7*/
   this->TrailerTimer[2] = 0; /*0x661efd*/
   this->TrailerTimer[0] = v2; /*0x661f00*/
   this->CurrentSpeed[0] = 0; /*0x661f03*/

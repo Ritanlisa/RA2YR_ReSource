@@ -831,14 +831,7 @@ LABEL_60:
       void * v102 =
       if ( !v102 )
         return 1;
-      ParticleSystemClass::Constructor(
-        v102,
-        *(IUnknown **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[32] + 4 * *(unsigned int *)((unsigned int)(a1)+ 144)),
-        (IUnknown *)&v113,
-        0,
-        0,
-        (IUnknown *)&((unsigned char *)&stru_B05488)[37400],
-        0);
+      (v102)->Constructor(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[32] + 4 * *(unsigned int *)((unsigned int)(a1)+ 144)), (IUnknown *)&v113, 0, 0, (IUnknown *)&((unsigned char *)&stru_B05488)[37400], 0);
       return 1;
     case 0x59:
       int v103 = 0;

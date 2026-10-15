@@ -223,7 +223,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
   if ( v4 ) /*0x5b419d*/
     return v4->q00C; /*0x5b41ac*/
   LABEL_9:
-  CCFileClass::Construct((CCFileClass *)&v14.buffer, Source); /*0x5b414d*/
+  ((CCFileClass *)&v14.buffer)->Construct(Source); /*0x5b414d*/
   if ( (uint8_t)((CCFileClass *)((CCFileClass *)&v14.buffer))->Open(0) ) /*0x5b415c*/
   {
     v8 = (unsigned int *)operator new(0x10u); /*0x5b41af*/
@@ -714,12 +714,12 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     v7 = Compression::Read((int *)v19.vtable1, v5, Buffer); /*0x5bb499*/
     v8 = v19.GetRelatedObject() + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/
-    RawFileClass::Construct((RawFileClass *)v18, (int)aPreviewBin); /*0x5bb4b7*/
+    ((RawFileClass *)v18)->Construct((int)aPreviewBin); /*0x5bb4b7*/
     if ( (uint8_t)((FileClass *)((RawFileClass *)v18))->Open(0) ) /*0x5bb4c1*/
       FileClass::Delete((RawFileClass *)v18); /*0x5bb4ce*/
-    FileClass::Open2((RawFileClass *)v18, (const CHAR *)2); /*0x5bb4d9*/
-    FileClass::Write2((RawFileClass *)v18, &Buffer, 4u); /*0x5bb4e9*/
-    FileClass::Write2((RawFileClass *)v18, v6, v8); /*0x5bb4f4*/
+    ((RawFileClass *)v18)->Open2((const CHAR *)2); /*0x5bb4d9*/
+    ((RawFileClass *)v18)->Write2(&Buffer, 4u); /*0x5bb4e9*/
+    ((RawFileClass *)v18)->Write2(v6, v8); /*0x5bb4f4*/
     ((RawFileClass *)v18)->CloseHandle(); /*0x5bb4fd*/
     operator delete((void *)(v6)); /*0x5bb503*/
     Debug::Log(); /*0x5bb50d*/
@@ -939,7 +939,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT, WPARAM, LPARAM)
         if ( dword_ABF228 >= 5 ) /*0x5bc8bd*/
           return 0; /*0x5bc8bd*/
         Enabled = Audio::GetEnabled(); /*0x5bc8c6*/
-        v12 = AudioStream::Constructor(Enabled, 0x1388u); /*0x5bc8cd*/
+        v12 = (Enabled)->Constructor(0x1388u); /*0x5bc8cd*/
         *(&dword_ABF114 + dword_ABF228) = v12; /*0x5bc8da*/
         if ( !v12 ) /*0x5bc8e1*/
           return 0; /*0x5bc8e1*/
@@ -1081,7 +1081,7 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
       }
       while ( v23 ); /*0x5bcef5*/
     }
-    return Text::DrawRepeated(0, 0, 80, 25); /*0x5bcf7b*/
+    return (0)->DrawRepeated(0, 80, 25); /*0x5bcf7b*/
   }
   return result; /*0x5bcf83*/
 }

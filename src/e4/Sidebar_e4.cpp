@@ -697,7 +697,7 @@ int Sidebar::ActivateTab(int aP1)
   {
     this->u32_53A6 = 1; /*0x6a60b8*/
     *(&this->u8_F94 * aP1 + 5504) = 1; /*0x6a60c6*/
-    return (int)MapClass::MarkForRedraw(&dword_87F7E8, 0, v2); /*0x6a60d2*/
+    return (int)(&dword_87F7E8)->MarkForRedraw(0, v2); /*0x6a60d2*/
   }
   return result; /*0x6a60d8*/
 

@@ -84,7 +84,7 @@ int StreamClass::Set(unsigned int *aP1, void *a2, void *a3)
 
   if ( *aP1 ) /*0x45af28*/
   {
-    v3 = (**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &stru_818E00.?[17], &aP1); /*0x45af3d*/
+    v3 = (**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &DataGlobal_818E00[648], &aP1); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
       v5 = aP1; /*0x45af5f*/

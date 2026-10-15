@@ -93,7 +93,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
       *((unsigned int *)dword_A8E31C + i3),
       aP0);
   for ( i4 = 0; i4 < *(int *)&g_BuildingClass_InstanceCount; ++i4 ) /*0x679beb*/
-    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&stru_A8EB00.?[56] + 4 * i4) + 100))( /*0x679bf9*/
+    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&DataGlobal_A8EB00[284] + 4 * i4) + 100))( /*0x679bf9*/
       *(unsigned int *)(*(unsigned int *)&g_MultiplayerPool + 4 * i4),
       aP0);
   for ( i5 = 0; i5 < *(int *)&g_ObjectTypeConfig; ++i5 ) /*0x679c0f*/
@@ -150,7 +150,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
     || (BYTE1(FootClass_Array.?[2]) || !FootClass_Array.?[1])
     && FootClass_Array.?[1] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(FootClass_Array.? + 8))(
-         &FootClass_Array.?,
+         &DataGlobal_8B3DC0[864],
          FootClass_Array.?[1] + FootClass_Array.?[1],
          0) )
   {
@@ -260,7 +260,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   Block->? = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
   v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
-  v3 = (*(int (**)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &v6); /*0x6a496a*/
+  v3 = (*(int (**)(int *, SideClass **))(DataGlobal_8B3DC0[864] + 16))(&DataGlobal_8B3DC0[864], &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < FootClass_Array ) /*0x6a497a*/
   {
     --FootClass_Array; /*0x6a497f*/

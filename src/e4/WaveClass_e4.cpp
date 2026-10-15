@@ -129,10 +129,10 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   aP1->? = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)aP1, 1); /*0x763221*/
   v6 = (gamemd::WaveClass *)(aP1); /*0x763236*/
-  v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.?[84] + 16))(&stru_A8EB00.?[84], &v6); /*0x76323a*/
-  if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[100] ) /*0x76324a*/
+  v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&DataGlobal_A8EB00[312] + 16))(&DataGlobal_A8EB00[312], &v6); /*0x76323a*/
+  if ( v3 != -1 && v3 < *(int *)&DataGlobal_A8EB00[328] ) /*0x76324a*/
   {
-    --*(unsigned int *)&stru_A8EB00.?[100]; /*0x76324f*/
+    --*(unsigned int *)&DataGlobal_A8EB00[328]; /*0x76324f*/
     for ( ; /*0x763255*/
           v3 < *(int *)&DataGlobal_A8EB64;
           *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB58 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB58 + 4 * v3) )

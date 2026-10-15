@@ -335,13 +335,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   v46 = (unsigned char *)(g_INI_Key_Warhead); /*0x645043*/
   v45 = (unsigned __int8 *)&this->BarrelVoxel; /*0x645048*/
   this->Damage_d = v9; /*0x64504b*/
-  if ( INIClass::GetString( /*0x645051*/
-         (INIClass *)aP1,
-         v45,
-         v46,
-         (char *)p_ParticleTypeClass_field_0x24,
-         (char *)v48,
-         ParticleTypeClass_field_0x2F8) )
+  if ( (/*0x645051*/ (INIClass *)aP1)->GetString(v45, v46, (char *)p_ParticleTypeClass_field_0x24, (char *)v48, ParticleTypeClass_field_0x2F8) )
   {
     v11 = (void *)WarheadTypeClass::FindOrCreate(Destination); /*0x64505e*/
   }
@@ -512,13 +506,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   v46 = aNextparticle; /*0x645307*/
   v45 = (unsigned __int8 *)&this->BarrelVoxel; /*0x64530c*/
   this->FinalDamageState = (gamemd::ObjectClass *)(v35); /*0x64530f*/
-  if ( INIClass::GetString( /*0x645315*/
-         (INIClass *)aP1,
-         v45,
-         v46,
-         (char *)p_ParticleTypeClass_field_0x24,
-         (char *)v48,
-         ParticleTypeClass_field_0x2F8) )
+  if ( (/*0x645315*/ (INIClass *)aP1)->GetString(v45, v46, (char *)p_ParticleTypeClass_field_0x24, (char *)v48, ParticleTypeClass_field_0x2F8) )
   {
     if ( _strcmpi(Source, g_Str__none_) ) /*0x64532c*/
     {
@@ -528,7 +516,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
 LABEL_10:
         v37 = (BuildingTypeClass *)__2_YAPAXI_Z(0x318u); /*0x64536b*/
         if ( v37 ) /*0x64537a*/
-          v38 = BuildingTypeClass::Construct(v37, Source); /*0x645383*/
+          v38 = (v37)->Construct(Source); /*0x645383*/
         else
           v38 = 0; /*0x64538a*/
         v39 = 0; /*0x645392*/
@@ -613,7 +601,7 @@ int ParticleTypeClass::ProcessPower(int *a2, void *a2_1)
   ((Checksummer *)a2)->Add_float(this->q300); /*0x645567*/
   Power::TimerProcess(this->Deacc); /*0x645575*/
   LOBYTE(v3) = this->DeleteOnStateLimit_d; /*0x64557a*/
-  Power::FlagProcess((Power *)a2, v3); /*0x645583*/
+  ((Power *)a2)->FlagProcess(v3); /*0x645583*/
   LOBYTE(v4) = this->EndStateAI_d; /*0x645588*/
   v5 = Power::FinalizeDrain((Power *)a2, v4); /*0x645591*/
   LOBYTE(v5) = this->StartStateAI_d; /*0x645596*/
@@ -623,7 +611,7 @@ int ParticleTypeClass::ProcessPower(int *a2, void *a2_1)
   Power::TimerProcess((unsigned __int8)this->Translucent25State); /*0x6455bd*/
   Power::TimerProcess((unsigned __int8)this->Translucent50State); /*0x6455cd*/
   LOBYTE(v7) = this->Normalized; /*0x6455d2*/
-  Power::FlagProcess((Power *)a2, v7); /*0x6455db*/
+  ((Power *)a2)->FlagProcess(v7); /*0x6455db*/
   Power::TimerProcess(this->q310); /*0x6455e9*/
   Power::TimerProcess(this->q314); /*0x6455f7*/
   return (/*0x645611*/ (Checksummer *)a2)->Add_double((int)this->__pad_2B0, (int)this->q2B4);

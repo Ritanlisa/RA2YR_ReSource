@@ -101,7 +101,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
   int v19; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
+  if ( ((INIClass *)edx0)->GetString(aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
   {
     (&v17)->BuildingTypeConstructor(0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
@@ -202,13 +202,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
   int v16; // eax
   InfantryTypeVector v17; // [esp+Ch] [ebp-9Ch] BYREF
 
-  if ( INIClass::GetString( /*0x67bb3c*/
-         (INIClass *)edx0,
-         aP1,
-         a3,
-         &g_INI_DefaultBuffer,
-         (char *)&v17.q01C,
-         128) )
+  if ( (/*0x67bb3c*/ (INIClass *)edx0)->GetString(aP1, a3, &g_INI_DefaultBuffer, (char *)&v17.q01C, 128) )
   {
     ((InfantryTypeVector *)(&v17))->Construct2(0, 0); /*0x67bb51*/
     v17.q014 = 10; /*0x67bb5a*/
@@ -350,7 +344,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
+  if ( ((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
     return (gamemd::InfantryTypeClass *)(KeywordType::FindOrCreate2(Destination)); /*0x67baeb*/
   else
     return (gamemd::InfantryTypeClass *)(a4); /*0x67baf9*/
@@ -362,7 +356,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
+  if ( ((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
     return (gamemd::AircraftTypeClass *)(KeywordClass::FindOrCreate(Destination)); /*0x67bd5b*/
   else
     return (gamemd::AircraftTypeClass *)(a4); /*0x67bd69*/

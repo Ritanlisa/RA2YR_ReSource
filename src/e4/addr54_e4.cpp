@@ -1176,8 +1176,8 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
   TimerGetTicks(); /*0x546db5*/
   if ( !a1 ) /*0x546dc8*/
   {
-    LayerClass::CellIteratorReset(&dword_87F7E8); /*0x546dd3*/
-    for ( i = LayerClass::CellIteratorNext(&dword_87F7E8); i; i = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x546de6*/
+    (&dword_87F7E8)->CellIteratorReset(); /*0x546dd3*/
+    for ( i = (&dword_87F7E8)->CellIteratorNext(); i; i = (&dword_87F7E8)->CellIteratorNext() ) /*0x546de6*/
     {
       v4 = *(unsigned int *)(i + 56); /*0x546dec*/
       inited = 0; /*0x546def*/
@@ -2949,7 +2949,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   this->M12 = &vt_DynamicVectorClass; /*0x54e385*/
   this->q020 = (void *)10; /*0x54e38c*/
   this->M28 = 0; /*0x54e393*/
-  this->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x54e39e*/
+  this->AbstractClass = *(void **)&DataGlobal_A8EB00[644]; /*0x54e39e*/
   this->M4 = v2; /*0x54e3a4*/
   this->M8 = (void *)100; /*0x54e3a7*/
   return &this->AbstractClass; /*0x54e3aa*/

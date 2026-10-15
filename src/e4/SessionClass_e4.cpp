@@ -534,19 +534,19 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
             }
             v3 = ++v43.nextObject; /*0x5cf574*/
           }
-          while ( (int)v3 < INIClass::FindKey((char *)&v43.nextObject, (char **)&v43.nextObject) ); /*0x5cf585*/
+          while ( (int)v3 < ((char *)&v43.nextObject)->FindKey((char **)&v43.nextObject) ); /*0x5cf585*/
         }
       }
       DeleteAndZero(&v43); /*0x5cf591*/
     }
     DeleteAndZero((ObjectClass *)&v43.nextObject); /*0x5cf59a*/
     DeleteAndZero((ObjectClass *)&v43.nextObject); /*0x5cf5a3*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v43.nextObject); /*0x5cf5ac*/
+    ((INIClass *)&v43.nextObject)->DestroyHashTableINIClass(); /*0x5cf5ac*/
     v43.customSound_controller[2] = (int)&vt_CCFileClass; /*0x5cf5b8*/
     v45 = 0; /*0x5cf5c0*/
     Vector::Clear((int)v44); /*0x5cf5c7*/
     v43.customSound_controller[2] = (int)&off_7E1668; /*0x5cf5d0*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&v43.customSound_controller[2]); /*0x5cf5d8*/
+    ((BufferIOFileClass *)&v43.customSound_controller[2])->Dtor(); /*0x5cf5d8*/
     return 1; /*0x5cf5e0*/
   }
   else
@@ -1762,7 +1762,7 @@ AbstractClass * * SessionClass::LoadMissionList()
           v45 = FindFileData.cFileName; /*0x69a04f*/
         INIClass::GetString( /*0x69a073*/
           &v60,
-          (unsigned __int8 *)&stru_82BA00.?,
+          (unsigned __int8 *)&DataGlobal_82BA00[1436],
           (unsigned __int8 *)g_INI_Key_Name,
           g_Str_No_Name,
           v66,
@@ -1771,7 +1771,7 @@ AbstractClass * * SessionClass::LoadMissionList()
         BulkCharToWide(v71, (unsigned __int8 *)v66, -1); /*0x69a0aa*/
         v56[0] = INIClass::ReadBool_Overwrite( /*0x69a0c8*/
                    (int *)v60.vtable1,
-                   (unsigned __int8 *)&stru_82BA00.?,
+                   (unsigned __int8 *)&DataGlobal_82BA00[1436],
                    (unsigned __int8 *)g_INI_Key_Official,
                    0);
         v59 = 2; /*0x69a0f0*/

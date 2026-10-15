@@ -141,7 +141,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
     while ( 1 ) /*0x6e824d*/
     {
       StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
-      result = INIClass::GetString(a1, g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Source, 24); /*0x6e8266*/
+      result = (a1)->GetString(g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
 LABEL_13:
@@ -239,13 +239,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   do /*0x6e84cb*/
   {
     sprintf(v8.vtable3, "%d", v3); /*0x6e8460*/
-    if ( INIClass::GetString( /*0x6e8486*/
-           (INIClass *)aP1,
-           (unsigned __int8 *)&this->q024,
-           (unsigned __int8 *)v8.vtable3,
-           &g_INI_DefaultBuffer,
-           v8.q028,
-           128) > 0 )
+    if ( (/*0x6e8486*/ (INIClass *)aP1)->GetString((unsigned __int8 *)&this->q024, (unsigned __int8 *)v8.vtable3, &g_INI_DefaultBuffer, v8.q028, 128) > 0 )
     {
       v4 = (&v8)->ParseUnitCountAndType(v8.q028); /*0x6e8491*/
       v5 = this->Coord_9C; /*0x6e8496*/

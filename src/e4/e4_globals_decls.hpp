@@ -1203,7 +1203,7 @@ extern int g_INI_Key_WOnline;  // data: 0x84A52C
 extern int g_INI_Key_XXICON;  // data: 0x844530
 extern int g_IntroMovieObject;  // data: 0xA8E960
 extern int g_IsMultiplayerSession;  // data: 0xB777B0
-extern int g_IsWindowed;  // data: 0x89ED18
+extern uint8_t g_IsWindowed[1024];  // X34-L5 array retype (binary width+bound)
 extern int g_LastPerformanceTick;  // data: 0x887338
 extern int g_LoadScreenFlag;  // data: 0x8A00A0
 extern int g_LoadScreenProgress;  // data: 0xA8E358
@@ -1372,10 +1372,10 @@ extern int g_ScenarioUpdateState;  // data: 0x8B40D8
 extern int g_ScoreDisplayState1;  // data: 0xA8F180
 extern int g_ScoreDisplayState2;  // data: 0xA8F184
 extern int g_ScoreDisplayState3;  // data: 0xA8F188
-extern int g_ScreenRenderFlag;  // data: 0x87BD90
+extern unsigned char g_ScreenRenderFlag[256];  // X34-L5 array retype (binary width+bound)
 extern int g_ScreenRenderLUT1;  // data: 0x879B30
 extern int g_ScreenRenderLUT2;  // data: 0x87B170
-extern int g_ScreenRenderMask;  // data: 0x87BC90
+extern char g_ScreenRenderMask[256];  // X34-L5 array retype (binary width+bound)
 extern int g_ScreenSaverState;  // data: 0xAC48B8
 extern int g_ScriptActionPool;  // data: 0xAC4BF0
 extern int g_ScriptConfig;  // data: 0xAC4C98
@@ -6923,6 +6923,13 @@ extern unsigned char DataGlobal_A8EAF0[45676];  // data: 0xA8EAF0
 extern unsigned char DataGlobal_A8EAF4[45672];  // data: 0xA8EAF4
 extern unsigned char DataGlobal_A8EAF5[45671];  // data: 0xA8EAF5
 extern unsigned char DataGlobal_A8EAFC[45664];  // data: 0xA8EAFC
+extern unsigned char DataGlobal_817318[256];  // X34-L4 817318 byte view (til-verified)
+extern unsigned char DataGlobal_818E00[888];  // X34-L4 818E00 byte view (til-verified)
+extern unsigned char DataGlobal_81AF8C[888];  // X34-L4 81AF8C byte view (til-verified)
+extern unsigned char DataGlobal_82BA00[6040];  // X34-L4 82BA00 byte view (til-verified)
+extern unsigned char DataGlobal_842DCC[6040];  // X34-L4 842DCC byte view (til-verified)
+extern unsigned char DataGlobal_8B3DC0[1728];  // X34-L4 8B3DC0 byte view (til-verified)
+extern unsigned char DataGlobal_B0E840[6040];  // X34-L4 B0E840 byte view (til-verified)
 extern unsigned char DataGlobal_A8EB00[45660];  // data: 0xA8EB00
 extern unsigned char DataGlobal_A8EB04[45656];  // data: 0xA8EB04
 extern unsigned char DataGlobal_A8EB08[45652];  // data: 0xA8EB08

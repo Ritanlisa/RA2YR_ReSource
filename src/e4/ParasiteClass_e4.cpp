@@ -49,9 +49,9 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   int v3; // eax
 
   ((AbstractClass *)this)->Constructor(); /*0x629213*/
-  *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x62921f*/
+  *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
-  v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x629225*/
+  v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
   this->AbstractClass = &vt_ParasiteClass; /*0x629231*/
@@ -138,7 +138,7 @@ int ParasiteClass::Attach(int * a2)
   Power::TimerProcess(this->IsAllocated); /*0x629508*/
   Power::TimerProcess(this->abstractFlags); /*0x629513*/
   (*((unsigned char *)&(v5))) = this->u32_54; /*0x629518*/
-  return Power::FlagProcess((Power *)a2, v5); /*0x629523*/
+  return ((Power *)a2)->FlagProcess(v5); /*0x629523*/
 }
 } // namespace ra2
 
@@ -267,7 +267,7 @@ void ParasiteClass::DeploySquad()
           _ESI[1].vfptr1 = (void *)(3 - (v17 != 0)); /*0x6299ba*/
           _ESI[1].vfptr2 = 0; /*0x6299bd*/
           ((BuildingClass *)_ESI)->AnimController(); /*0x6299c0*/
-          FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x6299e1*/
+          (*(FootClass **)_ESI->__pad_28)->CreateWakes(v55, v56, v57); /*0x6299e1*/
         }
         goto LABEL_47; /*0x6299e6*/
       case 2u: /*0x6298bc*/
@@ -427,7 +427,7 @@ void ParasiteClass::DeploySquad()
             _ESI[1].vfptr3 = 0; /*0x629d66*/
             _ESI[1].vfptr1 = (void *)(3 - (v36 != 0)); /*0x629d69*/
             _ESI[1].vfptr2 = 0; /*0x629d6c*/
-            BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629d6f*/
+            ((BuildingClass *)_ESI)->AnimController(); /*0x629d6f*/
             FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x629d90*/
           }
           else
@@ -564,20 +564,20 @@ void ParasiteClass::TickDamage()
   ParasiteClass_field_38 = this->ParasiteClass_field_38; /*0x62a056*/
   if ( ParasiteClass_field_38 == -1 ) /*0x62a05c*/
     goto LABEL_8; /*0x62a05c*/
-  if ( *(unsigned int *)&stru_A8EB00.?[416] - ParasiteClass_field_38 < ParasiteClass_field_40 ) /*0x62a068*/
+  if ( *(unsigned int *)&DataGlobal_A8EB00[644] - ParasiteClass_field_38 < ParasiteClass_field_40 ) /*0x62a068*/
   {
-    ParasiteClass_field_40 -= *(unsigned int *)&stru_A8EB00.?[416] - ParasiteClass_field_38; /*0x62a06a*/
+    ParasiteClass_field_40 -= *(unsigned int *)&DataGlobal_A8EB00[644] - ParasiteClass_field_38; /*0x62a06a*/
 LABEL_8:
     if ( ParasiteClass_field_40 ) /*0x62a06e*/
       return; /*0x62a06e*/
   }
   v10 = v6[44]; /*0x62a074*/
-  this->ParasiteClass_field_38 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x62a080*/
+  this->ParasiteClass_field_38 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x62a080*/
   this->ParasiteClass_field_3C = v35; /*0x62a087*/
   this->ParasiteClass_field_40 = v10; /*0x62a08a*/
   v11 = *(unsigned int *)(v7 + 368); /*0x62a092*/
   v12 = v5 + 424; /*0x62a098*/
-  *v12 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x62a09e*/
+  *v12 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x62a09e*/
   v12[1] = v35; /*0x62a0a4*/
   v12[2] = v11; /*0x62a0a7*/
   if ( (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_028 + 44))(*(unsigned int *)this->__pad_028) == 15 ) /*0x62a0b5*/
@@ -693,7 +693,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
       DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v4); /*0x62a9cf*/
     this->u32_54 = 0; /*0x62a9d4*/
   }
-  this->ParasiteClass_field_38 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x62a9e6*/
+  this->ParasiteClass_field_38 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x62a9e6*/
   this->ParasiteClass_field_3C = v16; /*0x62a9ed*/
   this->ParasiteClass_field_40 = 0; /*0x62a9f0*/
   if ( ParasiteClass::CanInfect((ParasiteClass *)this, a2) ) /*0x62a9f5*/

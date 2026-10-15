@@ -110,7 +110,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   }
   if ( !a6_2 /*0x544970*/
     && (*(int *)&g_ObjectClass_Capacity < *(int *)&DataGlobal_A8EC4C
-     || (stru_A8EB00.?[337] || !*(unsigned int *)&DataGlobal_A8EC4C)
+     || (DataGlobal_A8EB00[565] || !*(unsigned int *)&DataGlobal_A8EC4C)
      && *(int *)&DataGlobal_A8EC58 > 0
      && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&g_GameObjectManager + 8))(
           &g_GameObjectManager,

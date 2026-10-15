@@ -183,9 +183,9 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
   this->AllowCellContent_d = 0; /*0x427778*/
   if ( FootClass_Array.?[0] < FootClass_Array.?[4] /*0x4277b0*/
     || (BYTE1(FootClass_Array.?[5]) || !DataGlobal_8B3DC4)
-    && FootClass_Array.?[1] > 0
+    && DataGlobal_8B3DC0[932] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(FootClass_Array.?[2] + 8))(
-         &FootClass_Array.?[2],
+         &DataGlobal_8B3DC0[912],
          DataGlobal_8B3DC4 + FootClass_Array.?[1],
          0) )
   {
@@ -441,29 +441,29 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x4289d9*/
   Power::TimerProcess(this->Layer[0]); /*0x4289e7*/
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
-  Power::FlagProcess((Power *)a2, v3); /*0x4289f5*/
+  ((Power *)a2)->FlagProcess(v3); /*0x4289f5*/
   LOBYTE(v4) = (unsigned char)(this->Flat_flag); /*0x4289fa*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x428a03*/
+  v5 = ((Power *)a2)->FlagProcess(v4); /*0x428a03*/
   LOBYTE(v5) = this->Translucent; /*0x428a08*/
-  Power::FlagProcess((Power *)a2, v5); /*0x428a11*/
+  ((Power *)a2)->FlagProcess(v5); /*0x428a11*/
   LOBYTE(v6) = this->Scorch; /*0x428a16*/
-  Power::FlagProcess((Power *)a2, v6); /*0x428a1f*/
+  ((Power *)a2)->FlagProcess(v6); /*0x428a1f*/
   LOBYTE(v7) = this->Flamer; /*0x428a24*/
-  v8 = Power::FlagProcess((Power *)a2, v7); /*0x428a2d*/
+  v8 = ((Power *)a2)->FlagProcess(v7); /*0x428a2d*/
   LOBYTE(v8) = this->Crater; /*0x428a32*/
-  Power::FlagProcess((Power *)a2, v8); /*0x428a3b*/
+  ((Power *)a2)->FlagProcess(v8); /*0x428a3b*/
   LOBYTE(v9) = this->Sticky; /*0x428a40*/
-  Power::FlagProcess((Power *)a2, v9); /*0x428a49*/
+  ((Power *)a2)->FlagProcess(v9); /*0x428a49*/
   LOBYTE(v10) = this->PingPong; /*0x428a4e*/
-  v11 = Power::FlagProcess((Power *)a2, v10); /*0x428a57*/
+  v11 = ((Power *)a2)->FlagProcess(v10); /*0x428a57*/
   LOBYTE(v11) = this->Reverse; /*0x428a5c*/
-  Power::FlagProcess((Power *)a2, v11); /*0x428a65*/
+  ((Power *)a2)->FlagProcess(v11); /*0x428a65*/
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
-  Power::FlagProcess((Power *)a2, v12); /*0x428a73*/
+  ((Power *)a2)->FlagProcess(v12); /*0x428a73*/
   Power::TimerProcess(this->MiddleFrameWidth); /*0x428a81*/
   Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
-  Power::FlagProcess((Power *)a2, v13); /*0x428aa4*/
+  ((Power *)a2)->FlagProcess(v13); /*0x428aa4*/
   Power::TimerProcess(this->Rate); /*0x428ab2*/
   Power::TimerProcess(this->Start); /*0x428ac0*/
   Power::TimerProcess(this->LoopStart); /*0x428ace*/
@@ -478,7 +478,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->RandomLoopDelay[1]); /*0x428b4c*/
   Power::TimerProcess(this->Translucency); /*0x428b5a*/
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
-  return Power::FlagProcess((Power *)a2, v14); /*0x428b6d*/
+  return ((Power *)a2)->FlagProcess(v14); /*0x428b6d*/
 
 }
 }
@@ -607,7 +607,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
     }
   }
   v6 = aP0; /*0x428f18*/
-  v4 = (*(int (**)(int *, AnimTypeClass **))(FootClass_Array.?[2] + 16))(&FootClass_Array.?[2], &v6); /*0x428f1c*/
+  v4 = (*(int (**)(int *, AnimTypeClass **))(DataGlobal_8B3DC0[912] + 16))(&DataGlobal_8B3DC0[912], &v6); /*0x428f1c*/
   if ( v4 != -1 && v4 < FootClass_Array.?[0] ) /*0x428f2c*/
   {
     --FootClass_Array.?[0]; /*0x428f31*/

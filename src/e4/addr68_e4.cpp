@@ -795,10 +795,10 @@ int PostLoadInitScenario()
   }
   Radar::UpdateReveal(1, 0); /*0x684f89*/
   (v34)->InitDistanceTable(); /*0x684f8e*/
-  LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x684f98*/
-  for ( m = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x684fa9*/
+  ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x684f98*/
+  for ( m = ((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x684fa9*/
         m;
-        m = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+        m = ((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
   {
     ((House *)(m))->AnnounceUpgrade(-1); /*0x684faf*/
   }
@@ -824,10 +824,10 @@ int PostLoadInitScenario()
   }
   if ( dword_8871E0[1].LargeVisceroid ) /*0x685052*/
   {
-    LayerClass::CellIteratorReset((LayerClass *)&dword_87F7E8); /*0x685063*/
-    for ( n = (Building *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x685076*/
+    ((LayerClass *)&dword_87F7E8)->CellIteratorReset(); /*0x685063*/
+    for ( n = (Building *)((LayerClass *)&dword_87F7E8)->CellIteratorNext(); /*0x685076*/
           n;
-          n = (Building *)LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8) )
+          n = (Building *)((LayerClass *)&dword_87F7E8)->CellIteratorNext() )
     {
       if ( (n)->GetNthOfType() ) /*0x68507a*/
       {
@@ -1494,7 +1494,7 @@ void GenerateScenarioUnits(char a1)
     }
   }
   v66 = (unsigned int)ppv * (v1 / v2); /*0x6887e5*/
-  Multiplayer::FindStartPositions(&v80); /*0x6887e9*/
+  (&v80)->FindStartPositions(); /*0x6887e9*/
   v10 = 0; /*0x6887f0*/
   memset(v85, 0, sizeof(v85)); /*0x6887f2*/
   v11 = 0; /*0x6887f9*/
@@ -1512,11 +1512,11 @@ void GenerateScenarioUnits(char a1)
     v54[251] = v11; /*0x688847*/
     v54[250] = aGeneratingUnit; /*0x688848*/
     Debug::Log(); /*0x68884d*/
-    UnitTypeVector::Construct2(0, 0); /*0x68885b*/
+    (0)->Construct2(0); /*0x68885b*/
     v67 =(unsigned int)(void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x68886b*/
     v72 = 10; /*0x688873*/
     v71 = 0; /*0x688877*/
-    InfantryTypeVector::ConstructFromData(0, 0); /*0x68887b*/
+    (0)->ConstructFromData(0); /*0x68887b*/
     v73 =(unsigned int)(void*)&DynamicVectorClass_InfantryTypeClass___vftable; /*0x688880*/
     v78 = 10; /*0x688888*/
     v77 = 0; /*0x68888c*/

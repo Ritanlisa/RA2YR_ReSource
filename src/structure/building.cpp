@@ -331,7 +331,7 @@ int BuildingClass::Construct(int a2, int a3)
   int v16; // eax
   int Vtable3; // [esp+18h] [ebp+4h]
 
-  TechnoClass::TechnoClass((TechnoClass *)this, a3); /*0x43b74b*/
+  ((TechnoClass *)this)->TechnoClass(a3); /*0x43b74b*/
   this->Type = (gamemd::BuildingTypeClass *)(a2); /*0x43b756*/
   this->Factory = 0; /*0x43b75c*/
   this->C4Timer = dword_A8ED84; /*0x43b76b*/
@@ -870,7 +870,7 @@ int BuildingClass::AfterDestruction()
       (*(((unsigned short *)&(v24)) + 1)) = v7; /*0x442007*/
       *(unsigned int *)v25 = v24; /*0x442016*/
       v8 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v25); /*0x44201f*/
-      BuildingClass::CreatePlacementCrater((BuildingClass *)v8); /*0x442023*/
+      ((BuildingClass *)v8)->CreatePlacementCrater(); /*0x442023*/
       v8->u32_44 = 239; /*0x44202c*/
       v8->q040 = 0; /*0x442033*/
       House::AnnounceUpgrade((int)v8, -1); /*0x44203a*/

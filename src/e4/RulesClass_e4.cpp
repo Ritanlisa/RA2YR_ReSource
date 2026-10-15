@@ -225,13 +225,7 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
     v3 = dbl_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
-      result = INIClass::GetString( /*0x673ed0*/
-                 (INIClass *)v13,
-                 (unsigned __int8 *)aPowerups,
-                 (&off_7E523C)[v2],
-                 a0None,
-                 String,
-                 128);
+      result = (/*0x673ed0*/ (INIClass *)v13)->GetString((unsigned __int8 *)aPowerups, (&off_7E523C)[v2], a0None, String, 128);
       if ( result ) /*0x673ed7*/
       {
         v4 = strtok(String, Str); /*0x673ee7*/
@@ -341,7 +335,7 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
     INIClass::ReadDouble_Overwrite( /*0x674493*/
       (double *)v16,
       (unsigned __int8 *)aJumpjetcontrol,
-      (unsigned __int8 *)&stru_81AF8C.?[103],
+      (unsigned __int8 *)&DataGlobal_81AF8C[436],
       COERCE_DOUBLE(__PAIR64__(v8, v9)));
     v10 = *(unsigned int *)&aClimb->__pad_240[500]; /*0x674498*/
     v11 = *(unsigned int *)&aClimb->__pad_240[496]; /*0x67449e*/
@@ -387,7 +381,7 @@ INIClass * * RulesClass::ReadMovies(void * aMovies)
     for ( i = 0; i < v2; ++i ) /*0x674588*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v7->__pad_0, (uint8_t *)aMovies, i); /*0x6745a4*/
-      result = INIClass::GetString(v7, (uint8_t *)aMovies, StringByIndex, g_Str__none_, Source, 32); /*0x6745b3*/
+      result = (v7)->GetString((uint8_t *)aMovies, StringByIndex, g_Str__none_, Source, 32); /*0x6745b3*/
       if ( result ) /*0x6745ba*/
       {
         result = LookupNameIndex((ObjectClass *)Source); /*0x6745c0*/
@@ -693,7 +687,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
   int v22; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
+  if ( ((INIClass *)edx0)->GetString(aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
   {
     ((RulesClass *)&v17)->readIQ(0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
@@ -959,13 +953,7 @@ int RulesClass::readCrateRules(void * aInfantrytypes)
   for ( i = 0; i < KeyCount; ++i ) /*0x67229d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aInfantrytypes, i); /*0x6722b5*/
-    if ( INIClass::GetString( /*0x6722c3*/
-           v6,
-           (uint8_t *)aInfantrytypes,
-           StringByIndex,
-           &g_INI_DefaultBuffer,
-           Destination,
-           32) )
+    if ( (/*0x6722c3*/ v6)->GetString((uint8_t *)aInfantrytypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       KeywordType::FindOrCreate2(Destination); /*0x6722d0*/
     }
@@ -987,13 +975,7 @@ int RulesClass::readRadiation(void * aAircrafttypes)
   for ( i = 0; i < KeyCount; ++i ) /*0x6723ed*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aAircrafttypes, i); /*0x672405*/
-    if ( INIClass::GetString( /*0x672413*/
-           v6,
-           (uint8_t *)aAircrafttypes,
-           StringByIndex,
-           &g_INI_DefaultBuffer,
-           Destination,
-           32) )
+    if ( (/*0x672413*/ v6)->GetString((uint8_t *)aAircrafttypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       KeywordClass::FindOrCreate(Destination); /*0x672420*/
     }
@@ -1015,13 +997,7 @@ int RulesClass::ReadSidesList(void * aSuperweapontyp)
   for ( i = 0; i < KeyCount; ++i ) /*0x67260d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v6->__pad_0, (uint8_t *)aSuperweapontyp, i); /*0x672625*/
-    if ( INIClass::GetString( /*0x672633*/
-           v6,
-           (uint8_t *)aSuperweapontyp,
-           StringByIndex,
-           &g_INI_DefaultBuffer,
-           Destination,
-           32) )
+    if ( (/*0x672633*/ v6)->GetString((uint8_t *)aSuperweapontyp, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       WeaponTypeClass::Process(Destination); /*0x672640*/
     }

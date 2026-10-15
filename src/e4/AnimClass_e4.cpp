@@ -286,7 +286,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5, void *a3, void *a4
     AnimClass_field_0xBC = this->AnimClass_field_0xBC; /*0x422cea*/
     if ( AnimClass_field_0xB4 != (IUnknown *)-1 ) /*0x422cf3*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)AnimClass_field_0xB4 >= (int)AnimClass_field_0xBC ) /*0x422cff*/
+      if ( *(unsigned int *)&DataGlobal_A8EB00[644] - (int)AnimClass_field_0xB4 >= (int)AnimClass_field_0xBC ) /*0x422cff*/
         AnimClass_field_0xBC = 0; /*0x422d05*/
       else
         AnimClass_field_0xBC = (IUnknown *)((char *)AnimClass_field_0xBC /*0x422d01*/

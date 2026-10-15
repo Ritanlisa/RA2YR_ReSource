@@ -389,9 +389,9 @@ LABEL_13:
     if ( v9 >= 75 ) /*0x6ac6fd*/
       goto LABEL_38; /*0x6ac6fd*/
   }
-  *(unsigned int *)&v10[52 * v9 + 136] = aP2 + *(unsigned int *)&stru_A8EB00.?[416]; /*0x6ac713*/
+  *(unsigned int *)&v10[52 * v9 + 136] = aP2 + *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6ac713*/
 LABEL_38:
-  result = (unsigned int *)(*(unsigned int *)&stru_A8EB00.?[416] + aP2 + 1); /*0x6ac71a*/
+  result = (unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[644] + aP2 + 1); /*0x6ac71a*/
   this->u32_53A0 = (unsigned int)(result); /*0x6ac728*/
   return result; /*0x6ac670*/
 
@@ -837,20 +837,20 @@ TActionClass::TActionClass()
   /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6c7) */
   /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6ce) */
   /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6d5) */
-  v2 = g_BuildingLoadQueue_Array.?[54]; /*0x71e6dc*/
-  if ( g_BuildingLoadQueue_Array.?[54] < g_BuildingLoadQueue_Array.?[52] /*0x71e71a*/
-    || (BYTE1(g_BuildingLoadQueue_Array.?[53]) || !g_BuildingLoadQueue_Array.?[52])
-    && g_BuildingLoadQueue_Array.?[55] > 0
-    && (v3 = (*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[50] + 8))(
-               &g_BuildingLoadQueue_Array.?[50],
-               g_BuildingLoadQueue_Array.?[52] + g_BuildingLoadQueue_Array.?[55],
+  v2 = DataGlobal_B0E840[2254]; /*0x71e6dc*/
+  if ( DataGlobal_B0E840[2254] < DataGlobal_B0E840[2252] /*0x71e71a*/
+    || (BYTE1(DataGlobal_B0E840[2253]) || !DataGlobal_B0E840[2252])
+    && DataGlobal_B0E840[2255] > 0
+    && (v3 = (*(int (**)(int *, int, unsigned int))(DataGlobal_B0E840[2250] + 8))(
+               &DataGlobal_B0E840[2250],
+               DataGlobal_B0E840[2252] + DataGlobal_B0E840[2255],
                0),
-        v2 = g_BuildingLoadQueue_Array.?[54],
+        v2 = DataGlobal_B0E840[2254],
         v3) )
   {
-    g_BuildingLoadQueue_Array.?[54] = v2 + 1; /*0x71e71f*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.?[51] + 4 * v2) = this; /*0x71e72b*/
-    v2 = g_BuildingLoadQueue_Array.?[54]; /*0x71e72e*/
+    DataGlobal_B0E840[2254] = v2 + 1; /*0x71e71f*/
+    *(unsigned int *)(DataGlobal_B0E840[2251] + 4 * v2) = this; /*0x71e72b*/
+    v2 = DataGlobal_B0E840[2254]; /*0x71e72e*/
   }
   v4 = 0; /*0x71e734*/
   if ( v2 <= 0 ) /*0x71e738*/
@@ -860,7 +860,7 @@ LABEL_11:
   }
   else
   {
-    v5 = (TActionClass **)g_BuildingLoadQueue_Array.?[51]; /*0x71e73a*/
+    v5 = (TActionClass **)DataGlobal_B0E840[2251]; /*0x71e73a*/
     while ( *v5 != this ) /*0x71e742*/
     {
       ++v4; /*0x71e744*/
@@ -1378,7 +1378,7 @@ char TActionClass::executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4)
         && (vtable0 != 1 || idxArray[157])
         && (vtable0 != 2 || idxArray[158]) )
       {
-        TActionClass::executeAirstrikeAction(v7); /*0x6e2b51*/
+        (v7)->executeAirstrikeAction(); /*0x6e2b51*/
       }
     }
     ++v6; /*0x6e2b5b*/
@@ -1442,16 +1442,16 @@ char TActionClass::executePlaceBeaconAction(int a2, int _C, unsigned int * a3, I
     return 0; /*0x6e318d*/
   if ( v5 == 8997 ) /*0x6e3195*/
   {
-    Field11 = (HouseClass *)Property::GetField11((Property *)a3); /*0x6e3197*/
+    Field11 = (HouseClass *)((Property *)a3)->GetField11(); /*0x6e3197*/
   }
   else
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e31a1*/
       return 0; /*0x6e31c3*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e31a5*/
+    if ( (uint8_t)(v5)->IsSpecialType() ) /*0x6e31a5*/
       Field11 = (HouseClass *)((BuildingType *)(v5))->FindOwnerHouse(); /*0x6e31b0*/
     else
-      Field11 = (HouseClass *)HouseClass::FindOwner(v5); /*0x6e31b7*/
+      Field11 = (HouseClass *)(v5)->FindOwner(); /*0x6e31b7*/
   }
   if ( !Field11 ) /*0x6e31be*/
     return 0; /*0x6e31be*/

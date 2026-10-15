@@ -720,7 +720,7 @@ int DisplayClass::ExitMode()
     TacticalClass::ResetScrollBounds((TacticalClass *)g_TacticalClass_Instance); /*0x4aeadd*/
   this->q11CF = 0; /*0x4aeae2*/
   LOBYTE(this->q11D0) = 0; /*0x4aeae9*/
-  stru_A8EB00.?[441] = 1; /*0x4aeaf0*/
+  DataGlobal_A8EB00[669] = 1; /*0x4aeaf0*/
   return (*((int (**)(DisplayClass *, unsigned int, unsigned int))this->vtable1 + 18))(this, 0, 0); /*0x4aeb02*/
 
 }

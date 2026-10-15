@@ -652,7 +652,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a4)
   v39 = v14; /*0x6d7d0a*/
   *(float *)&v34 = (float)v14; /*0x6d7d15*/
   *(float *)&v32 = (float)v38; /*0x6d7d21*/
-  Triple::Set(&v41, v32, v34, 0); /*0x6d7d24*/
+  (&v41)->Set(v32, v34, 0); /*0x6d7d24*/
   v15 = TransformMatrix3x4Point(v47, &a4->TacticalClass_field_DE4, (float *)&v41); /*0x6d7d34*/
   v41 = *(Triple *)v15; /*0x6d7d3b*/
   v42 = v15[1]; /*0x6d7d46*/

@@ -308,7 +308,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       v12 = 0; /*0x471dd3*/
       if ( v11 ) /*0x471dda*/
       {
-        v13 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x471ddc*/
+        v13 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x471ddc*/
         *(unsigned int *)(v11 + 16) = 0; /*0x471de2*/
         *(unsigned int *)(v11 + 8) = v13; /*0x471de5*/
         v12 = (unsigned int *)v11; /*0x471de8*/
@@ -329,7 +329,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       v18 = v12 + 2; /*0x471e31*/
       v5[176] = *(unsigned int *)(a1 + 72); /*0x471e34*/
       v19 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 784); /*0x471e45*/
-      *v18 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x471e4b*/
+      *v18 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x471e4b*/
       v18[1] = v33; /*0x471e52*/
       v18[2] = v19; /*0x471e57*/
       if ( !v5

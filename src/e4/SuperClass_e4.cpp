@@ -66,7 +66,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
       PsyDom_Anim = 0; /*0x53aef1*/
     v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
-    dword_A8B230[130].vtable0 = *(void **)&stru_A8EB00.?[416]; /*0x53af1b*/
+    dword_A8B230[130].vtable0 = *(void **)&DataGlobal_A8EB00[644]; /*0x53af1b*/
     v7->vtable1 = v9->vtable2; /*0x53af21*/
     v7->vtable2 = (void *)1; /*0x53af24*/
     return (RulesClass *)ScenarioClass::UpdateLighting(); /*0x53af27*/
@@ -86,7 +86,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   a1->SuperClass_field_0x24 = (void *)-1; /*0x6caecd*/
   a1->SuperClass_field_0x28 = 0; /*0x6caed0*/
   a1->SuperClass_field_0x2C = 0; /*0x6caed3*/
-  a1->SuperClass_field_0x30 = *(void **)&stru_A8EB00.?[416]; /*0x6caedc*/
+  a1->SuperClass_field_0x30 = *(void **)&DataGlobal_A8EB00[644]; /*0x6caedc*/
   a1->SuperClass_field_0x38 = 0; /*0x6caedf*/
   *(unsigned int *)&a1->__pad_3C[12] = 0; /*0x6caee2*/
   a1->__pad_3C[4] = 0; /*0x6caee5*/
@@ -333,7 +333,7 @@ AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
       }
       else if ( this->q030 == -1 ) /*0x6cb5a8*/
       {
-        this->q030 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6cb5af*/
+        this->q030 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6cb5af*/
       }
       this->q070 = 0; /*0x6cb5cf*/
     }
@@ -358,15 +358,15 @@ AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
       if ( v10 == -1 ) /*0x6cb656*/
         v10 = *(unsigned int *)(v9 + 176); /*0x6cb658*/
       v11 = &this->q030; /*0x6cb664*/
-      this->q030 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6cb669*/
+      this->q030 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6cb669*/
       this->u32_34 = v22; /*0x6cb66f*/
       this->u32_38 = v10; /*0x6cb672*/
       v12 = this->q030; /*0x6cb675*/
       if ( v12 != -1 ) /*0x6cb67a*/
       {
         v13 = this->u32_38; /*0x6cb680*/
-        v14 = *(unsigned int *)&stru_A8EB00.?[416] - v12; /*0x6cb68e*/
-        if ( *(unsigned int *)&stru_A8EB00.?[416] - v12 >= v13 ) /*0x6cb692*/
+        v14 = *(unsigned int *)&DataGlobal_A8EB00[644] - v12; /*0x6cb68e*/
+        if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v12 >= v13 ) /*0x6cb692*/
         {
           this->u32_38 = 0; /*0x6cb6a6*/
           *v11 = -1; /*0x6cb6a9*/
@@ -1041,7 +1041,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
   v8 = SuperClass_field_0x30 + 1 != 0; /*0x6ce13b*/
   if ( SuperClass_field_0x24 == (void *)-1 ) /*0x6ce141*/
     SuperClass_field_0x24 = (void *)*((unsigned int *)a1->SuperClass_field_0x28 + 44); /*0x6ce146*/
-  *result = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6ce156*/
+  *result = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6ce156*/
   *(unsigned int *)a1->__pad_34 = v12[2]; /*0x6ce15d*/
   a1->SuperClass_field_0x38 = SuperClass_field_0x24; /*0x6ce160*/
   if ( !v8 ) /*0x6ce163*/
@@ -1050,8 +1050,8 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
     if ( *result != -1 ) /*0x6ce16a*/
     {
       v10 = result[2]; /*0x6ce16c*/
-      v11 = *(unsigned int *)&stru_A8EB00.?[416] - v9; /*0x6ce17a*/
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - v9 >= v10 ) /*0x6ce17e*/
+      v11 = *(unsigned int *)&DataGlobal_A8EB00[644] - v9; /*0x6ce17a*/
+      if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v9 >= v10 ) /*0x6ce17e*/
       {
         result[2] = 0; /*0x6ce192*/
         *result = -1; /*0x6ce195*/
@@ -1119,10 +1119,10 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     if ( result ) /*0x6cb470*/
     {
       this->u32_68 = result; /*0x6cb472*/
-      result = (void **)g_BuildingLoadQueue_Array.?; /*0x6cb475*/
+      result = (void **)DataGlobal_B0E840[3456]; /*0x6cb475*/
       if ( g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.? /*0x6cb4ae*/
         || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)
-        && g_BuildingLoadQueue_Array.?[2] > 0
+        && DataGlobal_B0E840[3468] > 0
         && (result = (void **)(*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array + 8))(
                                 g_BuildingLoadQueue_Array.?,
                                 g_BuildingLoadQueue_Array.? + g_BuildingLoadQueue_Array.?[2],
@@ -1436,7 +1436,7 @@ bool SuperClass::ShouldFlashTab()
   v2 = *((unsigned int *)SuperClass_field_0x28 + 58); /*0x6ce1c4*/
   if ( v2 == -1 ) /*0x6ce1cd*/
     return 1; /*0x6ce1d1*/
-  return v2 && (int)this->u32_74 + v2 > *(int *)&stru_A8EB00.?[416]; /*0x6ce1d1*/
+  return v2 && (int)this->u32_74 + v2 > *(int *)&DataGlobal_A8EB00[644]; /*0x6ce1d1*/
 
 }
 } // namespace gamemd

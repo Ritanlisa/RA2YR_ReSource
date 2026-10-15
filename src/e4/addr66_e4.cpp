@@ -820,7 +820,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
 
   Ticks = TimerGetTicks(); /*0x663dc6*/
   v19 = 0; /*0x663dca*/
-  Waypoint::InitInvalid(&v23); /*0x663dd2*/
+  (&v23)->InitInvalid(); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
   GetStartupInfoA((LPSTARTUPINFOA)&v23.u32_1C); /*0x663de9*/
   if ( !(*(int (**)(unsigned int *))(*dword_887628 + 72))(dword_887628) ) /*0x663df7*/
@@ -837,7 +837,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
     v14 = v6; /*0x663f42*/
     v12 = v7; /*0x663f4a*/
     v15 = a2_2[3]; /*0x663f5e*/
-    NetworkID::Assign(&qword_A8DBB0, &v20, (int)&v12, 0); /*0x663f62*/
+    (&qword_A8DBB0)->Assign(&v20, (int)&v12, 0); /*0x663f62*/
     ((Network *)((Network *)&qword_A8DBB0))->SetPort(*(unsigned short *)(*dword_A8DA78 + 40)); /*0x663f78*/
     dword_A8DBBC = *(unsigned short *)(*dword_A8DA78 + 40); /*0x663f88*/
     v8 = (NetworkID *)(*dword_A8DA78 + 40); /*0x663f91*/
@@ -896,7 +896,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
       if ( !v9 ) /*0x664083*/
         break; /*0x664083*/
       Event::Dispatch(); /*0x664085*/
-      if ( Network::SendPacketThunk2((Network *)&unk_A8E9C0, (int)v25, (int)v22, (int)&v23, (int)v21) && v25[0] == 4 ) /*0x6640b7*/
+      if ( ((Network *)&unk_A8E9C0)->SendPacketThunk2((int)v25, (int)v22, (int)&v23, (int)v21) && v25[0] == 4 ) /*0x6640b7*/
       {
         v10 = 1; /*0x6640be*/
         Debug::Log(); /*0x6640c3*/

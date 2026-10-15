@@ -456,7 +456,7 @@ LABEL_8:
     v10 = (unsigned int *)this->q044; /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
-      v10[45] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6297af*/
+      v10[45] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6297af*/
       v11 = v12[2]; /*0x6297b2*/
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/

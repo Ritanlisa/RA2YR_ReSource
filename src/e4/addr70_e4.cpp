@@ -968,7 +968,7 @@ int E4Recv_7011A0::sub_7011A0()
   (*(((unsigned short *)&(v10)) + 1)) = v6[1] / 256; /*0x701218*/
   *(unsigned int *)v11 = v10; /*0x701225*/
   v7 = (char *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v11); /*0x701234*/
-  ScenarioClass::CalcMinShroudLevel((ScenarioClass *)&DataGlobal_87F7E8); /*0x701236*/
+  ((ScenarioClass *)&DataGlobal_87F7E8)->CalcMinShroudLevel(); /*0x701236*/
   v8 = g_BuildingLoadQueue_Array.ThreatAvoidanceCoefficient[1] * v7[283]; /*0x70127d*/
   (*((unsigned short *)&(v9))) = Math::RoundToInt(v1); /*0x70127f*/
   Math::Sqrt((double)(v8 * v8 + (v9 << 8) * (v9 << 8))); /*0x7012a1*/

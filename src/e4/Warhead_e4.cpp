@@ -414,10 +414,10 @@ int Warhead::ProcessDamageArea()
 
   v28 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6160); /*0x65b5a3*/
   v29 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6164); /*0x65b5a7*/
-  this->u32_28 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5ab*/
+  this->u32_28 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x65b5ab*/
   this->u32_2C = v32; /*0x65b5b3*/
   this->u32_30 = v28; /*0x65b5b9*/
-  this->q034 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5c2*/
+  this->q034 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x65b5c2*/
   this->u32_38 = v32; /*0x65b5c8*/
   this->u8_3C = v29; /*0x65b5cb*/
   v2 = *(unsigned int *)&g_RulesClass_Instance; /*0x65b5ce*/

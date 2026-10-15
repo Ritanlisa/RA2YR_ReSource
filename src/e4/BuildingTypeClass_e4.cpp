@@ -680,13 +680,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->v4 = v4; /*0x45f30a*/
     }
   }
-  INIClass::GetString( /*0x45f32d*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    aDeployinganim,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f32d*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), aDeployinganim, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f336*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f357*/
@@ -712,13 +706,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->DeployingAnim_2 = (gamemd::SHPStruct *)(LoadFileSHP(Source, (bool *)this->q5399 + 7))); /*0x45f3e2*/
     }
   }
-  INIClass::GetString( /*0x45f405*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    aRoofdeployinga,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f405*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), aRoofdeployinga, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f40e*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f42f*/
@@ -744,13 +732,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->RoofDeployingAnim = LoadFileSHP(Source, (bool *)this->q5399 + 7)); /*0x45f4be*/
     }
   }
-  INIClass::GetString( /*0x45f4e1*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    aDooranim,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f4e1*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), aDooranim, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f4ea*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f507*/
@@ -763,13 +745,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->DoorAnim = SearchMIXFile(Source, 0); /*0x45f548*/
     }
   }
-  INIClass::GetString( /*0x45f565*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    aUnderdooranim,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f565*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), aUnderdooranim, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f56e*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f58f*/
@@ -802,13 +778,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->Rubble_d = 0; /*0x45f643*/
     *v14 = 0; /*0x45f649*/
   }
-  INIClass::GetString( /*0x45f668*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    aRubble,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f668*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), aRubble, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f671*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f68e*/
@@ -827,13 +797,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->Rubble_d = SearchMIXFile(Source, 0); /*0x45f6ee*/
     }
   }
-  INIClass::GetString( /*0x45f711*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    aUnderroofdoora,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f711*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), aUnderroofdoora, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f71a*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f73b*/
@@ -859,13 +823,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->UnderRoofDoorAnim = SearchMIXFile(Source, 0); /*0x45f7c6*/
     }
   }
-  INIClass::GetString( /*0x45f7e9*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    aSpecialzoverla,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f7e9*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), aSpecialzoverla, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f7f2*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f80f*/
@@ -878,13 +836,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->SpecialZOverlay = SearchMIXFile(Source, 0); /*0x45f850*/
     }
   }
-  INIClass::GetString( /*0x45f86d*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    aBibshape,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f86d*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), aBibshape, &g_INI_DefaultBuffer, Filename, 64);
   if ( strlen(Filename) ) /*0x45f876*/
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f897*/
@@ -910,13 +862,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->BibShape = SearchMIXFile(Source, 0); /*0x45f922*/
     }
   }
-  INIClass::GetString( /*0x45f945*/
-    (INIClass *)&DataGlobal_887180,
-    (uint8_t *)(&this->TurretVoxel4),
-    (uint8_t *)g_INI_Key_Image,
-    &g_INI_DefaultBuffer,
-    Filename,
-    64);
+  (/*0x45f945*/ (INIClass *)&DataGlobal_887180)->GetString((uint8_t *)(&this->TurretVoxel4), (uint8_t *)g_INI_Key_Image, &g_INI_DefaultBuffer, Filename, 64);
   if ( !this->Theater_d || aP1 == -1 ) /*0x45f95c*/
     v21 = ::Ext; /*0x45f97a*/
   else

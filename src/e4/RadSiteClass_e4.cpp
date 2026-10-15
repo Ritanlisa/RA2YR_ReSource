@@ -26,9 +26,9 @@ RadSiteClass::RadSiteClass()
 
   ((AbstractClass *)this)->Constructor(); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
-  this->RadLevelTimer[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b1f3*/
+  this->RadLevelTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x65b1f3*/
   this->RadLevelTimer[2] = 0; /*0x65b1f6*/
-  v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b1f9*/
+  v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x65b1f9*/
   this->RadLightTimer[2] = 0; /*0x65b1ff*/
   this->RadLightTimer[0] = v2; /*0x65b202*/
   LOWORD(this->BaseCell[0]) = 0; /*0x65b205*/

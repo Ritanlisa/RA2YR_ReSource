@@ -253,7 +253,7 @@ LABEL_12:
           v18[0] = v16[39]; /*0x62a421*/
           v18[1] = v16[40]; /*0x62a428*/
           v18[2] = v16[41]; /*0x62a42f*/
-          result = MapClass::RevealArea2((MapClass *)&DataGlobal_87F7E8, v18, v16[152] - 3, v16[152] + 3, 0); /*0x62a44b*/
+          result = ((MapClass *)&DataGlobal_87F7E8)->RevealArea2(v18, v16[152] - 3, v16[152] + 3, 0); /*0x62a44b*/
           *(unsigned int *)this->currentScript = 0; /*0x62a450*/
         }
         return result; /*0x62a459*/
@@ -1496,7 +1496,7 @@ LABEL_14:
   }
   if ( this->unknown82 ) /*0x6ea497*/
   {
-    for ( i = (char *)&FootClass_Array.?[-1].OwnerHouse + 3; (int)i >= 0; --i ) /*0x6ea4aa*/
+    for ( i = (char *)&DataGlobal_8B3DC0[792][-1].OwnerHouse + 3; (int)i >= 0; --i ) /*0x6ea4aa*/
     {
       if ( (unsigned __int8)TeamClass::Update_0( /*0x6ea4cf*/
                               *((TeamClass **)&FootClass_Array.?->ObjectClass + (unsigned int)i),
@@ -1705,7 +1705,7 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
   if ( spawnCell ) /*0x6eaaa4*/
     v5 = (int *)(*(int (**)(CellClass *, unsigned char *))(spawnCell->mapCoords[0] + 72))(spawnCell, v38); /*0x6eaaad*/
   else
-    v5 = &g_BuildingLoadQueue_Array.?[9]; /*0x6eaab2*/
+    v5 = &DataGlobal_B0E840[296]; /*0x6eaab2*/
   v35 = *v5; /*0x6eaab9*/
   v36 = v5[1]; /*0x6eaac4*/
   buildingType = (TechnoClass *)v2->buildingType; /*0x6eaacc*/
@@ -2150,7 +2150,7 @@ void* TeamClass::AttackCoordinator()
     }
     v1 = this; /*0x6eb596*/
   }
-  if ( *(unsigned int *)&stru_A8EB00.?[416] % 8 == 4 ) /*0x6eb5ae*/
+  if ( *(unsigned int *)&DataGlobal_A8EB00[644] % 8 == 4 ) /*0x6eb5ae*/
   {
     vtable0 = (int (**)(FootClass *, AbstractClass *, int))v4->TechnoClass; /*0x6eb5b3*/
     v10 = (*((int (**)(FootClass *, AbstractClass *, int))v4->TechnoClass + 185))(v4, v1->focus, 1); /*0x6eb5ba*/
@@ -2571,20 +2571,20 @@ int TeamClass::PowerDrainUpdate(int * a2)
   v10 = this->guardAreaTimer[2]; /*0x6ec621*/
   if ( v9 != -1 ) /*0x6ec627*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v9 >= v10 ) /*0x6ec633*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v9 >= v10 ) /*0x6ec633*/
       v10 = 0; /*0x6ec639*/
     else
-      v10 -= *(unsigned int *)&stru_A8EB00.?[416] - v9; /*0x6ec635*/
+      v10 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v9; /*0x6ec635*/
   }
   Power::TimerProcess(v10); /*0x6ec63e*/
   v11 = this->suspendTimer[0]; /*0x6ec643*/
   v12 = this->suspendTimer[2]; /*0x6ec646*/
   if ( v11 != -1 ) /*0x6ec64c*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v11 >= v12 ) /*0x6ec658*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v11 >= v12 ) /*0x6ec658*/
       v12 = 0; /*0x6ec65e*/
     else
-      v12 -= *(unsigned int *)&stru_A8EB00.?[416] - v11; /*0x6ec65a*/
+      v12 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v11; /*0x6ec65a*/
   }
   Power::TimerProcess(v12); /*0x6ec663*/
   tag = this->tag; /*0x6ec668*/

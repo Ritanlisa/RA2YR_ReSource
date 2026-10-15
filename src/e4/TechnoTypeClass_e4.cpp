@@ -182,20 +182,20 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1, void *a2)
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0803) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f080a) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0811) */
-  v3 = *(unsigned int *)&stru_A8EB00.?[204]; /*0x6f0818*/
-  if ( *(int *)&stru_A8EB00.?[204] < *(int *)&stru_A8EB00.?[196] /*0x6f0857*/
-    || (stru_A8EB00.?[201] || !*(unsigned int *)&stru_A8EB00.?[196])
-    && *(int *)&stru_A8EB00.?[208] > 0
-    && (v4 = (*(int (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.?[188] + 8))(
-               &stru_A8EB00.?[188],
-               *(unsigned int *)&stru_A8EB00.?[196] + *(unsigned int *)&stru_A8EB00.?[208],
+  v3 = *(unsigned int *)&DataGlobal_A8EB00[432]; /*0x6f0818*/
+  if ( *(int *)&DataGlobal_A8EB00[432] < *(int *)&DataGlobal_A8EB00[424] /*0x6f0857*/
+    || (DataGlobal_A8EB00[429] || !*(unsigned int *)&DataGlobal_A8EB00[424])
+    && *(int *)&DataGlobal_A8EB00[436] > 0
+    && (v4 = (*(int (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&DataGlobal_A8EB00[416] + 8))(
+               &DataGlobal_A8EB00[416],
+               *(unsigned int *)&DataGlobal_A8EB00[424] + *(unsigned int *)&DataGlobal_A8EB00[436],
                0),
-        v3 = *(unsigned int *)&stru_A8EB00.?[204],
+        v3 = *(unsigned int *)&DataGlobal_A8EB00[432],
         v4) )
   {
-    *(unsigned int *)&stru_A8EB00.?[204] = v3 + 1; /*0x6f085c*/
-    *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[192] + 4 * v3) = this; /*0x6f0868*/
-    v3 = *(unsigned int *)&stru_A8EB00.?[204]; /*0x6f086b*/
+    *(unsigned int *)&DataGlobal_A8EB00[432] = v3 + 1; /*0x6f085c*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[420] + 4 * v3) = this; /*0x6f0868*/
+    v3 = *(unsigned int *)&DataGlobal_A8EB00[432]; /*0x6f086b*/
   }
   v5 = 0; /*0x6f0871*/
   if ( v3 <= 0 ) /*0x6f0875*/
@@ -205,7 +205,7 @@ LABEL_11:
   }
   else
   {
-    v6 = *(TeamTypeClass ***)&stru_A8EB00.?[192]; /*0x6f0877*/
+    v6 = *(TeamTypeClass ***)&DataGlobal_A8EB00[420]; /*0x6f0877*/
     while ( *v6 != this ) /*0x6f087f*/
     {
       ++v5; /*0x6f0881*/

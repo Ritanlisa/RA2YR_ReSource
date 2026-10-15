@@ -137,11 +137,11 @@ unsigned int * Power::UpdateAll()
       *((unsigned int *)dword_A8E8D4 + i4),
       &v53);
   for ( i5 = 0; i5 < *(int *)&dword_A8ECB0; ++i5 ) /*0x67c948*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A8EB00.?[192] + 4 * i5) + 52))( /*0x67c95a*/
-      *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[192] + 4 * i5),
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&DataGlobal_A8EB00[420] + 4 * i5) + 52))( /*0x67c95a*/
+      *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[420] + 4 * i5),
       &v53);
   for ( i6 = 0; i6 < (int)dword_8B40F8; ++i6 ) /*0x67c970*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)&FootClass_Array.?->ObjectClass + i6) + 52))( /*0x67c982*/
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)&DataGlobal_8B3DC0[812]->ObjectClass + i6) + 52))( /*0x67c982*/
       *((unsigned int *)&FootClass_Array.?->ObjectClass + i6),
       &v53);
   for ( i7 = 0; i7 < *(int *)&dword_8B41D8; ++i7 ) /*0x67c998*/
@@ -173,8 +173,8 @@ unsigned int * Power::UpdateAll()
       *((unsigned int *)dword_B0E65C + i13),
       &v53);
   for ( i14 = 0; i14 < dword_B0F1B0; ++i14 ) /*0x67cab0*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(g_BuildingLoadQueue_Array.?[51] + 4 * i14) + 52))( /*0x67cac2*/
-      *(unsigned int *)(g_BuildingLoadQueue_Array.?[51] + 4 * i14),
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(DataGlobal_B0E840[2251] + 4 * i14) + 52))( /*0x67cac2*/
+      *(unsigned int *)(DataGlobal_B0E840[2251] + 4 * i14),
       &v53);
   for ( i15 = 0; i15 < *(int *)&g_TeamTypeCapacity; ++i15 ) /*0x67cad8*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&g_TeamTypeCount + 4 * i15) + 52))( /*0x67caea*/
@@ -237,8 +237,8 @@ unsigned int * Power::UpdateAll()
       *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * i29),
       &v53);
   for ( i30 = 0; i30 < FootClass_Array.?[2]; ++i30 ) /*0x67cd30*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&FootClass_Array.? + 4 * i30) + 52))( /*0x67cd42*/
-      *(unsigned int *)(*(unsigned int *)&FootClass_Array.? + 4 * i30),
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&DataGlobal_8B3DC0[980] + 4 * i30) + 52))( /*0x67cd42*/
+      *(unsigned int *)(*(unsigned int *)&DataGlobal_8B3DC0[980] + 4 * i30),
       &v53);
   for ( i31 = 0; i31 < FootClass_Array; ++i31 ) /*0x67cd58*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(FootClass_Array.?[3] + 4 * i31) + 52))( /*0x67cd6a*/
@@ -324,26 +324,26 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 7280)); /*0x68b9de*/
   ((Checksummer *)(*(unsigned int *)((unsigned int)(a2_2)+ 7288)))->Add_double(*(unsigned int *)(a2_2 + 7292)); /*0x68b9f3*/
   (*((unsigned char *)&(v3))) = *(unsigned char *)((unsigned int)(a2_2)+ 13500); /*0x68b9f8*/
-  Power::FlagProcess((int *)a2_2, v3); /*0x68ba01*/
+  ((int *)a2_2)->FlagProcess(v3); /*0x68ba01*/
   (*((unsigned char *)&(v4))) = *(unsigned char *)((unsigned int)(a2_2)+ 13485); /*0x68ba06*/
-  Power::FlagProcess((int *)a2_2, v4); /*0x68ba0f*/
+  ((int *)a2_2)->FlagProcess(v4); /*0x68ba0f*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 7296) / 100); /*0x68ba2e*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 13472)); /*0x68ba3c*/
   (*((unsigned char *)&(v5))) = *(unsigned char *)((unsigned int)(a2_2)+ 13484); /*0x68ba41*/
-  Power::FlagProcess((int *)a2_2, v5); /*0x68ba4a*/
+  ((int *)a2_2)->FlagProcess(v5); /*0x68ba4a*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 13516)); /*0x68ba58*/
   (*((unsigned char *)&(v6))) = *(unsigned char *)((unsigned int)(a2_2)+ 13486); /*0x68ba5d*/
-  Power::FlagProcess((int *)a2_2, v6); /*0x68ba66*/
+  ((int *)a2_2)->FlagProcess(v6); /*0x68ba66*/
   (*((unsigned char *)&(v7))) = *(unsigned char *)((unsigned int)(a2_2)+ 13487); /*0x68ba6b*/
-  v8 = Power::FlagProcess((int *)a2_2, v7); /*0x68ba74*/
+  v8 = ((int *)a2_2)->FlagProcess(v7); /*0x68ba74*/
   (*((unsigned char *)&(v8))) = *(unsigned char *)((unsigned int)(a2_2)+ 13488); /*0x68ba79*/
-  Power::FlagProcess((int *)a2_2, v8); /*0x68ba82*/
+  ((int *)a2_2)->FlagProcess(v8); /*0x68ba82*/
   (*((unsigned char *)&(v9))) = *(unsigned char *)((unsigned int)(a2_2)+ 13490); /*0x68ba87*/
-  Power::FlagProcess((int *)a2_2, v9); /*0x68ba90*/
+  ((int *)a2_2)->FlagProcess(v9); /*0x68ba90*/
   (*((unsigned char *)&(v10))) = *(unsigned char *)((unsigned int)(a2_2)+ 13492); /*0x68ba95*/
-  v11 = Power::FlagProcess((int *)a2_2, v10); /*0x68ba9e*/
+  v11 = ((int *)a2_2)->FlagProcess(v10); /*0x68ba9e*/
   (*((unsigned char *)&(v11))) = *(unsigned char *)((unsigned int)(a2_2)+ 13489); /*0x68baa3*/
-  Power::FlagProcess((int *)a2_2, v11); /*0x68baac*/
+  ((int *)a2_2)->FlagProcess(v11); /*0x68baac*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 7300)); /*0x68baba*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 13520)); /*0x68bac8*/
   v12 = *(unsigned int *)((unsigned int)(a2_2)+ 4584); /*0x68bacd*/
@@ -406,7 +406,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 13632)); /*0x68bc03*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 13636)); /*0x68bc11*/
   (*((unsigned char *)&(v23))) = *(unsigned char *)((unsigned int)(a2_2)+ 13476); /*0x68bc16*/
-  Power::FlagProcess((int *)a2_2, v23); /*0x68bc1f*/
+  ((int *)a2_2)->FlagProcess(v23); /*0x68bc1f*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 13640)); /*0x68bc2d*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 13644)); /*0x68bc3b*/
   Power::TimerProcess(*(unsigned int *)((unsigned int)(a2_2)+ 13648)); /*0x68bc49*/

@@ -47,9 +47,9 @@ int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)a2_2 + 182)); /*0x549c13*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 183)); /*0x549c21*/
   (*((unsigned char *)&(v5))) = *((unsigned char *)a2_2 + 736); /*0x549c26*/
-  v6 = Power::FlagProcess((Power *)a2_2, v5); /*0x549c2f*/
+  v6 = ((Power *)a2_2)->FlagProcess(v5); /*0x549c2f*/
   (*((unsigned char *)&(v6))) = *((unsigned char *)a2_2 + 737); /*0x549c34*/
-  Power::FlagProcess((Power *)a2_2, v6); /*0x549c3d*/
+  ((Power *)a2_2)->FlagProcess(v6); /*0x549c3d*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 185)); /*0x549c4b*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 186)); /*0x549c59*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 187)); /*0x549c67*/

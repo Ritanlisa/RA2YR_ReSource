@@ -32,7 +32,7 @@ int LocomotionClass::Initialize()
   LocomotionClass::Init(this); /*0x4af543*/
   this->u32_1C = 0; /*0x4af54d*/
   this->q020 = 0; /*0x4af550*/
-  v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4af553*/
+  v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4af553*/
   this->u32_2C = 0; /*0x4af559*/
   this->u32_24 = v2; /*0x4af55c*/
   this->ptr_30 = 0; /*0x4af55f*/
@@ -136,12 +136,12 @@ int LocomotionClass::ProcessData()
 {
 
   LocomotionClass::Init(this); /*0x513c24*/
-  this->u32_18 = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x513c34*/
-  this->u32_1C = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x513c3d*/
-  this->q020 = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x513c49*/
-  this->u32_24 = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x513c51*/
-  this->u32_28 = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x513c59*/
-  this->u32_2C = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x513c64*/
+  this->u32_18 = *(unsigned int *)&DataGlobal_A8EB00[1664]; /*0x513c34*/
+  this->u32_1C = *(unsigned int *)&DataGlobal_A8EB00[1668]; /*0x513c3d*/
+  this->q020 = *(unsigned int *)&DataGlobal_A8EB00[1672]; /*0x513c49*/
+  this->u32_24 = *(unsigned int *)&DataGlobal_A8EB00[1664]; /*0x513c51*/
+  this->u32_28 = *(unsigned int *)&DataGlobal_A8EB00[1668]; /*0x513c59*/
+  this->u32_2C = *(unsigned int *)&DataGlobal_A8EB00[1672]; /*0x513c64*/
   FrameSnapshot::InitMax(&this->u32_18, 0); /*0x513c67*/
   this->u32_48 = 0; /*0x513c6c*/
   this->__pad_50 = 0; /*0x513c6f*/

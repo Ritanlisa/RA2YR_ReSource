@@ -123,7 +123,7 @@ int House::AnnounceUpgrade(int aP1)
     if ( v9 == 4 || v9 == 9 || *(unsigned char *)(v8 + 684) ) /*0x47d325*/
     {
       v10 = this->u32_38; /*0x47d333*/
-      if ( v10 != 0xFFFF && v10 < *(int *)&stru_A8EB00.?[340] ) /*0x47d343*/
+      if ( v10 != 0xFFFF && v10 < *(int *)&DataGlobal_A8EB00[568] ) /*0x47d343*/
         this->u32_11C = HouseClass::GetCameoTypeIndex( /*0x47d35e*/
                                    *(HouseClass **)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * v10),
                                    *(unsigned __int8 *)(&this->u32_11A));
@@ -183,12 +183,12 @@ LABEL_19:
       return result; /*0x47d578*/
     }
   }
-  if ( this->u32_38 >= *(int *)&stru_A8EB00.?[340] ) /*0x47d58b*/
+  if ( this->u32_38 >= *(int *)&DataGlobal_A8EB00[568] ) /*0x47d58b*/
     this->u32_38 = 0xFFFF; /*0x47d58d*/
   v18 = this->u32_38; /*0x47d590*/
   if ( v18 != 0xFFFF ) /*0x47d595*/
   {
-    v19 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v18); /*0x47d5ab*/
+    v19 = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[556] + 4 * v18); /*0x47d5ab*/
     v54 = *(unsigned __int8 *)(&this->u32_11A); /*0x47d5ae*/
     *(unsigned int *)v55 = v19; /*0x47d5b1*/
     MapFileData = House::LoadMapFileData((House *)v19, v54, 0); /*0x47d5b5*/
@@ -946,7 +946,7 @@ LABEL_23:
       goto LABEL_18; /*0x50dbb0*/
     if ( *(unsigned char *)(*(unsigned int *)(v11 + 1312) + 5817) ) /*0x50dbb8*/
       break; /*0x50dbb8*/
-    if ( v6 == *(unsigned int *)&stru_A8EB00.?[1044] && v4 == *(unsigned int *)&stru_A8EB00.?[1048] && v7 == v3 ) /*0x50dc06*/
+    if ( v6 == *(unsigned int *)&DataGlobal_A8EB00[1272] && v4 == *(unsigned int *)&DataGlobal_A8EB00[1276] && v7 == v3 ) /*0x50dc06*/
     {
       v13 = (int *)(*(int (**)(int, int *))(*(unsigned int *)v11 + 72))(v11, &v37); /*0x50dc11*/
       v6 = *v13; /*0x50dc14*/
@@ -963,7 +963,7 @@ LABEL_18:
       goto LABEL_20; /*0x50dc38*/
     }
     v5 = this; /*0x50db94*/
-    v3 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x50db98*/
+    v3 = *(unsigned int *)&DataGlobal_A8EB00[1280]; /*0x50db98*/
   }
   v12 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 72))(v11, v39); /*0x50dbce*/
   v9 = *v12; /*0x50dbd0*/
@@ -974,13 +974,13 @@ LABEL_18:
     goto LABEL_18; /*0x50dbec*/
   v5 = this; /*0x50dca9*/
 LABEL_20:
-  if ( v9 == *(unsigned int *)&stru_A8EB00.?[1044] ) /*0x50dc40*/
+  if ( v9 == *(unsigned int *)&DataGlobal_A8EB00[1272] ) /*0x50dc40*/
   {
-    v3 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x50dc4e*/
-    if ( v41 == *(unsigned int *)&stru_A8EB00.?[1048] && v42 == *(unsigned int *)&stru_A8EB00.?[1052] ) /*0x50dc5a*/
+    v3 = *(unsigned int *)&DataGlobal_A8EB00[1280]; /*0x50dc4e*/
+    if ( v41 == *(unsigned int *)&DataGlobal_A8EB00[1276] && v42 == *(unsigned int *)&DataGlobal_A8EB00[1280] ) /*0x50dc5a*/
       goto LABEL_23; /*0x50dc5a*/
 LABEL_24:
-    if ( v9 == *(unsigned int *)&stru_A8EB00.?[1044] && v41 == *(unsigned int *)&stru_A8EB00.?[1048] && v42 == v3 ) /*0x50dc84*/
+    if ( v9 == *(unsigned int *)&DataGlobal_A8EB00[1272] && v41 == *(unsigned int *)&DataGlobal_A8EB00[1276] && v42 == v3 ) /*0x50dc84*/
     {
       result = *(unsigned int *)&v5[17].__pad_C[12]; /*0x50dc86*/
       if ( result >= 0 ) /*0x50dc8e*/
@@ -1210,10 +1210,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v4 = this->idleActionTimer[2]; /*0x70c2be*/
   if ( v3 != -1 ) /*0x70c2c7*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v3 >= v4 ) /*0x70c2d3*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v3 >= v4 ) /*0x70c2d3*/
       v4 = 0; /*0x70c2d9*/
     else
-      v4 -= *(unsigned int *)&stru_A8EB00.?[416] - v3; /*0x70c2d5*/
+      v4 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v3; /*0x70c2d5*/
   }
   Power::TimerProcess(v4); /*0x70c2de*/
   Power::TimerProcess(this->displayProductionTo[0]); /*0x70c2ec*/
@@ -1222,25 +1222,25 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v6 = this->cloakDelayTimer[2]; /*0x70c305*/
   if ( v5 != -1 ) /*0x70c30e*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v5 >= v6 ) /*0x70c31a*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v5 >= v6 ) /*0x70c31a*/
       v6 = 0; /*0x70c320*/
     else
-      v6 -= *(unsigned int *)&stru_A8EB00.?[416] - v5; /*0x70c31c*/
+      v6 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v5; /*0x70c31c*/
   }
   Power::TimerProcess(v6); /*0x70c325*/
   Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->warpFactor)); /*0x70c333*/
   LOBYTE(v7) = this->isChronosphereImmune; /*0x70c338*/
-  Power::FlagProcess((Power *)aP1, v7); /*0x70c341*/
+  ((Power *)aP1)->FlagProcess(v7); /*0x70c341*/
   Power::TimerProcess(this->lastSightRange); /*0x70c34f*/
   Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->pitchAngle)); /*0x70c35d*/
   v8 = this->diskLaserTimer[0]; /*0x70c362*/
   v9 = this->diskLaserTimer[2]; /*0x70c368*/
   if ( v8 != -1 ) /*0x70c371*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v8 >= v9 ) /*0x70c37d*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v8 >= v9 ) /*0x70c37d*/
       v9 = 0; /*0x70c383*/
     else
-      v9 -= *(unsigned int *)&stru_A8EB00.?[416] - v8; /*0x70c37f*/
+      v9 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v8; /*0x70c37f*/
   }
   Power::TimerProcess(v9); /*0x70c388*/
   Power::TimerProcess(this->ammo); /*0x70c396*/
@@ -1248,10 +1248,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v11 = this->reloadTimer[2]; /*0x70c3a1*/
   if ( v10 != -1 ) /*0x70c3aa*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v10 >= v11 ) /*0x70c3b6*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v10 >= v11 ) /*0x70c3b6*/
       v11 = 0; /*0x70c3bc*/
     else
-      v11 -= *(unsigned int *)&stru_A8EB00.?[416] - v10; /*0x70c3b8*/
+      v11 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v10; /*0x70c3b8*/
   }
   Power::TimerProcess(v11); /*0x70c3c1*/
   Power::TimerProcess(this->unitValue); /*0x70c3cf*/
@@ -1260,13 +1260,13 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   Checksummer::Add_float((Checksummer *)aP1, (int)this->auxParticles2); /*0x70c3f9*/
   Checksummer::Add_float((Checksummer *)aP1, (int)this->firingParticles); /*0x70c407*/
   LOBYTE(v12) = this->isSinking; /*0x70c40c*/
-  v13 = Power::FlagProcess((Power *)aP1, v12); /*0x70c415*/
+  v13 = ((Power *)aP1)->FlagProcess(v12); /*0x70c415*/
   LOBYTE(v13) = this->isReceivingDamageEffect; /*0x70c41a*/
-  Power::FlagProcess((Power *)aP1, v13); /*0x70c423*/
+  ((Power *)aP1)->FlagProcess(v13); /*0x70c423*/
   LOBYTE(v14) = this->isUseless; /*0x70c428*/
-  Power::FlagProcess((Power *)aP1, v14); /*0x70c431*/
+  ((Power *)aP1)->FlagProcess(v14); /*0x70c431*/
   LOBYTE(v15) = this->hasBeenAttacked; /*0x70c436*/
-  v16 = Power::FlagProcess((Power *)aP1, v15); /*0x70c43f*/
+  v16 = ((Power *)aP1)->FlagProcess(v15); /*0x70c43f*/
   LOBYTE(v16) = this->isCloakableFlag; /*0x70c444*/
   Power::FlagProcess((Power *)aP1, v16); /*0x70c44d*/
   LOBYTE(v17) = this->isPrimaryFactory; /*0x70c452*/

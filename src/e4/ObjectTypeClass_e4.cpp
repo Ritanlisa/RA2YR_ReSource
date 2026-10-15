@@ -100,7 +100,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   char **v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
-  if ( INIClass::GetString((INIClass *)this, aP1, a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
+  if ( ((INIClass *)this)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
     return a4; /*0x4749a4*/
   v4 = 0; /*0x474964*/
   v5 = (char **)(&off_81B9B0); /*0x474966*/
@@ -699,7 +699,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
     this->ImageFile,
     25);
   v34 = (int)strcpy(Source, this->AlphaImageFile); /*0x5f9366*/
-  INIClass::GetString((INIClass *)aP1, (unsigned __int8 *)this->vtable2, aAlphaimage, Source, this->AlphaImageFile, 25); /*0x5f9386*/
+  ((INIClass *)aP1)->GetString((unsigned __int8 *)this->vtable2, aAlphaimage, Source, this->AlphaImageFile, 25); /*0x5f9386*/
   CrushSound = this->CrushSound; /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/
          (INIClass *)aP1,

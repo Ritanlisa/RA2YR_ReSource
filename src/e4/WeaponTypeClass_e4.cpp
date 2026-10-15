@@ -76,7 +76,7 @@ int WeaponTypeClass::Process(ObjectClass * Source)
   LABEL_6:
     v3 = operator new(0x100u); /*0x6cef46*/
     if ( v3 ) /*0x6cef55*/
-      return SuperWeaponTypeClass::SuperWeaponTypeClass((int)v3, Source); /*0x6cef61*/
+      return ((int)v3)->SuperWeaponTypeClass(Source); /*0x6cef61*/
     return 0; /*0x6cef55*/
   }
   while ( _strcmpi((const void *)(*((unsigned int *)dword_A8E334 + v2) + 36), Source) ) /*0x6cef3a*/
@@ -283,17 +283,17 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   ((AbstractTypeClass *)((AbstractTypeClass *)a2_2))->ProcessPower((int *)(a2_2)); /*0x772ae9*/
   Power::TimerProcess(a2_2->AmbientDamage); /*0x772af7*/
   (*((unsigned char *)&(v3))) = a2_2->IsSonic; /*0x772afc*/
-  Power::FlagProcess((Power *)a2_2, v3); /*0x772b05*/
+  ((Power *)a2_2)->FlagProcess(v3); /*0x772b05*/
   (*((unsigned char *)&(v4))) = a2_2->TurboBoost; /*0x772b0a*/
-  v5 = Power::FlagProcess((Power *)a2_2, v4); /*0x772b13*/
+  v5 = ((Power *)a2_2)->FlagProcess(v4); /*0x772b13*/
   (*((unsigned char *)&(v5))) = a2_2->Supress; /*0x772b18*/
-  Power::FlagProcess((Power *)a2_2, v5); /*0x772b21*/
+  ((Power *)a2_2)->FlagProcess(v5); /*0x772b21*/
   (*((unsigned char *)&(v6))) = a2_2->Camera; /*0x772b26*/
-  Power::FlagProcess((Power *)a2_2, v6); /*0x772b2f*/
+  ((Power *)a2_2)->FlagProcess(v6); /*0x772b2f*/
   (*((unsigned char *)&(v7))) = a2_2->IsLaser; /*0x772b34*/
-  v8 = Power::FlagProcess((Power *)a2_2, v7); /*0x772b3d*/
+  v8 = ((Power *)a2_2)->FlagProcess(v7); /*0x772b3d*/
   (*((unsigned char *)&(v8))) = a2_2->IsHouseColor; /*0x772b42*/
-  Power::FlagProcess((Power *)a2_2, v8); /*0x772b4b*/
+  ((Power *)a2_2)->FlagProcess(v8); /*0x772b4b*/
   Power::TimerProcess(a2_2->Burst); /*0x772b59*/
   Projectile = a2_2->Projectile; /*0x772b5e*/
   if ( Projectile ) /*0x772b66*/
@@ -315,25 +315,25 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(a2_2->DownReport[4]); /*0x772be5*/
   Power::TimerProcess(*(unsigned int *)&a2_2->AreaFire); /*0x772bf3*/
   (*((unsigned char *)&(v13))) = a2_2->UseFireParticles; /*0x772bf8*/
-  v14 = Power::FlagProcess((Power *)a2_2, v13); /*0x772c01*/
+  v14 = ((Power *)a2_2)->FlagProcess(v13); /*0x772c01*/
   (*((unsigned char *)&(v14))) = a2_2->Lobber; /*0x772c06*/
-  Power::FlagProcess((Power *)a2_2, v14); /*0x772c0f*/
+  ((Power *)a2_2)->FlagProcess(v14); /*0x772c0f*/
   (*((unsigned char *)&(v15))) = a2_2->LaserDuration; /*0x772c14*/
   Power::FinalizeDrain((Power *)a2_2, v15); /*0x772c1d*/
   (*((unsigned char *)&(v16))) = a2_2->IsBigLaser; /*0x772c22*/
-  v17 = Power::FlagProcess((Power *)a2_2, v16); /*0x772c2b*/
+  v17 = ((Power *)a2_2)->FlagProcess(v16); /*0x772c2b*/
   (*((unsigned char *)&(v17))) = a2_2->IsRailgun; /*0x772c30*/
-  Power::FlagProcess((Power *)a2_2, v17); /*0x772c39*/
+  ((Power *)a2_2)->FlagProcess(v17); /*0x772c39*/
   (*((unsigned char *)&(v18))) = a2_2->Charges; /*0x772c3e*/
-  Power::FlagProcess((Power *)a2_2, v18); /*0x772c47*/
+  ((Power *)a2_2)->FlagProcess(v18); /*0x772c47*/
   (*((unsigned char *)&(v19))) = a2_2->Bright; /*0x772c4c*/
-  v20 = Power::FlagProcess((Power *)a2_2, v19); /*0x772c55*/
+  v20 = ((Power *)a2_2)->FlagProcess(v19); /*0x772c55*/
   (*((unsigned char *)&(v20))) = a2_2->UseSparkParticles; /*0x772c5a*/
-  Power::FlagProcess((Power *)a2_2, v20); /*0x772c63*/
+  ((Power *)a2_2)->FlagProcess(v20); /*0x772c63*/
   (*((unsigned char *)&(v21))) = a2_2->OmniFire; /*0x772c68*/
-  Power::FlagProcess((Power *)a2_2, v21); /*0x772c71*/
+  ((Power *)a2_2)->FlagProcess(v21); /*0x772c71*/
   (*((unsigned char *)&(v22))) = a2_2->DistributedWeaponFire; /*0x772c76*/
-  return Power::FlagProcess((Power *)a2_2, v22); /*0x772c84*/
+  return ((Power *)a2_2)->FlagProcess(v22); /*0x772c84*/
 }
 } // namespace gamemd
 // 0x772CD0

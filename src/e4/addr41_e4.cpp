@@ -772,7 +772,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
   for ( i = 0; i < v39; ++i ) /*0x41b137*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, aAircraft, v4); /*0x41b14a*/
-    INIClass::GetString(a1, aAircraft, StringByIndex, 0, String, 128); /*0x41b164*/
+    (a1)->GetString(aAircraft, StringByIndex, 0, String, 128); /*0x41b164*/
     v6 = strtok(String, Str); /*0x41b173*/
     v7 = (v6)->FindByName(); /*0x41b182*/
     if ( v7 != -1 ) /*0x41b187*/

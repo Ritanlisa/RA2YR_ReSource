@@ -191,13 +191,13 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->TiberiumClass_field_F4 = 0; /*0x721758*/
   this->TiberiumClass_field_F8 = 0; /*0x72175e*/
   this->TiberiumClass_field_FC = 0; /*0x721764*/
-  this->SpreadTimer[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x721770*/
+  this->SpreadTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x721770*/
   this->SpreadTimer[2] = 0; /*0x721776*/
   this->TiberiumClass_field_10C = 0; /*0x72177c*/
   this->TiberiumClass_field_110 = 0; /*0x721782*/
   this->TiberiumClass_field_114 = 0; /*0x721788*/
   this->TiberiumClass_field_118 = 0; /*0x72178e*/
-  v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x721794*/
+  v3 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x721794*/
   this->GrowthTimer[2] = 0; /*0x72179a*/
   this->GrowthTimer[0] = v3; /*0x7217a0*/
   this->ObjectClass = &vt_TiberiumClass; /*0x7217a6*/

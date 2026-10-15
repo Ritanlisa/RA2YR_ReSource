@@ -860,7 +860,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
           v14 = ((String *)((String *)&v19.abstractFlags))->GetOrEmpty(); /*0x5d7966*/
           (*((unsigned char *)&(v19.ambientSoundController[2]))) = _strcmpi(v14, g_Str_false) != 0; /*0x5d7979*/
         }
-        if ( WideString::Length((const wchar_t **)&v19.referenceCount) /*0x5d79a3*/
+        if ( ((const wchar_t **)&v19.referenceCount)->Length() /*0x5d79a3*/
           && String::Length((String *)&v19.vfptr2)
           && String::Length((String *)&v19.nextArrayIndex) )
         {

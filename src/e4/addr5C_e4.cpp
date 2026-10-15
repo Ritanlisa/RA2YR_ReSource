@@ -2947,10 +2947,10 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
           (&v34)->Alt(); /*0x5cdb51*/
           ((DeleteAndZero *)&v34.q004)->Alt(); /*0x5cdb5a*/
           ((DeleteAndZero *)&v34.u32_8)->Alt(); /*0x5cdb63*/
-          DeleteAndZero::Alt(&v30); /*0x5cdb6c*/
+          (&v30)->Alt(); /*0x5cdb6c*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v30.q004; /*0x5cdb71*/
         }
-        DeleteAndZero::Alt(p_DeleteAndZero_field_0x04); /*0x5cda9a*/
+        (p_DeleteAndZero_field_0x04)->Alt(); /*0x5cda9a*/
       }
       if ( v7 > *(int *)&v31.ptr_4 ) /*0x5cdaa3*/
         *(unsigned int *)&v31.ptr_4 = v7; /*0x5cdaa5*/

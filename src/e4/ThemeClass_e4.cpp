@@ -102,13 +102,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2, (unsigned __int8 *)g_INI_Key_Themes, v5); /*0x7205d1*/
-    if ( INIClass::GetString( /*0x7205de*/
-           (unsigned __int8 ***)v2,
-           (unsigned __int8 *)g_INI_Key_Themes,
-           StringByIndex,
-           &g_INI_DefaultBuffer,
-           Destination,
-           32) )
+    if ( (/*0x7205de*/ (unsigned __int8 ***)v2)->GetString((unsigned __int8 *)g_INI_Key_Themes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
       if ( &v16 == (int *)-24 ) /*0x7205f1*/
         goto LABEL_10; /*0x7205f1*/
@@ -157,7 +151,7 @@ LABEL_10:
       {
         v9 = *(char **)(this->u32_18 + 4 * v7); /*0x7206ec*/
       }
-      ThemeClass::ReadThemeEntry((int)v9, (unsigned __int8 ***)a2); /*0x7206f6*/
+      ((int)v9)->ReadThemeEntry((unsigned __int8 ***)a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/
       KeyCount = v18; /*0x7206ff*/
       v2 = a2; /*0x720703*/
@@ -168,7 +162,7 @@ LABEL_10:
   if ( result ) /*0x72071b*/
   {
     Enabled = Audio::GetEnabled(); /*0x720724*/
-    result = AudioStream::Constructor(Enabled, 0x4E20u); /*0x72072b*/
+    result = (Enabled)->Constructor(0x4E20u); /*0x72072b*/
     this->ThemeClass_field_2C = result; /*0x720732*/
     if ( result ) /*0x720735*/
     {

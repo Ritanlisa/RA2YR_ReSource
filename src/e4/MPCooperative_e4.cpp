@@ -752,19 +752,19 @@ CampaignClass * * MPCooperative::CopyTo()
   g_MPCooperativeState = (ObjectClass *)-1; /*0x5c1a13*/
   Debug::Log(); /*0x5c1a28*/
   Network::SendOptionsGame(aO8); /*0x5c1a35*/
-  if ( Dialog::FindByHandle((Dialog *)0xC2) || Dialog::FindByHandle((Dialog *)0xBC) ) /*0x5c1a4d*/
+  if ( ((Dialog *)0xC2)->FindByHandle() || ((Dialog *)0xBC)->FindByHandle() ) /*0x5c1a4d*/
   {
     MPCooperative_field_0x40 = (int *)this->u32_40; /*0x5c1a56*/
     if ( MPCooperative_field_0x40 ) /*0x5c1a5b*/
     {
-      if ( (Movie::GetSectionID(MPCooperative_field_0x40, &String2), v3 = (char *)MPCooperative_Copy(v13), v3 != String2) /*0x5c1a86*/
+      if ( ((MPCooperative_field_0x40)->GetSectionID(&String2), v3 = (char *)MPCooperative_Copy(v13), v3 != String2) /*0x5c1a86*/
         && Dialog::GetCurrentType() == 107
         || Dialog::GetCurrentType() != 107 )
       {
         v4 = this->u32_40; /*0x5c1a88*/
         if ( v4 ) /*0x5c1a8d*/
         {
-          Array::Cleanup((Array *)this->u32_40); /*0x5c1a91*/
+          ((Array *)this->u32_40)->Cleanup(); /*0x5c1a91*/
           __3_YAXPAX_Z(v4); /*0x5c1a97*/
         }
         this->u32_40 = 0; /*0x5c1a9f*/
@@ -776,7 +776,7 @@ CampaignClass * * MPCooperative::CopyTo()
       if ( dword_A8DA84 == 2 ) /*0x5c1ab4*/
         String::AssignWideToChar(v5, (char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c1ac2*/
       else
-        String::AssignWideToChar(v5, (char *)&g_TypeClass_DefaultString, (char *)&g_TypeClass_DefaultString); /*0x5c1ace*/
+        (v5)->AssignWideToChar((char *)&g_TypeClass_DefaultString, (char *)&g_TypeClass_DefaultString); /*0x5c1ace*/
     }
   }
   if ( this->u32_40 ) /*0x5c1ad3*/
@@ -794,13 +794,13 @@ LABEL_30:
   }
   v6 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c1ae2*/
   if ( v6 ) /*0x5c1aec*/
-    result = (int)MissionClass::Init(v6); /*0x5c1af0*/
+    result = (int)(v6)->Init(); /*0x5c1af0*/
   else
     result = 0; /*0x5c1af7*/
   this->u32_40 = (void *)result; /*0x5c1afb*/
   if ( result ) /*0x5c1afe*/
   {
-    Movie::SetupScreen(result, 0); /*0x5c1b07*/
+    (result)->SetupScreen(0); /*0x5c1b07*/
     v8 = (CampaignClass *)MPCooperative_Copy(v13); /*0x5c1b13*/
     if ( (int)v8 >= 0 ) /*0x5c1b17*/
     {
@@ -808,7 +808,7 @@ LABEL_30:
       Movie::GetSection((int)&g_DDrawSurfaceManager, (int)v8, &v16); /*0x5c1bb7*/
       v11 = (int *)this->u32_40; /*0x5c1bc2*/
       String2 = 0; /*0x5c1bc5*/
-      Array::GetElementAt(v11, &String2, 0); /*0x5c1bc9*/
+      (v11)->GetElementAt(&String2, 0); /*0x5c1bc9*/
       Debug::Log(); /*0x5c1be5*/
       if ( _strnicmp( /*0x5c1c0e*/
              (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions) + 88),
@@ -818,9 +818,9 @@ LABEL_30:
         v15 = v8 == 0; /*0x5c1c21*/
         do /*0x5c1c6f*/
         {
-          Movie::SetupScreen((int)this->u32_40, v15); /*0x5c1c2d*/
-          Movie::SetupScreen((int)this->u32_40, (int)v8); /*0x5c1c36*/
-          Array::GetElementAt((int *)this->u32_40, &String2, 0); /*0x5c1c45*/
+          ((int)this->u32_40)->SetupScreen(v15); /*0x5c1c2d*/
+          ((int)this->u32_40)->SetupScreen((int)v8); /*0x5c1c36*/
+          ((int *)this->u32_40)->GetElementAt(&String2, 0); /*0x5c1c45*/
         }
         while ( _strnicmp( /*0x5c1c6f*/
                   (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions) + 88),
@@ -833,7 +833,7 @@ LABEL_30:
       v9 = (int *)this->u32_40; /*0x5c1b23*/
       this->q33C = 0; /*0x5c1b26*/
       String2 = 0; /*0x5c1b2c*/
-      Array::GetElementAt(v9, &String2, 0); /*0x5c1b30*/
+      (v9)->GetElementAt(&String2, 0); /*0x5c1b30*/
       v10 = 0; /*0x5c1b3a*/
       if ( dword_A8B8D8 > 0 ) /*0x5c1b3e*/
       {

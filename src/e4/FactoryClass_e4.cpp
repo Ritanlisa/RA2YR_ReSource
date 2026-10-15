@@ -73,7 +73,7 @@ int FactoryClass::UpdateProduction()
       {
         this->production[0] += (int)this->object; /*0x4c9b82*/
         LOBYTE(this->production[1]) = 1; /*0x4c9b89*/
-        *v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c9b92*/
+        *v3 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4c9b92*/
         this->queuedObjects[0] = (gamemd::TechnoTypeClass *)(v11); /*0x4c9b94*/
         this->queuedCount = Speed; /*0x4c9b97*/
         v4 = *&this->q058; /*0x4c9b9a*/
@@ -110,7 +110,7 @@ int FactoryClass::UpdateProduction()
         if ( this->production[0] == 54 ) /*0x4c9c0a*/
         {
           this->isSuspended = 1; /*0x4c9c0c*/
-          v9 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c9c0f*/
+          v9 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4c9c0f*/
           this->queuedCapacity = 0; /*0x4c9c19*/
           this->production[2] = v9; /*0x4c9c1c*/
           this->queuedObjects[0] = (gamemd::TechnoTypeClass *)(v11); /*0x4c9c22*/
@@ -229,7 +229,7 @@ int FactoryClass::SetObject(int a2)
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
   this->owner = v3; /*0x4c9e30*/
-  this->production[2] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c9e38*/
+  this->production[2] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4c9e38*/
   this->queuedCapacity = 0; /*0x4c9e3e*/
   this->queuedObjects[0] = v5; /*0x4c9e41*/
   this->queuedCount = 0; /*0x4c9e46*/
@@ -412,9 +412,9 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4f5*/
   v3 = ((AbstractClass *)this)->ProcessPower(); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
-  Power::FlagProcess((Power *)a2, v3); /*0x4ca50f*/
+  ((Power *)a2)->FlagProcess(v3); /*0x4ca50f*/
   LOBYTE(v4) = this->u8_5D; /*0x4ca514*/
-  Power::FlagProcess((Power *)a2, v4); /*0x4ca51a*/
+  ((Power *)a2)->FlagProcess(v4); /*0x4ca51a*/
   Power::TimerProcess(this->balance); /*0x4ca525*/
   Power::TimerProcess(this->originalBalance); /*0x4ca530*/
   v5 = *&this->q058; /*0x4ca535*/

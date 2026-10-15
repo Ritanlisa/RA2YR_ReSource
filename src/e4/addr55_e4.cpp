@@ -1148,7 +1148,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
   int v29; // [esp+28h] [ebp-Ch] BYREF
   double HighPrecisionTimer; // [esp+2Ch] [ebp-8h]
 
-  HighPrecisionTimer = Timer::GetHighPrecision(&dbl_884D88); /*0x554d6e*/
+  HighPrecisionTimer = (&dbl_884D88)->GetHighPrecision(); /*0x554d6e*/
   ++dword_ABCA74; /*0x554d73*/
   if ( dword_ABCA50 && !byte_ABCA84 ) /*0x554d8e*/
   {
@@ -1160,7 +1160,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       {
         if ( !a2 && (v4 & 0xF) == 0xF ) /*0x554dbe*/
         {
-          v5 = Timer::GetHighPrecision(&dbl_884D88); /*0x554dc5*/
+          v5 = (&dbl_884D88)->GetHighPrecision(); /*0x554dc5*/
           if ( (double)a1 <= v5 - HighPrecisionTimer ) /*0x554dd9*/
             break; /*0x554dd9*/
           v4 = dword_ABCA7C; /*0x554ddf*/
@@ -1190,7 +1190,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       byte_ABCA84 = 1; /*0x554edf*/
   }
   v28 = (double)a1; /*0x554eef*/
-  v7 = Timer::GetHighPrecision(&dbl_884D88); /*0x554ef3*/
+  v7 = (&dbl_884D88)->GetHighPrecision(); /*0x554ef3*/
   v8 = v28 - (v7 - HighPrecisionTimer); /*0x554f03*/
   if ( byte_ABCA84 ) /*0x554f07*/
   {
@@ -1221,7 +1221,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       MapClass::MarkForRedraw(&dword_87F7E8, 1); /*0x554fdb*/
     }
   }
-  v12 = Timer::GetHighPrecision(&dbl_884D88); /*0x554fe9*/
+  v12 = (&dbl_884D88)->GetHighPrecision(); /*0x554fe9*/
   v13 = v28 - (v12 - HighPrecisionTimer); /*0x554ff5*/
   if ( v13 > 0.0 && dword_ABCA74 > (unsigned int)(dword_ABCA78 + dword_829AE8) ) /*0x55501a*/
   {
@@ -1351,7 +1351,7 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
   if ( !a2_1 ) /*0x55881d*/
     p_referenceCount = (char *)&dword_A8B230[137].referenceCount; /*0x558824*/
   aP1->vtable4 = p_referenceCount; /*0x558829*/
-  return SaveLoadDialog::DlgProc((SaveLoadDialog *)aP1); /*0x558831*/
+  return ((SaveLoadDialog *)aP1)->DlgProc(); /*0x558831*/
 }
 }
 // 0x55B720
@@ -1393,7 +1393,7 @@ LABEL_7:
       *p_nextArrayIndex = (int)v3; /*0x55b78e*/
       p_nextArrayIndex[1] = (int)v15; /*0x55b790*/
       p_nextArrayIndex[2] = v7; /*0x55b798*/
-      MapClass::ProcessVisibilityFlags((MapClass *)&DataGlobal_87F7E8); /*0x55b79b*/
+      ((MapClass *)&DataGlobal_87F7E8)->ProcessVisibilityFlags(); /*0x55b79b*/
       v1 = *(unsigned int *)&g_RulesClass_Instance; /*0x55b7a0*/
 LABEL_8:
       v3 = *(void **)&TeamTypeClass_Array; /*0x55b7a6*/
@@ -1418,7 +1418,7 @@ LABEL_15:
         v10->vtable0 = v3; /*0x55b806*/
         v10->vtable1 = v15; /*0x55b808*/
         v10->vtable2 = v11; /*0x55b810*/
-        MapClass::ProcessFogTransition((MapClass *)&DataGlobal_87F7E8); /*0x55b813*/
+        ((MapClass *)&DataGlobal_87F7E8)->ProcessFogTransition(); /*0x55b813*/
         goto LABEL_16; /*0x55b813*/
       }
       vtable2 -= (unsigned char *)v3 - vtable0; /*0x55b7eb*/
@@ -2031,7 +2031,7 @@ AbstractClass * * Game_Frame_Check()
     {
       if ( dword_887368 ) /*0x55d0a8*/
       {
-        v2 = Tooltip::Enable(dword_887368, 0); /*0x55d0ab*/
+        v2 = (dword_887368)->Enable(0); /*0x55d0ab*/
         (*((unsigned char *)&(v2))) = byte_A83D49; /*0x55d0b0*/
       }
       if ( (unsigned char)v2 || byte_A8ECD0 ) /*0x55d0bf*/
@@ -2057,7 +2057,7 @@ AbstractClass * * Game_Frame_Check()
           byte_8B41C0 = 0; /*0x55d12f*/
           byte_A83D48 = 0; /*0x55d135*/
           InitLoadingScreenResources(); /*0x55d13b*/
-          WTFMode::Shutdown(&dword_A8B238); /*0x55d145*/
+          (&dword_A8B238)->Shutdown(); /*0x55d145*/
           Scenario::EndGameFlow(v9); /*0x55d14a*/
           WTFMode::Init(&dword_A8B238); /*0x55d154*/
           v4 = dword_887368; /*0x55d159*/
@@ -2080,7 +2080,7 @@ AbstractClass * * Game_Frame_Check()
           byte_8B41C0 = 0; /*0x55d1bd*/
           byte_A83D48 = 0; /*0x55d1c3*/
           InitLoadingScreenResources(); /*0x55d1c9*/
-          WTFMode::Shutdown(&dword_A8B238); /*0x55d1d3*/
+          (&dword_A8B238)->Shutdown(); /*0x55d1d3*/
           Scenario::EndGame(v9); /*0x55d1d8*/
           WTFMode::Init(&dword_A8B238); /*0x55d1e2*/
           v4 = dword_887368; /*0x55d1e7*/

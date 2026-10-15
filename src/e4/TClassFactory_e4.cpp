@@ -64,7 +64,7 @@ int TClassFactory_CampaignClass::ddtor(int a2, int a3, unsigned int *a4, int a1)
   v5 = (CampaignClass *)operator new(0x3A0u); /*0x6c02c1*/
   if ( !v5 ) /*0x6c02cb*/
     return -2147024882; /*0x6c02cb*/
-  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))CampaignClass::CampaignClass(v5, 0); /*0x6c02d1*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))(v5)->CampaignClass(0); /*0x6c02d1*/
   v7 = v6; /*0x6c02d6*/
   if ( !v6 ) /*0x6c02da*/
     return -2147024882; /*0x6c02dd*/

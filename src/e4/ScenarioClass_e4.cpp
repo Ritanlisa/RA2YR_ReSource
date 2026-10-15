@@ -549,7 +549,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
           result = (unsigned char *)(dword_A8B230); /*0x6841ea*/
         }
         result->ScenarioClass_field_35A2 = 0; /*0x6841ef*/
-        stru_A8EB00.?[440] = 0; /*0x6841fc*/
+        DataGlobal_A8EB00[668] = 0; /*0x6841fc*/
         (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x684203*/
         result = (unsigned char *)(dword_A8B230); /*0x684208*/
         dword_B07784 = 0; /*0x68420d*/

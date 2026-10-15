@@ -727,15 +727,9 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
     flt_8464B4 = a2; /*0x751143*/
     INIClass::ReadDouble_Overwrite(v4, g_INI_Key_Defaults, aMinvolume, flt_8464B8); /*0x751161*/
     flt_8464B8 = a3; /*0x751166*/
-    INIClass::GetString( /*0x751187*/
-      (INIClass *)v4,
-      g_INI_Key_Defaults,
-      (uint8_t *)aPriority,
-      g_INI_Key_NORMAL,
-      String,
-      2048);
+    (/*0x751187*/ (INIClass *)v4)->GetString(g_INI_Key_Defaults, (uint8_t *)aPriority, g_INI_Key_NORMAL, String, 2048);
     sub_4067D0(String, &dword_8464B0); /*0x751195*/
-    INIClass::GetString((INIClass *)v4, g_INI_Key_Defaults, aControl, &g_INI_DefaultBuffer, String, 2048); /*0x7511b5*/
+    ((INIClass *)v4)->GetString(g_INI_Key_Defaults, aControl, &g_INI_DefaultBuffer, String, 2048); /*0x7511b5*/
     v5 = strtok(String, asc_846570); /*0x7511c4*/
     if ( v5 ) /*0x7511ce*/
     {
@@ -747,13 +741,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
       }
       while ( v5 ); /*0x7511f7*/
     }
-    INIClass::GetString( /*0x751214*/
-      (INIClass *)v4,
-      g_INI_Key_Defaults,
-      (uint8_t *)g_INI_Key_Type,
-      &g_INI_DefaultBuffer,
-      String,
-      2048);
+    (/*0x751214*/ (INIClass *)v4)->GetString(g_INI_Key_Defaults, (uint8_t *)g_INI_Key_Type, &g_INI_DefaultBuffer, String, 2048);
     v6 = strtok(String, asc_846570); /*0x751223*/
     if ( v6 ) /*0x75122d*/
     {
@@ -777,13 +765,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
     for ( i = KeyCount; v9 < v8; ++v9 )
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex((char *)v4, g_INI_Key_SoundList, v9); /*0x7512da*/
-      KeyCount = INIClass::GetString( /*0x7512e7*/
-                   (INIClass *)v4,
-                   g_INI_Key_SoundList,
-                   StringByIndex,
-                   &g_INI_DefaultBuffer,
-                   Destination,
-                   32);
+      KeyCount = (/*0x7512e7*/ (INIClass *)v4)->GetString(g_INI_Key_SoundList, StringByIndex, &g_INI_DefaultBuffer, Destination, 32);
       if ( KeyCount )
       {
         if ( &v18 == (int *)-16 ) /*0x7512fa*/

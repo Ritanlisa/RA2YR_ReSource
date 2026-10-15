@@ -190,13 +190,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   char String[128]; // [esp+3Ch] [ebp-80h] BYREF
 
   INIClass::ResetSection((INIClass *)a2); /*0x6e6093*/
-  if ( !INIClass::GetString( /*0x6e60b4*/
-          (INIClass *)a2,
-          (unsigned __int8 *)&DataGlobal_842C3C,
-          (unsigned __int8 *)&this->arrayIndex,
-          &g_INI_DefaultBuffer,
-          String,
-          128) )
+  if ( !(/*0x6e60b4*/ (INIClass *)a2)->GetString((unsigned __int8 *)&DataGlobal_842C3C, (unsigned __int8 *)&this->arrayIndex, &g_INI_DefaultBuffer, String, 128) )
     return 0; /*0x6e6151*/
   strtok(String, Str); /*0x6e60cb*/
   this->Coord_9C = atoi(String); /*0x6e60e1*/

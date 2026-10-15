@@ -56,9 +56,9 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a47b) */
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[5] /*0x71a4b7*/
     || (BYTE1(g_BuildingLoadQueue_Array.?[6]) || !g_BuildingLoadQueue_Array.?[5])
-    && g_BuildingLoadQueue_Array.?[1] > 0
+    && DataGlobal_B0E840[1076] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[3] + 8))(
-         &g_BuildingLoadQueue_Array.?[3],
+         &DataGlobal_B0E840[1056],
          g_BuildingLoadQueue_Array.?[5] + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
@@ -79,7 +79,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   int v5; // [esp+Ch] [ebp-8h]
 
   ((AbstractClass *)this)->Constructor(); /*0x71a4e7*/
-  *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71a4fb*/
+  *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->AbstractClass = &vt_TemporalClass; /*0x71a501*/
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a507) */
@@ -87,16 +87,16 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a515) */
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_028 = 0; /*0x71a51f*/
-  *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71a529*/
+  *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a529*/
   this->TemporalClass_field_30 = v5; /*0x71a52c*/
   this->TemporalClass_field_34 = 0; /*0x71a52f*/
   this->q040 = 0; /*0x71a532*/
   this->u32_44 = 0; /*0x71a535*/
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[5] /*0x71a569*/
     || (BYTE1(g_BuildingLoadQueue_Array.?[6]) || !g_BuildingLoadQueue_Array.?[5])
-    && g_BuildingLoadQueue_Array.?[1] > 0
+    && DataGlobal_B0E840[1076] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[3] + 8))(
-         &g_BuildingLoadQueue_Array.?[3],
+         &DataGlobal_B0E840[1056],
          g_BuildingLoadQueue_Array.?[5] + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
@@ -378,7 +378,7 @@ void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
   aP1->? = &vt_TemporalClass; /*0x71b1d1*/
   v5 = (gamemd::TemporalClass *)(aP1); /*0x71b1df*/
   v3 = (*(int (**)(int *, TemporalClass **))(g_BuildingLoadQueue_Array.?[3] + 16))( /*0x71b1e3*/
-         &g_BuildingLoadQueue_Array.?[3],
+         &DataGlobal_B0E840[1056],
          &v5);
   if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.?[0] ) /*0x71b1f3*/
   {

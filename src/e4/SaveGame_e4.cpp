@@ -373,7 +373,7 @@ LABEL_17:
                   {
                     result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f8d6*/
                                this,
-                               (char *)&FootClass_Array.?->ObjectClass + 4 * v6,
+                               (char *)&DataGlobal_8B3DC0[780]->ObjectClass + 4 * v6,
                                4,
                                0);
                     if ( result < 0 ) /*0x67f8db*/
@@ -391,7 +391,7 @@ LABEL_17:
             {
               result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f865*/
                          this,
-                         *(unsigned int *)&stru_A8EB00.?[216] + 4 * v4,
+                         *(unsigned int *)&DataGlobal_A8EB00[444] + 4 * v4,
                          4,
                          0);
               if ( result < 0 ) /*0x67f86a*/

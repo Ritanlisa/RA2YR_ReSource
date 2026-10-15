@@ -639,9 +639,9 @@ int E4Recv_517110::sub_517110()
   unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
 
   v5 = 1; /*0x51717d*/
-  if ( this->occupant != *(unsigned int *)&stru_A8EB00.?[1436] /*0x517138*/
+  if ( this->occupant != *(unsigned int *)&DataGlobal_A8EB00[1664] /*0x517138*/
     || this->owningHouseIndex != *(unsigned int *)&DataGlobal_A8F0A0
-    || this->fallRate != *(unsigned int *)&stru_A8EB00.?[1444] )
+    || this->fallRate != *(unsigned int *)&DataGlobal_A8EB00[1672] )
   {
     v2 = this->occupant / 256; /*0x517161*/
     v3 = this->owningHouseIndex / 256; /*0x517164*/

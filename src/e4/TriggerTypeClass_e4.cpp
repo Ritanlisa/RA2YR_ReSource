@@ -353,9 +353,9 @@ LABEL_139:
     v31 = a0->diskLaserTimer[2]; /*0x6fc955*/
     if ( v30 != -1 ) /*0x6fc95e*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - v30 >= v31 ) /*0x6fc96a*/
+      if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v30 >= v31 ) /*0x6fc96a*/
         goto LABEL_164; /*0x6fc96a*/
-      v31 -= *(unsigned int *)&stru_A8EB00.?[416] - v30; /*0x6fc96c*/
+      v31 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v30; /*0x6fc96c*/
     }
     if ( v31 ) /*0x6fc970*/
       return 3; /*0x6fc97e*/
@@ -391,7 +391,7 @@ LABEL_164:
     return 5; /*0x6fcac2*/
   }
   v32 = *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345); /*0x6fcacb*/
-  if ( v32 && (v25->transporter_2 & 4) != 0 && *(int *)&stru_A8EB00.?[416] < v25->unknown698 ) /*0x6fcae9*/
+  if ( v32 && (v25->transporter_2 & 4) != 0 && *(int *)&DataGlobal_A8EB00[644] < v25->unknown698 ) /*0x6fcae9*/
     return 5; /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/

@@ -61,7 +61,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   ((AbstractClass *)this)->Constructor(); /*0x4c98b7*/
   this->TeamTypeClass_field_24 = 0; /*0x4c98be*/
   this->TeamTypeClass_field_28 = 0; /*0x4c98c1*/
-  v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c98c4*/
+  v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4c98c4*/
   this->TeamTypeClass_field_34 = 0; /*0x4c98c9*/
   this->TeamTypeClass_field_2C = v2; /*0x4c98cc*/
   this->TeamTypeClass_field_38 = 0; /*0x4c98d4*/
@@ -98,7 +98,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
     v3 = (*(unsigned int *)&stru_A83D50.__pad_C8[40])++; /*0x4c997a*/
     *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v3) = this; /*0x4c9989*/
   }
-  v4 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c998c*/
+  v4 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4c998c*/
   this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
   this->TeamTypeClass_field_2C = v4; /*0x4c9999*/
   this->TeamTypeClass_field_30 = v7; /*0x4c999f*/
@@ -363,14 +363,14 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x6f112b*/
                     (bool *)a2,
                     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                    (unsigned __int8 *)&g_INI_Key_TRUCKA.?[3],
+                    (unsigned __int8 *)&DataGlobal_842DCC[800],
                     *((unsigned int *)aP1 + 40));
   v44 = *((unsigned int *)aP1 + 48); /*0x6f1138*/
   *((unsigned int *)aP1 + 40) = Int_Overwrite; /*0x6f113f*/
   *((unsigned int *)aP1 + 48) = INIClass::ReadInt_Overwrite( /*0x6f114a*/
                              (bool *)a2,
                              (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&g_INI_Key_TRUCKA.?[1],
+                             (unsigned __int8 *)&DataGlobal_842DCC[780],
                              v44);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6f115f*/
                      (int *)a2,
@@ -382,14 +382,14 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   v9 = INIClass::ReadBool_Overwrite( /*0x6f1179*/
          (int *)a2,
          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-         (unsigned __int8 *)&g_INI_Key_TRUCKA.?,
+         (unsigned __int8 *)&DataGlobal_842DCC[760],
          v8);
   v45 = *((unsigned char *)aP1 + 166); /*0x6f1186*/
   *((unsigned char *)aP1 + 165) = v9; /*0x6f118d*/
   *((unsigned char *)aP1 + 166) = INIClass::ReadBool_Overwrite( /*0x6f1198*/
                              (int *)a2,
                              (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&g_INI_Key_TRUCKA.?[1],
+                             (unsigned __int8 *)&DataGlobal_842DCC[748],
                              v45);
   v10 = INIClass::ReadBool_Overwrite( /*0x6f11ad*/
           (int *)a2,
@@ -401,7 +401,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   v12 = INIClass::ReadBool_Overwrite( /*0x6f11c7*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[1],
+          (unsigned __int8 *)&DataGlobal_842DCC[724],
           v11);
   v46 = *((unsigned char *)aP1 + 170); /*0x6f11d4*/
   *((unsigned char *)aP1 + 169) = v12; /*0x6f11db*/
@@ -413,71 +413,71 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   v13 = INIClass::ReadBool_Overwrite( /*0x6f11fb*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[14],
+          (unsigned __int8 *)&DataGlobal_842DCC[700],
           *((unsigned char *)aP1 + 171));
   v14 = *((unsigned char *)aP1 + 176); /*0x6f1200*/
   *((unsigned char *)aP1 + 171) = v13; /*0x6f1206*/
   v15 = INIClass::ReadBool_Overwrite( /*0x6f1215*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[6],
+          (unsigned __int8 *)&DataGlobal_842DCC[692],
           v14);
   v47 = *((unsigned char *)aP1 + 177); /*0x6f1222*/
   *((unsigned char *)aP1 + 176) = v15; /*0x6f1229*/
   *((unsigned char *)aP1 + 177) = INIClass::ReadBool_Overwrite( /*0x6f1234*/
                              (int *)a2,
                              (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&g_INI_Key_TRUCKA.?[4],
+                             (unsigned __int8 *)&DataGlobal_842DCC[672],
                              v47);
   v16 = INIClass::ReadBool_Overwrite( /*0x6f1249*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?,
+          (unsigned __int8 *)&DataGlobal_842DCC[660],
           *((unsigned char *)aP1 + 168));
   v17 = *((unsigned char *)aP1 + 172); /*0x6f124e*/
   *((unsigned char *)aP1 + 168) = v16; /*0x6f1254*/
   v18 = INIClass::ReadBool_Overwrite( /*0x6f1263*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[18],
+          (unsigned __int8 *)&DataGlobal_842DCC[652],
           v17);
   v48 = *((unsigned char *)aP1 + 175); /*0x6f1270*/
   *((unsigned char *)aP1 + 172) = v18; /*0x6f1277*/
   *((unsigned char *)aP1 + 175) = INIClass::ReadBool_Overwrite( /*0x6f1282*/
                              (int *)a2,
                              (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&g_INI_Key_TRUCKA.?[16],
+                             (unsigned __int8 *)&DataGlobal_842DCC[644],
                              v48);
   v19 = INIClass::ReadBool_Overwrite( /*0x6f1297*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[12],
+          (unsigned __int8 *)&DataGlobal_842DCC[628],
           *((unsigned char *)aP1 + 174));
   v20 = *((unsigned char *)aP1 + 173); /*0x6f129c*/
   *((unsigned char *)aP1 + 174) = v19; /*0x6f12a2*/
   v21 = INIClass::ReadBool_Overwrite( /*0x6f12b1*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[9],
+          (unsigned __int8 *)&DataGlobal_842DCC[616],
           v20);
   v49 = *((unsigned char *)aP1 + 179); /*0x6f12be*/
   *((unsigned char *)aP1 + 173) = v21; /*0x6f12c5*/
   *((unsigned char *)aP1 + 179) = INIClass::ReadBool_Overwrite( /*0x6f12d0*/
                              (int *)a2,
                              (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&g_INI_Key_TRUCKA.?[6],
+                             (unsigned __int8 *)&DataGlobal_842DCC[604],
                              v49);
   v22 = INIClass::ReadInt_Overwrite( /*0x6f12e5*/
           (bool *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[3],
+          (unsigned __int8 *)&DataGlobal_842DCC[592],
           *((unsigned int *)aP1 + 45));
   v23 = *((unsigned int *)aP1 + 46); /*0x6f12ea*/
   *((unsigned int *)aP1 + 45) = v22; /*0x6f12f0*/
   v24 = INIClass::ReadInt_Overwrite( /*0x6f12ff*/
           (bool *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[2],
+          (unsigned __int8 *)&DataGlobal_842DCC[588],
           v23);
   v50 = *((unsigned int *)aP1 + 51); /*0x6f130c*/
   *((unsigned int *)aP1 + 46) = v24; /*0x6f1313*/
@@ -514,12 +514,12 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   *((unsigned char *)aP1 + 242) = INIClass::ReadBool_Overwrite( /*0x6f138b*/
                              (int *)a2,
                              (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&g_INI_Key_TRUCKA.?[1],
+                             (unsigned __int8 *)&DataGlobal_842DCC[572],
                              v51);
   v30 = INIClass::ReadBool_Overwrite( /*0x6f13a0*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?,
+          (unsigned __int8 *)&DataGlobal_842DCC[560],
           *((unsigned char *)aP1 + 243));
   v31 = *((unsigned char *)aP1 + 246); /*0x6f13a5*/
   *((unsigned char *)aP1 + 243) = v30; /*0x6f13ab*/
@@ -533,19 +533,19 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   *((unsigned char *)aP1 + 247) = INIClass::ReadBool_Overwrite( /*0x6f13d9*/
                              (int *)a2,
                              (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-                             (unsigned __int8 *)&g_INI_Key_TRUCKA.?[5],
+                             (unsigned __int8 *)&DataGlobal_842DCC[536],
                              v52);
   v33 = INIClass::ReadBool_Overwrite( /*0x6f13ee*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[4],
+          (unsigned __int8 *)&DataGlobal_842DCC[508],
           *((unsigned char *)aP1 + 244));
   v34 = *((unsigned char *)aP1 + 245); /*0x6f13f3*/
   *((unsigned char *)aP1 + 244) = v33; /*0x6f13f9*/
   v35 = INIClass::ReadBool_Overwrite( /*0x6f1408*/
           (int *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-          (unsigned __int8 *)&g_INI_Key_TRUCKA.?[147],
+          (unsigned __int8 *)&DataGlobal_842DCC[480],
           v34);
   v36 = *((unsigned int *)aP1 + 53); /*0x6f140d*/
   *((unsigned char *)aP1 + 245) = v35; /*0x6f141a*/
@@ -562,11 +562,11 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   if ( INIClass::GetString( /*0x6f1468*/
          (INIClass *)a2,
          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-         (unsigned __int8 *)&g_INI_Key_TRUCKA.?[127],
+         (unsigned __int8 *)&DataGlobal_842DCC[460],
          v38,
          v53,
          64) > 0 )
-    *((unsigned int *)aP1 + 54) = String::To_Waypoint(v53); /*0x6f1473*/
+    *((unsigned int *)aP1 + 54) = (v53)->To_Waypoint(); /*0x6f1473*/
   v39 = (int *)*((unsigned int *)aP1 + 56); /*0x6f1479*/
   if ( INIClass::GetString( /*0x6f1496*/
          (INIClass *)a2,
@@ -607,7 +607,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   }
   if ( *((unsigned int *)aP1 + 56) ) /*0x6f1507*/
     return 1; /*0x6f1532*/
-  if ( *(int *)&FootClass_Array.? > 0 ) /*0x6f1518*/
+  if ( *(int *)&DataGlobal_8B3DC0[1048] > 0 ) /*0x6f1518*/
   {
     *((unsigned int *)aP1 + 56) = *(unsigned int *)FootClass_Array.?[5]; /*0x6f1522*/
     return 1; /*0x6f1522*/
@@ -646,13 +646,13 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
   INIClass::SetInt( /*0x6f15a9*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[3],
+    (char *)&DataGlobal_842DCC[800],
     aP1->u32_A0,
     0);
   INIClass::SetInt( /*0x6f15bf*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[1],
+    (char *)&DataGlobal_842DCC[780],
     aP1->u32_C0,
     0);
   INIClass::SetBool( /*0x6f15d3*/
@@ -663,12 +663,12 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
   INIClass::SetBool( /*0x6f15e7*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?,
+    (char *)&DataGlobal_842DCC[760],
     aP1->u8_A5);
   INIClass::SetBool( /*0x6f15fb*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[1],
+    (char *)&DataGlobal_842DCC[748],
     aP1->u8_A6);
   INIClass::SetBool( /*0x6f160f*/
     aTaskforce,
@@ -683,12 +683,12 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
   INIClass::SetBool( /*0x6f1631*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?,
+    (char *)&DataGlobal_842DCC[660],
     aP1->q0A8);
   INIClass::SetBool( /*0x6f1645*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[1],
+    (char *)&DataGlobal_842DCC[724],
     aP1->u8_A9);
   INIClass::SetBool( /*0x6f1659*/
     aTaskforce,
@@ -698,48 +698,48 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
   INIClass::SetBool( /*0x6f166d*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &g_INI_Key_TRUCKA.?[14],
+    &DataGlobal_842DCC[700],
     aP1->u8_AB);
   INIClass::SetBool( /*0x6f1681*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &g_INI_Key_TRUCKA.?[6],
+    &DataGlobal_842DCC[692],
     aP1->q0B0);
   INIClass::SetBool( /*0x6f1695*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &g_INI_Key_TRUCKA.?[4],
+    &DataGlobal_842DCC[672],
     aP1->u8_B1);
   INIClass::SetBool( /*0x6f16a9*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[18],
+    (char *)&DataGlobal_842DCC[652],
     aP1->q0AC);
   INIClass::SetBool( /*0x6f16bd*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[12],
+    (char *)&DataGlobal_842DCC[628],
     aP1->u8_AE);
   INIClass::SetBool( /*0x6f16d1*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[9],
+    (char *)&DataGlobal_842DCC[616],
     aP1->u8_AD);
   INIClass::SetBool( /*0x6f16e5*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[16],
+    (char *)&DataGlobal_842DCC[644],
     aP1->u8_AF);
   INIClass::SetInt( /*0x6f16fb*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[3],
+    (char *)&DataGlobal_842DCC[592],
     aP1->__pad_0B4,
     0);
   INIClass::SetInt( /*0x6f1711*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[2],
+    (char *)&DataGlobal_842DCC[588],
     aP1->u32_B8,
     0);
   INIClass::SetInt(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, g_INI_Key_TechLevel, *(&aP1->u32_CC), 0); /*0x6f1727*/
@@ -747,23 +747,23 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
   INIClass::SetBool( /*0x6f1751*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    (char *)&g_INI_Key_TRUCKA.?[6],
+    (char *)&DataGlobal_842DCC[604],
     aP1->u8_B3);
   INIClass::SetBool( /*0x6f1765*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &g_INI_Key_TRUCKA.?[1],
+    &DataGlobal_842DCC[572],
     aP1->u8_F2);
   INIClass::SetBool(aTaskforce, (unsigned __int8 *)&aP1->TeamTypeClass_field_24, &g_INI_Key_TRUCKA.q018, *(&aP1->u8_F3)); /*0x6f1779*/
   INIClass::SetBool( /*0x6f178d*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &g_INI_Key_TRUCKA.?[4],
+    &DataGlobal_842DCC[508],
     aP1->u8_F4);
   INIClass::SetBool( /*0x6f17a1*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &g_INI_Key_TRUCKA.?[147],
+    &DataGlobal_842DCC[480],
     aP1->u8_F5);
   INIClass::SetBool( /*0x6f17b5*/
     aTaskforce,
@@ -773,7 +773,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
   INIClass::SetBool( /*0x6f17c9*/
     aTaskforce,
     (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
-    &g_INI_Key_TRUCKA.?[5],
+    &DataGlobal_842DCC[536],
     aP1->u8_F7);
   v6 = *(&aP1->u32_D0); /*0x6f17ce*/
   if ( v6 ) /*0x6f17d6*/

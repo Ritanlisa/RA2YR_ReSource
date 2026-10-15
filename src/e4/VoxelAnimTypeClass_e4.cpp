@@ -456,11 +456,11 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
 
   v3 = AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x74b699*/
   LOBYTE(v3) = this->Normalized; /*0x74b69e*/
-  Power::FlagProcess((Power *)a2, v3); /*0x74b6a7*/
+  ((Power *)a2)->FlagProcess(v3); /*0x74b6a7*/
   LOBYTE(v4) = this->Translucent; /*0x74b6ac*/
-  Power::FlagProcess((Power *)a2, v4); /*0x74b6b5*/
+  ((Power *)a2)->FlagProcess(v4); /*0x74b6b5*/
   LOBYTE(v5) = this->SourceShared; /*0x74b6ba*/
-  Power::FlagProcess((Power *)a2, v5); /*0x74b6c3*/
+  ((Power *)a2)->FlagProcess(v5); /*0x74b6c3*/
   Power::TimerProcess(this->VoxelIndex); /*0x74b6d1*/
   Power::TimerProcess(this->Duration); /*0x74b6df*/
   Checksummer::Add_double((Checksummer *)a2, this->Elasticity[0], this->Elasticity[1]); /*0x74b6f4*/
@@ -470,14 +470,14 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   Checksummer::Add_double((Checksummer *)a2, this->MaxZVel[0], this->MaxZVel[1]); /*0x74b748*/
   Checksummer::Add_double((Checksummer *)a2, this->MaxXYVel[0], this->MaxXYVel[1]); /*0x74b75d*/
   LOBYTE(v6) = this->IsMeteor; /*0x74b762*/
-  Power::FlagProcess((Power *)a2, v6); /*0x74b76b*/
+  ((Power *)a2)->FlagProcess(v6); /*0x74b76b*/
   Power::TimerProcess(this->SpawnCount); /*0x74b779*/
   Power::TimerProcess(this->StartSound); /*0x74b787*/
   Power::TimerProcess(this->StopSound); /*0x74b795*/
   Power::TimerProcess(this->Damage); /*0x74b7a3*/
   Power::TimerProcess(this->DamageRadius); /*0x74b7b1*/
   LOBYTE(v7) = this->IsTiberium; /*0x74b7b6*/
-  return Power::FlagProcess((Power *)a2, v7); /*0x74b7c4*/
+  return ((Power *)a2)->FlagProcess(v7); /*0x74b7c4*/
 
 }
 }

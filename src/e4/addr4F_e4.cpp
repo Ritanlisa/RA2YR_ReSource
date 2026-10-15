@@ -710,7 +710,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
   int v27; // [esp+40h] [ebp-4h]
 
   ((String *)(&v20))->Assign((const char *)(ValueName)); /*0x4f2c83*/
-  Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&v20, -1); /*0x4f2c97*/
+  Int = ((bool *)a2->__pad_0)->ReadInt(Source, (char **)&v20, -1); /*0x4f2c97*/
   *(unsigned int *)&v21.headNode = Int; /*0x4f2c9d*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
   if ( Int == -1 ) /*0x4f2ca9*/
@@ -762,7 +762,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       v16 = (uint8_t *)((String *)((String *)Source))->GetOrEmpty_Alt(); /*0x4f2e7b*/
       v21.q000 = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
       ((String *)((String *)&a4))->Assign((const char *)(g_INI_Key_Rate)); /*0x4f2e95*/
-      v17 = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&a4, 5); /*0x4f2ead*/
+      v17 = ((bool *)a2->__pad_0)->ReadInt(Source, (char **)&a4, 5); /*0x4f2ead*/
       DeleteAndZero(&a4); /*0x4f2eaf*/
       v18 = (GraphicMenuAnimItem *)operator new(0x28u); /*0x4f2eb6*/
       if ( v18 ) /*0x4f2ec0*/
@@ -968,7 +968,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
       ((PriorityQueue *)(a3))->Add((int)v24); /*0x4f35a3*/
   }
   a8 = a8; /*0x4f35a8*/
-  if ( String::Length(a8) ) /*0x4f35ae*/
+  if ( (a8)->Length() ) /*0x4f35ae*/
   {
     v26 = operator new(0x3Cu); /*0x4f35b9*/
     if ( v26 ) /*0x4f35c3*/

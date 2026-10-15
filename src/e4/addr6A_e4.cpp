@@ -650,7 +650,7 @@ int TechnoClass::ProcessDeployAction()
               v3 == dword_B0B5B8) )
         {
           this->customSound_controller[3] = 0; /*0x6afe67*/
-          this->customSound_controller[4] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6afe74*/
+          this->customSound_controller[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6afe74*/
         }
         else
         {
@@ -678,7 +678,7 @@ int TechnoClass::ProcessDeployAction()
           }
           else
           {
-            v10 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6aff16*/
+            v10 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6aff16*/
             this->customSound_controller[3] = 3; /*0x6aff23*/
             this->customSound_controller[0] = v10; /*0x6aff2a*/
             v3 = v36; /*0x6aff2c*/
@@ -691,7 +691,7 @@ int TechnoClass::ProcessDeployAction()
       else
       {
         this->customSound_controller[3] = 0; /*0x6afed3*/
-        this->customSound_controller[4] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6afee0*/
+        this->customSound_controller[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6afee0*/
       }
       break; /*0x6afee8*/
     case 3:
@@ -707,8 +707,8 @@ int TechnoClass::ProcessDeployAction()
       else
       {
         this->customSound_controller[3] = 0; /*0x6aff56*/
-        LOBYTE(v3) = stru_A8EB00.?[416]; /*0x6aff5d*/
-        this->customSound_controller[4] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6aff62*/
+        LOBYTE(v3) = DataGlobal_A8EB00[644]; /*0x6aff5d*/
+        this->customSound_controller[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6aff62*/
       }
       break; /*0x6aff6a*/
     case 4:
@@ -746,8 +746,8 @@ int TechnoClass::ProcessDeployAction()
       if ( v15 && (*(int (**)(int))(*(unsigned int *)v15 + 44))(v15) == 1 ) /*0x6b004b*/
       {
         this->customSound_controller[3] = 0; /*0x6b004d*/
-        LOBYTE(v3) = stru_A8EB00.?[416]; /*0x6b0054*/
-        this->customSound_controller[4] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6b0059*/
+        LOBYTE(v3) = DataGlobal_A8EB00[644]; /*0x6b0054*/
+        this->customSound_controller[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b0059*/
       }
       else
       {

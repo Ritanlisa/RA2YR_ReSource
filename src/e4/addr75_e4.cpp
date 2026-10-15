@@ -655,13 +655,7 @@ int CCINIClass::InitFromINIEVA()
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex((char *)v1, g_INI_Key_DialogList, v4); /*0x753060*/
-      KeyCount = INIClass::GetString( /*0x75306d*/
-                   (INIClass *)v1,
-                   g_INI_Key_DialogList,
-                   StringByIndex,
-                   &g_INI_DefaultBuffer,
-                   Destination,
-                   200);
+      KeyCount = (/*0x75306d*/ (INIClass *)v1)->GetString(g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200);
       if ( KeyCount ) /*0x753074*/
       {
         if ( &v11 == (int *)-28 ) /*0x753080*/
@@ -711,7 +705,7 @@ int CCINIClass::InitFromINIEVA()
         {
           v9 = (void *)*((unsigned int *)g_InfantryRenderPool + v6); /*0x753177*/
         }
-        (*((unsigned char *)&(KeyCount))) = AudioEvent::LoadFromINI(v9, (uint8_t ***)v1); /*0x75317b*/
+        (*((unsigned char *)&(KeyCount))) = (v9)->LoadFromINI((uint8_t ***)v1); /*0x75317b*/
         v4 = i; /*0x753180*/
         v3 = v14; /*0x753184*/
       }

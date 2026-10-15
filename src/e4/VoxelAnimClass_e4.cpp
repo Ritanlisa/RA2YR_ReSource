@@ -757,7 +757,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   }
   if ( *((unsigned int *)v1->q104 + 187) ) /*0x74a714*/
   {
-    if ( !(*(unsigned int *)&stru_A8EB00.?[416] % 2) ) /*0x74a732*/
+    if ( !(*(unsigned int *)&DataGlobal_A8EB00[644] % 2) ) /*0x74a732*/
     {
       v61 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a73f*/
       if ( v61 ) /*0x74a746*/
@@ -969,16 +969,16 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   a1->VoxelAnimClass_field_0x4[0] = (int)&vt_WaveClass; /*0x75ecb0*/
   a1->VoxelAnimClass_field_0x8 = &vt_WaveClass; /*0x75ecb7*/
   *(unsigned int *)a1->__pad_C = &off_7F6BC8; /*0x75ecbe*/
-  if ( *(int *)&stru_A8EB00.?[100] < *(int *)&stru_A8EB00.?[92] /*0x75ecfb*/
-    || (stru_A8EB00.?[97] || !*(unsigned int *)&stru_A8EB00.?[92])
+  if ( *(int *)&DataGlobal_A8EB00[328] < *(int *)&DataGlobal_A8EB00[320] /*0x75ecfb*/
+    || (DataGlobal_A8EB00[325] || !*(unsigned int *)&DataGlobal_A8EB00[320])
     && *(int *)&DataGlobal_A8EB68 > 0
     && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&DataGlobal_A8EB54 + 8))(
          &DataGlobal_A8EB54,
-         *(unsigned int *)&stru_A8EB00.?[92] + *(unsigned int *)&DataGlobal_A8EB68,
+         *(unsigned int *)&DataGlobal_A8EB00[320] + *(unsigned int *)&DataGlobal_A8EB68,
          0) )
   {
-    v2 = (*(unsigned int *)&stru_A8EB00.?[100])++; /*0x75ed08*/
-    *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[88] + 4 * v2) = a1; /*0x75ed17*/
+    v2 = (*(unsigned int *)&DataGlobal_A8EB00[328])++; /*0x75ed08*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[316] + 4 * v2) = a1; /*0x75ed17*/
   }
   if ( !byte_B725CC ) /*0x75ed20*/
     Voxel::InitDistanceTable(v4); /*0x75ed22*/

@@ -387,17 +387,17 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->u8_9D = -1; /*0x4f57ea*/
   this->u32_9E = -1; /*0x4f57f0*/
   this->u32_9F = 0; /*0x4f57f6*/
-  this->secretLabsCapacity = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f5802*/
+  this->secretLabsCapacity = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4f5802*/
   this->u32_A2 = 0; /*0x4f5808*/
-  v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f580e*/
+  v3 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4f580e*/
   this->u32_A5 = 0; /*0x4f5814*/
   this->u8_A3 = v3; /*0x4f581a*/
-  this->u32_A6 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f5825*/
+  this->u32_A6 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4f5825*/
   this->psychicDetectionCount = 0; /*0x4f582b*/
-  v4 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f5831*/
+  v4 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4f5831*/
   this->u32_AB = 0; /*0x4f5837*/
   this->q0A9 = v4; /*0x4f583d*/
-  this->psychicDetectionCapacity = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f5849*/
+  this->psychicDetectionCapacity = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4f5849*/
   this->u32_AE = 0; /*0x4f584f*/
   this->side2TechInfiltrated = 0; /*0x4f5855*/
   this->side1TechInfiltrated = 0; /*0x4f585b*/
@@ -469,8 +469,8 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->u32_150D = 0; /*0x4f5a2a*/
   this->u8_1522 = 0; /*0x4f5a30*/
   this->u8_1523 = -1; /*0x4f5a36*/
-  this->q1524 = *(unsigned int *)&stru_A8EB00.?[948]; /*0x4f5a41*/
-  this->q1525 = *(unsigned int *)&stru_A8EB00.?[948]; /*0x4f5a4d*/
+  this->q1524 = *(unsigned int *)&DataGlobal_A8EB00[1176]; /*0x4f5a41*/
+  this->q1525 = *(unsigned int *)&DataGlobal_A8EB00[1176]; /*0x4f5a4d*/
   this->q1526 = 0; /*0x4f5a53*/
   this->q1536 = 0; /*0x4f5a59*/
   this->u8_1537 = -1; /*0x4f5a5f*/
@@ -497,7 +497,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   CounterClass::Construct(&this->CounterClass_156D); /*0x4f5b1e*/
   CounterClass::Construct(&this->CounterClass_2AE4); /*0x4f5b29*/
   CounterClass::Construct(&this->CounterClass_1577); /*0x4f5b34*/
-  this->u8_157C = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f5b40*/
+  this->u8_157C = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4f5b40*/
   this->u8_157E = 0; /*0x4f5b46*/
   this->u8_157F = 0; /*0x4f5b4c*/
   this->q1580 = -1; /*0x4f5b59*/
@@ -509,7 +509,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->q1587 = (int)&vt_DynamicVectorClass; /*0x4f5b87*/
   this->u32_158C = 10; /*0x4f5b91*/
   this->u32_158B = 0; /*0x4f5b97*/
-  this->u8_158D = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f5ba2*/
+  this->u8_158D = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4f5ba2*/
   this->u8_158F = 0; /*0x4f5ba8*/
   v5 = *(unsigned int *)&TeamTypeClass_Array; /*0x4f5bae*/
   this->q1592 = 0; /*0x4f5bb4*/

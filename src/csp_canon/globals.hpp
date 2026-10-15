@@ -666,8 +666,8 @@ extern unsigned char g_Str_File_wwmous_cpp;  // 0x84E61C conf=ANCHORED
 extern unsigned char Source;  // 0x84E865 conf=ANCHORED
 extern unsigned int g_ScreenRenderLUT1;  // 0x879B30 conf=ANCHORED
 extern unsigned short g_ScreenRenderLUT2;  // 0x87B170 conf=ANCHORED
-extern char g_ScreenRenderMask;  // 0x87BC90 conf=ANCHORED
-extern unsigned char g_ScreenRenderFlag;  // 0x87BD90 conf=ANCHORED
+extern char g_ScreenRenderMask[256];  // X34-L5 array retype (binary width+bound)
+extern unsigned char g_ScreenRenderFlag[256];  // X34-L5 array retype (binary width+bound)
 extern void File;  // 0x87BF70 conf=ANCHORED
 extern LPCRITICAL_SECTION lpCriticalSection;  // 0x87C2EC conf=ANCHORED
 extern char Str1;  // 0x87C3F8 conf=ANCHORED
@@ -816,7 +816,7 @@ extern unsigned int FileSystem_POWEROFF_SHP;  // 0x89DDC4 conf=ANCHORED
 extern unsigned int FileSystem_WRENCH_SHP;  // 0x89DDC8 conf=ANCHORED
 extern unsigned int g_GameModeOptionState;  // 0x89E000 conf=ANCHORED
 extern bool byte_89E3A0;  // 0x89E3A0 conf=ANCHORED
-extern unsigned char g_IsWindowed;  // 0x89ED18 conf=ANCHORED
+extern uint8_t g_IsWindowed[1024];  // X34-L5 array retype (binary width+bound)
 extern unsigned int g_DDrawSurfaceManager;  // 0x89F518 conf=ANCHORED
 extern int32_t Direction_X_Offsets;  // 0x89F688 conf=ANCHORED
 extern unsigned int g_CellDirectionOffsets;  // 0x89F690 conf=ANCHORED

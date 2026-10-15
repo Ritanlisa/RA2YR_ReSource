@@ -65,8 +65,8 @@ AbstractClass * FootClass::Destruct(void *a1)
   if ( v3 != -1 ) /*0x4d35e7*/
     FootClass::RemoveFromPointerArray(&FootClass_Array, v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
-  v4 = (*(int (**)(char *, FootClass **))(*(unsigned int *)&g_BuildingLoadQueue_Array.?[2] + 16))( /*0x4d3608*/
-         &g_BuildingLoadQueue_Array.?[2],
+  v4 = (*(int (**)(char *, FootClass **))(*(unsigned int *)&DataGlobal_B0E840[3480] + 16))( /*0x4d3608*/
+         &DataGlobal_B0E840[3480],
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
     DynamicVector::RemoveItem((DynamicVector *)&dword_B0F5D8, v4); /*0x4d3616*/
@@ -141,8 +141,8 @@ int FootClass::updateThreat()
   v2 = this->targetingTimer_2; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v1 < v2 ) /*0x70f7fb*/
-      return v2 == *(unsigned int *)&stru_A8EB00.?[416] - v1; /*0x70f808*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v1 < v2 ) /*0x70f7fb*/
+      return v2 == *(unsigned int *)&DataGlobal_A8EB00[644] - v1; /*0x70f808*/
     v2 = 0; /*0x70f809*/
   }
   return v2 == 0; /*0x70f808*/

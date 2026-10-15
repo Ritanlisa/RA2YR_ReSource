@@ -60,16 +60,16 @@ BulletClass::BulletClass()
   this->q140 = 0; /*0x466456*/
   *(unsigned int *)this->q144 = 0; /*0x46645c*/
   *&this->DamageMultiplier = 0; /*0x466462*/
-  if ( *(int *)&stru_A8EB00.?[364] < *(int *)&stru_A8EB00.?[356] /*0x46649b*/
-    || (stru_A8EB00.?[361] || !*(unsigned int *)&DataGlobal_A8EC64)
+  if ( *(int *)&DataGlobal_A8EB00[592] < *(int *)&DataGlobal_A8EB00[584] /*0x46649b*/
+    || (DataGlobal_A8EB00[589] || !*(unsigned int *)&DataGlobal_A8EC64)
     && *(int *)&DataGlobal_A8EC70 > 0
     && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&DataGlobal_A8EC5C + 8))(
          &DataGlobal_A8EC5C,
          *(unsigned int *)&DataGlobal_A8EC64 + *(unsigned int *)&DataGlobal_A8EC70,
          0) )
   {
-    v2 = (*(unsigned int *)&stru_A8EB00.?[364])++; /*0x4664a8*/
-    *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[352] + 4 * v2) = this; /*0x4664b7*/
+    v2 = (*(unsigned int *)&DataGlobal_A8EB00[592])++; /*0x4664a8*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[580] + 4 * v2) = this; /*0x4664b7*/
   }
   return (int)this->vtable1; /*0x4664bc*/
 

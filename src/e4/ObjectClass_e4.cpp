@@ -862,8 +862,8 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
   {
     if ( a3 ) /*0x5140a0*/
       *a3 = -1; /*0x5140a2*/
-    Matrix3x4::Identity(&v39); /*0x5140af*/
-    Matrix3x4::Identity(&v37); /*0x5140b8*/
+    (&v39)->Identity(); /*0x5140af*/
+    (&v37)->Identity(); /*0x5140b8*/
     v11 = *(double *)((*(int (**)(int))(*(unsigned int *)a1->vfptr.vfptr.vfptr.vfptr.vfptr2 + 132))(a1->vfptr.vfptr.vfptr.vfptr.vfptr2) /*0x5140cb*/
                     + 864);
     v29 = v11; /*0x5140d3*/

@@ -60,7 +60,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e4f84*/
   if ( byte_A8E9A0 ) /*0x6e4f90*/
   {
-    if ( stru_A8EB00.?[376] ) /*0x6e4f9d*/
+    if ( DataGlobal_A8EB00[604] ) /*0x6e4f9d*/
     {
       buildingType = a1->buildingType; /*0x6e4f9f*/
       if ( buildingType ) /*0x6e4fa4*/
@@ -96,7 +96,7 @@ LABEL_9:
     }
     if ( byte_A8E9A0 ) /*0x6e4ff5*/
     {
-      if ( stru_A8EB00.?[376] ) /*0x6e5002*/
+      if ( DataGlobal_A8EB00[604] ) /*0x6e5002*/
       {
         v6 = a1->buildingType; /*0x6e5004*/
         if ( v6 ) /*0x6e5009*/
@@ -132,7 +132,7 @@ LABEL_22:
       }
       if ( byte_A8E9A0 ) /*0x6e505a*/
       {
-        if ( stru_A8EB00.?[376] ) /*0x6e5063*/
+        if ( DataGlobal_A8EB00[604] ) /*0x6e5063*/
         {
           firstTrigger = a1->firstTrigger; /*0x6e5065*/
           if ( firstTrigger ) /*0x6e506a*/
@@ -147,7 +147,7 @@ LABEL_22:
                 if ( v13 ) /*0x6e50a8*/
                   *(unsigned int *)(Owner + 636) = v13 - 1; /*0x6e50ab*/
                 v14 = (unsigned int *)(Owner + 664); /*0x6e50b7*/
-                *v14 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6e50c1*/
+                *v14 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6e50c1*/
                 v14[1] = v22[2]; /*0x6e50c7*/
                 v14[2] = 60; /*0x6e50ca*/
               }
@@ -348,7 +348,7 @@ int TagClass::ProcessTag(int * a2)
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
-  return Power::FlagProcess((Power *)a2, (int)firstTrigger); /*0x6e5726*/
+  return ((Power *)a2)->FlagProcess((int)firstTrigger); /*0x6e5726*/
 
 }
 } // namespace gamemd

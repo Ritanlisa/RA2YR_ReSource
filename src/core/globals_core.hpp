@@ -695,7 +695,7 @@ extern uint32_t g_BuildingClassPool; // data: 0x89C848
 extern uint32_t FileSystem_POWEROFF_SHP; // data: 0x89DDC4
 extern uint32_t FileSystem_WRENCH_SHP; // data: 0x89DDC8
 extern uint32_t g_GameModeOptionState; // data: 0x89E000
-extern uint8_t g_IsWindowed; // data: 0x89ED18
+extern uint8_t g_IsWindowed[1024];  // X34-L5 array retype (binary width+bound)
 extern int32_t Direction_X_Offsets; // data: 0x89F688
 extern uint32_t g_CellDirectionOffsets; // data: 0x89F690
 extern uint32_t g_DirectionOffsetPool; // data: 0x89F698

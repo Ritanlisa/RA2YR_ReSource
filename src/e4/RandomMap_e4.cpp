@@ -3209,7 +3209,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   CCFileClass v29; // [esp+54h] [ebp-ECh] BYREF
   char String[128]; // [esp+C0h] [ebp-80h] BYREF
 
-  CCFileClass::Construct(&v29, (char *)&stru_82BA00.?[1]); /*0x598205*/
+  CCFileClass::Construct(&v29, (char *)&DataGlobal_82BA00[972]); /*0x598205*/
   v2 = (INIClass *)__2_YAPAXI_Z(0x58u); /*0x59820c*/
   v3 = v2; /*0x598211*/
   if ( v2 ) /*0x598218*/
@@ -3238,14 +3238,14 @@ WeaponStruct * * RandomMap::LoadConfig()
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5982d0*/
                     (bool *)v3->vtable1,
                     off_82B134,
-                    (unsigned __int8 *)&stru_82BA00.?,
+                    (unsigned __int8 *)&DataGlobal_82BA00[952],
                     this->u32_2BC);
   v7 = this->u32_2C0; /*0x5982d5*/
   this->u32_2BC = Int_Overwrite; /*0x5982db*/
   this->u32_2C0 = INIClass::ReadInt_Overwrite( /*0x5982f7*/
                               (bool *)v3->vtable1,
                               off_82B134,
-                              (unsigned __int8 *)&stru_82BA00.?[1],
+                              (unsigned __int8 *)&DataGlobal_82BA00[932],
                               v7);
   IntList = &v24; /*0x598300*/
   DynamicVectorClass::Copy(&v24, &this->q188); /*0x598304*/
@@ -3254,7 +3254,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (unsigned __int8 *)&stru_82BA00.?[1],
+                                    (unsigned __int8 *)&DataGlobal_82BA00[908],
                                     *(void ***)v24.VectorClass,
                                     *(void **)&v24.?[3],
                                     *(int *)&v24.?[3],
@@ -3276,7 +3276,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (unsigned __int8 *)&stru_82BA00.?[1],
+                                    (unsigned __int8 *)&DataGlobal_82BA00[884],
                                     *(void ***)v24.VectorClass,
                                     *(void **)&v24.?[3],
                                     *(int *)&v24.?[3],
@@ -3320,7 +3320,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (unsigned __int8 *)&stru_82BA00.?[5],
+                                    (unsigned __int8 *)&DataGlobal_82BA00[836],
                                     *(void ***)v24.VectorClass,
                                     *(void **)&v24.?[3],
                                     *(int *)&v24.?[3],
@@ -3364,7 +3364,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (unsigned __int8 *)&stru_82BA00.?[2],
+                                    (unsigned __int8 *)&DataGlobal_82BA00[796],
                                     *(void ***)v24.VectorClass,
                                     *(void **)&v24.?[3],
                                     *(int *)&v24.?[3],
@@ -3386,7 +3386,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (unsigned __int8 *)&stru_82BA00.?[1],
+                                    (unsigned __int8 *)&DataGlobal_82BA00[772],
                                     *(void ***)v24.VectorClass,
                                     *(void **)&v24.?[3],
                                     *(int *)&v24.?[3],
@@ -3408,7 +3408,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (unsigned __int8 *)&stru_82BA00.?[1],
+                                    (unsigned __int8 *)&DataGlobal_82BA00[748],
                                     *(void ***)v24.VectorClass,
                                     *(void **)&v24.?[3],
                                     *(int *)&v24.?[3],
@@ -3430,7 +3430,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (unsigned __int8 *)&stru_82BA00.?[1],
+                                    (unsigned __int8 *)&DataGlobal_82BA00[732],
                                     *(void ***)v24.VectorClass,
                                     *(void **)&v24.?[3],
                                     *(int *)&v24.?[3],
@@ -3475,7 +3475,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (unsigned __int8 *)&stru_82BA00.?[10],
+                                    (unsigned __int8 *)&DataGlobal_82BA00[696],
                                     *(void ***)v24.VectorClass,
                                     *(void **)&v24.?[3],
                                     *(int *)&v24.?[3],
@@ -3493,9 +3493,9 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_2FC = INIClass::ReadInt_Overwrite( /*0x59877f*/
                               (bool *)v3->vtable1,
                               off_82B134,
-                              (unsigned __int8 *)&stru_82BA00.?[16],
+                              (unsigned __int8 *)&DataGlobal_82BA00[684],
                               this->u32_2FC);
-  if ( INIClass::GetString(v3, off_82B134, (unsigned __int8 *)&stru_82BA00.?, &g_INI_DefaultBuffer, String, 128) ) /*0x5987a5*/
+  if ( INIClass::GetString(v3, off_82B134, (unsigned __int8 *)&DataGlobal_82BA00[660], &g_INI_DefaultBuffer, String, 128) ) /*0x5987a5*/
   {
     TypeList::BuildingTypeConstructor((TypeList *)&v27); /*0x5987b7*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x5987d3*/
@@ -4174,7 +4174,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
   {
     ++dword_A8E7AC; /*0x599a38*/
     ScenarioClass::SetFileName((char *)dword_A8B230, &g_INI_DefaultBuffer); /*0x599a3e*/
-    if ( stru_A8EB00.?[391] ) /*0x599a49*/
+    if ( DataGlobal_A8EB00[619] ) /*0x599a49*/
       ResetScenario(); /*0x599a4b*/
     ScenarioClass::LoadMap(1, (bool *)v80.vtable1, v11); /*0x599a56*/
     PostLoadInitScenario(v67); /*0x599a5b*/
@@ -8087,7 +8087,7 @@ LABEL_9:
       if ( v8 ) /*0x5b9d72*/
         v9 = SessionClass::ParseGameInfo( /*0x5b9d8e*/
                v8,
-               &stru_82BA00.?,
+               &DataGlobal_82BA00[560],
                (wchar_t *)&g_MissionQueueFrame.briefing[386],
                v7,
                1,

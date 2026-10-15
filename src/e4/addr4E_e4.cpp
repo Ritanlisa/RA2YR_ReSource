@@ -4501,7 +4501,7 @@ int unknown_libname_13()
   stru_A8E7B0[3] = 0; /*0x661713*/
   stru_A8E7B0[4] = 0; /*0x661716*/
   memset(&stru_A8E7B0[5], 0, 0x100u); /*0x661719*/
-  Straw::Dtor(stru_A8E7B0); /*0x66171d*/
+  (stru_A8E7B0)->Dtor(); /*0x66171d*/
 }
 } // namespace gamemd
 
@@ -4566,7 +4566,7 @@ int sub_4E7DF0()
 namespace gamemd {
 int unknown_libname_14()
 {
-  ObjectTypeClass::ReleaseWaveAndString(&dword_A8ECD8); /*0x4e7e15*/
+  (&dword_A8ECD8)->ReleaseWaveAndString(); /*0x4e7e15*/
 }
 } // namespace gamemd
 
@@ -4643,7 +4643,7 @@ void sub_4E7E50()
 namespace gamemd {
 int unknown_libname_16()
 {
-  return TabClass::initStripClass(unk_A83E18);
+  return (unk_A83E18)->initStripClass();
 }
 } // namespace gamemd
 

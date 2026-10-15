@@ -1938,7 +1938,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   CCFileClass::Construct(v29, g_Str_File_coopsave_ini); /*0x49c28d*/
   v24[1] = 0; /*0x49c298*/
   v24[2] = 0; /*0x49c29c*/
-  INISectionList::Constructor(v25); /*0x49c2a0*/
+  (v25)->Constructor(); /*0x49c2a0*/
   Node::Init(v26); /*0x49c2a9*/
   v26[5] = 0; /*0x49c2bc*/
   v27 = 0; /*0x49c2c0*/

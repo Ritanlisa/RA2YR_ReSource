@@ -63,8 +63,8 @@ extern unsigned char byte_51F20C;
 extern unsigned char byte_572210;
 extern unsigned char byte_57790C;
 extern unsigned char byte_737B78;
-extern unsigned char byte_7C80F2;
-extern unsigned char byte_7C80F6;
+extern unsigned char byte_7C80F2[1];  // X34-L5 array retype (IDA gap bound)
+extern unsigned char byte_7C80F6[26];  // X34-L5 array retype (IDA gap bound)
 extern unsigned char byte_7E1BCE;
 extern unsigned char byte_7E3914;
 extern unsigned char byte_7E7B28;
@@ -901,7 +901,7 @@ extern unsigned char byte_B1D385;
 extern unsigned char byte_B1D450;
 extern unsigned char byte_B1D4AC;
 extern unsigned char byte_B1D4AD;
-extern unsigned char byte_B1D5E0;
+extern unsigned char byte_B1D5E0[1];  // X34-L5 array retype (IDA gap bound)
 extern unsigned char byte_B1D5E1;
 extern unsigned char byte_B2FE79;
 extern unsigned char byte_B45A8D;
@@ -4000,7 +4000,7 @@ extern unsigned int dword_887754;
 extern unsigned int dword_88776C;
 extern unsigned int dword_887770;
 extern unsigned int dword_8877A0;
-extern unsigned int dword_887804;
+extern unsigned int dword_887804[12];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_887840;
 extern unsigned int dword_887844;
 extern unsigned int dword_887848;
@@ -5243,7 +5243,7 @@ extern unsigned int dword_8B3F1C;
 extern unsigned int dword_8B3F20;
 extern unsigned int dword_8B3F24;
 extern unsigned int dword_8B3F30;
-extern unsigned int dword_8B3F38;
+extern unsigned int dword_8B3F38[1];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_8B3F3C;
 extern unsigned int dword_8B3F48;
 extern unsigned int dword_8B3F54;
@@ -5266,7 +5266,7 @@ extern unsigned int dword_8B4020;
 extern unsigned int dword_8B4024;
 extern unsigned int dword_8B4028;
 extern unsigned int dword_8B4038;
-extern unsigned int dword_8B4040;
+extern unsigned int dword_8B4040[1];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_8B4044;
 extern unsigned int dword_8B4050;
 extern unsigned int dword_8B405C;
@@ -5527,7 +5527,7 @@ extern unsigned int dword_A8D228;
 extern unsigned int dword_A8D22C;
 extern unsigned int dword_A8D23C;
 extern unsigned int dword_A8D24C;
-extern unsigned int dword_A8D25C;
+extern unsigned int dword_A8D25C[200];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_A8D57C;
 extern unsigned int dword_A8D580;
 extern unsigned int dword_A8D584;
@@ -6122,7 +6122,7 @@ extern unsigned int dword_AA104C;
 extern unsigned int dword_AA1050;
 extern unsigned int dword_AA1054;
 extern unsigned int dword_AA1058;
-extern unsigned int dword_AA105C;
+extern unsigned int dword_AA105C[1];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_AA1060;
 extern unsigned int dword_AA1064;
 extern unsigned int dword_AA1068;
@@ -6539,10 +6539,10 @@ extern unsigned int dword_ABC7B4;
 extern unsigned int dword_ABC7E0;
 extern unsigned int dword_ABC7E4;
 extern unsigned int dword_ABC7E8;
-extern unsigned int dword_ABC7F8;
-extern unsigned int dword_ABC7FC;
+extern unsigned int dword_ABC7F8[1];  // X34-L5 array retype (IDA gap bound)
+extern unsigned int dword_ABC7FC[1];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_ABC800;
-extern unsigned int dword_ABC804;
+extern unsigned int dword_ABC804[1];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_ABC808;
 extern unsigned int dword_ABC80C;
 extern unsigned int dword_ABC810;
@@ -6755,7 +6755,7 @@ extern unsigned int dword_ABD448;
 extern unsigned int dword_ABD44C;
 extern unsigned int dword_ABD450;
 extern unsigned int dword_ABD454;
-extern unsigned int dword_ABD460;
+extern unsigned int dword_ABD460[1];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_ABD464;
 extern unsigned int dword_ABD468;
 extern unsigned int dword_ABD46C;
@@ -9778,7 +9778,7 @@ extern unsigned int dword_B0FE80;
 extern unsigned int dword_B0FE84;
 extern unsigned int dword_B0FE88;
 extern unsigned int dword_B0FE8C;
-extern unsigned int dword_B17F24;
+extern unsigned int dword_B17F24[4097];  // X34-L5 array retype (IDA gap bound)
 extern unsigned int dword_B1CF40;
 extern unsigned int dword_B1CF44;
 extern unsigned int dword_B1CF48;
@@ -11671,7 +11671,7 @@ extern unsigned char stru_A8DBA4;
 extern unsigned char stru_A8DBB0;
 extern unsigned char stru_A8DBC0;
 extern unsigned char stru_A8E3A8;
-extern unsigned char stru_A8E7B0;
+extern unsigned char stru_A8E7B0[276];  // X34-L5 array retype (IDA gap bound)
 extern unsigned char stru_A9F9B8;
 extern unsigned char stru_AA0118;
 extern unsigned char stru_AA0398;
@@ -12681,7 +12681,7 @@ extern unsigned char unk_ABDD6A;
 extern unsigned char unk_ABDDA0;
 extern unsigned char unk_ABE050;
 extern unsigned char unk_ABE890;
-extern unsigned char unk_ABECA0;
+extern unsigned char unk_ABECA0[41];  // X34-L5 array retype (IDA gap bound)
 extern unsigned char unk_ABEED4;
 extern unsigned char unk_ABF198;
 extern unsigned char unk_ABFBE8;

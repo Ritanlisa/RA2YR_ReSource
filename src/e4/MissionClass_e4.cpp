@@ -53,7 +53,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
   BYTE1(this->q005) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                      a2,
                      (unsigned __int8 *)v5,
-                     (unsigned __int8 *)&stru_82BA00.?[6],
+                     (unsigned __int8 *)&DataGlobal_82BA00[2206],
                      BYTE1(this->?));
   if ( this->ObjectClass == (void *)-1 ) /*0x5b37f0*/
     v6 = g_Str__none_; /*0x5b37f2*/
@@ -62,7 +62,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
   BYTE2(this->q006) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                      a2,
                      (unsigned __int8 *)v6,
-                     (unsigned __int8 *)&stru_82BA00.?[3],
+                     (unsigned __int8 *)&DataGlobal_82BA00[2203],
                      BYTE2(this->?));
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3819*/
     v7 = g_Str__none_; /*0x5b381b*/
@@ -71,7 +71,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
   HIBYTE(this->q007) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
                       a2,
                       (unsigned __int8 *)v7,
-                      (unsigned __int8 *)stru_82BA00.?,
+                      (unsigned __int8 *)DataGlobal_82BA00[2200],
                       HIBYTE(this->?));
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3842*/
     v8 = g_Str__none_; /*0x5b3844*/
@@ -80,7 +80,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
   LOBYTE(this->vtable3) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                       a2,
                       (unsigned __int8 *)v8,
-                      (unsigned __int8 *)&stru_82BA00.?[30],
+                      (unsigned __int8 *)&DataGlobal_82BA00[2188],
                       (char)this->?);
   if ( this->ObjectClass == (void *)-1 ) /*0x5b386b*/
     v9 = g_Str__none_; /*0x5b386d*/
@@ -89,7 +89,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
   BYTE1(this->q009) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                      a2,
                      (unsigned __int8 *)v9,
-                     (unsigned __int8 *)&stru_82BA00.?[28],
+                     (unsigned __int8 *)&DataGlobal_82BA00[2180],
                      BYTE1(this->?));
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3894*/
     v10 = g_Str__none_; /*0x5b3896*/

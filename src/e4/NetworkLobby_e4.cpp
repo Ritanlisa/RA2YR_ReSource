@@ -445,10 +445,10 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
         }
         if ( UINT == 1175 ) /*0x5dec2b*/
         {
-          NetworkBuffer::GetField((NetworkBuffer *)&stru_A8EB00.?[252]); /*0x5dec36*/
+          NetworkBuffer::GetField((NetworkBuffer *)&DataGlobal_A8EB00[480]); /*0x5dec36*/
           v20 = Random::Range(&Randomizer_Global, 1, 0x7FFF); /*0x5dec47*/
           srand(v20); /*0x5dec4d*/
-          *(unsigned int *)&stru_A8EB00.?[432] = rand(); /*0x5dec5c*/
+          *(unsigned int *)&DataGlobal_A8EB00[660] = rand(); /*0x5dec5c*/
           ((Dialog *)hDlg)->RestoreParent(); /*0x5dec61*/
           SkirmishDialog::FillComboBoxes((SkirmishDialog *)hDlg); /*0x5dec68*/
           InitGameDropdownColors(v31); /*0x5dec6d*/
@@ -522,7 +522,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
       if ( (DlgCtrlID)->MapPlayerIDToIndex() != -1 ) /*0x5def55*/
       {
         ComboBoxSelectedDefault = (GameClass *)GetComboBoxSelectedDefault(hDlg, (int)DlgCtrlID, *(unsigned int *)(lParam + 4)); /*0x5defa8*/
-        DifficultyString = GameClass::GetDifficultyString(ComboBoxSelectedDefault); /*0x5defaf*/
+        DifficultyString = (ComboBoxSelectedDefault)->GetDifficultyString(); /*0x5defaf*/
         goto LABEL_132; /*0x5defaf*/
       }
       if ( ((CountryCombo *)DlgCtrlID)->IDToIndex() == -1 ) /*0x5def61*/

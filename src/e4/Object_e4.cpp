@@ -628,7 +628,7 @@ LABEL_20:
     v34 = this->u32_5788; /*0x5fdba9*/
     LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
     HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
-    if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, (__int16 *)&a2) ) /*0x5fdbe3*/
+    if ( (unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal((__int16 *)&a2) ) /*0x5fdbe3*/
     {
       v23 = this->q008; /*0x5fdbee*/
       v24 = (int)(this->q004); /*0x5fdbf1*/
@@ -640,7 +640,7 @@ LABEL_20:
     else
     {
       v26 = (__int16 *)((Tactical *)g_TacticalClass_Instance)->PixelToCell(&a2, &v30); /*0x5fdc21*/
-      if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, v26) ) /*0x5fdc2c*/
+      if ( (unsigned __int8)((LayerClass *)&DataGlobal_87F7E8)->CoordinatesLegal(v26) ) /*0x5fdc2c*/
       {
         v28 = (__int16 *)((Tactical *)g_TacticalClass_Instance)->PixelToCell(&a2, &v30); /*0x5fdc4a*/
         v25 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v28)); /*0x5fdc4b*/
@@ -696,10 +696,10 @@ void * Object::DrawObject(void ** Block, char a2)
   Block->? = &vt_OverlayClass; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
   v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
-  v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&stru_A8EB00.?[108] + 16))(&stru_A8EB00.?[108], &v5); /*0x5fdfaa*/
-  if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[124] ) /*0x5fdfba*/
+  v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&DataGlobal_A8EB00[336] + 16))(&DataGlobal_A8EB00[336], &v5); /*0x5fdfaa*/
+  if ( v3 != -1 && v3 < *(int *)&DataGlobal_A8EB00[352] ) /*0x5fdfba*/
   {
-    --*(unsigned int *)&stru_A8EB00.?[124]; /*0x5fdfbf*/
+    --*(unsigned int *)&DataGlobal_A8EB00[352]; /*0x5fdfbf*/
     for ( ; /*0x5fdfc5*/
           v3 < *(int *)&DataGlobal_A8EB7C;
           *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB70 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB70 + 4 * v3) )

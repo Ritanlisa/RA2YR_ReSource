@@ -88,7 +88,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   int v19; // eax
   DynamicVector v21; // [esp+2Ch] [ebp-A0h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.q020, 128) ) /*0x47710a*/
+  if ( ((INIClass *)a2)->GetString(a3, a4, &g_INI_DefaultBuffer, v21.q020, 128) ) /*0x47710a*/
   {
     ((DynamicVectorClass *)&v21)->Construct(0, 0); /*0x477121*/
     /* X11: vtable install elided (implicit via TypeList virtuals 0x47712a) */

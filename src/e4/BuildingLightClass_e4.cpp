@@ -234,7 +234,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v16 = 1.0; /*0x513e00*/
   else
     v16 = 1.1; /*0x513e08*/
-  v17 = *(unsigned int *)&stru_A8EB00.?[416] + 2 * v15; /*0x513e20*/
+  v17 = *(unsigned int *)&DataGlobal_A8EB00[644] + 2 * v15; /*0x513e20*/
   v18 = v16 * *(double *)(*(unsigned int *)&g_RulesClass_Instance + 1488) * 900.0; /*0x513e23*/
   LOWORD(v19) = Math::RoundToInt(v13); /*0x513e2b*/
   Math::SinCos((double)(v17 % v19) * 6.283185307179586 / v18); /*0x513e4f*/

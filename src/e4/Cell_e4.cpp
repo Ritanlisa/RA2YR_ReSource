@@ -1512,9 +1512,9 @@ LABEL_15:
           break; /*0x6b6018*/
       }
       v8 = v7->q038; /*0x6b601a*/
-      if ( v8 < 0 || v8 >= *(int *)&stru_A8EB00.?[340] ) /*0x6b6027*/
+      if ( v8 < 0 || v8 >= *(int *)&DataGlobal_A8EB00[568] ) /*0x6b6027*/
         v8 = 0; /*0x6b6029*/
-      if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v8) + 736) ) /*0x6b6034*/
+      if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[556] + 4 * v8) + 736) ) /*0x6b6034*/
         break; /*0x6b6034*/
       if ( ++v6 >= (int)v9->q298 ) /*0x6b6049*/
       {

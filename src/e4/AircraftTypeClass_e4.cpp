@@ -284,15 +284,15 @@ int AircraftTypeClass::PowerDrainUpdate(int * a2)
 
   v3 = (int)(BuildingTypeClass::ProcessPower((int)this, a2)); /*0x41cdb9*/
   LOBYTE(v3) = this->Rotors_d; /*0x41cdbe*/
-  Power::FlagProcess((Power *)a2, v3); /*0x41cdc7*/
+  ((Power *)a2)->FlagProcess(v3); /*0x41cdc7*/
   LOBYTE(v4) = this->CustomRotor_2; /*0x41cdcc*/
-  Power::FlagProcess((Power *)a2, v4); /*0x41cdd5*/
+  ((Power *)a2)->FlagProcess(v4); /*0x41cdd5*/
   LOBYTE(v5) = this->Landable_2; /*0x41cdda*/
-  v6 = Power::FlagProcess((Power *)a2, v5); /*0x41cde3*/
+  v6 = ((Power *)a2)->FlagProcess(v5); /*0x41cde3*/
   LOBYTE(v6) = this->AirportBound_2; /*0x41cde8*/
-  Power::FlagProcess((Power *)a2, v6); /*0x41cdf1*/
+  ((Power *)a2)->FlagProcess(v6); /*0x41cdf1*/
   LOBYTE(v7) = this->Fighter_2; /*0x41cdf6*/
-  Power::FlagProcess((Power *)a2, v7); /*0x41cdff*/
+  ((Power *)a2)->FlagProcess(v7); /*0x41cdff*/
   return Power::TimerProcess(this->ArrayIndex); /*0x41ce12*/
 
 }

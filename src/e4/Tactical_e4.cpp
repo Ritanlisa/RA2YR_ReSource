@@ -1026,8 +1026,8 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
         if ( result->q220 == 2 /*0x692575*/
           && (v32 = dword_A83D4C->relatedTagsCount,
               v27 = (unsigned int *)(*(int (**)(int, unsigned int *))(*&result->q120))(result, v37),
-              v28 = Coord::To_Cell(&dword_87F7E8, v27),
-              result = Cell::IsPassableOffset(v28, v32),
+              v28 = (&dword_87F7E8)->To_Cell(v27),
+              result = (v28)->IsPassableOffset(v32),
               !(unsigned char)result)
           || (result = (*(int (**)(int))(*&v26->q210))(v26), result->u32_C9A) )
         {
@@ -1045,8 +1045,8 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
             if ( *(unsigned char *)(v29 + 1773) == 15 /*0x6925dc*/
               && (v33 = dword_A83D4C->relatedTagsCount,
                   v30 = (unsigned int *)(*(int (**)(int, unsigned int *))(*&v26->q120))(v26, v37),
-                  v31 = Coord::To_Cell(&dword_87F7E8, v30),
-                  result = Cell::IsPassableOffset(v31, v33),
+                  v31 = (&dword_87F7E8)->To_Cell(v30),
+                  result = (v31)->IsPassableOffset(v33),
                   !(unsigned char)result)
               || *(unsigned char *)(*(unsigned int *)(v29 + 1312) + 5889) )
             {
@@ -1274,24 +1274,24 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
   int v17; // [esp+28h] [ebp-14h]
   unsigned int v18[4]; // [esp+2Ch] [ebp-10h] BYREF
 
-  if ( !stru_A8EB00.?[391] && (String && wcslen(String) || *&this->q0A4 != -1) ) /*0x6d4e52*/
+  if ( !DataGlobal_A8EB00[619] && (String && wcslen(String) || *&this->q0A4 != -1) ) /*0x6d4e52*/
   {
     if ( (*(unsigned __int8 (**)(AudioStream *))(*(unsigned int *)DSurface_Composite->__pad_0 + 132))(DSurface_Composite) ) /*0x6d4e60*/
     {
       v3 = *&this->q0A4; /*0x6d4e6e*/
       if ( v3 != -1 /*0x6d4e93*/
-        && *(unsigned int *)&stru_A8EB00.?[2996]
-        && *(unsigned int *)&stru_A8EB00.?[2992]
-        && *(__int16 *)(*(unsigned int *)&stru_A8EB00.?[2992] + 6) > v3 )
+        && *(unsigned int *)&DataGlobal_A8EB00[3224]
+        && *(unsigned int *)&DataGlobal_A8EB00[3220]
+        && *(__int16 *)(*(unsigned int *)&DataGlobal_A8EB00[3220] + 6) > v3 )
       {
-        v4 = *(unsigned int *)&g_DSurface_WindowOffset - *(__int16 *)(*(unsigned int *)&stru_A8EB00.?[2992] + 4); /*0x6d4ea0*/
-        v5 = *(unsigned int *)g_Map_VisibleRectOffset - *(__int16 *)(*(unsigned int *)&stru_A8EB00.?[2992] + 2); /*0x6d4eb1*/
+        v4 = *(unsigned int *)&g_DSurface_WindowOffset - *(__int16 *)(*(unsigned int *)&DataGlobal_A8EB00[3220] + 4); /*0x6d4ea0*/
+        v5 = *(unsigned int *)g_Map_VisibleRectOffset - *(__int16 *)(*(unsigned int *)&DataGlobal_A8EB00[3220] + 2); /*0x6d4eb1*/
         v13[1] = ((int)v4 - HIDWORD(v4)) >> 1; /*0x6d4eb9*/
         v13[0] = v5 / 2; /*0x6d4ebd*/
         DrawToSurfaceSHP( /*0x6d4ee5*/
           (int)DSurface_Composite,
-          *(int *)&stru_A8EB00.?[2996],
-          *(int *)&stru_A8EB00.?[2992],
+          *(int *)&DataGlobal_A8EB00[3224],
+          *(int *)&DataGlobal_A8EB00[3220],
           v3,
           v13,
           &DSurface_ViewBounds.field_0,
@@ -1359,7 +1359,7 @@ unsigned int Tactical::SetTacticalPosition(int *aP1, void *a2)
   v6 = v4 / 256 - ZCoordToScreenY(aP1[2]); /*0x6d6118*/
   v8 /= 256; /*0x6d611d*/
   v9 = v6; /*0x6d6121*/
-  if ( ClampCoordMap(&v8) && !stru_A8EB00.?[391] ) /*0x6d6135*/
+  if ( ClampCoordMap(&v8) && !DataGlobal_A8EB00[619] ) /*0x6d6135*/
   {
     v5 = v8; /*0x6d6137*/
     v6 = v9; /*0x6d613b*/

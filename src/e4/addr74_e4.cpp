@@ -152,7 +152,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
     while ( 1 ) /*0x7432dd*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v2->vtable1, (uint8_t *)aUnits, v4); /*0x7432dd*/
-      INIClass::GetString(v2, (uint8_t *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
+      (v2)->GetString((uint8_t *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
       v6 = strtok(String, Str); /*0x743305*/
       v7 = (v6)->FindByName(); /*0x743314*/
       if ( v7 != -1 ) /*0x743319*/
@@ -1234,7 +1234,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     if ( (unsigned __int8)FileClass::Open(&v9, 0) ) /*0x74fba4*/
     {
       FileClass::Read(&v9, &byte_A8ED0A, 16); /*0x74fbb8*/
-      for ( stru_A8EB00.?[309] = 0; /*0x74fbd9*/
+      for ( DataGlobal_A8EB00[537] = 0; /*0x74fbd9*/
             stru_A8EB00.?[strlen(&stru_A8EB00.?[294]) + 293] == 13;
             stru_A8EB00.?[strlen(&stru_A8EB00.?[294]) + 293] = 0 )
       {
@@ -1243,7 +1243,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     }
     else
     {
-      stru_A8EB00.?[294] = 0; /*0x74fc07*/
+      DataGlobal_A8EB00[522] = 0; /*0x74fc07*/
     }
     (&v9)->Dtor(); /*0x74fc11*/
     v5 = *(unsigned int *)&DataGlobal_A8EC40; /*0x74fc16*/

@@ -1275,7 +1275,7 @@ void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, in
     v24 = v16; /*0x76fe83*/
     ((Team *)(a5))->ReleaseAll((int)&v21); /*0x76fe87*/
     DSurface::Flip2(); /*0x76fe8e*/
-    GameClass::FrameLoop(a5, 1); /*0x76fe97*/
+    (a5)->FrameLoop(1); /*0x76fe97*/
   }
 }
 }

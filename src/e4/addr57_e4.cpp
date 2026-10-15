@@ -919,7 +919,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
     }
     goto LABEL_32; /*0x57b5d6*/
   }
-  if ( !Cell::IsEmpty(v14) ) /*0x57b6bf*/
+  if ( !(v14)->IsEmpty() ) /*0x57b6bf*/
   {
     if ( v18 != -1 ) /*0x57b6d9*/
       goto LABEL_58; /*0x57b6d9*/

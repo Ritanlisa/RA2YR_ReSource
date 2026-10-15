@@ -575,16 +575,16 @@ int AITriggerTypeClass::ProcessPower(int * a2)
   ((Checksummer *)a2)->Add_double(this->q0C0, this->q0C4); /*0x41e687*/
   ((Checksummer *)a2)->Add_double(this->q0C8, this->alignmentPadding); /*0x41e69c*/
   (*((unsigned char *)&(v3))) = this->q0D0; /*0x41e6a1*/
-  Power::FlagProcess((Power *)a2, v3); /*0x41e6aa*/
+  ((Power *)a2)->FlagProcess(v3); /*0x41e6aa*/
   (*((unsigned char *)&(v4))) = this->u8_D2; /*0x41e6af*/
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x41e6b8*/
+  v5 = ((Power *)a2)->FlagProcess(v4); /*0x41e6b8*/
   (*((unsigned char *)&(v5))) = this->u8_D3; /*0x41e6bd*/
-  Power::FlagProcess((Power *)a2, v5); /*0x41e6c6*/
+  ((Power *)a2)->FlagProcess(v5); /*0x41e6c6*/
   (*((unsigned char *)&(v6))) = this->u8_D4; /*0x41e6cb*/
-  Power::FlagProcess((Power *)a2, v6); /*0x41e6d4*/
+  ((Power *)a2)->FlagProcess(v6); /*0x41e6d4*/
   v7 = Power::TimerProcess(this->q0AC); /*0x41e6e2*/
   (*((unsigned char *)&(v7))) = this->u8_D1; /*0x41e6e7*/
-  return Power::FlagProcess((Power *)a2, v7); /*0x41e6f5*/
+  return ((Power *)a2)->FlagProcess(v7); /*0x41e6f5*/
 }
 // 0x41eaf0
 bool AITriggerTypeClass::EnemyHouseOwns(int a2, unsigned int * a3)

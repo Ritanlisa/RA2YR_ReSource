@@ -60,9 +60,9 @@ DETAIL = '--detail' in sys.argv
 
 ERR_RE = re.compile(
     r'^(?P<file>.+?)\((?P<line>\d+),(?P<col>\d+)\)\s*:\s*(?:fatal )?error\s+'
-    r'(?P<code>C2660|C2352)\s*:\s*(?P<msg>.*?)(?:\s*\[[^\]]*\])?\s*$')
+    r'(?P<code>C2660|C2352|C2661)\s*:\s*(?P<msg>.*?)(?:\s*\[[^\]]*\])?\s*$')
 QNAME_RE = re.compile(r'[\u201c"]((?:[A-Za-z_]\w*::)+[~A-Za-z_]\w*)[\u201d"]')
-ARITY_RE = re.compile(r'\u4e0d\u63a5\u53d7\s*(\d+)\s*\u4e2a\u53c2\u6570')
+ARITY_RE = re.compile(r'\u63a5\u53d7\s*(\d+)\s*\u4e2a\u53c2\u6570')
 
 IDENT_AT = re.compile(r'~?[A-Za-z_]\w*')
 QUAL_BEFORE = re.compile(r'(?:[A-Za-z_]\w*::)+$')
@@ -380,7 +380,7 @@ def parse_log(log_path):
             continue
         cls, meth = parts
         arity = None
-        if m.group('code') == 'C2660':
+        if m.group('code') in ('C2660', 'C2661'):
             am = ARITY_RE.search(m.group('msg'))
             if not am:
                 continue
@@ -428,7 +428,11 @@ def plan_sites(sites, census):
                 stats['empty-arg0'] += 1
                 continue
             n_args = len(args)
-            if r['code'] == 'C2660':
+            if r['code'] in ('C2660', 'C2661'):
+                # I276: C2661 ("no overload accepts N args") is the same
+                # RF-form rewrite face as C2660 -- message N = actual arg
+                # count; a non-static decl with N-1 params makes the
+                # receiver-first form viable (L312/L324).
                 if r['msg_arity'] != n_args:
                     stats['arity-msg-mismatch'] += 1
                     continue

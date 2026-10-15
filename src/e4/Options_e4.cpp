@@ -310,7 +310,7 @@ AbstractClass * * Options::Screen_Save(void *a1)
     if ( stru_A8EB00.ObjectTypeClass[30] != v3 ) /*0x55fad9*/
     {
       stru_A8EB00.ObjectTypeClass[30] = v3; /*0x55fae0*/
-      TacticalClass::Initialize((TacticalClass *)&DataGlobal_87F7E8); /*0x55fae5*/
+      ((TacticalClass *)&DataGlobal_87F7E8)->Initialize(); /*0x55fae5*/
     }
   }
   v4 = GetDlgItem((HWND)this, 1295); /*0x55faf0*/

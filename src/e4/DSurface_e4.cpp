@@ -564,7 +564,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   {
     v42 = 1; /*0x4bb1fa*/
   }
-  if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb20f*/
+  if ( !g_DDraw_Initialized && !DataGlobal_A8EB00[640] ) /*0x4bb20f*/
     return 0; /*0x4bb20f*/
   v14 = this->DSurface_field_0x1C; /*0x4bb215*/
   if ( v14 && (*(int (**)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C) == -2005532222 ) /*0x4bb227*/
@@ -769,7 +769,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
     {
       return ((XSurface *)this)->FillRectEx((unsigned int *)a2, (int *)a3, a4); /*0x4bb81d*/
     }
-    if ( g_DDraw_Initialized || stru_A8EB00.?[412] ) /*0x4bb690*/
+    if ( g_DDraw_Initialized || DataGlobal_A8EB00[640] ) /*0x4bb690*/
     {
       v5 = this->DSurface_field_0x1C; /*0x4bb696*/
       if ( !v5 || (*(int (**)(int))(*(unsigned int *)v5 + 96))(this->DSurface_field_0x1C) != -2005532222 ) /*0x4bb6a8*/
