@@ -90,7 +90,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
       v12 = 0; /*0x49cbbd*/
       do /*0x49cc26*/
       {
-        v10 = Random::Range(&dword_A8B230->u32_218, 0, 2); /*0x49cbde*/
+        v10 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x49cbde*/
         *(unsigned int *)(this->u32_3C + 4 * v9) = (unsigned int)(__2_YAPAXI_Z(0x104u)); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
           *(char **)(this->u32_3C + 4 * v9++),

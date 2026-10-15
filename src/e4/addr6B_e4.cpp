@@ -4347,8 +4347,8 @@ void WinMain_Setup()
   v18 = dword_A8B230; /*0x6beac3*/
   if ( dword_A8B230 ) /*0x6beacc*/
   {
-    v19 = (void *)dword_A8B230->ionRed; /*0x6bead2*/
-    dword_A8B230->ionAmbient = &vt_VectorClass; /*0x6beadf*/
+    v19 = (void *)dword_A8B230[377].vfptr3; /*0x6bead2*/
+    dword_A8B230[377].vfptr2 = &vt_VectorClass; /*0x6beadf*/
     if ( v19 && v18->u32_3519 ) /*0x6beae7*/
     {
       operator delete((void *)(v19)); /*0x6beaf0*/
@@ -4375,7 +4375,7 @@ void WinMain_Setup()
     v18->u32_34E1 = 0; /*0x6beb69*/
     v18->allowableUnitMaximums = 0; /*0x6beb6f*/
     operator delete((void *)(v18)); /*0x6beb75*/
-    dword_A8B230 = 0; /*0x6beb7d*/
+    dword_A8B230[0].vfptr = 0; /*0x6beb7d [X36-A8B230 same-bytes: mov dword_A8B230,ebx]*/
   }
   for ( j = 0; j < dword_B0BC98; ++j ) /*0x6beb8c*/
     CoRevokeClassObject(*((unsigned int *)dword_B0BC8C + j)); /*0x6beb9e*/

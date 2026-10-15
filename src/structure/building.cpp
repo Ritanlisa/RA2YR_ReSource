@@ -2768,7 +2768,7 @@ int BuildingClass::UpdateConstruction()
             v205 = ((v205) & 0xFFFFu) | (((unsigned int)(v7) & 0xFFFFu) << 16); /*0x443e3c*/
             v198 = 0; /*0x443e45*/
             v204 = v205; /*0x443e46*/
-            p_NeedsSaveOrLink = &dword_A8B230->q038.NeedsSaveOrLink; /*0x443e4a*/
+            p_NeedsSaveOrLink = &dword_A8B230[1].abstractFlags.NeedsSaveOrLink; /*0x443e4a*/
           }
           else
           {
@@ -2779,7 +2779,7 @@ int BuildingClass::UpdateConstruction()
             v205 = ((v205) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)&DataGlobal_87F8EC + v205 - 1) & 0xFFFFu); /*0x443e04*/
             v205 = ((v205) & 0xFFFFu) | (((unsigned int)(v7 - *(unsigned short *)&DataGlobal_87F8EC) & 0xFFFFu) << 16); /*0x443e09*/
             v204 = v205; /*0x443e18*/
-            p_NeedsSaveOrLink = &dword_A8B230->q038.NeedsSaveOrLink; /*0x443e21*/
+            p_NeedsSaveOrLink = &dword_A8B230[1].abstractFlags.NeedsSaveOrLink; /*0x443e21*/
             v199 = *(unsigned int *)&DataGlobal_87F8F0; /*0x443e27*/
             v198 = 0; /*0x443e28*/
           }

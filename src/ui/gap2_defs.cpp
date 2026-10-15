@@ -4670,7 +4670,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
   if ( v4 ) /*0x6a8b55*/
   {
     v5 = 26; /*0x6a8b66*/
-    if ( dword_A8B230->playerSideIndex ) /*0x6a8b60*/
+    if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a8b60*/
       v5 = 18; /*0x6a8b6f*/
     v6 = this->u32_54; /*0x6a8b9f*/
     v7 = (g_DSurface_ViewBounds - v5 - g_SidebarBounds + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8bad*/

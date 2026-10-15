@@ -2189,7 +2189,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     {
       if ( DlgCtrlID != 1835 ) /*0x6086e1*/
         return 0; /*0x6086e1*/
-      v7 = dword_A8B230->playerSideIndex; /*0x6086f8*/
+      v7 = dword_A8B230[374].NeedsSaveOrLink; /*0x6086f8*/
       if ( g_DisplayWidth >= 800 ) /*0x608700*/
       {
         if ( v7 ) /*0x608704*/
@@ -2215,7 +2215,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     {
       if ( DlgCtrlID != 1835 ) /*0x608741*/
         return 0; /*0x608741*/
-      v8 = dword_A8B230->playerSideIndex; /*0x608753*/
+      v8 = dword_A8B230[374].NeedsSaveOrLink; /*0x608753*/
       if ( g_DisplayWidth >= 800 ) /*0x608761*/
       {
         if ( v8 ) /*0x608765*/

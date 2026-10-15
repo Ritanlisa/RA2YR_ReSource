@@ -14188,7 +14188,7 @@ int TechnoClass::HandleCursor()
   {
     return 0; /*0x700743*/
   }
-  if ( ((int)dword_A8B230->vfptr & 0x1000) == 0 ) /*0x70075c*/
+  if ( ((int)dword_A8B230[0].vfptr & 0x1000) == 0 ) /*0x70075c*/
     goto LABEL_38; /*0x70075c*/
   if ( !a3 ) /*0x700768*/
     goto LABEL_38; /*0x700768*/
@@ -17770,7 +17770,7 @@ int TechnoClass::ShouldScanArea() const
   v16 = this->location[2]; /*0x70d330*/
   if ( !(uint8_t)Cell::IsPassable(&v14) || (v11 = 1, !g_hWnd) ) /*0x70d349*/
     v11 = 0; /*0x70d34b*/
-  if ( ((int)dword_A8B230->vfptr & 0x1000) != 0 /*0x70d37b*/
+  if ( ((int)dword_A8B230[0].vfptr & 0x1000) != 0 /*0x70d37b*/
     && (v7 = this->location[1],
         v8 = this->location[2],
         v14 = this->location[0],
@@ -19534,7 +19534,7 @@ int TechnoClass::GetInfantryCursorAction() const
   v9 = -1; /*0x74052e*/
   if ( a3 ) /*0x740533*/
   {
-    if ( ((int)dword_A8B230->vfptr & 0x1000) != 0 ) /*0x740540*/
+    if ( ((int)dword_A8B230[0].vfptr & 0x1000) != 0 ) /*0x740540*/
     {
       v10 = v7->u32_28; /*0x740542*/
       if ( v10 ) /*0x740547*/

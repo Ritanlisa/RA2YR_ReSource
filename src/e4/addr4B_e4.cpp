@@ -337,7 +337,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
       }
       v3 = v4; /*0x4b6a3b*/
       if ( v4 == -1 /*0x4b6a53*/
-        || *(dword_A8B230->u32_5E4.vtable3 + v4) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v4) )
+        || *(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v4) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v4) )
       {
         goto LABEL_11; /*0x4b6a53*/
       }
@@ -349,7 +349,7 @@ LABEL_11:
   *(&this->? + this->?++) = a2; /*0x4b6a55*/
   this->owningHouseIndex += (*(int (**)(int))(*(unsigned int *)a2 + 172))(a2); /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
-    ++*(dword_A8B230->u32_5E4.vtable3 + v3); /*0x4b6a8b*/
+    ++*(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
 
 }
@@ -384,7 +384,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
           goto LABEL_12; /*0x4b6b10*/
       }
       if ( v5 != -1 ) /*0x4b6b17*/
-        --*(dword_A8B230->u32_5E4.vtable3 + v5); /*0x4b6b22*/
+        --*(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v5); /*0x4b6b22*/
     }
   }
 LABEL_12:

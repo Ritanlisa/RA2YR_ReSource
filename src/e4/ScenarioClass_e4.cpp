@@ -117,7 +117,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
         *(void **)v2->numberStartingPoints + v4) = v7; /*0x58bba2*/
         ++v3; /*0x58bbab*/
         v6 += 4; /*0x58bbac*/
-        *(void **)dword_A8B230->numberStartingPoints + v4) = v8; /*0x58bbaf*/
+        *(void **)dword_A8B230[122].abstractFlags + v4) = v8; /*0x58bbaf*/
         v4 += 8; /*0x58bbbd*/
         *(unsigned int *)((char *)dword_A8B230 + v6 - 4) = *(unsigned int *)&g_MissionQueueFrame.waypoints[v6 + 1302]; /*0x58bbc0*/
         v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x58bbc4*/
@@ -2288,9 +2288,9 @@ char ScenarioClass::ClearFlag()
 {
   void *vtable0; // ecx
 
-  vtable0 = dword_A8B230->vfptr; /*0x5d6795*/
-  (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230->vfptr >> 8) & 0xFB; /*0x5d6797*/
-  dword_A8B230->vfptr = vtable0; /*0x5d679a*/
+  vtable0 = dword_A8B230[0].vfptr; /*0x5d6795*/
+  (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].vfptr >> 8) & 0xFB; /*0x5d6797*/
+  dword_A8B230[0].vfptr = vtable0; /*0x5d679a*/
   return 1; /*0x5d679e*/
 }
 } // namespace gamemd

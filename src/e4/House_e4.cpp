@@ -1329,7 +1329,7 @@ unsigned int * sub_72F350()
   LoadingScreen::FreeResources2(); /*0x72f35a*/
   byte_B0FC0C = 0; /*0x72f35f*/
   LoadingScreen::LoadSHPs(); /*0x72f366*/
-  if ( dword_A8B230->playerSideIndex == 2 ) /*0x72f377*/
+  if ( dword_A8B230[374].NeedsSaveOrLink == 2 ) /*0x72f377*/
   {
     LoadPaletteSimple(off_844BF8, &dword_B0FBEC, &dword_B0FBF0); /*0x72f389*/
     LoadPaletteSimple(off_844BFC[0], &dword_B0FBF4, &dword_B0FBF8); /*0x72f39e*/

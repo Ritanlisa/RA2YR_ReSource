@@ -5459,7 +5459,24 @@ extern unsigned int dword_A8B21C;
 extern unsigned int dword_A8B220;
 extern unsigned int dword_A8B228;
 extern unsigned int dword_A8B22C;
-extern unsigned int dword_A8B230;
+// [X36-A8B230] binary-verified 36B elem struct (IDA til AbstractClass,
+// stride two-point solve L338; offsets confirmed by 9 independent
+// disp-36*idx solves 2026-10-16). Union vocab: bodies spell the head slots
+// both vfptr/vfptr1-3 (til) and vtable0-3 (corpus).
+struct AbstractElem {
+    union { unsigned int vfptr; unsigned int vtable0; };  // 0x0
+    union { unsigned int vfptr1; unsigned int vtable1; };  // 0x4
+    union { unsigned int vfptr2; unsigned int vtable2; };  // 0x8
+    union { unsigned int vfptr3; unsigned int vtable3; };  // 0xC
+    unsigned int uniqueId;  // 0x10
+    unsigned int abstractFlags;  // 0x14
+    unsigned int nextArrayIndex;  // 0x18
+    int referenceCount;  // 0x1C
+    unsigned int NeedsSaveOrLink;  // 0x20
+};
+static_assert(sizeof(AbstractElem) == 36, "A8B230 elem stride must be 36B");
+
+extern AbstractElem dword_A8B230[435];  // [X36-A8B230] was unsigned int; array of 36B elems, bound=next obj 0xA8E960
 extern unsigned int dword_A8B238;
 extern unsigned int dword_A8B23C;
 extern unsigned int dword_A8B244;

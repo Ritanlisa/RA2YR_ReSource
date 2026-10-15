@@ -1814,7 +1814,7 @@ Coord * * JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
         v30 = location[1]; /*0x54b0ac*/
         v31 = location[2]; /*0x54b0bd*/
         if ( (uint8_t)Cell::IsPassable(&v29) /*0x54b0fe*/
-          || ((int)dword_A8B230->vfptr & 0x1000) != 0
+          || ((int)dword_A8B230[0].vfptr & 0x1000) != 0
           && (v21 = a1->Owner->location,
               v29 = *v21,
               v30 = v21[1],

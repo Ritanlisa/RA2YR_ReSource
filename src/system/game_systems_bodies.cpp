@@ -4043,7 +4043,7 @@ void LoadScreen::RenderLoop()
           }
           if ( v70 >= 8 /*0x4b77e3*/
             || v72 == -1
-            || *(dword_A8B230->u32_5E4.vtable3 + v72) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v72) )
+            || *(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v72) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v72) )
           {
             StreamClass::WriteBytes( /*0x4b7853*/
               *(StreamClass **)&g_VisibleSurfaceDescriptor,
@@ -4111,7 +4111,7 @@ void LoadScreen::RenderLoop()
           v81 = (*(int (**)(int))(*(unsigned int *)v77 + 172))(v77); /*0x4b794e*/
           if ( v318 - v81 >= 0 /*0x4b7981*/
             && (v80 == -1
-             || *(dword_A8B230->u32_5E4.vtable3 + v80) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v80)) )
+             || *(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v80) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v80)) )
           {
             v82 = *(unsigned int *)Block[v309 + 10]; /*0x4b799b*/
             v83 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v77 + 152))(v77, 0, 0); /*0x4b799d*/
@@ -4189,7 +4189,7 @@ void LoadScreen::RenderLoop()
               *((unsigned int *)v312 + v97) = v89; /*0x4b7b74*/
             }
             if ( v80 != -1 ) /*0x4b7b7e*/
-              ++*(dword_A8B230->u32_5E4.vtable3 + v80); /*0x4b7b93*/
+              ++*(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v80); /*0x4b7b93*/
             if ( v323.Count < v323.Capacity /*0x4b7bd4*/
               || (v323.IsAllocated || !v323.Capacity)
               && v323.CapacityIncrement > 0
@@ -4230,7 +4230,7 @@ void LoadScreen::RenderLoop()
                 v103 = 0; /*0x4b7c9e*/
               }
               if ( v80 != -1 /*0x4b7cbe*/
-                && *(dword_A8B230->u32_5E4.vtable3 + v80) >= *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v80) )
+                && *(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v80) >= *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v80) )
               {
                 v295 = 1; /*0x4b7cc0*/
                 *(unsigned char *)(v103 + 16) = 1; /*0x4b7cc5*/
@@ -4300,7 +4300,7 @@ void LoadScreen::RenderLoop()
               goto LABEL_182; /*0x4b7e0c*/
           }
           if ( v112 == -1 /*0x4b7eca*/
-            || *(dword_A8B230->u32_5E4.vtable3 + v112) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v112) )
+            || *(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v112) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v112) )
           {
   LABEL_182:
             StreamClass::WriteBytes( /*0x4b7e0e*/
@@ -4366,7 +4366,7 @@ void LoadScreen::RenderLoop()
               }
               if ( v117 != -1 ) /*0x4b7f6c*/
               {
-                if ( *(dword_A8B230->u32_5E4.vtable3 + v117) >= *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b7f86*/
+                if ( *(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v117) >= *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b7f86*/
                                                                                 + 4 * v117) )
                 {
                   v119 = 0; /*0x4b7f93*/
@@ -5089,7 +5089,7 @@ void LoadScreen::RenderLoop()
   LABEL_364:
         (v326[1]) = ((v326[1]) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x4b90f3*/
       else
-        (v326[1]) = ((v326[1]) & ~0xFF) | ((unsigned int)(*(dword_A8B230->u32_5E4.vtable3 + v214) < *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b914a*/
+        (v326[1]) = ((v326[1]) & ~0xFF) | ((unsigned int)(*(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v214) < *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b914a*/
                                                                                     + 4 * v214)) & 0xFF);
       if ( v207 == v340 && !v295 ) /*0x4b910a*/
       {
@@ -5173,7 +5173,7 @@ void LoadScreen::RenderLoop()
             ++*((unsigned int *)v221 + 4); /*0x4b9335*/
             *((unsigned int *)v221 + 10) += (*(int (**)(int))(*(unsigned int *)v219 + 172))(v219); /*0x4b9348*/
             if ( v224 != -1 ) /*0x4b934b*/
-              ++*(dword_A8B230->u32_5E4.vtable3 + v224); /*0x4b935f*/
+              ++*(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v224); /*0x4b935f*/
           }
           v212 = dword_A8B230; /*0x4b9361*/
           goto LABEL_396; /*0x4b9361*/
@@ -7076,7 +7076,7 @@ void SkirmishMapGen::DlgProc()
       EnableWindow(DlgItem, byte_A8ED6B == 0); /*0x596ba6*/
       if ( dword_ABE04C == -1 ) /*0x596baf*/
       {
-        dword_ABE04C = Random::Range(&dword_A8B230->u32_218, 0, 0xFFFF); /*0x596bc8*/
+        dword_ABE04C = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, 0xFFFF); /*0x596bc8*/
         byte_ABE2D8 = 1; /*0x596bcd*/
       }
       byte_82B030 = 1; /*0x596bda*/
@@ -7240,9 +7240,9 @@ void SkirmishMapGen::DlgProc()
           dword_ABECD0 = 0; /*0x596496*/
           if ( dword_A8B230 ) /*0x59649c*/
           {
-            dword_A8B230->numberStartingPoints = 0; /*0x5964a2*/
+            dword_A8B230[122].abstractFlags = 0; /*0x5964a2*/
             v11 = dword_A8B230; /*0x5964a8*/
-            if ( dword_A8B230->numberStartingPoints > 0 ) /*0x5964b4*/
+            if ( dword_A8B230[122].abstractFlags > 0 ) /*0x5964b4*/
             {
               v12 = 1104; /*0x5964b6*/
               v13 = 1136; /*0x5964c0*/
@@ -7265,14 +7265,14 @@ void SkirmishMapGen::DlgProc()
                 v12 += 2; /*0x596513*/
                 *(unsigned int *)((char *)dword_A8B230 + v13 * 4 - 4) = dword_ABE304[v13 - 1137]; /*0x59651a*/
                 v11 = dword_A8B230; /*0x59651e*/
-                if ( v10 >= dword_A8B230->numberStartingPoints ) /*0x59652a*/
+                if ( v10 >= dword_A8B230[122].abstractFlags ) /*0x59652a*/
                   break; /*0x59652a*/
               }
             }
             v11->startX = dword_ABDFD4; /*0x596531*/
-            dword_A8B230->startY = dword_ABDFD0; /*0x596543*/
-            dword_A8B230->width = dword_ABEC90; /*0x596554*/
-            dword_A8B230->height = dword_ABECD0; /*0x596565*/
+            dword_A8B230[122].vfptr2 = dword_ABDFD0; /*0x596543*/
+            dword_A8B230[122].vfptr3 = dword_ABEC90; /*0x596554*/
+            dword_A8B230[122].uniqueId = dword_ABECD0; /*0x596565*/
           }
           v17 = GetDlgItem(hWnd, 1029); /*0x596579*/
           EnableWindow(v17, 0); /*0x596582*/

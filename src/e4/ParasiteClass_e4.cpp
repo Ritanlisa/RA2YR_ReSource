@@ -940,10 +940,10 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   {
     v2 = 0; /*0x62bdab*/
     v3 = 0; /*0x62bdad*/
-    if ( (abs32(Random::State(&dword_A8B230->u32_218)) & 1) != 0 ) /*0x62bdc1*/
-      v3 = (int)abs32(Random::State(&dword_A8B230->u32_218)) % 3 - 1; /*0x62be05*/
+    if ( (abs32(Random::State(&dword_A8B230[14].NeedsSaveOrLink)) & 1) != 0 ) /*0x62bdc1*/
+      v3 = (int)abs32(Random::State(&dword_A8B230[14].NeedsSaveOrLink)) % 3 - 1; /*0x62be05*/
     else
-      v2 = (int)abs32(Random::State(&dword_A8B230->u32_218)) % 3 - 1; /*0x62bde2*/
+      v2 = (int)abs32(Random::State(&dword_A8B230[14].NeedsSaveOrLink)) % 3 - 1; /*0x62bde2*/
     v4 = v2 + *((unsigned int *)a1 + 48); /*0x62be11*/
     v5 = v3 + *((unsigned int *)a1 + 49); /*0x62be1b*/
     *((unsigned int *)a1 + 48) = v4; /*0x62be1f*/

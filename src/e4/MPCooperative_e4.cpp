@@ -1604,7 +1604,7 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   }
   if ( v4 >= v6 ) /*0x5c2d53*/
   {
-    result = dword_A8B230->numCoopHumanStartSpots; /*0x5c2d96*/
+    result = dword_A8B230[127].vfptr2; /*0x5c2d96*/
     if ( *(unsigned char *)(result + a3) ) /*0x5c2d9c*/
     {
       do /*0x5c2db4*/
@@ -1619,9 +1619,9 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   }
   else
   {
-    for ( result = Random::Range((unsigned int *)dword_A8B230 + 134, 0, dword_A8B230->numCoopHumanStartSpots - 1); /*0x5c2d70*/
+    for ( result = Random::Range((unsigned int *)dword_A8B230 + 134, 0, dword_A8B230[127].vfptr2 - 1); /*0x5c2d70*/
           *(unsigned char *)(result + a3);
-          result = (result + 1) % dword_A8B230->numCoopHumanStartSpots )
+          result = (result + 1) % dword_A8B230[127].vfptr2 )
     {
       ; /*0x5c2d86*/
     }

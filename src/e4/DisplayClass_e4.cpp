@@ -366,7 +366,7 @@ LABEL_36:
   }
   if ( v30 ) /*0x4a9c55*/
     CellClass::SpiralFindClosest((int)v5, aP2, v39); /*0x4a9c67*/
-  if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x4a9c88*/
+  if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230[0].vtable0 & 0x1000) != 0 ) /*0x4a9c88*/
     CellClass::UpdateZone(v5); /*0x4a9c8c*/
   return v30; /*0x4a9c91*/
 
@@ -480,7 +480,7 @@ LABEL_13:
   }
   if ( v29 ) /*0x4a9fff*/
     CellClass::SpiralFindClosest((int)v5, aP2, v28); /*0x4aa011*/
-  if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x4aa032*/
+  if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230[0].vtable0 & 0x1000) != 0 ) /*0x4aa032*/
     CellClass::UpdateZone(v5); /*0x4aa036*/
   return v29; /*0x4aa03b*/
 

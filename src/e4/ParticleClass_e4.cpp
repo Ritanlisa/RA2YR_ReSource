@@ -69,7 +69,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
     {
       if ( byte_A8ED6B /*0x62cf58*/
         || !g_hWnd
-        || ((int)dword_A8B230->vtable0 & 0x1000) == 0
+        || ((int)dword_A8B230[0].vtable0 & 0x1000) == 0
         || (v29 = *&this->Coord_9C,
             v30 = *&this->u32_A0,
             v31 = *&this->u32_A4,

@@ -2007,7 +2007,7 @@ void sub_5C9720(int a1, int a2, int a3)
   int v4; // [esp+4h] [ebp-Ch]
   int64_t v5; // [esp+8h] [ebp-8h]
 
-  Game::LoadMultiplayerScoreAssets(dword_A8B230->playerSideIndex); /*0x5c972e*/
+  Game::LoadMultiplayerScoreAssets(dword_A8B230[374].NeedsSaveOrLink); /*0x5c972e*/
   v5 = *(unsigned long long *)&g_DisplayWidth; /*0x5c973f*/
   v3 = 0; /*0x5c9751*/
   v4 = 0; /*0x5c9759*/
@@ -2251,7 +2251,7 @@ void sub_6C8E80(int a1, int a2, int a3)
   int v4; // [esp+4h] [ebp-Ch]
   int64_t v5; // [esp+8h] [ebp-8h]
 
-  CampaignScore::LoadCampaignScoreAssetsGame(dword_A8B230->playerSideIndex); /*0x6c8e8e*/
+  CampaignScore::LoadCampaignScoreAssetsGame(dword_A8B230[374].NeedsSaveOrLink); /*0x6c8e8e*/
   v5 = *(unsigned long long *)&g_DisplayWidth; /*0x6c8e9f*/
   v3 = 0; /*0x6c8eb1*/
   v4 = 0; /*0x6c8eb9*/

@@ -785,7 +785,7 @@ void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
   float v34[12]; // [esp+A0h] [ebp-30h] BYREF
 
   _ESI = this; /*0x4680a3*/
-  if ( ((int)dword_A8B230->vfptr & 0x1000) == 0 /*0x4680d5*/
+  if ( ((int)dword_A8B230[0].vfptr & 0x1000) == 0 /*0x4680d5*/
     || (v27 = *&this->Coord_9C,
         v28 = *&this->q0A0,
         v29 = *&this->q0A4,
@@ -6528,7 +6528,7 @@ int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
   v13 = this->TargetCoords; /*0x62e579*/
   if ( v12 < a3 ) /*0x62e581*/
     v7 = v12; /*0x62e583*/
-  v14 = (int)abs32(Random::State(&dword_A8B230->u32_218)) % v7; /*0x62e59b*/
+  v14 = (int)abs32(Random::State(&dword_A8B230[14].NeedsSaveOrLink)) % v7; /*0x62e59b*/
   v15 = v12 - 2; /*0x62e59d*/
   v16 = v12 - v14; /*0x62e5a0*/
   if ( v15 > v16 - 2 ) /*0x62e5a7*/
@@ -9146,7 +9146,7 @@ int WaveClass::UpdateWavePosition() {
 // 0x75F9F0
 namespace gamemd {
 void WaveClass::ProcessWaveCollision(void* a1, void* a2) {
-  if ( ((int)dword_A8B230->vfptr & 0x1000) == 0 /*0x75fa20*/
+  if ( ((int)dword_A8B230[0].vfptr & 0x1000) == 0 /*0x75fa20*/
     || !(uint8_t)Game::Stub3((int)this->someCoords)
     || !(uint8_t)Game::Stub3((int)&this->WaveClass_field_C0) )
   {

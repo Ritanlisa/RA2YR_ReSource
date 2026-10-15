@@ -1111,7 +1111,7 @@ int FootClass::DrawPlacementPreview() {
               v117 = v6->locationZ; /*0x43db7b*/
               if ( !g_hWnd /*0x43dbd1*/
                 || ((unsigned int *)&stru_A8EB00)[391]
-                || ((int)dword_A8B230->vtable1 & 0x1000) == 0
+                || ((int)dword_A8B230[0].vtable1 & 0x1000) == 0
                 || (v9 = v6->locationY,
                     v108 = v6[39],
                     v10 = v6->locationZ,
@@ -2178,7 +2178,7 @@ int ObjectClass::UpdateTiberiumGrowth(int a1) {
   v7 = *(unsigned int **)&dword_B0F4EC->vfptr[4 * BuildingByTiberiumType]; /*0x48190c*/
   v15 = v7[46]; /*0x481915*/
   if ( a1 ) /*0x48191f*/
-    this->deployAnim = Random::Range(&dword_A8B230->u32_218, v7[56], v7[56] + 700 * v7[58] - 700); /*0x481955*/
+    this->deployAnim = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, v7[56], v7[56] + 700 * v7[58] - 700); /*0x481955*/
   v8 = 0; /*0x481958*/
   v9 = 1; /*0x48195a*/
   do /*0x4819bc*/
@@ -9375,7 +9375,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
   }
   if ( (uint8_t)LightningStorm::IsActive() ) /*0x73d00e*/
   {
-    uniqueId = dword_A8B230->u32_5EC.uniqueId; /*0x73d01c*/
+    uniqueId = dword_A8B230[42].vfptr1.uniqueId; /*0x73d01c*/
   }
   else if ( (uint8_t)PsyDom::IsActive() ) /*0x73d024*/
   {
@@ -9387,7 +9387,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
   }
   else
   {
-    uniqueId = dword_A8B230->u32_5E8.referenceCount; /*0x73d057*/
+    uniqueId = dword_A8B230[42].vfptr.referenceCount; /*0x73d057*/
   }
   v16 = (TechnoClass *)(*((int16_t *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v38) /*0x73d073*/
                         + 133)

@@ -165,7 +165,7 @@ void * * LoadingScreen::LoadSHPs()
   char *v1; // ecx
   void *result; // eax
 
-  if ( dword_A8B230->playerSideIndex == 2 ) /*0x72fa21*/
+  if ( dword_A8B230[374].NeedsSaveOrLink == 2 ) /*0x72fa21*/
   {
     dword_B0FA68 = (unsigned int)(LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5)); /*0x72fa39*/
     dword_B0FAC8 = (unsigned int)(LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1)); /*0x72fa4e*/

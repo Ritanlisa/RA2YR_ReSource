@@ -163,7 +163,7 @@ int Network_SendTimestamp(int a1, int a2, int a3, int a4)
   float v11; // [esp+Ch] [ebp-8h]
 
   v4 = a1; /*0x489184*/
-  if ( !a1 || (dword_A8B230->vfptr & 0x20) != 0 || !a2 ) /*0x4891a5*/
+  if ( !a1 || (dword_A8B230[0].vfptr & 0x20) != 0 || !a2 ) /*0x4891a5*/
     return 0; /*0x489263*/
   if ( a1 < 0 )
     return a4 >= 8 ? 0 : a1;
@@ -2062,7 +2062,7 @@ int GetWarheadVersusMultiplier(int aP0, int aP1, int aP2, BulletClass * aP3)
   if ( !v9 ) /*0x48a5bb*/
     return 0; /*0x48a5bb*/
   if ( *(unsigned char *)(aP1 + 340) ) /*0x48a5bd*/
-    return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * Random::Range(&dword_A8B230->u32_218, 0, v9 - 1)); /*0x48a5e4*/
+    return *(unsigned int *)(*(unsigned int *)(aP1 + 264) + 4 * Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, v9 - 1)); /*0x48a5e4*/
   v10 = 25 * v9 - 1; /*0x48a5ee*/
   if ( v4 >= v10 ) /*0x48a5f4*/
     v4 = v10; /*0x48a5f6*/

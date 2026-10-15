@@ -588,8 +588,8 @@ LABEL_4:
   }
   if ( v4 ) /*0x41ae19*/
     goto LABEL_4; /*0x41ae19*/
-  result = (int)dword_A8B230->vtable0; /*0x41aeaa*/
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) != 0 ) /*0x41aeaf*/
+  result = (int)dword_A8B230[0].vtable0; /*0x41aeaa*/
+  if ( ((int)dword_A8B230[0].vtable0 & 0x1000) != 0 ) /*0x41aeaf*/
   {
     v10 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 244); /*0x41aec5*/
     v17 = this->focus; /*0x41aecd*/

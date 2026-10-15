@@ -1349,21 +1349,21 @@ int DlgProcScoreScreen(HWND hWnd, UINT, WPARAM wParam, LPARAM)
     AudioController::Init(stru_B0BF28); /*0x6c90a2*/
     dword_B0BF64 = 1; /*0x6c90ad*/
     v6 = 0; /*0x6c90b7*/
-    v7 = dword_A8B230->difficulty2; /*0x6c90b9*/
+    v7 = dword_A8B230[43].vfptr; /*0x6c90b9*/
     if ( v7 ) /*0x6c90c1*/
     {
       if ( v7 == 1 ) /*0x6c90ce*/
       {
-        v6 = dword_A8B230->parTimeMedium; /*0x6c90d0*/
+        v6 = dword_A8B230[381].abstractFlags; /*0x6c90d0*/
       }
       else if ( v7 == 2 ) /*0x6c90db*/
       {
-        v6 = dword_A8B230->parTimeDifficult; /*0x6c90dd*/
+        v6 = dword_A8B230[381].nextArrayIndex; /*0x6c90dd*/
       }
     }
     else
     {
-      v6 = dword_A8B230->parTimeEasy; /*0x6c90c3*/
+      v6 = dword_A8B230[381].uniqueId; /*0x6c90c3*/
     }
     v8 = v6 / 60; /*0x6c90fc*/
     swprintf( /*0x6c9146*/
@@ -1375,9 +1375,9 @@ int DlgProcScoreScreen(HWND hWnd, UINT, WPARAM wParam, LPARAM)
     DlgItem = GetDlgItem(hWnd, 1777); /*0x6c915a*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam); /*0x6c9169*/
     v10 = dword_A8B230->pauseTimer; /*0x6c9174*/
-    if ( dword_A8B230->u32_614 != -1 ) /*0x6c9187*/
+    if ( dword_A8B230[43].vfptr2 != -1 ) /*0x6c9187*/
     {
-      v11 = &dword_A8B230->u32_614; /*0x6c917a*/
+      v11 = &dword_A8B230[43].vfptr2; /*0x6c917a*/
       Formatb = (wchar_t *)*((unsigned int *)dword_A8B230 + 391); /*0x6c9180*/
       v10 = (int)Formatb + TimerGetTicks() - *v11; /*0x6c9199*/
     }

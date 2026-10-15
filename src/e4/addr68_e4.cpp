@@ -564,8 +564,8 @@ void * * ScenarioClass_SetTimer(int a1)
   if ( a1 ) /*0x684068*/
   {
     Ticks = (DWORD)((void **)(TimerGetTicks()));
-    v3 = &dword_A8B230->u32_620; /*0x68407c*/
-    dword_A8B230->u32_620 = Ticks; /*0x68408c*/
+    v3 = &dword_A8B230[43].abstractFlags; /*0x68407c*/
+    dword_A8B230[43].abstractFlags = Ticks; /*0x68408c*/
     v3->__pad_004 = v9; /*0x684092*/
     v3->u32_8 = 60 * a1; /*0x684099*/
     result = (void *)(dword_A8B230); /*0x68409c*/
@@ -573,13 +573,13 @@ void * * ScenarioClass_SetTimer(int a1)
       return (void **)(result); /*0x6840a9*/
     dword_A8B230->unknown630 = 1; /*0x6840af*/
   }
-  if ( !*(&dword_A8B230->ScenarioClass_field_62C) ) /*0x6840bc*/
+  if ( !*(&dword_A8B230[43].NeedsSaveOrLink) ) /*0x6840bc*/
   {
     sub_406F00(); /*0x6840ca*/
     if ( !((unsigned int *)(dword_A8B238))[0] || dword_A8B238[0] == 5 ) /*0x6840db*/
     {
-      v5 = &dword_A8B230->u32_614;
-      if ( *(&dword_A8B230->u32_614) != -1 ) /*0x6840f1*/
+      v5 = &dword_A8B230[43].vfptr2;
+      if ( *(&dword_A8B230[43].vfptr2) != -1 ) /*0x6840f1*/
       {
         v6 = TimerGetTicks(); /*0x6840f6*/
         v7 = v5[2]; /*0x6840fd*/
@@ -601,7 +601,7 @@ void * * ScenarioClass_SetTimer(int a1)
     }
   }
   result = (void *)((void **)(dword_A8B230));
-  ++*(&dword_A8B230->ScenarioClass_field_62C); /*0x684174*/
+  ++*(&dword_A8B230[43].NeedsSaveOrLink); /*0x684174*/
   return (void **)(result); /*0x68417a*/
 }
 }
@@ -1453,7 +1453,7 @@ void GenerateScenarioUnits(char a1)
   v64 = 0; /*0x6886f1*/
   if ( g_abs_A8B258 ) /*0x6886f9*/
     ppv = (char *)ppv - 1; /*0x6886fb*/
-  memcpy(v54, &dword_A8B230->u32_218, sizeof(v54)); /*0x68871d*/
+  memcpy(v54, &dword_A8B230[14].NeedsSaveOrLink, sizeof(v54)); /*0x68871d*/
   Debug::Log(); /*0x688724*/
   Debug::Log(); /*0x68873a*/
   v1 = 0; /*0x68874a*/
@@ -1644,7 +1644,7 @@ void GenerateScenarioUnits(char a1)
         }
         else
         {
-          v25 = Random::Range(&dword_A8B230->u32_218, 0, v84 - 1); /*0x688a08*/
+          v25 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, v84 - 1); /*0x688a08*/
           *((unsigned char *)v85 + v25) = 1; /*0x688a0d*/
           v59 = 1; /*0x688a19*/
           v26 = *((unsigned int *)v81 + v25); /*0x688a21*/
@@ -1785,7 +1785,7 @@ void GenerateScenarioUnits(char a1)
       }
     }
   }
-  v54[252] = Random::Range(&dword_A8B230->u32_218, 0, 0xFFFF); /*0x688e48*/
+  v54[252] = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, 0xFFFF); /*0x688e48*/
   v54[251] = aFinishedUnitGe; /*0x688e5f*/
   Debug::Log(); /*0x688e64*/
   v80 =(unsigned int)(void*)&VectorClass_Cell_vftable; /*0x688e75*/

@@ -10328,7 +10328,7 @@ void ScoreScreen::Display()
       while ( v221 ); /*0x68e547*/
     }
     v222 = Rect.left; /*0x68e54d*/
-    dword_A8B230 = dword_A8B230; /*0x68e55d*/
+    dword_A8B230[0].vfptr = dword_A8B230[0].vfptr; /*0x68e55d [X36-A8B230 same-bytes: mov edx,dword_A8B230]*/
     v224 = 29 * v286; /*0x68e563*/
     v313[v224] = ((v313[v224]) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x68e566*/
     v313[v224 + 26] = v222; /*0x68e56e*/
@@ -33166,7 +33166,7 @@ void * ShapeButtonClass_Destru::QueryInterface(char p0)
 // 0x72fbc0
 int Sides::MixFileYuriFiles3()
 {
-  if ( dword_A8B230->playerSideIndex == 2 ) /*0x72fbcc*/
+  if ( dword_A8B230[374].NeedsSaveOrLink == 2 ) /*0x72fbcc*/
   {
     LoadPaletteSimple(off_844BF8, &dword_B0FBEC, &dword_B0FBF0); /*0x72fbde*/
     LoadPaletteSimple(off_844BFC[0], &dword_B0FBF4, &dword_B0FBF8); /*0x72fbf3*/
@@ -33714,7 +33714,7 @@ void SquadClass::ProcessMove()
   if ( *(unsigned int *)&dword_A8B238 ) /*0x73184a*/
   {
     result = dword_A8B230; /*0x731850*/
-    if ( ((int)dword_A8B230->vfptr & 0x400) == 0 ) /*0x73185a*/
+    if ( ((int)dword_A8B230[0].vfptr & 0x400) == 0 ) /*0x73185a*/
     {
       result = *(const void **)&g_RulesClass_Instance; /*0x731860*/
       if ( *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5301) ) /*0x731865*/

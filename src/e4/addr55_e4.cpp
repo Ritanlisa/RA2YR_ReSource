@@ -1383,7 +1383,7 @@ int E4Recv_55B720::sub_55B720()
   v3 = *(void **)&TeamTypeClass_Array; /*0x55b751*/
   nextArrayIndex = dword_A8B230[128].nextArrayIndex; /*0x55b757*/
   p_nextArrayIndex = &dword_A8B230[128].nextArrayIndex; /*0x55b75d*/
-  NeedsSaveOrLink = dword_A8B230->u32_80.NeedsSaveOrLink; /*0x55b766*/
+  NeedsSaveOrLink = dword_A8B230[3].abstractFlags.NeedsSaveOrLink; /*0x55b766*/
   if ( nextArrayIndex != -1 ) /*0x55b769*/
   {
     if ( *(unsigned int *)&TeamTypeClass_Array - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
@@ -1404,7 +1404,7 @@ LABEL_8:
   if ( !NeedsSaveOrLink ) /*0x55b777*/
     goto LABEL_7; /*0x55b777*/
 LABEL_9:
-  if ( ((int)dword_A8B230->vtable0 & 0x1000) != 0 && v1->FogRate != 0.0 ) /*0x55b7ca*/
+  if ( ((int)dword_A8B230[0].vtable0 & 0x1000) != 0 && v1->FogRate != 0.0 ) /*0x55b7ca*/
   {
     vtable0 = dword_A8B230[129].vtable0; /*0x55b7cc*/
     vtable2 = dword_A8B230->u8_81.vtable2; /*0x55b7d2*/

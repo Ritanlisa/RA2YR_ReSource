@@ -3475,7 +3475,7 @@ int InfantryClass::IdleStateMachine()
       v21 = v16[1]; /*0x72912e*/
       v22 = v16[2]; /*0x72913a*/
       if ( (uint8_t)Cell::IsPassable(&v20) /*0x72917b*/
-        || (dword_A8B230->vfptr & 0x1000) != 0
+        || (dword_A8B230[0].vfptr & 0x1000) != 0
         && (v17 = (int *)&this->Owner->Coord_9C,
             v20 = *v17,
             v21 = v17[1],
@@ -5383,7 +5383,7 @@ int InfantryClass::HandleCursorOverCell()
   v14 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x51f953*/
   v15 = 0; /*0x51f965*/
   v16 = 0; /*0x51f967*/
-  if ( ((int)dword_A8B230->vfptr & 0x1000) != 0 ) /*0x51f96e*/
+  if ( ((int)dword_A8B230[0].vfptr & 0x1000) != 0 ) /*0x51f96e*/
   {
     if ( a3 ) /*0x51f97a*/
     {
@@ -5618,7 +5618,7 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
             return 7; /*0x51e7fb*/
           if ( v5->HouseClass_21C != this->vtable1 ) /*0x51e80c*/
           {
-            if ( ((int)dword_A8B230->vtable1 & 0x800) == 0 ) /*0x51e819*/
+            if ( ((int)dword_A8B230[0].vtable1 & 0x800) == 0 ) /*0x51e819*/
               return 9; /*0x51e819*/
             v19 = 0; /*0x51e825*/
             v20 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 2892); /*0x51e827*/

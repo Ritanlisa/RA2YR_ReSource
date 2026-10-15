@@ -555,7 +555,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   char v15; // [esp+25h] [ebp-203h]
   char Buffer[256]; // [esp+128h] [ebp-100h] BYREF
 
-  if ( this->AlternateArcticArt_d && dword_A8B230->theater == 1 && !*(&this->uniqueId8) ) /*0x5f9096*/
+  if ( this->AlternateArcticArt_d && dword_A8B230[130].uniqueId == 1 && !*(&this->uniqueId8) ) /*0x5f9096*/
   {
     if ( !this->ArcticArtInUse_d ) /*0x5f90a0*/
     {
@@ -585,11 +585,11 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
   _makepath(&Source, 0, 0, &this->ImageFile_0x19, Ext); /*0x5f912e*/
   if ( this->Theater_d ) /*0x5f9133*/
   {
-    _makepath(&Source, 0, 0, &this->ImageFile_0x19, (const char *)&off_7E1BC6 + 112 * dword_A8B230->theater); /*0x5f9169*/
+    _makepath(&Source, 0, 0, &this->ImageFile_0x19, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5f9169*/
   }
   else if ( this->NewTheater_d ) /*0x5f9173*/
   {
-    v3 = dword_A8B230->theater; /*0x5f9183*/
+    v3 = dword_A8B230[130].uniqueId; /*0x5f9183*/
     if ( v3 != -1 ) /*0x5f918c*/
     {
       v4 = Source; /*0x5f918e*/

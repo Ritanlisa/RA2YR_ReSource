@@ -4336,7 +4336,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
       {
         this->Tactical_6CB = 1; /*0x440b7a*/
       }
-      if ( (dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x440b8b*/
+      if ( (dword_A8B230[0].vtable1 & 0x1000) != 0 ) /*0x440b8b*/
       {
         v162 = *(int **)(*(int (__thiscall **)(BuildingClass *, int *))((char *)this->vtable1 + 440))(this, &v154); /*0x440ba0*/
         for ( j = (*(int (__thiscall **)(int, unsigned int))(this->Type->LineTrailColorDecrement)(this->Type, 0); /*0x440bb2*/

@@ -134,7 +134,7 @@ void * sub_722C40()
       {
   LABEL_7:
         RebuildBuildingOccupancy(v3); /*0x722c99*/
-        if ( ((int)dword_A8B230->vfptr & 0x40) != 0 ) /*0x722ca7*/
+        if ( ((int)dword_A8B230[0].vfptr & 0x40) != 0 ) /*0x722ca7*/
           v6 = 0.3; /*0x722ca9*/
         else
           v6 = 1.0; /*0x722cb1*/

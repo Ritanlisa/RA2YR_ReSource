@@ -3821,7 +3821,7 @@ char Gap2Recv_47C060::GetCellRadarColors(int aThis, int a3)
       v26 = v16[45]; /*0x47c2f0*/
       v25 = ((v25) & 0xFFFFFF00u) | ((unsigned int)(v18) & 0xFFu); /*0x47c2fa*/
       v25 = ((v25) & 0xFFFF00FFu) | (((unsigned int)(v17) & 0xFFu) << 8); /*0x47c2fe*/
-      v19 = Color::ScaleRGB(&v24, (uint8_t *)&v25, (&dword_7E1BD0)[28 * dword_A8B230->theater]); /*0x47c324*/
+      v19 = Color::ScaleRGB(&v24, (uint8_t *)&v25, (&dword_7E1BD0)[28 * dword_A8B230[130].uniqueId]); /*0x47c324*/
       v25 = *(unsigned short *)v19; /*0x47c330*/
       v26 = v19->u32_2; /*0x47c338*/
       RadarColor = (uint8_t)v25 >> 1; /*0x47c353*/
@@ -12084,7 +12084,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   if ( v9 ) /*0x594a23*/
   {
     for ( j = 4544; j < 4576; j += 4 ) /*0x594a58*/
-      *(void **)dword_A8B230->q038 + j) = *(void **)&g_MissionQueueFrame.globalVariables[128]; /*0x594a69*/
+      *(void **)dword_A8B230[1].abstractFlags + j) = *(void **)&g_MissionQueueFrame.globalVariables[128]; /*0x594a69*/
     v11 = 0; /*0x594a79*/
     if ( (int)this->NeedsSaveOrLink > 0 ) /*0x594a7d*/
     {
@@ -23796,9 +23796,9 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
   this->M1672 = 0; /*0x69b17d*/
   if ( v1 ) /*0x69b184*/
   {
-    vtable0 = dword_A8B230->vfptr; /*0x69b199*/
-    (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230->vfptr >> 8) & 0xFB; /*0x69b19b*/
-    dword_A8B230->vfptr = vtable0; /*0x69b19e*/
+    vtable0 = dword_A8B230[0].vfptr; /*0x69b199*/
+    (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].vfptr >> 8) & 0xFB; /*0x69b19b*/
+    dword_A8B230[0].vfptr = vtable0; /*0x69b19e*/
     Debug::Log(); /*0x69b1a0*/
     Debug::Log(); /*0x69b1af*/
     if ( strlen(&byte_B77A04) ) /*0x69b1b9*/
@@ -23930,9 +23930,9 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
         }
         operator delete((void *)(v4)); /*0x69b4c1*/
         this->M1672 = 1; /*0x69b4d4*/
-        v27 = dword_A8B230->vfptr; /*0x69b4e0*/
-        (((unsigned char *)&(v27))[1]) = ((uint16_t)dword_A8B230->vfptr >> 8) | 4; /*0x69b4e2*/
-        dword_A8B230->vfptr = v27; /*0x69b4e5*/
+        v27 = dword_A8B230[0].vfptr; /*0x69b4e0*/
+        (((unsigned char *)&(v27))[1]) = ((uint16_t)dword_A8B230[0].vfptr >> 8) | 4; /*0x69b4e2*/
+        dword_A8B230[0].vfptr = v27; /*0x69b4e5*/
         /* X11: vtable install elided (implicit via VectorClass virtuals 0x69b4ed) */
         if ( v30.Items && v30.IsAllocated ) /*0x69b4f9*/
         {

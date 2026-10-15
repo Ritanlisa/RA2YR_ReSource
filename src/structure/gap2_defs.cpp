@@ -491,7 +491,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
               (*((unsigned char *)&(BehaviourMode))) = (*(((unsigned char *)&(v8[10].fallRate)) + (sizeof(v8[10].fallRate) - 1))); /*0x435c44*/
               if ( !(unsigned char)BehaviourMode )
               {
-                if ( ((int)dword_A8B230->vfptr & 0x1000) == 0
+                if ( ((int)dword_A8B230[0].vfptr & 0x1000) == 0
                   || (v71 = this->location[0],
                       v72 = this->location[1],
                       v73 = this->location[2],
@@ -2926,7 +2926,7 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
           if ( v4 <= dword_8871E0->AmmoCrateDamage ) /*0x4fb018*/
           {
             v13 = *(unsigned int *)(dword_8871E0->DetailMinFrameRateNormal + 4 * this->q184); /*0x4fb032*/
-            v4 = Random::Range(&dword_A8B230->u32_218, 0, 99); /*0x4fb03d*/
+            v4 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, 99); /*0x4fb03d*/
             if ( v4 <= v13 ) /*0x4fb044*/
             {
               if ( this->grindersCount <= 0 ) /*0x4fb04f*/

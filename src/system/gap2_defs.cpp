@@ -3644,7 +3644,7 @@ int CellClass::SpawnTiberiumTree(int a1) {
 
   if ( !a1 ) /*0x48378f*/
   {
-    if ( (*((signed char *)&(dword_A8B230->vfptr))) >= 0 ) /*0x483799*/
+    if ( (*((signed char *)&(dword_A8B230[0].vfptr))) >= 0 ) /*0x483799*/
       return 0; /*0x483799*/
     BuildingByTiberiumType = FindBuildingByTiberiumType(*&this->q044); /*0x48379e*/
     if ( BuildingByTiberiumType == -1 /*0x4837e1*/
@@ -4333,7 +4333,7 @@ int CellClass::CreateFoggedObjects() {
   unsigned char v12[4]; // [esp+1Ch] [ebp-4h] BYREF
 
   (*((unsigned char *)&(v1))) = (unsigned char)dword_A8B230; /*0x486a70*/
-  if ( ((int)dword_A8B230->vfptr & 0x1000) != 0 ) /*0x486a7d*/
+  if ( ((int)dword_A8B230[0].vfptr & 0x1000) != 0 ) /*0x486a7d*/
   {
     v2 = 1; /*0x486a89*/
     *(unsigned int *)v9 = this->smudgeTypeIndex; /*0x486a8f*/
@@ -12866,7 +12866,7 @@ int LightConvertClass::Constructor(int a1, int a2, int a3, int a4, int a5, int a
       this->u32_1A0 = a6; /*0x555feb*/
     }
     v16 = 1000 * (int)dword_A8B230[379].NeedsSaveOrLink / 100; /*0x556022*/
-    vtable0 = dword_A8B230->u32_5EC.nextArrayIndex; /*0x556023*/
+    vtable0 = dword_A8B230[42].vfptr1.nextArrayIndex; /*0x556023*/
     v15 = 1000 * dword_A8B230[379].referenceCount / 100; /*0x556046*/
     goto LABEL_23; /*0x556046*/
   }

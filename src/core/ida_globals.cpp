@@ -5432,7 +5432,7 @@ unsigned int dword_A8B21C = 0;
 unsigned int dword_A8B220 = 0;
 unsigned int dword_A8B228 = 0;
 unsigned int dword_A8B22C = 0;
-unsigned int dword_A8B230 = 0;
+AbstractElem dword_A8B230[435] = {};  // [X36-A8B230] was unsigned int = 0
 unsigned int dword_A8B238 = 0;
 unsigned int dword_A8B23C = 0;
 unsigned int dword_A8B248 = 0;

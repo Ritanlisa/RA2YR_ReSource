@@ -2459,9 +2459,9 @@ void ModemHost::StartGame()
       *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] = 0; /*0x5bb20c*/
       dword_A8B24C = 2; /*0x5bb212*/
       dword_A8E960[0] = v26; /*0x5bb21c*/
-      vtable0 = dword_A8B230->vfptr; /*0x5bb222*/
-      (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230->vfptr >> 8) & 0xFB; /*0x5bb229*/
-      dword_A8B230->vfptr = vtable0; /*0x5bb22c*/
+      vtable0 = dword_A8B230[0].vfptr; /*0x5bb222*/
+      (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].vfptr >> 8) & 0xFB; /*0x5bb229*/
+      dword_A8B230[0].vfptr = vtable0; /*0x5bb22c*/
       byte_A8B31C = 1; /*0x5bb22e*/
       nullsub_37(v29); /*0x5bb235*/
       Debug::Log(); /*0x5bb23f*/

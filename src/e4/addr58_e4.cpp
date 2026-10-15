@@ -930,7 +930,7 @@ ScenarioClass * * ComputeMapCameraBounds()
           *(void **)v19->q010 + v20) = v23; /*0x58ba80*/
           ++v18; /*0x58ba89*/
           v22 += 4; /*0x58ba8a*/
-          *(void **)dword_A8B230->q010 + v20) = v24; /*0x58ba8d*/
+          *(void **)dword_A8B230[0].uniqueId + v20) = v24; /*0x58ba8d*/
           v20 += 8; /*0x58ba9b*/
           *(unsigned int *)((char *)dword_A8B230 + v22 - 4) = *(unsigned int *)&g_MissionQueueFrame.waypoints[v22 + 1302]; /*0x58ba9e*/
           v19 = (gamemd::AbstractClass *)(dword_A8B230); /*0x58baa2*/

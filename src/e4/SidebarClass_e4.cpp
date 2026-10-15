@@ -138,10 +138,10 @@ int SidebarClass::CalcBounds(char a1)
     v2 = g_DSurface_ViewBounds; /*0x6a51de*/
     v1 = DSurface_SidebarBounds; /*0x6a51e3*/
   }
-  v6 = dword_A8B230->playerSideIndex; /*0x6a51ef*/
+  v6 = dword_A8B230[374].NeedsSaveOrLink; /*0x6a51ef*/
   dword_B0B500 = 50; /*0x6a51f5*/
   v7 = 26; /*0x6a5205*/
-  if ( dword_A8B230->playerSideIndex ) /*0x6a51ff*/
+  if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a51ff*/
     v7 = 18; /*0x6a520e*/
   result = 50 * ((v2 - g_SidebarBounds - v7 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a523f*/
   dword_B0B504 = result; /*0x6a5243*/

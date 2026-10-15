@@ -763,7 +763,7 @@ LABEL_24:
   v14 = dword_A8B230; /*0x55b228*/
   v15 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x55b22e*/
   nextArrayIndex = dword_A8B230[128].nextArrayIndex; /*0x55b234*/
-  NeedsSaveOrLink = dword_A8B230->u32_80.NeedsSaveOrLink; /*0x55b23a*/
+  NeedsSaveOrLink = dword_A8B230[3].abstractFlags.NeedsSaveOrLink; /*0x55b23a*/
   p_nextArrayIndex = &dword_A8B230[128].nextArrayIndex; /*0x55b240*/
   if ( nextArrayIndex == -1 ) /*0x55b249*/
     goto LABEL_38; /*0x55b249*/
@@ -995,7 +995,7 @@ int Scenario::PreGameInit()
   int v0; // edx
   int v1; // eax
 
-  dword_A8B230->techLevel = g_abs_A8B254; /*0x5e746b*/
+  dword_A8B230[130].vfptr3 = g_abs_A8B254; /*0x5e746b*/
   dword_A8ED84 = 0; /*0x5e747c*/
   dword_A8B54C = dword_A8DA84; /*0x5e7486*/
   Debug::Log("Pregame setup for %d players.\n", dword_A8DA84); /*0x5e748b*/

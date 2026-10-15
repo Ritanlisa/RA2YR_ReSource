@@ -2982,7 +2982,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
           v27 = (*(int (__thiscall **)(int))(*(unsigned int *)v22 + 172))(v22); /*0x5d73e5*/
           v26 = a1; /*0x5d73eb*/
           *a1 -= v27; /*0x5d73f3*/
-          if ( ((int)dword_A8B230->vfptr & 0x200) != 0 ) /*0x5d7400*/
+          if ( ((int)dword_A8B230[0].vfptr & 0x200) != 0 ) /*0x5d7400*/
             Timer::SetFlag((Timer *)(v24 + 84), 1); /*0x5d740a*/
           if ( (uint8_t)((House *)((House *)aP0))->IsCurrentPlayer() ) /*0x5d7411*/
             v24->vt_slot_496(5); /*0x5d7420*/

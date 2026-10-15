@@ -234,34 +234,34 @@ int ScenarioClass::UpdateLighting()
 {
   if ( NukeFlash_Status == 1 || ChronoScreenEffect_Status ) /*0x53c297*/
   {
-    dword_A8B230->nukeBlue = dword_A8B230->initTime; /*0x53c3be*/
+    dword_A8B230[378].vfptr2 = dword_A8B230[379].abstractFlags; /*0x53c3be*/
     return UpdateSurfaceAnimations( /*0x53c43a*/
              1000 * dword_A8B230->stage / 100,
-             1000 * dword_A8B230->q3568 / 100,
-             1000 * dword_A8B230->q356C / 100,
+             1000 * dword_A8B230[379].referenceCount / 100,
+             1000 * dword_A8B230[379].NeedsSaveOrLink / 100,
              1);
   }
   else if ( LightningStorm_Active ) /*0x53c2a4*/
   {
-    dword_A8B230->nukeBlue = dword_A8B230->dominatorGreen; /*0x53c2b3*/
+    dword_A8B230[378].vfptr2 = dword_A8B230[378].NeedsSaveOrLink; /*0x53c2b3*/
     return UpdateSurfaceAnimations( /*0x53c30e*/
-             1000 * dword_A8B230->dominatorBlue / 100,
-             1000 * dword_A8B230->dominatorGround / 100,
-             1000 * dword_A8B230->dominatorLevel / 100,
+             1000 * dword_A8B230[379].vfptr / 100,
+             1000 * dword_A8B230[379].vfptr1 / 100,
+             1000 * dword_A8B230[379].vfptr2 / 100,
              1);
   }
   else if ( !PsyDom_Status || PsyDom_Status == 5 ) /*0x53c31f*/
   {
-    dword_A8B230->nukeBlue = dword_A8B230->nukeRed; /*0x53c3a0*/
+    dword_A8B230[378].vfptr2 = dword_A8B230[378].vfptr; /*0x53c3a0*/
     return UpdateSurfaceAnimations(-1, -1, -1, 0); /*0x53c3a9*/
   }
   else
   {
-    dword_A8B230->nukeBlue = dword_A8B230->u32_357C; /*0x53c32e*/
+    dword_A8B230[378].vfptr2 = dword_A8B230[382].vfptr1; /*0x53c32e*/
     return UpdateSurfaceAnimations( /*0x53c389*/
-             1000 * dword_A8B230->u32_3580 / 100,
-             1000 * dword_A8B230->u32_3584 / 100,
-             1000 * dword_A8B230->u32_3588 / 100,
+             1000 * dword_A8B230[382].vfptr2 / 100,
+             1000 * dword_A8B230[382].vfptr3 / 100,
+             1000 * dword_A8B230[382].uniqueId / 100,
              1);
   }
 }

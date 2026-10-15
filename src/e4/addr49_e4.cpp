@@ -6646,7 +6646,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
 
   v18 = a1; /*0x49f42a*/
   (*((unsigned short *)&(v16))) = 0; /*0x49f438*/
-  v6 = Random::State(&dword_A8B230->u32_218); /*0x49f43f*/
+  v6 = Random::State(&dword_A8B230[14].NeedsSaveOrLink); /*0x49f43f*/
   (*((unsigned char *)&(v7))) = 0; /*0x49f448*/
   (*(((unsigned char *)&(v7)) + (sizeof(v7) - 1))) = v6; /*0x49f44a*/
   v8 = a2[2]; /*0x49f451*/

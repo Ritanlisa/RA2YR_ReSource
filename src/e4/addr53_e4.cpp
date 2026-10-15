@@ -685,14 +685,14 @@ void TheaterClass_LoadMIX(int a1)
   wsprintfA(v37, "%sMD.MIX", &aIsotem[v2]); /*0x534a2d*/
   wsprintfA(v35, "%sMD.MIX", v3); /*0x534a3a*/
   Debug::Log(); /*0x534a48*/
-  dword_A8B230->theater = a1; /*0x534a5d*/
+  dword_A8B230[130].uniqueId = a1; /*0x534a5d*/
   Multiplayer::ShowProgress(dword_A8B238, 8); /*0x534a63*/
-  if ( dword_A8B230->theater != dword_822CF8 ) /*0x534a7a*/
+  if ( dword_A8B230[130].uniqueId != dword_822CF8 ) /*0x534a7a*/
   {
     if ( dword_884E0C ) /*0x534a8a*/
       (**(void (***)(int, int))dword_884E0C)(dword_884E0C, 1); /*0x534a90*/
     dword_884E0C = 0; /*0x534a97*/
-    if ( dword_A8B230->theater == 1 ) /*0x534aa4*/
+    if ( dword_A8B230[130].uniqueId == 1 ) /*0x534aa4*/
     {
       v4 = operator new(0x28u); /*0x534aa8*/
       if ( v4 ) /*0x534ab2*/

@@ -702,7 +702,7 @@ int TacticalMap::RenderAllObjects(int a2)
           if ( v20 >= v15 + v96 ) /*0x6d8fac*/
             goto LABEL_54; /*0x6d8fac*/
           (*(void (**)(int *, char *, unsigned int))(*v18 + 76))(v18, v110, 0); /*0x6d8fc0*/
-          if ( ((int)dword_A8B230->vfptr & 0x1000) != 0 ) /*0x6d8fce*/
+          if ( ((int)dword_A8B230[0].vfptr & 0x1000) != 0 ) /*0x6d8fce*/
           {
             if ( (uint8_t)Game::Stub3((int)&v89) ) /*0x6d8fda*/
               goto LABEL_54; /*0x6d8fe1*/
@@ -922,7 +922,7 @@ int TacticalMap::RenderAllObjects(int a2)
               if ( (*(unsigned char *)(v67 + 20) & 4) == 0 /*0x6d965d*/
                 || ((*(void (**)(int, unsigned char *, unsigned int))(*(unsigned int *)v67 + 76))(v67, v105, 0), !g_hWnd)
                 || ((unsigned int *)&stru_A8EB00)[391]
-                || ((int)dword_A8B230->vfptr & 0x1000) == 0
+                || ((int)dword_A8B230[0].vfptr & 0x1000) == 0
                 || (v97 = *(IsoCoord *)(v67 + 156),
                     v98 = *(unsigned int *)(v67 + 164),
                     !(uint8_t)Game::Stub3((int)&v97)) )

@@ -26,11 +26,11 @@ int sub_53AB70()
   dword_A8B230->ambientTimer = dword_A8ED84; /*0x53ab9a*/
   v0->__pad_004 = v2; /*0x53aba8*/
   v0->u32_8 = 1; /*0x53abad*/
-  dword_A8B230->nukeBlue = dword_A8B230->initTime; /*0x53abbd*/
+  dword_A8B230[378].vfptr2 = dword_A8B230[379].abstractFlags; /*0x53abbd*/
   UpdateSurfaceAnimations( /*0x53ac39*/
     1000 * dword_A8B230->stage / 100,
-    1000 * dword_A8B230->q3568 / 100,
-    1000 * dword_A8B230->q356C / 100,
+    1000 * dword_A8B230[379].referenceCount / 100,
+    1000 * dword_A8B230[379].NeedsSaveOrLink / 100,
     1);
   return MapClass::MarkForRedraw(&dword_87F7E8, 1); /*0x53ac4a*/
 }

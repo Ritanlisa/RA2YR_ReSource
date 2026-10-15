@@ -392,7 +392,7 @@ AbstractClass * * sub_7318F0()
           result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)&((unsigned int *)&stru_A8EB00)[216] + 56))(**(unsigned int **)&((unsigned int *)&stru_A8EB00)[216]); /*0x73194f*/
           if ( *(unsigned int *)&dword_A8B238 ) /*0x73195a*/
           {
-            if ( ((int)dword_A8B230->vfptr & 0x400) == 0 /*0x731981*/
+            if ( ((int)dword_A8B230[0].vfptr & 0x400) == 0 /*0x731981*/
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5301)
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5307) )
             {

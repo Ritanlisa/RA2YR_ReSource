@@ -3306,7 +3306,7 @@ int HouseClass::DefeatPlayer() {
     if ( !v3 && (dword_8871E0->ElevationIncrement) && *(unsigned int *)&dword_A8B238 ) /*0x4fc10b*/
       HouseClass::CanDetect(v39); /*0x4fc10d*/
   }
-  if ( (dword_A8B230->vfptr & 0x10) != 0 ) /*0x4fc11b*/
+  if ( (dword_A8B230[0].vfptr & 0x10) != 0 ) /*0x4fc11b*/
   {
     ourFlagCoords = this->ourFlagCoords; /*0x4fc11d*/
     if ( ourFlagCoords ) /*0x4fc125*/
@@ -3321,7 +3321,7 @@ int HouseClass::DefeatPlayer() {
   }
   if ( *(unsigned int *)&dword_A8B238 ) /*0x4fc16a*/
   {
-    if ( (dword_A8B230->vfptr & 0x800) != 0 ) /*0x4fc177*/
+    if ( (dword_A8B230[0].vfptr & 0x800) != 0 ) /*0x4fc177*/
     {
       for ( i = 0; i < dword_8B4118; ++i ) /*0x4fc182*/
       {
@@ -5533,7 +5533,7 @@ int HouseClass::ReadFromINI(void* a1) {
                               (bool *)a1,
                               (uint8_t *)v38,
                               (uint8_t *)g_INI_Key_TechLevel,
-                              dword_A8B230->techLevel);
+                              dword_A8B230[130].vfptr3);
   this->Credits = 100 /*0x500bd0*/
                           * INIClass::ReadInt_Overwrite(
                               (bool *)a1,
@@ -8188,11 +8188,11 @@ int HouseClass::ComputePowerDistribution() {
   v5 = v3[22571] + 3000; /*0x508194*/
   v6 = v3[22570] + 3000; /*0x5081a4*/
   v7 = Math::RoundToInt((double)*(int *)(dword_8871E0->DetailMinFrameRateNormal + 4 * this->u32_184) * 0.0099999998 * (double)v4); /*0x5081bf*/
-  v14 = Random::Range(&dword_A8B230->u32_218, -v7, v7) + v4; /*0x5081e7*/
+  v14 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, -v7, v7) + v4; /*0x5081e7*/
   v8 = Math::RoundToInt((double)*(int *)(dword_8871E0->DetailMinFrameRateNormal + 4 * this->u32_184) * 0.0099999998 * (double)v5); /*0x5081fe*/
-  v13 = Random::Range(&dword_A8B230->u32_218, -v8, v8) + v5; /*0x50822b*/
+  v13 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, -v8, v8) + v5; /*0x50822b*/
   v9 = Math::RoundToInt((double)*(int *)(dword_8871E0->DetailMinFrameRateNormal + 4 * this->u32_184) * 0.0099999998 * (double)v6); /*0x50823c*/
-  v10 = Random::Range(&dword_A8B230->u32_218, -v9, v9) + v6; /*0x508256*/
+  v10 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, -v9, v9) + v6; /*0x508256*/
   result = v10 + v14 + v13; /*0x50825b*/
   if ( result <= 0 ) /*0x50826a*/
   {
@@ -9052,7 +9052,7 @@ int HouseClass::UpdateBuildState(int a1) {
   v3 = this->powerOutput; /*0x50984a*/
   if ( this->powerDrain > v3 ) /*0x509852*/
     goto LABEL_31; /*0x509852*/
-  v3 = Random::Range(&dword_A8B230->u32_218, 0, 1); /*0x509863*/
+  v3 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x509863*/
   if ( !v3 ) /*0x50986a*/
     goto LABEL_31; /*0x50986a*/
   return v3; /*0x509780*/
