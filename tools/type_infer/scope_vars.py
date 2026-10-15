@@ -254,6 +254,15 @@ def _scope_one_var(
         return f"0x{c_addr:08X}::{clean}"
 
     # ── Everything else: already unique (member vars, globals, params, etc.) ──
+    # X29 (Rule B, global type supply): `lea reg, offset G` keeps the IDA
+    # operand-text `offset ` prefix — it denotes the SAME storage as the bare
+    # global name used by value reads/stores.  Leaving it un-normalized split
+    # every address-taken global into two var names (`offset G` / `G`), so
+    # usage edges (CALL_ARG -> class this, ptr-seed params) never reached the
+    # bare name the carriers/source actually use (measured: 7,604 offset-names,
+    # 31,797 mentions; e.g. `offset dword_87F7E8` 7,220 vs bare 2).
+    if clean.startswith("offset "):
+        return clean[len("offset "):].strip()
     return raw_name
 
 

@@ -2028,6 +2028,280 @@ class TypeInferenceEngine:
             print(f"  VOID_PTR fallback (direction-isolated roots): {untyped}",
                   file=sys.stderr)
 
+        # ── B10d (X29 Stage 1): usage-driven pointer promotion, rules A/B ──
+        # 背景（L297 / I251 / slow_convergence_diagnosis §3.2）: 提取器给成员
+        # 打的 int 种子、B6b 原始寄存器 int 种子（引擎按“函数内全部 SSA 版本”
+        # 锚定）与 T9d 反传，把二进制里明显作指针使用的存储定型为 int；B10c
+        # 只升级“前向目的地带具体类”的情形，void*/char*/float* 种子目的地与
+        # deref 证据（MEMBER_ACCESS base）被忽略。此步在传播收敛后对仍是 int
+        # 的变量做一次【单向】升级：只要约束图里有指针用法边，就升级为
+        # VOID_PTR（指针族上界；int ⊑ VOID_PTR，单调）。
+        # 证据通道（每条升级都引用一条图边，落盘审计）：
+        #   C1 deref    — MEMBER_ACCESS base == v（成员值被当类类型基址解引用）
+        #   C2 ptr-arg  — v →(值边/CALL_ARG) d，d 带 void*/char*/float* 种子
+        #   C3 receiver — v →(CALL_ARG) X:this（值被当接收者传递 = 指针）
+        #   C4 bridge   — v=F:(this|:param0).member(O) 且同函数同偏移的链族
+        #                 兄弟 F::reg.member(O) 有 CALL_ARG → X:this / ptr 种子
+        #   C5 two-hop  — v → reg_vSSA →(CALL_ARG) X:this / ptr 种子（SSA 精确）
+        #   C6 raw-walk — CALL_ARG 实参寄存器按【明文行】回溯：最近一条
+        #                 严格早于调用地址的写（跳同址 RETURN_TO 版本窃取，
+        #                 0x40B640 实证）的源名 = 证据源
+        # VOID_PTR 在传播中是惰性的（不外传、不参与 join），升级纯局部：
+        # 不产生新 TOP、不腐蚀邻居类型、无需再传播。frozen（rank≥2 真锚）
+        # 中的 rank≤2 也允许升级（member_types 占位 int 即此层——二进制用法
+        # 证据优先，per Q2）；rank-3 二进制真锚（RTTI/ctor/singleton）不动。
+        _pp_log_path = os.environ.get("X29_PP_LOG", "")
+        _pp_promoted = 0
+        _pp_skipped_frozen = 0
+        _pp_by_rule: Counter = Counter()
+        try:
+            _RE_CHAIN_SIB = re.compile(
+                r"^(0x[0-9A-Fa-f]{8})::[a-z]{2,4}\.member\(0x([0-9A-Fa-f]+)\)$")
+            _RE_F5_MEMBER = re.compile(
+                r"^(0x[0-9A-Fa-f]{8}):(?:this|:param0)\.member\(0x([0-9A-Fa-f]+)\)$")
+            _RE_REG_SSA = re.compile(
+                r"^0x[0-9A-Fa-f]{8}::[a-z]{2,4}_v0x[0-9A-Fa-f]+$")
+            _RE_PRESCOPED_REG = re.compile(
+                r"^(0x[0-9A-Fa-f]{8})::([a-z]{2,4})_v0x([0-9A-Fa-f]+)$")
+
+            _fa = self._func_addrs
+
+            def _pp_containing(_a: int):
+                import bisect as _bs
+                _i = _bs.bisect_right(_fa, _a) - 1
+                return _fa[_i] if _i >= 0 else None
+
+            _ptr_seed_vars: set[str] = set()
+            _deref_bases: set[str] = set()
+            _bridge_sib: dict[tuple[str, int], str] = {}
+            _vt_recv_names: dict[str, str] = {}
+            _raw_writes: dict[tuple[int, str], list] = {}
+            _raw_callargs: list = []   # (addr, func, reg, to)
+            _in_store: dict[str, list] = {}   # member/global <- [scoped src names]
+            for _i, _c in enumerate(self.constraints):
+                _ct = _c.get("type")
+                if _ct == "TYPE_SEED":
+                    if _c.get("itype") in ("void*", "char*", "float*"):
+                        _ptr_seed_vars.add(_c.get("var", ""))
+                    continue
+                if _ct == "MEMBER_ACCESS":
+                    _b = _c.get("base", "")
+                    if ".member(" in _b:
+                        _deref_bases.add(_b)
+                    continue
+                if _ct == "CALL_VTABLE":
+                    _rv = _c.get("receiver")
+                    if _rv:
+                        _vt_recv_names.setdefault(
+                            _rv, "CALL_VTABLE slot=%s @%s" % (
+                                _c.get("vtable_slot"), _c.get("addr")))
+                    continue
+                if _ct == "ASSIGN":
+                    _sfx, _stx = self._scoped_to_name[_i]
+                    if _sfx is not None and _stx is not None and \
+                            not _stx.startswith("stack_") and \
+                            not (_stx.startswith("0x") and ".member(" not in _stx):
+                        _in_store.setdefault(_stx, []).append(_sfx)
+                _to = _c.get("to", "")
+                _ad = _c.get("addr", "")
+                if _ct in ("ASSIGN", "FUNC_PARAM", "RETURN_TO", "STACK_ACCESS") \
+                        and isinstance(_to, str) and _ad:
+                    try:
+                        _a = int(_ad, 16)
+                    except (ValueError, TypeError):
+                        _a = None
+                    if _a is not None:
+                        _fn = _pp_containing(_a)
+                        if _fn is not None:
+                            _cl = _to.lstrip("*").lower()
+                            if _cl in X86_REGISTERS:
+                                _raw_writes.setdefault((_fn, _cl), []).append(
+                                    (_a, _c.get("from", "")))
+                            else:
+                                _mp = _RE_PRESCOPED_REG.match(_to)
+                                if _mp and _mp.group(2).lower() in X86_REGISTERS:
+                                    _raw_writes.setdefault(
+                                        (int(_mp.group(1), 16), _mp.group(2).lower()),
+                                        []).append((int(_mp.group(3), 16), "<ret>"))
+                if _ct != "CALL_ARG":
+                    continue
+                _sf, _sto = self._scoped_to_name[_i]
+                if _sf is None or _sto is None:
+                    continue
+                _m = _RE_CHAIN_SIB.match(_sf)
+                if _m:
+                    _bridge_sib.setdefault(
+                        (_m.group(1), int(_m.group(2), 16)), _sf)
+                _fr_raw = _c.get("from", "")
+                if isinstance(_fr_raw, str) and \
+                        _fr_raw.lstrip("*").lower() in X86_REGISTERS and _ad:
+                    try:
+                        _a = int(_ad, 16)
+                    except (ValueError, TypeError):
+                        continue
+                    _fn = _pp_containing(_a)
+                    if _fn is not None:
+                        _raw_callargs.append(
+                            (_a, _fn, _fr_raw.lstrip("*").lower(), _sto))
+
+            # C6: raw-walk — per raw-reg call arg, last STRICT-before write source
+            # Target gate: only receiver/ptr-seed/vtable-slot destinations imply
+            # the value is a pointer (plain int params must NOT promote).
+            _raw_evidence: dict[str, str] = {}
+            for _a, _fn, _reg, _sto in _raw_callargs:
+                if not (_sto.endswith(":this") or _sto in _ptr_seed_vars
+                        or _sto.startswith("vtable_slot_")):
+                    continue
+                _wl = _raw_writes.get((_fn, _reg))
+                if not _wl:
+                    continue
+                _best = None
+                for _wa, _wsrc in _wl:
+                    if _wa < _a and (_best is None or _wa >= _best[0]):
+                        _best = (_wa, _wsrc)
+                if _best is None:
+                    continue
+                _src = _best[1]
+                if not isinstance(_src, str) or not _src:
+                    continue
+                _sl = _src.lstrip("*")
+                if _sl.startswith("offset "):
+                    _sl = _sl[len("offset "):].strip()
+                if (not _sl or _sl.lower() in X86_REGISTERS
+                        or _sl.startswith(("*def@", "arr_", "vtable_slot_"))
+                        or _sl.endswith("_call")
+                        or _RE_REG_SSA.match(_sl)
+                        or _is_var_literal(_sl)):
+                    continue
+                _raw_evidence.setdefault(
+                    _sl, ("raw-walk", "%s (write@%s) -> %s@%s -> %s" % (
+                        _sl, hex(_best[0]), _reg, hex(_a), _sto)))
+
+            # rank-3 (binary-truth) anchors are NOT overridden
+            _rank3_roots: set[int] = set()
+            for _anch in self.anchors:
+                if _anch.source in ("rtti_vtable_class", "singleton_ctor_store",
+                                    "ctor_vtable_install", "structural_vtable_install"):
+                    _rank3_roots.add(self.uf.find(_anch.var_id))
+
+            _pp_edges: dict[int, tuple[str, str, bool, LatticeElement]] = {}
+            for _vid in range(len(self.id_to_var)):
+                _root = self.uf.find(_vid)
+                if root_types.get(_root, BOTTOM) != "int":
+                    continue
+                _pp_name = self.id_to_var[_vid]
+
+                _ev: tuple[str, str] | None = None
+                # C1: deref evidence
+                if _pp_name in _deref_bases:
+                    _ev = ("deref", "MEMBER_ACCESS base=%s" % _pp_name)
+                # C2/C3/C5: forward channels, one SSA-register hop allowed
+                if _ev is None:
+                    for _chan in (self.adjacency, self.param_in, self.return_out):
+                        for _d1 in _chan.get(_vid, ()):
+                            _n1 = self.id_to_var[_d1]
+                            if _n1.endswith(":this"):
+                                _ev = ("receiver", "edge %s -> %s" % (_pp_name, _n1))
+                            elif _n1 in _ptr_seed_vars:
+                                _ev = ("ptr-arg", "edge %s -> %s (ptr seed)" % (_pp_name, _n1))
+                            elif _RE_REG_SSA.match(_n1):
+                                for _chan2 in (self.adjacency, self.param_in,
+                                               self.return_out):
+                                    for _d2 in _chan2.get(_d1, ()):
+                                        _n2 = self.id_to_var[_d2]
+                                        if _n2.endswith(":this"):
+                                            _ev = ("two-hop-receiver",
+                                                   "%s -> %s -> %s" % (_pp_name, _n1, _n2))
+                                            break
+                                        if _n2 in _ptr_seed_vars:
+                                            _ev = ("two-hop-ptr-arg",
+                                                   "%s -> %s -> %s" % (_pp_name, _n1, _n2))
+                                            break
+                                    if _ev:
+                                        break
+                            if _ev:
+                                break
+                        if _ev:
+                            break
+                # C4: chain-family bridge (same function + same offset)
+                if _ev is None:
+                    _mm = _RE_F5_MEMBER.match(_pp_name)
+                    if _mm:
+                        _sib = _bridge_sib.get((_mm.group(1), int(_mm.group(2), 16)))
+                        if _sib:
+                            _ev = ("chain-bridge",
+                                   "%s (sibling %s -> X:this)" % (_pp_name, _sib))
+                # C6: raw-walk evidence index
+                if _ev is None and _pp_name in _raw_evidence:
+                    _ev = _raw_evidence[_pp_name]
+                # C7: vtable-call receiver (CALL_VTABLE receiver field)
+                if _ev is None and _pp_name in _vt_recv_names:
+                    _ev = ("vtable-receiver", "%s (%s)" % (
+                        _pp_name, _vt_recv_names[_pp_name]))
+                # C8: inbound store from a concrete-CLASS-typed source —
+                # retro-applies the join that frozen protection blocked
+                # (anchored-int member receiving class values). Target = the
+                # joined class (may-hold, same semantics as B10c).
+                _pp_target: LatticeElement = VOID_PTR
+                if _ev is None and _pp_name in _in_store:
+                    _joined: LatticeElement = BOTTOM
+                    for _sname in _in_store[_pp_name]:
+                        _sid = self.var_to_id.get(_sname)
+                        if _sid is None:
+                            continue
+                        _stype = root_types.get(self.uf.find(_sid), BOTTOM)
+                        if not _is_concrete(_stype) or \
+                                _stype in ("int", "float", "char*", "bool"):
+                            continue
+                        _joined = (_stype if _joined == BOTTOM
+                                   else self.lattice.join(_joined, _stype))
+                    if _is_concrete(_joined) and _joined not in (VOID_PTR, TOP):
+                        _ev = ("store-from-class",
+                               "%s <- class-typed store (joined %s)" % (
+                                   _pp_name, _name(_joined)))
+                        _pp_target = _joined
+                if _ev is None:
+                    continue
+                if _root in _rank3_roots:
+                    _pp_skipped_frozen += 1
+                    continue
+                _pp_edges[_vid] = (_ev[0], _ev[1], _root in frozen_roots, _pp_target)
+
+            if _pp_log_path:
+                _pp_log: list[dict] = []
+            for _vid in sorted(_pp_edges):
+                _root = self.uf.find(_vid)
+                if root_types.get(_root, BOTTOM) != "int":
+                    continue
+                _rule, _edge, _frz, _target = _pp_edges[_vid]
+                root_types[_root] = _target
+                _pp_promoted += 1
+                _pp_by_rule[_rule] += 1
+                if _pp_log_path:
+                    _pp_log.append({
+                        "var": self.id_to_var[_vid],
+                        "from": "int",
+                        "to": _name(_target),
+                        "rule": _rule,
+                        "edge": _edge,
+                        "frozen": _frz,
+                    })
+            if _pp_log_path:
+                with open(_pp_log_path, "w", encoding="utf-8") as _f:
+                    json.dump({
+                        "task": "X29 B10d usage-driven pointer promotion",
+                        "promoted": _pp_promoted,
+                        "skipped_frozen": _pp_skipped_frozen,
+                        "by_rule": dict(_pp_by_rule.most_common()),
+                        "promotions": _pp_log,
+                    }, _f, indent=1, ensure_ascii=False, sort_keys=True)
+            print(f"  B10d pointer-promoted vars: {_pp_promoted} "
+                  f"(frozen-skipped: {_pp_skipped_frozen}) "
+                  f"{dict(_pp_by_rule.most_common())}", file=sys.stderr)
+        except Exception as _e:  # fail loud — promotion must be observable
+            print(f"  B10d ERROR: {_e}", file=sys.stderr)
+            raise
+
         self.eq_types = root_types
         self.top_causes = top_causes
         self.top_cause_roots = top_cause_roots
