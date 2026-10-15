@@ -45,6 +45,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AlphaShapeClass_e4.hpp"  // w18j2 C3861 AlphaShapeClass:: supply
 #include "e4/classes/MapClass_e4.hpp"  // w18j2 C3861 MapClass:: supply
+#include "e4/classes/ObjectPtr_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int CTOR(int p0, int p1, int p2); }  // x4:signals@0x420960
 namespace gamemd { int GetScrollMode(MapClass *p_this); }  // x4:ida@0x4aeb10
@@ -1120,11 +1121,11 @@ int ObjectClass::DropAsBomb_Track()
     if ( (this->abstractFlags & 4) != 0 ) /*0x5f41bb*/
     {
       if ( !*&this->u32_674 ) /*0x5f41bd*/
-        WinAPI::Wrapper(-2147467261); /*0x5f41cc*/
+        sub_7DC720(-2147467261); /*0x5f41cc*/
       if ( (*(unsigned __int8 (**)(unsigned int))(**&this->u32_674 + 16))(*&this->u32_674) ) /*0x5f41da*/
       {
         if ( !*&this->u32_674 ) /*0x5f4213*/
-          WinAPI::Wrapper(-2147467261); /*0x5f4222*/
+          sub_7DC720(-2147467261); /*0x5f4222*/
         return (*(int (**)(unsigned int, unsigned int))(**&this->u32_674 + 156))( /*0x5f4232*/
                  *&this->u32_674,
                  0);

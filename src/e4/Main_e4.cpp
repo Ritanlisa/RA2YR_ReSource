@@ -15,6 +15,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/EventQueue_e4.hpp"
 #include "e4/classes/GameOptions_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x4E1D00
 namespace gamemd {  // G42.18 ns repair

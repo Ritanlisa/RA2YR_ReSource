@@ -22,6 +22,8 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x4D0980
 namespace gamemd {  // G42.18 ns repair

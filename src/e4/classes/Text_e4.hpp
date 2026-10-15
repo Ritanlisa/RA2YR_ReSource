@@ -7,7 +7,6 @@ namespace gamemd {
 
 struct Text {
 // --- flat members (BEGIN) ---
-    char Text_field_00[4];  // 0x0
 // --- flat members (END) ---
     unsigned char Text_field_00[8];  // G42.35 C9 flat-carrier vocab (0x5bd45a 字形基)
     int DrawRepeated(int String, int a3, int a4, int a5, void *a1 = 0);

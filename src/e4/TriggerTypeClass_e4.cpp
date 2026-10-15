@@ -192,7 +192,7 @@ LABEL_52:
     && *(unsigned char *)((*(int (**)(unsigned char *))(*&aP2->displayProductionTo))(aP2) + 3476) )
   {
     if ( !*((aP2[20] & 4) != 0 ? &aP2->q674 : (unsigned int *)1652) )
-      WinAPI::Wrapper(-2147467261); /*0x6fc4cf*/
+      sub_7DC720(-2147467261); /*0x6fc4cf*/
     v37 = *((aP2[20] & 4) != 0 ? &aP2->q674 : (unsigned int *)1652);
     if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)v37 + 128))(v37) ) /*0x6fc4dd*/
       return 5; /*0x6fc4dd*/

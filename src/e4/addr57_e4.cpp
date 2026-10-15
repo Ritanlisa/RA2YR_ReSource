@@ -34,6 +34,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
 #include "e4/classes/TileData_e4.hpp"  // G57w10 D supply
+#include "e4/classes/Cliff_e4.hpp"
 
 // 0x574600
 namespace gamemd {  // G42.18 ns repair

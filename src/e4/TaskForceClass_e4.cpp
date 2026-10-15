@@ -25,6 +25,7 @@
 #include "e4/classes/TauntCommandClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/TypeClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_412610(int p0); }  // x4:signals@0x412610
 

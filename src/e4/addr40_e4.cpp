@@ -60,6 +60,7 @@
 #include "e4/classes/E4Recv_40E4C0_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/GenericNode_e4.hpp"
+#include "system/cc_file.hpp"  // X33-L2: G57a2-style tree-first bridge (C3668 twin-guard)
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"

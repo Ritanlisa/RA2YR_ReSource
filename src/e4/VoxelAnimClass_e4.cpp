@@ -39,6 +39,8 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
+#include "e4/classes/ToggleClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {  // G42.18 ns repair
@@ -1034,7 +1036,7 @@ char VoxelAnimClass::UpdateMatrix()
     v8 = 0; /*0x4d0322*/
   }
   if ( v5 < 0 && v5 != -2147467262 ) /*0x4d0347*/
-    WinAPI::Wrapper(v5); /*0x4d034a*/
+    sub_7DC720(v5); /*0x4d034a*/
   if ( !v6 ) /*0x4d0355*/
     return 0; /*0x4d0355*/
   if ( !(*(int (**)(int))(*(unsigned int *)v6 + 32))(v6) ) /*0x4d0363*/

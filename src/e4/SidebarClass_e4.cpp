@@ -52,6 +52,7 @@
 #include "e4/classes/ControlClass_e4.hpp"
 #include "classes/FogOfWar_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {  // G42.18 ns repair

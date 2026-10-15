@@ -123,7 +123,7 @@ LABEL_5:
       {
         v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v11 + 72))(v11, v29); /*0x416f54*/
         if ( !this->u32_674 ) /*0x416f5f*/
-          WinAPI::Wrapper(-2147467261); /*0x416f6e*/
+          sub_7DC720(-2147467261); /*0x416f6e*/
         (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(*this->u32_293) + 68))( /*0x416f89*/
           this->u32_674,
           *v12,
@@ -158,7 +158,7 @@ LABEL_5:
         return (gamemd::FootClass **)(1); /*0x417024*/
       }
       if ( !this->u32_674 ) /*0x417025*/
-        WinAPI::Wrapper(-2147467261); /*0x417032*/
+        sub_7DC720(-2147467261); /*0x417032*/
       if ( (*(int (**)(unsigned int))(*this->u32_293) + 144))(this->u32_674) != 1 ) /*0x417049*/
         goto LABEL_44; /*0x417049*/
       Debug::Log(); /*0x417054*/
@@ -178,7 +178,7 @@ LABEL_5:
         this->u32_6D4 = 0; /*0x41710f*/
 LABEL_44:
         if ( !this->u32_674 ) /*0x417116*/
-          WinAPI::Wrapper(-2147467261); /*0x417125*/
+          sub_7DC720(-2147467261); /*0x417125*/
         if ( !(*(unsigned __int8 (**)(unsigned int))(*this->u32_293) + 16))(this->u32_674) ) /*0x417133*/
         {
           Debug::Log(); /*0x41713f*/

@@ -35,6 +35,12 @@
 #include "e4/classes/SuperWeapon_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/LightSourceClass_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 
 // 0x453E20
 namespace gamemd {  // G42.18 ns repair

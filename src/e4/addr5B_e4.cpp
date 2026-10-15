@@ -5,6 +5,7 @@
 #include "e4/classes/ModemGame_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Checksummer_e4.hpp"
+#include "system/cc_file.hpp"  // X33-L2: G57a2-style tree-first bridge (C3668 twin-guard)
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 
 #include "e4/classes/E4Recv_5B1D90_e4.hpp"

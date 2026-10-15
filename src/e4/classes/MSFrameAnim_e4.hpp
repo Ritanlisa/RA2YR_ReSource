@@ -7,6 +7,7 @@
 namespace gamemd {
 struct MSVQAnim;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
+struct rc_ptr;  // fix_fwd_type_supply
 struct MSFrameAnim {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0

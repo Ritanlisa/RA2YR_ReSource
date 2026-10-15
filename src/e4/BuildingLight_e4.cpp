@@ -19,6 +19,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/PingPongBuffer_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x5FF850
 namespace gamemd {  // G42.18 ns repair

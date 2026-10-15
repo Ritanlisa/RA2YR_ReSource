@@ -55,6 +55,7 @@
 #include "e4/classes/Checksummer_e4.hpp"  // w16g4 C3861 Checksummer:: supply
 #include "e4/classes/IPersistStream_e4.hpp"  // w16g4 C3861 IPersistStream:: supply
 #include "e4/classes/ObjectPtr_e4.hpp"  // w18j2 C3861 ObjectPtr:: supply
+#include "e4/classes/MapClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int GetNextAction(int* p0); }  // x4:signals@0x691540
 // [w18j2] C3861 supply (raw-evidenced)
@@ -2405,7 +2406,7 @@ LABEL_80:
           if ( ObjectClass::DistanceTo((ObjectClass *)firstUnit, (int)firstUnit->movementDestination) <= *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5912) ) /*0x6ebd7f*/
           {
             if ( !firstUnit->locomotor[0] ) /*0x6ebd85*/
-              WinAPI::Wrapper(-2147467261); /*0x6ebd94*/
+              sub_7DC720(-2147467261); /*0x6ebd94*/
             if ( !(*(unsigned __int8 (**)(int))(*(unsigned int *)firstUnit->locomotor[0] + 16))(firstUnit->locomotor[0]) ) /*0x6ebda2*/
             {
 LABEL_87:

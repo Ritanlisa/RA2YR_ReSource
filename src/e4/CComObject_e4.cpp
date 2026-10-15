@@ -37,6 +37,7 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/GadgetClass_e4.hpp"  // w18j2 C3861 GadgetClass:: supply
+#include "e4/classes/MapClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4); }  // x4:ida@0x4f11b0
 // [w18j2] C3861 supply (raw-evidenced)

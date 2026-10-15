@@ -15,6 +15,8 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x6B6C90
 namespace gamemd {  // G42.18 ns repair

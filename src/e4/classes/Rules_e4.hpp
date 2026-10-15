@@ -8,8 +8,6 @@ namespace gamemd {
 struct Color;  // fix_fwd_type_supply
 struct Rules {
 // --- flat members (BEGIN) ---
-    unsigned int *m_1;  // 0x1
-    unsigned int m_5;  // 0x5
     int m_C;  // 0xC
     Color * ptr_1860;  // 0x1860
     Color * ptr_1866;  // 0x1866

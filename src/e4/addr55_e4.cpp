@@ -1435,7 +1435,7 @@ LABEL_16:
     if ( v14 && (*(unsigned char *)(v14 + 20) & 4) != 0 && *(unsigned int *)(v14 + 1652) && !*(unsigned char *)(v14 + 973) ) /*0x55b844*/
     {
       if ( !*(unsigned int *)(v14 + 1652) ) /*0x55b84e*/
-        WinAPI::Wrapper(-2147467261); /*0x55b85d*/
+        sub_7DC720(-2147467261); /*0x55b85d*/
       (*(void (**)(unsigned int))(**(unsigned int **)(v14 + 1652) + 64))(*(unsigned int *)(v14 + 1652)); /*0x55b86b*/
     }
     result = this->uniqueId; /*0x55b86e*/

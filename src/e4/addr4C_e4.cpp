@@ -59,6 +59,10 @@
 #include "e4/classes/BuildingAnim_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/DamageArea_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/FacingClass_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_4A3270(int p0, int p1, int p2, int p3); }  // x4:signals@0x4a3270
 

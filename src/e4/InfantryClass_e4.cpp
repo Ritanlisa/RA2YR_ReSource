@@ -242,7 +242,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       }
       (a1->owner)->DecrementUnitCount(a1); /*0x517e2e*/
       if ( !a1->Locomotor ) /*0x517e33*/
-        WinAPI::Wrapper(-2147467261); /*0x517e40*/
+        sub_7DC720(-2147467261); /*0x517e40*/
       (*(void (**)(int))(*(unsigned int *)a1->currentMission + 172))(a1->currentMission); /*0x517e4e*/
       a1->unknown_int_6E8 = 2; /*0x517e56*/
       a1->Crawling = 0; /*0x517e60*/

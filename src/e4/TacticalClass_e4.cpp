@@ -39,6 +39,7 @@
 #include "e4/classes/Frame_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Color_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/LayerClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_43(); }  // w18j2 raw 0x006DC400
 namespace gamemd { void nullsub_44(); }  // w18j2 raw 0x006DC410

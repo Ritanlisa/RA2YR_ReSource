@@ -4,6 +4,7 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/FileStraw_e4.hpp"
 #include "e4/classes/GenericList_e4.hpp"
+#include "system/cc_file.hpp"  // X33-L2: G57a2-style tree-first bridge (C3668 twin-guard)
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 
 #include "e4/classes/E4Recv_763700_e4.hpp"

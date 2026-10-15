@@ -1,4 +1,5 @@
 // CCFileClass -- IDA-based class for file access (MIX pool search + disk fallback)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // X33-L1: G57a2 bridge; sole C2989 victim TU
 #include "system/cc_file.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "system/mix_file.hpp"

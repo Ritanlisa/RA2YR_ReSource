@@ -28,6 +28,7 @@
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x41E350
 namespace gamemd {  // G42.18 ns repair

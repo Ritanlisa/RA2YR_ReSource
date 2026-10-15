@@ -78,6 +78,7 @@
 #include "e4/classes/ParticleSystemClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Credits_e4.hpp"
 #include "e4/classes/Init_e4.hpp"

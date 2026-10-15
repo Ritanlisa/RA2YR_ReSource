@@ -3269,7 +3269,7 @@ void E4Recv_4A2880::sub_4A2880()
            0) >= 0 )
     {
       if ( !this->M8 ) /*0x4a28dc*/
-        WinAPI::Wrapper(-2147467261); /*0x4a28e6*/
+        sub_7DC720(-2147467261); /*0x4a28e6*/
       (*(void (**)(int))(*(unsigned int *)this->M8 + 8))(this->M8); /*0x4a28f1*/
       this->M8 = 0; /*0x4a28f4*/
     }

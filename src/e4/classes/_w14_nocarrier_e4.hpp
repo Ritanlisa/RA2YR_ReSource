@@ -309,29 +309,6 @@ public:
     static unsigned int * Init(void *aP1, int a2);  // raw 0x52aec0
 };
 
-#ifndef GAMEMD_G2_MPGameModeClass_DEF  // G42.57w14 carrier twin-guard (first-include wins)
-#define GAMEMD_G2_MPGameModeClass_DEF 1
-// === MPGameModeClass  size=44  extracted from csp_canon/classes.hpp (W14-E4) ===
-class MPGameModeClass {
-public:
-    char q000[4];  /* unsigned char */  // 0x0
-    char MPGameModeClass_field_4[1];  /* bool */  // 0x4
-    char __pad_005[3];  /* unsigned char */  // 0x5
-    char MPTeams[4];  /* unsigned int */  // 0x8
-    wchar_t* CSFTitle;  // 0xC
-    wchar_t* CSFTooltip;  // 0x10
-    char MPModeIndex[4];  /* int32_t */  // 0x14
-    char* INIFilename;  // 0x18
-    char* MapFilter;  // 0x1C
-    char AIAllowed[1];  /* bool */  // 0x20
-    char q021[3];  /* unsigned char */  // 0x21 (was __pad_021)
-    CCINIClass* INI;  // 0x24
-    char AlliesAllowed[1];  /* bool */  // 0x28
-    char WOLTourney[1];  /* bool */  // 0x29
-    char WOLClanTourney[1];  /* bool */  // 0x2A
-    char MustAlly[1];  /* bool */  // 0x2B
-};
-#endif  // GAMEMD_G2_MPGameModeClass_DEF
 
 // === MapData  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class MapData {

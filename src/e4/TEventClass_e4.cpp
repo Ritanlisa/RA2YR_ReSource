@@ -26,6 +26,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ParticleSystemClass_e4.hpp"
 
 // 0x71E940
 namespace gamemd {  // G42.18 ns repair

@@ -63,6 +63,8 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 #include "e4/classes/PreviewClass_e4.hpp"  // w18j2 C3861 PreviewClass:: supply
+#include "e4/classes/ScrollClass_e4.hpp"
+#include "e4/classes/Tooltip_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int ReadWaypoints(int p0); }  // x4:signals@0x68bdc0
 namespace gamemd { int LoadFromINI(uint8_t*** p0); }  // x4:signals@0x410a60

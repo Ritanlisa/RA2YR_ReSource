@@ -52,6 +52,8 @@
 #include "e4/classes/CellClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BuildingTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/NukeFlash_e4.hpp"
+#include "e4/classes/IsoCoord_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {  // G42.18 ns repair

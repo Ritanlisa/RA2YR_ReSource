@@ -56,6 +56,11 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/LightningStorm_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TacticalClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/SuperWeaponClass_e4.hpp"
+#include "e4/classes/ActionQueue_e4.hpp"
+#include "e4/classes/ScriptClass_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int SetLocalToByID(unsigned int p0, char p1); }  // x4:signals@0x689910
 namespace gamemd { int AnnounceReady(BuildingClass *p_this); }  // x4:ida@0x452260

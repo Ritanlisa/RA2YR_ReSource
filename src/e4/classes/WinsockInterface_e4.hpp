@@ -9,7 +9,6 @@
 namespace gamemd {
 struct WinsockInterface {
 // --- flat members (BEGIN) ---
-    unsigned int *m_1;  // 0x1
     HashTable * ptr_4;  // 0x4
     int m_18;  // 0x18
     unsigned int m_FC1B;  // 0xFC1B

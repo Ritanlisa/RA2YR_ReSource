@@ -36,6 +36,7 @@
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x71A450
 namespace gamemd {  // G42.18 ns repair

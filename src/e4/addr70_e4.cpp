@@ -36,6 +36,7 @@
 #include "e4/classes/Coord2D_e4.hpp"
 #include "e4/classes/Viewport_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x7049C0
 namespace gamemd {  // G42.18 ns repair

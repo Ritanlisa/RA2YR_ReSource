@@ -15,6 +15,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
 
 // 0x52CB90
 namespace gamemd {  // G42.18 ns repair

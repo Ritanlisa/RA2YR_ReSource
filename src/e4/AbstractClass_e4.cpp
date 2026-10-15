@@ -40,6 +40,7 @@
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/MPBattleClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/MissionClass_e4.hpp"
 // [w14e3] fwd decl: nullsub_3 def at addr41_e4.cpp (void nullsub_3(AbstractClass * aP0)); raw 0x7259aa
 namespace gamemd { void nullsub_3(int aP0); }
 

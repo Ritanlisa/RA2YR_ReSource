@@ -12,6 +12,7 @@
 namespace ra2 { namespace game { class AbstractClass; } }  // G42.35: sig-sync 参数前置 (e4 头同源别名)
 namespace gamemd
 {
+struct MSAnim;  // X33-L1 A11 fwd supply (C4430 x3TU)
 using ::ra2::game::AbstractClass;  // G42.35: gamemd 侧别名 (与 e4 头 using 同实体, 幂等)
 // G42 fix_fwd_type_supply: forward declarations for def-param types pulled in
 // by the sig-sync wave (kinds matched to existing tree declarations).

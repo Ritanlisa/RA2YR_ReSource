@@ -60,6 +60,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/Targeting_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ComputeImpactTrajectory(int p0);  // x4:signals@0x6620f0
@@ -325,6 +326,7 @@ LABEL_7:
   int v125; // [esp+74h] [ebp-4Ch] BYREF
   unsigned int *v60; // edi
     case 1:
+    {  // X33-L1 case 1 body brace (C2360)
       *(unsigned int *)(a1 + 68) = 0;
       *(unsigned int *)(a1 + 72) = 0;
       int v5 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 724);
@@ -393,7 +395,9 @@ LABEL_17:
         (*(void (**)(unsigned int, int))(**(unsigned int **)(a1 + 8) + 292))(*(unsigned int *)(a1 + 8), 1);
       }
       goto LABEL_23;
+    }  // X33-L1 end case 1
     case 2:
+    {  // X33-L1 case 2 body brace (C2360)
       *(unsigned int *)(a1 + 68) = 0;
       *(unsigned int *)(a1 + 72) = 0;
       int v36 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 724);
@@ -461,6 +465,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         StartAudioControllerAt((int)(*(AudioController **)(v44 + 1324)),(unsigned int*)(&v124), 0);
       }
       goto LABEL_111;
+    }  // X33-L1 end case 2
     case 3:
       if ( !*(unsigned char *)(a1 + 76) )
       {
@@ -487,6 +492,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
       }
       goto LABEL_111;
     case 4:
+    {  // X33-L1 case 4 pre-tail brace (C2360)
       if ( (*(int (**)(ObjectClass *))(*(unsigned int *)v1->q000 + 456))( (ObjectClass *)(v1)) <= 0 )
       {
         ((TechnoClass *)(a1 - 4))->CalculateDamage();
@@ -581,11 +587,13 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
       int v85 = *(unsigned int *)(a1 + 8);
       desiredFacing = (ObjectClass *)(*((unsigned int *)&(desiredFacing_4)));
       ((FacingClass *)(unsigned short *)((FacingClass *)(v85 + 904)))->Update( (unsigned short *)((DirStruct *)&desiredFacing));
+    }  // X33-L1 end case 4 pre-tail (LABEL_111 stays at switch scope)
 LABEL_111:
       if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1 + 128))(a1) )
         goto LABEL_119;
       v94 = *(IUnknown **)(a1 + 48);
-      int v95 = *(unsigned int *)(a1 + 56);
+      int v95;  // X33-L1 hoist (init-split; C2360 at case 5)
+      v95 = *(unsigned int *)(a1 + 56);
       if ( v94 == (IUnknown *)-1 )
         goto LABEL_115;
       if ( *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112] - (int)v94 >= v95 )
@@ -659,6 +667,7 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
       }
       return (*(char (**)(int))(*(unsigned int *)a1 + 16))(a1);
     case 5:
+    {  // X33-L1 case 5 body brace (C2360)
       unsigned int * v86 = (unsigned int *)(a1 - 4);
       if ( ComputeImpactTrajectory(a1 - 4, v4) )
         return 0;
@@ -689,7 +698,9 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
         *(float *)(a1 + 80) = v93;
       }
       goto LABEL_111;
+    }  // X33-L1 end case 5
     case 6:
+    {  // X33-L1 case 6 body brace (C2360/C2361)
       objectTypeFlags = v1[4].objectTypeFlags;
       bool v19 = objectTypeFlags && ((VeterancyStruct *)(float *)(objectTypeFlags + 336))->IsElite();
       v21 = (IUnknown *)(a1 + 48);
@@ -773,6 +784,7 @@ v32 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int 
         *(unsigned int *)(a1 + 60) = 3;
       }
       goto LABEL_111;
+    }  // X33-L1 end case 6
     default:
       goto LABEL_111;
   }

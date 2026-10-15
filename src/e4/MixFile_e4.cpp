@@ -30,6 +30,7 @@
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/FontClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/TabClass_e4.hpp"
 
 // 0x530460
 namespace gamemd {  // G42.18 ns repair

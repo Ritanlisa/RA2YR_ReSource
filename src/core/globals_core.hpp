@@ -2,6 +2,7 @@
 #pragma once
 
 namespace gamemd {
+class MessageListClass;  // X33-L1 A11 fwd supply (C4430 x4TU)
 class TechnoClass;  // X27: member-decl type supply
 
 // === Section 0x0810000 - .data (142 globals) ===

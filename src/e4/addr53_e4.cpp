@@ -73,6 +73,7 @@
 #include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
 #include "e4/classes/AudioFileClass_e4.hpp"  // w18j2 C3861 AudioFileClass:: supply
 #include "e4/classes/ChronoScreenEffect_e4.hpp"  // w18j2 C3861 ChronoScreenEffect:: supply
+#include "e4/classes/Text_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Release(VocClass *p_this); }  // x4:ida@0x4052f0
 namespace gamemd { int DecrementCounter(int p0); }  // x4:signals@0x631ee0

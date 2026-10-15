@@ -38,6 +38,8 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x4FB840
 namespace gamemd {  // G42.18 ns repair

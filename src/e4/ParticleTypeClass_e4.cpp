@@ -26,6 +26,9 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x477900
 namespace gamemd {  // G42.18 ns repair

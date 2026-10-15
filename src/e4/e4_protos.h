@@ -663,6 +663,7 @@ extern void nullsub_48();
 extern void nullsub_57(void *a1 = 0);
 extern void nullsub_6();
 extern void nullsub_7(void *a1 = 0);
+extern int sub_7DC720(int a1);  // X33-L3 0x7DC720 (53 C3861/20TU; decl twins stream_ext.hpp:13/misc_ext.hpp:56; ruling g57w20m7)
 extern void sub_4085E0(unsigned int * a1, int a2, int a3);
 extern void sub_40A850(void *a1 = 0);
 extern void sub_40FF90();

@@ -23,6 +23,11 @@
 #include "e4/classes/LoadOptions_e4.hpp"
 #include "e4/classes/RadarHashVector_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/Surface_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/FogOfWar_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x431090
 namespace gamemd {  // G42.18 ns repair

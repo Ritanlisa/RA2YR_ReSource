@@ -27,6 +27,7 @@
 #include "e4/classes/VoxelPalette_e4.hpp"  // w16g4 C3861 VoxelPalette:: supply
 #include "e4/classes/ObjectPlacement_e4.hpp"  // w16g4 C3861 ObjectPlacement:: supply
 #include "e4/classes/BuildingClass_e4.hpp"  // w18j2 C3861 BuildingClass:: supply
+#include "e4/classes/Matrix3x3_e4.hpp"
 // [w18j2] C2065 global supply (data addr evidence)
 extern float flt_B43B43198;  // w18j2 data: 0xB43B43198
 extern float flt_B43B431A8;  // w18j2 data: 0xB43B431A8

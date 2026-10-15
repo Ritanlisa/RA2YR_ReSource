@@ -63,6 +63,7 @@
 #include "e4/classes/TerrainClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CellClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/LayerClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_20(); }  // w18j2 raw 0x00547CE0
 

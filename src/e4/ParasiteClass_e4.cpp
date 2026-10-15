@@ -36,6 +36,9 @@
 #include "e4/classes/Triple_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Matrix3x3_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 
 // 0x629210
 namespace gamemd {  // G42.18 ns repair
@@ -700,7 +703,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
     v16 = a2[40]; /*0x62aaed*/
     v17 = a2[41]; /*0x62aaf4*/
     if ( !*v12 ) /*0x62aaf8*/
-      WinAPI::Wrapper(-2147467261); /*0x62ab03*/
+      sub_7DC720(-2147467261); /*0x62ab03*/
     result = (*(int (**)(unsigned int, int, int, int, int))(*(unsigned int *)*v12 + 112))(*v12, -1, v13, v16, v17); /*0x62ab24*/
     a2->q694 = this->creationFrame; /*0x62ab2b*/
     this->__pad_028 = a2; /*0x62ab31*/
