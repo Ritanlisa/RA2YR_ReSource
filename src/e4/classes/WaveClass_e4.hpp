@@ -13,12 +13,12 @@ struct WaveClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    unsigned int WaveClass_field_BC;  // 0x10
+    void* WaveClass_field_BC;  // 0x10 [X30:type_map]
     unsigned char alignmentPadding_3;  // 0x11
     ObjectClass* nextObject;  // 0x12
     bool IsAllocated;  // 0x13
-    unsigned int WaveClass_field_C0;  // 0x14
-    unsigned int WaveClass_field_C4;  // 0x18
+    void* WaveClass_field_C0;  // 0x14 [X30:type_map]
+    void* WaveClass_field_C4;  // 0x18 [X30:type_map]
     unsigned int WaveClass_field_C8;  // 0x1C
     unsigned int WaveClass_field_CC;  // 0x20
     unsigned int WaveClass_field_D0;  // 0x24
@@ -74,12 +74,12 @@ struct WaveClass {
     unsigned int WaveClass_field_15C;  // 0xB0
     unsigned int WaveClass_field_160;  // 0xB4
     unsigned int WaveClass_field_164;  // 0xB8
-    unsigned int WaveClass_field_168;  // 0xBC
+    void* WaveClass_field_168;  // 0xBC [X30:type_map]
     unsigned int WaveClass_field_16C;  // 0xC0
     unsigned int WaveClass_field_170;  // 0xC4
     unsigned int WaveClass_field_174;  // 0xC8
     unsigned int WaveClass_field_178;  // 0xCC
-    unsigned int WaveClass_field_17C;  // 0xD0
+    void* WaveClass_field_17C;  // 0xD0 [X30:type_map]
     unsigned int WaveClass_field_180;  // 0xD4
     unsigned int WaveClass_field_184;  // 0xD8
     unsigned int WaveClass_field_188;  // 0xDC
@@ -106,14 +106,14 @@ struct WaveClass {
     unsigned char WaveClass_field_12D_d;  // 0x12D
     unsigned char WaveClass_field_12E_d;  // 0x12E
     unsigned char WaveClass_field_12F_d;  // 0x12F
-    unsigned int Cells;  // 0x130
+    void* Cells;  // 0x130 [X30:type_map]
     unsigned int WaveClass_field_134_d;  // 0x134
     unsigned int WaveClass_field_138_d;  // 0x138
     unsigned int WaveClass_field_13C_d;  // 0x13C
     unsigned int WaveClass_field_140_d;  // 0x140
     unsigned int WaveClass_field_144_d;  // 0x144
     unsigned int WaveClass_field_148_d;  // 0x148
-    unsigned int WaveClass_field_14C_d;  // 0x14C
+    void* WaveClass_field_14C_d;  // 0x14C [X30:type_map]
     unsigned int WaveClass_field_150_d;  // 0x150
     unsigned int WaveClass_field_154_d;  // 0x154
     unsigned int WaveClass_field_158_d;  // 0x158
@@ -136,7 +136,7 @@ struct WaveClass {
     unsigned int WaveClass_field_19C_d;  // 0x19C
     unsigned int WaveClass_field_1A0_d;  // 0x1A0
     unsigned int WaveClass_field_1A4_d;  // 0x1A4
-    unsigned int WaveClass_field_1A8_d;  // 0x1A8
+    void* WaveClass_field_1A8_d;  // 0x1A8 [X30:type_map]
     unsigned int WaveClass_field_1AC_d;  // 0x1AC
     unsigned int WaveClass_field_1B0_d;  // 0x1B0
     unsigned int WaveClass_field_1B4_d;  // 0x1B4
@@ -147,8 +147,8 @@ struct WaveClass {
     unsigned int WaveClass_field_1C8_d;  // 0x1C8
     unsigned int WaveClass_field_1CC_d;  // 0x1CC
     unsigned int LaserIntensity_d;  // 0x1D0
-    unsigned int Owner_d;  // 0x1D4
-    unsigned int Facing_d;  // 0x1D8
+    TechnoClass* Owner_d;  // 0x1D4 [X30:type_map]
+    FacingStruct* Facing_d;  // 0x1D8 [X30:type_map]
     unsigned int Cells_d;  // 0x1DC
 // --- flat members (END) ---
     static unsigned int * Constructor_7632D0(WaveClass *pThis, int a2, int a3);

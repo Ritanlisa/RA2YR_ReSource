@@ -17,6 +17,8 @@ struct StaticButtonClass {
 
     unsigned int u32_30;  // X10 supply (member_lookup)
     unsigned int u32_90;  // 0x90
+    unsigned char __pad_004;  // 0x4 [X30:canon]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

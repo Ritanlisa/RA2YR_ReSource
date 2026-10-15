@@ -25,5 +25,6 @@ struct VectorClass_N {
     wchar_t * ddtor(void *a1_1);  // 0x5AD1F0
     int  GetSize(double * a2);  // 0x5AD220
     unsigned int  GetCapacity(int a2);  // 0x5AD270
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

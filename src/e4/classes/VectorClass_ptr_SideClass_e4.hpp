@@ -21,5 +21,6 @@ struct VectorClass_ptr_SideClass {
     int  GetSize(unsigned int * a2);  // 0x4EC680
     unsigned int  GetCapacity(int a2);  // 0x4EC6C0
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0250
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

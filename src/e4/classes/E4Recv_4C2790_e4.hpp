@@ -17,5 +17,6 @@ struct E4Recv_4C2790 {
     unsigned int M40;  // 0x40
 // --- flat members (END) ---
     int sub_4C2790();  // 0x4C2790
+    unsigned int owningHouseIndex;  // [X30:default]
 };
 } // namespace gamemd

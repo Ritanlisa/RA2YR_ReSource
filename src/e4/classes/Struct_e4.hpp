@@ -20,7 +20,7 @@ struct Struct {
     static unsigned int * Zero25(Struct * aP1);
     wchar_t **  WideStringCopy(int a2);  // 0x6247d0
     unsigned int u32_14;  // 0x14 (offset-truth)
-    unsigned int u32_18;  // 0x18 (offset-truth)
+    Struct* u32_18;  // 0x18 (offset-truth) [X30:type_map]
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_20;  // 0x20 (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)
@@ -40,6 +40,7 @@ struct Struct {
 
     int u32_1;  // X10 supply (member_lookup)
     int u32_2;  // X10 supply (member_lookup)
+    Struct* Struct_3;  // 0x3 [X30:member_lookup]
 };
 
 } // namespace gamemd

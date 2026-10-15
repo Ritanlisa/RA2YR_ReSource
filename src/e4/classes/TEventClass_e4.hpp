@@ -19,17 +19,17 @@ struct TEventClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char eventType[4];  // 0x24
-    char TEventClass_field_28[4];  // 0x28
-    char TEventClass_field_2C[4];  // 0x2C
-    char TEventClass_field_30[4];  // 0x30
+    int eventType;  // 0x24 [X30:type_map]
+    void* TEventClass_field_28;  // 0x28 [X30:type_map]
+    int TEventClass_field_2C;  // 0x2C [X30:type_map]
+    int TEventClass_field_30;  // 0x30 [X30:type_map]
     unsigned int alignmentPadding;  // 0x33
-    char TEventClass_field_34[4];  // 0x34
+    int TEventClass_field_34;  // 0x34 [X30:type_map]
     char TEventClass_field_38;  // 0x38
     char TEventClass_field_48[4];  // 0x48
     char TEventClass_field_4C[4];  // 0x4C
     char TEventClass_field_50[4];  // 0x50
-    char TEventClass_field_54[4];  // 0x54
+    int TEventClass_field_54;  // 0x54 [X30:type_map]
     char TEventClass_field_58[4];  // 0x58
     char TEventClass_field_5C[4];  // 0x5C
 // --- flat members (END) ---

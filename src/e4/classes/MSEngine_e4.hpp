@@ -58,5 +58,11 @@ struct MSEngine {
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned int u32_30;  // X10 supply (member_lookup)
     unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    void* MSEngine_field_0x4;  // 0x4 [X30:type_map]
+    int MSEngine_field_0x8;  // 0x8 [X30:type_map]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
+    unsigned int u32_20;  // 0x20 [X30:member_lookup]
+    int u32_40;  // 0x40 [X30:type_map]
 };
 } // namespace gamemd

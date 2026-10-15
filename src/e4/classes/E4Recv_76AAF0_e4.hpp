@@ -52,5 +52,12 @@ struct E4Recv_76AAF0 {
     unsigned int q014;  // X10 supply (member_lookup)
     unsigned int q021;  // X10 supply (member_lookup)
     unsigned int u32_22;  // X10 supply (member_lookup)
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int attachedBomb;  // [X30:default]
+    unsigned int attachedTag;  // [X30:default]
+    unsigned int fallRate;  // [X30:default]
+    unsigned int nextObject;  // [X30:default]
+    unsigned int occupant;  // [X30:default]
+    unsigned int owningHouseIndex;  // [X30:default]
 };
 } // namespace gamemd

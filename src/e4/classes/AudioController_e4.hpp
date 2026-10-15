@@ -24,6 +24,7 @@ struct AudioController {
     static void Init(void * aP0);
     int u32_5D8;  // 0x5D8
     int u32_294;  // 0x294
+    int __pad_010;  // 0x10 [X30:type_map]
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

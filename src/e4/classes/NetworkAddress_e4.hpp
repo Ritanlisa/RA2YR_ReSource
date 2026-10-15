@@ -14,6 +14,7 @@ struct NetworkAddress {
 // --- flat members (END) ---
     unsigned int * Assign(unsigned int *a1, int aP2, int16_t a4);  // 0x53ECE0
     void* m_Port;  // 0x0 (no offset truth)
+    int __pad_004;  // 0x4 [X30:type_map]
 };
 #endif  // GAMEMD_G2_NetworkAddress_DEF
 

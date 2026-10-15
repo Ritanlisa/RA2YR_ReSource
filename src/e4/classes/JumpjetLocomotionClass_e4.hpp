@@ -21,7 +21,7 @@ struct JumpjetLocomotionClass {
     void* RefCount;  // 0x14
     void* vtable3;  // 0x18
     char Speed[4];  // 0x1C
-    char Climb[4];  // 0x20
+    int Climb;  // 0x20 [X30:type_map]
     float Crash;  // 0x24
     float Height;  // 0x28
     char Accel[4];  // 0x2C
@@ -38,7 +38,7 @@ struct JumpjetLocomotionClass {
     unsigned char unknown_4D;  // 0x4D
     unsigned char unknown_4E;  // 0x4E
     unsigned char unknown_4F;  // 0x4F
-    char CurrentState[4];  // 0x50
+    State* CurrentState;  // 0x50 [X30:type_map]
     void* unknown_6C;  // 0x6C
     unsigned char unknown_6D;  // 0x6D
     unsigned char unknown_6E;  // 0x6E
@@ -353,6 +353,10 @@ struct JumpjetLocomotionClass {
     int u32_4FC;  // X10 supply (member_lookup)
     uint8_t u8_50C;  // X10 supply (member_lookup)
     int u8_53;  // X10 supply (member_lookup)
+    unsigned char __pad_012;  // 0x12 [X30:canon]
+    unsigned char __pad_039;  // 0x39 [X30:canon]
+    int __pad_074;  // 0x74 [X30:type_map]
+    unsigned char __pad_089;  // 0x89 [X30:canon]
 };
 
 } // namespace gamemd

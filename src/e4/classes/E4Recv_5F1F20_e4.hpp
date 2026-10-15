@@ -10,5 +10,6 @@ struct E4Recv_5F1F20 {
     unsigned int M56;  // 0x38
 // --- flat members (END) ---
     int sub_5F1F20();  // 0x5F1F20
+    unsigned int attachedBomb;  // [X30:default]
 };
 } // namespace gamemd

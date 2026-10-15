@@ -16,9 +16,9 @@ struct MixFileClass {
     bool Encryption;  // 0x9
     int CountFiles;  // 0xC
     int FileSize;  // 0x10
-    int FileStartOffset;  // 0x14
+    void* FileStartOffset;  // 0x14 [X30:type_map]
     MixHeaderData* Headers;  // 0x18
-    int MixFileClass_field_24;  // 0x24
+    void* MixFileClass_field_24;  // 0x24 [X30:type_map]
     unsigned char* MemoryData;  // 0x28
     int MemoryDataSize;  // 0x2C
 // --- flat members (END) ---
@@ -33,6 +33,8 @@ struct MixFileClass {
 
     int q020;  // X10 supply (member_lookup)
     int u8_12;  // X10 supply (member_lookup)
+    unsigned char __pad_00A;  // 0xA [X30:canon]
+    void* __pad_01C;  // 0x1C [X30:type_map]
 };
 
 } // namespace gamemd

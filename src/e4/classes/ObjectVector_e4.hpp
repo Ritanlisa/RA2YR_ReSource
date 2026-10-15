@@ -19,6 +19,12 @@ struct ObjectVector {
     int q00C;  // X10 supply (member_lookup)
     int q014;  // 0x14
     int q010;  // 0x10
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    int ObjectVector_field_0x04;  // 0x4 [X30:member_lookup]
+    int ObjectVector_field_0x08;  // 0x8 [X30:member_lookup]
+    int ObjectVector_field_0x10;  // 0x10 [X30:member_lookup]
+    int ObjectVector_field_0x14;  // 0x14 [X30:member_lookup]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 
 } // namespace gamemd

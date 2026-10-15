@@ -14,6 +14,7 @@ struct Matrix3x3 {
     int Multiply(float *a2, void *a1 = 0);
     int TransformPoint(float *aP1, float *a2, void *a1 = 0);
     int  RotateX(float a2);  // 0x5aef60
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

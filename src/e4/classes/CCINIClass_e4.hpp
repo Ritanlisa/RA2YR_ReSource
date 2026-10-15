@@ -62,6 +62,26 @@ CCINIClass();
     unsigned int u32_68;  // 0x68
     unsigned int u32_62;  // 0x62
     unsigned int q060;  // 0x60
+    int __pad_008;  // 0x8 [X30:type_map]
+    int __pad_038;  // 0x38 [X30:type_map]
+    unsigned char __pad_048;  // 0x48 [X30:canon]
+    unsigned int BufferCursor;  // [X30:default]
+    unsigned int BufferOffset;  // [X30:default]
+    unsigned int BufferPosition;  // [X30:default]
+    unsigned int BufferSize;  // [X30:default]
+    unsigned int FileBaseOffset;  // [X30:default]
+    unsigned int FileID;  // [X30:default]
+    unsigned int FileSize;  // [X30:default]
+    int INIClass_field_3C;  // 0x3C [X30:type_map]
+    unsigned int MixFileIndex;  // [X30:default]
+    unsigned int StreamSize;  // [X30:default]
+    int SuperClass_field_0x2C;  // 0x2C [X30:type_map]
+    unsigned int TotalBytesWritten;  // [X30:default]
+    unsigned int houseTypes;  // [X30:default]
+    unsigned int houseTypesCount;  // [X30:default]
+    unsigned int u8_6D;  // 0x6D [X30:default]
+    unsigned int u8_6E;  // 0x6E [X30:default]
+    unsigned int u8_6F;  // 0x6F [X30:default]
 };
 #endif  // GAMEMD_E4_CCINIClass
 

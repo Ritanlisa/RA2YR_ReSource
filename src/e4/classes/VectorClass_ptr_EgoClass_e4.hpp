@@ -28,5 +28,6 @@ struct VectorClass_ptr_EgoClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4C4C30
     VectorClass_flat *  QueryInterface(char a2);  // 0x4C4C60
     DynamicVector *  Constructor_VectorClass_EgoClass___(char a2);  // 0x4C4CB0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

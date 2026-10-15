@@ -18,5 +18,6 @@ struct VectorClass_Cell {
     VectorClass_flat *  QueryInterface(char a2);  // 0x42FBA0
     int  GetSize(unsigned short * a2);  // 0x42F7F0
     unsigned int  GetCapacity(int a2);  // 0x42F840
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

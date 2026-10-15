@@ -19,19 +19,19 @@ struct SlaveManagerClass {
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     TechnoClass* master;  // 0x24
-    unsigned int q28;  // 0x28
+    HouseClass* q28;  // 0x28 [X30:type_map]
     HouseClass* slaveOwner;  // 0x2C
-    char slaveType[4];  // 0x30
+    int slaveType;  // 0x30 [X30:type_map]
     unsigned int alignmentPadding;  // 0x33
-    char slaveCount[4];  // 0x34
+    int slaveCount;  // 0x34 [X30:type_map]
     void *q38;  // 0x38
-    char slaveVectorCount[4];  // 0x3C
-    char slaveVectorCapacity[4];  // 0x40
+    int slaveVectorCount;  // 0x3C [X30:type_map]
+    AbstractClass* slaveVectorCapacity;  // 0x40 [X30:type_map]
     char creationFrame[4];  // 0x44
-    char SlaveManagerClass_field_54[4];  // 0x54
-    char SlaveManagerClass_field_58[4];  // 0x58
-    char SlaveManagerClass_field_5C[4];  // 0x5C
-    char SlaveManagerClass_field_60[4];  // 0x60
+    int SlaveManagerClass_field_54;  // 0x54 [X30:type_map]
+    int SlaveManagerClass_field_58;  // 0x58 [X30:type_map]
+    int SlaveManagerClass_field_5C;  // 0x5C [X30:type_map]
+    AbstractClass* SlaveManagerClass_field_60;  // 0x60 [X30:type_map]
 // --- flat members (END) ---
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);
@@ -60,6 +60,8 @@ struct SlaveManagerClass {
     unsigned int slaves;  // X10 supply (csp_canon_members)
     unsigned int u32_AC;  // X10 supply (member_lookup)
     unsigned int u32_45;  // 0x45
+    int __pad_048;  // 0x48 [X30:type_map]
+    unsigned int vfptr;  // [X30:default]
 };
 
 } // namespace gamemd

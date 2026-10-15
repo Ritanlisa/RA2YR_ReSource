@@ -21,5 +21,6 @@ struct VectorClass_ptr_IsometricTileTypeClass {
     int  GetSize(unsigned int * a2);  // 0x4EEA20
     unsigned int  LoadTypeData(int a2);  // 0x4EEA60
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0BB0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

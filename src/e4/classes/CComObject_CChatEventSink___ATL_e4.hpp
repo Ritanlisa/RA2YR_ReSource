@@ -52,5 +52,6 @@ struct CComObject_CChatEventSink___ATL {
     int  DispatchStub_47(int a2, int a3, int a3_x = 0);  // 0x7AC4E0
     int  COMStub_Return0(int a2, int a3, int a4, int a4_x = 0);  // 0x7AB330
     int  StubReturnFalse(int a2, int a3, int a3_x = 0);  // 0x7AB340
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

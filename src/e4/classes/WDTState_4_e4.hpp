@@ -25,5 +25,7 @@ struct WDTState_4 {
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned char __pad_00C;  // X10 supply (csp_canon_members)
     int q004;  // X10 supply (member_lookup)
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 } // namespace gamemd

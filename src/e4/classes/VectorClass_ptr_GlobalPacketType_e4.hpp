@@ -37,5 +37,6 @@ struct VectorClass_ptr_GlobalPacketType {
     char  SetCapacity_1(int a2, unsigned int * a3);  // 0x69D380
     int  FindItemIndex_1(unsigned int * a2);  // 0x69D430
     unsigned int *  loc_69D720(unsigned int * Block, char a2);  // 0x69D720
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -29,6 +29,11 @@ struct MoveFeedback {
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
+    unsigned int m_Capacity;  // [X30:default]
+    unsigned int m_Items;  // [X30:default]
 };
 
 } // namespace gamemd

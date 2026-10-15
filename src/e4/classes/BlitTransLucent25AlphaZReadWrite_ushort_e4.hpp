@@ -23,8 +23,11 @@ struct BlitTransLucent25AlphaZReadWrite_ushort {
     unsigned short * Blit_RLE_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
     unsigned char m_2;  // 0x2 (offset-truth)
     unsigned int m_4;  // 0x4 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
+    AbstractClass* m_8;  // 0x8 (offset-truth) [X30:type_map]
     unsigned int *q000;  // 0x0 (offset-truth)
+    int __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_00C;  // 0xC [X30:canon]
+    unsigned int Data;  // [X30:default]
 };
 
 } // namespace gamemd

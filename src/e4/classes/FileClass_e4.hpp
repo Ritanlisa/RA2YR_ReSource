@@ -36,6 +36,10 @@ struct FileClass {
 
     unsigned int u32_14;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int FileNameAllocated;  // [X30:default]
+    unsigned int FilePointer;  // [X30:default]
+    unsigned int FileTimeDateLo;  // [X30:default]
+    unsigned int Handle;  // [X30:default]
 };
 #endif  // GAMEMD_G2_FileClass_DEF
 

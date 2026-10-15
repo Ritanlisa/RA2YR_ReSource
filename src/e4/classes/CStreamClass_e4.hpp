@@ -37,6 +37,9 @@ struct CStreamClass {
     unsigned int m_8;  // pad compile-supply (G41.47)
     unsigned int m_10;  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+    void* __pad_008;  // 0x8 [X30:type_map]
+    int __pad_011;  // 0x11 [X30:type_map]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
 };
 
 } // namespace gamemd

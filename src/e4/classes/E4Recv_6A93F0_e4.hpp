@@ -12,5 +12,6 @@ struct E4Recv_6A93F0 {
     unsigned int M56;  // 0x38
 // --- flat members (END) ---
     BombClass * * sub_6A93F0();  // 0x6A93F0
+    unsigned int attachedBomb;  // [X30:default]
 };
 } // namespace gamemd

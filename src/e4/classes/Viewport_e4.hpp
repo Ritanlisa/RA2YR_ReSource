@@ -10,6 +10,7 @@ struct Viewport {
 
 // --- flat members (END) ---
     static int Clear(void *a1 = 0);
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

@@ -20,5 +20,7 @@ struct Territory_WorldDominationTour_8 {
 
     int q00C;  // X10 supply (member_lookup)
     int field_1C;  // 0x1C
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned char __pad_014;  // 0x14 [X30:canon]
 };
 } // namespace gamemd

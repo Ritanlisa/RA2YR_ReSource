@@ -10,6 +10,7 @@ struct WDTClass {
 
 // --- flat members (END) ---
     int GetCellType(unsigned int a2, void *a1 = 0);
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

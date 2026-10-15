@@ -36,6 +36,9 @@ struct UDPInterfaceClass {
     unsigned int u32_3F334;  // X10 supply (member_lookup)
     unsigned int u32_3F554;  // X10 supply (member_lookup)
     int u32_3F320;  // 0x3F320
+    unsigned char __pad_005;  // 0x5 [X30:canon]
+    int __pad_008;  // 0x8 [X30:type_map]
+    char __pad_5[1];  // 0x5 [X30:member_lookup]
 };
 
 } // namespace gamemd

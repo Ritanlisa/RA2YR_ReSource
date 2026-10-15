@@ -23,10 +23,10 @@ struct ToolTipClass {
     unsigned char m_1[64];  // pad compile-supply (G41.47)
     unsigned char Position[8];  // 0x4 (receiver is ToolTipManager per raw 0x7240B0; value@0x4 holds ptr)
     int Duration;  // 0x10 (ToolTipManager)
-    char DisplayTimer[12];  // 0x14 (ToolTipManager)
+    int DisplayTimer;  // 0x14 (ToolTipManager) [X30:type_map]
     void* q018;  // 0x18 (ToolTipManager)
     void* q01C;  // 0x1C (ToolTipManager)
-    char TextBuffer[512];  // 0x20 (ToolTipManager)
+    int TextBuffer;  // 0x20 (ToolTipManager) [X30:type_map]
     void* q024;  // 0x24 (ToolTipManager)
     unsigned int q028;  // 0x28 (ToolTipManager)
     unsigned int __pad_234;  // 0x234 (ToolTipManager embedded VectorClass<ToolTip*> vfptr; G42 stale name q08D)
@@ -41,6 +41,9 @@ struct ToolTipClass {
     unsigned int u32_254;  // X10 supply (member_lookup)
     unsigned int u32_258;  // X10 supply (member_lookup)
     unsigned int u32_25C;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
 };
 
 } // namespace gamemd

@@ -18,5 +18,6 @@ struct VectorClass_ptr_SlaveManagerClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_SlaveManagerClass___(char a2);  // 0x6B1A20
     int Get(int a2, void *a2_2);  // 0x6B1410
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -20,5 +20,15 @@ struct E4Recv_7714B0 {
     unsigned int M980;  // 0x3D4
 // --- flat members (END) ---
     void  sub_7714B0(int a2, char a3, int a4);  // 0x7714B0
+    unsigned int barrelFacing;  // [X30:default]
+    unsigned int currentBurstIndex;  // [X30:default]
+    unsigned int isALoaner;  // [X30:default]
+    unsigned int isSinking;  // [X30:default]
+    unsigned int isUseless;  // [X30:default]
+    unsigned int primaryFacing;  // [X30:default]
+    unsigned int secondaryFacing;  // [X30:default]
+    unsigned int targetLaserTimer;  // [X30:default]
+    unsigned int unknown_short_3C8;  // [X30:default]
+    TechnoClass* vtable0;  // 0x0 [X30:fn-atom]
 };
 } // namespace gamemd

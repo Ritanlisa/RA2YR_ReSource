@@ -41,5 +41,6 @@ struct MSPCXAnim_42 {
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q004;  // X10 supply (member_lookup)
+    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 } // namespace gamemd

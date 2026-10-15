@@ -21,5 +21,6 @@ struct VectorClass_UHashObject_uint_SubzoneConn {
     int  GetSize(unsigned int * a2);  // 0x58AA20
     unsigned int  GetCapacity(int a2);  // 0x58AA60
     VectorClass_flat *  QueryInterface(char a2);  // 0x58AB80
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

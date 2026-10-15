@@ -18,5 +18,6 @@ struct VectorClass_ptr_TiberiumClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_TiberiumClass___(char a2);  // 0x723A40
     int Get(int a2, void *a2_2);  // 0x723730
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

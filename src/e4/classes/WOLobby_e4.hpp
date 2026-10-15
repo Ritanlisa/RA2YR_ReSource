@@ -12,6 +12,7 @@ struct WOLobby {
     int ChatDlgProc(HWND hDlg, UINT, WPARAM, HWND hWnd);
     int SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd);
     static int  DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4);  // 0x78AC10
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

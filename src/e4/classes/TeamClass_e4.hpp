@@ -32,13 +32,13 @@ struct TeamClass {
     HouseClass* target;  // 0x30
     unsigned int alignmentPadding;  // 0x33
     CellClass* spawnCell;  // 0x34
-    unsigned int unknown38;  // 0x38
+    void* unknown38;  // 0x38 [X30:type_map]
     AbstractClass* queuedFocus;  // 0x3C
     AbstractClass* focus;  // 0x40
-    char unknown44[4];  // 0x44
-    char totalObjects[4];  // 0x48
-    char totalThreatValue[4];  // 0x4C
-    char creationFrame[4];  // 0x50
+    AbstractClass* unknown44;  // 0x44 [X30:type_map]
+    int totalObjects;  // 0x48 [X30:type_map]
+    int totalThreatValue;  // 0x4C [X30:type_map]
+    int creationFrame;  // 0x50 [X30:type_map]
     FootClass* firstUnit;  // 0x54
     unsigned int ClosestMember;  // 0x56
     char guardAreaTimer[12];  // 0x58
@@ -64,7 +64,7 @@ struct TeamClass {
     bool unknown85;  // 0x85
     bool unknown86;  // 0x86
     bool unknown87;  // 0x87
-    char countObjects[24];  // 0x88
+    int countObjects;  // 0x88 [X30:type_map]
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_94;  // 0x94
 #else
@@ -129,6 +129,11 @@ struct TeamClass {
     unsigned int u32_13C;  // X10 supply (member_lookup)
     unsigned int u32_AC;  // X10 supply (member_lookup)
     unsigned int u32_F4;  // X10 supply (member_lookup)
+    unsigned int AbstractClass_10C;  // [X30:default]
+    CellClass* ParasiteClass_field_34;  // 0x34 [X30:type_map]
+    unsigned int ParticleSystemClass_110;  // [X30:default]
+    unsigned int vfptr;  // [X30:default]
+    unsigned int vfptr2;  // [X30:default]
 };
 
 } // namespace gamemd

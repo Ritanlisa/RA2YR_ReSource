@@ -16,6 +16,7 @@ struct NetworkManager {
 
     int u32_10;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 #endif  // GAMEMD_G2_NetworkManager_DEF
 } // namespace gamemd

@@ -13,7 +13,7 @@ struct BinkMovieHandle {
     void* vtable1;  // 0x0
     char* tempPath;  // 0x4
     DSurface* renderTarget;  // 0x8
-    int width;  // 0xC
+    void* width;  // 0xC [X30:type_map]
     int height;  // 0x10
     int currentFrame;  // 0x14
     int totalFrames;  // 0x18
@@ -39,6 +39,8 @@ struct BinkMovieHandle {
     unsigned int * Close(void *a1, void *a2);
     unsigned int * CopyFrameToSurface();
     unsigned int BlitToTarget(void *a1, void *a2);
+    unsigned char __pad_021;  // 0x21 [X30:canon]
+    unsigned char __pad_02E;  // 0x2E [X30:canon]
 };
 
 } // namespace gamemd

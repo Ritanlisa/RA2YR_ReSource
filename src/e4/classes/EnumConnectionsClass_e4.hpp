@@ -11,6 +11,7 @@ struct EnumConnectionsClass {
 // --- flat members (END) ---
     int Skip(int a1);
     int _vt06(unsigned int * a1, unsigned int * a2);
+    float __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

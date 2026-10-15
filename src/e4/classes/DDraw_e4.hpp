@@ -11,8 +11,8 @@ struct DDraw {
     unsigned int u32_28;  // 0x28
     unsigned int q040;  // 0x40
     unsigned int q064;  // 0x64
-    unsigned int u32_70;  // 0x70
-    unsigned int u32_74;  // 0x74
+    void* u32_70;  // 0x70 [X30:type_map]
+    void* u32_74;  // 0x74 [X30:type_map]
     unsigned int u32_7C;  // 0x7C
     unsigned int q100;  // 0x100
     unsigned int q274;  // 0x274

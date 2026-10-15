@@ -20,5 +20,6 @@ struct VectorClass_ptr_AnimClass {
     void Remove(void *a1_1, void *a1 = 0);  // 0x4EBF30
     int  GetSize(unsigned int * a2);  // 0x4EBF60
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0070
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -19,12 +19,12 @@ struct ParasiteClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char creationFrame[4];  // 0x24
+    void* creationFrame;  // 0x24 [X30:type_map]
     char ParasiteClass_field_30[4];  // 0x30
     unsigned int alignmentPadding;  // 0x33
-    char ParasiteClass_field_34[4];  // 0x34
-    char ParasiteClass_field_3C[4];  // 0x3C
-    char ParasiteClass_field_40[4];  // 0x40
+    int ParasiteClass_field_34;  // 0x34 [X30:type_map]
+    int ParasiteClass_field_3C;  // 0x3C [X30:type_map]
+    int ParasiteClass_field_40;  // 0x40 [X30:type_map]
 // --- flat members (END) ---
     AbstractClass * * TryInfect(unsigned int * a2);
     Coord * * Update(void *a1, void *a2, void *a3, void *a4);
@@ -40,13 +40,15 @@ struct ParasiteClass {
     void DeploySquad();
     void TickDamage();
     void * UpdateParasite(ParasiteClass * Block, char a2);
-    unsigned int u32_48;  // 0x48 (offset-truth)
+    IUnknown* u32_48;  // 0x48 (offset-truth) [X30:type_map]
     unsigned int u32_54;  // 0x54 (offset-truth)
 
     unsigned char __pad_028;  // X10 supply (csp_canon_members)
     IUnknown* q04C;  // X10 supply (member_lookup)
     unsigned int u32_44;  // X10 supply (member_lookup)
     int u32_50;  // X10 supply (member_lookup)
+    IUnknown* __pad_038;  // 0x38 [X30:type_map]
+    IUnknown* ParasiteClass_field_38;  // 0x38 [X30:type_map]
 };
 
 } // namespace gamemd

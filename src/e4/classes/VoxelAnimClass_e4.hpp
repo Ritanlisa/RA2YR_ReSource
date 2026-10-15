@@ -53,7 +53,7 @@ struct VoxelAnimClass {
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
-    char location[4];  // 0x9C
+    Coord* location;  // 0x9C [X30:type_map]
     unsigned char alignmentPadding69;  // 0x105
     unsigned int Audio4;  // 0x1D4
     unsigned int Audio3;  // 0x276
@@ -94,6 +94,22 @@ struct VoxelAnimClass {
     unsigned int q0D0;  // 0xD0
     unsigned int q0CC;  // 0xCC
     unsigned int u32_C8;  // 0xC8
+    unsigned char __pad_018;  // 0x18 [X30:canon]
+    unsigned char __pad_024;  // 0x24 [X30:canon]
+    unsigned char __pad_038;  // 0x38 [X30:canon]
+    unsigned char __pad_080;  // 0x80 [X30:canon]
+    unsigned char __pad_08C;  // 0x8C [X30:canon]
+    unsigned char __pad_095;  // 0x95 [X30:canon]
+    unsigned char __pad_109;  // 0x109 [X30:canon]
+    unsigned char __pad_1D8;  // 0x1D8 [X30:canon]
+    unsigned char __pad_27A;  // 0x27A [X30:canon]
+    unsigned char __pad_324;  // 0x324 [X30:canon]
+    unsigned char __pad_45C;  // 0x45C [X30:canon]
+    unsigned char __pad_664;  // 0x664 [X30:canon]
+    unsigned int AbstractClass_10C;  // [X30:default]
+    unsigned int ParticleSystemClass_110;  // [X30:default]
+    Mixer* q114;  // 0x114 [X30:type_map]
+    unsigned int q_B0;  // [X30:default]
 };
 
 } // namespace gamemd

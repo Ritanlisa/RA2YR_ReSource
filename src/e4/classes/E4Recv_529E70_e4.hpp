@@ -11,5 +11,6 @@ struct E4Recv_529E70 {
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
     char **  sub_529E70(char ** a2, char * Source, char ** a4, char ** a5);  // 0x529E70
+    unsigned int owningHouseIndex;  // [X30:default]
 };
 } // namespace gamemd

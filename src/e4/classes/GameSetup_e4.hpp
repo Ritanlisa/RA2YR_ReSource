@@ -26,6 +26,7 @@ struct GameSetup {
     unsigned int u32_17;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)
     unsigned int u32_4;  // X10 supply (member_lookup)
+    ObjectClass* __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

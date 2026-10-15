@@ -22,5 +22,6 @@ struct VectorClass_rc_ptr_WDTTerritory {
     int  GetSize(int a2);  // 0x76BA10
     unsigned int  GetCapacity(int a2);  // 0x76BA50
     VectorClass_flat *  QueryInterface(char a2);  // 0x76BBC0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

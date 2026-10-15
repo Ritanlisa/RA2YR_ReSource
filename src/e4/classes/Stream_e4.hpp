@@ -11,7 +11,7 @@ struct StreamClass;  // fix_fwd_type_supply
 struct Stream {
 // --- flat members (BEGIN) ---
     StreamClass* m_Stream;  // 0x0
-    char Stream_field_04[4];  // 0x4
+    void* Stream_field_04;  // 0x4 [X30:type_map]
     char Stream_field_0C[4];  // 0xC
 // --- flat members (END) ---
     unsigned int Stream_field_08;  // 0x8 (G42.42q: truth dword compare @0x491cae; was char[4] mis-type)
@@ -78,6 +78,8 @@ struct Stream {
     unsigned int u32_70;  // X10 supply (member_lookup)
     unsigned char u8_71;  // X10 supply (member_lookup)
     int u32_18;  // 0x18
+    void* __pad_010;  // 0x10 [X30:type_map]
+    void* Stream_field_10;  // 0x10 [X30:type_map]
 };
 
 } // namespace gamemd

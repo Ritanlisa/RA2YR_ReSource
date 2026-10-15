@@ -68,7 +68,7 @@ struct ParticleSystemTypeClass {
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches_4[4];  // 0x244
     int DamageDelay;  // 0x2B0
-    int ParticleSystemTypeClass_field_2C0;  // 0x2BC
+    void* ParticleSystemTypeClass_field_2C0;  // 0x2BC [X30:type_map]
     int StartScale;  // 0x2C0
     int ParticleSystemTypeClass_field_2C8;  // 0x2C4
     bool Beam;  // 0x2C8
@@ -76,10 +76,10 @@ struct ParticleSystemTypeClass {
     bool ParticleSystemTypeClass_field_bool_2D4;  // 0x2D4
     unsigned char padding_2D5_3;  // 0x2D5
 // --- flat members (END) ---
-    int ParticleSystemTypeClass_field_0x2D0;  // 0x2D0 (G57W14E1 til supply)
-    int ParticleSystemTypeClass_field_0x2E8;  // 0x2E8 (G57W14E1 til supply)
+    IUnknown* ParticleSystemTypeClass_field_0x2D0;  // 0x2D0 (G57W14E1 til supply) [X30:type_map]
+    IUnknown* ParticleSystemTypeClass_field_0x2E8;  // 0x2E8 (G57W14E1 til supply) [X30:type_map]
     char __pad_304[4];  // 0x304 (G57W14E1 til supply)
-    int ParticleSystemTypeClass_field_0x308;  // 0x308 (G57W14E1 til supply)
+    AnimTypeClass* ParticleSystemTypeClass_field_0x308;  // 0x308 (G57W14E1 til supply) [X30:type_map]
     void ** ddtor(char a2);
     char Stub(int a1, int a2);
     float * ReadXYZFromINI(float * a2, uint8_t * a3, uint8_t * a4, float * a5);
@@ -101,6 +101,19 @@ struct ParticleSystemTypeClass {
     int q2A4;  // X10 supply (member_lookup)
     int q2A8;  // X10 supply (member_lookup)
     int q2AC;  // X10 supply (member_lookup)
+    unsigned char __pad_024;  // 0x24 [X30:canon]
+    unsigned char __pad_034;  // 0x34 [X30:canon]
+    unsigned char __pad_03A;  // 0x3A [X30:canon]
+    unsigned char __pad_041;  // 0x41 [X30:canon]
+    unsigned char __pad_068;  // 0x68 [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A4;  // 0xA4 [X30:canon]
+    unsigned char __pad_0B4;  // 0xB4 [X30:canon]
+    unsigned char __pad_210;  // 0x210 [X30:canon]
+    unsigned char __pad_217;  // 0x217 [X30:canon]
+    unsigned char __pad_248;  // 0x248 [X30:canon]
+    unsigned char __pad_2CD;  // 0x2CD [X30:canon]
+    unsigned char __pad_2D9;  // 0x2D9 [X30:canon]
 };
 
 } // namespace gamemd

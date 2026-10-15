@@ -29,11 +29,11 @@ struct MapClass {
     unsigned int outBuffer;  // 0x24
     unsigned int MovementZones;  // 0x34
     DynamicVector * ptr_50;  // 0x50
-    void* somecount_4C;  // 0x68
+    IUnknown* somecount_4C;  // 0x68 [X30:type_map]
     unsigned int ZoneConnections;  // 0x6C
     unsigned int LevelAndPassability;  // 0x84
     unsigned int ValidMapCellCount;  // 0x88
-    unsigned int LevelAndPassabilityStruct2pointer_70;  // 0x8C
+    void* LevelAndPassabilityStruct2pointer_70;  // 0x8C [X30:type_map]
     unsigned int CellIterator_NextY;  // 0x110
     unsigned int CellIterator_CurrentY;  // 0x114
     unsigned int CellIterator_NextCell;  // 0x118
@@ -143,7 +143,7 @@ struct MapClass {
     unsigned char q0086;  // 0x86 (offset-truth)
     unsigned int q0088;  // 0x88 (offset-truth)
     unsigned char q01C6;  // 0x1C6 (offset-truth)
-    unsigned int q0308;  // 0x308 (offset-truth)
+    IUnknown* q0308;  // 0x308 (offset-truth) [X30:type_map]
     unsigned char q0585;  // 0x585 (offset-truth)
     unsigned char q0805;  // 0x805 (offset-truth)
     unsigned char u32_6F47;  // 0x6F47 (offset-truth)
@@ -217,7 +217,49 @@ struct MapClass {
     unsigned int u32_231;  // 0x231
     unsigned int u32_230;  // 0x230
     DynamicVector * q080;  // 0x80
-    char q018[16];  // 0x18  /* char[16] */
+    int q018;  // 0x18  /* char[16] */ [X30:type_map]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
+    int __pad_038;  // 0x38 [X30:type_map]
+    IUnknown* __pad_070;  // 0x70 [X30:type_map]
+    unsigned char __pad_090;  // 0x90 [X30:canon]
+    int __pad_14C;  // 0x14C [X30:type_map]
+    unsigned char __pad_216;  // 0x216 [X30:canon]
+    unsigned char __pad_23A;  // 0x23A [X30:canon]
+    unsigned char __pad_256;  // 0x256 [X30:canon]
+    unsigned char __pad_296;  // 0x296 [X30:canon]
+    unsigned char __pad_31A;  // 0x31A [X30:canon]
+    unsigned char __pad_324;  // 0x324 [X30:canon]
+    unsigned int Activated;  // [X30:default]
+    unsigned int AnimationProbability;  // [X30:default]
+    unsigned int AnimationRate;  // [X30:default]
+    unsigned int ArrayIndex;  // [X30:default]
+    unsigned int Foundation;  // [X30:default]
+    unsigned int FoundationData;  // [X30:default]
+    unsigned int GetTileIndexthis;  // [X30:default]
+    int MapClass_field_0x13C;  // 0x13C [X30:type_map]
+    unsigned int RadarColor;  // [X30:default]
+    int RadarHashVector_field_0x04;  // 0x4 [X30:type_map]
+    int RadarHashVector_field_0x0C;  // 0xC [X30:type_map]
+    unsigned int SnowOccupationBits;  // [X30:default]
+    unsigned int SpawnsTiberium;  // [X30:default]
+    unsigned int TemperateOccupationBits;  // [X30:default]
+    unsigned int WaterBound;  // [X30:default]
+    int __pad_0;  // 0x0 [X30:type_map]
+    unsigned int q001_;  // [X30:default]
+    unsigned int q002_6;  // [X30:default]
+    int q150;  // 0x150 [X30:type_map]
+    void* q154;  // 0x154 [X30:type_map]
+    AbstractClass* q2B4;  // 0x2B4 [X30:member_lookup]
+    unsigned char q2EC;  // 0x2EC [X30:member_lookup]
+    bool q305;  // 0x305 [X30:member_lookup]
+    unsigned int q306;  // 0x306 [X30:member_lookup]
+    int u32_145;  // 0x145 [X30:type_map]
+    void* u32_708;  // 0x708 [X30:member_lookup]
+    unsigned char u8_2E0;  // 0x2E0 [X30:member_lookup]
+    unsigned char u8_2E1;  // 0x2E1 [X30:member_lookup]
+    unsigned char u8_2E2;  // 0x2E2 [X30:member_lookup]
+    unsigned char u8_2E3;  // 0x2E3 [X30:member_lookup]
 };
 
 } // namespace gamemd

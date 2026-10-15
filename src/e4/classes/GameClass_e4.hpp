@@ -41,8 +41,9 @@ struct PKStrawClass {
     PKStrawClass * applyGameSettings(unsigned int * Block, char a2);  // G42.39 supply
     int FindPlayerName(int a1);  // G42.39 supply
     unsigned int m_13C;  // 0x13C (offset-truth)
-    unsigned int m_34;  // 0x34 (offset-truth)
+    Straw* m_34;  // 0x34 (offset-truth) [X30:type_map]
     unsigned int q014;  // 0x14 (offset-truth)
+    int __pad_004;  // 0x4 [X30:type_map]
 };
 struct GameClass {
 // --- flat members (BEGIN) ---
@@ -146,5 +147,6 @@ struct GameClass {
     unsigned char __pad_018;  // X10 supply (csp_canon_members)
     unsigned int u32_3C;  // X10 supply (member_lookup)
     unsigned int u32_17C;  // 0x17C
+    unsigned char __pad_024;  // 0x24 [X30:canon]
 };
 } // namespace gamemd

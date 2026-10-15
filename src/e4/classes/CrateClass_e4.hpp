@@ -10,6 +10,7 @@ struct CrateClass {
 
 // --- flat members (END) ---
     static int ProcessPickup(CrateClass * aP1, int a2);
+    void* __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

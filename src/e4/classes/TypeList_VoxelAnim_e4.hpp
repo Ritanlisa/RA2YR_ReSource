@@ -34,5 +34,6 @@ struct TypeList_VoxelAnim {
     VectorClass_flat * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x67C010
     DynamicVector *  Constructor_0(char a2);  // 0x67C100
     DynamicVector *  Constructor_1(char a2);  // 0x67C1A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

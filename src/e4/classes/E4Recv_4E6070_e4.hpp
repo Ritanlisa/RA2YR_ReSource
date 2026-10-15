@@ -14,5 +14,6 @@ struct E4Recv_4E6070 {
     void* bombVisible;  // 0x0 (no offset truth)
     unsigned int health;  // 0x0 (no offset truth)
     int sub_4E6070();  // 0x4E6070
+    unsigned int u32_;  // [X30:default]
 };
 } // namespace gamemd

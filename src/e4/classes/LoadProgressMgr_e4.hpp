@@ -11,5 +11,6 @@ struct LoadProgressMgr {
     static void ReleaseBuffer(void *aP1);
     unsigned char q000[12];  // 0x0 (canon size filler)
     static void * GetInstance();
+    CampaignClass* __pad_004;  // 0x4 [X30:type_map]
 };
 } // namespace gamemd

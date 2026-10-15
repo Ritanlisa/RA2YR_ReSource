@@ -23,13 +23,13 @@ struct CellClass {
     LightConvertClass* lightConvert;  // 0x10
     int unknown30;  // 0x12
     bool IsAllocated;  // 0x13
-    int isoTileTypeIndex;  // 0x14
+    void* isoTileTypeIndex;  // 0x14 [X30:type_map]
     TagClass* attachedTag;  // 0x18
     BuildingTypeClass* rubble;  // 0x1C
     int overlayTypeIndex;  // 0x20
     int smudgeTypeIndex;  // 0x24
     unsigned int alignmentPadding;  // 0x33
-    void* attached3;  // 0x34
+    ObjectClass* attached3;  // 0x34 [X30:type_map]
     unsigned int CellClass_field_4C;  // 0x4C
     unsigned int q02C;  // 0x2C
     int wallOwnerIndex;  // 0x50
@@ -38,18 +38,18 @@ struct CellClass {
     unsigned int CellClass_field_5C;  // 0x5C
     unsigned int unknown60;  // 0x60
     unsigned int unknown64;  // 0x64
-    unsigned int unknown68;  // 0x68
+    void* unknown68;  // 0x68 [X30:type_map]
     unsigned int CellClass_field_6C;  // 0x6C
     unsigned int unknown70;  // 0x70
-    unsigned int unknown74;  // 0x74
-    unsigned int cloakedByHouses;  // 0x78
+    void* unknown74;  // 0x74 [X30:type_map]
+    AbstractClass* cloakedByHouses;  // 0x78 [X30:type_map]
     unsigned char sensorsOfHouses;  // 0x7C
     unsigned char disguiseAsType_sensors_of_houses;  // 0xAC
-    unsigned int baseSpacerOfHouses;  // 0xDC
+    AbstractClass* baseSpacerOfHouses;  // 0xDC [X30:type_map]
     FootClass* jumpjet;  // 0xE0
     ObjectClass* firstObject;  // 0xE4
     ObjectClass* altObject;  // 0xE8
-    int landType;  // 0xEC
+    AbstractClass* landType;  // 0xEC [X30:type_map]
     double radLevel;  // 0xF0
     RadSiteClass* radSite;  // 0xF8
     unsigned int CellClass_field_FC;  // 0xFC
@@ -71,19 +71,19 @@ struct CellClass {
     unsigned char CellClass_field_11D;  // 0x11D
     unsigned char powerup;  // 0x11E
     unsigned char CellClass_field_11F;  // 0x11F
-    char shroudedness[1];  // 0x120
+    int shroudedness;  // 0x120 [X30:type_map]
     char foggedness[1];  // 0x121
     unsigned char blockedNeighbours;  // 0x122
     unsigned char align123;  // 0x123
     unsigned int occupationFlags;  // 0x124
     unsigned int altOccupationFlags;  // 0x128
-    char copyFlags[4];  // 0x12C
-    char shroudCounter[4];  // 0x130
-    unsigned int gapsCoveringThisCell;  // 0x134
+    int copyFlags;  // 0x12C [X30:type_map]
+    int shroudCounter;  // 0x130 [X30:type_map]
+    AbstractClass* gapsCoveringThisCell;  // 0x134 [X30:type_map]
     bool visibilityChanged;  // 0x138
     unsigned char align139;  // 0x139
     unsigned int CellClass_field_13C;  // 0x13C
-    char flags[4];  // 0x140
+    void* flags;  // 0x140 [X30:type_map]
     unsigned char padding144;  // 0x144
 // --- flat members (END) ---
     unsigned int mapCoords[2];  // G42.34 T11: initCellData body 0x588C40 does IDA_LOWORD/HIWORD(this->mapCoords[0]) (CellStruct 2-word truth); scalar form C2109
@@ -155,6 +155,8 @@ static int * GetCoords(CellClass * aP1, int *a2);
     unsigned char __pad_038;  // X10 supply (csp_canon_members)
     unsigned int q002;  // X10 supply (member_lookup)
     unsigned char u32_568;  // 0x568
+    int __pad_028;  // 0x28 [X30:type_map]
+    int __pad_28;  // 0x28 [X30:type_map]
 };
 
 } // namespace gamemd

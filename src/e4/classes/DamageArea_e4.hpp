@@ -15,7 +15,7 @@ struct DamageArea {
     unsigned int u32_100;  // 0x100 (offset-truth)
     unsigned char u32_51;  // 0x51 (offset-truth)
     unsigned int u32_5C;  // 0x5C (offset-truth)
-    unsigned int u32_C;  // 0xC (offset-truth)
+    void* u32_C;  // 0xC (offset-truth) [X30:type_map]
     unsigned int u32_F4;  // 0xF4 (offset-truth)
     unsigned int u32_FC;  // 0xFC (offset-truth)
 };

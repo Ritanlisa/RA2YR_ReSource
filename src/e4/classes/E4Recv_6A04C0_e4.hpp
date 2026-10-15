@@ -14,5 +14,7 @@ struct E4Recv_6A04C0 {
     unsigned int M64;  // 0x64
 // --- flat members (END) ---
     char sub_6A04C0(IUnknown * aP1);  // 0x6A04C0
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int customSound_controller;  // [X30:default]
 };
 } // namespace gamemd

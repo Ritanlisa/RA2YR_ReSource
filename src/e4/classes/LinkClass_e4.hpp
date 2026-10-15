@@ -10,12 +10,14 @@ struct LinkClass {
     void* vtable1;  // 0x0
     LinkClass* m_Next;  // 0x4
     LinkClass* m_Prev;  // 0x8
-    char LinkClass_field_0C[4];  // 0xC
+    int LinkClass_field_0C;  // 0xC [X30:type_map]
 // --- flat members (END) ---
     LinkClass * Destru_vt00(unsigned int * Block, char a2);
     int Destroy(void *a1);
     int Destruct(void *a1 = 0);
     unsigned int *q000;  // 0x0 (offset-truth)
+    int __pad_0;  // 0x0 [X30:type_map]
+    unsigned char __pad_038;  // 0x38 [X30:member_lookup]
 };
 
 } // namespace gamemd

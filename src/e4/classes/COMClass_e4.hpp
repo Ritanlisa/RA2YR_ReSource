@@ -118,6 +118,7 @@ struct COMClass {
     int q00C;  // X10 supply (member_lookup)
     int q010;  // X10 supply (member_lookup)
     unsigned char q014[4];  /* String */  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

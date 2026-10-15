@@ -18,5 +18,6 @@ struct VectorClass_ptr_TagTypeClass {
 // --- flat members (END) ---
     int Get(int a2, void *a2_2);  // 0x6E64E0
     char  Constructor_VectorClass_TagTypeClass___(int a2);  // 0x6E6540
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

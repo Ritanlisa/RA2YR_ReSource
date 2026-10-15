@@ -46,5 +46,6 @@ struct SaveGame {
     int  VtableDispatch(int a2);  // 0x721010
     int WriteMagicHeader();  // 0x7533B0
     unsigned int *q000;  // 0x0 (canon-mt)
+    char __pad_0[180];  // 0x0 [X30:member_lookup]
 };
 } // namespace gamemd

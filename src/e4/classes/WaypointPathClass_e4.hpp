@@ -16,7 +16,7 @@ struct WaypointPathClass {
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     unsigned char NeedsSaveOrLink;  // 0x20
-    char idxArray[4];  // 0x24
+    int idxArray;  // 0x24 [X30:type_map]
     unsigned int alignmentPadding;  // 0x33
     char waypointCount[4];  // 0x40
     char waypointCapacity[4];  // 0x44
@@ -39,6 +39,11 @@ struct WaypointPathClass {
 
     unsigned int u32_2C;  // X10 supply (member_lookup)
     int u8_D;  // X10 supply (member_lookup)
+    unsigned char __pad_028;  // 0x28 [X30:canon]
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned int vfptr;  // [X30:default]
+    unsigned int vfptr1;  // [X30:default]
+    unsigned int vfptr2;  // [X30:default]
 };
 
 } // namespace gamemd

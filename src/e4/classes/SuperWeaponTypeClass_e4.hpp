@@ -25,7 +25,7 @@ struct SuperWeaponTypeClass {
     char nextArrayIndex[4];  // 0x18
     char referenceCount[4];  // 0x1C
     SHPStruct* NeedsSaveOrLink;  // 0x20
-    char ActionValue[4];  // 0x24
+    void* ActionValue;  // 0x24 [X30:type_map]
     char SpecialSound[4];  // 0x28
     char StartSound[4];  // 0x2C
     BuildingTypeClass* AuxBuilding;  // 0x30
@@ -48,33 +48,33 @@ struct SuperWeaponTypeClass {
     void * UIName;  // 0x60
     unsigned char Name;  // 0x64
     unsigned int tail_95;  // 0x95
-    char ArrayIndex[4];  // 0x98
+    int ArrayIndex;  // 0x98 [X30:type_map]
     WeaponTypeClass* WeaponType;  // 0x9C
-    char RechargeVoice[4];  // 0xA0
-    char ChargingVoice_d[4];  // 0xA4
-    char ImpatientVoice_d[4];  // 0xA8
-    char SuspendVoice[4];  // 0xAC
-    char RechargeTime[4];  // 0xB0
+    int RechargeVoice;  // 0xA0 [X30:type_map]
+    int ChargingVoice_d;  // 0xA4 [X30:type_map]
+    int ImpatientVoice_d;  // 0xA8 [X30:type_map]
+    void* SuspendVoice;  // 0xAC [X30:type_map]
+    int RechargeTime;  // 0xB0 [X30:type_map]
     BuildingTypeClass* Type;  // 0xB4
     SHPStruct* SidebarImage_d;  // 0xB8
-    char ActionValue_d[4];  // 0xBC
-    char SpecialSound_d[4];  // 0xC0
-    char StartSound_d[4];  // 0xC4
+    void* ActionValue_d;  // 0xBC [X30:type_map]
+    int SpecialSound_d;  // 0xC0 [X30:type_map]
+    int StartSound_d;  // 0xC4 [X30:type_map]
     BuildingTypeClass* AuxBuilding_d;  // 0xC8
     char SidebarImageFile;  // 0xCC
     unsigned char zero_E4_d;  // 0xE4
     bool UseChargeDrain_d;  // 0xE5
     bool IsPowered_d;  // 0xE6
     bool DisableableFromShell_d;  // 0xE7
-    char FlashSidebarTabFrames[4];  // 0xE8
+    int FlashSidebarTabFrames;  // 0xE8 [X30:type_map]
     bool AIDefendAgainst_d;  // 0xEC
     bool PreClick_d;  // 0xED
     bool PostClick_d;  // 0xEE
-    char PreDependent_d[4];  // 0xF0
+    BuildingTypeClass* PreDependent_d;  // 0xF0 [X30:type_map]
     bool ShowTimer_d;  // 0xF4
     bool ManualControl_d;  // 0xF5
     float Range_d;  // 0xF8
-    char LineMultiplier_d[4];  // 0xFC
+    void* LineMultiplier_d;  // 0xFC [X30:type_map]
 // --- flat members (END) ---
     AbstractClass * * IsAvailable();
     unsigned int * SDDTOR(char a2);
@@ -93,7 +93,7 @@ struct SuperWeaponTypeClass {
     int loadSWProperties(uint8_t * a2, uint8_t * a3, int a4, void *a4_1 = 0);
     int Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     void* SD_vt25(unsigned char *** aP1);
-    unsigned int q024;  // 0x24 (offset-truth)
+    void* q024;  // 0x24 (offset-truth) [X30:type_map]
     unsigned int q100;  // 0x100 (ml)
     unsigned int q104;  // 0x104 (ml)
     ObjectClass* q108;  // 0x108 (ml)
@@ -130,6 +130,13 @@ struct SuperWeaponTypeClass {
     unsigned char DynamicVector_5564[4];  /* DynamicVector */  // X10 supply (member_lookup)
     VectorClass* qB20;  // X10 supply (member_lookup)
     VectorClass* qB3C;  // X10 supply (member_lookup)
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_0EF;  // 0xEF [X30:canon]
+    unsigned char __pad_0F6;  // 0xF6 [X30:canon]
+    unsigned int AbstractClass_10C;  // [X30:default]
+    AbstractClass* AbstractClass_184;  // 0x184 [X30:member_lookup]
+    unsigned int ParticleSystemClass_110;  // [X30:default]
+    unsigned int WarheadTypeClass_1A8;  // [X30:default]
 };
 
 } // namespace gamemd

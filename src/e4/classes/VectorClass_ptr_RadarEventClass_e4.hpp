@@ -20,5 +20,6 @@ struct VectorClass_ptr_RadarEventClass {
     int  loc_660FD0(int a2);  // 0x660CD0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x660E60
     int  FindItemIndex(unsigned int * a2);  // 0x660F50
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

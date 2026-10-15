@@ -24,5 +24,6 @@ struct HouseTypeClass_28 {
     int q010;  // X10 supply (member_lookup)
     unsigned int u32_4;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 } // namespace gamemd

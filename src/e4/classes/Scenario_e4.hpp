@@ -53,5 +53,6 @@ char LoadWithProgress(void *a1 = 0, void *a2 = 0);
     unsigned int u32_174;  // X10 supply (member_lookup)
     unsigned int u32_17C;  // X10 supply (member_lookup)
     unsigned int u32_180;  // X10 supply (member_lookup)
+    char __pad_84[20];  // 0x84 [X30:member_lookup]
 };
 } // namespace gamemd

@@ -20,6 +20,7 @@ struct WaypointClass {
 // --- flat members (END) ---
     WaypointPathClass * * FindOrAddPath(unsigned int * a2);
     static int FindOrCreate(int p0, unsigned int* p1, uint8_t* p2);  // x4:signals@0x502460
+    unsigned char __pad_034;  // 0x34 [X30:canon]
 };
 
 } // namespace gamemd

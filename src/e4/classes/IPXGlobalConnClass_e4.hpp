@@ -29,6 +29,11 @@ struct IPXGlobalConnClass {
     unsigned int u32_D4;  // 0xD4 (offset-truth)
 
     unsigned int u32_D0;  // X10 supply (member_lookup)
+    void* __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_02E;  // 0x2E [X30:canon]
+    void* IPXGlobalConnClass_field_0x20;  // 0x20 [X30:type_map]
+    unsigned int PlayerIndex;  // [X30:default]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 #endif  // GAMEMD_G2_IPXGlobalConnClass_DEF
 

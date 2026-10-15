@@ -13,31 +13,31 @@ struct TimerStruct;  // fix_fwd_type_supply
 struct ScenarioClass {
 // --- flat members (BEGIN) ---
     char nextScenario;  // 0x0
-    void* Items;  // 0x4
+    INILinkNode* Items;  // 0x4 [X30:type_map]
     void* Capacity;  // 0x8
     void* IsAllocated;  // 0xD
     char altNextScenario;  // 0x104
-    char homeCell[4];  // 0x208
-    char altHomeCell[4];  // 0x20C
-    char uniqueId[4];  // 0x210
+    int homeCell;  // 0x208 [X30:type_map]
+    int altHomeCell;  // 0x20C [X30:type_map]
+    int uniqueId;  // 0x210 [X30:type_map]
     char random[1012];  // 0x214
     unsigned int difficulty1;  // 0x608
     unsigned int difficulty2;  // 0x60C
     char elapsedTimer[12];  // 0x610
     char pauseTimer[12];  // 0x61C
-    unsigned int ScenarioClass_field_62C;  // 0x62C
+    IUnknown* ScenarioClass_field_62C;  // 0x62C [X30:type_map]
     unsigned short unknown630;  // 0x630
     char waypoints[2808];  // 0x632
-    char startX[4];  // 0x112C
-    char startY[4];  // 0x1130
-    char width[4];  // 0x1134
-    char height[4];  // 0x1138
-    char numberStartingPoints[4];  // 0x113C
+    void* startX;  // 0x112C [X30:type_map]
+    int startY;  // 0x1130 [X30:type_map]
+    void* width;  // 0x1134 [X30:type_map]
+    void* height;  // 0x1138 [X30:type_map]
+    int numberStartingPoints;  // 0x113C [X30:type_map]
     char startingPoints[64];  // 0x1140
     char houseIndices[64];  // 0x1180
     char houseHomeCells[32];  // 0x11C0
     bool teamsPresent;  // 0x11E0
-    char numCoopHumanStartSpots[4];  // 0x11E4
+    void* numCoopHumanStartSpots;  // 0x11E4 [X30:type_map]
     char missionTimer[12];  // 0x11E8
     unsigned int missionTimer_text_csf;  // 0x11F4
     char missionTimer_text;  // 0x11F8
@@ -47,25 +47,25 @@ struct ScenarioClass {
     char ScenarioClass_field_timer_123c[12];  // 0x123C
     char ambientTimer[12];  // 0x1248
     char techLevel[4];  // 0x1254
-    char theater[4];  // 0x1258
+    int theater;  // 0x1258 [X30:type_map]
     char fileName;  // 0x125C
-    char name[90];  // 0x1360
+    int name;  // 0x1360 [X30:type_map]
     char uiName;  // 0x13BA
     char uiNameLoaded[90];  // 0x13DA
-    unsigned int AltNextScenario;  // 0x1434
+    void* AltNextScenario;  // 0x1434 [X30:type_map]
     unsigned int Brief;  // 0x1438
     unsigned int win;  // 0x143C
-    unsigned int Lose;  // 0x1440
+    void* Lose;  // 0x1440 [X30:type_map]
     unsigned int Action;  // 0x1444
     unsigned int PostScore;  // 0x1448
-    unsigned int PreMapSelect;  // 0x144C
+    void* PreMapSelect;  // 0x144C [X30:type_map]
     char Name[2048];  // 0x1450
     char briefingCsf;  // 0x1C50
-    char themeIndex[4];  // 0x1C70
-    char humanPlayerHouseTypeIndex[4];  // 0x1C74
-    double carryOverMoney;  // 0x1C78
-    char CarryOverCap[4];  // 0x1C80
-    char Percent[4];  // 0x1C84
+    int themeIndex;  // 0x1C70 [X30:type_map]
+    int humanPlayerHouseTypeIndex;  // 0x1C74 [X30:type_map]
+    void* carryOverMoney;  // 0x1C78 [X30:type_map]
+    int CarryOverCap;  // 0x1C80 [X30:type_map]
+    void* Percent;  // 0x1C84 [X30:type_map]
     char globalVariables[2050];  // 0x1C88
     char localVariables[4100];  // 0x248C
     void * ptr_2888;  // 0x2888
@@ -73,7 +73,7 @@ struct ScenarioClass {
     char view2[4];  // 0x3494
     char view3[4];  // 0x3498
     char view4[4];  // 0x349C
-    unsigned int ScenarioClass_field_34A0;  // 0x34A0
+    IUnknown* ScenarioClass_field_34A0;  // 0x34A0 [X30:type_map]
     bool freeRadar;  // 0x34A4
     bool trainCrate;  // 0x34A5
     bool storedTiberium_growth_enabled;  // 0x34A6
@@ -94,66 +94,66 @@ struct ScenarioClass {
     bool ScenarioClass_field_bool_34B5;  // 0x34B5
     bool ScenarioClass_field_bool_34B6;  // 0x34B6
     bool ScenarioClass_field_bool_34B7;  // 0x34B7
-    char playerSideIndex[4];  // 0x34B8
+    IUnknown* playerSideIndex;  // 0x34B8 [X30:type_map]
     bool multiplayerOnly;  // 0x34BC
     bool isRandom;  // 0x34BD
     bool pickedUpAnyCrate;  // 0x34BE
     char ScenarioClass_field_timer_34C0[12];  // 0x34C0
-    char campaignIndex[4];  // 0x34CC
-    char StartingDropships[4];  // 0x34D0
+    int campaignIndex;  // 0x34CC [X30:type_map]
+    int StartingDropships;  // 0x34D0 [X30:type_map]
     TechnoTypeClass** allowableUnits;  // 0x34D4
-    char allowableUnitsCount[4];  // 0x34D8
+    int allowableUnitsCount;  // 0x34D8 [X30:type_map]
     void* allowableUnitMaximums;  // 0x34DC
     char allowableMaximumsCount[4];  // 0x34E0
     void* dropshipUnitCounts;  // 0x34E4
-    char dropshipCountsCount[4];  // 0x34E8
+    int dropshipCountsCount;  // 0x34E8 [X30:type_map]
     char ambientOriginal[4];  // 0x34EC
-    char ambientCurrent[4];  // 0x34F0
-    char ambientTarget[4];  // 0x34F4
+    void* ambientCurrent;  // 0x34F0 [X30:type_map]
+    int ambientTarget;  // 0x34F4 [X30:type_map]
     char red[4];  // 0x34F8
     char green[4];  // 0x34FC
-    char blue[4];  // 0x3500
+    int blue;  // 0x3500 [X30:type_map]
     char ground[4];  // 0x3504
     char level[4];  // 0x3508
-    char ionAmbient[4];  // 0x350C
-    char ionRed[4];  // 0x3510
+    void* ionAmbient;  // 0x350C [X30:type_map]
+    int ionRed;  // 0x3510 [X30:type_map]
     char ionGreen[4];  // 0x3514
     char ionBlue[4];  // 0x3518
-    char ionGround[4];  // 0x351C
+    int ionGround;  // 0x351C [X30:type_map]
     char ionLevel[4];  // 0x3520
     char nukeAmbient[4];  // 0x3524
-    char nukeRed[4];  // 0x3528
-    char nukeGreen[4];  // 0x352C
-    char nukeBlue[4];  // 0x3530
-    char nukeGround[4];  // 0x3534
-    char nukeLevel[4];  // 0x3538
-    char nukeAmbientChangeRate[4];  // 0x353C
-    char dominatorAmbient[4];  // 0x3540
-    char dominatorRed[4];  // 0x3544
-    char dominatorGreen[4];  // 0x3548
-    char dominatorBlue[4];  // 0x354C
-    char dominatorGround[4];  // 0x3550
-    char dominatorLevel[4];  // 0x3554
-    char dominatorAmbientChangeRate[4];  // 0x3558
+    int nukeRed;  // 0x3528 [X30:type_map]
+    int nukeGreen;  // 0x352C [X30:type_map]
+    int nukeBlue;  // 0x3530 [X30:type_map]
+    int nukeGround;  // 0x3534 [X30:type_map]
+    int nukeLevel;  // 0x3538 [X30:type_map]
+    int nukeAmbientChangeRate;  // 0x353C [X30:type_map]
+    int dominatorAmbient;  // 0x3540 [X30:type_map]
+    int dominatorRed;  // 0x3544 [X30:type_map]
+    int dominatorGreen;  // 0x3548 [X30:type_map]
+    int dominatorBlue;  // 0x354C [X30:type_map]
+    int dominatorGround;  // 0x3550 [X30:type_map]
+    int dominatorLevel;  // 0x3554 [X30:type_map]
+    int dominatorAmbientChangeRate;  // 0x3558 [X30:type_map]
     unsigned int unknown3598;  // 0x355C
     char initTime[4];  // 0x3560
     char stage[2];  // 0x3564
     void* InitTime;  // 0x359C
     bool ScenarioClass_field_35A2;  // 0x35A2
     unsigned char ScenarioClass_field_35A3;  // 0x35A3
-    char parTimeEasy[4];  // 0x35A4
-    char parTimeMedium[4];  // 0x35A8
-    char parTimeDifficult[4];  // 0x35AC
+    int parTimeEasy;  // 0x35A4 [X30:type_map]
+    int parTimeMedium;  // 0x35A8 [X30:type_map]
+    int parTimeDifficult;  // 0x35AC [X30:type_map]
     char underParTitle;  // 0x35B0
     char underParMessage;  // 0x35CF
     char overParTitle;  // 0x35EE
     char overParMessage;  // 0x360D
     char lsLoadMessage;  // 0x362C
     char lsBrief;  // 0x364B
-    char ls640BriefLocX[4];  // 0x366C
-    char ls640BriefLocY[4];  // 0x3670
-    char ls800BriefLocX[4];  // 0x3674
-    char ls800BriefLocY[4];  // 0x3678
+    IUnknown* ls640BriefLocX;  // 0x366C [X30:type_map]
+    IUnknown* ls640BriefLocY;  // 0x3670 [X30:type_map]
+    IUnknown* ls800BriefLocX;  // 0x3674 [X30:type_map]
+    IUnknown* ls800BriefLocY;  // 0x3678 [X30:type_map]
     char ls640BkgdName;  // 0x367C
     char ls800BkgdName;  // 0x36BC
     char ls800BkgdPal;  // 0x36FC
@@ -279,6 +279,14 @@ struct ScenarioClass {
     char u8_B680;  // X10 supply (member_lookup)
     char u8_D04;  // X10 supply (member_lookup)
     char u8_D08;  // X10 supply (member_lookup)
+    int __pad_628;  // 0x628 [X30:type_map]
+    unsigned char __pad_112A;  // 0x112A [X30:canon]
+    unsigned char __pad_11E1;  // 0x11E1 [X30:canon]
+    int __pad_248A;  // 0x248A [X30:type_map]
+    unsigned char __pad_34BF;  // 0x34BF [X30:canon]
+    unsigned char __pad_3566;  // 0x3566 [X30:canon]
+    int __pad_35A0;  // 0x35A0 [X30:type_map]
+    unsigned char __pad_366A;  // 0x366A [X30:canon]
 };
 
 } // namespace gamemd

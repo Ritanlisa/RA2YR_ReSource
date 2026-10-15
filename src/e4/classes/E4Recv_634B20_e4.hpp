@@ -15,5 +15,9 @@ struct E4Recv_634B20 {
     unsigned int M168;  // 0xA8
 // --- flat members (END) ---
     Game * * sub_634B20();  // 0x634B20
+    unsigned int attachedBomb;  // [X30:default]
+    unsigned int lineTrailer;  // [X30:default]
+    unsigned int nextObject;  // [X30:default]
+    unsigned int occupant;  // [X30:default]
 };
 } // namespace gamemd

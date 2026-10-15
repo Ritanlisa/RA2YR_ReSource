@@ -14,6 +14,7 @@ struct LoadScreen {
     static unsigned int Render(int p0, int p1, int p2, double p3);  // x4:signals@0x643ae0
     int IsActive(void *a1 = 0);
     unsigned int u32_64;  // 0x64 (offset-truth)
+    ConvertClass* __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

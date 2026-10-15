@@ -68,6 +68,10 @@ struct TubeClass {
     int StubReturn53();
     int ddtor(int a1, unsigned int * a2);
      AbstractClass * Construct(int16_t *a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    unsigned char __pad_040;  // 0x40 [X30:canon]
+    unsigned char __pad_054;  // 0x54 [X30:canon]
+    unsigned char __pad_0A0;  // 0xA0 [X30:canon]
+    unsigned char __pad_0C0;  // 0xC0 [X30:canon]
 };
 
 } // namespace gamemd

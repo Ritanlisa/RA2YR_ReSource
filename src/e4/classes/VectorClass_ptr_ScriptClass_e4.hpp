@@ -32,5 +32,6 @@ struct VectorClass_ptr_ScriptClass {
     unsigned int m_8;  // 0x8 vocab alias (Capacity)
     unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
     unsigned int m_10;  // 0x10 vocab alias (Count)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

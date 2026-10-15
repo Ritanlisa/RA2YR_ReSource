@@ -21,6 +21,7 @@ struct Lobby {
     int UpdateReadyIcons();
     int EnableStartButton();
     int SetupAllFactionSlots();
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

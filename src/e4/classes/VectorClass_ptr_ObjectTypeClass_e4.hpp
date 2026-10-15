@@ -18,5 +18,6 @@ struct VectorClass_ptr_ObjectTypeClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_ObjectTypeClass___(char a2);  // 0x5F9E30
     int Get(int a2, void *a2_2);  // 0x5F9B00
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

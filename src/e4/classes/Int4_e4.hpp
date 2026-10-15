@@ -11,6 +11,7 @@ struct Int4 {
 // --- flat members (END) ---
     unsigned int * Set(int aP1, int aP2, int aP3, int a5);
     int  Set2(int a2, int a3, int a4, int a5, void *a1 = 0);  // 0x645c50
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

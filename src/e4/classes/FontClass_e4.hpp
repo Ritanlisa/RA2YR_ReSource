@@ -24,6 +24,7 @@ struct FontClass {
     unsigned int u32_C;  // X10 supply (member_lookup)
     unsigned int u32_D;  // X10 supply (member_lookup)
     unsigned int u32_E;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

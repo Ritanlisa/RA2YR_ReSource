@@ -27,5 +27,10 @@ struct E4Recv_7B9530 {
     AbstractClass * * sub_7B9530();  // 0x7B9530
 
     unsigned int q018;  // X10 supply (member_lookup)
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int customSound_controller;  // [X30:default]
+    unsigned int fallRate;  // [X30:default]
+    unsigned int nextObject;  // [X30:default]
+    unsigned int occupant;  // [X30:default]
 };
 } // namespace gamemd

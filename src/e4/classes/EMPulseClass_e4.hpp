@@ -17,6 +17,8 @@ struct EMPulseClass {
     EMPulseClass * CopyTo(void * a2, char a3);
     int StubReturn52();
     int StubReturn55();
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_017;  // 0x17 [X30:canon]
 };
 
 } // namespace gamemd

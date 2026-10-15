@@ -32,7 +32,7 @@ struct BulletTypeClass {
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     unsigned char NeedsSaveOrLink;  // 0x20
-    unsigned int ShrapnelCount;  // 0x24
+    void* ShrapnelCount;  // 0x24 [X30:type_map]
     bool NoSpawnAlt;  // 0x30
     unsigned char zero_3C;  // 0x3C
     unsigned char UINameLabel;  // 0x3D
@@ -110,21 +110,21 @@ struct BulletTypeClass {
     bool Bouncy_d;  // 0x2A7
     bool AnimPalette;  // 0x2A8
     bool FirersPalette_d;  // 0x2A9
-    int cluster;  // 0x2AC
+    void* cluster;  // 0x2AC [X30:type_map]
     WeaponTypeClass* airburstWeapon;  // 0x2B0
     WeaponTypeClass* shrapnelWeapon;  // 0x2B4
-    int shrapnelCount;  // 0x2B8
-    int detonationAltitude;  // 0x2BC
+    void* shrapnelCount;  // 0x2B8 [X30:type_map]
+    void* detonationAltitude;  // 0x2BC [X30:type_map]
     bool Vertical;  // 0x2C0
     double Elasticity;  // 0x2C4
     double elasticity;  // 0x2C8
     int Acceleration;  // 0x2CC
     ColorScheme* Elasticity_d;  // 0x2D0
     AnimTypeClass* Color;  // 0x2D4
-    int Trailer_d;  // 0x2D8
+    WeaponTypeClass* Trailer_d;  // 0x2D8 [X30:type_map]
     int rot;  // 0x2DC
-    int courseLockDuration;  // 0x2E0
-    int SpawnDelay_d;  // 0x2E4
+    void* courseLockDuration;  // 0x2E0 [X30:type_map]
+    void* SpawnDelay_d;  // 0x2E4 [X30:type_map]
     bool scaledSpawnDelay;  // 0x2E8
     int Scalable_d;  // 0x2EC
     unsigned char arm;  // 0x2F0
@@ -156,6 +156,24 @@ struct BulletTypeClass {
     int ProcessPower(int * a2, void *a2_2);
 
     unsigned char AbstractClass_E58[4];  /* AbstractClass */  // X10 supply (member_lookup)
+    unsigned char __pad_028;  // 0x28 [X30:canon]
+    unsigned char __pad_034;  // 0x34 [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    unsigned char __pad_22C;  // 0x22C [X30:canon]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    unsigned char __pad_2AA;  // 0x2AA [X30:canon]
+    unsigned char __pad_2C1;  // 0x2C1 [X30:canon]
+    unsigned char __pad_2ED;  // 0x2ED [X30:canon]
+    unsigned int AllowCellContent_d;  // [X30:default]
+    unsigned int Immune_d;  // [X30:default]
+    unsigned int IsLogic_d;  // [X30:default]
+    unsigned int LegalTarget_d;  // [X30:default]
+    unsigned int RadarInvisible_d;  // [X30:default]
+    unsigned int Selectable_d;  // [X30:default]
 };
 
 } // namespace gamemd

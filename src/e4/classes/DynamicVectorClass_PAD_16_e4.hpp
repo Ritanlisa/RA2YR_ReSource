@@ -23,5 +23,6 @@ struct DynamicVectorClass_PAD_16 {
     unsigned int  GetCapacity(int a2);  // 0x49ECB0
     unsigned int m_8;  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -10,10 +10,10 @@ namespace gamemd {
 struct BufferIOFileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    int FilePointer;  // 0x4
+    AbstractClass* FilePointer;  // 0x4 [X30:type_map]
     int FileSize;  // 0x8
     void * Handle;  // 0xC
-    void * FileName;  // 0x10
+    ObjectClass* FileName;  // 0x10 [X30:type_map]
     void* FileTimeDateLo;  // 0x14
     unsigned int FileTimeDateHi;  // 0x16
     char FileNameAllocated;  // 0x18
@@ -23,10 +23,10 @@ struct BufferIOFileClass {
     bool BufferWritePending;  // 0x1E
     bool FlushOnClose;  // 0x1F
     bool CacheReadAhead;  // 0x20
-    unsigned int BufferOffset;  // 0x24
-    unsigned int BufferSize;  // 0x28
+    AbstractClass* BufferOffset;  // 0x24 [X30:type_map]
+    AbstractClass* BufferSize;  // 0x28 [X30:type_map]
     unsigned int BufferPosition;  // 0x2C
-    unsigned int FileBaseOffset;  // 0x30
+    void* FileBaseOffset;  // 0x30 [X30:type_map]
     unsigned int BufferReadSize;  // 0x34
     unsigned int StreamSize;  // 0x38
     int BufferMaxSize;  // 0x3C
@@ -40,6 +40,7 @@ struct BufferIOFileClass {
 int Dtor(void *a1 = 0);
     static int Seek(CCFileClass *p_this, LONG lDistanceToMove, DWORD dwMoveMethod);  // x4:ida@0x473ba0
     char __tail_0[4];  // 0x0 (ml)
+    unsigned char __pad_021;  // 0x21 [X30:canon]
 };
 #endif  // GAMEMD_G2_BufferIOFileClass_DEF
 

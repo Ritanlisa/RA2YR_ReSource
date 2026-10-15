@@ -45,6 +45,13 @@ struct IsometricTileTypeClass {
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
 
     uint8_t IsometricTileTypeClass_field_0x0C;  // X10 supply (member_types)
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
+    unsigned char __pad_025;  // 0x25 [X30:canon]
+    unsigned char __pad_041;  // 0x41 [X30:canon]
+    int IsometricTileTypeClass_field_0x04;  // 0x4 [X30:member_lookup]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
+    unsigned int uniqueId;  // [X30:default]
 };
 
 } // namespace gamemd

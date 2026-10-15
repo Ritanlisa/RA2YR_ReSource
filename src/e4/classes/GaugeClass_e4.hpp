@@ -16,6 +16,8 @@ struct GaugeClass {
     unsigned char u32_2D;  // 0x2D (offset-truth)
 
     unsigned int u32_34;  // X10 supply (member_lookup)
+    int __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_019;  // 0x19 [X30:canon]
 };
 
 } // namespace gamemd

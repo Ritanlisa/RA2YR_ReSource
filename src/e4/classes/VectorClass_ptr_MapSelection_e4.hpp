@@ -21,5 +21,6 @@ struct VectorClass_ptr_MapSelection {
     int  GetSize(unsigned int * a2);  // 0x5D0E60
     unsigned int  GetCapacity(int a2);  // 0x5D0EA0
     VectorClass_flat *  QueryInterface(char a2);  // 0x5D1800
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

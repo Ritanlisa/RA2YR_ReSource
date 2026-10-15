@@ -11,6 +11,7 @@ struct MSPrintAnim {
 // --- flat members (END) ---
     wchar_t GetCharAt(size_t a2);
     unsigned int *q000;  // 0x0 (offset-truth)
+    void* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

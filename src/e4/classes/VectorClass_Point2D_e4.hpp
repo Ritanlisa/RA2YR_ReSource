@@ -25,5 +25,6 @@ struct VectorClass_Point2D {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x5D2BC0
     int  FindItemIndex(unsigned int * a2);  // 0x5D2C70
     DynamicVector *  Constructor_VectorClass_MSSfx___(char a2);  // 0x5D2D90
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

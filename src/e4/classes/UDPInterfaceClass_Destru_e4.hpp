@@ -39,6 +39,8 @@ struct UDPInterfaceClass_Destru {
 
     unsigned int u32_3F06C;  // X10 supply (member_lookup)
     unsigned int u32_3F330;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned int hostent;  // [X30:default]
 };
 
 } // namespace gamemd

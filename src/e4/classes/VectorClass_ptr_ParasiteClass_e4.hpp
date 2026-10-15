@@ -19,5 +19,6 @@ struct VectorClass_ptr_ParasiteClass {
     DynamicVector *  Constructor_VectorClass_ParasiteClass___(char a2);  // 0x62B380
     int Destroy(void *a1_1);  // 0x62B070
     unsigned int  GetItemIndex(int a2);  // 0x62B0A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

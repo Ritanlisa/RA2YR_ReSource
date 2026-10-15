@@ -27,5 +27,6 @@ struct VectorClass_ushort {
     int  FindItemIndex(unsigned short * a2);  // 0x42DAE0
     VectorClass_ushort * Add(unsigned int * Block, char a2, void *a3_1);  // 0x42DBB0
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x42DC00
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -18,5 +18,6 @@ struct VectorClass_ptr_TemporalClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_TemporalClass___(char a2);  // 0x71B550
     int Get(int a2, void *a2_2);  // 0x71B240
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

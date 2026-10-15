@@ -21,5 +21,6 @@ struct VectorClass_ptr_TerrainTypeClass {
     int  GetSize(unsigned int * a2);  // 0x4ED720
     unsigned int  LoadTypeData(int a2);  // 0x4ED760
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F06B0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -35,5 +35,6 @@ struct VectorClass_ptr_AnimTypeClass {
     int  FindItemIndex_0(unsigned int * a2);  // 0x4EE410
     char  SetCapacity_1(int a2, unsigned int * a3);  // 0x4EE5C0
     int  FindItemIndex_1(unsigned int * a2);  // 0x4EE670
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

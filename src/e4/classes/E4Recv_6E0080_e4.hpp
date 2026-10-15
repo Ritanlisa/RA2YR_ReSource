@@ -10,5 +10,6 @@ struct E4Recv_6E0080 {
     unsigned int M68;  // 0x44
 // --- flat members (END) ---
     char  sub_6E0080(int a2, int a3, int a4, int a5);  // 0x6E0080
+    unsigned int ambientSoundController;  // [X30:default]
 };
 } // namespace gamemd

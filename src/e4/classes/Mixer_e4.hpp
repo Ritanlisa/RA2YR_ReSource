@@ -13,6 +13,7 @@ struct Mixer {
     static int RequestAllBuffers();
     unsigned int u32_4;  // 0x4 (offset-truth)
     unsigned int u32_8;  // 0x8 (offset-truth)
+    uint32_t u32_C;  // 0xC [X30:member_lookup]
 };
 
 } // namespace gamemd

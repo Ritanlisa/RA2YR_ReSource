@@ -10,5 +10,6 @@ struct E4Recv_433CE0 {
     unsigned int M64;  // 0x40
 // --- flat members (END) ---
     char  sub_433CE0(char a2);  // 0x433CE0
+    unsigned int nextArrayIndex4;  // [X30:default]
 };
 } // namespace gamemd

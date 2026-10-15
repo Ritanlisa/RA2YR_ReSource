@@ -53,14 +53,14 @@ struct SessionClass {
     unsigned int SessionClass_field_160;  // 0x160
     unsigned int SessionClass_field_164;  // 0x164
     unsigned int SessionClass_field_168;  // 0x168
-    unsigned int SessionClass_field_16C;  // 0x16C
+    AbstractClass* SessionClass_field_16C;  // 0x16C [X30:type_map]
     unsigned int SessionClass_field_170;  // 0x170
-    char idxSide[4];  // 0x174
-    char idxSide2[4];  // 0x178
-    char Color[4];  // 0x17C
-    char Color2[4];  // 0x180
-    char Side[4];  // 0x184
-    char Side2[4];  // 0x188
+    int idxSide;  // 0x174 [X30:type_map]
+    int idxSide2;  // 0x178 [X30:type_map]
+    int Color;  // 0x17C [X30:type_map]
+    int Color2;  // 0x180 [X30:type_map]
+    int Side;  // 0x184 [X30:type_map]
+    void* Side2;  // 0x188 [X30:type_map]
     char SkirmishPreferences[124];  // 0x18C
     char LANPreferences[124];  // 0x208
     char WOLPreferences[124];  // 0x284
@@ -80,7 +80,7 @@ struct SessionClass {
 // --- flat members (END) ---
     int PlayerColor;  // 0x4C (G57w18j4: blob->scalar, member_lookup int@76; raw fn_5D scalar compare)
     int unknown_160;  // 0x160 (G57W14E1 til supply)
-    int unknown_16C;  // 0x16C (G57W14E1 til supply)
+    AbstractClass* unknown_16C;  // 0x16C (G57W14E1 til supply) [X30:type_map]
     char unknown_8AA[8034];  // 0x8AA (G57W14E1 til supply)
     void* unknown_08;  // 0x0 (no offset truth)
     int GetPlayerColorScheme();
@@ -343,6 +343,10 @@ struct SessionClass {
     char u8_241;  // X10 supply (member_lookup)
     char u8_245;  // X10 supply (member_lookup)
     char u8_4F;  // X10 supply (member_lookup)
+    unsigned char __pad_06B;  // 0x6B [X30:canon]
+    unsigned char __pad_08B;  // 0x8B [X30:canon]
+    unsigned char __pad_309;  // 0x309 [X30:canon]
+    unsigned char __pad_30D9;  // 0x30D9 [X30:canon]
 };
 
 } // namespace gamemd

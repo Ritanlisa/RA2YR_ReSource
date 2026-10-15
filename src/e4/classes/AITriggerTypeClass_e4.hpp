@@ -34,12 +34,20 @@ struct AITriggerTypeClass {
     unsigned int u32_108;  // 0x108 (offset-truth)
     unsigned int u32_B8;  // 0xB8 (offset-truth)
     unsigned int u32_BC;  // 0xBC (offset-truth)
-    unsigned int u32_D8;  // 0xD8 (offset-truth)
+    void* u32_D8;  // 0xD8 (offset-truth) [X30:type_map]
     unsigned int u32_E4;  // 0xE4 (offset-truth)
     unsigned int q0E8;  // 0xE8
     unsigned int q0C8;  // 0xC8
     unsigned int q0C4;  // 0xC4
     unsigned int q0C0;  // 0xC0
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_017;  // 0x17 [X30:canon]
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    int AITriggerTypeClass_field_0x18;  // 0x18 [X30:member_lookup]
+    int AITriggerTypeClass_field_0x24;  // 0x24 [X30:type_map]
+    int AITriggerTypeClass_field_0x28;  // 0x28 [X30:member_lookup]
+    unsigned int Coord_9C;  // [X30:default]
+    unsigned int Tactical_E4;  // [X30:default]
 };
 
 } // namespace gamemd

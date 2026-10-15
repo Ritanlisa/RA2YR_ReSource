@@ -490,5 +490,9 @@ struct CreateTeamCommand {
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
     unsigned char qA5C;  // X10 supply (member_lookup)
     unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned char __pad_00C;  // 0xC [X30:canon]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
+    int vtable1;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

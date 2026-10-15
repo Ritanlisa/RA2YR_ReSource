@@ -11,5 +11,6 @@ struct E4Recv_633AC0 {
     unsigned int M116;  // 0x74
 // --- flat members (END) ---
     unsigned int * sub_633AC0();  // 0x633AC0
+    unsigned int estimatedHealth;  // [X30:default]
 };
 } // namespace gamemd

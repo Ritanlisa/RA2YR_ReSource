@@ -25,5 +25,6 @@ struct Waypoint {
     unsigned int q024;  // 0x24
     unsigned int u32_10;  // 0x10
     unsigned int u32_C;  // 0xC
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

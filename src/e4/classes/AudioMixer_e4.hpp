@@ -28,6 +28,7 @@ struct AudioMixer {
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
+    AudioMixer* AudioMixer_field_08;  // 0x8 [X30:type_map]
 };
 #endif  // GAMEMD_G2_AudioMixer_DEF
 

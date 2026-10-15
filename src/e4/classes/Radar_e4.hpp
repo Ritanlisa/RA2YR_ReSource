@@ -72,5 +72,9 @@ struct Radar {
     unsigned char q06C;  // 0x6C
     unsigned char q068;  // 0x68
     unsigned int q054;  // 0x54
+    int Radar_field_0x60;  // 0x60 [X30:type_map]
+    int __pad_0;  // 0x0 [X30:type_map]
+    char __pad_64[424];  // 0x64 [X30:member_lookup]
+    void* u32_BC;  // 0xBC [X30:type_map]
 };
 } // namespace gamemd

@@ -15,6 +15,7 @@ namespace gamemd {
 struct CellCoord {
     void* vfptr;
     void* To_CellObj(int16_t *a3);
+    unsigned int tail_0;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

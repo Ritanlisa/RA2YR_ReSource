@@ -9,7 +9,7 @@ struct RadBeam {
 // --- flat members (BEGIN) ---
     unsigned int pad_0;  // 0x0
     int memberAtOffset12;  // 0xC
-    unsigned int uniqueId;  // 0x10
+    RadBeam* uniqueId;  // 0x10 [X30:type_map]
     unsigned int abstractFlags;  // 0x14
     unsigned int pad_16;  // 0x16
     unsigned int nextArrayIndex;  // 0x18

@@ -19,5 +19,6 @@ struct VectorClass_Wstring {
     unsigned int  GetCapacity(int a2);  // 0x69CBA0
     VectorClass_flat *  QueryInterface(char a2);  // 0x69D4B0
     bool SetCapacity(const char ** a2);  // 0x7B4860
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

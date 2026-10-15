@@ -31,5 +31,9 @@ struct Particle {
     unsigned int u32_AC;  // X10 supply (member_lookup)
     unsigned int u32_B0;  // X10 supply (member_lookup)
     unsigned int u32_E0;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned char __pad_0C4;  // 0xC4 [X30:canon]
+    unsigned char __pad_11C;  // 0x11C [X30:canon]
+    unsigned char __pad_133;  // 0x133 [X30:canon]
 };
 } // namespace gamemd

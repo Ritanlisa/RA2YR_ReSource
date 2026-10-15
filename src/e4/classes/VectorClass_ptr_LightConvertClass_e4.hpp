@@ -31,5 +31,6 @@ struct VectorClass_ptr_LightConvertClass {
     unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
     unsigned int m_10;  // 0x10 vocab alias (Count)
     char __pad_0[4];  // 0x0 vocab alias (vfptr carrier)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

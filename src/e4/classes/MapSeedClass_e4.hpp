@@ -29,6 +29,17 @@ struct MapSeedClass {
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
     unsigned int *q000;  // 0x0 (offset-truth)
+    int __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
+    unsigned char __pad_025;  // 0x25 [X30:canon]
+    unsigned int Capacity;  // [X30:default]
+    unsigned int count;  // [X30:default]
+    unsigned int entries;  // [X30:default]
+    unsigned int extension;  // [X30:default]
+    unsigned int is_active;  // [X30:default]
+    unsigned int max_entries;  // [X30:default]
+    unsigned int mode;  // [X30:default]
 };
 
 } // namespace gamemd

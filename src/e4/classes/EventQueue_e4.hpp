@@ -26,6 +26,7 @@ struct EventQueue {
     int16_t Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     int16_t Process(void *a1 = 0);
     short Read(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    unsigned int s_Queue;  // [X30:default]
 };
 
 } // namespace gamemd

@@ -21,5 +21,6 @@ struct VectorClass_ptr_AircraftClass {
     int  GetSize(unsigned int * a2);  // 0x4EB840
     unsigned int  GetCapacity(int a2);  // 0x4EB880
     VectorClass_flat *  QueryInterface(char a2);  // 0x4EFE90
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -26,6 +26,8 @@ struct VeinholeMonsterClass {
     unsigned int u32_AC;  // X10 supply (member_lookup)
     unsigned int u32_B4;  // X10 supply (member_lookup)
     unsigned int u32_C4;  // X10 supply (member_lookup)
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_017;  // 0x17 [X30:canon]
 };
 
 } // namespace gamemd

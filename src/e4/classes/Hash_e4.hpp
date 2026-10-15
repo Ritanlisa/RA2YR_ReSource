@@ -12,6 +12,7 @@ struct Hash {
     int __thiscall ComputeHashSHA1(void *a1 = 0);
     int InsertOrdered(int a2);
     int Reset(void *a1 = 0, void *a2 = 0);
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

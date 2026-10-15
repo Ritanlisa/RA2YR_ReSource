@@ -10,6 +10,7 @@ struct ShroudClass {
 
 // --- flat members (END) ---
     int UpdateVisibility(int *aP1);
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

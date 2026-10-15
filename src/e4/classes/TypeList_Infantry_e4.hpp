@@ -29,5 +29,6 @@ struct TypeList_Infantry {
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

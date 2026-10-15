@@ -13,6 +13,7 @@ struct AudioFile {
 // --- flat members (END) ---
     int GetCallback(void *a1 = 0);
     static void Stop(void * aP0);
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 #endif  // GAMEMD_G2_AudioFile_DEF
 

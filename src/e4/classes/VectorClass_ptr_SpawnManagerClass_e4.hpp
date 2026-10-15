@@ -18,5 +18,6 @@ struct VectorClass_ptr_SpawnManagerClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_SpawnManagerClass___(char a2);  // 0x6B8830
     int Get(int a2, void *a2_2);  // 0x6B81C0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

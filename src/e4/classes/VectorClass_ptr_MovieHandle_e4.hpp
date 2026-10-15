@@ -18,5 +18,6 @@ struct VectorClass_ptr_MovieHandle {
 // --- flat members (END) ---
     int Get(int a2, void *a2_2);  // 0x75A430
     char  Constructor_VectorClass_MovieHandle___(int a2);  // 0x75A490
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

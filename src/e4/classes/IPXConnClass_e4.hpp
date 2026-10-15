@@ -20,6 +20,7 @@ struct IPXConnClass {
 // --- flat members (END) ---
     void * constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8, void *a9);
     static double initConnection(int a2, int a3, int a4, int16_t a5, int a6, int a7, int a8, int a9, int a1);
+    unsigned char __pad_009;  // 0x9 [X30:canon]
 };
 
 } // namespace gamemd

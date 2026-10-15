@@ -22,6 +22,13 @@ struct EnumConnectionPointsClass {
     int q01C;  // 0x1C
     unsigned int u32_19;  // 0x19
     int q018;  // 0x18
+    int __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
+    unsigned int Capacity;  // [X30:default]
+    unsigned int CapacityIncrement;  // [X30:default]
+    unsigned int Items;  // [X30:default]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 
 } // namespace gamemd

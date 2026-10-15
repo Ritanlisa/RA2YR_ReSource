@@ -23,9 +23,12 @@ struct LoadGame {
     int q010;  // X10 supply (member_lookup)
     int q020;  // 0x20
     int q01C;  // 0x1C
-    int q018;  // 0x18
+    void* q018;  // 0x18 [X30:type_map]
     int q014;  // 0x14
-    int q00C;  // 0xC
+    void* q00C;  // 0xC [X30:type_map]
+    int __pad_000;  // 0x0 [X30:type_map]
+    unsigned int s_IsLoading;  // [X30:default]
+    unsigned int s_LoadVersion;  // [X30:default]
 };
 
 } // namespace gamemd

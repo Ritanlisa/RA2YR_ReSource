@@ -10,6 +10,7 @@ struct ResultNode {
 
 // --- flat members (END) ---
     void CleanupList();
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

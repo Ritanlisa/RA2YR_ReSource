@@ -20,6 +20,8 @@ struct MSVQAnim {
     uint8_t MSVQAnim_field_0x1C;  // X10 supply (member_types)
 
     int q01C;  // X10 supply (member_lookup)
+    int __pad_004;  // 0x4 [X30:type_map]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

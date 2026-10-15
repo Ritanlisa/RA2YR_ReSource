@@ -22,5 +22,6 @@ struct VectorClass_ptr_ThemeControl {
     unsigned int  Get(int a2, void *a1 = 0);  // 0x4EA400
     VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x4EF940
     int Constructor_VectorClass_ThemeControl___(void *a1_1);  // 0x7212B0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

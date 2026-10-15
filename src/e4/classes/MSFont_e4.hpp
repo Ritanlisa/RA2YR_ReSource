@@ -12,6 +12,7 @@ struct MSFont {
     void* Constructor_MSFont_slot;  // 0x0 (no offset truth)
     static void Constructor_MSFont(MSFont *pThis);
     MSFont * QueryInterface(char a2, int a3);
+    unsigned char __pad_004;  // 0x4 [X30:canon]
 };
 
 } // namespace gamemd

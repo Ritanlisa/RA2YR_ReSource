@@ -11,5 +11,7 @@ struct E4Recv_6D4E00 {
     unsigned int M164;  // 0xA4
 // --- flat members (END) ---
     void sub_6D4E00();  // 0x6D4E00
+    unsigned int location;  // [X30:default]
+    unsigned int occupant;  // [X30:default]
 };
 } // namespace gamemd

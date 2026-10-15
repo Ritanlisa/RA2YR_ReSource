@@ -21,5 +21,6 @@ struct VectorClass_ptr_PendingCellClass_LightSourceClass {
     int  GetSize(unsigned int * a2);  // 0x555640
     unsigned int  GetCapacity(int a2);  // 0x555680
     VectorClass_flat *  QueryInterface(char a2);  // 0x555820
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

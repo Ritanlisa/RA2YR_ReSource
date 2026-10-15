@@ -14,6 +14,7 @@ struct MSOverlayAnim {
     static unsigned int Init(char** p0, int p1, int p2, int p3, int p4, int p5, char p6, int p7, char p8);  // x4:signals@0x5cc250
     MSShapeAnim * QueryInterface(unsigned int * Block, char a2);
     void StubReturnFalse(int a1);
+    void* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

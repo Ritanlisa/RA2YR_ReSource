@@ -25,5 +25,6 @@ struct VectorClass__N {
     wchar_t * ddtor(void *a1_1);  // 0x50FA90
     int  GetSize(unsigned char * a2);  // 0x50FAC0
     int  Get(int a2, void *a1 = 0);  // 0x50FB00
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

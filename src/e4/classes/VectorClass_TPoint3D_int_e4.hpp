@@ -21,5 +21,6 @@ struct VectorClass_TPoint3D_int {
     int  GetSize(unsigned int * a2);  // 0x465F80
     unsigned int  GetCapacity(int a2);  // 0x465FD0
     VectorClass_flat *  QueryInterface(char a2);  // 0x466080
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

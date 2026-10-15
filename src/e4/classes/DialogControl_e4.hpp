@@ -18,12 +18,13 @@ struct DialogControl {
     unsigned char u32_1E;  // 0x1E (offset-truth)
     unsigned int u32_40;  // 0x40 (offset-truth)
     unsigned int u32_5C;  // 0x5C (offset-truth)
-    unsigned int u32_64;  // 0x64 (offset-truth)
+    BitFont* u32_64;  // 0x64 (offset-truth) [X30:type_map]
     unsigned int u32_68;  // 0x68 (offset-truth)
     unsigned int u32_90;  // 0x90 (offset-truth)
 
     unsigned int u32_3C;  // X10 supply (member_lookup)
     unsigned char u8_2;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

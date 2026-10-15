@@ -65,5 +65,9 @@ struct EventClass {
     unsigned int u32_B;  // X10 supply (member_lookup)
     unsigned int u32_F;  // X10 supply (member_lookup)
     unsigned char q014;  // 0x14
+    unsigned char __pad_016;  // 0x16 [X30:canon]
+    int EventClass_field_0x0;  // 0x0 [X30:type_map]
+    int EventClass_field_0x4;  // 0x4 [X30:type_map]
+    int EventClass_field_0xC;  // 0xC [X30:type_map]
 };
 } // namespace gamemd

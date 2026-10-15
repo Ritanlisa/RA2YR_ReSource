@@ -233,5 +233,28 @@ void ClearAndFree4();
 
     unsigned int u32_25801;  // X10 supply (member_lookup)
     unsigned int u32_960;  // X10 supply (member_lookup)
+    unsigned int Capacity;  // [X30:default]
+    unsigned int CapacityIncrement;  // [X30:default]
+    unsigned int IsAllocated;  // [X30:default]
+    unsigned int IsInitialized;  // [X30:default]
+    unsigned int Items;  // [X30:default]
+    VectorClass_flat* VectorClass_flat_1;  // 0x1 [X30:member_lookup]
+    unsigned int baseNodeCapacity;  // [X30:default]
+    unsigned int baseNodeCount;  // [X30:default]
+    unsigned int baseNodes;  // [X30:default]
+    unsigned int cells24;  // [X30:default]
+    unsigned int cells24Capacity;  // [X30:default]
+    unsigned int cells24Count;  // [X30:default]
+    unsigned int cells38Capacity;  // [X30:default]
+    unsigned int cells38Count;  // [X30:default]
+    unsigned int center;  // [X30:default]
+    unsigned int owner;  // [X30:default]
+    unsigned int percentBuilt;  // [X30:default]
+    unsigned int radioLinks;  // [X30:default]
+    unsigned int relatedTagsCount;  // [X30:default]
+    unsigned int unknown54;  // [X30:default]
+    unsigned int vtable0;  // 0x0 [X30:default]
+    unsigned int vtable1;  // 0x0 [X30:default]
+    unsigned int vtable4;  // 0xC [X30:member_lookup]
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

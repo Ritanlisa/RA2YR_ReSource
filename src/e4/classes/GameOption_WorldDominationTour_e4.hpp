@@ -15,6 +15,7 @@ struct GameOption_WorldDominationTour {
 
     unsigned int u32_10;  // X10 supply (member_lookup)
     unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

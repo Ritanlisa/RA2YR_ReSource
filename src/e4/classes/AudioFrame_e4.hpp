@@ -10,6 +10,7 @@ struct AudioFrame {
 
 // --- flat members (END) ---
     static int CounterInc();
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

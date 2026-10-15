@@ -22,5 +22,6 @@ struct VectorClass_ptr_MSSfx {
     void Destroy_0();  // 0x5D28D0
     DynamicVector * Constructor_VectorClass_MSAnim___(unsigned int * Block, char a2);  // 0x5D2960
     VectorClass_flat *  QueryInterface(char a2);  // 0x5D2D40
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

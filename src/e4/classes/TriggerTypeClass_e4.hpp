@@ -49,6 +49,7 @@ struct TriggerTypeClass {
     int Write(TechnoTypeClass * aP0, int * a1, int aP2);
     static int GetFlags(TriggerTypeClass * aP1);
     unsigned int *  Construct(char * Source, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x726c80
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
 };
 
 } // namespace gamemd

@@ -23,5 +23,6 @@ struct DynamicVectorClass_SubzoneConn {
     unsigned char __tail_10;  // 0x10 (offset-truth)
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

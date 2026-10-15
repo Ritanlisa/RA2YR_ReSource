@@ -10,7 +10,7 @@ namespace gamemd {
 struct ConnectionClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char PlayerIndex[4];  // 0x4
+    CommBufferClass* PlayerIndex;  // 0x4 [X30:type_map]
     bool Active;  // 0x8
     unsigned int LastPacketTime;  // 0xC
     unsigned int PacketsSent;  // 0x10
@@ -30,6 +30,8 @@ struct ConnectionClass {
     unsigned int u32_1C;  // 0x1C (offset-truth)
 
     void* q020;  // X10 supply (member_lookup)
+    unsigned char __pad_009;  // 0x9 [X30:canon]
+    unsigned int PhoneNumber;  // [X30:default]
 };
 #endif  // GAMEMD_TREE_UNIVERSE
 

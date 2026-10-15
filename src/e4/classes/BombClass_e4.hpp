@@ -20,12 +20,12 @@ struct BombClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char BombClass_field_28[4];  // 0x28
-    char BombClass_field_2C[4];  // 0x2C
+    void* BombClass_field_28;  // 0x28 [X30:type_map]
+    void* BombClass_field_2C;  // 0x2C [X30:type_map]
     unsigned int audioController;  // 0x30
     unsigned int alignmentPadding;  // 0x33
     char soundIndex[4];  // 0x44
-    char BombClass_field_54[4];  // 0x54
+    int BombClass_field_54;  // 0x54 [X30:type_map]
     bool BombClass_field_58;  // 0x58
     unsigned char pad_59;  // 0x59
 // --- flat members (END) ---
@@ -44,6 +44,8 @@ struct BombClass {
     unsigned int q_80;  // +0x80 flat supply (CSP-fed)
 
     unsigned char __pad_024;  // X10 supply (csp_canon_members)
+    unsigned char __pad_048;  // 0x48 [X30:canon]
+    unsigned int HouseClass_6C;  // [X30:default]
 };
 
 } // namespace gamemd

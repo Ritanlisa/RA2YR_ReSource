@@ -29,7 +29,7 @@ struct AnimTypeClass {
     SHPStruct* nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     int NeedsSaveOrLink;  // 0x20
-    int LoopStart;  // 0x24
+    void* LoopStart;  // 0x24 [X30:type_map]
     int LoopEnd;  // 0x28
     int End;  // 0x2C
     int LoopCount;  // 0x30
@@ -59,7 +59,7 @@ struct AnimTypeClass {
     unsigned char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int Strength;  // 0xA0
-    void * Image;  // 0xA4
+    AbstractClass* Image;  // 0xA4 [X30:type_map]
     char ImageAllocated;  // 0xA8
     void * AlphaImage;  // 0xAC
     unsigned int MainVoxel;  // 0xB0
@@ -104,7 +104,7 @@ struct AnimTypeClass {
     char VoxelCaches[80];  // 0x244
     int MiddleFrameIndex;  // 0x294
     int MiddleFrameWidth;  // 0x298
-    int MiddleFrameHeight_d;  // 0x29C
+    AbstractTypeClass* MiddleFrameHeight_d;  // 0x29C [X30:type_map]
     unsigned char AnimTypeClass_field_2A4;  // 0x2A4
     double Damage;  // 0x2A8
     int Rate;  // 0x2B0
@@ -112,9 +112,9 @@ struct AnimTypeClass {
     int LoopStart_d;  // 0x2B8
     int LoopEnd_d;  // 0x2BC
     int End_d;  // 0x2C0
-    int LoopCount_d;  // 0x2C4
+    void* LoopCount_d;  // 0x2C4 [X30:type_map]
     AnimTypeClass* Next_d;  // 0x2C8
-    int SpawnsParticle_d;  // 0x2CC
+    ParticleTypeClass* SpawnsParticle_d;  // 0x2CC [X30:type_map]
     int NumParticles;  // 0x2D0
     int DetailLevel_d;  // 0x2D4
     int TranslucencyDetailLevel_d;  // 0x2D8
@@ -122,25 +122,25 @@ struct AnimTypeClass {
     char RandomRate_d[8];  // 0x2E4
     int Translucency_d;  // 0x2EC
     AnimTypeClass* Spawns_d;  // 0x2F0
-    int SpawnCount_d;  // 0x2F4
+    void* SpawnCount_d;  // 0x2F4 [X30:type_map]
     int Report_d;  // 0x2F8
     int StopSound_d;  // 0x2FC
     AnimTypeClass* BounceAnim_d;  // 0x300
     AnimTypeClass* ExpireAnim_d;  // 0x304
     AnimTypeClass* TrailerAnim_d;  // 0x308
-    int TrailerSeperation_d;  // 0x30C
+    void* TrailerSeperation_d;  // 0x30C [X30:type_map]
     double Elasticity_d;  // 0x310
     double MinZVel_d;  // 0x318
     double AnimTypeClass_field_double_320;  // 0x320
     double MaxXYVel;  // 0x328
     WarheadTypeClass* Warhead;  // 0x330
-    int DamageRadius;  // 0x334
+    void* DamageRadius;  // 0x334 [X30:type_map]
     OverlayTypeClass* TiberiumSpawnType;  // 0x338
-    int TiberiumSpreadRadius;  // 0x33C
-    int YSortAdjust;  // 0x340
-    int YDrawOffset;  // 0x344
-    int ZAdjust;  // 0x348
-    int MakeInfantry;  // 0x34C
+    void* TiberiumSpreadRadius;  // 0x33C [X30:type_map]
+    void* YSortAdjust;  // 0x340 [X30:type_map]
+    void* YDrawOffset;  // 0x344 [X30:type_map]
+    void* ZAdjust;  // 0x348 [X30:type_map]
+    void* MakeInfantry;  // 0x34C [X30:type_map]
     int RunningFrames;  // 0x350
     bool IsFlamingGuy;  // 0x354
     bool IsVeins;  // 0x355
@@ -157,7 +157,7 @@ struct AnimTypeClass {
     bool IsAnimatedTiberium;  // 0x360
     bool AltPalette;  // 0x361
     bool Normalized;  // 0x362
-    char Layer[4];  // 0x364
+    void* Layer;  // 0x364 [X30:type_map]
     bool DoubleThick;  // 0x368
     bool Flat;  // 0x369
     bool Translucent;  // 0x36A
@@ -200,7 +200,7 @@ struct AnimTypeClass {
     int ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2);
     char Flat_flag[1];  // 0x369 (ml)
     char __pad_98[3];  // 0x98 (ml)
-    unsigned int q024;  // 0x24 (offset-truth)
+    void* q024;  // 0x24 (offset-truth) [X30:type_map]
 
     unsigned char __pad_2A0;  // X10 supply (csp_canon_members)
     IUnknown* q0C4;  // X10 supply (member_lookup)
@@ -212,6 +212,20 @@ struct AnimTypeClass {
     unsigned int u32_C8;  // X10 supply (member_lookup)
     uint32_t u32_D4;  // X10 supply (member_lookup)
     unsigned int u32_DC;  // X10 supply (member_lookup)
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_14D;  // 0x14D [X30:canon]
+    unsigned char __pad_22D;  // 0x22D [X30:canon]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_238;  // 0x238 [X30:canon]
+    unsigned char __pad_2A5;  // 0x2A5 [X30:canon]
+    unsigned char __pad_363;  // 0x363 [X30:canon]
+    unsigned int AllowCellContent_d;  // [X30:default]
+    unsigned int FootClass_E0;  // [X30:default]
+    unsigned int Immune_d;  // [X30:default]
+    unsigned int IsLogic_d;  // [X30:default]
+    unsigned int LegalTarget_d;  // [X30:default]
+    unsigned int RadarInvisible_d;  // [X30:default]
+    unsigned int Selectable_d;  // [X30:default]
 };
 
 } // namespace gamemd

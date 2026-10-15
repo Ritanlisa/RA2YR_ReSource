@@ -14,5 +14,6 @@ struct E4Recv_457A10 {
     unsigned int u32_520;  // 0x520 (offset-truth)
 
     unsigned int u32_524;  // X10 supply (member_lookup)
+    unsigned int gattlingValue;  // [X30:default]
 };
 } // namespace gamemd

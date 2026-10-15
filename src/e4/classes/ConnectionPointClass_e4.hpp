@@ -17,6 +17,7 @@ struct ConnectionPointClass {
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned char u32_29;  // 0x29 (offset-truth)
+    void* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

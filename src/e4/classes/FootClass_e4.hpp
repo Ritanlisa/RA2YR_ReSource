@@ -35,15 +35,15 @@ struct FootClass {
     void* vfptr_3;  // 0x12
     void* abstractFlags;  // 0x14
     void* nextArrayIndex;  // 0x18
-    char referenceCount[4];  // 0x1C
+    int referenceCount;  // 0x1C [X30:type_map]
     bool NeedsSaveOrLink;  // 0x20
     unsigned int objectTypeFlags;  // 0x24
     void* owningHouseIndex;  // 0x28
-    char fallRate[4];  // 0x2C
+    int fallRate;  // 0x2C [X30:type_map]
     void* nextObject;  // 0x30
     bool needsSave;  // 0x32
     unsigned int alignmentPadding;  // 0x33
-    void* attachedTag;  // 0x34
+    TagClass* attachedTag;  // 0x34 [X30:type_map]
     unsigned int occupant;  // 0x36
     BombClass* attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
@@ -51,7 +51,7 @@ struct FootClass {
     char customSound[4];  // 0x64
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
-    void * health;  // 0x6C
+    IUnknown* health;  // 0x6C [X30:type_map]
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
@@ -78,13 +78,13 @@ struct FootClass {
     LineTrail* lineTrailer;  // 0xA8
     void* currentMission;  // 0xAC
     char suspendedMission[4];  // 0xB0
-    char queuedMission[4];  // 0xB4
+    void* queuedMission;  // 0xB4 [X30:type_map]
     bool missionQueued;  // 0xB8
     unsigned char alignmentPaddingB9;  // 0xB9
-    char missionStatus[4];  // 0xBC
+    int missionStatus;  // 0xBC [X30:type_map]
     char missionStartTime[4];  // 0xC0
     unsigned int missionData;  // 0xC4
-    char missionTimer[12];  // 0xC8
+    int missionTimer;  // 0xC8 [X30:type_map]
     unsigned char lastCommands;  // 0xD4
     unsigned int radioLinks;  // 0xE0
     unsigned long long flashing;  // 0xE4
@@ -144,7 +144,7 @@ struct FootClass {
     unsigned char reloadTimer;  // 0x200
     unsigned int currentBurstCount;  // 0x208
     unsigned int currentBarrelIndex;  // 0x210
-    char displayProductionTo[4];  // 0x214
+    int displayProductionTo;  // 0x214 [X30:type_map]
     AbstractClass* Owner;  // 0x218
     HouseClass * owner;  // 0x21C
     unsigned int owner_d;  // 0x220
@@ -159,8 +159,8 @@ struct FootClass {
     char lastSightCoords[12];  // 0x254
     unsigned int ammo;  // 0x258
     unsigned int unitValue;  // 0x25C
-    char lastSightRange[4];  // 0x260
-    char lastSightHeight[4];  // 0x264
+    int lastSightRange;  // 0x260 [X30:type_map]
+    int lastSightHeight;  // 0x264 [X30:type_map]
     bool ambientParticles;  // 0x268
     bool isGeneratingGap;  // 0x269
     char gapRadius[4];  // 0x26C
@@ -327,73 +327,73 @@ struct FootClass {
     void* planningToken;  // 0x514
     ObjectTypeClass* disguiseAsType;  // 0x518
     HouseClass* disguisedAsHouse;  // 0x51C
-    char FootClass_field_520[4];  // 0x520
-    char FootClass_field_524[2];  // 0x524
+    int FootClass_field_520;  // 0x520 [X30:type_map]
+    int FootClass_field_524;  // 0x524 [X30:type_map]
     char FootClass_field_526[2];  // 0x526
-    char FootClass_field_528[2];  // 0x528
+    int FootClass_field_528;  // 0x528 [X30:type_map]
     char FootClass_field_52A[2];  // 0x52A
     char FootClass_field_52C[4];  // 0x52C
     char FootClass_field_52E[4];  // 0x52E
-    char FootClass_field_530[4];  // 0x530
+    ILocomotion* FootClass_field_530;  // 0x530 [X30:type_map]
     char controlGroup[4];  // 0x532
-    char FootClass_field_534[4];  // 0x534
+    ILocomotion* FootClass_field_534;  // 0x534 [X30:type_map]
     AbstractClass* focus;  // 0x536
-    char FootClass_field_538[4];  // 0x538
+    ILocomotion* FootClass_field_538;  // 0x538 [X30:type_map]
     bool FootClass_field_53C;  // 0x53C
     unsigned char m_padding_53D;  // 0x53D
-    char FootClass_field_540[4];  // 0x540
+    IUnknown* FootClass_field_540;  // 0x540 [X30:type_map]
     char audioController7[20];  // 0x544
-    char FootClass_field_558[4];  // 0x558
+    int FootClass_field_558;  // 0x558 [X30:type_map]
     char FootClass_field_55A[4];  // 0x55A
-    char FootClass_field_55C[4];  // 0x55C
+    int FootClass_field_55C;  // 0x55C [X30:type_map]
     char FootClass_field_55E[4];  // 0x55E
-    char FootClass_field_560[4];  // 0x560
+    int FootClass_field_560;  // 0x560 [X30:type_map]
     char FootClass_field_562[4];  // 0x562
-    char FootClass_field_564[4];  // 0x564
+    void* FootClass_field_564;  // 0x564 [X30:type_map]
     char FootClass_field_566[4];  // 0x566
     char FootClass_field_568[12];  // 0x568
-    char FootClass_field_56C[4];  // 0x56C
-    char FootClass_field_570[4];  // 0x570
+    ILocomotion* FootClass_field_56C;  // 0x56C [X30:type_map]
+    ILocomotion* FootClass_field_570;  // 0x570 [X30:type_map]
     unsigned int unused574;  // 0x574
-    char FootClass_field_578[8];  // 0x578
-    void* FootClass_field_57C;  // 0x57C
+    int FootClass_field_578;  // 0x578 [X30:type_map]
+    ILocomotion* FootClass_field_57C;  // 0x57C [X30:type_map]
     char FootClass_field_580[8];  // 0x580
     float FootClass_field_584;  // 0x584
     unsigned int FootClass_DVC_588;  // 0x588
-    char FootClass_field_5A0[4];  // 0x5A0
-    char FootClass_field_5A4[4];  // 0x5A4
-    char FootClass_field_5A8[4];  // 0x5A8
-    unsigned int FootClass_DVC_5AC;  // 0x5AC
-    char FootClass_field_5C4[4];  // 0x5C4
-    char FootClass_field_5C8[4];  // 0x5C8
-    char FootClass_field_5CC[4];  // 0x5CC
+    int FootClass_field_5A0;  // 0x5A0 [X30:type_map]
+    int FootClass_field_5A4;  // 0x5A4 [X30:type_map]
+    int FootClass_field_5A8;  // 0x5A8 [X30:type_map]
+    void* FootClass_DVC_5AC;  // 0x5AC [X30:type_map]
+    int FootClass_field_5C4;  // 0x5C4 [X30:type_map]
+    void* FootClass_field_5C8;  // 0x5C8 [X30:type_map]
+    int FootClass_field_5CC;  // 0x5CC [X30:type_map]
     unsigned int u32_5B9;  // 0x5B9
     bool FootClass_field_5D0;  // 0x5D0
     bool FootClass_field_bool_5D1;  // 0x5D1
     unsigned char m_padding_5D2;  // 0x5D2
-    char FootClass_field_5D4[4];  // 0x5D4
-    char FootClass_field_5D8[4];  // 0x5D8
-    char FootClass_field_5DC[4];  // 0x5DC
+    int FootClass_field_5D4;  // 0x5D4 [X30:type_map]
+    void* FootClass_field_5D8;  // 0x5D8 [X30:type_map]
+    void* FootClass_field_5DC;  // 0x5DC [X30:type_map]
     char pathDirections[96];  // 0x5E0
     bool gapSuperCharged;  // 0x616
     char FootClass_field_640[12];  // 0x640
-    char FootClass_field_644[4];  // 0x644
-    char FootClass_field_648[4];  // 0x648
-    char FootClass_field_64C[4];  // 0x64C
+    int FootClass_field_644;  // 0x644 [X30:type_map]
+    int FootClass_field_648;  // 0x648 [X30:type_map]
+    int FootClass_field_64C;  // 0x64C [X30:type_map]
     char FootClass_field_650[12];  // 0x650
     char FootClass_field_654[4];  // 0x654
-    char FootClass_field_658[4];  // 0x658
+    ILocomotion* FootClass_field_658;  // 0x658 [X30:type_map]
     char FootClass_field_65C[12];  // 0x65C
-    void* FootClass_field_660;  // 0x660
-    char FootClass_field_664[4];  // 0x664
+    TechnoClass* FootClass_field_660;  // 0x660 [X30:type_map]
+    ILocomotion* FootClass_field_664;  // 0x664 [X30:type_map]
     char FootClass_field_668[12];  // 0x668
     char FootClass_field_66C[4];  // 0x66C
-    char FootClass_field_670[4];  // 0x670
+    ILocomotion* FootClass_field_670;  // 0x670 [X30:type_map]
     ILocomotion* Locomotor;  // 0x674
     LocomotionClass* Locomotor_ptr;  // 0x678
     bool IsDeploying;  // 0x67C
     char FootClass_field_680[4];  // 0x680
-    char FootClass_field_684[1];  // 0x684
+    int FootClass_field_684;  // 0x684 [X30:type_map]
     bool unknownBool685;  // 0x685
     unsigned char waypointIndex;  // 0x686
     bool unknownBool687;  // 0x687
@@ -407,12 +407,12 @@ struct FootClass {
     bool shouldEnterAbsorber;  // 0x68F
     bool shouldEnterOccupiable;  // 0x690
     bool shouldGarrisonStructure;  // 0x691
-    char FootClass_field_694[4];  // 0x694
-    char FootClass_field_698[4];  // 0x698
-    char FootClass_field_69C[4];  // 0x69C
-    char FootClass_field_6A0[12];  // 0x6A0
+    void* FootClass_field_694;  // 0x694 [X30:type_map]
+    ILocomotion* FootClass_field_698;  // 0x698 [X30:type_map]
+    int FootClass_field_69C;  // 0x69C [X30:type_map]
+    int FootClass_field_6A0;  // 0x6A0 [X30:type_map]
     char FootClass_field_6A4[4];  // 0x6A4
-    void* FootClass_bools_6A8;  // 0x6A8
+    ILocomotion* FootClass_bools_6A8;  // 0x6A8 [X30:type_map]
     bool FootClass_field_bool_6AC;  // 0x6AC
     bool isAttackedByLocomotor;  // 0x6AD
     bool isLetGoByLocomotor;  // 0x6AE
@@ -434,7 +434,7 @@ struct FootClass {
     bool FootClass_field_6BE;  // 0x6BE
     bool FootClass_field_6BF;  // 0x6BF
 // --- flat members (END) ---
-    int nextTeamMember;  // 0x5D8 (G57W14E1 til supply)
+    void* nextTeamMember;  // 0x5D8 (G57W14E1 til supply) [X30:type_map]
     unsigned int FindAITarget_ph;  // w18j3: filler renamed (no offset truth; canon FootClass::FindAITarget is a method)
     static unsigned int FindAITarget(int* p0);  // x4:signals@0x4d6aa0
     void* movementDestination;  // 0x0 (no offset truth)
@@ -465,8 +465,8 @@ struct FootClass {
     static int CheckAccelLimit(int *p_this);  // x4:ida@0x750030
     char __pad_58C[20];  // 0x58C (ml)
     char __pad_5B0[20];  // 0x5B0 (ml)
-    int currentJumpjetMapCoords;  // 0x564 (ml)
-    int locomotor;  // 0x674 (ml)
+    void* currentJumpjetMapCoords;  // 0x564 (ml) [X30:type_map]
+    ILocomotion* locomotor;  // 0x674 (ml) [X30:type_map]
     int parasiteImUsing;  // 0x69C (ml)
     int team;  // 0x5D4 (ml)
     int unknownAbstractArray588;  // 0x588 (ml)
@@ -476,6 +476,44 @@ struct FootClass {
     int u32_D54;  // X10 supply (member_lookup)
 
     AbstractClass* q590;  // X10 supply (member_lookup)
+    unsigned char __pad_115;  // 0x115 [X30:canon]
+    unsigned char __pad_12C;  // 0x12C [X30:canon]
+    unsigned char __pad_1F0;  // 0x1F0 [X30:canon]
+    unsigned char __pad_1FC;  // 0x1FC [X30:canon]
+    unsigned char __pad_20C;  // 0x20C [X30:canon]
+    unsigned char __pad_241;  // 0x241 [X30:canon]
+    unsigned char __pad_285;  // 0x285 [X30:canon]
+    unsigned char __pad_287;  // 0x287 [X30:canon]
+    unsigned char __pad_28C;  // 0x28C [X30:canon]
+    AbstractClass* __pad_2B4;  // 0x2B4 [X30:type_map]
+    unsigned char __pad_2E8;  // 0x2E8 [X30:canon]
+    unsigned char __pad_314;  // 0x314 [X30:canon]
+    bool __pad_3CE;  // 0x3CE [X30:type_map]
+    unsigned char __pad_3D1;  // 0x3D1 [X30:canon]
+    bool __pad_3D5;  // 0x3D5 [X30:type_map]
+    unsigned char __pad_41D;  // 0x41D [X30:canon]
+    unsigned char __pad_422;  // 0x422 [X30:canon]
+    bool __pad_425;  // 0x425 [X30:type_map]
+    unsigned char __pad_43A;  // 0x43A [X30:canon]
+    unsigned char __pad_458;  // 0x458 [X30:canon]
+    unsigned char __pad_464;  // 0x464 [X30:canon]
+    unsigned char __pad_469;  // 0x469 [X30:canon]
+    unsigned char __pad_47A;  // 0x47A [X30:canon]
+    unsigned char __pad_480;  // 0x480 [X30:canon]
+    unsigned char __pad_4BA;  // 0x4BA [X30:canon]
+    unsigned char __pad_4D6;  // 0x4D6 [X30:canon]
+    unsigned char __pad_4FA;  // 0x4FA [X30:canon]
+    unsigned char __pad_692;  // 0x692 [X30:canon]
+    unsigned int FootClass_field_abstract_array_5AC;  // [X30:default]
+    int q598;  // 0x598 [X30:type_map]
+    unsigned int q59C;  // 0x59C [X30:default]
+    AbstractClass* q5B4;  // 0x5B4 [X30:type_map]
+    AbstractClass* q5BC;  // 0x5BC [X30:type_map]
+    unsigned int q5C0;  // 0x5C0 [X30:default]
+    unsigned int q_5B0;  // [X30:default]
+    unsigned int railgunParticles_2;  // [X30:default]
+    unsigned int targetingTimer_2;  // [X30:default]
+    unsigned int vfptr;  // [X30:default]
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

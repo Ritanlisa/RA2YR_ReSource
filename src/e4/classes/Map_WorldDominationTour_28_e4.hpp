@@ -17,5 +17,6 @@ struct Map_WorldDominationTour_28 {
     int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x769D20
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x76A250
     unsigned int  Write(int a2);  // 0x76A290
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

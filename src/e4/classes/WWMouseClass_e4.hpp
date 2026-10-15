@@ -40,6 +40,17 @@ struct WWMouseClass {
     unsigned int q04C;  // X10 supply (member_lookup)
     unsigned int q050;  // X10 supply (member_lookup)
     unsigned int q054;  // X10 supply (member_lookup)
+    String* __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    unsigned char __pad_036;  // 0x36 [X30:canon]
+    MouseClass* __pad_06C;  // 0x6C [X30:type_map]
+    unsigned int CapacityIncrement;  // [X30:default]
+    unsigned int HandleClick_ph;  // [X30:default]
+    unsigned int m_MaxX;  // [X30:default]
+    unsigned int m_MaxY;  // [X30:default]
+    unsigned int m_ScrollY;  // [X30:default]
+    unsigned int outBuffer;  // [X30:default]
+    unsigned int q_30;  // [X30:default]
 };
 
 } // namespace gamemd

@@ -11,6 +11,10 @@ struct _VectorClass_VCell {
     unsigned int * Seek(unsigned int * a2, int a3, void *a3_2);
 
     unsigned short u16_4;  // X10 supply (member_lookup)
+    unsigned int __pad_0;  // 0x0 [X30:default]
+    unsigned int __tail_10;  // [X30:default]
+    unsigned int m_8;  // 0x8 [X30:default]
+    unsigned int m_C;  // 0xC [X30:default]
 };
 
 } // namespace gamemd

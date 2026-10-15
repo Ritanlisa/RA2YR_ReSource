@@ -17,5 +17,8 @@ struct E4Recv_5AFEF0 {
     unsigned int M40;  // 0x40
 // --- flat members (END) ---
     int sub_5AFEF0();  // 0x5AFEF0
+    unsigned int HeadToCoord;  // [X30:default]
+    unsigned int IsMoving;  // [X30:default]
+    unsigned int MovingDestination;  // [X30:default]
 };
 } // namespace gamemd

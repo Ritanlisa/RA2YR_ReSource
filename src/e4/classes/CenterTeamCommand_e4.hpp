@@ -8,7 +8,7 @@ namespace gamemd {
 struct CenterTeamCommand {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char CenterTeamCommand_field_00[4];  // 0x4
+    int CenterTeamCommand_field_00;  // 0x4 [X30:type_map]
 // --- flat members (END) ---
     static unsigned int * Construct(void *aP1, int a2);
     char * AddRef();

@@ -33,7 +33,7 @@ struct SuperClass {
     int CustomChargeTime;  // 0x36
     bool BlinkState;  // 0x40
     HouseClass* Owner;  // 0x44
-    char BlinkTimer[4];  // 0x48
+    void* BlinkTimer;  // 0x48 [X30:type_map]
     int SpecialSoundDuration;  // 0x50
     char SpecialSoundLocation[4];  // 0x54
     char ChronoMapCoords[4];  // 0x62
@@ -99,6 +99,19 @@ struct SuperClass {
     unsigned int u32_74;  // X10 supply (member_lookup)
     unsigned int u32_78;  // X10 supply (member_lookup)
     unsigned int u32_7C;  // X10 supply (member_lookup)
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_017;  // 0x17 [X30:canon]
+    unsigned char __pad_020;  // 0x20 [X30:canon]
+    unsigned char __pad_03A;  // 0x3A [X30:canon]
+    void* __pad_04C;  // 0x4C [X30:type_map]
+    unsigned char __pad_058;  // 0x58 [X30:canon]
+    unsigned char __pad_066;  // 0x66 [X30:canon]
+    unsigned char __pad_073;  // 0x73 [X30:canon]
+    unsigned char __pad_09A;  // 0x9A [X30:canon]
+    unsigned char __pad_10C;  // 0x10C [X30:canon]
+    unsigned char __pad_11A;  // 0x11A [X30:canon]
+    unsigned char __pad_128;  // 0x128 [X30:canon]
+    unsigned int HouseClass_6C;  // [X30:default]
 };
 
 } // namespace gamemd

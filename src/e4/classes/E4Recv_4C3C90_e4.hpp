@@ -12,5 +12,6 @@ struct E4Recv_4C3C90 {
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
     wchar_t ** sub_4C3C90(wchar_t * a2, wchar_t * a3, wchar_t * String, wchar_t * a5);  // 0x4C3C90
+    void* u32_4;  // 0x4 [X30:fn-atom]
 };
 } // namespace gamemd

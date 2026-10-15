@@ -15,5 +15,8 @@ struct E4Recv_517110 {
     unsigned int M76;  // 0x4C
 // --- flat members (END) ---
     int sub_517110();  // 0x517110
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int occupant;  // [X30:default]
+    unsigned int owningHouseIndex;  // [X30:default]
 };
 } // namespace gamemd

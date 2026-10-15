@@ -22,5 +22,6 @@ struct VectorClass_USubzoneTrackingStruct {
     unsigned int  GetCapacity(int a2);  // 0x589A30
     VectorClass_flat *  QueryInterface(char a2);  // 0x58A470
     unsigned int *  SetCapacity(unsigned int * a2);  // 0x58AD10
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

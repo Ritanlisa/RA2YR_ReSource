@@ -30,5 +30,6 @@ struct VectorClass_ptr_ScriptTypeClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4ED110
     char  SetCapacity_0(int a2, unsigned int * a3);  // 0x4ED2C0
     int  FindItemIndex_0(unsigned int * a2);  // 0x4ED370
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -40,7 +40,7 @@ struct OverlayTypeClass {
     bool DrawFlat;  // 0x1F
     bool NeedsSaveOrLink;  // 0x20
     bool IsARock;  // 0x21
-    char RadarColor[4];  // 0x24
+    Color* RadarColor;  // 0x24 [X30:type_map]
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
     bool NoSpawnAlt;  // 0x30
@@ -90,10 +90,10 @@ struct OverlayTypeClass {
     unsigned char Voxel_d;  // 0x236
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches[80];  // 0x244
-    char LandType[4];  // 0x294
+    void* LandType;  // 0x294 [X30:type_map]
     AnimTypeClass* CellAnim;  // 0x298
     int CellAnim_d;  // 0x29C
-    int DamageLevels_d;  // 0x2A0
+    void* DamageLevels_d;  // 0x2A0 [X30:type_map]
     bool Strength_d;  // 0x2A4
     bool Tiberium_d;  // 0x2A5
     bool Crate_d;  // 0x2A6
@@ -134,8 +134,8 @@ OverlayTypeClass * ddtor(void ** Block, char a2);
 OverlayTypeClass(ObjectClass * aP1);
     unsigned int * vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1);
     void GetLandType(unsigned int * a2, int * a3, unsigned int a4);
-    int Strength_2;  // 0x2A0 (ml)
-    unsigned int u32_2B8;  // 0x2B8 (offset-truth)
+    void* Strength_2;  // 0x2A0 (ml) [X30:type_map]
+    Color* u32_2B8;  // 0x2B8 (offset-truth) [X30:type_map]
     unsigned int u32_2BC;  // 0x2BC (offset-truth)
     unsigned int u32_2C4;  // 0x2C4 (offset-truth)
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
@@ -161,6 +161,24 @@ OverlayTypeClass(ObjectClass * aP1);
     unsigned int u32_2E4;  // X10 supply (member_lookup)
     int u32_2F0;  // X10 supply (member_lookup)
     unsigned int u32_30C;  // X10 supply (member_lookup)
+    unsigned char __pad_036;  // 0x36 [X30:canon]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    int __pad_22C;  // 0x22C [X30:type_map]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    int __pad_237;  // 0x237 [X30:type_map]
+    unsigned int AllowCellContent_d;  // [X30:default]
+    unsigned int IsLogic_d;  // [X30:default]
+    unsigned int NewTheater_d;  // [X30:default]
+    unsigned int ParticleTypeClass_2B8;  // [X30:default]
+    unsigned int RadarInvisible_d;  // [X30:default]
+    unsigned int Selectable_d;  // [X30:default]
+    unsigned int Theater_d;  // [X30:default]
+    Color* q2B6;  // 0x2B6 [X30:type_map]
+    Color* q2B7;  // 0x2B7 [X30:type_map]
 };
 
 } // namespace gamemd

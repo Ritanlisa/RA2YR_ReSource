@@ -15,5 +15,6 @@ struct VectorClass_Techno {
     wchar_t * ddtor(void *a1_1);  // 0x40BA50
     int  GetSize(unsigned int * a2);  // 0x40BA80
     unsigned int  GetCapacity(int a2);  // 0x40BAC0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -22,5 +22,6 @@ struct VectorClass_cptr_MultiMission {
     VectorClass_flat * GetAt(unsigned int * Block, char a2);  // 0x5EED90
 
     unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

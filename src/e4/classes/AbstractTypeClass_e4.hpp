@@ -69,6 +69,8 @@ struct AbstractTypeClass {
     unsigned int u32_94;  // X10 supply (member_lookup)
     char u8_9;  // X10 supply (member_lookup)
     unsigned int u32_A0;  // 0xA0
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    int vtable46;  // 0xB4 [X30:type_map]
 };
 
 } // namespace gamemd

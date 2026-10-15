@@ -21,5 +21,6 @@ struct VectorClass_UScoutStruct {
     int  GetSize(int a2);  // 0x50F330
     unsigned int  GetCapacity(int a2);  // 0x50F380
     VectorClass_flat *  QueryInterface(char a2);  // 0x5101D0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -21,5 +21,6 @@ struct VectorClass_ptr_HouseClass {
     int  GetSize(unsigned int * a2);  // 0x4EBD00
     unsigned int  GetCapacity(int a2);  // 0x4EBD40
     VectorClass_flat *  QueryInterface(char a2);  // 0x4EFFD0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

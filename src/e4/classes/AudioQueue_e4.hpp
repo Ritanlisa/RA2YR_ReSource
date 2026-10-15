@@ -62,5 +62,8 @@ struct AudioQueue {
     unsigned int u32_4C;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
     unsigned int q004;  // 0x4
+    AudioQueue* __pad_000;  // 0x0 [X30:type_map]
+    AudioQueue* AudioQueue_F8;  // 0xF8 [X30:member_lookup]
+    AudioQueue* __pad_0;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

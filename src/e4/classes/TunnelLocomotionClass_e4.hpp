@@ -31,6 +31,7 @@ struct TunnelLocomotionClass {
     int ddtor(int a1, unsigned int * a2);
     void ProcessFormationPosition(unsigned int * a1);
     TunnelLocomotionClass * ProcessMove(unsigned int * Block, char a2);
+    unsigned char __pad_012;  // 0x12 [X30:canon]
 };
 
 } // namespace gamemd

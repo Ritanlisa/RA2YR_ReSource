@@ -16,6 +16,7 @@ struct AnimFile {
 
     unsigned char q368;  // X10 supply (member_lookup)
     unsigned int u32_89;  // X10 supply (member_lookup)
+    unsigned char __pad_004;  // 0x4 [X30:canon]
 };
 #endif  // GAMEMD_ANIMFILE_DECLARED
 

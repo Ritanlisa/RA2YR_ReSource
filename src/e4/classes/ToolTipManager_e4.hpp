@@ -10,7 +10,7 @@ struct ToolTipManager {
     void* vtable1;  // 0x0
     char Position[8];  // 0x4
     void* ToolTipText;  // 0xC
-    char Duration[4];  // 0x10
+    void* Duration;  // 0x10 [X30:type_map]
     char DisplayTimer[12];  // 0x14
     char TextBuffer[512];  // 0x20
 // --- flat members (END) ---
@@ -24,7 +24,8 @@ struct ToolTipManager {
     unsigned int u32_250;  // 0x250 (offset-truth)
     int u32_244;  // 0x244
     int u32_238;  // 0x238
-    int u32_234;  // 0x234
+    void* u32_234;  // 0x234 [X30:type_map]
+    unsigned char u8_241;  // 0x241 [X30:member_lookup]
 };
 
 } // namespace gamemd

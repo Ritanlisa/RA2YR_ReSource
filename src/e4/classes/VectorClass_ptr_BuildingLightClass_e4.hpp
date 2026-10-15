@@ -30,5 +30,6 @@ struct VectorClass_ptr_BuildingLightClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4E9DB0
     char  SetCapacity_0(int a2, unsigned int * a3);  // 0x4EACC0
     int  FindItemIndex_0(unsigned int * a2);  // 0x4EAD70
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

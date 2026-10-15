@@ -70,7 +70,7 @@ struct AnimClass {
 // --- flat members (END) ---
     Coord *AnimClass_field_0xC8;  // G42.33: raw type Coord* ([2].__pad_C sites)
     void *unnamed_66;  // G42.33 supply (vtable id)
-    unsigned int AnimClass_field_0xA4;  // G42.33 supply (+0xA4)
+    CampaignClass* AnimClass_field_0xA4;  // G42.33 supply (+0xA4) [X30:type_map]
     void *AnimClass_field_0x1A0;  // G42.33 supply (Mixer)
     void *AnimClass_field_0x1B4;  // G42.33 supply (Mixer)
     unsigned char AnimClass_field_0x35D[3];  // G42.33 supply (+0x35D..0x35F)
@@ -117,6 +117,42 @@ struct AnimClass {
     unsigned int q119;  // X10 supply (member_lookup)
     unsigned int q196;  // X10 supply (member_lookup)
     unsigned int u32_CA;  // 0xCA
+    int __pad_010;  // 0x10 [X30:type_map]
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_079;  // 0x79 [X30:canon]
+    unsigned char __pad_080;  // 0x80 [X30:canon]
+    unsigned char __pad_08C;  // 0x8C [X30:canon]
+    unsigned char __pad_098;  // 0x98 [X30:canon]
+    unsigned char __pad_09E;  // 0x9E [X30:canon]
+    unsigned char __pad_0E0;  // 0xE0 [X30:canon]
+    unsigned char __pad_109;  // 0x109 [X30:canon]
+    unsigned char __pad_117;  // 0x117 [X30:canon]
+    unsigned char __pad_176;  // 0x176 [X30:canon]
+    unsigned char __pad_216;  // 0x216 [X30:canon]
+    unsigned char __pad_25A;  // 0x25A [X30:canon]
+    unsigned char __pad_264;  // 0x264 [X30:canon]
+    unsigned char __pad_27A;  // 0x27A [X30:canon]
+    unsigned char __pad_45C;  // 0x45C [X30:canon]
+    unsigned char __pad_618;  // 0x618 [X30:canon]
+    int AnimClass_field_0x0;  // 0x0 [X30:type_map]
+    float AnimClass_field_0x100;  // 0x100 [X30:type_map]
+    int AnimClass_field_0x190;  // 0x190 [X30:type_map]
+    int AnimClass_field_0x4;  // 0x4 [X30:type_map]
+    int AnimClass_field_0xCC;  // 0xCC [X30:type_map]
+    unsigned int AudioController_1A0;  // [X30:default]
+    unsigned int AudioController_1B4;  // [X30:default]
+    unsigned int Coord_9C;  // [X30:default]
+    unsigned int SuperClass_19D;  // [X30:default]
+    int __pad_118;  // 0x118 [X30:type_map]
+    int __pad_178;  // 0x178 [X30:type_map]
+    int __pad_194;  // 0x194 [X30:type_map]
+    char __pad_A0[4];  // 0xA0 [X30:member_lookup]
+    int __pad_C;  // 0xC [X30:type_map]
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int needsRedraw;  // [X30:default]
+    unsigned int objectTypeFlags;  // [X30:default]
+    uint8_t u8_D94;  // 0xD94 [X30:member_lookup]
+    unsigned int uniqueId;  // [X30:default]
 };
 
 } // namespace gamemd

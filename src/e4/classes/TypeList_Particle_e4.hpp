@@ -24,5 +24,6 @@ struct TypeList_Particle {
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
     unsigned int *q000;  // 0x0 (offset-truth)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

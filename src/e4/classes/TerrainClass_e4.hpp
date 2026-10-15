@@ -74,6 +74,8 @@ struct TerrainClass {
     void* LoadFromStream(unsigned int * a1, int a2);
     int InitTheatre();  // 0x549e90
     void **  Construct(void * a2, int16_t * a3, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // 0x71bb90
+    unsigned char __pad_0BA;  // 0xBA [X30:canon]
+    AbstractClass* __pad_0C0;  // 0xC0 [X30:type_map]
 };
 
 } // namespace gamemd

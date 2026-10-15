@@ -18,7 +18,7 @@ struct DriveLocomotionClass {
     int CurrentRamp;  // 0x1C
     int PreviousRamp;  // 0x20
     char SlopeTimer[16];  // 0x24
-    char Dest[12];  // 0x34
+    int Dest;  // 0x34 [X30:type_map]
     char HeadToCoord[12];  // 0x40
     int SpeedAccum;  // 0x4C
     double MovementSpeed;  // 0x50
@@ -36,7 +36,10 @@ struct DriveLocomotionClass {
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
-    int Piggybackee;  // 0x68 (ml)
+    ILocomotion* Piggybackee;  // 0x68 (ml) [X30:type_map]
+    void* __pad_008;  // 0x8 [X30:type_map]
+    int __pad_060;  // 0x60 [X30:type_map]
+    unsigned char __pad_066;  // 0x66 [X30:canon]
 };
 
 } // namespace gamemd

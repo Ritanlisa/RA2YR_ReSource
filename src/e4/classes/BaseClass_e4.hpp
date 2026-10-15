@@ -13,16 +13,16 @@ struct HouseClass;  // fix_fwd_type_supply
 struct BaseClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char baseNodeCount[4];  // 0x4
-    char baseNodeCapacity[4];  // 0x8
+    void* baseNodeCount;  // 0x4 [X30:type_map]
+    int baseNodeCapacity;  // 0x8 [X30:type_map]
     char percentBuilt[4];  // 0xC
     bool IsAllocated;  // 0xD
     CellStruct* cells24;  // 0x10
-    char cells24Count[4];  // 0x14
+    int cells24Count;  // 0x14 [X30:type_map]
     int Count;  // 0x16
     char cells24Capacity[4];  // 0x18
     CellStruct* cells38;  // 0x1C
-    char cells38Count[4];  // 0x20
+    void* cells38Count;  // 0x20 [X30:type_map]
     char cells38Capacity[4];  // 0x24
     char center[4];  // 0x28
     unsigned char unknown54;  // 0x2C

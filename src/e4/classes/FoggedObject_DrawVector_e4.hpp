@@ -16,6 +16,8 @@ struct FoggedObject_DrawVector {
     unsigned char m_1[64];  // pad compile-supply (G41.47)
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     char __pad_0[4];  // 0x0 (G57W14E1 til supply)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 
 } // namespace gamemd

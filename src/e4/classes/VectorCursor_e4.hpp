@@ -18,7 +18,14 @@ struct VectorCursor {
     int q018;  // 0x18
     int q010;  // 0x10
     int u32_C;  // 0xC
-    int q004;  // 0x4
+    MSAnim* q004;  // 0x4 [X30:type_map]
+    MSAnim* __pad_004;  // 0x4 [X30:type_map]
+    int VectorCursor_field_0x08;  // 0x8 [X30:type_map]
+    int VectorCursor_field_0x0C;  // 0xC [X30:member_lookup]
+    int VectorCursor_field_0x10;  // 0x10 [X30:member_lookup]
+    int VectorCursor_field_0x14;  // 0x14 [X30:member_lookup]
+    int VectorCursor_field_0x18;  // 0x18 [X30:member_lookup]
+    char __pad_000[4];  // 0x0 [X30:member_lookup]
 };
 
 } // namespace gamemd

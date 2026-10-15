@@ -23,7 +23,7 @@ struct ScriptClass {
     void * NeedsSaveOrLink;  // 0x20
     ScriptTypeClass* buildingType;  // 0x24
     char field28[4];  // 0x28
-    char idxCurrentLine[4];  // 0x2C
+    int idxCurrentLine;  // 0x2C [X30:type_map]
 // --- flat members (END) ---
     static unsigned int * GetNextAction(void *aP1, void *a2);
     int ExecuteTriggers(int a2, char a3);

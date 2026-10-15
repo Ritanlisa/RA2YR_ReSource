@@ -15,6 +15,7 @@ struct NetworkID {
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q004;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
+    int NetworkID_field_0x04;  // 0x4 [X30:member_lookup]
 };
 
 } // namespace gamemd

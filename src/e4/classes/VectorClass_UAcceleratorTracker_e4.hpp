@@ -21,5 +21,6 @@ struct VectorClass_UAcceleratorTracker {
     int  GetSize(unsigned int * a2);  // 0x5D5530
     unsigned int  GetCapacity(int a2);  // 0x5D5580
     VectorClass_flat *  QueryInterface(char a2);  // 0x5D5780
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -318,7 +318,7 @@ struct BuildingTypeClass {
     unsigned int HasTurretTooltips;  // 0x7A6
     unsigned int TurretCount;  // 0x7A8
     unsigned int WeaponCount;  // 0x7AC
-    char IsChargeTurret[4];  // 0x7B0
+    Coord* IsChargeTurret;  // 0x7B0 [X30:type_map]
     unsigned int TurretWeapon_0x21;  // 0x7B4
     unsigned int ClearAllWeapons;  // 0x7B8
     unsigned int TypeImmune;  // 0x7B9
@@ -450,18 +450,18 @@ struct BuildingTypeClass {
     unsigned int PaletteFile_0x20;  // 0xDA8
     unsigned int Palette;  // 0xDAC
     void* ArrayIndex;  // 0xDF8
-    char HalfDamageSmokeLocation1[12];  // 0xE0C
-    char HalfDamageSmokeLocation2[12];  // 0xE18
+    int HalfDamageSmokeLocation1;  // 0xE0C [X30:type_map]
+    int HalfDamageSmokeLocation2;  // 0xE18 [X30:type_map]
     double GateCloseDelay;  // 0xE28
     int LightVisibility;  // 0xE30
     int LightIntensity;  // 0xE34
     int LightRedTint;  // 0xE38
     int LightGreenTint;  // 0xE3C
     int LightBlueTint;  // 0xE40
-    char PrimaryFirePixelOffset[8];  // 0xE44
-    char SecondaryFirePixelOffset[8];  // 0xE4C
+    int PrimaryFirePixelOffset;  // 0xE44 [X30:type_map]
+    int SecondaryFirePixelOffset;  // 0xE4C [X30:type_map]
     OverlayTypeClass* ToOverlay;  // 0xE54
-    int ToTile;  // 0xE58
+    SHPStruct* ToTile;  // 0xE58 [X30:type_map]
     char BuildupFile_0x10;  // 0xE5C
     int UnitEnterSound;  // 0xE6C
     int UnitExitSound;  // 0xE70
@@ -473,19 +473,19 @@ struct BuildingTypeClass {
     UnitTypeClass* SecretUnit;  // 0xE88
     UnitTypeClass* FreeUnit_d;  // 0xEA0
     InfantryTypeClass* SecretInfantry_d;  // 0xEA4
-    char ExitCoord[4];  // 0xEA8
+    SHPStruct* ExitCoord;  // 0xEA8 [X30:type_map]
     BuildingTypeClass* SecretBuilding;  // 0xEAC
     int BuildingTypeClass_field_EB0;  // 0xEB0
     CellStruct* FoundationOutside;  // 0xEB4
     int BuildingTypeClass_field_ED8;  // 0xEB8
-    int DeployFacing;  // 0xEBC
-    int ExtraPowerBonus;  // 0xEC8
-    int Height;  // 0xED4
-    int OccupyHeight;  // 0xED8
+    SHPStruct* DeployFacing;  // 0xEBC [X30:type_map]
+    SHPStruct* ExtraPowerBonus;  // 0xEC8 [X30:type_map]
+    SHPStruct* Height;  // 0xED4 [X30:type_map]
+    SHPStruct* OccupyHeight;  // 0xED8 [X30:type_map]
     int MidPoint;  // 0xEDC
     int DoorStages;  // 0xEE0
-    char BuildingAnimFrame_6[4];  // 0xEE4
-    char BuildingAnim_0x15[4];  // 0xEE8
+    BuildingAnimFrameStruct* BuildingAnimFrame_6;  // 0xEE4 [X30:type_map]
+    BuildingAnimStruct* BuildingAnim_0x15;  // 0xEE8 [X30:type_map]
     int Upgrades;  // 0xEEC
     SHPStruct* DeployingAnim_d;  // 0xEF0
     bool DeployingAnimLoaded;  // 0xEF4
@@ -508,14 +508,14 @@ struct BuildingTypeClass {
     bool UnderRoofDoorAnimLoaded;  // 0x1508
     SHPStruct* DoorAnim;  // 0x150C
     SHPStruct* SpecialZOverlay;  // 0x1510
-    int SpecialZOverlayZAdjust;  // 0x1514
+    void* SpecialZOverlayZAdjust;  // 0x1514 [X30:type_map]
     SHPStruct* BibShape;  // 0x1518
     bool BibShapeLoaded;  // 0x151C
-    int NormalZAdjust;  // 0x1520
-    int AntiAirValue;  // 0x1524
-    int AntiArmorValue;  // 0x1528
-    int AntiInfantryValue;  // 0x152C
-    char ZShapePointMove[4];  // 0x1530
+    SHPStruct* NormalZAdjust;  // 0x1520 [X30:type_map]
+    SHPStruct* AntiAirValue;  // 0x1524 [X30:type_map]
+    SHPStruct* AntiArmorValue;  // 0x1528 [X30:type_map]
+    SHPStruct* AntiInfantryValue;  // 0x152C [X30:type_map]
+    void* ZShapePointMove;  // 0x1530 [X30:type_map]
     int BuildingTypeClass_field_1538;  // 0x1538
     int BuildingTypeClass_field_153C;  // 0x153C
     int BuildingTypeClass_field_1540_d;  // 0x1540
@@ -531,11 +531,11 @@ struct BuildingTypeClass {
     bool EligibleForDelayKill;  // 0x1551
     bool NeedsEngineer;  // 0x1552
     int CaptureEvaEvent;  // 0x1554
-    int ProduceCashStartup;  // 0x1558
-    int ProduceCashAmount;  // 0x155C
-    int ProduceCashDelay;  // 0x1560
-    int InfantryGainSelfHeal;  // 0x1564
-    int UnitsGainSelfHeal;  // 0x1568
+    SHPStruct* ProduceCashStartup;  // 0x1558 [X30:type_map]
+    SHPStruct* ProduceCashAmount;  // 0x155C [X30:type_map]
+    SHPStruct* ProduceCashDelay;  // 0x1560 [X30:type_map]
+    SHPStruct* InfantryGainSelfHeal;  // 0x1564 [X30:type_map]
+    SHPStruct* UnitsGainSelfHeal;  // 0x1568 [X30:type_map]
     int RefinerySmokeFrames;  // 0x156C
     bool Bib;  // 0x1570
     bool Wall;  // 0x1571
@@ -550,14 +550,14 @@ struct BuildingTypeClass {
     bool ClickRepairable;  // 0x157A
     bool CanBeOccupied;  // 0x157B
     bool CanOccupyFire;  // 0x157C
-    int MaxNumberOccupants;  // 0x1580
+    SHPStruct* MaxNumberOccupants;  // 0x1580 [X30:type_map]
     bool ShowOccupantPips;  // 0x1584
-    char MuzzleFlash[4];  // 0x1588
-    char DamageFireOffset[4];  // 0x15D8
+    void* MuzzleFlash;  // 0x1588 [X30:type_map]
+    int DamageFireOffset;  // 0x15D8 [X30:type_map]
     char QueueingCell[8];  // 0x1618
     int NumberImpassableRows;  // 0x1620
     char RemoveOccupy[4];  // 0x1624
-    char AddOccupy[4];  // 0x1664
+    void* AddOccupy;  // 0x1664 [X30:type_map]
     bool Radar;  // 0x16A4
     bool SpySat;  // 0x16A5
     bool ChargeAnim;  // 0x16A6
@@ -613,7 +613,7 @@ struct BuildingTypeClass {
     int SuperWeapon;  // 0x16F0
     int SuperWeapon2;  // 0x16F4
     int GateStages;  // 0x16F8
-    int PowersUpToLevel;  // 0x16FC
+    void* PowersUpToLevel;  // 0x16FC [X30:type_map]
     bool DamagedDoor;  // 0x1700
     bool InvisibleInGame;  // 0x1701
     bool TerrainPalette;  // 0x1702
@@ -623,7 +623,7 @@ struct BuildingTypeClass {
     bool IsBaseDefense;  // 0x1706
     unsigned char CloakRadiusInCells;  // 0x1707
     bool ConcentricRadialIndicator;  // 0x1708
-    int PsychicDetectionRadius;  // 0x170C
+    SHPStruct* PsychicDetectionRadius;  // 0x170C [X30:type_map]
     int BarrelStartPitch;  // 0x1710
     char VoxelBarrelFile;  // 0x1714
     char VoxelBarrelOffsetToPitchPivotPoint[4];  // 0x1730
@@ -645,7 +645,7 @@ struct BuildingTypeClass {
     char AltCameoFile;  // 0x1781
     unsigned int DockingOffsets;  // 0x1784
     bool PreventsPlacementOverlap;  // 0x1788
-    int ProductionCompletionThreshold;  // 0x178C
+    SHPStruct* ProductionCompletionThreshold;  // 0x178C [X30:type_map]
     double CostRatePerFrame;  // 0x1790
 // --- flat members (END) ---
     void* Flat_flag;  // 0x0 (no offset truth)
@@ -741,6 +741,75 @@ struct BuildingTypeClass {
     unsigned int u32_1791;  // X10 supply (member_lookup)
     int u32_D;  // X10 supply (member_lookup)
     unsigned int u32_D2E;  // X10 supply (member_lookup)
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    VoxelStruct* __pad_0B8;  // 0xB8 [X30:type_map]
+    unsigned char __pad_14D;  // 0x14D [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    unsigned char __pad_22C;  // 0x22C [X30:canon]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    unsigned char __pad_239;  // 0x239 [X30:canon]
+    unsigned char __pad_296;  // 0x296 [X30:canon]
+    unsigned char __pad_2DD;  // 0x2DD [X30:canon]
+    unsigned char __pad_2E5;  // 0x2E5 [X30:canon]
+    unsigned char __pad_2F5;  // 0x2F5 [X30:canon]
+    unsigned char __pad_2FC;  // 0x2FC [X30:canon]
+    unsigned char __pad_320;  // 0x320 [X30:canon]
+    unsigned char __pad_325;  // 0x325 [X30:canon]
+    unsigned char __pad_33C;  // 0x33C [X30:canon]
+    unsigned char __pad_341;  // 0x341 [X30:canon]
+    unsigned char __pad_364;  // 0x364 [X30:canon]
+    unsigned char __pad_39C;  // 0x39C [X30:canon]
+    unsigned char __pad_3C4;  // 0x3C4 [X30:canon]
+    unsigned char __pad_56C;  // 0x56C [X30:canon]
+    unsigned char __pad_58A;  // 0x58A [X30:canon]
+    unsigned char __pad_66C;  // 0x66C [X30:canon]
+    unsigned char __pad_6C0;  // 0x6C0 [X30:canon]
+    unsigned char __pad_6DA;  // 0x6DA [X30:canon]
+    unsigned char __pad_6F9;  // 0x6F9 [X30:canon]
+    unsigned char __pad_708;  // 0x708 [X30:canon]
+    unsigned char __pad_754;  // 0x754 [X30:canon]
+    unsigned char __pad_764;  // 0x764 [X30:canon]
+    unsigned char __pad_770;  // 0x770 [X30:canon]
+    unsigned char __pad_77C;  // 0x77C [X30:canon]
+    unsigned char __pad_788;  // 0x788 [X30:canon]
+    unsigned char __pad_794;  // 0x794 [X30:canon]
+    unsigned char __pad_7D4;  // 0x7D4 [X30:canon]
+    unsigned char __pad_818;  // 0x818 [X30:canon]
+    unsigned char __pad_89C;  // 0x89C [X30:canon]
+    unsigned char __pad_A98;  // 0xA98 [X30:canon]
+    unsigned char __pad_CBC;  // 0xCBC [X30:canon]
+    unsigned char __pad_D8C;  // 0xD8C [X30:canon]
+    unsigned char __pad_DB0;  // 0xDB0 [X30:canon]
+    SHPStruct* __pad_DFC;  // 0xDFC [X30:type_map]
+    unsigned char __pad_E24;  // 0xE24 [X30:canon]
+    unsigned char __pad_E60;  // 0xE60 [X30:canon]
+    unsigned char __pad_E8C;  // 0xE8C [X30:canon]
+    unsigned char __pad_F70;  // 0xF70 [X30:canon]
+    SHPStruct* __pad_1534;  // 0x1534 [X30:type_map]
+    unsigned char __pad_1553;  // 0x1553 [X30:canon]
+    unsigned char __pad_157D;  // 0x157D [X30:canon]
+    unsigned char __pad_158C;  // 0x158C [X30:canon]
+    unsigned char __pad_15DC;  // 0x15DC [X30:canon]
+    unsigned char __pad_1628;  // 0x1628 [X30:canon]
+    unsigned char __pad_1668;  // 0x1668 [X30:canon]
+    unsigned char __pad_16CE;  // 0x16CE [X30:canon]
+    unsigned char __pad_16E7;  // 0x16E7 [X30:canon]
+    unsigned char __pad_1709;  // 0x1709 [X30:canon]
+    unsigned char __pad_1718;  // 0x1718 [X30:canon]
+    unsigned char __pad_1734;  // 0x1734 [X30:canon]
+    unsigned char __pad_1740;  // 0x1740 [X30:canon]
+    unsigned char __pad_174C;  // 0x174C [X30:canon]
+    unsigned char __pad_1758;  // 0x1758 [X30:canon]
+    unsigned char __pad_176E;  // 0x176E [X30:canon]
+    unsigned char __pad_1794;  // 0x1794 [X30:canon]
+    unsigned int TurretVoxel4;  // [X30:default]
+    unsigned int v3;  // [X30:default]
+    unsigned int v4;  // [X30:default]
+    unsigned int v5;  // [X30:default]
 };
 
 } // namespace gamemd

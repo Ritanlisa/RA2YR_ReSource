@@ -22,6 +22,8 @@ struct LoadingScreen {
     void FreeResources2();
 
     unsigned int u32_80;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

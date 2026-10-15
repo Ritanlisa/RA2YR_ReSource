@@ -21,5 +21,6 @@ struct HouseClass_24 {
     bool IsInitialized;  // X10 supply (member_lookup)
     int q004;  // X10 supply (member_lookup)
     int q00C;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

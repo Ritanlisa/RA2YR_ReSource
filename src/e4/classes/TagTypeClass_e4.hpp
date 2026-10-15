@@ -20,7 +20,7 @@ struct TagTypeClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char arrayIndex[4];  // 0x24
+    TagTypeClass* arrayIndex;  // 0x24 [X30:type_map]
     char persistence[4];  // 0x28
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(void *a1);
@@ -45,6 +45,8 @@ struct TagTypeClass {
 
     IUnknown* Name;  // X10 supply (member_lookup)
     void* q0A0;  // X10 supply (member_lookup)
+    unsigned int Coord_9C;  // [X30:default]
+    unsigned int vfptr;  // [X30:default]
 };
 
 } // namespace gamemd

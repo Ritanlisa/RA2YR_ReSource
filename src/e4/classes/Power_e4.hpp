@@ -25,5 +25,6 @@ struct Power {
     int q00C;  // X10 supply (member_lookup)
     unsigned char q020;  // X10 supply (member_lookup)
     unsigned int u32_30;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

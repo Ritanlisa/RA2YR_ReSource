@@ -45,12 +45,12 @@ struct SuperWeapon {
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
     unsigned int q108;  // 0x108
-    unsigned int q10C;  // 0x10C
+    void* q10C;  // 0x10C [X30:type_map]
     unsigned int q114;  // 0x114
     unsigned int q120;  // 0x120
     unsigned int q124;  // 0x124
     void* q128;  // 0x128
-    unsigned int u32_130;  // 0x130
+    void* u32_130;  // 0x130 [X30:type_map]
     unsigned int q134;  // 0x134
     unsigned int q150;  // 0x150
     void* q180;  // 0x180

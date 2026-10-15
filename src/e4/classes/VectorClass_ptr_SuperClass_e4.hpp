@@ -27,5 +27,6 @@ struct VectorClass_ptr_SuperClass {
     unsigned int  GetCapacity(int a2);  // 0x4E9820
     int  FindItemIndex(unsigned int * a2);  // 0x4E98F0
     DynamicVector * Constructor_VectorClass_SuperClass___(unsigned int * Block, char a2);  // 0x4EF400
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

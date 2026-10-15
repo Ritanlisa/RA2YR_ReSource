@@ -13,5 +13,10 @@ struct E4Recv_69D870 {
     unsigned int M13;  // 0xD
 // --- flat members (END) ---
     unsigned int *  sub_69D870(int a2, int a3);  // 0x69D870
+    unsigned int Capacity;  // [X30:default]
+    unsigned int IsAllocated;  // [X30:default]
+    unsigned int IsInitialized;  // [X30:default]
+    unsigned int Items;  // [X30:default]
+    unsigned int vtable0;  // 0x0 [X30:default]
 };
 } // namespace gamemd

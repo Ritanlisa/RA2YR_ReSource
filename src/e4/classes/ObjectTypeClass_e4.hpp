@@ -32,7 +32,7 @@ struct ObjectTypeClass {
     SHPStruct* nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     char NeedsSaveOrLink[4];  // 0x20
-    char BarrelVoxel[4];  // 0x24
+    VoxelStruct* BarrelVoxel;  // 0x24 [X30:type_map]
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
     bool NoSpawnAlt;  // 0x30
@@ -43,14 +43,14 @@ struct ObjectTypeClass {
     unsigned char Name;  // 0x64
     unsigned int tail_95;  // 0x95
     unsigned char unused_9B;  // 0x9B
-    char Armor[4];  // 0x9C
-    int Strength_d;  // 0xA0
+    void* Armor;  // 0x9C [X30:type_map]
+    void* Strength_d;  // 0xA0 [X30:type_map]
     SHPStruct* Image_d;  // 0xA4
     bool ImageAllocated;  // 0xA8
     SHPStruct* AlphaImage;  // 0xAC
-    char MainVoxel[4];  // 0xB0
-    char TurretVoxel_d[4];  // 0xB4
-    char BarrelVoxel_d[4];  // 0xB8
+    WaveClass* MainVoxel;  // 0xB0 [X30:type_map]
+    void* TurretVoxel_d;  // 0xB4 [X30:type_map]
+    WaveClass* BarrelVoxel_d;  // 0xB8 [X30:type_map]
     char ChargerTurrets[72];  // 0xBC
     char ChargerBarrels[72];  // 0x104
     bool NoSpawnAlt_d;  // 0x14C
@@ -97,7 +97,7 @@ struct ObjectTypeClass {
     bool IgnoresFirestorm_d;  // 0x239
     bool UseLineTrail_d;  // 0x23A
     char LineTrailColor_d[3];  // 0x23B
-    int LineTrailColor_2;  // 0x240
+    void* LineTrailColor_2;  // 0x240 [X30:type_map]
     char VoxelCaches_4[80];  // 0x244
 // --- flat members (END) ---
     void* TechnoTypeClass;  // 0x0 (no offset truth)
@@ -153,7 +153,7 @@ struct ObjectTypeClass {
     void UnloadPipsSHP();
     void* LoadFromINI(uint8_t ***aP1, void *a2 = 0);
     ObjectTypeClass * Destru_vt08(void * Block, char a2);
-    int VoxelCaches[20];  // 0x244 (ml)
+    SomeVoxelCache* VoxelCaches;  // 0x244 (ml) [X30:type_map]
     unsigned int q0400;  // 0x400 (offset-truth)
     unsigned char q0401;  // 0x401 (offset-truth)
     unsigned char q0402;  // 0x402 (offset-truth)
@@ -228,8 +228,18 @@ struct ObjectTypeClass {
     char u8_91;  // X10 supply (member_lookup)
     int u8_C8E;  // X10 supply (member_lookup)
     uint8_t u8_D;  // X10 supply (member_lookup)
-    unsigned int u32_E00;  // 0xE00
+    AbstractClass* u32_E00;  // 0xE00 [X30:type_map]
     unsigned int u32_D2E;  // 0xD2E
+    unsigned char __pad_036;  // 0x36 [X30:canon]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_14D;  // 0x14D [X30:canon]
+    unsigned char __pad_23E;  // 0x23E [X30:canon]
+    unsigned int ImageFile;  // [X30:default]
+    unsigned int TurretVoxel4;  // [X30:default]
+    unsigned int uniqueId1;  // [X30:default]
+    unsigned int uniqueId4;  // [X30:default]
+    unsigned int uniqueId8;  // [X30:default]
 };
 
 } // namespace gamemd

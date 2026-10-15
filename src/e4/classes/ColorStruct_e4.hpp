@@ -37,6 +37,13 @@ struct ColorStruct {
     unsigned int *q000;  // 0x0 (canon-mt)
     unsigned int u32_8;  // 0x8
     unsigned int u32_4;  // 0x4
+    char __pad_000[16];  // 0x0 [X30:member_lookup]
+    unsigned int field_10;  // [X30:default]
+    unsigned int field_14;  // [X30:default]
+    unsigned int field_30;  // [X30:default]
+    unsigned int field_34;  // [X30:default]
+    unsigned int field_50;  // [X30:default]
+    unsigned int field_54;  // [X30:default]
 };
 #endif  // GAMEMD_G2_ColorStruct_DEF
 

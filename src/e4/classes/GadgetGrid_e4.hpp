@@ -14,6 +14,9 @@ struct GadgetGrid {
 
     unsigned char __pad_00C;  // X10 supply (member_lookup)
     unsigned int u32_F0;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    int GadgetGrid_field_0x04;  // 0x4 [X30:member_lookup]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

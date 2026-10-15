@@ -20,7 +20,7 @@ struct RAMFileClass {
     void WinMain_Helper_65C2A0();  // 0x65C2A0
     char * nullsub_0_5();  // 0x65C550
     unsigned int *q000;  // 0x0 (offset-truth)
-    void *q14;  // 0x14 (offset-truth)
+    AbstractClass* q14;  // 0x14 (offset-truth) [X30:type_map]
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned char u32_1D;  // 0x1D (offset-truth)
@@ -28,5 +28,8 @@ struct RAMFileClass {
     unsigned char __pad_00C;  // X10 supply (csp_canon_members)
     int q010;  // X10 supply (member_lookup)
     unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned char __pad_004;  // 0x4 [X30:canon]
+    AbstractClass* RAMFileClass_field_0x8;  // 0x8 [X30:type_map]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

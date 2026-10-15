@@ -24,5 +24,6 @@ struct VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass {
     int  GetSize(unsigned int * a2);  // 0x54A5D0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x54A630
     int  FindItemIndex(unsigned int * a2);  // 0x54A6E0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

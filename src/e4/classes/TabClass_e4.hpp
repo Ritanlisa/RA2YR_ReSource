@@ -18,6 +18,7 @@ struct TabClass {
     unsigned int u32_C;  // X10 supply (member_lookup)
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 
 } // namespace gamemd

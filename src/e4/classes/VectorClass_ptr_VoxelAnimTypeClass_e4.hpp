@@ -30,5 +30,6 @@ struct VectorClass_ptr_VoxelAnimTypeClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4EE8D0
     char  SetCapacity_0(int a2, unsigned int * a3);  // 0x4EEA80
     int  FindItemIndex_0(unsigned int * a2);  // 0x4EEB30
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

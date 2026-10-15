@@ -14,8 +14,11 @@ struct ScoreAnimClass {
     unsigned int * Constructor_ScoreFontClass(char a2);
     unsigned int m_0;  // 0x0 (offset-truth)
     unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int q00C;  // 0xC (offset-truth)
+    ObjectClass* q00C;  // 0xC (offset-truth) [X30:type_map]
     int q010;  // 0x10
+    ScoreAnimClass* __pad_004;  // 0x4 [X30:type_map]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
+    unsigned int field_C;  // [X30:default]
 };
 
 } // namespace gamemd

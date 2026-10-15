@@ -14,7 +14,7 @@ struct ScoreScreen {
     unsigned int * LoadScoreFont(int aP1);
     int RemoveItem(int a2, int a3, char aP3, char a5, int a6);
     static int DrawSHPBackground(char *Source, int *a2, int a3, int a4, int a5, int a6, int a7);
-    unsigned int u32_3AC;  // 0x3AC (offset-truth)
+    ObjectClass* u32_3AC;  // 0x3AC (offset-truth) [X30:type_map]
     unsigned int u32_3B0;  // 0x3B0 (offset-truth)
     unsigned int u32_3B4;  // 0x3B4 (offset-truth)
     unsigned int u32_3B8;  // 0x3B8 (offset-truth)
@@ -34,6 +34,10 @@ struct ScoreScreen {
     unsigned int u32_4;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+    int ScoreScreen_field_0x04;  // 0x4 [X30:type_map]
+    void* ScoreScreen_field_0x08;  // 0x8 [X30:type_map]
+    AbstractClass* ScoreScreen_field_0x14;  // 0x14 [X30:type_map]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

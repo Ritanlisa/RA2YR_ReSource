@@ -19,5 +19,6 @@ struct VectorClass_Building {
     int  Count(int a2);  // 0x4E8340
     int  GetSize(unsigned int * a2);  // 0x4E9580
     unsigned int  GetCapacity(int a2);  // 0x4E95C0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

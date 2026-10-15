@@ -29,5 +29,9 @@ struct Mission_e4 {
     unsigned int u32_A4;  // X10 supply (member_lookup)
     unsigned int u32_F8;  // X10 supply (member_lookup)
     double u64_578;  // X10 supply (member_lookup)
+    unsigned int __pad_0;  // 0x0 [X30:default]
+    unsigned int __pad_18C;  // 0x18C [X30:default]
+    unsigned int __pad_5B8;  // 0x5B8 [X30:default]
+    unsigned int __pad_C;  // 0xC [X30:default]
 };
 } // namespace gamemd

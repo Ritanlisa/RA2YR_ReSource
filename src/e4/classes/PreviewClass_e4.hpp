@@ -11,6 +11,7 @@ struct PreviewClass {
 // --- flat members (END) ---
     char ReadPreview(char *Source);
     static int RenderMapPreview(int* p0);  // x4:signals@0x689d30
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

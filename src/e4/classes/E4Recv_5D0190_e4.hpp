@@ -11,5 +11,7 @@ struct E4Recv_5D0190 {
     unsigned int M100;  // 0x64
 // --- flat members (END) ---
     int sub_5D0190(const char * a2);  // 0x5D0190
+    unsigned int customSound;  // [X30:default]
+    unsigned int customSound_controller;  // [X30:default]
 };
 } // namespace gamemd

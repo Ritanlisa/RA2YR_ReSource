@@ -12,6 +12,7 @@ struct ListBox {
     static int SetCustomEntry(void *aP1, int a2, int a3, void *a4);
     unsigned int EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t * lParam);
     int Clear(void *a1 = 0);  // 0x623840
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

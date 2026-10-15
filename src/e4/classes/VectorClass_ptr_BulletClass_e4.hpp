@@ -29,5 +29,6 @@ struct VectorClass_ptr_BulletClass {
     unsigned int *  loc_46B910(unsigned int * Block, char a2);  // 0x46B910
     LONG  GetItem(int a1);  // 0x46B990
     LONG  GetItem_0(int a1);  // 0x46B9A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -17,7 +17,7 @@ struct MissionClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    unsigned int uniqueId;  // 0x10
+    void* uniqueId;  // 0x10 [X30:type_map]
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned int AARate;  // 0x18
@@ -33,10 +33,10 @@ struct MissionClass {
     BombClass* attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
-    char customSound[4];  // 0x64
+    AudioController* customSound;  // 0x64 [X30:type_map]
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
-    char health[4];  // 0x6C
+    int health;  // 0x6C [X30:type_map]
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
@@ -61,13 +61,13 @@ struct MissionClass {
     unsigned char alignmentPadding99;  // 0x9A
     char location[12];  // 0x9C
     LineTrail* lineTrailer;  // 0xA8
-    char currentMission[4];  // 0xAC
-    char suspendedMission[4];  // 0xB0
-    char queuedMission[4];  // 0xB4
+    int currentMission;  // 0xAC [X30:type_map]
+    int suspendedMission;  // 0xB0 [X30:type_map]
+    int queuedMission;  // 0xB4 [X30:type_map]
     bool missionQueued;  // 0xB8
     unsigned char alignmentPaddingB9;  // 0xB9
-    char missionStatus[4];  // 0xBC
-    char missionStartTime[4];  // 0xC0
+    int missionStatus;  // 0xBC [X30:type_map]
+    IUnknown* missionStartTime;  // 0xC0 [X30:type_map]
     unsigned int missionData;  // 0xC4
     char missionTimer[12];  // 0xC8
 // --- flat members (END) ---

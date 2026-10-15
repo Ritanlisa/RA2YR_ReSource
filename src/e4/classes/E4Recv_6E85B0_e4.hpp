@@ -10,5 +10,7 @@ struct E4Recv_6E85B0 {
     unsigned int M156;  // 0x9C
 // --- flat members (END) ---
     char sub_6E85B0();  // 0x6E85B0
+    unsigned int lineTrailer;  // [X30:default]
+    unsigned int location;  // [X30:default]
 };
 } // namespace gamemd

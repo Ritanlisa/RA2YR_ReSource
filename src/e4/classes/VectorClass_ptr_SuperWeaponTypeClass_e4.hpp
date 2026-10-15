@@ -21,5 +21,6 @@ struct VectorClass_ptr_SuperWeaponTypeClass {
     int  GetSize(unsigned int * a2);  // 0x4EF140
     unsigned int  LoadTypeData(int a2);  // 0x4EF180
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0D90
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

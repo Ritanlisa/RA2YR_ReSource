@@ -44,12 +44,12 @@ struct UnitClass {
     TagClass* attachedTag;  // 0x34
     unsigned int occupant;  // 0x36
     BombClass* attachedBomb;  // 0x38
-    char ambientSoundController[4];  // 0x3C
+    AudioController* ambientSoundController;  // 0x3C [X30:type_map]
     char customSound_controller[4];  // 0x50
     char customSound[4];  // 0x64
     bool bombVisible;  // 0x68
-    char health[4];  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    int health;  // 0x6C [X30:type_map]
+    int estimatedHealth;  // 0x70 [X30:type_map]
     bool isOnMap;  // 0x74
     unsigned int spawnStatus;  // 0x78
     unsigned int visibilityFlags;  // 0x7C
@@ -67,39 +67,39 @@ struct UnitClass {
     unsigned int lastLayer;  // 0x94
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
-    char location[4];  // 0x9C
+    Coord* location;  // 0x9C [X30:type_map]
     LineTrail* lineTrailer;  // 0xA8
     void* currentMission;  // 0xAC
-    char suspendedMission[4];  // 0xB0
-    char queuedMission[4];  // 0xB4
+    void* suspendedMission;  // 0xB0 [X30:type_map]
+    void* queuedMission;  // 0xB4 [X30:type_map]
     bool missionQueued;  // 0xB8
-    char missionStatus[4];  // 0xBC
-    char missionStartTime[4];  // 0xC0
+    int missionStatus;  // 0xBC [X30:type_map]
+    int missionStartTime;  // 0xC0 [X30:type_map]
     unsigned int missionData;  // 0xC4
     char missionTimer[4];  // 0xC8
     void* lastCommands;  // 0xD4
     unsigned int radioLinks;  // 0xE0
     char flashing[8];  // 0xF0
-    char radioContact[4];  // 0xF8
+    ProgressTimer* radioContact;  // 0xF8 [X30:type_map]
     unsigned int radioCommand;  // 0x100
-    unsigned int radioTimer;  // 0x104
+    void* radioTimer;  // 0x104 [X30:type_map]
     unsigned int radioQueue;  // 0x110
-    char passengers[4];  // 0x114
+    PassengersClass* passengers;  // 0x114 [X30:type_map]
     TechnoClass* transporter;  // 0x11C
-    char turretChargeTimer[4];  // 0x120
+    void* turretChargeTimer;  // 0x120 [X30:type_map]
     void* currentTurretNumber;  // 0x124
     char secondaryTurretIndex[4];  // 0x128
     AnimClass* behindAnim;  // 0x12C
     AnimClass* deployAnim;  // 0x130
     bool inAirFlag;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
-    char radioQueueCount[4];  // 0x138
-    char currentRank[4];  // 0x13C
+    int radioQueueCount;  // 0x138 [X30:type_map]
+    void* currentRank;  // 0x13C [X30:type_map]
     void* gattlingStage;  // 0x140
     char gattlingValue[4];  // 0x144
     unsigned int ammoReloadTimer;  // 0x148
     HouseClass* initialOwner;  // 0x14C
-    char veterancy[4];  // 0x150
+    FootClass* veterancy;  // 0x150 [X30:type_map]
     unsigned int alignmentPadding154;  // 0x154
     double armorMultiplier;  // 0x158
     double firepowerMultiplier;  // 0x160
@@ -153,8 +153,8 @@ struct UnitClass {
     float tiltForwardsAngle;  // 0x288
     float tiltSidewaysRate;  // 0x28C
     float tiltForwardsRate;  // 0x290
-    char hijackerInfantryType[4];  // 0x294
-    char storedTiberium[4];  // 0x298
+    int hijackerInfantryType;  // 0x294 [X30:type_map]
+    OwnedTiberiumStruct* storedTiberium;  // 0x298 [X30:type_map]
     unsigned int chronoDestCoords;  // 0x29C
     unsigned int sprayOffsetIndex;  // 0x2A0
     bool isUncrushable;  // 0x2A4
@@ -164,10 +164,10 @@ struct UnitClass {
     int isBerserk_duration_left;  // 0x2B0
     char barrelFacing[4];  // 0x2B8
     unsigned char alignmentPadding2A9;  // 0x2B9
-    char facing[4];  // 0x2BC
+    FacingStruct* facing;  // 0x2BC [X30:type_map]
     char turretFacing[4];  // 0x2C0
     char currentBurstIndex[4];  // 0x2C4
-    char target_laser_timer[4];  // 0x2C8
+    TimerStruct* target_laser_timer;  // 0x2C8 [X30:type_map]
     void * lastTarget;  // 0x2CC
     void * captureManager;  // 0x2D0
     char targetLaserOpacity[4];  // 0x2D4
@@ -185,7 +185,7 @@ struct UnitClass {
     void* turretRecoil;  // 0x2E4
     void * slaveOwner;  // 0x2F0
     void * bunkerLinkedUnit;  // 0x2F8
-    char barrelRecoil[4];  // 0x2FC
+    RecoilData* barrelRecoil;  // 0x2FC [X30:type_map]
     char currentWeaponSlot[4];  // 0x312
     bool isTurretLocked;  // 0x314
     bool isBarrelLocked;  // 0x315
@@ -213,12 +213,12 @@ struct UnitClass {
     bool isAbsorbed;  // 0x335
     bool isGrindingInProgress;  // 0x336
     unsigned int grindingAnimHandle;  // 0x338
-    void* currentTargetThreatValues;  // 0x33C
+    BuildingTypeClass* currentTargetThreatValues;  // 0x33C [X30:type_map]
     unsigned int currentTargets;  // 0x354
     unsigned int attackedTargets;  // 0x36C
     char audioController3[4];  // 0x384
-    char primaryFacing[4];  // 0x388
-    unsigned int audioLoopIndex3;  // 0x3A0
+    FacingStruct* primaryFacing;  // 0x388 [X30:type_map]
+    void* audioLoopIndex3;  // 0x3A0 [X30:type_map]
     unsigned int audioVolume3;  // 0x3A4
     char audioController4[4];  // 0x3A8
     bool isAudio4Active;  // 0x3C4
@@ -297,7 +297,7 @@ struct UnitClass {
     char FootClass_field_566[4];  // 0x566
     unsigned int FootClass_field_568;  // 0x568
     char FootClass_field_56C[4];  // 0x56C
-    char FootClass_field_570[4];  // 0x570
+    int FootClass_field_570;  // 0x570 [X30:type_map]
     int unused574;  // 0x574
     unsigned int FootClass_field_578;  // 0x578
     char FootClass_field_57C[4];  // 0x57C
@@ -305,7 +305,7 @@ struct UnitClass {
     float FootClass_field_584;  // 0x584
     int FootClass_DVC_588;  // 0x588
     char FootClass_field_5A0[4];  // 0x5A0
-    char FootClass_field_5A4[4];  // 0x5A4
+    int FootClass_field_5A4;  // 0x5A4 [X30:type_map]
     char FootClass_field_5A8[4];  // 0x5A8
     unsigned int FootClass_DVC_5AC;  // 0x5AC
     char FootClass_field_5C4[4];  // 0x5C4
@@ -313,7 +313,7 @@ struct UnitClass {
     char FootClass_field_5CC[4];  // 0x5CC
     bool FootClass_field_5D0;  // 0x5D0
     unsigned int m_padding_5D2;  // 0x5D2
-    char FootClass_field_5D4[4];  // 0x5D4
+    EBolt* FootClass_field_5D4;  // 0x5D4 [X30:type_map]
     char FootClass_field_5D8[4];  // 0x5D8
     char FootClass_field_5DC[4];  // 0x5DC
     void* pathDirections;  // 0x5E0
@@ -369,21 +369,21 @@ struct UnitClass {
     bool FootClass_field_6BD;  // 0x6BD
     bool FootClass_field_6BE;  // 0x6BE
     bool FootClass_field_6BF;  // 0x6BF
-    char UnitClass_field_int_6C0[4];  // 0x6C0
+    int UnitClass_field_int_6C0;  // 0x6C0 [X30:type_map]
     UnitTypeClass* Type;  // 0x6C4
     UnitClass* FollowerCar;  // 0x6C8
-    char FlagHouseIndex[4];  // 0x6CC
+    int FlagHouseIndex;  // 0x6CC [X30:type_map]
     bool HasFollowerCar;  // 0x6D0
     bool Unloading;  // 0x6D1
     bool UnitClass_field_bool_6D2;  // 0x6D2
     bool TerrainPalette;  // 0x6D3
-    char UnitClass_field_int_6D4[4];  // 0x6D4
-    char DeathFrameCounter[4];  // 0x6D8
+    int UnitClass_field_int_6D4;  // 0x6D4 [X30:type_map]
+    int DeathFrameCounter;  // 0x6D8 [X30:type_map]
     EBolt* ElectricBolt;  // 0x6DC
     bool Deployed;  // 0x6E0
     bool Deploying;  // 0x6E1
     bool Undeploying;  // 0x6E2
-    char NonPassengerCount[4];  // 0x6E4
+    int NonPassengerCount;  // 0x6E4 [X30:type_map]
     unsigned char ToolTipText;  // 0x6E8
 // --- flat members (END) ---
     static int GetExitCell(int pThis, unsigned int *a2, unsigned int *a3);
@@ -392,6 +392,58 @@ struct UnitClass {
 int Construct(int a2, LPVOID ppv, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     void ** Create(void *a2, unsigned int *a3, int a4, void *a1 = 0);
     unsigned int q_C30;  // +0xC30 flat supply (three-ban reform)
+    unsigned char __pad_040;  // 0x40 [X30:canon]
+    int __pad_054;  // 0x54 [X30:type_map]
+    int __pad_0A0;  // 0xA0 [X30:type_map]
+    int __pad_0CC;  // 0xCC [X30:type_map]
+    unsigned char __pad_0D8;  // 0xD8 [X30:canon]
+    unsigned char __pad_0E4;  // 0xE4 [X30:canon]
+    unsigned char __pad_0FC;  // 0xFC [X30:canon]
+    int __pad_108;  // 0x108 [X30:type_map]
+    EBolt* __pad_118;  // 0x118 [X30:type_map]
+    unsigned char __pad_18C;  // 0x18C [X30:canon]
+    unsigned char __pad_194;  // 0x194 [X30:canon]
+    unsigned char __pad_1A0;  // 0x1A0 [X30:canon]
+    unsigned char __pad_1B4;  // 0x1B4 [X30:canon]
+    unsigned char __pad_1C0;  // 0x1C0 [X30:canon]
+    unsigned char __pad_1CC;  // 0x1CC [X30:canon]
+    unsigned char __pad_1D1;  // 0x1D1 [X30:canon]
+    unsigned char __pad_1E1;  // 0x1E1 [X30:canon]
+    unsigned char __pad_1F0;  // 0x1F0 [X30:canon]
+    unsigned char __pad_201;  // 0x201 [X30:canon]
+    unsigned char __pad_214;  // 0x214 [X30:canon]
+    void* __pad_21C;  // 0x21C [X30:type_map]
+    unsigned char __pad_228;  // 0x228 [X30:canon]
+    unsigned char __pad_230;  // 0x230 [X30:canon]
+    unsigned char __pad_238;  // 0x238 [X30:canon]
+    int __pad_2B4;  // 0x2B4 [X30:type_map]
+    unsigned char __pad_2E8;  // 0x2E8 [X30:canon]
+    int __pad_2F4;  // 0x2F4 [X30:type_map]
+    int __pad_300;  // 0x300 [X30:type_map]
+    int __pad_340;  // 0x340 [X30:type_map]
+    unsigned char __pad_358;  // 0x358 [X30:canon]
+    unsigned char __pad_370;  // 0x370 [X30:canon]
+    unsigned char __pad_38C;  // 0x38C [X30:canon]
+    unsigned char __pad_3AC;  // 0x3AC [X30:canon]
+    unsigned char __pad_3D8;  // 0x3D8 [X30:canon]
+    unsigned char __pad_3F4;  // 0x3F4 [X30:canon]
+    unsigned char __pad_43F;  // 0x43F [X30:canon]
+    unsigned char __pad_44C;  // 0x44C [X30:canon]
+    unsigned char __pad_451;  // 0x451 [X30:canon]
+    unsigned char __pad_464;  // 0x464 [X30:canon]
+    unsigned char __pad_469;  // 0x469 [X30:canon]
+    unsigned char __pad_48C;  // 0x48C [X30:canon]
+    unsigned char __pad_4A8;  // 0x4A8 [X30:canon]
+    unsigned char __pad_4C4;  // 0x4C4 [X30:canon]
+    int __pad_4E0;  // 0x4E0 [X30:type_map]
+    unsigned char __pad_504;  // 0x504 [X30:canon]
+    unsigned char __pad_51C;  // 0x51C [X30:canon]
+    int __pad_548;  // 0x548 [X30:type_map]
+    unsigned char __pad_58C;  // 0x58C [X30:canon]
+    unsigned char __pad_5B0;  // 0x5B0 [X30:canon]
+    unsigned char __pad_5E4;  // 0x5E4 [X30:canon]
+    unsigned char __pad_6AC;  // 0x6AC [X30:canon]
+    unsigned char __pad_6E3;  // 0x6E3 [X30:canon]
 };
 
 } // namespace gamemd

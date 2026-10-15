@@ -21,16 +21,16 @@ struct FactoryClass {
     unsigned int production;  // 0x24
     TechnoTypeClass** queuedObjects;  // 0x30
     unsigned int alignmentPadding;  // 0x33
-    char queuedCount[4];  // 0x34
-    char queuedCapacity[4];  // 0x38
+    int queuedCount;  // 0x34 [X30:type_map]
+    int queuedCapacity;  // 0x38 [X30:type_map]
     TechnoClass* object;  // 0x3C
     unsigned int q02C;  // 0x2C
     bool onHold;  // 0x40
     bool isDifferent;  // 0x41
     unsigned char m_align_5E;  // 0x5E
-    char balance[4];  // 0x60
-    char originalBalance[4];  // 0x64
-    char specialItem[4];  // 0x68
+    int balance;  // 0x60 [X30:type_map]
+    void* originalBalance;  // 0x64 [X30:type_map]
+    int specialItem;  // 0x68 [X30:type_map]
     HouseClass* owner;  // 0x6C
     int q060;  // 0x60
     unsigned int q058;  // 0x58
@@ -83,6 +83,14 @@ struct FactoryClass {
 
     unsigned int u32_48;  // X10 supply (member_lookup)
     int u8_D;  // X10 supply (member_lookup)
+    unsigned char __pad_042;  // 0x42 [X30:canon]
+    unsigned int HouseClass_6C;  // [X30:default]
+    int q050;  // 0x50 [X30:type_map]
+    int u32_44;  // 0x44 [X30:type_map]
+    int u8_5D;  // 0x5D [X30:type_map]
+    unsigned int uniqueId2;  // [X30:default]
+    unsigned int uniqueId4;  // [X30:default]
+    unsigned int uniqueId5;  // [X30:default]
 };
 
 } // namespace gamemd

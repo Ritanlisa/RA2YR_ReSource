@@ -16,6 +16,7 @@ struct VtableStub {
     void VtableStub_643E70();  // plateau: def-aligned C2039/C2660
 
     unsigned int u32_64;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

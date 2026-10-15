@@ -18,6 +18,7 @@ struct VoxClass {
 // --- flat members (END) ---
     int FindAndPlay(int a3);
     int SetEVAIndex();  // 0x7534e0
+    unsigned char __pad_047;  // 0x47 [X30:canon]
 };
 
 } // namespace gamemd

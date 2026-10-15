@@ -16,6 +16,7 @@ struct SwizzleManagerClass {
     int Remove(int a1, int a2, int a3);
     static int Here_I_Am(int a1, int a2, int a3);
     static void Register(void);
+    int __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

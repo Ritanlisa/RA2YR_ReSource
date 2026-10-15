@@ -10,5 +10,6 @@ struct E4Recv_6EFC70 {
     unsigned int M84;  // 0x54
 // --- flat members (END) ---
     AbstractClass * * ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3);  // 0x6EFC70
+    unsigned int customSound_controller;  // [X30:default]
 };
 } // namespace gamemd

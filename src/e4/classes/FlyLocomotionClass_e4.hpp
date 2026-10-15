@@ -21,10 +21,10 @@ struct FlyLocomotionClass {
     ObjectClass * ptr_30;  // 0x30
     bool HasMoveOrder;  // 0x34
     TechnoClass * ptr_24;  // 0x36
-    char FlightLevel[4];  // 0x38
+    int FlightLevel;  // 0x38 [X30:type_map]
     double TargetSpeed;  // 0x3C
     double CurrentSpeed;  // 0x44
-    char IsTakingOff[1];  // 0x4C
+    int IsTakingOff;  // 0x4C [X30:type_map]
     bool IsLanding;  // 0x4D
     bool WasLanding;  // 0x4E
     bool FlyLocomotionClass_field_bool_53;  // 0x53
@@ -41,6 +41,11 @@ struct FlyLocomotionClass {
     int ddtor(int a1, unsigned int * a2);
     void ILocomotion_AcquireHunterSeekerTarget(int a1);
     int LocomotionClass();  // plateau: def-aligned C2039/C2660
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_012;  // 0x12 [X30:canon]
+    unsigned char __pad_019;  // 0x19 [X30:canon]
+    unsigned char __pad_035;  // 0x35 [X30:canon]
+    unsigned char __pad_04F;  // 0x4F [X30:canon]
 };
 
 } // namespace gamemd

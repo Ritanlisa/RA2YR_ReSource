@@ -11,5 +11,6 @@ struct E4Recv_4528A0 {
 // --- flat members (END) ---
     bool  sub_4528A0(int a2);  // 0x4528A0
     unsigned int u32_520;  // 0x520 (offset-truth)
+    unsigned int gattlingValue;  // [X30:default]
 };
 } // namespace gamemd

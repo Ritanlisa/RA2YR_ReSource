@@ -18,5 +18,6 @@ struct VectorClass_ptr_SpotLightClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_SpotLightClass___(char a2);  // 0x6002D0
     unsigned int  GetItemIndex(int a2);  // 0x5FFFF0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

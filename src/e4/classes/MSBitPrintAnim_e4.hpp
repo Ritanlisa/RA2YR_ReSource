@@ -10,6 +10,7 @@ struct MSBitPrintAnim {
     void* vtable1;  // 0x0
 // --- flat members (END) ---
     MSBitPrintAnim * QueryInterface(void ** Block, char a2);
+    int __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

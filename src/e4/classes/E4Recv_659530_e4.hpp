@@ -10,5 +10,6 @@ struct E4Recv_659530 {
     unsigned int M80;  // 0x50
 // --- flat members (END) ---
     int  sub_659530(int a2);  // 0x659530
+    unsigned int customSound_controller;  // [X30:default]
 };
 } // namespace gamemd

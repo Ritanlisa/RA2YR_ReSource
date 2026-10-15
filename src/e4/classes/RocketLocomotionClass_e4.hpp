@@ -21,7 +21,7 @@ struct RocketLocomotionClass {
     ObjectClass * ptr_30;  // 0x30
     ILocomotion * ptr_20;  // 0x32
     char TrailerTimer[12];  // 0x34
-    char MissionState[4];  // 0x40
+    int MissionState;  // 0x40 [X30:type_map]
     unsigned int RocketLocomotionClass_field_44;  // 0x44
     double CurrentSpeed;  // 0x48
     bool RocketLocomotionClass_field_bool_4C;  // 0x50
@@ -36,6 +36,9 @@ struct RocketLocomotionClass {
     int BeginMove(int * a1, int * a2);
     int StubReturn96();
     int ddtor(int a1, unsigned int * a2);
+    void* __pad_008;  // 0x8 [X30:type_map]
+    unsigned char __pad_012;  // 0x12 [X30:canon]
+    unsigned char __pad_052;  // 0x52 [X30:canon]
 };
 
 } // namespace gamemd

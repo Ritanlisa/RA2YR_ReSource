@@ -21,5 +21,6 @@ struct VectorClass_ptr_WaveClass {
     int  GetSize(unsigned int * a2);  // 0x4EAEC0
     unsigned int  GetCapacity(int a2);  // 0x4EAF00
     VectorClass_flat *  QueryInterface(char a2);  // 0x4EFC10
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

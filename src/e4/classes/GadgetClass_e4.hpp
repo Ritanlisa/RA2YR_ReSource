@@ -11,11 +11,11 @@ struct GadgetClass {
     void* vtable1;  // 0x0
     int X;  // 0x4
     int Y;  // 0x8
-    int Width;  // 0xC
-    int Height;  // 0x10
+    GadgetClass* Width;  // 0xC [X30:type_map]
+    ControlClass* Height;  // 0x10 [X30:type_map]
     bool Visible;  // 0x14
     bool Enabled;  // 0x15
-    unsigned int ID;  // 0x18
+    ControlClass* ID;  // 0x18 [X30:type_map]
 // --- flat members (END) ---
     void* Image;  // 0x0 (no offset truth)
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM);
@@ -30,13 +30,13 @@ struct GadgetClass {
     ControlClass Dtor(void *a1 = 0);
     static int TrackState(int p0, int p1);  // x4:signals@0x77a700
     unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int q00C;  // 0xC (offset-truth)
+    GadgetClass* q00C;  // 0xC (offset-truth) [X30:type_map]
     unsigned int q014;  // 0x14 (offset-truth)
-    unsigned int u32_10;  // 0x10 (offset-truth)
+    ControlClass* u32_10;  // 0x10 (offset-truth) [X30:type_map]
     unsigned int u32_16C;  // 0x16C (offset-truth)
     unsigned int u32_170;  // 0x170 (offset-truth)
-    unsigned int u32_18;  // 0x18 (offset-truth)
-    unsigned int u32_28;  // 0x28 (offset-truth)
+    ControlClass* u32_18;  // 0x18 (offset-truth) [X30:type_map]
+    void* u32_28;  // 0x28 (offset-truth) [X30:type_map]
     unsigned char u32_2D;  // 0x2D (offset-truth)
     unsigned int u32_44;  // 0x44 (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
@@ -44,6 +44,9 @@ struct GadgetClass {
     unsigned int q050;  // X10 supply (member_lookup)
     unsigned char u32_C80[4];  /* void */  // X10 supply (member_lookup)
     unsigned char q060;  // 0x60
+    unsigned char __pad_016;  // 0x16 [X30:canon]
+    unsigned int Hovered;  // [X30:default]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

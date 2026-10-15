@@ -44,5 +44,6 @@ int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);
     unsigned char u8_F94;  // X10 supply (member_lookup)
     ObjectClass * field_1530;  // 0x1530
     unsigned int field_150C;  // 0x150C
+    void* __pad_000;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

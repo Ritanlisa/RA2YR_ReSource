@@ -28,7 +28,7 @@ struct TriggerClass {
     unsigned char align31;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char timer[12];  // 0x34
-    unsigned int occuredEvents;  // 0x40
+    void* occuredEvents;  // 0x40 [X30:type_map]
     bool enabled;  // 0x44
     unsigned char align45;  // 0x45
 // --- flat members (END) ---
@@ -45,6 +45,7 @@ struct TriggerClass {
     int ProcessEvents();  // 0x726e00
     int RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP1, int aP2, int a1, int aP0);
     unsigned int u32_54;  // 0x54 (offset-truth)
+    unsigned int abstractFlags2;  // [X30:default]
 };
 
 } // namespace gamemd

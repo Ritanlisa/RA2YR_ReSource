@@ -33,8 +33,10 @@ struct WalkLocomotionClass {
     int SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4);
     int StubReturn60();
     int ddtor(int a1, unsigned int * a2);
-    int Piggybackee;  // 0x38 (ml)
+    ILocomotion* Piggybackee;  // 0x38 (ml) [X30:type_map]
     unsigned int q018;  // 0x18 (offset-truth)
+    unsigned char __pad_00C;  // 0xC [X30:canon]
+    unsigned char __pad_037;  // 0x37 [X30:canon]
 };
 
 } // namespace gamemd

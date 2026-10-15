@@ -33,8 +33,11 @@ struct BlitTransXlatAlphaZRead_ushort {
     unsigned short * Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_4;  // 0x4 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
+    AbstractClass* m_8;  // 0x8 (offset-truth) [X30:type_map]
     unsigned int *q000;  // 0x0 (offset-truth)
+    int __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_00C;  // 0xC [X30:canon]
+    unsigned int Data;  // [X30:default]
 };
 
 } // namespace gamemd

@@ -14,6 +14,7 @@ struct SkirmishDialog {
     static int FillComboBoxes(SkirmishDialog * aP1);
     SkirmishDialog * * HandleMultiplayerMapSelection();
     char q000[4];  // 0x0  /* char[4] */
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

@@ -38,6 +38,9 @@ int Remove(unsigned int * a2);
     unsigned int q014;  // 0x14 (offset-truth)
     unsigned int q018;  // 0x18 (offset-truth)
     unsigned int q01C;  // 0x1C (offset-truth)
+    unsigned int Tail;  // [X30:default]
+    unsigned int m_Next;  // [X30:default]
+    unsigned int m_Prev;  // [X30:default]
 };
 
 
@@ -63,6 +66,9 @@ struct LinkedList {
     static int PushFront(void *aP0, int aP1);  // 4
     static AbstractClass * * LoadScenarioMixFiles(void *aP0, int aP1, int aP2, int aP3, int aP4);  // 2
     char __pad_0[4];  // 0x0 (G57W14E1 til supply)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    GenericNode* Tail;  // 0x4 [X30:type_map]
+    LinkClass* ptr_8;  // 0x8 [X30:canon]
 };
 
 } // namespace gamemd

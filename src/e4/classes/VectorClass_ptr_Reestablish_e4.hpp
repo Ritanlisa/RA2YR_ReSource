@@ -29,5 +29,6 @@ struct VectorClass_ptr_Reestablish {
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x45AA10
     VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x45ACE0
     DynamicVector *  Constructor_VectorClass_Reestablish___(char a2);  // 0x45AD30
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

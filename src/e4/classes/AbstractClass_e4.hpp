@@ -116,9 +116,9 @@ struct AbstractClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    unsigned int uniqueId;  // 0x10
+    ObjectClass* uniqueId;  // 0x10 [X30:type_map]
     unsigned int q011;  // 0x11
-    unsigned int q010;  // 0x10
+    ObjectClass* q010;  // 0x10 [X30:type_map]
     int u32_3;  // 0x3
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
@@ -175,8 +175,8 @@ struct AbstractClass {
     unsigned int spawns;
     unsigned int *__pad_48;
     unsigned int spawnVectorCount;
-    unsigned int DiskLaserClass_field_0x28;  // 0x28
-    unsigned int q090;  // 0x90
+    void* DiskLaserClass_field_0x28;  // 0x28 [X30:type_map]
+    void* q090;  // 0x90 [X30:type_map]
     unsigned int q300;  // 0x300
     unsigned char __pad_F70[1453];  // 0xF70
     unsigned char __pad_1714[126];  // 0x1714
@@ -426,10 +426,37 @@ int DTOR(); // 0x4101F0
     unsigned int u32_58;  // X10 supply (member_lookup)
     char u8_C8;  // X10 supply (member_lookup)
     unsigned int u32_1791;  // 0x1791
-    unsigned int u32_B0;  // 0xB0
+    void* u32_B0;  // 0xB0 [X30:type_map]
     unsigned int u32_44;  // 0x44
-    unsigned int q040;  // 0x40
+    void* q040;  // 0x40 [X30:type_map]
     int u32_38;  // 0x38
+    int AbstractClass_1;  // 0x1 [X30:type_map]
+    unsigned int BibShape;  // [X30:default]
+    unsigned int BibShapeLoaded;  // [X30:default]
+    unsigned int DeployingAnimLoaded_d;  // [X30:default]
+    unsigned int DeployingAnim_2;  // [X30:default]
+    unsigned int DockingOffsets;  // [X30:default]
+    unsigned int IsInitialized;  // [X30:default]
+    unsigned int Items;  // [X30:default]
+    unsigned int PreventsPlacementOverlap;  // [X30:default]
+    unsigned int ProductionCompletionThreshold;  // [X30:default]
+    unsigned int RoofDeployingAnim;  // [X30:default]
+    unsigned int RoofDeployingAnimLoaded;  // [X30:default]
+    unsigned int RubbleLoaded_d;  // [X30:default]
+    unsigned int Rubble_d;  // [X30:default]
+    unsigned int UnderDoorAnimLoaded_d;  // [X30:default]
+    unsigned int UnderDoorAnim_d;  // [X30:default]
+    unsigned int UnderRoofDoorAnim;  // [X30:default]
+    unsigned int UnderRoofDoorAnimLoaded;  // [X30:default]
+    unsigned int numberStartingPoints;  // [X30:default]
+    int ptr_2;  // 0x2 [X30:type_map]
+    void* ptr_30;  // 0x30 [X30:type_map]
+    void* q024;  // 0x24 [X30:type_map]
+    int q02C;  // 0x2C [X30:type_map]
+    unsigned int vfptr;  // [X30:default]
+    unsigned int vfptr1;  // [X30:default]
+    unsigned int vfptr2;  // [X30:default]
+    unsigned int vfptr3;  // [X30:default]
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

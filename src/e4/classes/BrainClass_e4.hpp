@@ -17,5 +17,6 @@ struct BrainClass {
     unsigned int u32_4;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned int abstractFlags;  // [X30:default]
 };
 } // namespace gamemd

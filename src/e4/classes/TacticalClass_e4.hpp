@@ -20,10 +20,10 @@ struct TacticalClass {
     void* nextArrayIndex;  // 0x18
     void* referenceCount;  // 0x1C
     void* NeedsSaveOrLink;  // 0x20
-    unsigned int field24;  // 0x24
+    void* field24;  // 0x24 [X30:type_map]
     unsigned int field28;  // 0x28
     unsigned int TacticalClass_field_2C;  // 0x2C
-    unsigned int field30;  // 0x30
+    void* field30;  // 0x30 [X30:type_map]
     unsigned int field34;  // 0x34
     unsigned int field38;  // 0x38
     unsigned int TacticalClass_field_3C;  // 0x3C
@@ -169,7 +169,7 @@ struct TacticalClass {
     unsigned char u32_11B2;  // 0x11B2 (offset-truth)
     unsigned char u32_11B3;  // 0x11B3 (offset-truth)
     unsigned int u32_11B4;  // 0x11B4 (offset-truth)
-    unsigned int u32_11BC;  // 0x11BC (offset-truth)
+    void* u32_11BC;  // 0x11BC (offset-truth) [X30:type_map]
     unsigned int u32_11C0;  // 0x11C0 (offset-truth)
     unsigned int u32_11C4;  // 0x11C4 (offset-truth)
     unsigned int u32_11C8;  // 0x11C8 (offset-truth)
@@ -179,6 +179,20 @@ struct TacticalClass {
     unsigned int u32_11E;  // X10 supply (member_lookup)
     unsigned int u32_294;  // X10 supply (member_lookup)
     unsigned int u32_2E1;  // X10 supply (member_lookup)
+    unsigned char __pad_06C;  // 0x6C [X30:canon]
+    unsigned char __pad_0AE;  // 0xAE [X30:canon]
+    unsigned char __pad_D7E;  // 0xD7E [X30:canon]
+    unsigned char __pad_DE0;  // 0xDE0 [X30:canon]
+    unsigned int attached34;  // [X30:default]
+    unsigned int foggedness;  // [X30:default]
+    unsigned int level;  // [X30:default]
+    unsigned int overlayTypeIndex0;  // [X30:default]
+    unsigned int shroudedness;  // [X30:default]
+    unsigned int unknown707;  // [X30:default]
+    int vtable23;  // 0x58 [X30:member_lookup]
+    unsigned int vtable24;  // 0x5C [X30:member_lookup]
+    int vtable28;  // 0x6C [X30:member_lookup]
+    int vtable46;  // 0xB4 [X30:type_map]
 };
 
 } // namespace gamemd

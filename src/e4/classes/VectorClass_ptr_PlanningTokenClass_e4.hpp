@@ -21,5 +21,6 @@ struct VectorClass_ptr_PlanningTokenClass {
     int  GetSize(unsigned int * a2);  // 0x63EA70
     unsigned int  GetCapacity(int a2);  // 0x63EAB0
     VectorClass_flat *  QueryInterface(char a2);  // 0x63EED0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

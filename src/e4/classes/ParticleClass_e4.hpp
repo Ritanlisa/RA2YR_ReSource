@@ -90,6 +90,26 @@ struct ParticleClass {
     unsigned int u32_131;  // X10 supply (member_lookup)
     unsigned int u32_AC;  // X10 supply (member_lookup)
     unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_017;  // 0x17 [X30:canon]
+    unsigned char __pad_024;  // 0x24 [X30:canon]
+    unsigned char __pad_038;  // 0x38 [X30:canon]
+    unsigned char __pad_068;  // 0x68 [X30:canon]
+    unsigned char __pad_074;  // 0x74 [X30:canon]
+    unsigned char __pad_080;  // 0x80 [X30:canon]
+    unsigned char __pad_08C;  // 0x8C [X30:canon]
+    unsigned char __pad_09E;  // 0x9E [X30:canon]
+    unsigned char __pad_109;  // 0x109 [X30:canon]
+    int __pad_11C;  // 0x11C [X30:type_map]
+    unsigned char __pad_133;  // 0x133 [X30:canon]
+    unsigned char __pad_176;  // 0x176 [X30:canon]
+    unsigned char __pad_196;  // 0x196 [X30:canon]
+    unsigned char __pad_27C;  // 0x27C [X30:canon]
+    unsigned char __pad_45C;  // 0x45C [X30:canon]
+    unsigned int Coord_9C;  // [X30:default]
+    unsigned int Tactical_E4;  // [X30:default]
+    unsigned int q_B0;  // [X30:default]
+    IUnknown* vtable49;  // 0xC0 [X30:type_map]
 };
 
 } // namespace gamemd

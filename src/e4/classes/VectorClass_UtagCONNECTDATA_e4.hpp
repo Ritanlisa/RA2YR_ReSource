@@ -27,5 +27,6 @@ struct VectorClass_UtagCONNECTDATA {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x4A1140
     int  FindItemIndex(unsigned int * a2);  // 0x4A1200
     VectorClass_flat *  QueryInterface(char a2);  // 0x4A14A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

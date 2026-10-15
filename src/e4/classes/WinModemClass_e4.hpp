@@ -49,6 +49,8 @@ struct WinModemClass {
     unsigned int u32_CC;  // X10 supply (member_lookup)
 
     unsigned int u32_5C;  // X10 supply (member_lookup)
+    int WinModemClass_field_0x24;  // 0x24 [X30:type_map]
+    int WinModemClass_field_0x2C;  // 0x2C [X30:type_map]
 };
 
 } // namespace gamemd

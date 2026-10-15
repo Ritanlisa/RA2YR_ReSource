@@ -15,9 +15,9 @@ struct RawFileClass {
     void* vtable1;  // 0x0
     int FilePointer;  // 0x4
     int FileSize;  // 0x8
-    void* Handle;  // 0xC
-    unsigned int FileName;  // 0x10
-    char FileTimeDateLo[2];  // 0x14
+    CCFileClass* Handle;  // 0xC [X30:type_map]
+    void* FileName;  // 0x10 [X30:type_map]
+    int FileTimeDateLo;  // 0x14 [X30:type_map]
     char FileTimeDateHi[2];  // 0x16
     bool FileNameAllocated;  // 0x18
     unsigned char tail_19;  // 0x19
@@ -27,6 +27,7 @@ struct RawFileClass {
      unsigned int * Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     int Write(void *a1 = 0);
     char __tail_0[4];  // 0x0 (ml)
+    unsigned int CacheReadAhead;  // [X30:default]
 };
 #endif  // GAMEMD_G2_RawFileClass_DEF
 

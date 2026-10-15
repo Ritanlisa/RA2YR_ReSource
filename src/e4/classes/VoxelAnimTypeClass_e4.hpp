@@ -32,7 +32,7 @@ struct VoxelAnimTypeClass {
     SHPStruct* nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     char NeedsSaveOrLink[4];  // 0x20
-    char BarrelVoxel[4];  // 0x24
+    VoxelStruct* BarrelVoxel;  // 0x24 [X30:type_map]
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
     bool NoSpawnAlt;  // 0x30
@@ -48,7 +48,7 @@ struct VoxelAnimTypeClass {
     void * Image_d;  // 0xA4
     char ImageAllocated;  // 0xA8
     void * AlphaImage;  // 0xAC
-    int MainVoxel;  // 0xB0
+    void* MainVoxel;  // 0xB0 [X30:type_map]
     int TurretVoxel_d;  // 0xB4
     unsigned char ChargerTurrets;  // 0xBC
     unsigned char ChargerBarrels;  // 0x104
@@ -86,8 +86,8 @@ struct VoxelAnimTypeClass {
     bool Normalized;  // 0x294
     bool Translucent;  // 0x295
     bool SourceShared;  // 0x296
-    char ShareBarrelData[4];  // 0x298
-    char Duration[4];  // 0x29C
+    int ShareBarrelData;  // 0x298 [X30:type_map]
+    void* Duration;  // 0x29C [X30:type_map]
     double Elasticity;  // 0x2A0
     double MinAngularVelocity;  // 0x2A8
     double MaxAngularVelocity;  // 0x2B0
@@ -96,14 +96,14 @@ struct VoxelAnimTypeClass {
     double MaxXYVel;  // 0x2C8
     bool IsMeteor;  // 0x2D0
     VoxelAnimTypeClass* Spawns;  // 0x2D4
-    char SpawnCount[4];  // 0x2D8
-    char StartSound[4];  // 0x2DC
-    char StopSound[4];  // 0x2E0
+    void* SpawnCount;  // 0x2D8 [X30:type_map]
+    int StartSound;  // 0x2DC [X30:type_map]
+    void* StopSound;  // 0x2E0 [X30:type_map]
     AnimTypeClass* BounceAnim;  // 0x2E4
     AnimTypeClass* ExpireAnim;  // 0x2E8
     AnimTypeClass* TrailerAnim;  // 0x2EC
-    char Damage[4];  // 0x2F0
-    char DamageRadius[4];  // 0x2F4
+    void* Damage;  // 0x2F0 [X30:type_map]
+    int DamageRadius;  // 0x2F4 [X30:type_map]
     WarheadTypeClass* Warhead;  // 0x2F8
     ParticleSystemTypeClass* AttachedSystem;  // 0x2FC
     bool IsTiberium;  // 0x300
@@ -123,6 +123,27 @@ struct VoxelAnimTypeClass {
     VoxelAnimTypeClass * ddtor(void ** Block, char a2);
 
     int32_t VoxelIndex;  // X10 supply (member_lookup)
+    unsigned char __pad_036;  // 0x36 [X30:canon]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_0B8;  // 0xB8 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_17A;  // 0x17A [X30:canon]
+    unsigned char __pad_184;  // 0x184 [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    unsigned char __pad_22C;  // 0x22C [X30:canon]
+    int __pad_233;  // 0x233 [X30:type_map]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    unsigned char __pad_297;  // 0x297 [X30:canon]
+    unsigned char __pad_2D1;  // 0x2D1 [X30:canon]
+    unsigned char __pad_301;  // 0x301 [X30:canon]
+    unsigned int AllowCellContent_d;  // [X30:default]
+    unsigned int Immune_d;  // [X30:default]
+    unsigned int IsLogic_d;  // [X30:default]
+    unsigned int LegalTarget_d;  // [X30:default]
+    unsigned int RadarInvisible_d;  // [X30:default]
+    unsigned int Selectable_d;  // [X30:default]
 };
 
 } // namespace gamemd

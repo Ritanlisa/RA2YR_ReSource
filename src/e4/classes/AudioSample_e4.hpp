@@ -16,6 +16,7 @@ struct AudioSample {
     int IsBuffering(void *a1 = 0);
     void InitLinkedList(void *a1 = 0);  // 0x408840
     int AudioSample_field_0x0C;  // 0xC (G57W14E1 til supply)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

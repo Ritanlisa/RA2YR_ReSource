@@ -26,6 +26,9 @@ struct StreamClass {
 
     unsigned int u32_14;  // X10 supply (member_lookup)
     unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned char __pad_008;  // 0x8 [X30:canon]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 
 } // namespace gamemd

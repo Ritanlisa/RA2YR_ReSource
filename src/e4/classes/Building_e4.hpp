@@ -18,5 +18,6 @@ struct Building {
     unsigned int u32_11E;  // X10 supply (member_lookup)
     unsigned int u32_44;  // X10 supply (member_lookup)
     unsigned int u32_9C;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

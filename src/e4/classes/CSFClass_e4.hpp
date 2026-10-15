@@ -10,5 +10,6 @@ struct CSFClass {
 // --- flat members (END) ---
     unsigned char q000[12];  // 0x0 (canon size filler)
     static int LoadFile(const char *aP1);
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

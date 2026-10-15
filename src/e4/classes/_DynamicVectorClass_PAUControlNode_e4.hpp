@@ -11,6 +11,8 @@ struct _DynamicVectorClass_PAUControlNode {
 
     unsigned char u32_4[4];  /* void */  // X10 supply (member_lookup)
     unsigned char u8_D;  // X10 supply (member_lookup)
+    unsigned int m_10;  // 0x10 [X30:default]
+    unsigned int m_8;  // 0x8 [X30:default]
 };
 
 } // namespace gamemd

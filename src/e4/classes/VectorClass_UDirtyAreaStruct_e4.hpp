@@ -26,5 +26,6 @@ struct VectorClass_UDirtyAreaStruct {
     char  GetSize(int a2);  // 0x6DC5E0
     unsigned int  FindItemIndex(int a2);  // 0x6DC820
     unsigned int * loc_6DCC80(unsigned int * Block, char a2);  // 0x6DCB50
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

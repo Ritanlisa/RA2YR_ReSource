@@ -26,5 +26,6 @@ struct VectorClass_ptr_MapRegionClass {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x5AC820
     int  FindItemIndex(unsigned int * a2);  // 0x5AC8D0
     VectorClass_flat *  loc_5AD3E0(char a2);  // 0x5AD390
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

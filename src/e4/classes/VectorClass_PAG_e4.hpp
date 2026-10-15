@@ -21,5 +21,6 @@ struct VectorClass_PAG {
     int  GetSize(unsigned int * a2);  // 0x54A370
     unsigned int  GetCapacity(int a2);  // 0x54A3B0
     VectorClass_flat *  QueryInterface(char a2);  // 0x54A710
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -73,6 +73,13 @@ struct IPXInterfaceClass {
     unsigned int u32_3F30C;  // X10 supply (member_lookup)
     unsigned int u32_45;  // X10 supply (member_types)
     int u32_4C;  // X10 supply (member_lookup)
+    unsigned char __pad_005;  // 0x5 [X30:canon]
+    unsigned int BoundPort;  // [X30:default]
+    unsigned int Capacity;  // [X30:default]
+    unsigned int IsInitialized;  // [X30:default]
+    unsigned int Items;  // [X30:default]
+    int __pad_0;  // 0x0 [X30:type_map]
+    unsigned int q3F074;  // [X30:default]
 };
 
 } // namespace gamemd

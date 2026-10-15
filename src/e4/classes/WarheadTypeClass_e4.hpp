@@ -43,7 +43,7 @@ struct WarheadTypeClass {
     void * UIName;  // 0x60
     unsigned int Name;  // 0x64
     unsigned int tail_95;  // 0x95
-    int AmbientDamage;  // 0x98
+    void* AmbientDamage;  // 0x98 [X30:type_map]
     unsigned int pad_99;  // 0x99
     unsigned int Burst;  // 0x9C
     unsigned int pad_9D;  // 0x9D
@@ -97,7 +97,7 @@ struct WarheadTypeClass {
     bool Parasite;  // 0x159
     bool Temporal;  // 0x15A
     bool IsLocomotor;  // 0x15B
-    char Locomotor[4];  // 0x15C
+    void* Locomotor;  // 0x15C [X30:type_map]
     bool Airstrike;  // 0x16C
     bool Psychedelic;  // 0x16D
     bool BombDisarm;  // 0x16E
@@ -152,6 +152,22 @@ struct WarheadTypeClass {
     unsigned int AnimList;  // X10 supply (csp_canon_members)
     float CellInset;  // X10 supply (csp_canon_members)
     unsigned int u32_104;  // X10 supply (member_lookup)
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    IUnknown* __pad_024;  // 0x24 [X30:type_map]
+    unsigned char __pad_048;  // 0x48 [X30:canon]
+    unsigned char __pad_068;  // 0x68 [X30:canon]
+    unsigned char __pad_0A1;  // 0xA1 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_0BC;  // 0xBC [X30:canon]
+    int __pad_111;  // 0x111 [X30:type_map]
+    unsigned char __pad_11C;  // 0x11C [X30:canon]
+    unsigned char __pad_128;  // 0x128 [X30:canon]
+    unsigned char __pad_160;  // 0x160 [X30:canon]
+    unsigned char __pad_17F;  // 0x17F [X30:canon]
+    void* DebrisTypes;  // 0x18C [X30:type_map]
+    void* __pad_190;  // 0x190 [X30:type_map]
+    unsigned char __pad_1A0;  // 0x1A0 [X30:canon]
+    unsigned int uniqueId;  // [X30:default]
 };
 
 } // namespace gamemd

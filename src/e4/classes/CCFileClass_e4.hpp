@@ -12,7 +12,7 @@ struct CCFileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* FilePointer;  // 0x4
-    int FileSize;  // 0x8
+    void* FileSize;  // 0x8 [X30:type_map]
     void * Handle;  // 0xC
     void * FileName;  // 0x10
     unsigned int FileTimeDateLo;  // 0x14
@@ -54,6 +54,8 @@ static int GetSize(CCFileClass * aP1);
     AudioController * * Close(void * a1);
     static int Cleanup(void *aP1);
     char __tail_0[4];  // 0x0 (ml)
+    int q064;  // 0x64 [X30:type_map]
+    int u32_160;  // 0x160 [X30:member_lookup]
 };
 #endif  // GAMEMD_G2_CCFileClass_DEF
 

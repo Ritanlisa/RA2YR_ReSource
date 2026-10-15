@@ -23,5 +23,6 @@ struct Debug {
 
     unsigned char q004;  // X10 supply (member_lookup)
     int q0A0;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

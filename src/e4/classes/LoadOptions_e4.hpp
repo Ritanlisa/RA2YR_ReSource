@@ -63,6 +63,10 @@ struct LoadOptions {
 
     unsigned char __pad_00C;  // X10 supply (csp_canon_members)
     void * extension;  // X10 supply (member_lookup)
+    void* __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_016;  // 0x16 [X30:canon]
+    unsigned char __pad_022;  // 0x22 [X30:canon]
+    unsigned int mode;  // [X30:default]
 };
 #endif  // GAMEMD_CORE_OWNS_LOADOPTIONS
 

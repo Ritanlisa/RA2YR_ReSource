@@ -26,5 +26,6 @@ struct VectorClass_W4PassabilityType {
     wchar_t * SetCapacity_1(void *a1_1);  // 0x589FA0
     int  Constructor_0(unsigned int * a2, char a2_x = 0, void *a3_1 = 0);  // 0x58A3A0
     VectorClass_flat *  Constructor_1(char a2);  // 0x58AA90
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

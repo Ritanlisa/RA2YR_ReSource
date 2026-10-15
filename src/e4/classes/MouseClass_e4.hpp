@@ -43,7 +43,7 @@ struct MouseClass {
     TimerStruct * ptr_5788;  // 0x5788
     unsigned int tail_1600D;  // 0x1600D
 // --- flat members (END) ---
-    int MouseClass_field_0x70;  // 0x70 (G57W14E1 til supply)
+    CampaignClass* MouseClass_field_0x70;  // 0x70 (G57W14E1 til supply) [X30:type_map]
     void* HandleClick_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon MouseClass::HandleClick is a method)
     static unsigned int HandleClick(MouseClass *p_this);  // x4:ida@0x5bdf50
     char LoadCursors();
@@ -86,11 +86,20 @@ struct MouseClass {
     unsigned int q_A0;  // +0xA0 flat supply (P5 provenance)
     unsigned int q_D0;  // +0xD0 flat supply (P5 provenance)
     unsigned int q_100;  // +0x100 flat supply (P5 provenance)
-    unsigned int q_30;  // +0x30 flat supply (P5 provenance)
+    void* q_30;  // +0x30 flat supply (P5 provenance) [X30:type_map]
     unsigned int q_40;  // +0x40 flat supply (P5 provenance)
     unsigned int q_60;  // +0x60 flat supply (P5 provenance)
     unsigned int u32_67C;  // 0x67C
     char u32_11B[4];  // 0x11B  /* char[4] */
+    unsigned int _base;  // [X30:default]
+    unsigned int _bufsiz;  // [X30:default]
+    unsigned int _cnt;  // [X30:default]
+    unsigned int _file;  // [X30:default]
+    unsigned int _flag;  // [X30:default]
+    unsigned int _ptr;  // [X30:default]
+    unsigned int q002_;  // [X30:default]
+    void* q5B8;  // 0x5B8 [X30:member_lookup]
+    unsigned int u32_24;  // 0x24 [X30:default]
 };
 
 } // namespace gamemd

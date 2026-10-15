@@ -11,6 +11,7 @@ struct FileExtension {
 // --- flat members (END) ---
     unsigned int * Constructor(int a2, int a3, void *a1 = 0);
     int __thiscall MapHandler();
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

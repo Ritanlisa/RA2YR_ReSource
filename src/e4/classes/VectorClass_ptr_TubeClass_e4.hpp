@@ -35,5 +35,6 @@ struct VectorClass_ptr_TubeClass {
     VectorClass_flat *  Constructor_VectorClass_TubeClass___(char a2);  // 0x4EFAD0
     DynamicVector *  Constructor_VectorClass_WaveClass___(char a2);  // 0x4EFC60
     DynamicVector *  Constructor_VectorClass_OverlayClass___(char a2);  // 0x4EFD00
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

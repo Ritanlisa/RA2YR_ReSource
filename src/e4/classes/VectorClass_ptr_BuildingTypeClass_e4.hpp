@@ -19,5 +19,6 @@ struct VectorClass_ptr_BuildingTypeClass {
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4ED860
     unsigned int Remove(int a2, void *a2_1 = 0);  // 0x4ED980
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0750
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -21,5 +21,6 @@ struct VectorClass_ptr_BulletTypeClass {
     int  GetSize(unsigned int * a2);  // 0x4EE560
     unsigned int  LoadTypeData(int a2);  // 0x4EE5A0
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0A70
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

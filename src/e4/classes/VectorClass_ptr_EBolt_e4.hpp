@@ -28,5 +28,6 @@ struct VectorClass_ptr_EBolt {
     int  FindItemIndex(unsigned int * a2);  // 0x4C2ED0
     VectorClass_flat *  QueryInterface(char a2);  // 0x4C2F00
     DynamicVector *  Constructor_VectorClass_EBolt___(char a2);  // 0x4C2F50
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

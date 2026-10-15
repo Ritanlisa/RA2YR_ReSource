@@ -68,7 +68,7 @@ struct Cell {
     unsigned int u32_140;  // 0x140 (offset-truth)
     unsigned char u32_41A;  // 0x41A (offset-truth)
     unsigned int u32_5A4;  // 0x5A4 (offset-truth)
-    unsigned int u32_6C4;  // 0x6C4 (offset-truth)
+    void* u32_6C4;  // 0x6C4 (offset-truth) [X30:type_map]
     unsigned char u32_703;  // 0x703 (offset-truth)
     unsigned char u32_742;  // 0x742 (offset-truth)
     unsigned char u32_746;  // 0x746 (offset-truth)
@@ -99,5 +99,8 @@ struct Cell {
     unsigned int u32_78;  // X10 supply (member_lookup)
     unsigned int u32_EC;  // X10 supply (member_lookup)
     unsigned int u32_11A;  // 0x11A
+    int Cell_field_0x38;  // 0x38 [X30:type_map]
+    char __pad_3C[44];  // 0x3C [X30:member_lookup]
+    int q004;  // 0x4 [X30:type_map]
 };
 } // namespace gamemd

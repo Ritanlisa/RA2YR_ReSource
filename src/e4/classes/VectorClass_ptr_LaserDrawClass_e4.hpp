@@ -18,5 +18,6 @@ struct VectorClass_ptr_LaserDrawClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_LaserDrawClass___(char a2);  // 0x5515E0
     int Get(int a2, void *a2_2);  // 0x5512D0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

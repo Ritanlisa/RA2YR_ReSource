@@ -8,7 +8,7 @@ namespace gamemd {
 struct Font {
 // --- flat members (BEGIN) ---
     void* m_FontData;  // 0x0
-    char Font_field_04[4];  // 0x4
+    void* Font_field_04;  // 0x4 [X30:type_map]
     char Font_field_08[4];  // 0x8
 // --- flat members (END) ---
     int GetGlyphDataForChar(uint16_t aP1);

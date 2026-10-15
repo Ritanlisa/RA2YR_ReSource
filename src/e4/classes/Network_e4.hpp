@@ -152,6 +152,7 @@ int GetSendCount();
     unsigned char u8_B3;  // X10 supply (member_types)
     unsigned int q016;  // 0x16
     unsigned int q00C;  // 0xC
+    char __pad_14[14];  // 0x14 [X30:member_lookup]
 };
 #endif  // GAMEMD_G2_NETWORK_FLAT_DEF
 } // namespace gamemd

@@ -13,6 +13,7 @@ struct MSPCXAnim {
     int Stub();
     static unsigned int * Construct(void *aP1, void *a2, int a3, void *a4, char a5);
     unsigned char u32_29;  // 0x29 (offset-truth)
+    unsigned char __pad_004;  // 0x4 [X30:canon]
 };
 
 } // namespace gamemd

@@ -33,5 +33,6 @@ struct Conflict_WorldDominationTour_12 {
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 } // namespace gamemd

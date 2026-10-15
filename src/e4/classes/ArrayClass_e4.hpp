@@ -32,5 +32,8 @@ struct ArrayClass {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     int GetAt_Wrap(int a2);  // 0x636E60
+    unsigned int field_14;  // [X30:default]
+    unsigned int field_8;  // [X30:default]
+    unsigned int field_94;  // [X30:default]
 };
 } // namespace gamemd

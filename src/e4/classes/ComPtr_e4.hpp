@@ -30,6 +30,11 @@ struct ComPtr {
     int q010;  // 0x10
     int q00C;  // 0xC
     int q004;  // 0x4
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    int ComPtr_field_0x0C;  // 0xC [X30:member_lookup]
+    int ComPtr_field_0x14;  // 0x14 [X30:member_lookup]
+    int ComPtr_field_0x1C;  // 0x1C [X30:member_lookup]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 
 } // namespace gamemd

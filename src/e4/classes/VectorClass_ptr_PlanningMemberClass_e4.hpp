@@ -32,5 +32,6 @@ struct VectorClass_ptr_PlanningMemberClass {
     int  FindItemIndex(unsigned int * a2);  // 0x63E020
     char  SetCapacity_0(int a2, unsigned int * a3);  // 0x63E230
     int  FindItemIndex_0(unsigned int * a2);  // 0x63E2E0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -11,6 +11,7 @@ struct BigInt {
 // --- flat members (END) ---
     int __thiscall DecryptBlock(char *Src, int a3, char *a4, void *a1 = 0);
     int __thiscall RSAOperation(char *Src, int a3, char *a4, void *a1 = 0);
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

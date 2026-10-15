@@ -21,5 +21,6 @@ struct VectorClass_ptr_VoxClass {
     int  GetSize(unsigned int * a2);  // 0x7537D0
     unsigned int  GetCapacity(int a2);  // 0x753810
     VectorClass_flat *  QueryInterface(char a2);  // 0x753910
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

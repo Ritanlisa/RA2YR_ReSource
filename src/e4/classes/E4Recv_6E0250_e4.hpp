@@ -10,5 +10,6 @@ struct E4Recv_6E0250 {
     unsigned int M144;  // 0x90
 // --- flat members (END) ---
     int  sub_6E0250(int a2, int a3, int a4, int a5);  // 0x6E0250
+    unsigned int isAliveFlag;  // [X30:default]
 };
 } // namespace gamemd

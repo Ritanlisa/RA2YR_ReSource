@@ -16,5 +16,10 @@ struct E4Recv_6EA080 {
     unsigned int M128;  // 0x128
 // --- flat members (END) ---
     char sub_6EA080();  // 0x6EA080
+    unsigned int alignmentPadding75;  // [X30:default]
+    unsigned int customSound_controller;  // [X30:default]
+    unsigned int owningHouseIndex;  // [X30:default]
+    unsigned int spawnStatus;  // [X30:default]
+    unsigned int visibilityFlags;  // [X30:default]
 };
 } // namespace gamemd

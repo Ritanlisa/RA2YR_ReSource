@@ -23,5 +23,6 @@ struct VectorClass_ptr_SubTitle {
     int  GetSize(unsigned int * a2);  // 0x6CAAF0
     unsigned int  GetCapacity(int a2);  // 0x6CAB30
     VectorClass_flat *  QueryInterface(char a2);  // 0x6CAB50
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -72,11 +72,11 @@ struct TerrainTypeClass {
     int LineTrailColorDecrement;  // 0x240
     unsigned char VoxelCaches;  // 0x244
     int ArrayIndex;  // 0x294
-    char Foundation[4];  // 0x298
-    int RadarColor;  // 0x29C
+    Color* Foundation;  // 0x298 [X30:type_map]
+    void* RadarColor;  // 0x29C [X30:type_map]
     float AnimationRate;  // 0x2A0
     int AnimationProbability;  // 0x2A4
-    int AnimationProbability_d;  // 0x2A8
+    void* AnimationProbability_d;  // 0x2A8 [X30:type_map]
     bool SnowOccupationBits;  // 0x2AC
     bool SpawnsTiberium;  // 0x2AD
     bool IsFlammable;  // 0x2AE
@@ -107,6 +107,18 @@ struct TerrainTypeClass {
     int LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0, void * aAnimationproba, void * aAnimationrate, void * aIsanimated, void * aIsflammable, void * aRadarcolor, void * aSnowoccupation, void * aSpawnstiberium, void * aTemperateoccup, void * aWaterbound);
     void *q2B8;  // 0x2B8 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
+    unsigned char __pad_025;  // 0x25 [X30:canon]
+    unsigned char __pad_034;  // 0x34 [X30:canon]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_095;  // 0x95 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    int __pad_22C;  // 0x22C [X30:type_map]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    unsigned char __pad_29F;  // 0x29F [X30:canon]
+    unsigned char __pad_2B5;  // 0x2B5 [X30:canon]
 };
 
 } // namespace gamemd

@@ -22,9 +22,9 @@ struct FoggedObjectClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char LastSight[4];  // 0x24
+    int LastSight;  // 0x24 [X30:type_map]
     HouseClass* House;  // 0x28
-    char Cell[4];  // 0x2C
+    void* Cell;  // 0x2C [X30:type_map]
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
     int InitTerrainFog(unsigned int *aP1, int a3, int a4);  // G57w10-S raw 0x004D0C40 IUnknown 占位清除
@@ -44,7 +44,7 @@ struct FoggedObjectClass {
     unsigned int * CheckVisibility(unsigned int * v3);
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_38;  // 0x38 (offset-truth)
-    unsigned int u32_3C;  // 0x3C (offset-truth)
+    AudioController* u32_3C;  // 0x3C (offset-truth) [X30:type_map]
     unsigned int u32_54;  // 0x54 (offset-truth)
     unsigned int u32_58;  // 0x58 (offset-truth)
     void *q5C;  // 0x5C (offset-truth)
@@ -61,7 +61,9 @@ struct FoggedObjectClass {
     unsigned char q070;  // 0x70
     unsigned int u32_69;  // 0x69
     unsigned int u32_64;  // 0x64
-    unsigned int q060;  // 0x60
+    void* q060;  // 0x60 [X30:type_map]
+    unsigned int HouseClass_6C;  // [X30:default]
+    unsigned int q6E7;  // 0x6E7 [X30:default]
 };
 
 } // namespace gamemd

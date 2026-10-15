@@ -18,13 +18,13 @@ struct TeamTypeClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char TeamTypeClass_field_24[4];  // 0x24
+    void* TeamTypeClass_field_24;  // 0x24 [X30:type_map]
     unsigned char TeamTypeClass_field_28;  // 0x28
     unsigned char pad_29;  // 0x29
     char TeamTypeClass_field_2C[4];  // 0x2C
     char TeamTypeClass_field_30[4];  // 0x30
     unsigned int alignmentPadding;  // 0x33
-    char TeamTypeClass_field_34[4];  // 0x34
+    int TeamTypeClass_field_34;  // 0x34 [X30:type_map]
     char TeamTypeClass_field_38[4];  // 0x38
     char TeamTypeClass_field_3C[4];  // 0x3C
     unsigned int UINameLabel;  // 0x3D
@@ -35,7 +35,7 @@ struct TeamTypeClass {
     unsigned char TeamTypeClass_field_5C;  // 0x5C
     unsigned char TeamTypeClass_field_5D;  // 0x5D
     unsigned char pad_5E;  // 0x5E
-    char TeamTypeClass_field_64[4];  // 0x64
+    int TeamTypeClass_field_64;  // 0x64 [X30:type_map]
     char TeamTypeClass_field_68[4];  // 0x68
     char TeamTypeClass_field_6C[4];  // 0x6C
     unsigned char TeamTypeClass_field_70;  // 0x70
@@ -81,6 +81,11 @@ struct TeamTypeClass {
     void* q0D0;  // X10 supply (member_lookup)
     void* q0E0;  // X10 supply (member_lookup)
     unsigned int u32_C4;  // X10 supply (member_lookup)
+    unsigned char __pad_060;  // 0x60 [X30:canon]
+    unsigned int FootClass_E0;  // [X30:default]
+    unsigned int Tactical_E4;  // [X30:default]
+    int TeamTypeClass_field_60;  // 0x60 [X30:member_lookup]
+    char __pad_4C[12];  // 0x4C [X30:member_lookup]
 };
 
 } // namespace gamemd

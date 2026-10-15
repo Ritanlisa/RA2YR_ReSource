@@ -34,5 +34,7 @@ struct WideString {
     static int Hash(wchar_t * Source);  // def-aligned
 
     unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned int AssignFromPtrthis;  // [X30:default]
 };
 } // namespace gamemd

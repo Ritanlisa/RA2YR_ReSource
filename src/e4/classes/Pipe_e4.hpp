@@ -14,6 +14,7 @@ struct Pipe {
     unsigned int *q000;  // 0x0 (offset-truth)
     int q00C;  // 0xC
     int q008;  // 0x8
+    void* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

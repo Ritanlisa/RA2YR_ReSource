@@ -25,5 +25,6 @@ struct E4Recv_4A02B0 {
     unsigned int q014;  // 0x14 (offset-truth)
 
     unsigned int q020;  // X10 supply (member_lookup)
+    unsigned int __pad_0;  // 0x0 [X30:default]
 };
 } // namespace gamemd

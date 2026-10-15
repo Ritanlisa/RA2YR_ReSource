@@ -42,5 +42,6 @@ struct Movie {
     unsigned int u32_64;  // X10 supply (member_lookup)
     unsigned int u32_68;  // X10 supply (member_lookup)
     unsigned int u32_6C;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

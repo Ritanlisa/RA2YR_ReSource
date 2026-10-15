@@ -35,5 +35,6 @@ struct DynamicVectorClass_uint {
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+    int __pad_01C;  // 0x1C [X30:type_map]
 };
 } // namespace gamemd

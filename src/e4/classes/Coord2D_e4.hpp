@@ -12,6 +12,7 @@ struct Coord2D {
     unsigned int * Add(unsigned int *aP1, unsigned int *aP2, void *a1 = 0);
     int *  Sub(int * a2, unsigned int * a3);  // 0x487f20
     int q004;  // 0x4
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

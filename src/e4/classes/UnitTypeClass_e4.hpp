@@ -47,7 +47,7 @@ struct UnitTypeClass {
     int LargeVisceroid;  // 0x21
     unsigned int CarriesCrate;  // 0x22
     unsigned int NonVehicle;  // 0x23
-    unsigned int StandingFrames;  // 0x24
+    void* StandingFrames;  // 0x24 [X30:type_map]
     int ChargerTurrets_0x12;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
     bool NoSpawnAlt;  // 0x30
@@ -467,7 +467,7 @@ struct UnitTypeClass {
     char ZFudgeBridge;  // 0xDA4
     unsigned int PaletteFile_0x20;  // 0xDA8
     unsigned int Palette;  // 0xDAC
-    void* ArrayIndex;  // 0xDF8
+    AircraftTypeClass* ArrayIndex;  // 0xDF8 [X30:type_map]
     bool Passive;  // 0xE0C
     bool CrateGoodie_2;  // 0xE0D
     bool Harvester_2;  // 0xE0E
@@ -485,26 +485,26 @@ struct UnitTypeClass {
     bool CarriesCrate_d;  // 0xE1A
     bool NonVehicle_d;  // 0xE1B
     int StandingFrames_d;  // 0xE1C
-    int DeathFrames;  // 0xE20
-    int DeathFrameRate;  // 0xE24
-    int StartStandFrame;  // 0xE28
-    int StartWalkFrame;  // 0xE2C
+    void* DeathFrames;  // 0xE20 [X30:type_map]
+    void* DeathFrameRate;  // 0xE24 [X30:type_map]
+    void* StartStandFrame;  // 0xE28 [X30:type_map]
+    void* StartWalkFrame;  // 0xE2C [X30:type_map]
     int StartFiringFrame;  // 0xE30
-    int StartDeathFrame;  // 0xE34
-    int MaxDeathCounter_d;  // 0xE38
+    void* StartDeathFrame;  // 0xE34 [X30:type_map]
+    void* MaxDeathCounter_d;  // 0xE38 [X30:type_map]
     int Facings_d;  // 0xE3C
     int FiringSyncFrame0_d;  // 0xE40
-    int FiringSyncFrame1_d;  // 0xE44
+    AircraftTypeClass* FiringSyncFrame1_d;  // 0xE44 [X30:type_map]
     int BurstDelay0_d;  // 0xE48
-    int BurstDelay1_d;  // 0xE4C
-    int BurstDelay2_d;  // 0xE50
-    int BurstDelay3_d;  // 0xE54
+    AircraftTypeClass* BurstDelay1_d;  // 0xE4C [X30:type_map]
+    AircraftTypeClass* BurstDelay2_d;  // 0xE50 [X30:type_map]
+    AircraftTypeClass* BurstDelay3_d;  // 0xE54 [X30:type_map]
     SHPStruct* AltImage;  // 0xE58
     char WalkFrames;  // 0xE5C
     char FiringFrames_d;  // 0xE5D
     char AltImageFile;  // 0xE5E
 // --- flat members (END) ---
-    char unknown_E10[1];  // 0xE10 (G57W14E1 til supply)
+    bool unknown_E10;  // 0xE10 (G57W14E1 til supply) [X30:type_map]
     char __tail_E5E[26];  // 0xE5E (G57W14E1 til supply)
     char CreateUnit(short *a2, void *ppv);
     int ConstructUnit(void *ppv);
@@ -532,6 +532,56 @@ struct UnitTypeClass {
     unsigned int u32_D3B;  // X10 supply (member_lookup)
     unsigned int u32_E04;  // X10 supply (member_lookup)
     unsigned int u32_E08;  // X10 supply (member_lookup)
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    unsigned char __pad_22C;  // 0x22C [X30:canon]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    unsigned char __pad_296;  // 0x296 [X30:canon]
+    unsigned char __pad_2DD;  // 0x2DD [X30:canon]
+    unsigned char __pad_2E5;  // 0x2E5 [X30:canon]
+    unsigned char __pad_2FC;  // 0x2FC [X30:canon]
+    unsigned char __pad_304;  // 0x304 [X30:canon]
+    unsigned char __pad_30C;  // 0x30C [X30:canon]
+    unsigned char __pad_320;  // 0x320 [X30:canon]
+    unsigned char __pad_325;  // 0x325 [X30:canon]
+    unsigned char __pad_33C;  // 0x33C [X30:canon]
+    unsigned char __pad_341;  // 0x341 [X30:canon]
+    unsigned char __pad_364;  // 0x364 [X30:canon]
+    unsigned char __pad_36C;  // 0x36C [X30:canon]
+    unsigned char __pad_374;  // 0x374 [X30:canon]
+    unsigned char __pad_37C;  // 0x37C [X30:canon]
+    unsigned char __pad_384;  // 0x384 [X30:canon]
+    unsigned char __pad_38C;  // 0x38C [X30:canon]
+    unsigned char __pad_39C;  // 0x39C [X30:canon]
+    unsigned char __pad_3A4;  // 0x3A4 [X30:canon]
+    unsigned char __pad_3AC;  // 0x3AC [X30:canon]
+    unsigned char __pad_3B4;  // 0x3B4 [X30:canon]
+    unsigned char __pad_3C4;  // 0x3C4 [X30:canon]
+    unsigned char __pad_3CC;  // 0x3CC [X30:canon]
+    unsigned char __pad_58A;  // 0x58A [X30:canon]
+    unsigned char __pad_66C;  // 0x66C [X30:canon]
+    unsigned char __pad_6DA;  // 0x6DA [X30:canon]
+    unsigned char __pad_6F9;  // 0x6F9 [X30:canon]
+    unsigned char __pad_708;  // 0x708 [X30:canon]
+    unsigned char __pad_73C;  // 0x73C [X30:canon]
+    unsigned char __pad_756;  // 0x756 [X30:canon]
+    unsigned char __pad_764;  // 0x764 [X30:canon]
+    unsigned char __pad_770;  // 0x770 [X30:canon]
+    unsigned char __pad_77C;  // 0x77C [X30:canon]
+    unsigned char __pad_788;  // 0x788 [X30:canon]
+    unsigned char __pad_794;  // 0x794 [X30:canon]
+    unsigned char __pad_7D4;  // 0x7D4 [X30:canon]
+    unsigned char __pad_818;  // 0x818 [X30:canon]
+    unsigned char __pad_89C;  // 0x89C [X30:canon]
+    unsigned char __pad_A98;  // 0xA98 [X30:canon]
+    unsigned char __pad_CBC;  // 0xCBC [X30:canon]
+    unsigned char __pad_D8C;  // 0xD8C [X30:canon]
+    unsigned char __pad_DB0;  // 0xDB0 [X30:canon]
+    unsigned char __pad_E62;  // 0xE62 [X30:canon]
 };
 
 } // namespace gamemd

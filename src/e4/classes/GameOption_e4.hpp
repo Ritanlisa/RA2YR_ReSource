@@ -43,6 +43,7 @@ struct GameOption {
     int SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1);
     void * SetDigest(char *aP1, void *a2 = 0);
     unsigned char u32_949;  // 0x949 (offset-truth)
+    unsigned int field_18C;  // [X30:default]
 };
 
 } // namespace gamemd

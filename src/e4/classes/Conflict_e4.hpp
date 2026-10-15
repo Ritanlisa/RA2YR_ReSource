@@ -9,10 +9,12 @@ struct Conflict {
 // --- flat members (BEGIN) ---
     Territory* Attacker;  // 0x4
     Territory* Defender;  // 0x8
-    int Outcome;  // 0xC
+    void* Outcome;  // 0xC [X30:type_map]
     unsigned int referenceCount;  // 0x10
 // --- flat members (END) ---
     int GetOwnerHouse();
+    int __pad_000;  // 0x0 [X30:type_map]
+    unsigned char __pad_014;  // 0x14 [X30:canon]
 };
 
 } // namespace gamemd

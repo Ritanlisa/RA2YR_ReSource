@@ -10,6 +10,7 @@ struct SafeDelete {
 
 // --- flat members (END) ---
     int Ptr(void *a1 = 0);
+    AbstractClass* __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

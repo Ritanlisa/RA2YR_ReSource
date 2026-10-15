@@ -13,5 +13,7 @@ struct E4Recv_541170 {
     unsigned int M160;  // 0xA0
 // --- flat members (END) ---
     AbstractClass * *  sub_541170(int a2, int a3, int a4, int a5);  // 0x541170
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int location;  // [X30:default]
 };
 } // namespace gamemd

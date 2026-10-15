@@ -15,5 +15,8 @@ struct E4Recv_5D25D0 {
     unsigned int M52;  // 0x52
 // --- flat members (END) ---
     int  sub_5D25D0(char * Source, int a3);  // 0x5D25D0
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int attachedBomb;  // [X30:default]
+    unsigned int attachedTag;  // [X30:default]
 };
 } // namespace gamemd

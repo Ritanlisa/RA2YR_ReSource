@@ -18,5 +18,6 @@ struct E4Recv_728A00 {
     unsigned int M52;  // 0x52
 // --- flat members (END) ---
     int sub_728A00();  // 0x728A00
+    unsigned int CurrentState;  // [X30:default]
 };
 } // namespace gamemd

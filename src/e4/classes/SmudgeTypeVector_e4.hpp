@@ -12,6 +12,8 @@ struct SmudgeTypeVector {
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 
 } // namespace gamemd

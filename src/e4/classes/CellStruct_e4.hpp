@@ -26,6 +26,14 @@ BOOL Equals(unsigned short * a2, void *a2_2);  // 0x50E470
     unsigned int q01A;  // 0x1A
     unsigned int q019;  // 0x19
     unsigned char q018;  // 0x18
+    void* CellStruct_1;  // 0x1 [X30:member_lookup]
+    unsigned int DisplayDuration;  // [X30:default]
+    unsigned int MessageTimer;  // [X30:default]
+    unsigned int ScrollOffset;  // [X30:default]
+    unsigned int TextColorIndex;  // [X30:default]
+    unsigned int field_0;  // [X30:default]
+    void* field_4;  // 0x4 [X30:member_lookup]
+    short u32_2;  // 0x2 [X30:member_lookup]
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

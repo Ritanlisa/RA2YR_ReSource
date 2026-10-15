@@ -27,5 +27,6 @@ struct VectorClass_ptr_AlphaShapeClass {
     int  FindItemIndex(unsigned int * a2);  // 0x421A90
     VectorClass_flat *  QueryInterface(char a2);  // 0x421AC0
     unsigned int *  loc_421B10(unsigned int * Block, char a2);  // 0x421B10
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

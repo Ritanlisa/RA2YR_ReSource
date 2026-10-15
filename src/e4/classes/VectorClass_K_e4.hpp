@@ -26,5 +26,6 @@ struct VectorClass_K {
     VectorClass_flat *  QueryInterface(char a2);  // 0x6C6480
     DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x6C64D0
     char  AddRef(int a2);  // 0x6C61D0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

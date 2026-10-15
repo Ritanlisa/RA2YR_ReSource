@@ -33,7 +33,7 @@ struct InfantryTypeClass {
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    unsigned int BarrelVoxel;  // 0x24
+    void* BarrelVoxel;  // 0x24 [X30:type_map]
     unsigned int IsAllocated;  // 0x25
     int TargetEffectivenessCoefficient;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
@@ -499,8 +499,8 @@ struct InfantryTypeClass {
     unsigned int PaletteFile_0x20;  // 0xDA8
     unsigned int Palette;  // 0xDAC
     void* ArrayIndex;  // 0xDF8
-    char Pip_d[4];  // 0xDFC
-    char OccupyPip_d[4];  // 0xE00
+    void* Pip_d;  // 0xDFC [X30:type_map]
+    void* OccupyPip_d;  // 0xE00 [X30:type_map]
     char OccupyWeapon_d[28];  // 0xE04
     char EliteOccupyWeapon[28];  // 0xE20
     CampaignClass* DeadBodies_Items;  // 0xE54
@@ -516,7 +516,7 @@ struct InfantryTypeClass {
     unsigned int u32_EA4;  // 0xEA4
     unsigned int u32_E80;  // 0xE80
     unsigned int u32_E7C;  // 0xE7C
-    unsigned int u32_E6C;  // 0xE6C
+    void* u32_E6C;  // 0xE6C [X30:type_map]
     unsigned int u32_E38;  // 0xE38
     unsigned int u32_E34;  // 0xE34
     unsigned int u32_E2C;  // 0xE2C
@@ -530,10 +530,10 @@ struct InfantryTypeClass {
     bool Cyborg_2;  // 0xEAC
     bool NotHuman_2;  // 0xEAD
     bool Ivan_2;  // 0xEAE
-    int DetectionDistance;  // 0xEB0
+    void* DetectionDistance;  // 0xEB0 [X30:type_map]
     bool Occupier_d;  // 0xEB4
     bool Assaulter_2;  // 0xEB5
-    int HarvestRate;  // 0xEB8
+    void* HarvestRate;  // 0xEB8 [X30:type_map]
     bool Fearless_d;  // 0xEBC
     bool Infiltrate_2;  // 0xEBE
     bool Fraidycat_2;  // 0xEBF
@@ -585,6 +585,66 @@ struct InfantryTypeClass {
     uint8_t u8_D;  // X10 supply (member_lookup)
     unsigned int u32_ECB;  // 0xECB
     unsigned int u32_ECA;  // 0xECA
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_0B8;  // 0xB8 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    unsigned char __pad_22C;  // 0x22C [X30:canon]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    unsigned char __pad_296;  // 0x296 [X30:canon]
+    unsigned char __pad_2DD;  // 0x2DD [X30:canon]
+    unsigned char __pad_2E5;  // 0x2E5 [X30:canon]
+    unsigned char __pad_357;  // 0x357 [X30:canon]
+    unsigned char __pad_35C;  // 0x35C [X30:canon]
+    unsigned char __pad_35E;  // 0x35E [X30:canon]
+    unsigned char __pad_374;  // 0x374 [X30:canon]
+    unsigned char __pad_37C;  // 0x37C [X30:canon]
+    unsigned char __pad_384;  // 0x384 [X30:canon]
+    unsigned char __pad_38C;  // 0x38C [X30:canon]
+    int VHPScan;  // 0x394 [X30:canon]
+    unsigned char __pad_39C;  // 0x39C [X30:canon]
+    unsigned char __pad_3A4;  // 0x3A4 [X30:canon]
+    unsigned char __pad_3AC;  // 0x3AC [X30:canon]
+    unsigned char __pad_3B4;  // 0x3B4 [X30:canon]
+    unsigned char __pad_3C4;  // 0x3C4 [X30:canon]
+    unsigned char __pad_3CC;  // 0x3CC [X30:canon]
+    unsigned char __pad_58A;  // 0x58A [X30:canon]
+    unsigned char __pad_66C;  // 0x66C [X30:canon]
+    unsigned char __pad_6DA;  // 0x6DA [X30:canon]
+    unsigned char __pad_6F9;  // 0x6F9 [X30:canon]
+    unsigned char __pad_708;  // 0x708 [X30:canon]
+    unsigned char __pad_73C;  // 0x73C [X30:canon]
+    unsigned char __pad_756;  // 0x756 [X30:canon]
+    unsigned char __pad_764;  // 0x764 [X30:canon]
+    unsigned char __pad_770;  // 0x770 [X30:canon]
+    unsigned char __pad_77C;  // 0x77C [X30:canon]
+    unsigned char __pad_788;  // 0x788 [X30:canon]
+    unsigned char __pad_794;  // 0x794 [X30:canon]
+    unsigned char __pad_7D4;  // 0x7D4 [X30:canon]
+    unsigned char __pad_818;  // 0x818 [X30:canon]
+    unsigned char __pad_89C;  // 0x89C [X30:canon]
+    unsigned char __pad_A98;  // 0xA98 [X30:canon]
+    unsigned char __pad_CBC;  // 0xCBC [X30:canon]
+    unsigned char __pad_D8C;  // 0xD8C [X30:canon]
+    unsigned char __pad_DB0;  // 0xDB0 [X30:canon]
+    SequenceStruct* __pad_E3C;  // 0xE3C [X30:type_map]
+    unsigned char __pad_E5C;  // 0xE5C [X30:canon]
+    unsigned char __pad_E61;  // 0xE61 [X30:canon]
+    unsigned char __pad_E78;  // 0xE78 [X30:canon]
+    unsigned char __pad_E7D;  // 0xE7D [X30:canon]
+    unsigned char __pad_E94;  // 0xE94 [X30:canon]
+    unsigned char __pad_E99;  // 0xE99 [X30:canon]
+    unsigned char __pad_EAF;  // 0xEAF [X30:canon]
+    unsigned char __pad_EB6;  // 0xEB6 [X30:canon]
+    bool __pad_EBD;  // 0xEBD [X30:type_map]
+    bool __pad_EC1;  // 0xEC1 [X30:type_map]
+    bool __pad_EC9;  // 0xEC9 [X30:type_map]
+    unsigned int Crushable_d;  // [X30:default]
+    void* qE10;  // 0xE10 [X30:member_lookup]
+    int qE30;  // 0xE30 [X30:type_map]
 };
 
 } // namespace gamemd

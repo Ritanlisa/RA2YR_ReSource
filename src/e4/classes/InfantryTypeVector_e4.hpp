@@ -24,6 +24,8 @@ struct InfantryTypeVector {
     int q01C;  // 0x1C
     int q014;  // 0x14
     int q010;  // 0x10
+    int InfantryTypeVector_field_0x04;  // 0x4 [X30:type_map]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 
 } // namespace gamemd

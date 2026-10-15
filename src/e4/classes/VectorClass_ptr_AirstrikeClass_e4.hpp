@@ -28,5 +28,6 @@ struct VectorClass_ptr_AirstrikeClass {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x41DFC0
     int  FindItemIndex(unsigned int * a2);  // 0x41E070
     VectorClass_flat *  QueryInterface(char a2);  // 0x41E0A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -12,5 +12,6 @@ struct BuildingType {
     int FindOwnerHouse();  // 0x510ED0
     int IsSpecialType(void *a1 = 0);  // 0x510F60
     int Init(unsigned int a2, void *a2_1 = 0);  // 0x68C030
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

@@ -16,8 +16,8 @@ struct RandomMap {
     bool IsAllocated;  // 0xD
     bool IsInitialized;  // 0x12
     int Count;  // 0x16
-    void * ptr_30;  // 0x30
-    void * ptr_48;  // 0x48
+    IUnknown* ptr_30;  // 0x30 [X30:type_map]
+    IUnknown* ptr_48;  // 0x48 [X30:type_map]
     AbstractClass * ptr_74;  // 0x74
     CampaignClass * ptr_178;  // 0x178
 // --- flat members (END) ---
@@ -67,7 +67,7 @@ char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
     unsigned int *  Constructor_0(int a2, int a3, void *a3_2 = 0);  // 0x5ADA40
     unsigned int *  Constructor_1(int a2, int a3);  // 0x5ADAB0
     int GenerateTerrainForAllCells();  // 0x58CF90
-    unsigned int q04C;  // 0x4C (offset-truth)
+    IUnknown* q04C;  // 0x4C (offset-truth) [X30:type_map]
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned char __pad_008;  // X10 supply (csp_canon_members)
@@ -152,5 +152,9 @@ char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
     int u8_1B1;  // X10 supply (member_lookup)
     int u8_1E9;  // X10 supply (member_lookup)
     char u32_11B;  // 0x11B
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    ObjectClass* __pad_078;  // 0x78 [X30:type_map]
+    int RandomMap_field_0x10;  // 0x10 [X30:type_map]
+    int RandomMap_field_0x8;  // 0x8 [X30:type_map]
 };
 } // namespace gamemd

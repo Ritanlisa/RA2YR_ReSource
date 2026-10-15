@@ -10,11 +10,11 @@ struct ScenarioClass;  // fix_fwd_type_supply
 struct TacticalMap {
 // --- flat members (BEGIN) ---
     char TacticalMap_field_00[4];  // 0x0
-    char TacticalMap_field_04[4];  // 0x4
-    char TacticalMap_field_0C[4];  // 0xC
+    void* TacticalMap_field_04;  // 0x4 [X30:type_map]
+    int TacticalMap_field_0C;  // 0xC [X30:type_map]
     char TacticalMap_field_10[4];  // 0x10
     float m_TintFactor;  // 0x18
-    char TacticalMap_field_1C[4];  // 0x1C
+    int TacticalMap_field_1C;  // 0x1C [X30:type_map]
     char TacticalMap_field_20[4];  // 0x20
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
@@ -39,7 +39,7 @@ struct TacticalMap {
     unsigned int u32_10C;  // 0x10C (offset-truth)
     unsigned char u32_10E;  // 0x10E (offset-truth)
     unsigned char u32_11B;  // 0x11B (offset-truth)
-    unsigned int u32_24;  // 0x24 (offset-truth)
+    void* u32_24;  // 0x24 (offset-truth) [X30:type_map]
     unsigned int u32_2B0;  // 0x2B0 (offset-truth)
     unsigned int u32_2B4;  // 0x2B4 (offset-truth)
     unsigned int u32_2B8;  // 0x2B8 (offset-truth)
@@ -54,6 +54,9 @@ struct TacticalMap {
     unsigned int u32_D9C;  // X10 supply (member_lookup)
     unsigned int u32_DE4;  // X10 supply (member_lookup)
     unsigned int u32_E0;  // X10 supply (member_lookup)
+    void* __pad_008;  // 0x8 [X30:type_map]
+    void* __pad_014;  // 0x14 [X30:type_map]
+    unsigned int vfptr;  // [X30:default]
 };
 
 } // namespace gamemd

@@ -27,6 +27,8 @@ struct DiskLaserClass {
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_38;  // 0x38 (offset-truth)
     unsigned int u32_3C;  // 0x3C (offset-truth)
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_017;  // 0x17 [X30:canon]
 };
 
 } // namespace gamemd

@@ -18,6 +18,8 @@ struct FontRenderer {
     unsigned int u32_38;  // X10 supply (member_lookup)
     unsigned int u32_3C;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    unsigned int DrawTextA;  // [X30:default]
 };
 
 } // namespace gamemd

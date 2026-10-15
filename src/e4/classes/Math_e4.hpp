@@ -108,5 +108,6 @@ static double Sqrt(double a1);
     char vtable3[4];  // @0x425xxx (W16G3 raw-usage vocab)
     char q000[4];  // @0x425xxx (W16G3 raw-usage vocab)
     char q004[4];  // @0x425xxx (W16G3 raw-usage vocab)
+    char vtable1[4];  // 0x0 [X30:member_lookup]
 };
 } // namespace gamemd

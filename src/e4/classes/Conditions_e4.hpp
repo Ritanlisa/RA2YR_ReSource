@@ -10,6 +10,7 @@ struct Conditions {
 
 // --- flat members (END) ---
     bool CheckResult(int a2);
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

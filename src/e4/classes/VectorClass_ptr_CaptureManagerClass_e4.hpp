@@ -28,5 +28,6 @@ struct VectorClass_ptr_CaptureManagerClass {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x472F20
     int  FindItemIndex(unsigned int * a2);  // 0x472FD0
     VectorClass_flat *  QueryInterface(char a2);  // 0x4730A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

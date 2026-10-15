@@ -19,6 +19,8 @@ struct NeuronClass {
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_017;  // 0x17 [X30:canon]
 };
 
 } // namespace gamemd

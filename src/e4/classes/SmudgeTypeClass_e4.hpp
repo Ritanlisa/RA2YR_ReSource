@@ -91,13 +91,25 @@ struct SmudgeTypeClass {
     int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     void vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6);
     unsigned int q_22F;  // +0x22F flat supply (three-ban reform)
-    char Crater[1];  // 0x2A0 (ml)
+    bool Crater;  // 0x2A0 (ml) [X30:type_map]
     unsigned char q0E01;  // 0xE01 (offset-truth)
     unsigned char q0E02;  // 0xE02 (offset-truth)
     unsigned char q0E03;  // 0xE03 (offset-truth)
     unsigned char q0E05;  // 0xE05 (offset-truth)
     unsigned char q10C2;  // 0x10C2 (offset-truth)
     unsigned char q10C3;  // 0x10C3 (offset-truth)
+    unsigned char __pad_025;  // 0x25 [X30:canon]
+    int __pad_034;  // 0x34 [X30:type_map]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_095;  // 0x95 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    int __pad_22C;  // 0x22C [X30:type_map]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    bool __pad_2A1;  // 0x2A1 [X30:type_map]
+    unsigned int Theater_d;  // [X30:default]
 };
 
 } // namespace gamemd

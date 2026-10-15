@@ -10,7 +10,7 @@ namespace gamemd {
 struct SessionClass;  // fix_fwd_type_supply
 struct Object {
 // --- flat members (BEGIN) ---
-    void * ptr_28;  // 0x28
+    ProgressTimer* ptr_28;  // 0x28 [X30:type_map]
 // --- flat members (END) ---
     char* attachedTag;  // g57w8: +N 指针算术载体  // 0x0 (no offset truth)
     char* nextObject;  // g57w8: 同上  // 0x0 (no offset truth)
@@ -47,5 +47,10 @@ struct Object {
     int q13C;  // X10 supply (member_lookup)
     unsigned int u32_F4;  // X10 supply (member_lookup)
     unsigned int u32_F8;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    unsigned char __pad_02C;  // 0x2C [X30:canon]
+    int Object_field_0x8;  // 0x8 [X30:member_lookup]
+    int Object_field_0xAC;  // 0xAC [X30:member_lookup]
+    char __pad_C[36];  // 0xC [X30:member_lookup]
 };
 } // namespace gamemd

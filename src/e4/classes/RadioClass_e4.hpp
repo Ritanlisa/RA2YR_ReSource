@@ -24,7 +24,7 @@ struct RadioClass {
     int referenceCount;  // 0x1C
     unsigned char NeedsSaveOrLink;  // 0x20
     unsigned int objectTypeFlags;  // 0x24
-    unsigned int owningHouseIndex;  // 0x28
+    void* owningHouseIndex;  // 0x28 [X30:type_map]
     char fallRate[4];  // 0x2C
     ObjectClass* nextObject;  // 0x30
     unsigned char needsSave;  // 0x32
@@ -36,7 +36,7 @@ struct RadioClass {
     char customSound[4];  // 0x64
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
-    char health[4];  // 0x6C
+    int health;  // 0x6C [X30:type_map]
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
@@ -70,8 +70,8 @@ struct RadioClass {
     char missionStartTime[4];  // 0xC0
     unsigned int missionData;  // 0xC4
     char missionTimer[12];  // 0xC8
-    char lastCommands[12];  // 0xD4
-    unsigned int radioLinks;  // 0xE0
+    int lastCommands;  // 0xD4 [X30:type_map]
+    void* radioLinks;  // 0xE0 [X30:type_map]
 // --- flat members (END) ---
     int ExecuteAction(int aP1, char aP2);  // G57w10-S raw 0x0065AAC0 IUnknown 占位清除
     int FindLinkIndex(int a2);
@@ -85,6 +85,8 @@ struct RadioClass {
      int Constructor(RadioClass * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);
 
     unsigned int u32_E8;  // X10 supply (member_lookup)
+    int __pad_0E4;  // 0xE4 [X30:type_map]
+    unsigned int Tactical_E4;  // [X30:default]
 };
 
 } // namespace gamemd

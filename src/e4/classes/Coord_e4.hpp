@@ -53,7 +53,7 @@ struct Coord {
     unsigned int q_2C0;  // +0x2C0 flat supply (CSP-fed)
     unsigned int u32_1488;  // 0x1488 (offset-truth)
     unsigned int u32_1490;  // 0x1490 (offset-truth)
-    unsigned int u32_1498;  // 0x1498 (offset-truth)
+    void* u32_1498;  // 0x1498 (offset-truth) [X30:type_map]
     unsigned int u32_14A4;  // 0x14A4 (offset-truth)
     unsigned int u32_14A8;  // 0x14A8 (offset-truth)
 
@@ -65,5 +65,10 @@ struct Coord {
     unsigned int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_B0;  // X10 supply (member_lookup)
     unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned char __pad_048;  // 0x48 [X30:canon]
+    AbstractClass* __pad_C;  // 0xC [X30:type_map]
+    Coord* q000;  // 0x0 [X30:type_map]
+    int q004;  // 0x4 [X30:type_map]
+    int q008;  // 0x8 [X30:type_map]
 };
 } // namespace gamemd

@@ -25,21 +25,21 @@ struct TiberiumClass {
     char nextArrayIndex[4];  // 0x18
     char referenceCount[4];  // 0x1C
     char NeedsSaveOrLink[4];  // 0x20
-    char objectTypeFlags[4];  // 0x24
+    void* objectTypeFlags;  // 0x24 [X30:type_map]
     unsigned int owningHouseIndex;  // 0x28
     OverlayTypeClass* fallRate;  // 0x2C
     int nextObject_d;  // 0x30
     char Power[4];  // 0x32
     char attachedTag[4];  // 0x34
     char Color[4];  // 0x36
-    void* attachedBomb;  // 0x38
+    MapSeed* attachedBomb;  // 0x38 [X30:type_map]
     char ambientSoundController[20];  // 0x3C
     unsigned int UINameLabel;  // 0x3D
     char TiberiumClass_field_F4[4];  // 0x40
     char TiberiumClass_field_F8[4];  // 0x44
     unsigned char alignmentPadding69_3;  // 0x45
     char TiberiumClass_field_FC[4];  // 0x48
-    char SpreadTimer[4];  // 0x4C
+    TimerStruct* SpreadTimer;  // 0x4C [X30:type_map]
     char customSound_controller[20];  // 0x50
     unsigned char alignmentPadding75_3;  // 0x51
     char NumImages[4];  // 0x52
@@ -77,34 +77,34 @@ struct TiberiumClass {
     unsigned char alignmentPadding91;  // 0x91
     unsigned int lastLayer;  // 0x94
     unsigned int tail_95;  // 0x95
-    void* isInLogic;  // 0x98
+    BuildingClass* isInLogic;  // 0x98 [X30:type_map]
     bool isVisible;  // 0x99
     unsigned short alignmentPadding99;  // 0x9A
     LineTrail* Growth_d;  // 0xA8
     char ArrayIndex[4];  // 0xAC
-    char Spread_d[4];  // 0xB0
+    void* Spread_d;  // 0xB0 [X30:type_map]
     double SpreadPercentage;  // 0xB4
     unsigned int GrowthPercentage;  // 0xB8
-    char Power_d[4];  // 0xBC
+    int Power_d;  // 0xBC [X30:type_map]
     double GrowthPercentage_d;  // 0xC0
-    char Value[4];  // 0xC8
-    char Power_2[4];  // 0xCC
+    int Value;  // 0xC8 [X30:type_map]
+    int Power_2;  // 0xCC [X30:type_map]
     char Color_d[4];  // 0xD0
-    unsigned int Debris;  // 0xD4
+    void* Debris;  // 0xD4 [X30:type_map]
     OverlayTypeClass* Image;  // 0xD8
     char NumFrames[4];  // 0xDC
-    char Image_d[4];  // 0xE0
-    char TiberiumClass_field_EC_d[4];  // 0xEC
-    char TiberiumClass_field_F0[4];  // 0xF0
-    char TiberiumClass_field_F4_d[4];  // 0xF4
-    char TiberiumClass_field_F8_d[4];  // 0xF8
-    char TiberiumClass_field_FC_d[4];  // 0xFC
+    int Image_d;  // 0xE0 [X30:type_map]
+    int TiberiumClass_field_EC_d;  // 0xEC [X30:type_map]
+    int TiberiumClass_field_F0;  // 0xF0 [X30:type_map]
+    int TiberiumClass_field_F4_d;  // 0xF4 [X30:type_map]
+    int TiberiumClass_field_F8_d;  // 0xF8 [X30:type_map]
+    int TiberiumClass_field_FC_d;  // 0xFC [X30:type_map]
     char SpreadTimer_d[12];  // 0x100
     char GrowthTimer[4];  // 0x104
-    char TiberiumClass_field_10C_d[4];  // 0x10C
-    char TiberiumClass_field_110_d[4];  // 0x110
-    char TiberiumClass_field_114_d[4];  // 0x114
-    char TiberiumClass_field_118[4];  // 0x118
+    int TiberiumClass_field_10C_d;  // 0x10C [X30:type_map]
+    int TiberiumClass_field_110_d;  // 0x110 [X30:type_map]
+    void* TiberiumClass_field_114_d;  // 0x114 [X30:type_map]
+    void* TiberiumClass_field_118;  // 0x118 [X30:type_map]
     char GrowthTimer_d[12];  // 0x11C
 // --- flat members (END) ---
     AbstractClass * * SaveLoad_Prefix(int a1, int a2);
@@ -122,7 +122,11 @@ struct TiberiumClass {
     unsigned int u32_A0;  // X10 supply (member_lookup)
     unsigned int u32_E8;  // 0xE8
     unsigned int q0E8;  // 0xE8
-    unsigned int u32_C4;  // 0xC4
+    void* u32_C4;  // 0xC4 [X30:type_map]
+    unsigned char __pad_07A;  // 0x7A [X30:canon]
+    unsigned char __pad_08E;  // 0x8E [X30:canon]
+    int __pad_0E4;  // 0xE4 [X30:type_map]
+    unsigned int Tactical_E4;  // [X30:default]
 };
 
 } // namespace gamemd

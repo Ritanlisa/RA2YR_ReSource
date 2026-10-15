@@ -46,5 +46,8 @@ int RemoveTeam(int (***aP1)(unsigned int, int));  // 0x005d1d80 g57w12-r raw-syn
     unsigned int q018;  // 0x18 (offset-truth)
     void * field_178;  // 0x178
     void * field_174;  // 0x174
+    unsigned int field_15C;  // [X30:default]
+    unsigned int field_160;  // [X30:default]
+    unsigned int field_18;  // [X30:default]
 };
 } // namespace gamemd

@@ -21,6 +21,10 @@ struct MapFile {
     int q004;  // X10 supply (member_lookup)
     int q008;  // X10 supply (member_lookup)
     int q00C;  // X10 supply (member_lookup)
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    unsigned char __pad_016;  // 0x16 [X30:canon]
+    int MapFile_field_0x04;  // 0x4 [X30:member_lookup]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

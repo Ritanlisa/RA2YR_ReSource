@@ -24,6 +24,10 @@ struct GameConfig {
     int ComputeHash();
 
     CCINIClass * q038;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    int __pad_008;  // 0x8 [X30:type_map]
+    unsigned char __pad_045;  // 0x45 [X30:canon]
+    ObjectClass* ObjectClass_2C;  // 0x2C [X30:type_map]
 };
 
 } // namespace gamemd

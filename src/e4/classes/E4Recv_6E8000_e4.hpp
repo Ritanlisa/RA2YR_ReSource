@@ -20,5 +20,10 @@ struct E4Recv_6E8000 {
 
     unsigned int q018;  // X10 supply (member_lookup)
     unsigned int q020;  // X10 supply (member_lookup)
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int customSound;  // [X30:default]
+    unsigned int customSound_controller;  // [X30:default]
+    unsigned int location;  // [X30:default]
+    unsigned int occupant;  // [X30:default]
 };
 } // namespace gamemd

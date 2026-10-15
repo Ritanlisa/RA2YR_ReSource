@@ -17,7 +17,7 @@ struct ConvertClass {
     ConvertClass * * sub_4880F0(int a2);
     char __pad_6[362];  // 0x6 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int u32_17C;  // 0x17C (offset-truth)
+    CampaignClass* u32_17C;  // 0x17C (offset-truth) [X30:type_map]
 
     unsigned char ConvertClass_field_0x2[4];  /* char[4] */  // X10 supply (member_lookup)
     unsigned int q008;  // X10 supply (member_lookup)
@@ -120,6 +120,8 @@ struct ConvertClass {
     unsigned int u32_184;  // 0x184
     unsigned int u32_180;  // 0x180
     char field_2[4];  // 0x2  /* char[4] */
+    int __pad_0;  // 0x0 [X30:type_map]
+    int __pad_174;  // 0x174 [X30:type_map]
 };
 
 } // namespace gamemd

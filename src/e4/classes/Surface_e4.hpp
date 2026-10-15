@@ -99,6 +99,17 @@ struct Surface {
     unsigned char u8_3E;  // X10 supply (member_lookup)
     char u8_74C;  // X10 supply (member_lookup)
     char u8_EA;  // X10 supply (member_lookup)
+    unsigned int LockCount;  // [X30:default]
+    unsigned int WaveClass_field_168;  // 0x168 [X30:default]
+    unsigned char WaveClass_field_178;  // 0x178 [X30:member_lookup]
+    unsigned int WaveClass_field_17C;  // 0x17C [X30:default]
+    unsigned int WaveClass_field_1A0_d;  // [X30:default]
+    unsigned int WaveClass_field_1A4_d;  // [X30:default]
+    unsigned int WaveClass_field_1A8_d;  // [X30:default]
+    unsigned int WaveClass_field_1CC_d;  // [X30:default]
+    void* __pad_0;  // 0x0 [X30:type_map]
+    unsigned int vtable27;  // 0x68 [X30:default]
+    unsigned char vtable28;  // 0x6C [X30:member_lookup]
 };
 
 } // namespace gamemd

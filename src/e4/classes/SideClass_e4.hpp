@@ -30,7 +30,7 @@ struct SideClass {
     char name;  // 0x64
     unsigned int tail_95;  // 0x95
     void* houseTypes_d;  // 0x98
-    char houseTypesCount_d[4];  // 0x9C
+    void* houseTypesCount_d;  // 0x9C [X30:type_map]
 // --- flat members (END) ---
     int FindByName(void *a1);
     int GetCountry(int * a2);
@@ -46,6 +46,7 @@ struct SideClass {
     unsigned int u32_A4;  // 0xA4 (offset-truth)
     unsigned char u32_A5;  // 0xA5 (offset-truth)
     unsigned int u32_A8;  // 0xA8 (offset-truth)
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
 };
 
 } // namespace gamemd

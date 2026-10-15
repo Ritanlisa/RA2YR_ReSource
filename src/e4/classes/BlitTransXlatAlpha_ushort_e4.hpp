@@ -32,7 +32,9 @@ struct BlitTransXlatAlpha_ushort {
     int  CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x493C90
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_4;  // 0x4 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
+    AbstractClass* m_8;  // 0x8 (offset-truth) [X30:type_map]
     unsigned int *q000;  // 0x0 (offset-truth)
+    unsigned char __pad_004;  // 0x4 [X30:canon]
+    unsigned int Data;  // [X30:default]
 };
 } // namespace gamemd

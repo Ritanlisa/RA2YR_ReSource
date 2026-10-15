@@ -21,5 +21,6 @@ struct VectorClass_ptr_FactoryClass {
     int  GetSize(unsigned int * a2);  // 0x4EC1C0
     unsigned int  GetCapacity(int a2);  // 0x4EC200
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0110
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

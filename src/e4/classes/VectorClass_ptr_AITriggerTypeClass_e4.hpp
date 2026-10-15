@@ -33,5 +33,6 @@ struct VectorClass_ptr_AITriggerTypeClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4E9B50
     char  SetCapacity_1(int a2, unsigned int * a3);  // 0x4EA5A0
     int  FindItemIndex_1(unsigned int * a2);  // 0x4EA8B0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

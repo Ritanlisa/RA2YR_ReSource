@@ -28,5 +28,6 @@ struct VectorClass_ptr_FoggedObjectClass {
     int  GetSize(unsigned int * a2);  // 0x45AC30
     unsigned int  GetCapacity(int a2);  // 0x45AC70
     VectorClass_flat *  QueryInterface(char a2);  // 0x45AC90
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -21,5 +21,6 @@ struct VectorClass_cptr_CommandClass {
     unsigned int m_8;  // 0x8 vocab alias (Capacity)
     unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
     char __pad_0[4];  // 0x0 vocab alias (vfptr carrier)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -10,6 +10,7 @@ struct CCToolTip {
     void* vtable1;  // 0x0
 // --- flat members (END) ---
     CCToolTip * QueryInterface(unsigned int * Block, char a2);
+    unsigned char __pad_004;  // 0x4 [X30:canon]
 };
 
 } // namespace gamemd

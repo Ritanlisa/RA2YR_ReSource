@@ -45,12 +45,12 @@ struct BulletClass {
     unsigned int Bright;  // 0xE0
     unsigned int CourseLock;  // 0x105
     unsigned int InheritedColor;  // 0x114
-    unsigned int AnimFrame;  // 0x124
+    ParticleSystemClass* AnimFrame;  // 0x124 [X30:type_map]
     unsigned int AnimRateCounter;  // 0x125
-    unsigned int WeaponType;  // 0x128
+    ParticleSystemClass* WeaponType;  // 0x128 [X30:type_map]
     unsigned int SourceCoords;  // 0x12C
-    unsigned int TargetCoords;  // 0x138
-    unsigned int DamageMultiplier;  // 0x148
+    ParticleSystemClass* TargetCoords;  // 0x138 [X30:type_map]
+    ParticleSystemClass* DamageMultiplier;  // 0x148 [X30:type_map]
     CellStruct* NextAnim;  // 0x14C
     unsigned int SpawnNextAnim;  // 0x150
     BulletTypeClass* Type;  // 0x172
@@ -75,7 +75,42 @@ struct BulletClass {
     char __pad_B4[88];  // 0xB4 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
-    unsigned int u32_AC;  // 0xAC
+    void* u32_AC;  // 0xAC [X30:type_map]
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_017;  // 0x17 [X30:canon]
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_068;  // 0x68 [X30:canon]
+    unsigned char __pad_079;  // 0x79 [X30:canon]
+    unsigned char __pad_080;  // 0x80 [X30:canon]
+    unsigned char __pad_089;  // 0x89 [X30:canon]
+    unsigned char __pad_09E;  // 0x9E [X30:canon]
+    unsigned char __pad_0BC;  // 0xBC [X30:canon]
+    unsigned char __pad_0E4;  // 0xE4 [X30:canon]
+    unsigned char __pad_109;  // 0x109 [X30:canon]
+    ParticleSystemClass* __pad_118;  // 0x118 [X30:type_map]
+    ParticleSystemClass* __pad_130;  // 0x130 [X30:type_map]
+    ParticleSystemClass* __pad_13C;  // 0x13C [X30:type_map]
+    ParticleSystemClass* __pad_154;  // 0x154 [X30:type_map]
+    unsigned char __pad_17A;  // 0x17A [X30:canon]
+    unsigned char __pad_26C;  // 0x26C [X30:canon]
+    unsigned char __pad_28C;  // 0x28C [X30:canon]
+    unsigned char __pad_344;  // 0x344 [X30:canon]
+    unsigned char __pad_45C;  // 0x45C [X30:canon]
+    unsigned int AbstractClass_10C;  // [X30:default]
+    int BulletClass_field_0x4;  // 0x4 [X30:type_map]
+    unsigned int ParticleSystemClass_110;  // [X30:default]
+    char __pad_C[12];  // 0xC [X30:member_lookup]
+    ParticleSystemClass* q100;  // 0x100 [X30:type_map]
+    unsigned int q104;  // 0x104 [X30:member_lookup]
+    ParticleSystemClass* q108;  // 0x108 [X30:type_map]
+    int q12D;  // 0x12D [X30:type_map]
+    int q134;  // 0x134 [X30:type_map]
+    int q140;  // 0x140 [X30:type_map]
+    ParticleSystemClass* q144;  // 0x144 [X30:type_map]
+    int q158;  // 0x158 [X30:type_map]
+    unsigned int q_120;  // [X30:default]
+    unsigned int q_B0;  // [X30:default]
+    void* u16_14E;  // 0x14E [X30:type_map]
 };
 
 } // namespace gamemd

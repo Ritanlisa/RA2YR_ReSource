@@ -17,6 +17,7 @@ struct MultiplayerGameMode {
      void * Construct(const wchar_t **a2, const wchar_t **a3, const char **a4, const char **a5, char a6, int a7, void *a1 = 0, void *a8 = 0, void *a9 = 0);
      int Find(void *a1 = 0, void *a2 = 0);
      void Dtor(void *a1 = 0);
+    unsigned char __pad_004;  // 0x4 [X30:canon]
 };
 
 } // namespace gamemd

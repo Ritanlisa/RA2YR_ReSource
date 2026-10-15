@@ -10,6 +10,8 @@ struct IStream {
     void* IStream_field_00;  // 0x4
 // --- flat members (END) ---
     int Read(void * pstm, ULONG cb, void *a3 = 0);
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 
 

@@ -10,5 +10,7 @@ struct E4Recv_542F30 {
     unsigned int M68;  // 0x44
 // --- flat members (END) ---
     int sub_542F30();  // 0x542F30
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int owningHouseIndex;  // [X30:default]
 };
 } // namespace gamemd

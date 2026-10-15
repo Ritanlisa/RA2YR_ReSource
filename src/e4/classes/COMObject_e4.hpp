@@ -30,6 +30,7 @@ struct COMObject {
     int TrackCurrent(int);
     void * ScalarDtor(int);
     int * SwapReference(int a2);  // 0x5233a0
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

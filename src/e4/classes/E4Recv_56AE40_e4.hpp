@@ -11,5 +11,6 @@ struct E4Recv_56AE40 {
     unsigned int M320;  // 0x140
 // --- flat members (END) ---
     int sub_56AE40(int v9);  // 0x56AE40
+    unsigned int customSound_controller;  // [X30:default]
 };
 } // namespace gamemd

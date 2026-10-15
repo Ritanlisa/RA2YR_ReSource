@@ -21,6 +21,7 @@ struct Random {
 
     int q008;  // X10 supply (member_lookup)
     int q00C;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
     int AdvanceRandomBytes();  // G57w19k2 C2661 supply
 #endif  // GAMEMD_G2_Random_DEF

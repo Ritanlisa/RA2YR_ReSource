@@ -11,6 +11,7 @@ struct BuildingLoadQueue {
 // --- flat members (END) ---
     void * Find(void *a1 = 0, void *a2 = 0);
     void * GetNext(void *a1 = 0);
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

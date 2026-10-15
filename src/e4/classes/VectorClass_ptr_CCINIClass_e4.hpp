@@ -21,5 +21,6 @@ struct VectorClass_ptr_CCINIClass {
     int  GetSize(unsigned int * a2);  // 0x538640
     unsigned int  Get(int a2, void *a1 = 0);  // 0x538680
     VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x538A90
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

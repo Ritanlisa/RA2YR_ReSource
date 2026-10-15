@@ -21,5 +21,6 @@ struct VectorClass_ptr_AbstractTypeClass {
     int  GetSize(unsigned int * a2);  // 0x4EF3A0
     unsigned int  LoadTypeData(int a2);  // 0x4EF3E0
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0E30
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -76,5 +76,6 @@ struct ScriptAction {
     int u8_83;  // X10 supply (member_lookup)
     int u8_99;  // X10 supply (member_lookup)
     int u8_D;  // X10 supply (member_lookup)
+    ScriptAction* ScriptAction_1;  // 0x1 [X30:member_lookup]
 };
 } // namespace gamemd

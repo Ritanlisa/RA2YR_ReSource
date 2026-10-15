@@ -27,5 +27,8 @@ struct Factory {
     int IdleHandler();  // 0x731CD0
 
     unsigned char q000[4];  /* char[4] */  // X10 supply (member_lookup)
+    unsigned int field_10;  // [X30:default]
+    unsigned int field_4;  // [X30:default]
+    unsigned int field_8;  // [X30:default]
 };
 } // namespace gamemd

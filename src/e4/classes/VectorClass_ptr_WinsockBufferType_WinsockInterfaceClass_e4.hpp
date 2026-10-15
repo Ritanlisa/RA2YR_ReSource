@@ -21,5 +21,6 @@ struct VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass {
     int  GetSize(unsigned int * a2);  // 0x7B29C0
     unsigned int  GetCapacity(int a2);  // 0x7B2A00
     VectorClass_flat *  QueryInterface(char a2);  // 0x7B2B00
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -27,6 +27,10 @@ struct StringVector {
     int q008;  // X10 supply (member_lookup)
     int q014;  // 0x14
     int q010;  // 0x10
+    int __pad_000;  // 0x0 [X30:type_map]
+    unsigned char __pad_011;  // 0x11 [X30:canon]
+    int StringVector_field_0x10;  // 0x10 [X30:member_lookup]
+    int StringVector_field_0x14;  // 0x14 [X30:member_lookup]
 };
 
 } // namespace gamemd

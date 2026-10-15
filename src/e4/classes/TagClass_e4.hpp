@@ -22,8 +22,8 @@ struct TagClass {
     void * NeedsSaveOrLink;  // 0x20
     TagTypeClass* buildingType;  // 0x24
     TriggerClass* firstTrigger;  // 0x28
-    char instanceCount[4];  // 0x2C
-    char defaultCoords[4];  // 0x30
+    TriggerClass* instanceCount;  // 0x2C [X30:type_map]
+    int defaultCoords;  // 0x30 [X30:type_map]
     unsigned int alignmentPadding;  // 0x33
     bool destroyed;  // 0x34
     bool isExecuting;  // 0x35
@@ -40,11 +40,12 @@ struct TagClass {
     int StubReturn56();
     int ddtor(int a1, unsigned int * a2);
     TriggerClass * * Destructor(void * a1);
-    unsigned int u32_38;  // 0x38 (offset-truth)
-    unsigned int u32_3C;  // 0x3C (offset-truth)
+    TriggerClass* u32_38;  // 0x38 (offset-truth) [X30:type_map]
+    TriggerClass* u32_3C;  // 0x3C (offset-truth) [X30:type_map]
 
     void * q040;  // X10 supply (member_lookup)
     unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int vtable20;  // 0x4C [X30:member_lookup]
 };
 
 } // namespace gamemd

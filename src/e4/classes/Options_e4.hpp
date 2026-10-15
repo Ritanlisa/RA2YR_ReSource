@@ -32,5 +32,7 @@ struct Options {
     unsigned char q008[4];  /* DeleteAndZero */  // X10 supply (member_lookup)
     void * field_10;  // 0x10
     void * field_C;  // 0xC
+    unsigned int field_4;  // [X30:default]
+    unsigned int field_8;  // [X30:default]
 };
 } // namespace gamemd

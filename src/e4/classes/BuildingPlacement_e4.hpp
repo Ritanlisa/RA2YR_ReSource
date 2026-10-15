@@ -19,7 +19,7 @@ struct BuildingPlacement {
     static int ValidateType(BuildingPlacement * aP1, int a2, int a3);
     unsigned char q0046;  // 0x46 (offset-truth)
     unsigned char q030;  // 0x30 (ml)
-    unsigned int q054;  // 0x54 (ml)
+    void* q054;  // 0x54 (ml) [X30:type_map]
     unsigned int u32_184;  // 0x184 (offset-truth)
     unsigned int u32_204;  // 0x204 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
@@ -34,6 +34,8 @@ struct BuildingPlacement {
     int u32_20;  // X10 supply (member_lookup)
     unsigned int u32_50;  // X10 supply (member_lookup)
     unsigned int u32_80;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    int BuildingPlacement_field_0x20;  // 0x20 [X30:member_lookup]
 };
 
 } // namespace gamemd

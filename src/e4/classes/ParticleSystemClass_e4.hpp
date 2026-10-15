@@ -14,7 +14,7 @@ struct ParticleSystemClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* uniqueId;  // 0x10
+    AbstractClass* uniqueId;  // 0x10 [X30:type_map]
     bool IsInitialized;  // 0x12
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
@@ -34,7 +34,7 @@ struct ParticleSystemClass {
     int customSound;  // 0x64
     char bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
-    int health;  // 0x6C
+    IUnknown* health;  // 0x6C [X30:type_map]
     int estimatedHealth;  // 0x70
     char isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
@@ -61,17 +61,17 @@ struct ParticleSystemClass {
     void * lineTrailer;  // 0xA8
     ParticleSystemTypeClass* Type;  // 0xAC
     char SpawnDistanceToOwner[12];  // 0xB0
-    unsigned int Particles;  // 0xBC
+    void* Particles;  // 0xBC [X30:type_map]
     char TargetCoords[12];  // 0xC0
-    unsigned int Owner;  // 0xCC
+    TechnoClass* Owner;  // 0xCC [X30:type_map]
     unsigned int Target;  // 0xD0
-    char SpawnFrames[4];  // 0xD4
-    char Lifetime[4];  // 0xD8
-    char SparkSpawnFrames[4];  // 0xDC
-    char SpotlightRadius[4];  // 0xE0
+    int SpawnFrames;  // 0xD4 [X30:type_map]
+    int Lifetime;  // 0xD8 [X30:type_map]
+    int SparkSpawnFrames;  // 0xDC [X30:type_map]
+    void* SpotlightRadius;  // 0xE0 [X30:type_map]
     bool TimeToDie;  // 0xE4
     bool ParticleSystemClass_field_bool_F9;  // 0xF9
-    unsigned int OwnerHouse;  // 0xFC
+    AbstractClass* OwnerHouse;  // 0xFC [X30:type_map]
 // --- flat members (END) ---
     static int CreateParticle(void *aP1, void *a2, void *a3);
     void* ObjectClass;  // 0x0 (no offset truth)
@@ -90,11 +90,14 @@ struct ParticleSystemClass {
     int  Constructor(int a2, int * a3, int a4, void * a5, unsigned int * a6, int a7);  // 0x62dc50
     char __pad_E5[20];  // 0xE5 (ml)
     unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
+    AbstractClass* m_10;  // 0x10 (offset-truth) [X30:type_map]
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
 
     unsigned int u32_F8;  // X10 supply (member_lookup)
+    unsigned char __pad_0E5;  // 0xE5 [X30:canon]
+    unsigned char __pad_0FA;  // 0xFA [X30:canon]
+    unsigned int vfptr;  // [X30:default]
 };
 
 } // namespace gamemd

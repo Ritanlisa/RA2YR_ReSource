@@ -25,8 +25,8 @@ struct CaptureManagerClass {
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     unsigned int controlNodes;  // 0x24
-    char controlNodeCount[4];  // 0x28
-    char controlNodeCapacity[4];  // 0x2C
+    int controlNodeCount;  // 0x28 [X30:type_map]
+    HouseClass* controlNodeCapacity;  // 0x2C [X30:type_map]
     TechnoClass* owner;  // 0x30
     unsigned int alignmentPadding;  // 0x33
     HouseClass* originalOwner;  // 0x34
@@ -36,9 +36,9 @@ struct CaptureManagerClass {
     bool CaptureManagerClass_field_40;  // 0x40
     bool CaptureManagerClass_field_41;  // 0x41
     unsigned char pad_42;  // 0x42
-    char overloadLimit[4];  // 0x44
-    char overloadCount[4];  // 0x48
-    char linkCount[4];  // 0x4C
+    HouseClass* overloadLimit;  // 0x44 [X30:type_map]
+    void* overloadCount;  // 0x48 [X30:type_map]
+    int linkCount;  // 0x4C [X30:type_map]
     char CaptureManagerClass_field_2C[4];  // 0x50
 // --- flat members (END) ---
     void DecideUnitFate(int aP1, void *a2 = 0);
@@ -78,6 +78,7 @@ struct CaptureManagerClass {
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
     unsigned int u32_9C;  // 0x9C (offset-truth)
     unsigned int u32_A4;  // 0xA4 (offset-truth)
+    int __pad_03C;  // 0x3C [X30:type_map]
 };
 
 } // namespace gamemd

@@ -21,5 +21,6 @@ struct VectorClass_ptr_TeamTypeClass {
     int  GetSize(unsigned int * a2);  // 0x4ECDA0
     unsigned int  LoadTypeData(int a2);  // 0x4ECDE0
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0430
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -23,21 +23,21 @@ struct SpawnManagerClass {
     unsigned int IsAllocated;  // 0x25
     HouseClass* spawnOwner;  // 0x28
     HouseClass* spawnType;  // 0x2C
-    char spawnCount[4];  // 0x30
+    int spawnCount;  // 0x30 [X30:type_map]
     unsigned int alignmentPadding;  // 0x33
-    char SpawnManagerClass_field_34[4];  // 0x34
+    int SpawnManagerClass_field_34;  // 0x34 [X30:type_map]
     void *q38;  // 0x38
-    char spawnVectorCount[4];  // 0x3C
+    int spawnVectorCount;  // 0x3C [X30:type_map]
     char spawnVectorCapacity[4];  // 0x40
     char creationFrame[4];  // 0x44
-    char SpawnManagerClass_field_54[4];  // 0x54
-    char SpawnManagerClass_field_58[4];  // 0x58
-    char SpawnManagerClass_field_5C[4];  // 0x5C
-    char SpawnManagerClass_field_60[4];  // 0x60
-    char SpawnManagerClass_field_64[4];  // 0x64
-    char SpawnManagerClass_field_68[4];  // 0x68
-    char SpawnManagerClass_field_6C[4];  // 0x6C
-    char SpawnManagerClass_field_70[4];  // 0x70
+    int SpawnManagerClass_field_54;  // 0x54 [X30:type_map]
+    int SpawnManagerClass_field_58;  // 0x58 [X30:type_map]
+    IUnknown* SpawnManagerClass_field_5C;  // 0x5C [X30:type_map]
+    int SpawnManagerClass_field_60;  // 0x60 [X30:type_map]
+    int SpawnManagerClass_field_64;  // 0x64 [X30:type_map]
+    void* SpawnManagerClass_field_68;  // 0x68 [X30:type_map]
+    void* SpawnManagerClass_field_6C;  // 0x6C [X30:type_map]
+    int SpawnManagerClass_field_70;  // 0x70 [X30:type_map]
 // --- flat members (END) ---
     AbstractClass * * LoadFromStream(int aP1, AbstractClass * aP1_4);
     SpawnManagerClass(int a2, int a3, int a4, int a5, int a6);
@@ -58,6 +58,7 @@ struct SpawnManagerClass {
     unsigned int spawns;  // X10 supply (csp_canon_members)
     int u8_D;  // X10 supply (member_lookup)
     unsigned int u32_45;  // 0x45
+    int __pad_048;  // 0x48 [X30:type_map]
 };
 
 } // namespace gamemd

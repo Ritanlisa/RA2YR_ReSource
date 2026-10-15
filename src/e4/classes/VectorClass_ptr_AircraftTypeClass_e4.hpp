@@ -30,5 +30,6 @@ struct VectorClass_ptr_AircraftTypeClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4EDCF0
     char  SetCapacity_0(int a2, unsigned int * a3);  // 0x4EDEA0
     int  FindItemIndex_0(unsigned int * a2);  // 0x4EDF50
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

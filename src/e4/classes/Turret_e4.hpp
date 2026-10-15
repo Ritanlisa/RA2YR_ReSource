@@ -24,6 +24,9 @@ struct Turret {
     unsigned int u32_B8;  // X10 supply (member_lookup)
     unsigned int u32_BC;  // X10 supply (member_lookup)
     unsigned int q0324;  // 0x324
+    AbstractClass* AbstractClass_1F8;  // 0x1F8 [X30:type_map]
+    void* u32_C0;  // 0xC0 [X30:type_map]
+    void* u32_C4;  // 0xC4 [X30:type_map]
 };
 
 } // namespace gamemd

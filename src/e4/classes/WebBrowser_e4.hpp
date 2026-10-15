@@ -35,5 +35,8 @@ struct WebBrowser {
 
     unsigned char q00C[4];  /* char[4] */  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
+    int __pad_004;  // 0x4 [X30:type_map]
+    void* WebBrowser_field_0x8;  // 0x8 [X30:type_map]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

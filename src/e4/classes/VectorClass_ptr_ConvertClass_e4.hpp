@@ -36,5 +36,6 @@ struct VectorClass_ptr_ConvertClass {
     DynamicVector *  Constructor_VectorClass_ConvertClass___(char a2);  // 0x49B130
 
     unsigned char __pad_01C;  // X10 supply (csp_canon_members)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

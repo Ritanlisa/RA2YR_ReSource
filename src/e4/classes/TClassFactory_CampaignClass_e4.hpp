@@ -12,6 +12,7 @@ struct TClassFactory_CampaignClass {
     int GetClassName();
     int GetSize(int a2, int a1, int a3, int a4);
     int ddtor(int a2, int a3, unsigned int *a4, int a1);
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

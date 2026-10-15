@@ -18,5 +18,6 @@ struct VectorClass_ptr_VocClass {
 // --- flat members (END) ---
     int Get(int a2, void *a2_2);  // 0x7518D0
     char  Constructor_VectorClass_VocClass___(int a2);  // 0x751930
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

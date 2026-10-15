@@ -21,5 +21,6 @@ struct VectorClass_E {
     char  AddRef(int a2);  // 0x74BFF0
     int  GetSize(void *a1 = 0);  // 0x74C110
     int  GetCapacity(int a2);  // 0x74C150
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

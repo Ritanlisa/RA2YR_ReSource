@@ -8,10 +8,10 @@ namespace gamemd {
 struct MessageListClass {
 // --- flat members (BEGIN) ---
     char MessageCount[4];  // 0x0
-    char MaxMessageCount[4];  // 0x4
-    char ScrollOffset[4];  // 0x8
-    char TextColorIndex[4];  // 0xC
-    char DisplayDuration[4];  // 0x10
+    int MaxMessageCount;  // 0x4 [X30:type_map]
+    int ScrollOffset;  // 0x8 [X30:type_map]
+    int TextColorIndex;  // 0xC [X30:type_map]
+    int DisplayDuration;  // 0x10 [X30:type_map]
     char MessageTimer[12];  // 0x14
     char MessageRect[16];  // 0x20
     bool IsScrolling;  // 0x30

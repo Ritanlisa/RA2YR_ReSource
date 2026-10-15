@@ -9,7 +9,7 @@ struct BSurface {
     void* vtable1;  // 0x0
     void* Width;  // 0x4
     int Height;  // 0x8
-    int LockCount;  // 0xC
+    void* LockCount;  // 0xC [X30:type_map]
     int BytesPerPixel;  // 0x10
     unsigned char* Buffer;  // 0x14
 // --- flat members (END) ---
@@ -40,5 +40,6 @@ struct BSurface {
     int u32_20;  // X10 supply (member_lookup)
     unsigned int u32_28;  // X10 supply (member_lookup)
     unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int Height8;  // [X30:default]
 };
 } // namespace gamemd

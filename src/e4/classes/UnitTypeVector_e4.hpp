@@ -21,6 +21,9 @@ struct UnitTypeVector {
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned char __pad_008;  // X10 supply (csp_canon_members)
     int q00C;  // X10 supply (member_lookup)
+    int UnitTypeVector_field_0x04;  // 0x4 [X30:member_lookup]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
+    unsigned int nextArrayIndex;  // [X30:default]
 };
 
 } // namespace gamemd

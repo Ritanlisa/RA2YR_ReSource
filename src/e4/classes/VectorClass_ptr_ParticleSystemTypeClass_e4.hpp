@@ -21,5 +21,6 @@ struct VectorClass_ptr_ParticleSystemTypeClass {
     int  GetSize(unsigned int * a2);  // 0x4EEEE0
     unsigned int  LoadTypeData(int a2);  // 0x4EEF20
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0CF0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

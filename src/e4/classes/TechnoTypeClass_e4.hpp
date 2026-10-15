@@ -36,8 +36,8 @@ struct TechnoTypeClass {
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    int BarrelVoxel;  // 0x24
-    int TargetEffectivenessCoefficient;  // 0x28
+    void* BarrelVoxel;  // 0x24 [X30:type_map]
+    void* TargetEffectivenessCoefficient;  // 0x28 [X30:type_map]
     int ChargerBarrels_0x12;  // 0x2C
     int TargetSpecialThreatCoefficient;  // 0x30
     int alignmentPadding;  // 0x33
@@ -56,7 +56,7 @@ struct TechnoTypeClass {
     SHPStruct* Image;  // 0xA4
     bool ImageAllocated;  // 0xA8
     SHPStruct* AlphaImage;  // 0xAC
-    char MainVoxel[4];  // 0xB0
+    VoxelStruct* MainVoxel;  // 0xB0 [X30:type_map]
     char TurretVoxel[4];  // 0xB4
     char ChargerTurrets[72];  // 0xBC
     char ChargerBarrels[72];  // 0x104
@@ -92,7 +92,7 @@ struct TechnoTypeClass {
     char VoxelCaches[80];  // 0x244
     bool armed;  // 0x294
     bool hasTurretFlag;  // 0x295
-    int weaponCount;  // 0x298
+    void* weaponCount;  // 0x298 [X30:type_map]
     WeaponTypeClass* weapon1;  // 0x29C
     WeaponTypeClass* weapon2;  // 0x2A0
     WeaponTypeClass* eliteWeapon1;  // 0x2A4
@@ -113,9 +113,9 @@ struct TechnoTypeClass {
     int cloakRadius;  // 0x2E0
     bool trainable;  // 0x2E4
     int buildLimit;  // 0x2E8
-    double unknown_double_300;  // 0x300
+    void* unknown_double_300;  // 0x300 [X30:type_map]
     double AccelerationFactor;  // 0x308
-    int CloakingSpeed;  // 0x310
+    void* CloakingSpeed;  // 0x310 [X30:type_map]
     unsigned char DebrisTypes;  // 0x314
     CampaignClass* VoxelAnimList_Items;  // 0x318
     unsigned int VoxelAnimList_Capacity;  // 0x31C
@@ -132,28 +132,28 @@ struct TechnoTypeClass {
     double Size;  // 0x380
     double SizeLimit;  // 0x388
     bool HoverAttack;  // 0x390
-    int VHPScan;  // 0x394
+    void* VHPScan;  // 0x394 [X30:type_map]
     int unknown_int_398;  // 0x398
     double RollAngle;  // 0x3A0
     double PitchSpeed;  // 0x3A8
     double PitchAngle;  // 0x3B0
-    int BuildLimit;  // 0x3B8
-    char Category[4];  // 0x3BC
+    void* BuildLimit;  // 0x3B8 [X30:type_map]
+    void* Category;  // 0x3BC [X30:type_map]
     unsigned int unknown_3C0;  // 0x3C0
     double DeployTime;  // 0x3C8
     int FireAngle;  // 0x3D0
-    char PipScale[4];  // 0x3D4
+    void* PipScale;  // 0x3D4 [X30:type_map]
     bool PipsDrawForAll;  // 0x3D8
-    int LeptonMindControlOffset;  // 0x3DC
-    int PixelSelectionBracketDelta;  // 0x3E0
+    void* LeptonMindControlOffset;  // 0x3DC [X30:type_map]
+    void* PixelSelectionBracketDelta;  // 0x3E0 [X30:type_map]
     int PipWrap;  // 0x3E4
     unsigned char Dock;  // 0x3E8
     CampaignClass* BuildingTypeList_Items;  // 0x3EC
     unsigned int BuildingTypeList_Capacity;  // 0x3F0
     unsigned int BuildingTypeList_FlagByte;  // 0x3F5
-    char DeploysInto[4];  // 0x404
-    char UndeploysInto[4];  // 0x408
-    char PowersUnit[4];  // 0x40C
+    BuildingTypeClass* DeploysInto;  // 0x404 [X30:type_map]
+    UnitTypeClass* UndeploysInto;  // 0x408 [X30:type_map]
+    UnitTypeClass* PowersUnit;  // 0x40C [X30:type_map]
     bool PoweredUnit;  // 0x410
     unsigned char VoiceSelect;  // 0x414
     CampaignClass* IntList_B_Items;  // 0x418
@@ -225,9 +225,9 @@ struct TechnoTypeClass {
     int ActivateSound;  // 0x5A8
     int DeactivateSound;  // 0x5AC
     int MindClearedSound;  // 0x5B0
-    char MovementZone[4];  // 0x5B4
-    int GuardRange;  // 0x5B8
-    int MinDebris;  // 0x5BC
+    Movement* MovementZone;  // 0x5B4 [X30:type_map]
+    IUnknown* GuardRange;  // 0x5B8 [X30:type_map]
+    void* MinDebris;  // 0x5BC [X30:type_map]
     int MaxDebris;  // 0x5C0
     unsigned char DebrisAnims;  // 0x5C4
     int Passengers;  // 0x5E0
@@ -238,21 +238,21 @@ struct TechnoTypeClass {
     bool RevealToAll;  // 0x5EE
     bool Drainable;  // 0x5EF
     int SensorsSight;  // 0x5F0
-    int DetectDisguiseRange;  // 0x5F4
-    int BombSight;  // 0x5F8
+    void* DetectDisguiseRange;  // 0x5F4 [X30:type_map]
+    void* BombSight;  // 0x5F8 [X30:type_map]
     int LeadershipRating;  // 0x5FC
     int NavalTargeting;  // 0x600
-    int LandTargeting;  // 0x604
+    void* LandTargeting;  // 0x604 [X30:type_map]
     float BuildTimeMultiplier;  // 0x608
-    int MindControlRingOffset;  // 0x60C
+    void* MindControlRingOffset;  // 0x60C [X30:type_map]
     int Cost;  // 0x610
     int Soylent;  // 0x614
     int FlightLevel;  // 0x618
-    int AirstrikeTeam;  // 0x61C
+    void* AirstrikeTeam;  // 0x61C [X30:type_map]
     int EliteAirstrikeTeam;  // 0x620
     char AirstrikeTeamType[4];  // 0x624
-    char EliteAirstrikeTeamType[4];  // 0x628
-    int AirstrikeRechargeTime;  // 0x62C
+    AircraftTypeClass* EliteAirstrikeTeamType;  // 0x628 [X30:type_map]
+    void* AirstrikeRechargeTime;  // 0x62C [X30:type_map]
     int EliteAirstrikeRechargeTime;  // 0x630
     int TechLevel;  // 0x634
     unsigned char Prerequisite;  // 0x638
@@ -263,11 +263,11 @@ struct TechnoTypeClass {
     int ThreatPosed;  // 0x670
     int Points;  // 0x674
     int Speed;  // 0x678
-    char SpeedType[4];  // 0x67C
-    int InitialAmmo;  // 0x680
+    void* SpeedType;  // 0x67C [X30:type_map]
+    void* InitialAmmo;  // 0x680 [X30:type_map]
     int Ammo;  // 0x684
     int IFVMode;  // 0x688
-    int AirRangeBonus;  // 0x68C
+    void* AirRangeBonus;  // 0x68C [X30:type_map]
     bool BerserkFriendly;  // 0x690
     bool SprayAttack;  // 0x691
     bool Pushy;  // 0x692
@@ -275,9 +275,9 @@ struct TechnoTypeClass {
     bool Unnatural;  // 0x694
     bool CloseRange;  // 0x695
     int Reload;  // 0x698
-    int EmptyReload;  // 0x69C
-    int ReloadIncrement;  // 0x6A0
-    int RadialFireSegments;  // 0x6A4
+    void* EmptyReload;  // 0x69C [X30:type_map]
+    void* ReloadIncrement;  // 0x6A0 [X30:type_map]
+    void* RadialFireSegments;  // 0x6A4 [X30:type_map]
     int DeployFireWeapon;  // 0x6A8
     bool DeployFire;  // 0x6AC
     bool DeployToLand;  // 0x6AD
@@ -286,37 +286,37 @@ struct TechnoTypeClass {
     bool DistributedFire;  // 0x6B0
     bool DamageReducesReadiness;  // 0x6B1
     int ReadinessReductionMultiplier;  // 0x6B4
-    char UnloadingClass[4];  // 0x6B8
-    char DeployingAnim[4];  // 0x6BC
+    UnitTypeClass* UnloadingClass;  // 0x6B8 [X30:type_map]
+    AnimTypeClass* DeployingAnim;  // 0x6BC [X30:type_map]
     bool AttackFriendlies;  // 0x6C0
     bool AttackCursorOnFriendlies;  // 0x6C1
     int UndeployDelay;  // 0x6C4
     void* PreventAttackMove;  // 0x6C8
     unsigned int OwnerFlags;  // 0x6CC
-    int AIBasePlanningSide;  // 0x6D0
+    void* AIBasePlanningSide;  // 0x6D0 [X30:type_map]
     bool StupidHunt;  // 0x6D4
     bool AllowedToStartInMultiplayer;  // 0x6D5
     char CameoFile;  // 0x6D6
-    char Cameo[4];  // 0x6F0
+    SHPStruct* Cameo;  // 0x6F0 [X30:type_map]
     bool CameoAllocated;  // 0x6F4
     char AltCameoFile;  // 0x6F5
     double SpecialThreatValue;  // 0x704
-    char AltCameo[4];  // 0x710
+    SHPStruct* AltCameo;  // 0x710 [X30:type_map]
     double MyEffectivenessCoefficient;  // 0x712
     bool AltCameoAllocated;  // 0x714
     int RotCount;  // 0x718
     int ROT;  // 0x71C
     int TurretOffset;  // 0x720
     bool CanBeHidden;  // 0x724
-    int Points2;  // 0x728
+    void* Points2;  // 0x728 [X30:type_map]
     unsigned char Explosion;  // 0x72C
     unsigned char DestroyAnim;  // 0x748
     double ThreatAvoidanceCoefficient;  // 0x752
     TechnoTypeClass * ptr_758;  // 0x758
-    char NaturalParticleSystem[4];  // 0x764
+    ParticleSystemTypeClass* NaturalParticleSystem;  // 0x764 [X30:type_map]
     char NaturalParticleSystemLocation[12];  // 0x768
     TechnoTypeClass * ptr_770;  // 0x770
-    char RefinerySmokeParticleSystem[4];  // 0x774
+    ParticleSystemTypeClass* RefinerySmokeParticleSystem;  // 0x774 [X30:type_map]
     unsigned char DamageParticleSystems;  // 0x778
     unsigned int VoxelAnimList_Embed;  // 0x788
     unsigned char DestroyParticleSystems;  // 0x794
@@ -328,16 +328,16 @@ struct TechnoTypeClass {
     char RefinerySmokeOffsetThree[12];  // 0x7E4
     char RefinerySmokeOffsetFour[12];  // 0x7F0
     int ShadowIndex;  // 0x7FC
-    int Storage;  // 0x800
+    void* Storage;  // 0x800 [X30:type_map]
     bool TurretNotExportedOnGround;  // 0x804
     bool Gunner;  // 0x805
     bool HasTurretTooltips;  // 0x806
-    int TurretCount;  // 0x808
-    int WeaponCount;  // 0x80C
+    void* TurretCount;  // 0x808 [X30:type_map]
+    void* WeaponCount;  // 0x80C [X30:type_map]
     bool IsChargeTurret;  // 0x810
     int TurretWeapon;  // 0x814
     unsigned int IntList_A_Embed;  // 0x816
-    void* Weapon;  // 0x898
+    WeaponStruct* Weapon;  // 0x898 [X30:type_map]
     char EliteWeapon[504];  // 0xA94
     bool TypeImmune;  // 0xC8C
     bool MoveToShroud;  // 0xC8D
@@ -372,7 +372,7 @@ struct TechnoTypeClass {
     int SlavesNumber;  // 0xD18
     int SlaveRegenRate;  // 0xD1C
     bool BalloonHover;  // 0xD3E
-    int SuppressionThreshold;  // 0xD40
+    IUnknown* SuppressionThreshold;  // 0xD40 [X30:type_map]
     int JumpjetTurnRate;  // 0xD44
     int JumpjetSpeed;  // 0xD48
     float JumpjetClimb;  // 0xD4C
@@ -428,7 +428,7 @@ struct TechnoTypeClass {
     TechnoTypeClass * * sub_404BB0();
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q010;  // 0x10 (offset-truth)
-    unsigned int q024;  // 0x24 (offset-truth)
+    void* q024;  // 0x24 (offset-truth) [X30:type_map]
     int q1504;  // 0x1504 (ml)
     unsigned char q16C2;  // 0x16C2 (offset-truth)
     IUnknown* q1884;  // 0x1884 (ml)
@@ -631,6 +631,43 @@ struct TechnoTypeClass {
     int u8_CD0;  // X10 supply (member_lookup)
     int u8_D30;  // X10 supply (member_lookup)
     unsigned char u8_F1;  // X10 supply (member_lookup)
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_0B8;  // 0xB8 [X30:canon]
+    unsigned char __pad_14D;  // 0x14D [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    unsigned char __pad_22C;  // 0x22C [X30:canon]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    unsigned char __pad_35C;  // 0x35C [X30:canon]
+    unsigned char __pad_391;  // 0x391 [X30:canon]
+    unsigned char __pad_39C;  // 0x39C [X30:canon]
+    unsigned char __pad_3C4;  // 0x3C4 [X30:canon]
+    unsigned char __pad_3D9;  // 0x3D9 [X30:canon]
+    unsigned char __pad_411;  // 0x411 [X30:canon]
+    unsigned char __pad_5E5;  // 0x5E5 [X30:canon]
+    unsigned char __pad_696;  // 0x696 [X30:canon]
+    unsigned char __pad_6B2;  // 0x6B2 [X30:canon]
+    unsigned char __pad_6C2;  // 0x6C2 [X30:canon]
+    unsigned char __pad_6C9;  // 0x6C9 [X30:canon]
+    unsigned char __pad_6EF;  // 0x6EF [X30:canon]
+    unsigned char __pad_70E;  // 0x70E [X30:canon]
+    unsigned char __pad_716;  // 0x716 [X30:canon]
+    unsigned char __pad_725;  // 0x725 [X30:canon]
+    unsigned char __pad_7BD;  // 0x7BD [X30:canon]
+    unsigned char __pad_807;  // 0x807 [X30:canon]
+    unsigned char __pad_811;  // 0x811 [X30:canon]
+    unsigned char __pad_CA3;  // 0xCA3 [X30:canon]
+    unsigned char __pad_CB5;  // 0xCB5 [X30:canon]
+    unsigned char __pad_CC9;  // 0xCC9 [X30:canon]
+    unsigned char __pad_D3F;  // 0xD3F [X30:canon]
+    UnitTypeClass* __pad_D96;  // 0xD96 [X30:type_map]
+    unsigned int controlNodeCount;  // [X30:default]
+    unsigned int q130;  // 0x130 [X30:member_lookup]
+    unsigned int spawnVectorCount;  // [X30:default]
+    unsigned int vfptr;  // [X30:default]
 };
 
 } // namespace gamemd

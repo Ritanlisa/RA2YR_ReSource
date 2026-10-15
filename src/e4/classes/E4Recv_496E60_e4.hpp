@@ -11,5 +11,6 @@ struct E4Recv_496E60 {
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
     int sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10);  // 0x496E60
+    void* m_8;  // 0x8 [X30:fn-atom]
 };
 } // namespace gamemd

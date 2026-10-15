@@ -17,6 +17,7 @@ struct Function {
     static int Method_46B260(int p0);  // x4:signals@0x46b260
 
     int q004;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

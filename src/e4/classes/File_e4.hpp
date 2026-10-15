@@ -28,8 +28,8 @@ struct File {
     int ParseAudioFileRIFF();  // 0x7C12B0
     AbstractClass * * ParseFileHVA(int a2, int aP1, int a3);
     char __pad_6[35];  // 0x6 (ml)
-    unsigned int q004;  // 0x4 (offset-truth)
-    unsigned int u32_30;  // 0x30 (offset-truth)
+    AbstractClass* q004;  // 0x4 (offset-truth) [X30:type_map]
+    AbstractClass* u32_30;  // 0x30 (offset-truth) [X30:type_map]
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned char u32_42;  // 0x42 (offset-truth)
     unsigned int u32_E0;  // 0xE0 (offset-truth)
@@ -55,5 +55,8 @@ struct File {
     unsigned int u32_738;  // X10 supply (member_lookup)
     unsigned int u32_88;  // X10 supply (member_lookup)
     unsigned int u32_E4;  // X10 supply (member_types)
+    unsigned int BufferSize;  // [X30:default]
+    int __pad_0;  // 0x0 [X30:type_map]
+    unsigned int ptr_80;  // 0x80 [X30:default]
 };
 } // namespace gamemd

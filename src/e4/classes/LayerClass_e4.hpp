@@ -10,8 +10,8 @@ namespace gamemd {
 struct LayerClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char count[4];  // 0x4
-    char capacity[4];  // 0x8
+    void* count;  // 0x4 [X30:type_map]
+    int capacity;  // 0x8 [X30:type_map]
 // --- flat members (END) ---
     void* Load_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon LayerClass::Load is a method)
     static unsigned int Load(int* p0);  // x4:signals@0x551b90

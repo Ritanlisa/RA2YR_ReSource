@@ -28,5 +28,6 @@ struct VectorClass_ptr_EMPulseClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4C5DF0
     VectorClass_flat *  QueryInterface(char a2);  // 0x4C5E20
     DynamicVector *  Constructor_VectorClass_EMPulseClass___(char a2);  // 0x4C5E70
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

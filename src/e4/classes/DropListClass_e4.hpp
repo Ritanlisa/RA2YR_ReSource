@@ -13,6 +13,8 @@ struct DropListClass {
     int COMStub();
 
     unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned char __pad_004;  // 0x4 [X30:canon]
+    unsigned char __pad_019;  // 0x19 [X30:canon]
 };
 
 } // namespace gamemd

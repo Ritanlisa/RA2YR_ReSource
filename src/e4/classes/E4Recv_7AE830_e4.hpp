@@ -14,5 +14,6 @@ struct E4Recv_7AE830 {
     unsigned int M48;  // 0x30
 // --- flat members (END) ---
     void sub_7AE830();  // 0x7AE830
+    unsigned int nextObject;  // [X30:default]
 };
 } // namespace gamemd

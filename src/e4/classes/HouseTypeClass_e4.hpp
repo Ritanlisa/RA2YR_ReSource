@@ -16,10 +16,10 @@ struct HouseTypeClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    char uniqueId[4];  // 0x10
+    int uniqueId;  // 0x10 [X30:type_map]
     unsigned char alignmentPadding_3;  // 0x11
     char arrayIndex[4];  // 0x12
-    char abstractFlags[4];  // 0x14
+    int abstractFlags;  // 0x14 [X30:type_map]
     char arrayIndex2[4];  // 0x16
     char nextArrayIndex[4];  // 0x18
     unsigned int referenceCount;  // 0x1C
@@ -61,7 +61,7 @@ struct HouseTypeClass {
     char veteranUnitsCount[4];  // 0xB0
     unsigned char m_align_B1;  // 0xB1
     AircraftTypeClass** veteranAircraft;  // 0xB4
-    char veteranAircraftCount[4];  // 0xB8
+    int veteranAircraftCount;  // 0xB8 [X30:type_map]
     char suffix_4;  // 0xBC
     char prefix;  // 0xBD
     bool multiplay;  // 0xBE
@@ -97,7 +97,7 @@ struct HouseTypeClass {
     float buildtimeDefensesMult_d;  // 0x144
     float incomeMult_d;  // 0x148
     InfantryTypeClass** veteranInfantry_d;  // 0x14C
-    char veteranInfantryCount_d[4];  // 0x150
+    void* veteranInfantryCount_d;  // 0x150 [X30:type_map]
     UnitTypeClass** veteranUnits_d;  // 0x154
     char veteranUnitsCount_d[4];  // 0x158
     AircraftTypeClass** veteranAircraft_d;  // 0x15C
@@ -108,11 +108,11 @@ struct HouseTypeClass {
     bool multiplayPassive_d;  // 0x16A
     bool wallOwner_d;  // 0x16B
     bool smartAi_d;  // 0x16C
-    char Prefix[4];  // 0x1A4
+    void* Prefix;  // 0x1A4 [X30:type_map]
     unsigned int Multiplay;  // 0x1A5
     void* MultiplayPassive;  // 0x1A6
     bool WallOwner;  // 0x1A7
-    char SmartAI[4];  // 0x1A8
+    void* SmartAI;  // 0x1A8 [X30:type_map]
     unsigned char m_padding_1A9;  // 0x1A9
 // --- flat members (END) ---
     AbstractClass * Dtor(void *a1);

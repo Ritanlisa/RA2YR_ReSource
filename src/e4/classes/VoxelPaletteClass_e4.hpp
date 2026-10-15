@@ -9,7 +9,7 @@ struct VoxelPaletteClass {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
     unsigned int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
+    void* u32_10;  // 0x10 [X30:type_map]
     unsigned int u32_14;  // 0x14
     unsigned int q018;  // 0x18
     unsigned int q020;  // 0x20

@@ -29,6 +29,9 @@ struct CheckListClass {
     unsigned int u32_B8;  // 0xB8 (offset-truth)
 
     unsigned char __pad_011;  // X10 supply (csp_canon_members)
+    unsigned char __pad_004;  // 0x4 [X30:canon]
+    unsigned char __pad_01A;  // 0x1A [X30:canon]
+    unsigned int Width;  // [X30:default]
 };
 
 } // namespace gamemd

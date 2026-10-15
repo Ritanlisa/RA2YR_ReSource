@@ -19,5 +19,6 @@ struct VectorClass_ptr_RadSiteClass {
     int Destroy(void *a1_1);  // 0x65BEF0
     unsigned int  GetItemIndex(int a2);  // 0x65BF20
     int  Constructor_VectorClass_RadSiteClass___(int a2);  // 0x65BF40
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

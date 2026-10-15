@@ -28,5 +28,6 @@ struct TypeList_cptr_TerrainTypeClass {
     char  Remove(int a2, unsigned int * a3);  // 0x67B3D0
     int  GetSize(unsigned int * a2);  // 0x67B4D0
     VectorClass_flat * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x67C150
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

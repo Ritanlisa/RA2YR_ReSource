@@ -45,5 +45,14 @@ struct Trigger {
     unsigned int u32_44;  // 0x44
     unsigned int q040;  // 0x40
     bool u32_3C;  // 0x3C
+    unsigned char __pad_01C;  // 0x1C [X30:canon]
+    unsigned char __pad_03A;  // 0x3A [X30:canon]
+    ComPtr* ComPtr_488;  // 0x488 [X30:member_lookup]
+    int Trigger_field_0x2C;  // 0x2C [X30:member_lookup]
+    int Trigger_field_0x4;  // 0x4 [X30:member_lookup]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
+    unsigned char __pad_494;  // 0x494 [X30:member_lookup]
+    char __pad_8[8];  // 0x8 [X30:member_lookup]
+    char u8_474;  // 0x474 [X30:member_lookup]
 };
 } // namespace gamemd

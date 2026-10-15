@@ -38,9 +38,9 @@ struct WeaponTypeClass {
     int Warhead;  // 0xAC
     int ROF;  // 0xB0
     int Range;  // 0xB4
-    unsigned int MinimumRange;  // 0xB8
+    void* MinimumRange;  // 0xB8 [X30:type_map]
     unsigned char Report;  // 0xBC
-    unsigned int Anim;  // 0xC0
+    void* Anim;  // 0xC0 [X30:type_map]
     AnimTypeClass* OccupantAnim;  // 0xC4
     AnimTypeClass* AssaultAnim;  // 0xC8
     AnimTypeClass* OpenToppedAnim;  // 0xCC
@@ -134,7 +134,18 @@ struct WeaponTypeClass {
     void * Create(AbstractClass * Source, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     void * Create(AbstractClass * Source);
     WeaponTypeClass * ddtor(void ** Block, char a2);
-    int DownReport[7];  // 0xD8 (ml)
+    void* DownReport;  // 0xD8 (ml) [X30:type_map]
+    unsigned char __pad_024;  // 0x24 [X30:canon]
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    ParticleSystemTypeClass* __pad_11C;  // 0x11C [X30:type_map]
+    bool __pad_12B;  // 0x12B [X30:type_map]
+    bool __pad_135;  // 0x135 [X30:type_map]
+    bool __pad_138;  // 0x138 [X30:type_map]
+    bool __pad_142;  // 0x142 [X30:type_map]
+    bool __pad_145;  // 0x145 [X30:type_map]
+    bool __pad_14A;  // 0x14A [X30:type_map]
+    bool __pad_154;  // 0x154 [X30:type_map]
 };
 
 } // namespace gamemd

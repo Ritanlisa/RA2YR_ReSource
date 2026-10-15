@@ -16,5 +16,10 @@ struct E4Recv_752CB0 {
     unsigned int M80;  // 0x80
 // --- flat members (END) ---
     int sub_752CB0(const char * a2);  // 0x752CB0
+    unsigned int ambientSoundController;  // [X30:default]
+    unsigned int attachedTag;  // [X30:default]
+    unsigned int customSound_controller;  // [X30:default]
+    unsigned int fallRate;  // [X30:default]
+    unsigned int owningHouseIndex;  // [X30:default]
 };
 } // namespace gamemd

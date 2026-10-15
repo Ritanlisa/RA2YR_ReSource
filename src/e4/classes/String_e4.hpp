@@ -64,5 +64,10 @@ struct String {
     unsigned int u32_6;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
     unsigned char u8_1;  // X10 supply (member_lookup)
+    unsigned int AssignFromPtrthis;  // [X30:default]
+    unsigned int Reassignthis;  // [X30:default]
+    void* SessionClass_field_14;  // 0x14 [X30:type_map]
+    unsigned int headNode;  // [X30:default]
+    ObjectClass * vtable2;  // 0x4 [X30:member_lookup]
 };
 } // namespace gamemd

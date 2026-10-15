@@ -38,7 +38,7 @@ struct Warhead {
     unsigned int u32_A0;  // 0xA0
     unsigned int u32_A4;  // 0xA4
     void* q0AC;  // 0xAC
-    unsigned int u32_B0;  // 0xB0
+    void* u32_B0;  // 0xB0 [X30:type_map]
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
     unsigned int q108;  // 0x108
@@ -73,7 +73,7 @@ struct Warhead {
     unsigned int q608;  // 0x608
     void* q628;  // 0x628
     void* q660;  // 0x660
-    unsigned int u32_66C;  // 0x66C
+    void* u32_66C;  // 0x66C [X30:type_map]
     void* q684;  // 0x684
     void* q69C;  // 0x69C
     void* q700;  // 0x700

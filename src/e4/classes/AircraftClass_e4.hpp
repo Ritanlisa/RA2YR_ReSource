@@ -52,8 +52,8 @@ struct AircraftClass {
     char customSound[4];  // 0x64
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
-    char health[4];  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    int health;  // 0x6C [X30:type_map]
+    int estimatedHealth;  // 0x70 [X30:type_map]
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int spawnStatus;  // 0x78
@@ -82,7 +82,7 @@ struct AircraftClass {
     char queuedMission[4];  // 0xB4
     bool missionQueued;  // 0xB8
     unsigned char alignmentPaddingB9;  // 0xB9
-    char missionStatus[4];  // 0xBC
+    int missionStatus;  // 0xBC [X30:type_map]
     char missionStartTime[4];  // 0xC0
     unsigned int missionData;  // 0xC4
     char missionTimer[12];  // 0xC8
@@ -112,7 +112,7 @@ struct AircraftClass {
     char gattlingStage[4];  // 0x144
     unsigned int gattlingValue;  // 0x148
     HouseClass* ammoReloadTimer;  // 0x14C
-    char initialOwner[4];  // 0x150
+    FootClass* initialOwner;  // 0x150 [X30:type_map]
     unsigned int veterancy;  // 0x154
     double alignmentPadding154;  // 0x158
     unsigned long long armorMultiplier;  // 0x15C
@@ -211,7 +211,7 @@ struct AircraftClass {
     unsigned int slaveOwner;  // 0x2F0
     unsigned int originalOwnerHouse;  // 0x2F4
     unsigned int bunkerLinkedUnit;  // 0x2F8
-    char pitchAngle[4];  // 0x2FC
+    int pitchAngle;  // 0x2FC [X30:type_map]
     char diskLaserTimer[12];  // 0x300
     ParticleSystemClass* fireParticles;  // 0x304
     ParticleSystemClass* sparkParticles;  // 0x308
@@ -339,7 +339,7 @@ struct AircraftClass {
     char unknown530[4];  // 0x530
     char controlGroup[4];  // 0x532
     char unknown534[4];  // 0x534
-    char unknown538[4];  // 0x538
+    int unknown538;  // 0x538 [X30:type_map]
     bool FootClass_field_bool_53C;  // 0x53C
     unsigned char m_padding_53D;  // 0x53D
     char unknown540[4];  // 0x540
@@ -362,7 +362,7 @@ struct AircraftClass {
     float FootClass_field_584;  // 0x584
     unsigned int unknownAbstractArray588;  // 0x588
     char FootClass_field_5A0[4];  // 0x5A0
-    char movementDestination[4];  // 0x5A4
+    int movementDestination;  // 0x5A4 [X30:type_map]
     char lastDestination[4];  // 0x5A8
     unsigned int FootClass_field_abstract_array_5AC;  // 0x5AC
     char FootClass_field_int_5C4[4];  // 0x5C4
@@ -371,7 +371,7 @@ struct AircraftClass {
     bool FootClass_field_5D0;  // 0x5D0
     unsigned char FootClass_field_bool_5D1;  // 0x5D1
     unsigned short m_padding_5D2;  // 0x5D2
-    char team[4];  // 0x5D4
+    int team;  // 0x5D4 [X30:type_map]
     char nextTeamMember[4];  // 0x5D8
     char FootClass_field_5DC[4];  // 0x5DC
     void* pathDirections;  // 0x5E0
@@ -438,7 +438,7 @@ struct AircraftClass {
     bool AircraftClass_field_bool_6C8;  // 0x6C8
     bool HasPassengers;  // 0x6C9
     bool IsKamikaze;  // 0x6CA
-    unsigned int AircraftClass_field_6CC;  // 0x6CC
+    AircraftTypeClass* AircraftClass_field_6CC;  // 0x6CC [X30:type_map]
     bool AircraftClass_field_bool_6D0;  // 0x6D0
     bool AircraftClass_field_bool_6D1;  // 0x6D1
     bool AircraftClass_field_bool_6D2;  // 0x6D2
@@ -477,6 +477,39 @@ struct AircraftClass {
      int Construct(int a2, int a3, IUnknown *ppv, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     AircraftTypeClass * Update(void * a1, void * a2, void *a3, void *a4);
     unsigned int q_3E0;  // +0x3E0 flat supply (final pass)
+    unsigned char __pad_115;  // 0x115 [X30:canon]
+    unsigned char __pad_12C;  // 0x12C [X30:canon]
+    unsigned char __pad_1F0;  // 0x1F0 [X30:canon]
+    unsigned char __pad_1FC;  // 0x1FC [X30:canon]
+    unsigned char __pad_20C;  // 0x20C [X30:canon]
+    unsigned char __pad_241;  // 0x241 [X30:canon]
+    unsigned char __pad_285;  // 0x285 [X30:canon]
+    unsigned char __pad_287;  // 0x287 [X30:canon]
+    unsigned char __pad_28C;  // 0x28C [X30:canon]
+    AbstractClass* __pad_2B4;  // 0x2B4 [X30:type_map]
+    unsigned char __pad_2E8;  // 0x2E8 [X30:canon]
+    unsigned char __pad_314;  // 0x314 [X30:canon]
+    unsigned char __pad_3CE;  // 0x3CE [X30:canon]
+    unsigned char __pad_3D1;  // 0x3D1 [X30:canon]
+    unsigned char __pad_3D5;  // 0x3D5 [X30:canon]
+    unsigned char __pad_41D;  // 0x41D [X30:canon]
+    unsigned char __pad_422;  // 0x422 [X30:canon]
+    unsigned char __pad_425;  // 0x425 [X30:canon]
+    unsigned char __pad_43A;  // 0x43A [X30:canon]
+    unsigned char __pad_458;  // 0x458 [X30:canon]
+    unsigned char __pad_464;  // 0x464 [X30:canon]
+    unsigned char __pad_46C;  // 0x46C [X30:canon]
+    unsigned char __pad_47A;  // 0x47A [X30:canon]
+    unsigned char __pad_480;  // 0x480 [X30:canon]
+    unsigned char __pad_4BA;  // 0x4BA [X30:canon]
+    unsigned char __pad_4D6;  // 0x4D6 [X30:canon]
+    unsigned char __pad_4FA;  // 0x4FA [X30:canon]
+    unsigned char __pad_58C;  // 0x58C [X30:canon]
+    unsigned char __pad_5B0;  // 0x5B0 [X30:canon]
+    unsigned char __pad_692;  // 0x692 [X30:canon]
+    unsigned char __pad_6CB;  // 0x6CB [X30:canon]
+    unsigned int AbstractClass_2B4;  // [X30:default]
+    unsigned int vfptr;  // [X30:default]
 };
 
 } // namespace gamemd

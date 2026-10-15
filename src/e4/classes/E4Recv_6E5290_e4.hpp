@@ -10,5 +10,6 @@ struct E4Recv_6E5290 {
     unsigned int M52;  // 0x34
 // --- flat members (END) ---
     char sub_6E5290();  // 0x6E5290
+    unsigned int attachedTag;  // [X30:default]
 };
 } // namespace gamemd

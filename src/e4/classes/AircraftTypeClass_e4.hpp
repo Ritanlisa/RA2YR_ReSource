@@ -40,7 +40,7 @@ struct AircraftTypeClass {
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    unsigned int BarrelVoxel;  // 0x24
+    void* BarrelVoxel;  // 0x24 [X30:type_map]
     int TargetEffectivenessCoefficient;  // 0x28
     int ChargerBarrels_0x12;  // 0x2C
     bool TargetSpecialThreatCoefficient;  // 0x30
@@ -402,7 +402,7 @@ struct AircraftTypeClass {
     void* Palette;  // 0xDC4
     void* ArrayIndex;  // 0xDF8
     bool Carryall_d;  // 0xDFC
-    int SpawnDelay_d;  // 0xE04
+    void* SpawnDelay_d;  // 0xE04 [X30:type_map]
     bool Rotors_d;  // 0xE08
     bool CustomRotor_2;  // 0xE09
     bool Landable_2;  // 0xE0A
@@ -425,6 +425,99 @@ struct AircraftTypeClass {
     int  LoadFromINI(ObjectTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
     int SaveToINI(void * a0, TechnoTypeClass * aP1, int a3);
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_05D;  // 0x5D [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
+    unsigned char __pad_0B8;  // 0xB8 [X30:canon]
+    unsigned char __pad_14D;  // 0x14D [X30:canon]
+    unsigned char __pad_211;  // 0x211 [X30:canon]
+    unsigned char __pad_22C;  // 0x22C [X30:canon]
+    unsigned char __pad_233;  // 0x233 [X30:canon]
+    unsigned char __pad_237;  // 0x237 [X30:canon]
+    unsigned char __pad_296;  // 0x296 [X30:canon]
+    unsigned char __pad_2DD;  // 0x2DD [X30:canon]
+    unsigned char __pad_2E5;  // 0x2E5 [X30:canon]
+    unsigned char __pad_2ED;  // 0x2ED [X30:canon]
+    unsigned char __pad_2FC;  // 0x2FC [X30:canon]
+    unsigned char __pad_304;  // 0x304 [X30:canon]
+    unsigned char __pad_30C;  // 0x30C [X30:canon]
+    unsigned char __pad_320;  // 0x320 [X30:canon]
+    unsigned char __pad_325;  // 0x325 [X30:canon]
+    unsigned char __pad_33C;  // 0x33C [X30:canon]
+    unsigned char __pad_341;  // 0x341 [X30:canon]
+    unsigned char __pad_350;  // 0x350 [X30:canon]
+    unsigned char __pad_364;  // 0x364 [X30:canon]
+    unsigned char __pad_36C;  // 0x36C [X30:canon]
+    unsigned char __pad_374;  // 0x374 [X30:canon]
+    unsigned char __pad_37C;  // 0x37C [X30:canon]
+    unsigned char __pad_384;  // 0x384 [X30:canon]
+    unsigned char __pad_38C;  // 0x38C [X30:canon]
+    unsigned char __pad_39C;  // 0x39C [X30:canon]
+    unsigned char __pad_3A4;  // 0x3A4 [X30:canon]
+    unsigned char __pad_3AC;  // 0x3AC [X30:canon]
+    unsigned char __pad_3B4;  // 0x3B4 [X30:canon]
+    unsigned char __pad_3C4;  // 0x3C4 [X30:canon]
+    unsigned char __pad_3CC;  // 0x3CC [X30:canon]
+    unsigned char __pad_3F4;  // 0x3F4 [X30:canon]
+    unsigned char __pad_3F9;  // 0x3F9 [X30:canon]
+    unsigned char __pad_420;  // 0x420 [X30:canon]
+    unsigned char __pad_428;  // 0x428 [X30:canon]
+    unsigned char __pad_43C;  // 0x43C [X30:canon]
+    unsigned char __pad_441;  // 0x441 [X30:canon]
+    unsigned char __pad_458;  // 0x458 [X30:canon]
+    unsigned char __pad_45D;  // 0x45D [X30:canon]
+    unsigned char __pad_474;  // 0x474 [X30:canon]
+    unsigned char __pad_479;  // 0x479 [X30:canon]
+    unsigned char __pad_488;  // 0x488 [X30:canon]
+    unsigned char __pad_490;  // 0x490 [X30:canon]
+    unsigned char __pad_498;  // 0x498 [X30:canon]
+    unsigned char __pad_4AC;  // 0x4AC [X30:canon]
+    unsigned char __pad_4B1;  // 0x4B1 [X30:canon]
+    unsigned char __pad_4C8;  // 0x4C8 [X30:canon]
+    unsigned char __pad_4CD;  // 0x4CD [X30:canon]
+    unsigned char __pad_4E4;  // 0x4E4 [X30:canon]
+    unsigned char __pad_4E9;  // 0x4E9 [X30:canon]
+    unsigned char __pad_4F8;  // 0x4F8 [X30:canon]
+    unsigned char __pad_514;  // 0x514 [X30:canon]
+    unsigned char __pad_5C8;  // 0x5C8 [X30:canon]
+    unsigned char __pad_63C;  // 0x63C [X30:canon]
+    unsigned char __pad_658;  // 0x658 [X30:canon]
+    unsigned char __pad_66C;  // 0x66C [X30:canon]
+    unsigned char __pad_6DA;  // 0x6DA [X30:canon]
+    unsigned char __pad_6F9;  // 0x6F9 [X30:canon]
+    unsigned char __pad_708;  // 0x708 [X30:canon]
+    unsigned char __pad_730;  // 0x730 [X30:canon]
+    unsigned char __pad_74C;  // 0x74C [X30:canon]
+    unsigned char __pad_75C;  // 0x75C [X30:canon]
+    unsigned char __pad_76C;  // 0x76C [X30:canon]
+    unsigned char __pad_77C;  // 0x77C [X30:canon]
+    unsigned char __pad_798;  // 0x798 [X30:canon]
+    unsigned char __pad_7B4;  // 0x7B4 [X30:canon]
+    unsigned char __pad_7C4;  // 0x7C4 [X30:canon]
+    unsigned char __pad_7D0;  // 0x7D0 [X30:canon]
+    unsigned char __pad_7DC;  // 0x7DC [X30:canon]
+    unsigned char __pad_7E8;  // 0x7E8 [X30:canon]
+    unsigned char __pad_7F4;  // 0x7F4 [X30:canon]
+    unsigned char __pad_818;  // 0x818 [X30:canon]
+    unsigned char __pad_89C;  // 0x89C [X30:canon]
+    unsigned char __pad_A98;  // 0xA98 [X30:canon]
+    unsigned char __pad_CA8;  // 0xCA8 [X30:canon]
+    unsigned char __pad_CBC;  // 0xCBC [X30:canon]
+    unsigned char __pad_CCC;  // 0xCCC [X30:canon]
+    unsigned char __pad_CD7;  // 0xCD7 [X30:canon]
+    unsigned char __pad_D20;  // 0xD20 [X30:canon]
+    unsigned char __pad_D54;  // 0xD54 [X30:canon]
+    unsigned char __pad_D60;  // 0xD60 [X30:canon]
+    unsigned char __pad_D68;  // 0xD68 [X30:canon]
+    unsigned char __pad_D80;  // 0xD80 [X30:canon]
+    unsigned char __pad_D88;  // 0xD88 [X30:canon]
+    unsigned char __pad_D99;  // 0xD99 [X30:canon]
+    unsigned char __pad_DA8;  // 0xDA8 [X30:canon]
+    unsigned char __pad_DC8;  // 0xDC8 [X30:canon]
+    unsigned char __pad_DFD;  // 0xDFD [X30:canon]
+    unsigned char __pad_E0F;  // 0xE0F [X30:canon]
+    unsigned int vfptr;  // [X30:default]
 };
 
 } // namespace gamemd

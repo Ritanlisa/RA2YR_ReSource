@@ -30,5 +30,6 @@ struct VectorClass_ptr_CampaignClass {
     char  SetCapacity_0(int a2, unsigned int * a3);  // 0x4EC6E0
     int  FindItemIndex_0(unsigned int * a2);  // 0x4EC790
     DynamicVector *  Constructor_VectorClass_SideClass___(char a2);  // 0x4F02A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

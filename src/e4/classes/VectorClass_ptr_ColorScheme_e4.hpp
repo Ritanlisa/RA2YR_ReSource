@@ -22,5 +22,6 @@ struct VectorClass_ptr_ColorScheme {
     int  SetCapacity_1(int a2);  // 0x628A70
     unsigned int  GetItemIndex_0(int a2);  // 0x628AD0
     VectorClass_flat *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x628E80
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

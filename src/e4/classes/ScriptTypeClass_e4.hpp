@@ -25,7 +25,7 @@ struct ScriptTypeClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char arrayIndex[4];  // 0x24
+    void* arrayIndex;  // 0x24 [X30:type_map]
     bool isGlobal;  // 0x28
     char actionsCount[4];  // 0x2C
     char scriptActions[400];  // 0x30
@@ -43,6 +43,7 @@ struct ScriptTypeClass {
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int *  Constructor(char * Source, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x6916b0
+    unsigned char __pad_029;  // 0x29 [X30:canon]
 };
 
 } // namespace gamemd

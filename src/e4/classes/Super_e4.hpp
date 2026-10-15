@@ -20,5 +20,7 @@ struct Super {
     void* q6408;  // 0x6408
 // --- flat members (END) ---
     int GetDefaultTimer(void *a1 = 0);  // 0x6CC260
+    unsigned int field_24;  // [X30:default]
+    unsigned int field_28;  // [X30:default]
 };
 } // namespace gamemd

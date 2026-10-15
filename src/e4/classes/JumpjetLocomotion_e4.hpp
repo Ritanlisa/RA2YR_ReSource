@@ -38,5 +38,7 @@ struct JumpjetLocomotion {
     unsigned int u32_7C;  // X10 supply (member_lookup)
     int u32_80;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    unsigned char __pad_064;  // 0x64 [X30:canon]
 };
 } // namespace gamemd

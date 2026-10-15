@@ -29,5 +29,6 @@ struct VectorClass_BuildingType {
     char  CompareVectors(int a2);  // 0x50F740
     int  FindItemIndex(unsigned int * a2);  // 0x50F860
     unsigned int  GetItemIndex_0(int a2);  // 0x50F8A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

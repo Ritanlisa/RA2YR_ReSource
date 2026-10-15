@@ -24,18 +24,18 @@ struct TActionClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char idxArray[4];  // 0x24
+    int idxArray;  // 0x24 [X30:type_map]
     void* TActionClass_field_28;  // 0x28
-    void* TActionClass_field_2C;  // 0x2C
-    void* TActionClass_field_30;  // 0x30
+    AbstractClass* TActionClass_field_2C;  // 0x2C [X30:type_map]
+    AbstractClass* TActionClass_field_30;  // 0x30 [X30:type_map]
     unsigned int alignmentPadding;  // 0x33
-    void* TActionClass_field_34;  // 0x34
+    AnimClass* TActionClass_field_34;  // 0x34 [X30:type_map]
     void* TActionClass_field_38;  // 0x38
-    void* TActionClass_field_3C;  // 0x3C
-    void* TActionClass_field_40;  // 0x40
+    AbstractClass* TActionClass_field_3C;  // 0x3C [X30:type_map]
+    AbstractClass* TActionClass_field_40;  // 0x40 [X30:type_map]
     AbstractClass * TActionClass_field_44;  // 0x44
     void* TActionClass_field_48;  // 0x48
-    void* TActionClass_field_4C;  // 0x4C
+    AbstractClass* TActionClass_field_4C;  // 0x4C [X30:type_map]
     void* TActionClass_field_50;  // 0x50
     char Bounds[4];  // 0x52
     unsigned char TActionClass_field_54;  // 0x54
@@ -110,12 +110,12 @@ char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4
     unsigned int u32_10C;  // 0x10C (offset-truth)
     unsigned char u32_1F7;  // 0x1F7 (offset-truth)
     unsigned int u32_1F8;  // 0x1F8 (offset-truth)
-    unsigned int u32_298;  // 0x298 (offset-truth)
+    IUnknown* u32_298;  // 0x298 (offset-truth) [X30:type_map]
     unsigned int u32_53A0;  // 0x53A0 (offset-truth)
     unsigned int u32_5494;  // 0x5494 (offset-truth)
     unsigned int u32_54F0;  // 0x54F0 (offset-truth)
     unsigned int u32_54F4;  // 0x54F4 (offset-truth)
-    unsigned int u32_54FC;  // 0x54FC (offset-truth)
+    IUnknown* u32_54FC;  // 0x54FC (offset-truth) [X30:type_map]
 
     unsigned char HouseClass_A20[4];  /* HouseClass */  // X10 supply (member_lookup)
     void* q348;  // X10 supply (member_lookup)
@@ -126,6 +126,9 @@ char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4
     unsigned int u32_27D;  // X10 supply (member_lookup)
     unsigned int u32_F4;  // X10 supply (member_lookup)
     unsigned int u32_FC;  // X10 supply (member_lookup)
+    unsigned char __pad_0B7;  // 0xB7 [X30:canon]
+    unsigned int AbstractClass_10C;  // [X30:default]
+    unsigned int ParticleSystemClass_110;  // [X30:default]
 };
 
 } // namespace gamemd

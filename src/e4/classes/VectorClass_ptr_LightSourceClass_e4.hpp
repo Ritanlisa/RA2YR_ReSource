@@ -27,5 +27,6 @@ struct VectorClass_ptr_LightSourceClass {
     unsigned int  GetCapacity(int a2);  // 0x555420
     char  SetCapacity(int a2, unsigned int * a3);  // 0x555440
     DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x555870
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

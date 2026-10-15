@@ -38,7 +38,7 @@ int IsAtEnd(void *a1_1); // def-aligned
     int Play(void *a1_1);
     int RenderFrameToSurface(void *a1_1);
     int InitKeyframeTracking(char * Source, void * aSubtitlemdTxt);
-    unsigned int q_20;  // +0x20 flat supply (CSP-fed)
+    void* q_20;  // +0x20 flat supply (CSP-fed) [X30:type_map]
     unsigned int q_50;  // +0x50 flat supply (CSP-fed)
     unsigned int u32_104;  // 0x104 (offset-truth)
     unsigned char u32_105;  // 0x105 (offset-truth)
@@ -59,5 +59,10 @@ int IsAtEnd(void *a1_1); // def-aligned
     unsigned int u32_B0;  // X10 supply (member_lookup)
     unsigned int u32_B4;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    int BinkMovie_field_0x4;  // 0x4 [X30:type_map]
+    int BinkMovie_field_0x8;  // 0x8 [X30:type_map]
+    int BinkMovie_field_0xC;  // 0xC [X30:type_map]
+    int __pad_0;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

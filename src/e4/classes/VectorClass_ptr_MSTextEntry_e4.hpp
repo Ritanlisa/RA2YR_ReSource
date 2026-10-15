@@ -21,5 +21,6 @@ struct VectorClass_ptr_MSTextEntry {
     int  GetSize(unsigned int * a2);  // 0x5D0C00
     unsigned int  GetCapacity(int a2);  // 0x5D0C40
     VectorClass_flat *  QueryInterface(char a2);  // 0x5D1760
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

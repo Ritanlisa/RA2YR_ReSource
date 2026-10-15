@@ -275,6 +275,7 @@ struct AudioChannel {
     unsigned int u32_14;  // 0x14 (offset-truth supply)
     unsigned int u32_4;  // 0x4 (offset-truth supply)
     unsigned int u32_C;  // 0xC (offset-truth supply)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 #endif  // GAMEMD_G2_AudioChannel_DEF
 
@@ -291,11 +292,23 @@ struct CampaignScore {
     unsigned char *__pad_0;  // 0x0
     void* inOpenToppedTransport;  // 0x0 (no offset truth)
     void* wasFallingDown;  // 0x0 (no offset truth)
+    int __pad_004;  // 0x4 [X30:type_map]
+    unsigned int AbstractClass_1;  // [X30:default]
+    CampaignScore* CampaignScore_1;  // 0x1 [X30:member_lookup]
+    unsigned int q092;  // 0x92 [X30:default]
+    unsigned char q096;  // 0x96 [X30:member_lookup]
+    unsigned int q0A3;  // 0xA3 [X30:default]
+    unsigned int q_B0;  // [X30:default]
+    unsigned int u32_7E;  // 0x7E [X30:default]
+    unsigned int u32_9E;  // 0x9E [X30:default]
+    unsigned int u32_B0;  // 0xB0 [X30:default]
 };
 
 struct DialogControl_OwnerDraw {
     void* vfptr;
     unsigned int m_0;  // 0x0
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    ObjectClass* ObjectClass_C;  // 0xC [X30:member_lookup]
 };
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
@@ -314,6 +327,7 @@ struct DynamicVectorClass {
     unsigned int *  AnimTypeConstructor(int a2, int a3);  // 0x525250
     static int Destroy(void *aP1);
 
+    unsigned int tail_E;  // 0xE [X30:canon]
 };
 #endif
 
@@ -321,6 +335,7 @@ struct DynamicVectorClass {
 struct FractalNoise {
     void* vfptr;
     static void Dtor(void *aP0);  // G42.32 R5-style static sync
+    unsigned int tail_0;  // 0x0 [X30:canon]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (FractalNoise)
 
@@ -485,6 +500,8 @@ struct HashTable {
     static int RebuildEx(void *aP0);
     static int FindString(void *aP0, const char *aP1, unsigned int *aP2);
     unsigned char *__pad_0;  // 0x0
+    AbstractClass* __pad_000;  // 0x0 [X30:type_map]
+    int HashTable_field_0x10;  // 0x10 [X30:type_map]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (HashTable)
 
@@ -493,6 +510,7 @@ struct KeywordType {
     void* vfptr;
     void* FindOrCreate2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon KeywordType::FindOrCreate2 is a method)
     static unsigned int FindOrCreate2(char *Source);  // x4:ida@0x524cb0
+    unsigned int tail_0;  // 0x0 [X30:canon]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (KeywordType)
 
@@ -510,6 +528,7 @@ struct MSAnim {
     void* vtable1;  // 0x0
     int  GetField(unsigned int a2);  // 0x5cb840
     int  SetField(unsigned int a2);  // 0x5cb860
+    int __pad_004;  // 0x4 [X30:type_map]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (MSAnim)
 
@@ -524,7 +543,8 @@ struct MSShapeAnim {
     unsigned int * processTrigger(int a2, int a3);
     unsigned int * checkCondition(int aP1, int aP2);
     int executeActions(int a2);
-    unsigned int q_10;  // +0x10 flat supply (CSP-fed)
+    ObjectClass* q_10;  // +0x10 flat supply (CSP-fed) [X30:type_map]
+    int __pad_004;  // 0x4 [X30:type_map]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (MSShapeAnim)
 
@@ -552,12 +572,12 @@ struct ObjectClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* uniqueId;  // 0x10
+    ObjectClass* uniqueId;  // 0x10 [X30:type_map]
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     void* abstractFlags;  // 0x14
-    void* nextArrayIndex;  // 0x18
-    void* referenceCount;  // 0x1C
+    ObjectClass* nextArrayIndex;  // 0x18 [X30:type_map]
+    ObjectClass* referenceCount;  // 0x1C [X30:type_map]
     bool q01D;  // 0x1D
     unsigned int q01E;  // 0x1E
     void* NeedsSaveOrLink;  // 0x20
@@ -609,7 +629,7 @@ struct ObjectClass {
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int u32_77;  // 0x77
-    unsigned int spawnStatus;  // 0x78
+    Int4* spawnStatus;  // 0x78 [X30:type_map]
     unsigned int u32_7B;  // 0x7B
     unsigned int visibilityFlags;  // 0x7C
     unsigned int u32_7F;  // 0x7F
@@ -802,9 +822,9 @@ struct ObjectClass {
     unsigned int q_180;  // +0x180 flat supply (CSP-fed)
     unsigned int q_1C0;  // +0x1C0 flat supply (CSP-fed)
     unsigned int q_1D0;  // +0x1D0 flat supply (CSP-fed)
-    unsigned int q_1F0;  // +0x1F0 flat supply (CSP-fed)
+    void* q_1F0;  // +0x1F0 flat supply (CSP-fed) [X30:type_map]
     unsigned int q_200;  // +0x200 flat supply (CSP-fed)
-    unsigned int q_2B0;  // +0x2B0 flat supply (CSP-fed)
+    void* q_2B0;  // +0x2B0 flat supply (CSP-fed) [X30:type_map]
     unsigned int q_5B0;  // +0x5B0 flat supply (CSP-fed)
     unsigned int q_610;  // +0x610 flat supply (CSP-fed)
     unsigned int q_F20;  // +0xF20 flat supply (CSP-fed)
@@ -829,7 +849,7 @@ struct ObjectClass {
     int sub_77D3F0();  // 0x77D3F0
     // --- W16G3 supply (BEGIN) ---
     char __pad_524[340];  // 0x524 vocab (elem [336] @0x5f41bd) (W16G3 raw-usage vocab)
-    unsigned int field_520;  // 0x520 @0x5f48fa (W16G3 raw-usage vocab)
+    void* field_520;  // 0x520 @0x5f48fa (W16G3 raw-usage vocab) [X30:type_map]
     char isBerserk[4];  // @0x4d7d58 elem[0] (W16G3 raw-usage vocab)
     unsigned int rockerLinkedUnit;  // @0x4d7d65 (W16G3 raw-usage vocab)
     // --- W16G3 supply (END) ---
@@ -865,6 +885,136 @@ struct ObjectClass {
     unsigned char u8_28A;  // X10 supply (member_lookup)
 
     unsigned int u32_BC;  // X10 supply (member_lookup)
+    unsigned int AbstractClass_1;  // [X30:default]
+    unsigned int AmbientDamage;  // [X30:default]
+    unsigned int AreaFire;  // [X30:default]
+    unsigned int AssaultAnim;  // [X30:default]
+    unsigned int AttachedParticleSystem;  // [X30:default]
+    unsigned int Bright;  // [X30:default]
+    unsigned int Burst;  // [X30:default]
+    unsigned int CellRangefinding;  // [X30:default]
+    unsigned int Charges;  // [X30:default]
+    unsigned int Coord_9C;  // [X30:default]
+    unsigned int DecloakToFire;  // [X30:default]
+    unsigned int DisguiseFakeBlinkTime;  // [X30:default]
+    unsigned int DisguiseFireOnly;  // [X30:default]
+    unsigned int DistributedWeaponFire;  // [X30:default]
+    unsigned int DownReport;  // [X30:default]
+    unsigned int DrainWeapon;  // [X30:default]
+    unsigned int DrawBoltAsLaser;  // [X30:default]
+    unsigned int FireInTransport;  // [X30:default]
+    unsigned int FireOnce;  // [X30:default]
+    unsigned int FireWhileMoving;  // [X30:default]
+    unsigned int HouseClass_6C;  // [X30:default]
+    unsigned int InfiniteMindControl;  // [X30:default]
+    unsigned int IonSensitive;  // [X30:default]
+    unsigned int IsAlternateColor;  // [X30:default]
+    unsigned int IsBigLaser;  // [X30:default]
+    unsigned int IsElectricBolt;  // [X30:default]
+    unsigned int IsHouseColor;  // [X30:default]
+    unsigned int IsLaser;  // [X30:default]
+    unsigned int IsLine;  // [X30:default]
+    unsigned int IsMagBeam;  // [X30:default]
+    unsigned int IsRadBeam;  // [X30:default]
+    unsigned int IsRadEruption;  // [X30:default]
+    unsigned int IsRailgun;  // [X30:default]
+    unsigned int IsSonic;  // [X30:default]
+    unsigned int LaserDuration;  // [X30:default]
+    unsigned int LaserInnerColor;  // [X30:default]
+    unsigned int LaserOuterColor;  // [X30:default]
+    unsigned int LaserOuterSpread;  // [X30:default]
+    unsigned int LimboLaunch;  // [X30:default]
+    unsigned int Lobber;  // [X30:default]
+    unsigned int MigAttackCursor;  // [X30:default]
+    unsigned int MinimumRange;  // [X30:default]
+    unsigned int NeverUse;  // [X30:default]
+    unsigned int OccupantAnim;  // [X30:default]
+    unsigned int OmniFire;  // [X30:default]
+    unsigned int OpenToppedAnim;  // [X30:default]
+    unsigned int ROF;  // [X30:default]
+    unsigned int RadLevel;  // [X30:default]
+    unsigned int Range;  // [X30:default]
+    unsigned int Report;  // [X30:default]
+    unsigned int RevealOnFire;  // [X30:default]
+    unsigned int SabotageCursor;  // [X30:default]
+    unsigned int Spawner;  // [X30:default]
+    unsigned int Speed;  // [X30:default]
+    unsigned int Suicide;  // [X30:default]
+    unsigned int Supress;  // [X30:default]
+    unsigned int TerrainFire;  // [X30:default]
+    unsigned int TurboBoost;  // [X30:default]
+    unsigned int UseFireParticles;  // [X30:default]
+    unsigned int UseSparkParticles;  // [X30:default]
+    int __pad_00C;  // 0xC [X30:type_map]
+    bool __pad_014;  // 0x14 [X30:type_map]
+    unsigned int __pad_14D;  // 0x14D [X30:default]
+    unsigned int a2;  // [X30:default]
+    ObjectClass* ptr_10;  // 0x10 [X30:type_map]
+    ObjectClass* ptr_18;  // 0x18 [X30:type_map]
+    String* ptr_8;  // 0x8 [X30:type_map]
+    void* q000;  // 0x0 [X30:type_map]
+    void* q004;  // 0x4 [X30:type_map]
+    int q100;  // 0x100 [X30:type_map]
+    int q104;  // 0x104 [X30:type_map]
+    int q118;  // 0x118 [X30:type_map]
+    int q120;  // 0x120 [X30:type_map]
+    int q124;  // 0x124 [X30:type_map]
+    int q128;  // 0x128 [X30:type_map]
+    int q12C;  // 0x12C [X30:type_map]
+    int q130;  // 0x130 [X30:type_map]
+    int q134;  // 0x134 [X30:type_map]
+    int q138;  // 0x138 [X30:type_map]
+    int q13C;  // 0x13C [X30:type_map]
+    unsigned int q146;  // 0x146 [X30:member_lookup]
+    int q148;  // 0x148 [X30:type_map]
+    int q150;  // 0x150 [X30:type_map]
+    unsigned int q151;  // 0x151 [X30:member_lookup]
+    bool q152;  // 0x152 [X30:member_lookup]
+    bool q153;  // 0x153 [X30:member_lookup]
+    int q154;  // 0x154 [X30:member_lookup]
+    void* q156;  // 0x156 [X30:member_lookup]
+    int q158;  // 0x158 [X30:type_map]
+    int q15C;  // 0x15C [X30:type_map]
+    unsigned char q16D;  // 0x16D [X30:member_lookup]
+    int q170;  // 0x170 [X30:type_map]
+    int q174;  // 0x174 [X30:type_map]
+    bool q175;  // 0x175 [X30:member_lookup]
+    unsigned int q176;  // 0x176 [X30:default]
+    unsigned char q1E0;  // 0x1E0 [X30:member_lookup]
+    unsigned int q45C;  // 0x45C [X30:default]
+    int u32_144;  // 0x144 [X30:type_map]
+    int u32_14C;  // 0x14C [X30:type_map]
+    int u32_178;  // 0x178 [X30:type_map]
+    int u32_17C;  // 0x17C [X30:type_map]
+    int u32_180;  // 0x180 [X30:type_map]
+    int u32_184;  // 0x184 [X30:type_map]
+    int u32_188;  // 0x188 [X30:type_map]
+    int u32_1C4;  // 0x1C4 [X30:type_map]
+    int u32_1C8;  // 0x1C8 [X30:type_map]
+    int u32_98;  // 0x98 [X30:type_map]
+    int u32_A4;  // 0xA4 [X30:type_map]
+    int u32_F8;  // 0xF8 [X30:type_map]
+    int u32_FC;  // 0xFC [X30:type_map]
+    unsigned char u8_145;  // 0x145 [X30:member_lookup]
+    unsigned int u8_147;  // 0x147 [X30:default]
+    unsigned int u8_149;  // 0x149 [X30:default]
+    unsigned int u8_14A;  // 0x14A [X30:default]
+    unsigned int u8_14B;  // 0x14B [X30:default]
+    unsigned int u8_14E;  // 0x14E [X30:default]
+    unsigned int u8_14F;  // 0x14F [X30:default]
+    unsigned int u8_155;  // 0x155 [X30:default]
+    unsigned int u8_157;  // 0x157 [X30:default]
+    unsigned int u8_159;  // 0x159 [X30:default]
+    unsigned int u8_15A;  // 0x15A [X30:default]
+    unsigned int u8_15B;  // 0x15B [X30:default]
+    unsigned int u8_16E;  // 0x16E [X30:default]
+    unsigned int u8_177;  // 0x177 [X30:member_lookup]
+    unsigned char u8_179;  // 0x179 [X30:member_lookup]
+    unsigned int u8_17A;  // 0x17A [X30:default]
+    bool u8_17B;  // 0x17B [X30:member_lookup]
+    unsigned int vfptr1;  // [X30:default]
+    unsigned int vfptr2;  // [X30:default]
+    unsigned int vfptr3;  // [X30:default]
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
@@ -881,6 +1031,9 @@ struct ShapeButtonClass {
     unsigned int ShapeButtonClass_field_0x08;  // 0x8
     void* Constructor_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ShapeButtonClass::Constructor is a method)
     static unsigned int Constructor(int p0, int p1, int p2, int p3, int p4, int p5, char p6);  // x4:signals@0x69dd30
+    unsigned char __pad_004;  // 0x4 [X30:canon]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
+    char vtable1[4];  // 0x0 [X30:member_lookup]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (ShapeButtonClass)
 
@@ -908,6 +1061,9 @@ struct State {
     void* Cleanup3;  // 0x0 (no offset truth)
     int LastSave;  // 0x28
     void* vt_Anim;  // 0x0 (no offset truth)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned char __pad_01D;  // 0x1D [X30:canon]
+    unsigned char __pad_02C;  // 0x2C [X30:canon]
 };
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
@@ -951,6 +1107,10 @@ struct VectorClass {
 
     void* q010;  // X10 supply (member_lookup)
     unsigned int u32_14;  // X10 supply (member_lookup)
+    void* Items;  // 0x4 [X30:type_map]
+    AbstractClass* Capacity;  // 0x8 [X30:type_map]
+    int IsInitialized;  // 0xC [X30:type_map]
+    void* VectorClass_18;  // 0x18 [X30:member_lookup]
 };
 #endif
 
@@ -966,6 +1126,7 @@ struct WorldDominationTour {
     void* CampaignProperties;  // 0x0 (no offset truth)
     void* Conflict;  // 0x0 (no offset truth)
     void* GameOption;  // 0x0 (no offset truth)
+    unsigned int tail_0;  // 0x0 [X30:canon]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (WorldDominationTour)
 
@@ -995,6 +1156,9 @@ struct _ {
     unsigned int * WstringConstructor(int a2, unsigned int *a3);
     int RemoveAt(int a2);
     int Shrink();
+    void* Items;  // 0x4 [X30:canon]
+    int Capacity;  // 0x8 [X30:canon]
+    bool IsAllocated;  // 0xD [X30:canon]
 };
 #endif  // GAMEMD_E4_OWNS_UNDERSCORE
 
@@ -1057,8 +1221,10 @@ struct _VectorClass_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, 
 // AnimTypeList  size=4  (TiberiumClass_e4.cpp C2027 carrier)
 struct AnimTypeList {
     unsigned char q000[4];  // 0x0
+    unsigned int tail_0;  // 0x0 [X30:canon]
 };
 // VoxelAnimTypeVector  size=4  (TechnoTypeClass_e4.cpp C2027 carrier)
 struct VoxelAnimTypeVector {
+    unsigned int tail_0;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

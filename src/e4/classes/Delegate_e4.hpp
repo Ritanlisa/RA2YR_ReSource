@@ -38,6 +38,11 @@ struct Delegate {
     unsigned int q014;  // 0x14 (offset-truth)
     unsigned int q018;  // 0x18 (offset-truth)
     void* field_1C;  // 0x1C
+    unsigned char __pad_00D;  // 0xD [X30:canon]
+    unsigned int Previous;  // [X30:default]
+    unsigned int field_10;  // [X30:default]
+    unsigned int field_18;  // [X30:default]
+    unsigned int field_C;  // [X30:default]
 };
 
 } // namespace gamemd

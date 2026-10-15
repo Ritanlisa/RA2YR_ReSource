@@ -20,5 +20,6 @@ struct VectorClass_ptr_PlanningBranchClass {
     int  GetSize(unsigned int * a2);  // 0x63E170
     unsigned int  Remove(int a2, void *a1 = 0);  // 0x63E1B0
     VectorClass_flat *  QueryInterface(char a2);  // 0x63ECF0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

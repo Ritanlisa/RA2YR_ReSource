@@ -10,7 +10,7 @@ struct AnimClass;  // fix_fwd_type_supply
 struct PsyDom {
 // --- flat members (BEGIN) ---
     void* q300;  // 0x300
-    void* q324;  // 0x324
+    BuildingTypeClass* q324;  // 0x324 [X30:type_map]
     void* q768;  // 0x768
     void* q804;  // 0x804
     void* q6294;  // 0x6294

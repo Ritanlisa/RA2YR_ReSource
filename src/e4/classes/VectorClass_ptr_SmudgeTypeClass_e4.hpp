@@ -35,5 +35,6 @@ struct VectorClass_ptr_SmudgeTypeClass {
     int  FindItemIndex_0(unsigned int * a2);  // 0x4ED830
     char  SetCapacity_1(int a2, unsigned int * a3);  // 0x4ED9E0
     int  FindItemIndex_1(unsigned int * a2);  // 0x4EDA90
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

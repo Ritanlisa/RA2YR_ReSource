@@ -38,7 +38,7 @@ struct VocClass {
     void* pVoiceChannel;  // 0xB0
     char SampleIndex[128];  // 0xB4
     char NumSamples[4];  // 0x134
-    char Attack[4];  // 0x138
+    int Attack;  // 0x138 [X30:type_map]
     char Decay[4];  // 0x13C
     unsigned int VocClass_field_140;  // 0x140
     unsigned int VocClass_field_144;  // 0x144
@@ -51,6 +51,7 @@ struct VocClass {
     char * GetSampleName(void *a1 = 0);
     char LoadFromINI(CCINIClass * aP1, void *a2 = 0);  // G42.39 supply
     unsigned int u32_278;  // 0x278 (offset-truth)
+    unsigned char __pad_00C;  // 0xC [X30:canon]
 };
 #endif  // GAMEMD_G2_VocClass_DEF
 

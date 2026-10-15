@@ -99,6 +99,17 @@ struct DisplayClass {
     unsigned int u32_D68;  // X10 supply (member_lookup)
     int u32_D74;  // X10 supply (member_lookup)
     int u32_D78;  // X10 supply (member_lookup)
+    unsigned char __pad_028;  // 0x28 [X30:canon]
+    unsigned char __pad_038;  // 0x38 [X30:canon]
+    unsigned char __pad_070;  // 0x70 [X30:canon]
+    unsigned char __pad_08C;  // 0x8C [X30:canon]
+    unsigned char __pad_0D8;  // 0xD8 [X30:canon]
+    unsigned char __pad_0F0;  // 0xF0 [X30:canon]
+    unsigned char __pad_100;  // 0x100 [X30:canon]
+    unsigned char __pad_124;  // 0x124 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_296;  // 0x296 [X30:canon]
+    unsigned char q121;  // 0x121 [X30:member_lookup]
 };
 
 } // namespace gamemd

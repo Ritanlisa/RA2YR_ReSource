@@ -28,5 +28,6 @@ struct VectorClass_ptr_DamageGroup {
     int  FindItemIndex(unsigned int * a2);  // 0x48AFA0
     VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x48AFD0
     DynamicVector *  Constructor_VectorClass_DamageGroup___(char a2);  // 0x48B020
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

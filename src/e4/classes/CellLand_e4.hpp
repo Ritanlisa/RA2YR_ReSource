@@ -12,5 +12,6 @@ struct CellLand {
 // --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size=4)
     static int IsBuildable(CellLand *aP1);
+    unsigned int __tail_0;  // [X30:default]
 };
 } // namespace gamemd

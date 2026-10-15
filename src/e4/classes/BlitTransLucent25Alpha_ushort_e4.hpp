@@ -16,8 +16,11 @@ struct BlitTransLucent25Alpha_ushort {
     int CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
     int CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
     std::locale::facet * Constructor_Blitter(char a2);
-    unsigned int m_8;  // 0x8 (offset-truth)
+    AbstractClass* m_8;  // 0x8 (offset-truth) [X30:type_map]
     unsigned int *q000;  // 0x0 (offset-truth)
+    int __pad_004;  // 0x4 [X30:type_map]
+    unsigned char __pad_00C;  // 0xC [X30:canon]
+    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 
 } // namespace gamemd

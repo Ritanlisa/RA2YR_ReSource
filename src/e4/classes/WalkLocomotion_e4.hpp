@@ -22,5 +22,8 @@ struct WalkLocomotion {
     unsigned int u32_58;  // X10 supply (member_lookup)
     unsigned int u32_5C;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // 0x0 [X30:canon]
+    unsigned char __pad_038;  // 0x38 [X30:canon]
+    unsigned char __pad_064;  // 0x64 [X30:canon]
 };
 } // namespace gamemd

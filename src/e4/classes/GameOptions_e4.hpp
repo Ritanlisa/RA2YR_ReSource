@@ -12,6 +12,7 @@ struct GameOptions {
     static int GetEntry();
     char GameSpeedChanged();
     int __thiscall SaveLoad(int *a2);
+    WinModemClass* __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

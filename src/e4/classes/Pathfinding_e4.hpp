@@ -11,6 +11,7 @@ struct Pathfinding {
 // --- flat members (END) ---
     unsigned int * ExpandNode(short * a1, int a2);
     static int CalcDistance(Pathfinding * aP1, int16_t *a2, int16_t *a3, int a4, int a5, int a6, signed int a7);
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

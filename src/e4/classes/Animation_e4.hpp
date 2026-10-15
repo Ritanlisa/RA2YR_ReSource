@@ -43,7 +43,7 @@ struct Animation {
     unsigned int u32_1A0;  // 0x1A0
     unsigned int u32_200;  // 0x200
     unsigned int u32_20C;  // 0x20C
-    unsigned int u32_21C;  // 0x21C
+    void* u32_21C;  // 0x21C [X30:type_map]
     unsigned int q244;  // 0x244
     unsigned int q248;  // 0x248
     unsigned int u32_268;  // 0x268
@@ -70,7 +70,7 @@ struct Animation {
     unsigned int u32_3A8;  // 0x3A8
     unsigned int u32_414;  // 0x414
     unsigned int u32_418;  // 0x418
-    unsigned int u32_520;  // 0x520
+    void* u32_520;  // 0x520 [X30:type_map]
     unsigned int q524;  // 0x524
     unsigned int q534;  // 0x534
     unsigned int q540;  // 0x540

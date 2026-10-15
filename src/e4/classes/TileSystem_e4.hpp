@@ -12,5 +12,6 @@ struct TileSystem {
     unsigned char q000[16];  // 0x0 (canon size filler)
     static unsigned int * Constructor(void *aP1, int a2, int a3);
     static char BuildNodes(void *aP1);
+    int __pad_000;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

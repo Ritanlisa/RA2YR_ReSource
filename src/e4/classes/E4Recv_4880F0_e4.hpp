@@ -19,5 +19,6 @@ struct E4Recv_4880F0 {
     ConvertClass * *  sub_4880F0(int a2);  // 0x4880F0
 
     unsigned int q018;  // X10 supply (member_lookup)
+    unsigned int fallRate;  // [X30:default]
 };
 } // namespace gamemd

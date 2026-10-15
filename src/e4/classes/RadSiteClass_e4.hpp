@@ -23,17 +23,17 @@ struct RadSiteClass {
     char RadLevelTimer[12];  // 0x28
     unsigned int alignmentPadding;  // 0x33
     char RadLightTimer[12];  // 0x34
-    char BaseCell[4];  // 0x40
+    void* BaseCell;  // 0x40 [X30:type_map]
     void* ptr_42;  // 0x42
-    char Spread[4];  // 0x44
-    char SpreadInLeptons[4];  // 0x48
-    char RadLevel[4];  // 0x4C
-    char LevelSteps[4];  // 0x50
-    char Intensity[4];  // 0x54
-    char Tint[12];  // 0x58
-    char IntensityDecrement[4];  // 0x5C
-    char Tint_d[4];  // 0x60
-    int IntensitySteps;  // 0x64
+    int Spread;  // 0x44 [X30:type_map]
+    int SpreadInLeptons;  // 0x48 [X30:type_map]
+    int RadLevel;  // 0x4C [X30:type_map]
+    LightSourceClass* LevelSteps;  // 0x50 [X30:type_map]
+    LightSourceClass* Intensity;  // 0x54 [X30:type_map]
+    int Tint;  // 0x58 [X30:type_map]
+    int IntensityDecrement;  // 0x5C [X30:type_map]
+    TintStruct* Tint_d;  // 0x60 [X30:type_map]
+    LightSourceClass* IntensitySteps;  // 0x64 [X30:type_map]
     void* IntensityDecrement_d;  // 0x68
     void* RadDuration;  // 0x6C
     void* RadTimeLeft;  // 0x70

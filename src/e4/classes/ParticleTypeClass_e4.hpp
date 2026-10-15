@@ -82,16 +82,16 @@ struct ParticleTypeClass {
     unsigned int AlphaImageFile;  // 0x213
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches_4[4];  // 0x244
-    void* XVelocity;  // 0x2A0
-    void* YVelocity;  // 0x2A4
-    unsigned int MinZVelocity;  // 0x2A8
+    IUnknown* XVelocity;  // 0x2A0 [X30:type_map]
+    IUnknown* YVelocity;  // 0x2A4 [X30:type_map]
+    void* MinZVelocity;  // 0x2A8 [X30:type_map]
     unsigned int ZVelocityRange;  // 0x2AC
     VectorClass* ColorList;  // 0x2C8
     unsigned int MaxDC_d;  // 0x2DC
-    unsigned int MaxEC_d;  // 0x2E0
-    unsigned int Damage_d;  // 0x2E8
-    unsigned int StartFrame;  // 0x2EC
-    unsigned int NumLoopFrames;  // 0x2F0
+    void* MaxEC_d;  // 0x2E0 [X30:type_map]
+    void* Damage_d;  // 0x2E8 [X30:type_map]
+    void* StartFrame;  // 0x2EC [X30:type_map]
+    void* NumLoopFrames;  // 0x2F0 [X30:type_map]
     bool Translucency_d;  // 0x2F4
     bool Gas;  // 0x2F5
     bool Spark;  // 0x2F6
@@ -115,8 +115,8 @@ struct ParticleTypeClass {
     unsigned char Translucent50State;  // 0x30E
     unsigned char Normalized;  // 0x30F
 // --- flat members (END) ---
-    int ParticleTypeClass_field_0x2B8;  // 0x2B8 (G57W14E1 til supply)
-    int ParticleTypeClass_field_0x2BC;  // 0x2BC (G57W14E1 til supply)
+    void* ParticleTypeClass_field_0x2B8;  // 0x2B8 (G57W14E1 til supply) [X30:type_map]
+    CampaignClass* ParticleTypeClass_field_0x2BC;  // 0x2BC (G57W14E1 til supply) [X30:type_map]
     char __pad_2C0[8];  // 0x2C0 (G57W14E1 til supply)
     AbstractClass * * Release(int a2, char * a3);
     ParticleTypeClass * ddtor(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1);
@@ -159,6 +159,22 @@ struct ParticleTypeClass {
 
     unsigned int u32_1570;  // X10 supply (member_lookup)
     unsigned int u32_EF0;  // X10 supply (member_lookup)
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_024;  // 0x24 [X30:canon]
+    unsigned char __pad_072;  // 0x72 [X30:canon]
+    unsigned char __pad_099;  // 0x99 [X30:canon]
+    unsigned char __pad_0A4;  // 0xA4 [X30:canon]
+    unsigned char __pad_0B4;  // 0xB4 [X30:canon]
+    unsigned char __pad_210;  // 0x210 [X30:canon]
+    unsigned char __pad_217;  // 0x217 [X30:canon]
+    unsigned char __pad_248;  // 0x248 [X30:canon]
+    void* __pad_2CC;  // 0x2CC [X30:type_map]
+    unsigned char __pad_2FF;  // 0x2FF [X30:canon]
+    unsigned char __pad_311;  // 0x311 [X30:canon]
+    unsigned int BarrelVoxel;  // [X30:default]
+    unsigned int ParticleTypeClass_2B8;  // [X30:default]
+    int ParticleTypeClass_field_0x314;  // 0x314 [X30:type_map]
+    unsigned int uniqueId;  // [X30:default]
 };
 
 } // namespace gamemd

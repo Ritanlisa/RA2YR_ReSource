@@ -64,8 +64,8 @@ struct BuildingLightClass {
     char BuildingLightClass_field_C4[12];  // 0xC4
     unsigned int BuildingLightClass_field_D0;  // 0xD0
     bool BuildingLightClass_field_D8;  // 0xD8
-    char BehaviourMode[4];  // 0xDC
-    unsigned int BuildingLightClass_field_E0;  // 0xE0
+    int BehaviourMode;  // 0xDC [X30:type_map]
+    void* BuildingLightClass_field_E0;  // 0xE0 [X30:type_map]
     ObjectClass* FollowingObject;  // 0xE4
 // --- flat members (END) ---
     BuildingLightClass * SDDTOR(char a2, int a1, int aP0, int aP2);
@@ -105,6 +105,7 @@ struct BuildingLightClass {
     unsigned char __pad_0B4;  // X10 supply (csp_canon_members)
     unsigned char __pad_0D4;  // X10 supply (csp_canon_members)
     ParticleSystemClass* q388;  // X10 supply (member_lookup)
+    unsigned char __pad_0D9;  // 0xD9 [X30:canon]
 };
 #endif  // GAMEMD_CORE_OWNS_BUILDINGLIGHT
 

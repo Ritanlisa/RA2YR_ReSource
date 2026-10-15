@@ -12,5 +12,6 @@ struct LZOPipe {
     unsigned char q000[8];  // 0x0 (canon size filler)
     static unsigned int * Constructor(void *aP1, int a2, int a3);
     static int Destructor(void *aP1);
+    int __pad_004;  // 0x4 [X30:type_map]
 };
 } // namespace gamemd

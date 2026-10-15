@@ -46,5 +46,14 @@ struct TaskForceClass {
     unsigned char q0A0[4];  /* char[4] */  // X10 supply (member_lookup)
     int q0A4;  // X10 supply (member_lookup)
     char q028[112];  // 0x28  /* char[112] */
+    unsigned char __pad_010;  // 0x10 [X30:canon]
+    unsigned char __pad_020;  // 0x20 [X30:canon]
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_041;  // 0x41 [X30:canon]
+    unsigned char __pad_068;  // 0x68 [X30:canon]
+    int __pad_09C;  // 0x9C [X30:type_map]
+    unsigned int Coord_9C;  // [X30:default]
+    int TaskForceClass_field_0x4;  // 0x4 [X30:type_map]
+    char __pad_A0[4];  // 0xA0 [X30:member_lookup]
 };
 } // namespace gamemd

@@ -26,6 +26,7 @@ struct MechLocomotionClass {
     int BeginMove(int * a1, int * a2);
     int StubReturn52();
     int ddtor(int a1, unsigned int * a2);
+    unsigned char __pad_012;  // 0x12 [X30:canon]
 };
 
 } // namespace gamemd

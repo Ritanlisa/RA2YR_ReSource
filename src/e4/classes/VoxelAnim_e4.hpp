@@ -12,6 +12,7 @@ struct VoxelAnim {
 // --- flat members (END) ---
     static int ComputeTransform(float * a1, float * a2, float a3, int a4);
     int Draw(unsigned int * a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    unsigned char __pad_008;  // 0x8 [X30:canon]
 };
 
 } // namespace gamemd

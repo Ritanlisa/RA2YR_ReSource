@@ -30,5 +30,6 @@ struct VectorClass_ptr_UnitClass {
     int  FindItemIndex_0(unsigned int * a2);  // 0x4EBE10
     VectorClass_flat *  Constructor_VectorClass_UnitClass___(char a2);  // 0x4EFF30
     DynamicVector *  Constructor_VectorClass_HouseClass___(char a2);  // 0x4F0020
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -35,5 +35,6 @@ struct VectorClass_ptr_TeamClass {
     VectorClass_flat *  Constructor_VectorClass_TeamClass___(char a2);  // 0x4EF8A0
     DynamicVector *  Constructor_VectorClass_AnimClass___(char a2);  // 0x4F00C0
     DynamicVector *  Constructor_VectorClass_FactoryClass___(char a2);  // 0x4F0160
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

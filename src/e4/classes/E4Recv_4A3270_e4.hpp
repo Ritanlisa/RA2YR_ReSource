@@ -17,5 +17,8 @@ struct E4Recv_4A3270 {
     unsigned int M116;  // 0x74
 // --- flat members (END) ---
     void *  sub_4A3270(int a2, int a3, int a4);  // 0x4A3270
+    unsigned int estimatedHealth;  // [X30:default]
+    unsigned int health;  // [X30:default]
+    unsigned int isOnMap;  // [X30:default]
 };
 } // namespace gamemd

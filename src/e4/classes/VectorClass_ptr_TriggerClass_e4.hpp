@@ -21,5 +21,6 @@ struct VectorClass_ptr_TriggerClass {
     int  GetSize(unsigned int * a2);  // 0x4EA540
     unsigned int  GetCapacity(int a2);  // 0x4EA580
     VectorClass_flat *  QueryInterface(char a2);  // 0x4EF990
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

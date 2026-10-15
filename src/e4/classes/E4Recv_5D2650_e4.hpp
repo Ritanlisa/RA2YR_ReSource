@@ -11,5 +11,6 @@ struct E4Recv_5D2650 {
     unsigned int M64;  // 0x40
 // --- flat members (END) ---
     void*  sub_5D2650(void * a2, int a3);  // 0x5D2650
+    unsigned int ambientSoundController;  // [X30:default]
 };
 } // namespace gamemd

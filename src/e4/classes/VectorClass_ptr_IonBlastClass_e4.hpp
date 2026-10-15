@@ -18,5 +18,6 @@ struct VectorClass_ptr_IonBlastClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_IonBlastClass___(char a2);  // 0x53DD50
     int Get(int a2, void *a2_2);  // 0x53DA40
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

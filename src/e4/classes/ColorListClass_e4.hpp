@@ -23,6 +23,8 @@ struct ColorListClass {
     unsigned int u32_44;  // 0x44 (offset-truth)
 
     unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned char __pad_004;  // 0x4 [X30:canon]
+    unsigned char __pad_019;  // 0x19 [X30:canon]
 };
 
 } // namespace gamemd

@@ -86,5 +86,17 @@ struct House {
     unsigned int u32_EC;  // X10 supply (member_lookup)
     int u8_2F4;  // X10 supply (member_lookup)
     void* q004;  // 0x4
+    unsigned char __pad_048;  // 0x48 [X30:canon]
+    unsigned char __pad_224;  // 0x224 [X30:canon]
+    unsigned char __pad_338;  // 0x338 [X30:canon]
+    unsigned char __pad_46C;  // 0x46C [X30:canon]
+    unsigned char __pad_484;  // 0x484 [X30:canon]
+    int House_field_0x1EC;  // 0x1EC [X30:type_map]
+    char House_field_0x2[4];  // 0x2 [X30:member_lookup]
+    char House_field_0x29[4];  // 0x29 [X30:member_lookup]
+    char __pad_3D7[329];  // 0x3D7 [X30:member_lookup]
+    AbstractClass* __pad_C;  // 0xC [X30:type_map]
+    unsigned int armorMultiplier;  // [X30:default]
+    unsigned int controlGroup;  // [X30:default]
 };
 } // namespace gamemd

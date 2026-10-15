@@ -21,6 +21,9 @@ struct SHA1 {
     int u32_18;  // X10 supply (member_lookup)
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned int u32_30;  // X10 supply (member_lookup)
+    int __pad_000;  // 0x0 [X30:type_map]
+    int SHA1_field_0x04;  // 0x4 [X30:type_map]
+    unsigned int state;  // [X30:default]
 };
 
 } // namespace gamemd

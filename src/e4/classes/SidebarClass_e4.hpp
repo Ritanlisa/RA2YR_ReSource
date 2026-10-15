@@ -71,6 +71,22 @@ struct SidebarClass {
     unsigned int u32_53A7;  // X10 supply (member_lookup)
     unsigned int u32_F94;  // X10 supply (member_lookup)
     unsigned int u32_FCC;  // X10 supply (member_lookup)
+    int __pad_004;  // 0x4 [X30:type_map]
+    int __pad_034;  // 0x34 [X30:type_map]
+    unsigned char __pad_05A;  // 0x5A [X30:canon]
+    unsigned char __pad_088;  // 0x88 [X30:canon]
+    unsigned char __pad_0D8;  // 0xD8 [X30:canon]
+    unsigned char __pad_0F0;  // 0xF0 [X30:canon]
+    unsigned char __pad_100;  // 0x100 [X30:canon]
+    unsigned char __pad_124;  // 0x124 [X30:canon]
+    unsigned char __pad_144;  // 0x144 [X30:canon]
+    unsigned char __pad_14C;  // 0x14C [X30:canon]
+    unsigned char __pad_296;  // 0x296 [X30:canon]
+    unsigned char __pad_127C;  // 0x127C [X30:canon]
+    unsigned char __pad_148C;  // 0x148C [X30:canon]
+    unsigned char __pad_14DC;  // 0x14DC [X30:canon]
+    char __pad_CD2[960];  // 0xCD2 [X30:member_lookup]
+    unsigned int somecount_4C;  // [X30:default]
 };
 
 } // namespace gamemd

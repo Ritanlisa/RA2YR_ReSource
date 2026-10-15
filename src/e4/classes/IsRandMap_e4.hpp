@@ -11,6 +11,7 @@ struct IsRandMap {
 // --- flat members (END) ---
     int Sed(void *a1 = 0);
     int Sed2();
+    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

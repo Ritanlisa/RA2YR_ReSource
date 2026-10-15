@@ -11,7 +11,8 @@ struct Straw {
 // --- flat members (END) ---
     int Dtor(void *a1 = 0);
     char __pad_0[4];  // 0x0 (G57W14E1 til supply)
-    int Straw_field_0x04;  // 0x4 (G57W14E1 til supply)
+    void* Straw_field_0x04;  // 0x4 (G57W14E1 til supply) [X30:type_map]
+    void* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

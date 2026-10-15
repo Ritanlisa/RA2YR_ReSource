@@ -19,5 +19,6 @@ struct VectorClass_UUndoInfoStruct {
     AbstractClass * *  Release(int a2, unsigned int * a3);  // 0x6B44A0
     AbstractClass * *  SetCapacity(int a2, unsigned int * a3);  // 0x6B4650
     int Constructor_VectorClass_UndoInfoStruct_(void *a1_1);  // 0x6B43B0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

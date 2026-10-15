@@ -28,5 +28,6 @@ struct VectorClass_ptr_WarheadTypeClass {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x40F7C0
     int  FindItemIndex(unsigned int * a2);  // 0x40F870
     VectorClass_flat *  QueryInterface(char a2);  // 0x40F8A0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

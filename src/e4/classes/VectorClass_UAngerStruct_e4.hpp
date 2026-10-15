@@ -31,5 +31,6 @@ struct VectorClass_UAngerStruct {
     char  SetCapacity_0(int a2, unsigned int * a3);  // 0x50F070
     int  FindItemIndex_0(unsigned int * a2);  // 0x50F170
     DynamicVector *  Constructor_VectorClass_AngerStruct_(char a2);  // 0x5100E0
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

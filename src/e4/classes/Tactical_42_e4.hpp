@@ -28,5 +28,6 @@ struct Tactical_42 {
     int q008;  // X10 supply (member_lookup)
     int q00C;  // X10 supply (member_lookup)
     int q010;  // X10 supply (member_lookup)
+    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 } // namespace gamemd

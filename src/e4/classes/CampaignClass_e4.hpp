@@ -23,9 +23,9 @@ struct CampaignClass {
     char description_128[4];  // 0x12
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
-    char referenceCount[4];  // 0x1C
+    int referenceCount;  // 0x1C [X30:type_map]
     bool NeedsSaveOrLink;  // 0x20
-    char idxCd[4];  // 0x24
+    void* idxCd;  // 0x24 [X30:type_map]
     char scenario;  // 0x28
     bool needsSave;  // 0x32
     unsigned int UINameLabel;  // 0x3D
@@ -49,6 +49,8 @@ struct CampaignClass {
     void sub_48B1F0();
     CampaignClass * * sub_7B2E50();
     unsigned int *q000;  // 0x0 (offset-truth)
+    unsigned int Coord_9C;  // [X30:default]
+    unsigned char q174;  // 0x174 [X30:member_lookup]
 };
 
 } // namespace gamemd

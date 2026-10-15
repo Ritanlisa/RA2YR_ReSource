@@ -29,7 +29,7 @@ struct AirstrikeClass {
     TechnoClass* owner;  // 0x4C
     char AirstrikeClass_field_54[4];  // 0x54
     char AirstrikeClass_field_58[4];  // 0x58
-    char AirstrikeClass_field_5C[4];  // 0x5C
+    int AirstrikeClass_field_5C;  // 0x5C [X30:type_map]
 // --- flat members (END) ---
     AbstractClass * * UpdateAll();
     char StartMission(int * a2);
@@ -42,6 +42,15 @@ struct AirstrikeClass {
     int Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2, int aP1, int aP0, int a1, int aP2);
+    unsigned char __pad_017;  // 0x17 [X30:canon]
+    unsigned char __pad_02C;  // 0x2C [X30:canon]
+    unsigned char __pad_037;  // 0x37 [X30:canon]
+    unsigned char __pad_040;  // 0x40 [X30:canon]
+    int __pad_050;  // 0x50 [X30:type_map]
+    int AirstrikeClass_field_50;  // 0x50 [X30:type_map]
+    int32_t vtable22;  // 0x54 [X30:member_lookup]
+    void* vtable26;  // 0x64 [X30:member_lookup]
+    unsigned int vtable33;  // 0x80 [X30:member_lookup]
 };
 
 } // namespace gamemd

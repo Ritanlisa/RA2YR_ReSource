@@ -13,7 +13,7 @@ struct ThemeClass {
     char ThemeClass_field_00[4];  // 0x0
     AbstractClass * ptr_4;  // 0x4
     char ThemeClass_field_28[4];  // 0x28
-    char ThemeClass_field_2C[4];  // 0x2C
+    int ThemeClass_field_2C;  // 0x2C [X30:type_map]
 // --- flat members (END) ---
     static int ClearQueues();
     char ReadThemeEntry(uint8_t *** a2);
@@ -36,6 +36,7 @@ struct ThemeClass {
     unsigned int u32_1C;  // X10 supply (member_lookup)
     unsigned int u32_21;  // X10 supply (member_lookup)
     unsigned int u32_24;  // X10 supply (member_lookup)
+    int __pad_008;  // 0x8 [X30:type_map]
 };
 #endif  // GAMEMD_G2_ThemeClass_DEF
 

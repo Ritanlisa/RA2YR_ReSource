@@ -32,5 +32,6 @@ struct FoggedObjectClass_42 {
     unsigned int  Write(int a2);  // 0x4E06E0
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

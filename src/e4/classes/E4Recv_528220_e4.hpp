@@ -15,5 +15,8 @@ struct E4Recv_528220 {
     int sub_528220(unsigned char * a2, unsigned char * a3, int a4);  // 0x528220
 
     unsigned char SortedArray_5A4[4];  /* SortedArray */  // X10 supply (member_lookup)
+    unsigned int attachedBomb;  // [X30:default]
+    unsigned int fallRate;  // [X30:default]
+    unsigned int owningHouseIndex;  // [X30:default]
 };
 } // namespace gamemd
