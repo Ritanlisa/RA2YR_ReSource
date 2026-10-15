@@ -22,6 +22,8 @@ struct AudioController {
     unsigned int * Stop(void *a1 = 0, void *a2 = 0);  // 0x405d40
     int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x402040
     static void Init(void * aP0);
+    int u32_5D8;  // 0x5D8
+    int u32_294;  // 0x294
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

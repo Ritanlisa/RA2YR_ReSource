@@ -57,6 +57,7 @@ struct SpawnManagerClass {
 
     unsigned int spawns;  // X10 supply (csp_canon_members)
     int u8_D;  // X10 supply (member_lookup)
+    unsigned int u32_45;  // 0x45
 };
 
 } // namespace gamemd

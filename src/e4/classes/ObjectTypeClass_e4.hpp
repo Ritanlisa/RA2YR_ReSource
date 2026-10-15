@@ -24,6 +24,7 @@ struct ObjectTypeClass {
     void* vtable4;  // 0xC
     void* uniqueId;  // 0x10
     unsigned char alignmentPadding_3;  // 0x11
+    char u32_3;  // 0x3
     int Strength;  // 0x12
     bool IsAllocated;  // 0x13
     bool abstractFlags;  // 0x14
@@ -169,7 +170,11 @@ struct ObjectTypeClass {
     bool q029;  // X10 supply (member_lookup)
     bool q02B;  // X10 supply (member_lookup)
     int q056;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* q07C;  // X10 supply (member_lookup)
+#else
+    void* q07C;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     IUnknown* q0CC;  // X10 supply (member_lookup)
     SomeVoxelCache* q254;  // X10 supply (member_lookup)
     unsigned char q264[4];  /* VectorClass */  // X10 supply (member_lookup)
@@ -223,6 +228,8 @@ struct ObjectTypeClass {
     char u8_91;  // X10 supply (member_lookup)
     int u8_C8E;  // X10 supply (member_lookup)
     uint8_t u8_D;  // X10 supply (member_lookup)
+    unsigned int u32_E00;  // 0xE00
+    unsigned int u32_D2E;  // 0xD2E
 };
 
 } // namespace gamemd

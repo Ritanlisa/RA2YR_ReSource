@@ -10,6 +10,8 @@ namespace game {
 
 using ::gamemd::DynamicVectorClass;
 using ::gamemd::ProgressTimer;
+using ::gamemd::TurretControl;  // X27: member-decl type supply
+using ::gamemd::OwnedTiberiumStruct;  // X27: member-decl type supply
 
 enum class CloakState : int;
 enum class FireError : int;
@@ -1215,7 +1217,7 @@ public:  // g57c5 W6 owner supply
     unsigned int q051;  // X10 supply (member_lookup)
     unsigned int q07D;  // X10 supply (member_lookup)
     unsigned int q173;  // X10 supply (member_lookup)
-    VectorClass* q17A0;  // X10 supply (member_lookup)
+    void* q17A0;  // X10 supply (member_lookup)  // X27: template-carrier
     unsigned char q18C[4];  /* char[4] */  // X10 supply (member_lookup)
     unsigned int q1A2;  // X10 supply (member_lookup)
     unsigned int q578;  // X10 supply (member_lookup)

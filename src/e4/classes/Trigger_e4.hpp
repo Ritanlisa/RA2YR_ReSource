@@ -42,5 +42,8 @@ struct Trigger {
     unsigned int u32_28;  // X10 supply (member_lookup)
     unsigned int u32_38;  // X10 supply (member_lookup)
     char u8_4706;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // 0x44
+    unsigned int q040;  // 0x40
+    bool u32_3C;  // 0x3C
 };
 } // namespace gamemd

@@ -289,7 +289,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
 }
 // 0x6CB560
 namespace gamemd {
-AbstractClass * * SuperClass::StartTimer(int this, char aP2, char aP3)
+AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
 {
 
   char v5; // al

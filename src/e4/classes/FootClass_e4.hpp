@@ -367,6 +367,7 @@ struct FootClass {
     char FootClass_field_5C4[4];  // 0x5C4
     char FootClass_field_5C8[4];  // 0x5C8
     char FootClass_field_5CC[4];  // 0x5CC
+    unsigned int u32_5B9;  // 0x5B9
     bool FootClass_field_5D0;  // 0x5D0
     bool FootClass_field_bool_5D1;  // 0x5D1
     unsigned char m_padding_5D2;  // 0x5D2

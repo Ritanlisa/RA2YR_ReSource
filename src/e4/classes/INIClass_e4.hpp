@@ -19,6 +19,12 @@ struct INIClass {
     char sectionCount[4];  // 0x1C
     char INIClass_field_2C[4];  // 0x2C
     char unknown30[4];  // 0x30
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_C;  // 0xC
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_4;  // 0x4
+    int u32_1;  // 0x1
     bool needsSave_flag;  // 0x34
     unsigned int unknown38;  // 0x38
     unsigned int INIClass_field_3C;  // 0x3C

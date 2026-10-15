@@ -36,6 +36,10 @@ struct AITriggerTypeClass {
     unsigned int u32_BC;  // 0xBC (offset-truth)
     unsigned int u32_D8;  // 0xD8 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
+    unsigned int q0E8;  // 0xE8
+    unsigned int q0C8;  // 0xC8
+    unsigned int q0C4;  // 0xC4
+    unsigned int q0C0;  // 0xC0
 };
 
 } // namespace gamemd

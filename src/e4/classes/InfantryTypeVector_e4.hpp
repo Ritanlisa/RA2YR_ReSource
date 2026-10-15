@@ -21,6 +21,9 @@ struct InfantryTypeVector {
     int q008;  // X10 supply (member_lookup)
     int q00C;  // X10 supply (member_lookup)
     int u32_4;  // X10 supply (member_lookup)
+    int q01C;  // 0x1C
+    int q014;  // 0x14
+    int q010;  // 0x10
 };
 
 } // namespace gamemd

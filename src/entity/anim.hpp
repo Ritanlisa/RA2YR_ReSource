@@ -6,6 +6,7 @@
 #include "core/enums.hpp"
 #include "object/object.hpp"
 #include "object/techno.hpp"
+#include "render/bounce.hpp"  // X27: BounceClass complete (AnimClass::Bounce by-value)
 
 namespace gamemd {
 

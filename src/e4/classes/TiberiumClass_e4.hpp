@@ -120,6 +120,9 @@ struct TiberiumClass {
 
     unsigned int q0A4;  // X10 supply (member_lookup)
     unsigned int u32_A0;  // X10 supply (member_lookup)
+    unsigned int u32_E8;  // 0xE8
+    unsigned int q0E8;  // 0xE8
+    unsigned int u32_C4;  // 0xC4
 };
 
 } // namespace gamemd

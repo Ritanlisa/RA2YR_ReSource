@@ -18,6 +18,10 @@ struct CCINIClass {
     void* vtable1;  // 0x0
     void* headNode;  // 0x4
     unsigned int needsSave_flag;  // 0x34
+    unsigned int u32_C;  // 0xC
+    unsigned int q00C;  // 0xC
+    void* u32_8;  // 0x8
+    int u32_4[3];  // 0x4  /* int[3] */
     bool ownsFile;  // 0x40
     unsigned char padding45;  // 0x45
     char CCINIClass_field_4C[4];  // 0x4C
@@ -43,6 +47,21 @@ CCINIClass();
     int unknown38;  // 0x38 (ml)
 
     unsigned char __pad_041;  // X10 supply (csp_canon_members)
+    unsigned char u32_AC;  // 0xAC
+    unsigned char u32_A8;  // 0xA8
+    unsigned char u32_A5;  // 0xA5
+    unsigned char q0A4;  // 0xA4
+    int q0A0;  // 0xA0
+    unsigned int u32_9C;  // 0x9C
+    unsigned int u32_98;  // 0x98
+    unsigned int q07C;  // 0x7C
+    unsigned int q078;  // 0x78
+    unsigned char q074;  // 0x74
+    unsigned char q070;  // 0x70
+    unsigned char u32_6C;  // 0x6C
+    unsigned int u32_68;  // 0x68
+    unsigned int u32_62;  // 0x62
+    unsigned int q060;  // 0x60
 };
 #endif  // GAMEMD_E4_CCINIClass
 

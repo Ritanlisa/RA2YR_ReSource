@@ -10,6 +10,7 @@ struct MapSeedClass {
     void* vtable1;  // 0x0
     bool IsAllocated;  // 0xD
     unsigned int M16;  // 0x16
+    int field_14;  // 0x14
     char owns_memory;  // 0x21
     unsigned int pad_2E;  // 0x2E
 // --- flat members (END) ---

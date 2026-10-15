@@ -15,6 +15,10 @@ struct VectorCursor {
     unsigned int *q000;  // 0x0 (offset-truth)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
+    int q018;  // 0x18
+    int q010;  // 0x10
+    int u32_C;  // 0xC
+    int q004;  // 0x4
 };
 
 } // namespace gamemd

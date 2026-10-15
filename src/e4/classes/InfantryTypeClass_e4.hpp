@@ -456,6 +456,10 @@ struct InfantryTypeClass {
     unsigned int SpawnsNumber;  // 0xD34
     unsigned int SpawnRegenRate;  // 0xD38
     unsigned int SpawnReloadRate;  // 0xD3C
+    unsigned int u32_D3B;  // 0xD3B
+    unsigned int u32_D36;  // 0xD36
+    unsigned int u32_D35;  // 0xD35
+    unsigned int u32_D2E;  // 0xD2E
     bool BalloonHover;  // 0xD3E
     int MissileSpawn;  // 0xD40
     unsigned int Underwater;  // 0xD41
@@ -508,6 +512,21 @@ struct InfantryTypeClass {
     CampaignClass* VoiceComment_Items;  // 0xE8C
     unsigned int VoiceComment_Capacity;  // 0xE90
     unsigned int VoiceComment_FlagByte;  // 0xE95
+    unsigned int u32_EA8;  // 0xEA8
+    unsigned int u32_EA4;  // 0xEA4
+    unsigned int u32_E80;  // 0xE80
+    unsigned int u32_E7C;  // 0xE7C
+    unsigned int u32_E6C;  // 0xE6C
+    unsigned int u32_E38;  // 0xE38
+    unsigned int u32_E34;  // 0xE34
+    unsigned int u32_E2C;  // 0xE2C
+    unsigned int u32_E28;  // 0xE28
+    unsigned int u32_E24;  // 0xE24
+    unsigned int u32_E1C;  // 0xE1C
+    unsigned int u32_E18;  // 0xE18
+    unsigned int u32_E14;  // 0xE14
+    unsigned int u32_E0C;  // 0xE0C
+    unsigned int u32_E08;  // 0xE08
     bool Cyborg_2;  // 0xEAC
     bool NotHuman_2;  // 0xEAD
     bool Ivan_2;  // 0xEAE
@@ -564,6 +583,8 @@ struct InfantryTypeClass {
     unsigned int u32_E98;  // X10 supply (member_lookup)
     unsigned int u32_E9C;  // X10 supply (member_lookup)
     uint8_t u8_D;  // X10 supply (member_lookup)
+    unsigned int u32_ECB;  // 0xECB
+    unsigned int u32_ECA;  // 0xECA
 };
 
 } // namespace gamemd

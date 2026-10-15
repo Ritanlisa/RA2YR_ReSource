@@ -2,10 +2,13 @@
 
 #include "abstract.hpp"
 #include "system/ini_class.hpp"  // G42.55 closure (INIEntry)
+namespace gamemd { class Audio; }  // X27: member-decl type supply
 
 namespace gamemd { struct ILocomotion; struct RandomStruct; class TechnoTypeClass; }
 namespace ra2 {
 namespace game {
+    // X27: member-decl type supply (log-driven hygiene)
+    using ::gamemd::Audio;
 
 class AnimClass;
 class BombClass;
@@ -677,7 +680,7 @@ public:  // g57c5 W6 owner supply
     unsigned int q0D8;  // X10 supply (member_lookup)
     Audio* q0E8;  // X10 supply (member_lookup)
     void* q0EC;  // X10 supply (member_lookup)
-    VectorClass* q13F0;  // X10 supply (member_lookup)
+    void* q13F0;  // X10 supply (member_lookup)  // X27: template-carrier
     unsigned char q1680;  // X10 supply (member_lookup)
     IUnknown* q55C;  // X10 supply (member_lookup)
     unsigned char qBC0;  // X10 supply (member_lookup)

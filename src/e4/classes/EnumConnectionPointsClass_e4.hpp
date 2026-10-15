@@ -19,6 +19,9 @@ struct EnumConnectionPointsClass {
     int SetCapacity(int,void *);
     void * Constructor_VectorClass_IConnectionPoint___(int);
     void ClearBuffer(void);
+    int q01C;  // 0x1C
+    unsigned int u32_19;  // 0x19
+    int q018;  // 0x18
 };
 
 } // namespace gamemd

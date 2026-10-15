@@ -118,6 +118,8 @@ struct AbstractClass {
     void* vtable4;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int q011;  // 0x11
+    unsigned int q010;  // 0x10
+    int u32_3;  // 0x3
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned char u8_15;  // 0x15
@@ -423,6 +425,11 @@ int DTOR(); // 0x4101F0
     uint16_t u16_A2;  // X10 supply (member_lookup)
     unsigned int u32_58;  // X10 supply (member_lookup)
     char u8_C8;  // X10 supply (member_lookup)
+    unsigned int u32_1791;  // 0x1791
+    unsigned int u32_B0;  // 0xB0
+    unsigned int u32_44;  // 0x44
+    unsigned int q040;  // 0x40
+    int u32_38;  // 0x38
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

@@ -28,6 +28,8 @@ struct AnimClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
+    unsigned int u32_3;  // 0x3
+    unsigned int u32_2;  // 0x2
     bool IsAllocated;  // 0x13
     unsigned int alignmentPadding;  // 0x33
     char estimatedHealth[4];  // 0x70
@@ -59,7 +61,11 @@ struct AnimClass {
     unsigned int YSortAdjust;  // 0x256
     unsigned int FlamingGuyCoords;  // 0x260
     unsigned int PausedAnimFrame;  // 0x276
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     DynamicVectorClass * ptr_458;  // 0x458
+#else
+    void* ptr_458;  // 0x458  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     LightSourceClass * ptr_614;  // 0x614
 // --- flat members (END) ---
     Coord *AnimClass_field_0xC8;  // G42.33: raw type Coord* ([2].__pad_C sites)
@@ -110,6 +116,7 @@ struct AnimClass {
     unsigned char __pad_0FC;  // X10 supply (csp_canon_members)
     unsigned int q119;  // X10 supply (member_lookup)
     unsigned int q196;  // X10 supply (member_lookup)
+    unsigned int u32_CA;  // 0xCA
 };
 
 } // namespace gamemd

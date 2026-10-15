@@ -45,5 +45,6 @@ struct TaskForceClass {
     int q024;  // X10 supply (member_lookup)
     unsigned char q0A0[4];  /* char[4] */  // X10 supply (member_lookup)
     int q0A4;  // X10 supply (member_lookup)
+    char q028[112];  // 0x28  /* char[112] */
 };
 } // namespace gamemd

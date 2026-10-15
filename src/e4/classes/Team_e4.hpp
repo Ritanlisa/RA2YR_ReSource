@@ -22,5 +22,7 @@ struct Team {
 
     unsigned int u32_1C;  // X10 supply (member_lookup)
     unsigned int u32_28;  // X10 supply (member_lookup)
+    void * field_E8;  // 0xE8
+    void * field_E4;  // 0xE4
 };
 } // namespace gamemd

@@ -26,6 +26,7 @@ struct CChatEventSink {
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
     int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+    int q014;  // 0x14
 };
 
 } // namespace gamemd

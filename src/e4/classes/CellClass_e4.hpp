@@ -31,6 +31,7 @@ struct CellClass {
     unsigned int alignmentPadding;  // 0x33
     void* attached3;  // 0x34
     unsigned int CellClass_field_4C;  // 0x4C
+    unsigned int q02C;  // 0x2C
     int wallOwnerIndex;  // 0x50
     int infantryOwnerIndex;  // 0x54
     int altInfantryOwnerIndex;  // 0x58
@@ -153,6 +154,7 @@ static int * GetCoords(CellClass * aP1, int *a2);
 
     unsigned char __pad_038;  // X10 supply (csp_canon_members)
     unsigned int q002;  // X10 supply (member_lookup)
+    unsigned char u32_568;  // 0x568
 };
 
 } // namespace gamemd

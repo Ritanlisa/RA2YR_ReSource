@@ -5,8 +5,11 @@
 
 #include "core/enums.hpp"
 #include "object/foot.hpp"
+namespace ra2 { namespace game { class BombClass; } }  // X27: member-decl type supply
 
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    using ra2::game::BombClass;
 
 using ra2::game::AbstractClass;
 using ra2::game::AbstractType;

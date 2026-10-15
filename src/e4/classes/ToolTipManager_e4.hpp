@@ -22,6 +22,9 @@ struct ToolTipManager {
     unsigned int u32_23C;  // 0x23C (offset-truth)
     unsigned int u32_248;  // 0x248 (offset-truth)
     unsigned int u32_250;  // 0x250 (offset-truth)
+    int u32_244;  // 0x244
+    int u32_238;  // 0x238
+    int u32_234;  // 0x234
 };
 
 } // namespace gamemd

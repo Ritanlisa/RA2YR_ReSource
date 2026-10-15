@@ -86,17 +86,37 @@ char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
     unsigned int q064;  // X10 supply (member_lookup)
     unsigned char q180;  // X10 supply (member_lookup)
     unsigned int q184;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     DynamicVectorClass* q188;  // X10 supply (member_lookup)
+#else
+    void* q188;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     CampaignClass* q18C;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     DynamicVectorClass* q1A4;  // X10 supply (member_lookup)
+#else
+    void* q1A4;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     CampaignClass* q1A8;  // X10 supply (member_lookup)
     unsigned char q1AC;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     DynamicVectorClass* q1C0;  // X10 supply (member_lookup)
+#else
+    void* q1C0;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     CampaignClass* q1C4;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     DynamicVectorClass* q1DC;  // X10 supply (member_lookup)
+#else
+    void* q1DC;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     CampaignClass* q1E0;  // X10 supply (member_lookup)
     unsigned char q1E4;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     DynamicVectorClass* q1F8;  // X10 supply (member_lookup)
+#else
+    void* q1F8;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     CampaignClass* q1FC;  // X10 supply (member_lookup)
     unsigned int u32_214;  // X10 supply (member_lookup)
     unsigned int u32_218;  // X10 supply (member_lookup)
@@ -131,5 +151,6 @@ char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
     unsigned int u32_A10;  // X10 supply (member_lookup)
     int u8_1B1;  // X10 supply (member_lookup)
     int u8_1E9;  // X10 supply (member_lookup)
+    char u32_11B;  // 0x11B
 };
 } // namespace gamemd

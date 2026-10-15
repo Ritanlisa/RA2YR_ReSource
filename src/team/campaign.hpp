@@ -82,7 +82,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int nextArrayIndex;  // X10 supply (csp_canon_members)
     unsigned int q00E;  // X10 supply (member_lookup)
     unsigned char q1428[4];  /* SessionClass */  // X10 supply (member_lookup)
-    VectorClass* q6028;  // X10 supply (member_lookup)
+    void* q6028;  // X10 supply (member_lookup)  // X27: template-carrier
     unsigned char u32_1F2C[4];  /* wchar_t */  // X10 supply (member_lookup)
     unsigned int u32_6828;  // X10 supply (member_lookup)
     char u8_3A28;  // X10 supply (member_lookup)

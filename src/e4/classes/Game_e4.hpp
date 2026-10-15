@@ -105,5 +105,6 @@ struct Game {
     unsigned char u8_14BD;  // X10 supply (member_lookup)
     unsigned char u8_14D9;  // X10 supply (member_lookup)
     unsigned char u8_14DA;  // X10 supply (member_lookup)
+    unsigned int q0282;  // 0x282
 };
 } // namespace gamemd

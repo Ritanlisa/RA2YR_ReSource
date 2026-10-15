@@ -44,5 +44,7 @@ int RemoveTeam(int (***aP1)(unsigned int, int));  // 0x005d1d80 g57w12-r raw-syn
     int GetPlayerColor(void *a1 = 0);  // 0x69B720
     int StartGame(HWND hWnd);  // 0x5ED370
     unsigned int q018;  // 0x18 (offset-truth)
+    void * field_178;  // 0x178
+    void * field_174;  // 0x174
 };
 } // namespace gamemd

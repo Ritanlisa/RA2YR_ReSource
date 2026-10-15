@@ -77,6 +77,7 @@ struct Stream {
     unsigned int u32_551;  // X10 supply (member_lookup)
     unsigned int u32_70;  // X10 supply (member_lookup)
     unsigned char u8_71;  // X10 supply (member_lookup)
+    int u32_18;  // 0x18
 };
 
 } // namespace gamemd

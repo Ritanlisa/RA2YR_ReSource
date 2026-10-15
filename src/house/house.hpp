@@ -848,19 +848,19 @@ void Update_TogglePower(double);  // 0x4F8440
     unsigned char __pad_5564;  // X10 supply (csp_canon_members)
     unsigned char __pad_57A0;  // X10 supply (csp_canon_members)
     int abstractFlags;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_1158;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_1174;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_1194;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_1204;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_1220;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_1258;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_1274;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_1290;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_390;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_474;  // X10 supply (csp_canon_members)
+    void* ptr_1158;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_1174;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_1194;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_1204;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_1220;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_1258;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_1274;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_1290;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_390;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_474;  // X10 supply (csp_canon_members)  // X27: template-carrier
     IUnknown * ptr_5774;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_734;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_970;  // X10 supply (csp_canon_members)
+    void* ptr_734;  // X10 supply (csp_canon_members)  // X27: template-carrier
+    void* ptr_970;  // X10 supply (csp_canon_members)  // X27: template-carrier
     unsigned int q002;  // X10 supply (member_lookup)
     unsigned int q075;  // X10 supply (member_lookup)
     bool q0EB;  // X10 supply (member_lookup)
@@ -890,8 +890,8 @@ void Update_TogglePower(double);  // 0x4F8440
     char q581;  // X10 supply (member_lookup)
     int q588;  // X10 supply (member_lookup)
     unsigned int q609;  // X10 supply (member_lookup)
-    VectorClass * q850;  // X10 supply (member_lookup)
-    VectorClass * q900;  // X10 supply (member_lookup)
+    void* q850;  // X10 supply (member_lookup)  // X27: template-carrier
+    void* q900;  // X10 supply (member_lookup)  // X27: template-carrier
     int referenceCount;  // X10 supply (csp_canon_members)
     uint16_t u16_16052;  // X10 supply (member_lookup)
     unsigned int u32_105;  // X10 supply (member_lookup)

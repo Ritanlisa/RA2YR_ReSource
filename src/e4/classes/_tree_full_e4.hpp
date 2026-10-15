@@ -838,7 +838,11 @@ struct ObjectClass {
     unsigned char AudioController_1A0[4];  /* AudioController */  // X10 supply (member_lookup)
     unsigned char AudioController_1B4[4];  /* AudioController */  // X10 supply (member_lookup)
     void* q140;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* q16C;  // X10 supply (member_lookup)
+#else
+    void* q16C;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     IUnknown* q1E4;  // X10 supply (member_lookup)
     IUnknown* q28C;  // X10 supply (member_lookup)
     unsigned char q3DB;  // X10 supply (member_lookup)

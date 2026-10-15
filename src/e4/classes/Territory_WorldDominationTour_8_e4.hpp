@@ -19,5 +19,6 @@ struct Territory_WorldDominationTour_8 {
     unsigned int * Open(void *a1_1, void *a2_1, void *a3_1);  // 0x7719C0
 
     int q00C;  // X10 supply (member_lookup)
+    int field_1C;  // 0x1C
 };
 } // namespace gamemd

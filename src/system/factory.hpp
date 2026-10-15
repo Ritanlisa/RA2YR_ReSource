@@ -17,6 +17,8 @@ class HouseClass;
 } // namespace gamemd (bridge re-own, G42.29h)
 namespace ra2 { namespace game { class TechnoClass; } }
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    class BuildingTypeClass;
 #ifndef GAMEMD_USING_TechnoClass
 #define GAMEMD_USING_TechnoClass
 using ::ra2::game::TechnoClass;

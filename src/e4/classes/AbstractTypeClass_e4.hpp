@@ -16,6 +16,7 @@ struct AbstractTypeClass {
     unsigned int uniqueId;  // 0x10
     unsigned char alignmentPadding_3;  // 0x11
     char referenceCount[4];  // 0x12
+    char u32_3;  // 0x3
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
@@ -67,6 +68,7 @@ struct AbstractTypeClass {
     bool q019;  // X10 supply (member_lookup)
     unsigned int u32_94;  // X10 supply (member_lookup)
     char u8_9;  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // 0xA0
 };
 
 } // namespace gamemd

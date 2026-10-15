@@ -12,6 +12,8 @@ struct Pipe {
     int Dtor(void *a1 = 0);
     int  SetDelegate(int a2, void *a1 = 0);  // 0x631cc0
     unsigned int *q000;  // 0x0 (offset-truth)
+    int q00C;  // 0xC
+    int q008;  // 0x8
 };
 
 } // namespace gamemd

@@ -78,6 +78,29 @@ for cls, mems in sorted(by_cls.items(),
                for j in range(lo, hi)):
             stats['already-present'] += 1
             continue
+        # X27: offset-occupancy guard -- never insert at an offset that an
+        # existing member already covers (a second member at the same
+        # offset shifts the whole flat layout; bodies referencing the old
+        # name must be fixed by rename, not by insertion).
+        occupied = False
+        for j in range(lo + 1, hi):
+            am = re.search(r'//\s*0x([0-9A-Fa-f]+)', lines[j])
+            if am and int(am.group(1), 16) == off and \
+                    re.match(r'\s*[\w:<>]+\s+\w+\s*;', lines[j]):
+                occupied = True
+                break
+            nm = re.search(r'\b(?:q|u32_|u8_|u16_|u64_|ptr_|m_|__pad_?)'
+                           r'([0-9A-Fa-f]+)\b', lines[j])
+            if nm:
+                try:
+                    if int(nm.group(1), 16) == off:
+                        occupied = True
+                        break
+                except ValueError:
+                    pass
+        if occupied:
+            stats['offset-occupied'] += 1
+            continue
         # true type from member_lookup by offset
         ttype = 'unsigned int'
         for k, v in ml_cls.items():
@@ -86,7 +109,14 @@ for cls, mems in sorted(by_cls.items(),
                     ttype = v.get('type') or ttype
             except (ValueError, TypeError):
                 continue
-        decl = '    %s %s;  // 0x%X' % (ttype, mem, off)
+        # X27: member_lookup array types arrive as `int[3]` / `char[16]` --
+        # rewrite to declaration form `int name[3]` (the raw form is C2059).
+        arr = re.match(r'^(?P<base>.+?)\[(?P<n>\d+)\]$', ttype)
+        if arr:
+            decl = '    %s %s[%s];  // 0x%X  /* %s */' % (
+                arr.group('base'), mem, arr.group('n'), off, ttype)
+        else:
+            decl = '    %s %s;  // 0x%X' % (ttype, mem, off)
         # offset-ordered insert: before the first member with larger offset
         at = None
         for j in range(lo + 1, hi):
@@ -99,6 +129,8 @@ for cls, mems in sorted(by_cls.items(),
             at = hi          # class close line: insert before it
         inserts.append((at, decl))
         stats['supplied'] += 1
+        if '--verbose' in sys.argv:
+            print('  %s :: %s' % (cls, decl.strip()))
     if inserts:
         for at, decl in sorted(inserts, key=lambda x: -x[0]):
             lines.insert(at, decl)

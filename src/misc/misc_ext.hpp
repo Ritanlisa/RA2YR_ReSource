@@ -71,6 +71,8 @@ using ::ra2::game::TechnoClass;
 } // namespace gamemd (bridge re-own, G42.29h)
 namespace ra2 { namespace game { class FootClass; } }
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    class BufferIOFileClass;
 #ifndef GAMEMD_USING_FootClass
 #define GAMEMD_USING_FootClass
 using ::ra2::game::FootClass;
@@ -1170,9 +1172,9 @@ public:
     unsigned char VectorClass_B8[4];  /* VectorClass */  // X10 supply (member_lookup)
     MapClass* q014;  // X10 supply (member_lookup)
     TechnoTypeClass* q070;  // X10 supply (member_lookup)
-    DynamicVectorClass* q188;  // X10 supply (member_lookup)
-    DynamicVectorClass* q1C0;  // X10 supply (member_lookup)
-    DynamicVectorClass* q1DC;  // X10 supply (member_lookup)
+    void* q188;  // X10 supply (member_lookup)  // X27: template-carrier
+    void* q1C0;  // X10 supply (member_lookup)  // X27: template-carrier
+    void* q1DC;  // X10 supply (member_lookup)  // X27: template-carrier
     int u32_178;  // X10 supply (member_lookup)
     int u32_17C;  // X10 supply (member_lookup)
     int u32_180;  // X10 supply (member_lookup)

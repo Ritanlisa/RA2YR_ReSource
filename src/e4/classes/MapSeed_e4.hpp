@@ -25,6 +25,12 @@ struct MapSeed {
     unsigned char __pad_002;  // X10 supply (member_lookup)
     int q020;  // X10 supply (member_lookup)
     unsigned char q076;  // X10 supply (member_lookup)
+    int q01C;  // 0x1C
+    int q018;  // 0x18
+    int q010;  // 0x10
+    int q00C;  // 0xC
+    int q008;  // 0x8
+    int q004;  // 0x4
 };
 
 } // namespace gamemd

@@ -5,6 +5,8 @@
 #include "object/abstract.hpp"
 
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    class CampaignScore;
 
 #ifndef GAMEMD_USING_CellStruct
 #define GAMEMD_USING_CellStruct

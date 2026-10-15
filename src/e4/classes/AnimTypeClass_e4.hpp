@@ -69,6 +69,7 @@ struct AnimTypeClass {
     AnimTypeClass* BounceAnim;  // 0x100
     unsigned char ChargerBarrels;  // 0x104
     unsigned char NoSpawnAlt;  // 0x14C
+    unsigned int u32_C0;  // 0xC0
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4

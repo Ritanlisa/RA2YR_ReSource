@@ -1198,7 +1198,9 @@ struct _VectorClass_VWstring;
 int get_int_arg_0(void * aP0);   // G42.32: generator vararg helper leak (addr7D body)
 int BlitterDrawSHP(int* p0, int p1, int* p2, int* p3, int* p4, int* p5, int p6, int* p7, int p8, int p9, int p10, int p11, int p12);  // x4:signals@0x4af2a0
 unsigned char IsKnownPointer(void * aP0);  // G42.32: 0x5E93F0 free-form call
+namespace gamemd {  // X27: stray proto re-scope (was global scope)
 int Event_Process_746D90(TechnoClass *p_this);  // x4:ida@0x746d90
+} // namespace gamemd  // X27: stray proto re-scope
 int sub_406310(int p0);  // x4:signals@0x406310
 
 // G42.32 M C2065 supply: nullsub stubs (fn-ptr cast use-form only)

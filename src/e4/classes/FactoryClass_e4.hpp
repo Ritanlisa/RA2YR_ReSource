@@ -24,6 +24,7 @@ struct FactoryClass {
     char queuedCount[4];  // 0x34
     char queuedCapacity[4];  // 0x38
     TechnoClass* object;  // 0x3C
+    unsigned int q02C;  // 0x2C
     bool onHold;  // 0x40
     bool isDifferent;  // 0x41
     unsigned char m_align_5E;  // 0x5E
@@ -31,6 +32,10 @@ struct FactoryClass {
     char originalBalance[4];  // 0x64
     char specialItem[4];  // 0x68
     HouseClass* owner;  // 0x6C
+    int q060;  // 0x60
+    unsigned int q058;  // 0x58
+    unsigned int u32_58;  // 0x58
+    unsigned int u32_54;  // 0x54
     bool isSuspended;  // 0x70
     bool isManual;  // 0x71
     unsigned char align72;  // 0x72

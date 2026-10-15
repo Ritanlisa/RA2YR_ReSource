@@ -101,7 +101,11 @@ for p in sorted(E4.glob('*.cpp')):
     for m in DEF_RE.finditer(txt):
         cls = m.group('cls')
         defs.setdefault(cls, set()).add(
-            '    %s %s;' % (m.group('ret').strip(), m.group('rest').strip()))
+            '    %s %s;' % (m.group('ret').strip(),
+                           # X27: `this` is reserved; sanitize param names
+                           # harvested from verbatim def text (StartTimer /
+                           # RemovePlayer) or the decl is C2143 xTUs.
+                           re.sub(r'\bthis\b', 'aP1', m.group('rest').strip())))
         def_files.setdefault(cls, set()).add(p)
 
 print(f'member-def classes: {len(defs)}')

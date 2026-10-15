@@ -88,5 +88,8 @@ ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, 
     unsigned int u32_D7D;  // X10 supply (member_lookup)
     int u32_DE4;  // X10 supply (member_lookup)
     unsigned int u32_E0;  // X10 supply (member_lookup)
+    unsigned int u32_BC;  // 0xBC
+    unsigned int u32_64;  // 0x64
+    unsigned int q04C;  // 0x4C
 };
 } // namespace gamemd

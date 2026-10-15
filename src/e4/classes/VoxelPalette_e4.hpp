@@ -11,6 +11,7 @@ struct VoxelPalette {
 // --- flat members (END) ---
     unsigned int * Init(int a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     int Reset(void *a1 = 0, void *a2 = 0);
+    int q004;  // 0x4
 };
 
 } // namespace gamemd

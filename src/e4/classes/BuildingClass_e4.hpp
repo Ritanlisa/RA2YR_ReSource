@@ -51,6 +51,10 @@ struct BuildingClass {
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
     char customSound[4];  // 0x64
+    unsigned int q05C;  // 0x5C
+    unsigned int u32_58;  // 0x58
+    unsigned int q054;  // 0x54
+    unsigned int q040;  // 0x40
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     void* health;  // 0x6C
@@ -99,6 +103,7 @@ struct BuildingClass {
     unsigned int behindAnim;  // 0x10C
     AbstractClass* deployAnim;  // 0x110
     char inAirFlag[1];  // 0x114
+    unsigned int u32_11F;  // 0x11F
     int turretChargeTimer_d;  // 0x120
     int currentTurretNumber_d;  // 0x124
     int secondaryTurretIndex_d;  // 0x128
@@ -118,7 +123,11 @@ struct BuildingClass {
     unsigned int armorMultiplier_d;  // 0x160
     unsigned int firepowerMultiplier;  // 0x164
     unsigned int firepowerMultiplier_d;  // 0x168
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* idleActionTimer;  // 0x16C
+#else
+    void* idleActionTimer;  // 0x16C  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     unsigned char idleActionTimer_d;  // 0x170
     char radarFlashTimer[12];  // 0x174
     void* radarFlashTimer_d;  // 0x17C
@@ -144,6 +153,7 @@ struct BuildingClass {
     char disguiseCreationFrame[4];  // 0x1E0
     unsigned char infantryBlinkTimer;  // 0x1E4
     void* disguiseBlinkTimer;  // 0x1EC
+    int u32_1F5;  // 0x1F5
     bool isTargetedByChrono;  // 0x1F8
     void* reloadTimer;  // 0x1FC
     unsigned char alignmentPadding1F9;  // 0x1FD

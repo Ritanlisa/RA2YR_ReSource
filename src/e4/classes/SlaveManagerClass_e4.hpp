@@ -59,6 +59,7 @@ struct SlaveManagerClass {
     HouseClass* house;  // X10 supply (csp_canon_members)
     unsigned int slaves;  // X10 supply (csp_canon_members)
     unsigned int u32_AC;  // X10 supply (member_lookup)
+    unsigned int u32_45;  // 0x45
 };
 
 } // namespace gamemd

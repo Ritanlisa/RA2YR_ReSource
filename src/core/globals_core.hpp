@@ -2,6 +2,7 @@
 #pragma once
 
 namespace gamemd {
+class TechnoClass;  // X27: member-decl type supply
 
 // === Section 0x0810000 - .data (142 globals) ===
 

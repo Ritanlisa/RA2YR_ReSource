@@ -65,7 +65,11 @@ struct TeamClass {
     bool unknown86;  // 0x86
     bool unknown87;  // 0x87
     char countObjects[24];  // 0x88
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_94;  // 0x94
+#else
+    void* ptr_94;  // 0x94  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
 // --- flat members (END) ---
     static int SumMemberCounts(void *aP1);
     AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0);

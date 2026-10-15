@@ -6,6 +6,8 @@
 
 namespace gamemd
 {
+    // X27: member-decl type supply (log-driven hygiene)
+    class CampaignClass;
 
 struct BytePalette;
 class DSurface;

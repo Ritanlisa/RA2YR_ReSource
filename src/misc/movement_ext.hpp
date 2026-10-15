@@ -3,6 +3,7 @@
 #include <cstdint>
 #include "core/enums.hpp"
 #include "core/math.hpp"
+namespace ra2 { namespace game { class AbstractClass; } }  // X27: member-decl type supply
 
 namespace gamemd
 {
@@ -17,6 +18,8 @@ using ::ra2::game::FootClass;
 } // namespace gamemd (bridge re-own, G42.29h)
 namespace ra2 { namespace game { class TechnoClass; } }
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    using ra2::game::AbstractClass;
 #ifndef GAMEMD_USING_TechnoClass
 #define GAMEMD_USING_TechnoClass
 using ::ra2::game::TechnoClass;

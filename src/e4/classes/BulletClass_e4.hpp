@@ -75,6 +75,7 @@ struct BulletClass {
     char __pad_B4[88];  // 0xB4 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
+    unsigned int u32_AC;  // 0xAC
 };
 
 } // namespace gamemd

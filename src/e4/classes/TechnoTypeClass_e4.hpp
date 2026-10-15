@@ -47,6 +47,7 @@ struct TechnoTypeClass {
     void* TargetDistanceCoefficient;  // 0x40
     unsigned int SlowdownDistance;  // 0x50
     unsigned int UIName;  // 0x60
+    unsigned int u32_48;  // 0x48
     char Name;  // 0x64
     int tail_95;  // 0x95
     unsigned char unused_9B;  // 0x9B
@@ -449,12 +450,28 @@ struct TechnoTypeClass {
     unsigned char __pad_DC8;  // X10 supply (csp_canon_members)
     AbstractClass* q0C0;  // X10 supply (member_lookup)
     IUnknown* q0CC;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* q0D8;  // X10 supply (member_lookup)
+#else
+    void* q0D8;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* q0E0;  // X10 supply (member_lookup)
+#else
+    void* q0E0;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     AbstractClass* q0E8;  // X10 supply (member_lookup)
     unsigned int q0EC;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* q0F0;  // X10 supply (member_lookup)
+#else
+    void* q0F0;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* q0F4;  // X10 supply (member_lookup)
+#else
+    void* q0F4;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     void* q0F7;  // X10 supply (member_lookup)
     unsigned char q1050[4];  /* IntDynamicVector */  // X10 supply (member_lookup)
     unsigned char q10C0[4];  /* IntDynamicVector */  // X10 supply (member_lookup)
@@ -472,7 +489,11 @@ struct TechnoTypeClass {
     unsigned char q358;  // X10 supply (member_lookup)
     unsigned char q364;  // X10 supply (member_lookup)
     unsigned char q8A8;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* qAA4;  // X10 supply (member_lookup)
+#else
+    void* qAA4;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     unsigned char qC24;  // X10 supply (member_lookup)
     unsigned char qD70;  // X10 supply (member_lookup)
     WeaponTypeClass* qDC0;  // X10 supply (member_lookup)

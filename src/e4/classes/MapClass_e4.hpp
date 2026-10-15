@@ -22,6 +22,7 @@ struct MapClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* IsAllocated;  // 0xD
+    int q010;  // 0x10
     bool IsInitialized;  // 0x12
     int Count;  // 0x16
     unsigned int CapacityIncrement;  // 0x20
@@ -202,6 +203,21 @@ struct MapClass {
     unsigned int u32_F4;  // X10 supply (member_lookup)
 
     unsigned char q0F8[4];  /* char[4] */  // X10 supply (member_lookup)
+    unsigned int u32_2F4;  // 0x2F4
+    unsigned int u32_2F0;  // 0x2F0
+    unsigned int u32_2DC;  // 0x2DC
+    unsigned int u32_2D8;  // 0x2D8
+    unsigned int u32_2D4;  // 0x2D4
+    unsigned int u32_2D0;  // 0x2D0
+    unsigned int u32_2CC;  // 0x2CC
+    unsigned int u32_2C8;  // 0x2C8
+    unsigned int u32_2C4;  // 0x2C4
+    unsigned int u32_2C0;  // 0x2C0
+    unsigned int u32_2BC;  // 0x2BC
+    unsigned int u32_231;  // 0x231
+    unsigned int u32_230;  // 0x230
+    DynamicVector * q080;  // 0x80
+    char q018[16];  // 0x18  /* char[16] */
 };
 
 } // namespace gamemd

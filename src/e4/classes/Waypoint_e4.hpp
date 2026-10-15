@@ -20,5 +20,10 @@ struct Waypoint {
 
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned char u8_210;  // X10 supply (member_lookup)
+    void * field_38;  // 0x38
+    unsigned int q028;  // 0x28
+    unsigned int q024;  // 0x24
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_C;  // 0xC
 };
 } // namespace gamemd

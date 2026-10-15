@@ -34,5 +34,7 @@ struct Terrain {
     unsigned int u32_124;  // X10 supply (member_lookup)
     unsigned int u32_F4;  // X10 supply (member_lookup)
     unsigned int u32_F8;  // X10 supply (member_lookup)
+    int u32_38;  // 0x38
+    int q038;  // 0x38
 };
 } // namespace gamemd

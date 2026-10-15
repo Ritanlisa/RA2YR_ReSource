@@ -89,6 +89,8 @@ struct MouseClass {
     unsigned int q_30;  // +0x30 flat supply (P5 provenance)
     unsigned int q_40;  // +0x40 flat supply (P5 provenance)
     unsigned int q_60;  // +0x60 flat supply (P5 provenance)
+    unsigned int u32_67C;  // 0x67C
+    char u32_11B[4];  // 0x11B  /* char[4] */
 };
 
 } // namespace gamemd

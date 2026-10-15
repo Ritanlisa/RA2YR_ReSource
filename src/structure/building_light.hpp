@@ -6,6 +6,8 @@
 #include "object/object.hpp"
 
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    class ParticleSystemClass;
 
 #ifndef GAMEMD_USING_AbstractClass
 #define GAMEMD_USING_AbstractClass

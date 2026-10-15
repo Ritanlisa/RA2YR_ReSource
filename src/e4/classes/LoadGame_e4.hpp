@@ -21,6 +21,11 @@ struct LoadGame {
     static int LoadBlock68(LoadGame * aP1, int a2);
 
     int q010;  // X10 supply (member_lookup)
+    int q020;  // 0x20
+    int q01C;  // 0x1C
+    int q018;  // 0x18
+    int q014;  // 0x14
+    int q00C;  // 0xC
 };
 
 } // namespace gamemd

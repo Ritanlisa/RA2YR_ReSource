@@ -149,11 +149,24 @@ lines = ['// GENERATED fwd declarations for the e4 universe (gen_e4_fwd.py).',
 # _tree_full_e4.hpp guard exactly.
 TEMPLATE_NAMES = {'VectorClass', 'DynamicVectorClass', 'TypeList',
                   'LinkedList'}
+# X27: names that core/math.hpp declares as using-aliases (CellStruct =
+# Vector2D<short>, CoordStruct = Vector3D<int>).  A namespace-scope
+# `struct X;` here C2371-clashes with the alias in every TU that sees both
+# (tree TUs, GAMEMD_E4_MATH_ALIASES e4 TUs, any TU where math.hpp lands
+# first -> GAMEMD_MATH_ALIAS_ACTIVE marker).  Suppress the fwd in all three
+# regimes; the alias (complete type) takes over there.
+MATH_ALIAS_NAMES = {'CellStruct', 'CoordStruct'}
 guarded = sorted(n for n in names if n in TEMPLATE_NAMES)
-plain = sorted(n for n in names if n not in TEMPLATE_NAMES)
+math_guarded = sorted(n for n in names
+                      if n in MATH_ALIAS_NAMES and n not in TEMPLATE_NAMES)
+plain = sorted(n for n in names
+               if n not in TEMPLATE_NAMES and n not in MATH_ALIAS_NAMES)
 lines += ['#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)']
 lines += ['struct %s;' % n for n in guarded]
 lines += ['#endif  // X26: tree-template names yield to core/vector.hpp']
+lines += ['#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_MATH_ALIASES) && !defined(GAMEMD_MATH_ALIAS_ACTIVE)']
+lines += ['struct %s;' % n for n in math_guarded]
+lines += ['#endif  // X27: math.hpp aliases own CellStruct/CoordStruct']
 lines += ['struct %s;' % n for n in plain]
 lines += ['', '} // namespace gamemd', '']
 

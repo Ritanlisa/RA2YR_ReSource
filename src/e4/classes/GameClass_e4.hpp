@@ -145,5 +145,6 @@ struct GameClass {
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned char __pad_018;  // X10 supply (csp_canon_members)
     unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_17C;  // 0x17C
 };
 } // namespace gamemd

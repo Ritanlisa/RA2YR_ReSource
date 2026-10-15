@@ -67,5 +67,10 @@ struct Radar {
     unsigned int u32_89;  // X10 supply (member_lookup)
     unsigned int u32_F4;  // X10 supply (member_lookup)
     unsigned int u32_F8;  // X10 supply (member_lookup)
+    unsigned char q090;  // 0x90
+    unsigned char q070;  // 0x70
+    unsigned char q06C;  // 0x6C
+    unsigned char q068;  // 0x68
+    unsigned int q054;  // 0x54
 };
 } // namespace gamemd

@@ -23,6 +23,7 @@ struct Turret {
     unsigned char WaveClass_B86[4];  /* WaveClass */  // X10 supply (member_lookup)
     unsigned int u32_B8;  // X10 supply (member_lookup)
     unsigned int u32_BC;  // X10 supply (member_lookup)
+    unsigned int q0324;  // 0x324
 };
 
 } // namespace gamemd

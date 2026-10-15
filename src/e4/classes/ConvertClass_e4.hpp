@@ -117,6 +117,9 @@ struct ConvertClass {
     int q170;  // X10 supply (member_lookup)
     unsigned char q174[4];  /* char[4] */  // X10 supply (member_lookup)
     int q178;  // X10 supply (member_lookup)
+    unsigned int u32_184;  // 0x184
+    unsigned int u32_180;  // 0x180
+    char field_2[4];  // 0x2  /* char[4] */
 };
 
 } // namespace gamemd

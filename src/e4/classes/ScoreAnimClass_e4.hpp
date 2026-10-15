@@ -15,6 +15,7 @@ struct ScoreAnimClass {
     unsigned int m_0;  // 0x0 (offset-truth)
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
+    int q010;  // 0x10
 };
 
 } // namespace gamemd

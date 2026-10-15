@@ -43,6 +43,7 @@ struct GadgetClass {
 
     unsigned int q050;  // X10 supply (member_lookup)
     unsigned char u32_C80[4];  /* void */  // X10 supply (member_lookup)
+    unsigned char q060;  // 0x60
 };
 
 } // namespace gamemd

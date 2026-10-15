@@ -17,6 +17,8 @@ struct ObjectVector {
     int q004;  // X10 supply (member_lookup)
     int q008;  // X10 supply (member_lookup)
     int q00C;  // X10 supply (member_lookup)
+    int q014;  // 0x14
+    int q010;  // 0x10
 };
 
 } // namespace gamemd

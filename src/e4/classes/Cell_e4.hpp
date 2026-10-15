@@ -98,5 +98,6 @@ struct Cell {
     unsigned int u32_4A0;  // X10 supply (member_lookup)
     unsigned int u32_78;  // X10 supply (member_lookup)
     unsigned int u32_EC;  // X10 supply (member_lookup)
+    unsigned int u32_11A;  // 0x11A
 };
 } // namespace gamemd

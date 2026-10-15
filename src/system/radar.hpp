@@ -7,6 +7,8 @@
 #include <cstdint>
 
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    class CampaignClass;
 
 #ifndef GAMEMD_USING_CellStruct
 #define GAMEMD_USING_CellStruct
@@ -198,7 +200,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     CampaignClass * ptr_1228;  // X10 supply (csp_canon_members)
     CampaignClass * ptr_1260;  // X10 supply (csp_canon_members)
     CampaignClass * ptr_1264;  // X10 supply (csp_canon_members)
-    VectorClass * ptr_50;  // X10 supply (csp_canon_members)
+    void* ptr_50;  // X10 supply (csp_canon_members)  // X27: template-carrier
     int q008;  // X10 supply (member_lookup)
     int q0B0;  // X10 supply (member_lookup)
     unsigned char q0B4[8];  /* char[8] */  // X10 supply (member_lookup)

@@ -24,7 +24,11 @@ struct TimerStruct;  // fix_fwd_type_supply
 struct House {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_40;  // 0x40
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     TypeList * ptr_44;  // 0x44
+#else
+    void* ptr_44;  // 0x44  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     AbstractClass * ptr_220;  // 0x220
     ProgressTimer * ptr_248;  // 0x248
     ParticleSystemClass * ptr_330;  // 0x330
@@ -81,5 +85,6 @@ struct House {
     unsigned char u32_C[29];  /* char[29] */  // X10 supply (member_lookup)
     unsigned int u32_EC;  // X10 supply (member_lookup)
     int u8_2F4;  // X10 supply (member_lookup)
+    void* q004;  // 0x4
 };
 } // namespace gamemd

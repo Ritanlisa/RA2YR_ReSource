@@ -8,6 +8,9 @@
 #include "object/foot.hpp"
 
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    class AnimClass;
+    class TagClass;
 
 using ra2::game::AbstractClass;
 using ra2::game::AbstractType;

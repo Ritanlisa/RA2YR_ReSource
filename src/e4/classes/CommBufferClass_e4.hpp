@@ -16,5 +16,6 @@ struct CommBufferClass {
 
     AbstractClass* CommBufferClass_field_0x10;  // X10 supply (member_types)
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    unsigned int u32_40;  // 0x40
 };
 } // namespace gamemd

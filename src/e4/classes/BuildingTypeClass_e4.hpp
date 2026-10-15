@@ -713,7 +713,11 @@ struct BuildingTypeClass {
     unsigned char __pad_73C;  // X10 supply (csp_canon_members)
     AbstractClass* q0C0;  // X10 supply (member_lookup)
     CampaignClass* q0C4;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* q11B0;  // X10 supply (member_lookup)
+#else
+    void* q11B0;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     ObjectClass* q30C;  // X10 supply (member_lookup)
     unsigned char q340;  // X10 supply (member_lookup)
     unsigned char q3952;  // X10 supply (member_lookup)

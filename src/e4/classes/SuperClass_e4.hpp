@@ -51,7 +51,7 @@ struct SuperClass {
     static wchar_t * SetCurrentFrame(SuperClass *pThis);
     static void AdvanceCountdown(SuperClass *pThis);
     AbstractClass * * Reset(void *a1, void *a2);
-    AbstractClass * * StartTimer(int this, char aP2, char aP3);
+    AbstractClass * * StartTimer(int aP1, char aP2, char aP3);
     char StopPreclickAnim(int aP1);  // G57w10-S raw 0x006CB830 IUnknown 占位清除
     SuperClass * * CleanupMembers(void *a1);
     bool ShouldDrawProgress();

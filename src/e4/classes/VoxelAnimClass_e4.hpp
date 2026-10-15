@@ -91,6 +91,9 @@ struct VoxelAnimClass {
     unsigned int q13C;  // X10 supply (member_lookup)
     int q140;  // X10 supply (member_lookup)
     unsigned int u32_100;  // X10 supply (member_lookup)
+    unsigned int q0D0;  // 0xD0
+    unsigned int q0CC;  // 0xCC
+    unsigned int u32_C8;  // 0xC8
 };
 
 } // namespace gamemd

@@ -43,6 +43,7 @@ struct HouseClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     void* uniqueId;  // 0x10
+    unsigned int q012;  // 0x12
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -54,6 +55,9 @@ struct HouseClass {
     char relatedTagsCount[4];  // 0x30
     unsigned int alignmentPadding;  // 0x33
     char relatedTagsCapacity[4];  // 0x34
+    unsigned int q02B;  // 0x2B
+    char u32_2A;  // 0x2A
+    char u32_1E;  // 0x1E
     int arrayIndex;  // 0x36
     BuildingClass** conYards;  // 0x38
     char conYardsCount[4];  // 0x3C
@@ -97,6 +101,33 @@ struct HouseClass {
     char startingUnitsCount[4];  // 0xD4
     char startingUnitsCapacity[4];  // 0xD8
     char aiDifficulty[4];  // 0xDC
+    unsigned int q093;  // 0x93
+    unsigned int q083;  // 0x83
+    unsigned int u32_81;  // 0x81
+    unsigned int q079;  // 0x79
+    int u32_77;  // 0x77
+    unsigned int q075;  // 0x75
+    unsigned int u32_73;  // 0x73
+    unsigned int u32_72;  // 0x72
+    unsigned int u32_71;  // 0x71
+    unsigned int u32_6F;  // 0x6F
+    unsigned int u32_6E;  // 0x6E
+    unsigned int u32_6D;  // 0x6D
+    unsigned int u32_6B;  // 0x6B
+    unsigned int u32_6A;  // 0x6A
+    unsigned int u32_69;  // 0x69
+    unsigned int u32_67;  // 0x67
+    unsigned int u32_66;  // 0x66
+    unsigned int u32_65;  // 0x65
+    unsigned int u32_63;  // 0x63
+    unsigned int u32_62;  // 0x62
+    unsigned int u32_61;  // 0x61
+    unsigned int u32_5F;  // 0x5F
+    unsigned int q04F;  // 0x4F
+    unsigned int q04E;  // 0x4E
+    unsigned int u32_43;  // 0x43
+    unsigned int q042;  // 0x42
+    unsigned int q037;  // 0x37
     double firepowerMultiplier;  // 0xE0
     double groundspeedMultiplier;  // 0xE8
     double airspeedMultiplier;  // 0xF0
@@ -123,6 +154,7 @@ struct HouseClass {
     bool production;  // 0x1EE
     bool autocreateAllowed;  // 0x1EF
     unsigned char HouseClass_field_1F0;  // 0x1F0
+    unsigned int u32_1F1;  // 0x1F1
     bool aiTriggersActive;  // 0x1F2
     bool autoBaseBuilding;  // 0x1F3
     bool isDiscoveredByPlayer;  // 0x1F4
@@ -138,6 +170,7 @@ struct HouseClass {
     char selectedPathIndex[4];  // 0x20C
     void* planningPaths;  // 0x210
     char visionary[1];  // 0x240
+    unsigned int u32_208;  // 0x208
     bool mapIsClear;  // 0x241
     bool unknownBool242;  // 0x242
     bool unknownBool243;  // 0x243
@@ -189,21 +222,77 @@ struct HouseClass {
     char ownedWeed[16];  // 0x314
     unsigned int unknown324;  // 0x324
     char builtInfantryTypes[2056];  // 0x328
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_390;  // 0x390
+#else
+    void* ptr_390;  // 0x390  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_458;  // 0x458
+#else
+    void* ptr_458;  // 0x458  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_474;  // 0x474
+#else
+    void* ptr_474;  // 0x474  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_734;  // 0x734
+#else
+    void* ptr_734;  // 0x734  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_938;  // 0x938
+#else
+    void* ptr_938;  // 0x938  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_970;  // 0x970
+#else
+    void* ptr_970;  // 0x970  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     char builtUnitTypes[2056];  // 0xB30
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_1158;  // 0x1158
+#else
+    void* ptr_1158;  // 0x1158  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_1174;  // 0x1174
+#else
+    void* ptr_1174;  // 0x1174  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_1194;  // 0x1194
+#else
+    void* ptr_1194;  // 0x1194  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_1204;  // 0x1204
+#else
+    void* ptr_1204;  // 0x1204  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_1220;  // 0x1220
+#else
+    void* ptr_1220;  // 0x1220  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_1258;  // 0x1258
+#else
+    void* ptr_1258;  // 0x1258  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_1274;  // 0x1274
+#else
+    void* ptr_1274;  // 0x1274  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * ptr_1290;  // 0x1290
+#else
+    void* ptr_1290;  // 0x1290  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     char builtAircraftTypes[2056];  // 0x1338
     char builtBuildingTypes[2056];  // 0x1B40
     char killedInfantryTypes[2056];  // 0x2348
@@ -519,9 +608,17 @@ struct HouseClass {
     int q1524;  // X10 supply (member_lookup)
     unsigned int q1525;  // X10 supply (member_lookup)
     unsigned int q1526;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass * q1536;  // X10 supply (member_lookup)
+#else
+    void* q1536;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     unsigned int q1545;  // X10 supply (member_lookup)
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     VectorClass* q1580;  // X10 supply (member_lookup)
+#else
+    void* q1580;  // X10 supply (member_lookup)  // X27: template-carrier
+#endif  // X27: template-carrier universe fallback
     unsigned int q1586;  // X10 supply (member_lookup)
     unsigned int q1587;  // X10 supply (member_lookup)
     unsigned int q1590;  // X10 supply (member_lookup)

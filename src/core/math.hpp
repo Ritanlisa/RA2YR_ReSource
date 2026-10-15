@@ -131,6 +131,7 @@ struct Vector3D
 };
 
 #if !defined(GAMEMD_E4_UNIVERSE) || defined(GAMEMD_E4_MATH_ALIASES)  // G57w7: e4 TUs carry flat CellStruct/Point2D/CoordStruct (CellStruct_e4.hpp / e4_protos.h); alias TUs set GAMEMD_E4_MATH_ALIASES to take these instead
+#define GAMEMD_MATH_ALIAS_ACTIVE 1  // X27: _fwd_e4.hpp yields its CellStruct/CoordStruct struct-fwd to these aliases
 using CellStruct   = Vector2D<short>;
 using Point2D      = Vector2D<int>;
 using CoordStruct  = Vector3D<int>;

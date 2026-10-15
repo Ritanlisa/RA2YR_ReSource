@@ -7,8 +7,13 @@
 #include "core/math.hpp"
 #include "object/techno.hpp"
 #include "misc/repeatable_timer.hpp"
+namespace ra2 { namespace game { class BombClass; } }  // X27: member-decl type supply
 
 namespace gamemd {
+    // X27: member-decl type supply (log-driven hygiene)
+    using ra2::game::BombClass;
+    class LineTrail;
+    class ParticleSystemClass;
 
 using ra2::game::ObjectClass;
 using ra2::game::TechnoClass;
@@ -715,7 +720,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int gattlingValue;  // X10 supply (csp_canon_members)
     bool hasParachute;  // X10 supply (csp_canon_members)
     void* health;  // X10 supply (csp_canon_members)
-    VectorClass* idleActionTimer;  // X10 supply (csp_canon_members)
+    void* idleActionTimer;  // X10 supply (csp_canon_members)  // X27: template-carrier
     unsigned char idleActionTimer_d;  // X10 supply (csp_canon_members)
     unsigned char inAirFlag[1];  /* PassengersClass */  // X10 supply (csp_canon_members)
     void* inLimbo;  // X10 supply (csp_canon_members)
@@ -751,7 +756,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int q040;  // X10 supply (member_lookup)
     unsigned int q10E;  // X10 supply (member_lookup)
     AbstractClass* q118;  // X10 supply (member_lookup)
-    VectorClass* q11B0;  // X10 supply (member_lookup)
+    void* q11B0;  // X10 supply (member_lookup)  // X27: template-carrier
     int8_t q121;  // X10 supply (member_lookup)
     bool q16B;  // X10 supply (member_lookup)
     unsigned int q16F;  // X10 supply (member_lookup)

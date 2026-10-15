@@ -57,6 +57,11 @@ struct FoggedObjectClass {
     unsigned char q050;  // X10 supply (member_lookup)
     unsigned int u32_44;  // X10 supply (member_lookup)
     unsigned int u32_5C;  // X10 supply (member_lookup)
+    unsigned int u32_74;  // 0x74
+    unsigned char q070;  // 0x70
+    unsigned int u32_69;  // 0x69
+    unsigned int u32_64;  // 0x64
+    unsigned int q060;  // 0x60
 };
 
 } // namespace gamemd

@@ -35,6 +35,8 @@ struct ColorStruct {
 // --- flat members (END) ---
     int SetRGB(uint8_t a2, uint8_t a3, uint8_t a4, void *a4_1 = 0);
     unsigned int *q000;  // 0x0 (canon-mt)
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_4;  // 0x4
 };
 #endif  // GAMEMD_G2_ColorStruct_DEF
 

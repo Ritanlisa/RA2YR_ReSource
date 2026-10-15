@@ -1804,7 +1804,7 @@ int ObjectClass::Cleanup() {
 
 // 0x6646C0
 namespace gamemd {
-char NetworkManager::RemovePlayer(int this, int a2) {
+char NetworkManager::RemovePlayer(int aP1, int a2) {
     int i; // esi
     char *v3; // eax
     char result; // al
