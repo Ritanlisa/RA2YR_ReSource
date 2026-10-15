@@ -198,7 +198,7 @@ LABEL_26:
   Debug::Log(); /*0x5ca8d2*/
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
-  HouseClass::SetMapSeed(v7, v8); /*0x5ca8e8*/
+  (v7)->SetMapSeed(v8); /*0x5ca8e8*/
   for ( i = 0; i < stru_A80220.?; ++i ) /*0x5ca8f6*/
   {
     v10 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5ca8fe*/
@@ -211,7 +211,7 @@ LABEL_26:
                      i,
                      v14,
                      v13);
-      HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/
+      (v10)->SetMapSeed(*v11); /*0x5ca944*/
     }
   }
   *(unsigned int *)v14 = &vt_VectorClass; /*0x5ca957*/

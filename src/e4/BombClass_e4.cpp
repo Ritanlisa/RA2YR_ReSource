@@ -178,9 +178,9 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP0); /*0x438b62*/
       aP0->AbstractClass = &vt_BombClass; /*0x438b67*/
-      aP0->? = &vt_BombClass; /*0x438b6d*/
-      aP0->? = &vt_BombClass; /*0x438b74*/
-      aP0->? = &vt_BombClass; /*0x438b7b*/
+      /* X11: vtable install elided (qmark slot, RHS vt_BombClass) */  /*0x438b6d*/
+      /* X11: vtable install elided (qmark slot, RHS vt_BombClass) */  /*0x438b74*/
+      /* X11: vtable install elided (qmark slot, RHS vt_BombClass) */  /*0x438b7b*/
     }
     AudioController::Init((AudioController *)&aP0->audioController[3]); /*0x438b85*/
     aP0->BombClass_field_54 = 0; /*0x438b8d*/

@@ -338,7 +338,7 @@ AbstractClass * * Options::Screen_Save(void *a1)
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
       Theme::QueueSong((int)&unk_A83D10, v10); /*0x55fbfa*/
-      Theme::Stop((Theme *)&unk_A83D10, 0); /*0x55fc06*/
+      ((Theme *)&unk_A83D10)->Stop(0); /*0x55fc06*/
     }
   }
   HWND v11; // eax

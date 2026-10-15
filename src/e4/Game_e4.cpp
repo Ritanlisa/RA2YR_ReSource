@@ -898,7 +898,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                  | (16
                                   * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions) + 380)
                                    & 1));
-  Stream::WriteBlock((int *)&unk_A8EA70, (int)v11, 250, 1); /*0x5ba91d*/
+  ((int *)&unk_A8EA70)->WriteBlock((int)v11, 250, 1); /*0x5ba91d*/
   *(unsigned int *)v13.CDFileClass = &vt_CCFileClass; /*0x5ba929*/
   int v15; // [esp+168h] [ebp-8h]
   v15 = 0; /*0x5ba934*/

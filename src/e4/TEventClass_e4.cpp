@@ -712,9 +712,9 @@ void * TEventClass::Fire(void ** Block, char a2)
 
 
   Block->AbstractClass = &vt_TEventClass; /*0x71fa86*/
-  Block->? = &vt_TEventClass; /*0x71fa8c*/
+  /* X11: vtable install elided (qmark slot, RHS vt_TEventClass) */  /*0x71fa8c*/
   Block->u32_8 = &vt_TEventClass; /*0x71fa93*/
-  Block->? = &vt_TEventClass; /*0x71fa9a*/
+  /* X11: vtable install elided (qmark slot, RHS vt_TEventClass) */  /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
   v7 = (gamemd::TEventClass *)(Block); /*0x71fab6*/

@@ -190,7 +190,7 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
     }
     *&v1->q038 = (gamemd::CCINIClass *)(v3); /*0x5d6839*/
     CCFileClass::Construct2(&v6, &v1->ObjectClass_2C); /*0x5d683c*/
-    if ( (unsigned __int8)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
+    if ( (unsigned __int8)(&v6)->Open(0) ) /*0x5d6846*/
       CCINIClass::Load(*&v1->q038, (int)&v6, 0, 0); /*0x5d685a*/
     *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x5d6863*/
   int v8; // [esp+70h] [ebp-8h]

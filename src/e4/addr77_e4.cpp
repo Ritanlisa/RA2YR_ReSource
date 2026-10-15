@@ -1142,7 +1142,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     v17.customSound_controller[0] = 0; /*0x778b18*/
     v17.customSound_controller[1] = 0; /*0x778b1c*/
     v17.nextArrayIndex = (int)&vt_INIClass; /*0x778b20*/
-    FileStraw::Open((FileStraw *)&v17.nextArrayIndex, (int)&v17.spawnStatus, 0); /*0x778b28*/
+    ((FileStraw *)&v17.nextArrayIndex)->Open((int)&v17.spawnStatus, 0); /*0x778b28*/
     CCFileClass::Close((BufferIOFileClass *)&v17.spawnStatus); /*0x778b34*/
     String::AssignFromPtr((String *)&v17.vfptr1, a2); /*0x778b3e*/
     ((String *)((String *)&v17.vfptr1))->ToLower(); /*0x778b47*/

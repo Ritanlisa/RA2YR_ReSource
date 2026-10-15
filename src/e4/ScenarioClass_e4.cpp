@@ -329,7 +329,7 @@ int ScenarioClass::AssignStartPositions(char a1)
       startingAllies = v2->startingAllies; /*0x5d6c12*/
       if ( startingAllies != -2 ) /*0x5d6c1b*/
       {
-        HouseClass::SetMapSeed(v2, *((unsigned int *)Block + startingAllies)); /*0x5d6c25*/
+        (v2)->SetMapSeed(*((unsigned int *)Block + startingAllies)); /*0x5d6c25*/
         *(&((unsigned int *)(dword_A8B230))[124].uniqueId + startingAllies) = i; /*0x5d6c2f*/
       }
     }
@@ -430,7 +430,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
             || (Bool = INIClass::GetBool((uint8_t *)((INIClass *)&v19),                    (uint8_t *)&stru_82BA00.LeaveGrinderSound,                    (uint8_t *)g_INI_Key_Brief,                    -1),
           Bool != -1) )
     {
-      Theme::Stop((Theme *)&unk_A83D10, 0); /*0x683cad*/
+      ((Theme *)&unk_A83D10)->Stop(0); /*0x683cad*/
       Movie::PlayWrapper(Bool, (int)v4, v9, 1, 1, 1); /*0x683cbd*/
     }
   }
@@ -442,7 +442,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
   ((INIClass *)&v19)->DestroyHashTableINIClass(); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
   v11 = StringList::Find((StringList *)&unk_A83D10, &stru_82BA00.DamSmkOffScrnRel); /*0x683d0f*/
-  ThemeClass::Play((ThemeClass *)&unk_A83D10, v11); /*0x683d1a*/
+  ((ThemeClass *)&unk_A83D10)->Play(v11); /*0x683d1a*/
   if ( !Scenario::LoadWithProgress(v4, a3) ) /*0x683d21*/
   {
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x683d32*/
@@ -471,7 +471,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
     *p_vtable2 = TimerGetTicks(); /*0x683e3f*/
   }
   if ( dword_A8B230[202].vfptr2 == (void *)-1 ) /*0x683e50*/
-    Theme::Stop((Theme *)&unk_A83D10, 1); /*0x683e66*/
+    ((Theme *)&unk_A83D10)->Stop(1); /*0x683e66*/
   else
     ((int)&unk_A83D10)->QueueSong((int)dword_A8B230[202].vfptr2); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
@@ -515,7 +515,7 @@ int ScenarioClass::CleanupTemporary()
   (*((unsigned char *)&(v1))) = 1; /*0x683f4d*/
   (v1)->Read(); /*0x683f4f*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x683f5d*/
-    Tooltip::Enable(*(Tooltip **)&g_TacticalRender, 0); /*0x683f61*/
+    (*(Tooltip **)&g_TacticalRender)->Enable(0); /*0x683f61*/
   ((ScrollClass *)&DataGlobal_87F7E8)->ReleaseCapture(); /*0x683f6b*/
   ((int)&DataGlobal_87F7E8)->SetCursor(0, 0); /*0x683f79*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x683f86*/

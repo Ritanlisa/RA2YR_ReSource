@@ -525,7 +525,7 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
         if ( v4 ) /*0x4f4624*/
         {
           ColorStruct::SetRGB((uint8_t)(&v6), 0x80u, 0x80u, 0x80u); /*0x4f463d*/
-          ColorStruct::SetRGB(&v7, 0x80u, 0x80u, 0x80u); /*0x4f4655*/
+          (&v7)->SetRGB(0x80u, 0x80u, 0x80u); /*0x4f4655*/
           ((int)(v6.q000))->SetCellTransform(0, 0, 0, 1008981770, 0, 0); /*0x4f466d*/
           Tactical::SetCellTransform((int)(v6.q000), 1, 0, 1132396544, 1008981770, 0, 1065353216); /*0x4f468b*/
           Tactical::SetCellTransform((int)(v6.q000), 2, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46af*/
@@ -1413,7 +1413,7 @@ void* TacticalClass::DrawPlacementCircles()
         v10 = (int)&v4->owner->base[4] + 1; /*0x6dbf55*/
         (*((unsigned short *)&(v49.Color_field_00))) = *(unsigned short *)v10; /*0x6dbf5f*/
         (((unsigned char *)&(v49.Color_field_00))[2]) = *(unsigned char *)(v10 + 2); /*0x6dbf67*/
-        Color::Lerp(&v49, dword_B0E648, &byte_B0CE14); /*0x6dbf6f*/
+        (&v49)->Lerp(dword_B0E648, &byte_B0CE14); /*0x6dbf6f*/
         v51 = COERCE_FLOAT(BuildingClass::GetPowerFrame(v4)); /*0x6dbf7b*/
         v11 = (double)(*((signed int *)&(v51))); /*0x6dbf81*/
         v11 = v11; /*0x6dbf91*/
@@ -1534,7 +1534,7 @@ void* TacticalClass::DrawPlacementCircles()
     *(float *)v52 = v38; /*0x6dc2ca*/
     if ( (*((signed int *)&(v38))) <= 0 ) /*0x6dc2ce*/
     {
-      Color::Lerp(&v49, dword_B0E64C, &byte_B0CD70); /*0x6dc3b5*/
+      (&v49)->Lerp(dword_B0E64C, &byte_B0CD70); /*0x6dc3b5*/
       (*(((unsigned char *)&(v45)) + (sizeof(v45) - 1))) = v42; /*0x6dc3ce*/
       (*((unsigned short *)&(v45))) = v49.Color_field_00; /*0x6dc3d6*/
       (((unsigned char *)&(v45))[2]) = (((unsigned char *)&(v49.Color_field_00))[2]); /*0x6dc3dd*/
@@ -1560,7 +1560,7 @@ void* TacticalClass::DrawPlacementCircles()
           {
             v35 = -1; /*0x6dc31b*/
           }
-          Color::Lerp(&v48, dword_B0E64C, &byte_B0CD70); /*0x6dc333*/
+          (&v48)->Lerp(dword_B0E64C, &byte_B0CD70); /*0x6dc333*/
           v47 = *(float *)v52 / (double)*(int *)(v29 + 252); /*0x6dc350*/
           (*(((unsigned char *)&(v44)) + (sizeof(v44) - 1))) = v40; /*0x6dc353*/
           (*((unsigned short *)&(v44))) = v48.Color_field_00; /*0x6dc359*/

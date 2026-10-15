@@ -53,7 +53,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
       v9 = 0; /*0x76fcbd*/
     this->u32_28 = (unsigned int)(v9); /*0x76fcbf*/
     (*(void (**)(void *, unsigned int))(*(unsigned int *)v9 + 4))(v9, 0); /*0x76fcc8*/
-    PriorityQueue::Add(aP1, this->u32_28); /*0x76fcd6*/
+    (aP1)->Add(this->u32_28); /*0x76fcd6*/
   }
   v11[0] = (unsigned int)(&vt_CCFileClass); /*0x76fcdf*/
   int v13; // [esp+74h] [ebp-8h]

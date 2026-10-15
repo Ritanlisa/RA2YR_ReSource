@@ -412,7 +412,7 @@ int ConnectionClass::serviceSendQueue()
           v6 = dword_887340; /*0x48c419*/
           if ( dword_887338 != -1 ) /*0x48c422*/
             v6 += Timer::GetTicks() - dword_887338; /*0x48c434*/
-          ConnectionClass::initQueue((ConnectionClass *)this->PlayerIndex, v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
+          ((ConnectionClass *)this->PlayerIndex)->initQueue(v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
         }
         PacketQueue::ExtractEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0, 0); /*0x48c452*/
       }

@@ -785,7 +785,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
         v11 = (void *)((int)(operator new(0x6D8u))); /*0x41b1bc*/
         if ( v11 ) /*0x41b1c6*/
         {
-          v12 = AircraftClass::Construct(v11, v9, *((unsigned int *)dword_A8B21C + v9), v10); /*0x41b1de*/
+          v12 = (v11)->Construct(v9, *((unsigned int *)dword_A8B21C + v9), v10); /*0x41b1de*/
           if ( v12 ) /*0x41b1e2*/
           {
             v13 = strtok(0, Str); /*0x41b1ef*/

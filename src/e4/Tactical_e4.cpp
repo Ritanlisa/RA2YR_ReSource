@@ -1112,7 +1112,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                       aP4,
                       v7,
                       0);
-                    DisplayClass::InitViewBounds((DisplayClass *)&DataGlobal_87F7E8, &v12); /*0x6931d8*/
+                    ((DisplayClass *)&DataGlobal_87F7E8)->InitViewBounds(&v12); /*0x6931d8*/
                     (*((unsigned char *)&(v5))) = (uint8_t)SetCapture(g_hWnd); /*0x6931e4*/
                     *((unsigned char *)_28 + 21850) = 1; /*0x6931ea*/
                   }
@@ -1176,7 +1176,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                   {
                     TacticalClass::DispatchMode((DisplayClass *)&DataGlobal_87F7E8, (int)&v12); /*0x6933c6*/
                   }
-                  DisplayClass::ExitMode((DisplayClass *)_28); /*0x6933cd*/
+                  ((DisplayClass *)_28)->ExitMode(); /*0x6933cd*/
                   *((unsigned char *)_28 + 21850) = 0; /*0x6933d2*/
                   (*((unsigned char *)&(v5))) = ReleaseCapture(); /*0x6933d8*/
                 }

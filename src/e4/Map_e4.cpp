@@ -313,7 +313,7 @@ int E4Recv_5ADD10::Map_Delete()
   v9[3] = 0; /*0x5add50*/
   /* X11: vtable install elided (implicit via MapSelect virtuals 0x5add5b) */
   bool v2; // bl
-  v2 = ScenarioClass::Load((ScenarioClass *)&v7, (int)this) == 0; /*0x5add71*/
+  v2 = ((ScenarioClass *)&v7)->Load((int)this) == 0; /*0x5add71*/
   DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
   ((MSEngine *)v8)->Destructor(); /*0x5add7d*/
   (&v7)->Destruct(); /*0x5add86*/

@@ -439,7 +439,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   *(unsigned int *)(aP1 + 4) = &vt_WarheadTypeClass; /*0x75d0c1*/
   /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0c7) */
   /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0ce) */
-  AbstractClass::GenerateUniqueID(aP1 + 4); /*0x75d0d5*/
+  (aP1 + 4)->GenerateUniqueID(); /*0x75d0d5*/
   (*(void (**)(int))(*(unsigned int *)(aP1 + 396) + 12))(aP1 + 396); /*0x75d0de*/
   (*(void (**)(int))(*(unsigned int *)(aP1 + 424) + 12))(aP1 + 424); /*0x75d0e5*/
   if ( g_WarheadTypePool < dword_8874C8 /*0x75d11c*/
@@ -797,7 +797,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
   }
   a3->__pad_10C[5] = 0; /*0x75e666*/
   *(unsigned int *)a3->__pad_10C = 0; /*0x75e66c*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)a3); /*0x75e672*/
+  ((AbstractTypeClass *)a3)->Dtor(); /*0x75e672*/
   if ( (a3 & 1) != 0 ) /*0x75e67e*/
     __3_YAXPAX_Z(a3); /*0x75e681*/
   return &a3->Deform; /*0x75e68b*/

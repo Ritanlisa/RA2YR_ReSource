@@ -49,7 +49,7 @@ int sub_6863E0(void * a1, void * a2)
   ((unsigned int *)&stru_A8EB00)[376] = 0; /*0x68642a*/
   byte_A8E378 = 0; /*0x686433*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x68643a*/
-    Tooltip::Enable(*(Tooltip **)&g_TacticalRender, 0); /*0x68643e*/
+    (*(Tooltip **)&g_TacticalRender)->Enable(0); /*0x68643e*/
   void **p_vtable2; // esi
   p_vtable2 = &((unsigned int *)(dword_A8B230))[43].vfptr2; /*0x686450*/
   if ( ((unsigned int *)(dword_A8B230))[43].vfptr2 != (void *)-1 ) /*0x686459*/
@@ -67,7 +67,7 @@ int sub_6863E0(void * a1, void * a2)
   TimerGetTicks(); /*0x68647e*/
   int v10; // [esp+0h] [ebp-18h]
   v10 = TimerGetTicks(); /*0x68649d*/
-  Theme::Stop((Theme *)&unk_A83D10, 1); /*0x6864b4*/
+  ((Theme *)&unk_A83D10)->Stop(1); /*0x6864b4*/
   this->AudioMixer::Shutdown(); /*0x6864b9*/
   AudioQueue::DrainAll(); /*0x6864be*/
   StopThemeClass(1); /*0x6864c5*/
@@ -94,7 +94,7 @@ int sub_6863E0(void * a1, void * a2)
   }
   (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x686536*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x68654a*/
-    Tooltip::Enable(*(Tooltip **)&g_TacticalRender, stru_A8EB00.vfptr[32]); /*0x686553*/
+    (*(Tooltip **)&g_TacticalRender)->Enable(stru_A8EB00.vfptr[32]); /*0x686553*/
   return ((TacticalMap *)((GScreenClass *)&DataGlobal_87F7E8))->Redraw(); /*0x686562*/
 }
 }  // G42.18 ns repair
@@ -128,7 +128,7 @@ AbstractClass * sub_686570(ObjectClass *a1)
     0);
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x6865e4*/
   Mission::SetAndCall((MouseClass *)&DataGlobal_87F7E8, 0, 0); /*0x6865ee*/
-  Theme::Stop((Theme *)&unk_A83D10, 1); /*0x6865fa*/
+  ((Theme *)&unk_A83D10)->Stop(1); /*0x6865fa*/
   ((Audio *)g_MixerState)->GetFlag(); /*0x686605*/
   ((VoxClass *)(&stru_83DB34))->FindAndPlay(-1); /*0x686616*/
   ((Audio *)g_MixerState)->WaitForCallback(); /*0x686621*/

@@ -225,7 +225,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     fsub [esp+0C8h+var_48]
     fstp [esp+0C8h+var_88]
   }
-  ObjectVector::Construct(&v43, 0, 0); /*0x70c777*/
+  (&v43)->Construct(0, 0); /*0x70c777*/
   *(unsigned int *)v43.__pad_000 = (unsigned int)(&vt_DynamicVectorClass); /*0x70c77c*/
   v43.ObjectVector_field_0x14 = 10; /*0x70c784*/
   v43.ObjectVector_field_0x10 = 0; /*0x70c78c*/

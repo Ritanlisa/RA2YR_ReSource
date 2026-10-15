@@ -384,10 +384,10 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   memset(&v7.nextObject, 0, 13); /*0x765219*/
   v7.ambientSoundController[1] = 0; /*0x765229*/
   v7.ambientSoundController[2] = 0; /*0x76522d*/
-  v7.? = &vt_INIClass; /*0x765231*/
+  /* X11: vtable install elided (qmark slot, RHS vt_INIClass) */  /*0x765231*/
   ((BufferIOFile *)&v7.ambientSoundController[3])->Init(); /*0x765239*/
   ((CDFileClass *)&v7.ambientSoundController[3])->Reopen(g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
-  if ( !(unsigned __int8)File::IsReady((BufferIOFileClass *)&v7.ambientSoundController[3], 0) ) /*0x765253*/
+  if ( !(unsigned __int8)((BufferIOFileClass *)&v7.ambientSoundController[3])->IsReady(0) ) /*0x765253*/
   {
     ((RawFileClass *)&v7.ambientSoundController[3])->Close(); /*0x765260*/
     CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765269*/

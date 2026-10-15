@@ -200,9 +200,9 @@ int WeaponTypeClass::Destructor(void *a1)
 
 
   a1->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f57*/
-  a1->? = &vt_WeaponTypeClass; /*0x771f5d*/
-  a1->? = &vt_WeaponTypeClass; /*0x771f64*/
-  a1->? = &vt_WeaponTypeClass; /*0x771f6b*/
+  /* X11: vtable install elided (qmark slot, RHS vt_WeaponTypeClass) */  /*0x771f5d*/
+  /* X11: vtable install elided (qmark slot, RHS vt_WeaponTypeClass) */  /*0x771f64*/
+  /* X11: vtable install elided (qmark slot, RHS vt_WeaponTypeClass) */  /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, 1); /*0x771f72*/
   a1->Projectile = 0; /*0x771f7d*/
   a1->Warhead = 0; /*0x771f83*/
@@ -312,7 +312,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   ((Power *)a2_2)->FlagProcess(v14); /*0x772c0f*/
   int v15; // ecx
   (*((unsigned char *)&(v15))) = a2_2->LaserDuration; /*0x772c14*/
-  Power::FinalizeDrain((Power *)a2_2, v15); /*0x772c1d*/
+  ((Power *)a2_2)->FinalizeDrain(v15); /*0x772c1d*/
   int v16; // edx
   (*((unsigned char *)&(v16))) = a2_2->IsBigLaser; /*0x772c22*/
   int v17; // eax

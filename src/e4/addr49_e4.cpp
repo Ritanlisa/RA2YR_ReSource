@@ -1946,7 +1946,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   if ( !CCINIClass::Load(v24, (int)v29, 0, 0) ) /*0x49c2d3*/
   {
   LABEL_44:
-    HashTable::DestroyHashTableINIClass(v24); /*0x49c553*/
+    (v24)->DestroyHashTableINIClass(); /*0x49c553*/
     v29[0] = &vt_CCFileClass; /*0x49c563*/
     v31 = 0; /*0x49c56e*/
     Vector::Clear((int)v30); /*0x49c575*/

@@ -1619,7 +1619,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
     {
       NeighbourContent = v17; /*0x65da41*/
       if ( v18 != -1 ) /*0x65da43*/
-        NeighbourContent = (Cell *)Cell::GetNeighbourContent(v17, v18); /*0x65da48*/
+        NeighbourContent = (Cell *)(v17)->GetNeighbourContent(v18); /*0x65da48*/
       v20 = (ObjectClass *)((Cell *)(NeighbourContent))->IsBridge(); /*0x65da4f*/
       v20 = v20; /*0x65da54*/
       if ( v20 && v20->health > 0 && ProcessDataCellClass(v20) ) /*0x65da63*/

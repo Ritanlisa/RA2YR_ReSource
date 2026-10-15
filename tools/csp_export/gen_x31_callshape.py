@@ -60,9 +60,26 @@ DETAIL = '--detail' in sys.argv
 
 ERR_RE = re.compile(
     r'^(?P<file>.+?)\((?P<line>\d+),(?P<col>\d+)\)\s*:\s*(?:fatal )?error\s+'
-    r'(?P<code>C2660|C2352|C2661)\s*:\s*(?P<msg>.*?)(?:\s*\[[^\]]*\])?\s*$')
+    r'(?P<code>C2660|C2352|C2661|C2664)\s*:\s*(?P<msg>.*?)(?:\s*\[[^\]]*\])?\s*$')
 QNAME_RE = re.compile(r'[\u201c"]((?:[A-Za-z_]\w*::)+[~A-Za-z_]\w*)[\u201d"]')
+# X38: C2664 quotes the full signature "ret Cls::M(params)" -- the method
+# name is followed by '(' not the closing quote.
+QNAME_SIG_RE = re.compile(
+    r'[\u201c"](?:[A-Za-z_][\w:<>,\s\*&]*?\s+)?'
+    r'((?:[A-Za-z_]\w*::)+[~A-Za-z_]\w*)\s*\(')
 ARITY_RE = re.compile(r'\u63a5\u53d7\s*(\d+)\s*\u4e2a\u53c2\u6570')
+# X38: C2664 conversion pair -- arg1 "SRC" -> "DST"; RF face only when SRC is
+# a class-pointer and DST is a non-pointer (decl's first param is the
+# receiver slot the caller passed as arg0).
+CONV1_RE = re.compile(
+    r'\u65e0\u6cd5\u5c06\u53c2\u6570 1 \u4ece\u201c(?P<src>[^\u201d]+)\u201d'
+    r'\u8f6c\u6362\u4e3a\u201c(?P<dst>[^\u201d]+)\u201d')
+SRC_CLSPTR_RE = re.compile(r'^(?:(?:gamemd|ra2::game|ra2)::)?[A-Za-z_]\w*\s*\*$')
+# X38 guard: scalar-cast-wrapped arg0 ((int)v / (unsigned int)v) must NOT be
+# moved into receiver position (R1 residual-this-cast violation + int is not
+# a valid receiver). Recorded, not rewritten (L336 load-bearing lesson).
+ARG0_SCALAR_CAST_RE = re.compile(
+    r'^\(\s*(?:unsigned\s+|signed\s+)?(?:int|long|short|char|__int\d+\w*)\s*\)')
 
 IDENT_AT = re.compile(r'~?[A-Za-z_]\w*')
 QUAL_BEFORE = re.compile(r'(?:[A-Za-z_]\w*::)+$')
@@ -374,6 +391,8 @@ def parse_log(log_path):
             continue
         qm = QNAME_RE.search(m.group('msg'))
         if not qm:
+            qm = QNAME_SIG_RE.search(m.group('msg'))
+        if not qm:
             continue
         parts = strip_ns(qm.group(1))
         if not parts:
@@ -385,6 +404,16 @@ def parse_log(log_path):
             if not am:
                 continue
             arity = int(am.group(1))
+        conv = None
+        if m.group('code') == 'C2664':
+            cm = CONV1_RE.search(m.group('msg'))
+            if not cm:
+                continue
+            conv = (cm.group('src').strip(), cm.group('dst').strip())
+            # RF face only: arg0 is a class-pointer being passed where the
+            # member decl's first param is a non-pointer (the receiver slot).
+            if not SRC_CLSPTR_RE.match(conv[0]) or '*' in conv[1] or '&' in conv[1]:
+                continue
         f = m.group('file').replace('\\', '/')
         if '/src/' in f:
             f = 'src/' + f.split('/src/', 1)[1]
@@ -392,6 +421,7 @@ def parse_log(log_path):
                          'col': int(m.group('col')),
                          'code': m.group('code'),
                          'cls': cls, 'meth': meth, 'msg_arity': arity,
+                         'conv': conv,
                          'qname': qm.group(1)})
     return sites
 
@@ -428,7 +458,17 @@ def plan_sites(sites, census):
                 stats['empty-arg0'] += 1
                 continue
             n_args = len(args)
-            if r['code'] in ('C2660', 'C2661'):
+            if r['code'] == 'C2664':
+                # X38 RF face: arg0 (class ptr) was passed into the decl's
+                # non-pointer first param; post-rewrite explicit args =
+                # n_args-1 must be arity-viable against a NON-static decl.
+                if ARG0_SCALAR_CAST_RE.match(args[0]):
+                    stats['c2664-arg0-scalar-cast'] += 1
+                    continue
+                if viable(decls, n_args - 1) is None:
+                    stats['c2664-no-recv-arity-decl'] += 1
+                    continue
+            elif r['code'] in ('C2660', 'C2661'):
                 # I276: C2661 ("no overload accepts N args") is the same
                 # RF-form rewrite face as C2660 -- message N = actual arg
                 # count; a non-static decl with N-1 params makes the
@@ -494,7 +534,7 @@ def main():
 
     sites = parse_log(log_path)
     n_rows = sum(len(v) for v in sites.values())
-    print('log rows: C2660+C2352 qualified = %d (files %d)' % (n_rows, len(sites)))
+    print('log rows: C2660+C2352+C2661+C2664(RF) qualified = %d (files %d)' % (n_rows, len(sites)))
 
     census = build_decl_census()
     print('decl census: %d (class, method) keys' % len(census))

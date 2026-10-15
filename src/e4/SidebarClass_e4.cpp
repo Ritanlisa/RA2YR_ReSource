@@ -420,7 +420,7 @@ int SidebarClass::Redraw(char a2)
     }
     while ( (int)v8 < (int)&dword_B07DC8 ); /*0x6a6eaf*/
     ShapeButton::Draw((int)(&stru_B0B328), v17); /*0x6a6eb7*/
-    ShapeButton::Draw(&g_SidebarFlag, v17); /*0x6a6ec2*/
+    (&g_SidebarFlag)->Draw(v17); /*0x6a6ec2*/
     if ( *(unsigned int *)&v2[3].__pad_CD2[1774] ) /*0x6a6ec7*/
     {
       v21 = g_SidebarBounds; /*0x6a6eef*/
@@ -571,9 +571,7 @@ int SidebarClass::SwitchTab(int a2)
     *&this->u32_F94 * this->u32_539C + 5472) = 0; /*0x6a75d5*/
     do /*0x6a7600*/
     {
-      Tactical::SelectObject( /*0x6a75f7*/
-        (GScreenClass *)&DataGlobal_87F7E8,
-        56 * (v4 + 60 * this->u32_FCC) + 11566720);
+      (/*0x6a75f7*/ (GScreenClass *)&DataGlobal_87F7E8)->SelectObject(56 * (v4 + 60 * this->u32_FCC) + 11566720);
       ++v4; /*0x6a75fc*/
     }
     while ( v4 < 60 ); /*0x6a7600*/
@@ -645,7 +643,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   Rect_Point::Set((int)((GadgetClass *)&stru_B0B3A0), dword_B0B4DC, dword_B0B4E0); /*0x6abe15*/
   ((GadgetClass *)&stru_B0B3A0)->MarkDirty(); /*0x6abe1f*/
   dword_B0B3E4 = -DSurface_SidebarBounds; /*0x6abe37*/
-  Rect_Point::Set((GadgetClass *)&stru_B07DF8, dword_B0B3AC + dword_B0B4E4, dword_B0B3B0); /*0x6abe4c*/
+  ((GadgetClass *)&stru_B07DF8)->Set(dword_B0B3AC + dword_B0B4E4, dword_B0B3B0); /*0x6abe4c*/
   ((GadgetClass *)&stru_B07DF8)->MarkDirty(); /*0x6abe56*/
   GadgetClass *v4; // esi
   v4 = (GadgetClass *)&stru_B07C48; /*0x6abe60*/
@@ -664,7 +662,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   Rect_Point::Set((int)((GadgetClass *)&stru_B0B328), dword_B0B508, dword_B0B50C); /*0x6abebd*/
   ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&stru_B0B328)->MarkDirty(); /*0x6abec7*/
   dword_B0B36C = -DSurface_SidebarBounds; /*0x6abedf*/
-  Rect_Point::Set((GadgetClass *)&g_SidebarFlag, dword_B0B508 + dword_B0B510, dword_B0B50C); /*0x6abef2*/
+  ((GadgetClass *)&g_SidebarFlag)->Set(dword_B0B508 + dword_B0B510, dword_B0B50C); /*0x6abef2*/
   ((GadgetClass *)&g_SidebarFlag)->MarkDirty(); /*0x6abefc*/
   dword_B0B44C = -DSurface_SidebarBounds; /*0x6abf0f*/
   int v6; // eax
@@ -826,7 +824,7 @@ void SidebarClass::CreateScrollButtons()
     dword_B049A8 = 0; /*0x653059*/
     dword_B04998 = 5; /*0x65305f*/
     Rect_Point::Set(&stru_B04978, dword_B04A00, dword_B04A04); /*0x653069*/
-    ShapeButton::SetShape((ShapeButtonClass *)&stru_B04978, (int)dword_B048E0, 0, 0); /*0x65307b*/
+    ((ShapeButtonClass *)&stru_B04978)->SetShape((int)dword_B048E0, 0, 0); /*0x65307b*/
     (&stru_B04978)->MarkDirty(); /*0x653085*/
     dword_B04960 = *(unsigned int *)&g_SidebarConfig; /*0x65309b*/
     dword_B04934 = 243; /*0x6530a8*/
@@ -835,7 +833,7 @@ void SidebarClass::CreateScrollButtons()
     dword_B04940 = 0; /*0x6530bf*/
     dword_B04930 = 5; /*0x6530c5*/
     Rect_Point::Set(&stru_B04910, dword_B048C8, dword_B048CC); /*0x6530cf*/
-    ShapeButton::SetShape((ShapeButtonClass *)&stru_B04910, (int)dword_B048AC, 0, 0); /*0x6530e2*/
+    ((ShapeButtonClass *)&stru_B04910)->SetShape((int)dword_B048AC, 0, 0); /*0x6530e2*/
     (&stru_B04910)->MarkDirty(); /*0x6530ec*/
   }
 }

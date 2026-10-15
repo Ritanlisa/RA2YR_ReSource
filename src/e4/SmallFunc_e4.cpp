@@ -139,7 +139,7 @@ int sub_59B6D0()
       for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
       {
   unsigned int *NeighbourContent; // edi
-        NeighbourContent = (unsigned int *)(Cell::GetNeighbourContent(i, j));
+        NeighbourContent = (unsigned int *)((i)->GetNeighbourContent(j));
         if ( (NeighbourContent)->IsEmpty() ) /*0x59b706*/
           NeighbourContent[14] = dword_AA0E18; /*0x59b714*/
       }
@@ -259,8 +259,8 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
   *(unsigned int *)&g_RadarBlipManager = 0; /*0x6e266f*/
   *(unsigned int *)&DataGlobal_880994 = -1; /*0x6e2675*/
   Mouse::SetBounds((int)&DataGlobal_87F7E8, 0); /*0x6e267f*/
-  BuildingClass::TogglePower2((BuildingClass *)&DataGlobal_87F7E8, 0); /*0x6e268a*/
-  BuildingClass::TogglePower((BuildingClass *)&DataGlobal_87F7E8, 0); /*0x6e2695*/
+  ((BuildingClass *)&DataGlobal_87F7E8)->TogglePower2(0); /*0x6e268a*/
+  ((BuildingClass *)&DataGlobal_87F7E8)->TogglePower(0); /*0x6e2695*/
   DataGlobal_88099A = 0; /*0x6e269a*/
   DataGlobal_88099B = 0; /*0x6e26a0*/
   DataGlobal_88099C = 0; /*0x6e26a6*/

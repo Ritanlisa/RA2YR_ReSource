@@ -228,7 +228,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   SlaveManagerClass *slaveManager; // eax
         slaveManager = (gamemd::SlaveManagerClass *)(slaveOwner->slaveManager); /*0x517e15*/
         if ( slaveManager ) /*0x517e1d*/
-          SlaveManagerClass::LostSlave(slaveManager, (int)a1); /*0x517e22*/
+          (slaveManager)->LostSlave((int)a1); /*0x517e22*/
       }
       (a1->owner)->DecrementUnitCount(a1); /*0x517e2e*/
       if ( !a1->Locomotor ) /*0x517e33*/

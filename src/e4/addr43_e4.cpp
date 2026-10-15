@@ -661,7 +661,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   {
     v31 = a1->field_0 + v58; /*0x437ce7*/
     v32 = (int)a1->field_4 + v59 - *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4); /*0x437cfa*/
-    v44 = StreamClass::ReadAndSeek(*(int **)&g_VisibleSurfaceDescriptor, v31, v32); /*0x437d18*/
+    v44 = (*(int **)&g_VisibleSurfaceDescriptor)->ReadAndSeek(v31, v32); /*0x437d18*/
     v51 = *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 40); /*0x437d1c*/
     v19 = (2 * (v32 & 1)) | ((uint8_t)v31 ^ (uint8_t)v32) & 1; /*0x437d20*/
   }

@@ -498,7 +498,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       do /*0x57a8e6*/
       {
   unsigned int *NeighbourContent; // esi
-        NeighbourContent = (unsigned int *)(Cell::GetNeighbourContent((Cell *)v3, v37));
+        NeighbourContent = (unsigned int *)(((Cell *)v3)->GetNeighbourContent(v37));
   int v39; // edx
         v39 = NeighbourContent[9]; /*0x57a87a*/
         v51 = v39; /*0x57a87f*/
@@ -581,8 +581,8 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
     if ( (TerrainMask & 2) != 0 ) /*0x57ae12*/
     {
       v39[0] = 1; /*0x57ae1e*/
-      NeighbourContent = (Cell *)Cell::GetNeighbourContent(a3, 4u); /*0x57ae2b*/
-      v15 = (Cell *)Cell::GetNeighbourContent(NeighbourContent, 2u); /*0x57ae38*/
+      NeighbourContent = (Cell *)(a3)->GetNeighbourContent(4u); /*0x57ae2b*/
+      v15 = (Cell *)(NeighbourContent)->GetNeighbourContent(2u); /*0x57ae38*/
       v31 = (uint8_t)(NeighbourContent)->IsValidHeight() == 0; /*0x57ae43*/
       IsValidHeight = (v15)->IsValidHeight(); /*0x57ae48*/
       if ( v31 ) /*0x57ae53*/
@@ -592,8 +592,8 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
           if ( !IsValidHeight ) /*0x57ae57*/
             break; /*0x57ae57*/
           ++v39[0]; /*0x57ae62*/
-          NeighbourContent = (Cell *)Cell::GetNeighbourContent(NeighbourContent, 4u); /*0x57ae6f*/
-          v15 = (Cell *)Cell::GetNeighbourContent(v15, 4u); /*0x57ae78*/
+          NeighbourContent = (Cell *)(NeighbourContent)->GetNeighbourContent(4u); /*0x57ae6f*/
+          v15 = (Cell *)(v15)->GetNeighbourContent(4u); /*0x57ae78*/
           v32 = (uint8_t)(NeighbourContent)->IsValidHeight() == 0; /*0x57ae83*/
           IsValidHeight = (v15)->IsValidHeight(); /*0x57ae88*/
         }
@@ -609,8 +609,8 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
     else if ( (TerrainMask & 0x20) != 0 ) /*0x57aed1*/
     {
       v39[0] = 1; /*0x57aedd*/
-      v17 = (Cell *)Cell::GetNeighbourContent(a3, 4u); /*0x57aeea*/
-      v18 = (Cell *)Cell::GetNeighbourContent(v17, 6u); /*0x57aef7*/
+      v17 = (Cell *)(a3)->GetNeighbourContent(4u); /*0x57aeea*/
+      v18 = (Cell *)(v17)->GetNeighbourContent(6u); /*0x57aef7*/
       v33 = (uint8_t)(v17)->IsValidHeight() == 0; /*0x57af02*/
       v19 = (v18)->IsValidHeight(); /*0x57af07*/
       if ( v33 ) /*0x57af12*/
@@ -620,8 +620,8 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
           if ( !v19 ) /*0x57af16*/
             break; /*0x57af16*/
           ++v39[0]; /*0x57af21*/
-          v17 = (Cell *)Cell::GetNeighbourContent(v17, 4u); /*0x57af2e*/
-          v18 = (Cell *)Cell::GetNeighbourContent(v18, 4u); /*0x57af37*/
+          v17 = (Cell *)(v17)->GetNeighbourContent(4u); /*0x57af2e*/
+          v18 = (Cell *)(v18)->GetNeighbourContent(4u); /*0x57af37*/
           v34 = (uint8_t)(v17)->IsValidHeight() == 0; /*0x57af42*/
           v19 = (v18)->IsValidHeight(); /*0x57af47*/
         }
@@ -637,8 +637,8 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
     else if ( (TerrainMask & 8) != 0 ) /*0x57af8b*/
     {
       v39[0] = 1; /*0x57af97*/
-      v20 = (Cell *)Cell::GetNeighbourContent(a3, 2u); /*0x57afa4*/
-      v21 = (Cell *)Cell::GetNeighbourContent(v20, 4u); /*0x57afb1*/
+      v20 = (Cell *)(a3)->GetNeighbourContent(2u); /*0x57afa4*/
+      v21 = (Cell *)(v20)->GetNeighbourContent(4u); /*0x57afb1*/
       v35 = (uint8_t)(v20)->IsValidHeight() == 0; /*0x57afbc*/
       v22 = (v21)->IsValidHeight(); /*0x57afc1*/
       if ( v35 ) /*0x57afcc*/
@@ -648,8 +648,8 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
           if ( !v22 ) /*0x57afd0*/
             break; /*0x57afd0*/
           ++v39[0]; /*0x57afdb*/
-          v20 = (Cell *)Cell::GetNeighbourContent(v20, 2u); /*0x57afe8*/
-          v21 = (Cell *)Cell::GetNeighbourContent(v21, 2u); /*0x57aff1*/
+          v20 = (Cell *)(v20)->GetNeighbourContent(2u); /*0x57afe8*/
+          v21 = (Cell *)(v21)->GetNeighbourContent(2u); /*0x57aff1*/
           v36 = (uint8_t)(v20)->IsValidHeight() == 0; /*0x57affc*/
           v22 = (v21)->IsValidHeight(); /*0x57b001*/
         }
@@ -688,8 +688,8 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
         goto LABEL_69; /*0x57b0f8*/
       }
       v39[0] = 1; /*0x57b04a*/
-      v23 = (Cell *)Cell::GetNeighbourContent(a3, 2u); /*0x57b057*/
-      v24 = (Cell *)Cell::GetNeighbourContent(v23, 0); /*0x57b064*/
+      v23 = (Cell *)(a3)->GetNeighbourContent(2u); /*0x57b057*/
+      v24 = (Cell *)(v23)->GetNeighbourContent(0); /*0x57b064*/
       v37 = (uint8_t)(v23)->IsValidHeight() == 0; /*0x57b06f*/
       v25 = (v24)->IsValidHeight(); /*0x57b074*/
       if ( v37 ) /*0x57b07f*/
@@ -699,8 +699,8 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
           if ( !v25 ) /*0x57b083*/
             break; /*0x57b083*/
           ++v39[0]; /*0x57b08e*/
-          v23 = (Cell *)Cell::GetNeighbourContent(v23, 2u); /*0x57b09b*/
-          v24 = (Cell *)Cell::GetNeighbourContent(v24, 2u); /*0x57b0a4*/
+          v23 = (Cell *)(v23)->GetNeighbourContent(2u); /*0x57b09b*/
+          v24 = (Cell *)(v24)->GetNeighbourContent(2u); /*0x57b0a4*/
           v38 = (uint8_t)(v23)->IsValidHeight() == 0; /*0x57b0af*/
           v25 = (v24)->IsValidHeight(); /*0x57b0b4*/
         }
@@ -927,7 +927,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   }
   MapClass::SetObstruction(&v31, v18); /*0x57b6cc*/
   LABEL_32:
-  if ( Cell::IsEmpty(v14) || (v25 = v14->q038, v25 >= aP0) && v25 <= aP1 ) /*0x57b64a*/
+  if ( (v14)->IsEmpty() || (v25 = v14->q038, v25 >= aP0) && v25 <= aP1 ) /*0x57b64a*/
   {
     v14->q038 = v29->u32_294; /*0x57b65e*/
     v14->u32_11A = v15; /*0x57b661*/

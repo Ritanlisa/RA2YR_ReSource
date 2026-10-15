@@ -177,7 +177,7 @@ LABEL_103:
             }
 LABEL_43:
             String::Assign_Bool((String *)v33, v6 + 52); /*0x7aab0c*/
-            CChatEventSink::EncodeString((CChatEventSink *)v33, 39); /*0x7aab1f*/
+            ((CChatEventSink *)v33)->EncodeString(39); /*0x7aab1f*/
             ((String *)v33)->ToLower(); /*0x7aab28*/
             if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x7aab41*/
             {

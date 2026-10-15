@@ -162,7 +162,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
     v12 = *(unsigned int *)&dword_841F3C; /*0x54054a*/
     v19 = dword_A8DBAC; /*0x540554*/
     if ( (uint8_t)GUID::Compare(qword_A8DBB0.__pad_0, *dword_A8DA78 + 40) /*0x54057b*/
-      && (uint8_t)NetworkID::Compare((bool *)v18.__pad_000, *dword_A8DA78 + 40) )
+      && (uint8_t)((bool *)v18.__pad_000)->Compare(*dword_A8DA78 + 40) )
     {
       v13 = a2 + 8; /*0x540584*/
       *(unsigned short *)(a2 + 12) = 0; /*0x540587*/
@@ -287,7 +287,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
     v8 = TileIndex; /*0x540364*/
     if ( (*(unsigned char *)TileIndex & 2) == 0 /*0x540392*/
       && *(unsigned int *)(TileIndex + 24)
-      && (unsigned __int8)NetworkID::Compare(*(bool **)(TileIndex + 28), a2)
+      && (unsigned __int8)(*(bool **)(TileIndex + 28))->Compare(a2)
       && *(unsigned short *)(v8 + 32) == a3 )
     {
       (&v13)->InitInvalid(); /*0x540398*/

@@ -353,9 +353,9 @@ int EventClass::Enqueue(unsigned short a2, char a3)
   {
     if ( (((unsigned __int16)EventClass::GetKeyStateSafe((EventClass *)0x10) >> 8) & 0x80u) != 0 ) /*0x54f268*/
       v5 = a2 | 0x100; /*0x54f26a*/
-    if ( (((unsigned __int16)EventClass::GetKeyStateSafe((EventClass *)0x11) >> 8) & 0x80u) != 0 ) /*0x54f27d*/
+    if ( (((unsigned __int16)((EventClass *)0x11)->GetKeyStateSafe() >> 8) & 0x80u) != 0 ) /*0x54f27d*/
       v5 |= 0x200u; /*0x54f27f*/
-    result = EventClass::GetKeyStateSafe((EventClass *)0x12); /*0x54f28a*/
+    result = ((EventClass *)0x12)->GetKeyStateSafe(); /*0x54f28a*/
     if ( (result & 0x8000) != 0 ) /*0x54f292*/
     {
       if ( v5 == 9 ) /*0x54f298*/

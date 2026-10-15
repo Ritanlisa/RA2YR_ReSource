@@ -460,7 +460,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           GDlg::LoadLetterStrings(); /*0x5deca9*/
           memset32(&g_CampaignFactionSlot, -2, 8u); /*0x5decc2*/
           SetupMultiplayerLobbyPlayers(hDlg, (int)&unk_A8B440); /*0x5decc6*/
-          Lobby::InvalidatePlayerSlots((Lobby *)hDlg); /*0x5deccd*/
+          ((Lobby *)hDlg)->InvalidatePlayerSlots(); /*0x5deccd*/
           RefreshLobbyPlayerSlots(0xFFFFFFFF); /*0x5decd5*/
           GameSetup::DisplayPlayers(v33); /*0x5decdc*/
           if ( dword_A8B23C /*0x5decef*/
@@ -671,7 +671,7 @@ LABEL_58:
         {
           *(unsigned int *)&g_GameRulesOptions = v12; /*0x5de97a*/
           LoadScenarioClassByIndex((int)v12); /*0x5de980*/
-          Session::PrepareGame((Session *)hDlg); /*0x5de987*/
+          ((Session *)hDlg)->PrepareGame(); /*0x5de987*/
           byte_8316D4 = 1; /*0x5de98f*/
           ShowWindow(hDlg, 5); /*0x5de996*/
           Session::StartGame((Session *)hDlg); /*0x5de99a*/
@@ -696,8 +696,8 @@ LABEL_58:
         }
         ResetLobbyFactionTable((int)v14); /*0x5dea33*/
         Lobby::InvalidateFactionCombos((Lobby *)hDlg); /*0x5dea3a*/
-        Lobby::InvalidatePlayerSlots((Lobby *)hDlg); /*0x5dea41*/
-        NetworkLobby::UpdateLabels((NetworkLobby *)hDlg); /*0x5dea48*/
+        ((Lobby *)hDlg)->InvalidatePlayerSlots(); /*0x5dea41*/
+        ((NetworkLobby *)hDlg)->UpdateLabels(); /*0x5dea48*/
         NetworkLobby::FillOptionCombo(); /*0x5dea4d*/
         RefreshLobbyPlayerSlots(0xFFFFFFFF); /*0x5dea55*/
         v15 = dword_A8B23C; /*0x5dea5a*/
@@ -717,7 +717,7 @@ LABEL_75:
           v17 = 1; /*0x5dea8f*/
         if ( v34 && !v17 ) /*0x5dea9b*/
           MultiplayerLobby::FillSlots((MultiplayerLobby *)hDlg); /*0x5dea9f*/
-        if ( v35 && !v16 && NetworkLobby::SetupPlayerSlotControls((NetworkLobby *)hDlg) ) /*0x5deaba*/
+        if ( v35 && !v16 && ((NetworkLobby *)hDlg)->SetupPlayerSlotControls() ) /*0x5deaba*/
         {
           *(unsigned int *)&g_Rules_AlliesAllowed = 0; /*0x5dead2*/
           memset(v38, 0, sizeof(v38)); /*0x5deadc*/

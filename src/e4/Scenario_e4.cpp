@@ -289,7 +289,7 @@ int Scenario::ReadTeams()
                         v40 = v29->LightSource; /*0x44fc78*/
                         v29->StuffEnabled = 1; /*0x44fc80*/
                         if ( v40 ) /*0x44fc87*/
-                          Trigger::EnableOnce(v40, 0); /*0x44fc8b*/
+                          (v40)->EnableOnce(0); /*0x44fc8b*/
                         if ( *(unsigned char *)(v29->field_520 + 5822) ) /*0x44fc96*/
                           BuildingClass::RepairPlacement((BuildingClass *)v29, 0); /*0x44fca4*/
   int v41; // edi
@@ -1023,7 +1023,7 @@ namespace gamemd {
 int Scenario::ClearScreen(void *a1_1)
 {
 
-  Mouse::ReleaseCapture((ScrollClass *)&DataGlobal_87F7E8); /*0x684245*/
+  ((ScrollClass *)&DataGlobal_87F7E8)->ReleaseCapture(); /*0x684245*/
   if ( !(*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ) /*0x684252*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x684261*/
   (((unsigned char *)&(dword_A8B230[381].vfptr3))[2]) = 1; /*0x68426c*/

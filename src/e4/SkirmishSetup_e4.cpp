@@ -234,7 +234,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
             SkirmishSetup_Setup_5E70D0((HWND)v9, *(unsigned int *)(dword_A8B8CC + 4 * v10)); /*0x5e6aff*/
           LoadScenarioClassByIndex(v10); /*0x5e6b06*/
           if ( !*(unsigned int *)g_UIControlState ) /*0x5e6b10*/
-            Session::PrepareGame(v9); /*0x5e6b17*/
+            (v9)->PrepareGame(); /*0x5e6b17*/
           *(unsigned int *)&g_GameRulesOptions = dword_AC10E0; /*0x5e6b22*/
           LoadScenarioClassByIndex(dword_AC10E0); /*0x5e6b28*/
           (*((unsigned char *)&(v10))) = HandleMultiplayerMapSelection((ObjectClass *)v9); /*0x5e6b38*/

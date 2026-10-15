@@ -64,7 +64,7 @@ AbstractClass * FootClass::Destruct(void *a1)
          &DataGlobal_B0E840[3480],
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
-    DynamicVector::RemoveItem((DynamicVector *)&dword_B0F5D8, v4); /*0x4d3616*/
+    ((DynamicVector *)&dword_B0F5D8)->RemoveItem(v4); /*0x4d3616*/
   ParasiteClass *parasiteImUsing; // ecx
   parasiteImUsing = this->parasiteImUsing; /*0x4d361b*/
   if ( parasiteImUsing ) /*0x4d3623*/
@@ -302,7 +302,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
           (v23)->LiberateMember_Start((int)v6, 0xFFFFFFFF, 0); /*0x710349*/
         v6->u32_6AD = 1; /*0x710352*/
   int Member; // eax
-        Member = Team::GetMember((Team *)v6, 0); /*0x710359*/
+        Member = ((Team *)v6)->GetMember(0); /*0x710359*/
         if ( Member && (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x71036c*/
           v6->vt_slot_640(3); /*0x710374*/
         (*(void (**)(unsigned int, int, int))(*m_Size->locomotorTarget + 488))(m_Size->locomotorTarget, 5, 1); /*0x710386*/

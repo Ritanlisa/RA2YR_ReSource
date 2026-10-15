@@ -936,7 +936,7 @@ LABEL_74:
       v42 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v41 + 444))(v41); /*0x54d05f*/
       CellClass::AttachObject(v42, 0); /*0x54d067*/
     }
-    GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, *(unsigned int *)this->u32_C); /*0x54d075*/
+    ((GadgetGrid *)&g_CellClassManager)->RemoveItem(*(unsigned int *)this->u32_C); /*0x54d075*/
     v43 = *(unsigned int *)this->u32_C; /*0x54d07a*/
     *(unsigned int *)this->__pad_78 = 0; /*0x54d07d*/
     *&this->q050 = 6; /*0x54d083*/

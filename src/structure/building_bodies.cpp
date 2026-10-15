@@ -104,7 +104,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
       if ( v11 < v12 && v12 && (!v11 || (double)*((int *)ownerHouse + 5353) / (double)*((int *)ownerHouse + 5354) < 1.0) ) /*0x50b0d3*/
         HasPower = 0; /*0x50b0d5*/
       (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)v10 + 64))(v10); /*0x50b0d9*/
-      Status = HouseClass::GetStatus((HouseClass *)0x39, 0); /*0x50b0ea*/
+      Status = ((HouseClass *)0x39)->GetStatus(0); /*0x50b0ea*/
       if ( !v15 || ownerHouse->defeated ) /*0x50b0f4*/
       {
         if ( !(*(SuperClass **)(ownerHouse->supersCount + 4 * i))->Lose() || !dword_A83D4C ) /*0x50b179*/

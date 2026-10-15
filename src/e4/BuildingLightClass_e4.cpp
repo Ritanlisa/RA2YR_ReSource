@@ -75,7 +75,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
           {
             if ( (v8->ReturnZeroPos() == 15 /*0x436cb9*/
                || v8->ReturnZeroPos() == 1)
-              && !(unsigned __int8)Object::IsAlliedWithObjectHouse(nextArrayIndex, (int)v8) )
+              && !(unsigned __int8)(nextArrayIndex)->IsAlliedWithObjectHouse((int)v8) )
             {
   int v9; // eax
               v9 = *v8; /*0x436ccc*/

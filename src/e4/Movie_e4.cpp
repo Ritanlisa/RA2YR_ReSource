@@ -334,7 +334,7 @@ LABEL_10:
                 a1_1->Movie_field_0x8 = Movie::SelectNextBuildableType((int)a1_1, (int)a1_1->Movie_field_0x4); /*0x720a5e*/
                 Debug::Log(); /*0x720a61*/
               }
-              LOBYTE(IsSoundEnabled) = ThemeClass::Play((ThemeClass *)a1_1, a1_1->Movie_field_0x8); /*0x720a6f*/
+              LOBYTE(IsSoundEnabled) = ((ThemeClass *)a1_1)->Play(a1_1->Movie_field_0x8); /*0x720a6f*/
               a1_1->Movie_field_0x8 = -2; /*0x720a74*/
             }
           }
@@ -371,7 +371,7 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
       v7 = v4 == 1000; /*0x720ac6*/
       if ( v4 >= 1000 ) /*0x720acc*/
         break; /*0x720acc*/
-      if ( v5 != aP1 && (unsigned __int8)RulesClass::IsTypeBuildable((RulesClass *)this, v5) ) /*0x720ad5*/
+      if ( v5 != aP1 && (unsigned __int8)((RulesClass *)this)->IsTypeBuildable(v5) ) /*0x720ad5*/
       {
         v7 = v4 == 1000; /*0x720ade*/
         break; /*0x720ade*/
@@ -391,7 +391,7 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
         v2 = 0; /*0x720afd*/
       if ( !--v9 ) /*0x720b00*/
         break; /*0x720b00*/
-      if ( (unsigned __int8)RulesClass::IsTypeBuildable((RulesClass *)this, v2) ) /*0x720b05*/
+      if ( (unsigned __int8)((RulesClass *)this)->IsTypeBuildable(v2) ) /*0x720b05*/
         return v2; /*0x720b0c*/
     }
     return 0; /*0x720b12*/

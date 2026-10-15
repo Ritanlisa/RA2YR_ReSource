@@ -747,7 +747,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
             }
             CellClass::RegisterForRedraw(v56, &v55->q11E); /*0x74a6d9*/
             v55->powerup = 0; /*0x74a6e2*/
-            House::GetStartCoords((House *)v55, &v108); /*0x74a6ec*/
+            ((House *)v55)->GetStartCoords(&v108); /*0x74a6ec*/
             BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v55->smudgeTypeIndex); /*0x74a6f7*/
           }
         }

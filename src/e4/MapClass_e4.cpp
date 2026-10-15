@@ -300,7 +300,7 @@ int MapClass::ToggleZoom(int a2)
     result = *&this->q11A8; /*0x4ac991*/
     if ( !result ) /*0x4ac999*/
     {
-      if ( v4 && !MapClass::isCellAccessible((char *)&g_VisibilitySystem, (int)dword_A83D4C->relatedTagsCount) ) /*0x4ac9ad*/
+      if ( v4 && !((char *)&g_VisibilitySystem)->isCellAccessible((int)dword_A83D4C->relatedTagsCount) ) /*0x4ac9ad*/
         v4 = 0; /*0x4ac9b6*/
   void *MapClass_field_0x0; // edx
       MapClass_field_0x0 = this->vtable1; /*0x4ac9b8*/
@@ -339,7 +339,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
   MapClass *v16; // [esp+18h] [ebp-34h]
   v16 = this; /*0x4ad7f8*/
   INIClass::ClearSection((gamemd::INIClass *)((int *)a2), (int)&off_81FFF0, 0); /*0x4ad7fc*/
-  MapClass::loadTheaterINI((gamemd::INIClass *)(a2), &off_81FFF0, g_INI_Key_Theater, dword_A8B230[130].uniqueId); /*0x4ad81b*/
+  ((gamemd::INIClass *)(a2))->loadTheaterINI(&off_81FFF0, g_INI_Key_Theater, dword_A8B230[130].uniqueId); /*0x4ad81b*/
   INIClass::SetRect(a2, &off_81FFF0, (char *)g_Str_EVA_CannotDeployHere.Type, &v4[59]); /*0x4ad835*/
   INIClass::SetRect(a2, &off_81FFF0, &g_Str_EVA_CannotDeployHere.RussianVoice[3], &v4[63]); /*0x4ad84f*/
   ScenarioClass::Write_Waypoints((ScenarioClass *)dword_A8B230, a2); /*0x4ad85b*/

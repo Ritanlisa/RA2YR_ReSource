@@ -35,7 +35,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   char *v3; // ebp
   v3 = Src; /*0x42ddb4*/
   if ( !Src || a3 < 1 ) /*0x42ddc8*/
-    return Delegate::Dispatch((Pipe *)this, (int)Src, a3); /*0x42df25*/
+    return ((Pipe *)this)->Dispatch((int)Src, a3); /*0x42df25*/
   int v13; // [esp+Ch] [ebp-8h]
   v13 = 0; /*0x42ddd5*/
   if ( this->field_C ) /*0x42ddce*/
@@ -73,7 +73,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
         v9 = DecodeBitmapRGB(pad_14, v5, v6, Srca); /*0x42de88*/
       else
         v9 = EncodeBitmapRGB((char *)pad_14, v5, v6, Srca); /*0x42de75*/
-      v13 = Delegate::Dispatch((Pipe *)this, (int)v6, v9); /*0x42de96*/
+      v13 = ((Pipe *)this)->Dispatch((int)v6, v9); /*0x42de96*/
       this->field_10 = 0; /*0x42de9a*/
     }
   }
@@ -85,7 +85,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     else
       v10 = EncodeBitmapRGB(v3, v5, v6, Srca); /*0x42deb8*/
     v3 += v5; /*0x42ded2*/
-    v13 += Delegate::Dispatch((Pipe *)this, (int)v6, v10); /*0x42dee5*/
+    v13 += ((Pipe *)this)->Dispatch((int)v6, v10); /*0x42dee5*/
   }
   if ( a3 > 0 ) /*0x42def9*/
   {
@@ -193,7 +193,7 @@ int Delegate::ProcessBitmapAndDispatch()
       pad_14 = this->Delegate_field_14; /*0x42df54*/
       v5 = EncodeBitmapRGBthis->m_straw, v3, this->Delegate_field_14, 4); /*0x42df5d*/
     }
-    v2 = Delegate::Dispatch((Pipe *)this, (int)pad_14, v5); /*0x42df7b*/
+    v2 = ((Pipe *)this)->Dispatch((int)pad_14, v5); /*0x42df7b*/
     this->field_10 = 0; /*0x42df7d*/
   }
   return v2 + ((Pipe *)this)->GetRelatedObject(); /*0x42df8d*/
@@ -240,7 +240,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
           if ( !v6 ) /*0x4a27e4*/
             break; /*0x4a27e4*/
   int v9; // eax
-          v9 = Delegate::Invoke((Straw *)this, *&this->m_allocated, this->field_10); /*0x4a27f0*/
+          v9 = ((Straw *)this)->Invoke(*&this->m_allocated, this->field_10); /*0x4a27f0*/
           this->field_1C = v9; /*0x4a27f7*/
           *&this->m_straw = 0; /*0x4a27fa*/
           if ( !v9 ) /*0x4a2801*/

@@ -35,7 +35,7 @@ char File::IsReady(int a2, void *a2_1)
 
 
   if ( !BYTE1(this->BufferSize) ) /*0x431f10*/
-    return FileClass::Open((RawFileClass *)this, 0); /*0x431f1e*/
+    return ((RawFileClass *)this)->Open(0); /*0x431f1e*/
   int result; // eax
   LOBYTE(result) = 1; /*0x431f17*/
   return result; /*0x431f19*/
@@ -459,7 +459,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
 
   CCFileClass::Construct(&v23, Source); /*0x73499f*/
   v19 = 0; /*0x7349ab*/
-  if ( (unsigned __int8)CCFileClass::Open(&v23, 0) /*0x7349e5*/
+  if ( (unsigned __int8)(&v23)->Open(0) /*0x7349e5*/
     && FileClass::Load(&v23, (const CHAR *)1)
     && CCFileClass::Read(&v23, Buffer, 24) == 24 )
   {

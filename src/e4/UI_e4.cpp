@@ -1354,7 +1354,7 @@ int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
       v6 = g_FogOfWarState; /*0x6ac4a5*/
       v20 = *a2; /*0x6ac4b5*/
       BuildingAnimByName = FindBuildingAnimByName(aDarkred, 1); /*0x6ac4b9*/
-      v8 = Color::ConvertToRGB((uint8_t *)(BuildingAnimByName + 776), (int)v14); /*0x6ac4c9*/
+      v8 = ((uint8_t *)(BuildingAnimByName + 776))->ConvertToRGB((int)v14); /*0x6ac4c9*/
       v18 = *(unsigned short *)v8; /*0x6ac4d7*/
       v19 = *(unsigned char *)(v8 + 2); /*0x6ac4e1*/
       v9 = ((uint8_t)v18 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6ac52e*/

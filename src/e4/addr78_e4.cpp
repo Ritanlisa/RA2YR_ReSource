@@ -614,7 +614,7 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   }
   memcpy(v19, (char *)dword_B76AE8 + 268 * v5, sizeof(v19)); /*0x780ea4*/
   ((String *)(&v13))->Assign((const char *)&v19[13]); /*0x780eb2*/
-  CChatEventSink::EncodeString((CChatEventSink *)&v13, 39); /*0x780ebd*/
+  ((CChatEventSink *)&v13)->EncodeString(39); /*0x780ebd*/
   memset(v18, 0, sizeof(v18)); /*0x780ecf*/
   v6 = ((String *)(&v13))->GetOrEmpty(); /*0x780ed5*/
   strncpy(&v18[36], v6, 0xAu); /*0x780ee0*/

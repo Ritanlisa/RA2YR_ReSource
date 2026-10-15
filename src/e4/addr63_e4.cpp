@@ -1416,10 +1416,10 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
     while ( 1 ) /*0x6381a9*/
     {
       v10 = (ScriptAction *)*((unsigned int *)DataGlobal_AC4B34 + v9); /*0x6381a9*/
-      if ( ScriptAction::GetActionCoordinates(v10, v39, v40, v41) /*0x6381d5*/
+      if ( (v10)->GetActionCoordinates(v39, v40, v41) /*0x6381d5*/
         && (*(unsigned int *)v36 == -1 || *(unsigned int *)v36 == v10->u32_18) )
       {
-        v11 = (TeamClass *)Function::Method_6342D0(v10, 0); /*0x6381db*/
+        v11 = (TeamClass *)(v10)->Method_6342D0(0); /*0x6381db*/
         LeaderIndex = (v11)->GetLeaderIndex(); /*0x6381e2*/
         if ( v8 == -1 || v8 == LeaderIndex ) /*0x6381ee*/
           break; /*0x6381ee*/

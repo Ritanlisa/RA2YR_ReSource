@@ -522,7 +522,7 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
       v18 = (TemporalClass *)__2_YAPAXI_Z(0x50u); /*0x6f4185*/
   TemporalClass *v19; // eax
       if ( v18 ) /*0x6f418f*/
-        v19 = (TemporalClass *)TemporalClass::TemporalClass(v18, (int)v3); /*0x6f4194*/
+        v19 = (TemporalClass *)(v18)->TemporalClass((int)v3); /*0x6f4194*/
       else
         v19 = 0; /*0x6f419b*/
       vtable0 = (int (**)(TechnoClass *, unsigned int))v3->RadioClass; /*0x6f419d*/

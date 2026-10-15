@@ -89,9 +89,9 @@ char FootClass::TeamClass_CheckCohesion(double a2)
   if ( v4 > 0 /*0x4d9f52*/
     && v4 <= 2
     && (uint8_t)((Team *)((Team *)v3))->AllMembersValid()
-    && (v5 = Array::Get((Array *)v3, 0), (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6)
-    && *(unsigned char *)(*(unsigned int *)(Array::Get((Array *)v3, 0) + 1312) + 5801)
-    && (v6 = Array::Get((Array *)v3, 0),
+    && (v5 = ((Array *)v3)->Get(0), (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6)
+    && *(unsigned char *)(*(unsigned int *)(((Array *)v3)->Get(0) + 1312) + 5801)
+    && (v6 = ((Array *)v3)->Get(0),
         v7 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v6 + 72))(v6, v12),
         v8 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))v3->vfptr + 18))(v3, v13),
         v11 = v8[2] - v7[2],
@@ -400,7 +400,7 @@ LABEL_9:
         *(unsigned int *)&g_ScriptState = 0; /*0x634234*/
       if ( *(unsigned int **)&g_ScriptActionPool == aP1 ) /*0x634240*/
         *(unsigned int *)&g_ScriptActionPool = 0; /*0x634242*/
-      aP1->? = &vt_VectorClass; /*0x63424b*/
+      /* X11: vtable install elided (qmark slot, RHS vt_VectorClass) */  /*0x63424b*/
       VectorClass::Cleanup2((int)&aP1->?); /*0x634251*/
       v16 = aP1->?; /*0x634256*/
       aP1->AbstractClass = &vt_VectorClass; /*0x634259*/
@@ -563,7 +563,7 @@ int TeamClass::GetMember(void *a1, void *a2)
             v9 = *((unsigned int *)stru_A80220.? + (unsigned int)relatedTagsCount) + 22265; /*0x635c9b*/
             LOWORD(v15.Color_field_00) = *(unsigned short *)v9; /*0x635ca4*/
             BYTE2(v15.Color_field_00) = *(unsigned char *)(v9 + 2); /*0x635cac*/
-            Color::Lerp(&v15, 0x50u, &byte_A83CD9); /*0x635cb4*/
+            (&v15)->Lerp(0x50u, &byte_A83CD9); /*0x635cb4*/
             v10 = (BYTE1(v15.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635cec*/
                 | (BYTE2(v15.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
             Color_field_00 = (unsigned char)(v15.Color_field_00); /*0x635cee*/
@@ -585,7 +585,7 @@ int TeamClass::GetMember(void *a1, void *a2)
       v14 = *((unsigned int *)stru_A80220.? + (unsigned int)Object_field_0x30) + 22265; /*0x635d24*/
       LOWORD(v15.Color_field_00) = *(unsigned short *)v14; /*0x635d2d*/
       BYTE2(v15.Color_field_00) = *(unsigned char *)(v14 + 2); /*0x635d39*/
-      Color::Lerp(&v15, 0x64u, (unsigned __int8 *)&stru_A80220); /*0x635d3d*/
+      (&v15)->Lerp(0x64u, (unsigned __int8 *)&stru_A80220); /*0x635d3d*/
       v10 = (BYTE1(v15.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635d75*/
           | (BYTE2(v15.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
       Color_field_00 = v15.Color_field_00; /*0x635d77*/
@@ -637,7 +637,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   int v4; // esi
     v4 = *((unsigned int *)this->vtable3 + v3); /*0x636148*/
   int Value; // eax
-    Value = Array::FindValue((Array *)v4, (int)this->AbstractClass); /*0x636150*/
+    Value = ((Array *)v4)->FindValue((int)this->AbstractClass); /*0x636150*/
   int v6; // ebp
     if ( Value == -1 ) /*0x636158*/
       v6 = 0; /*0x63615a*/
@@ -648,7 +648,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
     if ( v6 ) /*0x63616a*/
     {
       if ( *(unsigned char *)(v6 + 12) ) /*0x636170*/
-        ScriptAction::DecrementRefCount((ScriptAction *)v4, v6); /*0x63617a*/
+        ((ScriptAction *)v4)->DecrementRefCount(v6); /*0x63617a*/
   int v7; // eax
       v7 = *(unsigned int *)(v6 + 8); /*0x63617f*/
       if ( v7 != -1 ) /*0x636185*/
@@ -656,7 +656,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   int v8; // edi
         v8 = *(unsigned int *)(*(unsigned int *)(v4 + 36) + 4 * v7); /*0x63618c*/
         *(unsigned int *)(v8 + 116) = -1; /*0x636191*/
-        TeamClass::Reset((TeamClass *)v4, 0); /*0x636198*/
+        ((TeamClass *)v4)->Reset(0); /*0x636198*/
   int v9; // eax
         v9 = *(unsigned int *)(v8 + 112) - 1; /*0x6361a0*/
         *(unsigned int *)(v8 + 112) = v9; /*0x6361a1*/
@@ -1042,20 +1042,20 @@ LABEL_4:
     }
   }
   v8 = *((unsigned int *)this->vtable3 + v3); /*0x636bc6*/
-  Value = Array::FindValue((Array *)v8, (int)this->AbstractClass); /*0x636bce*/
+  Value = ((Array *)v8)->FindValue((int)this->AbstractClass); /*0x636bce*/
   if ( Value != -1 ) /*0x636bd6*/
     v5 = *(unsigned int *)(*(unsigned int *)(v8 + 4) + 4 * Value); /*0x636bdb*/
   Block = (void *)v5; /*0x636be0*/
   if ( v5 ) /*0x636be4*/
   {
     if ( *(unsigned char *)(v5 + 12) ) /*0x636bea*/
-      ScriptAction::DecrementRefCount((ScriptAction *)v8, v5); /*0x636bf4*/
+      ((ScriptAction *)v8)->DecrementRefCount(v5); /*0x636bf4*/
     v10 = *(unsigned int *)(v5 + 8); /*0x636bf9*/
     if ( v10 != -1 ) /*0x636bff*/
     {
       v11 = *(unsigned int *)(*(unsigned int *)(v8 + 36) + 4 * v10); /*0x636c08*/
       *(unsigned int *)(v11 + 116) = -1; /*0x636c0b*/
-      TeamClass::Reset((TeamClass *)v8, 0); /*0x636c12*/
+      ((TeamClass *)v8)->Reset(0); /*0x636c12*/
       v12 = *(unsigned int *)(v11 + 112) - 1; /*0x636c1a*/
       *(unsigned int *)(v11 + 112) = v12; /*0x636c1b*/
       if ( !v12 ) /*0x636c1e*/

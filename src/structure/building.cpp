@@ -582,8 +582,8 @@ int BuildingClass::Dtor()
   /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43bd05) */
   /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43bd0c) */
   /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43bd13) */
-  Mixer::ReleaseChannel(&this->Audio8_2); /*0x43bd1a*/
-  Mixer::ReleaseChannel((Mixer *)this->WasOnline); /*0x43bd27*/
+  (&this->Audio8_2)->ReleaseChannel(); /*0x43bd1a*/
+  ((Mixer *)this->WasOnline)->ReleaseChannel(); /*0x43bd27*/
   AudioFileClass::Release((AudioFileClass *)p_Audio8_2); /*0x43bd2e*/
   AudioFileClass::Release((AudioFileClass *)this->WasOnline); /*0x43bd35*/
   LightSource = this->LightSource; /*0x43bd3a*/

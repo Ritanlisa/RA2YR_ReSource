@@ -218,7 +218,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
                             &v69);
       Transform::Copy(v73,(void *)(v29)); /*0x73c885*/
       v46 = (float)(*(unsigned int *)(*((unsigned int *)a1 + 433) + 1824) / 8); /*0x73c8af*/
-      Matrix3x4::Translate(&v73[0].Transform_field_00, v46); /*0x73c8b2*/
+      (&v73[0].Transform_field_00)->Translate(v46); /*0x73c8b2*/
       v57 = (double)(int)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(((unsigned int)(ProgressTimer)*)((unsigned int)(a1)+ 928), &v59) >> 10) + 1) >> 1) /*0x73c8ee*/
                          & 0x1F)
                         - 8)
@@ -228,7 +228,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
                          & 0x1F)
                         - 8)
           * -0.1963495408493621;
-      Matrix2D::Rotate(&v73[0].Transform_field_00, v47); /*0x73c922*/
+      (&v73[0].Transform_field_00)->Rotate(v47); /*0x73c922*/
       Transform_field_00 = (int)(v73[3].Transform_field_00); /*0x73c967*/
       memcpy(v74, v73, sizeof(v74)); /*0x73c96d*/
       v72[1] = *(float *)&v73[11].Transform_field_00; /*0x73c973*/
@@ -242,7 +242,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       if ( *((unsigned int *)a1 + 252) ) /*0x73c9bc*/
       {
         v48 = -*((float *)a1 + 251); /*0x73c9d6*/
-        Matrix3x4::Translate(&v73[0].Transform_field_00, v48); /*0x73c9d9*/
+        (&v73[0].Transform_field_00)->Translate(v48); /*0x73c9d9*/
       }
       v56 = (float)(*(unsigned int *)((*(int (**)(Class_7F5C70 *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 12) /*0x73ca08*/
                   / -8);

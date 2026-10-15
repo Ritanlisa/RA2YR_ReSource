@@ -176,13 +176,13 @@ char sub_46D8B0()
   {
     if ( ((SessionClass *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerColor() != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d998*/
     {
-      SessionClass::SetPlayerColor((int *)((unsigned int *)(dword_A8DA90))[v2], -2); /*0x46d9a3*/
+      ((int *)((unsigned int *)(dword_A8DA90))[v2])->SetPlayerColor(-2); /*0x46d9a3*/
       v1 = 1; /*0x46d9a8*/
     }
   }
   else
   {
-    SessionClass::SetPlayerColor((int *)((unsigned int *)(dword_A8DA90))[v2], *(int *)DataGlobal_A8D66F); /*0x46d9b9*/
+    ((int *)((unsigned int *)(dword_A8DA90))[v2])->SetPlayerColor(*(int *)DataGlobal_A8D66F); /*0x46d9b9*/
   }
   if ( ((SessionClass *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerColor() != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9d2*/
     v1 = 1; /*0x46d9d4*/

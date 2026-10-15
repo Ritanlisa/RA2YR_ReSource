@@ -1051,11 +1051,7 @@ AbstractClass * * BinkMovie::ProcessKeyframe(unsigned int *aP1)
     BinkMovie_field_0x14 = this->u32_14; /*0x6c9d5a*/
     (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v3 + 20))(v3, this->u32_14, 0); /*0x6c9d60*/
     v5 = (TextGroup *)g_FogOfWarState; /*0x6c9d6b*/
-    Property::Set( /*0x6c9dba*/
-      (Property *)g_FogOfWarState,
-      ((int)(unsigned __int8)aP1[2] >> g_BitMask_Red << g_BitShift_Blue)
-    | ((unsigned __int8)BYTE2(aP1->vtable3) >> g_BitShift_Green_0 << g_BitShift_Red)
-    | ((unsigned __int8)BYTE1(aP1->vtable3) >> g_BitMask_Blue << g_BitMask_Green));
+    (/*0x6c9dba*/ (Property *)g_FogOfWarState)->Set(((int)(unsigned __int8)aP1[2] >> g_BitMask_Red << g_BitShift_Blue) | ((unsigned __int8)BYTE2(aP1->vtable3) >> g_BitShift_Green_0 << g_BitShift_Red) | ((unsigned __int8)BYTE1(aP1->vtable3) >> g_BitMask_Blue << g_BitMask_Green));
     v6 = (*(int (**)(int))(*(unsigned int *)this->u32_10 + 124))(this->u32_10); /*0x6c9dca*/
     v16 = (*(int (**)(int))(*(unsigned int *)this->u32_10 + 128))(this->u32_10); /*0x6c9dd6*/
     v20[3] = v16; /*0x6c9ddc*/

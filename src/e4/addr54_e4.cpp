@@ -1744,7 +1744,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   __int16 v31[2]; // [esp+20h] [ebp-18h] BYREF
   *(unsigned int *)v31 = v7; /*0x54baa5*/
   if ( (unsigned short)v7 != v8->q560 || v31[1] != v8->q562 ) /*0x54babe*/
-    Coord::ToGridIndex((char *)&g_CellClassManager, v8, v8->q560, v7); /*0x54bace*/
+    ((char *)&g_CellClassManager)->ToGridIndex(v8, v8->q560, v7); /*0x54bace*/
   if ( v4 < _ESI->needsRedraw ) /*0x54bade*/
   {
     if ( (*(int (**)(unsigned int))(*_ESI->vtable4 + 44))(_ESI->vtable4) == 1 /*0x54bba2*/

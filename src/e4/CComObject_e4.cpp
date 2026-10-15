@@ -754,7 +754,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
   bool v17; // bl
       if ( !FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v16, 0) /*0x7a813d*/
         || (RawFileClass::Construct((RawFileClass *)Buffer, (int)byte_A8B8E0),
-            v17 = (unsigned __int8)FileClass::Open((RawFileClass *)Buffer, 0) != 0,
+            v17 = (unsigned __int8)((RawFileClass *)Buffer)->Open(0) != 0,
             ((RawFileClass *)Buffer)->Dtor(),
             v17) )
       {

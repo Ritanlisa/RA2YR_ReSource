@@ -563,7 +563,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           }
           v23 = *(&dword_A8E2B2 + v20); /*0x79402b*/
           Debug::Log(); /*0x794041*/
-          v14 = Network::ResolveNetworkAddress((Network *)&dword_ABFEC8, v23); /*0x794054*/
+          v14 = ((Network *)&dword_ABFEC8)->ResolveNetworkAddress(v23); /*0x794054*/
           Debug::Log(); /*0x794061*/
         }
       }

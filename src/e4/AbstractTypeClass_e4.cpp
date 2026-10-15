@@ -189,9 +189,9 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
 
 
   aP1->AbstractClass = &vt_AbstractTypeClass; /*0x410c3d*/
-  aP1->? = &vt_AbstractTypeClass; /*0x410c43*/
-  aP1->? = &vt_AbstractTypeClass; /*0x410c4a*/
-  aP1->? = &vt_AbstractTypeClass; /*0x410c51*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c43*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c4a*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c51*/
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AbstractTypeClass *)(aP1); /*0x410c5f*/
   int v3; // eax

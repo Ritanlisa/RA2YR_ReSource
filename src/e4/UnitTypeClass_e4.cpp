@@ -214,7 +214,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
   if ( !v4 ) /*0x7474c5*/
     return 0; /*0x7474c5*/
   int *v5; // esi
-  v5 = (int *)UnitClass::Construct(v4, (int)this, ppv); /*0x7474d8*/
+  v5 = (int *)(v4)->Construct((int)this, ppv); /*0x7474d8*/
   if ( !v5 ) /*0x7474dc*/
     return 0; /*0x747554*/
   (*((unsigned short *)&(ppv))) = 0; /*0x7474e4*/
@@ -247,7 +247,7 @@ int UnitTypeClass::ConstructUnit(void *ppv)
   int *v3; // eax
   v3 = (int *)operator new(0x8E8u); /*0x747568*/
   if ( v3 ) /*0x747572*/
-    return UnitClass::Construct(v3, (int)this, ppv); /*0x74757c*/
+    return (v3)->Construct((int)this, ppv); /*0x74757c*/
   else
     return 0; /*0x747585*/
 }
@@ -713,9 +713,9 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
   int v4; // edx
   LOBYTE(v4) = this->CrateGoodie; /*0x747f9a*/
   int v5; // eax
-  v5 = Power::FlagProcess((Power *)a2, v4); /*0x747fa3*/
+  v5 = ((Power *)a2)->FlagProcess(v4); /*0x747fa3*/
   LOBYTE(v5) = this->Harvester; /*0x747fa8*/
-  Power::FlagProcess((Power *)a2, v5); /*0x747fb1*/
+  ((Power *)a2)->FlagProcess(v5); /*0x747fb1*/
   int v6; // ecx
   LOBYTE(v6) = this->Weeder; /*0x747fb6*/
   Power::FlagProcess((Power *)a2, v6); /*0x747fbf*/

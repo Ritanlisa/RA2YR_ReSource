@@ -169,7 +169,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
                       (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red);
               v55 = *(unsigned short *)v23; /*0x434e3b*/
               v56 = v23->ptr_2; /*0x434e4c*/
-              Color::Lerp((uint8_t *)&v55, v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
+              ((uint8_t *)&v55)->Lerp(v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
               v22 = PackRGB565((uint8_t)v55, (*(((unsigned char *)&(v55)) + (sizeof(v55) - 1))), v56); /*0x434e7c*/
             }
   LABEL_18:
@@ -266,7 +266,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             (*(((unsigned char *)&(v47)) + (sizeof(v47) - 1))) = (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
             v57 = v47; /*0x43504b*/
             v58 = (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435054*/
-            Color::Lerp((uint8_t *)&v57, v33 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435066*/
+            ((uint8_t *)&v57)->Lerp(v33 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435066*/
             v35 = ((uint8_t)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4350ba*/
                 | (v58 >> g_BitMask_Red << g_BitShift_Blue)
                 | ((*(((unsigned char *)&(v57)) + (sizeof(v57) - 1))) >> g_BitMask_Blue << g_BitMask_Green);
@@ -353,7 +353,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
               (*(((unsigned char *)&(v59)) + (sizeof(v59) - 1))) = (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/
               v57 = v59; /*0x435228*/
               v58 = (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435231*/
-              Color::Lerp((uint8_t *)&v57, v41 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435243*/
+              ((uint8_t *)&v57)->Lerp(v41 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435243*/
               v43 = ((uint8_t)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x435297*/
                   | (v58 >> g_BitMask_Red << g_BitShift_Blue)
                   | ((*(((unsigned char *)&(v57)) + (sizeof(v57) - 1))) >> g_BitMask_Blue << g_BitMask_Green);

@@ -390,9 +390,9 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
       a1->ObjectTypeClass = &vt_AnimTypeClass; /*0x428831*/
-      a1->? = &vt_AnimTypeClass; /*0x428837*/
-      a1->? = &vt_AnimTypeClass; /*0x42883e*/
-      a1->? = &vt_AnimTypeClass; /*0x428845*/
+      /* X11: vtable install elided (qmark slot, RHS vt_AnimTypeClass) */  /*0x428837*/
+      /* X11: vtable install elided (qmark slot, RHS vt_AnimTypeClass) */  /*0x42883e*/
+      /* X11: vtable install elided (qmark slot, RHS vt_AnimTypeClass) */  /*0x428845*/
     }
     ((char *)a1)->LoadAnim(); /*0x42884e*/
     ((char *)a1)->Load2DArt(); /*0x428855*/
@@ -585,9 +585,9 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
 
 
   aP0->ObjectTypeClass = &vt_AnimTypeClass; /*0x428ead*/
-  aP0->? = &vt_AnimTypeClass; /*0x428eb3*/
-  aP0->? = &vt_AnimTypeClass; /*0x428eba*/
-  aP0->? = &vt_AnimTypeClass; /*0x428ec1*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AnimTypeClass) */  /*0x428eb3*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AnimTypeClass) */  /*0x428eba*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AnimTypeClass) */  /*0x428ec1*/
   AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = aP0; /*0x428ecf*/
   int v3; // eax
@@ -798,7 +798,7 @@ int AnimTypeClass::ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2, voi
   char *v5; // eax
   v5 = globalHelper_08E090(a2); /*0x47706d*/
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
-  if ( INIClass::GetString((INIClass *)this, aP1, aP1, v5, Destination, 128) ) /*0x477085*/
+  if ( ((INIClass *)this)->GetString(aP1, aP1, v5, Destination, 128) ) /*0x477085*/
     return ((AnimTypeClass *)((AnimTypeClass *)Destination))->LookupByName(); /*0x477092*/
   else
     return a2; /*0x4770a2*/

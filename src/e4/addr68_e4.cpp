@@ -1004,7 +1004,7 @@ int ScenarioClass_Reset()
   BuildingClass::FreeUpgradeQueue2(); /*0x68551a*/
   (&stru_87F5D8)->FlushAndReset(); /*0x685524*/
   LoadGame::CleanupArray((LoadGame *)&g_MissionQueueFrame); /*0x68552e*/
-  LoadGame::ClearAllSlots((LoadGame *)&g_CellClassManager); /*0x685538*/
+  ((LoadGame *)&g_CellClassManager)->ClearAllSlots(); /*0x685538*/
   PlanningNodeClass::CleanupAll(); /*0x68553d*/
   *(unsigned int *)&DataGlobal_87F8D4 = 0; /*0x68554f*/
   *(unsigned int *)&DataGlobal_87F8D8 = 0; /*0x685554*/
@@ -1193,7 +1193,7 @@ AbstractClass * * SessionClass_AssignHouses()
       v8 = (int *)operator new(0x160B8u); /*0x687fa8*/
   int v9; // ebp
       if ( v8 ) /*0x687fb2*/
-        v9 = HouseClass::Construct(v8, *((unsigned int *)dword_A83C9C + v7->q_4B)); /*0x687fc8*/
+        v9 = (v8)->Construct(*((unsigned int *)dword_A83C9C + v7->q_4B)); /*0x687fc8*/
       else
         v9 = 0; /*0x687fcc*/
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x687fd5*/
@@ -1281,7 +1281,7 @@ AbstractClass * * SessionClass_AssignHouses()
         v15 = (int *)operator new(0x160B8u); /*0x688188*/
   int v16; // ebp
         if ( v15 ) /*0x688192*/
-          v16 = HouseClass::Construct(v15, *((unsigned int *)dword_A83C9C + v13)); /*0x6881a5*/
+          v16 = (v15)->Construct(*((unsigned int *)dword_A83C9C + v13)); /*0x6881a5*/
         else
           v16 = 0; /*0x6881a9*/
   LPARAM v17; // edx
@@ -1334,7 +1334,7 @@ AbstractClass * * SessionClass_AssignHouses()
   {
   int v22; // eax
     v22 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)&stru_82BA00.vfptr2); /*0x6882eb*/
-    v23 = HouseClass::Construct(v21, *((unsigned int *)dword_A83C9C + v22)); /*0x688303*/
+    v23 = (v21)->Construct(*((unsigned int *)dword_A83C9C + v22)); /*0x688303*/
   }
   else
   {
@@ -1348,7 +1348,7 @@ AbstractClass * * SessionClass_AssignHouses()
   {
   int v25; // eax
     v25 = (&g_INI_Key_Special)->FindByName(); /*0x68833d*/
-    v26 = HouseClass::Construct(v24, *((unsigned int *)dword_A83C9C + v25)); /*0x688356*/
+    v26 = (v24)->Construct(*((unsigned int *)dword_A83C9C + v25)); /*0x688356*/
   }
   else
   {
@@ -1737,7 +1737,7 @@ void GenerateScenarioUnits(char a1)
                 *((unsigned int *)Block + v53) = v51; /*0x688d5a*/
               }
               if ( (*(unsigned int *)dword_A8B230 & 0x200) != 0 ) /*0x688d68*/
-                Timer::SetFlag(v51 + 84, 1); /*0x688d72*/
+                (v51 + 84)->SetFlag(1); /*0x688d72*/
               if ( (uint8_t)((House *)(v52))->IsCurrentPlayer() ) /*0x688d79*/
                 (*(void (**)(unsigned int *, int))(*v51 + 496))(v51, 5); /*0x688d98*/
               else

@@ -524,7 +524,7 @@ void sub_4C2830()
   int v11; // eax
         v11 = -(v10->u8_2C != 0); /*0x4c2904*/
         (*((unsigned char *)&(v11))) = v11 & 0xFB; /*0x4c2906*/
-        Lightning::Draw((Lightning *)v10, *v10, v10->__pad_004, v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
+        ((Lightning *)v10)->Draw(*v10, v10->__pad_004, v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
       }
       ++v10[7]; /*0x4c293d*/
     }
@@ -647,7 +647,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
         v12 = (int)&a1[2 * (v10 % 256) + v10 % 256]; /*0x4c39ac*/
         (*((unsigned short *)&(v16))) = *(unsigned short *)v12; /*0x4c39ba*/
         (((unsigned char *)&(v16))[2]) = *(unsigned char *)(v12 + 2); /*0x4c39c7*/
-        Color::Lerp((uint8_t *)&v16, v18, (uint8_t *)&v14); /*0x4c39cb*/
+        ((uint8_t *)&v16)->Lerp(v18, (uint8_t *)&v14); /*0x4c39cb*/
         v7[v10++] = Palette::FindClosestColor(a1, (int)&v16); /*0x4c39dc*/
       }
       while ( v10 < 256 ); /*0x4c39e6*/
@@ -1000,7 +1000,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v14 = ((Cell *)(v13))->IsBridge(); /*0x4cf0b8*/
   if ( v14 && !*(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
   {
-    if ( Array::Contains(*v6, (int)v14) ) /*0x4cf0d9*/
+    if ( (*v6)->Contains((int)v14) ) /*0x4cf0d9*/
     {
       v18 = (int *)v14->vt_slot_168(v63, *v6); /*0x4cf142*/
       v11 = *v18; /*0x4cf148*/
@@ -1647,7 +1647,7 @@ unsigned char * sub_4C37D0(int a1, unsigned char * a2, int a3, unsigned char a4)
       v13 = *(unsigned short *)v6; /*0x4c3818*/
   char v14; // [esp+Ah] [ebp-Ah]
       v14 = *(unsigned char *)(v6 + 2); /*0x4c3820*/
-      Color::Lerp((uint8_t *)&v13, a4, (uint8_t *)(a1 + 2 * (a3 % 256) + a3 % 256)); /*0x4c3845*/
+      ((uint8_t *)&v13)->Lerp(a4, (uint8_t *)(a1 + 2 * (a3 % 256) + a3 % 256)); /*0x4c3845*/
   int v7; // ebx
       v7 = -1; /*0x4c384a*/
   int v8; // ebp
@@ -1738,7 +1738,7 @@ int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
     v8 = (int)&a1[2 * (v6 % 256) + v6 % 256]; /*0x4c3b0a*/
     (*((unsigned short *)&(a3))) = *(unsigned short *)v8; /*0x4c3b0f*/
     (((unsigned char *)&(a3))[2]) = *(unsigned char *)(v8 + 2); /*0x4c3b20*/
-    Color::Lerp((uint8_t *)&a3, a4, v7); /*0x4c3b24*/
+    ((uint8_t *)&a3)->Lerp(a4, v7); /*0x4c3b24*/
     *(unsigned char *)(v6 + a2) = Palette::FindClosestColor(a1, (int)&a3); /*0x4c3b35*/
     ++v6; /*0x4c3b38*/
   }
@@ -1768,7 +1768,7 @@ unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
     v9 = (int)&a1[2 * (v8 % 256) + v8 % 256]; /*0x4c3bad*/
     (*((unsigned short *)&(a4))) = *(unsigned short *)v9; /*0x4c3bbc*/
     (((unsigned char *)&(a4))[2]) = *(unsigned char *)(v9 + 2); /*0x4c3bc4*/
-    Color::Lerp((uint8_t *)&a4, v6, (uint8_t *)&a3); /*0x4c3bc8*/
+    ((uint8_t *)&a4)->Lerp(v6, (uint8_t *)&a3); /*0x4c3bc8*/
     a2[v8++] = Palette::FindClosestColor(a1, (int)&a4); /*0x4c3bd9*/
   }
   while ( v8 < 256 ); /*0x4c3be3*/

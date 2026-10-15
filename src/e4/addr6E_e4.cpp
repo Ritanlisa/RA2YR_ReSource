@@ -330,7 +330,7 @@ char sub_6E4090(int a1, int a2, int a3, int a4)
     if ( ++v4 >= dword_A8EB50 ) /*0x6e40e1*/
       return 0; /*0x6e40e1*/
   }
-  BuildingClass::UnloadUnits((int *)v5, 0, 0); /*0x6e40f2*/
+  ((int *)v5)->UnloadUnits(0, 0); /*0x6e40f2*/
   return 1; /*0x6e40e3*/
 }
 }
@@ -644,7 +644,7 @@ LABEL_16:
       HIWORD(v21) = v14[1] / 256; /*0x6efd9a*/
       v15 = *(unsigned int *)(v11 + 40); /*0x6efda3*/
       v20 = v21; /*0x6efda6*/
-      SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)owner, *(unsigned int *)(v15 + 180), (int)&v20); /*0x6efdb4*/
+      ((SuperWeapon *)owner)->FireSuperWeaponHouseClass(*(unsigned int *)(v15 + 180), (int)&v20); /*0x6efdb4*/
       v13->needsRedraw = 1; /*0x6efdba*/
       return; /*0x6efdc6*/
     }

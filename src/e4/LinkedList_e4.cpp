@@ -72,7 +72,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
       v6 = dword_A83D18; /*0x479222*/
     v5->u32_4 = v6; /*0x479227*/
   }
-  Theme::Stop((Theme *)&unk_A83D10, 0); /*0x479232*/
+  ((Theme *)&unk_A83D10)->Stop(0); /*0x479232*/
   if ( g_MixFile_MOVIES ) /*0x47923e*/
   {
     Debug::Log(); /*0x479249*/

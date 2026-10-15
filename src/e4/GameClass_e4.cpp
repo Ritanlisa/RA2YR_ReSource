@@ -339,7 +339,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
     }
     return (void *)(v5 + Delegate::Dispatch((int)((Pipe *)this), (int)v3, aP2)); /*0x632f0a*/
   }
-  return Delegate::Dispatch((Pipe *)this, (int)Src, aP2); /*0x632f02*/
+  return ((Pipe *)this)->Dispatch((int)Src, aP2); /*0x632f02*/
 
 }
 }
@@ -361,7 +361,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   int m_38; // eax
   m_38 = this->u32_38; /*0x63315b*/
   if ( !m_38 ) /*0x633160*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x6332e5*/
+    return ((Straw *)this)->Invoke((int)a2, Size); /*0x6332e5*/
   signed int v16; // [esp+10h] [ebp-104h]
   v16 = 0; /*0x633169*/
   if ( LOBYTE(this->u32_C) ) /*0x633166*/

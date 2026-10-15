@@ -1329,7 +1329,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   v26[1] = v16; /*0x4a5fa7*/
   v26[2] = v17; /*0x4a5fb1*/
   v26[3] = v16 + v18; /*0x4a5fb5*/
-  Char::Swap(v10, 1); /*0x4a5fb9*/
+  (v10)->Swap(1); /*0x4a5fb9*/
   ((TextGroup *)((TextGroup *)v10))->SetRect(v26); /*0x4a5fc5*/
   ((Property *)((Property *)v10))->Set(a6); /*0x4a5fd1*/
   FontRenderer::DrawText(v10, a3, a2, v12, v11, 0, 0); /*0x4a5fed*/
@@ -1343,7 +1343,7 @@ int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5,
 {
 
   int v11; // eax
-  v11 = Color::ConvertToRGB((uint8_t *)(a6 + 776), (int)&a6); /*0x4a6028*/
+  v11 = ((uint8_t *)(a6 + 776))->ConvertToRGB((int)&a6); /*0x4a6028*/
   int v14; // [esp+8h] [ebp-8h] BYREF
   (*((unsigned short *)&(v14))) = *(unsigned short *)v11; /*0x4a6036*/
   (((unsigned char *)&(v14))[2]) = v11->ConvertClass_field_0x2; /*0x4a603e*/
@@ -1409,7 +1409,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
         do /*0x4a6409*/
         {
           ++v17; /*0x4a63eb*/
-          v14 = (wchar_t *)FontClass::GetPixelData(v14); /*0x4a63ee*/
+          v14 = (wchar_t *)(v14)->GetPixelData(); /*0x4a63ee*/
           v16 += (int)v14; /*0x4a63f3*/
           (*((unsigned short *)&(v14))) = *v17; /*0x4a63f5*/
         }
@@ -1482,7 +1482,7 @@ int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6
   else
   {
   int v14; // eax
-    v14 = Color::ConvertToRGB((uint8_t *)(*((unsigned int *)dword_B054D4 + a9) + 776), (int)&a9); /*0x4a6628*/
+    v14 = ((uint8_t *)(*((unsigned int *)dword_B054D4 + a9) + 776))->ConvertToRGB((int)&a9); /*0x4a6628*/
     (*((unsigned short *)&(v15[0]))) = *(unsigned short *)v14; /*0x4a6630*/
     (((unsigned char *)&(v15[0]))[2]) = *(unsigned char *)(v14 + 2); /*0x4a663e*/
     v12 = RenderTextLabel( /*0x4a66b2*/

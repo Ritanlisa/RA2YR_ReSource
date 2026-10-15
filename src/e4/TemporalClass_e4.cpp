@@ -371,9 +371,9 @@ void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
 
 
   aP1->AbstractClass = &vt_TemporalClass; /*0x71b1bd*/
-  aP1->? = &vt_TemporalClass; /*0x71b1c3*/
-  aP1->? = &vt_TemporalClass; /*0x71b1ca*/
-  aP1->? = &vt_TemporalClass; /*0x71b1d1*/
+  /* X11: vtable install elided (qmark slot, RHS vt_TemporalClass) */  /*0x71b1c3*/
+  /* X11: vtable install elided (qmark slot, RHS vt_TemporalClass) */  /*0x71b1ca*/
+  /* X11: vtable install elided (qmark slot, RHS vt_TemporalClass) */  /*0x71b1d1*/
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::TemporalClass *)(aP1); /*0x71b1df*/
   int v3; // eax

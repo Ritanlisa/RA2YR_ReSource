@@ -88,9 +88,9 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
 
 
   a1->AbstractClass = &vt_ScriptTypeClass; /*0x691fa6*/
-  a1->? = &vt_ScriptTypeClass; /*0x691fac*/
-  a1->? = &vt_ScriptTypeClass; /*0x691fb3*/
-  a1->? = &vt_ScriptTypeClass; /*0x691fba*/
+  /* X11: vtable install elided (qmark slot, RHS vt_ScriptTypeClass) */  /*0x691fac*/
+  /* X11: vtable install elided (qmark slot, RHS vt_ScriptTypeClass) */  /*0x691fb3*/
+  /* X11: vtable install elided (qmark slot, RHS vt_ScriptTypeClass) */  /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x691fc1*/
   ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::ScriptTypeClass *)(a1); /*0x691fd6*/

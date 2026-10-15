@@ -208,7 +208,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v99[0] = (int16_t)(v86 + v26); /*0x56dd9f*/
         v99[2] = (int)(aP8); /*0x56ddad*/
         v99[3] = (int)(aP9); /*0x56ddb9*/
-        if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v30, 1) ) /*0x56ddc0*/
+        if ( (uint8_t)((Type *)v17)->CheckAmbiguity((int)v30, 1) ) /*0x56ddc0*/
         {
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
           {
@@ -267,7 +267,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v98[3] = (int)(aP9); /*0x56dfbe*/
         v98[0] = (int16_t)(v86 + v26); /*0x56dfc8*/
         v98[2] = (int)(aP8); /*0x56dfcf*/
-        if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v39, 1) ) /*0x56dfd6*/
+        if ( (uint8_t)((Type *)v17)->CheckAmbiguity((int)v39, 1) ) /*0x56dfd6*/
         {
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
           {
@@ -335,7 +335,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v100[1] = (int16_t)(v45 + (unsigned short)v82); /*0x56e1fd*/
         v100[2] = (int)(aP8); /*0x56e209*/
         v100[3] = (int)(aP9); /*0x56e210*/
-        if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v49, 1) ) /*0x56e217*/
+        if ( (uint8_t)((Type *)v17)->CheckAmbiguity((int)v49, 1) ) /*0x56e217*/
         {
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
           {
@@ -389,7 +389,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v97[1] = (int16_t)(v45 + (unsigned short)v82); /*0x56e3ff*/
         v97[2] = (int)(aP8); /*0x56e40b*/
         v97[3] = (int)(aP9); /*0x56e412*/
-        if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v56, 1) ) /*0x56e419*/
+        if ( (uint8_t)((Type *)v17)->CheckAmbiguity((int)v56, 1) ) /*0x56e419*/
         {
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
           {

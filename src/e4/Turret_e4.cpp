@@ -56,7 +56,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
   char Source[260]; // [esp+24Ch] [ebp-104h] BYREF
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8d4c*/
         CCFileClass::Construct(&v26, Source); /*0x5f8d63*/
-        if ( (unsigned __int8)CCFileClass::Open(&v26, 0) ) /*0x5f8d70*/
+        if ( (unsigned __int8)(&v26)->Open(0) ) /*0x5f8d70*/
         {
   void *v3; // edi
           v3 = (void *)this->u32_B8; /*0x5f8d7d*/
@@ -96,7 +96,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v9 = (VoxelSection *)this->u32_B8; /*0x5f8e4a*/
             this->u32_BC = (unsigned int)(FileHVA); /*0x5f8e52*/
   int Info; // eax
-            Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
+            Info = (v9)->GetInfo(0, 0); /*0x5f8e58*/
             Matrix::Scale(this->Matrix_B87), *(float *)(Info + 12)); /*0x5f8e67*/
             *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8e70*/
             v22 = 0; /*0x5f8e78*/
@@ -108,7 +108,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
         sprintf(Buffer, "%sBARL", &this->AbstractClass_1F8); /*0x5f8ea0*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8ebc*/
         CCFileClass::Construct(&v23, Source); /*0x5f8ed0*/
-        if ( (unsigned __int8)CCFileClass::Open(&v23, 0) ) /*0x5f8edd*/
+        if ( (unsigned __int8)(&v23)->Open(0) ) /*0x5f8edd*/
         {
   void *v11; // edi
           v11 = (void *)this->u32_C0; /*0x5f8eea*/
@@ -148,8 +148,8 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v17 = (VoxelSection *)this->u32_C0; /*0x5f8fb4*/
             this->u32_C4 = v16; /*0x5f8fbc*/
   int v18; // eax
-            v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
-            Matrix::Scale(this->u32_C4, *(float *)(v18 + 12)); /*0x5f8fd1*/
+            v18 = (v17)->GetInfo(0, 0); /*0x5f8fc2*/
+            (this->u32_C4)->Scale(*(float *)(v18 + 12)); /*0x5f8fd1*/
             *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/
             Vector::Clear((int)v21); /*0x5f8fe6*/

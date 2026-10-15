@@ -766,7 +766,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
     v19.location[1] = 0; /*0x5d760f*/
     v19.location[2] = 0; /*0x5d7616*/
     *(unsigned int *)&v19.bombVisible = &vt_INIClass; /*0x5d761d*/
-    if ( FileStraw::Open((FileStraw *)&v19.bombVisible, (int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
+    if ( ((FileStraw *)&v19.bombVisible)->Open((int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
     {
       v19.customSound_controller[4] = (&v19.bombVisible)->FindKey(v2); /*0x5d763e*/
       v19.owningHouseIndex = 0; /*0x5d7642*/

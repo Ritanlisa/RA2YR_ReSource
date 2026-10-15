@@ -66,37 +66,37 @@ int BuildingType::FindOwnerHouse()
 
   if ( this == 4475 ) /*0x510ed6*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 0); /*0x510eda*/
+    v1 = ((BuildingType *)dword_A8B230)->Init(0); /*0x510eda*/
   }
   else if ( this == 4476 ) /*0x510ee2*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 1u); /*0x510ee6*/
+    v1 = ((BuildingType *)dword_A8B230)->Init(1u); /*0x510ee6*/
   }
   else if ( this == 4477 ) /*0x510eee*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 2u); /*0x510ef2*/
+    v1 = ((BuildingType *)dword_A8B230)->Init(2u); /*0x510ef2*/
   }
   else if ( this == 4478 ) /*0x510efa*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 3u); /*0x510efe*/
+    v1 = ((BuildingType *)dword_A8B230)->Init(3u); /*0x510efe*/
   }
   else if ( this == 4479 ) /*0x510f06*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 4u); /*0x510f0a*/
+    v1 = ((BuildingType *)dword_A8B230)->Init(4u); /*0x510f0a*/
   }
   else if ( this == 4480 ) /*0x510f12*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 5u); /*0x510f16*/
+    v1 = ((BuildingType *)dword_A8B230)->Init(5u); /*0x510f16*/
   }
   else if ( this == 4481 ) /*0x510f1e*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 6u); /*0x510f22*/
+    v1 = ((BuildingType *)dword_A8B230)->Init(6u); /*0x510f22*/
   }
   else
   {
     if ( this != 4482 ) /*0x510f2a*/
       return 0; /*0x510f2a*/
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 7u); /*0x510f34*/
+    v1 = ((BuildingType *)dword_A8B230)->Init(7u); /*0x510f34*/
   }
   if ( v1 >= 0 && v1 < dword_A80238 ) /*0x510f43*/
     return *(&dword_A8022C->vfptr.vfptr + v1); /*0x510f4e*/

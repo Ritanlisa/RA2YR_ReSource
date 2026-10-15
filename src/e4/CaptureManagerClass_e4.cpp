@@ -1341,6 +1341,6 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 namespace gamemd {
 char CaptureManagerClass::AddMember(TechnoClass * aP1, void *a2, void *a3)
 {
-  return TeamClass::AddMember(a2, 1); /*0x6ea4fc*/
+  return (a2)->AddMember(1); /*0x6ea4fc*/
 }
 } // namespace gamemd

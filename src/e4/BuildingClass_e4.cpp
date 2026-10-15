@@ -475,7 +475,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 
 
   int result; // eax
-  result = RadioClass::LoadState(aP0, aP2); /*0x70bf5c*/
+  result = (aP0)->LoadState(aP2); /*0x70bf5c*/
   if ( result >= 0 ) /*0x70bf65*/
   {
     aP0->planningToken = 0; /*0x70bf79*/

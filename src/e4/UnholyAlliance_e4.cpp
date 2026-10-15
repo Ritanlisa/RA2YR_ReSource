@@ -42,7 +42,7 @@ AbstractClass * * UnholyAlliance_GetResult()
   int *v6; // eax
         v6 = (int *)operator new(0x8E8u); /*0x5cb47e*/
   int *v7; // esi
-        if ( v6 && (v7 = (int *)UnitClass::Construct(v6, v5, v4)) != 0 ) /*0x5cb497*/
+        if ( v6 && (v7 = (int *)(v6)->Construct(v5, v4)) != 0 ) /*0x5cb497*/
         {
   unsigned short *CurrentOption; // eax
           CurrentOption = (unsigned short *)(HouseClass::GetCurrentOption(v4, &this));

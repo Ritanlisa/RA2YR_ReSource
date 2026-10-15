@@ -888,13 +888,13 @@ int MPCooperative::InitSession()
   {
     v3 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c1cef*/
     if ( v3 ) /*0x5c1cf9*/
-      v4 = MissionClass::Init(v3); /*0x5c1cfd*/
+      v4 = (v3)->Init(); /*0x5c1cfd*/
     else
       v4 = 0; /*0x5c1d04*/
     this->u32_40 = v4; /*0x5c1d06*/
   }
-  Movie::SetupScreen((int)this->u32_40, 0); /*0x5c1d0d*/
-  Array::GetElementAt((int *)this->u32_40, &String2, 0); /*0x5c1d1b*/
+  ((int)this->u32_40)->SetupScreen(0); /*0x5c1d0d*/
+  ((int *)this->u32_40)->GetElementAt(&String2, 0); /*0x5c1d1b*/
   if ( dword_A8B8D8 <= 0 ) /*0x5c1d26*/
   {
 LABEL_10:
@@ -951,11 +951,11 @@ CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
       a1_1->MPCooperative_field_0x40 = *(void **)(*(unsigned int *)a1_1->__pad_328 + 4 * v3); /*0x5c1e58*/
       v5 = (MissionClass *)__2_YAPAXI_Z(0x70u); /*0x5c1e5b*/
       if ( v5 ) /*0x5c1e65*/
-        v6 = MissionClass::Init(v5); /*0x5c1e69*/
+        v6 = (v5)->Init(); /*0x5c1e69*/
       else
         v6 = 0; /*0x5c1e70*/
       *(unsigned int *)(*(unsigned int *)a1_1->__pad_328 + 4 * v3) = v6; /*0x5c1e79*/
-      Movie::SetupScreen(*(unsigned int *)(*(unsigned int *)a1_1->__pad_328 + 4 * v3), v3); /*0x5c1e85*/
+      (*(unsigned int *)(*(unsigned int *)a1_1->__pad_328 + 4 * v3))->SetupScreen(v3); /*0x5c1e85*/
       a1_1->MPCooperative_field_0x4C = (void *)v3; /*0x5c1e8a*/
       if ( dword_A8DA84 == 2 ) /*0x5c1e95*/
         String::AssignWideToChar((char *)a1_1->MPCooperative_field_0x40, (char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c1ea6*/

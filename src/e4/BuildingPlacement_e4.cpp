@@ -61,8 +61,8 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
     return 0; /*0x4fb919*/
   MapClass *v10; // [esp+0h] [ebp-Ch]
   (v10)->UnselectAll_ClearLimboLaunchers(); /*0x4fb877*/
-  BuildingClass::TogglePower2((BuildingClass *)&DataGlobal_87F7E8, 0); /*0x4fb883*/
-  BuildingClass::TogglePower((BuildingClass *)&DataGlobal_87F7E8, 0); /*0x4fb88f*/
+  ((BuildingClass *)&DataGlobal_87F7E8)->TogglePower2(0); /*0x4fb883*/
+  ((BuildingClass *)&DataGlobal_87F7E8)->TogglePower(0); /*0x4fb88f*/
   DataGlobal_88099A = 0; /*0x4fb894*/
   DataGlobal_88099B = 0; /*0x4fb89b*/
   DataGlobal_88099C = 0; /*0x4fb8a2*/
@@ -119,7 +119,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v9; // ebx
         v9 = *(unsigned int *)this->q00C; /*0x54c5e6*/
   void *NeighbourContent; // eax
-        NeighbourContent = (void *)(Cell::GetNeighbourContent(v8, v7)); /*0x54c5ea*/
+        NeighbourContent = (void *)((v8)->GetNeighbourContent(v7)); /*0x54c5ea*/
         (*(void (**)(int, void *, int))(v9 + 1152))(this->q00C, NeighbourContent, 1); /*0x54c5f3*/
   unsigned char *v11; // ecx
         v11 = (unsigned char *)this->q00C; /*0x54c5f9*/
@@ -325,7 +325,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             v37 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v36 + 444))(v36); /*0x54c9c6*/
             CellClass::AttachObject(v37, 0); /*0x54c9ce*/
           }
-          GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, this->q00C); /*0x54c9dc*/
+          ((GadgetGrid *)&g_CellClassManager)->RemoveItem(this->q00C); /*0x54c9dc*/
   int v38; // ecx
           v38 = this->q00C; /*0x54c9e1*/
           this->u32_50 = 0; /*0x54c9e4*/

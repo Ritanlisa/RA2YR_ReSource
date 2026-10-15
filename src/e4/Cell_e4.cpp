@@ -483,7 +483,7 @@ int Cell::IsBuildableAdvanced()
   unsigned int *i; // esi
   unsigned int *Cell_field_0xE4; // esi
 
-  result = Type::CheckAmbiguity((Type *)&DataGlobal_87F7E8, (int)this, 1); /*0x486ffc*/
+  result = ((Type *)&DataGlobal_87F7E8)->CheckAmbiguity((int)this, 1); /*0x486ffc*/
   if ( !(unsigned char)result ) /*0x487003*/
   {
     LOBYTE(result) = 1; /*0x487006*/

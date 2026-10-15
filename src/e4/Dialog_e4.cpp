@@ -161,7 +161,7 @@ int Dialog::InitializeGameSettings()
   if ( v18 ) /*0x5b5e27*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)&MEMORY[0xA8B322]); /*0x5b5e36*/
   if ( !g_UIControlState || !*(unsigned int *)g_UIControlState ) /*0x5b5e41*/
-    Session::PrepareGame(*(Session **)this->__pad_000); /*0x5b5e48*/
+    (*(Session **)this->__pad_000)->PrepareGame(); /*0x5b5e48*/
   HWND v19; // eax
   v19 = GetDlgItem(*(HWND *)this->__pad_000, 1); /*0x5b5e51*/
   if ( v19 ) /*0x5b5e55*/

@@ -46,7 +46,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
   char Source[260]; // [esp+1ECh] [ebp-104h] BYREF
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7afd*/
   CCFileClass::Construct(&v17, Source); /*0x5f7b11*/
-  if ( (unsigned __int8)CCFileClass::Open(&v17, 0) ) /*0x5f7b1b*/
+  if ( (unsigned __int8)(&v17)->Open(0) ) /*0x5f7b1b*/
   {
   void *v4; // ebp
     v4 = (void *)*(&this->u32_8 * a3 + 50); /*0x5f7b46*/

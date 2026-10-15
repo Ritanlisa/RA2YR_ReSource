@@ -47,7 +47,7 @@ bool * FactoryClass::AbandonProduction()
   Debug::Log("Abandoning production of %s\n", (const char *)(v3 + 100)); /*0x4ca016*/
   v4 = (*(int (__thiscall **)(unsigned int))(**&this->q614 + 136))(this->q058); /*0x4ca023*/
   v5 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)v4 + 132))(v4, *(unsigned int *)(this->q058 + 540)); /*0x4ca037*/
-  HouseClass::AddPower(this->owner, v5 - this->balance); /*0x4ca046*/
+  (this->owner)->AddPower(v5 - this->balance); /*0x4ca046*/
   v6 = this->specialItem; /*0x4ca04b*/
   this->balance = 0; /*0x4ca053*/
   if ( v6 ) /*0x4ca056*/

@@ -124,8 +124,8 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   WaveClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   aP1->ObjectClass = &vt_WaveClass; /*0x763206*/
-  aP1->? = &vt_WaveClass; /*0x76320c*/
-  aP1->? = &vt_WaveClass; /*0x763213*/
+  /* X11: vtable install elided (qmark slot, RHS vt_WaveClass) */  /*0x76320c*/
+  /* X11: vtable install elided (qmark slot, RHS vt_WaveClass) */  /*0x763213*/
   aP1->? = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)aP1, 1); /*0x763221*/
   v6 = (gamemd::WaveClass *)(aP1); /*0x763236*/

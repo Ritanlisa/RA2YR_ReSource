@@ -104,8 +104,8 @@ AnimClass * * Building::ComputePosition(int *aP1)
             v15 = v14; /*0x425dd0*/
             if ( *&v14->u32_EC == 2 /*0x425e18*/
               && ((int)v14->u32_140 & 0x100) == 0
-              && (*((unsigned int *)Cell::GetNeighbourContent(v14, 6u) + 80) & 0x100) == 0
-              && (*((unsigned int *)Cell::GetNeighbourContent(v15, 0) + 80) & 0x100) == 0 )
+              && (*((unsigned int *)(v14)->GetNeighbourContent(6u) + 80) & 0x100) == 0
+              && (*((unsigned int *)(v15)->GetNeighbourContent(0) + 80) & 0x100) == 0 )
             {
               if ( *&v15->u32_24 == v39 ) /*0x425e27*/
               {

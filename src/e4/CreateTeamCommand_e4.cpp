@@ -688,8 +688,8 @@ unsigned char * CreateTeamCommand::performAction_30(void *a1, void *a2)
 
   TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536617*/
   ((TacticalClass *)((TacticalClass *)&dword_87F7E8))->SetDisplayMode(0, 0); /*0x536625*/
-  BuildingClass::TogglePower2((BuildingClass *)&dword_87F7E8, 0); /*0x536631*/
-  BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, 0); /*0x53663d*/
+  ((BuildingClass *)&dword_87F7E8)->TogglePower2(0); /*0x536631*/
+  ((BuildingClass *)&dword_87F7E8)->TogglePower(0); /*0x53663d*/
   unsigned char *v4; // eax
   if ( dword_A8ECC8 ) /*0x536649*/
     v4 = *(unsigned char **)dword_A8ECBC; /*0x536650*/
@@ -1058,8 +1058,8 @@ unsigned char * CreateTeamCommand::performAction_69(void *a1, void *a2)
 
   TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536a87*/
   ((TacticalClass *)((TacticalClass *)&dword_87F7E8))->SetDisplayMode(0, 0); /*0x536a95*/
-  BuildingClass::TogglePower2((BuildingClass *)&dword_87F7E8, 0); /*0x536aa1*/
-  BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, 0); /*0x536aad*/
+  ((BuildingClass *)&dword_87F7E8)->TogglePower2(0); /*0x536aa1*/
+  ((BuildingClass *)&dword_87F7E8)->TogglePower(0); /*0x536aad*/
   unsigned char *v4; // eax
   if ( dword_A8ECC8 ) /*0x536ab9*/
     v4 = *(unsigned char **)dword_A8ECBC; /*0x536ac0*/

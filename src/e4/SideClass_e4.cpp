@@ -252,9 +252,9 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
 
 
   Block->AbstractClass = &vt_SideClass; /*0x6a4936*/
-  Block->? = &vt_SideClass; /*0x6a493c*/
+  /* X11: vtable install elided (qmark slot, RHS vt_SideClass) */  /*0x6a493c*/
   Block->u32_8 = &vt_SideClass; /*0x6a4943*/
-  Block->? = &vt_SideClass; /*0x6a494a*/
+  /* X11: vtable install elided (qmark slot, RHS vt_SideClass) */  /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
   SideClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/

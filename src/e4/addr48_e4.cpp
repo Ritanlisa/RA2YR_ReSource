@@ -1250,7 +1250,7 @@ AbstractClass * * Main_Game_Frame()
             case 2: /*0x48ca2d*/
               goto LABEL_34;
             case 3: /*0x48ca2d*/
-              v5 = EventClass::AddEvent((char *)&v13, (int)dword_A83D4C->relatedTagsCount, 8u); /*0x48ca43*/
+              v5 = ((char *)&v13)->AddEvent((int)dword_A83D4C->relatedTagsCount, 8u); /*0x48ca43*/
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x48ca52*/
               {
                 memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v5, 0x6Fu); /*0x48ca6e*/

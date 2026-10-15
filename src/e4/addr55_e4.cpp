@@ -471,7 +471,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
         {
           v57 = v11; /*0x550e98*/
           v56 = v54; /*0x550ea0*/
-          Color::Lerp((uint8_t *)&v56, v58, v71); /*0x550eab*/
+          ((uint8_t *)&v56)->Lerp(v58, v71); /*0x550eab*/
           v30 = ((uint8_t)v56 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x550f09*/
               | ((*(((unsigned char *)&(v56)) + (sizeof(v56) - 1))) >> g_BitMask_Blue << g_BitMask_Green)
               | (v57 >> g_BitMask_Red << g_BitShift_Blue);
@@ -583,7 +583,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   {
     v56 = v60; /*0x551216*/
     v57 = v61; /*0x551223*/
-    Color::Lerp((uint8_t *)&v56, v58, v71); /*0x55122d*/
+    ((uint8_t *)&v56)->Lerp(v58, v71); /*0x55122d*/
     return (*(int (__thiscall **)(int, int *, int *, int64_t *, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x5512a7*/
                                                                                       + 52))(
              g_DSurface_Hidden_2,
@@ -2088,7 +2088,7 @@ AbstractClass * * Game_Frame_Check()
           if ( !dword_887368 ) /*0x55d1f5*/
             goto LABEL_52; /*0x55d1f5*/
   LABEL_26:
-          Tooltip::Enable(v4, byte_A8EB80); /*0x55d16d*/
+          (v4)->Enable(byte_A8EB80); /*0x55d16d*/
   LABEL_52:
           --dword_A8DAB4; /*0x55d341*/
           return byte_A8E9A0 == 0; /*0x55d341*/
@@ -2101,7 +2101,7 @@ AbstractClass * * Game_Frame_Check()
       byte_A8ECD0 = 0; /*0x55d21f*/
       byte_8B41C0 = 0; /*0x55d225*/
       byte_A83D48 = 0; /*0x55d22b*/
-      WTFMode::Shutdown(&dword_A8B238); /*0x55d231*/
+      (&dword_A8B238)->Shutdown(); /*0x55d231*/
       GameFrameCheck_Check(); /*0x55d236*/
       WTFMode::Init(&dword_A8B238); /*0x55d240*/
       byte_ABCD58 = 0; /*0x55d245*/
@@ -2113,7 +2113,7 @@ AbstractClass * * Game_Frame_Check()
       byte_8B41C0 = 0; /*0x55d268*/
       byte_A83D48 = 0; /*0x55d26e*/
       InitLoadingScreenResources(); /*0x55d274*/
-      WTFMode::Shutdown(&dword_A8B238); /*0x55d27e*/
+      (&dword_A8B238)->Shutdown(); /*0x55d27e*/
       GameFrameCheck_Check_686570((ObjectClass *)v9); /*0x55d283*/
       WTFMode::Init(&dword_A8B238); /*0x55d28d*/
       byte_ABCD58 = 0; /*0x55d292*/
@@ -2122,7 +2122,7 @@ AbstractClass * * Game_Frame_Check()
       {
         if ( dword_A8EA0C ) /*0x55d2cd*/
         {
-          NetworkEventQueueClass::WaitForResponse((NetworkEventQueueClass *)&unk_B052D0); /*0x55d2d4*/
+          ((NetworkEventQueueClass *)&unk_B052D0)->WaitForResponse(); /*0x55d2d4*/
           v5 = 480; /*0x55d2e2*/
           Ticks = TimerGetTicks(); /*0x55d2e7*/
           while ( 1 ) /*0x55d2f5*/

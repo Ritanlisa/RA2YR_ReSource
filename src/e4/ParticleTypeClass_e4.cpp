@@ -603,11 +603,11 @@ int ParticleTypeClass::ProcessPower(int *a2, void *a2_1)
   LOBYTE(v3) = this->DeleteOnStateLimit_d; /*0x64557a*/
   ((Power *)a2)->FlagProcess(v3); /*0x645583*/
   LOBYTE(v4) = this->EndStateAI_d; /*0x645588*/
-  v5 = Power::FinalizeDrain((Power *)a2, v4); /*0x645591*/
+  v5 = ((Power *)a2)->FinalizeDrain(v4); /*0x645591*/
   LOBYTE(v5) = this->StartStateAI_d; /*0x645596*/
-  Power::FinalizeDrain((Power *)a2, v5); /*0x64559f*/
+  ((Power *)a2)->FinalizeDrain(v5); /*0x64559f*/
   LOBYTE(v6) = this->StateAIAdvance_d; /*0x6455a4*/
-  Power::FinalizeDrain((Power *)a2, v6); /*0x6455ad*/
+  ((Power *)a2)->FinalizeDrain(v6); /*0x6455ad*/
   Power::TimerProcess((unsigned __int8)this->Translucent25State); /*0x6455bd*/
   Power::TimerProcess((unsigned __int8)this->Translucent50State); /*0x6455cd*/
   LOBYTE(v7) = this->Normalized; /*0x6455d2*/

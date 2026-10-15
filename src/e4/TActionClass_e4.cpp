@@ -1472,20 +1472,20 @@ char TActionClass::executeJumpjetAction(int a2, int _C, unsigned int * a3, IUnkn
     return 0; /*0x6e31ed*/
   if ( v5 == 8997 ) /*0x6e31f5*/
   {
-    Field11 = (HouseClass *)Property::GetField11((Property *)a3); /*0x6e31f7*/
+    Field11 = (HouseClass *)((Property *)a3)->GetField11(); /*0x6e31f7*/
   }
   else
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e3201*/
       return 0; /*0x6e3223*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e3205*/
+    if ( (uint8_t)(v5)->IsSpecialType() ) /*0x6e3205*/
       Field11 = (HouseClass *)((BuildingType *)(v5))->FindOwnerHouse(); /*0x6e3210*/
     else
-      Field11 = (HouseClass *)HouseClass::FindOwner(v5); /*0x6e3217*/
+      Field11 = (HouseClass *)(v5)->FindOwner(); /*0x6e3217*/
   }
   if ( !Field11 ) /*0x6e321e*/
     return 0; /*0x6e321e*/
-  HouseClass::DestroyAllBuildings(Field11); /*0x6e3228*/
+  (Field11)->DestroyAllBuildings(); /*0x6e3228*/
   return 1; /*0x6e3222*/
 }
 } // namespace gamemd
@@ -1502,20 +1502,20 @@ char TActionClass::executeOpenGateAction(int a2, int _C, unsigned int * a3, IUnk
     return 0; /*0x6e324d*/
   if ( v5 == 8997 ) /*0x6e3255*/
   {
-    Field11 = (HouseClass *)Property::GetField11((Property *)a3); /*0x6e3257*/
+    Field11 = (HouseClass *)((Property *)a3)->GetField11(); /*0x6e3257*/
   }
   else
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e3261*/
       return 0; /*0x6e3283*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e3265*/
+    if ( (uint8_t)(v5)->IsSpecialType() ) /*0x6e3265*/
       Field11 = (HouseClass *)((BuildingType *)(v5))->FindOwnerHouse(); /*0x6e3270*/
     else
-      Field11 = (HouseClass *)HouseClass::FindOwner(v5); /*0x6e3277*/
+      Field11 = (HouseClass *)(v5)->FindOwner(); /*0x6e3277*/
   }
   if ( !Field11 ) /*0x6e327e*/
     return 0; /*0x6e327e*/
-  HouseClass::DestroyAllNonBuildingsNonNaval(Field11); /*0x6e3288*/
+  (Field11)->DestroyAllNonBuildingsNonNaval(); /*0x6e3288*/
   return 1; /*0x6e3282*/
 }
 } // namespace gamemd
@@ -1532,20 +1532,20 @@ char TActionClass::executeCloseGateAction(int a2, int _C, unsigned int * a3, IUn
     return 0; /*0x6e32ad*/
   if ( v5 == 8997 ) /*0x6e32b5*/
   {
-    Field11 = (HouseClass *)Property::GetField11((Property *)a3); /*0x6e32b7*/
+    Field11 = (HouseClass *)((Property *)a3)->GetField11(); /*0x6e32b7*/
   }
   else
   {
     if ( v5 == (HouseClass *)-1 ) /*0x6e32c1*/
       return 0; /*0x6e32e3*/
-    if ( (uint8_t)BuildingType::IsSpecialType(v5) ) /*0x6e32c5*/
+    if ( (uint8_t)(v5)->IsSpecialType() ) /*0x6e32c5*/
       Field11 = (HouseClass *)((BuildingType *)(v5))->FindOwnerHouse(); /*0x6e32d0*/
     else
-      Field11 = (HouseClass *)HouseClass::FindOwner(v5); /*0x6e32d7*/
+      Field11 = (HouseClass *)(v5)->FindOwner(); /*0x6e32d7*/
   }
   if ( !Field11 ) /*0x6e32de*/
     return 0; /*0x6e32de*/
-  HouseClass::DestroyAllNonBuildingsNaval(Field11); /*0x6e32e8*/
+  (Field11)->DestroyAllNonBuildingsNaval(); /*0x6e32e8*/
   return 1; /*0x6e32e2*/
 }
 } // namespace gamemd
@@ -1558,7 +1558,7 @@ char TActionClass::CreateNukeEffect(AbstractClass * aP1, int a3, int a4, Abstrac
 
   __int16 v18[2]; // [esp+Ch] [ebp-4Ch] BYREF
   double v19; // [esp+10h] [ebp-48h] BYREF
-  *(unsigned int *)v18 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v19, (int)this->TActionClass_field_44); /*0x6e3433*/
+  *(unsigned int *)v18 = *((char *)dword_A8B230)->Get_Waypoint_Location(&v19, (int)this->TActionClass_field_44); /*0x6e3433*/
   int GroundHeight; // [esp+30h] [ebp-28h]
   GroundHeight = 0; /*0x6e3437*/
   int v23; // [esp+2Ch] [ebp-2Ch]

@@ -128,7 +128,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
           if ( v11 ) /*0x743357*/
           {
   int v12; // esi
-            v12 = UnitClass::Construct(v11, *((unsigned int *)dword_A83CE4 + Index), v10); /*0x74336f*/
+            v12 = (v11)->Construct(*((unsigned int *)dword_A83CE4 + Index), v10); /*0x74336f*/
             if ( v12 ) /*0x743373*/
             {
   char *v13; // eax
@@ -755,7 +755,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   this->M8 = 0; /*0x74bc07*/
   LOBYTE(this->M12) = 1; /*0x74bc0a*/
   BYTE1(this->?) = 0; /*0x74bc0e*/
-  this->? = &vt_VectorClass; /*0x74bc11*/
+  /* X11: vtable install elided (qmark slot, RHS vt_VectorClass) */  /*0x74bc11*/
   this->M8 = (unsigned int)((void *)-1); /*0x74bc17*/
   LOBYTE(this->M4) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
   this->M8 = (unsigned int)(*(void **)(a2 + 8)); /*0x74bc27*/
@@ -1193,7 +1193,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   if ( (this->ambientSoundController[2] & 8) == 0 ) /*0x74faef*/
   {
     RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fafa*/
-    if ( (unsigned __int8)FileClass::Open(&v9, 0) ) /*0x74fb04*/
+    if ( (unsigned __int8)(&v9)->Open(0) ) /*0x74fb04*/
     {
       FileClass::Read(&v9, (char *)&this->owningHouseIndex + 2, 16); /*0x74fb17*/
       for ( BYTE1(this->attachedBomb) = 0; /*0x74fb30*/
@@ -1229,7 +1229,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   if ( (DataGlobal_A8EC40 & 8) == 0 ) /*0x74fb8b*/
   {
     RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fb9a*/
-    if ( (unsigned __int8)FileClass::Open(&v9, 0) ) /*0x74fba4*/
+    if ( (unsigned __int8)(&v9)->Open(0) ) /*0x74fba4*/
     {
       FileClass::Read(&v9, &byte_A8ED0A, 16); /*0x74fbb8*/
       for ( DataGlobal_A8EB00[537] = 0; /*0x74fbd9*/

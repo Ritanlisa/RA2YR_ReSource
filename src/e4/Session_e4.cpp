@@ -124,7 +124,7 @@ int Session::PrepareGame(HWND hWnd)
         }
         if ( !v9 ) /*0x5e77ae*/
           return result; /*0x5e7812*/
-        v10 = Stream::WriteBlock((int *)&unk_A8EA70, (int)Str, 250, 1); /*0x5e77cf*/
+        v10 = ((int *)&unk_A8EA70)->WriteBlock((int)Str, 250, 1); /*0x5e77cf*/
         for ( result = Count::GetCountQueue((Count *)&unk_A8EA70); /*0x5e77d8*/
               result > 0;
               result = Count::GetCountQueue((Count *)&unk_A8EA70) )

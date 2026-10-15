@@ -59,7 +59,7 @@ int CCFileClass::Open(int a2)
       }
       else
       {
-        result = File::IsReady((BufferIOFileClass *)this, 0); /*0x473ca2*/
+        result = ((BufferIOFileClass *)this)->IsReady(0); /*0x473ca2*/
         if ( (unsigned char)result ) /*0x473ca9*/
         {
           this->u32_68 = 1; /*0x473cab*/

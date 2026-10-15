@@ -70,7 +70,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations(void *a1)
     if ( v4 && !this->u32_662 ) /*0x4549d5*/
     {
       this->u32_662 = 1; /*0x4549df*/
-      TechnoClass::Find(this->u32_21C, *(unsigned int *)(v3 + 1036)); /*0x4549f3*/
+      (this->u32_21C)->Find(*(unsigned int *)(v3 + 1036)); /*0x4549f3*/
     }
     v5 = (unsigned char *)this->u32_520; /*0x4549f8*/
     if ( v5[5831] ) /*0x4549fe*/

@@ -488,9 +488,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
 
 
   Block->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ba36*/
-  Block->? = &vt_VoxelAnimTypeClass; /*0x74ba3c*/
+  /* X11: vtable install elided (qmark slot, RHS vt_VoxelAnimTypeClass) */  /*0x74ba3c*/
   Block->u32_8 = &vt_VoxelAnimTypeClass; /*0x74ba43*/
-  Block->? = &vt_VoxelAnimTypeClass; /*0x74ba4a*/
+  /* X11: vtable install elided (qmark slot, RHS vt_VoxelAnimTypeClass) */  /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x74ba51*/
   VoxelAnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = Block; /*0x74ba66*/
@@ -575,7 +575,7 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_2E8); /*0x74b892*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_2E8); /*0x74b8a3*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_2FC); /*0x74b8b4*/
-    VoxelAnimType::LoadAnim((char *)aP0); /*0x74b8bb*/
+    ((char *)aP0)->LoadAnim(); /*0x74b8bb*/
     return 0; /*0x74b8c0*/
   }
   return result; /*0x74b8c2*/

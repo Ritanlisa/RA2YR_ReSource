@@ -574,7 +574,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->u32_16009 = 0; /*0x4f5d4d*/
   this->u8_5815 = 0; /*0x4f5d54*/
   this->u8_5818 = 0; /*0x4f5d5d*/
-  ConnectionPointVector::Construct(&this->waypointPathCount, 0, 0); /*0x4f5d63*/
+  (&this->waypointPathCount)->Construct(0, 0); /*0x4f5d63*/
   this->u8_5819 = (int)&vt_DynamicVectorClass; /*0x4f5d68*/
   this->u8_581E = 10; /*0x4f5d6e*/
   this->u8_581D = 0; /*0x4f5d71*/

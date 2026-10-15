@@ -653,7 +653,7 @@ int E4Recv_517110::sub_517110()
   this->ambientSoundController[4] = 1072693248; /*0x517189*/
   (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
   int result; // eax
-  result = MovementAI::StepFootClass((MovementAI *)this, 0); /*0x5171a3*/
+  result = ((MovementAI *)this)->StepFootClass(0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
     return ((MovementAI *)this)->MainFootClass(1); /*0x5171b0*/
   return result; /*0x5171b5*/

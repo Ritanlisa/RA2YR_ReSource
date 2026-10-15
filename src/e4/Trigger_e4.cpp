@@ -224,9 +224,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         (v21)->SetField(this->u32_478 - 1); /*0x76d7c8*/
         (v21)->GetField(0); /*0x76d7d0*/
         TerritoryUpdateDisplayWOL((ObjectClass *)v21, 0); /*0x76d7d8*/
-        Trigger::executeActions( /*0x76d7f0*/
-          *(Trigger **)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4),
-          (int)v21);
+        (/*0x76d7f0*/ *(Trigger **)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4))->executeActions((int)v21);
         if ( (int)v28.vtable3 < v28.vtable3 /*0x76d821*/
           || (BYTE1(v28.?) || !v28.?)
           && v28.occupant > 0
@@ -248,7 +246,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   v25.q018 = (int)&vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d89b*/
   v28.? = &v28.?; /*0x76d89f*/
   v28.? = 0; /*0x76d8a3*/
-  v28.? = &vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d8a7*/
+  /* X11: vtable install elided (qmark slot, RHS vt_VectorCursorMSAnimDynamicVectorClass) */  /*0x76d8a7*/
   if ( CampaignProperties_WorldDominationTour_22::AddRef(&v28.?) ) /*0x76d8ab*/
   {
     do /*0x76da41*/

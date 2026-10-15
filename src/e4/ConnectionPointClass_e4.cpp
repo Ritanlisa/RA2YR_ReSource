@@ -169,7 +169,7 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int
   if ( !a2 || !a3 ) /*0x4a0648*/
     return -2147467261; /*0x4a06ec*/
   int updated; // [esp+18h] [ebp-4h]
-  updated = AbstractClass::updateAITimer(dword_A8B230); /*0x4a0661*/
+  updated = (dword_A8B230)->updateAITimer(); /*0x4a0661*/
   int v8; // [esp+14h] [ebp-8h] BYREF
   if ( (**a2)(a2, (int)&a1->ConnectionPointClass_field_0x04, &v8) < 0 ) /*0x4a0671*/
     return -2147220990; /*0x4a0675*/

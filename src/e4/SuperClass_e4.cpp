@@ -154,7 +154,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   *(unsigned int *)(aP2 + 4) = (unsigned int)(&vt_SuperClass); /*0x6caffd*/
   aP2->FileSize = &vt_SuperClass; /*0x6cb003*/
   aP2->u32_C = &vt_SuperClass; /*0x6cb00a*/
-  AbstractClass::GenerateUniqueID(aP2 + 4); /*0x6cb011*/
+  (aP2 + 4)->GenerateUniqueID(); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
     && dword_A83CCC > 0
@@ -216,7 +216,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   int v3; // eax
     v3 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.?[0] + 16))(g_BuildingLoadQueue_Array.?, &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
-      DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v3); /*0x6cb176*/
+      ((DynamicVector *)stru_B0F5B8)->RemoveItem(v3); /*0x6cb176*/
   }
   if ( a1->HouseClass_6C ) /*0x6cb17b*/
   {
@@ -224,7 +224,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   int v4; // eax
     v4 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.?[0] + 16))(g_BuildingLoadQueue_Array.?, &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
-      DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v4); /*0x6cb1a4*/
+      ((DynamicVector *)stru_B0F5B8)->RemoveItem(v4); /*0x6cb1a4*/
     a1->HouseClass_6C = 0; /*0x6cb1a9*/
   }
   v9 = (int)(a1); /*0x6cb1bd*/
@@ -1013,7 +1013,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
            g_BuildingLoadQueue_Array.?,
            v12);
     if ( v3 != -1 ) /*0x6ce0e5*/
-      DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v3); /*0x6ce0ed*/
+      ((DynamicVector *)stru_B0F5B8)->RemoveItem(v3); /*0x6ce0ed*/
   }
   if ( LOBYTE(a1->SuperClass_field_0x6C) ) /*0x6ce0f2*/
   {
@@ -1023,7 +1023,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
            g_BuildingLoadQueue_Array.?,
            v12);
     if ( v4 != -1 ) /*0x6ce113*/
-      DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v4); /*0x6ce11b*/
+      ((DynamicVector *)stru_B0F5B8)->RemoveItem(v4); /*0x6ce11b*/
     LOBYTE(a1->SuperClass_field_0x6C) = 0; /*0x6ce120*/
   }
   void *SuperClass_field_0x24; // ecx
@@ -1086,7 +1086,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
            g_BuildingLoadQueue_Array.?,
            &v9);
     if ( v6 != -1 ) /*0x6cb3d5*/
-      DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v6); /*0x6cb3dd*/
+      ((DynamicVector *)stru_B0F5B8)->RemoveItem(v6); /*0x6cb3dd*/
   }
   if ( LOBYTE(this->HouseClass_6C) ) /*0x6cb3e2*/
   {
@@ -1096,7 +1096,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
            g_BuildingLoadQueue_Array.?,
            &v9);
     if ( v7 != -1 ) /*0x6cb403*/
-      DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v7); /*0x6cb40b*/
+      ((DynamicVector *)stru_B0F5B8)->RemoveItem(v7); /*0x6cb40b*/
     LOBYTE(this->HouseClass_6C) = 0; /*0x6cb410*/
   }
   void **result; // eax

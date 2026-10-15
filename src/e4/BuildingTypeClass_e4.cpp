@@ -269,7 +269,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   *(unsigned int *)(a2 + 4) = (unsigned int)(&vt_BuildingTypeClass); /*0x45e2d3*/
   a2->VtableStub_8 = &vt_BuildingTypeClass; /*0x45e2d9*/
   a2->u32_C = &vt_BuildingTypeClass; /*0x45e2e1*/
-  AbstractClass::GenerateUniqueID(a2 + 4); /*0x45e2e8*/
+  (a2 + 4)->GenerateUniqueID(); /*0x45e2e8*/
   v4 = dword_A83C78; /*0x45e2ed*/
   if ( dword_A83C78 < dword_A83C70 /*0x45e32b*/
     || (byte_A83C75 || !dword_A83C70)
@@ -919,7 +919,7 @@ void BuildingTypeClass::LoadVoxel()
     if ( strstr(v2, v20) ) /*0x45fb17*/
     {
       CCFileClass::Construct(&v25, Buffer); /*0x45fb3b*/
-      if ( (unsigned __int8)CCFileClass::Open(&v25, 0) ) /*0x45fb48*/
+      if ( (unsigned __int8)(&v25)->Open(0) ) /*0x45fb48*/
       {
   void *v3; // esi
         v3 = (void *)this->BarrelVoxel_d; /*0x45fb55*/
@@ -956,14 +956,14 @@ void BuildingTypeClass::LoadVoxel()
         if ( FileHVA && !*(unsigned char *)FileHVA ) /*0x45fc06*/
         {
   int Info; // eax
-          Info = VoxelSection::GetInfo((VoxelSection *)this->u32_D2E, 0, 0); /*0x45fc12*/
-          Matrix::Scale((Matrix *)this->u32_D2E, *(float *)(Info + 12)); /*0x45fc21*/
+          Info = ((VoxelSection *)this->u32_D2E)->GetInfo(0, 0); /*0x45fc12*/
+          ((Matrix *)this->u32_D2E)->Scale(*(float *)(Info + 12)); /*0x45fc21*/
         }
         *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         Vector::Clear((int)v23); /*0x45fc36*/
         *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fc3f*/
-        BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fc43*/
+        ((BufferIOFileClass *)&v22)->Dtor(); /*0x45fc43*/
       }
   char *v21; // [esp-Ch] [ebp-2D8h]
       v21 = _strupr(off_8194A8); /*0x45fc55*/

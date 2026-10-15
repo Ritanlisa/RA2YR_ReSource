@@ -355,8 +355,8 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5, void *a3, void *a4
         - 2;
     *(float *)&v104 = (double)(unsigned __int16)(v17 + v9) * 0.000015259022; /*0x422eab*/
     *(float *)&v103 = (double)(unsigned __int16)(v17 - v9) * 0.000015259022; /*0x422eb9*/
-    ColorStruct::SetRGB(&v110, v100[0], v13, v15); /*0x422ebd*/
-    ColorStruct::SetRGB(&v111, v100[0], v13, v15); /*0x422ecc*/
+    (&v110)->SetRGB(v100[0], v13, v15); /*0x422ebd*/
+    (&v111)->SetRGB(v100[0], v13, v15); /*0x422ecc*/
     *(float *)&v88 = (float)v102; /*0x422ede*/
     v18 = v88; /*0x422ee6*/
     *(float *)v100 = (float)*(int *)v101; /*0x422eef*/

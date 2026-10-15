@@ -689,9 +689,9 @@ void * Object::DrawObject(void ** Block, char a2)
 
 
   Block->ObjectClass = &vt_OverlayClass; /*0x5fdf76*/
-  Block->? = &vt_OverlayClass; /*0x5fdf7c*/
+  /* X11: vtable install elided (qmark slot, RHS vt_OverlayClass) */  /*0x5fdf7c*/
   Block->u32_8 = &vt_OverlayClass; /*0x5fdf83*/
-  Block->? = &vt_OverlayClass; /*0x5fdf8a*/
+  /* X11: vtable install elided (qmark slot, RHS vt_OverlayClass) */  /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
@@ -769,7 +769,7 @@ LABEL_39:
                         + 1) >> 1)
         & 7;
     v13 = (Cell *)(*(int (**)(unsigned int))(**&this->ptr_28 + 444))(*&this->ptr_28); /*0x62ad43*/
-    NeighbourContent = (ObjectPlacement *)Cell::GetNeighbourContent(v13, v12); /*0x62ad50*/
+    NeighbourContent = (ObjectPlacement *)(v13)->GetNeighbourContent(v12); /*0x62ad50*/
     if ( !*(unsigned char *)((*(int (**)(unsigned int))(**&this->q024 + 132))(*&this->q024) /*0x62ad5a*/
                    + 3278) )
     {

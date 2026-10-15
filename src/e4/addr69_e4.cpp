@@ -498,7 +498,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     ((ProgressAnim*)(&dword_AC4F58))->Init(0, 1079574528, 1, 0); /*0x69428f*/
     ((int)&dword_AC4F58)->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
     StringCSF = GetStringCSF((wchar_t *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 355); /*0x6942c2*/
-    TextRenderer::MeasureBuilding((int *)g_UIManager, -1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
+    ((int *)g_UIManager)->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
     LoadScreen::Render((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
     Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 0.0, NAN); /*0x694302*/
@@ -615,7 +615,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   LABEL_54:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6946b4*/
     IPXManagerClass::destroyConnection(&unk_A8E9C0); /*0x6946bb*/
-  FileClass::Write2((RawFileClass *)v43, lpBuffer, nNumberOfBytesToWrite); /*0x6946ce*/
+  ((RawFileClass *)v43)->Write2(lpBuffer, nNumberOfBytesToWrite); /*0x6946ce*/
   operator delete((void *)((void *)lpBuffer)); /*0x6946d8*/
   operator delete((void *)(Block)); /*0x6946e2*/
   Debug::Log(); /*0x6946fa*/
@@ -804,7 +804,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   *(unsigned int *)v58 = 111; /*0x694a1d*/
   strcpy(v59, Source); /*0x694a2b*/
   *(unsigned int *)&v58[158] = Size; /*0x694a42*/
-  Stream::WriteBlock((int *)&unk_A8EA70, (int)v58, 250, 1); /*0x694a4f*/
+  ((int *)&unk_A8EA70)->WriteBlock((int)v58, 250, 1); /*0x694a4f*/
   while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 0 ) /*0x694a60*/
   {
     v16 = 3600; /*0x694a66*/
@@ -895,7 +895,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     ((int)&g_UIManager)->Init(0, 1079574528, 1, 0); /*0x694c75*/
     ((int)&g_UIManager)->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x694c86*/
     StringCSF = GetStringCSF((wchar_t *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 658); /*0x694ca5*/
-    TextRenderer::MeasureBuilding((int *)&g_UIManager, -1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
+    ((int *)&g_UIManager)->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
     Screen::Capture(1, 0, v26, 0); /*0x694cbb*/
     LoadScreen::Render((int)&g_UIManager, v26, 0, NAN); /*0x694ccd*/
     Network::UpdateLatencyDisplay((int)&g_UIManager, 0, 0.0, NAN); /*0x694ce2*/

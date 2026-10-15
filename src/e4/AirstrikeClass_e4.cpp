@@ -249,9 +249,9 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
 
 
   aP1->AbstractClass = &vt_AirstrikeClass; /*0x41dd5d*/
-  aP1->? = &vt_AirstrikeClass; /*0x41dd63*/
-  aP1->? = &vt_AirstrikeClass; /*0x41dd6a*/
-  aP1->? = &vt_AirstrikeClass; /*0x41dd71*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AirstrikeClass) */  /*0x41dd63*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AirstrikeClass) */  /*0x41dd6a*/
+  /* X11: vtable install elided (qmark slot, RHS vt_AirstrikeClass) */  /*0x41dd71*/
   AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AirstrikeClass *)(aP1); /*0x41dd7f*/
   int v3; // eax

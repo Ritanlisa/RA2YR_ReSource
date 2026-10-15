@@ -172,9 +172,9 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   aP1->IsVeinhole = 0; /*0x71daeb*/
   aP1->FoundationData = 0; /*0x71daf1*/
   aP1->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71daf7*/
-  aP1->? = &vt_TerrainTypeClass; /*0x71dafd*/
-  aP1->? = &vt_TerrainTypeClass; /*0x71db03*/
-  aP1->? = &vt_TerrainTypeClass; /*0x71db0a*/
+  /* X11: vtable install elided (qmark slot, RHS vt_TerrainTypeClass) */  /*0x71dafd*/
+  /* X11: vtable install elided (qmark slot, RHS vt_TerrainTypeClass) */  /*0x71db03*/
+  /* X11: vtable install elided (qmark slot, RHS vt_TerrainTypeClass) */  /*0x71db0a*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x71db11*/
   aP1->? = 0; /*0x71db18*/
   aP1->? = 1; /*0x71db1e*/

@@ -710,7 +710,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     v16 = 0; /*0x5bb463*/
     /* X11: vtable install elided (implicit via BufferPipe virtuals 0x5bb467) */
     LZOPipe::Constructor((LZOPipe *)&v19, 0, 0x2000); /*0x5bb46f*/
-    Pipe::SetDelegate(&v19, (int)&v15); /*0x5bb47d*/
+    (&v19)->SetDelegate((int)&v15); /*0x5bb47d*/
     v7 = Compression::Read((int *)v19.vtable1, v5, Buffer); /*0x5bb499*/
     v8 = v19.GetRelatedObject() + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/
@@ -768,7 +768,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT, WPARAM, LPARAM)
     if ( dword_ABF23C ) /*0x5bc712*/
     {
       if ( byte_ABF23A ) /*0x5bc71b*/
-        Text::DrawRepeated((void *)dword_ABF23C, 0, 0, 80, 25); /*0x5bc732*/
+        ((void *)dword_ABF23C)->DrawRepeated(0, 0, 80, 25); /*0x5bc732*/
     }
     EndPaint(hWnd, &Paint); /*0x5bc73d*/
     return 1; /*0x5bc74e*/
@@ -888,7 +888,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT, WPARAM, LPARAM)
         dword_ABF23C = (int)v14; /*0x5bc98d*/
         ((TextBuffer *)(v14))->Init(); /*0x5bc993*/
   LABEL_45:
-        Text::DrawRepeated((void *)dword_ABF23C, 0, 0, 80, 25); /*0x5bc998*/
+        ((void *)dword_ABF23C)->DrawRepeated(0, 0, 80, 25); /*0x5bc998*/
         return 0; /*0x5bc9b3*/
       case 'N': /*0x5bc78d*/
       case 'n': /*0x5bc78d*/

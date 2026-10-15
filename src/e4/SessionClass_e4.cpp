@@ -175,7 +175,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
       {
   void *PlayerSide; // eax
         PlayerSide = (void *)SessionClass::GetPlayerSide(*(unsigned int *)Game_PlayerInfoArray); /*0x552d51*/
-        return PaletteManager::Load(PlayerSide); /*0x552d58*/
+        return (PlayerSide)->Load(); /*0x552d58*/
       }
       else
       {
@@ -236,7 +236,7 @@ MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
   pad_50 = (char *)(this->__pad_050); /*0x5adf96*/
   v7 = ((SessionClass *)pad_50)->LoadMapSelection((char **)&v13.ptr_4) == 0; /*0x5adfab*/
   DeleteAndZero((ObjectClass *)&v13.ptr_4); /*0x5adfae*/
-  if ( v7 || (v8 = CampaignClass::Check((CampaignClass *)pad_50, aP1->u16_35A0)) == 0 ) /*0x5adfea*/
+  if ( v7 || (v8 = ((CampaignClass *)pad_50)->Check(aP1->u16_35A0)) == 0 ) /*0x5adfea*/
   {
     SessionClass::Destruct((SessionClass *)pad_50); /*0x5adfb9*/
     Debug::Log(); /*0x5adfc3*/
@@ -345,7 +345,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     &v43.customSound_controller[2],
     aMapselmdIni);
   (*(void (**)(int *, int))(v43.customSound_controller[2] + 28))(&v43.customSound_controller[2], 1); /*0x5cef78*/
-  if ( !FileStraw::Open((FileStraw *)&v43.nextObject, (int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
+  if ( !((FileStraw *)&v43.nextObject)->Open((int)&v43.customSound_controller[2], 0) ) /*0x5cef85*/
     goto LABEL_17; /*0x5cef85*/
   v4 = 1; /*0x5cef98*/
   while ( 1 ) /*0x5cefa2*/

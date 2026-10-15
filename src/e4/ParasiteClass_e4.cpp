@@ -428,7 +428,7 @@ void ParasiteClass::DeploySquad()
             _ESI[1].vfptr1 = (void *)(3 - (v36 != 0)); /*0x629d69*/
             _ESI[1].vfptr2 = 0; /*0x629d6c*/
             ((BuildingClass *)_ESI)->AnimController(); /*0x629d6f*/
-            FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x629d90*/
+            (*(FootClass **)_ESI->__pad_28)->CreateWakes(v55, v56, v57); /*0x629d90*/
           }
           else
           {

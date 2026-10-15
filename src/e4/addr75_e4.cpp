@@ -771,7 +771,7 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
 {
 
   int Info; // eax
-  Info = VoxelSection::GetInfo(a1, (int)a2, (int)aP2); /*0x754101*/
+  Info = (a1)->GetInfo((int)a2, (int)aP2); /*0x754101*/
   int v18; // [esp+14h] [ebp-8h]
   v18 = 1176256512; /*0x75411b*/
   int v19; // [esp+18h] [ebp-4h]

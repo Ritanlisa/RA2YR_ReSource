@@ -124,9 +124,7 @@ int House::AnnounceUpgrade(int aP1)
     {
       v10 = this->u32_38; /*0x47d333*/
       if ( v10 != 0xFFFF && v10 < *(int *)&DataGlobal_A8EB00[568] ) /*0x47d343*/
-        this->u32_11C = HouseClass::GetCameoTypeIndex( /*0x47d35e*/
-                                   *(HouseClass **)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * v10),
-                                   *(unsigned __int8 *)(&this->u32_11A));
+        this->u32_11C = (/*0x47d35e*/ *(HouseClass **)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * v10))->GetCameoTypeIndex(*(unsigned __int8 *)(&this->u32_11A));
       if ( this->u32_11C && *(unsigned char *)(v8 + 681) ) /*0x47d36e*/
       {
         this->ptr_44 = (gamemd::TypeList *)(-1); /*0x47d378*/
@@ -191,13 +189,13 @@ LABEL_19:
     v19 = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[556] + 4 * v18); /*0x47d5ab*/
     v54 = *(unsigned __int8 *)(&this->u32_11A); /*0x47d5ae*/
     *(unsigned int *)v55 = v19; /*0x47d5b1*/
-    MapFileData = House::LoadMapFileData((House *)v19, v54, 0); /*0x47d5b5*/
+    MapFileData = ((House *)v19)->LoadMapFileData(v54, 0); /*0x47d5b5*/
     if ( this->u32_11C ) /*0x47d5ba*/
     {
       if ( MapFileData ) /*0x47d5c6*/
       {
 LABEL_40:
-        this->u32_11C = HouseClass::GetCameoTypeIndex((HouseClass *)v19, *(unsigned __int8 *)(&this->u32_11A)); /*0x47d7fb*/
+        this->u32_11C = ((HouseClass *)v19)->GetCameoTypeIndex(*(unsigned __int8 *)(&this->u32_11A)); /*0x47d7fb*/
         CellClass::DetermineTileType((CellClass *)this); /*0x47d813*/
         v27 = (int)(this->ptr_44); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
@@ -298,7 +296,7 @@ LABEL_48:
         }
         goto LABEL_82; /*0x47dacf*/
       }
-      MapFileData = House::LoadMapFileData((House *)v19, *(unsigned __int8 *)(&this->u32_11A), 1); /*0x47d5d9*/
+      MapFileData = ((House *)v19)->LoadMapFileData(*(unsigned __int8 *)(&this->u32_11A), 1); /*0x47d5d9*/
     }
     if ( !MapFileData ) /*0x47d5e0*/
     {
@@ -1199,12 +1197,12 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
       v6 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v5; /*0x70c31c*/
   }
   Power::TimerProcess(v6); /*0x70c325*/
-  Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->warpFactor)); /*0x70c333*/
+  ((Checksummer *)aP1)->Add_float(LODWORD(this->warpFactor)); /*0x70c333*/
   int v7; // edx
   LOBYTE(v7) = this->isChronosphereImmune; /*0x70c338*/
   ((Power *)aP1)->FlagProcess(v7); /*0x70c341*/
   Power::TimerProcess(this->lastSightRange); /*0x70c34f*/
-  Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->pitchAngle)); /*0x70c35d*/
+  ((Checksummer *)aP1)->Add_float(LODWORD(this->pitchAngle)); /*0x70c35d*/
   int v8; // edx
   v8 = this->diskLaserTimer[0]; /*0x70c362*/
   int v9; // eax
@@ -1231,10 +1229,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   }
   Power::TimerProcess(v11); /*0x70c3c1*/
   Power::TimerProcess(this->unitValue); /*0x70c3cf*/
-  Checksummer::Add_float((Checksummer *)aP1, (int)this->railgunParticles_2); /*0x70c3dd*/
-  Checksummer::Add_float((Checksummer *)aP1, (int)this->auxParticles1); /*0x70c3eb*/
-  Checksummer::Add_float((Checksummer *)aP1, (int)this->auxParticles2); /*0x70c3f9*/
-  Checksummer::Add_float((Checksummer *)aP1, (int)this->firingParticles); /*0x70c407*/
+  ((Checksummer *)aP1)->Add_float((int)this->railgunParticles_2); /*0x70c3dd*/
+  ((Checksummer *)aP1)->Add_float((int)this->auxParticles1); /*0x70c3eb*/
+  ((Checksummer *)aP1)->Add_float((int)this->auxParticles2); /*0x70c3f9*/
+  ((Checksummer *)aP1)->Add_float((int)this->firingParticles); /*0x70c407*/
   int v12; // edx
   LOBYTE(v12) = this->isSinking; /*0x70c40c*/
   int v13; // eax
@@ -1249,16 +1247,16 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   int v16; // eax
   v16 = ((Power *)aP1)->FlagProcess(v15); /*0x70c43f*/
   LOBYTE(v16) = this->isCloakableFlag; /*0x70c444*/
-  Power::FlagProcess((Power *)aP1, v16); /*0x70c44d*/
+  ((Power *)aP1)->FlagProcess(v16); /*0x70c44d*/
   int v17; // ecx
   LOBYTE(v17) = this->isPrimaryFactory; /*0x70c452*/
-  Power::FlagProcess((Power *)aP1, v17); /*0x70c45b*/
+  ((Power *)aP1)->FlagProcess(v17); /*0x70c45b*/
   int v18; // edx
   LOBYTE(v18) = this->isALoaner; /*0x70c460*/
   int v19; // eax
-  v19 = Power::FlagProcess((Power *)aP1, v18); /*0x70c469*/
+  v19 = ((Power *)aP1)->FlagProcess(v18); /*0x70c469*/
   LOBYTE(v19) = this->isInPlayfield; /*0x70c46e*/
-  Power::FlagProcess((Power *)aP1, v19); /*0x70c477*/
+  ((Power *)aP1)->FlagProcess(v19); /*0x70c477*/
   int v20; // ecx
   LOBYTE(v20) = this->isTether; /*0x70c47c*/
   Power::FlagProcess((Power *)aP1, v20); /*0x70c485*/

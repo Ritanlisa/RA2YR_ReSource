@@ -29,7 +29,7 @@ char AI_CreateMCV(MultiplayerGameMode *self)
     if ( v5 ) /*0x5d7073*/
     {
   int *v6; // eax
-      v6 = (int *)UnitClass::Construct(v5, v4, v3); /*0x5d7079*/
+      v6 = (int *)(v5)->Construct(v4, v3); /*0x5d7079*/
   int *v7; // esi
       v7 = v6; /*0x5d707e*/
       if ( v6 ) /*0x5d7082*/

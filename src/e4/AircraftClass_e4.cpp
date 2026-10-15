@@ -85,8 +85,8 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
       }
     }
 LABEL_9:
-    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 226), v3->Type->ROT); /*0x413fd2*/
-    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 232), v3->Type->ROT); /*0x414001*/
+    ((BuildingTypeClass *)(v3 + 226))->GetPowerOutput(v3->Type->ROT); /*0x413fd2*/
+    ((BuildingTypeClass *)(v3 + 232))->GetPowerOutput(v3->Type->ROT); /*0x414001*/
     Value = (unsigned int *)(ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18)); /*0x41400d*/
     FacingClass::Set_SyncLog(&v3->secondaryFacing, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
@@ -258,12 +258,12 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
   {
     if ( v7 != 7 && v7 ) /*0x417d26*/
       goto LABEL_18; /*0x417d26*/
-    if ( (uint8_t)Object::IsAlliedWithObjectHouse((Object *)aP1->owner, (int)v4) ) /*0x417d33*/
+    if ( (uint8_t)((Object *)aP1->owner)->IsAlliedWithObjectHouse((int)v4) ) /*0x417d33*/
     {
       if ( !v4 /*0x417d56*/
         || ((*((unsigned char *)&(a3_2))) = v4[5] & 1, !(unsigned char)a3_2)
         || (v8 = (Object *)(*(int (**)(int *))(*v4 + 60))(v4),
-            (uint8_t)Object::IsAlliedWithObjectHouse(v8, (int)aP1)) )
+            (uint8_t)(v8)->IsAlliedWithObjectHouse((int)aP1)) )
       {
         if ( !aP1-((unsigned int *)(>passengers))[1] && (*(int (**)(int *))(*v4 + 44))(v4) == 1 ) /*0x417d73*/
         {
@@ -313,7 +313,7 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
           if ( v12 >= v13 ) /*0x417e47*/
             goto LABEL_36; /*0x417e47*/
         }
-        if ( !(uint8_t)Array::ContainsValue((Array *)v4, (int)aP1) /*0x417e76*/
+        if ( !(uint8_t)((Array *)v4)->ContainsValue((int)aP1) /*0x417e76*/
           || v4[70]
           || (v7 = 3, (*((int (**)(AircraftClass *, int, int *))aP1->vfptr + 158))(aP1, 15, v4) != 1) )
         {

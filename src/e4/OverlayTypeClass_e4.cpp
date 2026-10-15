@@ -279,9 +279,9 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x5feb1c*/
       a1->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5feb21*/
-      a1->? = &vt_OverlayTypeClass; /*0x5feb27*/
-      a1->? = &vt_OverlayTypeClass; /*0x5feb2e*/
-      a1->? = &vt_OverlayTypeClass; /*0x5feb35*/
+      /* X11: vtable install elided (qmark slot, RHS vt_OverlayTypeClass) */  /*0x5feb27*/
+      /* X11: vtable install elided (qmark slot, RHS vt_OverlayTypeClass) */  /*0x5feb2e*/
+      /* X11: vtable install elided (qmark slot, RHS vt_OverlayTypeClass) */  /*0x5feb35*/
     }
     ((char *)a1)->LoadAnim(); /*0x5feb3e*/
     ((char *)a1)->Load2DArt(); /*0x5feb45*/
@@ -468,7 +468,7 @@ bool OverlayTypeClass::GetType(int16_t *aP2, int a3)
 
   Object *v4; // eax
   v4 = (Object *)operator new(0xB0u); /*0x5fe538*/
-  return v4 && Object::SpawnAtCell(v4, (int)this, aP2, -1); /*0x5fe559*/
+  return v4 && (v4)->SpawnAtCell((int)this, aP2, -1); /*0x5fe559*/
 }
 }  // G42.18c ns repair
 // 0x5FE570
@@ -479,7 +479,7 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
   Object *v3; // eax
   v3 = (Object *)operator new(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
-    return Object::SpawnAtCell(v3, (int)this, &word_AC1608, -1); /*0x5fe58e*/
+    return (v3)->SpawnAtCell((int)this, &word_AC1608, -1); /*0x5fe58e*/
   else
     return 0; /*0x5fe597*/
 }

@@ -65,7 +65,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     }
   int v5; // eax
   HWND hWnd; // [esp+10h] [ebp-D8h] BYREF
-    v5 = Color::ConvertToRGB(BuildingAnimByName + 194, (int)&hWnd); /*0x6583dd*/
+    v5 = (BuildingAnimByName + 194)->ConvertToRGB((int)&hWnd); /*0x6583dd*/
   int16_t v25; // [esp+14h] [ebp-D4h]
     v25 = *(unsigned short *)v5; /*0x6583e6*/
   uint8_t v26; // [esp+16h] [ebp-D2h]

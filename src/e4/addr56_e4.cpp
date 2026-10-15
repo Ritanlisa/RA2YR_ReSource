@@ -488,7 +488,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   char *v3; // edi
   v3 = 0; /*0x56af47*/
   LCWPipe::Constructor((LCWPipe *)&v17, 0, 0x2000); /*0x56af57*/
-  Pipe::SetDelegate(&v17, a2); /*0x56af65*/
+  (&v17)->SetDelegate(a2); /*0x56af65*/
   int v4; // eax
   v4 = 0; /*0x56af70*/
   int v18; // [esp+40h] [ebp+4h]
@@ -566,7 +566,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   ObjectClass *v2; // esi
   v2 = (gamemd::ObjectClass *)(this); /*0x56b255*/
   LZOPipe::Constructor((LZOPipe *)&v17, 0, 0x2000); /*0x56b266*/
-  Pipe::SetDelegate(&v17, a2); /*0x56b274*/
+  (&v17)->SetDelegate(a2); /*0x56b274*/
   int v3; // edi
   v3 = 0; /*0x56b27f*/
   int v4; // eax

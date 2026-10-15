@@ -319,7 +319,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
       v20 = (((unsigned char *)&(a7))[2]); /*0x70518f*/
       v19 = (int16_t)(a7); /*0x705195*/
       if ( (((unsigned short)v16 - (unsigned short)v28) & 0x1F8u) <= 0xF8 && (((unsigned short)v16 - (unsigned short)v28) & 0x1F8) != 0 ) /*0x7051aa*/
-        Color::Lerp((uint8_t *)&v19, (v16 - v28) & 0xF8, (uint8_t *)&v26); /*0x7051b6*/
+        ((uint8_t *)&v19)->Lerp((v16 - v28) & 0xF8, (uint8_t *)&v26); /*0x7051b6*/
       (*(void (**)(int, int *, int *, int))(*(unsigned int *)DSurface_Composite + 48))( /*0x705226*/
         DSurface_Composite,
         &v24,

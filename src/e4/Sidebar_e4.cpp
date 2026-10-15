@@ -220,7 +220,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
         }
         else
         {
-          Status = HouseClass::GetStatus(a1, 0); /*0x4fa602*/
+          Status = (a1)->GetStatus(0); /*0x4fa602*/
           ((Sidebar *)((int *)&DataGlobal_87F7E8))->ActivateTab(Status); /*0x4fa60d*/
           return 0; /*0x4fa615*/
         }
@@ -376,7 +376,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
     v4 = (Array *)*((unsigned int *)Block->u32_8 + i); /*0x63632c*/
-    Value = Array::FindValue(v4, *(unsigned int *)Block->tail_0); /*0x636334*/
+    Value = (v4)->FindValue(*(unsigned int *)Block->tail_0); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
     else

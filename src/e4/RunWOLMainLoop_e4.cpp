@@ -61,7 +61,7 @@ Coord * * sub_77E110()
     if ( v2 == v1 ) /*0x77e1a0*/
     {
   LABEL_5:
-      Theme::Stop((Theme *)&unk_A83D10, 0); /*0x77e16a*/
+      ((Theme *)&unk_A83D10)->Stop(0); /*0x77e16a*/
       (*((unsigned char *)&(v1))) = Theme::QueueSong((int)&unk_A83D10, -2); /*0x77e176*/
     }
   }

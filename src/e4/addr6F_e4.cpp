@@ -445,7 +445,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
       goto LABEL_33; /*0x6f8a25*/
     }
     v15 = v14; /*0x6f8a34*/
-    if ( TechnoClass::GetValue(a1, -1) >= 0 ) /*0x6f8a3d*/
+    if ( (a1)->GetValue(-1) >= 0 ) /*0x6f8a3d*/
       break; /*0x6f8a3d*/
     BuildingClass::GetHealthRatio((BuildingClass *)v14); /*0x6f8a41*/
     _ECX = *(unsigned int *)&g_RulesClass_Instance; /*0x6f8a46*/
@@ -464,7 +464,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   if ( ((uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v14) || v25) /*0x6f8ac7*/
     && !*(unsigned char *)((*((int (**)(TechnoClass *))a1->vfptr + 33))(a1) + 1728)
     && !a1->isBerserk
-    && (!v25 || !owner || !(uint8_t)Object::IsAlliedWithObjectHouse(owner, v14)) )
+    && (!v25 || !owner || !(uint8_t)(owner)->IsAlliedWithObjectHouse(v14)) )
   {
     if ( (*((int (**)(TechnoClass *))a1->vfptr + 11))(a1) != 15 ) /*0x6f8ada*/
       goto LABEL_33; /*0x6f8ada*/
@@ -497,7 +497,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   v23 = 0; /*0x6f8b5b*/
   *a8 = (void *)(v15); /*0x6f8b5d*/
   if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v15)
-    || TechnoClass::GetValue(a1, -1) < 0
+    || (a1)->GetValue(-1) < 0
     || !(uint8_t)((House *)((House *)a1->owner))->IsCurrentPlayer()
     && a1
     && (*((int (**)(TechnoClass *))a1->vfptr + 11))(a1) == 15

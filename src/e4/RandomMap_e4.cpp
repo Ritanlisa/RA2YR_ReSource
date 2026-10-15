@@ -633,7 +633,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
       for ( i = 0; i < 8; ++i )
       {
   int v19; // [esp+18h] [ebp-4h]
-        v19 = *((unsigned int *)Cell::GetNeighbourContent((Cell *)v4, i) + 9); /*0x58d4c8*/
+        v19 = *((unsigned int *)((Cell *)v4)->GetNeighbourContent(i) + 9); /*0x58d4c8*/
   int v8; // edx
         v8 = SHIWORD(v19) + (__int16)v19; /*0x58d4d4*/
         if ( v8 > g_MissionQueueFrame.localVariables[160] )

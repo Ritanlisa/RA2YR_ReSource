@@ -678,7 +678,7 @@ int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, voi
     Text::Layout(a4, a2, (int *)&a4, &a3, v12); /*0x6210da*/
     yTop += (v14 - (int)a3) / 2; /*0x6210f2*/
   }
-  Char::Swap(v15, 1); /*0x6210fa*/
+  (v15)->Swap(1); /*0x6210fa*/
   ((TextGroup *)((TextGroup *)v15))->SetRect((unsigned int *)(v10)); /*0x621102*/
   ((Property *)((Property *)v15))->Set(v17); /*0x62110e*/
   Font::Print((gamemd::AbstractClass *)((int)v15), a1, a2, v18, yTop, v12, v14, a6, a9, a10); /*0x62113f*/
@@ -797,7 +797,7 @@ int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, 
   v22[1] = v17; /*0x621336*/
   v22[2] = v20 + v16; /*0x621342*/
   v22[3] = v21 + v17; /*0x621346*/
-  Char::Swap((Char *)v9, 1); /*0x62134a*/
+  ((Char *)v9)->Swap(1); /*0x62134a*/
   ((TextGroup *)((TextGroup *)v9))->SetRect(v22); /*0x621356*/
   ((Property *)((Property *)v9))->Set(v13); /*0x62135e*/
   return FontRenderer::DrawText(v9, a7, a3, v12, yTopa, a5, a9) - v12; /*0x6211e4*/

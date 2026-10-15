@@ -135,9 +135,9 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   a1->SpawnManagerClass_field_5C = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b6ee0*/
   a1->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
   a1->AbstractClass = &vt_SpawnManagerClass; /*0x6b6ee6*/
-  a1->? = &vt_SpawnManagerClass; /*0x6b6eec*/
-  a1->? = &vt_SpawnManagerClass; /*0x6b6ef3*/
-  a1->? = &vt_SpawnManagerClass; /*0x6b6efa*/
+  /* X11: vtable install elided (qmark slot, RHS vt_SpawnManagerClass) */  /*0x6b6eec*/
+  /* X11: vtable install elided (qmark slot, RHS vt_SpawnManagerClass) */  /*0x6b6ef3*/
+  /* X11: vtable install elided (qmark slot, RHS vt_SpawnManagerClass) */  /*0x6b6efa*/
   a1->owner = 0; /*0x6b6f01*/
   a1->spawnOwner = 0; /*0x6b6f04*/
   a1->spawnType = 0; /*0x6b6f07*/
