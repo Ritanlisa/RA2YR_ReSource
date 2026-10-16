@@ -37,7 +37,7 @@
 namespace gamemd { void nullsub_41(); }  // w18j2 raw 0x006D8630
 namespace gamemd { void nullsub_42(); }  // w18j2 raw 0x006DA350
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aShadowShp[];  // data: 0x820074 truth(IDA G42.57w9)
+extern char aShadowShp[11];  // data: 0x820074 truth(IDA G42.57w9)
 
 
 // 0x487630

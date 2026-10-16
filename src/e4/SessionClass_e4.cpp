@@ -58,11 +58,11 @@ namespace gamemd {
     int Network_Load(char p0);  // x4:signals@0x5cf830
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aMissionsmdPkt[];  // data: 0x83f520 truth(IDA G42.57w9)
-extern char aNoFileName[];  // data: 0x83f658 truth(IDA G42.57w9)
-extern char aPkt[];  // data: 0x83f50c truth(IDA G42.57w9)
-extern char aYrm_0[];  // data: 0x83f490 truth(IDA G42.57w9)
-extern char aYro[];  // data: 0x83f504 truth(IDA G42.57w9)
+extern char aMissionsmdPkt[15];  // data: 0x83f520 truth(IDA G42.57w9)
+extern char aNoFileName[13];  // data: 0x83f658 truth(IDA G42.57w9)
+extern char aPkt[6];  // data: 0x83f50c truth(IDA G42.57w9)
+extern char aYrm_0[6];  // data: 0x83f490 truth(IDA G42.57w9)
+extern char aYro[6];  // data: 0x83f504 truth(IDA G42.57w9)
 extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
 extern unsigned int aMissionsYro;  // data: 0x83f4f4 truth(IDA G42.57w9)
 extern unsigned int aRecordBin;  // data: 0x83eeac truth(IDA G42.57w9)

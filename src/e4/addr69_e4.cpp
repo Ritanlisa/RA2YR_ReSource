@@ -102,8 +102,8 @@ namespace gamemd {
     int DlgProcLoadGame_Load(ObjectClass *p_this);  // x4:ida@0x6967b0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aBasic_0[];  // data: 0x83f488 truth(IDA G42.57w9)
-extern char aDigest_0[];  // data: 0x83f440 truth(IDA G42.57w9)
+extern char aBasic_0[8];  // data: 0x83f488 truth(IDA G42.57w9)
+extern char aDigest_0[9];  // data: 0x83f440 truth(IDA G42.57w9)
 extern unsigned char aMaxplayers;  // data: 0x83f3f0 truth(IDA G42.57w9)
 extern unsigned char aMinplayers;  // data: 0x83f3fc truth(IDA G42.57w9)
 
@@ -497,7 +497,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   {
     ((ProgressAnim*)(&dword_AC4F58))->Init(0, 1079574528, 1, 0); /*0x69428f*/
     ((int)&dword_AC4F58)->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
-    StringCSF = GetStringCSF((wchar_t *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 355); /*0x6942c2*/
+    StringCSF = GetStringCSF((char *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 355); /*0x6942c2*/
     ((int *)g_UIManager)->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
     LoadScreen::Render((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
@@ -894,7 +894,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   {
     ((int)&g_UIManager)->Init(0, 1079574528, 1, 0); /*0x694c75*/
     ((int)&g_UIManager)->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x694c86*/
-    StringCSF = GetStringCSF((wchar_t *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 658); /*0x694ca5*/
+    StringCSF = GetStringCSF((char *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 658); /*0x694ca5*/
     ((int *)&g_UIManager)->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
     Screen::Capture(1, 0, v26, 0); /*0x694cbb*/
     LoadScreen::Render((int)&g_UIManager, v26, 0, NAN); /*0x694ccd*/

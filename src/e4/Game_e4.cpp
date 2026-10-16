@@ -777,7 +777,7 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
   }
   if ( dword_A8B54C != 2 ) /*0x5b71f3*/
     return 0; /*0x5b71f7*/
-  StringCSF = GetStringCSF((wchar_t *)&aTxtSendingGoAc, 0, (const char *)&aTxtSendingGoAc, 1779); /*0x5b7211*/
+  StringCSF = GetStringCSF((char *)&aTxtSendingGoAc, 0, (const char *)&aTxtSendingGoAc, 1779); /*0x5b7211*/
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5b721a*/
   v13 = MessageBox; /*0x5b721f*/
   if ( MessageBox ) /*0x5b7223*/

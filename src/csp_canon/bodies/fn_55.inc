@@ -553,7 +553,7 @@ char LoadOptions::Read(wchar_t * Destination, int a2)
 wchar_t * LoadOptions::Write()
 {
 
-  return GetStringCSF((wchar_t *)(aGuiLoadmission), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1216); /*0x55a066*/
+  return GetStringCSF((char *)(aGuiLoadmission), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1216); /*0x55a066*/
 
 }
 
@@ -561,7 +561,7 @@ wchar_t * LoadOptions::Write()
 wchar_t * LoadOptions::Seek(void *a1, void *a2, void *a3)
 {
 
-  return GetStringCSF((wchar_t *)(aGuiSavemission), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1222); /*0x55a086*/
+  return GetStringCSF((char *)(aGuiSavemission), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1222); /*0x55a086*/
 
 }
 
@@ -569,7 +569,7 @@ wchar_t * LoadOptions::Seek(void *a1, void *a2, void *a3)
 wchar_t * LoadOptions::Open(void *a1, void *a2, void *a3)
 {
 
-  return GetStringCSF((wchar_t *)(aGuiDeletemissi), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1228); /*0x55a0a6*/
+  return GetStringCSF((char *)(aGuiDeletemissi), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1228); /*0x55a0a6*/
 
 }
 
@@ -577,7 +577,7 @@ wchar_t * LoadOptions::Open(void *a1, void *a2, void *a3)
 wchar_t * LoadOptions::Close(void *a1, void *a2)
 {
 
-  return GetStringCSF((wchar_t *)(aTxtGameWasSave), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1234); /*0x55a0c6*/
+  return GetStringCSF((char *)(aTxtGameWasSave), 0,(const char *)(g_Str_File_LoadDlg_CPP), 1234); /*0x55a0c6*/
 
 }
 

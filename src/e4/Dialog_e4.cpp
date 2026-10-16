@@ -62,13 +62,13 @@ namespace gamemd {
     int ValidateDialogEvent(int a1, HWND a2);  // x4:ida@0x600ca0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aButton[];  // data: 0x835814 truth(IDA G42.57w9)
-extern char aMsctlsHotkey32[];  // data: 0x835804 truth(IDA G42.57w9)
-extern char aMsctlsProgress[];  // data: 0x835834 truth(IDA G42.57w9)
-extern char aMsctlsTrackbar[];  // data: 0x835848 truth(IDA G42.57w9)
-extern char aScrollbar[];  // data: 0x83585c truth(IDA G42.57w9)
-extern char aStatic[];  // data: 0x83582c truth(IDA G42.57w9)
-extern char aSystabcontrol3[];  // data: 0x83581c truth(IDA G42.57w9)
+extern char aButton[7];  // data: 0x835814 truth(IDA G42.57w9)
+extern char aMsctlsHotkey32[16];  // data: 0x835804 truth(IDA G42.57w9)
+extern char aMsctlsProgress[18];  // data: 0x835834 truth(IDA G42.57w9)
+extern char aMsctlsTrackbar[18];  // data: 0x835848 truth(IDA G42.57w9)
+extern char aScrollbar[10];  // data: 0x83585c truth(IDA G42.57w9)
+extern char aStatic[7];  // data: 0x83582c truth(IDA G42.57w9)
+extern char aSystabcontrol3[16];  // data: 0x83581c truth(IDA G42.57w9)
 
 
 // 0x49F740
@@ -331,7 +331,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   v6 = 3; /*0x5f2963*/
   Debug::Log(); /*0x5f2968*/
   if ( a4 == 1 ) /*0x5f2979*/
-    StringCSF = GetStringCSF((wchar_t *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/
+    StringCSF = GetStringCSF((char *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/
   else
     StringCSF = GetStringCSF(aTxtDialing, 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
   v8 = (LPARAM)StringCSF; /*0x5f29ba*/

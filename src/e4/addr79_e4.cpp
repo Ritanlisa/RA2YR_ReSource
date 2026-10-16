@@ -282,14 +282,14 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
             ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x79355c*/
             Debug::Log(); /*0x793567*/
             v11 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x793579*/
-            StringCSF = GetStringCSF((wchar_t *)aTxtTalkReporte, 0, g_Str_File_wonline_cpp, 18840); /*0x793589*/
+            StringCSF = GetStringCSF((char *)aTxtTalkReporte, 0, g_Str_File_wonline_cpp, 18840); /*0x793589*/
             goto LABEL_19; /*0x793589*/
           case 1: /*0x79354a*/
             v6 = 1; /*0x793591*/
             ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x793596*/
             Debug::Log(); /*0x7935a1*/
             v11 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x7935b3*/
-            StringCSF = GetStringCSF((wchar_t *)(aTxtTalkLocalPr), 0, g_Str_File_wonline_cpp, 18850); /*0x7935c3*/
+            StringCSF = GetStringCSF((char *)(aTxtTalkLocalPr), 0, g_Str_File_wonline_cpp, 18850); /*0x7935c3*/
   LABEL_19:
             swprintf(Buffer, (const size_t)StringCSF, v11); /*0x7935c8*/
             Dialog::ShowMessage(-1, (size_t)Buffer); /*0x7935df*/
@@ -299,7 +299,7 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
             if ( v7 == v3 ) /*0x7935f0*/
             {
               Debug::Log(); /*0x7935f7*/
-              v12 = GetStringCSF((wchar_t *)(aTxtTalkForward), 0, g_Str_File_wonline_cpp, 18861); /*0x79361b*/
+              v12 = GetStringCSF((char *)(aTxtTalkForward), 0, g_Str_File_wonline_cpp, 18861); /*0x79361b*/
               Dialog::ShowMessage(-1, (size_t)v12); /*0x79361d*/
             }
             else
@@ -307,7 +307,7 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
               ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x79362a*/
               Debug::Log(); /*0x793635*/
               v13 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x79364b*/
-              v9 = GetStringCSF((wchar_t *)(aTxtTalkForward_0), 0, g_Str_File_wonline_cpp, 18864); /*0x793658*/
+              v9 = GetStringCSF((char *)(aTxtTalkForward_0), 0, g_Str_File_wonline_cpp, 18864); /*0x793658*/
               swprintf(Buffer, (const size_t)v9, v13); /*0x793663*/
               Dialog::ShowMessage(-1, (size_t)Buffer); /*0x793674*/
             }
@@ -315,7 +315,7 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
           case 3: /*0x79354a*/
             v6 = 1; /*0x793683*/
             Debug::Log(); /*0x793685*/
-            v14 = GetStringCSF((wchar_t *)(aTxtTalkHostAbo), 0, g_Str_File_wonline_cpp, 18875); /*0x7936a3*/
+            v14 = GetStringCSF((char *)(aTxtTalkHostAbo), 0, g_Str_File_wonline_cpp, 18875); /*0x7936a3*/
             Dialog::ShowMessage(-1, (size_t)v14); /*0x7936aa*/
             break; /*0x7936aa*/
           default:
@@ -3289,7 +3289,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
         DlgItem = GetDlgItem(v6, 1576); /*0x79991c*/
         ((ListBox *)(DlgItem))->Clear(); /*0x799920*/
         SendMessageA( (HWND)(DlgItem), 0x141u, 9u, 0); /*0x799935*/
-        String = (unsigned int)GetStringCSF( (wchar_t *)(aGuiDefault), 0, (const char *)(g_Str_File_wonline_cpp), 25247); /*0x799948*/
+        String = (unsigned int)GetStringCSF( (char *)(aGuiDefault), 0, (const char *)(g_Str_File_wonline_cpp), 25247); /*0x799948*/
         ((WideString *)((wchar_t **)&v56))->Assign( (wchar_t *)(String)); /*0x799952*/
         v37 = WideString::GetOrEmpty_Alt(  (wchar_t **)&v56); /*0x79995b*/
         v38 = SendMessageA( (HWND)(DlgItem), 0x4C2u, 0, (LPARAM)((LPARAM)((LPARAM)v37))); /*0x79996b*/
@@ -4268,7 +4268,7 @@ void ValidateGameJoinWOL(BlowStraw * aP0, ObjectClass * aP1, char a3)
     {
       if ( aP1 ) /*0x79bbec*/
       {
-        v10 = GetStringCSF((wchar_t *)aWolGamefull, 0, g_Str_File_wonline_cpp, 26780); /*0x79bbff*/
+        v10 = GetStringCSF((char *)aWolGamefull, 0, g_Str_File_wonline_cpp, 26780); /*0x79bbff*/
   LABEL_34:
         Dialog::ShowMessage(-1, (size_t)v10); /*0x79bc59*/
         goto LABEL_35; /*0x79bc5c*/
@@ -6428,7 +6428,7 @@ Coord * * WOL_JoinLobby()
               g_WOL_GameProcessState = -1; /*0x7a011b*/
               g_WOL_GameListPool = time(0); /*0x7a012d*/
               v33 = 0; /*0x7a0139*/
-              v17 = GetStringCSF((wchar_t *)aWolChanneljoin, 0, g_Str_File_wonline_cpp, 28098); /*0x7a0149*/
+              v17 = GetStringCSF((char *)aWolChanneljoin, 0, g_Str_File_wonline_cpp, 28098); /*0x7a0149*/
   LABEL_70:
               ShowDialogConfirm(v17, 0, (uint8_t (*)(void))GameLoop::Thunk, (char)v33); /*0x7a0279*/
   LABEL_71:

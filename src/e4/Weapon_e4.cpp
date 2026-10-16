@@ -34,7 +34,7 @@ int sub_53AE00()
 {
 
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)(unk_82809C), 0, g_Str_File_Ion_cpp, 1123); /*0x53ae11*/
+  StringCSF = GetStringCSF((char *)(unk_82809C), 0, g_Str_File_Ion_cpp, 1123); /*0x53ae11*/
   int v1; // ecx
   v1 = 3; /*0x53ae1c*/
   if ( dword_A83D4C ) /*0x53ae23*/
@@ -510,7 +510,7 @@ int sub_53B410()
 {
 
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)(aMsgDominatorac), 0, g_Str_File_Ion_cpp, 1339); /*0x53b421*/
+  StringCSF = GetStringCSF((char *)(aMsgDominatorac), 0, g_Str_File_Ion_cpp, 1339); /*0x53b421*/
   int v1; // ecx
   v1 = 3; /*0x53b42c*/
   if ( dword_A83D4C ) /*0x53b433*/

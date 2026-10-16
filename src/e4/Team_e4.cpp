@@ -555,7 +555,7 @@ void sub_63A1B0(int a1)
   {
     if ( a1 == 3 ) /*0x63a1c0*/
     {
-      StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_7), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a1d3*/
+      StringCSF = GetStringCSF((char *)(aMsgPlanningmod_7), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a1d3*/
     }
     else
     {
@@ -565,7 +565,7 @@ void sub_63A1B0(int a1)
         ++((unsigned int *)(dword_AC4BF4))[a1]; /*0x63a1fc*/
         return; /*0x63a1fc*/
       }
-      StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_8), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a1eb*/
+      StringCSF = GetStringCSF((char *)(aMsgPlanningmod_8), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a1eb*/
     }
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a1f7*/
     goto LABEL_7; /*0x63a1f7*/
@@ -585,7 +585,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   State = ((unsigned int *)(v13[19] + 8))->GetState(); /*0x76ed3f*/
   ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0, g_Str_File_WDTSel_cpp, 1230); /*0x76ed62*/
+  StringCSF = GetStringCSF((char *)(g_Str_WDT_TerritorySelectToolTip), 0, g_Str_File_WDTSel_cpp, 1230); /*0x76ed62*/
   void **v9; // [esp+4h] [ebp-4C0h] BYREF
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
   ((ScoreText *)(v13))->Show((const wchar_t **)&v9); /*0x76ed7a*/

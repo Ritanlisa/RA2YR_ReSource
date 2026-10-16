@@ -167,7 +167,7 @@ void Gap2Recv_6319C0::Network_Set() {
     }
     else
     {
-      StringCSF = GetStringCSF((wchar_t *)&(unsigned int *)((char *)&stru_83665C + 3), 0, (const char *)&(unsigned int *)((char *)&stru_83665C + 6), 757); /*0x631a26*/
+      StringCSF = GetStringCSF((char *)&(unsigned int *)((char *)&stru_83665C + 3), 0, (const char *)&(unsigned int *)((char *)&stru_83665C + 6), 757); /*0x631a26*/
       wcscpy((wchar_t *)((unsigned int *)this)[0] + 56, StringCSF); /*0x631a33*/
     }
   }

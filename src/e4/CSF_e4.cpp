@@ -12,6 +12,6 @@
 namespace gamemd {  // G42.18 ns repair
 wchar_t * CSF::GetTeamString()
 {
-  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0, g_Str_File_Init_CPP, 6363); /*0x536226*/
+  return GetStringCSF((char *)(g_Str_TXT_TEAM), 0, g_Str_File_Init_CPP, 6363); /*0x536226*/
 }  // G42.18 ns repair
 } // namespace gamemd

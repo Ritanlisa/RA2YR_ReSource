@@ -50,9 +50,9 @@ namespace gamemd {
     int LeaveChannelWOL(const char *p_this);  // x4:ida@0x785740
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern wchar_t aTxtPagefailed[];  // data: 0x84b034 truth(IDA G42.57w9)
-extern wchar_t aTxtWolConnlost[];  // data: 0x84b190 truth(IDA G42.57w9)
-extern wchar_t aTxtYoureDiscon[];  // data: 0x84b15c truth(IDA G42.57w9)
+extern char aTxtPagefailed[15];  // data: 0x84b034 truth(IDA G42.57w9)
+extern char aTxtWolConnlost[17];  // data: 0x84b190 truth(IDA G42.57w9)
+extern char aTxtYoureDiscon[17];  // data: 0x84b15c truth(IDA G42.57w9)
 
 
 // 0x7937B0
@@ -351,23 +351,23 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a3, i
   {
     if ( a2 == -2147221387 ) /*0x7a52b2*/
     {
-      StringCSF = GetStringCSF((wchar_t *)aTxtBanned, 0, g_Str_File_wonline_cpp, 5758); /*0x7a5383*/
+      StringCSF = GetStringCSF((char *)aTxtBanned, 0, g_Str_File_wonline_cpp, 5758); /*0x7a5383*/
     }
     else
     {
       switch ( a2 ) /*0x7a52ce*/
       {
         case -2147221404: /*0x7a52ce*/
-          StringCSF = GetStringCSF((wchar_t *)(aTxtLoginUsed), 0, g_Str_File_wonline_cpp, 5737); /*0x7a52e6*/
+          StringCSF = GetStringCSF((char *)(aTxtLoginUsed), 0, g_Str_File_wonline_cpp, 5737); /*0x7a52e6*/
           break; /*0x7a52e6*/
         case -2147221403: /*0x7a52ce*/
-          StringCSF = GetStringCSF((wchar_t *)(g_Str_TXT_BADPASS), 0, g_Str_File_wonline_cpp, 5742); /*0x7a531f*/
+          StringCSF = GetStringCSF((char *)(g_Str_TXT_BADPASS), 0, g_Str_File_wonline_cpp, 5742); /*0x7a531f*/
           break; /*0x7a532a*/
         case -2147221390: /*0x7a52ce*/
-          StringCSF = GetStringCSF((wchar_t *)aTxtBanned, 0, g_Str_File_wonline_cpp, 5747); /*0x7a5357*/
+          StringCSF = GetStringCSF((char *)aTxtBanned, 0, g_Str_File_wonline_cpp, 5747); /*0x7a5357*/
           break; /*0x7a5357*/
         case -2147221388: /*0x7a52ce*/
-          StringCSF = GetStringCSF((wchar_t *)aTxtDisabled, 0, g_Str_File_wonline_cpp, 5753); /*0x7a536d*/
+          StringCSF = GetStringCSF((char *)aTxtDisabled, 0, g_Str_File_wonline_cpp, 5753); /*0x7a536d*/
           break; /*0x7a536d*/
         default:
           goto LABEL_19;
@@ -379,21 +379,21 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a3, i
   {
     if ( a2 == -2147221384 ) /*0x7a538c*/
     {
-      v4 = GetStringCSF((wchar_t *)(aTxtSkuserialmi), 0, g_Str_File_wonline_cpp, 5773); /*0x7a53d6*/
+      v4 = GetStringCSF((char *)(aTxtSkuserialmi), 0, g_Str_File_wonline_cpp, 5773); /*0x7a53d6*/
       wcscpy((wchar_t *)(&word_B77AD0), v4); /*0x7a53e1*/
       SetEvent((void *)(Handles)); /*0x7a53ef*/
       return 0; /*0x7a53fa*/
     }
     if ( a2 == -2147221386 ) /*0x7a5393*/
-      StringCSF = GetStringCSF((wchar_t *)aTxtSerialdup, 0, g_Str_File_wonline_cpp, 5763); /*0x7a53c0*/
+      StringCSF = GetStringCSF((char *)aTxtSerialdup, 0, g_Str_File_wonline_cpp, 5763); /*0x7a53c0*/
     else
-      StringCSF = GetStringCSF((wchar_t *)aTxtSerialunkno, 0, g_Str_File_wonline_cpp, 5768); /*0x7a53ad*/
+      StringCSF = GetStringCSF((char *)aTxtSerialunkno, 0, g_Str_File_wonline_cpp, 5768); /*0x7a53ad*/
     goto LABEL_20; /*0x7a53ad*/
   }
   if ( a2 ) /*0x7a53ff*/
   {
   LABEL_19:
-    StringCSF = GetStringCSF((wchar_t *)(g_Str_TXT_CANT_CONNECT), 0, g_Str_File_wonline_cpp, 5779); /*0x7a5401*/
+    StringCSF = GetStringCSF((char *)(g_Str_TXT_CANT_CONNECT), 0, g_Str_File_wonline_cpp, 5779); /*0x7a5401*/
   LABEL_20:
     wcscpy((wchar_t *)(&word_B77AD0), StringCSF); /*0x7a5417*/
     SetEvent((void *)(Handles)); /*0x7a542c*/
@@ -460,7 +460,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
   char *v14; // [esp-10h] [ebp-60h]
       v14 = CharToWideString(a3 + 52); /*0x7a573a*/
   wchar_t *StringCSF; // eax
-      StringCSF = GetStringCSF((wchar_t *)(aTxtCreatedChan), 0, g_Str_File_wonline_cpp, 5835); /*0x7a574c*/
+      StringCSF = GetStringCSF((char *)(aTxtCreatedChan), 0, g_Str_File_wonline_cpp, 5835); /*0x7a574c*/
       Dialog::ShowMessage(-1, (size_t)StringCSF, v14); /*0x7a5759*/
     }
     memcpy(&stru_B76AC4.ambientSoundController[4], a3, 0x10Cu); /*0x7a57d8*/
@@ -493,7 +493,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
   else
   {
   wchar_t *v3; // eax
-    v3 = GetStringCSF((wchar_t *)(aTxtChancreateF), 0, g_Str_File_wonline_cpp, 5825); /*0x7a56b0*/
+    v3 = GetStringCSF((char *)(aTxtChancreateF), 0, g_Str_File_wonline_cpp, 5825); /*0x7a56b0*/
     Dialog::ShowMessage(-1, (size_t)v3); /*0x7a56bc*/
     dword_B77E4C = 0; /*0x7a56c9*/
     stru_B76AC4.needsRedraw = 0; /*0x7a56d3*/

@@ -29,7 +29,7 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   int v1; // esi
   v1 = (*(int (**)(MouseClass *))(dword_887640->HandleClick_ph + 40))(dword_887640); /*0x559d81*/
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)(aTxtLoading), 0, g_Str_File_LoadDlg_CPP, 1052); /*0x559d83*/
+  StringCSF = GetStringCSF((char *)(aTxtLoading), 0, g_Str_File_LoadDlg_CPP, 1052); /*0x559d83*/
   Dialog *MessageBox; // edi
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x559d9b*/
@@ -162,7 +162,7 @@ char LoadOptions::Read(wchar_t * Destination, int a2, void *a3)
 namespace gamemd {
 wchar_t * LoadOptions::Write(void *a1)
 {
-  return GetStringCSF((wchar_t *)(aGuiLoadmission), 0, g_Str_File_LoadDlg_CPP, 1216); /*0x55a066*/
+  return GetStringCSF((char *)(aGuiLoadmission), 0, g_Str_File_LoadDlg_CPP, 1216); /*0x55a066*/
 }
 } // namespace gamemd
 
@@ -170,7 +170,7 @@ wchar_t * LoadOptions::Write(void *a1)
 namespace gamemd {
 wchar_t * LoadOptions::Seek(void *a1, void *a2, void *a3)
 {
-  return GetStringCSF((wchar_t *)(aGuiSavemission), 0, g_Str_File_LoadDlg_CPP, 1222); /*0x55a086*/
+  return GetStringCSF((char *)(aGuiSavemission), 0, g_Str_File_LoadDlg_CPP, 1222); /*0x55a086*/
 }
 } // namespace gamemd
 
@@ -178,7 +178,7 @@ wchar_t * LoadOptions::Seek(void *a1, void *a2, void *a3)
 namespace gamemd {
 wchar_t * LoadOptions::Open(void *a1, void *a2, void *a3)
 {
-  return GetStringCSF((wchar_t *)(aGuiDeletemissi), 0, g_Str_File_LoadDlg_CPP, 1228); /*0x55a0a6*/
+  return GetStringCSF((char *)(aGuiDeletemissi), 0, g_Str_File_LoadDlg_CPP, 1228); /*0x55a0a6*/
 }
 } // namespace gamemd
 
@@ -186,7 +186,7 @@ wchar_t * LoadOptions::Open(void *a1, void *a2, void *a3)
 namespace gamemd {
 wchar_t * LoadOptions::Close(void *a1, void *a2)
 {
-  return GetStringCSF((wchar_t *)(aTxtGameWasSave), 0, g_Str_File_LoadDlg_CPP, 1234); /*0x55a0c6*/
+  return GetStringCSF((char *)(aTxtGameWasSave), 0, g_Str_File_LoadDlg_CPP, 1234); /*0x55a0c6*/
 }
 } // namespace gamemd
 

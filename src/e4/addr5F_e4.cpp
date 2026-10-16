@@ -208,14 +208,14 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   v19 = (char)((gamemd::AbstractClass **)((*(((unsigned char *)&(a1)) + (sizeof(a1) - 1)))));
   v3 = 3; /*0x5f2cfb*/
   if ( a3 == (void *)(1) ) /*0x5f2d00*/
-    StringCSF = GetStringCSF((wchar_t *)aTxtModemConner_0, 0,(const char *)(g_Str_File_NullMgr_CPP), 1580); /*0x5f2d13*/
+    StringCSF = GetStringCSF((char *)aTxtModemConner_0, 0,(const char *)(g_Str_File_NullMgr_CPP), 1580); /*0x5f2d13*/
   else
-    StringCSF = GetStringCSF((wchar_t *)(aTxtWaitingForC_0), 0, g_Str_File_NullMgr_CPP, 1582); /*0x5f2d26*/
+    StringCSF = GetStringCSF((char *)(aTxtWaitingForC_0), 0, g_Str_File_NullMgr_CPP, 1582); /*0x5f2d26*/
   v5 = (LPARAM)StringCSF; /*0x5f2d30*/
   Debug::Log(); /*0x5f2d32*/
   v6 = 1; /*0x5f2d41*/
   g_NetworkTestFlag = 0; /*0x5f2d52*/
-  v7 = GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, g_Str_File_NullMgr_CPP, 1589); /*0x5f2d59*/
+  v7 = GetStringCSF((char *)(g_Str_TXT_CANCEL), 0, g_Str_File_NullMgr_CPP, 1589); /*0x5f2d59*/
   MessageBox = (HWND)(CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag)); /*0x5f2d62*/
   v21 = (HWND)(MessageBox); /*0x5f2d69*/
   if ( !MessageBox ) /*0x5f2d6d*/
@@ -267,7 +267,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
     if ( !strncmp((const char *)(Source), aRing, 4u) ) /*0x5f2e3c*/
     {
       Debug::Log(); /*0x5f2e4d*/
-      v11 = GetStringCSF((wchar_t *)(aTxtAnswering), 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
+      v11 = GetStringCSF((char *)(aTxtAnswering), 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
       Network_Start(hWnd, (LPARAM)v11); /*0x5f2e71*/
       Debug::Log(); /*0x5f2e7b*/
       ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(aAta, strlen(aAta)); /*0x5f2e9e*/
@@ -299,8 +299,8 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
       v3 = 3; /*0x5f2f83*/
       Debug::Log(); /*0x5f2f8e*/
       v21 = (HWND)asc_82083C; /*0x5f2f9d*/
-      v16 = GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fba*/
-      v12 = (int *)GetStringCSF((wchar_t *)(aTxtErrorError), 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
+      v16 = GetStringCSF((char *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fba*/
+      v12 = (int *)GetStringCSF((char *)(aTxtErrorError), 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
       Dialog::ShowMessageBox(v12, v16, 0, 0, 0, v18); /*0x5f2fd6*/
     }
     v6 = 0; /*0x5f2fdb*/
@@ -322,8 +322,8 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
     if ( strlen((const char *)(Source)) ) /*0x5f3041*/
       Debug::Log(); /*0x5f305a*/
     v21 = (HWND)asc_82083C; /*0x5f3079*/
-    v17 = GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3086*/
-    v13 = (int *)GetStringCSF((wchar_t *)(g_Str_TXT_ERROR_TIMEOUT), 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
+    v17 = GetStringCSF((char *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3086*/
+    v13 = (int *)GetStringCSF((char *)(g_Str_TXT_ERROR_TIMEOUT), 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
     Dialog::ShowMessageBox(v13, v17, 0, 0, 0, v18); /*0x5f30a2*/
     Debug::Log(); /*0x5f30ac*/
     v3 = 5; /*0x5f30b4*/

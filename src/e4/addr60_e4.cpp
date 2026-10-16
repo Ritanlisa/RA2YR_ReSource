@@ -1626,7 +1626,7 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
   if ( v4 ) /*0x604072*/
   {
   wchar_t *StringCSF; // eax
-    StringCSF = GetStringCSF((wchar_t *)v4, 0,(const char *)(g_Str_File_ownrdraw_cpp), 1957); /*0x604082*/
+    StringCSF = GetStringCSF((char *)v4, 0,(const char *)(g_Str_File_ownrdraw_cpp), 1957); /*0x604082*/
     ((WideString *)((WideString *)aP0))->Assign(StringCSF); /*0x60408a*/
   }
   else

@@ -1036,7 +1036,7 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
   v5 = ((int (__thiscall *)(unsigned int))this->q010)(a2->vtable2); /*0x766ab0*/
   FromStringInt((char **)&Format, v5); /*0x766ab9*/
   v6 = String::GetOrEmpty_Alt(&this->q014); /*0x766acb*/
-  StringCSF = GetStringCSF((wchar_t *)v6, 0, aDRa2mdpostWdtg, 161); /*0x766ad4*/
+  StringCSF = GetStringCSF((char *)v6, 0, aDRa2mdpostWdtg, 161); /*0x766ad4*/
   WideString::Assign((wchar_t **)&v13, StringCSF); /*0x766ade*/
   v11 = Format; /*0x766ae7*/
   v8 = WideString::GetOrEmpty((wchar_t **)&v13); /*0x766aec*/

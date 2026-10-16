@@ -282,10 +282,10 @@ LABEL_151:
             {
               if ( (int)Format < (int)v10 )
               {
-                StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_SCENARIO_TOO_SMALL), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1079));
+                StringCSF = (wchar_t *)(GetStringCSF((char *)(g_Str_TXT_SCENARIO_TOO_SMALL), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1079));
                 swprintf(Destination, (const size_t)StringCSF, (const wchar_t *const)Format, v72);
                 v86 = (gamemd::CampaignScore *)(&stru_82083C);
-                v12 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1080));
+                v12 = (wchar_t *)(GetStringCSF((char *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1080));
   int v73; // [esp+0h] [ebp-260h]
                 ((Dialog*)(int)Destination)->ShowMessageBox( (unsigned short *)(v12), 0, 0, 0, v73);
                 v13 = GetDlgItem((HWND)hWnd, 1559);
@@ -294,10 +294,10 @@ LABEL_151:
               }
               if ( (int)v10 <= 1 )
               {
-                v14 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[63048], 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1087));
+                v14 = (wchar_t *)(GetStringCSF( (char *)&((unsigned int *)(stru_830620))[63048], 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1087));
                 swprintf(Destination, (const size_t)v14, (const wchar_t *const)Format, v72);
                 v85 = (gamemd::CampaignScore *)(&stru_82083C);
-                v15 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1088));
+                v15 = (wchar_t *)(GetStringCSF((char *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1088));
   int v74; // [esp+0h] [ebp-260h]
                 ((Dialog*)(int)Destination)->ShowMessageBox( (unsigned short *)(v15), 0, 0, 0, v74);
                 v16 = GetDlgItem((HWND)hWnd, 1559);
@@ -345,10 +345,10 @@ LABEL_151:
                   }
                   if ( ++v17 >= 7 )
                   {
-                    v22 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[3632], 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1111));
+                    v22 = (wchar_t *)(GetStringCSF( (char *)&((unsigned int *)(stru_830620))[3632], 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1111));
                     swprintf(Destination, (const size_t)v22, (const wchar_t *const)Format, v72);
                     v89 = (gamemd::CampaignScore *)(&stru_82083C);
-                    v23 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1112));
+                    v23 = (wchar_t *)(GetStringCSF((char *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1112));
                     ((Dialog*)(int)Destination)->ShowMessageBox( (unsigned short *)(v23), 0, 0, 0, _0c);
                     v24 = GetDlgItem((HWND)hWnd, 1559);
                     EnableWindow(v24, 1);
@@ -366,7 +366,7 @@ if ( !(*(uint8_t (**)(SkirmishDialog *, wchar_t **))(*(unsigned int *)v25->q000 
               if ( var244 == 1559 )
               {
                 v83 = (VectorClass_flat *)&stru_82083C;
-                v71 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1129));
+                v71 = (wchar_t *)(GetStringCSF((char *)(g_Str_TXT_OK), 0,(const char *)((CampaignScore *)&((unsigned int *)(stru_830620))[63020]), 1129));
                 v26 = (CampaignScore *)((WideString*)&v82)->GetOrEmpty();
                 ((Dialog *)(int)v26)->ShowMessageBox( (unsigned short *)(v71), 0, 0, 0, (int)v72);
                 v27 = GetDlgItem((HWND)hWnd, 1559);

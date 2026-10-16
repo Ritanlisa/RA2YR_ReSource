@@ -440,7 +440,7 @@ char sub_63A0D0()
   {
     byte_AC4C08 = 1; /*0x63a0ea*/
   wchar_t *StringCSF; // eax
-    StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_12), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a0f1*/
+    StringCSF = GetStringCSF((char *)(aMsgPlanningmod_12), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a0f1*/
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a0fd*/
     return PlayVocClass(dword_8871E0->AmmoCrateDamage, 0x2000, 1.0, 0); /*0x63a119*/
   }

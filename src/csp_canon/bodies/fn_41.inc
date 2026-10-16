@@ -210,7 +210,7 @@ int AbstractTypeClass::Init(int aP1)
   *((unsigned int *)this + 2) = (unsigned int)(&vt_AbstractTypeClass); /*0x410982*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_AbstractTypeClass); /*0x410989*/
   if ( v3 ) /*0x410990*/
-    *((unsigned int *)this + 24) = (unsigned int)(GetStringCSF((wchar_t *)((char *)this + 61), 0, aDRa2mdpostAbst, 127)); /*0x4109a0*/
+    *((unsigned int *)this + 24) = (unsigned int)(GetStringCSF((char *)((char *)this + 61), 0, aDRa2mdpostAbst, 127)); /*0x4109a0*/
   else
     *((unsigned int *)this + 24) = (unsigned int)(&g_TypeClass_DefaultString); /*0x4109a9*/
   return (int)(this); /*0x4109a5*/

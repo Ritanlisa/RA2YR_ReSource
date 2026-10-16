@@ -586,7 +586,7 @@ LABEL_132:
         {
           v6 = (char *)(DlgSkirmishMenuProc(hDlg, v5)); /*0x5de5d9*/
           if ( v6 ) /*0x5de5e0*/
-            StringCSF = GetStringCSF((wchar_t *)v6, 0, g_Str_File_netdlg2_cpp, 2857); /*0x5de5f5*/
+            StringCSF = GetStringCSF((char *)v6, 0, g_Str_File_netdlg2_cpp, 2857); /*0x5de5f5*/
         }
         SendMessageA(hWnd, 0x4B2u, 0, (LPARAM)StringCSF); /*0x5de604*/
         result = 0; /*0x5de60d*/
@@ -974,7 +974,7 @@ LABEL_45:
           if ( (((unsigned char *)&HouseClass_Player)[39195] & 1) != 0 && (int)*(&g_MatrixTransformState + 1301) < 2 )
           {
             v105 = (CCINIClass *)CharToWideString( (unsigned char *)((unsigned char *)&HouseClass_Player + 39152));
-            StringCSF = GetStringCSF( (wchar_t *)&stru_830620[4160], 0, (const char *)(&stru_830620[3176]), 4280);
+            StringCSF = GetStringCSF( (char *)&stru_830620[4160], 0, (const char *)(&stru_830620[3176]), 4280);
             swprintf(Buffer, (const size_t)StringCSF, (const wchar_t *const)v105, v109);
             Dialog::ShowMessage(-1, (size_t)Buffer);
             PlayVocClass(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 1720), 0x2000, 1.0, 0);
@@ -1014,14 +1014,14 @@ LABEL_45:
               if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * v2) + 52) )
               {
                 v103 = (CCINIClass *)CharToWideString( (unsigned char *)((unsigned char *)&HouseClass_Player + 39152));
-                v10 = GetStringCSF( (wchar_t *)&stru_830620[4160], 0, (const char *)(&stru_830620[3176]), 4234);
+                v10 = GetStringCSF( (char *)&stru_830620[4160], 0, (const char *)(&stru_830620[3176]), 4234);
                 swprintf(Buffer, (const size_t)v10, (const wchar_t *const)v103, v109);
                 PlayVocClass(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 1720), 0x2000, 1.0, 0);
               }
               else
               {
                 v104 = (CCINIClass *)CharToWideString( (unsigned char *)((unsigned char *)&HouseClass_Player + 39152));
-                v11 = GetStringCSF( (wchar_t *)&stru_830620[4132], 0, (const char *)(&stru_830620[3176]), 4239);
+                v11 = GetStringCSF( (char *)&stru_830620[4132], 0, (const char *)(&stru_830620[3176]), 4239);
                 swprintf(Buffer, (const size_t)v11, (const wchar_t *const)v104, v109);
                 PlayVocClass(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 1704), 0x2000, 1.0, 0);
               }

@@ -439,7 +439,7 @@ extern char* BuildResultPacket(char* Destination, void* Source, void* a3);  // G
 extern char* Team_Helper_6F26E0(char* Block, char a2);
 extern char* TerrainInitMap(char* Destination, void* Source, int a3);  // G42.33 b4: arg2 void* (RandomStruct* drape sites)
 extern char * CharToWideString(unsigned char *a1);
-extern wchar_t * GetStringCSF(wchar_t *key, unsigned int *a2, const char *a3, int a4 = 0);
+extern wchar_t * GetStringCSF(char *key, unsigned int *a2, const char *a3, int a4 = 0);
 extern double ComputeChronosphereDistortion(float a1);
 extern float * QuaternionMathMultiply(ObjectClass * aP0, float *a1, float *a2);
 extern float * TransformMatrix3x4Point(AbstractClass * aP0, IUnknown * aP1, IUnknown * aP2);

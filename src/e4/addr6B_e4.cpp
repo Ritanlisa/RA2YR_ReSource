@@ -2923,9 +2923,9 @@ LABEL_2:
   }
   if ( DiskSpace::CheckAvailable() < 0x2000 )
   {
-    StringCSF = GetStringCSF( (wchar_t *)&stru_830620[67544], 0, (const char *)(&stru_830620[67564]), 1931);
+    StringCSF = GetStringCSF( (char *)&stru_830620[67544], 0, (const char *)(&stru_830620[67564]), 1931);
     swprintf(Buffer, (const size_t)StringCSF, 0, v210);
-    v21 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 1932);
+    v21 = GetStringCSF( (char *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 1932);
     if ( WideMessageBox(0, Buffer, v21, 0x24u) == 7 )
     {
       OleUninitialize();
@@ -3438,8 +3438,8 @@ LABEL_56:
   RegisterActiveObject(&unk_89A29C, &rguid, 1u, (DWORD *)&((unsigned char *)&stru_B05488)[26724]);
   if ( (*((unsigned char *)&(dwRegister.Capacity))) )
   {
-    v205 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 1618);
-    v181 = GetStringCSF( (wchar_t *)&stru_830620[67500], 0, (const char *)(&stru_830620[67564]), 1618);
+    v205 = GetStringCSF( (char *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 1618);
+    v181 = GetStringCSF( (char *)&stru_830620[67500], 0, (const char *)(&stru_830620[67564]), 1618);
     WideMessageBox(0, v181, v205, 0x30u);
     if ( (*((unsigned char *)&(dwRegister.Capacity))) )
       exit(1);
@@ -3482,16 +3482,16 @@ LABEL_56:
     return 0;
   if ( !GetSystemMetrics(19) || !GetSystemMetrics(43) )
   {
-    v209 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 1999);
-    v204 = GetStringCSF( (wchar_t *)&stru_830620[66984], 0, (const char *)(&stru_830620[67564]), 1999);
+    v209 = GetStringCSF( (char *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 1999);
+    v204 = GetStringCSF( (char *)&stru_830620[66984], 0, (const char *)(&stru_830620[67564]), 1999);
     WideMessageBox(0, v204, v209, 0x10u);
     exit(1);
   }
   if ( (unsigned int)sub_4AECD0(&stru_830620[67112]) < 0x40046 )
   {
-    v186 = GetStringCSF( (wchar_t *)&stru_830620[67096], 0, (const char *)(&stru_830620[67564]), 2009);
+    v186 = GetStringCSF( (char *)&stru_830620[67096], 0, (const char *)(&stru_830620[67564]), 2009);
     swprintf(Buffer, (const size_t)v186, (const wchar_t *const)&stru_830620[67112], (CampaignScore *)4);
-    v187 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 2010);
+    v187 = GetStringCSF( (char *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 2010);
     WideMessageBox(0, Buffer, v187, 0x10u);
     exit(1);
   }
@@ -3538,8 +3538,8 @@ aP2.location[0] = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x
       if ( !aP2.location[0] )
       {
         sub_4A40C0();
-        v206 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 2160);
-        v189 = GetStringCSF( (wchar_t *)&stru_830620[67068], 0, (const char *)(&stru_830620[67564]), 2159);
+        v206 = GetStringCSF( (char *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 2160);
+        v189 = GetStringCSF( (char *)&stru_830620[67068], 0, (const char *)(&stru_830620[67564]), 2159);
         WideMessageBox((CampaignScore *)g_hWnd, v189, v206, 0x30u);
         exit(1);
       }
@@ -3594,8 +3594,8 @@ edi325 = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x280), 0x1
         if ( !edi325 )
         {
           sub_4A40C0();
-          v207 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 2216);
-          v191 = GetStringCSF( (wchar_t *)&stru_830620[67068], 0, (const char *)(&stru_830620[67564]), 2215);
+          v207 = GetStringCSF( (char *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 2216);
+          v191 = GetStringCSF( (char *)&stru_830620[67068], 0, (const char *)(&stru_830620[67564]), 2215);
           WideMessageBox((CampaignScore *)g_hWnd, v191, v207, 0x30u);
           exit(1);
         }
@@ -3618,8 +3618,8 @@ edi325 = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x280), 0x1
   g_Is16BitMode = eax333 == 2;
   if ( eax333 != 2 )
   {
-    v208 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 2245);
-    v193 = GetStringCSF( (wchar_t *)&stru_830620[67052], 0, (const char *)(&stru_830620[67564]), 2245);
+    v208 = GetStringCSF( (char *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 2245);
+    v193 = GetStringCSF( (char *)&stru_830620[67052], 0, (const char *)(&stru_830620[67564]), 2245);
     WideMessageBox((CampaignScore *)g_hWnd, v193, v208, 0x30u);
     GameClass::Shutdown();
   }

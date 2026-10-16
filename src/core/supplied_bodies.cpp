@@ -120,7 +120,7 @@ extern int Selection_GetFlag(void);                // (Selection::GetFlag 静态
 extern int Selection_ClearGlobals(void *aP0);      // (Selection::ClearGlobals 静态形)
 extern int GetBuildingPlacement(void *a1, unsigned int a2, int a3, int16_t *a4);  // G42.34 C5: arg2 标量形
 extern int GetBuildingPlacement(void);  // 本地原型
-extern unsigned int g_Str_EVA_CannotDeployHere;  // data: EVA 串                  // (MapClass::ToggleZoom)
+extern char g_Str_EVA_CannotDeployHere[21];  // data: EVA 串                  // (MapClass::ToggleZoom)
 extern int ReadBuildingINIEntry(void *a1);
 extern int ReadBuildingINI(void *a1);
 extern int DispatchSelectionWaypointMove(int a1, int a2, int a3, int a4);
@@ -141,10 +141,10 @@ extern int UI_Find(int a1, int a2, int *a3);          // 0x52B6D0 (G42.35 C6)
 extern int CompareFunc3Int(const void *a1, const void *a2);  // 0x52B6A0 qsort cmp (G42.35 C6)
 extern int CompareFunc4Int(const void *a1, const void *a2);  // 0x52B720 qsort cmp (G42.35 C6)
 extern void j_DeleteAndZero(void *a1);                // 0x5D0580 thunk (G42.35 C6)
-extern const char g_Str__Player___A_[];  // 0x825070 (G42.35 C7)
-extern const char g_Str__Player___B_[];  // 0x825060 (G42.35 C7)
-extern const char g_Str__Player___C_[];  // 0x825050 (G42.35 C7)
-extern const char g_Str__Player___D_[];  // 0x825040 (G42.35 C7)
+extern char g_Str__Player___A_[13];  // 0x825070 (G42.35 C7)
+extern char g_Str__Player___B_[13];  // 0x825060 (G42.35 C7)
+extern char g_Str__Player___C_[13];  // 0x825050 (G42.35 C7)
+extern char g_Str__Player___D_[13];  // 0x825040 (G42.35 C7)
 extern const char aPlayerE[];            // (G42.35 C7)
 extern const char aPlayerF[];            // (G42.35 C7)
 extern const char aPlayerG[];            // (G42.35 C7)

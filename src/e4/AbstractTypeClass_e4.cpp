@@ -165,7 +165,7 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
       memcpy(UINameLabel, Destination, 0x20u); /*0x410b3a*/
     if ( *UINameLabel ) /*0x410b3c*/
     {
-      result = (int)GetStringCSF((wchar_t *)this->UINameLabel, 0, aDRa2mdpostAbst, 215); /*0x410b52*/
+      result = (int)GetStringCSF((char *)this->UINameLabel, 0, aDRa2mdpostAbst, 215); /*0x410b52*/
       this->UIName = (unsigned int)((void *)result); /*0x410b58*/
     }
     else

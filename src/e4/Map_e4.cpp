@@ -322,7 +322,7 @@ int E4Recv_5ADD10::Map_Delete()
   wchar_t *StringCSF; // [esp-10h] [ebp-F8h]
     StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.ROT, 134); /*0x5addba*/
   int *v3; // eax
-    v3 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.AltCameoFile[19], 0, (const char *)&stru_82BA00.ROT, 134); /*0x5addc5*/
+    v3 = (int *)GetStringCSF((char *)&stru_82BA00.AltCameoFile[19], 0, (const char *)&stru_82BA00.ROT, 134); /*0x5addc5*/
   int v6; // [esp+0h] [ebp-E8h]
     Dialog::ShowMessageBox(v3, StringCSF, 0, 0, 0, v6); /*0x5addcf*/
     return 0; /*0x5addd4*/

@@ -1475,7 +1475,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
         v19 = DlgSkirmishMenuProc(hWnd, v13); /*0x622e21*/
         if ( v19 ) /*0x622e28*/
         {
-          StringCSF = GetStringCSF((wchar_t *)v19, 0, g_Str_File_ownrdraw_cpp, 1957); /*0x622e3d*/
+          StringCSF = GetStringCSF((char *)v19, 0, g_Str_File_ownrdraw_cpp, 1957); /*0x622e3d*/
           ((WideString *)((wchar_t **)&v24))->Assign(StringCSF); /*0x622e3e*/
         }
         else

@@ -655,7 +655,7 @@ int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
     else if ( a2 == 1175 ) /*0x56138d*/
     {
   wchar_t *StringCSF; // edi
-      StringCSF = GetStringCSF((wchar_t *)(aGuiConfirmmode), 0, g_Str_File_MainOpt_cpp, 1501); /*0x5613ab*/
+      StringCSF = GetStringCSF((char *)(aGuiConfirmmode), 0, g_Str_File_MainOpt_cpp, 1501); /*0x5613ab*/
   HWND DlgItem; // eax
       DlgItem = GetDlgItem(hWnd, 1499); /*0x5613ad*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x5613bc*/

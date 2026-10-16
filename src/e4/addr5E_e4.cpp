@@ -516,7 +516,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
   int v11; // [esp-8h] [ebp-14h]
           v11 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a88*/
   wchar_t *String; // eax
-          String = GetStringCSF((wchar_t *)(aGuiHostmaptran), 0, g_Str_File_netshare_cpp, 1173); /*0x5e3a93*/
+          String = GetStringCSF((char *)(aGuiHostmaptran), 0, g_Str_File_netshare_cpp, 1173); /*0x5e3a93*/
           return Dialog::ShowMessage(-1, (size_t)String, v11, 11055906); /*0x5e3a9b*/
         }
       }
@@ -525,7 +525,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
   int v10; // [esp-8h] [ebp-14h]
         v10 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a4a*/
   wchar_t *v8; // eax
-        v8 = GetStringCSF((wchar_t *)(g_Str_GUI_HostNoMap), 0, g_Str_File_netshare_cpp, 1169); /*0x5e3a5a*/
+        v8 = GetStringCSF((char *)(g_Str_GUI_HostNoMap), 0, g_Str_File_netshare_cpp, 1169); /*0x5e3a5a*/
         return Dialog::ShowMessage(-1, (size_t)v8, v10, 11055906); /*0x5e3a62*/
       }
     }
@@ -836,7 +836,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
           ShowWindow(DlgItem, 1);
           v10 = GetDlgItem(v7, 1128);
           ShowWindow(v10, 0);
-          StringCSF = GetStringCSF((wchar_t *)&(&stru_830620)[4984], 0,(const char *)(&(&stru_830620)[4536]), 1326);
+          StringCSF = GetStringCSF((char *)&(&stru_830620)[4984], 0,(const char *)(&(&stru_830620)[4536]), 1326);
           SendMessageA( (HWND)(v9), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)StringCSF)));
           *(unsigned int *)v198 = *(unsigned int *)&v198[40];
           goto LABEL_102;
@@ -1643,7 +1643,7 @@ LABEL_519:
         || ((Dialog*)((void *)0xBD))->FindByHandle() )
       {
         *(unsigned int *)v198 = 11055906;
-        v147 = GetStringCSF( (wchar_t *)&stru_830620[4688], 0, (const char *)(&stru_830620[4536]), 2068);
+        v147 = GetStringCSF( (char *)&stru_830620[4688], 0, (const char *)(&stru_830620[4536]), 2068);
         Dialog::ShowMessage((ObjectClass *)0xFFFFFFFF, (CampaignScore *)v147, *(ObjectClass *)v198);
       }
       *((unsigned char *)&g_MatrixTransformState + 9138) = 0;
@@ -1718,7 +1718,7 @@ LABEL_519:
           || ((Dialog*)((void *)0xBD))->FindByHandle() )
         {
           *(unsigned int *)v198 = 11055906;
-          v157 = GetStringCSF( (wchar_t *)&stru_830620[4660], 0, (const char *)(&stru_830620[4536]), 2084);
+          v157 = GetStringCSF( (char *)&stru_830620[4660], 0, (const char *)(&stru_830620[4536]), 2084);
           Dialog::ShowMessage((ObjectClass *)0xFFFFFFFF, (CampaignScore *)v157, *(ObjectClass *)v198);
         }
         v152 = &stru_830620[4656];
@@ -1966,7 +1966,7 @@ LABEL_449:
       {
         if ( !*(&g_MatrixTransformState + 2266) )
         {
-          eax453 = GetStringCSF( (wchar_t *)&stru_830620[4580], 0, (const char *)(&stru_830620[4536]), 2230);
+          eax453 = GetStringCSF( (char *)&stru_830620[4580], 0, (const char *)(&stru_830620[4536]), 2230);
           Dialog::ShowMessage((ObjectClass *)0xFFFFFFFF, (CampaignScore *)eax453, *(ObjectClass *)&v198[4]);
         }
         *(unsigned int *)&((unsigned char *)&HouseClass_Player)[30312] = (unsigned int)v165;
@@ -5900,7 +5900,7 @@ void E4Recv_5EE200::UpdateObserveButtonWOL(HWND hDlg)
       }
       else if ( (ObjectClass *)Dialog::FindByHandle((Dialog *)0x113) == hDlg ) /*0x5ee303*/
       {
-        v9 = GetStringCSF((wchar_t *)aGuiJoingame, 0, g_Str_File_netshare_cpp, 6766); /*0x5ee316*/
+        v9 = GetStringCSF((char *)aGuiJoingame, 0, g_Str_File_netshare_cpp, 6766); /*0x5ee316*/
       }
       else
       {

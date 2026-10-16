@@ -6217,7 +6217,7 @@ int HashStringMod31(char* p0);  // 0x626660 sig=signals
 void* ConvertMatrixToQuaternion(float* p0, float* p1);  // 0x646730 sig=signals
 int ComputeNetworkFrameCRC(gamemd::TechnoClass *p_this);  // 0x64dab0 sig=ida
 int ComputeHash(int* p0, int p1);  // 0x64de80 sig=signals
-void* GetStringCSF(int* p0, int* p1, const char* p2, int p3);  // 0x734e60 sig=signals
+extern wchar_t * GetStringCSF(char *key, unsigned int *a2, const char *a3, int a4);
 void ConvertDateMonthNames(int** p0, void** p1);  // 0x779230 sig=signals
 int DSP_AudioMixBuffers(int p0, int p1);  // 0x7bf740 sig=signals
 int ___crtGetStringTypeA(DWORD dwInfoType, LPCSTR lpSrcStr, int cchSrc, LPWORD lpCharType, UINT CodePage, LCID Locale, int a7);  // 0x7d9729 sig=ida

@@ -46,21 +46,21 @@ char * DeleteCommandClass::AddRef(void *a1)
 namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::Release(void *a1)
 {
-  return GetStringCSF((wchar_t *)(aCmndDelete), 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
+  return GetStringCSF((char *)(aCmndDelete), 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
 }
 }  // G42.18c ns repair
 // 0x537F50
 namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::ddtor(void *a1)
 {
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
+  return GetStringCSF((char *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
 }
 }  // G42.18c ns repair
 // 0x537F70
 namespace gamemd {  // G42.18c ns repair
 wchar_t * DeleteCommandClass::Read(void *a1, void *a2, void *a3)
 {
-  return GetStringCSF((wchar_t *)(aCmndDeletedesc), 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
+  return GetStringCSF((char *)(aCmndDeletedesc), 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
 }
 }  // G42.18c ns repair
 // 0x53C4C0

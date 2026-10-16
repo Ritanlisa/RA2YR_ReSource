@@ -54,12 +54,12 @@
 namespace gamemd { int SelectFactionThemeMusic_Helper_734330(int p0, int p1); }  // x4:signals@0x734330
 namespace gamemd { int SelectFactionThemeMusic_Helper_734390(int* p0); }  // x4:signals@0x734390
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aMissingHs[];  // data: 0x845820 truth(IDA G42.57w9)
+extern char aMissingHs[2];  // data: 0x845820 truth(IDA G42.57w9)
 extern unsigned int a2;  // data: 0x822bc0 truth(IDA G42.57w9)
 extern unsigned int aFatalStringMan;  // data: 0x84583c truth(IDA G42.57w9)
-extern wchar_t aMsgNavempty[];  // data: 0x8455dc truth(IDA G42.57w9)
-extern wchar_t aMsgNounitssel[];  // data: 0x8455fc truth(IDA G42.57w9)
-extern wchar_t aMsgUnitsworth[];  // data: 0x8455ec truth(IDA G42.57w9)
+extern char aMsgNavempty[13];  // data: 0x8455dc truth(IDA G42.57w9)
+extern char aMsgNounitssel[15];  // data: 0x8455fc truth(IDA G42.57w9)
+extern char aMsgUnitsworth[15];  // data: 0x8455ec truth(IDA G42.57w9)
 
 
 // 0x730A90
@@ -621,14 +621,14 @@ int SelectAllOfType()
   if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[228] ) /*0x732b55*/
   {
     if ( DataGlobal_B0FE64 ) /*0x732b7c*/
-      StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossMap), 0, g_Str_File_UICmnds_cpp, 1011); /*0x732b98*/
+      StringCSF = GetStringCSF((char *)(g_Str_MSG_SelAcrossMap), 0, g_Str_File_UICmnds_cpp, 1011); /*0x732b98*/
     else
-      StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossScreen), 0, g_Str_File_UICmnds_cpp, 1013); /*0x732bb2*/
+      StringCSF = GetStringCSF((char *)(g_Str_MSG_SelAcrossScreen), 0, g_Str_File_UICmnds_cpp, 1013); /*0x732bb2*/
     wcscpy(Destination, StringCSF); /*0x732b9a*/
   }
   else
   {
-    v21 = GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0, g_Str_File_UICmnds_cpp, 1009); /*0x732b71*/
+    v21 = GetStringCSF((char *)(g_Str_MSG_NothingSelected), 0, g_Str_File_UICmnds_cpp, 1009); /*0x732b71*/
     wcscpy(Destination, v21); /*0x732b73*/
   }
   v20 = 3; /*0x732bc8*/

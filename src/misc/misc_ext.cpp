@@ -141,9 +141,7 @@ namespace gamemd
 // G42: targeted extern (decl source: e4/e4_protos.h:438 -- kept loose-int form
 // to match the e4_globals_decls.hpp `extern int g_Str_*` string globals; whole
 // proto header not pulled to avoid dialect clashes).
-extern void * GetStringCSF(int a1, int a2, int a3, int a4);
-extern void * GetStringCSF(void *a1, int a2, int a3, int a4);  // G42: ptr-key call sites
-extern void * GetStringCSF(wchar_t *a1, int a2, int a3, int a4);  // G42: wide-key call sites
+extern wchar_t * GetStringCSF(char *key, unsigned int *a2, const char *a3, int a4);
 extern int TimerGetTicks();  // G42: decl source core/init_stubs.hpp:54 (0x6C8C40)
 extern unsigned int dword_ABD4DC; // W13-C raw fn_56 词表 (data 0xABD4DC)
 extern unsigned int dword_ABD4E0; // W13-C raw fn_56 词表 (data 0xABD4E0)
@@ -1062,7 +1060,7 @@ int AnimFile::Check( int a2)  // G42 sig-sync: IDA int __thiscall Check(this,int
 {
   wchar_t *StringCSF; // eax
 
-  StringCSF = GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, &stru_82BA00.UINameLabel[11], 3934); /*0x595724*/
+  StringCSF = GetStringCSF((char *)((char *)&stru_82BA00), 0, &stru_82BA00.UINameLabel[11], 3934); /*0x595724*/
   return wcscpy((wchar_t *)CopyString + 60, StringCSF); /*0x595736*/
 }
 // 0x6977c0
@@ -7373,7 +7371,7 @@ char MapSeedClass::AddRef(char* p0)
     /* X11: vtable install elided (implicit via class virtuals 0x597ac9) — binary-proven install, was 0 */
     if ( FileStraw::Open((FileStraw *)&v25, (int)&v26, 0) ) /*0x597ad1*/
     {
-      StringCSF = GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, &stru_82BA00.UINameLabel[11], 5433); /*0x597af8*/
+      StringCSF = GetStringCSF((char *)((char *)&stru_82BA00), 0, &stru_82BA00.UINameLabel[11], 5433); /*0x597af8*/
       INIClass::ParseValue_Wide( /*0x597b0c*/
         &v25,
         (uint8_t *)&stru_82BA00.ChargerBarrels[8],
@@ -7506,7 +7504,7 @@ bool __stdcall MapSeedClass::ddtor()
 // 0x597f80
 void * MapSeedClass::Generate()  // G42 sig-sync: returns CSF string ptr
 {
-  return GetStringCSF((wchar_t *)&stru_82BA00.LineTrailColor[1], 0, &stru_82BA00.UINameLabel[11], 5572); /*0x597f96*/
+  return GetStringCSF((char *)&stru_82BA00.LineTrailColor[1], 0, &stru_82BA00.UINameLabel[11], 5572); /*0x597f96*/
 }
 // 0x767740
 // 0x767740 (see marker above; G42 T9 quarantine)
@@ -17599,10 +17597,10 @@ int __stdcall CChatEventSink::HandleUserSearch(int p0, int p1, const char* p2)
               StringCSF = GetStringCSF(aTxtFindpageNot_0, 0, g_Str_File_wonline_cpp, 8261); /*0x7aa367*/
               break;
             case 262449: /*0x7aa360*/
-              StringCSF = GetStringCSF((wchar_t *)aTxtFindpageNot, 0, g_Str_File_wonline_cpp, 8263); /*0x7aa381*/
+              StringCSF = GetStringCSF((char *)aTxtFindpageNot, 0, g_Str_File_wonline_cpp, 8263); /*0x7aa381*/
               break;
             case 262450: /*0x7aa360*/
-              StringCSF = GetStringCSF((wchar_t *)aTxtFindpageFin, 0, g_Str_File_wonline_cpp, 8265); /*0x7aa39b*/
+              StringCSF = GetStringCSF((char *)aTxtFindpageFin, 0, g_Str_File_wonline_cpp, 8265); /*0x7aa39b*/
               break;
             default:
               StringCSF = GetStringCSF(aTxtFindpageNot_0, 0, g_Str_File_wonline_cpp, 8267); /*0x7aa3ae*/
@@ -25281,7 +25279,7 @@ void MPScore::DlgProc()
   }
   swprintf(lParam, (const size_t)StringCSF, v47); /*0x5c9bb6*/
   if ( *(unsigned int *)&dword_A8B238 == 5 ) /*0x5c9bea*/
-    v7 = GetStringCSF((wchar_t *)aGuiSkirmishsco, 0, g_Str_File_MPScore_cpp, 378); /*0x5c9bfd*/
+    v7 = GetStringCSF((char *)aGuiSkirmishsco, 0, g_Str_File_MPScore_cpp, 378); /*0x5c9bfd*/
   else
     v7 = GetStringCSF(aGuiMultiplayer, 0, g_Str_File_MPScore_cpp, 380); /*0x5c9c10*/
   v8 = (LPARAM)v7; /*0x5c9c21*/
@@ -25306,7 +25304,7 @@ void MPScore::DlgProc()
     v15 = 720 * (4 * (v13 / -3600) - v13 / 3600) + v13; /*0x5c9ce9*/
     v48 = v15 % 60; /*0x5c9d04*/
     v46 = v15 / 60; /*0x5c9d05*/
-    v16 = GetStringCSF((wchar_t *)&stru_81AF8C.IsAnimatedTiberium, 0, g_Str_File_MPScore_cpp, 217); /*0x5c9d18*/
+    v16 = GetStringCSF((char *)&stru_81AF8C.IsAnimatedTiberium, 0, g_Str_File_MPScore_cpp, 217); /*0x5c9d18*/
     swprintf(lParam, (const size_t)v16, (const wchar_t *const)v14, v46, v48); /*0x5c9d23*/
   }
   v17 = GetDlgItem(hWnd, 1002); /*0x5c9d31*/
@@ -25757,7 +25755,7 @@ char ** MSChoiceClass::LoadFromINI(int* p0, const char** p1)
   if ( v49 ) /*0x5cfa89*/
   {
     v10 = String::GetOrEmpty(&v52); /*0x5cfa99*/
-    StringCSF = GetStringCSF((wchar_t *)v10, 0, aDRa2mdpostMsch, 482); /*0x5cfaa2*/
+    StringCSF = GetStringCSF((char *)v10, 0, aDRa2mdpostMsch, 482); /*0x5cfaa2*/
     WideString::Assign_Alt(*(void ***)&v52.ptr_4, StringCSF); /*0x5cfaac*/
   }
   *(unsigned int *)&v52.ptr_4 = &v53->u32_C; /*0x5cfaba*/
@@ -31899,7 +31897,7 @@ void PlanManager::Notify()
   if ( !g_PlanningModeActive ) /*0x63a237*/
   {
     g_PlanningModeActive = 1; /*0x63a245*/
-    StringCSF = GetStringCSF((wchar_t *)this, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a24c*/
+    StringCSF = GetStringCSF((char *)this, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a24c*/
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a258*/
     return PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1792), 0x2000, 1.0, 0); /*0x63a274*/
   }

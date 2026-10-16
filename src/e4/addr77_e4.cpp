@@ -92,12 +92,12 @@ namespace gamemd {
     int StartWDTCampaign();  // x4:empty@0x7afb90
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aDisconnects[];  // data: 0x849fa8 truth(IDA G42.57w9)
-extern char aLocaleverified[];  // data: 0x849fcc truth(IDA G42.57w9)
-extern char aLosses[];  // data: 0x849fb4 truth(IDA G42.57w9)
-extern char aMatchbyres[];  // data: 0x849f9c truth(IDA G42.57w9)
-extern char aRank[];  // data: 0x849fc4 truth(IDA G42.57w9)
-extern char aWins[];  // data: 0x849fbc truth(IDA G42.57w9)
+extern char aDisconnects[12];  // data: 0x849fa8 truth(IDA G42.57w9)
+extern char aLocaleverified[15];  // data: 0x849fcc truth(IDA G42.57w9)
+extern char aLosses[7];  // data: 0x849fb4 truth(IDA G42.57w9)
+extern char aMatchbyres[11];  // data: 0x849f9c truth(IDA G42.57w9)
+extern char aRank[5];  // data: 0x849fc4 truth(IDA G42.57w9)
+extern char aWins[5];  // data: 0x849fbc truth(IDA G42.57w9)
 
 
 // 0x770E70

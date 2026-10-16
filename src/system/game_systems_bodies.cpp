@@ -50,7 +50,7 @@ extern int Tooltip;  // 词表 (canon 无条目, int 兜底) L508
 extern int g_INI_Key_A1;  // 词表 (canon 无条目, int 兜底) L356
 extern int g_NetworkOptionsState;  // 词表 (canon 无条目, int 兜底) L328
 extern int32_t g_RulesInitConfig;  // 0x822CF4 (csp_canon/globals.hpp)
-extern int g_Str_TXT_OK;  // 词表 (canon 无条目, int 兜底) L654
+extern char g_Str_TXT_OK[7];  // 词表 (canon 无条目, int 兜底) L654
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int stru_82BA00;  // 词表 (canon 无条目, int 兜底) L654
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int stru_87F5F0;  // 词表 (canon 无条目, int 兜底) L488
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int stru_A8B250;  // 词表 (canon 无条目, int 兜底) L645
@@ -124,7 +124,7 @@ namespace gamemd {
 void VtableStub_643E70(void *a1);
 extern void *g_UIControlState;               // data: 0xAC1154 (globals_core.hpp:985 真形)
 extern wchar_t g_TypeClass_DefaultString;         // 词表 (取址形 wchar_t*)
-extern const char g_Str_File_netdlg2_cpp[];      // 词表 (g_Str_File_* 家族)
+extern char g_Str_File_netdlg2_cpp[25];      // 词表 (g_Str_File_* 家族)
 char *DlgSkirmishMenuProc(HWND a1, void *a2);       // raw 0x5e1def 家族 (返回 char*)
 wchar_t *GetStringCSF(const wchar_t *a1, int a2, const char *a3, int a4);  // raw 0x56082d 真形
 void *LoadScreen_Render(int a1, int a2, int a3, double a4);  // raw 0x5e1d71 (4 参自由形)
@@ -156,7 +156,7 @@ extern char* off_832C20[];  // W13-C raw fn_5F/60 词表 0x832C20 (char* 数组)
 extern char* off_832C24[];  // W13-C raw 词表 0x832C24
 extern char* off_832C30[];  // W13-C raw fn_5F:5fbfc0 词表 0x832C30 ("A01_F00e" 表)
 extern char* off_832CA0[];  // W13-C raw 词表 0x832CA0
-extern int g_Str_File_Options_CPP;  // data: 0x833370 (e4_globals_decls.hpp:1476 同形)
+extern char g_Str_File_Options_CPP[25];  // data: 0x833370 (e4_globals_decls.hpp:1476 同形)
 extern HWND g_GameScreenManager;  // data: 0xAC48D0 (globals_core.hpp:1016 GetParent 用法适配)
 extern void* dword_AC48C0;  // data: 0xAC48C0 ((HWND)this 写入)
 extern unsigned int dword_AC48C4; // data: 0xAC48C4
@@ -285,7 +285,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
       {
         v14 = DlgSkirmishMenuProc((HWND)a2, v13); /*0x5e1def*/
         if ( v14 ) /*0x5e1df6*/
-          StringCSF = GetStringCSF((wchar_t *)v14, 0, g_Str_File_netdlg2_cpp, 3388); /*0x5e1e0b*/
+          StringCSF = GetStringCSF((char *)v14, 0, g_Str_File_netdlg2_cpp, 3388); /*0x5e1e0b*/
       }
       SendMessageA(hWnda, 0x4B2u, 0, (LPARAM)StringCSF); /*0x5e1e1a*/
       return 0; /*0x5e1e29*/
@@ -627,7 +627,7 @@ char GameOptions::ReadSettings()
   }
   else
   {
-    StringCSF = GetStringCSF((wchar_t *)&g_Str_TXT_SCENARIO_TOO_SMALL, 0, &g_Str_File_ModemHst_cpp, 759); /*0x5b8d52*/
+    StringCSF = GetStringCSF((char *)&g_Str_TXT_SCENARIO_TOO_SMALL, 0, &g_Str_File_ModemHst_cpp, 759); /*0x5b8d52*/
     swprintf((wchar_t *const)Buffer, (const size_t)StringCSF, Format); /*0x5b8d5d*/
     v5 = GetStringCSF(g_Str_TXT_OK, 0, &g_Str_File_ModemHst_cpp, 760); /*0x5b8d84*/
     Dialog::ShowMessageBox(Buffer, v5, 0, 0, 0, v28); /*0x5b8d93*/
@@ -2556,19 +2556,19 @@ void GameSetup_DisplayPlayers()
           switch ( (unsigned int)PlayerSide ) /*0x5db24b*/
           {
             case 0u: /*0x5db24b*/
-              StringCSF = GetStringCSF((wchar_t *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 398); /*0x5db263*/
+              StringCSF = GetStringCSF((char *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 398); /*0x5db263*/
               goto LABEL_32; /*0x5db263*/
             case 1u: /*0x5db24b*/
-              StringCSF = GetStringCSF((wchar_t *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 401); /*0x5db276*/
+              StringCSF = GetStringCSF((char *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 401); /*0x5db276*/
               goto LABEL_32; /*0x5db276*/
             case 2u: /*0x5db24b*/
-              StringCSF = GetStringCSF((wchar_t *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 404); /*0x5db289*/
+              StringCSF = GetStringCSF((char *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 404); /*0x5db289*/
               goto LABEL_32; /*0x5db289*/
             case 3u: /*0x5db24b*/
-              StringCSF = GetStringCSF((wchar_t *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 407); /*0x5db29f*/
+              StringCSF = GetStringCSF((char *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 407); /*0x5db29f*/
               goto LABEL_32; /*0x5db29f*/
             case 4u: /*0x5db24b*/
-              StringCSF = GetStringCSF((wchar_t *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 410); /*0x5db2b2*/
+              StringCSF = GetStringCSF((char *)g_Str_TXT_GDI, 0, g_Str_File_netdlg2_cpp, 410); /*0x5db2b2*/
               goto LABEL_32; /*0x5db2b2*/
             case 5u: /*0x5db24b*/
               StringCSF = GetStringCSF(g_Str_TXT_NOD, 0, g_Str_File_netdlg2_cpp, 413); /*0x5db2b9*/
@@ -4949,7 +4949,7 @@ void LoadScreen::RenderLoop()
       v355[0] = v305 + 500; /*0x4b8c41*/
       v355[1] = v272 + 385; /*0x4b8c55*/
       v336 = v198; /*0x4b8c6d*/
-      StringCSF = GetStringCSF((wchar_t *)((char *)&stru_820320 + 39), 0, ((char *)&stru_820320 + 59), 873); /*0x4b8c74*/
+      StringCSF = GetStringCSF((char *)((char *)&stru_820320 + 39), 0, ((char *)&stru_820320 + 59), 873); /*0x4b8c74*/
       TextRenderer::RenderCentered(v194, v198, v304, v355, StringCSF, 0, (int)v23, (int)v250, v251); /*0x4b8c8b*/
       v254 = 1; /*0x4b8c90*/
       v329 = v190; /*0x4b8c95*/

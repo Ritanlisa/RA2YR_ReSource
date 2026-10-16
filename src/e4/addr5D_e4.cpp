@@ -89,12 +89,12 @@ namespace gamemd {
     int HandleToolTipMessage(int p0);  // x4:signals@0x724200
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aBattle[];  // data: 0x830c00 truth(IDA G42.57w9)
-extern char aCooperative[];  // data: 0x830bcc truth(IDA G42.57w9)
-extern char aFreeforall[];  // data: 0x830bd8 truth(IDA G42.57w9)
-extern char aManbattle[];  // data: 0x830bf4 truth(IDA G42.57w9)
-extern char aSiege[];  // data: 0x830bec truth(IDA G42.57w9)
-extern char aUnholy[];  // data: 0x830be4 truth(IDA G42.57w9)
+extern char aBattle[7];  // data: 0x830c00 truth(IDA G42.57w9)
+extern char aCooperative[12];  // data: 0x830bcc truth(IDA G42.57w9)
+extern char aFreeforall[11];  // data: 0x830bd8 truth(IDA G42.57w9)
+extern char aManbattle[10];  // data: 0x830bf4 truth(IDA G42.57w9)
+extern char aSiege[6];  // data: 0x830bec truth(IDA G42.57w9)
+extern char aUnholy[7];  // data: 0x830be4 truth(IDA G42.57w9)
 extern unsigned int aDRa2mdpostNetd;  // data: 0x831214 truth(IDA G42.57w9)
 
 
@@ -803,7 +803,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         String::TrimRight((String *)&v19.vfptr1, (const char **)&v19.fallRate); /*0x5d772d*/
         DeleteAndZero((ObjectClass *)&v19.fallRate); /*0x5d7736*/
         v7 = ((String *)((String *)&v19.vfptr1))->GetOrEmpty(); /*0x5d7749*/
-        StringCSF = GetStringCSF((wchar_t *)v7, 0, aDRa2mdpostMult, 1030); /*0x5d7752*/
+        StringCSF = GetStringCSF((char *)v7, 0, aDRa2mdpostMult, 1030); /*0x5d7752*/
         ((WideString *)((wchar_t **)&v19.referenceCount))->Assign(StringCSF); /*0x5d775c*/
         unknown_libname_73(&v19.vfptr3); /*0x5d7765*/
         v9 = String::Tokenize((String *)&v19, v6, Str, &v19.vfptr3); /*0x5d7782*/
@@ -821,7 +821,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         String::TrimRight((String *)&v19.vfptr3, (const char **)&v19.ambientSoundController[1]); /*0x5d77cd*/
         DeleteAndZero((ObjectClass *)&v19.ambientSoundController[1]); /*0x5d77d6*/
         v10 = ((String *)((String *)&v19.vfptr3))->GetOrEmpty(); /*0x5d77e9*/
-        v11 = GetStringCSF((wchar_t *)v10, 0, aDRa2mdpostMult, 1041); /*0x5d77f2*/
+        v11 = GetStringCSF((char *)v10, 0, aDRa2mdpostMult, 1041); /*0x5d77f2*/
         ((WideString *)((wchar_t **)&v19.NeedsSaveOrLink))->Assign(v11); /*0x5d77fc*/
         unknown_libname_73(&v19.vfptr2); /*0x5d7805*/
         v12 = String::Tokenize((String *)&v19, v9, Str, &v19.vfptr2); /*0x5d7822*/
@@ -1837,11 +1837,11 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       dword_AC0238 = 600; /*0x5df806*/
       return 1; /*0x5df81a*/
     }
-    v5 = GetStringCSF((wchar_t *)aTxtGameIsClose, 0, g_Str_File_netdlg2_cpp, 3750); /*0x5df6f0*/
+    v5 = GetStringCSF((char *)aTxtGameIsClose, 0, g_Str_File_netdlg2_cpp, 3750); /*0x5df6f0*/
   }
   else
   {
-    v5 = GetStringCSF((wchar_t *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_netdlg2_cpp, 3727); /*0x5df4ac*/
+    v5 = GetStringCSF((char *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_netdlg2_cpp, 3727); /*0x5df4ac*/
   }
   Dialog::ShowMessage(-1, (size_t)v5); /*0x5df888*/
   PlayVocClass(dword_8871E0->MovieOff, 0x2000, 1.0, 0); /*0x5df8a7*/

@@ -124,8 +124,8 @@ namespace gamemd {
     int nullsub_34();  // x4:empty@0x691b30
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aGascloudsys[];  // data: 0x83da90 truth(IDA G42.57w9)
-extern char aHumanPlayer[];  // data: 0x83dc8c truth(IDA G42.57w9)
+extern char aGascloudsys[12];  // data: 0x83da90 truth(IDA G42.57w9)
+extern char aHumanPlayer[15];  // data: 0x83dc8c truth(IDA G42.57w9)
 
 
 // 0x682640

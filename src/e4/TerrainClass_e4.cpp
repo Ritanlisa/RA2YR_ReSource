@@ -203,7 +203,7 @@ LABEL_162:
       if ( !v44 )
         return 1;
       int v121 = Math::RoundToInt(*(double *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 5312) * 900.0);
-      StringCSF = (wchar_t *)(GetStringCSF( (wchar_t *)(v44), 0, (const char *)(&((unsigned int *)(stru_830620))[75224]), 1766));
+      StringCSF = (wchar_t *)(GetStringCSF( (char *)(v44), 0, (const char *)(&((unsigned int *)(stru_830620))[75224]), 1766));
       MessageListClass::AddMessage((gamemd::MessageListClass *)(&((unsigned int *)(HouseClass_Player))[32532]), 0, 0, (wchar_t *)((CellStruct *)StringCSF), PlayerColorScheme,(int)((IUnknown *)0x4046), v121, 0);
       return 1;
     case 0xC:
@@ -962,7 +962,7 @@ LABEL_60:
       ((ScriptAction *)(Destination))->CopyStringField( (char *)(v64));
       if ( v64 )
       {
-*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 4596) = (unsigned int)GetStringCSF( (wchar_t *)v64, 0, (const char *)(&stru_830620[75224]), 2242);
+*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 4596) = (unsigned int)GetStringCSF( (char *)v64, 0, (const char *)(&stru_830620[75224]), 2242);
 
 
 

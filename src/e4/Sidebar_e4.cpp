@@ -1092,7 +1092,7 @@ LABEL_13:
                     (*((unsigned char *)&(v73))) = 1;
                     IsCliffWall = ObjectClass::IsCliffWall((unsigned int *)v86);
                     if ( IsCliffWall )
-                      BufferCount = (size_t)GetStringCSF( (wchar_t *)(g_Str_TXT_READY), 0, (const char *)(&(&stru_830620)[62628]), 3411);
+                      BufferCount = (size_t)GetStringCSF( (char *)(g_Str_TXT_READY), 0, (const char *)(&(&stru_830620)[62628]), 3411);
                     else
                       v78 = 1;
                     Member09 = 0;
@@ -1319,7 +1319,7 @@ LABEL_59:
                       && (!*(unsigned int *)(v86 + 56) || *(unsigned char *)(v86 + 112))
                       || *(unsigned int *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 2 )
                     {
-StringCSF = GetStringCSF( (wchar_t *)&stru_830620[62732], 0, (const char *)(&stru_830620[62628]), 3636);
+StringCSF = GetStringCSF( (char *)&stru_830620[62732], 0, (const char *)(&stru_830620[62628]), 3636);
 
 
 
@@ -1601,12 +1601,12 @@ LABEL_121:
             v83 += 17;
             if ( v63 >= 1 )
             {
-              v65 = GetStringCSF( (wchar_t *)&stru_830620[62704], 0, (const char *)(&stru_830620[62628]), 3785);
+              v65 = GetStringCSF( (char *)&stru_830620[62704], 0, (const char *)(&stru_830620[62628]), 3785);
               swprintf((wchar_t *const)&aP3[216], (const size_t)v65, Format, v70);
             }
             else
             {
-              v64 = GetStringCSF( (wchar_t *)&stru_830620[62716], 0, (const char *)(&stru_830620[62628]), 3781);
+              v64 = GetStringCSF( (char *)&stru_830620[62716], 0, (const char *)(&stru_830620[62628]), 3781);
               wcscpy( (wchar_t *)&aP3[216], (const wchar_t *)(v64));
             }
             TextRenderer::DrawText(
@@ -1620,7 +1620,7 @@ LABEL_121:
               66);
           }
           v83 += 17;
-          v66 = GetStringCSF( (wchar_t *)&stru_830620[62688], 0, (const char *)(&stru_830620[62628]), 3807);
+          v66 = GetStringCSF( (char *)&stru_830620[62688], 0, (const char *)(&stru_830620[62628]), 3807);
           swprintf((wchar_t *const)&aP3[216], (const size_t)v66, v98, v70);
           TextRenderer::DrawText(
             (int *)&aP3[200],
@@ -1632,7 +1632,7 @@ LABEL_121:
             0,
             66);
           v83 += 17;
-          v67 = GetStringCSF( (wchar_t *)&stru_830620[62672], 0, (const char *)(&stru_830620[62628]), 3822);
+          v67 = GetStringCSF( (char *)&stru_830620[62672], 0, (const char *)(&stru_830620[62628]), 3822);
           swprintf((wchar_t *const)&aP3[216], (const size_t)v67, v101, v71);
           TextRenderer::DrawText(
             (int *)&aP3[184],
@@ -1644,7 +1644,7 @@ LABEL_121:
             0,
             66);
           v83 += 17;
-          v68 = GetStringCSF( (wchar_t *)&stru_830620[62656], 0, (const char *)(&stru_830620[62628]), 3835);
+          v68 = GetStringCSF( (char *)&stru_830620[62656], 0, (const char *)(&stru_830620[62628]), 3835);
           swprintf((wchar_t *const)&aP3[216], (const size_t)v68, v99, v72);
           TextRenderer::DrawText(
             (int *)&aP3[104],

@@ -1210,9 +1210,9 @@ LABEL_80:
 LABEL_79:
     FadePalette(&((unsigned char *)&stru_87C374)[37900], 0, 0);
     v81[0] = (unsigned int)&stru_82083C;
-    StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_CANCEL), 0, (const char *)(g_Str_File_Init_CPP), 4276);
-    v76 = GetStringCSF( (wchar_t *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_Init_CPP), 4276);
-    v64 = GetStringCSF( (wchar_t *)(aTxtCdDialog1), 0, (const char *)(g_Str_File_Init_CPP), 4276);
+    StringCSF = GetStringCSF( (char *)(g_Str_TXT_CANCEL), 0, (const char *)(g_Str_File_Init_CPP), 4276);
+    v76 = GetStringCSF( (char *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_Init_CPP), 4276);
+    v64 = GetStringCSF( (char *)(aTxtCdDialog1), 0, (const char *)(g_Str_File_Init_CPP), 4276);
     if ( ((Dialog *)(int)v64)->ShowMessageBox( (unsigned short *)(v76), (unsigned short *)((Movie *)StringCSF), 0, 0, v78) == 1 )
       goto LABEL_68;
     goto LABEL_80;
@@ -1986,9 +1986,9 @@ LABEL_40:
         Options::Screen_Dialog();
         goto LABEL_134;
       case 6:
-        StringCSF = GetStringCSF( (wchar_t *)(aGuiExitareyous), 0, (const char *)(g_Str_File_Init_CPP), 2502);
-        j = (int)GetStringCSF( (wchar_t *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_Init_CPP), 2503);
-        v15 = GetStringCSF( (wchar_t *)(aGuiCancel), 0, (const char *)(g_Str_File_Init_CPP), 2504);
+        StringCSF = GetStringCSF( (char *)(aGuiExitareyous), 0, (const char *)(g_Str_File_Init_CPP), 2502);
+        j = (int)GetStringCSF( (char *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_Init_CPP), 2503);
+        v15 = GetStringCSF( (char *)(aGuiCancel), 0, (const char *)(g_Str_File_Init_CPP), 2504);
         Screen::Capture(1, 0, 0, (int)v15);
         v58 = &stru_82083C;
         if ( ((Dialog *)(int)StringCSF)->ShowMessageBox( (unsigned short *)j, (unsigned short *)((Movie *)v15), 0, 0, (int)v54) )
@@ -2314,7 +2314,7 @@ LABEL_183:
 LABEL_145:
           if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 4 )
           {
-            v35 = GetStringCSF( (wchar_t *)(aTxtAwayLoading), 0, (const char *)(g_Str_File_Init_CPP), 2993);
+            v35 = GetStringCSF( (char *)(aTxtAwayLoading), 0, (const char *)(g_Str_File_Init_CPP), 2993);
             ChatMessageWOL( 1, (wchar_t *)(v35));
           }
           goto LABEL_147;
@@ -2648,7 +2648,7 @@ char CommandLine_Parse(int a1, int a2)
     _putws(v21); /*0x52fbde*/
     v22 = (const wchar_t *)GetStringCSF(aTxtOptionHelp0_3, (int)g_Str_File_Init_CPP, 3418); /*0x52fbf7*/
     _putws(v22); /*0x52fbfd*/
-    v17 = (const wchar_t *)GetStringCSF((wchar_t *)aTxtOptionHelp0_4, (int)g_Str_File_Init_CPP, 3419); /*0x52fc16*/
+    v17 = (const wchar_t *)GetStringCSF((char *)aTxtOptionHelp0_4, (int)g_Str_File_Init_CPP, 3419); /*0x52fc16*/
     goto LABEL_67; /*0x52fc16*/
   }
   if ( Checksummer::HashString(v5) == -648255326 ) /*0x52f787*/

@@ -64,8 +64,8 @@ namespace gamemd {
     int LookupWaypointName(ObjectClass *p_this);  // x4:ida@0x5b3910
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aViscLrgShp[];  // data: 0x84599c truth(IDA G42.57w9)
-extern char aViscSmlShp[];  // data: 0x8459ac truth(IDA G42.57w9)
+extern char aViscLrgShp[13];  // data: 0x84599c truth(IDA G42.57w9)
+extern char aViscSmlShp[13];  // data: 0x8459ac truth(IDA G42.57w9)
 
 
 // 0x743270

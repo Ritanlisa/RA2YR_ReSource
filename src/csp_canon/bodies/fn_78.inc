@@ -14,7 +14,7 @@ wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
   ProcessStringAndCopy((char **)&v7.DeleteAndZero_field_0x04, aWolLocale, v3); /*0x780a1e*/
   ((DeleteAndZero *)&v7.DeleteAndZero_field_0x08)->Alt(); /*0x780a27*/
   v4 = ((String *)((String *)&v7.DeleteAndZero_field_0x04))->GetOrEmpty(); /*0x780a3a*/
-  StringCSF = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
+  StringCSF = GetStringCSF((char *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
   ((WideString *)((WideString *)&v7))->Assign(StringCSF); /*0x780a4d*/
   ((WideString *)((WideString *)a1))->AssignFromPtr((const wchar_t **)&v7); /*0x780a65*/
   ((DeleteAndZero*)&v7)->Alt(); /*0x780a6e*/

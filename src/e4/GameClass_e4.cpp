@@ -685,15 +685,15 @@ namespace gamemd {
 wchar_t * GameClass::GetDifficultyString(void * aSttPlayerclose, void * aSttPlayerhuman, void * aSttPlayeropen, void * aSttPlayeropeno)
 {
   if ( this == (GameClass *)g_HouseClass_ObserverFlags ) /*0x5e99c6*/
-    return GetStringCSF((wchar_t *)(aSttPlayeropen), 0, g_Str_File_netshare_cpp, 4948); /*0x5e99d9*/
+    return GetStringCSF((char *)(aSttPlayeropen), 0, g_Str_File_netshare_cpp, 4948); /*0x5e99d9*/
   if ( this == (GameClass *)g_Lobby_PlayerCount ) /*0x5e99e5*/
-    return GetStringCSF((wchar_t *)(aSttPlayerclose), 0, g_Str_File_netshare_cpp, 4950); /*0x5e99f8*/
+    return GetStringCSF((char *)(aSttPlayerclose), 0, g_Str_File_netshare_cpp, 4950); /*0x5e99f8*/
   if ( this == (GameClass *)g_Lobby_PlayerTeam ) /*0x5e9a04*/
-    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerDumbAI), 0, g_Str_File_netshare_cpp, 4952); /*0x5e9a17*/
+    return GetStringCSF((char *)(g_Str_STT_PlayerDumbAI), 0, g_Str_File_netshare_cpp, 4952); /*0x5e9a17*/
   if ( this == (GameClass *)g_Lobby_PlayerSide ) /*0x5e9a23*/
-    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerSmartAI), 0, g_Str_File_netshare_cpp, 4954); /*0x5e9a36*/
+    return GetStringCSF((char *)(g_Str_STT_PlayerSmartAI), 0, g_Str_File_netshare_cpp, 4954); /*0x5e9a36*/
   if ( this == (GameClass *)g_Lobby_PlayerColor ) /*0x5e9a42*/
-    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerGeniusAI), 0, g_Str_File_netshare_cpp, 4956); /*0x5e9a55*/
+    return GetStringCSF((char *)(g_Str_STT_PlayerGeniusAI), 0, g_Str_File_netshare_cpp, 4956); /*0x5e9a55*/
   if ( this == (GameClass *)g_Lobby_MaxPlayers ) /*0x5e9a61*/
     return GetStringCSF(aSttPlayeropeno, 0, g_Str_File_netshare_cpp, 4958); /*0x5e9a74*/
   return GetStringCSF(aSttPlayerhuman, 0, g_Str_File_netshare_cpp, 4960); /*0x5e99de*/

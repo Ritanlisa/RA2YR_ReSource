@@ -35,7 +35,7 @@ wchar_t * AddTeamCommand::Release(void *a1)
   const wchar_t *v3; // [esp-4h] [ebp-4h]
   v3 = *(const wchar_t **)&this-((unsigned int *)(>m_1))[3]; /*0x5360f5*/
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)(aTxtAddSelectTe), 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
+  StringCSF = GetStringCSF((char *)(aTxtAddSelectTe), 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
   swprintf((wchar_t *const)&((unsigned int *)&stru_A8EB00)[2672], (const size_t)StringCSF, v3); /*0x536110*/
   return (wchar_t *)&((unsigned int *)&stru_A8EB00)[2672]; /*0x53611d*/
 }
@@ -44,6 +44,6 @@ wchar_t * AddTeamCommand::Release(void *a1)
 namespace gamemd {
 wchar_t * AddTeamCommand::ddtor(void *a1)
 {
-  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0, g_Str_File_Init_CPP, 6328); /*0x536136*/
+  return GetStringCSF((char *)(g_Str_TXT_TEAM), 0, g_Str_File_Init_CPP, 6328); /*0x536136*/
 }
 } // namespace gamemd

@@ -960,7 +960,7 @@ int SynchronizeMultiplayerGameStart(void)
   }
   *(unsigned int *)&g_GameRulesOptions = -1; /*0x5dda8c*/
   StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddaaa*/
-  v7 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.TurretAnimData[2], 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddab5*/
+  v7 = (int *)GetStringCSF((char *)&stru_82BA00.TurretAnimData[2], 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddab5*/
   Dialog::ShowMessageBox(v7, StringCSF, 0, 0, 0, v1); /*0x5ddabf*/
   memset(v11, 0, sizeof(v11)); /*0x5ddad3*/
   v12 = 0; /*0x5ddad5*/

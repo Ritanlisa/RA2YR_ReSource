@@ -510,21 +510,21 @@ char MapSeedClass::ValidateRectBounds(void *a1)
 namespace gamemd {
 wchar_t * MapSeedClass::GetCell()
 {
-  return GetStringCSF((wchar_t *)&stru_82BA00.VoxelCaches[2], 0, &stru_82BA00.UINameLabel[11], 5578); /*0x597fb6*/
+  return GetStringCSF((char *)&stru_82BA00.VoxelCaches[2], 0, &stru_82BA00.UINameLabel[11], 5578); /*0x597fb6*/
 }
 } // namespace gamemd
 // 0x597FC0
 namespace gamemd {
 wchar_t * MapSeedClass::SetCell()
 {
-  return GetStringCSF((wchar_t *)&stru_82BA00.VoxelCaches[6], 0, &stru_82BA00.UINameLabel[11], 5584); /*0x597fd6*/
+  return GetStringCSF((char *)&stru_82BA00.VoxelCaches[6], 0, &stru_82BA00.UINameLabel[11], 5584); /*0x597fd6*/
 }
 } // namespace gamemd
 // 0x597FE0
 namespace gamemd {
 wchar_t * MapSeedClass::Validate()
 {
-  return GetStringCSF((wchar_t *)&stru_82BA00.VoxelCaches[11], 0, &stru_82BA00.UINameLabel[11], 5590); /*0x597ff6*/
+  return GetStringCSF((char *)&stru_82BA00.VoxelCaches[11], 0, &stru_82BA00.UINameLabel[11], 5590); /*0x597ff6*/
 }
 } // namespace gamemd
 // 0x5AC270

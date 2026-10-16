@@ -39,7 +39,7 @@ int NetworkClass::ExecutePlanningModeCmd()
     if ( !byte_AC4C08 ) /*0x639fdd*/
     {
       byte_AC4C08 = 1; /*0x639fe8*/
-      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
+      StringCSF = GetStringCSF((char *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
   LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
       PlayVocClass(dword_8871E0->AmmoCrateDamage, 0x2000, 1.0, 0); /*0x63a09e*/

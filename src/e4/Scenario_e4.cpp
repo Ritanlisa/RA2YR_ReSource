@@ -79,8 +79,8 @@ namespace gamemd {
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aSed;  // data: 0x83da88 truth(IDA G42.57w9)
 extern unsigned int aSpldbrShp;  // data: 0x83da40 truth(IDA G42.57w9)
-extern wchar_t aTxtGameId[];  // data: 0x83da4c truth(IDA G42.57w9)
-extern wchar_t aTxtUnableReadS[];  // data: 0x831af0 truth(IDA G42.57w9)
+extern char aTxtGameId[12];  // data: 0x83da4c truth(IDA G42.57w9)
+extern char aTxtUnableReadS[25];  // data: 0x831af0 truth(IDA G42.57w9)
 
 
 // 0x44F820

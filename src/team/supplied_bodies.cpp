@@ -53,14 +53,14 @@ extern int g_INI_DefaultBuffer;           // data: 0x889F64
 extern int g_INI_Key_Campaigns;           // data: 0x81F3B4
 extern int g_INI_Key_Civilian;            // data: 0x818164 (Civilian blob)
 extern int g_INI_Key_Easy;                // data: 0x818164 区
-extern unsigned char aAitriggertypes[4];  // data: 0x8180F8 "AITriggerTypes"
-extern char aTriggers[];                  // data: 0x818170 区 "Triggers"
+extern char aAitriggertypes[15];  // data: 0x8180F8 "AITriggerTypes"
+extern char aTriggers[3];                  // data: 0x818170 区 "Triggers"
 extern char aEvents[];                    // data: "Events"
 extern char aActions[];                   // data: "Actions"
 extern char Str_Sep[];                    // data: "," 分隔串 (gamemd::Str 类型遮蔽改名)
-extern char g_Str__none_[];               // data: "<none>"
-extern char g_Str_none[];                 // data: "none"
-extern char g_Str_File_CoopCampMD_ini[];  // data: "coopCampMD.ini"
+extern char g_Str__none_[7];               // data: "<none>"
+extern char g_Str_none[5];                 // data: "none"
+extern char g_Str_File_CoopCampMD_ini[15];  // data: "coopCampMD.ini"
 extern char aNumberofcampai[];            // data: "Numberofcampaigns"
 extern char aCampaignname[];              // data: "CampaignName"
 extern char aDRa2mdpostCoop[];            // data: CSF 标签
@@ -118,7 +118,7 @@ struct g_BuildingLoadQueue_Array_t {
 extern g_BuildingLoadQueue_Array_t g_BuildingLoadQueue_Array;  // data: 0xB0E840
 
 // 裸自由函数载体 (e4_protos.h 整头有 C2990 面, 只取本 TU 所需)
-extern wchar_t * GetStringCSF(wchar_t *key, unsigned int *a2, const char *a3, int a4);
+extern wchar_t * GetStringCSF(char *key, unsigned int *a2, const char *a3, int a4);
 extern void unknown_libname_73(void *a1);
 extern uint8_t BulkCharToWide(unsigned short *a1, uint8_t *a2, int a3);
 extern int DamageMapClassArea(unsigned int a1, void *a2, int a3, uint16_t a4, unsigned char a5);

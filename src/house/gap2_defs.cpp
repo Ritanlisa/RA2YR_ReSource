@@ -2692,7 +2692,7 @@ int HouseClass::SetAlliance(int a1, int a2) {
       goto LABEL_31; /*0x4fa0f8*/
     if ( !this->currentPlayer ) /*0x4fa0fe*/
       goto LABEL_31; /*0x4fa0fe*/
-    StringCSF = GetStringCSF((wchar_t *)&stru_824808.Name[5], 0, g_Str_File_House_CPP, 3480); /*0x4fa12b*/
+    StringCSF = GetStringCSF((char *)&stru_824808.Name[5], 0, g_Str_File_House_CPP, 3480); /*0x4fa12b*/
     swprintf(Buffer, (const size_t)StringCSF, (const wchar_t *const)(&this->Float4_19D4), &a1->uiName[4]); /*0x4fa136*/
     (*((unsigned short *)&(v11))) = Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 5312) * 900.0); /*0x4fa152*/
     MessageListClass::AddMessage( /*0x4fa175*/
@@ -3658,7 +3658,7 @@ int HouseClass::ClearLowPowerTargets() {
           {
             if ( this == (HouseClass *)dword_A83D4C ) /*0x4fcb79*/
             {
-              StringCSF = GetStringCSF((wchar_t *)&stru_824C08.RussianVoice[7], 0, g_Str_File_House_CPP, 5642); /*0x4fcb8e*/
+              StringCSF = GetStringCSF((char *)&stru_824C08.RussianVoice[7], 0, g_Str_File_House_CPP, 5642); /*0x4fcb8e*/
               HouseClass::SetOwnerName((HouseClass *)g_TacticalClass_Instance, StringCSF, 2); /*0x4fcb9a*/
               VoxClass::FindAndPlay((VoxClass *)&stru_824C08.Name[9], -1); /*0x4fcba9*/
               goto LABEL_26; /*0x4fcba9*/

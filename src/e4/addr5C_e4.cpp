@@ -266,9 +266,9 @@ BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
 {
 
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
-  StringCSF = GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, aDRa2mdpostMpla, 108); /*0x5c60fa*/
+  StringCSF = GetStringCSF((char *)(g_Str_TXT_CANCEL), 0, aDRa2mdpostMpla, 108); /*0x5c60fa*/
   wchar_t *v3; // eax
-  v3 = GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
+  v3 = GetStringCSF((char *)(g_Str_TXT_OK), 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
   int v6; // [esp+0h] [ebp-8h]
   return Dialog::ShowMessageBox(lParam, v3, StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 }

@@ -1099,7 +1099,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   char *v14; // eax
   v14 = ((String *)((char **)&v32))->GetOrEmpty(); /*0x76fa43*/
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)v14, 0, aDRa2mdpostWdtt, 39); /*0x76fa4c*/
+  StringCSF = GetStringCSF((char *)v14, 0, aDRa2mdpostWdtt, 39); /*0x76fa4c*/
   WideString::Assign_Alt(&this->u32_C, StringCSF); /*0x76fa55*/
   FromStringInt((char **)&aP1, g_DisplayWidth); /*0x76fa64*/
   char **v16; // eax
@@ -1910,7 +1910,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   char *v8; // eax
     v8 = String::GetOrEmpty((String *)&a3); /*0x76737a*/
   wchar_t *StringCSF; // [esp-8h] [ebp-10h]
-    StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22); /*0x76738c*/
+    StringCSF = GetStringCSF((char *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22); /*0x76738c*/
   wchar_t **v9; // eax
     v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4); /*0x767399*/
     WideString::AssignConcat((const wchar_t **)v9, a2, StringCSF); /*0x7673a0*/
@@ -1922,7 +1922,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   char *v11; // eax
     v11 = String::GetOrEmpty((String *)&a3); /*0x7673d3*/
   wchar_t *v12; // eax
-    v12 = GetStringCSF((wchar_t *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25); /*0x7673dc*/
+    v12 = GetStringCSF((char *)v11, 0, g_Str_File_WDTGameOptions_cpp, 25); /*0x7673dc*/
     WideString::Assign(a2, v12); /*0x7673e8*/
   }
   DeleteAndZero((ObjectClass *)&a3); /*0x7673bb*/

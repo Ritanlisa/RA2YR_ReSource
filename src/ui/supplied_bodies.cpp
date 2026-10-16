@@ -143,7 +143,7 @@ extern char *aNumber9Pcx;             // data: "number9.pcx" 串 (G42.35)
 // 与 command_ext 的 struct DeleteAndZero 同名共存 (函数名遮蔽类名, 类经 DeleteAndZero:: 限定仍可达)
 int DeleteAndZero(void *aP0);  // 0x7B46F0 函数原型
 extern int SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3);  // 本地原型 (G42.34: 3-arg truth, def=0x4E49A0 addr4E_e4.cpp)
-extern wchar_t * GetStringCSF(wchar_t *key, unsigned int *a2, const char *a3, int a4);  // team R1 前例原型
+extern wchar_t * GetStringCSF(char *key, unsigned int *a2, const char *a3, int a4);
 extern wchar_t * g_Str_File_CampScor_cpp;  // data: CSF 标签
 extern char * CharToWideString(unsigned char *a1);  // 本地原型 (G42.35: truth 0x735120 char*(uchar*))
 extern char * ToWideStringChar(char *a1);  // 本地原型
@@ -166,9 +166,9 @@ extern void *ReceiveLoop(void *a1);  // 0x5410B0 区 本地原型 (Network:: 静
 extern int GetHouseClassSideIndex(int a1);  // 本地原型 (调用点 int)
 // G42.33 b3: r8 缺席全局/原型
 extern void *g_UIControlState;        // data: 0xAC1154 (globals_core 同形)
-extern int g_Str_Fmt_PctD;            // data: "%d" 串
-extern int g_Str_TXT_WAITING;         // data: CSF 标签
-extern int g_Str_TXT_READY;           // data: CSF 标签
+extern char g_Str_Fmt_PctD[2];            // data: "%d" 串
+extern char g_Str_TXT_WAITING[12];         // data: CSF 标签
+extern char g_Str_TXT_READY[10];           // data: CSF 标签
 extern int aGuiContinue;              // data: "GUIContinue" 串
 extern int aTxtAborted;               // data: "TXT_Aborted" 串
 extern int g_TypeClass_DefaultString; // data: 缺省串
@@ -1131,7 +1131,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
                   if ( v40 >= (int)dword_A8D580 ) /*0x46e7b1*/
                     goto LABEL_92; /*0x46e7b1*/
                 }
-                StringCSF = GetStringCSF((wchar_t *)(long)g_Str_TXT_READY, 0, (const char *)g_Str_File_CampScor_cpp, 1346); /*0x46e7cb*/
+                StringCSF = GetStringCSF((char *)(long)g_Str_TXT_READY, 0, (const char *)g_Str_File_CampScor_cpp, 1346); /*0x46e7cb*/
                 v45 = GetDlgItem(hWnd, nIDDlgItem); /*0x46e7d3*/
                 SendMessageA(v45, 0x4B2u, 0, (LPARAM)StringCSF); /*0x46e7e2*/
               }
@@ -1163,11 +1163,11 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           if ( v47 >= (int)dword_A8D580 ) /*0x46e87e*/
             goto LABEL_99; /*0x46e87e*/
         }
-        v49 = GetStringCSF((wchar_t *)(long)g_Str_TXT_WAITING, 0, (const char *)g_Str_File_CampScor_cpp, 1363); /*0x46e898*/
+        v49 = GetStringCSF((char *)(long)g_Str_TXT_WAITING, 0, (const char *)g_Str_File_CampScor_cpp, 1363); /*0x46e898*/
         v50 = GetDlgItem(hWnd, nIDDlgItem); /*0x46e8a0*/
         SendMessageA(v50, 0x4B2u, 0, (LPARAM)v49); /*0x46e8ab*/
   LABEL_99:
-        v51 = GetStringCSF((wchar_t *)(long)aGuiContinue, 0, (const char *)g_Str_File_CampScor_cpp, 1368); /*0x46e8b1*/
+        v51 = GetStringCSF((char *)(long)aGuiContinue, 0, (const char *)g_Str_File_CampScor_cpp, 1368); /*0x46e8b1*/
         v52 = GetDlgItem(hWnd, 1745); /*0x46e8cf*/
         SendMessageA(v52, 0x4B2u, 0, (LPARAM)v51); /*0x46e8da*/
         v53 = GetDlgItem(hWnd, 1472); /*0x46e8e8*/
@@ -1327,7 +1327,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         v82 = 720 * (4 * (v80 / -3600) - v80 / 3600) + v80; /*0x46eea7*/
         v120 = v82 % 60; /*0x46eec2*/
         v118 = v82 / 60; /*0x46eec3*/
-        v83 = GetStringCSF((wchar_t *)(&stru_81AF8C + 0x360), 0, (const char *)g_Str_File_CampScor_cpp, 169); /*0x46eed6*/
+        v83 = GetStringCSF((char *)(&stru_81AF8C + 0x360), 0, (const char *)g_Str_File_CampScor_cpp, 169); /*0x46eed6*/
         swprintf(Buffer, (const size_t)v83, (const wchar_t *const)v81, v118, v120); /*0x46eee4*/
       }
       v84 = GetDlgItem(hWnd, 1002); /*0x46eef2*/
@@ -1410,13 +1410,13 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           v123 = *((unsigned int *)hDlg + 4); /*0x46f1b2*/
           if ( v102 ) /*0x46f1bf*/
           {
-            v125 = (LPARAM)GetStringCSF((wchar_t *)(long)g_Str_TXT_WAITING, 0, (const char *)g_Str_File_CampScor_cpp, 1213); /*0x46f1d7*/
+            v125 = (LPARAM)GetStringCSF((char *)(long)g_Str_TXT_WAITING, 0, (const char *)g_Str_File_CampScor_cpp, 1213); /*0x46f1d7*/
             v103 = GetDlgItem(hWnd, v123); /*0x46f1e1*/
             SendMessageA(v103, 0x4B2u, 0, v125); /*0x46f1f0*/
           }
           else if ( !*((unsigned char *)&g_GameModeOptionState + v125) ) /*0x46f1f8*/
           {
-            v125 = (LPARAM)GetStringCSF((wchar_t *)(long)aTxtAborted, 0, (const char *)g_Str_File_CampScor_cpp, 1216); /*0x46f218*/
+            v125 = (LPARAM)GetStringCSF((char *)(long)aTxtAborted, 0, (const char *)g_Str_File_CampScor_cpp, 1216); /*0x46f218*/
             v104 = GetDlgItem(hWnd, v123); /*0x46f222*/
             SendMessageA(v104, 0x4B2u, 0, v125); /*0x46f231*/
             v105 = GetDlgItem(hWnd, 1745); /*0x46f23b*/

@@ -432,29 +432,29 @@ wchar_t * SideClass::GetName()
 {
 
   if ( this == (SideClass *)-2 ) /*0x4e38a3*/
-    return GetStringCSF((wchar_t *)(aSttPlayersider), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 237); /*0x4e38b6*/
+    return GetStringCSF((char *)(aSttPlayersider), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 237); /*0x4e38b6*/
   if ( this == (SideClass *)-3 ) /*0x4e38bf*/
-    return GetStringCSF((wchar_t *)(aSttPlayersideo), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 239); /*0x4e38d2*/
+    return GetStringCSF((char *)(aSttPlayersideo), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 239); /*0x4e38d2*/
   if ( !this ) /*0x4e38da*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidea), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 241); /*0x4e38ed*/
+    return GetStringCSF((char *)(aSttPlayersidea), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 241); /*0x4e38ed*/
   if ( this == (SideClass *)1 ) /*0x4e38f6*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidek), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 243); /*0x4e3909*/
+    return GetStringCSF((char *)(aSttPlayersidek), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 243); /*0x4e3909*/
   if ( this == (SideClass *)2 ) /*0x4e3912*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidef), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 245); /*0x4e3925*/
+    return GetStringCSF((char *)(aSttPlayersidef), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 245); /*0x4e3925*/
   if ( this == (SideClass *)3 ) /*0x4e392e*/
-    return GetStringCSF((wchar_t *)(aSttPlayersideg), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 247); /*0x4e3941*/
+    return GetStringCSF((char *)(aSttPlayersideg), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 247); /*0x4e3941*/
   if ( this == (SideClass *)4 ) /*0x4e394a*/
-    return GetStringCSF((wchar_t *)(aSttPlayersideb), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 249); /*0x4e395d*/
+    return GetStringCSF((char *)(aSttPlayersideb), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 249); /*0x4e395d*/
   if ( this == (SideClass *)5 ) /*0x4e3966*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidel), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 251); /*0x4e3979*/
+    return GetStringCSF((char *)(aSttPlayersidel), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 251); /*0x4e3979*/
   if ( this == (SideClass *)6 ) /*0x4e3982*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidei), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 253); /*0x4e3995*/
+    return GetStringCSF((char *)(aSttPlayersidei), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 253); /*0x4e3995*/
   if ( this == (SideClass *)7 ) /*0x4e399e*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidec), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 255); /*0x4e39b1*/
+    return GetStringCSF((char *)(aSttPlayersidec), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 255); /*0x4e39b1*/
   if ( this == (SideClass *)8 ) /*0x4e39ba*/
-    return GetStringCSF((wchar_t *)(aSttPlayersider_0), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 257); /*0x4e39cd*/
+    return GetStringCSF((char *)(aSttPlayersider_0), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 257); /*0x4e39cd*/
   if ( this == (SideClass *)9 ) /*0x4e39d6*/
-    return GetStringCSF((wchar_t *)(aSttPlayersidey), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 259); /*0x4e39e9*/
+    return GetStringCSF((char *)(aSttPlayersidey), 0,(const char *)(g_Str_File_GDlgSupp_cpp), 259); /*0x4e39e9*/
   return 0; /*0x4e38bb*/
 
 }

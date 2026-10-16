@@ -964,19 +964,19 @@ void ModemGuest::InitDialog()
                   (const char *)&stru_82BA00.EliteWeapon[40],
                   280);
     SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)StringCSF); /*0x5b4f8d*/
-    v9 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[35], 0, (const char *)&stru_82BA00.EliteWeapon[40], 281); /*0x5b4fa0*/
+    v9 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[35], 0, (const char *)&stru_82BA00.EliteWeapon[40], 281); /*0x5b4fa0*/
     SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v9); /*0x5b4fae*/
-    v10 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[32], 0, (const char *)&stru_82BA00.EliteWeapon[40], 282); /*0x5b4fc1*/
+    v10 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[32], 0, (const char *)&stru_82BA00.EliteWeapon[40], 282); /*0x5b4fc1*/
     SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v10); /*0x5b4fcf*/
-    v11 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[29], 0, (const char *)&stru_82BA00.EliteWeapon[40], 283); /*0x5b4fe2*/
+    v11 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[29], 0, (const char *)&stru_82BA00.EliteWeapon[40], 283); /*0x5b4fe2*/
     SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v11); /*0x5b4ff0*/
-    v12 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[26], 0, (const char *)&stru_82BA00.EliteWeapon[40], 284); /*0x5b5003*/
+    v12 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[26], 0, (const char *)&stru_82BA00.EliteWeapon[40], 284); /*0x5b5003*/
     SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v12); /*0x5b5011*/
-    v13 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[22], 0, (const char *)&stru_82BA00.EliteWeapon[40], 285); /*0x5b5024*/
+    v13 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[22], 0, (const char *)&stru_82BA00.EliteWeapon[40], 285); /*0x5b5024*/
     SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v13); /*0x5b5032*/
-    v14 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[19], 0, (const char *)&stru_82BA00.EliteWeapon[40], 286); /*0x5b5045*/
+    v14 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[19], 0, (const char *)&stru_82BA00.EliteWeapon[40], 286); /*0x5b5045*/
     SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v14); /*0x5b5053*/
-    v15 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[16], 0, (const char *)&stru_82BA00.EliteWeapon[40], 287); /*0x5b5066*/
+    v15 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[16], 0, (const char *)&stru_82BA00.EliteWeapon[40], 287); /*0x5b5066*/
     SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v15); /*0x5b5074*/
     v16 = 0; /*0x5b5076*/
     v17 = dword_8316A8; /*0x5b5078*/
@@ -1287,7 +1287,7 @@ void ModemGame::ProcessPacket()
       Debug::Log(); /*0x5b660d*/
       v37 = asc_82083C; /*0x5b661c*/
       StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1391); /*0x5b6639*/
-      v18 = (int *)GetStringCSF((wchar_t *)&g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1391); /*0x5b664b*/
+      v18 = (int *)GetStringCSF((char *)&g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1391); /*0x5b664b*/
       Dialog::ShowMessageBox(v18, StringCSF, 0, 0, 0, v36); /*0x5b6655*/
       return 1; /*0x5b665d*/
     }
@@ -1305,7 +1305,7 @@ void ModemGame::ProcessPacket()
       Debug::Log(); /*0x5b60ac*/
       v38 = asc_82083C; /*0x5b60bb*/
       v29 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1177); /*0x5b60d8*/
-      v4 = (int *)GetStringCSF((wchar_t *)&g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1177); /*0x5b60ea*/
+      v4 = (int *)GetStringCSF((char *)&g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1177); /*0x5b60ea*/
       Dialog::ShowMessageBox(v4, v29, 0, 0, 0, v36); /*0x5b60f4*/
       return 1; /*0x5b6105*/
     }
@@ -1318,7 +1318,7 @@ void ModemGame::ProcessPacket()
         {
           asc_82083C = asc_82083C; /*0x5b623c*/
           v31 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1209); /*0x5b6249*/
-          v25 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, (const char *)&stru_82BA00.EliteWeapon[40], 1209); /*0x5b6260*/
+          v25 = (int *)GetStringCSF((char *)((char *)&stru_82BA00), 0, (const char *)&stru_82BA00.EliteWeapon[40], 1209); /*0x5b6260*/
           Dialog::ShowMessageBox(v25, v31, 0, 0, 0, v36); /*0x5b6265*/
           goto LABEL_35; /*0x5b6265*/
         }
@@ -1326,7 +1326,7 @@ void ModemGame::ProcessPacket()
         {
           asc_82083C = asc_82083C; /*0x5b6285*/
           v32 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1215); /*0x5b6292*/
-          v26 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, (const char *)&stru_82BA00.EliteWeapon[40], 1215); /*0x5b62a9*/
+          v26 = (int *)GetStringCSF((char *)((char *)&stru_82BA00), 0, (const char *)&stru_82BA00.EliteWeapon[40], 1215); /*0x5b62a9*/
           Dialog::ShowMessageBox(v26, v32, 0, 0, 0, v36); /*0x5b62ae*/
           goto LABEL_35; /*0x5b62ae*/
         }
@@ -1368,7 +1368,7 @@ void ModemGame::ProcessPacket()
         }
         v38 = asc_82083C; /*0x5b619f*/
         v30 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&stru_82BA00.EliteWeapon[40], 1193); /*0x5b61ac*/
-        v8 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, (const char *)&stru_82BA00.EliteWeapon[40], 1193); /*0x5b61be*/
+        v8 = (int *)GetStringCSF((char *)((char *)&stru_82BA00), 0, (const char *)&stru_82BA00.EliteWeapon[40], 1193); /*0x5b61be*/
         Dialog::ShowMessageBox(v8, v30, 0, 0, 0, v36); /*0x5b61c8*/
         v9 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5b61d2*/
         if ( *(unsigned int *)&g_LastPerformanceTick != -1 ) /*0x5b61da*/
@@ -1765,21 +1765,21 @@ void ModemHost::InitDialog()
   if ( v9 ) /*0x5b8406*/
   {
     SendMessageA(v9, 0x14Bu, 0, 0); /*0x5b8416*/
-    StringCSF = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[37], 0, &g_Str_File_ModemHst_cpp, 407); /*0x5b8429*/
+    StringCSF = GetStringCSF((char *)&stru_82BA00.EliteWeapon[37], 0, &g_Str_File_ModemHst_cpp, 407); /*0x5b8429*/
     SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)StringCSF); /*0x5b8437*/
-    v12 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[35], 0, &g_Str_File_ModemHst_cpp, 408); /*0x5b844a*/
+    v12 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[35], 0, &g_Str_File_ModemHst_cpp, 408); /*0x5b844a*/
     SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v12); /*0x5b8458*/
-    v13 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[32], 0, &g_Str_File_ModemHst_cpp, 409); /*0x5b846b*/
+    v13 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[32], 0, &g_Str_File_ModemHst_cpp, 409); /*0x5b846b*/
     SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v13); /*0x5b8479*/
-    v14 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[29], 0, &g_Str_File_ModemHst_cpp, 410); /*0x5b848c*/
+    v14 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[29], 0, &g_Str_File_ModemHst_cpp, 410); /*0x5b848c*/
     SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v14); /*0x5b849a*/
-    v15 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[26], 0, &g_Str_File_ModemHst_cpp, 411); /*0x5b84ad*/
+    v15 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[26], 0, &g_Str_File_ModemHst_cpp, 411); /*0x5b84ad*/
     SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v15); /*0x5b84bb*/
-    v16 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[22], 0, &g_Str_File_ModemHst_cpp, 412); /*0x5b84ce*/
+    v16 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[22], 0, &g_Str_File_ModemHst_cpp, 412); /*0x5b84ce*/
     SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v16); /*0x5b84dc*/
-    v17 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[19], 0, &g_Str_File_ModemHst_cpp, 413); /*0x5b84ef*/
+    v17 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[19], 0, &g_Str_File_ModemHst_cpp, 413); /*0x5b84ef*/
     SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v17); /*0x5b84fd*/
-    v18 = GetStringCSF((wchar_t *)&stru_82BA00.EliteWeapon[16], 0, &g_Str_File_ModemHst_cpp, 414); /*0x5b8510*/
+    v18 = GetStringCSF((char *)&stru_82BA00.EliteWeapon[16], 0, &g_Str_File_ModemHst_cpp, 414); /*0x5b8510*/
     SendMessageA(v10, 0x4C1u, 0xFFFFFFFF, (LPARAM)v18); /*0x5b851e*/
     v19 = 0; /*0x5b8520*/
     v20 = dword_8316A8; /*0x5b8522*/
@@ -2112,7 +2112,7 @@ void ModemGuest::ProcessPacket()
       {
         v35 = asc_82083C; /*0x5ba557*/
         StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &g_Str_File_ModemHst_cpp, 2197); /*0x5ba564*/
-        v22 = (int *)GetStringCSF((wchar_t *)&g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, &g_Str_File_ModemHst_cpp, 2197); /*0x5ba576*/
+        v22 = (int *)GetStringCSF((char *)&g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, &g_Str_File_ModemHst_cpp, 2197); /*0x5ba576*/
         Dialog::ShowMessageBox(v22, StringCSF, 0, 0, 0, (int)v34); /*0x5ba580*/
       }
       return 1; /*0x5ba588*/
@@ -2141,7 +2141,7 @@ void ModemGuest::ProcessPacket()
               {
                 asc_82083C = asc_82083C; /*0x5ba306*/
                 v31 = GetStringCSF(g_Str_TXT_OK, 0, &g_Str_File_ModemHst_cpp, 2068); /*0x5ba313*/
-                v26 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, &g_Str_File_ModemHst_cpp, 2068); /*0x5ba32a*/
+                v26 = (int *)GetStringCSF((char *)((char *)&stru_82BA00), 0, &g_Str_File_ModemHst_cpp, 2068); /*0x5ba32a*/
                 Dialog::ShowMessageBox(v26, v31, 0, 0, 0, (int)v34); /*0x5ba32f*/
               }
             }
@@ -2162,7 +2162,7 @@ void ModemGuest::ProcessPacket()
               {
                 v35 = asc_82083C; /*0x5ba38e*/
                 v32 = GetStringCSF(g_Str_TXT_OK, 0, &g_Str_File_ModemHst_cpp, 2129); /*0x5ba39b*/
-                v27 = (int *)GetStringCSF((wchar_t *)&g_Str_TXT_MISMATCH, 0, &g_Str_File_ModemHst_cpp, 2129); /*0x5ba3b2*/
+                v27 = (int *)GetStringCSF((char *)&g_Str_TXT_MISMATCH, 0, &g_Str_File_ModemHst_cpp, 2129); /*0x5ba3b2*/
                 Dialog::ShowMessageBox(v27, v32, 0, 0, 0, (int)v34); /*0x5ba3b7*/
               }
             }
@@ -2171,7 +2171,7 @@ void ModemGuest::ProcessPacket()
           {
             asc_82083C = asc_82083C; /*0x5ba2ae*/
             v30 = GetStringCSF(g_Str_TXT_OK, 0, &g_Str_File_ModemHst_cpp, 2059); /*0x5ba2bb*/
-            v25 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, &g_Str_File_ModemHst_cpp, 2059); /*0x5ba2d2*/
+            v25 = (int *)GetStringCSF((char *)((char *)&stru_82BA00), 0, &g_Str_File_ModemHst_cpp, 2059); /*0x5ba2d2*/
             Dialog::ShowMessageBox(v25, v30, 0, 0, 0, (int)v34); /*0x5ba2d7*/
           }
           v13 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5ba3c1*/
@@ -2198,7 +2198,7 @@ void ModemGuest::ProcessPacket()
           {
             v36 = asc_82083C; /*0x5ba1fd*/
             v29 = GetStringCSF(g_Str_TXT_OK, 0, &g_Str_File_ModemHst_cpp, 2038); /*0x5ba20a*/
-            v9 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, &g_Str_File_ModemHst_cpp, 2038); /*0x5ba21c*/
+            v9 = (int *)GetStringCSF((char *)((char *)&stru_82BA00), 0, &g_Str_File_ModemHst_cpp, 2038); /*0x5ba21c*/
             Dialog::ShowMessageBox(v9, v29, 0, 0, 0, (int)v34); /*0x5ba226*/
           }
           v10 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5ba230*/
@@ -2259,7 +2259,7 @@ void ModemGuest::ProcessPacket()
       {
         v36 = asc_82083C; /*0x5ba11c*/
         v28 = GetStringCSF(g_Str_TXT_OK, 0, &g_Str_File_ModemHst_cpp, 2018); /*0x5ba129*/
-        v5 = (int *)GetStringCSF((wchar_t *)&g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, &g_Str_File_ModemHst_cpp, 2018); /*0x5ba13b*/
+        v5 = (int *)GetStringCSF((char *)&g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, &g_Str_File_ModemHst_cpp, 2018); /*0x5ba13b*/
         Dialog::ShowMessageBox(v5, v28, 0, 0, 0, (int)v34); /*0x5ba145*/
         return 1; /*0x5ba156*/
       }
@@ -2397,7 +2397,7 @@ void ModemHost::StartGame()
   LABEL_28:
   (*((unsigned char *)&(v32[6]))) = dword_A8DB30; /*0x5baf27*/
   Stream::WriteBlock((int *)&unk_A8EA70, (int)v32, 250, 1); /*0x5baf41*/
-  StringCSF = GetStringCSF((wchar_t *)&stru_82BA00.__pad_F70[628], 0, &g_Str_File_ModemHst_cpp, 2540); /*0x5baf58*/
+  StringCSF = GetStringCSF((char *)&stru_82BA00.__pad_F70[628], 0, &g_Str_File_ModemHst_cpp, 2540); /*0x5baf58*/
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x5baf61*/
   v16 = MessageBox; /*0x5baf66*/
   if ( MessageBox ) /*0x5baf6a*/
@@ -2427,7 +2427,7 @@ void ModemHost::StartGame()
   }
   if ( v16 ) /*0x5bb010*/
   {
-    v20 = GetStringCSF((wchar_t *)&stru_82BA00.__pad_F70[612], 0, &g_Str_File_ModemHst_cpp, 2557); /*0x5bb023*/
+    v20 = GetStringCSF((char *)&stru_82BA00.__pad_F70[612], 0, &g_Str_File_ModemHst_cpp, 2557); /*0x5bb023*/
     Network_Start((HWND)v16, (LPARAM)v20); /*0x5bb02c*/
   }
   Debug::Log(); /*0x5bb036*/
@@ -2483,7 +2483,7 @@ void ModemHost::StartGame()
       goto LABEL_57; /*0x5bb0e0*/
   }
   v28 = GetStringCSF(g_Str_TXT_CANCEL, 0, &g_Str_File_ModemHst_cpp, 2582); /*0x5bb11e*/
-  v23 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.__pad_F70[512], 0, &g_Str_File_ModemHst_cpp, 2582); /*0x5bb130*/
+  v23 = (int *)GetStringCSF((char *)&stru_82BA00.__pad_F70[512], 0, &g_Str_File_ModemHst_cpp, 2582); /*0x5bb130*/
   Dialog::ShowMessageBox(v23, v28, 0, 0, 0, (int)v29); /*0x5bb13a*/
   v24 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5bb144*/
   if ( *(unsigned int *)&g_LastPerformanceTick != -1 ) /*0x5bb14d*/
@@ -2837,7 +2837,7 @@ void NetworkSettings::DlgProc()
     {
       v21 = DlgSkirmishMenuProc(hWnd, v20); /*0x5de01a*/
       if ( v21 ) /*0x5de021*/
-        StringCSF = GetStringCSF((wchar_t *)v21, 0, g_Str_File_netdlg2_cpp, 2439); /*0x5de036*/
+        StringCSF = GetStringCSF((char *)v21, 0, g_Str_File_netdlg2_cpp, 2439); /*0x5de036*/
     }
     SendMessageA(hWnda, 0x4B2u, 0, (LPARAM)StringCSF); /*0x5de045*/
     return 0; /*0x5de04e*/
@@ -5417,7 +5417,7 @@ void WOLobby::FormatLatencyText()
     v8 = GetStringCSF(g_Str_TXT_UNKNOWN_PING, 0, g_Str_File_wonline_cpp, 15741); /*0x78f5f0*/
     StringCSF = GetStringCSF(aTxtUnknown, 0, g_Str_File_wonline_cpp, 15741); /*0x78f607*/
     v6 = this; /*0x78f608*/
-    v3 = GetStringCSF((wchar_t *)aTxtLatencyIcon, 0, g_Str_File_wonline_cpp, 15741); /*0x78f613*/
+    v3 = GetStringCSF((char *)aTxtLatencyIcon, 0, g_Str_File_wonline_cpp, 15741); /*0x78f613*/
   }
   swprintf(&word_B75F6C, (const size_t)v3, (const wchar_t *const)v6, StringCSF, v8); /*0x78f697*/
   return &word_B75F6C; /*0x78f6a4*/

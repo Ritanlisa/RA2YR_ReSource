@@ -6052,7 +6052,7 @@ InfantryTypeClass* InfantryClass::GetTypePtr()
 int InfantryClass::GetTooltipName()
 {
   if ( this->Technician ) /*0x51f2c3*/
-    return GetStringCSF((wchar_t *)&stru_825538.Name[6], 0, (const char *)&stru_825538.Volume, 4636); /*0x51f2de*/
+    return GetStringCSF((char *)&stru_825538.Name[6], 0, (const char *)&stru_825538.Volume, 4636); /*0x51f2de*/
   if ( !(*((uint8_t (__thiscall **)(InfantryClass *))this->vfptr + 49))(this) /*0x51f300*/
     || (uint8_t)HouseClass::IsAlliedWith((void *)this->owner, (void *)dword_A83D4C) )
   {

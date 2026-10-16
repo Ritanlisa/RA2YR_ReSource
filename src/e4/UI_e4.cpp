@@ -70,8 +70,8 @@ namespace gamemd {
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aMsgPlanningmod_10;  // data: 0x836cb4 truth(IDA G42.57w9)
 extern unsigned int aMsgPlanningmod_9;  // data: 0x836cd0 truth(IDA G42.57w9)
-extern wchar_t aGuiHostgamesta_0[];  // data: 0x83168c truth(IDA G42.57w9)
-extern wchar_t aMsgPlanningmod_11[];  // data: 0x836c9c truth(IDA G42.57w9)
+extern char aGuiHostgamesta_0[24];  // data: 0x83168c truth(IDA G42.57w9)
+extern char aMsgPlanningmod_11[23];  // data: 0x836c9c truth(IDA G42.57w9)
 
 
 // 0x52B6D0
@@ -1022,7 +1022,7 @@ HWND sub_5E2340(void * aGuiHostgamesta_0)
   if ( result != (HWND)1 ) /*0x5e235e*/
   {
     SendMessageA(DlgItem, 0x4DCu, 0, 1); /*0x5e236a*/
-    StringCSF = GetStringCSF((wchar_t *)(aGuiHostgamesta_0), 0, g_Str_File_netdlg2_cpp, 5300); /*0x5e2381*/
+    StringCSF = GetStringCSF((char *)(aGuiHostgamesta_0), 0, g_Str_File_netdlg2_cpp, 5300); /*0x5e2381*/
     return Dialog::ShowMessage(-1, (size_t)StringCSF); /*0x5e2389*/
   }
   return result; /*0x5e2391*/

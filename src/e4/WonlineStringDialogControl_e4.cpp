@@ -390,13 +390,13 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   if ( v12 <= 0 ) /*0x7ad4cc*/
   {
   wchar_t *StringCSF; // eax
-    StringCSF = GetStringCSF((wchar_t *)(aTxtBytesWoTime), 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
+    StringCSF = GetStringCSF((char *)(aTxtBytesWoTime), 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
     swprintf(Buffer, (const size_t)StringCSF, (const wchar_t *const)a3, a4); /*0x7ad515*/
   }
   else
   {
   wchar_t *v6; // eax
-    v6 = GetStringCSF((wchar_t *)(aTxtBytesWTime), 0, g_Str_File_wonline_cpp, 5167); /*0x7ad4e2*/
+    v6 = GetStringCSF((char *)(aTxtBytesWTime), 0, g_Str_File_wonline_cpp, 5167); /*0x7ad4e2*/
     swprintf(Buffer, (const size_t)v6, (const wchar_t *const)a3, a4, v12); /*0x7ad4ed*/
   }
   if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
@@ -423,13 +423,13 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2, void *a3, void *a4, void
   if ( v8 == 2 ) /*0x7ad597*/
   {
   wchar_t *StringCSF; // [esp-4h] [ebp-194h]
-    StringCSF = GetStringCSF((wchar_t *)(aTxtConnecting), 0, g_Str_File_wonline_cpp, 5191); /*0x7ad5d6*/
+    StringCSF = GetStringCSF((char *)(aTxtConnecting), 0, g_Str_File_wonline_cpp, 5191); /*0x7ad5d6*/
     swprintf(Buffer, (const size_t)StringCSF, *(const wchar_t *const *)Buffer); /*0x7ad5d8*/
   }
   else if ( v8 == 4 ) /*0x7ad59c*/
   {
   wchar_t *v5; // [esp-4h] [ebp-194h]
-    v5 = GetStringCSF((wchar_t *)(aTxtFindingPatc), 0, g_Str_File_wonline_cpp, 5195); /*0x7ad5b4*/
+    v5 = GetStringCSF((char *)(aTxtFindingPatc), 0, g_Str_File_wonline_cpp, 5195); /*0x7ad5b4*/
     swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
   }
   HWND Current; // eax

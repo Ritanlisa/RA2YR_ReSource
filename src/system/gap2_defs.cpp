@@ -11566,7 +11566,7 @@ int INIClass::GetStringEx(void* a1, void* a2, void* a3, unsigned int a4) {
     }
   }
   LABEL_29:
-  StringCSF = GetStringCSF((wchar_t *)Destination, 0, g_Str_File_Ini_CPP, 1858); /*0x529307*/
+  StringCSF = GetStringCSF((char *)Destination, 0, g_Str_File_Ini_CPP, 1858); /*0x529307*/
   wcsncpy(a3, StringCSF, a4); /*0x52932d*/
   a3[a4 - 1] = 0; /*0x529333*/
   return wcslen(a3); /*0x529340*/
@@ -11671,7 +11671,7 @@ int INIClass::GetCSFString() {
   String::Trim(Destination); /*0x5294e9*/
   LABEL_29:
   if ( strlen(Destination) ) /*0x5294f2*/
-    StringCSF = GetStringCSF((wchar_t *)Destination, 0, g_Str_File_Ini_CPP, 1874); /*0x52952b*/
+    StringCSF = GetStringCSF((char *)Destination, 0, g_Str_File_Ini_CPP, 1874); /*0x52952b*/
   else
     StringCSF = GetStringCSF(a5, 0, g_Str_File_Ini_CPP, 1872); /*0x529519*/
   wcsncpy(String, StringCSF, Count); /*0x529539*/
@@ -35121,7 +35121,7 @@ int ScenarioClass::LoadNetworkConfig() {
                          (uint8_t *)&stru_8263E0.Loop,
                          (uint8_t *)aLastnickslot,
                          -1);
-    StringCSF = GetStringCSF((wchar_t *)((char *)&stru_83665C + 3), 0, g_Str_File_Session_CPP, 1262); /*0x6982b4*/
+    StringCSF = GetStringCSF((char *)((char *)&stru_83665C + 3), 0, g_Str_File_Session_CPP, 1262); /*0x6982b4*/
     INIClass::ParseValue_Wide( /*0x6982c9*/
       (INIClass *)&CCINIClass_INI_RA2MD,
       (uint8_t *)&stru_8263E0.Loop,

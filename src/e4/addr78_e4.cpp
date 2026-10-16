@@ -293,14 +293,14 @@ int WOL_ResetSystem()
   DataGlobal_B77DCC = 0; /*0x780534*/
   DataGlobal_B77DB8 = -1; /*0x78053a*/
   DataGlobal_B77DBC = -1; /*0x780540*/
-  *(unsigned int *)&DataGlobal_B73E1C = (unsigned int)(GetStringCSF((wchar_t *)(aTxtLob1), 0, g_Str_File_wonline_cpp, 2752)); /*0x78055c*/
-  *(unsigned int *)&DataGlobal_B73E20 = (unsigned int)(GetStringCSF((wchar_t *)(aTxtLob2), 0, g_Str_File_wonline_cpp, 2753)); /*0x780577*/
-  *(unsigned int *)&DataGlobal_B73E24 = (unsigned int)(GetStringCSF((wchar_t *)(aTxtLob3), 0, g_Str_File_wonline_cpp, 2754)); /*0x780592*/
-  *(unsigned int *)&DataGlobal_B73E28 = (unsigned int)(GetStringCSF((wchar_t *)(aTxtLob4), 0, g_Str_File_wonline_cpp, 2755)); /*0x7805ad*/
-  *(unsigned int *)&DataGlobal_B73E2C = (unsigned int)(GetStringCSF((wchar_t *)(aTxtLob5), 0, g_Str_File_wonline_cpp, 2756)); /*0x7805c8*/
-  *(unsigned int *)&DataGlobal_B73E30 = (unsigned int)(GetStringCSF((wchar_t *)(aTxtLob6), 0, g_Str_File_wonline_cpp, 2757)); /*0x7805d2*/
-  *(unsigned int *)&DataGlobal_B73E34 = (unsigned int)(GetStringCSF((wchar_t *)(aTxtLob7), 0, g_Str_File_wonline_cpp, 2758)); /*0x7805fe*/
-  *(unsigned int *)&DataGlobal_B73E38 = (unsigned int)(GetStringCSF((wchar_t *)(aTxtLob8), 0, g_Str_File_wonline_cpp, 2759)); /*0x780608*/
+  *(unsigned int *)&DataGlobal_B73E1C = (unsigned int)(GetStringCSF((char *)(aTxtLob1), 0, g_Str_File_wonline_cpp, 2752)); /*0x78055c*/
+  *(unsigned int *)&DataGlobal_B73E20 = (unsigned int)(GetStringCSF((char *)(aTxtLob2), 0, g_Str_File_wonline_cpp, 2753)); /*0x780577*/
+  *(unsigned int *)&DataGlobal_B73E24 = (unsigned int)(GetStringCSF((char *)(aTxtLob3), 0, g_Str_File_wonline_cpp, 2754)); /*0x780592*/
+  *(unsigned int *)&DataGlobal_B73E28 = (unsigned int)(GetStringCSF((char *)(aTxtLob4), 0, g_Str_File_wonline_cpp, 2755)); /*0x7805ad*/
+  *(unsigned int *)&DataGlobal_B73E2C = (unsigned int)(GetStringCSF((char *)(aTxtLob5), 0, g_Str_File_wonline_cpp, 2756)); /*0x7805c8*/
+  *(unsigned int *)&DataGlobal_B73E30 = (unsigned int)(GetStringCSF((char *)(aTxtLob6), 0, g_Str_File_wonline_cpp, 2757)); /*0x7805d2*/
+  *(unsigned int *)&DataGlobal_B73E34 = (unsigned int)(GetStringCSF((char *)(aTxtLob7), 0, g_Str_File_wonline_cpp, 2758)); /*0x7805fe*/
+  *(unsigned int *)&DataGlobal_B73E38 = (unsigned int)(GetStringCSF((char *)(aTxtLob8), 0, g_Str_File_wonline_cpp, 2759)); /*0x780608*/
   memset((void *)(g_WOL_RequestObject), 0xFFu, sizeof(g_WOL_RequestObject)); /*0x780619*/
   ppv = 0; /*0x780627*/
   memset((void *)(byte_B77A94), 0, sizeof(byte_B77A94)); /*0x78062d*/
@@ -600,7 +600,7 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
 
   if ( wParam == -1 ) /*0x780e46*/
   {
-    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistga), 0, g_Str_File_wonline_cpp, 2987); /*0x780e4d*/
+    StringCSF = GetStringCSF((char *)(aSttLobbylistga), 0, g_Str_File_wonline_cpp, 2987); /*0x780e4d*/
   LABEL_14:
     ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x78106f*/
     return a1; /*0x781077*/
@@ -609,7 +609,7 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   v5 = SendMessageA(a2, 0x199u, wParam, 0); /*0x780e6c*/
   if ( v5 < 0 || v5 >= (int)dword_B76AE0 ) /*0x780e80*/
   {
-    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistga), 0, g_Str_File_wonline_cpp, 2994); /*0x78106a*/
+    StringCSF = GetStringCSF((char *)(aSttLobbylistga), 0, g_Str_File_wonline_cpp, 2994); /*0x78106a*/
     goto LABEL_14; /*0x78106a*/
   }
   memcpy(v19, (char *)dword_B76AE8 + 268 * v5, sizeof(v19)); /*0x780ea4*/
@@ -624,13 +624,13 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   ((DeleteAndZero *)&v12.q004)->Alt(); /*0x780f11*/
   if ( v19[10] == (wchar_t *)-1 ) /*0x780f20*/
   {
-    v11 = GetStringCSF((wchar_t *)(g_Str_TXT_UNKNOWN_PING), 0, g_Str_File_wonline_cpp, 3024); /*0x780f6a*/
+    v11 = GetStringCSF((char *)(g_Str_TXT_UNKNOWN_PING), 0, g_Str_File_wonline_cpp, 3024); /*0x780f6a*/
     WideString::Append2((WideString *)&v12, v11); /*0x780f6f*/
   }
   else
   {
     v10 = v19[10]; /*0x780f22*/
-    v8 = GetStringCSF((wchar_t *)(aMsgPinginfo), 0, g_Str_File_wonline_cpp, 3021); /*0x780f34*/
+    v8 = GetStringCSF((char *)(aMsgPinginfo), 0, g_Str_File_wonline_cpp, 3021); /*0x780f34*/
     swprintf(Buffer, (const size_t)v8, v10); /*0x780f42*/
     WideString::Append2((WideString *)&v12, Buffer); /*0x780f52*/
   }
@@ -4030,12 +4030,12 @@ int CreateAccountWOL(int a2, int a3)
             v54 = unk_B76C20; /*0x78927c*/
           if ( strcmp(&v56[4], &v56[36]) ) /*0x78928e*/
           {
-            v21 = GetStringCSF((wchar_t *)aTxtPasswordVer, 0, g_Str_File_wonline_cpp, 11073); /*0x7892cd*/
+            v21 = GetStringCSF((char *)aTxtPasswordVer, 0, g_Str_File_wonline_cpp, 11073); /*0x7892cd*/
             goto LABEL_26; /*0x7892cd*/
           }
           if ( strlen(&v56[4]) != 8 ) /*0x7892e3*/
           {
-            v21 = GetStringCSF((wchar_t *)aTxtPasswordToo, 0, g_Str_File_wonline_cpp, 11078); /*0x7892fc*/
+            v21 = GetStringCSF((char *)aTxtPasswordToo, 0, g_Str_File_wonline_cpp, 11078); /*0x7892fc*/
             goto LABEL_26; /*0x7892fc*/
           }
           if ( (*(int (__stdcall **)(LPVOID, unsigned char *, unsigned char *, unsigned char *, char *, WPARAM, int))(*(unsigned int *)g_UIPointerTable /*0x789330*/
@@ -4329,7 +4329,7 @@ char ValidateJoinWOL(ObjectClass *aP0, int a2, int a3, int a4)
     {
   wchar_t *v9; // eax
       v9 = (*(unsigned int *)(a2 + 32) & 0x400) != 0
-         ? GetStringCSF((wchar_t *)aWolResolutionl, 0, g_Str_File_wonline_cpp, 11491)
+         ? GetStringCSF((char *)aWolResolutionl, 0, g_Str_File_wonline_cpp, 11491)
          : GetStringCSF(aWolResolutionl_0, 0, g_Str_File_wonline_cpp, 11492);
       ((WideString *)((wchar_t **)&v17.ptr_4))->Assign(v9); /*0x7899e2*/
   wchar_t *v10; // eax
@@ -4883,7 +4883,7 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v45); /*0x78d7ee*/
         return 0; /*0x78d7fd*/
       }
-      String = GetStringCSF((wchar_t *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_wonline_cpp, 14080); /*0x78d811*/
+      String = GetStringCSF((char *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_wonline_cpp, 14080); /*0x78d811*/
     }
     else
     {
@@ -4984,7 +4984,7 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
     }
     else
     {
-      v23 = GetStringCSF((wchar_t *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_wonline_cpp, 14162); /*0x78d5e5*/
+      v23 = GetStringCSF((char *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_wonline_cpp, 14162); /*0x78d5e5*/
     }
     Dialog::ShowStatusText(-1, (size_t)v23); /*0x78d600*/
     goto LABEL_50; /*0x78d600*/
@@ -5685,7 +5685,7 @@ wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
   char *v4; // eax
   v4 = ((String *)((String *)&v7.q004))->GetOrEmpty(); /*0x780a3a*/
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
+  StringCSF = GetStringCSF((char *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
   ((WideString *)((WideString *)&v7))->Assign(StringCSF); /*0x780a4d*/
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v7); /*0x780a65*/
   DeleteAndZero::Alt(&v7); /*0x780a6e*/

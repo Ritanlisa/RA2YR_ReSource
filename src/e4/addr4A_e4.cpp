@@ -417,7 +417,7 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
   int v17; // [esp-Ch] [ebp-30h]
       v17 = v11 / 60; /*0x4a2489*/
   wchar_t *StringCSF; // eax
-      StringCSF = GetStringCSF((wchar_t *)&stru_81AF8C.IsAnimatedTiberium, 0, aDRa2mdpostCred, 107); /*0x4a2499*/
+      StringCSF = GetStringCSF((char *)&stru_81AF8C.IsAnimatedTiberium, 0, aDRa2mdpostCred, 107); /*0x4a2499*/
       swprintf(&word_89F860, (const size_t)StringCSF, (const wchar_t *const)v10, v17, v18); /*0x4a24a4*/
   int v13; // eax
       v13 = (*((int (**)(DSurface *))DSurface_Sidebar + 30))(DSurface_Sidebar); /*0x4a24c6*/

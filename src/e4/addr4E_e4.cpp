@@ -797,7 +797,7 @@ bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e45eb*/
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 522); /*0x4e45fe*/
+  StringCSF = GetStringCSF((char *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 522); /*0x4e45fe*/
   LRESULT v5; // ebx
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e4619*/
@@ -1220,7 +1220,7 @@ bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5108*/
   wchar_t *StringCSF; // eax
-  StringCSF = GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 833); /*0x4e511b*/
+  StringCSF = GetStringCSF((char *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 833); /*0x4e511b*/
   LRESULT v5; // eax
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5133*/
@@ -1649,7 +1649,7 @@ bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   {
     if ( dword_A8B23C && (*(int (**)(int))(*(unsigned int *)dword_A8B23C + 44))(dword_A8B23C) < 0 ) /*0x4e5be8*/
     {
-      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0, g_Str_File_GDlgSupp_cpp, 1110); /*0x4e5bfb*/
+      StringCSF = GetStringCSF((char *)(aGuiNoneassymbo), 0, g_Str_File_GDlgSupp_cpp, 1110); /*0x4e5bfb*/
       goto LABEL_9; /*0x4e5bfb*/
     }
   }
@@ -1658,7 +1658,7 @@ bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
     v3 = Skirmish_Setup(); /*0x4e5bbc*/
     if ( v3 && (*(int (**)(int))(*(unsigned int *)v3 + 44))(v3) < 0 ) /*0x4e5bce*/
     {
-      StringCSF = GetStringCSF((wchar_t *)(aGuiNoneassymbo), 0, g_Str_File_GDlgSupp_cpp, 1119); /*0x4e5bd5*/
+      StringCSF = GetStringCSF((char *)(aGuiNoneassymbo), 0, g_Str_File_GDlgSupp_cpp, 1119); /*0x4e5bd5*/
   LABEL_9:
       v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5c00*/
       SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5c14*/

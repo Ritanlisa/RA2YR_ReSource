@@ -2958,7 +2958,7 @@ int RandomMap::SetupDialog(HWND hDlg)
   do /*0x596edb*/
   {
   wchar_t *StringCSF; // eax
-    StringCSF = GetStringCSF((wchar_t *)*p_LoopStart, 0, &stru_82BA00.UINameLabel[11], 4883); /*0x596eb7*/
+    StringCSF = GetStringCSF((char *)*p_LoopStart, 0, &stru_82BA00.UINameLabel[11], 4883); /*0x596eb7*/
   LRESULT v6; // eax
     v6 = SendMessageA(i, 0x4C2u, 0, (LPARAM)StringCSF); /*0x596ec5*/
     SendMessageA(i, 0x151u, v6, v3); /*0x596ecf*/
@@ -4601,7 +4601,7 @@ LABEL_153:
     Network::UpdateLatencyDisplay((int)&g_UIManager, 0, 50.0, NAN); /*0x59a625*/
   if ( !wcslen((const wchar_t *)&v51->__pad_078) ) /*0x59a62e*/
   {
-    StringCSF = GetStringCSF((wchar_t *)stru_82BA00.?, 0, &stru_82BA00.?[11], 6746); /*0x59a64b*/
+    StringCSF = GetStringCSF((char *)stru_82BA00.?, 0, &stru_82BA00.?[11], 6746); /*0x59a64b*/
     wcscpyv51->__pad_078, StringCSF); /*0x59a652*/
   }
   return HashTable::DestroyHashTableINIClass(&v80); /*0x59a663*/

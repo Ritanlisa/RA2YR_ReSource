@@ -706,7 +706,7 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
   }
   else
   {
-    StringCSF = GetStringCSF((wchar_t *)(aTxtRandomMapDe), 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
+    StringCSF = GetStringCSF((char *)(aTxtRandomMapDe), 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
     ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x780dca*/
     return a1; /*0x780dcf*/
   }

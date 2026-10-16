@@ -59,8 +59,8 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/DynamicVector_e4.hpp"
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aPortbase[];  // data: 0x826438 truth(IDA G42.57w9)
-extern char aPortpool[];  // data: 0x826420 truth(IDA G42.57w9)
+extern char aPortbase[9];  // data: 0x826438 truth(IDA G42.57w9)
+extern char aPortpool[9];  // data: 0x826420 truth(IDA G42.57w9)
 extern unsigned int aAboutToInitial;  // data: 0x826450 truth(IDA G42.57w9)
 
 

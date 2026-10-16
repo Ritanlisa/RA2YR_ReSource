@@ -9465,14 +9465,14 @@ void * ObjectClass::GetSidebarTooltip(int a2)
   if ( byte_884B8C ) /*0x6a9354*/
   {
     v15 = (const wchar_t *)v7->GetSpecialValue(dword_A83D4C); /*0x6a935c*/
-    StringCSF = GetStringCSF((wchar_t *)stru_83FA64.Type, 0, g_Str_File_Sidebar_CPP, 3180); /*0x6a936e*/
+    StringCSF = GetStringCSF((char *)stru_83FA64.Type, 0, g_Str_File_Sidebar_CPP, 3180); /*0x6a936e*/
     swprintf(&SidebarClass_TooltipBuffer, (const size_t)StringCSF, v15); /*0x6a9379*/
   }
   else
   {
     v16 = v7->GetSpecialValue(dword_A83D4C); /*0x6a938c*/
     v14 = v7->ptr_30; /*0x6a938d*/
-    v11 = GetStringCSF((wchar_t *)&stru_83FA64.RussianVoice[3], 0, g_Str_File_Sidebar_CPP, 3182); /*0x6a939f*/
+    v11 = GetStringCSF((char *)&stru_83FA64.RussianVoice[3], 0, g_Str_File_Sidebar_CPP, 3182); /*0x6a939f*/
     swprintf(&SidebarClass_TooltipBuffer, (const size_t)v11, v14, v16); /*0x6a93aa*/
   }
   v12 = wcslen(&SidebarClass_TooltipBuffer); /*0x6a93b7*/
@@ -9521,10 +9521,10 @@ void * ObjectClass::GetTooltipText(int a2)
       switch ( a2 ) /*0x6ac2d8*/
       {
         case 203: /*0x6ac2d8*/
-          StringCSF = GetStringCSF((wchar_t *)aTipTab1, 0, g_Str_File_Sidebar_CPP, 5083); /*0x6ac2eb*/
+          StringCSF = GetStringCSF((char *)aTipTab1, 0, g_Str_File_Sidebar_CPP, 5083); /*0x6ac2eb*/
           break;
         case 204: /*0x6ac2d8*/
-          StringCSF = GetStringCSF((wchar_t *)aTipTab2, 0, g_Str_File_Sidebar_CPP, 5085); /*0x6ac303*/
+          StringCSF = GetStringCSF((char *)aTipTab2, 0, g_Str_File_Sidebar_CPP, 5085); /*0x6ac303*/
           break;
         case 205: /*0x6ac2d8*/
           StringCSF = GetStringCSF(word_83FBD8, 0, g_Str_File_Sidebar_CPP, 5087); /*0x6ac31b*/

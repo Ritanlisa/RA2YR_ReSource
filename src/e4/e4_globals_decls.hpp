@@ -1392,381 +1392,381 @@ extern int g_SidebarState;  // data: 0xA8EC88
 extern int g_SlaveManagerPool;  // data: 0xB0B6EC
 extern int g_SlaveMgrPool;  // data: 0xB0B660
 extern int g_SpawnModeActive;  // data: 0xA8ED5D
-extern int g_Str_______FAILED_;  // data: 0x83D584
-extern int g_Str_____vwin32;  // data: 0x81C5AC
+extern char g_Str_______FAILED_[16];  // data: 0x83D584
+extern char g_Str_____vwin32[11];  // data: 0x81C5AC
 extern char g_Str__none_[7];  // data: 0x817474  (declsync G42.31: core twin)
-extern int g_Str__Player___A_;  // data: 0x825070
-extern int g_Str__Player___B_;  // data: 0x825060
-extern int g_Str__Player___C_;  // data: 0x825050
-extern int g_Str__Player___D_;  // data: 0x825040
-extern int g_Str__Player___E_;  // data: 0x825030
-extern int g_Str__Player___F_;  // data: 0x825020
-extern int g_Str__Player___G_;  // data: 0x825010
-extern int g_Str__Player___H_;  // data: 0x825000
-extern int g_Str__random_;  // data: 0x81C008
-extern int g_Str_Attempt_to_open_non_removable_;  // data: 0x81C474
-extern int g_Str_Closing_serial_port;  // data: 0x8497A4
-extern int g_Str_Creating_WOLBrowser_component_;  // data: 0x8495AC
-extern int g_Str_Direct_X;  // data: 0x81FC70
-extern int g_Str_DirectDrawCreate_failed_;  // data: 0x81FD44
-extern int g_Str_DSurface__Create_Primary_done;  // data: 0x82061C
-extern int g_Str_EVA_BuildingInfiltrated;  // data: 0x819198
-extern int g_Str_EVA_CannotDeployHere;  // data: 0x82012C
+extern char g_Str__Player___A_[13];  // data: 0x825070
+extern char g_Str__Player___B_[13];  // data: 0x825060
+extern char g_Str__Player___C_[13];  // data: 0x825050
+extern char g_Str__Player___D_[13];  // data: 0x825040
+extern char g_Str__Player___E_[13];  // data: 0x825030
+extern char g_Str__Player___F_[13];  // data: 0x825020
+extern char g_Str__Player___G_[13];  // data: 0x825010
+extern char g_Str__Player___H_[13];  // data: 0x825000
+extern char g_Str__random_[9];  // data: 0x81C008
+extern char g_Str_Attempt_to_open_non_removable_[62];  // data: 0x81C474
+extern char g_Str_Closing_serial_port[21];  // data: 0x8497A4
+extern char g_Str_Creating_WOLBrowser_component_[32];  // data: 0x8495AC
+extern char g_Str_Direct_X[9];  // data: 0x81FC70
+extern char g_Str_DirectDrawCreate_failed_[26];  // data: 0x81FD44
+extern char g_Str_DSurface__Create_Primary_done[31];  // data: 0x82061C
+extern char g_Str_EVA_BuildingInfiltrated[24];  // data: 0x819198
+extern char g_Str_EVA_CannotDeployHere[21];  // data: 0x82012C
 extern char g_Str_EVA_ChronosphereReady[22];  // data: 0x842458  (declsync G42.31: core twin)
-extern int g_Str_EVA_ForceShieldReady;  // data: 0x8424A4
-extern int g_Str_EVA_GeneticMutatorReady;  // data: 0x842414
-extern int g_Str_EVA_IronCurtainReady;  // data: 0x8424BC
-extern int g_Str_EVA_LightningStormReady;  // data: 0x84248C
-extern int g_Str_EVA_NuclearMissileReady;  // data: 0x8424D4
-extern int g_Str_EVA_OreMinerUnderAttack;  // data: 0x824784
-extern int g_Str_EVA_PsychicDominatorReady;  // data: 0x842470
-extern int g_Str_EVA_PsychicRevealReady;  // data: 0x8423FC
-extern int g_Str_EVA_ReinforcementsReady;  // data: 0x842440
-extern int g_Str_EVA_RobotTanksOffline;  // data: 0x824E4C
-extern int g_Str_EVA_SpyPlaneReady;  // data: 0x84242C
-extern int g_Str_FAILED_;  // data: 0x81C2B4
-extern int g_Str_false;  // data: 0x81C5E8
-extern int g_Str_File__HVA;  // data: 0x8194A0
-extern int g_Str_File__MAP;  // data: 0x82DF18
-extern int g_Str_File__PCX;  // data: 0x8241AC
-extern int g_Str_File__s_MAP;  // data: 0x82DEA0
-extern int g_Str_File__s_MIX;  // data: 0x827D64
-extern int g_Str_File__VXL;  // data: 0x8194AC
-extern int g_Str_File__WAV;  // data: 0x844768
-extern int g_Str_File_arbi_pcx;  // data: 0x836358
-extern int g_Str_File_CACHE_MIX;  // data: 0x826668
-extern int g_Str_File_CampScor_cpp;  // data: 0x81B304
-extern int g_Str_File_comchief_pcx;  // data: 0x835FE4
-extern int g_Str_File_comctl32_dll;  // data: 0x840C48
-extern int g_Str_File_Conquer_CPP;  // data: 0x81D4F8
-extern int g_Str_File_CoopCampMD_ini;  // data: 0x81F3C0
-extern int g_Str_File_cooperat_pcx;  // data: 0x835FD4
-extern int g_Str_File_coopsave_ini;  // data: 0x81F0F8
-extern int g_Str_File_djbi_pcx;  // data: 0x836364
-extern int g_Str_File_Event_CPP;  // data: 0x820E44
-extern int g_Str_File_frai_pcx;  // data: 0x836388
-extern int g_Str_File_FULLFNT3_SHP;  // data: 0x830664
-extern int g_Str_File_gbri_pcx;  // data: 0x836370
-extern int g_Str_File_GDlgSupp_cpp;  // data: 0x8229C0
-extern int g_Str_File_geri_pcx;  // data: 0x83637C
-extern int g_Str_File_GOptions_CPP;  // data: 0x8240BC
-extern int g_Str_File_gt18_pcx;  // data: 0x836070
-extern int g_Str_File_House_CPP;  // data: 0x824724
-extern int g_Str_File_Ini_CPP;  // data: 0x825BDC
+extern char g_Str_EVA_ForceShieldReady[21];  // data: 0x8424A4
+extern char g_Str_EVA_GeneticMutatorReady[24];  // data: 0x842414
+extern char g_Str_EVA_IronCurtainReady[21];  // data: 0x8424BC
+extern char g_Str_EVA_LightningStormReady[24];  // data: 0x84248C
+extern char g_Str_EVA_NuclearMissileReady[24];  // data: 0x8424D4
+extern char g_Str_EVA_OreMinerUnderAttack[24];  // data: 0x824784
+extern char g_Str_EVA_PsychicDominatorReady[26];  // data: 0x842470
+extern char g_Str_EVA_PsychicRevealReady[23];  // data: 0x8423FC
+extern char g_Str_EVA_ReinforcementsReady[24];  // data: 0x842440
+extern char g_Str_EVA_RobotTanksOffline[22];  // data: 0x824E4C
+extern char g_Str_EVA_SpyPlaneReady[18];  // data: 0x84242C
+extern char g_Str_FAILED_[14];  // data: 0x81C2B4
+extern char g_Str_false[6];  // data: 0x81C5E8
+extern char g_Str_File__HVA[5];  // data: 0x8194A0
+extern char g_Str_File__MAP[5];  // data: 0x82DF18
+extern char g_Str_File__PCX[5];  // data: 0x8241AC
+extern char g_Str_File__s_MAP[7];  // data: 0x82DEA0
+extern char g_Str_File__s_MIX[7];  // data: 0x827D64
+extern char g_Str_File__VXL[5];  // data: 0x8194AC
+extern char g_Str_File__WAV[5];  // data: 0x844768
+extern char g_Str_File_arbi_pcx[9];  // data: 0x836358
+extern char g_Str_File_CACHE_MIX[11];  // data: 0x826668
+extern char g_Str_File_CampScor_cpp[26];  // data: 0x81B304
+extern char g_Str_File_comchief_pcx[13];  // data: 0x835FE4
+extern char g_Str_File_comctl32_dll[13];  // data: 0x840C48
+extern char g_Str_File_Conquer_CPP[25];  // data: 0x81D4F8
+extern char g_Str_File_CoopCampMD_ini[15];  // data: 0x81F3C0
+extern char g_Str_File_cooperat_pcx[13];  // data: 0x835FD4
+extern char g_Str_File_coopsave_ini[13];  // data: 0x81F0F8
+extern char g_Str_File_djbi_pcx[9];  // data: 0x836364
+extern char g_Str_File_Event_CPP[23];  // data: 0x820E44
+extern char g_Str_File_frai_pcx[9];  // data: 0x836388
+extern char g_Str_File_FULLFNT3_SHP[13];  // data: 0x830664
+extern char g_Str_File_gbri_pcx[9];  // data: 0x836370
+extern char g_Str_File_GDlgSupp_cpp[26];  // data: 0x8229C0
+extern char g_Str_File_geri_pcx[9];  // data: 0x83637C
+extern char g_Str_File_GOptions_CPP[26];  // data: 0x8240BC
+extern char g_Str_File_gt18_pcx[9];  // data: 0x836070
+extern char g_Str_File_House_CPP[23];  // data: 0x824724
+extern char g_Str_File_Ini_CPP[21];  // data: 0x825BDC
 extern char g_Str_File_Init_CPP[22];  // data: 0x825fb8  (declsync G42.31: core twin)
-extern int g_Str_File_Ion_cpp;  // data: 0x828034
-extern int g_Str_File_japi_pcx;  // data: 0x836394
-extern int g_Str_File_lati_pcx;  // data: 0x83634C
-extern int g_Str_File_LdPrgMgr_cpp;  // data: 0x829AC8
-extern int g_Str_File_LoadDlg_CPP;  // data: 0x829F5C
-extern int g_Str_File_MainLoop_CPP;  // data: 0x82A170
-extern int g_Str_File_MainOpt_cpp;  // data: 0x82A2A8
-extern int g_Str_File_MapGen_cpp;  // data: 0x82BA48
-extern int g_Str_File_MapSel_CPP;  // data: 0x82C11C
-extern int g_Str_File_ModemGst_cpp;  // data: 0x82C534
-extern int g_Str_File_ModemHst_cpp;  // data: 0x82C9A4
-extern int g_Str_File_MOUSE_SHA;  // data: 0x82604C
-extern int g_Str_File_MOVMD__MIX;  // data: 0x826748
-extern int g_Str_File_MPCoop_cpp;  // data: 0x82DC4C
-extern int g_Str_File_MPScore_cpp;  // data: 0x82FE24
-extern int g_Str_File_MPSiege_cpp;  // data: 0x82FF2C
-extern int g_Str_File_MULTIMD_MIX;  // data: 0x81C284
-extern int g_Str_File_netdlg2_cpp;  // data: 0x831288
+extern char g_Str_File_Ion_cpp[21];  // data: 0x828034
+extern char g_Str_File_japi_pcx[9];  // data: 0x836394
+extern char g_Str_File_lati_pcx[9];  // data: 0x83634C
+extern char g_Str_File_LdPrgMgr_cpp[26];  // data: 0x829AC8
+extern char g_Str_File_LoadDlg_CPP[25];  // data: 0x829F5C
+extern char g_Str_File_MainLoop_CPP[26];  // data: 0x82A170
+extern char g_Str_File_MainOpt_cpp[25];  // data: 0x82A2A8
+extern char g_Str_File_MapGen_cpp[24];  // data: 0x82BA48
+extern char g_Str_File_MapSel_CPP[24];  // data: 0x82C11C
+extern char g_Str_File_ModemGst_cpp[26];  // data: 0x82C534
+extern char g_Str_File_ModemHst_cpp[26];  // data: 0x82C9A4
+extern char g_Str_File_MOUSE_SHA[10];  // data: 0x82604C
+extern char g_Str_File_MOVMD__MIX[11];  // data: 0x826748
+extern char g_Str_File_MPCoop_cpp[24];  // data: 0x82DC4C
+extern char g_Str_File_MPScore_cpp[25];  // data: 0x82FE24
+extern char g_Str_File_MPSiege_cpp[25];  // data: 0x82FF2C
+extern char g_Str_File_MULTIMD_MIX[12];  // data: 0x81C284
+extern char g_Str_File_netdlg2_cpp[25];  // data: 0x831288
 extern char g_Str_File_netshare_cpp[26];  // data: 0x8317d8  (declsync G42.31: core twin)
-extern int g_Str_File_NullDlg_CPP;  // data: 0x831E84
-extern int g_Str_File_NullMgr_CPP;  // data: 0x832730
-extern int g_Str_File_number0_pcx;  // data: 0x835FC8
-extern int g_Str_File_number1_pcx;  // data: 0x835FBC
-extern int g_Str_File_OPTBTN_SHP;  // data: 0x83927C
-extern int g_Str_File_Options_CPP;  // data: 0x833370
-extern int g_Str_File_ownrdraw_cpp;  // data: 0x833730
-extern int g_Str_File_PhoneEd_cpp;  // data: 0x836778
-extern int g_Str_File_pingg_pcx;  // data: 0x835CA8
-extern int g_Str_File_pingr_pcx;  // data: 0x835C90
-extern int g_Str_File_pingy_pcx;  // data: 0x835C9C
+extern char g_Str_File_NullDlg_CPP[25];  // data: 0x831E84
+extern char g_Str_File_NullMgr_CPP[25];  // data: 0x832730
+extern char g_Str_File_number0_pcx[12];  // data: 0x835FC8
+extern char g_Str_File_number1_pcx[12];  // data: 0x835FBC
+extern char g_Str_File_OPTBTN_SHP[11];  // data: 0x83927C
+extern char g_Str_File_Options_CPP[25];  // data: 0x833370
+extern char g_Str_File_ownrdraw_cpp[26];  // data: 0x833730
+extern char g_Str_File_PhoneEd_cpp[25];  // data: 0x836778
+extern char g_Str_File_pingg_pcx[10];  // data: 0x835CA8
+extern char g_Str_File_pingr_pcx[10];  // data: 0x835C90
+extern char g_Str_File_pingy_pcx[10];  // data: 0x835C9C
 extern char g_Str_File_PlanMgr_cpp[25];  // data: 0x836bd4  (declsync G42.31: core twin)
-extern int g_Str_File_Preview_bin;  // data: 0x82CC50
-extern int g_Str_File_PROGBARM_SHP;  // data: 0x83DA30
-extern int g_Str_File_Queue_CPP;  // data: 0x8374A0
-extern int g_Str_File_RA2MD_INI;  // data: 0x826444
-extern int g_Str_File_RandMap_Sed;  // data: 0x82BC30
-extern int g_Str_File_rusi_pcx;  // data: 0x836340
-extern int g_Str_File_Scenario_CPP;  // data: 0x83D838
-extern int g_Str_File_Score_CPP;  // data: 0x83E3C4
-extern int g_Str_File_SerialEd_cpp;  // data: 0x83EC28
-extern int g_Str_File_Session_CPP;  // data: 0x83EEB8
-extern int g_Str_File_Sidebar_CPP;  // data: 0x83FAC4
+extern char g_Str_File_Preview_bin[12];  // data: 0x82CC50
+extern char g_Str_File_PROGBARM_SHP[13];  // data: 0x83DA30
+extern char g_Str_File_Queue_CPP[23];  // data: 0x8374A0
+extern char g_Str_File_RA2MD_INI[10];  // data: 0x826444
+extern char g_Str_File_RandMap_Sed[12];  // data: 0x82BC30
+extern char g_Str_File_rusi_pcx[9];  // data: 0x836340
+extern char g_Str_File_Scenario_CPP[26];  // data: 0x83D838
+extern char g_Str_File_Score_CPP[23];  // data: 0x83E3C4
+extern char g_Str_File_SerialEd_cpp[26];  // data: 0x83EC28
+extern char g_Str_File_Session_CPP[25];  // data: 0x83EEB8
+extern char g_Str_File_Sidebar_CPP[25];  // data: 0x83FAC4
 extern char g_Str_File_Skirmish_cpp[26];  // data: 0x83fc4c  (declsync G42.31: core twin)
-extern int g_Str_File_Startup_CPP;  // data: 0x840E0C
-extern int g_Str_File_Super_CPP;  // data: 0x842510
-extern int g_Str_File_tab_tlu_pcx;  // data: 0x835944
-extern int g_Str_File_TAction_CPP;  // data: 0x842BF8
-extern int g_Str_File_Techno_CPP;  // data: 0x843178
-extern int g_Str_File_THEME_MIX;  // data: 0x81C220
-extern int g_Str_File_THEMEMD_MIX;  // data: 0x81C24C
-extern int g_Str_File_UICmnds_cpp;  // data: 0x845598
-extern int g_Str_File_Unit_CPP;  // data: 0x845964
-extern int g_Str_File_usai_pcx;  // data: 0x8363A0
-extern int g_Str_File_VERSION_TXT;  // data: 0x84635C
-extern int g_Str_File_WDT_MIX;  // data: 0x84B63C
-extern int g_Str_File_WDTGameOptions_cpp;  // data: 0x8486AC
-extern int g_Str_File_WDTHist_ini;  // data: 0x8481F0
-extern int g_Str_File_WDTSel_cpp;  // data: 0x848DE4
-extern int g_Str_File_wodact_pcx;  // data: 0x83614C
-extern int g_Str_File_wodref_pcx;  // data: 0x836134
-extern int g_Str_File_wolacpt_pcx;  // data: 0x81B2AC
-extern int g_Str_File_wolclan_pcx;  // data: 0x83609C
-extern int g_Str_File_wolhost_pcx;  // data: 0x81B2B8
-extern int g_Str_File_wolinfoMD_ini;  // data: 0x849F8C
-extern int g_Str_File_wolob_pcx;  // data: 0x831DDC
-extern int g_Str_File_WOLPersonaInformation_cpp;  // data: 0x84A0D0
-extern int g_Str_File_wolpriv_pcx;  // data: 0x8360A8
-extern int g_Str_File_wolreslk_pcx;  // data: 0x835D14
-extern int g_Str_File_wolrslkob_pcx;  // data: 0x83608C
-extern int g_Str_File_woltrny_pcx;  // data: 0x8360D0
+extern char g_Str_File_Startup_CPP[25];  // data: 0x840E0C
+extern char g_Str_File_Super_CPP[23];  // data: 0x842510
+extern char g_Str_File_tab_tlu_pcx[12];  // data: 0x835944
+extern char g_Str_File_TAction_CPP[25];  // data: 0x842BF8
+extern char g_Str_File_Techno_CPP[24];  // data: 0x843178
+extern char g_Str_File_THEME_MIX[10];  // data: 0x81C220
+extern char g_Str_File_THEMEMD_MIX[12];  // data: 0x81C24C
+extern char g_Str_File_UICmnds_cpp[25];  // data: 0x845598
+extern char g_Str_File_Unit_CPP[22];  // data: 0x845964
+extern char g_Str_File_usai_pcx[9];  // data: 0x8363A0
+extern char g_Str_File_VERSION_TXT[12];  // data: 0x84635C
+extern char g_Str_File_WDT_MIX[8];  // data: 0x84B63C
+extern char g_Str_File_WDTGameOptions_cpp[32];  // data: 0x8486AC
+extern char g_Str_File_WDTHist_ini[12];  // data: 0x8481F0
+extern char g_Str_File_WDTSel_cpp[24];  // data: 0x848DE4
+extern char g_Str_File_wodact_pcx[11];  // data: 0x83614C
+extern char g_Str_File_wodref_pcx[11];  // data: 0x836134
+extern char g_Str_File_wolacpt_pcx[12];  // data: 0x81B2AC
+extern char g_Str_File_wolclan_pcx[12];  // data: 0x83609C
+extern char g_Str_File_wolhost_pcx[12];  // data: 0x81B2B8
+extern char g_Str_File_wolinfoMD_ini[14];  // data: 0x849F8C
+extern char g_Str_File_wolob_pcx[10];  // data: 0x831DDC
+extern char g_Str_File_WOLPersonaInformation_cpp[39];  // data: 0x84A0D0
+extern char g_Str_File_wolpriv_pcx[12];  // data: 0x8360A8
+extern char g_Str_File_wolreslk_pcx[13];  // data: 0x835D14
+extern char g_Str_File_wolrslkob_pcx[14];  // data: 0x83608C
+extern char g_Str_File_woltrny_pcx[12];  // data: 0x8360D0
 extern char g_Str_File_wonline_cpp[25];  // data: 0x84a430  (declsync G42.31: core twin)
-extern int g_Str_File_WorldDom_cpp;  // data: 0x84D818
-extern int g_Str_File_wouact_pcx;  // data: 0x836158
-extern int g_Str_File_wouref_pcx;  // data: 0x836140
-extern int g_Str_File_wwmous_cpp;  // data: 0x84E61C
-extern int g_Str_File_XXICON_SHP;  // data: 0x8204FC
-extern int g_Str_Fmt_D_D;  // data: 0x840F5C
-extern int g_Str_Fmt_Hs_S_Bracket;  // data: 0x84B94C
-extern int g_Str_Fmt_PctD;  // data: 0x81B3D0
-extern int g_Str_Fmt_PctS;  // data: 0x832904
-extern int g_Str_gsmallwoo;  // data: 0x822D20
-extern int g_Str_GUI_AIEasy;  // data: 0x831C68
-extern int g_Str_GUI_AIHard;  // data: 0x831C4C
-extern int g_Str_GUI_AINormal;  // data: 0x831C58
-extern int g_Str_GUI_Closed;  // data: 0x831C74
-extern int g_Str_GUI_DifficultyString;  // data: 0x81B4E8
-extern int g_Str_GUI_HostNoMap;  // data: 0x831460
-extern int g_Str_GUI_Observe;  // data: 0x8240D8
-extern int g_Str_GUI_Open;  // data: 0x831C80
-extern int g_Str_GUI_OpenObserver;  // data: 0x831C2C
-extern int g_Str_GUI_RandomAsSymbols;  // data: 0x822B7C
-extern int g_Str_GUI_UnknownStats;  // data: 0x84A16C
-extern int g_Str_Index_____CRC;  // data: 0x838828
-extern int g_Str_Instantiating_embedded_WebBrow;  // data: 0x8495CC
-extern int g_Str_Invalid_Voc;  // data: 0x846574
-extern int g_Str_Lob_40_;  // data: 0x84A21C
-extern int g_Str_Lob_41_;  // data: 0x84A214
-extern int g_Str_MSG_Mixed;  // data: 0x84560C
-extern int g_Str_MSG_NodeMaximum;  // data: 0x836B8C
-extern int g_Str_MSG_NoDescription;  // data: 0x83F4B8
-extern int g_Str_MSG_NothingSelected;  // data: 0x845584
-extern int g_Str_MSG_PlanningModeNoDeploy;  // data: 0x836C34
-extern int g_Str_MSG_PlanningModeNoScatter;  // data: 0x836C00
-extern int g_Str_MSG_PlanningModeNoStop;  // data: 0x836C1C
-extern int g_Str_MSG_PostContinualCommand;  // data: 0x836B9C
-extern int g_Str_MSG_PostTerminatingCommand;  // data: 0x836BB8
-extern int g_Str_MSG_SelAcrossMap;  // data: 0x8455C8
-extern int g_Str_MSG_SelAcrossScreen;  // data: 0x8455B4
-extern int g_Str_no;  // data: 0x825BF4
-extern int g_Str_No_Digest;  // data: 0x83F3E4
-extern int g_Str_No_Name;  // data: 0x829284
+extern char g_Str_File_WorldDom_cpp[26];  // data: 0x84D818
+extern char g_Str_File_wouact_pcx[11];  // data: 0x836158
+extern char g_Str_File_wouref_pcx[11];  // data: 0x836140
+extern char g_Str_File_wwmous_cpp[24];  // data: 0x84E61C
+extern char g_Str_File_XXICON_SHP[11];  // data: 0x8204FC
+extern char g_Str_Fmt_D_D[7];  // data: 0x840F5C
+extern char g_Str_Fmt_Hs_S_Bracket[18];  // data: 0x84B94C
+extern char g_Str_Fmt_PctD[2];  // data: 0x81B3D0
+extern char g_Str_Fmt_PctS[3];  // data: 0x832904
+extern char g_Str_gsmallwoo[10];  // data: 0x822D20
+extern char g_Str_GUI_AIEasy[11];  // data: 0x831C68
+extern char g_Str_GUI_AIHard[11];  // data: 0x831C4C
+extern char g_Str_GUI_AINormal[13];  // data: 0x831C58
+extern char g_Str_GUI_Closed[11];  // data: 0x831C74
+extern char g_Str_GUI_DifficultyString[21];  // data: 0x81B4E8
+extern char g_Str_GUI_HostNoMap[14];  // data: 0x831460
+extern char g_Str_GUI_Observe[12];  // data: 0x8240D8
+extern char g_Str_GUI_Open[9];  // data: 0x831C80
+extern char g_Str_GUI_OpenObserver[17];  // data: 0x831C2C
+extern char g_Str_GUI_RandomAsSymbols[20];  // data: 0x822B7C
+extern char g_Str_GUI_UnknownStats[17];  // data: 0x84A16C
+extern char g_Str_Index_____CRC[15];  // data: 0x838828
+extern char g_Str_Instantiating_embedded_WebBrow[35];  // data: 0x8495CC
+extern char g_Str_Invalid_Voc[12];  // data: 0x846574
+extern char g_Str_Lob_40_[8];  // data: 0x84A21C
+extern char g_Str_Lob_41_[8];  // data: 0x84A214
+extern char g_Str_MSG_Mixed[10];  // data: 0x84560C
+extern char g_Str_MSG_NodeMaximum[16];  // data: 0x836B8C
+extern char g_Str_MSG_NoDescription[18];  // data: 0x83F4B8
+extern char g_Str_MSG_NothingSelected[20];  // data: 0x845584
+extern char g_Str_MSG_PlanningModeNoDeploy[25];  // data: 0x836C34
+extern char g_Str_MSG_PlanningModeNoScatter[26];  // data: 0x836C00
+extern char g_Str_MSG_PlanningModeNoStop[23];  // data: 0x836C1C
+extern char g_Str_MSG_PostContinualCommand[25];  // data: 0x836B9C
+extern char g_Str_MSG_PostTerminatingCommand[27];  // data: 0x836BB8
+extern char g_Str_MSG_SelAcrossMap[17];  // data: 0x8455C8
+extern char g_Str_MSG_SelAcrossScreen[20];  // data: 0x8455B4
+extern char g_Str_no[3];  // data: 0x825BF4
+extern char g_Str_No_Digest[10];  // data: 0x83F3E4
+extern char g_Str_No_Name[8];  // data: 0x829284
 extern char g_Str_none[5];  // data: 0x817694  (declsync G42.31: core twin)
-extern int g_Str_None;  // data: 0x8373A4
-extern int g_Str_RMG__Recalculating_cell_attrib;  // data: 0x82BE9C
-extern int g_Str_SOFTWARE_Westwood_WOLAPI_;  // data: 0x8254E4
-extern int g_Str_SOFTWARE_Westwood_Yuri_s_Reven;  // data: 0x8313B0
-extern int g_Str_Software_Westwood_Yuri_s_Reven;  // data: 0x84964C
-extern int g_Str_Starting_up_WOLBrowser;  // data: 0x849594
-extern int g_Str_STT_GuestComboPlayer;  // data: 0x8338D4
-extern int g_Str_STT_HostComboPlayer;  // data: 0x833768
-extern int g_Str_STT_ObserverToggle;  // data: 0x835354
-extern int g_Str_STT_PlayerDumbAI;  // data: 0x831D0C
-extern int g_Str_STT_PlayerGeniusAI;  // data: 0x831CE4
-extern int g_Str_STT_PlayerSmartAI;  // data: 0x831CF8
-extern int g_Str_STT_WOLBuddy;  // data: 0x83443C
-extern int g_Str_STT_WOLManageAccount;  // data: 0x834228
-extern int g_Str_STT_WOLMyInformationLocale;  // data: 0x8342FC
-extern int g_Str_STT_WOLNewAccount;  // data: 0x834268
-extern int g_Str_STT_WOLNewGameCancel;  // data: 0x833FF0
-extern int g_Str_STT_WOLPageButton;  // data: 0x834318
-extern int g_Str_SYSTEM_MEMORY;  // data: 0x827C78
-extern int g_Str_T;  // data: 0x83ED5C
-extern int g_Str_Tip_ThumbClosed;  // data: 0x842838
-extern int g_Str_Toggle_display_mode_back_to_sh;  // data: 0x83D924
-extern int g_Str_Trace______c_;  // data: 0x81C46C
-extern int g_Str_Trace___d;  // data: 0x8190DC
-extern int g_Str_Trace___hs____s___s;  // data: 0x84B9B0
-extern int g_Str_Trace___hs___s;  // data: 0x84B020
-extern int g_Str_Trace___s___s;  // data: 0x81B460
-extern int g_Str_Trace__c__;  // data: 0x81C4B4
-extern int g_Str_Trace__d;  // data: 0x817F6C
-extern int g_Str_Trace__d_;  // data: 0x831D44
-extern int g_Str_Trace__d__d;  // data: 0x81C000
-extern int g_Str_Trace__d__d__d;  // data: 0x8189B0
-extern int g_Str_Trace__d__d__d__d;  // data: 0x825BBC
-extern int g_Str_Trace__f__f__f;  // data: 0x825BFC
-extern int g_Str_Trace__hs;  // data: 0x835874
-extern int g_Str_Trace__hs__s;  // data: 0x84B224
-extern int g_Str_Trace__s;  // data: 0x81FD08
-extern int g_Str_Trace__s__d;  // data: 0x84A788
-extern int g_Str_Trace__s__s;  // data: 0x840B78
-extern int g_Str_Trace__s__Type__d_;  // data: 0x838AA0
-extern int g_Str_Trace__s__Type__d__s__;  // data: 0x838AB0
-extern int g_Str_Trace__s_d;  // data: 0x81F31C
-extern int g_Str_Trace__sBARL;  // data: 0x832AD0
-extern int g_Str_Trace__sTUR;  // data: 0x832ABC
-extern int g_Str_Trace_Adding_event__s;  // data: 0x820BF0
-extern int g_Str_Trace_Ahandle__PauseAdjust__ld;  // data: 0x8178C0
-extern int g_Str_Trace_AIDifficulty___d;  // data: 0x82C464
-extern int g_Str_Trace_AIPlayers___d;  // data: 0x82C488
-extern int g_Str_Trace_Assigning_Starting_Points_for_house__d__;  // data: 0x82DD2C
-extern int g_Str_Trace_Average_FPS___d;  // data: 0x81D95C
-extern int g_Str_Trace_Bases___s;  // data: 0x82C43C
-extern int g_Str_Trace_BridgeDestroy___s;  // data: 0x82C3C0
-extern int g_Str_Trace_Color___d;  // data: 0x82C4C8
-extern int g_Str_Trace_Command_cound_stalls___d;  // data: 0x81D870
-extern int g_Str_Trace_Command_response_was__s;  // data: 0x8326D8
-extern int g_Str_Trace_CPU__s__MMX__s__Vendor___s;  // data: 0x821EE4
-extern int g_Str_Trace_Crap_Engineers___s;  // data: 0x82C3F0
-extern int g_Str_Trace_Crates___s;  // data: 0x82C3E4
-extern int g_Str_Trace_Credits___d;  // data: 0x82C498
-extern int g_Str_Trace_DDRAW_DLL_Error_code____08X;  // data: 0x81FC7C
-extern int g_Str_Trace_DeviceIoControl_failed_to_dismount_volum;  // data: 0x81C3D0
-extern int g_Str_Trace_DeviceIoControl_failed_to_eject_media__E;  // data: 0x81C358
-extern int g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E;  // data: 0x81C40C
-extern int g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO;  // data: 0x81C51C
-extern int g_Str_Trace_DeviceIoControl_failed_to_prevent_media_;  // data: 0x81C390
-extern int g_Str_Trace_DeviceIoControl_failed_to_unlock_volume_;  // data: 0x81C4BC
-extern int g_Str_Trace_Dial_result_is__s;  // data: 0x8327C4
-extern int g_Str_Trace_FogOfWar___s;  // data: 0x82C3D4
-extern int g_Str_Trace_Frame_sync_stalls___d;  // data: 0x81D88C
-extern int g_Str_Trace_Frames___d;  // data: 0x81D970
-extern int g_Str_Trace_Game_Speed___d;  // data: 0x82C478
-extern int g_Str_Trace_Game_speed_setting___d;  // data: 0x81D918
-extern int g_Str_Trace_gethostbyname_failed__Error_code__d;  // data: 0x830E28
-extern int g_Str_Trace_Harvester_Truce___s;  // data: 0x82C3A8
-extern int g_Str_Trace_Initializing__s;  // data: 0x81C2D4
-extern int g_Str_Trace_Initilizing__s;  // data: 0x827DF4
-extern int g_Str_Trace_Latency_setting___d;  // data: 0x81D930
-extern int g_Str_Trace_LatencyFudge_is__d;  // data: 0x820C54
-extern int g_Str_Trace_Leave_Channel__channel__s_type__d;  // data: 0x84B658
-extern int g_Str_Trace_Loaded_recording_values_for_scenario____;  // data: 0x82637C
-extern int g_Str_Trace_Local_address___d__d__d__d;  // data: 0x81D8FC
-extern int g_Str_Trace_Lost___d;  // data: 0x81D864
-extern int g_Str_Trace_Map_d;  // data: 0x81F114
-extern int g_Str_Trace_Max_avg_round_trip___d;  // data: 0x81D8C8
-extern int g_Str_Trace_Max_MaxAhead___d;  // data: 0x81D948
-extern int g_Str_Trace_Max_ping_is__d_ms;  // data: 0x82E0D0
-extern int g_Str_Trace_Max_round_trip___d;  // data: 0x81D8B4
-extern int g_Str_Trace_mphmd_exe__d__d__d__d;  // data: 0x839B84
-extern int g_Str_Trace_Name___ls;  // data: 0x82C550
-extern int g_Str_Trace_Name___s;  // data: 0x81D8F0
-extern int g_Str_Trace_Object__d___x;  // data: 0x838AC4
-extern int g_Str_Trace_Owner___s;  // data: 0x83894C
-extern int g_Str_Trace_Percent_lost___d;  // data: 0x81D850
-extern int g_Str_Trace_Release_Build___s_by__s____s;  // data: 0x821F0C
-extern int g_Str_Trace_Releasing__s;  // data: 0x81C320
-extern int g_Str_Trace_Requesting_channel_list_type____d__ping_;  // data: 0x84A554
-extern int g_Str_Trace_Requesting_ping_for__s_at__s;  // data: 0x84ACE0
-extern int g_Str_Trace_Resends___d;  // data: 0x81D8A4
-extern int g_Str_Trace_Result_is__s;  // data: 0x832924
-extern int g_Str_Trace_ScoreRepeat_is__s;  // data: 0x832F88
-extern int g_Str_Trace_ScoreShuffle_is__s;  // data: 0x832F74
-extern int g_Str_Trace_ScoreVolume____f;  // data: 0x832F9C
-extern int g_Str_Trace_Send_overflow__d;  // data: 0x8283D4
-extern int g_Str_Trace_Sending_public_options_string__s;  // data: 0x831B60
-extern int g_Str_Trace_SetCommState_returned_error__s_;  // data: 0x849830
-extern int g_Str_Trace_Short_Game___s;  // data: 0x82C42C
-extern int g_Str_Trace_SoundVolume____f;  // data: 0x832FB0
-extern int g_Str_Trace_TechLevel___d;  // data: 0x82C4A8
-extern int g_Str_Trace_Theme__QueueSong__d_;  // data: 0x8447D4
-extern int g_Str_Trace_Unable_to_lock_volume__c_;  // data: 0x81C590
-extern int g_Str_Trace_Unable_to_open_drive__c__for_ejection;  // data: 0x81C444
-extern int g_Str_Trace_UnitCount___d;  // data: 0x82C4B8
-extern int g_Str_Trace_VoiceVolume____f;  // data: 0x832FC4
-extern int g_Str_Trace_Warning__Probable_deadlock_occurred_on_M;  // data: 0x84E5DC
-extern int g_Str_Trace_Waypoint_d;  // data: 0x83DE24
-extern int g_Str_Trace_Writing_to_port_handle_failed_with_error;  // data: 0x849AA4
-extern int g_Str_true;  // data: 0x81C5F0
-extern int g_Str_TXT_APRIL;  // data: 0x84A084
-extern int g_Str_TXT_AUGUST;  // data: 0x84A038
-extern int g_Str_TXT_BADPASS;  // data: 0x84AC84
-extern int g_Str_TXT_CANCEL;  // data: 0x825FD0
-extern int g_Str_TXT_CANNOT_ALLY;  // data: 0x831450
-extern int g_Str_TXT_CANT_CONNECT;  // data: 0x84A5BC
-extern int g_Str_TXT_CANT_SEND_BLANK_PAGE;  // data: 0x82A108
-extern int g_Str_TXT_CHANNEL_FULL;  // data: 0x84AD60
-extern int g_Str_TXT_CLAN_NOSTART;  // data: 0x84BB6C
-extern int g_Str_TXT_COMPUTER;  // data: 0x824FC8
-extern int g_Str_TXT_CONTROL;  // data: 0x82729C
-extern int g_Str_TXT_CUSTOM;  // data: 0x83EBBC
-extern int g_Str_TXT_DECEMBER;  // data: 0x849FDC
-extern int g_Str_TXT_DESTGAME_OUTDATED;  // data: 0x82C6FC
-extern int g_Str_TXT_ENTER_MESSAGE;  // data: 0x84B9E0
-extern int g_Str_TXT_ERROR_TIMEOUT;  // data: 0x831F54
-extern int g_Str_TXT_FAST;  // data: 0x8227D0
-extern int g_Str_TXT_FASTER;  // data: 0x8227C4
-extern int g_Str_TXT_FASTEST;  // data: 0x8227B8
-extern int g_Str_TXT_FEBRUARY;  // data: 0x84A0AC
-extern int g_Str_TXT_FETCHING_SERVLIST;  // data: 0x84B5D0
-extern int g_Str_TXT_FROM;  // data: 0x82A150
-extern int g_Str_TXT_GDI;  // data: 0x831280
-extern int g_Str_TXT_IGNORE;  // data: 0x832618
-extern int g_Str_TXT_INTERFACE;  // data: 0x826FEC
-extern int g_Str_TXT_JANUARY;  // data: 0x84A0C4
-extern int g_Str_TXT_JOINLOB;  // data: 0x84B5E8
-extern int g_Str_TXT_JULY;  // data: 0x84A04C
-extern int g_Str_TXT_JUNE;  // data: 0x84A060
-extern int g_Str_TXT_MARCH;  // data: 0x84A098
-extern int g_Str_TXT_MAY;  // data: 0x84A074
-extern int g_Str_TXT_MEDIUM;  // data: 0x8227DC
-extern int g_Str_TXT_MISMATCH;  // data: 0x82C6D4
-extern int g_Str_TXT_NAME_ERROR;  // data: 0x8315B0
-extern int g_Str_TXT_NAME_TOO_LONG;  // data: 0x84B9CC
-extern int g_Str_TXT_NO;  // data: 0x829F1C
-extern int g_Str_TXT_NO_NAME_SPECIFIED;  // data: 0x82A124
-extern int g_Str_TXT_NOD;  // data: 0x831278
-extern int g_Str_TXT_NONAME;  // data: 0x83676C
-extern int g_Str_TXT_NOT_IN_CHAN;  // data: 0x84B9F4
-extern int g_Str_TXT_NOVEMBER;  // data: 0x849FF4
-extern int g_Str_TXT_OBSERVER_CANT_PAGE;  // data: 0x84B90C
-extern int g_Str_TXT_OBSERVER_FULL;  // data: 0x8315FC
-extern int g_Str_TXT_OCTOBER;  // data: 0x84A00C
-extern int g_Str_TXT_OK;  // data: 0x825FB0
-extern int g_Str_TXT_OPER;  // data: 0x84A770
-extern int g_Str_TXT_PAGE_COMMAND;  // data: 0x82A13C
-extern int g_Str_TXT_QUEUE_FULL;  // data: 0x837474
-extern int g_Str_TXT_RANDOM_MAP_DESCRIPTION;  // data: 0x82BA2C
-extern int g_Str_TXT_RANK;  // data: 0x84A690
-extern int g_Str_TXT_READY;  // data: 0x81B454
-extern int g_Str_TXT_REPLY_COMMAND;  // data: 0x82A0D4
-extern int g_Str_TXT_REPLY_COMMAND_SHORT;  // data: 0x82A0BC
-extern int g_Str_TXT_SCENARIO_TOO_SMALL;  // data: 0x82C9FC
-extern int g_Str_TXT_SCENARIOS_DO_NOT_MATCH;  // data: 0x837484
-extern int g_Str_TXT_SELECT_SETTINGS;  // data: 0x831E70
-extern int g_Str_TXT_SELECTION;  // data: 0x827250
-extern int g_Str_TXT_SEPTEMBER;  // data: 0x84A020
-extern int g_Str_TXT_SHORT_TITLE;  // data: 0x81D57C
-extern int g_Str_TXT_SLOW;  // data: 0x8227E8
-extern int g_Str_TXT_SLOWER;  // data: 0x8227F4
-extern int g_Str_TXT_SLOWEST;  // data: 0x822800
-extern int g_Str_TXT_SYSTEM_NOT_RESPONDING;  // data: 0x82C754
-extern int g_Str_TXT_TEAM;  // data: 0x826FA4
-extern int g_Str_TXT_TIME_FORMAT_HOURS;  // data: 0x81B2EC
-extern int g_Str_TXT_UNABLE_FIND_MODEM;  // data: 0x8320F0
-extern int g_Str_TXT_UNKNOWN_PING;  // data: 0x84A6AC
-extern int g_Str_TXT_UNRANKED;  // data: 0x83FB1C
-extern int g_Str_TXT_WAITING;  // data: 0x81B448
-extern int g_Str_TXT_WDT_NET_ERR;  // data: 0x84B420
-extern int g_Str_TXT_YES;  // data: 0x829F14
-extern int g_Str_TXT_YOURGAME_OUTDATED;  // data: 0x82C6E4
-extern int g_Str_undefined;  // data: 0x81F108
-extern int g_Str_unknown;  // data: 0x816210
-extern int g_Str_W;  // data: 0x8258C0
-extern int g_Str_WDT_TerritorySelectToolTip;  // data: 0x848F24
-extern int g_Str_We_tried_to_reset_the_shroud_w;  // data: 0x82AD48
-extern int g_Str_WOL_LeavingChannel;  // data: 0x84B644
-extern int g_Str_WOL_MatchFailExit;  // data: 0x84D060
-extern int g_Str_WOL_URL_RegKey;  // data: 0x849690
-extern int g_Str_WW_TiberianSun;  // data: 0x840B34
-extern int g_Str_WW_TiberianSun_1;  // data: 0x840B5C
-extern int g_Str_WWD_Allied;  // data: 0x8491F0
-extern int g_Str_WWD_Soviet;  // data: 0x8491FC
+extern char g_Str_None[5];  // data: 0x8373A4
+extern char g_Str_RMG__Recalculating_cell_attrib[36];  // data: 0x82BE9C
+extern char g_Str_SOFTWARE_Westwood_WOLAPI_[26];  // data: 0x8254E4
+extern char g_Str_SOFTWARE_Westwood_Yuri_s_Reven[33];  // data: 0x8313B0
+extern char g_Str_Software_Westwood_Yuri_s_Reven[33];  // data: 0x84964C
+extern char g_Str_Starting_up_WOLBrowser[24];  // data: 0x849594
+extern char g_Str_STT_GuestComboPlayer[21];  // data: 0x8338D4
+extern char g_Str_STT_HostComboPlayer[20];  // data: 0x833768
+extern char g_Str_STT_ObserverToggle[19];  // data: 0x835354
+extern char g_Str_STT_PlayerDumbAI[17];  // data: 0x831D0C
+extern char g_Str_STT_PlayerGeniusAI[19];  // data: 0x831CE4
+extern char g_Str_STT_PlayerSmartAI[18];  // data: 0x831CF8
+extern char g_Str_STT_WOLBuddy[13];  // data: 0x83443C
+extern char g_Str_STT_WOLManageAccount[21];  // data: 0x834228
+extern char g_Str_STT_WOLMyInformationLocale[27];  // data: 0x8342FC
+extern char g_Str_STT_WOLNewAccount[18];  // data: 0x834268
+extern char g_Str_STT_WOLNewGameCancel[21];  // data: 0x833FF0
+extern char g_Str_STT_WOLPageButton[18];  // data: 0x834318
+extern char g_Str_SYSTEM_MEMORY[14];  // data: 0x827C78
+extern char g_Str_T[2];  // data: 0x83ED5C
+extern char g_Str_Tip_ThumbClosed[16];  // data: 0x842838
+extern char g_Str_Toggle_display_mode_back_to_sh[39];  // data: 0x83D924
+extern char g_Str_Trace______c_[8];  // data: 0x81C46C
+extern char g_Str_Trace___d[4];  // data: 0x8190DC
+extern char g_Str_Trace___hs____s___s[28];  // data: 0x84B9B0
+extern char g_Str_Trace___hs___s[18];  // data: 0x84B020
+extern char g_Str_Trace___s___s[16];  // data: 0x81B460
+extern char g_Str_Trace__c__[5];  // data: 0x81C4B4
+extern char g_Str_Trace__d[3];  // data: 0x817F6C
+extern char g_Str_Trace__d_[4];  // data: 0x831D44
+extern char g_Str_Trace__d__d[6];  // data: 0x81C000
+extern char g_Str_Trace__d__d__d[9];  // data: 0x8189B0
+extern char g_Str_Trace__d__d__d__d[12];  // data: 0x825BBC
+extern char g_Str_Trace__f__f__f[9];  // data: 0x825BFC
+extern char g_Str_Trace__hs[2];  // data: 0x835874
+extern char g_Str_Trace__hs__s[14];  // data: 0x84B224
+extern char g_Str_Trace__s[4];  // data: 0x81FD08
+extern char g_Str_Trace__s__d[12];  // data: 0x84A788
+extern char g_Str_Trace__s__s[6];  // data: 0x840B78
+extern char g_Str_Trace__s__Type__d_[14];  // data: 0x838AA0
+extern char g_Str_Trace__s__Type__d__s__[18];  // data: 0x838AB0
+extern char g_Str_Trace__s_d[5];  // data: 0x81F31C
+extern char g_Str_Trace__sBARL[7];  // data: 0x832AD0
+extern char g_Str_Trace__sTUR[6];  // data: 0x832ABC
+extern char g_Str_Trace_Adding_event__s[17];  // data: 0x820BF0
+extern char g_Str_Trace_Ahandle__PauseAdjust__ld[26];  // data: 0x8178C0
+extern char g_Str_Trace_AIDifficulty___d[18];  // data: 0x82C464
+extern char g_Str_Trace_AIPlayers___d[15];  // data: 0x82C488
+extern char g_Str_Trace_Assigning_Starting_Points_for_house__d__[45];  // data: 0x82DD2C
+extern char g_Str_Trace_Average_FPS___d[17];  // data: 0x81D95C
+extern char g_Str_Trace_Bases___s[11];  // data: 0x82C43C
+extern char g_Str_Trace_BridgeDestroy___s[19];  // data: 0x82C3C0
+extern char g_Str_Trace_Color___d[11];  // data: 0x82C4C8
+extern char g_Str_Trace_Command_cound_stalls___d[26];  // data: 0x81D870
+extern char g_Str_Trace_Command_response_was__s[25];  // data: 0x8326D8
+extern char g_Str_Trace_CPU__s__MMX__s__Vendor___s[29];  // data: 0x821EE4
+extern char g_Str_Trace_Crap_Engineers___s[20];  // data: 0x82C3F0
+extern char g_Str_Trace_Crates___s[12];  // data: 0x82C3E4
+extern char g_Str_Trace_Credits___d[13];  // data: 0x82C498
+extern char g_Str_Trace_DDRAW_DLL_Error_code____08X[28];  // data: 0x81FC7C
+extern char g_Str_Trace_DeviceIoControl_failed_to_dismount_volum[58];  // data: 0x81C3D0
+extern char g_Str_Trace_DeviceIoControl_failed_to_eject_media__E[54];  // data: 0x81C358
+extern char g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E[54];  // data: 0x81C40C
+extern char g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO[74];  // data: 0x81C51C
+extern char g_Str_Trace_DeviceIoControl_failed_to_prevent_media_[64];  // data: 0x81C390
+extern char g_Str_Trace_DeviceIoControl_failed_to_unlock_volume_[56];  // data: 0x81C4BC
+extern char g_Str_Trace_Dial_result_is__s[19];  // data: 0x8327C4
+extern char g_Str_Trace_FogOfWar___s[14];  // data: 0x82C3D4
+extern char g_Str_Trace_Frame_sync_stalls___d[23];  // data: 0x81D88C
+extern char g_Str_Trace_Frames___d[12];  // data: 0x81D970
+extern char g_Str_Trace_Game_Speed___d[16];  // data: 0x82C478
+extern char g_Str_Trace_Game_speed_setting___d[24];  // data: 0x81D918
+extern char g_Str_Trace_gethostbyname_failed__Error_code__d[37];  // data: 0x830E28
+extern char g_Str_Trace_Harvester_Truce___s[21];  // data: 0x82C3A8
+extern char g_Str_Trace_Initializing__s[22];  // data: 0x81C2D4
+extern char g_Str_Trace_Initilizing__s[21];  // data: 0x827DF4
+extern char g_Str_Trace_Latency_setting___d[21];  // data: 0x81D930
+extern char g_Str_Trace_LatencyFudge_is__d[20];  // data: 0x820C54
+extern char g_Str_Trace_Leave_Channel__channel__s_type__d[35];  // data: 0x84B658
+extern char g_Str_Trace_Loaded_recording_values_for_scenario____[43];  // data: 0x82637C
+extern char g_Str_Trace_Local_address___d__d__d__d[28];  // data: 0x81D8FC
+extern char g_Str_Trace_Lost___d[10];  // data: 0x81D864
+extern char g_Str_Trace_Map_d[6];  // data: 0x81F114
+extern char g_Str_Trace_Max_avg_round_trip___d[24];  // data: 0x81D8C8
+extern char g_Str_Trace_Max_MaxAhead___d[18];  // data: 0x81D948
+extern char g_Str_Trace_Max_ping_is__d_ms[19];  // data: 0x82E0D0
+extern char g_Str_Trace_Max_round_trip___d[20];  // data: 0x81D8B4
+extern char g_Str_Trace_mphmd_exe__d__d__d__d[22];  // data: 0x839B84
+extern char g_Str_Trace_Name___ls[11];  // data: 0x82C550
+extern char g_Str_Trace_Name___s[11];  // data: 0x81D8F0
+extern char g_Str_Trace_Object__d___x[15];  // data: 0x838AC4
+extern char g_Str_Trace_Owner___s[11];  // data: 0x83894C
+extern char g_Str_Trace_Percent_lost___d[18];  // data: 0x81D850
+extern char g_Str_Trace_Release_Build___s_by__s____s[31];  // data: 0x821F0C
+extern char g_Str_Trace_Releasing__s[19];  // data: 0x81C320
+extern char g_Str_Trace_Requesting_channel_list_type____d__ping_[46];  // data: 0x84A554
+extern char g_Str_Trace_Requesting_ping_for__s_at__s[30];  // data: 0x84ACE0
+extern char g_Str_Trace_Resends___d[13];  // data: 0x81D8A4
+extern char g_Str_Trace_Result_is__s[14];  // data: 0x832924
+extern char g_Str_Trace_ScoreRepeat_is__s[19];  // data: 0x832F88
+extern char g_Str_Trace_ScoreShuffle_is__s[20];  // data: 0x832F74
+extern char g_Str_Trace_ScoreVolume____f[18];  // data: 0x832F9C
+extern char g_Str_Trace_Send_overflow__d[18];  // data: 0x8283D4
+extern char g_Str_Trace_Sending_public_options_string__s[34];  // data: 0x831B60
+extern char g_Str_Trace_SetCommState_returned_error__s_[33];  // data: 0x849830
+extern char g_Str_Trace_Short_Game___s[16];  // data: 0x82C42C
+extern char g_Str_Trace_SoundVolume____f[18];  // data: 0x832FB0
+extern char g_Str_Trace_TechLevel___d[15];  // data: 0x82C4A8
+extern char g_Str_Trace_Theme__QueueSong__d_[22];  // data: 0x8447D4
+extern char g_Str_Trace_Unable_to_lock_volume__c_[27];  // data: 0x81C590
+extern char g_Str_Trace_Unable_to_open_drive__c__for_ejection[39];  // data: 0x81C444
+extern char g_Str_Trace_UnitCount___d[15];  // data: 0x82C4B8
+extern char g_Str_Trace_VoiceVolume____f[18];  // data: 0x832FC4
+extern char g_Str_Trace_Warning__Probable_deadlock_occurred_on_M[64];  // data: 0x84E5DC
+extern char g_Str_Trace_Waypoint_d[11];  // data: 0x83DE24
+extern char g_Str_Trace_Writing_to_port_handle_failed_with_error[45];  // data: 0x849AA4
+extern char g_Str_true[5];  // data: 0x81C5F0
+extern char g_Str_TXT_APRIL[10];  // data: 0x84A084
+extern char g_Str_TXT_AUGUST[11];  // data: 0x84A038
+extern char g_Str_TXT_BADPASS[12];  // data: 0x84AC84
+extern char g_Str_TXT_CANCEL[11];  // data: 0x825FD0
+extern char g_Str_TXT_CANNOT_ALLY[16];  // data: 0x831450
+extern char g_Str_TXT_CANT_CONNECT[17];  // data: 0x84A5BC
+extern char g_Str_TXT_CANT_SEND_BLANK_PAGE[25];  // data: 0x82A108
+extern char g_Str_TXT_CHANNEL_FULL[17];  // data: 0x84AD60
+extern char g_Str_TXT_CLAN_NOSTART[17];  // data: 0x84BB6C
+extern char g_Str_TXT_COMPUTER[13];  // data: 0x824FC8
+extern char g_Str_TXT_CONTROL[12];  // data: 0x82729C
+extern char g_Str_TXT_CUSTOM[11];  // data: 0x83EBBC
+extern char g_Str_TXT_DECEMBER[13];  // data: 0x849FDC
+extern char g_Str_TXT_DESTGAME_OUTDATED[22];  // data: 0x82C6FC
+extern char g_Str_TXT_ENTER_MESSAGE[18];  // data: 0x84B9E0
+extern char g_Str_TXT_ERROR_TIMEOUT[18];  // data: 0x831F54
+extern char g_Str_TXT_FAST[9];  // data: 0x8227D0
+extern char g_Str_TXT_FASTER[11];  // data: 0x8227C4
+extern char g_Str_TXT_FASTEST[12];  // data: 0x8227B8
+extern char g_Str_TXT_FEBRUARY[13];  // data: 0x84A0AC
+extern char g_Str_TXT_FETCHING_SERVLIST[22];  // data: 0x84B5D0
+extern char g_Str_TXT_FROM[9];  // data: 0x82A150
+extern char g_Str_TXT_GDI[8];  // data: 0x831280
+extern char g_Str_TXT_IGNORE[11];  // data: 0x832618
+extern char g_Str_TXT_INTERFACE[14];  // data: 0x826FEC
+extern char g_Str_TXT_JANUARY[12];  // data: 0x84A0C4
+extern char g_Str_TXT_JOINLOB[12];  // data: 0x84B5E8
+extern char g_Str_TXT_JULY[9];  // data: 0x84A04C
+extern char g_Str_TXT_JUNE[9];  // data: 0x84A060
+extern char g_Str_TXT_MARCH[10];  // data: 0x84A098
+extern char g_Str_TXT_MAY[8];  // data: 0x84A074
+extern char g_Str_TXT_MEDIUM[11];  // data: 0x8227DC
+extern char g_Str_TXT_MISMATCH[13];  // data: 0x82C6D4
+extern char g_Str_TXT_NAME_ERROR[15];  // data: 0x8315B0
+extern char g_Str_TXT_NAME_TOO_LONG[18];  // data: 0x84B9CC
+extern char g_Str_TXT_NO[7];  // data: 0x829F1C
+extern char g_Str_TXT_NO_NAME_SPECIFIED[22];  // data: 0x82A124
+extern char g_Str_TXT_NOD[8];  // data: 0x831278
+extern char g_Str_TXT_NONAME[11];  // data: 0x83676C
+extern char g_Str_TXT_NOT_IN_CHAN[16];  // data: 0x84B9F4
+extern char g_Str_TXT_NOVEMBER[13];  // data: 0x849FF4
+extern char g_Str_TXT_OBSERVER_CANT_PAGE[23];  // data: 0x84B90C
+extern char g_Str_TXT_OBSERVER_FULL[18];  // data: 0x8315FC
+extern char g_Str_TXT_OCTOBER[12];  // data: 0x84A00C
+extern char g_Str_TXT_OK[7];  // data: 0x825FB0
+extern char g_Str_TXT_OPER[9];  // data: 0x84A770
+extern char g_Str_TXT_PAGE_COMMAND[17];  // data: 0x82A13C
+extern char g_Str_TXT_QUEUE_FULL[15];  // data: 0x837474
+extern char g_Str_TXT_RANDOM_MAP_DESCRIPTION[27];  // data: 0x82BA2C
+extern char g_Str_TXT_RANK[9];  // data: 0x84A690
+extern char g_Str_TXT_READY[10];  // data: 0x81B454
+extern char g_Str_TXT_REPLY_COMMAND[18];  // data: 0x82A0D4
+extern char g_Str_TXT_REPLY_COMMAND_SHORT[24];  // data: 0x82A0BC
+extern char g_Str_TXT_SCENARIO_TOO_SMALL[23];  // data: 0x82C9FC
+extern char g_Str_TXT_SCENARIOS_DO_NOT_MATCH[27];  // data: 0x837484
+extern char g_Str_TXT_SELECT_SETTINGS[20];  // data: 0x831E70
+extern char g_Str_TXT_SELECTION[14];  // data: 0x827250
+extern char g_Str_TXT_SEPTEMBER[14];  // data: 0x84A020
+extern char g_Str_TXT_SHORT_TITLE[16];  // data: 0x81D57C
+extern char g_Str_TXT_SLOW[9];  // data: 0x8227E8
+extern char g_Str_TXT_SLOWER[11];  // data: 0x8227F4
+extern char g_Str_TXT_SLOWEST[12];  // data: 0x822800
+extern char g_Str_TXT_SYSTEM_NOT_RESPONDING[26];  // data: 0x82C754
+extern char g_Str_TXT_TEAM[9];  // data: 0x826FA4
+extern char g_Str_TXT_TIME_FORMAT_HOURS[22];  // data: 0x81B2EC
+extern char g_Str_TXT_UNABLE_FIND_MODEM[22];  // data: 0x8320F0
+extern char g_Str_TXT_UNKNOWN_PING[17];  // data: 0x84A6AC
+extern char g_Str_TXT_UNRANKED[13];  // data: 0x83FB1C
+extern char g_Str_TXT_WAITING[12];  // data: 0x81B448
+extern char g_Str_TXT_WDT_NET_ERR[16];  // data: 0x84B420
+extern char g_Str_TXT_YES[8];  // data: 0x829F14
+extern char g_Str_TXT_YOURGAME_OUTDATED[22];  // data: 0x82C6E4
+extern char g_Str_undefined[10];  // data: 0x81F108
+extern char g_Str_unknown[8];  // data: 0x816210
+extern char g_Str_W[2];  // data: 0x8258C0
+extern char g_Str_WDT_TerritorySelectToolTip[27];  // data: 0x848F24
+extern char g_Str_We_tried_to_reset_the_shroud_w[46];  // data: 0x82AD48
+extern char g_Str_WOL_LeavingChannel[19];  // data: 0x84B644
+extern char g_Str_WOL_MatchFailExit[18];  // data: 0x84D060
+extern char g_Str_WOL_URL_RegKey[37];  // data: 0x849690
+extern char g_Str_WW_TiberianSun[15];  // data: 0x840B34
+extern char g_Str_WW_TiberianSun_1[17];  // data: 0x840B5C
+extern char g_Str_WWD_Allied[11];  // data: 0x8491F0
+extern char g_Str_WWD_Soviet[11];  // data: 0x8491FC
 extern int g_StreamBufferState;  // data: 0xAA0444
 extern int g_StreamConfig;  // data: 0xAA0464
 extern int g_StreamPool;  // data: 0xAA0448
@@ -2409,608 +2409,608 @@ extern unsigned char a1_0[4];  // data: 0x81F210
 extern unsigned char a1_2[4];  // data: 0x822BC4
 extern unsigned char a2f[4];  // data: 0x82A23C
 extern unsigned char a480[4];  // data: 0x826510
-extern unsigned char aAarate[4];  // data: 0x82C27C
-extern unsigned char aAb[4];  // data: 0x822B78
-extern unsigned char aAimdIni[4];  // data: 0x82621C
-extern unsigned char aAirlift[4];  // data: 0x81B820
-extern unsigned char aAitriggertypes[4];  // data: 0x8180F8
-extern unsigned char aAitriggertypes_0[4];  // data: 0x8180E0
-extern unsigned char aAlltocheer[4];  // data: 0x82741C
-extern unsigned char aAnim_0[4];  // data: 0x817448
-extern unsigned char aAnims[4];  // data: 0x8302FC
-extern unsigned char aArmoraircraftm[4];  // data: 0x8253F8
-extern unsigned char aArmorbuildings[4];  // data: 0x8253E4
-extern unsigned char aArmordefensesm[4];  // data: 0x8253D0
-extern unsigned char aArmorinfantrym[4];  // data: 0x82541C
-extern unsigned char aArmorunitsmult[4];  // data: 0x82540C
-extern unsigned char aArtmdIni[4];  // data: 0x826254
-extern unsigned char aAtd[4];  // data: 0x849B44
-extern unsigned char aAttachedpartic[4];  // data: 0x849274
-extern unsigned char aAttract[4];  // data: 0x826520
-extern unsigned char aAuthenticamd[4];  // data: 0x822CD8
-extern unsigned char aBackground[4];  // data: 0x8241B4
-extern unsigned char aBag[4];  // data: 0x815E78
-extern unsigned char aBik[4];  // data: 0x82D9CC
-extern unsigned char aBik_0[4];  // data: 0x82419C
-extern unsigned char aBleep1[4];  // data: 0x830178
-extern unsigned char aBluetint[4];  // data: 0x82BF68
-extern unsigned char aBuildngzSha[4];  // data: 0x8193F4
-extern unsigned char aBuildtimeaircr[4];  // data: 0x8252F4
-extern unsigned char aBuildtimebuild[4];  // data: 0x8252DC
-extern unsigned char aBuildtimedefen[4];  // data: 0x8252C4
-extern unsigned char aBuildtimeinfan[4];  // data: 0x825320
-extern unsigned char aBuildtimeunits[4];  // data: 0x82530C
-extern unsigned char aBummer[4];  // data: 0x821CA8
-extern unsigned char aCabhut[4];  // data: 0x82BA00
-extern unsigned char aCameoPal[4];  // data: 0x8204E0
-extern unsigned char aCanceled[4];  // data: 0x848F18
-extern unsigned char aCenterbase[4];  // data: 0x827514
-extern unsigned char aCenteronradare[4];  // data: 0x827610
-extern unsigned char aCenterview[4];  // data: 0x8274E0
-extern unsigned char aCmid[4];  // data: 0x848CB8
-extern unsigned char aCmndAllcheer[4];  // data: 0x827428
-extern unsigned char aCmndAllcheerde[4];  // data: 0x827438
-extern unsigned char aCmndCombatants[4];  // data: 0x8272D0
-extern unsigned char aCmndCombatants_0[4];  // data: 0x8272E8
-extern unsigned char aCmndDelete[4];  // data: 0x827B44
-extern unsigned char aCmndDeletedesc[4];  // data: 0x827B50
-extern unsigned char aCmndHealthnavi[4];  // data: 0x827340
-extern unsigned char aCmndHealthnavi_0[4];  // data: 0x827358
-extern unsigned char aCmndPlanningmo[4];  // data: 0x827288
-extern unsigned char aCmndPlanningmo_0[4];  // data: 0x8272A8
-extern unsigned char aCmndTypeselect[4];  // data: 0x827310
-extern unsigned char aCmndTypeselect_0[4];  // data: 0x827320
-extern unsigned char aCmndVetnavigat[4];  // data: 0x827384
-extern unsigned char aCmndVetnavigat_0[4];  // data: 0x827398
-extern unsigned char aCodeWdtmapmdIn[4];  // data: 0x848BC4
-extern unsigned char aCombatantselec[4];  // data: 0x8272C0
-extern unsigned char aConqmdMix[4];  // data: 0x826838
-extern unsigned char aConquerMix[4];  // data: 0x8267EC
-extern unsigned char aConstruction[4];  // data: 0x816DCC
-extern unsigned char aCopyprotection_0[4];  // data: 0x81F408
-extern unsigned char aCopyprotection_1[4];  // data: 0x81F4C0
-extern unsigned char aCostaircraftmu[4];  // data: 0x825398
-extern unsigned char aCostbuildingsm[4];  // data: 0x825384
-extern unsigned char aCostdefensesmu[4];  // data: 0x825370
-extern unsigned char aCostinfantrymu[4];  // data: 0x8253BC
-extern unsigned char aCostunitsmult[4];  // data: 0x8253AC
-extern unsigned char aCreatesurfaceO[4];  // data: 0x82066C
-extern unsigned char aCreateunitsoun[4];  // data: 0x81AB3C
-extern unsigned char aCredits[4];  // data: 0x824E38
-extern unsigned char aCrtk[4];  // data: 0x848CF0
-extern unsigned char aCyid[4];  // data: 0x848CB0
-extern unsigned char aCyln[4];  // data: 0x848CE8
-extern unsigned char aCyrixinstead[4];  // data: 0x822CC8
-extern unsigned char aD6e7fc9764f94d[4];  // data: 0x81F498
-extern unsigned char aDD_2[4];  // data: 0x8201C4
-extern unsigned char aDefault[4];  // data: 0x849F14
-extern unsigned char aDelete[4];  // data: 0x827B3C
-extern unsigned char aDeployinganim[4];  // data: 0x819490
-extern unsigned char aDeployobject[4];  // data: 0x82744C
-extern unsigned char aDescCursorchea[4];  // data: 0x827B04
-extern unsigned char aDisabled[4];  // data: 0x8242C0
-extern unsigned char aDlink1[4];  // data: 0x82655C
-extern unsigned char aDllgetversion[4];  // data: 0x8201D4
-extern unsigned char aDowebpagedialo[4];  // data: 0x849738
-extern unsigned char aDpodHva[4];  // data: 0x8268D8
-extern unsigned char aDpodVxl[4];  // data: 0x826900
-extern unsigned char aDRa2mdpostCred[4];  // data: 0x81FBBC
-extern unsigned char aDRa2mdpostDisp[4];  // data: 0x8201A8
-extern unsigned char aDRa2mdpostGame[4];  // data: 0x822848
-extern unsigned char aDRa2mdpostMpla[4];  // data: 0x82E134
-extern unsigned char aDRa2mdpostWdtp[4];  // data: 0x848D80
-extern unsigned char aDRa2mdpostWolp[4];  // data: 0x84A0D0
-extern unsigned char aDraw[4];  // data: 0x8491E8
-extern unsigned char aDrop[4];  // data: 0x826574
-extern unsigned char aDsurfaceCreate[4];  // data: 0x8206F0
-extern unsigned char aDsurfaceCreate_0[4];  // data: 0x820680
-extern unsigned char aEdge[4];  // data: 0x824DD0
-extern unsigned char aEnum[4];  // data: 0x82CD38
-extern unsigned char aError[4];  // data: 0x849B60
-extern unsigned char aErrorRecursive[4];  // data: 0x821CC0
-extern unsigned char aEvaAlliancebro[4];  // data: 0x824808
-extern unsigned char aEvaAlliancefor[4];  // data: 0x8247E4
-extern unsigned char aEvaAlliancereq[4];  // data: 0x82479C
-extern unsigned char aEvaBuildingcap[4];  // data: 0x818FAC
-extern unsigned char aEvaBuildingonl[4];  // data: 0x8190C8
-extern unsigned char aEvaEnemyallian[4];  // data: 0x8247CC
-extern unsigned char aEvaLightningst[4];  // data: 0x828080
-extern unsigned char aEvamdIni[4];  // data: 0x825DF0
-extern unsigned char aEvaMissionacco[4];  // data: 0x824C54
-extern unsigned char aEvaMissionfail[4];  // data: 0x824CAC
-extern unsigned char aEvaOurallyisun[4];  // data: 0x82474C
-extern unsigned char aEvaOurbaseisun[4];  // data: 0x824768
-extern unsigned char aEvaPlayerdefea[4];  // data: 0x824B70
-extern unsigned char aEvaRequestinga[4];  // data: 0x8247B4
-extern unsigned char aEvaRobottanksb[4];  // data: 0x824FE4
-extern unsigned char aEvaTechbuildin[4];  // data: 0x818FC4
-extern unsigned char aEvaUnitlost[4];  // data: 0x822620
-extern unsigned char aEvaUnitready[4];  // data: 0x8249A0
-extern unsigned char aEvaYouarevicto[4];  // data: 0x824C2C
-extern unsigned char aEvaYouhavelost[4];  // data: 0x824C08
-extern unsigned char aExpandDat[4];  // data: 0x822210
-extern unsigned char aExtrasynccheck[4];  // data: 0x827938
-extern unsigned char aExtraSyncInfoO[4];  // data: 0x8279D8
-extern unsigned char aExtraSyncInfoO_0[4];  // data: 0x8279C4
-extern unsigned char aFactory[4];  // data: 0x81C028
-extern unsigned char aFailedToCreate_0[4];  // data: 0x8268E4
-extern unsigned char aFailedToCreate_1[4];  // data: 0x8268BC
-extern unsigned char aFailedToGetDes[4];  // data: 0x82063C
-extern unsigned char aFailedToNotify[4];  // data: 0x81F43C
-extern unsigned char aFirepower[4];  // data: 0x81D9C0
-extern unsigned char aFocusGained[4];  // data: 0x849EF8
-extern unsigned char aFocusLost[4];  // data: 0x849F08
-extern unsigned char aFogShp[4];  // data: 0x81CE10
-extern unsigned char aFollow[4];  // data: 0x818BB4
-extern unsigned char aFriendlyname[4];  // data: 0x8497BC
-extern unsigned char aGameFnt[4];  // data: 0x818B98
-extern unsigned char aGameSyncLoggin[4];  // data: 0x82794C
-extern unsigned char aGaplug[4];  // data: 0x824EB8
-extern unsigned char aGlslmdShp[4];  // data: 0x826898
-extern unsigned char aGlsmdPal[4];  // data: 0x8268B0
-extern unsigned char aGlssmdShp[4];  // data: 0x8268A4
-extern unsigned char aGreentint[4];  // data: 0x82BF74
-extern unsigned char aGt18Bmp[4];  // data: 0x84CDA8
-extern unsigned char aGuardobject[4];  // data: 0x827488
-extern unsigned char aGuiBlank[4];  // data: 0x81B4AC
-extern unsigned char aGuiBlueabbrev[4];  // data: 0x822B48
-extern unsigned char aGuiCampaignlab[4];  // data: 0x81B514
-extern unsigned char aGuiCancel[4];  // data: 0x82635C
-extern unsigned char aGuiConfirmmode[4];  // data: 0x82A57C
-extern unsigned char aGuiCreatingcha[4];  // data: 0x84B8A8
-extern unsigned char aGuiDebug[4];  // data: 0x827AF8
-extern unsigned char aGuiDefault[4];  // data: 0x84A1AC
-extern unsigned char aGuiDeletemapme[4];  // data: 0x82BC5C
-extern unsigned char aGuiDeletemissi[4];  // data: 0x829FC8
-extern unsigned char aGuiExitareyous[4];  // data: 0x826368
-extern unsigned char aGuiGoldabbrev[4];  // data: 0x822B68
-extern unsigned char aGuiGrayabbrev[4];  // data: 0x822ADC
-extern unsigned char aGuiGreenabbrev[4];  // data: 0x822B38
-extern unsigned char aGuiLeave[4];  // data: 0x8240F0
-extern unsigned char aGuiLoadingex[4];  // data: 0x82686C
-extern unsigned char aGuiLoadmission[4];  // data: 0x829FA0
-extern unsigned char aGuiLogincomple[4];  // data: 0x84B5F4
-extern unsigned char aGuiMapsaved[4];  // data: 0x82BC70
-extern unsigned char aGuiNoneassymbo[4];  // data: 0x822BF8
-extern unsigned char aGuiNoserversav[4];  // data: 0x84B800
-extern unsigned char aGuiObserver[4];  // data: 0x8229EC
-extern unsigned char aGuiOrangeabbre[4];  // data: 0x822B24
-extern unsigned char aGuiPinkabbrev[4];  // data: 0x822AEC
-extern unsigned char aGuiPlaywdt[4];  // data: 0x848DD8
-extern unsigned char aGuiPurpleabbre[4];  // data: 0x822AFC
-extern unsigned char aGuiRandomex[4];  // data: 0x8229DC
-extern unsigned char aGuiRedabbrev[4];  // data: 0x822B58
-extern unsigned char aGuiRestart[4];  // data: 0x8240E4
-extern unsigned char aGuiSavemapmenu[4];  // data: 0x82BC4C
-extern unsigned char aGuiSavemission[4];  // data: 0x829FB4
-extern unsigned char aGuiSkyblueabbr[4];  // data: 0x822B10
-extern unsigned char aGuiUserprofile[4];  // data: 0x84A194
-extern unsigned char aGuiWelcomeupda[4];  // data: 0x84A180
-extern unsigned char aGuiWwbrand[4];  // data: 0x82687C
-extern unsigned char aHealthnav[4];  // data: 0x827334
-extern unsigned char aHey[4];  // data: 0x81FFC4
-extern unsigned char aHighlighted[4];  // data: 0x8242CC
-extern unsigned char aHighlightsound[4];  // data: 0x8242B0
-extern unsigned char aHouse[4];  // data: 0x8173E8
-extern unsigned char aHsDD[4];  // data: 0x84A724
-extern unsigned char aHsS_1[4];  // data: 0x84AFB0
-extern unsigned char aHsS_2[4];  // data: 0x84AFC8
-extern unsigned char aHsvc[4];  // data: 0x848CC0
-extern unsigned char aHttpApiregiste_1[4];  // data: 0x84B500
-extern unsigned char aHttpPrivacypol[4];  // data: 0x84BA1C
-extern unsigned char aIdx[4];  // data: 0x815E80
-extern unsigned char aIncomemult[4];  // data: 0x8252B8
-extern unsigned char aInetmib1Dll[4];  // data: 0x84C9BC
-extern unsigned char aInfantrytab[4];  // data: 0x827048
-extern unsigned char aIntroWav[4];  // data: 0x82CFF4
-extern unsigned char aIsotem[4];  // data: 0x7E1BBC
-extern unsigned char aIsotemp[4];  // data: 0x7E1BB2
-extern unsigned char aItemmax[4];  // data: 0x82418C
-extern unsigned char aLangruleIni[4];  // data: 0x826228
-extern unsigned char aLauncherNotifi[4];  // data: 0x81F484
-extern unsigned char aLayouts[4];  // data: 0x848DFC
-extern unsigned char aLdsc[4];  // data: 0x848CD0
-extern unsigned char aLevel[4];  // data: 0x81B0D4
-extern unsigned char aLoading[4];  // data: 0x82C1BC
-extern unsigned char aLob39[4];  // data: 0x84A22C
-extern unsigned char aLosingthreshol[4];  // data: 0x848E90
-extern unsigned char aMapcheckTxt[4];  // data: 0x82AF00
-extern unsigned char aMapenter[4];  // data: 0x848F00
-extern unsigned char aMapleave[4];  // data: 0x848F0C
-extern unsigned char aMapselmdIni[4];  // data: 0x830370
-extern unsigned char aMapsmdMix[4];  // data: 0x82679C
-extern unsigned char aMapsMix[4];  // data: 0x826790
-extern unsigned char aMegalosingthre[4];  // data: 0x848E7C
-extern unsigned char aMegawinningthr[4];  // data: 0x848EA0
-extern unsigned char aMessages[4];  // data: 0x82652C
-extern unsigned char aMixfilesMovies[4];  // data: 0x8266FC
-extern unsigned char aMmt[4];  // data: 0x829148
-extern unsigned char aMode_0[4];  // data: 0x84BA40
-extern unsigned char aModem[4];  // data: 0x82CECC
-extern unsigned char aMousecancel[4];  // data: 0x848F6C
-extern unsigned char aMpdebug[4];  // data: 0x82657C
-extern unsigned char aMpIllegalteam[4];  // data: 0x82FF0C
-extern unsigned char aMpNoattackers[4];  // data: 0x82FEE8
-extern unsigned char aMpNodefender[4];  // data: 0x82FF1C
-extern unsigned char aMpOnlyonebesei[4];  // data: 0x82FEF8
-extern unsigned char aMpstatsTxt[4];  // data: 0x81D97C
-extern unsigned char aMpvc[4];  // data: 0x848CC8
-extern unsigned char aMsenginePausin[4];  // data: 0x8305E8
-extern unsigned char aMsengineResumi[4];  // data: 0x8305B0
-extern unsigned char aMsengineSleepi[4];  // data: 0x8305D0
-extern unsigned char aMsgDominatorac[4];  // data: 0x8280B8
-extern unsigned char aMsgLightningst[4];  // data: 0x82809C
-extern unsigned char aMulticast[4];  // data: 0x8283C8
-extern unsigned char aMultiplayerdeb[4];  // data: 0x8278A0
-extern unsigned char aNack[4];  // data: 0x848D00
-extern unsigned char aNameTemperate[4];  // data: 0x7E1B88
-extern unsigned char aNetgear[4];  // data: 0x826550
-extern unsigned char aNews[4];  // data: 0x84A470
-extern unsigned char aNoName_0[4];  // data: 0x8182E0
-extern unsigned char aNorouter[4];  // data: 0x826544
-extern unsigned char aO8[4];  // data: 0x82DC2C
-extern unsigned char aO[4];  // data: 0x826500
-extern unsigned char aOlCruddy[4];  // data: 0x84CC08
-extern unsigned char aOrigin800[4];  // data: 0x84915C
+extern char aAarate[7];  // data: 0x82C27C
+extern char aAb[3];  // data: 0x822B78
+extern char aAimdIni[9];  // data: 0x82621C
+extern char aAirlift[8];  // data: 0x81B820
+extern char aAitriggertypes[15];  // data: 0x8180F8
+extern char aAitriggertypes_0[21];  // data: 0x8180E0
+extern char aAlltocheer[11];  // data: 0x82741C
+extern char aAnim_0[5];  // data: 0x817448
+extern char aAnims[6];  // data: 0x8302FC
+extern char aArmoraircraftm[18];  // data: 0x8253F8
+extern char aArmorbuildings[19];  // data: 0x8253E4
+extern char aArmordefensesm[18];  // data: 0x8253D0
+extern char aArmorinfantrym[18];  // data: 0x82541C
+extern char aArmorunitsmult[15];  // data: 0x82540C
+extern char aArtmdIni[10];  // data: 0x826254
+extern char aAtd[4];  // data: 0x849B44
+extern char aAttachedpartic[23];  // data: 0x849274
+extern char aAttract[9];  // data: 0x826520
+extern char aAuthenticamd[13];  // data: 0x822CD8
+extern char aBackground[11];  // data: 0x8241B4
+extern char aBag[5];  // data: 0x815E78
+extern char aBik[5];  // data: 0x82D9CC
+extern char aBik_0[5];  // data: 0x82419C
+extern char aBleep1[7];  // data: 0x830178
+extern char aBluetint[9];  // data: 0x82BF68
+extern char aBuildngzSha[13];  // data: 0x8193F4
+extern char aBuildtimeaircr[22];  // data: 0x8252F4
+extern char aBuildtimebuild[23];  // data: 0x8252DC
+extern char aBuildtimedefen[22];  // data: 0x8252C4
+extern char aBuildtimeinfan[22];  // data: 0x825320
+extern char aBuildtimeunits[19];  // data: 0x82530C
+extern char aBummer[7];  // data: 0x821CA8
+extern char aCabhut[7];  // data: 0x82BA00
+extern char aCameoPal[10];  // data: 0x8204E0
+extern char aCanceled[9];  // data: 0x848F18
+extern char aCenterbase[11];  // data: 0x827514
+extern char aCenteronradare[19];  // data: 0x827610
+extern char aCenterview[11];  // data: 0x8274E0
+extern char aCmid[5];  // data: 0x848CB8
+extern char aCmndAllcheer[14];  // data: 0x827428
+extern char aCmndAllcheerde[18];  // data: 0x827438
+extern char aCmndCombatants[21];  // data: 0x8272D0
+extern char aCmndCombatants_0[25];  // data: 0x8272E8
+extern char aCmndDelete[12];  // data: 0x827B44
+extern char aCmndDeletedesc[16];  // data: 0x827B50
+extern char aCmndHealthnavi[22];  // data: 0x827340
+extern char aCmndHealthnavi_0[26];  // data: 0x827358
+extern char aCmndPlanningmo[18];  // data: 0x827288
+extern char aCmndPlanningmo_0[22];  // data: 0x8272A8
+extern char aCmndTypeselect[16];  // data: 0x827310
+extern char aCmndTypeselect_0[20];  // data: 0x827320
+extern char aCmndVetnavigat[19];  // data: 0x827384
+extern char aCmndVetnavigat_0[23];  // data: 0x827398
+extern char aCodeWdtmapmdIn[21];  // data: 0x848BC4
+extern char aCombatantselec[16];  // data: 0x8272C0
+extern char aConqmdMix[11];  // data: 0x826838
+extern char aConquerMix[12];  // data: 0x8267EC
+extern char aConstruction[13];  // data: 0x816DCC
+extern char aCopyprotection_0[50];  // data: 0x81F408
+extern char aCopyprotection_1[34];  // data: 0x81F4C0
+extern char aCostaircraftmu[17];  // data: 0x825398
+extern char aCostbuildingsm[18];  // data: 0x825384
+extern char aCostdefensesmu[17];  // data: 0x825370
+extern char aCostinfantrymu[17];  // data: 0x8253BC
+extern char aCostunitsmult[14];  // data: 0x8253AC
+extern char aCreatesurfaceO[18];  // data: 0x82066C
+extern char aCreateunitsoun[16];  // data: 0x81AB3C
+extern char aCredits[8];  // data: 0x824E38
+extern char aCrtk[5];  // data: 0x848CF0
+extern char aCyid[5];  // data: 0x848CB0
+extern char aCyln[5];  // data: 0x848CE8
+extern char aCyrixinstead[13];  // data: 0x822CC8
+extern char aD6e7fc9764f94d[37];  // data: 0x81F498
+extern char aDD_2[2];  // data: 0x8201C4
+extern char aDefault[9];  // data: 0x849F14
+extern char aDelete[7];  // data: 0x827B3C
+extern char aDeployinganim[14];  // data: 0x819490
+extern char aDeployobject[13];  // data: 0x82744C
+extern char aDescCursorchea[17];  // data: 0x827B04
+extern char aDisabled[9];  // data: 0x8242C0
+extern char aDlink1[8];  // data: 0x82655C
+extern char aDllgetversion[14];  // data: 0x8201D4
+extern char aDowebpagedialo[37];  // data: 0x849738
+extern char aDpodHva[9];  // data: 0x8268D8
+extern char aDpodVxl[9];  // data: 0x826900
+extern char aDRa2mdpostCred[25];  // data: 0x81FBBC
+extern char aDRa2mdpostDisp[25];  // data: 0x8201A8
+extern char aDRa2mdpostGame[25];  // data: 0x822848
+extern char aDRa2mdpostMpla[25];  // data: 0x82E134
+extern char aDRa2mdpostWdtp[26];  // data: 0x848D80
+extern char aDRa2mdpostWolp[39];  // data: 0x84A0D0
+extern char aDraw[5];  // data: 0x8491E8
+extern char aDrop[7];  // data: 0x826574
+extern char aDsurfaceCreate[26];  // data: 0x8206F0
+extern char aDsurfaceCreate_0[45];  // data: 0x820680
+extern char aEdge[5];  // data: 0x824DD0
+extern char aEnum[5];  // data: 0x82CD38
+extern char aError[6];  // data: 0x849B60
+extern char aErrorRecursive[91];  // data: 0x821CC0
+extern char aEvaAlliancebro[19];  // data: 0x824808
+extern char aEvaAlliancefor[19];  // data: 0x8247E4
+extern char aEvaAlliancereq[22];  // data: 0x82479C
+extern char aEvaBuildingcap[21];  // data: 0x818FAC
+extern char aEvaBuildingonl[19];  // data: 0x8190C8
+extern char aEvaEnemyallian[24];  // data: 0x8247CC
+extern char aEvaLightningst[26];  // data: 0x828080
+extern char aEvamdIni[10];  // data: 0x825DF0
+extern char aEvaMissionacco[24];  // data: 0x824C54
+extern char aEvaMissionfail[18];  // data: 0x824CAC
+extern char aEvaOurallyisun[25];  // data: 0x82474C
+extern char aEvaOurbaseisun[25];  // data: 0x824768
+extern char aEvaPlayerdefea[19];  // data: 0x824B70
+extern char aEvaRequestinga[23];  // data: 0x8247B4
+extern char aEvaRobottanksb[25];  // data: 0x824FE4
+extern char aEvaTechbuildin[21];  // data: 0x818FC4
+extern char aEvaUnitlost[13];  // data: 0x822620
+extern char aEvaUnitready[14];  // data: 0x8249A0
+extern char aEvaYouarevicto[21];  // data: 0x824C2C
+extern char aEvaYouhavelost[16];  // data: 0x824C08
+extern char aExpandDat[11];  // data: 0x822210
+extern char aExtrasynccheck[18];  // data: 0x827938
+extern char aExtraSyncInfoO[19];  // data: 0x8279D8
+extern char aExtraSyncInfoO_0[20];  // data: 0x8279C4
+extern char aFactory[8];  // data: 0x81C028
+extern char aFailedToCreate_0[26];  // data: 0x8268E4
+extern char aFailedToCreate_1[26];  // data: 0x8268BC
+extern char aFailedToGetDes[46];  // data: 0x82063C
+extern char aFailedToNotify[34];  // data: 0x81F43C
+extern char aFirepower[10];  // data: 0x81D9C0
+extern char aFocusGained[14];  // data: 0x849EF8
+extern char aFocusLost[12];  // data: 0x849F08
+extern char aFogShp[8];  // data: 0x81CE10
+extern char aFollow[7];  // data: 0x818BB4
+extern char aFriendlyname[13];  // data: 0x8497BC
+extern char aGameFnt[9];  // data: 0x818B98
+extern char aGameSyncLoggin[2];  // data: 0x82794C
+extern char aGaplug[7];  // data: 0x824EB8
+extern char aGlslmdShp[11];  // data: 0x826898
+extern char aGlsmdPal[10];  // data: 0x8268B0
+extern char aGlssmdShp[11];  // data: 0x8268A4
+extern char aGreentint[10];  // data: 0x82BF74
+extern char aGt18Bmp[9];  // data: 0x84CDA8
+extern char aGuardobject[12];  // data: 0x827488
+extern char aGuiBlank[10];  // data: 0x81B4AC
+extern char aGuiBlueabbrev[15];  // data: 0x822B48
+extern char aGuiCampaignlab[18];  // data: 0x81B514
+extern char aGuiCancel[11];  // data: 0x82635C
+extern char aGuiConfirmmode[22];  // data: 0x82A57C
+extern char aGuiCreatingcha[20];  // data: 0x84B8A8
+extern char aGuiDebug[10];  // data: 0x827AF8
+extern char aGuiDefault[12];  // data: 0x84A1AC
+extern char aGuiDeletemapme[18];  // data: 0x82BC5C
+extern char aGuiDeletemissi[22];  // data: 0x829FC8
+extern char aGuiExitareyous[19];  // data: 0x826368
+extern char aGuiGoldabbrev[15];  // data: 0x822B68
+extern char aGuiGrayabbrev[15];  // data: 0x822ADC
+extern char aGuiGreenabbrev[16];  // data: 0x822B38
+extern char aGuiLeave[10];  // data: 0x8240F0
+extern char aGuiLoadingex[14];  // data: 0x82686C
+extern char aGuiLoadmission[20];  // data: 0x829FA0
+extern char aGuiLogincomple[18];  // data: 0x84B5F4
+extern char aGuiMapsaved[13];  // data: 0x82BC70
+extern char aGuiNoneassymbo[18];  // data: 0x822BF8
+extern char aGuiNoserversav[23];  // data: 0x84B800
+extern char aGuiObserver[13];  // data: 0x8229EC
+extern char aGuiOrangeabbre[17];  // data: 0x822B24
+extern char aGuiPinkabbrev[15];  // data: 0x822AEC
+extern char aGuiPlaywdt[12];  // data: 0x848DD8
+extern char aGuiPurpleabbre[17];  // data: 0x822AFC
+extern char aGuiRandomex[13];  // data: 0x8229DC
+extern char aGuiRedabbrev[14];  // data: 0x822B58
+extern char aGuiRestart[12];  // data: 0x8240E4
+extern char aGuiSavemapmenu[16];  // data: 0x82BC4C
+extern char aGuiSavemission[20];  // data: 0x829FB4
+extern char aGuiSkyblueabbr[18];  // data: 0x822B10
+extern char aGuiUserprofile[21];  // data: 0x84A194
+extern char aGuiWelcomeupda[18];  // data: 0x84A180
+extern char aGuiWwbrand[12];  // data: 0x82687C
+extern char aHealthnav[10];  // data: 0x827334
+extern char aHey[5];  // data: 0x81FFC4
+extern char aHighlighted[12];  // data: 0x8242CC
+extern char aHighlightsound[15];  // data: 0x8242B0
+extern char aHouse[6];  // data: 0x8173E8
+extern char aHsDD[2];  // data: 0x84A724
+extern char aHsS_1[2];  // data: 0x84AFB0
+extern char aHsS_2[2];  // data: 0x84AFC8
+extern char aHsvc[5];  // data: 0x848CC0
+extern char aHttpApiregiste_1[55];  // data: 0x84B500
+extern char aHttpPrivacypol[34];  // data: 0x84BA1C
+extern char aIdx[5];  // data: 0x815E80
+extern char aIncomemult[11];  // data: 0x8252B8
+extern char aInetmib1Dll[13];  // data: 0x84C9BC
+extern char aInfantrytab[12];  // data: 0x827048
+extern char aIntroWav[10];  // data: 0x82CFF4
+extern char aIsotem[7];  // data: 0x7E1BBC
+extern char aIsotemp[8];  // data: 0x7E1BB2
+extern char aItemmax[8];  // data: 0x82418C
+extern char aLangruleIni[13];  // data: 0x826228
+extern char aLauncherNotifi[20];  // data: 0x81F484
+extern char aLayouts[8];  // data: 0x848DFC
+extern char aLdsc[5];  // data: 0x848CD0
+extern char aLevel[6];  // data: 0x81B0D4
+extern char aLoading[8];  // data: 0x82C1BC
+extern char aLob39[8];  // data: 0x84A22C
+extern char aLosingthreshol[16];  // data: 0x848E90
+extern char aMapcheckTxt[13];  // data: 0x82AF00
+extern char aMapenter[9];  // data: 0x848F00
+extern char aMapleave[9];  // data: 0x848F0C
+extern char aMapselmdIni[13];  // data: 0x830370
+extern char aMapsmdMix[12];  // data: 0x82679C
+extern char aMapsMix[10];  // data: 0x826790
+extern char aMegalosingthre[20];  // data: 0x848E7C
+extern char aMegawinningthr[21];  // data: 0x848EA0
+extern char aMessages[10];  // data: 0x82652C
+extern char aMixfilesMovies[21];  // data: 0x8266FC
+extern char aMmt[5];  // data: 0x829148
+extern char aMode_0[7];  // data: 0x84BA40
+extern char aModem[6];  // data: 0x82CECC
+extern char aMousecancel[12];  // data: 0x848F6C
+extern char aMpdebug[9];  // data: 0x82657C
+extern char aMpIllegalteam[15];  // data: 0x82FF0C
+extern char aMpNoattackers[15];  // data: 0x82FEE8
+extern char aMpNodefender[14];  // data: 0x82FF1C
+extern char aMpOnlyonebesei[19];  // data: 0x82FEF8
+extern char aMpstatsTxt[12];  // data: 0x81D97C
+extern char aMpvc[5];  // data: 0x848CC8
+extern char aMsenginePausin[31];  // data: 0x8305E8
+extern char aMsengineResumi[32];  // data: 0x8305B0
+extern char aMsengineSleepi[21];  // data: 0x8305D0
+extern char aMsgDominatorac[20];  // data: 0x8280B8
+extern char aMsgLightningst[25];  // data: 0x82809C
+extern char aMulticast[10];  // data: 0x8283C8
+extern char aMultiplayerdeb[17];  // data: 0x8278A0
+extern char aNack[5];  // data: 0x848D00
+extern char aNameTemperate[15];  // data: 0x7E1B88
+extern char aNetgear[9];  // data: 0x826550
+extern char aNews[5];  // data: 0x84A470
+extern char aNoName_0[2];  // data: 0x8182E0
+extern char aNorouter[10];  // data: 0x826544
+extern char aO8[3];  // data: 0x82DC2C
+extern char aO[3];  // data: 0x826500
+extern char aOlCruddy[10];  // data: 0x84CC08
+extern char aOrigin800[11];  // data: 0x84915C
 extern unsigned char aP5[4];  // data: 0x89C848
 extern unsigned char aP6[4];  // data: 0xB1CFC0
-extern unsigned char aP7[4];  // data: 0x7E8BF0
-extern unsigned char aPings[4];  // data: 0x84D3AC
-extern unsigned char aPingTimesNotAv_0[4];  // data: 0x82E0B4
-extern unsigned char aPip[4];  // data: 0x825A6C
-extern unsigned char aPlacebeacon[4];  // data: 0x81BD08
-extern unsigned char aPlaceShp[4];  // data: 0x820080
-extern unsigned char aPlayerfaction[4];  // data: 0x84819C
-extern unsigned char aPlayMovieAsBin[4];  // data: 0x82D9B4
-extern unsigned char aPotato[4];  // data: 0x84CC14
-extern unsigned char aPotatotoo[4];  // data: 0x84CC1C
-extern unsigned char aPower[4];  // data: 0x81C030
-extern unsigned char aPoweroffShp[4];  // data: 0x819410
-extern unsigned char aPreviousobject[4];  // data: 0x8273B0
-extern unsigned char aProc[4];  // data: 0x81C1C0
-extern unsigned char aProcessingNetP[4];  // data: 0x81D5A0
-extern unsigned char aProgbar2Shp[4];  // data: 0x82BF18
-extern unsigned char aProjectile[4];  // data: 0x849268
-extern unsigned char aPsiwarn[4];  // data: 0x81907C
-extern unsigned char aRa2tsL[4];  // data: 0x825CE0
-extern unsigned char aRa2tsS[4];  // data: 0x825CE8
-extern unsigned char aRandmapSed[4];  // data: 0x82BC30
-extern unsigned char aRedtint[4];  // data: 0x82BF80
-extern unsigned char aRegpath[4];  // data: 0x84A944
-extern unsigned char aRing1[4];  // data: 0x8182F0
-extern unsigned char aRmcacheMmp[4];  // data: 0x82BB0C
-extern unsigned char aRmglevellights[4];  // data: 0x82BD8C
-extern unsigned char aRmgvegetationm[4];  // data: 0x82BD74
-extern unsigned char aRmgvegetationm_0[4];  // data: 0x82BD5C
-extern unsigned char aRoofdeployinga[4];  // data: 0x81947C
-extern unsigned char aRoot[4];  // data: 0x8497D4
-extern unsigned char aRulemdIni[4];  // data: 0x82626C
-extern unsigned char aRulesmdIni[4];  // data: 0x826260
-extern unsigned char aScatterobject[4];  // data: 0x8274B0
-extern unsigned char aScreencapture[4];  // data: 0x827A18
-extern unsigned char aSD_3[4];  // data: 0x84A670
-extern unsigned char aSDD_0[4];  // data: 0x84A658
-extern unsigned char aSdsc[4];  // data: 0x848CD8
-extern unsigned char aSelectvq[4];  // data: 0x8242A4
-extern unsigned char aSendingCampaig[4];  // data: 0x81B390
-extern unsigned char aSendingNetPort[4];  // data: 0x81D710
-extern unsigned char aSetview1[4];  // data: 0x8277A4
-extern unsigned char aSetview2[4];  // data: 0x8277DC
-extern unsigned char aSetview3[4];  // data: 0x827814
-extern unsigned char aSetview4[4];  // data: 0x82784C
-extern unsigned char aSGame[4];  // data: 0x84D590
-extern unsigned char aShroudShp[4];  // data: 0x81CE18
-extern unsigned char aSidebardown[4];  // data: 0x82767C
-extern unsigned char aSidebarup[4];  // data: 0x82764C
-extern unsigned char aSnmpapiDll[4];  // data: 0x84C974
-extern unsigned char aSnmpextensioni[4];  // data: 0x84C944
-extern unsigned char aSnmpextensionq[4];  // data: 0x84C930
-extern unsigned char aSnmputilmemall[4];  // data: 0x84C91C
-extern unsigned char aSnmputilmemfre[4];  // data: 0x84C90C
-extern unsigned char aSnowambientlig[4];  // data: 0x82BD30
-extern unsigned char aSnoworepatchla[4];  // data: 0x82BC80
-extern unsigned char aSocket_1[4];  // data: 0x826588
-extern unsigned char aSorryYouCanOnl[4];  // data: 0x821C3C
-extern unsigned char aSoundmdIni[4];  // data: 0x825E50
-extern unsigned char aSounds[4];  // data: 0x8302CC
-extern unsigned char aSounds_0[4];  // data: 0x848E04
-extern unsigned char aSpeedaircraftm[4];  // data: 0x825338
-extern unsigned char aSpeedcontrol[4];  // data: 0x826564
-extern unsigned char aSpeedinfantrym[4];  // data: 0x82535C
-extern unsigned char aSpeedunitsmult[4];  // data: 0x82534C
-extern unsigned char aSpyplaneOverfl[4];  // data: 0x816D2C
-extern unsigned char aStart443900100[4];  // data: 0x84D638
-extern unsigned char aStart443900100_0[4];  // data: 0x84D5E4
-extern unsigned char aStartup[4];  // data: 0x8491E0
-extern unsigned char aStealth[4];  // data: 0x826538
-extern unsigned char aSteveT2[4];  // data: 0x84CC28
-extern unsigned char aSteveT3[4];  // data: 0x84CC34
-extern unsigned char aStopobject[4];  // data: 0x8273E8
-extern unsigned char aStrangePortNum[4];  // data: 0x81D620
-extern unsigned char aStrong[4];  // data: 0x81BAC8
-extern unsigned char aStructures[4];  // data: 0x818CE8
-extern unsigned char aSttAlliedcampa[4];  // data: 0x8263C8
-extern unsigned char aSttHostcombost[4];  // data: 0x822B90
-extern unsigned char aSttPlayersidea[4];  // data: 0x822978
-extern unsigned char aSttPlayersideb[4];  // data: 0x82291C
-extern unsigned char aSttPlayersidec[4];  // data: 0x8228E0
-extern unsigned char aSttPlayersidef[4];  // data: 0x82294C
-extern unsigned char aSttPlayersideg[4];  // data: 0x822934
-extern unsigned char aSttPlayersidei[4];  // data: 0x8228F4
-extern unsigned char aSttPlayersidek[4];  // data: 0x822964
-extern unsigned char aSttPlayersidel[4];  // data: 0x822908
-extern unsigned char aSttPlayersideo[4];  // data: 0x822990
-extern unsigned char aSttPlayersider[4];  // data: 0x8229A8
-extern unsigned char aSttPlayersider_0[4];  // data: 0x8228C8
-extern unsigned char aSttPlayersidey[4];  // data: 0x8228AC
-extern unsigned char aSttSovietcampa[4];  // data: 0x8263B0
-extern unsigned char aSun[4];  // data: 0x818704
-extern unsigned char aSyslistview32[4];  // data: 0x849E3C
-extern unsigned char aSystreeview32[4];  // data: 0x849E54
-extern unsigned char aTarget800[4];  // data: 0x849168
-extern unsigned char aTargetdividing[4];  // data: 0x848ECC
-extern unsigned char aTargetpalette[4];  // data: 0x848EE0
-extern unsigned char aTargetzoom[4];  // data: 0x849058
-extern unsigned char aTauntsTauam02i[4];  // data: 0x846770
-extern unsigned char aTech[4];  // data: 0x81C1C8
-extern unsigned char aTechlevel[4];  // data: 0x824E40
-extern unsigned char aTem[4];  // data: 0x829140
-extern unsigned char aTemperat[4];  // data: 0x7E1BA8
-extern unsigned char aTemperateambie[4];  // data: 0x82BD44
-extern unsigned char aTemperateambie_0[4];  // data: 0x82BD1C
-extern unsigned char aTemperateambie_1[4];  // data: 0x82BD04
-extern unsigned char aTemperateorepa[4];  // data: 0x82BC94
-extern unsigned char aTerrain[4];  // data: 0x8172E0
-extern unsigned char aTerritoryselec[4];  // data: 0x8491D0
-extern unsigned char aTesteffect[4];  // data: 0x82D000
-extern unsigned char aTestenvelopefs[4];  // data: 0x82D00C
-extern unsigned char aTextrect[4];  // data: 0x8302F0
-extern unsigned char aThememdIni[4];  // data: 0x825D94
-extern unsigned char aTicc[4];  // data: 0x848CA8
-extern unsigned char aTitleHiThereTi[4];  // data: 0x84A4A8
-extern unsigned char aTogglealliance[4];  // data: 0x827548
-extern unsigned char aTogglerepair[4];  // data: 0x82757C
-extern unsigned char aTogglesell[4];  // data: 0x8275B4
-extern unsigned char aTotile[4];  // data: 0x81AEF0
-extern unsigned char aTotk[4];  // data: 0x848CF8
-extern unsigned char aTxtAboutToTryM[4];  // data: 0x82A290
-extern unsigned char aTxtAlliance[4];  // data: 0x827558
-extern unsigned char aTxtAllianceDes[4];  // data: 0x827568
-extern unsigned char aTxtApimissing[4];  // data: 0x84A930
-extern unsigned char aTxtApiwrongver[4];  // data: 0x84A94C
-extern unsigned char aTxtAtWar[4];  // data: 0x82481C
-extern unsigned char aTxtAwayLoading[4];  // data: 0x8262F0
-extern unsigned char aTxtAwayQuickma[4];  // data: 0x84C600
-extern unsigned char aTxtBack[4];  // data: 0x848DCC
-extern unsigned char aTxtBadChankey[4];  // data: 0x84B8D0
-extern unsigned char aTxtBannedtill[4];  // data: 0x84B234
-extern unsigned char aTxtBattleclanG[4];  // data: 0x84A710
-extern unsigned char aTxtBuddyFilter[4];  // data: 0x84A41C
-extern unsigned char aTxtBytesWTime[4];  // data: 0x84D744
-extern unsigned char aTxtCantcreateC[4];  // data: 0x84B8BC
-extern unsigned char aTxtCdDialog1[4];  // data: 0x825FA0
-extern unsigned char aTxtCenterBase[4];  // data: 0x827520
-extern unsigned char aTxtCenterBaseD[4];  // data: 0x827530
-extern unsigned char aTxtCenterView[4];  // data: 0x8274EC
-extern unsigned char aTxtCenterViewD[4];  // data: 0x8274FC
-extern unsigned char aTxtChanBan[4];  // data: 0x84B254
-extern unsigned char aTxtChancreateF[4];  // data: 0x84ACC8
-extern unsigned char aTxtChanUnban[4];  // data: 0x84B244
-extern unsigned char aTxtClanFilter[4];  // data: 0x84A44C
-extern unsigned char aTxtConnecting[4];  // data: 0x84D758
-extern unsigned char aTxtConnectingS[4];  // data: 0x84B430
-extern unsigned char aTxtCopyright[4];  // data: 0x826888
-extern unsigned char aTxtCreatedChan[4];  // data: 0x84ACB4
-extern unsigned char aTxtDefenseTabD[4];  // data: 0x827030
-extern unsigned char aTxtDeployObjec[4];  // data: 0x82745C
-extern unsigned char aTxtDeployObjec_0[4];  // data: 0x827470
-extern unsigned char aTxtDifficultyB[4];  // data: 0x81B4B8
-extern unsigned char aTxtDifficultyE[4];  // data: 0x81B500
-extern unsigned char aTxtDifficultyM[4];  // data: 0x81B4D0
-extern unsigned char aTxtDownloadFai[4];  // data: 0x84BA04
-extern unsigned char aTxtDownloading[4];  // data: 0x84ABCC
-extern unsigned char aTxtFetchingWdt[4];  // data: 0x84CC5C
-extern unsigned char aTxtFindingPatc[4];  // data: 0x84D768
-extern unsigned char aTxtFollow[4];  // data: 0x827884
-extern unsigned char aTxtFollowDesc[4];  // data: 0x827890
-extern unsigned char aTxtGamePasswor[4];  // data: 0x84A6E8
-extern unsigned char aTxtGameRestart[4];  // data: 0x84ABB8
-extern unsigned char aTxtGameWasSave[4];  // data: 0x829FE0
-extern unsigned char aTxtGuard[4];  // data: 0x827494
-extern unsigned char aTxtGuardDesc[4];  // data: 0x8274A0
-extern unsigned char aTxtHasAllied[4];  // data: 0x8247F8
-extern unsigned char aTxtHowToReply[4];  // data: 0x84B00C
-extern unsigned char aTxtInfantryTab[4];  // data: 0x827054
-extern unsigned char aTxtInfantryTab_0[4];  // data: 0x827068
-extern unsigned char aTxtInitgameFai[4];  // data: 0x81D58C
-extern unsigned char aTxtInvalid[4];  // data: 0x8264F0
-extern unsigned char aTxtInvalidDay[4];  // data: 0x84B6B8
-extern unsigned char aTxtInvalidEmai[4];  // data: 0x84B6DC
-extern unsigned char aTxtInvalidMont[4];  // data: 0x84B6A4
-extern unsigned char aTxtInvalidYear[4];  // data: 0x84B6F0
-extern unsigned char aTxtLaunchbrows[4];  // data: 0x84A494
-extern unsigned char aTxtLightningSt[4];  // data: 0x82804C
-extern unsigned char aTxtLightningSt_0[4];  // data: 0x828060
-extern unsigned char aTxtLoading[4];  // data: 0x829F94
-extern unsigned char aTxtLob1[4];  // data: 0x84A64C
-extern unsigned char aTxtLob2[4];  // data: 0x84A640
-extern unsigned char aTxtLob3[4];  // data: 0x84A634
-extern unsigned char aTxtLob4[4];  // data: 0x84A628
-extern unsigned char aTxtLob5[4];  // data: 0x84A61C
-extern unsigned char aTxtLob6[4];  // data: 0x84A610
-extern unsigned char aTxtLob7[4];  // data: 0x84A604
-extern unsigned char aTxtLob8[4];  // data: 0x84A5F8
-extern unsigned char aTxtLoginUsed[4];  // data: 0x84AC90
-extern unsigned char aTxtLost[4];  // data: 0x824CA0
-extern unsigned char aTxtMultiplayer[4];  // data: 0x820DBC
-extern unsigned char aTxtNeedEqualTe[4];  // data: 0x84BB98
-extern unsigned char aTxtNeedMorePla[4];  // data: 0x84BBB0
-extern unsigned char aTxtNextObjectD[4];  // data: 0x827260
-extern unsigned char aTxtNoAiObserva[4];  // data: 0x84BBC8
-extern unsigned char aTxtNobrowser[4];  // data: 0x84A484
-extern unsigned char aTxtNoClan[4];  // data: 0x84CE18
-extern unsigned char aTxtNone[4];  // data: 0x820DE4
-extern unsigned char aTxtOptionHelp0[4];  // data: 0x8264DC
-extern unsigned char aTxtOptionHelp0_0[4];  // data: 0x8264C8
-extern unsigned char aTxtOptionHelp0_1[4];  // data: 0x8264B4
-extern unsigned char aTxtOptionHelp0_2[4];  // data: 0x8264A0
-extern unsigned char aTxtOptionHelp0_3[4];  // data: 0x82648C
-extern unsigned char aTxtOptionHelp0_4[4];  // data: 0x826478
-extern unsigned char aTxtOptions[4];  // data: 0x8276B4
-extern unsigned char aTxtOptionsDesc[4];  // data: 0x8276C0
-extern unsigned char aTxtPagedisable[4];  // data: 0x84B058
-extern unsigned char aTxtPagesent[4];  // data: 0x84B06C
-extern unsigned char aTxtPageusergon[4];  // data: 0x84B044
-extern unsigned char aTxtPasswordToo[4];  // data: 0x84B714
-extern unsigned char aTxtPasswordVer[4];  // data: 0x84B72C
-extern unsigned char aTxtPlaceBeacon[4];  // data: 0x8275E4
-extern unsigned char aTxtPlaceBeacon_0[4];  // data: 0x8275F8
-extern unsigned char aTxtPlayerChang[4];  // data: 0x820DF0
-extern unsigned char aTxtPlayerChang_0[4];  // data: 0x820C38
-extern unsigned char aTxtPlayerDefea[4];  // data: 0x824C18
-extern unsigned char aTxtPlayerToolt[4];  // data: 0x84BAE0
-extern unsigned char aTxtPlayerToolt_0[4];  // data: 0x84BAC4
-extern unsigned char aTxtPlayerToolt_1[4];  // data: 0x84BAA8
-extern unsigned char aTxtPlayerToolt_2[4];  // data: 0x84BA8C
-extern unsigned char aTxtPlayerToolt_3[4];  // data: 0x84BA6C
-extern unsigned char aTxtPlayerToolt_4[4];  // data: 0x84BA50
-extern unsigned char aTxtPrevObject[4];  // data: 0x8273C0
-extern unsigned char aTxtPrevObjectD[4];  // data: 0x8273D0
-extern unsigned char aTxtRadarEvent[4];  // data: 0x827624
-extern unsigned char aTxtRadarEventD[4];  // data: 0x827634
-extern unsigned char aTxtRepairMode[4];  // data: 0x82758C
-extern unsigned char aTxtRepairModeD[4];  // data: 0x82759C
-extern unsigned char aTxtReqChanlist[4];  // data: 0x84A5D0
-extern unsigned char aTxtReqNick[4];  // data: 0x84B704
-extern unsigned char aTxtRequiredFie[4];  // data: 0x84B6C8
-extern unsigned char aTxtSaveCampAva[4];  // data: 0x82DF50
-extern unsigned char aTxtSavingGame[4];  // data: 0x820DD4
-extern unsigned char aTxtScatter[4];  // data: 0x8274C0
-extern unsigned char aTxtScatterDesc[4];  // data: 0x8274CC
-extern unsigned char aTxtScenarioLos[4];  // data: 0x824CC0
-extern unsigned char aTxtScenarioWon[4];  // data: 0x824C6C
-extern unsigned char aTxtScrncap[4];  // data: 0x827A28
-extern unsigned char aTxtScrncapDesc[4];  // data: 0x827A34
-extern unsigned char aTxtSellMode[4];  // data: 0x8275C0
-extern unsigned char aTxtSellModeDes[4];  // data: 0x8275D0
-extern unsigned char aTxtSendingGoAc[4];  // data: 0x82C7CC
-extern unsigned char aTxtSetBookmark[4];  // data: 0x8277B0
-extern unsigned char aTxtSetBookmark_0[4];  // data: 0x8277C4
-extern unsigned char aTxtSetBookmark_1[4];  // data: 0x8277E8
-extern unsigned char aTxtSetBookmark_2[4];  // data: 0x8277FC
-extern unsigned char aTxtSetBookmark_3[4];  // data: 0x827820
-extern unsigned char aTxtSetBookmark_4[4];  // data: 0x827834
-extern unsigned char aTxtSetBookmark_5[4];  // data: 0x827858
-extern unsigned char aTxtSetBookmark_6[4];  // data: 0x82786C
-extern unsigned char aTxtShadow[4];  // data: 0x82019C
-extern unsigned char aTxtSidebarDown[4];  // data: 0x827688
-extern unsigned char aTxtSidebarDown_0[4];  // data: 0x82769C
-extern unsigned char aTxtSidebarUp[4];  // data: 0x827658
-extern unsigned char aTxtSidebarUpDe[4];  // data: 0x827668
-extern unsigned char aTxtSigningOff[4];  // data: 0x82C7BC
-extern unsigned char aTxtSpecialWarn[4];  // data: 0x820E30
-extern unsigned char aTxtStopObject[4];  // data: 0x8273F4
-extern unsigned char aTxtStopObjectD[4];  // data: 0x827404
-extern unsigned char aTxtSurrender[4];  // data: 0x81D4E8
-extern unsigned char aTxtTalkForward[4];  // data: 0x84BD00
-extern unsigned char aTxtTalkForward_0[4];  // data: 0x84BCA8
-extern unsigned char aTxtTalkLocalPr[4];  // data: 0x84BD44
-extern unsigned char aTxtTalkReporte[4];  // data: 0x84BD7C
-extern unsigned char aTxtTooManyPlay[4];  // data: 0x84BB80
-extern unsigned char aTxtTournamentG[4];  // data: 0x84A6FC
-extern unsigned char aTxtUnablePlayW[4];  // data: 0x82C6AC
-extern unsigned char aTxtUnitTab[4];  // data: 0x827088
-extern unsigned char aTxtUnitTabDesc[4];  // data: 0x827098
-extern unsigned char aTxtUserKicked[4];  // data: 0x84B264
-extern unsigned char aTxtVictorious[4];  // data: 0x824C44
-extern unsigned char aTxtViewBookmar[4];  // data: 0x8276DC
-extern unsigned char aTxtViewBookmar_0[4];  // data: 0x8276F0
-extern unsigned char aTxtViewBookmar_1[4];  // data: 0x827710
-extern unsigned char aTxtViewBookmar_2[4];  // data: 0x827724
-extern unsigned char aTxtViewBookmar_3[4];  // data: 0x827744
-extern unsigned char aTxtViewBookmar_4[4];  // data: 0x827758
-extern unsigned char aTxtViewBookmar_5[4];  // data: 0x827778
-extern unsigned char aTxtViewBookmar_6[4];  // data: 0x82778C
-extern unsigned char aTxtWolLoggingO[4];  // data: 0x84B3D8
-extern unsigned char aTxtYouleft[4];  // data: 0x84B380
-extern unsigned char aTxtYoureKicked[4];  // data: 0x84B274
-extern unsigned char aUnittab[4];  // data: 0x827080
-extern unsigned char aUnknownStatus[4];  // data: 0x84AAA0
-extern unsigned char aUrb[4];  // data: 0x829138
-extern unsigned char aVeteranaircraf[4];  // data: 0x825288
-extern unsigned char aVeterancynav[4];  // data: 0x827374
-extern unsigned char aVeteraninfantr[4];  // data: 0x8252A8
-extern unsigned char aVeteranunits[4];  // data: 0x825298
-extern unsigned char aView1[4];  // data: 0x8276D4
-extern unsigned char aView2[4];  // data: 0x827708
-extern unsigned char aView3[4];  // data: 0x82773C
-extern unsigned char aView4[4];  // data: 0x827770
-extern unsigned char aVoiceovers[4];  // data: 0x848E0C
-extern unsigned char aVqa[4];  // data: 0x8241A4
-extern unsigned char aW[4];  // data: 0x82AF10
-extern unsigned char aWaitingForMess[4];  // data: 0x81F460
-extern unsigned char aWdtAlliedheldt[4];  // data: 0x8490A8
-extern unsigned char aWdtBases[4];  // data: 0x8484B0
-extern unsigned char aWdtchoicemdIni[4];  // data: 0x84D864
-extern unsigned char aWdtCrates[4];  // data: 0x84843C
-extern unsigned char aWdtDefaultlong[4];  // data: 0x848D40
-extern unsigned char aWdtDefaultshor[4];  // data: 0x848D60
-extern unsigned char aWdtFactionsele_0[4];  // data: 0x84D7F8
-extern unsigned char aWdtFactionsele_1[4];  // data: 0x84D7D8
-extern unsigned char aWdtfsasmPcx[4];  // data: 0x84D844
-extern unsigned char aWdtfsbsmPcx[4];  // data: 0x84D854
-extern unsigned char aWdtfsssmPcx[4];  // data: 0x84D834
-extern unsigned char aWdthistIni_0[4];  // data: 0x847FDC
-extern unsigned char aWdtmapmdIni[4];  // data: 0x848E18
-extern unsigned char aWdtNobases[4];  // data: 0x8484A4
-extern unsigned char aWdtNocrates[4];  // data: 0x84842C
-extern unsigned char aWdtNoredeploym[4];  // data: 0x848448
-extern unsigned char aWdtNotshortgam[4];  // data: 0x848480
-extern unsigned char aWdtRedeployabl[4];  // data: 0x84845C
-extern unsigned char aWdtShortgame[4];  // data: 0x848494
-extern unsigned char aWdtSovietheldt[4];  // data: 0x8490C0
-extern unsigned char aWdtTechlevel[4];  // data: 0x8484BC
-extern unsigned char aWdtTerritorypr[4];  // data: 0x849064
-extern unsigned char aWdtTerritoryse_0[4];  // data: 0x84908C
-extern unsigned char aWdtTerritorysu[4];  // data: 0x849078
-extern unsigned char aWdtUnitcount[4];  // data: 0x848470
-extern unsigned char aWin[4];  // data: 0x826504
-extern unsigned char aWinningthresho[4];  // data: 0x848EB8
-extern unsigned char aWmInitdialog[4];  // data: 0x821CB0
-extern unsigned char aWolBuddydisabl[4];  // data: 0x84CDF0
-extern unsigned char aWolBuddyofflin[4];  // data: 0x84CDDC
-extern unsigned char aWolBuddyonline[4];  // data: 0x84CDB4
-extern unsigned char aWolBuddyplayin[4];  // data: 0x84CD90
-extern unsigned char aWolBuddyquickm[4];  // data: 0x84CDC4
-extern unsigned char aWolBuddyunknow[4];  // data: 0x84CD78
-extern unsigned char aWolChanneljoin[4];  // data: 0x84D074
-extern unsigned char aWolGamefull[4];  // data: 0x84CE08
-extern unsigned char aWolMatchattemp[4];  // data: 0x84D570
-extern unsigned char aWolMatchbadpar[4];  // data: 0x84D508
-extern unsigned char aWolMatchcreati[4];  // data: 0x84D5CC
-extern unsigned char aWolMatcherrorc[4];  // data: 0x84D598
-extern unsigned char aWolMatcherrorj[4];  // data: 0x84D520
-extern unsigned char aWolMatchfoundw[4];  // data: 0x84D4F4
-extern unsigned char aWolMatchgamech[4];  // data: 0x84D550
-extern unsigned char aWolMatchgamest[4];  // data: 0x84D048
-extern unsigned char aWolMatchingser[4];  // data: 0x84D08C
-extern unsigned char aWolMatchjoined[4];  // data: 0x84D53C
-extern unsigned char aWolMatchoppone[4];  // data: 0x84D4DC
-extern unsigned char aWolMatchoppone_0[4];  // data: 0x84D4BC
-extern unsigned char aWolMatchtimeou[4];  // data: 0x84A5E4
-extern unsigned char aWolMatchwaitin[4];  // data: 0x84D5B4
-extern unsigned char aWolNomatchinga[4];  // data: 0x84D0AC
-extern unsigned char aWolResolutionl[4];  // data: 0x84B860
-extern unsigned char aWolResolutionl_0[4];  // data: 0x84B844
-extern unsigned char aWolWdtterritor[4];  // data: 0x848F54
-extern unsigned char aWrenchShp[4];  // data: 0x819404
-extern unsigned char aWurl[4];  // data: 0x848CE0
-extern unsigned char aXgrymed1[4];  // data: 0x82ADC0
-extern unsigned char aXgrymed2[4];  // data: 0x82ADB4
-extern unsigned char aXgrysml1[4];  // data: 0x82ADA8
-extern unsigned char aYr1[4];  // data: 0x81FFC0
-extern unsigned char aZoomingtarget[4];  // data: 0x848EF0
-extern unsigned char aZotclot9[4];  // data: 0x84B698
+extern char aP7[1];  // data: 0x7E8BF0
+extern char aPings[7];  // data: 0x84D3AC
+extern char aPingTimesNotAv_0[26];  // data: 0x82E0B4
+extern char aPip[4];  // data: 0x825A6C
+extern char aPlacebeacon[12];  // data: 0x81BD08
+extern char aPlaceShp[10];  // data: 0x820080
+extern char aPlayerfaction[14];  // data: 0x84819C
+extern char aPlayMovieAsBin[23];  // data: 0x82D9B4
+extern char aPotato[7];  // data: 0x84CC14
+extern char aPotatotoo[10];  // data: 0x84CC1C
+extern char aPower[6];  // data: 0x81C030
+extern char aPoweroffShp[13];  // data: 0x819410
+extern char aPreviousobject[15];  // data: 0x8273B0
+extern char aProc[5];  // data: 0x81C1C0
+extern char aProcessingNetP[32];  // data: 0x81D5A0
+extern char aProgbar2Shp[13];  // data: 0x82BF18
+extern char aProjectile[11];  // data: 0x849268
+extern char aPsiwarn[8];  // data: 0x81907C
+extern char aRa2tsL[8];  // data: 0x825CE0
+extern char aRa2tsS[8];  // data: 0x825CE8
+extern char aRandmapSed[12];  // data: 0x82BC30
+extern char aRedtint[8];  // data: 0x82BF80
+extern char aRegpath[8];  // data: 0x84A944
+extern char aRing1[6];  // data: 0x8182F0
+extern char aRmcacheMmp[14];  // data: 0x82BB0C
+extern char aRmglevellights[22];  // data: 0x82BD8C
+extern char aRmgvegetationm[22];  // data: 0x82BD74
+extern char aRmgvegetationm_0[22];  // data: 0x82BD5C
+extern char aRoofdeployinga[18];  // data: 0x81947C
+extern char aRoot[5];  // data: 0x8497D4
+extern char aRulemdIni[12];  // data: 0x82626C
+extern char aRulesmdIni[12];  // data: 0x826260
+extern char aScatterobject[14];  // data: 0x8274B0
+extern char aScreencapture[14];  // data: 0x827A18
+extern char aSD_3[2];  // data: 0x84A670
+extern char aSDD_0[2];  // data: 0x84A658
+extern char aSdsc[5];  // data: 0x848CD8
+extern char aSelectvq[9];  // data: 0x8242A4
+extern char aSendingCampaig[29];  // data: 0x81B390
+extern char aSendingNetPort[45];  // data: 0x81D710
+extern char aSetview1[9];  // data: 0x8277A4
+extern char aSetview2[9];  // data: 0x8277DC
+extern char aSetview3[9];  // data: 0x827814
+extern char aSetview4[9];  // data: 0x82784C
+extern char aSGame[8];  // data: 0x84D590
+extern char aShroudShp[11];  // data: 0x81CE18
+extern char aSidebardown[12];  // data: 0x82767C
+extern char aSidebarup[10];  // data: 0x82764C
+extern char aSnmpapiDll[12];  // data: 0x84C974
+extern char aSnmpextensioni[18];  // data: 0x84C944
+extern char aSnmpextensionq[19];  // data: 0x84C930
+extern char aSnmputilmemall[17];  // data: 0x84C91C
+extern char aSnmputilmemfre[16];  // data: 0x84C90C
+extern char aSnowambientlig[17];  // data: 0x82BD30
+extern char aSnoworepatchla[18];  // data: 0x82BC80
+extern char aSocket_1[7];  // data: 0x826588
+extern char aSorryYouCanOnl[106];  // data: 0x821C3C
+extern char aSoundmdIni[12];  // data: 0x825E50
+extern char aSounds[7];  // data: 0x8302CC
+extern char aSounds_0[7];  // data: 0x848E04
+extern char aSpeedaircraftm[18];  // data: 0x825338
+extern char aSpeedcontrol[14];  // data: 0x826564
+extern char aSpeedinfantrym[18];  // data: 0x82535C
+extern char aSpeedunitsmult[15];  // data: 0x82534C
+extern char aSpyplaneOverfl[17];  // data: 0x816D2C
+extern char aStart443900100[84];  // data: 0x84D638
+extern char aStart443900100_0[83];  // data: 0x84D5E4
+extern char aStartup[8];  // data: 0x8491E0
+extern char aStealth[9];  // data: 0x826538
+extern char aSteveT2[9];  // data: 0x84CC28
+extern char aSteveT3[9];  // data: 0x84CC34
+extern char aStopobject[11];  // data: 0x8273E8
+extern char aStrangePortNum[42];  // data: 0x81D620
+extern char aStrong[7];  // data: 0x81BAC8
+extern char aStructures[11];  // data: 0x818CE8
+extern char aSttAlliedcampa[23];  // data: 0x8263C8
+extern char aSttHostcombost[19];  // data: 0x822B90
+extern char aSttPlayersidea[22];  // data: 0x822978
+extern char aSttPlayersideb[22];  // data: 0x82291C
+extern char aSttPlayersidec[19];  // data: 0x8228E0
+extern char aSttPlayersidef[21];  // data: 0x82294C
+extern char aSttPlayersideg[22];  // data: 0x822934
+extern char aSttPlayersidei[19];  // data: 0x8228F4
+extern char aSttPlayersidek[20];  // data: 0x822964
+extern char aSttPlayersidel[20];  // data: 0x822908
+extern char aSttPlayersideo[23];  // data: 0x822990
+extern char aSttPlayersider[21];  // data: 0x8229A8
+extern char aSttPlayersider_0[21];  // data: 0x8228C8
+extern char aSttPlayersidey[26];  // data: 0x8228AC
+extern char aSttSovietcampa[23];  // data: 0x8263B0
+extern char aSun[2];  // data: 0x818704
+extern char aSyslistview32[14];  // data: 0x849E3C
+extern char aSystreeview32[14];  // data: 0x849E54
+extern char aTarget800[11];  // data: 0x849168
+extern char aTargetdividing[20];  // data: 0x848ECC
+extern char aTargetpalette[14];  // data: 0x848EE0
+extern char aTargetzoom[11];  // data: 0x849058
+extern char aTauntsTauam02i[21];  // data: 0x846770
+extern char aTech[5];  // data: 0x81C1C8
+extern char aTechlevel[10];  // data: 0x824E40
+extern char aTem[5];  // data: 0x829140
+extern char aTemperat[9];  // data: 0x7E1BA8
+extern char aTemperateambie[22];  // data: 0x82BD44
+extern char aTemperateambie_0[20];  // data: 0x82BD1C
+extern char aTemperateambie_1[22];  // data: 0x82BD04
+extern char aTemperateorepa[23];  // data: 0x82BC94
+extern char aTerrain[8];  // data: 0x8172E0
+extern char aTerritoryselec[16];  // data: 0x8491D0
+extern char aTesteffect[11];  // data: 0x82D000
+extern char aTestenvelopefs[19];  // data: 0x82D00C
+extern char aTextrect[9];  // data: 0x8302F0
+extern char aThememdIni[12];  // data: 0x825D94
+extern char aTicc[5];  // data: 0x848CA8
+extern char aTitleHiThereTi[25];  // data: 0x84A4A8
+extern char aTogglealliance[15];  // data: 0x827548
+extern char aTogglerepair[13];  // data: 0x82757C
+extern char aTogglesell[11];  // data: 0x8275B4
+extern char aTotile[7];  // data: 0x81AEF0
+extern char aTotk[5];  // data: 0x848CF8
+extern char aTxtAboutToTryM[22];  // data: 0x82A290
+extern char aTxtAlliance[13];  // data: 0x827558
+extern char aTxtAllianceDes[18];  // data: 0x827568
+extern char aTxtApimissing[15];  // data: 0x84A930
+extern char aTxtApiwrongver[20];  // data: 0x84A94C
+extern char aTxtAtWar[11];  // data: 0x82481C
+extern char aTxtAwayLoading[17];  // data: 0x8262F0
+extern char aTxtAwayQuickma[20];  // data: 0x84C600
+extern char aTxtBack[9];  // data: 0x848DCC
+extern char aTxtBadChankey[16];  // data: 0x84B8D0
+extern char aTxtBannedtill[15];  // data: 0x84B234
+extern char aTxtBattleclanG[20];  // data: 0x84A710
+extern char aTxtBuddyFilter[17];  // data: 0x84A41C
+extern char aTxtBytesWTime[17];  // data: 0x84D744
+extern char aTxtCantcreateC[20];  // data: 0x84B8BC
+extern char aTxtCdDialog1[16];  // data: 0x825FA0
+extern char aTxtCenterBase[16];  // data: 0x827520
+extern char aTxtCenterBaseD[21];  // data: 0x827530
+extern char aTxtCenterView[16];  // data: 0x8274EC
+extern char aTxtCenterViewD[21];  // data: 0x8274FC
+extern char aTxtChanBan[13];  // data: 0x84B254
+extern char aTxtChancreateF[22];  // data: 0x84ACC8
+extern char aTxtChanUnban[15];  // data: 0x84B244
+extern char aTxtClanFilter[16];  // data: 0x84A44C
+extern char aTxtConnecting[15];  // data: 0x84D758
+extern char aTxtConnectingS[22];  // data: 0x84B430
+extern char aTxtCopyright[14];  // data: 0x826888
+extern char aTxtCreatedChan[17];  // data: 0x84ACB4
+extern char aTxtDefenseTabD[21];  // data: 0x827030
+extern char aTxtDeployObjec[18];  // data: 0x82745C
+extern char aTxtDeployObjec_0[23];  // data: 0x827470
+extern char aTxtDifficultyB[22];  // data: 0x81B4B8
+extern char aTxtDifficultyE[20];  // data: 0x81B500
+extern char aTxtDifficultyM[22];  // data: 0x81B4D0
+extern char aTxtDownloadFai[20];  // data: 0x84BA04
+extern char aTxtDownloading[23];  // data: 0x84ABCC
+extern char aTxtFetchingWdt[17];  // data: 0x84CC5C
+extern char aTxtFindingPatc[18];  // data: 0x84D768
+extern char aTxtFollow[11];  // data: 0x827884
+extern char aTxtFollowDesc[16];  // data: 0x827890
+extern char aTxtGamePasswor[18];  // data: 0x84A6E8
+extern char aTxtGameRestart[17];  // data: 0x84ABB8
+extern char aTxtGameWasSave[19];  // data: 0x829FE0
+extern char aTxtGuard[10];  // data: 0x827494
+extern char aTxtGuardDesc[15];  // data: 0x8274A0
+extern char aTxtHasAllied[15];  // data: 0x8247F8
+extern char aTxtHowToReply[17];  // data: 0x84B00C
+extern char aTxtInfantryTab[17];  // data: 0x827054
+extern char aTxtInfantryTab_0[22];  // data: 0x827068
+extern char aTxtInitgameFai[20];  // data: 0x81D58C
+extern char aTxtInvalid[12];  // data: 0x8264F0
+extern char aTxtInvalidDay[16];  // data: 0x84B6B8
+extern char aTxtInvalidEmai[18];  // data: 0x84B6DC
+extern char aTxtInvalidMont[18];  // data: 0x84B6A4
+extern char aTxtInvalidYear[17];  // data: 0x84B6F0
+extern char aTxtLaunchbrows[18];  // data: 0x84A494
+extern char aTxtLightningSt[20];  // data: 0x82804C
+extern char aTxtLightningSt_0[32];  // data: 0x828060
+extern char aTxtLoading[12];  // data: 0x829F94
+extern char aTxtLob1[10];  // data: 0x84A64C
+extern char aTxtLob2[10];  // data: 0x84A640
+extern char aTxtLob3[10];  // data: 0x84A634
+extern char aTxtLob4[10];  // data: 0x84A628
+extern char aTxtLob5[10];  // data: 0x84A61C
+extern char aTxtLob6[10];  // data: 0x84A610
+extern char aTxtLob7[10];  // data: 0x84A604
+extern char aTxtLob8[10];  // data: 0x84A5F8
+extern char aTxtLoginUsed[15];  // data: 0x84AC90
+extern char aTxtLost[9];  // data: 0x824CA0
+extern char aTxtMultiplayer[21];  // data: 0x820DBC
+extern char aTxtNeedEqualTe[21];  // data: 0x84BB98
+extern char aTxtNeedMorePla[22];  // data: 0x84BBB0
+extern char aTxtNextObjectD[21];  // data: 0x827260
+extern char aTxtNoAiObserva[22];  // data: 0x84BBC8
+extern char aTxtNobrowser[14];  // data: 0x84A484
+extern char aTxtNoClan[12];  // data: 0x84CE18
+extern char aTxtNone[9];  // data: 0x820DE4
+extern char aTxtOptionHelp0[19];  // data: 0x8264DC
+extern char aTxtOptionHelp0_0[19];  // data: 0x8264C8
+extern char aTxtOptionHelp0_1[19];  // data: 0x8264B4
+extern char aTxtOptionHelp0_2[19];  // data: 0x8264A0
+extern char aTxtOptionHelp0_3[19];  // data: 0x82648C
+extern char aTxtOptionHelp0_4[19];  // data: 0x826478
+extern char aTxtOptions[12];  // data: 0x8276B4
+extern char aTxtOptionsDesc[17];  // data: 0x8276C0
+extern char aTxtPagedisable[17];  // data: 0x84B058
+extern char aTxtPagesent[13];  // data: 0x84B06C
+extern char aTxtPageusergon[17];  // data: 0x84B044
+extern char aTxtPasswordToo[23];  // data: 0x84B714
+extern char aTxtPasswordVer[20];  // data: 0x84B72C
+extern char aTxtPlaceBeacon[17];  // data: 0x8275E4
+extern char aTxtPlaceBeacon_0[22];  // data: 0x8275F8
+extern char aTxtPlayerChang[25];  // data: 0x820DF0
+extern char aTxtPlayerChang_0[27];  // data: 0x820C38
+extern char aTxtPlayerDefea[20];  // data: 0x824C18
+extern char aTxtPlayerToolt[26];  // data: 0x84BAE0
+extern char aTxtPlayerToolt_0[28];  // data: 0x84BAC4
+extern char aTxtPlayerToolt_1[25];  // data: 0x84BAA8
+extern char aTxtPlayerToolt_2[28];  // data: 0x84BA8C
+extern char aTxtPlayerToolt_3[30];  // data: 0x84BA6C
+extern char aTxtPlayerToolt_4[27];  // data: 0x84BA50
+extern char aTxtPrevObject[16];  // data: 0x8273C0
+extern char aTxtPrevObjectD[21];  // data: 0x8273D0
+extern char aTxtRadarEvent[16];  // data: 0x827624
+extern char aTxtRadarEventD[21];  // data: 0x827634
+extern char aTxtRepairMode[16];  // data: 0x82758C
+extern char aTxtRepairModeD[21];  // data: 0x82759C
+extern char aTxtReqChanlist[17];  // data: 0x84A5D0
+extern char aTxtReqNick[13];  // data: 0x84B704
+extern char aTxtRequiredFie[19];  // data: 0x84B6C8
+extern char aTxtSaveCampAva[24];  // data: 0x82DF50
+extern char aTxtSavingGame[16];  // data: 0x820DD4
+extern char aTxtScatter[12];  // data: 0x8274C0
+extern char aTxtScatterDesc[17];  // data: 0x8274CC
+extern char aTxtScenarioLos[18];  // data: 0x824CC0
+extern char aTxtScenarioWon[17];  // data: 0x824C6C
+extern char aTxtScrncap[12];  // data: 0x827A28
+extern char aTxtScrncapDesc[17];  // data: 0x827A34
+extern char aTxtSellMode[14];  // data: 0x8275C0
+extern char aTxtSellModeDes[19];  // data: 0x8275D0
+extern char aTxtSendingGoAc[19];  // data: 0x82C7CC
+extern char aTxtSetBookmark[18];  // data: 0x8277B0
+extern char aTxtSetBookmark_0[23];  // data: 0x8277C4
+extern char aTxtSetBookmark_1[18];  // data: 0x8277E8
+extern char aTxtSetBookmark_2[23];  // data: 0x8277FC
+extern char aTxtSetBookmark_3[18];  // data: 0x827820
+extern char aTxtSetBookmark_4[23];  // data: 0x827834
+extern char aTxtSetBookmark_5[18];  // data: 0x827858
+extern char aTxtSetBookmark_6[23];  // data: 0x82786C
+extern char aTxtShadow[11];  // data: 0x82019C
+extern char aTxtSidebarDown[17];  // data: 0x827688
+extern char aTxtSidebarDown_0[22];  // data: 0x82769C
+extern char aTxtSidebarUp[15];  // data: 0x827658
+extern char aTxtSidebarUpDe[20];  // data: 0x827668
+extern char aTxtSigningOff[16];  // data: 0x82C7BC
+extern char aTxtSpecialWarn[20];  // data: 0x820E30
+extern char aTxtStopObject[16];  // data: 0x8273F4
+extern char aTxtStopObjectD[21];  // data: 0x827404
+extern char aTxtSurrender[14];  // data: 0x81D4E8
+extern char aTxtTalkForward[32];  // data: 0x84BD00
+extern char aTxtTalkForward_0[32];  // data: 0x84BCA8
+extern char aTxtTalkLocalPr[23];  // data: 0x84BD44
+extern char aTxtTalkReporte[26];  // data: 0x84BD7C
+extern char aTxtTooManyPlay[21];  // data: 0x84BB80
+extern char aTxtTournamentG[20];  // data: 0x84A6FC
+extern char aTxtUnablePlayW[23];  // data: 0x82C6AC
+extern char aTxtUnitTab[13];  // data: 0x827088
+extern char aTxtUnitTabDesc[18];  // data: 0x827098
+extern char aTxtUserKicked[16];  // data: 0x84B264
+extern char aTxtVictorious[15];  // data: 0x824C44
+extern char aTxtViewBookmar[19];  // data: 0x8276DC
+extern char aTxtViewBookmar_0[24];  // data: 0x8276F0
+extern char aTxtViewBookmar_1[19];  // data: 0x827710
+extern char aTxtViewBookmar_2[24];  // data: 0x827724
+extern char aTxtViewBookmar_3[19];  // data: 0x827744
+extern char aTxtViewBookmar_4[24];  // data: 0x827758
+extern char aTxtViewBookmar_5[19];  // data: 0x827778
+extern char aTxtViewBookmar_6[24];  // data: 0x82778C
+extern char aTxtWolLoggingO[20];  // data: 0x84B3D8
+extern char aTxtYouleft[12];  // data: 0x84B380
+extern char aTxtYoureKicked[17];  // data: 0x84B274
+extern char aUnittab[8];  // data: 0x827080
+extern char aUnknownStatus[2];  // data: 0x84AAA0
+extern char aUrb[5];  // data: 0x829138
+extern char aVeteranaircraf[16];  // data: 0x825288
+extern char aVeterancynav[13];  // data: 0x827374
+extern char aVeteraninfantr[16];  // data: 0x8252A8
+extern char aVeteranunits[13];  // data: 0x825298
+extern char aView1[6];  // data: 0x8276D4
+extern char aView2[6];  // data: 0x827708
+extern char aView3[6];  // data: 0x82773C
+extern char aView4[6];  // data: 0x827770
+extern char aVoiceovers[11];  // data: 0x848E0C
+extern char aVqa[5];  // data: 0x8241A4
+extern char aW[2];  // data: 0x82AF10
+extern char aWaitingForMess[36];  // data: 0x81F460
+extern char aWdtAlliedheldt[22];  // data: 0x8490A8
+extern char aWdtBases[10];  // data: 0x8484B0
+extern char aWdtchoicemdIni[16];  // data: 0x84D864
+extern char aWdtCrates[11];  // data: 0x84843C
+extern char aWdtDefaultlong[29];  // data: 0x848D40
+extern char aWdtDefaultshor[30];  // data: 0x848D60
+extern char aWdtFactionsele_0[31];  // data: 0x84D7F8
+extern char aWdtFactionsele_1[31];  // data: 0x84D7D8
+extern char aWdtfsasmPcx[13];  // data: 0x84D844
+extern char aWdtfsbsmPcx[13];  // data: 0x84D854
+extern char aWdtfsssmPcx[13];  // data: 0x84D834
+extern char aWdthistIni_0[12];  // data: 0x847FDC
+extern char aWdtmapmdIni[13];  // data: 0x848E18
+extern char aWdtNobases[12];  // data: 0x8484A4
+extern char aWdtNocrates[13];  // data: 0x84842C
+extern char aWdtNoredeploym[18];  // data: 0x848448
+extern char aWdtNotshortgam[17];  // data: 0x848480
+extern char aWdtRedeployabl[20];  // data: 0x84845C
+extern char aWdtShortgame[14];  // data: 0x848494
+extern char aWdtSovietheldt[22];  // data: 0x8490C0
+extern char aWdtTechlevel[14];  // data: 0x8484BC
+extern char aWdtTerritorypr[20];  // data: 0x849064
+extern char aWdtTerritoryse_0[28];  // data: 0x84908C
+extern char aWdtTerritorysu[20];  // data: 0x849078
+extern char aWdtUnitcount[14];  // data: 0x848470
+extern char aWin[5];  // data: 0x826504
+extern char aWinningthresho[17];  // data: 0x848EB8
+extern char aWmInitdialog[15];  // data: 0x821CB0
+extern char aWolBuddydisabl[22];  // data: 0x84CDF0
+extern char aWolBuddyofflin[17];  // data: 0x84CDDC
+extern char aWolBuddyonline[16];  // data: 0x84CDB4
+extern char aWolBuddyplayin[21];  // data: 0x84CD90
+extern char aWolBuddyquickm[23];  // data: 0x84CDC4
+extern char aWolBuddyunknow[23];  // data: 0x84CD78
+extern char aWolChanneljoin[23];  // data: 0x84D074
+extern char aWolGamefull[13];  // data: 0x84CE08
+extern char aWolMatchattemp[30];  // data: 0x84D570
+extern char aWolMatchbadpar[23];  // data: 0x84D508
+extern char aWolMatchcreati[22];  // data: 0x84D5CC
+extern char aWolMatcherrorc[27];  // data: 0x84D598
+extern char aWolMatcherrorj[26];  // data: 0x84D520
+extern char aWolMatchfoundw[19];  // data: 0x84D4F4
+extern char aWolMatchgamech[29];  // data: 0x84D550
+extern char aWolMatchgamest[22];  // data: 0x84D048
+extern char aWolMatchingser[30];  // data: 0x84D08C
+extern char aWolMatchjoined[20];  // data: 0x84D53C
+extern char aWolMatchoppone[22];  // data: 0x84D4DC
+extern char aWolMatchoppone_0[29];  // data: 0x84D4BC
+extern char aWolMatchtimeou[17];  // data: 0x84A5E4
+extern char aWolMatchwaitin[24];  // data: 0x84D5B4
+extern char aWolNomatchinga[25];  // data: 0x84D0AC
+extern char aWolResolutionl[25];  // data: 0x84B860
+extern char aWolResolutionl_0[25];  // data: 0x84B844
+extern char aWolWdtterritor[21];  // data: 0x848F54
+extern char aWrenchShp[11];  // data: 0x819404
+extern char aWurl[5];  // data: 0x848CE0
+extern char aXgrymed1[9];  // data: 0x82ADC0
+extern char aXgrymed2[9];  // data: 0x82ADB4
+extern char aXgrysml1[9];  // data: 0x82ADA8
+extern char aYr1[4];  // data: 0x81FFC0
+extern char aZoomingtarget[14];  // data: 0x848EF0
+extern char aZotclot9[9];  // data: 0x84B698
 extern unsigned char BSurface_Vtable[4];  // data: 0x7E2070
 extern unsigned char DataGlobal_4F8390[38];  // data: 0x4F8390
 extern unsigned char DataGlobal_4FA9E4[40];  // data: 0x4FA9E4
@@ -15376,10 +15376,10 @@ extern unsigned int DataGlobal_00836044;  // data: 0x00836044
 extern unsigned int DataGlobal_00836054;  // data: 0x00836054
 extern unsigned int DataGlobal_00836064;  // data: 0x00836064
 extern unsigned int DataGlobal_0083607C;  // data: 0x0083607C
-extern char aSttLobbylistga[];  // data: 0x84A590 G42.33 supply (csf key STT_LOBBYLISTGAME, addr78 use)
-extern char aMsgPinginfo[];  // data: 0x84A578 G42.33 supply (csf key MSG_PINGINFO, addr78 use)
+extern char aSttLobbylistga[41];  // data: 0x84A590 G42.33 supply (csf key STT_LOBBYLISTGAME, addr78 use)
+extern char aMsgPinginfo[10];  // data: 0x84A578 G42.33 supply (csf key MSG_PINGINFO, addr78 use)
 extern wchar_t asc_84A69C[];  // data: 0x84A69C G42.33 supply (L": " wide literal, addr78 use)
-extern char aWolGameping[];  // data: 0x84A5B8 G42.33 b2 supply (csf key WOL_GAMEPING, addr78 use)
+extern char aWolGameping[1];  // data: 0x84A5B8 G42.33 b2 supply (csf key WOL_GAMEPING, addr78 use)
 extern unsigned int DataGlobal_00835974;  // data: 0x00835974
 extern unsigned int DataGlobal_00835980;  // data: 0x00835980
 extern unsigned int DataGlobal_0083598C;  // data: 0x0083598C
@@ -15477,26 +15477,26 @@ extern unsigned int DataGlobal_00836044;  // data: 0x00836044
 extern unsigned int DataGlobal_00836054;  // data: 0x00836054
 extern unsigned int DataGlobal_00836064;  // data: 0x00836064
 extern unsigned int DataGlobal_0083607C;  // data: 0x0083607C
-extern char aSttLobbylistga[];  // data: 0x84A590 G42.33 b2 supply (csf key, addr78 use)
-extern char aMsgPinginfo[];  // data: 0x84A578 G42.33 b2 supply (csf key, addr78 use)
+extern char aSttLobbylistga[41];  // data: 0x84A590 G42.33 b2 supply (csf key, addr78 use)
+extern char aMsgPinginfo[10];  // data: 0x84A578 G42.33 b2 supply (csf key, addr78 use)
 extern wchar_t asc_84A69C[];  // data: 0x84A69C G42.33 b2 supply (L": " wide literal, addr78 use)
-extern char aWolGameping[];  // data: 0x84A5B8 G42.33 b2 supply (csf key WOL_GAMEPING, addr78 use)
-extern char aATerritory[];  // data: 0x84B608
-extern char aEurope[];  // data: 0x84B614
-extern char aNorthamerica[];  // data: 0x84B61C
+extern char aWolGameping[1];  // data: 0x84A5B8 G42.33 b2 supply (csf key WOL_GAMEPING, addr78 use)
+extern char aATerritory[12];  // data: 0x84B608
+extern char aEurope[7];  // data: 0x84B614
+extern char aNorthamerica[13];  // data: 0x84B61C
 extern unsigned short word_B77AD0;  // data: 0xB77AD0
-extern char aWolRequestingn[];  // data: 0x84B794
-extern char aTxtConsentRequ[];  // data: 0x84B77C
-extern char aTibsun[];  // data: 0x84B7AC
-extern char aTibpass99[];  // data: 0x84B7B4
-extern char aWolNewaccountf[];  // data: 0x84B7D8
-extern char aTxtNosquad[];  // data: 0x84B940
-extern char aWolLocale[];  // data: 0x84A684
+extern char aWolRequestingn[23];  // data: 0x84B794
+extern char aTxtConsentRequ[21];  // data: 0x84B77C
+extern char aTibsun[7];  // data: 0x84B7AC
+extern char aTibpass99[10];  // data: 0x84B7B4
+extern char aWolNewaccountf[20];  // data: 0x84B7D8
+extern char aTxtNosquad[12];  // data: 0x84B940
+extern char aWolLocale[11];  // data: 0x84A684
 extern DWORD (__stdcall * __imp_GetFileSize)(HANDLE hFile, LPDWORD lpFileSizeHigh);  // data: 0x7c8512 IAT slot fn-ptr truth (G42.33 b3)
 extern int MCVRedeploy;  // data: 0xA8B320
 extern int HouseClass_Count;  // data: 0xA80238
 extern wchar_t a02d02d02d_0[];  // data: 0x842158 (wide "%02d:%02d:%02d")
-extern char aDRa2mdpostStls[];  // data: 0x842178 (csf key)
+extern char aDRa2mdpostStls[26];  // data: 0x842178 (csf key)
 extern int MCVRedeploy;  // data: 0xA8B320
 extern int HouseClass_Count;  // data: 0xA80238
 extern char * aDarkenShp;  // G42.41l supply (processDamage 0x6A5012)

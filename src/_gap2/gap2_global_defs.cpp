@@ -2261,7 +2261,7 @@ void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6)
         StringCSF = GetStringCSF(&aTxtBeaconHelp1, 0, "D:\\ra2mdpost\\Beacon.CPP", 811); /*0x430d1d*/
         MessageListClass::AddMessage((MessageListClass *)&g_GameNetworkObject, 0, 0, StringCSF, v20, 16454, 225, 0); /*0x430d2c*/
         v21 = *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4]; /*0x430d4a*/
-        v16 = GetStringCSF((wchar_t *)stru_818A68.Priority, 0, "D:\\ra2mdpost\\Beacon.CPP", 812); /*0x430d5a*/
+        v16 = GetStringCSF((char *)stru_818A68.Priority, 0, "D:\\ra2mdpost\\Beacon.CPP", 812); /*0x430d5a*/
         MessageListClass::AddMessage((MessageListClass *)&g_GameNetworkObject, 0, 0, v16, v21, 16454, 225, 0); /*0x430d69*/
         VoxClass::FindAndPlay((VoxClass *)&stru_818A68.YuriVoice[8], -1); /*0x430d78*/
         PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 460), 0x2000, 1.0, 0); /*0x430d94*/

@@ -754,7 +754,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[37112], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->briefingCsf, 32);
           if ( strlen((const char *)g_ScenarioClass_Instance->briefingCsf) )
           {
-            StringCSF = GetStringCSF( (wchar_t *)g_ScenarioClass_Instance->briefingCsf, 0, (const char *)(&stru_830620[53784]), 3167);
+            StringCSF = GetStringCSF( (char *)g_ScenarioClass_Instance->briefingCsf, 0, (const char *)(&stru_830620[53784]), 3167);
             wcsncpy( (wchar_t *)g_ScenarioClass_Instance->briefing, (const wchar_t *)(StringCSF), 0x400u);
             (*(((unsigned short *)&(g_ScenarioClass_Instance->briefing[511])) + 1)) = 0;
           }
@@ -773,11 +773,11 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&g_INI_Key_UIName, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->uiName, 32);
           if ( strlen(g_ScenarioClass_Instance->uiName) )
           {
-            v13 = GetStringCSF( (wchar_t *)g_ScenarioClass_Instance->uiName, 0, (const char *)(&stru_830620[53784]), 3179);
+            v13 = GetStringCSF( (char *)g_ScenarioClass_Instance->uiName, 0, (const char *)(&stru_830620[53784]), 3179);
             wcsncpy( (wchar_t *)g_ScenarioClass_Instance->name, (const wchar_t *)(v13), 0x2Du);
             *&g_ScenarioClass_Instance->u16_3250 = 0;
             sprintf((char *const)Buffer,(const char *const)(&stru_830620[54828]), g_ScenarioClass_Instance->uiName);
-            v14 = GetStringCSF( (wchar_t *)(Buffer), 0, (const char *)(&stru_830620[53784]), 3183);
+            v14 = GetStringCSF( (char *)(Buffer), 0, (const char *)(&stru_830620[53784]), 3183);
             wcsncpy( (wchar_t *)g_ScenarioClass_Instance->uiNameLoaded, (const wchar_t *)(v14), 0x2Du);
             if ( !wcsncmp(
                     (const wchar_t *)g_ScenarioClass_Instance->uiNameLoaded,

@@ -209,7 +209,7 @@ int DeployCommandClass::performAction_21()
 wchar_t * SelectTeamCommand::ddtor()
 {
 
-  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6294); /*0x536046*/
+  return GetStringCSF((char *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6294); /*0x536046*/
 
 }
 
@@ -255,7 +255,7 @@ AddTeamCommand * DeployCommandClass::performAction_23(char a2)
 wchar_t * CSF::GetTeamString()
 {
 
-  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6363); /*0x536226*/
+  return GetStringCSF((char *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6363); /*0x536226*/
 
 }
 
@@ -1493,7 +1493,7 @@ char ScreenCaptureCommandClass::AddRef(void *a1)
 wchar_t * ScreenCaptureCommandClass::ddtor()
 {
 
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0,(const char *)(g_Str_File_Init_CPP), 8071); /*0x537b76*/
+  return GetStringCSF((char *)(g_Str_TXT_INTERFACE), 0,(const char *)(g_Str_File_Init_CPP), 8071); /*0x537b76*/
 
 }
 
@@ -1507,7 +1507,7 @@ int * ScreenCaptureCommandClass::Release(void *a1)
 wchar_t * ScreenCaptureCommandClass::Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7)
 {
 
-  return GetStringCSF((wchar_t *)(aTxtScrncapDesc), 0,(const char *)(g_Str_File_Init_CPP), 8073); /*0x537bb6*/
+  return GetStringCSF((char *)(aTxtScrncapDesc), 0,(const char *)(g_Str_File_Init_CPP), 8073); /*0x537bb6*/
 
 }
 
@@ -1529,7 +1529,7 @@ char * PageUserCommandClass::AddRef(void *a1)
 wchar_t * PageUserCommandClass::Release(void *a1)
 {
 
-  return GetStringCSF((wchar_t *)(aTxtPageuser), 0, g_Str_File_Init_CPP, 7563); /*0x537e06*/
+  return GetStringCSF((char *)(aTxtPageuser), 0, g_Str_File_Init_CPP, 7563); /*0x537e06*/
 
 }
 
@@ -1537,7 +1537,7 @@ wchar_t * PageUserCommandClass::Release(void *a1)
 wchar_t * PageUserCommandClass::ddtor()
 {
 
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 7565); /*0x537e26*/
+  return GetStringCSF((char *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 7565); /*0x537e26*/
 
 }
 
@@ -1545,7 +1545,7 @@ wchar_t * PageUserCommandClass::ddtor()
 wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
 {
 
-  return GetStringCSF((wchar_t *)(aTxtPageuserDes), 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/
+  return GetStringCSF((char *)(aTxtPageuserDes), 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/
 
 }
 
@@ -1623,7 +1623,7 @@ char * DeleteCommandClass::AddRef(void *a1)
 wchar_t * DeleteCommandClass::Release(void *a1)
 {
 
-  return GetStringCSF((wchar_t *)(aCmndDelete), 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
+  return GetStringCSF((char *)(aCmndDelete), 0, g_Str_File_Init_CPP, 6559); /*0x537f46*/
 
 }
 
@@ -1631,7 +1631,7 @@ wchar_t * DeleteCommandClass::Release(void *a1)
 wchar_t * DeleteCommandClass::ddtor(void *a1)
 {
 
-  return GetStringCSF((wchar_t *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
+  return GetStringCSF((char *)(g_Str_TXT_INTERFACE), 0, g_Str_File_Init_CPP, 6561); /*0x537f66*/
 
 }
 
@@ -1639,7 +1639,7 @@ wchar_t * DeleteCommandClass::ddtor(void *a1)
 wchar_t * DeleteCommandClass::Read(void *a1, void *a2)
 {
 
-  return GetStringCSF((wchar_t *)(aCmndDeletedesc), 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
+  return GetStringCSF((char *)(aCmndDeletedesc), 0, g_Str_File_Init_CPP, 6563); /*0x537f86*/
 
 }
 

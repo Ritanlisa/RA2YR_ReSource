@@ -14,7 +14,7 @@
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { INT_PTR sub_775B40(HWND a1, UINT, WPARAM, LPARAM); }  // w18j2 raw 0x00775B40
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aCombodropwin[];  // data: 0x8357a0 truth(IDA G42.57w9)
+extern char aCombodropwin[13];  // data: 0x8357a0 truth(IDA G42.57w9)
 
 
 // 0x5D6350

@@ -142,9 +142,9 @@ namespace gamemd {
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aMsgPlanningmod_4;  // data: 0x836d60 truth(IDA G42.57w9)
 extern unsigned int aMsgPostloop;  // data: 0x836bf0 truth(IDA G42.57w9)
-extern wchar_t aMsgPlanningmod_3[];  // data: 0x836d7c truth(IDA G42.57w9)
-extern wchar_t aMsgPlanningmod_5[];  // data: 0x836d44 truth(IDA G42.57w9)
-extern wchar_t aMsgPlanningmod_6[];  // data: 0x836d28 truth(IDA G42.57w9)
+extern char aMsgPlanningmod_3[29];  // data: 0x836d7c truth(IDA G42.57w9)
+extern char aMsgPlanningmod_5[28];  // data: 0x836d44 truth(IDA G42.57w9)
+extern char aMsgPlanningmod_6[27];  // data: 0x836d28 truth(IDA G42.57w9)
 
 
 // 0x630310
@@ -1228,7 +1228,7 @@ char ExecutePlanningQueue()
         if ( !byte_AC4C08 ) /*0x6374cb*/
         {
           byte_AC4C08 = 1; /*0x6374de*/
-          StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_PostContinualCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6374e5*/
+          StringCSF = GetStringCSF((char *)(g_Str_MSG_PostContinualCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6374e5*/
           AddMessageListPlayerMessage(StringCSF, 480); /*0x6374f1*/
           result = PlayVocClass(dword_8871E0->ShellButtonSlideSound, 0x2000, 1.0, 0); /*0x63750e*/
         }
@@ -1244,7 +1244,7 @@ char ExecutePlanningQueue()
       if ( !byte_AC4C08 ) /*0x637473*/
       {
         byte_AC4C08 = 1; /*0x63748a*/
-        v27 = GetStringCSF((wchar_t *)(g_Str_MSG_PostTerminatingCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x637491*/
+        v27 = GetStringCSF((char *)(g_Str_MSG_PostTerminatingCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x637491*/
         AddMessageListPlayerMessage(v27, 480); /*0x63749d*/
         result = PlayVocClass(dword_8871E0->ShellButtonSlideSound, 0x2000, 1.0, 0); /*0x6374b8*/
       }
@@ -1467,7 +1467,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
       if ( !g_PlanningModeActive ) /*0x63829e*/
       {
         g_PlanningModeActive = 1; /*0x6382a4*/
-        StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_PostTerminatingCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6382bb*/
+        StringCSF = GetStringCSF((char *)(g_Str_MSG_PostTerminatingCommand), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x6382bb*/
         AddMessageListPlayerMessage(StringCSF, 480); /*0x6382c7*/
         PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1792), 0x2000, 1.0, 0); /*0x6382e4*/
         return 0; /*0x6382f2*/
@@ -2335,7 +2335,7 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
     else if ( !byte_AC4C08 ) /*0x63a7dd*/
     {
       byte_AC4C08 = 1; /*0x63a7e8*/
-      v13 = GetStringCSF((wchar_t *)aMsgPlanningmod_4, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a7fb*/
+      v13 = GetStringCSF((char *)aMsgPlanningmod_4, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a7fb*/
   LABEL_31:
       AddMessageListPlayerMessage(v13, 480); /*0x63a88e*/
       PlayVocClass(dword_8871E0->AmmoCrateDamage, 0x2000, 1.0, 0); /*0x63a8b2*/

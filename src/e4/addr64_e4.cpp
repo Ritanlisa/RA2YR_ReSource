@@ -1027,7 +1027,7 @@ LABEL_54:
     if ( DlgItem )
     {
       v87 = (MSVQAnim *)dword_B04898;
-      StringCSF = GetStringCSF( (wchar_t *)&(&stru_830620)[28916], 0, (const char *)(&(&stru_830620)[28288]), 3853);
+      StringCSF = GetStringCSF( (char *)&(&stru_830620)[28916], 0, (const char *)(&(&stru_830620)[28288]), 3853);
       swprintf(lParam, (const size_t)StringCSF, (const wchar_t *const)v87, (CampaignScore *)v92);
       SendMessageA( (HWND)(DlgItem), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)lParam)));
     }
@@ -1070,13 +1070,13 @@ LABEL_54:
           {
             ConnectionSpeed = (&HouseClass_Player->u32_2B1D0)->GetConnectionSpeed( (int)(v40));
             Class = (MSVQAnim *)((Network *)HouseClass_Player->u32_2B1D0))->GetClass(ConnectionSpeed);
-            _FFFFFFFEa = GetStringCSF( (wchar_t *)&(&stru_830620)[28896], 0, (const char *)(&(&stru_830620)[28288]), 3908);
+            _FFFFFFFEa = GetStringCSF( (char *)&(&stru_830620)[28896], 0, (const char *)(&(&stru_830620)[28288]), 3908);
             swprintf(lParam, (const size_t)_FFFFFFFEa, (const wchar_t *const)Class, (CampaignScore *)v92);
           }
           else
           {
             v88 = *(MSVQAnim **)(*&HouseClass_Player->u32_274B0 + 4);
-            v86 = GetStringCSF( (wchar_t *)&(&stru_830620)[28896], 0, (const char *)(&(&stru_830620)[28288]), 3914);
+            v86 = GetStringCSF( (char *)&(&stru_830620)[28896], 0, (const char *)(&(&stru_830620)[28288]), 3914);
             swprintf(lParam, (const size_t)v86, (const wchar_t *const)v88, (CampaignScore *)v92);
           }
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)(lParam), (HWND)v38);
@@ -1084,13 +1084,13 @@ LABEL_54:
           v44 = *&HouseClass_Player->u32_1D3B0;
           if ( *&HouseClass_Player->u32_1D3B0 == 4 )
           {
-            v46 = GetStringCSF( (wchar_t *)&(&stru_830620)[28876], 0, (const char *)(&(&stru_830620)[28288]), 3928);
+            v46 = GetStringCSF( (char *)&(&stru_830620)[28876], 0, (const char *)(&(&stru_830620)[28288]), 3928);
             wcscpy( (wchar_t *)(lParam), (const wchar_t *)(v46));
             wcscat(lParam,(const wchar_t *)(&stru_82083C)t *)(&stru_82083C)t *)(&stru_82083C));
-            v47 = GetStringCSF( (wchar_t *)&(&stru_830620)[28852], 0, (const char *)(&(&stru_830620)[28288]), 3930);
+            v47 = GetStringCSF( (char *)&(&stru_830620)[28852], 0, (const char *)(&(&stru_830620)[28288]), 3930);
             wcscat(lParam,(const wchar_t *)((CampaignScore *)v47));
             wcscat(lParam,(const wchar_t *)(&stru_82083C));
-            v48 = GetStringCSF( (wchar_t *)&(&stru_830620)[28828], 0, (const char *)(&(&stru_830620)[28288]), 3932);
+            v48 = GetStringCSF( (char *)&(&stru_830620)[28828], 0, (const char *)(&(&stru_830620)[28288]), 3932);
             wcscat(lParam,(const wchar_t *)((CampaignScore *)v48));
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)(lParam), (HWND)v38);
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)((const wchar_t *)&(&stru_87C374)[46016]), (HWND)v38);
@@ -1101,12 +1101,12 @@ LABEL_54:
           if ( v44 == 3 )
           {
 LABEL_75:
-            v49 = GetStringCSF( (wchar_t *)&(&stru_830620)[28808], 0, (const char *)(&(&stru_830620)[28288]), 3939);
+            v49 = GetStringCSF( (char *)&(&stru_830620)[28808], 0, (const char *)(&(&stru_830620)[28288]), 3939);
             wcscpy( (wchar_t *)(lParam), (const wchar_t *)(v49));
             wcscat(lParam,(const wchar_t *)(&stru_82083C));
             if ( *&HouseClass_Player->u32_1D3B0 == 4 )
             {
-v90 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28784], 0, (const char *)(&(&stru_830620)[28288]), 3943);
+v90 = (MSVQAnim *)GetStringCSF( (char *)&(&stru_830620)[28784], 0, (const char *)(&(&stru_830620)[28288]), 3943);
 
 
 
@@ -1115,7 +1115,7 @@ v90 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28784], 0, (const cha
             }
             else if ( *&HouseClass_Player->u32_1D3B0 == 3 )
             {
-v91 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28764], 0, (const char *)(&(&stru_830620)[28288]), 3945);
+v91 = (MSVQAnim *)GetStringCSF( (char *)&(&stru_830620)[28764], 0, (const char *)(&(&stru_830620)[28288]), 3945);
 
 
 
@@ -1126,15 +1126,15 @@ v91 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28764], 0, (const cha
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)((const wchar_t *)&((unsigned char *)&stru_87C374)[46016]), (HWND)v38);
           }
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)((const wchar_t *)&((unsigned char *)&stru_87C374)[46016]), (HWND)v38);
-          v50 = GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[28744], 0, (const char *)(&stru_830620[28288]), 3955);
+          v50 = GetStringCSF( (char *)&((unsigned int *)(stru_830620))[28744], 0, (const char *)(&stru_830620[28288]), 3955);
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)(v50), (HWND)v38);
-          v51 = GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[28724], 0, (const char *)(&stru_830620[28288]), 3960);
+          v51 = GetStringCSF( (char *)&((unsigned int *)(stru_830620))[28724], 0, (const char *)(&stru_830620[28288]), 3960);
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)(v51), (HWND)v38);
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)((const wchar_t *)&((unsigned char *)&stru_87C374)[46016]), (HWND)v38);
         }
         else
         {
-          v52 = GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[28696], 0, (const char *)(&stru_830620[28288]), 3963);
+          v52 = GetStringCSF( (char *)&((unsigned int *)(stru_830620))[28696], 0, (const char *)(&stru_830620[28288]), 3963);
           swprintf(lParam, (const size_t)v52, (const wchar_t *const)v92, _A);
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)-1))), (wchar_t *)(lParam), (HWND)v38);
         }

@@ -68,18 +68,18 @@ namespace gamemd { int Team_Start_597430(ObjectClass *p_this); }  // x4:ida@0x59
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aInfo[];  // data: 0x84d410 truth(IDA G42.57w9)
-extern char aNeed[];  // data: 0x84d3d4 truth(IDA G42.57w9)
-extern char aPool[];  // data: 0x84d408 truth(IDA G42.57w9)
-extern char aStart_0[];  // data: 0x84d3e8 truth(IDA G42.57w9)
+extern char aInfo[6];  // data: 0x84d410 truth(IDA G42.57w9)
+extern char aNeed[6];  // data: 0x84d3d4 truth(IDA G42.57w9)
+extern char aPool[6];  // data: 0x84d408 truth(IDA G42.57w9)
+extern char aStart_0[7];  // data: 0x84d3e8 truth(IDA G42.57w9)
 extern unsigned int aAck;  // data: 0x84d3e4 truth(IDA G42.57w9)
 extern unsigned int aNack_0;  // data: 0x84d3dc truth(IDA G42.57w9)
 extern unsigned int aWdtFactionsele;  // data: 0x833cec truth(IDA G42.57w9)
-extern wchar_t aGuiMatchingpro[];  // data: 0x84d418 truth(IDA G42.57w9)
-extern wchar_t aTxtUpgraderequ[];  // data: 0x84abec truth(IDA G42.57w9)
-extern wchar_t aWolAddbuddyque[];  // data: 0x84d694 truth(IDA G42.57w9)
-extern wchar_t aWolMatchingpla[];  // data: 0x84d3f0 truth(IDA G42.57w9)
-extern wchar_t aWolMatchunknow[];  // data: 0x84d3b4 truth(IDA G42.57w9)
+extern char aGuiMatchingpro[22];  // data: 0x84d418 truth(IDA G42.57w9)
+extern char aTxtUpgraderequ[20];  // data: 0x84abec truth(IDA G42.57w9)
+extern char aWolAddbuddyque[18];  // data: 0x84d694 truth(IDA G42.57w9)
+extern char aWolMatchingpla[23];  // data: 0x84d3f0 truth(IDA G42.57w9)
+extern char aWolMatchunknow[30];  // data: 0x84d3b4 truth(IDA G42.57w9)
 
 
 // 0x7A0430
@@ -781,7 +781,7 @@ ObjectClass * * HandleWOLMatchMessage(void * a2, void * aExit_0, void * aFail, v
   {
     if ( !_strnicmp(String1, aFail, 4u) ) /*0x7a16c6*/
     {
-      StringCSF = GetStringCSF((wchar_t *)aWolMatchfail, 0, g_Str_File_wonline_cpp, 28671); /*0x7a16e3*/
+      StringCSF = GetStringCSF((char *)aWolMatchfail, 0, g_Str_File_wonline_cpp, 28671); /*0x7a16e3*/
   LABEL_10:
       Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)StringCSF); /*0x7a17a2*/
       SetEvent((void *)(dword_B736C8)); /*0x7a17b6*/
@@ -789,30 +789,30 @@ ObjectClass * * HandleWOLMatchMessage(void * a2, void * aExit_0, void * aFail, v
     }
     if ( !_strnicmp(String1, aPingfail, 8u) ) /*0x7a16f0*/
     {
-      v5 = GetStringCSF((wchar_t *)(aWolMatchfailpi), 0, g_Str_File_wonline_cpp, 28677); /*0x7a170d*/
+      v5 = GetStringCSF((char *)(aWolMatchfailpi), 0, g_Str_File_wonline_cpp, 28677); /*0x7a170d*/
       Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v5); /*0x7a1718*/
       SetEvent((void *)(dword_B736C8)); /*0x7a1727*/
       return; /*0x7a172f*/
     }
     if ( !_strnicmp(String1, aRankfail, 8u) ) /*0x7a1738*/
     {
-      v6 = GetStringCSF((wchar_t *)(aWolMatchfailra), 0, g_Str_File_wonline_cpp, 28683); /*0x7a1755*/
+      v6 = GetStringCSF((char *)(aWolMatchfailra), 0, g_Str_File_wonline_cpp, 28683); /*0x7a1755*/
       Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v6); /*0x7a1760*/
       SetEvent((void *)(dword_B736C8)); /*0x7a176f*/
       return; /*0x7a1777*/
     }
     if ( !_strnicmp(String1, aWdtsidefail, 0xBu) ) /*0x7a1780*/
     {
-      StringCSF = GetStringCSF((wchar_t *)(aWolMatchfailwd), 0, g_Str_File_wonline_cpp, 28689); /*0x7a179d*/
+      StringCSF = GetStringCSF((char *)(aWolMatchfailwd), 0, g_Str_File_wonline_cpp, 28689); /*0x7a179d*/
       goto LABEL_10; /*0x7a179d*/
     }
   }
   if ( !_strnicmp(String1, aExit_0, 4u) ) /*0x7a17c7*/
   {
-    v7 = GetStringCSF((wchar_t *)(g_Str_WOL_MatchFailExit), 0, g_Str_File_wonline_cpp, 28695); /*0x7a17e4*/
+    v7 = GetStringCSF((char *)(g_Str_WOL_MatchFailExit), 0, g_Str_File_wonline_cpp, 28695); /*0x7a17e4*/
     Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v7); /*0x7a17ef*/
     (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x7a17ff*/
-    v8 = GetStringCSF((wchar_t *)(g_Str_WOL_MatchFailExit), 0, g_Str_File_wonline_cpp, 28698); /*0x7a181a*/
+    v8 = GetStringCSF((char *)(g_Str_WOL_MatchFailExit), 0, g_Str_File_wonline_cpp, 28698); /*0x7a181a*/
     ShowDialogConfirm(v8, 0, (int)GameLoop::Thunk, 0); /*0x7a1823*/
     SetEvent((void *)(Handles)); /*0x7a182f*/
   }
@@ -1478,11 +1478,11 @@ int WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
         }
         else if ( WindowLongA[3] == 3 ) /*0x7af85c*/
         {
-          StringCSF = GetStringCSF((wchar_t *)aWdtFactionsele_0, 0, g_Str_File_WorldDom_cpp, 179); /*0x7af882*/
+          StringCSF = GetStringCSF((char *)aWdtFactionsele_0, 0, g_Str_File_WorldDom_cpp, 179); /*0x7af882*/
         }
         else
         {
-          StringCSF = GetStringCSF((wchar_t *)aWdtFactionsele, 0, g_Str_File_WorldDom_cpp, 182); /*0x7af86f*/
+          StringCSF = GetStringCSF((char *)aWdtFactionsele, 0, g_Str_File_WorldDom_cpp, 182); /*0x7af86f*/
         }
         ((WideString *)((wchar_t **)&a3))->Assign(StringCSF); /*0x7af89f*/
         WideString::Reassign_Alt((void **)(v4 + 8), (const wchar_t **)&a3); /*0x7af8ac*/

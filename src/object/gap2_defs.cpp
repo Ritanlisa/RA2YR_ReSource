@@ -8471,7 +8471,7 @@ int TechnoClass::DrawPowerIndicator() {
     goto LABEL_5; /*0x70abe5*/
   }
   LABEL_6:
-  v11 = GetStringCSF((wchar_t *)&g_INI_Key_TRUCKA.SizeLimit[1], 0, (const char *)&g_INI_Key_TRUCKA.PitchSpeed[1], 15502); /*0x70abf8*/
+  v11 = GetStringCSF((char *)&g_INI_Key_TRUCKA.SizeLimit[1], 0, (const char *)&g_INI_Key_TRUCKA.PitchSpeed[1], 15502); /*0x70abf8*/
   vtable0 = (int (__thiscall **)(TechnoClass *))this->vfptr; /*0x70ac0e*/
   p_arrayIndex = v11; /*0x70ac12*/
   if ( vtable0[11](this) == 6 && BuildingTypeClass::GetFoundationWidth(this->unknown_short_3C8)) == 1 ) /*0x70ac2c*/

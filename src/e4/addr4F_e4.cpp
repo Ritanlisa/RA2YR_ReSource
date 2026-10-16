@@ -88,14 +88,14 @@ namespace gamemd { int ClearAndFree3(int p_this); }  // x4:ida@0x50f830
 namespace gamemd { int sub_4F3AB0(int p0, int p1); }  // x4:signals@0x4f3ab0
 namespace gamemd { int sub_4F3D40(int p0); }  // x4:signals@0x4f3d40
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern char aActiverect[];  // data: 0x824240 truth(IDA G42.57w9)
-extern char aAlt[];  // data: 0x82437c truth(IDA G42.57w9)
-extern char aCtrl[];  // data: 0x824384 truth(IDA G42.57w9)
-extern char aKeys[];  // data: 0x824340 truth(IDA G42.57w9)
-extern char aOrigin[];  // data: 0x82424c truth(IDA G42.57w9)
-extern char aSelectsound[];  // data: 0x8242fc truth(IDA G42.57w9)
-extern char aShift[];  // data: 0x824374 truth(IDA G42.57w9)
-extern char aShortcut[];  // data: 0x824308 truth(IDA G42.57w9)
+extern char aActiverect[11];  // data: 0x824240 truth(IDA G42.57w9)
+extern char aAlt[5];  // data: 0x82437c truth(IDA G42.57w9)
+extern char aCtrl[6];  // data: 0x824384 truth(IDA G42.57w9)
+extern char aKeys[5];  // data: 0x824340 truth(IDA G42.57w9)
+extern char aOrigin[7];  // data: 0x82424c truth(IDA G42.57w9)
+extern char aSelectsound[12];  // data: 0x8242fc truth(IDA G42.57w9)
+extern char aShift[7];  // data: 0x824374 truth(IDA G42.57w9)
+extern char aShortcut[9];  // data: 0x824308 truth(IDA G42.57w9)
 extern unsigned char aLoop;  // data: 0x824238 truth(IDA G42.57w9)
 
 
@@ -223,7 +223,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
     else if ( a2 == 1175 ) /*0x4f18e8*/
     {
       DlgItem = GetDlgItem(hDlg, 1737); /*0x4f190e*/
-      StringCSF = GetStringCSF((wchar_t *)(aGuiLeave), 0,(const char *)(g_Str_File_GOptions_CPP), 547); /*0x4f1910*/
+      StringCSF = GetStringCSF((char *)(aGuiLeave), 0,(const char *)(g_Str_File_GOptions_CPP), 547); /*0x4f1910*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
       dword_A8EE7C = 2; /*0x4f192c*/
       v7 = GetDlgItem(hDlg, 1810); /*0x4f1938*/
@@ -255,14 +255,14 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         else
         {
           dword_A8EE7C = 3; /*0x4f19e5*/
-          v12 = GetStringCSF((wchar_t *)(g_Str_GUI_Observe), 0,(const char *)(g_Str_File_GOptions_CPP), 586); /*0x4f19ef*/
+          v12 = GetStringCSF((char *)(g_Str_GUI_Observe), 0,(const char *)(g_Str_File_GOptions_CPP), 586); /*0x4f19ef*/
           SendMessageA(v7, 0x4B2u, 0, (LPARAM)v12); /*0x4f19fd*/
           dword_A8EE80 = 4; /*0x4f19ff*/
         }
       }
       else
       {
-        v9 = GetStringCSF((wchar_t *)(aGuiRestart), 0,(const char *)(g_Str_File_GOptions_CPP), 558); /*0x4f195c*/
+        v9 = GetStringCSF((char *)(aGuiRestart), 0,(const char *)(g_Str_File_GOptions_CPP), 558); /*0x4f195c*/
         SendMessageA(v7, 0x4B2u, 0, (LPARAM)v9); /*0x4f1969*/
         dword_A8EE80 = 5; /*0x4f196b*/
       }
