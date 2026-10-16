@@ -714,7 +714,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
     v75[1] = v21 - v83; /*0x4bebeb*/
     v76 = (unsigned short *)(v20 - v78); /*0x4bebfb*/
     v77 = v21 - v79; /*0x4bebff*/
-    Vector::TwoDMagnitudeMath((int *)&v76); /*0x4bec07*/
+    Vector::TwoDMagnitudeMath((Vector *)&v76); /*0x4bec07*/
     v99 = v22; /*0x4bec10*/
     Vector::TwoDMagnitudeMath(v75); /*0x4bec17*/
     LOWORD(v24) = Math::RoundToInt((double)v23 / (double)v99 * (double)(v19 - v15)); /*0x4bec45*/
@@ -732,7 +732,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
     v79 = v21 - v79; /*0x4bec9f*/
     Vector::TwoDMagnitudeMath(&v78); /*0x4beca3*/
     v100 = v26; /*0x4becac*/
-    Vector::TwoDMagnitudeMath((int *)&v76); /*0x4becb3*/
+    Vector::TwoDMagnitudeMath((Vector *)&v76); /*0x4becb3*/
     LOWORD(v28) = Math::RoundToInt((double)v27 / (double)v100 * (double)(v19 - v15)); /*0x4bece1*/
     v29 = abs32(v28); /*0x4bece9*/
     if ( v15 <= v19 ) /*0x4beced*/

@@ -209,7 +209,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
   {
     if ( CommandClass::executeAction(aP1 + 147, &a2) ) /*0x7245a4*/
       goto LABEL_22; /*0x7245ab*/
-    result = CommandClass::BinarySearchAction((char **)v4, (unsigned int *)&a2); /*0x7245b8*/
+    result = CommandClass::BinarySearchAction((CommandClass *)v4, (unsigned int *)&a2); /*0x7245b8*/
     if ( result ) /*0x7245bf*/
     {
       v4->uniqueId = result; /*0x7245c1*/

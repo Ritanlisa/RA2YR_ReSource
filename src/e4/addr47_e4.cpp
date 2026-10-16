@@ -1237,7 +1237,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
   int v30; // [esp+8h] [ebp-24h]
           v30 = v14 + *((unsigned int *)dword_87E8A4 + 10) - v9; /*0x47f373*/
   int SubFileMixFileClass; // [esp+38h] [ebp+Ch]
-          SubFileMixFileClass = MixFileClass::GetSubFile((char **)dword_89E760, a3); /*0x47f38d*/
+          SubFileMixFileClass = MixFileClass::GetSubFile((MixFileClass *)dword_89E760, a3); /*0x47f38d*/
           result = (unsigned short *)StreamClass::ReadAndSeek((int)dword_87E8A4, v14, v12 - dword_886FA4); /*0x47f397*/
   unsigned int *v16; // edx
           v16 = dword_87E8A4; /*0x47f3a5*/

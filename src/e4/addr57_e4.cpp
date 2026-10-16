@@ -937,7 +937,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
     goto LABEL_37; /*0x57b672*/
   }
   if ( (uint8_t)CellClass::IsTerrainType(v14) && (uint8_t)Map_Helper(v29->u32_294, v15) /*0x57b774*/
-    || (v28 = v29->u32_294, v28 >= dword_ABAD28) && v28 < dword_ABAD28 + 42 && CellLand::IsBuildable((int)v14) )
+    || (v28 = v29->u32_294, v28 >= dword_ABAD28) && v28 < dword_ABAD28 + 42 && CellLand::IsBuildable((CellLand *)v14) )
   {
   LABEL_58:
     *aP4 = 0; /*0x57b77d*/

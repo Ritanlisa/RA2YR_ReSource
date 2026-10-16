@@ -933,7 +933,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
           v110 = v64[1]; /*0x6b36f2*/
           v66 = v64[2]; /*0x6b36fb*/
           v67 = v64[3]; /*0x6b36fe*/
-          if ( CellClass::DetermineTileType((int)v63) ) /*0x6b3701*/
+          if ( CellClass::DetermineTileType((CellClass *)v63) ) /*0x6b3701*/
           {
             v68 = ((CellClass *)((int)v63))->GetScreenRect(v114); /*0x6b3718*/
             if ( v66 <= 0 || v67 <= 0 ) /*0x6b3727*/

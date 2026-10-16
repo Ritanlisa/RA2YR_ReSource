@@ -747,7 +747,7 @@ LABEL_60:
         return 0;
       return (AbstractClass * *)DeployScriptActionPlane(v79, v80);
     case 0x51:
-      return globalHelper_0E01C0((int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return globalHelper_0E01C0((int)a5, (int)v9, (int)a5, (int)a8);
     case 0x52:
       int v18 = 0;
       if ( *(int *)&((unsigned char *)&stru_89E138)[89240] <= 0 )

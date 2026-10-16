@@ -229,7 +229,7 @@ bool CaptureManagerClass::CanCapture(unsigned int *a2, void *a2_1)
     if ( v4 != (*(int (**)(int))(*(unsigned int *)v3 + 60))(v3) /*0x471cfe*/
       && !*(unsigned char *)((*(int (**)(unsigned int *))(*a2 + 132))(a2) + 3381)
       && (!a2[185] || (*(int (**)(unsigned int *))(*a2 + 44))(a2) != 1)
-      && !BuildingClass::IsBeingRepairedOrCaptured((int)a2)
+      && !BuildingClass::IsBeingRepairedOrCaptured((BuildingClass *)a2)
       && !a2[179]
       && !(*(unsigned __int8 (**)(unsigned int *))(*a2 + 352))(a2) )
     {

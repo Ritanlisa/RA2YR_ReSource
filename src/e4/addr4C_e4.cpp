@@ -1036,7 +1036,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v21 = v19[1] - v12; /*0x4cf171*/
   (*((unsigned int *)&(a4))) = v20 - v11; /*0x4cf173*/
   v61 = v21; /*0x4cf17b*/
-  Vector::TwoDMagnitudeMath((int *)&a4); /*0x4cf17f*/
+  Vector::TwoDMagnitudeMath((Vector *)&a4); /*0x4cf17f*/
   v23 = (int)v22; /*0x4cf184*/
   v56 = v22; /*0x4cf18c*/
   if ( !v55 || !(*(int (__stdcall **)(int))(*(unsigned int *)v55 + 32))(v55) ) /*0x4cf197*/
@@ -1058,7 +1058,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     v31 = v29[1] - a5; /*0x4cf1fc*/
     (*((unsigned int *)&(a4))) = v30 - v24; /*0x4cf1fe*/
     v61 = v31; /*0x4cf206*/
-    Vector::TwoDMagnitudeMath((int *)&a4); /*0x4cf20a*/
+    Vector::TwoDMagnitudeMath((Vector *)&a4); /*0x4cf20a*/
     if ( v32 > 768 /*0x4cf248*/
       || ((*((unsigned short *)&(v58))) = 0x2000,
           (*((unsigned short *)&(a4))) = v28 - *(unsigned short *)ProgressTimer::GetValue((unsigned short *)*v6 + 452, &a4),
