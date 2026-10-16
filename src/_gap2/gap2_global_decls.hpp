@@ -7,19 +7,33 @@
 #include <windows.h>
 #include "core/utility_ext.hpp"  // G42.55 closure (Count)
 #include "core/utility_ext.hpp"  // G42.55 closure (ReferenceCounted)
+// x49: e4 flat-carrier supply for the x45-banked types (gen_x49_gap2_fwds.py).
+// Carriers are the canonical reachable defs for this TU (classes.hpp cannot
+// enter: its flat defs collide with this TU's e4 carriers).  Global-scope
+// using-bridges service the corpus's unqualified global-scope vocabulary.
+#include "e4/classes/CampaignClass_e4.hpp"  // x49: was fwd (classes.hpp:8555 sole def)
+#include "e4/classes/Coord_e4.hpp"         // x49: was fwd (classes.hpp:9584 sole def)
+#include "e4/classes/String_e4.hpp"        // x49: was fwd (classes.hpp:39682 sole def)
+using gamemd::CampaignClass;  // x49: global-scope qualified-call vocabulary
+using gamemd::Coord;          // x49: Coord::To_Screen/Subtract family
+using gamemd::String;         // x49: String:: family + `String v` value uses
 
-// X45: fwd block owned by tools/csp_export/gen_x45_gap2_fwds.py (was: X25 bare fwds)
-// BANK rationale: sole defining header = csp_canon/classes.hpp; including it here
-// collides with core/utility_ext.hpp (gamemd::HashTable + gamemd::ReferenceCounted
-// defined in both -> C2011).  All banked uses are pointer-form (incomplete type ok).
-class CampaignClass;    // x45 BANK: classes.hpp:8555
-class LineTrail;        // x45 BANK: classes.hpp:30821
-class AudioController;  // x45 BANK: classes.hpp:7038
-class Coord;            // x45 BANK: classes.hpp:9584
-class rc_ptr_base;      // x45 BANK: classes.hpp:49078
-class VectorClass;      // x45 BANK: core/vector.hpp def is template<class T> (C2955 on
-                        //   bare `VectorClass *` member use); plain-class def only in
-                        //   colliding classes.hpp:44541 -- same blocker as above
+
+// x49: fwd block owned by tools/csp_export/gen_x49_gap2_fwds.py (x45 successor;
+// was: X25 bare fwds -> x45 bank).  x49 adjudication = x49_closure.json (gap2 TU
+// include closure, 49 headers) + e4 flat carriers:
+//   INCLUDE  CampaignClass/Coord/String <- e4 carrier + global using-bridge
+//   KEEP    AudioController (completeness flows from object.hpp:37 via TU
+//           closure; decls-level pointer members still need the fwd name)
+//   BANK    LineTrail/rc_ptr_base/RandomStruct (pointer-form uses only; sole
+//           full def = classes.hpp, which cannot enter this TU: its flat defs
+//           collide with this TU's ~30 e4 carriers), VectorClass (template-vs-
+//           bare dual vocabulary, C2955 x30 measured in x45 build 1).
+class LineTrail;        // x49 BANK (pointer uses only)
+class AudioController;  // x49: fwd kept; complete def via object.hpp in TU closure
+class rc_ptr_base;      // x49 BANK (pointer uses only)
+class VectorClass;      // x49 BANK: core/vector.hpp template vs classes.hpp flat
+                        //   (C2955 dual vocabulary, x45 build-1 evidence)
 
 // ---- IDA atom typedefs (this TU standalone) ----
 #ifndef G22_GAP2_IDA_ATOMS
@@ -31,7 +45,7 @@ typedef unsigned char u_char;
 
 // ---- forward declarations for signature types ----
 namespace ra2 { namespace game { class ProgressScreenClass; } }
-namespace gamemd { using ::ra2::game::ProgressScreenClass; }
+// x49: bridge retired -- gamemd::ProgressScreenClass natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::ProgressScreenClass; })
 namespace ra2 { namespace game { class AbstractClass; } }
 namespace ra2 { namespace game { class BlowStraw; } }
 namespace ra2 { namespace game { class CCINIClass; } }
@@ -51,11 +65,11 @@ namespace ra2 { namespace game { class Straw; } }
 namespace ra2 { namespace game { class Tactical; } }
 namespace ra2 { namespace game { class TechnoClass; } }
 namespace ra2 { namespace game { class WDTState; } }
-namespace gamemd { using ::ra2::game::AbstractClass; }
-namespace gamemd { using ::ra2::game::BlowStraw; }
+// x49: bridge retired -- gamemd::AbstractClass natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::AbstractClass; })
+// x49: bridge retired -- gamemd::BlowStraw natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::BlowStraw; })
 namespace gamemd { class CCINIClass; }  // G57w8: native fwd (ini_class.hpp defines gamemd::CCINIClass later; ra2::game bridge double-declared C2888)
-namespace gamemd { using ::ra2::game::DynamicVector; }
-namespace gamemd { using ::ra2::game::FootClass; }
+// x49: bridge retired -- gamemd::DynamicVector natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::DynamicVector; })
+// x49: bridge retired -- gamemd::FootClass natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::FootClass; })
 // G57w8: using ::ra2::game::HashTable removed -- utility_ext native gamemd::HashTable already in scope (C2874)
 namespace gamemd { class INIClass; }  // G57w8: native fwd (ini_class.hpp defines gamemd::INIClass later; ra2::game bridge double-declared C2888)
 namespace gamemd { class InfantryClass; }  // G57w10: fwd (using-bridge removed; native def elsewhere)
@@ -64,27 +78,26 @@ namespace gamemd { class TechnoClass; }  // G57w10: fwd (using-bridge removed; n
 namespace gamemd { class ObjectClass; }  // G57w10: fwd (using-bridge removed; native def elsewhere)
 // G57w10: using ::ra2::game::InfantryClass removed -- native gamemd::InfantryClass definition collides (C2874)
 // G57w10: using ::ra2::game::MapClass removed -- native gamemd::MapClass definition collides (C2874)
-namespace gamemd { using ::ra2::game::RadarClass; }
+// x49: bridge retired -- gamemd::RadarClass natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::RadarClass; })
 // G57w8: using ::ra2::game::ReferenceCounted removed -- utility_ext native gamemd::ReferenceCounted already in scope (C2874)
-namespace gamemd { using ::ra2::game::ScoreScreen; }
-namespace gamemd { using ::ra2::game::ScriptClass; }
-namespace gamemd { using ::ra2::game::Selection_WorldDominationTour; }
-namespace gamemd { using ::ra2::game::SessionClass; }
-namespace gamemd { using ::ra2::game::Straw; }
-namespace gamemd { using ::ra2::game::Tactical; }
+// x49: bridge retired -- gamemd::ScoreScreen natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::ScoreScreen; })
+// x49: bridge retired -- gamemd::ScriptClass natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::ScriptClass; })
+// x49: bridge retired -- gamemd::Selection_WorldDominationTour natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::Selection_WorldDominationTour; })
+// x49: bridge retired -- gamemd::SessionClass natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::SessionClass; })
+// x49: bridge retired -- gamemd::Straw natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::Straw; })
+// x49: bridge retired -- gamemd::Tactical natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::Tactical; })
 // G57w10: using ::ra2::game::TechnoClass removed -- native gamemd::TechnoClass definition collides (C2874)
-namespace gamemd { using ::ra2::game::WDTState; }
+// x49: bridge retired -- gamemd::WDTState natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::WDTState; })
 
 namespace ra2 { namespace game { class ObjectClass; } }
 namespace ra2 { namespace game { class BuildingTypeClass; } }
 // G57w10: using ::ra2::game::ObjectClass removed -- native gamemd::ObjectClass definition collides (C2874)
-namespace gamemd { using ::ra2::game::BuildingTypeClass; }
+// x49: bridge retired -- gamemd::BuildingTypeClass natively supplied by the e4 carrier chain (was: namespace gamemd { using ::ra2::game::BuildingTypeClass; })
 
-// x45 BANK: sole defining header = csp_canon/classes.hpp (C2011 blocker, see block 1)
-struct RandomStruct;  // x45 BANK: classes.hpp:36893 (load-bearing: 1 ptr use in gap2_global_defs.cpp)
+// x49 BANK: RandomStruct pointer-form use only (sole full def classes.hpp)
 #include <unknwn.h>  // x45: IUnknown <- Windows COM base (was bare fwd)
 namespace ra2 { namespace game { class ObjectClass; } }
-struct String;  // x45 BANK: classes.hpp:39682 (load-bearing: 49 ptr uses in gap2_global_defs.cpp)
+// x49: String fwd replaced by e4 carrier include + global using-bridge (block 1)
 // x45 DELETE: ILocomotion/DynamicVectorClass_uint/exception (stale, 0 uses);
 //   Block/Destination/ExceptionInfo/FileName/Source/Src/String1 (g22 emitter
 //   false positives -- parameter names, not types).  Evidence: fwd_replacement_ledger.json

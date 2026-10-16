@@ -109,7 +109,9 @@ EXTERN_TYPE_NAMES = {'GUID', '_GUID', 'LARGE_INTEGER', 'ULARGE_INTEGER', 'VARIAN
                      'HDC', 'HBITMAP', 'HRESULT', 'DWORD', 'WORD', 'BYTE',
                      'BOOL', 'UINT', 'LONG', 'ULONG', 'SHORT', 'USHORT',
                      'CHAR', 'WCHAR', 'TCHAR', 'PVOID', 'BOOLEAN', 'FARPROC',
-                     'ATOM', 'COLORREF', 'LRESULT', 'WPARAM', 'LPARAM'}
+                     'ATOM', 'COLORREF', 'LRESULT', 'WPARAM', 'LPARAM',
+                     # rpcndr.h lowercase typedef (x49: C2371 vs windows.h chain)
+                     'byte'}
 
 # Win32 text macros that would expand inside member/method names and wreck the
 # declaration (CreateDialog -> CreateDialogA extraction etc.)
@@ -914,6 +916,18 @@ for cc in emis_order:
     emitted += 1
 lines.append('} // namespace gamemd')
 (OUT / 'classes.hpp').write_text('\n'.join(lines), encoding='utf-8')
+# x49 one-definition convergence: generator-owned post-pass so a regen
+# reproduces the GAMEMD_DEF_* guards + CRT-typedef fwd drops.
+try:
+    from gen_x49_universe_guards import (apply_classes_guards,
+                                         apply_canon_extern_types)
+    _x49log = []
+    apply_classes_guards(path=OUT / 'classes.hpp', log=_x49log)
+    apply_canon_extern_types(path=OUT / 'classes.hpp', log=_x49log)
+    for _l in _x49log:
+        print('[x49-regen]', _l)
+except ImportError:  # standalone tool absence must not break the regen
+    pass
 print('classes emitted:', emitted)
 Path(ROOT / 'anchors/canon_member_names.json').write_text(
     json.dumps(NAME_MAP, ensure_ascii=False), encoding='utf-8')
