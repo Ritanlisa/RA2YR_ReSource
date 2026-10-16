@@ -1102,7 +1102,7 @@ AbstractClass * * UpdateProjectileTrails()
         }
         while ( v19 < dword_B04A70 ); /*0x6593c6*/
       }
-      operator delete((void *)(Block)); /*0x6593cd*/
+      operator delete((Block)); /*0x6593cd*/
     }
     goto LABEL_35; /*0x6593cd*/
   }

@@ -366,7 +366,7 @@ int ThemeManager_Update(int a1, int a2, int a3)
             {
               LinkedList::Init((unsigned int **)i); /*0x7524f9*/
               *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x752502*/
-              operator delete((void *)((void *)i)); /*0x752509*/
+              operator delete(((void *)i)); /*0x752509*/
             }
             if ( dword_B1D4C4 ) /*0x752529*/
             {
@@ -477,7 +477,7 @@ void ThemeClass_Update()
       v11 = v3->nextArrayIndex; /*0x7528bd*/
     if ( v9 != (unsigned char *)-16 ) /*0x7528c7*/
       v10 = v3->abstractFlags; /*0x7528cc*/
-    operator delete((void *)(v3)); /*0x7528d1*/
+    operator delete((v3)); /*0x7528d1*/
     if ( v7 ) /*0x7528db*/
     {
       *(unsigned int *)(v7 + 80) = 2; /*0x7528e1*/
@@ -522,7 +522,7 @@ void ThemeQueue_ClearPlaylist(int a1)
       if ( (void *)i == dword_B1D4B8 ) /*0x752a75*/
         dword_B1D4B8 = 0; /*0x752a77*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x752a85*/
-      operator delete((void *)((void *)i)); /*0x752a8c*/
+      operator delete(((void *)i)); /*0x752a8c*/
     }
   }
 }
@@ -745,7 +745,7 @@ int E4Recv_7531A0::EVA_LoadINI()
         }
         while ( v3 < g_InfantrySelectState ); /*0x75322b*/
       }
-      operator delete((void *)(v2)); /*0x75322e*/
+      operator delete((v2)); /*0x75322e*/
     }
   }
   return result; /*0x753241*/

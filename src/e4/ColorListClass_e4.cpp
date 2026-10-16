@@ -91,14 +91,14 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
-    operator delete((void *)(v5)); /*0x488f37*/
+    operator delete((v5)); /*0x488f37*/
     v4->__pad_004 = 0; /*0x488f3f*/
   }
   v4[13] = 0; /*0x488f44*/
   v4->u32_8 = 0; /*0x488f47*/
   ((ListClass *)Block)->Destruct(); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
-    operator delete((void *)(Block)); /*0x488f57*/
+    operator delete((Block)); /*0x488f57*/
   return Block->tail_0; /*0x488f61*/
 }
 } // namespace gamemd

@@ -54,17 +54,17 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
     if ( a3 ) /*0x538b56*/
     {
       this->DetailMinFrameRateMovie = a3; /*0x538b58*/
-      return (unsigned int *)(&this->DetailMinFrameRateNormal); /*0x538b5e*/
+      return &this->DetailMinFrameRateNormal; /*0x538b5e*/
     }
     this->DetailMinFrameRateMovie = operator new(4 * a2); /*0x538b6d*/
     (this->u8_D) = 1; /*0x538b70*/
   }
-  return (unsigned int *)(&this->DetailMinFrameRateNormal); /*0x538b5d*/
+  return &this->DetailMinFrameRateNormal; /*0x538b5d*/
 }
 } // namespace gamemd
 // 0x665650 site-form Constructor supply (W20L4 T2; forwards to ctor def below)
 namespace gamemd {
-int RulesClass::Constructor(void *aP1) { return (int)(void *)(new (aP1) RulesClass()); }
+int RulesClass::Constructor(void *aP1) { return (int)(new (aP1) RulesClass()); }
 }
 // 0x665650
 namespace gamemd {  // G42.18c ns repair
@@ -418,7 +418,7 @@ void RulesClass::readMaximums()
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x679fa9*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x679fb3*/
   {
-    operator delete((void *)(DetailMinFrameRateMovie)); /*0x679fb9*/
+    operator delete((DetailMinFrameRateMovie)); /*0x679fb9*/
     this->DetailMinFrameRateMovie = 0; /*0x679fc1*/
   }
   (this->u8_D) = 0; /*0x679fc4*/
@@ -435,7 +435,7 @@ void RulesClass::readInfantryTypes()
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x679fd9*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x679fe3*/
   {
-    operator delete((void *)(DetailMinFrameRateMovie)); /*0x679fe9*/
+    operator delete((DetailMinFrameRateMovie)); /*0x679fe9*/
     this->DetailMinFrameRateMovie = 0; /*0x679ff1*/
   }
   (this->u8_D) = 0; /*0x679ff4*/
@@ -452,7 +452,7 @@ void RulesClass::readCountries()
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67a009*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x67a013*/
   {
-    operator delete((void *)(DetailMinFrameRateMovie)); /*0x67a019*/
+    operator delete((DetailMinFrameRateMovie)); /*0x67a019*/
     this->DetailMinFrameRateMovie = 0; /*0x67a021*/
   }
   (this->u8_D) = 0; /*0x67a024*/
@@ -469,7 +469,7 @@ void RulesClass::readVehicleTypes()
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67a069*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x67a073*/
   {
-    operator delete((void *)(DetailMinFrameRateMovie)); /*0x67a079*/
+    operator delete((DetailMinFrameRateMovie)); /*0x67a079*/
     this->DetailMinFrameRateMovie = 0; /*0x67a081*/
   }
   (this->u8_D) = 0; /*0x67a084*/
@@ -706,7 +706,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 20) = v9; /*0x67bee4*/
     if ( !v11 && v20 ) /*0x67bef1*/
     {
-      operator delete((void *)(v10)); /*0x67bef8*/
+      operator delete((v10)); /*0x67bef8*/
       return (void *)a1; /*0x67bf0b*/
     }
   }

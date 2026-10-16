@@ -134,7 +134,7 @@ int Vector::Clear(void *a1)
   int result; // eax
   (*((unsigned char *)&(result))) = this->m_8; /*0x43ae53*/
   if ( (unsigned char)result ) /*0x43ae58*/
-    operator delete((void *)(*(void **)this)); /*0x43ae5d*/
+    operator delete((*(void **)this)); /*0x43ae5d*/
   *(unsigned int *)this = 0; /*0x43ae65*/
   this->__pad_010 = 0; /*0x43ae6b*/
   this->m_8 = 0; /*0x43ae72*/
@@ -195,7 +195,7 @@ void Vector::ReallocDynamic(int a2, void *a2_1)
     v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x4d2e82*/
     *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
   }
-  operator delete((void *)(*(void **)v3)); /*0x4d2e9b*/
+  operator delete((*(void **)v3)); /*0x4d2e9b*/
   int v7 = a2 + v3->vtable3; // eax /*0x4d2ea6*/
   *(unsigned int *)v3 = (unsigned int)(v3); /*0x4d2ea8*/
   v3->vtable3 = v7; /*0x4d2eaa*/
@@ -251,7 +251,7 @@ char Vector::Grow()
     v4 = 10; /*0x7aeee9*/
   }
   void *v5; // ebp
-  v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
+  v5 = __2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( this->m_8 ) /*0x7aef13*/
   {

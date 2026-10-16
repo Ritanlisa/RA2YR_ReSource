@@ -142,7 +142,7 @@ void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
     if ( v3 ) /*0x691c73*/
     {
       ((AbstractTypeClass *)(v3))->Constructor(Source); /*0x691c7c*/
-      v4->q09C = 0; /*0x691c81*/
+      v4->Coord_9C = 0; /*0x691c81*/
       v4->q0A0 = 0; /*0x691c8b*/
       *v4 = (int)&vt_ScriptTypeClass; /*0x691c95*/
       v4->u32_4 = (int)&vt_ScriptTypeClass; /*0x691c9b*/
@@ -1186,7 +1186,7 @@ void TeamTypeClass_28::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x6f21b9*/
   if ( v2 && (((unsigned char *)&(a1_1->q00C))[1]) ) /*0x6f21c0*/
   {
-    operator delete((void *)((void *)(v2 - 4))); /*0x6f21d1*/
+    operator delete(((void *)(v2 - 4))); /*0x6f21d1*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x6f21d9*/
   }
   (((unsigned char *)&(a1_1->q00C))[1]) = 0; /*0x6f21dc*/
@@ -1337,13 +1337,13 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a
   *(unsigned int *)Block->tail_0 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x6f2686*/
   if ( v3 && (Block->u32_D) ) /*0x6f2690*/
   {
-    operator delete((void *)((void *)(v3 - 4))); /*0x6f26a3*/
+    operator delete(((void *)(v3 - 4))); /*0x6f26a3*/
     *&Block->__pad_004 = 0; /*0x6f26ab*/
   }
   (Block->u32_D) = 0; /*0x6f26b6*/
   Block->u32_8 = 0; /*0x6f26bc*/
   if ( (a2 & 1) != 0 ) /*0x6f26c3*/
-    operator delete((void *)(Block)); /*0x6f26c6*/
+    operator delete((Block)); /*0x6f26c6*/
   return Block->tail_0; /*0x6f26d0*/
 }
 } // namespace gamemd

@@ -477,7 +477,7 @@ char Options::EnsureCapacity(void *a1)
   if ( v5 >= v3 ) /*0x6248cd*/
     return 0; /*0x6248d0*/
   void *v6; // eax
-  v6 = (void *)__2_YAPAXI_Z(24 * v5); /*0x6248dd*/
+  v6 = __2_YAPAXI_Z(24 * v5); /*0x6248dd*/
   void *v7 = this->field_8; // esi /*0x6248e2*/
   void *v8; // [esp+8h] [ebp-4h]
   v8 = v6; /*0x6248ea*/
@@ -509,7 +509,7 @@ int Options::GrowBuffer()
     v4 = 10; /*0x6253d9*/
   }
   void *v5; // ebp
-  v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x6253ec*/
+  v5 = __2_YAPAXI_Z(4 * v4); /*0x6253ec*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
   if ( this->field_8 ) /*0x625403*/
   {
@@ -541,7 +541,7 @@ int Options::ReadOptionValue()
   if ( v5 >= v3 ) /*0x6254fd*/
     return 0; /*0x625500*/
   void *v6; // eax
-  v6 = (void *)__2_YAPAXI_Z(20 * v5); /*0x62550d*/
+  v6 = __2_YAPAXI_Z(20 * v5); /*0x62550d*/
   void *v7 = this->field_8; // esi /*0x625512*/
   void *v8; // [esp+8h] [ebp-4h]
   v8 = v6; /*0x62551a*/
@@ -583,7 +583,7 @@ AbstractClass * * Options::DestroyComposite(void * Block, char a2)
       *v5 = *v4; /*0x6255a1*/
     else
       *&Block->u32_38 = *v4; /*0x6255a7*/
-    operator delete((void *)(v4)); /*0x6255ab*/
+    operator delete((v4)); /*0x6255ab*/
     LABEL_12:
     ; /*0x6255b3*/
   }
@@ -591,10 +591,10 @@ AbstractClass * * Options::DestroyComposite(void * Block, char a2)
   if ( v6 ) /*0x6255c0*/
   {
     DeleteAndZero::Alt(*&Block->u32_40); /*0x6255c4*/
-    operator delete((void *)(v6)); /*0x6255ca*/
+    operator delete((v6)); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
-    operator delete((void *)(Block)); /*0x6255dc*/
+    operator delete((Block)); /*0x6255dc*/
   return Block; /*0x6255e6*/
 }
 }
@@ -706,7 +706,7 @@ int Options::SaveOptionValue()
   if ( 2 * v2 < 10 ) /*0x625a3b*/
     v4 = 10; /*0x625a3d*/
   void *v5; // edx
-  v5 = (void *)__2_YAPAXI_Z(20 * v4); /*0x625a4f*/
+  v5 = __2_YAPAXI_Z(20 * v4); /*0x625a4f*/
   memset(v5, 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
   void *v7; // [esp+4h] [ebp-4h]
   v7 = v5; /*0x625a64*/

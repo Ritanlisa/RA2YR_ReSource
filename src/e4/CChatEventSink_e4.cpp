@@ -421,7 +421,7 @@ int CChatEventSink::GrowBuffer()
   if ( v5 >= CChatEventSink_field_0x04 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
   void *v6; // eax
-  v6 = (void *)__2_YAPAXI_Z(268 * v5); /*0x7ad974*/
+  v6 = __2_YAPAXI_Z(268 * v5); /*0x7ad974*/
   const void *CChatEventSink_field_0x08; // esi
   CChatEventSink_field_0x08 = (const void *)this->u32_8; /*0x7ad979*/
   int v8; // [esp+8h] [ebp-4h]
@@ -449,7 +449,7 @@ int CChatEventSink::ProcessChatEvent()
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
     v4 = 10; /*0x7aed5d*/
   void *v5; // edx
-  v5 = (void *)__2_YAPAXI_Z(248 * v4); /*0x7aed72*/
+  v5 = __2_YAPAXI_Z(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
   int v7; // [esp+4h] [ebp-4h]
   v7 = (int)v5; /*0x7aed87*/
@@ -482,7 +482,7 @@ ObjectClass * CChatEventSink::DeleteAndZero(char a2, void *a2_1)
 {
   DeleteAndZero(); /*0x7ad353*/
   if ( (a2 & 1) != 0 ) /*0x7ad35d*/
-    operator delete((void *)(this)); /*0x7ad360*/
+    operator delete((this)); /*0x7ad360*/
   return (gamemd::ObjectClass *)((void **)this); /*0x7ad36a*/
 }
 } // namespace gamemd
@@ -524,7 +524,7 @@ char CChatEventSink::EnsureCapacity(int a2)
     if ( v8 < CChatEventSink_field_0x04 ) /*0x7aee3d*/
     {
       void *v9; // eax
-      v9 = (void *)__2_YAPAXI_Z(4 * v8); /*0x7aee47*/
+      v9 = __2_YAPAXI_Z(4 * v8); /*0x7aee47*/
       const void *CChatEventSink_field_0x08; // esi
       CChatEventSink_field_0x08 = (const void *)this->u32_8; /*0x7aee4c*/
       int v11; // [esp+Ch] [ebp+4h]

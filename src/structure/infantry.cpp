@@ -1634,29 +1634,29 @@ int InfantryTypeClass::DTOR()
   }
   operator delete((void *)(this->u32_901))); /*0x523a47*/
   this->RecordTable = 0; /*0x523a51*/
-  v3 = (void *)this->VoiceComment_Items; /*0x523a57*/
+  v3 = this->VoiceComment_Items; /*0x523a57*/
   this->u32_E88 = 0; /*0x523a5f*/
   if ( v3 && this->VoiceComment_FlagByte ) /*0x523a6b*/
   {
-    operator delete((void *)(v3)); /*0x523a74*/
+    operator delete((v3)); /*0x523a74*/
     this->VoiceComment_Items = 0; /*0x523a7c*/
   }
   this->VoiceComment_FlagByte = 0; /*0x523a82*/
   this->VoiceComment_Capacity = 0; /*0x523a88*/
-  v4 = (void *)this->DeathAnims_Items; /*0x523a8e*/
+  v4 = this->DeathAnims_Items; /*0x523a8e*/
   this->u32_E6C = 0; /*0x523a94*/
   if ( v4 && this->DeathAnims_FlagByte ) /*0x523aa2*/
   {
-    operator delete((void *)(v4)); /*0x523aab*/
+    operator delete((v4)); /*0x523aab*/
     this->DeathAnims_Items = 0; /*0x523ab3*/
   }
   this->DeathAnims_FlagByte = 0; /*0x523ab9*/
   this->DeathAnims_Capacity = 0; /*0x523abf*/
-  v5 = (void *)this->DeadBodies_Items; /*0x523ac5*/
+  v5 = this->DeadBodies_Items; /*0x523ac5*/
   this->VHPScan = 0; /*0x523acb*/
   if ( v5 && this->DeadBodies_FlagByte ) /*0x523ad9*/
   {
-    operator delete((void *)(v5)); /*0x523ae2*/
+    operator delete((v5)); /*0x523ae2*/
     this->DeadBodies_Items = 0; /*0x523aea*/
   }
   this->DeadBodies_FlagByte = 0; /*0x523af2*/
@@ -2340,7 +2340,7 @@ int InfantryClass::CalcMoveTarget()
     result = v86.u32_4; /*0x51b902*/
     *(unsigned int *)v86.__pad_000 = 0; /*0x51b906*/
     if ( v86.u32_4 && (((unsigned char *)&(v86.q00C))[1]) ) /*0x51b91f*/
-      operator delete((void *)((void *)v86.u32_4)); /*0x51b926*/
+      operator delete(((void *)v86.u32_4)); /*0x51b926*/
   }
   else
   {

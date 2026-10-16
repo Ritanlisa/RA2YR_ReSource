@@ -105,7 +105,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
       v9 = (unsigned int *)(((unsigned int)(this->u32_20)) * i++); /*0x538829*/
       *(unsigned int *)&v6[v8] = *v9; /*0x53882e*/
     }
-    operator delete((void *)(*(void **)this)); /*0x538842*/
+    operator delete((*(void **)this)); /*0x538842*/
     v10 = this->u32_20; /*0x538847*/
     *(unsigned int *)this = (unsigned int)(v6); /*0x53884f*/
     this->u32_20 = v5 + v10; /*0x538851*/

@@ -470,7 +470,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   v3[6].referenceCount = (int)&vt_VectorClass; /*0x773174*/
   if ( NeedsSaveOrLink && (((unsigned char *)&(v3[7].vfptr1))[1]) ) /*0x773182*/
   {
-    operator delete((void *)(NeedsSaveOrLink)); /*0x77318b*/
+    operator delete((NeedsSaveOrLink)); /*0x77318b*/
     v3[6].NeedsSaveOrLink = 0; /*0x773193*/
   }
   (((unsigned char *)&(v3[7].vfptr1))[1]) = 0; /*0x773199*/
@@ -480,7 +480,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x7731ab) */
   if ( vtable1 && (((unsigned char *)&(v3[6].vfptr3))[1]) ) /*0x7731b9*/
   {
-    operator delete((void *)(vtable1)); /*0x7731c2*/
+    operator delete((vtable1)); /*0x7731c2*/
     v3[6].vfptr1 = 0; /*0x7731ca*/
   }
   (((unsigned char *)&(v3[6].vfptr3))[1]) = 0; /*0x7731d0*/
@@ -490,14 +490,14 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x7731e2) */
   if ( vtable3 && (((unsigned char *)&(v3[5].abstractFlags))[1]) ) /*0x7731f0*/
   {
-    operator delete((void *)(vtable3)); /*0x7731f9*/
+    operator delete((vtable3)); /*0x7731f9*/
     v3[5].vfptr3 = 0; /*0x773201*/
   }
   (((unsigned char *)&(v3[5].abstractFlags))[1]) = 0; /*0x773209*/
   v3[5].uniqueId = 0; /*0x77320f*/
   ((AbstractTypeClass *)v3)->Dtor(); /*0x773215*/
   if ( ((uint8_t)Block & 1) != 0 ) /*0x77321f*/
-    operator delete((void *)(v3)); /*0x773222*/
+    operator delete((v3)); /*0x773222*/
   return (WeaponTypeClass *)v3; /*0x77322c*/
 }
 }  // G42.18c ns repair
@@ -571,7 +571,7 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
   }
   v13 = INIClass::SetString((char *)this, a2, a3, Source); /*0x475d39*/
   if ( Block && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x475d4f*/
-    operator delete((void *)(Block)); /*0x475d52*/
+    operator delete((Block)); /*0x475d52*/
   return v13; /*0x475d5c*/
 }
 }  // G42.18c ns repair

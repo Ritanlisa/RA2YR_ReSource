@@ -168,7 +168,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
   (Block->u32_D) = 0; /*0x76bc3c*/
   Block->Capacity = 0; /*0x76bc42*/
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
-    operator delete((void *)(Block)); /*0x76bc4c*/
+    operator delete((Block)); /*0x76bc4c*/
   return Block->tail_0; /*0x76bc56*/
 }
 } // namespace gamemd

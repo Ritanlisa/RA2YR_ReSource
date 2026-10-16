@@ -800,7 +800,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
       v17 = v39; /*0x5a4799*/
     }
   }
-  operator delete((void *)(v5)); /*0x5a4ab1*/
+  operator delete((v5)); /*0x5a4ab1*/
   if ( v7 ) /*0x5a4abb*/
     Scalar::Dtor((void **)v7, 1); /*0x5a4ac1*/
   return v42; /*0x5a4aca*/
@@ -1227,7 +1227,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
   if ( Block ) /*0x5a6903*/
   {
     if ( v43 ) /*0x5a690b*/
-      operator delete((void *)(Block)); /*0x5a690e*/
+      operator delete((Block)); /*0x5a690e*/
   }
 }
 }
@@ -2499,7 +2499,7 @@ int MapSeed_ScheduleBuildings(int * a1)
         PlaceMapSeedClassBuildings(v11, &v39[3], -1, -1); /*0x5a8e37*/
       LABEL_59:
       if ( Block ) /*0x5a8e42*/
-        operator delete((void *)(Block)); /*0x5a8e45*/
+        operator delete((Block)); /*0x5a8e45*/
       goto LABEL_61; /*0x5a8e45*/
     }
     v28 = (char *)Block; /*0x5a8d12*/
@@ -3269,7 +3269,7 @@ unsigned int * InitializePathData()
   dword_ABE4A4 = 0;
   dword_ABE49C = 3;
   void *v52; // eax
-  v52 = (void *)operator new(0x18u);
+  v52 = operator new(0x18u);
   aP2.vfptr = v52;
   if ( v52 )
   {
@@ -3293,7 +3293,7 @@ unsigned int * InitializePathData()
   dword_ABE4B0 = 0;
   dword_ABE4A8 = 3;
   void *v54; // eax
-  v54 = (void *)operator new(0x18u);
+  v54 = operator new(0x18u);
   aP2.vfptr = v54;
   if ( v54 )
   {
@@ -3317,7 +3317,7 @@ unsigned int * InitializePathData()
   dword_ABE4BC = 0;
   dword_ABE4B4 = 3;
   void *v56; // eax
-  v56 = (void *)operator new(0x18u);
+  v56 = operator new(0x18u);
   aP2.vfptr = v56;
   if ( v56 )
   {
@@ -3342,7 +3342,7 @@ unsigned int * InitializePathData()
   dword_ABE4C8 = 0;
   dword_ABE4C0 = 4;
   void *v58; // eax
-  v58 = (void *)operator new(0x20u);
+  v58 = operator new(0x20u);
   aP2.vfptr = v58;
   if ( v58 )
   {
@@ -3371,7 +3371,7 @@ unsigned int * InitializePathData()
   dword_ABE4D4 = 0;
   dword_ABE4CC = 3;
   void *v60; // eax
-  v60 = (void *)operator new(0x18u);
+  v60 = operator new(0x18u);
   aP1.vfptr = v60;
   if ( v60 )
   {
@@ -3398,7 +3398,7 @@ unsigned int * InitializePathData()
   dword_ABE4E0 = 0;
   dword_ABE4D8 = 3;
   void *v63; // eax
-  v63 = (void *)operator new(0x18u);
+  v63 = operator new(0x18u);
   aP1.vfptr = v63;
   if ( v63 )
   {
@@ -3425,7 +3425,7 @@ unsigned int * InitializePathData()
   dword_ABE4EC = 0;
   dword_ABE4E4 = 3;
   void *v66; // eax
-  v66 = (void *)operator new(0x18u);
+  v66 = operator new(0x18u);
   aP1.vfptr = v66;
   if ( v66 )
   {
@@ -3452,7 +3452,7 @@ unsigned int * InitializePathData()
   dword_ABE4F8 = 0;
   dword_ABE4F0 = 3;
   void *v69; // eax
-  v69 = (void *)operator new(0x18u);
+  v69 = operator new(0x18u);
   aP1.vfptr = v69;
   if ( v69 )
   {
@@ -3477,7 +3477,7 @@ unsigned int * InitializePathData()
   dword_ABE504 = 0;
   dword_ABE4FC = 4;
   void *v71; // eax
-  v71 = (void *)operator new(0x20u);
+  v71 = operator new(0x20u);
   aP1.vfptr = v71;
   if ( v71 )
   {
@@ -3507,7 +3507,7 @@ unsigned int * InitializePathData()
   dword_ABE510 = 0;
   dword_ABE508 = 3;
   void *v74; // eax
-  v74 = (void *)operator new(0x18u);
+  v74 = operator new(0x18u);
   aP1.vfptr = v74;
   if ( v74 )
   {
@@ -3532,7 +3532,7 @@ unsigned int * InitializePathData()
   dword_ABE51C = 0;
   dword_ABE514 = 2;
   void *v76; // eax
-  v76 = (void *)operator new(0x10u);
+  v76 = operator new(0x10u);
   aP1.vfptr = v76;
   if ( v76 )
   {
@@ -3554,7 +3554,7 @@ unsigned int * InitializePathData()
   dword_ABE528 = 0;
   dword_ABE520 = 2;
   void *v78; // eax
-  v78 = (void *)operator new(0x10u);
+  v78 = operator new(0x10u);
   aP1.vfptr = v78;
   if ( v78 )
   {
@@ -3576,7 +3576,7 @@ unsigned int * InitializePathData()
   dword_ABE534 = 0;
   dword_ABE52C = 2;
   void *v80; // eax
-  v80 = (void *)operator new(0x10u);
+  v80 = operator new(0x10u);
   aP1.vfptr = v80;
   if ( v80 )
   {
@@ -3598,7 +3598,7 @@ unsigned int * InitializePathData()
   dword_ABE540 = 0;
   dword_ABE538 = 2;
   void *v82; // eax
-  v82 = (void *)operator new(0x10u);
+  v82 = operator new(0x10u);
   aP1.vfptr = v82;
   if ( v82 )
   {
@@ -3620,7 +3620,7 @@ unsigned int * InitializePathData()
   dword_ABE54C = 0;
   dword_ABE544 = 2;
   void *v84; // eax
-  v84 = (void *)operator new(0x10u);
+  v84 = operator new(0x10u);
   aP1.vfptr = v84;
   if ( v84 )
   {
@@ -3642,7 +3642,7 @@ unsigned int * InitializePathData()
   dword_ABE558 = 0;
   dword_ABE550 = 2;
   void *v86; // eax
-  v86 = (void *)operator new(0x10u);
+  v86 = operator new(0x10u);
   aP1.vfptr = v86;
   if ( v86 )
   {
@@ -3664,7 +3664,7 @@ unsigned int * InitializePathData()
   dword_ABE564 = 0;
   dword_ABE55C = 2;
   void *v88; // eax
-  v88 = (void *)operator new(0x10u);
+  v88 = operator new(0x10u);
   aP1.vfptr = v88;
   if ( v88 )
   {
@@ -3685,7 +3685,7 @@ unsigned int * InitializePathData()
   dword_ABE570 = 0;
   dword_ABE568 = (unsigned int)(IUnknown *)1;
   void *v90; // eax
-  v90 = (void *)operator new(8u);
+  v90 = operator new(8u);
   aP1.vfptr = v90;
   if ( v90 )
   {
@@ -3703,7 +3703,7 @@ unsigned int * InitializePathData()
   dword_ABE57C = 0;
   dword_ABE574 = (unsigned int)(IUnknown *)1;
   void *v92; // eax
-  v92 = (void *)operator new(8u);
+  v92 = operator new(8u);
   aP1.vfptr = v92;
   if ( v92 )
   {
@@ -3721,7 +3721,7 @@ unsigned int * InitializePathData()
   dword_ABE588 = 0;
   dword_ABE580 = (unsigned int)(IUnknown *)1;
   void *v94; // eax
-  v94 = (void *)operator new(8u);
+  v94 = operator new(8u);
   aP1.vfptr = v94;
   if ( v94 )
   {
@@ -3739,7 +3739,7 @@ unsigned int * InitializePathData()
   dword_ABE594 = 0;
   dword_ABE58C = (unsigned int)(IUnknown *)1;
   void *v96; // eax
-  v96 = (void *)operator new(8u);
+  v96 = operator new(8u);
   aP1.vfptr = v96;
   if ( v96 )
   {
@@ -3757,7 +3757,7 @@ unsigned int * InitializePathData()
   dword_ABE5A0 = 0;
   dword_ABE598 = (unsigned int)(IUnknown *)1;
   void *v98; // eax
-  v98 = (void *)operator new(8u);
+  v98 = operator new(8u);
   aP1.vfptr = v98;
   if ( v98 )
   {
@@ -3775,7 +3775,7 @@ unsigned int * InitializePathData()
   dword_ABE5AC = 0;
   dword_ABE5A4 = (unsigned int)(IUnknown *)1;
   void *v100; // eax
-  v100 = (void *)operator new(8u);
+  v100 = operator new(8u);
   aP1.vfptr = v100;
   if ( v100 )
   {
@@ -3794,7 +3794,7 @@ unsigned int * InitializePathData()
   dword_ABE5B8 = 0;
   dword_ABE5B0 = 2;
   void *v102; // eax
-  v102 = (void *)operator new(0x10u);
+  v102 = operator new(0x10u);
   aP1.vfptr = v102;
   if ( v102 )
   {
@@ -3818,7 +3818,7 @@ unsigned int * InitializePathData()
   dword_ABE5C4 = 0;
   dword_ABE5BC = 2;
   void *v104; // eax
-  v104 = (void *)operator new(0x10u);
+  v104 = operator new(0x10u);
   aP1.vfptr = v104;
   if ( v104 )
   {
@@ -3842,7 +3842,7 @@ unsigned int * InitializePathData()
   dword_ABE5DC = 0;
   dword_ABE5D4 = 2;
   void *v106; // eax
-  v106 = (void *)operator new(0x10u);
+  v106 = operator new(0x10u);
   aP1.vfptr = v106;
   if ( v106 )
   {
@@ -3864,7 +3864,7 @@ unsigned int * InitializePathData()
   dword_ABE5E8 = 0;
   dword_ABE5E0 = 2;
   void *v108; // eax
-  v108 = (void *)operator new(0x10u);
+  v108 = operator new(0x10u);
   aP1.vfptr = v108;
   if ( v108 )
   {
@@ -3886,7 +3886,7 @@ unsigned int * InitializePathData()
   dword_ABE5F4 = 0;
   dword_ABE5EC = 2;
   void *v110; // eax
-  v110 = (void *)operator new(0x10u);
+  v110 = operator new(0x10u);
   aP1.vfptr = v110;
   if ( v110 )
   {
@@ -3908,7 +3908,7 @@ unsigned int * InitializePathData()
   dword_ABE600 = 0;
   dword_ABE5F8 = 2;
   void *v112; // eax
-  v112 = (void *)operator new(0x10u);
+  v112 = operator new(0x10u);
   aP1.vfptr = v112;
   if ( v112 )
   {
@@ -4553,7 +4553,7 @@ ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 {
 
   this->AbstractClass = (void *)*a2;
-  this->vfptr = (void *)aP2; /*0x5a992e*/
+  this->vfptr = aP2; /*0x5a992e*/
   return this; /*0x5a9931*/
 
 }
@@ -4630,7 +4630,7 @@ void sub_5AC190()
     void *v2; // eax
     v2 = (void *)*(v0 - 3); /*0x5ac19c*/
     v0 -= 3; /*0x5ac19f*/
-    operator delete((void *)(v2)); /*0x5ac1a3*/
+    operator delete((v2)); /*0x5ac1a3*/
     --v1; /*0x5ac1ab*/
     *v0 = 0; /*0x5ac1ac*/
   }
@@ -4816,7 +4816,7 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
   v3->vfptr = (void *)result; /*0x5ae55d*/
   void *v5; // [esp+8h] [ebp-8h]
   v3->v5 = v5; /*0x5ae55f*/
-  v3->vfptr2 = (void *)aP2; /*0x5ae562*/
+  v3->vfptr2 = aP2; /*0x5ae562*/
   return result; /*0x5ae565*/
 }
 } // namespace gamemd

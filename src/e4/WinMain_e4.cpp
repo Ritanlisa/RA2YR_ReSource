@@ -230,24 +230,24 @@ int WinMain::Constructor_VectorClass_Wstring_()
       v3->u32_188 = &vt_VectorClass; /*0x69a226*/
       if ( v4 && v3->q195 ) /*0x69a234*/
       {
-        operator delete((void *)(v4)); /*0x69a23d*/
+        operator delete((v4)); /*0x69a23d*/
         v3->u32_18C = 0; /*0x69a245*/
       }
       v3->q195 = 0; /*0x69a24c*/
       v3->u32_190 = 0; /*0x69a252*/
-      operator delete((void *)((void *)v3)); /*0x69a258*/
+      operator delete(((void *)v3)); /*0x69a258*/
     }
   }
   (*(void (**)(WinMain *))(this->u32_690 + 12))this->q1696 + 938); /*0x69a277*/
   int j; // esi
   for ( j = 0; j < this->u32_2924; ++j ) /*0x69a284*/
-    operator delete((void *)(*(void **)(this->u32_2918 + 4 * j))); /*0x69a290*/
+    operator delete((*(void **)(this->u32_2918 + 4 * j))); /*0x69a290*/
   (*(void (**)(WinMain *))(this->u32_2914 + 12))this->q9779 + 3287); /*0x69a2af*/
   int k; // esi
   for ( k = 0; k < this->u32_290C; ++k ) /*0x69a2bc*/
   {
     if ( *(unsigned int *)(this->u32_2900 + 4 * k) ) /*0x69a2c4*/
-      operator delete((void *)(*(void **)(this->u32_2900 + 4 * k))); /*0x69a2cc*/
+      operator delete((*(void **)(this->u32_2900 + 4 * k))); /*0x69a2cc*/
   }
   return (int)((*(int (**)(WinMain *))(this->u32_28FC + 12))this->q9779 + 3191)); /*0x69a2ee*/
 }

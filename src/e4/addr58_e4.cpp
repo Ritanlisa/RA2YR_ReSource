@@ -270,7 +270,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   {
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x583c31) */
     if ( Items && v18.IsAllocated ) /*0x583c41*/
-      operator delete((void *)(Items)); /*0x583c44*/
+      operator delete((Items)); /*0x583c44*/
     return 0; /*0x583c4f*/
   }
   else
@@ -280,7 +280,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
     if ( Items ) /*0x583c10*/
     {
       if ( v18.IsAllocated ) /*0x583c18*/
-        operator delete((void *)(Items)); /*0x583c1b*/
+        operator delete((Items)); /*0x583c1b*/
     }
     return (gamemd::AbstractClass **)(v16); /*0x583c23*/
   }
@@ -737,7 +737,7 @@ void unknown::ddtor(void *a1)
   a1->m_10 = 0; /*0x588ce9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1->IsAllocated))[1]) ) /*0x588cf0*/
   {
-    operator delete((void *)(v2)); /*0x588cf6*/
+    operator delete((v2)); /*0x588cf6*/
     *(unsigned int *)&a1->m_1[3] = 0; /*0x588cfe*/
   }
   (((unsigned char *)&(a1->m_C))[1]) = 0; /*0x588d01*/
@@ -1111,13 +1111,13 @@ AbstractClass * * BuildRandomMapTiles(ObjectClass *self)
           {
             if ( v27->u8_35 ) /*0x58ee68*/
             {
-              operator delete((void *)(v29)); /*0x58ee70*/
+              operator delete((v29)); /*0x58ee70*/
               v27->u32_2C = 0; /*0x58ee78*/
             }
           }
           v27->u8_35 = 0; /*0x58ee7c*/
           v27->u32_30 = 0; /*0x58ee80*/
-          operator delete((void *)((void *)v27)); /*0x58ee83*/
+          operator delete(((void *)v27)); /*0x58ee83*/
         }
         goto LABEL_32; /*0x58ee8b*/
       }
@@ -1136,7 +1136,7 @@ AbstractClass * * sub_58EF10()
   unsigned short v17[2]; // [esp+10h] [ebp-4h] BYREF
 
   v16 = 1; /*0x58ef1e*/
-  ((const void *)((int)&DataGlobal_87F7E8))->SetBounds(0); /*0x58ef23*/
+  ((const void*)(&DataGlobal_87F7E8))->SetBounds(0); /*0x58ef23*/
   ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x58ef2d*/
   int i; // eax
   for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x58ef41*/
@@ -1176,7 +1176,7 @@ AbstractClass * * sub_58EF10()
       if ( v6 ) /*0x58efb0*/
       {
         TileNode::Cleanup(*(TileNode **)(g_MissionQueueFrame.briefing[339] + 4 * v5)); /*0x58efb4*/
-        operator delete((void *)(v6)); /*0x58efba*/
+        operator delete((v6)); /*0x58efba*/
       }
       --v5; /*0x58efc2*/
     }
@@ -1905,13 +1905,13 @@ void sub_58C100()
       {
         if ( *((unsigned char *)v2 + 53) ) /*0x58c192*/
         {
-          operator delete((void *)(v4)); /*0x58c198*/
+          operator delete((v4)); /*0x58c198*/
           v2[11] = 0; /*0x58c1a0*/
         }
       }
       *((unsigned char *)v2 + 53) = 0; /*0x58c1a4*/
       v2[12] = 0; /*0x58c1a7*/
-      operator delete((void *)(v2)); /*0x58c1aa*/
+      operator delete((v2)); /*0x58c1aa*/
     }
   }
 }

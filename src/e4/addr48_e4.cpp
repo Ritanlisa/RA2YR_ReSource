@@ -2125,7 +2125,7 @@ unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
       this->Items = (void *)a3; /*0x48b098*/
       return &this->vtable0; /*0x48b09e*/
     }
-    this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x48b0ad*/
+    this->Items = __2_YAPAXI_Z(4 * a2); /*0x48b0ad*/
     this->IsAllocated = 1; /*0x48b0b0*/
   }
   return &this->vtable0; /*0x48b09d*/
@@ -2199,7 +2199,7 @@ ObjectClass * E4Recv_48BB00::sub_48BB00(void * Block, char a2)
 {
   sub_48B1F0((CommBufferClass *)Block); /*0x48bb03*/
   if ( (a2 & 1) != 0 ) /*0x48bb0d*/
-    operator delete((void *)(Block)); /*0x48bb10*/
+    operator delete((Block)); /*0x48bb10*/
   return Block; /*0x48bb1a*/
 }
 } // namespace gamemd

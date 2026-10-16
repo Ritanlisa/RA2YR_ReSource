@@ -1420,7 +1420,7 @@ AbstractClass * * sub_5549A0()
   {
     do /*0x554a4a*/
     {
-      operator delete((void *)(*(void **)g_MissionQueueFrame.random[142])); /*0x554a11*/
+      operator delete((*(void **)g_MissionQueueFrame.random[142])); /*0x554a11*/
       v5 = g_MissionQueueFrame.random[145] == 0; /*0x554a1f*/
       if ( g_MissionQueueFrame.random[145] > 0 ) /*0x554a21*/
       {
@@ -1601,7 +1601,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2, v
       while ( v7 ); /*0x76a63f*/
     }
     if ( (a2 & 1) != 0 ) /*0x76a645*/
-      operator delete((void *)(v4)); /*0x76a648*/
+      operator delete((v4)); /*0x76a648*/
     return v4; /*0x76a650*/
   }
   else
@@ -1609,7 +1609,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2, v
     *this = (Map_WorldDominationTour)&vt_rc_ptr; /*0x76a65a*/
     ComPtr::Release(); /*0x76a660*/
     if ( (a2 & 1) != 0 ) /*0x76a668*/
-      operator delete((void *)(this)); /*0x76a66b*/
+      operator delete((this)); /*0x76a66b*/
     return (ComPtr *)this; /*0x76a673*/
   }
 }
@@ -1834,12 +1834,12 @@ void sub_58CE90()
       v4[10] = &vt_VectorClass; /*0x58cf46*/
       if ( v6 && *((unsigned char *)v4 + 53) ) /*0x58cf51*/
       {
-        operator delete((void *)(v6)); /*0x58cf57*/
+        operator delete((v6)); /*0x58cf57*/
         v4[11] = 0; /*0x58cf5f*/
       }
       *((unsigned char *)v4 + 53) = 0; /*0x58cf63*/
       v4[12] = 0; /*0x58cf66*/
-      operator delete((void *)(v4)); /*0x58cf69*/
+      operator delete((v4)); /*0x58cf69*/
     }
   }
   g_MissionQueueFrame.localVariables[164] = 0; /*0x58cf79*/
@@ -2035,7 +2035,7 @@ void sub_660B00()
           ++v3; /*0x660b52*/
         }
       }
-      operator delete((void *)(v2)); /*0x660b65*/
+      operator delete((v2)); /*0x660b65*/
     }
   }
 }
@@ -2246,14 +2246,14 @@ void sub_72D780()
       if ( *(unsigned int *)&DataGlobal_B0FB1C ) /*0x72d7a4*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FB1C); /*0x72d7a8*/
-        operator delete((void *)(v1)); /*0x72d7ae*/
+        operator delete((v1)); /*0x72d7ae*/
       }
       DataGlobal_B0FC7D = 0; /*0x72d7b6*/
     }
     *(unsigned int *)&DataGlobal_B0FB1C = 0; /*0x72d7c2*/
     if ( *(unsigned int *)&DataGlobal_B0FBB0 ) /*0x72d7ca*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FBB0)); /*0x72d7cd*/
+      operator delete((*(void **)&DataGlobal_B0FBB0)); /*0x72d7cd*/
       *(unsigned int *)&DataGlobal_B0FBB0 = 0; /*0x72d7d5*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FBB4 ) /*0x72d7e3*/
@@ -2590,7 +2590,7 @@ VectorClass_flat * Map_WorldDominationTour_20::QueryInterface(unsigned int * Blo
   (Block->u32_D) = 0; /*0x76a5ec*/
   Block->u32_8 = 0; /*0x76a5f2*/
   if ( (a2 & 1) != 0 ) /*0x76a5f9*/
-    operator delete((void *)(Block)); /*0x76a5fc*/
+    operator delete((Block)); /*0x76a5fc*/
   return Block->tail_0; /*0x76a606*/
 }
 } // namespace gamemd
@@ -2610,15 +2610,15 @@ char sub_770C10(Map *aP0, int a1, int a2, void ** a3)
 
   void *v3 = *&aP0->Width; // eax
   *(unsigned int *)aP0->__pad_000 = &vt_VectorClass;
-  if ( v3 && (((unsigned char *)&(aP0->Name))[1]) )
+  if ( v3 && (aP0->u8_D) )
   {
-    operator delete((void *)(v3)); /*0x76a6e8*/
+    operator delete((v3)); /*0x76a6e8*/
     *&aP0->Width = 0;
   }
-  (((unsigned char *)&(aP0->Name))[1]) = 0;
+  (aP0->u8_D) = 0;
   aP0->Height = 0;
   if ( (a2 & 1) != 0 ) /*0x76a708*/
-    operator delete((void *)(aP0)); /*0x76a70b*/
+    operator delete((aP0)); /*0x76a70b*/
   return aP0->__pad_000;
 }
 } // namespace gamemd

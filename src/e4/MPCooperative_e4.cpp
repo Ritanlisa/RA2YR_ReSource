@@ -168,7 +168,7 @@ int MPCooperative::WriteCoopSaveINI()
   if ( !LOBYTE(this->vtable1) ) /*0x49be4d*/
     return 1; /*0x49be4d*/
   char *v2; // ebp
-  v2 = (char *)(&this->u32_1C); /*0x49be58*/
+  v2 = &this->u32_1C; /*0x49be58*/
   if ( !this->u32_1C ) /*0x49be55*/
     return 1; /*0x49c0c5*/
   CCFileClass::Construct(&v19, g_Str_File_coopsave_ini); /*0x49be70*/
@@ -308,7 +308,7 @@ int MPCooperative::ReadCoopSaveINI()
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
   char *v2; // ebx
-  v2 = (char *)(&this->u32_1C); /*0x49d137*/
+  v2 = &this->u32_1C; /*0x49d137*/
   if ( !this->u32_1C ) /*0x49d134*/
     return 0; /*0x49d13c*/
   unsigned int v16[22]; // [esp+Ch] [ebp-128h] BYREF
@@ -468,10 +468,10 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   this->q33C = 0;
   this->ptr_50 = 0;
   this->__pad_004)[0] = 0; /*0x5c1555*/
-  (*((unsigned char *)&(this->q048))) = 0; /*0x5c1559*/
-  (((unsigned char *)&(this->q048))[1]) = 0; /*0x5c155d*/
+  (this->q048) = 0; /*0x5c1559*/
+  (this->u8_49) = 0; /*0x5c155d*/
   this->u32_4C = 0; /*0x5c1561*/
-  (*((unsigned char *)&(this->q340))) = 1;
+  (this->q340) = 1;
   int i; // ebp
   for ( i = *&this->q334 - 1; i >= 0; --i ) /*0x5c1572*/
   {
@@ -551,7 +551,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   if ( MultiplayerGameMode_field_0x08 ) /*0x5c1652*/
   {
     Array::Cleanup(MultiplayerGameMode_field_0x08); /*0x5c1656*/
-    operator delete((void *)(MultiplayerGameMode_field_0x08)); /*0x5c165c*/
+    operator delete((MultiplayerGameMode_field_0x08)); /*0x5c165c*/
     v3[2].MultiplayerGameMode_field_0x08 = 0; /*0x5c1664*/
   }
   for ( i = v3[29].MultiplayerGameMode_field_0x08 - 1; i >= 0; --i ) /*0x5c166f*/
@@ -561,14 +561,14 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     if ( v7 ) /*0x5c167c*/
     {
       Array::Cleanup(*(Array **)(MultiplayerGameMode_field_0x18 + 4 * i)); /*0x5c1680*/
-      operator delete((void *)(v7)); /*0x5c1686*/
+      operator delete((v7)); /*0x5c1686*/
     }
   }
   (*(void (**)(int *, int))(v3[28].MultiplayerGameMode_field_0x14 + 12))( /*0x5c169f*/
     &v3[28].MultiplayerGameMode_field_0x14,
     a2);
   for ( j = v3[3].MultiplayerGameMode_field_0x14 - 1; j >= 0; --j ) /*0x5c16a6*/
-    operator delete((void *)(*(void **)(v3[3].MultiplayerGameMode_field_0x08 + 4 * j))); /*0x5c16af*/
+    operator delete((*(void **)(v3[3].MultiplayerGameMode_field_0x08 + 4 * j))); /*0x5c16af*/
   (*(void (**)(int *))(v3[3].MultiplayerGameMode_field_0x04 + 12))(&v3[3].MultiplayerGameMode_field_0x04); /*0x5c16c3*/
   (*(void (**)(int *))(v3[3].MultiplayerGameMode_field_0x04 + 8))(&v3[3].MultiplayerGameMode_field_0x04); /*0x5c16ce*/
   v9 = (void (***)(unsigned int, int))v3[2].MultiplayerGameMode_field_0x18; /*0x5c16d1*/
@@ -582,7 +582,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   v3[28].MultiplayerGameMode_field_0x14 = (int)&vt_VectorClass; /*0x5c16e9*/
   if ( v10 && (((unsigned char *)&(v3[29].MultiplayerGameMode_field_0x04))[1]) ) /*0x5c16f1*/
   {
-    operator delete((void *)(v10)); /*0x5c16f7*/
+    operator delete((v10)); /*0x5c16f7*/
     v3[28].MultiplayerGameMode_field_0x18 = 0; /*0x5c16ff*/
   }
   (((unsigned char *)&(v3[29].MultiplayerGameMode_field_0x04))[1]) = 0; /*0x5c1702*/
@@ -596,7 +596,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     *p_MultiplayerGameMode_field_0x14 = (int)&vt_VectorClass; /*0x5c171b*/
     if ( v13 && p_MultiplayerGameMode_field_0x14->IsAllocated ) /*0x5c1723*/
     {
-      operator delete((void *)(v13)); /*0x5c1729*/
+      operator delete((v13)); /*0x5c1729*/
       p_MultiplayerGameMode_field_0x14->Items = 0; /*0x5c1731*/
     }
     --v12; /*0x5c1734*/
@@ -613,7 +613,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     *p_MultiplayerGameMode_field_0x18 = (int)&vt_VectorClass; /*0x5c1750*/
     if ( v16 && p_MultiplayerGameMode_field_0x18->IsAllocated ) /*0x5c1758*/
     {
-      operator delete((void *)(v16)); /*0x5c175e*/
+      operator delete((v16)); /*0x5c175e*/
       p_MultiplayerGameMode_field_0x18->Items = 0; /*0x5c1766*/
     }
     --v15; /*0x5c1769*/
@@ -625,7 +625,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   v3[3].MultiplayerGameMode_field_0x04 = (int)&vt_VectorClass; /*0x5c1775*/
   if ( v17 && (((unsigned char *)&(v3[3].MultiplayerGameMode_field_0x10))[1]) ) /*0x5c1781*/
   {
-    operator delete((void *)(v17)); /*0x5c1787*/
+    operator delete((v17)); /*0x5c1787*/
     v3[3].MultiplayerGameMode_field_0x08 = 0; /*0x5c178f*/
   }
   (((unsigned char *)&(v3[3].MultiplayerGameMode_field_0x10))[1]) = 0; /*0x5c1794*/
@@ -1775,7 +1775,7 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
   }
   *(unsigned int *)v17 = &vt_VectorClass; /*0x5c308d*/
   if ( Block && v19 ) /*0x5c30a0*/
-    operator delete((void *)(Block)); /*0x5c30a3*/
+    operator delete((Block)); /*0x5c30a3*/
   return 1; /*0x5c30ad*/
 }
 }
@@ -2817,7 +2817,7 @@ int MPCooperative_QueryInterface(int a2, char a3)
   v4 = v3; /*0x5c4f11*/
   MPCooperative_Cleanup(v6, a2); /*0x5c4f13*/
   if ( ((uint8_t)a2 & 1) != 0 ) /*0x5c4f1d*/
-    operator delete((void *)(v4)); /*0x5c4f20*/
+    operator delete((v4)); /*0x5c4f20*/
   return v4; /*0x5c4f2a*/
 }
 }
@@ -2843,7 +2843,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
     this->Capacity = v3; /*0x5c4f5d*/
     if ( v3 ) /*0x5c4f60*/
     {
-      v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x5c4f66*/
+      v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x5c4f66*/
       this->Items = v4; /*0x5c4f70*/
       if ( v4 ) /*0x5c4f73*/
       {
@@ -3168,13 +3168,13 @@ DynamicVector * MPCooperative::saveGameState(unsigned int * Block, char a2)
   *Block = &vt_VectorClass; /*0x5c4fc6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c4fd0*/
   {
-    operator delete((void *)(v3)); /*0x5c4fd8*/
+    operator delete((v3)); /*0x5c4fd8*/
     *(Block + 1) = 0; /*0x5c4fe0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5c4feb*/
   *(Block + 2) = 0; /*0x5c4ff1*/
   if ( (a2 & 1) != 0 ) /*0x5c4ff8*/
-    operator delete((void *)(Block)); /*0x5c4ffb*/
+    operator delete((Block)); /*0x5c4ffb*/
   return Block; /*0x5c5005*/
 }
 } // namespace gamemd
@@ -3188,7 +3188,7 @@ void MPCooperative::loadGameState()
   this->Items = 0; /*0x5c5019*/
   if ( v2 && this->IsAllocated ) /*0x5c5020*/
   {
-    operator delete((void *)(v2)); /*0x5c5026*/
+    operator delete((v2)); /*0x5c5026*/
     this->Items = 0; /*0x5c502e*/
   }
   this->IsAllocated = 0; /*0x5c5031*/
@@ -3226,7 +3226,7 @@ void MPCooperative::processPlayerInput()
   this->Items = 0; /*0x5c50d9*/
   if ( v2 && this->IsAllocated ) /*0x5c50e0*/
   {
-    operator delete((void *)(v2)); /*0x5c50e6*/
+    operator delete((v2)); /*0x5c50e6*/
     this->Items = 0; /*0x5c50ee*/
   }
   this->IsAllocated = 0; /*0x5c50f1*/
@@ -3597,13 +3597,13 @@ VectorClass_flat * MPCooperative::verifyGameIntegrity(unsigned int * Block, char
   *Block = &vt_VectorClass; /*0x5c5856*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c5860*/
   {
-    operator delete((void *)(v3)); /*0x5c5868*/
+    operator delete((v3)); /*0x5c5868*/
     *(Block + 1) = 0; /*0x5c5870*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5c587b*/
   *(Block + 2) = 0; /*0x5c5881*/
   if ( (a2 & 1) != 0 ) /*0x5c5888*/
-    operator delete((void *)(Block)); /*0x5c588b*/
+    operator delete((Block)); /*0x5c588b*/
   return Block; /*0x5c5895*/
 }
 } // namespace gamemd
@@ -3618,13 +3618,13 @@ VectorClass_flat * MPCooperative::processVote(unsigned int * Block, char a2)
   *Block = &vt_VectorClass; /*0x5c58a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c58b0*/
   {
-    operator delete((void *)(v3)); /*0x5c58b8*/
+    operator delete((v3)); /*0x5c58b8*/
     *(Block + 1) = 0; /*0x5c58c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5c58cb*/
   *(Block + 2) = 0; /*0x5c58d1*/
   if ( (a2 & 1) != 0 ) /*0x5c58d8*/
-    operator delete((void *)(Block)); /*0x5c58db*/
+    operator delete((Block)); /*0x5c58db*/
   return Block; /*0x5c58e5*/
 }
 } // namespace gamemd
@@ -3639,13 +3639,13 @@ DynamicVector * MPCooperative::tallyVotes(unsigned int * Block, char a2)
   *Block = &vt_VectorClass; /*0x5c5996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c59a0*/
   {
-    operator delete((void *)(v3)); /*0x5c59a8*/
+    operator delete((v3)); /*0x5c59a8*/
     *(Block + 1) = 0; /*0x5c59b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5c59bb*/
   *(Block + 2) = 0; /*0x5c59c1*/
   if ( (a2 & 1) != 0 ) /*0x5c59c8*/
-    operator delete((void *)(Block)); /*0x5c59cb*/
+    operator delete((Block)); /*0x5c59cb*/
   return Block; /*0x5c59d5*/
 }
 } // namespace gamemd
@@ -3667,7 +3667,7 @@ unsigned int * MPCooperative::applyVoteResult(int a2, int a3)
       this->Items = (void *)a3; /*0x5c5a08*/
       return &this->ClearAndFree2_ph; /*0x5c5a0e*/
     }
-    this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x5c5a1d*/
+    this->Items = __2_YAPAXI_Z(4 * a2); /*0x5c5a1d*/
     BYTE1(this->IsInitialized) = 1; /*0x5c5a20*/
   }
   return &this->ClearAndFree2_ph; /*0x5c5a0d*/

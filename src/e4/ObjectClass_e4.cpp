@@ -2405,7 +2405,7 @@ int ObjectClass::CreateInstance()
   ObjectClass::Dtor(); /*0x5f6dc3*/
   char v3; // [esp+8h] [ebp+4h]
   if ( (v3 & 1) != 0 ) /*0x5f6dcd*/
-    operator delete((void *)(this)); /*0x5f6dd0*/
+    operator delete((this)); /*0x5f6dd0*/
   return (int)this; /*0x5f6dda*/
 }
 } // namespace gamemd
@@ -2465,7 +2465,7 @@ unsigned int * ObjectClass::updateAnimation(char a2)
 {
   GadgetClass::Dtor(); /*0x6ac7a3*/
   if ( (a2 & 1) != 0 ) /*0x6ac7ad*/
-    operator delete((void *)(this)); /*0x6ac7b0*/
+    operator delete((this)); /*0x6ac7b0*/
   return this; /*0x6ac7ba*/
 }
 } // namespace gamemd
@@ -2599,7 +2599,7 @@ unsigned int * ObjectClass::loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsig
       (*(void (**)(unsigned int, HWND, int))(**(unsigned int **)&v22[4] + 4))( *(unsigned int *)&v22[4], (HWND)((HWND)((HWND)((HWND)(hWnd)))), 1); /*0x7a2e54*/
       return 0; /*0x7a2e60*/
     }
-    memset( (void *)(&v22[8]), 0, 0x6Cu); /*0x7a2ba1*/
+    memset( (&v22[8]), 0, 0x6Cu); /*0x7a2ba1*/
     v9 = ((String *)((String *)&stru_B76AC4))->GetOrEmpty_Alt(); /*0x7a2ba8*/
     strncpy( (char *)(&v22[44]), (const char *)(v9), 9u); /*0x7a2bb3*/
     (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 224))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (unsigned char *)(&v22[8])); /*0x7a2bc8*/
@@ -2696,7 +2696,7 @@ unsigned int * ObjectClass::loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsig
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_ParseState) < 5 ) /*0x7a2da6*/
       {
         LABEL_51:
-        j_DeleteAndZero( (void *)((ObjectClass *)v22)); /*0x7a2e46*/
+        j_DeleteAndZero( ((ObjectClass *)v22)); /*0x7a2e46*/
         goto LABEL_52; /*0x7a2e4a*/
       }
       ((DeleteAndZero *)&g_WOL_AuthObject)->Alt2(); /*0x7a2db1*/
@@ -2709,7 +2709,7 @@ unsigned int * ObjectClass::loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsig
                               0) )
       ((DynamicArray *)((DynamicArray *)&dword_B76980))->Remove(0); /*0x7a2ddf*/
       *(unsigned int *)g_WOL_ParseState = time(0); /*0x7a2deb*/
-      memset( (void *)(&v22[116]), 0, 0x6Cu); /*0x7a2dfe*/
+      memset( (&v22[116]), 0, 0x6Cu); /*0x7a2dfe*/
       strcpy( (char *)(&v22[152]), ((String *)((String *)&g_WOL_AuthObject))->GetOrEmpty()); /*0x7a2e31*/
       (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 96))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (unsigned char *)(&v22[116])); /*0x7a2e43*/
     }

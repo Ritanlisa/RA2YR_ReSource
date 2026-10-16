@@ -235,7 +235,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   if ( *(unsigned int *)to.sa_data == this->u32_3F2FC ) /*0x7b15ef*/
   {
     v13 = 3; /*0x7b15f1*/
-    v14 = (unsigned short *)(&this->u32_3F306); /*0x7b15f6*/
+    v14 = &this->u32_3F306; /*0x7b15f6*/
     v15 = &v27; /*0x7b15fc*/
     v16 = 1; /*0x7b1600*/
     do /*0x7b1602*/
@@ -263,7 +263,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
     (v18)->Assign(&a3, (int)&v27, 0); /*0x7b16d0*/
     v19 = *&this->u32_24; /*0x7b16d5*/
     v20 = this->u32_18; /*0x7b16d8*/
-    p_LocalNetwork = (int *)(&this->LocalNetwork); /*0x7b16db*/
+    p_LocalNetwork = &this->LocalNetwork; /*0x7b16db*/
     if ( v20 < v19 /*0x7b16fe*/
       || (*((unsigned char *)p_LocalNetwork + 13) || !v19)
       && (v22 = p_LocalNetwork[5], v22 > 0)
@@ -331,7 +331,7 @@ void * IPXInterfaceClass::bindSocket(void *a1)
   *(unsigned int *)a1 = (unsigned int)(&vt_WinsockInterfaceClass); /*0x7b1a20*/
   a1->u32_FC1A0 = 0; /*0x7b1a26*/
   unsigned char *v2; // eax
-  v2 = (unsigned char *)(a1 + 102); /*0x7b1a2c*/
+  v2 = &a1->u32_66; /*0x7b1a2c*/
   int v3 = 128; // edx /*0x7b1a2f*/
   do /*0x7b1a6f*/
   {
@@ -623,7 +623,7 @@ IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2, int a1, int a3, i
 {
   WinsockInterfaceClass::WinsockInterfaceClass(); /*0x7b1793*/
   if ( (a2 & 1) != 0 ) /*0x7b179d*/
-    operator delete((void *)(this)); /*0x7b17a0*/
+    operator delete((this)); /*0x7b17a0*/
   return this; /*0x7b17aa*/
 }
 } // namespace gamemd

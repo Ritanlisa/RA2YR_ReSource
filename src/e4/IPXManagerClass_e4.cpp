@@ -79,7 +79,7 @@ int IPXManagerClass::receivePacket(int a2)
   }
   else
   {
-    v4 = (gamemd::IPXManagerClass *)(&this->Active); /*0x54107f*/
+    v4 = &this->Active; /*0x54107f*/
     while ( v4->Socket != a2 ) /*0x541084*/
     {
       ++result; /*0x541086*/
@@ -146,7 +146,7 @@ IPXManagerClass * IPXManagerClass::QueryInterface(char * Block, char a2)
 {
   IPXManagerClass::processPacket((char *)Block); /*0x5430e3*/
   if ( (a2 & 1) != 0 ) /*0x5430ed*/
-    operator delete((void *)(Block)); /*0x5430f0*/
+    operator delete((Block)); /*0x5430f0*/
   return (gamemd::IPXManagerClass *)((char *)Block); /*0x5430fa*/
 }
 } // namespace gamemd

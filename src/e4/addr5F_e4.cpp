@@ -566,7 +566,7 @@ AbstractClass * * sub_5FDDF0()
   if ( Block ) /*0x5fdedd*/
   {
     if ( v11 ) /*0x5fdee3*/
-      operator delete((void *)(Block)); /*0x5fdee6*/
+      operator delete((Block)); /*0x5fdee6*/
   }
 }
 }
@@ -594,7 +594,7 @@ int BuildingTypeClass_LoadSHPs(int a1)
       {
         if ( (v5 || *(unsigned char *)(v4 + 567)) && *(unsigned int *)(v4 + 164) && *(unsigned char *)(v4 + 168) ) /*0x5fe737*/
         {
-          operator delete((void *)(*(void **)(v4 + 164))); /*0x5fe740*/
+          operator delete((*(void **)(v4 + 164))); /*0x5fe740*/
           *(unsigned int *)(v4 + 164) = 0; /*0x5fe748*/
           *(unsigned char *)(v4 + 168) = 0; /*0x5fe74e*/
         }
@@ -656,7 +656,7 @@ void sub_5FF390()
         }
         while ( v4 < dword_AC1688 ); /*0x5ff402*/
       }
-      operator delete((void *)(v2)); /*0x5ff405*/
+      operator delete((v2)); /*0x5ff405*/
     }
   }
 }

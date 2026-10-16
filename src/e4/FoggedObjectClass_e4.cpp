@@ -748,7 +748,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
         v16 = (char *)v14 + 8 * i++; /*0x4d2700*/
         v14[2 * i - 2] = *v16; /*0x4d2706*/
       }
-      operator delete((void *)(v14)); /*0x4d2721*/
+      operator delete((v14)); /*0x4d2721*/
       v14 = v14; /*0x4d2730*/
       dword_8B3CC8 += v13; /*0x4d2736*/
       dword_8B3CD0 = 0; /*0x4d273b*/
@@ -1082,7 +1082,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
   *(unsigned int *)a3->__pad_0 = &vt_VectorClass; /*0x4d2d66*/
   if ( v3 && (((unsigned char *)&(a3->m_C))[1]) ) /*0x4d2d70*/
   {
-    operator delete((void *)(v3)); /*0x4d2d78*/
+    operator delete((v3)); /*0x4d2d78*/
     *(unsigned int *)&a3->m_1[3] = 0; /*0x4d2d80*/
   }
   (((unsigned char *)&(a3->m_C))[1]) = 0; /*0x4d2d8b*/
@@ -1102,7 +1102,7 @@ void FoggedObjectClass_42::ClearBuffer(void *a1_1)
   a1_1->vfptr.uniqueId = 0; /*0x4e01f9*/
   if ( vtable1 && (((unsigned char *)&(a1_1->vfptr.vfptr3))[1]) ) /*0x4e0200*/
   {
-    operator delete((void *)(vtable1)); /*0x4e0206*/
+    operator delete((vtable1)); /*0x4e0206*/
     a1_1->vfptr.vfptr1 = 0; /*0x4e020e*/
   }
   (((unsigned char *)&(a1_1->vfptr.vfptr3))[1]) = 0; /*0x4e0211*/
@@ -1289,7 +1289,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4e0751*/
       if ( BYTE1(this->vtable3) ) /*0x4e075e*/
       {
-        __3_YAXPAX_Z((void *)this->vtable1); /*0x4e0769*/
+        __3_YAXPAX_Z(this->vtable1); /*0x4e0769*/
         this->vtable1 = 0; /*0x4e0771*/
       }
     }
@@ -1318,13 +1318,13 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, ch
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4e0ce6*/
   if ( v3 && (((unsigned char *)&(*&Block->__pad_004))[1]) ) /*0x4e0cf0*/
   {
-    operator delete((void *)(v3)); /*0x4e0cf8*/
+    operator delete((v3)); /*0x4e0cf8*/
     Block->Items = (unsigned int)(0); /*0x4e0d00*/
   }
   (((unsigned char *)&(*&Block->__pad_004))[1]) = 0; /*0x4e0d0b*/
   Block->Capacity = 0; /*0x4e0d11*/
   if ( (a2 & 1) != 0 ) /*0x4e0d18*/
-    operator delete((void *)(Block)); /*0x4e0d1b*/
+    operator delete((Block)); /*0x4e0d1b*/
   return Block->tail_0; /*0x4e0d25*/
 }
 } // namespace gamemd

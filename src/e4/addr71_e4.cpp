@@ -283,7 +283,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       if ( *(unsigned char *)(v4 + 168) ) /*0x71dcf4*/
       {
         if ( *(unsigned int *)(v4 + 164) ) /*0x71dd01*/
-          operator delete((void *)(*(void **)(v4 + 164))); /*0x71dd0c*/
+          operator delete((*(void **)(v4 + 164))); /*0x71dd0c*/
       }
       *(unsigned int *)(v4 + 164) = 0; /*0x71dd18*/
       *(unsigned char *)(v4 + 168) = 0; /*0x71dd23*/

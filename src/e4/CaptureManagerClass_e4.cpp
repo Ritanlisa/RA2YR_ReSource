@@ -1047,14 +1047,14 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   Block->controlNodes[0] = (int)&vt_VectorClass; /*0x472a2b*/
   if ( controlNodeCount && (Block->u8_101) ) /*0x472a36*/
   {
-    operator delete((void *)(controlNodeCount)); /*0x472a3e*/
+    operator delete((controlNodeCount)); /*0x472a3e*/
     Block->controlNodeCount = 0; /*0x472a46*/
   }
   (Block->u8_101) = 0; /*0x472a4f*/
   Block->controlNodeCapacity = 0; /*0x472a53*/
   ((AbstractClass *)Block)->DTOR(); /*0x472a5a*/
   if ( (a2 & 1) != 0 ) /*0x472a64*/
-    operator delete((void *)(Block)); /*0x472a67*/
+    operator delete((Block)); /*0x472a67*/
   return &Block->vfptr; /*0x472a71*/
 }
 } // namespace gamemd
@@ -1158,7 +1158,7 @@ void CaptureManagerClass::Destroy(void *a1)
 {
   if ( *(unsigned int *)&a1->m_1[3] && (((unsigned char *)&(a1->m_C))[1]) ) /*0x472c3d*/
   {
-    operator delete((void *)(*(void **)&a1->vtable2)); /*0x472c43*/
+    operator delete((*(void **)&a1->vtable2)); /*0x472c43*/
     *(unsigned int *)&a1->vtable2 = 0; /*0x472c4b*/
   }
   (((unsigned char *)&(a1->vtable4))[1]) = 0; /*0x472c4e*/
@@ -1258,13 +1258,13 @@ VectorClass_flat * CaptureManagerClass::Constructor_VectorClass_ControlNode___(u
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x473006*/
   if ( v3 && (Block->u32_D) ) /*0x473010*/
   {
-    operator delete((void *)(v3)); /*0x473018*/
+    operator delete((v3)); /*0x473018*/
     *&Block->u32_100 = 0; /*0x473020*/
   }
   (Block->u8_101) = 0; /*0x47302b*/
   *&Block->u32_100 = 0; /*0x473031*/
   if ( (a2 & 1) != 0 ) /*0x473038*/
-    operator delete((void *)(Block)); /*0x47303b*/
+    operator delete((Block)); /*0x47303b*/
   return Block->tail_0; /*0x473045*/
 }
 } // namespace gamemd
@@ -1278,13 +1278,13 @@ DynamicVector * CaptureManagerClass::QueryInterface(unsigned int * Block, char a
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x473056*/
   if ( v3 && (Block->u32_D) ) /*0x473060*/
   {
-    operator delete((void *)(v3)); /*0x473068*/
+    operator delete((v3)); /*0x473068*/
     *&Block->u32_100 = 0; /*0x473070*/
   }
   (Block->u8_101) = 0; /*0x47307b*/
   *&Block->u32_100 = 0; /*0x473081*/
   if ( (a2 & 1) != 0 ) /*0x473088*/
-    operator delete((void *)(Block)); /*0x47308b*/
+    operator delete((Block)); /*0x47308b*/
   return Block->tail_0; /*0x473095*/
 }
 } // namespace gamemd
@@ -1306,7 +1306,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
       this->vtable2 = (void *)a3; /*0x473168*/
       return &this->AbstractClass; /*0x47316e*/
     }
-    this->vtable2 = (void *)__2_YAPAXI_Z(4 * a2); /*0x47317d*/
+    this->vtable2 = __2_YAPAXI_Z(4 * a2); /*0x47317d*/
     BYTE1(this->IsAllocated) = 1; /*0x473180*/
   }
   return &this->AbstractClass; /*0x47316d*/

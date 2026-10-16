@@ -674,7 +674,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     v105 = 0; /*0x6b315c*/
     if ( Block && v104 ) /*0x6b3168*/
     {
-      operator delete((void *)(Block)); /*0x6b316b*/
+      operator delete((Block)); /*0x6b316b*/
       Block = 0; /*0x6b3173*/
     }
     v22 = 0; /*0x6b3177*/
@@ -900,7 +900,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   }
   v10 = (void *)(g_SlaveManagerPool);
   LABEL_110:
-  operator delete((void *)(v10)); /*0x6b362b*/
+  operator delete((v10)); /*0x6b362b*/
   g_SlaveManagerPool = 0; /*0x6b3649*/
   Cell::CreateCrater(v90, v7 - dword_886FA4, k, v93, 0); /*0x6b366a*/
   v61 = v79 - 1; /*0x6b3679*/
@@ -986,7 +986,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   }
   v101 = (void **)((gamemd::AbstractClass **)(&vt_VectorClass));
   if ( Block && v104 ) /*0x6b382d*/
-    operator delete((void *)(Block)); /*0x6b3830*/
+    operator delete((Block)); /*0x6b3830*/
   return (gamemd::AbstractClass **)(1); /*0x6b3838*/
 }
 }
@@ -1656,7 +1656,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   v24 = &vt_VectorClass; /*0x6b5c3c*/
   if ( Block && (((unsigned char *)&(v27))[1]) ) /*0x6b5c46*/
   {
-    operator delete((void *)(Block)); /*0x6b5c49*/
+    operator delete((Block)); /*0x6b5c49*/
     Block = 0; /*0x6b5c51*/
   }
   (((unsigned char *)&(v27))[1]) = 0; /*0x6b5c59*/
@@ -1665,7 +1665,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   if ( v31 ) /*0x6b5c67*/
   {
     if ( v33 ) /*0x6b5c6d*/
-      operator delete((void *)(v31)); /*0x6b5c70*/
+      operator delete((v31)); /*0x6b5c70*/
   }
   return 0; /*0x6b59e2*/
 }
@@ -1814,7 +1814,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   v25 = &vt_VectorClass; /*0x6b5f2c*/
   if ( Block && (((unsigned char *)&(v28))[1]) ) /*0x6b5f36*/
   {
-    operator delete((void *)(Block)); /*0x6b5f39*/
+    operator delete((Block)); /*0x6b5f39*/
     Block = 0; /*0x6b5f41*/
   }
   result = (int)v32; /*0x6b5f45*/
@@ -1824,7 +1824,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   if ( v32 ) /*0x6b5f57*/
   {
     if ( v34 ) /*0x6b5f5d*/
-      operator delete((void *)(v32)); /*0x6b5f60*/
+      operator delete((v32)); /*0x6b5f60*/
   }
   (*((unsigned char *)&(result))) = 0; /*0x6b5f6b*/
   return result; /*0x6b5cd2*/
@@ -3714,7 +3714,7 @@ LABEL_2:
     & 1));
     aP2.location[1] = 0;
     (*((unsigned char *)&(aP2.location[2]))) = 0;
-    ReadRegistryOptionsWOL( (void *)(&aP2.location[1]));
+    ReadRegistryOptionsWOL( (&aP2.location[1]));
     if ( !((InfantryClass *)&aP2.location[1])->SetField6()
     && !WinMain_Helper(&aP2.location[1])
     && !((Flag *)(&aP2.location[1]))->IsNot2() )
@@ -3818,7 +3818,7 @@ void WinMain_Setup()
   if ( dword_A8F794 ) /*0x6be1d2*/
   {
     FileTreeNode::Destroy(dword_A8F794); /*0x6be1d6*/
-    operator delete((void *)(v0)); /*0x6be1dc*/
+    operator delete((v0)); /*0x6be1dc*/
     dword_A8F794 = 0; /*0x6be1e4*/
   }
   if ( dword_A8F798 ) /*0x6be1f2*/
@@ -3838,7 +3838,7 @@ void WinMain_Setup()
     if ( *(unsigned int *)dword_B054D4 ) /*0x6be230*/
     {
       ColorScheme::Destructor(*(unsigned int *)dword_B054D4); /*0x6be238*/
-      operator delete((void *)(v1)); /*0x6be23e*/
+      operator delete((v1)); /*0x6be23e*/
     }
   }
   dword_B054E0 = 0; /*0x6be253*/
@@ -3924,14 +3924,14 @@ void WinMain_Setup()
   if ( g_ZBufferDescriptor ) /*0x6be40a*/
   {
     Stream::GetField(g_ZBufferDescriptor); /*0x6be40e*/
-    operator delete((void *)(v6)); /*0x6be414*/
+    operator delete((v6)); /*0x6be414*/
     g_ZBufferDescriptor = 0; /*0x6be41c*/
   }
   v7 = dword_87E8A4; /*0x6be422*/
   if ( dword_87E8A4 ) /*0x6be42a*/
   {
     StreamObj::Release(dword_87E8A4); /*0x6be42e*/
-    operator delete((void *)(v7)); /*0x6be434*/
+    operator delete((v7)); /*0x6be434*/
     dword_87E8A4 = 0; /*0x6be43c*/
   }
   if ( g_GameFontObject ) /*0x6be44a*/
@@ -4309,14 +4309,14 @@ void WinMain_Setup()
   if ( dword_A83DB8 ) /*0x6bea8b*/
   {
     Vector::Clear(dword_A83DB8); /*0x6bea8f*/
-    operator delete((void *)(v16)); /*0x6bea95*/
+    operator delete((v16)); /*0x6bea95*/
     dword_A83DB8 = 0; /*0x6bea9d*/
   }
   v17 = dword_8871E0; /*0x6beaa3*/
   if ( dword_8871E0 ) /*0x6beaab*/
   {
     RulesClass::DTOR(dword_8871E0); /*0x6beaaf*/
-    operator delete((void *)(v17)); /*0x6beab5*/
+    operator delete((v17)); /*0x6beab5*/
     dword_8871E0 = 0; /*0x6beabd*/
   }
   v18 = dword_A8B230; /*0x6beac3*/
@@ -4326,7 +4326,7 @@ void WinMain_Setup()
     dword_A8B230[377].vfptr2 = &vt_VectorClass; /*0x6beadf*/
     if ( v19 && v18->u32_3519 ) /*0x6beae7*/
     {
-      operator delete((void *)(v19)); /*0x6beaf0*/
+      operator delete((v19)); /*0x6beaf0*/
       v18->ionRed = 0; /*0x6beaf8*/
     }
     v18->u32_3519 = 0; /*0x6beafe*/
@@ -4335,7 +4335,7 @@ void WinMain_Setup()
     v18->ambientCurrent = &vt_VectorClass; /*0x6beb10*/
     if ( v20 && v18->u32_34FD ) /*0x6beb1a*/
     {
-      operator delete((void *)(v20)); /*0x6beb23*/
+      operator delete((v20)); /*0x6beb23*/
       v18->ambientTarget = 0; /*0x6beb2b*/
     }
     v18->u32_34FD = 0; /*0x6beb31*/
@@ -4344,12 +4344,12 @@ void WinMain_Setup()
     v18->allowableUnits = &vt_VectorClass; /*0x6beb43*/
     if ( v21 && v18->u32_34E1 ) /*0x6beb51*/
     {
-      operator delete((void *)(v21)); /*0x6beb5a*/
+      operator delete((v21)); /*0x6beb5a*/
       v18->allowableUnitsCount = 0; /*0x6beb62*/
     }
     v18->u32_34E1 = 0; /*0x6beb69*/
     v18->allowableUnitMaximums = 0; /*0x6beb6f*/
-    operator delete((void *)(v18)); /*0x6beb75*/
+    operator delete((v18)); /*0x6beb75*/
     dword_A8B230[0].vfptr = 0; /*0x6beb7d [X36-A8B230 same-bytes: mov dword_A8B230,ebx]*/
   }
   for ( j = 0; j < dword_B0BC98; ++j ) /*0x6beb8c*/
@@ -5336,7 +5336,7 @@ unsigned int * E4Recv_6B9450::sub_6B9450()
   this->M4 = 0; /*0x6b949e*/
   LOBYTE(this->M20) = 0; /*0x6b94a1*/
   this->M8 = (void *)v4; /*0x6b94a4*/
-  v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x6b94b3*/
+  v5 = __2_YAPAXI_Z(4 * v4); /*0x6b94b3*/
   v6 = 4 * (int)this->M4; /*0x6b94b8*/
   this->AbstractClass = v5; /*0x6b94bf*/
   memset(v5, 0, v6); /*0x6b94c4*/

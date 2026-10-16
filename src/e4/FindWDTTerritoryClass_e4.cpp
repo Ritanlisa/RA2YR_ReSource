@@ -17,7 +17,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 
 
   char *v6; // [esp+8h] [ebp-8h]
-  v6 = (char *)(&this->u8_18); /*0x765387*/
+  v6 = &this->u8_18; /*0x765387*/
   int v7; // [esp+Ch] [ebp-4h]
   v7 = 0; /*0x76538f*/
   void **v5; // [esp+4h] [ebp-Ch] BYREF

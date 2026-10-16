@@ -112,7 +112,7 @@ int Audio::ReleaseChannelRefs()
   else
   {
     RefCount **v4; // esi
-    v4 = (gamemd::RefCount **)(&this->q028); /*0x404d91*/
+    v4 = &this->q028; /*0x404d91*/
     do /*0x404dad*/
     {
       (*v4)->Decrement(); /*0x404d96*/
@@ -838,7 +838,7 @@ void * Audio::LoadSoundINI()
         }
         while ( v2 < g_VocPlayState ); /*0x75144d*/
       }
-      operator delete((void *)(v1)); /*0x751450*/
+      operator delete((v1)); /*0x751450*/
     }
   }
   void *result; // eax
@@ -901,7 +901,7 @@ void sub_752590(int a1, int a2, int a3)
   else
   {
     *(unsigned int *)(a1 + 80) = 2; /*0x75265d*/
-    operator delete((void *)(v5)); /*0x752664*/
+    operator delete((v5)); /*0x752664*/
   }
 }
 }
@@ -2197,7 +2197,7 @@ AbstractClass * * sub_6C6D00()
           memcpy(&v3[4 * v7], &vtable2[4 * v7], v6 & 3); /*0x6c6dba*/
           vtable2 = (char *)g_SidebarButtonState.vfptr2; /*0x6c6dbc*/
         }
-        operator delete((void *)(vtable2)); /*0x6c6dc4*/
+        operator delete((vtable2)); /*0x6c6dc4*/
         g_SidebarButtonState.vfptr2 = v5; /*0x6c6dcc*/
         g_SidebarButtonState.vfptr1 = (void *)v2; /*0x6c6dd2*/
       }
@@ -2427,7 +2427,7 @@ int Audio::FlushChannel(unsigned int ** Block)
   if ( Block->u32_18 >= 0 ) /*0x404de7*/
     PushFrontLinkedListAlt(dword_87E2A8, (int)Block); /*0x404e07*/
   else
-    operator delete((void *)(Block)); /*0x404dea*/
+    operator delete((Block)); /*0x404dea*/
   return --dword_87E28C; /*0x404dfd*/
 }
 } // namespace gamemd

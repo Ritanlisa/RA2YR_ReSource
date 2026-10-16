@@ -663,10 +663,10 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f357*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f36a*/
     unsigned char *v7; // esi
-    v7 = (unsigned char *)(&this->DeployingAnimLoaded_d); /*0x45f375*/
+    v7 = &this->DeployingAnimLoaded_d; /*0x45f375*/
     if ( this->DeployingAnimLoaded_d && this->DeployingAnim_2 ) /*0x45f37f*/
     {
-      operator delete((void *)(this->DeployingAnim_2)); /*0x45f38a*/
+      operator delete((this->DeployingAnim_2)); /*0x45f38a*/
       this->DeployingAnim_2 = 0; /*0x45f392*/
       *v7 = 0; /*0x45f398*/
     }
@@ -678,7 +678,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f3b3*/
       if ( *v7 && this->DeployingAnim_2 ) /*0x45f3bc*/
       {
-        operator delete((void *)(this->DeployingAnim_2)); /*0x45f3c7*/
+        operator delete((this->DeployingAnim_2)); /*0x45f3c7*/
         this->DeployingAnim_2 = 0; /*0x45f3cf*/
         *v7 = 0; /*0x45f3d5*/
       }
@@ -691,10 +691,10 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f42f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f442*/
     unsigned char *v9; // esi
-    v9 = (unsigned char *)(&this->RoofDeployingAnimLoaded); /*0x45f44d*/
+    v9 = &this->RoofDeployingAnimLoaded; /*0x45f44d*/
     if ( this->RoofDeployingAnimLoaded && this->RoofDeployingAnim ) /*0x45f457*/
     {
-      operator delete((void *)(this->RoofDeployingAnim)); /*0x45f462*/
+      operator delete((this->RoofDeployingAnim)); /*0x45f462*/
       this->RoofDeployingAnim = 0; /*0x45f46a*/
       *v9 = 0; /*0x45f470*/
     }
@@ -706,7 +706,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f48b*/
       if ( *v9 && this->RoofDeployingAnim ) /*0x45f494*/
       {
-        operator delete((void *)(this->RoofDeployingAnim)); /*0x45f49f*/
+        operator delete((this->RoofDeployingAnim)); /*0x45f49f*/
         this->RoofDeployingAnim = 0; /*0x45f4a7*/
         *v9 = 0; /*0x45f4ad*/
       }
@@ -735,7 +735,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     unsigned char *v12 = &this->UnderDoorAnimLoaded_d; // esi /*0x45f5ad*/
     if ( this->UnderDoorAnimLoaded_d && this->UnderDoorAnim_d ) /*0x45f5b7*/
     {
-      operator delete((void *)(this->UnderDoorAnim_d)); /*0x45f5c2*/
+      operator delete((this->UnderDoorAnim_d)); /*0x45f5c2*/
       this->UnderDoorAnim_d = 0; /*0x45f5ca*/
       *v12 = 0; /*0x45f5d0*/
     }
@@ -747,7 +747,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f5eb*/
       if ( *v12 && this->UnderDoorAnim_d ) /*0x45f5f4*/
       {
-        operator delete((void *)(this->UnderDoorAnim_d)); /*0x45f5ff*/
+        operator delete((this->UnderDoorAnim_d)); /*0x45f5ff*/
         this->UnderDoorAnim_d = 0; /*0x45f607*/
         *v12 = 0; /*0x45f60d*/
       }
@@ -757,7 +757,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   unsigned char *v14 = &this->RubbleLoaded_d; // esi /*0x45f626*/
   if ( this->RubbleLoaded_d && this->Rubble_d ) /*0x45f630*/
   {
-    operator delete((void *)(this->Rubble_d)); /*0x45f63b*/
+    operator delete((this->Rubble_d)); /*0x45f63b*/
     this->Rubble_d = 0; /*0x45f643*/
     *v14 = 0; /*0x45f649*/
   }
@@ -774,7 +774,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f6bf*/
       if ( *v14 && this->Rubble_d ) /*0x45f6c8*/
       {
-        operator delete((void *)(this->Rubble_d)); /*0x45f6d3*/
+        operator delete((this->Rubble_d)); /*0x45f6d3*/
         this->Rubble_d = 0; /*0x45f6db*/
         *v14 = 0; /*0x45f6e1*/
       }
@@ -789,7 +789,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     unsigned char *v16 = &this->UnderRoofDoorAnimLoaded; // esi /*0x45f759*/
     if ( this->UnderRoofDoorAnimLoaded && this->UnderRoofDoorAnim ) /*0x45f763*/
     {
-      operator delete((void *)(this->UnderRoofDoorAnim)); /*0x45f76e*/
+      operator delete((this->UnderRoofDoorAnim)); /*0x45f76e*/
       this->UnderRoofDoorAnim = 0; /*0x45f776*/
       *v16 = 0; /*0x45f77c*/
     }
@@ -801,7 +801,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f797*/
       if ( *v16 && this->UnderRoofDoorAnim ) /*0x45f7a0*/
       {
-        operator delete((void *)(this->UnderRoofDoorAnim)); /*0x45f7ab*/
+        operator delete((this->UnderRoofDoorAnim)); /*0x45f7ab*/
         this->UnderRoofDoorAnim = 0; /*0x45f7b3*/
         *v16 = 0; /*0x45f7b9*/
       }
@@ -830,7 +830,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     unsigned char *v19 = &this->BibShapeLoaded; // esi /*0x45f8b5*/
     if ( this->BibShapeLoaded && this->BibShape ) /*0x45f8bf*/
     {
-      operator delete((void *)(this->BibShape)); /*0x45f8ca*/
+      operator delete((this->BibShape)); /*0x45f8ca*/
       this->BibShape = 0; /*0x45f8d2*/
       *v19 = 0; /*0x45f8d8*/
     }
@@ -842,7 +842,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       ((ObjectTypeClass *)Source)->SetRTTI71(); /*0x45f8f3*/
       if ( *v19 && this->BibShape ) /*0x45f8fc*/
       {
-        operator delete((void *)(this->BibShape)); /*0x45f907*/
+        operator delete((this->BibShape)); /*0x45f907*/
         this->BibShape = 0; /*0x45f90f*/
         *v19 = 0; /*0x45f915*/
       }
@@ -988,7 +988,7 @@ void BuildingTypeClass::LoadVoxel()
     if ( (unsigned __int8)CCFileClass::Open(&v28, 0) ) /*0x45fd0e*/
     {
       void *v13; // esi
-      v13 = (void *)this->q0C0; /*0x45fd1b*/
+      v13 = this->q0C0; /*0x45fd1b*/
       if ( v13 ) /*0x45fd23*/
       {
         WaveClass::Destroy((WaveClass *)this->u32_D2E); /*0x45fd27*/
@@ -1005,7 +1005,7 @@ void BuildingTypeClass::LoadVoxel()
       _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fd74*/
       CCFileClass::Construct(&v22, Buffer); /*0x45fd88*/
       void *v16; // esi
-      v16 = (void *)this->q0C4; /*0x45fd8d*/
+      v16 = this->q0C4; /*0x45fd8d*/
       if ( v16 ) /*0x45fd95*/
       {
         String::Release((String *)this->u32_D2E); /*0x45fd99*/
@@ -2073,7 +2073,7 @@ char BuildingTypeClass::Enqueue(int a2, void *a2_2)
     v6 = (unsigned int *)(*&v3->needsSave * i++); /*0x41c542*/
     *(unsigned int *)&v3[v5] = *v6; /*0x41c547*/
   }
-  operator delete((void *)(*(void **)v3)); /*0x41c55b*/
+  operator delete((*(void **)v3)); /*0x41c55b*/
   int v7 = v3 + v3->vtable3; // eax /*0x41c566*/
   *(unsigned int *)v3 = v3; /*0x41c568*/
   v3->vtable3 = v7; /*0x41c56a*/
@@ -2302,7 +2302,7 @@ int BuildingTypeClass::ddtor(void *a1)
   BuildingTypeClass::CleanupMembers(a1); /*0x465dc3*/
   char v3; // [esp+8h] [ebp+4h]
   if ( (v3 & 1) != 0 ) /*0x465dcd*/
-    operator delete((void *)(a1)); /*0x465dd0*/
+    operator delete((a1)); /*0x465dd0*/
   return (int)a1; /*0x465dda*/
 }
 } // namespace gamemd

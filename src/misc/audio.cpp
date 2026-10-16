@@ -194,7 +194,7 @@ bool AudioInit(HWND hWnd)
 
 void AudioShutdown()
 {
-    g_Audio_Enabled = (void *)(false);
+    g_Audio_Enabled = (false);
     if (g_pDirectSound) {
         g_pDirectSound->Release();
         g_pDirectSound = nullptr;

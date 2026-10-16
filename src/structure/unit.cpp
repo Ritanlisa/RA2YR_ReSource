@@ -2821,7 +2821,7 @@ int UnitClass::CalcMoveTarget()
         (*((void (__thiscall **)(UnitClass *, unsigned int, unsigned int))this->vfptr + 337))(this, 0, 0); /*0x735f6a*/
         *(unsigned int *)v78.__pad_000 = 0; /*0x735f74*/
         if ( v78.q004 && (((unsigned char *)&(v78.q00C))[1]) ) /*0x735f8a*/
-          operator delete((void *)((void *)v78.q004)); /*0x735f91*/
+          operator delete(((void *)v78.q004)); /*0x735f91*/
         return; /*0x735fa0*/
       }
       ObjectVector_field_0x14 = v78.q014; /*0x735e9e*/

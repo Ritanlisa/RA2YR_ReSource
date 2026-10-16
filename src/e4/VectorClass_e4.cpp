@@ -185,7 +185,7 @@ int VectorClass_flat::RemoveObjectById()
   if ( !this->u32_2590 ) /*0x4137a1*/
     return 0; /*0x4137ab*/
   VectorClass *v2; // esi
-  v2 = (gamemd::VectorClass *)(&this->u32_960); /*0x4137b6*/
+  v2 = &this->u32_960; /*0x4137b6*/
   int v3 = this->u32_2580; // eax /*0x4137c3*/
   v7 = (VectorClass *)*this->u32_25801); /*0x4137c7*/
   int v4; // eax
@@ -662,7 +662,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
 
 
   char *p_IsInitialized; // esi
-  p_IsInitialized = (char *)(&aP1->IsInitialized); /*0x4a0c2c*/
+  p_IsInitialized = &aP1->IsInitialized; /*0x4a0c2c*/
   aP1->Items = 0; /*0x4a0c2f*/
   aP1->Capacity = 0; /*0x4a0c32*/
   aP1->Count = 0; /*0x4a0c37*/
@@ -1183,11 +1183,11 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, cha
 
   *(unsigned int *)Block->tail_0 = &vt_ConvertClass; /*0x491214*/
   COMClass::RegisterAll((COMClass *)Block); /*0x49121a*/
-  operator delete((void *)(*((void **)Block + 92))); /*0x491226*/
+  operator delete((*(Block + 92))); /*0x491226*/
   void *v3; // ecx
   v3 = (void *)*((unsigned int *)Block + 94); /*0x49122b*/
   *((unsigned int *)Block + 92) = 0; /*0x491231*/
-  operator delete((void *)(v3)); /*0x49123c*/
+  operator delete((v3)); /*0x49123c*/
   *((unsigned int *)Block + 94) = 0; /*0x491244*/
   VectorClass_ptr_ConvertClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = Block; /*0x49125d*/
@@ -1203,8 +1203,8 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, cha
     while ( v4 < dword_89ED08 ); /*0x491294*/
   }
   if ( (a2 & 1) != 0 ) /*0x49129b*/
-    operator delete((void *)(Block)); /*0x49129e*/
-  return (void **)Block; /*0x4912a8*/
+    operator delete((Block)); /*0x49129e*/
+  return Block; /*0x4912a8*/
 }
 }
 // 0x4E1960
@@ -1252,7 +1252,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
   void *v13; // eax
   char *v15; // [esp+10h] [ebp-4h]
 
-  v3 = (void *)aP1; /*0x6dc855*/
+  v3 = aP1; /*0x6dc855*/
   if ( !aP1 ) /*0x6dc85d*/
   {
     (*(void (**)(VectorClass_UDirtyAreaStruct *))(*(unsigned int *)this->vfptr + 12))(this); /*0x6dc94a*/
@@ -1320,7 +1320,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
         memcpy(v11, v12, 0x14u); /*0x6dc90d*/
       }
       while ( Capacity ); /*0x6dc90f*/
-      v3 = (void *)aP1; /*0x6dc911*/
+      v3 = aP1; /*0x6dc911*/
     }
     if ( this->IsAllocated ) /*0x6dc915*/
     {
@@ -1744,13 +1744,13 @@ VectorClass_flat *  VectorClass_flat::QueryInterface(unsigned int * Block, char 
   *Block = &vt_VectorClass; /*0x40b306*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40b310*/
   {
-    operator delete((void *)(v3)); /*0x40b318*/
+    operator delete((v3)); /*0x40b318*/
     *(Block + 1) = 0; /*0x40b320*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40b32b*/
   *(Block + 2) = 0; /*0x40b331*/
   if ( (a2 & 1) != 0 ) /*0x40b338*/
-    operator delete((void *)(Block)); /*0x40b33b*/
+    operator delete((Block)); /*0x40b33b*/
   return Block; /*0x40b345*/
 }
 }  // G42.18c ns repair
@@ -1799,7 +1799,7 @@ void VectorClass_ptr_BombClass::Remove(void *a1_1, void *a2)
 {
   if ( *(unsigned int *)&a1_1->IsAllocated && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x40b7fd*/
   {
-    operator delete((void *)(*(void **)&a1_1->Items)); /*0x40b803*/
+    operator delete((*(void **)&a1_1->Items)); /*0x40b803*/
     a1_1->Items = (unsigned int)(0); /*0x40b80b*/
   }
   (((unsigned char *)&(a1_1->IsInitialized))[1]) = 0; /*0x40b80e*/
@@ -1943,7 +1943,7 @@ char VectorClass_cptr_CommandClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40bf4e*/
         if ( (this->IsAllocated) ) /*0x40bf5b*/
         {
-          operator delete((void *)(*&this->Items)); /*0x40bf66*/
+          operator delete((*&this->Items)); /*0x40bf66*/
           *&this->Items = 0; /*0x40bf6e*/
         }
       }
@@ -1971,7 +1971,7 @@ void VectorClass_cptr_CommandClass::SetAt()
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x40bfad*/
   {
-    operator delete((void *)(*&this->Items)); /*0x40bfb3*/
+    operator delete((*&this->Items)); /*0x40bfb3*/
     *&this->Items = 0; /*0x40bfbb*/
   }
   (this->IsAllocated) = 0; /*0x40bfbe*/
@@ -2171,13 +2171,13 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
   Block->items[0] = (int)&vt_VectorClass; /*0x40cc26*/
   if ( count && *((unsigned char *)Block + 13) ) /*0x40cc30*/
   {
-    operator delete((void *)(count)); /*0x40cc38*/
+    operator delete((count)); /*0x40cc38*/
     Block->count = 0; /*0x40cc40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40cc4b*/
   Block->capacity = 0; /*0x40cc51*/
   if ( (a2 & 1) != 0 ) /*0x40cc58*/
-    operator delete((void *)(Block)); /*0x40cc5b*/
+    operator delete((Block)); /*0x40cc5b*/
   return Block->items; /*0x40cc65*/
 }
 } // namespace gamemd
@@ -2190,7 +2190,7 @@ void VectorClass_ptr_IsometricTileClass::TryFreeAndClear()
   this->Items = 0; /*0x40cc79*/
   if ( v2 && this->IsAllocated ) /*0x40cc80*/
   {
-    operator delete((void *)(v2)); /*0x40cc86*/
+    operator delete((v2)); /*0x40cc86*/
     this->Items = 0; /*0x40cc8e*/
   }
   this->IsAllocated = 0; /*0x40cc91*/
@@ -2422,13 +2422,13 @@ VectorClass_flat * VectorClass_ptr_ScriptClass::QueryInterface(unsigned int * Bl
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40eab6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x40eac0*/
   {
-    operator delete((void *)(v3)); /*0x40eac8*/
+    operator delete((v3)); /*0x40eac8*/
     Block->Items = (unsigned int)(0); /*0x40ead0*/
   }
   (Block->u8_E) = 0; /*0x40eadb*/
   *&Block->u32_8 = 0; /*0x40eae1*/
   if ( (a2 & 1) != 0 ) /*0x40eae8*/
-    operator delete((void *)(Block)); /*0x40eaeb*/
+    operator delete((Block)); /*0x40eaeb*/
   return Block->tail_0; /*0x40eaf5*/
 }
 } // namespace gamemd
@@ -2441,13 +2441,13 @@ DynamicVector * VectorClass_ptr_ScriptClass::Constructor_VectorClass_ScriptClass
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40eb06*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x40eb10*/
   {
-    operator delete((void *)(v3)); /*0x40eb18*/
+    operator delete((v3)); /*0x40eb18*/
     Block->Items = (unsigned int)(0); /*0x40eb20*/
   }
   (Block->u8_9) = 0; /*0x40eb2b*/
   *&Block->u32_8 = 0; /*0x40eb31*/
   if ( (a2 & 1) != 0 ) /*0x40eb38*/
-    operator delete((void *)(Block)); /*0x40eb3b*/
+    operator delete((Block)); /*0x40eb3b*/
   return Block->tail_0; /*0x40eb45*/
 }
 } // namespace gamemd
@@ -3059,7 +3059,7 @@ unsigned int * VectorClass_flat::CellConstructor(IUnknown * aP1, IUnknown * aP2,
   {
     if ( aP2 ) /*0x42fcda*/
     {
-      this->Items = (void *)aP2; /*0x42fcdd*/
+      this->Items = aP2; /*0x42fcdd*/
       return &this->vtable0; /*0x42fce8*/
     }
     v5 = (void *)__2_YAPAXI_Z(4 * aP1); /*0x42fcf3*/
@@ -3118,7 +3118,7 @@ void VectorClass_flat::Cleanup(void *a1, void *a2)
 {
   if ( *(unsigned int *)(a1 + 4) && *(unsigned char *)(a1 + 13) ) /*0x45a27d*/
   {
-    operator delete((void *)(*(void **)(a1 + 4))); /*0x45a283*/
+    operator delete((*(void **)(a1 + 4))); /*0x45a283*/
     *(unsigned int *)(a1 + 4) = 0; /*0x45a28b*/
   }
   *(unsigned char *)(a1 + 13) = 0; /*0x45a28e*/
@@ -3131,7 +3131,7 @@ void VectorClass_ptr_InfantryClass::Remove(void *a1_1, void *a2)
 {
   if ( *(unsigned int *)&a1_1->u8_D && a1_1->u8_D ) /*0x45a4dd*/
   {
-    operator delete((void *)(*(void **)&a1_1->ptr_4)); /*0x45a4e3*/
+    operator delete((*(void **)&a1_1->ptr_4)); /*0x45a4e3*/
     *(unsigned int *)&a1_1->ptr_4 = 0; /*0x45a4eb*/
   }
   *(unsigned int *)&a1_1->u8_D = 0; /*0x45a4ee*/
@@ -3257,13 +3257,13 @@ DynamicVector * VectorClass_InfantryPtr::Destruct(unsigned int * Block, char a2)
   *(unsigned int *)Block = &vt_VectorClass; /*0x45aab6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x45aac0*/
   {
-    operator delete((void *)(v3)); /*0x45aac8*/
+    operator delete((v3)); /*0x45aac8*/
     *((unsigned int *)Block + 1) = 0; /*0x45aad0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x45aadb*/
   *((unsigned int *)Block + 2) = 0; /*0x45aae1*/
   if ( (a2 & 1) != 0 ) /*0x45aae8*/
-    operator delete((void *)(Block)); /*0x45aaeb*/
+    operator delete((Block)); /*0x45aaeb*/
   return Block; /*0x45aaf5*/
 }
 } // namespace gamemd
@@ -3276,13 +3276,13 @@ DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_Fogge
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x45ab06*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x45ab10*/
   {
-    operator delete((void *)(v3)); /*0x45ab18*/
+    operator delete((v3)); /*0x45ab18*/
     Block->Items = (unsigned int)(0); /*0x45ab20*/
   }
   (Block->u8_E) = 0; /*0x45ab2b*/
   *&Block->u32_8 = 0; /*0x45ab31*/
   if ( (a2 & 1) != 0 ) /*0x45ab38*/
-    operator delete((void *)(Block)); /*0x45ab3b*/
+    operator delete((Block)); /*0x45ab3b*/
   return Block->tail_0; /*0x45ab45*/
 }
 } // namespace gamemd
@@ -3336,13 +3336,13 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor_VectorClass_Reestablish
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x45ad36*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x45ad40*/
   {
-    operator delete((void *)(v3)); /*0x45ad48*/
+    operator delete((v3)); /*0x45ad48*/
     Block->Items = (unsigned int)(0); /*0x45ad50*/
   }
   (Block->u8_E) = 0; /*0x45ad5b*/
   *&Block->u32_8 = 0; /*0x45ad61*/
   if ( (a2 & 1) != 0 ) /*0x45ad68*/
-    operator delete((void *)(Block)); /*0x45ad6b*/
+    operator delete((Block)); /*0x45ad6b*/
   return Block->tail_0; /*0x45ad75*/
 }
 } // namespace gamemd
@@ -3361,7 +3361,7 @@ unsigned int * VectorClass_flat::ConstructorWithVtable(TechnoTypeClass * aP1, Te
   {
     if ( aP2 ) /*0x45ada6*/
     {
-      this->Items = (void *)aP2; /*0x45ada8*/
+      this->Items = aP2; /*0x45ada8*/
       return &this->vtable0; /*0x45adae*/
     }
     this->Items = (void *)__2_YAPAXI_Z(4 * aP1); /*0x45adbd*/
@@ -3682,7 +3682,7 @@ unsigned int * VectorClass_flat::Construct(int a2, int a3, void *a3_2, void *a4,
   {
     if ( a3_2 ) /*0x477c06*/
     {
-      a3_2->Items = (void *)a3_2; /*0x477c08*/
+      a3_2->Items = a3_2; /*0x477c08*/
       return &a3_2->vtable0; /*0x477c0e*/
     }
     a3_2->Items = (void *)__2_YAPAXI_Z(4 * a3_2); /*0x477c1d*/
@@ -3751,7 +3751,7 @@ void VectorClass_flat::Destroy(void *a1)
   result = *(unsigned int *)(a1 + 4); /*0x477d26*/
   if ( result && *(unsigned char *)(a1 + 13) ) /*0x477d2d*/
   {
-    operator delete((void *)(*(void **)(a1 + 4))); /*0x477d33*/
+    operator delete((*(void **)(a1 + 4))); /*0x477d33*/
     *(unsigned int *)(a1 + 4) = 0; /*0x477d3b*/
   }
   *(unsigned char *)(a1 + 13) = 0; /*0x477d3e*/
@@ -3853,13 +3853,13 @@ VectorClass_flat *  VectorClass_flat::vt00(unsigned int * Block, char a2)
   *Block = &vt_VectorClass; /*0x478636*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x478640*/
   {
-    operator delete((void *)(v3)); /*0x478648*/
+    operator delete((v3)); /*0x478648*/
     *(Block + 1) = 0; /*0x478650*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x47865b*/
   *(Block + 2) = 0; /*0x478661*/
   if ( (a2 & 1) != 0 ) /*0x478668*/
-    operator delete((void *)(Block)); /*0x47866b*/
+    operator delete((Block)); /*0x47866b*/
   return Block; /*0x478675*/
 }
 }  // G42.18c ns repair
@@ -4022,13 +4022,13 @@ DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECT
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4a0e16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4a0e20*/
   {
-    operator delete((void *)(v3)); /*0x4a0e28*/
+    operator delete((v3)); /*0x4a0e28*/
     Block->Items = (unsigned int)(0); /*0x4a0e30*/
   }
   (Block->u8_E) = 0; /*0x4a0e3b*/
   *&Block->u32_8 = 0; /*0x4a0e41*/
   if ( (a2 & 1) != 0 ) /*0x4a0e48*/
-    operator delete((void *)(Block)); /*0x4a0e4b*/
+    operator delete((Block)); /*0x4a0e4b*/
   return Block->tail_0; /*0x4a0e55*/
 }
 } // namespace gamemd

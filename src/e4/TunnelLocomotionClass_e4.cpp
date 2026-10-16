@@ -219,7 +219,7 @@ TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(unsigned int * Block,
 {
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x72a213*/
   if ( (a2 & 1) != 0 ) /*0x72a21d*/
-    operator delete((void *)(Block)); /*0x72a220*/
+    operator delete((Block)); /*0x72a220*/
   return Block->0; /*0x72a22a*/
 }
 } // namespace gamemd

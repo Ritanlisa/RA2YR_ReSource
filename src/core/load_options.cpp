@@ -83,7 +83,7 @@ const char ** LoadOptions::GetExtension() {
   char *p_is_active; // ecx
   int v3; // eax
 
-  p_is_active = (char *)(&this->is_active);
+  p_is_active = &this->is_active;
   p_is_active->__pad_004 = 0; /*0x558748*/
   p_is_active->u32_8 = 0; /*0x55874b*/
   p_is_active[12] = 1; /*0x55874e*/
@@ -114,15 +114,15 @@ int LoadOptions::Cleanup() {
 
   v2 = (int)((char *)(0));
   for ( this->extension = 0; v2 < this->capacity; ++v2 ) /*0x5587a4*/
-    operator delete((void *)(*(void **)(*&this->entries + 4 * v2))); /*0x5587ad*/
+    operator delete((*(void **)(*&this->entries + 4 * v2))); /*0x5587ad*/
   v3 = *&this->is_active; /*0x5587bd*/
-  p_is_active = (char *)(&this->is_active); /*0x5587c0*/
+  p_is_active = &this->is_active; /*0x5587c0*/
   (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
   result = *((unsigned int *)p_is_active + 1); /*0x5587c8*/
   *(unsigned int *)p_is_active = 0; /*0x5587cb*/
   if ( result && p_is_active[13] ) /*0x5587d5*/
   {
-    operator delete((void *)((void *)result)); /*0x5587db*/
+    operator delete(((void *)result)); /*0x5587db*/
     *((unsigned int *)p_is_active + 1) = 0; /*0x5587e3*/
   }
   p_is_active[13] = 0; /*0x5587e6*/

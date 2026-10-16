@@ -204,7 +204,7 @@ int sub_6269A0()
   {
     do /*0x626a90*/
     {
-      operator delete((void *)(*(void **)(*(unsigned int *)(*(unsigned int *)&v1[4] + 4) + 4 * v9))); /*0x626a80*/
+      operator delete((*(void **)(*(unsigned int *)(*(unsigned int *)&v1[4] + 4) + 4 * v9))); /*0x626a80*/
       v1 = (gamemd::FileSystem *)(g_FileExtensionState); /*0x626a85*/
       ++v9; /*0x626a8d*/
     }
@@ -468,14 +468,14 @@ void sub_72CA10()
       if ( *(unsigned int *)&DataGlobal_B0FA60 ) /*0x72ca2d*/
       {
         (*(FileTreeNode **)&DataGlobal_B0FA60)->Destroy(); /*0x72ca31*/
-        operator delete((void *)(v1)); /*0x72ca37*/
+        operator delete((v1)); /*0x72ca37*/
       }
       DataGlobal_B0FCF0 = 0; /*0x72ca3f*/
     }
     *(unsigned int *)&DataGlobal_B0FA60 = 0; /*0x72ca4b*/
     if ( *(unsigned int *)&DataGlobal_B0FCF4 ) /*0x72ca53*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FCF4)); /*0x72ca56*/
+      operator delete((*(void **)&DataGlobal_B0FCF4)); /*0x72ca56*/
       *(unsigned int *)&DataGlobal_B0FCF4 = 0; /*0x72ca5e*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FCF8 ) /*0x72ca6c*/
@@ -510,7 +510,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
   String v11; // [esp-8h] [ebp-14h] BYREF
 
   void *v8; // esi
-  v8 = (void *)operator new(0x18u); /*0x76688e*/
+  v8 = operator new(0x18u); /*0x76688e*/
   if ( v8 ) /*0x766895*/
   {
     *(unsigned int *)&v11.ptr_4 = aP4; /*0x76689f*/

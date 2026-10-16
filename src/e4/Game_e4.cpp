@@ -251,7 +251,7 @@ void Game::initScenario(void *a1_1)
           __3_YAXPAX_Z(*(void **)v2->__pad_000); /*0x4309a0*/
           *(unsigned int *)v2->__pad_000 = 0; /*0x4309a8*/
         }
-        v2 = (gamemd::Game *)(&v2->ptr_4); /*0x4309ae*/
+        v2 = &v2->ptr_4; /*0x4309ae*/
         --v4; /*0x4309b1*/
       }
       while ( v4 ); /*0x4309b2*/
@@ -2045,7 +2045,7 @@ Coord * * Game::ProcessIdle()
       do /*0x77fc17*/
       {
         v10 = v9->needsSave; /*0x77fc07*/
-        operator delete((void *)(v9)); /*0x77fc0b*/
+        operator delete((v9)); /*0x77fc0b*/
         v9 = v10; /*0x77fc13*/
       }
       while ( v10 ); /*0x77fc17*/
@@ -2095,7 +2095,7 @@ Coord * * Game::ProcessIdle()
               v14 = 10; /*0x77fd99*/
             if ( v14 < v14 ) /*0x77fda0*/
             {
-              v15 = (void *)operator new(4 * v14); /*0x77fdaa*/
+              v15 = operator new(4 * v14); /*0x77fdaa*/
               v16 = dword_B76600; /*0x77fdaf*/
               v15 = v15; /*0x77fdba*/
               if ( dword_B76600 ) /*0x77fdbc*/
@@ -2103,7 +2103,7 @@ Coord * * Game::ProcessIdle()
                 memcpy(v15, dword_B76600, 4 * dword_B765F8); /*0x77fdc6*/
                 v16 = dword_B76600; /*0x77fdc8*/
               }
-              operator delete((void *)(v16)); /*0x77fdcf*/
+              operator delete((v16)); /*0x77fdcf*/
               dword_B76600 = v15; /*0x77fdd4*/
               v12 = *(char **)&v31.ptr_4; /*0x77fdda*/
               v14 = v14; /*0x77fde1*/
@@ -2132,7 +2132,7 @@ Coord * * Game::ProcessIdle()
       do /*0x77fe8b*/
       {
         v20 = v19->needsSave; /*0x77fe7b*/
-        operator delete((void *)(v19)); /*0x77fe7f*/
+        operator delete((v19)); /*0x77fe7f*/
         v19 = v20; /*0x77fe87*/
       }
       while ( v20 ); /*0x77fe8b*/
@@ -2416,7 +2416,7 @@ int Game::loadCampaignData(void *a1_1)
           ++v3; /*0x55004d*/
         }
       }
-      operator delete((void *)(v2)); /*0x550060*/
+      operator delete((v2)); /*0x550060*/
     }
   }
   return result; /*0x550073*/
@@ -2459,13 +2459,13 @@ void sub_556DF0()
           ++v4; /*0x556e54*/
         }
       }
-      operator delete((void *)(v2)); /*0x556e67*/
+      operator delete((v2)); /*0x556e67*/
     }
   }
   g_MissionQueueFrame.random[223] = 0; /*0x556e7f*/
   if ( g_MissionQueueFrame.random[220] && (((unsigned char *)&(g_MissionQueueFrame.random[222]))[1]) ) /*0x556e8f*/
   {
-    operator delete((void *)((void *)g_MissionQueueFrame.random[220])); /*0x556e92*/
+    operator delete(((void *)g_MissionQueueFrame.random[220])); /*0x556e92*/
     g_MissionQueueFrame.random[220] = 0; /*0x556e9a*/
   }
   (((unsigned char *)&(g_MissionQueueFrame.random[222]))[1]) = 0; /*0x556ea0*/
@@ -2836,7 +2836,7 @@ char ** sub_7B82E0(char ** a1, const wchar_t ** a2)
   *v8 = 0; /*0x7b8359*/
   if ( v5 ) /*0x7b835c*/
     strcpy(v8, v5); /*0x7b8374*/
-  operator delete((void *)(v5)); /*0x7b837e*/
+  operator delete((v5)); /*0x7b837e*/
   *a1 = 0; /*0x7b838c*/
   if ( v8 ) /*0x7b8393*/
   {
@@ -2844,7 +2844,7 @@ char ** sub_7B82E0(char ** a1, const wchar_t ** a2)
     v9 = (char *)operator new(strlen(v8) + 1); /*0x7b83a6*/
     *a1 = v9; /*0x7b83af*/
     strcpy(v9, v8); /*0x7b83c2*/
-    operator delete((void *)(v8)); /*0x7b83cb*/
+    operator delete((v8)); /*0x7b83cb*/
   }
   return a1; /*0x7b83d3*/
 }

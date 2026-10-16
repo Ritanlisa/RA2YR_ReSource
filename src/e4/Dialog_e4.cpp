@@ -1240,7 +1240,7 @@ AbstractClass * * Dialog::InitWindow(int a1, int a2)
     v13[25] = (void *)g_FogOfWarState; /*0x60f7d4*/
     v4 = __2_YAPAXI_Z(4u); /*0x60f7d8*/
     if ( v4 ) /*0x60f7e3*/
-      v5 = (void *)unknown_libname_74(v4); /*0x60f7e7*/
+      v5 = unknown_libname_74(v4); /*0x60f7e7*/
     else
       v5 = 0; /*0x60f80c*/
     v13[15] = v5; /*0x60f814*/
@@ -1536,7 +1536,7 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM)
     v37[25] = (void *)g_FogOfWarState; /*0x610115*/
     v17 = operator new(4u); /*0x61011c*/
     if ( v17 ) /*0x610126*/
-      v18 = (void *)unknown_libname_74(v17); /*0x61012a*/
+      v18 = unknown_libname_74(v17); /*0x61012a*/
     else
       v18 = 0; /*0x61013d*/
     v37[15] = v18; /*0x610144*/
@@ -1645,7 +1645,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   Dialog::BindGadgetData((Dialog *)&g_DialogHashMap_Base, (int *)&hWnd, v15); /*0x6103f6*/
   if ( *(unsigned int *)&v15[40] ) /*0x610401*/
   {
-    operator delete((void *)(*(void **)&v15[40])); /*0x610404*/
+    operator delete((*(void **)&v15[40])); /*0x610404*/
     *(unsigned int *)&v15[40] = 0; /*0x61040c*/
   }
   for ( i = *(unsigned int **)&v15[52]; *(unsigned int *)&v15[52]; i = *(unsigned int **)&v15[52] ) /*0x610416*/
@@ -1654,7 +1654,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   if ( *(unsigned int *)&v15[60] ) /*0x610430*/
   {
     DeleteAndZero::Alt(*(DeleteAndZero **)&v15[60]); /*0x610434*/
-    operator delete((void *)(v5)); /*0x61043a*/
+    operator delete((v5)); /*0x61043a*/
   }
   if ( *(unsigned int *)&g_DialogPoolCount ) /*0x610449*/
   {
@@ -1668,7 +1668,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
       if ( *v7 == hWnd ) /*0x6104a4*/
       {
         v8 = v7[2]; /*0x6104a6*/
-        operator delete((void *)(*(void **)(*(unsigned int *)g_DialogPool + 4 * v6))); /*0x6104aa*/
+        operator delete((*(void **)(*(unsigned int *)g_DialogPool + 4 * v6))); /*0x6104aa*/
         v9 = *(float *)&v14; /*0x6104b8*/
         *(unsigned int *)(*(unsigned int *)g_DialogPool + 4 * v6) = v8; /*0x6104bc*/
         --*(unsigned int *)&g_DialogPoolCount; /*0x6104cb*/
@@ -1688,7 +1688,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
         }
         v7[2] = v10[2]; /*0x6104f3*/
         --*(unsigned int *)&g_DialogPoolCount; /*0x6104fd*/
-        operator delete((void *)(v10)); /*0x610503*/
+        operator delete((v10)); /*0x610503*/
       }
       LABEL_20:
       if ( *(float *)&v14 <= *(double *)&DataGlobal_AC18E0 ) /*0x61051a*/
@@ -1699,7 +1699,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   LABEL_22:
   WindowLongA = (void *)GetWindowLongA(hWnd, -21); /*0x610526*/
   if ( WindowLongA ) /*0x610535*/
-    operator delete((void *)(WindowLongA)); /*0x610538*/
+    operator delete((WindowLongA)); /*0x610538*/
   SetWindowLongA(hWnd, -21, 0); /*0x610548*/
   Object::RemoveObjectArray((Object *)hWnd); /*0x610552*/
   return 1; /*0x61055c*/
@@ -2609,7 +2609,7 @@ AbstractClass * * Dialog::GrowBuffer()
     v13 = v3; /*0x624c00*/
     this->q00C = v4; /*0x624c08*/
     void *v5; // edi
-    v5 = (void *)__2_YAPAXI_Z(8 * v2); /*0x624c13*/
+    v5 = __2_YAPAXI_Z(8 * v2); /*0x624c13*/
     unsigned int v6 = 4 * this->u32_8; // edx /*0x624c18*/
     *(unsigned int *)this->__pad_000 = v5; /*0x624c1f*/
     memset(v5, 0, v6); /*0x624c24*/
@@ -2762,7 +2762,7 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block, void *a3)
         v23 = (AnimClass *)((char *)this->q00C - 1); /*0x624e4b*/
         this->u32_8 = v21 >> 1; /*0x624e4c*/
         this->q00C = v23; /*0x624e56*/
-        v24 = (void *)__2_YAPAXI_Z(4 * (v21 >> 1)); /*0x624e62*/
+        v24 = __2_YAPAXI_Z(4 * (v21 >> 1)); /*0x624e62*/
         v25 = 4 * this->u32_8; /*0x624e67*/
         *(unsigned int *)this->__pad_000 = v24; /*0x624e6e*/
         memset(v24, 0, v25); /*0x624e74*/

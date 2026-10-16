@@ -43,7 +43,7 @@ int sub_7AC500(int a1)
     {
       ((void (__stdcall *)(unsigned int))*v4)(v4[1]); /*0x7ac571*/
       v5 = v4->vtable3; /*0x7ac573*/
-      operator delete((void *)(v4)); /*0x7ac577*/
+      operator delete((v4)); /*0x7ac577*/
       v4 = v5; /*0x7ac57f*/
     }
     while ( v5 ); /*0x7ac583*/

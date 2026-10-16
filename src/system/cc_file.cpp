@@ -85,7 +85,7 @@ void* CCFileClass::ReadEntireFile()
   if ( this->Open(0) ) /*0x4a389a*/
   {
     v3 = this->GetSize(); /*0x4a38a8*/
-    v2 = (void *)operator new(v3); /*0x4a38b0*/
+    v2 = operator new(v3); /*0x4a38b0*/
     if ( v2 ) /*0x4a38b7*/
       this->Read(v2, v3); /*0x4a38bf*/
   }

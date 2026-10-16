@@ -540,7 +540,7 @@ void sub_4C2830()
           *(unsigned int *)(v14 + 1756) = 0; /*0x4c29a9*/
           *v15 = 0; /*0x4c29b3*/
         }
-        operator delete((void *)(v13)); /*0x4c29ba*/
+        operator delete((v13)); /*0x4c29ba*/
       }
     }
     result = i - 1; /*0x4c29c6*/
@@ -567,7 +567,7 @@ ParticleSystemClass * * sub_4C29E0()
         *(unsigned int *)(v3 + 1756) = 0; /*0x4c2a02*/
         v2[8] = 0; /*0x4c2a08*/
       }
-      operator delete((void *)(v2)); /*0x4c2a0c*/
+      operator delete((v2)); /*0x4c2a0c*/
     }
   }
   dword_8A0E98 = 0; /*0x4c2a23*/

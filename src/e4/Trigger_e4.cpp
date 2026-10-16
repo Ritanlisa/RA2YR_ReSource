@@ -201,7 +201,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         }
         v28.ambientSoundController[1] = (int)&vt_CCFileClass; /*0x76d73d*/
         v28.location[2] = 0; /*0x76d745*/
-        ((void *)((int)&v28.isInLogic))->Clear(); /*0x76d74c*/
+        ((void*)(&v28.isInLogic))->Clear(); /*0x76d74c*/
         v28.ambientSoundController[1] = (int)&off_7E1668; /*0x76d755*/
         ((BufferIOFileClass *)&v28.ambientSoundController[1])->Dtor(); /*0x76d75d*/
       }
@@ -298,7 +298,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x76da7e) */
   if ( v28.vtable2 && BYTE1(v28.vtable2) ) /*0x76da8b*/
   {
-    __3_YAXPAX_Z((void *)v28.vtable2); /*0x76da8e*/
+    __3_YAXPAX_Z(v28.vtable2); /*0x76da8e*/
     v28.vtable2 = 0; /*0x76da96*/
   }
   v28.owningHouseIndex = (int)&vt_VectorClass; /*0x76da9e*/

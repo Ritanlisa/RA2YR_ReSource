@@ -1004,7 +1004,7 @@ AbstractClass * * sub_4267F0(int a2)
     }
     *((unsigned int *)a2 + 899) = v8; /*0x42695d*/
     void *v11; // edi
-    v11 = (void *)operator new(0x10000u); /*0x42696b*/
+    v11 = operator new(0x10000u); /*0x42696b*/
     *((unsigned int *)a2 + 900) = v11; /*0x426974*/
     memset(v11, 0, 0x10000u); /*0x42697a*/
   }
@@ -1213,7 +1213,7 @@ int BuildingTypeClass_LoadTheatreSHP(int a1)
       {
         if ( *(unsigned int *)(v3 + 164) && *(unsigned char *)(v3 + 168) ) /*0x427a3c*/
         {
-          operator delete((void *)(*(void **)(v3 + 164))); /*0x427a45*/
+          operator delete((*(void **)(v3 + 164))); /*0x427a45*/
           *(unsigned char *)(v3 + 168) = 0; /*0x427a4d*/
         }
         *(unsigned int *)(v3 + 164) = 0; /*0x427a53*/
@@ -1223,7 +1223,7 @@ int BuildingTypeClass_LoadTheatreSHP(int a1)
     {
       if ( *(unsigned int *)(v3 + 164) && *(unsigned char *)(v3 + 168) ) /*0x427991*/
       {
-        operator delete((void *)(*(void **)(v3 + 164))); /*0x42799a*/
+        operator delete((*(void **)(v3 + 164))); /*0x42799a*/
         *(unsigned char *)(v3 + 168) = 0; /*0x4279a2*/
       }
       *(unsigned int *)(v3 + 164) = 0; /*0x4279c1*/
@@ -1327,46 +1327,46 @@ AbstractClass * * ObjectClass::sub_42A900()
   abstractFlags = (void **)this->abstractFlags; /*0x42a907*/
   if ( abstractFlags ) /*0x42a90c*/
   {
-    operator delete((void *)(abstractFlags[2])); /*0x42a912*/
-    operator delete((void *)(abstractFlags)); /*0x42a918*/
+    operator delete((abstractFlags[2])); /*0x42a912*/
+    operator delete((abstractFlags)); /*0x42a918*/
   }
   void **v3 = *&this->bombVisible; // esi /*0x42a920*/
   this->abstractFlags = 0; /*0x42a923*/
   if ( v3 ) /*0x42a928*/
   {
-    operator delete((void *)(v3[2])); /*0x42a92e*/
-    operator delete((void *)(v3)); /*0x42a934*/
+    operator delete((v3[2])); /*0x42a92e*/
+    operator delete((v3)); /*0x42a934*/
   }
   void *uniqueId; // eax
-  uniqueId = (void *)this->uniqueId; /*0x42a93c*/
+  uniqueId = this->uniqueId; /*0x42a93c*/
   *&this->bombVisible = 0; /*0x42a93f*/
   if ( uniqueId ) /*0x42a944*/
-    operator delete((void *)(uniqueId)); /*0x42a947*/
+    operator delete((uniqueId)); /*0x42a947*/
   void *vtable3 = this->vfptr3; // eax /*0x42a94f*/
   this->uniqueId = 0; /*0x42a952*/
   if ( vtable3 ) /*0x42a957*/
-    operator delete((void *)(vtable3)); /*0x42a95a*/
+    operator delete((vtable3)); /*0x42a95a*/
   void *nextArrayIndex; // eax
-  nextArrayIndex = (void *)this->nextArrayIndex; /*0x42a962*/
+  nextArrayIndex = this->nextArrayIndex; /*0x42a962*/
   this->vfptr3 = 0; /*0x42a965*/
   if ( nextArrayIndex ) /*0x42a96a*/
   {
-    operator delete((void *)(nextArrayIndex)); /*0x42a96d*/
+    operator delete((nextArrayIndex)); /*0x42a96d*/
     this->nextArrayIndex = 0; /*0x42a975*/
   }
   if ( this->referenceCount ) /*0x42a978*/
   {
-    operator delete((void *)((void *)this->referenceCount)); /*0x42a980*/
+    operator delete((this->referenceCount)); /*0x42a980*/
     this->referenceCount = 0; /*0x42a988*/
   }
   if ( this->occupant ) /*0x42a98b*/
   {
-    operator delete((void *)((void *)this->occupant)); /*0x42a993*/
+    operator delete(((void *)this->occupant)); /*0x42a993*/
     this->occupant = 0; /*0x42a99b*/
   }
   if ( this->NeedsSaveOrLink ) /*0x42a99e*/
   {
-    operator delete((void *)(this->NeedsSaveOrLink)); /*0x42a9a6*/
+    operator delete((this->NeedsSaveOrLink)); /*0x42a9a6*/
     this->NeedsSaveOrLink = 0; /*0x42a9ae*/
   }
   void **v7 = &this->onBridge; // esi /*0x42a9b2*/
@@ -1375,24 +1375,24 @@ AbstractClass * * ObjectClass::sub_42A900()
   {
     if ( *(v7 - 3) ) /*0x42a9ba*/
     {
-      operator delete((void *)(*(v7 - 3))); /*0x42a9c2*/
+      operator delete((*(v7 - 3))); /*0x42a9c2*/
       *(v7 - 3) = 0; /*0x42a9ca*/
     }
     if ( *v7 ) /*0x42a9cd*/
     {
-      operator delete((void *)(*v7)); /*0x42a9d4*/
+      operator delete((*v7)); /*0x42a9d4*/
       *v7 = 0; /*0x42a9dc*/
     }
     if ( v7[3] ) /*0x42a9de*/
     {
-      operator delete((void *)(v7[3])); /*0x42a9e6*/
+      operator delete((v7[3])); /*0x42a9e6*/
       v7[3] = 0; /*0x42a9ee*/
     }
     ++v7; /*0x42a9f1*/
     --v8; /*0x42a9f4*/
   }
   while ( v8 ); /*0x42a9f5*/
-  operator delete((void *)((void *)this->customSound)); /*0x42a9fb*/
+  operator delete(((void *)this->customSound)); /*0x42a9fb*/
   char *v9 = &this->u32_BC; // esi /*0x42aa03*/
   int v10 = 3; // edi /*0x42aa09*/
   do /*0x42aa37*/
@@ -1405,7 +1405,7 @@ AbstractClass * * ObjectClass::sub_42A900()
     {
       if ( v9[13] ) /*0x42aa1f*/
       {
-        operator delete((void *)(v11)); /*0x42aa25*/
+        operator delete((v11)); /*0x42aa25*/
         v9->__pad_004 = 0; /*0x42aa2d*/
       }
     }
@@ -2237,7 +2237,7 @@ AbstractClass * * ObjectClass::sub_42CCD0(int a2)
     v26 = 0; /*0x42cd31*/
     if ( Block && v25 ) /*0x42cd41*/
     {
-      operator delete((void *)(Block)); /*0x42cd44*/
+      operator delete((Block)); /*0x42cd44*/
       Block = 0; /*0x42cd4c*/
     }
     v6 = &v2->estimatedHealth; /*0x42cd5e*/
@@ -2293,7 +2293,7 @@ AbstractClass * * ObjectClass::sub_42CCD0(int a2)
       if ( Block && v25 ) /*0x42ce74*/
       {
         LABEL_25:
-        operator delete((void *)(v9)); /*0x42ce76*/
+        operator delete((v9)); /*0x42ce76*/
         Block = 0; /*0x42ce7f*/
       }
     }

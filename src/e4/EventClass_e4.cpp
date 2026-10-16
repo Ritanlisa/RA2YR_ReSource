@@ -670,7 +670,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
         ++i; /*0x40bb31*/
       if ( (((unsigned char *)&(a3_2->q00C))[1]) ) /*0x40bb3e*/
       {
-        operator delete((void *)(*(void **)&a3_2->q004)); /*0x40bb49*/
+        operator delete((*(void **)&a3_2->q004)); /*0x40bb49*/
         *(unsigned int *)&a3_2->q004 = 0; /*0x40bb51*/
       }
     }
@@ -699,13 +699,13 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40bc16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x40bc20*/
   {
-    operator delete((void *)(v3)); /*0x40bc28*/
+    operator delete((v3)); /*0x40bc28*/
     *&Block->__pad_004 = 0; /*0x40bc30*/
   }
   (Block->u32_D) = 0; /*0x40bc3b*/
   *&Block->u32_8 = 0; /*0x40bc41*/
   if ( (a2 & 1) != 0 ) /*0x40bc48*/
-    operator delete((void *)(Block)); /*0x40bc4b*/
+    operator delete((Block)); /*0x40bc4b*/
   return Block->tail_0; /*0x40bc55*/
 }
 } // namespace gamemd
@@ -727,7 +727,7 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2, void *a3)
       this->EventClass_field_0x4 = (void *)aP2; /*0x40bd28*/
       return &this->EventClass_field_0x0; /*0x40bd2e*/
     }
-    this->EventClass_field_0x4 = (void *)__2_YAPAXI_Z(4 * aP1); /*0x40bd3d*/
+    this->EventClass_field_0x4 = __2_YAPAXI_Z(4 * aP1); /*0x40bd3d*/
     BYTE1(this->EventClass_field_0xC) = 1; /*0x40bd40*/
   }
   return &this->EventClass_field_0x0; /*0x40bd2d*/
@@ -759,13 +759,13 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40c116*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x40c120*/
   {
-    operator delete((void *)(v3)); /*0x40c128*/
+    operator delete((v3)); /*0x40c128*/
     *&Block->__pad_004 = 0; /*0x40c130*/
   }
   (Block->u32_D) = 0; /*0x40c13b*/
   *&Block->u32_8 = 0; /*0x40c141*/
   if ( (a2 & 1) != 0 ) /*0x40c148*/
-    operator delete((void *)(Block)); /*0x40c14b*/
+    operator delete((Block)); /*0x40c14b*/
   return Block->tail_0; /*0x40c155*/
 }
 } // namespace gamemd

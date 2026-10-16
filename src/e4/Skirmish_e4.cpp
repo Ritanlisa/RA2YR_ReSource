@@ -275,7 +275,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   if ( g_MissionQueueFrame.briefing[451] ) /*0x596e15*/
   {
     ComPtr::Dtor((ComPtr *)g_MissionQueueFrame.briefing[451]); /*0x596e19*/
-    operator delete((void *)(v14)); /*0x596e1f*/
+    operator delete((v14)); /*0x596e1f*/
   }
   g_MissionQueueFrame.briefing[451] = 0; /*0x596e27*/
   g_MissionQueueFrame.globalVariables[88] = 0; /*0x596e31*/
@@ -1043,7 +1043,7 @@ AbstractClass * * Skirmish::SetupGame(int hWnd, void *a2)
   if ( g_UIControlState ) /*0x6aeea9*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x6aeead*/
-    operator delete((void *)(v47)); /*0x6aeeb3*/
+    operator delete((v47)); /*0x6aeeb3*/
   }
   v48 = (ObjectClass *)operator new(4u); /*0x6aeebd*/
   v49 = v48 ? (Skirmish *)unknown_libname_27(v48) : 0;

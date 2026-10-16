@@ -21,7 +21,7 @@ void BlowPipe_31::ddtor(void *a1)
   this->m_10 = 0; /*0x63dc29*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x63dc30*/
   {
-    operator delete((void *)(v2)); /*0x63dc36*/
+    operator delete((v2)); /*0x63dc36*/
     *&this->q004 = 0; /*0x63dc3e*/
   }
   (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x63dc41*/
@@ -58,7 +58,7 @@ void BlowPipe_23::Clear(void *a1_1)
   a1_1->q010 = 0; /*0x63dc89*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x63dc90*/
   {
-    operator delete((void *)(v2)); /*0x63dc96*/
+    operator delete((v2)); /*0x63dc96*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x63dc9e*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x63dca1*/
@@ -95,7 +95,7 @@ void BlowPipe_23::Clear_0()
   this->m_10 = 0; /*0x63dce9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x63dcf0*/
   {
-    operator delete((void *)(v2)); /*0x63dcf6*/
+    operator delete((v2)); /*0x63dcf6*/
     *&this->q004 = 0; /*0x63dcfe*/
   }
   (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x63dd01*/
@@ -575,13 +575,13 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ed96*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63eda0*/
   {
-    operator delete((void *)(v3)); /*0x63eda8*/
+    operator delete((v3)); /*0x63eda8*/
     *&Block->__pad_004 = 0; /*0x63edb0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x63edbb*/
   Block->u32_8 = 0; /*0x63edc1*/
   if ( (a2 & 1) != 0 ) /*0x63edc8*/
-    operator delete((void *)(Block)); /*0x63edcb*/
+    operator delete((Block)); /*0x63edcb*/
   return Block->tail_0; /*0x63edd5*/
 }
 } // namespace gamemd
@@ -595,13 +595,13 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ede6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x63edf0*/
   {
-    operator delete((void *)(v3)); /*0x63edf8*/
+    operator delete((v3)); /*0x63edf8*/
     *&Block->__pad_004 = 0; /*0x63ee00*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x63ee0b*/
   Block->u32_8 = 0; /*0x63ee11*/
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
-    operator delete((void *)(Block)); /*0x63ee1b*/
+    operator delete((Block)); /*0x63ee1b*/
   return Block->tail_0; /*0x63ee25*/
 }
 } // namespace gamemd
@@ -615,13 +615,13 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ee36*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ee40*/
   {
-    operator delete((void *)(v3)); /*0x63ee48*/
+    operator delete((v3)); /*0x63ee48*/
     *&Block->__pad_004 = 0; /*0x63ee50*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x63ee5b*/
   Block->u32_8 = 0; /*0x63ee61*/
   if ( (a2 & 1) != 0 ) /*0x63ee68*/
-    operator delete((void *)(Block)); /*0x63ee6b*/
+    operator delete((Block)); /*0x63ee6b*/
   return Block->tail_0; /*0x63ee75*/
 }
 } // namespace gamemd
@@ -635,13 +635,13 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ee86*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ee90*/
   {
-    operator delete((void *)(v3)); /*0x63ee98*/
+    operator delete((v3)); /*0x63ee98*/
     *&Block->__pad_004 = 0; /*0x63eea0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x63eeab*/
   Block->u32_8 = 0; /*0x63eeb1*/
   if ( (a2 & 1) != 0 ) /*0x63eeb8*/
-    operator delete((void *)(Block)); /*0x63eebb*/
+    operator delete((Block)); /*0x63eebb*/
   return Block->tail_0; /*0x63eec5*/
 }
 } // namespace gamemd
@@ -655,13 +655,13 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ef26*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ef30*/
   {
-    operator delete((void *)(v3)); /*0x63ef38*/
+    operator delete((v3)); /*0x63ef38*/
     *&Block->__pad_004 = 0; /*0x63ef40*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x63ef4b*/
   Block->u32_8 = 0; /*0x63ef51*/
   if ( (a2 & 1) != 0 ) /*0x63ef58*/
-    operator delete((void *)(Block)); /*0x63ef5b*/
+    operator delete((Block)); /*0x63ef5b*/
   return Block->tail_0; /*0x63ef65*/
 }
 } // namespace gamemd

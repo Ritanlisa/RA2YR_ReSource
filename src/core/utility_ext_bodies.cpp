@@ -48,12 +48,12 @@ int GraphicMenuImageItem::QueryInterface(char a2)
   if ( v3 ) /*0x4f384f*/
   {
     j_DeleteAndZero(v3); /*0x4f3853*/
-    operator delete((void *)(v3)); /*0x4f3859*/
+    operator delete((v3)); /*0x4f3859*/
   }
   DeleteAndZero(&this->q034); /*0x4f3864*/
   GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f386b*/
   if ( (a2 & 1) != 0 ) /*0x4f3875*/
-    operator delete((void *)(this)); /*0x4f3878*/
+    operator delete((this)); /*0x4f3878*/
   return this; /*0x4f3882*/
 }
 // 0x49ef40

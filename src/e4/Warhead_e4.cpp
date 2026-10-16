@@ -63,7 +63,7 @@ int Warhead::RemoveFromDamageList(int a2)
 {
 
   Warhead *v2; // esi
-  v2 = (gamemd::Warhead *)(&this->u32_66C); /*0x452827*/
+  v2 = &this->u32_66C; /*0x452827*/
   int v3; // eax
   v3 = (*(int (**)(Warhead *, int *))(this->u32_66C + 16))(&this->u32_66C, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/

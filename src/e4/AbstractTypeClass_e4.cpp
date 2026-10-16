@@ -235,7 +235,7 @@ int AbstractTypeClass::Init(int aP1, void *a2)
 namespace gamemd {
 BOOL AbstractTypeClass::NameEquals(void *a2)
 {
-  return _strcmpi(a2, (const void *)(&this->vtable46)) == 0; /*0x410a56*/
+  return _strcmpi(a2, (&this->vtable46)) == 0; /*0x410a56*/
 }
 } // namespace gamemd
 // 0x410B90

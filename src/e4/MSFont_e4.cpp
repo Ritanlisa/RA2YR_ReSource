@@ -131,7 +131,7 @@ void MSFont_18::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x5d5089*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x5d5090*/
   {
-    operator delete((void *)(v2)); /*0x5d5096*/
+    operator delete((v2)); /*0x5d5096*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x5d509e*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x5d50a1*/
@@ -167,7 +167,7 @@ void MSFont_18::Destroy(void *a1)
   this->m_10 = 0; /*0x5d50e9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5d50f0*/
   {
-    operator delete((void *)(v2)); /*0x5d50f6*/
+    operator delete((v2)); /*0x5d50f6*/
     *&this->q004 = 0; /*0x5d50fe*/
   }
   (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x5d5101*/
@@ -407,13 +407,13 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5d56e6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d56f0*/
   {
-    operator delete((void *)(v3)); /*0x5d56f8*/
+    operator delete((v3)); /*0x5d56f8*/
     *&Block->__pad_004 = 0; /*0x5d5700*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x5d570b*/
   Block->u32_8 = 0; /*0x5d5711*/
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
-    operator delete((void *)(Block)); /*0x5d571b*/
+    operator delete((Block)); /*0x5d571b*/
   return Block->tail_0; /*0x5d5725*/
 }
 } // namespace gamemd
@@ -427,13 +427,13 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5d5736*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d5740*/
   {
-    operator delete((void *)(v3)); /*0x5d5748*/
+    operator delete((v3)); /*0x5d5748*/
     *&Block->__pad_004 = 0; /*0x5d5750*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x5d575b*/
   Block->u32_8 = 0; /*0x5d5761*/
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
-    operator delete((void *)(Block)); /*0x5d576b*/
+    operator delete((Block)); /*0x5d576b*/
   return Block->tail_0; /*0x5d5775*/
 }
 } // namespace gamemd
@@ -447,13 +447,13 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5d57d6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5d57e0*/
   {
-    operator delete((void *)(v3)); /*0x5d57e8*/
+    operator delete((v3)); /*0x5d57e8*/
     *&Block->__pad_004 = 0; /*0x5d57f0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x5d57fb*/
   Block->u32_8 = 0; /*0x5d5801*/
   if ( (a2 & 1) != 0 ) /*0x5d5808*/
-    operator delete((void *)(Block)); /*0x5d580b*/
+    operator delete((Block)); /*0x5d580b*/
   return Block->tail_0; /*0x5d5815*/
 }
 } // namespace gamemd

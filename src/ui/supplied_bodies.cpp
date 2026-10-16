@@ -226,7 +226,7 @@ namespace gamemd {
 unsigned int * SidebarClass::queryInterface(char a2) {
   GadgetClass::Dtor((GadgetClass *)this); /*0x6ac783*/
   if ( (a2 & 1) != 0 ) /*0x6ac78d*/
-    operator delete((void *)(this)); /*0x6ac790*/
+    operator delete((this)); /*0x6ac790*/
   return &this->field_0; /*0x6ac79a*/
 }
 } // namespace gamemd
@@ -240,7 +240,7 @@ void ToolTipClass::ddtor() {
   this->Duration = 0; /*0x724c39*/
   if ( v2 && (this->IsAllocated) ) /*0x724c40*/
   {
-    operator delete((void *)(v2)); /*0x724c46*/
+    operator delete((v2)); /*0x724c46*/
     *&this->Position = 0; /*0x724c4e*/
   }
   (this->IsAllocated) = 0; /*0x724c51*/
@@ -1558,7 +1558,7 @@ void CheckListClass::GetSelected(wchar_t *String2) {
         return; /*0x4883c3*/
     }
     ListClass::RemoveItem((ListClass *)this, v3); /*0x4883cf*/
-    operator delete((void *)(v5)); /*0x4883d5*/
+    operator delete((v5)); /*0x4883d5*/
   }
 }
 } // namespace gamemd
@@ -1620,7 +1620,7 @@ namespace gamemd {
 unsigned int * ControlClass::QueryInterface(char a2) {
   GadgetClass::Dtor((GadgetClass *)this); /*0x48e663*/
   if ( (a2 & 1) != 0 ) /*0x48e66d*/
-    operator delete((void *)(this)); /*0x48e670*/
+    operator delete((this)); /*0x48e670*/
   return this->vtable1; /*0x48e67a*/
 }
 } // namespace gamemd
@@ -1692,7 +1692,7 @@ namespace gamemd {
 unsigned int * EditClass::QueryInterface(char a2) {
   DropListClass::Constructor((DropListClass *)this); /*0x4b57d3*/
   if ( (a2 & 1) != 0 ) /*0x4b57dd*/
-    operator delete((void *)(this)); /*0x4b57e0*/
+    operator delete((this)); /*0x4b57e0*/
   return this; /*0x4b57ea*/
 }
 } // namespace gamemd
@@ -1939,7 +1939,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
     dword_8B3E90 = 0; /*0x4e1aa4*/
   LinkClass::Destruct((LinkClass *)this); /*0x4e1aac*/
   if ( (a2 & 1) != 0 ) /*0x4e1ab6*/
-    operator delete((void *)(this)); /*0x4e1ab9*/
+    operator delete((this)); /*0x4e1ab9*/
   return this->vtable1; /*0x4e1ac3*/
 }
 } // namespace gamemd
@@ -2329,7 +2329,7 @@ int ListClass::Destruct() {
   this->u32_34 = 0; /*0x557673*/
   if ( v4 && this->u32_41 ) /*0x55767e*/
   {
-    operator delete((void *)(v4)); /*0x557684*/
+    operator delete((v4)); /*0x557684*/
     this->u32_38 = 0; /*0x55768c*/
   }
   this->u32_41 = 0; /*0x557691*/
@@ -2382,7 +2382,7 @@ namespace gamemd {
 unsigned int * SliderClass::QueryInterface(char a2) {
   SliderClass::Destructor(this); /*0x558183*/
   if ( (a2 & 1) != 0 ) /*0x55818d*/
-    operator delete((void *)(this)); /*0x558190*/
+    operator delete((this)); /*0x558190*/
   return this->vtable1; /*0x55819a*/
 }
 } // namespace gamemd
@@ -2523,7 +2523,7 @@ char FontClass::LoadFontResources(int16_t a2) {
     this->ptr_10 = ((4 * (uint8_t)v5[205]) >> g_BitMask_Blue << g_BitMask_Green) /*0x5d2fff*/
                            | ((4 * (uint8_t)v5[206]) >> g_BitMask_Red << g_BitShift_Blue)
                            | ((4 * (uint8_t)v5[204]) >> g_BitShift_Green_0 << g_BitShift_Red);
-    operator delete((void *)(v5)); /*0x5d3002*/
+    operator delete((v5)); /*0x5d3002*/
     v12 = operator new(0x188u); /*0x5d300c*/
     v13 = v12 ? ConvertClass::Construct(v12, (int)&stru_886080, (int)&stru_886080, g_DSurface_Primary, 1, 0) : 0;
     this->u32_18 = v13; /*0x5d303c*/
@@ -2899,7 +2899,7 @@ void ComboBoxOwnerDraw::SortItems() {
     this->q008 = 2 * ComboBoxOwnerDraw_field_0x08; /*0x62530d*/
     v13 = v3; /*0x625310*/
     this->q00C = v4; /*0x625318*/
-    v5 = (void *)operator new(8 * ComboBoxOwnerDraw_field_0x08); /*0x625323*/
+    v5 = operator new(8 * ComboBoxOwnerDraw_field_0x08); /*0x625323*/
     v6 = 4 * this->q008; /*0x625328*/
     *(unsigned int *)this->__pad_000 = v5; /*0x62532f*/
     memset(v5, 0, v6); /*0x625334*/
@@ -2930,7 +2930,7 @@ void ComboBoxOwnerDraw::SortItems() {
       while ( v8 ); /*0x625377*/
       v3 = v13; /*0x625379*/
     }
-    operator delete((void *)(v3)); /*0x62537e*/
+    operator delete((v3)); /*0x62537e*/
   }
 }
 } // namespace gamemd
@@ -3240,7 +3240,7 @@ void ToolTipClass::updateString() {
   {
     v4 = this->__pad_238; /*0x724117*/
     if ( *(unsigned int *)(v4 + 4 * i) ) /*0x72411d*/
-      operator delete((void *)(*(void **)(v4 + 4 * i))); /*0x724125*/
+      operator delete((*(void **)(v4 + 4 * i))); /*0x724125*/
   }
   this->__pad_234->ddtor(&this->__pad_234); /*0x724146*/
   operator delete((void *)(this->CommandClass_24C))); /*0x724150*/
@@ -3253,7 +3253,7 @@ void ToolTipClass::updateString() {
   this->__pad_234 = 0; /*0x72417b*/
   if ( v5 && this->u32_241 ) /*0x724183*/
   {
-    operator delete((void *)(v5)); /*0x724189*/
+    operator delete((v5)); /*0x724189*/
     this->__pad_238 = 0; /*0x724191*/
   }
   this->u32_241 = 0; /*0x724194*/
@@ -3447,7 +3447,7 @@ namespace gamemd {
 void * ToolTipClass::Destructor(char a2) {
   ToolTipClass::updateString((ToolTipClass *)this); /*0x724c13*/
   if ( (a2 & 1) != 0 ) /*0x724c1d*/
-    operator delete((void *)(this)); /*0x724c20*/
+    operator delete((this)); /*0x724c20*/
   return this; /*0x724c2a*/
 }
 } // namespace gamemd
@@ -3501,7 +3501,7 @@ void ** Campaign_WorldDominationTour::QueryInterface(char a2) {
   ComPtr::Release(&this->ComPtr_2); /*0x765659*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x765660*/
   if ( (a2 & 1) != 0 ) /*0x76566a*/
-    operator delete((void *)(this)); /*0x76566d*/
+    operator delete((this)); /*0x76566d*/
   return (void **)this; /*0x765677*/
 }
 } // namespace gamemd
@@ -3584,7 +3584,7 @@ char EditControl::GrowBuffer(wchar_t a2, size_t a3) {
     String = a2; /*0x7b73bb*/
     wcscat(v10, &String); /*0x7b73c0*/
     wcscat(v10, (const wchar_t *)(*(unsigned int *)this->__pad_000 + v9)); /*0x7b73c9*/
-    operator delete((void *)(*(void **)this->__pad_000)); /*0x7b73d1*/
+    operator delete((*(void **)this->__pad_000)); /*0x7b73d1*/
     *(unsigned int *)this->__pad_000 = v10; /*0x7b73d9*/
     return 1; /*0x7b73db*/
   }

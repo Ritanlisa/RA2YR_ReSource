@@ -373,7 +373,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   ((GenericNode *)(v79))->Constructor();
   ((LinkedList_flat *)v78)->Prepend((int)v79);
   v77->q003 = (uint8_t **)&vt_List_INIClass_INISection;
-  memset( (void *)(&v79[3]), 0, 12);
+  memset( (&v79[3]), 0, 12);
   var9A4 = 0;
   int v81 = 0;
   v80 = (AbstractClass *)(0);
@@ -731,7 +731,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
       int v29 = (char *)v71 - (char *)v27;
       v76 = v28;
       v75 = (CCINIClass *)((char *)v72 + (unsigned int)v27);
-      v28->field_0 =(void*)&v72->q000[(unsigned int)v27];
+      v28->field_0 =&v72->q000[(unsigned int)v27];
       v28->__pad_004 = (unsigned char)((void *)v29);
       if ( *(int *)&(&g_NetworkPlayerBuffer)[80460] < *(int *)&(&g_NetworkPlayerBuffer)[80452]
         || ((&g_NetworkPlayerBuffer)[80457] || !*(unsigned int *)&(&g_NetworkPlayerBuffer)[80452])
@@ -791,7 +791,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
     v88 = (AbstractClass *)(0);
     if ( v32 )
       v88 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, (unsigned char *)(&DataGlobal_008291B8), 0);
-    int v34 = (int)(INIClass::BinarySearchSection( (gamemd::INIClass *)(int)v77, (void *)(&aP4)));
+    int v34 = (int)(INIClass::BinarySearchSection( (gamemd::INIClass *)(int)v77, (&aP4)));
     v69 = (MapClass *)(0);
     var9F4_1 = v34 != 0;
     if ( (int)v71 > 0 )
@@ -2983,7 +2983,7 @@ unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
       this->Items = (void *)a3; /*0x54ec18*/
       return &this->vtable0; /*0x54ec1e*/
     }
-    this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x54ec2d*/
+    this->Items = __2_YAPAXI_Z(4 * a2); /*0x54ec2d*/
     this->IsAllocated = 1; /*0x54ec30*/
   }
   return &this->vtable0; /*0x54ec1d*/

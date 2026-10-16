@@ -271,7 +271,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
           ++i; /*0x7246bc*/
           *(unsigned int *)(result + 8 * i - 8) = *(unsigned int *)(*v4 + 8 * i - 8); /*0x7246c1*/
         }
-        operator delete((void *)((void *)*v4)); /*0x7246d7*/
+        operator delete(((void *)*v4)); /*0x7246d7*/
         v15 = a2 + v4->vtable3; /*0x7246e6*/
         *v4 = result; /*0x7246e8*/
         v4->vtable3 = v15; /*0x7246ea*/
@@ -282,7 +282,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       (*((unsigned char *)&(result))) = 1; /*0x724713*/
       return result; /*0x724719*/
     }
-    operator delete((void *)(v6)); /*0x72471d*/
+    operator delete((v6)); /*0x72471d*/
   }
   LABEL_22:
   (*((unsigned char *)&(result))) = 0; /*0x724725*/

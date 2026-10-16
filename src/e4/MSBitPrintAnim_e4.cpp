@@ -24,7 +24,7 @@ MSBitPrintAnim * MSBitPrintAnim::QueryInterface(void ** Block, char a2)
   ((DeleteAndZero *)((char *)Block + 28))->Alt(); /*0x5ced1c*/
   *(unsigned int *)Block->tail_0 = &vt_MSAnim; /*0x5ced25*/
   if ( (a2 & 1) != 0 ) /*0x5ced2d*/
-    operator delete((void *)(Block)); /*0x5ced30*/
-  return (gamemd::MSBitPrintAnim *)((void **)Block); /*0x5ced3a*/
+    operator delete((Block)); /*0x5ced30*/
+  return (gamemd::MSBitPrintAnim *)(Block); /*0x5ced3a*/
 }  // G42.18 ns repair
 } // namespace gamemd

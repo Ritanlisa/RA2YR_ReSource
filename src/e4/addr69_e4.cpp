@@ -489,7 +489,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v25 = a2 / 0xC0; /*0x69422f*/
   if ( a2 % 0xC0 ) /*0x69422a*/
     v25 = ++v7; /*0x694238*/
-  Block = (void *)operator new(v7); /*0x69424e*/
+  Block = operator new(v7); /*0x69424e*/
   memset(Block, 0, v7); /*0x694253*/
   v26 = 0; /*0x694257*/
   lpBuffer = (LPCVOID)operator new(a2); /*0x694269*/
@@ -616,8 +616,8 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6946b4*/
     IPXManagerClass::destroyConnection(&unk_A8E9C0); /*0x6946bb*/
   ((RawFileClass *)v43)->Write2(lpBuffer, nNumberOfBytesToWrite); /*0x6946ce*/
-  operator delete((void *)((void *)lpBuffer)); /*0x6946d8*/
-  operator delete((void *)(Block)); /*0x6946e2*/
+  operator delete(((void *)lpBuffer)); /*0x6946d8*/
+  operator delete((Block)); /*0x6946e2*/
   Debug::Log(); /*0x6946fa*/
   ((RawFileClass *)v43)->CloseHandle(); /*0x694706*/
   Debug::Log(); /*0x694710*/
@@ -626,7 +626,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     FileClass::Delete((RawFileClass *)v43); /*0x69472f*/
     Debug::Log(); /*0x694739*/
   }
-  operator delete((void *)(v6)); /*0x694742*/
+  operator delete((v6)); /*0x694742*/
   ((RawFileClass *)((BufferIOFileClass *)v43))->Dtor(); /*0x69474e*/
   return v21; /*0x694755*/
 }
@@ -1399,8 +1399,8 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
       v7 += 5; /*0x69953b*/
       v9 = v7 * CCFileClass::GetSize(&v20) / 100; /*0x69955b*/
       if ( v8 ) /*0x69955d*/
-        operator delete((void *)(v8)); /*0x699560*/
-      v8 = (void *)operator new(v9 + 1); /*0x699571*/
+        operator delete((v8)); /*0x699560*/
+      v8 = operator new(v9 + 1); /*0x699571*/
       if ( !v8 ) /*0x699578*/
         break; /*0x699578*/
       BufferIOFileClass::Seek(&v20, 0, 0); /*0x699584*/
@@ -1423,8 +1423,8 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
             v17 = v13 + 1; /*0x6995f5*/
             v15 = (v13 + 1) * CCFileClass::GetSize(&v20) / 100; /*0x699616*/
             if ( v14 ) /*0x699618*/
-              operator delete((void *)(v14)); /*0x69961b*/
-            v14 = (void *)operator new(v15 + 1); /*0x69962c*/
+              operator delete((v14)); /*0x69961b*/
+            v14 = operator new(v15 + 1); /*0x69962c*/
             if ( !v14 ) /*0x699633*/
               goto LABEL_20; /*0x699633*/
             BufferIOFileClass::Seek(&v20, -v15, 2u); /*0x699644*/
@@ -1476,8 +1476,8 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
               *a4 = INIClass::ReadBool_Overwrite((int *)v27.vtable1, aBasic, (uint8_t *)g_INI_Key_Official, 0); /*0x6998ba*/
               Debug::Log(); /*0x6998d9*/
               Debug::Log(); /*0x6998eb*/
-              operator delete((void *)(v8)); /*0x6998f1*/
-              operator delete((void *)(v14)); /*0x6998f7*/
+              operator delete((v8)); /*0x6998f1*/
+              operator delete((v14)); /*0x6998f7*/
               Vector::Clear((int)&v25); /*0x699906*/
               Straw::Dtor(&v23); /*0x699912*/
               HashTable::DestroyHashTableINIClass(&v29); /*0x69991e*/
@@ -1488,8 +1488,8 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
             }
             if ( v17 >= 100 ) /*0x699670*/
             {
-              operator delete((void *)(v8)); /*0x69967a*/
-              operator delete((void *)(v14)); /*0x699680*/
+              operator delete((v8)); /*0x69967a*/
+              operator delete((v14)); /*0x699680*/
               goto LABEL_20; /*0x699688*/
             }
             v13 = v17; /*0x699672*/
@@ -1498,7 +1498,7 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
       }
       if ( v7 >= 100 ) /*0x6995c7*/
       {
-        operator delete((void *)(v8)); /*0x6995ce*/
+        operator delete((v8)); /*0x6995ce*/
         break; /*0x6995d6*/
       }
     }
@@ -1690,7 +1690,7 @@ char * E4Recv_6905F0::sub_6905F0()
   /* X11: vtable install elided (implicit via ScoreFontClass virtuals 0x6905f9) */
   if ( ScoreFontClass_field_0x0C && this->M16 == 1 ) /*0x690607*/
   {
-    operator delete((void *)(ScoreFontClass_field_0x0C)); /*0x69060a*/
+    operator delete((ScoreFontClass_field_0x0C)); /*0x69060a*/
     this->M12 = 0; /*0x690612*/
     this->M16 = 0; /*0x690615*/
   }

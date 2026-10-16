@@ -60,13 +60,13 @@ void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int
   /* X11: vtable install elided (implicit via class virtuals 0x4a0e66) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x4a0e70*/
   {
-    operator delete((void *)(v3)); /*0x4a0e78*/
+    operator delete((v3)); /*0x4a0e78*/
     *&this->__pad_004 = 0; /*0x4a0e80*/
   }
   (this->IsAllocated) = 0; /*0x4a0e8b*/
   this->q008 = 0; /*0x4a0e91*/
   if ( (a2 & 1) != 0 ) /*0x4a0e98*/
-    operator delete((void *)(this)); /*0x4a0e9b*/
+    operator delete((this)); /*0x4a0e9b*/
   return this->vtable1; /*0x4a0ea5*/
 }
 }
@@ -79,7 +79,7 @@ void EnumConnectionPointsClass::ClearBuffer() {
   this->q010 = 0; /*0x4a0f29*/
   if ( v2 && (this->IsAllocated) ) /*0x4a0f30*/
   {
-    operator delete((void *)(v2)); /*0x4a0f36*/
+    operator delete((v2)); /*0x4a0f36*/
     *&this->__pad_004 = 0; /*0x4a0f3e*/
   }
   (this->IsAllocated) = 0; /*0x4a0f41*/
@@ -273,7 +273,7 @@ namespace gamemd {
 void* COMObject::ScalarDtor(int a2) {
   GadgetClass::Dtor((GadgetClass *)this); /*0x4e30f3*/
   if ( (a2 & 1) != 0 ) /*0x4e30fd*/
-    operator delete((void *)(this)); /*0x4e3100*/
+    operator delete((this)); /*0x4e3100*/
   return this->Hovered; /*0x4e310a*/
 }
 }
@@ -870,7 +870,7 @@ void* COMClass::invokeMethod(int a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x765793*/
   ComPtr::Release((ComPtr *)this); /*0x765799*/
   if ( (a2 & 1) != 0 ) /*0x7657a3*/
-    operator delete((void *)(this)); /*0x7657a6*/
+    operator delete((this)); /*0x7657a6*/
   return this->__pad_000; /*0x7657b0*/
 }
 }
@@ -880,7 +880,7 @@ void* COMClass::getTypeInfo(int a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x7657c3*/
   ComPtr::Release((ComPtr *)this); /*0x7657c9*/
   if ( (a2 & 1) != 0 ) /*0x7657d3*/
-    operator delete((void *)(this)); /*0x7657d6*/
+    operator delete((this)); /*0x7657d6*/
   return this->__pad_000; /*0x7657e0*/
 }
 }
@@ -1003,7 +1003,7 @@ void* COMClass::connectPoint(int a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x7669c3*/
   ComPtr::Release((ComPtr *)this); /*0x7669c9*/
   if ( (a2 & 1) != 0 ) /*0x7669d3*/
-    operator delete((void *)(this)); /*0x7669d6*/
+    operator delete((this)); /*0x7669d6*/
   return this->__pad_000; /*0x7669e0*/
 }
 }
@@ -1065,7 +1065,7 @@ void* COMClass::unadviseConnection(int a2) {
   DeleteAndZerothis->q014); /*0x766b96*/
   GameOption_WorldDominationTour::Constructor((GameOption_WorldDominationTour *)this); /*0x766b9d*/
   if ( (a2 & 1) != 0 ) /*0x766ba7*/
-    operator delete((void *)(this)); /*0x766baa*/
+    operator delete((this)); /*0x766baa*/
   return (void **)this; /*0x766bb4*/
 }
 }
@@ -1121,12 +1121,12 @@ int StringVector::Insert(void* a1, int v5) {
       v7 = 10; /*0x7ae606*/
     }
     v8 = 4 * v7; /*0x7ae60a*/
-    v9 = (void *)operator new(4 * v7); /*0x7ae619*/
+    v9 = operator new(4 * v7); /*0x7ae619*/
     memset(v9, 0, v8); /*0x7ae627*/
     StringVector_field_0x08 = (const void *)this->q008; /*0x7ae630*/
     if ( StringVector_field_0x08 ) /*0x7ae635*/
       memcpy(v9, StringVector_field_0x08, 4 * *(unsigned int *)this->__pad_000); /*0x7ae643*/
-    operator delete((void *)((void *)this->q008)); /*0x7ae650*/
+    operator delete(((void *)this->q008)); /*0x7ae650*/
     v4 = v5; /*0x7ae659*/
     this->q008 = (int)v9; /*0x7ae660*/
     this->q004 = v17; /*0x7ae663*/
@@ -1141,12 +1141,12 @@ int StringVector::Insert(void* a1, int v5) {
       v11 = 10; /*0x7ae682*/
     }
     v12 = 4 * v11; /*0x7ae686*/
-    v13 = (void *)operator new(4 * v11); /*0x7ae695*/
+    v13 = operator new(4 * v11); /*0x7ae695*/
     memset(v13, 0, v12); /*0x7ae6a3*/
     v14 = (const void *)this->q008; /*0x7ae6ac*/
     if ( v14 ) /*0x7ae6b1*/
       memcpy(v13, v14, 4 * *(unsigned int *)this->__pad_000); /*0x7ae6bf*/
-    operator delete((void *)((void *)this->q008)); /*0x7ae6cc*/
+    operator delete(((void *)this->q008)); /*0x7ae6cc*/
     v4 = v5; /*0x7ae6d5*/
     this->q008 = (int)v13; /*0x7ae6dc*/
     this->q004 = v18; /*0x7ae6df*/

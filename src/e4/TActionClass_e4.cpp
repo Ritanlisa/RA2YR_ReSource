@@ -731,7 +731,7 @@ char TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, int aP4)
   v6 = stru_A8EB00.ObjectTypeClass[4] - 1; /*0x6e4160*/
   if ( stru_A8EB00.ObjectTypeClass[4] - 1 >= 0 ) /*0x6e416b*/
   {
-    p_TActionClass_field_54 = (char *)(&this->TActionClass_field_54); /*0x6e4172*/
+    p_TActionClass_field_54 = &this->TActionClass_field_54; /*0x6e4172*/
     v8 = stru_A8EB00.ObjectTypeClass[1] + 4 * v6; /*0x6e4175*/
     while ( strcmp((const char *)(*(unsigned int *)v8 + 36), p_TActionClass_field_54) ) /*0x6e41ab*/
     {

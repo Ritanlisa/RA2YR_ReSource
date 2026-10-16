@@ -196,7 +196,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
     *(unsigned char *)(v2 + 25) = 0; /*0x4ba80e*/
     *(unsigned int *)(v2 + 28) = 0; /*0x4ba811*/
     *(unsigned int *)v2 = (unsigned int)(&DSurface_Vtable); /*0x4ba814*/
-    v4 = (void *)__2_YAPAXI_Z(0x6Cu); /*0x4ba822*/
+    v4 = __2_YAPAXI_Z(0x6Cu); /*0x4ba822*/
     v3[8] = (unsigned int)(v4); /*0x4ba82b*/
     v5 = v3; /*0x4ba82e*/
     memset(v4, 0, 0x6Cu); /*0x4ba830*/
@@ -407,7 +407,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
   /* X11: vtable install elided (implicit via DSurface virtuals 0x4bac86) */
   if ( a2 ) /*0x4bac8c*/
   {
-    v3 = (void *)__2_YAPAXI_Z(0x6Cu); /*0x4bac96*/
+    v3 = __2_YAPAXI_Z(0x6Cu); /*0x4bac96*/
     this->DSurface_field_0x20 = v3; /*0x4bac9f*/
     memset(v3, 0, 0x6Cu); /*0x4baca2*/
     *(unsigned int *)this->DSurface_field_0x20 = 108; /*0x4bacaa*/
@@ -422,7 +422,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
       this->Height = (void *)*((unsigned int *)DSurface_field_0x20 + 2); /*0x4bace6*/
     }
   }
-  return (unsigned int *)(&this->vtable1); /*0x4baceb*/
+  return &this->vtable1; /*0x4baceb*/
 
 }
 } // namespace gamemd

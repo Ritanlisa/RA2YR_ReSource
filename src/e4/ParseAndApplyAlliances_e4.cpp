@@ -24,7 +24,7 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
       this->Items = (void *)a3; /*0x69d898*/
       return &this->vtable0; /*0x69d89e*/
     }
-    this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x69d8ad*/
+    this->Items = __2_YAPAXI_Z(4 * a2); /*0x69d8ad*/
     this->IsAllocated = 1; /*0x69d8b0*/
   }
   return &this->vtable0; /*0x69d89d*/

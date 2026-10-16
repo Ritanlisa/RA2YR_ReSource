@@ -28,8 +28,8 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
   /* X11: vtable install elided (implicit via ScoreAnimClass virtuals 0x691029) */
   if ( (a2 & 1) != 0 ) /*0x69102f*/
-    operator delete((void *)(this)); /*0x691032*/
-  return (unsigned int *)(&this->vtable1); /*0x69103c*/
+    operator delete((this)); /*0x691032*/
+  return &this->vtable1; /*0x69103c*/
 }
 } // namespace gamemd
 // 0x6910A0

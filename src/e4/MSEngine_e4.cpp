@@ -347,12 +347,12 @@ CampaignClass * MSEngine::ClearBuffer(void *a1_1)
   void *v2; // eax
   v2 = (void *)(*&this->__pad_004); /*0x5ac526*/
   *&this->m_10 = 0; /*0x5ac529*/
-  if ( v2 && (((unsigned char *)&(this->m_C))[1]) ) /*0x5ac530*/
+  if ( v2 && (this->IsAllocated) ) /*0x5ac530*/
   {
     RA2_OPDEL(v2); /*0x5ac536*/
     *&this->__pad_004 = 0; /*0x5ac53e*/
   }
-  (((unsigned char *)&(this->q00B))[1]) = 0; /*0x5ac541*/
+  (this->m_C) = 0; /*0x5ac541*/
   *&this->m_8 = 0; /*0x5ac544*/
 
 }
@@ -493,13 +493,13 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClassTRect; /*0x5ad4d6*/
   if ( v3 && (Block->u8_E) ) /*0x5ad4e0*/
   {
-    operator delete((void *)(v3)); /*0x5ad4e8*/
+    operator delete((v3)); /*0x5ad4e8*/
     *&Block->__pad_004 = 0; /*0x5ad4f0*/
   }
   (Block->u32_D) = 0; /*0x5ad4fb*/
   *&Block->u32_8 = 0; /*0x5ad501*/
   if ( (a2 & 1) != 0 ) /*0x5ad508*/
-    operator delete((void *)(Block)); /*0x5ad50b*/
+    operator delete((Block)); /*0x5ad50b*/
   return Block->tail_0; /*0x5ad515*/
 }
 } // namespace gamemd

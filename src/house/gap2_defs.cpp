@@ -265,7 +265,7 @@ void BaseClass::ddtor() {
   this->cells24 = 0; /*0x42f3a9*/
   if ( v2 && (this->IsAllocated) ) /*0x42f3b0*/
   {
-    operator delete((void *)(v2)); /*0x42f3b6*/
+    operator delete((v2)); /*0x42f3b6*/
     *&this->baseNodeCount = 0; /*0x42f3be*/
   }
   (this->IsAllocated) = 0; /*0x42f3c1*/
@@ -389,13 +389,13 @@ void* BaseClass::QueryInterface(int a1) {
   /* X11: vtable install elided (implicit via class virtuals 0x42f976) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x42f980*/
   {
-    operator delete((void *)(v3)); /*0x42f988*/
+    operator delete((v3)); /*0x42f988*/
     *&this->baseNodeCount = 0; /*0x42f990*/
   }
   (this->IsAllocated) = 0; /*0x42f99b*/
   this->baseNodeCapacity = 0; /*0x42f9a1*/
   if ( (a1 & 1) != 0 ) /*0x42f9a8*/
-    operator delete((void *)(this)); /*0x42f9ab*/
+    operator delete((this)); /*0x42f9ab*/
   return this->vtable1; /*0x42f9b5*/
 }
 }
@@ -941,7 +941,7 @@ void TagClassVectorHost::COMStub_3() {  // g57w10 r4: 归属修正 (raw 段头 t
   this->Items = 0; /*0x4e8299*/
   if ( v2 && this->IsAllocated ) /*0x4e82a0*/
   {
-    operator delete((void *)(v2)); /*0x4e82a6*/
+    operator delete((v2)); /*0x4e82a6*/
     this->Items = 0; /*0x4e82ae*/
   }
   this->IsAllocated = 0; /*0x4e82b1*/
@@ -1017,7 +1017,7 @@ int TagClassVectorHost::COMStub_2(int a1, void* a2) {  // g57w10 r4 (raw this=Dy
         ++i; /*0x4e93d1*/
       if ( this->IsAllocated ) /*0x4e93de*/
       {
-        operator delete((void *)(this->ptr_4)); /*0x4e93e9*/
+        operator delete((this->ptr_4)); /*0x4e93e9*/
         this->Items = 0; /*0x4e93f1*/
       }
     }
@@ -1059,17 +1059,17 @@ namespace gamemd {
 void* TagClassVectorHost::COMStub_0(int a2) {  // g57w10 r4 (raw this=DynamicVector; _vt00 scalar-deleting dtor)
   void *v3; // eax
 
-  v3 = (void *)this->Items; /*0x4ef533*/
+  v3 = this->Items; /*0x4ef533*/
   *this = 0; /*0x4ef536*/
   if ( v3 && this->IsAllocated ) /*0x4ef540*/
   {
-    operator delete((void *)(v3)); /*0x4ef548*/
+    operator delete((v3)); /*0x4ef548*/
     this->Items = 0; /*0x4ef550*/
   }
   this->IsAllocated = 0; /*0x4ef55b*/
   this->__pad_008 = 0; /*0x4ef561*/
   if ( (a2 & 1) != 0 ) /*0x4ef568*/
-    operator delete((void *)(this)); /*0x4ef56b*/
+    operator delete((this)); /*0x4ef56b*/
   return this; /*0x4ef575*/
 }
 }
@@ -1106,11 +1106,11 @@ void HouseClass::processTargetSelection() {
     g_DSurface_Hidden,
     0,
     1);
-  v4 = (void *)this->grinders; /*0x4f222f*/
+  v4 = this->grinders; /*0x4f222f*/
   *v2 = 0; /*0x4f2232*/
   if ( v4 && this->u32_194 ) /*0x4f223c*/
   {
-    operator delete((void *)(v4)); /*0x4f2242*/
+    operator delete((v4)); /*0x4f2242*/
     this->grinders = 0; /*0x4f224a*/
   }
   this->u32_194 = 0; /*0x4f2250*/
@@ -1125,7 +1125,7 @@ namespace gamemd {
 void* HouseClass::vt_placeholder_03(int a2) {
   HashTable::DestroyHashTableINIClass((INIClass *)this); /*0x4f2813*/
   if ( (a2 & 1) != 0 ) /*0x4f281d*/
-    operator delete((void *)(this)); /*0x4f2820*/
+    operator delete((this)); /*0x4f2820*/
   return &this->vfptr; /*0x4f282a*/
 }
 }
@@ -1134,7 +1134,7 @@ namespace gamemd {
 void* HouseClass::vt_placeholder_04(int a2) {
   HouseClass::processTargetSelection((char *)this); /*0x4f2833*/
   if ( (a2 & 1) != 0 ) /*0x4f283d*/
-    operator delete((void *)(this)); /*0x4f2840*/
+    operator delete((this)); /*0x4f2840*/
   return (char *)this; /*0x4f284a*/
 }
 }
@@ -1147,7 +1147,7 @@ void GraphicMenuItemVectorHost::vt_placeholder_05() {  // g57w10 r4: 归属修�
   this->Items = 0; /*0x4f2859*/
   if ( v2 && this->IsAllocated ) /*0x4f2860*/
   {
-    operator delete((void *)(v2)); /*0x4f2866*/
+    operator delete((v2)); /*0x4f2866*/
     this->Items = 0; /*0x4f286e*/
   }
   this->IsAllocated = 0; /*0x4f2871*/
@@ -1232,17 +1232,17 @@ namespace gamemd {
 void* GraphicMenuItemVectorHost::vt_placeholder_11(int a2) {  // g57w10 r4 (raw this=DynamicVector; _vt00 scalar-deleting dtor)
   void *v3; // eax
 
-  v3 = (void *)this->Items; /*0x4f2bb3*/
+  v3 = this->Items; /*0x4f2bb3*/
   *this = 0; /*0x4f2bb6*/
   if ( v3 && this->IsAllocated ) /*0x4f2bc0*/
   {
-    operator delete((void *)(v3)); /*0x4f2bc8*/
+    operator delete((v3)); /*0x4f2bc8*/
     this->Items = 0; /*0x4f2bd0*/
   }
   this->IsAllocated = 0; /*0x4f2bdb*/
   this->__pad_008 = 0; /*0x4f2be1*/
   if ( (a2 & 1) != 0 ) /*0x4f2be8*/
-    operator delete((void *)(this)); /*0x4f2beb*/
+    operator delete((this)); /*0x4f2beb*/
   return this; /*0x4f2bf5*/
 }
 }
@@ -1524,7 +1524,7 @@ int HouseClass::Destruct() {
       (*(void (__thiscall **)(int, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x4f720d*/
   }
   for ( j = this->u32_17C - 1; j >= 0; --j ) /*0x4f721c*/
-    operator delete((void *)(*(void **)(this->grinders + 4 * j))); /*0x4f7228*/
+    operator delete((*(void **)(this->grinders + 4 * j))); /*0x4f7228*/
   this->__pad_16C->sub_5046F0(&this->cloningVatsCount4); /*0x4f723f*/
   for ( k = 0; k < this->unknown16084; *(unsigned int *)(this->waypointPathCapacity + 4 * k - 4) = 0 ) /*0x4f724c*/
   {
@@ -1573,7 +1573,7 @@ int HouseClass::Destruct() {
   this->waypointPathCount = 0; /*0x4f739b*/
   if ( v16 && this->u32_16071 ) /*0x4f73a5*/
   {
-    operator delete((void *)(v16)); /*0x4f73ab*/
+    operator delete((v16)); /*0x4f73ab*/
     this->waypointPathCapacity = 0; /*0x4f73b3*/
   }
   this->u32_16071 = 0; /*0x4f73b6*/
@@ -1589,7 +1589,7 @@ int HouseClass::Destruct() {
   this->u32_5704 = 0; /*0x4f73fc*/
   if ( v18 && this->u32_5711 ) /*0x4f7406*/
   {
-    operator delete((void *)(v18)); /*0x4f740c*/
+    operator delete((v18)); /*0x4f740c*/
     this->u32_5708 = 0; /*0x4f7414*/
   }
   this->u32_5711 = 0; /*0x4f7417*/
@@ -1607,7 +1607,7 @@ int HouseClass::Destruct() {
   this->unkTimer3 = 0; /*0x4f743b*/
   if ( v21 && this->u32_5629 ) /*0x4f7449*/
   {
-    operator delete((void *)(v21)); /*0x4f7452*/
+    operator delete((v21)); /*0x4f7452*/
     this->u32_5620 = 0; /*0x4f745a*/
   }
   this->u32_5629 = 0; /*0x4f7460*/
@@ -1616,7 +1616,7 @@ int HouseClass::Destruct() {
   this->angerNodes = 0; /*0x4f7472*/
   if ( v22 && this->u32_5611 ) /*0x4f7480*/
   {
-    operator delete((void *)(v22)); /*0x4f7489*/
+    operator delete((v22)); /*0x4f7489*/
     this->angerNodesCount = 0; /*0x4f7491*/
   }
   this->u32_5611 = 0; /*0x4f749d*/
@@ -1647,7 +1647,7 @@ int HouseClass::Destruct() {
   this->supers = 0; /*0x4f759b*/
   if ( v23 && this->u32_261 ) /*0x4f75a9*/
   {
-    operator delete((void *)(v23)); /*0x4f75b2*/
+    operator delete((v23)); /*0x4f75b2*/
     this->supersCount = 0; /*0x4f75ba*/
   }
   this->u32_261 = 0; /*0x4f75c0*/
@@ -1656,7 +1656,7 @@ int HouseClass::Destruct() {
   this->__pad_16C = 0; /*0x4f75d2*/
   if ( v24 && this->u32_179 ) /*0x4f75e0*/
   {
-    operator delete((void *)(v24)); /*0x4f75e9*/
+    operator delete((v24)); /*0x4f75e9*/
     this->grinders = 0; /*0x4f75f1*/
   }
   this->u32_179 = 0; /*0x4f75f7*/
@@ -1665,7 +1665,7 @@ int HouseClass::Destruct() {
   this->unitRepairStations = 0; /*0x4f7610*/
   if ( v25 && this->u32_14D ) /*0x4f7618*/
   {
-    operator delete((void *)(v25)); /*0x4f7621*/
+    operator delete((v25)); /*0x4f7621*/
     this->u32_144 = 0; /*0x4f7629*/
   }
   this->u32_14D = 0; /*0x4f762f*/
@@ -1674,7 +1674,7 @@ int HouseClass::Destruct() {
   this->iqLevel = 0; /*0x4f7641*/
   if ( v26 && this->u32_135 ) /*0x4f764b*/
   {
-    operator delete((void *)(v26)); /*0x4f7654*/
+    operator delete((v26)); /*0x4f7654*/
     this->techLevel = 0; /*0x4f765c*/
   }
   this->u32_135 = 0; /*0x4f7662*/
@@ -1683,7 +1683,7 @@ int HouseClass::Destruct() {
   this->buildTimeMultiplier = 0; /*0x4f7674*/
   if ( v27 && this->ptr_474 ) /*0x4f767e*/
   {
-    operator delete((void *)(v27)); /*0x4f7687*/
+    operator delete((v27)); /*0x4f7687*/
     this->u32_114 = 0; /*0x4f768f*/
   }
   this->ptr_474 = 0; /*0x4f7695*/
@@ -1692,7 +1692,7 @@ int HouseClass::Destruct() {
   this->armorMultiplier = 0; /*0x4f76a7*/
   if ( v28 && this->u32_105 ) /*0x4f76b1*/
   {
-    operator delete((void *)(v28)); /*0x4f76ba*/
+    operator delete((v28)); /*0x4f76ba*/
     this->u32_FC = 0; /*0x4f76c2*/
   }
   this->u32_105 = 0; /*0x4f76c8*/
@@ -1701,7 +1701,7 @@ int HouseClass::Destruct() {
   this->firepowerMultiplier = 0; /*0x4f76da*/
   if ( v29 && this->u32_ED ) /*0x4f76e4*/
   {
-    operator delete((void *)(v29)); /*0x4f76ed*/
+    operator delete((v29)); /*0x4f76ed*/
     this->ptr_390 = 0; /*0x4f76f5*/
   }
   this->u32_ED = 0; /*0x4f76fb*/
@@ -1710,7 +1710,7 @@ int HouseClass::Destruct() {
   this->infantrySelfHeal = 0; /*0x4f770d*/
   if ( v30 && this->u32_D5 ) /*0x4f7717*/
   {
-    operator delete((void *)(v30)); /*0x4f7720*/
+    operator delete((v30)); /*0x4f7720*/
     this->unitsSelfHeal = 0; /*0x4f7728*/
   }
   this->u32_D5 = 0; /*0x4f772e*/
@@ -1719,7 +1719,7 @@ int HouseClass::Destruct() {
   this->productionFactory_plants = 0; /*0x4f7740*/
   if ( v31 && this->ownedInfantry ) /*0x4f774a*/
   {
-    operator delete((void *)(v31)); /*0x4f7753*/
+    operator delete((v31)); /*0x4f7753*/
     this->productionFactory_plants_count = 0; /*0x4f775b*/
   }
   this->ownedInfantry = 0; /*0x4f7761*/
@@ -1728,7 +1728,7 @@ int HouseClass::Destruct() {
   this->secretLabs = 0; /*0x4f7773*/
   if ( v32 && this->u32_A5 ) /*0x4f777d*/
   {
-    operator delete((void *)(v32)); /*0x4f7786*/
+    operator delete((v32)); /*0x4f7786*/
     this->secretLabsCount = 0; /*0x4f778e*/
   }
   this->u32_A5 = 0; /*0x4f7794*/
@@ -1737,7 +1737,7 @@ int HouseClass::Destruct() {
   this->occupiables = 0; /*0x4f77a6*/
   if ( v33 && this->u32_8D ) /*0x4f77b0*/
   {
-    operator delete((void *)(v33)); /*0x4f77b9*/
+    operator delete((v33)); /*0x4f77b9*/
     this->occupiablesCount = 0; /*0x4f77c1*/
   }
   this->u32_8D = 0; /*0x4f77c7*/
@@ -1746,7 +1746,7 @@ int HouseClass::Destruct() {
   this->absorbers = 0; /*0x4f77d6*/
   if ( v34 && this->TechLevel ) /*0x4f77dd*/
   {
-    operator delete((void *)(v34)); /*0x4f77e3*/
+    operator delete((v34)); /*0x4f77e3*/
     this->absorbersCount = 0; /*0x4f77eb*/
   }
   this->TechLevel = 0; /*0x4f77ee*/
@@ -1755,7 +1755,7 @@ int HouseClass::Destruct() {
   this->unitRepairStations = 0; /*0x4f77f7*/
   if ( v35 && this->u32_5D ) /*0x4f77fe*/
   {
-    operator delete((void *)(v35)); /*0x4f7804*/
+    operator delete((v35)); /*0x4f7804*/
     this->repairStationsCount = 0; /*0x4f780c*/
   }
   this->u32_5D = 0; /*0x4f780f*/
@@ -1764,7 +1764,7 @@ int HouseClass::Destruct() {
   this->conYards = 0; /*0x4f7818*/
   if ( v36 && this->u32_45 ) /*0x4f7823*/
   {
-    operator delete((void *)(v36)); /*0x4f7829*/
+    operator delete((v36)); /*0x4f7829*/
     this->conYardsCount = 0; /*0x4f7831*/
   }
   this->u32_45 = 0; /*0x4f7836*/
@@ -1930,7 +1930,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
           /* X11: vtable install elided (implicit via class virtuals 0x4f7b16) — binary-proven install, was 0 */
           if ( *(unsigned int *)&((unsigned int *)&v67)[3] && (((unsigned char *)&(v67.IsInitialized))[1]) ) /*0x4f7b22*/
           {
-            operator delete((void *)(*(void **)&((unsigned int *)&v67)[3])); /*0x4f7b25*/
+            operator delete((*(void **)&((unsigned int *)&v67)[3])); /*0x4f7b25*/
             *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7b2d*/
           }
           goto LABEL_51; /*0x4f7b2d*/
@@ -1959,7 +1959,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       if ( v13 && (((unsigned char *)&(v67.IsInitialized))[1]) ) /*0x4f79b1*/
       {
   LABEL_123:
-        operator delete((void *)(v13)); /*0x4f7f13*/
+        operator delete((v13)); /*0x4f7f13*/
         *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7f1c*/
       }
   LABEL_124:
@@ -1978,14 +1978,14 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       /* X11: vtable install elided (implicit via class virtuals 0x4f7ba1) — binary-proven install, was 0 */
       if ( *(unsigned int *)&((unsigned int *)&v67)[3] && (((unsigned char *)&(v67.IsInitialized))[1]) ) /*0x4f7bad*/
       {
-        operator delete((void *)(*(void **)&((unsigned int *)&v67)[3])); /*0x4f7bb0*/
+        operator delete((*(void **)&((unsigned int *)&v67)[3])); /*0x4f7bb0*/
         *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7bb8*/
       }
       (((unsigned char *)&(v67.IsInitialized))[1]) = 0; /*0x4f7bc0*/
       *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7bc7*/
       *(unsigned int *)v68.vfptr = 0; /*0x4f7bcb*/
       if ( *(unsigned int *)&((unsigned int *)&v68)[3] && (((unsigned char *)&(v68.IsInitialized))[1]) ) /*0x4f7bd7*/
-        operator delete((void *)(*(void **)&((unsigned int *)&v68)[3])); /*0x4f7bda*/
+        operator delete((*(void **)&((unsigned int *)&v68)[3])); /*0x4f7bda*/
       return 1; /*0x4f7bda*/
     }
     v69 = 0; /*0x4f7bf5*/
@@ -2095,7 +2095,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
                 *(unsigned int *)v67.vfptr = 0; /*0x4f7eab*/
                 if ( *(unsigned int *)&((unsigned int *)&v67)[3] && (((unsigned char *)&(v67.IsInitialized))[1]) ) /*0x4f7ec6*/
                 {
-                  operator delete((void *)(*(void **)&((unsigned int *)&v67)[3])); /*0x4f7ed1*/
+                  operator delete((*(void **)&((unsigned int *)&v67)[3])); /*0x4f7ed1*/
                   v9 = *(void **)&((unsigned int *)&v68)[3]; /*0x4f7ed6*/
                   *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7edd*/
                   (((unsigned char *)&(v67.IsInitialized))[1]) = 0; /*0x4f7ee5*/
@@ -2114,7 +2114,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
                 if ( !v10 ) /*0x4f7f33*/
                 {
                   if ( (((unsigned char *)&(v68.IsInitialized))[1]) ) /*0x4f7f3b*/
-                    operator delete((void *)(v9)); /*0x4f7f3e*/
+                    operator delete((v9)); /*0x4f7f3e*/
                 }
                 return 0; /*0x4f7f4f*/
               }
@@ -2165,7 +2165,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     *(unsigned int *)v67.vfptr = 0; /*0x4f7f52*/
     if ( *(unsigned int *)&((unsigned int *)&v67)[3] && (((unsigned char *)&(v67.IsInitialized))[1]) ) /*0x4f7f69*/
     {
-      operator delete((void *)(*(void **)&((unsigned int *)&v67)[3])); /*0x4f7f6c*/
+      operator delete((*(void **)&((unsigned int *)&v67)[3])); /*0x4f7f6c*/
       *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7f74*/
     }
     v8 = *(void **)&((unsigned int *)&v68)[3]; /*0x4f7f78*/
@@ -2174,7 +2174,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     /* X11: vtable install elided (implicit via class virtuals 0x4f7f87) — binary-proven install, was 0 */
     if ( *(unsigned int *)&((unsigned int *)&v68)[3] && (((unsigned char *)&(v68.IsInitialized))[1]) ) /*0x4f7f93*/
   LABEL_134:
-      operator delete((void *)(v8)); /*0x4f7f95*/
+      operator delete((v8)); /*0x4f7f95*/
   }
   LABEL_135:
   switch ( a1->getAltitude() ) /*0x4f7fbd*/
@@ -2803,7 +2803,7 @@ int HouseClass::StartFactoryProduction(void* a1, int a2, int a3) {
       if ( !v7 ) /*0x4fa996*/
         goto LABEL_16; /*0x4fa996*/
       FactoryClass::StartProduction(v7, 1); /*0x4fa9a5*/
-      if ( dword_A83D4C == (void *)this ) /*0x4fa9b0*/
+      if ( dword_A83D4C == this ) /*0x4fa9b0*/
       {
         Status = HouseClass::GetStatus(a1, 0); /*0x4fa9b8*/
         Sidebar::ActivateTab((int)&dword_87F7E8, Status); /*0x4fa9c3*/
@@ -4865,7 +4865,7 @@ int HouseClass::AIUnitProduction() {
               v35 = (int)0; /*0x4fecda*/
               if ( Block && v39 ) /*0x4fecec*/
               {
-                operator delete((void *)(Block)); /*0x4fecef*/
+                operator delete((Block)); /*0x4fecef*/
                 Block = 0; /*0x4fecf7*/
               }
               v39 = 0; /*0x4fecfb*/
@@ -5013,7 +5013,7 @@ int HouseClass::AIInfantryProduction() {
           *(unsigned int *)v23.__pad_000 = 0; /*0x4ff000*/
           if ( v23.q004 && v25 ) /*0x4ff012*/
           {
-            operator delete((void *)((void *)v23.q004)); /*0x4ff015*/
+            operator delete(((void *)v23.q004)); /*0x4ff015*/
             v23.q004 = 0; /*0x4ff01d*/
           }
           v3 = i; /*0x4ff021*/
@@ -5160,7 +5160,7 @@ int HouseClass::AIAircraftProduction() {
           *(unsigned int *)v23.__pad_000 = 0; /*0x4ff330*/
           if ( v23.q004 && v25 ) /*0x4ff342*/
           {
-            operator delete((void *)((void *)v23.q004)); /*0x4ff345*/
+            operator delete(((void *)v23.q004)); /*0x4ff345*/
             v23.q004 = 0; /*0x4ff34d*/
           }
           v3 = i; /*0x4ff351*/
@@ -7309,7 +7309,7 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
   *(unsigned int *)v88.__pad_0 = 0; /*0x505ec2*/
   if ( *(unsigned int *)&v88.m_1[3] && (((unsigned char *)&(v88.m_C))[1]) ) /*0x505edb*/
   {
-    operator delete((void *)(*(void **)&v88.m_1[3])); /*0x505ede*/
+    operator delete((*(void **)&v88.m_1[3])); /*0x505ede*/
     *(unsigned int *)&v88.m_1[3] = 0; /*0x505ee6*/
   }
   (((unsigned char *)&(v88.m_C))[1]) = 0; /*0x505eee*/
@@ -7325,7 +7325,7 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
   v96 = (BoolVector)0; /*0x505f23*/
   if ( v97 && (((unsigned char *)&(v99))[1]) ) /*0x505f33*/
   {
-    operator delete((void *)(v97)); /*0x505f36*/
+    operator delete((v97)); /*0x505f36*/
     v97 = 0; /*0x505f3e*/
   }
   result = (int)v93.Items; /*0x505f42*/
@@ -7640,7 +7640,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
           v69 = 0; /*0x506ab4*/
           v62 = Base; /*0x506ac2*/
           *a2 = 0; /*0x506ac3*/
-          operator delete((void *)(v62)); /*0x506ac5*/
+          operator delete((v62)); /*0x506ac5*/
           Base = 0; /*0x506ad3*/
           NumOfElements = 0; /*0x506ad7*/
           v72 = 0; /*0x506adb*/
@@ -7648,7 +7648,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
           v74 = 0; /*0x506ae4*/
           *(unsigned int *)v75.__pad_0 = 0; /*0x506ae8*/
           if ( *(unsigned int *)&v75.u16_4 && (((unsigned char *)&(v75.m_C))[1]) ) /*0x506af8*/
-            operator delete((void *)(*(void **)&v75.u16_4)); /*0x506afb*/
+            operator delete((*(void **)&v75.u16_4)); /*0x506afb*/
           return v58; /*0x506afb*/
         }
       }
@@ -7821,7 +7821,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
       v58 = a2; /*0x506b0e*/
       v63 = Base; /*0x506b19*/
       *a2 = *(unsigned int *)v66; /*0x506b1a*/
-      operator delete((void *)(v63)); /*0x506b1c*/
+      operator delete((v63)); /*0x506b1c*/
       Base = 0; /*0x506b2c*/
       NumOfElements = 0; /*0x506b30*/
       v72 = 0; /*0x506b34*/
@@ -7830,7 +7830,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
       *(unsigned int *)v75.__pad_0 = 0; /*0x506b40*/
       if ( *(unsigned int *)&v75.u16_4 && (((unsigned char *)&(v75.m_C))[1]) ) /*0x506b50*/
       {
-        operator delete((void *)(*(void **)&v75.u16_4)); /*0x506b53*/
+        operator delete((*(void **)&v75.u16_4)); /*0x506b53*/
         return a2; /*0x506b5b*/
       }
       return v58; /*0x506b03*/
@@ -8038,7 +8038,7 @@ int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
   *(unsigned int *)a1 = 0; /*0x507f24*/
   v22 = 0; /*0x507f2a*/
   if ( !v14 && (((unsigned char *)&(v25))[1]) ) /*0x507f3a*/
-    operator delete((void *)(v19)); /*0x507f3d*/
+    operator delete((v19)); /*0x507f3d*/
   return a1; /*0x507f47*/
 }
 }
@@ -8159,7 +8159,7 @@ int HouseClass::CollectAircraftBuildCandidates(int a1, int a2) {
   *(unsigned int *)a1 = 0; /*0x508114*/
   v22 = 0; /*0x50811a*/
   if ( !v14 && (((unsigned char *)&(v25))[1]) ) /*0x50812a*/
-    operator delete((void *)(v19)); /*0x50812d*/
+    operator delete((v19)); /*0x50812d*/
   return a1; /*0x508137*/
 }
 }
@@ -8671,14 +8671,14 @@ void HouseClass::FindAutoBuildLocation() {
   v75[3] = v78; /*0x508bcc*/
   if ( v92.mapCoords[0] && (((unsigned char *)&(v92.attempts))[1]) ) /*0x508bdd*/
   {
-    operator delete((void *)((void *)v92.mapCoords[0])); /*0x508be0*/
+    operator delete(((void *)v92.mapCoords[0])); /*0x508be0*/
     v92.mapCoords[0] = 0; /*0x508be8*/
   }
   v96.buildingTypeIndex = (int)0; /*0x508bf4*/
   (((unsigned char *)&(v92.attempts))[1]) = 0; /*0x508bfb*/
   *(unsigned int *)&v92.placed = 0; /*0x508c02*/
   if ( v96.mapCoords[0] && (((unsigned char *)&(v96.attempts))[1]) ) /*0x508c13*/
-    operator delete((void *)((void *)v96.mapCoords[0])); /*0x508c16*/
+    operator delete(((void *)v96.mapCoords[0])); /*0x508c16*/
 }
 }
 // 0x508F60
@@ -8819,7 +8819,7 @@ int HouseClass::UpdateProduction(int a1, int a2, int a3) {
             else
             {
               FactoryClass::StartProduction(0); /*0x50924d*/
-              if ( dword_A83D4C == (void *)this ) /*0x509258*/
+              if ( dword_A83D4C == this ) /*0x509258*/
               {
                 v15 = globalHelper_0ABCD0(a2); /*0x509263*/
                 Sidebar::ActivateTab((int)&dword_87F7E8, v15); /*0x50926e*/

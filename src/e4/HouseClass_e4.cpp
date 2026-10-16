@@ -274,7 +274,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->u8_1F = 10; /*0x4f5505*/
   this->u32_1E = 0; /*0x4f5508*/
   (&this->NeedsSaveOrLink)->BuildingConstructor(0, 0); /*0x4f5515*/
-  this->NeedsSaveOrLink = (void *)((int)&vt_DynamicVectorClass); /*0x4f551a*/
+  this->NeedsSaveOrLink = (void*)(&vt_DynamicVectorClass); /*0x4f551a*/
   this->u32_25 = 10; /*0x4f5520*/
   this->vtable5 = 0; /*0x4f5523*/
   (&this->u32_26)->BuildingConstructor(0, 0); /*0x4f5530*/
@@ -286,11 +286,11 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->u32_31 = 10; /*0x4f5556*/
   this->relatedTagsCount = 0; /*0x4f5559*/
   (&this->q032)->BuildingConstructor(0, 0); /*0x4f5566*/
-  this->q032 = (void *)((int)&vt_DynamicVectorClass); /*0x4f556b*/
+  this->q032 = (void*)(&vt_DynamicVectorClass); /*0x4f556b*/
   this->q037 = 10; /*0x4f5571*/
   this->arrayIndex = 0; /*0x4f5574*/
   (&this->conYards)->BuildingConstructor(0, 0); /*0x4f5581*/
-  this->conYards = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f5586*/
+  this->conYards = (gamemd::BuildingClass**)(&vt_DynamicVectorClass); /*0x4f5586*/
   this->u32_3D = 10; /*0x4f558c*/
   this->conYardsCount = 0; /*0x4f558f*/
   (&this->q03E)->BuildingConstructor(0, 0); /*0x4f559c*/
@@ -298,7 +298,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->u32_43 = 10; /*0x4f55a7*/
   this->q042 = 0; /*0x4f55aa*/
   (&this->buildings)->BuildingConstructor(0, 0); /*0x4f55b7*/
-  this->buildings = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f55bc*/
+  this->buildings = (gamemd::BuildingClass**)(&vt_DynamicVectorClass); /*0x4f55bc*/
   this->u32_49 = 10; /*0x4f55c2*/
   this->buildingsCount = 0; /*0x4f55c5*/
   (&this->u32_4A)->BuildingConstructor(0, 0); /*0x4f55d2*/
@@ -306,7 +306,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->q04F = 10; /*0x4f55dd*/
   this->q04E = 0; /*0x4f55e0*/
   (&this->unitRepairStations)->BuildingConstructor(0, 0); /*0x4f55ed*/
-  this->unitRepairStations = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f55f2*/
+  this->unitRepairStations = (gamemd::BuildingClass**)(&vt_DynamicVectorClass); /*0x4f55f2*/
   this->u32_55 = 10; /*0x4f55f8*/
   this->repairStationsCount = 0; /*0x4f55fb*/
   this->u32_56 = 0; /*0x4f55fe*/
@@ -1627,9 +1627,9 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
   }
   while ( v6 ); /*0x506f63*/
   v7 = 4 * *(unsigned int *)(_EBP + 22364) * _EBP->q5760; /*0x506f72*/
-  Block = (void *)__2_YAPAXI_Z(v7); /*0x506f82*/
-  v123 = (void *)__2_YAPAXI_Z(v7); /*0x506f8e*/
-  v118 = (void *)__2_YAPAXI_Z(v7); /*0x506f99*/
+  Block = __2_YAPAXI_Z(v7); /*0x506f82*/
+  v123 = __2_YAPAXI_Z(v7); /*0x506f8e*/
+  v118 = __2_YAPAXI_Z(v7); /*0x506f99*/
   memset(Block, 0, v7); /*0x506fa4*/
   v8 = a4; /*0x506fb6*/
   memset(v123, 0, v7); /*0x506fc0*/
@@ -2786,7 +2786,7 @@ void HouseClass::LostPoweredCenter(int a2, void *a2_2)
         {
           if ( dword_A8B238[0] ) /*0x50e163*/
           {
-            if ( (void *)a2_2 != dword_A83D4C ) /*0x50e186*/
+            if ( a2_2 != dword_A83D4C ) /*0x50e186*/
               return; /*0x50e186*/
             goto LABEL_16; /*0x50e186*/
           }
@@ -3005,20 +3005,20 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
     *(unsigned int *)v30.__pad_000 = &vt_VectorClass; /*0x5d7446*/
     if ( v30.u32_4 && (((unsigned char *)&(v30.q00C))[1]) ) /*0x5d7456*/
     {
-      operator delete((void *)((void *)v30.u32_4)); /*0x5d7459*/
+      operator delete(((void *)v30.u32_4)); /*0x5d7459*/
       v30.u32_4 = 0; /*0x5d7461*/
     }
     (((unsigned char *)&(v30.q00C))[1]) = 0; /*0x5d7469*/
     v30.q008 = 0; /*0x5d7470*/
     v30.q018 = (int)&vt_VectorClass; /*0x5d7474*/
     if ( v30.q01C && v32 ) /*0x5d7484*/
-      operator delete((void *)((void *)v30.q01C)); /*0x5d7487*/
+      operator delete(((void *)v30.q01C)); /*0x5d7487*/
     return 1; /*0x5d7487*/
   }
     *(unsigned int *)v30.__pad_000 = &vt_VectorClass; /*0x5d72bf*/
     if ( v30.u32_4 && (((unsigned char *)&(v30.q00C))[1]) ) /*0x5d72d1*/
   {
-    operator delete((void *)((void *)v30.u32_4)); /*0x5d72d4*/
+    operator delete(((void *)v30.u32_4)); /*0x5d72d4*/
     v30.u32_4 = 0; /*0x5d72dc*/
   }
     (((unsigned char *)&(v30.q00C))[1]) = 0; /*0x5d72e4*/
@@ -3027,7 +3027,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
     if ( v30.q01C ) /*0x5d72f7*/
   {
     if ( v32 ) /*0x5d72ff*/
-      operator delete((void *)((void *)v30.q01C)); /*0x5d7302*/
+      operator delete(((void *)v30.q01C)); /*0x5d7302*/
   }
     return 0; /*0x5d730a*/
 }
@@ -3175,7 +3175,7 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
   if ( Block ) /*0x5eeb94*/
   {
     if ( v20 ) /*0x5eeb9c*/
-      operator delete((void *)(Block)); /*0x5eeb9f*/
+      operator delete((Block)); /*0x5eeb9f*/
   }
 }
 }
@@ -3229,7 +3229,7 @@ int HouseClass::QueryInterface_Dispatch(int a2, const IID * a3, void ** a4)
       return -2147024882; /*0x4292e1*/
     v6 = (*(int (__stdcall **)(IUnknown *, void **, unsigned int *))punk.field_0)(&punk, a4, v7); /*0x4292f3*/
     if ( v6 < 0 ) /*0x4292f7*/
-      operator delete((void *)(&punk)); /*0x4292fe*/
+      operator delete((&punk)); /*0x4292fe*/
     v4 = v7; /*0x429306*/
   }
   if ( !memcmp(a4, &unk_7EA6E8, 0x10u) ) /*0x429318*/
@@ -3315,7 +3315,7 @@ VectorCursor * HouseClass::vt_placeholder_07(char a2)
 {
   /* X11: vtable install elided (implicit via VectorCursorGraphicMenuItemDynamicVectorClass virtuals 0x4f28c9) */
   if ( (a2 & 1) != 0 ) /*0x4f28cf*/
-  operator delete((void *)(this)); /*0x4f28d2*/
+  operator delete((this)); /*0x4f28d2*/
   return this; /*0x4f28dc*/
 }
 } // namespace gamemd
@@ -3480,13 +3480,13 @@ VectorClass_flat * HouseClass_24::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f2b66*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4f2b70*/
   {
-    operator delete((void *)(v3)); /*0x4f2b78*/
+    operator delete((v3)); /*0x4f2b78*/
     *&Block->__pad_004 = 0; /*0x4f2b80*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4f2b8b*/
   Block->u32_8 = 0; /*0x4f2b91*/
   if ( (a2 & 1) != 0 ) /*0x4f2b98*/
-    operator delete((void *)(Block)); /*0x4f2b9b*/
+    operator delete((Block)); /*0x4f2b9b*/
   return Block->tail_0; /*0x4f2ba5*/
 }
 } // namespace gamemd

@@ -253,7 +253,7 @@ void FileSystem::CleanupTrees()
       if ( *(unsigned int *)&DataGlobal_B0FB34 ) /*0x72d378*/
       {
         (*(FileTreeNode **)&DataGlobal_B0FB34)->Destroy(); /*0x72d37c*/
-        operator delete((void *)(v1)); /*0x72d382*/
+        operator delete((v1)); /*0x72d382*/
       }
       DataGlobal_B0FC70 = 0; /*0x72d38a*/
     }
@@ -265,7 +265,7 @@ void FileSystem::CleanupTrees()
       if ( *(unsigned int *)&DataGlobal_B0FB00 ) /*0x72d3a7*/
       {
         (*(FileTreeNode **)&DataGlobal_B0FB00)->Destroy(); /*0x72d3ab*/
-        operator delete((void *)(v2)); /*0x72d3b1*/
+        operator delete((v2)); /*0x72d3b1*/
       }
       DataGlobal_B0FC71 = 0; /*0x72d3b9*/
     }
@@ -277,14 +277,14 @@ void FileSystem::CleanupTrees()
       if ( *(unsigned int *)&DataGlobal_B0FB30 ) /*0x72d3d6*/
       {
         (*(FileTreeNode **)&DataGlobal_B0FB30)->Destroy(); /*0x72d3da*/
-        operator delete((void *)(v3)); /*0x72d3e0*/
+        operator delete((v3)); /*0x72d3e0*/
       }
       DataGlobal_B0FC72 = 0; /*0x72d3e8*/
     }
     *(unsigned int *)&DataGlobal_B0FB30 = 0; /*0x72d3f3*/
     if ( *(unsigned int *)&DataGlobal_B0FBA4 ) /*0x72d3fc*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FBA4)); /*0x72d3ff*/
+      operator delete((*(void **)&DataGlobal_B0FBA4)); /*0x72d3ff*/
       *(unsigned int *)&DataGlobal_B0FBA4 = 0; /*0x72d407*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FBA8 ) /*0x72d415*/

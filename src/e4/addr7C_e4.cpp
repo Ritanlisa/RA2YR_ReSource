@@ -14937,7 +14937,7 @@ void _shift(const char * Src, int a2)
   {
     int v2; // eax
     v2 = strlen(Src); /*0x7cef38*/
-    memcpy((void *)&Src[a2], Src, v2 + 1); /*0x7cef43*/
+    memcpy(&Src[a2], Src, v2 + 1); /*0x7cef43*/
   }
 }
 } // namespace gamemd

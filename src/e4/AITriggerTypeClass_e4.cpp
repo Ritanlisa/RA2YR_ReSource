@@ -671,7 +671,7 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
   }
   ((AbstractTypeClass *)Block)->Dtor(); /*0x42005a*/
   if ( (a2 & 1) != 0 ) /*0x420064*/
-    operator delete((void *)(Block)); /*0x420067*/
+    operator delete((Block)); /*0x420067*/
   return Block->tail_0; /*0x420071*/
 }
 } // namespace gamemd
@@ -699,7 +699,7 @@ void AITriggerTypeClass_40::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x420379*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x420380*/
   {
-    operator delete((void *)(v2)); /*0x420386*/
+    operator delete((v2)); /*0x420386*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x42038e*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x420391*/
@@ -923,13 +923,13 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, c
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x420636*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x420640*/
   {
-    operator delete((void *)(v3)); /*0x420648*/
+    operator delete((v3)); /*0x420648*/
     *&Block->__pad_004 = 0; /*0x420650*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x42065b*/
   Block->u32_8 = 0; /*0x420661*/
   if ( (a2 & 1) != 0 ) /*0x420668*/
-    operator delete((void *)(Block)); /*0x42066b*/
+    operator delete((Block)); /*0x42066b*/
   return Block->tail_0; /*0x420675*/
 }
 } // namespace gamemd
@@ -943,13 +943,13 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x420686*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x420690*/
   {
-    operator delete((void *)(v3)); /*0x420698*/
+    operator delete((v3)); /*0x420698*/
     *&Block->__pad_004 = 0; /*0x4206a0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4206ab*/
   Block->u32_8 = 0; /*0x4206b1*/
   if ( (a2 & 1) != 0 ) /*0x4206b8*/
-    operator delete((void *)(Block)); /*0x4206bb*/
+    operator delete((Block)); /*0x4206bb*/
   return Block->tail_0; /*0x4206c5*/
 }
 } // namespace gamemd

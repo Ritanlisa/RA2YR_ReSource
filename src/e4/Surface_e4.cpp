@@ -1894,7 +1894,7 @@ int Surface::CommitSurfaceBuffersAudio()
   v25 = this->u32_6EC; /*0x7bda14*/
   v26 = this->u32_768; /*0x7bda1a*/
   this->u32_164 = v25; /*0x7bda20*/
-  this->u32_168 = v25; /*0x7bda26*/
+  this->WaveClass_field_168 = v25; /*0x7bda26*/
   this->u32_768 = v26 - 4; /*0x7bda31*/
   this->u32_770 = 1020; /*0x7bda37*/
   v27 = 0; /*0x7bda69*/

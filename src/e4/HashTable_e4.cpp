@@ -88,7 +88,7 @@ AbstractClass * * HashTable_flat::Grow2()
     v13 = v3; /*0x624fe0*/
     this->u32_C = v4; /*0x624fe8*/
     void *v5; // edi
-    v5 = (void *)__2_YAPAXI_Z(8 * HashTable_field_0x08); /*0x624ff3*/
+    v5 = __2_YAPAXI_Z(8 * HashTable_field_0x08); /*0x624ff3*/
     unsigned int v6 = 4 * this->u32_8; // edx /*0x624ff8*/
     *(unsigned int *)this->q000 = (unsigned int)(v5); /*0x624fff*/
     memset(v5, 0, v6); /*0x625004*/
@@ -192,7 +192,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         v15 = this->u32_C - 1; /*0x625171*/
         this->u32_8 = HashTable_field_0x08 >> 1; /*0x625172*/
         this->u32_C = v15; /*0x62517c*/
-        v16 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x625188*/
+        v16 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x625188*/
         v17 = 4 * this->u32_8; /*0x62518d*/
         *(unsigned int *)this->q000 = (unsigned int)(v16); /*0x625194*/
         memset(v16, 0, v17); /*0x625199*/
@@ -256,7 +256,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         v36 = *(int **)this->q000; /*0x625269*/
         this->u32_8 = v23 >> 1; /*0x62526f*/
         this->u32_C = HashTable_field_0x0C - 1; /*0x625277*/
-        v26 = (void *)__2_YAPAXI_Z(4 * (v23 >> 1)); /*0x625282*/
+        v26 = __2_YAPAXI_Z(4 * (v23 >> 1)); /*0x625282*/
         v27 = 4 * this->u32_8; /*0x625287*/
         *(unsigned int *)this->q000 = (unsigned int)(v26); /*0x62528e*/
         memset(v26, 0, v27); /*0x625293*/
@@ -311,7 +311,7 @@ void HashTable_flat::Shrink2(void *a1)
     this->u32_8 = HashTable_field_0x08 >> 1; /*0x6257ac*/
     this->u32_C = HashTable_field_0x0C - 1; /*0x6257b4*/
     void *v5; // edi
-    v5 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x6257bf*/
+    v5 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x6257bf*/
     unsigned int v6 = 4 * this->u32_8; // edx /*0x6257c4*/
     *(unsigned int *)this->q000 = v5; /*0x6257cb*/
     memset(v5, 0, v6); /*0x6257d0*/
@@ -366,7 +366,7 @@ void HashTable_flat::Rebuild2()
     this->u32_8 = HashTable_field_0x08 >> 1; /*0x62585c*/
     this->u32_C = HashTable_field_0x0C - 1; /*0x625864*/
     void *v5; // edi
-    v5 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x62586f*/
+    v5 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x62586f*/
     unsigned int v6 = 4 * this->u32_8; // edx /*0x625874*/
     *(unsigned int *)this->q000 = (unsigned int)(v5); /*0x62587b*/
     memset(v5, 0, v6); /*0x625880*/
@@ -531,7 +531,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
     if ( v9 ) /*0x6b95c5*/
     {
       DeleteAndZero(*(ObjectClass **)(v8 + 4 * v5)); /*0x6b95c9*/
-      operator delete((void *)(v9)); /*0x6b95cf*/
+      operator delete((v9)); /*0x6b95cf*/
     }
     *(unsigned int *)(*(unsigned int *)a1->__pad_0 + 4 * v5) = v10; /*0x6b95de*/
     v11 = v28 < *(double *)&a1->HashTable_field_0x20; /*0x6b95e4*/
@@ -547,7 +547,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
         v29 = *(int **)a1->__pad_0; /*0x6b9616*/
         a1->HashTable_field_0x08 = v13 >> 1; /*0x6b961d*/
         a1->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6b9627*/
-        v16 = (void *)operator new(4 * (v13 >> 1)); /*0x6b9633*/
+        v16 = operator new(4 * (v13 >> 1)); /*0x6b9633*/
         v17 = 4 * a1->HashTable_field_0x08; /*0x6b9638*/
         *(unsigned int *)a1->__pad_0 = v16; /*0x6b963f*/
         memset(v16, 0, v17); /*0x6b9645*/
@@ -578,7 +578,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
           while ( v19 ); /*0x6b968f*/
           v15 = v29; /*0x6b9691*/
         }
-        operator delete((void *)(v15)); /*0x6b9696*/
+        operator delete((v15)); /*0x6b9696*/
       }
     }
     if ( *(unsigned int *)&v30[20] ) /*0x6b96a4*/
@@ -616,7 +616,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
     }
     while ( a1->HashTable_field_0x08 > (unsigned int)a1->HashTable_field_0x30 ); /*0x6b9725*/
   }
-  operator delete((void *)(*(void **)a1->__pad_0)); /*0x6b972b*/
+  operator delete((*(void **)a1->__pad_0)); /*0x6b972b*/
 }
 } // namespace gamemd
 // 0x6BA140
@@ -839,7 +839,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         v15 = this->u32_C - 1; /*0x6bad31*/
         this->u32_8 = HashTable_field_0x08 >> 1; /*0x6bad32*/
         this->u32_C = v15; /*0x6bad3c*/
-        v16 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x6bad48*/
+        v16 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x6bad48*/
         v17 = 4 * this->u32_8; /*0x6bad4d*/
         *(unsigned int *)this->q000 = (unsigned int)(v16); /*0x6bad54*/
         memset(v16, 0, v17); /*0x6bad5a*/
@@ -906,7 +906,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         v40 = *(int **)this->q000; /*0x6bae5a*/
         this->u32_8 = v25 >> 1; /*0x6bae60*/
         this->u32_C = HashTable_field_0x0C - 1; /*0x6bae68*/
-        v28 = (void *)__2_YAPAXI_Z(4 * (v25 >> 1)); /*0x6bae73*/
+        v28 = __2_YAPAXI_Z(4 * (v25 >> 1)); /*0x6bae73*/
         v29 = 4 * this->u32_8; /*0x6bae78*/
         *(unsigned int *)this->q000 = (unsigned int)(v28); /*0x6bae7f*/
         memset(v28, 0, v29); /*0x6bae85*/
@@ -964,7 +964,7 @@ AbstractClass * * HashTable_flat::RebuildEx(void *a1)
     a1->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x6baf1c*/
     a1->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6baf24*/
     void *v5; // edi
-    v5 = (void *)operator new(4 * (HashTable_field_0x08 >> 1)); /*0x6baf2f*/
+    v5 = operator new(4 * (HashTable_field_0x08 >> 1)); /*0x6baf2f*/
     unsigned int v6 = 4 * a1->HashTable_field_0x08; // edx /*0x6baf34*/
     *(unsigned int *)a1->__pad_0 = v5; /*0x6baf3b*/
     memset(v5, 0, v6); /*0x6baf40*/
@@ -996,7 +996,7 @@ AbstractClass * * HashTable_flat::RebuildEx(void *a1)
       while ( v8 ); /*0x6baf89*/
       v3 = v13; /*0x6baf8b*/
     }
-    operator delete((void *)(v3)); /*0x6baf90*/
+    operator delete((v3)); /*0x6baf90*/
   }
 }
 } // namespace gamemd
@@ -1028,7 +1028,7 @@ ObjectClass * * HashTable_flat::Remove(int a2, void *a2_1)
   void *Block; // [esp+8h] [ebp-Ch] BYREF
   unsigned int v24; // [esp+Ch] [ebp-8h] BYREF
 
-  v3 = (gamemd::HashTable *)(&this->u32_1C); /*0x72473d*/
+  v3 = &this->u32_1C; /*0x72473d*/
   if ( !this->u32_250 ) /*0x724745*/
     return; /*0x724745*/
   v4 = (unsigned int *)this->u32_25C; /*0x72474b*/
@@ -1152,7 +1152,7 @@ unsigned int HashTable_flat::CleanupAndResize()
       this->u32_8 = HashTable_field_0x08 >> 1; /*0x7acede*/
       this->u32_C = HashTable_field_0x0C - 1; /*0x7acee8*/
       void *v9; // edi
-      v9 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7acef4*/
+      v9 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7acef4*/
       unsigned int v10 = 4 * this->u32_8; // edx /*0x7acef9*/
       *(unsigned int *)this->q000 = (unsigned int)(v9); /*0x7acf00*/
       memset(v9, 0, v10); /*0x7acf05*/
@@ -1229,7 +1229,7 @@ unsigned int HashTable_flat::Rebuild()
       this->u32_8 = HashTable_field_0x08 >> 1; /*0x7acff1*/
       this->u32_C = HashTable_field_0x0C - 1; /*0x7acffb*/
       void *v9; // edi
-      v9 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7ad007*/
+      v9 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7ad007*/
       unsigned int v10 = 4 * this->u32_8; // edx /*0x7ad00c*/
       *(unsigned int *)this->q000 = (unsigned int)(v9); /*0x7ad013*/
       memset(v9, 0, v10); /*0x7ad018*/
@@ -1384,7 +1384,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         v15 = this->u32_C - 1; /*0x7addbe*/
         this->u32_8 = HashTable_field_0x08 >> 1; /*0x7addbf*/
         this->u32_C = v15; /*0x7addc9*/
-        v16 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7addd5*/
+        v16 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7addd5*/
         v17 = 4 * this->u32_8; /*0x7addda*/
         *(unsigned int *)this->q000 = (unsigned int)(v16); /*0x7adde1*/
         memset(v16, 0, v17); /*0x7adde7*/
@@ -1451,7 +1451,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         v40 = *(int **)this->q000; /*0x7aded5*/
         this->u32_8 = v25 >> 1; /*0x7adedb*/
         this->u32_C = HashTable_field_0x0C - 1; /*0x7adee3*/
-        v28 = (void *)__2_YAPAXI_Z(4 * (v25 >> 1)); /*0x7adeee*/
+        v28 = __2_YAPAXI_Z(4 * (v25 >> 1)); /*0x7adeee*/
         v29 = 4 * this->u32_8; /*0x7adef3*/
         *(unsigned int *)this->q000 = (unsigned int)(v28); /*0x7adefa*/
         memset(v28, 0, v29); /*0x7adf00*/
@@ -1558,7 +1558,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
         v34 = *(int **)this->q000; /*0x7ae2c7*/
         this->u32_8 = HashTable_field_0x08 >> 1; /*0x7ae2cd*/
         this->u32_C = HashTable_field_0x0C - 1; /*0x7ae2d5*/
-        v16 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7ae2e0*/
+        v16 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7ae2e0*/
         v17 = 4 * this->u32_8; /*0x7ae2e5*/
         *(unsigned int *)this->q000 = (unsigned int)(v16); /*0x7ae2ec*/
         memset(v16, 0, v17); /*0x7ae2f1*/
@@ -1623,7 +1623,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
         v25 = this->u32_C - 1; /*0x7ae3d4*/
         this->u32_8 = v23 >> 1; /*0x7ae3d5*/
         this->u32_C = v25; /*0x7ae3df*/
-        v26 = (void *)__2_YAPAXI_Z(4 * (v23 >> 1)); /*0x7ae3eb*/
+        v26 = __2_YAPAXI_Z(4 * (v23 >> 1)); /*0x7ae3eb*/
         v27 = 4 * this->u32_8; /*0x7ae3f0*/
         *(unsigned int *)this->q000 = (unsigned int)(v26); /*0x7ae3f7*/
         memset(v26, 0, v27); /*0x7ae3fc*/
@@ -1678,7 +1678,7 @@ AbstractClass * * HashTable_flat::Grow()
     v13 = v3; /*0x7ae530*/
     this->u32_C = v4; /*0x7ae538*/
     void *v5; // edi
-    v5 = (void *)__2_YAPAXI_Z(8 * HashTable_field_0x08); /*0x7ae543*/
+    v5 = __2_YAPAXI_Z(8 * HashTable_field_0x08); /*0x7ae543*/
     unsigned int v6 = 4 * this->u32_8; // edx /*0x7ae548*/
     *(unsigned int *)this->q000 = (unsigned int)(v5); /*0x7ae54f*/
     memset(v5, 0, v6); /*0x7ae554*/
@@ -1790,7 +1790,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         v15 = this->u32_C - 1; /*0x7aea41*/
         this->u32_8 = HashTable_field_0x08 >> 1; /*0x7aea42*/
         this->u32_C = v15; /*0x7aea4c*/
-        v16 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7aea58*/
+        v16 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7aea58*/
         v17 = 4 * this->u32_8; /*0x7aea5d*/
         *(unsigned int *)this->q000 = (unsigned int)(v16); /*0x7aea64*/
         memset(v16, 0, v17); /*0x7aea6a*/
@@ -1857,7 +1857,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         v40 = *(int **)this->q000; /*0x7aeb6a*/
         this->u32_8 = v25 >> 1; /*0x7aeb70*/
         this->u32_C = HashTable_field_0x0C - 1; /*0x7aeb78*/
-        v28 = (void *)__2_YAPAXI_Z(4 * (v25 >> 1)); /*0x7aeb83*/
+        v28 = __2_YAPAXI_Z(4 * (v25 >> 1)); /*0x7aeb83*/
         v29 = 4 * this->u32_8; /*0x7aeb88*/
         *(unsigned int *)this->q000 = (unsigned int)(v28); /*0x7aeb8f*/
         memset(v28, 0, v29); /*0x7aeb95*/
@@ -1915,7 +1915,7 @@ int HashTable_flat::Shrink(void *a1)
     this->u32_8 = HashTable_field_0x08 >> 1; /*0x7aec2c*/
     this->u32_C = HashTable_field_0x0C - 1; /*0x7aec34*/
     void *v6; // edi
-    v6 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7aec3f*/
+    v6 = __2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x7aec3f*/
     unsigned int v7 = 4 * this->u32_8; // edx /*0x7aec44*/
     *(unsigned int *)this->q000 = v6; /*0x7aec4b*/
     memset(v6, 0, v7); /*0x7aec50*/

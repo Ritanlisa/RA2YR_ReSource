@@ -2900,22 +2900,22 @@ void FileFind::ReleaseAllHandles()
 {
   if ( *(unsigned int *)this->vtable1 ) /*0x5bbee6*/
   {
-    operator delete((void *)(*(void **)this->__pad_000)); /*0x5bbeed*/
+    operator delete((*(void **)this->__pad_000)); /*0x5bbeed*/
     *(unsigned int *)this->__pad_000 = 0; /*0x5bbef5*/
   }
   if ( this->q004 ) /*0x5bbef7*/
   {
-    operator delete((void *)((void *)this->q004)); /*0x5bbeff*/
+    operator delete(((void *)this->q004)); /*0x5bbeff*/
     this->q004 = 0; /*0x5bbf07*/
   }
   if ( this->q008 ) /*0x5bbf0a*/
   {
-    operator delete((void *)((void *)this->q008)); /*0x5bbf12*/
+    operator delete(((void *)this->q008)); /*0x5bbf12*/
     this->q008 = 0; /*0x5bbf1a*/
   }
   if ( this->q00C ) /*0x5bbf1d*/
   {
-    operator delete((void *)((void *)this->q00C)); /*0x5bbf25*/
+    operator delete(((void *)this->q00C)); /*0x5bbf25*/
     this->q00C = 0; /*0x5bbf2d*/
   }
   if ( this->q004 ) /*0x5bbf30*/
@@ -3082,7 +3082,7 @@ void FileTree::CleanupAll()
     if ( dword_B0F9EC ) /*0x730115*/
     {
       (dword_B0F9EC)->Destroy(); /*0x730119*/
-      operator delete((void *)(v0)); /*0x73011f*/
+      operator delete((v0)); /*0x73011f*/
     }
     byte_B0FC9F = 0; /*0x730127*/
   }
@@ -3093,7 +3093,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FAD4 ) /*0x730144*/
     {
       (dword_B0FAD4)->Destroy(); /*0x730148*/
-      operator delete((void *)(v1)); /*0x73014e*/
+      operator delete((v1)); /*0x73014e*/
     }
     byte_B0FCA0 = 0; /*0x730156*/
   }
@@ -3104,7 +3104,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FAC8 ) /*0x730173*/
     {
       (dword_B0FAC8)->Destroy(); /*0x730177*/
-      operator delete((void *)(v2)); /*0x73017d*/
+      operator delete((v2)); /*0x73017d*/
     }
     byte_B0FCA1 = 0; /*0x730185*/
   }
@@ -3115,7 +3115,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FA50 ) /*0x7301a2*/
     {
       (dword_B0FA50)->Destroy(); /*0x7301a6*/
-      operator delete((void *)(v3)); /*0x7301ac*/
+      operator delete((v3)); /*0x7301ac*/
     }
     byte_B0FCA2 = 0; /*0x7301b4*/
   }
@@ -3126,7 +3126,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FB08 ) /*0x7301d1*/
     {
       (dword_B0FB08)->Destroy(); /*0x7301d5*/
-      operator delete((void *)(v4)); /*0x7301db*/
+      operator delete((v4)); /*0x7301db*/
     }
     byte_B0FCA3 = 0; /*0x7301e3*/
   }
@@ -3137,7 +3137,7 @@ void FileTree::CleanupAll()
     if ( dword_B0F9E0 ) /*0x730200*/
     {
       (dword_B0F9E0)->Destroy(); /*0x730204*/
-      operator delete((void *)(v5)); /*0x73020a*/
+      operator delete((v5)); /*0x73020a*/
     }
     byte_B0FCA4 = 0; /*0x730212*/
   }
@@ -3148,7 +3148,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FA68 ) /*0x73022f*/
     {
       (dword_B0FA68)->Destroy(); /*0x730233*/
-      operator delete((void *)(v6)); /*0x730239*/
+      operator delete((v6)); /*0x730239*/
     }
     byte_B0FCA5 = 0; /*0x730241*/
   }
@@ -3159,7 +3159,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FA70 ) /*0x73025e*/
     {
       (dword_B0FA70)->Destroy(); /*0x730262*/
-      operator delete((void *)(v7)); /*0x730268*/
+      operator delete((v7)); /*0x730268*/
     }
     byte_B0FCA6 = 0; /*0x730270*/
   }
@@ -3170,7 +3170,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FAFC ) /*0x73028d*/
     {
       (dword_B0FAFC)->Destroy(); /*0x730291*/
-      operator delete((void *)(v8)); /*0x730297*/
+      operator delete((v8)); /*0x730297*/
     }
     byte_B0FCA7 = 0; /*0x73029f*/
   }
@@ -3181,7 +3181,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FA00 ) /*0x7302bc*/
     {
       (dword_B0FA00)->Destroy(); /*0x7302c0*/
-      operator delete((void *)(v9)); /*0x7302c6*/
+      operator delete((v9)); /*0x7302c6*/
     }
     byte_B0FCA8 = 0; /*0x7302ce*/
   }
@@ -3192,7 +3192,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FA8C ) /*0x7302eb*/
     {
       (dword_B0FA8C)->Destroy(); /*0x7302ef*/
-      operator delete((void *)(v10)); /*0x7302f5*/
+      operator delete((v10)); /*0x7302f5*/
     }
     byte_B0FCA9 = 0; /*0x7302fd*/
   }
@@ -3203,7 +3203,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FA48 ) /*0x73031a*/
     {
       (dword_B0FA48)->Destroy(); /*0x73031e*/
-      operator delete((void *)(v11)); /*0x730324*/
+      operator delete((v11)); /*0x730324*/
     }
     byte_B0FCAA = 0; /*0x73032c*/
   }
@@ -3214,7 +3214,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FA3C ) /*0x730349*/
     {
       (dword_B0FA3C)->Destroy(); /*0x73034d*/
-      operator delete((void *)(v12)); /*0x730353*/
+      operator delete((v12)); /*0x730353*/
     }
     byte_B0FCAB = 0; /*0x73035b*/
   }
@@ -3225,7 +3225,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FA90 ) /*0x730378*/
     {
       (dword_B0FA90)->Destroy(); /*0x73037c*/
-      operator delete((void *)(v13)); /*0x730382*/
+      operator delete((v13)); /*0x730382*/
     }
     byte_B0FCAC = 0; /*0x73038a*/
   }
@@ -3236,7 +3236,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FAA8 ) /*0x7303a7*/
     {
       (dword_B0FAA8)->Destroy(); /*0x7303ab*/
-      operator delete((void *)(v14)); /*0x7303b1*/
+      operator delete((v14)); /*0x7303b1*/
     }
     byte_B0FCAD = 0; /*0x7303b9*/
   }
@@ -3247,7 +3247,7 @@ void FileTree::CleanupAll()
     if ( dword_B0FABC ) /*0x7303d6*/
     {
       (dword_B0FABC)->Destroy(); /*0x7303da*/
-      operator delete((void *)(v15)); /*0x7303e0*/
+      operator delete((v15)); /*0x7303e0*/
     }
     byte_B0FCAE = 0; /*0x7303e8*/
   }
@@ -3301,13 +3301,13 @@ _DWORD * InfantryTypeVector::QueryInterface(char p0)
   *(unsigned int *)this->tail_0 = 0; /*0x512ae6*/
   if ( v3 && (this->u32_D) ) /*0x512af0*/
   {
-    operator delete((void *)(v3)); /*0x512af8*/
+    operator delete((v3)); /*0x512af8*/
     *&this->__pad_004 = 0; /*0x512b00*/
   }
   (this->u32_D) = 0; /*0x512b0b*/
   this->u32_8 = 0; /*0x512b11*/
   if ( (p0 & 1) != 0 ) /*0x512b18*/
-    operator delete((void *)(this)); /*0x512b1b*/
+    operator delete((this)); /*0x512b1b*/
   return this->tail_0; /*0x512b25*/
 }
 // 0x512c80
@@ -4702,7 +4702,7 @@ void IsometricTileTypeClass::CleanupMembers()
   for ( i = this->u32_2B4 - 1; i >= 0; --i ) /*0x544b4a*/
   {
     if ( *(unsigned int *)(this->u32_2A8 + 4 * i) ) /*0x544b52*/
-      operator delete((void *)(*(void **)(this->u32_2A8 + 4 * i))); /*0x544b5a*/
+      operator delete((*(void **)(this->u32_2A8 + 4 * i))); /*0x544b5a*/
     v6 = this->u32_2B4; /*0x544b62*/
     if ( i < v6 ) /*0x544b6a*/
     {
@@ -4720,7 +4720,7 @@ void IsometricTileTypeClass::CleanupMembers()
   this->u32_2A4 = 0; /*0x544b9c*/
   if ( v9 && this->u32_2B1 ) /*0x544bab*/
   {
-    operator delete((void *)(v9)); /*0x544bb4*/
+    operator delete((v9)); /*0x544bb4*/
     this->u32_2A8 = 0; /*0x544bbc*/
   }
   this->u32_2B1 = 0; /*0x544bc4*/
@@ -5615,7 +5615,7 @@ void MapFile::ddtor()
       }
       while ( v7 ); /*0x69c537*/
     }
-    operator delete((void *)(v4)); /*0x69c53b*/
+    operator delete((v4)); /*0x69c53b*/
     *&this->Items = 0; /*0x69c547*/
   }
   (this->IsAllocated) = 0; /*0x69c54a*/
@@ -5704,7 +5704,7 @@ char MapFile::Release(int p0, int* p1)
         {
           v11 = v10 - 1; /*0x69cc96*/
           Array::ForEachReverse(v10, 4, *(v10 - 1), (int (__thiscall *)(int))DeleteAndZero); /*0x69cca2*/
-          operator delete((void *)(v11)); /*0x69cca8*/
+          operator delete((v11)); /*0x69cca8*/
         }
         *&this->Items = 0; /*0x69ccb0*/
       }
@@ -5951,7 +5951,7 @@ void MapPreview::Upload()
           Size[0] = 0; /*0x5e833d*/
           v19 = (void *)Palette::Preview_Generate(v27, 64, (int)Size, v23); /*0x5e8351*/
           Debug::Log(); /*0x5e835d*/
-          v20 = (void *)operator new(4 * Size[0]); /*0x5e837a*/
+          v20 = operator new(4 * Size[0]); /*0x5e837a*/
           v31.__pad_004 = 0; /*0x5e838b*/
           v31.q008 = 0; /*0x5e838f*/
           /* X11: vtable install elided (implicit via class virtuals 0x5e8393) — binary-proven install, was 0 */
@@ -5962,7 +5962,7 @@ void MapPreview::Upload()
           Pipe::SetDelegate((Pipe *)&v33.__pad_0[48], (int)&v31); /*0x5e83ca*/
           v21 = Compression::Read((int *)&v33.__pad_0[48], (int)v19, Size[0]); /*0x5e83e1*/
           v22 = (*(int (__thiscall **)(char *))(*(unsigned int *)&v33.__pad_0[48] + 4))(&v33.__pad_0[48]) + v21; /*0x5e83f4*/
-          operator delete((void *)(v19)); /*0x5e83f7*/
+          operator delete((v19)); /*0x5e83f7*/
           Debug::Log(); /*0x5e8402*/
           RawFileClass::Construct((RawFileClass *)&v33.q00C, (int)aPreviewBin); /*0x5e8413*/
           if ( (uint8_t)FileClass::Open((RawFileClass *)&v33.q00C, 0) ) /*0x5e841d*/
@@ -5971,7 +5971,7 @@ void MapPreview::Upload()
           FileClass::Write2((RawFileClass *)&v33.q00C, Size, 4u); /*0x5e8445*/
           FileClass::Write2((RawFileClass *)&v33.q00C, v20, v22); /*0x5e8450*/
           FileClass::CloseHandle((RawFileClass *)&v33.q00C); /*0x5e8459*/
-          operator delete((void *)(v20)); /*0x5e845f*/
+          operator delete((v20)); /*0x5e845f*/
           Debug::Log(); /*0x5e8469*/
           SendNetworkFile(aPreviewBin, 3, 1, 0); /*0x5e847e*/
           Network::SetConnectionParams(&unk_A8E9C0, 30, -1, 600, 1); /*0x5e8493*/
@@ -7552,7 +7552,7 @@ _DWORD * MapSizeGameOption_WorldDominationTour::QueryInterface(char p0)
   *(unsigned int *)this->Return_field_00 = 0; /*0x7678c3*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x7678c9*/
   if ( (p0 & 1) != 0 ) /*0x7678d3*/
-    operator delete((void *)(this)); /*0x7678d6*/
+    operator delete((this)); /*0x7678d6*/
   return this->Return_field_00; /*0x7678e0*/
 }
 // 0x769c00
@@ -7560,7 +7560,7 @@ void * Map_WorldDominationTour::QueryInterface(char p0)
 {
   WorldDomination::SetupTerritoryNodes((int)this); /*0x769c03*/
   if ( (p0 & 1) != 0 ) /*0x769c0d*/
-    operator delete((void *)(this)); /*0x769c10*/
+    operator delete((this)); /*0x769c10*/
   return this; /*0x769c1a*/
 }
 // 0x5ae5e0
@@ -7998,7 +7998,7 @@ void RadarHashVector::Clear()
   this->Count = 0; /*0x658899*/
   if ( v2 && (this->IsAllocated) ) /*0x6588a0*/
   {
-    operator delete((void *)(v2)); /*0x6588a6*/
+    operator delete((v2)); /*0x6588a6*/
     *&this->Items = 0; /*0x6588ae*/
   }
   (this->IsAllocated) = 0; /*0x6588b1*/
@@ -8373,7 +8373,7 @@ _DWORD * ScoreAnimClass::Constructor_ScoreAnimClass(char p0)
 {
   *(unsigned int *)this->tail_0 = 0; /*0x690fe9*/
   if ( (p0 & 1) != 0 ) /*0x690fef*/
-    operator delete((void *)(this)); /*0x690ff2*/
+    operator delete((this)); /*0x690ff2*/
   return this->tail_0; /*0x690ffc*/
 }
 // 0x542620
@@ -8801,7 +8801,7 @@ _DWORD * ScoreFontClass::QueryInterface(char p0)
   *(unsigned int *)this->tail_0 = 0; /*0x691049*/
   if ( ScoreFontClass_field_0x0C && this->q010 == 1 ) /*0x691057*/
   {
-    operator delete((void *)(ScoreFontClass_field_0x0C)); /*0x69105a*/
+    operator delete((ScoreFontClass_field_0x0C)); /*0x69105a*/
     this->u32_C = 0; /*0x691062*/
     this->q010 = 0; /*0x691065*/
   }
@@ -8817,7 +8817,7 @@ _DWORD * ScoreFontClass::QueryInterface(char p0)
     while ( (int)v4 < (int)byte_B055AC ); /*0x691087*/
   }
   if ( (p0 & 1) != 0 ) /*0x69108e*/
-    operator delete((void *)(this)); /*0x691091*/
+    operator delete((this)); /*0x691091*/
   return this->tail_0; /*0x69109b*/
 }
 // 0x691100
@@ -8830,7 +8830,7 @@ _DWORD * ScoreFontClass::Constructor_ScoreFontClass(char p0)
   *(unsigned int *)this->tail_0 = 0; /*0x691109*/
   if ( v3 && this->q010 == 1 ) /*0x691117*/
   {
-    operator delete((void *)(v3)); /*0x69111a*/
+    operator delete((v3)); /*0x69111a*/
     this->field_C = 0; /*0x691122*/
     this->q010 = 0; /*0x691125*/
   }
@@ -8846,7 +8846,7 @@ _DWORD * ScoreFontClass::Constructor_ScoreFontClass(char p0)
     while ( (int)v4 < (int)byte_B055AC ); /*0x691147*/
   }
   if ( (p0 & 1) != 0 ) /*0x69114e*/
-    operator delete((void *)(this)); /*0x691151*/
+    operator delete((this)); /*0x691151*/
   return this->tail_0; /*0x69115b*/
 }
 // 0x68cd20
@@ -10847,7 +10847,7 @@ int __fastcall ScoreScreenClass::ProcessFrame(char* p0, int p1)
     if ( v8 ) /*0x691a43*/
     {
       AbstractTypeClass::Constructor(v8, Source); /*0x691a50*/
-      v9->q09C = 0; /*0x691a55*/
+      v9->Coord_9C = 0; /*0x691a55*/
       v9->q0A0 = 0; /*0x691a5b*/
       *v9 = (int)0; /*0x691a61*/
       v9->u32_4 = (int)0; /*0x691a67*/
@@ -10894,7 +10894,7 @@ int __fastcall ScoreScreenClass::ProcessFrame(char* p0, int p1)
     }
   LABEL_23:
     result = v9->MissionStub(this); /*0x691b01*/
-    v9->q09C = p1; /*0x691b0d*/
+    v9->Coord_9C = p1; /*0x691b0d*/
     v4 = v15; /*0x691b13*/
     goto LABEL_24; /*0x691b13*/
   }
@@ -11447,7 +11447,7 @@ int TClassFactory_AnimClass::GetClassName()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c39f0*/
   if ( !v1 ) /*0x6c39f4*/
-    operator delete((void *)((void *)Block)); /*0x6c39f7*/
+    operator delete((Block)); /*0x6c39f7*/
   return v1; /*0x6c3a01*/
 }
 // 0x6c3a10
@@ -11506,7 +11506,7 @@ int TClassFactory_BulletClass::GetClassName()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5070*/
   if ( !v1 ) /*0x6c5074*/
-    operator delete((void *)((void *)Block)); /*0x6c5077*/
+    operator delete((Block)); /*0x6c5077*/
   return v1; /*0x6c5081*/
 }
 // 0x6c5090
@@ -11565,7 +11565,7 @@ int TClassFactory_CampaignClass::Release()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c00f0*/
   if ( !v1 ) /*0x6c00f4*/
-    operator delete((void *)((void *)Block)); /*0x6c00f7*/
+    operator delete((Block)); /*0x6c00f7*/
   return v1; /*0x6c0101*/
 }
 // 0x6c0110
@@ -11631,7 +11631,7 @@ int TClassFactory_CellClass::GetClassName()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bf970*/
   if ( !v1 ) /*0x6bf974*/
-    operator delete((void *)((void *)Block)); /*0x6bf977*/
+    operator delete((Block)); /*0x6bf977*/
   return v1; /*0x6bf981*/
 }
 // 0x6bf990
@@ -11690,7 +11690,7 @@ int TClassFactory_EMPulseClass::GetClassName()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bfaf0*/
   if ( !v1 ) /*0x6bfaf4*/
-    operator delete((void *)((void *)Block)); /*0x6bfaf7*/
+    operator delete((Block)); /*0x6bfaf7*/
   return v1; /*0x6bfb01*/
 }
 // 0x6bfb10
@@ -11797,13 +11797,13 @@ _DWORD * AbstractClassVector::QueryInterface(char p0)
   *(unsigned int *)this->tail_0 = 0; /*0x4e02d6*/
   if ( v3 && (this->IsAllocated) ) /*0x4e02e0*/
   {
-    operator delete((void *)(v3)); /*0x4e02e8*/
+    operator delete((v3)); /*0x4e02e8*/
     *&this->__pad_004 = 0; /*0x4e02f0*/
   }
   (this->IsAllocated) = 0; /*0x4e02fb*/
   this->u32_8 = 0; /*0x4e0301*/
   if ( (p0 & 1) != 0 ) /*0x4e0308*/
-    operator delete((void *)(this)); /*0x4e030b*/
+    operator delete((this)); /*0x4e030b*/
   return this->tail_0; /*0x4e0315*/
 }
 // 0x4e0320
@@ -13575,7 +13575,7 @@ void BTree::DeleteSubtree()
           v2->u32_8 = 0; /*0x69e159*/
         }
       }
-      operator delete((void *)(v2)); /*0x69e161*/
+      operator delete((v2)); /*0x69e161*/
     }
     this->u32_C = 0; /*0x69e169*/
     this->u32_10 = 0; /*0x69e170*/
@@ -13708,13 +13708,13 @@ _DWORD * BaseNodeClass_Vector::QueryInterface(char p0)
   *(unsigned int *)this->tail_0 = 0; /*0x42fb56*/
   if ( v3 && (this->IsAllocated) ) /*0x42fb60*/
   {
-    operator delete((void *)(v3)); /*0x42fb68*/
+    operator delete((v3)); /*0x42fb68*/
     *&this->__pad_004 = 0; /*0x42fb70*/
   }
   (this->IsAllocated) = 0; /*0x42fb7b*/
   this->u32_8 = 0; /*0x42fb81*/
   if ( (p0 & 1) != 0 ) /*0x42fb88*/
-    operator delete((void *)(this)); /*0x42fb8b*/
+    operator delete((this)); /*0x42fb8b*/
   return this->tail_0; /*0x42fb95*/
 }
 // 0x5c6fe0
@@ -14357,12 +14357,12 @@ _DWORD * BlowPipe::QueryInterface(char p0)
   if ( BlowPipe_field_0x0C ) /*0x632f9f*/
   {
     COMObject::Release(BlowPipe_field_0x0C); /*0x632fa3*/
-    operator delete((void *)(BlowPipe_field_0x0C)); /*0x632fa9*/
+    operator delete((BlowPipe_field_0x0C)); /*0x632fa9*/
   }
   this->u32_C = 0; /*0x632fb3*/
   Pipe::Dtor((Pipe *)this); /*0x632fba*/
   if ( (p0 & 1) != 0 ) /*0x632fc4*/
-    operator delete((void *)(this)); /*0x632fc7*/
+    operator delete((this)); /*0x632fc7*/
   return this->tail_0; /*0x632fd1*/
 }
 // 0x438210
@@ -14439,12 +14439,12 @@ _DWORD * BlowStraw::QueryInterface(char p0)
   if ( v3 ) /*0x5b45cf*/
   {
     COMObject::Release(v3); /*0x5b45d3*/
-    operator delete((void *)(v3)); /*0x5b45d9*/
+    operator delete((v3)); /*0x5b45d9*/
   }
   this->u32_C = 0; /*0x5b45e3*/
   Straw::Dtor((Straw *)this); /*0x5b45ea*/
   if ( (p0 & 1) != 0 ) /*0x5b45f4*/
-    operator delete((void *)(this)); /*0x5b45f7*/
+    operator delete((this)); /*0x5b45f7*/
   return this->tail_0; /*0x5b4601*/
 }
 // 0x5b4630
@@ -14463,14 +14463,14 @@ void * BlowStraw::Constructor_MixFileClass(char p0)
     free(CountFiles); /*0x5b4644*/
   if ( this->MixFileClass_field_24 && (this->u8_1A) ) /*0x5b4653*/
   {
-    operator delete((void *)((void *)this->MixFileClass_field_24)); /*0x5b4659*/
+    operator delete(((void *)this->MixFileClass_field_24)); /*0x5b4659*/
     (this->u8_1A) = 0; /*0x5b4661*/
   }
   v4 = *&this->u32_20; /*0x5b4664*/
   this->MixFileClass_field_24 = 0; /*0x5b4667*/
   if ( v4 ) /*0x5b466c*/
   {
-    operator delete((void *)(v4)); /*0x5b466f*/
+    operator delete((v4)); /*0x5b466f*/
     *&this->u32_20 = 0; /*0x5b4677*/
   }
   if ( this ) /*0x5b467c*/
@@ -14505,7 +14505,7 @@ void * BlowStraw::Constructor_MixFileClass(char p0)
     }
   }
   if ( (p0 & 1) != 0 ) /*0x5b46cd*/
-    operator delete((void *)(this)); /*0x5b46d0*/
+    operator delete((this)); /*0x5b46d0*/
   return this; /*0x5b46da*/
 }
 // 0x510920
@@ -14639,7 +14639,7 @@ char BuildLocationVector::Grow(int p0)
     v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x5108a2*/
     *(unsigned int *)&v3[v5] = *v6; /*0x5108a7*/
   }
-  operator delete((void *)(*(void **)v3)); /*0x5108bb*/
+  operator delete((*(void **)v3)); /*0x5108bb*/
   v7 = p0 + v3->vtable3; /*0x5108c6*/
   *(unsigned int *)v3 = v3; /*0x5108c8*/
   v3->vtable3 = v7; /*0x5108ca*/
@@ -14707,7 +14707,7 @@ void ** C07F5C70::Seek(char p0)
 {
   UnitClass::Destructor(this); /*0x746e83*/
   if ( (p0 & 1) != 0 ) /*0x746e8d*/
-    operator delete((void *)(this)); /*0x746e90*/
+    operator delete((this)); /*0x746e90*/
   return &this->vfptr; /*0x746e9a*/
 }
 // 0x478ba0
@@ -15124,7 +15124,7 @@ int __stdcall CChatEventSink::HandleServerList(int p0, int p1, int p2)
             Debug::Log(); /*0x7a4a98*/
             ++dword_B77E1C; /*0x7a4aa6*/
           }
-          operator delete((void *)(v33)); /*0x7a4aac*/
+          operator delete((v33)); /*0x7a4aac*/
         }
       }
       else
@@ -15167,7 +15167,7 @@ int __stdcall CChatEventSink::HandleServerList(int p0, int p1, int p2)
           memcpy(&v17[4 * v20], &vtable2[4 * v20], v19 & 3); /*0x7a4453*/
           vtable2 = (char *)g_WOL_UserList.vfptr2; /*0x7a4455*/
         }
-        operator delete((void *)(vtable2)); /*0x7a445c*/
+        operator delete((vtable2)); /*0x7a445c*/
         vtable0 = (int)g_WOL_UserList.vfptr; /*0x7a4461*/
         v9 = v46; /*0x7a4466*/
         g_WOL_UserList.vfptr2 = v17; /*0x7a446a*/
@@ -15243,7 +15243,7 @@ int __stdcall CChatEventSink::HandleServerList(int p0, int p1, int p2)
         memcpy(&v11[4 * v14], &v12[4 * v14], v13 & 3); /*0x7a4317*/
         v12 = (char *)g_WOL_UserList.vfptr2; /*0x7a4319*/
       }
-      operator delete((void *)(v12)); /*0x7a4320*/
+      operator delete((v12)); /*0x7a4320*/
       vtable0 = (int)g_WOL_UserList.vfptr; /*0x7a4325*/
       v9 = v43; /*0x7a432a*/
       g_WOL_UserList.vfptr2 = v11; /*0x7a432e*/
@@ -18194,7 +18194,7 @@ _DWORD * CarryoverClass::QueryInterface(char p0)
 {
   LinkClass::Destruct((LinkClass *)this); /*0x473923*/
   if ( (p0 & 1) != 0 ) /*0x47392d*/
-    operator delete((void *)(this)); /*0x473930*/
+    operator delete((this)); /*0x473930*/
   return this; /*0x47393a*/
 }
 // 0x5ad570
@@ -18206,13 +18206,13 @@ _DWORD * CellClassVector::Destruct(char p0)
   *(unsigned int *)this->Return_field_00 = 0; /*0x5ad576*/
   if ( v3 && (this->u32_D) ) /*0x5ad580*/
   {
-    operator delete((void *)(v3)); /*0x5ad588*/
+    operator delete((v3)); /*0x5ad588*/
     *&this->__pad_004 = 0; /*0x5ad590*/
   }
   (this->u32_D) = 0; /*0x5ad59b*/
   *&this->VtableStub_8 = 0; /*0x5ad5a1*/
   if ( (p0 & 1) != 0 ) /*0x5ad5a8*/
-    operator delete((void *)(this)); /*0x5ad5ab*/
+    operator delete((this)); /*0x5ad5ab*/
   return this->Return_field_00; /*0x5ad5b5*/
 }
 // 0x5657a0
@@ -19450,8 +19450,8 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
   v33 = *v24; /*0x6b99f0*/
   v68[0] = v24; /*0x6b99f4*/
   v24->GetDirty(); /*0x6b99fb*/
-  operator delete((void *)(v8)); /*0x6b99ff*/
-  operator delete((void *)((void *)v67[2])); /*0x6b9a09*/
+  operator delete((v8)); /*0x6b99ff*/
+  operator delete(((void *)v67[2])); /*0x6b9a09*/
   String::Assign((String *)&v67[1], p0); /*0x6b9a1d*/
   String::ToLower((String *)&v67[1]); /*0x6b9a26*/
   v34 = v58->v54; /*0x6b9a2b*/
@@ -19492,7 +19492,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
         if ( v43 ) /*0x6b9b04*/
         {
           DeleteAndZero(*(ObjectClass **)(*(unsigned int *)v58 + 4 * v41)); /*0x6b9b08*/
-          operator delete((void *)(v43)); /*0x6b9b0e*/
+          operator delete((v43)); /*0x6b9b0e*/
         }
         v45 = *(float *)&v67[7]; /*0x6b9b19*/
         *(unsigned int *)(*(unsigned int *)v58 + 4 * v41) = v44; /*0x6b9b1d*/
@@ -19517,7 +19517,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
           v42->q308 = v48->q308; /*0x6b9b61*/
           --v58->v54; /*0x6b9b6d*/
           DeleteAndZero((ObjectClass *)v48); /*0x6b9b74*/
-          operator delete((void *)((void *)v48)); /*0x6b9b7a*/
+          operator delete(((void *)v48)); /*0x6b9b7a*/
         }
   LABEL_36:
         if ( *(float *)&v67[7] > *(double *)(v58 + 32) ) /*0x6b9b8e*/
@@ -19563,7 +19563,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
     v67[3] = *(const void **)v58; /*0x6b9c57*/
     v58->u32_8 = 2 * v53; /*0x6b9c5b*/
     v58->v57 = v57; /*0x6b9c65*/
-    v58 = (void *)operator new(8 * v53); /*0x6b9c71*/
+    v58 = operator new(8 * v53); /*0x6b9c71*/
     v59 = 4 * v58->u32_8; /*0x6b9c76*/
     *(unsigned int *)v58 = v58; /*0x6b9c7d*/
     memset(v58, 0, v59); /*0x6b9c83*/
@@ -19593,7 +19593,7 @@ char ChatEvent::ProcessStrings(const char* p0, int p1, int p2, int p3)
       while ( v53 ); /*0x6b9ccd*/
       v56 = (int *)v67[3]; /*0x6b9ccf*/
     }
-    operator delete((void *)(v56)); /*0x6b9cd4*/
+    operator delete((v56)); /*0x6b9cd4*/
   }
   DeleteAndZero((ObjectClass *)&v67[1]); /*0x6b9ce0*/
   return 1; /*0x6b9ce5*/
@@ -19840,7 +19840,7 @@ void ComStreamClass::Commit()
               if ( v10 ) /*0x7a3c11*/
               {
                 DeleteAndZero(*((ObjectClass **)dword_B76640 + v8)); /*0x7a3c15*/
-                operator delete((void *)(v10)); /*0x7a3c1b*/
+                operator delete((v10)); /*0x7a3c1b*/
               }
               v12 = *(float *)&a4; /*0x7a3c29*/
               *((unsigned int *)dword_B76640 + v8) = v11; /*0x7a3c2d*/
@@ -20004,9 +20004,9 @@ int Compression::Read(int p0, int p1)
       if ( v20 == v19 ) /*0x55c4b9*/
       {
         p0 = 4; /*0x55c4c0*/
-        v21 = (void *)operator new(0x10000u); /*0x55c4d3*/
+        v21 = operator new(0x10000u); /*0x55c4d3*/
         WriteCompressionBlock((unsigned char *)this->u32_14, this->u32_1C, (unsigned char *)this->u32_18, &p0, (int)v21); /*0x55c4e2*/
-        operator delete((void *)(v21)); /*0x55c4e8*/
+        operator delete((v21)); /*0x55c4e8*/
         p0 = p0; /*0x55c4ed*/
         this->u32_26 = this->u32_1C; /*0x55c4fc*/
         this->u32_24 = p0; /*0x55c500*/
@@ -20021,9 +20021,9 @@ int Compression::Read(int p0, int p1)
       do /*0x55c5aa*/
       {
         p1 = 0; /*0x55c536*/
-        v25 = (void *)operator new(0x10000u); /*0x55c546*/
+        v25 = operator new(0x10000u); /*0x55c546*/
         WriteCompressionBlock(v3, this->u32_1C, (unsigned char *)this->u32_18, &p1, (int)v25); /*0x55c557*/
-        operator delete((void *)(v25)); /*0x55c55d*/
+        operator delete((v25)); /*0x55c55d*/
         v26 = this->u32_1C; /*0x55c562*/
         p1 = p1; /*0x55c565*/
         v3 += v26; /*0x55c56e*/
@@ -20071,7 +20071,7 @@ _DWORD * Conflict_WorldDominationTour::QueryInterface(char p0)
   ComPtr::Release(v3); /*0x7667b2*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x7667b9*/
   if ( (p0 & 1) != 0 ) /*0x7667c3*/
-    operator delete((void *)(this)); /*0x7667c6*/
+    operator delete((this)); /*0x7667c6*/
   return this; /*0x7667d0*/
 }
 // 0x4a04b0
@@ -20117,13 +20117,13 @@ LONG __stdcall ConnectionPointClass::Release()
     {
       if ( this->u32_29 ) /*0x4a058f*/
       {
-        operator delete((void *)(ConnectionPointClass_field_0x20)); /*0x4a0597*/
+        operator delete((ConnectionPointClass_field_0x20)); /*0x4a0597*/
         this->COMObject_20 = 0; /*0x4a059f*/
       }
     }
     this->u32_29 = 0; /*0x4a05a3*/
     this->u32_24 = 0; /*0x4a05a7*/
-    operator delete((void *)(this)); /*0x4a05ae*/
+    operator delete((this)); /*0x4a05ae*/
     return 0; /*0x4a05b6*/
   }
   return result; /*0x4a05b9*/
@@ -21699,7 +21699,7 @@ _DWORD * Dial8Class::QueryInterface(char p0)
 {
   GadgetClass::Dtor((GadgetClass *)this); /*0x4a59a3*/
   if ( (p0 & 1) != 0 ) /*0x4a59ad*/
-    operator delete((void *)(this)); /*0x4a59b0*/
+    operator delete((this)); /*0x4a59b0*/
   return this->tail_0; /*0x4a59ba*/
 }
 // 0x4a71a0
@@ -22382,7 +22382,7 @@ char DynamicArray::Resize(int* p0, int* p1)
     *p1 = v7[1]; /*0x624a1d*/
     v31 = *(unsigned int **)(*(unsigned int *)this->vtable1 + 4 * v6); /*0x624a24*/
     v9 = v31[2]; /*0x624a25*/
-    operator delete((void *)(v31)); /*0x624a28*/
+    operator delete((v31)); /*0x624a28*/
     *(unsigned int *)(*(unsigned int *)this->vtable1 + 4 * v6) = v9; /*0x624a36*/
     v10 = v32 < this->u32_20; /*0x624a3c*/
     v11 = v32 == this->u32_20; /*0x624a3c*/
@@ -22397,7 +22397,7 @@ char DynamicArray::Resize(int* p0, int* p1)
         v34 = *(int **)this->vtable1; /*0x624a69*/
         this->Capacity = DynamicArray_field_0x08 >> 1; /*0x624a6f*/
         this->IsInitialized = DynamicArray_field_0x0C - 1; /*0x624a77*/
-        v15 = (void *)operator new(4 * (DynamicArray_field_0x08 >> 1)); /*0x624a82*/
+        v15 = operator new(4 * (DynamicArray_field_0x08 >> 1)); /*0x624a82*/
         v16 = 4 * this->Capacity; /*0x624a87*/
         *(unsigned int *)this->vtable1 = v15; /*0x624a8e*/
         memset(v15, 0, v16); /*0x624a93*/
@@ -22425,7 +22425,7 @@ char DynamicArray::Resize(int* p0, int* p1)
           while ( DynamicArray_field_0x08 ); /*0x624ad2*/
           v14 = v34; /*0x624ad4*/
         }
-        operator delete((void *)(v14)); /*0x624ad9*/
+        operator delete((v14)); /*0x624ad9*/
       }
     }
     return 1; /*0x624ae4*/
@@ -22446,7 +22446,7 @@ char DynamicArray::Resize(int* p0, int* p1)
       *p1 = v21[1]; /*0x624b10*/
       v7[2] = v21[2]; /*0x624b15*/
       --this->u32_4; /*0x624b1c*/
-      operator delete((void *)(v21)); /*0x624b1f*/
+      operator delete((v21)); /*0x624b1f*/
       v33 = 1; /*0x624b27*/
     }
   LABEL_21:
@@ -22460,7 +22460,7 @@ char DynamicArray::Resize(int* p0, int* p1)
         v35 = *(int **)this->__pad_000; /*0x624b59*/
         this->u32_8 = v22 >> 1; /*0x624b5f*/
         this->q00C = v23 - 1; /*0x624b67*/
-        v25 = (void *)operator new(4 * (v22 >> 1)); /*0x624b72*/
+        v25 = operator new(4 * (v22 >> 1)); /*0x624b72*/
         v26 = 4 * this->u32_8; /*0x624b77*/
         *(unsigned int *)this->__pad_000 = v25; /*0x624b7e*/
         memset(v25, 0, v26); /*0x624b83*/
@@ -22488,7 +22488,7 @@ char DynamicArray::Resize(int* p0, int* p1)
           while ( v22 ); /*0x624bc2*/
           v24 = v35; /*0x624bc4*/
         }
-        operator delete((void *)(v24)); /*0x624bc9*/
+        operator delete((v24)); /*0x624bc9*/
       }
     }
     return v33; /*0x624bd1*/
@@ -22513,12 +22513,12 @@ int DynamicArray::ShrinkCapacity()
     v5 = 10; /*0x625466*/
   if ( v5 >= DynamicArray_field_0x04 ) /*0x62546d*/
     return 0; /*0x625470*/
-  v6 = (void *)operator new(4 * v5); /*0x62547e*/
+  v6 = operator new(4 * v5); /*0x62547e*/
   DynamicArray_field_0x08 = (const void *)this->u32_8; /*0x625483*/
   v8 = (int)v6; /*0x62548b*/
   if ( DynamicArray_field_0x08 ) /*0x62548f*/
     memcpy(v6, DynamicArray_field_0x08, 4 * *(unsigned int *)this->__pad_000); /*0x62549f*/
-  operator delete((void *)((void *)this->u32_8)); /*0x6254ad*/
+  operator delete(((void *)this->u32_8)); /*0x6254ad*/
   this->u32_8 = v8; /*0x6254b9*/
   this->u32_4 = v5; /*0x6254bc*/
   return 1; /*0x625452*/
@@ -22558,12 +22558,12 @@ char DynamicArray::Remove(int p0)
       v8 = 10; /*0x7acdd7*/
     if ( v8 < DynamicArray_field_0x04 ) /*0x7acdde*/
     {
-      v9 = (void *)operator new(4 * v8); /*0x7acde8*/
+      v9 = operator new(4 * v8); /*0x7acde8*/
       DynamicArray_field_0x08 = (const void *)this->u32_8; /*0x7acded*/
       v11 = (int)v9; /*0x7acdf5*/
       if ( DynamicArray_field_0x08 ) /*0x7acdf9*/
         memcpy(v9, DynamicArray_field_0x08, 4 * *(unsigned int *)this->__pad_000); /*0x7ace07*/
-      operator delete((void *)((void *)this->u32_8)); /*0x7ace14*/
+      operator delete(((void *)this->u32_8)); /*0x7ace14*/
       this->u32_8 = v11; /*0x7ace20*/
       this->u32_4 = v8; /*0x7ace23*/
     }
@@ -22591,12 +22591,12 @@ int DynamicArray::Grow()
       v3 = 10; /*0x7ad9f5*/
     }
     v4 = 108 * v3; /*0x7ada02*/
-    v5 = (void *)operator new(108 * v3); /*0x7ada0d*/
+    v5 = operator new(108 * v3); /*0x7ada0d*/
     memset(v5, 0, v4); /*0x7ada1b*/
     DynamicArray_field_0x08 = (const void *)this->u32_8; /*0x7ada24*/
     if ( DynamicArray_field_0x08 ) /*0x7ada29*/
       memcpy(v5, DynamicArray_field_0x08, 108 * *(unsigned int *)this->__pad_000); /*0x7ada3d*/
-    operator delete((void *)((void *)this->u32_8)); /*0x7ada4a*/
+    operator delete(((void *)this->u32_8)); /*0x7ada4a*/
     this->u32_8 = (int)v5; /*0x7ada56*/
     this->u32_4 = v7; /*0x7ada59*/
     (*((unsigned char *)&(result))) = 1; /*0x7ada5f*/
@@ -22641,7 +22641,7 @@ char DynamicClass::Insert(const void* p0, int p1)
       v7 = 10; /*0x7aca36*/
     }
     v8 = 108 * v7; /*0x7aca40*/
-    v9 = (void *)operator new(108 * v7); /*0x7aca49*/
+    v9 = operator new(108 * v7); /*0x7aca49*/
     memset(v9, 0, v8); /*0x7aca54*/
     v9 = v9; /*0x7aca5e*/
     v10 = (const void *)this->u32_8; /*0x7aca64*/
@@ -22661,7 +22661,7 @@ char DynamicClass::Insert(const void* p0, int p1)
       v11 = 10; /*0x7acabc*/
     }
     v12 = 108 * v11; /*0x7acac6*/
-    v13 = (void *)operator new(108 * v11); /*0x7acacf*/
+    v13 = operator new(108 * v11); /*0x7acacf*/
     memset(v13, 0, v12); /*0x7acada*/
     v13 = v13; /*0x7acae4*/
     v14 = (const void *)this->u32_8; /*0x7acaea*/
@@ -23184,7 +23184,7 @@ void __stdcall FractalNoise::Release(void* p0)
         while ( v1 < dword_88A090 ); /*0x4202da*/
       }
       if ( this ) /*0x4202e2*/
-        operator delete((void *)(this)); /*0x4202e5*/
+        operator delete((this)); /*0x4202e5*/
     }
   }
 }
@@ -23961,7 +23961,7 @@ _DWORD * History_WorldDominationTour::QueryInterface(char p0)
   ComPtr::Release(v3); /*0x767c22*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x767c29*/
   if ( (p0 & 1) != 0 ) /*0x767c33*/
-    operator delete((void *)(this)); /*0x767c36*/
+    operator delete((this)); /*0x767c36*/
   return this; /*0x767c40*/
 }
 // 0x4016f0
@@ -39616,10 +39616,10 @@ void TileSystem::BuildNodes()
           break; /*0x58d8f6*/
         v35 = v152; /*0x58d902*/
         if ( g_MissionQueueFrame.localVariables[163] ) /*0x58d908*/
-          *(unsigned int *)(80 * ((*((signed short *)&(v152->field_0))) + g_MapCellWidth * (short)((v152->field_0) >> 16)) /*0x58d920*/
+          *(unsigned int *)(80 * ((v152->Y) + g_MapCellWidth * (short)((v152->field_0) >> 16)) /*0x58d920*/
                     + g_MissionQueueFrame.localVariables[163]
                     + 56) = -3;
-        *(unsigned int *)v157.__pad_000 = (*((signed short *)&(v35->field_0))) + g_MapCellWidth * (short)((v35->field_0) >> 16); /*0x58d93c*/
+        *(unsigned int *)v157.__pad_000 = (v35->Y) + g_MapCellWidth * (short)((v35->field_0) >> 16); /*0x58d93c*/
         v146 = 0; /*0x58d944*/
         v156 = (int)dword_89A304; /*0x58d94c*/
         v36 = (float *)((char *)Block + 8 * v157.u32_C); /*0x58d954*/

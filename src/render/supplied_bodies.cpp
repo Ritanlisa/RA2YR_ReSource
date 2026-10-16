@@ -1025,7 +1025,7 @@ unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2)
   this->u32_8 = 0; /*0x49a21b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a224) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a22a*/
-    operator delete((void *)(this)); /*0x49a22d*/
+    operator delete((this)); /*0x49a22d*/
   return this->vtable1; /*0x49a237*/
 }
 } // namespace gamemd
@@ -1042,7 +1042,7 @@ unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2)
   this->q00C = 0; /*0x49a29b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a2a4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a2aa*/
-    operator delete((void *)(this)); /*0x49a2ad*/
+    operator delete((this)); /*0x49a2ad*/
   return this->vtable1; /*0x49a2b7*/
 }
 } // namespace gamemd
@@ -1059,7 +1059,7 @@ unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2)
   this->q008 = 0; /*0x49a2db*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a2e4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a2ea*/
-    operator delete((void *)(this)); /*0x49a2ed*/
+    operator delete((this)); /*0x49a2ed*/
   return this->vtable1; /*0x49a2f7*/
 }
 } // namespace gamemd
@@ -1076,7 +1076,7 @@ unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2)
   this->q008 = 0; /*0x49a31b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a324) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a32a*/
-    operator delete((void *)(this)); /*0x49a32d*/
+    operator delete((this)); /*0x49a32d*/
   return this->vtable1; /*0x49a337*/
 }
 } // namespace gamemd
@@ -1093,7 +1093,7 @@ unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2)
   this->q00C = 0; /*0x49a47b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a484) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a48a*/
-    operator delete((void *)(this)); /*0x49a48d*/
+    operator delete((this)); /*0x49a48d*/
   return this->vtable1; /*0x49a497*/
 }
 } // namespace gamemd
@@ -1110,7 +1110,7 @@ unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2)
   this->u32_8 = 0; /*0x49a4bb*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a4c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a4ca*/
-    operator delete((void *)(this)); /*0x49a4cd*/
+    operator delete((this)); /*0x49a4cd*/
   return this->vtable1; /*0x49a4d7*/
 }
 } // namespace gamemd
@@ -1127,7 +1127,7 @@ unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2)
   this->u32_8 = 0; /*0x49a4fb*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a504) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a50a*/
-    operator delete((void *)(this)); /*0x49a50d*/
+    operator delete((this)); /*0x49a50d*/
   return this->vtable1; /*0x49a517*/
 }
 } // namespace gamemd
@@ -1144,7 +1144,7 @@ unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2)
   this->q008 = 0; /*0x49a53b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a544) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a54a*/
-    operator delete((void *)(this)); /*0x49a54d*/
+    operator delete((this)); /*0x49a54d*/
   return this->vtable1; /*0x49a557*/
 }
 } // namespace gamemd
@@ -1161,7 +1161,7 @@ unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2)
   this->q008 = 0; /*0x49a57b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a584) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a58a*/
-    operator delete((void *)(this)); /*0x49a58d*/
+    operator delete((this)); /*0x49a58d*/
   return this->vtable1; /*0x49a597*/
 }
 } // namespace gamemd
@@ -1178,7 +1178,7 @@ unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2)
   this->q008 = 0; /*0x49a5bb*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a5c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a5ca*/
-    operator delete((void *)(this)); /*0x49a5cd*/
+    operator delete((this)); /*0x49a5cd*/
   return this->vtable1; /*0x49a5d7*/
 }
 } // namespace gamemd
@@ -1195,7 +1195,7 @@ unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2)
   this->u32_8 = 0; /*0x49a5fb*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a604) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a60a*/
-    operator delete((void *)(this)); /*0x49a60d*/
+    operator delete((this)); /*0x49a60d*/
   return this->vtable1; /*0x49a617*/
 }
 } // namespace gamemd
@@ -1212,7 +1212,7 @@ unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2)
   this->u32_8 = 0; /*0x49a63b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a644) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a64a*/
-    operator delete((void *)(this)); /*0x49a64d*/
+    operator delete((this)); /*0x49a64d*/
   return this->vtable1; /*0x49a657*/
 }
 } // namespace gamemd
@@ -1229,7 +1229,7 @@ unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2)
   this->q008 = 0; /*0x49a6bb*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a6c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a6ca*/
-    operator delete((void *)(this)); /*0x49a6cd*/
+    operator delete((this)); /*0x49a6cd*/
   return this->vtable1; /*0x49a6d7*/
 }
 } // namespace gamemd
@@ -1246,7 +1246,7 @@ unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2)
   this->u32_8 = 0; /*0x49a6fb*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a704) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a70a*/
-    operator delete((void *)(this)); /*0x49a70d*/
+    operator delete((this)); /*0x49a70d*/
   return this->vtable1; /*0x49a717*/
 }
 } // namespace gamemd
@@ -1263,7 +1263,7 @@ unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2)
   this->u32_8 = 0; /*0x49aa1b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49aa24) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aa2a*/
-    operator delete((void *)(this)); /*0x49aa2d*/
+    operator delete((this)); /*0x49aa2d*/
   return this->vtable1; /*0x49aa37*/
 }
 } // namespace gamemd
@@ -1280,7 +1280,7 @@ unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2)
   this->u32_8 = 0; /*0x49aa9b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49aaa4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aaaa*/
-    operator delete((void *)(this)); /*0x49aaad*/
+    operator delete((this)); /*0x49aaad*/
   return this->vtable1; /*0x49aab7*/
 }
 } // namespace gamemd
@@ -1297,7 +1297,7 @@ unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2)
   this->u32_8 = 0; /*0x49aadb*/
   /* X11: vtable install elided (implicit via class virtuals 0x49aae4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aaea*/
-    operator delete((void *)(this)); /*0x49aaed*/
+    operator delete((this)); /*0x49aaed*/
   return this->vtable1; /*0x49aaf7*/
 }
 } // namespace gamemd
@@ -1314,7 +1314,7 @@ unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2)
   this->u32_8 = 0; /*0x49ab1b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49ab24) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49ab2a*/
-    operator delete((void *)(this)); /*0x49ab2d*/
+    operator delete((this)); /*0x49ab2d*/
   return this->vtable1; /*0x49ab37*/
 }
 } // namespace gamemd
@@ -1331,7 +1331,7 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2)
   this->u32_8 = 0; /*0x49ab5b*/
   /* X11: vtable install elided (implicit via class virtuals 0x49ab64) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49ab6a*/
-    operator delete((void *)(this)); /*0x49ab6d*/
+    operator delete((this)); /*0x49ab6d*/
   return this->vtable1; /*0x49ab77*/
 }
 } // namespace gamemd
@@ -1862,7 +1862,7 @@ unsigned int * PaletteClass::Load()
     v7[2] = v6; /*0x5cb643*/
   }
   while ( v4 < 256 ); /*0x5cb646*/
-  operator delete((void *)(v2)); /*0x5cb649*/
+  operator delete((v2)); /*0x5cb649*/
   v8 = (ConvertClass *)operator new(0x188u); /*0x5cb653*/
   if ( v8 ) /*0x5cb65f*/
     v9 = ConvertClass::Construct(v8, (int)&stru_886080, (int)&stru_886080, (int)g_DSurface_Primary, 1, 0); /*0x5cb67d*/
@@ -1948,7 +1948,7 @@ int ScrollingText::AddLine(wchar_t *String, int a3, wchar_t *Source, int a5)
       wcscpy(v11, v9); /*0x5d40fb*/
       wcscat(v11, Source); /*0x5d4106*/
     }
-    operator delete((void *)(v11)); /*0x5d4127*/
+    operator delete((v11)); /*0x5d4127*/
     wcscat(v9, Source); /*0x5d4132*/
     v7 = v7; /*0x5d4137*/
   }
@@ -2098,7 +2098,7 @@ int ColorSchemeClass::LoadAllSchemes(int a2)
             if ( v20 ) /*0x627c5b*/
             {
               ColorScheme::Destructor(*(ColorScheme **)(v19 + 4 * v18)); /*0x627c5f*/
-              operator delete((void *)(v20)); /*0x627c65*/
+              operator delete((v20)); /*0x627c65*/
               result = result; /*0x627c6a*/
             }
           }
@@ -2441,13 +2441,13 @@ int PaletteManager::Load(int a2)
     }
     if ( *(unsigned int *)&DataGlobal_B0FB9C ) /*0x72b56b*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FB9C)); /*0x72b56e*/
+      operator delete((*(void **)&DataGlobal_B0FB9C)); /*0x72b56e*/
       v5 = *(void (__thiscall ****)(unsigned int, int))&DataGlobal_B0FBA0; /*0x72b573*/
       *(unsigned int *)&DataGlobal_B0FB9C = 0; /*0x72b57c*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FB94 ) /*0x72b589*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FB94)); /*0x72b58c*/
+      operator delete((*(void **)&DataGlobal_B0FB94)); /*0x72b58c*/
       v5 = *(void (__thiscall ****)(unsigned int, int))&DataGlobal_B0FBA0; /*0x72b591*/
       *(unsigned int *)&DataGlobal_B0FB94 = 0; /*0x72b59a*/
     }
@@ -2487,13 +2487,13 @@ int PaletteManager::Load(int a2)
   }
   if ( *(unsigned int *)&DataGlobal_B0FB9C ) /*0x72b5ff*/
   {
-    operator delete((void *)(*(void **)&DataGlobal_B0FB9C)); /*0x72b602*/
+    operator delete((*(void **)&DataGlobal_B0FB9C)); /*0x72b602*/
     result = *(unsigned int *)&g_PaletteManagerPool; /*0x72b607*/
     *(unsigned int *)&DataGlobal_B0FB9C = 0; /*0x72b60f*/
   }
   if ( *(unsigned int *)&DataGlobal_B0FB94 ) /*0x72b61d*/
   {
-    operator delete((void *)(*(void **)&DataGlobal_B0FB94)); /*0x72b620*/
+    operator delete((*(void **)&DataGlobal_B0FB94)); /*0x72b620*/
     result = *(unsigned int *)&g_PaletteManagerPool; /*0x72b625*/
     *(unsigned int *)&DataGlobal_B0FB94 = 0; /*0x72b62d*/
   }
@@ -3020,7 +3020,7 @@ void VoxClass_Vector::getItem()
   this->q010 = 0; /*0x753659*/
   if ( v2 && (this->u8_D) ) /*0x753660*/
   {
-    operator delete((void *)(v2)); /*0x753666*/
+    operator delete((v2)); /*0x753666*/
     *&this->q004 = 0; /*0x75366e*/
   }
   (this->u8_D) = 0; /*0x753671*/
@@ -3117,13 +3117,13 @@ unsigned int * VoxClass_Vector::findItem(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x753966) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x753970*/
   {
-    operator delete((void *)(v3)); /*0x753978*/
+    operator delete((v3)); /*0x753978*/
     *&this->Items = 0; /*0x753980*/
   }
   (this->IsAllocated) = 0; /*0x75398b*/
   this->Capacity = 0; /*0x753991*/
   if ( (a2 & 1) != 0 ) /*0x753998*/
-    operator delete((void *)(this)); /*0x75399b*/
+    operator delete((this)); /*0x75399b*/
   return this->vtable1; /*0x7539a5*/
 }
 } // namespace gamemd
@@ -3563,7 +3563,7 @@ void Voxel_Section::Draw()
     v83 = aPsychedelic; /*0x75d8ea*/
     p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d8ef*/
     _ESI->Airstrike = ((_ESI->Airstrike) & 0xFFFFFF00u) | ((unsigned int)(v28) & 0xFFu); /*0x75d8f0*/
-    (((unsigned char *)&(_ESI->Airstrike))[1]) = INIClass::ReadBool_Overwrite( /*0x75d8fb*/
+    (_ESI->u8_16E) = INIClass::ReadBool_Overwrite( /*0x75d8fb*/
                                (int *)a2,
                                p_WarheadTypeClass_field_0x24,
                                (uint8_t *)((unsigned int)(v83)),
@@ -3584,7 +3584,7 @@ void Voxel_Section::Draw()
     v83 = aCulling; /*0x75d938*/
     p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d93d*/
     _ESI->Paralyzes = v31; /*0x75d93e*/
-    (*((unsigned char *)&(_ESI->Culling))) = INIClass::ReadBool_Overwrite( /*0x75d949*/
+    (_ESI->u32_174) = INIClass::ReadBool_Overwrite( /*0x75d949*/
                               (int *)a2,
                               p_WarheadTypeClass_field_0x24,
                               (uint8_t *)((unsigned int)(v83)),
@@ -3613,7 +3613,7 @@ void Voxel_Section::Draw()
     v83 = aPsychicdamage; /*0x75d9c1*/
     p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d9c6*/
     _ESI->Culling = ((_ESI->Culling) & 0xFFFF00FFu) | (((unsigned int)(v38) & 0xFFu) << 8); /*0x75d9c7*/
-    (*((unsigned char *)&(_ESI->PsychicDamage))) = INIClass::ReadBool_Overwrite( /*0x75d9d2*/
+    (_ESI->u32_174) = INIClass::ReadBool_Overwrite( /*0x75d9d2*/
                                     (int *)a2,
                                     p_WarheadTypeClass_field_0x24,
                                     (uint8_t *)((unsigned int)(v83)),
@@ -3630,7 +3630,7 @@ void Voxel_Section::Draw()
     v83 = aVeinhole; /*0x75da0f*/
     p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75da14*/
     _ESI->PsychicDamage = ((_ESI->PsychicDamage) & 0xFF00FFFFu) | (((unsigned int)(v41) & 0xFFu) << 16); /*0x75da15*/
-    (*(((unsigned char *)&(_ESI->PsychicDamage)) + (sizeof(_ESI->PsychicDamage) - 1))) = INIClass::ReadBool_Overwrite( /*0x75da20*/
+    (*(_ESI->u32_174 + (sizeof(_ESI->PsychicDamage) - 1))) = INIClass::ReadBool_Overwrite( /*0x75da20*/
                                     (int *)a2,
                                     p_WarheadTypeClass_field_0x24,
                                     (uint8_t *)((unsigned int)(v83)),
@@ -4170,7 +4170,7 @@ int BuildingLoadQueue::FindBuilding() {
     if ( ((char *)&g_BuildingLoadQueue_Array) && *(unsigned int *)((char *)&g_BuildingLoadQueue_Array) == *(unsigned int *)this->vtable1 ) /*0x6e7aa9*/
     {
   LABEL_17:
-      v7 = (void ***)(uniqueId + 4); /*0x6e7b43*/
+      v7 = &uniqueId->u32_4; /*0x6e7b43*/
       return (int)__RTDynamicCast(*v7, 0,0,0, 0); /*0x6e7b46*/
     }
     if ( !(*((unsigned char *)&(((char *)&g_BuildingLoadQueue_Array)))) ) /*0x6e7ab6*/
@@ -4201,7 +4201,7 @@ int BuildingLoadQueue::FindBuilding() {
     }
     if ( v6 != v4 ) /*0x6e7b07*/
     {
-      vtable0 = (unsigned int *)(uniqueId + 8); /*0x6e7b09*/
+      vtable0 = &uniqueId->u32_8; /*0x6e7b09*/
       vtable1 += -1 - vtable1 / 2; /*0x6e7b11*/
       goto LABEL_12; /*0x6e7b11*/
     }

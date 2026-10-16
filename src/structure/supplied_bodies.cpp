@@ -4434,7 +4434,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
         BuildingClass::DemolishBridge(this); /*0x440e4e*/
         BuildingClass::RepairPlacement(this, 1); /*0x440e57*/
       }
-      if ( !(uint8_t)House_IsCurrentPlayer((void *)this->owner) ) /*0x440e62*/
+      if ( !(uint8_t)House_IsCurrentPlayer(this->owner) ) /*0x440e62*/
         (*(void (__thiscall **)(BuildingClass *, int))((char *)this->vtable1 + 408))(this, this->owner); /*0x440e76*/
       if ( this->isOwnedByCurrentPlayer[0] ) /*0x440e7c*/
       {
@@ -13439,7 +13439,7 @@ namespace gamemd {
           v40 = v39[3]; /*0x486199*/
           NeighbourContent->ambientSoundController[2] = 126; /*0x48619c*/
           v69.Height = v40; /*0x4861a8*/
-          (((unsigned char *)&(NeighbourContent->transporter))[2]) = 2 * (*((unsigned char *)&(NeighbourContent->transporter))) /*0x4861d7*/
+          (NeighbourContent->u8_FE) = 2 * (NeighbourContent->transporter) /*0x4861d7*/
                                                + (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1)
                                                + 51;
           v56 = (const RECT *)CellStruct::Copy(&DSurface_ViewBounds, v83); /*0x4861e2*/

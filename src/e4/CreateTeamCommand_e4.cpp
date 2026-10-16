@@ -199,7 +199,7 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
       while ( v7 ); /*0x538a4f*/
     }
     if ( (a2 & 1) != 0 ) /*0x538a55*/
-      operator delete((void *)(v4)); /*0x538a58*/
+      operator delete((v4)); /*0x538a58*/
     return v4; /*0x538a60*/
   }
   else
@@ -207,7 +207,7 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
     /* X11: vtable install elided (implicit via rc_ptr virtuals 0x538a6a) */
     ComPtr::Release((ComPtr *)Block); /*0x538a70*/
     if ( (a2 & 1) != 0 ) /*0x538a78*/
-      operator delete((void *)(Block)); /*0x538a7b*/
+      operator delete((Block)); /*0x538a7b*/
     return Block->vfptr; /*0x538a83*/
   }
 }
@@ -368,7 +368,7 @@ CreateTeamCommand * CreateTeamCommand::performAction_0(char a2)
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x535cd9) */
   if ( (a2 & 1) != 0 ) /*0x535cdf*/
-    operator delete((void *)(this)); /*0x535ce2*/
+    operator delete((this)); /*0x535ce2*/
   return (gamemd::CreateTeamCommand *)((std::locale::facet *)this); /*0x535cec*/
 }
 } // namespace gamemd
@@ -602,7 +602,7 @@ SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x536099) */
   if ( (a2 & 1) != 0 ) /*0x53609f*/
-    operator delete((void *)(this)); /*0x5360a2*/
+    operator delete((this)); /*0x5360a2*/
   return (gamemd::SelectTeamCommand *)((std::locale::facet *)this); /*0x5360ac*/
 }
 } // namespace gamemd
@@ -613,7 +613,7 @@ AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x536189) */
   if ( (a2 & 1) != 0 ) /*0x53618f*/
-    operator delete((void *)(this)); /*0x536192*/
+    operator delete((this)); /*0x536192*/
   return (gamemd::AddTeamCommand *)((std::locale::facet *)this); /*0x53619c*/
 }
 } // namespace gamemd
@@ -624,7 +624,7 @@ CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x536279) */
   if ( (a2 & 1) != 0 ) /*0x53627f*/
-    operator delete((void *)(this)); /*0x536282*/
+    operator delete((this)); /*0x536282*/
   return (gamemd::CenterTeamCommand *)((std::locale::facet *)this); /*0x53628c*/
 }
 } // namespace gamemd
@@ -2370,7 +2370,7 @@ ToggleSellCommandClass * CreateTeamCommand::performAction_214(char a2)
 {
   *this = (ToggleSellCommandClass)&vt_CommandClass; /*0x5381a9*/
   if ( (a2 & 1) != 0 ) /*0x5381af*/
-    operator delete((void *)(this)); /*0x5381b2*/
+    operator delete((this)); /*0x5381b2*/
   return (std::locale::facet *)this; /*0x5381bc*/
 }
 } // namespace gamemd
@@ -2381,7 +2381,7 @@ ToggleRepairCommandClass * CreateTeamCommand::performAction_215(unsigned int * B
 {
   *Block = (ToggleRepairCommandClass)&vt_CommandClass; /*0x5381c9*/
   if ( (a2 & 1) != 0 ) /*0x5381cf*/
-    operator delete((void *)(Block)); /*0x5381d2*/
+    operator delete((Block)); /*0x5381d2*/
   return Block; /*0x5381dc*/
 }
 } // namespace gamemd
@@ -2392,7 +2392,7 @@ unsigned int * CreateTeamCommand::performAction_216(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x5381e9) */
   if ( (a2 & 1) != 0 ) /*0x5381ef*/
-    operator delete((void *)(Block)); /*0x5381f2*/
+    operator delete((Block)); /*0x5381f2*/
   return &Block->vtable1; /*0x5381fc*/
 }
 } // namespace gamemd
@@ -2403,7 +2403,7 @@ unsigned int * CreateTeamCommand::performAction_217(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538209) */
   if ( (a2 & 1) != 0 ) /*0x53820f*/
-    operator delete((void *)(Block)); /*0x538212*/
+    operator delete((Block)); /*0x538212*/
   return &Block->vtable1; /*0x53821c*/
 }
 } // namespace gamemd
@@ -2414,7 +2414,7 @@ unsigned int * CreateTeamCommand::performAction_218(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538229) */
   if ( (a2 & 1) != 0 ) /*0x53822f*/
-    operator delete((void *)(Block)); /*0x538232*/
+    operator delete((Block)); /*0x538232*/
   return &Block->vtable1; /*0x53823c*/
 }
 } // namespace gamemd
@@ -2425,7 +2425,7 @@ ScatterCommandClass * CreateTeamCommand::performAction_219(unsigned int * Block,
 {
   *Block = (ScatterCommandClass)&vt_CommandClass; /*0x538249*/
   if ( (a2 & 1) != 0 ) /*0x53824f*/
-    operator delete((void *)(Block)); /*0x538252*/
+    operator delete((Block)); /*0x538252*/
   return Block; /*0x53825c*/
 }
 } // namespace gamemd
@@ -2436,7 +2436,7 @@ GuardCommandClass * CreateTeamCommand::performAction_220(unsigned int * Block, c
 {
   *Block = (GuardCommandClass)&vt_CommandClass; /*0x538269*/
   if ( (a2 & 1) != 0 ) /*0x53826f*/
-    operator delete((void *)(Block)); /*0x538272*/
+    operator delete((Block)); /*0x538272*/
   return Block; /*0x53827c*/
 }
 } // namespace gamemd
@@ -2447,7 +2447,7 @@ StopCommandClass * CreateTeamCommand::performAction_221(unsigned int * Block, ch
 {
   *Block = (StopCommandClass)&vt_CommandClass; /*0x538289*/
   if ( (a2 & 1) != 0 ) /*0x53828f*/
-    operator delete((void *)(Block)); /*0x538292*/
+    operator delete((Block)); /*0x538292*/
   return Block; /*0x53829c*/
 }
 } // namespace gamemd
@@ -2458,7 +2458,7 @@ unsigned int * CreateTeamCommand::performAction_222(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x5382a9) */
   if ( (a2 & 1) != 0 ) /*0x5382af*/
-    operator delete((void *)(Block)); /*0x5382b2*/
+    operator delete((Block)); /*0x5382b2*/
   return &Block->vtable1; /*0x5382bc*/
 }
 } // namespace gamemd
@@ -2469,7 +2469,7 @@ DeployCommandClass * CreateTeamCommand::performAction_223(unsigned int * Block, 
 {
   *Block = (DeployCommandClass)&vt_CommandClass; /*0x5382c9*/
   if ( (a2 & 1) != 0 ) /*0x5382cf*/
-    operator delete((void *)(Block)); /*0x5382d2*/
+    operator delete((Block)); /*0x5382d2*/
   return Block; /*0x5382dc*/
 }
 } // namespace gamemd
@@ -2480,7 +2480,7 @@ unsigned int * CreateTeamCommand::performAction_224(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x5382e9) */
   if ( (a2 & 1) != 0 ) /*0x5382ef*/
-    operator delete((void *)(Block)); /*0x5382f2*/
+    operator delete((Block)); /*0x5382f2*/
   return &Block->vtable1; /*0x5382fc*/
 }
 } // namespace gamemd
@@ -2491,7 +2491,7 @@ unsigned int * CreateTeamCommand::performAction_225(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538309) */
   if ( (a2 & 1) != 0 ) /*0x53830f*/
-    operator delete((void *)(Block)); /*0x538312*/
+    operator delete((Block)); /*0x538312*/
   return &Block->vtable1; /*0x53831c*/
 }
 } // namespace gamemd
@@ -2502,7 +2502,7 @@ unsigned int * CreateTeamCommand::performAction_226(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538329) */
   if ( (a2 & 1) != 0 ) /*0x53832f*/
-    operator delete((void *)(Block)); /*0x538332*/
+    operator delete((Block)); /*0x538332*/
   return &Block->vtable1; /*0x53833c*/
 }
 } // namespace gamemd
@@ -2513,7 +2513,7 @@ unsigned int * CreateTeamCommand::performAction_227(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538349) */
   if ( (a2 & 1) != 0 ) /*0x53834f*/
-    operator delete((void *)(Block)); /*0x538352*/
+    operator delete((Block)); /*0x538352*/
   return &Block->vtable1; /*0x53835c*/
 }
 } // namespace gamemd
@@ -2524,7 +2524,7 @@ unsigned int * CreateTeamCommand::performAction_228(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538369) */
   if ( (a2 & 1) != 0 ) /*0x53836f*/
-    operator delete((void *)(Block)); /*0x538372*/
+    operator delete((Block)); /*0x538372*/
   return &Block->vtable1; /*0x53837c*/
 }
 } // namespace gamemd
@@ -2535,7 +2535,7 @@ unsigned int * CreateTeamCommand::performAction_229(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538389) */
   if ( (a2 & 1) != 0 ) /*0x53838f*/
-    operator delete((void *)(Block)); /*0x538392*/
+    operator delete((Block)); /*0x538392*/
   return &Block->vtable1; /*0x53839c*/
 }
 } // namespace gamemd
@@ -2546,7 +2546,7 @@ unsigned int * CreateTeamCommand::performAction_230(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x5383a9) */
   if ( (a2 & 1) != 0 ) /*0x5383af*/
-    operator delete((void *)(Block)); /*0x5383b2*/
+    operator delete((Block)); /*0x5383b2*/
   return &Block->vtable1; /*0x5383bc*/
 }
 } // namespace gamemd
@@ -2557,7 +2557,7 @@ unsigned int * CreateTeamCommand::performAction_231(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x5383c9) */
   if ( (a2 & 1) != 0 ) /*0x5383cf*/
-    operator delete((void *)(Block)); /*0x5383d2*/
+    operator delete((Block)); /*0x5383d2*/
   return &Block->vtable1; /*0x5383dc*/
 }
 } // namespace gamemd
@@ -2568,7 +2568,7 @@ unsigned int * CreateTeamCommand::performAction_232(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x5383e9) */
   if ( (a2 & 1) != 0 ) /*0x5383ef*/
-    operator delete((void *)(Block)); /*0x5383f2*/
+    operator delete((Block)); /*0x5383f2*/
   return &Block->vtable1; /*0x5383fc*/
 }
 } // namespace gamemd
@@ -2579,7 +2579,7 @@ unsigned int * CreateTeamCommand::performAction_233(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538409) */
   if ( (a2 & 1) != 0 ) /*0x53840f*/
-    operator delete((void *)(Block)); /*0x538412*/
+    operator delete((Block)); /*0x538412*/
   return &Block->vtable1; /*0x53841c*/
 }
 } // namespace gamemd
@@ -2590,7 +2590,7 @@ unsigned int * CreateTeamCommand::performAction_234(unsigned int * Block, char a
 {
   /* X11: vtable install elided (implicit via CommandClass virtuals 0x538429) */
   if ( (a2 & 1) != 0 ) /*0x53842f*/
-    operator delete((void *)(Block)); /*0x538432*/
+    operator delete((Block)); /*0x538432*/
   return &Block->vtable1; /*0x53843c*/
 }
 } // namespace gamemd
@@ -2601,7 +2601,7 @@ ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(unsigned int * 
 {
   *(unsigned int *)Block->tail_0 = &vt_CommandClass; /*0x538449*/
   if ( (a2 & 1) != 0 ) /*0x53844f*/
-    operator delete((void *)(Block)); /*0x538452*/
+    operator delete((Block)); /*0x538452*/
   return Block->tail_0; /*0x53845c*/
 }
 } // namespace gamemd
@@ -2612,7 +2612,7 @@ PageUserCommandClass * CreateTeamCommand::performAction_236(unsigned int * Block
 {
   *(unsigned int *)Block->tail_0 = &vt_CommandClass; /*0x538469*/
   if ( (a2 & 1) != 0 ) /*0x53846f*/
-    operator delete((void *)(Block)); /*0x538472*/
+    operator delete((Block)); /*0x538472*/
   return Block->tail_0; /*0x53847c*/
 }
 } // namespace gamemd
@@ -2623,7 +2623,7 @@ CursorPositionCommandClass * CreateTeamCommand::performAction_237(unsigned int *
 {
   *(unsigned int *)Block->tail_0 = &vt_CommandClass; /*0x538489*/
   if ( (a2 & 1) != 0 ) /*0x53848f*/
-    operator delete((void *)(Block)); /*0x538492*/
+    operator delete((Block)); /*0x538492*/
   return Block->tail_0; /*0x53849c*/
 }
 } // namespace gamemd
@@ -2634,7 +2634,7 @@ DeleteCommandClass * CreateTeamCommand::performAction_238(unsigned int * Block, 
 {
   *(unsigned int *)Block->tail_0 = &vt_CommandClass; /*0x5384a9*/
   if ( (a2 & 1) != 0 ) /*0x5384af*/
-    operator delete((void *)(Block)); /*0x5384b2*/
+    operator delete((Block)); /*0x5384b2*/
   return Block->tail_0; /*0x5384bc*/
 }
 } // namespace gamemd
@@ -2648,7 +2648,7 @@ void CreateTeamCommand::performAction_239()
   this->__pad_004 = 0; /*0x5384c9*/
   if ( v2 && this->IsAllocated ) /*0x5384d0*/
   {
-    operator delete((void *)(v2)); /*0x5384d6*/
+    operator delete((v2)); /*0x5384d6*/
     this->__pad_004 = 0; /*0x5384de*/
   }
   this->IsAllocated = 0; /*0x5384e1*/
@@ -2713,13 +2713,13 @@ DynamicVector * CreateTeamCommand::performAction_244(unsigned int * Block, char 
   *Block = &vt_VectorClass; /*0x538ae6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x538af0*/
   {
-    operator delete((void *)(v3)); /*0x538af8*/
+    operator delete((v3)); /*0x538af8*/
     *(Block + 1) = 0; /*0x538b00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x538b0b*/
   *(Block + 2) = 0; /*0x538b11*/
   if ( (a2 & 1) != 0 ) /*0x538b18*/
-    operator delete((void *)(Block)); /*0x538b1b*/
+    operator delete((Block)); /*0x538b1b*/
   return Block; /*0x538b25*/
 }
 } // namespace gamemd

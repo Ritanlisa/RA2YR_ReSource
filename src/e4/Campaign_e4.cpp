@@ -238,7 +238,7 @@ VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Blo
 {
   *(unsigned int *)Block->tail_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
-    operator delete((void *)(Block)); /*0x765782*/
+    operator delete((Block)); /*0x765782*/
   return Block->tail_0; /*0x76578c*/
 }
 } // namespace gamemd
@@ -335,7 +335,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   (Block->u32_D) = 0; /*0x765b8c*/
   Block->u32_8 = 0; /*0x765b92*/
   if ( (a2 & 1) != 0 ) /*0x765b99*/
-    operator delete((void *)(Block)); /*0x765b9c*/
+    operator delete((Block)); /*0x765b9c*/
   return Block->tail_0; /*0x765ba6*/
 }
 } // namespace gamemd

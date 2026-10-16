@@ -942,7 +942,7 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int a3, int 
       char * v31 = v31;
       v31 += 24;
       --v30;
-      memcpy( (void *)(v31), (const void *)(v33), 0x18u);
+      memcpy( (v31), (v33), 0x18u);
     }
     while ( v30 );
     v29 = v94 == 0;
@@ -1939,7 +1939,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     goto LABEL_52; /*0x64a4fe*/
   }
   if ( *v29 == 31 ) /*0x64a51e*/
-    operator delete((void *)(*(void **)(v29 + 7))); /*0x64a524*/
+    operator delete((*(void **)(v29 + 7))); /*0x64a524*/
   v24 = v39; /*0x64a52c*/
   v27 = -1; /*0x64a530*/
   LABEL_59:

@@ -166,7 +166,7 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
   Block->u32_C = 0; /*0x49aa5b*/
   *(unsigned int *)Block->tail_0 = &vt_RLEBlitter; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
-    operator delete((void *)(Block)); /*0x49aa6d*/
+    operator delete((Block)); /*0x49aa6d*/
   return Block->tail_0; /*0x49aa77*/
 }
 } // namespace gamemd

@@ -309,8 +309,8 @@ void HouseClass::Update_TogglePower(double a2)
     if ( v3[33].__pad_B0[41] ) /*0x4f84f1*/
     {
       if ( !(&dword_A8B538)[0] ) /*0x4f8501*/
-        HouseClass_CanTogglePower((void *)v3); /*0x4f8505*/
-      HouseClass_ToggleGapGeneratorReveal((void *)v3); /*0x4f850c*/
+        HouseClass_CanTogglePower(v3); /*0x4f8505*/
+      HouseClass_ToggleGapGeneratorReveal(v3); /*0x4f850c*/
     }
     v10 = (int)dword_A8ED84 % 100; /*0x4f851c*/
     if ( !((int)dword_A8ED84 % 100) && *(int *)&v3[32].q140[212] > 0 ) /*0x4f8528*/
@@ -476,7 +476,7 @@ void HouseClass::Update_TogglePower(double a2)
     }
   LABEL_88:
     v3->q140[182] = 0; /*0x4f87f1*/
-    HouseClass_ClearLowPowerTargets((void *)v3); /*0x4f87fa*/
+    HouseClass_ClearLowPowerTargets(v3); /*0x4f87fa*/
   LABEL_89:
     *(unsigned int *)&v3[31].q140[260] &= (*(unsigned int *)&v3[31].q140[260] <= 0) - 1; /*0x4f87ff*/
     *(unsigned int *)&v3[31].q140[264] &= (*(unsigned int *)&v3[31].q140[264] <= 0) - 1; /*0x4f8825*/
@@ -769,7 +769,7 @@ void HouseClass::Update_TogglePower(double a2)
         if ( *(int *)&v3[1].q038[24] <= 0 && v76 <= 0 ) /*0x4f8f1d*/
         {
   LABEL_190:
-          HouseClass_ClearLowPowerTargets((void *)v3); /*0x4f8f79*/
+          HouseClass_ClearLowPowerTargets(v3); /*0x4f8f79*/
           HouseClass::DefeatPlayer((HouseClass *)v3); /*0x4f8f82*/
         }
       }

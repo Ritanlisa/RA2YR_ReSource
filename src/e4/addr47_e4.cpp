@@ -59,7 +59,7 @@ void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
   this->m_10 = 0; /*0x472a89*/
   if ( v2 && (this->u8_D) ) /*0x472a90*/
   {
-    operator delete((void *)(v2)); /*0x472a96*/
+    operator delete((v2)); /*0x472a96*/
     *&this->u32_4 = 0; /*0x472a9e*/
   }
   (this->u8_D) = 0; /*0x472aa1*/
@@ -2418,7 +2418,7 @@ bool sub_47AAC0()
       v1 = (void **)*v0; /*0x47aacf*/
       if ( v0[1] ) /*0x47aacc*/
         free(v0[1]); /*0x47aad6*/
-      operator delete((void *)(v0)); /*0x47aadf*/
+      operator delete((v0)); /*0x47aadf*/
       v0 = v1; /*0x47aae7*/
     }
     while ( v1 ); /*0x47aaeb*/
@@ -2442,7 +2442,7 @@ void sub_47ADC0()
       v1 = (void **)*v0; /*0x47adcf*/
       if ( v0[1] ) /*0x47adcc*/
         free(v0[1]); /*0x47add6*/
-      operator delete((void *)(v0)); /*0x47addf*/
+      operator delete((v0)); /*0x47addf*/
       v0 = v1; /*0x47ade7*/
     }
     while ( v1 ); /*0x47adeb*/

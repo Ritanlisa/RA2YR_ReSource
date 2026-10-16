@@ -20,7 +20,7 @@ void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_MSFrameAnim; /*0x769bd3*/
   VtableStub::sub_5CB6C0(Block); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
-    operator delete((void *)(Block)); /*0x769be6*/
+    operator delete((Block)); /*0x769be6*/
   return Block->tail_0; /*0x769bf0*/
 }
 }  // G42.18 ns repair
@@ -224,7 +224,7 @@ void MSFrameAnim::stopAnimation()
   *&this->m_8 = 0; /*0x769cd9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x769ce0*/
   {
-    operator delete((void *)(v2)); /*0x769ce6*/
+    operator delete((v2)); /*0x769ce6*/
     *&this->__pad_004 = 0; /*0x769cee*/
   }
   (this->IsAllocated) = 0; /*0x769cf1*/
@@ -250,7 +250,7 @@ rc_ptr * MSFrameAnim::resumeAnimation(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_rc_ptr; /*0x769d93*/
   ComPtr::Release((ComPtr *)Block); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
-    operator delete((void *)(Block)); /*0x769da6*/
+    operator delete((Block)); /*0x769da6*/
   return Block->tail_0; /*0x769db0*/
 }
 } // namespace gamemd
@@ -356,7 +356,7 @@ DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
   (Block->u32_D) = 0; /*0x76a6ac*/
   *&Block->u32_8 = 0; /*0x76a6b2*/
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
-    operator delete((void *)(Block)); /*0x76a6bc*/
+    operator delete((Block)); /*0x76a6bc*/
   return Block->tail_0; /*0x76a6c6*/
 }
 } // namespace gamemd
@@ -370,13 +370,13 @@ DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x76a726*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x76a730*/
   {
-    operator delete((void *)(v3)); /*0x76a738*/
+    operator delete((v3)); /*0x76a738*/
     *&Block->__pad_004 = 0; /*0x76a740*/
   }
   (Block->u32_D) = 0; /*0x76a74b*/
   *&Block->u32_8 = 0; /*0x76a751*/
   if ( (a2 & 1) != 0 ) /*0x76a758*/
-    operator delete((void *)(Block)); /*0x76a75b*/
+    operator delete((Block)); /*0x76a75b*/
   return Block->tail_0; /*0x76a765*/
 }
 } // namespace gamemd

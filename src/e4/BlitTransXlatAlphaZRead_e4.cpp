@@ -420,7 +420,7 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
   *&Block->u32_8 = 0; /*0x49a43b*/
   *(unsigned int *)Block->tail_0 = &vt_Blitter; /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
-    operator delete((void *)(Block)); /*0x49a44d*/
+    operator delete((Block)); /*0x49a44d*/
   return Block->tail_0; /*0x49a457*/
 }
 } // namespace gamemd

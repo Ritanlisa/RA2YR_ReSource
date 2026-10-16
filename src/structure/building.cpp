@@ -519,7 +519,7 @@ int BuildingClass::Construct(int a2, int a3)
       }
       while ( v13 < (int)dword_B0E844 ); /*0x43bc57*/
     }
-    operator delete((void *)((void *)g_BuildingLoadQueue_Array.v12)); /*0x43bc60*/
+    operator delete(((void *)g_BuildingLoadQueue_Array.v12)); /*0x43bc60*/
     g_BuildingLoadQueue_Array.v12 = v12; /*0x43bc6f*/
     dword_B0E848 += v11; /*0x43bc75*/
     dword_B0E850 = 0; /*0x43bc7a*/
@@ -706,7 +706,7 @@ int BuildingClass::Dtor()
   this->Audio7[3] = (int)0; /*0x43c073*/
   if ( v27 && (this->ShowRealName) ) /*0x43c07b*/
   {
-    operator delete((void *)(v27)); /*0x43c083*/
+    operator delete((v27)); /*0x43c083*/
     this->Audio7[4] = 0; /*0x43c08b*/
   }
   (this->ShowRealName) = 0; /*0x43c08e*/
@@ -715,7 +715,7 @@ int BuildingClass::Dtor()
   this->Overpowerers = (int)0; /*0x43c098*/
   if ( Occupants && (this->q679) ) /*0x43c0a3*/
   {
-    operator delete((void *)(Occupants)); /*0x43c0ab*/
+    operator delete((Occupants)); /*0x43c0ab*/
     this->Occupants = 0; /*0x43c0b3*/
   }
   (this->q679) = 0; /*0x43c0b8*/
@@ -729,7 +729,7 @@ int BuildingClass::ScalarDtor()
 
   (this)->Dtor(); /*0x459f23*/
   if ( (v3 & 1) != 0 ) /*0x459f2d*/
-    operator delete((void *)(this)); /*0x459f30*/
+    operator delete((this)); /*0x459f30*/
   return (int)this; /*0x459f3a*/
 }
 // Inherited from TechnoClass::Activate (IDA 0x70fbe0) — BuildingClass does not override
@@ -1698,7 +1698,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
     return; /*0x443a69*/
   }
   v17 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *))this->vtable1 + 18))(this, v35); /*0x443ac8 -- vt slot 18 (ASM: call [*this+72])*/
-  v18 = RawCoord::To_Cell((void *)&stru_87F5F0_raw.__pad_58[416], v17); /*0x443ad1*/
+  v18 = RawCoord::To_Cell(&stru_87F5F0_raw.__pad_58[416], v17); /*0x443ad1*/
   v19 = ((ScriptAction *)v32)->GetWaypointCoords(v18); /*0x443adb*/
   v28 = *(unsigned int *)v19; /*0x443aeb*/
   v30 = v19->vtable2; /*0x443aed*/
@@ -2222,7 +2222,7 @@ int BuildingClass::UpdateConstruction()
     {
       case 0: /*0x443cad*/
         Type = this->Type; /*0x444096*/
-        if ( !Type->Hospital && !Type->Armory && !Type->WeaponsFactory && !((void *)this)->HasFreeLink() ) /*0x4440bc*/
+        if ( !Type->Hospital && !Type->Armory && !Type->WeaponsFactory && !(this)->HasFreeLink() ) /*0x4440bc*/
           return 1; /*0x4440d4*/
         v27 = this->Type; /*0x4440d7*/
         if ( !v27->Hospital && !v27->Armory ) /*0x4440ea*/
@@ -2282,7 +2282,7 @@ int BuildingClass::UpdateConstruction()
             if ( v89->Factory)[0] == 16 && !v89->Cloning ) /*0x4449e7*/  // g57e2 W3
             {
               v90 = (int *)(*(int (__thiscall **)(char *))(*(unsigned int *)v244 + 132))(v244); /*0x4449fb*/
-              owner = (gamemd::HouseClass *)(void *)this->vtable1; /*0x4449fd*/
+              owner = (gamemd::HouseClass *)this->vtable1; /*0x4449fd*/
               v92 = 0; /*0x444a03*/
               v215 = (int)v90; /*0x444a05*/
               if ( (&owner->costMultiplier)[0] > 0 ) /*0x444a11*/
@@ -2294,7 +2294,7 @@ int BuildingClass::UpdateConstruction()
                   v197 = (unsigned int)v94[135]; /*0x444a2a*/
                   v95 = v90->MissionStub11(); /*0x444a2b*/
                   (*(void (__thiscall **)(unsigned int *, int, int))(*v94 + 256))(v94, v95, g_TerrainTypeTable); /*0x444a3e*/
-                  owner = (gamemd::HouseClass *)(void *)this->vtable1; /*0x444a44*/
+                  owner = (gamemd::HouseClass *)this->vtable1; /*0x444a44*/
                   if ( ++v92 >= (&owner->costMultiplier)[0] ) /*0x444a51*/
                     break; /*0x444a51*/
                   v90 = (int *)v212; /*0x444a15*/

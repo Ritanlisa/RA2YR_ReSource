@@ -46,7 +46,7 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( Piggybackee ) /*0x4af7d6*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4af7db*/
   *p_Piggybackee = 0; /*0x4af7e5*/
-  return OleLoadFromStream((LPSTREAM)v2,(void *)(&IID_ILocomotion), p_Piggybackee); /*0x4af7f1*/
+  return OleLoadFromStream((LPSTREAM)v2,(&IID_ILocomotion), p_Piggybackee); /*0x4af7f1*/
 }  // G42.18 ns repair
 } // namespace gamemd
 // 0x4AF800
@@ -141,7 +141,7 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
-    operator delete((void *)(Block)); /*0x4b4d33*/
+    operator delete((Block)); /*0x4b4d33*/
   return Block->0; /*0x4b4d3d*/
 }
 } // namespace gamemd

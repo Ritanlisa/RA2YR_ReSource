@@ -1053,7 +1053,7 @@ SlaveManagerClass * SlaveManagerClass::ProcessOrders(void * Block, char a2)
 {
   SlaveManagerClass::Constructor_SlaveManagerClass((int)Block); /*0x6b1393*/
   if ( (a2 & 1) != 0 ) /*0x6b139d*/
-    operator delete((void *)(Block)); /*0x6b13a0*/
+    operator delete((Block)); /*0x6b13a0*/
   return Block; /*0x6b13aa*/
 }
 } // namespace gamemd
@@ -1209,13 +1209,13 @@ DynamicVector * SlaveManagerClass_25::QueryInterface(unsigned int * Block, char 
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6b1986*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x6b1990*/
   {
-    operator delete((void *)(v3)); /*0x6b1998*/
+    operator delete((v3)); /*0x6b1998*/
     *&Block->__pad_004 = 0; /*0x6b19a0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x6b19ab*/
   Block->u32_8 = 0; /*0x6b19b1*/
   if ( (a2 & 1) != 0 ) /*0x6b19b8*/
-    operator delete((void *)(Block)); /*0x6b19bb*/
+    operator delete((Block)); /*0x6b19bb*/
   return Block->tail_0; /*0x6b19c5*/
 }
 } // namespace gamemd

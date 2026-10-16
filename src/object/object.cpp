@@ -49,7 +49,7 @@ constexpr uint32_t kObjectFlag = 0x2u;
 
 double ObjectClass::GetHealthPercentage() const
 {
-    return health > 0 ? (double)(health) / ((gamemd::ObjectTypeClass*)(void*)(GetType()))->Strength : 0.0;
+    return health > 0 ? (double)(health) / ((gamemd::ObjectTypeClass*)(GetType()))->Strength : 0.0;
 }
 
 bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
@@ -238,7 +238,7 @@ ObjectClass::ObjectClass() noexcept
     , location{}
     , lineTrailer(nullptr)
 {
-    std::memset((void *)(&ambientSoundController), 0, sizeof(ambientSoundController));
+    std::memset((&ambientSoundController), 0, sizeof(ambientSoundController));
     std::memset(&customSound_controller, 0, sizeof(customSound_controller));
 
     abstractFlags |= kObjectFlag;

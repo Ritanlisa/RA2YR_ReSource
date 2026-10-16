@@ -583,14 +583,14 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   *&Block->u32_60 = &vt_VectorClass; /*0x4ca83b*/
   if ( v5 && Block->__pad_42[11] ) /*0x4ca846*/
   {
-    operator delete((void *)(v5)); /*0x4ca84e*/
+    operator delete((v5)); /*0x4ca84e*/
     *&Block->u32_60 = 0; /*0x4ca856*/
   }
   Block->__pad_42[11] = 0; /*0x4ca85f*/
   *&Block->u32_60 = 0; /*0x4ca863*/
   ((AbstractClass *)Block)->DTOR(); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
-    operator delete((void *)(Block)); /*0x4ca877*/
+    operator delete((Block)); /*0x4ca877*/
   return &Block->vfptr; /*0x4ca881*/
 }
 }
@@ -884,13 +884,13 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4cab56*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4cab60*/
   {
-    operator delete((void *)(v3)); /*0x4cab68*/
+    operator delete((v3)); /*0x4cab68*/
     *&Block->__pad_004 = 0; /*0x4cab70*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4cab7b*/
   Block->u32_8 = 0; /*0x4cab81*/
   if ( (a2 & 1) != 0 ) /*0x4cab88*/
-    operator delete((void *)(Block)); /*0x4cab8b*/
+    operator delete((Block)); /*0x4cab8b*/
   return Block->tail_0; /*0x4cab95*/
 }
 } // namespace gamemd

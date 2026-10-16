@@ -37,13 +37,13 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
       }
       while ( v8 ); /*0x69d558*/
     }
-    operator delete((void *)(v5)); /*0x69d55c*/
+    operator delete((v5)); /*0x69d55c*/
     *&Block->__pad_004 = 0; /*0x69d566*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x69d571*/
   *&Block->u32_8 = 0; /*0x69d577*/
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
-    operator delete((void *)(Block)); /*0x69d581*/
+    operator delete((Block)); /*0x69d581*/
   return Block->tail_0; /*0x69d58b*/
 }  // G42.18 ns repair
 } // namespace gamemd

@@ -128,7 +128,7 @@ int CollectWOLConnectionTokens(void *a1)
           if ( 2 * (int)stru_B76AC4.vfptr3 < 10 ) /*0x7a052d*/
             uniqueId = 10; /*0x7a052f*/
           void *v8; // ebp
-          v8 = (void *)operator new(4 * uniqueId); /*0x7a0543*/
+          v8 = operator new(4 * uniqueId); /*0x7a0543*/
           memset(v8, 0, 4 * ((unsigned int)(4 * uniqueId) >> 2)); /*0x7a0551*/
           void *abstractFlags; // eax
           abstractFlags = (void *)stru_B76AC4.abstractFlags; /*0x7a055a*/
@@ -138,7 +138,7 @@ int CollectWOLConnectionTokens(void *a1)
             abstractFlags = (void *)stru_B76AC4.abstractFlags; /*0x7a056f*/
             v6 = (int)v14; /*0x7a0574*/
           }
-          operator delete((void *)(abstractFlags)); /*0x7a0579*/
+          operator delete((abstractFlags)); /*0x7a0579*/
           vtable3 = (int)stru_B76AC4.vfptr3; /*0x7a057e*/
           stru_B76AC4.abstractFlags = (int)v8; /*0x7a0586*/
           stru_B76AC4.uniqueId = uniqueId; /*0x7a058c*/
@@ -149,7 +149,7 @@ int CollectWOLConnectionTokens(void *a1)
           if ( 2 * vtable3 < 10 ) /*0x7a059c*/
             v10 = 10; /*0x7a059e*/
           void *v11; // ebp
-          v11 = (void *)operator new(4 * v10); /*0x7a05b2*/
+          v11 = operator new(4 * v10); /*0x7a05b2*/
           memset(v11, 0, 4 * ((unsigned int)(4 * v10) >> 2)); /*0x7a05c0*/
           void *v12; // eax
           v12 = (void *)stru_B76AC4.abstractFlags; /*0x7a05c9*/
@@ -159,7 +159,7 @@ int CollectWOLConnectionTokens(void *a1)
             v12 = (void *)stru_B76AC4.abstractFlags; /*0x7a05de*/
             v6 = (int)v14; /*0x7a05e3*/
           }
-          operator delete((void *)(v12)); /*0x7a05e8*/
+          operator delete((v12)); /*0x7a05e8*/
           vtable3 = (int)stru_B76AC4.vfptr3; /*0x7a05ed*/
           stru_B76AC4.abstractFlags = (int)v11; /*0x7a05f5*/
           stru_B76AC4.uniqueId = v10; /*0x7a05fb*/

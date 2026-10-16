@@ -111,7 +111,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
         if ( (unsigned __int8)(&v23)->Open(0) ) /*0x5f8edd*/
         {
           void *v11; // edi
-          v11 = (void *)this->u32_C0; /*0x5f8eea*/
+          v11 = this->u32_C0; /*0x5f8eea*/
           if ( v11 ) /*0x5f8ef2*/
           {
             (this->u32_C0)->Destroy(); /*0x5f8ef6*/
@@ -131,7 +131,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8f63*/
             CCFileClass::Construct(&v20, Source); /*0x5f8f77*/
             void *v14; // edi
-            v14 = (void *)this->u32_C4; /*0x5f8f7c*/
+            v14 = this->u32_C4; /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/
             {
               (this->u32_C4)->Release(); /*0x5f8f88*/

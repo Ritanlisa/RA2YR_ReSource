@@ -55,7 +55,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   v15[25] = (void *)g_FogOfWarState; /*0x6105ac*/
   v2 = operator new(4u); /*0x6105b0*/
   if ( v2 ) /*0x6105bc*/
-    v3 = (void *)unknown_libname_74(v2); /*0x6105c0*/
+    v3 = unknown_libname_74(v2); /*0x6105c0*/
   else
     v3 = 0; /*0x6105c7*/
   v15[15] = v3; /*0x6105c9*/
@@ -65,7 +65,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   Dialog::BindGadgetData(&dword_AC1B00, (int *)&hWnd, (char *)v15); /*0x6105f2*/
   if ( v15[10] ) /*0x6105fd*/
   {
-    operator delete((void *)(v15[10])); /*0x610600*/
+    operator delete((v15[10])); /*0x610600*/
     v15[10] = 0; /*0x610608*/
   }
   v4 = (unsigned int *)(v15[13]);
@@ -90,7 +90,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
           *v5 = *v6; /*0x610634*/
         else
           v15[13] = *(void **)v6; /*0x61063a*/
-        operator delete((void *)(v6)); /*0x61063f*/
+        operator delete((v6)); /*0x61063f*/
         v4 = (unsigned int *)(v15[13]); /*0x610644*/
       }
       LABEL_16:
@@ -111,7 +111,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
       if ( *v8 == hWnd ) /*0x6106c7*/
       {
         v9 = (HWND)((unsigned int)(v8[2]));
-        operator delete((void *)(*((void **)g_DialogPool + v7))); /*0x6106cd*/
+        operator delete((*((void **)g_DialogPool + v7))); /*0x6106cd*/
         v10 = *(float *)&v14; /*0x6106db*/
         *((unsigned int *)g_DialogPool + v7) = (unsigned int)(v9); /*0x6106df*/
         --unk_AC18C4; /*0x6106ee*/
@@ -131,7 +131,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
         }
         v8[2] = v11[2]; /*0x610716*/
         --unk_AC18C4; /*0x610720*/
-        operator delete((void *)(v11)); /*0x610726*/
+        operator delete((v11)); /*0x610726*/
       }
       LABEL_29:
       if ( *(float *)&v14 <= dbl_AC18E0 ) /*0x61073d*/
@@ -141,7 +141,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   }
   LABEL_31: WindowLongA = (gamemd::AbstractClass **)((void *)GetWindowLongA(hWnd, -21));
   if ( WindowLongA ) /*0x61075c*/
-    operator delete((void *)(WindowLongA)); /*0x61075f*/
+    operator delete((WindowLongA)); /*0x61075f*/
   SetWindowLongA(hWnd, -21, 0); /*0x610772*/
   ((Object*)hWnd)->RemoveObjectArray(); /*0x61077f*/
   return (gamemd::AbstractClass **)(1); /*0x610784*/
@@ -287,7 +287,7 @@ void sub_612930()
     {
       void *v3 = v2; // eax /*0x61294b*/
       v2 = v2->vtable4; /*0x61294d*/
-      operator delete((void *)(v3)); /*0x612951*/
+      operator delete((v3)); /*0x612951*/
     }
     *((unsigned int *)stru_AC1858 + i++) = 0; /*0x612964*/
   }
@@ -333,7 +333,7 @@ void sub_612930()
         }
         while ( v8 ); /*0x612a22*/
       }
-      operator delete((void *)(v5)); /*0x612a25*/
+      operator delete((v5)); /*0x612a25*/
       v4 = dword_AC1888; /*0x612a2a*/
       v0 = dword_AC1860; /*0x612a30*/
     }

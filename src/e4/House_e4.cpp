@@ -107,7 +107,7 @@ int House::AnnounceUpgrade(int aP1)
 
   if ( (int *)this == &g_MissionQueueFrame.briefing[130] ) /*0x47d2bf*/
     return result; /*0x47d2bf*/
-  v4 = (short *)(&this->u32_24); /*0x47d2c5*/
+  v4 = &this->u32_24; /*0x47d2c5*/
   v5 = (unsigned char *)(*(unsigned int *)&DataGlobal_87F850 /*0x47d2da*/
   + 4 * CellToTileIndexMap((ObjectClass *)&DataGlobal_87F7E8, &this->u32_24));
   v57 = (int)v5; /*0x47d2e2*/

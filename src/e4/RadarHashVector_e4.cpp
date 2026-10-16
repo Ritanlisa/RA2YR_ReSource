@@ -317,13 +317,13 @@ VectorClass_flat * RadarHashVector::QueryInterface(unsigned int * Block, char a2
   *(unsigned int *)Block->tail_0 = &vt_VectorClassHashObject; /*0x658d16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x658d20*/
   {
-    operator delete((void *)(v3)); /*0x658d28*/
+    operator delete((v3)); /*0x658d28*/
     *&Block->__pad_004 = 0; /*0x658d30*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x658d3b*/
   *&Block->u32_8 = 0; /*0x658d41*/
   if ( (a2 & 1) != 0 ) /*0x658d48*/
-    operator delete((void *)(Block)); /*0x658d4b*/
+    operator delete((Block)); /*0x658d4b*/
   return Block->tail_0; /*0x658d55*/
 }
 } // namespace gamemd

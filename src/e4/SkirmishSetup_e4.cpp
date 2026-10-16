@@ -534,7 +534,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   if ( g_UIControlState ) /*0x5e85ef*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e85f3*/
-    operator delete((void *)(v3)); /*0x5e85f9*/
+    operator delete((v3)); /*0x5e85f9*/
   }
   v4 = (gamemd::ObjectClass *)((int)((ObjectClass *)operator new(4u)));
   if ( v4 ) /*0x5e860d*/
@@ -563,7 +563,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
       v10 = (unsigned int)(dword_A8B8D8++);
       *(unsigned int *)(dword_A8B8CC + 4 * v10) = (unsigned int)(v9); /*0x5e86e1*/
     }
-    operator delete((void *)(v7)); /*0x5e86e5*/
+    operator delete((v7)); /*0x5e86e5*/
     return (gamemd::AbstractClass **)(v6); /*0x5e86ed*/
   }
   else

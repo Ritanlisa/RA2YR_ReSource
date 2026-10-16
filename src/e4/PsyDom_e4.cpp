@@ -172,7 +172,7 @@ void PsyDom::Fire()
   if ( Block ) /*0x53b3d4*/
   {
     if ( (((unsigned char *)&(v39))[1]) ) /*0x53b3da*/
-      operator delete((void *)(Block)); /*0x53b3dd*/
+      operator delete((Block)); /*0x53b3dd*/
   }
 }
 }  // G42.18 ns repair

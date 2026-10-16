@@ -129,14 +129,14 @@ void AudioController::GetVolume()
       if ( *(unsigned int *)&DataGlobal_B0FAB8 ) /*0x72d18d*/
       {
         (*(FileTreeNode **)&DataGlobal_B0FAB8)->Destroy(); /*0x72d191*/
-        operator delete((void *)(v1)); /*0x72d197*/
+        operator delete((v1)); /*0x72d197*/
       }
       DataGlobal_B0FCCD = 0; /*0x72d19f*/
     }
     *(unsigned int *)&DataGlobal_B0FAB8 = 0; /*0x72d1ab*/
     if ( *(unsigned int *)&DataGlobal_B0FCD0 ) /*0x72d1b3*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FCD0)); /*0x72d1b6*/
+      operator delete((*(void **)&DataGlobal_B0FCD0)); /*0x72d1b6*/
       *(unsigned int *)&DataGlobal_B0FCD0 = 0; /*0x72d1be*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FCD4 ) /*0x72d1cc*/

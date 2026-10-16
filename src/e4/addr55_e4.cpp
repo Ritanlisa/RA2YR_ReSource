@@ -132,7 +132,7 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
         ++v7; /*0x550125*/
       }
     }
-    operator delete((void *)(Block)); /*0x550138*/
+    operator delete((Block)); /*0x550138*/
   }
 }  // G42.18 ns repair
 } // namespace ra2
@@ -201,7 +201,7 @@ void sub_550150()
             ++v8; /*0x55020d*/
           }
         }
-        operator delete((void *)(v3)); /*0x550220*/
+        operator delete((v3)); /*0x550220*/
       }
       --v1; /*0x550228*/
     }
@@ -1178,7 +1178,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         void *v11; // eax
         v11 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v10 + 8); /*0x554f6d*/
         ((TacticalClass *)((int)v11))->SetView(v17, v18, v19, v20, v21, v22); /*0x554f74*/
-        operator delete((void *)(v10)); /*0x554f7a*/
+        operator delete((v10)); /*0x554f7a*/
       }
       dword_ABCA50 = 0; /*0x554f91*/
       if ( dword_ABCA44 && byte_ABCA4D ) /*0x554fa7*/
@@ -3714,7 +3714,7 @@ LightConvertClass * E4Recv_556520::sub_556520(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_LightConvertClass; /*0x556523*/
   sub_490400((int)Block); /*0x556529*/
   if ( (a2 & 1) != 0 ) /*0x556533*/
-    operator delete((void *)(Block)); /*0x556536*/
+    operator delete((Block)); /*0x556536*/
   return Block->tail_0; /*0x556540*/
 }
 } // namespace gamemd

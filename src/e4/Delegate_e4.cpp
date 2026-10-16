@@ -294,7 +294,7 @@ int * Delegate::DestroyStraw(char a2)
 {
   this->Straw::Dtor(); /*0x52aea3*/
   if ( (a2 & 1) != 0 ) /*0x52aead*/
-    operator delete((void *)(this)); /*0x52aeb0*/
+    operator delete((this)); /*0x52aeb0*/
   return (int *)this->m_items; /*0x52aeba*/
 }
 } // namespace gamemd

@@ -1381,7 +1381,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
     *(&dword_A8DA90 + v16) = g_HouseClass_ObserverFlags; /*0x5daad6*/
     v14 = dword_A8DA78; /*0x5daadd*/
     LABEL_47:
-    operator delete((void *)(*(void **)(v14 + 4 * v13))); /*0x5daae3*/
+    operator delete((*(void **)(v14 + 4 * v13))); /*0x5daae3*/
     v18 = (*(int (**)(int *, int))(stru_A8DA74 + 16))(&stru_A8DA74, dword_A8DA78 + 4 * v13); /*0x5dab03*/
     if ( v18 != -1 && v18 < dword_A8DA84 && v18 < --dword_A8DA84 ) /*0x5dab1e*/
     {
@@ -2394,7 +2394,7 @@ unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(unsigned int *
 {
   *Block = &vt_MultiplayerGameModeInitializerBase; /*0x5d7ff9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fff*/
-    operator delete((void *)(Block)); /*0x5d8002*/
+    operator delete((Block)); /*0x5d8002*/
   return Block; /*0x5d800c*/
 }
 } // namespace gamemd
@@ -2405,7 +2405,7 @@ unsigned int * E4Recv_5D8010::___Gfacet_locale_std__UAEPAXI_Z_128(unsigned int *
 {
   *Block = &vt_MultiplayerGameModeInitializerBase; /*0x5d8019*/
   if ( (a2 & 1) != 0 ) /*0x5d801f*/
-    operator delete((void *)(Block)); /*0x5d8022*/
+    operator delete((Block)); /*0x5d8022*/
   return Block; /*0x5d802c*/
 }
 } // namespace gamemd
@@ -3070,7 +3070,7 @@ unsigned char sub_5DAF20()
           }
           v5 = operator new(4u); /*0x5e679f*/
           if ( v5 ) /*0x5e67a9*/
-            v6 = (void *)unknown_libname_27( (void *)(v5)); /*0x5e67ad*/
+            v6 = unknown_libname_27( (v5)); /*0x5e67ad*/
           else
             v6 = (void *)(0); /*0x5e67b4*/
           g_UIControlState = (unsigned int)v6; /*0x5e67bd*/
@@ -3289,7 +3289,7 @@ unsigned char sub_5DAF20()
                   v14 = 10; /*0x77fd99*/
                 if ( v14 < dword_B765FC ) /*0x77fda0*/
                 {
-                  v15 = (void *)__2_YAPAXI_Z(4 * v14); /*0x77fdaa*/
+                  v15 = __2_YAPAXI_Z(4 * v14); /*0x77fdaa*/
                   v16 = dword_B76600; /*0x77fdaf*/
                   v17 = v15; /*0x77fdba*/
                   if ( dword_B76600 ) /*0x77fdbc*/

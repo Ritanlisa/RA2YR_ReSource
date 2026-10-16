@@ -604,7 +604,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   int v4; // ebp
   v4 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x58d467*/
   if ( !v4 ) /*0x58d46b*/
-    return (unsigned int *)(&v3->vtable0); /*0x58d592*/
+    return &v3->q010; /*0x58d592*/
   do
   {
     int v5; // ecx
@@ -667,7 +667,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
     v4 = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x58d57d*/
   }
   while ( v4 );
-  return (unsigned int *)(&v3->vtable0); /*0x58d588*/
+  return &v3->q010; /*0x58d588*/
 
 }
 }
@@ -905,7 +905,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain(RandomMap *self)
   }
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x58eb93) */
   if ( v19.Items && v19.IsAllocated ) /*0x58eba6*/
-    operator delete((void *)(v19.Items)); /*0x58eba9*/
+    operator delete((v19.Items)); /*0x58eba9*/
   return 1; /*0x58eb91*/
 }
 }
@@ -1029,7 +1029,7 @@ void* RandomMap::CollectBorderCells(RandomMap *self)
   }
   if ( v6 ) /*0x58f29f*/
     (*(void (**)(unsigned int *, int))*v6)(v6, 1); /*0x58f2a8*/
-  operator delete((void *)(Block)); /*0x58f2af*/
+  operator delete((Block)); /*0x58f2af*/
 }
 }
 // 0x58F2C0
@@ -5155,7 +5155,7 @@ void PlaceShoreObjects()
   if ( Block ) /*0x59b920*/
   {
     if ( v19 ) /*0x59b926*/
-      operator delete((void *)(Block)); /*0x59b929*/
+      operator delete((Block)); /*0x59b929*/
   }
 }
 }
@@ -5262,7 +5262,7 @@ int RandomMap::PlaceTerrain(int a2, MapResourceClass * aP2, MapResourceClass * a
   if ( v10 <= 100 ) /*0x59bbef*/
     v10 = 100; /*0x59bbf1*/
   v90 = v10; /*0x59bbfd*/
-  v11 = (void *)__2_YAPAXI_Z(8 * v10); /*0x59bc02*/
+  v11 = __2_YAPAXI_Z(8 * v10); /*0x59bc02*/
   if ( v11 ) /*0x59bc0e*/
   {
     Block = v11; /*0x59bc13*/
@@ -5992,7 +5992,7 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
   v9 = 2 * *&this->q184 * v8; /*0x5a08f4*/
   if ( v9 <= 100 ) /*0x5a08f6*/
     v9 = 100; /*0x5a08f8*/
-  v10 = (void *)__2_YAPAXI_Z(8 * v9); /*0x5a0905*/
+  v10 = __2_YAPAXI_Z(8 * v9); /*0x5a0905*/
   if ( v10 ) /*0x5a0911*/
   {
     Block = v10; /*0x5a0914*/
@@ -8401,13 +8401,13 @@ DynamicVector * _DynamicVectorClass_VCell::QueryInterface(unsigned int * Block, 
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42fbf6*/
   if ( v3 && (Block->u32_D) ) /*0x42fc00*/
   {
-    operator delete((void *)(v3)); /*0x42fc08*/
+    operator delete((v3)); /*0x42fc08*/
     *&Block->__pad_004 = 0; /*0x42fc10*/
   }
   (Block->u32_D) = 0; /*0x42fc1b*/
   Block->u32_8 = 0; /*0x42fc21*/
   if ( (a2 & 1) != 0 ) /*0x42fc28*/
-    operator delete((void *)(Block)); /*0x42fc2b*/
+    operator delete((Block)); /*0x42fc2b*/
   return Block->tail_0; /*0x42fc35*/
 }
 } // namespace gamemd
@@ -8482,13 +8482,13 @@ unsigned int * RandomMap::Constructor_VectorClass_Cell_(unsigned int * Block, ch
   Block->ObjectClass_28 = (int)&vt_VectorClass; /*0x5ac2f2*/
   if ( v5 && (Block->u8_35) ) /*0x5ac2fd*/
   {
-    operator delete((void *)(v5)); /*0x5ac305*/
+    operator delete((v5)); /*0x5ac305*/
     Block->RandomMap_field_0x2C[0] = 0; /*0x5ac30d*/
   }
   (Block->u8_35) = 0; /*0x5ac318*/
   Block->u32_30 = 0; /*0x5ac31e*/
   if ( (a2 & 1) != 0 ) /*0x5ac325*/
-    operator delete((void *)(Block)); /*0x5ac328*/
+    operator delete((Block)); /*0x5ac328*/
   return Block->tail_0; /*0x5ac332*/
 }
 } // namespace gamemd
@@ -8498,7 +8498,7 @@ namespace gamemd {
 unsigned int * RandomMap::Constructor(int a2, int a3, void *a3_2, void *a4)
 {
   *(unsigned int *)&a3_2->RandomMap_field_0x2[2] = 0; /*0x5ad82b*/
-  a3_2->RandomMap_field_0x8 = (void *)a3_2; /*0x5ad82e*/
+  a3_2->RandomMap_field_0x8 = a3_2; /*0x5ad82e*/
   (*((unsigned char *)&(a3_2->RandomMap_field_0xC))) = 1; /*0x5ad831*/
   (((unsigned char *)&(a3_2->RandomMap_field_0xC))[1]) = 0; /*0x5ad835*/
   *(unsigned int *)a3_2->__pad_0 = &vt_VectorClass; /*0x5ad838*/
@@ -8522,7 +8522,7 @@ unsigned int * RandomMap::Constructor_0(int a2, int a3, void *a3_2)
 {
 
   *(unsigned int *)&a3_2->RandomMap_field_0x2[2] = 0; /*0x5ada4a*/
-  a3_2->RandomMap_field_0x8 = (void *)a3_2; /*0x5ada51*/
+  a3_2->RandomMap_field_0x8 = a3_2; /*0x5ada51*/
   (*((unsigned char *)&(a3_2->RandomMap_field_0xC))) = 1; /*0x5ada54*/
   (((unsigned char *)&(a3_2->RandomMap_field_0xC))[1]) = 0; /*0x5ada58*/
   *(unsigned int *)a3_2->__pad_0 = &vt_VectorClassTRect; /*0x5ada5c*/

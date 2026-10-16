@@ -331,7 +331,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   }
   ObjectTypeClass::Destruct((int)Block); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
-    operator delete((void *)(Block)); /*0x6449de*/
+    operator delete((Block)); /*0x6449de*/
   return &Block->tail_0; /*0x6449e8*/
 }
 } // namespace gamemd

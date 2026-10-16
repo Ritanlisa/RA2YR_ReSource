@@ -73,7 +73,7 @@ void DeleteCommandClass_28::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x53c4c9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x53c4d0*/
   {
-    operator delete((void *)(v2)); /*0x53c4d6*/
+    operator delete((v2)); /*0x53c4d6*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x53c4de*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x53c4e1*/
@@ -301,13 +301,13 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x53c786*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x53c790*/
   {
-    operator delete((void *)(v3)); /*0x53c798*/
+    operator delete((v3)); /*0x53c798*/
     *&Block->__pad_004 = 0; /*0x53c7a0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x53c7ab*/
   Block->u32_8 = 0; /*0x53c7b1*/
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
-    operator delete((void *)(Block)); /*0x53c7bb*/
+    operator delete((Block)); /*0x53c7bb*/
   return Block->tail_0; /*0x53c7c5*/
 }
 } // namespace gamemd

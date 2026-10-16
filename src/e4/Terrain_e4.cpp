@@ -401,7 +401,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
         {
           if ( a3 == 2 ) /*0x56957e*/
           {
-            v50 = (void *)operator new(0xB0u); /*0x569580*/
+            v50 = operator new(0xB0u); /*0x569580*/
             if ( v50 ) /*0x56958a*/
             {
               aP3 = (int *)v44[9]; /*0x569596*/
@@ -410,7 +410,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
           }
           else
           {
-            v51 = (void *)operator new(0xB0u); /*0x5695ab*/
+            v51 = operator new(0xB0u); /*0x5695ab*/
             if ( v51 ) /*0x5695b5*/
             {
               *(unsigned int *)v71 = v44[9]; /*0x5695be*/
@@ -473,7 +473,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
     if ( *(unsigned int *)&v81.u16_4 ) /*0x569735*/
     {
       if ( (((unsigned char *)&(v81.m_C))[1]) ) /*0x56973d*/
-        operator delete((void *)(*(void **)&v81.u16_4)); /*0x569740*/
+        operator delete((*(void **)&v81.u16_4)); /*0x569740*/
     }
   }
 }
@@ -3086,11 +3086,11 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
     break;
   }
   LABEL_72:
-  operator delete((void *)(Block)); /*0x5a2e9f*/
+  operator delete((Block)); /*0x5a2e9f*/
   if ( v8 ) /*0x5a2eae*/
   {
     operator delete((void *)(v8->vtable3)); /*0x5a2eb4*/
-    operator delete((void *)(v8)); /*0x5a2eba*/
+    operator delete((v8)); /*0x5a2eba*/
   }
 }
 }

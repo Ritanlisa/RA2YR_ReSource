@@ -531,7 +531,7 @@ SpawnManagerClass * SpawnManagerClass::ProcessEvent(void * Block, char a2)
 {
   ((SpawnManagerClass *)((TaskManager *)Block))->Constructor_SpawnManagerClass(); /*0x6b8143*/
   if ( (a2 & 1) != 0 ) /*0x6b814d*/
-    operator delete((void *)(Block)); /*0x6b8150*/
+    operator delete((Block)); /*0x6b8150*/
   return Block; /*0x6b815a*/
 }
 } // namespace gamemd
@@ -625,7 +625,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
     }
     else
     {
-      this->vtable2 = (void *)__2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
+      this->vtable2 = __2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
       BYTE1(this->u8_D) = 1; /*0x6b83df*/
     }
   }
@@ -713,13 +713,13 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char 
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6b8796*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x6b87a0*/
   {
-    operator delete((void *)(v3)); /*0x6b87a8*/
+    operator delete((v3)); /*0x6b87a8*/
     *&Block->__pad_004 = 0; /*0x6b87b0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x6b87bb*/
   Block->u32_8 = 0; /*0x6b87c1*/
   if ( (a2 & 1) != 0 ) /*0x6b87c8*/
-    operator delete((void *)(Block)); /*0x6b87cb*/
+    operator delete((Block)); /*0x6b87cb*/
   return Block->tail_0; /*0x6b87d5*/
 }
 } // namespace gamemd

@@ -1719,7 +1719,7 @@ AbstractClass * * sub_63B0A0()
   *(unsigned int *)&DataGlobal_AC4C28 = 0; /*0x63b0ad*/
   if ( *(unsigned int *)DataGlobal_AC4C1C && DataGlobal_AC4C25 ) /*0x63b0bb*/
   {
-    operator delete((void *)(*(void **)DataGlobal_AC4C1C)); /*0x63b0be*/
+    operator delete((*(void **)DataGlobal_AC4C1C)); /*0x63b0be*/
     *(unsigned int *)DataGlobal_AC4C1C = 0; /*0x63b0c6*/
   }
   void *Array_field_0x10 = DataGlobal_AC4B40; // ebp /*0x63b0cc*/
@@ -1843,7 +1843,7 @@ void sub_6603B0()
                 ++v7; /*0x66042f*/
               }
             }
-            operator delete((void *)(v6)); /*0x660442*/
+            operator delete((v6)); /*0x660442*/
             LoadGame_field_0x04 = g_TriggerPool; /*0x660447*/
           }
         }
@@ -1934,7 +1934,7 @@ void sub_556D40()
           ++v3; /*0x556db3*/
         }
       }
-      operator delete((void *)(v2)); /*0x556dc6*/
+      operator delete((v2)); /*0x556dc6*/
     }
   }
 }

@@ -155,7 +155,7 @@ void CStreamClass::ClearBuffer() {
   this->m_10 = 0; /*0x4a4ad9*/
   if ( v2 && (this->IsAllocated) ) /*0x4a4ae0*/
   {
-    operator delete((void *)(v2)); /*0x4a4ae6*/
+    operator delete((v2)); /*0x4a4ae6*/
     *&this->IStream_field_00 = 0; /*0x4a4aee*/
   }
   (this->IsAllocated) = 0; /*0x4a4af1*/
@@ -244,13 +244,13 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
   *(unsigned int *)this->IStream_field_00 = 0; /*0x4a4de6*/
   if ( v3 && (this->IsAllocated) ) /*0x4a4df0*/
   {
-    operator delete((void *)(v3)); /*0x4a4df8*/
+    operator delete((v3)); /*0x4a4df8*/
     *&this->IStream_field_00 = 0; /*0x4a4e00*/
   }
   (this->IsAllocated) = 0; /*0x4a4e0b*/
   this->__pad_008 = 0; /*0x4a4e11*/
   if ( (a2 & 1) != 0 ) /*0x4a4e18*/
-    operator delete((void *)(this)); /*0x4a4e1b*/
+    operator delete((this)); /*0x4a4e1b*/
   return this->IStream_field_00; /*0x4a4e25*/
 }
 }
@@ -263,7 +263,7 @@ void LoadOptions::vt03() {
   this->max_entries = 0; /*0x55a159*/
   if ( v2 && (this->IsAllocated) ) /*0x55a160*/
   {
-    operator delete((void *)(v2)); /*0x55a166*/
+    operator delete((v2)); /*0x55a166*/
     *&this->mode = 0; /*0x55a16e*/
   }
   (this->IsAllocated) = 0; /*0x55a171*/
@@ -620,7 +620,7 @@ void* StreamWrapper::QueryInterface(int a2)
     (**v5)(v5, 1); /*0x7b046e*/
   OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x7b0472*/
   if ( (a2 & 1) != 0 ) /*0x7b047c*/
-    operator delete((void *)(this)); /*0x7b047f*/
+    operator delete((this)); /*0x7b047f*/
   return this->__pad_000; /*0x7b0489*/
 }
 }

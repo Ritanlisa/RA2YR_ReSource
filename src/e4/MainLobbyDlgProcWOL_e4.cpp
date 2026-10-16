@@ -32,7 +32,7 @@ LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
   LRESULT v7; // edi
   v7 = SendMessageA(hWnd, 0x4C3u, wParam, (LPARAM)v6); /*0x624061*/
   WideString::Assign_Alt(a3, v6); /*0x624068*/
-  operator delete((void *)(v6)); /*0x62406e*/
+  operator delete((v6)); /*0x62406e*/
   return v7; /*0x624078*/
 }  // G42.18 ns repair
 } // namespace gamemd

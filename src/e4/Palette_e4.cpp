@@ -105,7 +105,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   *(unsigned int *)v61.vtable1 = v61.LockCount; /*0x64218f*/
   v11 = (*(int (**)(int))(*(unsigned int *)v10 + 120))(v10); /*0x64219c*/
   ((DSurface *)((DSurface *)&v61))->BlitPart((int)&v57, *(unsigned int *)a1->m_Colors, v11, (int)v56, 0); /*0x6421ac*/
-  v12 = (void *)operator new(0x4000u); /*0x6421bb*/
+  v12 = operator new(0x4000u); /*0x6421bb*/
   memset(v12, 0, 0x4000u); /*0x6421c6*/
   v49 = (unsigned int *)(v12); /*0x6421cd*/
   Block = 0; /*0x6421d1*/
@@ -269,9 +269,9 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v40 = v54[0]; /*0x642570*/
   memcpy(v39 + 3, Blocka, 2 * v21); /*0x642577*/
   memcpy((char *)v39 + v40, v53, v61.Height * v61.Width); /*0x642595*/
-  operator delete((void *)(Blocka)); /*0x6425a3*/
-  operator delete((void *)(v53)); /*0x6425ad*/
-  operator delete((void *)(v49)); /*0x6425b7*/
+  operator delete((Blocka)); /*0x6425a3*/
+  operator delete((v53)); /*0x6425ad*/
+  operator delete((v49)); /*0x6425b7*/
   *(unsigned int *)a3 = v38; /*0x6425c9*/
   Debug::Log(); /*0x6425cb*/
   ((DSurface *)&v61)->Destroy(); /*0x6425d7*/

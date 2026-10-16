@@ -264,7 +264,7 @@ void SwizzleManagerClass_19::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x6cf4f9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x6cf500*/
   {
-    operator delete((void *)(v2)); /*0x6cf506*/
+    operator delete((v2)); /*0x6cf506*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x6cf50e*/
   }
   (((unsigned char *)&(a1_1->q00C))[1]) = 0; /*0x6cf511*/
@@ -398,13 +398,13 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6cf856*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x6cf860*/
   {
-    operator delete((void *)(v3)); /*0x6cf868*/
+    operator delete((v3)); /*0x6cf868*/
     *&Block->__pad_004 = 0; /*0x6cf870*/
   }
   (Block->u32_D) = 0; /*0x6cf87b*/
   Block->u32_8 = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
-    operator delete((void *)(Block)); /*0x6cf88b*/
+    operator delete((Block)); /*0x6cf88b*/
   return Block->tail_0; /*0x6cf895*/
 }
 } // namespace gamemd
@@ -418,13 +418,13 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6cf8a6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x6cf8b0*/
   {
-    operator delete((void *)(v3)); /*0x6cf8b8*/
+    operator delete((v3)); /*0x6cf8b8*/
     *&Block->__pad_004 = 0; /*0x6cf8c0*/
   }
   (Block->u32_D) = 0; /*0x6cf8cb*/
   Block->u32_8 = 0; /*0x6cf8d1*/
   if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
-    operator delete((void *)(Block)); /*0x6cf8db*/
+    operator delete((Block)); /*0x6cf8db*/
   return Block->tail_0; /*0x6cf8e5*/
 }
 } // namespace gamemd

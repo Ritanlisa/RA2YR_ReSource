@@ -334,7 +334,7 @@ int ScenarioClass::AssignStartPositions(char a1)
   *(unsigned int *)v5 = (unsigned int)(&vt_VectorClass); /*0x5d6c45*/
   char v7; // [esp+11h] [ebp-Bh]
   if ( Block && v7 ) /*0x5d6c58*/
-    operator delete((void *)(Block)); /*0x5d6c5b*/
+    operator delete((Block)); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
 }
 // 0x6832C0
@@ -666,7 +666,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
       g_ScenarioClass_Instance->difficulty2 = (int)DataGlobal_A8B278;
       g_ScenarioClass_Instance->elapsedTimer[0] = 2 - g_ScenarioClass_Instance->difficulty2;
       int v6 = g_ScenarioClass_Instance->nextScenario[0];
-      (((v6) >> 8) & 0xFF) = (((unsigned char *)&(g_ScenarioClass_Instance->nextScenario[0]))[1]) & 0xEF;
+      (((v6) >> 8) & 0xFF) = (g_ScenarioClass_Instance->u32_1) & 0xEF;
       g_ScenarioClass_Instance->nextScenario[0] = v6 | (((uint8_t)FOW & 1) << 12);
       v7 = *(ObjectClass **)&(&g_NetworkPlayerBuffer)[4900];
       (((v7) >> 8) & 0xFF) = (&g_NetworkPlayerBuffer)[4901] & 0xEF;
@@ -677,7 +677,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
       g_ScenarioClass_Instance->difficulty2 = *(unsigned int *)&(&g_NetworkPlayerBuffer)[5416];
       g_ScenarioClass_Instance->elapsedTimer)[0] = 2 - *(unsigned int *)&(&g_NetworkPlayerBuffer)[5416];
       int v4 = g_ScenarioClass_Instance->nextScenario[0];
-      (((v4) >> 8) & 0xFF) = (((unsigned char *)&(g_ScenarioClass_Instance->nextScenario[0]))[1]) & 0xEF;
+      (((v4) >> 8) & 0xFF) = (g_ScenarioClass_Instance->u32_1) & 0xEF;
       g_ScenarioClass_Instance->nextScenario[0] = v4;
       v5 = *(ObjectClass **)&(&g_NetworkPlayerBuffer)[4900];
       (((v5) >> 8) & 0xFF) = (&g_NetworkPlayerBuffer)[4901] & 0xEF;
@@ -738,7 +738,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
             (wchar_t *)&DataGlobal_87F8E4[32336],
             (CCINIClass *)g_ScenarioClass_Instance->name,
             0x2Du);
-        (*((unsigned short *)&(g_ScenarioClass_Instance->briefing[0]))) = 0;
+        (g_ScenarioClass_Instance->Name) = 0;
         if ( (void *)&stru_830620 == (IUnknown *)-37112 )
           int v10 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
@@ -753,7 +753,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           {
             StringCSF = GetStringCSF( (char *)g_ScenarioClass_Instance->briefingCsf, 0, (const char *)(&stru_830620[53784]), 3167);
             wcsncpy( (wchar_t *)g_ScenarioClass_Instance->briefing, (const wchar_t *)(StringCSF), 0x400u);
-            (*(((unsigned short *)&(g_ScenarioClass_Instance->briefing[511])) + 1)) = 0;
+            (*(g_ScenarioClass_Instance->Name + 1)) = 0;
           }
         }
         g_ScenarioClass_Instance->uiName[0] = 0;
@@ -851,7 +851,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                                                (uint8_t *)g_ScenarioClass_Instance->fileName,
                                                (CCINIClass *)&stru_830620[54712],
                                                (INIClass *)g_ScenarioClass_Instance->ls800BriefLocY);
-        (*((unsigned char *)&(g_ScenarioClass_Instance->ls640BkgdName[0]))) = 0;
+        (g_ScenarioClass_Instance->ls640BkgdName) = 0;
         if ( (void *)&stru_830620 == (IUnknown *)-54696 )
           int v21 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
@@ -861,7 +861,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)&stru_830620[54696]);
         if ( v21 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54696], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls640BkgdName, 64);
-        (*((unsigned char *)&(g_ScenarioClass_Instance->ls800BkgdName[0]))) = 0;
+        (g_ScenarioClass_Instance->ls800BkgdName) = 0;
         if ( (void *)&stru_830620 == (IUnknown *)-54680 )
           int v22 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
@@ -871,7 +871,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)&stru_830620[54680]);
         if ( v22 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54680], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls800BkgdName, 64);
-        (*((unsigned char *)&(g_ScenarioClass_Instance->ls800BkgdPal[0]))) = 0;
+        (g_ScenarioClass_Instance->ls800BkgdPal) = 0;
         if ( (void *)&stru_830620 == (IUnknown *)-54664 )
           int v23 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
@@ -2216,7 +2216,7 @@ MSAnim * ScenarioClass::checkWinningConditions(unsigned int * Block, char a2)
 {
   *(unsigned int *)Block->tail_0 = &vt_MSAnim; /*0x5ceb69*/
   if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
-    operator delete((void *)(Block)); /*0x5ceb72*/
+    operator delete((Block)); /*0x5ceb72*/
   return Block->tail_0; /*0x5ceb7c*/
 }
 } // namespace gamemd
@@ -2302,7 +2302,7 @@ void ScenarioClass::sub_5D80B0()
   this->Items = 0; /*0x5d80b9*/
   if ( v2 && this->IsAllocated ) /*0x5d80c0*/
   {
-    operator delete((void *)(v2)); /*0x5d80c6*/
+    operator delete((v2)); /*0x5d80c6*/
     this->Items = 0; /*0x5d80ce*/
   }
   this->IsAllocated = 0; /*0x5d80d1*/

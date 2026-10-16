@@ -20,7 +20,7 @@ void * WOL::QueryInterface(char a2)
 {
   SelectionInitializeWOL(); /*0x76efe3*/
   if ( (a2 & 1) != 0 ) /*0x76efed*/
-    operator delete((void *)(this)); /*0x76eff0*/
+    operator delete((this)); /*0x76eff0*/
   return this; /*0x76effa*/
 }  // G42.18 ns repair
 } // namespace gamemd

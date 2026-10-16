@@ -133,7 +133,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
           *v15 = 0; /*0x7b7562*/
         wcscat(v5, v4); /*0x7b7569*/
         if ( v13 ) /*0x7b7573*/
-          operator delete((void *)(v13)); /*0x7b7576*/
+          operator delete((v13)); /*0x7b7576*/
       }
       break; /*0x7b7576*/
     }
@@ -152,7 +152,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
         *v9 = 0; /*0x7b7482*/
       wcsncat(v5, v4, v7); /*0x7b748a*/
       if ( v8 ) /*0x7b7494*/
-        operator delete((void *)(v8)); /*0x7b7497*/
+        operator delete((v8)); /*0x7b7497*/
     }
     if ( String ) /*0x7b74a5*/
     {
@@ -168,7 +168,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
         *v12 = 0; /*0x7b74e6*/
       wcscat(v5, String); /*0x7b74ed*/
       if ( v10 ) /*0x7b74f7*/
-        operator delete((void *)(v10)); /*0x7b74fa*/
+        operator delete((v10)); /*0x7b74fa*/
     }
     v4 = &v22[wcslen(aP1)]; /*0x7b7513*/
     if ( !v4 ) /*0x7b7518*/
@@ -185,7 +185,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
   v16 = v5; /*0x7b7592*/
   LABEL_35:
   if ( *v3 ) /*0x7b7594*/
-    operator delete((void *)(*v3)); /*0x7b759b*/
+    operator delete((*v3)); /*0x7b759b*/
   *v3 = 0; /*0x7b75a5*/
   if ( v16 ) /*0x7b75ab*/
     v17 = wcslen(v16) + 1; /*0x7b75b6*/
@@ -197,7 +197,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
   if ( v16 ) /*0x7b75d2*/
     wcscpy((wchar_t *)*v3, v16); /*0x7b75d8*/
   if ( v5 ) /*0x7b75e2*/
-    operator delete((void *)(v5)); /*0x7b75e5*/
+    operator delete((v5)); /*0x7b75e5*/
   return (gamemd::AbstractClass **)(1); /*0x7b75ed*/
 }
 }
@@ -321,7 +321,7 @@ void ** WideString::Assign_Alt(wchar_t *String, void *a2)
 {
 
   if ( *(unsigned int *)this ) /*0x7b6884*/
-    operator delete((void *)(*(void **)this)); /*0x7b688b*/
+    operator delete((*(void **)this)); /*0x7b688b*/
   *(unsigned int *)this = 0; /*0x7b6897*/
   int v3; // eax
   if ( String ) /*0x7b689f*/
@@ -352,7 +352,7 @@ int WideString::Reassign_Alt(const wchar_t **a2, void *a2_1)
     if ( !*a2 ) /*0x7b690b*/
       v4 = (wchar_t *)(&g_TypeClass_DefaultString); /*0x7b6911*/
     if ( *(unsigned int *)this ) /*0x7b6916*/
-      operator delete((void *)(*(void **)this)); /*0x7b691d*/
+      operator delete((*(void **)this)); /*0x7b691d*/
     *(unsigned int *)this = 0; /*0x7b6927*/
     int v5; // eax
     if ( v4 ) /*0x7b692d*/
@@ -392,7 +392,7 @@ wchar_t ** WideString::Append2(wchar_t *aP1, void *a2)
       *v5 = 0; /*0x7b6b2e*/
     wcscat(aP1); /*0x7b6b37*/
     if ( v3 ) /*0x7b6b41*/
-      operator delete((void *)(v3)); /*0x7b6b44*/
+      operator delete((v3)); /*0x7b6b44*/
   }
   return (wchar_t **)this; /*0x7b6b4c*/
 }
@@ -459,7 +459,7 @@ wchar_t ** WideString::AssignConcat(wchar_t ** a2, wchar_t * String)
       *v8 = 0; /*0x7b6c53*/
     wcscat(v4, String); /*0x7b6c5a*/
     if ( v6 ) /*0x7b6c64*/
-      operator delete((void *)(v6)); /*0x7b6c67*/
+      operator delete((v6)); /*0x7b6c67*/
   }
   *a2 = 0; /*0x7b6c76*/
   if ( v4 ) /*0x7b6c7d*/
@@ -470,7 +470,7 @@ wchar_t ** WideString::AssignConcat(wchar_t ** a2, wchar_t * String)
     v10 = (wchar_t *)operator new(2 * v9 + 2); /*0x7b6c8a*/
     *a2 = v10; /*0x7b6c91*/
     wcscpy(v10, v4); /*0x7b6c93*/
-    operator delete((void *)(v4)); /*0x7b6c99*/
+    operator delete((v4)); /*0x7b6c99*/
   }
   return a2; /*0x7b6ca3*/
 }
@@ -507,7 +507,7 @@ wchar_t ** WideString::ConcatAlloc(wchar_t ** a1, ObjectClass * aP2)
       *v9 = 0; /*0x7b6d2e*/
     wcscat(v4, v6); /*0x7b6d35*/
     if ( v7 ) /*0x7b6d3f*/
-      operator delete((void *)(v7)); /*0x7b6d42*/
+      operator delete((v7)); /*0x7b6d42*/
   }
   *a1 = 0; /*0x7b6d51*/
   if ( v4 ) /*0x7b6d58*/
@@ -518,7 +518,7 @@ wchar_t ** WideString::ConcatAlloc(wchar_t ** a1, ObjectClass * aP2)
     v11 = (wchar_t *)operator new(2 * v10 + 2); /*0x7b6d65*/
     *a1 = v11; /*0x7b6d6c*/
     wcscpy(v11, v4); /*0x7b6d6e*/
-    operator delete((void *)(v4)); /*0x7b6d74*/
+    operator delete((v4)); /*0x7b6d74*/
   }
   return a1; /*0x7b6d7e*/
 }
@@ -550,7 +550,7 @@ short WideString::Erase(int a2, int a3_2)
   *(unsigned short *)(v9 + *(unsigned int *)a3_2 - 2) = 0; /*0x7b6dee*/
   wcscpy(v8, *(const wchar_t **)a3_2); /*0x7b6df9*/
   wcscat(v8, (const wchar_t *)(*(unsigned int *)a3_2 + v9)); /*0x7b6e02*/
-  operator delete((void *)(*(void **)a3_2)); /*0x7b6e0a*/
+  operator delete((*(void **)a3_2)); /*0x7b6e0a*/
   *(unsigned int *)a3_2 = (unsigned int)(v8); /*0x7b6e12*/
   return 1; /*0x7b6dbf*/
 }
@@ -585,7 +585,7 @@ char WideString::RemoveChar(wchar_t a2)
     wchar_t *v9; // edi
     v9 = (wchar_t *)operator new(2 * v8 + 2); /*0x7b6e9c*/
     wcscpy(v9, *(const wchar_t **)this); /*0x7b6ea2*/
-    operator delete((void *)(*(void **)this)); /*0x7b6eaa*/
+    operator delete((*(void **)this)); /*0x7b6eaa*/
     *(unsigned int *)this = (unsigned int)(v9); /*0x7b6eb2*/
   }
   return v3; /*0x7b6e2c*/
@@ -657,7 +657,7 @@ short WideString::Reassign(wchar_t * String, void *a2_1)
 {
 
   if ( *(unsigned int *)a2_1 ) /*0x7b7604*/
-    operator delete((void *)(*(void **)a2_1)); /*0x7b760b*/
+    operator delete((*(void **)a2_1)); /*0x7b760b*/
   *(unsigned int *)a2_1 = 0; /*0x7b7617*/
   int v3; // eax
   if ( a2_1 ) /*0x7b761f*/

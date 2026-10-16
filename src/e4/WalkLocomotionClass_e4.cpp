@@ -209,7 +209,7 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( Piggybackee ) /*0x75c6d6*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75c6db*/
   *p_Piggybackee = 0; /*0x75c6e5*/
-  return OleLoadFromStream((LPSTREAM)v2,(void *)(&IID_ILocomotion), p_Piggybackee); /*0x75c6f1*/
+  return OleLoadFromStream((LPSTREAM)v2,(&IID_ILocomotion), p_Piggybackee); /*0x75c6f1*/
 }
 } // namespace gamemd
 // 0x75C700

@@ -29,7 +29,7 @@ LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
   LRESULT v7; // edi
   v7 = SendMessageA((HWND)(aP0), 0x4BDu, wParam, (LPARAM)v6); /*0x624000*/
   ((String *)(a2))->Assign_Alt(v6); /*0x624007*/
-  operator delete((void *)(v6)); /*0x62400d*/
+  operator delete((v6)); /*0x62400d*/
   return v7; /*0x624017*/
 }  // G42.18 ns repair
 } // namespace gamemd

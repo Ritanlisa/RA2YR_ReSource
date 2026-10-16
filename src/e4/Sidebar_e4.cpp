@@ -227,7 +227,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
       }
     }
   }
-  if ( ((FactoryClass *)(v10))->DemandProduction(v9, (void *)this, a5) ) /*0x4fa5d1*/
+  if ( ((FactoryClass *)(v10))->DemandProduction(v9, this, a5) ) /*0x4fa5d1*/
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
   if ( v10->abstractFlags || v10->q058 ) /*0x4fa6d9*/

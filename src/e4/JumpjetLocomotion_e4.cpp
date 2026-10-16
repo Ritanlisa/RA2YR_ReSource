@@ -704,7 +704,7 @@ void* JumpjetLocomotion::Land()
   {
     LOWORD(v9) = Math::RoundToInt((double)v53 - *&this->u32_28); /*0x54cb05*/
     v53 = v9; /*0x54cb0a*/
-    v49[0] = *(unsigned short *)(&this->q054)->GetValue(v50) + 11520; /*0x54cb2a*/
+    v49[0] = *&this->q054->GetValue(v50) + 11520; /*0x54cb2a*/
     FacingClass::Update(&this->q054, v49); /*0x54cb39*/
   }
   v10 = dword_ABC5DC + Cell::GetGroundHeight(&v51); /*0x54cb5e*/
@@ -1203,7 +1203,7 @@ void* JumpjetLocomotion::UpdateFacing()
   v41 = v40[2]; /*0x54d572*/
   LOWORD(v42) = Math::RoundToInt(v14); /*0x54d575*/
   LODWORD(v60) = v42; /*0x54d57a*/
-  v61 = (double)(*(__int16 *)(&this->q054)->GetValue(&v59) - 0x3FFF) /*0x54d5a2*/
+  v61 = (double)(*&this->q054->GetValue(&v59) - 0x3FFF) /*0x54d5a2*/
   * -0.00009587672516830327;
   v43 = HIDWORD(v61); /*0x54d5aa*/
   v44 = LODWORD(v61); /*0x54d5ae*/

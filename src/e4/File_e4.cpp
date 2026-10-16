@@ -97,7 +97,7 @@ AbstractClass * File::LoadFont(char *Source)
         return (gamemd::AbstractClass *)(v3); /*0x433bf4*/
       }
       memset(v3, 0, 0x24u); /*0x433a04*/
-      v7 = (void *)operator new(0x20000u); /*0x433a0b*/
+      v7 = operator new(0x20000u); /*0x433a0b*/
       v3[6] = (unsigned int)(v7); /*0x433a12*/
       if ( v7 ) /*0x433a15*/
       {
@@ -195,7 +195,7 @@ AbstractClass * File::LoadFont(char *Source)
         operator delete((void *)(v3->u32_18)); /*0x433bcb*/
       if ( v3[7] ) /*0x433bd3*/
         operator delete((void *)(v3->u32_1C)); /*0x433bdb*/
-      operator delete((void *)(v3)); /*0x433be4*/
+      operator delete((v3)); /*0x433be4*/
       v3 = 0; /*0x433bec*/
       goto LABEL_35; /*0x433bec*/
     }
@@ -369,13 +369,13 @@ File * * File::LoadPaletteData(unsigned short *aP1)
     v8 = *(unsigned int *)v5; /*0x625b55*/
     int v9 = v7; // ebx /*0x625b57*/
     unsigned int *v10; // esi
-    v10 = (unsigned int *)(v5 + 4); /*0x625b5c*/
+    v10 = &v5->u32_4; /*0x625b5c*/
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *(unsigned int *)(v7 + 4) = *(v10 - 1); /*0x625b64*/
     size_t v11; // ebp
     v11 = (unsigned __int16)ntohs(*(unsigned short *)(v7 + 6)); /*0x625b78*/
     void *v12; // eax
-    v12 = (void *)__2_YAPAXI_Z(v11); /*0x625b7f*/
+    v12 = __2_YAPAXI_Z(v11); /*0x625b7f*/
     v9->ptr_8 = v12; /*0x625b8a*/
     memcpy(v12, v10, v11); /*0x625b90*/
     int v13; // eax
@@ -653,7 +653,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     PaletteData = (gamemd::u_short *)((v3)->LoadPaletteData(aP1)); /*0x76acdc*/
   else
     PaletteData = 0; /*0x76ace0*/
-  v5 = (char *)(&this->__pad_01C); /*0x76ace6*/
+  v5 = &this->__pad_01C; /*0x76ace6*/
   v13 = 0; /*0x76acf2*/
   v14 = 0; /*0x76acf6*/
   Size = 0; /*0x76acfa*/
@@ -676,7 +676,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     {
       LABEL_25:
       ((ResultNode *)PaletteData)->CleanupList(); /*0x76afa4*/
-      operator delete((void *)(PaletteData)); /*0x76afac*/
+      operator delete((PaletteData)); /*0x76afac*/
     }
   }
   else
@@ -709,7 +709,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     v9 = (int)(operator new(v17)); /*0x76ae05*/
     v14 = v14; /*0x76ae0a*/
     this->q004 = v9; /*0x76ae0e*/
-    Block = (void *)operator new(v14); /*0x76ae17*/
+    Block = operator new(v14); /*0x76ae17*/
     v20 = 0; /*0x76ae23*/
     if ( !this->q048 ) /*0x76ae1b*/
     {
@@ -738,9 +738,9 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     else
       ParseWDTTerritories((int)v20, v13); /*0x76af68*/
     File::LoadWDTDecompress((int)v11, v14); /*0x76af7e*/
-    operator delete((void *)(v11)); /*0x76af84*/
+    operator delete((v11)); /*0x76af84*/
     if ( !this->q048 ) /*0x76af89*/
-      operator delete((void *)(v20)); /*0x76af98*/
+      operator delete((v20)); /*0x76af98*/
     if ( PaletteData ) /*0x76afa2*/
       goto LABEL_25; /*0x76afa2*/
   }

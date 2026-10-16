@@ -327,7 +327,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
         while ( v57 ); /*0x63067e*/
         v12 = v55; /*0x630684*/
       }
-      operator delete((void *)(v16)); /*0x630689*/
+      operator delete((v16)); /*0x630689*/
       v28 = a1; /*0x630690*/
       (*(void (**)(unsigned int *))(*v12 + 96))(v12); /*0x630699*/
     }
@@ -1251,7 +1251,7 @@ int E4Recv_6375B0::sub_6375B0()
   }
   memcpy(v3, this, 0x6Cu); /*0x6375d3*/
   int *p_health; // esi
-  p_health = (int *)(&this->health); /*0x6375d3*/
+  p_health = &this->health; /*0x6375d3*/
   *((unsigned short *)v3 + 54) = *(unsigned short *)p_health; /*0x6375d5*/
   v3[110] = *((unsigned char *)p_health + 2); /*0x6375d7*/
   if ( *v3 == 4 ) /*0x6375dd*/
@@ -1308,7 +1308,7 @@ AbstractClass * * sub_637920()
   *(unsigned int *)&DataGlobal_AC4CA8 = 0; /*0x637980*/
   if ( *(unsigned int *)&DataGlobal_AC4C9C && DataGlobal_AC4CA5 ) /*0x637992*/
   {
-    operator delete((void *)(*(void **)&DataGlobal_AC4C9C)); /*0x637995*/
+    operator delete((*(void **)&DataGlobal_AC4C9C)); /*0x637995*/
     *(unsigned int *)&DataGlobal_AC4C9C = 0; /*0x63799d*/
   }
   *(unsigned int *)&DataGlobal_AC4CA0 = 0; /*0x6379a3*/
@@ -1648,9 +1648,9 @@ int FactoryClass_ClearProduction(unsigned int * a1, int a2)
               if ( v11 ) /*0x638767*/
               {
                 ((int *)v9->__pad_0)->FinishProduction((int)v11); /*0x63876c*/
-                operator delete((void *)(*((void **)Block + 1))); /*0x638779*/
+                operator delete((*((void **)Block + 1))); /*0x638779*/
                 FactoryClass::RemoveItemAt((FactoryClass *)v9, (int)&Block); /*0x638788*/
-                operator delete((void *)(Block)); /*0x638792*/
+                operator delete((Block)); /*0x638792*/
                 if ( !v9->Array_field_0x10 ) /*0x638797*/
                 {
                   if ( v9 ) /*0x6387a3*/
@@ -4544,7 +4544,7 @@ void FlushPlanningQueue(CCINIClass * a1)
         while ( v3 < *(int *)&DataGlobal_AC4B58 ); /*0x63759b*/
       }
     }
-    operator delete((void *)(v2)); /*0x63759e*/
+    operator delete((v2)); /*0x63759e*/
   }
 }
 } // namespace gamemd

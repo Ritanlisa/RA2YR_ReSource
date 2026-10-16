@@ -28,7 +28,7 @@ unsigned int * TabClass::initStripClass()
   BYTE1(this->u32_8) = 0; /*0x4a235c*/
   BYTE2(this->u32_8) = 0; /*0x4a235f*/
   this->u32_C = 0; /*0x4a2362*/
-  return (unsigned int *)(&this->vtable1); /*0x4a2365*/
+  return &this->vtable1; /*0x4a2365*/
 
 }
 } // namespace gamemd

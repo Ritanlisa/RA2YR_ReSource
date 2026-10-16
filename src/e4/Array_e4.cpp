@@ -238,7 +238,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
     void *v8; // edx
-    v8 = (void *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
+    v8 = __2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
     void *v16; // [esp+Ch] [ebp-4h]
     v16 = v8; /*0x7ad7ec*/
@@ -259,7 +259,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
     void *v12; // edx
-    v12 = (void *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
+    v12 = __2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
     void *v17; // [esp+Ch] [ebp-4h]
     v17 = v12; /*0x7ad871*/

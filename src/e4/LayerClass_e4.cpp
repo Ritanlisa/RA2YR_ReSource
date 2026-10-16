@@ -452,7 +452,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
       v65 = i; /*0x56e645*/
       v66 = v81; /*0x56e64b*/
       *i = *(unsigned int *)v62; /*0x56e64f*/
-      v81 = (Type *)((char *)&v66->Type_field_00 + 1); /*0x56e655*/
+      v81 = (Type *)v66->Type_field_00 + 1); /*0x56e655*/
       i = v65 + 1; /*0x56e659*/
     }
     else

@@ -41,7 +41,7 @@ char * ScrollClass::Read(char * Block, char a2, void *a3)
   while ( v4 ); /*0x693916*/
   ((RadarClass *)Block)->Destruct(); /*0x69391a*/
   if ( (a2 & 1) != 0 ) /*0x693924*/
-    operator delete((void *)(Block)); /*0x693927*/
+    operator delete((Block)); /*0x693927*/
   return (char *)Block; /*0x69392f*/
 }
 } // namespace gamemd

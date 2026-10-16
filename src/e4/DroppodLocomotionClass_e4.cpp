@@ -246,11 +246,11 @@ HRESULT DropPodLocomotionClass::BeginMove(DropPodLocomotionClass * a1, int * pSt
   ILocomotion *Piggybackee; // eax
   Piggybackee = a1->Piggybackee; /*0x4b628e*/
   LPVOID *p_Piggybackee; // esi
-  p_Piggybackee = (LPVOID *)(&a1->Piggybackee); /*0x4b6291*/
+  p_Piggybackee = &a1->Piggybackee; /*0x4b6291*/
   if ( Piggybackee ) /*0x4b6296*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b629b*/
   *p_Piggybackee = 0; /*0x4b62a5*/
-  return OleLoadFromStream((LPSTREAM)v2,(void *)(&IID_ILocomotion), p_Piggybackee); /*0x4b62b1*/
+  return OleLoadFromStream((LPSTREAM)v2,(&IID_ILocomotion), p_Piggybackee); /*0x4b62b1*/
 
 }
 }  // G42.18c ns repair
@@ -336,7 +336,7 @@ void * DropPodLocomotionClass::ProcessMove(char a2)
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/
   this->LocomotionClass::Construct(); /*0x4b6716*/
   if ( (a2 & 1) != 0 ) /*0x4b6720*/
-    operator delete((void *)(this)); /*0x4b6723*/
+    operator delete((this)); /*0x4b6723*/
   return this->0; /*0x4b672d*/
 }
 } // namespace gamemd

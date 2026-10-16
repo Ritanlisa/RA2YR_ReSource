@@ -67,13 +67,13 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
   Block->u32_8 = (int)&vt_VectorClass; /*0x5d7f86*/
   if ( MultiplayerGameMode_field_0x0C && (Block->u8_15) ) /*0x5d7f90*/
   {
-    operator delete((void *)(MultiplayerGameMode_field_0x0C)); /*0x5d7f98*/
+    operator delete((MultiplayerGameMode_field_0x0C)); /*0x5d7f98*/
     Block->u32_C = 0; /*0x5d7fa0*/
   }
   (Block->u8_15) = 0; /*0x5d7fab*/
   Block->u32_10 = 0; /*0x5d7fb1*/
   if ( (a2 & 1) != 0 ) /*0x5d7fb8*/
-    operator delete((void *)(Block)); /*0x5d7fbb*/
+    operator delete((Block)); /*0x5d7fbb*/
   return Block->tail_0; /*0x5d7fc5*/
 }
 } // namespace gamemd

@@ -312,7 +312,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
   v24.DynamicVectorClass = &vt_VectorClass; /*0x721c21*/
   if ( Items && ((char *)&v24) ) /*0x721c34*/
-    operator delete((void *)(Items)); /*0x721c37*/
+    operator delete((Items)); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
              (bool *)aP1,
              &v5->objectTypeFlags,
@@ -395,7 +395,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   }
   if ( v2->TiberiumClass_field_118 ) /*0x721f34*/
   {
-    __3_YAXPAX_Z((void *)v2->TiberiumClass_field_118); /*0x721f3f*/
+    __3_YAXPAX_Z(v2->TiberiumClass_field_118); /*0x721f3f*/
     v2->TiberiumClass_field_118 = 0; /*0x721f47*/
   }
   if ( v2->TiberiumClass_field_114 ) /*0x721f4d*/

@@ -118,7 +118,7 @@ void ConnectionClass::dtor()
   void (***PlayerIndex)(unsigned int, int); // ecx
 
   void *v2; // eax
-  v2 = (void *)this->q020; /*0x48bee3*/
+  v2 = this->q020; /*0x48bee3*/
   /* X11: vtable install elided (implicit via ConnectionClass virtuals 0x48bee6) */
   __3_YAXPAX_Z(v2); /*0x48beed*/
   PlayerIndex = (void (***)(unsigned int, int))this->PlayerIndex; /*0x48bef2*/

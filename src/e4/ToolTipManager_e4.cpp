@@ -61,13 +61,13 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x724f46*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x724f50*/
   {
-    operator delete((void *)(v3)); /*0x724f58*/
+    operator delete((v3)); /*0x724f58*/
     Block->Items = (unsigned int)(0); /*0x724f60*/
   }
   (Block->u32_D) = 0; /*0x724f6b*/
   Block->Capacity = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
-    operator delete((void *)(Block)); /*0x724f7b*/
+    operator delete((Block)); /*0x724f7b*/
   return Block->tail_0; /*0x724f85*/
 }
 } // namespace gamemd

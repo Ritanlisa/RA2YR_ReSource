@@ -39,7 +39,7 @@ void ParticleTypeClass::GetClassIdentifier()
   *&this->uniqueId = 0; /*0x477909*/
   if ( v2 && (this->IsAllocated) ) /*0x477910*/
   {
-    operator delete((void *)(v2)); /*0x477916*/
+    operator delete((v2)); /*0x477916*/
     *&this->vtable2 = 0; /*0x47791e*/
   }
   (this->IsAllocated) = 0; /*0x477921*/
@@ -772,7 +772,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
 {
 
   a3_2->ParticleTypeClass_field_28C = 0; /*0x645a7d*/
-  a3_2->BehavesLike = (void *)a3_2; /*0x645a80*/
+  a3_2->BehavesLike = a3_2; /*0x645a80*/
   (*((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))) = 1; /*0x645a83*/
   (((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))[1]) = 0; /*0x645a87*/
   a3_2->ArrayIndex = &vt_VectorClass; /*0x645a8a*/
@@ -795,7 +795,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
         }
         while ( v5 ); /*0x645ab1*/
       }
-      a3_2->ParticleTypeClass_field_28C = (void *)a3_2; /*0x645ab3*/
+      a3_2->ParticleTypeClass_field_28C = a3_2; /*0x645ab3*/
     }
     else
     {
@@ -849,17 +849,17 @@ TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a
 {
 
   void *v3; // eax
-  v3 = (void *)this->vtable2; /*0x477ac3*/
+  v3 = this->vtable2; /*0x477ac3*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x477ac6) */
   if ( v3 && this->ParticleTypeClass_field_2BC ) /*0x477ad0*/
   {
-    operator delete((void *)(v3)); /*0x477ad8*/
+    operator delete((v3)); /*0x477ad8*/
     this->vtable2 = 0; /*0x477ae0*/
   }
   this->ParticleTypeClass_field_2BC = 0; /*0x477aeb*/
   this->vtable3 = 0; /*0x477af1*/
   if ( (a2 & 1) != 0 ) /*0x477af8*/
-    operator delete((void *)(this)); /*0x477afb*/
+    operator delete((this)); /*0x477afb*/
   return this; /*0x477b05*/
 }
 } // namespace gamemd

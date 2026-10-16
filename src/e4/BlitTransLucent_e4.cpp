@@ -225,7 +225,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 
 
   void *m_8; // eax
-  m_8 = (void *)this->ptr_8; /*0x49a348*/
+  m_8 = this->ptr_8; /*0x49a348*/
   /* X11: vtable install elided (implicit via BlitTransLucent25Alpha virtuals 0x49a34b) */
   FractalNoise::Dtor(m_8); /*0x49a352*/
   this->m_8 = 0; /*0x49a35b*/
@@ -260,7 +260,7 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
   *&Block->u32_8 = 0; /*0x49a73b*/
   *(unsigned int *)Block->tail_0 = &vt_Blitter; /*0x49a744*/
   if ( (a2 & 1) != 0 ) /*0x49a74a*/
-    operator delete((void *)(Block)); /*0x49a74d*/
+    operator delete((Block)); /*0x49a74d*/
   return Block->tail_0; /*0x49a757*/
 }
 } // namespace gamemd

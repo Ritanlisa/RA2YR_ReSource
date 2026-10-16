@@ -837,7 +837,7 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
     return &this->AbstractClass; /*0x4b5895*/
   }
   void *v4; // eax
-  v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x4b5853*/
+  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x4b5853*/
   this->M4 = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return &this->AbstractClass; /*0x4b5860*/

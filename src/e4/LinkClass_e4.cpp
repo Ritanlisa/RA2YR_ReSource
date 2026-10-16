@@ -58,7 +58,7 @@ LinkClass * LinkClass::Destru_vt00(unsigned int * Block, char a2)
 {
   LinkClass::Destruct(Block); /*0x4e1ad3*/
   if ( (a2 & 1) != 0 ) /*0x4e1add*/
-    operator delete((void *)(Block)); /*0x4e1ae0*/
+    operator delete((Block)); /*0x4e1ae0*/
   return Block->tail_0; /*0x4e1aea*/
 }
 } // namespace gamemd

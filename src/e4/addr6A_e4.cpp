@@ -547,7 +547,7 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
   if ( g_UIControlState ) /*0x6ae394*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x6ae398*/
-    operator delete((void *)(v8)); /*0x6ae39e*/
+    operator delete((v8)); /*0x6ae39e*/
     g_UIControlState = 0; /*0x6ae3a6*/
   }
   CleanupFileTree(v10); /*0x6ae3b0*/

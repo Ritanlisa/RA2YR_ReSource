@@ -87,7 +87,7 @@ unsigned int * NetworkGameSetup::DeleteComPtr(unsigned int * Block, char a2)
 {
   ComPtr::Dtor((ComPtr *)Block); /*0x5bb563*/
   if ( (a2 & 1) != 0 ) /*0x5bb56d*/
-    operator delete((void *)(Block)); /*0x5bb570*/
+    operator delete((Block)); /*0x5bb570*/
   return Block->tail_0; /*0x5bb57a*/
 }
 } // namespace gamemd

@@ -328,7 +328,7 @@ int AircraftTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 
 
   int result; // eax
-  result = ((TechnoTypeClass *)aP1)->SaveLoad_Prefix_0( (void *)(a0), (TechnoTypeClass *)(aP1), (TechnoTypeClass *)a3); /*0x41ce9f*/
+  result = ((TechnoTypeClass *)aP1)->SaveLoad_Prefix_0( (a0), (TechnoTypeClass *)(aP1), (TechnoTypeClass *)a3); /*0x41ce9f*/
   if ( result >= 0 ) /*0x41cea6*/
     return 0; /*0x41cea8*/
   return result; /*0x41ceaa*/

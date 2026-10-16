@@ -407,7 +407,7 @@ unsigned int * AbstractClass::checkVisibility(char a2)
 {
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d7fd9) */
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
-    operator delete((void *)(this)); /*0x5d7fe2*/
+    operator delete((this)); /*0x5d7fe2*/
   return &this->vfptr; /*0x5d7fec*/
 }
 }
@@ -417,7 +417,7 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8039) */
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
-    operator delete((void *)(this)); /*0x5d8042*/
+    operator delete((this)); /*0x5d8042*/
   return &this->vfptr; /*0x5d804c*/
 }
 }
@@ -427,7 +427,7 @@ unsigned int * AbstractClass::processFogReveal(char a2)
 {
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8059) */
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
-    operator delete((void *)(this)); /*0x5d8062*/
+    operator delete((this)); /*0x5d8062*/
   return &this->vfptr; /*0x5d806c*/
 }
 }
@@ -437,7 +437,7 @@ unsigned int * AbstractClass::checkShroudState(char a2)
 {
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8079) */
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
-    operator delete((void *)(this)); /*0x5d8082*/
+    operator delete((this)); /*0x5d8082*/
   return &this->vfptr; /*0x5d808c*/
 }
 }
@@ -447,7 +447,7 @@ unsigned int * AbstractClass::updateShroudMap(char a2)
 {
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8099) */
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
-    operator delete((void *)(this)); /*0x5d80a2*/
+    operator delete((this)); /*0x5d80a2*/
   return &this->vfptr; /*0x5d80ac*/
 }
 }
@@ -894,7 +894,7 @@ Surface * AbstractClass::getObjectValue(char a2)
 {
   /* X11: vtable install elided (implicit via Surface virtuals 0x4115d9) */
   if ( (a2 & 1) != 0 ) /*0x4115df*/
-  operator delete((void *)(this)); /*0x4115e2*/
+  operator delete((this)); /*0x4115e2*/
   return (gamemd::Surface *)((std::locale::facet *)this); /*0x4115ec*/
 }
 } // namespace gamemd
@@ -1236,7 +1236,7 @@ Blitter * AbstractClass::getTileIndex(char a2)
 {
   *(unsigned int *)this->BlitterCore = (unsigned int)(&vt_Blitter); /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
-    operator delete((void *)(this)); /*0x499cd2*/
+    operator delete((this)); /*0x499cd2*/
   return (gamemd::Blitter *)((std::locale::facet *)this); /*0x499cdc*/
 }
 } // namespace gamemd
@@ -1247,7 +1247,7 @@ BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
   /* X11: vtable install elided (implicit via Blitter virtuals 0x499ce9) */
   if ( (a2 & 1) != 0 ) /*0x499cef*/
-    operator delete((void *)(this)); /*0x499cf2*/
+    operator delete((this)); /*0x499cf2*/
   return (gamemd::BlitPlainXlat *)(this); /*0x499cfc*/
 }
 } // namespace gamemd
@@ -1258,7 +1258,7 @@ BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
   /* X11: vtable install elided (implicit via Blitter virtuals 0x499d09) */
   if ( (a2 & 1) != 0 ) /*0x499d0f*/
-    operator delete((void *)(this)); /*0x499d12*/
+    operator delete((this)); /*0x499d12*/
   return this; /*0x499d1c*/
 }
 } // namespace gamemd
@@ -1269,7 +1269,7 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
   /* X11: vtable install elided (implicit via Blitter virtuals 0x499d29) */
   if ( (a2 & 1) != 0 ) /*0x499d2f*/
-    operator delete((void *)(this)); /*0x499d32*/
+    operator delete((this)); /*0x499d32*/
   return this; /*0x499d3c*/
 }
 } // namespace gamemd
@@ -1280,7 +1280,7 @@ RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
   *(unsigned int *)this->RLEBlitterCore = &vt_RLEBlitter; /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
-    operator delete((void *)(this)); /*0x499db2*/
+    operator delete((this)); /*0x499db2*/
   return (std::locale::facet *)this; /*0x499dbc*/
 }
 } // namespace gamemd
@@ -1341,7 +1341,7 @@ GScreenClass * AbstractClass::getHouseHandle(char a2)
 {
   this->vfptr[0] = (int)&off_7EA6FC; /*0x4f4c09*/
   if ( (a2 & 1) != 0 ) /*0x4f4c0f*/
-    operator delete((void *)(this)); /*0x4f4c12*/
+    operator delete((this)); /*0x4f4c12*/
   return (std::locale::facet *)this; /*0x4f4c1c*/
 }
 } // namespace gamemd
@@ -1481,7 +1481,7 @@ MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
   /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a77) */
   ((ObjectClass *)Block)->Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
-    operator delete((void *)(Block)); /*0x5b3a8b*/
+    operator delete((Block)); /*0x5b3a8b*/
   return &Block->vfptr; /*0x5b3a95*/
 }
 } // namespace gamemd
@@ -1852,7 +1852,7 @@ FileClass * AbstractClass::processAITrigger(unsigned int * Block, char a2)
 {
   *Block = (FileClass)&vt_FileClass; /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
-    operator delete((void *)(Block)); /*0x65c622*/
+    operator delete((Block)); /*0x65c622*/
   return Block; /*0x65c62c*/
 }
 } // namespace gamemd

@@ -97,7 +97,7 @@ void AudioStream::DestroyAll(void * Block)
   *(unsigned int *)(v5 + 16) = v6; /*0x403440*/
   if ( v6 < 0 ) /*0x403446*/
     *(unsigned int *)(Block->u32_18 + 16) = 0; /*0x40344b*/
-  operator delete((void *)(Block)); /*0x403453*/
+  operator delete((Block)); /*0x403453*/
 }
 }
 // 0x403820
@@ -185,7 +185,7 @@ int AudioStream::SetupPlayback()
     return 0; /*0x40476a*/
   }
   char *v6; // edx
-  v6 = (char *)(&this->q160); /*0x40476b*/
+  v6 = &this->q160; /*0x40476b*/
   do /*0x404780*/
   {
     *(unsigned int *)v6 = v3; /*0x404771*/
@@ -327,7 +327,7 @@ void AudioStream::CleanupChannels()
         if ( v2->nextArrayIndex >= 0 ) /*0x404f87*/
           PushFrontLinkedListAlt((unsigned int *)(dword_87E2A8), v2); /*0x404f9c*/
         else
-          operator delete((void *)((void *)v2)); /*0x404f8a*/
+          operator delete(((void *)v2)); /*0x404f8a*/
         v2 = (int)v3; /*0x404fa7*/
         --dword_87E28C; /*0x404fb0*/
       }
@@ -1346,7 +1346,7 @@ void AudioStream::Destructor(unsigned int * Block)
   *&Block->u32_168 = 0; /*0x40258b*/
   AudioStream::InitListAndCounters(Block); /*0x402595*/
   Block->u32_8->vt_slot_8(); /*0x4025a2*/
-  operator delete((void *)(Block)); /*0x4025a6*/
+  operator delete((Block)); /*0x4025a6*/
   return result; /*0x4025ae*/
 }
 } // namespace gamemd

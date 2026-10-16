@@ -793,7 +793,7 @@ void BrainClass::sub_43A600()
   this->u32_4 = (unsigned int)(&vt_VectorClass); /*0x43a642*/
   if ( v5 && this->u32_11 ) /*0x43a64c*/
   {
-    operator delete((void *)(v5)); /*0x43a652*/
+    operator delete((v5)); /*0x43a652*/
     this->u32_8 = 0; /*0x43a65a*/
   }
   this->u32_11 = 0; /*0x43a65d*/
@@ -827,13 +827,13 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   this->u32_4 = &vt_VectorClass; /*0x43aad3*/
   if ( v6 && this->u32_11 ) /*0x43aadd*/
   {
-    operator delete((void *)(v6)); /*0x43aae5*/
+    operator delete((v6)); /*0x43aae5*/
     this->u32_8 = 0; /*0x43aaed*/
   }
   this->u32_11 = 0; /*0x43aaf8*/
   this->u32_C = 0; /*0x43aafe*/
   if ( (a2 & 1) != 0 ) /*0x43ab05*/
-    operator delete((void *)(this)); /*0x43ab08*/
+    operator delete((this)); /*0x43ab08*/
   return &this->vfptr; /*0x43ab12*/
 }
 }
@@ -963,7 +963,7 @@ void sub_4301C0()
       {
         if ( *v0 ) /*0x4301db*/
         {
-          operator delete((void *)(*v0)); /*0x4301e2*/
+          operator delete((*v0)); /*0x4301e2*/
           *v0 = 0; /*0x4301ea*/
         }
         ++v0; /*0x4301f0*/
@@ -1105,7 +1105,7 @@ void E4Recv_431D90::sub_431D90()
   {
     if ( (this->u32_C) ) /*0x431d9d*/
     {
-      operator delete((void *)(this->nextObject)); /*0x431da3*/
+      operator delete((this->nextObject)); /*0x431da3*/
       (this->u32_C) = 0; /*0x431dab*/
     }
     this->nextObject = 0; /*0x431dae*/

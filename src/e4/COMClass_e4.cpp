@@ -44,7 +44,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
       while ( v7 ); /*0x76703f*/
     }
     if ( (a2 & 1) != 0 ) /*0x767045*/
-      operator delete((void *)(v4)); /*0x767048*/
+      operator delete((v4)); /*0x767048*/
     return v4; /*0x767050*/
   }
   else
@@ -52,7 +52,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
     /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76705a) */
     ComPtr::Release((ComPtr *)Block); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
-      operator delete((void *)(Block)); /*0x76706b*/
+      operator delete((Block)); /*0x76706b*/
     return Block->vfptr; /*0x767073*/
   }
 }  // G42.18 ns repair
@@ -63,7 +63,7 @@ VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
   *(unsigned int *)Block->tail_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
-    operator delete((void *)(Block)); /*0x766a02*/
+    operator delete((Block)); /*0x766a02*/
   return Block->tail_0; /*0x766a0c*/
 }
 } // namespace gamemd

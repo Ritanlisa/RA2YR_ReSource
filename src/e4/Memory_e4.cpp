@@ -113,7 +113,7 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   }
   v17 = lpWideCharStr; /*0x614afe*/
   wcscpy(lpWideCharStr, (const wchar_t *)v11); /*0x614b04*/
-  operator delete((void *)(v11)); /*0x614b0a*/
+  operator delete((v11)); /*0x614b0a*/
   return wcslen(v17); /*0x614b18*/
 }
 }
@@ -162,7 +162,7 @@ namespace gamemd {  // G42.18c ns repair
 char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int a6, int a7, int a8, int a9)
 {
   if ( Block && (*(((unsigned char *)&(a5)) + (sizeof(a5) - 1))) ) /*0x5c0e9e*/
-    operator delete((void *)(Block)); /*0x5c0ea1*/
+    operator delete((Block)); /*0x5c0ea1*/
   return 0; /*0x5c0eab*/
 }
 }  // G42.18c ns repair
@@ -171,7 +171,7 @@ namespace gamemd {  // G42.18c ns repair
 char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, int a6, int a7)
 {
   if ( Block && (*(((unsigned char *)&(a4)) + (sizeof(a4) - 1))) ) /*0x5c0fae*/
-    operator delete((void *)(Block)); /*0x5c0fb1*/
+    operator delete((Block)); /*0x5c0fb1*/
   return 0; /*0x5c0fbb*/
 }
 }

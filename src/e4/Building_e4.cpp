@@ -67,7 +67,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
   int v41; // [esp+40h] [ebp-8h]
   int v42; // [esp+44h] [ebp-4h]
 
-  v3 = (int *)(&this->u32_9C); /*0x425d1d*/
+  v3 = &this->u32_9C; /*0x425d1d*/
   v4 = v3[1]; /*0x425d29*/
   v5 = (unsigned __int8)(*v3 >> 31) + *v3; /*0x425d32*/
   v37 = 10000; /*0x425d34*/

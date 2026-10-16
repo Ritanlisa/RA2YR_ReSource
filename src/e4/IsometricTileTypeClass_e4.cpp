@@ -161,7 +161,7 @@ IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2, int a1, int a3, 
 {
   IsometricTileTypeClass::CleanupMembers(); /*0x54a173*/
   if ( (a2 & 1) != 0 ) /*0x54a17d*/
-    operator delete((void *)(this)); /*0x54a180*/
+    operator delete((this)); /*0x54a180*/
   return this; /*0x54a18a*/
 }
 } // namespace gamemd
@@ -175,7 +175,7 @@ void IsometricTileTypeClass::ClearBuffer(void *a1)
   *(unsigned int *)&a1->q010 = 0; /*0x54a199*/
   if ( v2 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x54a1a0*/
   {
-    operator delete((void *)(v2)); /*0x54a1a6*/
+    operator delete((v2)); /*0x54a1a6*/
     *(unsigned int *)&a1->vtable2 = 0; /*0x54a1ae*/
   }
   (((unsigned char *)&(a1->vtable4))[1]) = 0; /*0x54a1b1*/

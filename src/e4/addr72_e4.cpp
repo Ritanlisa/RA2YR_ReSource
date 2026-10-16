@@ -312,7 +312,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
         break; /*0x72ae97*/
       v3 = (int *)(a2); /*0x72ae4e*/
     }
-    operator delete((void *)(v4)); /*0x72ae9e*/
+    operator delete((v4)); /*0x72ae9e*/
     v12 = (ConvertClass *)operator new(0x188u); /*0x72aea8*/
     if ( v12 ) /*0x72aeb4*/
       v13 = ((ConvertClass *)(v12))->Construct(*a2, *a2, (int)DSurface_Alternate, 1, 0); /*0x72aecb*/
@@ -387,21 +387,21 @@ int * * LoadingScreen_InitResources()
   DataGlobal_B0FBE0 = 0; /*0x72dfc0*/
   LoadingScreen::DestroyFileTrees(); /*0x72dfc6*/
   LoadingScreen::CleanupObjects(v1); /*0x72dfcb*/
-  operator delete((void *)(*(void **)&DataGlobal_B0FC10)); /*0x72dfd6*/
+  operator delete((*(void **)&DataGlobal_B0FC10)); /*0x72dfd6*/
   *(unsigned int *)&DataGlobal_B0FC10 = 0; /*0x72dfe1*/
-  operator delete((void *)(*(void **)&DataGlobal_B0FC14)); /*0x72dfe8*/
+  operator delete((*(void **)&DataGlobal_B0FC14)); /*0x72dfe8*/
   *(unsigned int *)&DataGlobal_B0FC14 = 0; /*0x72dff3*/
-  operator delete((void *)(*(void **)&DataGlobal_B0FC18)); /*0x72dffa*/
+  operator delete((*(void **)&DataGlobal_B0FC18)); /*0x72dffa*/
   *(unsigned int *)&DataGlobal_B0FC18 = 0; /*0x72e004*/
-  operator delete((void *)(*(void **)&g_GadgetAnimState)); /*0x72e00b*/
+  operator delete((*(void **)&g_GadgetAnimState)); /*0x72e00b*/
   *(unsigned int *)&g_GadgetAnimState = 0; /*0x72e016*/
-  operator delete((void *)(*(void **)&DataGlobal_B0FC20)); /*0x72e01d*/
+  operator delete((*(void **)&DataGlobal_B0FC20)); /*0x72e01d*/
   *(unsigned int *)&DataGlobal_B0FC20 = 0; /*0x72e028*/
-  operator delete((void *)(*(void **)&DataGlobal_B0FC24)); /*0x72e02f*/
+  operator delete((*(void **)&DataGlobal_B0FC24)); /*0x72e02f*/
   *(unsigned int *)&DataGlobal_B0FC24 = 0; /*0x72e039*/
-  operator delete((void *)(*(void **)&DataGlobal_B0FC28)); /*0x72e040*/
+  operator delete((*(void **)&DataGlobal_B0FC28)); /*0x72e040*/
   *(unsigned int *)&DataGlobal_B0FC28 = 0; /*0x72e04b*/
-  operator delete((void *)(*(void **)&DataGlobal_B0FC2C)); /*0x72e052*/
+  operator delete((*(void **)&DataGlobal_B0FC2C)); /*0x72e052*/
   *(unsigned int *)&DataGlobal_B0FC2C = 0; /*0x72e05a*/
   result = ReleaseLoadingResources(v2); /*0x72e060*/
   if ( !DataGlobal_B0FBE0 ) /*0x72e06b*/
@@ -1680,8 +1680,8 @@ void E4Recv_722A20::sub_722A20()
     v4 = (void **)this->M244; /*0x722a49*/
     if ( v4 ) /*0x722a51*/
     {
-      operator delete((void *)(v4[2])); /*0x722a57*/
-      operator delete((void *)(v4)); /*0x722a5d*/
+      operator delete((v4[2])); /*0x722a57*/
+      operator delete((v4)); /*0x722a5d*/
     }
     this->M244 = 0; /*0x722a65*/
   }
@@ -1716,8 +1716,8 @@ void E4Recv_723510::sub_723510()
     v4 = (void **)this->M272; /*0x723539*/
     if ( v4 ) /*0x723541*/
     {
-      operator delete((void *)(v4[2])); /*0x723547*/
-      operator delete((void *)(v4)); /*0x72354d*/
+      operator delete((v4[2])); /*0x723547*/
+      operator delete((v4)); /*0x72354d*/
     }
     this->M272 = 0; /*0x723555*/
   }
@@ -3842,14 +3842,14 @@ void FileTree_Cleanup()
       if ( *(unsigned int *)&DataGlobal_B0FA18 ) /*0x72cfad*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FA18); /*0x72cfb1*/
-        operator delete((void *)(v1)); /*0x72cfb7*/
+        operator delete((v1)); /*0x72cfb7*/
       }
       DataGlobal_B0FCD8 = 0; /*0x72cfbf*/
     }
     *(unsigned int *)&DataGlobal_B0FA18 = 0; /*0x72cfcb*/
     if ( *(unsigned int *)&DataGlobal_B0FCDC ) /*0x72cfd3*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FCDC)); /*0x72cfd6*/
+      operator delete((*(void **)&DataGlobal_B0FCDC)); /*0x72cfd6*/
       *(unsigned int *)&DataGlobal_B0FCDC = 0; /*0x72cfde*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FCE0 ) /*0x72cfec*/

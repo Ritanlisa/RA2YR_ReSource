@@ -211,7 +211,7 @@ void* LoadFileSHP(char* Source, bool* a2) {
     *a2 = 0;                                                                                   /*0x4a38db*/
     result = (void*)SearchMIXFile(Source, 0);                                                  /*0x4a38de*/
     if (!result) {                                                                             /*0x4a38e5*/
-        ((CCFileClass*)v8)->Construct((void*)Source);                                          /*0x4a38ed*/
+        ((CCFileClass*)v8)->Construct(Source);                                          /*0x4a38ed*/
         v5 = (void*)0;                                                                         /*0x4a38f2*/
         if ((*(uint8_t(__thiscall**)(CCFileClass*, int))(*(uint32_t*)v8 + 20))((CCFileClass*)v8, 0)) {          /*0x4a38fd*/
             v6 = (size_t)(*(int(__thiscall**)(CCFileClass*))(*(uint32_t*)v8 + 44))((CCFileClass*)v8);          /*0x4a390f*/
@@ -1809,7 +1809,7 @@ int InitGame(bool no_cd)
     LoadMouseClassResources();
 
     // IDA 0x52BBC7: InitializeAudioSubsystem(g_Audio_MixerEnabled)
-    InitializeAudioSubsystem((void*)&g_Audio_MixerEnabled);
+    InitializeAudioSubsystem(&g_Audio_MixerEnabled);
 
     // IDA 0x52BBD2: Timer::PumpMessages(g_BinkMoviePlayer)
     TimerPumpMessages(g_BinkMoviePlayer);

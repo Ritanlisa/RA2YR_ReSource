@@ -54,7 +54,7 @@ void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
   }
   ((AbstractClass *)Block)->DTOR(); /*0x4a7cfa*/
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
-    operator delete((void *)(Block)); /*0x4a7d07*/
+    operator delete((Block)); /*0x4a7d07*/
   return Block->tail_0; /*0x4a7d11*/
 }
 }  // G42.18c ns repair

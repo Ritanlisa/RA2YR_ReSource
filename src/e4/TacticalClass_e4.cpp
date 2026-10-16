@@ -152,7 +152,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(unsigned int *aP1, int *aP2)
 {
 
   unsigned int v4; // eax
-  (*((unsigned char *)&(v4))) = Cell::GetAdjacentPassableMask((int16_t *)(&this->vtable46), 0); /*0x480202*/
+  (*((unsigned char *)&(v4))) = Cell::GetAdjacentPassableMask(&this->u32_B4, 0); /*0x480202*/
   this->shroudedness = v4; /*0x480207*/
   v4 = (char)v4; /*0x48020d*/
   if ( (char)v4 == -2 ) /*0x480213*/
@@ -165,7 +165,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(unsigned int *aP1, int *aP2)
   }
   RenderFogOfWar(aP1, aP2, v4); /*0x480230*/
   unsigned int result; // eax
-  result = Cell::GetAdjacentPassableMask((int16_t *)(&this->vtable46), 1); /*0x48023e*/
+  result = Cell::GetAdjacentPassableMask(&this->u32_B4, 1); /*0x48023e*/
   this->foggedness = result; /*0x480243*/
   if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 && !dword_A83D4C->defeated ) /*0x48025c*/
   {
@@ -1855,7 +1855,7 @@ void TacticalClass::CleanupResources()
   {
     if ( byte_B0CBDC[v1] ) /*0x6d027e*/
     {
-      operator delete((void *)(*v2)); /*0x6d028b*/
+      operator delete((*v2)); /*0x6d028b*/
       byte_B0CBDC[v1] = 0; /*0x6d0293*/
     }
     *v2++ = 0; /*0x6d029a*/

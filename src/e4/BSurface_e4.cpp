@@ -314,7 +314,7 @@ BSurface * BSurface::ScalarDtor(char * Block, char a2)
   Vector::Clear((int)&Block->Buffer); /*0x411656*/
   *(unsigned int *)Block->XSurface = &Surface_Vtable; /*0x41165f*/
   if ( (a2 & 1) != 0 ) /*0x411667*/
-    operator delete((void *)(Block)); /*0x41166a*/
+    operator delete((Block)); /*0x41166a*/
   return Block->XSurface; /*0x411674*/
 }
 } // namespace gamemd

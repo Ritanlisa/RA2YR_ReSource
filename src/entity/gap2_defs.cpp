@@ -555,7 +555,7 @@ namespace gamemd {
 void* AnimClass::MissionStubReturnZero3(int a2) {
   AnimClass::Destruct(this); /*0x426593*/
   if ( (a2 & 1) != 0 ) /*0x42659d*/
-    operator delete((void *)(this)); /*0x4265a0*/
+    operator delete((this)); /*0x4265a0*/
   return this; /*0x4265aa*/
 }
 }

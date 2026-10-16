@@ -101,7 +101,7 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
     *((unsigned int *)dword_A8E8D4 + v3) = (unsigned int)(this); /*0x6e7f21*/
   }
   ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
-  p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->q0A4); /*0x6e7f28*/
+  p_TaskForceClass_field_0xA4 = &this->q0A4; /*0x6e7f28*/
   int v5 = 6; // ecx /*0x6e7f2a*/
   do /*0x6e7f38*/
   {
@@ -188,7 +188,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   Block->__pad_004 = (int)&vt_TaskForceClass; /*0x6e87fc*/
   *(unsigned int *)Block->u32_8 = &vt_TaskForceClass; /*0x6e8803*/
   *&Block->u32_C = &vt_TaskForceClass; /*0x6e880a*/
-  AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x6e8811*/
+  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e8811*/
   TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/
   int v3; // eax
@@ -204,8 +204,8 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   }
   ((AbstractTypeClass *)Block)->Dtor(); /*0x6e8861*/
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
-    operator delete((void *)(Block)); /*0x6e886e*/
-  return (void **)Block; /*0x6e8878*/
+    operator delete((Block)); /*0x6e886e*/
+  return Block; /*0x6e8878*/
 }
 }
 // 0x4C4F90
@@ -268,7 +268,7 @@ char TaskForceClass::GetUnitType(char * a2)
     return 0; /*0x6e85a5*/
   int v3 = 0; // esi /*0x6e8527*/
   ObjectTypeClass **p_TaskForceClass_field_0xA4; // ebx
-  p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->q0A4); /*0x6e8529*/
+  p_TaskForceClass_field_0xA4 = &this->q0A4; /*0x6e8529*/
   do /*0x6e857d*/
   {
     char Buffer[32]; // [esp+8h] [ebp-20h] BYREF

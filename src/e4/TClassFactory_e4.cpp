@@ -29,7 +29,7 @@ int TClassFactory_CampaignClass::GetClassName()
   volatile LONG *Block; // [esp+Ch] [ebp+4h]
   v1 = InterlockedDecrement(Block + 1); /*0x6c0270*/
   if ( !v1 ) /*0x6c0274*/
-    operator delete((void *)((void *)Block)); /*0x6c0277*/
+    operator delete((Block)); /*0x6c0277*/
   return v1; /*0x6c0281*/
 }  // G42.18 ns repair
 } // namespace gamemd
@@ -42,7 +42,7 @@ int TClassFactory_MechLocomotionClass::GetClassName()
   volatile LONG *Block; // [esp+Ch] [ebp+4h]
   v1 = InterlockedDecrement(Block + 1); /*0x6c4d70*/
   if ( !v1 ) /*0x6c4d74*/
-    operator delete((void *)((void *)Block)); /*0x6c4d77*/
+    operator delete((Block)); /*0x6c4d77*/
   return v1; /*0x6c4d81*/
 }
 } // namespace gamemd

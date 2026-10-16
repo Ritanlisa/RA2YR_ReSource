@@ -118,7 +118,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   int v4; // edi
 
   void *v2; // eax
-  v2 = (void *)this->vtable4; /*0x52ab84*/
+  v2 = this->vtable4; /*0x52ab84*/
   /* X11: vtable install elided (implicit via INISection virtuals 0x52ab87) */
   free(v2); /*0x52ab8e*/
   this->vtable4 = 0; /*0x52ab98*/
@@ -191,7 +191,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     }
   }
   char *result; // eax
-  result = (char *)(&this->AnimList); /*0x52ac84*/
+  result = &this->AnimList; /*0x52ac84*/
   this->AnimList = (unsigned int)(&vt_GenericNode); /*0x52ac89*/
   if ( this != (char *)-20 ) /*0x52ac8f*/
   {
@@ -462,7 +462,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   }
   aP1->q0A0 = 0; /*0x75d19b*/
   *&aP1->u32_A4 = 1072693248; /*0x75d1a0*/
-  memcpy((void *)(aP1 + 168), (const void *)(aP1 + 160), 0x50u); /*0x75d1a7*/
+  memcpy((aP1 + 168), (aP1 + 160), 0x50u); /*0x75d1a7*/
   return aP1; /*0x75d1a9*/
 
 }
@@ -1264,7 +1264,7 @@ void WarheadTypeClass::GetClassIdentifier()
   *&this->uniqueId = 0; /*0x524ed9*/
   if ( v2 && (this->IsAllocated) ) /*0x524ee0*/
   {
-    operator delete((void *)(v2)); /*0x524ee6*/
+    operator delete((v2)); /*0x524ee6*/
     *&this->vtable2 = 0; /*0x524eee*/
   }
   (this->IsAllocated) = 0; /*0x524ef1*/
@@ -1298,13 +1298,13 @@ TypeList_flat * WarheadTypeClass::QueryInterface(unsigned int * Block, char a2)
   *Block = &vt_VectorClass; /*0x524fc6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x524fd0*/
   {
-    operator delete((void *)(v3)); /*0x524fd8*/
+    operator delete((v3)); /*0x524fd8*/
     *(Block + 1) = 0; /*0x524fe0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x524feb*/
   *(Block + 2) = 0; /*0x524ff1*/
   if ( (a2 & 1) != 0 ) /*0x524ff8*/
-    operator delete((void *)(Block)); /*0x524ffb*/
+    operator delete((Block)); /*0x524ffb*/
   return Block; /*0x525005*/
 }
 }  // G42.18c ns repair
@@ -1413,7 +1413,7 @@ WarheadTypeClass * WarheadTypeClass::parseAnimations(char * Block, char a2)
   v3 = (WarheadTypeClass *)v2; /*0x52ae01*/
   WarheadTypeClass::parseVerses(v2); /*0x52ae03*/
   if ( ((uint8_t)Block & 1) != 0 ) /*0x52ae0d*/
-    operator delete((void *)(v3)); /*0x52ae10*/
+    operator delete((v3)); /*0x52ae10*/
   return v3; /*0x52ae1a*/
 }
 }  // G42.18c ns repair

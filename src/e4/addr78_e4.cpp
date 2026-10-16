@@ -114,7 +114,7 @@ int WOL_ResetSystem()
       ObjectClass *v6 = v5; // edi /*0x780194*/
       v5 = (ObjectClass *)v5->vfptr2; /*0x780196*/
       DeleteAndZero(v6); /*0x78019f*/
-      operator delete((void *)(v6)); /*0x7801a5*/
+      operator delete((v6)); /*0x7801a5*/
     }
     ++v4; /*0x7801b6*/
     *(unsigned int *)(stru_B765EC.lastLayer + 4 * v4 - 4) = 0; /*0x7801b7*/
@@ -146,7 +146,7 @@ int WOL_ResetSystem()
       ObjectClass *v11 = v10; // edi /*0x780235*/
       v10 = (ObjectClass *)v10->vfptr2; /*0x780237*/
       DeleteAndZero(v11); /*0x780240*/
-      operator delete((void *)(v11)); /*0x780246*/
+      operator delete((v11)); /*0x780246*/
     }
     ++v9; /*0x780258*/
     *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool + 4 * v9 - 4) = 0; /*0x780259*/
@@ -1205,7 +1205,7 @@ void GameListRenderWOL(CampaignScore * a1)
     while ( v49 < v11 ); /*0x781bff*/
   }
   if ( v10 ) /*0x781c19*/
-    operator delete((void *)(v10)); /*0x781c1c*/
+    operator delete((v10)); /*0x781c1c*/
   v27 = ((String *)(&v52))->GetOrEmpty_Alt(); /*0x781c28*/
   v28 = v46; /*0x781c2d*/
   v29 = SendMessageA(v46, 0x4C5u, 0, (LPARAM)v27); /*0x781c3f*/
@@ -2284,14 +2284,14 @@ void SortWOLPlayerList(char a1)
       while ( !v11 ); /*0x7834e1*/
     }
     v17[0] = 0; /*0x7834ed*/
-    operator delete((void *)(v19)); /*0x7834f2*/
+    operator delete((v19)); /*0x7834f2*/
     v17[0] = 0; /*0x7834fb*/
-    operator delete((void *)(Block)); /*0x783500*/
+    operator delete((Block)); /*0x783500*/
   }
   else
   {
     v17[0] = 0; /*0x7832b2*/
-    operator delete((void *)(Block)); /*0x7832b7*/
+    operator delete((Block)); /*0x7832b7*/
   }
 }
 }
@@ -2415,7 +2415,7 @@ char WOL_HandleLogout()
   if ( g_UIControlState ) /*0x78608f*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x786093*/
-    operator delete((void *)(v1)); /*0x786099*/
+    operator delete((v1)); /*0x786099*/
     g_UIControlState = 0; /*0x7860a1*/
   }
   HWND v2; // eax
@@ -3075,7 +3075,7 @@ int NetworkLobbyWOL(HWND hWnd, char a2)
           }
           Dialog::ShowMessage(-1, (size_t)asc_830174); /*0x787add*/
           DeleteAndZero::Alt2((DeleteAndZero *)&DataGlobal_B73AE0); /*0x787aea*/
-          operator delete((void *)(v14)); /*0x787af0*/
+          operator delete((v14)); /*0x787af0*/
         }
       }
       StringCSF = GetStringCSF(aGuiLogincomple, 0, g_Str_File_wonline_cpp, 10388); /*0x787b09*/
@@ -3328,7 +3328,7 @@ int NetworkLobbyWOL(HWND hWnd, char a2)
             }
             while ( v58 ); /*0x788126*/
           }
-          operator delete((void *)(lastLayer)); /*0x788129*/
+          operator delete((lastLayer)); /*0x788129*/
           v54 = dword_B766B0; /*0x78812e*/
           v50 = stru_B765EC.location[0]; /*0x788134*/
         }

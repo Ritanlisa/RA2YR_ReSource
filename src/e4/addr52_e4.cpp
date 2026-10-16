@@ -215,7 +215,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x525538) */
     if ( !v18 && v22.IsAllocated ) /*0x525542*/
     {
-      operator delete((void *)(Items)); /*0x525545*/
+      operator delete((Items)); /*0x525545*/
       v22.Items = 0; /*0x52554d*/
     }
     v19 = a6; /*0x525551*/
@@ -242,7 +242,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     a1->u32_14 = v20; /*0x5255c2*/
     if ( !v18 && (*(((unsigned char *)&(a8)) + (sizeof(a8) - 1))) ) /*0x5255ce*/
       LABEL_20:
-    operator delete((void *)(v19)); /*0x5255d0*/
+    operator delete((v19)); /*0x5255d0*/
   }
   return (void *)(a1);
 }
@@ -697,7 +697,7 @@ ObjectClass * * E4Recv_52A4D0::sub_52A4D0(uint8_t * a2)
     goto LABEL_9; /*0x52a523*/
   if ( !LOBYTE(this->attachedBomb) ) /*0x52a525*/
   {
-    qsort((void *)this->fallRate, (size_t)nextObject, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a536*/
+    qsort(this->fallRate, (size_t)nextObject, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a536*/
     this->ambientSoundController[0] = 0; /*0x52a53e*/
     LOBYTE(this->attachedBomb) = 1; /*0x52a541*/
   }
@@ -717,7 +717,7 @@ ObjectClass * * E4Recv_52A4D0::sub_52A4D0(uint8_t * a2)
     return (gamemd::ObjectClass **)(*(unsigned int *)(this->ambientSoundController[0] + 4)); /*0x52a5f3*/
   if ( !LOBYTE(this->attachedBomb) ) /*0x52a577*/
   {
-    qsort((void *)this->fallRate, (size_t)v10, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a588*/
+    qsort(this->fallRate, (size_t)v10, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc3Int); /*0x52a588*/
     this->ambientSoundController[0] = 0; /*0x52a590*/
     LOBYTE(this->attachedBomb) = 1; /*0x52a593*/
   }
@@ -988,7 +988,7 @@ void InitGame()
   Array::ForEach(((Array *)a0), 3, (IUnknown *)0x100, (int (*)(int))Struct::Zero3);
   (*((unsigned char *)&(edx30))) = 0;
   v27 = (AbstractClass *)SearchMIXFile( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 84),(char)(edx30));
-  memcpy( (void *)(a0), (const void *)(v27), sizeof(a0));
+  memcpy( (void *)(a0), (v27), sizeof(a0));
   for ( m = 0; m < 256; ++m )
   {
     v24 = (ConvertClass *)(3 * (m % 256));
@@ -1011,7 +1011,7 @@ void InitGame()
     *(unsigned int *)&((unsigned char *)&stru_87C374)[13132] = 0;
   (*((unsigned char *)&(v33))) = 0;
   eax35 = (AbstractClass *)SearchMIXFile( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 72),(char)(v33));
-  memcpy( (void *)(a0), (const void *)(eax35), sizeof(a0));
+  memcpy( (void *)(a0), (eax35), sizeof(a0));
   for ( n = 0; n < 256; ++n )
   {
     v29 = (ConvertClass *)(3 * (n % 256));
@@ -1034,7 +1034,7 @@ void InitGame()
     *(unsigned int *)&((unsigned char *)&stru_87C374)[13136] = 0;
   (*((unsigned char *)&(v40))) = 0;
   eax40 = (AbstractClass *)SearchMIXFile( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 140),(char)(v40));
-  memcpy( (void *)(a0), (const void *)(eax40), sizeof(a0));
+  memcpy( (void *)(a0), (eax40), sizeof(a0));
   for ( ii = 0; ii < 256; ++ii )
   {
     v34 = (ConvertClass *)(3 * (ii % 256));
@@ -1057,7 +1057,7 @@ void InitGame()
     *(unsigned int *)&((unsigned char *)&stru_87C374)[13120] = 0;
   (*((unsigned char *)&(v47))) = 0;
   v48 = (AbstractClass *)SearchMIXFile( (char *)(aCameoPal),(char)(v47));
-  memcpy( (void *)(a0), (const void *)(v48), sizeof(a0));
+  memcpy( (void *)(a0), (v48), sizeof(a0));
   for ( jj = 0; jj < 256; ++jj )
   {
     v39 = (ConvertClass *)(3 * (jj % 256));
@@ -1080,7 +1080,7 @@ void InitGame()
     *(unsigned int *)&((unsigned char *)&stru_87C374)[13116] = 0;
   (*((unsigned char *)&(v54))) = 0;
   v55 = (AbstractClass *)SearchMIXFile( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 56),(char)(v54));
-  memcpy( (void *)(a0), (const void *)(v55), sizeof(a0));
+  memcpy( (void *)(a0), (v55), sizeof(a0));
   for ( kk = 0; kk < 256; ++kk )
   {
     v44 = (ConvertClass *)(3 * (kk % 256));
@@ -1333,7 +1333,7 @@ LABEL_94:
       goto LABEL_106;
     ((ThemeManager*)&g_BuildingTypeClass_Count)->Cleanup();
     ((ThemeClass*)&g_BuildingTypeClass_Count)->InitializeThemes( (char *)v100);
-    Audio::LoadWAVFiles( (void *)(&g_BuildingTypeClass_Count));
+    Audio::LoadWAVFiles( (&g_BuildingTypeClass_Count));
     Debug::Log();
     if ( !InitBulkData() )
   {
@@ -1649,7 +1649,7 @@ void InitRules()
       if ( *(unsigned int *)&DataGlobal_B72F58 ) /*0x52d2ee*/
       {
         if ( (((unsigned char *)&(dwInitParam.m_C))[1]) ) /*0x52d2f4*/
-          operator delete((void *)(*(void **)&DataGlobal_B72F58)); /*0x52d2f7*/
+          operator delete((*(void **)&DataGlobal_B72F58)); /*0x52d2f7*/
       }
       return 0; /*0x52d30b*/
     }
@@ -1691,7 +1691,7 @@ void InitRules()
   ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x52d3ff*/
   *(unsigned int *)dwInitParam = &vt_VectorClass; /*0x52d408*/
   if ( *(unsigned int *)&DataGlobal_B72F58 && (((unsigned char *)&(dwInitParam.m_C))[1]) ) /*0x52d418*/
-    operator delete((void *)(*(void **)&DataGlobal_B72F58)); /*0x52d41b*/
+    operator delete((*(void **)&DataGlobal_B72F58)); /*0x52d41b*/
   return 1; /*0x52d028*/
 }
 }
@@ -2475,7 +2475,7 @@ LABEL_93:
                 }
                     while ( (int)v28 < (int)g_PlayerHouseFlags_End );
                     Debug::Log();
-                    memset( (void *)(&((unsigned char *)&HouseClass_Player)[40672]), 0, 0x20u);
+                    memset( (&((unsigned char *)&HouseClass_Player)[40672]), 0, 0x20u);
                     j = 0;
                     *(unsigned short *)&((unsigned char *)&HouseClass_Player)[42332] = 0;
                     char v29 = Network::Init();
@@ -3334,7 +3334,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   v2 = (void *)this->u32_C; /*0x52aaf4*/
   /* X11: vtable install elided (implicit via INIClassINIEntry virtuals 0x52aaf7) */
   free(v2); /*0x52aafe*/
-  v7 = (void *)this->ptr_10; /*0x52ab08*/
+  v7 = this->ptr_10; /*0x52ab08*/
   this->u32_C = 0; /*0x52ab09*/
   free(v7); /*0x52ab0c*/
   v3 = this->u32_14; /*0x52ab11*/

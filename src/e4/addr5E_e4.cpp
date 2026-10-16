@@ -482,7 +482,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
 {
 
   char *v2; // edi
-  v2 = (char *)((void *)(a1));
+  v2 = (char *)((a1));
   if ( !a1 ) /*0x5e39c9*/
     v2 = (char *)(unk_A8B380); /*0x5e39cb*/
   char *v4; // eax
@@ -1043,7 +1043,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
         *(unsigned int *)&(&HouseClass_Player)[21864[4 * *(unsigned int *)&((unsigned char *)&stru_830620)[4228] + 18396] ]= (unsigned int)v37;
         LABEL_98:
         if ( v35 >= 0 && v35 != *&HouseClass_Player->u32_27500)
-          SetupSkirmishPlayerSlots( (HWND)v31, (void *)((void *)v35), 0);
+          SetupSkirmishPlayerSlots( (HWND)v31, ((void *)v35), 0);
       }
     }
       LABEL_101:
@@ -1055,7 +1055,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
       {
       ((String *)((char **)&v198[24]))->Assign((const char *)a2);
       AssignWOLPlayerSide((const char **)&v198[24], (int)v47);
-      j_DeleteAndZero( (void*)(&v198[24]));
+      j_DeleteAndZero( (&v198[24]));
     }
       else
       {
@@ -1071,7 +1071,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
       case 'L':
         ((String *)((char **)&v198[24]))->Assign( (const char *)(&Source->u32_1));
         CharStringToWide((ObjectClass *)&v198[32], (const char **)&v198[24]);
-        j_DeleteAndZero( (void*)(&v198[24]));
+        j_DeleteAndZero( (&v198[24]));
         v76 = (CampaignScore *)((WideString *)(wchar_t **)&v198[32])->GetOrEmpty();
         ((NetworkLobby *)v76)->SetupPlayers();
         v77 = (HWND)((gamemd::Dialog*)((void *)0xC9))->FindByHandle();
@@ -1085,7 +1085,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
         while ( !*v79 || _wcsicmp(v80, *v79) )
         {
           ++v79;
-          v78 = (void *)((char *)v78 + 1);
+          v78 = ((char *)v78 + 1);
           if ( (int)v79 >= (int)&HouseClass_Player->u32_27590)
             goto LABEL_171;
         }
@@ -1257,7 +1257,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
               }
               v99 = v83(v77, v98);
               EnableWindow(v99, 0);
-              SetupSkirmishPlayerSlots( (void *)((void *)(v77)), (void *)((void *)k), 0);
+              SetupSkirmishPlayerSlots( ((v77)), ((void *)k), 0);
             }
             if ( ebp212 )
             {
@@ -1292,7 +1292,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
             }
             v101 = v83(v77, v100);
             EnableWindow(v101, 1);
-            SetupSkirmishPlayerSlots( (void *)((void *)(v77)), (void *)((void *)ebp212), (HWND)1);
+            SetupSkirmishPlayerSlots( ((v77)), ((void *)ebp212), (HWND)1);
             SetupSkirmishDialogPlayerSlot( (HWND)(v77), *&HouseClass_Player->u32_27500);
             MapSkirmishDialogPlayerToControl( (HWND)(v77), *&HouseClass_Player->u32_27500);
             FillLobbyFactionComboBox(v77, *&HouseClass_Player->u32_27500);
@@ -1457,7 +1457,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
     if ( (bl313 & 2) != 0 )
     {
       bl313 &= ~2u;
-      j_DeleteAndZero( (void*)(&v198[24]));
+      j_DeleteAndZero( (&v198[24]));
     }
     if ( (bl313 & 1) != 0 )
       ((DeleteAndZero*)((void **)&v198[52]))->Alt();

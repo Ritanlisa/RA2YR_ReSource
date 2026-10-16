@@ -124,7 +124,7 @@ int GameConfig::ComputeHash()
   v10 = 0; /*0x679e1b*/
   char v11; // [esp+50h] [ebp-84h]
   v11 = 0; /*0x679e1f*/
-  v6[0] = (void *)((unsigned int)&CCINIClass_Vtable); /*0x679e23*/
+  v6[0] = (void*)(&CCINIClass_Vtable); /*0x679e23*/
   unsigned int v12[22]; // [esp+68h] [ebp-6Ch] BYREF
   CCFileClass::Construct(v12, g_Str_File_CoopCampMD_ini); /*0x679e2b*/
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/

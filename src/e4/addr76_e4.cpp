@@ -133,7 +133,7 @@ unsigned int * unknown_libname_36(ObjectClass *self)
   self->vfptr = 0; /*0x7636f4*/
   self->vfptr1 = 0; /*0x7636f6*/
   self->vfptr2 = 0; /*0x7636f9*/
-  return (unsigned int *)(&self->vfptr); /*0x7636fc*/
+  return &self->vtable1; /*0x7636fc*/
 }
 }  // G42.18 ns repair
 // 0x764B90
@@ -798,7 +798,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
                 abstractFlags = v55.abstractFlags; /*0x7697d1*/
               }
               if ( (((unsigned char *)&(v54))[1]) ) /*0x7697db*/
-                operator delete((void *)(Block)); /*0x7697e2*/
+                operator delete((Block)); /*0x7697e2*/
             }
             Block = v13; /*0x7697ea*/
             v53 = v11; /*0x7697ee*/
@@ -849,7 +849,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
                   abstractFlags = v55.abstractFlags; /*0x7698b2*/
                 }
                 if ( (((unsigned char *)&(v51.m_C))[1]) ) /*0x7698bc*/
-                  operator delete((void *)(*(void **)&v51.m_1[3])); /*0x7698c3*/
+                  operator delete((*(void **)&v51.m_1[3])); /*0x7698c3*/
               }
               *(unsigned int *)&v51.m_1[3] = v22; /*0x7698cb*/
               v51.m_8 = v11; /*0x7698cf*/
@@ -1918,7 +1918,7 @@ rc_ptr * ConstructorWDTFlagOption(rc_ptr_base * a1, int a2, void * a3, int a4, v
   String v14; // [esp-8h] [ebp-14h] BYREF
 
   void *v9; // esi
-  v9 = (void *)operator new(0x1Cu); /*0x76746e*/
+  v9 = operator new(0x1Cu); /*0x76746e*/
   if ( v9 ) /*0x767475*/
   {
     *(unsigned int *)&v14.ptr_4 = aP5; /*0x76747f*/

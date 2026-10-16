@@ -285,7 +285,7 @@ unsigned int * COMClass::marshalInterface(char a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x767c53*/
   ComPtr::Release((ComPtr *)this); /*0x767c59*/
   if ( (a2 & 1) != 0 ) /*0x767c63*/
-    operator delete((void *)(this)); /*0x767c66*/
+    operator delete((this)); /*0x767c66*/
   return this->__pad_000; /*0x767c70*/
 }
 } // namespace gamemd
@@ -1724,13 +1724,13 @@ unsigned int * StringVector::QueryInterface(char a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x49efa6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x49efb0*/
   {
-    operator delete((void *)(v3)); /*0x49efb8*/
+    operator delete((v3)); /*0x49efb8*/
     *&this->Items = 0; /*0x49efc0*/
   }
   (this->IsAllocated) = 0; /*0x49efcb*/
   this->Capacity = 0; /*0x49efd1*/
   if ( (a2 & 1) != 0 ) /*0x49efd8*/
-    operator delete((void *)(this)); /*0x49efdb*/
+    operator delete((this)); /*0x49efdb*/
   return this->vtable1; /*0x49efe5*/
 }
 } // namespace gamemd
@@ -1785,13 +1785,13 @@ LONG EnumConnectionsClass::Release() {
     {
       if ( (this->u32_11) ) /*0x4a0073*/
       {
-        operator delete((void *)(EnumConnectionsClass_field_0x08)); /*0x4a007b*/
+        operator delete((EnumConnectionsClass_field_0x08)); /*0x4a007b*/
         this->q008 = 0; /*0x4a0083*/
       }
     }
     (this->u32_11) = 0; /*0x4a008b*/
     this->q00C = 0; /*0x4a008f*/
-    operator delete((void *)(this)); /*0x4a0096*/
+    operator delete((this)); /*0x4a0096*/
     return 0; /*0x4a009e*/
   }
   return result; /*0x4a00a1*/
@@ -1902,13 +1902,13 @@ LONG EnumConnectionPointsClass::Release() {
     {
       if ( (this->u32_19) ) /*0x4a0a13*/
       {
-        operator delete((void *)(EnumConnectionPointsClass_field_0x10)); /*0x4a0a1b*/
+        operator delete((EnumConnectionPointsClass_field_0x10)); /*0x4a0a1b*/
         this->q010 = 0; /*0x4a0a23*/
       }
     }
     (this->u32_19) = 0; /*0x4a0a2b*/
     this->q014 = 0; /*0x4a0a2f*/
-    operator delete((void *)(this)); /*0x4a0a36*/
+    operator delete((this)); /*0x4a0a36*/
     return 0; /*0x4a0a3e*/
   }
   return result; /*0x4a0a41*/
@@ -2823,7 +2823,7 @@ void *** GraphicMenuAnimItem::QueryInterface(char a2) {
     (**v3)(v3, 1); /*0x4f30f4*/
   GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f30f8*/
   if ( (a2 & 1) != 0 ) /*0x4f3102*/
-    operator delete((void *)(this)); /*0x4f3105*/
+    operator delete((this)); /*0x4f3105*/
   return (void ***)this; /*0x4f310f*/
 }
 } // namespace gamemd
@@ -2954,10 +2954,10 @@ void *** GraphicMenuItem_Destru::QueryInterface(char a2) {
   if ( v3 ) /*0x4f3b2f*/
   {
     j_DeleteAndZero(v3); /*0x4f3b33*/
-    operator delete((void *)(v3)); /*0x4f3b39*/
+    operator delete((v3)); /*0x4f3b39*/
   }
   if ( (a2 & 1) != 0 ) /*0x4f3b46*/
-    operator delete((void *)(this)); /*0x4f3b49*/
+    operator delete((this)); /*0x4f3b49*/
   return (void ***)this; /*0x4f3b53*/
 }
 } // namespace gamemd
@@ -2997,14 +2997,14 @@ unsigned int * GraphicMenuShortcutItem::QueryInterface(char a2) {
   this->__pad_004 = 0; /*0x4f3f6e*/
   if ( v3 && this->u32_1D ) /*0x4f3f77*/
   {
-    operator delete((void *)(v3)); /*0x4f3f7f*/
+    operator delete((v3)); /*0x4f3f7f*/
     this->u32_14 = 0; /*0x4f3f87*/
   }
   this->u32_1D = 0; /*0x4f3f90*/
   this->u32_18 = 0; /*0x4f3f94*/
   GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f3f9b*/
   if ( (a2 & 1) != 0 ) /*0x4f3fa5*/
-    operator delete((void *)(this)); /*0x4f3fa8*/
+    operator delete((this)); /*0x4f3fa8*/
   return this->vtable1; /*0x4f3fb2*/
 }
 } // namespace gamemd
@@ -3398,13 +3398,13 @@ unsigned int * unknown::QueryInterface(char a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x58a426) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x58a430*/
   {
-    operator delete((void *)(v3)); /*0x58a438*/
+    operator delete((v3)); /*0x58a438*/
     *&this->Items = 0; /*0x58a440*/
   }
   (this->IsAllocated) = 0; /*0x58a44b*/
   this->Capacity = 0; /*0x58a451*/
   if ( (a2 & 1) != 0 ) /*0x58a458*/
-    operator delete((void *)(this)); /*0x58a45b*/
+    operator delete((this)); /*0x58a45b*/
   return this->vtable1; /*0x58a465*/
 }
 } // namespace gamemd
@@ -3756,7 +3756,7 @@ void Tree::Destructor() {
     v3 = (Tree *)this->u32_4; /*0x5b4092*/
     if ( v3 ) /*0x5b4097*/
       Tree::Destructor(v3); /*0x5b4099*/
-    operator delete((void *)(this)); /*0x5b409f*/
+    operator delete((this)); /*0x5b409f*/
   }
 }
 } // namespace gamemd
@@ -4281,7 +4281,7 @@ namespace gamemd {
 unsigned int * COMClass::initInterface(char a2) {
   *this = (ReferenceCounted)0; /*0x65d6a9*/
   if ( (a2 & 1) != 0 ) /*0x65d6af*/
-    operator delete((void *)(this)); /*0x65d6b2*/
+    operator delete((this)); /*0x65d6b2*/
   return this; /*0x65d6bc*/
 }
 } // namespace gamemd
@@ -4319,7 +4319,7 @@ int * RandomStraw::QueryInterface(char a2) {
   memsetthis->q010, 0, 0x100u); /*0x661c8a*/
   Straw::Dtor((Straw *)this); /*0x661c8e*/
   if ( (a2 & 1) != 0 ) /*0x661c98*/
-    operator delete((void *)(this)); /*0x661c9b*/
+    operator delete((this)); /*0x661c9b*/
   return (int *)this->vtable1; /*0x661ca5*/
 }
 } // namespace gamemd
@@ -4587,7 +4587,7 @@ char * COMClass::createInstance(char a2) {
       while ( v7 ); /*0x765bdf*/
     }
     if ( (a2 & 1) != 0 ) /*0x765be5*/
-      operator delete((void *)(v4)); /*0x765be8*/
+      operator delete((v4)); /*0x765be8*/
     return v4; /*0x765bf0*/
   }
   else
@@ -4595,7 +4595,7 @@ char * COMClass::createInstance(char a2) {
     *(unsigned int *)this->__pad_000 = 0; /*0x765bfa*/
     ComPtr::Release((ComPtr *)this); /*0x765c00*/
     if ( (a2 & 1) != 0 ) /*0x765c08*/
-      operator delete((void *)(this)); /*0x765c0b*/
+      operator delete((this)); /*0x765c0b*/
     return this->__pad_000; /*0x765c13*/
   }
 }
@@ -4616,7 +4616,7 @@ unsigned int * COMClass::getInterface(char a2) {
   (this->IsAllocated) = 0; /*0x765c4c*/
   this->Capacity = 0; /*0x765c52*/
   if ( (a2 & 1) != 0 ) /*0x765c59*/
-    operator delete((void *)(this)); /*0x765c5c*/
+    operator delete((this)); /*0x765c5c*/
   return this->vtable1; /*0x765c66*/
 }
 } // namespace gamemd
@@ -4629,7 +4629,7 @@ void ** COMClass::coUninitialize(char a2) {
   *(unsigned int *)this->__pad_000 = 0; /*0x767895*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x76789b*/
   if ( (a2 & 1) != 0 ) /*0x7678a5*/
-    operator delete((void *)(this)); /*0x7678a8*/
+    operator delete((this)); /*0x7678a8*/
   return (void **)this; /*0x7678b2*/
 }
 } // namespace gamemd
@@ -4649,7 +4649,7 @@ namespace gamemd {
 unsigned int * VectorCursor::drawCursor(char a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x76f149) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x76f14f*/
-    operator delete((void *)(this)); /*0x76f152*/
+    operator delete((this)); /*0x76f152*/
   return this->vtable1; /*0x76f15c*/
 }
 } // namespace gamemd
@@ -4663,7 +4663,7 @@ void ** PlayerProfile::QueryInterface(char a2) {
   DeleteAndZero(&this->ObjectClass_3); /*0x77b04c*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x77b053*/
   if ( (a2 & 1) != 0 ) /*0x77b05d*/
-    operator delete((void *)(this)); /*0x77b060*/
+    operator delete((this)); /*0x77b060*/
   return (void **)this; /*0x77b06a*/
 }
 } // namespace gamemd
@@ -4694,7 +4694,7 @@ int HashMap::Shrink2() {
     v14 = *(int **)this->__pad_000; /*0x7adf96*/
     this->u32_8 = HashMap_field_0x08 >> 1; /*0x7adf9c*/
     this->u32_C = HashMap_field_0x0C - 1; /*0x7adfa4*/
-    v6 = (void *)operator new(4 * (HashMap_field_0x08 >> 1)); /*0x7adfaf*/
+    v6 = operator new(4 * (HashMap_field_0x08 >> 1)); /*0x7adfaf*/
     v7 = 4 * this->u32_8; /*0x7adfb4*/
     *(unsigned int *)this->__pad_000 = v6; /*0x7adfbb*/
     memset(v6, 0, v7); /*0x7adfc0*/
@@ -4724,7 +4724,7 @@ int HashMap::Shrink2() {
       while ( v9 ); /*0x7ae003*/
       v4 = v14; /*0x7ae005*/
     }
-    operator delete((void *)(v4)); /*0x7ae00a*/
+    operator delete((v4)); /*0x7ae00a*/
   }
   return result; /*0x7ae014*/
 }
@@ -4763,7 +4763,7 @@ int HashMap::Shrink() {
     v14 = *(int **)this->__pad_000; /*0x7ae486*/
     this->u32_8 = HashMap_field_0x08 >> 1; /*0x7ae48c*/
     this->u32_C = HashMap_field_0x0C - 1; /*0x7ae494*/
-    v6 = (void *)operator new(4 * (HashMap_field_0x08 >> 1)); /*0x7ae49f*/
+    v6 = operator new(4 * (HashMap_field_0x08 >> 1)); /*0x7ae49f*/
     v7 = 4 * this->u32_8; /*0x7ae4a4*/
     *(unsigned int *)this->__pad_000 = v6; /*0x7ae4ab*/
     memset(v6, 0, v7); /*0x7ae4b0*/
@@ -4793,7 +4793,7 @@ int HashMap::Shrink() {
       while ( v9 ); /*0x7ae4f3*/
       v4 = v14; /*0x7ae4f5*/
     }
-    operator delete((void *)(v4)); /*0x7ae4fa*/
+    operator delete((v4)); /*0x7ae4fa*/
   }
   return result; /*0x7ae504*/
 }

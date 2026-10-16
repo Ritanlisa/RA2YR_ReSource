@@ -23,13 +23,13 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_MSShapeAnim; /*0x5ceb86*/
   if ( v3 && *((unsigned char *)Block + 60) ) /*0x5ceb90*/
   {
-    operator delete((void *)(v3)); /*0x5ceb98*/
+    operator delete((v3)); /*0x5ceb98*/
     *((unsigned int *)Block + 7) = 0; /*0x5ceba0*/
     *((unsigned char *)Block + 60) = 0; /*0x5ceba7*/
   }
   *(unsigned int *)Block->tail_0 = &vt_MSAnim; /*0x5cebaf*/
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/
-    operator delete((void *)(Block)); /*0x5cebba*/
+    operator delete((Block)); /*0x5cebba*/
   return Block->tail_0; /*0x5cebc4*/
 }
 } // namespace gamemd

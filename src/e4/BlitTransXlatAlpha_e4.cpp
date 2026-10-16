@@ -432,7 +432,7 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
   *((unsigned int *)Block + 2) = 0; /*0x49a25b*/
   *(unsigned int *)Block->tail_0 = &vt_Blitter; /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
-    operator delete((void *)(Block)); /*0x49a26d*/
+    operator delete((Block)); /*0x49a26d*/
   return Block->tail_0; /*0x49a277*/
 }
 } // namespace gamemd

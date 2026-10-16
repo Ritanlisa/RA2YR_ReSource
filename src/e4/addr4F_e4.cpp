@@ -243,7 +243,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         {
           if ( *(unsigned char *)(*(unsigned int *)v10->vfptr + 492) && !*(unsigned char *)(*(unsigned int *)v10->vfptr + 501) ) /*0x4f19af*/
             ++v8; /*0x4f19b8*/
-          v10 = (gamemd::HouseClass *)(&v10->vtable2); /*0x4f19b9*/
+          v10 = &v10->vtable2; /*0x4f19b9*/
           --v11; /*0x4f19bc*/
         }
         while ( v11 ); /*0x4f19bd*/
@@ -989,12 +989,12 @@ unsigned int * sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
   int v16; // [esp+18h] [ebp-4h]
 
   v16 = 0; /*0x4f38be*/
-  unknown_libname_73( (void *)(&v13)); /*0x4f38c6*/
+  unknown_libname_73( (&v13)); /*0x4f38c6*/
   ((String *)&v15)->Assign( (const char *)(&g_INI_DefaultBuffer)); /*0x4f38d4*/
   ((String *)&v14)->Assign( (const char *)(g_INI_Key_Type)); /*0x4f38e2*/
   ((INIClass *)a2)->ReadString( (char **)(Source), (char **)(&v14), (char **)(&v15), (int)&v13); /*0x4f38f9*/
-  j_DeleteAndZero( (void *)((void **)&v14)); /*0x4f3902*/
-  j_DeleteAndZero( (void *)((void **)&v15)); /*0x4f390b*/
+  j_DeleteAndZero( ((void **)&v14)); /*0x4f3902*/
+  j_DeleteAndZero( ((void **)&v15)); /*0x4f390b*/
   v6 = (unsigned int *)(0); /*0x4f3914*/
   if ( (uint8_t)((String *)(const char **)&v13)->Equals_Alt( (const char *)(g_INI_Key_Image)) ) /*0x4f391b*/
   {
@@ -1013,12 +1013,12 @@ unsigned int * sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
   v6 = v7; /*0x4f397f*/
   if ( v7 ) /*0x4f3983*/
   {
-    unknown_libname_73( (void *)(&a4)); /*0x4f398e*/
+    unknown_libname_73( (&a4)); /*0x4f398e*/
     ((String *)&v15)->Assign( (const char *)(&g_INI_DefaultBuffer)); /*0x4f399c*/
     ((String *)&a3)->Assign( aSelectsound); /*0x4f39aa*/
     v8 = ((INIClass *)a2)->ReadString( (char **)(Source), (char **)(&a3), (char **)(&v15), (int)&a4) > 0; /*0x4f39cc*/
-    j_DeleteAndZero( (void *)((void **)&a3)); /*0x4f39cf*/
-    j_DeleteAndZero( (void *)((void **)&v15)); /*0x4f39d8*/
+    j_DeleteAndZero( ((void **)&a3)); /*0x4f39cf*/
+    j_DeleteAndZero( ((void **)&v15)); /*0x4f39d8*/
     if ( v8 ) /*0x4f39df*/
     {
       v9 = (int)(operator new(0x10u)); /*0x4f39e8*/
@@ -1035,12 +1035,12 @@ unsigned int * sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
       }
       v6->u32_C = v11; /*0x4f3a20*/
       if ( (v10 & 1) != 0 ) /*0x4f3a23*/
-        j_DeleteAndZero( (void *)((void **)&a3)); /*0x4f3a29*/
+        j_DeleteAndZero( ((void **)&a3)); /*0x4f3a29*/
     }
-    j_DeleteAndZero( (void *)((void **)&a4)); /*0x4f3a32*/
+    j_DeleteAndZero( ((void **)&a4)); /*0x4f3a32*/
   }
   LABEL_15:
-  j_DeleteAndZero( (void *)((void **)&v13)); /*0x4f3a38*/
+  j_DeleteAndZero( ((void **)&v13)); /*0x4f3a38*/
   return v6; /*0x4f3a43*/
 }
 }
@@ -1253,7 +1253,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   v11 = &vt_VectorClass; /*0x4fa2b4*/
   char v14; // [esp+15h] [ebp-Fh]
   if ( !v4 && v14 ) /*0x4fa2c2*/
-    operator delete((void *)(v9)); /*0x4fa2c5*/
+    operator delete((v9)); /*0x4fa2c5*/
   return a2; /*0x4fa2cf*/
 }
 }
@@ -1623,7 +1623,7 @@ unsigned int VectorClass::sub_4F2C00(int a2, int a3)
       this->Items = (void *)a3; /*0x4f2c28*/
       return &this->vfptr; /*0x4f2c2e*/
     }
-    this->Items = (void *)operator new(4 * a2); /*0x4f2c3d*/
+    this->Items = operator new(4 * a2); /*0x4f2c3d*/
     this->IsAllocated = 1; /*0x4f2c40*/
   }
   return &this->vfptr; /*0x4f2c2d*/

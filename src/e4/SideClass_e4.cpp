@@ -117,7 +117,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   {
     v20->ObjectClass = v19; /*0x679c9c*/
     MissionClass::LoadFromINI(v20, aP0); /*0x679c9e*/
-    v20 = (gamemd::MissionClass *)(&v20->NeedsSaveOrLink); /*0x679ca3*/
+    v20 = &v20->NeedsSaveOrLink; /*0x679ca3*/
     ++v19; /*0x679ca6*/
   }
   while ( (int)v20 < (int)&dword_A8E7A8 ); /*0x679cad*/

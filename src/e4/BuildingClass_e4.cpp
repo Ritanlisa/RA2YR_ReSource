@@ -740,7 +740,7 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
         v110.q018 = *(unsigned int *)(_EBP + 160); /*0x739ffb*/
         v110.q01C = *(unsigned int *)(_EBP + 164); /*0x73a002*/
         v14 = (*(int (**)(int))(v13 + 132))(_EBP) + 1212; /*0x73a015*/
-        v15 = Random::State( (void *)(&Randomizer_Global)); /*0x73a01b*/
+        v15 = Random::State( (&Randomizer_Global)); /*0x73a01b*/
         p_ComPtr_field_0x14 = &v110.q014; /*0x73a022*/
         StartAudioControllerAt( /*0x73a033*/
             *(unsigned int *)(*(unsigned int *)(v14 + 4) + 4 * (v15 % *(unsigned int *)(v14 + 16))),
@@ -754,7 +754,7 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
         v16 = *(unsigned int *)_EBP; /*0x73a06b*/
         v110.q01C = *(unsigned int *)(_EBP + 164); /*0x73a071*/
         v17 = (*(int (**)(int))(v16 + 132))(_EBP) + 1296; /*0x73a082*/
-        v18 = Random::State( (void *)(&Randomizer_Global)); /*0x73a088*/
+        v18 = Random::State( (&Randomizer_Global)); /*0x73a088*/
         p_ComPtr_field_0x14 = &v110.q014; /*0x73a08f*/
         StartAudioControllerAt( /*0x73a0a0*/
             *(unsigned int *)(*(unsigned int *)(v17 + 4) + 4 * (v18 % *(unsigned int *)(v17 + 16))),
@@ -1228,7 +1228,7 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
                                                 *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),
                                                 landType,
                                                 &v110.q020);
-            ((AnimClass *)v89)->ctor( (void *)(WarheadVersusMultiplier), (int *)(&v110.q014), 0, 1, (void *)0x2600, (void *)(v104), 0); /*0x73af47*/
+            ((AnimClass *)v89)->ctor( (WarheadVersusMultiplier), (int *)(&v110.q014), 0, 1, (void *)0x2600, (v104), 0); /*0x73af47*/
           }
           v93 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008); /*0x73af5c*/
           v94 = *(unsigned int *)(_EBP + 108); /*0x73af62*/

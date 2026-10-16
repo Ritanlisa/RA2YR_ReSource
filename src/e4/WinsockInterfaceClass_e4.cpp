@@ -33,40 +33,40 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   if ( v2 ) /*0x7b1ac4*/
   {
     ((SOCKET *)this)->UnregisterAsync(); /*0x7b1ac6*/
-    (*(void (**)(int))(*(unsigned int *)this + 4))(this); /*0x7b1ad0*/
+    (*(void (**)(int))(*&this->u32_10))(this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
     this->u32_3F068 = 0; /*0x7b1ad8*/
   }
   void *v3; // eax
-  v3 = *(void **)(this + 60); /*0x7b1ade*/
-  *(unsigned int *)(this + 56) = (unsigned int)(&vt_VectorClass); /*0x7b1ae1*/
-  if ( v3 && *(unsigned char *)(this + 69) ) /*0x7b1aec*/
+  v3 = this->u32_3C; /*0x7b1ade*/
+  this->u32_38 = (unsigned int)(&vt_VectorClass); /*0x7b1ae1*/
+  if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
-    *(unsigned int *)(this + 60) = 0; /*0x7b1afa*/
+    this->u32_3C = 0; /*0x7b1afa*/
   }
-  *(unsigned char *)(this + 69) = 0; /*0x7b1afd*/
-  *(unsigned int *)(this + 64) = 0; /*0x7b1b00*/
+  this->u32_45 = 0; /*0x7b1afd*/
+  this->u32_40 = 0; /*0x7b1b00*/
   void *v4; // eax
-  v4 = *(void **)(this + 36); /*0x7b1b03*/
-  *(unsigned int *)(this + 32) = (unsigned int)(&vt_VectorClass); /*0x7b1b06*/
-  if ( v4 && *(unsigned char *)(this + 45) ) /*0x7b1b11*/
+  v4 = this->u32_24; /*0x7b1b03*/
+  this->u32_20 = (unsigned int)(&vt_VectorClass); /*0x7b1b06*/
+  if ( v4 && this->u32_2D ) /*0x7b1b11*/
   {
     __3_YAXPAX_Z(v4); /*0x7b1b17*/
-    *(unsigned int *)(this + 36) = 0; /*0x7b1b1f*/
+    this->u32_24 = 0; /*0x7b1b1f*/
   }
-  *(unsigned char *)(this + 45) = 0; /*0x7b1b22*/
-  *(unsigned int *)(this + 40) = 0; /*0x7b1b25*/
+  this->u32_2D = 0; /*0x7b1b22*/
+  this->u32_28 = 0; /*0x7b1b25*/
   void *v5; // eax
-  v5 = *(void **)(this + 12); /*0x7b1b28*/
-  *(unsigned int *)(this + 8) = (unsigned int)(&vt_VectorClass); /*0x7b1b2b*/
-  if ( v5 && *(unsigned char *)(this + 21) ) /*0x7b1b36*/
+  v5 = this->u32_C; /*0x7b1b28*/
+  this->__pad_008 = (unsigned int)(&vt_VectorClass); /*0x7b1b2b*/
+  if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {
     __3_YAXPAX_Z(v5); /*0x7b1b3c*/
-    *(unsigned int *)(this + 12) = 0; /*0x7b1b44*/
+    this->u32_C = 0; /*0x7b1b44*/
   }
-  *(unsigned char *)(this + 21) = 0; /*0x7b1b47*/
-  *(unsigned int *)(this + 16) = 0; /*0x7b1b4a*/
+  this->u32_15 = 0; /*0x7b1b47*/
+  this->u32_10 = 0; /*0x7b1b4a*/
 
 }
 

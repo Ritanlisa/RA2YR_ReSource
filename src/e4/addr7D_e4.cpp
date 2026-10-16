@@ -5251,7 +5251,7 @@ AbstractClass * * __init_ctype()
       v1 = 1; /*0x7d6cac*/
     }
     free(Block); /*0x7d6c83*/
-    free((void *)lpSrcStr); /*0x7d6c8b*/
+    free(lpSrcStr); /*0x7d6c8b*/
     return v1; /*0x7d6c91*/
   }
   else

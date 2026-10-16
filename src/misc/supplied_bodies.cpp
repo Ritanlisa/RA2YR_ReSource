@@ -406,7 +406,7 @@ int AudioSample::Destructor() {
   v6 = (void (__thiscall ***)(unsigned int, int))this->u32_7C; /*0x407b20*/
   if ( v6 ) /*0x407b25*/
     (**v6)(v6, 1); /*0x407b2b*/
-  operator delete((void *)(this)); /*0x407b2e*/
+  operator delete((this)); /*0x407b2e*/
   return result; /*0x407b36*/
 }
 }
@@ -459,8 +459,8 @@ void AudioSample::InitLinkedList() {
       v4->abstractFlags = v5 - AudioSample_field_0x04->referenceCount; /*0x408878*/
       v4->uniqueId &= ~2u; /*0x408880*/
       if ( AudioSample_field_0x04->uniqueId ) /*0x408883*/
-        operator delete((void *)(*(void **)(AudioSample_field_0x04 + 16))); /*0x40888b*/
-      operator delete((void *)((void *)AudioSample_field_0x04)); /*0x408894*/
+        operator delete((*(void **)(AudioSample_field_0x04 + 16))); /*0x40888b*/
+      operator delete(((void *)AudioSample_field_0x04)); /*0x408894*/
       AudioSample_field_0x04 = *p_AudioSample_field_0x04; /*0x408899*/
     }
     while ( (int *)*p_AudioSample_field_0x04 != p_AudioSample_field_0x04 ); /*0x4088a0*/
@@ -507,7 +507,7 @@ void AudioSample::InitLinkedList() {
   }
   while ( v12 ); /*0x408906*/
   *p_AudioSample_field_0x10 += this->abstractFlags; /*0x408913*/
-  operator delete((void *)(this)); /*0x408916*/
+  operator delete((this)); /*0x408916*/
 }
 } // namespace gamemd
 
@@ -2000,7 +2000,7 @@ void * BuildingLoadQueue::GetNext() {
         {
           g_BuildingLoadQueue_Array.uniqueId = uniqueId; /*0x6e6ea3*/
   LABEL_10:
-          v5 = (void ***)(uniqueId + 4); /*0x6e6ea8*/
+          v5 = &uniqueId->u32_4; /*0x6e6ea8*/
           return __RTDynamicCast( /*0x6e6ecf*/
                    *v5,
                    0,0,0,
@@ -2035,7 +2035,7 @@ void * BuildingLoadQueue::Find() {
     return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f37*/
   uniqueId = g_BuildingLoadQueue_Array.uniqueId; /*0x6e6f39*/
   if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == *(unsigned int *)this->m_Queue ) /*0x6e6f49*/
-    return AbstractClass::IsTechnoType(*(AbstractClass **)(uniqueId + 4)); /*0x6e6fdf*/
+    return AbstractClass::IsTechnoType(uniqueId->u32_4); /*0x6e6fdf*/
   if ( !(*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) ) /*0x6e6f56*/
   {
     qsort( /*0x6e6f67*/
@@ -2064,7 +2064,7 @@ void * BuildingLoadQueue::Find() {
   }
   if ( v6 != v4 ) /*0x6e6fa7*/
   {
-    vtable0 = (unsigned int *)(uniqueId + 8); /*0x6e6fa9*/
+    vtable0 = &uniqueId->u32_8; /*0x6e6fa9*/
     vtable1 += -1 - vtable1 / 2; /*0x6e6fb1*/
     goto LABEL_12; /*0x6e6fb1*/
   }
@@ -2095,7 +2095,7 @@ int BuildingLoadQueue::FindObject() {
   if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == *(unsigned int *)this->m_Queue ) /*0x6e7019*/
   {
   LABEL_17:
-    v7 = (void ***)(uniqueId + 4); /*0x6e70b3*/
+    v7 = &uniqueId->u32_4; /*0x6e70b3*/
     return (int)__RTDynamicCast(*v7, 0,0,0, 0); /*0x6e70b6*/
   }
   if ( !(*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) ) /*0x6e7026*/
@@ -2126,7 +2126,7 @@ int BuildingLoadQueue::FindObject() {
   }
   if ( v6 != v4 ) /*0x6e7077*/
   {
-    vtable0 = (unsigned int *)(uniqueId + 8); /*0x6e7079*/
+    vtable0 = &uniqueId->u32_8; /*0x6e7079*/
     vtable1 += -1 - vtable1 / 2; /*0x6e7081*/
     goto LABEL_12; /*0x6e7081*/
   }

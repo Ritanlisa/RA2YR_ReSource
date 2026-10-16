@@ -247,7 +247,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
           if ( !g_UIControlState ) /*0x5e1cf7*/
             return 0; /*0x5e1cf7*/
           ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e1cff*/
-          operator delete((void *)(g_UIControlState)); /*0x5e1d05*/
+          operator delete((g_UIControlState)); /*0x5e1d05*/
           g_UIControlState = 0; /*0x5e1d0d*/
           return 0; /*0x5e1d20*/
         case 0xFu: /*0x5e1cd0*/
@@ -496,7 +496,7 @@ void GameOption_WorldDominationTour::QueryInterface()
 {
   GameOption_WorldDominationTour::Constructor(this); /*0x766a63*/
   if ( (a2 & 1) != 0 ) /*0x766a6d*/
-    operator delete((void *)(this)); /*0x766a70*/
+    operator delete((this)); /*0x766a70*/
   return this->__pad_000; /*0x766a7a*/
 }
 // 0x5b8ce0
@@ -1810,7 +1810,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                     *(unsigned int *)&DataGlobal_AC1B50 >>= 1; /*0x60e9da*/
                     --*(unsigned int *)&g_DialogHashMap_Insert; /*0x60e9e4*/
                     *(unsigned int *)&g_DialogHashMap_Entries = new unsigned char[4 * (v101 >> 1)]; /*0x60e9fc*/
-                    memset(*(void **)&g_DialogHashMap_Entries, 0, 4 * *(unsigned int *)&DataGlobal_AC1B50); /*0x60ea04*/
+                    memset(*&g_DialogHashMap_Entries, 0, 4 * *(unsigned int *)&DataGlobal_AC1B50); /*0x60ea04*/
                     if ( v103 > 0 ) /*0x60ea06*/
                     {
                       v102 = v102; /*0x60ea08*/
@@ -1868,7 +1868,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                   *(unsigned int *)&DataGlobal_AC1B50 >>= 1; /*0x60eacd*/
                   --*(unsigned int *)&g_DialogHashMap_Insert; /*0x60ead9*/
                   *(unsigned int *)&g_DialogHashMap_Entries = new unsigned char[4 * *(unsigned int *)&DataGlobal_AC1B50]; /*0x60eaf2*/
-                  memset(*(void **)&g_DialogHashMap_Entries, 0, 4 * *(unsigned int *)&DataGlobal_AC1B50); /*0x60eafa*/
+                  memset(*&g_DialogHashMap_Entries, 0, 4 * *(unsigned int *)&DataGlobal_AC1B50); /*0x60eafa*/
                   if ( v111 > 0 ) /*0x60eafc*/
                   {
                     v112 = (int *)dy.q004; /*0x60eafe*/
@@ -1962,7 +1962,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                   *(unsigned int *)&DataGlobal_AC1B08 >>= 1; /*0x60ed2d*/
                   --*(unsigned int *)&g_DialogHashMap_Buckets; /*0x60ed39*/
                   *(unsigned int *)&g_DialogHashMap_Base = new unsigned char[4 * *(unsigned int *)&DataGlobal_AC1B08]; /*0x60ed52*/
-                  memset(*(void **)&g_DialogHashMap_Base, 0, 4 * *(unsigned int *)&DataGlobal_AC1B08); /*0x60ed5a*/
+                  memset(*&g_DialogHashMap_Base, 0, 4 * *(unsigned int *)&DataGlobal_AC1B08); /*0x60ed5a*/
                   if ( v131 > 0 ) /*0x60ed5c*/
                   {
                     v130 = v130; /*0x60ed5e*/
@@ -2302,7 +2302,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
               WideString::AssignFromPtr(&v189, (const wchar_t **)&v184); /*0x60e30a*/
               DeleteAndZero::Alt(&v184); /*0x60e313*/
               WideString::Reassign_Alt((void **)&dy, (const wchar_t **)&v189); /*0x60e321*/
-              DeleteAndZero_Alt((void *)&v189); /*0x60e32a*/
+              DeleteAndZero_Alt(&v189); /*0x60e32a*/
               v67 = WideString::GetOrEmpty((wchar_t **)&dy); /*0x60e338*/
               if ( wcscmp(v67, &g_TypeClass_DefaultString) ) /*0x60e33e*/
                 goto LABEL_137; /*0x60e33e*/
@@ -2529,7 +2529,7 @@ void GameSetup_DisplayPlayers()
     v38 = 0; /*0x5db0f1*/
     (*((unsigned char *)&(v42))) = 0; /*0x5db0f9*/
     v39 = 1 << (v10 - 1); /*0x5db0fe*/
-    Block = (void *)operator new(4 * v39); /*0x5db113*/
+    Block = operator new(4 * v39); /*0x5db113*/
     memset(Block, 0, 4 * v39); /*0x5db117*/
     v43 = GameSetup::CompareWideString; /*0x5db122*/
     RehashGenericHashMap(v8, (int)&Block); /*0x5db12a*/
@@ -2658,7 +2658,7 @@ void GameSetup_DisplayPlayers()
         v24 = j; /*0x5db530*/
         v39 = j >> 1; /*0x5db534*/
         --v40; /*0x5db53d*/
-        Block = (void *)operator new(4 * (j >> 1)); /*0x5db551*/
+        Block = operator new(4 * (j >> 1)); /*0x5db551*/
         memset(Block, 0, 4 * v39); /*0x5db557*/
         if ( v24 > 0 ) /*0x5db559*/
         {
@@ -2686,13 +2686,13 @@ void GameSetup_DisplayPlayers()
           }
           while ( v26 ); /*0x5db593*/
         }
-        operator delete((void *)(v23)); /*0x5db596*/
+        operator delete((v23)); /*0x5db596*/
         v22 = v48; /*0x5db59b*/
         j = v39; /*0x5db59f*/
       }
       while ( v39 > v48 ); /*0x5db5a8*/
     }
-    operator delete((void *)(Block)); /*0x5db5b3*/
+    operator delete((Block)); /*0x5db5b3*/
     DeleteAndZero::Alt((DeleteAndZero *)&v35.q004); /*0x5db5bf*/
     DeleteAndZero::Alt(&v35); /*0x5db5c8*/
   }
@@ -3040,7 +3040,7 @@ void LoadSaveDialog::FillList()
 
   Gadget::InitProperties((Gadget *)&lParam); /*0x5596b4*/
   for ( i = 0; i < ((unsigned int)(this->u32_30)); ++i ) /*0x5596c2*/
-    operator delete((void *)(*(void **)(((unsigned int)(this->u32_24)) + 4 * i))); /*0x5596cb*/
+    operator delete((*(void **)(((unsigned int)(this->u32_24)) + 4 * i))); /*0x5596cb*/
   v4 = &this->u32_20; /*0x5596de*/
   (*(void (**)(LoadSaveDialog *))(((unsigned int)(this->u32_20)) + 12))(&this->q00C); /*0x5596e3*/
   if ( ((unsigned int)(this->u32_4)) == 2 ) /*0x5596ea*/
@@ -3159,7 +3159,7 @@ void LoadSaveDialog::FillList()
     }
     while ( FindNextFileA(hFindFile, &FindFileData) ); /*0x559968*/
     if ( v14 ) /*0x559978*/
-      operator delete((void *)(v14)); /*0x55997b*/
+      operator delete((v14)); /*0x55997b*/
     FindClose(hFindFile); /*0x559988*/
   }
   v20 = (signed int)this->u32_30; /*0x55998e*/
@@ -3613,7 +3613,7 @@ void LoadScreen::RenderLoop()
     {
       CCFileClass::Construct(&v382, *(char **)(&dword_820334 + v2)); /*0x4b6c86*/
       Size = CCFileClass::GetSize(&v382); /*0x4b6c92*/
-      v4 = (void *)new unsigned char[Size]; /*0x4b6ca7*/
+      v4 = new unsigned char[Size]; /*0x4b6ca7*/
       v5 = CCFileClass::GetSize(&v382); /*0x4b6ca9*/
       CCFileClass::Read(&v382, v4, v5); /*0x4b6cb7*/
       v380[v2] = (int)v4; /*0x4b6cc3*/
@@ -6223,7 +6223,7 @@ void LoadingScreen::Render()
             wcscpy(Destination, result); /*0x5530f5*/
             v21 = Color::ConvertToRGB(LoadScreenAnim + 194, (int)&v80); /*0x553108*/
             v72 = *(unsigned short *)v21; /*0x553115*/
-            v79 = v21->ConvertClass_field_0x2; /*0x553123*/
+            v79 = v21->field_2; /*0x553123*/
             v81.q018 = 0; /*0x553170*/
             v81.q01C = 0; /*0x553174*/
             v22 = ((uint8_t)v72 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x55318a*/
@@ -6323,7 +6323,7 @@ void MultiplayerGameMode::Dtor()
   this->u32_8 = (int)0; /*0x5d5d89*/
   if ( MultiplayerGameMode_field_0x0C && (this->u32_15) ) /*0x5d5d93*/
   {
-    operator delete((void *)(MultiplayerGameMode_field_0x0C)); /*0x5d5d99*/
+    operator delete((MultiplayerGameMode_field_0x0C)); /*0x5d5d99*/
     this->u32_C = 0; /*0x5d5da1*/
   }
   (this->u32_15) = 0; /*0x5d5da4*/
@@ -6745,7 +6745,7 @@ void SaveLoadDialog::DlgProc()
     v16 = hWnd; /*0x558ff4*/
   }
   for ( i = 0; i < this->u32_30; ++i ) /*0x5595b1*/
-    operator delete((void *)(*(void **)(this->u32_24 + 4 * i))); /*0x5595ba*/
+    operator delete((*(void **)(this->u32_24 + 4 * i))); /*0x5595ba*/
   (*(void (**)(char *))(this->u32_20 + 12))(&this->u32_20); /*0x5595d0*/
   Dialog::Destroy(Dialog); /*0x5595d5*/
   return this->u32_18 == 1039; /*0x558ea9*/
@@ -7364,7 +7364,7 @@ void SkirmishMapGen::DlgProc()
       if ( dword_ABE154 ) /*0x596859*/
       {
         ComPtr::Dtor(dword_ABE154); /*0x59685d*/
-        operator delete((void *)(v47)); /*0x596863*/
+        operator delete((v47)); /*0x596863*/
       }
       dword_ABE154 = 0; /*0x596877*/
       v48 = GetDlgItem(hWnd, 1733); /*0x596881*/

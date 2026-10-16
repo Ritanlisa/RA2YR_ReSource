@@ -49,7 +49,7 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( Piggybackee ) /*0x69eee6*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x69eeeb*/
   *p_Piggybackee = 0; /*0x69eef5*/
-  return OleLoadFromStream((LPSTREAM)v2,(void *)(&IID_ILocomotion), p_Piggybackee); /*0x69ef01*/
+  return OleLoadFromStream((LPSTREAM)v2,(&IID_ILocomotion), p_Piggybackee); /*0x69ef01*/
 }  // G42.18 ns repair
 } // namespace gamemd
 // 0x69EF10
@@ -142,7 +142,7 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    operator delete((void *)(Block)); /*0x6a42e3*/
+    operator delete((Block)); /*0x6a42e3*/
   return Block->0; /*0x6a42ed*/
 }
 } // namespace gamemd

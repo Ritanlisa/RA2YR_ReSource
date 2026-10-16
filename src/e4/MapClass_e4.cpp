@@ -84,14 +84,14 @@ unsigned int * MapClass::AllocArrays()
   unsigned int *result; // eax
 
   void **v1; // esi
-  v1 = (void **)(&this->q130); /*0x42c1c8*/
+  v1 = &this->q130; /*0x42c1c8*/
   char *v2; // edi
   v2 = (char *)(&unk_87F810 - (void *)this); /*0x42c1cb*/
   int v3 = 3; // ebx /*0x42c1cd*/
   do /*0x42c27c*/
   {
     if ( *(v1 - 3) ) /*0x42c1d2*/
-      operator delete((void *)(*(v1 - 3))); /*0x42c1da*/
+      operator delete((*(v1 - 3))); /*0x42c1da*/
     char *v4; // eax
     v4 = (char *)operator new(4 * *(int *)((char *)v1 + (unsigned int)v2)); /*0x42c1e9*/
     *(v1 - 3) = v4; /*0x42c1ee*/
@@ -112,7 +112,7 @@ unsigned int * MapClass::AllocArrays()
       while ( v7 ); /*0x42c208*/
     }
     if ( *v1 ) /*0x42c20a*/
-      operator delete((void *)(*v1)); /*0x42c211*/
+      operator delete((*v1)); /*0x42c211*/
     char *v8; // eax
     v8 = (char *)operator new(4 * *(int *)((char *)v1 + (unsigned int)v2)); /*0x42c220*/
     *v1 = v8; /*0x42c225*/
@@ -133,7 +133,7 @@ unsigned int * MapClass::AllocArrays()
       while ( v11 ); /*0x42c23e*/
     }
     if ( v1[3] ) /*0x42c240*/
-      operator delete((void *)(v1[3])); /*0x42c248*/
+      operator delete((v1[3])); /*0x42c248*/
     result = (unsigned int *)(operator new(4 * *(int *)((char *)v1 + (unsigned int)v2))); /*0x42c257*/
     v1[3] = result; /*0x42c25c*/
     int v13; // ecx
@@ -505,7 +505,7 @@ ObjectClass * * MapClass::LoadFileData()
   if ( *&this->u32_A4 ) /*0x547043*/
     __3_YAXPAX_Z(*&this->u32_A4); /*0x54704e*/
   void *v3; // eax
-  v3 = (void *)__2_YAPAXI_Z(Size); /*0x547057*/
+  v3 = __2_YAPAXI_Z(Size); /*0x547057*/
   *&this->u32_A4 = (unsigned int)(v3); /*0x547063*/
   CCFileClass::Read(&v12, v3, Size); /*0x54706b*/
   unsigned __int8 *v4; // eax
@@ -766,9 +766,9 @@ VectorClass_flat * * MapClass::Destru_vt05()
   }
   v1->q014 = (int)v4; /*0x5658e9*/
   LABEL_14:
-  v13 = (char *)(&v1->LevelAndPassabilityStruct2pointer_70); /*0x5658f3*/
+  v13 = &v1->LevelAndPassabilityStruct2pointer_70; /*0x5658f3*/
   v27 = &v1->q080; /*0x5658ff*/
-  v28 = (char *)(&v1->LevelAndPassabilityStruct2pointer_70); /*0x565903*/
+  v28 = &v1->LevelAndPassabilityStruct2pointer_70; /*0x565903*/
   v29 = 3; /*0x565907*/
   do /*0x5659d3*/
   {
@@ -2582,7 +2582,7 @@ void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown)
     if ( v69.Items ) /*0x5751fb*/
     {
       if ( v69.IsAllocated ) /*0x575203*/
-        operator delete((void *)(v69.Items)); /*0x575206*/
+        operator delete((v69.Items)); /*0x575206*/
     }
   }
 }
@@ -2682,7 +2682,7 @@ void * MapClass::ClearShroud(HouseClass * aP1)
   int v8; // eax
   int v9; // edx
 
-  result = (void *)aP1; /*0x577f30*/
+  result = aP1; /*0x577f30*/
   if ( aP1 ) /*0x577f3a*/
     *(unsigned char *)(*(&dword_A8022C->vtable0 + aP1->relatedTagsCount) + 577) = 1; /*0x577f48*/
   if ( (Object *)aP1 == dword_A83D4C ) /*0x577f55*/

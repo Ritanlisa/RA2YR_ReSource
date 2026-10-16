@@ -219,7 +219,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     || (v27 = *&this->location,
         v28 = *&this->__pad_0A0,
         v29 = *&this->q0A4,
-        LOBYTE(VoxelAnimClass_field_0x104) = Game::Stub3((IUnknown *)((int)&v27)),
+        LOBYTE(VoxelAnimClass_field_0x104) = Game::Stub3((IUnknown*)(&v27)),
         !(unsigned char)VoxelAnimClass_field_0x104) )
   {
     v6 = a2[1]; /*0x749bcb*/
@@ -443,7 +443,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   if ( v1->q140 <= 0 ) /*0x749f9c*/
   {
     int *v7; // esi
-    v7 = (int *)(&v1->location); /*0x749fa2*/
+    v7 = &v1->location; /*0x749fa2*/
     v97 = (int)(*&v1->location); /*0x749fac*/
     v98 = *&v1->__pad_0A0; /*0x749fbd*/
     v99 = *&v1->q0A4; /*0x749fc4*/
@@ -1111,7 +1111,7 @@ VoxelAnimClass * VoxelAnimClass::DrawVoxel(void * Block, char a2)
 {
   VoxelAnimClass::CleanupMembers(Block); /*0x74ab53*/
   if ( (a2 & 1) != 0 ) /*0x74ab5d*/
-    operator delete((void *)(Block)); /*0x74ab60*/
+    operator delete((Block)); /*0x74ab60*/
   return Block; /*0x74ab6a*/
 }
 } // namespace gamemd

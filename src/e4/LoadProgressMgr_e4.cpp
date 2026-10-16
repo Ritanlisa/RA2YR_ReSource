@@ -14,7 +14,7 @@ void sub_72B460()
 {
   if ( *(unsigned int *)&DataGlobal_B0FB7C ) /*0x72b46a*/
   {
-    operator delete((void *)(*(void **)&DataGlobal_B0FB7C)); /*0x72b46d*/
+    operator delete((*(void **)&DataGlobal_B0FB7C)); /*0x72b46d*/
     *(unsigned int *)&DataGlobal_B0FB7C = 0; /*0x72b475*/
   }
   if ( *(unsigned int *)&DataGlobal_B0FB80 ) /*0x72b483*/
@@ -26,7 +26,7 @@ void sub_72B460()
   }
   if ( *(unsigned int *)&DataGlobal_B0FB84 ) /*0x72b498*/
   {
-    operator delete((void *)(*(void **)&DataGlobal_B0FB84)); /*0x72b49b*/
+    operator delete((*(void **)&DataGlobal_B0FB84)); /*0x72b49b*/
     *(unsigned int *)&DataGlobal_B0FB84 = 0; /*0x72b4a3*/
   }
   if ( *(unsigned int *)&DataGlobal_B0FB88 ) /*0x72b4b1*/
@@ -38,7 +38,7 @@ void sub_72B460()
   }
   if ( *(unsigned int *)&DataGlobal_B0FB8C ) /*0x72b4c6*/
   {
-    operator delete((void *)(*(void **)&DataGlobal_B0FB8C)); /*0x72b4c9*/
+    operator delete((*(void **)&DataGlobal_B0FB8C)); /*0x72b4c9*/
     *(unsigned int *)&DataGlobal_B0FB8C = 0; /*0x72b4d1*/
   }
   if ( *(unsigned int *)&DataGlobal_B0FB90 ) /*0x72b4df*/
@@ -64,12 +64,12 @@ void sub_72B870()
   }
   if ( *(unsigned int *)&dword_B0FB9C ) /*0x72b890*/
   {
-    operator delete((void *)(*(void **)&dword_B0FB9C)); /*0x72b893*/
+    operator delete((*(void **)&dword_B0FB9C)); /*0x72b893*/
     *(unsigned int *)&dword_B0FB9C = 0; /*0x72b89b*/
   }
   if ( *(unsigned int *)&DataGlobal_B0FB94 ) /*0x72b8a8*/
   {
-    operator delete((void *)(*(void **)&DataGlobal_B0FB94)); /*0x72b8ab*/
+    operator delete((*(void **)&DataGlobal_B0FB94)); /*0x72b8ab*/
     *(unsigned int *)&DataGlobal_B0FB94 = 0; /*0x72b8b3*/
   }
   if ( *(unsigned int *)&g_PaletteManagerPool ) /*0x72b8c1*/

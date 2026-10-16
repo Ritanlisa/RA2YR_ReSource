@@ -118,12 +118,12 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
     }
     if ( v3->RadarCellBuffer ) /*0x654695*/
     {
-      operator delete((void *)(*((void **)v3 + 1167))); /*0x6546a0*/
+      operator delete((*((void **)v3 + 1167))); /*0x6546a0*/
       v3->RadarCellBuffer = 0.0; /*0x6546a8*/
     }
     if ( v3->RadarPointBuffer ) /*0x6546ae*/
     {
-      operator delete((void *)(*((void **)v3 + 1181))); /*0x6546b9*/
+      operator delete((*((void **)v3 + 1181))); /*0x6546b9*/
       v3->RadarPointBuffer = 0.0; /*0x6546c1*/
     }
     GenerateImageThumbnail(v3, v19, v5, v5, 1); /*0x6546d3*/
@@ -370,7 +370,7 @@ unsigned int * RadarClass::initRadarSurface()
   this->q008 = 0; /*0x4f4227*/
   *(unsigned int *)this->u32_C = 2; /*0x4f422a*/
   /* X11: vtable install elided (implicit via off_7EA6FC virtuals 0x4f4231) */
-  return (unsigned int *)(&this->vtable1); /*0x4f4237*/
+  return &this->vtable1; /*0x4f4237*/
 
 }
 } // namespace gamemd

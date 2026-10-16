@@ -1570,7 +1570,7 @@ int TechnoClass_DrawVoxel(TechnoClass *ecx0, int64_t a2, int a3, int a4, int a5,
     float * v35 = (float *)((AudioConfig *)(v147))->InitDefault();
     v33 = (ParticleSystemClass *)MultiplyMatrix3x4( (ObjectClass *)v148, (float *)(v35), (float *)(v145));
   }
-  memcpy( (void *)(v146), (const void *)(v33), sizeof(v146));
+  memcpy( (void *)(v146), (v33), sizeof(v146));
   if ( !TechnoClass::OwnerHasPower(ecx0) || *(unsigned char *)(ecx0[433] + 3285) )
   {
     char v107; // [esp+109h] [ebp-1B3h]

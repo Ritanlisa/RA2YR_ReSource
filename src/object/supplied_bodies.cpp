@@ -301,7 +301,7 @@ int * AudioController::Constructor()
   if ( v2 ) /*0x402148*/
   {
     v2->u32_D4->vt_slot_8(); /*0x402152*/
-    operator delete((void *)((void *)v2)); /*0x402156*/
+    operator delete(((void *)v2)); /*0x402156*/
   }
   return 0; /*0x40215e*/
 }
@@ -3791,7 +3791,7 @@ int TechnoClass::EvacuateFootprintCells()
     result = (int)Block; /*0x458c91*/
     v35 = 0; /*0x458c95*/
     if ( Block && (((unsigned char *)&(v34))[1]) ) /*0x458ca1*/
-      operator delete((void *)(Block)); /*0x458ca4*/
+      operator delete((Block)); /*0x458ca4*/
     (*((unsigned char *)&(result))) = 0; /*0x458caf*/
     return result; /*0x458cb5*/
   }
@@ -3832,7 +3832,7 @@ int TechnoClass::EvacuateFootprintCells()
   result = (int)Block; /*0x458d7e*/
   v31 = 0; /*0x458d82*/
   if ( Block && (((unsigned char *)&(v34))[1]) ) /*0x458d92*/
-    operator delete((void *)(Block)); /*0x458d95*/
+    operator delete((Block)); /*0x458d95*/
   (*((unsigned char *)&(result))) = 1; /*0x458da0*/
   return result; /*0x458cac*/
 }
@@ -7350,7 +7350,7 @@ int FootClass::Destru_vt08()
 {
   FootClass::Destruct(this); /*0x4e0173*/
   if ( (a2 & 1) != 0 ) /*0x4e017d*/
-    operator delete((void *)(this)); /*0x4e0180*/
+    operator delete((this)); /*0x4e0180*/
   return this; /*0x4e018a*/
 }
 } // namespace ra2::game
@@ -8357,7 +8357,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
           v98 = ((v98) & 0xFFFFu) | (((unsigned int)(v32) & 0xFFFFu) << 16); /*0x5fc9e3*/
           a2 = v98; /*0x5fc9ee*/
           v97 = (&dword_8333F8)[v29 / 2]; /*0x5fca08*/
-          if ( (uint8_t)LayerClass_CoordinatesLegal((void *)&dword_87F7E8, (int16_t *)&a2) ) /*0x5fca0c*/
+          if ( (uint8_t)LayerClass_CoordinatesLegal(&dword_87F7E8, (int16_t *)&a2) ) /*0x5fca0c*/
           {
             while ( !v30 ) /*0x5fca1b*/
             {
@@ -8373,7 +8373,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
                 v98 = ((v98) & 0xFFFFu) | (((unsigned int)((unsigned short)((a2) >> 16) + v35) & 0xFFFFu) << 16); /*0x5fca5a*/
                 a2 = v98; /*0x5fca63*/
               }
-              if ( !(uint8_t)LayerClass_CoordinatesLegal((void *)&dword_87F7E8, (int16_t *)&a2) ) /*0x5fca71*/
+              if ( !(uint8_t)LayerClass_CoordinatesLegal(&dword_87F7E8, (int16_t *)&a2) ) /*0x5fca71*/
               {
                 if ( !v30 ) /*0x5fca7c*/
                   goto LABEL_131; /*0x5fca7c*/
@@ -8497,7 +8497,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
           v98 = ((v98) & 0xFFFFu) | (((unsigned int)(v59) & 0xFFFFu) << 16); /*0x5fce11*/
           a2 = v98; /*0x5fce1c*/
           *(unsigned int *)v100 = (&dword_833440)[v56 / 2]; /*0x5fce36*/
-          if ( (uint8_t)LayerClass_CoordinatesLegal((void *)&dword_87F7E8, (int16_t *)&a2) ) /*0x5fce3a*/
+          if ( (uint8_t)LayerClass_CoordinatesLegal(&dword_87F7E8, (int16_t *)&a2) ) /*0x5fce3a*/
           {
             while ( !v57 ) /*0x5fce49*/
             {
@@ -8513,7 +8513,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
                 v98 = ((v98) & 0xFFFFu) | (((unsigned int)((unsigned short)((a2) >> 16) + v62) & 0xFFFFu) << 16); /*0x5fce88*/
                 a2 = v98; /*0x5fce91*/
               }
-              if ( !(uint8_t)LayerClass_CoordinatesLegal((void *)&dword_87F7E8, (int16_t *)&a2) ) /*0x5fce9f*/
+              if ( !(uint8_t)LayerClass_CoordinatesLegal(&dword_87F7E8, (int16_t *)&a2) ) /*0x5fce9f*/
               {
                 if ( !v57 ) /*0x5fceaa*/
                   goto LABEL_131; /*0x5fceaa*/
@@ -8865,15 +8865,15 @@ int TechnoClass::RemoveBuildingFromScripts()
             ScriptQueue::PushEntry((ScriptQueue *)v5); /*0x6388d5*/
         }
         *(unsigned int *)(v7 + 8) = -1; /*0x6388da*/
-        operator delete((void *)(*((void **)Block + 1))); /*0x6388e9*/
+        operator delete((*((void **)Block + 1))); /*0x6388e9*/
         v11 = (*(int (__thiscall **)(int, void **))(*(unsigned int *)v5 + 16))(v5, &Block); /*0x6388fa*/
         if ( v11 != -1 ) /*0x638900*/
           Vector4::EraseAt_Copy((Vector4 *)v5, v11); /*0x638905*/
-        operator delete((void *)(Block)); /*0x63890f*/
+        operator delete((Block)); /*0x63890f*/
         if ( !*(unsigned int *)(v5 + 16) && v5 ) /*0x638920*/
         {
           TechnoClass::ClearScriptPlanningData((TechnoClass *)v5); /*0x638924*/
-          operator delete((void *)((void *)v5)); /*0x63892a*/
+          operator delete(((void *)v5)); /*0x63892a*/
         }
       }
       v4 = i + 1; /*0x63893a*/
@@ -9419,7 +9419,7 @@ int TechnoClass::CalculateDamage()
     v13 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v27) + 59); /*0x663240*/
     v18 = v34; /*0x66325a*/
     (*((unsigned int *)&(v18))) = Return::HRESULT_Fail(v32, v33, v34); /*0x663266*/
-    WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(v12, v19, v13, &v32); /*0x66327d*/
+    WarheadVersusMultiplier = GetWarheadVersusMultiplier(v12, v19, v13, &v32); /*0x66327d*/
     AnimClass::ctor(v26, WarheadVersusMultiplier, &v32, 0, 1, (void *)0x2600, (void *)v18, SBYTE4(v18)); /*0x663287*/
   }
   CreateSmokeEffectAt(v12, v19, v32, v33, v34, 0, 0); /*0x6632af*/
@@ -10303,7 +10303,7 @@ int TechnoClass::PushNearbyUnits()
       if ( Block ) /*0x6f5072*/
       {
         if ( (((unsigned char *)&(v18))[1]) ) /*0x6f507a*/
-          operator delete((void *)(Block)); /*0x6f507d*/
+          operator delete((Block)); /*0x6f507d*/
       }
     }
   }
@@ -13178,7 +13178,7 @@ void FootClass::UpdateLocomotion()
                   this);
               v37 = 0; /*0x6fbbf0*/
               if ( Block && v41 ) /*0x6fbc00*/
-                operator delete((void *)(Block)); /*0x6fbc03*/
+                operator delete((Block)); /*0x6fbc03*/
             }
             else
             {
@@ -15339,7 +15339,7 @@ int TechnoClass::UpdateState()
         }
         while ( v25 < *(unsigned int *)&v8[1] ); /*0x706a95*/
       }
-      operator delete((void *)(*(void **)v8)); /*0x706a9a*/
+      operator delete((*(void **)v8)); /*0x706a9a*/
       v28 = v54 + *(unsigned int *)&v8[2]; /*0x706aa9*/
       *v8 = (SortedStateVector)v23; /*0x706aab*/
       v8[2] = (SortedStateVector)v28; /*0x706aad*/
@@ -15389,7 +15389,7 @@ int TechnoClass::UpdateState()
       }
       while ( v35 < *(unsigned int *)&v8[1] ); /*0x706b6b*/
     }
-    operator delete((void *)(*(void **)v8)); /*0x706b70*/
+    operator delete((*(void **)v8)); /*0x706b70*/
     v38 = v8[2]; /*0x706b75*/
     *v8 = (SortedStateVector)result; /*0x706b7d*/
     v8[2] = (SortedStateVector)(v31 + *(unsigned int *)&v38); /*0x706b7f*/
@@ -19049,7 +19049,7 @@ int TechnoClass::ScalarDtor()
 {
   TechnoClass::DTOR((int)this); /*0x7106e3*/
   if ( (a2 & 1) != 0 ) /*0x7106ed*/
-    operator delete((void *)(this)); /*0x7106f0*/
+    operator delete((this)); /*0x7106f0*/
   return this; /*0x7106fa*/
 }
 } // namespace ra2::game

@@ -92,7 +92,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v50; // [esp+68h] [ebp-4h]
 
   BuildingPlacement *v2; // ebp
-  v2 = (gamemd::BuildingPlacement *)(&this->q040); /*0x54c55e*/
+  v2 = &this->q040; /*0x54c55e*/
   CellClass *v3; // eax
   v3 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &this->q040)); /*0x54c562*/
   int BuildingPlacement_field_0x0C = this->q00C; // ecx /*0x54c567*/
@@ -647,10 +647,10 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
         LABEL_74:
         v20 = (int)v8[1].vtable0; /*0x5953da*/
         if ( v20 >= v40 ) /*0x5953e3*/
-          return (unsigned int *)(&v8->vtable0); /*0x5953e3*/
+          return &v8->q010; /*0x5953e3*/
       }
     }
-    return (unsigned int *)(&v8->vtable0); /*0x5951a4*/
+    return &v8->q010; /*0x5951a4*/
   }
   v21 = v8->Capacity; /*0x5951e1*/
   v22 = v5->__pad_004; /*0x5951e7*/
@@ -663,9 +663,9 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     v25 = v8->Items; /*0x59521f*/
     v8[1].vtable0 = &v24->AbstractClass_1; /*0x595225*/
     v25[(unsigned int)v24] = *v22; /*0x59522a*/
-    return (unsigned int *)(&v8->vtable0); /*0x595235*/
+    return &v8->q010; /*0x595235*/
   }
-  return (unsigned int *)(&v8->vtable0); /*0x594fbd*/
+  return &v8->q010; /*0x594fbd*/
 
 }
 } // namespace gamemd

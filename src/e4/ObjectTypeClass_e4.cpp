@@ -143,7 +143,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
 
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
   int *v3; // eax
-  v3 = (int *)(&this->TurretVoxel); /*0x5f70a3*/
+  v3 = &this->TurretVoxel; /*0x5f70a3*/
   this->u32_98 = 0; /*0x5f70a9*/
   this->__pad_099 = 0; /*0x5f70af*/
   this->u32_9A = 0; /*0x5f70b5*/
@@ -225,7 +225,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_28C = 0; /*0x5f7243*/
   this->Image_d = 0; /*0x5f7249*/
   *this = (int)&vt_ObjectTypeClass; /*0x5f7251*/
-  this->zero_3C = (void *)((int)&vt_ObjectTypeClass); /*0x5f7258*/
+  this->zero_3C = (void*)(&vt_ObjectTypeClass); /*0x5f7258*/
   this->UINameLabel[0x20] = (int)&vt_ObjectTypeClass; /*0x5f725f*/
   this->u32_3 = (int)&vt_ObjectTypeClass; /*0x5f7266*/
   if ( &this->u8_9 != &this->u8_7E ) /*0x5f726d*/
@@ -268,7 +268,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
 
   AbstractTypeClass::Init((int)this, aP1); /*0x5f7328*/
   int *v3; // eax
-  v3 = (int *)(&this->ChargerTurrets[3]); /*0x5f732f*/
+  v3 = &this->q194; /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
   int v4 = 18; // edx /*0x5f733b*/
   do /*0x5f7349*/
@@ -280,7 +280,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
   }
   while ( v4 ); /*0x5f7349*/
   char *v5; // eax
-  v5 = (char *)(&this->u32_158); /*0x5f734b*/
+  v5 = &this->u32_158; /*0x5f734b*/
   int v6 = 18; // edx /*0x5f7351*/
   do /*0x5f735f*/
   {
@@ -425,7 +425,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v6 ); /*0x5f7826*/
       }
-      operator delete((void *)(v2)); /*0x5f7829*/
+      operator delete((v2)); /*0x5f7829*/
     }
     byte_AC1488 = 0; /*0x5f7831*/
   }
@@ -452,7 +452,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v12 ); /*0x5f7866*/
       }
-      operator delete((void *)(v8)); /*0x5f7869*/
+      operator delete((v8)); /*0x5f7869*/
     }
     byte_AC1489 = 0; /*0x5f7871*/
   }
@@ -479,7 +479,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v18 ); /*0x5f78a6*/
       }
-      operator delete((void *)(v14)); /*0x5f78a9*/
+      operator delete((v14)); /*0x5f78a9*/
     }
     byte_AC148A = 0; /*0x5f78b1*/
   }
@@ -506,7 +506,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v24 ); /*0x5f78e6*/
       }
-      operator delete((void *)(v20)); /*0x5f78e9*/
+      operator delete((v20)); /*0x5f78e9*/
     }
     byte_AC148B = 0; /*0x5f78f1*/
   }
@@ -580,7 +580,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
     }
   }
   if ( *(&this->uniqueId8) && this->Image_d ) /*0x5f91eb*/
-    operator delete((void *)(*((void **)&this->uniqueId1))); /*0x5f91f6*/
+    operator delete((*((void **)&this->uniqueId1))); /*0x5f91f6*/
   v6 = *(unsigned int *)this; /*0x5f91fe*/
   this->Image_d = 0; /*0x5f9203*/
   *(&this->uniqueId8) = 0; /*0x5f920d*/
@@ -836,7 +836,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   if ( v2 ) /*0x5f977f*/
   {
     WaveClass::Destroy((WaveClass *)aP0->MainVoxel[0]); /*0x5f9783*/
-    operator delete((void *)(v2)); /*0x5f9789*/
+    operator delete((v2)); /*0x5f9789*/
   }
   String *v3; // ebp
   v3 = (String *)aP0->TurretVoxel[0]; /*0x5f9791*/
@@ -844,7 +844,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   if ( v3 ) /*0x5f979f*/
   {
     ((String *)(v3))->Release(); /*0x5f97a3*/
-    operator delete((void *)(v3)); /*0x5f97a9*/
+    operator delete((v3)); /*0x5f97a9*/
   }
   WaveClass *v4; // ebp
   v4 = (WaveClass *)aP0->BarrelVoxel[0]; /*0x5f97b1*/
@@ -852,7 +852,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   if ( v4 ) /*0x5f97bf*/
   {
     WaveClass::Destroy(v4); /*0x5f97c3*/
-    operator delete((void *)(v4)); /*0x5f97c9*/
+    operator delete((v4)); /*0x5f97c9*/
   }
   String *v5; // ebp
   v5 = (String *)aP0->ChargerTurrets[0]; /*0x5f97d1*/
@@ -860,7 +860,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   if ( v5 ) /*0x5f97df*/
   {
     ((String *)(v5))->Release(); /*0x5f97e3*/
-    operator delete((void *)(v5)); /*0x5f97e9*/
+    operator delete((v5)); /*0x5f97e9*/
   }
   WaveClass *v6; // ebp
   v6 = (WaveClass *)aP0->ChargerTurrets[1]; /*0x5f97f1*/
@@ -868,7 +868,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   if ( v6 ) /*0x5f97ff*/
   {
     WaveClass::Destroy(v6); /*0x5f9803*/
-    operator delete((void *)(v6)); /*0x5f9809*/
+    operator delete((v6)); /*0x5f9809*/
   }
   String *v7; // ebp
   v7 = (String *)aP0->ChargerTurrets[2]; /*0x5f9811*/
@@ -876,7 +876,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   if ( v7 ) /*0x5f981f*/
   {
     ((String *)(v7))->Release(); /*0x5f9823*/
-    operator delete((void *)(v7)); /*0x5f9829*/
+    operator delete((v7)); /*0x5f9829*/
   }
   aP0->ChargerTurrets[2] = 0; /*0x5f9833*/
   ((ObjectTypeClass *)((char *)aP0))->CleanupWeapons(); /*0x5f9839*/
@@ -1505,7 +1505,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
     return &this->AbstractTypeClass; /*0x717c65*/
   }
   void *v4; // eax
-  v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x717c23*/
+  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x717c23*/
   this->vtable2 = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return &this->AbstractTypeClass; /*0x717c30*/
@@ -1786,7 +1786,7 @@ void ObjectTypeClass::ReleaseWaveAndString(void *a1)
   if ( a1->vfptr ) /*0x5f61a4*/
   {
     WaveClass::Destroy((WaveClass *)a1->vfptr); /*0x5f61ac*/
-    operator delete((void *)(vtable0)); /*0x5f61b2*/
+    operator delete((vtable0)); /*0x5f61b2*/
   }
   String *vtable1; // edi
   vtable1 = (String *)a1->vfptr1; /*0x5f61ba*/
@@ -1794,7 +1794,7 @@ void ObjectTypeClass::ReleaseWaveAndString(void *a1)
   if ( vtable1 ) /*0x5f61c5*/
   {
     ((String *)(vtable1))->Release(); /*0x5f61c9*/
-    operator delete((void *)(vtable1)); /*0x5f61cf*/
+    operator delete((vtable1)); /*0x5f61cf*/
   }
   a1->vfptr1 = 0; /*0x5f61d7*/
 }
@@ -1823,7 +1823,7 @@ void ObjectTypeClass::CleanupWeapons()
     if ( v3 ) /*0x5f8096*/
     {
       WaveClass::Destroy(*((unsigned int *)v1 - 1)); /*0x5f809a*/
-      operator delete((void *)(v3)); /*0x5f80a0*/
+      operator delete((v3)); /*0x5f80a0*/
       *((unsigned int *)v1 - 1) = 0; /*0x5f80a8*/
     }
     void **v4; // edi
@@ -1831,7 +1831,7 @@ void ObjectTypeClass::CleanupWeapons()
     if ( *(unsigned int *)v1 ) /*0x5f80ab*/
     {
       ((String *)(*(void ***)v1))->Release(); /*0x5f80b3*/
-      operator delete((void *)(v4)); /*0x5f80b9*/
+      operator delete((v4)); /*0x5f80b9*/
       *(unsigned int *)v1 = 0; /*0x5f80c1*/
     }
     void *v5; // edi
@@ -1839,7 +1839,7 @@ void ObjectTypeClass::CleanupWeapons()
     if ( v5 ) /*0x5f80cb*/
     {
       WaveClass::Destroy(*((unsigned int *)v1 + 35)); /*0x5f80cf*/
-      operator delete((void *)(v5)); /*0x5f80d5*/
+      operator delete((v5)); /*0x5f80d5*/
       *((unsigned int *)v1 + 35) = 0; /*0x5f80dd*/
     }
     void *v6; // edi
@@ -1847,7 +1847,7 @@ void ObjectTypeClass::CleanupWeapons()
     if ( v6 ) /*0x5f80eb*/
     {
       ((String *)(*((void ***)v1 + 36)))->Release(); /*0x5f80ef*/
-      operator delete((void *)(v6)); /*0x5f80f5*/
+      operator delete((v6)); /*0x5f80f5*/
       *((unsigned int *)v1 + 36) = 0; /*0x5f80fd*/
     }
     v1 += 8; /*0x5f8103*/
@@ -1862,7 +1862,7 @@ ObjectTypeClass * ObjectTypeClass::Destru_vt08(void * Block, char a2)
 {
   ObjectTypeClass::Destruct((int)Block); /*0x5f9ae3*/
   if ( (a2 & 1) != 0 ) /*0x5f9aed*/
-    operator delete((void *)(Block)); /*0x5f9af0*/
+    operator delete((Block)); /*0x5f9af0*/
   return Block; /*0x5f9afa*/
 }
 } // namespace gamemd

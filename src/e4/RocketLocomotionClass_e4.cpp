@@ -109,7 +109,7 @@ void RocketLocomotionClass_17::ddtor(void *a1)
   this->m_10 = 0; /*0x6647b9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x6647c0*/
   {
-    operator delete((void *)(v2)); /*0x6647c6*/
+    operator delete((v2)); /*0x6647c6*/
     *&this->q004 = 0; /*0x6647ce*/
   }
   (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x6647d1*/
@@ -221,7 +221,7 @@ void RocketLocomotionClass_17::Destroy(void *a1_1)
 {
   if ( *(unsigned int *)&a1_1->IsAllocated && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x66490d*/
   {
-    operator delete((void *)(*(void **)&a1_1->q004)); /*0x664913*/
+    operator delete((*(void **)&a1_1->q004)); /*0x664913*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x66491b*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x66491e*/
@@ -360,13 +360,13 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x664ac6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x664ad0*/
   {
-    operator delete((void *)(v3)); /*0x664ad8*/
+    operator delete((v3)); /*0x664ad8*/
     *&Block->__pad_004 = 0; /*0x664ae0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x664aeb*/
   Block->u32_8 = 0; /*0x664af1*/
   if ( (a2 & 1) != 0 ) /*0x664af8*/
-    operator delete((void *)(Block)); /*0x664afb*/
+    operator delete((Block)); /*0x664afb*/
   return Block->tail_0; /*0x664b05*/
 }
 } // namespace gamemd

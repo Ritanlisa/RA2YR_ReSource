@@ -133,7 +133,7 @@ int INIClass::GetKeyCount(INIClass * aP1, void *a2)
   if ( !a2 ) /*0x52696d*/
     return 0; /*0x52696d*/
   memset(v12, 0, sizeof(v12)); /*0x52697a*/
-  v2 = (char *)(aP1 + 40); /*0x5269a2*/
+  v2 = &aP1->u8_28; /*0x5269a2*/
   v3 = Checksummer::Add_Buffer(v12, a2, strlen((const char *)a2)); /*0x5269a5*/
   a2 = (uint8_t *)v3; /*0x5269a7*/
   if ( !v2->u32_4 ) /*0x5269ab*/
@@ -411,7 +411,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
   unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
   memset(v10, 0, sizeof(v10)); /*0x526cda*/
   char *v3; // esi
-  v3 = (char *)(aP1 + 40); /*0x526d02*/
+  v3 = &aP1->needsSave_flag; /*0x526d02*/
   int v4; // edi
   v4 = Checksummer::Add_Buffer(v10, aP2, strlen((const char *)aP2)); /*0x526d05*/
   aP2 = (gamemd::CCINIClass *)((unsigned __int8 *)v4); /*0x526d07*/

@@ -176,7 +176,7 @@ unsigned int * ScenarioClass::initAI(char a2) {
   this->nextScenario = (int)0; /*0x5c0fe3*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c0fe9*/
   if ( (a2 & 1) != 0 ) /*0x5c0ff3*/
-    operator delete((void *)(this)); /*0x5c0ff6*/
+    operator delete((this)); /*0x5c0ff6*/
   return &this->nextScenario; /*0x5c1000*/
 }
 } // namespace gamemd
@@ -231,7 +231,7 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
   {
     if ( (this->BufferOffset) ) /*0x432623*/
     {
-      operator delete((void *)(FileBaseOffset)); /*0x432629*/
+      operator delete((FileBaseOffset)); /*0x432629*/
       (this->BufferOffset) = 0; /*0x432631*/
     }
     this->FileBaseOffset = 0; /*0x432634*/
@@ -243,7 +243,7 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
   (this->u32_29) = 0; /*0x432645*/
   RawFileClass::Dtor(this); /*0x432648*/
   if ( (a2 & 1) != 0 ) /*0x432652*/
-    operator delete((void *)(this)); /*0x432655*/
+    operator delete((this)); /*0x432655*/
   return this->vtable1; /*0x43265f*/
 }
 } // namespace gamemd
@@ -584,13 +584,13 @@ unsigned int * TacticalClass::DestroyVector(unsigned int *Block, char a2) {
   *Block = 0; /*0x5c0d86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c0d90*/
   {
-    operator delete((void *)(v3)); /*0x5c0d98*/
+    operator delete((v3)); /*0x5c0d98*/
     *(Block + 1) = 0; /*0x5c0da0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5c0dab*/
   *(Block + 2) = 0; /*0x5c0db1*/
   if ( (a2 & 1) != 0 ) /*0x5c0db8*/
-    operator delete((void *)(Block)); /*0x5c0dbb*/
+    operator delete((Block)); /*0x5c0dbb*/
   return Block; /*0x5c0dc5*/
 }
 } // namespace gamemd
@@ -761,14 +761,14 @@ namespace gamemd {
 unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
     Text *v3; // esi
 
-    *(unsigned int *)this->RawFileClass = (void *)&vt_BitText; /*0x435564*/
+    *(unsigned int *)this->RawFileClass = &vt_BitText; /*0x435564*/
     v3 = g_FogOfWarState; /*0x43556a*/
     if ( g_FogOfWarState ) /*0x435572*/
       (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/
     if ( v3 == g_FogOfWarState ) /*0x435582*/
       g_FogOfWarState = 0; /*0x435584*/
     if ( (a2 & 1) != 0 ) /*0x435593*/
-      operator delete((void *)(this)); /*0x435596*/
+      operator delete((this)); /*0x435596*/
     return this->RawFileClass; /*0x4355a0*/
 }
 } // namespace gamemd

@@ -94,7 +94,7 @@ int Network::SendBeaconDelete(int a2, int a3)
       v6 = this; /*0x4311f6*/
       LABEL_5:
       v7 = 0; /*0x4311fa*/
-      p_Network_field_0x0 = (int *)(&v6->__pad_000); /*0x4311fc*/
+      p_Network_field_0x0 = &v6->__pad_000; /*0x4311fc*/
       while ( 1 ) /*0x4311fe*/
       {
         result = *p_Network_field_0x0; /*0x4311fe*/
@@ -5041,23 +5041,23 @@ HKEY sub_5BB580(HKEY, const CHAR * a2, const char * a3)
         && Type == 1
         && !strcmp((const char *)lpData, a3) )
       {
-        operator delete((void *)(v5)); /*0x5bb67d*/
-        operator delete((void *)(lpData)); /*0x5bb687*/
+        operator delete((v5)); /*0x5bb67d*/
+        operator delete((lpData)); /*0x5bb687*/
         return RegistrySubKey; /*0x5bb698*/
       }
       v7 = Network_Find(a3); /*0x5bb666*/
       RegCloseKey(RegistrySubKey); /*0x5bb669*/
       if ( v7 ) /*0x5bb671*/
       {
-        operator delete((void *)(v5)); /*0x5bb69c*/
-        operator delete((void *)(lpData)); /*0x5bb6a6*/
+        operator delete((v5)); /*0x5bb69c*/
+        operator delete((lpData)); /*0x5bb6a6*/
         return (HKEY)v7; /*0x5bb6b7*/
       }
       v3 = v15; /*0x5bb673*/
     }
   }
-  operator delete((void *)(v5)); /*0x5bb6bb*/
-  operator delete((void *)(lpData)); /*0x5bb6c5*/
+  operator delete((v5)); /*0x5bb6bb*/
+  operator delete((lpData)); /*0x5bb6c5*/
   return 0; /*0x5bb691*/
 }
 } // namespace gamemd
@@ -5772,14 +5772,14 @@ void sub_72CDB0()
       if ( *(unsigned int *)&DataGlobal_B0FAAC ) /*0x72cdcd*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FAAC); /*0x72cdd1*/
-        operator delete((void *)(v1)); /*0x72cdd7*/
+        operator delete((v1)); /*0x72cdd7*/
       }
       DataGlobal_B0FCE4 = 0; /*0x72cddf*/
     }
     *(unsigned int *)&DataGlobal_B0FAAC = 0; /*0x72cdeb*/
     if ( *(unsigned int *)&DataGlobal_B0FCE8 ) /*0x72cdf3*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FCE8)); /*0x72cdf6*/
+      operator delete((*(void **)&DataGlobal_B0FCE8)); /*0x72cdf6*/
       *(unsigned int *)&DataGlobal_B0FCE8 = 0; /*0x72cdfe*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FCEC ) /*0x72ce0c*/
@@ -5923,6 +5923,6 @@ void Network_Delete(int a1, int a2, SessionClass * aP2)
     }
     while ( v3 ); /*0x7982bc*/
   }
-  operator delete((void *)(aP2)); /*0x7982c0*/
+  operator delete((aP2)); /*0x7982c0*/
 }
 } // namespace gamemd

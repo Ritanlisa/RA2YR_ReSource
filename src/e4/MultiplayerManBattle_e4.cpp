@@ -18,7 +18,7 @@ MultiplayerManBattle * MultiplayerManBattle::QueryInterface(unsigned int * Block
   Block->MultiplayerManBattle_field_00 = (int)&vt_MultiplayerManBattle; /*0x5c61a3*/
   ((MultiplayerGameMode *)Block)->Dtor(); /*0x5c61a9*/
   if ( (a2 & 1) != 0 ) /*0x5c61b3*/
-    operator delete((void *)(Block)); /*0x5c61b6*/
+    operator delete((Block)); /*0x5c61b6*/
   return &Block->MultiplayerManBattle_field_00; /*0x5c61c0*/
 }  // G42.18 ns repair
 } // namespace gamemd

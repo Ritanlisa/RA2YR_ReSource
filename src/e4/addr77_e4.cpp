@@ -375,7 +375,7 @@ void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void), int a3, char a4,
     while ( (HWND)v8->vfptr[0] != hWnd ) /*0x775a3e*/
     {
       ++v7; /*0x775a40*/
-      v8 = (gamemd::TechnoTypeClass *)(&v8->vtable3); /*0x775a41*/
+      v8 = &v8->vtable3; /*0x775a41*/
       if ( v7 >= g_DialogTrackingList ) /*0x775a46*/
         goto LABEL_23; /*0x775a46*/
     }
@@ -487,7 +487,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
             memcpy(&v16[4 * v18], &v15[4 * v18], v17 & 3); /*0x775f9d*/
             v15 = (char *)dword_B72F40; /*0x775f9f*/
           }
-          operator delete((void *)(v15)); /*0x775fa6*/
+          operator delete((v15)); /*0x775fa6*/
           dword_B72F40 = (unsigned int)(hdc); /*0x775fb2*/
           v11 = dword_B72F38; /*0x775fb7*/
           dword_B72F3C = v13; /*0x775fbc*/
@@ -510,7 +510,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
             memcpy(&v22[4 * v24], &v21[4 * v24], v23 & 3); /*0x77601d*/
             v21 = (char *)dword_B72F40; /*0x77601f*/
           }
-          operator delete((void *)(v21)); /*0x776026*/
+          operator delete((v21)); /*0x776026*/
           dword_B72F40 = (unsigned int)(hdca); /*0x776032*/
           v11 = dword_B72F38; /*0x776037*/
           dword_B72F3C = v19; /*0x77603c*/
@@ -1762,7 +1762,7 @@ void sub_77BAE0()
       v3 = (void **)v2; /*0x77bafb*/
       v2 = v2->estimatedHealth; /*0x77bafd*/
       DeleteAndZero(v3); /*0x77bb06*/
-      operator delete((void *)(v3)); /*0x77bb0c*/
+      operator delete((v3)); /*0x77bb0c*/
     }
     *((unsigned int *)g_WOL_ListParser + i++) = 0; /*0x77bb1f*/
   }
@@ -1808,7 +1808,7 @@ void sub_77BAE0()
         }
         while ( v8 ); /*0x77bbdd*/
       }
-      operator delete((void *)(v5)); /*0x77bbe0*/
+      operator delete((v5)); /*0x77bbe0*/
       v4 = dword_B768F0; /*0x77bbe5*/
       v0 = dword_B768C8; /*0x77bbeb*/
     }
@@ -1835,7 +1835,7 @@ void sub_77BCB0()
       v3 = (void **)v2; /*0x77bccb*/
       v2 = v2->estimatedHealth; /*0x77bccd*/
       DeleteAndZero(v3); /*0x77bcd6*/
-      operator delete((void *)(v3)); /*0x77bcdc*/
+      operator delete((v3)); /*0x77bcdc*/
     }
     *((unsigned int *)dword_B73AF8 + i++) = 0; /*0x77bcef*/
   }
@@ -1881,7 +1881,7 @@ void sub_77BCB0()
         }
         while ( v8 ); /*0x77bdad*/
       }
-      operator delete((void *)(v5)); /*0x77bdb0*/
+      operator delete((v5)); /*0x77bdb0*/
       v4 = dword_B73B28; /*0x77bdb5*/
       v0 = dword_B73B00; /*0x77bdbb*/
     }
@@ -1908,7 +1908,7 @@ void sub_77BE80()
       v3 = (void **)v2; /*0x77be9b*/
       v2 = v2->estimatedHealth; /*0x77be9d*/
       DeleteAndZero(v3); /*0x77bea6*/
-      operator delete((void *)(v3)); /*0x77beac*/
+      operator delete((v3)); /*0x77beac*/
     }
     *((unsigned int *)stru_B77D80 + i++) = 0; /*0x77bebf*/
   }
@@ -1954,7 +1954,7 @@ void sub_77BE80()
         }
         while ( v8 ); /*0x77bf7d*/
       }
-      operator delete((void *)(v5)); /*0x77bf80*/
+      operator delete((v5)); /*0x77bf80*/
       v4 = dword_B77DB0; /*0x77bf85*/
       v0 = dword_B77D88; /*0x77bf8b*/
     }
@@ -1981,7 +1981,7 @@ void sub_77C050()
       v3 = (void **)v2; /*0x77c06b*/
       v2 = v2->q048; /*0x77c06d*/
       DeleteAndZero(v3); /*0x77c076*/
-      operator delete((void *)(v3)); /*0x77c07c*/
+      operator delete((v3)); /*0x77c07c*/
     }
     *((unsigned int *)dword_B76640 + i++) = 0; /*0x77c08f*/
   }
@@ -2027,7 +2027,7 @@ void sub_77C050()
         }
         while ( v8 ); /*0x77c14d*/
       }
-      operator delete((void *)(v5)); /*0x77c150*/
+      operator delete((v5)); /*0x77c150*/
       v4 = dword_B76670; /*0x77c155*/
       v0 = dword_B76648; /*0x77c15b*/
     }
@@ -2054,7 +2054,7 @@ void sub_77C220()
       v3 = (void **)v2; /*0x77c23b*/
       v2 = v2->vtable3; /*0x77c23d*/
       DeleteAndZero(v3); /*0x77c246*/
-      operator delete((void *)(v3)); /*0x77c24c*/
+      operator delete((v3)); /*0x77c24c*/
     }
     *((unsigned int *)dword_B76680 + i++) = 0; /*0x77c25f*/
   }
@@ -2100,7 +2100,7 @@ void sub_77C220()
         }
         while ( v8 ); /*0x77c31d*/
       }
-      operator delete((void *)(v5)); /*0x77c320*/
+      operator delete((v5)); /*0x77c320*/
       v4 = dword_B766B0; /*0x77c325*/
       v0 = dword_B76688; /*0x77c32b*/
     }
@@ -2127,7 +2127,7 @@ void sub_77C450()
       v3 = (void **)v2; /*0x77c46b*/
       v2 = v2->vtable3; /*0x77c46d*/
       DeleteAndZero(v3); /*0x77c476*/
-      operator delete((void *)(v3)); /*0x77c47c*/
+      operator delete((v3)); /*0x77c47c*/
     }
     *((unsigned int *)g_WOL_ConnectionPool + i++) = 0; /*0x77c48f*/
   }
@@ -2173,7 +2173,7 @@ void sub_77C450()
         }
         while ( v8 ); /*0x77c54d*/
       }
-      operator delete((void *)(v5)); /*0x77c550*/
+      operator delete((v5)); /*0x77c550*/
       v4 = dword_B76560; /*0x77c555*/
       v0 = dword_B76538; /*0x77c55b*/
     }
@@ -2202,7 +2202,7 @@ void sub_77CB00()
       v3 = (void **)v2; /*0x77cb1b*/
       v2 = v2->vtable3; /*0x77cb1d*/
       DeleteAndZero(v3); /*0x77cb26*/
-      operator delete((void *)(v3)); /*0x77cb2c*/
+      operator delete((v3)); /*0x77cb2c*/
     }
     *((unsigned int *)dword_B76990 + i++) = 0; /*0x77cb3f*/
   }
@@ -2248,7 +2248,7 @@ void sub_77CB00()
         }
         while ( v8 ); /*0x77cbfd*/
       }
-      operator delete((void *)(v5)); /*0x77cc00*/
+      operator delete((v5)); /*0x77cc00*/
       v4 = dword_B769C0; /*0x77cc05*/
       v0 = dword_B76998; /*0x77cc0b*/
     }
@@ -2277,7 +2277,7 @@ void sub_77CCD0()
       v3 = (void **)v2; /*0x77cceb*/
       v2 = v2->ParticleSystemClass_110; /*0x77cced*/
       DeleteAndZero(v3); /*0x77ccf9*/
-      operator delete((void *)(v3)); /*0x77ccff*/
+      operator delete((v3)); /*0x77ccff*/
     }
     *((unsigned int *)dword_B76608 + i++) = 0; /*0x77cd12*/
   }
@@ -2323,7 +2323,7 @@ void sub_77CCD0()
         }
         while ( v8 ); /*0x77cdd6*/
       }
-      operator delete((void *)(v5)); /*0x77cdd9*/
+      operator delete((v5)); /*0x77cdd9*/
       v4 = dword_B76638; /*0x77cdde*/
       v0 = dword_B76610; /*0x77cde4*/
     }
@@ -2595,7 +2595,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
           do /*0x77eb72*/
           {
             v21 = v18->NeedsSaveOrLink; /*0x77eb62*/
-            operator delete((void *)(v18)); /*0x77eb66*/
+            operator delete((v18)); /*0x77eb66*/
             v18 = v21; /*0x77eb6e*/
           }
           while ( v21 ); /*0x77eb72*/
@@ -2768,7 +2768,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
       v9 = dword_B76528; /*0x77f036*/
       v6 = v13; /*0x77f03b*/
     }
-    operator delete((void *)(v9)); /*0x77f040*/
+    operator delete((v9)); /*0x77f040*/
     v5 = dword_B76520; /*0x77f045*/
     dword_B76528 = v8; /*0x77f04d*/
     dword_B76524 = v7; /*0x77f053*/
@@ -2787,7 +2787,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
       v11 = dword_B76528; /*0x77f0ad*/
       v6 = v13; /*0x77f0b2*/
     }
-    operator delete((void *)(v11)); /*0x77f0b7*/
+    operator delete((v11)); /*0x77f0b7*/
     v5 = dword_B76520; /*0x77f0bc*/
     dword_B76528 = v8; /*0x77f0c4*/
     dword_B76524 = v10; /*0x77f0ca*/
@@ -2949,7 +2949,7 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
           v11 = dword_B76528; /*0x77f3ff*/
           v8 = v16; /*0x77f404*/
         }
-        operator delete((void *)(v11)); /*0x77f409*/
+        operator delete((v11)); /*0x77f409*/
         v7 = dword_B76520; /*0x77f40e*/
         dword_B76528 = v10; /*0x77f413*/
         v3 = a1; /*0x77f419*/
@@ -2970,7 +2970,7 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
           v14 = dword_B76528; /*0x77f472*/
           v8 = v16; /*0x77f477*/
         }
-        operator delete((void *)(v14)); /*0x77f47c*/
+        operator delete((v14)); /*0x77f47c*/
         v7 = dword_B76520; /*0x77f481*/
         dword_B76528 = v13; /*0x77f486*/
         v3 = a1; /*0x77f48c*/
@@ -3038,7 +3038,7 @@ char sub_77F520(char a1)
           v7 = dword_B76528; /*0x77f5f3*/
           v4 = v13; /*0x77f5f8*/
         }
-        operator delete((void *)(v7)); /*0x77f5fd*/
+        operator delete((v7)); /*0x77f5fd*/
         v3 = dword_B76520; /*0x77f602*/
         dword_B76528 = v6; /*0x77f60a*/
         dword_B76524 = v5; /*0x77f610*/
@@ -3058,7 +3058,7 @@ char sub_77F520(char a1)
           v10 = dword_B76528; /*0x77f662*/
           v4 = v13; /*0x77f667*/
         }
-        operator delete((void *)(v10)); /*0x77f66c*/
+        operator delete((v10)); /*0x77f66c*/
         v3 = dword_B76520; /*0x77f671*/
         dword_B76528 = v9; /*0x77f679*/
         dword_B76524 = v8; /*0x77f67f*/
@@ -3125,7 +3125,7 @@ char sub_77F710(unsigned char a1, char a2)
           v9 = dword_B76528; /*0x77f7ec*/
           v6 = v15; /*0x77f7f1*/
         }
-        operator delete((void *)(v9)); /*0x77f7f6*/
+        operator delete((v9)); /*0x77f7f6*/
         v5 = dword_B76520; /*0x77f7fb*/
         dword_B76528 = v8; /*0x77f803*/
         dword_B76524 = v7; /*0x77f809*/
@@ -3145,7 +3145,7 @@ char sub_77F710(unsigned char a1, char a2)
           v12 = dword_B76528; /*0x77f85b*/
           v6 = v15; /*0x77f860*/
         }
-        operator delete((void *)(v12)); /*0x77f865*/
+        operator delete((v12)); /*0x77f865*/
         v5 = dword_B76520; /*0x77f86a*/
         dword_B76528 = v11; /*0x77f872*/
         dword_B76524 = v10; /*0x77f878*/

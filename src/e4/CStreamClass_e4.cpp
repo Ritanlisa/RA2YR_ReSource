@@ -123,16 +123,16 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
   operator delete((void *)(*&v4->q020)); /*0x4a319c*/
   void *v6 = v4->q018; // ecx /*0x4a31a1*/
   v4->q020 = 0; /*0x4a31a4*/
-  operator delete((void *)(v6)); /*0x4a31a8*/
+  operator delete((v6)); /*0x4a31a8*/
   void *v7 = v4->q01C; // edx /*0x4a31ad*/
   v4->q018 = 0; /*0x4a31b0*/
-  operator delete((void *)(v7)); /*0x4a31b4*/
+  operator delete((v7)); /*0x4a31b4*/
   v4->q01C = 0; /*0x4a31b9*/
   int v8 = v4->__pad_008; // eax /*0x4a31bc*/
   if ( v8 ) /*0x4a31c4*/
     (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v8 + 8))(v4->__pad_008); /*0x4a31c9*/
   if ( ((uint8_t)a2 & 1) != 0 ) /*0x4a31d1*/
-    operator delete((void *)((void *)v4)); /*0x4a31d4*/
+    operator delete(((void *)v4)); /*0x4a31d4*/
   return (gamemd::CStreamClass *)((void *)v4); /*0x4a31de*/
 }
 } // namespace gamemd
@@ -418,13 +418,13 @@ VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4a4d96*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4a4da0*/
   {
-    operator delete((void *)(v3)); /*0x4a4da8*/
+    operator delete((v3)); /*0x4a4da8*/
     *&Block->__pad_004 = 0; /*0x4a4db0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4a4dbb*/
   Block->u32_8 = 0; /*0x4a4dc1*/
   if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
-    operator delete((void *)(Block)); /*0x4a4dcb*/
+    operator delete((Block)); /*0x4a4dcb*/
   return Block->tail_0; /*0x4a4dd5*/
 }
 } // namespace gamemd

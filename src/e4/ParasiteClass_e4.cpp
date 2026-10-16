@@ -840,7 +840,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   }
   AbstractClass::DTOR((AbstractClass *)Block); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
-    operator delete((void *)(Block)); /*0x62b056*/
+    operator delete((Block)); /*0x62b056*/
   return &Block->vfptr; /*0x62b060*/
 }
 } // namespace ra2

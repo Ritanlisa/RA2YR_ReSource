@@ -124,7 +124,7 @@ void FilePipe_30::ddtor(void *a1)
   this->m_10 = 0; /*0x4778a9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4778b0*/
   {
-    operator delete((void *)(v2)); /*0x4778b6*/
+    operator delete((v2)); /*0x4778b6*/
     *&this->u32_4 = 0; /*0x4778be*/
   }
   (((unsigned char *)&(*&this->__pad_00C))[1]) = 0; /*0x4778c1*/
@@ -166,13 +166,13 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x477a76) */
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477a80*/
   {
-    operator delete((void *)(v3)); /*0x477a88*/
+    operator delete((v3)); /*0x477a88*/
     *((unsigned int *)Block + 1) = 0; /*0x477a90*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x477a9b*/
   *((unsigned int *)Block + 2) = 0; /*0x477aa1*/
   if ( (a2 & 1) != 0 ) /*0x477aa8*/
-    operator delete((void *)(Block)); /*0x477aab*/
+    operator delete((Block)); /*0x477aab*/
   return &Block->vfptr; /*0x477ab5*/
 }
 } // namespace gamemd
@@ -280,7 +280,7 @@ void FilePipe_38::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x47844d*/
   {
-    operator delete((void *)(*&this->Items)); /*0x478453*/
+    operator delete((*&this->Items)); /*0x478453*/
     *&this->Items = 0; /*0x47845b*/
   }
   (this->IsAllocated) = 0; /*0x47845e*/
@@ -329,13 +329,13 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4786d6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_2))[1]) ) /*0x4786e0*/
   {
-    operator delete((void *)(v3)); /*0x4786e8*/
+    operator delete((v3)); /*0x4786e8*/
     Block->Items = (unsigned int)(0); /*0x4786f0*/
   }
   (Block->u32_D) = 0; /*0x4786fb*/
   Block->u32_8 = 0; /*0x478701*/
   if ( (a2 & 1) != 0 ) /*0x478708*/
-    operator delete((void *)(Block)); /*0x47870b*/
+    operator delete((Block)); /*0x47870b*/
   return Block->tail_0; /*0x478715*/
 }
 } // namespace gamemd
@@ -350,7 +350,7 @@ void FilePipe_30::Clear(void *a1_1)
   a1_1->q010 = 0; /*0x4b9be9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x4b9bf0*/
   {
-    operator delete((void *)(v2)); /*0x4b9bf6*/
+    operator delete((v2)); /*0x4b9bf6*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x4b9bfe*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x4b9c01*/
@@ -379,7 +379,7 @@ void FilePipe_30::Clear_0()
   this->m_10 = 0; /*0x4b9c49*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4b9c50*/
   {
-    operator delete((void *)(v2)); /*0x4b9c56*/
+    operator delete((v2)); /*0x4b9c56*/
     *&this->u32_4 = 0; /*0x4b9c5e*/
   }
   (((unsigned char *)&(*&this->__pad_00C))[1]) = 0; /*0x4b9c61*/
@@ -540,13 +540,13 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ba166*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ba170*/
   {
-    operator delete((void *)(v3)); /*0x4ba178*/
+    operator delete((v3)); /*0x4ba178*/
     *&Block->__pad_004 = 0; /*0x4ba180*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4ba18b*/
   Block->Capacity = 0; /*0x4ba191*/
   if ( (a2 & 1) != 0 ) /*0x4ba198*/
-    operator delete((void *)(Block)); /*0x4ba19b*/
+    operator delete((Block)); /*0x4ba19b*/
   return Block->tail_0; /*0x4ba1a5*/
 }
 } // namespace gamemd
@@ -560,13 +560,13 @@ DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &off_7E8500; /*0x4ba206*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ba210*/
   {
-    operator delete((void *)(v3)); /*0x4ba218*/
+    operator delete((v3)); /*0x4ba218*/
     *&Block->__pad_004 = 0; /*0x4ba220*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4ba22b*/
   Block->Capacity = 0; /*0x4ba231*/
   if ( (a2 & 1) != 0 ) /*0x4ba238*/
-    operator delete((void *)(Block)); /*0x4ba23b*/
+    operator delete((Block)); /*0x4ba23b*/
   return Block->tail_0; /*0x4ba245*/
 }
 } // namespace gamemd
@@ -580,13 +580,13 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ba2a6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ba2b0*/
   {
-    operator delete((void *)(v3)); /*0x4ba2b8*/
+    operator delete((v3)); /*0x4ba2b8*/
     *&Block->__pad_004 = 0; /*0x4ba2c0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4ba2cb*/
   Block->Capacity = 0; /*0x4ba2d1*/
   if ( (a2 & 1) != 0 ) /*0x4ba2d8*/
-    operator delete((void *)(Block)); /*0x4ba2db*/
+    operator delete((Block)); /*0x4ba2db*/
   return Block->tail_0; /*0x4ba2e5*/
 }
 } // namespace gamemd

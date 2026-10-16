@@ -1832,8 +1832,8 @@ SessionClass * Object::DtorWithDelete(void ** Block, char a2)
 {
   DeleteAndZero((ObjectClass *)Block); /*0x7ad333*/
   if ( (a2 & 1) != 0 ) /*0x7ad33d*/
-    operator delete((void *)(Block)); /*0x7ad340*/
-  return (void **)Block; /*0x7ad34a*/
+    operator delete((Block)); /*0x7ad340*/
+  return Block; /*0x7ad34a*/
 }
 } // namespace gamemd
 

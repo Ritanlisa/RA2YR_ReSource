@@ -41,7 +41,7 @@ int Color::ConvertToRGB(int a2, void *a2_1)
   (*((unsigned char *)&(v6))) = v10[v6]; /*0x51752c*/
   (*(((unsigned char *)&(v9)) + (sizeof(v9) - 1))) = v10[v7]; /*0x517535*/
   *(unsigned short *)a2 = v9; /*0x517544*/
-  a2->u8_2 = v6; /*0x51754a*/
+  a2->field_2 = v6; /*0x51754a*/
   return a2; /*0x517530*/
 }  // G42.18 ns repair
 } // namespace gamemd
@@ -157,7 +157,7 @@ unsigned int * Color::RGBFromFloat(int aP1, float a3, void *a3_1)
   this->Color_field_00 = v6; /*0x75f59e*/
   this->u32_4 = v10; /*0x75f5a0*/
   this->u32_8 = v8; /*0x75f5a3*/
-  return (unsigned int *)(&this->Color_field_00); /*0x75f5ac*/
+  return &this->Color_field_00; /*0x75f5ac*/
 
 }
 } // namespace gamemd

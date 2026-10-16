@@ -310,7 +310,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         this->u32_140 -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/
           return (void *)(v5 + Delegate::Dispatch((int)((Pipe *)this), (int)v3, aP2)); /*0x632ec1*/
-        BigInt::RSAOperation((char *)(/*0x632ed6*/           *&this->u32_38),           (char *)&this->field_3C,           this->u32_13C,           (char *)v12);
+        BigInt::RSAOperation((char *)(/*0x632ed6*/           *&this->u32_38),           &this->u32_38,           this->u32_13C,           (char *)v12);
         (&this->GameClass_30)->processFrame((int)v12, 56); /*0x632ee5*/
       }
       else
@@ -479,7 +479,7 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
         }
         while ( v6 ); /*0x6bed27*/
       }
-      operator delete((void *)(v2)); /*0x6bed2b*/
+      operator delete((v2)); /*0x6bed2b*/
     }
     byte_B0BCF4 = 0; /*0x6bed34*/
   }
@@ -682,7 +682,7 @@ unsigned int * GameClass::saveGameState(char a2)
 {
   *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_PixelFXClass); /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
-    operator delete((void *)(this)); /*0x631f52*/
+    operator delete((this)); /*0x631f52*/
   return (unsigned int *)(this); /*0x631f5c*/
 }
 } // namespace gamemd
@@ -707,13 +707,13 @@ PKPipe * GameClass::validateGameFile(unsigned int * Block, char a2)
   if ( v3 ) /*0x633003*/
   {
     COMObject::Release(v3); /*0x633007*/
-    operator delete((void *)(v3)); /*0x63300d*/
+    operator delete((v3)); /*0x63300d*/
   }
   v4->q00C = 0; /*0x633017*/
   (v4)->Dtor(); /*0x63301e*/
   ((Pipe *)Block)->Dtor(); /*0x633025*/
   if ( (a2 & 1) != 0 ) /*0x63302f*/
-    operator delete((void *)(Block)); /*0x633032*/
+    operator delete((Block)); /*0x633032*/
   return Block->tail_0; /*0x63303c*/
 }
 } // namespace gamemd
@@ -737,13 +737,13 @@ PKStrawClass * GameClass::applyGameSettings(unsigned int * Block, char a2)
   if ( v3 ) /*0x633383*/
   {
     COMObject::Release(v3); /*0x633387*/
-    operator delete((void *)(v3)); /*0x63338d*/
+    operator delete((v3)); /*0x63338d*/
   }
   p_m_14[1].Straw_field_0x04 = 0; /*0x633397*/
   (p_m_14)->Dtor(); /*0x63339e*/
   ((Straw *)Block)->Dtor(); /*0x6333a5*/
   if ( (a2 & 1) != 0 ) /*0x6333af*/
-    operator delete((void *)(Block)); /*0x6333b2*/
+    operator delete((Block)); /*0x6333b2*/
   return Block->tail_0; /*0x6333bc*/
 }
 } // namespace gamemd

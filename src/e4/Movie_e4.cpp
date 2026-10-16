@@ -205,7 +205,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           }
           ((MovieContext *)(v13))->Cleanup(); /*0x5bf112*/
           ((BinkMovie *)((BinkMovie *)v13))->Cleanup(); /*0x5bf119*/
-          operator delete((void *)(v13)); /*0x5bf11f*/
+          operator delete((v13)); /*0x5bf11f*/
           if ( a5 == 1 ) /*0x5bf130*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vfptr + 6))(g_DSurface_Hidden, 0); /*0x5bf13b*/
@@ -220,7 +220,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
         {
           ((MovieContext *)(v13))->Cleanup(); /*0x5bef85*/
           ((BinkMovie *)((BinkMovie *)v13))->Cleanup(); /*0x5bef8c*/
-          operator delete((void *)(v13)); /*0x5bef92*/
+          operator delete((v13)); /*0x5bef92*/
         }
       }
     }

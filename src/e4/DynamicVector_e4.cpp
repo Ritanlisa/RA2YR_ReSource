@@ -333,7 +333,7 @@ char DynamicVector::GrowCapacity()
   if ( 2 * v2 < 10 ) /*0x62482b*/
     v4 = 10; /*0x62482d*/
   void *v5; // edx
-  v5 = (void *)__2_YAPAXI_Z(24 * v4); /*0x62483f*/
+  v5 = __2_YAPAXI_Z(24 * v4); /*0x62483f*/
   memset(v5, 0, 4 * ((unsigned int)(24 * v4) >> 2)); /*0x62484a*/
   int v7; // [esp+4h] [ebp-4h]
   v7 = (int)v5; /*0x624854*/
@@ -599,7 +599,7 @@ char DynamicVector::EnsureCapacity(void *a1)
       v3 = 10; /*0x7af029*/
     }
     void *v4; // ebp
-    v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x7af03c*/
+    v4 = __2_YAPAXI_Z(4 * v3); /*0x7af03c*/
     memset(v4, 0, 4 * ((unsigned int)(4 * v3) >> 2)); /*0x7af04a*/
     if ( this->Capacity ) /*0x7af053*/
     {

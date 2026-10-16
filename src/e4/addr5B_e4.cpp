@@ -374,7 +374,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
       if ( g_UIControlState ) /*0x5b4eb5*/
       {
       ComPtr::Dtor(g_UIControlState); /*0x5b4eb9*/
-      operator delete((void *)(v15)); /*0x5b4ebf*/
+      operator delete((v15)); /*0x5b4ebf*/
       g_UIControlState = 0; /*0x5b4ec7*/
     }
       return 0; /*0x5b4ec7*/
@@ -699,7 +699,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     Buffer = 0; /*0x5bb403*/
     v5 = Palette::Preview_Generate((Palette *)g_UIControlState, 64, (int)&Buffer, v9); /*0x5bb410*/
     Debug::Log(); /*0x5bb418*/
-    v6 = (void *)operator new(4 * Buffer); /*0x5bb435*/
+    v6 = operator new(4 * Buffer); /*0x5bb435*/
     v15.__pad_004 = 0; /*0x5bb437*/
     v15.q008 = 0; /*0x5bb448*/
     /* X11: vtable install elided (implicit via Pipe virtuals 0x5bb44c) */
@@ -718,7 +718,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     ((RawFileClass *)v18)->Write2(&Buffer, 4u); /*0x5bb4e9*/
     ((RawFileClass *)v18)->Write2(v6, v8); /*0x5bb4f4*/
     ((RawFileClass *)v18)->CloseHandle(); /*0x5bb4fd*/
-    operator delete((void *)(v6)); /*0x5bb503*/
+    operator delete((v6)); /*0x5bb503*/
     Debug::Log(); /*0x5bb50d*/
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
     ((RawFileClass *)((RawFileClass *)v18))->Dtor(); /*0x5bb52a*/
@@ -1345,7 +1345,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   if ( !v20 || (Render_Load_759830((ObjectClass *)v20, a11), !Render_Load_7597A0(*(ObjectClass **)v15)) ) /*0x5bfbf9*/
   {
     BinkMovie::Cleanup((BinkMovie *)v15); /*0x5bfc04*/
-    operator delete((void *)((void *)v15)); /*0x5bfc0a*/
+    operator delete(((void *)v15)); /*0x5bfc0a*/
     return 0; /*0x5bfc1e*/
   }
   Width = MovieClass::GetWidth(*(MovieClass **)v15); /*0x5bfc2a*/
@@ -2005,7 +2005,7 @@ char E4Recv_5B3E90::sub_5B3E90()
   if ( *(unsigned int *)(i + 36) ) /*0x5b3f14*/
   {
     if ( *(unsigned char *)(i + 18) ) /*0x5b3f1b*/
-      operator delete((void *)(*(void **)(i + 36))); /*0x5b3f23*/
+      operator delete((*(void **)(i + 36))); /*0x5b3f23*/
   }
   *(unsigned int *)(i + 36) = 0; /*0x5b3f2b*/
   *(unsigned char *)(i + 18) = 0; /*0x5b3f32*/
@@ -2025,14 +2025,14 @@ void MixFileClass::sub_5B3F50()
     free(CountFiles); /*0x5b3f64*/
   if ( this->MixFileClass_field_24 && (this->u8_12) ) /*0x5b3f73*/
   {
-    operator delete((void *)((void *)this->MixFileClass_field_24)); /*0x5b3f79*/
+    operator delete(((void *)this->MixFileClass_field_24)); /*0x5b3f79*/
     (this->u8_12) = 0; /*0x5b3f81*/
   }
   void *v3 = *&this->q020; // eax /*0x5b3f84*/
   this->MixFileClass_field_24 = 0; /*0x5b3f87*/
   if ( v3 ) /*0x5b3f8c*/
   {
-    operator delete((void *)(v3)); /*0x5b3f8f*/
+    operator delete((v3)); /*0x5b3f8f*/
     *&this->q020 = 0; /*0x5b3f97*/
   }
   if ( this ) /*0x5b3f9c*/
@@ -2114,7 +2114,7 @@ void E4Recv_5B4400::sub_5B4400()
 {
 
   if ( this->occupant && BYTE2(this->q012) ) /*0x5b440d*/
-    __3_YAXPAX_Z((void *)this->occupant); /*0x5b4413*/
+    __3_YAXPAX_Z(this->occupant); /*0x5b4413*/
   this->occupant = 0; /*0x5b441b*/
   BYTE2(this->q012) = 0; /*0x5b441e*/
 
@@ -2980,7 +2980,7 @@ int _ioterm()
   {
     if ( *v0 ) /*0x5bc306*/
     {
-      operator delete((void *)(*v0)); /*0x5bc30d*/
+      operator delete((*v0)); /*0x5bc30d*/
       *v0 = 0; /*0x5bc315*/
     }
     ++v0; /*0x5bc31b*/

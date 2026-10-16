@@ -37,13 +37,13 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   }
   if ( *((unsigned int *)Block + 900) ) /*0x4272e3*/
   {
-    operator delete((void *)(*((void **)Block + 900))); /*0x4272ee*/
+    operator delete((*((void **)Block + 900))); /*0x4272ee*/
     *((unsigned int *)Block + 900) = 0; /*0x4272f6*/
   }
   *((unsigned char *)Block + 136) = 0; /*0x427300*/
   *(unsigned int *)Block->Return_field_00 = &vt_Animate; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
-    operator delete((void *)(Block)); /*0x427311*/
+    operator delete((Block)); /*0x427311*/
   return (gamemd::AnimFile *)(Block); /*0x42731b*/
 }
 } // namespace gamemd

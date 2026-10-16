@@ -663,7 +663,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
     /* X11: vtable install elided (implicit via VectorClass virtuals) */
     if ( v30.Items && ((unsigned int *)(v30.IsAllocated))[0] ) /*0x7097b0*/
     {
-      operator delete((void *)((void *)v30.Items)); /*0x7097b3*/
+      operator delete((v30.Items)); /*0x7097b3*/
       v30.Items = 0; /*0x7097bb*/
     }
     v30.Capacity = 0; /*0x7097c3*/
@@ -672,7 +672,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
     if ( v34 ) /*0x7097d8*/
     {
       if ( v36 ) /*0x7097e0*/
-        operator delete((void *)(v34)); /*0x7097e3*/
+        operator delete((v34)); /*0x7097e3*/
     }
   }
   else
@@ -988,7 +988,7 @@ int E4Recv_70F740::sub_70F740(int a2)
 {
 
   ObjectClass *v2; // ecx
-  v2 = (gamemd::ObjectClass *)(&this->u32_180); /*0x70f74c*/
+  v2 = &this->u32_180; /*0x70f74c*/
   v2->vfptr = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x70f752*/
   int v4; // [esp+4h] [ebp-8h]
   v2->vfptr1 = (void *)v4; /*0x70f758*/

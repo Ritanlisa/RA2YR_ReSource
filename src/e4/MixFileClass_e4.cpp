@@ -136,7 +136,7 @@ void MixFileClass::DestroyCache()
             v0->vtable3 = 0; /*0x69e1e9*/
           }
         }
-        operator delete((void *)(v0)); /*0x69e1ed*/
+        operator delete((v0)); /*0x69e1ed*/
       }
       v0 = v1; /*0x69e1f7*/
     }

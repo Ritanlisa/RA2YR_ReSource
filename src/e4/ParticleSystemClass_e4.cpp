@@ -48,7 +48,7 @@ void ParticleSystemClass_32::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x4e82f9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x4e8300*/
   {
-    operator delete((void *)(v2)); /*0x4e8306*/
+    operator delete((v2)); /*0x4e8306*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x4e830e*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x4e8311*/
@@ -76,7 +76,7 @@ void ParticleSystemClass::GetClassIdentifier()
   *&this->uniqueId = 0; /*0x4e8479*/
   if ( v2 && (this->IsAllocated) ) /*0x4e8480*/
   {
-    operator delete((void *)(v2)); /*0x4e8486*/
+    operator delete((v2)); /*0x4e8486*/
     *&this->vtable2 = 0; /*0x4e848e*/
   }
   (this->IsAllocated) = 0; /*0x4e8491*/
@@ -112,7 +112,7 @@ void ParticleSystemClass::initParticleArray()
   *&this->uniqueId = 0; /*0x4e8789*/
   if ( v2 && (this->IsAllocated) ) /*0x4e8790*/
   {
-    operator delete((void *)(v2)); /*0x4e8796*/
+    operator delete((v2)); /*0x4e8796*/
     *&this->vtable2 = 0; /*0x4e879e*/
   }
   (this->IsAllocated) = 0; /*0x4e87a1*/
@@ -129,7 +129,7 @@ void ParticleSystemClass_32::Destroy(void *a1)
   this->m_10 = 0; /*0x4e87e9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4e87f0*/
   {
-    operator delete((void *)(v2)); /*0x4e87f6*/
+    operator delete((v2)); /*0x4e87f6*/
     *&this->q004 = 0; /*0x4e87fe*/
   }
   (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4e8801*/
@@ -166,7 +166,7 @@ void ParticleSystemClass_32::ReleaseBuffer(void *a1_1, void *a2_1)
   this->m_10 = 0; /*0x4e8849*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4e8850*/
   {
-    operator delete((void *)(v2)); /*0x4e8856*/
+    operator delete((v2)); /*0x4e8856*/
     *&this->q004 = 0; /*0x4e885e*/
   }
   (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x4e8861*/
@@ -648,13 +648,13 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ef5d6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ef5e0*/
   {
-    operator delete((void *)(v3)); /*0x4ef5e8*/
+    operator delete((v3)); /*0x4ef5e8*/
     *&Block->__pad_004 = 0; /*0x4ef5f0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4ef5fb*/
   Block->u32_8 = 0; /*0x4ef601*/
   if ( (a2 & 1) != 0 ) /*0x4ef608*/
-    operator delete((void *)(Block)); /*0x4ef60b*/
+    operator delete((Block)); /*0x4ef60b*/
   return Block->tail_0; /*0x4ef615*/
 }
 } // namespace gamemd
@@ -668,13 +668,13 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, 
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efd56*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4efd60*/
   {
-    operator delete((void *)(v3)); /*0x4efd68*/
+    operator delete((v3)); /*0x4efd68*/
     *&Block->__pad_004 = 0; /*0x4efd70*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4efd7b*/
   Block->u32_8 = 0; /*0x4efd81*/
   if ( (a2 & 1) != 0 ) /*0x4efd88*/
-    operator delete((void *)(Block)); /*0x4efd8b*/
+    operator delete((Block)); /*0x4efd8b*/
   return Block->tail_0; /*0x4efd95*/
 }
 } // namespace gamemd
@@ -688,13 +688,13 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, 
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efdf6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efe00*/
   {
-    operator delete((void *)(v3)); /*0x4efe08*/
+    operator delete((v3)); /*0x4efe08*/
     *&Block->__pad_004 = 0; /*0x4efe10*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4efe1b*/
   Block->u32_8 = 0; /*0x4efe21*/
   if ( (a2 & 1) != 0 ) /*0x4efe28*/
-    operator delete((void *)(Block)); /*0x4efe2b*/
+    operator delete((Block)); /*0x4efe2b*/
   return Block->tail_0; /*0x4efe35*/
 }
 } // namespace gamemd
@@ -708,13 +708,13 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efe46*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efe50*/
   {
-    operator delete((void *)(v3)); /*0x4efe58*/
+    operator delete((v3)); /*0x4efe58*/
     *&Block->__pad_004 = 0; /*0x4efe60*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4efe6b*/
   Block->u32_8 = 0; /*0x4efe71*/
   if ( (a2 & 1) != 0 ) /*0x4efe78*/
-    operator delete((void *)(Block)); /*0x4efe7b*/
+    operator delete((Block)); /*0x4efe7b*/
   return Block->tail_0; /*0x4efe85*/
 }
 } // namespace gamemd
@@ -728,13 +728,13 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efee6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efef0*/
   {
-    operator delete((void *)(v3)); /*0x4efef8*/
+    operator delete((v3)); /*0x4efef8*/
     *&Block->__pad_004 = 0; /*0x4eff00*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4eff0b*/
   Block->u32_8 = 0; /*0x4eff11*/
   if ( (a2 & 1) != 0 ) /*0x4eff18*/
-    operator delete((void *)(Block)); /*0x4eff1b*/
+    operator delete((Block)); /*0x4eff1b*/
   return Block->tail_0; /*0x4eff25*/
 }
 } // namespace gamemd

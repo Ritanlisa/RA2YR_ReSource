@@ -1004,7 +1004,7 @@ int AddDynamicVector(HWND a1, int * a2)
     v7 = (const void *)a2[2]; /*0x6224d3*/
     if ( v7 ) /*0x6224d8*/
       memcpy(v6, v7, 4 * *a2); /*0x6224e6*/
-    operator delete((void *)((void *)a2[2])); /*0x6224f3*/
+    operator delete(((void *)a2[2])); /*0x6224f3*/
     a2[2] = v14; /*0x622503*/
     a2[1] = v16; /*0x622506*/
   }
@@ -1026,7 +1026,7 @@ int AddDynamicVector(HWND a1, int * a2)
     v11 = (const void *)a2[2]; /*0x62254f*/
     if ( v11 ) /*0x622554*/
       memcpy(v10, v11, 4 * *a2); /*0x622562*/
-    operator delete((void *)((void *)a2[2])); /*0x62256f*/
+    operator delete(((void *)a2[2])); /*0x62256f*/
     a2[2] = (int)v10; /*0x622578*/
     v3 = v15; /*0x62257b*/
     a2[1] = v17; /*0x622582*/
@@ -1493,7 +1493,7 @@ unsigned int ObjectClass::sub_623730(unsigned int * a2)
   v6 = (const wchar_t *)a2[10]; /*0x62375b*/
   if ( owningHouseIndex ) /*0x623760*/
   {
-    operator delete((void *)(owningHouseIndex)); /*0x623763*/
+    operator delete((owningHouseIndex)); /*0x623763*/
     this->owningHouseIndex = 0; /*0x62376b*/
   }
   if ( v6 && *v6 ) /*0x623772*/
@@ -1519,7 +1519,7 @@ unsigned int ObjectClass::sub_623730(unsigned int * a2)
       *v12 = *v11; /*0x6237be*/
     else
       this->attachedTag = *v11; /*0x6237c4*/
-    operator delete((void *)(v11)); /*0x6237c8*/
+    operator delete((v11)); /*0x6237c8*/
     LABEL_15:
     ; /*0x6237d0*/
   }
@@ -1784,7 +1784,7 @@ AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
     LRESULT v7; // edi
     v7 = SendMessageA(hWnd, 0x4B5u, v4 + 1, (LPARAM)v6); /*0x623e87*/
     ((String *)(a2))->Assign_Alt(v6); /*0x623e8a*/
-    operator delete((void *)(v6)); /*0x623e90*/
+    operator delete((v6)); /*0x623e90*/
     return v7; /*0x623e98*/
   }
   else
@@ -2293,7 +2293,7 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   v3->Particles = &vt_VectorClass; /*0x62e244*/
   if ( v12 && v3->u32_C9 ) /*0x62e252*/
   {
-    operator delete((void *)(v12)); /*0x62e25b*/
+    operator delete((v12)); /*0x62e25b*/
     v3->TargetCoords = 0; /*0x62e263*/
   }
   v3->u32_C9 = 0; /*0x62e26b*/
@@ -2506,7 +2506,7 @@ LRESULT GetEditControlText(HWND hWnd, void ** a2)
     v6 = (wchar_t *)operator new(2 * v4 + 4); /*0x623ed5*/
     v7 = SendMessageA(hWnd, 0x4B3u, v4 + 1, (LPARAM)v6); /*0x623ee8*/
     WideString::Assign_Alt(a2, v6); /*0x623eeb*/
-    operator delete((void *)(v6)); /*0x623ef1*/
+    operator delete((v6)); /*0x623ef1*/
     return v7; /*0x623ef9*/
   }
   else
@@ -2531,7 +2531,7 @@ LRESULT GetListBoxItemText(ObjectClass * aP0, WPARAM wParam, void ** a2)
   v6 = (char *)operator new(v5 + 2); /*0x623f34*/
   v7 = SendMessageA(aP0, 0x4B7u, wParam, (LPARAM)v6); /*0x623f40*/
   ((String *)(a2))->Assign_Alt(v6); /*0x623f47*/
-  operator delete((void *)(v6)); /*0x623f4d*/
+  operator delete((v6)); /*0x623f4d*/
   return v7; /*0x623f57*/
 }
 } // namespace gamemd
@@ -2712,7 +2712,7 @@ void E4Recv_626290::sub_626290()
       if ( v6 ) /*0x6262b7*/
       {
         ColorScheme::Destructor(*(ColorScheme **)(v5 + 4 * i)); /*0x6262bb*/
-        operator delete((void *)(v6)); /*0x6262c1*/
+        operator delete((v6)); /*0x6262c1*/
       }
     }
     v7 = (void (***)(unsigned int, int))this->M256; /*0x6262cf*/
@@ -2745,7 +2745,7 @@ int E4Recv_6262F0::sub_6262F0(int a2)
       if ( v7 ) /*0x626317*/
       {
         ColorScheme::Destructor(*(unsigned int *)(v6 + 4 * i)); /*0x62631b*/
-        operator delete((void *)(v7)); /*0x626321*/
+        operator delete((v7)); /*0x626321*/
       }
     }
     v8 = (void (***)(unsigned int, int))this->M256; /*0x62632f*/

@@ -264,7 +264,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
     int v17; // eax
     v17 = Text::MeasureWidth((int)v15, 0); /*0x5314ae*/
     v32 = v39 - v17 - 10; /*0x5314bf*/
-    v33 += *(unsigned int *)(Instance + 28) + 3; /*0x5314ca*/
+    v33 += Instance->u32_1C + 3; /*0x5314ca*/
   }
   wchar_t v25; // [esp-10h] [ebp-B8h]
   TextRenderer::Printf(v35, v16, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, v25); /*0x5314ee*/
@@ -283,7 +283,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   wchar_t *v20; // eax
   v20 = GetStringCSF(aGuiTrademarkbo, 0, g_Str_File_Init_CPP, 4965); /*0x53159a*/
   v32 = 10; /*0x53159f*/
-  v33 += *(unsigned int *)(Instance + 28) + 3; /*0x5315bb*/
+  v33 += Instance->u32_1C + 3; /*0x5315bb*/
   wchar_t v28; // [esp-10h] [ebp-B8h]
   TextRenderer::Printf(v35, (size_t)v20, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, v28); /*0x5315d2*/
   int v29; // [esp-10h] [ebp-B8h]
@@ -292,12 +292,12 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   (*((unsigned int *)&(v21))) = Audio::Callback(); /*0x5315e9*/
   *(unsigned long long *)&((unsigned int *)&stru_A8EB00)[2980] = v21 + 5000; /*0x5315f6*/
   if ( v5 ) /*0x531603*/
-    operator delete((void *)(v5)); /*0x531606*/
+    operator delete((v5)); /*0x531606*/
   void *v22 = Block; // esi /*0x53160e*/
   if ( Block ) /*0x531614*/
   {
     ((FileTreeNode *)Block)->Destroy(); /*0x531618*/
-    operator delete((void *)(v22)); /*0x53161e*/
+    operator delete((v22)); /*0x53161e*/
   }
   if ( v34 ) /*0x531630*/
     (**(void (***)(int, int))v34)(v34, 1); /*0x531636*/

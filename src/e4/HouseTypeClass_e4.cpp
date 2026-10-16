@@ -41,7 +41,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
 {
 
   ((int)this)->Init(a2); /*0x511658*/
-  this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)&vt_TypeList); /*0x51165d*/
+  this->veteranInfantry[0] = (gamemd::InfantryTypeClass*)(&vt_TypeList); /*0x51165d*/
   *&this->prefix = (char)(&vt_TypeList); /*0x511667*/
   *&this->u32_184 = (unsigned int)(&vt_TypeList); /*0x511671*/
   this->AbstractClass = &vt_HouseTypeClass; /*0x51167b*/
@@ -80,7 +80,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   *(unsigned int *)&a1->pad_16D[23] = &vt_VectorClass; /*0x51171a*/
   if ( v3 && a1->pad_16D[36] ) /*0x511726*/
   {
-    operator delete((void *)(v3)); /*0x51172f*/
+    operator delete((v3)); /*0x51172f*/
     *(unsigned int *)&a1->pad_16D[27] = 0; /*0x511737*/
   }
   a1->pad_16D[36] = 0; /*0x51173d*/
@@ -90,7 +90,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   *(unsigned int *)&a1->prefix = &vt_VectorClass; /*0x51174f*/
   if ( v4 && a1->pad_16D[8] ) /*0x51175d*/
   {
-    operator delete((void *)(v4)); /*0x511766*/
+    operator delete((v4)); /*0x511766*/
     *(unsigned int *)&a1->smartAi = 0; /*0x51176e*/
   }
   a1->pad_16D[8] = 0; /*0x511774*/
@@ -100,7 +100,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   a1->veteranInfantry[0] = (int)&vt_VectorClass; /*0x511786*/
   if ( veteranInfantryCount && (((unsigned char *)&(a1->veteranUnitsCount))[1]) ) /*0x511794*/
   {
-    operator delete((void *)(veteranInfantryCount)); /*0x51179d*/
+    operator delete((veteranInfantryCount)); /*0x51179d*/
     a1->veteranInfantryCount = 0; /*0x5117a5*/
   }
   (((unsigned char *)&(a1->veteranUnitsCount))[1]) = 0; /*0x5117ad*/
@@ -366,7 +366,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   int UnitTypeVector_field_0x18 = Destination.nextArrayIndex; // ecx /*0x511df2*/
   *(unsigned int *)(_EBX + 352) = Destination.abstractFlags; /*0x511df6*/
   void *UnitTypeVector_field_0x04; // eax
-  UnitTypeVector_field_0x04 = (void *)Destination.ptr_4; /*0x511df9*/
+  UnitTypeVector_field_0x04 = Destination.ptr_4; /*0x511df9*/
   *(unsigned int *)(_EBX + 348) = UnitTypeVector_field_0x10; /*0x511dfd*/
   *(unsigned int *)(_EBX + 356) = UnitTypeVector_field_0x18; /*0x511e02*/
   *(unsigned int *)Destination.__pad_000 = &vt_VectorClass; /*0x511e05*/
@@ -679,7 +679,7 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass_flat * a2)
     return &this->AbstractClass; /*0x5133d5*/
   }
   void *v4; // eax
-  v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513393*/
+  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513393*/
   this->vtable2 = v4; /*0x51339b*/
   if ( !v4 ) /*0x5133a0*/
     return &this->AbstractClass; /*0x5133a0*/
@@ -753,7 +753,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     a1->AudioBuffer_14 = v9; /*0x67ba04*/
     if ( !v11 && v20 ) /*0x67ba11*/
     {
-      operator delete((void *)(v10)); /*0x67ba18*/
+      operator delete((v10)); /*0x67ba18*/
       return a1; /*0x67ba2b*/
     }
   }
@@ -1017,7 +1017,7 @@ wchar_t * HouseTypeClass_36::ddtor(void *a1_1)
   a1_1->q010 = 0; /*0x512909*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x512910*/
   {
-    operator delete((void *)(v2)); /*0x512916*/
+    operator delete((v2)); /*0x512916*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x51291e*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x512921*/
@@ -1117,13 +1117,13 @@ TypeList_flat * HouseTypeClass_36::QueryInterface(unsigned int * Block, char a2)
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x512a46) */
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a50*/
   {
-    operator delete((void *)(v3)); /*0x512a58*/
+    operator delete((v3)); /*0x512a58*/
     *((unsigned int *)Block + 1) = 0; /*0x512a60*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x512a6b*/
   *((unsigned int *)Block + 2) = 0; /*0x512a71*/
   if ( (a2 & 1) != 0 ) /*0x512a78*/
-    operator delete((void *)(Block)); /*0x512a7b*/
+    operator delete((Block)); /*0x512a7b*/
   return &Block->vfptr; /*0x512a85*/
 }
 } // namespace gamemd
@@ -1138,13 +1138,13 @@ TypeList_flat * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x512a96) */
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512aa0*/
   {
-    operator delete((void *)(v3)); /*0x512aa8*/
+    operator delete((v3)); /*0x512aa8*/
     *((unsigned int *)Block + 1) = 0; /*0x512ab0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x512abb*/
   *((unsigned int *)Block + 2) = 0; /*0x512ac1*/
   if ( (a2 & 1) != 0 ) /*0x512ac8*/
-    operator delete((void *)(Block)); /*0x512acb*/
+    operator delete((Block)); /*0x512acb*/
   return &Block->vfptr; /*0x512ad5*/
 }
 } // namespace gamemd
@@ -1189,7 +1189,7 @@ unsigned int * HouseTypeClass::readStartInfantry(unsigned int * a2, void *a2_1)
     return &this->AbstractClass; /*0x512c35*/
   }
   void *v4; // eax
-  v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x512bf3*/
+  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x512bf3*/
   this->vtable2 = v4; /*0x512bfb*/
   if ( !v4 ) /*0x512c00*/
     return &this->AbstractClass; /*0x512c00*/
@@ -1434,7 +1434,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
     }
     else
     {
-      this->vtable2 = (void *)__2_YAPAXI_Z(4 * a2); /*0x51359c*/
+      this->vtable2 = __2_YAPAXI_Z(4 * a2); /*0x51359c*/
       BYTE1(this->u8_D) = 1; /*0x51359f*/
     }
   }
@@ -1562,7 +1562,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * a2)
     if ( v3 ) /*0x513800*/
     {
       void *v4; // eax
-      v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513806*/
+      v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513806*/
       this->vtable2 = v4; /*0x513810*/
       if ( v4 ) /*0x513813*/
       {
@@ -1613,7 +1613,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * a2)
     if ( v3 ) /*0x513890*/
     {
       void *v4; // eax
-      v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513896*/
+      v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513896*/
       this->vtable2 = v4; /*0x5138a0*/
       if ( v4 ) /*0x5138a3*/
       {

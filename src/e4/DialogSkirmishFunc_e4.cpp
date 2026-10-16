@@ -159,7 +159,7 @@ void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a
             }
             unsigned int * v62 = (unsigned int *)operator new(4u);
             if ( v62 )
-              v63 = (ObjectClass *)unknown_libname_27( (void *)((void *)(v62)));
+              v63 = (ObjectClass *)unknown_libname_27( ((v62)));
             ObjectClass *v63 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
             *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v63);
             ((Surface *)((char **)v63))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
@@ -204,7 +204,7 @@ void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a
                 RA2_OPDEL(v67);
                 unsigned int * v68 = (unsigned int *)operator new(4u);
                 if ( v68 )
-                  v69 = (ObjectClass *)unknown_libname_27( (void *)((void *)(v68)));
+                  v69 = (ObjectClass *)unknown_libname_27( ((v68)));
                 ObjectClass *v69 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
                 *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v69);
                 ((Surface *)((char **)v69))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
@@ -358,7 +358,7 @@ void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a
             }
           }
           v25 = *(SkirmishDialog **)&((unsigned int *)(HouseClass_Player))[29936];
-          unknown_libname_74( (void *)(&v82));
+          unknown_libname_74( (&v82));
           if ( !(*(uint8_t (**)(SkirmishDialog *, wchar_t **))(*(unsigned int *)v25->q000 + 20))( (SkirmishDialog *)(v25), (wchar_t **)(&v82)) )
 
 

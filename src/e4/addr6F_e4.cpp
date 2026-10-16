@@ -328,7 +328,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     if ( v31 ) /*0x6f0f99*/
     {
       if ( v59 ) /*0x6f0fa1*/
-        operator delete((void *)(v31)); /*0x6f0fa4*/
+        operator delete((v31)); /*0x6f0fa4*/
     }
   }
   else
@@ -361,7 +361,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v60 = 0; /*0x6f0ee7*/
     if ( Block && v59 ) /*0x6f0ef3*/
     {
-      operator delete((void *)(Block)); /*0x6f0ef6*/
+      operator delete((Block)); /*0x6f0ef6*/
       Block = 0; /*0x6f0efe*/
     }
     v40 = (unsigned int)((int)v55);

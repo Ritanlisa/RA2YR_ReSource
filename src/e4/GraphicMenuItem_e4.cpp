@@ -19,7 +19,7 @@ void GraphicMenuItem::Dtor(void *a1)
   if ( v1 ) /*0x4f3a7c*/
   {
     j_DeleteAndZero(v1); /*0x4f3a80*/
-    operator delete((void *)(v1)); /*0x4f3a86*/
+    operator delete((v1)); /*0x4f3a86*/
   }
 }  // G42.18 ns repair
 } // namespace gamemd

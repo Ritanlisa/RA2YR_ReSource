@@ -88,7 +88,7 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
         }
         p_Radar_field_0xC = (Radar *)((char *)p_Radar_field_0xC + 4); /*0x431121*/
       }
-      p_Radar_field_0xC = (gamemd::Radar *)(&v14->q00C); /*0x431132*/
+      p_Radar_field_0xC = &v14->q00C; /*0x431132*/
       bool v10; // of
       v10 = __OFSUB__(v13 + 1, 8); /*0x431135*/
       bool v9 = v13 - 7 < 0; // sf /*0x431135*/

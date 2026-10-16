@@ -702,15 +702,15 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
 
   v4 = 0; /*0x755dbc*/
   if ( aP1->ptr_10 ) /*0x755dbe*/
-    operator delete((void *)(aP1->ptr_10)); /*0x755dc6*/
+    operator delete((aP1->ptr_10)); /*0x755dc6*/
   v5 = aP1->__pad_014; /*0x755dce*/
   aP1->ptr_10 = 0; /*0x755dd1*/
   if ( v5 ) /*0x755dd6*/
-    operator delete((void *)(v5)); /*0x755dd9*/
+    operator delete((v5)); /*0x755dd9*/
   v6 = aP1->ptr_18; /*0x755de1*/
   aP1->__pad_014 = 0; /*0x755de4*/
   if ( v6 ) /*0x755de9*/
-    operator delete((void *)(v6)); /*0x755dec*/
+    operator delete((v6)); /*0x755dec*/
   v7 = (int)(a3_2); /*0x755df4*/
   aP1->ptr_18 = 0; /*0x755dfb*/
   if ( !(*(int (**)(int, int))(a3_2->__pad_01C)(a3_2, 1) ) /*0x755e09*/
@@ -759,7 +759,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
     v71 = aP1->__pad_014; /*0x756453*/
     aP1->ptr_10 = 0; /*0x756456*/
     if ( v71 ) /*0x75645b*/
-      operator delete((void *)(v71)); /*0x75645e*/
+      operator delete((v71)); /*0x75645e*/
     v70 = aP1->ptr_18; /*0x756466*/
     aP1->__pad_014 = 0; /*0x756469*/
     if ( !v70 ) /*0x75646e*/
@@ -768,7 +768,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   }
   if ( !aP1->__pad_014 || !v17 ) /*0x755ec3*/
   {
-    operator delete((void *)(v18)); /*0x75644b*/
+    operator delete((v18)); /*0x75644b*/
     goto LABEL_67; /*0x75644b*/
   }
   if ( a3_2 ) /*0x755ed0*/
@@ -981,7 +981,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
     return 0; /*0x756486*/
   }
   LABEL_70:
-    operator delete((void *)(v70)); /*0x756470*/
+    operator delete((v70)); /*0x756470*/
     goto LABEL_71; /*0x756471*/
   }
   v24 = 0; /*0x756057*/
@@ -1000,11 +1000,11 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   v26 = aP1->__pad_014; /*0x7560ee*/
   aP1->ptr_10 = 0; /*0x7560f1*/
   if ( v26 ) /*0x7560f6*/
-    operator delete((void *)(v26)); /*0x7560f9*/
+    operator delete((v26)); /*0x7560f9*/
   v27 = aP1->ptr_18; /*0x756101*/
   aP1->__pad_014 = 0; /*0x756104*/
   if ( v27 ) /*0x756109*/
-    operator delete((void *)(v27)); /*0x75610c*/
+    operator delete((v27)); /*0x75610c*/
   aP1->ptr_18 = 0; /*0x756114*/
   (*(void (**)(int))(*&a3_2->u32_D0))(a3_2); /*0x75611b*/
   return 0; /*0x755f94*/

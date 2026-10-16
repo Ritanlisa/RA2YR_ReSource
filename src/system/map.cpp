@@ -596,7 +596,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
     v23 = (char *)(4 * v24 + 11259744); /*0x567a9e*/
     v44 = (char *)(4 * v24 + 11261072); /*0x567aa5*/
   }
-  v25 = (void *)owner; /*0x567aa9*/
+  v25 = owner; /*0x567aa9*/
   v26 = v23 - 4; /*0x567aad*/
   if ( !owner ) /*0x567ab2*/
     goto LABEL_26; /*0x567ab2*/

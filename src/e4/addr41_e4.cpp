@@ -1409,7 +1409,7 @@ void sub_4128F0()
     {
       if ( *((unsigned char *)v4 + 9) ) /*0x41298a*/
       {
-        operator delete((void *)(v6)); /*0x412990*/
+        operator delete((v6)); /*0x412990*/
         *v4 = 0; /*0x412998*/
       }
     }

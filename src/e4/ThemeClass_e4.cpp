@@ -193,14 +193,14 @@ int ThemeClass::ClearQueues()
     {
       LinkedList::Init((unsigned int **)i); /*0x7523bf*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = (unsigned int)((gamemd::Init)(2)); /*0x7523c8*/
-      operator delete((void *)((void *)i)); /*0x7523cb*/
+      operator delete(((void *)i)); /*0x7523cb*/
     }
     int j; // esi
     for ( j = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); j; j = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7523f1*/
     {
       LinkedList::Init((unsigned int **)j); /*0x7523f5*/
       *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = (unsigned int)((gamemd::Init)(2)); /*0x7523fe*/
-      operator delete((void *)((void *)j)); /*0x752401*/
+      operator delete(((void *)j)); /*0x752401*/
     }
     int *v3; // edi
     v3 = (int *)stru_B1D450; /*0x752419*/
@@ -212,7 +212,7 @@ int ThemeClass::ClearQueues()
       {
         LinkedList::Init((unsigned int **)k); /*0x75242d*/
         *(unsigned int *)(k->vtable4 + 80) = (gamemd::Init)(2); /*0x752436*/
-        operator delete((void *)((void *)k)); /*0x752439*/
+        operator delete(((void *)k)); /*0x752439*/
         result = ((AudioQueue *)(v3))->GetNext(); /*0x752443*/
       }
       v3 += 3; /*0x75244e*/

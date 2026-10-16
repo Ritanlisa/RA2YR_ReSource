@@ -57,13 +57,13 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5d2ca6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x5d2cb0*/
   {
-    operator delete((void *)(v3)); /*0x5d2cb8*/
+    operator delete((v3)); /*0x5d2cb8*/
     *&Block->__pad_004 = 0; /*0x5d2cc0*/
   }
   (Block->u32_D) = 0; /*0x5d2ccb*/
   Block->u32_8 = 0; /*0x5d2cd1*/
   if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
-    operator delete((void *)(Block)); /*0x5d2cdb*/
+    operator delete((Block)); /*0x5d2cdb*/
   return Block->tail_0; /*0x5d2ce5*/
 }
 } // namespace gamemd

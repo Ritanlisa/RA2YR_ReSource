@@ -231,7 +231,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   int v11; // eax
   v11 = Text::MeasureWidth((int)v17, 0); /*0x642f98*/
   int v12; // ebx
-  v12 = *(unsigned int *)(Instance + 28); /*0x642fa1*/
+  v12 = Instance->u32_1C; /*0x642fa1*/
   *a1 = v5 + v11 + v16 + 26; /*0x642fb4*/
   if ( v15 > v6 ) /*0x642fb6*/
     v6 = v15; /*0x642fb8*/
@@ -282,7 +282,7 @@ TriggerTypeClass * TextRenderer::Destructor(char a2)
 {
   this->TriggerClass::ProcessEvents(); /*0x727cd3*/
   if ( (a2 & 1) != 0 ) /*0x727cdd*/
-    operator delete((void *)(this)); /*0x727ce0*/
+    operator delete((this)); /*0x727ce0*/
   return (gamemd::TriggerTypeClass *)(this); /*0x727cea*/
 }
 } // namespace gamemd

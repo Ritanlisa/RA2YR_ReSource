@@ -973,7 +973,7 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
               *(unsigned int *)(v10 + 40) = v6; /*0x7c0d97*/
               if ( *(unsigned short *)(aP0 + 1880) == 1 ) /*0x7c0da1*/
               {
-                memcpy((void *)(aP0 + 452), *(const void **)(v10 + 8), v6); /*0x7c0db3*/
+                memcpy((aP0 + 452), *(const void **)(v10 + 8), v6); /*0x7c0db3*/
                 aP0->u32_1C0 = *(unsigned int *)(v10 + 40); /*0x7c0dbf*/
                 aP0->u32_1A4 |= 1u; /*0x7c0dcd*/
               }

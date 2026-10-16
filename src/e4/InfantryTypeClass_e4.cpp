@@ -753,13 +753,13 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
     }
     while ( v3 < dword_A8E358 ); /*0x524ddd*/
   }
-  operator delete((void *)((void *)Block->Sequence[0])); /*0x524de7*/
+  operator delete(((void *)Block->Sequence[0])); /*0x524de7*/
   Block->Sequence[0] = 0; /*0x524df1*/
   v4 = (void *)Block->VoiceComment[1]; /*0x524df7*/
   Block->VoiceComment[0] = (int)&vt_VectorClass; /*0x524dff*/
   if ( v4 && (Block->u8_9) ) /*0x524e0b*/
   {
-    operator delete((void *)(v4)); /*0x524e14*/
+    operator delete((v4)); /*0x524e14*/
     Block->VoiceComment[1] = 0; /*0x524e1c*/
   }
   (Block->u8_9) = 0; /*0x524e22*/
@@ -768,7 +768,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   Block->DeathAnims[0] = (int)&vt_VectorClass; /*0x524e34*/
   if ( v5 && (Block->u8_9) ) /*0x524e42*/
   {
-    operator delete((void *)(v5)); /*0x524e4b*/
+    operator delete((v5)); /*0x524e4b*/
     Block->DeathAnims[1] = 0; /*0x524e53*/
   }
   (Block->u8_9) = 0; /*0x524e59*/
@@ -777,7 +777,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   Block->DeadBodies[0] = (int)&vt_VectorClass; /*0x524e6b*/
   if ( v6 && (Block->u8_9) ) /*0x524e79*/
   {
-    operator delete((void *)(v6)); /*0x524e82*/
+    operator delete((v6)); /*0x524e82*/
     Block->DeadBodies[1] = 0; /*0x524e8a*/
   }
   (Block->u8_9) = 0; /*0x524e92*/
@@ -812,7 +812,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1, void *a2)
       this->abstractFlags = aP1->u32_14; /*0x524f9a*/
       return &this->TechnoTypeClass; /*0x524f9d*/
   }
-  v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x524f43*/
+  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x524f43*/
   this->vtable2 = v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/

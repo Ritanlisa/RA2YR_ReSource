@@ -19,7 +19,7 @@ void Dial8Class_48::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x4a7d29*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x4a7d30*/
   {
-    operator delete((void *)(v2)); /*0x4a7d36*/
+    operator delete((v2)); /*0x4a7d36*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x4a7d3e*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x4a7d41*/
@@ -247,13 +247,13 @@ VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4a8036*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4a8040*/
   {
-    operator delete((void *)(v3)); /*0x4a8048*/
+    operator delete((v3)); /*0x4a8048*/
     *&Block->__pad_004 = 0; /*0x4a8050*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4a805b*/
   Block->u32_8 = 0; /*0x4a8061*/
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
-    operator delete((void *)(Block)); /*0x4a806b*/
+    operator delete((Block)); /*0x4a806b*/
   return Block->tail_0; /*0x4a8075*/
 }
 } // namespace gamemd
@@ -267,13 +267,13 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigne
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4a8086*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4a8090*/
   {
-    operator delete((void *)(v3)); /*0x4a8098*/
+    operator delete((v3)); /*0x4a8098*/
     *&Block->__pad_004 = 0; /*0x4a80a0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4a80ab*/
   Block->u32_8 = 0; /*0x4a80b1*/
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
-    operator delete((void *)(Block)); /*0x4a80bb*/
+    operator delete((Block)); /*0x4a80bb*/
   return Block->tail_0; /*0x4a80c5*/
 }
 } // namespace gamemd

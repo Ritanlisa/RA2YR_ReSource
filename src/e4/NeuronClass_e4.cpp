@@ -73,7 +73,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   }
   ((AbstractClass *)Block)->DTOR(); /*0x43aa73*/
   if ( (a2 & 1) != 0 ) /*0x43aa7d*/
-    operator delete((void *)(Block)); /*0x43aa80*/
+    operator delete((Block)); /*0x43aa80*/
   return Block->tail_0; /*0x43aa8a*/
 }
 }  // G42.18c ns repair
@@ -220,13 +220,13 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x43acb6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x43acc0*/
   {
-    operator delete((void *)(v3)); /*0x43acc8*/
+    operator delete((v3)); /*0x43acc8*/
     *&Block->__pad_004 = 0; /*0x43acd0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x43acdb*/
   Block->u32_8 = 0; /*0x43ace1*/
   if ( (a2 & 1) != 0 ) /*0x43ace8*/
-    operator delete((void *)(Block)); /*0x43aceb*/
+    operator delete((Block)); /*0x43aceb*/
   return Block->tail_0; /*0x43acf5*/
 }
 } // namespace gamemd

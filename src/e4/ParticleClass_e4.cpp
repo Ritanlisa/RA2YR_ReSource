@@ -49,7 +49,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         || (v29 = *&this->Coord_9C,
             v30 = *&this->u32_A0,
             v31 = *&this->u32_A4,
-            !(unsigned __int8)Game::Stub3((IUnknown *)((int)&v29))) )
+            !(unsigned __int8)Game::Stub3((IUnknown*)(&v29))) )
       {
         int v5; // eax
         v5 = *((unsigned int *)this->u32_AC + 197); /*0x62cf6b*/
@@ -220,7 +220,7 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
       aP1[2] = &vt_ParticleClass; /*0x62d7d1*/
       aP1[3] = &vt_ParticleClass; /*0x62d7d8*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(aP1 + 43)); /*0x62d7eb*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,&aP1->q02B); /*0x62d7eb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/
     return 0; /*0x62d801*/
   }

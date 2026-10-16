@@ -119,12 +119,12 @@ HRESULT __stdcall ConnectionClass::QueryInterface(const IID&, void**)
 
   v3 = (void *)this->Active; /*0x48c653*/
   /* X11: vtable install elided (implicit via class virtuals 0x48c656) — binary-proven install, was 0 */
-  operator delete((void *)(v3)); /*0x48c65d*/
+  operator delete((v3)); /*0x48c65d*/
   PlayerIndex = (void (__thiscall ***)(unsigned int, int))this->PlayerIndex; /*0x48c662*/
   if ( PlayerIndex ) /*0x48c66a*/
     (**PlayerIndex)(PlayerIndex, 1); /*0x48c670*/
   if ( (a2 & 1) != 0 ) /*0x48c677*/
-    operator delete((void *)(this)); /*0x48c67a*/
+    operator delete((this)); /*0x48c67a*/
   return this->vtable1; /*0x48c684*/
 }
 } // namespace gamemd
@@ -163,7 +163,7 @@ unsigned int * IPXConnClass::QueryInterface(char,int,int,int)
   /* X11: vtable install elided (implicit via class virtuals 0x53f853) — binary-proven install, was 0 */
   ConnectionClass::dtor((ConnectionClass *)this); /*0x53f859*/
   if ( (a2 & 1) != 0 ) /*0x53f863*/
-    operator delete((void *)(this)); /*0x53f866*/
+    operator delete((this)); /*0x53f866*/
   return this->vtable1; /*0x53f870*/
 }
 } // namespace gamemd
@@ -542,7 +542,7 @@ int32_t IPXManagerClass::getPlayerName(char a2)
 {
   /* X11: vtable install elided (implicit via class virtuals 0x543109) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x54310f*/
-    operator delete((void *)(this)); /*0x543112*/
+    operator delete((this)); /*0x543112*/
   return &this->vtable1; /*0x54311c*/
 }
 } // namespace gamemd
@@ -1556,7 +1556,7 @@ void ModemGame::ReceiveMapPreview()
     {
       v7 = g_UIControlState; /*0x5b753c*/
       ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5b7544*/
-      operator delete((void *)(v7)); /*0x5b754a*/
+      operator delete((v7)); /*0x5b754a*/
     }
     v8 = (ObjectClass *)operator new(4u); /*0x5b7554*/
     if ( v8 ) /*0x5b755f*/
@@ -1567,8 +1567,8 @@ void ModemGame::ReceiveMapPreview()
     ModemGame::RenderPaletteImage((ModemGame *)v9, (int *)v6); /*0x5b7574*/
     InvalidateRect(*(HWND *)this->__pad_000, 0, 0); /*0x5b7582*/
     Debug::Log(); /*0x5b758d*/
-    operator delete((void *)(v6)); /*0x5b7593*/
-    operator delete((void *)(v4)); /*0x5b7599*/
+    operator delete((v6)); /*0x5b7593*/
+    operator delete((v4)); /*0x5b7599*/
     LZOStraw::Destructor((LZOStraw *)v15); /*0x5b75a5*/
     Vector::Clear((int)&v14); /*0x5b75ae*/
     Straw::Dtor(&v12); /*0x5b75b7*/
@@ -2513,7 +2513,7 @@ namespace gamemd {
 void ** MultiplayerBattleTeam::QueryInterface(char a2) {
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5c10d3*/
   if ( (a2 & 1) != 0 ) /*0x5c10dd*/
-    operator delete((void *)(this)); /*0x5c10e0*/
+    operator delete((this)); /*0x5c10e0*/
   return (void **)this; /*0x5c10ea*/
 }
 } // namespace gamemd
@@ -2530,7 +2530,7 @@ namespace gamemd {
 void ** MultiplayerObserverTeam::QueryInterface(char a2) {
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5c94d3*/
   if ( (a2 & 1) != 0 ) /*0x5c94dd*/
-    operator delete((void *)(this)); /*0x5c94e0*/
+    operator delete((this)); /*0x5c94e0*/
   return (void **)this; /*0x5c94ea*/
 }
 } // namespace gamemd
@@ -2567,7 +2567,7 @@ void MultiplayerBattleTeam::QueryInterface()
 {
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5c10d3*/
   if ( (a2 & 1) != 0 ) /*0x5c10dd*/
-    operator delete((void *)(this)); /*0x5c10e0*/
+    operator delete((this)); /*0x5c10e0*/
   return (void **)this; /*0x5c10ea*/
 }
 } // namespace gamemd
@@ -2580,7 +2580,7 @@ void MultiplayerObserverTeam::QueryInterface()
 {
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5c94d3*/
   if ( (a2 & 1) != 0 ) /*0x5c94dd*/
-    operator delete((void *)(this)); /*0x5c94e0*/
+    operator delete((this)); /*0x5c94e0*/
   return (void **)this; /*0x5c94ea*/
 }
 } // namespace gamemd
@@ -2593,7 +2593,7 @@ void MultiplayerSiegeDefenderTeam::QueryInterface()
   /* X11: vtable install elided (implicit via class virtuals 0x5caf13) — binary-proven install, was 0 */
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5caf19*/
   if ( (a2 & 1) != 0 ) /*0x5caf23*/
-    operator delete((void *)(this)); /*0x5caf26*/
+    operator delete((this)); /*0x5caf26*/
   return (void **)this; /*0x5caf30*/
 }
 } // namespace gamemd
@@ -2605,7 +2605,7 @@ void MultiplayerSiegeAttackerTeam::QueryInterface()
   *this = (MultiplayerSiegeAttackerTeam)0; /*0x5caf43*/
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5caf49*/
   if ( (a2 & 1) != 0 ) /*0x5caf53*/
-    operator delete((void *)(this)); /*0x5caf56*/
+    operator delete((this)); /*0x5caf56*/
   return (void **)this; /*0x5caf60*/
 }
 } // namespace gamemd
@@ -2620,13 +2620,13 @@ void MultiplayerTeamVector::Destruct()
   *(unsigned int *)this->tail_0 = 0; /*0x5d8866*/
   if ( v3 && (this->u8_D) ) /*0x5d8870*/
   {
-    operator delete((void *)(v3)); /*0x5d8878*/
+    operator delete((v3)); /*0x5d8878*/
     *&this->u32_4 = 0; /*0x5d8880*/
   }
   (this->u8_D) = 0; /*0x5d888b*/
   *&this->u32_8 = 0; /*0x5d8891*/
   if ( (a2 & 1) != 0 ) /*0x5d8898*/
-    operator delete((void *)(this)); /*0x5d889b*/
+    operator delete((this)); /*0x5d889b*/
   return this->tail_0; /*0x5d88a5*/
 }
 } // namespace gamemd
@@ -2641,13 +2641,13 @@ void MultiplayerModeVector::Destruct()
   *(unsigned int *)this->tail_0 = 0; /*0x5d88b6*/
   if ( v3 && (this->u8_D) ) /*0x5d88c0*/
   {
-    operator delete((void *)(v3)); /*0x5d88c8*/
+    operator delete((v3)); /*0x5d88c8*/
     *&this->u32_4 = 0; /*0x5d88d0*/
   }
   (this->u8_D) = 0; /*0x5d88db*/
   *&this->u32_8 = 0; /*0x5d88e1*/
   if ( (a2 & 1) != 0 ) /*0x5d88e8*/
-    operator delete((void *)(this)); /*0x5d88eb*/
+    operator delete((this)); /*0x5d88eb*/
   return this->tail_0; /*0x5d88f5*/
 }
 } // namespace gamemd
@@ -2662,13 +2662,13 @@ void MultiplayerModeVector2::Destruct()
   *(unsigned int *)this->tail_0 = 0; /*0x5d8906*/
   if ( v3 && (this->u8_D) ) /*0x5d8910*/
   {
-    operator delete((void *)(v3)); /*0x5d8918*/
+    operator delete((v3)); /*0x5d8918*/
     *&this->u32_4 = 0; /*0x5d8920*/
   }
   (this->u8_D) = 0; /*0x5d892b*/
   *&this->u32_8 = 0; /*0x5d8931*/
   if ( (a2 & 1) != 0 ) /*0x5d8938*/
-    operator delete((void *)(this)); /*0x5d893b*/
+    operator delete((this)); /*0x5d893b*/
   return this->tail_0; /*0x5d8945*/
 }
 } // namespace gamemd
@@ -2700,7 +2700,7 @@ void MultiplayerTeam_Destru::QueryInterface()
   *(unsigned int *)this->tail_0 = 0; /*0x5d8d56*/
   DeleteAndZero::Alt(&this->DeleteAndZero_4); /*0x5d8d5c*/
   if ( (a2 & 1) != 0 ) /*0x5d8d66*/
-    operator delete((void *)(this)); /*0x5d8d69*/
+    operator delete((this)); /*0x5d8d69*/
   return (void **)this; /*0x5d8d73*/
 }
 } // namespace gamemd
@@ -3704,7 +3704,7 @@ bool NullModemClass::Init()
     if ( v18 ) /*0x5f181b*/
     {
       FileFind::Close(v18); /*0x5f181f*/
-      operator delete((void *)(v18)); /*0x5f1825*/
+      operator delete((v18)); /*0x5f1825*/
       *(&this->PlayerIndex3) = 0; /*0x5f182d*/
     }
     v19 = 0; /*0x5f1830*/
@@ -3722,7 +3722,7 @@ bool NullModemClass::Init()
       if ( v9 ) /*0x5f188b*/
       {
         FileFind::Close((void **)v9); /*0x5f188f*/
-        operator delete((void *)((void *)v9)); /*0x5f1895*/
+        operator delete(((void *)v9)); /*0x5f1895*/
       }
       ++v19; /*0x5f189d*/
       *(&this->PlayerIndex3) = 0; /*0x5f189e*/
@@ -3806,7 +3806,7 @@ void Modem::OpenPort()
         if ( v9 ) /*0x5f1a61*/
         {
           FileFind::Close(this->u32_343)); /*0x5f1a65*/
-          operator delete((void *)(v9)); /*0x5f1a6b*/
+          operator delete((v9)); /*0x5f1a6b*/
           this->u32_34 = 0; /*0x5f1a73*/
         }
         while ( 1 )
@@ -3822,7 +3822,7 @@ void Modem::OpenPort()
           if ( v11 ) /*0x5f1ad0*/
           {
             FileFind::Close((void **)v11); /*0x5f1ad4*/
-            operator delete((void *)((void *)v11)); /*0x5f1ada*/
+            operator delete(((void *)v11)); /*0x5f1ada*/
           }
           ++v3; /*0x5f1ae6*/
           this->u32_34 = 0; /*0x5f1aea*/
@@ -4046,14 +4046,14 @@ bool NullModemClass::DetectModem()
       v12 = (int *)GetStringCSF(aTxtErrorNoInit, 0, g_Str_File_NullMgr_CPP, 1215); /*0x5f2280*/
       if ( Dialog::ShowMessageBox(v12, v25, v33, 0, 0, v40) ) /*0x5f228a*/
       {
-        operator delete((void *)(Block)); /*0x5f2298*/
+        operator delete((Block)); /*0x5f2298*/
         v8 = v42; /*0x5f229d*/
         goto LABEL_6; /*0x5f22a4*/
       }
       v43 = 1; /*0x5f22a9*/
     }
   LABEL_18:
-    operator delete((void *)(Block)); /*0x5f22b1*/
+    operator delete((Block)); /*0x5f22b1*/
     v10 = a2; /*0x5f22bb*/
     v6 = v42; /*0x5f22c2*/
   }
@@ -5043,15 +5043,15 @@ void WOLobby::BuildStateList(char a1) {
         do /*0x781f8b*/
         {
           if ( *v12 ) /*0x781f78*/
-            operator delete((void *)(*v12)); /*0x781f7f*/
+            operator delete((*v12)); /*0x781f7f*/
           v12 += 3; /*0x781f87*/
           --v1; /*0x781f8a*/
         }
         while ( v1 ); /*0x781f8b*/
       }
-      operator delete((void *)(v3)); /*0x781f8e*/
+      operator delete((v3)); /*0x781f8e*/
       v16[0] = 0; /*0x781f97*/
-      operator delete((void *)(Block)); /*0x781f9c*/
+      operator delete((Block)); /*0x781f9c*/
     }
     else
     {
@@ -5081,13 +5081,13 @@ void WOLobby::BuildStateList(char a1) {
         v4 = v14; /*0x781d99*/
       }
       v16[0] = 0; /*0x781e4d*/
-      operator delete((void *)(Block)); /*0x781e56*/
+      operator delete((Block)); /*0x781e56*/
     }
   }
   else
   {
     v16[0] = 0; /*0x781d63*/
-    operator delete((void *)(Block)); /*0x781d68*/
+    operator delete((Block)); /*0x781d68*/
   }
 }
 }
@@ -5183,15 +5183,15 @@ void WOLobby::BuildStateList()
         do /*0x781f8b*/
         {
           if ( *v12 ) /*0x781f78*/
-            operator delete((void *)(*v12)); /*0x781f7f*/
+            operator delete((*v12)); /*0x781f7f*/
           v12 += 3; /*0x781f87*/
           --v1; /*0x781f8a*/
         }
         while ( v1 ); /*0x781f8b*/
       }
-      operator delete((void *)(v3)); /*0x781f8e*/
+      operator delete((v3)); /*0x781f8e*/
       v16[0] = 0; /*0x781f97*/
-      operator delete((void *)(Block)); /*0x781f9c*/
+      operator delete((Block)); /*0x781f9c*/
     }
     else
     {
@@ -5221,13 +5221,13 @@ void WOLobby::BuildStateList()
         v4 = v14; /*0x781d99*/
       }
       v16[0] = 0; /*0x781e4d*/
-      operator delete((void *)(Block)); /*0x781e56*/
+      operator delete((Block)); /*0x781e56*/
     }
   }
   else
   {
     v16[0] = 0; /*0x781d63*/
-    operator delete((void *)(Block)); /*0x781d68*/
+    operator delete((Block)); /*0x781d68*/
   }
 }
 } // namespace gamemd
@@ -5324,15 +5324,15 @@ void WOLobby::BuildPlayerList()
         do /*0x783a6a*/
         {
           if ( *v12 ) /*0x783a57*/
-            operator delete((void *)(*v12)); /*0x783a5e*/
+            operator delete((*v12)); /*0x783a5e*/
           v12 += 3; /*0x783a66*/
           --v1; /*0x783a69*/
         }
         while ( v1 ); /*0x783a6a*/
       }
-      operator delete((void *)(v3)); /*0x783a6d*/
+      operator delete((v3)); /*0x783a6d*/
       v16[0] = 0; /*0x783a76*/
-      operator delete((void *)(Block)); /*0x783a7b*/
+      operator delete((Block)); /*0x783a7b*/
     }
     else
     {
@@ -5362,13 +5362,13 @@ void WOLobby::BuildPlayerList()
         v4 = v14; /*0x783879*/
       }
       v16[0] = 0; /*0x78392a*/
-      operator delete((void *)(Block)); /*0x783933*/
+      operator delete((Block)); /*0x783933*/
     }
   }
   else
   {
     v16[0] = 0; /*0x783843*/
-    operator delete((void *)(Block)); /*0x783848*/
+    operator delete((Block)); /*0x783848*/
   }
 }
 } // namespace gamemd
@@ -5884,12 +5884,12 @@ char WOLGameList::EnsureCapacity()
     v5 = 10; /*0x7ada96*/
   if ( v5 >= WOLGameList_field_0x04 ) /*0x7ada9d*/
     return 0; /*0x7adaa0*/
-  v6 = (void *)operator new(108 * v5); /*0x7adab0*/
+  v6 = operator new(108 * v5); /*0x7adab0*/
   WOLGameList_field_0x08 = (const void *)this->q008; /*0x7adab5*/
   v8 = (int)v6; /*0x7adabd*/
   if ( WOLGameList_field_0x08 ) /*0x7adac1*/
     memcpy(v6, WOLGameList_field_0x08, 108 * *(unsigned int *)this->__pad_000); /*0x7adad7*/
-  operator delete((void *)((void *)this->q008)); /*0x7adae5*/
+  operator delete(((void *)this->q008)); /*0x7adae5*/
   this->q008 = v8; /*0x7adaf1*/
   this->q004 = v5; /*0x7adaf4*/
   return 1; /*0x7ada82*/
@@ -5921,7 +5921,7 @@ void WOLGameList::GrowBuffer()
     this->q008 = 2 * WOLGameList_field_0x08; /*0x7ae03d*/
     v3 = v3; /*0x7ae040*/
     this->q00C = v4; /*0x7ae048*/
-    v5 = (void *)operator new(8 * WOLGameList_field_0x08); /*0x7ae053*/
+    v5 = operator new(8 * WOLGameList_field_0x08); /*0x7ae053*/
     v6 = 4 * this->q008; /*0x7ae058*/
     *(unsigned int *)this->__pad_000 = v5; /*0x7ae05f*/
     memset(v5, 0, v6); /*0x7ae064*/
@@ -5951,7 +5951,7 @@ void WOLGameList::GrowBuffer()
       while ( v8 ); /*0x7ae0a7*/
       v3 = v3; /*0x7ae0a9*/
     }
-    operator delete((void *)(v3)); /*0x7ae0ae*/
+    operator delete((v3)); /*0x7ae0ae*/
   }
 }
 } // namespace gamemd

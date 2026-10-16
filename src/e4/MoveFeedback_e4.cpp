@@ -210,7 +210,7 @@ void MoveFeedback::Destroy(void *a1)
   *&this->m_10 = 0; /*0x40be59*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x40be60*/
   {
-    operator delete((void *)(v2)); /*0x40be66*/
+    operator delete((v2)); /*0x40be66*/
     *&this->m_Capacity = 0; /*0x40be6e*/
   }
   (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x40be71*/

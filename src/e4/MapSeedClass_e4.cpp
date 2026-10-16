@@ -547,7 +547,7 @@ void MapSeedClass_18::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x5ac4c9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x5ac4d0*/
   {
-    operator delete((void *)(v2)); /*0x5ac4d6*/
+    operator delete((v2)); /*0x5ac4d6*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x5ac4de*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x5ac4e1*/
@@ -774,13 +774,13 @@ VectorClass_flat * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5ad436*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5ad440*/
   {
-    operator delete((void *)(v3)); /*0x5ad448*/
+    operator delete((v3)); /*0x5ad448*/
     *&Block->__pad_004 = 0; /*0x5ad450*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x5ad45b*/
   Block->u32_8 = 0; /*0x5ad461*/
   if ( (a2 & 1) != 0 ) /*0x5ad468*/
-    operator delete((void *)(Block)); /*0x5ad46b*/
+    operator delete((Block)); /*0x5ad46b*/
   return Block->tail_0; /*0x5ad475*/
 }
 } // namespace gamemd
@@ -794,13 +794,13 @@ DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(un
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5ad486*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5ad490*/
   {
-    operator delete((void *)(v3)); /*0x5ad498*/
+    operator delete((v3)); /*0x5ad498*/
     *&Block->__pad_004 = 0; /*0x5ad4a0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x5ad4ab*/
   Block->u32_8 = 0; /*0x5ad4b1*/
   if ( (a2 & 1) != 0 ) /*0x5ad4b8*/
-    operator delete((void *)(Block)); /*0x5ad4bb*/
+    operator delete((Block)); /*0x5ad4bb*/
   return Block->tail_0; /*0x5ad4c5*/
 }
 } // namespace gamemd

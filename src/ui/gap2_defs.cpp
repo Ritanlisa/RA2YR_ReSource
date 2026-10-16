@@ -111,7 +111,7 @@ void MouseClass::initCursor() {
   this->q_10 = 0; /*0x40d549*/
   if ( v2 && (this->IsAllocated) ) /*0x40d550*/
   {
-    operator delete((void *)(v2)); /*0x40d556*/
+    operator delete((v2)); /*0x40d556*/
     *&this->m_ScrollY = 0; /*0x40d55e*/
   }
   (this->IsAllocated) = 0; /*0x40d561*/
@@ -200,13 +200,13 @@ void* MouseClass::applyCursorSettings(int a2) {
   *(unsigned int *)this->HandleClick_ph = 0; /*0x40d856*/
   if ( v3 && (this->IsAllocated) ) /*0x40d860*/
   {
-    operator delete((void *)(v3)); /*0x40d868*/
+    operator delete((v3)); /*0x40d868*/
     *&this->m_ScrollY = 0; /*0x40d870*/
   }
   (this->IsAllocated) = 0; /*0x40d87b*/
   this->m_MaxX = 0; /*0x40d881*/
   if ( (a2 & 1) != 0 ) /*0x40d888*/
-    operator delete((void *)(this)); /*0x40d88b*/
+    operator delete((this)); /*0x40d88b*/
   return this->HandleClick_ph; /*0x40d895*/
 }
 }
@@ -346,11 +346,11 @@ void* CheckListClass::QueryInterface(int a2) {
   {
     Clamped = (void *)Array::GetClamped((ListClass *)this, 0); /*0x4886fe*/
     ListClass::RemoveItem((ListClass *)this, 0); /*0x488700*/
-    operator delete((void *)(Clamped)); /*0x488706*/
+    operator delete((Clamped)); /*0x488706*/
   }
   ListClass::Destruct((ListClass *)this); /*0x488718*/
   if ( (a2 & 1) != 0 ) /*0x488722*/
-    operator delete((void *)(this)); /*0x488725*/
+    operator delete((this)); /*0x488725*/
   return (unsigned int *)this; /*0x48872f*/
 }
 }
@@ -498,7 +498,7 @@ void* DropListClass::QueryInterface(int a2) {
   ShapeButtonClass::Destructor((int)&this->q050); /*0x4b5607*/
   DropListClass::Constructor(this); /*0x4b560e*/
   if ( (a2 & 1) != 0 ) /*0x4b5618*/
-    operator delete((void *)(this)); /*0x4b561b*/
+    operator delete((this)); /*0x4b561b*/
   return this->vtable1; /*0x4b5625*/
 }
 }
@@ -1016,7 +1016,7 @@ void CheckListClass::initList() {
   this->Height = 0; /*0x556eb9*/
   if ( v2 && (this->IsAllocated) ) /*0x556ec0*/
   {
-    operator delete((void *)(v2)); /*0x556ec6*/
+    operator delete((v2)); /*0x556ec6*/
     *&this->Items = 0; /*0x556ece*/
   }
   (this->IsAllocated) = 0; /*0x556ed1*/
@@ -1105,13 +1105,13 @@ void* CheckListClass::toggleItem(int a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x5571c6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x5571d0*/
   {
-    operator delete((void *)(v3)); /*0x5571d8*/
+    operator delete((v3)); /*0x5571d8*/
     *&this->Items = 0; /*0x5571e0*/
   }
   (this->IsAllocated) = 0; /*0x5571eb*/
   this->Capacity = 0; /*0x5571f1*/
   if ( (a2 & 1) != 0 ) /*0x5571f8*/
-    operator delete((void *)(this)); /*0x5571fb*/
+    operator delete((this)); /*0x5571fb*/
   return this->vtable1; /*0x557205*/
 }
 }
@@ -1422,14 +1422,14 @@ void* ListClass::Destru_vt00(int a2) {
   this->u32_34 = 0; /*0x5580d3*/
   if ( v5 && this->u32_41 ) /*0x5580de*/
   {
-    operator delete((void *)(v5)); /*0x5580e4*/
+    operator delete((v5)); /*0x5580e4*/
     this->u32_38 = 0; /*0x5580ec*/
   }
   this->u32_41 = 0; /*0x5580f1*/
   this->u32_3C = 0; /*0x5580f4*/
   GadgetClass::Dtor((ShpButtonClass *)this); /*0x5580f7*/
   if ( (a2 & 1) != 0 ) /*0x558101*/
-    operator delete((void *)(this)); /*0x558104*/
+    operator delete((this)); /*0x558104*/
   return this->vtable1; /*0x55810e*/
 }
 }
@@ -1442,13 +1442,13 @@ void* CheckListClass::drawList(int a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x558136) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x558140*/
   {
-    operator delete((void *)(v3)); /*0x558148*/
+    operator delete((v3)); /*0x558148*/
     *&this->X = 0; /*0x558150*/
   }
   (this->IsAllocated) = 0; /*0x55815b*/
   this->Capacity = 0; /*0x558161*/
   if ( (a2 & 1) != 0 ) /*0x558168*/
-    operator delete((void *)(this)); /*0x55816b*/
+    operator delete((this)); /*0x55816b*/
   return this->vtable1; /*0x558175*/
 }
 }
@@ -1461,7 +1461,7 @@ void CheckListClass::scrollList() {
   this->Count = 0; /*0x5581e9*/
   if ( v2 && (this->IsAllocated) ) /*0x5581f0*/
   {
-    operator delete((void *)(v2)); /*0x5581f6*/
+    operator delete((v2)); /*0x5581f6*/
     *&this->X = 0; /*0x5581fe*/
   }
   (this->IsAllocated) = 0; /*0x558201*/
@@ -1704,17 +1704,17 @@ int MouseClass::LoadGameAssets() {
     {
       dword_822CF8 = -1; /*0x5bdfc3*/
       (*((void (__thiscall **)(MouseClass *))this->HandleClick_ph + 23))(this); /*0x5bdfd2*/
-      operator delete((void *)(this->MouseClass_field_0x70)); /*0x5bdfd9*/
+      operator delete((this->MouseClass_field_0x70)); /*0x5bdfd9*/
       MouseClass_field_0x68 = (void *)this->somecount_4C; /*0x5bdfde*/
       this->MouseClass_field_0x70 = 0; /*0x5bdfe1*/
-      operator delete((void *)(MouseClass_field_0x68)); /*0x5bdfe5*/
+      operator delete((MouseClass_field_0x68)); /*0x5bdfe5*/
       MouseClass_field_0x14 = (unsigned int *)this->CapacityIncrement; /*0x5bdfea*/
       this->somecount_4C = 0; /*0x5bdff2*/
       if ( MouseClass_field_0x14 ) /*0x5bdff5*/
       {
         if ( *MouseClass_field_0x14 ) /*0x5bdff7*/
           (**(void (__thiscall ***)(unsigned int, int))*MouseClass_field_0x14)(*MouseClass_field_0x14, 3); /*0x5be001*/
-        operator delete((void *)(MouseClass_field_0x14)); /*0x5be004*/
+        operator delete((MouseClass_field_0x14)); /*0x5be004*/
       }
       this->CapacityIncrement = 0; /*0x5be00c*/
       v7 = &this->LevelAndPassabilityStruct2pointer_70; /*0x5be00f*/
@@ -1730,7 +1730,7 @@ int MouseClass::LoadGameAssets() {
       v10 = 13; /*0x5be02a*/
       do /*0x5be040*/
       {
-        operator delete((void *)(*(void **)pad_18)); /*0x5be032*/
+        operator delete((*(void **)pad_18)); /*0x5be032*/
         *(unsigned int *)pad_18 = 0; /*0x5be037*/
         pad_18 += 4; /*0x5be03c*/
         --v10; /*0x5be03f*/
@@ -1745,7 +1745,7 @@ int MouseClass::LoadGameAssets() {
         {
           if ( *v13 ) /*0x5be053*/
             (**(void (__thiscall ***)(unsigned int, int))*v13)(*v13, 3); /*0x5be05d*/
-          operator delete((void *)(v13)); /*0x5be060*/
+          operator delete((v13)); /*0x5be060*/
           *(unsigned int *)v11 = 0; /*0x5be068*/
         }
         v11 += 4; /*0x5be06e*/
@@ -1799,12 +1799,12 @@ int MouseClass::LoadGameAssets() {
           0);
         if ( this->MouseClass_field_0x70 ) /*0x5be153*/
         {
-          operator delete((void *)(this->MouseClass_field_0x70)); /*0x5be15b*/
+          operator delete((this->MouseClass_field_0x70)); /*0x5be15b*/
           this->MouseClass_field_0x70 = 0; /*0x5be163*/
         }
         if ( this->somecount_4C ) /*0x5be166*/
         {
-          operator delete((void *)((void *)this->somecount_4C)); /*0x5be16e*/
+          operator delete(((void *)this->somecount_4C)); /*0x5be16e*/
           this->somecount_4C = 0; /*0x5be176*/
         }
         v18 = (CampaignClass *)operator new(10 * *(unsigned int *)this->ZoneConnections); /*0x5be182*/
@@ -2385,7 +2385,7 @@ void* MouseClass::loadCursor(int a2, int a3) {
     }
     else
     {
-      v4 = (void *)operator new(8 * a2); /*0x5bea6e*/
+      v4 = operator new(8 * a2); /*0x5bea6e*/
       if ( !v4 ) /*0x5bea78*/
         v4 = 0; /*0x5bea81*/
       this->Items = v4; /*0x5bea83*/
@@ -2727,7 +2727,7 @@ void ComboBoxOwnerDraw::SetCapacity() {
     v13 = *(int **)this->__pad_000; /*0x625906*/
     this->q008 = ComboBoxOwnerDraw_field_0x08 >> 1; /*0x62590c*/
     this->q00C = ComboBoxOwnerDraw_field_0x0C - 1; /*0x625914*/
-    v5 = (void *)operator new(4 * (ComboBoxOwnerDraw_field_0x08 >> 1)); /*0x62591f*/
+    v5 = operator new(4 * (ComboBoxOwnerDraw_field_0x08 >> 1)); /*0x62591f*/
     v6 = 4 * this->q008; /*0x625924*/
     *(unsigned int *)this->__pad_000 = v5; /*0x62592b*/
     memset(v5, 0, v6); /*0x625930*/
@@ -2758,7 +2758,7 @@ void ComboBoxOwnerDraw::SetCapacity() {
       while ( v8 ); /*0x625973*/
       v3 = v13; /*0x625975*/
     }
-    operator delete((void *)(v3)); /*0x62597a*/
+    operator delete((v3)); /*0x62597a*/
   }
 }
 }
@@ -2780,14 +2780,14 @@ int ComboBoxOwnerDraw::GrowBuffer() {
     v6 = 10; /*0x6259b1*/
     v4 = 10; /*0x6259b9*/
   }
-  v5 = (void *)operator new(4 * v4); /*0x6259cc*/
+  v5 = operator new(4 * v4); /*0x6259cc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6259da*/
   if ( this->q008 ) /*0x6259e3*/
   {
     memcpy(v5, (const void *)this->q008, 4 * *(unsigned int *)this->__pad_000); /*0x6259f8*/
     v4 = v6; /*0x625a01*/
   }
-  operator delete((void *)((void *)this->q008)); /*0x625a09*/
+  operator delete(((void *)this->q008)); /*0x625a09*/
   this->q004 = v4; /*0x625a11*/
   this->q008 = (int)v5; /*0x625a14*/
   return 1; /*0x62599f*/
@@ -3336,7 +3336,7 @@ namespace gamemd {
 void* PowerClass::Initialize(int a2) {
   RadarClass::Destruct((RadarClass *)this); /*0x6404b3*/
   if ( (a2 & 1) != 0 ) /*0x6404bd*/
-    operator delete((void *)(this)); /*0x6404c0*/
+    operator delete((this)); /*0x6404c0*/
   return this->vtable1; /*0x6404ca*/
 }
 }
@@ -4100,7 +4100,7 @@ int SidebarClass::Init() {
             *((unsigned int *)this + this->u32_5510 + 5419) = ProductionData->vtable4; /*0x6a5784*/
             *((unsigned int *)this + this->u32_5510 + 5427) = ProductionData->needsSave; /*0x6a5794*/
             *((unsigned int *)this + this->u32_5510 + 5435) = ProductionData->ptr_30; /*0x6a57a4*/
-            operator delete((void *)(ProductionData)); /*0x6a57ab*/
+            operator delete((ProductionData)); /*0x6a57ab*/
           }
         }
         v32 = 0; /*0x6a57b9*/
@@ -4947,7 +4947,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
                 v34[24] = v36[3]; /*0x6a90af*/
                 v34[32] = v36[8]; /*0x6a90b5*/
                 v34[40] = v36[12]; /*0x6a90be*/
-                operator delete((void *)(v36)); /*0x6a90c4*/
+                operator delete((v36)); /*0x6a90c4*/
                 v57 = 1; /*0x6a90cc*/
               }
             }
@@ -7144,13 +7144,13 @@ void* ToolTipClass::compareString(int a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x724ef6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x724f00*/
   {
-    operator delete((void *)(v3)); /*0x724f08*/
+    operator delete((v3)); /*0x724f08*/
     *&this->Items = 0; /*0x724f10*/
   }
   (this->IsAllocated) = 0; /*0x724f1b*/
   this->Capacity = 0; /*0x724f21*/
   if ( (a2 & 1) != 0 ) /*0x724f28*/
-    operator delete((void *)(this)); /*0x724f2b*/
+    operator delete((this)); /*0x724f2b*/
   return this->vtable1; /*0x724f35*/
 }
 }
@@ -7333,7 +7333,7 @@ void* SidebarClass::FindProductionData() {
   v1 = ToWideStringChar((char *)this); /*0x77da52*/
   String::Assign((String *)&v7, v1); /*0x77da5c*/
   String::ToLower((String *)&v7); /*0x77da65*/
-  v2 = (void *)operator new(0x6Cu); /*0x77da71*/
+  v2 = operator new(0x6Cu); /*0x77da71*/
   if ( !v2 ) /*0x77da78*/
   {
     DeleteAndZero((ObjectClass *)&v7); /*0x77da7e*/

@@ -171,7 +171,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
 
 
   int *p_EnumConnectionsClass_field_0x04; // esi
-  p_EnumConnectionsClass_field_0x04 = (int *)(&this->M4); /*0x4a02bc*/
+  p_EnumConnectionsClass_field_0x04 = &this->M4; /*0x4a02bc*/
   this->M8 = 0; /*0x4a02c1*/
   this->M12 = 0; /*0x4a02c4*/
   LOBYTE(this->M16) = 1; /*0x4a02c7*/
@@ -240,7 +240,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
 
 
   int *p_EnumConnectionsClass_field_0x04; // esi
-  p_EnumConnectionsClass_field_0x04 = (int *)(&this->M4); /*0x4a038f*/
+  p_EnumConnectionsClass_field_0x04 = &this->M4; /*0x4a038f*/
   this->M8 = 0; /*0x4a0394*/
   this->M12 = 0; /*0x4a0397*/
   LOBYTE(this->M16) = 1; /*0x4a039a*/
@@ -625,7 +625,7 @@ void * LoadFileSHP(char * aP0, bool * aP1)
         Vector::Clear((int)v9); /*0x4a3948*/
         /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4a3951) */
         ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x4a3959*/
-        return (void *)v5; /*0x4a395e*/
+        return v5; /*0x4a395e*/
       }
       (*(void (**)(CCFileClass *, int, size_t))(*(unsigned int *)v8.vtable1 + 36))(&v8, v5, v6); /*0x4a392a*/
     }
@@ -895,7 +895,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   {
     v16 = &vt_VectorClass; /*0x4a4a93*/
     if ( Block && (((unsigned char *)&(v18))[1]) ) /*0x4a4aa5*/
-      operator delete((void *)(Block)); /*0x4a4aa8*/
+      operator delete((Block)); /*0x4a4aa8*/
     return 0; /*0x4a4aa8*/
   }
   v5 = (unsigned int *)operator new(8 * v19 + 4); /*0x4a497e*/
@@ -921,17 +921,17 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
         ++NumOfElements; /*0x4a49f7*/
       }
     }
-    operator delete((void *)(*((void **)Block + v7++))); /*0x4a4a03*/
+    operator delete((*((void **)Block + v7++))); /*0x4a4a03*/
   }
   while ( v7 < v19 ); /*0x4a4a12*/
   if ( v6 == v5 ) /*0x4a4a17*/
   {
     LABEL_13:
-    operator delete((void *)(v5)); /*0x4a4a1a*/
+    operator delete((v5)); /*0x4a4a1a*/
     v16 = &vt_VectorClass; /*0x4a4a28*/
     if ( Block && (((unsigned char *)&(v18))[1]) ) /*0x4a4a38*/
     {
-      operator delete((void *)(Block)); /*0x4a4a3b*/
+      operator delete((Block)); /*0x4a4a3b*/
       return 0; /*0x4a4a4b*/
     }
     return 0; /*0x4a4a38*/
@@ -939,7 +939,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   qsort(v5, NumOfElements, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_4A48C0); /*0x4a4a5b*/
   v16 = &vt_VectorClass; /*0x4a4a69*/
   if ( Block && (((unsigned char *)&(v18))[1]) ) /*0x4a4a79*/
-    operator delete((void *)(Block)); /*0x4a4a7c*/
+    operator delete((Block)); /*0x4a4a7c*/
   return v5; /*0x4a4a45*/
 }
 }
@@ -1328,7 +1328,7 @@ int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5,
   v11 = ((uint8_t *)(a6 + 776))->ConvertToRGB((int)&a6); /*0x4a6028*/
   int v14; // [esp+8h] [ebp-8h] BYREF
   (*((unsigned short *)&(v14))) = *(unsigned short *)v11; /*0x4a6036*/
-  (((unsigned char *)&(v14))[2]) = v11->ConvertClass_field_0x2; /*0x4a603e*/
+  (((unsigned char *)&(v14))[2]) = v11->field_2; /*0x4a603e*/
   int *v12; // eax
   v12 = RenderTextLabel( /*0x4a60b2*/
           &v14,
@@ -3583,7 +3583,7 @@ unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
       this->Items = (void *)a3; /*0x4a4e58*/
       return &this->vtable0; /*0x4a4e5e*/
     }
-    this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x4a4e6d*/
+    this->Items = __2_YAPAXI_Z(4 * a2); /*0x4a4e6d*/
     this->IsAllocated = 1; /*0x4a4e70*/
   }
   return &this->vtable0; /*0x4a4e5d*/
@@ -3852,7 +3852,7 @@ unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int
   int16_t v16; // [esp+8h] [ebp-8h] BYREF
   v16 = *(unsigned short *)v12; /*0x4a6526*/
   uint8_t v17; // [esp+Ah] [ebp-6h]
-  v17 = v12->ConvertClass_field_0x2; /*0x4a652e*/
+  v17 = v12->field_2; /*0x4a652e*/
   unsigned int *v13; // eax
   v13 = (unsigned int *)RenderTextLabelWordWrap( /*0x4a65a7*/
                     &v16,
@@ -4262,7 +4262,7 @@ void sub_4A8680()
       {
         if ( *(unsigned char *)(v0 + 9) ) /*0x4a86b4*/
         {
-          operator delete((void *)(v2)); /*0x4a86ba*/
+          operator delete((v2)); /*0x4a86ba*/
           *(unsigned int *)v0 = 0; /*0x4a86c2*/
         }
       }

@@ -81,7 +81,7 @@ int BinkMovie::Stop(void *a1, void *a2)
 
 
   void *BinkMovie_field_0x20; // edi
-  BinkMovie_field_0x20 = (void *)this->q_20; /*0x432704*/
+  BinkMovie_field_0x20 = this->q_20; /*0x432704*/
   if ( BinkMovie_field_0x20 ) /*0x432709*/
   {
     BinkMovie::FreeSurfaceTracker((BinkMovie *)this->q_20); /*0x43270d*/
@@ -647,14 +647,14 @@ int BinkMovie::Cleanup(void *a1_1, void *a2)
     if ( *(unsigned int *)a1_1->__pad_0 ) /*0x5c01ff*/
     {
       CCFileClass::Cleanup(*(CCFileClass **)a1_1->__pad_0); /*0x5c0207*/
-      operator delete((void *)(v4)); /*0x5c020d*/
+      operator delete((v4)); /*0x5c020d*/
     }
   }
   v5 = (void *)*((unsigned int *)a1_1 + 18); /*0x5c0215*/
   if ( v5 ) /*0x5c021a*/
   {
     BinkMovie::FreeSurfaceTracker(*((BinkMovie **)a1_1 + 18)); /*0x5c021e*/
-    operator delete((void *)(v5)); /*0x5c0224*/
+    operator delete((v5)); /*0x5c0224*/
     *((unsigned int *)a1_1 + 18) = 0; /*0x5c022c*/
   }
   return result; /*0x5c0233*/
@@ -844,7 +844,7 @@ namespace gamemd {
 void BinkMovie::Destroy(void *a1_1)
 {
   if ( a1_1->BinkMovie_field_0x14[0] ) /*0x6c9930*/
-    operator delete((void *)((void *)a1_1->BinkMovie_field_0x14[0])); /*0x6c9938*/
+    operator delete(((void *)a1_1->BinkMovie_field_0x14[0])); /*0x6c9938*/
 }
 }
 // 0x6C9AE0
@@ -870,7 +870,7 @@ int BinkMovie::FreeSurfaceTracker(void *a1_1)
         if ( v5 ) /*0x6c9afc*/
         {
           BinkMovie::Destroy(*(BinkMovie **)(v4 + 4 * v3)); /*0x6c9b00*/
-          operator delete((void *)(v5)); /*0x6c9b06*/
+          operator delete((v5)); /*0x6c9b06*/
         }
         result = *(unsigned int *)a1_1->__pad_0; /*0x6c9b0e*/
         ++v3; /*0x6c9b10*/

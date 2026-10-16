@@ -1083,7 +1083,7 @@ LRESULT UI_Assign_623F60(HWND hWnd, WPARAM wParam, void ** a3)
   v6 = (wchar_t *)operator new(2 * v5 + 4); /*0x623f95*/
   v7 = SendMessageA(hWnd, 0x4B6u, wParam, (LPARAM)v6); /*0x623fa1*/
   WideString::Assign_Alt(a3, v6); /*0x623fa8*/
-  operator delete((void *)(v6)); /*0x623fae*/
+  operator delete((v6)); /*0x623fae*/
   return v7; /*0x623fb8*/
 }
 } // namespace gamemd
@@ -1271,7 +1271,7 @@ int sub_642E80(int * a1, unsigned int * a2)
   while ( v5 ); /*0x642eb6*/
   v9 = 0; /*0x642ec1*/
   *a1 = Text::MeasureWidth((int)v8, 0); /*0x642ed3*/
-  result = *(unsigned int *)(Instance + 28); /*0x642ed5*/
+  result = Instance->u32_1C; /*0x642ed5*/
   *a2 = result; /*0x642ed8*/
   return result; /*0x642ed1*/
 }
@@ -1302,7 +1302,7 @@ int * E4Recv_643670::UI_Render_643670(int a5, int a1, size_t a2, int a3, int a4)
   while ( v7 ); /*0x64369f*/
   v14 = 0; /*0x6436ab*/
   v8 = Text::MeasureWidth((int)v13, 0); /*0x6436b0*/
-  v9 = *(unsigned int *)(Instance + 28); /*0x6436b9*/
+  v9 = Instance->u32_1C; /*0x6436b9*/
   if ( a4 != -1 ) /*0x6436bf*/
     v8 = a4; /*0x6436c1*/
   v12[2] = v8 + a4; /*0x6436d5*/
@@ -1985,7 +1985,7 @@ wchar_t ** sub_7B83E0(wchar_t ** a1, const char ** a2)
   *v9 = 0; /*0x7b845a*/
   if ( v6 ) /*0x7b845f*/
     wcscpy(v9, v6); /*0x7b8463*/
-  operator delete((void *)(v6)); /*0x7b846c*/
+  operator delete((v6)); /*0x7b846c*/
   *a1 = 0; /*0x7b8474*/
   if ( v10 ) /*0x7b847d*/
   {
@@ -1993,7 +1993,7 @@ wchar_t ** sub_7B83E0(wchar_t ** a1, const char ** a2)
     v12 = (wchar_t *)operator new(2 * v11 + 2); /*0x7b848a*/
     *a1 = v12; /*0x7b8491*/
     wcscpy(v12, v10); /*0x7b8494*/
-    operator delete((void *)(v10)); /*0x7b849a*/
+    operator delete((v10)); /*0x7b849a*/
   }
   return a1; /*0x7b84a2*/
 }

@@ -4886,7 +4886,7 @@ JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(int * Block, char
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x54dfc4*/
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x54dfc9*/
   if ( (a2 & 1) != 0 ) /*0x54dfd3*/
-    operator delete((void *)(Block)); /*0x54dfd6*/
+    operator delete((Block)); /*0x54dfd6*/
   return Block->0; /*0x54dfe0*/
 }
 }  // G42.18c ns repair
@@ -4942,7 +4942,7 @@ void JumpjetLocomotionClass_26::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x54e899*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x54e8a0*/
   {
-    operator delete((void *)(v2)); /*0x54e8a6*/
+    operator delete((v2)); /*0x54e8a6*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x54e8ae*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x54e8b1*/
@@ -5156,13 +5156,13 @@ VectorClass_flat * JumpjetLocomotionClass_26::QueryInterface(unsigned int * Bloc
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x54eb56*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x54eb60*/
   {
-    operator delete((void *)(v3)); /*0x54eb68*/
+    operator delete((v3)); /*0x54eb68*/
     *&Block->__pad_004 = 0; /*0x54eb70*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x54eb7b*/
   Block->u32_8 = 0; /*0x54eb81*/
   if ( (a2 & 1) != 0 ) /*0x54eb88*/
-    operator delete((void *)(Block)); /*0x54eb8b*/
+    operator delete((Block)); /*0x54eb8b*/
   return Block->tail_0; /*0x54eb95*/
 }
 } // namespace gamemd
@@ -5176,13 +5176,13 @@ DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeContr
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x54eba6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x54ebb0*/
   {
-    operator delete((void *)(v3)); /*0x54ebb8*/
+    operator delete((v3)); /*0x54ebb8*/
     *&Block->__pad_004 = 0; /*0x54ebc0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x54ebcb*/
   Block->u32_8 = 0; /*0x54ebd1*/
   if ( (a2 & 1) != 0 ) /*0x54ebd8*/
-    operator delete((void *)(Block)); /*0x54ebdb*/
+    operator delete((Block)); /*0x54ebdb*/
   return Block->tail_0; /*0x54ebe5*/
 }
 } // namespace gamemd
@@ -6196,7 +6196,7 @@ namespace gamemd {
       }
       else
       {
-        (*((unsigned char *)&(this->LastCoords[2]))) = 1;
+        (this->q040) = 1;
         *(unsigned int *)this->vtable3 = *result;
         this->MovingDestination[0] = this->LastCoords[0];
         this->MovingDestination[1] = this->LastCoords[1];
@@ -6581,7 +6581,7 @@ TeleportLocomotionClass * JumpjetLocomotionClass::ConstructLocomotor(ILocomotion
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x71a13d*/
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x71a142*/
   if ( (a2 & 1) != 0 ) /*0x71a14c*/
-    operator delete((void *)(Block)); /*0x71a14f*/
+    operator delete((Block)); /*0x71a14f*/
   return Block->0; /*0x71a159*/
 }
 }  // G42.18c ns repair

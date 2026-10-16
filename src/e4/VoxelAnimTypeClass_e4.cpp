@@ -412,7 +412,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     if ( v40 ) /*0x74b5a5*/
     {
       WaveClass::Destroy(v4->MainVoxel); /*0x74b5a9*/
-      operator delete((void *)(v40)); /*0x74b5af*/
+      operator delete((v40)); /*0x74b5af*/
     }
     File *v41; // eax
     v41 = (File *)operator new(0x1Cu); /*0x74b5b9*/

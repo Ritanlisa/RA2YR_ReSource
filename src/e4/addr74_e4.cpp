@@ -292,7 +292,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   if ( Block ) /*0x7436bd*/
   {
     if ( v50 ) /*0x7436c5*/
-      operator delete((void *)(Block)); /*0x7436c8*/
+      operator delete((Block)); /*0x7436c8*/
   }
 }
 }  // G42.18 ns repair
@@ -747,7 +747,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  p_vtable3 = (void **)(&this->M12); /*0x74bbff*/
+  p_vtable3 = &this->M12; /*0x74bbff*/
   this->M4 = 0; /*0x74bc04*/
   this->M8 = 0; /*0x74bc07*/
   LOBYTE(this->M12) = 1; /*0x74bc0a*/
@@ -2032,13 +2032,13 @@ VectorClass_flat * _e4::QueryInterface(unsigned int * Block, char a2)
   *Block = &vt_VectorClass; /*0x74f656*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74f660*/
   {
-    operator delete((void *)(v3)); /*0x74f668*/
+    operator delete((v3)); /*0x74f668*/
     *(Block + 1) = 0; /*0x74f670*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x74f67b*/
   *(Block + 2) = 0; /*0x74f681*/
   if ( (a2 & 1) != 0 ) /*0x74f688*/
-    operator delete((void *)(Block)); /*0x74f68b*/
+    operator delete((Block)); /*0x74f68b*/
   return Block; /*0x74f695*/
 }
 } // namespace gamemd
@@ -2101,7 +2101,7 @@ char * sub_74FDC0()
         strcpy(off_846158, (const char *)lpBuffer); /*0x74fec2*/
     }
   }
-  operator delete((void *)(v2)); /*0x74fecd*/
+  operator delete((v2)); /*0x74fecd*/
   return off_846158; /*0x74fedb*/
 }
 } // namespace gamemd

@@ -65,7 +65,7 @@ void sub_600750()
     {
       void *v3 = v2; // eax /*0x60076b*/
       v2 = v2->vtable3; /*0x60076d*/
-      operator delete((void *)(v3)); /*0x600771*/
+      operator delete((v3)); /*0x600771*/
     }
     *((unsigned int *)dword_AC1B48 + i++) = 0; /*0x600784*/
   }
@@ -111,7 +111,7 @@ void sub_600750()
         }
         while ( v8 ); /*0x600842*/
       }
-      operator delete((void *)(v5)); /*0x600845*/
+      operator delete((v5)); /*0x600845*/
       v4 = dword_AC1B78; /*0x60084a*/
       v0 = dword_AC1B50; /*0x600850*/
     }
@@ -136,7 +136,7 @@ void sub_600920()
     {
       void *v3 = v2; // eax /*0x60093b*/
       v2 = v2->vtable3; /*0x60093d*/
-      operator delete((void *)(v3)); /*0x600941*/
+      operator delete((v3)); /*0x600941*/
     }
     *((unsigned int *)g_DialogPool + i++) = 0; /*0x600954*/
   }
@@ -182,7 +182,7 @@ void sub_600920()
         }
         while ( v8 ); /*0x600a12*/
       }
-      operator delete((void *)(v5)); /*0x600a15*/
+      operator delete((v5)); /*0x600a15*/
       v4 = dword_AC18F0; /*0x600a1a*/
       v0 = dword_AC18C8; /*0x600a20*/
     }
@@ -209,7 +209,7 @@ void sub_600AF0()
       j = *(unsigned int *)(j + 516); /*0x600b14*/
       if ( *(unsigned int *)(v3 + 44) ) /*0x600b1e*/
       {
-        operator delete((void *)(*(void **)(v3 + 44))); /*0x600b29*/
+        operator delete((*(void **)(v3 + 44))); /*0x600b29*/
         *(unsigned int *)(v3 + 44) = 0; /*0x600b31*/
       }
       unsigned int *k; // eax
@@ -219,7 +219,7 @@ void sub_600AF0()
       v5 = *(void ***)(v3 + 64); /*0x600b4a*/
       if ( v5 ) /*0x600b4f*/
         DeleteAndZero::OrFree(v5, 1); /*0x600b53*/
-      operator delete((void *)((void *)v3)); /*0x600b59*/
+      operator delete(((void *)v3)); /*0x600b59*/
     }
     i = ++v1; /*0x600b70*/
     *((unsigned int *)dword_AC1B00 + v1 - 1) = 0; /*0x600b74*/
@@ -266,7 +266,7 @@ void sub_600AF0()
         }
         while ( v10 ); /*0x600c2c*/
       }
-      operator delete((void *)(v7)); /*0x600c31*/
+      operator delete((v7)); /*0x600c31*/
       v6 = dword_AC1B30; /*0x600c36*/
       v0 = dword_AC1B08; /*0x600c3c*/
     }
@@ -1795,7 +1795,7 @@ AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
   int v94 = *((unsigned int *)g_GadgetAnimState + 1);
   int v95 = *((unsigned int *)g_GadgetAnimState + 2);
   int v96 = *((unsigned int *)g_GadgetAnimState + 3);
-  ScreenDialogToClient( (void *)((void *)(hWnd)), (void *)(&v112));
+  ScreenDialogToClient( ((hWnd)), (&v112));
   GetWindowRect(hWnd, &Rect);
   int v19 = Rect.left - v112.left;
   int v20 = Rect.top - v112.top;
@@ -2518,7 +2518,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
       a3[1] = v6[1]; /*0x608ca3*/
       a3[2] = v6[2]; /*0x608ca9*/
       a3[3] = v6[3]; /*0x608caf*/
-      operator delete((void *)(v6)); /*0x608cb2*/
+      operator delete((v6)); /*0x608cb2*/
       return 1; /*0x608cc1*/
     }
     return 0; /*0x608570*/
@@ -3742,7 +3742,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM)
     v17[25] = (void *)g_FogOfWarState; /*0x60f548*/
     v5 = operator new(4u); /*0x60f54f*/
     if ( v5 ) /*0x60f559*/
-      v6 = (void *)unknown_libname_74(v5); /*0x60f55d*/
+      v6 = unknown_libname_74(v5); /*0x60f55d*/
     else
       v6 = 0; /*0x60f570*/
     v17[15] = v6; /*0x60f572*/
@@ -3796,7 +3796,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM)
     v17[25] = (void *)g_FogOfWarState; /*0x60f687*/
     v10 = operator new(4u); /*0x60f68e*/
     if ( v10 ) /*0x60f698*/
-      v11 = (void *)unknown_libname_74(v10); /*0x60f69c*/
+      v11 = unknown_libname_74(v10); /*0x60f69c*/
     else
       v11 = 0; /*0x60f6b7*/
     v17[15] = v11; /*0x60f6b9*/

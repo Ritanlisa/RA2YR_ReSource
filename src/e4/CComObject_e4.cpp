@@ -246,7 +246,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
               memcpy(&v10->vfptr + v14, &nextObject->vfptr + v14, v13 & 3); /*0x7a50d2*/
               nextObject = g_WOL_UserList.nextObject; /*0x7a50d4*/
             }
-            operator delete((void *)(nextObject)); /*0x7a50db*/
+            operator delete((nextObject)); /*0x7a50db*/
             g_WOL_UserList.nextObject = v12; /*0x7a50e0*/
             v4 = *(unsigned int *)&v20[4]; /*0x7a50e6*/
             g_WOL_UserList.fallRate = v9; /*0x7a50ed*/
@@ -410,7 +410,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a3, i
       sprintf(Buffer, "gt%d.bmp", v8); /*0x7a550d*/
       ((ChatEvent*)(&g_DialogHashTable))->ProcessStrings(Buffer, v10, v9, 2); /*0x7a552b*/
     }
-    operator delete((void *)(v6)); /*0x7a5544*/
+    operator delete((v6)); /*0x7a5544*/
     dword_B77EA4 = 1; /*0x7a554c*/
   }
   if ( byte_84A1B8 ) /*0x7a555f*/
@@ -1458,7 +1458,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void 
               memcpy(&v10->vfptr + v14, &nextObject->vfptr + v14, v13 & 3); /*0x7ab58c*/
               nextObject = g_WOL_UserList.nextObject; /*0x7ab58e*/
             }
-            operator delete((void *)(nextObject)); /*0x7ab595*/
+            operator delete((nextObject)); /*0x7ab595*/
             g_WOL_UserList.nextObject = v12; /*0x7ab59a*/
             v6 = v18; /*0x7ab5a0*/
             g_WOL_UserList.fallRate = v9; /*0x7ab5a7*/
@@ -2136,7 +2136,7 @@ int CComObject_CChatEventSink___ATL::Release(void *a1_1)
     *((unsigned int *)Block + 1) = 1; /*0x7ac6d9*/
     InterlockedDecrement(&Addend); /*0x7ac6df*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ac6e5*/
-    operator delete((void *)(Block)); /*0x7ac6ec*/
+    operator delete((Block)); /*0x7ac6ec*/
   }
   return v1; /*0x7ac6f4*/
 }

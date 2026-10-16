@@ -92,7 +92,7 @@ int sub_785EA0()
         ObjectClass *v4 = v3; // edi /*0x785edd*/
         v3 = (ObjectClass *)v3->vfptr2; /*0x785edf*/
         DeleteAndZero(v4); /*0x785ee8*/
-        operator delete((void *)(v4)); /*0x785eee*/
+        operator delete((v4)); /*0x785eee*/
       }
       ++i; /*0x785f00*/
       *(unsigned int *)(stru_B765EC.lastLayer + 4 * i - 4) = 0; /*0x785f01*/
@@ -269,14 +269,14 @@ void sub_72C830()
       if ( *(unsigned int *)&DataGlobal_B0F9E8 ) /*0x72c84d*/
       {
         (*(FileTreeNode **)&DataGlobal_B0F9E8)->Destroy(); /*0x72c851*/
-        operator delete((void *)(v1)); /*0x72c857*/
+        operator delete((v1)); /*0x72c857*/
       }
       DataGlobal_B0FCFC = 0; /*0x72c85f*/
     }
     *(unsigned int *)&DataGlobal_B0F9E8 = 0; /*0x72c86b*/
     if ( *(unsigned int *)&DataGlobal_B0FD00 ) /*0x72c873*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FD00)); /*0x72c876*/
+      operator delete((*(void **)&DataGlobal_B0FD00)); /*0x72c876*/
       *(unsigned int *)&DataGlobal_B0FD00 = 0; /*0x72c87e*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FD04 ) /*0x72c88c*/

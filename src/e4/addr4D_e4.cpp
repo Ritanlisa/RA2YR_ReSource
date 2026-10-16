@@ -129,7 +129,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   aP0->u32_5C = (unsigned int)(&vt_VectorClass); /*0x4d1855*/
   if ( v15 && aP0->u32_69 ) /*0x4d1860*/
   {
-    operator delete((void *)(v15)); /*0x4d1866*/
+    operator delete((v15)); /*0x4d1866*/
     aP0->nextArrayIndex = 0; /*0x4d186e*/
   }
   aP0->u32_69 = 0; /*0x4d1873*/

@@ -341,7 +341,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
   *(unsigned int *)a1->__pad_0 = &vt_VectorClass; /*0x55a416*/
   if ( v3 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x55a420*/
   {
-    operator delete((void *)(v3)); /*0x55a428*/
+    operator delete((v3)); /*0x55a428*/
     *(unsigned int *)&a1->m_1[3] = 0; /*0x55a430*/
   }
   (((unsigned char *)&(a1->m_C))[1]) = 0; /*0x55a43b*/
@@ -362,7 +362,7 @@ DynamicVector * LoadOptions::vt00(char a2, int a1)
   *(unsigned int *)a1->__pad_0 = &vt_VectorClass; /*0x55a466*/
   if ( v3 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x55a470*/
   {
-    operator delete((void *)(v3)); /*0x55a478*/
+    operator delete((v3)); /*0x55a478*/
     *(unsigned int *)&a1->m_1[3] = 0; /*0x55a480*/
   }
   (((unsigned char *)&(a1->m_C))[1]) = 0; /*0x55a48b*/

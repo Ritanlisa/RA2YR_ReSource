@@ -326,7 +326,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x6e6426*/
     {
-      ((int)aP0)->Init((void *)((int)&aP1)); /*0x6e642f*/
+      ((int)aP0)->Init((void*)(&aP1)); /*0x6e642f*/
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6434) */
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e643a) */
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6441) */
@@ -374,7 +374,7 @@ TagTypeClass * TagTypeClass::ddtor(char a2)
 {
   TagTypeClass::CleanupMembers(); /*0x6e64c3*/
   if ( (a2 & 1) != 0 ) /*0x6e64cd*/
-    operator delete((void *)(this)); /*0x6e64d0*/
+    operator delete((this)); /*0x6e64d0*/
   return this; /*0x6e64da*/
 }
 } // namespace gamemd

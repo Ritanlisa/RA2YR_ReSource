@@ -79,7 +79,7 @@ void * Tactical::ConstructTacticalSurface()
   this->q070 = 0; /*0x42a710*/
   this->u32_72 = 0; /*0x42a714*/
   unsigned int *v2; // edi
-  v2 = (unsigned int *)(&this->q074); /*0x42a718*/
+  v2 = &this->q074; /*0x42a718*/
   int v3 = 3; // ebp /*0x42a71b*/
   do /*0x42a73d*/
   {
@@ -202,11 +202,11 @@ void * Tactical::ConstructTacticalSurface()
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
   char *v22; // ecx
-  v22 = (char *)(&this->q074); /*0x42a87c*/
+  v22 = &this->q074; /*0x42a87c*/
   char *v26; // [esp+14h] [ebp-8h]
   v26 = &this->u32_BC; /*0x42a87f*/
   char *v25; // [esp+10h] [ebp-Ch]
-  v25 = (char *)(&this->q074); /*0x42a883*/
+  v25 = &this->q074; /*0x42a883*/
   unsigned int *v23 = &this->q04C; // ebp /*0x42a887*/
   int v27; // [esp+18h] [ebp-4h]
   v27 = 3; /*0x42a88a*/
@@ -2035,7 +2035,7 @@ Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
   g_TacticalClass_Instance = 0; /*0x6dc48e*/
   AbstractClass::DTOR((AbstractClass *)Block); /*0x6dc498*/
   if ( (a2 & 1) != 0 ) /*0x6dc4a2*/
-    operator delete((void *)(Block)); /*0x6dc4a5*/
+    operator delete((Block)); /*0x6dc4a5*/
   return Block->tail_0; /*0x6dc4af*/
 }
 } // namespace gamemd
@@ -2050,7 +2050,7 @@ void Tactical_42::ClearBuffer(void *a1_1)
   *(unsigned int *)a1_1->__pad_10 = 0; /*0x6e47f9*/
   if ( v2 && (((unsigned char *)&(a1_1->Tactical_field_0xC))[1]) ) /*0x6e4800*/
   {
-    operator delete((void *)(v2)); /*0x6e4806*/
+    operator delete((v2)); /*0x6e4806*/
     *(unsigned int *)&a1_1->Tactical_field_0x2[2] = 0; /*0x6e480e*/
   }
   (((unsigned char *)&(a1_1->Tactical_field_0xC))[1]) = 0; /*0x6e4811*/
@@ -2268,13 +2268,13 @@ VectorClass_flat * Tactical_42::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6e4ab6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x6e4ac0*/
   {
-    operator delete((void *)(v3)); /*0x6e4ac8*/
+    operator delete((v3)); /*0x6e4ac8*/
     *&Block->__pad_004 = 0; /*0x6e4ad0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x6e4adb*/
   Block->u32_8 = 0; /*0x6e4ae1*/
   if ( (a2 & 1) != 0 ) /*0x6e4ae8*/
-    operator delete((void *)(Block)); /*0x6e4aeb*/
+    operator delete((Block)); /*0x6e4aeb*/
   return Block->tail_0; /*0x6e4af5*/
 }
 } // namespace gamemd

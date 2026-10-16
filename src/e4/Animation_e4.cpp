@@ -254,7 +254,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   Animation *v22; // [esp+10h] [ebp-10h]
   v22 = this; /*0x77055f*/
   INIClass *v5; // edi
-  v5 = (gamemd::INIClass *)(&this->q010); /*0x770563*/
+  v5 = &this->q010; /*0x770563*/
   *(unsigned int *)&v23.headNode = 6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {

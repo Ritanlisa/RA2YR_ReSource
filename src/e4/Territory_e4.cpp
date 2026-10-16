@@ -111,7 +111,7 @@ unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Bl
   *(unsigned int *)Block->tail_0 = &vt_WorldDominationTourVoicesAnim; /*0x771a33*/
   VtableStub::sub_5CB6C0(Block); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
-    operator delete((void *)(Block)); /*0x771a46*/
+    operator delete((Block)); /*0x771a46*/
   return Block->tail_0; /*0x771a50*/
 }
 }

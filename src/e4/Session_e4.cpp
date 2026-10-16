@@ -98,7 +98,7 @@ int Session::PrepareGame(HWND hWnd)
   if ( g_UIControlState ) /*0x5e74f6*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e74fa*/
-    operator delete((void *)(v1)); /*0x5e7500*/
+    operator delete((v1)); /*0x5e7500*/
   }
   g_UIControlState = 0; /*0x5e7513*/
   switch ( *(unsigned int *)&dword_A8B238 ) /*0x5e7521*/
@@ -179,7 +179,7 @@ int Session::PrepareGame(HWND hWnd)
         if ( g_UIControlState ) /*0x5e782d*/
         {
           ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e7831*/
-          operator delete((void *)(v12)); /*0x5e7837*/
+          operator delete((v12)); /*0x5e7837*/
           g_UIControlState = 0; /*0x5e783f*/
         }
         goto LABEL_44; /*0x5e783f*/
@@ -191,7 +191,7 @@ int Session::PrepareGame(HWND hWnd)
       if ( !g_UIControlState ) /*0x5e7704*/
         return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7704*/
       ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e770c*/
-      operator delete((void *)(v8)); /*0x5e7712*/
+      operator delete((v8)); /*0x5e7712*/
       g_UIControlState = 0; /*0x5e771a*/
       return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7733*/
     default:

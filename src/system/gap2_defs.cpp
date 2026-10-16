@@ -60,7 +60,7 @@ unsigned int * CCFileClass::Destru_vt00(char a2) {
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4019ba) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)this); /*0x4019c0*/
   if ( (a2 & 1) != 0 ) /*0x4019ca*/
-    operator delete((void *)(this)); /*0x4019cd*/
+    operator delete((this)); /*0x4019cd*/
   return this->vtable1; /*0x4019d7*/
 }
 }
@@ -303,22 +303,22 @@ int CellClass::setOverlayType(int a2) {
 
   if ( this->attachedTag ) /*0x42ac06*/
   {
-    operator delete((void *)(this->attachedTag)); /*0x42ac0e*/
+    operator delete((this->attachedTag)); /*0x42ac0e*/
     this->attachedTag = 0; /*0x42ac16*/
   }
   if ( this->rubble ) /*0x42ac19*/
   {
-    operator delete((void *)(this->rubble)); /*0x42ac21*/
+    operator delete((this->rubble)); /*0x42ac21*/
     this->rubble = 0; /*0x42ac29*/
   }
   if ( this->smudgeTypeIndex ) /*0x42ac2c*/
   {
-    operator delete((void *)((void *)this->smudgeTypeIndex)); /*0x42ac34*/
+    operator delete(((void *)this->smudgeTypeIndex)); /*0x42ac34*/
     this->smudgeTypeIndex = 0; /*0x42ac3c*/
   }
   if ( this->overlayTypeIndex ) /*0x42ac3f*/
   {
-    operator delete((void *)((void *)this->overlayTypeIndex)); /*0x42ac47*/
+    operator delete(((void *)this->overlayTypeIndex)); /*0x42ac47*/
     this->overlayTypeIndex = 0; /*0x42ac4f*/
   }
   g_MapCellWidth = a2->vtable4 + a2->vtable3 + 1; /*0x42ac60*/
@@ -427,7 +427,7 @@ int BufferIOFileClass::Dtor() {
   {
     if ( (this->BufferOffset) ) /*0x431b93*/
     {
-      operator delete((void *)(FileBaseOffset)); /*0x431b99*/
+      operator delete((FileBaseOffset)); /*0x431b99*/
       (this->BufferOffset) = 0; /*0x431ba1*/
     }
     this->FileBaseOffset = 0; /*0x431ba4*/
@@ -1714,7 +1714,7 @@ int INIClass::ReadIntList(int a1, void* a2, void* a3, void* a4, void* a5, int a6
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x475e69) */
     if ( !v17 && v21.IsAllocated ) /*0x475e77*/
     {
-      operator delete((void *)(Items)); /*0x475e7a*/
+      operator delete((Items)); /*0x475e7a*/
       v21.Items = 0; /*0x475e82*/
     }
     v18 = a5; /*0x475e86*/
@@ -1742,7 +1742,7 @@ int INIClass::ReadIntList(int a1, void* a2, void* a3, void* a4, void* a5, int a6
     a4 = &vt_VectorClass; /*0x475efd*/
     if ( !v17 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x475f11*/
   LABEL_19:
-      operator delete((void *)(v18)); /*0x475f13*/
+      operator delete((v18)); /*0x475f13*/
   }
   return v14; /*0x475f1e*/
 }
@@ -1856,7 +1856,7 @@ int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, i
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x47617c) */
     if ( !v22 && v26.IsAllocated ) /*0x47618a*/
     {
-      operator delete((void *)(Items)); /*0x47618d*/
+      operator delete((Items)); /*0x47618d*/
       v26.Items = 0; /*0x476195*/
     }
     v23 = a5; /*0x476199*/
@@ -1884,7 +1884,7 @@ int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, i
     a4 = &vt_VectorClass; /*0x476210*/
     if ( !v22 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x476224*/
   LABEL_24:
-      operator delete((void *)(v23)); /*0x476226*/
+      operator delete((v23)); /*0x476226*/
   }
   return v19; /*0x476231*/
 }
@@ -1983,7 +1983,7 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
     v22.DynamicVectorClass = &vt_VectorClass; /*0x476630*/
     if ( !v18 && ((char *)&v22) ) /*0x47663a*/
     {
-      operator delete((void *)(Items)); /*0x47663d*/
+      operator delete((Items)); /*0x47663d*/
       ((unsigned int *)&v22)[0] = 0; /*0x476645*/
     }
     v19 = a5; /*0x476649*/
@@ -2011,7 +2011,7 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
     a4 = &vt_VectorClass; /*0x4766bd*/
     if ( !v18 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x4766cd*/
   LABEL_23:
-      operator delete((void *)(v19)); /*0x4766cf*/
+      operator delete((v19)); /*0x4766cf*/
   }
   return v15; /*0x4766da*/
 }
@@ -2143,7 +2143,7 @@ void* INIClass::ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, 
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x47696d) */
     if ( !v23 && v27.IsAllocated ) /*0x476979*/
     {
-      operator delete((void *)(Items)); /*0x47697c*/
+      operator delete((Items)); /*0x47697c*/
       v27.Items = 0; /*0x476984*/
     }
     v24 = a5; /*0x47698c*/
@@ -2165,7 +2165,7 @@ void* INIClass::ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, 
     a4 = &vt_VectorClass; /*0x4769f3*/
     if ( v24 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x476a09*/
   LABEL_31:
-      operator delete((void *)(v24)); /*0x476a0b*/
+      operator delete((v24)); /*0x476a0b*/
   }
   return v20; /*0x476a16*/
 }
@@ -2204,7 +2204,7 @@ int INIClass::WriteSuperWeaponList(void* a2, void* a3, int a4, void* Block, int 
   }
   v14 = INIClass::SetString(this->vtable1, a2, a3, Source); /*0x476af7*/
   if ( v10 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x476b04*/
-    operator delete((void *)(v10)); /*0x476b07*/
+    operator delete((v10)); /*0x476b07*/
   return v14; /*0x476b0f*/
 }
 }
@@ -2284,7 +2284,7 @@ int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, i
     v26 = &vt_VectorClass; /*0x476cc0*/
     if ( !v19 && v29 ) /*0x476cca*/
     {
-      operator delete((void *)(v17)); /*0x476ccd*/
+      operator delete((v17)); /*0x476ccd*/
       Block = 0; /*0x476cd5*/
     }
     v20 = a5; /*0x476cd9*/
@@ -2312,7 +2312,7 @@ int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, i
     a4 = &vt_VectorClass; /*0x476d4d*/
     if ( !v19 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x476d5d*/
   LABEL_26:
-      operator delete((void *)(v20)); /*0x476d5f*/
+      operator delete((v20)); /*0x476d5f*/
   }
   return v16; /*0x476d6a*/
 }
@@ -4571,7 +4571,7 @@ int Crate::FindPlacement(int a1, int a2) {
   {
     if ( this->q11C ) /*0x4871d0*/
     {
-      v5 = (void *)operator new(0xB0u); /*0x4871e4*/
+      v5 = operator new(0xB0u); /*0x4871e4*/
       if ( v5 ) /*0x4871eb*/
       {
         v46 = this->__pad_024; /*0x4871fa*/
@@ -4591,7 +4591,7 @@ int Crate::FindPlacement(int a1, int a2) {
     }
     else
     {
-      v7 = (void *)operator new(0xB0u); /*0x487246*/
+      v7 = operator new(0xB0u); /*0x487246*/
       if ( v7 ) /*0x48724d*/
       {
         v46 = this->__pad_024; /*0x487258*/
@@ -4822,7 +4822,7 @@ int CellClass::CopyTo() {
 
   CellClass::DTOR(this); /*0x487e83*/
   if ( (v3 & 1) != 0 ) /*0x487e8d*/
-    operator delete((void *)(this)); /*0x487e90*/
+    operator delete((this)); /*0x487e90*/
   return (int)this->mapCoords; /*0x487e9a*/
 }
 }
@@ -4841,7 +4841,7 @@ void* CellClass::clearOccupationFlags(int a2, int a3) {
       this->foggedObjects = (void *)a3; /*0x4880a8*/
       return this->mapCoords; /*0x4880ae*/
     }
-    this->foggedObjects = (void *)operator new(4 * a2); /*0x4880bd*/
+    this->foggedObjects = operator new(4 * a2); /*0x4880bd*/
     (this->IsAllocated) = 1; /*0x4880c0*/
   }
   return this->mapCoords; /*0x4880ad*/
@@ -6762,9 +6762,9 @@ void* INIClass::ClearContents() {
         v4 = v3 + this->u32_58; /*0x49e53c*/
         if ( *(unsigned int *)(v4 + 12) ) /*0x49e53e*/
         {
-          operator delete((void *)(*(void **)(v4 + 4))); /*0x49e547*/
-          operator delete((void *)(*(void **)(v3 + this->u32_58 + 64))); /*0x49e554*/
-          operator delete((void *)(*(void **)(v3 + this->u32_58 + 12))); /*0x49e561*/
+          operator delete((*(void **)(v4 + 4))); /*0x49e547*/
+          operator delete((*(void **)(v3 + this->u32_58 + 64))); /*0x49e554*/
+          operator delete((*(void **)(v3 + this->u32_58 + 12))); /*0x49e561*/
         }
         v5 = this->u32_58; /*0x49e569*/
         if ( *(int *)(v3 + v5 + 56) > 0 ) /*0x49e572*/
@@ -6777,7 +6777,7 @@ void* INIClass::ClearContents() {
               v7 = *(unsigned int *)(*(unsigned int *)(v3 + v5 + 44) + 4 * v2); /*0x49e588*/
               do /*0x49e5a8*/
               {
-                operator delete((void *)(*(void **)(*(unsigned int *)(v7 + 4) + 4 * v6++))); /*0x49e592*/
+                operator delete((*(void **)(*(unsigned int *)(v7 + 4) + 4 * v6++))); /*0x49e592*/
                 v7 = *(unsigned int *)(*(unsigned int *)(v3 + this->u32_58 + 44) + 4 * v2); /*0x49e5a2*/
               }
               while ( v6 < *(unsigned int *)(v7 + 16) ); /*0x49e5a8*/
@@ -6802,7 +6802,7 @@ void* INIClass::ClearContents() {
             v13 = *(unsigned int *)(*(unsigned int *)(v3 + v10 + 20) + 4 * i); /*0x49e606*/
             do /*0x49e626*/
             {
-              operator delete((void *)(*(void **)(*(unsigned int *)(v13 + 4) + 4 * v12++))); /*0x49e610*/
+              operator delete((*(void **)(*(unsigned int *)(v13 + 4) + 4 * v12++))); /*0x49e610*/
               v13 = *(unsigned int *)(*(unsigned int *)(v3 + this->u32_58 + 20) + 4 * i); /*0x49e620*/
             }
             while ( v12 < *(unsigned int *)(v13 + 16) ); /*0x49e626*/
@@ -6843,7 +6843,7 @@ void* INIClass::ClearContents() {
           *(unsigned int *)(v22 - 4) = &vt_VectorClassDynamicVectorClass; /*0x49e6bf*/
           if ( v23 && *(unsigned char *)(v22 + 9) ) /*0x49e6c6*/
           {
-            operator delete((void *)(v23)); /*0x49e6ce*/
+            operator delete((v23)); /*0x49e6ce*/
             *(unsigned int *)v22 = 0; /*0x49e6d6*/
           }
           *(unsigned char *)(v22 + 9) = 0; /*0x49e6d8*/
@@ -6852,7 +6852,7 @@ void* INIClass::ClearContents() {
           *(unsigned int *)(v22 - 28) = &vt_VectorClassDynamicVectorClass; /*0x49e6e2*/
           if ( v24 && *(unsigned char *)(v22 - 15) ) /*0x49e6e9*/
           {
-            operator delete((void *)(v24)); /*0x49e6f1*/
+            operator delete((v24)); /*0x49e6f1*/
             *(unsigned int *)(v22 - 24) = 0; /*0x49e6f9*/
           }
           *(unsigned char *)(v22 - 15) = 0; /*0x49e700*/
@@ -6862,7 +6862,7 @@ void* INIClass::ClearContents() {
         while ( v27 ); /*0x49e70c*/
         v18 = v28; /*0x49e70e*/
       }
-      operator delete((void *)(v18)); /*0x49e713*/
+      operator delete((v18)); /*0x49e713*/
     }
     this->u32_58 = 0; /*0x49e71c*/
     this->u32_60 = 0; /*0x49e71f*/
@@ -7488,7 +7488,7 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x4aa9fb) */
     if ( Items && v79.IsAllocated ) /*0x4aaa0f*/
     {
-      operator delete((void *)(Items)); /*0x4aaa16*/
+      operator delete((Items)); /*0x4aaa16*/
       this->mapCoords[0] = a3; /*0x4aaa26*/
       return this->mapCoords; /*0x4aaa2f*/
     }
@@ -8973,7 +8973,7 @@ int INIClass::ClearSection(int a1, void* a2) {
         break; /*0x5257e5*/
       (**(void (__thiscall ***)(int, int))v6)(v6, 1); /*0x5257f2*/
     }
-    operator delete((void *)((void *)*(&this->headNode0))); /*0x5257fa*/
+    operator delete(((void *)*(&this->headNode0))); /*0x5257fa*/
     *(&this->headNode0) = 0; /*0x5257ff*/
     *(&this->headNode1) = 0; /*0x525802*/
     *(&this->headNode2) = 0; /*0x525805*/
@@ -8986,7 +8986,7 @@ int INIClass::ClearSection(int a1, void* a2) {
       {
         free(*(void **)*(&this->headNode5)); /*0x525822*/
         v8 = *(unsigned int *)(*(&this->headNode5) + 4); /*0x52582c*/
-        operator delete((void *)((void *)*(&this->headNode5))); /*0x525830*/
+        operator delete(((void *)*(&this->headNode5))); /*0x525830*/
         *(&this->headNode5) = v8; /*0x52583a*/
       }
       while ( v8 ); /*0x52583d*/
@@ -9190,7 +9190,7 @@ int INIClass::LoadFile(int a1, int a2) {
         {
           free(*v5); /*0x525bc4*/
           v10 = (void **)v5[1]; /*0x525bc9*/
-          operator delete((void *)(v5)); /*0x525bcd*/
+          operator delete((v5)); /*0x525bcd*/
           v5 = v10; /*0x525bd5*/
         }
         while ( v10 ); /*0x525bd9*/
@@ -9452,7 +9452,7 @@ int INIClass::LoadFile(int a1, int a2) {
                   {
                     free(*v80); /*0x5263c1*/
                     v81 = (void **)v80[1]; /*0x5263c6*/
-                    operator delete((void *)(v80)); /*0x5263ca*/
+                    operator delete((v80)); /*0x5263ca*/
                     v80 = v81; /*0x5263d2*/
                   }
                   while ( v81 ); /*0x5263d6*/
@@ -9527,7 +9527,7 @@ int INIClass::LoadFile(int a1, int a2) {
                       }
                       while ( v51 < v24->v55 ); /*0x526153*/
                     }
-                    operator delete((void *)(*(void **)v24)); /*0x526159*/
+                    operator delete((*(void **)v24)); /*0x526159*/
                     v54 = (char *)Block + v24->vtable3; /*0x526168*/
                     *(unsigned int *)v24 = v49; /*0x52616a*/
                     v24->vtable3 = v54; /*0x52616d*/
@@ -9574,7 +9574,7 @@ int INIClass::LoadFile(int a1, int a2) {
             {
               free(*v23); /*0x52621e*/
               v62 = v23->u32_4; /*0x526223*/
-              operator delete((void *)(v23)); /*0x526227*/
+              operator delete((v23)); /*0x526227*/
               v23 = v62; /*0x52622f*/
             }
             while ( v62 ); /*0x526233*/
@@ -9679,7 +9679,7 @@ int INIClass::LoadFile(int a1, int a2) {
     {
       free(*v5); /*0x52638a*/
       v79 = (void **)v5[1]; /*0x52638f*/
-      operator delete((void *)(v5)); /*0x526393*/
+      operator delete((v5)); /*0x526393*/
       v5 = v79; /*0x52639b*/
     }
     while ( v79 ); /*0x52639f*/
@@ -11160,7 +11160,7 @@ int INIClass::SetString(void* v14, void* a2, void* a3) {
   {
     free(*(void **)v14); /*0x528951*/
     v30 = v14->headNode; /*0x528956*/
-    operator delete((void *)((void *)v14)); /*0x52895a*/
+    operator delete((v14)); /*0x52895a*/
     v14 = v30; /*0x528964*/
   }
   while ( v30 ); /*0x528966*/
@@ -11324,7 +11324,7 @@ int INIClass::SetWideAsHex(void* a1, void* a2, void* a3) {
         v8 = *++a3; /*0x528e94*/
       }
       v5 = INIClass::SetString(this, a1, a2, v7); /*0x528eb4*/
-      operator delete((void *)(v7)); /*0x528eb6*/
+      operator delete((v7)); /*0x528eb6*/
     }
   }
   (*((unsigned char *)&(result))) = v5; /*0x528ebf*/
@@ -12339,7 +12339,7 @@ int INIClass::setValue(void* a1, void* a2) {
       v9 = (unsigned int *)(*&this->__pad_020 * i++); /*0x52b0f9*/
       *(unsigned int *)&v6[v8] = *v9; /*0x52b0fe*/
     }
-    operator delete((void *)(*(void **)this)); /*0x52b112*/
+    operator delete((*(void **)this)); /*0x52b112*/
     v10 = this->q008; /*0x52b117*/
     *(unsigned int *)this = v6; /*0x52b11f*/
     this->q008 = v5 + v10; /*0x52b121*/
@@ -12445,7 +12445,7 @@ int INIClass::mergeSection(int a2) {
     v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x52b5b2*/
     *(unsigned int *)&v3[v5] = *v6; /*0x52b5b7*/
   }
-  operator delete((void *)(*(void **)v3)); /*0x52b5cb*/
+  operator delete((*(void **)v3)); /*0x52b5cb*/
   v7 = a2 + v3->vtable3; /*0x52b5d6*/
   *(unsigned int *)v3 = v3; /*0x52b5d8*/
   v3->vtable3 = v7; /*0x52b5da*/
@@ -13289,7 +13289,7 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
     v153 = 0; /*0x565ce9*/
     if ( !(unsigned char)jj ) /*0x565cef*/
     {
-      Block = (void *)new unsigned char[328 * (unsigned int)q0F4 * i]; /*0x565d0d*/
+      Block = new unsigned char[328 * (unsigned int)q0F4 * i]; /*0x565d0d*/
       v158 = (int)Block; /*0x565d11*/
       v13 = this->u32_F4; /*0x565d15*/
       *(unsigned int *)this->CellClass_field_10C = 1; /*0x565d1b*/
@@ -13921,12 +13921,12 @@ void* CellClass::BuildPathfindingGraph() {
 
   if ( this->unknown68 ) /*0x567118*/
   {
-    operator delete((void *)((void *)this->unknown68)); /*0x567120*/
+    operator delete(((void *)this->unknown68)); /*0x567120*/
     this->unknown68 = 0; /*0x567128*/
   }
   if ( this->unknown70 ) /*0x56712b*/
   {
-    operator delete((void *)((void *)this->unknown70)); /*0x567133*/
+    operator delete(((void *)this->unknown70)); /*0x567133*/
     this->unknown70 = 0; /*0x56713b*/
   }
   v2 = ((int)&this->radSite->vfptr + this->radLevel[1] + 1) * ((int)&this->radSite->vfptr + this->radLevel[1] + 1); /*0x56714e*/
@@ -21413,7 +21413,7 @@ int CCFileClass::Load() {
     if ( v4 ) /*0x595c9a*/
     {
       ComPtr::Dtor(v4); /*0x595c9e*/
-      operator delete((void *)(v4)); /*0x595ca4*/
+      operator delete((v4)); /*0x595ca4*/
     }
     g_MissionQueueFrame.briefing[451] = 0; /*0x595cac*/
   }
@@ -21738,7 +21738,7 @@ namespace gamemd {
 void* MixFileClass::UnlinkFromPool(int a1) {
   COMObject::Release((COMObject *)this); /*0x5b4613*/
   if ( (a1 & 1) != 0 ) /*0x5b461d*/
-    operator delete((void *)(this)); /*0x5b4620*/
+    operator delete((this)); /*0x5b4620*/
   return (int *)this->Node; /*0x5b462a*/
 }
 }
@@ -21865,7 +21865,7 @@ void TacticalClass::ClearVector() {
   this->uniqueId = 0; /*0x5c0a79*/
   if ( v2 && this->q00D ) /*0x5c0a80*/
   {
-    operator delete((void *)(v2)); /*0x5c0a86*/
+    operator delete((v2)); /*0x5c0a86*/
     this->vfptr1 = 0; /*0x5c0a8e*/
   }
   this->q00D = 0; /*0x5c0a91*/
@@ -21908,7 +21908,7 @@ int TacticalClass::ReallocVector(int a1, void* a2) {
         ++i; /*0x5c0ca1*/
       if ( this->IsAllocated ) /*0x5c0cae*/
       {
-        operator delete((void *)(this->vfptr1)); /*0x5c0cb9*/
+        operator delete((this->vfptr1)); /*0x5c0cb9*/
         this->Items = 0; /*0x5c0cc1*/
       }
     }
@@ -21951,7 +21951,7 @@ void* ScenarioClass::executeTriggerActions(int a2) {
   /* X11: vtable install elided (implicit via FreeForAll virtuals 0x5c5e43) */
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c5e49*/
   if ( (a2 & 1) != 0 ) /*0x5c5e53*/
-    operator delete((void *)(this)); /*0x5c5e56*/
+    operator delete((this)); /*0x5c5e56*/
   return &this->vtable1; /*0x5c5e60*/
 }
 }
@@ -22439,13 +22439,13 @@ void* ScenarioClass::processCrates(int a1) {
   *(unsigned int *)this->vftable = &vt_MSShapeAnim; /*0x5cec26*/
   if ( v3 && this->u32_3C ) /*0x5cec30*/
   {
-    operator delete((void *)(v3)); /*0x5cec38*/
+    operator delete((v3)); /*0x5cec38*/
     this->u32_1C = 0; /*0x5cec40*/
     this->u32_3C = 0; /*0x5cec47*/
   }
   *(unsigned int *)this->vftable = &vt_MSAnim; /*0x5cec4f*/
   if ( (a1 & 1) != 0 ) /*0x5cec57*/
-    operator delete((void *)(this)); /*0x5cec5a*/
+    operator delete((this)); /*0x5cec5a*/
   return this->vftable; /*0x5cec64*/
 }
 }
@@ -22538,7 +22538,7 @@ int ScenarioClass::AssignStartingPoints(int a1) {
   }
   *(unsigned int *)v14 = &vt_VectorClass; /*0x5d6d54*/
   if ( Block && v16 ) /*0x5d6d67*/
-    operator delete((void *)(Block)); /*0x5d6d6a*/
+    operator delete((Block)); /*0x5d6d6a*/
   return 1; /*0x5d6d74*/
 }
 }
@@ -22560,7 +22560,7 @@ void ScenarioClass::resetScenarioData() {
   this->Items = 0; /*0x5d8119*/
   if ( v2 && this->IsAllocated ) /*0x5d8120*/
   {
-    operator delete((void *)(v2)); /*0x5d8126*/
+    operator delete((v2)); /*0x5d8126*/
     this->Items = 0; /*0x5d812e*/
   }
   this->IsAllocated = 0; /*0x5d8131*/
@@ -22594,7 +22594,7 @@ int TacticalClass::ReallocVector(int a1, void* a2) {
         ++i; /*0x5c0ca1*/
       if ( this->IsAllocated ) /*0x5c0cae*/
       {
-        operator delete((void *)(this->vfptr1)); /*0x5c0cb9*/
+        operator delete((this->vfptr1)); /*0x5c0cb9*/
         this->Items = 0; /*0x5c0cc1*/
       }
     }
@@ -22637,7 +22637,7 @@ void* ScenarioClass::executeTriggerActions(int a2) {
   this->nextScenario = (int)&vt_FreeForAll; /*0x5c5e43*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c5e49*/
   if ( (a2 & 1) != 0 ) /*0x5c5e53*/
-    operator delete((void *)(this)); /*0x5c5e56*/
+    operator delete((this)); /*0x5c5e56*/
   return &this->vtable1; /*0x5c5e60*/
 }
 }
@@ -23125,13 +23125,13 @@ void* ScenarioClass::processCrates(int a1) {
   *(unsigned int *)this->vftable = &vt_MSShapeAnim; /*0x5cec26*/
   if ( v3 && this->u32_3C ) /*0x5cec30*/
   {
-    operator delete((void *)(v3)); /*0x5cec38*/
+    operator delete((v3)); /*0x5cec38*/
     this->u32_1C = 0; /*0x5cec40*/
     this->u32_3C = 0; /*0x5cec47*/
   }
   *(unsigned int *)this->vftable = &vt_MSAnim; /*0x5cec4f*/
   if ( (a1 & 1) != 0 ) /*0x5cec57*/
-    operator delete((void *)(this)); /*0x5cec5a*/
+    operator delete((this)); /*0x5cec5a*/
   return this->vftable; /*0x5cec64*/
 }
 }
@@ -23224,7 +23224,7 @@ int ScenarioClass::AssignStartingPoints(int a1) {
   }
   *(unsigned int *)v14 = &vt_VectorClass; /*0x5d6d54*/
   if ( Block && v16 ) /*0x5d6d67*/
-    operator delete((void *)(Block)); /*0x5d6d6a*/
+    operator delete((Block)); /*0x5d6d6a*/
   return 1; /*0x5d6d74*/
 }
 }
@@ -23246,7 +23246,7 @@ void ScenarioClass::resetScenarioData() {
   this->Items = 0; /*0x5d8119*/
   if ( v2 && this->IsAllocated ) /*0x5d8120*/
   {
-    operator delete((void *)(v2)); /*0x5d8126*/
+    operator delete((v2)); /*0x5d8126*/
     this->Items = 0; /*0x5d812e*/
   }
   this->IsAllocated = 0; /*0x5d8131*/
@@ -23262,7 +23262,7 @@ void ScenarioClass::resetScenarioData() {
   this->Items = 0; /*0x5d8119*/
   if ( v2 && this->IsAllocated ) /*0x5d8120*/
   {
-    operator delete((void *)(v2)); /*0x5d8126*/
+    operator delete((v2)); /*0x5d8126*/
     this->Items = 0; /*0x5d812e*/
   }
   this->IsAllocated = 0; /*0x5d8131*/
@@ -23589,7 +23589,7 @@ void FileSystem::mountDrive() {
       if ( v6 ) /*0x626397*/
       {
         ColorScheme::Destructor(*(ColorScheme **)(v5 + 4 * i)); /*0x62639b*/
-        operator delete((void *)(v6)); /*0x6263a1*/
+        operator delete((v6)); /*0x6263a1*/
       }
     }
     v7 = (void (__thiscall ***)(unsigned int, int))this->q100; /*0x6263af*/
@@ -24302,7 +24302,7 @@ int FactoryClass::ClearObjects() {
 
   v2 = this->queuedObjects[0]; /*0x635128*/
   for ( i = 0; i < v2; ++i ) /*0x63512f*/
-    operator delete((void *)(*(void **)(this->production[0] + 4 * i))); /*0x635138*/
+    operator delete((*(void **)(this->production[0] + 4 * i))); /*0x635138*/
   (*((void (__thiscall **)(void **))this->NeedsSaveOrLink + 3))(&this->NeedsSaveOrLink); /*0x63514b*/
   uniqueId = this->uniqueId; /*0x63514e*/
   result = 0; /*0x635151*/
@@ -24442,7 +24442,7 @@ void FactoryClass::FindAvailable() {
       FactoryClass::FinishProduction((int *)v6->__pad_000, (int)v8); /*0x636022*/
       operator delete((void *)(Block->vtable2)); /*0x63602f*/
       FactoryClass::RemoveItemAt((FactoryClass *)v6, (int)&Block); /*0x63603e*/
-      operator delete((void *)(Block)); /*0x636048*/
+      operator delete((Block)); /*0x636048*/
       if ( !v6->u32_10 ) /*0x63604d*/
       {
         if ( v6 ) /*0x636059*/
@@ -24470,7 +24470,7 @@ void FactoryClass::FindAvailable() {
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x6360e0) */
   if ( vtable2 && (this->u32_11) ) /*0x6360e8*/
   {
-    operator delete((void *)(vtable2)); /*0x6360f0*/
+    operator delete((vtable2)); /*0x6360f0*/
     this->vfptr2 = 0; /*0x6360f8*/
   }
   this->vfptr3 = 0; /*0x6360fb*/
@@ -24541,9 +24541,9 @@ int FactoryClass::CompleteCurrentItem(int a2) {
     if ( v15 ) /*0x63669b*/
     {
       FactoryClass::FinishProduction(v3, (int)v15); /*0x6366a0*/
-      operator delete((void *)(*((void **)Block + 1))); /*0x6366ad*/
+      operator delete((*((void **)Block + 1))); /*0x6366ad*/
       FactoryClass::RemoveItemAt(&Block); /*0x6366bc*/
-      operator delete((void *)(Block)); /*0x6366c6*/
+      operator delete((Block)); /*0x6366c6*/
       if ( !*(unsigned int *)(v3 + 16) ) /*0x6366cb*/
       {
         if ( v3 ) /*0x6366d7*/
@@ -25483,7 +25483,7 @@ int RadarClass::Process() {
       (**(void (__thiscall ***)(void *, int))RadarClass_field_0x1258->MapClass_field_0x0)( /*0x6559ad*/
         RadarClass_field_0x1258->MapClass_field_0x0,
         3);
-    operator delete((void *)(RadarClass_field_0x1258)); /*0x6559b0*/
+    operator delete((RadarClass_field_0x1258)); /*0x6559b0*/
   }
   v3 = (MapClass *)operator new(0x10u); /*0x6559ba*/
   v4 = v3; /*0x6559bf*/
@@ -25573,7 +25573,7 @@ void TacticalClass::FreeResources() {
   {
     if ( *v4 ) /*0x655ae6*/
       (**(void (__thiscall ***)(unsigned int, int))*v4)(*v4, 3); /*0x655af0*/
-    operator delete((void *)(v4)); /*0x655af3*/
+    operator delete((v4)); /*0x655af3*/
     this->RadarHash = 0; /*0x655afb*/
   }
   if ( this->RadarPointBuffer ) /*0x655b01*/
@@ -26066,7 +26066,7 @@ void* RadarClass::Destru_vt04(int a1) {
     *p_RadarClass_field_0x1488 = (MapClass *)&vt_VectorClass; /*0x6587d3*/
     if ( v5 && p_RadarClass_field_0x1488->IsAllocated ) /*0x6587db*/
     {
-      operator delete((void *)(v5)); /*0x6587e1*/
+      operator delete((v5)); /*0x6587e1*/
       p_RadarClass_field_0x1488[1] = 0; /*0x6587e9*/
     }
     --v4; /*0x6587ec*/
@@ -26078,7 +26078,7 @@ void* RadarClass::Destru_vt04(int a1) {
   this->RadarPoints = (VectorClass *)&vt_VectorClass; /*0x6587fb*/
   if ( ptr_1260 && this->u8_1269 ) /*0x658809*/
   {
-    operator delete((void *)(ptr_1260)); /*0x658812*/
+    operator delete((ptr_1260)); /*0x658812*/
     this->ptr_1260 = 0; /*0x65881a*/
   }
   this->u8_1269 = 0; /*0x658820*/
@@ -26087,14 +26087,14 @@ void* RadarClass::Destru_vt04(int a1) {
   this->RadarCells = (VectorClass *)&vt_VectorClass; /*0x658832*/
   if ( ptr_1228 && this->u8_1231 ) /*0x658840*/
   {
-    operator delete((void *)(ptr_1228)); /*0x658849*/
+    operator delete((ptr_1228)); /*0x658849*/
     this->ptr_1228 = 0; /*0x658851*/
   }
   this->u8_1231 = 0; /*0x658859*/
   *(unsigned int *)this->__pad_122C = 0; /*0x65885f*/
   MapClass::Destruct((char *)this); /*0x658865*/
   if ( (a1 & 1) != 0 ) /*0x65886f*/
-    operator delete((void *)(this)); /*0x658872*/
+    operator delete((this)); /*0x658872*/
   return &this->vtable1; /*0x65887c*/
 }
 }
@@ -26400,7 +26400,7 @@ void* RawFileClass::QueryInterface(int a1) {
   }
   /* X11: vtable install elided (implicit via FileClass virtuals 0x65d403) */
   if ( (a1 & 1) != 0 ) /*0x65d40b*/
-    operator delete((void *)(this)); /*0x65d40e*/
+    operator delete((this)); /*0x65d40e*/
   return this->vtable1; /*0x65d418*/
 }
 }
@@ -26973,7 +26973,7 @@ void FileSystem::mountDrive() {
       if ( v6 ) /*0x626397*/
       {
         ColorScheme::Destructor(*(ColorScheme **)(v5 + 4 * i)); /*0x62639b*/
-        operator delete((void *)(v6)); /*0x6263a1*/
+        operator delete((v6)); /*0x6263a1*/
       }
     }
     v7 = (void (__thiscall ***)(unsigned int, int))this->q100; /*0x6263af*/
@@ -27754,7 +27754,7 @@ void FileSystem::mountDrive() {
       if ( v6 ) /*0x626397*/
       {
         ColorScheme::Destructor(*(ColorScheme **)(v5 + 4 * i)); /*0x62639b*/
-        operator delete((void *)(v6)); /*0x6263a1*/
+        operator delete((v6)); /*0x6263a1*/
       }
     }
     v7 = (void (__thiscall ***)(unsigned int, int))this->q100; /*0x6263af*/
@@ -28466,7 +28466,7 @@ int FactoryClass::ClearObjects() {
 
   v2 = this->queuedObjects[0]; /*0x635128*/
   for ( i = 0; i < v2; ++i ) /*0x63512f*/
-    operator delete((void *)(*(void **)(this->production[0] + 4 * i))); /*0x635138*/
+    operator delete((*(void **)(this->production[0] + 4 * i))); /*0x635138*/
   (*((void (__thiscall **)(void **))this->NeedsSaveOrLink + 3))(&this->NeedsSaveOrLink); /*0x63514b*/
   uniqueId = this->uniqueId; /*0x63514e*/
   result = 0; /*0x635151*/
@@ -28606,7 +28606,7 @@ void FactoryClass::FindAvailable() {
       FactoryClass::FinishProduction((int *)v6->__pad_000, (int)v8); /*0x636022*/
       operator delete((void *)(Block->vtable2)); /*0x63602f*/
       FactoryClass::RemoveItemAt((FactoryClass *)v6, (int)&Block); /*0x63603e*/
-      operator delete((void *)(Block)); /*0x636048*/
+      operator delete((Block)); /*0x636048*/
       if ( !v6->u32_10 ) /*0x63604d*/
       {
         if ( v6 ) /*0x636059*/
@@ -28634,7 +28634,7 @@ void FactoryClass::FindAvailable() {
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x6360e0) */
   if ( vtable2 && (this->u32_11) ) /*0x6360e8*/
   {
-    operator delete((void *)(vtable2)); /*0x6360f0*/
+    operator delete((vtable2)); /*0x6360f0*/
     this->vfptr2 = 0; /*0x6360f8*/
   }
   this->vfptr3 = 0; /*0x6360fb*/
@@ -28705,9 +28705,9 @@ int FactoryClass::CompleteCurrentItem(int a2) {
     if ( v15 ) /*0x63669b*/
     {
       FactoryClass::FinishProduction(v3, (int)v15); /*0x6366a0*/
-      operator delete((void *)(*((void **)Block + 1))); /*0x6366ad*/
+      operator delete((*((void **)Block + 1))); /*0x6366ad*/
       FactoryClass::RemoveItemAt(&Block); /*0x6366bc*/
-      operator delete((void *)(Block)); /*0x6366c6*/
+      operator delete((Block)); /*0x6366c6*/
       if ( !*(unsigned int *)(v3 + 16) ) /*0x6366cb*/
       {
         if ( v3 ) /*0x6366d7*/
@@ -28801,7 +28801,7 @@ void* FactoryClass::RemoveFromArrays(int a1) {
   this->NeedsSaveOrLink = &vt_VectorClass; /*0x63da6c*/
   if ( v6 && (this->u32_2D) ) /*0x63da77*/
   {
-    operator delete((void *)(v6)); /*0x63da7d*/
+    operator delete((v6)); /*0x63da7d*/
     this->production[0] = 0; /*0x63da85*/
   }
   (this->u32_2D) = 0; /*0x63da88*/
@@ -28810,13 +28810,13 @@ void* FactoryClass::RemoveFromArrays(int a1) {
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x63da91) */
   if ( vtable1 && (this->IsAllocated) ) /*0x63da9b*/
   {
-    operator delete((void *)(vtable1)); /*0x63daa1*/
+    operator delete((vtable1)); /*0x63daa1*/
     this->vfptr1 = 0; /*0x63daa9*/
   }
   (this->IsAllocated) = 0; /*0x63dab0*/
   this->vfptr2 = 0; /*0x63dab3*/
   if ( (a1 & 1) != 0 ) /*0x63dab9*/
-    operator delete((void *)(this)); /*0x63dabc*/
+    operator delete((this)); /*0x63dabc*/
   return (int *)this; /*0x63dac6*/
 }
 }
@@ -29738,7 +29738,7 @@ void TacticalClass::FreeResources() {
   {
     if ( *v4 ) /*0x655ae6*/
       (**(void (__thiscall ***)(unsigned int, int))*v4)(*v4, 3); /*0x655af0*/
-    operator delete((void *)(v4)); /*0x655af3*/
+    operator delete((v4)); /*0x655af3*/
     this->RadarHash = 0; /*0x655afb*/
   }
   if ( this->RadarPointBuffer ) /*0x655b01*/
@@ -30232,7 +30232,7 @@ void* RadarClass::Destru_vt04(int a1) {
     *p_RadarClass_field_0x1488 = (MapClass *)&vt_VectorClass; /*0x6587d3*/
     if ( v5 && p_RadarClass_field_0x1488->IsAllocated ) /*0x6587db*/
     {
-      operator delete((void *)(v5)); /*0x6587e1*/
+      operator delete((v5)); /*0x6587e1*/
       p_RadarClass_field_0x1488[1] = 0; /*0x6587e9*/
     }
     --v4; /*0x6587ec*/
@@ -30244,7 +30244,7 @@ void* RadarClass::Destru_vt04(int a1) {
   this->RadarPoints = (VectorClass *)&vt_VectorClass; /*0x6587fb*/
   if ( ptr_1260 && this->u8_1269 ) /*0x658809*/
   {
-    operator delete((void *)(ptr_1260)); /*0x658812*/
+    operator delete((ptr_1260)); /*0x658812*/
     this->ptr_1260 = 0; /*0x65881a*/
   }
   this->u8_1269 = 0; /*0x658820*/
@@ -30253,14 +30253,14 @@ void* RadarClass::Destru_vt04(int a1) {
   this->RadarCells = (VectorClass *)&vt_VectorClass; /*0x658832*/
   if ( ptr_1228 && this->u8_1231 ) /*0x658840*/
   {
-    operator delete((void *)(ptr_1228)); /*0x658849*/
+    operator delete((ptr_1228)); /*0x658849*/
     this->ptr_1228 = 0; /*0x658851*/
   }
   this->u8_1231 = 0; /*0x658859*/
   *(unsigned int *)this->__pad_122C = 0; /*0x65885f*/
   MapClass::Destruct((char *)this); /*0x658865*/
   if ( (a1 & 1) != 0 ) /*0x65886f*/
-    operator delete((void *)(this)); /*0x658872*/
+    operator delete((this)); /*0x658872*/
   return &this->vtable1; /*0x65887c*/
 }
 }
@@ -30566,7 +30566,7 @@ void* RawFileClass::QueryInterface(int a1) {
   }
   /* X11: vtable install elided (implicit via FileClass virtuals 0x65d403) */
   if ( (a1 & 1) != 0 ) /*0x65d40b*/
-    operator delete((void *)(this)); /*0x65d40e*/
+    operator delete((this)); /*0x65d40e*/
   return this->vtable1; /*0x65d418*/
 }
 }
@@ -30972,7 +30972,7 @@ int FactoryClass::ClearObjects() {
 
   v2 = this->queuedObjects[0]; /*0x635128*/
   for ( i = 0; i < v2; ++i ) /*0x63512f*/
-    operator delete((void *)(*(void **)(this->production[0] + 4 * i))); /*0x635138*/
+    operator delete((*(void **)(this->production[0] + 4 * i))); /*0x635138*/
   (*((void (__thiscall **)(void **))this->NeedsSaveOrLink + 3))(&this->NeedsSaveOrLink); /*0x63514b*/
   uniqueId = this->uniqueId; /*0x63514e*/
   result = 0; /*0x635151*/
@@ -31112,7 +31112,7 @@ void FactoryClass::FindAvailable() {
       FactoryClass::FinishProduction((int *)v6->__pad_000, (int)v8); /*0x636022*/
       operator delete((void *)(Block->vtable2)); /*0x63602f*/
       FactoryClass::RemoveItemAt((FactoryClass *)v6, (int)&Block); /*0x63603e*/
-      operator delete((void *)(Block)); /*0x636048*/
+      operator delete((Block)); /*0x636048*/
       if ( !v6->u32_10 ) /*0x63604d*/
       {
         if ( v6 ) /*0x636059*/
@@ -31140,7 +31140,7 @@ void FactoryClass::FindAvailable() {
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x6360e0) */
   if ( vtable2 && (this->u32_11) ) /*0x6360e8*/
   {
-    operator delete((void *)(vtable2)); /*0x6360f0*/
+    operator delete((vtable2)); /*0x6360f0*/
     this->vfptr2 = 0; /*0x6360f8*/
   }
   this->vfptr3 = 0; /*0x6360fb*/
@@ -31211,9 +31211,9 @@ int FactoryClass::CompleteCurrentItem(int a2) {
     if ( v15 ) /*0x63669b*/
     {
       FactoryClass::FinishProduction(v3, (int)v15); /*0x6366a0*/
-      operator delete((void *)(*((void **)Block + 1))); /*0x6366ad*/
+      operator delete((*((void **)Block + 1))); /*0x6366ad*/
       FactoryClass::RemoveItemAt(&Block); /*0x6366bc*/
-      operator delete((void *)(Block)); /*0x6366c6*/
+      operator delete((Block)); /*0x6366c6*/
       if ( !*(unsigned int *)(v3 + 16) ) /*0x6366cb*/
       {
         if ( v3 ) /*0x6366d7*/
@@ -32246,7 +32246,7 @@ void TacticalClass::FreeResources() {
   {
     if ( *v4 ) /*0x655ae6*/
       (**(void (__thiscall ***)(unsigned int, int))*v4)(*v4, 3); /*0x655af0*/
-    operator delete((void *)(v4)); /*0x655af3*/
+    operator delete((v4)); /*0x655af3*/
     this->RadarHash = 0; /*0x655afb*/
   }
   if ( this->RadarPointBuffer ) /*0x655b01*/
@@ -32740,7 +32740,7 @@ void* RadarClass::Destru_vt04(int a1) {
     *p_RadarClass_field_0x1488 = (MapClass *)&vt_VectorClass; /*0x6587d3*/
     if ( v5 && p_RadarClass_field_0x1488->IsAllocated ) /*0x6587db*/
     {
-      operator delete((void *)(v5)); /*0x6587e1*/
+      operator delete((v5)); /*0x6587e1*/
       p_RadarClass_field_0x1488[1] = 0; /*0x6587e9*/
     }
     --v4; /*0x6587ec*/
@@ -32752,7 +32752,7 @@ void* RadarClass::Destru_vt04(int a1) {
   this->RadarPoints = (VectorClass *)&vt_VectorClass; /*0x6587fb*/
   if ( ptr_1260 && this->u8_1269 ) /*0x658809*/
   {
-    operator delete((void *)(ptr_1260)); /*0x658812*/
+    operator delete((ptr_1260)); /*0x658812*/
     this->ptr_1260 = 0; /*0x65881a*/
   }
   this->u8_1269 = 0; /*0x658820*/
@@ -32761,14 +32761,14 @@ void* RadarClass::Destru_vt04(int a1) {
   this->RadarCells = (VectorClass *)&vt_VectorClass; /*0x658832*/
   if ( ptr_1228 && this->u8_1231 ) /*0x658840*/
   {
-    operator delete((void *)(ptr_1228)); /*0x658849*/
+    operator delete((ptr_1228)); /*0x658849*/
     this->ptr_1228 = 0; /*0x658851*/
   }
   this->u8_1231 = 0; /*0x658859*/
   *(unsigned int *)this->__pad_122C = 0; /*0x65885f*/
   MapClass::Destruct((char *)this); /*0x658865*/
   if ( (a1 & 1) != 0 ) /*0x65886f*/
-    operator delete((void *)(this)); /*0x658872*/
+    operator delete((this)); /*0x658872*/
   return &this->vfptr; /*0x65887c*/
 }
 }
@@ -33036,7 +33036,7 @@ void* RawFileClass::QueryInterface(int a1) {
   }
   /* X11: vtable install elided (implicit via FileClass virtuals 0x65d403) */
   if ( (a1 & 1) != 0 ) /*0x65d40b*/
-    operator delete((void *)(this)); /*0x65d40e*/
+    operator delete((this)); /*0x65d40e*/
   return this->vtable1; /*0x65d418*/
 }
 }
@@ -33490,7 +33490,7 @@ void* RawFileClass::QueryInterface(int a1) {
   }
   /* X11: vtable install elided (implicit via FileClass virtuals 0x65d403) */
   if ( (a1 & 1) != 0 ) /*0x65d40b*/
-    operator delete((void *)(this)); /*0x65d40e*/
+    operator delete((this)); /*0x65d40e*/
   return this->vtable1; /*0x65d418*/
 }
 }
@@ -35111,7 +35111,7 @@ int ScenarioClass::LoadNetworkConfig() {
                                   (uint8_t *)&stru_8263E0.Loop,
                                   aCheckheap,
                                   0);
-    (*((unsigned char *)&(this->random[61]))) = INIClass::ReadBool_Overwrite( /*0x698288*/
+    (this->u8_F338) = INIClass::ReadBool_Overwrite( /*0x698288*/
                                  (int *)&CCINIClass_INI_RA2MD,
                                  (uint8_t *)&stru_8263E0.Loop,
                                  (uint8_t *)aWollimitresolu,
@@ -35606,7 +35606,7 @@ void ScenarioClass::FreeConfig() {
   {
     if ( this->nextScenario[22] ) /*0x69de7b*/
     {
-      operator delete((void *)((void *)this->nextScenario[22])); /*0x69de83*/
+      operator delete(((void *)this->nextScenario[22])); /*0x69de83*/
       this->nextScenario[22] = 0; /*0x69de8b*/
       (this->Handle) = 0; /*0x69de8e*/
       this->nextScenario[5] = 0; /*0x69de91*/
@@ -35814,7 +35814,7 @@ void* MixFileClass::CacheNode_Dtor(int a2) {
     }
   }
   if ( (a2 & 1) != 0 ) /*0x69e999*/
-    operator delete((void *)(this)); /*0x69e99c*/
+    operator delete((this)); /*0x69e99c*/
   return this; /*0x69e9a6*/
 }
 }
@@ -37406,7 +37406,7 @@ void* TacticalClass::updateScroll(int a2, int a3) {
       this->vfptr1 = (void *)a3; /*0x734408*/
       return &this->vfptr; /*0x73440e*/
     }
-    this->vfptr1 = (void *)operator new(4 * a2); /*0x73441d*/
+    this->vfptr1 = operator new(4 * a2); /*0x73441d*/
     (this->q00D) = 1; /*0x734420*/
   }
   return &this->vfptr; /*0x73440d*/

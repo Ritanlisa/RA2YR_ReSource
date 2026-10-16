@@ -143,7 +143,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
       int v13; // eax
       v13 = (&v29)->ConvertToRGB((int)&v28); /*0x48e9ae*/
       LOWORD(a4) = *(unsigned short *)v13; /*0x48e9b6*/
-      BYTE2(a4) = v13->ConvertClass_field_0x2; /*0x48e9c5*/
+      BYTE2(a4) = v13->field_2; /*0x48e9c5*/
       *((unsigned char *)this->ConvertClass_field_0x178 + v8++) = Palette::FindClosestColor((char *)a2, (int)&a4); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/

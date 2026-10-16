@@ -16,7 +16,7 @@ void MoveFeedback::ClearBuffer()
   this->m_10 = 0; /*0x40b649*/
   if ( v2 && (this->IsAllocated) ) /*0x40b650*/
   {
-    operator delete((void *)(v2)); /*0x40b656*/
+    operator delete((v2)); /*0x40b656*/
     *&this->m_Capacity = 0; /*0x40b65e*/
   }
   (this->IsAllocated) = 0; /*0x40b661*/

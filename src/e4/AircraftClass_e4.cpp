@@ -183,7 +183,7 @@ int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void 
           (int *)a4,
           a5,
           a6,
-          (void *)a7,
+          a7,
           v16,
           v17);
   if ( v11 == 4 ) /*0x4165f6*/
@@ -409,7 +409,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
   int v14; // ebx
   int v15; // eax
 
-  ClosestPlacementCell = (void *)a2; /*0x41aa83*/
+  ClosestPlacementCell = a2; /*0x41aa83*/
   if ( !a2 ) /*0x41aa8b*/
   {
     LABEL_53:

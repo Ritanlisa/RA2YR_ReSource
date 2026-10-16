@@ -51,7 +51,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     ModuleVersion = (char *)(GetModuleVersion()); /*0x651790*/
     fprintf(v6, "\nVersion %s\n", ModuleVersion); /*0x65179c*/
     char *ModuleInternalVersion; // eax
-    ModuleInternalVersion = GetModuleInternalVersion((void*)(&dword_A8ECE0)); /*0x6517a9*/
+    ModuleInternalVersion = GetModuleInternalVersion((&dword_A8ECE0)); /*0x6517a9*/
     fprintf(v6, "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
     ((Time *)(v62))->FormatDate(); /*0x6517cb*/
@@ -424,10 +424,10 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     {
       fprintf(v6, "Offending event:\n"); /*0x651fe2*/
       fprintf(v6, "Type:         %d\n", *v49);
-      fprintf(v6, "Frame:        %d\n", *(unsigned int *)(v49 + 3));
+      fprintf(v6, "Frame:        %d\n", v49->ptr_3);
       fprintf(v6, "ID:           %x\n", (char)v49[2]);
-      fprintf(v6, "CRC:          %x\n", *(unsigned int *)(v49 + 7));
-      fprintf(v6, "CommandCount: %d\n", *(uint16_t *)(v49 + 11));
+      fprintf(v6, "CRC:          %x\n", v49->ptr_7);
+      fprintf(v6, "CommandCount: %d\n", v49->u32_B);
       fprintf(v6, "Delay:        %d\n", v49[13]);
     }
     fclose(v6); /*0x65204f*/

@@ -844,7 +844,7 @@ AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, vo
       if ( v104[144] )
       {
         unsigned short * v105 = (unsigned short *)(*(int (**)(unsigned char *, char *))(*(unsigned int *)v104 + 440))( (unsigned char *)(v104), (char *)(v134));
-        if ( ((CellStruct *)((unsigned short *)(v105)))->Equals((void *)(&v112)) )
+        if ( ((CellStruct *)((unsigned short *)(v105)))->Equals((&v112)) )
           (*(void (**)(unsigned char *))(*(unsigned int *)v104 + 248))( (unsigned char *)(v104));
       }
       ++v103;
@@ -912,7 +912,7 @@ AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, vo
       {
         ++v65;
         *(unsigned int *)v67->vtable1 = *((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), v66);
-        v67 = (gamemd::AbstractClass *)(&v67->vtable2);
+        v67 = &v67->vtable2;
         if ( v65 == 400 )
           break;
       }

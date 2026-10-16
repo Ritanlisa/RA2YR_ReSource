@@ -579,7 +579,7 @@ int SessionClass::Destruct(void *a1)
     if ( v4 ) /*0x5cf606*/
     {
       DeleteAndZero(*(ObjectClass **)(v3 + 4 * i)); /*0x5cf60a*/
-      operator delete((void *)(v4)); /*0x5cf610*/
+      operator delete((v4)); /*0x5cf610*/
     }
   }
   (*(void (**)(int *))(this->Handle[3] + 12))(&this->Handle[3]); /*0x5cf626*/
@@ -597,7 +597,7 @@ int SessionClass::Destruct(void *a1)
     if ( v7 ) /*0x5cf656*/
     {
       DeleteAndZero(*(ObjectClass **)(v6 + 4 * j)); /*0x5cf65a*/
-      operator delete((void *)(v7)); /*0x5cf660*/
+      operator delete((v7)); /*0x5cf660*/
     }
   }
   (*(void (**)(int *))(this->Config[5] + 12))(&this->Config[5]); /*0x5cf676*/
@@ -611,7 +611,7 @@ int SessionClass::Destruct(void *a1)
     if ( v10 ) /*0x5cf68a*/
     {
       SessionClass::loadSettings(*(SessionClass **)(v9 + 4 * k)); /*0x5cf68e*/
-      operator delete((void *)(v10)); /*0x5cf694*/
+      operator delete((v10)); /*0x5cf694*/
     }
   }
   return (); /*0x5cf6ab*/
@@ -2516,7 +2516,7 @@ void TypeList_W4DiskID::ddtor(void *a1)
   a1->m_10 = 0; /*0x69c4a9*/
   if ( v2 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x69c4b0*/
   {
-    operator delete((void *)(v2)); /*0x69c4b6*/
+    operator delete((v2)); /*0x69c4b6*/
     *(unsigned int *)&a1->m_1[3] = 0; /*0x69c4be*/
   }
   (((unsigned char *)&(a1->m_C))[1]) = 0; /*0x69c4c1*/
@@ -2553,13 +2553,13 @@ TypeList_flat * TypeList_W4DiskID::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x69c6c6*/
   if ( v3 && (Block->u32_D) ) /*0x69c6d0*/
   {
-    operator delete((void *)(v3)); /*0x69c6d8*/
+    operator delete((v3)); /*0x69c6d8*/
     *&Block->__pad_004 = 0; /*0x69c6e0*/
   }
   (Block->u32_D) = 0; /*0x69c6eb*/
   Block->u32_8 = 0; /*0x69c6f1*/
   if ( (a2 & 1) != 0 ) /*0x69c6f8*/
-    operator delete((void *)(Block)); /*0x69c6fb*/
+    operator delete((Block)); /*0x69c6fb*/
   return Block->tail_0; /*0x69c705*/
 }
 }  // G42.18c ns repair
@@ -2766,13 +2766,13 @@ VectorClass_flat * TypeList_W4DiskID::validateGame(unsigned int * Block, char a2
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x69d466*/
   if ( v3 && (Block->u32_D) ) /*0x69d470*/
   {
-    operator delete((void *)(v3)); /*0x69d478*/
+    operator delete((v3)); /*0x69d478*/
     *&Block->__pad_004 = 0; /*0x69d480*/
   }
   (Block->u32_D) = 0; /*0x69d48b*/
   Block->u32_8 = 0; /*0x69d491*/
   if ( (a2 & 1) != 0 ) /*0x69d498*/
-    operator delete((void *)(Block)); /*0x69d49b*/
+    operator delete((Block)); /*0x69d49b*/
   return Block->tail_0; /*0x69d4a5*/
 }
 }  // G42.18c ns repair

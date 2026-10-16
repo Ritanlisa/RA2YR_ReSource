@@ -565,7 +565,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                   if ( v21 ) /*0x435deb*/
                   {
                     BuildingLightQueue::RemoveEntry(v21); /*0x435def*/
-                    operator delete((void *)(v21)); /*0x435df5*/
+                    operator delete((v21)); /*0x435df5*/
                   }
                   location = this->location; /*0x435dfd*/
                   v23 = this->location[0]; /*0x435e05*/

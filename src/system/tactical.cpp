@@ -1479,7 +1479,7 @@ void TacticalClass::renderOverlay(int * Block, char a2)
 {
   GadgetClass::Dtor(Block); /*0x658783*/
   if ( (a2 & 1) != 0 ) /*0x65878d*/
-    operator delete((void *)(Block)); /*0x658790*/
+    operator delete((Block)); /*0x658790*/
   return Block; /*0x65879a*/
 }
 // ============================================================
@@ -1951,7 +1951,7 @@ AbstractClass * * TacticalClass::SetViewDimensions(int width, int height)
       if ( g_ZBufferDescriptor ) /*0x4a89ea*/
       {
         Stream::GetField(g_ZBufferDescriptor); /*0x4a89ee*/
-        operator delete((void *)(v1)); /*0x4a89f4*/
+        operator delete((v1)); /*0x4a89f4*/
       }
       g_ZBufferDescriptor = 0; /*0x4a89fc*/
     }
@@ -1975,7 +1975,7 @@ AbstractClass * * TacticalClass::SetViewDimensions(int width, int height)
       if ( *(unsigned int *)&g_VisibleSurfaceDescriptor ) /*0x4a8a87*/
       {
         StreamObj::Release(*(StreamObj **)&g_VisibleSurfaceDescriptor); /*0x4a8a8b*/
-        operator delete((void *)(v4)); /*0x4a8a91*/
+        operator delete((v4)); /*0x4a8a91*/
       }
       *(unsigned int *)&g_VisibleSurfaceDescriptor = 0; /*0x4a8a99*/
     }

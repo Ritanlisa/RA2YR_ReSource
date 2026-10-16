@@ -22,7 +22,7 @@ void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(Dia
   *&Block->__pad_000 = (int)&off_7F7624; /*0x7ac643*/
   ((OwnerDrawControl *)Block)->InitVtable(); /*0x7ac649*/
   if ( (a2 & 1) != 0 ) /*0x7ac653*/
-    operator delete((void *)(Block)); /*0x7ac656*/
+    operator delete((Block)); /*0x7ac656*/
   return (void **)Block; /*0x7ac660*/
 }
 }  // G42.18 ns repair
@@ -85,7 +85,7 @@ void WonlineStringDialogControl_12::ClearBuffer(void *a1_1)
   a1_1->q010 = 0; /*0x7ac979*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x7ac980*/
   {
-    operator delete((void *)(v2)); /*0x7ac986*/
+    operator delete((v2)); /*0x7ac986*/
     *(unsigned int *)&a1_1->q004 = 0; /*0x7ac98e*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1_1->q00C))[1]) = 0; /*0x7ac991*/
@@ -313,13 +313,13 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x7ad376*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_C))[1]) ) /*0x7ad380*/
   {
-    operator delete((void *)(v3)); /*0x7ad388*/
+    operator delete((v3)); /*0x7ad388*/
     *&Block->__pad_004 = 0; /*0x7ad390*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x7ad39b*/
   Block->u32_8 = 0; /*0x7ad3a1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
-    operator delete((void *)(Block)); /*0x7ad3ab*/
+    operator delete((Block)); /*0x7ad3ab*/
   return Block->tail_0; /*0x7ad3b5*/
 }
 } // namespace gamemd
@@ -333,13 +333,13 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x7ad3c6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_C))[1]) ) /*0x7ad3d0*/
   {
-    operator delete((void *)(v3)); /*0x7ad3d8*/
+    operator delete((v3)); /*0x7ad3d8*/
     *&Block->__pad_004 = 0; /*0x7ad3e0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x7ad3eb*/
   Block->u32_8 = 0; /*0x7ad3f1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
-    operator delete((void *)(Block)); /*0x7ad3fb*/
+    operator delete((Block)); /*0x7ad3fb*/
   return Block->tail_0; /*0x7ad405*/
 }
 } // namespace gamemd
@@ -466,7 +466,7 @@ LONG WonlineStringDialogControl_28::Release(char * Block)
     *((unsigned int *)Block + 1) = 1; /*0x7ad669*/
     InterlockedDecrement(&Addend); /*0x7ad66f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/
-    operator delete((void *)(Block)); /*0x7ad67c*/
+    operator delete((Block)); /*0x7ad67c*/
   }
   return v1; /*0x7ad684*/
 }

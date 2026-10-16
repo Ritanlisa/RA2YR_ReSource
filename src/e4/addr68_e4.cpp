@@ -921,7 +921,7 @@ int ScenarioClass_Reset()
   *(unsigned int *)&DataGlobal_87F848 = 0; /*0x685322*/
   if ( *(unsigned int *)&DataGlobal_87F83C && DataGlobal_87F845 ) /*0x685332*/
   {
-    operator delete((void *)(*(void **)&DataGlobal_87F83C)); /*0x685335*/
+    operator delete((*(void **)&DataGlobal_87F83C)); /*0x685335*/
     *(unsigned int *)&DataGlobal_87F83C = 0; /*0x68533d*/
   }
   DataGlobal_87F845 = 0; /*0x685343*/
@@ -971,7 +971,7 @@ int ScenarioClass_Reset()
   FootClass_Array.barrelRecoil[0] = 0; /*0x685443*/
   if ( FootClass_Array.turretRecoil[5] && (((unsigned char *)&(FootClass_Array.turretRecoil[7]))[1]) ) /*0x685453*/
   {
-    operator delete((void *)((void *)FootClass_Array.turretRecoil[5])); /*0x685456*/
+    operator delete(((void *)FootClass_Array.turretRecoil[5])); /*0x685456*/
     FootClass_Array.turretRecoil[5] = 0; /*0x68545e*/
   }
   (((unsigned char *)&(FootClass_Array.turretRecoil[7]))[1]) = 0; /*0x685469*/
@@ -1013,7 +1013,7 @@ int ScenarioClass_Reset()
   *(unsigned int *)&((unsigned int *)&stru_A8EB00)[228] = 0; /*0x6855a7*/
   if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] && ((unsigned int *)&stru_A8EB00)[225] ) /*0x6855b5*/
   {
-    operator delete((void *)(*(void **)&((unsigned int *)&stru_A8EB00)[216])); /*0x6855b8*/
+    operator delete((*(void **)&((unsigned int *)&stru_A8EB00)[216])); /*0x6855b8*/
     *(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] = 0; /*0x6855c0*/
   }
   ((unsigned int *)&stru_A8EB00)[225] = 0; /*0x6855cb*/

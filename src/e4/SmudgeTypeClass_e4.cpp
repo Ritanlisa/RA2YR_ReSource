@@ -199,7 +199,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b6180) */
   if ( Image ) /*0x6b6187*/
   {
-    operator delete((void *)(Image)); /*0x6b618a*/
+    operator delete((Image)); /*0x6b618a*/
     a3->Image = 0; /*0x6b6192*/
   }
   AbstractClass::AnnounceExpiredPointer(&a3->vfptr, 1); /*0x6b61a0*/

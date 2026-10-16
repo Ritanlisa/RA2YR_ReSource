@@ -402,7 +402,7 @@ void DynamicVectorClass_uint::ddtor(void *a1_1)
   *(unsigned int *)&a1_1->Count = 0; /*0x42d549*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x42d550*/
   {
-    operator delete((void *)(v2)); /*0x42d556*/
+    operator delete((v2)); /*0x42d556*/
     a1_1->Items = (unsigned int)(0); /*0x42d55e*/
   }
   (((unsigned char *)&(a1_1->IsInitialized))[1]) = 0; /*0x42d561*/
@@ -503,7 +503,7 @@ void DynamicVectorClass_uint::Clear_0()
 {
   if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x42d6fd*/
   {
-    operator delete((void *)(*&this->Items)); /*0x42d703*/
+    operator delete((*&this->Items)); /*0x42d703*/
     *&this->Items = 0; /*0x42d70b*/
   }
   (this->IsAllocated) = 0; /*0x42d70e*/
@@ -623,13 +623,13 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(unsigned int * Block, cha
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42db16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x42db20*/
   {
-    operator delete((void *)(v3)); /*0x42db28*/
+    operator delete((v3)); /*0x42db28*/
     Block->Items = (unsigned int)(0); /*0x42db30*/
   }
   (Block->u8_9) = 0; /*0x42db3b*/
   *&Block->u32_8 = 0; /*0x42db41*/
   if ( (a2 & 1) != 0 ) /*0x42db48*/
-    operator delete((void *)(Block)); /*0x42db4b*/
+    operator delete((Block)); /*0x42db4b*/
   return Block->tail_0; /*0x42db55*/
 }
 } // namespace gamemd
@@ -744,7 +744,7 @@ void DynamicVectorClass_PAD::ddtor(void *a1_1)
   *(unsigned int *)&a1_1->Count = 0; /*0x49e959*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x49e960*/
   {
-    operator delete((void *)(v2)); /*0x49e966*/
+    operator delete((v2)); /*0x49e966*/
     a1_1->Items = (unsigned int)(0); /*0x49e96e*/
   }
   (((unsigned char *)&(a1_1->IsInitialized))[1]) = 0; /*0x49e971*/
@@ -1059,13 +1059,13 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Bloc
   *(unsigned int *)Block->tail_0 = &vt_VectorClassDynamicVectorClass; /*0x49eff6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x49f000*/
   {
-    operator delete((void *)(v3)); /*0x49f008*/
+    operator delete((v3)); /*0x49f008*/
     Block->Items = (unsigned int)(0); /*0x49f010*/
   }
   (((unsigned char *)&(*&Block->u32_D))[1]) = 0; /*0x49f01b*/
   Block->Capacity = 0; /*0x49f021*/
   if ( (a2 & 1) != 0 ) /*0x49f028*/
-    operator delete((void *)(Block)); /*0x49f02b*/
+    operator delete((Block)); /*0x49f02b*/
   return Block->tail_0; /*0x49f035*/
 }
 } // namespace gamemd
@@ -1079,13 +1079,13 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
   *(unsigned int *)Block->tail_0 = &vt_VectorClassDynamicVectorClass; /*0x49f046*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x49f050*/
   {
-    operator delete((void *)(v3)); /*0x49f058*/
+    operator delete((v3)); /*0x49f058*/
     Block->Items = (unsigned int)(0); /*0x49f060*/
   }
   (Block->u8_9) = 0; /*0x49f06b*/
   *&Block->u32_8 = 0; /*0x49f071*/
   if ( (a2 & 1) != 0 ) /*0x49f078*/
-    operator delete((void *)(Block)); /*0x49f07b*/
+    operator delete((Block)); /*0x49f07b*/
   return Block->tail_0; /*0x49f085*/
 }
 } // namespace gamemd
@@ -1099,7 +1099,7 @@ int DynamicVectorClass_flat::Destroy(void *a1)
   result = ((unsigned int)(a1->Items)); /*0x50ea06*/
   if ( result && (((unsigned char *)&(*(unsigned int *)&a1->IsAllocated))[1]) ) /*0x50ea0d*/
   {
-    operator delete((void *)(*(void **)&a1->Items)); /*0x50ea13*/
+    operator delete((*(void **)&a1->Items)); /*0x50ea13*/
     a1->Items = (unsigned int)(0); /*0x50ea1b*/
   }
   (((unsigned char *)&(*(unsigned int *)&a1->IsInitialized))[1]) = 0; /*0x50ea1e*/
@@ -1237,7 +1237,7 @@ void DynamicVectorClass_ptr_NodeNameType::ddtor(void *a1_1)
   *(unsigned int *)&a1_1->Count = 0; /*0x5c5079*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x5c5080*/
   {
-    operator delete((void *)(v2)); /*0x5c5086*/
+    operator delete((v2)); /*0x5c5086*/
     a1_1->Items = (unsigned int)(0); /*0x5c508e*/
   }
   (((unsigned char *)&(a1_1->IsInitialized))[1]) = 0; /*0x5c5091*/
@@ -1344,7 +1344,7 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D20()
   *&this->Count = 0; /*0x627d29*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x627d30*/
   {
-    operator delete((void *)(v2)); /*0x627d36*/
+    operator delete((v2)); /*0x627d36*/
     *&this->Items = 0; /*0x627d3e*/
   }
   (this->IsAllocated) = 0; /*0x627d41*/
@@ -1451,13 +1451,13 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x628646*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x628650*/
   {
-    operator delete((void *)(v3)); /*0x628658*/
+    operator delete((v3)); /*0x628658*/
     Block->Items = (unsigned int)(0); /*0x628660*/
   }
   (Block->u8_E) = 0; /*0x62866b*/
   Block->Capacity = 0; /*0x628671*/
   if ( (a2 & 1) != 0 ) /*0x628678*/
-    operator delete((void *)(Block)); /*0x62867b*/
+    operator delete((Block)); /*0x62867b*/
   return Block->tail_0; /*0x628685*/
 }
 } // namespace gamemd
@@ -1498,7 +1498,7 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor(void *a1_1
   *(unsigned int *)&a1_1->Count = 0; /*0x628809*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x628810*/
   {
-    operator delete((void *)(v2)); /*0x628816*/
+    operator delete((v2)); /*0x628816*/
     a1_1->Items = (unsigned int)(0); /*0x62881e*/
   }
   (((unsigned char *)&(a1_1->IsInitialized))[1]) = 0; /*0x628821*/

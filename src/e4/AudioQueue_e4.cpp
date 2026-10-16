@@ -287,7 +287,7 @@ int AudioQueue::Cleanup(void *a1_1, void *a2)
     v2 = **((unsigned int **)a1_1 + 9); /*0x7b1d1e*/
     if ( v2->q016 ) /*0x7b1d20*/
     {
-      operator delete((void *)(**((void ***)a1_1 + 9))); /*0x7b1d26*/
+      operator delete((**((void ***)a1_1 + 9))); /*0x7b1d26*/
     }
     else
     {
@@ -316,7 +316,7 @@ int AudioQueue::Cleanup(void *a1_1, void *a2)
     v6 = **((unsigned int **)a1_1 + 15); /*0x7b1d7e*/
     if ( v6->q016 ) /*0x7b1d80*/
     {
-      operator delete((void *)(**((void ***)a1_1 + 15))); /*0x7b1d86*/
+      operator delete((**((void ***)a1_1 + 15))); /*0x7b1d86*/
     }
     else
     {
@@ -448,7 +448,7 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsi
   }
   if ( v8->q016 ) /*0x7b2379*/
   {
-    operator delete((void *)((void *)v8)); /*0x7b2381*/
+    operator delete(((void *)v8)); /*0x7b2381*/
   }
   else
   {

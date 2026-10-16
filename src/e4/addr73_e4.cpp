@@ -1312,7 +1312,7 @@ int SelectUnitsByTheme(char a1)
     *(unsigned int *)&DataGlobal_B0FE70 = v21; /*0x733bec*/
     strcpy(&DataGlobal_B0FD70, Block); /*0x733c09*/
     if ( Block ) /*0x733c16*/
-      operator delete((void *)(Block)); /*0x733c19*/
+      operator delete((Block)); /*0x733c19*/
     result = v10->Count; /*0x733c21*/
     *(unsigned int *)&DataGlobal_B0FE54 = 0; /*0x733c24*/
     if ( result ) /*0x733c30*/

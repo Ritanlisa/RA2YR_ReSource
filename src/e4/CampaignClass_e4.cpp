@@ -182,7 +182,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     return 0; /*0x49c5ac*/
   if ( !LOBYTE(this->AbstractClass) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
-  p_referenceCount = (int *)(&this->referenceCount); /*0x49c5c4*/
+  p_referenceCount = &this->referenceCount; /*0x49c5c4*/
   if ( !LOBYTE(this->referenceCount) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   v3 = this->scenario[7]; /*0x49c5d4*/

@@ -133,7 +133,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     aP0[1].Items = v9; /*0x67b664*/
     if ( !v11 && v17.IsAllocated ) /*0x67b671*/
     {
-      operator delete((void *)(Items)); /*0x67b678*/
+      operator delete((Items)); /*0x67b678*/
       return (int)(aP0); /*0x67b68b*/
     }
   }
@@ -237,7 +237,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     aP0->u32_14 = InfantryTypeVector_field_0x14; /*0x67bc24*/
     if ( !v11 && (((unsigned char *)&(v17.q00C))[1]) ) /*0x67bc31*/
     {
-      operator delete((void *)(InfantryTypeVector_field_0x04)); /*0x67bc38*/
+      operator delete((InfantryTypeVector_field_0x04)); /*0x67bc38*/
       return aP0; /*0x67bc4b*/
     }
   }

@@ -559,7 +559,7 @@ int SuperClass::ClickFire(int a2, short * a3)
         v7 = (int)(this->vtable4); /*0x6cb973*/
         v8 = this->u32_38; /*0x6cb976*/
         dword_A8ED84 = dword_A8ED84; /*0x6cb979*/
-        v10 = (wchar_t **)(&this->AnimationGotInvalid); /*0x6cb97f*/
+        v10 = &this->AnimationGotInvalid; /*0x6cb97f*/
         if ( v7 != -1 ) /*0x6cb985*/
         {
           if ( (int)dword_A8ED84 - v7 >= v8 ) /*0x6cb98d*/
@@ -609,7 +609,7 @@ int SuperClass::ClickFire(int a2, short * a3)
     }
     return 0; /*0x6cbc96*/
   }
-  v19 = (wchar_t **)(&this->AnimationGotInvalid); /*0x6cba80*/
+  v19 = &this->AnimationGotInvalid; /*0x6cba80*/
   if ( (this->vtable4 == -1 || !this->Granted || !this->IsCharged) && !*(unsigned char *)(v4 + 238) ) /*0x6cba98*/
     return 0; /*0x6cba98*/
   if ( *(unsigned int *)(v4 + 180) == 2 && Weapon_Helper() ) /*0x6cbaa7*/

@@ -168,7 +168,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
       if ( !v5 ) /*0x60ab66*/
         goto LABEL_12; /*0x60ab66*/
     }
-    v9 = (unsigned int *)(v5 + 1); /*0x60acaf*/
+    v9 = &v5->u32_1; /*0x60acaf*/
     if ( v9 ) /*0x60acb4*/
       v6 = v9[27]; /*0x60acba*/
     else

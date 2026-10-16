@@ -166,7 +166,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   *(unsigned int *)v10.__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4d0121*/
   if ( v10.q004 && (((unsigned char *)&(v10.q00C))[1]) ) /*0x4d0136*/
   {
-    operator delete((void *)((void *)v10.q004)); /*0x4d0139*/
+    operator delete(((void *)v10.q004)); /*0x4d0139*/
     v10.q004 = 0; /*0x4d0141*/
   }
   *(unsigned int *)v11.__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4d0149*/
@@ -175,7 +175,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( v11.q004 ) /*0x4d0159*/
   {
     if ( (((unsigned char *)&(v11.q00C))[1]) ) /*0x4d015f*/
-      operator delete((void *)((void *)v11.q004)); /*0x4d0162*/
+      operator delete(((void *)v11.q004)); /*0x4d0162*/
   }
 }
 } // namespace gamemd
@@ -223,7 +223,7 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
   /* X11: vtable install elided (implicit via FlyLocomotionClass virtuals 0x4d03a9) */
   this->LocomotionClass::Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
-    operator delete((void *)(this)); /*0x4d03bd*/
+    operator delete((this)); /*0x4d03bd*/
   return this->0; /*0x4d03c7*/
 }
 } // namespace gamemd

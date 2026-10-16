@@ -560,7 +560,7 @@ int ProcessGameResults(char a1)
   else
     v91 = 0;
   ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v91);
-  ModuleInternalVersion = GetModuleInternalVersion((void *)((char *)&g_NetworkPlayerBuffer + 5796));
+  ModuleInternalVersion = GetModuleInternalVersion(((char *)&g_NetworkPlayerBuffer + 5796));
   wsprintfA(v286, (const char *)&((unsigned int *)(stru_830620))[72272], ModuleInternalVersion);
   v93 = (char *)operator new(0x10u);
   if ( v93 )
@@ -579,7 +579,7 @@ int ProcessGameResults(char a1)
   v280 = 0;
   v281 = 0;
   v272 = (const CHAR *)&vt_RawFileClass;
-  FileClass::SetName( (void *)(&v272), (char *)(Filename));
+  FileClass::SetName( (&v272), (char *)(Filename));
   ((FileClass *)(&v272))->Open2((const CHAR *)1);
   if ( hFile != (HANDLE)-1 && GetFileTime(hFile, 0, 0, &LastWriteTime) )
   {
@@ -1061,7 +1061,7 @@ int ProcessGameResults(char a1)
       stru_830620[72179] = v220;
       if ( v224 == v225 )
       {
-        unsigned int v230 = (unsigned int)Performance::MeasureTicks((void *)&v262);
+        unsigned int v230 = (unsigned int)Performance::MeasureTicks(&v262);
         v231 = (char *)operator new(0x10u);
         if ( v231 )
         {
@@ -1174,12 +1174,12 @@ int ProcessGameResults(char a1)
     char v244 = *((char *)&g_OverlayTypeConfig + 17816);
     v290[0] = 0;
     int v245 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2;
-    memcpy( (void *)(&v290[2]), (const void *)(vfptr), 4 * (*(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2));
+    memcpy( (&v290[2]), (vfptr), 4 * (*(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2));
     v247 = &vfptr[4 * v245];
     unsigned int * v246 = &v290[v245 + 2];
     (v245) = ((v245) & ~0xFF) | ((unsigned int)(v244) & 0xFF);
     int v248 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17756);
-    memcpy( (void *)(v246), v247, v245 & 3);
+    memcpy( (v246), v247, v245 & 3);
     int v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
     v269 = *(IUnknown **)((char *)&g_OverlayTypeConfig + 17752);
     if ( *(int *)((char *)&g_OverlayTypeConfig + 17752) < v248 )
@@ -1199,7 +1199,7 @@ int ProcessGameResults(char a1)
         char v253 = 8 * *((char *)&g_OverlayTypeConfig + 17752);
         unsigned int v254 = (unsigned int)(32776 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752)) >> 2;
         memcpy(v251, *(const void **)((char *)&g_OverlayTypeConfig + 17760), 4 * v254);
-        memcpy( (void *)(&v251[4 * v254]), (char *)v252 + 4 * v254, v253 & 3);
+        memcpy( (&v251[4 * v254]), (char *)v252 + 4 * v254, v253 & 3);
         v252 = *(AbstractClass **)((char *)&g_OverlayTypeConfig + 17760);
       }
       RA2_OPDEL(v252);
@@ -1220,7 +1220,7 @@ int ProcessGameResults(char a1)
           char v259 = 8 * *((char *)&g_OverlayTypeConfig + 17752);
           unsigned int v260 = (unsigned int)(32776 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752)) >> 2;
           memcpy(v257, *(const void **)((char *)&g_OverlayTypeConfig + 17760), 4 * v260);
-          memcpy( (void *)(&v257[4 * v260]), (char *)v258 + 4 * v260, v259 & 3);
+          memcpy( (&v257[4 * v260]), (char *)v258 + 4 * v260, v259 & 3);
           v258 = *(AbstractClass **)((char *)&g_OverlayTypeConfig + 17760);
         }
         RA2_OPDEL(v258);
@@ -1231,7 +1231,7 @@ int ProcessGameResults(char a1)
       }
       if ( (int)v269 < v249 )
       {
-        memcpy( (void *)(&v255[32776 * ((unsigned int)&v269->u32_1)]), (const void *)(&v255[32776 * (unsigned int)v269]), 32776 * v249 - 32776 * (unsigned int)v269);
+        memcpy( (void *)(&v255[32776 * ((unsigned int)&v269->u32_1)]), (&v255[32776 * (unsigned int)v269]), 32776 * v249 - 32776 * (unsigned int)v269);
 
 
 
@@ -1925,7 +1925,7 @@ void * E4Recv_6C8840::sub_6C8840(unsigned int * Block, char a2)  // G42.33 b9 hp
   *(unsigned int *)Block = &vt_rc_ptr; /*0x6c8843*/
   ComPtr::Release((ComPtr *)Block); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
-    operator delete((void *)(Block)); /*0x6c8856*/
+    operator delete((Block)); /*0x6c8856*/
   return Block; /*0x6c8860*/
 }
 } // namespace gamemd
@@ -1944,7 +1944,7 @@ char E4Recv_6C8900::sub_6C8900()
   if ( 2 * (int)vtable0 < 10 ) /*0x6c891b*/
     v4 = 10; /*0x6c891d*/
   void *v5; // edx
-  v5 = (void *)__2_YAPAXI_Z(32776 * v4); /*0x6c8932*/
+  v5 = __2_YAPAXI_Z(32776 * v4); /*0x6c8932*/
   memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2)); /*0x6c893d*/
   void *v7; // [esp+4h] [ebp-4h]
   v7 = v5; /*0x6c8947*/
@@ -1979,7 +1979,7 @@ void * E4Recv_6C89B0::sub_6C89B0(size_t Size)
 
   this->AbstractClass = (void *)Size; /*0x6c89b8*/
   void *v3; // eax
-  v3 = (void *)__2_YAPAXI_Z(Size); /*0x6c89ba*/
+  v3 = __2_YAPAXI_Z(Size); /*0x6c89ba*/
   this->M4 = v3; /*0x6c89c2*/
   this->M8 = v3; /*0x6c89c5*/
   return &this->AbstractClass; /*0x6c89ca*/

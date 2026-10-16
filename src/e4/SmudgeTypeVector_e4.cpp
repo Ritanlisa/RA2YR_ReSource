@@ -15,13 +15,13 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c0b6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x67c0c0*/
   {
-    operator delete((void *)(v3)); /*0x67c0c8*/
+    operator delete((v3)); /*0x67c0c8*/
     *&Block->__pad_004 = 0; /*0x67c0d0*/
   }
   (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x67c0db*/
   *&Block->u32_8 = 0; /*0x67c0e1*/
   if ( (a2 & 1) != 0 ) /*0x67c0e8*/
-    operator delete((void *)(Block)); /*0x67c0eb*/
+    operator delete((Block)); /*0x67c0eb*/
   return Block->tail_0; /*0x67c0f5*/
 }  // G42.18 ns repair
 } // namespace gamemd

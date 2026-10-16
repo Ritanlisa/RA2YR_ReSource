@@ -137,7 +137,7 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *v3)
     v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x538bc2*/
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
-  operator delete((void *)(*(void **)v3)); /*0x538bdb*/
+  operator delete((*(void **)v3)); /*0x538bdb*/
   int v7 = v3 + v3->vtable3; // eax /*0x538be6*/
   *(unsigned int *)v3 = (unsigned int)(v3); /*0x538be8*/
   v3->vtable3 = v7; /*0x538bea*/

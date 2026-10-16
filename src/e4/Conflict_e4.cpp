@@ -410,7 +410,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
   (Block->u32_D) = 0; /*0x766fec*/
   Block->u32_8 = 0; /*0x766ff2*/
   if ( (a2 & 1) != 0 ) /*0x766ff9*/
-    operator delete((void *)(Block)); /*0x766ffc*/
+    operator delete((Block)); /*0x766ffc*/
   return Block->tail_0; /*0x767006*/
 }
 } // namespace gamemd
@@ -431,7 +431,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
   (Block->u32_D) = 0; /*0x7670ac*/
   Block->u32_8 = 0; /*0x7670b2*/
   if ( (a2 & 1) != 0 ) /*0x7670b9*/
-    operator delete((void *)(Block)); /*0x7670bc*/
+    operator delete((Block)); /*0x7670bc*/
   return Block->tail_0; /*0x7670c6*/
 }
 } // namespace gamemd

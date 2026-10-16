@@ -44,14 +44,14 @@ void sub_72B930()
       if ( *(unsigned int *)&DataGlobal_B0FB54 ) /*0x72b94d*/
       {
         (*(FileTreeNode **)&DataGlobal_B0FB54)->Destroy(); /*0x72b951*/
-        operator delete((void *)(v1)); /*0x72b957*/
+        operator delete((v1)); /*0x72b957*/
       }
       DataGlobal_B0FD5C = 0; /*0x72b95f*/
     }
     *(unsigned int *)&DataGlobal_B0FB54 = 0; /*0x72b96b*/
     if ( *(unsigned int *)&DataGlobal_B0FD60 ) /*0x72b973*/
     {
-      operator delete((void *)(*(void **)&DataGlobal_B0FD60)); /*0x72b976*/
+      operator delete((*(void **)&DataGlobal_B0FD60)); /*0x72b976*/
       *(unsigned int *)&DataGlobal_B0FD60 = 0; /*0x72b97e*/
     }
     if ( *(unsigned int *)&DataGlobal_B0FD64 ) /*0x72b98c*/

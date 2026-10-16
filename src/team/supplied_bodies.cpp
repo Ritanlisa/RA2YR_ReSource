@@ -317,7 +317,7 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
       this->vfptr1 = (void *)a3; /*0x49f0b8*/
       return &this->vfptr; /*0x49f0be*/
     }
-    this->vfptr1 = (void *)operator new(4 * a2); /*0x49f0cd*/
+    this->vfptr1 = operator new(4 * a2); /*0x49f0cd*/
     (this->q00D) = 1; /*0x49f0d0*/
   }
   return &this->vfptr; /*0x49f0bd*/
@@ -878,7 +878,7 @@ namespace gamemd {
 void * TeamClass::ProcessEvent(int a2) {
   TeamClass::Destructor(this); /*0x6f0453*/
   if ( (a2 & 1) != 0 ) /*0x6f045d*/
-    operator delete((void *)(this)); /*0x6f0460*/
+    operator delete((this)); /*0x6f0460*/
   return &this->vfptr; /*0x6f046a*/
 }
 } // namespace gamemd
@@ -2177,7 +2177,7 @@ void * CampaignClass::Constructor(int a2, int a3) {
     }
     else
     {
-      this->vfptr1 = (void *)operator new(4 * a2); /*0x49ed0c*/
+      this->vfptr1 = operator new(4 * a2); /*0x49ed0c*/
       (this->q00D) = 1; /*0x49ed0f*/
     }
   }
@@ -2367,7 +2367,7 @@ void * ScriptClass::ProcessEvent(int a2) {
   }
   AbstractClass::DTOR((AbstractClass *)this); /*0x691f51*/
   if ( (a2 & 1) != 0 ) /*0x691f5b*/
-    operator delete((void *)(this)); /*0x691f5e*/
+    operator delete((this)); /*0x691f5e*/
   return &this->vfptr; /*0x691f68*/
 }
 } // namespace gamemd
@@ -2517,7 +2517,7 @@ void * TActionClass::Destructor(char a2) {
   this->TActionClass_field_6D = 0; /*0x6e4763*/
   AbstractClass::DTOR((AbstractClass *)this); /*0x6e4767*/
   if ( (a2 & 1) != 0 ) /*0x6e4771*/
-    operator delete((void *)(this)); /*0x6e4774*/
+    operator delete((this)); /*0x6e4774*/
   return &this->vfptr; /*0x6e477e*/
 }
 } // namespace gamemd
@@ -3604,7 +3604,7 @@ void * TriggerClass::CheckCondition(int a2) {
   }
   AbstractClass::DTOR((AbstractClass *)this); /*0x726a53*/
   if ( (a2 & 1) != 0 ) /*0x726a5d*/
-    operator delete((void *)(this)); /*0x726a60*/
+    operator delete((this)); /*0x726a60*/
   return &this->vfptr; /*0x726a6a*/
 }
 }

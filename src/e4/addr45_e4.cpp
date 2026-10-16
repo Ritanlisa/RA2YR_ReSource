@@ -896,7 +896,7 @@ int E4Recv_4517D0::sub_4517D0()
   result = (int)&this->u32_55C; /*0x4517fa*/
   v4 = v4; /*0x451800*/
   int **v12; // [esp+10h] [ebp-28h]
-  v12 = (int **)(&this->u32_55C); /*0x451804*/
+  v12 = &this->u32_55C; /*0x451804*/
   do /*0x451879*/
   {
     int *v6 = *v12; // esi /*0x45180c*/

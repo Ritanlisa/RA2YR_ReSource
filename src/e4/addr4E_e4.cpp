@@ -1943,7 +1943,7 @@ void unknown_libname_18()
   if ( unk_A8EAA4 ) /*0x5f165f*/
   {
     FileFind::Close(); /*0x5f1663*/
-    operator delete((void *)(v0)); /*0x5f1669*/
+    operator delete((v0)); /*0x5f1669*/
   }
   ((int)&unk_A8EA70)->FreeResources(); /*0x5f1673*/
   if ( unk_A8EAB0 != -1 ) /*0x5f1680*/
@@ -1991,7 +1991,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
           ++i; /*0x4e929e*/
         if ( this->IsAllocated ) /*0x4e92ab*/
         {
-          operator delete((void *)(this->Items)); /*0x4e92b6*/
+          operator delete((this->Items)); /*0x4e92b6*/
           this->Items = 0; /*0x4e92be*/
         }
       }
@@ -4924,17 +4924,17 @@ unsigned int *  VectorClass::HouseClass_vt_00(char a2)
 {
 
   void *v3; // eax
-  v3 = (void *)this->Items; /*0x4ef4e3*/
+  v3 = this->Items; /*0x4ef4e3*/
   *this = &vt_VectorClass; /*0x4ef4e6*/
   if ( v3 && this->IsAllocated ) /*0x4ef4f0*/
   {
-    operator delete((void *)(v3)); /*0x4ef4f8*/
+    operator delete((v3)); /*0x4ef4f8*/
     this->Items = 0; /*0x4ef500*/
   }
   this->IsAllocated = 0; /*0x4ef50b*/
   this->Capacity = 0; /*0x4ef511*/
   if ( (a2 & 1) != 0 ) /*0x4ef518*/
-    operator delete((void *)(this)); /*0x4ef51b*/
+    operator delete((this)); /*0x4ef51b*/
   return this; /*0x4ef525*/
 }
 } // namespace gamemd
@@ -4948,13 +4948,13 @@ unsigned int * _VectorClass_PAVParticleClass::ParticleSystemClass_vt_00(_VectorC
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef806*/
   if ( v3 && (Block->u8_D) ) /*0x4ef810*/
   {
-    operator delete((void *)(v3)); /*0x4ef818*/
+    operator delete((v3)); /*0x4ef818*/
     *&Block->u32_4 = 0; /*0x4ef820*/
   }
   (Block->u8_D) = 0; /*0x4ef82b*/
   Block->m_8 = 0; /*0x4ef831*/
   if ( (a2 & 1) != 0 ) /*0x4ef838*/
-    operator delete((void *)(Block)); /*0x4ef83b*/
+    operator delete((Block)); /*0x4ef83b*/
   return Block->__pad_0; /*0x4ef845*/
 }
 } // namespace gamemd

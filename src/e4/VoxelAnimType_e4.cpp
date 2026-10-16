@@ -223,14 +223,14 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       if ( v11 ) /*0x5f7fee*/
       {
         WaveClass::Destroy(this->m_2 * a3 + 86)); /*0x5f7ff2*/
-        operator delete((void *)(v11)); /*0x5f7ff8*/
+        operator delete((v11)); /*0x5f7ff8*/
       }
       String *v12; // esi
       v12 = (String *)this->m_2 * a3 + 87); /*0x5f8000*/
       if ( v12 ) /*0x5f8009*/
       {
         ((String *)(v12))->Release(); /*0x5f800d*/
-        operator delete((void *)(v12)); /*0x5f8013*/
+        operator delete((v12)); /*0x5f8013*/
       }
       /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f8027) */
       v19 = 0; /*0x5f802e*/
@@ -330,7 +330,7 @@ int VoxelAnimType::LoadAnim(void *a1)
     if ( v3 ) /*0x5f8171*/
     {
       WaveClass::Destroy(this->u32_B0); /*0x5f8175*/
-      operator delete((void *)(v3)); /*0x5f817b*/
+      operator delete((v3)); /*0x5f817b*/
     }
     v4 = (File *)operator new(0x1Cu); /*0x5f8185*/
     if ( v4 ) /*0x5f818f*/
@@ -346,7 +346,7 @@ int VoxelAnimType::LoadAnim(void *a1)
     if ( v6 ) /*0x5f81e9*/
     {
       ((String *)(this->u32_B4))->Release(); /*0x5f81ed*/
-      operator delete((void *)(v6)); /*0x5f81f3*/
+      operator delete((v6)); /*0x5f81f3*/
     }
     v7 = (File *)operator new(0x10u); /*0x5f81fd*/
     if ( v7 ) /*0x5f8207*/
@@ -388,7 +388,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         if ( v26 ) /*0x5f86f3*/
         {
           WaveClass::Destroy(this->u32_B8); /*0x5f86f7*/
-          operator delete((void *)(v26)); /*0x5f86fd*/
+          operator delete((v26)); /*0x5f86fd*/
         }
         v27 = (File *)operator new(0x1Cu); /*0x5f8707*/
         if ( v27 ) /*0x5f8711*/
@@ -405,7 +405,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         if ( v29 ) /*0x5f8785*/
         {
           ((String *)(this->u32_BC))->Release(); /*0x5f8789*/
-          operator delete((void *)(v29)); /*0x5f878f*/
+          operator delete((v29)); /*0x5f878f*/
         }
         v30 = (File *)operator new(0x10u); /*0x5f8799*/
         if ( v30 ) /*0x5f87a3*/
@@ -455,7 +455,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         if ( v10 ) /*0x5f832f*/
         {
           WaveClass::Destroy(this->u32_B8); /*0x5f8333*/
-          operator delete((void *)(v10)); /*0x5f8339*/
+          operator delete((v10)); /*0x5f8339*/
         }
         v11 = (File *)operator new(0x1Cu); /*0x5f8343*/
         if ( v11 ) /*0x5f834d*/
@@ -472,7 +472,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         if ( v13 ) /*0x5f83c1*/
         {
           ((String *)(this->u32_BC))->Release(); /*0x5f83c5*/
-          operator delete((void *)(v13)); /*0x5f83cb*/
+          operator delete((v13)); /*0x5f83cb*/
         }
         v14 = (File *)operator new(0x10u); /*0x5f83d5*/
         if ( v14 ) /*0x5f83df*/
@@ -512,7 +512,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         if ( v17 ) /*0x5f84ef*/
         {
           WaveClass::Destroy(this->u32_B8); /*0x5f84f3*/
-          operator delete((void *)(v17)); /*0x5f84f9*/
+          operator delete((v17)); /*0x5f84f9*/
         }
         v18 = (File *)operator new(0x1Cu); /*0x5f8503*/
         if ( v18 ) /*0x5f850d*/
@@ -529,7 +529,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         if ( v20 ) /*0x5f8581*/
         {
           ((String *)(this->u32_BC))->Release(); /*0x5f8585*/
-          operator delete((void *)(v20)); /*0x5f858b*/
+          operator delete((v20)); /*0x5f858b*/
         }
         v21 = (File *)operator new(0x10u); /*0x5f8595*/
         if ( v21 ) /*0x5f859f*/
@@ -590,7 +590,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         if ( v35 ) /*0x5f890f*/
         {
           WaveClass::Destroy(this->u32_C0); /*0x5f8913*/
-          operator delete((void *)(v35)); /*0x5f8919*/
+          operator delete((v35)); /*0x5f8919*/
         }
         v36 = (File *)operator new(0x1Cu); /*0x5f8923*/
         if ( v36 ) /*0x5f892d*/
@@ -607,7 +607,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         if ( v38 ) /*0x5f89a1*/
         {
           ((String *)(this->u32_C4))->Release(); /*0x5f89a5*/
-          operator delete((void *)(v38)); /*0x5f89ab*/
+          operator delete((v38)); /*0x5f89ab*/
         }
         v39 = (File *)operator new(0x10u); /*0x5f89b5*/
         if ( v39 ) /*0x5f89bf*/
@@ -645,14 +645,14 @@ int VoxelAnimType::LoadAnim(void *a1)
     if ( v42 ) /*0x5f8a72*/
     {
       WaveClass::Destroy(this->u32_B0); /*0x5f8a76*/
-      operator delete((void *)(v42)); /*0x5f8a7c*/
+      operator delete((v42)); /*0x5f8a7c*/
       this->u32_B0 = 0; /*0x5f8a84*/
     }
     v43 = (void *)this->u32_B4; /*0x5f8a8a*/
     if ( v43 ) /*0x5f8a92*/
     {
       ((String *)(this->u32_B4))->Release(); /*0x5f8a96*/
-      operator delete((void *)(v43)); /*0x5f8a9c*/
+      operator delete((v43)); /*0x5f8a9c*/
       this->u32_B4 = 0; /*0x5f8aa4*/
     }
     if ( (*(int (**)(char *))(((unsigned int)(this->u32_B0))))(this) == 40 /*0x5f8ac1*/
@@ -667,14 +667,14 @@ int VoxelAnimType::LoadAnim(void *a1)
       if ( v44 ) /*0x5f8add*/
       {
         WaveClass::Destroy(this->u32_B8); /*0x5f8ae1*/
-        operator delete((void *)(v44)); /*0x5f8ae7*/
+        operator delete((v44)); /*0x5f8ae7*/
         this->u32_B8 = 0; /*0x5f8aef*/
       }
       v45 = (void *)this->u32_BC; /*0x5f8af5*/
       if ( v45 ) /*0x5f8afd*/
       {
         ((String *)(this->u32_BC))->Release(); /*0x5f8b05*/
-        operator delete((void *)(v45)); /*0x5f8b0b*/
+        operator delete((v45)); /*0x5f8b0b*/
         this->u32_BC = 0; /*0x5f8b13*/
       }
     }
@@ -707,7 +707,7 @@ int VoxelAnimType::LoadAnim(void *a1)
   this->u32_24C = 0; /*0x5f8c08*/
   this->ptr_250 = 0; /*0x5f8c0e*/
   this->ptr_254 = 0; /*0x5f8c14*/
-  operator delete((void *)(this->ptr_258)); /*0x5f8c21*/
+  operator delete((this->ptr_258)); /*0x5f8c21*/
   this->ptr_258 = 0; /*0x5f8c26*/
   this->u32_25C = 0; /*0x5f8c2c*/
   this->u32_260 = 0; /*0x5f8c32*/
@@ -719,7 +719,7 @@ int VoxelAnimType::LoadAnim(void *a1)
   this->ptr_274 = 0; /*0x5f8c5c*/
   this->ptr_278 = 0; /*0x5f8c62*/
   this->u32_27C = 0; /*0x5f8c68*/
-  operator delete((void *)(this->ptr_280)); /*0x5f8c75*/
+  operator delete((this->ptr_280)); /*0x5f8c75*/
   this->ptr_280 = 0; /*0x5f8c7d*/
   this->ptr_284 = 0; /*0x5f8c83*/
   this->ptr_288 = 0; /*0x5f8c89*/

@@ -151,12 +151,12 @@ int AircraftClass::Mission_Attack()
             else
                 v102 = (short)Math::RoundToInt(Math_CalcAngle((double)myC[1] - (double)destC[1],
                                                               (double)destC[0] - (double)myC[0]) * 65536.0 / 360.0 - 8192.0);
-            FacingClass_Update((void *)&secondaryFacing, (void *)&v102);
+            FacingClass_Update(&secondaryFacing, &v102);
             (void)myCoords;
             return 1;
         }
         int *v16 = ObjectClass_CalcTargetFacing((int)this, myCoords, target);
-        FacingClass_Update((void *)&secondaryFacing, v16);
+        FacingClass_Update(&secondaryFacing, v16);
         if (v15 >= 16)
             return 1;
         missionStatus = 4;
@@ -173,9 +173,9 @@ int AircraftClass::Mission_Attack()
         if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) == 0)
         {
             int *v21 = ObjectClass_CalcTargetFacing((int)this, myCoords, target);
-            FacingClass_Update((void *)&primaryFacing, v21);
+            FacingClass_Update(&primaryFacing, v21);
             int *v22 = ObjectClass_CalcTargetFacing((int)this, coords, target);
-            FacingClass_Update((void *)&secondaryFacing, v22);
+            FacingClass_Update(&secondaryFacing, v22);
         }
         int v24 = this->SelectWeapon((int)target, 1);
         switch (this->CanFireAtTarget((int)target, v24))
@@ -257,9 +257,9 @@ int AircraftClass::Mission_Attack()
             return 1;
         }
         int *v39 = ObjectClass_CalcTargetFacing((int)this, myCoords, target);
-        FacingClass_Update((void *)&primaryFacing, v39);
+        FacingClass_Update(&primaryFacing, v39);
         int *v40 = ObjectClass_CalcTargetFacing((int)this, coords, target);
-        FacingClass_Update((void *)&secondaryFacing, v40);
+        FacingClass_Update(&secondaryFacing, v40);
         int v42 = this->SelectWeapon((int)target, 1);
         switch (this->CanFireAtTarget((int)target, v42))
         {

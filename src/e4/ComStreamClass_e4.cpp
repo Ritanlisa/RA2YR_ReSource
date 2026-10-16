@@ -166,7 +166,7 @@ int ComStreamClass::Release(void *a1)
     *((unsigned int *)Block + 1) = 1; /*0x7ac849*/
     InterlockedDecrement(&Addend); /*0x7ac84f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ac855*/
-    operator delete((void *)(Block)); /*0x7ac85c*/
+    operator delete((Block)); /*0x7ac85c*/
   }
   return v1; /*0x7ac864*/
 }
@@ -240,7 +240,7 @@ AbstractClass * * ComStreamClass::readData()
     v13 = v3; /*0x7ae100*/
     this->q00C = v4; /*0x7ae108*/
     void *v5; // edi
-    v5 = (void *)__2_YAPAXI_Z(8 * ComStreamClass_field_0x08); /*0x7ae113*/
+    v5 = __2_YAPAXI_Z(8 * ComStreamClass_field_0x08); /*0x7ae113*/
     unsigned int v6 = 4 * this->q008; // edx /*0x7ae118*/
     *(unsigned int *)this->__pad_000 = (unsigned int)(v5); /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
@@ -297,7 +297,7 @@ void ComStreamClass::flushStream()
     this->q008 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
     this->q00C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
     void *v5; // edi
-    v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
+    v5 = __2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
     unsigned int v6 = 4 * this->q008; // edx /*0x7aef94*/
     *(unsigned int *)this->__pad_000 = (unsigned int)(v5); /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
@@ -452,7 +452,7 @@ void ** ComStreamClass::writeData(char a2)
 {
   DeleteAndZero(); /*0x7aed23*/
   if ( (a2 & 1) != 0 ) /*0x7aed2d*/
-    operator delete((void *)(this)); /*0x7aed30*/
+    operator delete((this)); /*0x7aed30*/
   return (void **)this; /*0x7aed3a*/
 }
 } // namespace gamemd

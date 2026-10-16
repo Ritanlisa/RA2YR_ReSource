@@ -361,7 +361,7 @@ int LinkedList_flat::Remove(unsigned int * a2)
       *v3 = *(unsigned int *)result; /*0x623489*/
     else
       this->u32_34 = *(unsigned int *)result; /*0x62349a*/
-    operator delete((void *)((void *)result)); /*0x62348b*/
+    operator delete(((void *)result)); /*0x62348b*/
   }
   return result; /*0x62347a*/
 }
