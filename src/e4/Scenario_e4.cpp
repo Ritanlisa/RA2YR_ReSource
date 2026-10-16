@@ -69,6 +69,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/CellSystem_e4.hpp"  // G57w10 D supply
 #include "e4/classes/LoadProgressMgr_e4.hpp"  // G57w10 D supply
+#include "e4/classes/ScrollClass_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {

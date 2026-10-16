@@ -43,6 +43,7 @@
 #include "e4/classes/FontClass_e4.hpp"  // w18j2 C3861 FontClass:: supply
 #include "e4/classes/FontRenderer_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/Field_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int RenderGlyph(uint16_t p0, int p1, int p2, int p3); }  // x4:signals@0x434120
 

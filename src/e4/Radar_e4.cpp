@@ -28,6 +28,8 @@
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/Render_e4.hpp"
+#include "e4/classes/XSurface_e4.hpp"
 
 // 0x431090
 namespace gamemd {  // G42.18 ns repair

@@ -33,6 +33,7 @@
 #include "e4/classes/XSurface_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/TerrainClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x480180
 namespace gamemd {  // G42.18 ns repair

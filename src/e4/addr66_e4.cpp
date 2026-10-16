@@ -61,6 +61,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/Targeting_e4.hpp"
 #include "e4/classes/NetworkID_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int ComputeImpactTrajectory(int p0);  // x4:signals@0x6620f0
