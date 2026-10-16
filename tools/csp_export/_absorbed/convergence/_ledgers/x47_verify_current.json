@@ -1,0 +1,258 @@
+{
+ "mode": "verify",
+ "rows": [
+  {
+   "n": 1,
+   "stage": "carrier_regen",
+   "round": "X30",
+   "kind": "stage",
+   "replay": "unverified",
+   "pending": 202,
+   "detail": "'retype edits: (\\\\d+)'=[202] + 'supply members: (\\\\d+)'=[0] + 'tree-add classes: (\\\\d+)'=[0]",
+   "verdict": "MEASURED-UNVERIFIED",
+   "rc": 0
+  },
+  {
+   "n": 2,
+   "stage": "build_log_snapshot",
+   "round": "X30",
+   "kind": "external",
+   "replay": "external",
+   "pending": null,
+   "detail": "(cmake --build build_win --config Release; archive the log; every log-driven sta",
+   "verdict": "EXTERNAL",
+   "rc": null
+  },
+  {
+   "n": 3,
+   "stage": "callshape",
+   "round": "X31",
+   "kind": "stage",
+   "replay": "unverified",
+   "pending": 56,
+   "detail": "'plan: (\\\\d+) sites'=[56]",
+   "verdict": "MEASURED-UNVERIFIED",
+   "rc": 0
+  },
+  {
+   "n": 4,
+   "stage": "cast_budget_record_x31",
+   "round": "X32",
+   "kind": "gate",
+   "replay": "gate",
+   "pending": null,
+   "detail": "{",
+   "verdict": "GATE-RAN",
+   "rc": 1
+  },
+  {
+   "n": 5,
+   "stage": "rooted_heads",
+   "round": "X33",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "lines matching /^PLAN / = 0",
+   "verdict": "PASS-0PENDING",
+   "rc": 1
+  },
+  {
+   "n": 6,
+   "stage": "twin_guards",
+   "round": "X33",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "lines matching /^PLAN / = 0",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 7,
+   "stage": "supply_wave",
+   "round": "X33",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "lines matching /^PLAN / = 0",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 8,
+   "stage": "qmark_supply",
+   "round": "X34",
+   "kind": "stage",
+   "replay": "unverified",
+   "pending": 3,
+   "detail": "'summary: \\\\d+ files / (\\\\d+) site-rewrites \\\\(DRY\\\\)'=[2] + 'PLAN e4_globals\\\\.hpp: \\\\+(\\\\d+) blob externs'=[",
+   "verdict": "MEASURED-UNVERIFIED",
+   "rc": 0
+  },
+  {
+   "n": 9,
+   "stage": "qmark_hotfix_collision",
+   "round": "X34",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "lines matching /^PLAN / = 0",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 10,
+   "stage": "qmark_hotfix_clobber",
+   "round": "X34",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "lines matching /^PLAN / = 0",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 11,
+   "stage": "globals_array_retype",
+   "round": "X34",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'decls: (\\\\d+), defs: (\\\\d+) \\\\(DRY\\\\)'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 12,
+   "stage": "member_kind",
+   "round": "X35",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'L7 member-kind: (\\\\d+) lines'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 13,
+   "stage": "a8b230_elem_array",
+   "round": "X36",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'X36-A8B230: (\\\\d+) planned writes'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 14,
+   "stage": "miniscope_decl_first_use",
+   "round": "X37",
+   "kind": "stage",
+   "replay": "unverified",
+   "pending": 180,
+   "detail": "'decls_moved\\\\s+(\\\\d+)'=[180]",
+   "verdict": "MEASURED-UNVERIFIED",
+   "rc": 0
+  },
+  {
+   "n": 15,
+   "stage": "vtinst_elision",
+   "round": "X38",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'qmark-vtable-install sites: (\\\\d+)'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 16,
+   "stage": "gstr_unify",
+   "round": "X39",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'decl rewrites: (\\\\d+) across'=[0] + 'csf decl rewrites: (\\\\d+)'=[0] + 'arg1 cast retypes: (\\\\d+) across'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 17,
+   "stage": "astr_unify",
+   "round": "X39",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'decl rewrites: (\\\\d+) across'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 18,
+   "stage": "cast_spelling_1",
+   "round": "X43",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'plan: (\\\\d+) edits'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 19,
+   "stage": "cast_spelling_2",
+   "round": "X43",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'plan: (\\\\d+) edits'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 20,
+   "stage": "decl_assign_merge",
+   "round": "X44",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "merged=0",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 21,
+   "stage": "format_whitespace",
+   "round": "X44b",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "'\"files_edited\": (\\\\d+)'=[0] + '\"edits_total\": (\\\\d+)'=[0]",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 22,
+   "stage": "merge_verify",
+   "round": "X44b",
+   "kind": "stage",
+   "replay": "verified",
+   "pending": 0,
+   "detail": "merged=0",
+   "verdict": "PASS-0PENDING",
+   "rc": 0
+  },
+  {
+   "n": 23,
+   "stage": "final_gates",
+   "round": "all",
+   "kind": "gate",
+   "replay": "gate",
+   "pending": null,
+   "detail": "def_count rc=0 scanned 874 cpp files under D:\\RA2YR_ReSource\\src: 17476 distinct func; cast_budget rc=1",
+   "verdict": "GATE-RAN",
+   "rc": 0
+  }
+ ]
+}

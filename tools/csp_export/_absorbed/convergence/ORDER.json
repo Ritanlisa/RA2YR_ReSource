@@ -1,0 +1,573 @@
+{
+ "$comment": "X47 one-shot convergence order manifest. Reproduces the current tree's convergence state from a post-X29 pipeline state (X29 engine typed, raw ~22,765). Sequence = commit chronology of the X30..X44b convergence rounds (audit: .omo/evidence/optimization/x46/oneshot_audit.md section 4.2, adapted). Each entry: dry cmd + pending_detector (the --verify-current no-op probe), apply cmd, inputs, committed effect, idempotence contract. replay=verified  means: on the CURRENT tree (HEAD x47-pre tag) the dry probe measured 0 pending edits on 2026-10-16. replay=unverified means the dry probe measured nonzero pending and the reason is recorded -- these are regenerator/log-driven stages by design, NOT failed absorptions. kind=external/gate entries are documented sequence positions the driver reports but does not run by default.",
+ "baseline": {
+  "tag": "x47-pre",
+  "head": "95f7462647fe9d83e5a43af110e549cf384515a1",
+  "verify_date": "2026-10-16",
+  "def_count": 17476
+ },
+ "stages": [
+  {
+   "n": 1,
+   "stage": "carrier_regen",
+   "round": "X30",
+   "kind": "stage",
+   "script": "tools/csp_export/gen_x30_merge.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [
+    "type_map.json",
+    "anchors/csp_canon_members.json",
+    "tools/member_lookup.json"
+   ],
+   "log_input": "optional --log <msvc build log> enables C2039 supply + tree-add channels (omit = carrier-only regen)",
+   "effect": "1,088 retypes + 3,887 supplies; C2039 -2,331 (raw 22,765 -> 22,042); commit bcbd4f72",
+   "idempotence": "additive-union discipline (never shrinks a carrier); 2nd --apply = 0 writes",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "retype edits: (\\d+)",
+     "supply members: (\\d+)",
+     "tree-add classes: (\\d+)"
+    ],
+    "expect": 0
+   },
+   "replay": "unverified",
+   "replay_reason": "regenerator re-derives from live anchors/type_map.json which evolved after X30 (X29-engine re-runs in later rounds); dry on current tree measured 202 retype edits / 91 files (2026-10-16). Re-run is safe + idempotent but only a no-op while type_map is frozen at the post-X29 snapshot."
+  },
+  {
+   "n": 2,
+   "stage": "build_log_snapshot",
+   "round": "X30",
+   "kind": "external",
+   "script": "(cmake --build build_win --config Release; archive the log; every log-driven stage consumes the FRESH log of the previous stage -- line anchors invalidate on any tree edit)",
+   "args_dry": [],
+   "args_apply": [],
+   "inputs": [],
+   "log_input": "produces the build log consumed by stages 3/8/9/11 etc.",
+   "effect": "-",
+   "idempotence": "n/a (external)",
+   "pending_detector": null,
+   "replay": "external"
+  },
+  {
+   "n": 3,
+   "stage": "callshape",
+   "round": "X31",
+   "kind": "stage",
+   "script": "tools/csp_export/gen_x31_callshape.py",
+   "args_dry": [
+    "<build-log>"
+   ],
+   "args_apply": [
+    "<build-log>"
+   ],
+   "inputs": [],
+   "log_input": "MSVC build log: consumes C2660/C2352 rows (X31), C2661/ARITY_RE ext (X34), C2664 RF-form ext (X38)",
+   "effect": "2,210 sites / 318 files; C2352 -90.5%, C2660 -52.2% (raw 22,042 -> 21,274); commits 0fcae945 + X34/X38 extensions",
+   "idempotence": "site disappears from log after fix; same-log replay = 0 writes",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "plan: (\\d+) sites"
+    ],
+    "expect": 0
+   },
+   "replay": "unverified",
+   "replay_reason": "log-driven stage over the live compile-error pool: on the revision-locked x44b log (19,984 raw rows, the converged round's own log) the dry probe measured 56 planned sites / 18 files (planned-C2660 42 + C2352 12 + C2664 2). These are surviving pool rows the X30-X44 waves never consumed -- by definition nonzero while the tree still carries ~19.9K raw error rows. No-op only reachable at compile-clean.",
+   "inputs_note": "argv[1] fresh MSVC build log; --verify-current substitutes the revision-locked x44b log"
+  },
+  {
+   "n": 4,
+   "stage": "cast_budget_record_x31",
+   "round": "X32",
+   "kind": "gate",
+   "script": "tools/cast_budget.py",
+   "args_dry": [
+    "--check"
+   ],
+   "args_apply": [
+    "--record",
+    "X31"
+   ],
+   "inputs": [
+    "tools/cast_budget_ledger.json (machine-local baseline)"
+   ],
+   "log_input": null,
+   "effect": "X32 retired 33 redundant casts (count-preserving); guard created (commit f05b98d2)",
+   "idempotence": "guard: no-growth gate vs ledger baseline (bucket-shift = composition, not growth)",
+   "pending_detector": null,
+   "replay": "gate"
+  },
+  {
+   "n": 5,
+   "stage": "rooted_heads",
+   "round": "X33",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x33_l1_heads.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": "consumed at authoring time (x33_build_L1.out.txt); fixer itself is stateless",
+   "effect": "-521 raw / 12 files (F1 virtual-Clear, F2 bridge, F3-F7 bogus-decl deletions, F8 fwds, F9 addr66 switch brace-wrap + v95 hoist); commit 0ebe5b47",
+   "idempotence": "per-edit expected-old-text assertion; already-applied = NOOP/SKIP; 2nd run = 0 writes",
+   "pending_detector": {
+    "type": "stdout_line_count",
+    "pattern": "^PLAN ",
+    "expect": 0
+   },
+   "replay": "verified",
+   "replay_note": "0 PLAN on current tree. Disclosed: F1/F9 line anchors are position-stale (tree moved under them), so the script prints SKIP lines instead of NOOP -- the applied state is visible in the tree (virtual void Clear; G37 hoist marker present). SKIP = no write.",
+   "inputs_note": "edits hardcoded in-script (F1-F9)"
+  },
+  {
+   "n": 6,
+   "stage": "twin_guards",
+   "round": "X33",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x33_l2_twinguards.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": "consumed at authoring time (3 C3668 victim TUs)",
+   "effect": "twin-guard family 86/86 cleared; +94 mask-lift disclosed; commit 0ebe5b47",
+   "idempotence": "block-present / include-present checks; 2nd run = 0 writes",
+   "pending_detector": {
+    "type": "stdout_line_count",
+    "pattern": "^PLAN ",
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "edits hardcoded in-script"
+  },
+  {
+   "n": 7,
+   "stage": "supply_wave",
+   "round": "X33",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x33_l3_supply.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [
+    "tools/csp_export/_absorbed/step2_decl/fix_c2027_include_supply.py"
+   ],
+   "log_input": "L3c leg consumes the tracked G41.46 fixer's own census (live .omo/tu_errors.json)",
+   "effect": "-125 raw / 66 files (L3a sub_7DC720 proto, L3b WinAPI::Wrapper rename, L3c include supply); commit 0ebe5b47",
+   "idempotence": "needle-present checks on L3a/L3b; L3c delegates to the tracked idempotent fixer",
+   "pending_detector": {
+    "type": "stdout_line_count",
+    "pattern": "^PLAN ",
+    "expect": 0
+   },
+   "replay": "verified",
+   "replay_note": "Own legs (L3a proto + L3b rename) = 0 PLAN on current tree. Disclosed: the delegated L3c leg (tracked G41.46, also part of the step2 battery) is census-driven over the live ~19.9K-error pool and plans 1 include on the current tree -- that leg can only reach 0 at compile-clean and is NOT part of the X33 one-shot effect.",
+   "inputs_note": "L3c leg delegates to this tracked fixer"
+  },
+  {
+   "n": 8,
+   "stage": "qmark_supply",
+   "round": "X34",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x34_l4_qmark.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [
+    ".omo/evidence/optimization/x34/l4_registry.json"
+   ],
+   "log_input": "consumed at authoring time (x34_build_L4.out.txt)",
+   "effect": "410 G.? site rewrites + 7 blob externs; L4 -88 rows (raw 20,625 -> 20,441); commit 3a563db8",
+   "idempotence": "pattern disappears after rewrite; 2nd run = 0 writes",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "summary: \\d+ files / (\\d+) site-rewrites \\(DRY\\)",
+     "PLAN e4_globals\\.hpp: \\+(\\d+) blob externs"
+    ],
+    "expect": 0
+   },
+   "replay": "unverified",
+   "replay_reason": "measured 2 site-rewrites (src/e4/SuperClass_e4.cpp, the g_BuildingLoadQueue_Array.?[1]<? pair) + 1 blob extern (DataGlobal_820320[888]) on the current tree. Both are exactly the sites the X34 hotfixes deliberately reverted/dropped AFTER this fixer ran (hotfix2 residual ruling: double-subscript blob forms are damage; hotfix_820320: 888-collision with the pre-existing [4] scalar blob). l4_registry.json predates the hotfix rulings, so the fixer re-plans them. In wave order (stage 8 -> 9 -> 10) --apply converges back to the committed state; standalone no-op is false. Faked clean would require editing the registry or the fixer = behavior rewrite, refused.",
+   "inputs_note": "registry is gitignored evidence data (binary/til-verified); tracked gen_e4_globals_decls.py invoked --apply for the derived header"
+  },
+  {
+   "n": 9,
+   "stage": "qmark_hotfix_collision",
+   "round": "X34",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x34_l4_hotfix_820320.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": null,
+   "effect": "reverts the 2 DataGlobal_820320 collision sites + drops the colliding [888] extern; commit 3a563db8",
+   "idempotence": "fragment-present check; already-reverted = NOOP",
+   "pending_detector": {
+    "type": "stdout_line_count",
+    "pattern": "^PLAN ",
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "edits hardcoded in-script"
+  },
+  {
+   "n": 10,
+   "stage": "qmark_hotfix_clobber",
+   "round": "X34",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x34_l4_hotfix2_clobber.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": null,
+   "effect": "reverts the 3 plain-form clobber lines (addr74 x2, SuperClass x1) to '?' residual form; commit 3a563db8",
+   "idempotence": "bad/good form check; already-reverted = NOOP",
+   "pending_detector": {
+    "type": "stdout_line_count",
+    "pattern": "^PLAN ",
+    "expect": 0
+   },
+   "replay": "verified",
+   "replay_note": "0 PLAN / 0 writes on current tree. Disclosed: all 3 hardcoded line anchors drifted (X37/X44 tree reshaping) so the script prints SKIP neither-form-found -- the residual '?' forms live at shifted lines (SuperClass 1113 vs anchor 1123). SKIP = no write.",
+   "inputs_note": "edits hardcoded in-script"
+  },
+  {
+   "n": 11,
+   "stage": "globals_array_retype",
+   "round": "X34",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x34_l5_globals.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": "consumed at authoring time (x34_build_L5.out.txt + l5_audit.json)",
+   "effect": "41 decl/def retypes (18 array-retyped atoms); L5 -22 rows (raw 20,625 -> 20,441 includes I276 -74); commit 3a563db8",
+   "idempotence": "decl-already-array skip; 2nd run = 0 writes",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "decls: (\\d+), defs: (\\d+) \\(DRY\\)"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "atom table hardcoded in-script (widths/bounds binary-verified at authoring time)"
+  },
+  {
+   "n": 12,
+   "stage": "member_kind",
+   "round": "X35",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x35_l7_memberkind.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [
+    "anchors/member_types.json"
+   ],
+   "log_input": "consumed at authoring time (x35 L5c-L8 logs)",
+   "effect": "686 member-kind retypes / 239 files; -205 raw (20,441 -> 20,236); commit 9c3c097a",
+   "idempotence": "detector requires current type != normalized target; 2nd run = 0 writes",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "L7 member-kind: (\\d+) lines"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "git-tracked CSP ANCHORED member kinds"
+  },
+  {
+   "n": 13,
+   "stage": "a8b230_elem_array",
+   "round": "X36",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x36_a8b230.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": "consumed at authoring time (x36 A8B logs + IDA til live probes)",
+   "effect": "AbstractClass[435] elem-array retype (248 arrow sites); -50 raw (20,236 -> 20,186); commit 7d81a080",
+   "idempotence": "already-applied skips + FATAL on unexpected state (fail-loud); 2nd run = 0 writes",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "X36-A8B230: (\\d+) planned writes"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "edits hardcoded in-script (stride 36B x9 two-point verified)"
+  },
+  {
+   "n": 14,
+   "stage": "miniscope_decl_first_use",
+   "round": "X37",
+   "kind": "stage",
+   "script": "tools/csp_export/gen_x37_miniscope.py",
+   "args_dry": [
+    "--journal",
+    "tools/csp_export/_absorbed/convergence/_ledgers/x37_dry_journal.json"
+   ],
+   "args_apply": [
+    "--apply",
+    "--journal",
+    "tools/csp_export/_absorbed/convergence/_ledgers/x37_apply_journal.json"
+   ],
+   "inputs": [],
+   "log_input": "journal-driven (X37 evidence journals: journal_apply.json 14.5MB / journal_dry.json 11.4MB)",
+   "effect": "24,798 decls moved to first-use / 487 files (verbatim multiset proof; AST gate 0 new); commit 4006edb4",
+   "idempotence": "decls_already_minimal accounting; 2nd run moves 0",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "decls_moved\\s+(\\d+)"
+    ],
+    "expect": 0
+   },
+   "replay": "unverified",
+   "replay_reason": "re-derives from current tree shape: decls introduced/reshaped after X37 (X44 decl+assign merge turned standalone decls into initializations, X45 gap2/class_to_header edits added new bodies) leave 180 movable decls / 18 files on the current tree (measured 2026-10-16). Safe + idempotent rerun, but a converged-tree no-op only holds while the tree is X37-shaped.",
+   "inputs_note": "tree scan (622 .cpp); optional --files/--limit-files/--roots scoping"
+  },
+  {
+   "n": 15,
+   "stage": "vtinst_elision",
+   "round": "X38",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x38_l2_vtinst.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": "consumed at authoring time (x38 baseline/L1/L2 logs)",
+   "effect": "47 qmark vt-install elisions; -128 raw (20,186 -> 20,058); commit a0132c58",
+   "idempotence": "marker contains no .? = shape; no-op by construction",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "qmark-vtable-install sites: (\\d+)"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "tree scan (src/); X11 ruling vocabulary in-script"
+  },
+  {
+   "n": 16,
+   "stage": "gstr_unify",
+   "round": "X39",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x39_l1_gstr.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [
+    ".omo/evidence/optimization/x39/gstr_verify_all.json"
+   ],
+   "log_input": "consumed at authoring time (x39_build_L1.out.txt)",
+   "effect": "2,825 decl rewrites (486 atoms) + GetStringCSF true signature + arg1 cast retypes; L1 leg of -84 (20,058 -> 19,974); commit 86b90670",
+   "idempotence": "skip lines already equal to target; 2nd run = 0 writes",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "decl rewrites: (\\d+) across",
+     "csf decl rewrites: (\\d+)",
+     "arg1 cast retypes: (\\d+) across"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "486/486 ANSI .data verification; gitignored evidence data"
+  },
+  {
+   "n": 17,
+   "stage": "astr_unify",
+   "round": "X39",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x39_l1b_astr.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [
+    ".omo/evidence/optimization/x39/astr_decls.json",
+    ".omo/evidence/optimization/x39/astr_verify.json"
+   ],
+   "log_input": "consumed at authoring time",
+   "effect": "346 arg1 retypes (822 atoms, array-form scope); L1b leg; commit 86b90670",
+   "idempotence": "skip lines already equal to target; byte-safe I/O",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "decl rewrites: (\\d+) across"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "822/830 ANSI verification; gitignored evidence data"
+  },
+  {
+   "n": 18,
+   "stage": "cast_spelling_1",
+   "round": "X43",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x43_fix_casts.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [
+    ".omo/evidence/optimization/x43/x43_cast_pool2.json",
+    ".omo/evidence/optimization/x42/x42_census2.py"
+   ],
+   "log_input": "consumed at authoring time (x43 build logs 1/2)",
+   "effect": "batch 1 of 58 cast-spelling retypes (count-preserving, zero insertions); -3 net raw (19,974 -> 19,971); commit 75427d4a",
+   "idempotence": "line's cast already == want; guard: cast token count unchanged",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "plan: (\\d+) edits"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "x40-truth pool + exec helper; gitignored evidence data"
+  },
+  {
+   "n": 19,
+   "stage": "cast_spelling_2",
+   "round": "X43",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x43_fix_casts2.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": null,
+   "effect": "batch 2 D-form safe subset (5 rows, 2 excluded as dual-vocab/alias false positives); commit 75427d4a",
+   "idempotence": "same guard as batch 1",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "plan: (\\d+) edits"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "5-row table hardcoded in-script"
+  },
+  {
+   "n": 20,
+   "stage": "decl_assign_merge",
+   "round": "X44",
+   "kind": "stage",
+   "script": "tools/csp_export/_absorbed/convergence/x44_stage1_merge_apply.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": "none (shape-driven)",
+   "effect": "6,436 merge ops / 396 files; ledger .omo/evidence/optimization/x44/x44_stage1_apply_ledger.json is the machine-readable truth; commit 0d09a07c",
+   "idempotence": "merged form not re-matched (decl must be uninitialized T v;)",
+   "pending_detector": {
+    "type": "stdout_json_field",
+    "field": "merged",
+    "expect": 0
+   },
+   "replay": "verified",
+   "replay_note": "Recovered ORIGINAL engine (.omo/x44_stage1_merge.py, audit believed lost -- found intact 2026-10-16), absorbed with only ROOT/OUT_DIR path normalization. Dry on current tree: merged=0 AND all 8 skip-reason counts byte-identical to the historical apply ledger (44707/15871/1663/8413/1103/994/29/4) -- the detector reproduces the original run's decision boundary exactly. The tracked x44b_merge_verify.py --dry independently reports merged=0 on its (narrower) scope.",
+   "inputs_note": "tree scan (src/e4 + src/_generated + src/_gap2 .cpp)"
+  },
+  {
+   "n": 21,
+   "stage": "format_whitespace",
+   "round": "X44b",
+   "kind": "stage",
+   "script": "tools/csp_export/x44b_format.py",
+   "args_dry": [],
+   "args_apply": [
+    "--apply"
+   ],
+   "inputs": [],
+   "log_input": null,
+   "effect": "Stage-2 whitespace formatter: 591 files / 37,600 lines, line-count preserving, token-multiset equal; commit 0d09a07c",
+   "idempotence": "already-formatted = 0 edits; anchor counts must match before/after",
+   "pending_detector": {
+    "type": "stdout_regex_sum",
+    "patterns": [
+     "\"files_edited\": (\\d+)",
+     "\"edits_total\": (\\d+)"
+    ],
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "tree scan"
+  },
+  {
+   "n": 22,
+   "stage": "merge_verify",
+   "round": "X44b",
+   "kind": "stage",
+   "script": "tools/csp_export/x44b_merge_verify.py",
+   "args_dry": [
+    "--dry"
+   ],
+   "args_apply": [
+    "--verify"
+   ],
+   "inputs": [
+    ".omo/evidence/optimization/x44/x44_stage1_apply_ledger.json",
+    "tools/csp_export/x44b_ctokens.py"
+   ],
+   "log_input": null,
+   "effect": "read-only verify/tokenproof/dry re-run of the Stage-1 merge (X44b rebuild, commit 0d09a07c)",
+   "idempotence": "read-only by design",
+   "pending_detector": {
+    "type": "stdout_json_field",
+    "field": "merged",
+    "expect": 0
+   },
+   "replay": "verified",
+   "inputs_note": "1.4MB ops ledger is gitignored evidence data; ctokens is a tracked import"
+  },
+  {
+   "n": 23,
+   "stage": "final_gates",
+   "round": "all",
+   "kind": "gate",
+   "script": "tools/check_def_count.py + tools/cast_budget.py",
+   "args_dry": [],
+   "args_apply": [],
+   "inputs": [],
+   "log_input": null,
+   "effect": "def-count monotonic gate (baseline 17,476) + cast_budget no-growth ledger record",
+   "idempotence": "gates",
+   "pending_detector": null,
+   "replay": "gate",
+   "inputs_note": "machine-local baselines (def_count_baseline / cast_budget_ledger); gates self-bootstrap"
+  }
+ ]
+}

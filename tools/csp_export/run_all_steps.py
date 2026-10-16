@@ -16,6 +16,10 @@
 
 各步细节见 step1_csp.py / step2_canon.py / step3_export.py /
 step4_bodies.py / step5_baseline.py 的 docstring。
+
+X47 收敛波 (X30..X44b: gen_x30/x31/x37, x33-x43 fixer, x44 merge, x44b format)
+不在本链内 — 其机器可读顺序在 _absorbed/convergence/ORDER.json, 驱动 =
+convergence_driver.py (--verify-current = 已收敛树 no-op 验收)。
 """
 import subprocess
 import sys

@@ -11,6 +11,11 @@
    要改就改生成器 `tools/csp_export/*.py` 后重跑）。
 3. **进度口径**：manifest sig=csp 占比 + 对拍 Same 数，替代旧 completed 计数。
 4. 旧树（src/ 既有 hpp/cpp）仍是唯一编译体；回填体接管后再切编译目标。
+5. **X47 收敛波（X30..X44b，build-error 收敛域）**：其 stage 顺序已数据化 =
+   `tools/csp_export/_absorbed/convergence/ORDER.json`（含 G1-G14 吸收件 +
+   gen_x30/x31/x37/x44b 去孤儿），驱动 `tools/csp_export/convergence_driver.py`
+   （`--verify-current` = 已收敛树逐 stage no-op 验收；X47 实测 16 PASS-0PENDING
+   / 4 MEASURED-UNVERIFIED，理由记录在 ORDER.json）。
 
 
 > 日期：2026-09-20。原则：1-5 步 + 第 6 步回填**纯机械算法**，零人工逐函数处理。

@@ -1,0 +1,19 @@
+{
+ "summary": {
+  "mode": "DRY-RUN",
+  "merged": 0,
+  "files_touched": 0,
+  "skip_reasons": {
+   "next_not_simple_assign": 44707,
+   "stack_typed_decl": 15871,
+   "name_mismatch": 1663,
+   "rhs_not_pure_read": 8413,
+   "self_reference": 1103,
+   "rhs_charset_unsafe": 994,
+   "comment_between": 29,
+   "preprocessor_between": 4
+  }
+ },
+ "per_file": {},
+ "ops": []
+}

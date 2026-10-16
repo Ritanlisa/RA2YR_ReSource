@@ -1,0 +1,5560 @@
+{
+ "apply": false,
+ "counters": {
+  "skip_type_by": {
+   "unknown-type:struct,tagRECT": 47,
+   "unknown-type:return": 170,
+   "unknown-type:LONGLONG": 1,
+   "unknown-type:LARGE_INTEGER": 3,
+   "unknown-type:LPDIRECTSOUND": 2,
+   "unknown-type:DynamicVector": 5,
+   "unknown-type:struct,_WIN32_FIND_DATAA": 4,
+   "unknown-type:SHA1": 6,
+   "unknown-type:LSTATUS": 10,
+   "unknown-type:LPDIRECTDRAW": 1,
+   "unknown-type:_TBYTE": 9,
+   "unknown-type:FARPROC": 2,
+   "unknown-type:Coord2D": 9,
+   "unknown-type:Rect": 13,
+   "unknown-type:PVOID": 1,
+   "unknown-type:struct,_MEMORY_BASIC_INFORMATION": 1,
+   "unknown-type:INT_PTR": 2,
+   "unknown-type:_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem": 6,
+   "unknown-type:String": 26,
+   "unknown-type:INIClass": 7,
+   "unknown-type:CCFileClass": 40,
+   "unknown-type:ObjectClass": 10,
+   "unknown-type:Input": 1,
+   "unknown-type:struct,_SYSTEMTIME": 4,
+   "unknown-type:Color": 6,
+   "unknown-type:Pipe": 5,
+   "unknown-type:_VectorClass_PAVMapRegionClass": 1,
+   "unknown-type:rc_ptr_base": 2,
+   "unknown-type:LOGFONTA": 2,
+   "unknown-type:DeleteAndZero": 17,
+   "unknown-type:XSurface": 2,
+   "unknown-type:Int4": 1,
+   "unknown-type:VectorClass": 5,
+   "unknown-type:InfantryTypeVector": 2,
+   "unknown-type:RawFileClass": 6,
+   "unknown-type:MapSeed": 3,
+   "unknown-type:OLECHAR": 2,
+   "unknown-type:IPersistStream": 1,
+   "unknown-type:MSG": 1,
+   "unknown-type:LinkedList": 1,
+   "unknown-type:GenericNode": 1,
+   "unknown-type:BufferIOFile": 4,
+   "unknown-type:rc_ptr": 6,
+   "unknown-type:_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry": 1,
+   "unknown-type:_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour": 1,
+   "unknown-type:HCURSOR": 5,
+   "unknown-type:struct,tagPOINT": 10,
+   "unknown-type:WNDCLASSA": 2,
+   "unknown-type:WideString": 6,
+   "unknown-type:struct,_PROCESS_INFORMATION": 2,
+   "unknown-type:struct,_STARTUPINFOA": 3,
+   "unknown-type:struct,_OSVERSIONINFOA": 2,
+   "unknown-type:u_long": 2,
+   "unknown-type:OwnerDrawControl": 3,
+   "unknown-type:struct,in_addr": 1,
+   "unknown-type:struct,_TIME_ZONE_INFORMATION": 1,
+   "unknown-type:CPPEH_RECORD": 10,
+   "unknown-type:FILE": 6,
+   "unknown-type:va_list": 12,
+   "unknown-type:LCID": 7,
+   "unknown-type:__int128": 2,
+   "unknown-type:struct,_cpinfo": 1,
+   "unknown-type:PEXCEPTION_RECORD": 1,
+   "unknown-type:ULONG_PTR": 4,
+   "unknown-type:Struct": 3,
+   "unknown-type:FileClass": 2,
+   "unknown-type:ComPtr": 1,
+   "unknown-type:u_short": 2,
+   "unknown-type:StreamClass": 1,
+   "unknown-type:GameSettings": 4,
+   "unknown-type:LPSTREAM": 1,
+   "unknown-type:Multiplayer": 4,
+   "unknown-type:UnitTypeVector": 1,
+   "unknown-type:AircraftTypeVector": 1,
+   "unknown-type:DynamicVectorClass": 3,
+   "unknown-type:TypeClass": 2,
+   "unknown-type:Waypoint": 3,
+   "unknown-type:SOCKET": 4,
+   "unknown-type:struct,sockaddr": 2,
+   "unknown-type:Matrix3x4": 6,
+   "unknown-type:Transform": 1,
+   "unknown-type:FrameSnapshot": 2,
+   "unknown-type:MSEngine": 1,
+   "unknown-type:LPCWCH": 1,
+   "unknown-type:Vector2": 3,
+   "unknown-type:MovieContext": 1,
+   "unknown-type:BinkMovie": 1,
+   "unknown-type:CCINIClass": 2,
+   "unknown-type:LPBYTE": 1,
+   "unknown-type:struct,_FILETIME": 1,
+   "unknown-type:struct,_COMSTAT": 3,
+   "unknown-type:struct,_DCB": 1,
+   "unknown-type:VocClass": 2,
+   "unknown-type:StringTable": 1,
+   "unknown-type:LoadOptions": 1,
+   "unknown-type:LPRECT": 1,
+   "unknown-type:struct,tagTEXTMETRICA": 1,
+   "unknown-type:__m64": 1,
+   "unknown-type:Flag": 2,
+   "unknown-type:LPPERSISTSTREAM": 35,
+   "unknown-type:RandomStruct": 1,
+   "unknown-type:Coord": 1,
+   "unknown-type:Surface": 1,
+   "unknown-type:IsoCoord": 3,
+   "unknown-type:TaskForceClass": 1,
+   "unknown-type:Matrix3D": 1,
+   "unknown-type:Coord3D": 3,
+   "unknown-type:VoxelPalette": 1,
+   "unknown-type:IntVector": 1,
+   "unknown-type:INT": 2,
+   "unknown-type:WordVector": 1,
+   "unknown-type:_VectorClass_VCell": 2,
+   "unknown-type:Heap": 5,
+   "unknown-type:Straw": 1,
+   "unknown-type:Buffer": 1,
+   "unknown-type:LCWStraw": 1,
+   "unknown-type:BufferIOFileClass": 1,
+   "unknown-type:PaletteClass": 1
+  },
+  "files_scanned": 622,
+  "run_nonsig": 3097,
+  "functions_scanned": 5286,
+  "decls_seen": 36721,
+  "decls_already_minimal": 2106,
+  "functions_untouched": 4066,
+  "skip_type": 660,
+  "skip_func_goto_decls": 23768,
+  "functions_goto_skip": 1200,
+  "skip_nouse": 1754,
+  "skip_dom": 1427,
+  "skip_notstmt": 6810,
+  "decls_moved": 180,
+  "functions_touched": 20,
+  "files_changed": 18,
+  "lines_delta": 0,
+  "skip_redecl": 16
+ },
+ "moves": [
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v11",
+   "type": "void * v11",
+   "decl_line_1based": 720,
+   "insert_line_1based": 775,
+   "first_use_line_1based": 775,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 3,
+   "uses": [
+    [
+     775,
+     8
+    ],
+    [
+     776,
+     13
+    ],
+    [
+     778,
+     17
+    ]
+   ],
+   "decl_text": "  void * v11;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v12",
+   "type": "int v12",
+   "decl_line_1based": 721,
+   "insert_line_1based": 778,
+   "first_use_line_1based": 778,
+   "d_ins": 6,
+   "min_depth_seen": 6,
+   "n_uses": 22,
+   "uses": [
+    [
+     778,
+     10
+    ],
+    [
+     779,
+     15
+    ],
+    [
+     812,
+     32
+    ],
+    [
+     818,
+     35
+    ],
+    [
+     822,
+     14
+    ],
+    [
+     825,
+     14
+    ],
+    [
+     828,
+     14
+    ],
+    [
+     829,
+     82
+    ],
+    [
+     829,
+     94
+    ],
+    [
+     831,
+     20
+    ],
+    [
+     833,
+     14
+    ],
+    [
+     836,
+     16
+    ],
+    [
+     837,
+     20
+    ],
+    [
+     838,
+     16
+    ],
+    [
+     839,
+     37
+    ],
+    [
+     841,
+     14
+    ],
+    [
+     841,
+     39
+    ],
+    [
+     842,
+     50
+    ],
+    [
+     843,
+     50
+    ],
+    [
+     843,
+     62
+    ],
+    [
+     848,
+     50
+    ],
+    [
+     848,
+     61
+    ]
+   ],
+   "decl_text": "  int v12; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v13",
+   "type": "char * v13",
+   "decl_line_1based": 722,
+   "insert_line_1based": 781,
+   "first_use_line_1based": 781,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 2,
+   "uses": [
+    [
+     781,
+     12
+    ],
+    [
+     782,
+     17
+    ]
+   ],
+   "decl_text": "  char *v13; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v14",
+   "type": "char * v14",
+   "decl_line_1based": 723,
+   "insert_line_1based": 793,
+   "first_use_line_1based": 793,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 2,
+   "uses": [
+    [
+     793,
+     14
+    ],
+    [
+     794,
+     51
+    ]
+   ],
+   "decl_text": "  char *v14; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v15",
+   "type": "char * v15",
+   "decl_line_1based": 724,
+   "insert_line_1based": 795,
+   "first_use_line_1based": 795,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 2,
+   "uses": [
+    [
+     795,
+     14
+    ],
+    [
+     796,
+     57
+    ]
+   ],
+   "decl_text": "  char *v15; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v17",
+   "type": "char * v17",
+   "decl_line_1based": 726,
+   "insert_line_1based": 785,
+   "first_use_line_1based": 785,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 2,
+   "uses": [
+    [
+     785,
+     14
+    ],
+    [
+     786,
+     25
+    ]
+   ],
+   "decl_text": "  char *v17; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v18",
+   "type": "int v18",
+   "decl_line_1based": 727,
+   "insert_line_1based": 786,
+   "first_use_line_1based": 786,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 3,
+   "uses": [
+    [
+     786,
+     14
+    ],
+    [
+     787,
+     46
+    ],
+    [
+     788,
+     52
+    ]
+   ],
+   "decl_text": "  int v18; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v19",
+   "type": "char * v19",
+   "decl_line_1based": 728,
+   "insert_line_1based": 802,
+   "first_use_line_1based": 802,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 2,
+   "uses": [
+    [
+     802,
+     12
+    ],
+    [
+     803,
+     23
+    ]
+   ],
+   "decl_text": "  char *v19; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v20",
+   "type": "int v20",
+   "decl_line_1based": 729,
+   "insert_line_1based": 803,
+   "first_use_line_1based": 803,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 2,
+   "uses": [
+    [
+     803,
+     12
+    ],
+    [
+     829,
+     104
+    ]
+   ],
+   "decl_text": "  int v20; // edi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v21",
+   "type": "char * v21",
+   "decl_line_1based": 730,
+   "insert_line_1based": 804,
+   "first_use_line_1based": 804,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 2,
+   "uses": [
+    [
+     804,
+     12
+    ],
+    [
+     805,
+     52
+    ]
+   ],
+   "decl_text": "  char *v21; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v22",
+   "type": "int v22",
+   "decl_line_1based": 731,
+   "insert_line_1based": 805,
+   "first_use_line_1based": 805,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 2,
+   "uses": [
+    [
+     805,
+     12
+    ],
+    [
+     842,
+     55
+    ]
+   ],
+   "decl_text": "  int v22; // ebx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v23",
+   "type": "char * v23",
+   "decl_line_1based": 732,
+   "insert_line_1based": 806,
+   "first_use_line_1based": 806,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 2,
+   "uses": [
+    [
+     806,
+     12
+    ],
+    [
+     807,
+     51
+    ]
+   ],
+   "decl_text": "  char *v23; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v24",
+   "type": "TeamClass * v24",
+   "decl_line_1based": 733,
+   "insert_line_1based": 807,
+   "first_use_line_1based": 807,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 3,
+   "uses": [
+    [
+     807,
+     12
+    ],
+    [
+     808,
+     17
+    ],
+    [
+     810,
+     27
+    ]
+   ],
+   "decl_text": "  TeamClass *v24; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v25",
+   "type": "int v25",
+   "decl_line_1based": 734,
+   "insert_line_1based": 810,
+   "first_use_line_1based": 810,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 3,
+   "uses": [
+    [
+     810,
+     14
+    ],
+    [
+     811,
+     19
+    ],
+    [
+     812,
+     51
+    ]
+   ],
+   "decl_text": "  int v25; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v26",
+   "type": "char * v26",
+   "decl_line_1based": 735,
+   "insert_line_1based": 814,
+   "first_use_line_1based": 814,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 3,
+   "uses": [
+    [
+     814,
+     12
+    ],
+    [
+     815,
+     17
+    ],
+    [
+     817,
+     25
+    ]
+   ],
+   "decl_text": "  char *v26; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v27",
+   "type": "int v27",
+   "decl_line_1based": 736,
+   "insert_line_1based": 817,
+   "first_use_line_1based": 817,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 2,
+   "uses": [
+    [
+     817,
+     14
+    ],
+    [
+     818,
+     54
+    ]
+   ],
+   "decl_text": "  int v27; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v28",
+   "type": "char * v28",
+   "decl_line_1based": 737,
+   "insert_line_1based": 820,
+   "first_use_line_1based": 820,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 3,
+   "uses": [
+    [
+     820,
+     12
+    ],
+    [
+     821,
+     17
+    ],
+    [
+     822,
+     46
+    ]
+   ],
+   "decl_text": "  char *v28; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v29",
+   "type": "char * v29",
+   "decl_line_1based": 738,
+   "insert_line_1based": 823,
+   "first_use_line_1based": 823,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 3,
+   "uses": [
+    [
+     823,
+     12
+    ],
+    [
+     824,
+     17
+    ],
+    [
+     825,
+     48
+    ]
+   ],
+   "decl_text": "  char *v29; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v30",
+   "type": "char * v30",
+   "decl_line_1based": 739,
+   "insert_line_1based": 826,
+   "first_use_line_1based": 826,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 3,
+   "uses": [
+    [
+     826,
+     12
+    ],
+    [
+     827,
+     17
+    ],
+    [
+     828,
+     49
+    ]
+   ],
+   "decl_text": "  char *v30; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v31",
+   "type": "int v31",
+   "decl_line_1based": 740,
+   "insert_line_1based": 831,
+   "first_use_line_1based": 831,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 3,
+   "uses": [
+    [
+     831,
+     14
+    ],
+    [
+     832,
+     85
+    ],
+    [
+     834,
+     20
+    ]
+   ],
+   "decl_text": "  int v31; // edi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v32",
+   "type": "int v32",
+   "decl_line_1based": 741,
+   "insert_line_1based": 832,
+   "first_use_line_1based": 832,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 3,
+   "uses": [
+    [
+     832,
+     37
+    ],
+    [
+     833,
+     28
+    ],
+    [
+     835,
+     19
+    ]
+   ],
+   "decl_text": "  int v32; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v33",
+   "type": "int v33",
+   "decl_line_1based": 742,
+   "insert_line_1based": 834,
+   "first_use_line_1based": 834,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 3,
+   "uses": [
+    [
+     834,
+     14
+    ],
+    [
+     835,
+     25
+    ],
+    [
+     836,
+     30
+    ]
+   ],
+   "decl_text": "  int v33; // edi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v34",
+   "type": "int v34",
+   "decl_line_1based": 743,
+   "insert_line_1based": 839,
+   "first_use_line_1based": 839,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 2,
+   "uses": [
+    [
+     839,
+     14
+    ],
+    [
+     842,
+     38
+    ]
+   ],
+   "decl_text": "  int v34; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "i",
+   "type": "int i",
+   "decl_line_1based": 744,
+   "insert_line_1based": 756,
+   "first_use_line_1based": 756,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 4,
+   "uses": [
+    [
+     756,
+     8
+    ],
+    [
+     756,
+     15
+    ],
+    [
+     756,
+     26
+    ],
+    [
+     855,
+     9
+    ]
+   ],
+   "decl_text": "  int i; // [esp+Ch] [ebp-A4h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v37",
+   "type": "int v37",
+   "decl_line_1based": 745,
+   "insert_line_1based": 787,
+   "first_use_line_1based": 787,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 3,
+   "uses": [
+    [
+     787,
+     37
+    ],
+    [
+     788,
+     38
+    ],
+    [
+     789,
+     20
+    ]
+   ],
+   "decl_text": "  int v37; // [esp+14h] [ebp-9Ch]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v38",
+   "type": "int v38",
+   "decl_line_1based": 746,
+   "insert_line_1based": 794,
+   "first_use_line_1based": 794,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 3,
+   "uses": [
+    [
+     794,
+     37
+    ],
+    [
+     796,
+     38
+    ],
+    [
+     797,
+     20
+    ]
+   ],
+   "decl_text": "  int v38; // [esp+18h] [ebp-98h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v39",
+   "type": "int v39",
+   "decl_line_1based": 747,
+   "insert_line_1based": 755,
+   "first_use_line_1based": 755,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 4,
+   "uses": [
+    [
+     755,
+     2
+    ],
+    [
+     756,
+     19
+    ],
+    [
+     832,
+     71
+    ],
+    [
+     854,
+     13
+    ]
+   ],
+   "decl_text": "  int v39; // [esp+20h] [ebp-90h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "v40",
+   "type": "unsigned int v40[3]",
+   "decl_line_1based": 748,
+   "insert_line_1based": 799,
+   "first_use_line_1based": 799,
+   "d_ins": 7,
+   "min_depth_seen": 7,
+   "n_uses": 4,
+   "uses": [
+    [
+     799,
+     12
+    ],
+    [
+     800,
+     12
+    ],
+    [
+     801,
+     12
+    ],
+    [
+     829,
+     99
+    ]
+   ],
+   "decl_text": "  unsigned int v40[3]; // [esp+24h] [ebp-8Ch] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr41_e4.cpp",
+   "func": "INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)",
+   "func_open_line": 719,
+   "func_close_line": 858,
+   "name": "String",
+   "type": "char String[128]",
+   "decl_line_1based": 749,
+   "insert_line_1based": 760,
+   "first_use_line_1based": 760,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 2,
+   "uses": [
+    [
+     760,
+     49
+    ],
+    [
+     762,
+     16
+    ]
+   ],
+   "decl_text": "  char String[128]; // [esp+30h] [ebp-80h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr45_e4.cpp",
+   "func": "void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)",
+   "func_open_line": 931,
+   "func_close_line": 973,
+   "name": "v4",
+   "type": "IUnknown * v4",
+   "decl_line_1based": 932,
+   "insert_line_1based": 938,
+   "first_use_line_1based": 938,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 4,
+   "uses": [
+    [
+     938,
+     2
+    ],
+    [
+     949,
+     28
+    ],
+    [
+     962,
+     95
+    ],
+    [
+     963,
+     12
+    ]
+   ],
+   "decl_text": "  IUnknown * v4;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr45_e4.cpp",
+   "func": "void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)",
+   "func_open_line": 931,
+   "func_close_line": 973,
+   "name": "v5",
+   "type": "int v5",
+   "decl_line_1based": 933,
+   "insert_line_1based": 941,
+   "first_use_line_1based": 941,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     941,
+     4
+    ],
+    [
+     962,
+     91
+    ],
+    [
+     968,
+     8
+    ]
+   ],
+   "decl_text": "  int v5; // ebp"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr45_e4.cpp",
+   "func": "void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)",
+   "func_open_line": 931,
+   "func_close_line": 973,
+   "name": "v6",
+   "type": "int v6",
+   "decl_line_1based": 934,
+   "insert_line_1based": 943,
+   "first_use_line_1based": 943,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 5,
+   "uses": [
+    [
+     943,
+     4
+    ],
+    [
+     951,
+     64
+    ],
+    [
+     956,
+     38
+    ],
+    [
+     967,
+     6
+    ],
+    [
+     971,
+     12
+    ]
+   ],
+   "decl_text": "  int v6; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr45_e4.cpp",
+   "func": "void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)",
+   "func_open_line": 931,
+   "func_close_line": 973,
+   "name": "v7",
+   "type": "unsigned int * v7",
+   "decl_line_1based": 935,
+   "insert_line_1based": 944,
+   "first_use_line_1based": 944,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     944,
+     4
+    ],
+    [
+     947,
+     12
+    ],
+    [
+     969,
+     8
+    ]
+   ],
+   "decl_text": "  unsigned int *v7; // ebx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v7",
+   "type": "void * v7",
+   "decl_line_1based": 84,
+   "insert_line_1based": 120,
+   "first_use_line_1based": 120,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     120,
+     6
+    ],
+    [
+     140,
+     26
+    ]
+   ],
+   "decl_text": "  void * v7;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "owner",
+   "type": "HouseClass * owner",
+   "decl_line_1based": 85,
+   "insert_line_1based": 121,
+   "first_use_line_1based": 121,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     121,
+     6
+    ],
+    [
+     149,
+     81
+    ]
+   ],
+   "decl_text": "  HouseClass *owner; // ebp"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v9",
+   "type": "int v9",
+   "decl_line_1based": 86,
+   "insert_line_1based": 122,
+   "first_use_line_1based": 122,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     122,
+     6
+    ],
+    [
+     149,
+     102
+    ]
+   ],
+   "decl_text": "  int v9; // ebx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "isRecruitableByEnemy",
+   "type": "int isRecruitableByEnemy",
+   "decl_line_1based": 87,
+   "insert_line_1based": 124,
+   "first_use_line_1based": 124,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     124,
+     6
+    ],
+    [
+     128,
+     20
+    ]
+   ],
+   "decl_text": "  int isRecruitableByEnemy; // edx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "isRecruitableByAlly",
+   "type": "int isRecruitableByAlly",
+   "decl_line_1based": 88,
+   "insert_line_1based": 126,
+   "first_use_line_1based": 126,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     126,
+     6
+    ],
+    [
+     129,
+     20
+    ]
+   ],
+   "decl_text": "  int isRecruitableByAlly; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v12",
+   "type": "int v12",
+   "decl_line_1based": 89,
+   "insert_line_1based": 134,
+   "first_use_line_1based": 134,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     134,
+     6
+    ],
+    [
+     138,
+     14
+    ]
+   ],
+   "decl_text": "  int v12; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v13",
+   "type": "int v13",
+   "decl_line_1based": 90,
+   "insert_line_1based": 135,
+   "first_use_line_1based": 135,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     135,
+     6
+    ],
+    [
+     144,
+     39
+    ]
+   ],
+   "decl_text": "  int v13; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v14",
+   "type": "int v14",
+   "decl_line_1based": 91,
+   "insert_line_1based": 148,
+   "first_use_line_1based": 148,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     148,
+     29
+    ],
+    [
+     149,
+     106
+    ]
+   ],
+   "decl_text": "  int v14; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v15",
+   "type": "int v15",
+   "decl_line_1based": 92,
+   "insert_line_1based": 141,
+   "first_use_line_1based": 141,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     141,
+     6
+    ],
+    [
+     149,
+     111
+    ]
+   ],
+   "decl_text": "  int v15; // [esp-34h] [ebp-F0h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v16",
+   "type": "char * v16",
+   "decl_line_1based": 93,
+   "insert_line_1based": 133,
+   "first_use_line_1based": 133,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     133,
+     6
+    ],
+    [
+     139,
+     14
+    ]
+   ],
+   "decl_text": "  char *v16; // [esp-20h] [ebp-DCh]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "Field",
+   "type": "int Field",
+   "decl_line_1based": 94,
+   "insert_line_1based": 132,
+   "first_use_line_1based": 132,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 1,
+   "uses": [
+    [
+     132,
+     6
+    ]
+   ],
+   "decl_text": "  int Field; // [esp-14h] [ebp-D0h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "controlGroup",
+   "type": "int controlGroup",
+   "decl_line_1based": 95,
+   "insert_line_1based": 131,
+   "first_use_line_1based": 131,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 1,
+   "uses": [
+    [
+     131,
+     6
+    ]
+   ],
+   "decl_text": "  int controlGroup; // [esp-10h] [ebp-CCh]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "onBridge",
+   "type": "int onBridge",
+   "decl_line_1based": 96,
+   "insert_line_1based": 130,
+   "first_use_line_1based": 130,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 1,
+   "uses": [
+    [
+     130,
+     6
+    ]
+   ],
+   "decl_text": "  int onBridge; // [esp-Ch] [ebp-C8h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "i",
+   "type": "int i",
+   "decl_line_1based": 97,
+   "insert_line_1based": 109,
+   "first_use_line_1based": 109,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 3,
+   "uses": [
+    [
+     109,
+     8
+    ],
+    [
+     109,
+     56
+    ],
+    [
+     151,
+     15
+    ]
+   ],
+   "decl_text": "  int i; // [esp+8h] [ebp-B4h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "queuedMission",
+   "type": "char * queuedMission",
+   "decl_line_1based": 98,
+   "insert_line_1based": 116,
+   "first_use_line_1based": 117,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 4,
+   "uses": [
+    [
+     117,
+     8
+    ],
+    [
+     119,
+     8
+    ],
+    [
+     133,
+     31
+    ],
+    [
+     150,
+     19
+    ]
+   ],
+   "decl_text": "  char *queuedMission; // [esp+14h] [ebp-A8h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v25",
+   "type": "int v25",
+   "decl_line_1based": 100,
+   "insert_line_1based": 125,
+   "first_use_line_1based": 125,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 1,
+   "uses": [
+    [
+     125,
+     6
+    ]
+   ],
+   "decl_text": "  int v25; // [esp+24h] [ebp-98h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v26",
+   "type": "int v26",
+   "decl_line_1based": 101,
+   "insert_line_1based": 127,
+   "first_use_line_1based": 127,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 1,
+   "uses": [
+    [
+     127,
+     6
+    ]
+   ],
+   "decl_text": "  int v26; // [esp+28h] [ebp-94h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "v27",
+   "type": "int v27",
+   "decl_line_1based": 102,
+   "insert_line_1based": 120,
+   "first_use_line_1based": 120,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 1,
+   "uses": [
+    [
+     120,
+     123
+    ]
+   ],
+   "decl_text": "  int v27; // [esp+2Ch] [ebp-90h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "Buffer",
+   "type": "char Buffer[12]",
+   "decl_line_1based": 103,
+   "insert_line_1based": 115,
+   "first_use_line_1based": 115,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 4,
+   "uses": [
+    [
+     115,
+     14
+    ],
+    [
+     137,
+     14
+    ],
+    [
+     143,
+     26
+    ],
+    [
+     150,
+     90
+    ]
+   ],
+   "decl_text": "  char Buffer[12]; // [esp+30h] [ebp-8Ch] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr51_e4.cpp",
+   "func": "int SaveInfantryToINI(void * a1, void * a2, void * a3)",
+   "func_open_line": 83,
+   "func_close_line": 156,
+   "name": "Source",
+   "type": "char Source[128]",
+   "decl_line_1based": 104,
+   "insert_line_1based": 149,
+   "first_use_line_1based": 149,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     149,
+     14
+    ],
+    [
+     150,
+     98
+    ]
+   ],
+   "decl_text": "  char Source[128]; // [esp+3Ch] [ebp-80h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v3",
+   "type": "void * v3",
+   "decl_line_1based": 302,
+   "insert_line_1based": 326,
+   "first_use_line_1based": 326,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     326,
+     6
+    ],
+    [
+     327,
+     27
+    ]
+   ],
+   "decl_text": "  void * v3;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "DlgItem",
+   "type": "HWND DlgItem",
+   "decl_line_1based": 303,
+   "insert_line_1based": 333,
+   "first_use_line_1based": 333,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     333,
+     6
+    ],
+    [
+     334,
+     19
+    ]
+   ],
+   "decl_text": "  HWND DlgItem; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v5",
+   "type": "HWND v5",
+   "decl_line_1based": 304,
+   "insert_line_1based": 335,
+   "first_use_line_1based": 335,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     335,
+     6
+    ],
+    [
+     336,
+     19
+    ]
+   ],
+   "decl_text": "  HWND v5; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v6",
+   "type": "HWND v6",
+   "decl_line_1based": 305,
+   "insert_line_1based": 339,
+   "first_use_line_1based": 339,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     339,
+     8
+    ],
+    [
+     340,
+     21
+    ]
+   ],
+   "decl_text": "  HWND v6; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v7",
+   "type": "HWND v7",
+   "decl_line_1based": 306,
+   "insert_line_1based": 344,
+   "first_use_line_1based": 344,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     344,
+     8
+    ],
+    [
+     345,
+     21
+    ]
+   ],
+   "decl_text": "  HWND v7; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v8",
+   "type": "HWND v8",
+   "decl_line_1based": 307,
+   "insert_line_1based": 349,
+   "first_use_line_1based": 349,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     349,
+     8
+    ],
+    [
+     350,
+     21
+    ]
+   ],
+   "decl_text": "  HWND v8; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v9",
+   "type": "HWND v9",
+   "decl_line_1based": 308,
+   "insert_line_1based": 354,
+   "first_use_line_1based": 354,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     354,
+     8
+    ],
+    [
+     355,
+     21
+    ]
+   ],
+   "decl_text": "  HWND v9; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v10",
+   "type": "HWND v10",
+   "decl_line_1based": 309,
+   "insert_line_1based": 359,
+   "first_use_line_1based": 359,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     359,
+     8
+    ],
+    [
+     360,
+     21
+    ]
+   ],
+   "decl_text": "  HWND v10; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v12",
+   "type": "int v12",
+   "decl_line_1based": 310,
+   "insert_line_1based": 319,
+   "first_use_line_1based": 319,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     319,
+     2
+    ],
+    [
+     380,
+     50
+    ]
+   ],
+   "decl_text": "  int v12; // [esp+Ch] [ebp-1Ch]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "lParam",
+   "type": "LPARAM lParam",
+   "decl_line_1based": 311,
+   "insert_line_1based": 318,
+   "first_use_line_1based": 318,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     318,
+     2
+    ],
+    [
+     381,
+     46
+    ]
+   ],
+   "decl_text": "  LPARAM lParam; // [esp+10h] [ebp-18h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v14",
+   "type": "LPARAM v14",
+   "decl_line_1based": 312,
+   "insert_line_1based": 317,
+   "first_use_line_1based": 317,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     317,
+     2
+    ],
+    [
+     382,
+     46
+    ]
+   ],
+   "decl_text": "  LPARAM v14; // [esp+14h] [ebp-14h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr5E_e4.cpp",
+   "func": "AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)",
+   "func_open_line": 301,
+   "func_close_line": 390,
+   "name": "v17",
+   "type": "unsigned int v17[2]",
+   "decl_line_1based": 315,
+   "insert_line_1based": 326,
+   "first_use_line_1based": 326,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 3,
+   "uses": [
+    [
+     326,
+     48
+    ],
+    [
+     328,
+     6
+    ],
+    [
+     329,
+     22
+    ]
+   ],
+   "decl_text": "  unsigned int v17[2]; // [esp+20h] [ebp-8h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr62_e4.cpp",
+   "func": "int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, void * a1, void * a2, void * a3, void * a4,",
+   "func_open_line": 608,
+   "func_close_line": 638,
+   "name": "v18",
+   "type": "void * v18",
+   "decl_line_1based": 609,
+   "insert_line_1based": 617,
+   "first_use_line_1based": 617,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     617,
+     2
+    ],
+    [
+     636,
+     59
+    ]
+   ],
+   "decl_text": "  void * v18;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr67_e4.cpp",
+   "func": "void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIClass * aP1, unsigned char * a3, unsigned",
+   "func_open_line": 190,
+   "func_close_line": 288,
+   "name": "v14",
+   "type": "void * v14",
+   "decl_line_1based": 191,
+   "insert_line_1based": 259,
+   "first_use_line_1based": 259,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 3,
+   "uses": [
+    [
+     259,
+     8
+    ],
+    [
+     260,
+     21
+    ],
+    [
+     261,
+     13
+    ]
+   ],
+   "decl_text": "  void * v14;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr67_e4.cpp",
+   "func": "void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIClass * aP1, unsigned char * a3, unsigned",
+   "func_open_line": 190,
+   "func_close_line": 288,
+   "name": "v15",
+   "type": "int v15",
+   "decl_line_1based": 192,
+   "insert_line_1based": 263,
+   "first_use_line_1based": 263,
+   "d_ins": 6,
+   "min_depth_seen": 6,
+   "n_uses": 2,
+   "uses": [
+    [
+     263,
+     10
+    ],
+    [
+     266,
+     15
+    ]
+   ],
+   "decl_text": "  int v15; // ecx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr67_e4.cpp",
+   "func": "void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIClass * aP1, unsigned char * a3, unsigned",
+   "func_open_line": 190,
+   "func_close_line": 288,
+   "name": "v16",
+   "type": "int v16",
+   "decl_line_1based": 193,
+   "insert_line_1based": 264,
+   "first_use_line_1based": 264,
+   "d_ins": 6,
+   "min_depth_seen": 6,
+   "n_uses": 5,
+   "uses": [
+    [
+     264,
+     10
+    ],
+    [
+     270,
+     49
+    ],
+    [
+     270,
+     86
+    ],
+    [
+     271,
+     16
+    ],
+    [
+     273,
+     20
+    ]
+   ],
+   "decl_text": "  int v16; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v4",
+   "type": "void * v4",
+   "decl_line_1based": 111,
+   "insert_line_1based": 125,
+   "first_use_line_1based": 125,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     125,
+     2
+    ],
+    [
+     147,
+     46
+    ]
+   ],
+   "decl_text": "  void * v4;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v6",
+   "type": "int v6",
+   "decl_line_1based": 113,
+   "insert_line_1based": 130,
+   "first_use_line_1based": 130,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 5,
+   "uses": [
+    [
+     130,
+     4
+    ],
+    [
+     135,
+     51
+    ],
+    [
+     162,
+     20
+    ],
+    [
+     169,
+     8
+    ],
+    [
+     171,
+     12
+    ]
+   ],
+   "decl_text": "  int v6; // edi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v7",
+   "type": "int * v7",
+   "decl_line_1based": 114,
+   "insert_line_1based": 135,
+   "first_use_line_1based": 135,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 9,
+   "uses": [
+    [
+     135,
+     6
+    ],
+    [
+     136,
+     11
+    ],
+    [
+     138,
+     32
+    ],
+    [
+     140,
+     34
+    ],
+    [
+     142,
+     37
+    ],
+    [
+     144,
+     35
+    ],
+    [
+     149,
+     39
+    ],
+    [
+     150,
+     32
+    ],
+    [
+     152,
+     20
+    ]
+   ],
+   "decl_text": "  int *v7; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v8",
+   "type": "unsigned int * v8",
+   "decl_line_1based": 115,
+   "insert_line_1based": 144,
+   "first_use_line_1based": 144,
+   "d_ins": 8,
+   "min_depth_seen": 8,
+   "n_uses": 3,
+   "uses": [
+    [
+     144,
+     14
+    ],
+    [
+     145,
+     19
+    ],
+    [
+     147,
+     42
+    ]
+   ],
+   "decl_text": "  unsigned int *v8; // ecx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v9",
+   "type": "int v9",
+   "decl_line_1based": 116,
+   "insert_line_1based": 149,
+   "first_use_line_1based": 149,
+   "d_ins": 10,
+   "min_depth_seen": 10,
+   "n_uses": 2,
+   "uses": [
+    [
+     149,
+     18
+    ],
+    [
+     151,
+     112
+    ]
+   ],
+   "decl_text": "  int v9; // edx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v10",
+   "type": "int16_t * v10",
+   "decl_line_1based": 117,
+   "insert_line_1based": 174,
+   "first_use_line_1based": 174,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 4,
+   "uses": [
+    [
+     174,
+     2
+    ],
+    [
+     182,
+     90
+    ],
+    [
+     184,
+     11
+    ],
+    [
+     185,
+     14
+    ]
+   ],
+   "decl_text": "  int16_t *v10; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v11",
+   "type": "int v11",
+   "decl_line_1based": 118,
+   "insert_line_1based": 177,
+   "first_use_line_1based": 177,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 2,
+   "uses": [
+    [
+     177,
+     4
+    ],
+    [
+     181,
+     14
+    ]
+   ],
+   "decl_text": "  int v11; // edi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v12",
+   "type": "int v12",
+   "decl_line_1based": 119,
+   "insert_line_1based": 180,
+   "first_use_line_1based": 181,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     181,
+     8
+    ],
+    [
+     182,
+     14
+    ]
+   ],
+   "decl_text": "  int v12; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v13",
+   "type": "int v13",
+   "decl_line_1based": 120,
+   "insert_line_1based": 184,
+   "first_use_line_1based": 184,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 2,
+   "uses": [
+    [
+     184,
+     4
+    ],
+    [
+     186,
+     13
+    ]
+   ],
+   "decl_text": "  int v13; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v15",
+   "type": "char v15",
+   "decl_line_1based": 121,
+   "insert_line_1based": 126,
+   "first_use_line_1based": 126,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 3,
+   "uses": [
+    [
+     126,
+     2
+    ],
+    [
+     160,
+     18
+    ],
+    [
+     191,
+     9
+    ]
+   ],
+   "decl_text": "  char v15; // [esp+1Dh] [ebp-15h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v16",
+   "type": "int v16[2]",
+   "decl_line_1based": 122,
+   "insert_line_1based": 188,
+   "first_use_line_1based": 188,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     188,
+     58
+    ],
+    [
+     189,
+     23
+    ],
+    [
+     189,
+     37
+    ]
+   ],
+   "decl_text": "  int v16[2]; // [esp+1Eh] [ebp-14h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr6E_e4.cpp",
+   "func": "char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)",
+   "func_open_line": 110,
+   "func_close_line": 192,
+   "name": "v17",
+   "type": "unsigned int v17[3]",
+   "decl_line_1based": 123,
+   "insert_line_1based": 185,
+   "first_use_line_1based": 185,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 4,
+   "uses": [
+    [
+     185,
+     4
+    ],
+    [
+     186,
+     4
+    ],
+    [
+     187,
+     4
+    ],
+    [
+     188,
+     53
+    ]
+   ],
+   "decl_text": "  unsigned int v17[3]; // [esp+26h] [ebp-Ch] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "AbstractClass * * sub_725C70()",
+   "func_open_line": 168,
+   "func_close_line": 223,
+   "name": "v4",
+   "type": "void * v4",
+   "decl_line_1based": 169,
+   "insert_line_1based": 203,
+   "first_use_line_1based": 203,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     203,
+     8
+    ],
+    [
+     204,
+     55
+    ]
+   ],
+   "decl_text": "  void * v4;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "AbstractClass * * sub_725C70()",
+   "func_open_line": 168,
+   "func_close_line": 223,
+   "name": "v5",
+   "type": "int v5",
+   "decl_line_1based": 170,
+   "insert_line_1based": 204,
+   "first_use_line_1based": 205,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     205,
+     14
+    ],
+    [
+     205,
+     77
+    ]
+   ],
+   "decl_text": "  int v5; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "AbstractClass * * sub_725C70()",
+   "func_open_line": 168,
+   "func_close_line": 223,
+   "name": "v6",
+   "type": "int v6",
+   "decl_line_1based": 171,
+   "insert_line_1based": 204,
+   "first_use_line_1based": 206,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     206,
+     14
+    ],
+    [
+     206,
+     77
+    ]
+   ],
+   "decl_text": "  int v6; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "AbstractClass * * sub_725C70()",
+   "func_open_line": 168,
+   "func_close_line": 223,
+   "name": "v7",
+   "type": "int v7",
+   "decl_line_1based": 172,
+   "insert_line_1based": 204,
+   "first_use_line_1based": 207,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     207,
+     14
+    ],
+    [
+     208,
+     66
+    ]
+   ],
+   "decl_text": "  int v7; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "AbstractClass * * sub_725C70()",
+   "func_open_line": 168,
+   "func_close_line": 223,
+   "name": "v8",
+   "type": "unsigned int * v8",
+   "decl_line_1based": 173,
+   "insert_line_1based": 180,
+   "first_use_line_1based": 180,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 14,
+   "uses": [
+    [
+     180,
+     4
+    ],
+    [
+     181,
+     33
+    ],
+    [
+     189,
+     16
+    ],
+    [
+     200,
+     55
+    ],
+    [
+     200,
+     64
+    ],
+    [
+     203,
+     39
+    ],
+    [
+     205,
+     30
+    ],
+    [
+     206,
+     30
+    ],
+    [
+     207,
+     30
+    ],
+    [
+     210,
+     24
+    ],
+    [
+     211,
+     29
+    ],
+    [
+     213,
+     13
+    ],
+    [
+     214,
+     54
+    ],
+    [
+     214,
+     64
+    ]
+   ],
+   "decl_text": "  unsigned int *v8; // [esp+8h] [ebp-4h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v5",
+   "type": "void * v5",
+   "decl_line_1based": 258,
+   "insert_line_1based": 279,
+   "first_use_line_1based": 279,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 5,
+   "uses": [
+    [
+     279,
+     4
+    ],
+    [
+     280,
+     9
+    ],
+    [
+     282,
+     29
+    ],
+    [
+     296,
+     6
+    ],
+    [
+     298,
+     34
+    ]
+   ],
+   "decl_text": "  void * v5;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v6",
+   "type": "unsigned char * v6",
+   "decl_line_1based": 259,
+   "insert_line_1based": 282,
+   "first_use_line_1based": 282,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 5,
+   "uses": [
+    [
+     282,
+     6
+    ],
+    [
+     286,
+     10
+    ],
+    [
+     287,
+     10
+    ],
+    [
+     288,
+     9
+    ],
+    [
+     289,
+     8
+    ]
+   ],
+   "decl_text": "  unsigned char *v6; // ecx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v7",
+   "type": "int v7",
+   "decl_line_1based": 260,
+   "insert_line_1based": 283,
+   "first_use_line_1based": 283,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 3,
+   "uses": [
+    [
+     283,
+     6
+    ],
+    [
+     290,
+     10
+    ],
+    [
+     292,
+     14
+    ]
+   ],
+   "decl_text": "  int v7; // edx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v8",
+   "type": "unsigned char * v8",
+   "decl_line_1based": 261,
+   "insert_line_1based": 299,
+   "first_use_line_1based": 299,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 5,
+   "uses": [
+    [
+     299,
+     4
+    ],
+    [
+     303,
+     64
+    ],
+    [
+     304,
+     43
+    ],
+    [
+     305,
+     16
+    ],
+    [
+     306,
+     6
+    ]
+   ],
+   "decl_text": "  unsigned char *v8; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v9",
+   "type": "int v9",
+   "decl_line_1based": 262,
+   "insert_line_1based": 300,
+   "first_use_line_1based": 300,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 4,
+   "uses": [
+    [
+     300,
+     4
+    ],
+    [
+     307,
+     23
+    ],
+    [
+     308,
+     8
+    ],
+    [
+     311,
+     11
+    ]
+   ],
+   "decl_text": "  int v9; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v10",
+   "type": "char v10",
+   "decl_line_1based": 263,
+   "insert_line_1based": 305,
+   "first_use_line_1based": 305,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     305,
+     6
+    ],
+    [
+     310,
+     36
+    ]
+   ],
+   "decl_text": "  char v10; // dl"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v11",
+   "type": "int v11",
+   "decl_line_1based": 264,
+   "insert_line_1based": 307,
+   "first_use_line_1based": 307,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 3,
+   "uses": [
+    [
+     307,
+     6
+    ],
+    [
+     309,
+     25
+    ],
+    [
+     310,
+     25
+    ]
+   ],
+   "decl_text": "  int v11; // ecx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v12",
+   "type": "ConvertClass * v12",
+   "decl_line_1based": 265,
+   "insert_line_1based": 316,
+   "first_use_line_1based": 316,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     316,
+     4
+    ],
+    [
+     317,
+     9
+    ],
+    [
+     318,
+     30
+    ]
+   ],
+   "decl_text": "  ConvertClass *v12; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v13",
+   "type": "unsigned int * v13",
+   "decl_line_1based": 266,
+   "insert_line_1based": 317,
+   "first_use_line_1based": 318,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     318,
+     6
+    ],
+    [
+     320,
+     6
+    ],
+    [
+     321,
+     25
+    ]
+   ],
+   "decl_text": "  unsigned int *v13; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v15",
+   "type": "int16_t v15",
+   "decl_line_1based": 267,
+   "insert_line_1based": 303,
+   "first_use_line_1based": 303,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 4,
+   "uses": [
+    [
+     303,
+     29
+    ],
+    [
+     303,
+     45
+    ],
+    [
+     304,
+     28
+    ],
+    [
+     309,
+     31
+    ]
+   ],
+   "decl_text": "  int16_t v15; // [esp+8h] [ebp-78h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v18",
+   "type": "int v18[3]",
+   "decl_line_1based": 269,
+   "insert_line_1based": 325,
+   "first_use_line_1based": 325,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 1,
+   "uses": [
+    [
+     325,
+     17
+    ]
+   ],
+   "decl_text": "  int v18[3]; // [esp+6Ch] [ebp-14h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/addr72_e4.cpp",
+   "func": "int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)",
+   "func_open_line": 257,
+   "func_close_line": 328,
+   "name": "v19",
+   "type": "int v19",
+   "decl_line_1based": 270,
+   "insert_line_1based": 324,
+   "first_use_line_1based": 324,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 1,
+   "uses": [
+    [
+     324,
+     2
+    ]
+   ],
+   "decl_text": "  int v19; // [esp+78h] [ebp-8h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v9",
+   "type": "int * v9",
+   "decl_line_1based": 1412,
+   "insert_line_1based": 1464,
+   "first_use_line_1based": 1464,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 4,
+   "uses": [
+    [
+     1464,
+     8
+    ],
+    [
+     1465,
+     15
+    ],
+    [
+     1466,
+     14
+    ],
+    [
+     1467,
+     14
+    ]
+   ],
+   "decl_text": "  int *v9; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v10",
+   "type": "int * v10",
+   "decl_line_1based": 1413,
+   "insert_line_1based": 1472,
+   "first_use_line_1based": 1472,
+   "d_ins": 6,
+   "min_depth_seen": 6,
+   "n_uses": 4,
+   "uses": [
+    [
+     1472,
+     10
+    ],
+    [
+     1473,
+     17
+    ],
+    [
+     1474,
+     16
+    ],
+    [
+     1475,
+     16
+    ]
+   ],
+   "decl_text": "  int *v10; // edx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v11",
+   "type": "int v11",
+   "decl_line_1based": 1414,
+   "insert_line_1based": 1436,
+   "first_use_line_1based": 1436,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 2,
+   "uses": [
+    [
+     1436,
+     4
+    ],
+    [
+     1437,
+     77
+    ]
+   ],
+   "decl_text": "  int v11; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v12",
+   "type": "int v12",
+   "decl_line_1based": 1415,
+   "insert_line_1based": 1437,
+   "first_use_line_1based": 1437,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     1437,
+     27
+    ],
+    [
+     1441,
+     33
+    ],
+    [
+     1442,
+     33
+    ]
+   ],
+   "decl_text": "  int v12; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v13",
+   "type": "int v13",
+   "decl_line_1based": 1416,
+   "insert_line_1based": 1440,
+   "first_use_line_1based": 1440,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     1440,
+     4
+    ],
+    [
+     1443,
+     76
+    ],
+    [
+     1443,
+     89
+    ]
+   ],
+   "decl_text": "  int v13; // ecx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v14",
+   "type": "int v14",
+   "decl_line_1based": 1417,
+   "insert_line_1based": 1428,
+   "first_use_line_1based": 1428,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 4,
+   "uses": [
+    [
+     1428,
+     2
+    ],
+    [
+     1432,
+     57
+    ],
+    [
+     1450,
+     4
+    ],
+    [
+     1452,
+     60
+    ]
+   ],
+   "decl_text": "  int v14; // [esp+Ch] [ebp-1Ch] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v15",
+   "type": "int v15",
+   "decl_line_1based": 1418,
+   "insert_line_1based": 1429,
+   "first_use_line_1based": 1429,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     1429,
+     2
+    ],
+    [
+     1458,
+     82
+    ]
+   ],
+   "decl_text": "  int v15; // [esp+10h] [ebp-18h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v16",
+   "type": "int v16",
+   "decl_line_1based": 1419,
+   "insert_line_1based": 1430,
+   "first_use_line_1based": 1430,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     1430,
+     2
+    ],
+    [
+     1433,
+     7
+    ]
+   ],
+   "decl_text": "  int v16; // [esp+14h] [ebp-14h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v17",
+   "type": "int v17",
+   "decl_line_1based": 1420,
+   "insert_line_1based": 1455,
+   "first_use_line_1based": 1455,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 7,
+   "uses": [
+    [
+     1455,
+     4
+    ],
+    [
+     1456,
+     9
+    ],
+    [
+     1457,
+     6
+    ],
+    [
+     1465,
+     8
+    ],
+    [
+     1468,
+     114
+    ],
+    [
+     1473,
+     10
+    ],
+    [
+     1479,
+     25
+    ]
+   ],
+   "decl_text": "  int v17; // [esp+18h] [ebp-10h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/AnimClass_e4.cpp",
+   "func": "int AnimClass_GetAnimation(int *a1, int a2)",
+   "func_open_line": 1410,
+   "func_close_line": 1490,
+   "name": "v19",
+   "type": "int v19",
+   "decl_line_1based": 1422,
+   "insert_line_1based": 1467,
+   "first_use_line_1based": 1467,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 2,
+   "uses": [
+    [
+     1467,
+     8
+    ],
+    [
+     1475,
+     10
+    ]
+   ],
+   "decl_text": "  int v19; // [esp+20h] [ebp-8h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/BlitTransXlatAlpha_e4.cpp",
+   "func": "int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * ",
+   "func_open_line": 124,
+   "func_close_line": 156,
+   "name": "result",
+   "type": "AbstractClass * result",
+   "decl_line_1based": 125,
+   "insert_line_1based": 134,
+   "first_use_line_1based": 134,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 3,
+   "uses": [
+    [
+     134,
+     2
+    ],
+    [
+     144,
+     74
+    ],
+    [
+     155,
+     15
+    ]
+   ],
+   "decl_text": "  AbstractClass * result;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/BlitTransXlatAlpha_e4.cpp",
+   "func": "int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * ",
+   "func_open_line": 124,
+   "func_close_line": 156,
+   "name": "v14",
+   "type": "int v14",
+   "decl_line_1based": 126,
+   "insert_line_1based": 137,
+   "first_use_line_1based": 137,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 4,
+   "uses": [
+    [
+     137,
+     4
+    ],
+    [
+     145,
+     8
+    ],
+    [
+     149,
+     31
+    ],
+    [
+     150,
+     39
+    ]
+   ],
+   "decl_text": "  int v14; // edi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/BlitTransXlatAlpha_e4.cpp",
+   "func": "int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * ",
+   "func_open_line": 124,
+   "func_close_line": 156,
+   "name": "v16",
+   "type": "uint8_t v16",
+   "decl_line_1based": 127,
+   "insert_line_1based": 141,
+   "first_use_line_1based": 141,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 3,
+   "uses": [
+    [
+     141,
+     6
+    ],
+    [
+     142,
+     11
+    ],
+    [
+     144,
+     54
+    ]
+   ],
+   "decl_text": "  uint8_t v16; // bl"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/BlitTransXlatAlpha_e4.cpp",
+   "func": "int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * ",
+   "func_open_line": 124,
+   "func_close_line": 156,
+   "name": "v17",
+   "type": "uint16_t * v17",
+   "decl_line_1based": 128,
+   "insert_line_1based": 138,
+   "first_use_line_1based": 138,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 4,
+   "uses": [
+    [
+     138,
+     4
+    ],
+    [
+     151,
+     6
+    ],
+    [
+     151,
+     33
+    ],
+    [
+     153,
+     12
+    ]
+   ],
+   "decl_text": "  uint16_t *v17; // [esp+20h] [ebp+18h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/Crypto_e4.cpp",
+   "func": "bool Crypto_Helper(unsigned int * a0, unsigned int * a1, unsigned int * a2, Crypto * aP3, int a5)",
+   "func_open_line": 12,
+   "func_close_line": 33,
+   "name": "v8",
+   "type": "Crypto * v8",
+   "decl_line_1based": 13,
+   "insert_line_1based": 22,
+   "first_use_line_1based": 22,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     22,
+     4
+    ],
+    [
+     23,
+     36
+    ],
+    [
+     24,
+     25
+    ]
+   ],
+   "decl_text": "  Crypto * v8;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/Debug_e4.cpp",
+   "func": "char Debug_Helper(ObjectClass * aP0)",
+   "func_open_line": 133,
+   "func_close_line": 164,
+   "name": "result",
+   "type": "ObjectClass * result",
+   "decl_line_1based": 134,
+   "insert_line_1based": 136,
+   "first_use_line_1based": 136,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     136,
+     2
+    ],
+    [
+     163,
+     16
+    ]
+   ],
+   "decl_text": "  ObjectClass * result;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "v56",
+   "type": "CellStruct * v56",
+   "decl_line_1based": 26,
+   "insert_line_1based": 39,
+   "first_use_line_1based": 39,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 15,
+   "uses": [
+    [
+     39,
+     2
+    ],
+    [
+     134,
+     18
+    ],
+    [
+     142,
+     4
+    ],
+    [
+     151,
+     8
+    ],
+    [
+     168,
+     9
+    ],
+    [
+     202,
+     22
+    ],
+    [
+     210,
+     9
+    ],
+    [
+     248,
+     22
+    ],
+    [
+     256,
+     9
+    ],
+    [
+     289,
+     22
+    ],
+    [
+     297,
+     9
+    ],
+    [
+     328,
+     22
+    ],
+    [
+     335,
+     4
+    ],
+    [
+     375,
+     20
+    ],
+    [
+     379,
+     6
+    ]
+   ],
+   "decl_text": "  CellStruct * v56;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "v57",
+   "type": "int v57",
+   "decl_line_1based": 27,
+   "insert_line_1based": 64,
+   "first_use_line_1based": 64,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 5,
+   "uses": [
+    [
+     64,
+     27
+    ],
+    [
+     64,
+     43
+    ],
+    [
+     65,
+     63
+    ],
+    [
+     68,
+     33
+    ],
+    [
+     68,
+     49
+    ]
+   ],
+   "decl_text": "  int v57; // [esp+18h] [ebp-398h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "v59",
+   "type": "unsigned int * v59",
+   "decl_line_1based": 29,
+   "insert_line_1based": 41,
+   "first_use_line_1based": 41,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 7,
+   "uses": [
+    [
+     41,
+     2
+    ],
+    [
+     337,
+     18
+    ],
+    [
+     370,
+     54
+    ],
+    [
+     384,
+     14
+    ],
+    [
+     389,
+     28
+    ],
+    [
+     391,
+     19
+    ],
+    [
+     421,
+     40
+    ]
+   ],
+   "decl_text": "  unsigned int *v59; // [esp+24h] [ebp-38Ch]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "v60",
+   "type": "int v60",
+   "decl_line_1based": 30,
+   "insert_line_1based": 63,
+   "first_use_line_1based": 63,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 2,
+   "uses": [
+    [
+     63,
+     4
+    ],
+    [
+     65,
+     39
+    ]
+   ],
+   "decl_text": "  int v60; // [esp+28h] [ebp-388h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "v61",
+   "type": "uint8_t * v61",
+   "decl_line_1based": 31,
+   "insert_line_1based": 37,
+   "first_use_line_1based": 37,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 3,
+   "uses": [
+    [
+     37,
+     2
+    ],
+    [
+     422,
+     19
+    ],
+    [
+     423,
+     9
+    ]
+   ],
+   "decl_text": "  uint8_t *v61; // [esp+2Ch] [ebp-384h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "v62",
+   "type": "char v62[128]",
+   "decl_line_1based": 32,
+   "insert_line_1based": 56,
+   "first_use_line_1based": 56,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     56,
+     4
+    ],
+    [
+     57,
+     14
+    ],
+    [
+     62,
+     61
+    ]
+   ],
+   "decl_text": "  char v62[128]; // [esp+30h] [ebp-380h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "Destination",
+   "type": "char Destination[128]",
+   "decl_line_1based": 33,
+   "insert_line_1based": 59,
+   "first_use_line_1based": 59,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 1,
+   "uses": [
+    [
+     59,
+     31
+    ]
+   ],
+   "decl_text": "  char Destination[128]; // [esp+B0h] [ebp-300h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "v64",
+   "type": "char v64[128]",
+   "decl_line_1based": 34,
+   "insert_line_1based": 61,
+   "first_use_line_1based": 61,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 1,
+   "uses": [
+    [
+     61,
+     30
+    ]
+   ],
+   "decl_text": "  char v64[128]; // [esp+130h] [ebp-280h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/LogMultiplayToSync_e4.cpp",
+   "func": "CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)",
+   "func_open_line": 22,
+   "func_close_line": 440,
+   "name": "Buffer",
+   "type": "char Buffer[512]",
+   "decl_line_1based": 35,
+   "insert_line_1based": 42,
+   "first_use_line_1based": 42,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     42,
+     10
+    ],
+    [
+     45,
+     13
+    ]
+   ],
+   "decl_text": "  char Buffer[512]; // [esp+1B0h] [ebp-200h] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/MultiplayerSiege_e4.cpp",
+   "func": "char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)",
+   "func_open_line": 313,
+   "func_close_line": 363,
+   "name": "v6",
+   "type": "void * v6",
+   "decl_line_1based": 314,
+   "insert_line_1based": 347,
+   "first_use_line_1based": 347,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 3,
+   "uses": [
+    [
+     347,
+     2
+    ],
+    [
+     348,
+     8
+    ],
+    [
+     350,
+     39
+    ]
+   ],
+   "decl_text": "  void * v6;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/MultiplayerSiege_e4.cpp",
+   "func": "char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)",
+   "func_open_line": 313,
+   "func_close_line": 363,
+   "name": "v7",
+   "type": "int * v7",
+   "decl_line_1based": 315,
+   "insert_line_1based": 350,
+   "first_use_line_1based": 350,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 8,
+   "uses": [
+    [
+     350,
+     2
+    ],
+    [
+     351,
+     2
+    ],
+    [
+     351,
+     7
+    ],
+    [
+     352,
+     8
+    ],
+    [
+     354,
+     8
+    ],
+    [
+     356,
+     7
+    ],
+    [
+     359,
+     34
+    ],
+    [
+     361,
+     2
+    ]
+   ],
+   "decl_text": "  int *v7; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/MultiplayerSiege_e4.cpp",
+   "func": "char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)",
+   "func_open_line": 313,
+   "func_close_line": 363,
+   "name": "v9",
+   "type": "int v9",
+   "decl_line_1based": 316,
+   "insert_line_1based": 354,
+   "first_use_line_1based": 354,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 1,
+   "uses": [
+    [
+     354,
+     2
+    ]
+   ],
+   "decl_text": "  int v9; // ebx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/MultiplayerSiege_e4.cpp",
+   "func": "char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)",
+   "func_open_line": 313,
+   "func_close_line": 363,
+   "name": "StartCoords",
+   "type": "unsigned int * StartCoords",
+   "decl_line_1based": 317,
+   "insert_line_1based": 355,
+   "first_use_line_1based": 355,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     355,
+     2
+    ],
+    [
+     356,
+     22
+    ]
+   ],
+   "decl_text": "  unsigned int *StartCoords; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/MultiplayerSiege_e4.cpp",
+   "func": "char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)",
+   "func_open_line": 313,
+   "func_close_line": 363,
+   "name": "CurrentOption",
+   "type": "int16_t * CurrentOption",
+   "decl_line_1based": 318,
+   "insert_line_1based": 358,
+   "first_use_line_1based": 358,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     358,
+     2
+    ],
+    [
+     359,
+     60
+    ]
+   ],
+   "decl_text": "  int16_t *CurrentOption; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/MultiplayerSiege_e4.cpp",
+   "func": "char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)",
+   "func_open_line": 313,
+   "func_close_line": 363,
+   "name": "v12",
+   "type": "unsigned int v12[3]",
+   "decl_line_1based": 319,
+   "insert_line_1based": 355,
+   "first_use_line_1based": 355,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 1,
+   "uses": [
+    [
+     355,
+     62
+    ]
+   ],
+   "decl_text": "  unsigned int v12[3]; // [esp+14h] [ebp-Ch] BYREF"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/RLEBlitTransZRemapXlatAlpha_e4.cpp",
+   "func": "unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlat",
+   "func_open_line": 16,
+   "func_close_line": 79,
+   "name": "v15",
+   "type": "RLEBlitTransZRemapXlatAlpha_ushort * v15",
+   "decl_line_1based": 17,
+   "insert_line_1based": 34,
+   "first_use_line_1based": 34,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 5,
+   "uses": [
+    [
+     34,
+     2
+    ],
+    [
+     44,
+     10
+    ],
+    [
+     46,
+     8
+    ],
+    [
+     48,
+     12
+    ],
+    [
+     49,
+     17
+    ]
+   ],
+   "decl_text": "  RLEBlitTransZRemapXlatAlpha_ushort * v15;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/RLEBlitTransZRemapXlatAlpha_e4.cpp",
+   "func": "unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlat",
+   "func_open_line": 16,
+   "func_close_line": 79,
+   "name": "v17",
+   "type": "int v17",
+   "decl_line_1based": 18,
+   "insert_line_1based": 49,
+   "first_use_line_1based": 49,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 4,
+   "uses": [
+    [
+     49,
+     4
+    ],
+    [
+     50,
+     15
+    ],
+    [
+     51,
+     16
+    ],
+    [
+     52,
+     17
+    ]
+   ],
+   "decl_text": "  int v17; // edx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/RLEBlitTransZRemapXlatAlpha_e4.cpp",
+   "func": "unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlat",
+   "func_open_line": 16,
+   "func_close_line": 79,
+   "name": "v19",
+   "type": "uint8_t v19",
+   "decl_line_1based": 20,
+   "insert_line_1based": 58,
+   "first_use_line_1based": 58,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     58,
+     4
+    ],
+    [
+     59,
+     9
+    ],
+    [
+     62,
+     16
+    ]
+   ],
+   "decl_text": "  uint8_t v19; // dl"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/RLEBlitTransZRemapXlatAlpha_e4.cpp",
+   "func": "unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlat",
+   "func_open_line": 16,
+   "func_close_line": 79,
+   "name": "v20",
+   "type": "uint8_t v20",
+   "decl_line_1based": 21,
+   "insert_line_1based": 69,
+   "first_use_line_1based": 69,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 3,
+   "uses": [
+    [
+     69,
+     6
+    ],
+    [
+     70,
+     13
+    ],
+    [
+     71,
+     16
+    ]
+   ],
+   "decl_text": "  uint8_t v20; // dl"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/RLEBlitTransZRemapXlatAlpha_e4.cpp",
+   "func": "unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlat",
+   "func_open_line": 16,
+   "func_close_line": 79,
+   "name": "v21",
+   "type": "int v21",
+   "decl_line_1based": 22,
+   "insert_line_1based": 71,
+   "first_use_line_1based": 71,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 3,
+   "uses": [
+    [
+     71,
+     6
+    ],
+    [
+     72,
+     14
+    ],
+    [
+     73,
+     45
+    ]
+   ],
+   "decl_text": "  int v21; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/RLEBlitTransZRemapXlatAlpha_e4.cpp",
+   "func": "unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlat",
+   "func_open_line": 16,
+   "func_close_line": 79,
+   "name": "v22",
+   "type": "int v22",
+   "decl_line_1based": 23,
+   "insert_line_1based": 62,
+   "first_use_line_1based": 62,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     62,
+     6
+    ],
+    [
+     65,
+     76
+    ]
+   ],
+   "decl_text": "  int v22; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/RLEBlitTransZRemapXlatAlpha_e4.cpp",
+   "func": "unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlat",
+   "func_open_line": 16,
+   "func_close_line": 79,
+   "name": "v23",
+   "type": "int v23",
+   "decl_line_1based": 24,
+   "insert_line_1based": 33,
+   "first_use_line_1based": 33,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     33,
+     2
+    ],
+    [
+     62,
+     37
+    ]
+   ],
+   "decl_text": "  int v23; // [esp+18h] [ebp+4h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/RLEBlitTransZRemapXlatAlpha_e4.cpp",
+   "func": "unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlat",
+   "func_open_line": 16,
+   "func_close_line": 79,
+   "name": "v24",
+   "type": "uint8_t * v24",
+   "decl_line_1based": 25,
+   "insert_line_1based": 28,
+   "first_use_line_1based": 28,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 2,
+   "uses": [
+    [
+     28,
+     2
+    ],
+    [
+     62,
+     12
+    ]
+   ],
+   "decl_text": "  uint8_t *v24; // [esp+1Ch] [ebp+8h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v10",
+   "type": "void * v10",
+   "decl_line_1based": 226,
+   "insert_line_1based": 271,
+   "first_use_line_1based": 271,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 15,
+   "uses": [
+    [
+     271,
+     4
+    ],
+    [
+     272,
+     9
+    ],
+    [
+     274,
+     24
+    ],
+    [
+     275,
+     24
+    ],
+    [
+     276,
+     24
+    ],
+    [
+     277,
+     23
+    ],
+    [
+     278,
+     24
+    ],
+    [
+     279,
+     30
+    ],
+    [
+     280,
+     23
+    ],
+    [
+     284,
+     6
+    ],
+    [
+     286,
+     22
+    ],
+    [
+     287,
+     81
+    ],
+    [
+     288,
+     9
+    ],
+    [
+     289,
+     31
+    ],
+    [
+     289,
+     36
+    ]
+   ],
+   "decl_text": "  void * v10;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v11",
+   "type": "int v11",
+   "decl_line_1based": 227,
+   "insert_line_1based": 290,
+   "first_use_line_1based": 290,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 4,
+   "uses": [
+    [
+     290,
+     4
+    ],
+    [
+     299,
+     6
+    ],
+    [
+     308,
+     15
+    ],
+    [
+     325,
+     15
+    ]
+   ],
+   "decl_text": "  int v11; // ebx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v12",
+   "type": "int v12",
+   "decl_line_1based": 228,
+   "insert_line_1based": 291,
+   "first_use_line_1based": 291,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 4,
+   "uses": [
+    [
+     291,
+     4
+    ],
+    [
+     300,
+     6
+    ],
+    [
+     309,
+     15
+    ],
+    [
+     327,
+     15
+    ]
+   ],
+   "decl_text": "  int v12; // ebp"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "Viewport",
+   "type": "int * Viewport",
+   "decl_line_1based": 229,
+   "insert_line_1based": 296,
+   "first_use_line_1based": 296,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 5,
+   "uses": [
+    [
+     296,
+     6
+    ],
+    [
+     297,
+     16
+    ],
+    [
+     298,
+     15
+    ],
+    [
+     299,
+     13
+    ],
+    [
+     300,
+     13
+    ]
+   ],
+   "decl_text": "  int *Viewport; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v14",
+   "type": "ConvertClass * v14",
+   "decl_line_1based": 230,
+   "insert_line_1based": 304,
+   "first_use_line_1based": 304,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 3,
+   "uses": [
+    [
+     304,
+     6
+    ],
+    [
+     305,
+     11
+    ],
+    [
+     306,
+     26
+    ]
+   ],
+   "decl_text": "  ConvertClass *v14; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v15",
+   "type": "void * v15",
+   "decl_line_1based": 231,
+   "insert_line_1based": 307,
+   "first_use_line_1based": 307,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     307,
+     6
+    ],
+    [
+     310,
+     39
+    ]
+   ],
+   "decl_text": "  void * v15;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v16",
+   "type": "unsigned int * v16",
+   "decl_line_1based": 232,
+   "insert_line_1based": 311,
+   "first_use_line_1based": 311,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     311,
+     6
+    ],
+    [
+     312,
+     39
+    ]
+   ],
+   "decl_text": "  unsigned int *v16; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v17",
+   "type": "int v17",
+   "decl_line_1based": 233,
+   "insert_line_1based": 318,
+   "first_use_line_1based": 318,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     318,
+     6
+    ],
+    [
+     320,
+     15
+    ]
+   ],
+   "decl_text": "  int v17; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v18",
+   "type": "int v18",
+   "decl_line_1based": 234,
+   "insert_line_1based": 319,
+   "first_use_line_1based": 319,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     319,
+     6
+    ],
+    [
+     321,
+     32
+    ]
+   ],
+   "decl_text": "  int v18; // edx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v19",
+   "type": "int v19",
+   "decl_line_1based": 235,
+   "insert_line_1based": 321,
+   "first_use_line_1based": 321,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     321,
+     6
+    ],
+    [
+     323,
+     12
+    ]
+   ],
+   "decl_text": "  int v19; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v20",
+   "type": "int v20",
+   "decl_line_1based": 236,
+   "insert_line_1based": 322,
+   "first_use_line_1based": 322,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     322,
+     6
+    ],
+    [
+     328,
+     66
+    ]
+   ],
+   "decl_text": "  int v20; // edx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v21",
+   "type": "void * v21",
+   "decl_line_1based": 237,
+   "insert_line_1based": 326,
+   "first_use_line_1based": 326,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     326,
+     6
+    ],
+    [
+     331,
+     32
+    ]
+   ],
+   "decl_text": "  void * v21;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v22",
+   "type": "int v22",
+   "decl_line_1based": 238,
+   "insert_line_1based": 328,
+   "first_use_line_1based": 328,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     328,
+     6
+    ],
+    [
+     329,
+     33
+    ]
+   ],
+   "decl_text": "  int v22; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v23",
+   "type": "int v23",
+   "decl_line_1based": 239,
+   "insert_line_1based": 329,
+   "first_use_line_1based": 329,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     329,
+     6
+    ],
+    [
+     330,
+     122
+    ]
+   ],
+   "decl_text": "  int v23; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v24",
+   "type": "int v24",
+   "decl_line_1based": 240,
+   "insert_line_1based": 330,
+   "first_use_line_1based": 330,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     330,
+     6
+    ],
+    [
+     331,
+     47
+    ]
+   ],
+   "decl_text": "  int v24; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 225,
+   "func_close_line": 340,
+   "name": "v26",
+   "type": "int v26",
+   "decl_line_1based": 241,
+   "insert_line_1based": 310,
+   "first_use_line_1based": 310,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     310,
+     6
+    ],
+    [
+     312,
+     54
+    ]
+   ],
+   "decl_text": "  int v26; // [esp-10h] [ebp-F0h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/Team_e4.cpp",
+   "func": "rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)",
+   "func_open_line": 669,
+   "func_close_line": 694,
+   "name": "v4",
+   "type": "void * v4",
+   "decl_line_1based": 670,
+   "insert_line_1based": 674,
+   "first_use_line_1based": 674,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 7,
+   "uses": [
+    [
+     674,
+     2
+    ],
+    [
+     675,
+     13
+    ],
+    [
+     676,
+     7
+    ],
+    [
+     678,
+     26
+    ],
+    [
+     679,
+     22
+    ],
+    [
+     680,
+     21
+    ],
+    [
+     681,
+     35
+    ]
+   ],
+   "decl_text": "  void * v4;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/Team_e4.cpp",
+   "func": "rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)",
+   "func_open_line": 669,
+   "func_close_line": 694,
+   "name": "v5",
+   "type": "int v5",
+   "decl_line_1based": 671,
+   "insert_line_1based": 675,
+   "first_use_line_1based": 675,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 5,
+   "uses": [
+    [
+     675,
+     2
+    ],
+    [
+     683,
+     17
+    ],
+    [
+     684,
+     21
+    ],
+    [
+     688,
+     4
+    ],
+    [
+     692,
+     18
+    ]
+   ],
+   "decl_text": "  int v5; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/Team_e4.cpp",
+   "func": "rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)",
+   "func_open_line": 669,
+   "func_close_line": 694,
+   "name": "v6",
+   "type": "unsigned int * v6",
+   "decl_line_1based": 672,
+   "insert_line_1based": 678,
+   "first_use_line_1based": 678,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 2,
+   "uses": [
+    [
+     678,
+     4
+    ],
+    [
+     682,
+     5
+    ]
+   ],
+   "decl_text": "  unsigned int *v6; // edi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/Team_e4.cpp",
+   "func": "rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)",
+   "func_open_line": 700,
+   "func_close_line": 725,
+   "name": "v4",
+   "type": "void * v4",
+   "decl_line_1based": 701,
+   "insert_line_1based": 705,
+   "first_use_line_1based": 705,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 7,
+   "uses": [
+    [
+     705,
+     2
+    ],
+    [
+     706,
+     13
+    ],
+    [
+     707,
+     7
+    ],
+    [
+     709,
+     26
+    ],
+    [
+     710,
+     22
+    ],
+    [
+     711,
+     21
+    ],
+    [
+     712,
+     35
+    ]
+   ],
+   "decl_text": "  void * v4;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/Team_e4.cpp",
+   "func": "rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)",
+   "func_open_line": 700,
+   "func_close_line": 725,
+   "name": "v5",
+   "type": "int v5",
+   "decl_line_1based": 702,
+   "insert_line_1based": 706,
+   "first_use_line_1based": 706,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 5,
+   "uses": [
+    [
+     706,
+     2
+    ],
+    [
+     714,
+     17
+    ],
+    [
+     715,
+     21
+    ],
+    [
+     719,
+     4
+    ],
+    [
+     723,
+     18
+    ]
+   ],
+   "decl_text": "  int v5; // esi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/Team_e4.cpp",
+   "func": "rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)",
+   "func_open_line": 700,
+   "func_close_line": 725,
+   "name": "v6",
+   "type": "unsigned int * v6",
+   "decl_line_1based": 703,
+   "insert_line_1based": 709,
+   "first_use_line_1based": 709,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 2,
+   "uses": [
+    [
+     709,
+     4
+    ],
+    [
+     713,
+     5
+    ]
+   ],
+   "decl_text": "  unsigned int *v6; // edi"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v5",
+   "type": "ObjectClass * v5",
+   "decl_line_1based": 663,
+   "insert_line_1based": 687,
+   "first_use_line_1based": 687,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 6,
+   "uses": [
+    [
+     687,
+     2
+    ],
+    [
+     707,
+     56
+    ],
+    [
+     707,
+     69
+    ],
+    [
+     743,
+     16
+    ],
+    [
+     762,
+     25
+    ],
+    [
+     762,
+     45
+    ]
+   ],
+   "decl_text": "  ObjectClass * v5;"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v6",
+   "type": "int v6",
+   "decl_line_1based": 664,
+   "insert_line_1based": 688,
+   "first_use_line_1based": 688,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 8,
+   "uses": [
+    [
+     688,
+     2
+    ],
+    [
+     690,
+     8
+    ],
+    [
+     691,
+     7
+    ],
+    [
+     693,
+     10
+    ],
+    [
+     695,
+     6
+    ],
+    [
+     713,
+     15
+    ],
+    [
+     715,
+     18
+    ],
+    [
+     737,
+     16
+    ]
+   ],
+   "decl_text": "  int v6; // ebx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v7",
+   "type": "int16_t v7",
+   "decl_line_1based": 665,
+   "insert_line_1based": 704,
+   "first_use_line_1based": 704,
+   "d_ins": 5,
+   "min_depth_seen": 5,
+   "n_uses": 8,
+   "uses": [
+    [
+     704,
+     8
+    ],
+    [
+     726,
+     16
+    ],
+    [
+     726,
+     21
+    ],
+    [
+     731,
+     49
+    ],
+    [
+     734,
+     102
+    ],
+    [
+     738,
+     45
+    ],
+    [
+     741,
+     16
+    ],
+    [
+     747,
+     23
+    ]
+   ],
+   "decl_text": "  int16_t v7; // di"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v8",
+   "type": "int v8",
+   "decl_line_1based": 666,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 707,
+   "d_ins": 6,
+   "min_depth_seen": 6,
+   "n_uses": 2,
+   "uses": [
+    [
+     707,
+     10
+    ],
+    [
+     716,
+     47
+    ]
+   ],
+   "decl_text": "  int v8; // ecx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v9",
+   "type": "int v9",
+   "decl_line_1based": 667,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 708,
+   "d_ins": 6,
+   "min_depth_seen": 6,
+   "n_uses": 3,
+   "uses": [
+    [
+     708,
+     10
+    ],
+    [
+     709,
+     26
+    ],
+    [
+     711,
+     22
+    ]
+   ],
+   "decl_text": "  int v9; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v10",
+   "type": "unsigned short * v10",
+   "decl_line_1based": 668,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 716,
+   "d_ins": 6,
+   "min_depth_seen": 7,
+   "n_uses": 7,
+   "uses": [
+    [
+     716,
+     12
+    ],
+    [
+     718,
+     18
+    ],
+    [
+     725,
+     23
+    ],
+    [
+     739,
+     16
+    ],
+    [
+     747,
+     17
+    ],
+    [
+     749,
+     16
+    ],
+    [
+     752,
+     20
+    ]
+   ],
+   "decl_text": "  unsigned short *v10; // ecx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v11",
+   "type": "int v11",
+   "decl_line_1based": 669,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 717,
+   "d_ins": 6,
+   "min_depth_seen": 7,
+   "n_uses": 3,
+   "uses": [
+    [
+     717,
+     12
+    ],
+    [
+     724,
+     22
+    ],
+    [
+     750,
+     14
+    ]
+   ],
+   "decl_text": "  int v11; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v12",
+   "type": "uint8_t v12",
+   "decl_line_1based": 670,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 724,
+   "d_ins": 6,
+   "min_depth_seen": 9,
+   "n_uses": 7,
+   "uses": [
+    [
+     724,
+     16
+    ],
+    [
+     727,
+     16
+    ],
+    [
+     727,
+     22
+    ],
+    [
+     728,
+     43
+    ],
+    [
+     731,
+     18
+    ],
+    [
+     734,
+     18
+    ],
+    [
+     738,
+     28
+    ]
+   ],
+   "decl_text": "  uint8_t v12; // al"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v13",
+   "type": "int16_t v13",
+   "decl_line_1based": 671,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 725,
+   "d_ins": 6,
+   "min_depth_seen": 9,
+   "n_uses": 4,
+   "uses": [
+    [
+     725,
+     16
+    ],
+    [
+     730,
+     52
+    ],
+    [
+     733,
+     105
+    ],
+    [
+     735,
+     60
+    ]
+   ],
+   "decl_text": "  int16_t v13; // si"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v14",
+   "type": "unsigned int v14",
+   "decl_line_1based": 672,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 729,
+   "d_ins": 6,
+   "min_depth_seen": 9,
+   "n_uses": 4,
+   "uses": [
+    [
+     729,
+     16
+    ],
+    [
+     740,
+     39
+    ],
+    [
+     740,
+     54
+    ],
+    [
+     742,
+     36
+    ]
+   ],
+   "decl_text": "  unsigned int v14; // ebp"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v15",
+   "type": "int16_t v15",
+   "decl_line_1based": 673,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 732,
+   "d_ins": 6,
+   "min_depth_seen": 9,
+   "n_uses": 2,
+   "uses": [
+    [
+     732,
+     16
+    ],
+    [
+     740,
+     48
+    ]
+   ],
+   "decl_text": "  int16_t v15; // di"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v16",
+   "type": "int v16",
+   "decl_line_1based": 674,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 735,
+   "d_ins": 6,
+   "min_depth_seen": 9,
+   "n_uses": 2,
+   "uses": [
+    [
+     735,
+     16
+    ],
+    [
+     738,
+     22
+    ]
+   ],
+   "decl_text": "  int v16; // ecx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v17",
+   "type": "unsigned int v17",
+   "decl_line_1based": 675,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 738,
+   "d_ins": 6,
+   "min_depth_seen": 9,
+   "n_uses": 2,
+   "uses": [
+    [
+     738,
+     16
+    ],
+    [
+     742,
+     24
+    ]
+   ],
+   "decl_text": "  unsigned int v17; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v18",
+   "type": "bool v18",
+   "decl_line_1based": 676,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 751,
+   "d_ins": 6,
+   "min_depth_seen": 7,
+   "n_uses": 2,
+   "uses": [
+    [
+     751,
+     14
+    ],
+    [
+     756,
+     21
+    ]
+   ],
+   "decl_text": "  bool v18; // zf"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v19",
+   "type": "int v19",
+   "decl_line_1based": 677,
+   "insert_line_1based": 689,
+   "first_use_line_1based": 689,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 4,
+   "uses": [
+    [
+     689,
+     2
+    ],
+    [
+     710,
+     12
+    ],
+    [
+     712,
+     12
+    ],
+    [
+     722,
+     19
+    ]
+   ],
+   "decl_text": "  int v19; // [esp+Ch] [ebp-24h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v20",
+   "type": "int v20",
+   "decl_line_1based": 678,
+   "insert_line_1based": 690,
+   "first_use_line_1based": 690,
+   "d_ins": 2,
+   "min_depth_seen": 2,
+   "n_uses": 3,
+   "uses": [
+    [
+     690,
+     2
+    ],
+    [
+     696,
+     6
+    ],
+    [
+     737,
+     21
+    ]
+   ],
+   "decl_text": "  int v20; // [esp+10h] [ebp-20h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v21",
+   "type": "unsigned short * v21",
+   "decl_line_1based": 679,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 718,
+   "d_ins": 6,
+   "min_depth_seen": 7,
+   "n_uses": 4,
+   "uses": [
+    [
+     718,
+     12
+    ],
+    [
+     739,
+     22
+    ],
+    [
+     742,
+     17
+    ],
+    [
+     752,
+     14
+    ]
+   ],
+   "decl_text": "  unsigned short *v21; // [esp+14h] [ebp-1Ch]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v22",
+   "type": "int v22",
+   "decl_line_1based": 680,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 719,
+   "d_ins": 6,
+   "min_depth_seen": 7,
+   "n_uses": 3,
+   "uses": [
+    [
+     719,
+     12
+    ],
+    [
+     750,
+     20
+    ],
+    [
+     753,
+     14
+    ]
+   ],
+   "decl_text": "  int v22; // [esp+18h] [ebp-18h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v23",
+   "type": "int v23",
+   "decl_line_1based": 681,
+   "insert_line_1based": 707,
+   "first_use_line_1based": 715,
+   "d_ins": 6,
+   "min_depth_seen": 7,
+   "n_uses": 3,
+   "uses": [
+    [
+     715,
+     12
+    ],
+    [
+     751,
+     20
+    ],
+    [
+     754,
+     16
+    ]
+   ],
+   "decl_text": "  int v23; // [esp+1Ch] [ebp-14h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v24",
+   "type": "int v24",
+   "decl_line_1based": 682,
+   "insert_line_1based": 698,
+   "first_use_line_1based": 698,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 3,
+   "uses": [
+    [
+     698,
+     4
+    ],
+    [
+     699,
+     9
+    ],
+    [
+     716,
+     37
+    ]
+   ],
+   "decl_text": "  int v24; // [esp+20h] [ebp-10h]"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/UI_e4.cpp",
+   "func": "void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)",
+   "func_open_line": 662,
+   "func_close_line": 765,
+   "name": "v28",
+   "type": "int v28",
+   "decl_line_1based": 683,
+   "insert_line_1based": 701,
+   "first_use_line_1based": 701,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 6,
+   "uses": [
+    [
+     701,
+     6
+    ],
+    [
+     707,
+     22
+    ],
+    [
+     709,
+     15
+    ],
+    [
+     711,
+     15
+    ],
+    [
+     758,
+     12
+    ],
+    [
+     760,
+     16
+    ]
+   ],
+   "decl_text": "  int v28; // [esp+38h] [ebp+8h]"
+  }
+ ]
+}
