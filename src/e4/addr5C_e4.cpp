@@ -61,7 +61,7 @@
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Destructor(AudioStream *p_this); }  // x4:ida@0x402550
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { unsigned int * sub_5CD690(int int *a2); }  // w18j2 raw 0x005CD690
+namespace gamemd { unsigned int * sub_5CD690(int *a2); }  // w18j2 raw 0x005CD690
 namespace MultiplayerTeam { int Destructor(AudioStream *p_this); }  // x4:ida@0x402550
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_5D30C0(int p0, int p1, int p2); }  // x4:signals@0x5d30c0

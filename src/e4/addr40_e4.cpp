@@ -2312,7 +2312,7 @@ void ReadAudioStream(AudioStream * aP0, int a2)
 }
 // 0x4093F0
 namespace gamemd {
-void long sub_4093F0()
+long long sub_4093F0()
 {
   int v1; // esi
   int v2; // edi

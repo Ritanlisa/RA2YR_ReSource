@@ -1630,7 +1630,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
 }
 // 0x4A6CF0
 namespace gamemd {
-long long long Direction_InitOffsets()
+long long Direction_InitOffsets()
 {
 
   double v0; // st7

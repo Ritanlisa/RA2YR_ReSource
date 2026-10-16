@@ -8,13 +8,18 @@
 #include "core/utility_ext.hpp"  // G42.55 closure (Count)
 #include "core/utility_ext.hpp"  // G42.55 closure (ReferenceCounted)
 
-// X25: forward declarations for X10-supplied member pointer types
-class CampaignClass;
-class LineTrail;
-class AudioController;
-class Coord;
-class rc_ptr_base;
-class VectorClass;
+// X45: fwd block owned by tools/csp_export/gen_x45_gap2_fwds.py (was: X25 bare fwds)
+// BANK rationale: sole defining header = csp_canon/classes.hpp; including it here
+// collides with core/utility_ext.hpp (gamemd::HashTable + gamemd::ReferenceCounted
+// defined in both -> C2011).  All banked uses are pointer-form (incomplete type ok).
+class CampaignClass;    // x45 BANK: classes.hpp:8555
+class LineTrail;        // x45 BANK: classes.hpp:30821
+class AudioController;  // x45 BANK: classes.hpp:7038
+class Coord;            // x45 BANK: classes.hpp:9584
+class rc_ptr_base;      // x45 BANK: classes.hpp:49078
+class VectorClass;      // x45 BANK: core/vector.hpp def is template<class T> (C2955 on
+                        //   bare `VectorClass *` member use); plain-class def only in
+                        //   colliding classes.hpp:44541 -- same blocker as above
 
 // ---- IDA atom typedefs (this TU standalone) ----
 #ifndef G22_GAP2_IDA_ATOMS
@@ -75,20 +80,14 @@ namespace ra2 { namespace game { class BuildingTypeClass; } }
 // G57w10: using ::ra2::game::ObjectClass removed -- native gamemd::ObjectClass definition collides (C2874)
 namespace gamemd { using ::ra2::game::BuildingTypeClass; }
 
-struct RandomStruct;
-struct ILocomotion;
-struct DynamicVectorClass_uint;
+// x45 BANK: sole defining header = csp_canon/classes.hpp (C2011 blocker, see block 1)
+struct RandomStruct;  // x45 BANK: classes.hpp:36893 (load-bearing: 1 ptr use in gap2_global_defs.cpp)
+#include <unknwn.h>  // x45: IUnknown <- Windows COM base (was bare fwd)
 namespace ra2 { namespace game { class ObjectClass; } }
-struct Block;
-struct Destination;
-struct ExceptionInfo;
-struct FileName;
-struct IUnknown;
-struct Source;
-struct Src;
-struct String;
-struct String1;
-struct exception;
+struct String;  // x45 BANK: classes.hpp:39682 (load-bearing: 49 ptr uses in gap2_global_defs.cpp)
+// x45 DELETE: ILocomotion/DynamicVectorClass_uint/exception (stale, 0 uses);
+//   Block/Destination/ExceptionInfo/FileName/Source/Src/String1 (g22 emitter
+//   false positives -- parameter names, not types).  Evidence: fwd_replacement_ledger.json
 
 namespace gamemd {
     struct Gap2Recv_402F60 {

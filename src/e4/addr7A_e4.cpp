@@ -53,16 +53,16 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { unsigned int * sub_7B0490(unsigned int *this); }  // w18j2 raw 0x007B0490
-namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+namespace gamemd { char * sub_765410(char *a2); }  // w18j2 raw 0x00765410
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+namespace gamemd { char * sub_765410(char *a2); }  // w18j2 raw 0x00765410
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+namespace gamemd { char * sub_765410(char *a2); }  // w18j2 raw 0x00765410
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+namespace gamemd { char * sub_765410(char *a2); }  // w18j2 raw 0x00765410
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Team_Start_7AF500(OwnerDrawControl *p_this); }  // x4:ida@0x7af500
-namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+namespace gamemd { char * sub_765410(char *a2); }  // w18j2 raw 0x00765410
 namespace gamemd { int Team_Start_764FA0(ObjectClass *p_this); }  // x4:ida@0x764fa0
 namespace gamemd { int Team_Start_597430(ObjectClass *p_this); }  // x4:ida@0x597430
 // [w16g4] C3861 supply (raw call-form evidence)

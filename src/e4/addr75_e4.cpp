@@ -82,7 +82,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/MovieClass_e4.hpp"  // w18j2 C3861 MovieClass:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { BOOL sub_75A120(int int a2, int *a3, int a4); }  // w18j2 raw 0x0075A120
+namespace gamemd { BOOL sub_75A120(int a2, int *a3, int a4); }  // w18j2 raw 0x0075A120
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int RenderLoop(int p0, int p1, int p2); }  // x4:signals@0x432e40
 // [w14e3] vocab extender (raw call-form evidence)

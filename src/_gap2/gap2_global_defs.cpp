@@ -46,7 +46,7 @@ namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, unsigned int *a2, co
 namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
 namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char RenderBuildingTag(int int a2, int a3, int a4, int a5, int a6); }  // w18j2 raw 0x00430250
+namespace gamemd { char RenderBuildingTag(int a2, int a3, int a4, int a5, int a6); }  // w18j2 raw 0x00430250
 namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, unsigned int *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
 namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
 namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0

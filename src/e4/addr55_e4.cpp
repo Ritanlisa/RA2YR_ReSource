@@ -62,7 +62,7 @@
 #include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Theme_e4.hpp"  // G42.36 C2027 supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_5581A0(int int a2); }  // w18j2 raw 0x005581A0
+namespace gamemd { int sub_5581A0(int a2); }  // w18j2 raw 0x005581A0
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_22(); }  // w18j2 raw 0x005512C0
 // [w16g4] C3861 supply (raw call-form evidence)
