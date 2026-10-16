@@ -69,8 +69,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
 
   int v4; // eax
 
-  int v1; // ebp
-  v1 = 0; /*0x6b4dde*/
+  int v1 = 0; // ebp /*0x6b4dde*/
   char *v9; // [esp+18h] [ebp-90h]
   v9 = (char *)(this); /*0x6b4de3*/
   INIClass::ClearSection((int)this, (int)unk_81732C, 0); /*0x6b4de7*/
@@ -78,22 +77,22 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
   {
-  int i; // edi
+    int i; // edi
     for ( i = 0; i < 512; ++i ) /*0x6b4df0*/
     {
-  __int16 v8[2]; // [esp+14h] [ebp-94h] BYREF
+      __int16 v8[2]; // [esp+14h] [ebp-94h] BYREF
       v8[0] = i; /*0x6b4df6*/
       v8[1] = v1; /*0x6b4e01*/
-  unsigned int *v3; // esi
+      unsigned int *v3; // esi
       v3 = (unsigned int *)((&dword_87F7E8)->To_CellObj(v8)); /*0x6b4e0b*/
       v4 = v3->u32_48; /*0x6b4e0d*/
       if ( v4 != -1 && !v3->u8_11F ) /*0x6b4e15*/
       {
-  int v5; // ebx
+        int v5; // ebx
         v5 = *((unsigned int *)dword_A8EC1C + v4); /*0x6b4e29*/
-  char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
+        char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
         sprintf(Buffer, "%d", v7); /*0x6b4e37*/
-  char Source[128]; // [esp+28h] [ebp-80h] BYREF
+        char Source[128]; // [esp+28h] [ebp-80h] BYREF
         sprintf(Source, "%s,%d,%d,%d", (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
         LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)unk_81732C, Buffer, Source); /*0x6b4e71*/
         ++v7; /*0x6b4e76*/
@@ -173,7 +172,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
   v5 = 0; /*0x74723d*/
   if ( v3 <= 0 ) /*0x747241*/
   {
-  LABEL_11:
+    LABEL_11:
     v5 = -1; /*0x747255*/
   }
   else
@@ -228,13 +227,11 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
   (((unsigned char *)&(v7))[1]) = 0; /*0x7474fe*/
   unsigned int v13[3]; // [esp+4h] [ebp-Ch] BYREF
   v13[2] = 0; /*0x747503*/
-  unsigned int v9; // eax
-  v9 = v7 | v8; /*0x74750b*/
+  unsigned int v9 = v7 | v8; // eax /*0x74750b*/
   int v10; // ecx
   v10 = (a2[1] << 8) + 128; /*0x747527*/
   v13[0] = (*a2 << 8) + 128; /*0x74752e*/
-  int v11; // edx
-  v11 = *v5; /*0x747532*/
+  int v11 = *v5; // edx /*0x747532*/
   v13[1] = v10; /*0x747534*/
   return v5->COMStub_54(v13, (uint8_t)(((v9 >> 7) + 1) >> 1)); /*0x74754d*/
 }
@@ -259,16 +256,14 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   bool v34; // cc
 
   BuildingClass *v3; // ecx
-  BuildingClass *v4; // edi
-  v4 = v3; /*0x74762f*/
+  BuildingClass *v4 = v3; // edi /*0x74762f*/
   BuildingClass *v83; // [esp+10h] [ebp-138h]
   v83 = v3; /*0x747633*/
   INIClass::ResetSection(); /*0x747637*/
   uint8_t ***v79; // [esp+0h] [ebp-148h]
   if ( !(uint8_t)ObjectTypeClass::LoadExtras((TechnoTypeClass *)this, a2, v79) ) /*0x74763f*/
     return 0; /*0x747ea0*/
-  uint8_t *p_occupant; // ebp
-  p_occupant = &v4->u32_11F; /*0x747654*/
+  uint8_t *p_occupant = &v4->u32_11F; // ebp /*0x747654*/
   v4[1].__pad_6B8[21] = INIClass::ReadBool_Overwrite( /*0x747665*/
                           (int *)this,
                           (uint8_t *)&v4->occupant,
@@ -348,9 +343,9 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   int ProductionTimer_low; // [esp-Ch] [ebp-154h]
   ProductionTimer_low = (*((signed char *)&(v4[1].ProductionTimer))); /*0x7477df*/
   v4[1].__pad_6B8[29] = v16; /*0x7477eb*/
-    (*((unsigned char *)&(v4[1].ProductionTimer))) = INIClass::ReadInt_Overwrite( /*0x7477f6*/                                     (bool *)&DataGlobal_887180,                                     &v4->u32_11F,(uint8_t *)(aWalkframes),                                     ProductionTimer_low);
+  (*((unsigned char *)&(v4[1].ProductionTimer))) = INIClass::ReadInt_Overwrite( /*0x7477f6*/                                     (bool *)&DataGlobal_887180,                                     &v4->u32_11F,(uint8_t *)(aWalkframes),                                     ProductionTimer_low);
   char Int_Overwrite; // al
-    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74780f*/                     (bool *)&DataGlobal_887180,                     &v4->u32_11F,(uint8_t *)(aFiringframes),                     (*(((signed char *)&(v4[1].ProductionTimer)) + 1)));
+  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74780f*/                     (bool *)&DataGlobal_887180,                     &v4->u32_11F,(uint8_t *)(aFiringframes),                     (*(((signed char *)&(v4[1].ProductionTimer)) + 1)));
   char v18; // cl
   v18 = v4[1].__pad_6B8[20]; /*0x747814*/
   (((unsigned char *)&(v4[1].ProductionTimer))[1]) = Int_Overwrite; /*0x74781a*/
@@ -387,20 +382,20 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   if ( (*(((signed char *)&(v4[1].ProductionTimer)) + 1)) > 0 ) /*0x7478be*/
     *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC = 1; /*0x7478c0*/
   int v23; // eax
-    v23 = INIClass::ReadInt_Overwrite( /*0x7478dc*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aStandingframes),           *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC);
+  v23 = INIClass::ReadInt_Overwrite( /*0x7478dc*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aStandingframes),           *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC);
   int v77; // [esp-Ch] [ebp-154h]
   v77 = *(unsigned int *)&v4[1].NoCrew; /*0x7478ec*/
   *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC = v23; /*0x7478f3*/
-    *(unsigned int *)&v4[1].NoCrew = INIClass::ReadInt_Overwrite( /*0x7478fe*/                                (bool *)&DataGlobal_887180,                                &v4->u32_11F,(uint8_t *)(aDeathframes),                                v77);
+  *(unsigned int *)&v4[1].NoCrew = INIClass::ReadInt_Overwrite( /*0x7478fe*/                                (bool *)&DataGlobal_887180,                                &v4->u32_11F,(uint8_t *)(aDeathframes),                                v77);
   int v24; // eax
-    v24 = INIClass::ReadInt_Overwrite( /*0x747916*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aDeathframerate),           *(unsigned int *)&v4[1].ActuallyPlacedOnMap);
+  v24 = INIClass::ReadInt_Overwrite( /*0x747916*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aDeathframerate),           *(unsigned int *)&v4[1].ActuallyPlacedOnMap);
   *(unsigned int *)&v4[1].ActuallyPlacedOnMap = v24; /*0x747920*/
   if ( v24 < 1 ) /*0x747928*/
     *(unsigned int *)&v4[1].ActuallyPlacedOnMap = 1; /*0x74792a*/
   if ( !(((unsigned char *)&(v4[1].ProductionTimer))[1]) && !(((unsigned char *)&(v4[1].Anims[1]))[1]) ) /*0x74793a*/
     v4[1].BuildingClass_field_int_6FC = 1; /*0x747944*/
   int v25; // eax
-    v25 = INIClass::ReadInt_Overwrite( /*0x74795c*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aFacings),           v4[1].BuildingClass_field_int_6FC);
+  v25 = INIClass::ReadInt_Overwrite( /*0x74795c*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aFacings),           v4[1].BuildingClass_field_int_6FC);
   int v26; // ecx
   v26 = *(unsigned int *)&v4[1].CloakRadius; /*0x747961*/
   v4[1].BuildingClass_field_int_6FC = v25; /*0x74796c*/
@@ -408,7 +403,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
     *(unsigned int *)&v4[1].CloakRadius = 0; /*0x747974*/
   if ( *(unsigned int *)&v4[1].IsBeingRepaired == -1 ) /*0x747984*/
   {
-  int v27; // ecx
+    int v27; // ecx
     if ( *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC ) /*0x747986*/
       v27 = v25 * (*((signed char *)&(v4[1].ProductionTimer))); /*0x74799f*/
     else
@@ -417,7 +412,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   }
   if ( v4[1].StorageFilledSlots == -1 ) /*0x7479ae*/
   {
-  int v28; // ecx
+    int v28; // ecx
     if ( (((unsigned char *)&(v4[1].ProductionTimer))[1]) ) /*0x7479b0*/
       v28 = v25 * (*(unsigned int *)&v4[1].BuildingClass_field_bool_6DC + (*((signed char *)&(v4[1].ProductionTimer)))); /*0x7479cf*/
     else
@@ -426,12 +421,12 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   }
   if ( v4[1].SecretProduction == (TechnoTypeClass *)-1 ) /*0x7479de*/
   {
-  int v29; // ecx
+    int v29; // ecx
     if ( *(unsigned int *)&v4[1].NoCrew ) /*0x7479e0*/
       v29 = v25 * ((*(((signed char *)&(v4[1].ProductionTimer)) + 1)) + (*((signed char *)&(v4[1].ProductionTimer))) + 1); /*0x747a00*/
     else
       v29 = -1; /*0x7479ea*/
-  int v30; // eax
+    int v30; // eax
     v30 = *(unsigned int *)&v4[1].NoCrew; /*0x747a03*/
     v4[1].SecretProduction = (TechnoTypeClass *)v29; /*0x747a09*/
     *v4->vtable2.ColorAdd = v30 + v29; /*0x747a11*/
@@ -485,8 +480,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
     ++BuildingClass_field_short_700; /*0x747afd*/
   }
   while ( v34 ); /*0x747b01*/
-  int v35; // esi
-  v35 = 0; /*0x747b09*/
+  int v35 = 0; // esi /*0x747b09*/
   int *PrismTargetCoords; // [esp+8h] [ebp-140h]
   PrismTargetCoords = v4[1].PrismTargetCoords; /*0x747b0b*/
   do /*0x747b47*/
@@ -508,89 +502,89 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   v83[1].BunkerState = (int)SearchMIXFile(v86, 0); /*0x747bc4*/
   if ( AbstractTypeClass::NameEquals((int)v83, g_INI_Key_TRUCKA.Size) ) /*0x747bca*/
   {
-  int v36; // edi
+    int v36; // edi
     v36 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aNormalturretin, 0); /*0x747bf0*/
-  int v37; // eax
+    int v37; // eax
     v37 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aNormalturretwe, -1); /*0x747bf2*/
     (v83)->SetSlot(v36, v37); /*0x747bfb*/
-  int v38; // edi
+    int v38; // edi
     v38 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aRepairturretin, 1); /*0x747c19*/
-  int v39; // eax
+    int v39; // eax
     v39 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aRepairturretwe, -1); /*0x747c1b*/
     (v83)->SetSlot(v38, v39); /*0x747c24*/
-  int v40; // edi
+    int v40; // edi
     v40 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aMachinegunturr, 2); /*0x747c42*/
-  int v41; // eax
+    int v41; // eax
     v41 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aMachinegunturr_0, -1); /*0x747c44*/
     (v83)->SetSlot(v40, v41); /*0x747c4d*/
-  int v42; // edi
+    int v42; // edi
     v42 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aFlakturretinde, 3); /*0x747c6b*/
-  int v43; // eax
+    int v43; // eax
     v43 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aFlakturretweap, -1); /*0x747c6d*/
     (v83)->SetSlot(v42, v43); /*0x747c76*/
-  int v44; // edi
+    int v44; // edi
     v44 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aPistolturretin, 0); /*0x747c94*/
-  int v45; // eax
+    int v45; // eax
     v45 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aPistolturretwe, -1); /*0x747c96*/
     (v83)->SetSlot(v44, v45); /*0x747c9f*/
-  int v46; // edi
+    int v46; // edi
     v46 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aSniperturretin, 0); /*0x747cb3*/
-  int v47; // eax
+    int v47; // eax
     v47 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aSniperturretwe, -1); /*0x747cbf*/
     (v83)->SetSlot(v46, v47); /*0x747cc8*/
-  int v48; // edi
+    int v48; // edi
     v48 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aShockturretind, 0); /*0x747ce6*/
-  int v49; // eax
+    int v49; // eax
     v49 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aShockturretwea, -1); /*0x747ce8*/
     (v83)->SetSlot(v48, v49); /*0x747cf1*/
-  int v50; // edi
+    int v50; // edi
     v50 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aExplodeturreti, 0); /*0x747d0f*/
-  int v51; // eax
+    int v51; // eax
     v51 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aExplodeturretw, -1); /*0x747d11*/
     (v83)->SetSlot(v50, v51); /*0x747d1a*/
-  int v52; // edi
+    int v52; // edi
     v52 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aBrainblastturr, 0); /*0x747d38*/
-  int v53; // eax
+    int v53; // eax
     v53 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aBrainblastturr_0, -1); /*0x747d3a*/
     (v83)->SetSlot(v52, v53); /*0x747d43*/
-  int v54; // edi
+    int v54; // edi
     v54 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aRadcannonturre, 0); /*0x747d61*/
-  int v55; // eax
+    int v55; // eax
     v55 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aRadcannonturre_0, -1); /*0x747d63*/
     (v83)->SetSlot(v54, v55); /*0x747d6c*/
-  int v56; // edi
+    int v56; // edi
     v56 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aChronoturretin, 0); /*0x747d8a*/
-  int v57; // eax
+    int v57; // eax
     v57 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aChronoturretwe, -1); /*0x747d8c*/
     (v83)->SetSlot(v56, v57); /*0x747d95*/
-  int v58; // edi
+    int v58; // edi
     v58 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aTerroristexplo, 0); /*0x747db3*/
-  int v59; // eax
+    int v59; // eax
     v59 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aTerroristexplo_0, -1); /*0x747db5*/
     (v83)->SetSlot(v58, v59); /*0x747dbe*/
-  int v60; // edi
+    int v60; // edi
     v60 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aCowturretindex, 0); /*0x747ddc*/
-  int v61; // eax
+    int v61; // eax
     v61 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aCowturretweapo, -1); /*0x747dde*/
     (v83)->SetSlot(v60, v61); /*0x747de7*/
-  int v62; // edi
+    int v62; // edi
     v62 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aInitiateturret, 0); /*0x747e05*/
-  int v63; // eax
+    int v63; // eax
     v63 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aInitiateturret_0, -1); /*0x747e07*/
     (v83)->SetSlot(v62, v63); /*0x747e10*/
-  int v64; // edi
+    int v64; // edi
     v64 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aVirusturretind, 0); /*0x747e2e*/
-  int v65; // eax
+    int v65; // eax
     v65 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aVirusturretwea, -1); /*0x747e30*/
     (v83)->SetSlot(v64, v65); /*0x747e39*/
-  int v66; // edi
+    int v66; // edi
     v66 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aYuriprimeturre, 0); /*0x747e57*/
-  int v67; // eax
+    int v67; // eax
     v67 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aYuriprimeturre_0, -1); /*0x747e59*/
     (v83)->SetSlot(v66, v67); /*0x747e62*/
-  int v68; // edi
+    int v68; // edi
     v68 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aGuardianturret, 0); /*0x747e80*/
-  int v69; // eax
+    int v69; // eax
     v69 = INIClass::ReadInt_Overwrite((bool *)this, p_occupant, aGuardianturret_0, -1); /*0x747e82*/
     (v83)->SetSlot(v68, v69); /*0x747e8b*/
   }
@@ -609,7 +603,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
   v2 = 0; /*0x74b98d*/
   if ( stru_A8EB00.vfptr[14] <= 0 ) /*0x74b991*/
   {
-  LABEL_6:
+    LABEL_6:
     v3 = (VoxelAnimTypeClass *)operator new(0x308u); /*0x74b9b6*/
     if ( v3 ) /*0x74b9c5*/
       return VoxelAnimTypeClass::Constructor(v3, Source); /*0x74b9d1*/
@@ -628,10 +622,8 @@ namespace gamemd {  // G42.18c ns repair
 int *  UnitTypeClass::GetDimensions(int * a2)
 {
 
-  int v2; // eax
-  v2 = this->MaxDimension - this->MaxDimension / 4; /*0x7475a3*/
-  int v3; // ecx
-  v3 = v2; /*0x7475a5*/
+  int v2 = this->MaxDimension - this->MaxDimension / 4; // eax /*0x7475a3*/
+  int v3 = v2; // ecx /*0x7475a5*/
   if ( v2 >= 60 ) /*0x7475aa*/
   {
     v3 = 60; /*0x7475ac*/
@@ -748,7 +740,7 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
   {
     if ( a1 ) /*0x74802f*/
     {
-  char v3; // [esp+7h] [ebp-105h] BYREF
+      char v3; // [esp+7h] [ebp-105h] BYREF
       TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
       /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x74803d) */
       /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x748043) */
@@ -759,7 +751,7 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/
     if ( a1->AltImage[0] ) /*0x748066*/
     {
-  char Buffer[260]; // [esp+8h] [ebp-104h] BYREF
+      char Buffer[260]; // [esp+8h] [ebp-104h] BYREF
       _makepath(Buffer, 0, 0, a1->__tail_E5E, Ext); /*0x748085*/
       a1->AltImage[0] = (int)SearchMIXFile(Buffer, 0); /*0x748098*/
     }
@@ -773,12 +765,12 @@ namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
 
-    int result; // eax
-    int *a3; // [esp+Ch] [ebp+Ch]
-    result = TechnoTypeClass::SaveLoad_Prefix_0( (TechnoTypeClass *)arg0, (TechnoTypeClass *)((unsigned int *)a2), (TechnoTypeClass *)(a3)); /*0x7480bf*/
-    if ( result >= 0 ) /*0x7480c6*/
-      return 0; /*0x7480c8*/
-    return result; /*0x7480ca*/
+  int result; // eax
+  int *a3; // [esp+Ch] [ebp+Ch]
+  result = TechnoTypeClass::SaveLoad_Prefix_0( (TechnoTypeClass *)arg0, (TechnoTypeClass *)((unsigned int *)a2), (TechnoTypeClass *)(a3)); /*0x7480bf*/
+  if ( result >= 0 ) /*0x7480c6*/
+    return 0; /*0x7480c8*/
+  return result; /*0x7480ca*/
 }
 }  // G42.18c ns repair
 
@@ -834,8 +826,8 @@ namespace gamemd {
     operator delete((void *)(v3)); /*0x74820e*/
   return v3; /*0x748218*/
 }
-  TechnoTypeClass::DTOR((int)v3); /*0x748201*/
-  if ( ((uint8_t)this & 1) != 0 ) /*0x74820b*/
-    RA2_OPDEL(v3); /*0x74820e*/
-  return v3; /*0x748218*/
+TechnoTypeClass::DTOR((int)v3); /*0x748201*/
+if ( ((uint8_t)this & 1) != 0 ) /*0x74820b*/
+  RA2_OPDEL(v3); /*0x74820e*/
+return v3; /*0x748218*/
 }

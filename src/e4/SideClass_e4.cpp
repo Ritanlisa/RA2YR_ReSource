@@ -110,8 +110,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
     (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8) + 100))( /*0x679c85*/
       *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8),
       aP0);
-  char *v19; // ebx
-  v19 = 0; /*0x679c92*/
+  char *v19 = 0; // ebx /*0x679c92*/
   MissionClass *v20; // edi
   v20 = (gamemd::MissionClass *)(&stru_A8E3A8); /*0x679c94*/
   do /*0x679cad*/
@@ -153,7 +152,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
          FootClass_Array.?[1] + FootClass_Array.?[1],
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = FootClass_Array.?[0]++; /*0x6a45f7*/
     *(unsigned int *)(FootClass_Array.?[0] + 4 * v3) = aP1; /*0x6a4606*/
   }
@@ -198,8 +197,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47ee) */
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47f5) */
     }
-  void **p_houseTypes; // esi
-    p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
+    void **p_houseTypes = &v2->houseTypes; // esi /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
     {
       p_houseTypes[1] = 0; /*0x6a4806*/
@@ -211,17 +209,17 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *p_houseTypes = &vt_TypeList; /*0x6a4819*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*&v3->q030))(v3, &aP1, 4, 0); /*0x6a482a*/
-  int i; // ebp
+    int i; // ebp
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
     {
       (*(void (**)(int, SideClass **, int, unsigned int))(*&v3->q030))(v3, &a0, 4, 0); /*0x6a4840*/
-  void *v7; // eax
+      void *v7; // eax
       v7 = p_houseTypes[2]; /*0x6a4843*/
       if ( (int)p_houseTypes[4] >= (int)v7 ) /*0x6a484b*/
       {
         if ( !*((unsigned char *)p_houseTypes + 13) && v7 ) /*0x6a4854*/
           continue; /*0x6a4854*/
-  int v8; // ecx
+        int v8; // ecx
         v8 = (int)p_houseTypes[5]; /*0x6a4856*/
         if ( v8 <= 0 /*0x6a4865*/
           || !(*((unsigned __int8 (**)(void **, int, unsigned int))*p_houseTypes + 2))(
@@ -232,9 +230,9 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
           continue; /*0x6a4865*/
         }
       }
-  void *v9; // eax
+      void *v9; // eax
       v9 = p_houseTypes[4]; /*0x6a486c*/
-  unsigned int *v10; // edx
+      unsigned int *v10; // edx
       v10 = (unsigned int *)(p_houseTypes[1]); /*0x6a486f*/
       p_houseTypes[4] = (char *)v9 + 1; /*0x6a4875*/
       v10[(unsigned int)v9] = (unsigned int)(a0); /*0x6a487c*/
@@ -264,8 +262,8 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   {
     --FootClass_Array; /*0x6a497f*/
     for ( ; /*0x6a4985*/
-          v3 < FootClass_Array;
-          *(unsigned int *)(FootClass_Array + 4 * v3 - 4) = *(unsigned int *)(FootClass_Array + 4 * v3) )
+    v3 < FootClass_Array;
+    *(unsigned int *)(FootClass_Array + 4 * v3 - 4) = *(unsigned int *)(FootClass_Array + 4 * v3) )
     {
       ++v3; /*0x6a498d*/
     }
@@ -296,13 +294,12 @@ int SideClass::FindByName(void *a1)
     return -2; /*0x49da09*/
   if ( !a1 ) /*0x49da12*/
     return -1; /*0x49da12*/
-  int v3; // ebx
-  v3 = 0; /*0x49da19*/
+  int v3 = 0; // ebx /*0x49da19*/
   if ( dword_A83CA8 <= 0 ) /*0x49da1d*/
     return -1; /*0x49da53*/
   while ( 1 ) /*0x49da25*/
   {
-  int v4; // esi
+    int v4; // esi
     v4 = *((unsigned int *)dword_A83C9C + v3); /*0x49da25*/
     if ( !_strcmpi((char *)(v4 + 100), (char *)a1) || !_strcmpi((char *)(v4 + 36), (char *)a1) ) /*0x49da3d*/
       break; /*0x49da3d*/
@@ -368,11 +365,10 @@ int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6a48b1*/
   if ( result >= 0 ) /*0x6a48b8*/
   {
-  int v4; // edx
-    v4 = *a1; /*0x6a48c0*/
+    int v4 = *a1; // edx /*0x6a48c0*/
     aP2 = aP0->ImageAllocated; /*0x6a48cd*/
     (*(void (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
-  int i; // esi
+    int i; // esi
     for ( i = 0; i < aP2; ++i ) /*0x6a48dc*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, (unsigned int)(aP0->houseTypesCount)+ 4 * i, 4, 0); /*0x6a48ef*/
     return 0; /*0x6a48f9*/

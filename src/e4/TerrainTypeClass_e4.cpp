@@ -103,7 +103,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
          g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )
   {
-  int v7; // eax
+    int v7; // eax
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x544924*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = aP4; /*0x544933*/
   }
@@ -116,7 +116,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
           *(unsigned int *)&DataGlobal_A8EC4C + *(unsigned int *)&DataGlobal_A8EC58,
           0)) )
   {
-  int v8; // eax
+    int v8; // eax
     v8 = (*(unsigned int *)&g_ObjectClass_Capacity)++; /*0x54497d*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * v8) = (unsigned int)(aP4); /*0x54498c*/
   }
@@ -199,7 +199,7 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   v5 = 0; /*0x71db8b*/
   if ( v3 <= 0 ) /*0x71db8f*/
   {
-LABEL_11:
+    LABEL_11:
     v5 = -1; /*0x71dba3*/
   }
   else
@@ -233,7 +233,7 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
   {
     if ( aP1->? == -1 ) /*0x71decf*/
       aP1->? = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4420); /*0x71dedc*/
-  char Bool_Overwrite; // al
+    char Bool_Overwrite; // al
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aIsveinhole, aP1->IsVeinhole); /*0x71def6*/
     aP1->IsVeinhole = Bool_Overwrite; /*0x71defd*/
     if ( Bool_Overwrite ) /*0x71df03*/
@@ -241,72 +241,71 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
       aP1->? = 0; /*0x71df05*/
       aP1->? = 1; /*0x71df0c*/
     }
-  char v6; // al
+    char v6; // al
     v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aWaterbound, aP1->WaterBound); /*0x71df22*/
-  char SpawnsTiberium; // cl
+    char SpawnsTiberium; // cl
     SpawnsTiberium = aP1->SpawnsTiberium; /*0x71df27*/
     aP1->WaterBound = v6; /*0x71df2d*/
-  char v8; // al
+    char v8; // al
     v8 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aSpawnstiberium, SpawnsTiberium); /*0x71df3c*/
-  char IsFlammable; // [esp+4h] [ebp-218h]
+    char IsFlammable; // [esp+4h] [ebp-218h]
     IsFlammable = aP1->IsFlammable; /*0x71df49*/
     aP1->SpawnsTiberium = v8; /*0x71df50*/
     aP1->IsFlammable = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aIsflammable, IsFlammable); /*0x71df5b*/
-  int v9; // eax
+    int v9; // eax
     v9 = INIClass::LookupEnum( /*0x71df79*/
            (INIClass *)&DataGlobal_887180,
            (unsigned __int8 *)aP1->?,
            g_INI_Key_Foundation,
            aP1->Foundation);
-  int v10; // ecx
-    v10 = 5 * v9; /*0x71df7e*/
+    int v10 = 5 * v9; // ecx /*0x71df7e*/
     aP1->Foundation = v9; /*0x71df81*/
     LOBYTE(v9) = aP1->?; /*0x71df87*/
     aP1->FoundationData = (CellStruct *)(8 * v10 + 11595200); /*0x71df96*/
     if ( !(unsigned char)v9 ) /*0x71df9c*/
     {
-  char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
+      char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
       _makepath(Buffer, 0, 0, aP1->?, Ext); /*0x71dfad*/
       aP1->? = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x71dfc0*/
     }
-  MixFileClass *v11; // eax
+    MixFileClass *v11; // eax
     v11 = (MixFileClass *)(*((int (**)(TerrainTypeClass *))aP1->ObjectTypeClass + 39))(aP1); /*0x71dfca*/
     if ( v11 ) /*0x71dfd2*/
     {
-  int PixelData; // eax
+      int PixelData; // eax
       PixelData = MixFileClass::GetPixelData(v11, (int)&v23, 0); /*0x71dfdd*/
       *(unsigned short *)aP1->RadarColor = *(unsigned short *)PixelData; /*0x71dfeb*/
       aP1->RadarColor[2] = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
     }
-  int Coord; // eax
+    int Coord; // eax
     Coord = INIClass::GetCoord( /*0x71e00c*/
               (INIClass *)aP1,
               (int)&v23,
               (unsigned __int8 *)aP1->?,
               aRadarcolor,
               (unsigned __int8 *)aP1->RadarColor);
-  char IsAnimated; // cl
+    char IsAnimated; // cl
     IsAnimated = aP1->IsAnimated; /*0x71e014*/
     *(unsigned short *)aP1->RadarColor = *(unsigned short *)Coord; /*0x71e01a*/
     aP1->RadarColor[2] = *(unsigned char *)(Coord + 2); /*0x71e02a*/
-  char v15; // al
+    char v15; // al
     v15 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aIsanimated, IsAnimated); /*0x71e02d*/
-  int AnimationRate; // [esp+4h] [ebp-218h]
+    int AnimationRate; // [esp+4h] [ebp-218h]
     AnimationRate = aP1->AnimationRate; /*0x71e03a*/
     aP1->IsAnimated = v15; /*0x71e041*/
-  int Int_Overwrite; // eax
+    int Int_Overwrite; // eax
     Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->?, aAnimationrate, AnimationRate); /*0x71e047*/
-  double AnimationProbability; // st6
+    double AnimationProbability; // st6
     AnimationProbability = aP1->AnimationProbability; /*0x71e04c*/
     aP1->AnimationRate = Int_Overwrite; /*0x71e057*/
     INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)aP1->?, aAnimationproba, AnimationProbability); /*0x71e066*/
-  int TemperateOccupationBits; // eax
+    int TemperateOccupationBits; // eax
     TemperateOccupationBits = aP1->TemperateOccupationBits; /*0x71e06b*/
-  double v2; // st7
+    double v2; // st7
     aP1->AnimationProbability = v2; /*0x71e073*/
-  int v19; // eax
+    int v19; // eax
     v19 = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->?, aTemperateoccup, TemperateOccupationBits); /*0x71e080*/
-  int SnowOccupationBits; // ecx
+    int SnowOccupationBits; // ecx
     SnowOccupationBits = aP1->SnowOccupationBits; /*0x71e085*/
     aP1->TemperateOccupationBits = v19; /*0x71e08b*/
     result = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->?, aSnowoccupation, SnowOccupationBits); /*0x71e09a*/
@@ -332,7 +331,7 @@ TerrainTypeClass * * TerrainTypeClass::FindOrCreate(char *Source)
   v2 = 0; /*0x71e2cd*/
   if ( dword_A8E328 <= 0 ) /*0x71e2d1*/
   {
-  LABEL_6:
+    LABEL_6:
     v3 = (TerrainTypeClass *)operator new(0x2BCu); /*0x71e2f6*/
     if ( v3 ) /*0x71e305*/
       return TerrainTypeClass::TerrainTypeClass(v3, Source); /*0x71e311*/

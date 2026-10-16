@@ -189,8 +189,7 @@ void * WinsockInterface::ProcessPacket(int a2)
 {
 
 
-  int v3; // ebp
-  v3 = 6; /*0x77027a*/
+  int v3 = 6; // ebp /*0x77027a*/
   void **v4; // edi
   v4 = (void **)(&this->ptr_4); /*0x77027f*/
   *(unsigned int *)this = a2; /*0x770282*/
@@ -208,8 +207,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   while ( v3 ); /*0x7702b6*/
   unsigned int *v6; // edi
   v6 = (unsigned int *)(&this->u8_37C); /*0x7702b8*/
-  int v7; // ebp
-  v7 = 2; /*0x7702be*/
+  int v7 = 2; // ebp /*0x7702be*/
   do /*0x7702e2*/
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
@@ -274,13 +272,13 @@ int WinsockInterface::Init(void *a1, void *a2)
       byte_B7809C = 1; /*0x7b1e41*/
       MessageBoxA(g_hWnd, aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
-  int v3; // eax
+    int v3; // eax
     v3 = (int)(__2_YAPAXI_Z(0x590u)); /*0x7b1e53*/
-  int v4; // edx
+    int v4; // edx
     v4 = *(unsigned int *)this->q000; /*0x7b1e58*/
-  struct WSAData *v5; // esi
+    struct WSAData *v5; // esi
     v5 = (struct WSAData *)v3; /*0x7b1e5a*/
-  struct WSAData *v11; // [esp+8h] [ebp-1008h]
+    struct WSAData *v11; // [esp+8h] [ebp-1008h]
     v11 = (struct WSAData *)v3; /*0x7b1e61*/
     this->u32_3F06C = -1; /*0x7b1e65*/
     (*(void (**)(WinsockInterface *))(v4 + 20))(this); /*0x7b1e6f*/
@@ -305,9 +303,9 @@ int WinsockInterface::Init(void *a1, void *a2)
       {
         Debug::Log(); /*0x7b1efa*/
         *&this->ptr_4 = 546; /*0x7b1f0a*/
-  DWORD dwBufferLength; // [esp+Ch] [ebp-1004h] BYREF
+        DWORD dwBufferLength; // [esp+Ch] [ebp-1004h] BYREF
         dwBufferLength = 4096; /*0x7b1f18*/
-  unsigned char ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
+        unsigned char ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
         v6 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/
         if ( v6 == -1 ) /*0x7b1f28*/
         {
@@ -315,19 +313,17 @@ int WinsockInterface::Init(void *a1, void *a2)
         }
         else
         {
-  int v7; // ebp
-          v7 = 0x7FFFFFFF; /*0x7b1f2c*/
+          int v7 = 0x7FFFFFFF; // ebp /*0x7b1f2c*/
           if ( v6 > 0 ) /*0x7b1f31*/
           {
-  int *v8; // esi
-  char v14; // [esp+28h] [ebp-FE8h] BYREF
+            int *v8; // esi
+            char v14; // [esp+28h] [ebp-FE8h] BYREF
             v8 = (int *)&v14; /*0x7b1f34*/
             v9 = v6; /*0x7b1f38*/
             do /*0x7b1f63*/
             {
               Debug::Log(); /*0x7b1f46*/
-  int v10; // eax
-              v10 = *v8; /*0x7b1f4b*/
+              int v10 = *v8; // eax /*0x7b1f4b*/
               if ( *v8 && v10 != -1 && v7 >= v10 ) /*0x7b1f5b*/
                 v7 = *v8; /*0x7b1f5d*/
               v8 += 8; /*0x7b1f5f*/

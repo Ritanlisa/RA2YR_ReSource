@@ -18,8 +18,7 @@ int sub_53D960(int a1, int a2)
   v4 = abs32(a1); /*0x53d987*/
   if ( v4 > v3 ) /*0x53d98b*/
     v3 = v4; /*0x53d98d*/
-  int v5; // eax
-  v5 = 1; /*0x53d98f*/
+  int v5 = 1; // eax /*0x53d98f*/
   int i; // edx
   for ( i = 1; i < v3; ++i ) /*0x53d998*/
     v5 += 8 * i; /*0x53d99a*/

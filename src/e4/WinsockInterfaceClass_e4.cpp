@@ -28,8 +28,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
 {
 
 
-  char v2; // al
-  v2 = this->u32_3F068; /*0x7b1ab6*/
+  char v2 = this->u32_3F068; // al /*0x7b1ab6*/
   /* X11: vtable install elided (implicit via WinsockInterfaceClass virtuals 0x7b1abc) */
   if ( v2 ) /*0x7b1ac4*/
   {
@@ -104,8 +103,7 @@ int WinsockInterfaceClass::Destru_vt16(int a1, int a2, int a3, int a4)
 SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
 {
 
-  char v3; // al
-  v3 = Block->u8_3F068; /*0x7b2786*/
+  char v3 = Block->u8_3F068; // al /*0x7b2786*/
   Block->Socket = (int)&vt_WinsockInterfaceClass; /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {

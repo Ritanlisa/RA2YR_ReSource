@@ -18,8 +18,7 @@ int sub_5C6490(unsigned char * a1, char * a2, int a3)
     if ( *v4 != i ) /*0x5c64b9*/
       break; /*0x5c64b9*/
   }
-  int v6; // edi
-  v6 = 0; /*0x5c64c2*/
+  int v6 = 0; // edi /*0x5c64c2*/
   if ( *v4 < 0 && *(int *)&a2[4 * a3 - 4] >= 0 || (*v4 & 0x80) == 0 && *(int *)&a2[4 * a3 - 4] < 0 ) /*0x5c64d2*/
   {
     *a1 = i; /*0x5c64d4*/
@@ -29,7 +28,7 @@ int sub_5C6490(unsigned char * a1, char * a2, int a3)
   int j; // edi
   for ( j = v6 + 1; v4 != a2; ++j ) /*0x5c64e4*/
   {
-  char v8; // cl
+    char v8; // cl
     v8 = *--v4; /*0x5c64e6*/
     a1[j] = v8; /*0x5c64ea*/
   }

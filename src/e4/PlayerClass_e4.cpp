@@ -12,8 +12,8 @@
 namespace gamemd {  // G42.18 ns repair
 int PlayerClass::SetHouse(int a2)
 {
-
-
+  
+  
   char result; // al
   result = (*(int (**)(MultiplayerTeam *, int))(*(unsigned int *)this->__pad_000 + 4))(this, a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
@@ -22,14 +22,14 @@ int PlayerClass::SetHouse(int a2)
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/
-
+  
 }
 } // namespace gamemd
 // 0x5D62C0
 namespace gamemd {
 char PlayerClass::AssignPlayerIndex()
 {
-
+  
   int i; // esi
   for ( i = 0; i < dword_A8DA84; ++i ) /*0x5d62ca*/
   {

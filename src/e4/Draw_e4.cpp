@@ -14,20 +14,15 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
 
   int result; // eax
 
-  int v10; // ebp
-  v10 = a3; /*0x7bb92c*/
-  int v11; // ebx
-  v11 = a2; /*0x7bb933*/
+  int v10 = a3; // ebp /*0x7bb92c*/
+  int v11 = a2; // ebx /*0x7bb933*/
   int v27; // [esp+48h] [ebp-40h]
   v27 = a4; /*0x7bb943*/
-  int v12; // edi
-  v12 = 0; /*0x7bb947*/
+  int v12 = 0; // edi /*0x7bb947*/
   int v26; // [esp+44h] [ebp-44h]
   v26 = 3 - 2 * a4; /*0x7bb949*/
-  int v13; // edx
-  v13 = -a4; /*0x7bb94d*/
-  int v14; // eax
-  v14 = a3 + a4; /*0x7bb94f*/
+  int v13 = -a4; // edx /*0x7bb94d*/
+  int v14 = a3 + a4; // eax /*0x7bb94f*/
   int v28; // [esp+4Ch] [ebp-3Ch]
   v28 = 0; /*0x7bb951*/
   a4 = -a4; /*0x7bb955*/
@@ -37,48 +32,45 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
   {
     a3 = v12 + v10; /*0x7bb970*/
     a2 = v11 + v27; /*0x7bb974*/
-  int v15; // ecx
-    v15 = v13 + v11; /*0x7bb978*/
-  int Draw_field_00; // edx
+    int v15 = v13 + v11; // ecx /*0x7bb978*/
+    int Draw_field_00; // edx
     Draw_field_00 = (int)(this->Draw_field_00); /*0x7bb97b*/
-  unsigned int v29[2]; // [esp+50h] [ebp-38h] BYREF
+    unsigned int v29[2]; // [esp+50h] [ebp-38h] BYREF
     v29[1] = v12 + v10; /*0x7bb97d*/
     v29[0] = v15; /*0x7bb985*/
     (*(void (**)(Draw *, int *, unsigned int *, int *, int))(Draw_field_00 + 44))(this, &a5, v29, &a2, a9); /*0x7bb99b*/
-  int v17; // eax
-    v17 = v12 + v11; /*0x7bb9a2*/
-  int v18; // edi
-    v18 = -v12; /*0x7bb9a5*/
-  unsigned int v30[2]; // [esp+58h] [ebp-30h] BYREF
+    int v17 = v12 + v11; // eax /*0x7bb9a2*/
+    int v18 = -v12; // edi /*0x7bb9a5*/
+    unsigned int v30[2]; // [esp+58h] [ebp-30h] BYREF
     v30[0] = v17; /*0x7bb9a7*/
     v30[1] = v25; /*0x7bb9b2*/
-  unsigned int v31[2]; // [esp+60h] [ebp-28h] BYREF
+    unsigned int v31[2]; // [esp+60h] [ebp-28h] BYREF
     v31[0] = v18 + v11; /*0x7bb9b6*/
-  int v19; // edx
+    int v19; // edx
     v19 = (int)(this->Draw_field_00); /*0x7bb9bc*/
     v31[1] = v25; /*0x7bb9be*/
     (*(void (**)(Draw *, int *, unsigned int *, unsigned int *, int))(v19 + 44))(this, &a5, v31, v30, a9); /*0x7bb9d4*/
-  unsigned int v32[2]; // [esp+68h] [ebp-20h] BYREF
+    unsigned int v32[2]; // [esp+68h] [ebp-20h] BYREF
     v32[1] = v18 + v10; /*0x7bb9de*/
-  int v20; // edx
+    int v20; // edx
     v20 = (int)(this->Draw_field_00); /*0x7bb9e8*/
     v32[0] = v11 + v27; /*0x7bb9ea*/
-  unsigned int v33[2]; // [esp+70h] [ebp-18h] BYREF
+    unsigned int v33[2]; // [esp+70h] [ebp-18h] BYREF
     v33[1] = v18 + v10; /*0x7bb9f4*/
     v33[0] = v11 + a4; /*0x7bb9f8*/
     (*(void (**)(Draw *, int *, unsigned int *, unsigned int *, int))(v20 + 44))(this, &a5, v33, v32, a9); /*0x7bba12*/
-  int v21; // edx
+    int v21; // edx
     v21 = (int)(this->Draw_field_00); /*0x7bba24*/
-  unsigned int v34[2]; // [esp+78h] [ebp-10h] BYREF
+    unsigned int v34[2]; // [esp+78h] [ebp-10h] BYREF
     v34[1] = a4 + v10; /*0x7bba26*/
-  unsigned int v35[2]; // [esp+80h] [ebp-8h] BYREF
+    unsigned int v35[2]; // [esp+80h] [ebp-8h] BYREF
     v35[1] = a4 + v10; /*0x7bba2a*/
     v34[0] = v11 + v28; /*0x7bba32*/
     v35[0] = v11 + v18; /*0x7bba48*/
     (*(void (**)(Draw *, int *, unsigned int *, unsigned int *, int))(v21 + 44))(this, &a5, v35, v34, a9); /*0x7bba4c*/
     if ( v26 >= 0 ) /*0x7bba59*/
     {
-  int v22; // edx
+      int v22; // edx
       v22 = v28 - v27--; /*0x7bba69*/
       v26 += 4 * v22 + 10; /*0x7bba79*/
       --v25; /*0x7bba82*/

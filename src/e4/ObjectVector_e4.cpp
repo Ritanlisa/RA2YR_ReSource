@@ -12,7 +12,7 @@
 namespace gamemd {  // G42.18 ns repair
 int ObjectVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
-
+  
   this->q004 = 0; /*0x4d044b*/
   this->q008 = aP1; /*0x4d044e*/
   LOBYTE(this->q00C) = 1; /*0x4d0451*/
@@ -29,6 +29,6 @@ int ObjectVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a5, void
     BYTE1(this->ObjectVector_field_0x0C) = 1; /*0x4d0480*/
   }
   return this->__pad_0; /*0x4d046d*/
-
+  
 }
 } // namespace gamemd

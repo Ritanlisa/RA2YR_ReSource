@@ -67,67 +67,56 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
 {
   unsigned int *result; // eax
 
-  unsigned short *v1; // edi
-  v1 = a1; /*0x6d6bb2*/
-  int16_t v2; // ax
-  v2 = *a1 + 2; /*0x6d6bbd*/
+  unsigned short *v1 = a1; // edi /*0x6d6bb2*/
+  int16_t v2 = *a1 + 2; // ax /*0x6d6bbd*/
   (*(((unsigned short *)&(a1)) + 1)) = a1[1]; /*0x6d6bc1*/
   (*((unsigned short *)&(a1))) = v2; /*0x6d6bc6*/
-  int v3; // esi
-  v3 = 0; /*0x6d6bd3*/
+  int v3 = 0; // esi /*0x6d6bd3*/
   while ( 1 ) /*0x6d6bdf*/
   {
     result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6bdf*/
-  int v5; // ecx
-    v5 = result->u32_140; /*0x6d6be4*/
+    int v5 = result->u32_140; // ecx /*0x6d6be4*/
     if ( (v5 & 0x80u) != 0 && result->u32_44 && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
       break; /*0x6d6bf9*/
     ++(*(((unsigned short *)&(a1)) + 1)); /*0x6d6bff*/
     if ( ++v3 >= 5 ) /*0x6d6c08*/
     {
-  int16_t v6; // cx
-      v6 = *v1 + 1; /*0x6d6c11*/
+      int16_t v6 = *v1 + 1; // cx /*0x6d6c11*/
       (*(((unsigned short *)&(a1)) + 1)) = v1[1]; /*0x6d6c13*/
       (*((unsigned short *)&(a1))) = v6; /*0x6d6c18*/
-  int v7; // esi
-      v7 = 0; /*0x6d6c25*/
+      int v7 = 0; // esi /*0x6d6c25*/
       while ( 1 ) /*0x6d6c31*/
       {
         result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6c31*/
-  int v8; // ecx
-        v8 = result->u32_140; /*0x6d6c36*/
+        int v8 = result->u32_140; // ecx /*0x6d6c36*/
         if ( (v8 & 0x80u) != 0 && result->u32_44 && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
           break; /*0x6d6c4b*/
         ++(*(((unsigned short *)&(a1)) + 1)); /*0x6d6c51*/
         if ( ++v7 >= 5 ) /*0x6d6c5a*/
         {
-  int16_t v9; // ax
+          int16_t v9; // ax
           v9 = v1[1] + 2; /*0x6d6c63*/
           (*((unsigned short *)&(a1))) = *v1; /*0x6d6c67*/
           (*(((unsigned short *)&(a1)) + 1)) = v9; /*0x6d6c6c*/
-  int v10; // esi
-          v10 = 0; /*0x6d6c79*/
+          int v10 = 0; // esi /*0x6d6c79*/
           while ( 1 ) /*0x6d6c85*/
           {
             result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6c85*/
-  int v11; // ecx
-            v11 = result->u32_140; /*0x6d6c8a*/
+            int v11 = result->u32_140; // ecx /*0x6d6c8a*/
             if ( (v11 & 0x80u) != 0 && result->u32_44 && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
               break; /*0x6d6c9f*/
             (*((unsigned short *)&(a1))) = (unsigned short)a1 + 1; /*0x6d6ca1*/
             if ( ++v10 >= 5 ) /*0x6d6caa*/
             {
-  int16_t v12; // cx
+              int16_t v12; // cx
               v12 = v1[1] + 1; /*0x6d6cb3*/
               (*((unsigned short *)&(a1))) = *v1; /*0x6d6cb5*/
               (*(((unsigned short *)&(a1)) + 1)) = v12; /*0x6d6cba*/
-  int v13; // esi
-              v13 = 0; /*0x6d6cc7*/
+              int v13 = 0; // esi /*0x6d6cc7*/
               while ( 1 ) /*0x6d6cd3*/
               {
                 result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6cd3*/
-  int v14; // ecx
-                v14 = result->u32_140; /*0x6d6cd8*/
+                int v14 = result->u32_140; // ecx /*0x6d6cd8*/
                 if ( (v14 & 0x80u) != 0 && result->u32_44 && (v14 & 0x800) == 0 ) /*0x6d6ced*/
                   break; /*0x6d6ced*/
                 (*((unsigned short *)&(a1))) = (unsigned short)a1 + 1; /*0x6d6cef*/
@@ -162,17 +151,15 @@ void * sub_6D0F10()
 
   bool v4; // [esp+Bh] [ebp-101h] BYREF
   v4 = (int *)(0);
-  int v0; // esi
-  v0 = 0; /*0x6d0f1d*/
+  int v0 = 0; // esi /*0x6d0f1d*/
   int *v1; // edi
   v1 = (int *)(dword_B0C148); /*0x6d0f1f*/
   do /*0x6d0f5a*/
   {
-  char Buffer[256]; // [esp+Ch] [ebp-100h] BYREF
+    char Buffer[256]; // [esp+Ch] [ebp-100h] BYREF
     sprintf(Buffer, "Button%02d.SHP", v0); /*0x6d0f2f*/
     result = LoadFileSHP(Buffer, &v4); /*0x6d0f3f*/
-  bool v3; // cl
-    v3 = v4; /*0x6d0f44*/
+    bool v3 = v4; // cl /*0x6d0f44*/
     *v1 = (int)result; /*0x6d0f48*/
     ((unsigned int *)(byte_B0CBDC))[v0] = v3; /*0x6d0f4a*/
     ++v1; /*0x6d0f50*/
@@ -205,11 +192,11 @@ char E4Recv_6D1570::sub_6D1570()
   result = (*(int (**)(ObjectClass *, GadgetClass *))(this->vfptr + 48))(this, &stru_B0CC40); /*0x6d157a*/
   if ( &stru_B0CC40 ) /*0x6d1584*/
   {
-  int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
+    int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
     v2[2] = dword_B0CC50; /*0x6d1597*/
     v2[1] = dword_B0CC4C; /*0x6d15a1*/
     v2[4] = dword_B0CC58; /*0x6d15ab*/
-  char v3; // [esp+1Ch] [ebp-4h]
+    char v3; // [esp+1Ch] [ebp-4h]
     v3 = 0; /*0x6d15b6*/
     v2[0] = dword_B0CC64; /*0x6d15bb*/
     v2[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d15bf*/
@@ -514,8 +501,7 @@ int sub_6D61C0(int a1, int a2, int * a3, int * a4)
   *a3 = 60 * a1 / 2; /*0x6d61d6*/
   *a4 = 30 * a1 / 2; /*0x6d61e9*/
   *a3 += -60 * a2 / 2; /*0x6d6203*/
-  int result; // eax
-  result = 30 * a2 / 2; /*0x6d6211*/
+  int result = 30 * a2 / 2; // eax /*0x6d6211*/
   *a4 += result; /*0x6d6215*/
   return result; /*0x6d6205*/
 }
@@ -555,8 +541,7 @@ int * sub_6D84D0(int * a1, int * a2)
   }
   else
   {
-  int v4; // edx
-    v4 = v6; /*0x6d8504*/
+    int v4 = v6; // edx /*0x6d8504*/
     *a1 = v5; /*0x6d8509*/
     a1[1] = v4; /*0x6d850b*/
     return a1; /*0x6d84fc*/
@@ -579,14 +564,12 @@ char ClampCoordMap(AbstractClass * aP0)
 
   int v1; // edi
   v1 = (int)(dword_886FA8 / 2 + 30 * (2 * dword_87F8E4 - dword_87F8DC));
-  int v2; // esi
-  v2 = v1 + 60 * dword_87F8EC - dword_886FA8; /*0x6d8690*/
+  int v2 = v1 + 60 * dword_87F8EC - dword_886FA8; // esi /*0x6d8690*/
   int v3; // ecx
   v3 = dword_886FAC / 2 + 15 * (dword_87F8DC + 2 * dword_87F8E8 - 5); /*0x6d869c*/
   int v4; // edx
   v4 = (int)(aP0[1]); /*0x6d86b3*/
-  char v5; // bl
-  v5 = 0; /*0x6d86ba*/
+  char v5 = 0; // bl /*0x6d86ba*/
   int v6; // eax
   v6 = v3 + (60 * dword_87F8F0 + 270) / 2 - dword_886FAC; /*0x6d86bc*/
   if ( v4 >= v3 ) /*0x6d86c0*/
@@ -646,8 +629,7 @@ int sub_6D8C60(int a1, int a2)
   result = (int)((unsigned int *)(g_TacticalClass_Instance))[45].__tail_0; /*0x6d8d3b*/
   int v8; // edi
   v8 = v4 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0; /*0x6d8d41*/
-  int v9; // esi
-  v9 = v13 - result; /*0x6d8d43*/
+  int v9 = v13 - result; // esi /*0x6d8d43*/
   v12 = v8; /*0x6d8d4b*/
   v13 -= result; /*0x6d8d4f*/
   if ( v8 >= -360 ) /*0x6d8d53*/

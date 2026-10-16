@@ -17,8 +17,7 @@ int AudioMixer::SetVolume(void *a1)
 {
 
 
-  int result; // eax
-  result = 1; /*0x406653*/
+  int result = 1; // eax /*0x406653*/
   if ( (this->AudioMixer_field_10 & 1) == 0 || this->u32_4C ) /*0x40665c*/
     return 0; /*0x406663*/
   return result; /*0x406665*/
@@ -37,14 +36,13 @@ int AudioMixer::PlaySample(void *a1)
   AudioMixer_field_08 = this->AudioMixer_field_08; /*0x4071c7*/
   int AudioMixer_field_04; // ecx
   AudioMixer_field_04 = this->AudioMixer_field_04; /*0x4071ca*/
-  int v4; // ebx
-  v4 = AudioMixer_field_08 - AudioMixer_field_04; /*0x4071cf*/
+  int v4 = AudioMixer_field_08 - AudioMixer_field_04; // ebx /*0x4071cf*/
   if ( AudioMixer_field_08 == AudioMixer_field_04 ) /*0x4071d1*/
     return 0; /*0x40729e*/
   if ( (this->AudioMixer_field_00 & 1) != 0 ) /*0x4071da*/
   {
     this->AudioMixer_field_04 = AudioMixer_field_08; /*0x4071dc*/
-  int AudioMixer_field_00; // eax
+    int AudioMixer_field_00; // eax
     AudioMixer_field_00 = this->AudioMixer_field_00; /*0x4071df*/
     LOBYTE(AudioMixer_field_00) = this->AudioMixer_field_00 | 2; /*0x4071e1*/
     this->AudioMixer_field_00 = AudioMixer_field_00; /*0x4071e3*/
@@ -52,35 +50,29 @@ int AudioMixer::PlaySample(void *a1)
   }
   else
   {
-  int v7; // eax
+    int v7; // eax
     v7 = Audio::Callback(); /*0x4071f2*/
-  unsigned int v8; // edi
-    v8 = this->u32_18; /*0x4071f7*/
-  unsigned int v9; // ebp
-    v9 = this->u32_1C; /*0x4071fa*/
-  int v10; // ecx
-    v10 = v7; /*0x4071fd*/
+    unsigned int v8 = this->u32_18; // edi /*0x4071f7*/
+    unsigned int v9 = this->u32_1C; // ebp /*0x4071fa*/
+    int v10 = v7; // ecx /*0x4071fd*/
     this->u32_18 = v7; /*0x4071ff*/
-  int AudioMixer_field_14; // eax
+    int AudioMixer_field_14; // eax
     AudioMixer_field_14 = this->AudioMixer_field_14; /*0x407202*/
-  unsigned int v15; // edx
+    unsigned int v15; // edx
     this->u32_1C = v15; /*0x407209*/
-  unsigned __int64 v14; // kr00_8
+    unsigned __int64 v14; // kr00_8
     v14 = __PAIR64__(v15, v10) - __PAIR64__(v9, v8); /*0x407205*/
-  unsigned int v13; // edi
+    unsigned int v13; // edi
     v13 = (__PAIR64__(v15, v10) - __PAIR64__(v9, v8)) >> 32; /*0x407205*/
-  int AudioMixer_field_10; // ecx
-    AudioMixer_field_10 = v14; /*0x407205*/
+    int AudioMixer_field_10 = v14; // ecx /*0x407205*/
     if ( __PAIR64__(v13, v14) > __PAIR64__(AudioMixer_field_14, this->AudioMixer_field_10) ) /*0x40721b*/
       AudioMixer_field_10 = this->AudioMixer_field_10; /*0x40721d*/
-  int v16; // eax
-    v16 = AudioMixer_field_10 * this->AudioMixer_field_0C; /*0x407226*/
+    int v16 = AudioMixer_field_10 * this->AudioMixer_field_0C; // eax /*0x407226*/
     if ( v4 >= 0 ) /*0x40722b*/
     {
       if ( v16 <= v4 ) /*0x407269*/
       {
-  int v20; // ecx
-        v20 = v16 + this->AudioMixer_field_04; /*0x407287*/
+        int v20 = v16 + this->AudioMixer_field_04; // ecx /*0x407287*/
         v19 = this->AudioMixer_field_00; /*0x407289*/
         LOBYTE(v19) = this->AudioMixer_field_00 | 2; /*0x40728b*/
         this->AudioMixer_field_04 = v20; /*0x40728d*/
@@ -98,8 +90,7 @@ int AudioMixer::PlaySample(void *a1)
     {
       if ( v16 <= -v4 ) /*0x407233*/
       {
-  int v18; // ecx
-        v18 = this->AudioMixer_field_04 - v16; /*0x407251*/
+        int v18 = this->AudioMixer_field_04 - v16; // ecx /*0x407251*/
         v17 = this->AudioMixer_field_00; /*0x407253*/
         LOBYTE(v17) = this->AudioMixer_field_00 | 2; /*0x407255*/
         this->AudioMixer_field_04 = v18; /*0x407257*/
@@ -135,8 +126,7 @@ namespace gamemd {
 int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
 {
 
-  int v2; // eax
-  v2 = a2; /*0x4061d6*/
+  int v2 = a2; // eax /*0x4061d6*/
   if ( a1[7] == 3 ) /*0x4061d8*/
   {
     if ( a2 > 0x4000 ) /*0x4061e0*/
@@ -147,8 +137,7 @@ int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
   {
     if ( a2 > 0x4000 ) /*0x40620f*/
       v2 = 0x4000; /*0x406211*/
-  unsigned int *v4; // esi
-    v4 = a1 + 46; /*0x40621f*/
+    unsigned int *v4 = a1 + 46; // esi /*0x40621f*/
     EndBufferMixer((gamemd::VolumeStruct *)(a1 + 46), (unsigned int)(v2 * (*(((unsigned short *)&(*(unsigned int *)(a1[9] + 28))) + 1))) >> 14); /*0x406236*/
     return (v4)->PlaySample(); /*0x40623e*/
   }
@@ -188,8 +177,7 @@ int AudioMixer::Pump()
 
   if ( g_InfantryDrawState ) /*0x753628*/
     AudioMixer::ProcessAudioFrame(); /*0x75362a*/
-  int result; // eax
-  result = dword_B1D428; /*0x75362f*/
+  int result = dword_B1D428; // eax /*0x75362f*/
   if ( dword_B1D428 ) /*0x753636*/
   {
     result = --dword_B1D428; /*0x75363d*/

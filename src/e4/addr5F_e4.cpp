@@ -65,22 +65,20 @@ char sub_5F0070()
   if ( (dword_A8D5F8 & 2) == 0 ) /*0x5f0081*/
   {
     memset(v4, 0, sizeof(v4)); /*0x5f0094*/
-  int16_t v5; // [esp+74h] [ebp-4h]
+    int16_t v5; // [esp+74h] [ebp-4h]
     v5 = 0; /*0x5f0096*/
-  char v6; // [esp+76h] [ebp-2h]
+    char v6; // [esp+76h] [ebp-2h]
     v6 = 0; /*0x5f0098*/
     v4[0] = 19; /*0x5f00a5*/
     ((int)&unk_A8EA70)->WriteBlock((int)v4, 111, 0); /*0x5f00aa*/
     ((int)&unk_A8EA70)->WriteBlock((int)v4, 111, 0); /*0x5f00bd*/
-  int v1; // edi
-    v1 = dword_887340; /*0x5f00c7*/
+    int v1 = dword_887340; // edi /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
       v1 += TimerGetTicks() - dword_887338; /*0x5f00e2*/
     while ( 1 ) /*0x5f00e4*/
     {
       (*((unsigned char *)&(v0))) = dword_887338; /*0x5f00e4*/
-  int v2; // esi
-      v2 = dword_887340; /*0x5f00e9*/
+      int v2 = dword_887340; // esi /*0x5f00e9*/
       if ( dword_887338 != -1 ) /*0x5f00f2*/
       {
         v0 = TimerGetTicks() - dword_887338; /*0x5f00fe*/
@@ -163,7 +161,7 @@ char HandlePlayerDisconnection(int a1, int a2)
             while ( v8 < dword_A8DA84 ); /*0x5f0316*/
           }
         }
-  LABEL_20:
+        LABEL_20:
         ((void *)v3)->AIBuildBase(); /*0x5f0318*/
         result = --dword_A8B54C; /*0x5f0324*/
         if ( dword_A8B54C == 1 ) /*0x5f032f*/
@@ -255,7 +253,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
       v14 = (HWND)(g_ClipboardBuffer); /*0x5f30ca*/
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/
         goto LABEL_36; /*0x5f30d5*/
-  LABEL_35:
+      LABEL_35:
       (((unsigned char *)&(Buffer))[2]) = 0; /*0x5f310c*/
       (*((unsigned short *)&(Buffer))) = word_8327A0; /*0x5f3118*/
       ((WinModemClass *)((int *)v14))->WriteSerial(&Buffer, 2u); /*0x5f3124*/
@@ -304,10 +302,10 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
       Dialog::ShowMessageBox(v12, v16, 0, 0, 0, v18); /*0x5f2fd6*/
     }
     v6 = 0; /*0x5f2fdb*/
-  LABEL_22:
+    LABEL_22:
     if ( v9 <= 0 ) /*0x5f2fdf*/
       break; /*0x5f2fdf*/
-  LABEL_25:
+    LABEL_25:
     if ( v6 != 1 ) /*0x5f2ff1*/
       goto LABEL_36; /*0x5f2ff1*/
   }
@@ -350,8 +348,7 @@ void* sub_5F33B0()
   MessageLoop(); /*0x5f33b6*/
   uint16_t v0; // ax
   v0 = EventQueue::Process(dword_87F770); /*0x5f33c1*/
-  int v1; // esi
-  v1 = v0; /*0x5f33c9*/
+  int v1 = v0; // esi /*0x5f33c9*/
   if ( !v0 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
   ((HWND *)dword_87F770)->PumpMessages(); /*0x5f33d7*/
@@ -369,17 +366,13 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
 
   int v2; // edi
   v2 = *(unsigned int *)(a2 + 16); /*0x5f66a7*/
-  int v3; // esi
-  v3 = 0; /*0x5f66ae*/
-  int v4; // ebx
-  v4 = 0; /*0x5f66b0*/
-  int v5; // ecx
-  v5 = 0; /*0x5f66b2*/
-  int v6; // eax
-  v6 = 0; /*0x5f66b4*/
+  int v3 = 0; // esi /*0x5f66ae*/
+  int v4 = 0; // ebx /*0x5f66b0*/
+  int v5 = 0; // ecx /*0x5f66b2*/
+  int v6 = 0; // eax /*0x5f66b4*/
   if ( v2 > 0 ) /*0x5f66bc*/
   {
-  int v7; // ebp
+    int v7; // ebp
     v7 = *(unsigned int *)(a2 + 4); /*0x5f66c2*/
     v3 = *(unsigned int *)(*(unsigned int *)v7 + 156); /*0x5f66d0*/
     v4 = *(unsigned int *)(*(unsigned int *)v7 + 160); /*0x5f66d9*/
@@ -390,19 +383,18 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
     else
     {
       v5 = 0; /*0x5f66f7*/
-  unsigned int *v8; // ebp
+      unsigned int *v8; // ebp
       v8 = (unsigned int *)(v7 + 4 * (v2 - 1)); /*0x5f66fb*/
-  unsigned int *v14; // [esp+10h] [ebp-28h]
+      unsigned int *v14; // [esp+10h] [ebp-28h]
       v14 = v8; /*0x5f6700*/
-  int v15; // [esp+14h] [ebp-24h]
+      int v15; // [esp+14h] [ebp-24h]
       v15 = *(unsigned int *)(a2 + 16); /*0x5f6704*/
       do /*0x5f675e*/
       {
-  int *v9; // ebp
+        int *v9; // ebp
         v9 = (int *)(*v8 + 156); /*0x5f6711*/
-  int v10; // edx
-        v10 = *v9; /*0x5f6713*/
-  int v11; // edi
+        int v10 = *v9; // edx /*0x5f6713*/
+        int v11; // edi
         v11 = v9[1]; /*0x5f6718*/
         if ( *v9 < v3 ) /*0x5f6722*/
         {
@@ -452,7 +444,7 @@ char sub_5FBEF0()
         dwNewLong = 2; /*0x5fbf37*/
       if ( !byte_A8E9A0 ) /*0x5fbf46*/
       {
-  int v1; // ecx
+        int v1; // ecx
         (*((unsigned char *)&(v1))) = 0; /*0x5fbf48*/
         ScreenSaver::Process(v1); /*0x5fbf4a*/
       }
@@ -483,7 +475,7 @@ int FindBuildingByTiberiumType(int aP0)
   v2 = 0; /*0x5fdd4e*/
   if ( dword_B0F4F8 <= 0 ) /*0x5fdd52*/
   {
-  LABEL_11:
+    LABEL_11:
     memcpy(v8, (const void *)(v1 + 100), 0x31u); /*0x5fdda4*/
     Debug::Log("Overlay %s not really tiberium\n", v8[0]); /*0x5fddb9*/
     return 0; /*0x5fddc1*/
@@ -615,10 +607,10 @@ int BuildingTypeClass_LoadSHPs(int a1)
       *(unsigned int *)(v4 + 164) = (unsigned int)(v6); /*0x5fe693*/
       if ( !v6 ) /*0x5fe699*/
         goto LABEL_5; /*0x5fe699*/
-  LABEL_14:
+      LABEL_14:
       result = dword_A83D90; /*0x5fe754*/
-      if ( ++v2 >= dword_A83D90 ) /*0x5fe75c*/
-        return result; /*0x5fe75c*/
+        if ( ++v2 >= dword_A83D90 ) /*0x5fe75c*/
+          return result; /*0x5fe75c*/
     }
     if ( !*(unsigned char *)(v4 + 567) ) /*0x5fe6be*/
       goto LABEL_14; /*0x5fe6be*/
@@ -628,10 +620,10 @@ int BuildingTypeClass_LoadSHPs(int a1)
     *(unsigned int *)(v4 + 164) = (unsigned int)(v7); /*0x5fe6fd*/
     if ( v7 ) /*0x5fe703*/
       goto LABEL_14; /*0x5fe703*/
-  LABEL_5:
+    LABEL_5:
     (Buffer)->SetRTTI71(); /*0x5fe69f*/
-    *(unsigned int *)(v4 + 164) = (unsigned int)(SearchMIXFile(Buffer, 1)); /*0x5fe6b3*/
-    goto LABEL_14; /*0x5fe6b9*/
+      *(unsigned int *)(v4 + 164) = (unsigned int)(SearchMIXFile(Buffer, 1)); /*0x5fe6b3*/
+      goto LABEL_14; /*0x5fe6b9*/
   }
   return result; /*0x5fe763*/
 }
@@ -866,9 +858,7 @@ AbstractClass * * GenerateRangeRingTextures()
 namespace gamemd {
 int StringBuilder_AppendChar(char a1)
 {
-  int result; // eax
-
-  result = dword_A8EA84; /*0x5f1358*/
+  int result = dword_A8EA84; // eax /*0x5f1358*/
   if ( dword_A8EA84 < dword_A8EA80 - 1 ) /*0x5f135f*/
   {
     *(unsigned char *)(dword_A8EA7C + dword_A8EA84) = a1; /*0x5f1367*/

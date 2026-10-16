@@ -55,11 +55,11 @@ int AbstractTypeClass::Constructor(char *aP1, void *a2, void *a3, void *a4)
   }
   if ( Destination != v3 ) /*0x410880*/
   {
-LABEL_8:
+    LABEL_8:
     memcpy(v3, Destination, 0x18u); /*0x4108b5*/
     this->zero_3C = Destination[24]; /*0x4108b7*/
   }
-LABEL_9:
+  LABEL_9:
   if ( this == (int *)-36 ) /*0x4108ba*/
   {
     Destination[0] = 0; /*0x4108bc*/
@@ -130,9 +130,9 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   result = (int)(INIClass::BinarySearchSection((int)aP1, (unsigned __int8 *)this->__pad_024)); /*0x410a7f*/
   if ( result ) /*0x410a86*/
   {
-  char *Name; // edi
+    char *Name; // edi
     Name = this->Name; /*0x410a91*/
-  char Source[1024]; // [esp+40h] [ebp-400h] BYREF
+    char Source[1024]; // [esp+40h] [ebp-400h] BYREF
     (/*0x410aa0*/ (INIClass *)aP1)->GetString((unsigned __int8 *)this->__pad_024, (unsigned __int8 *)g_INI_Key_Name, this->Name, Source, 49);
     if ( Source ) /*0x410aab*/
     {
@@ -148,7 +148,7 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
       memcpy(Name, Destination, 0x30u); /*0x410add*/
       this->Name[48] = v7; /*0x410adf*/
     }
-  char *UINameLabel; // ebp
+    char *UINameLabel; // ebp
     UINameLabel = this->UINameLabel; /*0x410aeb*/
     (/*0x410afb*/ (INIClass *)aP1)->GetString((unsigned __int8 *)this->__pad_024, (unsigned __int8 *)g_INI_Key_UIName, this->UINameLabel, Source, 32);
     if ( Source ) /*0x410b06*/

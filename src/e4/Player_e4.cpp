@@ -26,8 +26,7 @@ void Player::BuildListString(wchar_t * Destination)
   v2 = (wchar_t **)dword_A8DA90; /*0x5e8dcd*/
   do /*0x5e8e89*/
   {
-  wchar_t *v3; // esi
-    v3 = *v2; /*0x5e8dd2*/
+    wchar_t *v3 = *v2; // esi /*0x5e8dd2*/
     unknown_libname_74(&v6); /*0x5e8dd8*/
     if ( !v3 /*0x5e8e17*/
       || v3 == (wchar_t *)g_HouseClass_ObserverFlags
@@ -39,7 +38,7 @@ void Player::BuildListString(wchar_t * Destination)
       || v3 == (wchar_t *)g_Lobby_PlayerColor )
     {
       GetPlayerTypeString((char **)&v6.q004, v3); /*0x5e8e2b*/
-  wchar_t **v4; // eax
+      wchar_t **v4; // eax
       v4 = CharStringToWide((wchar_t **)&v6.u32_8, (const char **)&v6.q004); /*0x5e8e38*/
       WideString::Reassign_Alt((void **)&v6, (const wchar_t **)v4); /*0x5e8e42*/
       ((DeleteAndZero *)&v6.u32_8)->Alt(); /*0x5e8e4b*/
@@ -49,7 +48,7 @@ void Player::BuildListString(wchar_t * Destination)
     {
       WideString::Assign_Alt((void **)&v6, v3); /*0x5e8e1e*/
     }
-  wchar_t *v5; // eax
+    wchar_t *v5; // eax
     v5 = (wchar_t *)(((wchar_t **)&v6)->GetOrEmpty()); /*0x5e8e5d*/
     wcscat((wchar_t *)Destination, v5); /*0x5e8e64*/
     wcscat((wchar_t *)Destination, asc_8304FC); /*0x5e8e6f*/
@@ -80,10 +79,8 @@ wchar_t * Player::FindByName(wchar_t * String2)
     return (wchar_t *)(g_Lobby_PlayerReady); /*0x5e8c9e*/
   if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, (const wchar_t *)String2) ) /*0x5e8caf*/
     return (wchar_t *)g_Lobby_MaxPlayers; /*0x5e8cbb*/
-  int v3; // ebp
-  v3 = dword_A8DA84; /*0x5e8cc5*/
-  int v4; // esi
-  v4 = 0; /*0x5e8ccb*/
+  int v3 = dword_A8DA84; // ebp /*0x5e8cc5*/
+  int v4 = 0; // esi /*0x5e8ccb*/
   if ( dword_A8DA84 <= 0 ) /*0x5e8ccf*/
     return 0; /*0x5e8ced*/
   while ( 1 ) /*0x5e8cd8*/
@@ -102,7 +99,7 @@ namespace gamemd {
 int Player::IsObserver(void *a1)
 {
   return this /*0x5e9461*/
-      && (this == (Player *)g_Lobby_PlayerTeam
+  && (this == (Player *)g_Lobby_PlayerTeam
        || this == (Player *)g_Lobby_PlayerSide
        || this == (Player *)g_Lobby_PlayerColor);
 }

@@ -62,7 +62,7 @@ namespace gamemd { void nullsub_49(); }  // w18j2 raw 0x007BF220
 // [w16g4] C3861 supply (raw call-form evidence)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int RenderGradientTrapezoid(float *p_this);  // x4:ida@0x660050
+int RenderGradientTrapezoid(float *p_this);  // x4:ida@0x660050
 } // namespace gamemd
 
 // 0x52FF90
@@ -78,7 +78,7 @@ int Render_Load(void * a1, void * a2, void * a3)
   if ( a2 ) /*0x52ffb9*/
   {
     (*((unsigned char *)&(v6))) = 1; /*0x52ffc3*/
-// 0x4f4780
+    // 0x4f4780
     return (unsigned int)((Frame *)(v6))->Present(0); /*0x52ffc5*/
     {
       int *v9; // eax
@@ -157,12 +157,12 @@ int Render_Load(void * a1, void * a2, void * a3)
           {
             if ( dword_87F7EC >= 0 ) /*0x4f4856*/
             {
-      LABEL_13:
+              LABEL_13:
               if ( dword_87F7F0 > 0 ) /*0x4f4860*/
               {
                 v14 = v11 - dword_87F7F0; /*0x4f4865*/
                 v46 = dword_87F7F0 + v41; /*0x4f4867*/
-      LABEL_17:
+                LABEL_17:
                 v48 = v14; /*0x4f4871*/
                 goto LABEL_18; /*0x4f4871*/
               }
@@ -171,7 +171,7 @@ int Render_Load(void * a1, void * a2, void * a3)
                 v14 = dword_87F7F0 + v11; /*0x4f486f*/
                 goto LABEL_17; /*0x4f486f*/
               }
-      LABEL_18:
+              LABEL_18:
               if ( !byte_A8EB7C && !byte_A8ED6B ) /*0x4f4887*/
               {
                 v15 = dword_886FB8 - v12; /*0x4f4895*/
@@ -245,13 +245,13 @@ int Render_Load(void * a1, void * a2, void * a3)
                 {
                   v13 = dword_87F7F0; /*0x4f4a14*/
                   v30 = 1; /*0x4f4a1a*/
-      LABEL_47:
+                  LABEL_47:
                   if ( !byte_884D2E && !v13 && !v30 ) /*0x4f4a36*/
                   {
                     v48 -= *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a4a*/
                     Rect.right -= *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a53*/
                   }
-      LABEL_51:
+                  LABEL_51:
                   if ( dword_87F7EC ) /*0x4f4a5e*/
                   {
                     v31 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1) - *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a7c*/
@@ -324,103 +324,101 @@ int Render_Load(void * a1, void * a2, void * a3)
       }
       return result; /*0x4f4ba4*/
     }
-int sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, int a6, int a7)
-{
-  bool v14; // zf
-
-  int v7; // ebx
-  v7 = a4; /*0x53c0a7*/
-  unsigned short *v26; // [esp+34h] [ebp-14h]
-  v26 = a1; /*0x53c0b6*/
-  float v28; // [esp+3Ch] [ebp-Ch]
-  v28 = (float)(a4 / 2); /*0x53c0c4*/
-  int result; // eax
-  result = a5 / 2; /*0x53c0c9*/
-  double v9; // st7
-  v9 = (double)(a5 / 2); /*0x53c0ce*/
-  float v27; // [esp+38h] [ebp-10h]
-  v27 = v9; /*0x53c0d3*/
-  float v18; // [esp+18h] [ebp-30h]
-  v18 = v9 * v27 + v28 * v28; /*0x53c0e1*/
-  float v29; // [esp+40h] [ebp-8h]
-  v29 = -v27; /*0x53c0e9*/
-  if ( a5 > 0 ) /*0x53c0ec*/
-  {
-  int v21; // [esp+24h] [ebp-24h]
-    v21 = a5; /*0x53c0fb*/
-    do /*0x53c26c*/
+    int sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, int a6, int a7)
     {
-  float v20; // [esp+20h] [ebp-28h]
-      v20 = -v28; /*0x53c0f7*/
-  float v30; // [esp+44h] [ebp-4h]
-      v30 = v20; /*0x53c103*/
-      if ( v7 > 0 ) /*0x53c106*/
+      bool v14; // zf
+
+      int v7 = a4; // ebx /*0x53c0a7*/
+      unsigned short *v26; // [esp+34h] [ebp-14h]
+      v26 = a1; /*0x53c0b6*/
+      float v28; // [esp+3Ch] [ebp-Ch]
+      v28 = (float)(a4 / 2); /*0x53c0c4*/
+      int result = a5 / 2; // eax /*0x53c0c9*/
+      double v9; // st7
+      v9 = (double)(a5 / 2); /*0x53c0ce*/
+      float v27; // [esp+38h] [ebp-10h]
+      v27 = v9; /*0x53c0d3*/
+      float v18; // [esp+18h] [ebp-30h]
+      v18 = v9 * v27 + v28 * v28; /*0x53c0e1*/
+      float v29; // [esp+40h] [ebp-8h]
+      v29 = -v27; /*0x53c0e9*/
+      if ( a5 > 0 ) /*0x53c0ec*/
       {
-  int v22; // [esp+28h] [ebp-20h]
-        v22 = v7; /*0x53c115*/
-        do /*0x53c24a*/
+        int v21; // [esp+24h] [ebp-24h]
+        v21 = a5; /*0x53c0fb*/
+        do /*0x53c26c*/
         {
-  float v19; // [esp+1Ch] [ebp-2Ch]
-          v19 = (float)(v29 * v29);
-  double v10; // st7
-          v10 = (float)((1.0 - (v30 * v30 + v19) / v18) * 5.0);
-  float v23; // [esp+2Ch] [ebp-1Ch]
-          v23 = (float)(flt_A9FAA0 * v10 * v10);
-  float v25; // [esp+30h] [ebp-18h]
-          v25 = (float)(ComputeChronosphereDistortion(v23));
-  float v24; // [esp+2Ch] [ebp-1Ch]
-          v24 = (float)(ComputeDistortionVariant(v23));
-  float v16; // [esp+14h] [ebp-34h]
-          v16 = v25 * v30 + v24 * v29 + v28; /*0x53c16e*/
-  int v11; // ecx
-          v11 = (int)v16; /*0x53c183*/
-  float v17; // [esp+14h] [ebp-34h]
-          v17 = v25 * v29 - v24 * v30 + v27; /*0x53c18b*/
-  int v12; // eax
-          v12 = (int)v17; /*0x53c194*/
-          if ( v11 >= 0 ) /*0x53c199*/
+          float v20; // [esp+20h] [ebp-28h]
+          v20 = -v28; /*0x53c0f7*/
+          float v30; // [esp+44h] [ebp-4h]
+          v30 = v20; /*0x53c103*/
+          if ( v7 > 0 ) /*0x53c106*/
           {
-            if ( v11 >= v7 ) /*0x53c1a1*/
-              v11 = v7 - 1; /*0x53c1a3*/
+            int v22; // [esp+28h] [ebp-20h]
+            v22 = v7; /*0x53c115*/
+            do /*0x53c24a*/
+            {
+              float v19; // [esp+1Ch] [ebp-2Ch]
+              v19 = (float)(v29 * v29);
+              double v10; // st7
+              v10 = (float)((1.0 - (v30 * v30 + v19) / v18) * 5.0);
+              float v23; // [esp+2Ch] [ebp-1Ch]
+              v23 = (float)(flt_A9FAA0 * v10 * v10);
+              float v25; // [esp+30h] [ebp-18h]
+              v25 = (float)(ComputeChronosphereDistortion(v23));
+              float v24; // [esp+2Ch] [ebp-1Ch]
+              v24 = (float)(ComputeDistortionVariant(v23));
+              float v16; // [esp+14h] [ebp-34h]
+              v16 = v25 * v30 + v24 * v29 + v28; /*0x53c16e*/
+              int v11; // ecx
+              v11 = (int)v16; /*0x53c183*/
+              float v17; // [esp+14h] [ebp-34h]
+              v17 = v25 * v29 - v24 * v30 + v27; /*0x53c18b*/
+              int v12; // eax
+              v12 = (int)v17; /*0x53c194*/
+              if ( v11 >= 0 ) /*0x53c199*/
+              {
+                if ( v11 >= v7 ) /*0x53c1a1*/
+                  v11 = v7 - 1; /*0x53c1a3*/
+              }
+              else
+              {
+                v11 = 0; /*0x53c19b*/
+              }
+              if ( v12 >= 0 ) /*0x53c1a8*/
+              {
+                if ( v12 >= a5 ) /*0x53c1b3*/
+                  v12 = a5 - 1; /*0x53c1b5*/
+              }
+              else
+              {
+                v12 = 0; /*0x53c1aa*/
+              }
+              v30 = v30 + 1.0; /*0x53c1c5*/
+              unsigned int v13; // eax
+              v13 = a2 + 2 * (v11 + a7 * v12); /*0x53c1d2*/
+              (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v13) & 0xFFFF); /*0x53c1d5*/
+              *v26 = ((v13 & 0x1F) + ((int)(a3 * (31 - (v13 & 0x1F))) >> 8)) /*0x53c23a*/
+              | (32 * (((v13 >> 5) & 0x3F) + ((int)(a3 * (63 - ((v13 >> 5) & 0x3F))) >> 8)))
+              | ((((uint16_t)v13 >> 11) + (uint16_t)((a3 * (31 - ((uint16_t)v13 >> 11))) >> 8)) << 11);
+              v7 = a4; /*0x53c23d*/
+              a1 = ++v26; /*0x53c240*/
+              --v22; /*0x53c247*/
+            }
+            while ( v22 ); /*0x53c24a*/
           }
-          else
-          {
-            v11 = 0; /*0x53c19b*/
-          }
-          if ( v12 >= 0 ) /*0x53c1a8*/
-          {
-            if ( v12 >= a5 ) /*0x53c1b3*/
-              v12 = a5 - 1; /*0x53c1b5*/
-          }
-          else
-          {
-            v12 = 0; /*0x53c1aa*/
-          }
-          v30 = v30 + 1.0; /*0x53c1c5*/
-  unsigned int v13; // eax
-          v13 = a2 + 2 * (v11 + a7 * v12); /*0x53c1d2*/
-          (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v13) & 0xFFFF); /*0x53c1d5*/
-          *v26 = ((v13 & 0x1F) + ((int)(a3 * (31 - (v13 & 0x1F))) >> 8)) /*0x53c23a*/
-               | (32 * (((v13 >> 5) & 0x3F) + ((int)(a3 * (63 - ((v13 >> 5) & 0x3F))) >> 8)))
-               | ((((uint16_t)v13 >> 11) + (uint16_t)((a3 * (31 - ((uint16_t)v13 >> 11))) >> 8)) << 11);
-          v7 = a4; /*0x53c23d*/
-          a1 = ++v26; /*0x53c240*/
-          --v22; /*0x53c247*/
+          a1 += a6; /*0x53c25c*/
+          result = v21 - 1; /*0x53c262*/
+          v14 = v21 == 1; /*0x53c262*/
+          v26 = a1; /*0x53c263*/
+          --v21; /*0x53c266*/
+          v29 = v29 + 1.0; /*0x53c269*/
         }
-        while ( v22 ); /*0x53c24a*/
+        while ( !v14 ); /*0x53c26c*/
       }
-      a1 += a6; /*0x53c25c*/
-      result = v21 - 1; /*0x53c262*/
-      v14 = v21 == 1; /*0x53c262*/
-      v26 = a1; /*0x53c263*/
-      --v21; /*0x53c266*/
-      v29 = v29 + 1.0; /*0x53c269*/
+      return result; /*0x53c273*/
     }
-    while ( !v14 ); /*0x53c26c*/
   }
-  return result; /*0x53c273*/
-}
-}
 }
 }  // G42.18 ns repair
 // 0x652230
@@ -442,11 +440,11 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
       if ( dword_A8B238[0] == 4 ) /*0x6522d0*/
         Timer::UpdateDelta(); /*0x6522d2*/
       ++dword_A8DAB4; /*0x6522e4*/
-  wchar_t *StringCSF; // [esp-10h] [ebp-18h]
+      wchar_t *StringCSF; // [esp-10h] [ebp-18h]
       StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Queue_CPP, 8878); /*0x65230f*/
-  int *v5; // eax
+      int *v5; // eax
       v5 = (int *)GetStringCSF(g_Str_TXT_QUEUE_FULL, 0, g_Str_File_Queue_CPP, 8878); /*0x65231a*/
-  int v7; // [esp+0h] [ebp-8h]
+      int v7; // [esp+0h] [ebp-8h]
       Dialog::ShowMessageBox(v5, StringCSF, 0, 0, 0, v7); /*0x652324*/
       dword_A8B8B8 = 0; /*0x652335*/
       --dword_A8DAB4; /*0x652341*/
@@ -468,7 +466,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
   }
   else
   {
-  int v3; // eax
+    int v3; // eax
     if ( v3 ) /*0x65226e*/
       v3 = v3 - 1; /*0x652277*/
     else
@@ -513,18 +511,17 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   v34 += dword_886FA4; /*0x70530d*/
   int v8; // esi
   v8 = ((unsigned __int8)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x705348*/
-     | (BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue)
-     | (BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green);
+  | (BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue)
+  | (BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green);
   int v27; // [esp+24h] [ebp-A0h] BYREF
   v27 = (unsigned __int8)word_A83CDA; /*0x705363*/
   int v43[2]; // [esp+64h] [ebp-60h] BYREF
   v43[0] = v29; /*0x70538d*/
   int v9; // edi
   v9 = (HIBYTE(word_A83CDA) >> g_BitMask_Red << g_BitShift_Blue) /*0x705397*/
-     | ((unsigned __int8)word_A83CDA >> g_BitMask_Blue << g_BitMask_Green)
-     | ((unsigned __int8)byte_A83CD9 >> g_BitShift_Green_0 << g_BitShift_Red);
-  char v10; // bl
-  v10 = a8; /*0x705399*/
+  | ((unsigned __int8)word_A83CDA >> g_BitMask_Blue << g_BitMask_Green)
+  | ((unsigned __int8)byte_A83CD9 >> g_BitShift_Green_0 << g_BitShift_Red);
+  char v10 = a8; // bl /*0x705399*/
   v43[1] = v30 + 1; /*0x7053b0*/
   int v44[2]; // [esp+6Ch] [ebp-58h] BYREF
   v44[0] = v33; /*0x7053b4*/
@@ -533,16 +530,16 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   {
     v27 = -2; /*0x7053cb*/
     v28 = -2; /*0x7053dc*/
-  unsigned int *v11; // eax
-  unsigned int v52[2]; // [esp+9Ch] [ebp-28h] BYREF
+    unsigned int *v11; // eax
+    unsigned int v52[2]; // [esp+9Ch] [ebp-28h] BYREF
     v11 = Coord2D::Add(&v27, v52, v43); /*0x7053e6*/
-  int *v12; // eax
+    int *v12; // eax
     v12 = (int *)(Rect::Construct(v53, v11, 3, 3)); /*0x7053f3*/
     v39 = *v12; /*0x7053fc*/
     v40 = v12->Y; /*0x705405*/
     v41 = v12->Width; /*0x70540c*/
     v42 = v12->Height; /*0x70541e*/
-  int *v13; // eax
+    int *v13; // eax
     v13 = (int *)(ClipRectIntersection(v54, &DSurface_ViewBounds, &v39, 0, 0)); /*0x705428*/
     v35 = *v13; /*0x705430*/
     v36 = v13->vtable2; /*0x705437*/
@@ -551,15 +548,15 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v35, v8); /*0x705456*/
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
-  unsigned int *v14; // eax
+    unsigned int *v14; // eax
     v14 = Coord2D::Add(&v27, v52, v44); /*0x70547d*/
-  int *v15; // eax
+    int *v15; // eax
     v15 = (int *)(Rect::Construct(v54, v14, 3, 3)); /*0x70548a*/
     v35 = *v15; /*0x705493*/
     v36 = v15->Y; /*0x70549c*/
     v37 = v15->Width; /*0x7054a8*/
     v38 = v15->Height; /*0x7054bb*/
-  int *v16; // eax
+    int *v16; // eax
     v16 = (int *)(ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0)); /*0x7054bf*/
     v39 = *v16; /*0x7054c6*/
     v40 = v16->vtable2; /*0x7054cd*/
@@ -574,7 +571,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   v51[3] = dword_886FAC; /*0x705518*/
   if ( v10 && ClipLine(v43, v44, v51) ) /*0x70552e*/
   {
-  int v17; // eax
+    int v17; // eax
     if ( *(unsigned int *)(dword_87F6C4 + 4) == 1 ) /*0x705540*/
       v17 = **(unsigned __int8 **)(dword_87F6C4 + 372); /*0x70554c*/
     else
@@ -621,19 +618,16 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   v46 = a2; /*0x7056a2*/
   int v47; // [esp+7Ch] [ebp-48h]
   v47 = a3; /*0x7056a6*/
-  int v22; // esi
-  v22 = 1; /*0x7056aa*/
-  int v23; // edi
-  v23 = 63; /*0x7056af*/
-  int v24; // ebx
-  v24 = 252; /*0x7056b4*/
+  int v22 = 1; // esi /*0x7056aa*/
+  int v23 = 63; // edi /*0x7056af*/
+  int v24 = 252; // ebx /*0x7056b4*/
   do /*0x705841*/
   {
-  int v48; // [esp+80h] [ebp-44h] BYREF
+    int v48; // [esp+80h] [ebp-44h] BYREF
     v48 = (v22 * a4 + v23 * a1) / 64; /*0x7056ec*/
-  int v49; // [esp+84h] [ebp-40h]
+    int v49; // [esp+84h] [ebp-40h]
     v49 = (v22 * a5 + v23 * a2) / 64; /*0x705705*/
-  int v50; // [esp+88h] [ebp-3Ch]
+    int v50; // [esp+88h] [ebp-3Ch]
     v50 = (v22 * a6 + v23 * a3) / 64; /*0x705728*/
     (g_TacticalClass_Instance)->To_Screen(&v45, &v29); /*0x705732*/
     (g_TacticalClass_Instance)->To_Screen(&v48, &v33); /*0x705747*/
@@ -643,8 +637,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     {
       v31 = a7; /*0x705794*/
       v32 = BYTE2(a7); /*0x705799*/
-  unsigned __int8 v25; // al
-      v25 = v24; /*0x70579d*/
+      unsigned __int8 v25 = v24; // al /*0x70579d*/
       if ( v24 >= 254 ) /*0x70579f*/
         v25 = -2; /*0x7057a1*/
       Color::Lerp((unsigned __int8 *)&v31, v25, (unsigned __int8 *)&byte_A83CD9); /*0x7057b0*/
@@ -653,8 +646,8 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
         &v29,
         &v33,
         ((unsigned __int8)v31 >> g_BitShift_Green_0 << g_BitShift_Red)
-      | (HIBYTE(v31) >> g_BitMask_Blue << g_BitMask_Green)
-      | (v32 >> g_BitMask_Red << g_BitShift_Blue));
+        | (HIBYTE(v31) >> g_BitMask_Blue << g_BitMask_Green)
+        | (v32 >> g_BitMask_Red << g_BitShift_Blue));
     }
     result = v50; /*0x705829*/
     ++v22; /*0x70582d*/
@@ -685,7 +678,7 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
     v7 = 0; /*0x780ddb*/
     if ( dword_A8B8D8 <= 0 ) /*0x780ddf*/
     {
-  LABEL_6:
+      LABEL_6:
       ((WideString *)((WideString *)a1))->Assign((wchar_t *)(&g_TypeClass_DefaultString)); /*0x780e0b*/
       return a1; /*0x780e17*/
     }
@@ -777,7 +770,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v45 = v22 - 12; /*0x7c77c3*/
             v24 = 0; /*0x7c77c7*/
             v23 = ((v22 - 12) >> 4) + 1; /*0x7c77c9*/
-  LABEL_121:
+            LABEL_121:
             v30 = *(uint8_t *)(v20 + 2) << 16; /*0x7c7ae0*/
             (*((unsigned short *)&(v30))) = *(unsigned short *)v20; /*0x7c7ae8*/
             (*((unsigned char *)&(v24))) = *(unsigned short *)v20; /*0x7c7aeb*/
@@ -790,7 +783,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v45 = v22 - 8; /*0x7c77d3*/
             v24 = 0; /*0x7c77d7*/
             v23 = ((v22 - 8) >> 4) + 1; /*0x7c77d9*/
-  LABEL_119:
+            LABEL_119:
             (*((unsigned short *)&(v27))) = *(unsigned short *)v20; /*0x7c7aa4*/
             (*((unsigned char *)&(v24))) = *(unsigned short *)v20; /*0x7c7aa9*/
             v21 -= 8; /*0x7c7aab*/
@@ -801,7 +794,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v45 = v22 - 4; /*0x7c77e3*/
             v24 = 0; /*0x7c77e7*/
             v23 = ((v22 - 4) >> 4) + 1; /*0x7c77e9*/
-  LABEL_117:
+            LABEL_117:
             (*((unsigned char *)&(v24))) = *(unsigned char *)v20; /*0x7c7a70*/
             v21 -= 12; /*0x7c7a76*/
             v20 -= 3; /*0x7c7a79*/
@@ -830,7 +823,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c7814*/
         *v21 = v18; /*0x7c781a*/
-  LABEL_75:
+        LABEL_75:
         (*((unsigned char *)&(v24))) = (((unsigned char *)&(v28))[1]); /*0x7c781d*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c781f*/
         (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7826*/
@@ -845,7 +838,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c7843*/
         v21[2] = v18; /*0x7c7849*/
         v27 = (*(((unsigned short *)&(v28)) + 1)); /*0x7c784d*/
-  LABEL_79:
+        LABEL_79:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c7850*/
         (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7857*/
         if ( v18 > 0x7FFF ) /*0x7c7863*/
@@ -858,7 +851,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c7874*/
         v21[4] = v18; /*0x7c787a*/
-  LABEL_83:
+        LABEL_83:
         (*((unsigned char *)&(v24))) = v27; /*0x7c787e*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c7880*/
         (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7887*/
@@ -872,7 +865,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c78a4*/
         v21[6] = v18; /*0x7c78aa*/
-  LABEL_87:
+        LABEL_87:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c78ae*/
         (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c78b5*/
         if ( v18 > 0x7FFF ) /*0x7c78c1*/
@@ -885,7 +878,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c78d2*/
         v21[8] = v18; /*0x7c78d8*/
-  LABEL_91:
+        LABEL_91:
         (*((unsigned char *)&(v24))) = (((unsigned char *)&(v27))[1]); /*0x7c78dc*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c78de*/
         (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c78e5*/
@@ -899,7 +892,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c7902*/
         v21[10] = v18; /*0x7c7908*/
-  LABEL_95:
+        LABEL_95:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c790c*/
         (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7913*/
         if ( v18 > 0x7FFF ) /*0x7c791f*/
@@ -912,7 +905,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c7930*/
         v21[12] = v18; /*0x7c7936*/
-  LABEL_99:
+        LABEL_99:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c793a*/
         (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7941*/
         if ( v18 > 0x7FFF ) /*0x7c794d*/
@@ -984,7 +977,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v46 = v35 - 12; /*0x7c7b93*/
             v37 = 0; /*0x7c7b97*/
             v36 = ((v35 - 12) >> 4) + 1; /*0x7c7b99*/
-  LABEL_180:
+            LABEL_180:
             v43 = *(uint8_t *)(v32 + 2) << 16; /*0x7c7eb4*/
             (*((unsigned short *)&(v43))) = *(unsigned short *)v32; /*0x7c7ebc*/
             (*((unsigned char *)&(v37))) = *(unsigned short *)v32; /*0x7c7ebf*/
@@ -997,7 +990,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v46 = v35 - 8; /*0x7c7ba3*/
             v37 = 0; /*0x7c7ba7*/
             v36 = ((v35 - 8) >> 4) + 1; /*0x7c7ba9*/
-  LABEL_178:
+            LABEL_178:
             (*((unsigned short *)&(v40))) = *(unsigned short *)v32; /*0x7c7e78*/
             (*((unsigned char *)&(v37))) = *(unsigned short *)v32; /*0x7c7e7d*/
             v31 -= 8; /*0x7c7e7f*/
@@ -1008,7 +1001,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v46 = v35 - 4; /*0x7c7bb3*/
             v37 = 0; /*0x7c7bb7*/
             v36 = ((v35 - 4) >> 4) + 1; /*0x7c7bb9*/
-  LABEL_176:
+            LABEL_176:
             (*((unsigned char *)&(v37))) = *(unsigned char *)v32; /*0x7c7e44*/
             v31 -= 12; /*0x7c7e4a*/
             v32 -= 3; /*0x7c7e4d*/
@@ -1037,7 +1030,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7be4*/
         *v31 = v33; /*0x7c7bea*/
-  LABEL_134:
+        LABEL_134:
         (*((unsigned char *)&(v37))) = (((unsigned char *)&(v41))[1]); /*0x7c7bed*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7bef*/
         (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7bf6*/
@@ -1052,7 +1045,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7c13*/
         v31[2] = v33; /*0x7c7c19*/
         v40 = (*(((unsigned short *)&(v41)) + 1)); /*0x7c7c1d*/
-  LABEL_138:
+        LABEL_138:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c20*/
         (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c27*/
         if ( v33 > 0x7FFF ) /*0x7c7c33*/
@@ -1065,7 +1058,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7c44*/
         v31[4] = v33; /*0x7c7c4a*/
-  LABEL_142:
+        LABEL_142:
         (*((unsigned char *)&(v37))) = v40; /*0x7c7c4e*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c50*/
         (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c57*/
@@ -1079,7 +1072,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7c74*/
         v31[6] = v33; /*0x7c7c7a*/
-  LABEL_146:
+        LABEL_146:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c7e*/
         (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c85*/
         if ( v33 > 0x7FFF ) /*0x7c7c91*/
@@ -1092,7 +1085,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7ca2*/
         v31[8] = v33; /*0x7c7ca8*/
-  LABEL_150:
+        LABEL_150:
         (*((unsigned char *)&(v37))) = (((unsigned char *)&(v40))[1]); /*0x7c7cac*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7cae*/
         (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7cb5*/
@@ -1106,7 +1099,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7cd2*/
         v31[10] = v33; /*0x7c7cd8*/
-  LABEL_154:
+        LABEL_154:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7cdc*/
         (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7ce3*/
         if ( v33 > 0x7FFF ) /*0x7c7cef*/
@@ -1119,7 +1112,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7d00*/
         v31[12] = v33; /*0x7c7d06*/
-  LABEL_158:
+        LABEL_158:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7d0a*/
         (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7d11*/
         if ( v33 > 0x7FFF ) /*0x7c7d1d*/
@@ -1193,7 +1186,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v44 = a5 - 12; /*0x7c73fb*/
             v11 = 0; /*0x7c73ff*/
             v10 = ((a5 - 12) >> 4) + 1; /*0x7c7401*/
-  LABEL_62:
+            LABEL_62:
             v17 = *(uint8_t *)(v8 + 2) << 16; /*0x7c771c*/
             (*((unsigned short *)&(v17))) = *(unsigned short *)v8; /*0x7c7724*/
             (*((unsigned char *)&(v11))) = *(unsigned short *)v8; /*0x7c7727*/
@@ -1206,7 +1199,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v44 = a5 - 8; /*0x7c740b*/
             v11 = 0; /*0x7c740f*/
             v10 = ((a5 - 8) >> 4) + 1; /*0x7c7411*/
-  LABEL_60:
+            LABEL_60:
             (*((unsigned short *)&(v14))) = *(unsigned short *)v8; /*0x7c76e0*/
             (*((unsigned char *)&(v11))) = *(unsigned short *)v8; /*0x7c76e5*/
             v9 -= 4; /*0x7c76e7*/
@@ -1217,7 +1210,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v44 = a5 - 4; /*0x7c741b*/
             v11 = 0; /*0x7c741f*/
             v10 = ((a5 - 4) >> 4) + 1; /*0x7c7421*/
-  LABEL_58:
+            LABEL_58:
             (*((unsigned char *)&(v11))) = *(unsigned char *)v8; /*0x7c76ac*/
             v9 -= 6; /*0x7c76b2*/
             v8 -= 3; /*0x7c76b5*/
@@ -1246,7 +1239,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c744c*/
         *v9 = v6; /*0x7c7452*/
-  LABEL_15:
+        LABEL_15:
         (*((unsigned char *)&(v11))) = (((unsigned char *)&(v15))[1]); /*0x7c7455*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7457*/
         (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c745e*/
@@ -1261,7 +1254,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c747b*/
         v9[1] = v6; /*0x7c7481*/
         v14 = (*(((unsigned short *)&(v15)) + 1)); /*0x7c7485*/
-  LABEL_19:
+        LABEL_19:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7488*/
         (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c748f*/
         if ( v6 > 0x7FFF ) /*0x7c749b*/
@@ -1274,7 +1267,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c74ac*/
         v9[2] = v6; /*0x7c74b2*/
-  LABEL_23:
+        LABEL_23:
         (*((unsigned char *)&(v11))) = v14; /*0x7c74b6*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c74b8*/
         (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c74bf*/
@@ -1288,7 +1281,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c74dc*/
         v9[3] = v6; /*0x7c74e2*/
-  LABEL_27:
+        LABEL_27:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c74e6*/
         (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c74ed*/
         if ( v6 > 0x7FFF ) /*0x7c74f9*/
@@ -1301,7 +1294,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c750a*/
         v9[4] = v6; /*0x7c7510*/
-  LABEL_31:
+        LABEL_31:
         (*((unsigned char *)&(v11))) = (((unsigned char *)&(v14))[1]); /*0x7c7514*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7516*/
         (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c751d*/
@@ -1315,7 +1308,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c753a*/
         v9[5] = v6; /*0x7c7540*/
-  LABEL_35:
+        LABEL_35:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7544*/
         (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c754b*/
         if ( v6 > 0x7FFF ) /*0x7c7557*/
@@ -1328,7 +1321,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         }
         (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c7568*/
         v9[6] = v6; /*0x7c756e*/
-  LABEL_39:
+        LABEL_39:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7572*/
         (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c7579*/
         if ( v6 > 0x7FFF ) /*0x7c7585*/
@@ -1403,15 +1396,13 @@ char sub_731BF0()
     IsButtonDown = 1; /*0x731c5d*/
   if ( v1 && IsButtonDown ) /*0x731c66*/
   {
-  wchar_t *v3; // edi
-    v3 = dword_A8ECC8; /*0x731c68*/
-  int v4; // esi
-    v4 = 0; /*0x731c6e*/
+    wchar_t *v3 = dword_A8ECC8; // edi /*0x731c68*/
+    int v4 = 0; // esi /*0x731c6e*/
     if ( (int)dword_A8ECC8 <= 0 ) /*0x731c72*/
       return 1; /*0x731ca2*/
     while ( 1 ) /*0x731c79*/
     {
-  unsigned char *v5; // ecx
+      unsigned char *v5; // ecx
       v5 = (unsigned char *)*((unsigned int *)dword_A8ECBC + v4); /*0x731c79*/
       if ( v5 ) /*0x731c7e*/
       {
@@ -1430,8 +1421,7 @@ namespace gamemd {
 int sub_777E00()
 {
 
-  BOOL result; // eax
-  result = 0; /*0x777e06*/
+  BOOL result = 0; // eax /*0x777e06*/
   WideCharStr[0] = 0; /*0x777e0a*/
   dword_B73564 = 0; /*0x777e10*/
   MaxCount = 0; /*0x777e15*/
@@ -1490,7 +1480,7 @@ int Render_Draw_778030(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
   {
     ProcessCompositionIME(); /*0x778053*/
     v7 = DefWindowProcA(hWnd, 0x10Fu, wParam, lParam); /*0x778067*/
-  LABEL_12:
+    LABEL_12:
     dword_B73570 = v7; /*0x7780ef*/
     return 1; /*0x7780fa*/
   }
@@ -1572,7 +1562,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
       }
       ((void (__fastcall *)(wchar_t *, int))v9[1])(v5, aP1); /*0x6ca3fa*/
     }
-  LABEL_18:
+    LABEL_18:
     WideString::Trim(v2); /*0x6ca3fd*/
     if ( !wcslen(v2) ) /*0x6ca40f*/
       return 1; /*0x6ca48f*/
@@ -1595,7 +1585,7 @@ char sub_6CA940(int a1, unsigned short * a2, int a3)
   *a2 = 0; /*0x6ca957*/
   if ( a3 <= 0 ) /*0x6ca95c*/
   {
-  LABEL_9:
+    LABEL_9:
     a2[v4] = 0; /*0x6ca996*/
     return 0; /*0x6ca99e*/
   }
@@ -1628,18 +1618,16 @@ char sub_53D850()
 
   if ( (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) != dword_AA0150 ) /*0x53d865*/
   {
-  int v1; // ebx
+    int v1; // ebx
     v1 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2); /*0x53d874*/
     dword_A9FAE8[0] = 0; /*0x53d876*/
     dword_AA0150 = v1; /*0x53d880*/
-  int v2; // edi
-    v2 = 1; /*0x53d886*/
-  unsigned int *v3; // esi
-    v3 = &unk_A9FAEC; /*0x53d88b*/
+    int v2 = 1; // edi /*0x53d886*/
+    unsigned int *v3 = &unk_A9FAEC; // esi /*0x53d88b*/
     do /*0x53d8b2*/
     {
-  int *v4; // eax
-  int v7; // [esp+4h] [ebp-8h] BYREF
+      int *v4; // eax
+      int v7; // [esp+4h] [ebp-8h] BYREF
       v4 = ComputeSpiralOffset(&v7, v2); /*0x53d896*/
       ++v3; /*0x53d89d*/
       ++v2; /*0x53d8a8*/
@@ -1647,8 +1635,7 @@ char sub_53D850()
     }
     while ( (int)v3 < (int)&dword_A9FF6C ); /*0x53d8b2*/
   }
-  char result; // al
-  result = dword_AA0128; /*0x53d8b6*/
+  char result = dword_AA0128; // al /*0x53d8b6*/
   int i; // esi
   for ( i = dword_AA0128 - 1; i >= 0; --i ) /*0x53d8c0*/
     result = (*((ZBuffer **)dword_AA011C + i))->RenderSprite(); /*0x53d8cb*/
@@ -1701,8 +1688,7 @@ void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, un
 
   int v5; // esi
   v5 = a2[1]; /*0x55428a*/
-  int v8; // ecx
-  v8 = *a2; /*0x554294*/
+  int v8 = *a2; // ecx /*0x554294*/
   int v9; // edx
   v9 = *a2 + a2[2]; /*0x55429b*/
   int v11[4]; // [esp+14h] [ebp-10h] BYREF
@@ -1716,8 +1702,8 @@ void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, un
            v11,
            (unsigned int *)g_FogOfWarState,
            (uint8_t)((uint8_t)(a4 >> g_BitShift_Red) << g_BitShift_Green_0)
-         | (((uint8_t)((uint8_t)(a4 >> g_BitMask_Green) << g_BitMask_Blue)
-           | ((uint8_t)((uint8_t)(a4 >> g_BitShift_Blue) << g_BitMask_Red) << 8)) << 8),
+  | (((uint8_t)((uint8_t)(a4 >> g_BitMask_Green) << g_BitMask_Blue)
+  | ((uint8_t)((uint8_t)(a4 >> g_BitShift_Blue) << g_BitMask_Red) << 8)) << 8),
            a5,
            12,
            0,
@@ -1736,14 +1722,12 @@ AbstractClass * * sub_63B0A0()
     operator delete((void *)(*(void **)DataGlobal_AC4C1C)); /*0x63b0be*/
     *(unsigned int *)DataGlobal_AC4C1C = 0; /*0x63b0c6*/
   }
-  void *Array_field_0x10; // ebp
-  Array_field_0x10 = DataGlobal_AC4B40; /*0x63b0cc*/
-  int v2; // esi
-  v2 = 0; /*0x63b0d2*/
+  void *Array_field_0x10 = DataGlobal_AC4B40; // ebp /*0x63b0cc*/
+  int v2 = 0; // esi /*0x63b0d2*/
   DataGlobal_AC4C25 = 0; /*0x63b0d6*/
   for ( *(unsigned int *)&DataGlobal_AC4C20 = 0; v2 < (int)Array_field_0x10; ++v2 ) /*0x63b0e2*/
   {
-  int v3; // edi
+    int v3; // edi
     v3 = *((unsigned int *)DataGlobal_AC4B34 + v2); /*0x63b0e9*/
     if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(**v3->vtable2 + 540), (void *)dword_A83D4C) ) /*0x63b100*/
       RenderScenarioActionLines((ObjectClass *)v3); /*0x63b10b*/
@@ -1753,7 +1737,7 @@ AbstractClass * * sub_63B0A0()
   int i; // esi
   for ( i = 0; i < v4; ++i ) /*0x63b11f*/
   {
-  int v6; // edi
+    int v6; // edi
     v6 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[152] + 4 * i); /*0x63b12d*/
     if ( (uint8_t)HouseClass::IsAlliedWith(v6->u32_21C, (void *)dword_A83D4C) ) /*0x63b136*/
       ((ScriptAction *)v6)->ProcessIdleAction(); /*0x63b141*/
@@ -1765,13 +1749,12 @@ namespace gamemd {
 int sub_642BB0(unsigned int a1)
 {
 
-  int result; // eax
-  result = 0; /*0x642bba*/
+  int result = 0; // eax /*0x642bba*/
   if ( (dword_A8B238[0] == 3 || dword_A8B238[0] == 4) && *(unsigned int *)(*(unsigned int *)(dword_A8DA78 + 4 * a1) + 107) == -1 ) /*0x642bd8*/
     return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme(0xFFFFFFFE)); /*0x642bed*/
   if ( a1 < 8 ) /*0x642bf5*/
   {
-  unsigned int PlayerColor; // eax
+    unsigned int PlayerColor; // eax
     PlayerColor = SessionClass::GetPlayerColor(*(unsigned int *)(dword_A8DA78 + 4 * a1)); /*0x642bff*/
     return *((unsigned int *)dword_B054D4 + SessionClass::GetPlayerColorScheme(PlayerColor)); /*0x642c15*/
   }
@@ -1802,10 +1785,10 @@ int sub_660000()
     }
     if ( v5 > 0 ) /*0x660030*/
       goto LABEL_7; /*0x660030*/
-  LABEL_6:
+    LABEL_6:
     if ( *(unsigned char *)(v3 + 60) ) /*0x660032*/
-  LABEL_7:
-      RenderGradientTrapezoid((float *)v3); /*0x660039*/
+      LABEL_7:
+    RenderGradientTrapezoid((float *)v3); /*0x660039*/
     result = g_TriggerEventState; /*0x66003e*/
   }
   return result; /*0x660049*/
@@ -1841,7 +1824,7 @@ void sub_6603B0()
       }
       if ( !v5 ) /*0x6603e8*/
       {
-  LABEL_7:
+        LABEL_7:
         if ( !*(unsigned char *)(v3 + 60) ) /*0x6603ea*/
         {
           v6 = *(void **)(LoadGame_field_0x04 + 4 * v1); /*0x6603f1*/
@@ -1853,9 +1836,9 @@ void sub_6603B0()
             {
               --g_TriggerEventState; /*0x660421*/
               for ( ; /*0x660427*/
-                    v7 < g_TriggerEventState;
-                    *(unsigned int *)(g_TriggerPool + 4 * v7 - 4) = *(unsigned int *)(g_TriggerPool
-                                                                                          + 4 * v7) )
+              v7 < g_TriggerEventState;
+              *(unsigned int *)(g_TriggerPool + 4 * v7 - 4) = *(unsigned int *)(g_TriggerPool
+              + 4 * v7) )
               {
                 ++v7; /*0x66042f*/
               }
@@ -1901,14 +1884,13 @@ void * Render_Render_7760B0(HDC hdc, const char * a2, a4, a4, char a5, void * a3
   strcpy(lf.lfFaceName, a2); /*0x77618b*/
   HFONT v7; // eax
   v7 = CreateFontIndirectA(&lf); /*0x77619f*/
-  HFONT v8; // esi
-  v8 = v7; /*0x7761a1*/
+  HFONT v8 = v7; // esi /*0x7761a1*/
   if ( a3 ) /*0x7761aa*/
   {
-  HGDIOBJ v9; // ebx
+    HGDIOBJ v9; // ebx
     v9 = SelectObject(hdc, v7); /*0x7761ba*/
     GetTextMetricsA(hdc, &tm); /*0x7761be*/
-  HGDIOBJ v10; // eax
+    HGDIOBJ v10; // eax
     v10 = SelectObject(hdc, v9); /*0x7761c6*/
     DeleteObject(v10); /*0x7761c9*/
     lf.lfWidth = Math::RoundToInt(fabs((double)pt.x) * (double)tm.tmAveCharWidth / fabs((double)pt.y) + 0.5); /*0x7761ec*/
@@ -1926,7 +1908,7 @@ void sub_556D40()
   int i; // edi
   for ( i = g_MissionQueueFrame.random[223] - 1; i >= 0; --i ) /*0x556d4c*/
   {
-  ObjectClass *v2; // esi
+    ObjectClass *v2; // esi
     v2 = *(ObjectClass **)(g_MissionQueueFrame.random[220] + 4 * i); /*0x556d59*/
     Render_Render_556B70(v2); /*0x556d5e*/
     if ( v2->vfptr1 || *(&v2->referenceCount + 4 * (int)v2->vfptr3) ) /*0x556d70*/
@@ -1935,9 +1917,9 @@ void sub_556D40()
     }
     else if ( v2 ) /*0x556d7a*/
     {
-  ObjectClass *v4; // [esp+4h] [ebp-4h] BYREF
+      ObjectClass *v4; // [esp+4h] [ebp-4h] BYREF
       v4 = v2; /*0x556d8c*/
-  int v3; // eax
+      int v3; // eax
       v3 = (*(int (**)(int *, ObjectClass **))(g_MissionQueueFrame.random[219] + 16))( /*0x556d90*/
              &g_MissionQueueFrame.random[219],
              &v4);
@@ -1945,9 +1927,9 @@ void sub_556D40()
       {
         --g_MissionQueueFrame.random[223]; /*0x556da5*/
         for ( ; /*0x556dab*/
-              v3 < g_MissionQueueFrame.random[223];
-              *(unsigned int *)(g_MissionQueueFrame.random[220] + 4 * v3 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[220]
-                                                                                    + 4 * v3) )
+        v3 < g_MissionQueueFrame.random[223];
+        *(unsigned int *)(g_MissionQueueFrame.random[220] + 4 * v3 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[220]
+        + 4 * v3) )
         {
           ++v3; /*0x556db3*/
         }
@@ -2006,9 +1988,9 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   if ( !v6 ) /*0x5c0712*/
   {
     strcpy(v3, aVqa); /*0x5c0735*/
-  unsigned int *v7; // eax
+    unsigned int *v7; // eax
     v7 = CCFileClass::Construct(v11, Source); /*0x5c0742*/
-  char v8; // bl
+    char v8; // bl
     v8 = v7->vt_slot_20(0); /*0x5c0754*/
     v11[0] = &vt_CCFileClass; /*0x5c0756*/
     v13 = 0; /*0x5c075e*/
@@ -2038,8 +2020,7 @@ char sub_5FFFA0()
 {
   __m64 v1; // mm0
 
-  char result; // al
-  result = dword_AC1688; /*0x5fffa0*/
+  char result = dword_AC1688; // al /*0x5fffa0*/
   int i; // esi
   BuildingLight *v4; // [esp+0h] [ebp-4h]
   for ( i = dword_AC1688 - 1; i >= 0; --i ) /*0x5fffab*/
@@ -2056,15 +2037,12 @@ unsigned int * sub_63CA80(unsigned int * a1, unsigned char * a2, int a3)
   int *ScenarioClassActionCoords; // ecx
   unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, a2); /*0x63ca90*/
-  int v5; // eax
-  v5 = *ScenarioClassActionCoords; /*0x63ca92*/
-  int v6; // edx
-  v6 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x63ca97*/
-  int v7; // esi
-  v7 = ScenarioClassActionCoords->q008; /*0x63ca9a*/
+  int v5 = *ScenarioClassActionCoords; // eax /*0x63ca92*/
+  int v6 = ScenarioClassActionCoords->Coord3D_field_0x04; // edx /*0x63ca97*/
+  int v7 = ScenarioClassActionCoords->q008; // esi /*0x63ca9a*/
   if ( *ScenarioClassActionCoords == -1 && v6 == -1 && v7 == -1 && a3 ) /*0x63caad*/
   {
-  int *v8; // ecx
+    int *v8; // ecx
     v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)a3 + 88))(a3, v10); /*0x63cab9*/
     v5 = *v8; /*0x63cabb*/
     v6 = v8[1]; /*0x63cabd*/
@@ -2090,10 +2068,8 @@ namespace gamemd {
 int Render_Get(ScoreScreen * aP0)
 {
 
-  int v1; // ebp
-  v1 = 0; /*0x68ed8a*/
-  int v2; // ebx
-  v2 = 0; /*0x68ed8d*/
+  int v1 = 0; // ebp /*0x68ed8a*/
+  int v2 = 0; // ebx /*0x68ed8d*/
   int v12; // [esp+20h] [ebp-4h]
   v12 = 0; /*0x68ed96*/
   int v10; // [esp+1Ch] [ebp-8h]
@@ -2102,17 +2078,16 @@ int Render_Get(ScoreScreen * aP0)
   {
     do /*0x68ee21*/
     {
-  int v4; // esi
-      v4 = *&dword_A8022C->vtable1; /*0x68edad*/
+      int v4 = *&dword_A8022C->vtable1; // esi /*0x68edad*/
       if ( (uint8_t)(aP0)->IsAlliedWith((void *)v4) /*0x68edca*/
         && (uint8_t)HouseClass::IsAlliedWith((void *)v4, aP0)
         || aP0 == (void *)v4 )
       {
-  int v5; // ebx
+        int v5; // ebx
         v5 = VectorClass::GetCount(&v4->SuperWeaponsAvailable) + v2; /*0x68eddd*/
-  int v6; // ebx
+        int v6; // ebx
         v6 = VectorClass::GetCount((unsigned int *)(v4 + 21860)) + v5; /*0x68edea*/
-  int v7; // ebx
+        int v7; // ebx
         v7 = VectorClass::GetCount((unsigned int *)(v4 + 21880)) + v6; /*0x68edf7*/
         v2 = VectorClass::GetCount((unsigned int *)(v4 + 21900)) + v7; /*0x68ee0c*/
         v1 += v4->killedBuildingsOfHouses + v4->__pad_5488; /*0x68ee0e*/
@@ -2138,7 +2113,7 @@ int Render_Get(ScoreScreen * aP0)
     otherb = 0.0; /*0x68eec1*/
   else
     otherb = (double)(*(int (__stdcall **)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36) /*0x68eebb*/
-           / (double)(int)othera;
+  / (double)(int)othera;
   Debug::Log(); /*0x68eed8*/
   int v9; // [esp-4h] [ebp-28h]
   v9 = Math::RoundToInt((otherb + v11) * 0.5 * 100.0); /*0x68eef8*/
@@ -2152,23 +2127,21 @@ namespace gamemd {
 int sub_6D9A50(int a1, int a2, int a3, int a4)
 {
 
-  int result; // eax
-  result = 0; /*0x6d9a5f*/
+  int result = 0; // eax /*0x6d9a5f*/
   int i; // [esp+10h] [ebp-28h]
   for ( i = 0; i < dword_8A03A0; ++i ) /*0x6d9a69*/
   {
-  unsigned char *v5; // esi
+    unsigned char *v5; // esi
     v5 = *(unsigned char **)(dword_8A0394 + 4 * result); /*0x6d9a75*/
     if ( (*(int (**)(unsigned char *))(*(unsigned int *)v5 + 44))(v5) == 6 ) /*0x6d9a82*/
     {
       if ( v5[128] ) /*0x6d9a88*/
       {
-  int *v6; // eax
-  unsigned char v10[16]; // [esp+28h] [ebp-10h] BYREF
+        int *v6; // eax
+        unsigned char v10[16]; // [esp+28h] [ebp-10h] BYREF
         v6 = (int *)(*(int (**)(unsigned char *, unsigned char *))(*(unsigned int *)v5 + 300))(v5, v10); /*0x6d9a9f*/
-  int v7; // ecx
-        v7 = DSurface_ViewBounds + *v6; /*0x6d9aaf*/
-  int v8; // edx
+        int v7 = DSurface_ViewBounds + *v6; // ecx /*0x6d9aaf*/
+        int v8; // edx
         v8 = dword_886FA4 + v6[1]; /*0x6d9ac4*/
         if ( a1 < v6[2] + v7 && a2 < v6[3] + v8 && a1 + a3 > v7 && a4 + a2 > v8 ) /*0x6d9af2*/
         {
@@ -2274,8 +2247,7 @@ namespace gamemd {
 int sub_7C3690(int a1, int a2)
 {
 
-  int result; // eax
-  result = -1; /*0x7c3690*/
+  int result = -1; // eax /*0x7c3690*/
   if ( a2 > 0 && *(uint16_t *)(a1 + 236) >= a2 ) /*0x7c36a4*/
   {
     result = *(unsigned int *)(a1 + 284); /*0x7c36a6*/

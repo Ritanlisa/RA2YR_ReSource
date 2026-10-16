@@ -18,7 +18,7 @@ extern char a0Dd_0[];  // data: 0x84e594 truth(IDA G42.57w9)
 namespace gamemd {  // G42.18 ns repair
 wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * Format)
 {
-
+  
   wchar_t String[32]; // [esp+8h] [ebp-40h] BYREF
   swprintf(String, (const size_t)a0Dd_0, Format); /*0x7b7e58*/
   swprintf(String, (const size_t)String, a1); /*0x7b7e68*/

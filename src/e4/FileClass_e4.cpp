@@ -25,9 +25,9 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 
   if ( this->u32_58 ) /*0x473ae3*/
   {
-  int v4; // edi
+    int v4; // edi
     v4 = *(unsigned int *)this->vtable1; /*0x473aeb*/
-  int v5; // eax
+    int v5; // eax
     v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)this->vtable1 + 4))(this); /*0x473aed*/
     (*(void (**)(CCFileClass *, int, unsigned int, int))(v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
@@ -84,18 +84,18 @@ int FileClass::Open(int a2, void *a2_1, void *a3)
     result = CloseHandle(*(HANDLE *)this->FileTimeDateLo); /*0x65cc31*/
     if ( result ) /*0x65cc39*/
     {
-LABEL_13:
+      LABEL_13:
       *(unsigned int *)this->FileTimeDateLo = -1; /*0x65cc8d*/
       goto LABEL_14; /*0x65cc8d*/
     }
     v4 = *(unsigned int *)this->FileClass; /*0x65cc3e*/
     v6 = *&this->u32_18; /*0x65cc40*/
-LABEL_12:
+    LABEL_12:
     LastError = GetLastError(); /*0x65cc7f*/
     result = (*(int (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
     goto LABEL_13; /*0x65cc8a*/
   }
-LABEL_14:
+  LABEL_14:
   LOBYTE(result) = 1; /*0x65cc94*/
   return result; /*0x65cbfb*/
 
@@ -108,15 +108,14 @@ int FileClass::Read(char *aP1, signed int aP2, void *a3)
 
   char *v7; // edi
 
-  DWORD v4; // ebx
-  v4 = 0; /*0x65cce7*/
+  DWORD v4 = 0; // ebx /*0x65cce7*/
   DWORD NumberOfBytesRead; // [esp+8h] [ebp-8h] BYREF
   NumberOfBytesRead = 0; /*0x65cce9*/
   int v14; // [esp+Ch] [ebp-4h]
   v14 = 0; /*0x65cced*/
   if ( !(*(unsigned __int8 (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65ccf3*/
   {
-  int result; // eax
+    int result; // eax
     result = (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1); /*0x65cd00*/
     if ( !result ) /*0x65cd05*/
       return result; /*0x65cd05*/
@@ -128,7 +127,7 @@ int FileClass::Read(char *aP1, signed int aP2, void *a3)
   }
   else
   {
-  int v6; // eax
+    int v6; // eax
     v6 = (*(int (**)(RawFileClass *, unsigned int, int))(*(unsigned int *)this->FileClass + 40))(this, 0, 1); /*0x65cd27*/
     v7 = (char *)aP2; /*0x65cd2d*/
     if ( aP2 >= (int)this->FileName - v6 ) /*0x65cd35*/
@@ -136,7 +135,7 @@ int FileClass::Read(char *aP1, signed int aP2, void *a3)
   }
   while ( (int)v7 > 0 ) /*0x65cd41*/
   {
-  void *v11; // [esp-1Ch] [ebp-2Ch]
+    void *v11; // [esp-1Ch] [ebp-2Ch]
     v11 = *(void **)this->FileTimeDateLo; /*0x65cd54*/
     NumberOfBytesRead = 0; /*0x65cd55*/
     if ( ReadFile(v11, aP1, (DWORD)v7, &NumberOfBytesRead, 0) ) /*0x65cd5d*/
@@ -152,15 +151,15 @@ int FileClass::Read(char *aP1, signed int aP2, void *a3)
       aP1 += NumberOfBytesRead; /*0x65cd6b*/
       v7 -= NumberOfBytesRead; /*0x65cd6d*/
       v4 += NumberOfBytesRead; /*0x65cd6f*/
-  DWORD nNumberOfBytesToReada; // [esp+18h] [ebp+8h]
+      DWORD nNumberOfBytesToReada; // [esp+18h] [ebp+8h]
       nNumberOfBytesToReada = v4; /*0x65cd78*/
       if ( byte_B04BEC ) /*0x65cd7c*/
         break; /*0x65cd7c*/
-  int v9; // ebx
+      int v9; // ebx
       v9 = *(unsigned int *)this->FileClass; /*0x65cd81*/
-  int v12; // [esp-Ch] [ebp-1Ch]
+      int v12; // [esp-Ch] [ebp-1Ch]
       v12 = *&this->u32_14; /*0x65cd83*/
-  DWORD LastError; // eax
+      DWORD LastError; // eax
       LastError = GetLastError(); /*0x65cd86*/
       (*(void (**)(RawFileClass *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
       v4 = nNumberOfBytesToReada; /*0x65cd92*/
@@ -247,7 +246,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
       v8 = SetFilePointer(*(HANDLE *)this->FileTimeDateLo, (LONG)v6, 0, v5); /*0x65cf8b*/
       if ( v8 != -1 ) /*0x65cf90*/
       {
-LABEL_20:
+        LABEL_20:
         Handle = this->Handle; /*0x65cfa8*/
         result = v8 - (unsigned int)Handle; /*0x65cfab*/
         if ( result >= 0 ) /*0x65cfad*/
@@ -257,10 +256,10 @@ LABEL_20:
           v13 = SetFilePointer(*(HANDLE *)this->FileTimeDateLo, (LONG)Handle, 0, 0); /*0x65cfd4*/
           if ( v13 != -1 ) /*0x65cfd9*/
           {
-LABEL_26:
+            LABEL_26:
             Handle = this->Handle; /*0x65cff1*/
             result = v13 - (unsigned int)Handle; /*0x65cff4*/
-LABEL_27:
+            LABEL_27:
             v16 = this->FileName; /*0x65cff6*/
             if ( result > (int)v16 ) /*0x65cffb*/
             {

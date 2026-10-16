@@ -80,8 +80,7 @@ void * Tactical::ConstructTacticalSurface()
   this->u32_72 = 0; /*0x42a714*/
   unsigned int *v2; // edi
   v2 = (unsigned int *)(&this->q074); /*0x42a718*/
-  int v3; // ebp
-  v3 = 3; /*0x42a71b*/
+  int v3 = 3; // ebp /*0x42a71b*/
   do /*0x42a73d*/
   {
     VectorClassUInt::Constructor(0, 0); /*0x42a724*/
@@ -94,21 +93,19 @@ void * Tactical::ConstructTacticalSurface()
   while ( v3 ); /*0x42a73d*/
   unsigned int *v4; // eax
   v4 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x42a741*/
-  unsigned int *v5; // edi
-  v5 = v4; /*0x42a746*/
+  unsigned int *v5 = v4; // edi /*0x42a746*/
   if ( v4 ) /*0x42a74d*/
   {
     v4[3] = 0; /*0x42a754*/
     v4[4] = -1; /*0x42a757*/
     *v4 = 0; /*0x42a75e*/
     v4[1] = 0x10000; /*0x42a760*/
-  void *v6; // eax
+    void *v6; // eax
     v6 = __2_YAPAXI_Z(0x40004u); /*0x42a767*/
-  int v7; // ecx
+    int v7; // ecx
     v7 = v5[1]; /*0x42a76c*/
     v5[2] = (unsigned int)(v6); /*0x42a76f*/
-  int v8; // eax
-    v8 = 0; /*0x42a775*/
+    int v8 = 0; // eax /*0x42a775*/
     if ( v7 >= 0 ) /*0x42a779*/
     {
       do /*0x42a788*/
@@ -126,21 +123,19 @@ void * Tactical::ConstructTacticalSurface()
   this->abstractFlags = v5; /*0x42a790*/
   unsigned int *v9; // eax
   v9 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x42a793*/
-  unsigned int *v10; // edi
-  v10 = v9; /*0x42a798*/
+  unsigned int *v10 = v9; // edi /*0x42a798*/
   if ( v9 ) /*0x42a79f*/
   {
     v9[3] = 0; /*0x42a7a6*/
     v9[4] = -1; /*0x42a7a9*/
     *v9 = 0; /*0x42a7b0*/
     v9[1] = 10000; /*0x42a7b2*/
-  void *v11; // eax
+    void *v11; // eax
     v11 = __2_YAPAXI_Z(0x9C44u); /*0x42a7b9*/
-  int v12; // ecx
+    int v12; // ecx
     v12 = v10[1]; /*0x42a7be*/
     v10[2] = (unsigned int)(v11); /*0x42a7c1*/
-  int v13; // eax
-    v13 = 0; /*0x42a7c7*/
+    int v13 = 0; // eax /*0x42a7c7*/
     if ( v12 >= 0 ) /*0x42a7cb*/
     {
       do /*0x42a7da*/
@@ -160,10 +155,8 @@ void * Tactical::ConstructTacticalSurface()
   v14 = (unsigned int *)(__2_YAPAXI_Z(0x100004u)); /*0x42a7e8*/
   if ( v14 ) /*0x42a7f2*/
   {
-  unsigned int *v15; // ecx
-    v15 = v14 + 2; /*0x42a7f4*/
-  int v16; // edx
-    v16 = 0x10000; /*0x42a7f7*/
+    unsigned int *v15 = v14 + 2; // ecx /*0x42a7f4*/
+    int v16 = 0x10000; // edx /*0x42a7f7*/
     do /*0x42a808*/
     {
       v15[1] = 0; /*0x42a7fc*/
@@ -188,8 +181,7 @@ void * Tactical::ConstructTacticalSurface()
     v17 = 0; /*0x42a830*/
   this->vtable4 = v17; /*0x42a832*/
   v17[393216] = 0; /*0x42a835*/
-  int v18; // ecx
-  v18 = 0; /*0x42a83e*/
+  int v18 = 0; // ecx /*0x42a83e*/
   *(unsigned int *)(this->uniqueId + 0x100000) = 0; /*0x42a840*/
   int *v19; // eax
   v19 = (int *)this->abstractFlags; /*0x42a846*/
@@ -215,8 +207,7 @@ void * Tactical::ConstructTacticalSurface()
   v26 = &this->u32_BC; /*0x42a87f*/
   char *v25; // [esp+10h] [ebp-Ch]
   v25 = (char *)(&this->q074); /*0x42a883*/
-  unsigned int *v23; // ebp
-  v23 = &this->q04C; /*0x42a887*/
+  unsigned int *v23 = &this->q04C; // ebp /*0x42a887*/
   int v27; // [esp+18h] [ebp-4h]
   v27 = 3; /*0x42a88a*/
   while ( 1 ) /*0x42a898*/
@@ -245,14 +236,11 @@ int Tactical::CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a
 {
   int result; // eax
 
-  unsigned int *v7; // eax
-  v7 = a3; /*0x484051*/
-  int *v8; // edx
-  v8 = a5; /*0x484055*/
+  unsigned int *v7 = a3; // eax /*0x484051*/
+  int *v8 = a5; // edx /*0x484055*/
   int *v9; // ebx
   v9 = (int *)a7; /*0x48405a*/
-  unsigned int *v11; // ecx
-  v11 = a4; /*0x484063*/
+  unsigned int *v11 = a4; // ecx /*0x484063*/
   int *v12; // edi
   v12 = (int *)a6; /*0x484067*/
   *a3 = 0x10000; /*0x48406b*/
@@ -268,12 +256,12 @@ int Tactical::CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a
   }
   else
   {
-  int64_t v15; // [esp-8h] [ebp-1Ch]
+    int64_t v15; // [esp-8h] [ebp-1Ch]
     (*(((unsigned int *)&(v15)) + 1)) = (unsigned int)(&a6); /*0x4840b2*/
     (*((unsigned int *)&(v15))) = (unsigned int)(&a7); /*0x4840b7*/
-  int v16; // [esp+10h] [ebp-4h] BYREF
+    int v16; // [esp+10h] [ebp-4h] BYREF
     Tactical::CalculateTacticalLighting(aP1, v7, v11, v8, v12, v9, &v16, v15); /*0x4840c4*/
-  int v13; // esi
+    int v13; // esi
     if ( *(unsigned int *)aP1->q034 /*0x484125*/
       && (a3 = (unsigned int *)v16,
           a4 = (unsigned int *)a7,
@@ -430,8 +418,8 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
       {
         *v10 += v9->Tactical_field_0x11B * (int)dword_A8B230[380].vtable1 - (unsigned int)dword_A8B230[380].vtable0; /*0x484537*/
         v22 = (int)dword_A8B230[380].vtable1 * (v9->Tactical_field_0x11B + 4) /*0x484559*/
-            - (unsigned int)dword_A8B230[380].vtable0
-            + *a6;
+        - (unsigned int)dword_A8B230[380].vtable0
+        + *a6;
         goto LABEL_21; /*0x48455b*/
       }
       *v10 += v9->Tactical_field_0x11B * dword_A8B230[378].referenceCount - dword_A8B230[378].nextArrayIndex; /*0x48457c*/
@@ -443,7 +431,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   }
   *v10 += v9->Tactical_field_0x11B * dword_A8B230[379].uniqueId - (unsigned int)dword_A8B230[379].vtable3; /*0x48449b*/
   v22 = dword_A8B230[379].uniqueId * (v9->Tactical_field_0x11B + 4) - (unsigned int)dword_A8B230[379].vtable3 + *a6; /*0x4844bd*/
-LABEL_21:
+  LABEL_21:
   *a6 = v22; /*0x4845a0*/
   v25 = *v10; /*0x4845a2*/
   if ( *v10 >= 2000 ) /*0x4845a9*/
@@ -586,17 +574,17 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2, void *a
       (*((unsigned short *)&(aP2))) = v25; /*0x4a945d*/
       this->u32_1180 = GetBuildingPlacement( /*0x4a9485*/
                                   *(unsigned int *)this->q1198 + 16),
-                                  this->u32_11AC,
-                                  v26,
-                                  (int16_t *)&aP2);
+      this->u32_11AC,
+      v26,
+      (int16_t *)&aP2);
       v27 = this->u32_117A + this->u32_1176; /*0x4a94a0*/
       (*((unsigned short *)&(aP2))) = this->u32_1174 + this->u32_1178; /*0x4a94a7*/
       (*(((unsigned short *)&(aP2)) + 1)) = v27; /*0x4a94b0*/
       this->u32_1181 = ProcessDataBuildingTypeClass( /*0x4a94da*/
                                   *(unsigned int *)this->q1198 + 16),
-                                  this->u32_11AC,
-                                  this->u32_117C,
-                                  (int16_t *)&aP2);
+      this->u32_11AC,
+      this->u32_117C,
+      (int16_t *)&aP2);
       *aP1 = v22; /*0x4a94e6*/
       return aP1; /*0x4a94e0*/
     }
@@ -622,12 +610,11 @@ int Tactical::IsCellVisible(IUnknown * aP1)
   v3 = (__int16)(*aP1 / 256); /*0x56837b*/
   int result; // eax
   result = (__int16)(aP1[1] / 256); /*0x56837e*/
-  int v5; // edi
-  v5 = result + v3; /*0x568381*/
+  int v5 = result + v3; // edi /*0x568381*/
   LOBYTE(result) = result + v3 > (int)Tactical_field_0xF4 /*0x5683ad*/
-                && v3 - result < (int)Tactical_field_0xF4
-                && (result -= v3, result < (int)Tactical_field_0xF4)
-                && (result = (int)this->q0F8, v5 <= (int)Tactical_field_0xF4 + 2 * result);
+  && v3 - result < (int)Tactical_field_0xF4
+  && (result -= v3, result < (int)Tactical_field_0xF4)
+  && (result = (int)this->q0F8, v5 <= (int)Tactical_field_0xF4 + 2 * result);
   return result; /*0x5683a5*/
 
 }
@@ -637,7 +624,7 @@ namespace gamemd {
 void * Tactical::GetCellData(void *a1)
 {
   return (char *)(g_MissionQueueFrame.localVariables[163] /*0x58c2be*/
-                + 80 * (*(int16_t *)this->vtable1 + g_MapCellWidth * *(int16_t *)this->Tactical_field_0x2));
+  + 80 * (*(int16_t *)this->vtable1 + g_MapCellWidth * *(int16_t *)this->Tactical_field_0x2));
 }
 }
 // 0x640A40
@@ -662,29 +649,26 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
   unsigned int v78[3]; // [esp+A0h] [ebp-14h] BYREF
 
   int **v8; // ecx
-  int *result; // eax
-  result = *v8; /*0x640a46*/
+  int *result = *v8; // eax /*0x640a46*/
   int **v54; // [esp+34h] [ebp-80h]
   v54 = v8; /*0x640a4b*/
   if ( *v8 ) /*0x640a46*/
   {
     ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorReset(); /*0x640a5d*/
-  int v10; // ebp
-    v10 = 10000; /*0x640a62*/
-  int v64; // [esp+5Ch] [ebp-58h]
+    int v10 = 10000; // ebp /*0x640a62*/
+    int v64; // [esp+5Ch] [ebp-58h]
     v64 = 10000; /*0x640a6c*/
-  int v58; // [esp+44h] [ebp-70h]
+    int v58; // [esp+44h] [ebp-70h]
     v58 = 10000; /*0x640a70*/
-  int v52; // [esp+2Ch] [ebp-88h]
+    int v52; // [esp+2Ch] [ebp-88h]
     v52 = 0; /*0x640a74*/
-  int v11; // ebx
-    v11 = 0; /*0x640a7c*/
-  int i; // eax
+    int v11 = 0; // ebx /*0x640a7c*/
+    int i; // eax
     for ( i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext(); /*0x640a85*/
-          i;
-          i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
+    i;
+    i = ((LayerClass *)&DataGlobal_87F7E8)->CellIteratorNext() )
     {
-  unsigned int *v13; // esi
+      unsigned int *v13; // esi
       v13 = (unsigned int *)(i + 36); /*0x640a8b*/
       if ( (uint8_t)LayerClass::IsWithinUsableArea( /*0x640a96*/
                               (LayerClass *)&DataGlobal_87F7E8,
@@ -692,15 +676,14 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
                               0) )
       {
         v56 = (unsigned int *)*v13; /*0x640aa7*/
-  int v14; // esi
+        int v14; // esi
         v14 = ((*((signed short *)(((unsigned char *)&(v56)) + 2))) << 8) + 128; /*0x640ab9*/
-  int v15; // edi
+        int v15; // edi
         v15 = ((int16_t)v56 << 8) + 128; /*0x640ac3*/
         ((Coord *)((Coord *)&v66))->Subtract(v15, v14, 0); /*0x640acb*/
         ((Coord *)((Coord *)&v71))->Subtract(v15, v14, 0); /*0x640ad8*/
         IsoCoord::ToScreenOffset(v71, v67, &v55, &v59); /*0x640af7*/
-  int v16; // edx
-        v16 = v59 / 30; /*0x640b2a*/
+        int v16 = v59 / 30; // edx /*0x640b2a*/
         if ( v55 / 60 < v10 ) /*0x640b2e*/
         {
           v64 = v55 / 60; /*0x640b30*/
@@ -714,38 +697,35 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
           v11 = v59 / 30; /*0x640b4e*/
       }
     }
-  signed int v17; // esi
-    v17 = 0; /*0x640b62*/
-  signed int j; // edi
+    signed int v17 = 0; // esi /*0x640b62*/
+    signed int j; // edi
     for ( j = 0; j < 8; ++j ) /*0x640b64*/
     {
       if ( (uint8_t)((char *)dword_A8B230)->Is_Waypoint_Valid(j) ) /*0x640b71*/
         ++v17; /*0x640b7a*/
     }
-  signed int v19; // ebx
-    v19 = 0; /*0x640b81*/
+    signed int v19 = 0; // ebx /*0x640b81*/
     v59 = j; /*0x640b83*/
-  signed int k; // [esp+2Ch] [ebp-88h]
+    signed int k; // [esp+2Ch] [ebp-88h]
     for ( k = v17; v19 < v17; ++v19 ) /*0x640b8d*/
     {
       if ( (!v19 || v19 <= j) && (uint8_t)((char *)dword_A8B230)->Is_Waypoint_Valid(v19) ) /*0x640ba6*/
       {
         v56 = (unsigned int *)*((ScenarioClass *)((char *)dword_A8B230))->Get_Waypoint_Location(&v65, v19); /*0x640bc8*/
-  int v20; // esi
+        int v20; // esi
         v20 = ((*((signed short *)(((unsigned char *)&(v56)) + 2))) << 8) + 128; /*0x640bde*/
-  int v21; // edi
+        int v21; // edi
         v21 = ((int16_t)v56 << 8) + 128; /*0x640be4*/
         ((Coord *)((Coord *)&v71))->Subtract(v21, v20, 0); /*0x640bec*/
         ((Coord *)((Coord *)&v66))->Subtract(v21, v20, 0); /*0x640bf9*/
         IsoCoord::ToScreenOffset(v66, v72, &v55, &FileSHP); /*0x640c18*/
         v76 = 4; /*0x640c61*/
-  unsigned int v75[2]; // [esp+90h] [ebp-24h] BYREF
+        unsigned int v75[2]; // [esp+90h] [ebp-24h] BYREF
         v75[1] = FileSHP / 30 - v58 - 1; /*0x640c65*/
         v77 = 4; /*0x640c6d*/
         v75[0] = 2 * (v55 / 60 - v10) - 1; /*0x640c74*/
-  int v22; // esi
-        v22 = **v54; /*0x640c8a*/
-  int v23; // eax
+        int v22 = **v54; // esi /*0x640c8a*/
+        int v23; // eax
         v23 = (*(int (**)(int *, unsigned int *, unsigned int *, unsigned int))(v22 + 120))(*v54, v78, v75, 0); /*0x640cc4*/
         (*(void (**)(unsigned int, int))(v22 + 16))(*v56, v23); /*0x640cce*/
         v17 = k; /*0x640cd1*/
@@ -773,47 +753,45 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
       v25 = 270; /*0x640d2f*/
       v27 = 200; /*0x640d34*/
     }
-  int v61; // [esp+50h] [ebp-64h]
+    int v61; // [esp+50h] [ebp-64h]
     v61 = v25; /*0x640d36*/
-  int v60; // [esp+4Ch] [ebp-68h]
+    int v60; // [esp+4Ch] [ebp-68h]
     v60 = v24; /*0x640d3e*/
-  int v62; // [esp+54h] [ebp-60h] BYREF
+    int v62; // [esp+54h] [ebp-60h] BYREF
     v62 = v26; /*0x640d42*/
-  int *v28; // ecx
-    v28 = *v54; /*0x640d46*/
-  int v63; // [esp+58h] [ebp-5Ch] BYREF
+    int *v28 = *v54; // ecx /*0x640d46*/
+    int v63; // [esp+58h] [ebp-5Ch] BYREF
     v63 = v27; /*0x640d48*/
-  int *v29; // eax
+    int *v29; // eax
     v29 = (int *)v28->checkBuildingPlacement(v78, a4, a3, a2); /*0x640d56*/
     v77 = *v29; /*0x640d5f*/
     v78[0] = v29[1]; /*0x640d6a*/
-  int v30; // edi
+    int v30; // edi
     v30 = v29[2]; /*0x640d6e*/
-  int v31; // ebx
+    int v31; // ebx
     v31 = v29[3]; /*0x640d71*/
-  int v32; // ebp
-    v32 = 1000 * v66 / v31; /*0x640d83*/
+    int v32 = 1000 * v66 / v31; // ebp /*0x640d83*/
     if ( v32 >= 1000 * v65 / v30 ) /*0x640d96*/
       v32 = 1000 * v65 / v30; /*0x640d98*/
-  int v70; // [esp+7Ch] [ebp-38h]
+    int v70; // [esp+7Ch] [ebp-38h]
     v70 = (v65 - v32 * v30 / 1000) / 2; /*0x640dd6*/
     v71 = (v66 - v32 * v31 / 1000) / 2; /*0x640ddf*/
     v72 = v65 - 2 * v70; /*0x640dea*/
-  int v73; // [esp+88h] [ebp-2Ch]
+    int v73; // [esp+88h] [ebp-2Ch]
     v73 = v66 - 2 * v71; /*0x640dee*/
-  char *v33; // eax
+    char *v33; // eax
     v33 = (char *)operator new(0x24u); /*0x640df2*/
-  char *v34; // esi
+    char *v34; // esi
     if ( v33 ) /*0x640dfc*/
       v34 = DSurface::Construct(v33, v65, v66, 1, 0); /*0x640e13*/
     else
       v34 = 0; /*0x640e17*/
-  unsigned int *v35; // edi
+    unsigned int *v35; // edi
     v35 = (unsigned int *)FileSHP; /*0x640e19*/
-  int v36; // ebx
+    int v36; // ebx
     v36 = *(unsigned int *)v34; /*0x640e1d*/
-  int v37; // eax
-  unsigned char v79[8]; // [esp+ACh] [ebp-8h] BYREF
+    int v37; // eax
+    unsigned char v79[8]; // [esp+ACh] [ebp-8h] BYREF
     v37 = (*(int (**)(unsigned int, unsigned char *, unsigned int, unsigned int))(**(unsigned int **)FileSHP + 120))( /*0x640e2f*/
             *(unsigned int *)FileSHP,
             v79,
@@ -822,15 +800,13 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
     (*(void (**)(char *, int *, unsigned int, int))(v36 + 8))(v34, &v72, *v35, v37); /*0x640e3d*/
     (*(((unsigned char *)&(v56)) + (sizeof(v56) - 1))) = 0; /*0x640e49*/
     FileSHP = (int)LoadFileSHP(aMmpbShp, (bool *)&v56 + 3); /*0x640e53*/
-  int v38; // ebx
-    v38 = 0; /*0x640e5b*/
+    int v38 = 0; // ebx /*0x640e5b*/
     v58 = 0; /*0x640e5f*/
     if ( v55 > 0 ) /*0x640e63*/
     {
-  char *v39; // ecx
+      char *v39; // ecx
       v39 = (char *)dword_A8B230; /*0x640e69*/
-  int v40; // ebp
-      v40 = 4480; /*0x640e6f*/
+      int v40 = 4480; // ebp /*0x640e6f*/
       v59 = 4480; /*0x640e74*/
       do /*0x64106b*/
       {
@@ -839,32 +815,32 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
           if ( (uint8_t)(v39)->Is_Waypoint_Valid(v38) ) /*0x640e8b*/
           {
             v60 = *((ScenarioClass *)((char *)dword_A8B230))->Get_Waypoint_Location(&a5, v38); /*0x640eb0*/
-  int v41; // edi
+            int v41; // edi
             v41 = ((*((signed short *)(((unsigned char *)&(v60)) + 2))) << 8) + 128; /*0x640ec2*/
-  int v74; // [esp+8Ch] [ebp-28h] BYREF
+            int v74; // [esp+8Ch] [ebp-28h] BYREF
             ((Coord *)((Coord *)&v74))->Subtract(((int16_t)v60 << 8) + 128, v41, 0); /*0x640ed4*/
-  int v68; // [esp+6Ch] [ebp-48h] BYREF
+            int v68; // [esp+6Ch] [ebp-48h] BYREF
             IsoCoord::ToScreenOffset(v74, v41, &v76, &v68); /*0x640eef*/
             v39 = (char *)dword_A8B230; /*0x640f32*/
-  int v42; // edx
+            int v42; // edx
             v42 = *(int *)dword_A8B230[3].abstractFlags + v40); /*0x640f3a*/
             if ( v42 != -1 ) /*0x640f40*/
             {
-  int v43; // edx
+              int v43; // edx
               v43 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable /*0x640f66*/
-                                          + 4 * *(unsigned int *)(*((unsigned int *)stru_A80220.vfptr3 + v42) + 90196))
-                              + 780);
+              + 4 * *(unsigned int *)(*((unsigned int *)stru_A80220.vfptr3 + v42) + 90196))
+              + 780);
               v60 = v43; /*0x640f6c*/
               if ( FileSHP ) /*0x640f70*/
               {
                 if ( v43 ) /*0x640f78*/
                 {
-  int v69[3]; // [esp+70h] [ebp-44h] BYREF
+                  int v69[3]; // [esp+70h] [ebp-44h] BYREF
                   v69[0] = v72 * (1000000 * (v76 / 60 - v67) / (int)dword_A8B230[122].vfptr3) / 1000000 + v70 - 3; /*0x640fd6*/
-  int v44; // eax
+                  int v44; // eax
                   v44 = *(unsigned int *)v34; /*0x641015*/
                   v69[1] = v73 * (1000000 * (v68 / 30 - v61) / dword_A8B230[122].uniqueId) / 1000000 + v71 - 2; /*0x641025*/
-  int *v45; // eax
+                  int *v45; // eax
                   v45 = (int *)(*(int (**)(char *, unsigned char *))(v44 + 120))(v34, v79); /*0x641029*/
                   DrawToSurfaceSHP((int)v34, v60, FileSHP, 0, v69, v45, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x64103e*/
                   v39 = (char *)dword_A8B230; /*0x641043*/
@@ -885,12 +861,11 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
       }
       while ( v38 < v55 ); /*0x64106b*/
     }
-  int *v46; // edi
+    int *v46; // edi
     v46 = (int *)a7; /*0x641071*/
     (*(void (**)(int, int *, unsigned int))(*(unsigned int *)a7 + 20))(a7, &v63, 0); /*0x641083*/
-  int v47; // ebx
-    v47 = *v46; /*0x641088*/
-  int v48; // eax
+    int v47 = *v46; // ebx /*0x641088*/
+    int v48; // eax
     v48 = (*(int (**)(char *, unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v34 + 120))(v34, v79, 0, 0); /*0x641098*/
     result = (int *)(*(int (**)(int *, int *, char *, int))(v47 + 8))(v46, &v62, v34, v48); /*0x6410a4*/
     if ( v34 ) /*0x6410ac*/
@@ -1061,7 +1036,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
   }
   else
   {
-  LABEL_39:
+    LABEL_39:
     (*((unsigned char *)&(result))) = 0; /*0x6925ff*/
   }
   return result; /*0x6925f0*/
@@ -1090,33 +1065,33 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
             {
               case 0x201: /*0x69311f*/
                 a5_1 = *(HWND *)a5_1; /*0x693138*/
-  int v12; // [esp+10h] [ebp-14h] BYREF
+                int v12; // [esp+10h] [ebp-14h] BYREF
                 v12 = (int16_t)a5_1 - DSurface_ViewBounds.field_0; /*0x693148*/
-  int v13; // [esp+14h] [ebp-10h]
+                int v13; // [esp+14h] [ebp-10h]
                 v13 = (*((signed short *)(((unsigned char *)&(a5_1)) + 2))) - (unsigned int)DSurface_ViewBounds.field_4; /*0x693150*/
-  int16_t v10; // [esp+8h] [ebp-1Ch] BYREF
-  bool v11[4]; // [esp+Ch] [ebp-18h] BYREF
-  int v14[3]; // [esp+18h] [ebp-Ch] BYREF
+                int16_t v10; // [esp+8h] [ebp-1Ch] BYREF
+                bool v11[4]; // [esp+Ch] [ebp-18h] BYREF
+                int v14[3]; // [esp+18h] [ebp-Ch] BYREF
                 (*((unsigned char *)&(v5))) = Tactical::MouseOver(&v12, &v10, v14, &aP4, (bool *)&a5_1, v11); /*0x693170*/
                 if ( (unsigned char)v5 ) /*0x693177*/
                 {
-                  (*((unsigned char *)&(v5))) = HandlePlanningModeClick(v12, v13); /*0x693187*/
-                  if ( !(unsigned char)v5 && !*((unsigned char *)_28 + 21850) ) /*0x693194*/
-                  {
-  int v7; // eax
-                    v7 = Radar::ScanWaypoints((int)&v10, aP4, 1); /*0x6931af*/
-                    TacticalClass::HandlePlayerAction( /*0x6931c9*/
+                (*((unsigned char *)&(v5))) = HandlePlanningModeClick(v12, v13); /*0x693187*/
+                if ( !(unsigned char)v5 && !*((unsigned char *)_28 + 21850) ) /*0x693194*/
+                {
+                  int v7; // eax
+                  v7 = Radar::ScanWaypoints((int)&v10, aP4, 1); /*0x6931af*/
+                  TacticalClass::HandlePlayerAction( /*0x6931c9*/
                       (DisplayClass *)&DataGlobal_87F7E8,
                       &v10,
                       v11[0],
                       aP4,
                       v7,
                       0);
-                    ((DisplayClass *)&DataGlobal_87F7E8)->InitViewBounds(&v12); /*0x6931d8*/
-                    (*((unsigned char *)&(v5))) = (uint8_t)SetCapture(g_hWnd); /*0x6931e4*/
-                    *((unsigned char *)_28 + 21850) = 1; /*0x6931ea*/
-                  }
+                  ((DisplayClass *)&DataGlobal_87F7E8)->InitViewBounds(&v12); /*0x6931d8*/
+                  (*((unsigned char *)&(v5))) = (uint8_t)SetCapture(g_hWnd); /*0x6931e4*/
+                  *((unsigned char *)_28 + 21850) = 1; /*0x6931ea*/
                 }
+              }
                 break; /*0x6931f6*/
               case 0x202: /*0x69311f*/
                 a5_1 = *(HWND *)a5_1; /*0x69320b*/
@@ -1125,13 +1100,13 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 (*((unsigned char *)&(v5))) = ScriptAction::HitTest(v12, v13); /*0x693225*/
                 if ( !(unsigned char)v5 && *((unsigned char *)_28 + 21850) ) /*0x693232*/
                 {
-                  Tactical::MouseOver(&v12, &v10, v14, &aP4, (bool *)&a5_1, v11); /*0x69325e*/
-  int v8; // eax
-                  v8 = Radar::ScanWaypoints((int)&v10, aP4, 0); /*0x693271*/
-                  PlayerClass::ExecuteCommand((DisplayClass *)&DataGlobal_87F7E8, (int)v14, &v10, aP4, v8, 0); /*0x69328b*/
-                  *((unsigned char *)_28 + 21850) = 0; /*0x693290*/
-                  (*((unsigned char *)&(v5))) = ReleaseCapture(); /*0x693296*/
-                }
+                Tactical::MouseOver(&v12, &v10, v14, &aP4, (bool *)&a5_1, v11); /*0x69325e*/
+                int v8; // eax
+                v8 = Radar::ScanWaypoints((int)&v10, aP4, 0); /*0x693271*/
+                PlayerClass::ExecuteCommand((DisplayClass *)&DataGlobal_87F7E8, (int)v14, &v10, aP4, v8, 0); /*0x69328b*/
+                *((unsigned char *)_28 + 21850) = 0; /*0x693290*/
+                (*((unsigned char *)&(v5))) = ReleaseCapture(); /*0x693296*/
+              }
                 break; /*0x6932a1*/
               case 0x204: /*0x69311f*/
                 a5_1 = *(HWND *)a5_1; /*0x6932b6*/
@@ -1140,21 +1115,21 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 (*((unsigned char *)&(v5))) = UI_Handle(v12, v13); /*0x6932d0*/
                 if ( !*((unsigned char *)_28 + 21850) ) /*0x6932d5*/
                 {
-                  (*((unsigned char *)&(v5))) = Tactical::MouseOver(&v12, &v10, v14, &aP4, (bool *)&a5_1, v11); /*0x693301*/
-                  if ( (unsigned char)v5 ) /*0x693308*/
+                (*((unsigned char *)&(v5))) = Tactical::MouseOver(&v12, &v10, v14, &aP4, (bool *)&a5_1, v11); /*0x693301*/
+                if ( (unsigned char)v5 ) /*0x693308*/
+                {
+                  if ( !((unsigned int *)&stru_A8EB00)[440] ) /*0x693314*/
                   {
-                    if ( !((unsigned int *)&stru_A8EB00)[440] ) /*0x693314*/
-                    {
-                      DisplayClass::vt_entry_B0((DisplayClass *)&v12); /*0x693320*/
-                      dword_884D38 = v12; /*0x69332d*/
-                      dword_884D3C = v13; /*0x693339*/
-                      byte_884D40 = 0; /*0x69333f*/
-                      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x693347*/
-                    }
-                    (*((unsigned char *)&(v5))) = (uint8_t)SetCapture(g_hWnd); /*0x693351*/
-                    *((unsigned char *)_28 + 21850) = 1; /*0x693357*/
+                    DisplayClass::vt_entry_B0((DisplayClass *)&v12); /*0x693320*/
+                    dword_884D38 = v12; /*0x69332d*/
+                    dword_884D3C = v13; /*0x693339*/
+                    byte_884D40 = 0; /*0x69333f*/
+                    (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x693347*/
                   }
+                  (*((unsigned char *)&(v5))) = (uint8_t)SetCapture(g_hWnd); /*0x693351*/
+                  *((unsigned char *)_28 + 21850) = 1; /*0x693357*/
                 }
+              }
                 break; /*0x693363*/
               case 0x205: /*0x69311f*/
                 a5_1 = *(HWND *)a5_1; /*0x693378*/
@@ -1163,23 +1138,23 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                                (*((signed short *)(((unsigned char *)&(a5_1)) + 2))) - (unsigned int)DSurface_ViewBounds.field_4);
                 if ( *((unsigned char *)_28 + 21850) ) /*0x69338f*/
                 {
-                  if ( byte_884D40 ) /*0x69339d*/
-                  {
-                    (*((unsigned char *)&(v5))) = byte_884D44; /*0x69339f*/
-                    (*(void (**)(char *, unsigned int, int))(*(unsigned int *)&DataGlobal_87F7E8 + 72))( /*0x6933b1*/
+                if ( byte_884D40 ) /*0x69339d*/
+                {
+                  (*((unsigned char *)&(v5))) = byte_884D44; /*0x69339f*/
+                  (*(void (**)(char *, unsigned int, int))(*(unsigned int *)&DataGlobal_87F7E8 + 72))( /*0x6933b1*/
                       &DataGlobal_87F7E8,
                       0,
                       v5);
-                    byte_884D40 = 0; /*0x6933b4*/
-                  }
-                  else
-                  {
-                    TacticalClass::DispatchMode((DisplayClass *)&DataGlobal_87F7E8, (int)&v12); /*0x6933c6*/
-                  }
-                  ((DisplayClass *)_28)->ExitMode(); /*0x6933cd*/
-                  *((unsigned char *)_28 + 21850) = 0; /*0x6933d2*/
-                  (*((unsigned char *)&(v5))) = ReleaseCapture(); /*0x6933d8*/
+                  byte_884D40 = 0; /*0x6933b4*/
                 }
+                else
+                {
+                  TacticalClass::DispatchMode((DisplayClass *)&DataGlobal_87F7E8, (int)&v12); /*0x6933c6*/
+                }
+                ((DisplayClass *)_28)->ExitMode(); /*0x6933cd*/
+                *((unsigned char *)_28 + 21850) = 0; /*0x6933d2*/
+                (*((unsigned char *)&(v5))) = ReleaseCapture(); /*0x6933d8*/
+              }
                 break; /*0x6933e3*/
               case 0x215: /*0x69311f*/
                 (*((unsigned char *)&(v5))) = (unsigned char)g_hWnd; /*0x6933ea*/
@@ -1205,8 +1180,7 @@ int Tactical::UpdateUIVisibility(void *a1_1)
 
   if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a661d*/
   {
-  int v3; // eax
-    v3 = 26; /*0x6a66f8*/
+    int v3 = 26; // eax /*0x6a66f8*/
     if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a66f0*/
       v3 = 18; /*0x6a66ff*/
     if ( 4 * dword_884CF8 > 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v3 + g_DSurface_SidebarBounds - 7) / 50) ) /*0x6a6743*/
@@ -1225,17 +1199,16 @@ int Tactical::UpdateUIVisibility(void *a1_1)
       return result; /*0x6a678f*/
     return DialogControl::Show((GadgetClass *)&g_SidebarFlag); /*0x6a6796*/
   }
-  int v1; // eax
-  v1 = 26; /*0x6a6631*/
+  int v1 = 26; // eax /*0x6a6631*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a6629*/
     v1 = 18; /*0x6a6638*/
   if ( *((unsigned int *)a1_1 + 997 * *((unsigned int *)a1_1 + 5351) + 1382) <= 2 /*0x6a668a*/
-                                                                  * ((g_DSurface_ViewBounds
-                                                                    - g_SidebarBounds
-                                                                    - v1
-                                                                    + g_DSurface_SidebarBounds
-                                                                    - 7)
-                                                                   / 50) )
+  * ((g_DSurface_ViewBounds
+  - g_SidebarBounds
+  - v1
+  + g_DSurface_SidebarBounds
+  - 7)
+  / 50) )
   {
     if ( (uint8_t)((DialogControl *)((DialogControl *)&stru_B0B328))->IsHidden() ) /*0x6a66bb*/
       DialogControl::Show((GadgetClass *)&stru_B0B328); /*0x6a66c9*/
@@ -1263,16 +1236,15 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
   {
     if ( (*(unsigned __int8 (**)(AudioStream *))(*(unsigned int *)DSurface_Composite->__pad_0 + 132))(DSurface_Composite) ) /*0x6d4e60*/
     {
-  signed int v3; // edi
-      v3 = *&this->q0A4; /*0x6d4e6e*/
+      signed int v3 = *&this->q0A4; // edi /*0x6d4e6e*/
       if ( v3 != -1 /*0x6d4e93*/
         && *(unsigned int *)&DataGlobal_A8EB00[3224]
         && *(unsigned int *)&DataGlobal_A8EB00[3220]
         && *(__int16 *)(*(unsigned int *)&DataGlobal_A8EB00[3220] + 6) > v3 )
       {
-  __int64 v4; // rax
+        __int64 v4; // rax
         v4 = *(unsigned int *)&g_DSurface_WindowOffset - *(__int16 *)(*(unsigned int *)&DataGlobal_A8EB00[3220] + 4); /*0x6d4ea0*/
-  int v5; // kr00_4
+        int v5; // kr00_4
         v5 = *(unsigned int *)g_Map_VisibleRectOffset - *(__int16 *)(*(unsigned int *)&DataGlobal_A8EB00[3220] + 2); /*0x6d4eb1*/
         v13[1] = ((int)v4 - HIDWORD(v4)) >> 1; /*0x6d4eb9*/
         v13[0] = v5 / 2; /*0x6d4ebd*/
@@ -1298,34 +1270,33 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
       {
         if ( wcslen(String) ) /*0x6d4efd*/
         {
-  char *v15; // [esp+20h] [ebp-1Ch]
+          char *v15; // [esp+20h] [ebp-1Ch]
           v15 = (char *)DSurface_ViewBounds.field_4; /*0x6d4f18*/
-  int v17; // [esp+28h] [ebp-14h]
+          int v17; // [esp+28h] [ebp-14h]
           v17 = *(unsigned int *)&g_DSurface_WindowOffset; /*0x6d4f35*/
-  int v6; // ebx
+          int v6; // ebx
           v6 = *(unsigned int *)g_Map_VisibleRectOffset; /*0x6d4f3e*/
-  Char *v7; // edi
+          Char *v7; // edi
           v7 = (Char *)g_FogOfWarState; /*0x6d4f4c*/
-  int v8; // ebp
-          v8 = DSurface_ViewBounds.field_0; /*0x6d4f5a*/
-  int v14; // [esp+1Ch] [ebp-20h]
+          int v8 = DSurface_ViewBounds.field_0; // ebp /*0x6d4f5a*/
+          int v14; // [esp+1Ch] [ebp-20h]
           v14 = DSurface_ViewBounds.field_0; /*0x6d4f61*/
-  int v16; // [esp+24h] [ebp-18h]
+          int v16; // [esp+24h] [ebp-18h]
           v16 = *(unsigned int *)g_Map_VisibleRectOffset; /*0x6d4f65*/
-  int v9; // esi
+          int v9; // esi
           v9 = (255 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6d4f89*/
-             | (255 >> g_BitMask_Blue << g_BitMask_Green)
-             | (255 >> g_BitMask_Red << g_BitShift_Blue);
-  int v12; // [esp+10h] [ebp-2Ch] BYREF
+          | (255 >> g_BitMask_Blue << g_BitMask_Green)
+          | (255 >> g_BitMask_Red << g_BitShift_Blue);
+          int v12; // [esp+10h] [ebp-2Ch] BYREF
           Text::Layout(g_FogOfWarState, String, &v12, v13, *(int *)g_Map_VisibleRectOffset); /*0x6d4f90*/
-  unsigned int v18[4]; // [esp+2Ch] [ebp-10h] BYREF
+          unsigned int v18[4]; // [esp+2Ch] [ebp-10h] BYREF
           v18[0] = v14; /*0x6d4fbb*/
-  int v10; // ebx
+          int v10; // ebx
           v10 = v8 + (v6 - v12) / 2; /*0x6d4fc1*/
           v18[2] = v16 + v14; /*0x6d4fc9*/
           v18[1] = v15; /*0x6d4fd1*/
           v18[3] = &v15[v17]; /*0x6d4fd9*/
-  int v11; // ebp
+          int v11; // ebp
           v11 = (int)&v15[(v17 - v13[0]) / 2]; /*0x6d4fdf*/
           Char::Swap(v7, 1); /*0x6d4fe1*/
           TextGroup::SetRect((TextGroup *)v7, v18); /*0x6d4fed*/
@@ -1344,16 +1315,13 @@ unsigned int Tactical::SetTacticalPosition(int *aP1, void *a2)
 {
 
 
-  int v3; // esi
-  v3 = *aP1; /*0x6d607d*/
+  int v3 = *aP1; // esi /*0x6d607d*/
   int v9; // [esp+14h] [ebp-4h]
   v9 = aP1->u32_4; /*0x6d6083*/
   int v8; // [esp+10h] [ebp-8h] BYREF
   v8 = -60 * v9 / 2 + 60 * v3 / 2; /*0x6d60c3*/
-  int v4; // ebx
-  v4 = 30 * v9 / 2 + 30 * v3 / 2; /*0x6d60de*/
-  int v5; // esi
-  v5 = v8 / 256; /*0x6d60e2*/
+  int v4 = 30 * v9 / 2 + 30 * v3 / 2; // ebx /*0x6d60de*/
+  int v5 = v8 / 256; // esi /*0x6d60e2*/
   int v6; // ebx
   v6 = v4 / 256 - ZCoordToScreenY(aP1[2]); /*0x6d6118*/
   v8 /= 256; /*0x6d611d*/
@@ -1381,12 +1349,10 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
 
   __int16 v40[4]; // [esp+2Ch] [ebp-50h] BYREF
 
-  int v3; // eax
-  v3 = *aP2; /*0x6d659f*/
+  int v3 = *aP2; // eax /*0x6d659f*/
   int v48; // [esp+54h] [ebp-28h]
   v48 = 0; /*0x6d65ab*/
-  int v5; // eax
-  v5 = *&this->u32_B0 + v3; /*0x6d65bf*/
+  int v5 = *&this->u32_B0 + v3; // eax /*0x6d65bf*/
   int v6; // ecx
   v6 = aP2[1] + *&this->u32_B4; /*0x6d65c6*/
   int v43; // [esp+3Ch] [ebp-40h]
@@ -1405,8 +1371,7 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
   v48 = *((unsigned int *)v7 + 2); /*0x6d660a*/
   int v8; // eax
   LOWORD(v8) = Math::RoundToInt(v46); /*0x6d660e*/
-  int v9; // esi
-  v9 = v8; /*0x6d6617*/
+  int v9 = v8; // esi /*0x6d6617*/
   int v10; // eax
   LOWORD(v10) = Math::RoundToInt(v47); /*0x6d6619*/
   float v49; // [esp+58h] [ebp-24h] BYREF
@@ -1423,8 +1388,7 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
   signed int v11; // ebx
   v11 = aP2[1] - (unsigned int)DSurface_ViewBounds.field_4; /*0x6d6684*/
   v43 = *aP2 - DSurface_ViewBounds.field_0; /*0x6d668a*/
-  int v12; // ebp
-  v12 = v11 + 180; /*0x6d668e*/
+  int v12 = v11 + 180; // ebp /*0x6d668e*/
   v44 = v11; /*0x6d6694*/
   int v41; // [esp+34h] [ebp-48h]
   v41 = v43; /*0x6d6698*/
@@ -1433,59 +1397,57 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
   int i; // [esp+24h] [ebp-58h]
   for ( i = 0; ; ++i )
   {
-  int v13; // ecx
-    v13 = *&this->u32_B4; /*0x6d66b4*/
+    int v13 = *&this->u32_B4; // ecx /*0x6d66b4*/
     v45[0] = v41 + *&this->u32_B0; /*0x6d66bc*/
     v45[1] = v12 + v13; /*0x6d66c6*/
     v49 = (float)v45[0]; /*0x6d66d5*/
     v51 = 0; /*0x6d66e1*/
     v50 = (float)(v12 + v13); /*0x6d66e9*/
-  float *v14; // eax
-  float v53[3]; // [esp+70h] [ebp-Ch] BYREF
+    float *v14; // eax
+    float v53[3]; // [esp+70h] [ebp-Ch] BYREF
     v14 = TransformMatrix3x4Point(v53, &this->u32_DE4, &v49); /*0x6d66ed*/
     v49 = *v14; /*0x6d66f4*/
     v50 = v14[1]; /*0x6d66ff*/
     v51 = *((unsigned int *)v14 + 2); /*0x6d6706*/
-  int v15; // eax
+    int v15; // eax
     LOWORD(v15) = Math::RoundToInt(v49); /*0x6d670a*/
-  int v16; // esi
-    v16 = v15; /*0x6d6713*/
-  int v17; // eax
+    int v16 = v15; // esi /*0x6d6713*/
+    int v17; // eax
     LOWORD(v17) = Math::RoundToInt(v50); /*0x6d6715*/
     v40[0] = v16 / 256; /*0x6d672a*/
     v40[1] = v17 / 256; /*0x6d6747*/
-  Cell *v18; // esi
+    Cell *v18; // esi
     v18 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v40); /*0x6d6751*/
-  signed int v35; // [esp+18h] [ebp-64h]
+    signed int v35; // [esp+18h] [ebp-64h]
     v35 = v12 - 15 * v18->u32_11B; /*0x6d6768*/
     if ( ((int)v18->u32_140 & 0x100) != 0 )
     {
-  unsigned int *NeighbourContent; // [esp+1Ch] [ebp-60h]
+      unsigned int *NeighbourContent; // [esp+1Ch] [ebp-60h]
       NeighbourContent = Cell::GetNeighbourContent(v18, 2u); /*0x6d6786*/
-  unsigned int *v37; // [esp+20h] [ebp-5Ch]
+      unsigned int *v37; // [esp+20h] [ebp-5Ch]
       v37 = Cell::GetNeighbourContent(v18, 4u); /*0x6d678f*/
-  char v54; // [esp+84h] [ebp+8h]
+      char v54; // [esp+84h] [ebp+8h]
       if ( ((int)v18->u32_140 & 0x800) == 0 /*0x6d67b7*/
         || (v54 = 1, (*((unsigned int *)Cell::GetNeighbourContent(v18, 0) + 80) & 0x100) != 0) )
       {
         v54 = 0; /*0x6d67b9*/
       }
-  char v30; // [esp+13h] [ebp-69h]
+      char v30; // [esp+13h] [ebp-69h]
       if ( ((int)v18->u32_140 & 0x800) != 0 /*0x6d67e2*/
         || (v30 = 1, (*((unsigned int *)Cell::GetNeighbourContent(v18, 6u) + 80) & 0x100) != 0) )
       {
         v30 = 0; /*0x6d67e4*/
       }
-  int v19; // ecx
+      int v19; // ecx
       v19 = (int)v18->u32_140 & 0x800; /*0x6d67ef*/
-  char v31; // [esp+14h] [ebp-68h]
+      char v31; // [esp+14h] [ebp-68h]
       if ( !v19 || (v31 = 1, (v37->u32_140 & 0x100) != 0) ) /*0x6d6806*/
         v31 = 0; /*0x6d6808*/
-  char v33; // [esp+16h] [ebp-66h]
+      char v33; // [esp+16h] [ebp-66h]
       if ( v19 || (v33 = 1, (NeighbourContent[80] & 0x100) != 0) ) /*0x6d6820*/
         v33 = 0; /*0x6d6822*/
-  __int64 v20; // rax
-  char v34; // [esp+17h] [ebp-65h]
+      __int64 v20; // rax
+      char v34; // [esp+17h] [ebp-65h]
       if ( !v19 /*0x6d6858*/
         || (v20 = v18->u32_11B - *((char *)NeighbourContent + 283),
             (int)((HIDWORD(v20) ^ v20) - HIDWORD(v20)) > 1)
@@ -1493,24 +1455,22 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
       {
         v34 = 0; /*0x6d685a*/
       }
-  __int64 v21; // rax
-  char v32; // [esp+15h] [ebp-67h]
+      __int64 v21; // rax
+      char v32; // [esp+15h] [ebp-67h]
       if ( v19 /*0x6d688e*/
         || (v21 = v18->u32_11B - v37->u32_11B, (int)((HIDWORD(v21) ^ v21) - HIDWORD(v21)) > 1)
         || (v32 = 1, (v37->u32_140 & 0x100) != 0) )
       {
         v32 = 0; /*0x6d6890*/
       }
-  int v22; // eax
-      v22 = *&v18->u32_24; /*0x6d6899*/
-  int v23; // ecx
-      v23 = *&v18->u32_26 << 8; /*0x6d68a8*/
+      int v22 = *&v18->u32_24; // eax /*0x6d6899*/
+      int v23 = *&v18->u32_26 << 8; // ecx /*0x6d68a8*/
       v52[2] = 0.0; /*0x6d68ab*/
       LODWORD(v52[1]) = v23; /*0x6d68b2*/
       LODWORD(v52[0]) = v22 << 8; /*0x6d68ca*/
-  int *v24; // eax
+      int *v24; // eax
       v24 = Coord::To_ScreenRaw((int *)&v46, v52); /*0x6d68ce*/
-  int v25; // ecx
+      int v25; // ecx
       v25 = -30 * v18->u32_11B / 2 + v24[1] - *&this->u32_B4; /*0x6d68ff*/
       if ( v25 <= v11 ) /*0x6d6903*/
       {
@@ -1521,7 +1481,7 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
         }
         if ( v33 || v34 ) /*0x6d692f*/
         {
-  int *v55; // [esp+84h] [ebp+8h]
+          int *v55; // [esp+84h] [ebp+8h]
           HIWORD(v55) = v40[1]; /*0x6d6a0c*/
           LOWORD(v55) = v40[0] + 1; /*0x6d6a1b*/
           *aP1 = v55; /*0x6d6a2d*/
@@ -1530,10 +1490,9 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
       }
       if ( v54 || v30 )
       {
-  int v26; // ebx
+        int v26; // ebx
         v26 = v43 - (*v24 - *&this->u32_B0); /*0x6d6971*/
-  unsigned int v27; // ebp
-        v27 = v44 - v25; /*0x6d6977*/
+        unsigned int v27 = v44 - v25; // ebp /*0x6d6977*/
         if ( v54 && (int)(v27 - v26 / 2) > 15 || v30 && (int)(v27 + v26 / 2) > 15 )
           v35 -= ((int)v18->u32_140 & 0x100) != 0 ? 0x3C : 0;
         v11 = v44; /*0x6d69c0*/
@@ -1545,8 +1504,7 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
     }
     if ( v35 <= v11 ) /*0x6d69c8*/
       break; /*0x6d69c8*/
-  bool v28; // cc
-    v28 = i + 1 < 180; /*0x6d69d8*/
+    bool v28 = i + 1 < 180; // cc /*0x6d69d8*/
     --v42; /*0x6d69dd*/
     if ( !v28 ) /*0x6d69e5*/
     {
@@ -1567,25 +1525,20 @@ int Tactical::AddCellToDrawList(int aP1, void *a2)
   int v9; // edi
   int v10; // ecx
 
-  int result; // eax
-  result = dword_87F7F4; /*0x6da7d0*/
+  int result = dword_87F7F4; // eax /*0x6da7d0*/
   if ( !dword_87F7F4 ) /*0x6da7df*/
   {
     result = (int)dword_A8ED84; /*0x6da7e9*/
     if ( aP1->q05C != dword_A8ED84 && ((aP1->q12C & 8) != 0 || aP1->q138) ) /*0x6da800*/
     {
       aP1->q05C = dword_A8ED84; /*0x6da80e*/
-  int *Coords; // eax
-  int v14[3]; // [esp+Ch] [ebp-Ch] BYREF
+      int *Coords; // eax
+      int v14[3]; // [esp+Ch] [ebp-Ch] BYREF
       Coords = CellClass::GetCoords((unsigned int *)aP1, v14); /*0x6da819*/
-  int v5; // ecx
-      v5 = *Coords; /*0x6da81e*/
-  int v6; // esi
-      v6 = Coords->vtable2; /*0x6da820*/
-  int v7; // edx
-      v7 = Coords->vtable3; /*0x6da823*/
-  int v8; // eax
-      v8 = aP1->q12C; /*0x6da826*/
+      int v5 = *Coords; // ecx /*0x6da81e*/
+      int v6 = Coords->vtable2; // esi /*0x6da820*/
+      int v7 = Coords->vtable3; // edx /*0x6da823*/
+      int v8 = aP1->q12C; // eax /*0x6da826*/
       v14[2] = v7; /*0x6da82e*/
       if ( (v8 & 8) != 0 && (v8 & 0x10) != 0 ) /*0x6da836*/
       {
@@ -1600,10 +1553,10 @@ int Tactical::AddCellToDrawList(int aP1, void *a2)
         v10 = 30 * v6 / 2 + 30 * v5 / 2; /*0x6da8c2*/
       }
       v10 = v10; /*0x6da8c6*/
-  int v12; // eax
+      int v12; // eax
       v12 = ZCoordToScreenY(0); /*0x6da8d8*/
       v14[0] = v9 / 256; /*0x6da8e8*/
-  int v13; // esi
+      int v13; // esi
       v13 = v9 / 256 - *(&this->u32_68); /*0x6da8ff*/
       result = v10 / 256 - v12 - *(&this->q105); /*0x6da907*/
       if ( v13 >= DSurface_ViewBounds - 30 /*0x6da936*/
@@ -1648,8 +1601,7 @@ void* Tactical::DrawTacticalConnectorLines()
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x6db221*/
   CellClass *v2; // ebp
   v2 = (CellClass *)LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x6db236*/
-  int result; // eax
-  result = 255 >> g_BitMask_Blue << g_BitMask_Green; /*0x6db251*/
+  int result = 255 >> g_BitMask_Blue << g_BitMask_Green; // eax /*0x6db251*/
   int v4; // edi
   v4 = result | (255 >> g_BitShift_Green_0 << g_BitShift_Red); /*0x6db283*/
   int v51; // [esp+88h] [ebp-8Ch]
@@ -1660,54 +1612,50 @@ void* Tactical::DrawTacticalConnectorLines()
   {
     do /*0x6db525*/
     {
-  ObjectClass *firstObject; // [esp+44h] [ebp-D0h]
+      ObjectClass *firstObject; // [esp+44h] [ebp-D0h]
       firstObject = v2->firstObject; /*0x6db2d3*/
       if ( firstObject ) /*0x6db2d7*/
       {
-  int *Coords; // eax
-  int v63[3]; // [esp+108h] [ebp-Ch] BYREF
+        int *Coords; // eax
+        int v63[3]; // [esp+108h] [ebp-Ch] BYREF
         Coords = CellClass::GetCoords(v2, v63); /*0x6db2e7*/
-  unsigned int v52[3]; // [esp+8Ch] [ebp-88h] BYREF
+        unsigned int v52[3]; // [esp+8Ch] [ebp-88h] BYREF
         v52[0] = *Coords; /*0x6db2ee*/
         v52[1] = Coords->vtable2; /*0x6db2fa*/
         v52[2] = Coords->vtable3; /*0x6db30b*/
-  int *v7; // eax
-  int v60; // [esp+ECh] [ebp-28h] BYREF
+        int *v7; // eax
+        int v60; // [esp+ECh] [ebp-28h] BYREF
         v7 = Coord::To_ScreenRaw(&v60, v52); /*0x6db30f*/
-  int v8; // edx
-        v8 = *&this->u32_B0; /*0x6db314*/
-  int v40; // [esp+58h] [ebp-BCh] BYREF
+        int v8 = *&this->u32_B0; // edx /*0x6db314*/
+        int v40; // [esp+58h] [ebp-BCh] BYREF
         v40 = *v7; /*0x6db31e*/
-  int v9; // ecx
+        int v9; // ecx
         v9 = v7[1]; /*0x6db324*/
         v40 -= v8; /*0x6db327*/
-  int v41; // [esp+5Ch] [ebp-B8h]
+        int v41; // [esp+5Ch] [ebp-B8h]
         v41 = v9 - *&this->u32_B4; /*0x6db33a*/
-  unsigned int *v10; // eax
-  char v62[12]; // [esp+FCh] [ebp-18h] BYREF
+        unsigned int *v10; // eax
+        char v62[12]; // [esp+FCh] [ebp-18h] BYREF
         v10 = (unsigned int *)(*((int (**)(ObjectClass *, char *))firstObject->AbstractClass + 18))( /*0x6db345*/
                           firstObject,
                           v62);
-  unsigned int v53[3]; // [esp+98h] [ebp-7Ch] BYREF
+        unsigned int v53[3]; // [esp+98h] [ebp-7Ch] BYREF
         v53[0] = *v10; /*0x6db34a*/
         v53[1] = v10[1]; /*0x6db356*/
         v53[2] = v10[2]; /*0x6db367*/
-  int *v11; // eax
-  int v59; // [esp+E4h] [ebp-30h] BYREF
+        int *v11; // eax
+        int v59; // [esp+E4h] [ebp-30h] BYREF
         v11 = Coord::To_ScreenRaw(&v59, v53); /*0x6db36b*/
-  int v12; // edx
-        v12 = *&this->u32_B0; /*0x6db370*/
-  int *v13; // ecx
-        v13 = v11; /*0x6db376*/
+        int v12 = *&this->u32_B0; // edx /*0x6db370*/
+        int *v13 = v11; // ecx /*0x6db376*/
         v44[0] = *v11; /*0x6db37b*/
-  int v14; // eax
+        int v14; // eax
         v14 = v44[0] - v12; /*0x6db37f*/
-  int v15; // ecx
+        int v15; // ecx
         v15 = v13[1]; /*0x6db381*/
-  int v16; // edx
-        v16 = *&this->u32_B4; /*0x6db384*/
+        int v16 = *&this->u32_B4; // edx /*0x6db384*/
         v44[0] = v14; /*0x6db390*/
-  unsigned int v55[4]; // [esp+B4h] [ebp-60h] BYREF
+        unsigned int v55[4]; // [esp+B4h] [ebp-60h] BYREF
         v55[1] = v41 - 1; /*0x6db39a*/
         v44[1] = v15 - v16; /*0x6db3a6*/
         v55[2] = 3; /*0x6db3b0*/
@@ -1719,55 +1667,51 @@ void* Tactical::DrawTacticalConnectorLines()
           v55,
           v4);
         (*(void (**)(AudioStream *, CellStruct *, int *, int *, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x6db3ef*/
-                                                                               + 44))(
+        + 44))(
           g_DSurface_Hidden_2,
           &DSurface_ViewBounds,
           &v40,
           v44,
           v4);
       }
-  ObjectClass *altObject; // [esp+44h] [ebp-D0h]
+      ObjectClass *altObject; // [esp+44h] [ebp-D0h]
       altObject = v2->altObject; /*0x6db3fa*/
       if ( altObject ) /*0x6db3fe*/
       {
-  int *v17; // eax
+        int *v17; // eax
         v17 = CellClass::GetCoords(v2, v57); /*0x6db40e*/
         v48 = *v17; /*0x6db415*/
         v49 = v17->vtable2; /*0x6db41c*/
         v50 = v17->vtable3; /*0x6db432*/
-  int *v18; // eax
-  int v61; // [esp+F4h] [ebp-20h] BYREF
+        int *v18; // eax
+        int v61; // [esp+F4h] [ebp-20h] BYREF
         v18 = Coord::To_ScreenRaw(&v61, &v48); /*0x6db436*/
-  int v19; // edx
-        v19 = *&this->u32_B0; /*0x6db43d*/
-  int v20; // ebp
-        v20 = *&this->u32_B4; /*0x6db443*/
-  int v42; // [esp+60h] [ebp-B4h] BYREF
+        int v19 = *&this->u32_B0; // edx /*0x6db43d*/
+        int v20 = *&this->u32_B4; // ebp /*0x6db443*/
+        int v42; // [esp+60h] [ebp-B4h] BYREF
         v42 = *v18; /*0x6db449*/
-  int v21; // eax
+        int v21; // eax
         v21 = v18[1] - v20; /*0x6db452*/
         v42 -= v19; /*0x6db454*/
-  int v43; // [esp+64h] [ebp-B0h]
+        int v43; // [esp+64h] [ebp-B0h]
         v43 = v21 - 60; /*0x6db45f*/
-  int *v22; // eax
+        int *v22; // eax
         v22 = (int *)(*((int (**)(ObjectClass *, unsigned char *))altObject->AbstractClass + 18))(altObject, v58); /*0x6db46d*/
         v45 = *v22; /*0x6db472*/
         v46 = v22[1]; /*0x6db47e*/
         v47 = v22[2]; /*0x6db48f*/
-  int *v23; // eax
+        int *v23; // eax
         v23 = Coord::To_ScreenRaw(v56, &v45); /*0x6db493*/
         *(unsigned int *)v37.__pad_000 = *v23; /*0x6db49a*/
-  int v24; // ecx
-        v24 = *&this->u32_B4; /*0x6db49e*/
-  int v25; // edx
+        int v24 = *&this->u32_B4; // ecx /*0x6db49e*/
+        int v25; // edx
         v25 = v23[1]; /*0x6db4a4*/
-  int v26; // eax
-        v26 = *&this->u32_B0; /*0x6db4a7*/
+        int v26 = *&this->u32_B0; // eax /*0x6db4a7*/
         v37.q004 = v25; /*0x6db4ad*/
         v39 = v24; /*0x6db4b5*/
         v38 = v26; /*0x6db4be*/
         Vector2::Subtract(&v37, &v38); /*0x6db4c2*/
-  unsigned int v54[4]; // [esp+A4h] [ebp-70h] BYREF
+        unsigned int v54[4]; // [esp+A4h] [ebp-70h] BYREF
         v54[0] = v42 - 1; /*0x6db4d1*/
         v54[1] = v43 - 1; /*0x6db4da*/
         v54[2] = 3; /*0x6db4e4*/
@@ -1778,7 +1722,7 @@ void* Tactical::DrawTacticalConnectorLines()
           v54,
           v5);
         (*(void (**)(AudioStream *, CellStruct *, int *, Vector2 *, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x6db514*/
-                                                                                   + 44))(
+        + 44))(
           g_DSurface_Hidden_2,
           &DSurface_ViewBounds,
           &v42,
@@ -1793,37 +1737,35 @@ void* Tactical::DrawTacticalConnectorLines()
   int i; // ebx
   for ( i = dword_A8E370 - 1; i >= 0; --i ) /*0x6db536*/
   {
-  unsigned int *v28; // edi
+    unsigned int *v28; // edi
     v28 = (unsigned int *)*((unsigned int *)dword_A8E364 + i); /*0x6db542*/
     result = v28[12]; /*0x6db545*/
     if ( result ) /*0x6db54a*/
     {
-  int *v29; // eax
+      int *v29; // eax
       v29 = (int *)(*(int (**)(unsigned int *, unsigned char *))(*v28 + 72))(v28, v58); /*0x6db55c*/
       v45 = *v29; /*0x6db561*/
       v46 = v29[1]; /*0x6db568*/
       v47 = v29[2]; /*0x6db57e*/
-  int *v30; // eax
+      int *v30; // eax
       v30 = Coord::To_ScreenRaw(v56, &v45); /*0x6db582*/
-  int v31; // ecx
-      v31 = *&this->u32_B0; /*0x6db589*/
+      int v31 = *&this->u32_B0; // ecx /*0x6db589*/
       *(unsigned int *)v37.__pad_000 = *v30; /*0x6db58f*/
-  int v32; // edx
-      v32 = *&this->u32_B4; /*0x6db593*/
-  int v33; // eax
+      int v32 = *&this->u32_B4; // edx /*0x6db593*/
+      int v33; // eax
       v33 = v30[1]; /*0x6db599*/
       v38 = v31; /*0x6db59c*/
       v37.q004 = v33; /*0x6db5a0*/
       v39 = v32; /*0x6db5ad*/
       Vector2::Subtract(&v37, &v38); /*0x6db5b1*/
-  int *v34; // eax
+      int *v34; // eax
       v34 = (int *)(*(int (**)(unsigned int, int *))(*(unsigned int *)v28[12] + 72))(v28[12], v57); /*0x6db5c3*/
       v48 = *v34; /*0x6db5c8*/
       v49 = v34[1]; /*0x6db5d4*/
       v50 = v34[2]; /*0x6db5e2*/
       Coord::To_Screen((Coord *)this, &v48, v44); /*0x6db5e6*/
       result = (*(int (**)(AudioStream *, CellStruct *, Vector2 *, int *, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x6db607*/
-                                                                                         + 44))(
+      + 44))(
                  g_DSurface_Hidden_2,
                  &DSurface_ViewBounds,
                  &v37,
@@ -1845,22 +1787,16 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
 
   unsigned int *v6; // eax
   v6 = IsoCoord::ToPixel(&v30, *a1, a1->IsoCoord_field_0x04); /*0x6dbb79*/
-  int v7; // ebx
-  v7 = v6->IsoCoord_field_0x04; /*0x6dbb83*/
-  int v8; // esi
-  v8 = *v6 / 256; /*0x6dbb93*/
+  int v7 = v6->IsoCoord_field_0x04; // ebx /*0x6dbb83*/
+  int v8 = *v6 / 256; // esi /*0x6dbb93*/
   int v9; // ecx
   v9 = ZCoordToScreenY(a1[2]); /*0x6dbb9b*/
-  int v10; // edx
-  v10 = *&this->u32_B4; /*0x6dbbac*/
-  int v11; // eax
-  v11 = v7 / 256 - v9; /*0x6dbbb5*/
-  int v12; // ecx
-  v12 = *&this->u32_B0; /*0x6dbbb7*/
+  int v10 = *&this->u32_B4; // edx /*0x6dbbac*/
+  int v11 = v7 / 256 - v9; // eax /*0x6dbbb5*/
+  int v12 = *&this->u32_B0; // ecx /*0x6dbbb7*/
   unsigned int v32[2]; // [esp+28h] [ebp-8h] BYREF
   v32[0] = v8; /*0x6dbbbd*/
-  int v13; // esi
-  v13 = v8 - v12; /*0x6dbbc3*/
+  int v13 = v8 - v12; // esi /*0x6dbbc3*/
   int v14; // ecx
   v14 = aP2[1]; /*0x6dbbc5*/
   v32[1] = v11 - v10; /*0x6dbbc8*/
@@ -1869,8 +1805,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   v32[0] = v13; /*0x6dbbd4*/
   unsigned int *v15; // eax
   v15 = IsoCoord::ToPixel(&v29, v27, v14); /*0x6dbbd8*/
-  int v16; // ecx
-  v16 = v15->IsoCoord_field_0x04; /*0x6dbbe1*/
+  int v16 = v15->IsoCoord_field_0x04; // ecx /*0x6dbbe1*/
   __int64 v17; // rax
   v17 = (int)*v15; /*0x6dbbe4*/
   v30.IsoCoord_field_0x04 = v16; /*0x6dbbeb*/
@@ -1880,8 +1815,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   v19 = ZCoordToScreenY(aP2[2]); /*0x6dbbf9*/
   unsigned int v31[2]; // [esp+20h] [ebp-10h] BYREF
   v31[0] = v18; /*0x6dbc0b*/
-  int v20; // esi
-  v20 = v18 - *&this->u32_B0; /*0x6dbc22*/
+  int v20 = v18 - *&this->u32_B0; // esi /*0x6dbc22*/
   v31[1] = v30.IsoCoord_field_0x04 / 256 - v19 - *&this->u32_B4; /*0x6dbc28*/
   int v21; // eax
   v21 = aP2[2]; /*0x6dbc2c*/
@@ -1890,8 +1824,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   *(unsigned int *)v30.__pad_000 = a1->u32_8; /*0x6dbc58*/
   BOOL v33; // [esp+38h] [ebp+8h]
   v33 = *(unsigned int *)v30.__pad_000 >= 728; /*0x6dbc5e*/
-  AudioStream *v22; // esi
-  v22 = g_DSurface_Hidden_2; /*0x6dbc66*/
+  AudioStream *v22 = g_DSurface_Hidden_2; // esi /*0x6dbc66*/
   int v23; // edi
   v23 = *(unsigned int *)g_DSurface_Hidden_2; /*0x6dbc77*/
   int v24; // eax
@@ -1921,8 +1854,7 @@ int Tactical_42::FindItem(unsigned int * a2)
 
   int v2; // edx
   v2 = *(unsigned int *)this->q010; /*0x6e4a80*/
-  int result; // eax
-  result = 0; /*0x6e4a83*/
+  int result = 0; // eax /*0x6e4a83*/
   if ( v2 <= 0 ) /*0x6e4a88*/
     return -1; /*0x6e4a9f*/
   unsigned int *i; // ecx
@@ -1940,8 +1872,7 @@ namespace gamemd {
 char * Tactical::SetCellTransform(int a2, int aP2, int a4, int aP4, int a6, int a7, void *a7_1)
 {
 
-  char *result; // eax
-  result = &this->needsSave * a2; /*0x4a35fb*/
+  char *result = &this->needsSave * a2; // eax /*0x4a35fb*/
   *(unsigned int *)result = aP2; /*0x4a3601*/
   result->u32_4 = a4; /*0x4a3607*/
   result->u32_8 = aP4; /*0x4a360e*/
@@ -1974,8 +1905,7 @@ namespace gamemd {
 int * Tactical::ScrollMap(Tactical * aP0, int a2)
 {
 
-  int *result; // eax
-  result = dword_B0CEC8; /*0x6da564*/
+  int *result = dword_B0CEC8; // eax /*0x6da564*/
   do /*0x6da57b*/
   {
     if ( (Tactical *)*result == aP0 ) /*0x6da56b*/
@@ -2021,14 +1951,13 @@ int Tactical::InitMap(int a1, int a2)
   {
     if ( a1 ) /*0x6dbd3d*/
       SmallFunc_6D1E30(a1, (int)&a2); /*0x6dbd46*/
-  int v3; // eax
+    int v3; // eax
     v3 = *(unsigned int *)&a1->__pad_AC[52]; /*0x6dbd4b*/
-  int v4; // edi
-    v4 = 0; /*0x6dbd52*/
+    int v4 = 0; // edi /*0x6dbd52*/
     *(unsigned int *)&a1->__pad_DA8[8] = 0; /*0x6dbd54*/
     if ( v3 > 0 ) /*0x6dbd60*/
     {
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)&a1->__pad_AC[56]; /*0x6dbd63*/
       do /*0x6dbd80*/
       {
@@ -2038,11 +1967,11 @@ int Tactical::InitMap(int a1, int a2)
       }
       while ( v4 < *(unsigned int *)&a1->__pad_AC[52] ); /*0x6dbd80*/
     }
-  int v6; // eax
+    int v6; // eax
     v6 = *(unsigned int *)&a1->__pad_11F[3145]; /*0x6dbd89*/
-  int v9; // [esp+4h] [ebp-8h] BYREF
+    int v9; // [esp+4h] [ebp-8h] BYREF
     v9 = *(unsigned int *)&a1->__pad_11F[3141]; /*0x6dbd93*/
-  int v10; // [esp+8h] [ebp-4h]
+    int v10; // [esp+8h] [ebp-4h]
     v10 = v6; /*0x6dbd9a*/
     if ( !ClampCoordMap(&v9) || ((unsigned int *)&stru_A8EB00)[391] ) /*0x6dbdaf*/
     {
@@ -2158,17 +2087,14 @@ char Tactical_42::AddRef(int a2)
 {
 
 
-  int m_8; // esi
-  m_8 = this->q008; /*0x6e4852*/
+  int m_8 = this->q008; // esi /*0x6e4852*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x6e485d*/
   {
-  int v3; // edx
-    v3 = 0; /*0x6e485f*/
+    int v3 = 0; // edx /*0x6e485f*/
     if ( m_8 <= 0 ) /*0x6e4863*/
       return 1; /*0x6e4883*/
-  unsigned int *v4; // eax
-    v4 = *&this->q004; /*0x6e4865*/
-  int v5; // ecx
+    unsigned int *v4 = *&this->q004; // eax /*0x6e4865*/
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x6e486b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x6e4874*/
     {
@@ -2192,7 +2118,7 @@ char Tactical_42::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x6e489c*/
   {
     LOBYTE(this->q00C) = 0; /*0x6e48a6*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x6e48ac*/
       v4 = a3; /*0x6e48c2*/
     else
@@ -2202,11 +2128,10 @@ char Tactical_42::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x6e48d5*/
       {
-  int m_8; // ecx
-        m_8 = this->q008; /*0x6e48dc*/
+        int m_8 = this->q008; // ecx /*0x6e48dc*/
         if ( a2 < m_8 ) /*0x6e48e1*/
           m_8 = a2; /*0x6e48e3*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6e48e9*/
           ++i; /*0x6e48ee*/
         if ( BYTE1(this->q00C) ) /*0x6e48fb*/
@@ -2260,8 +2185,7 @@ int Tactical::Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *
     return 0; /*0x6e4978*/
   int m_8; // edx
   m_8 = a2_2->m_8; /*0x6e497e*/
-  int result; // eax
-  result = 0; /*0x6e4981*/
+  int result = 0; // eax /*0x6e4981*/
   if ( m_8 <= 0 ) /*0x6e4985*/
     return -1; /*0x6e499c*/
   unsigned int *i; // ecx
@@ -2297,7 +2221,7 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
   if ( a2 ) /*0x6e49dc*/
   {
     LOBYTE(this->q00C) = 0; /*0x6e49e2*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x6e49e8*/
       v4 = a3; /*0x6e49fe*/
     else
@@ -2307,11 +2231,10 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x6e4a7a*/
     if ( *&this->q004 ) /*0x6e4a08*/
     {
-  int Tactical_field_0x8; // ecx
-      Tactical_field_0x8 = this->q008; /*0x6e4a0f*/
+      int Tactical_field_0x8 = this->q008; // ecx /*0x6e4a0f*/
       if ( a2 < Tactical_field_0x8 ) /*0x6e4a14*/
         Tactical_field_0x8 = a2; /*0x6e4a16*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < Tactical_field_0x8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6e4a1c*/
         ++i; /*0x6e4a21*/
       if ( BYTE1(this->q00C) ) /*0x6e4a2e*/
@@ -2328,8 +2251,7 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(Tactical *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6e4a5e*/
   }
-  int v7; // eax
-  v7 = this->q008; /*0x6e4a61*/
+  int v7 = this->q008; // eax /*0x6e4a61*/
   if ( v7 < *(unsigned int *)this->q010 ) /*0x6e4a69*/
     *(unsigned int *)this->q010 = v7; /*0x6e4a6b*/
   return 1; /*0x6e4a6e*/
@@ -2342,8 +2264,7 @@ namespace gamemd {
 VectorClass_flat * Tactical_42::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x6e4ab3*/
+  void *v3 = *&Block->__pad_004; // eax /*0x6e4ab3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6e4ab6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x6e4ac0*/
   {

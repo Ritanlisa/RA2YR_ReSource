@@ -18,8 +18,7 @@ namespace gamemd {  // G42.18 ns repair
 char sub_72B8E0()
 {
 
-  char result; // al
-  result = byte_B0FD5D; /*0x72b8e0*/
+  char result = byte_B0FD5D; // al /*0x72b8e0*/
   if ( !byte_B0FD5D ) /*0x72b8e7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72b8f3*/
@@ -40,7 +39,7 @@ void sub_72B930()
   {
     if ( DataGlobal_B0FD5C ) /*0x72b942*/
     {
-  void *v1; // esi
+      void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FB54; /*0x72b945*/
       if ( *(unsigned int *)&DataGlobal_B0FB54 ) /*0x72b94d*/
       {

@@ -224,9 +224,9 @@
 namespace gamemd { int CalcPosition(int p0, int p1, int p2); }  // x4:signals@0x412a40
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ConstructTeamMembers(ObjectClass *p_this);  // x4:ida@0x65dd30
-    int Release2COM(ObjectClass *p_this);  // x4:ida@0x45a160
-    int RenderProjectileTrail(ObjectClass *p_this);  // x4:ida@0x659650
+int ConstructTeamMembers(ObjectClass *p_this);  // x4:ida@0x65dd30
+int Release2COM(ObjectClass *p_this);  // x4:ida@0x45a160
+int RenderProjectileTrail(ObjectClass *p_this);  // x4:ida@0x659650
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
@@ -240,10 +240,10 @@ int Trigger_AllocateLog(int a1)
   int result; // eax
   if ( byte_B04880 )
   {
-  int v86; // [esp+34h] [ebp-4h]
-  unsigned int v85[3]; // [esp+28h] [ebp-10h] BYREF
-  int v84; // [esp+24h] [ebp-14h] BYREF
-  bool v39; // cc
+    int v86; // [esp+34h] [ebp-4h]
+    unsigned int v85[3]; // [esp+28h] [ebp-10h] BYREF
+    int v84; // [esp+24h] [ebp-14h] BYREF
+    bool v39; // cc
     int v3 = 828 * a1 + 11298400;
     unsigned int * v83 = (unsigned int *)v3;
     *(unsigned int *)v3 = *(unsigned int *)Networking_CurrentFrameCRC;
@@ -257,7 +257,7 @@ int Trigger_AllocateLog(int a1)
       if ( v4 < HouseClass_Count )
       {
         *(unsigned char *)v5 = 0;
-  int i; // esi
+        int i; // esi
         for ( i = 0; i < Game_PlayerCount; ++i )
         {
           int v7 = *(unsigned int *)(Game_PlayerInfoArray + 4 * i);
@@ -286,8 +286,8 @@ int Trigger_AllocateLog(int a1)
         strncpy(
           (char *)(v5 + 60),
           (const char *)(*((unsigned int *)g_SuperWeaponTypeCount
-                         + *(unsigned int *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 180))
-                       + 36),
+        + *(unsigned int *)(*(unsigned int *)(*((unsigned int *)HouseClass_Array + v4) + 52) + 180))
+        + 36),
           0x1Fu);
       }
       ++v4;
@@ -332,7 +332,7 @@ int Trigger_AllocateLog(int a1)
       *(unsigned char *)(v15 + 31) = 0;
       *(unsigned char *)(v15 + 32) = v19;
       strncpy((char *)(v15 + 8), (const char *)(*(unsigned int *)(v16 + 1728) + 36), 0x17u);
-  int16_t *v20; // ebp
+      int16_t *v20; // ebp
       v20 = *(int16_t **)(v16 + 1444);
       int v21 = 0;
       if ( v20 )
@@ -346,7 +346,7 @@ int Trigger_AllocateLog(int a1)
           v21 = v20[18] | (v20[19] << 16);
         }
         void * v22 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v20 + 44))( (int16_t *)(v20));
-  char *Name; // eax
+        char *Name; // eax
         Name = ((AbstractType_e4*)v22)->FindName();
         *(unsigned char *)(v15 + 91) = 0;
         *(unsigned int *)(v15 + 64) = v21;
@@ -357,7 +357,7 @@ int Trigger_AllocateLog(int a1)
         *(unsigned int *)(v15 + 64) = 0;
         *(unsigned char *)(v15 + 68) = 0;
       }
-  int16_t *v24; // edi
+      int16_t *v24; // edi
       v24 = *(int16_t **)(v16 + 692);
       int v25 = 0;
       if ( v24 )
@@ -411,7 +411,7 @@ int Trigger_AllocateLog(int a1)
         *(unsigned int *)(v15 + 92) = (*(int (**)(unsigned int))(**(unsigned int **)(v28 + 1652) + 196))(*(unsigned int *)(v28 + 1652));
         *(unsigned char *)(v15 + 31) = 0;
         strncpy((char *)(v15 + 8), (const char *)(*(unsigned int *)(v28 + 1732) + 36), 0x17u);
-  int16_t *v31; // ebp
+        int16_t *v31; // ebp
         v31 = *(int16_t **)(v28 + 1444);
         int v32 = 0;
         if ( v31 )
@@ -435,7 +435,7 @@ int Trigger_AllocateLog(int a1)
           *(unsigned int *)(v15 + 64) = 0;
           *(unsigned char *)(v15 + 68) = 0;
         }
-  int16_t *v35; // edi
+        int16_t *v35; // edi
         v35 = *(int16_t **)(v28 + 692);
         int v36 = 0;
         if ( v35 )
@@ -485,7 +485,7 @@ int Trigger_AllocateLog(int a1)
         *(unsigned char *)(v15 + 31) = 0;
         *(unsigned char *)(v15 + 32) = v43;
         strncpy((char *)(v15 + 8), (const char *)(*(unsigned int *)(v40 + 1732) + 36), 0x17u);
-  int16_t *v44; // ebp
+        int16_t *v44; // ebp
         v44 = *(int16_t **)(v40 + 1444);
         int v45 = 0;
         if ( v44 )
@@ -509,7 +509,7 @@ int Trigger_AllocateLog(int a1)
           *(unsigned int *)(v15 + 64) = 0;
           *(unsigned char *)(v15 + 68) = 0;
         }
-  int16_t *v48; // edi
+        int16_t *v48; // edi
         v48 = *(int16_t **)(v40 + 692);
         int v49 = 0;
         if ( v48 )
@@ -558,7 +558,7 @@ int Trigger_AllocateLog(int a1)
       *(unsigned char *)(v15 + 68) = 0;
       *(unsigned char *)(v15 + 31) = 0;
       strncpy((char *)(v15 + 8), (const char *)(*(unsigned int *)(v53 + 1312) + 36), 0x17u);
-  int16_t *v58; // edi
+      int16_t *v58; // edi
       v58 = *(int16_t **)(v53 + 692);
       if ( v58 )
       {
@@ -710,101 +710,94 @@ char RenderScoreboardSidebar(void * a1, void * a2)
   (*((unsigned char *)&(v2))) = byte_884B8D; /*0x653fa0*/
   if ( byte_884B8D )
   {
-  int v4; // esi
+    int v4; // esi
     v4 = VtableStub::sub_72F510(); /*0x653fbc*/
-  int v41; // [esp+20h] [ebp-A8h] BYREF
+    int v41; // [esp+20h] [ebp-A8h] BYREF
     v41 = this->u32_11E4; /*0x653fd4*/
-  int v42; // [esp+24h] [ebp-A4h] BYREF
+    int v42; // [esp+24h] [ebp-A4h] BYREF
     v42 = this->u32_11EC; /*0x653fe6*/
-  int *v5; // eax
-  int v48; // [esp+40h] [ebp-88h] BYREF
+    int *v5; // eax
+    int v48; // [esp+40h] [ebp-88h] BYREF
     v5 = (int *)(*(int (**)(DSurface *, int *, unsigned int))(DSurface_Sidebar + 120))( /*0x653ff1*/
                   DSurface_Sidebar,
                   &v48,
                   0);
-  int v40; // [esp+18h] [ebp-B0h]
+    int v40; // [esp+18h] [ebp-B0h]
     DrawToSurfaceSHP((int)DSurface_Sidebar, v4,(gamemd::ConvertClass *)(dword_B04A38), 0x20u, &v42, v5, 0, 0, 0, 1000, 0, 0, 0, 0, 0, v40); /*0x65400b*/
-  int v6; // esi
-    v6 = this->u32_11F4 + 2; /*0x65401c*/
+    int v6 = this->u32_11F4 + 2; // esi /*0x65401c*/
     v42 = this->u32_11F0; /*0x65401f*/
-  int v43; // [esp+28h] [ebp-A0h] BYREF
+    int v43; // [esp+28h] [ebp-A0h] BYREF
     v43 = v6; /*0x654031*/
-  int BuildingAnimByName; // eax
+    int BuildingAnimByName; // eax
     BuildingAnimByName = FindBuildingAnimByName(aGrey, 1); /*0x654035*/
-  unsigned int *v29; // [esp+4h] [ebp-C4h]
-  char v49[16]; // [esp+44h] [ebp-84h] BYREF
+    unsigned int *v29; // [esp+4h] [ebp-C4h]
+    char v49[16]; // [esp+44h] [ebp-84h] BYREF
     v29 = (unsigned int *)(*(int (**)(DSurface *, char *, int *, int, unsigned int, int))(DSurface_Sidebar /*0x654056*/
-                                                                                       + 120))(
+    + 120))(
                       DSurface_Sidebar,
                       v49,
                       &v42,
                       BuildingAnimByName,
                       0,
                       25);
-  DSurface *v26; // [esp+0h] [ebp-C8h]
+    DSurface *v26; // [esp+0h] [ebp-C8h]
     v26 = (gamemd::DSurface *)(DSurface_Sidebar);
-  wchar_t *StringCSF; // eax
+    wchar_t *StringCSF; // eax
     StringCSF = GetStringCSF(aTxtNameColon, 0, aDRa2mdpostRada, 1268); /*0x654069*/
-  int v32; // [esp+8h] [ebp-C0h]
-  int v34; // [esp+Ch] [ebp-BCh]
-  int v37; // [esp+10h] [ebp-B8h]
-  int v39; // [esp+14h] [ebp-B4h]
-  int v45; // [esp+30h] [ebp-98h] BYREF
+    int v32; // [esp+8h] [ebp-C0h]
+    int v34; // [esp+Ch] [ebp-BCh]
+    int v37; // [esp+10h] [ebp-B8h]
+    int v39; // [esp+14h] [ebp-B4h]
+    int v45; // [esp+30h] [ebp-98h] BYREF
     TextRenderer::DrawText(&v45, (size_t)StringCSF, (int)v26, v29, v32, v34, v37, v39); /*0x654074*/
-  int v9; // eax
-    v9 = this->u32_11F8; /*0x654079*/
-  int v10; // ecx
-    v10 = this->u32_11F0; /*0x65407f*/
+    int v9 = this->u32_11F8; // eax /*0x654079*/
+    int v10 = this->u32_11F0; // ecx /*0x65407f*/
     v42 = v6; /*0x654088*/
     v41 = v9 + v10 - 2; /*0x654095*/
-  int v35; // [esp+Ch] [ebp-BCh]
+    int v35; // [esp+Ch] [ebp-BCh]
     v35 = FindBuildingAnimByName(aGrey, 1); /*0x6540b0*/
-  unsigned int *v30; // [esp+4h] [ebp-C4h]
+    unsigned int *v30; // [esp+4h] [ebp-C4h]
     v30 = (unsigned int *)(*(int (**)(DSurface *, int *))(DSurface_Sidebar + 120))( /*0x6540c6*/
                       DSurface_Sidebar,
                       &v48);
-  DSurface *v27; // [esp+0h] [ebp-C8h]
+    DSurface *v27; // [esp+0h] [ebp-C8h]
     v27 = (gamemd::DSurface *)(DSurface_Sidebar);
-  wchar_t *v11; // eax
+    wchar_t *v11; // eax
     v11 = GetStringCSF(aTxtKillsColon, 0, aDRa2mdpostRada, 1270); /*0x6540d9*/
     TextRenderer::DrawText(&v45, (size_t)v11, (int)v27, v30, (int)&v41, v35, 0, 537); /*0x6540e4*/
-  int v12; // esi
-    v12 = v6 + 7; /*0x6540f1*/
-  int v13; // edx
+    int v12 = v6 + 7; // esi /*0x6540f1*/
+    int v13; // edx
     v13 = *(unsigned int *)(dword_87F6CC + 4) == 1
-        ? *(uint8_t *)(*(unsigned int *)(dword_87F6CC + 372) + 14)
-        : *(uint16_t *)(*(unsigned int *)(dword_87F6CC + 372) + 28);
-  int v14; // eax
-    v14 = this->u32_11F0; /*0x654113*/
+    ? *(uint8_t *)(*(unsigned int *)(dword_87F6CC + 372) + 14)
+    : *(uint16_t *)(*(unsigned int *)(dword_87F6CC + 372) + 28);
+    int v14 = this->u32_11F0; // eax /*0x654113*/
     v41 = v14 + this->u32_11F8 - 1; /*0x654129*/
     v42 = v12; /*0x654133*/
     v43 = v14; /*0x654137*/
-  int v44; // [esp+2Ch] [ebp-9Ch]
+    int v44; // [esp+2Ch] [ebp-9Ch]
     v44 = v12; /*0x65413b*/
     (*(void (**)(DSurface *, int *, int *, int))(DSurface_Sidebar + 48))( /*0x654146*/
       DSurface_Sidebar,
       &v43,
       &v41,
       v13);
-  int v15; // esi
-    v15 = v12 + 4; /*0x65414f*/
+    int v15 = v12 + 4; // esi /*0x65414f*/
     v2 = 0; /*0x654152*/
     v41 = 0; /*0x654156*/
     if ( dword_A80238 > 0 ) /*0x65415a*/
     {
-  int v1; // ebp
-  int v38; // [esp+10h] [ebp-B8h]
+      int v1; // ebp
+      int v38; // [esp+10h] [ebp-B8h]
       v38 = v1; /*0x654161*/
       do /*0x654308*/
       {
         v43 = *(&dword_A8022C->vfptr.vfptr + v2); /*0x65416d*/
-  int v16; // ecx
-        v16 = v43; /*0x654168*/
+        int v16 = v43; // ecx /*0x654168*/
         if ( v43 && *(unsigned char *)(*(unsigned int *)(v43 + 52) + 421) ) /*0x65417a*/
         {
           if ( *(unsigned char *)(v43 + 501) ) /*0x654188*/
           {
-  int v17; // eax
+            int v17; // eax
             v17 = FindBuildingAnimByName(aGrey, 1); /*0x6541a2*/
             v16 = v43; /*0x6541a7*/
             v18 = v17; /*0x6541ab*/
@@ -815,34 +808,33 @@ char RenderScoreboardSidebar(void * a1, void * a2)
             v19 = 16409; /*0x6541ba*/
             v18 = *((unsigned int *)dword_B054D4 + *(unsigned int *)(v43 + 90196)); /*0x6541bf*/
           }
-  wchar_t Buffer[18]; // [esp+58h] [ebp-70h] BYREF
+          wchar_t Buffer[18]; // [esp+58h] [ebp-70h] BYREF
           Buffer[0] = 0; /*0x6541d3*/
           swprintf(Buffer, (const size_t)&off_8240B4, (const wchar_t *const)(v16 + 90154)); /*0x6541da*/
           if ( !wcslen(Buffer) ) /*0x6541e4*/
             wcscpy(Buffer, L"________"); /*0x6541fa*/
-  wchar_t v52[24]; // [esp+7Ch] [ebp-4Ch] BYREF
+          wchar_t v52[24]; // [esp+7Ch] [ebp-4Ch] BYREF
           if ( (unsigned int)wcslen(Buffer) > 0x12 ) /*0x654212*/
             wcscpy(v52, L"."); /*0x654214*/
-  unsigned int v47[2]; // [esp+38h] [ebp-90h] BYREF
+          unsigned int v47[2]; // [esp+38h] [ebp-90h] BYREF
           v47[0] = this->u32_11F0; /*0x654229*/
           v47[1] = v15; /*0x65423b*/
-  unsigned int *v20; // eax
-  char v54[16]; // [esp+B8h] [ebp-10h] BYREF
+          unsigned int *v20; // eax
+          char v54[16]; // [esp+B8h] [ebp-10h] BYREF
           v20 = (unsigned int *)(*(int (**)(DSurface *, char *, unsigned int *))(DSurface_Sidebar /*0x654249*/
-                                                                              + 120))(
+          + 120))(
                             DSurface_Sidebar,
                             v54,
                             v47);
-  int v50; // [esp+54h] [ebp-74h] BYREF
+          int v50; // [esp+54h] [ebp-74h] BYREF
           TextRenderer::DrawText(&v50, (size_t)&Buffer[2], (int)DSurface_Sidebar, v20, v18, 0, v19, v38); /*0x65425d*/
-  const wchar_t *v21; // ecx
-          v21 = 0; /*0x654269*/
-  unsigned int *v22; // eax
+          const wchar_t *v21 = 0; // ecx /*0x654269*/
+          unsigned int *v22; // eax
           v22 = (unsigned int *)(v44 + 21476); /*0x65426b*/
           v44 = 20; /*0x654270*/
           do /*0x65428b*/
           {
-  int v23; // edx
+            int v23; // edx
             v23 = *v22 + v22[21]; /*0x65427b*/
             ++v22; /*0x65427d*/
             v21 = (const wchar_t *)((char *)v21 + v23); /*0x654280*/
@@ -851,22 +843,22 @@ char RenderScoreboardSidebar(void * a1, void * a2)
           while ( v44 ); /*0x65428b*/
           swprintf(&Buffer[2], (const size_t)a2d, v21); /*0x654298*/
           v38 = v19 | 0x200; /*0x6542ba*/
-  int v46; // [esp+34h] [ebp-94h] BYREF
+          int v46; // [esp+34h] [ebp-94h] BYREF
           v46 = this->u32_11F8 + this->u32_11F0 - 2; /*0x6542c5*/
           v47[0] = v15; /*0x6542c9*/
-  unsigned int *v24; // eax
-  char v53[12]; // [esp+ACh] [ebp-1Ch] BYREF
+          unsigned int *v24; // eax
+          char v53[12]; // [esp+ACh] [ebp-1Ch] BYREF
           v24 = (unsigned int *)(*(int (**)(DSurface *, char *, int *, int, unsigned int))(DSurface_Sidebar /*0x6542d7*/
-                                                                                        + 120))(
+          + 120))(
                             DSurface_Sidebar,
                             v53,
                             &v46,
                             v18,
                             0);
-  int v28; // [esp+0h] [ebp-C8h]
-  int v31; // [esp+4h] [ebp-C4h]
-  int v33; // [esp+8h] [ebp-C0h]
-  int v36; // [esp+Ch] [ebp-BCh]
+          int v28; // [esp+0h] [ebp-C8h]
+          int v31; // [esp+4h] [ebp-C4h]
+          int v33; // [esp+8h] [ebp-C0h]
+          int v36; // [esp+Ch] [ebp-BCh]
           TextRenderer::DrawText(&v48, (size_t)Buffer, (int)DSurface_Sidebar, v24, v28, v31, v33, v36); /*0x6542ec*/
           v2 = v41; /*0x6542f1*/
           v15 += 9; /*0x6542f8*/
@@ -898,13 +890,13 @@ unsigned int * E4Recv_655050::sub_655050(unsigned int * v5, int16_t * a3)
   if ( v5 == -1 ) /*0x65507c*/
   {
     v5 = 0; /*0x65507e*/
-LABEL_4:
+    LABEL_4:
     v7 = 1; /*0x655090*/
     goto LABEL_5; /*0x655090*/
   }
   if ( v5 == 2 * this->M260 - 1 ) /*0x65508e*/
     goto LABEL_4; /*0x65508e*/
-LABEL_5:
+  LABEL_5:
   *v5 = (unsigned int)(v5); /*0x655095*/
   v5[1] = v6; /*0x6550a2*/
   v5[2] = v7; /*0x6550a6*/
@@ -927,15 +919,13 @@ namespace gamemd {
 int ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
 {
 
-  int v2; // esi
-  v2 = 0; /*0x658653*/
+  int v2 = 0; // esi /*0x658653*/
   TabClass *v1; // ecx
-  TabClass *v3; // ebx
-  v3 = v1; /*0x658657*/
+  TabClass *v3 = v1; // ebx /*0x658657*/
   int i; // [esp+14h] [ebp-4h]
   for ( i = dword_A80238; v2 < i; ++v2 ) /*0x658661*/
   {
-  int v4; // edi
+    int v4; // edi
     v4 = *(&dword_A8022C->vfptr.vfptr + v2); /*0x658668*/
     if ( v4 /*0x658683*/
       && ((uint8_t)((House *)(dword_A8022C->vtable1.vfptr + v2)))->IsHumanPlayer()
@@ -969,7 +959,7 @@ int sub_6586D0(ObjectClass *a1)
         goto LABEL_7; /*0x658727*/
     }
     dwNewLong = 1059; /*0x65872b*/
-  LABEL_7:
+    LABEL_7:
     ((Dialog *)(Dialog))->Destroy(); /*0x658733*/
   }
   (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x658740*/
@@ -1031,11 +1021,11 @@ AbstractClass * * UpdateProjectileTrails()
     Block = v2; /*0x6591fb*/
   }
   v6 = (double)(unsigned int)dword_ABCD44 /*0x65921d*/
-     / (double)(int)dword_A8B558
-     * ((double)(unsigned int)dword_ABCD44
-      / (double)(int)dword_A8B558
-      * ((double)(unsigned int)dword_ABCD44
-       / (double)(int)dword_A8B558));
+  / (double)(int)dword_A8B558
+  * ((double)(unsigned int)dword_ABCD44
+  / (double)(int)dword_A8B558
+  * ((double)(unsigned int)dword_ABCD44
+  / (double)(int)dword_A8B558));
   v7 = (double)(*((signed int *)&(v22))); /*0x65921f*/
   v23 = (double)(int)Block; /*0x659227*/
   v22 = v7 / v23 - v6; /*0x659233*/
@@ -1066,7 +1056,7 @@ AbstractClass * * UpdateProjectileTrails()
         v13 = Weapon_Update(v20, 0); /*0x65930a*/
         goto LABEL_22; /*0x65930a*/
       }
-  LABEL_35:
+      LABEL_35:
       if ( --v9 < 0 ) /*0x6593d6*/
         return; /*0x6593d6*/
     }
@@ -1083,7 +1073,7 @@ AbstractClass * * UpdateProjectileTrails()
     }
     *(double *)(v10 + 24) = (double)(*((signed int *)&(v22))); /*0x6592bf*/
     v13 = RenderProjectileTrail((ObjectClass *)Block); /*0x6592c6*/
-  LABEL_22:
+    LABEL_22:
     if ( v13 )
     {
       v16 = (unsigned int *)(Block);
@@ -1137,9 +1127,9 @@ int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
   result = ClipLine(v9, v8, v10); /*0x6595f6*/
   if ( result ) /*0x6595fd*/
   {
-  char *v6; // esi
+    char *v6; // esi
     v6 = (char *)this->? - ZCoordToScreenY(a2[2]) - 2; /*0x65960f*/
-  int v7; // eax
+    int v7; // eax
     v7 = ZCoordToScreenY(a3[2]); /*0x659612*/
     return (*(char (**)(AudioStream *, CellStruct *, int *, int *, unsigned int, char *, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 52))( /*0x65963f*/
              g_DSurface_Hidden_2,
@@ -1239,7 +1229,7 @@ AbstractClass * *  RAMFileClass::nullsub_0_3(void * a1, signed int Size)
   }
   (*(void (**)(RAMFileClass *, int))(*(unsigned int *)this->vtable1 + 28))(this, 1); /*0x65c3ce*/
   v5 = 1; /*0x65c3d1*/
-LABEL_7:
+  LABEL_7:
   v6 = this->u32_14; /*0x65c3db*/
   if ( Size >= (int)this->q010 - v6 ) /*0x65c3e5*/
     v4 = (signed int)this->q010 - v6; /*0x65c3e7*/
@@ -1280,7 +1270,7 @@ AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
       break;
     case 2: /*0x65c449*/
       v6 = (int)RAMFileClass_field_0xC + a2; /*0x65c455*/
-LABEL_11:
+      LABEL_11:
       this->u32_14 = v6; /*0x65c46d*/
       break;
   }
@@ -1308,8 +1298,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
 {
 
 
-  char v3; // al
-  v3 = this->u32_1D; /*0x65c5a3*/
+  char v3 = this->u32_1D; // al /*0x65c5a3*/
   /* X11: vtable install elided (implicit via RAMFileClass virtuals 0x65c5a6) */
   this->u32_1C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
@@ -1342,8 +1331,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
 
   int result; // eax
   result = (int)(aP1); /*0x65c913*/
-  int v5; // ecx
-  v5 = a3; /*0x65c919*/
+  int v5 = a3; // ecx /*0x65c919*/
   int v6; // edi
   v6 = (int)(aP1); /*0x65c91e*/
   bool v7; // zf
@@ -1362,11 +1350,9 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
       v5 = (int)(aP1); /*0x65c934*/
       v23 = v6; /*0x65c936*/
     }
-  int v9; // eax
-    v9 = v5 - v6; /*0x65c93d*/
-  int v10; // ecx
-    v10 = 31; /*0x65c93f*/
-  int v21; // [esp+Ch] [ebp-4h]
+    int v9 = v5 - v6; // eax /*0x65c93d*/
+    int v10 = 31; // ecx /*0x65c93f*/
+    int v21; // [esp+Ch] [ebp-4h]
     v21 = v9; /*0x65c949*/
     if ( v9 >= 0 ) /*0x65c94d*/
     {
@@ -1378,36 +1364,33 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
       }
       while ( ((1 << v10) & v9) == 0 ); /*0x65c95d*/
     }
-  int v11; // esi
+    int v11; // esi
     v11 = -1 << (v10 + 1); /*0x65c963*/
-  int v12; // ecx
-    v12 = v9 + 1; /*0x65c965*/
-  int v20; // [esp+8h] [ebp-8h]
+    int v12 = v9 + 1; // ecx /*0x65c965*/
+    int v20; // [esp+8h] [ebp-8h]
     v20 = ~v11; /*0x65c96c*/
     if ( v9 + 1 > v9 ) /*0x65c970*/
     {
-  void *vtable0; // [esp+14h] [ebp+4h]
+      void *vtable0; // [esp+14h] [ebp+4h]
       vtable0 = this->AbstractClass; /*0x65c976*/
       while ( 1 ) /*0x65c980*/
       {
-  unsigned int vtable1; // ecx
+        unsigned int vtable1; // ecx
         vtable1 = (unsigned int)this->M4; /*0x65c980*/
-  unsigned int v14; // edi
+        unsigned int v14; // edi
         v14 = (unsigned int)vtable0; /*0x65c983*/
-  int v15; // esi
-        v15 = 0; /*0x65c987*/
+        int v15 = 0; // esi /*0x65c987*/
         this->M4 = &vtable1->AbstractClass_1; /*0x65c98c*/
         do /*0x65c9d5*/
         {
-  unsigned int v16; // ebx
-          v16 = vtable1; /*0x65c995*/
-  int v17; // eax
+          unsigned int v16 = vtable1; // ebx /*0x65c995*/
+          int v17; // eax
           v17 = vtable1 ^ dword_839644[v15++]; /*0x65c997*/
           v18 = v14 /*0x65c9cc*/
-              ^ ((unsigned __int16)v17 * (v17 >> 16)
-               + (dword_839690[v15]
-                ^ ((((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) << 16)
-                 | (((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) >> 16))));
+          ^ ((unsigned __int16)v17 * (v17 >> 16)
+          + (dword_839690[v15]
+          ^ ((((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) << 16)
+          | (((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) >> 16))));
           vtable1 = v18; /*0x65c9d1*/
           v14 = v16; /*0x65c9d3*/
         }
@@ -1462,7 +1445,7 @@ unsigned int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
     }
     else
     {
-  LABEL_10:
+      LABEL_10:
       *a4 = 1; /*0x65d590*/
       a2[v6] = 0; /*0x65d597*/
     }
@@ -1506,7 +1489,7 @@ int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
   }
   else
   {
-  LABEL_11:
+    LABEL_11:
     *a4 = 1; /*0x65d629*/
     a2[v6] = 0; /*0x65d630*/
   }
@@ -1663,12 +1646,12 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
         }
         else
         {
-  LABEL_39:
+          LABEL_39:
           if ( v22 ) /*0x65daff*/
-  LABEL_40:
-            v22->vt_slot_32(1); /*0x65db01*/
+            LABEL_40:
+          v22->vt_slot_32(1); /*0x65db01*/
         }
-  LABEL_41:
+        LABEL_41:
         if ( !v22 ) /*0x65db0c*/
           return v23 != 0; /*0x65db20*/
       }
@@ -1742,7 +1725,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
     CellClass::AddObject((CellClass *)(v31 + 276), v10); /*0x65dcf0*/
     (*(void (**)(int))(*(unsigned int *)v31 + 492))(v31); /*0x65dcf9*/
     v3 = (int)v47; /*0x65dcff*/
-  LABEL_49:
+    LABEL_49:
     if ( (v3)->GetOwnerHouse() ) /*0x65db71*/
     {
       v41 = (void *)dword_A83D4C; /*0x65db80*/
@@ -1838,7 +1821,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   }
   else
   {
-  LABEL_5:
+    LABEL_5:
     (*(((unsigned char *)&(v48)) + (sizeof(v48) - 1))) = 1; /*0x65e064*/
   }
   v52 = 0; /*0x65e072*/
@@ -1931,7 +1914,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v58[2] = v5[41]; /*0x65e2c1*/
         MapClass::RevealArea2(v58, 0, v21 + 3, 0); /*0x65e2c5*/
         v13 = v50; /*0x65e2ca*/
-  LABEL_31:
+        LABEL_31:
         v36 = *v5; /*0x65e442*/
         (*((unsigned char *)&(aP1_4))) = 1; /*0x65e447*/
         if ( v5->vt_slot_44() != 2 ) /*0x65e455*/
@@ -1959,7 +1942,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
           }
           v49 = (int)a2; /*0x65e4ee*/
         }
-  LABEL_46:
+        LABEL_46:
         v5 = v13; /*0x65e5ae*/
         --dword_A8E7AC; /*0x65e5b9*/
         if ( v13 ) /*0x65e5bf*/
@@ -2019,7 +2002,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
       }
       if ( v32 ) /*0x65e43c*/
         goto LABEL_31; /*0x65e43c*/
-  LABEL_39:
+      LABEL_39:
       v40 = 0; /*0x65e506*/
       while ( 1 ) /*0x65e50f*/
       {
@@ -2038,7 +2021,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         if ( ++v40 >= 8 ) /*0x65e586*/
         {
           v49 = dword_B04C38; /*0x65e5a0*/
-  LABEL_45:
+          LABEL_45:
           v5->CreateInstance_0(1); /*0x65e5a4*/
           goto LABEL_46; /*0x65e5ab*/
         }
@@ -2076,8 +2059,7 @@ int SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int
 
   int v10; // ecx
   v10 = *((unsigned int *)dword_A8B21C + a2); /*0x65e66c*/
-  int v11; // ebp
-  v11 = 0; /*0x65e673*/
+  int v11 = 0; // ebp /*0x65e673*/
   unsigned int *v25; // [esp+28h] [ebp-1Ch]
   v25 = (unsigned int *)a1; /*0x65e679*/
   int v26; // [esp+2Ch] [ebp-18h]
@@ -2089,21 +2071,19 @@ int SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int
     while ( 1 ) /*0x65e699*/
     {
       ++dword_A8E7AC; /*0x65e699*/
-  int v12; // eax
+      int v12; // eax
       v12 = (*(int (**)(int, HouseClass *))(*(unsigned int *)v10 + 140))(v10, a1); /*0x65e6a1*/
-  int v13; // esi
-      v13 = v12; /*0x65e6ad*/
+      int v13 = v12; // esi /*0x65e6ad*/
       --dword_A8E7AC; /*0x65e6b2*/
       if ( !v12 ) /*0x65e6b8*/
         break; /*0x65e6b8*/
       *(unsigned char *)(v12 + 980) = 1; /*0x65e6be*/
-  int *TransitionCount; // eax
-      TransitionCount = *&a1->__pad_1E0; /*0x65e6c5*/
+      int *TransitionCount = *&a1->__pad_1E0; // eax /*0x65e6c5*/
       if ( (unsigned int)TransitionCount >= 4 ) /*0x65e6cd*/
         TransitionCount = (int *)HouseClass::GetTransitionCount(a1); /*0x65e6d6*/
-  int v15; // edi
-  int v23; // [esp+14h] [ebp-30h]
-  int v27; // [esp+34h] [ebp-10h] BYREF
+      int v15; // edi
+      int v23; // [esp+14h] [ebp-30h]
+      int v27; // [esp+34h] [ebp-10h] BYREF
       v15 = *CellClass::FindOpenNeighbor( /*0x65e6fb*/
                (CellClass *)&v27,
                a3,
@@ -2119,14 +2099,14 @@ int SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int
         (*(void (**)(int, int, int))(*(unsigned int *)v13 + 1152))(v13, a7, 1); /*0x65e721*/
       if ( a6 ) /*0x65e72d*/
         (*(void (**)(int, int))(*(unsigned int *)v13 + 968))(v13, a6); /*0x65e734*/
-  unsigned int v28[3]; // [esp+38h] [ebp-Ch] BYREF
+      unsigned int v28[3]; // [esp+38h] [ebp-Ch] BYREF
       v28[0] = ((int16_t)v15 << 8) + 128; /*0x65e756*/
       ++dword_A8E7AC; /*0x65e760*/
-  int v16; // edx
+      int v16; // edx
       v16 = *(unsigned int *)v13; /*0x65e766*/
       v28[1] = ((*((signed short *)(((unsigned char *)&(v15)) + 2))) << 8) + 128; /*0x65e76c*/
       v28[2] = 0; /*0x65e773*/
-  char v17; // al
+      char v17; // al
       v17 = (*(int (**)(int, unsigned int *, unsigned int))(v16 + 216))(v13, v28, 0); /*0x65e77b*/
       --dword_A8E7AC; /*0x65e78f*/
       if ( !v17 ) /*0x65e795*/
@@ -2138,17 +2118,16 @@ int SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int
       if ( (*(int (**)(int))(*(unsigned int *)v13 + 44))(v13) == 2 && a8 != -1 && a9 ) /*0x65e7b6*/
       {
         *(unsigned char *)(v13 + 1737) = 1; /*0x65e7b8*/
-  int v18; // ebp
+        int v18; // ebp
         v18 = *((unsigned int *)dword_A8E34C + a8); /*0x65e7c5*/
         if ( v18 ) /*0x65e7ca*/
         {
-  int v19; // ebx
-          v19 = a9; /*0x65e7cc*/
+          int v19 = a9; // ebx /*0x65e7cc*/
           do /*0x65e7fb*/
           {
-  int v20; // eax
+            int v20; // eax
             v20 = (*(int (**)(int, unsigned int *))(*(unsigned int *)v18 + 140))(v18, v25); /*0x65e7d8*/
-  unsigned int *v21; // edi
+            unsigned int *v21; // edi
             v21 = (unsigned int *)v20; /*0x65e7de*/
             if ( v20 ) /*0x65e7e2*/
             {
@@ -2179,8 +2158,7 @@ int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6
 
   int v10; // ebp
   v10 = *((unsigned int *)dword_A8B21C + a2); /*0x65e85b*/
-  HouseClass *v11; // esi
-  v11 = a1; /*0x65e85e*/
+  HouseClass *v11 = a1; // esi /*0x65e85e*/
   int *TransitionCount; // eax
   TransitionCount = *(int **)&a1->__pad_13C[164]; /*0x65e863*/
   HouseClass *v28; // [esp+2Ch] [ebp-20h]
@@ -2209,28 +2187,27 @@ int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6
     while ( 1 )
     {
       ++dword_A8E7AC; /*0x65e8c6*/
-  int v13; // eax
+      int v13; // eax
       v13 = (*(int (**)(int, HouseClass *))(*(unsigned int *)v10 + 140))(v10, v11); /*0x65e8cf*/
-  int v14; // esi
-      v14 = v13; /*0x65e8db*/
+      int v14 = v13; // esi /*0x65e8db*/
       --dword_A8E7AC; /*0x65e8e0*/
       if ( !v13 ) /*0x65e8e6*/
         break; /*0x65e8e6*/
-  char v15; // al
+      char v15; // al
       v15 = *(unsigned char *)(v13 + 20) & 4; /*0x65e8f3*/
       *(unsigned int *)(v14 + 660) = a10; /*0x65e8f5*/
       *(unsigned char *)(v14 + 980) = 1; /*0x65e8ff*/
-  int v16; // eax
+      int v16; // eax
       v16 = v15 != 0 ? v14 : 0;
       if ( a10 && v16 ) /*0x65e90e*/
       {
         *(unsigned int *)(v16 + 1496) = *(unsigned int *)(a10 + 92); /*0x65e913*/
         *(unsigned int *)(a10 + 92) = v16; /*0x65e919*/
       }
-  int v27; // [esp+28h] [ebp-24h] BYREF
+      int v27; // [esp+28h] [ebp-24h] BYREF
       v27 = 0; /*0x65e945*/
-  int v17; // edi
-  int v32; // [esp+3Ch] [ebp-10h] BYREF
+      int v17; // edi
+      int v32; // [esp+3Ch] [ebp-10h] BYREF
       v17 = *LayerClass::Pathfinding_Find( /*0x65e954*/
                (Type *)&DataGlobal_87F7E8,
                (int)&v27,
@@ -2249,7 +2226,7 @@ int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6
                (int16_t *)&v27,
                0,
                0);
-  int v18; // edx
+      int v18; // edx
       v18 = *(unsigned int *)v14; /*0x65e956*/
       v29 = v17; /*0x65e960*/
       (*(void (**)(int, int, unsigned int))(v18 + 488))(v14, a5, 0); /*0x65e964*/
@@ -2257,14 +2234,14 @@ int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6
         (*(void (**)(int, int, int))(*(unsigned int *)v14 + 1152))(v14, a7, 1); /*0x65e979*/
       if ( a6 ) /*0x65e985*/
         (*(void (**)(int, int))(*(unsigned int *)v14 + 968))(v14, a6); /*0x65e98c*/
-  unsigned int v33[3]; // [esp+40h] [ebp-Ch] BYREF
+      unsigned int v33[3]; // [esp+40h] [ebp-Ch] BYREF
       v33[0] = ((int16_t)v17 << 8) + 128; /*0x65e9ad*/
       ++dword_A8E7AC; /*0x65e9b7*/
-  int v19; // edx
+      int v19; // edx
       v19 = *(unsigned int *)v14; /*0x65e9bd*/
       v33[1] = ((*((signed short *)(((unsigned char *)&(v29)) + 2))) << 8) + 128; /*0x65e9c3*/
       v33[2] = 0; /*0x65e9ca*/
-  char v20; // al
+      char v20; // al
       v20 = (*(int (**)(int, unsigned int *, unsigned int))(v19 + 216))(v14, v33, 0); /*0x65e9ce*/
       --dword_A8E7AC; /*0x65e9e2*/
       if ( !v20 ) /*0x65e9e8*/
@@ -2276,16 +2253,16 @@ int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6
       if ( (*(int (**)(int))(*(unsigned int *)v14 + 44))(v14) == 2 && a8 != -1 && a9 ) /*0x65ea09*/
       {
         *(unsigned char *)(v14 + 1737) = 1; /*0x65ea0b*/
-  int v21; // ebp
+        int v21; // ebp
         v21 = *((unsigned int *)dword_A8E34C + a8); /*0x65ea18*/
         if ( v21 ) /*0x65ea1d*/
         {
           v29 = a9; /*0x65ea1f*/
           do /*0x65ea58*/
           {
-  int v22; // eax
+            int v22; // eax
             v22 = (*(int (**)(int, HouseClass *))(*(unsigned int *)v21 + 140))(v21, v28); /*0x65ea2d*/
-  unsigned int *v23; // edi
+            unsigned int *v23; // edi
             v23 = (unsigned int *)v22; /*0x65ea33*/
             if ( v22 ) /*0x65ea37*/
             {
@@ -2416,7 +2393,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
     {
       *(unsigned int *)&v49[12] += ((v9[191] & 3) - 2) << 8; /*0x65eda9*/
       *(unsigned int *)&v49[16] += ((v9[191] & 0xC) - 4) << 6; /*0x65edbe*/
-  LABEL_22:
+      LABEL_22:
       --v9[191]; /*0x65edc8*/
     }
     v14 = dword_B04C58; /*0x65edce*/
@@ -3155,8 +3132,8 @@ void E4Recv_6599C0::sub_6599C0()
   this->customSound_controller[4] = (int)v4; /*0x6599e8*/
   this->customSound = (int)v3; /*0x6599eb*/
   v7 = this->customSound * this->customSound /*0x659a09*/
-     + this->customSound_controller[4] * this->customSound_controller[4]
-     + this->customSound_controller[3] * this->customSound_controller[3];
+  + this->customSound_controller[4] * this->customSound_controller[4]
+  + this->customSound_controller[3] * this->customSound_controller[3];
   __asm /*0x659a0d*/
   {
     fild [esp+18h+var_4]

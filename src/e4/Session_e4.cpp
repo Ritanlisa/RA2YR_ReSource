@@ -44,19 +44,18 @@ int Session::RemoveTeam(int (***aP1)(unsigned int, int))
   result = (int)aP1; /*0x5d1d80*/
   if ( aP1 ) /*0x5d1d87*/
   {
-  void **v3; // esi
-    v3 = &this->field_18; /*0x5d1d8c*/
+    void **v3 = &this->field_18; // esi /*0x5d1d8c*/
     result = (*((int (**)(void **, unsigned int))this->field_18 + 4))(&this->field_18, &aP1); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
       result = (*((int (**)(void **, unsigned int))*v3 + 4))(v3, &aP1); /*0x5d1da7*/
       if ( result != -1 ) /*0x5d1dad*/
       {
-  int v4; // ecx
+        int v4; // ecx
         v4 = (int)v3[4]; /*0x5d1daf*/
         if ( result < v4 ) /*0x5d1db4*/
         {
-  void *v5; // ecx
+          void *v5; // ecx
           v5 = (void *)(v4 - 1); /*0x5d1db6*/
           for ( v3[4] = v5; result < (int)v3[4]; *(v3->vtable2 + result - 1) = *(v3->vtable2 + result) ) /*0x5d1dbc*/
             ++result; /*0x5d1dc1*/
@@ -115,43 +114,43 @@ int Session::PrepareGame(HWND hWnd)
       v17 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
-        if ( v17 != -1 ) /*0x5e7793*/
-        {
-          result = TimerGetTicks() - v17; /*0x5e779e*/
-          if ( result >= 1800 ) /*0x5e77a4*/
-            return result; /*0x5e77a4*/
-          v9 = 1800 - result; /*0x5e77aa*/
-        }
-        if ( !v9 ) /*0x5e77ae*/
-          return result; /*0x5e7812*/
-        v10 = ((int *)&unk_A8EA70)->WriteBlock((int)Str, 250, 1); /*0x5e77cf*/
-        for ( result = Count::GetCountQueue((Count *)&unk_A8EA70); /*0x5e77d8*/
-              result > 0;
-              result = Count::GetCountQueue((Count *)&unk_A8EA70) )
-        {
-          result = v17; /*0x5e77da*/
-          v11 = 1800; /*0x5e77de*/
-          if ( v17 != -1 ) /*0x5e77e4*/
-          {
-            result = TimerGetTicks() - v17; /*0x5e77ef*/
-            if ( result >= 1800 ) /*0x5e77f5*/
-              break; /*0x5e77f5*/
-            v11 = 1800 - result; /*0x5e77f7*/
-          }
-          if ( !v11 ) /*0x5e77fb*/
-            break; /*0x5e77fb*/
-          Event::Dispatch(); /*0x5e77fd*/
-        }
-        if ( v10 ) /*0x5e7812*/
-          return result; /*0x5e7812*/
-        v9 = 1800; /*0x5e778b*/
+      if ( v17 != -1 ) /*0x5e7793*/
+      {
+        result = TimerGetTicks() - v17; /*0x5e779e*/
+        if ( result >= 1800 ) /*0x5e77a4*/
+          return result; /*0x5e77a4*/
+        v9 = 1800 - result; /*0x5e77aa*/
       }
+      if ( !v9 ) /*0x5e77ae*/
+        return result; /*0x5e7812*/
+      v10 = ((int *)&unk_A8EA70)->WriteBlock((int)Str, 250, 1); /*0x5e77cf*/
+      for ( result = Count::GetCountQueue((Count *)&unk_A8EA70); /*0x5e77d8*/
+        result > 0;
+        result = Count::GetCountQueue((Count *)&unk_A8EA70) )
+      {
+        result = v17; /*0x5e77da*/
+        v11 = 1800; /*0x5e77de*/
+        if ( v17 != -1 ) /*0x5e77e4*/
+        {
+          result = TimerGetTicks() - v17; /*0x5e77ef*/
+          if ( result >= 1800 ) /*0x5e77f5*/
+            break; /*0x5e77f5*/
+          v11 = 1800 - result; /*0x5e77f7*/
+        }
+        if ( !v11 ) /*0x5e77fb*/
+          break; /*0x5e77fb*/
+        Event::Dispatch(); /*0x5e77fd*/
+      }
+      if ( v10 ) /*0x5e7812*/
+        return result; /*0x5e7812*/
+      v9 = 1800; /*0x5e778b*/
+    }
     case 3: /*0x5e7521*/
       if ( Dialog::GetCurrentType() != 189 /*0x5e7550*/
         || FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) )
       {
-        goto LABEL_42; /*0x5e7557*/
-      }
+      goto LABEL_42; /*0x5e7557*/
+    }
       InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7560*/
       memset(Str, 0, sizeof(Str)); /*0x5e7571*/
       v20 = 0; /*0x5e7573*/
@@ -164,28 +163,28 @@ int Session::PrepareGame(HWND hWnd)
       v7 = 0; /*0x5e762e*/
       if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e7630*/
       {
-        strcpy(Str, byte_A8B8E0); /*0x5e765a*/
-        _strupr(Str); /*0x5e7668*/
-        Debug::Log(); /*0x5e7677*/
-        if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
-          goto LABEL_42; /*0x5e76a8*/
-        RawFileClass::Construct(&v18, (int)byte_A8B8E0); /*0x5e76c1*/
-        if ( (uint8_t)((FileClass *)(&v18))->Open(0) ) /*0x5e76cc*/
-          v7 = 1; /*0x5e76d5*/
-        ((RawFileClass *)(&v18))->Dtor(); /*0x5e76db*/
-        if ( !v7 ) /*0x5e76e2*/
+      strcpy(Str, byte_A8B8E0); /*0x5e765a*/
+      _strupr(Str); /*0x5e7668*/
+      Debug::Log(); /*0x5e7677*/
+      if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
+        goto LABEL_42; /*0x5e76a8*/
+      RawFileClass::Construct(&v18, (int)byte_A8B8E0); /*0x5e76c1*/
+      if ( (uint8_t)((FileClass *)(&v18))->Open(0) ) /*0x5e76cc*/
+        v7 = 1; /*0x5e76d5*/
+      ((RawFileClass *)(&v18))->Dtor(); /*0x5e76db*/
+      if ( !v7 ) /*0x5e76e2*/
+      {
+        LABEL_42:
+        v12 = (gamemd::Skirmish *)(g_UIControlState); /*0x5e7825*/
+        if ( g_UIControlState ) /*0x5e782d*/
         {
-  LABEL_42:
-          v12 = (gamemd::Skirmish *)(g_UIControlState); /*0x5e7825*/
-          if ( g_UIControlState ) /*0x5e782d*/
-          {
-            ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e7831*/
-            operator delete((void *)(v12)); /*0x5e7837*/
-            g_UIControlState = 0; /*0x5e783f*/
-          }
-          goto LABEL_44; /*0x5e783f*/
+          ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e7831*/
+          operator delete((void *)(v12)); /*0x5e7837*/
+          g_UIControlState = 0; /*0x5e783f*/
         }
+        goto LABEL_44; /*0x5e783f*/
       }
+    }
       if ( (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5e76ef*/
         return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e76ef*/
       v8 = (gamemd::Skirmish *)(g_UIControlState); /*0x5e76fc*/
@@ -196,7 +195,7 @@ int Session::PrepareGame(HWND hWnd)
       g_UIControlState = 0; /*0x5e771a*/
       return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7733*/
     default:
-  LABEL_44:
+      LABEL_44:
       v13 = CCFileClass::Construct((CCFileClass *)Str, byte_A8B8E0); /*0x5e7845*/
       v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
       *(unsigned int *)Str = (unsigned int)(&vt_CCFileClass); /*0x5e7864*/
@@ -207,28 +206,28 @@ int Session::PrepareGame(HWND hWnd)
       result = ((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
       {
-        result = (int)(operator new(4u)); /*0x5e7892*/
-        if ( !result ) /*0x5e789c*/
-        {
-          g_UIControlState = 0; /*0x5e78e4*/
-          return result; /*0x5e78f4*/
-        }
-        result = (int)unknown_libname_27((ObjectClass *)result); /*0x5e78a0*/
-        g_UIControlState = (int)((Skirmish *)result); /*0x5e78a5*/
+      result = (int)(operator new(4u)); /*0x5e7892*/
+      if ( !result ) /*0x5e789c*/
+      {
+        g_UIControlState = 0; /*0x5e78e4*/
+        return result; /*0x5e78f4*/
       }
+      result = (int)unknown_libname_27((ObjectClass *)result); /*0x5e78a0*/
+      g_UIControlState = (int)((Skirmish *)result); /*0x5e78a5*/
+    }
       if ( g_UIControlState ) /*0x5e78b0*/
       {
-        if ( (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5e78b7*/
-        {
-          ScenarioClass::CopyStartPositions(v16); /*0x5e78f5*/
-          return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78fa*/
-        }
-        else
-        {
-          ((PreviewClass *)g_UIControlState)->ReadPreview(byte_A8B8E0); /*0x5e78cb*/
-          return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78d3*/
-        }
+      if ( (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5e78b7*/
+      {
+        ScenarioClass::CopyStartPositions(v16); /*0x5e78f5*/
+        return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78fa*/
       }
+      else
+      {
+        ((PreviewClass *)g_UIControlState)->ReadPreview(byte_A8B8E0); /*0x5e78cb*/
+        return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78d3*/
+      }
+    }
       return result;
   }
   while ( 1 ) /*0x5e757e*/
@@ -251,7 +250,7 @@ int Session::PrepareGame(HWND hWnd)
         Event::Dispatch(); /*0x5e75e6*/
       return result; /*0x5e75f7*/
     }
-  LABEL_12:
+    LABEL_12:
     Event::Dispatch(); /*0x5e75cd*/
   }
 }
@@ -262,8 +261,7 @@ int Session::GetPlayerOption()
 {
 
 
-  int result; // eax
-  result = -2; /*0x69b706*/
+  int result = -2; // eax /*0x69b706*/
   if ( this->field_178 != (void *)-2 ) /*0x69b70d*/
     return (int)this->field_174; /*0x69b70f*/
   return result; /*0x69b715*/
@@ -276,8 +274,7 @@ int Session::GetPlayerColor(void *a1)
 {
 
 
-  int result; // eax
-  result = -2; /*0x69b726*/
+  int result = -2; // eax /*0x69b726*/
   if ( this->field_160 != (void *)-2 ) /*0x69b72d*/
     return (int)this->field_15C; /*0x69b72f*/
   return result; /*0x69b735*/

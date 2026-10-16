@@ -81,8 +81,8 @@ namespace gamemd { int sub_4866D0(int p0); }  // x4:signals@0x4866d0
 namespace gamemd { int sub_4866F0(int p0); }  // x4:signals@0x4866f0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DrawIsoTile(int p0, uint16_t* p1, char p2);  // x4:signals@0x5a7fa0
-    int Object_Helper_5A99B0(ObjectClass *p_this);  // x4:ida@0x5a99b0
+int DrawIsoTile(int p0, uint16_t* p1, char p2);  // x4:signals@0x5a7fa0
+int Object_Helper_5A99B0(ObjectClass *p_this);  // x4:ida@0x5a99b0
 } // namespace gamemd
 
 // 0x5A1350
@@ -129,121 +129,121 @@ int Terrain_SelectTileVariant(int a1)
     case 4: /*0x5a1374*/
       do /*0x5a13a7*/
       {
-        v20 = (unsigned int)Random::State(&unk_ABE890); /*0x5a137d*/
-        v2 = Math::RoundToInt((double)v20 * 4.656612874161595e-10 + 1.0); /*0x5a139f*/
-      }
+      v20 = (unsigned int)Random::State(&unk_ABE890); /*0x5a137d*/
+      v2 = Math::RoundToInt((double)v20 * 4.656612874161595e-10 + 1.0); /*0x5a139f*/
+    }
       while ( v2 > 2 ); /*0x5a13a7*/
       return g_TerrainBuildConfig + v2 + 4; /*0x5a13b8*/
     case 5: /*0x5a1374*/
       do /*0x5a13e1*/
       {
-        v21 = (unsigned int)Random::State(&unk_ABE890); /*0x5a13bd*/
-        v4 = Math::RoundToInt((double)v21 * 4.656612874161595e-10); /*0x5a13d9*/
-      }
+      v21 = (unsigned int)Random::State(&unk_ABE890); /*0x5a13bd*/
+      v4 = Math::RoundToInt((double)v21 * 4.656612874161595e-10); /*0x5a13d9*/
+    }
       while ( v4 > 1 ); /*0x5a13e1*/
       return g_TerrainBuildConfig + 2 * v4 + 4; /*0x5a13f3*/
     case 6: /*0x5a1374*/
       do /*0x5a141c*/
       {
-        v22 = (unsigned int)Random::State(&unk_ABE890); /*0x5a13f8*/
-        v5 = Math::RoundToInt((double)v22 * 4.656612874161595e-10); /*0x5a1414*/
-      }
+      v22 = (unsigned int)Random::State(&unk_ABE890); /*0x5a13f8*/
+      v5 = Math::RoundToInt((double)v22 * 4.656612874161595e-10); /*0x5a1414*/
+    }
       while ( v5 > 1 ); /*0x5a141c*/
       return g_TerrainBuildConfig + v5 + 4; /*0x5a142d*/
     case 8: /*0x5a1374*/
       do /*0x5a145c*/
       {
-        v23 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1432*/
-        v6 = Math::RoundToInt((double)v23 * 4.656612874161595e-10 + 1.0); /*0x5a1454*/
-      }
+      v23 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1432*/
+      v6 = Math::RoundToInt((double)v23 * 4.656612874161595e-10 + 1.0); /*0x5a1454*/
+    }
       while ( v6 > 2 ); /*0x5a145c*/
       return g_TerrainBuildConfig + v6 + 8; /*0x5a146d*/
     case 9: /*0x5a1374*/
       do /*0x5a1496*/
       {
-        v24 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1472*/
-        v7 = Math::RoundToInt((double)v24 * 4.656612874161595e-10); /*0x5a148e*/
-      }
+      v24 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1472*/
+      v7 = Math::RoundToInt((double)v24 * 4.656612874161595e-10); /*0x5a148e*/
+    }
       while ( v7 > 1 ); /*0x5a1496*/
       return g_TerrainBuildConfig + 2 * v7 + 8; /*0x5a14a8*/
     case 10: /*0x5a1374*/
       do /*0x5a14d1*/
       {
-        v25 = (unsigned int)Random::State(&unk_ABE890); /*0x5a14ad*/
-        v8 = Math::RoundToInt((double)v25 * 4.656612874161595e-10); /*0x5a14c9*/
-      }
+      v25 = (unsigned int)Random::State(&unk_ABE890); /*0x5a14ad*/
+      v8 = Math::RoundToInt((double)v25 * 4.656612874161595e-10); /*0x5a14c9*/
+    }
       while ( v8 > 1 ); /*0x5a14d1*/
       return g_TerrainBuildConfig + v8 + 8; /*0x5a14e2*/
     case 11: /*0x5a1374*/
       do /*0x5a1511*/
       {
-        v26 = (unsigned int)Random::State(&unk_ABE890); /*0x5a14e7*/
-        v9 = Math::RoundToInt((double)v26 * 4.656612874161595e-10 + 1.0); /*0x5a1509*/
-      }
+      v26 = (unsigned int)Random::State(&unk_ABE890); /*0x5a14e7*/
+      v9 = Math::RoundToInt((double)v26 * 4.656612874161595e-10 + 1.0); /*0x5a1509*/
+    }
       while ( v9 > 2 ); /*0x5a1511*/
       return g_TerrainBuildConfig + v9 + 11; /*0x5a1522*/
     case 12: /*0x5a1374*/
       do /*0x5a154b*/
       {
-        v27 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1527*/
-        v10 = Math::RoundToInt((double)v27 * 4.656612874161595e-10); /*0x5a1543*/
-      }
+      v27 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1527*/
+      v10 = Math::RoundToInt((double)v27 * 4.656612874161595e-10); /*0x5a1543*/
+    }
       while ( v10 > 1 ); /*0x5a154b*/
       return g_TerrainBuildConfig + 2 * v10 + 11; /*0x5a155d*/
     case 13: /*0x5a1374*/
       do /*0x5a1586*/
       {
-        v28 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1562*/
-        v11 = Math::RoundToInt((double)v28 * 4.656612874161595e-10); /*0x5a157e*/
-      }
+      v28 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1562*/
+      v11 = Math::RoundToInt((double)v28 * 4.656612874161595e-10); /*0x5a157e*/
+    }
       while ( v11 > 1 ); /*0x5a1586*/
       return g_TerrainBuildConfig + v11 + 11; /*0x5a1597*/
     case 14: /*0x5a1374*/
       do /*0x5a15c6*/
       {
-        v29 = (unsigned int)Random::State(&unk_ABE890); /*0x5a159c*/
-        v12 = Math::RoundToInt((double)v29 * 4.656612874161595e-10 + 1.0); /*0x5a15be*/
-      }
+      v29 = (unsigned int)Random::State(&unk_ABE890); /*0x5a159c*/
+      v12 = Math::RoundToInt((double)v29 * 4.656612874161595e-10 + 1.0); /*0x5a15be*/
+    }
       while ( v12 > 2 ); /*0x5a15c6*/
       return g_TerrainBuildConfig + v12 + 14; /*0x5a15d7*/
     case 15: /*0x5a1374*/
       do /*0x5a1600*/
       {
-        v30 = (unsigned int)Random::State(&unk_ABE890); /*0x5a15dc*/
-        v13 = Math::RoundToInt((double)v30 * 4.656612874161595e-10); /*0x5a15f8*/
-      }
+      v30 = (unsigned int)Random::State(&unk_ABE890); /*0x5a15dc*/
+      v13 = Math::RoundToInt((double)v30 * 4.656612874161595e-10); /*0x5a15f8*/
+    }
       while ( v13 > 1 ); /*0x5a1600*/
       return g_TerrainBuildConfig + 2 * v13 + 14; /*0x5a1612*/
     case 16: /*0x5a1374*/
       do /*0x5a163b*/
       {
-        v31 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1617*/
-        v14 = Math::RoundToInt((double)v31 * 4.656612874161595e-10); /*0x5a1633*/
-      }
+      v31 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1617*/
+      v14 = Math::RoundToInt((double)v31 * 4.656612874161595e-10); /*0x5a1633*/
+    }
       while ( v14 > 1 ); /*0x5a163b*/
       return g_TerrainBuildConfig + v14 + 14; /*0x5a164c*/
     case 22: /*0x5a1374*/
       do /*0x5a167b*/
       {
-        v32 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1651*/
-        v15 = Math::RoundToInt((double)v32 * 4.656612874161595e-10 + 1.0); /*0x5a1673*/
-      }
+      v32 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1651*/
+      v15 = Math::RoundToInt((double)v32 * 4.656612874161595e-10 + 1.0); /*0x5a1673*/
+    }
       while ( v15 > 2 ); /*0x5a167b*/
       return g_TerrainBuildConfig + v15 + 22; /*0x5a168c*/
     case 23: /*0x5a1374*/
       do /*0x5a16b5*/
       {
-        v33 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1691*/
-        v16 = Math::RoundToInt((double)v33 * 4.656612874161595e-10); /*0x5a16ad*/
-      }
+      v33 = (unsigned int)Random::State(&unk_ABE890); /*0x5a1691*/
+      v16 = Math::RoundToInt((double)v33 * 4.656612874161595e-10); /*0x5a16ad*/
+    }
       while ( v16 > 1 ); /*0x5a16b5*/
       return g_TerrainBuildConfig + 2 * v16 + 22; /*0x5a16c7*/
     case 24: /*0x5a1374*/
       do /*0x5a16f0*/
       {
-        v34 = (unsigned int)Random::State(&unk_ABE890); /*0x5a16cc*/
-        v17 = Math::RoundToInt((double)v34 * 4.656612874161595e-10); /*0x5a16e8*/
-      }
+      v34 = (unsigned int)Random::State(&unk_ABE890); /*0x5a16cc*/
+      v17 = Math::RoundToInt((double)v34 * 4.656612874161595e-10); /*0x5a16e8*/
+    }
       while ( v17 > 1 ); /*0x5a16f0*/
       return g_TerrainBuildConfig + v17 + 22; /*0x5a1701*/
     case 28: /*0x5a1374*/
@@ -259,7 +259,7 @@ int Terrain_SelectTileVariant(int a1)
     case 36: /*0x5a1374*/
       v18 = 1; /*0x5a1757*/
       v19 = 0; /*0x5a175c*/
-  LABEL_37:
+      LABEL_37:
       v1 = Range_RandomInt(v19, v18) + 34; /*0x5a175e*/
       return g_TerrainBuildConfig + v1; /*0x5a1763*/
     default:
@@ -314,8 +314,8 @@ int ProcessRandomMapCellAdjacency()
       v3->u32_11B -= 4; /*0x5a1ab6*/
       v7 = (unsigned int *)(dword_ABED10); /*0x5a1abc*/
       v8 = dword_ABED10
-         ? *((unsigned int *)dword_ABED10 + 20 * *(int16_t *)(i + 36) + 20 * g_MapCellWidth * *(int16_t *)(i + 38) + 14)
-         : -1;
+      ? *((unsigned int *)dword_ABED10 + 20 * *(int16_t *)(i + 36) + 20 * g_MapCellWidth * *(int16_t *)(i + 38) + 14)
+      : -1;
       if ( !dword_ABED10 ) /*0x5a1aea*/
         goto LABEL_32; /*0x5a1aea*/
       v9 = v3[18]; /*0x5a1af4*/
@@ -336,8 +336,8 @@ int ProcessRandomMapCellAdjacency()
       v4->u32_11B -= 4; /*0x5a1b67*/
       v7 = (unsigned int *)(dword_ABED10); /*0x5a1b6d*/
       v8 = dword_ABED10
-         ? *((unsigned int *)dword_ABED10 + 20 * *(int16_t *)(i + 36) + 20 * g_MapCellWidth * *(int16_t *)(i + 38) + 14)
-         : -1;
+      ? *((unsigned int *)dword_ABED10 + 20 * *(int16_t *)(i + 36) + 20 * g_MapCellWidth * *(int16_t *)(i + 38) + 14)
+      : -1;
       if ( !dword_ABED10 ) /*0x5a1b9b*/
         goto LABEL_32; /*0x5a1b9b*/
       v9 = v4[18]; /*0x5a1ba5*/
@@ -362,7 +362,7 @@ int ProcessRandomMapCellAdjacency()
       v10 = g_MapCellWidth * v12; /*0x5a1c3a*/
     }
     v7[20 * v9 + 14 + 20 * v10] = v8; /*0x5a1c45*/
-  LABEL_32:
+    LABEL_32:
     result = (&dword_87F7E8)->CellIteratorNext(); /*0x5a1c49*/
   }
   return result; /*0x5a1c60*/
@@ -378,12 +378,10 @@ int E4Recv_5A1C70::sub_5A1C70()
   v17 = (gamemd::ObjectClass *)(this); /*0x5a1c7c*/
   if ( g_MissionQueueFrame.localVariables[163] ) /*0x5a1c80*/
   {
-  int v1; // ecx
-    v1 = g_MapCellWidth * g_MapCellWidth; /*0x5a1c88*/
+    int v1 = g_MapCellWidth * g_MapCellWidth; // ecx /*0x5a1c88*/
     if ( g_MapCellWidth * g_MapCellWidth > 0 ) /*0x5a1c8d*/
     {
-  int v2; // eax
-      v2 = 0; /*0x5a1c8f*/
+      int v2 = 0; // eax /*0x5a1c8f*/
       do /*0x5a1cac*/
       {
         *(unsigned int *)(v2 + g_MissionQueueFrame.localVariables[163] + 56) = -1; /*0x5a1c9a*/
@@ -397,7 +395,7 @@ int E4Recv_5A1C70::sub_5A1C70()
   int i; // edi
   for ( i = g_MissionQueueFrame.briefing[342] - 1; i >= 0; --i ) /*0x5a1cb8*/
   {
-  void *v4; // esi
+    void *v4; // esi
     v4 = *(void **)(g_MissionQueueFrame.briefing[339] + 4 * i); /*0x5a1cc0*/
     if ( v4 ) /*0x5a1cc5*/
     {
@@ -408,15 +406,13 @@ int E4Recv_5A1C70::sub_5A1C70()
   g_MissionQueueFrame.localVariables[164] = 0; /*0x5a1ce5*/
   if ( g_MapCellWidth * g_MapCellWidth > 0 ) /*0x5a1cef*/
   {
-  int v5; // esi
-    v5 = 0; /*0x5a1cf1*/
-  int v6; // ebp
-    v6 = g_MapCellWidth * g_MapCellWidth; /*0x5a1cf3*/
+    int v5 = 0; // esi /*0x5a1cf1*/
+    int v6 = g_MapCellWidth * g_MapCellWidth; // ebp /*0x5a1cf3*/
     do /*0x5a1d4f*/
     {
-  __int16 v16[2]; // [esp+8h] [ebp-8h] BYREF
+      __int16 v16[2]; // [esp+8h] [ebp-8h] BYREF
       *(unsigned int *)v16 = *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x5a1d08*/
-  RandomMap *v7; // edi
+      RandomMap *v7; // edi
       v7 = (RandomMap *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v16); /*0x5a1d11*/
       if ( *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == -1 /*0x5a1d3b*/
         && (*(unsigned short *)(v5 + g_MissionQueueFrame.localVariables[163])
@@ -433,13 +429,13 @@ int E4Recv_5A1C70::sub_5A1C70()
   int j; // edi
   for ( j = 0; j < g_MissionQueueFrame.briefing[342]; ++j ) /*0x5a1d5a*/
   {
-  int v9; // esi
+    int v9; // esi
     v9 = *(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * j); /*0x5a1d67*/
     if ( v9->q014 ) /*0x5a1d6a*/
     {
-  int v10; // eax
+      int v10; // eax
       v10 = v17->ambientSoundController[0]; /*0x5a1d75*/
-  bool v11; // al
+      bool v11; // al
       v11 = v10 == 3 || v10 == 4; /*0x5a1d86*/
       RandomMap::CollectTerrainCells( /*0x5a1da3*/
         *(RandomMap **)(g_MissionQueueFrame.briefing[339] + 4 * j),
@@ -447,22 +443,19 @@ int E4Recv_5A1C70::sub_5A1C70()
       RandomMap::PlaceRandomMapTerrain((RandomMap *)v9); /*0x5a1daa*/
     }
   }
-  int result; // eax
-  result = g_MapCellWidth * g_MapCellWidth; /*0x5a1dbf*/
+  int result = g_MapCellWidth * g_MapCellWidth; // eax /*0x5a1dbf*/
   if ( g_MapCellWidth * g_MapCellWidth > 0 ) /*0x5a1dc4*/
   {
-  int v13; // esi
-    v13 = 0; /*0x5a1dc6*/
-  int v14; // edi
-    v14 = g_MapCellWidth * g_MapCellWidth; /*0x5a1dc8*/
+    int v13 = 0; // esi /*0x5a1dc6*/
+    int v14 = g_MapCellWidth * g_MapCellWidth; // edi /*0x5a1dc8*/
     do /*0x5a1e07*/
     {
       result = v13 + g_MissionQueueFrame.localVariables[163]; /*0x5a1dd0*/
       if ( *(unsigned int *)(v13 + g_MissionQueueFrame.localVariables[163] + 56) == -1 /*0x5a1de2*/
         && (*(unsigned short *)result || result->u32_2) )
       {
-  RandomMap *v15; // eax
-                v15 = (RandomMap *)CellCoord::To_CellObj((int16_t *)(/*0x5a1def*/                              (CellCoord *)&DataGlobal_87F7E8),                              (__int16 *)(v13 + g_MissionQueueFrame.localVariables[163]));
+        RandomMap *v15; // eax
+        v15 = (RandomMap *)CellCoord::To_CellObj((int16_t *)(/*0x5a1def*/                              (CellCoord *)&DataGlobal_87F7E8),                              (__int16 *)(v13 + g_MissionQueueFrame.localVariables[163]));
         result = (int)RandomMap::GenerateTerrain(v15); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
           result->__pad_01A = 0; /*0x5a1dff*/
@@ -560,7 +553,7 @@ int GenerateTerrainHeightMapInternal()
         }
       }
     }
-  LABEL_24:
+    LABEL_24:
     result = (&dword_87F7E8)->CellIteratorNext(); /*0x5a35cf*/
   }
   return result; /*0x5a35e6*/
@@ -577,8 +570,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   float *v40; // [esp+1Ch] [ebp-54h]
   float v49; // [esp+40h] [ebp-30h]
 
-  int v3; // edi
-  v3 = 25 * a2; /*0x5a45f2*/
+  int v3 = 25 * a2; // edi /*0x5a45f2*/
   float *v4; // eax
   v4 = (float *)operator new(200 * a2); /*0x5a4601*/
   if ( v4 ) /*0x5a460b*/
@@ -594,21 +586,19 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   }
   int *v6; // eax
   v6 = (int *)operator new(0x14u); /*0x5a462a*/
-  int *v7; // esi
-  v7 = v6; /*0x5a462f*/
+  int *v7 = v6; // esi /*0x5a462f*/
   if ( v6 ) /*0x5a4636*/
   {
     v6[3] = 0; /*0x5a463f*/
     v6[4] = -1; /*0x5a4647*/
     *v6 = 0; /*0x5a464e*/
     v6[1] = v3; /*0x5a4654*/
-  void *v8; // eax
+    void *v8; // eax
     v8 = operator new(100 * a2 + 4); /*0x5a4657*/
-  int v9; // ecx
+    int v9; // ecx
     v9 = v7[1]; /*0x5a465c*/
     v7[2] = (int)v8; /*0x5a465f*/
-  int v10; // eax
-    v10 = 0; /*0x5a4665*/
+    int v10 = 0; // eax /*0x5a4665*/
     if ( v9 >= 0 ) /*0x5a4669*/
     {
       do /*0x5a467c*/
@@ -635,21 +625,19 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   + 80 * (int16_t)aP0->u32_24
   + 80 * g_MapCellWidth * (int16_t)(*(aP0->u32_24 + 1))
   + 71) = 1;
-  unsigned int v12; // ecx
-  v12 = *v7 + 1; /*0x5a46e6*/
+  unsigned int v12 = *v7 + 1; // ecx /*0x5a46e6*/
   float v46; // [esp+38h] [ebp-38h]
   v46 = v5->vtable2; /*0x5a46e9*/
-  unsigned int v13; // edx
-  v13 = v12 >> 1; /*0x5a46f0*/
+  unsigned int v13 = v12 >> 1; // edx /*0x5a46f0*/
   if ( v12 < v7[1] ) /*0x5a46f4*/
   {
     if ( v12 > 1 ) /*0x5a46f9*/
     {
       do /*0x5a4719*/
       {
-  int v14; // edi
+        int v14; // edi
         v14 = v7[2]; /*0x5a46fb*/
-  int v15; // ebx
+        int v15; // ebx
         v15 = *(unsigned int *)(v14 + 4 * v13); /*0x5a46fe*/
         if ( *(float *)(v15 + 4) <= (double)v46 ) /*0x5a470d*/
           break; /*0x5a470d*/
@@ -662,7 +650,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
       v3 = 25 * a2; /*0x5a471f*/
     }
     *(unsigned int *)(v7[2] + 4 * v12) = v5; /*0x5a4726*/
-  unsigned int v16; // eax
+    unsigned int v16; // eax
     v16 = v7[3]; /*0x5a472b*/
     ++*v7; /*0x5a4731*/
     if ( (unsigned int)v5 > v16 ) /*0x5a4733*/
@@ -672,9 +660,9 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   }
   if ( *v7 ) /*0x5a4740*/
   {
-  int v18; // eax
+    int v18; // eax
     v18 = v7[2]; /*0x5a474e*/
-  int16_t *v19; // edi
+    int16_t *v19; // edi
     v19 = *(int16_t **)(v18 + 4); /*0x5a4756*/
     *(unsigned int *)(v18 + 4) = *(unsigned int *)(v18 + 4 * *v7); /*0x5a4759*/
     *(unsigned int *)(v7[2] + 4 * (*v7)--) = 0; /*0x5a4761*/
@@ -694,87 +682,82 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   {
     while ( v17 && v41 < v3 ) /*0x5a479f*/
     {
-  unsigned int *v20; // ebx
+      unsigned int *v20; // ebx
       v20 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v17));
       if ( (v20)->IsEmpty() && !v20[57] && v20[17] == -1 && v20[59] != 3 ) /*0x5a47ec*/
       {
-  int64_t v50; // [esp+44h] [ebp-2Ch]
+        int64_t v50; // [esp+44h] [ebp-2Ch]
         v50 = (unsigned int)Random::State(&unk_ABE890); /*0x5a47fc*/
         if ( (double)v50 * 2.328306437080797e-10 < a3 ) /*0x5a4816*/
         {
           do /*0x5a4848*/
           {
-  int64_t v51; // [esp+4Ch] [ebp-24h]
+            int64_t v51; // [esp+4Ch] [ebp-24h]
             v51 = (unsigned int)Random::State(&unk_ABE890); /*0x5a4826*/
             v21 = Math::RoundToInt((double)v51 * 0.000000005820766092701993 + 1.0); /*0x5a483e*/
           }
           while ( (unsigned int)v21 > 0x19 ); /*0x5a4848*/
-  char Buffer[20]; // [esp+5Ch] [ebp-14h] BYREF
+          char Buffer[20]; // [esp+5Ch] [ebp-14h] BYREF
           sprintf(Buffer, "TREE%d%d", v21 / 10, v21 % 10); /*0x5a486f*/
-  void **v22; // edi
+          void **v22; // edi
           v22 = (void **)operator new(0xE0u); /*0x5a487e*/
           if ( v22 ) /*0x5a4885*/
           {
-  int v48; // [esp+3Ch] [ebp-34h] BYREF
+            int v48; // [esp+3Ch] [ebp-34h] BYREF
             v48 = v20[9]; /*0x5a488e*/
-  int v23; // eax
+            int v23; // eax
             v23 = (Buffer)->LookupByName(); /*0x5a4892*/
             (v22)->Construct((int16_t *)(*((void **)dword_A8E31C + v23)), (int16_t *)&v48); /*0x5a48aa*/
           }
           ++v42; /*0x5a48af*/
         }
       }
-  char v24; // al
-      v24 = 0; /*0x5a48bb*/
-  int v47; // [esp+38h] [ebp-38h]
+      char v24 = 0; // al /*0x5a48bb*/
+      int v47; // [esp+38h] [ebp-38h]
       v47 = 0; /*0x5a48c0*/
-  float *v44; // [esp+30h] [ebp-40h]
+      float *v44; // [esp+30h] [ebp-40h]
       v44 = &v40[2 * v41]; /*0x5a48c4*/
       do /*0x5a4a61*/
       {
-  int v25; // eax
-        v25 = v24 & 7; /*0x5a48cc*/
-  int16_t v26; // dx
+        int v25 = v24 & 7; // eax /*0x5a48cc*/
+        int16_t v26; // dx
         v26 = v39[1] + (*(((unsigned short *)&(((unsigned int *)(dword_89F688))[v25])) + 1)); /*0x5a48de*/
         (*((unsigned short *)&(v25))) = *v39 + (*((unsigned short *)&(((unsigned int *)(dword_89F688))[v25]))); /*0x5a48e5*/
-  int v43; // [esp+2Ch] [ebp-44h]
+        int v43; // [esp+2Ch] [ebp-44h]
         (*(((unsigned short *)&(v43)) + 1)) = v26; /*0x5a48ee*/
-  int v27; // ecx
+        int v27; // ecx
         v27 = (int16_t)v25; /*0x5a48f3*/
         (*((unsigned short *)&(v43))) = v25; /*0x5a48f9*/
-  int v28; // eax
+        int v28; // eax
         v28 = v26 + (int16_t)v25; /*0x5a48fe*/
         if ( v28 > dword_ABED04 && v27 - v26 < dword_ABED04 && v26 - v27 < dword_ABED04 && v28 <= dword_ABED08 ) /*0x5a492d*/
         {
-  char *v29; // edi
+          char *v29; // edi
           v29 = (char *)dword_ABED10 + 80 * v27 + 80 * g_MapCellWidth * v26; /*0x5a494a*/
           if ( !v29[71] && !v29[69] && v41 < 25 * a2 ) /*0x5a496c*/
           {
-  float *v30; // ebx
-            v30 = v44; /*0x5a4972*/
+            float *v30 = v44; // ebx /*0x5a4972*/
             *(unsigned int *)v44 = v43; /*0x5a497d*/
-  double v45; // [esp+30h] [ebp-40h]
+            double v45; // [esp+30h] [ebp-40h]
             v45 = Math::Sqrt((double)(((int16_t)aP0->u32_24 - v27) * ((int16_t)aP0->u32_24 - v27) /*0x5a49b1*/
-                                    + ((int16_t)(*(aP0->u32_24 + 1)) - v26)
-                                    * ((int16_t)(*(aP0->u32_24 + 1)) - v26)));
-  int64_t v52; // [esp+54h] [ebp-1Ch]
+            + ((int16_t)(*(aP0->u32_24 + 1)) - v26)
+            * ((int16_t)(*(aP0->u32_24 + 1)) - v26)));
+            int64_t v52; // [esp+54h] [ebp-1Ch]
             v52 = (unsigned int)Random::State(&unk_ABE890); /*0x5a49c2*/
             ++v41; /*0x5a49dd*/
             v30[1] = (double)v52 * 5.0 * 2.328306437080797e-10 + v45; /*0x5a49eb*/
             v29[71] = 1; /*0x5a49ee*/
-  unsigned int v31; // edi
+            unsigned int v31; // edi
             v31 = (unsigned int)v30; /*0x5a49f4*/
-  unsigned int v32; // ecx
-            v32 = *v7 + 1; /*0x5a49f9*/
+            unsigned int v32 = *v7 + 1; // ecx /*0x5a49f9*/
             v44 = v30 + 2; /*0x5a49fa*/
             v49 = v30[1]; /*0x5a4a03*/
-  unsigned int v33; // edx
-            v33 = v32 >> 1; /*0x5a4a0a*/
+            unsigned int v33 = v32 >> 1; // edx /*0x5a4a0a*/
             if ( v32 < v7[1] ) /*0x5a4a0e*/
             {
               for ( ; v32 > 1; v33 >>= 1 ) /*0x5a4a13*/
               {
-  int v34; // ebx
+                int v34; // ebx
                 v34 = v7[2]; /*0x5a4a15*/
                 if ( *(float *)(*(unsigned int *)(v34 + 4 * v33) + 4) <= (double)v49 ) /*0x5a4a27*/
                   break; /*0x5a4a27*/
@@ -782,7 +765,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
                 v32 = v33; /*0x5a4a2f*/
               }
               *(unsigned int *)(v7[2] + 4 * v32) = v31; /*0x5a4a3b*/
-  unsigned int v35; // eax
+              unsigned int v35; // eax
               v35 = v7[3]; /*0x5a4a40*/
               ++*v7; /*0x5a4a46*/
               if ( v31 > v35 ) /*0x5a4a48*/
@@ -797,9 +780,9 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
       while ( v47 < 8 ); /*0x5a4a61*/
       if ( *v7 ) /*0x5a4a67*/
       {
-  int v36; // eax
+        int v36; // eax
         v36 = v7[2]; /*0x5a4a73*/
-  int16_t *v37; // edi
+        int16_t *v37; // edi
         v37 = *(int16_t **)(v36 + 4); /*0x5a4a7b*/
         *(unsigned int *)(v36 + 4) = *(unsigned int *)(v36 + 4 * *v7); /*0x5a4a7e*/
         *(unsigned int *)(v7[2] + 4 * (*v7)--) = 0; /*0x5a4a86*/
@@ -831,8 +814,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   float *v41; // [esp+1Ch] [ebp-2Ch]
   float v47; // [esp+38h] [ebp-10h]
 
-  int v5; // edi
-  v5 = 10 * aP2; /*0x5a4b72*/
+  int v5 = 10 * aP2; // edi /*0x5a4b72*/
   float *v6; // eax
   v6 = (float *)operator new(80 * aP2); /*0x5a4b7c*/
   if ( v6 ) /*0x5a4b86*/
@@ -848,21 +830,19 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   }
   int *v8; // eax
   v8 = (int *)operator new(0x14u); /*0x5a4ba5*/
-  int *v9; // esi
-  v9 = v8; /*0x5a4baa*/
+  int *v9 = v8; // esi /*0x5a4baa*/
   if ( v8 ) /*0x5a4bb3*/
   {
     v8[3] = 0; /*0x5a4bb5*/
     *v8 = 0; /*0x5a4bb8*/
     v8[4] = -1; /*0x5a4bc1*/
     v8[1] = v5; /*0x5a4bc9*/
-  void *v10; // eax
+    void *v10; // eax
     v10 = operator new(40 * aP2 + 4); /*0x5a4bcc*/
-  int v11; // ecx
+    int v11; // ecx
     v11 = v9[1]; /*0x5a4bd1*/
     v9[2] = (int)v10; /*0x5a4bd4*/
-  int v12; // eax
-    v12 = 0; /*0x5a4bda*/
+    int v12 = 0; // eax /*0x5a4bda*/
     if ( v11 >= 0 ) /*0x5a4bde*/
     {
       do /*0x5a4bf1*/
@@ -877,10 +857,8 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   {
     v9 = 0; /*0x5a4bf7*/
   }
-  int v13; // eax
-  v13 = 0; /*0x5a4bfb*/
-  bool v14; // sf
-  v14 = *v9 < 0; /*0x5a4bfd*/
+  int v13 = 0; // eax /*0x5a4bfb*/
+  bool v14 = *v9 < 0; // sf /*0x5a4bfd*/
   int v45; // [esp+2Ch] [ebp-1Ch]
   v45 = 0; /*0x5a4bff*/
   if ( !v14 ) /*0x5a4c03*/
@@ -900,20 +878,18 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   float v44; // [esp+28h] [ebp-20h]
   v44 = aP0->u32_24; /*0x5a4c2b*/
   *((unsigned int *)dword_ABED10 + 20 * (*((signed short *)&(v44))) + 20 * g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v44)) + 2))) + 15) = a4; /*0x5a4c4f*/
-  unsigned int v15; // ecx
-  v15 = *v9 + 1; /*0x5a4c58*/
+  unsigned int v15 = *v9 + 1; // ecx /*0x5a4c58*/
   v44 = v7[1]; /*0x5a4c5b*/
-  unsigned int v16; // edx
-  v16 = v15 >> 1; /*0x5a4c62*/
+  unsigned int v16 = v15 >> 1; // edx /*0x5a4c62*/
   if ( v15 < v9[1] ) /*0x5a4c66*/
   {
     if ( v15 > 1 ) /*0x5a4c6b*/
     {
       do /*0x5a4c8b*/
       {
-  int v17; // edi
+        int v17; // edi
         v17 = v9[2]; /*0x5a4c6d*/
-  int v18; // ebx
+        int v18; // ebx
         v18 = *(unsigned int *)(v17 + 4 * v16); /*0x5a4c70*/
         if ( *(float *)(v18 + 4) <= (double)v44 ) /*0x5a4c7f*/
           break; /*0x5a4c7f*/
@@ -925,7 +901,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       v7 = v41; /*0x5a4c8d*/
     }
     *(unsigned int *)(v9[2] + 4 * v15) = v7; /*0x5a4c94*/
-  unsigned int v19; // eax
+    unsigned int v19; // eax
     v19 = v9[3]; /*0x5a4c99*/
     ++*v9; /*0x5a4c9f*/
     if ( (unsigned int)v7 > v19 ) /*0x5a4ca1*/
@@ -935,10 +911,9 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   }
   if ( *v9 ) /*0x5a4cae*/
   {
-  int v21; // eax
+    int v21; // eax
     v21 = v9[2]; /*0x5a4cbc*/
-  int16_t *v22; // edi
-    v22 = v21->u32_4; /*0x5a4cc4*/
+    int16_t *v22 = v21->u32_4; // edi /*0x5a4cc4*/
     v21->u32_4 = *(unsigned int *)(v21 + 4 * *v9); /*0x5a4cc7*/
     *(unsigned int *)(v9[2] + 4 * (*v9)--) = 0; /*0x5a4ccf*/
     Heap::SiftDown(v9, 1); /*0x5a4cdd*/
@@ -954,36 +929,34 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   {
     while ( v20 ) /*0x5a4cfb*/
     {
-  unsigned int *v23; // eax
+      unsigned int *v23; // eax
       v23 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v20)); /*0x5a4d07*/
-  int v24; // edx
-      v24 = v42; /*0x5a4d0f*/
+      int v24 = v42; // edx /*0x5a4d0f*/
       v23[14] = a2; /*0x5a4d13*/
-  char v25; // al
-      v25 = 0; /*0x5a4d16*/
+      char v25 = 0; // al /*0x5a4d16*/
       v44 = 0.0; /*0x5a4d18*/
-  float *v26; // edi
+      float *v26; // edi
       v26 = &v7[2 * v24]; /*0x5a4d1c*/
       do /*0x5a4f42*/
       {
-  int v39; // [esp+14h] [ebp-34h] BYREF
-  int v48; // [esp+3Ch] [ebp-Ch] BYREF
+        int v39; // [esp+14h] [ebp-34h] BYREF
+        int v48; // [esp+3Ch] [ebp-Ch] BYREF
         v39 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(v40)), (unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
-  int v43; // [esp+24h] [ebp-24h]
+        int v43; // [esp+24h] [ebp-24h]
         v43 = (*((signed short *)(((unsigned char *)&(v39)) + 2))) + (int16_t)v39; /*0x5a4d55*/
         if ( v43 > dword_ABED04 /*0x5a4d81*/
           && (int16_t)v39 - (*((signed short *)(((unsigned char *)&(v39)) + 2))) < dword_ABED04
           && (*((signed short *)(((unsigned char *)&(v39)) + 2))) - (int16_t)v39 < dword_ABED04
           && v43 <= dword_ABED08 )
         {
-  int *v27; // ebx
+          int *v27; // ebx
           v27 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v39); /*0x5a4d96*/
           v43 = (int)v27; /*0x5a4d9a*/
           if ( ((Cell*)v27)->IsEmpty() || a5 && (CellClass::InBounds((gamemd::CellClass *)(v27)) || CellClass::InMapDataRange((gamemd::CellClass *)(v27))) ) /*0x5a4dbf*/
           {
-  int v28; // edx
+            int v28; // edx
             v28 = (*((signed short *)(((unsigned char *)&(v39)) + 2))); /*0x5a4dcc*/
-  double v46; // [esp+30h] [ebp-18h]
+            double v46; // [esp+30h] [ebp-18h]
             (*((unsigned int *)&(v46))) = (int16_t)v39; /*0x5a4de4*/
             if ( *((unsigned int *)dword_ABED10 + 20 * (int16_t)v39 + 20 * g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v39)) + 2))) + 15) != a4 /*0x5a4e1a*/
               && !v43->q11C
@@ -993,29 +966,27 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
               *(unsigned int *)v26 = v39; /*0x5a4e2f*/
               v43 = aP0->u32_24; /*0x5a4e3b*/
               (*((unsigned int *)&(v46))) = ((int16_t)v43 - (*((unsigned int *)&(v46)))) * ((int16_t)v43 - (*((unsigned int *)&(v46)))) /*0x5a4e57*/
-                           + ((*((signed short *)(((unsigned char *)&(v43)) + 2))) - v28) * ((*((signed short *)(((unsigned char *)&(v43)) + 2))) - v28);
+              + ((*((signed short *)(((unsigned char *)&(v43)) + 2))) - v28) * ((*((signed short *)(((unsigned char *)&(v43)) + 2))) - v28);
               v46 = Math::Sqrt((double)(*((signed int *)&(v46)))); /*0x5a4e67*/
-  int64_t v49; // [esp+40h] [ebp-8h]
+              int64_t v49; // [esp+40h] [ebp-8h]
               v49 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a4e78*/
-  int v29; // eax
+              int v29; // eax
               v29 = (*((signed short *)(((unsigned char *)&(v39)) + 2))); /*0x5a4e88*/
-  int v30; // edx
+              int v30; // edx
               v30 = (int16_t)v39; /*0x5a4e93*/
               v26[1] = (double)v49 * 5.0 * 2.328306437080797e-10 + v46; /*0x5a4ea2*/
               *((unsigned int *)dword_ABED10 + 20 * v30 + 20 * g_MapCellWidth * v29 + 15) = a4; /*0x5a4eba*/
-  unsigned int v31; // ebx
+              unsigned int v31; // ebx
               v31 = (unsigned int)v26; /*0x5a4ec3*/
               ++v42; /*0x5a4ec5*/
-  float v32; // eax
+              float v32; // eax
               v32 = v26[1]; /*0x5a4ecb*/
               v26 += 2; /*0x5a4ece*/
-  unsigned int v33; // ecx
-              v33 = *v9 + 1; /*0x5a4ed1*/
+              unsigned int v33 = *v9 + 1; // ecx /*0x5a4ed1*/
               v47 = v32; /*0x5a4ed2*/
-  unsigned int v34; // eax
+              unsigned int v34; // eax
               v34 = v9[1]; /*0x5a4ed6*/
-  unsigned int v35; // edx
-              v35 = v33 >> 1; /*0x5a4edb*/
+              unsigned int v35 = v33 >> 1; // edx /*0x5a4edb*/
               v43 = v31; /*0x5a4edf*/
               if ( v33 < v34 ) /*0x5a4ee3*/
               {
@@ -1029,7 +1000,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
                   v33 = v35; /*0x5a4f10*/
                 }
                 *(unsigned int *)(v9[2] + 4 * v33) = v31; /*0x5a4f1c*/
-  unsigned int v36; // eax
+                unsigned int v36; // eax
                 v36 = v9[3]; /*0x5a4f21*/
                 ++*v9; /*0x5a4f27*/
                 if ( v31 > v36 ) /*0x5a4f29*/
@@ -1044,9 +1015,9 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
         ++(*((unsigned int *)&(v44))); /*0x5a4f3e*/
       }
       while ( (*((signed int *)&(v44))) < 8 ); /*0x5a4f42*/
-  int v37; // edi
+      int v37; // edi
       v37 = ++v45; /*0x5a4f4e*/
-  int16_t *v38; // eax
+      int16_t *v38; // eax
       v38 = (int16_t *)PriorityQueue::Pop(v9); /*0x5a4f53*/
       v7 = v41; /*0x5a4f58*/
       v40 = v38; /*0x5a4f5c*/
@@ -1147,7 +1118,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
     {
       if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v40[2])(&v40, v8 + v7, 0) ) /*0x5a65f7*/
       {
-  LABEL_10: v10 = (unsigned int)(v44++);
+        LABEL_10: v10 = (unsigned int)(v44++);
         *((unsigned int *)Block + v10) = (unsigned int)(*v9); /*0x5a660f*/
       }
       v7 = v42; /*0x5a6612*/
@@ -1234,7 +1205,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
             while ( v25 < v44 ); /*0x5a68a0*/
           }
         }
-  LABEL_44:
+        LABEL_44:
         ++v28; /*0x5a68a2*/
         if ( v27 ) /*0x5a68b1*/
         {
@@ -1245,7 +1216,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       }
       if ( v16 ) /*0x5a68cc*/
         (*(void (**)(int, int))(*(unsigned int *)v16 + 32))(v16, 1); /*0x5a68d5*/
-  LABEL_48:
+      LABEL_48:
       ++v29; /*0x5a68e1*/
       if ( v30 >= v33 ) /*0x5a68eb*/
         break; /*0x5a68eb*/
@@ -1324,7 +1295,7 @@ int PlaceRandomNeutralUnits(int a1)
         v9 = operator new(0x8E8u); /*0x5a6a04*/
         if ( !v9 ) /*0x5a6a0b*/
         {
-  LABEL_13:
+          LABEL_13:
           v8 = 0; /*0x5a6a2f*/
           goto LABEL_14; /*0x5a6a2f*/
         }
@@ -1339,7 +1310,7 @@ int PlaceRandomNeutralUnits(int a1)
         ExitCellByName = (*(&off_82B180 + v5))->FindExitCellByName(); /*0x5a69df*/
         v8 = (unsigned int *)((int)v6)->Construct(*((unsigned int *)dword_A8E34C + ExitCellByName), Owner); /*0x5a69f6*/
       }
-  LABEL_14:
+      LABEL_14:
       v11 = 0; /*0x5a6a31*/
       v17 = 0; /*0x5a6a33*/
       while ( v11 < 60 ) /*0x5a6a3a*/
@@ -1383,7 +1354,7 @@ int PlaceRandomNeutralUnits(int a1)
       }
       if ( v8 ) /*0x5a6b72*/
         v8->Seek_0(1); /*0x5a6b7a*/
-  LABEL_27:
+      LABEL_27:
       result = v20; /*0x5a6b7d*/
       ++v19; /*0x5a6b8c*/
       if ( (int)v21 >= v20 ) /*0x5a6b90*/
@@ -1423,7 +1394,7 @@ int E4Recv_5A6BA0::sub_5A6BA0()
     v7 = v5; /*0x5a6bc4*/
     if ( v5 < v6 ) /*0x5a6bc6*/
       break; /*0x5a6bc6*/
-  LABEL_6:
+    LABEL_6:
     if ( ++v4 >= v3 ) /*0x5a6bf8*/
       return 1; /*0x5a6bf8*/
   }
@@ -1458,29 +1429,26 @@ int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
   if ( result ) /*0x5a6c32*/
   {
     result = v4[186]; /*0x5a6c38*/
-  int v6; // ebx
-    v6 = 0; /*0x5a6c3e*/
-  int v17; // [esp+Ch] [ebp-10h]
+    int v6 = 0; // ebx /*0x5a6c3e*/
+    int v17; // [esp+Ch] [ebp-10h]
     v17 = 0; /*0x5a6c42*/
     if ( result > 0 ) /*0x5a6c46*/
     {
-  int v7; // esi
-      v7 = dword_ABED04; /*0x5a6c4d*/
+      int v7 = dword_ABED04; // esi /*0x5a6c4d*/
       do /*0x5a6d66*/
       {
-  int i; // edi
+        int i; // edi
         for ( i = 0; i < v4[185]; ++i ) /*0x5a6c5e*/
         {
-  int16_t v9; // cx
+          int16_t v9; // cx
           v9 = v19[1] + v6; /*0x5a6c6e*/
-  int v18; // [esp+10h] [ebp-Ch]
+          int v18; // [esp+10h] [ebp-Ch]
           (*((unsigned short *)&(v18))) = i + *v19; /*0x5a6c75*/
           (*(((unsigned short *)&(v18)) + 1)) = v9; /*0x5a6c7a*/
-  int v16; // [esp+8h] [ebp-14h] BYREF
+          int v16; // [esp+8h] [ebp-14h] BYREF
           v16 = v18; /*0x5a6c83*/
-  int v10; // eax
-          v10 = v9; /*0x5a6c8a*/
-  int v11; // ecx
+          int v10 = v9; // eax /*0x5a6c8a*/
+          int v11; // ecx
           v11 = v9 + (int16_t)v18; /*0x5a6c8d*/
           if ( v11 > v7 ) /*0x5a6c92*/
           {
@@ -1490,16 +1458,16 @@ int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
             }
             else
             {
-  unsigned char *v12; // eax
+              unsigned char *v12; // eax
               v12 = (unsigned char *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16));
               v6 = (int)((unsigned char *)(v17)); /*0x5a6ccf*/
-  int v13; // ecx
+              int v13; // ecx
               v13 = i + v17 * v4[185]; /*0x5a6cda*/
-  int v14; // esi
+              int v14; // esi
               v14 = *(unsigned int *)(v20 + 4 * v13 + 16); /*0x5a6cdc*/
               if ( v14 ) /*0x5a6ce2*/
               {
-  int v15; // edx
+                int v15; // edx
                 v15 = v4[165]; /*0x5a6ce4*/
                 v12[282] = v13; /*0x5a6cea*/
                 *((unsigned int *)v12 + 14) = v15; /*0x5a6cf4*/
@@ -1534,8 +1502,7 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
 
   int v4; // ecx
   v4 = *(unsigned int *)aP1; /*0x5a6d8d*/
-  int v5; // ebp
-  v5 = 0; /*0x5a6d91*/
+  int v5 = 0; // ebp /*0x5a6d91*/
   int64_t v24; // [esp+20h] [ebp-18h]
   (*((unsigned char *)&(v24))) = a4 == 4; /*0x5a6d96*/
   int v20; // [esp+10h] [ebp-28h] BYREF
@@ -1571,15 +1538,13 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
     }
     if ( *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v20) + 14) == dword_ABC2B0 ) /*0x5a6e3f*/
       break; /*0x5a6e3f*/
-  int v9; // edx
-    v9 = a4 & 7; /*0x5a6e45*/
-  int v29; // [esp+44h] [ebp+Ch]
+    int v9 = a4 & 7; // edx /*0x5a6e45*/
+    int v29; // [esp+44h] [ebp+Ch]
     (*((unsigned short *)&(v29))) = v20 + (*((unsigned short *)&(dword_89F688[v9]))); /*0x5a6e65*/
     (*(((unsigned short *)&(v29)) + 1)) = (*(((unsigned short *)&(v20)) + 1)) + (*(((unsigned short *)&((&dword_89F688)[v9])) + 1)); /*0x5a6e6a*/
     v20 = v29; /*0x5a6e73*/
   }
-  int16_t v11; // ax
-  v11 = v20; /*0x5a6e99*/
+  int16_t v11 = v20; // ax /*0x5a6e99*/
   while ( 1 ) /*0x5a6e9d*/
   {
     if ( v11 >= *aP2 + aP2[2] || (*((signed short *)(((unsigned char *)&(v20)) + 2))) >= aP2[1] + aP2[3] ) /*0x5a6ebc*/
@@ -1593,16 +1558,14 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
     v27 = v7 + v22; /*0x5a6ee4*/
     if ( IsAreaClearMap((int *)&v25, v24, v24) ) /*0x5a6eed*/
       break; /*0x5a6eed*/
-  int v12; // eax
-    v12 = a4 & 7; /*0x5a6efa*/
-  int v30; // [esp+44h] [ebp+Ch]
+    int v12 = a4 & 7; // eax /*0x5a6efa*/
+    int v30; // [esp+44h] [ebp+Ch]
     (*(((unsigned short *)&(v30)) + 1)) = (*(((unsigned short *)&(v20)) + 1)) + (*(((unsigned short *)&(dword_89F688[v12])) + 1)); /*0x5a6f23*/
     v11 = v20 + (*((unsigned short *)&(dword_89F688[v12]))); /*0x5a6f28*/
     (*((unsigned short *)&(v30))) = v11; /*0x5a6f1e*/
     v20 = v30; /*0x5a6f2c*/
   }
-  int v13; // ecx
-  v13 = v20; /*0x5a6f67*/
+  int v13 = v20; // ecx /*0x5a6f67*/
   int v14; // esi
   v14 = (int16_t)v20 - *aP1; /*0x5a6f6e*/
   if ( (*((signed short *)(((unsigned char *)&(v20)) + 2))) - aP1[1] > v14 ) /*0x5a6f72*/
@@ -1617,21 +1580,18 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
       v15 = Math::RoundToInt((double)v24 * v25 * 2.328306437080797e-10); /*0x5a6fb9*/
     }
     while ( v15 > (unsigned int)v14 ); /*0x5a6fc0*/
-  int v28; // [esp+40h] [ebp+8h]
+    int v28; // [esp+40h] [ebp+8h]
     v28 = v15; /*0x5a6fc4*/
     if ( v15 > 0 ) /*0x5a6fc8*/
     {
-  int v16; // edi
-      v16 = v21 + v6; /*0x5a6fe0*/
-  int v17; // ebx
-      v17 = v22 + v7; /*0x5a6fe2*/
-  unsigned short *v18; // esi
+      int v16 = v21 + v6; // edi /*0x5a6fe0*/
+      int v17 = v22 + v7; // ebx /*0x5a6fe2*/
+      unsigned short *v18; // esi
       v18 = (unsigned short *)(4 * (((unsigned char)a4 - 4) & 7) + 9041544); /*0x5a6fe4*/
-  int16_t v19; // cx
-      v19 = v20; /*0x5a6feb*/
+      int16_t v19 = v20; // cx /*0x5a6feb*/
       while ( 1 ) /*0x5a7000*/
       {
-  int v31; // [esp+48h] [ebp+10h]
+        int v31; // [esp+48h] [ebp+10h]
         (*((unsigned short *)&(v31))) = v19 + *v18; /*0x5a7000*/
         (*(((unsigned short *)&(v31)) + 1)) = (*(((unsigned short *)&(v20)) + 1)) + v18[1]; /*0x5a700b*/
         (*((unsigned int *)&(v25))) = v5 + (int16_t)v31; /*0x5a7018*/
@@ -1701,14 +1661,13 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
       break; /*0x5a7117*/
     v23 = v16 + (int16_t)v4; /*0x5a711f*/
     v24 = v17 + (*((signed short *)(((unsigned char *)&(v21)) + 2))); /*0x5a712d*/
-  int v25; // [esp+3Ch] [ebp-8h]
+    int v25; // [esp+3Ch] [ebp-8h]
     v25 = v5 + v18; /*0x5a713b*/
-  int v26; // [esp+40h] [ebp-4h]
+    int v26; // [esp+40h] [ebp-4h]
     v26 = v6 + v19; /*0x5a7143*/
     if ( !IsAreaClearMap(&v23, a4 == 4, a4 == 4) ) /*0x5a714c*/
       break; /*0x5a714c*/
-  int v7; // eax
-    v7 = a4 & 7; /*0x5a7159*/
+    int v7 = a4 & 7; // eax /*0x5a7159*/
     (*((unsigned short *)&(v4))) = v4 + (*((unsigned short *)&(dword_89F688[v7]))); /*0x5a7185*/
     (*(((unsigned short *)&(v21)) + 1)) += (*(((unsigned short *)&(dword_89F688[v7])) + 1)); /*0x5a7189*/
   }
@@ -1719,8 +1678,7 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
   int v27; // [esp+54h] [ebp+10h]
   (*(((unsigned short *)&(v27)) + 1)) = (*(((unsigned short *)&(v21)) + 1)) + (*(((unsigned short *)&(dword_89F688[v8])) + 1)); /*0x5a71c1*/
   (*((unsigned short *)&(v27))) = v4 + (*((unsigned short *)&(dword_89F688[v8]))); /*0x5a71c6*/
-  int v10; // edi
-  v10 = v27; /*0x5a71cb*/
+  int v10 = v27; // edi /*0x5a71cb*/
   int v11; // eax
   v11 = (int16_t)v27 - *a1; /*0x5a71d7*/
   int16_t v22; // [esp+2Eh] [ebp-16h]
@@ -1731,20 +1689,19 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
   {
     do /*0x5a720e*/
     {
-  int64_t v20; // [esp+24h] [ebp-20h]
+      int64_t v20; // [esp+24h] [ebp-20h]
       v20 = (unsigned int)Random::State(&unk_ABE890); /*0x5a71f4*/
       v12 = Math::RoundToInt((double)v20 * 9.31322574832319e-10); /*0x5a7206*/
     }
     while ( (unsigned int)v12 > 3 ); /*0x5a720e*/
     if ( v12 > 0 ) /*0x5a7212*/
     {
-  int16_t v13; // cx
-      v13 = *v9; /*0x5a7214*/
-  int16_t v14; // si
+      int16_t v13 = *v9; // cx /*0x5a7214*/
+      int16_t v14; // si
       v14 = v9[1]; /*0x5a7217*/
       do /*0x5a7237*/
       {
-  int v28; // [esp+54h] [ebp+10h]
+        int v28; // [esp+54h] [ebp+10h]
         (*((unsigned short *)&(v28))) = v13 + v10; /*0x5a721e*/
         --v12; /*0x5a7229*/
         (*(((unsigned short *)&(v28)) + 1)) = v14 + v22; /*0x5a722a*/
@@ -1803,7 +1760,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
     || v9 - v8 >= dword_ABED04
     || v16 > dword_ABED08 )
   {
-  LABEL_31:
+    LABEL_31:
     (*((unsigned char *)&(result))) = 0; /*0x5a742a*/
   }
   else
@@ -1909,7 +1866,7 @@ int MapClass_IsAreaUniform(int * a1, char a2)
             v10 = *a1; /*0x5a7599*/
             if ( *a1 < *a1 + a1[2] ) /*0x5a75a2*/
               break; /*0x5a75a2*/
-  LABEL_28:
+            LABEL_28:
             if ( ++v8 >= a1[3] + a1[1] ) /*0x5a7626*/
               return 1; /*0x5a7626*/
           }
@@ -1952,8 +1909,7 @@ unsigned int PlaceMapSeedBuildingsStrategic(int a1)
   v37 = 6; /*0x5a78e3*/
   unsigned int v38[17]; // [esp+60h] [ebp-44h] BYREF
   v38[0] = 4; /*0x5a78e7*/
-  int v1; // edi
-  v1 = a1; /*0x5a78f3*/
+  int v1 = a1; // edi /*0x5a78f3*/
   v38[4] = 6; /*0x5a78fa*/
   v38[8] = 4; /*0x5a7902*/
   v38[3] = 4; /*0x5a7910*/
@@ -1977,8 +1933,7 @@ unsigned int PlaceMapSeedBuildingsStrategic(int a1)
   v38[12] = 2; /*0x5a796b*/
   unsigned int result; // eax
   result = (unsigned int)((uint64_t)(1374389535LL * v2) >> 32) >> 31; /*0x5a7972*/
-  int v4; // ebp
-  v4 = v2 / 50; /*0x5a797c*/
+  int v4 = v2 / 50; // ebp /*0x5a797c*/
   v38[16] = 4; /*0x5a797e*/
   int v30; // [esp+34h] [ebp-70h]
   v30 = v2 / 50; /*0x5a7987*/
@@ -1994,47 +1949,43 @@ unsigned int PlaceMapSeedBuildingsStrategic(int a1)
   {
     while ( v21 < v4 ) /*0x5a79b2*/
     {
-  unsigned int v6; // ebx
+      unsigned int v6; // ebx
       v6 = *(unsigned int *)(v1 + 16) - 1; /*0x5a79c3*/
-  int64_t v34; // [esp+4Ch] [ebp-58h]
+      int64_t v34; // [esp+4Ch] [ebp-58h]
       v34 = *(unsigned int *)(v1 + 16); /*0x5a79c7*/
-  double v22; // [esp+14h] [ebp-90h]
+      double v22; // [esp+14h] [ebp-90h]
       v22 = (double)v34; /*0x5a79cf*/
       do /*0x5a79fe*/
       {
-  int64_t v33; // [esp+44h] [ebp-60h]
+        int64_t v33; // [esp+44h] [ebp-60h]
         v33 = (unsigned int)Random::State(&unk_ABE890); /*0x5a79dd*/
         v7 = Math::RoundToInt((double)v33 * v22 * 2.328306437080797e-10); /*0x5a79f7*/
       }
       while ( v7 > v6 ); /*0x5a79fe*/
-  int v8; // edx
+      int v8; // edx
       v8 = *(unsigned int *)(v1 + 4); /*0x5a7a00*/
-  int v9; // edi
-      v9 = 0; /*0x5a7a03*/
-  char v10; // bl
-      v10 = 0; /*0x5a7a05*/
-  int v11; // eax
+      int v9 = 0; // edi /*0x5a7a03*/
+      char v10 = 0; // bl /*0x5a7a05*/
+      int v11; // eax
       v11 = *(unsigned int *)(v8 + 4 * v7); /*0x5a7a07*/
-  int v12; // ecx
+      int v12; // ecx
       v12 = (*((signed short *)(((unsigned char *)&(v11)) + 2))); /*0x5a7a0e*/
-  int v24; // [esp+1Ch] [ebp-88h] BYREF
+      int v24; // [esp+1Ch] [ebp-88h] BYREF
       v24 = (int16_t)v11; /*0x5a7a16*/
-  int v26; // [esp+24h] [ebp-80h]
+      int v26; // [esp+24h] [ebp-80h]
       v26 = 0; /*0x5a7a1c*/
-  int v27; // [esp+28h] [ebp-7Ch]
+      int v27; // [esp+28h] [ebp-7Ch]
       v27 = 0; /*0x5a7a20*/
-  int *v13; // eax
-      v13 = v38; /*0x5a7a24*/
-  int v25; // [esp+20h] [ebp-84h]
+      int *v13 = v38; // eax /*0x5a7a24*/
+      int v25; // [esp+20h] [ebp-84h]
       v25 = v12; /*0x5a7a28*/
-  int *v23; // [esp+14h] [ebp-90h]
+      int *v23; // [esp+14h] [ebp-90h]
       v23 = v38; /*0x5a7a2c*/
       while ( v9 < 5 ) /*0x5a7a39*/
       {
-  int v14; // edx
+        int v14; // edx
         v14 = *(v13 - 1); /*0x5a7a3b*/
-  int v15; // eax
-        v15 = *v13; /*0x5a7a3e*/
+        int v15 = *v13; // eax /*0x5a7a3e*/
         v26 = v14; /*0x5a7a44*/
         v27 = v15; /*0x5a7a48*/
         if ( (uint8_t)CellClass::ProcessUpdate(&v24) ) /*0x5a7a4c*/
@@ -2045,28 +1996,24 @@ unsigned int PlaceMapSeedBuildingsStrategic(int a1)
         {
           do /*0x5a7a99*/
           {
-  int64_t v32; // [esp+3Ch] [ebp-68h]
+            int64_t v32; // [esp+3Ch] [ebp-68h]
             v32 = (unsigned int)Random::State(&unk_ABE890); /*0x5a7a7b*/
             v16 = Math::RoundToInt((double)v32 * 0.000000001396983862248478); /*0x5a7a91*/
           }
           while ( v16 > 5 ); /*0x5a7a99*/
-  int v17; // edi
-          v17 = 0; /*0x5a7aa1*/
-  int v18; // ebp
-          v18 = v16 + dword_AA10A4 + 8; /*0x5a7aa3*/
+          int v17 = 0; // edi /*0x5a7aa1*/
+          int v18 = v16 + dword_AA10A4 + 8; // ebp /*0x5a7aa3*/
           if ( v27 / 2 > 0 ) /*0x5a7ab2*/
           {
-  int v19; // ecx
-            v19 = v26; /*0x5a7ab4*/
+            int v19 = v26; // ecx /*0x5a7ab4*/
             do /*0x5a7b08*/
             {
-  int v20; // esi
-              v20 = 0; /*0x5a7aba*/
+              int v20 = 0; // esi /*0x5a7aba*/
               if ( v19 / 2 > 0 ) /*0x5a7ac3*/
               {
                 do /*0x5a7afa*/
                 {
-  unsigned short v28[2]; // [esp+2Ch] [ebp-78h] BYREF
+                  unsigned short v28[2]; // [esp+2Ch] [ebp-78h] BYREF
                   v28[1] = v25 + 2 * v17; /*0x5a7ad7*/
                   v28[0] = v24 + 2 * v20; /*0x5a7ae2*/
                   PlaceMapSeedClassBuildings(v18, v28, -1, -1); /*0x5a7ae7*/
@@ -2100,8 +2047,7 @@ namespace gamemd {
 int IsoTile_Draw(int a1, unsigned short * a2, char a3)
 {
 
-  unsigned short *v3; // esi
-  v3 = a2; /*0x5a7faa*/
+  unsigned short *v3 = a2; // esi /*0x5a7faa*/
   unsigned int *v4; // edi
   v4 = (unsigned int *)*((unsigned int *)dword_A8ED2C + a1); /*0x5a7fac*/
   unsigned int *v14; // [esp+Ch] [ebp-Ch]
@@ -2113,27 +2059,24 @@ int IsoTile_Draw(int a1, unsigned short * a2, char a3)
   if ( result ) /*0x5a7fc7*/
   {
     result = 0; /*0x5a7fd3*/
-  int v13; // [esp+8h] [ebp-10h]
+    int v13; // [esp+8h] [ebp-10h]
     v13 = 0; /*0x5a7fd7*/
     if ( (int)v4[186] > 0 ) /*0x5a7fdb*/
     {
-  int v6; // ebp
-      v6 = dword_ABED04; /*0x5a7fe3*/
+      int v6 = dword_ABED04; // ebp /*0x5a7fe3*/
       while ( 1 ) /*0x5a7fef*/
       {
-  int v7; // edi
+        int v7; // edi
         v7 = v4[185]; /*0x5a7fef*/
-  int i; // ebx
+        int i; // ebx
         for ( i = 0; i < v7; v7 = v14[185] ) /*0x5a7ff9*/
         {
-  int16_t v9; // dx
+          int16_t v9; // dx
           v9 = v3[1] + result; /*0x5a8005*/
-  int v10; // esi
+          int v10; // esi
           v10 = (int16_t)(i + *v3); /*0x5a800c*/
-  int v11; // ecx
-          v11 = v9; /*0x5a800f*/
-  int v12; // edx
-          v12 = v9 + v10; /*0x5a8012*/
+          int v11 = v9; // ecx /*0x5a800f*/
+          int v12 = v9 + v10; // edx /*0x5a8012*/
           if ( v12 > v6 ) /*0x5a8017*/
           {
             if ( v10 - v11 >= v6 || v11 - v10 >= v6 || v12 > dword_ABED08 ) /*0x5a802f*/
@@ -2230,7 +2173,7 @@ int PlaceNeutralCreeps(unsigned short * a1)
         v9 = operator new(0x8E8u); /*0x5a8804*/
         if ( !v9 ) /*0x5a880b*/
         {
-  LABEL_13:
+          LABEL_13:
           v8 = 0; /*0x5a882f*/
           goto LABEL_14; /*0x5a882f*/
         }
@@ -2248,7 +2191,7 @@ int PlaceNeutralCreeps(unsigned short * a1)
         ExitCellByNameFactory = (*(&off_82B240 + v5))->FindExitCellByName(); /*0x5a87df*/
         v8 = (unsigned int *)(/*0x5a87f6*/ (int)v6)->Construct(*((unsigned int *)dword_A8E34C + ExitCellByNameFactory), OwnerHouseClass);
       }
-  LABEL_14:
+      LABEL_14:
       v11 = 0; /*0x5a8831*/
       v20 = 0; /*0x5a8833*/
       while ( v11 < 60 ) /*0x5a883a*/
@@ -2300,7 +2243,7 @@ int PlaceNeutralCreeps(unsigned short * a1)
       }
       if ( v8 ) /*0x5a8997*/
         v8->ScalarDtor_1(1); /*0x5a899f*/
-  LABEL_27:
+      LABEL_27:
       result = v23; /*0x5a89a2*/
       ++v22; /*0x5a89b1*/
       if ( v24 >= v23 ) /*0x5a89b5*/
@@ -2527,11 +2470,11 @@ int MapSeed_ScheduleBuildings(int * a1)
       }
       v9 = v39[0]; /*0x5a8d02*/
     }
-  LABEL_34:
+    LABEL_34:
     if ( !v38 ) /*0x5a8d0c*/
     {
       v11 = v39[2]; /*0x5a8dd2*/
-  LABEL_48:
+      LABEL_48:
       if ( v9 != 0xFFFF ) /*0x5a8ddc*/
       {
         Object_Helper_5A7E90(v9, &v39[1]); /*0x5a8de2*/
@@ -2554,7 +2497,7 @@ int MapSeed_ScheduleBuildings(int * a1)
       }
       if ( v11 != 0xFFFF ) /*0x5a8e2b*/
         PlaceMapSeedClassBuildings(v11, &v39[3], -1, -1); /*0x5a8e37*/
-  LABEL_59:
+      LABEL_59:
       if ( Block ) /*0x5a8e42*/
         operator delete((void *)(Block)); /*0x5a8e45*/
       goto LABEL_61; /*0x5a8e45*/
@@ -2583,7 +2526,7 @@ int MapSeed_ScheduleBuildings(int * a1)
       }
       goto LABEL_59; /*0x5a8d72*/
     }
-  LABEL_61:
+    LABEL_61:
     v8 = v52; /*0x5a8e4d*/
     if ( v52 ) /*0x5a8e53*/
     {
@@ -2671,7 +2614,7 @@ char PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
   while ( 1 ) /*0x5a8fba*/
   {
     v6 = v19; /*0x5a8fba*/
-  LABEL_8:
+    LABEL_8:
     v8 = v6 + 4 * a1; /*0x5a8fc5*/
     v9 = (int)(&off_82B5B0)[v8]; /*0x5a8fd1*/
     v26 = dword_82B530[v8]; /*0x5a8fd7*/
@@ -2699,11 +2642,11 @@ char PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
       v11 = Math::RoundToInt((double)v29 * (double)(unsigned int)v9 * 2.328306437080797e-10); /*0x5a9087*/
     }
     while ( v11 > v9 - 1 ); /*0x5a908e*/
-  LABEL_14:
+    LABEL_14:
     v20 = v11; /*0x5a9092*/
     if ( v9 > 0 ) /*0x5a9096*/
       break; /*0x5a9096*/
-  LABEL_22:
+    LABEL_22:
     v17 = (v6 + 1) % (a3 + 1); /*0x5a912c*/
     v19 = v17; /*0x5a913b*/
     if ( !v17 ) /*0x5a913f*/
@@ -2839,8 +2782,7 @@ unsigned int * InitializePathData()
   dword_ABE37C = 2;
   int v3; // eax
   v3 = operator new(0x10u);
-  int v4; // ebp
-  v4 = v3;
+  int v4 = v3; // ebp
   if ( v3 )
   {
     Array::ForEach(((Array *)v3), 8, 2, (int (*)(int))Cell::Clear);
@@ -3446,8 +3388,7 @@ unsigned int * InitializePathData()
   *(unsigned int *)&dword_ABE4D0->vtable1[8] = (unsigned int)v120;
   (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE4D0->vtable1[12] = 3;
-  rc_ptr_base *v62; // eax
-  v62 = v118;
+  rc_ptr_base *v62 = v118; // eax
   (*((unsigned short *)&(v118))) = 2;
   dword_ABE4D0->uniqueId = (int)v62;
   (*(((unsigned short *)&(v118)) + 1)) = 2;
@@ -3474,8 +3415,7 @@ unsigned int * InitializePathData()
   *(unsigned int *)&dword_ABE4DC->vtable1[8] = (unsigned int)v120;
   (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE4DC->vtable1[12] = 5;
-  rc_ptr_base *v65; // eax
-  v65 = v118;
+  rc_ptr_base *v65 = v118; // eax
   (*((unsigned short *)&(v118))) = 1;
   dword_ABE4DC->uniqueId = (int)v65;
   (*(((unsigned short *)&(v118)) + 1)) = 1;
@@ -3502,8 +3442,7 @@ unsigned int * InitializePathData()
   *(unsigned int *)&dword_ABE4E8->vtable1[8] = (unsigned int)v120;
   (*((unsigned short *)&(v120))) = 2;
   *(unsigned int *)&dword_ABE4E8->vtable1[12] = 7;
-  rc_ptr_base *v68; // eax
-  v68 = v118;
+  rc_ptr_base *v68 = v118; // eax
   (*((unsigned short *)&(v118))) = 2;
   dword_ABE4E8->uniqueId = (int)v68;
   (*(((unsigned short *)&(v118)) + 1)) = 2;
@@ -3555,8 +3494,7 @@ unsigned int * InitializePathData()
   *(unsigned int *)&dword_ABE500->vtable1[8] = (unsigned int)v120;
   (*((unsigned short *)&(v120))) = 3;
   *(unsigned int *)&dword_ABE500->vtable1[12] = 5;
-  rc_ptr_base *v73; // eax
-  v73 = v118;
+  rc_ptr_base *v73 = v118; // eax
   (*((unsigned short *)&(v118))) = 0;
   dword_ABE500->uniqueId = (int)v73;
   (*(((unsigned short *)&(v118)) + 1)) = 2;
@@ -4291,7 +4229,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   __asm { fnstsw ax }
   if ( (_AX & 0x4000) != 0 ) /*0x5af5d0*/
   {
-  float v31; // [esp+20h] [ebp-8h]
+    float v31; // [esp+20h] [ebp-8h]
     v31 = 0.0; /*0x5af5ea*/
     v28 = 1.0; /*0x5af5f2*/
   }
@@ -4421,14 +4359,12 @@ namespace gamemd {
 float * MultiplyMatrix3x4(ObjectClass * aP0, float *a1, float *a2)
 {
 
-  float *result; // eax
-  result = aP0; /*0x5af983*/
+  float *result = aP0; // eax /*0x5af983*/
   float v14; // [esp+10h] [ebp-60h]
   v14 = a1[4]; /*0x5af98a*/
   float v13; // [esp+Ch] [ebp-64h]
   v13 = a1[5]; /*0x5af991*/
-  double v4; // st7
-  v4 = *a1; /*0x5af998*/
+  double v4 = *a1; // st7 /*0x5af998*/
   float v12; // [esp+8h] [ebp-68h]
   v12 = a1[6]; /*0x5af99a*/
   double v5; // st6
@@ -4441,8 +4377,7 @@ float * MultiplyMatrix3x4(ObjectClass * aP0, float *a1, float *a2)
   v16 = a1[9]; /*0x5af9ae*/
   float v15; // [esp+14h] [ebp-5Ch]
   v15 = a1[10]; /*0x5af9b5*/
-  double v8; // st4
-  v8 = *a2; /*0x5af9bd*/
+  double v8 = *a2; // st4 /*0x5af9bd*/
   double v9; // st3
   v9 = a2[4]; /*0x5af9bf*/
   double v10; // st2
@@ -4488,8 +4423,7 @@ double sub_5A1190(short * a1, short * a2, double a3)
 {
   double v4; // st7
 
-  int v3; // esi
-  v3 = *a2 - *a1; /*0x5a11aa*/
+  int v3 = *a2 - *a1; // esi /*0x5a11aa*/
   if ( v3 ) /*0x5a11b8*/
   {
     v4 = Math::ArcTan(-((double)(a2[1] - a1[1]) / (double)v3)); /*0x5a11ce*/
@@ -4522,8 +4456,7 @@ namespace gamemd {  // G42.18 ns repair
 double sub_5A2ED0(short * a1, short * a2)
 {
 
-  int v2; // eax
-  v2 = *a1 - *a2; /*0x5a2eec*/
+  int v2 = *a1 - *a2; // eax /*0x5a2eec*/
   int v3; // edx
   v3 = a1[1] - a2[1]; /*0x5a2eee*/
   double v5; // [esp+14h] [ebp-8h]
@@ -4536,8 +4469,7 @@ namespace gamemd {  // G42.18 ns repair
 double sub_5A4AE0(short * a1, short * a2)
 {
 
-  int v2; // eax
-  v2 = *a1 - *a2; /*0x5a4afc*/
+  int v2 = *a1 - *a2; // eax /*0x5a4afc*/
   int v3; // edx
   v3 = a1[1] - a2[1]; /*0x5a4afe*/
   double v5; // [esp+14h] [ebp-8h]
@@ -4550,8 +4482,7 @@ namespace gamemd {  // G42.18 ns repair
 double sub_5A4FA0(short * a1, short * a2)
 {
 
-  int v2; // eax
-  v2 = *a1 - *a2; /*0x5a4fbc*/
+  int v2 = *a1 - *a2; // eax /*0x5a4fbc*/
   int v3; // edx
   v3 = a1[1] - a2[1]; /*0x5a4fbe*/
   double v5; // [esp+14h] [ebp-8h]
@@ -4566,8 +4497,7 @@ double sub_5A5AE0(short * a1, short * a2)
 
   signed int v2; // ecx
   v2 = abs32(a1[1] - a2[1]); /*0x5a5b06*/
-  int64_t v3; // rax
-  v3 = *a1 - *a2; /*0x5a5b08*/
+  int64_t v3 = *a1 - *a2; // rax /*0x5a5b08*/
   int v5; // [esp+10h] [ebp+4h]
   v5 = ((*(((unsigned int *)&(v3)) + 1)) ^ v3) - (*(((unsigned int *)&(v3)) + 1)); /*0x5a5b0f*/
   if ( v5 <= v2 ) /*0x5a5b13*/
@@ -4581,25 +4511,20 @@ unsigned int * globalHelper_0A7640(unsigned int *v3, int aP1)
 {
   bool v7; // zf
 
-  int16_t v2; // ax
-  v2 = 0; /*0x5a7643*/
-  int16_t v3; // di
-  v3 = 999; /*0x5a764d*/
-  int16_t v4; // bp
-  v4 = 0; /*0x5a7651*/
-  int v5; // esi
-  v5 = aP1->mode - 1; /*0x5a7654*/
-  int16_t v6; // bx
-  v6 = 999; /*0x5a7655*/
+  int16_t v2 = 0; // ax /*0x5a7643*/
+  int16_t v3 = 999; // di /*0x5a764d*/
+  int16_t v4 = 0; // bp /*0x5a7651*/
+  int v5 = aP1->mode - 1; // esi /*0x5a7654*/
+  int16_t v6 = 999; // bx /*0x5a7655*/
   if ( v5 >= 0 ) /*0x5a7658*/
   {
-  int *v9; // [esp+10h] [ebp-Ch]
+    int *v9; // [esp+10h] [ebp-Ch]
     v9 = (int *)(aP1->mode + 4 * v5); /*0x5a7661*/
-  int v10; // [esp+14h] [ebp-8h]
+    int v10; // [esp+14h] [ebp-8h]
     v10 = aP1->mode; /*0x5a7665*/
     do /*0x5a76ac*/
     {
-  int v11; // [esp+18h] [ebp-4h]
+      int v11; // [esp+18h] [ebp-4h]
       v11 = *v9; /*0x5a7672*/
       if ( (int16_t)*v9 < v3 ) /*0x5a7676*/
         v3 = *v9; /*0x5a7678*/
@@ -4627,7 +4552,7 @@ namespace gamemd {
 ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 {
 
-    this->AbstractClass = (void *)*a2;
+  this->AbstractClass = (void *)*a2;
   this->vfptr = (void *)aP2; /*0x5a992e*/
   return this; /*0x5a9931*/
 
@@ -4698,13 +4623,11 @@ namespace gamemd {
 void sub_5AC190()
 {
 
-  unsigned int *v0; // esi
-  v0 = &unk_ABE890; /*0x5ac192*/
-  int v1; // edi
-  v1 = 109; /*0x5ac197*/
+  unsigned int *v0 = &unk_ABE890; // esi /*0x5ac192*/
+  int v1 = 109; // edi /*0x5ac197*/
   do /*0x5ac1b2*/
   {
-  void *v2; // eax
+    void *v2; // eax
     v2 = (void *)*(v0 - 3); /*0x5ac19c*/
     v0 -= 3; /*0x5ac19f*/
     operator delete((void *)(v2)); /*0x5ac1a3*/
@@ -4871,7 +4794,7 @@ char E4Recv_5AE500::sub_5AE500(const char ** a2)
   if ( (unsigned char)result ) /*0x5ae513*/
   {
     result = sub_5CF840((ObjectClass *)this->customSound_controller, (const char **)a2); /*0x5ae519*/
-  ObjectClass *v4; // [esp+0h] [ebp-8h]
+    ObjectClass *v4; // [esp+0h] [ebp-8h]
     if ( result ) /*0x5ae520*/
       return (const char **)nullsub_24(v4); /*0x5ae524*/
   }
@@ -4885,8 +4808,7 @@ namespace gamemd {
 DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
 {
 
-  ObjectClass *v3; // esi
-  v3 = this; /*0x5ae538*/
+  ObjectClass *v3 = this; // esi /*0x5ae538*/
   ((String *)this->String_50))->Reassign(aP1); /*0x5ae541*/
   DWORD result; // eax
   result = TimerGetTicks(); /*0x5ae54a*/
@@ -4947,8 +4869,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
   int occupant; // [esp+8h] [ebp-1Ch]
   occupant = this->occupant; /*0x5aec9e*/
   LODWORD(v19) = this->q050; /*0x5aeca2*/
-  int result; // eax
-  result = this->owningHouseIndex; /*0x5aeca6*/
+  int result = this->owningHouseIndex; // eax /*0x5aeca6*/
   __asm { faddp st(1), st } /*0x5aecac*/
   int v16; // [esp+10h] [ebp-14h]
   v16 = result; /*0x5aecae*/
@@ -5061,8 +4982,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
   }
   void *vtable1; // [esp+0h] [ebp-1Ch]
   vtable1 = _ESI->vfptr1; /*0x5aed95*/
-  int result; // eax
-  result = _ESI->occupant; /*0x5aed99*/
+  int result = _ESI->occupant; // eax /*0x5aed99*/
   int v13; // [esp+4h] [ebp-18h]
   v13 = result; /*0x5aed9c*/
   void *vtable2; // [esp+8h] [ebp-14h]
@@ -5186,8 +5106,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
   int abstractFlags; // [esp+8h] [ebp-1Ch]
   abstractFlags = this->q050; /*0x5aeead*/
   LODWORD(v19) = this->q050; /*0x5aeeb1*/
-  int result; // eax
-  result = this->q018; /*0x5aeeb5*/
+  int result = this->q018; // eax /*0x5aeeb5*/
   __asm { faddp st(1), st } /*0x5aeebb*/
   int v16; // [esp+10h] [ebp-14h]
   v16 = result; /*0x5aeebd*/
@@ -5277,20 +5196,15 @@ namespace gamemd {
 void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
 {
 
-  double v3; // st7
-  v3 = this->vtable2; /*0x5af000*/
-  double v4; // st6
-  v4 = this->vtable3; /*0x5af003*/
+  double v3 = this->vtable2; // st7 /*0x5af000*/
+  double v4 = this->vtable3; // st6 /*0x5af003*/
   this->vtable2 = v4 * aP1 + v3 * aP2; /*0x5af014*/
   this->vtable3 = v4 * aP2 - v3 * aP1; /*0x5af023*/
-  double v5; // st7
-  v5 = this->abstractFlags; /*0x5af026*/
-  double v6; // st6
-  v6 = this->nextArrayIndex; /*0x5af029*/
+  double v5 = this->abstractFlags; // st7 /*0x5af026*/
+  double v6 = this->nextArrayIndex; // st6 /*0x5af029*/
   this->abstractFlags = v6 * aP1 + v5 * aP2; /*0x5af03a*/
   this->nextArrayIndex = v6 * aP2 - v5 * aP1; /*0x5af049*/
-  double v7; // st7
-  v7 = this->objectTypeFlags; /*0x5af04c*/
+  double v7 = this->objectTypeFlags; // st7 /*0x5af04c*/
   double v8; // st6
   v8 = *(&this->vtable20); /*0x5af04f*/
   this->objectTypeFlags = v8 * aP1 + v7 * aP2; /*0x5af060*/
@@ -5303,20 +5217,15 @@ namespace gamemd {
 void E4Recv_5AF120::sub_5AF120(float a2, float a3)
 {
 
-  double v3; // st7
-  v3 = *this; /*0x5af120*/
-  double v4; // st6
-  v4 = this->vtable3; /*0x5af122*/
+  double v3 = *this; // st7 /*0x5af120*/
+  double v4 = this->vtable3; // st6 /*0x5af122*/
   *this = v3 * a3 - v4 * a2; /*0x5af133*/
   this->vtable3 = v3 * a2 + v4 * a3; /*0x5af143*/
-  double v5; // st7
-  v5 = this->uniqueId; /*0x5af146*/
-  double v6; // st6
-  v6 = this->nextArrayIndex; /*0x5af149*/
+  double v5 = this->uniqueId; // st7 /*0x5af146*/
+  double v6 = this->nextArrayIndex; // st6 /*0x5af149*/
   this->uniqueId = v5 * a3 - v6 * a2; /*0x5af15a*/
   this->nextArrayIndex = v5 * a2 + v6 * a3; /*0x5af16b*/
-  double v7; // st7
-  v7 = this->NeedsSaveOrLink; /*0x5af16e*/
+  double v7 = this->NeedsSaveOrLink; // st7 /*0x5af16e*/
   double v8; // st6
   v8 = *(&this->vtable20); /*0x5af171*/
   this->NeedsSaveOrLink = v7 * a3 - v8 * a2; /*0x5af182*/
@@ -5433,8 +5342,7 @@ float * Matrix3x3_InvertSigns(float * a1, float * a2)
   v4 = v7[2] * a2[11]; /*0x5afc49*/
   v7[4] = a2[1]; /*0x5afc4c*/
   v7[5] = a2[5]; /*0x5afc53*/
-  double v5; // st7
-  v5 = v3 + v4; /*0x5afc5a*/
+  double v5 = v3 + v4; // st7 /*0x5afc5a*/
   double v6; // st6
   v6 = v7[1] * a2[7]; /*0x5afc60*/
   v7[6] = a2[9]; /*0x5afc63*/

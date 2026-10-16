@@ -12,8 +12,7 @@ namespace gamemd {  // G42.18 ns repair
 int TriggerActionQueue::ProcessAll()
 {
 
-  int result; // eax
-  result = g_GameObjectCleanup; /*0x6e5820*/
+  int result = g_GameObjectCleanup; // eax /*0x6e5820*/
   int i; // esi
   for ( i = 0; i < g_GameObjectCleanup; ++i ) /*0x6e582d*/
   {

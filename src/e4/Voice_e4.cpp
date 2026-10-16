@@ -18,8 +18,7 @@ int Voice::Stop(void *a1, void *a2)
   if ( (v1->u32_A4 & 5) != 0 ) /*0x4025c3*/
     (*(void (**)(int))(v1->u32_D4 + 16))(v1); /*0x4025cd*/
   (*(void (**)(int))(v1->u32_D4 + 44))(v1); /*0x4025d8*/
-  int result; // eax
-  result = v1->q0BC; /*0x4025db*/
+  int result = v1->q0BC; // eax /*0x4025db*/
   if ( result ) /*0x4025e3*/
     result = result(v1); /*0x4025e7*/
   v1->u32_168 = 0; /*0x4025e9*/
@@ -32,11 +31,10 @@ int Voice::DetachChannel()
 {
   int result; // eax
 
-  int v2; // ecx
-  v2 = this->u32_B0; /*0x404146*/
+  int v2 = this->u32_B0; // ecx /*0x404146*/
   if ( v2 && this == *(Voice **)(v2 + 192) ) /*0x404156*/
   {
-  Voice *v4; // [esp+0h] [ebp-8h]
+    Voice *v4; // [esp+0h] [ebp-8h]
     if ( (this->u32_18 & 2) != 0 ) /*0x40415c*/
       ((Voice *)(v4))->Stop(); /*0x40415e*/
     AudioStream::ReleaseChannel(this->u32_B0); /*0x404169*/

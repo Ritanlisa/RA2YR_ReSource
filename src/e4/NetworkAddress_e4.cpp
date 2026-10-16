@@ -14,8 +14,7 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * NetworkAddress::Assign(unsigned int *a1, int aP2, int16_t a4)
 {
 
-  unsigned int *result; // eax
-  result = &this->m_IP; /*0x53ece4*/
+  unsigned int *result = &this->m_IP; // eax /*0x53ece4*/
   char *m_Port; // ecx
   m_Port = (char *)(this->m_Port); /*0x53ece9*/
   *(unsigned int *)m_Port = *(unsigned int *)aP2; /*0x53ecec*/

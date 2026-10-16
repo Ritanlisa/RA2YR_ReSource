@@ -15,23 +15,20 @@ namespace gamemd {  // G42.18 ns repair
 DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
 {
 
-  int v3; // eax
-  v3 = *&Block->__pad_004; /*0x69d523*/
+  int v3 = *&Block->__pad_004; // eax /*0x69d523*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x69d526*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x69d530*/
   {
-  int v4; // ecx
+    int v4; // ecx
     v4 = *(unsigned int *)(v3 - 4); /*0x69d53b*/
-  void *v5; // ebx
+    void *v5; // ebx
     v5 = (void *)(v3 - 4); /*0x69d53f*/
-  ObjectClass *v6; // esi
+    ObjectClass *v6; // esi
     v6 = (ObjectClass *)(v3 + 4 * v4); /*0x69d543*/
-  int v7; // ecx
-    v7 = v4 - 1; /*0x69d546*/
+    int v7 = v4 - 1; // ecx /*0x69d546*/
     if ( v7 >= 0 ) /*0x69d547*/
     {
-  int v8; // ebp
-      v8 = v7 + 1; /*0x69d54a*/
+      int v8 = v7 + 1; // ebp /*0x69d54a*/
       do /*0x69d558*/
       {
         v6 = (ObjectClass *)((char *)v6 - 4); /*0x69d54d*/

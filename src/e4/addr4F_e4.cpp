@@ -141,7 +141,7 @@ int InGameUI_Open()
       }
       dwNewLong = 1; /*0x4f1170*/
     }
-  LABEL_16:
+    LABEL_16:
     ((Dialog *)(v2))->Destroy(); /*0x4f1178*/
   }
   if ( dwNewLong == 1004 ) /*0x4f1189*/
@@ -171,7 +171,7 @@ long sub_4F1840()
       }
       dwNewLong = 1; /*0x4f1891*/
     }
-  LABEL_7:
+    LABEL_7:
     ((Dialog *)(Dialog))->Destroy(); /*0x4f1899*/
   }
   return dwNewLong; /*0x4f18a4*/
@@ -249,7 +249,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         while ( v11 ); /*0x4f19bd*/
         if ( v8 < 2 || dword_A83D4C->defeated ) /*0x4f19ca*/
         {
-  LABEL_18:
+          LABEL_18:
           ShowWindow(v7, 0); /*0x4f1a0e*/
         }
         else
@@ -266,7 +266,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         SendMessageA(v7, 0x4B2u, 0, (LPARAM)v9); /*0x4f1969*/
         dword_A8EE80 = 5; /*0x4f196b*/
       }
-  LABEL_19:
+      LABEL_19:
       sub_603E40((int)DlgItem, dword_A8EE7C); /*0x4f1a14*/
       sub_603E40((int)v7, dword_A8EE80); /*0x4f1a29*/
       return 0; /*0x4f1a34*/
@@ -380,7 +380,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
                    1);
         if ( Config ) /*0x4f1e52*/
         {
-  LABEL_18: v21 = (unsigned int)(*(int (****)(unsigned int, int))(v8 + 84));
+          LABEL_18: v21 = (unsigned int)(*(int (****)(unsigned int, int))(v8 + 84));
           if ( v21 ) /*0x4f1f71*/
             UI_Load_5D1C90((ObjectClass *)(v8 + 4), v21, (int (***)(unsigned int, int))Config); /*0x4f1f77*/
           else
@@ -503,9 +503,9 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
     }
     while ( v29 <= v38.vfptr.referenceCount ); /*0x4f210e*/
   }
-  DeleteAndZero((ObjectClass *)&v38.vfptr.nextArrayIndex); /*0x4f2118*/
-  DeleteAndZero((ObjectClass *)&v38.vfptr.vfptr2); /*0x4f2121*/
-  return (char **)v38.vfptr.NeedsSaveOrLink; /*0x4f1ccf*/
+    DeleteAndZero((ObjectClass *)&v38.vfptr.nextArrayIndex); /*0x4f2118*/
+    DeleteAndZero((ObjectClass *)&v38.vfptr.vfptr2); /*0x4f2121*/
+    return (char **)v38.vfptr.NeedsSaveOrLink; /*0x4f1ccf*/
 }
 }
 // 0x4F2300
@@ -531,16 +531,14 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     1);
   char v17; // [esp+1Dh] [ebp-31h]
   v17 = 0; /*0x4f235d*/
-  State *v4; // edi
-  v4 = 0; /*0x4f2362*/
+  State *v4 = 0; // edi /*0x4f2362*/
   Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x4f2364*/
-  int v5; // eax
-  v5 = this->M84; /*0x4f2369*/
+  int v5 = this->M84; // eax /*0x4f2369*/
   if ( v5 ) /*0x4f236e*/
     MSEngine::ProcessEvents((MSEngine *)this->vfptr + 16), v5, 300000); /*0x4f2379*/
   int v6; // eax
   v6 = (*((int (**)(DSurface *, _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))DSurface_Alternate->u32_78 /*0x4f238e*/
-        + 30))(
+  + 30))(
          DSurface_Alternate,
          &v23);
   ((Team *)((Team *)this->vfptr + 16)))->ReleaseAll(v6); /*0x4f2394*/
@@ -550,28 +548,28 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x4f23a8*/
     DDraw::HandleSuspend((DDraw *)this->vfptr + 16)); /*0x4f23ad*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4f23ba*/
-  int v7; // esi
+    int v7; // esi
     v7 = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer); /*0x4f23ce*/
-  unsigned int v18[2]; // [esp+1Eh] [ebp-30h] BYREF
+    unsigned int v18[2]; // [esp+1Eh] [ebp-30h] BYREF
     v18[0] = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 44))(stru_887598.lineTrailer); /*0x4f23db*/
     v18[1] = v7; /*0x4f23df*/
     if ( EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer) ) /*0x4f23e3*/
     {
-  uint16_t v8; // ax
+      uint16_t v8; // ax
       v8 = EventQueue::Read(*(EventQueue **)&g_BinkMoviePlayer); /*0x4f23f7*/
       v8 = v8; /*0x4f23ff*/
       if ( v8 == 1 || v8 == 13 ) /*0x4f2411*/
       {
         v11 = 0; /*0x4f24a7*/
         *(unsigned int *)&v21.m_1[3] = this->M84 + 4); /*0x4f24a9*/
-  int v22; // [esp+3Ah] [ebp-14h]
+        int v22; // [esp+3Ah] [ebp-14h]
         v22 = 0; /*0x4f24b1*/
         *(unsigned int *)v21.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f24b5*/
         if ( Map::CanScroll(&v21) ) /*0x4f24bd*/
         {
           do /*0x4f24f6*/
           {
-  int v12; // ecx
+            int v12; // ecx
             v12 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v21.m_1[3] + 4) + 4 * v22); /*0x4f24d2*/
             if ( (*(uint8_t (**)(int, unsigned int *))(*(unsigned int *)v12 + 8))(v12, v18) ) /*0x4f24dc*/
               break; /*0x4f24e1*/
@@ -586,14 +584,14 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       else
       {
         *(unsigned int *)&v19.m_1[3] = this->M84 + 4); /*0x4f241e*/
-  int v20; // [esp+2Eh] [ebp-20h]
+        int v20; // [esp+2Eh] [ebp-20h]
         v20 = 0; /*0x4f2422*/
         *(unsigned int *)v19.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f242a*/
         if ( Map::CanScroll(&v19) ) /*0x4f2432*/
         {
           do /*0x4f2467*/
           {
-  int v10; // ecx
+            int v10; // ecx
             v10 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v19.m_1[3] + 4) + 4 * v20); /*0x4f2448*/
             if ( (*(uint8_t (**)(int, int))(*(unsigned int *)v10 + 4))(v10, v8) ) /*0x4f244d*/
               break; /*0x4f2452*/
@@ -621,17 +619,16 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     }
     else
     {
-  State *v13; // esi
-      v13 = 0; /*0x4f2553*/
+      State *v13 = 0; // esi /*0x4f2553*/
       *(unsigned int *)&v23.m_1[3] = this->M84 + 4); /*0x4f2559*/
-  int v24; // [esp+46h] [ebp-8h]
+      int v24; // [esp+46h] [ebp-8h]
       v24 = 0; /*0x4f255d*/
       *(unsigned int *)v23.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2561*/
       if ( Map::CanScroll(&v23) ) /*0x4f2569*/
       {
         do /*0x4f25a2*/
         {
-  int v14; // ecx
+          int v14; // ecx
           v14 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v23.m_1[3] + 4) + 4 * v24); /*0x4f257e*/
           if ( (*(uint8_t (**)(int, unsigned int *))(*(unsigned int *)v14 + 8))(v14, v18) ) /*0x4f2588*/
             break; /*0x4f258d*/
@@ -714,40 +711,36 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
     if ( ((String *)&v19.ptr_4)->Length() ) /*0x4f2d77*/
     {
-  int *v8; // ebp
-      v8 = 0; /*0x4f2d9e*/
-  int v22; // [esp+2Ch] [ebp-18h] BYREF
+      int *v8 = 0; // ebp /*0x4f2d9e*/
+      int v22; // [esp+2Ch] [ebp-18h] BYREF
       v22 = 0; /*0x4f2da9*/
-  int v23; // [esp+30h] [ebp-14h]
+      int v23; // [esp+30h] [ebp-14h]
       v23 = 0; /*0x4f2dad*/
       ((String *)(&v21))->Assign((const char *)(aOrigin)); /*0x4f2db1*/
-  int *CoordPair; // eax
+      int *CoordPair; // eax
       CoordPair = (int *)((a2)->GetCoordPair(&v20, (char *)Source, (char **)&v21, &v22)); /*0x4f2dc8*/
-  int v10; // ecx
-      v10 = *CoordPair; /*0x4f2dcd*/
-  int v11; // eax
-      v11 = CoordPair->headNode; /*0x4f2dcf*/
+      int v10 = *CoordPair; // ecx /*0x4f2dcd*/
+      int v11 = CoordPair->headNode; // eax /*0x4f2dcf*/
       v22 = v10; /*0x4f2dd2*/
       v23 = v11; /*0x4f2dda*/
       DeleteAndZero((ObjectClass *)&v21); /*0x4f2dde*/
-  unsigned int *vtable0; // ebx
-      vtable0 = a4.vfptr; /*0x4f2de3*/
-  int v13; // ecx
+      unsigned int *vtable0 = a4.vfptr; // ebx /*0x4f2de3*/
+      int v13; // ecx
       v13 = *(unsigned int *)a4.vfptr; /*0x4f2df4*/
-  int v24; // [esp+34h] [ebp-10h] BYREF
+      int v24; // [esp+34h] [ebp-10h] BYREF
       v24 = 0; /*0x4f2df6*/
       v22 += v13; /*0x4f2e00*/
-  int v14; // edx
+      int v14; // edx
       v14 = *((unsigned int *)a4.vfptr + 1); /*0x4f2e04*/
-  int v25; // [esp+38h] [ebp-Ch]
+      int v25; // [esp+38h] [ebp-Ch]
       v25 = 0; /*0x4f2e09*/
       v23 += v14; /*0x4f2e0d*/
-  int v26; // [esp+3Ch] [ebp-8h]
+      int v26; // [esp+3Ch] [ebp-8h]
       v26 = 0; /*0x4f2e11*/
-  int v27; // [esp+40h] [ebp-4h]
+      int v27; // [esp+40h] [ebp-4h]
       v27 = 0; /*0x4f2e15*/
       ((String *)((String *)&a4))->Assign(aActiverect); /*0x4f2e19*/
-  int *Rect; // eax
+      int *Rect; // eax
       Rect = (int *)((a2)->GetRect(&v20, Source, (char **)&a4, &v24)); /*0x4f2e30*/
       v24 = *Rect; /*0x4f2e37*/
       v25 = Rect[1]; /*0x4f2e3e*/
@@ -756,17 +749,17 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       DeleteAndZero(&a4); /*0x4f2e54*/
       v24 += *vtable0; /*0x4f2e65*/
       v25 += vtable0->vtable2; /*0x4f2e77*/
-  uint8_t *v16; // eax
+      uint8_t *v16; // eax
       v16 = (uint8_t *)((String *)((String *)Source))->GetOrEmpty_Alt(); /*0x4f2e7b*/
       v21.q000 = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
       ((String *)((String *)&a4))->Assign((const char *)(g_INI_Key_Rate)); /*0x4f2e95*/
-  int v17; // esi
+      int v17; // esi
       v17 = ((bool *)a2->__pad_0)->ReadInt(Source, (char **)&a4, 5); /*0x4f2ead*/
       DeleteAndZero(&a4); /*0x4f2eaf*/
-  GraphicMenuAnimItem *v18; // eax
+      GraphicMenuAnimItem *v18; // eax
       v18 = (GraphicMenuAnimItem *)operator new(0x28u); /*0x4f2eb6*/
       if ( v18 ) /*0x4f2ec0*/
-                v8 = sub_4F2F10((int)(/*0x4f2eed*/                v18),                *(int *)&v21.headNode,                a3,                &v22,                &v24,                (char **)&v19,                (char **)&v19.ptr_4,                v17,                v21.q000);
+        v8 = sub_4F2F10((int)(/*0x4f2eed*/                v18),                *(int *)&v21.headNode,                a3,                &v22,                &v24,                (char **)&v19,                (char **)&v19.ptr_4,                v17,                v21.q000);
       DeleteAndZero((ObjectClass *)&v19.ptr_4); /*0x4f2ef3*/
       DeleteAndZero((ObjectClass *)&v19); /*0x4f2efc*/
       return v8; /*0x4f2f01*/
@@ -798,8 +791,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * a
   DeleteAndZero((ObjectClass *)&v22); /*0x4f3171*/
   if ( Int == -1 ) /*0x4f3179*/
     return 0; /*0x4f317d*/
-  int v8; // ebp
-  v8 = 0; /*0x4f3187*/
+  int v8 = 0; // ebp /*0x4f3187*/
   int v23; // [esp+28h] [ebp-28h] BYREF
   v23 = 0; /*0x4f3192*/
   int v24; // [esp+2Ch] [ebp-24h]
@@ -808,15 +800,12 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * a
   int *CoordPair; // eax
   int v25[4]; // [esp+30h] [ebp-20h] BYREF
   CoordPair = INIClass::GetCoordPair(a2, v25, (char *)Source, (char **)&v22, &v23); /*0x4f31b1*/
-  int v10; // ecx
-  v10 = *CoordPair; /*0x4f31b6*/
-  int v11; // eax
-  v11 = CoordPair->headNode; /*0x4f31b8*/
+  int v10 = *CoordPair; // ecx /*0x4f31b6*/
+  int v11 = CoordPair->headNode; // eax /*0x4f31b8*/
   v23 = v10; /*0x4f31bb*/
   v24 = v11; /*0x4f31c3*/
   DeleteAndZero((ObjectClass *)&v22); /*0x4f31c7*/
-  unsigned int *vtable0; // ebx
-  vtable0 = a4.vfptr; /*0x4f31cc*/
+  unsigned int *vtable0 = a4.vfptr; // ebx /*0x4f31cc*/
   int v13; // ecx
   v13 = *(unsigned int *)a4.vfptr; /*0x4f31dd*/
   int v26; // [esp+40h] [ebp-10h] BYREF
@@ -904,8 +893,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
 {
   int v16; // eax
 
-  char v10; // bl
-  v10 = 0; /*0x4f3469*/
+  char v10 = 0; // bl /*0x4f3469*/
   GraphicMenuItem::Constructor(a2); /*0x4f3472*/
   a3 = a3; /*0x4f3477*/
   a5 = a5; /*0x4f347b*/
@@ -943,9 +931,9 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
   a4 = a4; /*0x4f3525*/
   if ( v18 )
   {
-  unsigned int *v20; // eax
+    unsigned int *v20; // eax
     v20 = operator new(0x3Cu); /*0x4f352f*/
-  unsigned int *v21; // eax
+    unsigned int *v21; // eax
     v21 = v20 ? MSPCXAnim::Construct(v20, a7, (int)(a3 + 6), a4, 1) : 0;
     this->q028 = v21; /*0x4f3550*/
     if ( v21 ) /*0x4f3553*/
@@ -957,9 +945,9 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
   a6 = a6; /*0x4f3569*/
   if ( (a6)->Length() )
   {
-  unsigned int *v23; // eax
+    unsigned int *v23; // eax
     v23 = operator new(0x3Cu); /*0x4f357a*/
-  unsigned int *v24; // eax
+    unsigned int *v24; // eax
     v24 = v23 ? MSPCXAnim::Construct(v23, a6, (int)(a3 + 6), a4, 1) : 0;
     this->q024 = v24; /*0x4f359b*/
     if ( v24 ) /*0x4f359e*/
@@ -968,9 +956,9 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
   a8 = a8; /*0x4f35a8*/
   if ( (a8)->Length() ) /*0x4f35ae*/
   {
-  unsigned int *v26; // eax
+    unsigned int *v26; // eax
     v26 = operator new(0x3Cu); /*0x4f35b9*/
-  unsigned int *v27; // eax
+    unsigned int *v27; // eax
     if ( v26 ) /*0x4f35c3*/
       v27 = MSPCXAnim::Construct(v26, a8, (int)(a3 + 6), a4, 1); /*0x4f35cf*/
     else
@@ -989,71 +977,71 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
 namespace gamemd {
 unsigned int * sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
 {
-    unsigned int *v6; // ebp
-    unsigned int *v7; // eax
-    bool v8; // bl
-    int v9; // esi
-    char v10; // bl
-    int v11; // eax
-    char *v13; // [esp+Ch] [ebp-10h] BYREF
-    char *v14; // [esp+10h] [ebp-Ch] BYREF
-    char *v15; // [esp+14h] [ebp-8h] BYREF
-    int v16; // [esp+18h] [ebp-4h]
+  unsigned int *v6; // ebp
+  unsigned int *v7; // eax
+  bool v8; // bl
+  int v9; // esi
+  char v10; // bl
+  int v11; // eax
+  char *v13; // [esp+Ch] [ebp-10h] BYREF
+  char *v14; // [esp+10h] [ebp-Ch] BYREF
+  char *v15; // [esp+14h] [ebp-8h] BYREF
+  int v16; // [esp+18h] [ebp-4h]
 
-    v16 = 0; /*0x4f38be*/
-    unknown_libname_73( (void *)(&v13)); /*0x4f38c6*/
-    ((String *)&v15)->Assign( (const char *)(&g_INI_DefaultBuffer)); /*0x4f38d4*/
-    ((String *)&v14)->Assign( (const char *)(g_INI_Key_Type)); /*0x4f38e2*/
-    ((INIClass *)a2)->ReadString( (char **)(Source), (char **)(&v14), (char **)(&v15), (int)&v13); /*0x4f38f9*/
-    j_DeleteAndZero( (void *)((void **)&v14)); /*0x4f3902*/
-    j_DeleteAndZero( (void *)((void **)&v15)); /*0x4f390b*/
-    v6 = (unsigned int *)(0); /*0x4f3914*/
-    if ( (uint8_t)((String *)(const char **)&v13)->Equals_Alt( (const char *)(g_INI_Key_Image)) ) /*0x4f391b*/
+  v16 = 0; /*0x4f38be*/
+  unknown_libname_73( (void *)(&v13)); /*0x4f38c6*/
+  ((String *)&v15)->Assign( (const char *)(&g_INI_DefaultBuffer)); /*0x4f38d4*/
+  ((String *)&v14)->Assign( (const char *)(g_INI_Key_Type)); /*0x4f38e2*/
+  ((INIClass *)a2)->ReadString( (char **)(Source), (char **)(&v14), (char **)(&v15), (int)&v13); /*0x4f38f9*/
+  j_DeleteAndZero( (void *)((void **)&v14)); /*0x4f3902*/
+  j_DeleteAndZero( (void *)((void **)&v15)); /*0x4f390b*/
+  v6 = (unsigned int *)(0); /*0x4f3914*/
+  if ( (uint8_t)((String *)(const char **)&v13)->Equals_Alt( (const char *)(g_INI_Key_Image)) ) /*0x4f391b*/
+  {
+    v7 = (unsigned int *)ParseINIGadgetDefinition((gamemd::ObjectClass *)(Source),(gamemd::ObjectClass *)( a2),(unsigned int *)( a3), (gamemd::ObjectClass)(a4)); /*0x4f3932*/
+  }
+  else if ( (uint8_t)((String *)(const char **)&v13)->Equals_Alt( aShortcut) ) /*0x4f3942*/
+  {
+    v7 = (unsigned int *)(sub_4F3B80(Source, a2)); /*0x4f394f*/
+  }
+  else
+  {
+    if ( !(uint8_t)((String *)(const char **)&v13)->Equals_Alt( (const char *)(aAnim_0)) ) /*0x4f3966*/
+      goto LABEL_15; /*0x4f3966*/
+    v7 = (unsigned int *)(ParseINIAnimGadgetDefinition(Source, a2, a3, a4)); /*0x4f397a*/
+  }
+  v6 = v7; /*0x4f397f*/
+  if ( v7 ) /*0x4f3983*/
+  {
+    unknown_libname_73( (void *)(&a4)); /*0x4f398e*/
+    ((String *)&v15)->Assign( (const char *)(&g_INI_DefaultBuffer)); /*0x4f399c*/
+    ((String *)&a3)->Assign( aSelectsound); /*0x4f39aa*/
+    v8 = ((INIClass *)a2)->ReadString( (char **)(Source), (char **)(&a3), (char **)(&v15), (int)&a4) > 0; /*0x4f39cc*/
+    j_DeleteAndZero( (void *)((void **)&a3)); /*0x4f39cf*/
+    j_DeleteAndZero( (void *)((void **)&v15)); /*0x4f39d8*/
+    if ( v8 ) /*0x4f39df*/
     {
-      v7 = (unsigned int *)ParseINIGadgetDefinition((gamemd::ObjectClass *)(Source),(gamemd::ObjectClass *)( a2),(unsigned int *)( a3), (gamemd::ObjectClass)(a4)); /*0x4f3932*/
-    }
-    else if ( (uint8_t)((String *)(const char **)&v13)->Equals_Alt( aShortcut) ) /*0x4f3942*/
-    {
-      v7 = (unsigned int *)(sub_4F3B80(Source, a2)); /*0x4f394f*/
-    }
-    else
-    {
-      if ( !(uint8_t)((String *)(const char **)&v13)->Equals_Alt( (const char *)(aAnim_0)) ) /*0x4f3966*/
-        goto LABEL_15; /*0x4f3966*/
-      v7 = (unsigned int *)(ParseINIAnimGadgetDefinition(Source, a2, a3, a4)); /*0x4f397a*/
-    }
-    v6 = v7; /*0x4f397f*/
-    if ( v7 ) /*0x4f3983*/
-    {
-      unknown_libname_73( (void *)(&a4)); /*0x4f398e*/
-      ((String *)&v15)->Assign( (const char *)(&g_INI_DefaultBuffer)); /*0x4f399c*/
-      ((String *)&a3)->Assign( aSelectsound); /*0x4f39aa*/
-      v8 = ((INIClass *)a2)->ReadString( (char **)(Source), (char **)(&a3), (char **)(&v15), (int)&a4) > 0; /*0x4f39cc*/
-      j_DeleteAndZero( (void *)((void **)&a3)); /*0x4f39cf*/
-      j_DeleteAndZero( (void *)((void **)&v15)); /*0x4f39d8*/
-      if ( v8 ) /*0x4f39df*/
+      v9 = (int)(operator new(0x10u)); /*0x4f39e8*/
+      if ( v9 ) /*0x4f39ef*/
       {
-        v9 = (int)(operator new(0x10u)); /*0x4f39e8*/
-        if ( v9 ) /*0x4f39ef*/
-        {
-          ((String *)&a3)->Assign( aSelectsound); /*0x4f39fa*/
-          v10 = 1; /*0x4f3a0b*/
-          v11 = (int)(((Audio *)v9)->ParseVolume( (const char **)&a3, (ObjectClass *)((const char **)&a4))); /*0x4f3a10*/
-        }
-        else
-        {
-          v10 = v16; /*0x4f3a17*/
-          v11 = 0; /*0x4f3a1b*/
-        }
-        v6->u32_C = v11; /*0x4f3a20*/
-        if ( (v10 & 1) != 0 ) /*0x4f3a23*/
-          j_DeleteAndZero( (void *)((void **)&a3)); /*0x4f3a29*/
+        ((String *)&a3)->Assign( aSelectsound); /*0x4f39fa*/
+        v10 = 1; /*0x4f3a0b*/
+        v11 = (int)(((Audio *)v9)->ParseVolume( (const char **)&a3, (ObjectClass *)((const char **)&a4))); /*0x4f3a10*/
       }
-      j_DeleteAndZero( (void *)((void **)&a4)); /*0x4f3a32*/
+      else
+      {
+        v10 = v16; /*0x4f3a17*/
+        v11 = 0; /*0x4f3a1b*/
+      }
+      v6->u32_C = v11; /*0x4f3a20*/
+      if ( (v10 & 1) != 0 ) /*0x4f3a23*/
+        j_DeleteAndZero( (void *)((void **)&a3)); /*0x4f3a29*/
     }
+    j_DeleteAndZero( (void *)((void **)&a4)); /*0x4f3a32*/
+  }
   LABEL_15:
-    j_DeleteAndZero( (void *)((void **)&v13)); /*0x4f3a38*/
-    return v6; /*0x4f3a43*/
+  j_DeleteAndZero( (void *)((void **)&v13)); /*0x4f3a38*/
+  return v6; /*0x4f3a43*/
 }
 }
 // 0x4F3AB0
@@ -1063,8 +1051,7 @@ int E4Recv_4F3AB0::sub_4F3AB0(int a2)
 
   int (**vtable0)(int); // edx
 
-  int result; // eax
-  result = a2; /*0x4f3ab0*/
+  int result = a2; // eax /*0x4f3ab0*/
   if ( (unsigned char)a2 != BYTE1(this->M9) ) /*0x4f3ab9*/
   {
     vtable0 = (int (**)(int))this->AbstractClass; /*0x4f3abb*/
@@ -1183,19 +1170,17 @@ namespace gamemd {
 unsigned char * sub_4F4E53(unsigned char * result, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 
-  int v7; // edi
-  v7 = a2; /*0x4f4e5a*/
+  int v7 = a2; // edi /*0x4f4e5a*/
   do /*0x4f4ea3*/
   {
-  int16_t v8; // cx
-    v8 = 0; /*0x4f4e5e*/
+    int16_t v8 = 0; // cx /*0x4f4e5e*/
     if ( !*result && !a7 ) /*0x4f4e66*/
       v8 = 0x8000; /*0x4f4e68*/
     (*((unsigned char *)&(a3))) = result[2]; /*0x4f4e70*/
     (*((unsigned short *)&(a2))) = result[1] & 0xF8; /*0x4f4e77*/
     result += 4; /*0x4f4e7e*/
     (*((unsigned short *)&(a3))) = a3 & 0xF8; /*0x4f4e81*/
-  int v9; // edx
+    int v9; // edx
     v9 = a3 | (32 * a2); /*0x4f4e88*/
     (*((unsigned short *)&(a3))) = *(result - 1) >> 3; /*0x4f4e90*/
     a2 = a3 | (4 * v9); /*0x4f4e97*/
@@ -1224,8 +1209,8 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   if ( (void ***)a2 != &v11 ) /*0x4fa244*/
   {
     VectorClass::ClearAndFree3(a2); /*0x4fa248*/
-  int v3; // eax
-  int v13; // [esp+10h] [ebp-14h]
+    int v3; // eax
+    int v13; // [esp+10h] [ebp-14h]
     v3 = v13; /*0x4fa24e*/
     v4 = v13 == 0; /*0x4fa252*/
     a2->VtableStub_8 = v13; /*0x4fa254*/
@@ -1236,15 +1221,13 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
     }
     else
     {
-  int v5; // eax
+      int v5; // eax
       v5 = operator new(4 * v3); /*0x4fa261*/
       a2->u32_4 = v5; /*0x4fa26b*/
       if ( v5 ) /*0x4fa26e*/
       {
-  int v6; // ecx
-        v6 = a2->VtableStub_8; /*0x4fa270*/
-  int v7; // eax
-        v7 = 0; /*0x4fa273*/
+        int v6 = a2->VtableStub_8; // ecx /*0x4fa270*/
+        int v7 = 0; // eax /*0x4fa273*/
         a2->u8_D = 1; /*0x4fa277*/
         if ( v6 > 0 ) /*0x4fa27b*/
         {
@@ -1263,8 +1246,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   v8 = v16; /*0x4fa29e*/
   int v15; // [esp+18h] [ebp-Ch]
   a2->u32_10 = v15; /*0x4fa2a2*/
-  void *v9; // eax
-  v9 = Block; /*0x4fa2a5*/
+  void *v9 = Block; // eax /*0x4fa2a5*/
   v4 = Block == 0; /*0x4fa2a9*/
   a2->AudioBuffer_14 = v8; /*0x4fa2ab*/
   *(unsigned int *)a2 = &vt_TypeList; /*0x4fa2ae*/
@@ -1316,7 +1298,7 @@ AbstractClass * * E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
       result = *((unsigned int *)dword_A8E34C + v6); /*0x4fbdd6*/
       break; /*0x4fbdd9*/
     default:
-  LABEL_10:
+      LABEL_10:
       result = 0; /*0x4fbdf3*/
       break; /*0x4fbdf3*/
   }
@@ -1512,10 +1494,10 @@ int sub_4F1B80(char ** a1, int a2)
     v6.unknown38 = 0; /*0x4f1c34*/
     v6.INIClass_field_3C = 0; /*0x4f1c38*/
     /* X11: vtable install elided (implicit via INIClass virtuals 0x4f1c3c) */
-  char **v4; // esi
+    char **v4; // esi
     if ( FileStraw::Open((FileStraw *)&v6, (int)&v7, 0) <= 0 ) /*0x4f1c4b*/
       v4 = 0; /*0x4f1c5c*/
-  ObjectClass *v5; // [esp+0h] [ebp-B4h]
+    ObjectClass *v5; // [esp+0h] [ebp-B4h]
     else
       v4 = LoadFromINIGraphicMenu(v5, &v6, a2); /*0x4f1c58*/
     HashTable::DestroyHashTableINIClass(&v6); /*0x4f1c62*/
@@ -1551,8 +1533,8 @@ int ObjectClass::sub_4F2280(int a2, int a3)
   *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2296*/
   int result; // eax
   for ( result = Map::CanScroll(&v4); /*0x4f22a6*/
-        (unsigned char)result;
-        result = (*(int (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) )
+  (unsigned char)result;
+  result = (*(int (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) )
   {
     if ( *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5) + 4) == a2 ) /*0x4f22c3*/
       sub_4F3AB0(*(ObjectClass **)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5), a3); /*0x4f22cc*/
@@ -1578,7 +1560,7 @@ int ObjectClass::sub_4F26E0(int a2)
   {
     do /*0x4f2738*/
     {
-  int v2; // ecx
+      int v2; // ecx
       v2 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5); /*0x4f2719*/
       if ( (*(unsigned __int8 (**)(int, int))(*(unsigned int *)v2 + 8))(v2, a2) ) /*0x4f271e*/
         break; /*0x4f2723*/
@@ -1609,7 +1591,7 @@ int ObjectClass::sub_4F2770(int a2)
   {
     do /*0x4f27c8*/
     {
-  int v2; // ecx
+      int v2; // ecx
       v2 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v4.m_1[3] + 4) + 4 * v5); /*0x4f27a9*/
       if ( (*(unsigned __int8 (**)(int, int))(*(unsigned int *)v2 + 4))(v2, a2) ) /*0x4f27ae*/
         break; /*0x4f27b3*/
@@ -1683,16 +1665,16 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   {
     if ( (unsigned __int8)CCFileClass::Open((CCFileClass *)&v15.?, 0) ) /*0x4f2f8f*/
     {
-  char *v11; // eax
+      char *v11; // eax
       v11 = String::GetOrEmpty_Alt((String *)a7); /*0x4f2f9a*/
       String::Assign((String *)&v15, v11); /*0x4f2fa4*/
       this->u32_24 = PaletteClass::Load((PaletteClass *)&v15); /*0x4f2fb6*/
       DeleteAndZero(&v15); /*0x4f2fb9*/
-  MSShapeAnim *v12; // eax
+      MSShapeAnim *v12; // eax
       v12 = (MSShapeAnim *)__2_YAPAXI_Z(0x40u); /*0x4f2fc0*/
       if ( v12 ) /*0x4f2fca*/
       {
-  void *v13; // eax
+        void *v13; // eax
         v13 = MSShapeAnim::Constructor(v12, a6, *a4, a4[1], this->u32_24, a8, a9, 0); /*0x4f2ff2*/
         if ( v13 ) /*0x4f2ff9*/
           PriorityQueue::Add((PriorityQueue *)a3, (int)v13); /*0x4f3003*/
@@ -1757,11 +1739,9 @@ namespace gamemd {
 unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
 {
 
-  ObjectClass *v3; // ebp
-  v3 = this; /*0x4f3c49*/
+  ObjectClass *v3 = this; // ebp /*0x4f3c49*/
   GraphicMenuItem::Constructor(a2); /*0x4f3c50*/
-  int *p_uniqueId; // esi
-  p_uniqueId = &v3->uniqueId; /*0x4f3c55*/
+  int *p_uniqueId = &v3->uniqueId; // esi /*0x4f3c55*/
   v3->abstractFlags = 0; /*0x4f3c5e*/
   v3->nextArrayIndex = 0; /*0x4f3c61*/
   (v3->u8_C) = 1; /*0x4f3c64*/
@@ -1777,22 +1757,19 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   {
     do /*0x4f3d19*/
     {
-  int v6; // ebp
+      int v6; // ebp
       v6 = sub_4F3D40((ObjectClass *)&a2); /*0x4f3cb3*/
       if ( v6 ) /*0x4f3cb7*/
       {
-  int v7; // ecx
-        v7 = p_uniqueId->vtable3; /*0x4f3cb9*/
-  int v8; // eax
+        int v7 = p_uniqueId->vtable3; // ecx /*0x4f3cb9*/
+        int v8; // eax
         if ( p_uniqueId->uniqueId < v7 /*0x4f3cdb*/
           || (p_uniqueId->u32_D || !v7)
           && (v8 = p_uniqueId->abstractFlags, v8 > 0)
           && p_uniqueId->COMStub_Release(v7 + v8, 0) )
         {
-  int v9; // eax
-          v9 = p_uniqueId->uniqueId; /*0x4f3ce2*/
-  int v10; // edx
-          v10 = p_uniqueId->vtable2; /*0x4f3ce5*/
+          int v9 = p_uniqueId->uniqueId; // eax /*0x4f3ce2*/
+          int v10 = p_uniqueId->vtable2; // edx /*0x4f3ce5*/
           p_uniqueId->uniqueId = v9 + 1; /*0x4f3ceb*/
           *(unsigned int *)(v10 + 4 * v9) = v6; /*0x4f3cee*/
         }
@@ -2201,7 +2178,7 @@ int E4Recv_4F9670::sub_4F9670()
           }
           else
           {
-  LABEL_7:
+            LABEL_7:
             __asm { fstp [esp+1Ch+var_C] } /*0x4f96d7*/
             v2 = v4; /*0x4f96db*/
           }
@@ -2221,19 +2198,18 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
 {
 
 
-  int v2; // edi
-  v2 = 0; /*0x4fbd08*/
+  int v2 = 0; // edi /*0x4fbd08*/
   if ( dword_A80238 <= 0 ) /*0x4fbd0e*/
     return 0; /*0x4fbd61*/
   while ( 1 ) /*0x4fbd19*/
   {
-  int v4; // eax
+    int v4; // eax
     v4 = *((unsigned int *)dword_A8022C + v2); /*0x4fbd19*/
     if ( v4 ) /*0x4fbd1e*/
     {
       if ( (ObjectClass *)v4 != this ) /*0x4fbd22*/
       {
-  ObjectClass *v5; // ecx
+        ObjectClass *v5; // ecx
         v5 = *(ObjectClass **)(v4 + 48); /*0x4fbd24*/
         if ( v5 != this->nextObject /*0x4fbd55*/
           && (v5 == (ObjectClass *)-1 || ((1 << (char)v5) & this->M22408) == 0)

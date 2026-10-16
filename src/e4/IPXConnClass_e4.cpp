@@ -27,8 +27,7 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
   wcscpy(&aP1->u32_D0,(const wchar_t *)(aP8)); /*0x53f497*/
   int v13; // [esp+8h] [ebp-8h] BYREF
   (&aP1->u32_4C)->CopyAddress((unsigned int *)(&a9), (int)&v13); /*0x53f4ab*/
-  int v10; // ecx
-  v10 = v13; /*0x53f4b0*/
+  int v10 = v13; // ecx /*0x53f4b0*/
   int16_t v11; // dx
   int16_t v14; // [esp+Ch] [ebp-4h]
   v11 = v14; /*0x53f4b4*/

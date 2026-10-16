@@ -60,7 +60,7 @@ int sub_682780(int a1, int a2, wchar_t * String)
       }
       else if ( v9 ) /*0x682858*/
       {
-  LABEL_18:
+        LABEL_18:
         (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x68285a*/
         return v6; /*0x682864*/
       }
@@ -98,7 +98,7 @@ int sub_6829A0(int * a1, int a2, int a3)
   v4 = (*(int (__stdcall **)(int *, void *, unsigned int, unsigned int, int, int *))(v3 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v6); /*0x6829f5*/
   if ( v4 >= 0 ) /*0x6829f9*/
   {
-  LABEL_7:
+    LABEL_7:
     v7[1] = a2; /*0x682a1a*/
     v7[0] = 1; /*0x682a24*/
     v8[0] = 31; /*0x682a2c*/
@@ -118,7 +118,7 @@ int sub_6829A0(int * a1, int a2, int a3)
   }
   else if ( v6 ) /*0x682a01*/
   {
-  LABEL_6:
+    LABEL_6:
     (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x682a03*/
     return v4; /*0x682a0f*/
   }

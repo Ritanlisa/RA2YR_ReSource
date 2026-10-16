@@ -19,8 +19,8 @@ namespace gamemd {  // g57w12-r nsfix (orphan re-wrap)
 // 0x718000
 TeleportLocomotionClass::TeleportLocomotionClass()
 {
-
-
+  
+  
   LocomotionClass::Init((LocomotionClass *)this); /*0x718003*/
   this->MovingDestination[0] = g_BuildingLoadQueue_Array.?; /*0x718011*/
   this->MovingDestination[1] = g_BuildingLoadQueue_Array.?[0]; /*0x71801a*/
@@ -41,5 +41,5 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   /* X11: vtable install elided (implicit via TeleportLocomotionClass virtuals 0x718064) */
   /* X11: vtable install elided (implicit via TeleportLocomotionClass virtuals 0x71806b) */
   return (int)this->LocomotionClass; /*0x718074*/
-
+  
 }

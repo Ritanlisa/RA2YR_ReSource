@@ -48,7 +48,7 @@ void sub_7A19E0()
   v5 = 0; /*0x7a1a80*/
   if ( (int)dword_B77900 <= 0 ) /*0x7a1a84*/
   {
-  LABEL_12:
+    LABEL_12:
     v5 = -1; /*0x7a1ac0*/
   }
   else

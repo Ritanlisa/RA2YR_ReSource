@@ -58,21 +58,21 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   }
   else
   {
-  float v9; // [esp+8h] [ebp-18h] BYREF
+    float v9; // [esp+8h] [ebp-18h] BYREF
     v9 = (float)v13; /*0x6d2398*/
-  int v11; // [esp+10h] [ebp-10h]
+    int v11; // [esp+10h] [ebp-10h]
     v11 = 0; /*0x6d23a4*/
-  float v10; // [esp+Ch] [ebp-14h]
+    float v10; // [esp+Ch] [ebp-14h]
     v10 = (float)v8; /*0x6d23ac*/
-  float *v4; // eax
-  float v12[3]; // [esp+14h] [ebp-Ch] BYREF
+    float *v4; // eax
+    float v12[3]; // [esp+14h] [ebp-Ch] BYREF
     v4 = TransformMatrix3x4Point(v12, aP1 + 889, &v9); /*0x6d23b0*/
     v9 = *v4; /*0x6d23b7*/
     v10 = v4[1]; /*0x6d23c2*/
     v11 = *((unsigned int *)v4 + 2); /*0x6d23c9*/
-  int v5; // esi
+    int v5; // esi
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/
-  int v6; // eax
+    int v6; // eax
     v6 = Math::RoundToInt(v10); /*0x6d23d8*/
     *aP2 = v5; /*0x6d23e5*/
     aP2[1] = v6; /*0x6d23e7*/

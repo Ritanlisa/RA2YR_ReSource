@@ -125,18 +125,17 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     else if ( a2 == 1175 ) /*0x6b6354*/
     {
       byte_B0B800 = 0; /*0x6b635a*/
-  BOOL IsSoundEnabled; // ebx
+      BOOL IsSoundEnabled; // ebx
       IsSoundEnabled = Audio::IsSoundEnabled(); /*0x6b6364*/
       bEnable = IsSoundEnabled; /*0x6b636c*/
-  HWND DlgItem; // eax
+      HWND DlgItem; // eax
       DlgItem = GetDlgItem(hDlg, 1327); /*0x6b6370*/
-  HWND v7; // edi
-      v7 = DlgItem; /*0x6b637c*/
+      HWND v7 = DlgItem; // edi /*0x6b637c*/
       if ( DlgItem ) /*0x6b6380*/
       {
         SendMessageA(DlgItem, 0x4AEu, 0, 0); /*0x6b638c*/
         SendMessageA(v7, 0x406u, 1u, 655360); /*0x6b639b*/
-  LPARAM v8; // eax
+        LPARAM v8; // eax
         v8 = Math::RoundToInt(flt_A8EBA0 * 10.0 + 0.5); /*0x6b63af*/
         SendMessageA(v7, 0x405u, 1u, v8); /*0x6b63bd*/
         v9 = (void (*)(HWND, BOOL))EnableWindow; /*0x6b63bf*/
@@ -234,45 +233,45 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
         AudioSettings::SetFlag68(v32 == 1); /*0x6b685a*/
         if ( SendMessageA(hWnd, 0xF0u, 0, 0) == 1 ) /*0x6b686e*/
         {
-          SendDlgItemMessageA(hDlg, 1331, 0xF1u, 0, 0); /*0x6b6883*/
-          AudioSettings::SetFlag70(0); /*0x6b6890*/
-          return 0; /*0x6b68a1*/
-        }
+        SendDlgItemMessageA(hDlg, 1331, 0xF1u, 0, 0); /*0x6b6883*/
+        AudioSettings::SetFlag70(0); /*0x6b6890*/
+        return 0; /*0x6b68a1*/
+      }
         break;
       case 0x531u: /*0x6b6733*/
         if ( !HIWORD(a3) ) /*0x6b67b1*/
         {
-          v27 = GetDlgItem(hDlg, 1328); /*0x6b67c0*/
-          v28 = v27; /*0x6b67c6*/
-          if ( v27 ) /*0x6b67ca*/
+        v27 = GetDlgItem(hDlg, 1328); /*0x6b67c0*/
+        v28 = v27; /*0x6b67c6*/
+        if ( v27 ) /*0x6b67ca*/
+        {
+          v29 = SendMessageA(v27, 0x188u, 0, 0); /*0x6b67e0*/
+          if ( v29 != -1 ) /*0x6b67e5*/
           {
-            v29 = SendMessageA(v27, 0x188u, 0, 0); /*0x6b67e0*/
-            if ( v29 != -1 ) /*0x6b67e5*/
+            v30 = SendMessageA(v28, 0x199u, v29, 0); /*0x6b67f6*/
+            v31 = dword_A83D14; /*0x6b67f8*/
+            byte_A8EBA5 = 1; /*0x6b6800*/
+            if ( dword_A83D14 == -1 ) /*0x6b6807*/
+              v31 = dword_A83D18; /*0x6b6809*/
+            if ( v31 != v30 ) /*0x6b6810*/
             {
-              v30 = SendMessageA(v28, 0x199u, v29, 0); /*0x6b67f6*/
-              v31 = dword_A83D14; /*0x6b67f8*/
-              byte_A8EBA5 = 1; /*0x6b6800*/
-              if ( dword_A83D14 == -1 ) /*0x6b6807*/
-                v31 = dword_A83D18; /*0x6b6809*/
-              if ( v31 != v30 ) /*0x6b6810*/
-              {
-                Theme::Stop(&unk_A83D10, 1); /*0x6b681d*/
-                Theme::QueueSong((int)&unk_A83D10, v30); /*0x6b6828*/
-                return 0; /*0x6b6839*/
-              }
+              Theme::Stop(&unk_A83D10, 1); /*0x6b681d*/
+              Theme::QueueSong((int)&unk_A83D10, v30); /*0x6b6828*/
+              return 0; /*0x6b6839*/
             }
           }
         }
+      }
         break;
       case 0x533u: /*0x6b6733*/
         v26 = SendMessageA(hWnd, 0xF0u, 0, 0); /*0x6b6759*/
         AudioSettings::SetFlag70(v26 == 1); /*0x6b6767*/
         if ( SendMessageA(hWnd, 0xF0u, 0, 0) == 1 ) /*0x6b677b*/
         {
-          SendDlgItemMessageA(hDlg, 1332, 0xF1u, 0, 0); /*0x6b6790*/
-          AudioSettings::SetFlag68(0); /*0x6b679d*/
-          return 0; /*0x6b67ae*/
-        }
+        SendDlgItemMessageA(hDlg, 1332, 0xF1u, 0, 0); /*0x6b6790*/
+        AudioSettings::SetFlag68(0); /*0x6b679d*/
+        return 0; /*0x6b67ae*/
+      }
         break;
     }
     return 0; /*0x6b677b*/

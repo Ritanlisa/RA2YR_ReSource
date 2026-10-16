@@ -28,8 +28,7 @@ int Stream::FlushAndReset()
 {
 
 
-  Stream *v1; // esi
-  v1 = this; /*0x439111*/
+  Stream *v1 = this; // esi /*0x439111*/
   StreamClass *m_Stream; // eax
   m_Stream = this->m_Stream; /*0x439114*/
   int Stream_field_08; // edi
@@ -52,8 +51,7 @@ namespace gamemd {
 int Stream::ReadIntArray(int a2)
 {
 
-  int v2; // esi
-  v2 = a2; /*0x49fb72*/
+  int v2 = a2; // esi /*0x49fb72*/
   int result; // eax
   result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
              a2,
@@ -62,14 +60,13 @@ int Stream::ReadIntArray(int a2)
              0);
   if ( result >= 0 ) /*0x49fb89*/
   {
-  int v5; // eax
+    int v5; // eax
     v5 = *(unsigned int *)v2; /*0x49fb8e*/
     a2 = (int)(this->a2); /*0x49fb9a*/
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
-  int v6; // ebx
-      v6 = 0; /*0x49fba9*/
+      int v6 = 0; // ebx /*0x49fba9*/
       if ( a2 <= 0 ) /*0x49fbad*/
       {
         return 0; /*0x49fbcd*/
@@ -105,8 +102,7 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   int Stream_field_10; // [esp+20h] [ebp-4h] BYREF
   Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
   (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &Stream_field_10, 4, 0); /*0x67a4bd*/
-  int result; // eax
-  result = Stream_field_10; /*0x67a4c0*/
+  int result = Stream_field_10; // eax /*0x67a4c0*/
   int i; // esi
   for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {
@@ -175,7 +171,7 @@ char * Stream::InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a
     LOBYTE(v13) = v12 & 0xDF; /*0x75933a*/
   }
   this->u32_1BC = v13; /*0x75933c*/
-LABEL_14:
+  LABEL_14:
   v14 = TestBitArray(17); /*0x759342*/
   v15 = this->u32_1BC; /*0x75934e*/
   if ( v14 ) /*0x759354*/

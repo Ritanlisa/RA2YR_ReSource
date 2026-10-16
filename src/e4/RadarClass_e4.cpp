@@ -25,7 +25,7 @@
 #include "e4/classes/DSurface_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int GenerateImageThumbnail(int* p0, int* p1, int* p2, char p3);  // x4:signals@0x6547c0
+int GenerateImageThumbnail(int* p0, int* p1, int* p2, char p3);  // x4:signals@0x6547c0
 } // namespace gamemd
 
 // 0x652C00
@@ -37,13 +37,11 @@ CampaignClass * RadarClass::Destruct(void *a1)
   /* X11: vtable install elided (implicit via RadarClass virtuals 0x652c0c) */
   AudioFileClass::Release(&this->RadarSoundChannel); /*0x652c12*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
-  MapClass **p_RadarClass_field_0x1488; // esi
-  p_RadarClass_field_0x1488 = &this->radarSizeFactor; /*0x652c1e*/
-  int v3; // ebp
-  v3 = 22; /*0x652c24*/
+  MapClass **p_RadarClass_field_0x1488 = &this->radarSizeFactor; // esi /*0x652c1e*/
+  int v3 = 22; // ebp /*0x652c24*/
   do /*0x652c53*/
   {
-  void *v4; // eax
+    void *v4; // eax
     v4 = *(p_RadarClass_field_0x1488 - 5); /*0x652c2b*/
     p_RadarClass_field_0x1488 -= 6; /*0x652c2e*/
     *p_RadarClass_field_0x1488 = (MapClass *)&vt_VectorClass; /*0x652c33*/
@@ -57,8 +55,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
     p_RadarClass_field_0x1488[2] = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  CampaignClass *RadarClass_field_0x1260; // eax
-  RadarClass_field_0x1260 = this->ptr_1260; /*0x652c55*/
+  CampaignClass *RadarClass_field_0x1260 = this->ptr_1260; // eax /*0x652c55*/
   this->RadarPoints = (VectorClass *)&vt_VectorClass; /*0x652c5b*/
   if ( RadarClass_field_0x1260 && this->u8_1269 ) /*0x652c69*/
   {
@@ -263,13 +260,13 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
       goto LABEL_30; /*0x6a8570*/
     }
   }
-  else
+    else
   {
     v20 = 0; /*0x6a8544*/
   }
-  v21 = 0; /*0x6a8546*/
-  v37 = 0; /*0x6a854a*/
-  if ( !v20 ) /*0x6a854e*/
+    v21 = 0; /*0x6a8546*/
+    v37 = 0; /*0x6a854a*/
+    if ( !v20 ) /*0x6a854e*/
   {
   LABEL_34:
     v22 = 0; /*0x6a8572*/
@@ -278,12 +275,12 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   LABEL_30:
   if ( !*(unsigned char *)(v16 + 3278) ) /*0x6a8558*/
     goto LABEL_34; /*0x6a8558*/
-  v22 = 1; /*0x6a855a*/
+    v22 = 1; /*0x6a855a*/
   LABEL_35:
   v32 = v22; /*0x6a8574*/
-  if ( v21 || (v38 = 1, v22) ) /*0x6a8583*/
-    v38 = 0; /*0x6a8585*/
-  if ( a3 == 40 || a3 == 3 ) /*0x6a8592*/
+    if ( v21 || (v38 = 1, v22) ) /*0x6a8583*/
+      v38 = 0; /*0x6a8585*/
+    if ( a3 == 40 || a3 == 3 ) /*0x6a8592*/
   {
     v23 = 1; /*0x6a85b4*/
     if ( v7->u8_D96 ) /*0x6a85ae*/
@@ -292,41 +289,41 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
       goto LABEL_42; /*0x6a85bc*/
     }
   }
-  else
+    else
   {
     v23 = 0; /*0x6a8594*/
   }
-  v24 = 0; /*0x6a8596*/
-  if ( !v23 ) /*0x6a859a*/
+    v24 = 0; /*0x6a8596*/
+    if ( !v23 ) /*0x6a859a*/
   {
     v25 = (unsigned int *)v34; /*0x6a85be*/
     goto LABEL_47; /*0x6a85be*/
   }
   LABEL_42:
   v25 = (unsigned int *)v34; /*0x6a859c*/
-  if ( !*(unsigned char *)(v34 + 3278) ) /*0x6a85a8*/
+    if ( !*(unsigned char *)(v34 + 3278) ) /*0x6a85a8*/
   {
   LABEL_47:
     v26 = 0; /*0x6a85c2*/
     goto LABEL_48; /*0x6a85c2*/
   }
-  v26 = 1; /*0x6a85aa*/
+    v26 = 1; /*0x6a85aa*/
   LABEL_48:
   v27 = !v24 && !v26; /*0x6a85d0*/
-  if ( v35 ) /*0x6a85d8*/
+    if ( v35 ) /*0x6a85d8*/
   {
     if ( v24 || v26 || v27 ) /*0x6a85e4*/
       return 1; /*0x6a85f3*/
     goto LABEL_74; /*0x6a85e4*/
   }
-  if ( v38 ) /*0x6a85fc*/
+    if ( v38 ) /*0x6a85fc*/
   {
     if ( v36 ) /*0x6a8604*/
       return 0; /*0x6a860f*/
     if ( v24 ) /*0x6a8614*/
       return 1; /*0x6a8614*/
   }
-  else
+    else
   {
     if ( !v37 ) /*0x6a862c*/
     {
@@ -344,24 +341,24 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
     if ( v27 ) /*0x6a8644*/
       return 0; /*0x6a864f*/
   }
-  if ( v26 ) /*0x6a8618*/
-    return 1; /*0x6a8623*/
+    if ( v26 ) /*0x6a8618*/
+      return 1; /*0x6a8623*/
   LABEL_74:
   v28 = *(unsigned int *)(v16 + 1588); /*0x6a8682*/
-  v29 = v25[397]; /*0x6a8688*/
-  if ( v28 < v29 ) /*0x6a8690*/
-    return 1; /*0x6a869b*/
-  if ( v28 > v29 ) /*0x6a869e*/
-    return 0; /*0x6a86a9*/
-  v30 = (*(int (**)(int, void *))(*(unsigned int *)v16 + 132))(v16, dword_A83D4C); /*0x6a86bf*/
-  v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))(v25, dword_A83D4C); /*0x6a86c9*/
-  if ( v30 < v31 ) /*0x6a86d1*/
-    return 1; /*0x6a86dc*/
-  if ( v30 > v31 ) /*0x6a86df*/
-    return 0; /*0x6a86ea*/
-  v14 = *(const wchar_t **)(v16 + 96); /*0x6a86ed*/
-  v15 = (const wchar_t *)v25[24]; /*0x6a86f0*/
-  return wcscmp(v14, v15) <= 0; /*0x6a8457*/
+    v29 = v25[397]; /*0x6a8688*/
+    if ( v28 < v29 ) /*0x6a8690*/
+      return 1; /*0x6a869b*/
+    if ( v28 > v29 ) /*0x6a869e*/
+      return 0; /*0x6a86a9*/
+    v30 = (*(int (**)(int, void *))(*(unsigned int *)v16 + 132))(v16, dword_A83D4C); /*0x6a86bf*/
+    v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))(v25, dword_A83D4C); /*0x6a86c9*/
+    if ( v30 < v31 ) /*0x6a86d1*/
+      return 1; /*0x6a86dc*/
+    if ( v30 > v31 ) /*0x6a86df*/
+      return 0; /*0x6a86ea*/
+    v14 = *(const wchar_t **)(v16 + 96); /*0x6a86ed*/
+    v15 = (const wchar_t *)v25[24]; /*0x6a86f0*/
+    return wcscmp(v14, v15) <= 0; /*0x6a8457*/
 }
 }
 // 0x4F4220

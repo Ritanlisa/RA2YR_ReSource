@@ -45,8 +45,7 @@ int EventClass::serializeEvent(void *a1_1)
 
   int result; // eax
   result = (int)a1_1->EventClass_field_0x4; /*0x48b390*/
-  int v2; // esi
-  v2 = 0; /*0x48b397*/
+  int v2 = 0; // esi /*0x48b397*/
   a1_1->EventClass_field_0x28 = 0; /*0x48b39b*/
   if ( result > 0 ) /*0x48b39e*/
   {
@@ -55,7 +54,7 @@ int EventClass::serializeEvent(void *a1_1)
     {
       *(unsigned int *)((char *)a1_1->EventClass_field_0x24 + result) &= ~1u; /*0x48b3ad*/
       *(unsigned int *)((char *)a1_1->EventClass_field_0x24 + result) &= ~2u; /*0x48b3b9*/
-  unsigned int *v3; // edx
+      unsigned int *v3; // edx
       v3 = (char *)a1_1->EventClass_field_0x24 + result; /*0x48b3be*/
       result += 36; /*0x48b3c0*/
       ++v2; /*0x48b3c8*/
@@ -319,7 +318,7 @@ int EventClass::deserializeEvent(int a2, unsigned int *aP2)
   result = (*(int (**)(EventClass *, int))&this->__pad_000->nextArrayIndex)(this, a2); /*0x54228c*/
   if ( result != -1 && result < (int)this->q044 ) /*0x542297*/
   {
-  unsigned int *v5; // edx
+    unsigned int *v5; // edx
     v5 = (unsigned int *)(this->q028 + result) + 76); /*0x5422a1*/
     *v5 = *aP2; /*0x5422a6*/
     v5[1] = aP2[1]; /*0x5422ab*/
@@ -360,7 +359,7 @@ int EventClass::Enqueue(unsigned short a2, char a3)
     {
       if ( v5 == 9 ) /*0x54f298*/
       {
-LABEL_19:
+        LABEL_19:
         LOBYTE(result) = 1; /*0x54f2d7*/
         return result; /*0x54f2dc*/
       }
@@ -470,7 +469,7 @@ AbstractClass * * EventClass::validateEventType()
     }
     v9 = (Network *)(dword_A8DA78[v10] + 40); /*0x6644fd*/
   }
-LABEL_23:
+  LABEL_23:
   (v9)->CopyAddress(&v13, (int)v14); /*0x664500*/
   LaunchMultiplayerHost((bool *)this, v14); /*0x664516*/
   return (gamemd::AbstractClass **)(v1); /*0x66451c*/
@@ -506,7 +505,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
   if ( a2 ) /*0x40b74c*/
   {
     LOBYTE(this->q00C) = 0; /*0x40b756*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x40b75c*/
       v4 = a3; /*0x40b772*/
     else
@@ -516,11 +515,10 @@ char EventClass::processEvent(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x40b785*/
       {
-  int m_8; // ecx
-        m_8 = this->u32_8; /*0x40b78c*/
+        int m_8 = this->u32_8; // ecx /*0x40b78c*/
         if ( a2 < m_8 ) /*0x40b791*/
           m_8 = a2; /*0x40b793*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b799*/
           ++i; /*0x40b79e*/
         if ( BYTE1(this->q00C) ) /*0x40b7ab*/
@@ -557,7 +555,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
   if ( a2 ) /*0x40b88c*/
   {
     LOBYTE(this->q00C) = 0; /*0x40b892*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x40b898*/
       v4 = a3; /*0x40b8ae*/
     else
@@ -567,11 +565,10 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
       return 0; /*0x40b92a*/
     if ( *&this->q004 ) /*0x40b8b8*/
     {
-  int m_8; // ecx
-      m_8 = this->u32_8; /*0x40b8bf*/
+      int m_8 = this->u32_8; // ecx /*0x40b8bf*/
       if ( a2 < m_8 ) /*0x40b8c4*/
         m_8 = a2; /*0x40b8c6*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b8cc*/
         ++i; /*0x40b8d1*/
       if ( BYTE1(this->q00C) ) /*0x40b8de*/
@@ -588,8 +585,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x40b90e*/
   }
-  int v7; // eax
-  v7 = this->u32_8; /*0x40b911*/
+  int v7 = this->u32_8; // eax /*0x40b911*/
   if ( v7 < this->Count ) /*0x40b919*/
     this->Count = v7; /*0x40b91b*/
   return 1; /*0x40b91e*/
@@ -606,7 +602,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
   if ( a2 ) /*0x40b9ac*/
   {
     LOBYTE(this->q00C) = 0; /*0x40b9b6*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x40b9bc*/
       v4 = a3; /*0x40b9d2*/
     else
@@ -616,11 +612,10 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x40b9e5*/
       {
-  int m_8; // ecx
-        m_8 = this->u32_8; /*0x40b9ec*/
+        int m_8 = this->u32_8; // ecx /*0x40b9ec*/
         if ( a2 < m_8 ) /*0x40b9f1*/
           m_8 = a2; /*0x40b9f3*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b9f9*/
           ++i; /*0x40b9fe*/
         if ( BYTE1(this->q00C) ) /*0x40ba0b*/
@@ -656,7 +651,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
   if ( a3_2 ) /*0x40baec*/
   {
     (*((unsigned char *)&(a3_2->q00C))) = 0; /*0x40baf2*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3_2 ) /*0x40baf8*/
       v4 = (unsigned int *)(a3_2); /*0x40bb0e*/
     else
@@ -666,11 +661,11 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
       return 0; /*0x40bb8a*/
     if ( *(unsigned int *)&a3_2->q004 ) /*0x40bb18*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = *(unsigned int *)&a3_2->q008; /*0x40bb1f*/
       if ( a3_2 < m_8 ) /*0x40bb24*/
         m_8 = a3_2; /*0x40bb26*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&a3_2->q004 + 4 * i - 4) ) /*0x40bb2c*/
         ++i; /*0x40bb31*/
       if ( (((unsigned char *)&(a3_2->q00C))[1]) ) /*0x40bb3e*/
@@ -700,8 +695,7 @@ namespace gamemd {
 DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x40bc13*/
+  void *v3 = *&Block->__pad_004; // eax /*0x40bc13*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40bc16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x40bc20*/
   {
@@ -761,8 +755,7 @@ namespace gamemd {
 VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x40c113*/
+  void *v3 = *&Block->__pad_004; // eax /*0x40c113*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40c116*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x40c120*/
   {
@@ -799,7 +792,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
   if ( a2 ) /*0x40c41c*/
   {
     LOBYTE(this->q00C) = 0; /*0x40c422*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x40c428*/
       v4 = a3; /*0x40c43e*/
     else
@@ -809,11 +802,10 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
       return 0; /*0x40c4ba*/
     if ( *&this->q004 ) /*0x40c448*/
     {
-  int m_8; // ecx
-      m_8 = this->u32_8; /*0x40c44f*/
+      int m_8 = this->u32_8; // ecx /*0x40c44f*/
       if ( a2 < m_8 ) /*0x40c454*/
         m_8 = a2; /*0x40c456*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40c45c*/
         ++i; /*0x40c461*/
       if ( BYTE1(this->q00C) ) /*0x40c46e*/
@@ -830,8 +822,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVLightConvertClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x40c49e*/
   }
-  int v7; // eax
-  v7 = this->u32_8; /*0x40c4a1*/
+  int v7 = this->u32_8; // eax /*0x40c4a1*/
   if ( v7 < this->Count ) /*0x40c4a9*/
     this->Count = v7; /*0x40c4ab*/
   return 1; /*0x40c4ae*/

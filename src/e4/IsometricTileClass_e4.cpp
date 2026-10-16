@@ -37,7 +37,7 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
          *(unsigned int *)&DataGlobal_87F758 + *(unsigned int *)&DataGlobal_87F764,
          0) )
   {
-  int v4; // eax
+    int v4; // eax
     v4 = (*(unsigned int *)&DataGlobal_87F760)++; /*0x543862*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_87F754 + 4 * v4) = (unsigned int)(this); /*0x543871*/
   }

@@ -10,7 +10,7 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int * Gadget::InitProperties(void *a1)
 {
-
+  
   unknown_libname_74(&this->m_1[3]); /*0x600636*/
   unknown_libname_74(&this->m_5[3]); /*0x60063e*/
   *(unsigned int *)this->q000 = 0; /*0x600646*/
@@ -18,6 +18,6 @@ unsigned int * Gadget::InitProperties(void *a1)
   this->u32_14 = -1; /*0x60064f*/
   this->u32_10 = 0; /*0x600652*/
   return this->q000; /*0x60065b*/
-
+  
 }
 }  // G42.18 ns repair

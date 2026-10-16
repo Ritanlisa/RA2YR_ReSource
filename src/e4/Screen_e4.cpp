@@ -44,8 +44,7 @@ int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
   retaddr = v5; /*0x52ff00*/
   unsigned int *v7; // eax
   v7 = (unsigned int *)(operator new(0x20u)); /*0x52ff08*/
-  unsigned int *v8; // esi
-  v8 = v7; /*0x52ff0d*/
+  unsigned int *v8 = v7; // esi /*0x52ff0d*/
   if ( v7 ) /*0x52ff14*/
   {
     v7[2] = (unsigned int)(v6);
@@ -77,7 +76,7 @@ int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
 namespace gamemd {  // G42.18c ns repair
 int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 {
-    unsigned int v19 = 0;  /* G37 hoist */
+  unsigned int v19 = 0;  /* G37 hoist */
   int v5; // ecx
   int v6; // edi
   int v7; // ebp
@@ -504,11 +503,10 @@ int Screen::TransitionLoop(int a2)
     Screen::CleanupTransitionObjects(); /*0x690189*/
     GetClientRect((HWND)(g_hWnd), &Rect); /*0x69019a*/
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x6901ab*/
-  int v3; // eax
+    int v3; // eax
     v3 = *(unsigned int *)this; /*0x6901b1*/
-  int v4; // ecx
-    v4 = this->u32_4; /*0x6901c4*/
-  unsigned int v17[4]; // [esp+3Ch] [ebp-30h] BYREF
+    int v4 = this->u32_4; // ecx /*0x6901c4*/
+    unsigned int v17[4]; // [esp+3Ch] [ebp-30h] BYREF
     v17[0] = *(unsigned int *)this + Rect.left; /*0x6901c7*/
     v17[1] = v4 + Rect.top; /*0x6901d7*/
     v17[2] = 640; /*0x6901db*/
@@ -520,7 +518,7 @@ int Screen::TransitionLoop(int a2)
         g_DSurface_Hidden,
         0);
     (*((void (**)(DSurface *, unsigned int *, ObjectClass *, Rect *, unsigned int, int))g_DSurface_Primary /*0x690225*/
-     + 2))(
+    + 2))(
       g_DSurface_Primary,
       v17,
       g_DSurface_Hidden,
@@ -538,16 +536,16 @@ int Screen::TransitionLoop(int a2)
       MessageLoop(); /*0x690245*/
       if ( !((unsigned int *)&stru_A8EB00)[412] )
       {
-  int v5; // eax
-  int v6; // esi
+        int v5; // eax
+        int v6; // esi
         if ( Ticks == -1
           || ((v5 = TimerGetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5), v16 = v6,
                                                                                         ((unsigned int *)&stru_A8EB00)[412] != 1) )
         {
-  int i; // esi
+          int i; // esi
           for ( i = 0; i < this->u32_2C; ++i ) /*0x690292*/
           {
-  int v8; // ecx
+            int v8; // ecx
             v8 = *(unsigned int *)(this->q020 + 4 * i); /*0x690297*/
             (*(void (**)(int))(*(unsigned int *)v8 + 4))(v8); /*0x69029c*/
           }
@@ -556,10 +554,10 @@ int Screen::TransitionLoop(int a2)
             Sleep(0x1F4u); /*0x6902b5*/
             MessageLoop(); /*0x6902b7*/
           }
-  int j; // esi
+          int j; // esi
           for ( j = 0; j < this->u32_2C; ++j ) /*0x6902cc*/
           {
-  int v10; // ecx
+            int v10; // ecx
             v10 = *(unsigned int *)(this->q020 + 4 * j); /*0x6902d1*/
             (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x6902d6*/
           }
@@ -570,7 +568,7 @@ int Screen::TransitionLoop(int a2)
       v11 = v16; /*0x6902fc*/
       if ( Ticks != -1 ) /*0x690302*/
       {
-  int v12; // eax
+        int v12; // eax
         v12 = TimerGetTicks() - Ticks; /*0x69030d*/
         if ( v12 >= v16 ) /*0x690313*/
           break; /*0x690313*/
@@ -606,12 +604,11 @@ int Screen::CleanupTransitionObjects()
       0,
       1);
   }
-  int result; // eax
-  result = this->u32_2C; /*0x69039d*/
+  int result = this->u32_2C; // eax /*0x69039d*/
   int i; // edi
   for ( i = 0; i < result; ++i ) /*0x6903a4*/
   {
-  int v4; // ecx
+    int v4; // ecx
     v4 = *(unsigned int *)(this->q020 + 4 * i); /*0x6903ad*/
     if ( (*(uint8_t (**)(int, unsigned int))(*(unsigned int *)v4 + 12))(v4, this->q008) == 1 ) /*0x6903b7*/
     {
@@ -624,8 +621,8 @@ int Screen::CleanupTransitionObjects()
         v7 = v6 - 1; /*0x6903d0*/
         i = i; /*0x6903d3*/
         for ( this->u32_2C = v7; /*0x6903da*/
-              i < this->u32_2C;
-              *(unsigned int *)(this->q020 + 4 * i - 4) = *(unsigned int *)(this->q020 + 4 * i) )
+        i < this->u32_2C;
+        *(unsigned int *)(this->q020 + 4 * i - 4) = *(unsigned int *)(this->q020 + 4 * i) )
         {
           ++i; /*0x6903df*/
         }

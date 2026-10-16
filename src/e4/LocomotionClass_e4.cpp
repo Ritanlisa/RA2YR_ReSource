@@ -71,7 +71,7 @@ void * LocomotionClass::UpdateAll()
   int i; // esi
   for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
-  unsigned int *v3; // ecx
+    unsigned int *v3; // ecx
     v3 = (unsigned int *)*((unsigned int *)dword_8A3874 + i); /*0x4c54b3*/
     result = *(wchar_t **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c54be*/
     if ( *(int *)&((unsigned int *)&stru_A8EB00)[416] >= v3[11] + v3[12] ) /*0x4c54c5*/
@@ -94,9 +94,9 @@ int LocomotionClass::CheckBridgeBlock()
     || (LOBYTE(vtable1) = BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass), !(unsigned char)vtable1) )
   {
     vtable1 = (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
-  FootClass *LinkedTo; // edi
-  Cell *v4; // eax
-  unsigned int *v5; // eax
+    FootClass *LinkedTo; // edi
+    Cell *v4; // eax
+    unsigned int *v5; // eax
     if ( vtable1 == 2 /*0x4cfacc*/
       && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].?, vtable1->u8_E0D)
       && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
@@ -123,8 +123,7 @@ namespace gamemd {
 int LocomotionClass::GetSpeedMultiplier()
 {
 
-  int result; // eax
-  result = this->u32_5D4; /*0x4dc760*/
+  int result = this->u32_5D4; // eax /*0x4dc760*/
   if ( result ) /*0x4dc768*/
     return result->u32_24; /*0x4dc76a*/
   return result; /*0x4dc77d*/
@@ -169,8 +168,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   LocomotionClass::Init((LocomotionClass *)a1); /*0x54ac46*/
   a1->DestinationCoords[0] = dword_ABC5A8; /*0x54ac59*/
   a1->DestinationCoords[1] = dword_ABC5AC; /*0x54ac61*/
-  int v2; // ecx
-  v2 = dword_ABC5B0; /*0x54ac64*/
+  int v2 = dword_ABC5B0; // ecx /*0x54ac64*/
   a1->IsMoving = 0; /*0x54ac6a*/
   *(unsigned int *)a1->__pad_50 = 0; /*0x54ac6d*/
   a1->DestinationCoords[2] = v2; /*0x54ac70*/

@@ -19,7 +19,7 @@ namespace gamemd {
 AnimFile * AnimFile::QueryInterface(void * Block, char a2)
 {
   void (***v4)(unsigned int, int); // ecx
-
+  
   char v3; // al
   v3 = *((unsigned char *)Block + 137); /*0x4272a6*/
   *(unsigned int *)Block->Return_field_00 = &vt_AnimFile; /*0x4272ac*/

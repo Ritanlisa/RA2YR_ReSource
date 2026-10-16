@@ -37,11 +37,10 @@ int Font::GetGlyphDataForChar(uint16_t aP1)
 
   unsigned int *Font_field_04; // ecx
   Font_field_04 = (unsigned int *)this->Font_field_04; /*0x4346c0*/
-  int result; // eax
-  result = 0; /*0x4346c3*/
+  int result = 0; // eax /*0x4346c3*/
   if ( Font_field_04 ) /*0x4346c7*/
   {
-  int v4; // edx
+    int v4; // edx
     v4 = *(uint16_t *)(Font_field_04[6] + 2 * aP1); /*0x4346da*/
     if ( (unsigned short)v4 ) /*0x4346e2*/
       return Font_field_04[7] + (v4 - 1) * Font_field_04[5]; /*0x4346eb*/
@@ -122,7 +121,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     v53 = v16; /*0x434d31*/
     if ( (unsigned short)v16 ) /*0x434d35*/
     {
-  LABEL_4:
+      LABEL_4:
       switch ( (int16_t)v53 ) /*0x434d59*/
       {
         case 9: /*0x434d59*/
@@ -135,15 +134,15 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v18 = 0; /*0x434d6e*/
           if ( aP5 > v11 ) /*0x434d72*/
           {
-            if ( (aP7 & 1) != 0 ) /*0x434d7b*/
-            {
-              v18 = (aP5 - v11) / 2; /*0x434d84*/
-            }
-            else if ( (aP7 & 2) != 0 ) /*0x434d8b*/
-            {
-              v18 = (int)(aP5 - v11); /*0x434d8f*/
-            }
+          if ( (aP7 & 1) != 0 ) /*0x434d7b*/
+          {
+            v18 = (aP5 - v11) / 2; /*0x434d84*/
           }
+          else if ( (aP7 & 2) != 0 ) /*0x434d8b*/
+          {
+            v18 = (int)(aP5 - v11); /*0x434d8f*/
+          }
+        }
           xLeft = aP1a + v18; /*0x434d97*/
           if ( v12 >= aP2 ) /*0x434da1*/
             goto LABEL_20; /*0x434da1*/
@@ -152,39 +151,39 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v21 = v49 - aP8 + aP9 + 1; /*0x434dba*/
           while ( 2 ) /*0x434dc4*/
           {
-            ++v21; /*0x434dc4*/
-            --v20; /*0x434dca*/
-            ++v49; /*0x434dcb*/
-            v22 = v15; /*0x434dd1*/
-            if ( !v19 ) /*0x434dd3*/
-              goto LABEL_18; /*0x434dd3*/
-            if ( v49 >= v19 ) /*0x434ddd*/
-              goto LABEL_73; /*0x434ddd*/
-            if ( v20 < aP9 ) /*0x434de7*/
-            {
-              v23 = Palette::SixBitTo16Bit( /*0x434e2e*/
+          ++v21; /*0x434dc4*/
+          --v20; /*0x434dca*/
+          ++v49; /*0x434dcb*/
+          v22 = v15; /*0x434dd1*/
+          if ( !v19 ) /*0x434dd3*/
+            goto LABEL_18; /*0x434dd3*/
+          if ( v49 >= v19 ) /*0x434ddd*/
+            goto LABEL_73; /*0x434ddd*/
+          if ( v20 < aP9 ) /*0x434de7*/
+          {
+            v23 = Palette::SixBitTo16Bit( /*0x434e2e*/
                       v48,
                       (uint8_t)((uint16_t)v15 >> g_BitShift_Red) << g_BitShift_Green_0,
                       (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue,
                       (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red);
-              v55 = *(unsigned short *)v23; /*0x434e3b*/
-              v56 = v23->ptr_2; /*0x434e4c*/
-              ((uint8_t *)&v55)->Lerp(v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
-              v22 = PackRGB565((uint8_t)v55, (*(((unsigned char *)&(v55)) + (sizeof(v55) - 1))), v56); /*0x434e7c*/
-            }
-  LABEL_18:
-            if ( v22 == -1 ) /*0x434e84*/
-              goto LABEL_73; /*0x434e84*/
-            v44 = *v12++; /*0x434e99*/
-            xLeft = (aP0)->RenderGlyph(v44, xLeft, aP4, v22); /*0x434ea6*/
-            if ( v12 < aP2 ) /*0x434eb0*/
-            {
-              v19 = (int)(aP8); /*0x434dc0*/
-              continue; /*0x434dc0*/
-            }
-            break;
+            v55 = *(unsigned short *)v23; /*0x434e3b*/
+            v56 = v23->ptr_2; /*0x434e4c*/
+            ((uint8_t *)&v55)->Lerp(v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
+            v22 = PackRGB565((uint8_t)v55, (*(((unsigned char *)&(v55)) + (sizeof(v55) - 1))), v56); /*0x434e7c*/
           }
-  LABEL_20:
+          LABEL_18:
+          if ( v22 == -1 ) /*0x434e84*/
+            goto LABEL_73; /*0x434e84*/
+          v44 = *v12++; /*0x434e99*/
+          xLeft = (aP0)->RenderGlyph(v44, xLeft, aP4, v22); /*0x434ea6*/
+          if ( v12 < aP2 ) /*0x434eb0*/
+          {
+            v19 = (int)(aP8); /*0x434dc0*/
+            continue; /*0x434dc0*/
+          }
+          break;
+        }
+          LABEL_20:
           v24 = (unsigned int *)aP0; /*0x434eb6*/
           v11 = 0; /*0x434ebe*/
           v14 = 0; /*0x434ec0*/
@@ -193,7 +192,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           if ( aP6 && v51 >= aP6 ) /*0x434ed7*/
             goto LABEL_57; /*0x434ed7*/
           aP4 += v25; /*0x434edd*/
-  LABEL_23:
+          LABEL_23:
           ++v12; /*0x434ee1*/
           goto LABEL_55; /*0x434ee4*/
         case 32: /*0x434d59*/
@@ -201,14 +200,14 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v52 = (unsigned short *)(aP2); /*0x434f06*/
           goto LABEL_26; /*0x434f06*/
         default:
-  LABEL_26:
+          LABEL_26:
           GlyphDataForChar = (uint8_t *)((unsigned int *)aP0)->GetGlyphDataForChar((uint16_t)v53); /*0x434f0a*/
           if ( !GlyphDataForChar ) /*0x434f1a*/
           {
-            GlyphDataForChar = (uint8_t *)((unsigned int *)aP0)->GetGlyphDataForChar(0x3Fu); /*0x434f22*/
-            if ( !GlyphDataForChar ) /*0x434f29*/
-              goto LABEL_55; /*0x434f29*/
-          }
+          GlyphDataForChar = (uint8_t *)((unsigned int *)aP0)->GetGlyphDataForChar(0x3Fu); /*0x434f22*/
+          if ( !GlyphDataForChar ) /*0x434f29*/
+            goto LABEL_55; /*0x434f29*/
+        }
           ++v14; /*0x434f37*/
           v27 = *GlyphDataForChar + aP0->q02C; /*0x434f3b*/
           v11 += v27; /*0x434f41*/
@@ -217,29 +216,29 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v28 = v52; /*0x434f53*/
           if ( v52 ) /*0x434f59*/
           {
-            if ( v14 > 1 ) /*0x434f5e*/
-            {
-              v11 = v54; /*0x434f60*/
-              aP2 = (gamemd::AbstractClass *)(v52); /*0x434f64*/
-            }
+          if ( v14 > 1 ) /*0x434f5e*/
+          {
+            v11 = v54; /*0x434f60*/
+            aP2 = (gamemd::AbstractClass *)(v52); /*0x434f64*/
           }
+        }
           else if ( v14 > 1 ) /*0x434f6d*/
           {
-            v11 -= v27; /*0x434f6f*/
-            --aP2; /*0x434f78*/
-          }
+          v11 -= v27; /*0x434f6f*/
+          --aP2; /*0x434f78*/
+        }
           v29 = 0; /*0x434f80*/
           if ( aP5 > v11 ) /*0x434f84*/
           {
-            if ( (aP7 & 1) != 0 ) /*0x434f8d*/
-            {
-              v29 = (aP5 - v11) / 2; /*0x434f96*/
-            }
-            else if ( (aP7 & 2) != 0 ) /*0x434f9d*/
-            {
-              v29 = (int)(aP5 - v11); /*0x434fa1*/
-            }
+          if ( (aP7 & 1) != 0 ) /*0x434f8d*/
+          {
+            v29 = (aP5 - v11) / 2; /*0x434f96*/
           }
+          else if ( (aP7 & 2) != 0 ) /*0x434f9d*/
+          {
+            v29 = (int)(aP5 - v11); /*0x434fa1*/
+          }
+        }
           xLeft = aP1a + v29; /*0x434fa9*/
           if ( v12 >= aP2 ) /*0x434fb3*/
             goto LABEL_50; /*0x434fb3*/
@@ -268,8 +267,8 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             v58 = (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435054*/
             ((uint8_t *)&v57)->Lerp(v33 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435066*/
             v35 = ((uint8_t)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4350ba*/
-                | (v58 >> g_BitMask_Red << g_BitShift_Blue)
-                | ((*(((unsigned char *)&(v57)) + (sizeof(v57) - 1))) >> g_BitMask_Blue << g_BitMask_Green);
+            | (v58 >> g_BitMask_Red << g_BitShift_Blue)
+            | ((*(((unsigned char *)&(v57)) + (sizeof(v57) - 1))) >> g_BitMask_Blue << g_BitMask_Green);
           }
         }
         if ( v35 == -1 ) /*0x4350bf*/
@@ -279,7 +278,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         if ( v12 >= aP2 ) /*0x4350eb*/
         {
           v28 = v52; /*0x4350f1*/
-  LABEL_50:
+          LABEL_50:
           if ( aP2 == v28 ) /*0x4350f9*/
           {
             v52 = 0; /*0x4350fb*/
@@ -292,13 +291,13 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v51 += v36; /*0x435117*/
           if ( aP6 && v51 >= aP6 ) /*0x435127*/
           {
-  LABEL_57:
+            LABEL_57:
             result = BufferIO::Cleanup(v24, aP1); /*0x43514d*/
             (*((unsigned char *)&(result))) = 1; /*0x43515a*/
             return result; /*0x435160*/
           }
           aP4 += v36; /*0x435129*/
-  LABEL_55:
+          LABEL_55:
           v13 = (int16_t)v53; /*0x43512d*/
           v37 = (unsigned short *)(aP2 + 1); /*0x435135*/
           aP2 = (gamemd::AbstractClass *)(v37); /*0x435138*/
@@ -317,7 +316,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     }
     else
     {
-  LABEL_59:
+      LABEL_59:
       v38 = 0; /*0x435167*/
       if ( aP5 > v11 ) /*0x43516f*/
       {
@@ -355,8 +354,8 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
               v58 = (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435231*/
               ((uint8_t *)&v57)->Lerp(v41 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435243*/
               v43 = ((uint8_t)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x435297*/
-                  | (v58 >> g_BitMask_Red << g_BitShift_Blue)
-                  | ((*(((unsigned char *)&(v57)) + (sizeof(v57) - 1))) >> g_BitMask_Blue << g_BitMask_Green);
+              | (v58 >> g_BitMask_Red << g_BitShift_Blue)
+              | ((*(((unsigned char *)&(v57)) + (sizeof(v57) - 1))) >> g_BitMask_Blue << g_BitMask_Green);
             }
           }
           if ( v43 == -1 ) /*0x43529c*/
@@ -370,7 +369,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         }
       }
     }
-  LABEL_73:
+    LABEL_73:
     result = BufferIO::Cleanup((unsigned int *)aP0, aP1); /*0x4352ed*/
     (*((unsigned char *)&(result))) = 1; /*0x4352fe*/
   }

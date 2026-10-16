@@ -32,8 +32,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
     }
     while ( ((unsigned __int8 (*)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
-  int v4; // edx
-  v4 = v7; /*0x7653ea*/
+  int v4 = v7; // edx /*0x7653ea*/
   a2[1] = (unsigned int)(v6); /*0x7653ef*/
   a2[2] = v4; /*0x7653f2*/
   *a2 = (unsigned int)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x7653f5*/

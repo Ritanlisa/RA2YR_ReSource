@@ -32,8 +32,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   unsigned __int8 *pad_14; // [esp+8h] [ebp-Ch]
   int Srca; // [esp+18h] [ebp+4h]
 
-  char *v3; // ebp
-  v3 = Src; /*0x42ddb4*/
+  char *v3 = Src; // ebp /*0x42ddb4*/
   if ( !Src || a3 < 1 ) /*0x42ddc8*/
     return ((Pipe *)this)->Dispatch((int)Src, a3); /*0x42df25*/
   int v13; // [esp+Ch] [ebp-8h]
@@ -52,23 +51,21 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     v6 = (unsigned char *)(this->Delegate_field_14); /*0x42ddeb*/
     Srca = 4; /*0x42ddee*/
   }
-  int v7; // ecx
-  v7 = this->field_10; /*0x42de0f*/
+  int v7 = this->field_10; // ecx /*0x42de0f*/
   if ( v7 > 0 ) /*0x42de14*/
   {
-  int Size; // [esp+10h] [ebp-4h]
+    int Size; // [esp+10h] [ebp-4h]
     Size = a3; /*0x42de24*/
     if ( a3 >= v5 - v7 ) /*0x42de28*/
       Size = v5 - v7; /*0x42de2a*/
     memcpy(&pad_14[this->field_10], v3, Size); /*0x42de3e*/
-  int v8; // ecx
-    v8 = Size + this->field_10; /*0x42de4e*/
+    int v8 = Size + this->field_10; // ecx /*0x42de4e*/
     v3 += Size; /*0x42de55*/
     this->field_10 = v8; /*0x42de59*/
     a3 -= Size; /*0x42de5c*/
     if ( v8 == v5 ) /*0x42de60*/
     {
-  int v9; // eax
+      int v9; // eax
       if ( this->field_C ) /*0x42de62*/
         v9 = DecodeBitmapRGB(pad_14, v5, v6, Srca); /*0x42de88*/
       else
@@ -79,7 +76,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   }
   for ( ; a3 >= v5; a3 -= v5 ) /*0x42dea5*/
   {
-  int v10; // eax
+    int v10; // eax
     if ( this->field_C ) /*0x42dea7*/
       v10 = DecodeBitmapRGB((unsigned __int8 *)v3, v5, v6, Srca); /*0x42dec9*/
     else
@@ -135,7 +132,7 @@ int Delegate::Set(int aP1, void *a2, void *a3)
   {
     if ( aP1 ) /*0x6c989f*/
     {
-  int v4; // ecx
+      int v4; // ecx
       v4 = *(unsigned int *)(aP1 + 8); /*0x6c98a1*/
       if ( v4 ) /*0x6c98a6*/
       {
@@ -177,10 +174,8 @@ int Delegate::ProcessBitmapAndDispatch()
   void *pad_14; // edi
   int v5; // eax
 
-  int v2; // edi
-  v2 = 0; /*0x42df44*/
-  int v3; // edx
-  v3 = this->field_10; /*0x42df46*/
+  int v2 = 0; // edi /*0x42df44*/
+  int v3 = this->field_10; // edx /*0x42df46*/
   if ( v3 ) /*0x42df4b*/
   {
     if ( this->field_C ) /*0x42df4d*/
@@ -206,31 +201,26 @@ int Delegate::StreamToBuffer(char * a1, int a3)
 {
 
 
-  int result; // eax
-  result = 0; /*0x4a2786*/
+  int result = 0; // eax /*0x4a2786*/
   int v10; // [esp+10h] [ebp-4h]
   v10 = 0; /*0x4a278c*/
   if ( *&this->m_allocated ) /*0x4a2789*/
   {
-  char *v5; // ebp
-    v5 = a1; /*0x4a2794*/
+    char *v5 = a1; // ebp /*0x4a2794*/
     if ( a1 ) /*0x4a279a*/
     {
-  int v6; // ebx
-      v6 = a3; /*0x4a279c*/
+      int v6 = a3; // ebx /*0x4a279c*/
       if ( a3 > 0 ) /*0x4a27a2*/
       {
         do /*0x4a2805*/
         {
-  signed int v7; // edi
-          v7 = this->field_1C; /*0x4a27a4*/
+          signed int v7 = this->field_1C; // edi /*0x4a27a4*/
           if ( v7 > 0 ) /*0x4a27a9*/
           {
             if ( v7 >= v6 ) /*0x4a27ad*/
               v7 = v6; /*0x4a27af*/
             memcpy(v5, (const void *)(*&this->m_allocated + *&this->m_straw), v7); /*0x4a27bc*/
-  int v8; // ecx
-            v8 = this->field_1C - v7; /*0x4a27cf*/
+            int v8 = this->field_1C - v7; // ecx /*0x4a27cf*/
             v6 -= v7; /*0x4a27d4*/
             *&this->m_straw += v7; /*0x4a27d6*/
             v10 += v7; /*0x4a27d9*/
@@ -239,7 +229,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
           }
           if ( !v6 ) /*0x4a27e4*/
             break; /*0x4a27e4*/
-  int v9; // eax
+          int v9; // eax
           v9 = ((Straw *)this)->Invoke(*&this->m_allocated, this->field_10); /*0x4a27f0*/
           this->field_1C = v9; /*0x4a27f7*/
           *&this->m_straw = 0; /*0x4a27fa*/
@@ -264,11 +254,11 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   *(unsigned int *)this->m_items = (unsigned int)(&vt_GenericNode); /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
-  int Previous; // ecx
+    int Previous; // ecx
     Previous = this->Previous; /*0x52ae2f*/
     if ( Previous ) /*0x52ae34*/
     {
-  int v4; // eax
+      int v4; // eax
       v4 = *(unsigned int *)this->Blowfish; /*0x52ae36*/
       if ( v4 ) /*0x52ae3b*/
       {

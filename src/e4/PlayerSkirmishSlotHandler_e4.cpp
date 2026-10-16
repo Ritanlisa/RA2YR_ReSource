@@ -23,8 +23,7 @@ void sub_5DAF30(ObjectClass *self)
   v3[0] = 22; /*0x5daf56*/
   strcpy((char *)&v3[1],(const char *)(unk_A8B380)); /*0x5daf6d*/
   Player::BuildListString((wchar_t *)((Player *)&v3[11] + 3)); /*0x5daf7a*/
-  int v1; // edi
-  v1 = dword_A8DA84; /*0x5daf7f*/
+  int v1 = dword_A8DA84; // edi /*0x5daf7f*/
   int i; // esi
   for ( i = 1; i < v1; ++i ) /*0x5daf8c*/
   {

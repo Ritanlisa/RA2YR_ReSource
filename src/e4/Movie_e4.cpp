@@ -43,18 +43,14 @@ AbstractClass * * Movie::SetupScreen(int aP1)
 
   if ( !byte_89F578 ) /*0x49cafc*/
     (&g_DDrawSurfaceManager)->LoadFromINI(); /*0x49cb03*/
-  int v3; // eax
-  v3 = aP1; /*0x49cb08*/
+  int v3 = aP1; // eax /*0x49cb08*/
   if ( aP1 < 0 || aP1 >= dword_89F574 ) /*0x49cb1c*/
     return 0; /*0x49cc46*/
-  int v4; // ecx
-  v4 = dword_89F570; /*0x49cb29*/
+  int v4 = dword_89F570; // ecx /*0x49cb29*/
   this->u32_6C = 1; /*0x49cb2f*/
   this->u32_38 = -1; /*0x49cb33*/
-  int v5; // ebp
-  v5 = v4 + 76 * aP1; /*0x49cb3a*/
-  int v6; // ecx
-  v6 = this->q0044; /*0x49cb3d*/
+  int v5 = v4 + 76 * aP1; // ebp /*0x49cb3a*/
+  int v6 = this->q0044; // ecx /*0x49cb3d*/
   this->u32_48 = 0; /*0x49cb42*/
   this->u32_4C = 0; /*0x49cb45*/
   this->u32_50 = 0; /*0x49cb48*/
@@ -68,11 +64,10 @@ AbstractClass * * Movie::SetupScreen(int aP1)
   {
     if ( this->u32_3C ) /*0x49cb63*/
     {
-  int i; // edi
+      int i; // edi
       for ( i = 0; i < this->u32_40; ++i ) /*0x49cb72*/
       {
-  int v8; // edx
-        v8 = this->u32_3C; /*0x49cb74*/
+        int v8 = this->u32_3C; // edx /*0x49cb74*/
         if ( *(unsigned int *)(v8 + 4 * i) ) /*0x49cb77*/
           __3_YAXPAX_Z(*(void **)(v8 + 4 * i)); /*0x49cb7f*/
       }
@@ -81,15 +76,14 @@ AbstractClass * * Movie::SetupScreen(int aP1)
     this->u32_3C = 0; /*0x49cb9b*/
     this->u32_40 = 0; /*0x49cb9e*/
     this->u32_3C = (unsigned int)(__2_YAPAXI_Z(4 * *(char *)(v5 + 8))); /*0x49cbae*/
-  int v9; // edi
-    v9 = 0; /*0x49cbb7*/
+    int v9 = 0; // edi /*0x49cbb7*/
     if ( *(char *)(v5 + 8) > 0 ) /*0x49cbbb*/
     {
-  int v12; // [esp+8h] [ebp-4h]
+      int v12; // [esp+8h] [ebp-4h]
       v12 = 0; /*0x49cbbd*/
       do /*0x49cc26*/
       {
-  int v10; // ebx
+        int v10; // ebx
         v10 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x49cbde*/
         *(unsigned int *)(this->u32_3C + 4 * v9) = (unsigned int)(__2_YAPAXI_Z(0x104u)); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
@@ -141,26 +135,24 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
   if ( Render_Play(a4, Str, 1) && !*(unsigned int *)&dword_A8B238 ) /*0x5bed6a*/
   {
     (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x5bed76*/
-  char *v8; // eax
+    char *v8; // eax
     v8 = strrchr(Str, 46); /*0x5bed82*/
     if ( !v8 || _strcmpi(v8,(const char *)(aBik)) ) /*0x5bed98*/
     {
       (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x5bef0b*/
-  int v9; // edi
-      v9 = 0; /*0x5bef1e*/
-  int v10; // ebp
-      v10 = 0; /*0x5bef20*/
-  int v11; // eax
+      int v9 = 0; // edi /*0x5bef1e*/
+      int v10 = 0; // ebp /*0x5bef20*/
+      int v11; // eax
       (*((unsigned short *)&(v11))) = Math::RoundToInt(*(float *)&stru_A8EB00.vfptr[39] * 255.0); /*0x5bef24*/
-  MovieClass **VQMovie; // eax
+      MovieClass **VQMovie; // eax
       VQMovie = (MovieClass **)LoadVQMovie(Str, (int *)DSurface_Alternate, 0, 0, 0, 0, 0, 0, 0, 0, v11, 1); /*0x5bef56*/
-  MovieContext *v13; // esi
+      MovieContext *v13; // esi
       v13 = (MovieContext *)VQMovie; /*0x5bef5b*/
       if ( VQMovie ) /*0x5bef61*/
       {
         if ( MovieClass::GetWidth(*VQMovie) >= 320 || MovieClass::GetHeight(*(MovieClass **)v13) >= 200 ) /*0x5bef81*/
         {
-  bool v14; // al
+          bool v14; // al
           v14 = a6 == 1 && (*((unsigned char *)&(stru_A8EB00.vfptr[37]))) == 1; /*0x5befba*/
           if ( g_DDraw_AllowStretchBlits == 1 && v14 ) /*0x5befcb*/
           {
@@ -170,7 +162,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
               v10 = (int)v13[12]; /*0x5befdd*/
               if ( v10 < *(int *)&g_CreditsScreenConfig ) /*0x5befec*/
               {
-  double v15; // st7
+                double v15; // st7
                 v15 = (double)*(int *)&g_CreditsScreenBounds; /*0x5befee*/
                 v13[15] = *(MovieContext *)&g_CreditsScreenBounds; /*0x5beff4*/
                 *(unsigned short *)v16.tail_0 = Math::RoundToInt(v15 / (double)v9); /*0x5bf001*/
@@ -217,7 +209,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           if ( a5 == 1 ) /*0x5bf130*/
           {
             (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vfptr + 6))(g_DSurface_Hidden, 0); /*0x5bf13b*/
-  int v19; // [esp+0h] [ebp-150h]
+            int v19; // [esp+0h] [ebp-150h]
             Frame::Present((void *)((int)g_DSurface_Hidden), 0, v10, v9, 0, v19, v20, v21); /*0x5bf147*/
           }
           (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5bf154*/
@@ -271,7 +263,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       if ( a5 == 1 ) /*0x5beeb1*/
       {
         (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vfptr + 6))(g_DSurface_Hidden, 0); /*0x5beebc*/
-  int v18; // [esp+0h] [ebp-150h]
+        int v18; // [esp+0h] [ebp-150h]
         Frame::Present((void *)((int)g_DSurface_Hidden), 0, a2, a3, 0, v18, v20, v21); /*0x5beec8*/
       }
       (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x5beed3*/
@@ -289,8 +281,7 @@ void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, vo
 
   if ( a1 >= 0 && a1 < (void *)(dword_ABF3A0) ) /*0x5bf26a*/
   {
-  char v6; // bl
-    v6 = byte_A8E378; /*0x5bf275*/
+    char v6 = byte_A8E378; // bl /*0x5bf275*/
     byte_A8E378 = 0; /*0x5bf289*/
     Movie::Play(-1, a2, a3, a4, a5, a6, 0); /*0x5bf296*/
     byte_A8E378 = v6; /*0x5bf29b*/
@@ -325,7 +316,7 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
           LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&a1_1->__pad_28[4]) != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/
           {
-LABEL_10:
+            LABEL_10:
             IsSoundEnabled = (void *)a1_1->Movie_field_0x8; /*0x720a31*/
             if ( IsSoundEnabled != (void *)-1 && IsSoundEnabled != (void *)-3 && !dword_A8E7AC ) /*0x720a46*/
             {
@@ -354,17 +345,15 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
   unsigned int v6; // ebx
   bool v7; // zf
 
-  unsigned int v2; // ebp
-  v2 = aP1; /*0x720a81*/
+  unsigned int v2 = aP1; // ebp /*0x720a81*/
   if ( (aP1 <= -1 || *(unsigned char *)(*(unsigned int *)(this->u32_18 + 4 * aP1) + 649) || this->__pad_10) && aP1 >= 0 ) /*0x720aa7*/
     return v2; /*0x720b18*/
   if ( this->u32_12 == 1 ) /*0x720aad*/
   {
-  int v4; // edi
-    v4 = 0; /*0x720ab0*/
+    int v4 = 0; // edi /*0x720ab0*/
     while ( 1 ) /*0x720abe*/
     {
-  unsigned int v5; // eax
+      unsigned int v5; // eax
       v5 = Random::Range(&Randomizer_Global, 0, this->u32_24 - 1); /*0x720abe*/
       ++v4; /*0x720ac3*/
       v6 = v5; /*0x720ac4*/
@@ -383,8 +372,7 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
   }
   else
   {
-  int v9; // edi
-    v9 = this->u32_24 + 1; /*0x720af4*/
+    int v9 = this->u32_24 + 1; // edi /*0x720af4*/
     while ( 1 ) /*0x720af8*/
     {
       if ( (signed int)++v2 >= this->u32_24 ) /*0x720afb*/
@@ -403,9 +391,9 @@ char Movie::GetSectionID(unsigned int *result)
 
   int result; // eax
 
-    if ( this->u32_6C )
+  if ( this->u32_6C )
   {
-        result = (unsigned int *)(this->q0044);
+    result = (unsigned int *)(this->q0044);
     *result = (unsigned int)(result); /*0x49bc93*/
     (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x49bc95*/
   }

@@ -92,7 +92,7 @@ char Credits::Screen()
   result = v9; /*0x52ccc0*/
   if ( !v9 ) /*0x52ccc7*/
   {
-LABEL_15:
+    LABEL_15:
     CCFileClass::Construct(v11, aBattlemdIni_0); /*0x52ccd6*/
     v6 = (unsigned int *)(__2_YAPAXI_Z(0x58u)); /*0x52ccdd*/
     v7 = v6; /*0x52cce2*/

@@ -13,10 +13,8 @@ int Progress::GetAverage(void *a1)
 {
   int result; // eax
 
-  int v2; // edx
-  v2 = this->u32_61; /*0x6433d1*/
-  double v3; // st7
-  v3 = 0.0; /*0x6433d5*/
+  int v2 = this->u32_61; // edx /*0x6433d1*/
+  double v3 = 0.0; // st7 /*0x6433d5*/
   if ( v2 > 0 ) /*0x6433e1*/
   {
     result = (int)&this-((unsigned int *)(>m_Values))[2]; /*0x6433e3*/

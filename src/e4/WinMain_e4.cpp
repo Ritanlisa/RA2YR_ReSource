@@ -115,9 +115,9 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   v19 = (int *)(dword_ABF168); /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)((unsigned char *)(operator new(0x2738u)));
-  unsigned char *v5; // esi
+    unsigned char *v5; // esi
     v5 = (unsigned char *)(v4); /*0x5bc1b3*/
     if ( v4 ) /*0x5bc1ba*/
     {
@@ -128,18 +128,14 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
       v4[2506] = 0; /*0x5bc1d8*/
       v4[2507] = 80; /*0x5bc1de*/
       v4[2508] = 25; /*0x5bc1e8*/
-  int v6; // edi
-      v6 = 0; /*0x5bc1f2*/
-  unsigned int *v7; // ebp
-      v7 = v4 + 500; /*0x5bc1f4*/
+      int v6 = 0; // edi /*0x5bc1f2*/
+      unsigned int *v7 = v4 + 500; // ebp /*0x5bc1f4*/
       do /*0x5bc219*/
       {
-  unsigned char *v8; // ecx
+        unsigned char *v8; // ecx
         v8 = &v5[v6]; /*0x5bc1fa*/
-  unsigned int *v9; // eax
-        v9 = v7; /*0x5bc1fd*/
-  int v10; // edx
-        v10 = 80; /*0x5bc1ff*/
+        unsigned int *v9 = v7; // eax /*0x5bc1fd*/
+        int v10 = 80; // edx /*0x5bc1ff*/
         do /*0x5bc210*/
         {
           *v8 = 32; /*0x5bc204*/
@@ -171,20 +167,17 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   dword_ABF23C = ((unsigned int *)(dword_ABF168))[0]; /*0x5bc260*/
   do /*0x5bc2b2*/
   {
-  unsigned char *v12; // ecx
+    unsigned char *v12; // ecx
     v12 = (unsigned char *)*v11; /*0x5bc266*/
-  int v13; // edi
-    v13 = 0; /*0x5bc268*/
-  int v14; // ebp
-    v14 = *v11 + 2000; /*0x5bc26a*/
+    int v13 = 0; // edi /*0x5bc268*/
+    int v14 = *v11 + 2000; // ebp /*0x5bc26a*/
     do /*0x5bc293*/
     {
-  unsigned char *v15; // edx
+      unsigned char *v15; // edx
       v15 = &v12[v13]; /*0x5bc270*/
-  unsigned int *v16; // eax
+      unsigned int *v16; // eax
       v16 = (unsigned int *)v14; /*0x5bc273*/
-  int v17; // esi
-      v17 = 80; /*0x5bc275*/
+      int v17 = 80; // esi /*0x5bc275*/
       do /*0x5bc28a*/
       {
         *v15 = 32; /*0x5bc27a*/
@@ -203,8 +196,7 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
     ++v11; /*0x5bc2a9*/
   }
   while ( (int)v11 < (int)&dword_ABF188 ); /*0x5bc2b2*/
-  uint8_t result; // al
-  result = byte_ABF239; /*0x5bc2b4*/
+  uint8_t result = byte_ABF239; // al /*0x5bc2b4*/
   if ( byte_ABF239 ) /*0x5bc2bf*/
   {
     result = byte_ABF238; /*0x5bc2c1*/
@@ -228,14 +220,13 @@ int WinMain::Constructor_VectorClass_Wstring_()
   int i; // ebp
   for ( i = 0; i < this->u32_6A0; ++i ) /*0x69a200*/
   {
-  int v3; // esi
+    int v3; // esi
     v3 = *(unsigned int *)(this->u32_694 + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
       v3->u32_1A4 = &vt_VectorClass; /*0x69a215*/
       VectorClass_Wstring::ddtor(&v3->u32_1A4); /*0x69a21b*/
-  void *v4; // eax
-      v4 = v3->u32_18C; /*0x69a220*/
+      void *v4 = v3->u32_18C; // eax /*0x69a220*/
       v3->u32_188 = &vt_VectorClass; /*0x69a226*/
       if ( v4 && v3->q195 ) /*0x69a234*/
       {
@@ -279,7 +270,7 @@ unsigned int * WinMain::ShutdownCleanup(void *a1)
   dword_B1CF8C = 0; /*0x734d5d*/
   if ( dword_B1CF78 ) /*0x734d65*/
   {
-  int j; // esi
+    int j; // esi
     for ( j = 0; j < dword_B1CF70; ++j ) /*0x734d70*/
     {
       if ( v2[j] ) /*0x734d72*/
@@ -295,7 +286,7 @@ unsigned int * WinMain::ShutdownCleanup(void *a1)
   v4 = (void **)dword_B1CF7C; /*0x734da1*/
   if ( dword_B1CF7C ) /*0x734da9*/
   {
-  int k; // esi
+    int k; // esi
     for ( k = 0; k < dword_B1CF70; ++k ) /*0x734db4*/
     {
       if ( v4[k] ) /*0x734db6*/
@@ -402,9 +393,9 @@ void* sub_7B84F0()
         result = (HANDLE)SetThreadPriority(result, 15); /*0x7b8582*/
         if ( !result ) /*0x7b858a*/
         {
-  DWORD LastError; // eax
+          DWORD LastError; // eax
           LastError = GetLastError(); /*0x7b8598*/
-  CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
+          CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
           FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x7b85a5*/
           Debug::Log(); /*0x7b85b5*/
           while ( !dword_B78140 ) /*0x7b85c4*/
@@ -454,7 +445,7 @@ void sub_53E6B0()
     {
       if ( dword_AA0464 ) /*0x53e6e7*/
       {
-  signed int SampleSize; // eax
+        signed int SampleSize; // eax
         SampleSize = ((unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e6eb*/
         WriteAudioStreamToFile(dword_AA0464,(FILE *)(dword_AA0468), SampleSize, 0); /*0x53e6fd*/
         fflush((FILE *)(dword_AA0468)); /*0x53e708*/

@@ -25,8 +25,7 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 {
 
-  uint8_t result; // al
-  result = g_DDraw_Force3D; /*0x6bb8e0*/
+  uint8_t result = g_DDraw_Force3D; // al /*0x6bb8e0*/
   DDraw *v2; // [esp+0h] [ebp-4h]
   if ( g_DDraw_Force3D ) /*0x6bb8ea*/
     result = DDraw::CleanupSurfaces(v2); /*0x6bb8ec*/
@@ -75,7 +74,7 @@ void sub_72B130()
 
   if ( byte_B0FC90 ) /*0x72b13b*/
   {
-  void *v0; // esi
+    void *v0; // esi
     v0 = (void *)(dword_B0FC80); /*0x72b13d*/
     if ( dword_B0FC80 ) /*0x72b145*/
     {
@@ -87,7 +86,7 @@ void sub_72B130()
   dword_B0FC80 = 0; /*0x72b162*/
   if ( byte_B0FC91 ) /*0x72b16a*/
   {
-  void *v1; // esi
+    void *v1; // esi
     v1 = (void *)(dword_B0FC84); /*0x72b16c*/
     if ( dword_B0FC84 ) /*0x72b174*/
     {
@@ -99,7 +98,7 @@ void sub_72B130()
   dword_B0FC84 = 0; /*0x72b191*/
   if ( byte_B0FC92 ) /*0x72b199*/
   {
-  void *v2; // esi
+    void *v2; // esi
     v2 = (void *)(dword_B0FC88); /*0x72b19b*/
     if ( dword_B0FC88 ) /*0x72b1a3*/
     {
@@ -111,7 +110,7 @@ void sub_72B130()
   dword_B0FC88 = 0; /*0x72b1c0*/
   if ( byte_B0FC93 ) /*0x72b1c8*/
   {
-  void *v3; // esi
+    void *v3; // esi
     v3 = (void *)(dword_B0FC8C); /*0x72b1ca*/
     if ( dword_B0FC8C ) /*0x72b1d2*/
     {
@@ -123,7 +122,7 @@ void sub_72B130()
   dword_B0FC8C = 0; /*0x72b1ef*/
   if ( byte_B0FC94 ) /*0x72b1f7*/
   {
-  void *v4; // esi
+    void *v4; // esi
     v4 = (void *)(dword_B0FACC); /*0x72b1f9*/
     if ( dword_B0FACC ) /*0x72b201*/
     {
@@ -165,7 +164,7 @@ void sub_5B4310()
   {
     if ( *(unsigned int *)dword_ABF00C ) /*0x5b431c*/
       (*(unsigned int **)dword_ABF00C)->Destructor(); /*0x5b4324*/
-  unsigned int *v1; // ecx
+    unsigned int *v1; // ecx
     v1 = (unsigned int *)v0[1]; /*0x5b4329*/
     if ( v1 ) /*0x5b432e*/
       (v1)->Destructor(); /*0x5b4330*/
@@ -295,21 +294,21 @@ void sub_65FD50()
   int i; // edi
   for ( i = g_TriggerEventState - 1; i >= 0; --i ) /*0x65fd5c*/
   {
-  void *v2; // esi
+    void *v2; // esi
     v2 = *(void **)(g_TriggerPool + 4 * i); /*0x65fd65*/
     if ( v2 ) /*0x65fd6a*/
     {
-  int v4; // [esp+4h] [ebp-4h] BYREF
+      int v4; // [esp+4h] [ebp-4h] BYREF
       v4 = *(unsigned int *)(g_TriggerPool + 4 * i); /*0x65fd7b*/
-  int v3; // eax
+      int v3; // eax
       v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)DataGlobal_B04DA8 + 16))(&stru_B04DA8, &v4); /*0x65fd7f*/
       if ( v3 != -1 && v3 < g_TriggerEventState ) /*0x65fd8f*/
       {
         --g_TriggerEventState; /*0x65fd94*/
         for ( ; /*0x65fd9a*/
-              v3 < g_TriggerEventState;
-              *(unsigned int *)(g_TriggerPool + 4 * v3 - 4) = *(unsigned int *)(g_TriggerPool
-                                                                                    + 4 * v3) )
+        v3 < g_TriggerEventState;
+        *(unsigned int *)(g_TriggerPool + 4 * v3 - 4) = *(unsigned int *)(g_TriggerPool
+        + 4 * v3) )
         {
           ++v3; /*0x65fda2*/
         }
@@ -350,7 +349,7 @@ void sub_72AC40()
     *(unsigned int *)&DataGlobal_B0FC28 = 0; /*0x72ace5*/
     operator delete((void *)(*(void **)&DataGlobal_B0FC2C)); /*0x72acec*/
     *(unsigned int *)&DataGlobal_B0FC2C = 0; /*0x72acf4*/
-  ObjectClass *v2; // [esp+0h] [ebp-4h]
+    ObjectClass *v2; // [esp+0h] [ebp-4h]
     ReleaseLoadingResources(v2); /*0x72acfa*/
   }
   FileTree::CleanupAll(); /*0x72acff*/

@@ -18,8 +18,8 @@ namespace gamemd { int sub_434700(int p0); }  // x4:signals@0x434700
 namespace gamemd {  // G42.18 ns repair
 int BitTextClass::ParseFontData(char * Source, void *a2)
 {
-
-
+  
+  
   struct tagRECT *v3; // ebp
   v3 = (struct tagRECT *)(a2 + 48); /*0x43388a*/
   *(unsigned int *)a2 = (unsigned int)(&vt_BitFont); /*0x433895*/
@@ -62,14 +62,14 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
     *(unsigned int *)(a2 + 44) = 1; /*0x433931*/
   }
   return (int)(a2); /*0x4338f4*/
-
+  
 }
 } // namespace gamemd
 // 0x434AD0
 namespace gamemd {
 unsigned int * BitTextClass::LoadFont()
 {
-
+  
   this->m_FontBitmap = (int)(&vt_BitText); /*0x434ad5*/
   int v2; // eax
   v2 = (int)(operator new(0x44u)); /*0x434adb*/

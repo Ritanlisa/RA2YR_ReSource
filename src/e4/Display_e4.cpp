@@ -27,14 +27,11 @@ int Display::GetViewport()
 
   int *result; // eax
   result = (int *)this; /*0x72ad29*/
-  int v2; // ecx
-  v2 = 0; /*0x72ad44*/
+  int v2 = 0; // ecx /*0x72ad44*/
   if ( !byte_A8EB7C && !byte_A8ED6B ) /*0x72ad5e*/
     v2 = 168; /*0x72ad60*/
-  int v3; // edx
-  v3 = dword_886FB8 - 168; /*0x72ad67*/
-  int v4; // esi
-  v4 = dword_886FBC - 32; /*0x72ad6d*/
+  int v3 = dword_886FB8 - 168; // edx /*0x72ad67*/
+  int v4 = dword_886FBC - 32; // esi /*0x72ad6d*/
   *result = v2; /*0x72ad70*/
   result[1] = 0; /*0x72ad72*/
   result[2] = v3; /*0x72ad76*/

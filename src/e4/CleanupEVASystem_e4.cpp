@@ -16,7 +16,7 @@ void sub_72DC20()
 
   if ( byte_B0FCC8 ) /*0x72dc2b*/
   {
-  void *v0; // esi
+    void *v0; // esi
     v0 = (void *)(dword_B0FB48);
     if ( dword_B0FB48 ) /*0x72dc35*/
     {
@@ -28,7 +28,7 @@ void sub_72DC20()
   dword_B0FB48 = 0; /*0x72dc52*/
   if ( byte_B0FCCA ) /*0x72dc5a*/
   {
-  void *v1; // esi
+    void *v1; // esi
     v1 = (void *)(dword_B0FB10);
     if ( dword_B0FB10 ) /*0x72dc64*/
     {
@@ -40,7 +40,7 @@ void sub_72DC20()
   dword_B0FB10 = 0; /*0x72dc81*/
   if ( byte_B0FCCB ) /*0x72dc89*/
   {
-  void *v2; // esi
+    void *v2; // esi
     v2 = (void *)(dword_B0F9F8);
     if ( dword_B0F9F8 ) /*0x72dc93*/
     {
@@ -52,7 +52,7 @@ void sub_72DC20()
   dword_B0F9F8 = 0; /*0x72dcb0*/
   if ( byte_B0FCCC ) /*0x72dcb8*/
   {
-  void *v3; // esi
+    void *v3; // esi
     v3 = (void *)(dword_B0FA6C);
     if ( dword_B0FA6C ) /*0x72dcc2*/
     {

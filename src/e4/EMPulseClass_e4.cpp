@@ -26,7 +26,7 @@ int EMPulseClass::StubReturn55()
 namespace gamemd {
 EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
 {
-
+  
   *(unsigned int *)a3->__pad_0 = &vt_EMPulseClass; /*0x4c5ac4*/
   a3->EMPulseClass_field_0x04 = (int)&vt_EMPulseClass; /*0x4c5aca*/
   a3->EMPulseClass_field_0x08 = (int)&vt_EMPulseClass; /*0x4c5ad1*/

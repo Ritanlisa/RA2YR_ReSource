@@ -19,11 +19,10 @@ char sub_6DA770()
   v0 = *(int **)dword_A8ECBC; /*0x6da780*/
   if ( !(*(int (**)(unsigned int))(**(unsigned int **)dword_A8ECBC + 60))(*(unsigned int *)dword_A8ECBC) ) /*0x6da786*/
     return 0; /*0x6da786*/
-  int v1; // eax
-  v1 = *v0; /*0x6da796*/
+  int v1 = *v0; // eax /*0x6da796*/
   if ( ((unsigned int *)(dword_A8B238))[0] ) /*0x6da798*/
   {
-  void *v3; // eax
+    void *v3; // eax
     v3 = (void *)(*(int (**)(int *))(v1 + 60))(v0); /*0x6da7a7*/
     v2 = (uint8_t)((House *)(v3))->IsHumanPlayer() == 0; /*0x6da7b1*/
   }

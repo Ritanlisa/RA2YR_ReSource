@@ -89,7 +89,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
           }
           *(unsigned int *)(this->u32_D0 + 4 * v9) = -1; /*0x54021f*/
         }
-LABEL_14:
+        LABEL_14:
         ((PacketQueue *)this->PlayerIndex)->ReleaseEntry(0, 0, i--, 0, 0); /*0x540226*/
       }
       v2 = this; /*0x540277*/
@@ -151,7 +151,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
         }
         v9 = *(unsigned int *)(dword_A8DA78[v10] + 111); /*0x540514*/
       }
-  LABEL_13:
+      LABEL_13:
       LinkedIndex = ((Factory *)((Factory *)&g_NetworkEventQueue))->GetLinkedIndex(v9); /*0x540517*/
       if ( !LinkedIndex ) /*0x540524*/
         LinkedIndex = 1; /*0x540526*/
@@ -187,7 +187,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   {
     (*((unsigned char *)&(v13))) = (*((unsigned char *)&(v7[3].IPXGlobalConnClass_field_0x20))) == 0; /*0x5405da*/
     (*(void (**)(unsigned int, int, int, NetworkID *, int, int, int, int))(**(unsigned int **)&stru_887598.isAliveFlag /*0x5405f2*/
-                                                                              + 12))(
+      + 12))(
       *(unsigned int *)&stru_887598.isAliveFlag,
       v8,
       arg4,
@@ -206,8 +206,7 @@ int IPXGlobalConnClass::CheckStatus()
 {
 
 
-  int v2; // esi
-  v2 = 0; /*0x5400d4*/
+  int v2 = 0; // esi /*0x5400d4*/
   Terrain *IPXGlobalConnClass_field_0x04; // ecx
   IPXGlobalConnClass_field_0x04 = (Terrain *)this->PlayerIndex; /*0x5400d6*/
   if ( (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38 > 0 ) /*0x5400de*/
@@ -232,26 +231,23 @@ int IPXGlobalConnClass::Send()
 
   Waypoint v10; // [esp+14h] [ebp-40Ch] BYREF
 
-  int v2; // ebx
-  v2 = 0; /*0x5402db*/
-  int v3; // esi
-  v3 = 0; /*0x5402dd*/
-  int IPXGlobalConnClass_field_0x04; // ecx
-  IPXGlobalConnClass_field_0x04 = this->PlayerIndex; /*0x5402df*/
+  int v2 = 0; // ebx /*0x5402db*/
+  int v3 = 0; // esi /*0x5402dd*/
+  int IPXGlobalConnClass_field_0x04 = this->PlayerIndex; // ecx /*0x5402df*/
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) > 0 ) /*0x5402e7*/
   {
     do /*0x540332*/
     {
-  int v5; // eax
+      int v5; // eax
       v5 = *(unsigned int *)((Terrain *)IPXGlobalConnClass_field_0x04)->GetTileIndex(v3); /*0x5402ef*/
       if ( (v5 & 4) != 0 && (v5 & 2) == 0 ) /*0x5402f7*/
       {
         (&v10)->InitInvalid(); /*0x5402fd*/
-  PacketQueue *v6; // ecx
+        PacketQueue *v6; // ecx
         v6 = (PacketQueue *)this->PlayerIndex; /*0x54030e*/
-  int v8; // [esp+Ch] [ebp-414h] BYREF
+        int v8; // [esp+Ch] [ebp-414h] BYREF
         v8 = 12; /*0x54031c*/
-  int v9; // [esp+10h] [ebp-410h] BYREF
+        int v9; // [esp+10h] [ebp-410h] BYREF
         PacketQueue::ExtractEntry(v6, &v10.u32_C, &v9, v3--, &v10, &v8, 0); /*0x540324*/
         ++v2; /*0x54032a*/
       }
@@ -271,31 +267,27 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
 
   Waypoint v13; // [esp+14h] [ebp-40Ch] BYREF
 
-  int IPXGlobalConnClass_field_0x04; // ecx
-  IPXGlobalConnClass_field_0x04 = this->PlayerIndex; /*0x54034b*/
-  int v5; // ebp
-  v5 = 0; /*0x54034e*/
-  int v6; // esi
-  v6 = 0; /*0x540350*/
+  int IPXGlobalConnClass_field_0x04 = this->PlayerIndex; // ecx /*0x54034b*/
+  int v5 = 0; // ebp /*0x54034e*/
+  int v6 = 0; // esi /*0x540350*/
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) <= 0 ) /*0x540357*/
     return 0; /*0x5403de*/
   do /*0x5403cd*/
   {
-  int TileIndex; // eax
+    int TileIndex; // eax
     TileIndex = ((Terrain *)IPXGlobalConnClass_field_0x04)->GetTileIndex(v6); /*0x54035f*/
-  int v8; // edi
-    v8 = TileIndex; /*0x540364*/
+    int v8 = TileIndex; // edi /*0x540364*/
     if ( (*(unsigned char *)TileIndex & 2) == 0 /*0x540392*/
       && *(unsigned int *)(TileIndex + 24)
       && (unsigned __int8)(*(bool **)(TileIndex + 28))->Compare(a2)
       && *(unsigned short *)(v8 + 32) == a3 )
     {
       (&v13)->InitInvalid(); /*0x540398*/
-  PacketQueue *v9; // ecx
+      PacketQueue *v9; // ecx
       v9 = (PacketQueue *)this->PlayerIndex; /*0x5403b3*/
-  int v11; // [esp+Ch] [ebp-414h] BYREF
+      int v11; // [esp+Ch] [ebp-414h] BYREF
       v11 = 12; /*0x5403b7*/
-  int v12; // [esp+10h] [ebp-410h] BYREF
+      int v12; // [esp+10h] [ebp-410h] BYREF
       PacketQueue::ExtractEntry(v9, &v13.u32_C, &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
       ++v5; /*0x5403c5*/
     }

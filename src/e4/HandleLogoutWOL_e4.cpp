@@ -19,7 +19,7 @@ int sub_7AC500(int a1)
   {
     do /*0x7ac546*/
     {
-  int v3; // eax
+      int v3; // eax
       v3 = *(unsigned int *)(v2 + 16); /*0x7ac520*/
       if ( v3 ) /*0x7ac525*/
         (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(v2 + 16)); /*0x7ac52a*/
@@ -52,8 +52,7 @@ int sub_7AC500(int a1)
   {
     if ( *(unsigned int *)(a1 + 120) ) /*0x7ac593*/
     {
-  unsigned int v6; // esi
-      v6 = 0; /*0x7ac5a0*/
+      unsigned int v6 = 0; // esi /*0x7ac5a0*/
       do /*0x7ac5b1*/
         HeapDestroy(*(HANDLE *)(*(unsigned int *)(a1 + 120) + 4 * v6++)); /*0x7ac5a9*/
       while ( v6 <= *(unsigned int *)(a1 + 116) ); /*0x7ac5b1*/

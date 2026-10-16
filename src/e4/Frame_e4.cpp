@@ -100,12 +100,12 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
       {
         if ( dword_87F7EC >= 0 ) /*0x4f4856*/
         {
-LABEL_13:
+          LABEL_13:
           if ( dword_87F7F0 > 0 ) /*0x4f4860*/
           {
             v14 = v11 - dword_87F7F0; /*0x4f4865*/
             v46 = dword_87F7F0 + v41; /*0x4f4867*/
-LABEL_17:
+            LABEL_17:
             v48 = v14; /*0x4f4871*/
             goto LABEL_18; /*0x4f4871*/
           }
@@ -114,7 +114,7 @@ LABEL_17:
             v14 = dword_87F7F0 + v11; /*0x4f486f*/
             goto LABEL_17; /*0x4f486f*/
           }
-LABEL_18:
+          LABEL_18:
           if ( !byte_A8EB7C && !byte_A8ED6B ) /*0x4f4887*/
           {
             v15 = dword_886FB8 - v12; /*0x4f4895*/
@@ -188,13 +188,13 @@ LABEL_18:
             {
               v13 = dword_87F7F0; /*0x4f4a14*/
               v30 = 1; /*0x4f4a1a*/
-LABEL_47:
+              LABEL_47:
               if ( !byte_884D2E && !v13 && !v30 ) /*0x4f4a36*/
               {
                 v48 -= *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a4a*/
                 Rect.right -= *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a53*/
               }
-LABEL_51:
+              LABEL_51:
               if ( dword_87F7EC ) /*0x4f4a5e*/
               {
                 v31 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1) - *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a7c*/

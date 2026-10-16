@@ -26,10 +26,8 @@ unsigned int * CellStruct::Copy(CellStruct *aP0, void* aP1)  // G57w11: def åŒæ
 {
 
 
-  int v3; // edx
-  v3 = aP0->field_0; /*0x437f34*/
-  void *v4; // ecx
-  v4 = aP0->field_4; /*0x437f36*/
+  int v3 = aP0->field_0; // edx /*0x437f34*/
+  void *v4 = aP0->field_4; // ecx /*0x437f36*/
   *aP1 = (void *)(v3); /*0x437f39*/
   aP1[1] = v4; /*0x437f3b*/
   return (unsigned int *)(aP1); /*0x437f3e*/
@@ -49,8 +47,7 @@ void* CellStruct::Sub(unsigned int *aP1, unsigned short *aP2)
 {
 
 
-  __int16 v3; // dx
-  v3 = this->field_0; /*0x588c60*/
+  __int16 v3 = this->field_0; // dx /*0x588c60*/
   __int16 v4; // cx
   v4 = HIWORD(this->field_0) - aP2[1]; /*0x588c6e*/
   unsigned short *v6; // [esp+8h] [ebp+8h]

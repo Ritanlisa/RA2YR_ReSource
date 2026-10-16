@@ -35,22 +35,22 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
-
+  
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
   *(unsigned int *)this->MPGameModeClass = &vt_MultiplayerBattle; /*0x5c0df8*/
   return this->MPGameModeClass; /*0x5c0e00*/
-
+  
 }
 } // namespace gamemd
 // 0x5C5CE0
 namespace gamemd {
 unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
-
+  
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
   *(unsigned int *)this->MPGameModeClass = &vt_FreeForAll; /*0x5c5d08*/
   return this->MPGameModeClass; /*0x5c5d10*/
-
+  
 }
 } // namespace gamemd
 // 0x5C6150
@@ -66,22 +66,22 @@ unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerM
 namespace gamemd {
 unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
-
+  
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
   *(unsigned int *)this->MPGameModeClass = &vt_Megawealth; /*0x5c9408*/
   return this->MPGameModeClass; /*0x5c9410*/
-
+  
 }
 } // namespace gamemd
 // 0x5CA630
 namespace gamemd {
 unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
-
+  
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
   *(unsigned int *)this->MPGameModeClass = &vt_MultiplayerSiege; /*0x5ca658*/
   return this->MPGameModeClass; /*0x5ca660*/
-
+  
 }
 } // namespace gamemd
 // 0x5CA7D0
@@ -95,7 +95,7 @@ int MPBattleClass::vt_entry_18()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::isValidMap()
 {
-
+  
   double v0; // st7
   v0 = Math::Sin(dbl_ABFA80 - dbl_ABFAA8); /*0x5cad02*/
   int64_t result; // rax
@@ -122,7 +122,7 @@ void MPBattleClass::validatePlayer()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::startGame()
 {
-
+  
   int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABFAF8) + 0.5); /*0x5cadab*/
   dword_ABFAEC = result; /*0x5cadb0*/
@@ -162,7 +162,7 @@ int MPBattleClass::isHouseAllyChangeAllowed()
 namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::onPlayerConnect()
 {
-
+  
   long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x5cb19c*/
   dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
@@ -200,7 +200,7 @@ void MPBattleClass::getAlliesLimit()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::canAllyWith()
 {
-
+  
   double v0; // st7
   v0 = Math::Sin(dbl_ABFB08 - dbl_ABFB30); /*0x5cb272*/
   int64_t result; // rax
@@ -231,11 +231,11 @@ int MPBattleClass::isAIAllowed()
 namespace gamemd {  // G42.18c ns repair
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
-
+  
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
   *(unsigned int *)this->MPGameModeClass = &vt_UnholyAlliance; /*0x5cb3c8*/
   return this->MPGameModeClass; /*0x5cb3d0*/
-
+  
 }
 }  // G42.18c ns repair
 // 0x5CB570
@@ -325,7 +325,7 @@ void MPBattleClass::validateStartPosition()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::isDefaultFix()
 {
-
+  
   int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABFC88) + 0.5); /*0x5d396b*/
   dword_ABFC7C = result; /*0x5d3970*/
@@ -404,7 +404,7 @@ int MPBattleClass::unfixAlliances()
 namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::startingPositionsToHouseBaseCells()
 {
-
+  
   long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x5d58bc*/
   dbl_ABFD58 = Math::Sqrt(v0 + v0); /*0x5d58ce*/
@@ -434,13 +434,13 @@ void MPBattleClass::onAIJoined()
 // 0x5D8170
 MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-
-
+  
+  
   unsigned int *v6; // eax
   v6 = __2_YAPAXI_Z(0x40u); /*0x5d8172*/
   if ( v6 ) /*0x5d817c*/
     return MPBattleClass::initGame(v6, a1, a2, a3, a4, a5, a6); /*0x5d819e*/
   else
     return 0; /*0x5d81a6*/
-
+  
 }

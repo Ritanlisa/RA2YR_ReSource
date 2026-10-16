@@ -40,12 +40,11 @@ int StreamClass::Set2(unsigned int * a2, void *a2_1, void *a3, void *a4, void *a
 
   if ( *a2 ) /*0x45aea8*/
   {
-  int v3; // edi
+    int v3; // edi
     v3 = (**(int (***)(unsigned int, void *, unsigned int **))*a2)(*a2, &unk_818858, &a2); /*0x45aebd*/
     if ( v3 >= 0 ) /*0x45aec1*/
     {
-  unsigned int *v5; // ebx
-      v5 = a2; /*0x45aedf*/
+      unsigned int *v5 = a2; // ebx /*0x45aedf*/
       if ( *(unsigned int *)this->m_Position ) /*0x45aedc*/
         (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45aeea*/
       *(unsigned int *)this->m_Position = (unsigned int)(v5); /*0x45aeed*/
@@ -61,7 +60,7 @@ int StreamClass::Set2(unsigned int * a2, void *a2_1, void *a3, void *a4, void *a
   }
   else
   {
-  int v6; // eax
+    int v6; // eax
     v6 = *(unsigned int *)this->m_Position; /*0x45aef7*/
     if ( *(unsigned int *)this->m_Position ) /*0x45aef7*/
     {
@@ -81,12 +80,11 @@ int StreamClass::Set(unsigned int *aP1, void *a2, void *a3)
 
   if ( *aP1 ) /*0x45af28*/
   {
-  int v3; // edi
+    int v3; // edi
     v3 = (**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &DataGlobal_818E00[648], &aP1); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
-  unsigned int *v5; // ebx
-      v5 = aP1; /*0x45af5f*/
+      unsigned int *v5 = aP1; // ebx /*0x45af5f*/
       if ( *(unsigned int *)this->m_Position ) /*0x45af5c*/
         (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45af6a*/
       *(unsigned int *)this->m_Position = (unsigned int)(v5); /*0x45af6d*/
@@ -102,7 +100,7 @@ int StreamClass::Set(unsigned int *aP1, void *a2, void *a3)
   }
   else
   {
-  int v6; // eax
+    int v6; // eax
     v6 = *(unsigned int *)this->m_Position; /*0x45af77*/
     if ( *(unsigned int *)this->m_Position ) /*0x45af77*/
     {

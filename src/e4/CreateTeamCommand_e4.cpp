@@ -45,7 +45,7 @@
 #include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DrawUnitExperiencePopup(char p0);  // x4:signals@0x7336c0
+int DrawUnitExperiencePopup(char p0);  // x4:signals@0x7336c0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aDefensetab;  // data: 0x827014 truth(IDA G42.57w9)
@@ -135,7 +135,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
   if ( a2 ) /*0x5386ac*/
   {
     this->qC = 0; /*0x5386b2*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x5386b8*/
       v4 = a3; /*0x5386ce*/
     else
@@ -145,11 +145,10 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
       return 0; /*0x53874a*/
     if ( this->__pad_004 ) /*0x5386d8*/
     {
-  int v5; // ecx
-      v5 = this->Capacity; /*0x5386df*/
+      int v5 = this->Capacity; // ecx /*0x5386df*/
       if ( a2 < v5 ) /*0x5386e4*/
         v5 = a2; /*0x5386e6*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->__pad_004 + 4 * i - 4) ) /*0x5386ec*/
         ++i; /*0x5386f1*/
       if ( this->IsAllocated ) /*0x5386fe*/
@@ -166,8 +165,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
   {
     (*(void (**)(void *))(*&this->u32_30))(this); /*0x53872e*/
   }
-  int v7; // eax
-  v7 = this->Capacity; /*0x538731*/
+  int v7 = this->Capacity; // eax /*0x538731*/
   if ( v7 < this->q010 ) /*0x538739*/
     this->q010 = (void *)(v7); /*0x53873b*/
   return (gamemd::AbstractClass **)(1); /*0x53873e*/
@@ -181,18 +179,16 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
 
   if ( (a2 & 2) != 0 ) /*0x538a2b*/
   {
-  int v3; // eax
+    int v3; // eax
     v3 = *((unsigned int *)Block - 1); /*0x538a2d*/
-  char *v4; // ebp
+    char *v4; // ebp
     v4 = (char *)Block - 4; /*0x538a31*/
-  ComPtr *v5; // esi
+    ComPtr *v5; // esi
     v5 = (ComPtr *)((char *)Block + 8 * v3); /*0x538a34*/
-  int v6; // eax
-    v6 = v3 - 1; /*0x538a37*/
+    int v6 = v3 - 1; // eax /*0x538a37*/
     if ( v6 >= 0 ) /*0x538a38*/
     {
-  int v7; // edi
-      v7 = v6 + 1; /*0x538a3b*/
+      int v7 = v6 + 1; // edi /*0x538a3b*/
       do /*0x538a4f*/
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x538a3e*/
@@ -252,7 +248,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
     }
     else if ( 2 * (v7 + *&v4->q044) < *&v4->q054 ) /*0x6a6ad2*/
     {
-  LABEL_13:
+      LABEL_13:
       ++*&v4->q048; /*0x6a6ad4*/
       (*(void (**)(CreateTeamCommand *, unsigned int))(*(unsigned int *)this->vtable1 + 56))(this, 0); /*0x6a6adf*/
       return 1; /*0x6a6ae6*/
@@ -266,16 +262,15 @@ namespace gamemd {
 void CreateTeamCommand::performAction_246()
 {
 
-  int v1; // ebx
-  v1 = dword_A8EC88; /*0x731061*/
+  int v1 = dword_A8EC88; // ebx /*0x731061*/
   int i; // edi
   for ( i = 0; i < v1; ++i )
   {
-  int v4; // esi
+    int v4; // esi
     v4 = *((unsigned int *)dword_A8EC7C + i); /*0x731077*/
     if ( v4 )
     {
-  int v5; // ecx
+      int v5; // ecx
       v5 = *(unsigned int *)(v4 + 540); /*0x731083*/
       if ( ((unsigned int *)(dword_A8B238))[0] ? ((House *)((void *)v5))->IsHumanPlayer() : *(unsigned char *)(v5 + 493) )
       {
@@ -438,9 +433,9 @@ char CreateTeamCommand::performAction_6()
     _7342A0 = UI_Create_7342A0(); /*0x535daa*/
     if ( _7342A0 ) /*0x535db1*/
     {
-  unsigned int *v4; // [esp-4h] [ebp-4h]
+      unsigned int *v4; // [esp-4h] [ebp-4h]
       v4 = (unsigned int *)_7342A0; /*0x535db5*/
-  int v2; // eax
+      int v2; // eax
       v2 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)_7342A0 + 400))(_7342A0, 0, 0); /*0x535dbc*/
       (*((unsigned char *)&(_7342A0))) = (unsigned char)(((BuildingPlacement *)(dword_A83D4C))->Activate(v2, v4)); /*0x535dc9*/
     }
@@ -496,9 +491,9 @@ char CreateTeamCommand::performAction_11()
     _7342B0 = UI_Create_7342B0(); /*0x535e6a*/
     if ( _7342B0 ) /*0x535e71*/
     {
-  unsigned int *v4; // [esp-4h] [ebp-4h]
+      unsigned int *v4; // [esp-4h] [ebp-4h]
       v4 = (unsigned int *)_7342B0; /*0x535e75*/
-  int v2; // eax
+      int v2; // eax
       v2 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)_7342B0 + 400))(_7342B0, 0, 0); /*0x535e7c*/
       (*((unsigned char *)&(_7342B0))) = (unsigned char)(((BuildingPlacement *)(dword_A83D4C))->Activate(v2, v4)); /*0x535e89*/
     }
@@ -700,13 +695,12 @@ unsigned char * CreateTeamCommand::performAction_30(void *a1, void *a2)
   v7 = v3; /*0x536656*/
   AnimClass *result; // eax
   result = (AnimClass *)sub_4AA2B0(v4); /*0x53665d*/
-  AnimClass *v6; // esi
-  v6 = result; /*0x536662*/
+  AnimClass *v6 = result; // esi /*0x536662*/
   if ( result ) /*0x536666*/
   {
     (v7)->UnselectAll_ClearLimboLaunchers(); /*0x536668*/
     (*(void (**)(AnimClass *))(v6->vtable1 + 332))(v6); /*0x536671*/
-  TacticalClass *v8; // [esp-4h] [ebp-4h]
+    TacticalClass *v8; // [esp-4h] [ebp-4h]
     (v8)->InterpolateView(); /*0x53667c*/
     return (unsigned char *)((AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1)); /*0x536688*/
   }
@@ -1070,13 +1064,12 @@ unsigned char * CreateTeamCommand::performAction_69(void *a1, void *a2)
   v7 = v3; /*0x536ac6*/
   AnimClass *result; // eax
   result = (AnimClass *)sub_4AA380(v4); /*0x536acd*/
-  AnimClass *v6; // esi
-  v6 = result; /*0x536ad2*/
+  AnimClass *v6 = result; // esi /*0x536ad2*/
   if ( result ) /*0x536ad6*/
   {
     (v7)->UnselectAll_ClearLimboLaunchers(); /*0x536ad8*/
     (*(void (**)(AnimClass *))(v6->vtable1 + 332))(v6); /*0x536ae1*/
-  TacticalClass *v8; // [esp-4h] [ebp-4h]
+    TacticalClass *v8; // [esp-4h] [ebp-4h]
     (v8)->InterpolateView(); /*0x536aec*/
     return (unsigned char *)((AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1)); /*0x536af8*/
   }
@@ -1871,8 +1864,7 @@ void * CreateTeamCommand::performAction_167()
   v5[1] = v1[1]; /*0x53773c*/
   int v2; // edx
   v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537745*/
-  void *result; // eax
-  result = dword_A8B230; /*0x537747*/
+  void *result = dword_A8B230; // eax /*0x537747*/
   *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = v2; /*0x53774c*/
   return result; /*0x537752*/
 }
@@ -1923,8 +1915,7 @@ void * CreateTeamCommand::performAction_172()
   v5[1] = v1[1]; /*0x5377fc*/
   int v2; // edx
   v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537805*/
-  void *result; // eax
-  result = dword_A8B230; /*0x537807*/
+  void *result = dword_A8B230; // eax /*0x537807*/
   *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = v2; /*0x53780c*/
   return result; /*0x537812*/
 }
@@ -1975,8 +1966,7 @@ void * CreateTeamCommand::performAction_177()
   v5[1] = v1[1]; /*0x5378bc*/
   int v2; // edx
   v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x5378c5*/
-  void *result; // eax
-  result = dword_A8B230; /*0x5378c7*/
+  void *result = dword_A8B230; // eax /*0x5378c7*/
   *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = v2; /*0x5378cc*/
   return result; /*0x5378d2*/
 }
@@ -2027,8 +2017,7 @@ void * CreateTeamCommand::performAction_182()
   v5[1] = v1[1]; /*0x53797c*/
   int v2; // edx
   v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537985*/
-  void *result; // eax
-  result = dword_A8B230; /*0x537987*/
+  void *result = dword_A8B230; // eax /*0x537987*/
   *(int *)((char *)&dword_A8B230[374].vfptr + 2) = v2; /*0x53798c*/
   return result; /*0x537992*/
 }
@@ -2114,8 +2103,7 @@ int CreateTeamCommand::performAction_192()
   bool v1; // zf
   v1 = byte_B04880 != 0; /*0x537b07*/
   byte_B04880 = byte_B04880 == 0; /*0x537b09*/
-  char *v2; // ecx
-  v2 = aExtraSyncInfoO; /*0x537b10*/
+  char *v2 = aExtraSyncInfoO; // ecx /*0x537b10*/
   if ( v1 ) /*0x537b15*/
     v2 = aExtraSyncInfoO_0; /*0x537b17*/
   char *v3; // eax
@@ -2656,8 +2644,7 @@ namespace gamemd {
 void CreateTeamCommand::performAction_239()
 {
 
-  void *v2; // eax
-  v2 = this->__pad_004; /*0x5384c6*/
+  void *v2 = this->__pad_004; // eax /*0x5384c6*/
   this->__pad_004 = 0; /*0x5384c9*/
   if ( v2 && this->IsAllocated ) /*0x5384d0*/
   {
@@ -2686,33 +2673,33 @@ namespace gamemd {
   int result; // eax
   unsigned int *i; // ecx
 
-    v2 = this->q010;
+  v2 = this->q010;
+  {
+    int v2; // edx
+    int result; // eax
+    unsigned int *i; // ecx
+
+    v2 = this->Items;
+    result = 0; /*0x538753*/
+    if ( v2 <= 0 ) /*0x538758*/
     {
       int v2; // edx
       int result; // eax
       unsigned int *i; // ecx
 
-        v2 = this->Items;
+      v2 = this->Items; /*0x538750*/
       result = 0; /*0x538753*/
       if ( v2 <= 0 ) /*0x538758*/
+        return -1; /*0x53876f*/
+      for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x53875e*/
       {
-        int v2; // edx
-        int result; // eax
-        unsigned int *i; // ecx
-
-        v2 = this->Items; /*0x538750*/
-        result = 0; /*0x538753*/
-        if ( v2 <= 0 ) /*0x538758*/
-          return -1; /*0x53876f*/
-        for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x53875e*/
-        {
-          if ( ++result >= v2 ) /*0x53876d*/
-            return -1; /*0x53876d*/
-        }
-        return result; /*0x538772*/
+        if ( ++result >= v2 ) /*0x53876d*/
+          return -1; /*0x53876d*/
       }
       return result; /*0x538772*/
     }
+    return result; /*0x538772*/
+  }
   return result; /*0x538772*/
 }
 }

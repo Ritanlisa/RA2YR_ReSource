@@ -19,7 +19,7 @@
 namespace gamemd {  // G42.18 ns repair
 LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
 {
-
+  
   LRESULT v5; // esi
   v5 = SendMessageA((HWND)(aP0), 0x149u, wParam, 0); /*0x623fd9*/
   if ( v5 <= 0 ) /*0x623fdd*/

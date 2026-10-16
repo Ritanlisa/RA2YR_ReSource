@@ -50,7 +50,7 @@ ControlClass GadgetClass::Dtor(void *a1)
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e139f*/
   {
-  int v2; // eax
+    int v2; // eax
     v2 = *(unsigned int *)this->Hovered; /*0x4e13a1*/
     BYTE1(v2) &= ~1u; /*0x4e13a4*/
     *(unsigned int *)this->Hovered = v2; /*0x4e13a7*/
@@ -81,25 +81,21 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     this->Height,
     this->Visible,
     this->ID);
-  int ListClass_field_0x14; // ecx
-  ListClass_field_0x14 = this->Visible; /*0x55796b*/
-  int ListClass_field_0x10; // eax
-  ListClass_field_0x10 = this->Height; /*0x55796e*/
+  int ListClass_field_0x14 = this->Visible; // ecx /*0x55796b*/
+  int ListClass_field_0x10 = this->Height; // eax /*0x55796e*/
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
   v9[0] = this->Width; /*0x557971*/
-  int ListClass_field_0x18; // edx
-  ListClass_field_0x18 = this->ID; /*0x557975*/
+  int ListClass_field_0x18 = this->ID; // edx /*0x557975*/
   v9[2] = ListClass_field_0x14; /*0x557978*/
   v9[3] = ListClass_field_0x18; /*0x55797c*/
   v9[1] = ListClass_field_0x10; /*0x55798b*/
   DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
   if ( this->u32_44 ) /*0x557994*/
   {
-  int i; // edi
+    int i; // edi
     for ( i = 0; i < this->q050; ++i ) /*0x5579a2*/
     {
-  int v7; // eax
-      v7 = i + this->u32_170; /*0x5579ad*/
+      int v7 = i + this->u32_170; // eax /*0x5579ad*/
       if ( this->u32_44 > v7 ) /*0x5579b1*/
         (*(void (**)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->vtable1 + 200))( /*0x5579e0*/
           this,
@@ -157,7 +153,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
       v15 = (unsigned int *)(v4 + 1); /*0x60ab1d*/
     }
   }
-LABEL_7:
+  LABEL_7:
   if ( v3 ) /*0x60ab23*/
   {
     v14 = Parent; /*0x60ab2e*/
@@ -176,8 +172,8 @@ LABEL_7:
     if ( v9 ) /*0x60acb4*/
       v6 = v9[27]; /*0x60acba*/
     else
-LABEL_12:
-      v6 = 0; /*0x60ab68*/
+      LABEL_12:
+    v6 = 0; /*0x60ab68*/
     DlgCtrlID = GetDlgCtrlID(hWnd); /*0x60ab6b*/
     if ( (v6 == 148 /*0x60ac9e*/
        || v6 == 216
@@ -268,13 +264,13 @@ LABEL_12:
     }
     if ( v11 ) /*0x60af0e*/
     {
-LABEL_85:
+      LABEL_85:
       v12 = 192; /*0x60af10*/
-LABEL_87:
+      LABEL_87:
       v15[50] = v12; /*0x60af19*/
       return (gamemd::AbstractClass **)(1); /*0x60af1d*/
     }
-LABEL_86:
+    LABEL_86:
     v12 = 0; /*0x60af17*/
     goto LABEL_87; /*0x60af17*/
   }
@@ -297,9 +293,9 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
   {
     if ( *String ) /*0x623583*/
     {
-  int v3; // eax
+      int v3; // eax
       v3 = wcslen(String); /*0x62358a*/
-  wchar_t *v4; // eax
+      wchar_t *v4; // eax
       v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
       this->u32_28 = (unsigned int)(v4); /*0x62359b*/
       wcscpy(v4, String); /*0x62359e*/

@@ -33,7 +33,7 @@
 namespace gamemd {  // G42.18 ns repair
 char TriggerClass::FindByEventType(char a1)
 {
-    unsigned int v8 = 0;  /* G37 hoist */
+  unsigned int v8 = 0;  /* G37 hoist */
   unsigned int *v2; // esi
   int v3; // eax
   int v4; // ecx
@@ -87,8 +87,8 @@ char TriggerClass::FindByEventType(char a1)
     v6 = -1; /*0x610a42*/
   else
     v6 = ((int)(uint8_t)dword_AC48B0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x610a8d*/
-       | ((((unsigned char *)&(dword_AC48B0))[1]) >> g_BitMask_Blue << g_BitMask_Green)
-       | ((((unsigned char *)&(dword_AC48B0))[2]) >> g_BitMask_Red << g_BitShift_Blue);
+  | ((((unsigned char *)&(dword_AC48B0))[1]) >> g_BitMask_Blue << g_BitMask_Green)
+  | ((((unsigned char *)&(dword_AC48B0))[2]) >> g_BitMask_Red << g_BitShift_Blue);
   (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
   (*(void (**)(int, __int128 *, int))(*(unsigned int *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
   (*(void (**)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
@@ -152,7 +152,7 @@ int TriggerClass::RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP
   while ( v8 ); /*0x72658b*/
   if ( v12 ) /*0x726598*/
   {
-LABEL_16:
+    LABEL_16:
     if ( aP1 ) /*0x7265a0*/
       ((BuildingClass *)aP1)->ProcessUpgradeEffects(); /*0x7265a4*/
   }

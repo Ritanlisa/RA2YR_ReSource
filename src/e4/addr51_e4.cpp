@@ -105,11 +105,10 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
 
   int *v3; // ecx
   INIClass::ClearSection(v3, (int)&g_INI_Key_Special.SidebarImage, 0); /*0x51ff02*/
-  int result; // eax
-  result = 0; /*0x51ff0d*/
+  int result = 0; // eax /*0x51ff0d*/
   for ( i = 0; result < *(int *)&g_BuildingClass_Count; i = result ) /*0x51ff15*/
   {
-  BuildingClass *v6; // esi
+    BuildingClass *v6; // esi
     v6 = *(BuildingClass **)(*(unsigned int *)&g_InfantryClassLimit + 4 * result); /*0x51ff25*/
     if ( !v6->inLimbo ) /*0x51ff28*/
     {
@@ -144,7 +143,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
                           Buffer,
                           *(int16_t *)(v13 + 2));
       BuildingClass::GetHealthRatio(v6); /*0x52004b*/
-  double v4; // st7
+      double v4; // st7
       v4 = v4 * 256.0; /*0x520050*/
       (*((unsigned short *)&(v14))) = Math::RoundToInt(v4); /*0x520056*/
       sprintf(Source,(const char *const )((const char *const)stru_825538.Type), &owner->plainName[4], v9, v14, v15); /*0x520068*/
@@ -299,8 +298,7 @@ unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
   const char *v4; // edi
 
-  unsigned int result; // eax
-  result = a3; /*0x510e10*/
+  unsigned int result = a3; // eax /*0x510e10*/
   if ( a3 < 16 ) /*0x510e19*/
   {
     if ( a3 < 1 ) /*0x510e1e*/
@@ -631,18 +629,15 @@ int E4Recv_517110::sub_517110()
 {
 
 
-  bool v5; // bl
-  v5 = 1; /*0x51717d*/
+  bool v5 = 1; // bl /*0x51717d*/
   if ( this->occupant != *(unsigned int *)&DataGlobal_A8EB00[1664] /*0x517138*/
     || this->owningHouseIndex != *(unsigned int *)&DataGlobal_A8F0A0
     || this->fallRate != *(unsigned int *)&DataGlobal_A8EB00[1672] )
   {
-  int v2; // edi
-    v2 = this->occupant / 256; /*0x517161*/
-  int v3; // ebx
-    v3 = this->owningHouseIndex / 256; /*0x517164*/
-  unsigned short *v4; // eax
-  unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
+    int v2 = this->occupant / 256; // edi /*0x517161*/
+    int v3 = this->owningHouseIndex / 256; // ebx /*0x517164*/
+    unsigned short *v4; // eax
+    unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
     v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this->M12 + 440))(this->M12, v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
@@ -700,12 +695,12 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   HKEY hKey; // [esp+1Ch] [ebp-110h] BYREF
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
   {
-  BYTE v7[4]; // [esp+18h] [ebp-114h] BYREF
+    BYTE v7[4]; // [esp+18h] [ebp-114h] BYREF
     *(unsigned int *)v7 = 0; /*0x5177e9*/
-  DWORD Type; // [esp+24h] [ebp-108h] BYREF
+    DWORD Type; // [esp+24h] [ebp-108h] BYREF
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
-  void *v4; // ecx
+      void *v4; // ecx
       v4 = *(void **)v7; /*0x517819*/
       LOBYTE(this->M4) = 1; /*0x51781d*/
       this->AbstractClass = v4; /*0x517821*/

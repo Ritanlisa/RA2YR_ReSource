@@ -181,7 +181,7 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
       return 0; /*0x4713e4*/
     while ( 1 ) /*0x47102c*/
     {
-            v21 = Color::ConvertToRGB((int)(/*0x47102c*/               (Color *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776)),               (int)v57);
+      v21 = Color::ConvertToRGB((int)(/*0x47102c*/               (Color *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776)),               (int)v57);
       (*((unsigned short *)&(v56))) = *(unsigned short *)v21; /*0x471034*/
       (((unsigned char *)&(v56))[2]) = *(unsigned char *)(v21 + 2); /*0x47103c*/
       v22 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x471067*/
@@ -235,7 +235,7 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
         v40 = GetDlgItem((HWND)this, 1848); /*0x47130e*/
         goto LABEL_25; /*0x47130e*/
       }
-  LABEL_26:
+      LABEL_26:
       if ( ++v53 >= (int)dword_89E020 ) /*0x47132c*/
         return 0; /*0x47133e*/
     }
@@ -248,7 +248,7 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
     v39 = GetDlgItem((HWND)this, 1851); /*0x471284*/
     SendMessageA(v39, 0x4B2u, 0, (LPARAM)Buffer); /*0x471293*/
     v40 = GetDlgItem((HWND)this, 1851); /*0x47129a*/
-  LABEL_25:
+    LABEL_25:
     SendMessageA(v40, 0x498u, 0, v23); /*0x471310*/
     goto LABEL_26; /*0x471319*/
   }

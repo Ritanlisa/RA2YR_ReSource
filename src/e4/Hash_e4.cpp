@@ -32,8 +32,7 @@ int sub_5E94D0()
   v1 = (LPARAM *)(&dword_A8DA90); /*0x5e94e7*/
   do /*0x5e9508*/
   {
-  LPARAM v2; // ecx
-    v2 = *v1; /*0x5e94ec*/
+    LPARAM v2 = *v1; // ecx /*0x5e94ec*/
     if ( *v1 && (v2 == g_Lobby_PlayerTeam || v2 == g_Lobby_PlayerSide || v2 == g_Lobby_PlayerColor) ) /*0x5e94fc*/
       ++result; /*0x5e94fe*/
     ++v1; /*0x5e94ff*/
@@ -54,8 +53,7 @@ char sub_5E9580()
   v1 = (LPARAM *)(&dword_A8DA90); /*0x5e9597*/
   while ( 1 ) /*0x5e959c*/
   {
-  LPARAM v2; // eax
-    v2 = *v1; /*0x5e959c*/
+    LPARAM v2 = *v1; // eax /*0x5e959c*/
     if ( *v1 ) /*0x5e959c*/
     {
       if ( v2 != g_HouseClass_ObserverFlags /*0x5e95c2*/

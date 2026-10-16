@@ -34,7 +34,7 @@ bool __fastcall GUID::Compare(int a2)
         return result; /*0x53eea3*/
       }
     }
-  LABEL_23:
+    LABEL_23:
     (*((unsigned char *)&(result))) = 0; /*0x53ef1a*/
     return result; /*0x53ef1b*/
   }

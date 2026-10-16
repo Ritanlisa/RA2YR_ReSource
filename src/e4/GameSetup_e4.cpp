@@ -31,9 +31,9 @@ int GameSetup::LookupDialogHash()
     return 0; /*0x60d32c*/
   GameSetup **v1; // eax
   v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogHashMap_Base /*0x60d34d*/
-                      + 4
-                      * ((*(int (**)(GameSetup **))&g_DialogHashMap_Hasher)(&v4)
-                       & ((1 << g_DialogHashMap_Buckets) - 1)));
+  + 4
+  * ((*(int (**)(GameSetup **))&g_DialogHashMap_Hasher)(&v4)
+  & ((1 << g_DialogHashMap_Buckets) - 1)));
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( *v1 != v4 ) /*0x60d35a*/
@@ -67,13 +67,12 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   INIClass::SetBool(aP1, Block, g_INI_Key_BuildOffAlly, this->u32_16); /*0x69902d*/
   INIClass::SetBool(aP1, Block, aMcvrepacks, this->u32_17); /*0x69903e*/
   INIClass::SetBool(aP1, Block, aCratesappear, this->u32_18); /*0x69904f*/
-  int v4; // ebp
-  v4 = 1; /*0x699054*/
+  int v4 = 1; // ebp /*0x699054*/
   int *v5; // ebx
   v5 = (int *)this->q095 + 27); /*0x699059*/
   do /*0x69908e*/
   {
-  char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
+    char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
     sprintf(Buffer, "Slot%02d", v4); /*0x699067*/
     result = (Block)->FormatToString(Buffer, *(v5 - 1), *v5, v5[1]); /*0x699082*/
     ++v4; /*0x699087*/

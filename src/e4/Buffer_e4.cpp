@@ -212,12 +212,12 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
         v49 = v38 >> 1; /*0x7bcea9*/
         if ( !(v38 >> 1) ) /*0x7bceab*/
           goto LABEL_54; /*0x7bceab*/
-LABEL_53:
+        LABEL_53:
         memset32((void *)v37, 65537 * a4, v49); /*0x7bcec0*/
         result = (char *)(v37 + 4 * v49); /*0x7bcec2*/
-LABEL_54:
+        LABEL_54:
         v43 = (v38 & 1) == 0; /*0x7bcec5*/
-LABEL_55:
+        LABEL_55:
         if ( !v43 ) /*0x7bcec8*/
         {
           if ( result ) /*0x7bcecc*/
@@ -278,7 +278,7 @@ LABEL_55:
       v38 = (int)v36 >> 1; /*0x7bcdbf*/
       if ( (v37 & 2) != 0 && v38 ) /*0x7bcdcc*/
       {
-LABEL_60:
+        LABEL_60:
         *(unsigned short *)v37 = a4; /*0x7bcef2*/
         v37 += 2; /*0x7bcef5*/
         --v38; /*0x7bcef8*/
@@ -498,9 +498,9 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   {
     while ( 1 ) /*0x6c8a8a*/
     {
-  unsigned int v10; // eax
+      unsigned int v10; // eax
       v10 = Map_Append(v16, (int)&g_SidebarButtonState.needsRedraw, *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
-  char *v11; // edi
+      char *v11; // edi
       v11 = (char *)this->Buffer_field_08; /*0x6c8a8f*/
       if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + this->Buffer_field_00 /*0x6c8aa4*/
         || (this->Buffer_field_08 = (int)&v11[v10], !v11) )
@@ -509,9 +509,9 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
         return 0; /*0x6c8af2*/
       }
       memcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
-  int v13; // edx
+      int v13; // edx
       v13 = (int)(*aP1); /*0x6c8ac2*/
-  int v12; // esi
+      int v12; // esi
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**)(int *))(v13 + 116))(aP1); /*0x6c8ad6*/
       if ( v12 >= *(unsigned int *)(a3 + 20) ) /*0x6c8ada*/

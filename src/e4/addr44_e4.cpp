@@ -16,15 +16,12 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
 {
 
-  int v3; // ebx
-  v3 = 6; /*0x44f6ed*/
-  int v4; // edi
-  v4 = 5; /*0x44f6f2*/
+  int v3 = 6; // ebx /*0x44f6ed*/
+  int v4 = 5; // edi /*0x44f6f2*/
   unsigned int *v5; // eax
   unsigned char v9[12]; // [esp+14h] [ebp-Ch] BYREF
   v5 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->vfptr + 18))(this, v9); /*0x44f6f7*/
-  int v6; // esi
-  v6 = *v5 / 256; /*0x44f71b*/
+  int v6 = *v5 / 256; // esi /*0x44f71b*/
   int v7; // ecx
   v7 = v5[1] / 256; /*0x44f71e*/
   if ( a3 ) /*0x44f72e*/
@@ -54,12 +51,11 @@ int INIClass::sub_44FE60()
 {
 
   INIClass::ClearSection((int)aStructures, 0); /*0x44fe6c*/
-  int result; // eax
-  result = dword_A8EB50; /*0x44fe71*/
+  int result = dword_A8EB50; // eax /*0x44fe71*/
   int i; // esi
   for ( i = 0; i < dword_A8EB50; ++i ) /*0x44fe7a*/
   {
-  int v4; // ecx
+    int v4; // ecx
     v4 = *((unsigned int *)dword_A8EB44 + i); /*0x44fe82*/
     if ( !*(unsigned char *)(v4 + 129) && !*(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5823) ) /*0x44fe95*/
       (v4)->ReadConstructionData(this); /*0x44fea0*/

@@ -96,7 +96,7 @@ int Theme::Stop(char aP1, void *a2)
         }
         else
         {
-  LABEL_14:
+          LABEL_14:
           result = Debug::Log(); /*0x720f37*/
           v6 = (Audio *)this->audioSample; /*0x720f3c*/
           if ( v6 ) /*0x720f44*/

@@ -38,14 +38,12 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3, void *a3)
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
 
-  unsigned int *v3; // edx
-  v3 = aP1; /*0x6a01a0*/
+  unsigned int *v3 = aP1; // edx /*0x6a01a0*/
   int v5; // eax
   if ( *aP1 != g_OverlayTypeConfig || aP1->vtable2 != (unsigned int)qword_B077FC || (v5 = aP1->vtable3, v5 != HIDWORD(qword_B077FC)) ) /*0x6a01ce*/
   {
     LOBYTE(v5) = (unsigned char)(this->ptr_60); /*0x6a01d4*/
-  int v6; // ebp
-    v6 = aP3; /*0x6a01d7*/
+    int v6 = aP3; // ebp /*0x6a01d7*/
     if ( !(unsigned char)v5 ) /*0x6a01dd*/
     {
       v5 = this->u32_58; /*0x6a01e3*/
@@ -54,35 +52,32 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3, void *a3)
         v5 = byte_7F2A40[12 * v5]; /*0x6a01f2*/
         if ( v5 ) /*0x6a01fc*/
         {
-  int v7; // eax
-          v7 = 4 * v5; /*0x6a0202*/
-  int v8; // ecx
+          int v7 = 4 * v5; // eax /*0x6a0202*/
+          int v8; // ecx
           v8 = dword_7F2960[v7]; /*0x6a0205*/
           v5 = dword_7F296C[v7]; /*0x6a020b*/
           if ( v5 > -1 ) /*0x6a0214*/
           {
-  int *v9; // ecx
+            int *v9; // ecx
             v9 = (int *)(v8 + 12 * v5); /*0x6a021d*/
             aP3 = v9[2]; /*0x6a0223*/
             if ( this->u32_5C < v5 ) /*0x6a022c*/
             {
-  int v10; // eax
+              int v10; // eax
               v10 = v9[1]; /*0x6a0234*/
-  int v18[2]; // [esp+10h] [ebp-14h] BYREF
+              int v18[2]; // [esp+10h] [ebp-14h] BYREF
               v18[0] = *v9; /*0x6a0237*/
               v18[1] = v10; /*0x6a023f*/
-  int v19; // [esp+18h] [ebp-Ch] BYREF
+              int v19; // [esp+18h] [ebp-Ch] BYREF
               v5 = (int)WalkLocomotion::TransformCoords((WalkLocomotion *)this, &v19, v18, &aP3); /*0x6a0250*/
-  int v11; // edi
+              int v11; // edi
               v11 = *(unsigned int *)v5; /*0x6a0255*/
-  int v12; // ebx
-              v12 = v5->u32_4; /*0x6a0259*/
+              int v12 = v5->u32_4; // ebx /*0x6a0259*/
               if ( !v6 ) /*0x6a025c*/
               {
-  int v13; // eax
+                int v13; // eax
                 v13 = (*(int (**)(unsigned int))(**&this->u32_C + 464))(this->u32_C); /*0x6a0263*/
-  int v14; // ecx
-                v14 = this->u32_C; /*0x6a0269*/
+                int v14 = this->u32_C; // ecx /*0x6a0269*/
                 v19 = v11; /*0x6a026c*/
                 v20 = v12; /*0x6a0270*/
                 v21 = v13; /*0x6a0274*/
@@ -94,10 +89,9 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3, void *a3)
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
               {
-  int v15; // eax
+                int v15; // eax
                 v15 = (*(int (**)(unsigned int))(**&this->u32_C + 464))(this->u32_C); /*0x6a02ae*/
-  int v16; // ecx
-                v16 = this->u32_C; /*0x6a02b4*/
+                int v16 = this->u32_C; // ecx /*0x6a02b4*/
                 v21 = v15; /*0x6a02b7*/
                 v19 = v11; /*0x6a02bb*/
                 v20 = v12; /*0x6a02bf*/
@@ -589,12 +583,10 @@ unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int 
 {
 
 
-  int v4; // eax
-  v4 = *aP3; /*0x6a3dbd*/
+  int v4 = *aP3; // eax /*0x6a3dbd*/
   int v5; // ebx
   v5 = dword_7F2A48[3 * (int)this->u32_58]; /*0x6a3dc1*/
-  int v6; // edi
-  v6 = *aP2; /*0x6a3dcf*/
+  int v6 = *aP2; // edi /*0x6a3dcf*/
   int v7; // esi
   v7 = aP2[1]; /*0x6a3dd1*/
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/

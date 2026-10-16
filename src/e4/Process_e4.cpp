@@ -13,7 +13,7 @@
 namespace gamemd {  // G42.18 ns repair
 bool Process::WaitForExit(DWORD dwMilliseconds, char aP2)
 {
-
+  
   const HANDLE *v3; // esi
   v3 = (const HANDLE *)&this->q01C; /*0x664614*/
   Debug::Log(); /*0x66461d*/

@@ -38,7 +38,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
 {
 
   TemporalClass *temporalUsing; // eax
-  #375 **v8; // ebp
+#375 **v8; // ebp
   unsigned int *v9; // eax
   CellClass *v10; // edi
   int v11; // eax
@@ -154,7 +154,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   }
   if ( v8 && v8[185] && (*((int (**)(#375 **))*v8 + 11))(v8) == 1 && (double)*(int *)(v12 + 180) < 384.0 ) /*0x6fc3bf*/
     return 5; /*0x6fc3bf*/
-LABEL_52:
+  LABEL_52:
   if ( a0 )
   {
     if ( (*((int (**)(TechnoClass *))a0->RadioClass + 11))(a0) == 1 )
@@ -203,9 +203,9 @@ LABEL_52:
     if ( *(unsigned char *)(v18 + 347)
       && (*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 1
       && *(unsigned char *)(*((*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 1
-                    ? &aP2->u32_6C4
-                    : (unsigned int *)1732)
-                  + 3603)
+        ? &aP2->u32_6C4
+      : (unsigned int *)1732)
+      + 3603)
       && *((*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 1 ? &aP2->currentMission : (unsigned int *)172) == 16 )
     {
       return 5; /*0x6fc546*/
@@ -255,7 +255,7 @@ LABEL_52:
     }
     return 6; /*0x6fcd2c*/
   }
-LABEL_98:
+  LABEL_98:
   if ( *(unsigned char *)(*(unsigned int *)(v12 + 172) + 346) /*0x6fc67b*/
     && v8
     && (*((int (**)(#375 **))*v8 + 11))(v8) == 2
@@ -286,7 +286,7 @@ LABEL_98:
   if ( v8 )
   {
     v23 = *(unsigned int *)((*((int (**)(#375 **))*v8 + 111))(v8) + 236) == 2 /*0x6fc796*/
-       || *(unsigned int *)((*((int (**)(#375 **))*v8 + 111))(v8) + 236) == 6;
+    || *(unsigned int *)((*((int (**)(#375 **))*v8 + 111))(v8) + 236) == 6;
     if ( (*((unsigned __int8 (**)(#375 **))*v8 + 21))(v8) ) /*0x6fc79d*/
       v23 = 0; /*0x6fc7a4*/
     if ( *((unsigned char *)v8 + 140) ) /*0x6fc7a6*/
@@ -316,7 +316,7 @@ LABEL_98:
   }
   if ( *(unsigned int *)((*((int (**)(TechnoClass *))a0->RadioClass + 33))(a0) + 1540) == 1 ) /*0x6fc868*/
     return 5; /*0x6fc868*/
-LABEL_139:
+  LABEL_139:
   if ( *(unsigned char *)(v12 + 348) ) /*0x6fc87d*/
   {
     locomotorTarget = a0->locomotorTarget; /*0x6fc887*/
@@ -364,7 +364,7 @@ LABEL_139:
   {
     return 3; /*0x6fc94c*/
   }
-LABEL_164:
+  LABEL_164:
   if ( *(unsigned char *)(v38 + 297) && a0->fireParticles ) /*0x6fc98b*/
     return 3; /*0x6fc9a1*/
   if ( *(unsigned char *)(v38 + 301) && a0->railgunParticles ) /*0x6fc9ae*/
@@ -430,7 +430,7 @@ LABEL_164:
     if ( (int)abs32(v36 - v34[2]) > 2 * g_BuildingLoadQueue_Array.?[1] ) /*0x6fccac*/
       return 5; /*0x6fccb1*/
   }
-LABEL_231:
+  LABEL_231:
   if ( *(unsigned char *)((*((int (**)(TechnoClass *))a0->RadioClass + 33))(a0) + 3479) /*0x6fccd5*/
     && (*((unsigned __int8 (**)(TechnoClass *))a0->RadioClass + 224))(a0) )
   {

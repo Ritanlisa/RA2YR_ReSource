@@ -23,10 +23,8 @@ int Float::SubtractClamped(float aP1, int aP2)
 
   double v4; // st7
   v4 = *((float *)this + aP2); /*0x6c96b4*/
-  bool v5; // c0
-  v5 = v4 < aP1; /*0x6c96b7*/
-  char v6; // c2
-  v6 = 0; /*0x6c96b7*/
+  bool v5 = v4 < aP1; // c0 /*0x6c96b7*/
+  char v6 = 0; // c2 /*0x6c96b7*/
   bool v7; // c3
   v7 = v4 == aP1; /*0x6c96b7*/
   int16_t v3; // fps

@@ -35,8 +35,7 @@ int sub_53AE00()
 
   wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF((char *)(unk_82809C), 0, g_Str_File_Ion_cpp, 1123); /*0x53ae11*/
-  int v1; // ecx
-  v1 = 3; /*0x53ae1c*/
+  int v1 = 3; // ecx /*0x53ae1c*/
   if ( dword_A83D4C ) /*0x53ae23*/
     v1 = dword_A83D4C->startingCell; /*0x53ae25*/
   return MessageListClass::AddMessage((gamemd::MessageListClass *)(unk_A8BC60), 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
@@ -50,8 +49,7 @@ bool Weapon_Update(void * a1, void * a2)
   int v10; // eax
 
   int v2; // ecx
-  int v3; // edi
-  v3 = v2; /*0x659ca5*/
+  int v3 = v2; // edi /*0x659ca5*/
   if ( !*(unsigned char *)(v2 + 8) ) /*0x659ca7*/
   {
     *(unsigned char *)(v2 + 8) = 1; /*0x659cae*/
@@ -60,36 +58,35 @@ bool Weapon_Update(void * a1, void * a2)
   if ( v3->u32_9 ) /*0x659cb7*/
   {
     Weapon_Update_Update_659EE0((ObjectClass *)v3); /*0x659cc4*/
-  int v4; // eax
-    v4 = v3->onBridge; /*0x659cc9*/
+    int v4 = v3->onBridge; // eax /*0x659cc9*/
     v3->parachute = 0; /*0x659ccf*/
     if ( v4 > 0 ) /*0x659cdb*/
     {
       do /*0x659e01*/
       {
-  int64_t updated; // rax
+        int64_t updated; // rax
         updated = Weapon_Update_Update_659FF0(v3); /*0x659ceb*/
         (*((unsigned short *)&(a2))) = (uint8_t)(v3->u32_C2 >> g_BitMask_Red); /*0x659d13*/
         (*((unsigned short *)&(updated))) = (uint8_t)(*(unsigned char *)(v3 + 193) >> g_BitMask_Blue); /*0x659d28*/
         (*((unsigned int *)&(updated))) = (unsigned int)updated << g_BitMask_Green; /*0x659d30*/
-  int v6; // ebx
+        int v6; // ebx
         v6 = updated | (a2 << g_BitShift_Blue); /*0x659d40*/
         (*((unsigned short *)&(updated))) = (uint8_t)(v3->q0C0 >> g_BitShift_Green_0); /*0x659d45*/
         a2 = (void *)(((unsigned int)updated << g_BitShift_Red) | v6); /*0x659d55*/
-  int v15[2]; // [esp+10h] [ebp-18h] BYREF
+        int v15[2]; // [esp+10h] [ebp-18h] BYREF
         ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v3->location, v15); /*0x659d57*/
-  int v14[2]; // [esp+8h] [ebp-20h] BYREF
+        int v14[2]; // [esp+8h] [ebp-20h] BYREF
         ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v3->lineTrailer, v14); /*0x659d68*/
-  int v16[4]; // [esp+18h] [ebp-10h] BYREF
+        int v16[4]; // [esp+18h] [ebp-10h] BYREF
         v16[1] = (int)DSurface_ViewBounds.field_4; /*0x659d7e*/
         v16[0] = DSurface_ViewBounds.field_0; /*0x659d86*/
         v16[2] = *(unsigned int *)g_Map_VisibleRectOffset; /*0x659d8f*/
         v16[3] = *(unsigned int *)&g_DSurface_WindowOffset; /*0x659d9c*/
         if ( (uint8_t)ClipLine(v15, v14, v16) ) /*0x659da0*/
         {
-  int v7; // esi
+          int v7; // esi
           v7 = v3->vtable4 - ZCoordToScreenY(*&v3->q0A4) - 2; /*0x659db9*/
-  int v8; // eax
+          int v8; // eax
           v8 = ZCoordToScreenY(v3->q_B0); /*0x659dbc*/
           (*(void (**)(AudioStream *, CellStruct *, int *, int *, unsigned int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 52))( /*0x659de7*/
             g_DSurface_Hidden_2,
@@ -108,8 +105,7 @@ bool Weapon_Update(void * a1, void * a2)
       while ( v10 < v9 ); /*0x659e01*/
     }
   }
-  int v11; // edx
-  v11 = v3->ambientSoundController; /*0x659e0c*/
+  int v11 = v3->ambientSoundController; // edx /*0x659e0c*/
   int v12; // eax
   v12 = *(unsigned int *)(v3 + 124) + 1; /*0x659e12*/
   v3->visibilityFlags = v12; /*0x659e14*/
@@ -378,7 +374,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
               goto LABEL_31; /*0x70ca15*/
           }
         }
-LABEL_24:
+        LABEL_24:
         if ( v43.ObjectVector_field_0x10 >= v43.ObjectVector_field_0x08 ) /*0x70ca1d*/
         {
           if ( !BYTE1(v43.ObjectVector_field_0x0C) && v43.ObjectVector_field_0x08 /*0x70ca40*/
@@ -394,7 +390,7 @@ LABEL_24:
         }
         v43.ObjectVector_field_0x10 = ObjectVector_field_0x10 + 1; /*0x70ca4e*/
         *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * ObjectVector_field_0x10) = v14; /*0x70ca56*/
-LABEL_31:
+        LABEL_31:
         v14 = *(unsigned int *)(v14 + 48); /*0x70ca59*/
       }
       GroundHeight = Cell::GetGroundHeight(&v49); /*0x70ca6e*/
@@ -421,7 +417,7 @@ LABEL_31:
       }
       if ( v24 == -1 ) /*0x70cb68*/
       {
-LABEL_48:
+        LABEL_48:
         if ( v43.ObjectVector_field_0x10 < v43.ObjectVector_field_0x08 ) /*0x70cb70*/
           goto LABEL_54; /*0x70cb70*/
         if ( (BYTE1(v43.ObjectVector_field_0x0C) || !v43.ObjectVector_field_0x08) && v43.ObjectVector_field_0x14 > 0 ) /*0x70cb84*/
@@ -432,11 +428,11 @@ LABEL_48:
                  0) )
           {
             v23 = v43.ObjectVector_field_0x10; /*0x70cb9a*/
-LABEL_54:
+            LABEL_54:
             v43.ObjectVector_field_0x10 = v23 + 1; /*0x70cb9e*/
             *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * v23) = aP3; /*0x70cba9*/
           }
-LABEL_55:
+          LABEL_55:
           v23 = v43.ObjectVector_field_0x10; /*0x70cbac*/
         }
       }
@@ -447,7 +443,7 @@ LABEL_55:
         {
           v52 = aP4->u32_98; /*0x70cbc3*/
           (*(void (**)(unsigned int, int *, unsigned int, unsigned int, Weapon *, unsigned int, unsigned int, unsigned int))(**(unsigned int **)(v43.ObjectVector_field_0x04 + 4 * v33) /*0x70cbe8*/
-                                                                                                  + 364))(
+            + 364))(
             *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * v33),
             &v52,
             0,
@@ -511,8 +507,7 @@ int sub_53B410()
 
   wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF((char *)(aMsgDominatorac), 0, g_Str_File_Ion_cpp, 1339); /*0x53b421*/
-  int v1; // ecx
-  v1 = 3; /*0x53b42c*/
+  int v1 = 3; // ecx /*0x53b42c*/
   if ( dword_A83D4C ) /*0x53b433*/
     v1 = dword_A83D4C->startingCell; /*0x53b435*/
   return MessageListClass::AddMessage((gamemd::MessageListClass *)(unk_A8BC60), 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/

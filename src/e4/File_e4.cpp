@@ -25,7 +25,7 @@
 #include "e4/classes/Matrix_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ParseWDTTerritories(int p0, int p1);  // x4:signals@0x76b180
+int ParseWDTTerritories(int p0, int p1);  // x4:signals@0x76b180
 } // namespace gamemd
 
 // 0x431F10
@@ -92,7 +92,7 @@ AbstractClass * File::LoadFont(char *Source)
         || !v6->vt_slot_28(1)
         || (v3 = (unsigned int *)operator new(0x24u)) == 0 )
       {
-  LABEL_35:
+        LABEL_35:
         (*(void (**)(unsigned int *, int))*v6)(v6, 1); /*0x433bee*/
         return (gamemd::AbstractClass *)(v3); /*0x433bf4*/
       }
@@ -168,7 +168,7 @@ AbstractClass * File::LoadFont(char *Source)
                   }
                   free(v13); /*0x433b6e*/
                   v6->vt_slot_40(v34, 0); /*0x433b81*/
-  LABEL_24:
+                  LABEL_24:
                   v19 = v3->u32_C; /*0x433b84*/
                   v20 = v3[5] * v3[4]; /*0x433b8a*/
                   v21 = 0x10000; /*0x433b90*/
@@ -217,8 +217,7 @@ char File::Dispatch(void *a1, void *a2, void *a3, void *a4)
   unsigned __int16 v4; // ax
   v4 = ntohs(v3); /*0x4cb936*/
   *&this->q004 = v4; /*0x4cb93b*/
-  int v5; // eax
-  v5 = v4 - 3; /*0x4cb944*/
+  int v5 = v4 - 3; // eax /*0x4cb944*/
   switch ( v5 ) /*0x4cb94c*/
   {
     case 0: /*0x4cb94c*/
@@ -301,7 +300,7 @@ AbstractClass * * File::ParseFileHVA(int a2, int aP1, int a3)
           v8 = 0; /*0x5bd686*/
           if ( aP1->q004 ) /*0x5bd683*/
             break; /*0x5bd683*/
-LABEL_14:
+          LABEL_14:
           if ( (unsigned int)++v11 >= aP1->ptr_8 ) /*0x5bd6e8*/
             goto LABEL_15; /*0x5bd6e8*/
         }
@@ -323,7 +322,7 @@ LABEL_14:
       }
       else
       {
-LABEL_15:
+        LABEL_15:
         (*(void (**)(int))(*(unsigned int *)v3 + 52))(v3); /*0x5bd6ea*/
         return (gamemd::AbstractClass **)(1); /*0x5bd6f4*/
       }
@@ -353,8 +352,7 @@ File * * File::LoadPaletteData(unsigned short *aP1)
   *(unsigned short *)this->__pad_000 = ntohs(v3); /*0x625b11*/
   v4 = aP1[1]; /*0x625b17*/
   *(unsigned short *)this->File_field_0x2 = v4; /*0x625b1a*/
-  u_short *v5; // esi
-  v5 = aP1 + 2; /*0x625b1f*/
+  u_short *v5 = aP1 + 2; // esi /*0x625b1f*/
   *(unsigned short *)this->File_field_0x2 = ntohs(v4); /*0x625b27*/
   unsigned __int16 v6; // ax
   v6 = *(unsigned short *)this->__pad_000; /*0x625b2d*/
@@ -365,25 +363,24 @@ File * * File::LoadPaletteData(unsigned short *aP1)
     return (gamemd::File **)((u_short *)this); /*0x625bf4*/
   while ( 1 ) /*0x625b50*/
   {
-  int v7; // eax
+    int v7; // eax
     v7 = (int)(__2_YAPAXI_Z(0x10u)); /*0x625b50*/
-  int v8; // ecx
+    int v8; // ecx
     v8 = *(unsigned int *)v5; /*0x625b55*/
-  int v9; // ebx
-    v9 = v7; /*0x625b57*/
-  unsigned int *v10; // esi
+    int v9 = v7; // ebx /*0x625b57*/
+    unsigned int *v10; // esi
     v10 = (unsigned int *)(v5 + 4); /*0x625b5c*/
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *(unsigned int *)(v7 + 4) = *(v10 - 1); /*0x625b64*/
-  size_t v11; // ebp
+    size_t v11; // ebp
     v11 = (unsigned __int16)ntohs(*(unsigned short *)(v7 + 6)); /*0x625b78*/
-  void *v12; // eax
+    void *v12; // eax
     v12 = (void *)__2_YAPAXI_Z(v11); /*0x625b7f*/
     v9->ptr_8 = v12; /*0x625b8a*/
     memcpy(v12, v10, v11); /*0x625b90*/
-  int v13; // eax
+    int v13; // eax
     v13 = -(ntohs(v9->__pad_6) & 3) & 3; /*0x625baf*/
-  u_short *v17; // [esp+14h] [ebp+4h]
+    u_short *v17; // [esp+14h] [ebp+4h]
     v17 = (u_short *)((char *)v10 + v13 + v11); /*0x625bbd*/
     v15 += -8 - v13 - v11; /*0x625bcc*/
     File::Dispatch((File *)v9); /*0x625bd0*/
@@ -405,8 +402,7 @@ int File::FindByPrefix(char *Str1, unsigned char *a3)
 
   BOOL v4; // eax
 
-  int v3; // esi
-  v3 = *&this->q004; /*0x625db1*/
+  int v3 = *&this->q004; // esi /*0x625db1*/
   if ( v3 ) /*0x625db7*/
   {
     while ( strncmp(Str1, (const char *)v3, 4u) ) /*0x625dcb*/
@@ -465,7 +461,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
   {
     if ( CCFileClass::Read(&v23, &v18, 4) != 4 ) /*0x7349fe*/
     {
-LABEL_42:
+      LABEL_42:
       *(unsigned int *)v23.CDFileClass = &vt_CCFileClass; /*0x734cad*/
       v25 = 0; /*0x734cbc*/
       Vector::Clear((int)v24); /*0x734cc3*/
@@ -551,7 +547,7 @@ LABEL_42:
               *v12++ = v8; /*0x734b7e*/
               v10 = v8; /*0x734b84*/
               v11 = 0; /*0x734b86*/
-LABEL_31:
+              LABEL_31:
               LOWORD(v8) = *v13++; /*0x734ba0*/
               if ( !(unsigned short)v8 ) /*0x734ba9*/
               {
@@ -595,7 +591,7 @@ LABEL_31:
         goto LABEL_42; /*0x734ca7*/
     }
   }
-LABEL_43:
+  LABEL_43:
   *(unsigned int *)v23.CDFileClass = &vt_CCFileClass; /*0x734ce9*/
   v25 = 0; /*0x734cf8*/
   Vector::Clear((int)v24); /*0x734cff*/
@@ -678,7 +674,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   {
     if ( PaletteData ) /*0x76ad32*/
     {
-  LABEL_25:
+      LABEL_25:
       ((ResultNode *)PaletteData)->CleanupList(); /*0x76afa4*/
       operator delete((void *)(PaletteData)); /*0x76afac*/
     }
@@ -785,7 +781,7 @@ AbstractClass * * File::LoadWDTDecompress(int aP1, int a3)
       v10 = 0; /*0x76b10a*/
       if ( *&this->q020 ) /*0x76b107*/
         break; /*0x76b107*/
-  LABEL_18:
+      LABEL_18:
       if ( v8 ) /*0x76b15e*/
       {
         v8 = 0; /*0x76b160*/
@@ -810,12 +806,12 @@ AbstractClass * * File::LoadWDTDecompress(int aP1, int a3)
       if ( v12 ) /*0x76b11c*/
       {
         (*((unsigned char *)&(v15))) = v13 >> 4; /*0x76b123*/
-  LABEL_14:
+        LABEL_14:
         v14 = v15 & 3; /*0x76b133*/
         goto LABEL_15; /*0x76b133*/
       }
       v14 = v13 >> 6; /*0x76b11e*/
-  LABEL_15:
+      LABEL_15:
       *(unsigned char *)(*(unsigned int *)(this->u32_44 + 4 * v9) + v10) = v14; /*0x76b136*/
       v8 = ++v16; /*0x76b143*/
       if ( v16 == 4 ) /*0x76b14b*/
@@ -968,7 +964,7 @@ int File::ParseAudioFileRIFF()
       v41 = 0; /*0x7c15a2*/
       if ( v42 ) /*0x7c15aa*/
         break; /*0x7c15aa*/
-  LABEL_44:
+      LABEL_44:
       v20 += 2; /*0x7c1622*/
       if ( ++v43 >= v18 ) /*0x7c1630*/
         goto LABEL_47; /*0x7c1630*/
@@ -1005,10 +1001,10 @@ int File::ParseAudioFileRIFF()
       goto LABEL_44; /*0x7c161e*/
     }
     v19 = ++v19; /*0x7c163c*/
-  LABEL_47:
+    LABEL_47:
     if ( v19 <= 0 ) /*0x7c1643*/
     {
-  LABEL_53:
+      LABEL_53:
       v15 = v40 + 16; /*0x7c16f7*/
       v36 = ++v46 < v13; /*0x7c170e*/
       v40 += 16; /*0x7c1714*/

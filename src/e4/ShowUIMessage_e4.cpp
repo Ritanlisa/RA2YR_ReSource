@@ -17,8 +17,7 @@ namespace gamemd {  // G42.18 ns repair
 char sub_72CBA0()
 {
 
-  char result; // al
-  result = byte_B0FC7C; /*0x72cba0*/
+  char result = byte_B0FC7C; // al /*0x72cba0*/
   if ( !byte_B0FC7C ) /*0x72cba7*/
   {
     dword_B0FAD0 = (int)LoadFileSHP((char *)(aWaitcyloShp), (bool *)&byte_B0FC73); /*0x72cbc7*/

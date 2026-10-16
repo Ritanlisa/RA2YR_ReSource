@@ -18,12 +18,12 @@ HWND BINK::Background_Setup(HWND hDlg)
   v2 = (HWND)result; /*0x52b9be*/
   if ( result ) /*0x52b9c2*/
   {
-  int v3; // ecx
+    int v3; // ecx
     if ( (int)g_DisplayWidth > 800 ) /*0x52b9d2*/
       v3 = (int)&g_DisplayWidth[-13].LoadingScreen_field_0x20 / 2; /*0x52b9e2*/
     else
       v3 = 0; /*0x52b9d4*/
-  int v4; // eax
+    int v4; // eax
     if ( (int)*(&g_DisplayWidth + 1) > 600 ) /*0x52b9ee*/
       v4 = (int)&(*(&g_DisplayWidth + 1))[-10].LoadingScreen_field_0x28 / 2; /*0x52b9fc*/
     else

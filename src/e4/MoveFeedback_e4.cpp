@@ -29,8 +29,7 @@ int MoveFeedback::ProcessCommand()
   int result; // eax
   int v3; // esi
 
-  char v1; // bl
-  v1 = g_MoveFeedback; /*0x7327d9*/
+  char v1 = g_MoveFeedback; // bl /*0x7327d9*/
   char v15; // [esp+13h] [ebp-9h]
   v15 = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
@@ -38,8 +37,7 @@ int MoveFeedback::ProcessCommand()
   {
     result = (int)(__2_YAPAXI_Z(0x18u)); /*0x7327fb*/
     v3 = result; /*0x732800*/
-  int v4; // ebp
-    v4 = 0; /*0x732802*/
+    int v4 = 0; // ebp /*0x732802*/
     if ( result ) /*0x732809*/
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
@@ -51,19 +49,18 @@ int MoveFeedback::ProcessCommand()
     {
       v3 = 0; /*0x732826*/
     }
-  int v5; // ebx
+    int v5; // ebx
     v5 = *(unsigned int *)&DataGlobal_A8EB00[392]; /*0x732828*/
     if ( *(int *)&DataGlobal_A8EB00[392] > 0 ) /*0x732830*/
     {
       do /*0x732887*/
       {
-  int v6; // edi
+        int v6; // edi
         v6 = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v4); /*0x73283b*/
         result = StepTechnoClassCleanupIfHuman(v6, this); /*0x732840*/
         if ( (unsigned char)result ) /*0x732847*/
         {
-  int v7; // ecx
-          v7 = v3->Capacity; /*0x732849*/
+          int v7 = v3->Capacity; // ecx /*0x732849*/
           result = v3->Count; /*0x73284c*/
           if ( result < v7 /*0x732873*/
             || ((LOBYTE(result) = v3->IsAllocated, (unsigned char)result) || !v7)
@@ -71,8 +68,7 @@ int MoveFeedback::ProcessCommand()
             && (result = (*(int (**)(int, int, unsigned int))(*&v3->q020))(v3, v7 + result, 0), (unsigned char)result) )
           {
             result = v3->Count; /*0x732875*/
-  int v8; // edx
-            v8 = v3->Items; /*0x732878*/
+            int v8 = v3->Items; // edx /*0x732878*/
             v3->Count = result + 1; /*0x73287e*/
             *(unsigned int *)(v8 + 4 * result) = v6; /*0x732881*/
           }
@@ -85,11 +81,10 @@ int MoveFeedback::ProcessCommand()
   }
   else
   {
-  EventClass *v9; // eax
+    EventClass *v9; // eax
     v9 = (EventClass *)__2_YAPAXI_Z(0x18u); /*0x73288f*/
     v3 = (int)v9; /*0x732894*/
-  int v10; // edi
-    v10 = 0; /*0x732896*/
+    int v10 = 0; // edi /*0x732896*/
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
@@ -102,8 +97,7 @@ int MoveFeedback::ProcessCommand()
       v3 = 0; /*0x7328ba*/
     }
     result = GetHeightMap((ObjectClass *)g_TacticalClass_Instance); /*0x7328c2*/
-  int v11; // ebp
-    v11 = result; /*0x7328c7*/
+    int v11 = result; // ebp /*0x7328c7*/
     if ( result > 0 ) /*0x7328cb*/
     {
       do /*0x73290b*/
@@ -113,7 +107,7 @@ int MoveFeedback::ProcessCommand()
         {
           if ( (result->AudioBuffer_14 & 1) != 0 ) /*0x7328e7*/
           {
-  int v17; // [esp+18h] [ebp-4h] BYREF
+            int v17; // [esp+18h] [ebp-4h] BYREF
             v17 = result; /*0x7328ef*/
             result = StepTechnoClassCleanupIfHuman(result, this); /*0x7328f3*/
             if ( (unsigned char)result ) /*0x7328fa*/
@@ -125,12 +119,11 @@ int MoveFeedback::ProcessCommand()
       while ( v10 < v11 ); /*0x73290b*/
     }
   }
-  int v12; // ebp
-  v12 = v3->Count; /*0x73290d*/
+  int v12 = v3->Count; // ebp /*0x73290d*/
   int i; // edi
   for ( i = 0; i < v12; ++i ) /*0x732914*/
   {
-  int v14; // ecx
+    int v14; // ecx
     v14 = *(unsigned int *)(v3->Items + 4 * i); /*0x732919*/
     result = (*(int (**)(int))(*(unsigned int *)v14 + 332))(v14); /*0x73291e*/
   }
@@ -150,13 +143,11 @@ char MoveFeedback::AddRef(int a2)
   m_8 = *&this->m_8; /*0x40b962*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x40b96d*/
   {
-  int v3; // edx
-    v3 = 0; /*0x40b96f*/
+    int v3 = 0; // edx /*0x40b96f*/
     if ( m_8 <= 0 ) /*0x40b973*/
       return 1; /*0x40b993*/
-  unsigned int *v4; // eax
-    v4 = *&this->m_Capacity; /*0x40b975*/
-  int v5; // ecx
+    unsigned int *v4 = *&this->m_Capacity; // eax /*0x40b975*/
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x40b97b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x40b984*/
     {
@@ -176,8 +167,7 @@ int MoveFeedback::Draw(unsigned int * a2, void *a2_1, void *a3, void *a4, void *
 
   int m_10; // edx
   m_10 = *&this->m_10; /*0x40bb90*/
-  int result; // eax
-  result = 0; /*0x40bb93*/
+  int result = 0; // eax /*0x40bb93*/
   if ( m_10 <= 0 ) /*0x40bb98*/
     return -1; /*0x40bbaf*/
   unsigned int *i; // ecx
@@ -216,8 +206,7 @@ namespace gamemd {
 void MoveFeedback::Destroy(void *a1)
 {
 
-  void *v2; // eax
-  v2 = *&this->m_Capacity; /*0x40be56*/
+  void *v2 = *&this->m_Capacity; // eax /*0x40be56*/
   *&this->m_10 = 0; /*0x40be59*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x40be60*/
   {
@@ -247,7 +236,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
   if ( a2 ) /*0x40c03c*/
   {
     LOBYTE(this->m_C) = 0; /*0x40c042*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x40c048*/
       v4 = a3; /*0x40c05e*/
     else
@@ -257,11 +246,11 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x40c0da*/
     if ( *&this->m_Capacity ) /*0x40c068*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = this->m_8; /*0x40c06f*/
       if ( a2 < m_8 ) /*0x40c074*/
         m_8 = a2; /*0x40c076*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->m_Capacity + 4 * i - 4) ) /*0x40c07c*/
         ++i; /*0x40c081*/
       if ( BYTE1(this->m_C) ) /*0x40c08e*/
@@ -278,8 +267,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->m_Items + 12))(this); /*0x40c0be*/
   }
-  int v7; // eax
-  v7 = this->m_8; /*0x40c0c1*/
+  int v7 = this->m_8; // eax /*0x40c0c1*/
   if ( v7 < this->m_10 ) /*0x40c0c9*/
     this->m_10 = v7; /*0x40c0cb*/
   return 1; /*0x40c0ce*/
@@ -293,8 +281,7 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
 
   int m_10; // edx
   m_10 = *&this->m_10; /*0x40c0e0*/
-  int result; // eax
-  result = 0; /*0x40c0e3*/
+  int result = 0; // eax /*0x40c0e3*/
   if ( m_10 <= 0 ) /*0x40c0e8*/
     return -1; /*0x40c0ff*/
   unsigned int *i; // ecx
@@ -312,8 +299,7 @@ unsigned int * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, cha
 {
 
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x40c163*/
+  void *v3 = *&Block->__pad_004; // eax /*0x40c163*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40c166*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40c170*/
   {

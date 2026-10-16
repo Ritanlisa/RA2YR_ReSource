@@ -25,8 +25,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
 
   if ( !*(unsigned char *)(arg0 + 662) && !*(unsigned char *)(arg0 + 664) ) /*0x4cc11d*/
     return 0; /*0x4cc11d*/
-  int v5; // esi
-  v5 = *a1; /*0x4cc12d*/
+  int v5 = *a1; // esi /*0x4cc12d*/
   int v6; // edi
   v6 = a1[1]; /*0x4cc136*/
   int v21; // [esp+18h] [ebp-2Ch]
@@ -47,8 +46,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     v7 = v8; /*0x4cc1b5*/
   int v9; // edi
   v9 = v6 - aP0[1]; /*0x4cc1bf*/
-  int v10; // esi
-  v10 = v5 - *aP0; /*0x4cc1c5*/
+  int v10 = v5 - *aP0; // esi /*0x4cc1c5*/
   int v11; // ecx
   v11 = a1[2] - aP0[2]; /*0x4cc1ca*/
   if ( v7 ) /*0x4cc1ce*/
@@ -69,8 +67,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   v28 = v12; /*0x4cc21e*/
   unsigned char *v27; // [esp+2Ch] [ebp-18h]
   v27 = (unsigned char *)((&dword_87F7E8)->To_CellObj((__int16 *)&v26)); /*0x4cc229*/
-  void *v13; // eax
-  v13 = v12; /*0x4cc22f*/
+  void *v13 = v12; // eax /*0x4cc22f*/
   int v24; // [esp+20h] [ebp-24h]
   v24 = 0; /*0x4cc231*/
   if ( v7 <= 0 ) /*0x4cc235*/
@@ -83,21 +80,20 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   v19 = 0; /*0x4cc243*/
   while ( 1 ) /*0x4cc254*/
   {
-  int v14; // esi
-    v14 = *aP0 + v19; /*0x4cc254*/
-  int v15; // edi
+    int v14 = *aP0 + v19; // esi /*0x4cc254*/
+    int v15; // edi
     v15 = v20 + aP0[1]; /*0x4cc259*/
     result = TrajectoryHelper::GetObstacle(v28, v27, (int)v13, v14, v15, aP0[2] + v22, arg0, a3); /*0x4cc281*/
     if ( result ) /*0x4cc288*/
       break; /*0x4cc288*/
-  int v23; // [esp+1Ch] [ebp-28h]
+    int v23; // [esp+1Ch] [ebp-28h]
     LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
     HIWORD(v23) = v15 / 256; /*0x4cc2b5*/
-  int v29; // [esp+34h] [ebp-10h] BYREF
+    int v29; // [esp+34h] [ebp-10h] BYREF
     v29 = v23; /*0x4cc2be*/
     v13 = (&dword_87F7E8)->To_CellObj((__int16 *)&v29); /*0x4cc2c2*/
     v19 += v30; /*0x4cc2dd*/
-  bool v17; // cc
+    bool v17; // cc
     v17 = ++v24 < v7; /*0x4cc2ee*/
     v20 += v31; /*0x4cc2f4*/
     v22 += v32; /*0x4cc2f8*/
@@ -180,7 +176,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
        || (v15 = *&dword_A8022C->vtable1]) == 0
        || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
     {
-  LABEL_16:
+      LABEL_16:
       v16 = (unsigned int *)v10->vt_slot_72(&v45); /*0x4cc489*/
       v17 = a4 - *v16; /*0x4cc49c*/
       v18 = v16[1]; /*0x4cc4a2*/
@@ -190,8 +186,8 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
       v45 = v17; /*0x4cc4bc*/
       v20 = Math::Sqrt( /*0x4cc4e1*/
               (double)v17 * (double)v17
-            + (double)(a6 - v19) * (double)(a6 - v19)
-            + (double)(a5 - v18) * (double)(a5 - v18));
+    + (double)(a6 - v19) * (double)(a6 - v19)
+    + (double)(a5 - v18) * (double)(a5 - v18));
       if ( (int)Math::RoundToInt(v20) <= 85 ) /*0x4cc4f1*/
         return v10; /*0x4cc665*/
       v21 = (int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)a1 + 72))(a1, &v45); /*0x4cc501*/
@@ -213,7 +209,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
       {
         if ( v31 > v30 ) /*0x4cc562*/
         {
-  LABEL_22:
+          LABEL_22:
           v33 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43)); /*0x4cc574*/
           if ( *(unsigned char *)(a7 + 662) ) /*0x4cc589*/
           {
@@ -257,8 +253,7 @@ unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(unsigned int *aP0
 
   unsigned int *FirstObstacle; // eax
   FirstObstacle = TrajectoryHelper::FindFirstObstacle(aP0, a1, *(unsigned int *)(arg0 + 160), a3); /*0x4cc322*/
-  unsigned int *v5; // esi
-  v5 = FirstObstacle; /*0x4cc327*/
+  unsigned int *v5 = FirstObstacle; // esi /*0x4cc327*/
   if ( FirstObstacle /*0x4cc342*/
     && BuildingPlacement::ValidateType((gamemd::BuildingPlacement *)(FirstObstacle), -1, -1)
     && *(unsigned char *)(*(unsigned int *)(arg0 + 172) + 324) )

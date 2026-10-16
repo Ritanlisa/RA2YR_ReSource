@@ -72,9 +72,8 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
          Destination,
          0,
          0) < 0 )
-    return 0; /*0x773849*/
-  int v6; // eax
-  v6 = this->u32_8; /*0x77380a*/
+  return 0; /*0x773849*/
+  int v6 = this->u32_8; // eax /*0x77380a*/
   if ( v6 ) /*0x77380f*/
   {
     (*(void (**)(unsigned int))(*(unsigned int *)v6 + 28))(this->u32_8); /*0x773814*/
@@ -90,8 +89,7 @@ int WebBrowser::ShowDialog(void *a1)
 {
   struct tagRECT Rect; // [esp+24h] [ebp-20h] BYREF
 
-  const char *v1; // ebp
-  v1 = this; /*0x773e94*/
+  const char *v1 = this; // ebp /*0x773e94*/
   const char *v9; // [esp+20h] [ebp-24h]
   v9 = this; /*0x773e99*/
   if ( !this || !strlen(this) ) /*0x773eaa*/
@@ -99,34 +97,32 @@ int WebBrowser::ShowDialog(void *a1)
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
   HWND result; // eax
   result = (HWND)CreateDialog(0x131u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_773E30, 0); /*0x773ecf*/
-  HWND v3; // edi
-  v3 = result; /*0x773ed4*/
+  HWND v3 = result; // edi /*0x773ed4*/
   if ( result ) /*0x773ed8*/
   {
-  LONG dwNewLong; // [esp+1Ch] [ebp-28h] BYREF
+    LONG dwNewLong; // [esp+1Ch] [ebp-28h] BYREF
     dwNewLong = 0; /*0x773ee7*/
     SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
-  int v4; // edx
+    int v4; // edx
     (*((unsigned char *)&(v4))) = 1; /*0x773ef5*/
     SetDialogActiveFlag(v3, v4); /*0x773ef9*/
     ((gamemd::Dialog *)(v3))->Show(); /*0x773f00*/
     GetClientRect(v3, &Rect); /*0x773f0b*/
-  int v11; // [esp+34h] [ebp-10h] BYREF
+    int v11; // [esp+34h] [ebp-10h] BYREF
     v11 = Rect.left + (Rect.right - Rect.left - 800) / 2; /*0x773f30*/
-  int v13; // [esp+3Ch] [ebp-8h]
+    int v13; // [esp+3Ch] [ebp-8h]
     v13 = v11 + 800; /*0x773f39*/
-  int v12; // [esp+38h] [ebp-Ch]
+    int v12; // [esp+38h] [ebp-Ch]
     v12 = Rect.top + (Rect.bottom - Rect.top - 600) / 2; /*0x773f4f*/
-  int v14; // [esp+40h] [ebp-4h]
+    int v14; // [esp+40h] [ebp-4h]
     v14 = v12 + 600; /*0x773f58*/
-  unsigned int *v5; // eax
+    unsigned int *v5; // eax
     v5 = (unsigned int *)(operator new(0x414u)); /*0x773f5c*/
-  int v6; // esi
+    int v6; // esi
     v6 = (int)v5; /*0x773f61*/
     if ( v5 ) /*0x773f68*/
     {
-  unsigned int *v7; // ebp
-      v7 = v5 + 2; /*0x773f6e*/
+      unsigned int *v7 = v5 + 2; // ebp /*0x773f6e*/
       v5[1] = 1; /*0x773f71*/
       v5[2] = 0; /*0x773f7d*/
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
@@ -431,7 +427,7 @@ int WebBrowser::GoBack()
   ReadRegistryOptionsWOL((ObjectClass *)v4); /*0x773db1*/
   if ( (uint8_t)Flag::IsNot2(v4) ) /*0x773dba*/
   {
-  int v3; // [esp+8h] [ebp-8Ch]
+    int v3; // [esp+8h] [ebp-8Ch]
     FindChannelWOL((const char *)&v4[0].Flag_field_0x08, (int)v5, 1u, v3->u32_10); /*0x773dd5*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x773ddf*/
   }

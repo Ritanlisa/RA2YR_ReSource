@@ -53,7 +53,7 @@ int Mixer::ReleaseChannel(void *a1)
     }
   }
   this->Mixer_field_00 = 0; /*0x4060e5*/
-LABEL_14:
+  LABEL_14:
   this->u32_8 = 0; /*0x4060e7*/
   return result; /*0x4060d9*/
 
@@ -64,12 +64,11 @@ namespace gamemd {
 int Mixer::RequestAllBuffers()
 {
 
-  int result; // eax
-  result = dword_87E81C; /*0x4083d0*/
+  int result = dword_87E81C; // eax /*0x4083d0*/
   if ( dword_87E81C ) /*0x4083d8*/
   {
     result = ((AudioQueue *)(unk_87E810))->GetNext(); /*0x4083df*/
-  int *i; // esi
+    int *i; // esi
     for ( i = (int *)result; result; i = (int *)result ) /*0x4083e8*/
     {
       RequestBufferMixer((unsigned int *)(i[5] + 16), 0x4000); /*0x4083f5*/

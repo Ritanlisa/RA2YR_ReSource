@@ -13,8 +13,7 @@ namespace gamemd {  // G42.18 ns repair
 int Techno::GetOwnerHouse()
 {
 
-  int result; // eax
-  result = this->u32_C4; /*0x6f2073*/
+  int result = this->u32_C4; // eax /*0x6f2073*/
   if ( !result ) /*0x6f207b*/
   {
     if ( BuildingType::IsSpecialType(*(unsigned int *)this->q296 + 138)) ) /*0x6f2083*/

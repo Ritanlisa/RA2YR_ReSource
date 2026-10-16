@@ -68,15 +68,14 @@ int Warhead::RemoveFromDamageList(int a2)
   v3 = (*(int (**)(Warhead *, int *))(this->u32_66C + 16))(&this->u32_66C, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
-  int v4; // ecx
+    int v4; // ecx
     v4 = *(unsigned int *)&v2[16]; /*0x45283c*/
     if ( v3 < v4 ) /*0x452841*/
     {
-  int v5; // ecx
-      v5 = v4 - 1; /*0x452843*/
+      int v5 = v4 - 1; // ecx /*0x452843*/
       for ( *(unsigned int *)&v2[16] = v5; /*0x452849*/
-            v3 < *(unsigned int *)&v2[16];
-            *(unsigned int *)(*(unsigned int *)&v2[4] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&v2[4] + 4 * v3) )
+      v3 < *(unsigned int *)&v2[16];
+      *(unsigned int *)(*(unsigned int *)&v2[4] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&v2[4] + 4 * v3) )
       {
         ++v3; /*0x45284e*/
       }

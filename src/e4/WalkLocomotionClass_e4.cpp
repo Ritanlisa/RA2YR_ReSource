@@ -39,23 +39,22 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
 
   a1->MovementSpeed[1] = a2; /*0x6a0323*/
   a1->TrackNumber = 0; /*0x6a0326*/
-  int v4; // eax
-  v4 = g_OverlayTypeConfig; /*0x6a032d*/
+  int v4 = g_OverlayTypeConfig; // eax /*0x6a032d*/
   if ( a3 != g_OverlayTypeConfig || a4 != qword_B077FC ) /*0x6a0340*/
   {
-  char *v5; // esi
+    char *v5; // esi
     v5 = (char *)a1 - 4; /*0x6a0358*/
-  int64_t v13; // [esp+14h] [ebp-8h]
+    int64_t v13; // [esp+14h] [ebp-8h]
     v13 = a4; /*0x6a035f*/
-  int *v6; // edi
+    int *v6; // edi
     v6 = &a1->Dest[2]; /*0x6a0363*/
-  unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
+    unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
     v12 = a3; /*0x6a036a*/
     if ( *v6 != g_OverlayTypeConfig || (((unsigned long)(unsigned int)(a1->HeadToCoord[0])) | ((unsigned long)(unsigned int)(a1->HeadToCoord[1]) << 32)) != qword_B077FC ) /*0x6a0375*/
     {
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
       a1->HeadToCoord[0] = qword_B077FC; /*0x6a038d*/
-  int v7; // ecx
+      int v7; // ecx
       v7 = (*(((unsigned int *)&(qword_B077FC)) + 1)); /*0x6a0390*/
       v5->u32_63 = 0; /*0x6a0396*/
       a1->HeadToCoord[1] = v7; /*0x6a039a*/
@@ -64,14 +63,13 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( (((unsigned long)(unsigned int)(a3)) | ((unsigned long)(unsigned int)(a4) << 32)) != (((unsigned long)(unsigned int)(v4)) | ((unsigned long)(unsigned int)(qword_B077FC) << 32)) /*0x6a03be*/
       || ((*((unsigned char *)&(v4))) = (((unsigned char *)&(qword_B077FC))[4]), (*(((unsigned int *)&(a4)) + 1)) != (*(((unsigned int *)&(qword_B077FC)) + 1))) )
     {
-  int64_t v8; // kr08_8
-      v8 = v13; /*0x6a03c4*/
+      int64_t v8 = v13; // kr08_8 /*0x6a03c4*/
       v5->u32_63 = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
-  int v11; // [esp-4h] [ebp-20h]
+      int v11; // [esp-4h] [ebp-20h]
       v11 = v5->q00C; /*0x6a03dd*/
-  CellClass *v9; // eax
+      CellClass *v9; // eax
       v9 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12)); /*0x6a03e4*/
       if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(v5->q00C + 129) ) /*0x6a03f7*/
       {
@@ -108,8 +106,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   int *v5; // eax
   unsigned int v21[2]; // [esp+14h] [ebp-18h] BYREF
   v5 = (int *)(*(int (__stdcall **)(ShipLocomotionClass *, unsigned int *))(*(unsigned int *)a1->0 + 24))(a1, v21); /*0x6a3f62*/
-  int v6; // ecx
-  v6 = *v5; /*0x6a3f65*/
+  int v6 = *v5; // ecx /*0x6a3f65*/
   unsigned int v7; // edx
   v7 = v5[1]; /*0x6a3f67*/
   unsigned int v8; // eax
@@ -124,41 +121,39 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
     return 0; /*0x6a3f89*/
   if ( !(*((unsigned char *)&(v4->TrackIndex))) ) /*0x6a3f97*/
   {
-  int v9; // eax
+    int v9; // eax
     v9 = v4->MovementSpeed[1]; /*0x6a3fa2*/
     if ( v9 != -1 ) /*0x6a3fa8*/
     {
-  int v10; // eax
+      int v10; // eax
       v10 = byte_7F2A40[12 * v9]; /*0x6a3fb1*/
       if ( v10 ) /*0x6a3fbb*/
       {
-  int v11; // eax
-        v11 = 4 * v10; /*0x6a3fc1*/
-  int v12; // ecx
+        int v11 = 4 * v10; // eax /*0x6a3fc1*/
+        int v12; // ecx
         v12 = dword_7F296C[v11]; /*0x6a3fc4*/
         if ( v12 > -1 ) /*0x6a3fd3*/
         {
-  int v13; // eax
+          int v13; // eax
           v13 = dword_7F2960[v11] + 12 * v12; /*0x6a3fdc*/
           a1 = (int)(*(ShipLocomotionClass **)(v13 + 8)); /*0x6a3fe2*/
           if ( v4->TrackNumber < v12 ) /*0x6a3feb*/
           {
-  int v14; // edx
+            int v14; // edx
             v14 = *(unsigned int *)(v13 + 4); /*0x6a3ff3*/
-  int v20[2]; // [esp+Ch] [ebp-20h] BYREF
+            int v20[2]; // [esp+Ch] [ebp-20h] BYREF
             v20[0] = *(unsigned int *)v13; /*0x6a3ff6*/
             v20[1] = v14; /*0x6a3fff*/
-  int *v15; // eax
+            int *v15; // eax
             v15 = (int *)(WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1)); /*0x6a4011*/
-  int v16; // ebx
-            v16 = *v15; /*0x6a4016*/
-  int v17; // ebp
+            int v16 = *v15; // ebx /*0x6a4016*/
+            int v17; // ebp
             v17 = v15[1]; /*0x6a4018*/
-  int *location; // eax
+            int *location; // eax
             location = v4->Owner->location; /*0x6a401e*/
             v21[0] = *location; /*0x6a4025*/
             v21[1] = location[1]; /*0x6a402c*/
-  int v22; // [esp+1Ch] [ebp-10h]
+            int v22; // [esp+1Ch] [ebp-10h]
             v22 = location[2]; /*0x6a4033*/
             if ( (uint16_t)(v16 / 256) == (uint16_t)(a2 / 256) /*0x6a409b*/
               && (uint16_t)(v17 / 256) == (uint16_t)(a3 / 256)
@@ -172,8 +167,8 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
     }
   }
   return (uint16_t)(v23 / 256) == (uint16_t)(a2 / 256) /*0x6a411e*/
-      && (uint16_t)(v24 / 256) == (uint16_t)(a3 / 256)
-      && (int)abs32(v25 - a4) <= dword_B07838;
+  && (uint16_t)(v24 / 256) == (uint16_t)(a3 / 256)
+  && (int)abs32(v25 - a4) <= dword_B07838;
 }
 } // namespace gamemd
 // 0x75C640
@@ -192,8 +187,7 @@ namespace gamemd {
 HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
 {
 
-  int *v2; // edi
-  v2 = pStm; /*0x75c687*/
+  int *v2 = pStm; // edi /*0x75c687*/
   int v3; // ebx
   v3 = SwizzleManager::SaveLoad((int *)a1->0, pStm); /*0x75c692*/
   if ( v3 < 0 ) /*0x75c696*/
@@ -234,7 +228,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x75c71b*/
   if ( !v4->Piggybackee ) /*0x75c726*/
   {
-  int v12; // edx
+    int v12; // edx
     v12 = *(unsigned int *)v3->IStream_field_00; /*0x75c7c3*/
     LOBYTE(a3) = 0; /*0x75c7cf*/
     (*(void (**)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x75c7d4*/
@@ -249,14 +243,14 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   pPStm = 0; /*0x75c743*/
   if ( Piggybackee ) /*0x75c74d*/
   {
-  int v8; // edi
+    int v8; // edi
     v8 = (**(int (***)(ILocomotion *, void *, WalkLocomotionClass **))Piggybackee)( /*0x75c75e*/
            Piggybackee,
            &unk_820270,
            &a1);
     if ( v8 >= 0 ) /*0x75c762*/
     {
-  int *v9; // ebx
+      int *v9; // ebx
       v9 = (int *)a1; /*0x75c77b*/
       if ( pPStm ) /*0x75c781*/
         (*(void (**)(int *))(*pPStm + 8))(pPStm); /*0x75c786*/

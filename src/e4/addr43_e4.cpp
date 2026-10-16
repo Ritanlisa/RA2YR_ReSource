@@ -84,7 +84,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
   }
   if ( a3 ) /*0x431c36*/
     return 0; /*0x431d83*/
-LABEL_14:
+  LABEL_14:
   if ( !this->attachedTag ) /*0x431c41*/
     return 0; /*0x431c41*/
   if ( a3 ) /*0x431c49*/
@@ -146,7 +146,7 @@ LABEL_14:
                        this,
                        this->nextObject,
                        attachedTag) != attachedTag )
-      (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 5, 0, 0); /*0x431d3a*/
+    (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 5, 0, 0); /*0x431d3a*/
     if ( v11 ) /*0x431d41*/
     {
       (*((void (**)(ObjectClass *))this->AbstractClass + 13))(this); /*0x431d47*/
@@ -197,8 +197,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   v72 = (int)(*aP2); /*0x4373f5*/
   unsigned int v61; // [esp+20h] [ebp-4Ch]
   v61 = 0; /*0x4373f9*/
-  int v18; // ebp
-  v18 = 0; /*0x437400*/
+  int v18 = 0; // ebp /*0x437400*/
   int v73; // [esp+50h] [ebp-1Ch]
   v73 = (int)(aP2[1]); /*0x437402*/
   int v65; // [esp+30h] [ebp-3Ch]
@@ -218,62 +217,57 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   int v68; // [esp+3Ch] [ebp-30h]
   v68 = 0; /*0x43742b*/
   aP8 = 24 * aP8 + 8484624; /*0x43743a*/
-  int v21; // ebx
-  v21 = 0; /*0x43745f*/
+  int v21 = 0; // ebx /*0x43745f*/
   char result; // al
   result = (char)(CalcSurfaceBlitRects(&v72, aP3, a4, v76, &aP5, &v62, &aP2)); /*0x437461*/
   if ( result ) /*0x437468*/
   {
     if ( dword_87E8A4 ) /*0x43747c*/
     {
-  int v23; // eax
+      int v23; // eax
       v23 = (int)(*aP1); /*0x437485*/
-  int v24; // edx
+      int v24; // edx
       v24 = *((unsigned int *)dword_87E8A4 + 1); /*0x43748d*/
       v71 = v73 + aP1[1]; /*0x437490*/
-  uint8_t v25; // di
-      v25 = v71 - v24; /*0x437494*/
+      uint8_t v25 = v71 - v24; // di /*0x437494*/
       v70 = v72 + v23; /*0x43749a*/
       v61 = (v72 + v23)->ReadAndSeek(v71 - v24); /*0x4374ac*/
       v21 = (2 * (v25 & 1)) | ((uint8_t)v70 ^ v25) & 1; /*0x4374b7*/
     }
     if ( g_ZBufferDescriptor ) /*0x4374c3*/
     {
-  int v26; // ebp
-      v26 = v72 + *aP1; /*0x4374d6*/
-  int v27; // edi
+      int v26 = v72 + *aP1; // ebp /*0x4374d6*/
+      int v27; // edi
       v27 = *((unsigned int *)g_ZBufferDescriptor + 1); /*0x4374d8*/
       v71 = v73 + aP1[1]; /*0x4374dd*/
       v63 = (v26)->GetSamplePosition(v71 - v27); /*0x4374ea*/
       v64 = 0; /*0x4374f2*/
-  int v28; // edi
-      v28 = aP8->LockCount; /*0x4374fa*/
+      int v28 = aP8->LockCount; // edi /*0x4374fa*/
       v67 = (int)(aP8->Height); /*0x437502*/
       v68 = v28; /*0x437509*/
-  int v29; // ecx
-      v29 = v28 / v67; /*0x43750d*/
+      int v29 = v28 / v67; // ecx /*0x43750d*/
       if ( aP8->q014 ) /*0x437513*/
       {
         v18 = aP8->Width /*0x437545*/
-            * ((aP7
-              + (uint16_t)(*((unsigned short *)g_ZBufferDescriptor + 2)
+        * ((aP7
+                                 + (uint16_t)(*((unsigned short *)g_ZBufferDescriptor + 2)
                                  + *((unsigned short *)g_ZBufferDescriptor + 18)
                                  - v73
                                  - aP1->Width))
-             / aP8->Width);
+                                 / aP8->Width);
       }
       else
       {
         v18 = v29 /*0x437585*/
-            * ((aP7
-              + (uint16_t)(*((unsigned short *)g_ZBufferDescriptor + 2)
+        * ((aP7
+                                 + (uint16_t)(*((unsigned short *)g_ZBufferDescriptor + 2)
                                  + *((unsigned short *)g_ZBufferDescriptor + 18)
                                  - v20
                                  - v73
                                  - aP1->Width
                                  + 1))
-             / v29)
-            - v20 / v29;
+                                 / v29)
+        - v20 / v29;
         v64 = v28 - v20 % v29; /*0x437592*/
         if ( v64 == v28 ) /*0x437596*/
         {
@@ -282,21 +276,19 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
         }
       }
     }
-  int *v30; // edi
+    int *v30; // edi
     v30 = (int *)(aP0); /*0x4375a7*/
-  int v31; // eax
+    int v31; // eax
     v31 = aP0->vt_slot_112(); /*0x4375af*/
-  int v32; // esi
-    v32 = v19 * v31; /*0x4375b6*/
-  int v33; // esi
+    int v32 = v19 * v31; // esi /*0x4375b6*/
+    int v33; // esi
     if ( v32 == v30->vt_slot_116() /*0x4375d8*/
       && (v33 = v30->vt_slot_116(), v33 == aP3->vt_slot_116()) )
     {
-  int v34; // eax
-      v34 = v17 * v15; /*0x4375e2*/
+      int v34 = v17 * v15; // eax /*0x4375e2*/
       if ( v17 * v15 >= v20 * v19 ) /*0x4375ee*/
         v34 = v20 * v19; /*0x4375f0*/
-  int v35; // edx
+      int v35; // edx
       v35 = (int)(*aP6); /*0x4375fc*/
       if ( (unsigned char)aP5 ) /*0x4375fe*/
         aP6->Blit(v62, aP2, v34, 0, 0, 0, 1000); /*0x437616*/
@@ -315,7 +307,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
     {
       aP3 = aP3; /*0x43763e*/
       aP7 = aP3->vt_slot_116(); /*0x437649*/
-  int v37; // ecx
+      int v37; // ecx
       v37 = v30->vt_slot_116(); /*0x437654*/
       a4 = v37; /*0x43765d*/
       if ( g_ZBufferDescriptor ) /*0x437661*/
@@ -326,23 +318,22 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       {
         a4 = -v37; /*0x437690*/
         aP7 = -aP7; /*0x43769c*/
-  int v38; // edx
+        int v38; // edx
         v38 = (int)(*aP3); /*0x4376a0*/
         v66 = -v66; /*0x4376a4*/
         v65 = -v65; /*0x4376aa*/
-  int v39; // eax
+        int v39; // eax
         v39 = aP3->vt_slot_116(); /*0x4376ae*/
-  int v40; // edx
-        v40 = *v30; /*0x4376b5*/
+        int v40 = *v30; // edx /*0x4376b5*/
         aP2 = (gamemd::XSurface *)((int *)((char *)aP2 + (v17 - 1) * v39)); /*0x4376c1*/
-  int v41; // eax
+        int v41; // eax
         v41 = v30->vt_slot_116(); /*0x4376c7*/
         v42 = v17; /*0x4376d3*/
         v43 = (v20 - 1) * v41 + v62; /*0x4376da*/
         v62 = v43; /*0x4376e3*/
         if ( g_ZBufferDescriptor ) /*0x4376e7*/
         {
-  unsigned int v44; // ecx
+          unsigned int v44; // ecx
           v44 = v63 + 2 * (v17 + 0x7FFFFFFF * *((unsigned int *)g_ZBufferDescriptor + 10)); /*0x4376fb*/
           if ( v44 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x437703*/
             v44 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x437705*/
@@ -351,7 +342,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
         }
         if ( dword_87E8A4 ) /*0x43771d*/
         {
-  unsigned int v45; // eax
+          unsigned int v45; // eax
           v45 = v61 + 2 * (v17 + 0x7FFFFFFF * *((unsigned int *)dword_87E8A4 + 10)); /*0x437731*/
           if ( v45 >= *((unsigned int *)dword_87E8A4 + 7) ) /*0x437739*/
             v45 -= *((unsigned int *)dword_87E8A4 + 8); /*0x43773b*/
@@ -369,11 +360,9 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       {
         if ( v42 > 0 ) /*0x437764*/
         {
-  int v46; // eax
-          v46 = a10; /*0x43776a*/
-  int v47; // ecx
-          v47 = a11; /*0x43776e*/
-  char *v48; // ebx
+          int v46 = a10; // eax /*0x43776a*/
+          int v47 = a11; // ecx /*0x43776e*/
+          char *v48; // ebx
           v48 = (char *)aP2; /*0x437775*/
           v70 = v42; /*0x437779*/
           aP6 = aP6; /*0x43777d*/
@@ -406,13 +395,11 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
             aP2 = (int *)((char *)aP2 + aP7); /*0x4377f7*/
             if ( g_ZBufferDescriptor ) /*0x4377fb*/
             {
-  unsigned int v51; // eax
-              v51 = v50 + 2 * v65; /*0x437801*/
+              unsigned int v51 = v50 + 2 * v65; // eax /*0x437801*/
               if ( v51 < *((unsigned int *)g_ZBufferDescriptor + 6) ) /*0x437809*/
                 v51 += *((unsigned int *)g_ZBufferDescriptor + 8); /*0x43780b*/
               v63 = v51; /*0x437812*/
-  int v52; // eax
-              v52 = v67 + v64; /*0x43781a*/
+              int v52 = v67 + v64; // eax /*0x43781a*/
               v64 += v67; /*0x437822*/
               if ( v64 >= v68 ) /*0x437826*/
               {
@@ -422,8 +409,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
             }
             if ( dword_87E8A4 ) /*0x43783d*/
             {
-  unsigned int v53; // eax
-              v53 = v61 + 2 * v66; /*0x437847*/
+              unsigned int v53 = v61 + 2 * v66; // eax /*0x437847*/
               if ( v53 < *((unsigned int *)dword_87E8A4 + 6) ) /*0x43784f*/
                 v53 += *((unsigned int *)dword_87E8A4 + 8); /*0x437851*/
               v61 = v53; /*0x437854*/
@@ -437,10 +423,8 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       }
       else if ( v42 > 0 ) /*0x43786e*/
       {
-  int v54; // eax
-        v54 = a10; /*0x437874*/
-  int v55; // ecx
-        v55 = a11; /*0x437878*/
+        int v54 = a10; // eax /*0x437874*/
+        int v55 = a11; // ecx /*0x437878*/
         v70 = v42; /*0x43787f*/
         aP6 = aP6; /*0x437883*/
         while ( 1 ) /*0x437894*/
@@ -473,13 +457,11 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
           aP2 = (int *)((char *)aP2 + aP7); /*0x437902*/
           if ( g_ZBufferDescriptor ) /*0x43790e*/
           {
-  unsigned int v58; // eax
-            v58 = v57 + 2 * v65; /*0x437914*/
+            unsigned int v58 = v57 + 2 * v65; // eax /*0x437914*/
             if ( v58 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x43791c*/
               v58 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x43791e*/
             v63 = v58; /*0x437925*/
-  int v59; // eax
-            v59 = v67 + v64; /*0x43792d*/
+            int v59 = v67 + v64; // eax /*0x43792d*/
             v64 += v67; /*0x437935*/
             if ( v64 >= v68 ) /*0x437939*/
             {
@@ -489,8 +471,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
           }
           if ( dword_87E8A4 ) /*0x437950*/
           {
-  unsigned int v60; // eax
-            v60 = v61 + 2 * v66; /*0x43795a*/
+            unsigned int v60 = v61 + 2 * v66; // eax /*0x43795a*/
             if ( v60 >= *((unsigned int *)dword_87E8A4 + 7) ) /*0x437962*/
               v60 -= *((unsigned int *)dword_87E8A4 + 8); /*0x437964*/
             v61 = v60; /*0x437967*/
@@ -619,11 +600,11 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     {
       v27 = a12; /*0x437bcd*/
       v17 = *(unsigned int *)(v18 + 4) /*0x437bd4*/
-          * ((a8 + (uint16_t)((*((unsigned short *)&(((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_10))) - v25))
-           / *(unsigned int *)(v18 + 4));
+      * ((a8 + (uint16_t)((*((unsigned short *)&(((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_10))) - v25))
+      / *(unsigned int *)(v18 + 4));
       if ( a12 ) /*0x437bd9*/
       {
-  LABEL_7:
+        LABEL_7:
         v28 = (int *)(*(int (**)(int, int *))(*(unsigned int *)v27 + 120))(v27, &v55); /*0x437bdf*/
         v29 = *v28; /*0x437bed*/
         v50 = v28[2]; /*0x437bf6*/
@@ -636,7 +617,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     else
     {
       v17 = a8 /*0x437c67*/
-          + (uint16_t)((*((unsigned short *)&(g_ZBufferDescriptor->Stream_field_04)))
+      + (uint16_t)((*((unsigned short *)&(g_ZBufferDescriptor->Stream_field_04)))
                              + (*((unsigned short *)&(((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_10)))
                              - (*((unsigned short *)&(a1->field_4)))
                              - aP2->vtable4
@@ -778,7 +759,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
   (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x437fa3*/
   if ( v2 < 0 ) /*0x437fa8*/
   {
-  LABEL_5:
+    LABEL_5:
     if ( v2 != -2147467262 ) /*0x437fb0*/
       sub_7DC720(v2); /*0x437fb3*/
   }
@@ -790,16 +771,14 @@ namespace gamemd {
 void BrainClass::sub_43A600()
 {
 
-  int v2; // esi
-  v2 = 0; /*0x43a608*/
+  int v2 = 0; // esi /*0x43a608*/
   /* X11: vtable install elided (implicit via BrainClass virtuals 0x43a60a) */
-  int v3; // ebp
-  v3 = this->abstractFlags; /*0x43a610*/
+  int v3 = this->abstractFlags; // ebp /*0x43a610*/
   if ( v3 > 0 ) /*0x43a615*/
   {
     do /*0x43a632*/
     {
-  int v4; // ecx
+      int v4; // ecx
       v4 = *(unsigned int *)(this->u32_8 + 4 * v2); /*0x43a61a*/
       if ( v4 ) /*0x43a61f*/
         (*(void (**)(int, int))(*(unsigned int *)v4 + 32))(v4, 1); /*0x43a625*/
@@ -826,16 +805,14 @@ namespace gamemd {
 unsigned int * BrainClass::sub_43AA90(char a2)
 {
 
-  int v3; // esi
-  v3 = 0; /*0x43aa95*/
+  int v3 = 0; // esi /*0x43aa95*/
   /* X11: vtable install elided (implicit via BrainClass virtuals 0x43aa97) */
-  int v4; // ebp
-  v4 = this->u32_14; /*0x43aa9d*/
+  int v4 = this->u32_14; // ebp /*0x43aa9d*/
   if ( v4 > 0 ) /*0x43aaa2*/
   {
     do /*0x43aac3*/
     {
-  int v5; // ecx
+      int v5; // ecx
       v5 = *(unsigned int *)(this->u32_8 + 4 * v3); /*0x43aaa7*/
       if ( v5 ) /*0x43aaac*/
         (*(void (**)(int, int))(*(unsigned int *)v5 + 32))(v5, 1); /*0x43aab2*/
@@ -976,14 +953,12 @@ void sub_4301C0()
 
   if ( dword_89C410 ) /*0x4301c7*/
   {
-  void **v0; // esi
+    void **v0; // esi
     v0 = (void **)g_VisibilitySystem; /*0x4301cc*/
-  int v1; // ebx
-    v1 = 8; /*0x4301d1*/
+    int v1 = 8; // ebx /*0x4301d1*/
     do /*0x4301f7*/
     {
-  int v2; // edi
-      v2 = 3; /*0x4301d6*/
+      int v2 = 3; // edi /*0x4301d6*/
       do /*0x4301f4*/
       {
         if ( *v0 ) /*0x4301db*/
@@ -1022,8 +997,7 @@ char E4Recv_430590::sub_430590(int a2, int a3, int a4, int a5)
     this->M4 = a3; /*0x4305bc*/
     this->M8 = a4; /*0x4305bf*/
   }
-  char result; // al
-  result = a5; /*0x4305c2*/
+  char result = a5; // al /*0x4305c2*/
   if ( a5 < 8 ) /*0x4305cb*/
   {
     *&this->M272 = a5; /*0x4305cd*/
@@ -1215,8 +1189,7 @@ namespace gamemd {
 int E4Recv_434100::sub_434100(int a2)
 {
 
-  int result; // eax
-  result = this->M40; /*0x434104*/
+  int result = this->M40; // eax /*0x434104*/
   this->M40 = a2; /*0x434107*/
   return result; /*0x43410a*/
 }
@@ -1230,30 +1203,25 @@ unsigned char * E4Recv_434700::sub_434700()
 
   unsigned char *result; // eax
   result = malloc(*((unsigned int *)this->M8 + 1) * *((unsigned int *)this->M8 + 2) + 2); /*0x434713*/
-  unsigned int *vtable1; // edx
-  vtable1 = this->M4; /*0x434718*/
+  unsigned int *vtable1 = this->M4; // edx /*0x434718*/
   this->M8 = result; /*0x434720*/
   if ( vtable1 ) /*0x434723*/
   {
-  int v4; // ecx
+    int v4; // ecx
     v4 = *(unsigned __int16 *)(vtable1[6] + 176); /*0x43472a*/
     if ( (unsigned short)v4 ) /*0x434733*/
     {
-  unsigned char *v5; // ecx
+      unsigned char *v5; // ecx
       v5 = (unsigned char *)(vtable1[7] + (v4 - 1) * vtable1[5]); /*0x43473e*/
       if ( v5 ) /*0x434741*/
       {
-  unsigned char *v6; // edi
-        v6 = v5 + 1; /*0x434745*/
+        unsigned char *v6 = v5 + 1; // edi /*0x434745*/
         *result = *v5; /*0x434748*/
-  unsigned int *v7; // edx
-        v7 = this->M4; /*0x43474a*/
-  unsigned int v8; // ebp
-        v8 = 0; /*0x434750*/
+        unsigned int *v7 = this->M4; // edx /*0x43474a*/
+        unsigned int v8 = 0; // ebp /*0x434750*/
         for ( result = (char *)this->M8 + 1; v8 < v7->vtable3; ++v8 ) /*0x434752*/
         {
-  unsigned int v9; // ecx
-          v9 = 0; /*0x43475e*/
+          unsigned int v9 = 0; // ecx /*0x43475e*/
           if ( v7->vtable2 ) /*0x43475b*/
           {
             do /*0x434774*/
@@ -1292,17 +1260,17 @@ char sub_434840(unsigned int * a1, unsigned int * a2, unsigned int * a3)
     a1[1] = a2[1]; /*0x43487d*/
     a1[2] = a2[2]; /*0x434883*/
     a1[3] = a2[3]; /*0x43488a*/
-  int v3; // ecx
+    int v3; // ecx
     v3 = a3[1]; /*0x43488d*/
     if ( a1[1] < v3 ) /*0x434893*/
       a1[1] = v3; /*0x434895*/
     if ( *a1 < *a3 ) /*0x43489e*/
       *a1 = *a3; /*0x4348a0*/
-  int v4; // ecx
+    int v4; // ecx
     v4 = a3[3]; /*0x4348a2*/
     if ( a1[3] > v4 ) /*0x4348aa*/
       a1[3] = v4; /*0x4348ac*/
-  int v5; // edx
+    int v5; // edx
     v5 = a3[2]; /*0x4348af*/
     if ( a1[2] > v5 ) /*0x4348b7*/
       a1[2] = v5; /*0x4348b9*/
@@ -1369,8 +1337,7 @@ int sub_434BF0(int a1, int * a2, unsigned short * a3, int xLeft, int yTop, int a
 {
   int v7; // ebx
 
-  int result; // eax
-  result = 0; /*0x434bf6*/
+  int result = 0; // eax /*0x434bf6*/
   if ( a1 ) /*0x434bfb*/
   {
     if ( *(unsigned char *)(a1 + 64) ) /*0x434c01*/
@@ -1439,8 +1406,8 @@ namespace gamemd {
 int PackRGB565(int a1, int a2, int a3)
 {
   return (a1 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x43560b*/
-       | (a2 >> g_BitMask_Blue << g_BitMask_Green)
-       | (a3 >> g_BitMask_Red << g_BitShift_Blue);
+  | (a2 >> g_BitMask_Blue << g_BitMask_Green)
+  | (a3 >> g_BitMask_Red << g_BitShift_Blue);
 }
 } // namespace gamemd
 
@@ -1628,8 +1595,7 @@ char sub_437290(int * a1, int a2, int * a3)
 
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4372a5*/
     return 0; /*0x4372a8*/
-  int v6; // ebx
-  v6 = *a3; /*0x4372ba*/
+  int v6 = *a3; // ebx /*0x4372ba*/
   int v7; // eax
   v7 = a1->vt_slot_112(); /*0x4372bc*/
   int v8; // edx
@@ -1642,8 +1608,7 @@ char sub_437290(int * a1, int a2, int * a3)
   Buffer::Init(v17, v6, v7 * v8 * v13); /*0x4372ed*/
   int v9; // ecx
   v9 = *(unsigned int *)(a2 + 12); /*0x4372f5*/
-  int v10; // edx
-  v10 = *a1; /*0x4372f8*/
+  int v10 = *a1; // edx /*0x4372f8*/
   unsigned int v11[4]; // [esp+8h] [ebp-30h] BYREF
   v11[2] = *(unsigned int *)(a2 + 8); /*0x4372fa*/
   v11[3] = v9; /*0x4372fe*/
@@ -2128,15 +2093,13 @@ int E4Recv_43A670::sub_43A670()
 {
 
 
-  int v2; // esi
-  v2 = 0; /*0x43a675*/
-  int abstractFlags; // ebx
-  abstractFlags = this->M20; /*0x43a677*/
+  int v2 = 0; // esi /*0x43a675*/
+  int abstractFlags = this->M20; // ebx /*0x43a677*/
   if ( abstractFlags > 0 ) /*0x43a67c*/
   {
     do /*0x43a69d*/
     {
-  int v4; // ecx
+      int v4; // ecx
       v4 = *((unsigned int *)this->M8 + v2); /*0x43a681*/
       if ( v4 ) /*0x43a686*/
         (*(void (**)(int, int))(*(unsigned int *)v4 + 32))(v4, 1); /*0x43a68c*/
@@ -2155,15 +2118,13 @@ int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
 {
 
 
-  int v4; // esi
-  v4 = 0; /*0x43a6b5*/
-  int abstractFlags; // ebx
-  abstractFlags = this->M20; /*0x43a6b7*/
+  int v4 = 0; // esi /*0x43a6b5*/
+  int abstractFlags = this->M20; // ebx /*0x43a6b7*/
   if ( abstractFlags > 0 ) /*0x43a6bc*/
   {
     do /*0x43a6dd*/
     {
-  int v6; // ecx
+      int v6; // ecx
       v6 = *((unsigned int *)this->M8 + v4); /*0x43a6c1*/
       if ( v6 ) /*0x43a6c6*/
         (*(void (**)(int, int))(*(unsigned int *)v6 + 32))(v6, 1); /*0x43a6cc*/
@@ -2185,14 +2146,12 @@ int E4Recv_43A770::sub_43A770(unsigned int * a2, int a3)
 {
 
 
-  unsigned int *v3; // esi
-  v3 = a2; /*0x43a773*/
+  unsigned int *v3 = a2; // esi /*0x43a773*/
   if ( !a2 ) /*0x43a77c*/
     return -2147467261; /*0x43a781*/
   unsigned int *abstractFlags; // eax
   abstractFlags = (unsigned int *)this->M20; /*0x43a78a*/
-  int v7; // ecx
-  v7 = *a2; /*0x43a78d*/
+  int v7 = *a2; // ecx /*0x43a78d*/
   unsigned int *v10; // [esp-8h] [ebp-20h]
   v10 = a2; /*0x43a798*/
   a2 = abstractFlags; /*0x43a799*/
@@ -2200,19 +2159,17 @@ int E4Recv_43A770::sub_43A770(unsigned int * a2, int a3)
   result = (*(int (**)(unsigned int *, unsigned int **, int, unsigned int))(v7 + 16))(v10, &a2, 4, 0); /*0x43a79d*/
   if ( result >= 0 ) /*0x43a7a2*/
   {
-  int v8; // edi
-    v8 = 0; /*0x43a7a8*/
+    int v8 = 0; // edi /*0x43a7a8*/
     if ( (int)a2 <= 0 ) /*0x43a7ac*/
     {
       return 0; /*0x43a7cd*/
     }
     else
     {
-  int v9; // ebp
-      v9 = a3; /*0x43a7ae*/
+      int v9 = a3; // ebp /*0x43a7ae*/
       while ( 1 ) /*0x43a7ba*/
       {
-  int v11; // [esp-4h] [ebp-1Ch]
+        int v11; // [esp-4h] [ebp-1Ch]
         v11 = *((unsigned int *)this->M8 + v8); /*0x43a7ba*/
         result = (*(int (**)(int, unsigned int *, int))(*(unsigned int *)v11 + 24))(v11, v3, v9); /*0x43a7bd*/
         if ( result < 0 ) /*0x43a7c2*/
@@ -2399,8 +2356,7 @@ int E4Recv_43EE50::sub_43EE50()
   unsigned int *Value; // eax
   int v5; // [esp+8h] [ebp-4h] BYREF
   Value = ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v5); /*0x43ee76*/
-  int v3; // esi
-  v3 = this->M1408; /*0x43ee7d*/
+  int v3 = this->M1408; // esi /*0x43ee7d*/
   int result; // eax
   result = dword_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F]; /*0x43ee8e*/
   if ( v3 ) /*0x43ee95*/

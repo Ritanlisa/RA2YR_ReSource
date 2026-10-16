@@ -31,8 +31,7 @@ void * MSVQAnim::GetFrameRect(int * a2)
     *(unsigned int *)&g_MissionQueueFrame.underParTitle[4] = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
-  int MSVQAnim_field_0x1C; // eax
-  MSVQAnim_field_0x1C = this->q01C; /*0x5cd2d1*/
+  int MSVQAnim_field_0x1C = this->q01C; // eax /*0x5cd2d1*/
   int *p_parTimeMedium; // ecx
   p_parTimeMedium = (int *)(MSVQAnim_field_0x1C + 52); /*0x5cd2d6*/
   if ( !MSVQAnim_field_0x1C ) /*0x5cd2d9*/

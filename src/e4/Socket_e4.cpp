@@ -21,9 +21,7 @@
 namespace gamemd {  // G42.18 ns repair
 int Socket::ConfigureBuffers(SOCKET)
 {
-  SOCKET v2; // esi
-
-  v2 = aP1; /*0x7b2631*/
+  SOCKET v2 = aP1; // esi /*0x7b2631*/
   if ( aP1 == -1 ) /*0x7b2638*/
     v2 = this->u32_3F06C; /*0x7b263a*/
   if ( setsockopt(v2, 0xFFFF, 4098, optval, 4) == -1 ) /*0x7b265a*/

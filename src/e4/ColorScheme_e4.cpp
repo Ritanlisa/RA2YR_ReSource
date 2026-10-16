@@ -29,9 +29,9 @@ int ColorScheme::Destructor(void *a1)
   {
     --*(unsigned int *)g_AnimClass_SaveState; /*0x68c935*/
     for ( ; /*0x68c93b*/
-          result < *(int *)g_AnimClass_SaveState;
-          *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * result - 4) = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable
-                                                                                   + 4 * result) )
+    result < *(int *)g_AnimClass_SaveState;
+    *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * result - 4) = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable
+    + 4 * result) )
     {
       ++result; /*0x68c943*/
     }

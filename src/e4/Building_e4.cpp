@@ -205,7 +205,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
   }
   if ( dword_89A150 ) /*0x426011*/
   {
-LABEL_39:
+    LABEL_39:
     *aP1 = Map_InvalidCoord_X; /*0x426090*/
     aP1->u32_4 = Map_InvalidCoord_Y; /*0x4260a3*/
     aP1->u32_8 = Map_InvalidCoord_Z; /*0x4260ac*/
@@ -228,7 +228,7 @@ LABEL_39:
   }
   v24 = v34[1]; /*0x4260bd*/
   v23 = (v34[0] << 8) + 128; /*0x4260c5*/
-LABEL_41:
+  LABEL_41:
   *aP1 = v23; /*0x4260cb*/
   aP1->u32_4 = (v24 << 8) + 128; /*0x4260dd*/
   aP1->u32_8 = 0; /*0x4260e0*/
@@ -248,7 +248,7 @@ int Building::GetNthOfType()
     return 0; /*0x485030*/
   else
     return ((unsigned __int8)this->u32_11E + 1) /*0x48504f*/
-         * *(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 184);
+  * *(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 184);
 
 }
 }
@@ -260,8 +260,7 @@ int Building::GetRenderType()
 
   unsigned char *Building_field_0xA0; // ecx
   Building_field_0xA0 = (unsigned char *)(this->q0A0); /*0x772a90*/
-  int result; // eax
-  result = 0; /*0x772a96*/
+  int result = 0; // eax /*0x772a96*/
   if ( Building_field_0xA0->q2A4 ) /*0x772a98*/
     result = 4; /*0x772aa2*/
   if ( Building_field_0xA0->u8_2A5 ) /*0x772aa7*/
@@ -281,13 +280,12 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
   __int16 *v3; // eax
   if ( v2 && a2 < v2->u32_6 && (v3 = (__int16 *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
   {
-  int v4; // ecx
-    v4 = *v3; /*0x69e800*/
-  int v5; // edx
+    int v4 = *v3; // ecx /*0x69e800*/
+    int v5; // edx
     v5 = v3[1]; /*0x69e803*/
-  int v6; // esi
+    int v6; // esi
     v6 = v3[2]; /*0x69e809*/
-  int v7; // edi
+    int v7; // edi
     v7 = v3[3]; /*0x69e80e*/
     *a1 = v4; /*0x69e818*/
     a1->vtable2 = v5; /*0x69e81a*/

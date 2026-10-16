@@ -48,8 +48,7 @@ int AlphaShapeClass::SD_vt10(int a2, int a3)
 {
 
 
-  int result; // eax
-  result = a2; /*0x420e70*/
+  int result = a2; // eax /*0x420e70*/
   if ( a2 == this->q024 ) /*0x420e79*/
     this->u32_3C = 1; /*0x420e7b*/
   return result; /*0x420e7f*/
@@ -88,9 +87,9 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   {
     --g_BuildingLoadQueue_Array.Foundation[0]; /*0x4217c1*/
     for ( ; /*0x4217c7*/
-          v4 < g_BuildingLoadQueue_Array.Foundation[0];
-          *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain
-                                                                                     + 4 * v4) )
+    v4 < g_BuildingLoadQueue_Array.Foundation[0];
+    *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain
+    + 4 * v4) )
     {
       ++v4; /*0x4217cf*/
     }

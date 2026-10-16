@@ -46,11 +46,11 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
   ExitCellByName = ((Factory *)&v10)->FindExitCellByName(); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
-  int Index; // eax
+    int Index; // eax
     Index = ((BuildingTypeClass *)&v10)->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-  int v8; // eax
+      int v8; // eax
       v8 = (int)((&v10)->FindByName()); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
         this->vtable2 = (void *)(*((unsigned int *)dword_A8B21C + v8)); /*0x4c4f82*/
@@ -58,7 +58,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
     }
     else
     {
-  int v7; // edx
+      int v7; // edx
       v7 = *((unsigned int *)dword_A83CE4 + Index); /*0x4c4f5c*/
       this->vtable2 = (void *)(v7); /*0x4c4f61*/
       return (unsigned int *)(this->vtable1); /*0x4c4f5f*/
@@ -66,7 +66,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
   }
   else
   {
-  int v4; // edx
+    int v4; // edx
     v4 = *((unsigned int *)dword_A8E34C + ExitCellByName); /*0x4c4f39*/
     this->vtable2 = (void *)(v4); /*0x4c4f3e*/
     return (unsigned int *)(this->vtable1); /*0x4c4f3c*/
@@ -96,14 +96,13 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
          dword_A8E8D8 + dword_A8E8E4,
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = dword_A8E8E0++; /*0x6e7f12*/
     *((unsigned int *)dword_A8E8D4 + v3) = (unsigned int)(this); /*0x6e7f21*/
   }
   ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
   p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->q0A4); /*0x6e7f28*/
-  int v5; // ecx
-  v5 = 6; /*0x6e7f2a*/
+  int v5 = 6; // ecx /*0x6e7f2a*/
   do /*0x6e7f38*/
   {
     *p_TaskForceClass_field_0xA4 = 0; /*0x6e7f2f*/
@@ -144,7 +143,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
       result = (a1)->GetString(g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
-LABEL_13:
+      LABEL_13:
       if ( ++v6 >= v5 ) /*0x6e832a*/
         return (gamemd::AbstractClass **)(result); /*0x6e832a*/
     }
@@ -161,14 +160,14 @@ LABEL_13:
       v10 = (unsigned int *)*((unsigned int *)dword_A8E8D4 + v8); /*0x6e82f9*/
       goto LABEL_12; /*0x6e82fc*/
     }
-LABEL_8:
+    LABEL_8:
     v9 = (TaskForceClass *)__2_YAPAXI_Z(0xD4u); /*0x6e82d7*/
     if ( v9 ) /*0x6e82e1*/
       v10 = (unsigned int *)(TaskForceClass::Construct(v9, Source)); /*0x6e82ef*/
     else
-LABEL_11:
-      v10 = 0; /*0x6e82fe*/
-LABEL_12:
+      LABEL_11:
+    v10 = 0; /*0x6e82fe*/
+    LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, v11, (int)v10); /*0x6e8310*/
     result = v10->GetUnitCount(a1); /*0x6e831a*/
@@ -230,22 +229,19 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   INIClass::ResetSection((INIClass *)aP1); /*0x6e8433*/
   if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)this, aP1) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
-  int v3; // edi
-  v3 = 0; /*0x6e844a*/
+  int v3 = 0; // edi /*0x6e844a*/
   this->Coord_9C = 0; /*0x6e844f*/
   do /*0x6e84cb*/
   {
     sprintf(v8.vtable3, "%d", v3); /*0x6e8460*/
     if ( (/*0x6e8486*/ (INIClass *)aP1)->GetString((unsigned __int8 *)&this->q024, (unsigned __int8 *)v8.vtable3, &g_INI_DefaultBuffer, v8.q028, 128) > 0 )
     {
-  unsigned int *v4; // eax
+      unsigned int *v4; // eax
       v4 = (&v8)->ParseUnitCountAndType(v8.q028); /*0x6e8491*/
-  int v5; // ecx
-      v5 = this->Coord_9C; /*0x6e8496*/
+      int v5 = this->Coord_9C; // ecx /*0x6e8496*/
       *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
       *(&this->vtable3 * v5 + 42) = v4->vtable2; /*0x6e84a8*/
-  int v6; // eax
-      v6 = this->Coord_9C; /*0x6e84af*/
+      int v6 = this->Coord_9C; // eax /*0x6e84af*/
       if ( *(&this->vtable3 * v6 + 42) ) /*0x6e84b5*/
         this->Coord_9C = v6 + 1; /*0x6e84c1*/
     }
@@ -270,13 +266,12 @@ char TaskForceClass::GetUnitType(char * a2)
 
   if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, a2) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
-  int v3; // esi
-  v3 = 0; /*0x6e8527*/
+  int v3 = 0; // esi /*0x6e8527*/
   ObjectTypeClass **p_TaskForceClass_field_0xA4; // ebx
   p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->q0A4); /*0x6e8529*/
   do /*0x6e857d*/
   {
-  char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
+    char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
     sprintf(Buffer, "%d", v3); /*0x6e853a*/
     if ( v3 >= this->Coord_9C ) /*0x6e854a*/
     {
@@ -284,7 +279,7 @@ char TaskForceClass::GetUnitType(char * a2)
     }
     else
     {
-  char *v5; // eax
+      char *v5; // eax
       v5 = (char *)(TaskForceClass::Check((TaskForceClass *)p_TaskForceClass_field_0xA4)); /*0x6e854e*/
       INIClass::SetString(a2, (unsigned __int8 *)&this->q024, Buffer, v5); /*0x6e855f*/
     }
@@ -333,10 +328,9 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
       /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e86d1) */
       /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e86d8) */
     }
-  int *v3; // esi
+    int *v3; // esi
     v3 = (int *)(aP0 + 1); /*0x6e86e0*/
-  int v4; // edi
-    v4 = 6; /*0x6e86e6*/
+    int v4 = 6; // edi /*0x6e86e6*/
     do /*0x6e86fa*/
     {
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v3); /*0x6e86f1*/

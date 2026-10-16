@@ -31,8 +31,7 @@ char * ScrollClass::Read(char * Block, char a2, void *a3)
 
   int *v3; // esi
   v3 = (int *)Block + 5371; /*0x6938f5*/
-  int v4; // edi
-  v4 = 4; /*0x6938fb*/
+  int v4 = 4; // edi /*0x6938fb*/
   do /*0x693916*/
   {
     v3 -= 997; /*0x693905*/

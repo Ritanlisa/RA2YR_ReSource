@@ -434,7 +434,7 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1, void *a2)
   {
     *&this->u32_4 = 0; /*0x67a5d6*/
     BYTE1(this->m_C) = 0; /*0x67a5dd*/
-LABEL_8:
+    LABEL_8:
     *(unsigned int *)this->__tail_10 = (unsigned int)(aP1[4]); /*0x67a5e1*/
     this->u32_14 = (unsigned int)(aP1[5]); /*0x67a5ea*/
     return this->q000; /*0x67a5ed*/
@@ -470,7 +470,7 @@ char * Rules::GetProductionTimeMult(int aP1)
   result = (char *)aP1; /*0x5fb2e0*/
   if ( aP1 ) /*0x5fb2e6*/
   {
-  int v3; // ecx
+    int v3; // ecx
     v3 = *(unsigned int *)this->q000; /*0x5fb2e8*/
     if ( aP1 >= 5 ) /*0x5fb2ed*/
       return (char *)(8 * aP1 / (v3 + 1)); /*0x5fb301*/

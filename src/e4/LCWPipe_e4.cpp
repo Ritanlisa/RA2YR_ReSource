@@ -12,8 +12,8 @@
 namespace gamemd {  // G42.18 ns repair
 int LCWPipe::Dtor(void *a1)
 {
-
-
+  
+  
   void *v2; // eax
   v2 = (void *)this->u32_14; /*0x552063*/
   /* X11: vtable install elided (implicit via LCWPipe virtuals 0x552066) */
@@ -24,6 +24,6 @@ int LCWPipe::Dtor(void *a1)
   __3_YAXPAX_Z(v3); /*0x55207d*/
   this->u32_18 = 0; /*0x552087*/
   return ((Pipe *)this)->Dtor(); /*0x552093*/
-
+  
 }
 } // namespace gamemd

@@ -110,7 +110,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   v5 = 0; /*0x5fe37f*/
   if ( v3 <= 0 ) /*0x5fe383*/
   {
-LABEL_11:
+    LABEL_11:
     this->LandType[0] = -1; /*0x5fe397*/
     return &this->ObjectTypeClass; /*0x5fe3a0*/
   }
@@ -210,7 +210,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                        aP1->Strength_2);
   if ( aP1->IsVeinholeMonster ) /*0x5fe8c9*/
   {
-  AnimTypeClass *CellAnim; // eax
+    AnimTypeClass *CellAnim; // eax
     CellAnim = aP1->CellAnim; /*0x5fe8d3*/
     aP1->Armor[0] = 6; /*0x5fe8d9*/
     if ( !CellAnim ) /*0x5fe8e5*/
@@ -218,7 +218,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   if ( !aP1->Theater && !aP1->DrawFlat ) /*0x5fe8fb*/
   {
-  char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
+    char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
     _makepath(Buffer, 0, 0, aP1->ImageFile, Ext); /*0x5fe917*/
     aP1->Image = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x5fe92d*/
   }
@@ -314,8 +314,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   CCFileClass v4; // [esp+4h] [ebp-26Ch] BYREF
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
-  void *result; // eax
-  result = this->Image; /*0x5fede9*/
+  void *result = this->Image; // eax /*0x5fede9*/
   if ( !result && this->DrawFlat ) /*0x5fedf7*/
   {
     Debug::Log(); /*0x5fee0e*/
@@ -329,15 +328,15 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
     CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
-  SHPStruct *v3; // edi
+    SHPStruct *v3; // edi
     v3 = (SHPStruct *)(&v4)->ReadEntireFile(); /*0x5feead*/
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
     *(unsigned int *)v4.CDFileClass = &vt_CCFileClass; /*0x5feec4*/
-  int v6; // [esp+68h] [ebp-208h]
+    int v6; // [esp+68h] [ebp-208h]
     v6 = 0; /*0x5feecc*/
-  int v5[3]; // [esp+5Ch] [ebp-214h] BYREF
+    int v5[3]; // [esp+5Ch] [ebp-214h] BYREF
     Vector::Clear((int)v5); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
     ((BufferIOFileClass *)&v4)->Dtor(); /*0x5feee5*/
@@ -401,7 +400,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
          (char *)DataGlobal_A83D7C + *(unsigned int *)&DataGlobal_A83D70,
          0) )
   {
-  void *v3; // eax
+    void *v3; // eax
     v3 = (void *)(g_InfantryTypeInitState++); /*0x6441fc*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * (unsigned int)v3) = (unsigned int)(this); /*0x64420b*/
   }
@@ -431,8 +430,7 @@ int OverlayTypeClass::LookupByName(void *a1)
 
   if ( !_strcmpi(g_Str__none_, (char *)this) || !this ) /*0x48df99*/
     return -1; /*0x48dfbe*/
-  int v2; // edi
-  v2 = 0; /*0x48df9b*/
+  int v2 = 0; // edi /*0x48df9b*/
   char **v3; // esi
   v3 = (char **)(off_81DA28); /*0x48df9d*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x48dfb0*/
@@ -594,11 +592,11 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
     || (DamageLevels = this->DamageLevels) != 0
     && (v4 = (MixFileClass *)(*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
   {
-  int v6; // esi
+    int v6; // esi
     v6 = this->LandType[0]; /*0x5fed2e*/
     if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) ) /*0x5fed4f*/
     {
-  int PixelData; // ecx
+      int PixelData; // ecx
       PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/
       *(unsigned short *)a2 = *(unsigned short *)PixelData; /*0x5fedad*/
       a2->UINameLabel[0x20] = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
@@ -606,11 +604,11 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
     }
     else
     {
-  int v7; // eax
+      int v7; // eax
       v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
-  __int16 v11; // [esp+4h] [ebp-4h]
+      __int16 v11; // [esp+4h] [ebp-4h]
       v11 = *(unsigned short *)v7; /*0x5fed67*/
-  char v8; // cl
+      char v8; // cl
       v8 = HIBYTE(*(unsigned short *)v7); /*0x5fed6f*/
       BYTE1(a3) = v7->u32_2; /*0x5fed73*/
       LOBYTE(a3) = v11; /*0x5fed7b*/
@@ -652,31 +650,31 @@ int OverlayTypeClass::GetAuxField()
 // 0x5FEF30
 namespace gamemd {  
 // G57w10-S ns repair (G42.18c 先例)
-  int v3; // eax
-  OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
+int v3; // eax
+OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-    this->ObjectTypeClass = &vt_OverlayTypeClass;
-    /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
-    /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
-    /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
-  AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5fef51*/
-  v5 = this; /*0x5fef66*/
-  v3 = (*((int (**)(void **, OverlayTypeClass **))DataGlobal_A83D80 + 4))( /*0x5fef6a*/
+this->ObjectTypeClass = &vt_OverlayTypeClass;
+/* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
+/* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
+/* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
+AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5fef51*/
+v5 = this; /*0x5fef66*/
+v3 = (*((int (**)(void **, OverlayTypeClass **))DataGlobal_A83D80 + 4))( /*0x5fef6a*/
          &DataGlobal_A83D80,
          &v5);
-  if ( v3 != -1 && v3 < *(int *)&g_ObjectTypeConfig ) /*0x5fef7a*/
+if ( v3 != -1 && v3 < *(int *)&g_ObjectTypeConfig ) /*0x5fef7a*/
+{
+  --*(unsigned int *)&g_ObjectTypeConfig; /*0x5fef7f*/
+  for ( ; /*0x5fef85*/
+    v3 < *(int *)&g_ObjectTypeConfig;
+    *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array
+    + 4 * v3) )
   {
-    --*(unsigned int *)&g_ObjectTypeConfig; /*0x5fef7f*/
-    for ( ; /*0x5fef85*/
-          v3 < *(int *)&g_ObjectTypeConfig;
-          *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array
-                                                                                + 4 * v3) )
-    {
-      ++v3; /*0x5fef8d*/
-    }
+    ++v3; /*0x5fef8d*/
   }
-  ObjectTypeClass::Destruct(); /*0x5fefa1*/
-  if ( (a2 & 1) != 0 ) /*0x5fefab*/
-    operator delete((void *)(this)); /*0x5fefae*/
-    return &this->ObjectTypeClass;
+}
+ObjectTypeClass::Destruct(); /*0x5fefa1*/
+if ( (a2 & 1) != 0 ) /*0x5fefab*/
+  operator delete((void *)(this)); /*0x5fefae*/
+return &this->ObjectTypeClass;
 }

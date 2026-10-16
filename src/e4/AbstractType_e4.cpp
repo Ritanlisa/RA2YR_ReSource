@@ -15,8 +15,7 @@ char * AbstractType_e4::FindName()
 {
 
 
-  int v1; // edx
-  v1 = 0; /*0x40dcb0*/
+  int v1 = 0; // edx /*0x40dcb0*/
   AbstractType **v2; // eax
   v2 = (AbstractType **)dword_816EE4; /*0x40dcb2*/
   while ( *v2 != this ) /*0x40dcb9*/

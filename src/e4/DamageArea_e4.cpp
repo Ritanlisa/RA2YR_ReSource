@@ -209,7 +209,7 @@ int DamageArea::CheckOccupancyEligibility()
     }
     if ( !*(unsigned int *)(this->u32_C + 764) ) /*0x4d0281*/
     {
-  LABEL_24:
+      LABEL_24:
       if ( v4 ) /*0x4d028d*/
         (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4d0292*/
       return 1; /*0x4d029c*/
@@ -226,18 +226,13 @@ unsigned int * DamageArea::CalcScatterOffset(unsigned int * v11, int16_t * a3)
 {
 
 
-  int v3; // ebx
-  v3 = this->u32_F4; /*0x565668*/
-  int v4; // ebp
-  v4 = this->u32_FC; /*0x56566f*/
+  int v3 = this->u32_F4; // ebx /*0x565668*/
+  int v4 = this->u32_FC; // ebp /*0x56566f*/
   int v5; // esi
   v5 = a3[1]; /*0x565676*/
-  __int16 v6; // di
-  v6 = *a3; /*0x56567b*/
-  int v7; // eax
-  v7 = this->u32_100; /*0x56567e*/
-  int v8; // ecx
-  v8 = *a3; /*0x565684*/
+  __int16 v6 = *a3; // di /*0x56567b*/
+  int v7 = this->u32_100; // eax /*0x56567e*/
+  int v8 = *a3; // ecx /*0x565684*/
   int v9; // ecx
   if ( (v3 & 1) != 0 ) /*0x56568d*/
     v9 = v8 - v5 + 1; /*0x565691*/

@@ -31,14 +31,12 @@ char E4Recv_74F6F0::DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1)
 {
 
 
-  int uniqueId; // edx
-  uniqueId = this->M16; /*0x74f6f0*/
+  int uniqueId = this->M16; // edx /*0x74f6f0*/
   int v3; // eax
   v3 = (int)(aP1); /*0x74f6f3*/
   if ( aP1 >= uniqueId ) /*0x74f6f9*/
     return 0; /*0x74f71c*/
-  int v4; // edx
-  v4 = uniqueId - 1; /*0x74f6fb*/
+  int v4 = uniqueId - 1; // edx /*0x74f6fb*/
   this->M16 = v4; /*0x74f6fe*/
   if ( aP1 < v4 ) /*0x74f701*/
   {

@@ -113,7 +113,7 @@ int FileSystem::ProcessNextFileExtension()
       v10 = i + *v8; /*0x626e6e*/
       if ( *(int *)(v10 + 16) > 0 ) /*0x626e73*/
         break; /*0x626e73*/
-LABEL_19:
+      LABEL_19:
       v9 = 0; /*0x626e95*/
       if ( ++v32 >= v8[2] ) /*0x626ea6*/
         return 0; /*0x626ebd*/
@@ -162,7 +162,7 @@ LABEL_19:
               v23 = *v21 + k; /*0x626f7e*/
               if ( v9 < *(unsigned int *)(v23 + 16) ) /*0x626f83*/
                 break; /*0x626f83*/
-LABEL_36:
+              LABEL_36:
               v9 = 0; /*0x626fb2*/
               if ( ++v32 >= v21[2] ) /*0x626fba*/
                 return v29; /*0x626fba*/
@@ -248,7 +248,7 @@ void FileSystem::CleanupTrees()
     DataGlobal_B0FBAC = 0; /*0x72d368*/
     if ( DataGlobal_B0FC70 ) /*0x72d36e*/
     {
-  void *v1; // esi
+      void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FB34; /*0x72d370*/
       if ( *(unsigned int *)&DataGlobal_B0FB34 ) /*0x72d378*/
       {
@@ -260,7 +260,7 @@ void FileSystem::CleanupTrees()
     *(unsigned int *)&DataGlobal_B0FB34 = 0; /*0x72d395*/
     if ( DataGlobal_B0FC71 ) /*0x72d39d*/
     {
-  void *v2; // esi
+      void *v2; // esi
       v2 = *(void **)&DataGlobal_B0FB00; /*0x72d39f*/
       if ( *(unsigned int *)&DataGlobal_B0FB00 ) /*0x72d3a7*/
       {
@@ -272,7 +272,7 @@ void FileSystem::CleanupTrees()
     *(unsigned int *)&DataGlobal_B0FB00 = 0; /*0x72d3c4*/
     if ( DataGlobal_B0FC72 ) /*0x72d3cc*/
     {
-  void *v3; // esi
+      void *v3; // esi
       v3 = *(void **)&DataGlobal_B0FB30; /*0x72d3ce*/
       if ( *(unsigned int *)&DataGlobal_B0FB30 ) /*0x72d3d6*/
       {

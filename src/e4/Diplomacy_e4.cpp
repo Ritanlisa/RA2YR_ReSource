@@ -56,7 +56,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   int v32; // [esp+18h] [ebp-Ch]
   int v33; // [esp+1Ch] [ebp-8h]
   unsigned __int8 IsAlliedWith; // [esp+20h] [ebp-4h]
-  #375 *hDlga; // [esp+28h] [ebp+4h]
+#375 *hDlga; // [esp+28h] [ebp+4h]
   HWND hDlgb; // [esp+28h] [ebp+4h]
   HWND hDlgc; // [esp+28h] [ebp+4h]
   int v38; // [esp+2Ch] [ebp+8h]
@@ -275,7 +275,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
     }
   }
   v26 = v24; /*0x65824e*/
-LABEL_60:
+  LABEL_60:
   if ( v26 == dword_A83D4C->relatedTagsCount ) /*0x658241*/
     v26 = 0; /*0x658243*/
   if ( HIWORD(a3) ) /*0x65820e*/

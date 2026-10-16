@@ -49,7 +49,7 @@ int BombClass::AbstractClass()
          dword_89C670 + dword_89C67C,
          0) )
   {
-  int v2; // eax
+    int v2; // eax
     v2 = dword_89C678++; /*0x438657*/
     *((unsigned int *)dword_89C66C + v2) = (unsigned int)(this); /*0x438666*/
   }
@@ -67,9 +67,9 @@ void * BombClass::GetCurrentFrame()
     return (Iostream_init *)12; /*0x438a06*/
   int v2; // ecx
   v2 = 2 /*0x438a4c*/
-     * ((*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - this->audioController[1])
-      / (*(unsigned int *)(*(unsigned int *)&(&DSurface_ViewBounds.__pad_FC)[324] + 4048)
-       / 6));
+  * ((*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - this->audioController[1])
+  / (*(unsigned int *)(*(unsigned int *)&(&DSurface_ViewBounds.__pad_FC)[324] + 4048)
+  / 6));
   if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % (2 * *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4056)) >= *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4056) ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
@@ -84,8 +84,8 @@ namespace gamemd {
 int BombClass::TimeToExplode()
 {
   return !this-((unsigned int *)(>audioController))[0] /*0x438a8c*/
-      && *(int *)&((unsigned int *)&stru_A8EB00)[416] > this-((unsigned int *)(>audioController))[2]
-      && !this->BombClass_field_58;
+  && *(int *)&((unsigned int *)&stru_A8EB00)[416] > this-((unsigned int *)(>audioController))[2]
+  && !this->BombClass_field_58;
 }
 } // namespace ra2
 
@@ -100,7 +100,7 @@ int BombClass::Stat(int * a2)
   BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
-  int v5; // eax
+    int v5; // eax
     v5 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_28 + 4) + 16))(BombClass_field_28 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
@@ -108,7 +108,7 @@ int BombClass::Stat(int * a2)
   v6 = *(unsigned int *)this->__pad_024; /*0x438ab7*/
   if ( v6 ) /*0x438abc*/
   {
-  int v7; // eax
+    int v7; // eax
     v7 = (*(int (**)(int))(*(unsigned int *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
     Power::TimerProcess(v7); /*0x438acb*/
   }
@@ -116,7 +116,7 @@ int BombClass::Stat(int * a2)
   BombClass_field_2C = (int)(this->BombClass_field_2C); /*0x438ad0*/
   if ( BombClass_field_2C ) /*0x438ad5*/
   {
-  int v9; // eax
+    int v9; // eax
     v9 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_2C + 4) + 16))(BombClass_field_2C + 4); /*0x438ade*/
     Power::TimerProcess(v9); /*0x438ae4*/
   }

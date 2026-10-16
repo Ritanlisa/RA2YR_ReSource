@@ -47,17 +47,14 @@ void ThemeManager::Cleanup(void *a1, void *a2)
   while ( this->q024 > 0 ) /*0x720778*/
   {
     operator delete((void *)(**&this->u32_18)); /*0x720780*/
-  int v2; // eax
-    v2 = this->q024; /*0x720785*/
+    int v2 = this->q024; // eax /*0x720785*/
     if ( v2 > 0 ) /*0x72078d*/
     {
-  int v3; // ecx
-      v3 = v2 - 1; /*0x72078f*/
-  int v4; // eax
-      v4 = 0; /*0x720792*/
+      int v3 = v2 - 1; // ecx /*0x72078f*/
+      int v4 = 0; // eax /*0x720792*/
       for ( this->q024 = v3; /*0x720799*/
-            v4 < this->q024;
-            *(unsigned int *)(this->u32_18 + 4 * v4 - 4) = *(unsigned int *)(this->u32_18 + 4 * v4) )
+  v4 < this->q024;
+  *(unsigned int *)(this->u32_18 + 4 * v4 - 4) = *(unsigned int *)(this->u32_18 + 4 * v4) )
       {
         ++v4; /*0x72079e*/
       }

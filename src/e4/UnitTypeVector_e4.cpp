@@ -11,7 +11,7 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
 {
-
+  
   this->ptr_4 = 0; /*0x51394b*/
   this->__pad_008 = a2; /*0x51394e*/
   LOBYTE(this->q00C) = 1; /*0x513951*/
@@ -28,7 +28,7 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
     BYTE1(this->UnitTypeVector_field_0x0C) = 1; /*0x513980*/
   }
   return this->__pad_0; /*0x51396d*/
-
+  
 }
 } // namespace gamemd
 // 0x5D8950

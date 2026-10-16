@@ -69,7 +69,7 @@ double CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void 
     {
       v9 = _fload_withFB(0, &this); /*0x7c90aa*/
     }
-  LABEL_21:
+    LABEL_21:
     if ( ((unsigned int)(a2)& 0x7FF00000) != 0x7FF00000 || !((unsigned int)this | a2 & 0xFFFFF) ) /*0x7c90c7*/
     {
       if ( !v14 ) /*0x7c90cf*/
@@ -88,11 +88,11 @@ double CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void 
     }
     if ( ((unsigned int)(a2)& 0x80000) == 0 ) /*0x7c908a*/
     {
-  LABEL_17:
+      LABEL_17:
       result = v9 + v5; /*0x7c908c*/
       goto LABEL_11; /*0x7c9093*/
     }
-  LABEL_15:
+    LABEL_15:
     result = v9 + v5; /*0x7c907c*/
     goto LABEL_11; /*0x7c9083*/
   }
@@ -114,7 +114,7 @@ double CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void 
       return result; /*0x7c9045*/
     }
     result = *(double *)&tbyte_87C550; /*0x7c9195*/
-  LABEL_11:
+    LABEL_11:
     if ( !dword_B7819C ) /*0x7c9051*/
       _startTwoArgErrorHandling(); /*0x7c9062*/
     return result; /*0x7c9068*/

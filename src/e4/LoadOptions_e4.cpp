@@ -87,7 +87,7 @@ char LoadOptions_Load(LPCCH lpMultiByteStr, int a2)
   if ( StgOpenStorage(WideCharStr, 0, 0x12u, 0, 0, &ppstgOpen) < 0 ) /*0x67fd75*/
   {
     v3 = ppstgOpen; /*0x67fd77*/
-  LABEL_4:
+    LABEL_4:
     if ( v3 ) /*0x67fd93*/
       v3->lpVtbl->Release(v3); /*0x67fd98*/
     return 0; /*0x67fda4*/
@@ -130,14 +130,14 @@ char LoadOptions::Read(wchar_t * Destination, int a2, void *a3)
     return 0; /*0x55a03f*/
   if ( ReadPointerFromECX3((int)(&v8)) == dword_83D560 ) /*0x559f46*/
   {
-  const wchar_t *v5; // eax
+    const wchar_t *v5; // eax
     v5 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)&v8); /*0x559f60*/
     wcscpy((wchar_t *)a2, v5); /*0x559f67*/
     *(unsigned char *)(a2 + 437) = 0; /*0x559f6f*/
   }
   else
   {
-  const wchar_t *v4; // eax
+    const wchar_t *v4; // eax
     v4 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)&v8); /*0x559f48*/
     wcscpy((wchar_t *)a2, v4); /*0x559f4f*/
     *(unsigned char *)(a2 + 437) = 1; /*0x559f57*/
@@ -196,8 +196,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
 {
 
 
-  int v3; // esi
-  v3 = 0; /*0x55a0d4*/
+  int v3 = 0; // esi /*0x55a0d4*/
   for ( a3->m_0 = (int)&vt_LoadOptionsClass; v3 < *((unsigned int *)a3 + 12); ++v3 ) /*0x55a0e1*/
     __3_YAXPAX_Z(*(void **)(*((unsigned int *)a3 + 9) + 4 * v3)); /*0x55a0ea*/
   (*(void (**)(LoadOptionsClass *))(*((unsigned int *)a3 + 8) + 12))(a3 + 2); /*0x55a102*/
@@ -246,13 +245,12 @@ char LoadOptions::vt01(int a2)
   m_8 = (int)(*&this->Capacity); /*0x55a1b2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x55a1bd*/
   {
-  int v3; // edx
-    v3 = 0; /*0x55a1bf*/
+    int v3 = 0; // edx /*0x55a1bf*/
     if ( m_8 <= 0 ) /*0x55a1c3*/
       return 1; /*0x55a1e3*/
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->max_entries); /*0x55a1c5*/
-  int v5; // ecx
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x55a1cb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x55a1d4*/
     {
@@ -275,7 +273,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
   if ( a2 ) /*0x55a33c*/
   {
     LOBYTE(this->__pad_00C) = 0; /*0x55a342*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x55a348*/
       v4 = a3; /*0x55a35e*/
     else
@@ -285,11 +283,11 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
       return 0; /*0x55a3da*/
     if ( *&this->mode ) /*0x55a368*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = (int)(this->Capacity); /*0x55a36f*/
       if ( a2 < m_8 ) /*0x55a374*/
         m_8 = a2; /*0x55a376*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->mode + 4 * i - 4) ) /*0x55a37c*/
         ++i; /*0x55a381*/
       if ( BYTE1(this->__pad_00C) ) /*0x55a38e*/
@@ -320,10 +318,8 @@ namespace gamemd {
 int LoadOptions::vt04(unsigned int * a2)
 {
 
-  int m_10; // edx
-  m_10 = this->max_entries; /*0x55a3e0*/
-  int result; // eax
-  result = 0; /*0x55a3e3*/
+  int m_10 = this->max_entries; // edx /*0x55a3e0*/
+  int result = 0; // eax /*0x55a3e3*/
   if ( m_10 <= 0 ) /*0x55a3e8*/
     return -1; /*0x55a3ff*/
   unsigned int *i; // ecx

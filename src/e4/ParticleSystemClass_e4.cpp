@@ -72,8 +72,7 @@ namespace gamemd {
 void ParticleSystemClass::GetClassIdentifier()
 {
 
-  void *v2; // eax
-  v2 = *&this->vtable2; /*0x4e8476*/
+  void *v2 = *&this->vtable2; // eax /*0x4e8476*/
   *&this->uniqueId = 0; /*0x4e8479*/
   if ( v2 && (this->IsAllocated) ) /*0x4e8480*/
   {
@@ -109,8 +108,7 @@ namespace gamemd {
 void ParticleSystemClass::initParticleArray()
 {
 
-  void *v2; // eax
-  v2 = *&this->vtable2; /*0x4e8786*/
+  void *v2 = *&this->vtable2; // eax /*0x4e8786*/
   *&this->uniqueId = 0; /*0x4e8789*/
   if ( v2 && (this->IsAllocated) ) /*0x4e8790*/
   {
@@ -127,8 +125,7 @@ namespace gamemd {
 void ParticleSystemClass_32::Destroy(void *a1)
 {
 
-  void *v2; // eax
-  v2 = *&this->q004; /*0x4e87e6*/
+  void *v2 = *&this->q004; // eax /*0x4e87e6*/
   this->m_10 = 0; /*0x4e87e9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4e87f0*/
   {
@@ -197,7 +194,7 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
   if ( a2 ) /*0x4e95ec*/
   {
     LOBYTE(this->m_C) = 0; /*0x4e95f2*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4e95f8*/
       v4 = a3; /*0x4e960e*/
     else
@@ -207,11 +204,11 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x4e968a*/
     if ( *&this->q004 ) /*0x4e9618*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = this->m_8; /*0x4e961f*/
       if ( a2 < m_8 ) /*0x4e9624*/
         m_8 = a2; /*0x4e9626*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4e962c*/
         ++i; /*0x4e9631*/
       if ( BYTE1(this->m_C) ) /*0x4e963e*/
@@ -228,8 +225,7 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVBuildingClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4e966e*/
   }
-  int v7; // eax
-  v7 = this->m_8; /*0x4e9671*/
+  int v7 = this->m_8; // eax /*0x4e9671*/
   if ( v7 < this->m_10 ) /*0x4e9679*/
     this->m_10 = v7; /*0x4e967b*/
   return 1; /*0x4e967e*/
@@ -244,8 +240,7 @@ int ParticleSystemClass_32::FindItem(unsigned int * a2)
 
   int m_10; // edx
   m_10 = this->m_10; /*0x4e9690*/
-  int result; // eax
-  result = 0; /*0x4e9693*/
+  int result = 0; // eax /*0x4e9693*/
   if ( m_10 <= 0 ) /*0x4e9698*/
     return -1; /*0x4e96af*/
   unsigned int *i; // ecx
@@ -266,13 +261,12 @@ char ParticleSystemClass_16::AddRef(int a2)
   m_8 = this->m_8; /*0x4eb262*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4eb26d*/
   {
-  int v3; // edx
-    v3 = 0; /*0x4eb26f*/
+    int v3 = 0; // edx /*0x4eb26f*/
     if ( m_8 <= 0 ) /*0x4eb273*/
       return 1; /*0x4eb293*/
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x4eb275*/
-  int v5; // ecx
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4eb27b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4eb284*/
     {
@@ -295,7 +289,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x4eb2ac*/
   {
     LOBYTE(this->m_C) = 0; /*0x4eb2b6*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4eb2bc*/
       v4 = a3; /*0x4eb2d2*/
     else
@@ -305,11 +299,11 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x4eb2e5*/
       {
-  int m_8; // ecx
+        int m_8; // ecx
         m_8 = this->m_8; /*0x4eb2ec*/
         if ( a2 < m_8 ) /*0x4eb2f1*/
           m_8 = a2; /*0x4eb2f3*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb2f9*/
           ++i; /*0x4eb2fe*/
         if ( BYTE1(this->m_C) ) /*0x4eb30b*/
@@ -360,8 +354,7 @@ int ParticleSystemClass_16::Init(unsigned int * a2, void *a2_2, void *a3_1, void
     return 0; /*0x4eb388*/
   int m_8; // edx
   m_8 = this->m_8; /*0x4eb38e*/
-  int result; // eax
-  result = 0; /*0x4eb391*/
+  int result = 0; // eax /*0x4eb391*/
   if ( m_8 <= 0 ) /*0x4eb395*/
     return -1; /*0x4eb3ac*/
   unsigned int *i; // ecx
@@ -394,13 +387,12 @@ char ParticleSystemClass_32::AddRef(int a2)
   m_8 = this->m_8; /*0x4eb4c2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4eb4cd*/
   {
-  int v3; // edx
-    v3 = 0; /*0x4eb4cf*/
+    int v3 = 0; // edx /*0x4eb4cf*/
     if ( m_8 <= 0 ) /*0x4eb4d3*/
       return 1; /*0x4eb4f3*/
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x4eb4d5*/
-  int v5; // ecx
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4eb4db*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4eb4e4*/
     {
@@ -423,7 +415,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x4eb50c*/
   {
     LOBYTE(this->m_C) = 0; /*0x4eb516*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4eb51c*/
       v4 = a3; /*0x4eb532*/
     else
@@ -433,11 +425,11 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x4eb545*/
       {
-  int m_8; // ecx
+        int m_8; // ecx
         m_8 = this->m_8; /*0x4eb54c*/
         if ( a2 < m_8 ) /*0x4eb551*/
           m_8 = a2; /*0x4eb553*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb559*/
           ++i; /*0x4eb55e*/
         if ( BYTE1(this->m_C) ) /*0x4eb56b*/
@@ -488,8 +480,7 @@ int ParticleSystemClass_32::Init(unsigned int * a2, void *a2_2, void *a3_1, void
     return 0; /*0x4eb5e8*/
   int m_8; // edx
   m_8 = this->m_8; /*0x4eb5ee*/
-  int result; // eax
-  result = 0; /*0x4eb5f1*/
+  int result = 0; // eax /*0x4eb5f1*/
   if ( m_8 <= 0 ) /*0x4eb5f5*/
     return -1; /*0x4eb60c*/
   unsigned int *i; // ecx
@@ -522,7 +513,7 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
   if ( a2 ) /*0x4eb64c*/
   {
     LOBYTE(this->m_C) = 0; /*0x4eb652*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4eb658*/
       v4 = a3; /*0x4eb66e*/
     else
@@ -532,11 +523,11 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
       return 0; /*0x4eb6ea*/
     if ( *&this->q004 ) /*0x4eb678*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = this->m_8; /*0x4eb67f*/
       if ( a2 < m_8 ) /*0x4eb684*/
         m_8 = a2; /*0x4eb686*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb68c*/
         ++i; /*0x4eb691*/
       if ( BYTE1(this->m_C) ) /*0x4eb69e*/
@@ -553,8 +544,7 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVTerrainClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4eb6ce*/
   }
-  int v7; // eax
-  v7 = this->m_8; /*0x4eb6d1*/
+  int v7 = this->m_8; // eax /*0x4eb6d1*/
   if ( v7 < this->m_10 ) /*0x4eb6d9*/
     this->m_10 = v7; /*0x4eb6db*/
   return 1; /*0x4eb6de*/
@@ -569,8 +559,7 @@ int ParticleSystemClass_32::FindParticle2(unsigned int * a2)
 
   int m_10; // edx
   m_10 = this->m_10; /*0x4eb6f0*/
-  int result; // eax
-  result = 0; /*0x4eb6f3*/
+  int result = 0; // eax /*0x4eb6f3*/
   if ( m_10 <= 0 ) /*0x4eb6f8*/
     return -1; /*0x4eb70f*/
   unsigned int *i; // ecx
@@ -591,7 +580,7 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
   if ( a2 ) /*0x4eb8ac*/
   {
     LOBYTE(this->__pad_00C) = 0; /*0x4eb8b2*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4eb8b8*/
       v4 = a3; /*0x4eb8ce*/
     else
@@ -601,11 +590,10 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
       return 0; /*0x4eb94a*/
     if ( *&this->q004 ) /*0x4eb8d8*/
     {
-  int m_8; // ecx
-      m_8 = this->Capacity; /*0x4eb8df*/
+      int m_8 = this->Capacity; // ecx /*0x4eb8df*/
       if ( a2 < m_8 ) /*0x4eb8e4*/
         m_8 = a2; /*0x4eb8e6*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb8ec*/
         ++i; /*0x4eb8f1*/
       if ( BYTE1(this->__pad_00C) ) /*0x4eb8fe*/
@@ -622,8 +610,7 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVAircraftClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4eb92e*/
   }
-  int v7; // eax
-  v7 = this->Capacity; /*0x4eb931*/
+  int v7 = this->Capacity; // eax /*0x4eb931*/
   if ( v7 < this->q010 ) /*0x4eb939*/
     this->q010 = v7; /*0x4eb93b*/
   return 1; /*0x4eb93e*/
@@ -637,10 +624,8 @@ int ParticleSystemClass_32_::FindElementByValue(unsigned int * a2)
 {
 
 
-  int m_10; // edx
-  m_10 = this->q010; /*0x4eb950*/
-  int result; // eax
-  result = 0; /*0x4eb953*/
+  int m_10 = this->q010; // edx /*0x4eb950*/
+  int result = 0; // eax /*0x4eb953*/
   if ( m_10 <= 0 ) /*0x4eb958*/
     return -1; /*0x4eb96f*/
   unsigned int *i; // ecx
@@ -659,8 +644,7 @@ namespace gamemd {
 DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x4ef5d3*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4ef5d3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ef5d6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ef5e0*/
   {
@@ -680,8 +664,7 @@ namespace gamemd {
 VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x4efd53*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4efd53*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efd56*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4efd60*/
   {
@@ -701,8 +684,7 @@ namespace gamemd {
 VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x4efdf3*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4efdf3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efdf6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efe00*/
   {
@@ -722,8 +704,7 @@ namespace gamemd {
 DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x4efe43*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4efe43*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efe46*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efe50*/
   {
@@ -743,8 +724,7 @@ namespace gamemd {
 DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x4efee3*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4efee3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efee6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4efef0*/
   {

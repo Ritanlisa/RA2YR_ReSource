@@ -65,12 +65,12 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
           v7 = (unsigned int *)*((unsigned int *)dword_A8B204 + v8); /*0x41f431*/
           goto LABEL_11; /*0x41f434*/
         }
-LABEL_9:
+        LABEL_9:
         v9 = (unsigned int *)__2_YAPAXI_Z(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
           v7 = AnimTypeClass::Construct2(v9, StringByIndex); /*0x41f391*/
-LABEL_11:
+          LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
             v7->LoadFromINI_18(a1); /*0x41f39c*/
@@ -85,7 +85,7 @@ LABEL_11:
     {
       v7 = 0; /*0x41f32b*/
     }
-LABEL_13:
+    LABEL_13:
     v2 = (int)(a2); /*0x41f3a9*/
     if ( a2 == 1 ) /*0x41f3b0*/
       v7->q0A4 = 1; /*0x41f3b2*/
@@ -114,9 +114,9 @@ LABEL_13:
                                                      (unsigned __int8 *)aAitriggertypes_0,
                                                      (unsigned __int8 *)v11,
                                                      0)
-                               || dword_A8B238[0];
+        || dword_A8B238[0];
       }
-LABEL_28:
+      LABEL_28:
       result = i; /*0x41f473*/
     }
   }
@@ -186,9 +186,9 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_1)
   v8 = memcmp(v20, this->__pad_041, 0x14u) == 0; /*0x4742fa*/
   v7 = 2; /*0x4742fd*/
   if ( v8 ) /*0x474302*/
-LABEL_7:
-    v7 = File; /*0x474304*/
-LABEL_8:
+    LABEL_7:
+  v7 = File; /*0x474304*/
+  LABEL_8:
   FileStraw::Destructor((int)v10); /*0x474306*/
   return (gamemd::MultiplayerGameMode **)(v7); /*0x474311*/
 
@@ -200,12 +200,10 @@ CCINIClass::CCINIClass()
 {
 
 
-  unsigned int *result; // eax
-  result = this->INIClass; /*0x535b30*/
+  unsigned int *result = this->INIClass; // eax /*0x535b30*/
   int *sectionHead; // esi
   sectionHead = this->sectionHead; /*0x535b36*/
-  int *p_sectionCount; // ecx
-  p_sectionCount = &this->sectionCount; /*0x535b39*/
+  int *p_sectionCount = &this->sectionCount; // ecx /*0x535b39*/
   result->headNode = 0; /*0x535b3c*/
   result->__pad_008 = 0; /*0x535b3f*/
   sectionHead->Prev = 0; /*0x535b42*/
@@ -217,11 +215,11 @@ CCINIClass::CCINIClass()
   result->u32_C = &vt_GenericList; /*0x535b5d*/
   if ( p_sectionCount ) /*0x535b64*/
   {
-  int v4; // ebx
+    int v4; // ebx
     v4 = p_sectionCount[1]; /*0x535b66*/
     if ( v4 ) /*0x535b6b*/
     {
-  int v5; // edi
+      int v5; // edi
       v5 = p_sectionCount[2]; /*0x535b6d*/
       if ( v5 ) /*0x535b72*/
       {
@@ -232,12 +230,10 @@ CCINIClass::CCINIClass()
       }
     }
   }
-  int v6; // edi
-  v6 = sectionHead->Prev; /*0x535b86*/
+  int v6 = sectionHead->Prev; // edi /*0x535b86*/
   p_sectionCount[2] = (int)sectionHead; /*0x535b89*/
   p_sectionCount[1] = v6; /*0x535b8c*/
-  int v7; // edi
-  v7 = sectionHead->Prev; /*0x535b8f*/
+  int v7 = sectionHead->Prev; // edi /*0x535b8f*/
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = (unsigned int)(p_sectionCount); /*0x535b96*/
   sectionHead->Prev = (int)p_sectionCount; /*0x535b99*/
@@ -265,19 +261,18 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   int i; // edi
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
-  unsigned __int8 *StringByIndex; // eax
+    unsigned __int8 *StringByIndex; // eax
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, (unsigned __int8 *)aAitriggertypes, i); /*0x41f4b8*/
-  char Destination[32]; // [esp+10h] [ebp-20h] BYREF
+    char Destination[32]; // [esp+10h] [ebp-20h] BYREF
     (a1)->GetString((unsigned __int8 *)aAitriggertypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32); /*0x41f4d2*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Destination, 0); /*0x41f4e0*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes, 0); /*0x41f4f5*/
-  int result; // eax
-  result = dword_A8B210; /*0x41f4fa*/
+  int result = dword_A8B210; // eax /*0x41f4fa*/
   int j; // edi
   for ( j = 0; j < dword_A8B210; ++j ) /*0x41f503*/
   {
-  unsigned int *v9; // ecx
+    unsigned int *v9; // ecx
     v9 = (unsigned int *)*((unsigned int *)dword_A8B204 + j); /*0x41f50a*/
     if ( v9[39] == a2 ) /*0x41f513*/
       (*(void (**)(unsigned int *, INIClass *))(*v9 + 104))(v9, a1); /*0x41f518*/
@@ -287,7 +282,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   {
     INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes_0, 0); /*0x41f532*/
     result = dword_A8B210; /*0x41f537*/
-  int k; // edi
+    int k; // edi
     for ( k = 0; k < dword_A8B210; ++k ) /*0x41f540*/
     {
       INIClass::SetBool( /*0x41f55e*/
@@ -310,20 +305,18 @@ IUnknown * CCINIClass::WriteHouses()
 
 
   INIClass::ClearSection((int)this, (int)g_INI_Key_Houses, 0); /*0x50116f*/
-  int result; // eax
-  result = dword_A80238; /*0x501174*/
+  int result = dword_A80238; // eax /*0x501174*/
   int i; // ebx
   for ( i = 0; i < dword_A80238; ++i ) /*0x50117d*/
   {
-  char Source[32]; // [esp+Ch] [ebp-40h] BYREF
+    char Source[32]; // [esp+Ch] [ebp-40h] BYREF
     strcpy(Source, (const char *)(*&dword_A8022C->psychicDetectionBuildings + 90100)); /*0x5011ac*/
-  char Buffer[32]; // [esp+2Ch] [ebp-20h] BYREF
+    char Buffer[32]; // [esp+2Ch] [ebp-20h] BYREF
     sprintf(Buffer, g_Str_Trace, i); /*0x5011ba*/
     INIClass::SetString(this, (unsigned __int8 *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
     result = dword_A80238; /*0x5011d8*/
   }
-  int v4; // esi
-  v4 = 0; /*0x5011e3*/
+  int v4 = 0; // esi /*0x5011e3*/
   if ( result > 0 ) /*0x5011e7*/
   {
     do /*0x501200*/

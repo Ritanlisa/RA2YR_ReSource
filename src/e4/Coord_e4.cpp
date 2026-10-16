@@ -26,8 +26,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
     v5 = (*((signed short *)(((unsigned char *)&(aP2)) + 2))); /*0x4138f8*/
   else
     v5 = 0; /*0x4138f4*/
-  int v6; // ebx
-  v6 = 19; /*0x41390d*/
+  int v6 = 19; // ebx /*0x41390d*/
   if ( v4 / (*(unsigned int *)&g_AircraftTrackerPool / 20) <= 19 ) /*0x413921*/
     v6 = v4 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413923*/
   int v7; // ecx
@@ -36,8 +35,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
   v8 = v5 / (*(unsigned int *)&g_AircraftTrackerState / 20); /*0x413941*/
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
-  int v9; // ebx
-  v9 = v6 + 20 * v8; /*0x413957*/
+  int v9 = v6 + 20 * v8; // ebx /*0x413957*/
   int v10; // eax
   if ( (aP3 & 0x8000u) == 0 ) /*0x41395a*/
     v10 = (int16_t)aP3; /*0x413960*/
@@ -50,44 +48,37 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
     v11 = 0; /*0x41396d*/
   int v12; // eax
   v12 = v10 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413975*/
-  int v13; // esi
-  v13 = 19; /*0x413977*/
+  int v13 = 19; // esi /*0x413977*/
   if ( v12 <= 19 ) /*0x41397f*/
     v13 = v12; /*0x413981*/
-  int v14; // eax
-  v14 = v11 / v7; /*0x413986*/
+  int v14 = v11 / v7; // eax /*0x413986*/
   if ( v11 / v7 > 19 ) /*0x41398b*/
     v14 = 19; /*0x41398d*/
-  int result; // eax
-  result = 5 * v14; /*0x413992*/
-  int v16; // edi
-  v16 = v13 + 4 * result; /*0x413995*/
+  int result = 5 * v14; // eax /*0x413992*/
+  int v16 = v13 + 4 * result; // edi /*0x413995*/
   if ( v9 != v16 ) /*0x41399a*/
   {
-  char *v17; // esi
-    v17 = &this->q018 * v9; /*0x4139ae*/
-  int v18; // eax
+    char *v17 = &this->q018 * v9; // esi /*0x4139ae*/
+    int v18; // eax
     v18 = (*(int (**)(char *, int *))(*(unsigned int *)v17 + 16))(v17, &aP1); /*0x4139b4*/
     if ( v18 != -1 ) /*0x4139ba*/
     {
-  int v19; // ecx
+      int v19; // ecx
       v19 = *((unsigned int *)v17 + 4); /*0x4139bc*/
       if ( v18 < v19 ) /*0x4139c1*/
       {
-  int v20; // ecx
-        v20 = v19 - 1; /*0x4139c3*/
+        int v20 = v19 - 1; // ecx /*0x4139c3*/
         for ( *((unsigned int *)v17 + 4) = v20; /*0x4139c9*/
-              v18 < *((unsigned int *)v17 + 4);
-              *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18 - 4) = *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18) )
+        v18 < *((unsigned int *)v17 + 4);
+        *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18 - 4) = *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18) )
         {
           ++v18; /*0x4139ce*/
         }
       }
     }
-  char *v21; // esi
-    v21 = &this->q018 * v16; /*0x4139e4*/
+    char *v21 = &this->q018 * v16; // esi /*0x4139e4*/
     result = *((unsigned int *)v21 + 2); /*0x4139e7*/
-  int v22; // ecx
+    int v22; // ecx
     if ( *((unsigned int *)v21 + 4) < result /*0x413a0f*/
       || (v21[13] || !result)
       && (v22 = *((unsigned int *)v21 + 5), v22 > 0)
@@ -95,7 +86,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
           (unsigned char)result) )
     {
       result = *((unsigned int *)v21 + 4); /*0x413a11*/
-  int v23; // edx
+      int v23; // edx
       v23 = *((unsigned int *)v21 + 1); /*0x413a14*/
       *((unsigned int *)v21 + 4) = result + 1; /*0x413a1a*/
       *(unsigned int *)(v23 + 4 * result) = aP1; /*0x413a21*/
@@ -198,7 +189,7 @@ void * Coord::To_Cell(unsigned int *aP1, void *a2)
   v3 = *aP1 / 256 + (v2 << 9); /*0x56575a*/
   if ( v3 >= 0 && v3 < this->u32_140 ) /*0x565764*/
   {
-  CellClass *v4; // edx
+    CellClass *v4; // edx
     v4 = (CellClass *)*((unsigned int *)this->q13C + v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
@@ -230,22 +221,19 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   v5 = (int)(aP2[1]); /*0x6557f9*/
   int v7; // eax
   LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (this->u32_1490 << 8) - v5) * this->u32_1488 * 0.00390625); /*0x655820*/
-  int v8; // ebp
-  v8 = v7; /*0x65582b*/
+  int v8 = v7; // ebp /*0x65582b*/
   int v9; // eax
   LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (this->u32_1498 << 8)) * this->u32_1488 * 0.00390625); /*0x655848*/
   if ( a4 ) /*0x655853*/
   {
     if ( v8 < 0 ) /*0x655857*/
       v8 = 0; /*0x655859*/
-  int v10; // ecx
-    v10 = this->u32_14A4; /*0x65585b*/
+    int v10 = this->u32_14A4; // ecx /*0x65585b*/
     if ( v8 >= v10 ) /*0x655863*/
       v8 = v10 - 1; /*0x655865*/
     if ( v9 < 0 ) /*0x65586a*/
       v9 = 0; /*0x65586c*/
-  int v11; // edi
-    v11 = this->u32_14A8; /*0x65586e*/
+    int v11 = this->u32_14A8; // edi /*0x65586e*/
     if ( v9 >= v11 ) /*0x655876*/
       v9 = v11 - 1; /*0x655878*/
   }
@@ -271,8 +259,7 @@ AbstractClass * * Coord::To_Screen(unsigned int *a2, int *a3)
   LOWORD(v6) = Math::RoundToInt((double)(int)a2[2] * dbl_B0CD48 + (double)(a2[2] >= 728) + 0.5); /*0x6d21f2*/
   *a3 = v4; /*0x6d21fd*/
   a3[1] = v5 - v6; /*0x6d21ff*/
-  int v7; // edi
-  v7 = *a3 - *&this->u32_B0; /*0x6d2213*/
+  int v7 = *a3 - *&this->u32_B0; // edi /*0x6d2213*/
   int v8; // esi
   v8 = a3[1] - *&this->u32_B4; /*0x6d2215*/
   *a3 = v7; /*0x6d2217*/
@@ -295,9 +282,8 @@ void * Coord::Divide(int * a2, int a3)
 
   if ( a3 ) /*0x710708*/
   {
-  int v4; // ebx
-    v4 = *&this->u32_4 / a3; /*0x71072f*/
-  int v5; // eax
+    int v4 = *&this->u32_4 / a3; // ebx /*0x71072f*/
+    int v5; // eax
     v5 = (int)this->u32_8 / a3; /*0x710735*/
     *a2 = *(unsigned int *)this->__pad_000 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/

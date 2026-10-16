@@ -145,7 +145,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
   if ( !v12 ) /*0x479452*/
   {
     g_MixFile_MAPSFirst = 0; /*0x479489*/
-LABEL_61:
+    LABEL_61:
     Debug::Log(); /*0x479664*/
     return 0; /*0x47967c*/
   }
@@ -196,7 +196,7 @@ LABEL_61:
     }
   }
   g_MixFile_THEME = 0; /*0x4795c2*/
-LABEL_58:
+  LABEL_58:
   Audio::LoadWAVFiles((Audio *)&unk_A83D10); /*0x4795c8*/
   sprintf(Source, "MOVMD%02d.MIX", aP0); /*0x4795e4*/
   v19 = CCFileClass::Construct((CCFileClass *)&v24.?, Source); /*0x4795f5*/
@@ -212,7 +212,7 @@ LABEL_58:
     v21 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47963e*/
     if ( v21 ) /*0x479648*/
       goto LABEL_60; /*0x479648*/
-LABEL_63:
+    LABEL_63:
     g_MixFile_MOVIES = 0; /*0x4796bf*/
     goto LABEL_61; /*0x4796c5*/
   }
@@ -221,7 +221,7 @@ LABEL_63:
   v21 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4796a7*/
   if ( !v21 ) /*0x4796b1*/
     goto LABEL_63; /*0x4796b1*/
-LABEL_60:
+  LABEL_60:
   g_MixFile_MOVIES = (int)(v21)->FromFile(Buffer, (int)dword_886980); /*0x47964a*/
   if ( !g_MixFile_MOVIES ) /*0x479662*/
     goto LABEL_61; /*0x479662*/
@@ -248,8 +248,7 @@ unsigned int * LinkedList_flat::FindPrev()
 
   unsigned int *result; // eax
 
-  LinkClass **p_m_Prev; // edx
-  p_m_Prev = &this->m_Prev; /*0x556643*/
+  LinkClass **p_m_Prev = &this->m_Prev; // edx /*0x556643*/
   if ( !this->m_Prev ) /*0x556640*/
     return (unsigned int *)(this->__tail_0); /*0x55665d*/
   do /*0x556651*/
@@ -347,10 +346,8 @@ namespace gamemd {
 int LinkedList_flat::Remove(unsigned int * a2)
 {
 
-  int result; // eax
-  result = this->u32_34; /*0x623460*/
-  unsigned int *v3; // edx
-  v3 = 0; /*0x623463*/
+  int result = this->u32_34; // eax /*0x623460*/
+  unsigned int *v3 = 0; // edx /*0x623463*/
   if ( result ) /*0x623468*/
   {
     while ( a2 != (unsigned int *)result ) /*0x623470*/
@@ -378,7 +375,7 @@ void LinkedList_flat::RelinkNode(int a2)
   {
     if ( a2 ) /*0x632d1f*/
     {
-  int v3; // ecx
+      int v3; // ecx
       v3 = *(unsigned int *)(a2 + 8); /*0x632d21*/
       if ( v3 ) /*0x632d26*/
       {
@@ -386,8 +383,7 @@ void LinkedList_flat::RelinkNode(int a2)
         *(unsigned int *)(a2 + 8) = 0; /*0x632d2f*/
       }
     }
-  int v4; // eax
-    v4 = this->u32_18; /*0x632d36*/
+    int v4 = this->u32_18; // eax /*0x632d36*/
     if ( v4 ) /*0x632d3b*/
       *(unsigned int *)(v4 + 8) = 0; /*0x632d3d*/
     this->u32_18 = a2; /*0x632d46*/
@@ -402,9 +398,7 @@ void LinkedList_flat::RelinkNode(int a2)
 namespace gamemd {
 int LinkedList_flat::Contains(IUnknown * aP1)
 {
-  int result; // eax
-
-  result = this->u32_28; /*0x6e5380*/
+  int result = this->u32_28; // eax /*0x6e5380*/
   if ( result ) /*0x6e5385*/
   {
     while ( result != (int)(aP1) ) /*0x6e538d*/
@@ -417,7 +411,7 @@ int LinkedList_flat::Contains(IUnknown * aP1)
   }
   else
   {
-  LABEL_4:
+    LABEL_4:
     (*((unsigned char *)&(result))) = 0; /*0x6e5396*/
   }
   return result; /*0x6e5398*/
@@ -448,8 +442,7 @@ int * LinkedList_flat::Next()
   result = *(int **)this->__tail_0; /*0x407520*/
   if ( *(unsigned int *)this->__tail_0 ) /*0x407520*/
   {
-  int v2; // edx
-    v2 = *result; /*0x407527*/
+    int v2 = *result; // edx /*0x407527*/
     *(unsigned int *)this->__tail_0 = v2; /*0x40752c*/
     result += 2; /*0x407529*/
   }
@@ -462,16 +455,13 @@ int LinkedList_flat::Prepend(int a2)
 {
 
 
-  int result; // eax
-  result = a2; /*0x40e340*/
+  int result = a2; // eax /*0x40e340*/
   if ( a2 ) /*0x40e347*/
   {
-  int v3; // esi
-    v3 = a2->Previous; /*0x40e349*/
+    int v3 = a2->Previous; // esi /*0x40e349*/
     if ( v3 ) /*0x40e34e*/
     {
-  int v4; // edx
-      v4 = a2->LinkedList_8; /*0x40e350*/
+      int v4 = a2->LinkedList_8; // edx /*0x40e350*/
       if ( v4 ) /*0x40e355*/
       {
         v4->Tail = v3; /*0x40e357*/
@@ -519,8 +509,7 @@ unsigned int * LinkedList_flat::FindNext()
 
   unsigned int *result; // eax
 
-  LinkClass **p_m_Next; // edx
-  p_m_Next = &this->m_Next; /*0x556673*/
+  LinkClass **p_m_Next = &this->m_Next; // edx /*0x556673*/
   if ( !this->m_Next ) /*0x556670*/
     return (unsigned int *)(this->__tail_0); /*0x55668d*/
   do /*0x556681*/

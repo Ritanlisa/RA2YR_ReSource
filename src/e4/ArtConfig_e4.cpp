@@ -38,15 +38,14 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   v5 = (char **)(&this->q020); /*0x76fc68*/
   int v6; // ebx
   v6 = aP3[1] + this->u32_1C; /*0x76fc6b*/
-  int v7; // edi
-  v7 = *aP3 + this->u32_18; /*0x76fc72*/
+  int v7 = *aP3 + this->u32_18; // edi /*0x76fc72*/
   unsigned int v11[22]; // [esp+10h] [ebp-6Ch] BYREF
   CCFileClass::Construct2(v11, &this->q020); /*0x76fc74*/
   if ( CCFileClass::Open(v11, 0) ) /*0x76fc7f*/
   {
-  void *v8; // eax
+    void *v8; // eax
     v8 = __2_YAPAXI_Z(0x4Cu); /*0x76fc8a*/
-  void *v9; // eax
+    void *v9; // eax
     if ( v8 ) /*0x76fc94*/
       v9 = (void *)(MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)(aP1 + 6), 1, 0, 0)); /*0x76fcb6*/
     else

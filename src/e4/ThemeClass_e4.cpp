@@ -62,13 +62,12 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
   this->u32_288 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this,(uint8_t *)(g_INI_Key_Normal), v8); /*0x720520*/
   char Bool_Overwrite; // al
   Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this,(uint8_t *)(aRepeat), this->u32_289); /*0x720535*/
-  int v6; // ecx
-  v6 = this->u32_28C; /*0x72053a*/
+  int v6 = this->u32_28C; // ecx /*0x72053a*/
   this->u32_289 = Bool_Overwrite; /*0x720540*/
-    this->u32_28C = HouseTypeClass::loadCountryData((uint8_t *)(/*0x720554*/                               (HouseTypeClass *)a2),                               (uint8_t *)this,                               (uint8_t *)aSide,                               v6);
+  this->u32_28C = HouseTypeClass::loadCountryData((uint8_t *)(/*0x720554*/                               (HouseTypeClass *)a2),                               (uint8_t *)this,                               (uint8_t *)aSide,                               v6);
   if ( this->u32_288 ) /*0x72055a*/
     (/*0x720577*/ (int)a2)->GetStringEx((uint8_t *)this, (uint8_t *)g_INI_Key_Name, (wchar_t *)this->q656 + 426),
-      0x40u);
+  0x40u);
   return 1; /*0x72057c*/
 }
 } // namespace gamemd
@@ -118,7 +117,7 @@ void * ThemeClass::InitializeThemes(char * a2)
       }
       if ( v7 == -1 ) /*0x720631*/
       {
-LABEL_10:
+        LABEL_10:
         v8 = (unsigned int *)(__2_YAPAXI_Z(0x290u)); /*0x720637*/
         v9 = 0; /*0x720641*/
         if ( v8 ) /*0x720648*/
@@ -180,8 +179,7 @@ namespace gamemd {
 int ThemeClass::ClearQueues()
 {
 
-  int result; // eax
-  result = dword_B1D4BC; /*0x752370*/
+  int result = dword_B1D4BC; // eax /*0x752370*/
   if ( dword_B1D4BC ) /*0x752377*/
   {
     if ( dword_B1D4B8 ) /*0x75238c*/
@@ -190,26 +188,26 @@ int ThemeClass::ClearQueues()
       operator delete((void *)(dword_B1D4B8)); /*0x75239b*/
       dword_B1D4B8 = 0; /*0x7523a3*/
     }
-  int i; // esi
+    int i; // esi
     for ( i = ((AudioQueue *)(&stru_B1D3F0))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3F0))->GetNext() ) /*0x7523bb*/
     {
       LinkedList::Init((unsigned int **)i); /*0x7523bf*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = (unsigned int)((gamemd::Init)(2)); /*0x7523c8*/
       operator delete((void *)((void *)i)); /*0x7523cb*/
     }
-  int j; // esi
+    int j; // esi
     for ( j = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); j; j = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7523f1*/
     {
       LinkedList::Init((unsigned int **)j); /*0x7523f5*/
       *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = (unsigned int)((gamemd::Init)(2)); /*0x7523fe*/
       operator delete((void *)((void *)j)); /*0x752401*/
     }
-  int *v3; // edi
+    int *v3; // edi
     v3 = (int *)stru_B1D450; /*0x752419*/
     do /*0x752457*/
     {
       result = ((AudioQueue *)(v3))->GetNext(); /*0x752420*/
-  int k; // esi
+      int k; // esi
       for ( k = result; result; k = result ) /*0x752429*/
       {
         LinkedList::Init((unsigned int **)k); /*0x75242d*/

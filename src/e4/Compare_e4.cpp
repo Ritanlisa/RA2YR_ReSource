@@ -10,7 +10,7 @@
 namespace gamemd {  // G42.18 ns repair
 int Compare::Field96(const void * a1, const void * a2)
 {
-
+  
   int v2; // eax
   v2 = *(unsigned int *)(*(unsigned int *)a1 + 96); /*0x46dc9c*/
   int v3; // ecx

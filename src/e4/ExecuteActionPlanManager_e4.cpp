@@ -29,8 +29,7 @@ int E4Recv_636EB0::sub_636EB0()
 {
 
 
-  int v1; // eax
-  v1 = this->M20 - 1; /*0x636eb3*/
+  int v1 = this->M20 - 1; // eax /*0x636eb3*/
   if ( v1 >= 0 ) /*0x636eb4*/
     return *((unsigned int *)this->M8 + v1); /*0x636ebc*/
   else

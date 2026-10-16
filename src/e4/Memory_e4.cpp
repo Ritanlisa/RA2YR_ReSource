@@ -20,8 +20,7 @@ namespace gamemd {  // G42.18 ns repair
 int sub_53EC40(unsigned char a1, char a2)
 {
 
-  int result; // eax
-  result = dword_AA0444; /*0x53ec40*/
+  int result = dword_AA0444; // eax /*0x53ec40*/
   if ( dword_AA0444 )
     ((unsigned int *)(word_AA0168))[a1] = a2 != 0 ? 0 : 0x8000;
   return result; /*0x53ec67*/

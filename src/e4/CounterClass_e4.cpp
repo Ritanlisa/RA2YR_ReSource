@@ -11,7 +11,7 @@
 namespace gamemd {  // G42.18 ns repair
 CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
 {
-
+  
   void *count; // eax
   count = (void *)Block->count; /*0x49fce3*/
   Block->items = &vt_VectorClass; /*0x49fce6*/

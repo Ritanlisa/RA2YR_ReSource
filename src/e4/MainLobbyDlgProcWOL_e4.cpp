@@ -44,7 +44,7 @@ void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
 
   if ( a2 ) /*0x77a8e5*/
   {
-  HWND DlgItem; // ebp
+    HWND DlgItem; // ebp
     DlgItem = GetDlgItem(hDlg, 1576); /*0x77a8ef*/
     SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x77a8fe*/
     InvalidateRect(DlgItem, 0, 0); /*0x77a905*/

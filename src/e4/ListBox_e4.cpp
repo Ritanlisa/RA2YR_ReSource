@@ -83,7 +83,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
       }
     }
   }
-LABEL_8:
+  LABEL_8:
   v40 = hWnd; /*0x6141fb*/
   if ( !dword_AC1B04 ) /*0x61420d*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
@@ -126,7 +126,7 @@ LABEL_8:
       return 0; /*0x61439e*/
     v8[62] = 1; /*0x6143a4*/
     v15 = v11 & 0xFFFEFFFF; /*0x6143ae*/
-LABEL_47:
+    LABEL_47:
     SetWindowLongA(hWnd, -16, v15); /*0x61459c*/
     return 0; /*0x6145b9*/
   }
@@ -135,7 +135,7 @@ LABEL_47:
     SendMessageA(hWnd, 0xB1u, 0xFFFFFFFF, -1); /*0x6143cf*/
     if ( !v8[61] ) /*0x6143d5*/
       PostMessageA(hWnd, 0x4B0u, 0, 0); /*0x6143f4*/
-LABEL_70:
+    LABEL_70:
     v29 = GetParent(hWnd); /*0x6147ee*/
     GetClassNameA(v29, ClassName, 32); /*0x614806*/
     if ( !strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x61481d*/

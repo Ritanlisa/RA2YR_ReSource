@@ -55,7 +55,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
     v8 = 0; /*0x5021c5*/
     if ( *(int *)(*v2 + 56) > 0 ) /*0x5021cc*/
       break; /*0x5021cc*/
-LABEL_13:
+    LABEL_13:
     ++v4; /*0x50221e*/
     ++v2; /*0x50221f*/
     v16 = v4; /*0x502225*/

@@ -77,7 +77,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
       Event::Dispatch(); /*0x55e1f3*/
       if ( !*(unsigned int *)&((unsigned int *)&stru_A8EB00)[444] && ((unsigned int *)&stru_A8EB00)[412] == 1 ) /*0x55e20b*/
         break; /*0x55e20b*/
-  LABEL_23:
+      LABEL_23:
       Sleep(0); /*0x55e2ac*/
     }
     v8 = *(unsigned int *)&DataGlobal_887330; /*0x55e216*/
@@ -97,9 +97,9 @@ signed int SyncDelay::Start(void *a1, void *a2)
       ((TacticalMap *)((GScreenClass *)&DataGlobal_87F7E8))->Redraw(); /*0x55e271*/
       goto LABEL_19; /*0x55e276*/
     }
-  LABEL_18:
+    LABEL_18:
     Sleep(0); /*0x55e278*/
-  LABEL_19:
+    LABEL_19:
     v10 = *(unsigned int *)&DataGlobal_887330; /*0x55e27b*/
     if ( g_TacticalState != (void *)(-1) ) /*0x55e288*/
     {
@@ -143,7 +143,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
         v18 = *(unsigned int *)&DataGlobal_887350; /*0x55e30f*/
         if ( v14 != -1 ) /*0x55e317*/
           break; /*0x55e317*/
-  LABEL_37:
+        LABEL_37:
         Sleep(v18); /*0x55e336*/
       }
       v19 = TimerGetTicks() - *(unsigned int *)DataGlobal_887348; /*0x55e323*/
@@ -167,7 +167,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
   v21 = *(unsigned int *)&g_MissionQueueFrame.waypoints[358]; /*0x55e377*/
   if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[350] == -1 ) /*0x55e37f*/
   {
-  LABEL_43:
+    LABEL_43:
     if ( v21 ) /*0x55e399*/
       return result; /*0x55e399*/
     goto LABEL_44; /*0x55e399*/

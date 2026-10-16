@@ -11,7 +11,7 @@
 namespace gamemd {  // G42.18 ns repair
 HWND sub_792EC0(int a1)
 {
-
+  
   HWND v2; // eax
   v2 = (HWND)((Dialog*)(void *)0xC4)->FindByHandle(); /*0x792ec8*/
   if ( v2 ) /*0x792ecf*/

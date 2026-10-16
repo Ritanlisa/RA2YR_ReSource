@@ -17,8 +17,7 @@ namespace gamemd {  // G42.18 ns repair
 int sub_53AB70()
 {
 
-  char *v0; // edx
-  v0 = &dword_A8B230->ambientTimer; /*0x53ab7b*/
+  char *v0 = &dword_A8B230->ambientTimer; // edx /*0x53ab7b*/
   NukeFlash_Status = 1; /*0x53ab81*/
   NukeFlash_Duration = 30; /*0x53ab8b*/
   NukeFlash_StartTime = (int)dword_A8ED84; /*0x53ab95*/

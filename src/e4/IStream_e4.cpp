@@ -21,8 +21,7 @@ int IStream::Read(void * pstm, ULONG cb, void *a3)
   void *v7; // [esp+20h] [ebp-4h] BYREF
   v7 = pv; /*0x4a302d*/
   WriteCompressionBlock(pstm, (unsigned int)pv, *(unsigned char **)(v3 + 28), (int *)&v7, *(unsigned int *)(v3 + 32)); /*0x4a303e*/
-  void *v5; // ecx
-  v5 = v7; /*0x4a3043*/
+  void *v5 = v7; // ecx /*0x4a3043*/
   v4[10] = 0x10000; /*0x4a304a*/
   pv = 0; /*0x4a3051*/
   v4[9] = (unsigned int)(v5); /*0x4a3059*/

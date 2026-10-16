@@ -38,8 +38,8 @@
 #include "e4/classes/TextGroup_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int BlitterRLEBlitSHP(int p0, int* p1, int* p2, int p3, int* p4, int* p5, int* p6, int p7, int p8, int p9, int p10, int p11, int p12, int p13, int p14);  // x4:signals@0x437a10
-    int GenerateImageThumbnail(int* p0, int* p1, int* p2, char p3);  // x4:signals@0x6547c0
+int BlitterRLEBlitSHP(int p0, int* p1, int* p2, int p3, int* p4, int* p5, int* p6, int p7, int p8, int p9, int p10, int p11, int p12, int p13, int p14);  // x4:signals@0x437a10
+int GenerateImageThumbnail(int* p0, int* p1, int* p2, char p3);  // x4:signals@0x6547c0
 } // namespace gamemd
 
 // 0x411580
@@ -116,7 +116,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
   v41 = Width; /*0x5d200a*/
   if ( Width <= 0 ) /*0x5d200e*/
   {
-  LABEL_18:
+    LABEL_18:
     if ( Width >= result->BytesPerPixel ) /*0x5d207c*/
     {
       v22 = 0; /*0x5d2165*/
@@ -203,7 +203,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
       goto LABEL_11; /*0x5d202e*/
     }
     v48 = 1; /*0x5d203b*/
-  LABEL_11:
+    LABEL_11:
     v10 = v8[1]; /*0x5d2040*/
     if ( v7 >= v10 ) /*0x5d2045*/
     {
@@ -216,7 +216,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
     }
     if ( v48 == 1 ) /*0x5d2061*/
       break; /*0x5d2061*/
-  LABEL_16:
+    LABEL_16:
     v8 += 4; /*0x5d2063*/
     if ( ++v34 >= Width ) /*0x5d2071*/
     {
@@ -277,15 +277,13 @@ int sub_626C60()
     return *(unsigned int *)(*((unsigned int *)g_FileExtensionState + 1) + 16); /*0x626d93*/
   unsigned int *v0; // eax
   v0 = (unsigned int *)(operator new(0x10u)); /*0x626c70*/
-  unsigned int *v1; // ebx
-  v1 = v0; /*0x626c75*/
+  unsigned int *v1 = v0; // ebx /*0x626c75*/
   if ( v0 ) /*0x626c7c*/
   {
     *v0 = (unsigned int)((unsigned int *)(-1));
-  unsigned int *v2; // eax
+    unsigned int *v2; // eax
     v2 = (unsigned int *)(operator new(0x18u)); /*0x626c8c*/
-  unsigned int *v3; // esi
-    v3 = v2; /*0x626c91*/
+    unsigned int *v3 = v2; // esi /*0x626c91*/
     if ( v2 ) /*0x626c98*/
     {
       StringVector::Construct(v2, 0, 0); /*0x626ca0*/
@@ -298,10 +296,9 @@ int sub_626C60()
       v3 = 0; /*0x626cbc*/
     }
     v1[1] = (unsigned int)((unsigned int *)(v3));
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)(operator new(0x18u)); /*0x626cc8*/
-  unsigned int *v5; // esi
-    v5 = v4; /*0x626ccd*/
+    unsigned int *v5 = v4; // esi /*0x626ccd*/
     if ( v4 ) /*0x626cd4*/
     {
       (v4)->ConstructHSV(0, 0); /*0x626cdc*/
@@ -314,16 +311,15 @@ int sub_626C60()
       v5 = 0; /*0x626cf3*/
     }
     v1[2] = (unsigned int)((unsigned int *)(v5));
-  unsigned int *v6; // eax
+    unsigned int *v6; // eax
     v6 = (unsigned int *)(operator new(0x10u)); /*0x626cfa*/
-  unsigned int *v7; // esi
-    v7 = v6; /*0x626cff*/
+    unsigned int *v7 = v6; // esi /*0x626cff*/
     if ( v6 ) /*0x626d06*/
     {
       v6[1] = (unsigned int)((unsigned int *)(HashStringMod31));
       v6[2] = 31; /*0x626d14*/
       v6[3] = 10; /*0x626d1b*/
-  unsigned int *v8; // eax
+      unsigned int *v8; // eax
       v8 = (unsigned int *)(operator new(0x2ECu)); /*0x626d1e*/
       if ( v8 ) /*0x626d28*/
       {
@@ -335,15 +331,13 @@ int sub_626C60()
       {
         v9 = 0; /*0x626d44*/
       }
-  int v10; // ecx
+      int v10; // ecx
       v10 = (unsigned int)(v7[2]);
-  int v11; // eax
-      v11 = 0; /*0x626d49*/
+      int v11 = 0; // eax /*0x626d49*/
       *v7 = (unsigned int)(v9); /*0x626d4d*/
       if ( v10 > 0 ) /*0x626d4f*/
       {
-  int v12; // ecx
-        v12 = 0; /*0x626d51*/
+        int v12 = 0; // ecx /*0x626d51*/
         do /*0x626d66*/
         {
           ++v11; /*0x626d55*/
@@ -421,7 +415,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
   }
   else
   {
-LABEL_11:
+    LABEL_11:
     *(unsigned int *)v9.CDFileClass = &vt_CCFileClass; /*0x641eaf*/
     v11 = 0; /*0x641eb7*/
     Vector::Clear((int)v10); /*0x641ebf*/
@@ -508,7 +502,7 @@ int Surface::RenderRadar()
         break; /*0x6552c4*/
       if ( v5 == 2 * this->u32_104 - 1 ) /*0x6552d6*/
         goto LABEL_6; /*0x6552d6*/
-LABEL_7:
+      LABEL_7:
       v40 = v35[0] + v35[1] - this->u32_1498; /*0x6552dd*/
       v41 = v6; /*0x6552e8*/
       v7 = this->u32_1240; /*0x6552ec*/
@@ -551,7 +545,7 @@ LABEL_7:
             *(unsigned char *)(v13 + 2) = v32; /*0x6553ca*/
             goto LABEL_16; /*0x6553cd*/
           }
-LABEL_14:
+          LABEL_14:
           v16 = this->u32_123C + 3 * v12; /*0x6553ee*/
           *(unsigned short *)v16 = v33; /*0x6553ff*/
           *(unsigned char *)(v16 + 2) = v34; /*0x655406*/
@@ -560,7 +554,7 @@ LABEL_14:
           v15 = v32; /*0x65541d*/
         }
         *(unsigned char *)(v14 + 2) = v15; /*0x655421*/
-LABEL_16:
+        LABEL_16:
         v17 = this->u32_1240; /*0x655424*/
         v18 = this->u32_1244; /*0x65542a*/
         v48[0] = 0; /*0x655430*/
@@ -614,17 +608,17 @@ LABEL_16:
         v37 = v24; /*0x655514*/
         v38 = v25; /*0x655518*/
       }
-LABEL_32:
+      LABEL_32:
       v43 = --v4; /*0x65551d*/
       if ( v4 < 0 ) /*0x655521*/
         goto LABEL_33; /*0x655521*/
     }
     v5 = 0; /*0x6552c6*/
-LABEL_6:
+    LABEL_6:
     v6 = 1; /*0x6552d8*/
     goto LABEL_7; /*0x6552d8*/
   }
-LABEL_33:
+  LABEL_33:
   (*(void (**)(char *))(this->u32_1224 + 12))(&this->u32_1224); /*0x655528*/
   result = v36; /*0x655537*/
   v28 = v37; /*0x65553b*/
@@ -652,50 +646,47 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
   v20 = result; /*0x6ba3f8*/
   if ( result )
   {
-  int v7; // edi
-    v7 = a3; /*0x6ba408*/
-  int v21; // [esp+2Ch] [ebp-34h]
+    int v7 = a3; // edi /*0x6ba408*/
+    int v21; // [esp+2Ch] [ebp-34h]
     v21 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba41b*/
     if ( v21 )
     {
-  int v17; // [esp+1Ch] [ebp-44h]
+      int v17; // [esp+1Ch] [ebp-44h]
       v17 = (*(int (**)(int))(*&aP1->q_1D0))(aP1) / 2; /*0x6ba442*/
-  int v18; // [esp+20h] [ebp-40h]
+      int v18; // [esp+20h] [ebp-40h]
       v18 = (*(int (**)(int))(*&a3->u32_1D0))(a3) / 2; /*0x6ba452*/
-  int v8; // eax
-  unsigned char v24[16]; // [esp+40h] [ebp-20h] BYREF
+      int v8; // eax
+      unsigned char v24[16]; // [esp+40h] [ebp-20h] BYREF
       v8 = (*(int (**)(int, unsigned char *))(*&a3->u32_1E0))(a3, v24); /*0x6ba45d*/
-  int v22; // [esp+38h] [ebp-28h]
+      int v22; // [esp+38h] [ebp-28h]
       v22 = *(unsigned int *)(v8 + 8); /*0x6ba470*/
-  int v23; // [esp+3Ch] [ebp-24h]
+      int v23; // [esp+3Ch] [ebp-24h]
       v23 = *(unsigned int *)(v8 + 12); /*0x6ba480*/
-  unsigned int v25[4]; // [esp+50h] [ebp-10h] BYREF
+      unsigned int v25[4]; // [esp+50h] [ebp-10h] BYREF
       (*(void (**)(int, unsigned int *))(*&aP1->q1E0))(aP1, v25); /*0x6ba484*/
-  int v10; // esi
+      int v10; // esi
       v10 = (int)(aP0[2]); /*0x6ba48f*/
-  int v11; // ecx
+      int v11; // ecx
       v11 = (int)(aP0[3]); /*0x6ba492*/
-  int v19; // [esp+24h] [ebp-3Ch]
+      int v19; // [esp+24h] [ebp-3Ch]
       v19 = (v22 - v10) / 2 <= 0 ? 0 : (v22 - v10) / 2;
-  int v12; // eax
-      v12 = 0; /*0x6ba4bf*/
-  int v16; // [esp+18h] [ebp-48h]
+      int v12 = 0; // eax /*0x6ba4bf*/
+      int v16; // [esp+18h] [ebp-48h]
       v16 = 0; /*0x6ba4c3*/
       if ( v11 > 0 )
       {
-  int v13; // edx
+        int v13; // edx
         v13 = a5 + ((v23 - v11) / 2 <= 0 ? 0 : (v23 - v11) / 2);
-  int v27; // [esp+74h] [ebp+14h]
+        int v27; // [esp+74h] [ebp+14h]
         v27 = v13; /*0x6ba4d3*/
         do /*0x6ba558*/
         {
-  unsigned int *v26; // [esp+64h] [ebp+4h]
+          unsigned int *v26; // [esp+64h] [ebp+4h]
           v26 = 0; /*0x6ba4d9*/
           if ( v10 > 0 ) /*0x6ba4ee*/
           {
-  int v14; // ebx
-            v14 = v19 + a4; /*0x6ba506*/
-  int v15; // ecx
+            int v14 = v19 + a4; // ebx /*0x6ba506*/
+            int v15; // ecx
             v15 = v20 + 2 * (*aP0 + v17 * (aP0[1] + v12)); /*0x6ba50d*/
             do /*0x6ba537*/
             {
@@ -745,24 +736,23 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
   result = result; /*0x6ba599*/
   if ( result ) /*0x6ba59d*/
   {
-  int v5; // ebp
+    int v5; // ebp
     v5 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba5bb*/
     if ( v5 ) /*0x6ba5bf*/
     {
-  int v6; // ebx
-      v6 = *a0; /*0x6ba5d8*/
-  int v7; // esi
+      int v6 = *a0; // ebx /*0x6ba5d8*/
+      int v7; // esi
       v7 = a0[1]; /*0x6ba5da*/
-  int v16; // [esp+1Ch] [ebp-8h]
+      int v16; // [esp+1Ch] [ebp-8h]
       v16 = (*(int (**)(int))(*&a3->u32_1F0))(a3); /*0x6ba5f2*/
-  int v8; // edi
+      int v8; // edi
       v8 = (*(int (**)(int))(*&a3->u32_200))(a3); /*0x6ba604*/
-  int v9; // eax
-  int v10; // edx
-  unsigned short *v11; // ebx
-  unsigned short *v13; // eax
-  unsigned short *v14; // ecx
-  int *v17; // [esp+28h] [ebp+4h]
+      int v9; // eax
+      int v10; // edx
+      unsigned short *v11; // ebx
+      unsigned short *v13; // eax
+      unsigned short *v14; // ecx
+      int *v17; // [esp+28h] [ebp+4h]
       v9 = (*(int (**)(int))(aP1->isOnMap)(aP1) / 2; /*0x6ba60e*/
       if ( v8 > 0 ) /*0x6ba612*/
       {
@@ -971,8 +961,8 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
     {
 LABEL_21:
       result = (*(int (**)(int))(*(unsigned int *)a2 + 96))(a2); /*0x6ba80f*/
-      LOBYTE(result) = 0; /*0x6ba81e*/
-      return result; /*0x6ba827*/
+  LOBYTE(result) = 0; /*0x6ba81e*/
+  return result; /*0x6ba827*/
     }
   }
   v65 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a4 + 92))(a4, 0, 0); /*0x6ba87d*/
@@ -1042,12 +1032,12 @@ LABEL_21:
               v43 = v77[(unsigned __int8)v39[v40]]; /*0x6bab27*/
               v44 = 255 - (unsigned __int8)*v39; /*0x6bab48*/
               v45 = g_ScreenSaverState /*0x6bab5d*/
-                  & ((v44 * (unsigned __int16)(g_ScreenSaverState & v42)
-                    + (unsigned __int8)*v39 * (unsigned int)(unsigned __int16)(g_ScreenSaverState & v43)) >> 8);
+              & ((v44 * (unsigned __int16)(g_ScreenSaverState & v42)
+              + (unsigned __int8)*v39 * (unsigned int)(unsigned __int16)(g_ScreenSaverState & v43)) >> 8);
               g_GameScreenFlags = (unsigned __int8)*v39; /*0x6bab64*/
               g_GameScreenConfig = 255 - g_GameScreenFlags; /*0x6bab6e*/
               v46 = v44 * (unsigned __int16)(HIWORD(g_ScreenSaverState) & v42) /*0x6bab79*/
-                  + g_GameScreenFlags * (unsigned __int16)(HIWORD(g_ScreenSaverState) & v43);
+              + g_GameScreenFlags * (unsigned __int16)(HIWORD(g_ScreenSaverState) & v43);
               v47 = v44 * (unsigned __int16)(g_CreditsScreenState & v42); /*0x6bab8a*/
               v39 = v63; /*0x6bab97*/
               v40 = v64 - v65; /*0x6bab9b*/
@@ -1084,12 +1074,12 @@ LABEL_21:
             g_GameScreenFlags = (unsigned __int8)*v29; /*0x6baa06*/
             g_GameScreenConfig = 255 - g_GameScreenFlags; /*0x6baa45*/
             v35 = ((255 - g_GameScreenFlags) * (unsigned __int16)(v33 & g_ScreenSaverState) /*0x6baa4b*/
-                 + g_GameScreenFlags * (unsigned int)(unsigned __int16)(v34 & g_ScreenSaverState)) >> 8;
+            + g_GameScreenFlags * (unsigned int)(unsigned __int16)(v34 & g_ScreenSaverState)) >> 8;
             v36 = ((255 - g_GameScreenFlags) * (unsigned __int16)(v33 & HIWORD(g_ScreenSaverState)) /*0x6baa57*/
-                 + g_GameScreenFlags * (unsigned int)(unsigned __int16)(HIWORD(g_ScreenSaverState) & v34)) >> 8;
+            + g_GameScreenFlags * (unsigned int)(unsigned __int16)(HIWORD(g_ScreenSaverState) & v34)) >> 8;
             v10 = v56; /*0x6baa6e*/
             v37 = (255 - g_GameScreenFlags) * (unsigned __int16)(v33 & g_CreditsScreenState) /*0x6baa75*/
-                + g_GameScreenFlags * (unsigned __int16)(v34 & g_CreditsScreenState);
+            + g_GameScreenFlags * (unsigned __int16)(v34 & g_CreditsScreenState);
             v32 = v58; /*0x6baa77*/
             *v58 = (v37 >> 8) | HIWORD(g_ScreenSaverState) & v36 | g_ScreenSaverState & v35; /*0x6baa80*/
           }
@@ -1102,7 +1092,7 @@ LABEL_21:
           --v60; /*0x6baaa3*/
         }
         while ( !v38 ); /*0x6baaa7*/
-LABEL_43:
+        LABEL_43:
         v29 = v54; /*0x6babce*/
       }
       v29 += v69; /*0x6babd2*/
@@ -1428,10 +1418,10 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 if ( v60 <= *v4 + 2 ) /*0x7608d3*/
                   v60 = *v4 + 2; /*0x7608d5*/
                 v68 = (unsigned short *)(v74 /*0x760904*/
-                              + 2
-                              * (v50
-                               + v56
-                               * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1)));
+                + 2
+                * (v50
+                + v56
+                * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1)));
                 v51 = v56 - (unsigned int)DSurface_ViewBounds.field_4; /*0x760910*/
                 v50 = v50; /*0x760914*/
                 for ( i = abs32(v56 - v6 - this->WaveClass_field_17C); v50 >= v60; --v68 ) /*0x760925*/
@@ -1538,10 +1528,10 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                   v32 = v31; /*0x7605cd*/
                 v32 = v32; /*0x7605e5*/
                 v65 = (unsigned short *)(v74 /*0x7605f3*/
-                              + 2
-                              * (v32
-                               + v27
-                               * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1)));
+                + 2
+                * (v32
+                + v27
+                * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1)));
                 v33 = v27 - (unsigned int)DSurface_ViewBounds.field_4; /*0x7605fd*/
                 v85 = v27 - (unsigned int)DSurface_ViewBounds.field_4; /*0x760607*/
                 v34 = abs32(v27 - v6 - this->WaveClass_field_17C); /*0x760616*/
@@ -1772,7 +1762,7 @@ int Surface::CommitSurfaceBuffersAudio()
         }
         v53 = 1; /*0x7bd7eb*/
       }
-  LABEL_27:
+      LABEL_27:
       v14 = 0; /*0x7bd7f3*/
       if ( this->u16_714 ) /*0x7bd7b4*/
       {
@@ -1786,7 +1776,7 @@ int Surface::CommitSurfaceBuffersAudio()
         }
         v54 = 1; /*0x7bd81f*/
       }
-  LABEL_51:
+      LABEL_51:
       if ( !v53 ) /*0x7bd8db*/
         goto LABEL_53; /*0x7bd8db*/
     }
@@ -1816,7 +1806,7 @@ int Surface::CommitSurfaceBuffersAudio()
               v53 = 0; /*0x7bd87e*/
             }
           }
-  LABEL_41:
+          LABEL_41:
           if ( v54 ) /*0x7bd88c*/
           {
             v19 = 0; /*0x7bd88e*/
@@ -1833,7 +1823,7 @@ int Surface::CommitSurfaceBuffersAudio()
               v54 = 0; /*0x7bd8a9*/
             }
           }
-  LABEL_48:
+          LABEL_48:
           if ( !v53 && !v54 ) /*0x7bd8bf*/
             goto LABEL_56; /*0x7bd8bf*/
           v10 += 2; /*0x7bd8ca*/
@@ -1843,15 +1833,15 @@ int Surface::CommitSurfaceBuffersAudio()
       }
     }
     ++v52; /*0x7bd8dd*/
-  LABEL_53:
+    LABEL_53:
     if ( !v54 ) /*0x7bd8e7*/
     {
-  LABEL_56:
+      LABEL_56:
       this->u32_8C = v52 + 2; /*0x7bd8f2*/
       goto LABEL_57; /*0x7bd8f9*/
     }
     v9 = v52 + 1; /*0x7bd8ed*/
-  LABEL_55:
+    LABEL_55:
     v52 = v9; /*0x7bd8ee*/
     goto LABEL_56; /*0x7bd8ee*/
   }
@@ -1909,12 +1899,12 @@ int Surface::CommitSurfaceBuffersAudio()
   this->u32_770 = 1020; /*0x7bda37*/
   v27 = 0; /*0x7bda69*/
   v28 = (2 /*0x7bda72*/
-       * *((uint16_t *)&this->LockCount0)
-       / (int)*(unsigned char *)this->u8_EA + 9)
-       * (*(unsigned short *)this->u8_EA + 4)
-        / (int)*(unsigned char *)this->u8_EA + 8))
-       + 4)
-      & 0xFFFFFFFC;
+    * *((uint16_t *)&this->LockCount0)
+    / (int)*(unsigned char *)this->u8_EA + 9)
+  * (*(unsigned short *)this->u8_EA + 4)
+  / (int)*(unsigned char *)this->u8_EA + 8))
+  + 4)
+  & 0xFFFFFFFC;
   this->u32_778 = v28; /*0x7bda75*/
   if ( this->u32_FE ) /*0x7bda7b*/
   {
@@ -1935,7 +1925,7 @@ int Surface::CommitSurfaceBuffersAudio()
   this->u32_6E8 = v31; /*0x7bdaca*/
   if ( !v31 ) /*0x7bdad0*/
   {
-  LABEL_103:
+    LABEL_103:
     DSurface::CommitBuffers(); /*0x7bdf14*/
     return -8; /*0x7bdf27*/
   }
@@ -2023,8 +2013,8 @@ int Surface::CommitSurfaceBuffersAudio()
       }
       if ( this->u32_98 == -1 ) /*0x7bdcb7*/
         this->u32_98 = this->u32_9C /*0x7bdcd2*/
-                               * ((unsigned int)(this->u32_7CC + (this->u32_7CC >> 1))
-                                / this->u32_9C);
+      * ((unsigned int)(this->u32_7CC + (this->u32_7CC >> 1))
+      / this->u32_9C);
       if ( this->u32_98 <= 0 ) /*0x7bdce0*/
       {
         DSurface::CommitBuffers(); /*0x7bdf2a*/
@@ -2142,20 +2132,19 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
     g_DDraw_PrimarySurface = g_DDraw_PrimarySurface; /*0x4a47a9*/
     if ( g_DDraw_PrimarySurface ) /*0x4a47b1*/
     {
-  Surface *v4; // eax
-      v4 = Src; /*0x4a47b4*/
-  char *v5; // ecx
+      Surface *v4 = Src; // eax /*0x4a47b4*/
+      char *v5; // ecx
       v5 = (char *)&unk_89FC95; /*0x4a47b6*/
       do /*0x4a47e5*/
       {
-  int v6; // edx
+        int v6; // edx
         v6 = (uint8_t)v4->vtable1; /*0x4a47bf*/
-  char v9; // [esp+8h] [ebp-4h]
+        char v9; // [esp+8h] [ebp-4h]
         v9 = v4->__pad_0[1]; /*0x4a47c5*/
-  char *v7; // eax
+        char *v7; // eax
         v7 = &v4->__pad_0[2]; /*0x4a47c9*/
         v5 += 4; /*0x4a47cc*/
-  int v8; // ebx
+        int v8; // ebx
         v8 = (uint8_t)*v7; /*0x4a47cf*/
         *(v5 - 5) = v6; /*0x4a47d1*/
         v4 = (Surface *)(v7 + 1); /*0x4a47d8*/
@@ -2214,8 +2203,8 @@ int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned 
   yTopa = yTop[1]; /*0x620fd2*/
   v10 = v8 - *yTop; /*0x620fda*/
   v16 = ((uint8_t)aP1 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x620fdc*/
-      | ((((unsigned char *)&(aP1))[2]) >> g_BitMask_Red << g_BitShift_Blue)
-      | ((((unsigned char *)&(aP1))[1]) >> g_BitMask_Blue << g_BitMask_Green);
+  | ((((unsigned char *)&(aP1))[2]) >> g_BitMask_Red << g_BitShift_Blue)
+  | ((((unsigned char *)&(aP1))[1]) >> g_BitMask_Blue << g_BitMask_Green);
   v12 = *yTop; /*0x620fe2*/
   if ( !a3 ) /*0x620fe6*/
     v6 = (unsigned char *)g_FogOfWarState; /*0x620fe8*/

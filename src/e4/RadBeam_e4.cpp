@@ -27,7 +27,7 @@ void * RadBeam::Create(void *a1, void *a2, void *a3, void *a4)
          dword_B04A68 + dword_B04A74,
          0) )
   {
-  int v4; // eax
+    int v4; // eax
     v4 = dword_B04A70++; /*0x659177*/
     *((unsigned int *)dword_B04A64 + v4) = inited; /*0x659186*/
   }

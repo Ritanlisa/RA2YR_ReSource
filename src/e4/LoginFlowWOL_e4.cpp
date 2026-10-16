@@ -54,7 +54,7 @@ char sub_786EF0(ObjectClass *self)
         case -2147221386: /*0x786f78*/
           v3 = dword_B77E50; /*0x786fbb*/
           v2 = aHttpApiregiste_4; /*0x786fbc*/
-  LABEL_16:
+          LABEL_16:
           sprintf(Buffer, v2, v3); /*0x786fc1*/
           break; /*0x786fc6*/
         case -2147221385: /*0x786f78*/
@@ -82,8 +82,7 @@ namespace gamemd {
 char sub_72BCA0()
 {
 
-  char result; // al
-  result = byte_B0FD45; /*0x72bca0*/
+  char result = byte_B0FD45; // al /*0x72bca0*/
   if ( !byte_B0FD45 ) /*0x72bca7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72bcb3*/
@@ -104,7 +103,7 @@ void sub_72BCF0()
   {
     if ( DataGlobal_B0FD44 ) /*0x72bd02*/
     {
-  void *v1; // esi
+      void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FA98; /*0x72bd05*/
       if ( *(unsigned int *)&DataGlobal_B0FA98 ) /*0x72bd0d*/
       {
@@ -136,8 +135,7 @@ namespace gamemd {
 char sub_72C600()
 {
 
-  char result; // al
-  result = byte_B0FD09; /*0x72c600*/
+  char result = byte_B0FD09; // al /*0x72c600*/
   if ( !byte_B0FD09 ) /*0x72c607*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c613*/
@@ -158,7 +156,7 @@ void sub_72C650()
   {
     if ( DataGlobal_B0FD08 ) /*0x72c662*/
     {
-  void *v1; // esi
+      void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FB0C; /*0x72c665*/
       if ( *(unsigned int *)&DataGlobal_B0FB0C ) /*0x72c66d*/
       {
@@ -202,14 +200,14 @@ int sub_786390(void * a1)
   {
     if ( strlen((const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)) ) /*0x7863da*/
     {
-  CHAR SubKey[256]; // [esp+10h] [ebp-100h] BYREF
+      CHAR SubKey[256]; // [esp+10h] [ebp-100h] BYREF
       strcpy(SubKey,(const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)); /*0x786405*/
-  HKEY phkResult; // [esp+4h] [ebp-10Ch] BYREF
+      HKEY phkResult; // [esp+4h] [ebp-10Ch] BYREF
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x786420*/
       {
-  DWORD cbData; // [esp+8h] [ebp-108h] BYREF
+        DWORD cbData; // [esp+8h] [ebp-108h] BYREF
         cbData = 4; /*0x786445*/
-  DWORD Type; // [esp+Ch] [ebp-104h] BYREF
+        DWORD Type; // [esp+Ch] [ebp-104h] BYREF
         RegQueryValueExA(phkResult,(LPCSTR)(off_84A940), 0, &Type, Data, &cbData); /*0x78644d*/
         RegCloseKey(phkResult); /*0x786458*/
       }

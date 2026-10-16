@@ -11,8 +11,8 @@
 namespace gamemd {  // G42.18 ns repair
 int ColorStruct::SetRGB(uint8_t a2, uint8_t a3, uint8_t a4, void *a4_1)
 {
-
-
+  
+  
   void *v4; // eax
   v4 = (void *)(a4 | ((a3 | ((a2 | 0xFFFFFF00) << 8)) << 8)); /*0x4a35c5*/
   this->field_50 = v4; /*0x4a35c7*/
@@ -22,6 +22,6 @@ int ColorStruct::SetRGB(uint8_t a2, uint8_t a3, uint8_t a4, void *a4_1)
   this->field_34 = (void *)-16777216; /*0x4a35d8*/
   this->field_14 = (void *)-16777216; /*0x4a35db*/
   return -16777216; /*0x4a35de*/
-
+  
 }
 } // namespace gamemd

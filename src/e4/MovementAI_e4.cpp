@@ -64,8 +64,7 @@ namespace gamemd {
 char MovementAI::Check(void *a1, void *a2, void *a3)
 {
 
-  char result; // al
-  result = 0; /*0x4a5363*/
+  char result = 0; // al /*0x4a5363*/
   if ( (this->MovementAI_field_18) ) /*0x4a5360*/
   {
     if ( (this->u8_19) ) /*0x4a5369*/

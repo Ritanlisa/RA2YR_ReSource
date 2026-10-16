@@ -63,7 +63,7 @@
 #include "e4/classes/NetworkID_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ComputeImpactTrajectory(int p0);  // x4:signals@0x6620f0
+int ComputeImpactTrajectory(int p0);  // x4:signals@0x6620f0
 } // namespace gamemd
 
 // 0x6613A0
@@ -111,7 +111,7 @@ int Color_ComputeSaturation(unsigned int a1, int a2, int a3)
         if ( v12 == v5 ) /*0x661459*/
         {
           v9 = v8 + 1280; /*0x66145b*/
-  LABEL_23:
+          LABEL_23:
           a1 = v9 / 6; /*0x6614ae*/
           goto LABEL_24; /*0x6614b7*/
         }
@@ -176,7 +176,7 @@ unsigned char * sub_6615D0(char * a1, unsigned char * a2, int a3)
       {
         memset(v5, 0, v7); /*0x661606*/
         v5 = &v9[v7]; /*0x661613*/
-  LABEL_6:
+        LABEL_6:
         v9 = v5; /*0x66161a*/
       }
       if ( v4 <= 0 ) /*0x661620*/
@@ -217,7 +217,7 @@ unsigned char * sub_661640(unsigned short * a1, unsigned char * a2)
       {
         memset(v2, 0, v6); /*0x66167a*/
         v2 = &v8[v6]; /*0x661687*/
-  LABEL_6:
+        LABEL_6:
         v8 = v2; /*0x66168e*/
       }
       if ( v3 <= 0 ) /*0x661694*/
@@ -306,7 +306,7 @@ char UpdateBullets(int a1)
   if ( v2 == *(unsigned int *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1248) )
   {
     v3 = (ObjectClass *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1200);
-LABEL_6:
+    LABEL_6:
     v113 = v3;
     v4 = (int)v3;
     goto LABEL_7;
@@ -318,15 +318,15 @@ LABEL_6:
   }
   v4 = *(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1304;
   v113 = (ObjectClass *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1304);
-LABEL_7:
+  LABEL_7:
   switch ( *(unsigned int *)(a1 + 60) )
   {
-  int v127; // [esp+7Ch] [ebp-44h]
-  int v126; // [esp+78h] [ebp-48h]
-  int v125; // [esp+74h] [ebp-4Ch] BYREF
-  unsigned int *v60; // edi
+    int v127; // [esp+7Ch] [ebp-44h]
+    int v126; // [esp+78h] [ebp-48h]
+    int v125; // [esp+74h] [ebp-4Ch] BYREF
+    unsigned int *v60; // edi
     case 1:
-    {  // X33-L1 case 1 body brace (C2360)
+      {  // X33-L1 case 1 body brace (C2360)
       *(unsigned int *)(a1 + 68) = 0;
       *(unsigned int *)(a1 + 72) = 0;
       int v5 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 724);
@@ -335,7 +335,7 @@ LABEL_7:
       if ( *(unsigned int *)(v4 + 48) != *(unsigned int *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1352) )
       {
         *(unsigned char *)(a1 + 76) = 1;
-LABEL_23:
+        LABEL_23:
         (*((unsigned int *)&(var84_4))) = *(unsigned int *)(a1 + 44);
         if ( !(*((unsigned int *)&(var84_4))) )
           goto LABEL_29;
@@ -351,7 +351,7 @@ LABEL_23:
         }
         if ( (double)((*((unsigned int *)&(var84_4))) - eax24) / (double)(*((signed int *)&(var84_4))) == 1.0 )
         {
-LABEL_29:
+          LABEL_29:
           int v15 = v126;
           int v16 = -(*(unsigned int *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1352) != *(unsigned int *)(v4 + 48));
           (v16) = ((v16) & ~0xFF) | ((unsigned int)(v16 & 0xFC) & 0xFF);
@@ -371,10 +371,10 @@ LABEL_29:
       if ( *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112] - (int)v7 >= v8 )
         goto LABEL_17;
       v8 -= *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112] - (unsigned int)v7;
-LABEL_16:
+      LABEL_16:
       if ( !v8 )
       {
-LABEL_17:
+        LABEL_17:
         v9 = (AnimClass *)new AnimClass;
         if ( v9 )
         {
@@ -397,7 +397,7 @@ LABEL_17:
       goto LABEL_23;
     }  // X33-L1 end case 1
     case 2:
-    {  // X33-L1 case 2 body brace (C2360)
+      {  // X33-L1 case 2 body brace (C2360)
       *(unsigned int *)(a1 + 68) = 0;
       *(unsigned int *)(a1 + 72) = 0;
       int v36 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 724);
@@ -418,7 +418,7 @@ LABEL_17:
       (*((unsigned int *)&(desiredFacing_4))) = (*((unsigned int *)&(var84_4))) - v39;
       if ( (double)((*((unsigned int *)&(var84_4))) - v39) / (double)(*((signed int *)&(var84_4))) != 1.0 )
       {
-  double v47; // st5
+        double v47; // st5
         st7_69 = *&v113->vtable3 * 1.570796326794897;
         st6_69 = *&v113->vtable4 * 1.570796326794897;
         (*((unsigned int *)&(desiredFacing_4))) = *(unsigned int *)(a1 + 44);
@@ -444,10 +444,10 @@ LABEL_17:
       }
       else
       {
-LABEL_63:
+        LABEL_63:
         *(float *)(a1 + 80) = *&v113->vtable4 * 1.570796326794897;
         *(unsigned int *)(a1 + 60) = 3;
-eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 756))( *(unsigned int *)(a1 + 8), (IUnknown **)(v128));
+        eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 756))( *(unsigned int *)(a1 + 8), (IUnknown **)(v128));
 
 
         if ( *eax63 == word_B04E18 && eax63[1] == word_B04E1A )
@@ -469,30 +469,30 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
     case 3:
       if ( !*(unsigned char *)(a1 + 76) )
       {
-        (*(void (**)(ObjectClass *, unsigned int))(*(unsigned int *)v1->q000 + 292))( (ObjectClass *)(v1), 0);
-        *(unsigned char *)(a1 + 76) = 1;
-        Targeting::Readd( (unsigned int *)(*(IUnknown **)(a1 + 8)));
-        (*(void (**)(unsigned int, int))(**(unsigned int **)(a1 + 8) + 292))(*(unsigned int *)(a1 + 8), 1);
-      }
+      (*(void (**)(ObjectClass *, unsigned int))(*(unsigned int *)v1->q000 + 292))( (ObjectClass *)(v1), 0);
+      *(unsigned char *)(a1 + 76) = 1;
+      Targeting::Readd( (unsigned int *)(*(IUnknown **)(a1 + 8)));
+      (*(void (**)(unsigned int, int))(**(unsigned int **)(a1 + 8) + 292))(*(unsigned int *)(a1 + 8), 1);
+    }
       *(double *)(a1 + 68) = *(float *)(v4 + 24) + *(double *)(a1 + 68);
       if ( (double)*(int *)((*(int (**)(unsigned int))(**(unsigned int **)(a1 + 8) + 132))(*(unsigned int *)(a1 + 8)) + 1656) < *(double *)(a1 + 68) )
         *(double *)(a1 + 68) = (double)*(int *)((*(int (**)(unsigned int))(**(unsigned int **)(a1 + 8) + 132))(*(unsigned int *)(a1 + 8))
-                                              + 1656);
+              + 1656);
       if ( (*(int (**)(unsigned int))(**(unsigned int **)(a1 + 8) + 456))(*(unsigned int *)(a1 + 8)) >= *(unsigned int *)(v4 + 28) )
       {
-        *(unsigned int *)(a1 + 60) = 4;
-        int v50 = *(unsigned int *)(a1 + 20);
-        ebx82 = *(unsigned int *)(a1 + 24);
-        unsigned int * v52 = (unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(a1 + 8) + 72))( *(unsigned int *)(a1 + 8), (int *)(&v125));
-        int v53 = *v52 - v50;
-        v57 = (BuildingTypeClass *)(v52[1] - ebx82);
-        desiredFacing_4 = COERCE_DOUBLE((((unsigned long)(unsigned int)(v53)) | ((unsigned long)(unsigned int)((unsigned int)v57) << 32)));
-        double v55 = Math::Sqrt((double)((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v57 * (double)(int)v57 + (double)v53 * (double)v53)));
-        *(unsigned int *)(a1 + 84) = Math::RoundToInt(v55);
-      }
+      *(unsigned int *)(a1 + 60) = 4;
+      int v50 = *(unsigned int *)(a1 + 20);
+      ebx82 = *(unsigned int *)(a1 + 24);
+      unsigned int * v52 = (unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(a1 + 8) + 72))( *(unsigned int *)(a1 + 8), (int *)(&v125));
+      int v53 = *v52 - v50;
+      v57 = (BuildingTypeClass *)(v52[1] - ebx82);
+      desiredFacing_4 = COERCE_DOUBLE((((unsigned long)(unsigned int)(v53)) | ((unsigned long)(unsigned int)((unsigned int)v57) << 32)));
+      double v55 = Math::Sqrt((double)((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v57 * (double)(int)v57 + (double)v53 * (double)v53)));
+      *(unsigned int *)(a1 + 84) = Math::RoundToInt(v55);
+    }
       goto LABEL_111;
     case 4:
-    {  // X33-L1 case 4 pre-tail brace (C2360)
+      {  // X33-L1 case 4 pre-tail brace (C2360)
       if ( (*(int (**)(ObjectClass *))(*(unsigned int *)v1->q000 + 456))( (ObjectClass *)(v1)) <= 0 )
       {
         ((TechnoClass *)(a1 - 4))->CalculateDamage();
@@ -501,10 +501,10 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
       *(double *)(a1 + 68) = *(float *)(v4 + 24) + *(double *)(a1 + 68);
       if ( (double)*(int *)((*(int (**)(unsigned int))(**(unsigned int **)(a1 + 8) + 132))(*(unsigned int *)(a1 + 8)) + 1656) < *(double *)(a1 + 68) )
         *(double *)(a1 + 68) = (double)*(int *)((*(int (**)(unsigned int))(**(unsigned int **)(a1 + 8) + 132))(*(unsigned int *)(a1 + 8))
-                                              + 1656);
+            + 1656);
       if ( *(unsigned char *)(v4 + 44) && *(unsigned int *)(a1 + 84) )
       {
-    unsigned int v71 = 0;  /* G37 hoist */
+        unsigned int v71 = 0;  /* G37 hoist */
         ebx90 = (unsigned int *)(a1 - 4);
         if ( ComputeImpactTrajectory(a1 - 4, v4) )
           return 0;
@@ -518,11 +518,11 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         int v63 = eax91a[1];
         (*((unsigned int *)&(var84_4))) = v62 - (*((unsigned int *)&(desiredFacing_4)));
         (*(((unsigned int *)&(var84_4)) + 1)) = v63 - (*(((unsigned int *)&(desiredFacing_4)) + 1));
-  double v64; // st7
+        double v64; // st7
         v64 = Math::Sqrt((double)((double)(v63 - (*(((unsigned int *)&(desiredFacing_4)) + 1)))
-                                          * (double)(v63 - (*(((unsigned int *)&(desiredFacing_4)) + 1)))
-                                          + (double)(v62 - (*((unsigned int *)&(desiredFacing_4))))
-                                          * (double)(v62 - (*((unsigned int *)&(desiredFacing_4))))));
+        * (double)(v63 - (*(((unsigned int *)&(desiredFacing_4)) + 1)))
+        + (double)(v62 - (*((unsigned int *)&(desiredFacing_4))))
+        * (double)(v62 - (*((unsigned int *)&(desiredFacing_4))))));
         (*((unsigned int *)&(desiredFacing_4))) = Math::RoundToInt(v64);
         double v65 = (double)(*((signed int *)&(desiredFacing_4))) / (double)*(int *)(a1 + 84);
         int v66 = *(unsigned int *)(ebx90[3] + 156);
@@ -569,10 +569,10 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         (*((unsigned int *)&(desiredFacing_4))) = v78;
         (*(((unsigned int *)&(desiredFacing_4)) + 1)) = v79 - (*(((unsigned int *)&(var74_4)) + 1));
         v119 = (ObjectClass *)((char *)v82 - (char *)v121);
-  double v81; // st7
+        double v81; // st7
         v81 = Math::Sqrt((double)((double)((char *)v82 - (char *)v121) * (double)((char *)v82 - (char *)v121)
-                                          + (double)(v79 - (*(((unsigned int *)&(var74_4)) + 1))) * (double)(v79 - (*(((unsigned int *)&(var74_4)) + 1)))
-                                          + (double)v78 * (double)v78));
+        + (double)(v79 - (*(((unsigned int *)&(var74_4)) + 1))) * (double)(v79 - (*(((unsigned int *)&(var74_4)) + 1)))
+        + (double)v78 * (double)v78));
         if ( (int)Math::RoundToInt(v81) <= v74 )
           *(unsigned int *)(a1 + 60) = 5;
       }
@@ -588,7 +588,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
       desiredFacing = (ObjectClass *)(*((unsigned int *)&(desiredFacing_4)));
       ((FacingClass *)(unsigned short *)((FacingClass *)(v85 + 904)))->Update( (unsigned short *)((DirStruct *)&desiredFacing));
     }  // X33-L1 end case 4 pre-tail (LABEL_111 stays at switch scope)
-LABEL_111:
+      LABEL_111:
       if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1 + 128))(a1) )
         goto LABEL_119;
       v94 = *(IUnknown **)(a1 + 48);
@@ -599,75 +599,75 @@ LABEL_111:
       if ( *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112] - (int)v94 >= v95 )
         goto LABEL_116;
       v95 -= *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112] - (unsigned int)v94;
-LABEL_115:
+      LABEL_115:
       if ( !v95 )
       {
-LABEL_116:
-        v96 = (AnimClass *)new AnimClass;
-        if ( v96 )
-        {
-          v124 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
-          v98 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37776]))->FindIndex();
-          ((AnimClass*)(void **)v96)->ctor( *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v98), (int *)(&v124), 0, (int)((CoordStruct *)1), (void *)0x600, 0, 0);
-        }
-        edx118 = v126;
-        *(unsigned int *)(a1 + 48) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];
-        *(unsigned int *)(a1 + 52) = edx118;
-        *(unsigned int *)(a1 + 56) = 3;
+      LABEL_116:
+      v96 = (AnimClass *)new AnimClass;
+      if ( v96 )
+      {
+        v124 = *(CoordStruct *)(*(unsigned int *)(a1 + 8) + 156);
+        v98 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37776]))->FindIndex();
+        ((AnimClass*)(void **)v96)->ctor( *(CoordStruct **)(*(unsigned int *)&((unsigned int *)(stru_89E138))[90140] + 4 * (unsigned int)v98), (int *)(&v124), 0, (int)((CoordStruct *)1), (void *)0x600, 0, 0);
       }
-LABEL_119:
+      edx118 = v126;
+      *(unsigned int *)(a1 + 48) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];
+      *(unsigned int *)(a1 + 52) = edx118;
+      *(unsigned int *)(a1 + 56) = 3;
+    }
+      LABEL_119:
       if ( *(double *)(a1 + 68) > 0.0 )
       {
-        desiredFacing = (ObjectClass *)Math::RoundToInt(*(double *)(a1 + 68));
-        int v99 = *(unsigned int *)(a1 - 4 + 12) + 156;
-        desiredFacing_4 = (double)(int)desiredFacing;
-        double aP0 = *(float *)(a1 - 4 + 84);
-        int v101 = *(unsigned int *)(v99 + 4);
-        (*((unsigned int *)&(var84_4))) = *(unsigned int *)v99;
-        v103 = *(ObjectClass **)(v99 + 8);
-        (*(((unsigned int *)&(var84_4)) + 1)) = v101;
-        v121 = (IUnknown *)v103;
-        st7_120a = Math::ArcTan2((double)((IUnknown *)(*((unsigned int *)&(aP0)))));
-        (*((unsigned int *)&(var64_4))) = Math::RoundToInt(st7_120a * desiredFacing_4);
-        desiredFacing = (ObjectClass *)(*(int16_t *)((ProgressTimer*)(unsigned short *)(*(unsigned int *)(a1 - 4 + 12) + 904))->GetValue((IUnknown *)v128)
-                                      - 0x3FFF);
-        *(double *)&v128[1] = (double)(int)desiredFacing * -0.00009587672516830327;
-        var64_4 = (double)(*((signed int *)&(var64_4)));
-        var74_4 = (double)(*((signed int *)(((unsigned char *)&(var84_4)) + 4)));
-        double v104 = Math::SinCos((double)(v128[1]));
-        desiredFacing = (ObjectClass *)Math::RoundToInt(var74_4 - v104 * var64_4);
-        double v105 = Math::ArcTan2((double)(v128[1]));
-        int v106 = Math::RoundToInt(v105 * var64_4 + (double)(*((signed int *)&(var84_4))));
-        aP0_4 = *(float *)(a1 - 4 + 84);
-        v129.Y = (int)desiredFacing;
-        v129.Z = (int)v121;
-        double v107 = Math::SinCos((double)((IUnknown *)(*((unsigned int *)&(aP0_4)))));
-        v124.Z = Math::RoundToInt(v107 * desiredFacing_4 + (double)(int)v121);
-        v124.X = v106;
-        v124.Y = v129.Y;
-        (*((unsigned short *)&(v116))) = v106 / 256;
-        (*(((unsigned short *)&(v116)) + 1)) = v129.Y / 256;
-        desiredFacing = v116;
-        if ( ((LayerClass *)(&(&stru_87C374)[13428]))->CoordinatesLegal( (int16_t *)((IUnknown *)&desiredFacing)) )
-          (*(void (**)(unsigned int, CoordStruct *))(**(unsigned int **)(a1 + 8) + 436))( *(unsigned int *)(a1 + 8), (CoordStruct *)(&v124));
-v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 440))( *(unsigned int *)(a1 + 8), (IUnknown **)(v128));
+      desiredFacing = (ObjectClass *)Math::RoundToInt(*(double *)(a1 + 68));
+      int v99 = *(unsigned int *)(a1 - 4 + 12) + 156;
+      desiredFacing_4 = (double)(int)desiredFacing;
+      double aP0 = *(float *)(a1 - 4 + 84);
+      int v101 = *(unsigned int *)(v99 + 4);
+      (*((unsigned int *)&(var84_4))) = *(unsigned int *)v99;
+      v103 = *(ObjectClass **)(v99 + 8);
+      (*(((unsigned int *)&(var84_4)) + 1)) = v101;
+      v121 = (IUnknown *)v103;
+      st7_120a = Math::ArcTan2((double)((IUnknown *)(*((unsigned int *)&(aP0)))));
+      (*((unsigned int *)&(var64_4))) = Math::RoundToInt(st7_120a * desiredFacing_4);
+      desiredFacing = (ObjectClass *)(*(int16_t *)((ProgressTimer*)(unsigned short *)(*(unsigned int *)(a1 - 4 + 12) + 904))->GetValue((IUnknown *)v128)
+        - 0x3FFF);
+      *(double *)&v128[1] = (double)(int)desiredFacing * -0.00009587672516830327;
+      var64_4 = (double)(*((signed int *)&(var64_4)));
+      var74_4 = (double)(*((signed int *)(((unsigned char *)&(var84_4)) + 4)));
+      double v104 = Math::SinCos((double)(v128[1]));
+      desiredFacing = (ObjectClass *)Math::RoundToInt(var74_4 - v104 * var64_4);
+      double v105 = Math::ArcTan2((double)(v128[1]));
+      int v106 = Math::RoundToInt(v105 * var64_4 + (double)(*((signed int *)&(var84_4))));
+      aP0_4 = *(float *)(a1 - 4 + 84);
+      v129.Y = (int)desiredFacing;
+      v129.Z = (int)v121;
+      double v107 = Math::SinCos((double)((IUnknown *)(*((unsigned int *)&(aP0_4)))));
+      v124.Z = Math::RoundToInt(v107 * desiredFacing_4 + (double)(int)v121);
+      v124.X = v106;
+      v124.Y = v129.Y;
+      (*((unsigned short *)&(v116))) = v106 / 256;
+      (*(((unsigned short *)&(v116)) + 1)) = v129.Y / 256;
+      desiredFacing = v116;
+      if ( ((LayerClass *)(&(&stru_87C374)[13428]))->CoordinatesLegal( (int16_t *)((IUnknown *)&desiredFacing)) )
+        (*(void (**)(unsigned int, CoordStruct *))(**(unsigned int **)(a1 + 8) + 436))( *(unsigned int *)(a1 + 8), (CoordStruct *)(&v124));
+      v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 440))( *(unsigned int *)(a1 + 8), (IUnknown **)(v128));
 
 
-        v111 = *(ObjectClass **)(a1 + 8);
-        v110 = *v108;
-        desiredFacing = (ObjectClass *)v110;
-        if ( (unsigned short)v110 != *(unsigned short *)v111[8].q000 || (*(((unsigned short *)&(desiredFacing)) + 1)) != *(unsigned short *)&v111[8].q000[2] )
-        {
-    unsigned int v90 = 0;  /* G37 hoist */
-          if ( v111->isAliveFlag )
-                        ((int)(&((unsigned int *)(stru_87C374))[46356]))->ToGridIndex((VectorClass_flat *)v111, *(VectorClass_flat **)v111[8].q000, v110);
-        }
-        if ( *(int *)(*(unsigned int *)(a1 + 8) + 108) <= 0 )
-          ((TechnoClass *)(a1 - 4))->CalculateDamage();
+      v111 = *(ObjectClass **)(a1 + 8);
+      v110 = *v108;
+      desiredFacing = (ObjectClass *)v110;
+      if ( (unsigned short)v110 != *(unsigned short *)v111[8].q000 || (*(((unsigned short *)&(desiredFacing)) + 1)) != *(unsigned short *)&v111[8].q000[2] )
+      {
+        unsigned int v90 = 0;  /* G37 hoist */
+        if ( v111->isAliveFlag )
+          ((int)(&((unsigned int *)(stru_87C374))[46356]))->ToGridIndex((VectorClass_flat *)v111, *(VectorClass_flat **)v111[8].q000, v110);
       }
+      if ( *(int *)(*(unsigned int *)(a1 + 8) + 108) <= 0 )
+        ((TechnoClass *)(a1 - 4))->CalculateDamage();
+    }
       return (*(char (**)(int))(*(unsigned int *)a1 + 16))(a1);
     case 5:
-    {  // X33-L1 case 5 body brace (C2360)
+      {  // X33-L1 case 5 body brace (C2360)
       unsigned int * v86 = (unsigned int *)(a1 - 4);
       if ( ComputeImpactTrajectory(a1 - 4, v4) )
         return 0;
@@ -686,7 +686,7 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
         v92 = -v91;
       if ( v92 <= *&v113->uniqueId )
       {
-    unsigned int v93 = 0;  /* G37 hoist */
+        unsigned int v93 = 0;  /* G37 hoist */
         *(float *)(a1 + 80) = *(float *)(a1 + 80) + v91;
       }
       else
@@ -700,7 +700,7 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
       goto LABEL_111;
     }  // X33-L1 end case 5
     case 6:
-    {  // X33-L1 case 6 body brace (C2360/C2361)
+      {  // X33-L1 case 6 body brace (C2360/C2361)
       objectTypeFlags = v1[4].objectTypeFlags;
       bool v19 = objectTypeFlags && ((VeterancyStruct *)(float *)(objectTypeFlags + 336))->IsElite();
       v21 = (IUnknown *)(a1 + 48);
@@ -713,10 +713,10 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
       if ( *&HouseClass_Player->u32_2C0E0 - edx34 >= v23 )
         goto LABEL_38;
       v23 -= *&HouseClass_Player->u32_2C0E0 - edx34;
-LABEL_37:
+      LABEL_37:
       if ( !v23 )
       {
-LABEL_38:
+        LABEL_38:
         v25 = (AnimClass *)new AnimClass;
         if ( v25 )
         {
@@ -760,16 +760,16 @@ LABEL_38:
       }
       else
       {
-LABEL_47:
+        LABEL_47:
         *(float *)(a1 + 80) = *&v113->vtable4 * 1.570796326794897;
-  unsigned short *v32; // eax
-v32 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 756))( *(unsigned int *)(a1 + 8), (IUnknown **)(&v128[1]));
+        unsigned short *v32; // eax
+        v32 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 756))( *(unsigned int *)(a1 + 8), (IUnknown **)(&v128[1]));
 
 
         if ( *v32 == word_B04E18 && v32[1] == word_B04E1A )
         {
           v35 = *(ObjectClass **)(a1 + 8);
-  int v130[3]; // [esp+9Ch] [ebp-24h] BYREF
+          int v130[3]; // [esp+9Ch] [ebp-24h] BYREF
           v130[0] = v35->location[0];
           v130[1] = v35->location[1];
           v130[2] = v35->location[2];
@@ -859,7 +859,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
     qword_A8DBB0 = *&v5->__pad_000; /*0x663ec5*/
     dword_A8DBB8 = v5->q008; /*0x663ed6*/
     dword_A8DBBC = 0; /*0x663edc*/
-  LABEL_10:
+    LABEL_10:
     Network::FormatAddress((Network *)&qword_A8DBB0, 0); /*0x663fad*/
     Debug::Log(); /*0x663fbf*/
   }
@@ -934,7 +934,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
 }
 {
 
-    return dword_7F099C[4 * (int)this->AbstractClass];
+  return dword_7F099C[4 * (int)this->AbstractClass];
 
 } // namespace gamemd
 
@@ -960,15 +960,13 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
 {
 
 
-  int v2; // ebp
-  v2 = 32; /*0x6616b8*/
+  int v2 = 32; // ebp /*0x6616b8*/
   this->M4 = 0; /*0x6616bd*/
   this->M8 = 0; /*0x6616c0*/
   /* X11: vtable install elided (implicit via Straw virtuals 0x6616c3) */
   this->M12 = 0; /*0x6616c9*/
   this->M16 = 0; /*0x6616cc*/
-  ObjectClass *v3; // ebx
-  v3 = &this->ptr_14; /*0x6616cf*/
+  ObjectClass *v3 = &this->ptr_14; // ebx /*0x6616cf*/
   do /*0x6616df*/
   {
     sub_65C890(v3, 0, 0); /*0x6616d6*/
@@ -999,41 +997,39 @@ int E4Recv_661960::sub_661960(short a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661995*/
     {
-  unsigned char *v3; // eax
+      unsigned char *v3; // eax
       v3 = &this->M12 + (unsigned __int8)((int)this->M12 / 8); /*0x661991*/
       *v3 ^= 1 << ((int)this->M12 & 7); /*0x66199e*/
     }
-  char *v4; // eax
+    char *v4; // eax
     v4 = (char *)this->M12 + 1; /*0x6619a4*/
     this->M12 = v4; /*0x6619a6*/
     if ( v4 == 2048 ) /*0x6619ae*/
     {
-  unsigned int v5; // esi
-      v5 = 0; /*0x6619b4*/
+      unsigned int v5 = 0; // esi /*0x6619b4*/
       v11.state = 0; /*0x6619b9*/
-  int v17; // [esp+54h] [ebp-48h]
+      int v17; // [esp+54h] [ebp-48h]
       v17 = 0; /*0x6619be*/
-  int v18; // [esp+58h] [ebp-44h]
+      int v18; // [esp+58h] [ebp-44h]
       v18 = 0; /*0x6619c2*/
-  int v12; // [esp+40h] [ebp-5Ch]
+      int v12; // [esp+40h] [ebp-5Ch]
       v12 = 1732584193; /*0x6619c6*/
-  int v13; // [esp+44h] [ebp-58h]
+      int v13; // [esp+44h] [ebp-58h]
       v13 = -271733879; /*0x6619ce*/
-  int v14; // [esp+48h] [ebp-54h]
+      int v14; // [esp+48h] [ebp-54h]
       v14 = -1732584194; /*0x6619d6*/
-  int v15; // [esp+4Ch] [ebp-50h]
+      int v15; // [esp+4Ch] [ebp-50h]
       v15 = 271733878; /*0x6619de*/
-  int v16; // [esp+50h] [ebp-4Ch]
+      int v16; // [esp+50h] [ebp-4Ch]
       v16 = -1009589776; /*0x6619e6*/
-  int *p_abstractFlags; // ebp
+      int *p_abstractFlags; // ebp
       p_abstractFlags = &this->?; /*0x6619ee*/
       do /*0x661a35*/
       {
         SHA1::Process(&v11, (int)&this->?, 256); /*0x6619fa*/
-  char Src[20]; // [esp+14h] [ebp-88h] BYREF
+        char Src[20]; // [esp+14h] [ebp-88h] BYREF
         SHA1::Compute(&v11, Src); /*0x661a08*/
-  size_t v7; // eax
-        v7 = 256 - v5; /*0x661a12*/
+        size_t v7 = 256 - v5; // eax /*0x661a12*/
         if ( 256 - v5 > 0x14 ) /*0x661a17*/
           v7 = 20; /*0x661a19*/
         memcpy(p_abstractFlags, Src, v7); /*0x661a25*/
@@ -1066,41 +1062,39 @@ int E4Recv_661A60::sub_661A60(int a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661a95*/
     {
-  unsigned char *v3; // eax
+      unsigned char *v3; // eax
       v3 = &this->M12 + (unsigned __int8)((int)this->M12 / 8); /*0x661a91*/
       *v3 ^= 1 << ((int)this->M12 & 7); /*0x661a9e*/
     }
-  char *v4; // eax
+    char *v4; // eax
     v4 = (char *)this->M12 + 1; /*0x661aa4*/
     this->M12 = v4; /*0x661aa6*/
     if ( v4 == 2048 ) /*0x661aae*/
     {
-  unsigned int v5; // esi
-      v5 = 0; /*0x661ab4*/
+      unsigned int v5 = 0; // esi /*0x661ab4*/
       v12.state = 0; /*0x661ab9*/
-  int v18; // [esp+54h] [ebp-48h]
+      int v18; // [esp+54h] [ebp-48h]
       v18 = 0; /*0x661abe*/
-  int v19; // [esp+58h] [ebp-44h]
+      int v19; // [esp+58h] [ebp-44h]
       v19 = 0; /*0x661ac2*/
-  int v13; // [esp+40h] [ebp-5Ch]
+      int v13; // [esp+40h] [ebp-5Ch]
       v13 = 1732584193; /*0x661ac6*/
-  int v14; // [esp+44h] [ebp-58h]
+      int v14; // [esp+44h] [ebp-58h]
       v14 = -271733879; /*0x661ace*/
-  int v15; // [esp+48h] [ebp-54h]
+      int v15; // [esp+48h] [ebp-54h]
       v15 = -1732584194; /*0x661ad6*/
-  int v16; // [esp+4Ch] [ebp-50h]
+      int v16; // [esp+4Ch] [ebp-50h]
       v16 = 271733878; /*0x661ade*/
-  int v17; // [esp+50h] [ebp-4Ch]
+      int v17; // [esp+50h] [ebp-4Ch]
       v17 = -1009589776; /*0x661ae6*/
-  int *p_abstractFlags; // ebp
+      int *p_abstractFlags; // ebp
       p_abstractFlags = &this->?; /*0x661aee*/
       do /*0x661b35*/
       {
         SHA1::Process(&v12, (int)&this->?, 256); /*0x661afa*/
-  char Src[20]; // [esp+14h] [ebp-88h] BYREF
+        char Src[20]; // [esp+14h] [ebp-88h] BYREF
         SHA1::Compute(&v12, Src); /*0x661b08*/
-  size_t v7; // eax
-        v7 = 256 - v5; /*0x661b12*/
+        size_t v7 = 256 - v5; // eax /*0x661b12*/
         if ( 256 - v5 > 0x14 ) /*0x661b17*/
           v7 = 20; /*0x661b19*/
         memcpy(p_abstractFlags, Src, v7); /*0x661b25*/
@@ -1145,17 +1139,15 @@ void * E4Recv_661B70::sub_661B70()
   v11 = 271733878; /*0x661ba2*/
   int v12; // [esp+48h] [ebp-4Ch]
   v12 = -1009589776; /*0x661baa*/
-  unsigned int v2; // esi
-  v2 = 0; /*0x661bb2*/
+  unsigned int v2 = 0; // esi /*0x661bb2*/
   int *v3; // edi
   v3 = &this->?; /*0x661bb4*/
   do /*0x661bfb*/
   {
     SHA1::Process(&v7, (int)p_abstractFlags, 256); /*0x661bc0*/
-  char Src[20]; // [esp+Ch] [ebp-88h] BYREF
+    char Src[20]; // [esp+Ch] [ebp-88h] BYREF
     SHA1::Compute(&v7, Src); /*0x661bce*/
-  size_t v4; // eax
-    v4 = 256 - v2; /*0x661bd8*/
+    size_t v4 = 256 - v2; // eax /*0x661bd8*/
     if ( 256 - v2 > 0x14 ) /*0x661bdd*/
       v4 = 20; /*0x661bdf*/
     result = memcpy(v3, Src, v4); /*0x661beb*/
@@ -1341,7 +1333,7 @@ double E4Recv_662240::sub_662240()
       fstp [esp+18h+var_18]; double
       fstp st
     }
-  double v6; // [esp+8h] [ebp-18h]
+    double v6; // [esp+8h] [ebp-18h]
     Math::ArcTan(v6); /*0x6622a7*/
   }
   double result; // st7
@@ -1526,8 +1518,7 @@ void sub_663850()
       v0 = unk_B052E0 == 0; /*0x663872*/
       if ( unk_B052E0 > 0 ) /*0x663874*/
       {
-  int v1; // eax
-        v1 = 0; /*0x663877*/
+        int v1 = 0; // eax /*0x663877*/
         v0 = unk_B052E0-- == 1; /*0x663879*/
         if ( unk_B052E0 > 0 ) /*0x663881*/
         {
@@ -1582,14 +1573,12 @@ void E4Recv_663960::sub_663960()
   while ( this->Count ) /*0x663966*/
   {
     __3_YAXPAX_Z(*(void **)this->Items); /*0x663971*/
-  int Count; // eax
+    int Count; // eax
     Count = this->Count; /*0x663976*/
     if ( Count > 0 ) /*0x66397e*/
     {
-  int v3; // ecx
-      v3 = Count - 1; /*0x663980*/
-  int v4; // eax
-      v4 = 0; /*0x663983*/
+      int v3 = Count - 1; // ecx /*0x663980*/
+      int v4 = 0; // eax /*0x663983*/
       for ( this->Count = v3; v4 < this->Count; *(unsigned int *)(this->Items + 4 * v4 - 4) = *(unsigned int *)(this->Items + 4 * v4) ) /*0x66398a*/
         ++v4; /*0x66398f*/
     }
@@ -1620,19 +1609,15 @@ char E4Recv_663CD0::sub_663CD0(unsigned char * a2)
     return -1; /*0x663ce0*/
   if ( Network::IsBroadcastAddr((Network *)a2) ) /*0x663ceb*/
     return -1; /*0x663cf5*/
-  char v5; // bl
-  v5 = 0; /*0x663d0c*/
+  char v5 = 0; // bl /*0x663d0c*/
   int v10; // [esp+8h] [ebp-8h] BYREF
   Network::CopyAddress(v2, &a2, (int)&v10); /*0x663d0e*/
-  int uniqueId; // ecx
-  uniqueId = this->M16; /*0x663d13*/
-  int v7; // eax
-  v7 = 0; /*0x663d16*/
+  int uniqueId = this->M16; // ecx /*0x663d13*/
+  int v7 = 0; // eax /*0x663d16*/
   if ( uniqueId > 0 ) /*0x663d1a*/
   {
-  unsigned int *vtable1; // esi
-    vtable1 = this->M4; /*0x663d1c*/
-  unsigned int *i; // edx
+    unsigned int *vtable1 = this->M4; // esi /*0x663d1c*/
+    unsigned int *i; // edx
     for ( i = vtable1; v10 != *(unsigned int *)(*i + 33); ++i ) /*0x663d23*/
     {
       if ( ++v7 >= uniqueId ) /*0x663d32*/

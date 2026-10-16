@@ -55,7 +55,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
          dword_A83D00 + dword_A83D0C,
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = dword_A83D08++; /*0x46cbd9*/
     *((unsigned int *)dword_A83CFC + v3) = (unsigned int)(this); /*0x46cbe8*/
   }
@@ -98,7 +98,7 @@ int CampaignClass::LoadFromINIList(void *a1)
     }
     if ( v5 == -1 ) /*0x46ce91*/
     {
-LABEL_7:
+      LABEL_7:
       v6 = (int)(__2_YAPAXI_Z(0x3A0u)); /*0x46ce97*/
       if ( v6 ) /*0x46cea8*/
       {
@@ -280,8 +280,8 @@ AbstractClass * * CampaignClass::SaveProgress()
   INIClass::SetInt(v28.INIClass, (unsigned __int8 *)Block, g_INI_Key_CurrentMap, this->scenario[4], 0); /*0x49c841*/
   INIClass::SetInt(v28.INIClass, (unsigned __int8 *)Block, aCampaigntype, this->scenario[7], 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
-        j < *(char *)(v27 + 8);
-        INIClass::SetString(v28.INIClass, (unsigned __int8 *)Block, Buffer, *(char **)(this->scenario[5] + 4 * j++)) )
+  j < *(char *)(v27 + 8);
+  INIClass::SetString(v28.INIClass, (unsigned __int8 *)Block, Buffer, *(char **)(this->scenario[5] + 4 * j++)) )
   {
     sprintf(Buffer, "Map%d", j + 1); /*0x49c87d*/
   }
@@ -310,7 +310,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     v26 = SessionClass::GetPlayerColor((SessionClass *)dword_A8DA78[v23]); /*0x49c949*/
     INIClass::SetInt(v28.INIClass, (unsigned __int8 *)Block, aColor2, v26, 0); /*0x49c95d*/
   }
-LABEL_47:
+  LABEL_47:
   INIClass::SetInt(v28.INIClass, (unsigned __int8 *)Block, g_INI_Key_Time, this->scenario[16], 0); /*0x49c962*/
   INIClass::SetInt(v28.INIClass, (unsigned __int8 *)Block, aKills1, this->scenario[8], 0); /*0x49c98f*/
   INIClass::SetInt(v28.INIClass, (unsigned __int8 *)Block, aKills2, this->scenario[9], 0); /*0x49c9a8*/

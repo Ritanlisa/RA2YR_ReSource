@@ -43,7 +43,7 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
     v8 = v6 - a2; /*0x5862e7*/
     if ( v8 <= v7 ) /*0x5862eb*/
       break; /*0x5862eb*/
-  LABEL_9:
+    LABEL_9:
     if ( ++v5 > a2 + aP0[1] ) /*0x58633d*/
       return 0; /*0x58633d*/
   }

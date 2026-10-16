@@ -12,7 +12,7 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int * CoordStruct::Set2(void* aP1, AbstractClass * aP2, void *a3, void *a4, void *a5)
 {
-
+  
   int v4; // edx
   v4 = *(unsigned int *)(aP1) << 8; /*0x642756*/
   this->Y = (aP1[(unsigned int)(1])<< 8) + 128; /*0x642759*/

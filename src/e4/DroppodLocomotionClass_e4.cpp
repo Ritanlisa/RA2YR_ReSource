@@ -79,27 +79,25 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
   v7 = *(double *)v34 - v1 * v33; /*0x4b5c68*/
   int v8; // eax
   (*((unsigned short *)&(v8))) = Math::RoundToInt(v7); /*0x4b5c6c*/
-  FootClass *v9; // ecx
-  v9 = a1->Owner; /*0x4b5c71*/
+  FootClass *v9 = a1->Owner; // ecx /*0x4b5c71*/
   v38 = v8; /*0x4b5c74*/
   int v10; // eax
   v10 = (*((int (**)(FootClass *))v9->vfptr + 114))(v9); /*0x4b5c7a*/
-  FootClass *v11; // esi
-  v11 = a1->Owner; /*0x4b5c80*/
+  FootClass *v11 = a1->Owner; // esi /*0x4b5c80*/
   if ( v10 > 0 ) /*0x4b5c87*/
   {
     (*((void (**)(FootClass *, int *))v11->vfptr + 109))(v11, &v36); /*0x4b5eaa*/
-  unsigned int *v20; // esi
+    unsigned int *v20; // esi
     v20 = *(unsigned int **)(*(unsigned int *)&g_RulesClass_Instance + 1444); /*0x4b5eb6*/
     if ( v20 ) /*0x4b5ebe*/
     {
       if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % 6) ) /*0x4b5ecf*/
       {
-  AnimClass *v21; // ebp
+        AnimClass *v21; // ebp
         v21 = (AnimClass *)operator new(0x1C8u); /*0x4b5edf*/
         if ( v21 ) /*0x4b5ee6*/
         {
-  int Index; // eax
+          int Index; // eax
           Index = (&stru_820320)->FindIndex(); /*0x4b5eed*/
           ((AnimClass *)(v21))->ctor(*(void **)(FootClass_Array.primaryFacing[3] + 4 * Index), v39, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
         }
@@ -107,31 +105,31 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
       if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % 3) ) /*0x4b5f1f*/
       {
         v33 = 0.0; /*0x4b5f39*/
-  CellClass *v23; // eax
+        CellClass *v23; // eax
         v23 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &a1->IsOutOfMap)); /*0x4b5f41*/
-  int ClosestObjectCell; // eax
+        int ClosestObjectCell; // eax
         ClosestObjectCell = ((Object *)((Object *)v23))->FindClosestObjectCell((unsigned int *)(&v33), 0, 0); /*0x4b5f48*/
         if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->Owner->owner, ClosestObjectCell) ) /*0x4b5f57*/
         {
-  int *v25; // eax
+          int *v25; // eax
           v25 = RandomCoordScatter((int *)&v33, &a1->IsOutOfMap, v7, 85, 0); /*0x4b5f6d*/
-  unsigned int v26; // ebp
+          unsigned int v26; // ebp
           v26 = v20[51]; /*0x4b5f74*/
           v34[0] = *v25; /*0x4b5f7a*/
           v34[1] = v25->vtable2; /*0x4b5f86*/
-  int v35; // [esp+24h] [ebp-1Ch]
+          int v35; // [esp+24h] [ebp-1Ch]
           v35 = v25->vtable3; /*0x4b5f8d*/
-  unsigned int v27; // eax
+          unsigned int v27; // eax
           v27 = Random::State(&Randomizer_Global); /*0x4b5f91*/
           StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)),(unsigned int *)(&v36), 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v34, 2 * v20[41], &a1->Owner->vfptr, v20[43], 1, 0); /*0x4b5fc7*/
-  AnimClass *v28; // edi
+          AnimClass *v28; // edi
           v28 = (AnimClass *)operator new(0x1C8u); /*0x4b5fd6*/
           if ( v28 ) /*0x4b5fdd*/
           {
-  void *v32; // [esp-8h] [ebp-48h]
+            void *v32; // [esp-8h] [ebp-48h]
             v32 = (void *)Return::HRESULT_Fail((gamemd::BulletClass *)(v34[0]), v34[1], v35); /*0x4b5ffe*/
-  void *WarheadVersusMultiplier; // eax
+            void *WarheadVersusMultiplier; // eax
             WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(2 * v20[41], v20[43], 0,(gamemd::BulletClass *)(v34)); /*0x4b6020*/
             AnimClass::ctor(v28,(int *)(WarheadVersusMultiplier), v34, 0, 1, (void *)0x2600, v32, 0); /*0x4b6028*/
           }
@@ -147,10 +145,10 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
     v37 = v11->location[1]; /*0x4b5cab*/
     v38 = v11->location[2]; /*0x4b5cb2*/
     (*((void (**)(FootClass *))v11->vfptr + 53))(v11); /*0x4b5cba*/
-  char *v12; // ebx
+    char *v12; // ebx
     v12 = (char *)a1 - 4; /*0x4b5cc3*/
     (*(void (__stdcall **)(char *))(*((unsigned int *)a1 - 1) + 4))((char *)a1 - 4); /*0x4b5cc7*/
-  int *locomotor; // ebp
+    int *locomotor; // ebp
     locomotor = a1->Owner->locomotor; /*0x4b5ccd*/
     if ( *locomotor ) /*0x4b5cd3*/
       (*(void (__stdcall **)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4b5cdd*/
@@ -158,23 +156,23 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
     (*(void (__stdcall **)(int *, int *))(a1->RefCount + 16))(&a1->RefCount, locomotor); /*0x4b5cee*/
     if ( (*((uint8_t (**)(FootClass *, int *, unsigned int))v11->vfptr + 54))(v11, &v36, 0) ) /*0x4b5cfc*/
     {
-  AnimClass *v17; // eax
+      AnimClass *v17; // eax
       v17 = (AnimClass *)operator new(0x1C8u); /*0x4b5dae*/
       if ( v17 ) /*0x4b5db8*/
-                AnimClass::ctor( /*0x4b5dd8*/           v17,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 76)),           &v36,           0,           1,           (void *)0x600,           0,           0);
+        AnimClass::ctor( /*0x4b5dd8*/           v17,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 76)),           &v36,           0,           1,           (void *)0x600,           0,           0);
       if ( a1->q018 ) /*0x4b5ddd*/
       {
-  AnimClass *v18; // eax
+        AnimClass *v18; // eax
         v18 = (AnimClass *)operator new(0x1C8u); /*0x4b5de9*/
         if ( v18 ) /*0x4b5df3*/
-                    AnimClass::ctor( /*0x4b5e16*/             v18,(int *)(*(void **)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 264) + 4)),             &v36,             0,             1,             (void *)0x600,             0,             0);
+          AnimClass::ctor( /*0x4b5e16*/             v18,(int *)(*(void **)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 264) + 4)),             &v36,             0,             1,             (void *)0x600,             0,             0);
       }
       else
       {
-  AnimClass *v19; // eax
+        AnimClass *v19; // eax
         v19 = (AnimClass *)operator new(0x1C8u); /*0x4b5e18*/
         if ( v19 ) /*0x4b5e22*/
-                    AnimClass::ctor( /*0x4b5e47*/             v19,(int *)(**(void ***)(*(unsigned int *)&g_RulesClass_Instance + 264)),             &v36,             0,             1,             (void *)0x600,             0,             0);
+          AnimClass::ctor( /*0x4b5e47*/             v19,(int *)(**(void ***)(*(unsigned int *)&g_RulesClass_Instance + 264)),             &v36,             0,             1,             (void *)0x600,             0,             0);
       }
       (*((void (**)(FootClass *, int))v11->vfptr + 73))(v11, 1); /*0x4b5e52*/
       (*((void (**)(FootClass *, unsigned int))v11->vfptr + 115))(v11, 0); /*0x4b5e5e*/
@@ -191,13 +189,13 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
         *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),
         1,
         0);
-  AnimClass *v14; // esi
+      AnimClass *v14; // esi
       v14 = (AnimClass *)operator new(0x1C8u); /*0x4b5d37*/
       if ( v14 ) /*0x4b5d3e*/
       {
-  void *v31; // [esp-8h] [ebp-48h]
+        void *v31; // [esp-8h] [ebp-48h]
         v31 = (void *)Return::HRESULT_Fail((gamemd::BulletClass *)(v36), v37, v38); /*0x4b5d64*/
-  void *v15; // eax
+        void *v15; // eax
         v15 = (void *)GetWarheadVersusMultiplier( /*0x4b5d8a*/
                         100,
                         *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),
@@ -230,8 +228,7 @@ HRESULT DropPodLocomotionClass::BeginMove(DropPodLocomotionClass * a1, int * pSt
 {
 
 
-  int *v2; // edi
-  v2 = pStm; /*0x4b6247*/
+  int *v2 = pStm; // edi /*0x4b6247*/
   int v3; // ebx
   v3 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm); /*0x4b6252*/
   if ( v3 < 0 ) /*0x4b6256*/
@@ -264,31 +261,30 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
 
   IStream *v3; // esi
   v3 = (IStream *)pPStm; /*0x4b62c5*/
-  DropPodLocomotionClass *v4; // edi
-  v4 = a1; /*0x4b62ca*/
+  DropPodLocomotionClass *v4 = a1; // edi /*0x4b62ca*/
   int result; // eax
   result = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x4b62d1*/
   if ( result >= 0 ) /*0x4b62d8*/
   {
     if ( v4->Piggybackee ) /*0x4b62de*/
     {
-  int v6; // ecx
+      int v6; // ecx
       v6 = *(unsigned int *)v3->IStream_field_00; /*0x4b62e9*/
       (*((unsigned char *)&(a3))) = 1; /*0x4b62f5*/
       (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4b62fa*/
-  ILocomotion *Piggybackee; // eax
+      ILocomotion *Piggybackee; // eax
       Piggybackee = v4->Piggybackee; /*0x4b62fd*/
       pPStm = 0; /*0x4b6300*/
       if ( Piggybackee ) /*0x4b630a*/
       {
-  int v8; // edi
+        int v8; // edi
         v8 = (**(int (__stdcall ***)(ILocomotion *, void *, DropPodLocomotionClass **))Piggybackee)( /*0x4b631b*/
                Piggybackee,
                &unk_820270,
                &a1);
         if ( v8 >= 0 ) /*0x4b631f*/
         {
-  int *v9; // ebx
+          int *v9; // ebx
           v9 = (int *)a1; /*0x4b6339*/
           if ( pPStm ) /*0x4b633f*/
             pPStm->Release(); /*0x4b6344*/
@@ -302,7 +298,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
         if ( v8 < 0 && v8 != -2147467262 ) /*0x4b6356*/
           sub_7DC720(v8); /*0x4b6359*/
       }
-  HRESULT v10; // esi
+      HRESULT v10; // esi
       v10 = OleSaveToStream((LPPERSISTSTREAM)pPStm, v3); /*0x4b636a*/
       if ( pPStm ) /*0x4b6372*/
         pPStm->Release(); /*0x4b6377*/
@@ -310,7 +306,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
     }
     else
     {
-  int v11; // edx
+      int v11; // edx
       v11 = *(unsigned int *)v3->IStream_field_00; /*0x4b6381*/
       (*((unsigned char *)&(a3))) = 0; /*0x4b638d*/
       return (*(int (__stdcall **)(IStream *, int *, int, unsigned int))(v11 + 16))(v3, &a3, 1, 0); /*0x4b6392*/

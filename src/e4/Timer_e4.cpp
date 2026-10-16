@@ -33,11 +33,11 @@ int Timer::StartDouble(double a2)
     LOBYTE(this->m_18) = 1; /*0x4a525e*/
     *(double *)this->q000 = a2 * 900.0; /*0x4a5262*/
     LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
-  int v4; // ecx
+    int v4; // ecx
     v4 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4a5269*/
     BYTE1(this->m_18) = 0; /*0x4a5272*/
     *&this->ptr_8 = (gamemd::AbstractClass *)(v4); /*0x4a5276*/
-  int v5; // [esp+8h] [ebp-Ch]
+    int v5; // [esp+8h] [ebp-Ch]
     *&this->u32_C = v5; /*0x4a527c*/
     *&this->u32_10 = result; /*0x4a527f*/
     *&this->u32_14 = result; /*0x4a5282*/
@@ -63,8 +63,7 @@ int Timer::GetRemainingMs(void *a1)
 {
 
 
-  int v1; // edi
-  v1 = *&this->ptr_8; /*0x4f1b26*/
+  int v1 = *&this->ptr_8; // edi /*0x4f1b26*/
   if ( *(unsigned int *)this->q000 == -1 ) /*0x4f1b2c*/
     return *&this->ptr_8; /*0x4f1b4c*/
   int v2; // ecx
@@ -85,8 +84,7 @@ DWORD * Timer::PumpMessages(void *a1)
 
   if ( (this->u32_318 + 1) % 256 != this->u32_314 ) /*0x54f73e*/
     MessageLoop(); /*0x54f740*/
-  int v2; // eax
-  v2 = this->u32_318; /*0x54f745*/
+  int v2 = this->u32_318; // eax /*0x54f745*/
   this->u32_314 = v2; /*0x54f74b*/
   if ( (v2 + 1) % 256 == v2 ) /*0x54f766*/
   {
@@ -157,8 +155,7 @@ int Timer::UpdateDelta()
   DWORD Ticks; // eax
   Ticks = TimerGetTicks(); /*0x6c8825*/
   byte_B0BDB4 = 0; /*0x6c8830*/
-  int result; // eax
-  result = Ticks - dword_B0BD28; /*0x6c8837*/
+  int result = Ticks - dword_B0BD28; // eax /*0x6c8837*/
   dword_B0BD48 = result; /*0x6c8839*/
   return result; /*0x6c883e*/
 }

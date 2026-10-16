@@ -23,18 +23,17 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   this->q00C = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
-  int v3; // esi
-    v3 = this->field_1C; /*0x7718af*/
+    int v3 = this->field_1C; // esi /*0x7718af*/
     if ( *(int *)(v3 + 976) > 0 ) /*0x7718ba*/
     {
       StopThemeClass(1); /*0x7718be*/
       (*(void (**)(int))(*(unsigned int *)(v3 + 960) + 12))(v3 + 960); /*0x7718cf*/
     }
     Ticks = Timer::GetTicks(); /*0x7718d6*/
-  int *v4; // esi
+    int *v4; // esi
     v4 = (int *)(v3 + 940); /*0x7718e1*/
     *v4 = Ticks; /*0x7718e7*/
-  int v6; // [esp+4h] [ebp-8h]
+    int v6; // [esp+4h] [ebp-8h]
     v4[1] = v6; /*0x7718e9*/
     v4[2] = 0; /*0x7718ec*/
   }
@@ -48,12 +47,10 @@ signed int Territory_WorldDominationTour_8::Release()
 {
 
 
-  signed int result; // eax
-  result = *&this->Ticks; /*0x771903*/
+  signed int result = *&this->Ticks; // eax /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
-  int v3; // edi
-    v3 = this->field_18; /*0x77190c*/
+    int v3 = this->field_18; // edi /*0x77190c*/
     result = Timer::GetTicks() - *&this->Ticks; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {

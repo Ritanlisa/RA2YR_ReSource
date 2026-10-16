@@ -13,7 +13,7 @@
 namespace gamemd {  // G42.18 ns repair
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
 {
-
+  
   aP5 = aP5; /*0x767824*/
   arg8 = arg8; /*0x76782b*/
   this->u32_8 = arg0; /*0x76782f*/

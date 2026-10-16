@@ -124,12 +124,12 @@ void * Multiplayer::FindStartPositions(void *a1)
       goto LABEL_24; /*0x688491*/
     if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(&v25, v4 + v25.Capacity, 0) ) /*0x6884a0*/
     {
-LABEL_22:
+      LABEL_22:
       v13 = v26++; /*0x6884ab*/
       *((unsigned int *)v25.Items + v13) = v12; /*0x6884b6*/
     }
     v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6884b9*/
-LABEL_24:
+    LABEL_24:
     v23 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x6884bf*/
     Debug::Log(); /*0x6884d9*/
     v4 = v27; /*0x6884de*/
@@ -145,7 +145,7 @@ LABEL_24:
       {
         v14 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)&g_AircraftTrackerState - 10); /*0x688551*/
         LOWORD(v22) = *(unsigned short *)&DataGlobal_87F90C /*0x688573*/
-                    + Random::Range(
+        + Random::Range(
                         (Random *)&dword_A8B230[14].NeedsSaveOrLink,
                         10,
                         *(unsigned int *)&g_AircraftTrackerPool - 10);
@@ -216,8 +216,7 @@ unsigned int * Multiplayer::CopyDataArray(unsigned int *aP1, void *a2)
   if ( this == (Multiplayer *)aP1 ) /*0x68c2bb*/
     return (unsigned int *)(this); /*0x68c2bb*/
   (*(void (**)(Multiplayer *))(*(unsigned int *)this->q025 + 11)))(this); /*0x68c2bf*/
-  int v3; // edi
-  v3 = aP1->u32_8; /*0x68c2c2*/
+  int v3 = aP1->u32_8; // edi /*0x68c2c2*/
   this->u32_8 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
@@ -232,10 +231,8 @@ unsigned int * Multiplayer::CopyDataArray(unsigned int *aP1, void *a2)
   this->u32_4 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return (unsigned int *)(this); /*0x68c2ee*/
-  int v5; // ecx
-  v5 = this->u32_8; /*0x68c2f0*/
-  int v6; // eax
-  v6 = 0; /*0x68c2f3*/
+  int v5 = this->u32_8; // ecx /*0x68c2f0*/
+  int v6 = 0; // eax /*0x68c2f3*/
   this->u8_D = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
     return (unsigned int *)(this); /*0x68c2fb*/
@@ -257,7 +254,7 @@ int Multiplayer::ShowProgress(int a2)
   (*((unsigned char *)&(result))) = byte_A8ED6B; /*0x69ae90*/
   if ( !byte_A8ED6B ) /*0x69aea1*/
   {
-  int v14; // [esp+14h] [ebp-1D0h]
+    int v14; // [esp+14h] [ebp-1D0h]
     v14 = a2; /*0x69aeb4*/
     if ( (((unsigned char *)&(((unsigned int *)(dword_A8B230))[375].vfptr))[1]) ) /*0x69aeb8*/
       v14 = a2 / 2; /*0x69aec7*/
@@ -270,24 +267,24 @@ int Multiplayer::ShowProgress(int a2)
       fcomp [esp+1E4h+var_1D0]
       fnstsw ax
     }
-  double v15; // [esp+14h] [ebp-1D0h]
+    double v15; // [esp+14h] [ebp-1D0h]
     if ( (result & 0x100) != 0 ) /*0x69aef1*/
       result = Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, v15, NAN); /*0x69af0a*/
     if ( this->u32_284C != 1 ) /*0x69af16*/
     {
-  int Ticks; // [esp+8h] [ebp-1DCh]
+      int Ticks; // [esp+8h] [ebp-1DCh]
       Ticks = TimerGetTicks(); /*0x69af26*/
       switch ( *(unsigned int *)this ) /*0x69af3e*/
       {
-  int v16[113]; // [esp+1Ch] [ebp-1C8h] BYREF
+        int v16[113]; // [esp+1Ch] [ebp-1C8h] BYREF
         case 1: /*0x69af3e*/
         case 2: /*0x69af3e*/
           memset(v16, 0, 250); /*0x69b099*/
           v16[0] = 108; /*0x69b0a2*/
           Progress::GetWeighted((int)&dword_AC4F58, 0); /*0x69b0aa*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69b0af*/
-  double v3; // st7
-  int v10; // eax
+          double v3; // st7
+          int v10; // eax
           (*((unsigned short *)&(v10))) = Math::RoundToInt(v3); /*0x69b0b5*/
           *(int *)((char *)&v16[6] + 1) = v10; /*0x69b0c0*/
           (*((unsigned char *)&(v16[6]))) = dword_A8DB30; /*0x69b0d5*/
@@ -295,75 +292,73 @@ int Multiplayer::ShowProgress(int a2)
           Stream::ReadPacket((int)&unk_A8EA70); /*0x69b0e3*/
           while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 5 ) /*0x69b0f5*/
           {
-  int v11; // esi
-            v11 = 240; /*0x69b101*/
-            if ( Ticks != -1 ) /*0x69b107*/
-            {
-  int v12; // eax
-              v12 = TimerGetTicks() - Ticks; /*0x69b112*/
-              if ( v12 >= 240 ) /*0x69b118*/
-                return Event::Dispatch(); /*0x69b118*/
-              v11 = 240 - v12; /*0x69b11a*/
-            }
-            if ( v11 <= 0 ) /*0x69b11e*/
-              break; /*0x69b11e*/
-            Sleep(0x14u); /*0x69b122*/
-            ((EventQueue *)dword_87F770)->Process(); /*0x69b12a*/
-            Stream::ReadPacket((int)&unk_A8EA70); /*0x69b134*/
+          int v11 = 240; // esi /*0x69b101*/
+          if ( Ticks != -1 ) /*0x69b107*/
+          {
+            int v12; // eax
+            v12 = TimerGetTicks() - Ticks; /*0x69b112*/
+            if ( v12 >= 240 ) /*0x69b118*/
+              return Event::Dispatch(); /*0x69b118*/
+            v11 = 240 - v12; /*0x69b11a*/
           }
+          if ( v11 <= 0 ) /*0x69b11e*/
+            break; /*0x69b11e*/
+          Sleep(0x14u); /*0x69b122*/
+          ((EventQueue *)dword_87F770)->Process(); /*0x69b12a*/
+          Stream::ReadPacket((int)&unk_A8EA70); /*0x69b134*/
+        }
           break; /*0x69b146*/
         case 3: /*0x69af3e*/
         case 4: /*0x69af3e*/
           memset(v16, 0, sizeof(v16)); /*0x69af52*/
-  int16_t v17; // [esp+1E0h] [ebp-4h]
+          int16_t v17; // [esp+1E0h] [ebp-4h]
           v17 = 0; /*0x69af54*/
-  char v18; // [esp+1E2h] [ebp-2h]
+          char v18; // [esp+1E2h] [ebp-2h]
           v18 = 0; /*0x69af56*/
           v16[0] = 15; /*0x69af5c*/
           Progress::GetWeighted((int)&dword_AC4F58, 0); /*0x69af64*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69af69*/
-  int v5; // eax
+          int v5; // eax
           (*((unsigned short *)&(v5))) = Math::RoundToInt(v3); /*0x69af6f*/
           *(int *)((char *)&v16[11] + 3) = v5; /*0x69af7a*/
           strcpy((char *)&v16[1], ToWideStringChar((IUnknown *)((char *)*dword_A8DA78))); /*0x69af9e*/
           __asm /*0x69afa7*/
           {
-            fild [esp+1E8h+var_199]
-            fcomp ds:dbl_7F12F0
-            fnstsw ax
-          }
+          fild [esp+1E8h+var_199]
+          fcomp ds:dbl_7F12F0
+          fnstsw ax
+        }
           if ( (_AX & 0x100) != 0 ) /*0x69afb6*/
           {
-            Network::SendMessage(&unk_A8E9C0.Socket, (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
-          }
+          Network::SendMessage(&unk_A8E9C0.Socket, (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
+        }
           else
           {
-  int i; // esi
-            for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
-            {
-              Debug::Log(); /*0x69afe6*/
-              Network::SendToPlayer((int)&unk_A8E9C0, (int)v16, 51,(void *)(1), (wchar_t *)((unsigned int *)(dword_A8DA78))[i]); /*0x69b006*/
-            }
+          int i; // esi
+          for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
+          {
+            Debug::Log(); /*0x69afe6*/
+            Network::SendToPlayer((int)&unk_A8E9C0, (int)v16, 51,(void *)(1), (wchar_t *)((unsigned int *)(dword_A8DA78))[i]); /*0x69b006*/
           }
+        }
           Event::Dispatch(); /*0x69b015*/
           while ( (&unk_A8E9C0)->GetQueueCount() > 5 ) /*0x69b027*/
           {
-  int v8; // esi
-            v8 = 240; /*0x69b037*/
-            if ( Ticks != -1 ) /*0x69b03d*/
-            {
-  int v9; // eax
-              v9 = TimerGetTicks() - Ticks; /*0x69b048*/
-              if ( v9 >= 240 ) /*0x69b04e*/
-                return Event::Dispatch(); /*0x69b04e*/
-              v8 = 240 - v9; /*0x69b054*/
-            }
-            if ( v8 <= 0 ) /*0x69b058*/
-              break; /*0x69b058*/
-            Sleep(0x14u); /*0x69b060*/
-            MessageLoop(); /*0x69b062*/
-            Event::Dispatch(); /*0x69b067*/
+          int v8 = 240; // esi /*0x69b037*/
+          if ( Ticks != -1 ) /*0x69b03d*/
+          {
+            int v9; // eax
+            v9 = TimerGetTicks() - Ticks; /*0x69b048*/
+            if ( v9 >= 240 ) /*0x69b04e*/
+              return Event::Dispatch(); /*0x69b04e*/
+            v8 = 240 - v9; /*0x69b054*/
           }
+          if ( v8 <= 0 ) /*0x69b058*/
+            break; /*0x69b058*/
+          Sleep(0x14u); /*0x69b060*/
+          MessageLoop(); /*0x69b062*/
+          Event::Dispatch(); /*0x69b067*/
+        }
           break; /*0x69b079*/
         default:
           return Event::Dispatch();

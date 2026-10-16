@@ -30,7 +30,7 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
   }
   else
   {
-  wchar_t *StringCSF; // eax
+    wchar_t *StringCSF; // eax
     StringCSF = GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845); /*0x69ad02*/
     return (int)(wcscpy((wchar_t *)Destination, StringCSF)); /*0x69ad09*/
   }

@@ -14,23 +14,22 @@ int UnitClass::ProcessIdleOrders()
 {
   int result; // eax
 
-  int v3; // edi
-  v3 = 0; /*0x6b7bb7*/
+  int v3 = 0; // edi /*0x6b7bb7*/
   if ( this->ambientSoundController[3] > 0 ) /*0x6b7bbc*/
   {
     do /*0x6b7c21*/
     {
-  int v4; // eax
+      int v4; // eax
       v4 = *(unsigned int *)(this->ambientSoundController[0] + 4 * v3); /*0x6b7bc6*/
       if ( *(unsigned int *)(v4 + 4) == 2 ) /*0x6b7bcd*/
       {
-  unsigned int *v5; // eax
+        unsigned int *v5; // eax
         v5 = *(unsigned int **)v4; /*0x6b7bcf*/
         if ( *(unsigned char *)(v5[433] + 3432) ) /*0x6b7bd7*/
         {
           UnitClass::GetExitCell((int)&g_MissionQueueFrame, v5, *&this->bombVisible); /*0x6b7beb*/
           g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b7bfa*/
-  int v6; // [esp+Ch] [ebp-8h]
+          int v6; // [esp+Ch] [ebp-8h]
           g_MissionQueueFrame.nextScenario[1] = v6; /*0x6b7bff*/
           g_MissionQueueFrame.nextScenario[2] = 2; /*0x6b7c05*/
           (**(unsigned int **)(this->ambientSoundController[0] + 4 * v3))->ClearTargetRef(); /*0x6b7c16*/

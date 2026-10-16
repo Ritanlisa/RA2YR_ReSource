@@ -141,22 +141,22 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
                              *(unsigned char *)&_ESI[32]);
   Debug::Log(); /*0x5fa8a2*/
   int v6; // eax
-    v6 = INIClass::ReadInt_Overwrite( /*0x5fa8bd*/          (bool *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),          (uint8_t *)g_INI_Key_ScreenWidth,          *(unsigned int *)&_ESI[36]);
+  v6 = INIClass::ReadInt_Overwrite( /*0x5fa8bd*/          (bool *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),          (uint8_t *)g_INI_Key_ScreenWidth,          *(unsigned int *)&_ESI[36]);
   int v7; // ecx
   v7 = *(unsigned int *)&_ESI[40]; /*0x5fa8c2*/
   *(unsigned int *)&_ESI[36] = v6; /*0x5fa8c5*/
-    *(unsigned int *)&_ESI[40] = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/                            (bool *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                            (uint8_t *)g_INI_Key_ScreenHeight,                            v7);
+  *(unsigned int *)&_ESI[40] = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/                            (bool *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                            (uint8_t *)g_INI_Key_ScreenHeight,                            v7);
   Debug::Log(); /*0x5fa8ea*/
-    Bool_Overwrite = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa905*/                                    (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                                    (uint8_t *)aStretchmovies,                                    *(unsigned char *)&_ESI[52]);
+  Bool_Overwrite = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa905*/                                    (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                                    (uint8_t *)aStretchmovies,                                    *(unsigned char *)&_ESI[52]);
   _ESI[52] = Bool_Overwrite; /*0x5fa90c*/
   bool v9; // al
   v9 = Bool_Overwrite == 1 && g_DDraw_AllowStretchBlits == 1; /*0x5fa919*/
   _ESI[52] = (gamemd::GameSettings)((GameSettings)v9); /*0x5fa91f*/
   Debug::Log(); /*0x5fa936*/
-    _ESI[53] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa956*/                              (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                              aAllowhiresmode,                              *(unsigned char *)&_ESI[53]);
+  _ESI[53] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa956*/                              (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                              aAllowhiresmode,                              *(unsigned char *)&_ESI[53]);
   Debug::Log(); /*0x5fa96d*/
-    ((unsigned int *)&stru_A8EB00)[383] = INIClass::ReadBool_Overwrite( /*0x5fa990*/                          (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                          aAllowmodetoggl,                          ((unsigned int *)&stru_A8EB00)[383]);
-    v10 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa9a8*/                         (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                         aAllowvramsideb,                         *(unsigned char *)&_ESI[54]);
+  ((unsigned int *)&stru_A8EB00)[383] = INIClass::ReadBool_Overwrite( /*0x5fa990*/                          (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                          aAllowmodetoggl,                          ((unsigned int *)&stru_A8EB00)[383]);
+  v10 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa9a8*/                         (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                         aAllowvramsideb,                         *(unsigned char *)&_ESI[54]);
   __asm { fld dword ptr [esi+38h] } /*0x5fa9ad*/
   _ESI[54] = v10; /*0x5fa9b8*/
   __asm { fstp [esp+1A8h+var_1A8]; double } /*0x5fa9bb*/
@@ -298,11 +298,10 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
     0xC8u);
   if ( String[0] ) /*0x5fabcc*/
   {
-  wchar_t *v24; // eax
-    v24 = String; /*0x5fabce*/
+    wchar_t *v24 = String; // eax /*0x5fabce*/
     do /*0x5fabe8*/
     {
-  bool v25; // zf
+      bool v25; // zf
       v25 = *v24 == 0xFFFFu; /*0x5fabd8*/
       *v24 = ~*v24; /*0x5fabdb*/
       if ( v25 ) /*0x5fabde*/
@@ -310,14 +309,14 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
       ++v24; /*0x5fabe5*/
     }
     while ( *v24 ); /*0x5fabe8*/
-  wchar_t *v26; // eax
-  wchar_t **v41; // [esp+8h] [ebp-1A0h]
+    wchar_t *v26; // eax
+    wchar_t **v41; // [esp+8h] [ebp-1A0h]
     v26 = wcstok(String, asc_82083C, v41); /*0x5fabf8*/
     if ( v26 ) /*0x5fac02*/
     {
       *(unsigned int *)&_ESI[76] = wcstol(v26, 0, 10) - 1; /*0x5fac16*/
-  wchar_t *v27; // eax
-  wchar_t **v33; // [esp-4h] [ebp-1ACh]
+      wchar_t *v27; // eax
+      wchar_t **v33; // [esp-4h] [ebp-1ACh]
       v27 = wcstok(0, asc_82083C, v33); /*0x5fac19*/
       if ( v27 ) /*0x5fac23*/
         *(unsigned int *)&_ESI[80] = wcstol(v27, 0, 10) - 1; /*0x5fac33*/
@@ -372,8 +371,7 @@ void * GameSettings::ParseNetworkAddress()
 {
   int v10; // [esp+Ch] [ebp-18h] BYREF
 
-  uint16_t v2; // ax
-  v2 = this->u32_4A; /*0x5fb057*/
+  uint16_t v2 = this->u32_4A; // ax /*0x5fb057*/
   if ( v2 == 0xFFFF ) /*0x5fb05f*/
   {
     Network::GetField(unk_A8E9C0, 34835); /*0x5fb066*/
@@ -384,23 +382,21 @@ void * GameSettings::ParseNetworkAddress()
   }
   const char *v3; // esi
   v3 = this->q056 + 2); /*0x5fb07e*/
-  char *result; // eax
-  result = 0; /*0x5fb086*/
+  char *result = 0; // eax /*0x5fb086*/
   size_t v5; // kr04_4
   v5 = strlen(v3) + 1; /*0x5fb088*/
   if ( v5 != 1 ) /*0x5fb08d*/
   {
-  char *v6; // edx
+    char *v6; // edx
     v6 = (char *)operator new(v5); /*0x5fb09a*/
     strcpy(v6, v3); /*0x5fb0b8*/
-  int v7; // esi
-    v7 = 0; /*0x5fb0c1*/
+    int v7 = 0; // esi /*0x5fb0c1*/
     result = strtok(v6, asc_826598); /*0x5fb0c3*/
     if ( result ) /*0x5fb0cd*/
     {
       do /*0x5fb10f*/
       {
-  char v9; // [esp+8h] [ebp-1Ch] BYREF
+        char v9; // [esp+8h] [ebp-1Ch] BYREF
         sscanf(result, "%x", &v9); /*0x5fb0de*/
         *((unsigned char *)&v10 + v7++) = v9; /*0x5fb0ef*/
         result = strtok(0, asc_826598); /*0x5fb105*/
@@ -408,13 +404,13 @@ void * GameSettings::ParseNetworkAddress()
       while ( result ); /*0x5fb10f*/
       if ( v7 >= 4 ) /*0x5fb114*/
       {
-  int v11; // [esp+10h] [ebp-14h] BYREF
+        int v11; // [esp+10h] [ebp-14h] BYREF
         v11 = -1; /*0x5fb11a*/
-  int16_t v12; // [esp+14h] [ebp-10h]
+        int16_t v12; // [esp+14h] [ebp-10h]
         v12 = -1; /*0x5fb126*/
         dword_A8D5FC = 1; /*0x5fb131*/
-  int *v8; // eax
-  unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
+        int *v8; // eax
+        unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
         v8 = NetworkAddress::Assign(v13, &v10, (int)&v11, 0); /*0x5fb13b*/
         stru_A8D600 = *v8; /*0x5fb142*/
         dword_A8D604 = v8[1]; /*0x5fb14b*/
@@ -432,8 +428,7 @@ int GameSettings::SetScoreVolume(int volume, void *a2, void *a3)
 {
 
 
-  int result; // eax
-  result = a2; /*0x721290*/
+  int result = a2; // eax /*0x721290*/
   if ( a2 >= 255 ) /*0x721299*/
     result = 255; /*0x72129b*/
   volume->ObjectTypeClass[3] = result; /*0x7212a0*/
@@ -446,8 +441,7 @@ namespace gamemd {
 char * GameSettings::FindFlagged()
 {
 
-  int v0; // eax
-  v0 = 0; /*0x7931a7*/
+  int v0 = 0; // eax /*0x7931a7*/
   if ( (int)dword_B77900 <= 0 ) /*0x7931ad*/
     return 0; /*0x7931dc*/
   char *i; // edx

@@ -46,24 +46,24 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   {
     PsyDom_Owner = (int)((House *)this); /*0x53ae79*/
     *(unsigned int *)&PsyDom_Coords = a2; /*0x53ae7f*/
-  void *v3; // esi
+    void *v3; // esi
     v3 = *(void **)(*(unsigned int *)&g_RulesClass_Instance + 764); /*0x53ae85*/
-  void *v4; // eax
+    void *v4; // eax
     v4 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&PsyDom_Coords); /*0x53ae95*/
-  int *v5; // eax
-  unsigned int v9[3]; // [esp+10h] [ebp-Ch] BYREF
+    int *v5; // eax
+    unsigned int v9[3]; // [esp+10h] [ebp-Ch] BYREF
     v5 = (int *)(*(int (**)(void *, unsigned int *))(*(unsigned int *)v4 + 72))(v4, v9); /*0x53aea3*/
-  int v8[3]; // [esp+4h] [ebp-18h] BYREF
+    int v8[3]; // [esp+4h] [ebp-18h] BYREF
     v8[0] = *v5; /*0x53aea8*/
     v8[1] = v5[1]; /*0x53aeb4*/
     v8[2] = v5[2] + 750; /*0x53aec0*/
-  AnimClass *v6; // eax
+    AnimClass *v6; // eax
     v6 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x53aec4*/
     if ( v6 ) /*0x53aece*/
       PsyDom_Anim = (int)AnimClass::ctor(v6, v3, v8, 0, 1, (void *)0x600, 0, 0); /*0x53aeea*/
     else
       PsyDom_Anim = 0; /*0x53aef1*/
-  AbstractClass *v7; // edx
+    AbstractClass *v7; // edx
     v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
     dword_A8B230[130].vtable0 = *(void **)&DataGlobal_A8EB00[644]; /*0x53af1b*/
@@ -113,7 +113,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5, vo
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-  int v2; // eax
+    int v2; // eax
     v2 = dword_A83CC8++; /*0x6caf71*/
     *((unsigned int *)dword_A83CBC + v2) = (unsigned int)(a1); /*0x6caf80*/
   }
@@ -138,8 +138,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   aP2->FileID = 0; /*0x6cafc1*/
   aP2->MixFileIndex = -1; /*0x6cafc4*/
   aP2->q060 = 1; /*0x6cafc7*/
-  int v4; // edx
-  v4 = dword_B0C000; /*0x6cafcb*/
+  int v4 = dword_B0C000; // edx /*0x6cafcb*/
   aP2->q078 = -1; /*0x6cafd1*/
   aP2->q07C = -1; /*0x6cafd4*/
   aP2->u32_62 = v4; /*0x6cafda*/
@@ -163,7 +162,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-  int v5; // eax
+    int v5; // eax
     v5 = dword_A83CC8++; /*0x6cb056*/
     *((unsigned int *)dword_A83CBC + v5) = (unsigned int)(aP2); /*0x6cb065*/
   }
@@ -175,7 +174,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
          dword_B0F678 + dword_B0F684,
          0) )
   {
-  int v6; // eax
+    int v6; // eax
     v6 = dword_B0F680++; /*0x6cb0a9*/
     *((unsigned int *)dword_B0F674 + v6) = (unsigned int)(aP2); /*0x6cb0b8*/
   }
@@ -187,7 +186,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
          dword_B0F6D0 + dword_B0F6DC,
          0) )
   {
-  int v7; // eax
+    int v7; // eax
     v7 = dword_B0F6D8++; /*0x6cb0fc*/
     *((unsigned int *)dword_B0F6CC + v7) = (unsigned int)(aP2); /*0x6cb10b*/
   }
@@ -202,8 +201,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
 
   int v9; // [esp+14h] [ebp-4h] BYREF
 
-  int v2; // eax
-  v2 = a1->u32_68; /*0x6cb124*/
+  int v2 = a1->u32_68; // eax /*0x6cb124*/
   *(unsigned int *)a1 = (unsigned int)(&vt_SuperClass); /*0x6cb127*/
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb12f) */
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb136) */
@@ -213,7 +211,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/
     a1->u32_68 = 0; /*0x6cb14d*/
     v9 = (int)(a1); /*0x6cb164*/
-  int v3; // eax
+    int v3; // eax
     v3 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.?[0] + 16))(g_BuildingLoadQueue_Array.?, &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
       ((DynamicVector *)stru_B0F5B8)->RemoveItem(v3); /*0x6cb176*/
@@ -221,7 +219,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   if ( a1->HouseClass_6C ) /*0x6cb17b*/
   {
     v9 = (int)(a1); /*0x6cb192*/
-  int v4; // eax
+    int v4; // eax
     v4 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.?[0] + 16))(g_BuildingLoadQueue_Array.?, &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
       ((DynamicVector *)stru_B0F5B8)->RemoveItem(v4); /*0x6cb1a4*/
@@ -234,8 +232,8 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   {
     --DataGlobal_A83D60; /*0x6cb1d6*/
     for ( ; /*0x6cb1dc*/
-          v5 < (int)DataGlobal_A83D60;
-          *((unsigned int *)DataGlobal_A83D54 + v5 - 1) = *((unsigned int *)DataGlobal_A83D54 + v5) )
+    v5 < (int)DataGlobal_A83D60;
+    *((unsigned int *)DataGlobal_A83D54 + v5 - 1) = *((unsigned int *)DataGlobal_A83D54 + v5) )
     {
       ++v5; /*0x6cb1e4*/
     }
@@ -261,9 +259,9 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6cb268*/
     for ( ; /*0x6cb26e*/
-          v7 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v7) )
+    v7 < g_BuildingLoadQueue_Array.LightBlueTint;
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
+    + 4 * v7) )
     {
       ++v7; /*0x6cb276*/
     }
@@ -277,8 +275,8 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   {
     --*(unsigned int *)&DataGlobal_B0F6D8; /*0x6cb2b1*/
     for ( ; /*0x6cb2b7*/
-          v8 < *(int *)&DataGlobal_B0F6D8;
-          *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F6CC + 4 * v8 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F6CC + 4 * v8) )
+    v8 < *(int *)&DataGlobal_B0F6D8;
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F6CC + 4 * v8 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F6CC + 4 * v8) )
     {
       ++v8; /*0x6cb2bf*/
     }
@@ -432,7 +430,7 @@ AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
     }
     if ( !this->OneTime ) /*0x6cb788*/
       return this; /*0x6cb79f*/
-LABEL_45:
+    LABEL_45:
     SuperClass::AnnounceReady(this, aP2); /*0x6cb78a*/
     return this; /*0x6cb791*/
   }
@@ -459,8 +457,8 @@ int SuperClass::Lose()
   {
     --DataGlobal_A83D60; /*0x6cb7e9*/
     for ( ; /*0x6cb7ef*/
-          v1 < (int)DataGlobal_A83D60;
-          *((unsigned int *)DataGlobal_A83D54 + v1 - 1) = *((unsigned int *)DataGlobal_A83D54 + v1) )
+    v1 < (int)DataGlobal_A83D60;
+    *((unsigned int *)DataGlobal_A83D54 + v1 - 1) = *((unsigned int *)DataGlobal_A83D54 + v1) )
     {
       ++v1; /*0x6cb7f7*/
     }
@@ -476,14 +474,13 @@ char SuperClass::StopPreclickAnim(int aP1)
 
   unsigned int v8[4]; // [esp+8h] [ebp-10h] BYREF
 
-  int v3; // eax
-  v3 = this->u32_68; /*0x6cb839*/
+  int v3 = this->u32_68; // eax /*0x6cb839*/
   if ( v3 ) /*0x6cb83e*/
   {
     *(unsigned char *)(v3 + 405) = 0; /*0x6cb840*/
     this->u32_68 = 0; /*0x6cb846*/
     v8[0] = (unsigned int)(this); /*0x6cb859*/
-  int v4; // eax
+    int v4; // eax
     v4 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
       DynamicVector::RemoveItem(&stru_B0F5B8, v4); /*0x6cb86b*/
@@ -491,7 +488,7 @@ char SuperClass::StopPreclickAnim(int aP1)
   if ( this->HouseClass_6C ) /*0x6cb870*/
   {
     v8[0] = (unsigned int)(this); /*0x6cb885*/
-  int v5; // eax
+    int v5; // eax
     v5 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       DynamicVector::RemoveItem(&stru_B0F5B8, v5); /*0x6cb897*/
@@ -506,8 +503,7 @@ char SuperClass::StopPreclickAnim(int aP1)
   this->u32_78 = -1; /*0x6cb8b9*/
   if ( this->q030 == -1 ) /*0x6cb8c6*/
     this->q030 = dword_A8ED84; /*0x6cb8ce*/
-  int v6; // ecx
-  v6 = this->u32_24; /*0x6cb8d1*/
+  int v6 = this->u32_24; // ecx /*0x6cb8d1*/
   if ( v6 == -1 ) /*0x6cb8d7*/
     v6 = *(unsigned int *)(this->u32_28 + 176); /*0x6cb8dc*/
   this->q030 = dword_A8ED84; /*0x6cb8e7*/
@@ -574,7 +570,7 @@ int SuperClass::ClickFire(int a2, short * a3)
           v8 -= (int)dword_A8ED84 - v7; /*0x6cb98f*/
         }
         a2 = v8; /*0x6cb991*/
-  LABEL_11:
+        LABEL_11:
         (*((unsigned short *)&(v11))) = Math::RoundToInt((double)(int)a3 - (double)a2 / *(double *)dword_8871E0->ChargeToDrainRatio); /*0x6cb995*/
         *v10 = (wchar_t *)(dword_A8ED84); /*0x6cb9b4*/
         v10[1] = v30; /*0x6cb9b6*/
@@ -721,23 +717,21 @@ namespace gamemd {
 int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshield, void * aEvaIroncurtain, void * aEvaNuclearmiss, void * aEvaPsychicdomi, void * aEvaReinforceme, void * aEvaSpyplanerea)
 {
 
-  char result; // al
-  result = this->Granted; /*0x6cc086*/
+  char result = this->Granted; // al /*0x6cc086*/
   if ( result ) /*0x6cc08b*/
   {
-  int v4; // edi
-    v4 = this->u32_24; /*0x6cc092*/
+    int v4 = this->u32_24; // edi /*0x6cc092*/
     this->IsCharged = 1; /*0x6cc098*/
     if ( v4 == -1 ) /*0x6cc09c*/
       v4 = *(unsigned int *)(this->u32_28 + 176); /*0x6cc0a1*/
-  int v5; // edi
+    int v5; // edi
     v5 = v4 - Math::RoundToInt((double)v4); /*0x6cc0b4*/
     if ( !v5 ) /*0x6cc0b6*/
       this->IsCharged = 1; /*0x6cc0b8*/
     if ( this->vtable4 == -1 ) /*0x6cc0c0*/
       this->vtable4 = dword_A8ED84; /*0x6cc0c8*/
     this->vtable4 = dword_A8ED84; /*0x6cc0d4*/
-  int v7; // [esp+Ch] [ebp-8h]
+    int v7; // [esp+Ch] [ebp-8h]
     this->u32_34 = v7; /*0x6cc0db*/
     this->u32_38 = v5; /*0x6cc0de*/
     if ( a2 ) /*0x6cc0e4*/
@@ -779,8 +773,7 @@ int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshi
           break;
       }
     }
-  int v6; // edx
-    v6 = this->u32_28; /*0x6cc17e*/
+    int v6 = this->u32_28; // edx /*0x6cc17e*/
     this->u32_74 = dword_A8ED84; /*0x6cc187*/
     result = v6->u8_E5; /*0x6cc18a*/
     if ( result ) /*0x6cc192*/
@@ -801,11 +794,10 @@ int SuperClass::SetCharge(int a2)
     (*((unsigned char *)&(v3))) = a2; /*0x6cc1ed*/
     if ( (unsigned int)a2 <= 0x64 ) /*0x6cc1f3*/
     {
-  int v4; // esi
-      v4 = this->u32_24; /*0x6cc1fb*/
+      int v4 = this->u32_24; // esi /*0x6cc1fb*/
       if ( v4 == -1 ) /*0x6cc201*/
         v4 = *(unsigned int *)(this->u32_28 + 176); /*0x6cc206*/
-  int v5; // esi
+      int v5; // esi
       v5 = v4 - Math::RoundToInt((double)a2 * 0.0099999998 * (double)v4); /*0x6cc223*/
       if ( !v5 ) /*0x6cc225*/
         this->IsCharged = 1; /*0x6cc227*/
@@ -813,7 +805,7 @@ int SuperClass::SetCharge(int a2)
       if ( this->vtable4 == -1 ) /*0x6cc234*/
         *v3 = dword_A8ED84; /*0x6cc23c*/
       *v3 = dword_A8ED84; /*0x6cc248*/
-  int v7; // [esp+Ch] [ebp-8h]
+      int v7; // [esp+Ch] [ebp-8h]
       this->u32_34 = v7; /*0x6cc24a*/
       this->u32_38 = v5; /*0x6cc24d*/
     }
@@ -1008,7 +1000,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
     SuperClass_field_0x68[405] = 0; /*0x6ce0bd*/
     a1->SuperClass_field_0x68 = 0; /*0x6ce0c4*/
     v12[0] = a1; /*0x6ce0db*/
-  int v3; // eax
+    int v3; // eax
     v3 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x6ce0df*/
            g_BuildingLoadQueue_Array.?,
            v12);
@@ -1018,7 +1010,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
   if ( LOBYTE(a1->SuperClass_field_0x6C) ) /*0x6ce0f2*/
   {
     v12[0] = a1; /*0x6ce109*/
-  int v4; // eax
+    int v4; // eax
     v4 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x6ce10d*/
            g_BuildingLoadQueue_Array.?,
            v12);
@@ -1043,13 +1035,12 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
   a1->SuperClass_field_0x38 = SuperClass_field_0x24; /*0x6ce160*/
   if ( !v8 ) /*0x6ce163*/
   {
-  int v9; // esi
-    v9 = *result; /*0x6ce165*/
+    int v9 = *result; // esi /*0x6ce165*/
     if ( *result != -1 ) /*0x6ce16a*/
     {
-  int v10; // ecx
+      int v10; // ecx
       v10 = result[2]; /*0x6ce16c*/
-  int v11; // edx
+      int v11; // edx
       v11 = *(unsigned int *)&DataGlobal_A8EB00[644] - v9; /*0x6ce17a*/
       if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v9 >= v10 ) /*0x6ce17e*/
       {
@@ -1074,14 +1065,13 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
 
   SuperClass *v9; // [esp+4h] [ebp-10h] BYREF
 
-  unsigned char *SuperClass_field_0x68; // eax
-  SuperClass_field_0x68 = this->u32_68; /*0x6cb3a6*/
+  unsigned char *SuperClass_field_0x68 = this->u32_68; // eax /*0x6cb3a6*/
   if ( SuperClass_field_0x68 ) /*0x6cb3ab*/
   {
     SuperClass_field_0x68[405] = 0; /*0x6cb3ad*/
     this->u32_68 = 0; /*0x6cb3b4*/
     v9 = this; /*0x6cb3cb*/
-  int v6; // eax
+    int v6; // eax
     v6 = (*(int (**)(int *, SuperClass **))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x6cb3cf*/
            g_BuildingLoadQueue_Array.?,
            &v9);
@@ -1091,7 +1081,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
   if ( LOBYTE(this->HouseClass_6C) ) /*0x6cb3e2*/
   {
     v9 = this; /*0x6cb3f9*/
-  int v7; // eax
+    int v7; // eax
     v7 = (*(int (**)(int *, SuperClass **))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x6cb3fd*/
            g_BuildingLoadQueue_Array.?,
            &v9);
@@ -1103,7 +1093,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
   result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6cb419*/
   if ( result ) /*0x6cb423*/
   {
-  int v10[3]; // [esp+8h] [ebp-Ch] BYREF
+    int v10[3]; // [esp+8h] [ebp-Ch] BYREF
     v10[0] = aP1; /*0x6cb444*/
     v10[1] = aP2; /*0x6cb455*/
     v10[2] = a4 + 5; /*0x6cb459*/
@@ -1153,12 +1143,10 @@ char SuperClass::SetOnHold(char aP1)
   {
     if ( aP1 || (result = this->u32_28, result->u8_F5) ) /*0x6cb4f9*/
     {
-  int v3; // esi
-      v3 = this->vtable4; /*0x6cb51c*/
+      int v3 = this->vtable4; // esi /*0x6cb51c*/
       if ( v3 != -1 ) /*0x6cb522*/
       {
-  int v4; // eax
-        v4 = this->u32_38; /*0x6cb524*/
+        int v4 = this->u32_38; // eax /*0x6cb524*/
         if ( (int)dword_A8ED84 - v3 >= v4 ) /*0x6cb536*/
           result = 0; /*0x6cb53c*/
         else
@@ -1222,12 +1210,11 @@ wchar_t * SuperClass::NameReadiness(void * aTxtHold)
     return GetStringCSF(aTxtHold, 0, (const char *)&g_Str_EVA_ChronosphereReady.SampleIndex[1], 950); /*0x6cc34d*/
   if ( *((unsigned char *)aTxtHold->SuperClass_field_0x28 + 229) ) /*0x6cc2be*/
   {
-  char *SuperClass_field_0x7C; // ecx
+    char *SuperClass_field_0x7C; // ecx
     SuperClass_field_0x7C = (char *)aTxtHold->SuperClass_field_0x7C; /*0x6cc2c8*/
     if ( SuperClass_field_0x7C ) /*0x6cc2ce*/
     {
-  char *v2; // ecx
-      v2 = SuperClass_field_0x7C - 1; /*0x6cc2d0*/
+      char *v2 = SuperClass_field_0x7C - 1; // ecx /*0x6cc2d0*/
       if ( v2 ) /*0x6cc2d1*/
       {
         if ( v2 != 1 ) /*0x6cc2d4*/
@@ -1325,7 +1312,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
             DataGlobal_B0F5C0 + g_BuildingLoadQueue_Array.SecondSpawnOffset[2],
             0)) )
     {
-  int v3; // eax
+      int v3; // eax
       v3 = g_BuildingLoadQueue_Array.SecondSpawnOffset[1]++; /*0x6cdf7d*/
       *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v3) = aP0; /*0x6cdf8c*/
     }
@@ -1359,8 +1346,7 @@ long long SuperClass::ExecuteAction(unsigned int a2, int a3)
 {
 
 
-  __int64 result; // rax
-  result = a2; /*0x6cdff0*/
+  __int64 result = a2; // rax /*0x6cdff0*/
   if ( (void *)a2 == this->u32_2C ) /*0x6cdffc*/
     this->u32_2C = 0; /*0x6cdffe*/
   if ( (void *)a2 == this->u32_28 ) /*0x6ce004*/
@@ -1404,7 +1390,7 @@ int SuperClass::PowerDrainUpdate(int * a2)
   if ( result ) /*0x6ce080*/
   {
     Power::TimerProcess(*(unsigned __int8 *)(result + 405)); /*0x6ce08d*/
-  int v9; // eax
+    int v9; // eax
     v9 = (*(int (**)(char *))(*((unsigned int *)this->u32_68 + 1) + 16))((char *)this->u32_68 + 4); /*0x6ce09c*/
     return Power::TimerProcess(v9); /*0x6ce0a2*/
   }
@@ -1421,8 +1407,7 @@ bool SuperClass::ShouldFlashTab()
 
   if ( LOBYTE(this->q070) ) /*0x6ce1a0*/
     return 0; /*0x6ce1a5*/
-  unsigned char *SuperClass_field_0x28; // eax
-  SuperClass_field_0x28 = this->u32_28; /*0x6ce1a7*/
+  unsigned char *SuperClass_field_0x28 = this->u32_28; // eax /*0x6ce1a7*/
   if ( SuperClass_field_0x28[229] ) /*0x6ce1aa*/
   {
     if ( !this->u32_7C ) /*0x6ce1b9*/

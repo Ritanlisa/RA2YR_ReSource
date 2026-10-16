@@ -48,8 +48,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
   void (***v5)(unsigned int, int); // ecx
   void *MultiplayerGameMode_field_0x0C; // eax
 
-  int v3; // edi
-  v3 = 0; /*0x5d7f24*/
+  int v3 = 0; // edi /*0x5d7f24*/
   for ( *(unsigned int *)Block->tail_0 = &vt_MultiplayerGameMode; v3 < Block->u32_18; ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (****)(unsigned int, int))(Block->u32_C + 4 * v3); /*0x5d7f36*/

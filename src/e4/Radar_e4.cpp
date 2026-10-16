@@ -37,27 +37,26 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
 
   if ( this->q060 ) /*0x431099*/
   {
-  Radar *p_Radar_field_0xC; // edi
-    p_Radar_field_0xC = this; /*0x4310ab*/
-  int v13; // [esp+18h] [ebp-18h]
+    Radar *p_Radar_field_0xC = this; // edi /*0x4310ab*/
+    int v13; // [esp+18h] [ebp-18h]
     v13 = 0; /*0x4310ad*/
-  Radar *v14; // [esp+1Ch] [ebp-14h]
+    Radar *v14; // [esp+1Ch] [ebp-14h]
     v14 = this; /*0x4310b5*/
     while ( 2 ) /*0x4310b9*/
     {
-  int i; // esi
+      int i; // esi
       for ( i = 0; i < 3; ++i ) /*0x4310b9*/
       {
-  unsigned int *v7; // eax
+        unsigned int *v7; // eax
         v7 = *(unsigned int **)p_Radar_field_0xC->__pad_000; /*0x4310bb*/
         if ( *(unsigned int *)p_Radar_field_0xC->__pad_000 ) /*0x4310bb*/
         {
-  int v17; // [esp+28h] [ebp-8h]
+          int v17; // [esp+28h] [ebp-8h]
           v17 = a3 - v7[1]; /*0x4310d6*/
           __asm { fild [esp+28h+var_8] } /*0x4310dc*/
-  int v18; // [esp+2Ch] [ebp-4h]
+          int v18; // [esp+2Ch] [ebp-4h]
           v18 = a4 - v7[2]; /*0x4310e0*/
-  int v16; // [esp+24h] [ebp-Ch]
+          int v16; // [esp+24h] [ebp-Ch]
           v16 = a2 - *v7; /*0x4310e4*/
           __asm /*0x4310e8*/
           {
@@ -79,10 +78,10 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
             fstp st
             fstp st
           }
-  double v12; // [esp+0h] [ebp-30h]
+          double v12; // [esp+0h] [ebp-30h]
           Math::Sqrt(v12); /*0x43110c*/
-  double v4; // st7
-  int v8; // eax
+          double v4; // st7
+          int v8; // eax
           LOWORD(v8) = Math::RoundToInt(v4); /*0x431114*/
           if ( v8 < 128 ) /*0x43111e*/
             return *(unsigned int *)&this->__pad_0[8 * v13 + 4 * i + 4 * v13]; /*0x431161*/
@@ -90,10 +89,9 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
         p_Radar_field_0xC = (Radar *)((char *)p_Radar_field_0xC + 4); /*0x431121*/
       }
       p_Radar_field_0xC = (gamemd::Radar *)(&v14->q00C); /*0x431132*/
-  bool v10; // of
+      bool v10; // of
       v10 = __OFSUB__(v13 + 1, 8); /*0x431135*/
-  bool v9; // sf
-      v9 = v13 - 7 < 0; /*0x431135*/
+      bool v9 = v13 - 7 < 0; // sf /*0x431135*/
       ++v13; /*0x431138*/
       v14 = (Radar *)((char *)v14 + 12); /*0x43113c*/
       if ( v9 != v10 ) /*0x431140*/
@@ -177,7 +175,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
         if ( result->u32_CD1 ) /*0x4adeb1*/
           goto LABEL_19; /*0x4adeb9*/
       }
-  LABEL_20:
+      LABEL_20:
       if ( ++v3 >= v2 ) /*0x4adec8*/
         return result; /*0x4adec8*/
     }
@@ -193,7 +191,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
     result = (*(int (**)(int))(*(unsigned int *)v5 + 132))(v5); /*0x4add8d*/
     if ( !result->u32_CD1 ) /*0x4add93*/
       goto LABEL_20; /*0x4add9b*/
-  LABEL_19:
+    LABEL_19:
     result = (*(int (**)(int))(*(unsigned int *)v5 + 1044))(v5); /*0x4adebb*/
     goto LABEL_20; /*0x4adebf*/
   }
@@ -213,7 +211,7 @@ int Radar::IsRadarTargetEligible()
   int v2; // eax
   v2 = *((unsigned int *)this + (unsigned int)Radar_field_0x20C + 132); /*0x5090ff*/
   return *(unsigned int *)(v2 + 56) < *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 144) /*0x509126*/
-      && *(unsigned int *)(v2 + 36) == -1;
+  && *(unsigned int *)(v2 + 36) == -1;
 
 }
 }
@@ -388,7 +386,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
           v21 = v18 - 1; /*0x582635*/
           if ( v18 - 1 < 0 ) /*0x58263a*/
           {
-LABEL_14:
+            LABEL_14:
             v22 = *(unsigned int *)(v19 + 8); /*0x582646*/
             if ( v18 < v22 /*0x58266a*/
               || (*(unsigned char *)(v19 + 13) || !v22)
@@ -462,7 +460,7 @@ LABEL_14:
           v37 = v35 - 1; /*0x5827c6*/
           if ( v35 - 1 < 0 ) /*0x5827cb*/
           {
-LABEL_33:
+            LABEL_33:
             v38 = *(unsigned int *)(v34 + 8); /*0x5827d7*/
             if ( v35 < v38 /*0x5827fb*/
               || (*(unsigned char *)(v34 + 13) || !v38)
@@ -563,7 +561,7 @@ LABEL_33:
                 v59 = v57 - 1; /*0x582a5c*/
                 if ( v57 - 1 < 0 ) /*0x582a61*/
                 {
-LABEL_65:
+                  LABEL_65:
                   v60 = *(unsigned int *)(v56 + 8); /*0x582a6d*/
                   if ( v57 < v60 /*0x582a8f*/
                     || (*(unsigned char *)(v56 + 13) || !v60)
@@ -611,7 +609,7 @@ LABEL_65:
     }
     v47 += 10; /*0x582abc*/
     ++v49; /*0x582abf*/
-LABEL_73:
+    LABEL_73:
     v9 = v96; /*0x582ac0*/
   }
   while ( v49 <= v94 ); /*0x582aca*/
@@ -647,7 +645,7 @@ LABEL_73:
       }
       v72 = v115; /*0x582b68*/
       *(unsigned int *)v95 = v70; /*0x582b6f*/
-LABEL_82:
+      LABEL_82:
       if ( v69 || (int)v72 >= v111 || v9 < v99 || v9 > v100 ) /*0x582b87*/
       {
         if ( v69 != (unsigned __int16)aP3 && v69 != v97 ) /*0x582bfa*/
@@ -672,7 +670,7 @@ LABEL_82:
                   v79 = v77 - 1; /*0x582ca6*/
                   if ( v77 - 1 < 0 ) /*0x582cab*/
                   {
-LABEL_102:
+                    LABEL_102:
                     v80 = *(unsigned int *)(v76 + 8); /*0x582cb7*/
                     if ( v77 < v80 /*0x582cd9*/
                       || (*(unsigned char *)(v76 + 13) || !v80)
@@ -943,7 +941,7 @@ AbstractClass * * Radar::Update(int16_t *aP1, void *a2, void *a3, void *a4)
                        0) )
                 {
                   v15 = v113; /*0x5846cf*/
-LABEL_20:
+                  LABEL_20:
                   v113 = v15 + 1; /*0x5846d3*/
                   *((unsigned short *)v110 + v15) = v14; /*0x5846de*/
                 }
@@ -954,14 +952,14 @@ LABEL_20:
             v120[1] = v89; /*0x5846fd*/
             ++v12; /*0x58470a*/
             *(unsigned short *)(v13 + 6) = *(unsigned short *)(*&v2->q068 /*0x584712*/
-                                           + 4 * CellToTileIndexMap((ObjectClass *)v2, v120)
-                                           + 2);
+            + 4 * CellToTileIndexMap((ObjectClass *)v2, v120)
+            + 2);
             v9 = v106; /*0x584716*/
             v11 = v104; /*0x58471a*/
           }
           while ( v12 < v106 + v104 ); /*0x584723*/
           v10 = v105; /*0x584729*/
-LABEL_23:
+          LABEL_23:
           if ( ++v89 >= v10 + v107 ) /*0x58473e*/
           {
             v3 = i; /*0x584744*/
@@ -1002,15 +1000,15 @@ LABEL_23:
                 if ( v25 < v23 ) /*0x5847ce*/
                 {
                   for ( *(unsigned int *)(v22 + 16) = v24; /*0x5847d5*/
-                        v25 < *(unsigned int *)(v22 + 16);
-                        *(unsigned int *)(v27 + 8 * v25 - 4) = *(unsigned int *)(v27 + 8 * v25 + 4) )
+                  v25 < *(unsigned int *)(v22 + 16);
+                  *(unsigned int *)(v27 + 8 * v25 - 4) = *(unsigned int *)(v27 + 8 * v25 + 4) )
                   {
                     v27 = *(unsigned int *)(v22 + 4); /*0x5847d7*/
                     ++v25; /*0x5847da*/
                     *(unsigned int *)(v27 + 8 * v25 - 8) = *(unsigned int *)(v27 + 8 * v25); /*0x5847de*/
                   }
                 }
-LABEL_39:
+                LABEL_39:
                 v20 = v98; /*0x5847f1*/
               }
               if ( --v85 < 0 ) /*0x5847fe*/
@@ -1031,7 +1029,7 @@ LABEL_39:
       v86 = *(unsigned int *)&v2->__pad_64[4 * i + 16]; /*0x58482c*/
       if ( v10 < v10 + v107 ) /*0x584838*/
         break; /*0x584838*/
-LABEL_73:
+      LABEL_73:
       *(unsigned int *)&v2->__pad_64[4 * i + 16] = v86; /*0x584ab8*/
       v43 = (int)v2->Radar_field_0x60 - 1; /*0x584ac7*/
       if ( v43 >= 0 ) /*0x584ac8*/
@@ -1155,7 +1153,7 @@ LABEL_73:
                 if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)v2, v108, 1) ) /*0x584d36*/
                 {
                   v75 = (__int16)v74 /*0x584d5c*/
-                      + (__int16)v71 * (*&v2->u32_F8 + *&v2->u32_F4 + 1);
+                  + (__int16)v71 * (*&v2->u32_F8 + *&v2->u32_F4 + 1);
                   if ( v75 >= 0 ) /*0x584d5e*/
                   {
                     v78 = *&v2->q06C; /*0x584dc6*/
@@ -1204,7 +1202,7 @@ LABEL_73:
       v29 = v11; /*0x584841*/
       if ( v11 < v9 + v11 ) /*0x584845*/
         break; /*0x584845*/
-LABEL_72:
+      LABEL_72:
       if ( ++v28 >= v10 + v107 ) /*0x584ab2*/
         goto LABEL_73; /*0x584ab2*/
     }
@@ -1328,21 +1326,18 @@ void * Radar::CopyDataArray(int * a2, void *a2_1)
   if ( this != (Radar *)a2 ) /*0x58abdc*/
   {
     (*(void (**)(Radar *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x58abe0*/
-  int v3; // edi
-    v3 = a2->u32_8; /*0x58abe3*/
+    int v3 = a2->u32_8; // edi /*0x58abe3*/
     *&this->u32_8 = v3; /*0x58abea*/
     if ( v3 ) /*0x58abed*/
     {
-  int v4; // eax
+      int v4; // eax
       v4 = __2_YAPAXI_Z(8 * v3); /*0x58abf7*/
       if ( v4 ) /*0x58ac01*/
       {
-  int v5; // ecx
-        v5 = v4; /*0x58ac06*/
+        int v5 = v4; // ecx /*0x58ac06*/
         if ( v3 - 1 >= 0 ) /*0x58ac0a*/
         {
-  int v6; // edx
-          v6 = v3; /*0x58ac0c*/
+          int v6 = v3; // edx /*0x58ac0c*/
           do /*0x58ac16*/
           {
             *(unsigned int *)v5 = 0; /*0x58ac0d*/
@@ -1360,19 +1355,15 @@ void * Radar::CopyDataArray(int * a2, void *a2_1)
       *&this->q004 = v4; /*0x58ac1e*/
       if ( v4 ) /*0x58ac21*/
       {
-  int v7; // ecx
-        v7 = *&this->u32_8; /*0x58ac23*/
-  int v8; // eax
-        v8 = 0; /*0x58ac26*/
+        int v7 = *&this->u32_8; // ecx /*0x58ac23*/
+        int v8 = 0; // eax /*0x58ac26*/
         BYTE1(this->q00C) = 1; /*0x58ac2a*/
         if ( v7 > 0 ) /*0x58ac2e*/
         {
           do /*0x58ac4a*/
           {
-  int v9; // edx
-            v9 = a2->q004; /*0x58ac30*/
-  int v10; // ecx
-            v10 = *&this->q004; /*0x58ac33*/
+            int v9 = a2->q004; // edx /*0x58ac30*/
+            int v10 = *&this->q004; // ecx /*0x58ac33*/
             *(unsigned int *)(v10 + 8 * v8) = *(unsigned int *)(v9 + 8 * v8); /*0x58ac39*/
             *(unsigned int *)(v10 + 8 * v8 + 4) = *(unsigned int *)(v9 + 8 * v8 + 4); /*0x58ac40*/
             ++v8; /*0x58ac47*/
@@ -1851,7 +1842,7 @@ MapClass * * Radar::RenderMinimap()
     v73 = v74[2]; /*0x657766*/
     v98 = v73; /*0x657769*/
     v72 = v74[3]; /*0x65776d*/
-LABEL_84:
+    LABEL_84:
     v40 = this->u32_14E4 <= 0; /*0x657770*/
     v75 = &this->u32_14DC; /*0x657777*/
     v99 = v72; /*0x65777d*/
@@ -1898,7 +1889,7 @@ LABEL_84:
     v2[1] = v65; /*0x657834*/
     v2[2] = v73; /*0x657837*/
     v2[3] = v72; /*0x65783a*/
-LABEL_99:
+    LABEL_99:
     v80 = this->u32_14E0; /*0x65783d*/
     v81 = this->u32_14E4; /*0x657849*/
     this->u32_14EC = this->u32_14DC; /*0x65784f*/
@@ -1982,15 +1973,15 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   v10 = v10; /*0x692680*/
   if ( v10 && !v10[1050] ) /*0x692686*/
   {
-    if ( v10->q220 == 2 /*0x6926cf*/
+          if ( v10->q220 == 2 /*0x6926cf*/
       && (v28 = dword_A83D4C->relatedTagsCount,
           v12 = (unsigned int *)(*(int (**)(unsigned char *, unsigned int *))(*&v10->q120))(v10, v31),
           v13 = Coord::To_Cell(&dword_87F7E8, v12),
           !Cell::IsPassableOffset(v13, v28))
       || *(unsigned char *)((*(int (**)(unsigned char *))(v10->alignmentPadding)(v10) + 3226) )
-    {
-      v9 = 0; /*0x6926d9*/
-    }
+          {
+            v9 = 0; /*0x6926d9*/
+          }
   }
   v14 = (int16_t *)aP0; /*0x6926db*/
   if ( !aP1 /*0x692725*/
@@ -2023,14 +2014,14 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   }
   if ( byte_880998 ) /*0x6927d4*/
   {
-    if ( !aP1 /*0x6927fb*/
+      if ( !aP1 /*0x6927fb*/
       || !(*(int (**)(unsigned char *))(*&aP1->q0F0))(aP1)
       || (v18 = (void *)(*(int (**)(unsigned char *))(*&aP1->q0F0))(aP1),
           !(uint8_t)((House *)(v18))->IsHumanPlayer())
       || (v30 = 10, !(*(uint8_t (**)(unsigned char *))(*&aP1->u32_250))(aP1)) )
-    {
-      v30 = 15; /*0x69280d*/
-    }
+      {
+        v30 = 15; /*0x69280d*/
+      }
   }
   if ( byte_88099A ) /*0x69281c*/
   {
@@ -2082,20 +2073,20 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
         if ( v23->q20C == -1 /*0x692996*/
           || !(uint8_t)((int (__fastcall *)(void *))Radar::IsRadarTargetEligible)(v23)
           || (v30 = 42, !LayerClass::IsWithinUsableArea(&dword_87F7E8, v14, 1)) )
-        {
+  {
           v30 = 43; /*0x6929a7*/
-        }
-        goto LABEL_65; /*0x6929a7*/
+  }
+    goto LABEL_65; /*0x6929a7*/
       }
       if ( aP0 != dword_A83D4C->selectedPathIndex ) /*0x692938*/
       {
   LABEL_59:
         if ( v21 ) /*0x692970*/
-        {
+  {
           v30 = 46; /*0x692972*/
           goto LABEL_65; /*0x69297a*/
-        }
-        goto LABEL_61; /*0x692970*/
+  }
+    goto LABEL_61; /*0x692970*/
       }
       if ( (uint8_t)((int (__fastcall *)(void *))Radar::IsRadarTargetEligible)(dword_A83D4C) /*0x692955*/
         && VectorClass::GetAtChecked(*((int **)dword_A83D4C + aP0 + 132), (int)v21) )
@@ -2110,9 +2101,9 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   LABEL_65:
   if ( byte_88099C ) /*0x6929b6*/
     v30 = 60; /*0x6929b8*/
-  if ( !byte_880999 ) /*0x6929c7*/
-    goto LABEL_81; /*0x6929c7*/
-  if ( aP1
+    if ( !byte_880999 ) /*0x6929c7*/
+      goto LABEL_81; /*0x6929c7*/
+    if ( aP1
     && (*(int (**)(unsigned char *))(*&aP1->q0F0))(aP1)
     && (v24 = (void *)(*(int (**)(unsigned char *))(*&aP1->q0F0))(aP1),
         (uint8_t)((House *)(v24))->IsHumanPlayer())
@@ -2124,7 +2115,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       goto LABEL_81; /*0x692a24*/
     }
   }
-  else
+    else
   {
     v25 = v14[1] << 8; /*0x692a3e*/
     v31[0] = (*v14 << 8) + 128; /*0x692a41*/
@@ -2136,7 +2127,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       && *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 17) != -1 )
     {
       if ( *(unsigned char *)(*(unsigned int *)&dword_A83D84->vfptr[4 * *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 17)] /*0x692abc*/
-                    + 680) )
+      + 680) )
       {
         if ( *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 20) != -1 ) /*0x692ad4*/
         {
@@ -2148,22 +2139,22 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       }
     }
   }
-  v30 = 14; /*0x692afe*/
+    v30 = 14; /*0x692afe*/
   LABEL_81:
   if ( dword_8809A0 != -1 ) /*0x692b0e*/
   {
-    v27 = (*(int (**)(unsigned int, int16_t *, unsigned char *))(**((unsigned int **)dword_A8E334 + dword_8809A0) + 108))( /*0x692b1d*/
+            v27 = (*(int (**)(unsigned int, int16_t *, unsigned char *))(**((unsigned int **)dword_A8E334 + dword_8809A0) + 108))( /*0x692b1d*/
             *((unsigned int *)dword_A8E334 + dword_8809A0),
             v14,
             aP1);
-    if ( v27 ) /*0x692b22*/
-      v30 = v27; /*0x692b24*/
+            if ( v27 ) /*0x692b22*/
+              v30 = v27; /*0x692b24*/
   }
-  if ( !v30 && v21 ) /*0x692b32*/
-    v30 = 44; /*0x692b34*/
-  if ( dword_880990 ) /*0x692b43*/
-    return 0; /*0x692b45*/
-  else
-    return v30; /*0x692b51*/
+    if ( !v30 && v21 ) /*0x692b32*/
+      v30 = 44; /*0x692b34*/
+    if ( dword_880990 ) /*0x692b43*/
+      return 0; /*0x692b45*/
+    else
+      return v30; /*0x692b51*/
 }
 }

@@ -35,8 +35,7 @@ namespace gamemd {
 char sub_72C060()
 {
 
-  char result; // al
-  result = byte_B0FD2D; /*0x72c060*/
+  char result = byte_B0FD2D; // al /*0x72c060*/
   if ( !byte_B0FD2D ) /*0x72c067*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c073*/
@@ -57,7 +56,7 @@ void sub_72C0B0()
   {
     if ( DataGlobal_B0FD2C ) /*0x72c0c2*/
     {
-  void *v1; // esi
+      void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FA4C; /*0x72c0c5*/
       if ( *(unsigned int *)&DataGlobal_B0FA4C ) /*0x72c0cd*/
       {

@@ -35,8 +35,7 @@ namespace gamemd {  // G42.18 ns repair
 void ParticleTypeClass::GetClassIdentifier()
 {
 
-  void *v2; // eax
-  v2 = *&this->vtable2; /*0x477906*/
+  void *v2 = *&this->vtable2; // eax /*0x477906*/
   *&this->uniqueId = 0; /*0x477909*/
   if ( v2 && (this->IsAllocated) ) /*0x477910*/
   {
@@ -53,21 +52,17 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 {
 
 
-  int v3; // ebp
-  v3 = a2; /*0x4784f2*/
+  int v3 = a2; // ebp /*0x4784f2*/
   if ( a2 ) /*0x4784fe*/
   {
-  char *v5; // edi
-    v5 = a3; /*0x478504*/
+    char *v5 = a3; // edi /*0x478504*/
     LOBYTE(this->vtable4) = 0; /*0x478508*/
     if ( a3 ) /*0x47850d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
       {
-  char *v9; // eax
-        v9 = a3 + 2; /*0x478548*/
-  int v10; // ecx
-        v10 = a2; /*0x47854b*/
+        char *v9 = a3 + 2; // eax /*0x478548*/
+        int v10 = a2; // ecx /*0x47854b*/
         do /*0x478558*/
         {
           *(v9 - 2) = 0; /*0x47854c*/
@@ -81,16 +76,14 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     }
     else
     {
-  int v6; // eax
+      int v6; // eax
       v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x478514*/
       if ( v6 ) /*0x47851e*/
       {
         if ( a2 - 1 >= 0 ) /*0x478525*/
         {
-  unsigned char *v7; // ecx
-          v7 = &v6->ptr_2; /*0x478527*/
-  int v8; // edx
-          v8 = a2; /*0x47852a*/
+          unsigned char *v7 = &v6->ptr_2; // ecx /*0x478527*/
+          int v8 = a2; // edx /*0x47852a*/
           do /*0x478537*/
           {
             *(v7 - 2) = 0; /*0x47852b*/
@@ -113,19 +106,18 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       return 0; /*0x4785e2*/
     if ( *&this->vtable2 ) /*0x478562*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = (int)(this->vtable3); /*0x478567*/
       if ( a2 < m_8 ) /*0x47856c*/
         m_8 = a2; /*0x47856e*/
       if ( m_8 > 0 ) /*0x478572*/
       {
-  int v12; // eax
-        v12 = 0; /*0x478574*/
+        int v12 = 0; // eax /*0x478574*/
         do /*0x478590*/
         {
-  int v13; // edx
+          int v13; // edx
           v13 = (int)(*&this->vtable2 + v12); /*0x47857b*/
-  char *v14; // ebx
+          char *v14; // ebx
           v14 = &v5[v12]; /*0x47857d*/
           v12 += 3; /*0x478580*/
           --m_8; /*0x478583*/
@@ -181,10 +173,9 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
   {
     if ( v3 - 1 >= 0 ) /*0x478918*/
     {
-  unsigned char *v5; // ecx
+      unsigned char *v5; // ecx
       v5 = (unsigned char *)(v4 + 2); /*0x47891a*/
-  int v6; // edx
-      v6 = v3; /*0x47891d*/
+      int v6 = v3; // edx /*0x47891d*/
       do /*0x47892a*/
       {
         *(v5 - 2) = 0; /*0x47891e*/
@@ -205,18 +196,16 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
     return &a2_2->ArrayIndex; /*0x478935*/
   void *BehavesLike; // eax
   BehavesLike = a2_2->BehavesLike; /*0x478937*/
-  int v8; // ecx
-  v8 = 0; /*0x47893a*/
+  int v8 = 0; // ecx /*0x47893a*/
   BYTE1(a2_2->ParticleTypeClass_field_0xC) = 1; /*0x47893e*/
   if ( (int)BehavesLike <= 0 ) /*0x478942*/
     return &a2_2->ArrayIndex; /*0x478942*/
-  int v9; // eax
-  v9 = 0; /*0x478944*/
+  int v9 = 0; // eax /*0x478944*/
   do /*0x478969*/
   {
-  int v10; // edx
+    int v10; // edx
     v10 = a2_2[1] + v9; /*0x47894e*/
-  char *v11; // edi
+    char *v11; // edi
     v11 = (char *)a2_2->ParticleTypeClass_field_28C + v9; /*0x478952*/
     ++v8; /*0x478954*/
     v9 += 3; /*0x478958*/
@@ -513,7 +502,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
       v36 = 0; /*0x64533d*/
       if ( *(int *)&g_BuildingTypeInitState <= 0 ) /*0x645341*/
       {
-LABEL_10:
+        LABEL_10:
         v37 = (BuildingTypeClass *)__2_YAPAXI_Z(0x318u); /*0x64536b*/
         if ( v37 ) /*0x64537a*/
           v38 = (v37)->Construct(Source); /*0x645383*/
@@ -522,7 +511,7 @@ LABEL_10:
         v39 = 0; /*0x645392*/
         if ( *(int *)&g_BuildingTypeInitState <= 0 ) /*0x645396*/
         {
-LABEL_17:
+          LABEL_17:
           v39 = -1; /*0x6453aa*/
         }
         else
@@ -660,7 +649,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       v14 = 0; /*0x6456ee*/
       if ( (int)a1 <= 0 ) /*0x6456f4*/
       {
-  LABEL_14:
+        LABEL_14:
         ((char *)v3)->Load2DArt(); /*0x645783*/
         return 0; /*0x64578a*/
       }
@@ -736,9 +725,9 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x64599f*/
     for ( ; /*0x6459a5*/
-          v3 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v3) )
+    v3 < g_BuildingLoadQueue_Array.LightBlueTint;
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
+    + 4 * v3) )
     {
       ++v3; /*0x6459ad*/
     }
@@ -752,9 +741,9 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   {
     --*(unsigned int *)&g_BuildingTypeInitState; /*0x6459e8*/
     for ( ; /*0x6459ee*/
-          v4 < *(int *)&g_BuildingTypeInitState;
-          *(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue
-                                                                                     + 4 * v4) )
+    v4 < *(int *)&g_BuildingTypeInitState;
+    *(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue
+    + 4 * v4) )
     {
       ++v4; /*0x6459f6*/
     }
@@ -793,10 +782,9 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
     {
       if ( a3_2 - 1 >= 0 ) /*0x645a9f*/
       {
-  unsigned char *v4; // eax
+        unsigned char *v4; // eax
         v4 = (unsigned char *)(a3_2 + 2); /*0x645aa1*/
-  int v5; // ecx
-        v5 = a3_2; /*0x645aa4*/
+        int v5 = a3_2; // ecx /*0x645aa4*/
         do /*0x645ab1*/
         {
           *(v4 - 2) = 0; /*0x645aa5*/
@@ -811,16 +799,14 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
     }
     else
     {
-  char *v6; // eax
+      char *v6; // eax
       v6 = (char *)operator new(3 * a3_2); /*0x645abc*/
       if ( v6 ) /*0x645ac6*/
       {
         if ( a3_2 - 1 >= 0 ) /*0x645acd*/
         {
-  unsigned char *v7; // ecx
-          v7 = v6 + 2; /*0x645acf*/
-  int v8; // edx
-          v8 = a3_2; /*0x645ad2*/
+          unsigned char *v7 = v6 + 2; // ecx /*0x645acf*/
+          int v8 = a3_2; // edx /*0x645ad2*/
           do /*0x645adf*/
           {
             *(v7 - 2) = 0; /*0x645ad3*/
@@ -883,10 +869,8 @@ namespace gamemd {
 int ParticleTypeClass::Init(unsigned char * a2, void *a2_1)
 {
 
-  int m_10; // esi
-  m_10 = *&this->uniqueId; /*0x4785f2*/
-  int result; // eax
-  result = 0; /*0x4785f5*/
+  int m_10 = *&this->uniqueId; // esi /*0x4785f2*/
+  int result = 0; // eax /*0x4785f5*/
   if ( m_10 <= 0 ) /*0x4785fa*/
     return -1; /*0x478621*/
   unsigned char *i; // ecx
@@ -907,18 +891,16 @@ int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2
   result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x6457b3*/
   if ( result >= 0 ) /*0x6457ba*/
   {
-  int v4; // edx
+    int v4; // edx
     v4 = *(unsigned int *)aP1; /*0x6457c2*/
     aP2 = (int)aP0->aP2; /*0x6457ce*/
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v4 + 16))(aP1, &aP2, 4, 0); /*0x6457d2*/
     if ( result >= 0 ) /*0x6457d7*/
     {
-  int v5; // ebp
-      v5 = 0; /*0x6457dd*/
+      int v5 = 0; // ebp /*0x6457dd*/
       if ( aP2 > 0 ) /*0x6457e1*/
       {
-  int v6; // edi
-        v6 = 0; /*0x6457e3*/
+        int v6 = 0; // edi /*0x6457e3*/
         do /*0x645806*/
         {
           if ( (*(int (__stdcall **)(int, char *, int, unsigned int))(*(unsigned int *)aP1 + 16))( /*0x6457fa*/
@@ -926,7 +908,7 @@ int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2
                  (char *)aP0->strength + v6,
                  3,
                  0) < 0 )
-            break; /*0x6457fa*/
+          break; /*0x6457fa*/
           ++v5; /*0x645800*/
           v6 += 3; /*0x645801*/
         }

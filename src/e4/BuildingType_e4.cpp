@@ -28,8 +28,7 @@ namespace gamemd {  // G42.18 ns repair
 int BuildingType::FindDefault(void *a1)
 {
 
-  int result; // eax
-  result = 0; /*0x4e3560*/
+  int result = 0; // eax /*0x4e3560*/
   if ( this == (BuildingType *)-2 ) /*0x4e3565*/
     return HashTable::Find(&g_DialogHashTable,(const char *)(off_844AE8), 0); /*0x4e3573*/
   if ( !this ) /*0x4e357b*/
@@ -111,13 +110,13 @@ int BuildingType::IsSpecialType(void *a1)
 
   int result; // eax
   (*((unsigned char *)&(result))) = this == 4475 /*0x510fa3*/
-                || this == 4476
-                || this == 4477
-                || this == 4478
-                || this == 4479
-                || this == 4480
-                || this == 4481
-                || this == 4482;
+  || this == 4476
+  || this == 4477
+  || this == 4478
+  || this == 4479
+  || this == 4480
+  || this == 4481
+  || this == 4482;
   return result; /*0x510fa2*/
 }
 } // namespace gamemd

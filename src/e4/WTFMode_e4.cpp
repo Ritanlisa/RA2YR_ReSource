@@ -12,7 +12,7 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_7535D0()
 {
-
+  
   if ( dword_B1D4C4 ) /*0x7535d7*/
   {
     *(unsigned int *)(dword_B1D4C4 + 80) = 2; /*0x7535d9*/

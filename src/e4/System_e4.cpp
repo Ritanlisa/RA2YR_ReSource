@@ -125,7 +125,7 @@ int System_Search(ObjectClass * aP0, int edx0, int * a2)
     if ( v5 <= v4 ) /*0x52b76e*/
       break; /*0x52b76e*/
     v3 /= 2; /*0x52b770*/
-  LABEL_7:
+    LABEL_7:
     if ( v3 <= 0 ) /*0x52b782*/
       return 0; /*0x52b782*/
   }
@@ -147,17 +147,15 @@ int sub_6269A0()
   v1 = (gamemd::FileSystem *)(g_FileExtensionState);
   if ( !g_FileExtensionState ) /*0x6269a9*/
   {
-  FileSystem *v2; // eax
+    FileSystem *v2; // eax
     v2 = (FileSystem *)operator new(0x10u); /*0x6269b1*/
-  FileSystem *v3; // edi
-    v3 = v2; /*0x6269b6*/
+    FileSystem *v3 = v2; // edi /*0x6269b6*/
     if ( v2 ) /*0x6269bd*/
     {
       *(unsigned int *)v2 = -1; /*0x6269c5*/
-  StringVector *v4; // eax
+      StringVector *v4; // eax
       v4 = (StringVector *)operator new(0x18u); /*0x6269cb*/
-  StringVector *v5; // esi
-      v5 = v4; /*0x6269d0*/
+      StringVector *v5 = v4; // esi /*0x6269d0*/
       if ( v4 ) /*0x6269d7*/
       {
         StringVector::Construct(v4, 0, 0); /*0x6269df*/
@@ -170,10 +168,9 @@ int sub_6269A0()
         v5 = 0; /*0x6269fa*/
       }
       *(unsigned int *)&v3[4] = (unsigned int)(v5); /*0x6269fe*/
-  VectorClass *v6; // eax
+      VectorClass *v6; // eax
       v6 = (VectorClass *)operator new(0x18u); /*0x626a01*/
-  VectorClass *v7; // esi
-      v7 = v6; /*0x626a06*/
+      VectorClass *v7 = v6; // esi /*0x626a06*/
       if ( v6 ) /*0x626a0d*/
       {
         (v6)->ConstructHSV(0, 0); /*0x626a15*/
@@ -186,7 +183,7 @@ int sub_6269A0()
         v7 = 0; /*0x626a30*/
       }
       *(unsigned int *)&v3[8] = (unsigned int)(v7); /*0x626a34*/
-  DynamicVectorArray *v8; // eax
+      DynamicVectorArray *v8; // eax
       v8 = (DynamicVectorArray *)operator new(0x10u); /*0x626a37*/
       if ( v8 ) /*0x626a41*/
         *(unsigned int *)&v3[12] = (unsigned int)(DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31)); /*0x626a53*/
@@ -200,8 +197,7 @@ int sub_6269A0()
     }
     g_FileExtensionState = (int)(v1);
   }
-  int v9; // esi
-  v9 = 0; /*0x626a6d*/
+  int v9 = 0; // esi /*0x626a6d*/
   int v10; // edi
   v10 = *(unsigned int *)(*(unsigned int *)&v1[4] + 16); /*0x626a6f*/
   if ( v10 > 0 ) /*0x626a74*/
@@ -225,17 +221,15 @@ char sub_626AB0(const char * a1, int a2)
 
   if ( !g_FileExtensionState ) /*0x626ac5*/
   {
-  unsigned int *v2; // eax
+    unsigned int *v2; // eax
     v2 = (unsigned int *)(operator new(0x10u));
-  unsigned int *v3; // ebp
-    v3 = v2; /*0x626ad2*/
+    unsigned int *v3 = v2; // ebp /*0x626ad2*/
     if ( v2 ) /*0x626ad9*/
     {
       *v2 = (unsigned int)((unsigned int *)(-1));
-  unsigned int *v4; // eax
+      unsigned int *v4; // eax
       v4 = (unsigned int *)(operator new(0x18u)); /*0x626ae8*/
-  unsigned int *v5; // esi
-      v5 = v4; /*0x626aed*/
+      unsigned int *v5 = v4; // esi /*0x626aed*/
       if ( v4 ) /*0x626af9*/
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
@@ -248,10 +242,9 @@ char sub_626AB0(const char * a1, int a2)
         v5 = 0; /*0x626b18*/
       }
       v3[1] = (unsigned int)((unsigned int *)(v5));
-  unsigned int *v6; // eax
+      unsigned int *v6; // eax
       v6 = (unsigned int *)(operator new(0x18u)); /*0x626b1f*/
-  unsigned int *v7; // esi
-      v7 = v6; /*0x626b24*/
+      unsigned int *v7 = v6; // esi /*0x626b24*/
       if ( v6 ) /*0x626b2b*/
       {
         (v6)->ConstructHSV(0, 0); /*0x626b33*/
@@ -264,7 +257,7 @@ char sub_626AB0(const char * a1, int a2)
         v7 = 0; /*0x626b4a*/
       }
       v3[2] = (unsigned int)((int)(v7));
-  int *v8; // eax
+      int *v8; // eax
       v8 = (int *)operator new(0x10u); /*0x626b51*/
       if ( v8 ) /*0x626b5b*/
         v3[3] = (unsigned int)(DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31)); /*0x626b6c*/
@@ -290,9 +283,9 @@ char sub_626AB0(const char * a1, int a2)
     && (v12 = *(unsigned int *)(v10 + 20), v12 > 0)
     && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v10 + 8))(v10, v11 + v12, 0) )
   {
-  int v13; // eax
+    int v13; // eax
     v13 = *(unsigned int *)(v10 + 16); /*0x626bf3*/
-  int v14; // edx
+    int v14; // edx
     v14 = *(unsigned int *)(v10 + 4); /*0x626bf6*/
     *(unsigned int *)(v10 + 16) = v13 + 1; /*0x626bfc*/
     *(unsigned int *)(v14 + 4 * v13) = (unsigned int)(v9); /*0x626bff*/
@@ -307,16 +300,13 @@ char sub_626AB0(const char * a1, int a2)
     && (v17 = *(unsigned int *)(v15 + 20), v17 > 0)
     && ((*((unsigned char *)&(v17))) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))(v15, v16 + v17, 0), (unsigned char)v17) )
   {
-  int v18; // eax
+    int v18; // eax
     v18 = *(unsigned int *)(v15 + 16); /*0x626c36*/
-  int v19; // ecx
-    v19 = v18 + 1; /*0x626c39*/
-  int v20; // edx
-    v20 = 3 * v18; /*0x626c3c*/
+    int v19 = v18 + 1; // ecx /*0x626c39*/
+    int v20 = 3 * v18; // edx /*0x626c3c*/
     v17 = *(unsigned int *)(v15 + 4); /*0x626c3f*/
     *(unsigned int *)(v15 + 16) = v19; /*0x626c42*/
-  int v21; // edx
-    v21 = v17 + v20; /*0x626c45*/
+    int v21 = v17 + v20; // edx /*0x626c45*/
     *(unsigned short *)v21 = *(unsigned short *)a2; /*0x626c4e*/
     (*((unsigned char *)&(v17))) = *(unsigned char *)(a2 + 2); /*0x626c51*/
     *(unsigned char *)(v21 + 2) = v17; /*0x626c54*/
@@ -377,7 +367,7 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
     v6 = 0; /*0x68c9d8*/
     if ( dword_B054E0 > 0 ) /*0x68c9dc*/
       break; /*0x68c9dc*/
-  LABEL_6:
+    LABEL_6:
     v9 = (char *)operator new(0x33Cu); /*0x68ca15*/
     if ( v9 ) /*0x68ca24*/
       FontClass::InitMetrics(v9, aP0,(int)(a1), aP3, a4, a5, 1); /*0x68ca37*/
@@ -434,12 +424,11 @@ namespace gamemd {
 char sub_63A0D0()
 {
 
-  char result; // al
-  result = byte_AC4C08; /*0x63a0d0*/
+  char result = byte_AC4C08; // al /*0x63a0d0*/
   if ( !byte_AC4C08 ) /*0x63a0d7*/
   {
     byte_AC4C08 = 1; /*0x63a0ea*/
-  wchar_t *StringCSF; // eax
+    wchar_t *StringCSF; // eax
     StringCSF = GetStringCSF((char *)(aMsgPlanningmod_12), 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a0f1*/
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a0fd*/
     return PlayVocClass(dword_8871E0->AmmoCrateDamage, 0x2000, 1.0, 0); /*0x63a119*/
@@ -453,8 +442,7 @@ namespace gamemd {
 char sub_72C9C0()
 {
 
-  char result; // al
-  result = byte_B0FCF1; /*0x72c9c0*/
+  char result = byte_B0FCF1; // al /*0x72c9c0*/
   if ( !byte_B0FCF1 ) /*0x72c9c7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c9d3*/
@@ -475,7 +463,7 @@ void sub_72CA10()
   {
     if ( DataGlobal_B0FCF0 ) /*0x72ca22*/
     {
-  void *v1; // esi
+      void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FA60; /*0x72ca25*/
       if ( *(unsigned int *)&DataGlobal_B0FA60 ) /*0x72ca2d*/
       {
@@ -526,7 +514,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
   if ( v8 ) /*0x766895*/
   {
     *(unsigned int *)&v11.ptr_4 = aP4; /*0x76689f*/
-  int v7; // ecx
+    int v7; // ecx
     *(unsigned int *)v11.q000 = v7; /*0x7668a0*/
     String::AssignFromPtr(&v11, (const char **)&a4); /*0x7668a4*/
     inited = System_Init_766A10(v8, a2, a3, *(void **)v11.q000, *(int *)&v11.ptr_4); /*0x7668b6*/

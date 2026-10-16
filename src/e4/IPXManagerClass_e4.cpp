@@ -15,16 +15,14 @@ namespace gamemd {  // G42.18 ns repair
 int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 {
 
-  int v4; // eax
-  v4 = this->u32_4C; /*0x540d80*/
+  int v4 = this->u32_4C; // eax /*0x540d80*/
   if ( v4 ) /*0x540d93*/
   {
     v4->u32_28 = a2; /*0x540d95*/
     *(unsigned int *)(this->u32_4C + 44) = a3; /*0x540d9b*/
     *(unsigned int *)(this->u32_4C + 48) = a4; /*0x540da1*/
   }
-  int result; // eax
-  result = this->u32_50; /*0x540da4*/
+  int result = this->u32_50; // eax /*0x540da4*/
   if ( result ) /*0x540da9*/
   {
     result->u8_28 = a2; /*0x540dab*/
@@ -40,10 +38,8 @@ namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
 
-  int v2; // edx
-  v2 = this->u32_44; /*0x541040*/
-  int result; // eax
-  result = 0; /*0x541043*/
+  int v2 = this->u32_44; // edx /*0x541040*/
+  int result = 0; // eax /*0x541043*/
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
   IPXManagerClass *i; // ecx
@@ -67,7 +63,7 @@ int IPXManagerClass::receivePacket(int a2)
   result = 0; /*0x541074*/
   if ( v2 <= 0 ) /*0x54107d*/
   {
-  LABEL_5:
+    LABEL_5:
     if ( a2 == this->u32_50 ) /*0x541091*/
     {
       return -4; /*0x541095*/
@@ -105,8 +101,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)  // G42.40f: para
     return 0; /*0x5415f7*/
   if ( !this->Active ) /*0x5415fe*/
     return 0; /*0x5415fe*/
-  int v5; // eax
-  v5 = this->u32_44; /*0x541605*/
+  int v5 = this->u32_44; // eax /*0x541605*/
   if ( !v5 ) /*0x54160c*/
     return 0; /*0x54160c*/
   if ( this->u32_54 >= v5 ) /*0x541611*/
@@ -117,17 +112,15 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)  // G42.40f: para
     return 0; /*0x541661*/
   while ( 1 ) /*0x54162b*/
   {
-  int v6; // ecx
+    int v6; // ecx
     v6 = *((unsigned int *)this + this->u32_54 + 10); /*0x54162b*/
-  int v7; // eax
+    int v7; // eax
     v7 = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3); /*0x541631*/
-  int v8; // ecx
-    v8 = this->u32_54; /*0x541634*/
-  int v9; // edx
+    int v8 = this->u32_54; // ecx /*0x541634*/
+    int v9; // edx
     v9 = *((unsigned int *)this + v8++ + 10); /*0x541637*/
     v10 = (unsigned int *)(*(unsigned int *)(v9 + 100)); /*0x54163c*/
-  int v11; // edx
-    v11 = this->u32_44; /*0x54163f*/
+    int v11 = this->u32_44; // edx /*0x54163f*/
     this->u32_54 = v8; /*0x541644*/
     if ( v8 >= v11 ) /*0x541647*/
       this->u32_54 = 0; /*0x541649*/

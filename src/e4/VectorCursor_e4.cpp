@@ -57,7 +57,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
       v4 = -1; /*0x4f4bc0*/
     }
     this->u32_4 = v4 - v3; /*0x4f4bce*/
-  LABEL_7:
+    LABEL_7:
     v5 = this->u32_8; /*0x4f4bd1*/
     if ( v5 >= 0 ) /*0x4f4bd6*/
     {

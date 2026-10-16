@@ -18,12 +18,10 @@ int VoxClass::FindAndPlay(int a3)
 {
 
   int v2; // edx
-  int v4; // ebx
-  v4 = v2; /*0x752704*/
+  int v4 = v2; // ebx /*0x752704*/
   if ( this ) /*0x752708*/
   {
-  int v5; // esi
-    v5 = 0; /*0x752710*/
+    int v5 = 0; // esi /*0x752710*/
     if ( g_InfantrySelectState <= 0 ) /*0x752714*/
     {
       return UpdateThemeManager(-1, v4, a3); /*0x752736*/

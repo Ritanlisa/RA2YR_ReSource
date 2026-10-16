@@ -17,7 +17,7 @@
 namespace gamemd {  // G42.18 ns repair
 int Array::GetClamped(int aP1)
 {
-    unsigned int v4 = 0;  /* G37 hoist */
+  unsigned int v4 = 0;  /* G37 hoist */
   int result; // eax
   int v3; // edx
   int v4; // eax
@@ -42,13 +42,11 @@ int Array::FindValue(int aP1, void *a2)
 
   void *Array_field_0x10; // esi
   Array_field_0x10 = (void *)(this->u32_10); /*0x634292*/
-  int result; // eax
-  result = -1; /*0x634295*/
-  int v4; // edx
-  v4 = 0; /*0x634298*/
+  int result = -1; // eax /*0x634295*/
+  int v4 = 0; // edx /*0x634298*/
   if ( (int)Array_field_0x10 > 0 ) /*0x63429d*/
   {
-  unsigned int **i; // ecx
+    unsigned int **i; // ecx
     for ( i = (unsigned int **)this->q004; **i != aP1; ++i ) /*0x63429f*/
     {
       if ( ++v4 >= (int)Array_field_0x10 ) /*0x6342b2*/
@@ -76,8 +74,7 @@ int Array::RemoveAt(int a2, void *a2_2)
   }
   else
   {
-  char *v4; // edx
-    v4 = Array_field_0x10 - 1; /*0x63e59b*/
+    char *v4 = Array_field_0x10 - 1; // edx /*0x63e59b*/
     a2_2->Array_field_0x10 = v4; /*0x63e59e*/
     if ( a2_2 < (int)v4 ) /*0x63e5a1*/
     {
@@ -117,7 +114,7 @@ int Array::ContainsValue(int aP1, void *a2)
   v4 = 0; /*0x65adf7*/
   if ( (int)Array_field_0xE8 <= 0 ) /*0x65adfc*/
   {
-LABEL_6:
+    LABEL_6:
     LOBYTE(result) = 0; /*0x65ae1a*/
   }
   else
@@ -145,11 +142,10 @@ int Array::Zero(void *a1_1)
 {
 
 
-  int result; // eax
-  result = 0; /*0x7490d6*/
+  int result = 0; // eax /*0x7490d6*/
   if ( (int)a1_1->Array_field_0x800 > 0 ) /*0x7490da*/
   {
-  Array *v2; // edx
+    Array *v2; // edx
     v2 = (gamemd::Array *)(a1_1); /*0x7490dd*/
     do /*0x7490f1*/
     {
@@ -172,7 +168,7 @@ void Array::ByteSwap(void *a1)
   int v2; // ebx
   if ( this->u32_804 && (v2 = 0, (int)this->q800 > 0) ) /*0x749169*/
   {
-  u_long *v3; // esi
+    u_long *v3; // esi
     v3 = (u_long *)this; /*0x74916c*/
     do /*0x749184*/
     {
@@ -226,8 +222,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
 {
 
 
-  int v4; // esi
-  v4 = aP2; /*0x7ad795*/
+  int v4 = aP2; // esi /*0x7ad795*/
   int v5; // ecx
   v5 = *(unsigned int *)this->__pad_000; /*0x7ad799*/
   if ( aP2 > v5 ) /*0x7ad79e*/
@@ -239,16 +234,15 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
   Array_field_0x4 = (void *)(this->q004); /*0x7ad7a6*/
   if ( v4 >= (int)Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
   {
-  int v7; // ebp
-    v7 = 2 * v5; /*0x7ad7b6*/
+    int v7 = 2 * v5; // ebp /*0x7ad7b6*/
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
-  void *v8; // edx
+    void *v8; // edx
     v8 = (void *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
-  void *v16; // [esp+Ch] [ebp-4h]
+    void *v16; // [esp+Ch] [ebp-4h]
     v16 = v8; /*0x7ad7ec*/
-  const void *v9; // esi
+    const void *v9; // esi
     v9 = *(const void **)this->q008; /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
       memcpy(v8, v9, 268 * *(unsigned int *)this->__pad_000); /*0x7ad80f*/
@@ -261,16 +255,15 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
   v10 = *(unsigned int *)this->__pad_000; /*0x7ad832*/
   if ( *(unsigned int *)this->__pad_000 >= (int)this->q004 ) /*0x7ad839*/
   {
-  int v11; // ebp
-    v11 = 2 * v10; /*0x7ad83b*/
+    int v11 = 2 * v10; // ebp /*0x7ad83b*/
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
-  void *v12; // edx
+    void *v12; // edx
     v12 = (void *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
-  void *v17; // [esp+Ch] [ebp-4h]
+    void *v17; // [esp+Ch] [ebp-4h]
     v17 = v12; /*0x7ad871*/
-  const void *v13; // esi
+    const void *v13; // esi
     v13 = *(const void **)this->q008; /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
       memcpy(v12, v13, 268 * *(unsigned int *)this->__pad_000); /*0x7ad894*/
@@ -297,12 +290,10 @@ namespace gamemd {  // G42.18 ns repair
 int Array::ForEach(Array *a1, int a2, int a3, int (* a4)(int))  // G57w11: def 同步 hpp static（raw 0x4068F0 receiver-first）
 {
 
-  int result; // eax
-  result = a3 - 1; /*0x4068f4*/
+  int result = a3 - 1; // eax /*0x4068f4*/
   if ( a3 - 1 >= 0 ) /*0x4068f5*/
   {
-  int v6; // edi
-    v6 = a3; /*0x406907*/
+    int v6 = a3; // edi /*0x406907*/
     do /*0x406911*/
     {
       result = a4((int)a1); /*0x40690c*/
@@ -323,12 +314,10 @@ int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int))
 
   char *v4; // esi
   v4 = (char *)aP0 + a3 * a2; /*0x40afe3*/
-  int result; // eax
-  result = a3 - 1; /*0x40afe5*/
+  int result = a3 - 1; // eax /*0x40afe5*/
   if ( a3 - 1 >= 0 ) /*0x40afe6*/
   {
-  int v6; // edi
-    v6 = a3; /*0x40afee*/
+    int v6 = a3; // edi /*0x40afee*/
     do /*0x40aff8*/
     {
       v4 -= a2; /*0x40aff1*/
@@ -347,11 +336,10 @@ int Array::Cleanup(void *a1, void *a2)
 {
 
 
-  int result; // eax
-  result = this->u32_3C; /*0x49b723*/
+  int result = this->u32_3C; // eax /*0x49b723*/
   if ( result ) /*0x49b728*/
   {
-  int i; // edi
+    int i; // edi
     for ( i = 0; i < (int)this->u32_40; ++i ) /*0x49b732*/
     {
       if ( *(unsigned int *)(this->u32_3C + 4 * i) ) /*0x49b737*/
@@ -369,8 +357,7 @@ namespace gamemd {
 char Array::GetElementAt(unsigned int * a2, int a3)
 {
 
-  int v3; // edx
-  v3 = a3; /*0x49d070*/
+  int v3 = a3; // edx /*0x49d070*/
   int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x49d079*/
   *a2 = 0; /*0x49d07e*/
@@ -398,13 +385,11 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
   {
     if ( (*(int (**)(int))(*&aP0->u32_B0))(aP0) == 44 ) /*0x55b893*/
     {
-  int v2; // ecx
-      v2 = dword_8B40D8; /*0x55b895*/
-  int v3; // edx
-      v3 = 0; /*0x55b89b*/
+      int v2 = dword_8B40D8; // ecx /*0x55b895*/
+      int v3 = 0; // edx /*0x55b89b*/
       if ( dword_8B40D8 > 0 ) /*0x55b89f*/
       {
-  unsigned int *v4; // esi
+        unsigned int *v4; // esi
         v4 = (unsigned int *)(dword_8B40CC); /*0x55b8a2*/
         do /*0x55b8da*/
         {
@@ -413,8 +398,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
             if ( v3 < v2 ) /*0x55b8af*/
             {
               --v2; /*0x55b8b1*/
-  int v5; // eax
-              v5 = v3; /*0x55b8b2*/
+              int v5 = v3; // eax /*0x55b8b2*/
               for ( dword_8B40D8 = v2; v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
               {
                 v4[v5] = v4[v5 + 1]; /*0x55b8c2*/

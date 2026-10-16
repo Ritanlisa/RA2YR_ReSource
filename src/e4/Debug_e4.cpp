@@ -23,39 +23,35 @@ char Debug::ScrollText(const char * aP1)
   result = (((unsigned char *)&(g_MissionQueueFrame.localVariables[493]))[2]); /*0x5bd0d0*/
   if ( (((unsigned char *)&(g_MissionQueueFrame.localVariables[493]))[2]) ) /*0x5bd0dd*/
   {
-  int v4; // eax
-    v4 = this->u32_2724; /*0x5bd0ef*/
-  int v5; // ebp
-    v5 = this->u32_271C + v4; /*0x5bd108*/
-  int v13; // [esp+Ch] [ebp-8h]
+    int v4 = this->u32_2724; // eax /*0x5bd0ef*/
+    int v5 = this->u32_271C + v4; // ebp /*0x5bd108*/
+    int v13; // [esp+Ch] [ebp-8h]
     v13 = this->u32_2720 + this->u32_2728; /*0x5bd10e*/
-  int v6; // edx
-    v6 = v4 + this->u32_272C; /*0x5bd112*/
+    int v6 = v4 + this->u32_272C; // edx /*0x5bd112*/
     this->u32_2734 = 0; /*0x5bd119*/
-  int v7; // edi
+    int v7; // edi
     v7 = v5 + strlen(aP1); /*0x5bd127*/
     if ( v7 > v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
     v5 = v5; /*0x5bd131*/
     if ( v5 < v7 ) /*0x5bd133*/
     {
-  char *v12; // [esp+8h] [ebp-Ch]
+      char *v12; // [esp+8h] [ebp-Ch]
       v12 = (char *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
-  const char *v9; // eax
+      const char *v9; // eax
       v9 = &aP1[-v5]; /*0x5bd15c*/
-  unsigned int *v11; // [esp+4h] [ebp-10h]
+      unsigned int *v11; // [esp+4h] [ebp-10h]
       v11 = &this->q004 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
-  const char *i; // [esp+10h] [ebp-4h]
+      const char *i; // [esp+10h] [ebp-4h]
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
-  char v15; // [esp+18h] [ebp+4h]
+        char v15; // [esp+18h] [ebp+4h]
         v15 = v9[v5]; /*0x5bd16f*/
         *v12 = Debug_Helper((gamemd::ObjectClass *)(v15)); /*0x5bd187*/
         *v11 = this->u32_2710; /*0x5bd18f*/
         if ( v15 == 10 ) /*0x5bd197*/
         {
-  int v10; // eax
-          v10 = this->u32_2720; /*0x5bd199*/
+          int v10 = this->u32_2720; // eax /*0x5bd199*/
           this->u32_271C = 0; /*0x5bd19f*/
           this->u32_2720 = v10 + 1; /*0x5bd1aa*/
         }
@@ -119,11 +115,10 @@ char Debug::Printf()
   va_list va; // [esp+10Ch] [ebp+Ch] BYREF
 
   va_start(va, Format);
-  char result; // al
-  result = byte_ABF23A; /*0x5bd1f0*/
+  char result = byte_ABF23A; // al /*0x5bd1f0*/
   if ( byte_ABF23A ) /*0x5bd1fd*/
   {
-  char Buffer[256]; // [esp+0h] [ebp-100h] BYREF
+    char Buffer[256]; // [esp+0h] [ebp-100h] BYREF
     vsprintf(Buffer,(const char *const )(Format), va); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/
     return Debug::ScrollText(Buffer); /*0x5bd230*/

@@ -43,14 +43,12 @@ int MapSeed::IsCellInBounds(void *a1)
 
   int v1; // edx
   v1 = *(__int16 *)this->__pad_000; /*0x5ac230*/
-  int result; // eax
-  result = *&this->__pad_002; /*0x5ac233*/
-  int v3; // esi
-  v3 = result + v1; /*0x5ac23e*/
+  int result = *&this->__pad_002; // eax /*0x5ac233*/
+  int v3 = result + v1; // esi /*0x5ac23e*/
   LOBYTE(result) = result + v1 > g_MissionQueueFrame.localVariables[160] /*0x5ac261*/
-                && v1 - result < g_MissionQueueFrame.localVariables[160]
-                && (result -= v1, result < g_MissionQueueFrame.localVariables[160])
-                && v3 <= g_MissionQueueFrame.localVariables[161];
+  && v1 - result < g_MissionQueueFrame.localVariables[160]
+  && (result -= v1, result < g_MissionQueueFrame.localVariables[160])
+  && v3 <= g_MissionQueueFrame.localVariables[161];
   return result; /*0x5ac25f*/
 
 }
@@ -88,7 +86,7 @@ int MapSeed::CheckName(void *a1)
     v6 = 0; /*0x79c5c8*/
     if ( *(int *)g_WindowManager <= 0 ) /*0x79c5cc*/
     {
-LABEL_12:
+      LABEL_12:
       result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c624*/
       LOBYTE(result) = 1; /*0x79c62d*/
     }
@@ -219,7 +217,7 @@ AbstractClass * * MapSeed::InsertName()
     {
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_ParseState) < 5 ) /*0x79c825*/
       {
-  LABEL_33:
+        LABEL_33:
         DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
         return; /*0x79c8bb*/
       }

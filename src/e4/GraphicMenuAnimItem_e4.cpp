@@ -10,11 +10,11 @@
 namespace gamemd {  // G42.18 ns repair
 VectorCursor * GraphicMenuAnimItem::Constructor(std::locale::facet *a1, char a2, void *a3, void *a4, void *a5) 
 {
-
+  
   *(unsigned int *)a1->__pad_0 = &vt_VectorCursorunsignedintDynamicVectorClass; /*0x4f3fd9*/
   if ( (a2 & 1) != 0 ) /*0x4f3fdf*/
     __3_YAXPAX_Z(a1); /*0x4f3fe2*/
   return (gamemd::VectorCursor *)((std::locale::facet *)a1); /*0x4f3fec*/
-
+  
 }
 } // namespace gamemd

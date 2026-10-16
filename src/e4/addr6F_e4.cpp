@@ -41,7 +41,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int Team_Helper_6F2780(int* p0);  // x4:signals@0x6f2780
+int Team_Helper_6F2780(int* p0);  // x4:signals@0x6f2780
 } // namespace gamemd
 
 // 0x6F0AB0
@@ -194,7 +194,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
             break; /*0x6f0c78*/
           if ( !v51 ) /*0x6f0c9a*/
             goto LABEL_33; /*0x6f0c9a*/
-  LABEL_34:
+          LABEL_34:
           if ( ++v17 >= dword_A8B210 ) /*0x6f0cbe*/
             goto LABEL_35; /*0x6f0cbe*/
         }
@@ -204,14 +204,14 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
           v67 = 0; /*0x6f0c8b*/
           ((void (__thiscall *)(void ***))v62[3])(&v62); /*0x6f0c93*/
         }
-  LABEL_33:
+        LABEL_33:
         v53[0] = v19; /*0x6f0c9c*/
         v53[1] = v20; /*0x6f0ca9*/
         Team_Helper_6F25E0(v53); /*0x6f0cad*/
         v67 += v20; /*0x6f0cb2*/
         goto LABEL_34; /*0x6f0cb2*/
       }
-  LABEL_35: v21 = (unsigned int)((unsigned int *)(0));
+      LABEL_35: v21 = (unsigned int)((unsigned int *)(0));
       if ( !v67 ) /*0x6f0ccd*/
         goto LABEL_58; /*0x6f0ccd*/
       if ( !v65 ) /*0x6f0cd9*/
@@ -244,17 +244,17 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
         {
           if ( !((uint8_t (__thiscall *)(void ***, int, unsigned int))v56[2])(&v56, v61 + v58, 0) ) /*0x6f0d60*/
           {
-  LABEL_50:
+            LABEL_50:
             v27 = v58; /*0x6f0d74*/
             goto LABEL_51; /*0x6f0d74*/
           }
-  LABEL_49:
+          LABEL_49:
           v28 = v60++; /*0x6f0d62*/
           *((unsigned int *)Block + v28) = v26; /*0x6f0d71*/
           goto LABEL_50; /*0x6f0d71*/
         }
       }
-  LABEL_51:
+      LABEL_51:
       v29 = *(unsigned int *)(v25 + 224); /*0x6f0d78*/
       if ( v29 /*0x6f0da9*/
         && (v60 < v27
@@ -265,7 +265,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
         v30 = v60++; /*0x6f0db4*/
         *((unsigned int *)Block + v30) = v29; /*0x6f0dbf*/
       }
-  LABEL_58: v62 = (void **)(&vt_VectorClassDiscreteDistributionClassDistributionObject);
+      LABEL_58: v62 = (void **)(&vt_VectorClassDiscreteDistributionClassDistributionObject);
       if ( v63 && v64 ) /*0x6f0dd8*/
         Team_Helper_6F26E0(v63, 3); /*0x6f0de0*/
     }
@@ -274,7 +274,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   v32 = 0; /*0x6f0dee*/
   if ( dword_8B40F8 <= 0 ) /*0x6f0df2*/
   {
-  LABEL_71:
+    LABEL_71:
     for ( i = 0; i < v60; v31 = Block ) /*0x6f0e4b*/
     {
       v39 = (int)((unsigned int *)(v31[i++])); /*0x6f0e4d*/
@@ -343,7 +343,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
         if ( v60 > 0 ) /*0x6f0e1b*/
           break; /*0x6f0e1b*/
       }
-  LABEL_70:
+      LABEL_70:
       ++v32; /*0x6f0e36*/
       v33 += 4; /*0x6f0e3c*/
       if ( v32 >= dword_8B40F8 ) /*0x6f0e41*/
@@ -456,7 +456,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     }
     if ( (_AX & 0x100) != 0 && (uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v14) ) /*0x6f8a64*/
       goto LABEL_34; /*0x6f8a6b*/
-  LABEL_33:
+    LABEL_33:
     v14 = v14->vtable4; /*0x6f8b3e*/
     if ( !v14 ) /*0x6f8b43*/
       goto LABEL_34; /*0x6f8b43*/
@@ -502,9 +502,9 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     && a1
     && (*((int (**)(TechnoClass *))a1->vfptr + 11))(a1) == 15
     && *(unsigned char *)(*((*((int (**)(TechnoClass *))a1->vfptr + 11))(a1) == 15
-                  ? &a1[1].ironTintTimer[1]
-                  : (int *)1728)
-                + 3779)
+      ? &a1[1].ironTintTimer[1]
+    : (int *)1728)
+    + 3779)
     || *(unsigned char *)((*((int (**)(TechnoClass *))a1->vfptr + 33))(a1) + 1728)
     || a1->isBerserk
     || v25 )
@@ -870,8 +870,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   int *v5; // edx
   unsigned int v26[3]; // [esp+28h] [ebp-Ch] BYREF
   v5 = (int *)(((Coord *)(v26))->Subtract((3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
-  int v6; // ebx
-  v6 = a1->vtable2; /*0x6f5f47*/
+  int v6 = a1->vtable2; // ebx /*0x6f5f47*/
   int v7; // eax
   v7 = (int)((int *)(*v5)); /*0x6f5f4a*/
   int v8; // ecx
@@ -883,22 +882,19 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   int v10; // ecx
   v10 = a2[1]; /*0x6f5f56*/
   v21[0] = v7; /*0x6f5f59*/
-  int v11; // eax
-  v11 = *a2; /*0x6f5f5d*/
+  int v11 = *a2; // eax /*0x6f5f5d*/
   int v22; // [esp+18h] [ebp-1Ch]
   v22 = v9; /*0x6f5f5f*/
   int *v12; // eax
   v12 = (int *)(((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1->vtable3) / 4)); /*0x6f5fa0*/
-  int v13; // ecx
-  v13 = v12->u32_4; /*0x6f5fa9*/
+  int v13 = v12->u32_4; // ecx /*0x6f5fa9*/
   int v14; // edx
   v14 = (int *)(v12->u32_8); /*0x6f5fac*/
   int v23; // [esp+1Ch] [ebp-18h]
   v23 = *v12; /*0x6f5faf*/
   int v24; // [esp+20h] [ebp-14h]
   v24 = v13; /*0x6f5fb3*/
-  int v15; // eax
-  v15 = a1->vtable3; /*0x6f5fb7*/
+  int v15 = a1->vtable3; // eax /*0x6f5fb7*/
   int v25; // [esp+24h] [ebp-10h] BYREF
   v25 = v14; /*0x6f5fca*/
   struct IPersistStreamVtbl *lpVtbl; // edx
@@ -923,8 +919,7 @@ namespace gamemd {
 int sub_6F6030(int * a1, unsigned int * a2, int a3)
 {
 
-  int v4; // eax
-  v4 = *a1; /*0x6f603b*/
+  int v4 = *a1; // eax /*0x6f603b*/
   int v5; // edi
   v5 = a1[1]; /*0x6f603d*/
   int v6; // ecx

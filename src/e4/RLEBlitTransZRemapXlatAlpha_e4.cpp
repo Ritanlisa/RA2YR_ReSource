@@ -24,8 +24,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   int v23; // [esp+18h] [ebp+4h]
   uint8_t *v24; // [esp+1Ch] [ebp+8h]
 
-  uint16_t *result; // eax
-  result = a7; /*0x497a2c*/
+  uint16_t *result = a7; // eax /*0x497a2c*/
   v24 = *(uint8_t **)*&this->__pad_004; /*0x497a30*/
   int v14; // edx
   v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;

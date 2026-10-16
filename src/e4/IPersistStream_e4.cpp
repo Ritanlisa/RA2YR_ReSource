@@ -40,7 +40,7 @@ char IPersistStream::SetField(int a1, void *a2)
 namespace gamemd {
 int IPersistStream::StubReturnFalse()
 {
-
+  
   int result; // eax
   return result; /*0x5b3a50*/
 }

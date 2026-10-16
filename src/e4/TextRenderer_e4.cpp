@@ -59,8 +59,7 @@ int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, 
   }
   int v13; // ecx
   v13 = a4[1]; /*0x4b9737*/
-  int v14; // edx
-  v14 = 110; /*0x4b9740*/
+  int v14 = 110; // edx /*0x4b9740*/
   if ( v11 > v12 ) /*0x4b974a*/
   {
     v14 = v11 - v12 + 110; /*0x4b9750*/
@@ -77,8 +76,7 @@ int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, 
   int v31; // [esp+24h] [ebp-28h]
   v31 = v14; /*0x4b9794*/
   v34[0] = v13; /*0x4b9798*/
-  int v15; // edx
-  v15 = *a3; /*0x4b979c*/
+  int v15 = *a3; // edx /*0x4b979c*/
   int v30; // [esp+20h] [ebp-2Ch] BYREF
   v30 = v13; /*0x4b979e*/
   v34[2] = 15; /*0x4b97a4*/
@@ -88,8 +86,7 @@ int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, 
   v16 = (*(int (**)(int *))(v15 + 124))(a3); /*0x4b97b5*/
   int v17; // eax
   v17 = (*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x4b97b9*/
-  int v18; // edx
-  v18 = *a3; /*0x4b97c5*/
+  int v18 = *a3; // edx /*0x4b97c5*/
   v30 += (v17 - v16) / -2; /*0x4b97cd*/
   int v19; // edi
   v19 = (*(int (**)(int *))(v18 + 128))(a3); /*0x4b97df*/
@@ -123,22 +120,19 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, v
 {
 
 
-  int result; // eax
-  result = a2; /*0x642c80*/
+  int result = a2; // eax /*0x642c80*/
   if ( a2 == -1 && aP2 == -1 ) /*0x642c9a*/
   {
-  int v19; // [esp+Ch] [ebp-34h]
+    int v19; // [esp+Ch] [ebp-34h]
     v19 = this->u32_61; /*0x642cb1*/
-  unsigned int *FoundationSize; // eax
-  int v21[7]; // [esp+20h] [ebp-20h] BYREF
+    unsigned int *FoundationSize; // eax
+    int v21[7]; // [esp+20h] [ebp-20h] BYREF
     FoundationSize = Building::GetFoundationSize(v21, 0); /*0x642cb5*/
-  int v9; // ebx
-    v9 = 0; /*0x642cbc*/
-  int Default; // edi
-    Default = 0; /*0x642cc2*/
-  int v20; // [esp+18h] [ebp-28h]
+    int v9 = 0; // ebx /*0x642cbc*/
+    int Default = 0; // edi /*0x642cc2*/
+    int v20; // [esp+18h] [ebp-28h]
     v20 = FoundationSize[2]; /*0x642cce*/
-  int v18; // [esp+8h] [ebp-38h]
+    int v18; // [esp+8h] [ebp-38h]
     v18 = FoundationSize[3] + 6; /*0x642cd8*/
     if ( aP4 ) /*0x642ce2*/
     {
@@ -149,11 +143,10 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, v
         Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-  int Instance; // [esp+4h] [ebp-3Ch]
+    int Instance; // [esp+4h] [ebp-3Ch]
     Instance = (int)(TextRenderer::GetInstance()); /*0x642d10*/
-  int *v11; // ebp
-    v11 = v21; /*0x642d14*/
-  int v23; // [esp+44h] [ebp+4h]
+    int *v11 = v21; // ebp /*0x642d14*/
+    int v23; // [esp+44h] [ebp+4h]
     v23 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
@@ -162,23 +155,21 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, v
       --v23; /*0x642d39*/
     }
     while ( v23 ); /*0x642d3d*/
-  __int16 v22; // [esp+3Eh] [ebp-2h]
+    __int16 v22; // [esp+3Eh] [ebp-2h]
     v22 = 0; /*0x642d4c*/
-  int v12; // eax
+    int v12; // eax
     v12 = Text::MeasureWidth((int)v21, 0); /*0x642d53*/
     if ( v18 > Default ) /*0x642d6b*/
       Default = v18; /*0x642d6d*/
     if ( Default <= *(unsigned int *)(Instance + 28) ) /*0x642d71*/
       Default = *(unsigned int *)(Instance + 28); /*0x642d73*/
-  int v13; // ebp
-    v13 = v9 + v12 + v20 + 36; /*0x642d79*/
-  int v14; // edi
-    v14 = Default + 4; /*0x642d7c*/
+    int v13 = v9 + v12 + v20 + 36; // ebp /*0x642d79*/
+    int v14 = Default + 4; // edi /*0x642d7c*/
     if ( v19 > 1 ) /*0x642d82*/
       v14 *= v19; /*0x642d87*/
-  int *Viewport; // eax
+    int *Viewport; // eax
     Viewport = (int *)(Display::GetViewport(v21)); /*0x642d8d*/
-  int v16; // kr04_4
+    int v16; // kr04_4
     v16 = Viewport[2] - v13; /*0x642dac*/
     result = (Viewport[3] - v14) / 2; /*0x642db9*/
     this->u32_1A = v16 / 2; /*0x642dbb*/
@@ -206,20 +197,17 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   unsigned int *FoundationSize; // eax
   unsigned int v17[7]; // [esp+24h] [ebp-20h] BYREF
   FoundationSize = Building::GetFoundationSize(v17, 0); /*0x642f01*/
-  int v5; // ebp
-  v5 = 0; /*0x642f08*/
-  int v6; // edi
-  v6 = 0; /*0x642f0e*/
+  int v5 = 0; // ebp /*0x642f08*/
+  int v6 = 0; // edi /*0x642f0e*/
   int v16; // [esp+1Ch] [ebp-28h]
   v16 = FoundationSize->vtable3; /*0x642f1a*/
   int v15; // [esp+10h] [ebp-34h]
   v15 = FoundationSize[3] + 6; /*0x642f24*/
   if ( a4 ) /*0x642f2e*/
   {
-  int Default; // eax
+    int Default; // eax
     Default = (0)->FindDefault(); /*0x642f32*/
-  int v8; // esi
-    v8 = Default; /*0x642f37*/
+    int v8 = Default; // esi /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {
       v5 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642f44*/
@@ -247,15 +235,13 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   *a1 = v5 + v11 + v16 + 26; /*0x642fb4*/
   if ( v15 > v6 ) /*0x642fb6*/
     v6 = v15; /*0x642fb8*/
-  int *result; // eax
-  result = a2; /*0x642fba*/
+  int *result = a2; // eax /*0x642fba*/
   *a2 = v6; /*0x642fc0*/
   if ( v6 <= v12 ) /*0x642fc2*/
     v6 = v12; /*0x642fc4*/
   *a2 = v6; /*0x642fc6*/
   *a1 += 10; /*0x642fd1*/
-  int v14; // edi
-  v14 = *a2 + 4; /*0x642fd5*/
+  int v14 = *a2 + 4; // edi /*0x642fd5*/
   *a2 = v14; /*0x642fdb*/
   if ( a3 > 1 ) /*0x642fe3*/
     *a2 = a3 * v14; /*0x642fe8*/
@@ -271,9 +257,9 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
 
   if ( BufferCount ) /*0x4a60ec*/
   {
-  wchar_t Buffer[512]; // [esp+8h] [ebp-400h] BYREF
+    wchar_t Buffer[512]; // [esp+8h] [ebp-400h] BYREF
     vswprintf(Buffer, BufferCount, &aP8, v12); /*0x4a60fc*/
-  unsigned int *v9; // ecx
+    unsigned int *v9; // ecx
     v9 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a6143*/
     *(_DWORD *)aP0 = *v9; /*0x4a614e*/
     aP0[1] = v9[1]; /*0x4a6153*/
@@ -281,7 +267,7 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
   }
   else
   {
-  unsigned int *v11; // edx
+    unsigned int *v11; // edx
     v11 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a619a*/
     *(_DWORD *)aP0 = *v11; /*0x4a61a5*/
     aP0[1] = v11[1]; /*0x4a61aa*/

@@ -64,7 +64,7 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
   }
   if ( v6 < 0x10000 ) /*0x4a2da7*/
   {
-LABEL_23:
+    LABEL_23:
     if ( v6 > 0 ) /*0x4a2dd4*/
     {
       memcpy((void *)a1->ID, v4, v6); /*0x4a2ddc*/
@@ -97,8 +97,7 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
 {
 
   int v3; // ecx
-  int v4; // esi
-  v4 = v3; /*0x4a3112*/
+  int v4 = v3; // esi /*0x4a3112*/
   int v5; // eax
   v5 = *(unsigned int *)(v3 + 8); /*0x4a3116*/
   *(unsigned int *)v3 = (unsigned int)(&vt_CStreamClass); /*0x4a3119*/
@@ -122,17 +121,14 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
     }
   }
   operator delete((void *)(*&v4->q020)); /*0x4a319c*/
-  void *v6; // ecx
-  v6 = v4->q018; /*0x4a31a1*/
+  void *v6 = v4->q018; // ecx /*0x4a31a1*/
   v4->q020 = 0; /*0x4a31a4*/
   operator delete((void *)(v6)); /*0x4a31a8*/
-  void *v7; // edx
-  v7 = v4->q01C; /*0x4a31ad*/
+  void *v7 = v4->q01C; // edx /*0x4a31ad*/
   v4->q018 = 0; /*0x4a31b0*/
   operator delete((void *)(v7)); /*0x4a31b4*/
   v4->q01C = 0; /*0x4a31b9*/
-  int v8; // eax
-  v8 = v4->__pad_008; /*0x4a31bc*/
+  int v8 = v4->__pad_008; // eax /*0x4a31bc*/
   if ( v8 ) /*0x4a31c4*/
     (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v8 + 8))(v4->__pad_008); /*0x4a31c9*/
   if ( ((uint8_t)a2 & 1) != 0 ) /*0x4a31d1*/
@@ -297,13 +293,12 @@ char CStreamClass_16::AddRef(int a2)
   m_8 = this->m_8; /*0x4a4b32*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a4b3d*/
   {
-  int v3; // edx
-    v3 = 0; /*0x4a4b3f*/
+    int v3 = 0; // edx /*0x4a4b3f*/
     if ( m_8 <= 0 ) /*0x4a4b43*/
       return 1; /*0x4a4b63*/
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x4a4b45*/
-  int v5; // ecx
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a4b4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a4b54*/
     {
@@ -326,7 +321,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x4a4b7c*/
   {
     LOBYTE(this->m_C) = 0; /*0x4a4b86*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4a4b8c*/
       v4 = a3; /*0x4a4ba2*/
     else
@@ -336,11 +331,11 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x4a4bb5*/
       {
-  int m_8; // ecx
+        int m_8; // ecx
         m_8 = this->m_8; /*0x4a4bbc*/
         if ( a2 < m_8 ) /*0x4a4bc1*/
           m_8 = a2; /*0x4a4bc3*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a4bc9*/
           ++i; /*0x4a4bce*/
         if ( BYTE1(this->m_C) ) /*0x4a4bdb*/
@@ -389,10 +384,8 @@ int CStreamClass_16::Read(unsigned int * a2, void *a2_2, void *a3)
 
   if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->q00C))) ) /*0x4a4c50*/
     return 0; /*0x4a4c58*/
-  int m_8; // edx
-  m_8 = a2_2->q008; /*0x4a4c5e*/
-  int result; // eax
-  result = 0; /*0x4a4c61*/
+  int m_8 = a2_2->q008; // edx /*0x4a4c5e*/
+  int result = 0; // eax /*0x4a4c61*/
   if ( m_8 <= 0 ) /*0x4a4c65*/
     return -1; /*0x4a4c7c*/
   unsigned int *i; // ecx
@@ -421,8 +414,7 @@ namespace gamemd {
 VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x4a4d93*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4a4d93*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4a4d96*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4a4da0*/
   {

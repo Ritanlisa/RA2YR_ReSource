@@ -35,7 +35,7 @@
 namespace gamemd {  // G42.18 ns repair
 int Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
 {
-
+  
   double v4; // st7
   bool v5; // zf
   unsigned int v6; // eax
@@ -151,7 +151,7 @@ int Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
 namespace gamemd {
 VectorClass_flat * * Tiberium::CalculateSpread(MouseClass * aP1, MapResourceClass * aP2, short * a3, int a5, MouseClass * aP5, MapResourceClass * aP6, double * a7)
 {
-
+  
   int v8; // ecx
   int v9; // edi
   int v10; // esi

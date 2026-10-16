@@ -36,10 +36,8 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
 {
   int v17; // edi
 
-  int v11; // edx
-  v11 = a5; /*0x496250*/
-  unsigned short *result; // eax
-  result = a1; /*0x496254*/
+  int v11 = a5; // edx /*0x496250*/
+  unsigned short *result = a1; // eax /*0x496254*/
   if ( a5 <= 0 ) /*0x496263*/
   {
     v17 = a4; /*0x496287*/
@@ -54,8 +52,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
         v11 -= *a2++; /*0x496270*/
     }
     while ( v11 > 0 ); /*0x496278*/
-  int v16; // edx
-    v16 = -v11; /*0x49627e*/
+    int v16 = -v11; // edx /*0x49627e*/
     v17 = a4 - v16; /*0x496280*/
     result = &a1[v16]; /*0x496282*/
   }
@@ -69,7 +66,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     }
     else
     {
-  uint8_t v19; // dl
+      uint8_t v19; // dl
       v19 = *a2++; /*0x496296*/
       v17 -= v19; /*0x4962a7*/
       result += v19; /*0x4962a9*/
@@ -138,10 +135,8 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
 {
   int v18; // edi
 
-  int v11; // edx
-  v11 = a5; /*0x496170*/
-  int result; // eax
-  result = arg0; /*0x496175*/
+  int v11 = a5; // edx /*0x496170*/
+  int result = arg0; // eax /*0x496175*/
   int v15; // ecx
   v15 = *(unsigned int *)*&this->Data; /*0x496187*/
   if ( a5 <= 0 ) /*0x496189*/
@@ -158,14 +153,13 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
         v11 -= *a2++; /*0x496196*/
     }
     while ( v11 > 0 ); /*0x49619e*/
-  int v17; // edx
-    v17 = -v11; /*0x4961a4*/
+    int v17 = -v11; // edx /*0x4961a4*/
     v18 = a4 - v17; /*0x4961a6*/
     result = arg0 + 2 * v17; /*0x4961a8*/
   }
   while ( v18 > 0 ) /*0x4961b3*/
   {
-  uint8_t v19; // dl
+    uint8_t v19; // dl
     v19 = *a2++; /*0x4961b5*/
     if ( v19 ) /*0x4961be*/
     {
@@ -175,7 +169,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
     }
     else
     {
-  uint8_t v20; // dl
+      uint8_t v20; // dl
       v20 = *a2++; /*0x4961c0*/
       v18 -= v20; /*0x4961d1*/
       result += 2 * v20; /*0x4961d3*/

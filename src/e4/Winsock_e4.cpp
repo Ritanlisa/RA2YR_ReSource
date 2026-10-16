@@ -20,23 +20,22 @@ char Winsock::VerifyCRC(int a1)
   v2 = *((unsigned int *)a1 + 4); /*0x7b2055*/
   if ( v2 < 640 ) /*0x7b205d*/
   {
-  int v3; // edi
-    v3 = 0; /*0x7b206a*/
-  int *v4; // esi
+    int v3 = 0; // edi /*0x7b206a*/
+    int *v4; // esi
     v4 = (int *)((char *)a1 + 32); /*0x7b206c*/
     a1 = 0; /*0x7b2071*/
     if ( v2 / 4 > 0 ) /*0x7b2075*/
     {
       do /*0x7b2094*/
       {
-  int v5; // edx
+        int v5; // edx
         v5 = *v4++; /*0x7b2077*/
         ComputeHash(&a1, v5); /*0x7b2080*/
         ++v3; /*0x7b2088*/
       }
       while ( v3 < *(unsigned int *)&v1[1].Initialized / 4 ); /*0x7b2094*/
     }
-  int v6; // eax
+    int v6; // eax
     v6 = *(unsigned int *)&v1[1].Initialized & 3; /*0x7b2099*/
     if ( v6 ) /*0x7b209c*/
       ComputeHash(&a1, *v4 & (0xFFFFFFFF >> (32 - 8 * v6))); /*0x7b20b5*/

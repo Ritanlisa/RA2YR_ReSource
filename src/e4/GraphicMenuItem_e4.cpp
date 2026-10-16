@@ -12,7 +12,7 @@
 namespace gamemd {  // G42.18 ns repair
 void GraphicMenuItem::Dtor(void *a1)
 {
-
+  
   ObjectClass *v1; // esi
   v1 = (ObjectClass *)*((unsigned int *)a1 + 3); /*0x4f3a71*/
   *(unsigned int *)a1->__pad_0 = &vt_GraphicMenuItem; /*0x4f3a76*/

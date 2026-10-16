@@ -148,7 +148,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1, void *a2, void *a3
   v5 = 0; /*0x52385c*/
   if ( v3 <= 0 ) /*0x523860*/
   {
-LABEL_11:
+    LABEL_11:
     v5 = -1; /*0x523874*/
   }
   else
@@ -229,29 +229,27 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   v5 = (int)(__2_YAPAXI_Z(0x6F0u)); /*0x523b4b*/
   if ( v5 ) /*0x523b55*/
   {
-  int v3; // edi
-  int v6; // esi
+    int v3; // edi
+    int v6; // esi
     v6 = InfantryClass::Construct(v5, v3, (int)this, ppv); /*0x523b68*/
     if ( v6 ) /*0x523b6c*/
     {
-  int v7; // eax
+      int v7; // eax
       v7 = a2[1] << 8; /*0x523b85*/
-  unsigned int v13[3]; // [esp+4h] [ebp-24h] BYREF
+      unsigned int v13[3]; // [esp+4h] [ebp-24h] BYREF
       v13[0] = (*a2 << 8) + 128; /*0x523b93*/
       v13[1] = v7 + 128; /*0x523b9b*/
       v13[2] = 0; /*0x523bb1*/
-  CellClass *v8; // eax
+      CellClass *v8; // eax
       v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x523bb9*/
-  int *v9; // eax
-  int v15[3]; // [esp+1Ch] [ebp-Ch] BYREF
+      int *v9; // eax
+      int v15[3]; // [esp+1Ch] [ebp-Ch] BYREF
       v9 = ObjectPlacement::CalcPosition((ObjectPlacement *)v8, v15, v13, 0, 0, 0); /*0x523bc0*/
-  unsigned int v14[3]; // [esp+10h] [ebp-18h] BYREF
+      unsigned int v14[3]; // [esp+10h] [ebp-18h] BYREF
       v14[0] = *v9; /*0x523bcf*/
-  int v10; // ecx
-      v10 = v9->vtable2; /*0x523bd5*/
+      int v10 = v9->vtable2; // ecx /*0x523bd5*/
       v14[1] = v10; /*0x523bd9*/
-  int v11; // edx
-      v11 = v9->vtable3; /*0x523bdd*/
+      int v11 = v9->vtable3; // edx /*0x523bdd*/
       v14[2] = v11; /*0x523be0*/
       if ( v14[0] != *(unsigned int *)&DataGlobal_A8EB00[1920] /*0x523bf4*/
         || v10 != *(unsigned int *)&DataGlobal_A8F1A0
@@ -277,8 +275,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   DynamicVector v48; // [esp+14h] [ebp-B8h] BYREF
 
   int v3; // ecx
-  int v4; // esi
-  v4 = v3; /*0x5240b0*/
+  int v4 = v3; // esi /*0x5240b0*/
   INIClass::ResetSection((INIClass *)a2); /*0x5240b5*/
   int v45; // [esp-4h] [ebp-D0h]
   v45 = (int)a2; /*0x5240ba*/
@@ -293,8 +290,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                              v4->Pip_d);
   int PipIdx; // eax
   PipIdx = INIClass::GetPipIdx((INIClass *)a2, (unsigned __int8 *)(v4 + 36), aOccupypip, v4->OccupyPip_d); /*0x5240fd*/
-  int v6; // ebx
-  v6 = v4->OccupyWeapon_d; /*0x524102*/
+  int v6 = v4->OccupyWeapon_d; // ebx /*0x524102*/
   v45 = 128; /*0x52410c*/
   char String[128]; // [esp+4Ch] [ebp-80h] BYREF
   v44.CapacityIncrement = (int)String; /*0x524111*/
@@ -316,8 +312,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   {
     v7 = v6; /*0x524139*/
   }
-  int v8; // ebx
-  v8 = v4->EliteOccupyWeapon; /*0x52413b*/
+  int v8 = v4->EliteOccupyWeapon; // ebx /*0x52413b*/
   v4->OccupyWeapon_d = v7; /*0x524141*/
   if ( (/*0x52415e*/ (INIClass *)a2)->GetString((unsigned __int8 *)(v4 + 36), aEliteoccupywea, &g_INI_DefaultBuffer, String, 128) )
   {
@@ -347,8 +342,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                                             v44.CapacityIncrement,
                                             v45);
   TypeList::Copy(&v4->u32_E88, INIClassIntList); /*0x5241b8*/
-  DynamicVectorClass *v11; // eax
-  v11 = INIClassIntList; /*0x5241bd*/
+  DynamicVectorClass *v11 = INIClassIntList; // eax /*0x5241bd*/
   *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(unsigned int *)(v4 + 3744) = *v11->Items.VectorClass; /*0x5241d4*/
@@ -358,7 +352,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   {
     ((DynamicVectorClass *)&v48)->AnimTypeConstructor(0, 0); /*0x524210*/
     *(unsigned int *)v48.WeaponType = &vt_TypeList; /*0x52421f*/
-  char *i; // eax
+    char *i; // eax
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
@@ -392,7 +386,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   {
     ((DynamicVectorClass *)&v48)->AnimTypeConstructor(0, 0); /*0x5242fa*/
     *(unsigned int *)v48.ClearAndFree2_ph = &vt_TypeList; /*0x524309*/
-  char *j; // eax
+    char *j; // eax
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
@@ -430,16 +424,14 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                             v45);
   if ( *&v4->Cyborg_2 ) /*0x5243dd*/
     v4->DamageSparks = 1; /*0x5243e7*/
-  int v17; // ebx
-  v17 = v4->u32_EA4; /*0x5243ee*/
+  int v17 = v4->u32_EA4; // ebx /*0x5243ee*/
   int Index; // eax
   if ( !(/*0x524420*/ (INIClass *)a2)->GetString((unsigned __int8 *)(v4 + 36), aEnterwatersoun, &g_INI_DefaultBuffer, String, 128)
     || (Index = VocClass::FindIndex((VocClass *)String), Index == -1) )
   {
     Index = v17; /*0x524422*/
   }
-  int v19; // ebx
-  v19 = v4->u32_EA8; /*0x524424*/
+  int v19 = v4->u32_EA8; // ebx /*0x524424*/
   v45 = 128; /*0x52442e*/
   v44.CapacityIncrement = (int)String; /*0x524433*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524434*/
@@ -469,8 +461,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                             v45);
   char v21; // al
   v21 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aFraidycat, v4->Fraidycat_2); /*0x52448f*/
-  char v22; // cl
-  v22 = v4->Infiltrate_2; /*0x524494*/
+  char v22 = v4->Infiltrate_2; // cl /*0x524494*/
   v4->Fraidycat_2 = v21; /*0x52449a*/
   char v23; // al
   v23 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aInfiltrate, v22); /*0x5244a9*/
@@ -485,8 +476,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                             v45);
   char v24; // al
   v24 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aOccupier, v4->Occupier_d); /*0x5244dd*/
-  char v25; // cl
-  v25 = v4->Assaulter_2; /*0x5244e2*/
+  char v25 = v4->Assaulter_2; // cl /*0x5244e2*/
   v4->Occupier_d = v24; /*0x5244e8*/
   char v26; // al
   v26 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aAssaulter, v25); /*0x5244f7*/
@@ -505,8 +495,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                     (unsigned __int8 *)(v4 + 36),
                     aHarvestrate,
                     v4->HarvestRate);
-  char v28; // cl
-  v28 = *&v4->C4_2; /*0x524530*/
+  char v28 = *&v4->C4_2; // cl /*0x524530*/
   v4->HarvestRate = Int_Overwrite; /*0x524536*/
   char v29; // al
   v29 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aC4, v28); /*0x524545*/
@@ -521,8 +510,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                             v45);
   char v30; // al
   v30 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aEngineer, v4->Engineer_2); /*0x524579*/
-  char v31; // cl
-  v31 = v4->TiberiumProof_d; /*0x52457e*/
+  char v31 = v4->TiberiumProof_d; // cl /*0x52457e*/
   v4->Engineer_2 = v30; /*0x524584*/
   char v32; // al
   v32 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aTiberiumproof, v31); /*0x524593*/
@@ -537,8 +525,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                             v45);
   char v33; // al
   v33 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aThief, v4->Thief_2); /*0x5245c7*/
-  char v34; // cl
-  v34 = v4->VehicleThief_2; /*0x5245cc*/
+  char v34 = v4->VehicleThief_2; // cl /*0x5245cc*/
   v4->Thief_2 = v33; /*0x5245d2*/
   char v35; // al
   v35 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aVehiclethief, v34); /*0x5245e1*/
@@ -553,8 +540,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                             v45);
   char v36; // al
   v36 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aDeployer, v4->Deployer_d); /*0x524615*/
-  char v37; // cl
-  v37 = v4->__pad_EC9; /*0x52461a*/
+  char v37 = v4->__pad_EC9; // cl /*0x52461a*/
   v4->Deployer_d = v36; /*0x524620*/
   char v38; // al
   v38 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aDeployedcrusha, v37); /*0x52462f*/
@@ -599,8 +585,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
           (unsigned __int8 *)(v4 + 504),
           aFireprone,
           v4->u32_E44);
-  int v41; // ecx
-  v41 = *&v4->u32_E48; /*0x5246f8*/
+  int v41 = *&v4->u32_E48; // ecx /*0x5246f8*/
   *&v4->u32_E44 = v40; /*0x5246fe*/
   int v42; // eax
   v42 = INIClass::ReadInt_Overwrite( /*0x524710*/
@@ -628,8 +613,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
 {
 
   aP0 = aP0; /*0x524964*/
-  int v6; // ebx
-  v6 = 0; /*0x524968*/
+  int v6 = 0; // ebx /*0x524968*/
   if ( aP0->Sequence[0] ) /*0x52496a*/
   {
     operator delete(&aP0->Sequence); /*0x524975*/
@@ -650,12 +634,12 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
       ((DynamicVectorClass *)aP0->VoiceComment)->Construct(0, 0); /*0x5249c7*/
       aP0->VoiceComment[0] = (int)&vt_TypeList; /*0x5249cc*/
     }
-  int v4; // ebp
-  int i; // ebx
-  int j; // ebx
-  int k; // ebx
-  int m; // ebx
-  int v13; // eax
+    int v4; // ebp
+    int i; // ebx
+    int j; // ebx
+    int k; // ebx
+    int m; // ebx
+    int v13; // eax
     (*(void (__stdcall **)(int, InfantryTypeClass **, int, unsigned int, int))(aP0->vtable4)(aP0, &aP0, 4, 0, v4); /*0x5249de*/
     if ( aP0 > 0 ) /*0x5249e7*/
     {
@@ -823,10 +807,10 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1, void *a2)
   {
     this->vtable2 = 0; /*0x524f86*/
     BYTE1(this->u8_D) = 0; /*0x524f8d*/
-LABEL_8:
+    LABEL_8:
     this->uniqueId = aP1->q010; /*0x524f91*/
-    this->abstractFlags = aP1->u32_14; /*0x524f9a*/
-    return &this->TechnoTypeClass; /*0x524f9d*/
+      this->abstractFlags = aP1->u32_14; /*0x524f9a*/
+      return &this->TechnoTypeClass; /*0x524f9d*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x524f43*/
   this->vtable2 = v4; /*0x524f4b*/

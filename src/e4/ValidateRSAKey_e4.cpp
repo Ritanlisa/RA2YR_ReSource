@@ -11,8 +11,7 @@ namespace gamemd {  // G42.18 ns repair
 char sub_5C8DD0(unsigned int * a1, int a2, int a3, int a4)
 {
 
-  int v5; // ebp
-  v5 = a3; /*0x5c8dd9*/
+  int v5 = a3; // ebp /*0x5c8dd9*/
   if ( a3 >= 32 * a4 ) /*0x5c8dea*/
     v5 = 32 * a4; /*0x5c8dec*/
   memset(a1, 0, 4 * a4); /*0x5c8dfc*/

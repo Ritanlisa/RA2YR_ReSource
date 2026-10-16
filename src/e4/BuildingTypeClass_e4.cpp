@@ -288,7 +288,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   v6 = 0; /*0x45e342*/
   if ( v4 <= 0 ) /*0x45e346*/
   {
-  LABEL_11:
+    LABEL_11:
     v6 = -1; /*0x45e35a*/
   }
   else
@@ -494,8 +494,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     }
     while ( v3 < dword_A83C78 ); /*0x45e705*/
   }
-  void *v4; // eax
-  v4 = *&a1->PreventsPlacementOverlap; /*0x45e707*/
+  void *v4 = *&a1->PreventsPlacementOverlap; // eax /*0x45e707*/
   *&a1->DockingOffsets = &vt_VectorClassTPoint3D; /*0x45e70d*/
   if ( v4 && a1->u32_1791 ) /*0x45e71b*/
   {
@@ -519,15 +518,14 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
   ProcessDataCCFileClass(); /*0x45e97c*/
   FileSystem_POWEROFF_SHP = (int)(SearchMIXFile(aPoweroffShp, 0)); /*0x45e994*/
   FileSystem_WRENCH_SHP = (int)(SearchMIXFile(aWrenchShp, 0)); /*0x45e99e*/
-  int v3; // ebp
-  v3 = 0; /*0x45e9aa*/
+  int v3 = 0; // ebp /*0x45e9aa*/
   int v9; // [esp+10h] [ebp-204h]
   v9 = 0; /*0x45e9ae*/
   if ( dword_A83C78 > 0 ) /*0x45e9b2*/
   {
     do /*0x45eb42*/
     {
-  int v4; // esi
+      int v4; // esi
       v4 = *((unsigned int *)dword_A83C6C + v3); /*0x45e9c1*/
       if ( v9 <= v4->u32_1707 ) /*0x45e9cd*/
         v9 = v4->u32_1707; /*0x45e9cf*/
@@ -561,14 +559,12 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
           _makepath(Buffer, 0, 0, &v4->qE5C, (const char *)&off_7E1BC6 + 112 * v1); /*0x45ea6b*/
           v4->u32_E00 = SearchMIXFile(Buffer, 0); /*0x45ea7e*/
         }
-  int v5; // ecx
-        v5 = v4->u32_E00; /*0x45eaa5*/
+        int v5 = v4->u32_E00; // ecx /*0x45eaa5*/
         if ( v5 ) /*0x45eaad*/
         {
-  int v6; // ecx
+          int v6; // ecx
           v6 = *(int16_t *)(v5 + 6); /*0x45eab3*/
-  int v7; // eax
-          v7 = 1; /*0x45eab9*/
+          int v7 = 1; // eax /*0x45eab9*/
           if ( v6 ) /*0x45eabe*/
             v7 = 75 / v6; /*0x45eac6*/
           v4->u32_F04 = 0; /*0x45eac8*/
@@ -599,7 +595,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
     {
       if ( dword_89DDC0 ) /*0x45eb56*/
         (*(void (**)(Draw *, int))dword_89DDC0->Draw_field_00)(dword_89DDC0, 1); /*0x45eb5c*/
-  int v8; // esi
+      int v8; // esi
       v8 = (int)(operator new(0x20u)); /*0x45eb65*/
       if ( v8 ) /*0x45eb6c*/
       {
@@ -630,7 +626,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, (const char *)this->q3952 + 30), ::Ext); /*0x45f26f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f282*/
-  int v3; // eax
+    int v3; // eax
     v3 = (int)(SearchMIXFile(Source, 0)); /*0x45f28d*/
     if ( !v3 ) /*0x45f294*/
     {
@@ -640,11 +636,9 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     this->v3 = v3; /*0x45f2ac*/
     if ( v3 ) /*0x45f2b2*/
     {
-  int v4; // ecx
-      v4 = 1; /*0x45f2bb*/
-  int v5; // esi
-      v5 = v3->nextArrayIndex / 2; /*0x45f2c8*/
-  int v23; // [esp+10h] [ebp-158h]
+      int v4 = 1; // ecx /*0x45f2bb*/
+      int v5 = v3->nextArrayIndex / 2; // esi /*0x45f2c8*/
+      int v23; // [esp+10h] [ebp-158h]
       v23 = v5; /*0x45f2cc*/
       if ( this->Gate ) /*0x45f2c2*/
       {
@@ -653,7 +647,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       }
       if ( v5 > 0 ) /*0x45f2df*/
       {
-  int v6; // eax
+        int v6; // eax
         (*((unsigned short *)&(v6))) = Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 5400) * 900.0 / (double)v23); /*0x45f2f7*/
         v4 = v6; /*0x45f2fc*/
       }
@@ -668,7 +662,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f357*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f36a*/
-  unsigned char *v7; // esi
+    unsigned char *v7; // esi
     v7 = (unsigned char *)(&this->DeployingAnimLoaded_d); /*0x45f375*/
     if ( this->DeployingAnimLoaded_d && this->DeployingAnim_2 ) /*0x45f37f*/
     {
@@ -676,7 +670,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->DeployingAnim_2 = 0; /*0x45f392*/
       *v7 = 0; /*0x45f398*/
     }
-  void *FileSHP; // eax
+    void *FileSHP; // eax
     FileSHP = LoadFileSHP(Source, (bool *)this->q5399 + 7)); /*0x45f3a0*/
     this->DeployingAnim_2 = (gamemd::SHPStruct *)(FileSHP); /*0x45f3a7*/
     if ( !FileSHP ) /*0x45f3ad*/
@@ -696,7 +690,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f42f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f442*/
-  unsigned char *v9; // esi
+    unsigned char *v9; // esi
     v9 = (unsigned char *)(&this->RoofDeployingAnimLoaded); /*0x45f44d*/
     if ( this->RoofDeployingAnimLoaded && this->RoofDeployingAnim ) /*0x45f457*/
     {
@@ -704,7 +698,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->RoofDeployingAnim = 0; /*0x45f46a*/
       *v9 = 0; /*0x45f470*/
     }
-  void *v10; // eax
+    void *v10; // eax
     v10 = LoadFileSHP(Source, &this->q5400); /*0x45f478*/
     this->RoofDeployingAnim = (gamemd::SHPStruct *)(v10); /*0x45f47f*/
     if ( !v10 ) /*0x45f485*/
@@ -724,7 +718,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f507*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f51a*/
-  int v11; // eax
+    int v11; // eax
     v11 = SearchMIXFile(Source, 0); /*0x45f525*/
     this->DoorAnim = v11; /*0x45f52c*/
     if ( !v11 ) /*0x45f532*/
@@ -738,15 +732,14 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f58f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f5a2*/
-  unsigned char *v12; // esi
-    v12 = &this->UnderDoorAnimLoaded_d; /*0x45f5ad*/
+    unsigned char *v12 = &this->UnderDoorAnimLoaded_d; // esi /*0x45f5ad*/
     if ( this->UnderDoorAnimLoaded_d && this->UnderDoorAnim_d ) /*0x45f5b7*/
     {
       operator delete((void *)(this->UnderDoorAnim_d)); /*0x45f5c2*/
       this->UnderDoorAnim_d = 0; /*0x45f5ca*/
       *v12 = 0; /*0x45f5d0*/
     }
-  void *v13; // eax
+    void *v13; // eax
     v13 = LoadFileSHP(Source, &this->q53C0); /*0x45f5d8*/
     this->UnderDoorAnim_d = v13; /*0x45f5df*/
     if ( !v13 ) /*0x45f5e5*/
@@ -761,8 +754,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       this->UnderDoorAnim_d = SearchMIXFile(Source, 0); /*0x45f61a*/
     }
   }
-  unsigned char *v14; // esi
-  v14 = &this->RubbleLoaded_d; /*0x45f626*/
+  unsigned char *v14 = &this->RubbleLoaded_d; // esi /*0x45f626*/
   if ( this->RubbleLoaded_d && this->Rubble_d ) /*0x45f630*/
   {
     operator delete((void *)(this->Rubble_d)); /*0x45f63b*/
@@ -774,7 +766,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f68e*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f6a1*/
-  void *v15; // eax
+    void *v15; // eax
     v15 = LoadFileSHP(Source, &this->q53E0); /*0x45f6ac*/
     this->Rubble_d = v15; /*0x45f6b3*/
     if ( !v15 ) /*0x45f6b9*/
@@ -794,15 +786,14 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f73b*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f74e*/
-  unsigned char *v16; // esi
-    v16 = &this->UnderRoofDoorAnimLoaded; /*0x45f759*/
+    unsigned char *v16 = &this->UnderRoofDoorAnimLoaded; // esi /*0x45f759*/
     if ( this->UnderRoofDoorAnimLoaded && this->UnderRoofDoorAnim ) /*0x45f763*/
     {
       operator delete((void *)(this->UnderRoofDoorAnim)); /*0x45f76e*/
       this->UnderRoofDoorAnim = 0; /*0x45f776*/
       *v16 = 0; /*0x45f77c*/
     }
-  void *v17; // eax
+    void *v17; // eax
     v17 = LoadFileSHP(Source, &this->q5420); /*0x45f784*/
     this->UnderRoofDoorAnim = v17; /*0x45f78b*/
     if ( !v17 ) /*0x45f791*/
@@ -822,7 +813,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f80f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f822*/
-  int v18; // eax
+    int v18; // eax
     v18 = SearchMIXFile(Source, 0); /*0x45f82d*/
     this->SpecialZOverlay = v18; /*0x45f834*/
     if ( !v18 ) /*0x45f83a*/
@@ -836,15 +827,14 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f897*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f8aa*/
-  unsigned char *v19; // esi
-    v19 = &this->BibShapeLoaded; /*0x45f8b5*/
+    unsigned char *v19 = &this->BibShapeLoaded; // esi /*0x45f8b5*/
     if ( this->BibShapeLoaded && this->BibShape ) /*0x45f8bf*/
     {
       operator delete((void *)(this->BibShape)); /*0x45f8ca*/
       this->BibShape = 0; /*0x45f8d2*/
       *v19 = 0; /*0x45f8d8*/
     }
-  void *v20; // eax
+    void *v20; // eax
     v20 = LoadFileSHP(Source, &this->q5470); /*0x45f8e0*/
     this->BibShape = v20; /*0x45f8e7*/
     if ( !v20 ) /*0x45f8ed*/
@@ -875,7 +865,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   strncpy(&this->TheaterSpecificID, Source, 0x13u); /*0x45f9f3*/
   if ( !this->DemandLoad ) /*0x45f9f8*/
   {
-  int v22; // eax
+    int v22; // eax
     v22 = SearchMIXFile(Source, 0); /*0x45fa0b*/
     this->Image_d = v22; /*0x45fa12*/
     if ( !v22 ) /*0x45fa18*/
@@ -907,30 +897,30 @@ void BuildingTypeClass::LoadVoxel()
 
   if ( this->TurretAnimIsVoxel || this->BarrelAnimIsVoxel ) /*0x45faa4*/
   {
-  char Destination[4]; // [esp+14Ch] [ebp-180h] BYREF
+    char Destination[4]; // [esp+14Ch] [ebp-180h] BYREF
     strcpy(Destination, &this->q11B0); /*0x45fadf*/
-  char Buffer[4]; // [esp+1CCh] [ebp-100h] BYREF
+    char Buffer[4]; // [esp+1CCh] [ebp-100h] BYREF
     _makepath(Buffer, 0, 0, Destination, g_Str_File__VXL); /*0x45faf3*/
-  char *v20; // [esp-Ch] [ebp-2D8h]
+    char *v20; // [esp-Ch] [ebp-2D8h]
     v20 = _strupr(off_8194A8); /*0x45fb05*/
-  char *v2; // eax
-  char String[252]; // [esp+1D0h] [ebp-FCh] BYREF
+    char *v2; // eax
+    char String[252]; // [esp+1D0h] [ebp-FCh] BYREF
     v2 = _strupr(String); /*0x45fb0e*/
     if ( strstr(v2, v20) ) /*0x45fb17*/
     {
       CCFileClass::Construct(&v25, Buffer); /*0x45fb3b*/
       if ( (unsigned __int8)(&v25)->Open(0) ) /*0x45fb48*/
       {
-  void *v3; // esi
+        void *v3; // esi
         v3 = (void *)this->BarrelVoxel_d; /*0x45fb55*/
         if ( v3 ) /*0x45fb5d*/
         {
           ((WaveClass *)this->u32_D2E)->Destroy(); /*0x45fb61*/
           __3_YAXPAX_Z(v3); /*0x45fb67*/
         }
-  File *v4; // eax
+        File *v4; // eax
         v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fb71*/
-  unsigned int *FileVXL; // eax
+        unsigned int *FileVXL; // eax
         if ( v4 ) /*0x45fb7b*/
           FileVXL = File::LoadFileVXL(v4, (int)&v25, 0); /*0x45fb85*/
         else
@@ -938,16 +928,16 @@ void BuildingTypeClass::LoadVoxel()
         this->BarrelVoxel_d = (int)FileVXL; /*0x45fb8e*/
         _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fbab*/
         CCFileClass::Construct(&v22, Buffer); /*0x45fbbf*/
-  void *v6; // esi
+        void *v6; // esi
         v6 = (void *)this->ChargerTurrets; /*0x45fbc4*/
         if ( v6 ) /*0x45fbcc*/
         {
           String::Release((String *)this->u32_D2E); /*0x45fbd0*/
           __3_YAXPAX_Z(v6); /*0x45fbd6*/
         }
-  File *v7; // eax
+        File *v7; // eax
         v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x45fbe0*/
-  unsigned int *FileHVA; // eax
+        unsigned int *FileHVA; // eax
         if ( v7 ) /*0x45fbea*/
           FileHVA = File::LoadFileHVA(v7, (int)&v22); /*0x45fbf3*/
         else
@@ -955,7 +945,7 @@ void BuildingTypeClass::LoadVoxel()
         this->ChargerTurrets = (int)FileHVA; /*0x45fbfe*/
         if ( FileHVA && !*(unsigned char *)FileHVA ) /*0x45fc06*/
         {
-  int Info; // eax
+          int Info; // eax
           Info = ((VoxelSection *)this->u32_D2E)->GetInfo(0, 0); /*0x45fc12*/
           ((Matrix *)this->u32_D2E)->Scale(*(float *)(Info + 12)); /*0x45fc21*/
         }
@@ -965,27 +955,26 @@ void BuildingTypeClass::LoadVoxel()
         *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fc3f*/
         ((BufferIOFileClass *)&v22)->Dtor(); /*0x45fc43*/
       }
-  char *v21; // [esp-Ch] [ebp-2D8h]
+      char *v21; // [esp-Ch] [ebp-2D8h]
       v21 = _strupr(off_8194A8); /*0x45fc55*/
-  char *v10; // eax
-  char v32[124]; // [esp+150h] [ebp-17Ch] BYREF
+      char *v10; // eax
+      char v32[124]; // [esp+150h] [ebp-17Ch] BYREF
       v10 = _strupr(v32); /*0x45fc5e*/
-  char *v11; // eax
+      char *v11; // eax
       v11 = strstr(v10, v21); /*0x45fc67*/
       if ( v11 ) /*0x45fc71*/
       {
         *v11 = 66; /*0x45fc73*/
-  unsigned char *v12; // eax
-        v12 = v11 + 1; /*0x45fc76*/
+        unsigned char *v12 = v11 + 1; // eax /*0x45fc76*/
         *v12++ = 65; /*0x45fc77*/
         *v12++ = 82; /*0x45fc7b*/
         *v12 = 76; /*0x45fc7f*/
         v12[1] = 0; /*0x45fc82*/
       }
       *(unsigned int *)v25.CDFileClass = &vt_CCFileClass; /*0x45fc8c*/
-  int v27; // [esp+D8h] [ebp-1F4h]
+      int v27; // [esp+D8h] [ebp-1F4h]
       v27 = 0; /*0x45fc94*/
-  int v26[3]; // [esp+CCh] [ebp-200h] BYREF
+      int v26[3]; // [esp+CCh] [ebp-200h] BYREF
       Vector::Clear((int)v26); /*0x45fc9b*/
       *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x45fca4*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x45fca8*/
@@ -998,16 +987,16 @@ void BuildingTypeClass::LoadVoxel()
     CCFileClass::Construct(&v28, Buffer); /*0x45fd01*/
     if ( (unsigned __int8)CCFileClass::Open(&v28, 0) ) /*0x45fd0e*/
     {
-  void *v13; // esi
+      void *v13; // esi
       v13 = (void *)this->q0C0; /*0x45fd1b*/
       if ( v13 ) /*0x45fd23*/
       {
         WaveClass::Destroy((WaveClass *)this->u32_D2E); /*0x45fd27*/
         __3_YAXPAX_Z(v13); /*0x45fd2d*/
       }
-  File *v14; // eax
+      File *v14; // eax
       v14 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x45fd37*/
-  unsigned int *v15; // eax
+      unsigned int *v15; // eax
       if ( v14 ) /*0x45fd41*/
         v15 = File::LoadFileVXL(v14, (int)&v28, 0); /*0x45fd4e*/
       else
@@ -1015,16 +1004,16 @@ void BuildingTypeClass::LoadVoxel()
       this->q0C0 = (int)v15; /*0x45fd63*/
       _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fd74*/
       CCFileClass::Construct(&v22, Buffer); /*0x45fd88*/
-  void *v16; // esi
+      void *v16; // esi
       v16 = (void *)this->q0C4; /*0x45fd8d*/
       if ( v16 ) /*0x45fd95*/
       {
         String::Release((String *)this->u32_D2E); /*0x45fd99*/
         __3_YAXPAX_Z(v16); /*0x45fd9f*/
       }
-  File *v17; // eax
+      File *v17; // eax
       v17 = (File *)__2_YAPAXI_Z(0x10u); /*0x45fda9*/
-  unsigned int *v18; // eax
+      unsigned int *v18; // eax
       if ( v17 ) /*0x45fdb3*/
         v18 = File::LoadFileHVA(v17, (int)&v22); /*0x45fdbc*/
       else
@@ -1034,7 +1023,7 @@ void BuildingTypeClass::LoadVoxel()
       {
         if ( !*(unsigned char *)v18 ) /*0x45fdcf*/
         {
-  int v19; // eax
+          int v19; // eax
           v19 = VoxelSection::GetInfo((VoxelSection *)this->u32_D2E, 0, 0); /*0x45fddb*/
           Matrix::Scale((Matrix *)this->u32_D2E, *(float *)(v19 + 12)); /*0x45fdea*/
         }
@@ -1046,9 +1035,9 @@ void BuildingTypeClass::LoadVoxel()
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fe0c*/
     }
     *(unsigned int *)v28.CDFileClass = &vt_CCFileClass; /*0x45fe18*/
-  int v30; // [esp+144h] [ebp-188h]
+    int v30; // [esp+144h] [ebp-188h]
     v30 = 0; /*0x45fe23*/
-  int v29[3]; // [esp+138h] [ebp-194h] BYREF
+    int v29[3]; // [esp+138h] [ebp-194h] BYREF
     Vector::Clear((int)v29); /*0x45fe2a*/
     *(unsigned int *)v28.CDFileClass = &off_7E1668; /*0x45fe36*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v28); /*0x45fe3d*/
@@ -1338,7 +1327,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
       v5 = 0; /*0x46518f*/
       if ( v14 <= 0 ) /*0x465195*/
       {
-  LABEL_32:
+        LABEL_32:
         BuildingTypeClass::LoadVoxel((BuildingTypeClass *)v1); /*0x4651ed*/
         ObjectTypeClass::Load2DArt((char *)v1); /*0x4651f6*/
         SpeedType = v1[1].vfptr.ChargerTurrets[15]; /*0x4651fb*/
@@ -1409,7 +1398,7 @@ BuildingTypeClass * * BuildingTypeClass::FindOrCreate(char *Source)
   v2 = 0; /*0x4653ed*/
   if ( dword_A83C78 <= 0 ) /*0x4653f1*/
   {
-  LABEL_6:
+    LABEL_6:
     v3 = operator new(0x1798u); /*0x465416*/
     if ( v3 ) /*0x465425*/
       return BuildingTypeClass::ConstructFull(v3, Source); /*0x465431*/
@@ -1474,7 +1463,7 @@ int BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
       v10 = v8[1] - v11 - 1; /*0x50b7e2*/
       if ( v10 < v8[1] + v6 + 1 ) /*0x50b7e5*/
         break; /*0x50b7e5*/
-  LABEL_8:
+      LABEL_8:
       if ( ++v9 >= *v8 + v12 + 1 ) /*0x50b82d*/
         return 0; /*0x50b82d*/
     }
@@ -1542,7 +1531,7 @@ int BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
           v11 = v3->vtable2; /*0x5940dd*/
           if ( v11 >= v3->vtable4 + v11 ) /*0x5940e9*/
           {
-LABEL_16:
+            LABEL_16:
             LOBYTE(result) = 1; /*0x594170*/
             return result; /*0x594177*/
           }
@@ -1553,7 +1542,7 @@ LABEL_16:
             result = *(unsigned int *)v3 + v3->vtable3; /*0x5940f8*/
             if ( *(unsigned int *)v3 < result ) /*0x5940fc*/
               break; /*0x5940fc*/
-LABEL_15:
+            LABEL_15:
             if ( ++v11 >= v3->vtable4 + v3->vtable2 ) /*0x59416e*/
               goto LABEL_16; /*0x59416e*/
           }
@@ -1562,10 +1551,10 @@ LABEL_15:
             LOWORD(aP1) = v13; /*0x594104*/
             HIWORD(aP1) = v11; /*0x59410b*/
             result = g_MissionQueueFrame.localVariables[163]
-                   ? *(unsigned int *)(80 * ((__int16)v13 + g_MapCellWidth * (__int16)v11)
-                               + g_MissionQueueFrame.localVariables[163]
-                               + 56)
-                   : -1;
+            ? *(unsigned int *)(80 * ((__int16)v13 + g_MapCellWidth * (__int16)v11)
+            + g_MissionQueueFrame.localVariables[163]
+            + 56)
+            : -1;
             if ( (void *)result != this->u32_D2E && result != v12 ) /*0x59413b*/
               break; /*0x59413b*/
             v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&aP1); /*0x594147*/
@@ -1598,7 +1587,7 @@ OverlayTypeClass * * BuildingTypeClass::FindOrCreate2(ObjectClass * Source)
   v2 = 0; /*0x5fec9d*/
   if ( *(int *)&g_ObjectTypeConfig <= 0 ) /*0x5feca1*/
   {
-  LABEL_6:
+    LABEL_6:
     v3 = (OverlayTypeClass *)operator new(0x2BCu); /*0x5fecc6*/
     if ( v3 ) /*0x5fecd5*/
       return OverlayTypeClass::OverlayTypeClass(v3, Source); /*0x5fece1*/
@@ -1624,7 +1613,7 @@ ParticleSystemTypeClass * * BuildingTypeClass::LoadOrGet(ObjectClass * Source)
   v2 = 0; /*0x6448bd*/
   if ( (int)g_InfantryTypeInitState <= 0 ) /*0x6448c1*/
   {
-  LABEL_6:
+    LABEL_6:
     v3 = (OverlayTypeClass *)operator new(0x310u); /*0x6448e6*/
     if ( v3 ) /*0x6448f5*/
       return ((OverlayTypeClass *)(v3))->Construct(Source); /*0x644901*/
@@ -1694,7 +1683,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
          *(unsigned int *)&stru_A83D50.__pad_3C[20] + *(unsigned int *)&stru_A83D50.__pad_3C[32],
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = (*(unsigned int *)&stru_A83D50.__pad_3C[28])++; /*0x644d50*/
     *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * v3) = aP1; /*0x644d5f*/
   }
@@ -1706,7 +1695,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
          g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )
   {
-  int v4; // eax
+    int v4; // eax
     v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x644da3*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = aP1; /*0x644db2*/
   }
@@ -1730,7 +1719,7 @@ ParticleTypeClass * * BuildingTypeClass::FindOrCreateEx(char *Source)
   v2 = 0; /*0x64544b*/
   if ( *(int *)&g_BuildingTypeInitState <= 0 ) /*0x64544f*/
   {
-  LABEL_5:
+    LABEL_5:
     v3 = (BuildingTypeClass *)operator new(0x318u); /*0x645474*/
     if ( v3 ) /*0x645483*/
       v4 = BuildingTypeClass::Construct(v3, Source); /*0x645488*/
@@ -1952,29 +1941,26 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2, double a3,
 
 
   int v4; // ecx
-  int v5; // esi
-  v5 = v4; /*0x7178c4*/
+  int v5 = v4; // esi /*0x7178c4*/
   if ( *(unsigned char *)(v4 + 1980) ) /*0x7178c6*/
   {
-  int v6; // eax
+    int v6; // eax
     v6 = *(unsigned int *)(v4 + 1968); /*0x7178d4*/
-  int v7; // ecx
+    int v7; // ecx
     v7 = *(unsigned int *)(v4 + 1972); /*0x7178da*/
-  unsigned int v18[2]; // [esp+24h] [ebp-8h] BYREF
+    unsigned int v18[2]; // [esp+24h] [ebp-8h] BYREF
     v18[0] = v6; /*0x7178e1*/
     v18[1] = v7; /*0x7178e6*/
-  int *v8; // eax
-  int v17[3]; // [esp+18h] [ebp-14h] BYREF
+    int *v8; // eax
+    int v17[3]; // [esp+18h] [ebp-14h] BYREF
     v8 = (int *)World::ToScreen(v17, v18, a2); /*0x7178fb*/
-  int v9; // ecx
-    v9 = *v8; /*0x717900*/
-  int v10; // edi
-    v10 = v8->vtable2; /*0x717905*/
+    int v9 = *v8; // ecx /*0x717900*/
+    int v10 = v8->vtable2; // edi /*0x717905*/
     v17[0] = 10 * v5->ClearAllWeapons; /*0x71791b*/
     __asm { fild [esp+2Ch+var_14] } /*0x717921*/
-  void *v11; // ebp
+    void *v11; // ebp
     v11 = (void *)(v9 - v17[0]); /*0x717927*/
-  void *v12; // edi
+    void *v12; // edi
     v12 = (void *)(v10 - v17[0]); /*0x717929*/
     __asm /*0x71792b*/
     {
@@ -1984,12 +1970,12 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2, double a3,
       fstp [esp+2Ch+var_2C]; double
       fstp st
     }
-  double v16; // [esp+0h] [ebp-2Ch]
+    double v16; // [esp+0h] [ebp-2Ch]
     Math::Sqrt(v16); /*0x717936*/
     __asm { fmul ds:dbl_7F4FC0 } /*0x71793b*/
-  int v13; // eax
+    int v13; // eax
     LOWORD(v13) = Math::RoundToInt(a3); /*0x717944*/
-  int v14; // ebx
+    int v14; // ebx
     if ( v5->ClearAllWeapons >= 0 ) /*0x717951*/
       v14 = -v13; /*0x717957*/
     else
@@ -2054,7 +2040,7 @@ AbstractClass * * BuildingTypeClass::FindOrCreateAlt(INIClass * Source)
   v2 = 0; /*0x7480fd*/
   if ( dword_A83CF0 <= 0 ) /*0x748101*/
   {
-  LABEL_6:
+    LABEL_6:
     if ( operator new(0xE78u) ) /*0x74812b*/
       return UnitTypeClass::UnitTypeClass(Source); /*0x748141*/
     return 0; /*0x748135*/
@@ -2088,8 +2074,7 @@ char BuildingTypeClass::Enqueue(int a2, void *a2_2)
     *(unsigned int *)&v3[v5] = *v6; /*0x41c547*/
   }
   operator delete((void *)(*(void **)v3)); /*0x41c55b*/
-  int v7; // eax
-  v7 = v3 + v3->vtable3; /*0x41c566*/
+  int v7 = v3 + v3->vtable3; // eax /*0x41c566*/
   *(unsigned int *)v3 = v3; /*0x41c568*/
   v3->vtable3 = v7; /*0x41c56a*/
   v3->uniqueId = 0; /*0x41c56d*/
@@ -2112,17 +2097,16 @@ size_t BuildingTypeClass::Dequeue(int *aP1, void *a2)
       this->uniqueId = 0; /*0x41c5b8*/
       LOBYTE(this->vtable4) = 1; /*0x41c5bf*/
     }
-  char *vtable0; // edi
+    char *vtable0; // edi
     vtable0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
-  int v5; // ebx
-    v5 = *aP1; /*0x41c5cb*/
-  int vtable1; // ecx
+    int v5 = *aP1; // ebx /*0x41c5cb*/
+    int vtable1; // ecx
     vtable1 = (int)this->vtable2; /*0x41c5cd*/
     if ( vtable1 <= 0 ) /*0x41c5d2*/
       return 0; /*0x41c5fe*/
     while ( 1 ) /*0x41c5db*/
     {
-  int v7; // esi
+      int v7; // esi
       v7 = *(unsigned int *)&vtable0[8 * (vtable1 / 2)]; /*0x41c5db*/
       if ( v7 <= v5 ) /*0x41c5e3*/
       {
@@ -2150,8 +2134,7 @@ int BuildingTypeClass::FindIndexByName(void *a1)
 
   if ( !this ) /*0x45e7b6*/
     return -1; /*0x45e7b6*/
-  int v2; // esi
-  v2 = 0; /*0x45e7bd*/
+  int v2 = 0; // esi /*0x45e7bd*/
   if ( dword_A83C78 <= 0 ) /*0x45e7c1*/
     return -1; /*0x45e7e6*/
   while ( _strcmpi((char *)(*((unsigned int *)dword_A83C6C + v2) + 36), (char *)this) ) /*0x45e7da*/
@@ -2174,7 +2157,7 @@ int BuildingTypeClass::GetMaxPips()
   {
     if ( this->Weeder ) /*0x45ed14*/
     {
-  int v2; // ecx
+      int v2; // ecx
       v2 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6096); /*0x45ed24*/
       if ( v2 >= 0 ) /*0x45ed2c*/
       {
@@ -2188,7 +2171,7 @@ int BuildingTypeClass::GetMaxPips()
     }
     else
     {
-  int Storage; // ecx
+      int Storage; // ecx
       Storage = this->Storage; /*0x45ed38*/
       if ( Storage >= 0 ) /*0x45ed40*/
       {
@@ -2217,8 +2200,7 @@ unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
 
   int v2; // eax
   v2 = this->Foundation[0]; /*0x464af0*/
-  int v3; // ecx
-  v3 = dword_89DDB8 * this->Height; /*0x464afc*/
+  int v3 = dword_89DDB8 * this->Height; // ecx /*0x464afc*/
   v2 *= 4; /*0x464b03*/
   int v4; // edx
   v4 = *(int *)((char *)stru_81926C.Type + v2); /*0x464b0b*/
@@ -2245,21 +2227,19 @@ int BuildingTypeClass::SaveLoad_Prefix_0(void *a1, void *a2, void *a3, void *a4)
   result = TechnoTypeClass::SaveLoad_Prefix_0(v7, v8, v9, v5, v6); /*0x465313*/
   if ( result >= 0 ) /*0x46531a*/
   {
-  int v2; // edx
-    v2 = *v8; /*0x465322*/
+    int v2 = *v8; // edx /*0x465322*/
     v9 = *(int **)&((unsigned int *)&v7[1])[1424]; /*0x46532e*/
     result = (*(int (__stdcall **)(unsigned int *, int **, int, unsigned int))(v2 + 16))(v8, &v9, 4, 0); /*0x465332*/
     if ( result >= 0 ) /*0x465337*/
     {
-  int v3; // ebp
-      v3 = 0; /*0x46533d*/
+      int v3 = 0; // ebp /*0x46533d*/
       if ( (int)v9 <= 0 ) /*0x465341*/
       {
         return 0; /*0x465368*/
       }
       else
       {
-  int i; // edi
+        int i; // edi
         for ( i = 0; ; i += 12 ) /*0x465343*/
         {
           result = (*(int (__stdcall **)(unsigned int *, int, int, unsigned int))(*v8 + 16))( /*0x465355*/
@@ -2339,15 +2319,14 @@ int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTy
     *(char **)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * a4) + 772),
     Destination,
     32);
-  int v4; // esi
-  v4 = 0; /*0x474ac4*/
+  int v4 = 0; // esi /*0x474ac4*/
   if ( *(int *)g_AnimClass_SaveState <= 0 ) /*0x474ac8*/
     return a4; /*0x474b06*/
   int v5; // eax
   v5 = *(unsigned int *)&BuildingTypeClass_AnimTable; /*0x474aca*/
   while ( 1 ) /*0x474ae6*/
   {
-  bool v6; // zf
+    bool v6; // zf
     v6 = _strcmpi(*(char **)(*(unsigned int *)(v5 + 4 * v4) + 772), Destination) == 0; /*0x474ae6*/
     v5 = *(unsigned int *)&BuildingTypeClass_AnimTable; /*0x474ae8*/
     if ( v6 && *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * v4) + 784) != 1 ) /*0x474af9*/
@@ -2364,8 +2343,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
 {
 
 
-  void *v4; // ebx
-  v4 = 0; /*0x478859*/
+  void *v4 = 0; // ebx /*0x478859*/
   this->vtable2 = 0; /*0x47885d*/
   this->vtable3 = (void *)a2; /*0x478860*/
   LOBYTE(this->vtable4) = 1; /*0x478863*/
@@ -2375,16 +2353,14 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
     return &this->TechnoTypeClass; /*0x4788d0*/
   if ( !a3 ) /*0x478878*/
   {
-  int v8; // eax
+    int v8; // eax
     v8 = __2_YAPAXI_Z(3 * a2); /*0x4788a2*/
     if ( v8 ) /*0x4788ac*/
     {
       if ( a2 - 1 >= 0 ) /*0x4788b3*/
       {
-  unsigned char *v9; // ecx
-        v9 = &v8->ptr_2; /*0x4788b5*/
-  int v10; // edx
-        v10 = a2; /*0x4788b8*/
+        unsigned char *v9 = &v8->ptr_2; // ecx /*0x4788b5*/
+        int v10 = a2; // edx /*0x4788b8*/
         do /*0x4788c5*/
         {
           *(v9 - 2) = 0; /*0x4788b9*/
@@ -2403,10 +2379,9 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
   }
   if ( a2 - 1 >= 0 ) /*0x47887f*/
   {
-  unsigned char *v5; // eax
+    unsigned char *v5; // eax
     v5 = (unsigned char *)(a3 + 2); /*0x478881*/
-  int v6; // ecx
-    v6 = a2; /*0x478884*/
+    int v6 = a2; // ecx /*0x478884*/
     do /*0x478891*/
     {
       *(v5 - 2) = 0; /*0x478885*/
@@ -2427,8 +2402,7 @@ namespace gamemd {
 int BuildingTypeClass::GetPowerOutput(int aP1)
 {
 
-  int result; // eax
-  result = aP1; /*0x4c9680*/
+  int result = aP1; // eax /*0x4c9680*/
   if ( aP1 >= 127 ) /*0x4c9687*/
     result = 127; /*0x4c9689*/
   int16_t v3; // dx
@@ -2445,8 +2419,7 @@ int BuildingTypeClass::FindIndex(void *a1)
 
   if ( !this ) /*0x747376*/
     return -1; /*0x747376*/
-  int v2; // esi
-  v2 = 0; /*0x74737d*/
+  int v2 = 0; // esi /*0x74737d*/
   if ( dword_A83CF0 <= 0 ) /*0x747381*/
     return -1; /*0x7473a6*/
   while ( _strcmpi((char *)(*((unsigned int *)dword_A83CE4 + v2) + 36), (char *)this) ) /*0x74739a*/

@@ -40,8 +40,7 @@ int Input::OffsetToDirection(void *a1)
   (*((unsigned short *)&(v4))) = Math::RoundToInt(v1); /*0x4810e8*/
   if ( v4 < 60 ) /*0x4810f0*/
     return 0; /*0x4810f3*/
-  int result; // eax
-  result = Input_field_00 > 128; /*0x481104*/
+  int result = Input_field_00 > 128; // eax /*0x481104*/
   if ( v2 > 128 ) /*0x48110f*/
     (*((unsigned char *)&(result))) = result | 2; /*0x481111*/
   if ( result ) /*0x481115*/

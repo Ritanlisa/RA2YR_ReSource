@@ -274,11 +274,9 @@ unsigned int * Power::UpdateAll()
     Power::TimerProcess((int)dword_A83D4C->relatedTagsCount); /*0x67cea0*/
   Power::TimerProcess(*(int *)&TeamTypeClass_Array); /*0x67ceb0*/
   Power::TimerProcess(*(int *)&Instance); /*0x67cebf*/
-  void *v50; // eax
-  v50 = v54; /*0x67ceca*/
+  void *v50 = v54; // eax /*0x67ceca*/
   this->Fla_ph = (void *)(v53); /*0x67cece*/
-  void *v51; // edx
-  v51 = v55; /*0x67ced0*/
+  void *v51 = v55; // edx /*0x67ced0*/
   this->q004 = (int)(v50); /*0x67ced5*/
   this->q008 = (int)(v51); /*0x67cedb*/
   return &this->Fla_ph; /*0x67ced4*/
@@ -435,16 +433,14 @@ int Power::FinalizeDrain(int a2, void *a2_1)
   if ( result == 4 ) /*0x4a1c2f*/
   {
     LOBYTE(this->q00C) = this->q004; /*0x4a1c34*/
-  char *i; // eax
+    char *i; // eax
     for ( i = (char *)this->q004 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
       i[(unsigned int)&this->q020] = (char)this->a2; /*0x4a1c42*/
     a2 = (int)this->a2; /*0x4a1c50*/
-  int *p_Power_field_0x8; // esi
-    p_Power_field_0x8 = &a2; /*0x4a1c57*/
-  unsigned int v6; // eax
+    int *p_Power_field_0x8 = &a2; // esi /*0x4a1c57*/
+    unsigned int v6; // eax
     v6 = (unsigned int)(~this->Fla_ph); /*0x4a1c5b*/
-  int v7; // edi
-    v7 = 4; /*0x4a1c5d*/
+    int v7 = 4; // edi /*0x4a1c5d*/
     do /*0x4a1c7e*/
     {
       v6 = CRC32_Table[*(unsigned __int8 *)p_Power_field_0x8 ^ (unsigned __int8)v6] ^ (v6 >> 8); /*0x4a1c7a*/
@@ -478,16 +474,13 @@ int Power::FlagProcess(int q008, int a2, int a1)
   if ( result == 4 ) /*0x4a1cc7*/
   {
     LOBYTE(q008->Power_field_0xC) = q008->Power_field_0x4; /*0x4a1ccc*/
-  char *i; // eax
+    char *i; // eax
     for ( i = (char *)q008->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1cd5*/
       i[(unsigned int)q008 + 8] = (char)q008->a2; /*0x4a1cda*/
     a2 = (int)q008->a2; /*0x4a1ce8*/
-  int *p_Power_field_0x8; // esi
-    p_Power_field_0x8 = &a2; /*0x4a1cef*/
-  unsigned int v6; // eax
-    v6 = ~q008->Power_field_0x0; /*0x4a1cf3*/
-  int v7; // edi
-    v7 = 4; /*0x4a1cf5*/
+    int *p_Power_field_0x8 = &a2; // esi /*0x4a1cef*/
+    unsigned int v6 = ~q008->Power_field_0x0; // eax /*0x4a1cf3*/
+    int v7 = 4; // edi /*0x4a1cf5*/
     do /*0x4a1d16*/
     {
       v6 = CRC32_Table[*(unsigned __int8 *)p_Power_field_0x8 ^ (unsigned __int8)v6] ^ (v6 >> 8); /*0x4a1d12*/

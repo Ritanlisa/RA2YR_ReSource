@@ -67,9 +67,9 @@ int KeyboardConfig::LoadINI()
       {
         while ( strcmp( /*0x533e1f*/
                   (const char *)(*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&g_CommandClass_Capacity
-                                                                            + 4 * v3)
-                                                              + 4))(*(unsigned int *)(*(unsigned int *)&g_CommandClass_Capacity
-                                                                              + 4 * v3)),
+          + 4 * v3)
+        + 4))(*(unsigned int *)(*(unsigned int *)&g_CommandClass_Capacity
+        + 4 * v3)),
                   (const char *)StringByIndex) )
         {
           if ( ++v3 >= *(int *)&g_CommandClassVector_State ) /*0x533e29*/
@@ -85,7 +85,7 @@ int KeyboardConfig::LoadINI()
             v5 = 10; /*0x533e55*/
           if ( KeyboardConfig::ReleaseBuffer((int)&Base, v5) ) /*0x533e60*/
           {
-  LABEL_13:
+            LABEL_13:
             *(unsigned int *)(*(unsigned int *)&Base + 8 * *(unsigned int *)&NumOfElements) = Int_Overwrite; /*0x533e74*/
             *(unsigned int *)(*(unsigned int *)&Base + 8 * *(unsigned int *)&NumOfElements + 4) = v4; /*0x533e83*/
             g_FileSystemInitFlag = 0; /*0x533e8d*/
@@ -93,7 +93,7 @@ int KeyboardConfig::LoadINI()
           }
         }
       }
-  LABEL_14:
+      LABEL_14:
       ++i; /*0x533e98*/
     }
     /* X11: vtable install elided (implicit via CCFileClass virtuals 0x533ec0) */
@@ -138,8 +138,7 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *v3)
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
   operator delete((void *)(*(void **)v3)); /*0x538bdb*/
-  int v7; // eax
-  v7 = v3 + v3->vtable3; /*0x538be6*/
+  int v7 = v3 + v3->vtable3; // eax /*0x538be6*/
   *(unsigned int *)v3 = (unsigned int)(v3); /*0x538be8*/
   v3->vtable3 = v7; /*0x538bea*/
   v3->uniqueId = 0; /*0x538bed*/

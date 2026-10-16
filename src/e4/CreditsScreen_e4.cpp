@@ -26,8 +26,8 @@
 namespace gamemd {  // G42.18 ns repair
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-
-
+  
+  
   int result; // eax
   result = (int)(BaseDialogProc(hWnd, a2, a3, a4)); /*0x531a28*/
   if ( result ) /*0x531a2f*/
@@ -86,7 +86,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   CreditsScreen::Init(Buffer); /*0x531bea*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531bfc*/
   return 0; /*0x531bfe*/
-
+  
 }
 } // namespace gamemd
 // 0x4A3C00

@@ -53,7 +53,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
       goto LABEL_11; /*0x728dd9*/
     case 3: /*0x728c17*/
       a1->RefCount = 5; /*0x728dd0*/
-  LABEL_11:
+      LABEL_11:
       a1->CurrentState[0] = *(unsigned int *)&DataGlobal_B0F910; /*0x728de0*/
       a1->CurrentState[1] = *(unsigned int *)&DataGlobal_B0F914; /*0x728df0*/
       a1->CurrentState[2] = *(unsigned int *)&DataGlobal_B0F918; /*0x728df9*/
@@ -68,34 +68,34 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
       v15 = v4 - a1->CurrentState[0]; /*0x728c4b*/
       __asm /*0x728c4f*/
       {
-        fild [esp+34h+var_C]
-        fld st
-        fmul st, st(1)
-        fld st(2)
-        fmul st, st(3)
-        faddp st(1), st
-        fstp [esp+34h+var_34]; double
-        fstp st
-        fstp st
-      }
+      fild [esp+34h+var_C]
+      fld st
+      fmul st, st(1)
+      fld st(2)
+      fmul st, st(3)
+      faddp st(1), st
+      fstp [esp+34h+var_34]; double
+      fstp st
+      fstp st
+    }
       Math::Sqrt(v9); /*0x728c64*/
       (*((unsigned short *)&(_EAX))) = Math::RoundToInt(v1); /*0x728c6c*/
       thisa = (gamemd::TunnelLocomotionClass *)(_EAX); /*0x728c71*/
       __asm /*0x728c75*/
       {
-        fild [esp+2Ch+a1]
-        fcomp dbl_B0F8F8
-        fnstsw ax
-      }
+      fild [esp+2Ch+a1]
+      fcomp dbl_B0F8F8
+      fnstsw ax
+    }
       if ( ((((unsigned char *)&(_EAX))[1]) & 0x41) == 0 ) /*0x728c84*/
       {
-        *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))a1->Owner->vfptr + 110))( /*0x728c9e*/
+      *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))a1->Owner->vfptr + 110))( /*0x728c9e*/
                                       a1->Owner,
                                       v13);
-        v11[0] = 0; /*0x728cc4*/
-        v11[1] = 0; /*0x728cc9*/
-        TileIndex = ((MapClass *)((MapClass *)&DataGlobal_87F7E8))->GetTileIndex(v10, 0, 0); /*0x728cce*/
-        v8 = *LayerClass::Pathfinding_Find( /*0x728cea*/
+      v11[0] = 0; /*0x728cc4*/
+      v11[1] = 0; /*0x728cc9*/
+      TileIndex = ((MapClass *)((MapClass *)&DataGlobal_87F7E8))->GetTileIndex(v10, 0, 0); /*0x728cce*/
+      v8 = *LayerClass::Pathfinding_Find( /*0x728cea*/
                 (Type *)&DataGlobal_87F7E8,
                 (int)&v14,
                 &v14,
@@ -113,14 +113,14 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                 v11,
                 0,
                 0);
-        this_2 = (*(((unsigned short *)&(v8)) + 1)); /*0x728cf3*/
-        if ( (unsigned short)v8 != *(unsigned short *)&DataGlobal_B0F8F0 ) /*0x728cf7*/
-          goto LABEL_8; /*0x728cf7*/
-        if ( (*(((unsigned short *)&(v8)) + 1)) == *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[322] ) /*0x728d09*/
-        {
-          v12[0] = 0; /*0x728d33*/
-          v12[1] = 0; /*0x728d38*/
-          v8 = *LayerClass::Pathfinding_Find( /*0x728d42*/
+      this_2 = (*(((unsigned short *)&(v8)) + 1)); /*0x728cf3*/
+      if ( (unsigned short)v8 != *(unsigned short *)&DataGlobal_B0F8F0 ) /*0x728cf7*/
+        goto LABEL_8; /*0x728cf7*/
+      if ( (*(((unsigned short *)&(v8)) + 1)) == *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[322] ) /*0x728d09*/
+      {
+        v12[0] = 0; /*0x728d33*/
+        v12[1] = 0; /*0x728d38*/
+        v8 = *LayerClass::Pathfinding_Find( /*0x728d42*/
                   (Type *)&DataGlobal_87F7E8,
                   (int)v12,
                   &v15,
@@ -138,11 +138,11 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                   v12,
                   0,
                   0);
-          this_2 = (*(((unsigned short *)&(v8)) + 1)); /*0x728d44*/
-        }
-        if ( (((unsigned int)(unsigned short)(v8)) | ((unsigned int)(unsigned short)(this_2) << 16)) == *(unsigned int *)&DataGlobal_B0F8F0 ) /*0x728d4f*/
-        {
-          (*((void (__stdcall **)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))a1->Owner->vfptr + 91))( /*0x728d7c*/
+        this_2 = (*(((unsigned short *)&(v8)) + 1)); /*0x728d44*/
+      }
+      if ( (((unsigned int)(unsigned short)(v8)) | ((unsigned int)(unsigned short)(this_2) << 16)) == *(unsigned int *)&DataGlobal_B0F8F0 ) /*0x728d4f*/
+      {
+        (*((void (__stdcall **)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))a1->Owner->vfptr + 91))( /*0x728d7c*/
             &a1->Owner->health,
             0,
             *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),
@@ -150,18 +150,18 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
             1,
             1,
             0);
-          *CurrentState = *(unsigned int *)&DataGlobal_B0F910; /*0x728d88*/
-          a1->CurrentState[1] = *(unsigned int *)&DataGlobal_B0F914; /*0x728d90*/
-          a1->CurrentState[2] = *(unsigned int *)&DataGlobal_B0F918; /*0x728d99*/
-        }
-        else
-        {
-  LABEL_8:
-          *CurrentState = ((int16_t)v8 << 8) + 128; /*0x728dbf*/
-          a1->CurrentState[1] = ((int16_t)this_2 << 8) + 128; /*0x728dc1*/
-          a1->CurrentState[2] = 0; /*0x728dc4*/
-        }
+        *CurrentState = *(unsigned int *)&DataGlobal_B0F910; /*0x728d88*/
+        a1->CurrentState[1] = *(unsigned int *)&DataGlobal_B0F914; /*0x728d90*/
+        a1->CurrentState[2] = *(unsigned int *)&DataGlobal_B0F918; /*0x728d99*/
       }
+      else
+      {
+        LABEL_8:
+        *CurrentState = ((int16_t)v8 << 8) + 128; /*0x728dbf*/
+        a1->CurrentState[1] = ((int16_t)this_2 << 8) + 128; /*0x728dc1*/
+        a1->CurrentState[2] = 0; /*0x728dc4*/
+      }
+    }
       break; /*0x728da1*/
     default:
       return;
@@ -194,7 +194,7 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *(unsigned int *)a1->0 = &vt_LocomotionClass; /*0x72a16a*/
       *(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x72a170*/
-  int v3; // edx
+      int v3; // edx
       v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x72a177*/
       a1->CurrentState[6] = 0; /*0x72a17d*/
       a1->CurrentState[4] = v3; /*0x72a180*/

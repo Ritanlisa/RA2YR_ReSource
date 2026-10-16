@@ -42,7 +42,7 @@ void* ProgressTimer::GetValue(void *aP1, void *a2)
     v12 = *(unsigned int *)this->__pad_000; /*0x4c9415*/
     if ( (__int16)v7 <= 0 ) /*0x4c941c*/
     {
-LABEL_12:
+      LABEL_12:
       *aP1 = (void *)(v12); /*0x4c9445*/
       return aP1; /*0x4c9453*/
     }
@@ -58,11 +58,11 @@ LABEL_12:
       LOWORD(v8) = (unsigned short)v8 - (*(unsigned short *)&DataGlobal_A8EB00[644] - (unsigned short)v9); /*0x4c9431*/
     }
     v10 = (__int16)v8; /*0x4c9433*/
-LABEL_11:
+    LABEL_11:
     LOWORD(v12) = v12 - v10 * (v5 / (__int16)v7); /*0x4c9435*/
     goto LABEL_12; /*0x4c9440*/
   }
-LABEL_14:
+  LABEL_14:
   *aP1 = (void *)(*(unsigned int *)this->__pad_000); /*0x4c945a*/
   return aP1; /*0x4c944d*/
 

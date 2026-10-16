@@ -19,8 +19,7 @@ char Explosion::RemoveItem(int a2, void *a2_2)
   v3 = (int)(a2_2); /*0x53dda3*/
   if ( a2_2 >= v2 ) /*0x53dda9*/
     return 0; /*0x53ddcc*/
-  int v4; // edx
-  v4 = v2 - 1; /*0x53ddab*/
+  int v4 = v2 - 1; // edx /*0x53ddab*/
   *((unsigned int *)a2_2 + 4) = v4; /*0x53ddae*/
   if ( a2_2 < v4 ) /*0x53ddb1*/
   {

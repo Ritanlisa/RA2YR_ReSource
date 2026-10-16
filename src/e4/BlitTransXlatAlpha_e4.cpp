@@ -16,13 +16,12 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
 {
 
 
-  int result; // eax
-  result = a4; /*0x493930*/
+  int result = a4; // eax /*0x493930*/
   if ( a4 > 0 ) /*0x49393b*/
   {
-  Stream *v11; // edx
+    Stream *v11; // edx
     v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493941*/
-  unsigned short *v14; // [esp+18h] [ebp+14h]
+    unsigned short *v14; // [esp+18h] [ebp+14h]
     v14 = (unsigned short *)a4; /*0x493952*/
     do /*0x4939c4*/
     {
@@ -34,8 +33,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
       }
       ++a1; /*0x4939a6*/
       ++a2; /*0x4939aa*/
-  unsigned short *v13; // eax
-      v13 = a5 + 1; /*0x4939ae*/
+      unsigned short *v13 = a5 + 1; // eax /*0x4939ae*/
       if ( (unsigned int)(a5 + 1) >= v11[1].Stream_field_08 ) /*0x4939b4*/
         v13 = (unsigned short *)((char *)v13 - v11[1].Stream_field_0C); /*0x4939b6*/
       a5 = v13; /*0x4939b9*/
@@ -53,15 +51,13 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
-  int result; // eax
-  result = a4; /*0x493a60*/
+  int result = a4; // eax /*0x493a60*/
   if ( a4 > 0 ) /*0x493a6a*/
   {
-  int v12; // ebp
-    v12 = argC; /*0x493a76*/
-  Stream *v14; // edi
+    int v12 = argC; // ebp /*0x493a76*/
+    Stream *v14; // edi
     v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493a80*/
-  unsigned short *v16; // [esp+14h] [ebp+14h]
+    unsigned short *v16; // [esp+14h] [ebp+14h]
     v16 = (unsigned short *)a4; /*0x493a86*/
     do /*0x493aee*/
     {
@@ -72,8 +68,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
         *a5 = argC; /*0x493ac9*/
         v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493acc*/
       }
-  unsigned short *v15; // eax
-      v15 = a5 + 1; /*0x493ad2*/
+      unsigned short *v15 = a5 + 1; // eax /*0x493ad2*/
       ++a2; /*0x493ad8*/
       ++a1; /*0x493ad9*/
       if ( (unsigned int)(a5 + 1) >= v14[1].Stream_field_08 ) /*0x493ade*/
@@ -93,13 +88,12 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
 {
 
 
-  int result; // eax
-  result = a4; /*0x493b90*/
+  int result = a4; // eax /*0x493b90*/
   if ( a4 > 0 ) /*0x493b9b*/
   {
-  Stream *v11; // edx
+    Stream *v11; // edx
     v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493ba1*/
-  unsigned short *v14; // [esp+18h] [ebp+14h]
+    unsigned short *v14; // [esp+18h] [ebp+14h]
     v14 = (unsigned short *)a4; /*0x493bb2*/
     do /*0x493c24*/
     {
@@ -111,8 +105,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
       }
       ++a1; /*0x493c06*/
       ++a2; /*0x493c0a*/
-  unsigned short *v13; // eax
-      v13 = a5 + 1; /*0x493c0e*/
+      unsigned short *v13 = a5 + 1; // eax /*0x493c0e*/
       if ( (unsigned int)(a5 + 1) >= v11[1].Stream_field_08 ) /*0x493c14*/
         v13 = (unsigned short *)((char *)v13 - v11[1].Stream_field_0C); /*0x493c16*/
       a5 = v13; /*0x493c19*/

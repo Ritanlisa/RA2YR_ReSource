@@ -130,13 +130,12 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   ((VoxClass *)aUimdIni)->SetEVAIndex(); /*0x534fac*/
   if ( v1 == 2 ) /*0x534fb4*/
     v1 = 1; /*0x534fb6*/
-  unsigned int v2; // ebx
-  v2 = v1; /*0x534fbb*/
+  unsigned int v2 = v1; // ebx /*0x534fbb*/
   Game *v16; // [esp+1Ch] [ebp-11Ch]
   v16 = (Game *)v1; /*0x534fc0*/
   if ( v1 == -1 ) /*0x534fc4*/
   {
-  unsigned int YRCD; // eax
+    unsigned int YRCD; // eax
     YRCD = AlwaysFindYRCD(); /*0x534fd1*/
     if ( YRCD >= 2 ) /*0x534fda*/
     {
@@ -175,8 +174,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
       (**(void (***)(int, int))dword_884E78)(dword_884E78, 1); /*0x5350cb*/
     dword_884E78 = 0; /*0x5350cd*/
   }
-  unsigned int v5; // esi
-  v5 = v2 + 1; /*0x5350d3*/
+  unsigned int v5 = v2 + 1; // esi /*0x5350d3*/
   char Buffer[64]; // [esp+20h] [ebp-118h] BYREF
   sprintf(Buffer, "SIDEC%02dMD.MIX", v2 + 1); /*0x5350e1*/
   Debug::Log(); /*0x5350f0*/
@@ -193,7 +191,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x535138*/
   if ( v7 ) /*0x53513f*/
   {
-  MixFileClass *v8; // eax
+    MixFileClass *v8; // eax
     v8 = (MixFileClass *)operator new(0x28u); /*0x535143*/
     if ( v8 ) /*0x53514d*/
       dword_884E70 = (int)((MixFileClass *)(v8))->FromFile(Buffer, (int)dword_886980); /*0x535160*/
@@ -214,7 +212,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x5351d6*/
   if ( v10 ) /*0x5351dd*/
   {
-  MixFileClass *v11; // eax
+    MixFileClass *v11; // eax
     v11 = (MixFileClass *)operator new(0x28u); /*0x5351e1*/
     if ( !v11 ) /*0x5351eb*/
     {
@@ -234,9 +232,9 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     ReturnTrue(0); /*0x53524b*/
     sprintf(Buffer, "SIDENC%02d.MIX", v5); /*0x53525b*/
     Debug::Log(); /*0x53526a*/
-  unsigned int *v13; // eax
+    unsigned int *v13; // eax
     v13 = CCFileClass::Construct(&v18, Buffer); /*0x53527b*/
-  char v14; // bl
+    char v14; // bl
     v14 = v13->vt_slot_20(0); /*0x535294*/
     v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535296*/
     v20 = 0; /*0x53529a*/
@@ -245,7 +243,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     ((gamemd::BufferIOFileClass *)(&v18))->Dtor(); /*0x5352ae*/
     if ( v14 ) /*0x5352b5*/
     {
-  MixFileClass *v15; // eax
+      MixFileClass *v15; // eax
       v15 = (MixFileClass *)operator new(0x28u); /*0x5352b9*/
       if ( v15 ) /*0x5352c3*/
         dword_884E78 = (int)((MixFileClass *)(v15))->FromFile(Buffer, (int)dword_886980); /*0x5352d6*/
@@ -291,8 +289,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
 
   Struct v39[192]; // [esp+124h] [ebp-300h] BYREF
 
-  MIXFile *v2; // ebp
-  v2 = this; /*0x627598*/
+  MIXFile *v2 = this; // ebp /*0x627598*/
   MIXFile *v36; // [esp+1Ch] [ebp-408h]
   v36 = this; /*0x62759c*/
   int v3; // edx
@@ -305,10 +302,8 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   strcat(String, asc_826598); /*0x62763d*/
   strcat(String, (const char *)off_836464); /*0x62766a*/
   _strupr(String); /*0x627678*/
-  Struct *v5; // esi
-  v5 = v39; /*0x627680*/
-  int v6; // edi
-  v6 = 256; /*0x627687*/
+  Struct *v5 = v39; // esi /*0x627680*/
+  int v6 = 256; // edi /*0x627687*/
   do /*0x627697*/
   {
     (v5)->Zero3(); /*0x62768e*/
@@ -318,19 +313,18 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   while ( v6 ); /*0x627697*/
   void *v7; // eax
   v7 = SearchMIXFile(String, 0); /*0x62769f*/
-  int v8; // ebx
-  v8 = 0; /*0x6276a4*/
+  int v8 = 0; // ebx /*0x6276a4*/
   if ( !v7 ) /*0x6276a8*/
     return 0; /*0x6276ad*/
   memcpy(v39, v7, sizeof(v39)); /*0x6276c7*/
   int i; // esi
   for ( i = 0; i < 256; ++i ) /*0x6276c9*/
   {
-  char *v10; // eax
+    char *v10; // eax
     v10 = &v39->u32_2 * (i % 256) + i % 256; /*0x6276e2*/
-  __int16 v31; // [esp+10h] [ebp-414h]
+    __int16 v31; // [esp+10h] [ebp-414h]
     v31 = *(unsigned short *)v10; /*0x6276ea*/
-  char v11; // cl
+    char v11; // cl
     v11 = v10[2]; /*0x6276ef*/
     *v10 = 4 * *(unsigned short *)v10; /*0x6276f9*/
     v10[1] = 4 * HIBYTE(v31); /*0x627706*/
@@ -365,67 +359,66 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   v35 = 0; /*0x62776d*/
   if ( v12 > 0 ) /*0x627771*/
   {
-  int v32; // [esp+10h] [ebp-414h]
+    int v32; // [esp+10h] [ebp-414h]
     v32 = 0; /*0x627777*/
     while ( 1 ) /*0x62779b*/
     {
-  char *v15; // ebp
+      char *v15; // ebp
       v15 = *(char **)(*((unsigned int *)v2->field_4 + 1) + 4 * v8); /*0x62779b*/
-  __int16 *v16; // edx
+      __int16 *v16; // edx
       v16 = (__int16 *)(v32 + *(unsigned int *)(*v36->u32_4.__pad_0 + 4)); /*0x6277a1*/
-  __int16 v33; // [esp+14h] [ebp-410h] BYREF
+      __int16 v33; // [esp+14h] [ebp-410h] BYREF
       v33 = *v16; /*0x6277a6*/
-  char v34; // [esp+16h] [ebp-40Eh]
+      char v34; // [esp+16h] [ebp-40Eh]
       v34 = v16->u32_2; /*0x6277ae*/
-  char *v17; // eax
+      char *v17; // eax
       v17 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x6277b2*/
-  char *inited; // edi
+      char *inited; // edi
       if ( v17 ) /*0x6277bc*/
         inited = FontClass::InitMetrics(v17, v15, (int)&v33, (int)v39, (int)&FileSystem_TEMPERAT_PAL, 1, 0); /*0x6277dc*/
       else
         inited = 0; /*0x6277e0*/
-  int v19; // ebx
-      v19 = 2 * v8; /*0x6277e2*/
+      int v19 = 2 * v8; // ebx /*0x6277e2*/
       *(unsigned int *)inited = v19; /*0x6277e4*/
-  int v20; // eax
+      int v20; // eax
       v20 = v14[2]; /*0x6277e6*/
-  int v21; // ecx
+      int v21; // ecx
       if ( v14[4] < v20 /*0x627809*/
         || (v14->u32_D || !v20)
         && (v21 = v14[5], v21 > 0)
         && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v14 + 8))(v14, v20 + v21, 0) )
       {
-  int v22; // eax
+        int v22; // eax
         v22 = v14[4]; /*0x627810*/
-  int v23; // edx
+        int v23; // edx
         v23 = v14[1]; /*0x627813*/
         v14[4] = v22 + 1; /*0x627819*/
         *(unsigned int *)(v23 + 4 * v22) = (unsigned int)(inited); /*0x62781c*/
       }
-  char *v24; // eax
+      char *v24; // eax
       v24 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x627824*/
-  char *v25; // edi
+      char *v25; // edi
       if ( v24 ) /*0x62782e*/
         v25 = FontClass::InitMetrics(v24, v15, (int)&v33, (int)v39, (int)&FileSystem_TEMPERAT_PAL, 53, 0); /*0x62784e*/
       else
         v25 = 0; /*0x627852*/
       *(unsigned int *)v25 = v19 + 1; /*0x627855*/
-  int v26; // eax
+      int v26; // eax
       v26 = v14[2]; /*0x627857*/
-  int v27; // ecx
+      int v27; // ecx
       if ( v14[4] < v26 /*0x62787a*/
         || (v14->u32_D || !v26)
         && (v27 = v14[5], v27 > 0)
         && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v14 + 8))(v14, v26 + v27, 0) )
       {
-  int v28; // eax
+        int v28; // eax
         v28 = v14[4]; /*0x627881*/
-  int v29; // edx
+        int v29; // edx
         v29 = v14[1]; /*0x627884*/
         v14[4] = v28 + 1; /*0x62788a*/
         *(unsigned int *)(v29 + 4 * v28) = (unsigned int)(v25); /*0x62788d*/
       }
-  bool v30; // cc
+      bool v30; // cc
       v30 = ++v35 < v37; /*0x6278a0*/
       v32 += 3; /*0x6278a6*/
       if ( !v30 ) /*0x6278aa*/

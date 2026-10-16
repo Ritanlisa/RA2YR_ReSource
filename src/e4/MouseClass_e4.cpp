@@ -31,11 +31,11 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
 
   if ( a1 == 4551 ) /*0x6d1779*/
   {
-  unsigned int v2; // eax
+    unsigned int v2; // eax
     v2 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1780*/
     if ( v2 <= 0x18 ) /*0x6d1789*/
     {
-  ShapeButtonClass *v3; // ecx
+      ShapeButtonClass *v3; // ecx
       v3 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v2); /*0x6d1796*/
       if ( v3 ) /*0x6d179e*/
       {
@@ -47,11 +47,11 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
   }
   else if ( a1 == 4552 ) /*0x6d17b6*/
   {
-  unsigned int v5; // eax
+    unsigned int v5; // eax
     v5 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d17be*/
     if ( v5 <= 0x18 ) /*0x6d17c7*/
     {
-  ShapeButtonClass *v6; // ecx
+      ShapeButtonClass *v6; // ecx
       v6 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v5); /*0x6d17d4*/
       if ( v6 ) /*0x6d17dc*/
       {
@@ -73,8 +73,7 @@ namespace gamemd {
 char MouseClass::LoadCursors()
 {
 
-  char result; // al
-  result = byte_B0FBE0; /*0x72ddb0*/
+  char result = byte_B0FBE0; // al /*0x72ddb0*/
   if ( !byte_B0FBE0 ) /*0x72ddb7*/
   {
     AssetClass::ReleaseAndReload(); /*0x72ddbd*/

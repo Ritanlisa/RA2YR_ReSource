@@ -18,8 +18,7 @@ int AbstractClassVector::Read(unsigned int * a2, void *a2_2, void *a3)
     return 0; /*0x4e0448*/
   int m_8; // edx
   m_8 = *(unsigned int *)&a2_2->q008; /*0x4e044e*/
-  int result; // eax
-  result = 0; /*0x4e0451*/
+  int result = 0; // eax /*0x4e0451*/
   if ( m_8 <= 0 ) /*0x4e0455*/
     return -1; /*0x4e046c*/
   unsigned int *i; // ecx

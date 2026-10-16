@@ -36,7 +36,7 @@ void LoadingScreen::DestroyFileTrees()
 
   if ( byte_B0FC95 ) /*0x72ef6b*/
   {
-  void *v0; // esi
+    void *v0; // esi
     v0 = (void *)(dword_B0FAC4); /*0x72ef6d*/
     if ( dword_B0FAC4 ) /*0x72ef75*/
     {
@@ -48,7 +48,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FAC4 = 0; /*0x72ef92*/
   if ( byte_B0FC96 ) /*0x72ef9a*/
   {
-  void *v1; // esi
+    void *v1; // esi
     v1 = (void *)(dword_B0F9DC); /*0x72ef9c*/
     if ( dword_B0F9DC ) /*0x72efa4*/
     {
@@ -60,7 +60,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0F9DC = 0; /*0x72efc1*/
   if ( byte_B0FC97 ) /*0x72efc9*/
   {
-  void *v2; // esi
+    void *v2; // esi
     v2 = (void *)(dword_B0FAC0); /*0x72efcb*/
     if ( dword_B0FAC0 ) /*0x72efd3*/
     {
@@ -72,7 +72,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FAC0 = 0; /*0x72eff0*/
   if ( byte_B0FC98 ) /*0x72eff8*/
   {
-  void *v3; // esi
+    void *v3; // esi
     v3 = (void *)(dword_B0FB50); /*0x72effa*/
     if ( dword_B0FB50 ) /*0x72f002*/
     {
@@ -84,7 +84,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FB50 = 0; /*0x72f01f*/
   if ( byte_B0FC99 ) /*0x72f027*/
   {
-  void *v4; // esi
+    void *v4; // esi
     v4 = (void *)(dword_B0FA04); /*0x72f029*/
     if ( dword_B0FA04 ) /*0x72f031*/
     {
@@ -96,7 +96,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FA04 = 0; /*0x72f04e*/
   if ( byte_B0FC9A ) /*0x72f056*/
   {
-  void *v5; // esi
+    void *v5; // esi
     v5 = (void *)(dword_B0FAF8); /*0x72f058*/
     if ( dword_B0FAF8 ) /*0x72f060*/
     {
@@ -108,7 +108,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FAF8 = 0; /*0x72f07d*/
   if ( byte_B0FC9B ) /*0x72f085*/
   {
-  void *v6; // esi
+    void *v6; // esi
     v6 = (void *)(dword_B0FA74); /*0x72f087*/
     if ( dword_B0FA74 ) /*0x72f08f*/
     {
@@ -120,7 +120,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FA74 = 0; /*0x72f0ac*/
   if ( byte_B0FC9C ) /*0x72f0b4*/
   {
-  void *v7; // esi
+    void *v7; // esi
     v7 = (void *)(dword_B0FA38); /*0x72f0b6*/
     if ( dword_B0FA38 ) /*0x72f0be*/
     {
@@ -132,7 +132,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FA38 = 0; /*0x72f0db*/
   if ( byte_B0FC9D ) /*0x72f0e3*/
   {
-  void *v8; // esi
+    void *v8; // esi
     v8 = (void *)(dword_B0FAE8); /*0x72f0e5*/
     if ( dword_B0FAE8 ) /*0x72f0ed*/
     {
@@ -144,7 +144,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FAE8 = 0; /*0x72f10a*/
   if ( byte_B0FC9E ) /*0x72f112*/
   {
-  void *v9; // esi
+    void *v9; // esi
     v9 = (void *)(dword_B0FA54); /*0x72f114*/
     if ( dword_B0FA54 ) /*0x72f11c*/
     {
@@ -248,8 +248,7 @@ namespace gamemd {
 char LoadingScreen::Init()
 {
 
-  char result; // al
-  result = byte_B0FCD9; /*0x72cf40*/
+  char result = byte_B0FCD9; // al /*0x72cf40*/
   if ( !byte_B0FCD9 ) /*0x72cf47*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72cf53*/
@@ -271,7 +270,7 @@ char LoadingScreen::FreeResources3()
   {
     DataGlobal_B0FBE0 = 0; /*0x72df00*/
     LoadingScreen::DestroyFileTrees(); /*0x72df06*/
-  LoadingScreen *v1; // [esp+0h] [ebp-4h]
+    LoadingScreen *v1; // [esp+0h] [ebp-4h]
     LoadingScreen::CleanupObjects(v1); /*0x72df0b*/
     operator delete((void *)(*(void **)&DataGlobal_B0FC10)); /*0x72df16*/
     *(unsigned int *)&DataGlobal_B0FC10 = 0; /*0x72df21*/
@@ -289,7 +288,7 @@ char LoadingScreen::FreeResources3()
     *(unsigned int *)&DataGlobal_B0FC28 = 0; /*0x72df8b*/
     operator delete((void *)(*(void **)&DataGlobal_B0FC2C)); /*0x72df92*/
     *(unsigned int *)&DataGlobal_B0FC2C = 0; /*0x72df9a*/
-  ObjectClass *v2; // [esp+0h] [ebp-4h]
+    ObjectClass *v2; // [esp+0h] [ebp-4h]
     return ReleaseLoadingResources(v2); /*0x72dfa0*/
   }
   return result; /*0x72dfa5*/

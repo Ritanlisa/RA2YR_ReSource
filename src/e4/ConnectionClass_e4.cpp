@@ -48,7 +48,7 @@ int ConnectionClass::allocPacketSlot(const void *a2, signed int a3, const void *
   v15 = v8; /*0x48b78f*/
   if ( v8 == -1 ) /*0x48b793*/
   {
-LABEL_9:
+    LABEL_9:
     Debug::Log(); /*0x48b795*/
     return 0; /*0x48b7a7*/
   }
@@ -86,21 +86,17 @@ int ConnectionClass::initQueue(unsigned int a2, void *a2_1)
 
   int v4; // eax
 
-  int v2; // eax
-  v2 = this->u32_18; /*0x48ba10*/
+  int v2 = this->u32_18; // eax /*0x48ba10*/
   if ( v2 == 256 ) /*0x48ba1c*/
   {
-  unsigned int v3; // esi
-    v3 = a2 - this->u32_1C + this->PacketsReceived; /*0x48ba2c*/
+    unsigned int v3 = a2 - this->u32_1C + this->PacketsReceived; // esi /*0x48ba2c*/
     this->PacketsReceived = v3; /*0x48ba2e*/
     v4 = ((unsigned __int8)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
   }
   else
   {
-  unsigned int v5; // esi
-    v5 = v2 + 1; /*0x48ba4e*/
-  unsigned int v6; // eax
-    v6 = a2 + this->PacketsReceived; /*0x48ba56*/
+    unsigned int v5 = v2 + 1; // esi /*0x48ba4e*/
+    unsigned int v6 = a2 + this->PacketsReceived; // eax /*0x48ba56*/
     this->u32_18 = v5; /*0x48ba58*/
     this->PacketsReceived = v6; /*0x48ba5b*/
     v4 = v6 / v5; /*0x48ba5e*/
@@ -238,7 +234,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
       v13 = this->PhoneNumber[11]; /*0x48c18e*/
       if ( *(unsigned int *)(a2 + 4) <= v13 && v13 != -1 ) /*0x48c19b*/
       {
-LABEL_40:
+        LABEL_40:
         v25 = *(unsigned int *)(a2 + 4); /*0x48c288*/
         v27 = this->PhoneNumber[3]; /*0x48c28f*/
         v28 = 2; /*0x48c29c*/
@@ -367,13 +363,13 @@ int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
       break; /*0x48c354*/
     if ( v8 == 1 ) /*0x48c359*/
       goto LABEL_10; /*0x48c359*/
-LABEL_7:
+    LABEL_7:
     PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c35b*/
     if ( ++v4 >= PlayerIndex->u32_38 ) /*0x48c362*/
       return 0; /*0x48c362*/
   }
   this->PhoneNumber[12] = *(unsigned int *)(v7 + 4); /*0x48c370*/
-LABEL_10:
+  LABEL_10:
   v10 = *(unsigned int *)(TileType + 8) - 14; /*0x48c373*/
   v11 = *(unsigned int *)(TileType + 8) == 14; /*0x48c37e*/
   *(unsigned int *)TileType |= 2u; /*0x48c380*/
@@ -390,8 +386,7 @@ int ConnectionClass::serviceSendQueue()
 {
 
 
-  int v2; // esi
-  v2 = 0; /*0x48c3e9*/
+  int v2 = 0; // esi /*0x48c3e9*/
   int v21; // [esp+18h] [ebp-8h]
   v21 = 0; /*0x48c3eb*/
   int PlayerIndex; // ecx
@@ -400,16 +395,14 @@ int ConnectionClass::serviceSendQueue()
   {
     do /*0x48c45f*/
     {
-  int TileIndex; // eax
+      int TileIndex; // eax
       TileIndex = ((Terrain *)PlayerIndex)->GetTileIndex(v2); /*0x48c3fe*/
-  int v5; // ebx
-      v5 = TileIndex; /*0x48c403*/
+      int v5 = TileIndex; // ebx /*0x48c403*/
       if ( (*(unsigned char *)TileIndex & 2) != 0 ) /*0x48c408*/
       {
         if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) ) /*0x48c40d*/
         {
-  int v6; // ebp
-          v6 = dword_887340; /*0x48c419*/
+          int v6 = dword_887340; // ebp /*0x48c419*/
           if ( dword_887338 != -1 ) /*0x48c422*/
             v6 += Timer::GetTicks() - dword_887338; /*0x48c434*/
           ((ConnectionClass *)this->PlayerIndex)->initQueue(v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
@@ -421,32 +414,29 @@ int ConnectionClass::serviceSendQueue()
     }
     while ( v2 < PlayerIndex->q028 ); /*0x48c45f*/
   }
-  int v7; // ebx
-  v7 = 0; /*0x48c464*/
+  int v7 = 0; // ebx /*0x48c464*/
   int v22; // [esp+1Ch] [ebp-4h]
   v22 = *(unsigned int *)(this->PlayerIndex + 40); /*0x48c46b*/
   if ( v22 <= 0 ) /*0x48c46f*/
     return 1; /*0x48c46f*/
   do /*0x48c552*/
   {
-  int v8; // esi
+    int v8; // esi
     v8 = ((Terrain *)this->PlayerIndex)->GetTileIndex(v7); /*0x48c47e*/
     if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
-  int v9; // ebp
-      v9 = dword_887340; /*0x48c48e*/
+      int v9 = dword_887340; // ebp /*0x48c48e*/
       if ( dword_887338 != -1 ) /*0x48c497*/
         v9 += Timer::GetTicks() - dword_887338; /*0x48c4a9*/
-  int v10; // ecx
+      int v10; // ecx
       v10 = *(unsigned int *)(v8 + 8); /*0x48c4ab*/
       if ( (unsigned int)(v9 - v10) > this->PhoneNumber[4] ) /*0x48c4b7*/
       {
-  int v11; // edx
-        v11 = dword_A8EA0C; /*0x48c4bd*/
+        int v11 = dword_A8EA0C; // edx /*0x48c4bd*/
         LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
         LOBYTE(v11) = this == (ModemConnectionClass *)dword_A8EA0C; /*0x48c4cb*/
         (*(void (**)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->vtable1 /*0x48c4e2*/
-                                                                                                 + 36))(
+          + 36))(
           this,
           *(unsigned int *)(v8 + 20),
           *(unsigned int *)(v8 + 16),
@@ -454,7 +444,7 @@ int ConnectionClass::serviceSendQueue()
           *(unsigned int *)(v8 + 24),
           v11,
           v10);
-  int v12; // eax
+        int v12; // eax
         v12 = *(unsigned int *)(v8 + 12); /*0x48c4e5*/
         *(unsigned int *)(v8 + 8) = v9; /*0x48c4e8*/
         if ( v12 ) /*0x48c4ed*/
@@ -463,35 +453,35 @@ int ConnectionClass::serviceSendQueue()
         }
         else
         {
-  int v13; // eax
+          int v13; // eax
           v13 = *(unsigned int *)(v8 + 20); /*0x48c4ef*/
           *(unsigned int *)(v8 + 4) = v9; /*0x48c4f2*/
           if ( *(unsigned char *)(v13 + 2) == 1 ) /*0x48c4f9*/
           {
-  int v14; // eax
+            int v14; // eax
             v14 = *(unsigned int *)v8; /*0x48c4fb*/
             LOBYTE(v14) = *(unsigned int *)v8 | 2; /*0x48c4fd*/
             *(unsigned int *)v8 = v14; /*0x48c4ff*/
           }
         }
-  unsigned int v15; // ebp
+        unsigned int v15; // ebp
         v15 = *(unsigned int *)(v8 + 12) + 1; /*0x48c509*/
         *(unsigned int *)(v8 + 12) = v15; /*0x48c50a*/
-  unsigned int v16; // eax
+        unsigned int v16; // eax
         v16 = this->PhoneNumber[5]; /*0x48c50d*/
         if ( v16 != -1 && v15 > v16 ) /*0x48c519*/
         {
-  int v17; // eax
+          int v17; // eax
           v17 = *(unsigned int *)v8; /*0x48c51b*/
           v21 = 1; /*0x48c51d*/
           LOBYTE(v17) = *(unsigned int *)v8 | 4; /*0x48c525*/
           *(unsigned int *)v8 = v17; /*0x48c527*/
         }
-  unsigned int v18; // eax
+        unsigned int v18; // eax
         v18 = this->PhoneNumber[6]; /*0x48c529*/
         if ( v18 != -1 && *(unsigned int *)(v8 + 8) - *(unsigned int *)(v8 + 4) > v18 ) /*0x48c53b*/
         {
-  int v19; // eax
+          int v19; // eax
           v19 = *(unsigned int *)v8; /*0x48c53d*/
           v21 = 1; /*0x48c53f*/
           LOBYTE(v19) = *(unsigned int *)v8 | 4; /*0x48c547*/

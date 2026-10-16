@@ -58,7 +58,7 @@ int sub_5C7EC0(const void * a1, int a2)
   LABEL_4:
   if ( !v5 ) /*0x5c7f01*/
   {
-  LABEL_5:
+    LABEL_5:
     v8 = 0; /*0x5c7f03*/
     goto LABEL_8; /*0x5c7f05*/
   }
@@ -94,7 +94,7 @@ int sub_5C7EC0(const void * a1, int a2)
   dword_ABF8CC = ((unsigned int *)(dword_ABF5B0))[v2]; /*0x5c7f6e*/
   if ( dword_ABF8CC ) /*0x5c7f74*/
   {
-  LABEL_16:
+    LABEL_16:
     v18 = v14; /*0x5c7f8b*/
     v19 = ((unsigned int *)(dword_ABF8C4))[v14]; /*0x5c7f8d*/
     v20 = 0x80000000; /*0x5c7f94*/
@@ -137,7 +137,7 @@ int sub_5C7EC0(const void * a1, int a2)
   v25 = (int *)(&dword_ABF5A8); /*0x5c802e*/
   if ( dword_ABF5A8 ) /*0x5c8033*/
   {
-  LABEL_24:
+    LABEL_24:
     v27 = v24; /*0x5c8046*/
     v28 = ((unsigned int *)(dword_ABF5A0))[v24]; /*0x5c8048*/
     v29 = 0x80000000; /*0x5c804f*/

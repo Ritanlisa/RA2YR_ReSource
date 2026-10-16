@@ -14,8 +14,7 @@ int sub_732210(int a1, const char * a2)
 
   int v2; // eax
   v2 = *(unsigned int *)(a1 + 16); /*0x732211*/
-  int v3; // edi
-  v3 = 0; /*0x732218*/
+  int v3 = 0; // edi /*0x732218*/
   if ( v2 <= 0 ) /*0x732220*/
     return -1; /*0x732261*/
   const char **i; // ebp

@@ -15,24 +15,24 @@
 namespace gamemd {  // G42.18 ns repair
 int BufferIOFile::Constructor(char *Source, void *a2, void *a3, void *a4)
 {
-
+  
   ((BufferIOFileClass *)this)->Constructor(); /*0x47a9d3*/
   LOBYTE(this->m_54) = 0; /*0x47a9df*/
   *(unsigned int *)this->q000 = (unsigned int)(&off_7E1668); /*0x47a9e3*/
   ((CDFileClass *)this)->OpenWithCDSearch(Source); /*0x47a9e9*/
   return (int)(this->q000); /*0x47a9f0*/
-
+  
 }
 }  // G42.18 ns repair
 // 0x47AA30
 namespace gamemd {
 int BufferIOFile::Init(void *a1, void *a2)
 {
-
+  
   ((BufferIOFileClass *)this)->Constructor(); /*0x47aa33*/
   LOBYTE(this->m_54) = 0; /*0x47aa38*/
   *(unsigned int *)this->q000 = &off_7E1668; /*0x47aa3c*/
   return this->q000; /*0x47aa44*/
-
+  
 }
 }

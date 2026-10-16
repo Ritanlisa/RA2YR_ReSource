@@ -19,7 +19,7 @@ unsigned int IRTTITypeInfo::GetOffset()
 namespace gamemd {
 int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-
+  
   AbstractClass *v3; // ecx
   return AbstractClass::QueryInterface(v3);
 }
@@ -29,8 +29,8 @@ int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 namespace gamemd {
 unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int *Block, char a2)
 {
-
-
+  
+  
   void *v3; // eax
   v3 = (void *)*(Block + 1); /*0x74f653*/
   *Block = (unsigned int)(&vt_VectorClass); /*0x74f656*/
@@ -44,6 +44,6 @@ unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int *Block, char a2)
   if ( (a2 & 1) != 0 ) /*0x74f688*/
     RA2_OPDEL(Block); /*0x74f68b*/
   return Block; /*0x74f695*/
-
+  
 }
 } // namespace gamemd

@@ -24,8 +24,7 @@ int SortedArray::BinarySearch(int *aP1, void *a2)
 {
 
 
-  int result; // eax
-  result = this->u32_4; /*0x52b623*/
+  int result = this->u32_4; // eax /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
     if ( !LOBYTE(this->u32_C) ) /*0x52b62e*/
@@ -34,17 +33,15 @@ int SortedArray::BinarySearch(int *aP1, void *a2)
       this->u32_10 = 0; /*0x52b648*/
       LOBYTE(this->u32_C) = 1; /*0x52b64f*/
     }
-  int v4; // edi
+    int v4; // edi
     v4 = *(unsigned int *)this->__pad_000; /*0x52b659*/
-  int v5; // ebx
-    v5 = *aP1; /*0x52b65b*/
-  int SortedArray_field_0x04; // ecx
-    SortedArray_field_0x04 = this->u32_4; /*0x52b65d*/
+    int v5 = *aP1; // ebx /*0x52b65b*/
+    int SortedArray_field_0x04 = this->u32_4; // ecx /*0x52b65d*/
     if ( SortedArray_field_0x04 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
     {
-  int v7; // esi
+      int v7; // esi
       v7 = *(unsigned int *)(v4 + 8 * (SortedArray_field_0x04 / 2)); /*0x52b66b*/
       if ( v7 <= v5 ) /*0x52b673*/
       {
@@ -81,7 +78,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   v4 = this->u32_20; /*0x5387da*/
   if ( this->u32_10 + 1 <= v4 ) /*0x5387e0*/
   {
-  LABEL_9:
+    LABEL_9:
     *(unsigned int *)(((unsigned int)(this->u32_20)) * this->u32_10) = (unsigned int)(*aP1); /*0x53885b*/
     *(unsigned int *)(((unsigned int)(this->u32_20)) * this->u32_10 + 4) = *a2; /*0x538875*/
     v11 = this->u32_10 + 1; /*0x53887c*/
@@ -157,7 +154,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     if ( v15 >= v6 ) /*0x5388fd*/
       break; /*0x5388fd*/
     v4 /= 2; /*0x5388ff*/
-LABEL_9:
+    LABEL_9:
     if ( v4 <= 0 ) /*0x538915*/
       return 0; /*0x538915*/
   }
@@ -225,7 +222,7 @@ int SortedArray::FindPair(int * a2)
     if ( v9 <= v7 ) /*0x5389e8*/
       break; /*0x5389e8*/
     v6 /= 2; /*0x5389ea*/
-LABEL_12:
+    LABEL_12:
     if ( v6 <= 0 ) /*0x5389fc*/
       return 0; /*0x5389fc*/
   }

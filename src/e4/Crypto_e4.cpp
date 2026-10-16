@@ -14,11 +14,10 @@ bool Crypto_Helper(unsigned int * a0, unsigned int * a1, unsigned int * a2, Cryp
 
   if ( !a5 ) /*0x5c6a3a*/
     return aP3; /*0x5c6a92*/
-  bool result; // al
-  result = aP3; /*0x5c6a47*/
+  bool result = aP3; // al /*0x5c6a47*/
   do /*0x5c6a89*/
   {
-  unsigned int v7; // esi
+    unsigned int v7; // esi
     v7 = (unsigned int)((gamemd::Crypto *)(*a1 + *a2));
     v8 = (gamemd::Crypto *)((unsigned int)(v7 + aP3)); /*0x5c6a5d*/
     result = v7 < *a1 || result && !v8; /*0x5c6a6f*/

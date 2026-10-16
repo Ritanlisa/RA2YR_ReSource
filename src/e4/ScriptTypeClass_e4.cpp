@@ -100,8 +100,8 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
   {
     --*(unsigned int *)&DataGlobal_8B3DC0[1048]; /*0x691fef*/
     for ( ; /*0x691ff5*/
-          v3 < *(int *)&DataGlobal_8B3DC0[1048];
-          *(unsigned int *)(FootClass_Array.?[5] + 4 * v3 - 4) = *(unsigned int *)(FootClass_Array.?[5] + 4 * v3) )
+    v3 < *(int *)&DataGlobal_8B3DC0[1048];
+    *(unsigned int *)(FootClass_Array.?[5] + 4 * v3 - 4) = *(unsigned int *)(FootClass_Array.?[5] + 4 * v3) )
     {
       ++v3; /*0x691ffd*/
     }
@@ -126,24 +126,22 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
   int i; // edi
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
-  unsigned __int8 *StringByIndex; // eax
+    unsigned __int8 *StringByIndex; // eax
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
     (a1)->GetString(g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/
-  int result; // eax
-  result = dword_A8E8E0; /*0x6e83a6*/
-  int v7; // ebx
-  v7 = 0; /*0x6e83ab*/
+  int result = dword_A8E8E0; // eax /*0x6e83a6*/
+  int v7 = 0; // ebx /*0x6e83ab*/
   int j; // ebp
   for ( j = 0; j < dword_A8E8E0; ++j ) /*0x6e83b1*/
   {
-  int v9; // edi
+    int v9; // edi
     v9 = *((unsigned int *)dword_A8E8D4 + j); /*0x6e83bc*/
     if ( *(unsigned int *)(v9 + 160) == a2 ) /*0x6e83c5*/
     {
-  int v10; // [esp-4h] [ebp-38h]
+      int v10; // [esp-4h] [ebp-38h]
       v10 = v7++; /*0x6e83cd*/
       sprintf(Buffer, "%d", v10); /*0x6e83d5*/
       (Buffer)->Trim(); /*0x6e83e1*/

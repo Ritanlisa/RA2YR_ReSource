@@ -30,7 +30,7 @@
 #include "e4/classes/Stream_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int StartGameWOL_Start_7ACB90(void* p0, int p1);  // x4:signals@0x7acb90
+int StartGameWOL_Start_7ACB90(void* p0, int p1);  // x4:signals@0x7acb90
 } // namespace gamemd
 
 // 0x48D080
@@ -59,7 +59,7 @@ int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
   }
   if ( result == 2 ) /*0x48d0cb*/
   {
-  LABEL_11:
+    LABEL_11:
     Stream::ReadPacket((int)&unk_A8EA70); /*0x48d0e0*/
     if ( ((unsigned int *)(dword_A8B230))[13720] && ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
     {
@@ -101,7 +101,7 @@ int sub_5E2FA0()
   result = Dialog::GetCurrentType(); /*0x5e2fa2*/
   if ( result == 107 ) /*0x5e2faa*/
   {
-  HWND Current; // esi
+    HWND Current; // esi
     Current = (HWND)Dialog::GetCurrent(); /*0x5e2fb7*/
     result = SendDlgItemMessageA(Current, 1771, 0x188u, 0, 0); /*0x5e2fc8*/
     if ( result != -1 ) /*0x5e2fcd*/
@@ -204,7 +204,7 @@ int sub_796960()
         (owningHouseIndex = _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v4)) != 0) )
   {
     owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7969e5*/
-  LABEL_10:
+    LABEL_10:
     if ( !g_NetworkLobbyState && stru_B76AC4.ambientSoundController[4] ) /*0x796a00*/
     {
       if ( owningHouseIndex > 0 ) /*0x796a0a*/
@@ -241,7 +241,7 @@ int sub_796960()
           Network::SendToPlayer((int)&unk_A8E9C0, (int)v10, 455, 1, (wchar_t *)v7); /*0x796b04*/
         }
       }
-  LABEL_24:
+      LABEL_24:
       (*((unsigned char *)&(owningHouseIndex))) = Event::Dispatch(); /*0x796b09*/
     }
   }
@@ -261,37 +261,32 @@ int sub_7A0F40()
   Source[0] = 80; /*0x7a0f60*/
   Source[2] = 0; /*0x7a0f67*/
   Source[1] = dword_B77900 + 48; /*0x7a0f6c*/
-  int result; // eax
-  result = g_NetworkLobbyState; /*0x7a0f70*/
+  int result = g_NetworkLobbyState; // eax /*0x7a0f70*/
   if ( !g_NetworkLobbyState ) /*0x7a0f77*/
   {
-  signed int v1; // ebp
-    v1 = 0; /*0x7a0f7e*/
+    signed int v1 = 0; // ebp /*0x7a0f7e*/
     if ( (int)dword_B77900 > 0 ) /*0x7a0f82*/
     {
-  int v2; // ebx
-      v2 = 0; /*0x7a0f8a*/
+      int v2 = 0; // ebx /*0x7a0f8a*/
       do /*0x7a102a*/
       {
         if ( v2 >= 0 && v1 < (int)dword_B77900 ) /*0x7a0f96*/
           memcpy(v11, (char *)dword_B77908 + v2, sizeof(v11)); /*0x7a0faa*/
-  int v9; // [esp+Ch] [ebp-1F4h] BYREF
+        int v9; // [esp+Ch] [ebp-1F4h] BYREF
         (*(void (__stdcall **)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
-  char Buffer[128]; // [esp+180h] [ebp-80h] BYREF
+        char Buffer[128]; // [esp+180h] [ebp-80h] BYREF
         sprintf(Buffer, ",%s,%d", (const char *)&v11[9], v9); /*0x7a0fd8*/
-  unsigned int v3; // edx
+        unsigned int v3; // edx
         v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
-  char *v4; // edi
+        char *v4; // edi
         v4 = &Source[strlen(Source)]; /*0x7a1006*/
         memcpy(v4, Buffer, 4 * (v3 >> 2)); /*0x7a100a*/
-  char *v6; // esi
+        char *v6; // esi
         v6 = &Buffer[4 * (v3 >> 2)]; /*0x7a100a*/
-  char *v5; // edi
+        char *v5; // edi
         v5 = &v4[4 * (v3 >> 2)]; /*0x7a100a*/
-  char v7; // cl
-        v7 = v3; /*0x7a100c*/
-  int v8; // edx
-        v8 = v9; /*0x7a100e*/
+        char v7 = v3; // cl /*0x7a100c*/
+        int v8 = v9; // edx /*0x7a100e*/
         memcpy(v5, v6, v7 & 3); /*0x7a1015*/
         SetGameOptionsPing((const char *)&v11[9], v8); /*0x7a101b*/
         ++v1; /*0x7a1024*/
@@ -316,14 +311,14 @@ int sub_786270()
   {
     if ( strlen((const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)) ) /*0x78628e*/
     {
-  CHAR SubKey[256]; // [esp+14h] [ebp-100h] BYREF
+      CHAR SubKey[256]; // [esp+14h] [ebp-100h] BYREF
       strcpy((char *)(SubKey), g_Str_SOFTWARE_Westwood_Yuri_s_Reven); /*0x7862b6*/
-  HKEY phkResult; // [esp+4h] [ebp-110h] BYREF
+      HKEY phkResult; // [esp+4h] [ebp-110h] BYREF
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE,(LPCSTR)(SubKey), 0, 0x20019u, &phkResult) ) /*0x7862d5*/
       {
-  DWORD cbData; // [esp+Ch] [ebp-108h] BYREF
+        DWORD cbData; // [esp+Ch] [ebp-108h] BYREF
         cbData = 4; /*0x7862fb*/
-  DWORD Type; // [esp+10h] [ebp-104h] BYREF
+        DWORD Type; // [esp+10h] [ebp-104h] BYREF
         RegQueryValueExA(phkResult,(LPCSTR)(off_84A940), 0, &Type, Data, &cbData); /*0x786303*/
         RegCloseKey(phkResult); /*0x78630e*/
       }
@@ -392,7 +387,7 @@ int sub_7C5F3D()
   }
   else
   {
-  LABEL_8:
+    LABEL_8:
     byte_84E862 = 0; /*0x7c5ff3*/
     return 0; /*0x7c5ff1*/
   }
@@ -414,7 +409,7 @@ int sub_7C5FFF()
   }
   else
   {
-  LABEL_4:
+    LABEL_4:
     byte_84E860 = 0; /*0x7c604e*/
     byte_84E861 = 0; /*0x7c6055*/
     return 0; /*0x7c605c*/
@@ -436,63 +431,63 @@ bool Event::IsValidActionType(void *a1)
 
   int result; // eax
   (*((unsigned char *)&(result))) = this == 268 /*0x6015d5*/
-                || this == 148
-                || this == 182
-                || this == 163
-                || this == 115
-                || this == 216
-                || this == 3003
-                || this == 245
-                || this == 261
-                || this == 226
-                || this == 213
-                || this == 693
-                || this == 183
-                || this == 692
-                || this == 257
-                || this == 297
-                || this == 3015
-                || this == 3014
-                || this == 215
-                || this == 264
-                || this == 188
-                || this == 189
-                || this == 187
-                || this == 181
-                || this == 3002
-                || this == 255
-                || this == 234
-                || this == 107
-                || this == 256
-                || this == 258
-                || this == 184
-                || this == 214
-                || this == 259
-                || this == 287
-                || this == 293
-                || this == 277
-                || this == 290
-                || this == 274
-                || this == 231
-                || this == 278
-                || this == 194
-                || this == 201
-                || this == 285
-                || this == 284
-                || this == 275
-                || this == 254
-                || this == 265
-                || this == 271
-                || this == 279
-                || this == 276
-                || this == 195
-                || this == 292
-                || this == 230
-                || this == 243
-                || this == 244
-                || this == 700
-                || this == 283
-                || this == 270;
+  || this == 148
+  || this == 182
+  || this == 163
+  || this == 115
+  || this == 216
+  || this == 3003
+  || this == 245
+  || this == 261
+  || this == 226
+  || this == 213
+  || this == 693
+  || this == 183
+  || this == 692
+  || this == 257
+  || this == 297
+  || this == 3015
+  || this == 3014
+  || this == 215
+  || this == 264
+  || this == 188
+  || this == 189
+  || this == 187
+  || this == 181
+  || this == 3002
+  || this == 255
+  || this == 234
+  || this == 107
+  || this == 256
+  || this == 258
+  || this == 184
+  || this == 214
+  || this == 259
+  || this == 287
+  || this == 293
+  || this == 277
+  || this == 290
+  || this == 274
+  || this == 231
+  || this == 278
+  || this == 194
+  || this == 201
+  || this == 285
+  || this == 284
+  || this == 275
+  || this == 254
+  || this == 265
+  || this == 271
+  || this == 279
+  || this == 276
+  || this == 195
+  || this == 292
+  || this == 230
+  || this == 243
+  || this == 244
+  || this == 700
+  || this == 283
+  || this == 270;
   return result; /*0x6015d4*/
 }
 } // namespace gamemd

@@ -88,8 +88,8 @@ namespace gamemd { int MainWindowProc_Helper_724000(int p0); }  // x4:signals@0x
 namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int LoadAccountInfoWOL_Load(const char** p0, int p1, char p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, char p11, const int** p12, const int** p13);  // x4:signals@0x779690
-    int StartWDTCampaign();  // x4:empty@0x7afb90
+int LoadAccountInfoWOL_Load(const char** p0, int p1, char p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, char p11, const int** p12, const int** p13);  // x4:signals@0x779690
+int StartWDTCampaign();  // x4:empty@0x7afb90
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aDisconnects[12];  // data: 0x849fa8 truth(IDA G42.57w9)
@@ -107,8 +107,7 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
 
   char *v6; // [esp+10h] [ebp-4h] BYREF
   ((String *)((String *)&v6))->Assign((const char *)(off_83E188)); /*0x770e80*/
-  void *v5; // edi
-  v5 = aP3; /*0x770e85*/
+  void *v5 = aP3; // edi /*0x770e85*/
   INIClass::ReadTokenizedPair((INIClass *)aP1, aP2, ObjectClass, aP3, 0, &v6); /*0x770e9d*/
   DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
   ((String *)((String *)&aP3))->Assign((const char *)(g_INI_Key_Lose)); /*0x770eb4*/
@@ -173,7 +172,7 @@ HKEY E4Recv_7741C0::FindRegistrySubKey(HKEY hKey, void *a2, char a3, int a5, int
   v6 = 0; /*0x774240*/
   if ( !cSubKeys ) /*0x774244*/
   {
-LABEL_6:
+    LABEL_6:
     if ( a3 ) /*0x7742a7*/
       RegCloseKey(hKey); /*0x7742aa*/
     __3_YAXPAX_Z(v5); /*0x7742b1*/
@@ -206,24 +205,19 @@ int ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 
   int result; // eax
   result = GetWindowRect(hWnd, lpRect); /*0x775699*/
-  int v4; // edi
-  v4 = result; /*0x77569f*/
+  int v4 = result; // edi /*0x77569f*/
   if ( result ) /*0x7756a3*/
   {
     GetClientRect((HWND)(g_hWnd), &Rect); /*0x7756b7*/
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x7756c8*/
-  LONG v5; // ecx
-    v5 = lpRect->right - Rect.left; /*0x7756d9*/
-  LONG top; // eax
+    LONG v5 = lpRect->right - Rect.left; // ecx /*0x7756d9*/
+    LONG top; // eax
     top = Rect.top; /*0x7756db*/
     lpRect->left -= Rect.left; /*0x7756df*/
-  LONG v7; // edx
-    v7 = lpRect->top; /*0x7756e1*/
+    LONG v7 = lpRect->top; // edx /*0x7756e1*/
     lpRect->right = v5; /*0x7756e4*/
-  LONG v8; // edx
-    v8 = v7 - top; /*0x7756ea*/
-  LONG v9; // ecx
-    v9 = lpRect->bottom - top; /*0x7756ec*/
+    LONG v8 = v7 - top; // edx /*0x7756ea*/
+    LONG v9 = lpRect->bottom - top; // ecx /*0x7756ec*/
     lpRect->top = v8; /*0x7756f0*/
     lpRect->bottom = v9; /*0x7756f3*/
     return v4; /*0x7756ee*/
@@ -237,8 +231,7 @@ namespace gamemd {
 const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * hInstance, HWND a2, HWND hWndParent, DLGPROC lpDialogFunc, int a5, void * a1, void * a3, void * a4)
 {
 
-  int v5; // eax
-  v5 = g_DialogTrackingList; /*0x775700*/
+  int v5 = g_DialogTrackingList; // eax /*0x775700*/
   HWND *v6; // edi
   v6 = (HWND *)(8 * g_DialogTrackingList + 12004648); /*0x775708*/
   stru_B72D28[2 * g_DialogTrackingList] = 0; /*0x775718*/
@@ -248,10 +241,9 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * hInstance, HWND a2, HWND 
   if ( result ) /*0x775732*/
   {
     ++g_DialogTrackingList; /*0x775747*/
-  HWND DialogIndirectParamA; // eax
+    HWND DialogIndirectParamA; // eax
     DialogIndirectParamA = CreateDialogIndirectParamA((HINSTANCE)(hInstance), result, hWndParent, lpDialogFunc, 0); /*0x775755*/
-  HWND v11; // esi
-    v11 = DialogIndirectParamA; /*0x77575b*/
+    HWND v11 = DialogIndirectParamA; // esi /*0x77575b*/
     if ( DialogIndirectParamA ) /*0x77575f*/
     {
       ++dword_A8ED8C; /*0x77577c*/
@@ -306,7 +298,7 @@ int Dialog_Close(HWND a1, int a2)
     v5 = result; /*0x775826*/
     if ( result == -1 ) /*0x775828*/
     {
-  LABEL_11:
+      LABEL_11:
       (*((unsigned char *)&(result))) = 0; /*0x77582b*/
     }
     else
@@ -411,7 +403,7 @@ void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void), int a3, char a4,
           goto LABEL_22; /*0x775abf*/
       }
     }
-  LABEL_22:
+    LABEL_22:
     Sleep(0); /*0x775ad8*/
   }
   LABEL_23:
@@ -461,7 +453,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
   v6 = 0; /*0x775dbd*/
   if ( dword_B72F38 <= 0 ) /*0x775dc9*/
   {
-  LABEL_11:
+    LABEL_11:
     if ( a1 ) /*0x775e77*/
     {
       result = Render_Render_7760B0(a1, a3, a4, a5); /*0x775eb6*/
@@ -576,14 +568,14 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
     *(&qword_B730A0 + 1) = (unsigned __int64)((HWND)a3[15]); /*0x77627a*/
     SendMessageA(a2, 0x110Bu, 9u, 0); /*0x776280*/
     himl = (int)((HIMAGELIST)SendMessageA(a2, 0x1112u, 0, a3[15])); /*0x776294*/
-  LPARAM lParam[4]; // [esp+10h] [ebp-10h] BYREF
+    LPARAM lParam[4]; // [esp+10h] [ebp-10h] BYREF
     lParam[0] = a3[15]; /*0x7762a5*/
     SendMessageA(a2, 0x1104u, 0, (LPARAM)lParam); /*0x7762a9*/
-  LRESULT v6; // eax
+    LRESULT v6; // eax
     v6 = SendMessageA(a2, 0x1106u, 0, 0); /*0x7762b5*/
-  int v7; // ebx
+    int v7; // ebx
     v7 = a3[24] - v6 - lParam[0]; /*0x7762c8*/
-  int v8; // edi
+    int v8; // edi
     v8 = a3[25] - lParam[1]; /*0x7762ca*/
     SetCapture(hWnd); /*0x7762cc*/
     ImageList_BeginDrag(himl, 0, v7, v8); /*0x7762dd*/
@@ -691,34 +683,30 @@ void E4Recv_776570::sub_776570()
   {
     GetCursorPos(&Point); /*0x77658f*/
     GetWindowRect((HWND)(qword_B730A0), &Rect); /*0x7765a1*/
-  int v1; // edi
-    v1 = Rect.top - Point.y; /*0x7765b3*/
-  int v2; // eax
-    v2 = Point.y - Rect.bottom; /*0x7765b5*/
+    int v1 = Rect.top - Point.y; // edi /*0x7765b3*/
+    int v2 = Point.y - Rect.bottom; // eax /*0x7765b5*/
     if ( Rect.top - Point.y > Point.y - Rect.bottom ) /*0x7765b9*/
       v2 = Rect.top - Point.y; /*0x7765bb*/
-  int v3; // eax
+    int v3; // eax
     v3 = v2 <= 0 ? 0 : v2;
     if ( v3 > 0 ) /*0x7765c9*/
     {
-  int v4; // eax
-      v4 = 500 - 40 * v3; /*0x7765da*/
+      int v4 = 500 - 40 * v3; // eax /*0x7765da*/
       if ( v4 <= 5 ) /*0x7765df*/
         v4 = 5; /*0x7765e1*/
-  UINT v8; // [esp-10h] [ebp-2Ch]
+      UINT v8; // [esp-10h] [ebp-2Ch]
       v8 = v4; /*0x7765ea*/
-  HWND WindowLongA; // eax
+      HWND WindowLongA; // eax
       WindowLongA = (HWND)GetWindowLongA((HWND)(qword_B730A0), -8); /*0x7765f5*/
       SetTimer(WindowLongA, 1u, v8, 0); /*0x7765fc*/
-  LRESULT v9; // [esp-Ch] [ebp-28h]
+      LRESULT v9; // [esp-Ch] [ebp-28h]
       v9 = SendMessageA((HWND)(qword_B730A0), 0x110Au, 5u, 0); /*0x77661c*/
-  LRESULT v6; // eax
+      LRESULT v6; // eax
       if ( v1 <= 0 ) /*0x77661d*/
         v6 = SendMessageA((HWND)(qword_B730A0), 0x110Au, 6u, v9); /*0x77663c*/
       else
         v6 = SendMessageA((HWND)(qword_B730A0), 0x110Au, 7u, v9); /*0x77662d*/
-  LPARAM v7; // edi
-      v7 = v6; /*0x776644*/
+      LPARAM v7 = v6; // edi /*0x776644*/
       ImageList_DragShowNolock(0); /*0x776648*/
       SendMessageA((HWND)(qword_B730A0), 0x110Bu, 5u, v7); /*0x776659*/
       ImageList_DragShowNolock((void *)(1)); /*0x77665d*/
@@ -750,8 +738,7 @@ BOOL SetDialogParent(HWND hWnd, HWND a2)
   v4 = Rect.right - (v9.right - v9.left) + 1; /*0x777119*/
   v9.right -= v9.left; /*0x77711a*/
   v9.bottom -= v9.top; /*0x777121*/
-  int v5; // ecx
-  v5 = v4 / 2; /*0x77712d*/
+  int v5 = v4 / 2; // ecx /*0x77712d*/
   int v6; // eax
   v6 = (Rect.bottom - v9.bottom + 1) / 2; /*0x777133*/
   if ( v5 < 0 ) /*0x777137*/
@@ -826,22 +813,22 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         v18 = v17; /*0x777797*/
         if ( v17 ) /*0x77779e*/
         {
-          MainWindowProc_Helper_724000(v17, (int)v13); /*0x7777a3*/
-          v18->u32_264 = 7; /*0x7777a8*/
-          *(unsigned int *)v18 = (unsigned int)(&vt_CCToolTip); /*0x7777b2*/
-          *(unsigned int *)&g_TacticalRender = (unsigned int)(v18); /*0x7777b8*/
-        }
+        MainWindowProc_Helper_724000(v17, (int)v13); /*0x7777a3*/
+        v18->u32_264 = 7; /*0x7777a8*/
+        *(unsigned int *)v18 = (unsigned int)(&vt_CCToolTip); /*0x7777b2*/
+        *(unsigned int *)&g_TacticalRender = (unsigned int)(v18); /*0x7777b8*/
+      }
         else
         {
-          *(unsigned int *)&g_TacticalRender = 0; /*0x7777c3*/
-        }
+        *(unsigned int *)&g_TacticalRender = 0; /*0x7777c3*/
+      }
         goto LABEL_69; /*0x7777be*/
       case 2u: /*0x7776ae*/
         if ( *(unsigned int *)&g_TacticalRender ) /*0x7777fb*/
         {
-          (***(void (****)(unsigned int, int))&g_TacticalRender)(*(unsigned int *)&g_TacticalRender, 1); /*0x777801*/
-          *(unsigned int *)&g_TacticalRender = 0; /*0x777803*/
-        }
+        (***(void (****)(unsigned int, int))&g_TacticalRender)(*(unsigned int *)&g_TacticalRender, 1); /*0x777801*/
+        *(unsigned int *)&g_TacticalRender = 0; /*0x777803*/
+      }
         g_hWnd = 0; /*0x77780e*/
         if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[500] ) /*0x777816*/
           *(unsigned int *)&((unsigned int *)&stru_A8EB00)[500] = 2; /*0x777818*/
@@ -859,32 +846,32 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
           || !g_DSurface_Hidden
           || !DSurface_Composite )
         {
-          goto LABEL_26; /*0x777700*/
-        }
+        goto LABEL_26; /*0x777700*/
+      }
         if ( ((unsigned int *)&stru_A8EB00)[376] == 1 ) /*0x777709*/
         {
-          v15 = (gamemd::AudioStream *)(DSurface_Composite);
-          (*(void (**)(void))(*(unsigned int *)stru_887598.lineTrailer + 28))(); /*0x777710*/
-          Frame::Present((void *)((int)v15), 0, a3, (int)v13, 0, (int)a4, a5, a2); /*0x777717*/
-          Sidebar::FlushSidebarTooltip((Sidebar *)&DataGlobal_87F7E8, 1); /*0x777723*/
-          ValidateRect(v13, 0); /*0x77772a*/
-        }
+        v15 = (gamemd::AudioStream *)(DSurface_Composite);
+        (*(void (**)(void))(*(unsigned int *)stru_887598.lineTrailer + 28))(); /*0x777710*/
+        Frame::Present((void *)((int)v15), 0, a3, (int)v13, 0, (int)a4, a5, a2); /*0x777717*/
+        Sidebar::FlushSidebarTooltip((Sidebar *)&DataGlobal_87F7E8, 1); /*0x777723*/
+        ValidateRect(v13, 0); /*0x77772a*/
+      }
         else if ( MainWindowProc_Helper() ) /*0x777735*/
         {
-          MainWindowProc_Helper_5C09A0(a4); /*0x77773e*/
-          ValidateRect(v13, 0); /*0x777745*/
-        }
+        MainWindowProc_Helper_5C09A0(a4); /*0x77773e*/
+        ValidateRect(v13, 0); /*0x777745*/
+      }
         else
         {
-          if ( !Render_Draw_774070() ) /*0x777750*/
-          {
-            v16 = (gamemd::ObjectClass *)(g_DSurface_Hidden);
-            (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 28))(stru_887598.lineTrailer); /*0x777768*/
-            Frame::Present((void *)((int)v16), 0, a3, (int)v13, 0, (int)a4, a5, a2); /*0x77776f*/
-          }
-  LABEL_26:
-          ValidateRect(v13, 0); /*0x777774*/
+        if ( !Render_Draw_774070() ) /*0x777750*/
+        {
+          v16 = (gamemd::ObjectClass *)(g_DSurface_Hidden);
+          (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 28))(stru_887598.lineTrailer); /*0x777768*/
+          Frame::Present((void *)((int)v16), 0, a3, (int)v13, 0, (int)a4, a5, a2); /*0x77776f*/
         }
+        LABEL_26:
+        ValidateRect(v13, 0); /*0x777774*/
+      }
         break; /*0x777730*/
       case 0x14u: /*0x7776ae*/
         return 1; /*0x77778a*/
@@ -909,7 +896,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         v20 = (const char *)(aSidebarup); /*0x7779a5*/
       Sidebar::ScrollSidebarSkipGame(v20); /*0x7779aa*/
       byte_B73561 = 0; /*0x7779af*/
-  LABEL_69:
+      LABEL_69:
       v14 = Msg; /*0x7779b5*/
     }
   }
@@ -923,48 +910,48 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
       case 0x1Cu: /*0x777836*/
         if ( v13 == g_hWnd && ((unsigned int *)&stru_A8EB00)[412] != (wParam != 0) ) /*0x7778c1*/
         {
-          ((unsigned int *)&stru_A8EB00)[412] = wParam != 0; /*0x7778ce*/
-          if ( wParam ) /*0x7778d3*/
-          {
-            MainWindowProc_Read(a4); /*0x777930*/
-          }
-          else
-          {
-            Debug::Log(); /*0x7778da*/
-            (*((unsigned char *)&(v19))) = 1; /*0x7778e2*/
-            (v19)->Read(); /*0x7778e4*/
-            sub_407020(); /*0x7778e9*/
-            if ( stru_887598.lineTrailer ) /*0x7778f6*/
-            {
-              byte_B73560 = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 28))(stru_887598.lineTrailer); /*0x7778fd*/
-              Debug::Log(); /*0x777916*/
-              (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x777926*/
-            }
-          }
-          Debug::Log(); /*0x77793a*/
-          g_LoadScreenFlag = 1; /*0x777942*/
+        ((unsigned int *)&stru_A8EB00)[412] = wParam != 0; /*0x7778ce*/
+        if ( wParam ) /*0x7778d3*/
+        {
+          MainWindowProc_Read(a4); /*0x777930*/
         }
+        else
+        {
+          Debug::Log(); /*0x7778da*/
+          (*((unsigned char *)&(v19))) = 1; /*0x7778e2*/
+          (v19)->Read(); /*0x7778e4*/
+          sub_407020(); /*0x7778e9*/
+          if ( stru_887598.lineTrailer ) /*0x7778f6*/
+          {
+            byte_B73560 = (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 28))(stru_887598.lineTrailer); /*0x7778fd*/
+            Debug::Log(); /*0x777916*/
+            (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x777926*/
+          }
+        }
+        Debug::Log(); /*0x77793a*/
+        g_LoadScreenFlag = 1; /*0x777942*/
+      }
         return 0; /*0x77794f*/
       case 0x112u: /*0x777836*/
         if ( wParam > 0xF120 ) /*0x777856*/
         {
-          if ( wParam == 61760 ) /*0x777891*/
-            return 0; /*0x77789d*/
-        }
+        if ( wParam == 61760 ) /*0x777891*/
+          return 0; /*0x77789d*/
+      }
         else
         {
-          switch ( wParam ) /*0x777858*/
-          {
-            case 0xF120u: /*0x777858*/
-              ((unsigned int *)&stru_A8EB00)[413] = 0; /*0x777880*/
-              break;
-            case 0xF020u: /*0x777858*/
-              ((unsigned int *)&stru_A8EB00)[413] = 1; /*0x777874*/
-              break;
-            case 0xF060u: /*0x777858*/
-              return 0; /*0x777871*/
-          }
+        switch ( wParam ) /*0x777858*/
+        {
+          case 0xF120u: /*0x777858*/
+            ((unsigned int *)&stru_A8EB00)[413] = 0; /*0x777880*/
+            break;
+          case 0xF020u: /*0x777858*/
+            ((unsigned int *)&stru_A8EB00)[413] = 1; /*0x777874*/
+            break;
+          case 0xF060u: /*0x777858*/
+            return 0; /*0x777871*/
         }
+      }
         break;
     }
   }
@@ -1038,20 +1025,20 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   {
     g_hWnd = (int)(CreateWindowExA(0, WindowName, WindowName, 0x2CA0000u, 0, 0, 0, 0, 0, 0, aP0, 0)); /*0x777cd6*/
     SetRect(&rc, 0, 0, xRight, yBottom); /*0x777cec*/
-  LONG WindowLongA; // [esp-4h] [ebp-4Ch]
+    LONG WindowLongA; // [esp-4h] [ebp-4Ch]
     WindowLongA = GetWindowLongA(g_hWnd, -20); /*0x777d08*/
-  BOOL v11; // [esp-8h] [ebp-50h]
+    BOOL v11; // [esp-8h] [ebp-50h]
     v11 = GetMenu(g_hWnd) != 0; /*0x777d1c*/
-  LONG v6; // eax
+    LONG v6; // eax
     v6 = GetWindowLongA(g_hWnd, -16); /*0x777d20*/
     AdjustWindowRectEx(&rc, v6, v11, WindowLongA); /*0x777d28*/
     MoveWindow(g_hWnd, 0, 0, rc.right - rc.left, rc.bottom - rc.top, 1); /*0x777d4e*/
   }
   else
   {
-  int SystemMetrics; // [esp-14h] [ebp-5Ch]
+    int SystemMetrics; // [esp-14h] [ebp-5Ch]
     SystemMetrics = GetSystemMetrics(1); /*0x777d60*/
-  int v7; // eax
+    int v7; // eax
     v7 = GetSystemMetrics(0); /*0x777d62*/
     g_hWnd = (int)(CreateWindowExA(8u, WindowName, WindowName, 0x82000000, 0, 0, v7, SystemMetrics, 0, 0, aP0, 0)); /*0x777d7e*/
   }
@@ -1079,12 +1066,12 @@ int IME_ProcessComposition()
   MaxCount = 0; /*0x777ebe*/
   if ( dword_B7355C ) /*0x777ec4*/
   {
-  CHAR Buf[516]; // [esp+8h] [ebp-204h] BYREF
+    CHAR Buf[516]; // [esp+8h] [ebp-204h] BYREF
     result = ImmGetCompositionStringA(dword_B7355C, 8u, Buf, 0x200u); /*0x777ed7*/
     if ( result > 0 ) /*0x777ede*/
     {
       Buf[result] = 0; /*0x777ef7*/
-  int v1; // eax
+      int v1; // eax
       v1 = MultiByteToWideChar(0, 0, Buf, -1, WideCharStr, 256); /*0x777efb*/
       word_B73518 = 0; /*0x777f03*/
       if ( v1 >= 0 ) /*0x777f0a*/
@@ -1146,7 +1133,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     CCFileClass::Close((BufferIOFileClass *)&v17.spawnStatus); /*0x778b34*/
     String::AssignFromPtr((String *)&v17.vfptr1, a2); /*0x778b3e*/
     ((String *)((String *)&v17.vfptr1))->ToLower(); /*0x778b47*/
-  uint8_t *v5; // eax
+    uint8_t *v5; // eax
     v5 = (uint8_t *)((String *)((String *)&v17.vfptr1))->GetOrEmpty_Alt(); /*0x778b50*/
     if ( INIClass::BinarySearchSection((int)&v17.nextArrayIndex, v5) )
     {
@@ -1155,20 +1142,20 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       (/*0x778bcf*/ (INIClass *)&v17.nextArrayIndex)->ReadString((char **)&v17.vfptr1, (char **)&v17, (char **)&v17.vfptr3, (int)&v17.vfptr3);
       DeleteAndZero(&v17); /*0x778bd8*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Locale); /*0x778be6*/
-  int Int; // esi
+      int Int; // esi
       Int = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (char **)&v17.vfptr1, (char **)&v17, 0); /*0x778c03*/
       DeleteAndZero(&v17); /*0x778c05*/
-  uint8_t *v7; // eax
+      uint8_t *v7; // eax
       v7 = (uint8_t *)((String *)((String *)&v17.vfptr1))->GetOrEmpty(); /*0x778c14*/
-  char Bool_Overwrite; // bl
+      char Bool_Overwrite; // bl
       Bool_Overwrite = INIClass::ReadBool_Overwrite(&v17.nextArrayIndex, v7, (uint8_t *)aLocaleverified, 0); /*0x778c23*/
       (*((unsigned char *)&(v17.customSound_controller[4]))) = Bool_Overwrite; /*0x778c2e*/
       ((String *)((String *)&v17))->Assign(g_INI_Key_Country); /*0x778c32*/
-  int v9; // edi
+      int v9; // edi
       v9 = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (char **)&v17.vfptr1, (char **)&v17, -2); /*0x778c50*/
       DeleteAndZero(&v17); /*0x778c52*/
       ((String *)((String *)&v17))->Assign(&g_INI_Key_Color); /*0x778c60*/
-  int v10; // ebp
+      int v10; // ebp
       v10 = INIClass::ReadInt((bool *)&v17.nextArrayIndex, (char **)&v17.vfptr1, (char **)&v17, -2); /*0x778c7e*/
       DeleteAndZero(&v17); /*0x778c80*/
       ((String *)((String *)&v17))->Assign(aRank); /*0x778c8e*/
@@ -1194,7 +1181,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
                                         (char **)&v17,
                                         -1);
       DeleteAndZero(&v17); /*0x778d73*/
-  uint8_t *v11; // eax
+      uint8_t *v11; // eax
       v11 = (uint8_t *)((String *)((String *)&v17.vfptr1))->GetOrEmpty(); /*0x778d83*/
       (*((unsigned char *)&(v17.estimatedHealth))) = INIClass::ReadBool_Overwrite( /*0x778d96*/
                                       &v17.nextArrayIndex,
@@ -1222,14 +1209,14 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
         (char **)&v17.vfptr2,
         (int)&v17.vfptr2);
       DeleteAndZero(&v17); /*0x778e2d*/
-  char *v12; // eax
+      char *v12; // eax
       v12 = ((String *)((String *)&v17.vfptr2))->GetOrEmpty_Alt(); /*0x778e36*/
-  char *v13; // eax
+      char *v13; // eax
       v13 = CharToWideString(v12); /*0x778e3d*/
       WideString::Reassign((void **)&v17.uniqueId, (wchar_t *)v13); /*0x778e47*/
-  ReferenceCounted *v14; // eax
+      ReferenceCounted *v14; // eax
       v14 = (ReferenceCounted *)operator new(0x44u); /*0x778e4e*/
-  void *AccountInfoWOL_Load; // esi
+      void *AccountInfoWOL_Load; // esi
       if ( v14 )
         AccountInfoWOL_Load = LoadAccountInfoWOL_Load(
                                 v14,
@@ -1249,7 +1236,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
                                 (const wchar_t **)&v17.abstractFlags);
       else
         AccountInfoWOL_Load = 0; /*0x778eb7*/
-  ComPtr *v16; // edi
+      ComPtr *v16; // edi
       v16 = *(ComPtr **)&v17.bombVisible; /*0x778eb9*/
       ComPtr::Constructor(*(ComPtr **)&v17.bombVisible); /*0x778ebf*/
       *(unsigned int *)v16->__pad_0 = &vt_rc_ptr; /*0x778ec6*/
@@ -1298,118 +1285,118 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
   v5 = ((WideString *)(a2))->GetOrEmpty(); /*0x778f4e*/
   if ( wcsstr(v5, L"Jan") ) /*0x778f54*/
   {
-  wchar_t *StringCSF; // eax
+    wchar_t *StringCSF; // eax
     StringCSF = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 127); /*0x778f6e*/
     (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Jan", StringCSF); /*0x778f7b*/
   }
   else
   {
-  wchar_t *v8; // eax
+    wchar_t *v8; // eax
     v8 = ((WideString *)(a2))->GetOrEmpty(); /*0x778f89*/
     if ( wcsstr(v8, L"Feb") ) /*0x778f8f*/
     {
-  wchar_t *v9; // eax
+      wchar_t *v9; // eax
       v9 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 132); /*0x778fac*/
       (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Feb", v9); /*0x778fb9*/
     }
     else
     {
-  wchar_t *v10; // eax
+      wchar_t *v10; // eax
       v10 = ((WideString *)(a2))->GetOrEmpty(); /*0x778fc7*/
       if ( wcsstr(v10, L"Mar") ) /*0x778fcd*/
       {
-  wchar_t *v11; // eax
+        wchar_t *v11; // eax
         v11 = GetStringCSF(g_Str_TXT_MARCH, 0, g_Str_File_WOLPersonaInformation_cpp, 137); /*0x778fea*/
         (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Mar", v11); /*0x778ff7*/
       }
       else
       {
-  wchar_t *v12; // eax
+        wchar_t *v12; // eax
         v12 = ((WideString *)(a2))->GetOrEmpty(); /*0x779005*/
         if ( wcsstr(v12, L"Apr") ) /*0x77900b*/
         {
-  wchar_t *v13; // eax
+          wchar_t *v13; // eax
           v13 = GetStringCSF(g_Str_TXT_APRIL, 0, g_Str_File_WOLPersonaInformation_cpp, 142); /*0x779028*/
           (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Apr", v13); /*0x779035*/
         }
         else
         {
-  wchar_t *v14; // eax
+          wchar_t *v14; // eax
           v14 = ((WideString *)(a2))->GetOrEmpty(); /*0x779043*/
           if ( wcsstr(v14, L"May") ) /*0x779049*/
           {
-  wchar_t *v15; // eax
+            wchar_t *v15; // eax
             v15 = GetStringCSF(g_Str_TXT_MAY, 0, g_Str_File_WOLPersonaInformation_cpp, 147); /*0x779066*/
             (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"May", v15); /*0x779073*/
           }
           else
           {
-  wchar_t *v16; // eax
+            wchar_t *v16; // eax
             v16 = ((WideString *)(a2))->GetOrEmpty(); /*0x779081*/
             if ( wcsstr(v16, L"Jun") ) /*0x779087*/
             {
-  wchar_t *v17; // eax
+              wchar_t *v17; // eax
               v17 = GetStringCSF(g_Str_TXT_JUNE, 0, g_Str_File_WOLPersonaInformation_cpp, 152); /*0x7790a4*/
               (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Jun", v17); /*0x7790b1*/
             }
             else
             {
-  wchar_t *v18; // eax
+              wchar_t *v18; // eax
               v18 = ((WideString *)(a2))->GetOrEmpty(); /*0x7790bf*/
               if ( wcsstr(v18, L"Jul") ) /*0x7790c5*/
               {
-  wchar_t *v19; // eax
+                wchar_t *v19; // eax
                 v19 = GetStringCSF(g_Str_TXT_JULY, 0, g_Str_File_WOLPersonaInformation_cpp, 157); /*0x7790e2*/
                 (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Jul", v19); /*0x7790ef*/
               }
               else
               {
-  wchar_t *v20; // eax
+                wchar_t *v20; // eax
                 v20 = ((WideString *)(a2))->GetOrEmpty(); /*0x7790fd*/
                 if ( wcsstr(v20, L"Aug") ) /*0x779103*/
                 {
-  wchar_t *v21; // eax
+                  wchar_t *v21; // eax
                   v21 = GetStringCSF(g_Str_TXT_AUGUST, 0, g_Str_File_WOLPersonaInformation_cpp, 162); /*0x779120*/
                   (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Aug", v21); /*0x77912d*/
                 }
                 else
                 {
-  wchar_t *v22; // eax
+                  wchar_t *v22; // eax
                   v22 = ((WideString *)(a2))->GetOrEmpty(); /*0x77913b*/
                   if ( wcsstr(v22, L"Sep") ) /*0x779141*/
                   {
-  wchar_t *v23; // eax
+                    wchar_t *v23; // eax
                     v23 = GetStringCSF(g_Str_TXT_SEPTEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 167); /*0x77915e*/
                     (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Sep", v23); /*0x77916b*/
                   }
                   else
                   {
-  wchar_t *v24; // eax
+                    wchar_t *v24; // eax
                     v24 = ((WideString *)(a2))->GetOrEmpty(); /*0x779179*/
                     if ( wcsstr(v24, L"Oct") ) /*0x77917f*/
                     {
-  wchar_t *v25; // eax
+                      wchar_t *v25; // eax
                       v25 = GetStringCSF(g_Str_TXT_OCTOBER, 0, g_Str_File_WOLPersonaInformation_cpp, 172); /*0x77919c*/
                       (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Oct", v25); /*0x7791a9*/
                     }
                     else
                     {
-  wchar_t *v26; // eax
+                      wchar_t *v26; // eax
                       v26 = ((WideString *)(a2))->GetOrEmpty(); /*0x7791b7*/
                       if ( wcsstr(v26, L"Nov") ) /*0x7791bd*/
                       {
-  wchar_t *v27; // eax
+                        wchar_t *v27; // eax
                         v27 = GetStringCSF(g_Str_TXT_NOVEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 177); /*0x7791da*/
                         (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Nov", v27); /*0x7791e7*/
                       }
                       else
                       {
-  wchar_t *v28; // eax
+                        wchar_t *v28; // eax
                         v28 = ((WideString *)(a2))->GetOrEmpty(); /*0x7791f5*/
                         v7 = wcsstr(v28, L"Dec"); /*0x7791fb*/
                         if ( v7 ) /*0x779205*/
                         {
-  wchar_t *v29; // eax
+                          wchar_t *v29; // eax
                           v29 = GetStringCSF(g_Str_TXT_DECEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 182); /*0x779218*/
                           (*((unsigned char *)&(v7))) = WideString::Replace(a2, (wchar_t *)L"Dec", v29); /*0x779225*/
                         }
@@ -1443,7 +1430,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v5 = ((WideString *)(v43))->GetOrEmpty(); /*0x77926c*/
   if ( wcsstr(v5, StringCSF) ) /*0x779272*/
   {
-  wchar_t *v6; // eax
+    wchar_t *v6; // eax
     v6 = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 192); /*0x779294*/
     WideString::Replace(v43, v6, (wchar_t *)L"Jan"); /*0x77929e*/
   }
@@ -1453,7 +1440,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v7 = ((WideString *)(v43))->GetOrEmpty(); /*0x7792be*/
   if ( wcsstr(v7, v32) ) /*0x7792c4*/
   {
-  wchar_t *v8; // eax
+    wchar_t *v8; // eax
     v8 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 195); /*0x7792e6*/
     WideString::Replace(v43, v8, (wchar_t *)L"Feb"); /*0x7792f0*/
   }
@@ -1463,7 +1450,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v9 = ((WideString *)(v43))->GetOrEmpty(); /*0x779310*/
   if ( wcsstr(v9, v33) ) /*0x779316*/
   {
-  wchar_t *v10; // eax
+    wchar_t *v10; // eax
     v10 = GetStringCSF(g_Str_TXT_MARCH, 0, g_Str_File_WOLPersonaInformation_cpp, 198); /*0x779338*/
     WideString::Replace(v43, v10, (wchar_t *)L"Mar"); /*0x779342*/
   }
@@ -1473,7 +1460,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v11 = ((WideString *)(v43))->GetOrEmpty(); /*0x779362*/
   if ( wcsstr(v11, v34) ) /*0x779368*/
   {
-  wchar_t *v12; // eax
+    wchar_t *v12; // eax
     v12 = GetStringCSF(g_Str_TXT_APRIL, 0, g_Str_File_WOLPersonaInformation_cpp, 201); /*0x77938a*/
     WideString::Replace(v43, v12, (wchar_t *)L"Apr"); /*0x779394*/
   }
@@ -1483,7 +1470,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v13 = ((WideString *)(v43))->GetOrEmpty(); /*0x7793b4*/
   if ( wcsstr(v13, v35) ) /*0x7793ba*/
   {
-  wchar_t *v14; // eax
+    wchar_t *v14; // eax
     v14 = GetStringCSF(g_Str_TXT_MAY, 0, g_Str_File_WOLPersonaInformation_cpp, 204); /*0x7793dc*/
     WideString::Replace(v43, v14, (wchar_t *)L"May"); /*0x7793e6*/
   }
@@ -1493,7 +1480,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v15 = ((WideString *)(v43))->GetOrEmpty(); /*0x779406*/
   if ( wcsstr(v15, v36) ) /*0x77940c*/
   {
-  wchar_t *v16; // eax
+    wchar_t *v16; // eax
     v16 = GetStringCSF(g_Str_TXT_JUNE, 0, g_Str_File_WOLPersonaInformation_cpp, 207); /*0x77942e*/
     WideString::Replace(v43, v16, (wchar_t *)L"Jun"); /*0x779438*/
   }
@@ -1503,7 +1490,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v17 = ((WideString *)(v43))->GetOrEmpty(); /*0x779458*/
   if ( wcsstr(v17, v37) ) /*0x77945e*/
   {
-  wchar_t *v18; // eax
+    wchar_t *v18; // eax
     v18 = GetStringCSF(g_Str_TXT_JULY, 0, g_Str_File_WOLPersonaInformation_cpp, 210); /*0x779480*/
     WideString::Replace(v43, v18, (wchar_t *)L"Jul"); /*0x77948a*/
   }
@@ -1513,7 +1500,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v19 = ((WideString *)(v43))->GetOrEmpty(); /*0x7794aa*/
   if ( wcsstr(v19, v38) ) /*0x7794b0*/
   {
-  wchar_t *v20; // eax
+    wchar_t *v20; // eax
     v20 = GetStringCSF(g_Str_TXT_AUGUST, 0, g_Str_File_WOLPersonaInformation_cpp, 213); /*0x7794d2*/
     WideString::Replace(v43, v20, (wchar_t *)L"Aug"); /*0x7794dc*/
   }
@@ -1523,7 +1510,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v21 = ((WideString *)(v43))->GetOrEmpty(); /*0x7794fc*/
   if ( wcsstr(v21, v39) ) /*0x779502*/
   {
-  wchar_t *v22; // eax
+    wchar_t *v22; // eax
     v22 = GetStringCSF(g_Str_TXT_SEPTEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 216); /*0x779524*/
     WideString::Replace(v43, v22, (wchar_t *)L"Sep"); /*0x77952e*/
   }
@@ -1533,7 +1520,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v23 = ((WideString *)(v43))->GetOrEmpty(); /*0x77954e*/
   if ( wcsstr(v23, v40) ) /*0x779554*/
   {
-  wchar_t *v24; // eax
+    wchar_t *v24; // eax
     v24 = GetStringCSF(g_Str_TXT_OCTOBER, 0, g_Str_File_WOLPersonaInformation_cpp, 219); /*0x779576*/
     WideString::Replace(v43, v24, (wchar_t *)L"Oct"); /*0x779580*/
   }
@@ -1543,7 +1530,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v25 = ((WideString *)(v43))->GetOrEmpty(); /*0x7795a0*/
   if ( wcsstr(v25, v41) ) /*0x7795a6*/
   {
-  wchar_t *v26; // eax
+    wchar_t *v26; // eax
     v26 = GetStringCSF(g_Str_TXT_NOVEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 222); /*0x7795c8*/
     WideString::Replace(v43, v26, (wchar_t *)L"Nov"); /*0x7795d2*/
   }
@@ -1553,7 +1540,7 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   v27 = ((WideString *)(v43))->GetOrEmpty(); /*0x7795f2*/
   if ( wcsstr(v27, v42) ) /*0x7795f8*/
   {
-  wchar_t *v28; // eax
+    wchar_t *v28; // eax
     v28 = GetStringCSF(g_Str_TXT_DECEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 225); /*0x77961a*/
     WideString::Replace(v43, v28, (wchar_t *)L"Dec"); /*0x779624*/
   }
@@ -1636,7 +1623,7 @@ int RunWOLMainLoop(char a1)
       {
         if ( v9 != 1 ) /*0x77b3dc*/
         {
-  LABEL_54:
+          LABEL_54:
           *(unsigned int *)&dword_A8B238 = 0; /*0x77b532*/
           dword_A8B244 = 0; /*0x77b538*/
           dword_A8B248 = 0; /*0x77b53e*/
@@ -1673,16 +1660,16 @@ int RunWOLMainLoop(char a1)
       case 2: /*0x77b415*/
         if ( !a1 ) /*0x77b43b*/
         {
-          started = JoinLobbyWOL(v16); /*0x77b432*/
-          goto LABEL_34; /*0x77b437*/
-        }
+        started = JoinLobbyWOL(v16); /*0x77b432*/
+        goto LABEL_34; /*0x77b437*/
+      }
         RunWOLMainLoop_Read_7A2970(); /*0x77b43d*/
         goto LABEL_42; /*0x77b442*/
       case 3: /*0x77b415*/
         if ( a1 ) /*0x77b465*/
           RunWOLMainLoop_Read_7A2970(); /*0x77b467*/
         started = StartWDTCampaign(a1); /*0x77b46e*/
-  LABEL_34:
+        LABEL_34:
         v7 = started; /*0x77b473*/
         a1 = 0; /*0x77b475*/
         if ( started ) /*0x77b479*/
@@ -1701,15 +1688,15 @@ int RunWOLMainLoop(char a1)
         a1 = 0; /*0x77b48b*/
         if ( v7 ) /*0x77b48f*/
         {
-  LABEL_35:
-          v17 = 1; /*0x77b47b*/
-        }
+        LABEL_35:
+        v17 = 1; /*0x77b47b*/
+      }
         else if ( dword_A8B244 == 5 ) /*0x77b498*/
         {
-          v11 = dword_A8B248; /*0x77b49a*/
-          dword_A8B248 = 0; /*0x77b4a0*/
-          dword_A8B244 = v11; /*0x77b4a6*/
-        }
+        v11 = dword_A8B248; /*0x77b49a*/
+        dword_A8B248 = 0; /*0x77b4a0*/
+        dword_A8B244 = v11; /*0x77b4a6*/
+      }
         break; /*0x77b4ac*/
       case 6: /*0x77b415*/
         v12 = RunWOLMainLoop_Init(v16); /*0x77b4ae*/
@@ -1718,8 +1705,8 @@ int RunWOLMainLoop(char a1)
         if ( v12 == -2 || v12 == -1 ) /*0x77b4c3*/
           goto LABEL_54; /*0x77b4c3*/
         if ( !v12 ) /*0x77b4cb*/
-  LABEL_42:
-          dword_A8B244 = 0; /*0x77b4cd*/
+          LABEL_42:
+        dword_A8B244 = 0; /*0x77b4cd*/
         break; /*0x77b4cd*/
       default:
         break;
@@ -1763,16 +1750,15 @@ void sub_77BAE0()
 {
   int v12; // eax
 
-  unsigned int v0; // eax
-  v0 = dword_B768C8; /*0x77bae0*/
+  unsigned int v0 = dword_B768C8; // eax /*0x77bae0*/
   unsigned int i; // ebx
   for ( i = 0; i < dword_B768C8; v0 = dword_B768C8 ) /*0x77baed*/
   {
-  int v2; // esi
+    int v2; // esi
     v2 = *((unsigned int *)g_WOL_ListParser + i); /*0x77baf4*/
     while ( v2 ) /*0x77baf9*/
     {
-  void **v3; // edi
+      void **v3; // edi
       v3 = (void **)v2; /*0x77bafb*/
       v2 = v2->estimatedHealth; /*0x77bafd*/
       DeleteAndZero(v3); /*0x77bb06*/
@@ -1780,8 +1766,7 @@ void sub_77BAE0()
     }
     *((unsigned int *)g_WOL_ListParser + i++) = 0; /*0x77bb1f*/
   }
-  unsigned int v4; // ecx
-  v4 = dword_B768F0; /*0x77bb30*/
+  unsigned int v4 = dword_B768F0; // ecx /*0x77bb30*/
   dword_B768C4 = 0; /*0x77bb36*/
   if ( v0 > dword_B768F0 ) /*0x77bb42*/
   {
@@ -1789,7 +1774,7 @@ void sub_77BAE0()
     {
       if ( byte_B768D4 || v0 <= v4 ) /*0x77bb58*/
         break; /*0x77bb58*/
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)g_WOL_ListParser; /*0x77bb64*/
       v0 = v0; /*0x77bb6a*/
       dword_B768C8 = v0 >> 1; /*0x77bb6f*/
@@ -1799,19 +1784,17 @@ void sub_77BAE0()
       if ( v0 > 0 ) /*0x77bb9e*/
       {
         v5 = v5; /*0x77bba0*/
-  int v8; // ebp
-        v8 = v0; /*0x77bba2*/
+        int v8 = v0; // ebp /*0x77bba2*/
         do /*0x77bbdd*/
         {
-  int v9; // esi
-          v9 = *v5; /*0x77bba4*/
+          int v9 = *v5; // esi /*0x77bba4*/
           if ( *v5 ) /*0x77bba4*/
           {
             do /*0x77bbd7*/
             {
-  int v10; // edx
+              int v10; // edx
               v10 = dword_B768D8(v9) & ((1 << dword_B768CC) - 1); /*0x77bbc0*/
-  int v11; // ecx
+              int v11; // ecx
               v11 = *((unsigned int *)g_WOL_ListParser + v10); /*0x77bbc7*/
               *((unsigned int *)g_WOL_ListParser + v10) = v9; /*0x77bbca*/
               v12 = *(unsigned int *)(v9 + 112); /*0x77bbcd*/
@@ -1840,16 +1823,15 @@ void sub_77BCB0()
 {
   int v12; // eax
 
-  unsigned int v0; // eax
-  v0 = dword_B73B00; /*0x77bcb0*/
+  unsigned int v0 = dword_B73B00; // eax /*0x77bcb0*/
   unsigned int i; // ebx
   for ( i = 0; i < dword_B73B00; v0 = dword_B73B00 ) /*0x77bcbd*/
   {
-  int v2; // esi
+    int v2; // esi
     v2 = *((unsigned int *)dword_B73AF8 + i); /*0x77bcc4*/
     while ( v2 ) /*0x77bcc9*/
     {
-  void **v3; // edi
+      void **v3; // edi
       v3 = (void **)v2; /*0x77bccb*/
       v2 = v2->estimatedHealth; /*0x77bccd*/
       DeleteAndZero(v3); /*0x77bcd6*/
@@ -1857,8 +1839,7 @@ void sub_77BCB0()
     }
     *((unsigned int *)dword_B73AF8 + i++) = 0; /*0x77bcef*/
   }
-  unsigned int v4; // ecx
-  v4 = dword_B73B28; /*0x77bd00*/
+  unsigned int v4 = dword_B73B28; // ecx /*0x77bd00*/
   dword_B73AFC = 0; /*0x77bd06*/
   if ( v0 > dword_B73B28 ) /*0x77bd12*/
   {
@@ -1866,7 +1847,7 @@ void sub_77BCB0()
     {
       if ( byte_B73B0C || v0 <= v4 ) /*0x77bd28*/
         break; /*0x77bd28*/
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)dword_B73AF8; /*0x77bd34*/
       v0 = v0; /*0x77bd3a*/
       dword_B73B00 = v0 >> 1; /*0x77bd3f*/
@@ -1876,19 +1857,17 @@ void sub_77BCB0()
       if ( v0 > 0 ) /*0x77bd6e*/
       {
         v5 = v5; /*0x77bd70*/
-  int v8; // ebp
-        v8 = v0; /*0x77bd72*/
+        int v8 = v0; // ebp /*0x77bd72*/
         do /*0x77bdad*/
         {
-  int v9; // esi
-          v9 = *v5; /*0x77bd74*/
+          int v9 = *v5; // esi /*0x77bd74*/
           if ( *v5 ) /*0x77bd74*/
           {
             do /*0x77bda7*/
             {
-  int v10; // edx
+              int v10; // edx
               v10 = dword_B73B10(v9) & ((1 << dword_B73B04) - 1); /*0x77bd90*/
-  int v11; // ecx
+              int v11; // ecx
               v11 = *((unsigned int *)dword_B73AF8 + v10); /*0x77bd97*/
               *((unsigned int *)dword_B73AF8 + v10) = v9; /*0x77bd9a*/
               v12 = *(unsigned int *)(v9 + 112); /*0x77bd9d*/
@@ -1917,16 +1896,15 @@ void sub_77BE80()
 {
   int v12; // eax
 
-  unsigned int v0; // eax
-  v0 = dword_B77D88; /*0x77be80*/
+  unsigned int v0 = dword_B77D88; // eax /*0x77be80*/
   unsigned int i; // ebx
   for ( i = 0; i < dword_B77D88; v0 = dword_B77D88 ) /*0x77be8d*/
   {
-  int v2; // esi
+    int v2; // esi
     v2 = *((unsigned int *)stru_B77D80 + i); /*0x77be94*/
     while ( v2 ) /*0x77be99*/
     {
-  void **v3; // edi
+      void **v3; // edi
       v3 = (void **)v2; /*0x77be9b*/
       v2 = v2->estimatedHealth; /*0x77be9d*/
       DeleteAndZero(v3); /*0x77bea6*/
@@ -1934,8 +1912,7 @@ void sub_77BE80()
     }
     *((unsigned int *)stru_B77D80 + i++) = 0; /*0x77bebf*/
   }
-  unsigned int v4; // ecx
-  v4 = dword_B77DB0; /*0x77bed0*/
+  unsigned int v4 = dword_B77DB0; // ecx /*0x77bed0*/
   dword_B77D84 = 0; /*0x77bed6*/
   if ( v0 > dword_B77DB0 ) /*0x77bee2*/
   {
@@ -1943,7 +1920,7 @@ void sub_77BE80()
     {
       if ( byte_B77D94 || v0 <= v4 ) /*0x77bef8*/
         break; /*0x77bef8*/
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)stru_B77D80; /*0x77bf04*/
       v0 = v0; /*0x77bf0a*/
       dword_B77D88 = v0 >> 1; /*0x77bf0f*/
@@ -1953,19 +1930,17 @@ void sub_77BE80()
       if ( v0 > 0 ) /*0x77bf3e*/
       {
         v5 = v5; /*0x77bf40*/
-  int v8; // ebp
-        v8 = v0; /*0x77bf42*/
+        int v8 = v0; // ebp /*0x77bf42*/
         do /*0x77bf7d*/
         {
-  int v9; // esi
-          v9 = *v5; /*0x77bf44*/
+          int v9 = *v5; // esi /*0x77bf44*/
           if ( *v5 ) /*0x77bf44*/
           {
             do /*0x77bf77*/
             {
-  int v10; // edx
+              int v10; // edx
               v10 = dword_B77D98(v9) & ((1 << dword_B77D8C) - 1); /*0x77bf60*/
-  int v11; // ecx
+              int v11; // ecx
               v11 = *((unsigned int *)stru_B77D80 + v10); /*0x77bf67*/
               *((unsigned int *)stru_B77D80 + v10) = v9; /*0x77bf6a*/
               v12 = *(unsigned int *)(v9 + 112); /*0x77bf6d*/
@@ -1994,16 +1969,15 @@ void sub_77C050()
 {
   int v12; // eax
 
-  unsigned int v0; // eax
-  v0 = dword_B76648; /*0x77c050*/
+  unsigned int v0 = dword_B76648; // eax /*0x77c050*/
   unsigned int i; // ebx
   for ( i = 0; i < dword_B76648; v0 = dword_B76648 ) /*0x77c05d*/
   {
-  int v2; // esi
+    int v2; // esi
     v2 = *((unsigned int *)dword_B76640 + i); /*0x77c064*/
     while ( v2 ) /*0x77c069*/
     {
-  void **v3; // edi
+      void **v3; // edi
       v3 = (void **)v2; /*0x77c06b*/
       v2 = v2->q048; /*0x77c06d*/
       DeleteAndZero(v3); /*0x77c076*/
@@ -2011,8 +1985,7 @@ void sub_77C050()
     }
     *((unsigned int *)dword_B76640 + i++) = 0; /*0x77c08f*/
   }
-  unsigned int v4; // ecx
-  v4 = dword_B76670; /*0x77c0a0*/
+  unsigned int v4 = dword_B76670; // ecx /*0x77c0a0*/
   dword_B76644 = 0; /*0x77c0a6*/
   if ( v0 > dword_B76670 ) /*0x77c0b2*/
   {
@@ -2020,31 +1993,27 @@ void sub_77C050()
     {
       if ( byte_B76654 || v0 <= v4 ) /*0x77c0c8*/
         break; /*0x77c0c8*/
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)dword_B76640; /*0x77c0d4*/
-  int v6; // esi
-      v6 = v0; /*0x77c0da*/
+      int v6 = v0; // esi /*0x77c0da*/
       dword_B76648 = v0 >> 1; /*0x77c0df*/
       --dword_B7664C; /*0x77c0eb*/
       dword_B76640 = operator new(4 * (v0 >> 1)); /*0x77c104*/
       memset(dword_B76640, 0, 4 * dword_B76648); /*0x77c10c*/
       if ( v6 > 0 ) /*0x77c10e*/
       {
-  int *v7; // edi
-        v7 = v5; /*0x77c110*/
-  int v8; // ebp
-        v8 = v6; /*0x77c112*/
+        int *v7 = v5; // edi /*0x77c110*/
+        int v8 = v6; // ebp /*0x77c112*/
         do /*0x77c14d*/
         {
-  int v9; // esi
-          v9 = *v7; /*0x77c114*/
+          int v9 = *v7; // esi /*0x77c114*/
           if ( *v7 ) /*0x77c114*/
           {
             do /*0x77c147*/
             {
-  int v10; // edx
+              int v10; // edx
               v10 = dword_B76658(v9) & ((1 << dword_B7664C) - 1); /*0x77c130*/
-  int v11; // ecx
+              int v11; // ecx
               v11 = *((unsigned int *)dword_B76640 + v10); /*0x77c137*/
               *((unsigned int *)dword_B76640 + v10) = v9; /*0x77c13a*/
               v12 = *(unsigned int *)(v9 + 72); /*0x77c13d*/
@@ -2073,16 +2042,15 @@ void sub_77C220()
 {
   int v12; // eax
 
-  unsigned int v0; // eax
-  v0 = dword_B76688; /*0x77c220*/
+  unsigned int v0 = dword_B76688; // eax /*0x77c220*/
   unsigned int i; // ebx
   for ( i = 0; i < dword_B76688; v0 = dword_B76688 ) /*0x77c22d*/
   {
-  int v2; // esi
+    int v2; // esi
     v2 = *((unsigned int *)dword_B76680 + i); /*0x77c234*/
     while ( v2 ) /*0x77c239*/
     {
-  void **v3; // edi
+      void **v3; // edi
       v3 = (void **)v2; /*0x77c23b*/
       v2 = v2->vtable3; /*0x77c23d*/
       DeleteAndZero(v3); /*0x77c246*/
@@ -2090,8 +2058,7 @@ void sub_77C220()
     }
     *((unsigned int *)dword_B76680 + i++) = 0; /*0x77c25f*/
   }
-  unsigned int v4; // ecx
-  v4 = dword_B766B0; /*0x77c270*/
+  unsigned int v4 = dword_B766B0; // ecx /*0x77c270*/
   dword_B76684 = 0; /*0x77c276*/
   if ( v0 > dword_B766B0 ) /*0x77c282*/
   {
@@ -2099,7 +2066,7 @@ void sub_77C220()
     {
       if ( byte_B76694 || v0 <= v4 ) /*0x77c298*/
         break; /*0x77c298*/
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)dword_B76680; /*0x77c2a4*/
       v0 = v0; /*0x77c2aa*/
       dword_B76688 = v0 >> 1; /*0x77c2af*/
@@ -2109,19 +2076,17 @@ void sub_77C220()
       if ( v0 > 0 ) /*0x77c2de*/
       {
         v5 = v5; /*0x77c2e0*/
-  int v8; // ebp
-        v8 = v0; /*0x77c2e2*/
+        int v8 = v0; // ebp /*0x77c2e2*/
         do /*0x77c31d*/
         {
-  int v9; // esi
-          v9 = *v5; /*0x77c2e4*/
+          int v9 = *v5; // esi /*0x77c2e4*/
           if ( *v5 ) /*0x77c2e4*/
           {
             do /*0x77c317*/
             {
-  int v10; // edx
+              int v10; // edx
               v10 = dword_B76698(v9) & ((1 << dword_B7668C) - 1); /*0x77c300*/
-  int v11; // ecx
+              int v11; // ecx
               v11 = *((unsigned int *)dword_B76680 + v10); /*0x77c307*/
               *((unsigned int *)dword_B76680 + v10) = v9; /*0x77c30a*/
               v12 = *(unsigned int *)(v9 + 8); /*0x77c30d*/
@@ -2150,16 +2115,15 @@ void sub_77C450()
 {
   int v12; // eax
 
-  unsigned int v0; // eax
-  v0 = dword_B76538; /*0x77c450*/
+  unsigned int v0 = dword_B76538; // eax /*0x77c450*/
   unsigned int i; // ebx
   for ( i = 0; i < dword_B76538; v0 = dword_B76538 ) /*0x77c45d*/
   {
-  int v2; // esi
+    int v2; // esi
     v2 = *((unsigned int *)g_WOL_ConnectionPool + i); /*0x77c464*/
     while ( v2 ) /*0x77c469*/
     {
-  void **v3; // edi
+      void **v3; // edi
       v3 = (void **)v2; /*0x77c46b*/
       v2 = v2->vtable3; /*0x77c46d*/
       DeleteAndZero(v3); /*0x77c476*/
@@ -2167,8 +2131,7 @@ void sub_77C450()
     }
     *((unsigned int *)g_WOL_ConnectionPool + i++) = 0; /*0x77c48f*/
   }
-  unsigned int v4; // ecx
-  v4 = dword_B76560; /*0x77c4a0*/
+  unsigned int v4 = dword_B76560; // ecx /*0x77c4a0*/
   dword_B76534 = 0; /*0x77c4a6*/
   if ( v0 > dword_B76560 ) /*0x77c4b2*/
   {
@@ -2176,7 +2139,7 @@ void sub_77C450()
     {
       if ( byte_B76544 || v0 <= v4 ) /*0x77c4c8*/
         break; /*0x77c4c8*/
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)g_WOL_ConnectionPool; /*0x77c4d4*/
       v0 = v0; /*0x77c4da*/
       dword_B76538 = v0 >> 1; /*0x77c4df*/
@@ -2186,19 +2149,17 @@ void sub_77C450()
       if ( v0 > 0 ) /*0x77c50e*/
       {
         v5 = v5; /*0x77c510*/
-  int v8; // ebp
-        v8 = v0; /*0x77c512*/
+        int v8 = v0; // ebp /*0x77c512*/
         do /*0x77c54d*/
         {
-  int v9; // esi
-          v9 = *v5; /*0x77c514*/
+          int v9 = *v5; // esi /*0x77c514*/
           if ( *v5 ) /*0x77c514*/
           {
             do /*0x77c547*/
             {
-  int v10; // edx
+              int v10; // edx
               v10 = dword_B76548(v9) & ((1 << dword_B7653C) - 1); /*0x77c530*/
-  int v11; // ecx
+              int v11; // ecx
               v11 = *((unsigned int *)g_WOL_ConnectionPool + v10); /*0x77c537*/
               *((unsigned int *)g_WOL_ConnectionPool + v10) = v9; /*0x77c53a*/
               v12 = *(unsigned int *)(v9 + 8); /*0x77c53d*/
@@ -2229,16 +2190,15 @@ void sub_77CB00()
   int *v7; // edi
   int v12; // eax
 
-  unsigned int v0; // eax
-  v0 = dword_B76998; /*0x77cb00*/
+  unsigned int v0 = dword_B76998; // eax /*0x77cb00*/
   unsigned int i; // ebx
   for ( i = 0; i < dword_B76998; v0 = dword_B76998 ) /*0x77cb0d*/
   {
-  int v2; // esi
+    int v2; // esi
     v2 = *((unsigned int *)dword_B76990 + i); /*0x77cb14*/
     while ( v2 ) /*0x77cb19*/
     {
-  void **v3; // edi
+      void **v3; // edi
       v3 = (void **)v2; /*0x77cb1b*/
       v2 = v2->vtable3; /*0x77cb1d*/
       DeleteAndZero(v3); /*0x77cb26*/
@@ -2246,8 +2206,7 @@ void sub_77CB00()
     }
     *((unsigned int *)dword_B76990 + i++) = 0; /*0x77cb3f*/
   }
-  unsigned int v4; // ecx
-  v4 = dword_B769C0; /*0x77cb50*/
+  unsigned int v4 = dword_B769C0; // ecx /*0x77cb50*/
   dword_B76994 = 0; /*0x77cb56*/
   if ( v0 > dword_B769C0 ) /*0x77cb62*/
   {
@@ -2255,7 +2214,7 @@ void sub_77CB00()
     {
       if ( byte_B769A4 || v0 <= v4 ) /*0x77cb78*/
         break; /*0x77cb78*/
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)dword_B76990; /*0x77cb84*/
       v0 = v0; /*0x77cb8a*/
       dword_B76998 = v0 >> 1; /*0x77cb8f*/
@@ -2265,19 +2224,17 @@ void sub_77CB00()
       if ( v0 > 0 ) /*0x77cbbe*/
       {
         v5 = v5; /*0x77cbc0*/
-  int v8; // ebp
-        v8 = v0; /*0x77cbc2*/
+        int v8 = v0; // ebp /*0x77cbc2*/
         do /*0x77cbfd*/
         {
-  int v9; // esi
-          v9 = *v5; /*0x77cbc4*/
+          int v9 = *v5; // esi /*0x77cbc4*/
           if ( *v5 ) /*0x77cbc4*/
           {
             do /*0x77cbf7*/
             {
-  int v10; // edx
+              int v10; // edx
               v10 = dword_B769A8(v9) & ((1 << dword_B7699C) - 1); /*0x77cbe0*/
-  int v11; // ecx
+              int v11; // ecx
               v11 = *((unsigned int *)dword_B76990 + v10); /*0x77cbe7*/
               *((unsigned int *)dword_B76990 + v10) = v9; /*0x77cbea*/
               v12 = *(unsigned int *)(v9 + 8); /*0x77cbed*/
@@ -2308,16 +2265,15 @@ void sub_77CCD0()
   int *v7; // edi
   int v12; // eax
 
-  unsigned int v0; // eax
-  v0 = dword_B76610; /*0x77ccd0*/
+  unsigned int v0 = dword_B76610; // eax /*0x77ccd0*/
   unsigned int i; // ebx
   for ( i = 0; i < dword_B76610; v0 = dword_B76610 ) /*0x77ccdd*/
   {
-  int v2; // esi
+    int v2; // esi
     v2 = *((unsigned int *)dword_B76608 + i); /*0x77cce4*/
     while ( v2 ) /*0x77cce9*/
     {
-  void **v3; // edi
+      void **v3; // edi
       v3 = (void **)v2; /*0x77cceb*/
       v2 = v2->ParticleSystemClass_110; /*0x77cced*/
       DeleteAndZero(v3); /*0x77ccf9*/
@@ -2325,8 +2281,7 @@ void sub_77CCD0()
     }
     *((unsigned int *)dword_B76608 + i++) = 0; /*0x77cd12*/
   }
-  unsigned int v4; // ecx
-  v4 = dword_B76638; /*0x77cd23*/
+  unsigned int v4 = dword_B76638; // ecx /*0x77cd23*/
   dword_B7660C = 0; /*0x77cd29*/
   if ( v0 > dword_B76638 ) /*0x77cd35*/
   {
@@ -2334,7 +2289,7 @@ void sub_77CCD0()
     {
       if ( byte_B7661C || v0 <= v4 ) /*0x77cd4b*/
         break; /*0x77cd4b*/
-  int *v5; // ebx
+      int *v5; // ebx
       v5 = (int *)dword_B76608; /*0x77cd57*/
       v0 = v0; /*0x77cd5d*/
       dword_B76610 = v0 >> 1; /*0x77cd62*/
@@ -2344,19 +2299,17 @@ void sub_77CCD0()
       if ( v0 > 0 ) /*0x77cd91*/
       {
         v5 = v5; /*0x77cd93*/
-  int v8; // ebp
-        v8 = v0; /*0x77cd95*/
+        int v8 = v0; // ebp /*0x77cd95*/
         do /*0x77cdd6*/
         {
-  int v9; // esi
-          v9 = *v5; /*0x77cd97*/
+          int v9 = *v5; // esi /*0x77cd97*/
           if ( *v5 ) /*0x77cd97*/
           {
             do /*0x77cdd0*/
             {
-  int v10; // edx
+              int v10; // edx
               v10 = dword_B76620(v9) & ((1 << dword_B76614) - 1); /*0x77cdb3*/
-  int v11; // ecx
+              int v11; // ecx
               v11 = *((unsigned int *)dword_B76608 + v10); /*0x77cdba*/
               *((unsigned int *)dword_B76608 + v10) = v9; /*0x77cdbd*/
               v12 = *(unsigned int *)(v9 + 272); /*0x77cdc0*/
@@ -2396,7 +2349,7 @@ int ObjectClass::sub_77D3F0()
   v3 = 0; /*0x77d40a*/
   if ( v2 <= 0 ) /*0x77d40e*/
   {
-LABEL_9:
+    LABEL_9:
     DeleteAndZero((ObjectClass *)&v6); /*0x77d46e*/
     return 0; /*0x77d47e*/
   }
@@ -2457,7 +2410,7 @@ int OpenURLWOL(INIClass * a1, int a2)
   _unlink(File); /*0x77dd17*/
   if ( (int)ExecutableA <= 32 ) /*0x77dd22*/
   {
-  wchar_t *StringCSF; // eax
+    wchar_t *StringCSF; // eax
     StringCSF = GetStringCSF(aTxtNobrowser, 0, g_Str_File_wonline_cpp, 1466); /*0x77deb0*/
     return ShowDialogConfirm(StringCSF, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x77deb9*/
   }
@@ -2468,7 +2421,7 @@ int OpenURLWOL(INIClass * a1, int a2)
              result = ShowDialogConfirm(v6, 4, (uint8_t (*)(void))GameLoop::Thunk, 0),
              result == 6) )
   {
-  CHAR CommandLine[272]; // [esp+210h] [ebp-110h] BYREF
+    CHAR CommandLine[272]; // [esp+210h] [ebp-110h] BYREF
     sprintf(CommandLine, "[open] %s", a1); /*0x77dd6b*/
     memset(&StartupInfo, 0, sizeof(StartupInfo)); /*0x77dd7e*/
     StartupInfo.cb = 68; /*0x77dda6*/
@@ -2476,19 +2429,18 @@ int OpenURLWOL(INIClass * a1, int a2)
     if ( result ) /*0x77ddb6*/
     {
       result = (int)ProcessInformation.hProcess; /*0x77ddbc*/
-  HANDLE hProcess; // ebx
+      HANDLE hProcess; // ebx
       hProcess = ProcessInformation.hProcess; /*0x77ddc2*/
       if ( ProcessInformation.hProcess ) /*0x77ddc4*/
       {
-  int v9; // esi
-        v9 = 0; /*0x77ddca*/
+        int v9 = 0; // esi /*0x77ddca*/
         Game::ProcessIdle(); /*0x77ddcc*/
         WaitForInputIdle(hProcess, 0x1388u); /*0x77ddd7*/
         do /*0x77de3f*/
         {
           Game::ProcessIdle(); /*0x77dde9*/
           Sleep(0x1F4u); /*0x77ddf3*/
-  DWORD ExitCode; // [esp+10h] [ebp-310h] BYREF
+          DWORD ExitCode; // [esp+10h] [ebp-310h] BYREF
           GetExitCodeProcess(hProcess, &ExitCode); /*0x77ddfb*/
           if ( ExitCode != 259 ) /*0x77de05*/
             v9 = 1; /*0x77de07*/
@@ -2505,8 +2457,7 @@ int OpenURLWOL(INIClass * a1, int a2)
           ShowWindow(g_hWnd, 9); /*0x77de71*/
           Game::ProcessIdle(); /*0x77de77*/
         }
-  int v10; // esi
-        v10 = 10; /*0x77de7c*/
+        int v10 = 10; // esi /*0x77de7c*/
         do /*0x77de8b*/
         {
           Sleep(0x64u); /*0x77de83*/
@@ -2790,19 +2741,15 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
 {
   char *v8; // ebx
 
-  int v3; // edi
-  v3 = a2; /*0x77ef99*/
+  int v3 = a2; // edi /*0x77ef99*/
   Debug::Log(); /*0x77efaa*/
   if ( (*(int (__stdcall **)(LPVOID, int, int))(*(unsigned int *)ppv + 24))(ppv, a1, v3) ) /*0x77efbc*/
     return 0; /*0x77efc4*/
-  int v5; // eax
-  v5 = dword_B76520; /*0x77efcb*/
-  int v6; // esi
-  v6 = dword_B76520; /*0x77efd0*/
+  int v5 = dword_B76520; // eax /*0x77efcb*/
+  int v6 = dword_B76520; // esi /*0x77efd0*/
   int v13; // [esp+Ch] [ebp-8h]
   v13 = dword_B76520; /*0x77efd4*/
-  int v7; // ebp
-  v7 = dword_B76524; /*0x77efe0*/
+  int v7 = dword_B76524; // ebp /*0x77efe0*/
   if ( dword_B76520 < dword_B76524 ) /*0x77efe8*/
   {
     v8 = (char *)dword_B76528; /*0x77f05b*/
@@ -2814,8 +2761,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
       v7 = 10; /*0x77eff6*/
     v8 = (char *)operator new(4 * v7); /*0x77f00a*/
     memset(v8, 0, 4 * ((unsigned int)(4 * v7) >> 2)); /*0x77f018*/
-  void *v9; // eax
-    v9 = dword_B76528; /*0x77f021*/
+    void *v9 = dword_B76528; // eax /*0x77f021*/
     if ( dword_B76528 ) /*0x77f028*/
     {
       memcpy(v8, dword_B76528, 4 * dword_B76520); /*0x77f034*/
@@ -2829,14 +2775,12 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
   }
   if ( v5 >= v7 ) /*0x77f063*/
   {
-  int v10; // ebp
-    v10 = 2 * v5; /*0x77f065*/
+    int v10 = 2 * v5; // ebp /*0x77f065*/
     if ( 2 * v5 < 10 ) /*0x77f06b*/
       v10 = 10; /*0x77f06d*/
     v8 = (char *)operator new(4 * v10); /*0x77f081*/
     memset(v8, 0, 4 * ((unsigned int)(4 * v10) >> 2)); /*0x77f08f*/
-  void *v11; // eax
-    v11 = dword_B76528; /*0x77f098*/
+    void *v11 = dword_B76528; // eax /*0x77f098*/
     if ( dword_B76528 ) /*0x77f09f*/
     {
       memcpy(v8, dword_B76528, 4 * dword_B76520); /*0x77f0ab*/
@@ -2895,7 +2839,7 @@ char RequestChannelListWOL()
     v2 = WaitForMultipleObjects(0x12u, &Handles, 0, 0x64u); /*0x77f179*/
     if ( v2 == 258 ) /*0x77f181*/
       break; /*0x77f181*/
-  LABEL_5:
+    LABEL_5:
     if ( v2 == -1 ) /*0x77f1ad*/
     {
       v5 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x77f227*/
@@ -2969,13 +2913,11 @@ namespace gamemd {
 AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
 {
 
-  int v3; // ebx
-  v3 = a1; /*0x77f32a*/
+  int v3 = a1; // ebx /*0x77f32a*/
   char result; // al
   if ( !dword_B76520 || (result = RequestChannelListWOL()) != 0 ) /*0x77f33f*/
   {
-  HANDLE *v6; // esi
-    v6 = &Handles; /*0x77f351*/
+    HANDLE *v6 = &Handles; // esi /*0x77f351*/
     do /*0x77f364*/
       ResetEvent(*v6++); /*0x77f359*/
     while ( (int)v6 < (int)g_WOL_RequestObject ); /*0x77f364*/
@@ -2987,24 +2929,20 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
     }
     else
     {
-  int v7; // eax
-      v7 = dword_B76520; /*0x77f392*/
-  int v8; // esi
-      v8 = dword_B76520; /*0x77f397*/
-  int v16; // [esp+10h] [ebp-8h]
+      int v7 = dword_B76520; // eax /*0x77f392*/
+      int v8 = dword_B76520; // esi /*0x77f397*/
+      int v16; // [esp+10h] [ebp-8h]
       v16 = dword_B76520; /*0x77f39b*/
-  int v9; // ebp
-      v9 = dword_B76524; /*0x77f3a5*/
+      int v9 = dword_B76524; // ebp /*0x77f3a5*/
       if ( dword_B76520 >= dword_B76524 ) /*0x77f3ad*/
       {
         v9 = 2 * dword_B76520; /*0x77f3b7*/
         if ( 2 * dword_B76520 < 10 ) /*0x77f3bd*/
           v9 = 10; /*0x77f3bf*/
-  void *v10; // ebx
+        void *v10; // ebx
         v10 = operator new(4 * v9); /*0x77f3d3*/
         memset(v10, 0, 4 * ((unsigned int)(4 * v9) >> 2)); /*0x77f3e1*/
-  void *v11; // eax
-        v11 = dword_B76528; /*0x77f3ea*/
+        void *v11 = dword_B76528; // eax /*0x77f3ea*/
         if ( dword_B76528 ) /*0x77f3f1*/
         {
           memcpy(v10, dword_B76528, 4 * dword_B76520); /*0x77f3fd*/
@@ -3019,15 +2957,13 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
       }
       if ( v7 >= v9 ) /*0x77f428*/
       {
-  int v12; // ebp
-        v12 = 2 * v7; /*0x77f42a*/
+        int v12 = 2 * v7; // ebp /*0x77f42a*/
         if ( 2 * v7 < 10 ) /*0x77f430*/
           v12 = 10; /*0x77f432*/
-  void *v13; // ebx
+        void *v13; // ebx
         v13 = operator new(4 * v12); /*0x77f446*/
         memset(v13, 0, 4 * ((unsigned int)(4 * v12) >> 2)); /*0x77f454*/
-  void *v14; // eax
-        v14 = dword_B76528; /*0x77f45d*/
+        void *v14 = dword_B76528; // eax /*0x77f45d*/
         if ( dword_B76528 ) /*0x77f464*/
         {
           memcpy(v13, dword_B76528, 4 * dword_B76520); /*0x77f470*/
@@ -3045,7 +2981,7 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
         memcpy((char *)dword_B76528 + 4 * v8 + 4, (char *)dword_B76528 + 4 * v8, 4 * (v7 + 0x3FFFFFFF * v8)); /*0x77f4b8*/
         v7 = dword_B76520; /*0x77f4bd*/
       }
-  unsigned int *v15; // ecx
+      unsigned int *v15; // ecx
       v15 = (char *)dword_B76528 + 4 * v8; /*0x77f4cb*/
       if ( v15 ) /*0x77f4d0*/
       {
@@ -3070,8 +3006,7 @@ char sub_77F520(char a1)
   char result; // al
   if ( !dword_B76520 || (result = RequestChannelListWOL()) != 0 ) /*0x77f539*/
   {
-  HANDLE *v2; // esi
-    v2 = &Handles; /*0x77f547*/
+    HANDLE *v2 = &Handles; // esi /*0x77f547*/
     do /*0x77f55a*/
       ResetEvent(*v2++); /*0x77f54f*/
     while ( (int)v2 < (int)g_WOL_RequestObject ); /*0x77f55a*/
@@ -3083,24 +3018,20 @@ char sub_77F520(char a1)
     }
     else
     {
-  int v3; // eax
-      v3 = dword_B76520; /*0x77f584*/
-  int v4; // esi
-      v4 = dword_B76520; /*0x77f589*/
-  int v13; // [esp+Eh] [ebp-4h]
+      int v3 = dword_B76520; // eax /*0x77f584*/
+      int v4 = dword_B76520; // esi /*0x77f589*/
+      int v13; // [esp+Eh] [ebp-4h]
       v13 = dword_B76520; /*0x77f58d*/
-  int v5; // ebx
-      v5 = dword_B76524; /*0x77f598*/
+      int v5 = dword_B76524; // ebx /*0x77f598*/
       if ( dword_B76520 >= dword_B76524 ) /*0x77f5a1*/
       {
         v5 = 2 * dword_B76520; /*0x77f5ab*/
         if ( 2 * dword_B76520 < 10 ) /*0x77f5b1*/
           v5 = 10; /*0x77f5b3*/
-  void *v6; // ebp
+        void *v6; // ebp
         v6 = operator new(4 * v5); /*0x77f5c7*/
         memset(v6, 0, 4 * ((unsigned int)(4 * v5) >> 2)); /*0x77f5d5*/
-  void *v7; // eax
-        v7 = dword_B76528; /*0x77f5de*/
+        void *v7 = dword_B76528; // eax /*0x77f5de*/
         if ( dword_B76528 ) /*0x77f5e5*/
         {
           memcpy(v6, dword_B76528, 4 * dword_B76520); /*0x77f5f1*/
@@ -3114,15 +3045,13 @@ char sub_77F520(char a1)
       }
       if ( v3 >= v5 ) /*0x77f618*/
       {
-  int v8; // ebx
-        v8 = 2 * v3; /*0x77f61a*/
+        int v8 = 2 * v3; // ebx /*0x77f61a*/
         if ( 2 * v3 < 10 ) /*0x77f620*/
           v8 = 10; /*0x77f622*/
-  void *v9; // ebp
+        void *v9; // ebp
         v9 = operator new(4 * v8); /*0x77f636*/
         memset(v9, 0, 4 * ((unsigned int)(4 * v8) >> 2)); /*0x77f644*/
-  void *v10; // eax
-        v10 = dword_B76528; /*0x77f64d*/
+        void *v10 = dword_B76528; // eax /*0x77f64d*/
         if ( dword_B76528 ) /*0x77f654*/
         {
           memcpy(v9, dword_B76528, 4 * dword_B76520); /*0x77f660*/
@@ -3139,7 +3068,7 @@ char sub_77F520(char a1)
         memcpy((char *)dword_B76528 + 4 * v4 + 4, (char *)dword_B76528 + 4 * v4, 4 * (v3 + 0x3FFFFFFF * v4)); /*0x77f6a6*/
         v3 = dword_B76520; /*0x77f6ab*/
       }
-  unsigned int *v11; // ecx
+      unsigned int *v11; // ecx
       v11 = (char *)dword_B76528 + 4 * v4; /*0x77f6b9*/
       if ( v11 ) /*0x77f6be*/
       {
@@ -3164,8 +3093,7 @@ char sub_77F710(unsigned char a1, char a2)
   char result; // al
   if ( !dword_B76520 || (result = RequestChannelListWOL()) != 0 ) /*0x77f72c*/
   {
-  HANDLE *v4; // esi
-    v4 = &Handles; /*0x77f73b*/
+    HANDLE *v4 = &Handles; // esi /*0x77f73b*/
     do /*0x77f74e*/
       ResetEvent(*v4++); /*0x77f743*/
     while ( (int)v4 < (int)g_WOL_RequestObject ); /*0x77f74e*/
@@ -3177,24 +3105,20 @@ char sub_77F710(unsigned char a1, char a2)
     }
     else
     {
-  int v5; // eax
-      v5 = dword_B76520; /*0x77f77e*/
-  int v6; // esi
-      v6 = dword_B76520; /*0x77f783*/
-  int v15; // [esp+10h] [ebp-4h]
+      int v5 = dword_B76520; // eax /*0x77f77e*/
+      int v6 = dword_B76520; // esi /*0x77f783*/
+      int v15; // [esp+10h] [ebp-4h]
       v15 = dword_B76520; /*0x77f787*/
-  int v7; // ebx
-      v7 = dword_B76524; /*0x77f791*/
+      int v7 = dword_B76524; // ebx /*0x77f791*/
       if ( dword_B76520 >= dword_B76524 ) /*0x77f79a*/
       {
         v7 = 2 * dword_B76520; /*0x77f7a4*/
         if ( 2 * dword_B76520 < 10 ) /*0x77f7aa*/
           v7 = 10; /*0x77f7ac*/
-  void *v8; // ebp
+        void *v8; // ebp
         v8 = operator new(4 * v7); /*0x77f7c0*/
         memset(v8, 0, 4 * ((unsigned int)(4 * v7) >> 2)); /*0x77f7ce*/
-  void *v9; // eax
-        v9 = dword_B76528; /*0x77f7d7*/
+        void *v9 = dword_B76528; // eax /*0x77f7d7*/
         if ( dword_B76528 ) /*0x77f7de*/
         {
           memcpy(v8, dword_B76528, 4 * dword_B76520); /*0x77f7ea*/
@@ -3208,15 +3132,13 @@ char sub_77F710(unsigned char a1, char a2)
       }
       if ( v5 >= v7 ) /*0x77f811*/
       {
-  int v10; // ebx
-        v10 = 2 * v5; /*0x77f813*/
+        int v10 = 2 * v5; // ebx /*0x77f813*/
         if ( 2 * v5 < 10 ) /*0x77f819*/
           v10 = 10; /*0x77f81b*/
-  void *v11; // ebp
+        void *v11; // ebp
         v11 = operator new(4 * v10); /*0x77f82f*/
         memset(v11, 0, 4 * ((unsigned int)(4 * v10) >> 2)); /*0x77f83d*/
-  void *v12; // eax
-        v12 = dword_B76528; /*0x77f846*/
+        void *v12 = dword_B76528; // eax /*0x77f846*/
         if ( dword_B76528 ) /*0x77f84d*/
         {
           memcpy(v11, dword_B76528, 4 * dword_B76520); /*0x77f859*/
@@ -3233,7 +3155,7 @@ char sub_77F710(unsigned char a1, char a2)
         memcpy((char *)dword_B76528 + 4 * v6 + 4, (char *)dword_B76528 + 4 * v6, 4 * (v5 + 0x3FFFFFFF * v6)); /*0x77f89e*/
         v5 = dword_B76520; /*0x77f8a3*/
       }
-  unsigned int *v13; // ecx
+      unsigned int *v13; // ecx
       v13 = (char *)dword_B76528 + 4 * v6; /*0x77f8b1*/
       if ( v13 ) /*0x77f8b6*/
       {
@@ -3405,32 +3327,26 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
   DeleteAndZero((ObjectClass *)&aP4); /*0x7708a6*/
   int v7; // eax
   v7 = *(&this->u32_18 * a4 + 223); /*0x7708b2*/
-  char *v8; // esi
-  v8 = &this->u32_18 * a4 + 892; /*0x7708b9*/
+  char *v8 = &this->u32_18 * a4 + 892; // esi /*0x7708b9*/
   (*(void (**)(char *))(v7 + 12))(v8); /*0x7708c2*/
   unknown_libname_73(&aP4); /*0x7708c9*/
   int i; // edi
   for ( i = String::Tokenize(&v17, 0, Str, (void **)&aP4); i != -1; i = String::Tokenize(&v17, i, Str, (void **)&aP4) ) /*0x7708e8*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP4); /*0x7708ef*/
-  int v10; // ecx
-    v10 = v8->u32_8; /*0x7708f4*/
-  int v11; // eax
-  int v12; // ebx
-    v12 = v11; /*0x7708f7*/
+    int v10 = v8->u32_8; // ecx /*0x7708f4*/
+    int v11; // eax
+    int v12 = v11; // ebx /*0x7708f7*/
     if ( v8->u32_10 >= v10 ) /*0x7708fc*/
     {
       if ( !v8[13] && v10 ) /*0x770907*/
         continue; /*0x770907*/
-  int v13; // eax
-      v13 = v8->Straw_14; /*0x770909*/
+      int v13 = v8->Straw_14; // eax /*0x770909*/
       if ( v13 <= 0 || !(*(unsigned __int8 (**)(char *, int, unsigned int))(*&v8->COMObject_20))(v8, v10 + v13, 0) ) /*0x770919*/
         continue; /*0x770919*/
     }
-  int v14; // eax
-    v14 = v8->u32_10; /*0x770920*/
-  int v15; // edx
-    v15 = v8->__pad_004; /*0x770923*/
+    int v14 = v8->u32_10; // eax /*0x770920*/
+    int v15 = v8->__pad_004; // edx /*0x770923*/
     v8->u32_10 = v14 + 1; /*0x770929*/
     *(unsigned int *)(v15 + 4 * v14) = v12; /*0x77092c*/
   }
@@ -3447,10 +3363,8 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
 {
 
 
-  void **v4; // ebx
-  v4 = a4; /*0x770976*/
-  void *vtable0; // edi
-  vtable0 = this->AbstractClass; /*0x77097f*/
+  void **v4 = a4; // ebx /*0x770976*/
+  void *vtable0 = this->AbstractClass; // edi /*0x77097f*/
   void **v6; // esi
   v6 = &this->? + 37 * a2 + 12 * a3; /*0x770990*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770996*/
@@ -3467,9 +3381,9 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   v10 = *((unsigned int *)v6[1] + v9); /*0x7709ca*/
   if ( vtable0 == 3 ) /*0x7709cd*/
   {
-  char **v11; // eax
+    char **v11; // eax
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x7709d3*/
-  char **v12; // eax
+    char **v12; // eax
     v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11); /*0x7709e2*/
     String::Reassign((String *)v4, (const char **)v12); /*0x7709ea*/
     DeleteAndZero((ObjectClass *)&a2); /*0x7709f3*/
@@ -3477,10 +3391,10 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   }
   else
   {
-  char **v13; // eax
-  void *v15; // [esp+Ch] [ebp-4h] BYREF
+    char **v13; // eax
+    void *v15; // [esp+Ch] [ebp-4h] BYREF
     v13 = FormatStringInt((char **)&v15, v10, 2); /*0x770a0e*/
-  char **v14; // eax
+    char **v14; // eax
     v14 = ProcessStringAndCopy((char **)&a4, g_Str_WWD_Allied, v13); /*0x770a1d*/
     String::Reassign((String *)v4, (const char **)v14); /*0x770a25*/
     DeleteAndZero((ObjectClass *)&a4); /*0x770a2e*/
@@ -3497,10 +3411,8 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
 {
 
 
-  void **v4; // ebx
-  v4 = a4; /*0x770a56*/
-  void *vtable0; // edi
-  vtable0 = this->AbstractClass; /*0x770a5f*/
+  void **v4 = a4; // ebx /*0x770a56*/
+  void *vtable0 = this->AbstractClass; // edi /*0x770a5f*/
   void **v6; // esi
   v6 = &this->? + 37 * a2 + 12 * a3; /*0x770a70*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770a76*/
@@ -3517,9 +3429,9 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   v10 = *((unsigned int *)v6[1] + v9); /*0x770aaa*/
   if ( vtable0 == 3 ) /*0x770aad*/
   {
-  char **v11; // eax
+    char **v11; // eax
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x770ab3*/
-  char **v12; // eax
+    char **v12; // eax
     v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11); /*0x770ac2*/
     String::Reassign((String *)v4, (const char **)v12); /*0x770aca*/
     DeleteAndZero((ObjectClass *)&a2); /*0x770ad3*/
@@ -3527,10 +3439,10 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   }
   else
   {
-  char **v13; // eax
-  void *v15; // [esp+Ch] [ebp-4h] BYREF
+    char **v13; // eax
+    void *v15; // [esp+Ch] [ebp-4h] BYREF
     v13 = FormatStringInt((char **)&v15, v10, 2); /*0x770aee*/
-  char **v14; // eax
+    char **v14; // eax
     v14 = ProcessStringAndCopy((char **)&a4, g_Str_WWD_Allied, v13); /*0x770afd*/
     String::Reassign((String *)v4, (const char **)v14); /*0x770b05*/
     DeleteAndZero((ObjectClass *)&a4); /*0x770b0e*/
@@ -3547,15 +3459,11 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
 {
 
 
-  void **v3; // ebx
-  v3 = a3; /*0x770b38*/
-  void *vtable0; // edi
-  vtable0 = this->AbstractClass; /*0x770b41*/
-  char *v5; // esi
-  v5 = &this->u32_18 * a2 + 892; /*0x770b43*/
+  void **v3 = a3; // ebx /*0x770b38*/
+  void *vtable0 = this->AbstractClass; // edi /*0x770b41*/
+  char *v5 = &this->u32_18 * a2 + 892; // esi /*0x770b43*/
   DeleteAndZero::Alt2((DeleteAndZero *)a3); /*0x770b4c*/
-  int v6; // eax
-  v6 = v5->u32_10; /*0x770b51*/
+  int v6 = v5->u32_10; // eax /*0x770b51*/
   if ( v6 <= 0 ) /*0x770b56*/
     return 0; /*0x770b5a*/
   int v8; // eax
@@ -3567,9 +3475,9 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   v9 = *(unsigned int *)(v5->__pad_004 + 4 * v8); /*0x770b82*/
   if ( vtable0 == 3 ) /*0x770b85*/
   {
-  char **v10; // eax
+    char **v10; // eax
     v10 = FormatStringInt((char **)&a3, v9, 2); /*0x770b8b*/
-  char **v11; // eax
+    char **v11; // eax
     v11 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v10); /*0x770b9a*/
     String::Reassign((String *)v3, (const char **)v11); /*0x770ba2*/
     DeleteAndZero((ObjectClass *)&a2); /*0x770bab*/
@@ -3577,11 +3485,11 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   }
   else
   {
-  char **v12; // eax
-  void *v15; // [esp+10h] [ebp-4h] BYREF
+    char **v12; // eax
+    void *v15; // [esp+10h] [ebp-4h] BYREF
     v12 = FormatStringInt((char **)&v15, v9, 2); /*0x770bc8*/
-  char **v13; // eax
-  void *v14; // [esp+Ch] [ebp-8h] BYREF
+    char **v13; // eax
+    void *v14; // [esp+Ch] [ebp-8h] BYREF
     v13 = ProcessStringAndCopy((char **)&v14, g_Str_WWD_Allied, v12); /*0x770bd7*/
     String::Reassign((String *)v3, (const char **)v13); /*0x770bdf*/
     DeleteAndZero((ObjectClass *)&v14); /*0x770be8*/
@@ -3604,23 +3512,22 @@ void sub_770D70(const char ** a1, unsigned int * a2)
   for ( i = String::Tokenize(a1, 0, Str, &v11); i != -1; i = String::Tokenize(a1, i, Str, &v11) ) /*0x770da0*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v11); /*0x770da7*/
-  int v5; // ecx
+    int v5; // ecx
     v5 = a2[2]; /*0x770dac*/
-  int v6; // eax
-  int v7; // ebp
-    v7 = v6; /*0x770daf*/
+    int v6; // eax
+    int v7 = v6; // ebp /*0x770daf*/
     if ( a2[4] >= v5 ) /*0x770db4*/
     {
       if ( !*((unsigned char *)a2 + 13) && v5 ) /*0x770dbf*/
         continue; /*0x770dbf*/
-  int v8; // eax
+      int v8; // eax
       v8 = a2[5]; /*0x770dc1*/
       if ( v8 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*a2 + 8))(a2, v5 + v8, 0) ) /*0x770dd1*/
         continue; /*0x770dd1*/
     }
-  int v9; // eax
+    int v9; // eax
     v9 = a2[4]; /*0x770dd8*/
-  int v10; // edx
+    int v10; // edx
     v10 = a2[1]; /*0x770ddb*/
     a2[4] = v9 + 1; /*0x770de1*/
     *(unsigned int *)(v10 + 4 * v9) = v7; /*0x770de4*/
@@ -3635,8 +3542,7 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
 {
 
 
-  void **v4; // edi
-  v4 = a4; /*0x770f17*/
+  void **v4 = a4; // edi /*0x770f17*/
   void **v5; // esi
   v5 = &this->? + 12 * a3; /*0x770f21*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770f27*/
@@ -3653,9 +3559,9 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
   v9 = *((unsigned int *)v5[1] + v8); /*0x770f57*/
   if ( a2 == 3 ) /*0x770f61*/
   {
-  char **v10; // eax
+    char **v10; // eax
     v10 = FormatStringInt((char **)&a4, v9, 2); /*0x770f67*/
-  char **v11; // eax
+    char **v11; // eax
     v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10); /*0x770f76*/
     String::Reassign((String *)v4, (const char **)v11); /*0x770f7e*/
     DeleteAndZero((ObjectClass *)&a3); /*0x770f87*/
@@ -3663,10 +3569,10 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
   }
   else
   {
-  char **v12; // eax
-  void *v14; // [esp+8h] [ebp-4h] BYREF
+    char **v12; // eax
+    void *v14; // [esp+8h] [ebp-4h] BYREF
     v12 = FormatStringInt((char **)&v14, v9, 2); /*0x770fa1*/
-  char **v13; // eax
+    char **v13; // eax
     v13 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Allied, v12); /*0x770fb0*/
     String::Reassign((String *)v4, (const char **)v13); /*0x770fb8*/
     DeleteAndZero((ObjectClass *)&a2); /*0x770fc1*/
@@ -3683,8 +3589,7 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
 {
 
 
-  void **v4; // edi
-  v4 = a4; /*0x770fe7*/
+  void **v4 = a4; // edi /*0x770fe7*/
   int *v5; // esi
   v5 = &this->? + 12 * a3; /*0x770ff1*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770ff7*/
@@ -3701,9 +3606,9 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
   v9 = *(unsigned int *)(v5[1] + 4 * v8); /*0x771027*/
   if ( a2 == 3 ) /*0x771031*/
   {
-  char **v10; // eax
+    char **v10; // eax
     v10 = FormatStringInt((char **)&a4, v9, 2); /*0x771037*/
-  char **v11; // eax
+    char **v11; // eax
     v11 = ProcessStringAndCopy((char **)&a3, g_Str_WWD_Soviet, v10); /*0x771046*/
     String::Reassign((String *)v4, (const char **)v11); /*0x77104e*/
     DeleteAndZero((ObjectClass *)&a3); /*0x771057*/
@@ -3711,10 +3616,10 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
   }
   else
   {
-  char **v12; // eax
-  void *v14; // [esp+8h] [ebp-4h] BYREF
+    char **v12; // eax
+    void *v14; // [esp+8h] [ebp-4h] BYREF
     v12 = FormatStringInt((char **)&v14, v9, 2); /*0x771071*/
-  char **v13; // eax
+    char **v13; // eax
     v13 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Allied, v12); /*0x771080*/
     String::Reassign((String *)v4, (const char **)v13); /*0x771088*/
     DeleteAndZero((ObjectClass *)&a2); /*0x771091*/
@@ -3734,20 +3639,17 @@ int E4Recv_771710::sub_771710()
 
   int v2; // eax
   v2 = *(unsigned int *)this->isUseless; /*0x771720*/
-  int v3; // ebx
-  v3 = v2 - 1; /*0x771722*/
+  int v3 = v2 - 1; // ebx /*0x771722*/
   if ( v2 > this->targetLaserTimer[0] ) /*0x771725*/
   {
     do /*0x771768*/
     {
-  int v4; // eax
+      int v4; // eax
       v4 = *(unsigned int *)this->isUseless; /*0x771728*/
       if ( v3 < v4 ) /*0x771730*/
       {
-  int v5; // eax
-        v5 = v4 - 1; /*0x771732*/
-  int v6; // esi
-        v6 = v3; /*0x771733*/
+        int v5 = v4 - 1; // eax /*0x771732*/
+        int v6 = v3; // esi /*0x771733*/
         for ( *(unsigned int *)this->isUseless = v5; v6 < *(unsigned int *)this->isUseless; ++v6 ) /*0x77173d*/
           String::Reassign( /*0x77174d*/
             (String *)(this->targetLaserTimer[2] + 4 * v6),
@@ -4147,12 +4049,10 @@ unsigned int * sub_773450(int a1, int a2)
 
   unsigned int *v4; // esi
   v4 = operator new(0x414u); /*0x773462*/
-  unsigned int *result; // eax
-  result = 0; /*0x773464*/
+  unsigned int *result = 0; // eax /*0x773464*/
   if ( v4 ) /*0x77346b*/
   {
-  unsigned int *v6; // edi
-    v6 = v4 + 2; /*0x773471*/
+    unsigned int *v6 = v4 + 2; // edi /*0x773471*/
     v4[1] = 1; /*0x773474*/
     v4[2] = 0; /*0x773480*/
     v4->u8_40C = 0; /*0x773482*/
@@ -4181,8 +4081,7 @@ char AnimClass::sub_773590(int a2, int a3)
 
   this->u32_410 = a2; /*0x77359e*/
   Debug::Log(); /*0x7735a4*/
-  unsigned int *v4; // esi
-  v4 = &this->vtable3; /*0x7735ac*/
+  unsigned int *v4 = &this->vtable3; // esi /*0x7735ac*/
   if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, &this->vtable3) >= 0 ) /*0x7735c6*/
   {
     Debug::Log(); /*0x7735cd*/
@@ -6262,9 +6161,7 @@ int sub_77CC30()
 namespace gamemd {
 int sub_77CE10()
 {
-  int result; // eax
-
-  result = dword_84A1C8 - dword_84A1C4 - 4; /*0x77ce1d*/
+  int result = dword_84A1C8 - dword_84A1C4 - 4; // eax /*0x77ce1d*/
   dword_B765F0 = result; /*0x77ce20*/
   return result; /*0x77ce25*/
 }
@@ -6274,9 +6171,7 @@ int sub_77CE10()
 namespace gamemd {
 int sub_77CE30()
 {
-  int result; // eax
-
-  result = dword_84A1D8 - dword_84A1D4 - 4; /*0x77ce3d*/
+  int result = dword_84A1D8 - dword_84A1D4 - 4; // eax /*0x77ce3d*/
   dword_B73E3C = result; /*0x77ce40*/
   return result; /*0x77ce45*/
 }
@@ -6726,60 +6621,60 @@ int unknown_libname_60()
 namespace gamemd {
 int sub_77DED0()
 {
-  int result; // eax
+                   int result; // eax
 
-  dword_B76234 = INIClass::ReadInt_Overwrite( /*0x77deeb*/
+                   dword_B76234 = INIClass::ReadInt_Overwrite( /*0x77deeb*/
                    (int)&dword_8870C0,
                    (uint8_t *)g_INI_Key_WOnline,
                    (uint8_t *)aAllowpage,
                    1);
-  dword_B779F0 = INIClass::ReadInt_Overwrite( /*0x77df06*/
+                   dword_B779F0 = INIClass::ReadInt_Overwrite( /*0x77df06*/
                    (int)&dword_8870C0,
                    (uint8_t *)g_INI_Key_WOnline,
                    (uint8_t *)aAllowfind,
                    1);
-  dword_B779BC = INIClass::ReadInt_Overwrite( /*0x77df21*/
+                   dword_B779BC = INIClass::ReadInt_Overwrite( /*0x77df21*/
                    (int)&dword_8870C0,
                    (uint8_t *)g_INI_Key_WOnline,
                    (uint8_t *)aLangfilter,
                    1);
-  dword_B7690C = INIClass::ReadInt_Overwrite( /*0x77df3c*/
+                   dword_B7690C = INIClass::ReadInt_Overwrite( /*0x77df3c*/
                    (int)&dword_8870C0,
                    (uint8_t *)g_INI_Key_WOnline,
                    (uint8_t *)aLobmusic,
                    1);
-  dword_B77784 = INIClass::ReadInt_Overwrite( /*0x77df57*/
+                   dword_B77784 = INIClass::ReadInt_Overwrite( /*0x77df57*/
                    (int)&dword_8870C0,
                    (uint8_t *)g_INI_Key_WOnline,
                    (uint8_t *)aShowall,
                    1);
-  dword_B779DC = INIClass::ReadInt_Overwrite( /*0x77df72*/
+                   dword_B779DC = INIClass::ReadInt_Overwrite( /*0x77df72*/
                    (int)&dword_8870C0,
                    (uint8_t *)g_INI_Key_WOnline,
                    (uint8_t *)aDisplayasian,
                    1);
-  dword_B779C0 = INIClass::ReadInt_Overwrite( /*0x77df8d*/
+                   dword_B779C0 = INIClass::ReadInt_Overwrite( /*0x77df8d*/
                    (int)&dword_8870C0,
                    (uint8_t *)g_INI_Key_WOnline,
                    (uint8_t *)aDisplaylatin,
                    1);
-  byte_B76AF0 = INIClass::ReadBool_Overwrite( /*0x77dfa8*/
+                   byte_B76AF0 = INIClass::ReadBool_Overwrite( /*0x77dfa8*/
                   (int)&dword_8870C0,
                   (uint8_t *)g_INI_Key_WOnline,
                   (uint8_t *)aDisplaybuddies,
                   0);
-  byte_B73AD0 = INIClass::ReadBool_Overwrite( /*0x77dfbe*/
+                   byte_B73AD0 = INIClass::ReadBool_Overwrite( /*0x77dfbe*/
                   (int)&dword_8870C0,
                   (uint8_t *)g_INI_Key_WOnline,
                   (uint8_t *)aDisplayclan,
                   0);
-  result = INIClass::ReadInt_Overwrite( /*0x5ee1a1*/
+                   result = INIClass::ReadInt_Overwrite( /*0x5ee1a1*/
              (int)&dword_8870C0,
              (uint8_t *)aMultiplayer,
              (uint8_t *)aObservermode,
              0);
-  g_MenuStateFlags = result; /*0x5ee1a6*/
-  return result; /*0x5ee1ab*/
+                   g_MenuStateFlags = result; /*0x5ee1a6*/
+                   return result; /*0x5ee1ab*/
 }
 } // namespace gamemd
 

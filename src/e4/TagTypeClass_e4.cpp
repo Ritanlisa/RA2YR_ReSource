@@ -60,7 +60,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void 
          dword_B0E788 + dword_B0E794,
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = g_MultiplayerCleanup++; /*0x6e5c2b*/
     *((unsigned int *)dword_B0E784 + v3) = (unsigned int)(this); /*0x6e5c3a*/
   }
@@ -72,7 +72,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void 
          dword_B0F678 + dword_B0F684,
          0) )
   {
-  int v4; // eax
+    int v4; // eax
     v4 = dword_B0F680++; /*0x6e5c7e*/
     *((unsigned int *)dword_B0F674 + v4) = (unsigned int)(this); /*0x6e5c8d*/
   }
@@ -106,15 +106,14 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v3 ); /*0x6e5cfa*/
   }
-  int v4; // esi
-  v4 = 0; /*0x6e5d01*/
+  int v4 = 0; // esi /*0x6e5d01*/
   if ( g_GameObjectCleanup > 0 ) /*0x6e5d05*/
   {
-  unsigned int *v5; // eax
+    unsigned int *v5; // eax
     v5 = (unsigned int *)(g_TagClassCount); /*0x6e5d07*/
     do /*0x6e5d2e*/
     {
-  unsigned int *v6; // ecx
+      unsigned int *v6; // ecx
       v6 = (unsigned int *)v5[v4]; /*0x6e5d0c*/
       if ( (AbstractTypeClass *)v6[9] == a1 ) /*0x6e5d12*/
       {
@@ -139,9 +138,9 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6e5d59*/
     for ( ; /*0x6e5d5f*/
-          v7 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v7) )
+    v7 < g_BuildingLoadQueue_Array.LightBlueTint;
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
+    + 4 * v7) )
     {
       ++v7; /*0x6e5d67*/
     }
@@ -228,7 +227,7 @@ int TagTypeClass::GetParameter(char * a2)
     wsprintfA(Source, "%d,%s,%s", this->Coord_9C, (const char *)&this->q0A0, (const char *)(v3 + 36)); /*0x6e61b4*/
   else
     wsprintfA(Source, "%s,<none>", (const char *)&this->q0A0); /*0x6e6181*/
-    INIClass::SetString((uint8_t *)(/*0x6e6199*/     a2),     (unsigned __int8 *)&DataGlobal_842C3C,     &this->arrayIndex,     Source);
+  INIClass::SetString((uint8_t *)(/*0x6e6199*/     a2),     (unsigned __int8 *)&DataGlobal_842C3C,     &this->arrayIndex,     Source);
   return 1; /*0x6e61db*/
 
 }
@@ -246,7 +245,7 @@ AbstractTypeClass * TagTypeClass::FindOrCreate(ObjectClass * Source)
   v2 = 0; /*0x6e633d*/
   if ( g_MultiplayerCleanup <= 0 ) /*0x6e6341*/
   {
-LABEL_6:
+    LABEL_6:
     v3 = (char *)__2_YAPAXI_Z(0xA4u); /*0x6e6366*/
     if ( v3 ) /*0x6e6375*/
       return TagTypeClass::Construct(v3, Source); /*0x6e6381*/
@@ -288,7 +287,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(char *Source)
   v2 = 0; /*0x727acd*/
   if ( *(int *)FootClass_Array.unknown_short_3C8 <= 0 ) /*0x727ad1*/
   {
-  LABEL_6:
+    LABEL_6:
     v3 = (TriggerTypeClass *)operator new(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
       return ((char *)(v3))->Construct(Source); /*0x727b11*/

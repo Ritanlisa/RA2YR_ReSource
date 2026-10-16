@@ -17,7 +17,7 @@ int sub_7781B0(short a1)
   {
     MultiByteStr = (*(((unsigned char *)&(a1)) + (sizeof(a1) - 1))); /*0x7781c1*/
     v4 = a1; /*0x7781c1*/
-  char v5; // [esp+2h] [ebp-6h]
+    char v5; // [esp+2h] [ebp-6h]
     v5 = 0; /*0x7781c5*/
   }
   else

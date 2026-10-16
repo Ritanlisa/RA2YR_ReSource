@@ -32,18 +32,18 @@
 namespace gamemd {
 struct Matrix3D
 {
-    float Data[12] = {};  // data: 0x840b4c
-    unsigned char q000;  // 0x0
-    unsigned int q080;  // 0x80
-    unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float element vocab)
-    unsigned int u32_8;   // 0x8 (raw fld [esi+8])
-    unsigned int u32_10;  // 0x10
-    unsigned int u32_18;  // 0x18
-    unsigned int u32_28;  // 0x28
-public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* Constructor(float a1, float a2);  // 0x5AE6F0
-    void RotateZ(float a1);  // 0x5AF080
-    // --- gap2 auto-generated stub declarations (END) ---
+  float Data[12] = {};  // data: 0x840b4c
+  unsigned char q000;  // 0x0
+  unsigned int q080;  // 0x80
+  unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float element vocab)
+  unsigned int u32_8;   // 0x8 (raw fld [esi+8])
+  unsigned int u32_10;  // 0x10
+  unsigned int u32_18;  // 0x18
+  unsigned int u32_28;  // 0x28
+  public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+  void* Constructor(float a1, float a2);  // 0x5AE6F0
+  void RotateZ(float a1);  // 0x5AF080
+  // --- gap2 auto-generated stub declarations (END) ---
 };
 } // namespace gamemd
 
@@ -126,8 +126,8 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     v16 = 0; /*0x73c649*/
   else
     v16 = ((uint8_t)((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(((unsigned int)(ProgressTimer)*)((unsigned int)(a1)+ 904), &v63) >> 12) + 1) >> 1) /*0x73c644*/
-         + 1)
-        & 7;
+          + 1)
+  & 7;
   v17 = *((unsigned int *)a1 + 432); /*0x73c64b*/
   if ( v17 >= 0 ) /*0x73c653*/
   {
@@ -142,7 +142,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   {
     v18 = *((unsigned int *)a1 + 433); /*0x73c702*/
     v22 = v16 * *(char *)(v18 + 3676) + *((unsigned int *)a1 + 334) % *(char *)(v18 + 3676); /*0x73c71b*/
-  LABEL_20:
+    LABEL_20:
     v16 = *(unsigned int *)(v18 + 3628) + v22; /*0x73c71d*/
     goto LABEL_21; /*0x73c723*/
   }
@@ -220,14 +220,14 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v46 = (float)(*(unsigned int *)(*((unsigned int *)a1 + 433) + 1824) / 8); /*0x73c8af*/
       (&v73[0].Transform_field_00)->Translate(v46); /*0x73c8b2*/
       v57 = (double)(int)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(((unsigned int)(ProgressTimer)*)((unsigned int)(a1)+ 928), &v59) >> 10) + 1) >> 1) /*0x73c8ee*/
-                         & 0x1F)
-                        - 8)
-          * -0.1963495408493621;
+      & 0x1F)
+      - 8)
+      * -0.1963495408493621;
       v47 = v57 /*0x73c91f*/
-          - (double)(int)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(((unsigned int)(ProgressTimer)*)((unsigned int)(a1)+ 904), &v60) >> 10) + 1) >> 1)
-                         & 0x1F)
-                        - 8)
-          * -0.1963495408493621;
+      - (double)(int)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(((unsigned int)(ProgressTimer)*)((unsigned int)(a1)+ 904), &v60) >> 10) + 1) >> 1)
+      & 0x1F)
+      - 8)
+      * -0.1963495408493621;
       (&v73[0].Transform_field_00)->Rotate(v47); /*0x73c922*/
       Transform_field_00 = (int)(v73[3].Transform_field_00); /*0x73c967*/
       memcpy(v74, v73, sizeof(v74)); /*0x73c96d*/
@@ -245,7 +245,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         (&v73[0].Transform_field_00)->Translate(v48); /*0x73c9d9*/
       }
       v56 = (float)(*(unsigned int *)((*(int (**)(Class_7F5C70 *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 12) /*0x73ca08*/
-                  / -8);
+      / -8);
       v59 = *(unsigned int *)((*(int (**)(Class_7F5C70 *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 4) / -8; /*0x73ca30*/
       *(float *)&v70[2] = v56; /*0x73ca3c*/
       v70[1] = 0; /*0x73ca40*/
@@ -260,7 +260,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v30 = *(unsigned int *)a1; /*0x73ca95*/
       memcpy(&v75, (unsigned int)(a1)+ 880, sizeof(v75)); /*0x73caaa*/
       if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(Class_7F5C70 *, unsigned int))(v30 + 1016))(a1, 0) + 160) /*0x73cabe*/
-                    + 670) )
+        + 670) )
       {
         v31 = (unsigned int *)((uint8_t)((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(&v75, &v60) >> 7) + 1) >> 1)); /*0x73cae1*/
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
@@ -370,7 +370,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     v41 = (*(int (**)(Class_7F5C70 *, int))(*(unsigned int *)a1 + 1124))(a1, v33); /*0x73cd86*/
     v42 = v63; /*0x73cd93*/
     (*(void (**)(Class_7F5C70 *, AudioStream *, int, int, int, int, int, int, int, int))(*(unsigned int *)a1 /*0x73cddb*/
-                                                                                                  + 1372))(
+    + 1372))(
       a1,
       v63,
       a2,

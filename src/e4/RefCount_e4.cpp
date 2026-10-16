@@ -12,8 +12,7 @@ namespace gamemd {  // G42.18 ns repair
 int32_t RefCount::Decrement(void *a1)
 {
 
-  int result; // eax
-  result = this->u32_C - 1; /*0x401f93*/
+  int result = this->u32_C - 1; // eax /*0x401f93*/
   this->u32_C = result; /*0x401f96*/
   if ( result < 0 ) /*0x401f99*/
     this->u32_C = 0; /*0x401f9b*/
@@ -32,7 +31,7 @@ int RefCount::Increment(int a2)
   v3 = this->u32_8; /*0x49fa09*/
   if ( a2 < v3 ) /*0x49fa0e*/
   {
-LABEL_5:
+    LABEL_5:
     ++*(unsigned int *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
     RefCount_field_04 = (int)(this->RefCount_field_04); /*0x49fa4d*/
     ++this->q010; /*0x49fa51*/

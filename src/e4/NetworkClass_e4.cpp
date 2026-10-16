@@ -40,7 +40,7 @@ int NetworkClass::ExecutePlanningModeCmd()
     {
       byte_AC4C08 = 1; /*0x639fe8*/
       StringCSF = GetStringCSF((char *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
-  LABEL_10:
+      LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
       PlayVocClass(dword_8871E0->AmmoCrateDamage, 0x2000, 1.0, 0); /*0x63a09e*/
     }
@@ -86,13 +86,13 @@ AbstractClass * * NetworkClass::RecordEvent()
   {
     if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ffe5f*/
     {
-  char *v3; // edi
+      char *v3; // edi
       v3 = (char *)&byte_A802D4 + 111 * dword_A802D0; /*0x6ffe75*/
       memcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
-  int16_t v6; // [esp+7Ch] [ebp-4h]
+      int16_t v6; // [esp+7Ch] [ebp-4h]
       *(unsigned short *)v3 = v6; /*0x6ffe7e*/
-  char v7; // [esp+7Eh] [ebp-2h]
+      char v7; // [esp+7Eh] [ebp-2h]
       v3[2] = v7; /*0x6ffe80*/
       dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/

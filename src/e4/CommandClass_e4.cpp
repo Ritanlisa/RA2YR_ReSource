@@ -47,20 +47,20 @@ int CommandClass::BuildBar()
   v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
-  ShapeButtonClass *v4; // esi
+    ShapeButtonClass *v4; // esi
     v4 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v3); /*0x6d124e*/
     if ( v4 ) /*0x6d1256*/
     {
       Struct::Zero25(&v37); /*0x6d125c*/
-  int v5; // edx
+      int v5; // edx
       v5 = *(unsigned int *)v4[1].__pad_0; /*0x6d1264*/
-  int v6; // eax
+      int v6; // eax
       v6 = *(unsigned int *)v4[3].__pad_0; /*0x6d1267*/
       ShapeButtonClass_field_0x04 = v4[1].ShapeButtonClass_field_0x04; /*0x6d126a*/
-  int v7; // ecx
+      int v7; // ecx
       v7 = *(unsigned int *)v4[2].__pad_0; /*0x6d126e*/
       v38 = v5; /*0x6d1271*/
-  int ShapeButtonClass_field_0x08; // edx
+      int ShapeButtonClass_field_0x08; // edx
       ShapeButtonClass_field_0x08 = v4[1].ShapeButtonClass_field_0x08; /*0x6d1275*/
       v41 = v7; /*0x6d1278*/
       v37.Struct_field_00 = v6; /*0x6d1283*/
@@ -74,20 +74,20 @@ int CommandClass::BuildBar()
   v9 = g_ObjectTrackingPool[dword_B0CB3C]; /*0x6d12ad*/
   if ( v9 <= 0x18 ) /*0x6d12b6*/
   {
-  ShapeButtonClass *v10; // esi
+    ShapeButtonClass *v10; // esi
     v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v9); /*0x6d12c3*/
     if ( v10 ) /*0x6d12cb*/
     {
       Struct::Zero25(&v37); /*0x6d12d1*/
-  int v11; // edx
+      int v11; // edx
       v11 = v10[1].ShapeButtonClass_field_0x04; /*0x6d12d9*/
-  int v12; // eax
+      int v12; // eax
       v12 = *(unsigned int *)v10[3].__pad_0; /*0x6d12dc*/
       v38 = *(unsigned int *)v10[1].__pad_0; /*0x6d12df*/
-  int v13; // ecx
+      int v13; // ecx
       v13 = v10[1].ShapeButtonClass_field_0x08; /*0x6d12e3*/
       ShapeButtonClass_field_0x04 = v11; /*0x6d12e6*/
-  int v14; // edx
+      int v14; // edx
       v14 = *(unsigned int *)v10[2].__pad_0; /*0x6d12ea*/
       v40 = v13; /*0x6d12ed*/
       v37.Struct_field_00 = v12; /*0x6d12f8*/
@@ -101,20 +101,20 @@ int CommandClass::BuildBar()
   v15 = g_ObjectTrackingPool[dword_B0C1B8]; /*0x6d1323*/
   if ( v15 <= 0x18 ) /*0x6d132c*/
   {
-  ShapeButtonClass *v16; // esi
+    ShapeButtonClass *v16; // esi
     v16 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v15); /*0x6d1339*/
     if ( v16 ) /*0x6d1341*/
     {
       Struct::Zero25(&v37); /*0x6d1347*/
-  int v17; // edx
+      int v17; // edx
       v17 = *(unsigned int *)v16[1].__pad_0; /*0x6d134f*/
-  int v18; // eax
+      int v18; // eax
       v18 = *(unsigned int *)v16[3].__pad_0; /*0x6d1352*/
       ShapeButtonClass_field_0x04 = v16[1].ShapeButtonClass_field_0x04; /*0x6d1355*/
-  int v19; // ecx
+      int v19; // ecx
       v19 = *(unsigned int *)v16[2].__pad_0; /*0x6d1359*/
       v38 = v17; /*0x6d135c*/
-  int v20; // edx
+      int v20; // edx
       v20 = v16[1].ShapeButtonClass_field_0x08; /*0x6d1360*/
       v41 = v19; /*0x6d1363*/
       v37.Struct_field_00 = v18; /*0x6d136e*/
@@ -128,20 +128,20 @@ int CommandClass::BuildBar()
   v21 = g_ObjectTrackingPool[dword_B0CB20]; /*0x6d1398*/
   if ( v21 <= 0x18 ) /*0x6d13a1*/
   {
-  ShapeButtonClass *v22; // esi
+    ShapeButtonClass *v22; // esi
     v22 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v21); /*0x6d13ae*/
     if ( v22 ) /*0x6d13b6*/
     {
       Struct::Zero25(&v37); /*0x6d13bc*/
-  int v23; // edx
+      int v23; // edx
       v23 = v22[1].ShapeButtonClass_field_0x04; /*0x6d13c4*/
-  int v24; // eax
+      int v24; // eax
       v24 = *(unsigned int *)v22[3].__pad_0; /*0x6d13c7*/
       v38 = *(unsigned int *)v22[1].__pad_0; /*0x6d13ca*/
-  int v25; // ecx
+      int v25; // ecx
       v25 = v22[1].ShapeButtonClass_field_0x08; /*0x6d13ce*/
       ShapeButtonClass_field_0x04 = v23; /*0x6d13d1*/
-  int v26; // edx
+      int v26; // edx
       v26 = *(unsigned int *)v22[2].__pad_0; /*0x6d13d5*/
       v40 = v25; /*0x6d13d8*/
       v37.Struct_field_00 = v24; /*0x6d13e3*/
@@ -241,7 +241,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       result = v4->vtable3; /*0x72465e*/
       if ( v4[1] + 1 <= result ) /*0x724664*/
       {
-  LABEL_19:
+        LABEL_19:
         *(unsigned int *)(*v4 + 8 * v4[1]) = *v6; /*0x7246f4*/
         *(unsigned int *)(*v4 + 8 * v4[1] + 4) = (unsigned int)(v6); /*0x724704*/
         result = v4[1] + 1; /*0x72470b*/
@@ -278,7 +278,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
         v4->uniqueId = 0; /*0x7246ed*/
         goto LABEL_19; /*0x7246ed*/
       }
-  LABEL_20:
+      LABEL_20:
       (*((unsigned char *)&(result))) = 1; /*0x724713*/
       return result; /*0x724719*/
     }

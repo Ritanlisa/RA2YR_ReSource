@@ -64,16 +64,16 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   int i; // edi
   for ( i = 0; i < result; ++i ) /*0x65ab37*/
   {
-  int v5; // eax
+    int v5; // eax
     v5 = *(unsigned int *)(this->radioLinks[1] + 4 * i); /*0x65ab3f*/
     if ( v5 ) /*0x65ab44*/
     {
-  int v6; // eax
+      int v6; // eax
       v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
       Power::TimerProcess(v6); /*0x65ab53*/
-  int v7; // ecx
+      int v7; // ecx
       v7 = *(unsigned int *)(this->radioLinks[1] + 4 * i); /*0x65ab5e*/
-  int v8; // eax
+      int v8; // eax
       v8 = (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7); /*0x65ab63*/
       Power::TimerProcess(v8); /*0x65ab69*/
     }
@@ -119,7 +119,7 @@ int RadioClass::LoadState(int aP1, int aP2)
       v8 = aP2; /*0x65abe3*/
       if ( aP2 <= 0 ) /*0x65abe9*/
       {
-LABEL_8:
+        LABEL_8:
         v9 = 0; /*0x65ac14*/
         if ( v8 > 0 ) /*0x65ac18*/
         {
@@ -158,10 +158,8 @@ int RadioClass::FindLinkIndex(int a2)
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
-  int v2; // edx
-  v2 = this->u32_E8; /*0x65ad99*/
-  int result; // eax
-  result = 0; /*0x65ad9f*/
+  int v2 = this->u32_E8; // edx /*0x65ad99*/
+  int result = 0; // eax /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
   unsigned int *i; // ecx
@@ -179,10 +177,8 @@ namespace gamemd {
 int RadioClass::HasFreeLink()
 {
 
-  int v1; // edx
-  v1 = this->u32_E8; /*0x65adc0*/
-  int v2; // eax
-  v2 = 0; /*0x65adc6*/
+  int v1 = this->u32_E8; // edx /*0x65adc0*/
+  int v2 = 0; // eax /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
   unsigned int *i; // ecx
@@ -205,8 +201,7 @@ void RadioClass::SetLinkCount(int a2)
   if ( a2 > v3 ) /*0x65ae71*/
   {
     (*(void (**)(int *, int, unsigned int))(this-((unsigned int *)(>radioLinks))[0] + 8))(this->radioLinks, a2, 0); /*0x65ae82*/
-  int v4; // eax
-    v4 = v3; /*0x65ae87*/
+    int v4 = v3; // eax /*0x65ae87*/
     do /*0x65ae9c*/
     {
       ++v4; /*0x65ae91*/
@@ -229,11 +224,11 @@ int RadioClass::ExecuteAction(int aP1, char aP2)
   int i; // ecx
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {
-  int v6; // eax
+    int v6; // eax
     v6 = this->radioLinks[1]; /*0x65aae0*/
-  int v7; // edx
+    int v7; // edx
     v7 = *(unsigned int *)(v6 + 4 * i); /*0x65aae6*/
-  unsigned int *v8; // eax
+    unsigned int *v8; // eax
     v8 = (unsigned int *)(v6 + 4 * i); /*0x65aae9*/
     if ( v7 == aP1 ) /*0x65aaee*/
     {
@@ -257,14 +252,13 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
   result = AbstractClass::SaveLoad_Prefix((int *)a0, aP1, aP2); /*0x65ac52*/
   if ( result >= 0 ) /*0x65ac59*/
   {
-  int v4; // edx
+    int v4; // edx
     v4 = (int)(*aP1); /*0x65ac61*/
     aP2 = a0->radioLinks[2]; /*0x65ac6d*/
     result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))(aP1, &aP2, 4, 0); /*0x65ac71*/
     if ( result >= 0 ) /*0x65ac76*/
     {
-  int v5; // ebx
-      v5 = 0; /*0x65ac7c*/
+      int v5 = 0; // ebx /*0x65ac7c*/
       if ( aP2 <= 0 ) /*0x65ac80*/
       {
         return 0; /*0x65aca3*/

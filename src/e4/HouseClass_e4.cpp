@@ -136,7 +136,7 @@ int HouseClass::ResetObjectOrders(char a1, int a2)
         if ( result->u8_CD1 ) /*0x4adfcb*/
           goto LABEL_15; /*0x4adfd3*/
       }
-  LABEL_16:
+      LABEL_16:
       if ( ++v3 >= v2 ) /*0x4adfe2*/
         return result; /*0x4adfe2*/
     }
@@ -147,9 +147,9 @@ int HouseClass::ResetObjectOrders(char a1, int a2)
     result = (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 132))(v5); /*0x4adf61*/
     if ( !result->u8_CD1 ) /*0x4adf67*/
       goto LABEL_16; /*0x4adf6f*/
-  LABEL_15:
+    LABEL_15:
     result = (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 1048))(v5); /*0x4adfd5*/
-    goto LABEL_16; /*0x4adfd9*/
+      goto LABEL_16; /*0x4adfd9*/
   }
   return result; /*0x4adfea*/
 }
@@ -894,9 +894,9 @@ int HouseClass::IsAlliedWith(void *a1, void *a2)
   if ( relatedTagsCount == -1 ) /*0x4f9a75*/
   LABEL_8:
     (*((unsigned char *)&(result))) = 0; /*0x4f9a8a*/
-  else
-    (*((unsigned char *)&(result))) = ((1 << relatedTagsCount) & result->HouseClass_field_timer_D) != 0; /*0x4f9a84*/
-  return result; /*0x4f9a60*/
+      else
+      (*((unsigned char *)&(result))) = ((1 << relatedTagsCount) & result->HouseClass_field_timer_D) != 0; /*0x4f9a84*/
+    return result; /*0x4f9a60*/
 }
 }
 // 0x4FBE40
@@ -947,8 +947,8 @@ int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
       this->dword_A8EF98 = dword_A8EF98; /*0x4fbf41*/
     }
   }
-  (*((unsigned char *)&(result))) = v4; /*0x4fbf44*/
-  return result; /*0x4fbf43*/
+    (*((unsigned char *)&(result))) = v4; /*0x4fbf44*/
+    return result; /*0x4fbf43*/
 }
 }
 // 0x4FC790
@@ -979,11 +979,11 @@ int HouseClass::DestroyAllBuildings()
     }
     else
     {
-      v8 = v5->health; /*0x4fc7d4*/
-      v6 = v5->temporalTargetingMe; /*0x4fc7d8*/
-      if ( v6 ) /*0x4fc7e0*/
-        TriggerClass::UnlinkTags(v6); /*0x4fc7e2*/
-      (*((unsigned char *)&(PriorityTarget))) = (*(int (__thiscall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v5->idleActionTimer)( /*0x4fc806*/
+                                 v8 = v5->health; /*0x4fc7d4*/
+                                 v6 = v5->temporalTargetingMe; /*0x4fc7d8*/
+                                 if ( v6 ) /*0x4fc7e0*/
+                                   TriggerClass::UnlinkTags(v6); /*0x4fc7e2*/
+                                 (*((unsigned char *)&(PriorityTarget))) = (*(int (__thiscall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v5->idleActionTimer)( /*0x4fc806*/
                                  v5,
                                  &v8,
                                  0,
@@ -992,7 +992,7 @@ int HouseClass::DestroyAllBuildings()
                                  1,
                                  1,
                                  0);
-      v3 = v5; /*0x4fc80c*/
+                                 v3 = v5; /*0x4fc80c*/
     }
   }
   return (char)PriorityTarget; /*0x4fc81a*/
@@ -1026,11 +1026,11 @@ int HouseClass::DestroyAllNonBuildingsNonNaval()
     }
     else
     {
-      v8 = v5->health; /*0x4fc87c*/
-      v6 = v5->temporalTargetingMe; /*0x4fc880*/
-      if ( v6 ) /*0x4fc888*/
-        TriggerClass::UnlinkTags(v6); /*0x4fc88a*/
-      (*((unsigned char *)&(PriorityTarget))) = (*(int (__thiscall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v5->idleActionTimer)( /*0x4fc8ae*/
+                                 v8 = v5->health; /*0x4fc87c*/
+                                 v6 = v5->temporalTargetingMe; /*0x4fc880*/
+                                 if ( v6 ) /*0x4fc888*/
+                                   TriggerClass::UnlinkTags(v6); /*0x4fc88a*/
+                                 (*((unsigned char *)&(PriorityTarget))) = (*(int (__thiscall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v5->idleActionTimer)( /*0x4fc8ae*/
                                  v5,
                                  &v8,
                                  0,
@@ -1039,7 +1039,7 @@ int HouseClass::DestroyAllNonBuildingsNonNaval()
                                  1,
                                  1,
                                  0);
-      v3 = v5; /*0x4fc8b4*/
+                                 v3 = v5; /*0x4fc8b4*/
     }
   }
   return PriorityTarget; /*0x4fc8c6*/
@@ -1073,11 +1073,11 @@ int HouseClass::DestroyAllNonBuildingsNaval()
     }
     else
     {
-      v8 = v5->health; /*0x4fc92c*/
-      v6 = v5->temporalTargetingMe; /*0x4fc930*/
-      if ( v6 ) /*0x4fc938*/
-        TriggerClass::UnlinkTags(v6); /*0x4fc93a*/
-      (*((unsigned char *)&(PriorityTarget))) = (*(int (__thiscall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v5->idleActionTimer)( /*0x4fc95e*/
+                                 v8 = v5->health; /*0x4fc92c*/
+                                 v6 = v5->temporalTargetingMe; /*0x4fc930*/
+                                 if ( v6 ) /*0x4fc938*/
+                                   TriggerClass::UnlinkTags(v6); /*0x4fc93a*/
+                                 (*((unsigned char *)&(PriorityTarget))) = (*(int (__thiscall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v5->idleActionTimer)( /*0x4fc95e*/
                                  v5,
                                  &v8,
                                  0,
@@ -1086,7 +1086,7 @@ int HouseClass::DestroyAllNonBuildingsNaval()
                                  1,
                                  1,
                                  0);
-      v3 = v5; /*0x4fc964*/
+                                 v3 = v5; /*0x4fc964*/
     }
   }
   return PriorityTarget; /*0x4fc976*/
@@ -1408,7 +1408,7 @@ int HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * a
         {
   LABEL_24:
           (*((unsigned char *)&(result))) = 0; /*0x505475*/
-          return result; /*0x50547c*/
+    return result; /*0x50547c*/
         }
         while ( 1 ) /*0x505437*/
         {
@@ -1416,10 +1416,10 @@ int HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * a
           v9 = 0; /*0x50543a*/
           if ( aP2 > 0 ) /*0x50543e*/
             break; /*0x50543e*/
-  LABEL_20:
+          LABEL_20:
           result = HarvesterUnit[4]; /*0x50544f*/
-          if ( ++v7 >= result ) /*0x505455*/
-            goto LABEL_24; /*0x505455*/
+            if ( ++v7 >= result ) /*0x505455*/
+              goto LABEL_24; /*0x505455*/
         }
         v10 = aP1->vtable2; /*0x505440*/
         while ( *v10 != v8 ) /*0x505445*/
@@ -1783,11 +1783,11 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
         {
 LABEL_34:
           v47 = v127++; /*0x507345*/
-          *((unsigned int *)v126.Items + v47) = *(unsigned int *)(v45 + 1312); /*0x507355*/
+  *((unsigned int *)v126.Items + v47) = *(unsigned int *)(v45 + 1312); /*0x507355*/
         }
         Capacity = v126.Capacity; /*0x507358*/
       }
-LABEL_36:
+      LABEL_36:
       ++v43; /*0x50735c*/
     }
     while ( v43 < v42 ); /*0x5072e5*/
@@ -1858,23 +1858,23 @@ LABEL_36:
   {
 LABEL_43:
     __asm /*0x50745c*/
-    {
+{
       fld [esp+164h+var_148]
       fcomp [esp+164h+var_150]
       fnstsw ax
-    }
-    if ( (_AX & 0x4100) != 0 ) /*0x507469*/
-    {
+}
+  if ( (_AX & 0x4100) != 0 ) /*0x507469*/
+{
       v51 = &v137; /*0x507487*/
       _EBP->waypointPath = v118; /*0x50748e*/
       v52 = 2; /*0x507494*/
-    }
-    else
-    {
+}
+  else
+{
       v51 = &v147; /*0x50746f*/
       _EBP->waypointPath = v123; /*0x507476*/
       v52 = 1; /*0x50747c*/
-    }
+}
   }
   else
   {
@@ -2044,9 +2044,9 @@ LABEL_87:
         {
 LABEL_107:
           *((unsigned int *)Base + 2 * NumOfElements) = v76; /*0x5078dc*/
-          *((float *)Base + 2 * NumOfElements + 1) = *(float *)&v110; /*0x5078eb*/
-          LOBYTE(v116) = 0; /*0x5078f4*/
-          ++NumOfElements; /*0x5078f9*/
+  *((float *)Base + 2 * NumOfElements + 1) = *(float *)&v110; /*0x5078eb*/
+  LOBYTE(v116) = 0; /*0x5078f4*/
+  ++NumOfElements; /*0x5078f9*/
         }
         ++v73; /*0x507901*/
       }
@@ -2098,14 +2098,14 @@ LABEL_107:
   }
   else
   {
-    v87 = HouseClass::ScanBuildLocation( /*0x507a20*/
+            v87 = HouseClass::ScanBuildLocation( /*0x507a20*/
             (HouseClass *)_EBP,
             v125,
             v72,
             (int (__fastcall *)(int, int *, int, int))globalHelper_005FD0,
             2 * v124);
-    v82 = a4; /*0x507a27*/
-    v106 = *v87; /*0x507a2e*/
+            v82 = a4; /*0x507a27*/
+            v106 = *v87; /*0x507a2e*/
   }
   if ( v106 ) /*0x507a39*/
   {
@@ -2174,48 +2174,48 @@ LABEL_107:
   {
     HIBYTE(v108) = 0; /*0x507a42*/
   }
-LABEL_56:
+  LABEL_56:
   __3_YAXPAX_Z(Block); /*0x507520*/
-  __3_YAXPAX_Z(v123); /*0x50752f*/
-  __3_YAXPAX_Z(v118); /*0x507539*/
-  v56 = v138; /*0x50753e*/
-  v57 = v138 == 0; /*0x50754d*/
-  _EBP->waypointPath = 0; /*0x50754f*/
-  v137 = (int)&vt_VectorClass; /*0x507555*/
-  if ( !v57 && BYTE1(v140) ) /*0x507567*/
+    __3_YAXPAX_Z(v123); /*0x50752f*/
+    __3_YAXPAX_Z(v118); /*0x507539*/
+    v56 = v138; /*0x50753e*/
+    v57 = v138 == 0; /*0x50754d*/
+    _EBP->waypointPath = 0; /*0x50754f*/
+    v137 = (int)&vt_VectorClass; /*0x507555*/
+    if ( !v57 && BYTE1(v140) ) /*0x507567*/
   {
     __3_YAXPAX_Z(v56); /*0x50756a*/
     v138 = 0; /*0x507572*/
   }
-  BYTE1(v140) = 0; /*0x507580*/
-  v139 = 0; /*0x50758a*/
-  v147 = (int)&vt_VectorClass; /*0x507591*/
-  if ( v148 && BYTE1(v150) ) /*0x5075a3*/
+    BYTE1(v140) = 0; /*0x507580*/
+    v139 = 0; /*0x50758a*/
+    v147 = (int)&vt_VectorClass; /*0x507591*/
+    if ( v148 && BYTE1(v150) ) /*0x5075a3*/
   {
     __3_YAXPAX_Z(v148); /*0x5075a6*/
     v148 = 0; /*0x5075ae*/
   }
-  BYTE1(v150) = 0; /*0x5075bc*/
-  v149 = 0; /*0x5075c6*/
-  v142 = (int)&vt_VectorClass; /*0x5075cd*/
-  if ( v143 && BYTE1(v145) ) /*0x5075df*/
+    BYTE1(v150) = 0; /*0x5075bc*/
+    v149 = 0; /*0x5075c6*/
+    v142 = (int)&vt_VectorClass; /*0x5075cd*/
+    if ( v143 && BYTE1(v145) ) /*0x5075df*/
   {
     __3_YAXPAX_Z(v143); /*0x5075e2*/
     v143 = 0; /*0x5075ea*/
   }
-  BYTE1(v145) = 0; /*0x5075f5*/
-  v144 = 0; /*0x5075ff*/
-  /* X11: vtable install elided (implicit via VectorClass virtuals 0x507606) */
+    BYTE1(v145) = 0; /*0x5075f5*/
+    v144 = 0; /*0x5075ff*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x507606) */
   if ( v126.Items && v126.IsAllocated ) /*0x507616*/
   {
     __3_YAXPAX_Z(v126.Items); /*0x507619*/
     v126.Items = 0; /*0x507621*/
   }
-  v126.IsAllocated = 0; /*0x507627*/
-  v126.Capacity = 0; /*0x50762c*/
-  v58 = &a3; /*0x507630*/
-  v59 = 4; /*0x507637*/
-  do /*0x507668*/
+    v126.IsAllocated = 0; /*0x507627*/
+    v126.Capacity = 0; /*0x50762c*/
+    v58 = &a3; /*0x507630*/
+    v59 = 4; /*0x507637*/
+    do /*0x507668*/
   {
     v60 = (void *)*(v58 - 6); /*0x507641*/
     v58 -= 6; /*0x507644*/
@@ -2229,8 +2229,8 @@ LABEL_56:
     *((unsigned char *)v58 + 9) = 0; /*0x507661*/
     v58[1] = 0; /*0x507665*/
   }
-  while ( v59 ); /*0x507668*/
-  return HIBYTE(v108); /*0x50766e*/
+    while ( v59 ); /*0x507668*/
+    return HIBYTE(v108); /*0x50766e*/
 
 }
 }
@@ -2282,16 +2282,16 @@ int HouseClass::UpdatePower(double a2)
   if ( (_AX & 0x100) != 0 ) /*0x508c6c*/
   LABEL_5:
     v24 = 1; /*0x508c6e*/
-  else
+      else
   LABEL_6:
     v24 = 0; /*0x508c75*/
-  v4->u32_5778 = 0; /*0x508c79*/
-  v4->powerOutput = 0; /*0x508c7f*/
-  v4->powerDrain = 0; /*0x508c85*/
-  v8 = 0; /*0x508c8f*/
-  v18 = 0; /*0x508c93*/
-  v22 = v4->bunkersCount; /*0x508c97*/
-  if ( v22 > 0 ) /*0x508c9b*/
+      v4->u32_5778 = 0; /*0x508c79*/
+    v4->powerOutput = 0; /*0x508c7f*/
+    v4->powerDrain = 0; /*0x508c85*/
+    v8 = 0; /*0x508c8f*/
+    v18 = 0; /*0x508c93*/
+    v22 = v4->bunkersCount; /*0x508c97*/
+    if ( v22 > 0 ) /*0x508c9b*/
   {
     v16 = v3; /*0x508ca1*/
     do /*0x508ca5*/
@@ -2308,32 +2308,32 @@ int HouseClass::UpdatePower(double a2)
         {
   LABEL_19:
           v4->powerOutput += BuildingClass::GetPowerOutput(v16, a2); /*0x508cf2*/
-          v4->powerDrain += BuildingClass::GetPowerDrain(v9); /*0x508d18*/
-          if ( (uint8_t)ObjectClass::HasLocation((ObjectClass *)v9) /*0x508d30*/
+    v4->powerDrain += BuildingClass::GetPowerDrain(v9); /*0x508d18*/
+    if ( (uint8_t)ObjectClass::HasLocation((ObjectClass *)v9) /*0x508d30*/
             && BuildingClass::GetPowerOutput(v16, a2) > 0 )
-          {
+  {
             v18 = 1; /*0x508d32*/
-          }
-          goto LABEL_22; /*0x508d32*/
+  }
+    goto LABEL_22; /*0x508d32*/
         }
         if ( v9->isDiscoveredByCurrentPlayer || *(unsigned int *)&dword_A8B238 ) /*0x508cf0*/
           goto LABEL_19; /*0x508cf0*/
       }
-  LABEL_22:
+      LABEL_22:
       ++v8; /*0x508d37*/
     }
     while ( v8 < v22 ); /*0x508ca5*/
   }
-  v4->u32_577B = v18; /*0x508d45*/
-  v10 = v4->powerBlackoutTimer; /*0x508d50*/
-  v11 = v4->u32_2AC; /*0x508d56*/
-  if ( v10 != -1 ) /*0x508d5f*/
+    v4->u32_577B = v18; /*0x508d45*/
+    v10 = v4->powerBlackoutTimer; /*0x508d50*/
+    v11 = v4->u32_2AC; /*0x508d56*/
+    if ( v10 != -1 ) /*0x508d5f*/
   {
     if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v10 >= v11 ) /*0x508d6b*/
       goto LABEL_27; /*0x508d6b*/
     v11 -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v10; /*0x508d6d*/
   }
-  if ( v11 ) /*0x508d71*/
+    if ( v11 ) /*0x508d71*/
   {
   LABEL_28:
     v4->powerOutput = 0; /*0x508d79*/
@@ -2344,34 +2344,34 @@ int HouseClass::UpdatePower(double a2)
     goto LABEL_28; /*0x508d77*/
   LABEL_29:
   nullsub_5(v17); /*0x508d7f*/
-  HouseClass::UpdateTeamProductionSpeed((HouseClass *)v4); /*0x508d88*/
-  v12 = v4->powerOutput; /*0x508d8d*/
-  v13 = v4->powerDrain; /*0x508d93*/
-  v20 = v12; /*0x508d9b*/
-  v23 = v13; /*0x508d9f*/
-  if ( v12 >= v13 ) /*0x508da3*/
-    goto LABEL_34; /*0x508da3*/
-  if ( !v13 ) /*0x508da7*/
-    goto LABEL_34; /*0x508da7*/
-  if ( !v12 ) /*0x508dab*/
-    goto LABEL_33; /*0x508dab*/
-  __asm /*0x508dad*/
+    HouseClass::UpdateTeamProductionSpeed((HouseClass *)v4); /*0x508d88*/
+    v12 = v4->powerOutput; /*0x508d8d*/
+    v13 = v4->powerDrain; /*0x508d93*/
+    v20 = v12; /*0x508d9b*/
+    v23 = v13; /*0x508d9f*/
+    if ( v12 >= v13 ) /*0x508da3*/
+      goto LABEL_34; /*0x508da3*/
+    if ( !v13 ) /*0x508da7*/
+      goto LABEL_34; /*0x508da7*/
+    if ( !v12 ) /*0x508dab*/
+      goto LABEL_33; /*0x508dab*/
+    __asm /*0x508dad*/
   {
     fild [esp+18h+var_C]
     fidiv [esp+18h+var_8]
     fcomp ds:dbl_7E1718
     fnstsw ax
   }
-  if ( (_AX & 0x100) != 0 ) /*0x508dc0*/
+    if ( (_AX & 0x100) != 0 ) /*0x508dc0*/
   LABEL_33:
     result = 1; /*0x508dc2*/
-  else
+      else
   LABEL_34:
     result = 0; /*0x508dc9*/
-  if ( v24 != result ) /*0x508dd7*/
-    result = SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)v4); /*0x508ddb*/
-  v4->u32_5779 = 1; /*0x508de0*/
-  return result; /*0x508de7*/
+      if ( v24 != result ) /*0x508dd7*/
+      result = SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)v4); /*0x508ddb*/
+    v4->u32_5779 = 1; /*0x508de0*/
+    return result; /*0x508de7*/
 }
 }
 // 0x508DF0
@@ -2406,16 +2406,16 @@ void * HouseClass::CanTogglePower()
     {
   LABEL_30:
       (*((unsigned char *)&(result))) = HouseClass::updateAlliedStatus((HouseClass *)&dword_87F7E8); /*0x508f2f*/
-      if ( (unsigned char)result != v10 ) /*0x508f43*/
-        HouseClass::SetRadarVisibility((int)&dword_87F7E8, v10); /*0x508f4f*/
-      return result; /*0x508f4f*/
+    if ( (unsigned char)result != v10 ) /*0x508f43*/
+      HouseClass::SetRadarVisibility((int)&dword_87F7E8, v10); /*0x508f4f*/
+    return result; /*0x508f4f*/
     }
-  LABEL_6:
+    LABEL_6:
     if ( (*((unsigned char *)&(dword_A8B230[374].vfptr3))) ) /*0x508e3c*/
       goto LABEL_29; /*0x508e3c*/
-    powerOutput = this->powerOutput; /*0x508e4a*/
-    powerDrain = this->powerDrain; /*0x508e50*/
-    if ( powerOutput >= powerDrain /*0x508e81*/
+      powerOutput = this->powerOutput; /*0x508e4a*/
+      powerDrain = this->powerDrain; /*0x508e50*/
+      if ( powerOutput >= powerDrain /*0x508e81*/
       || !powerDrain
       || powerOutput && (double)this->powerOutput / (double)this->powerDrain >= 1.0 )
     {
@@ -2426,8 +2426,8 @@ void * HouseClass::CanTogglePower()
         absorbersCount = (unsigned int *)this->absorbersCount; /*0x508e94*/
         while ( 1 ) /*0x508e9d*/
         {
-          v9 = *absorbersCount; /*0x508e9d*/
-          if ( *absorbersCount /*0x508f06*/
+            v9 = *absorbersCount; /*0x508e9d*/
+            if ( *absorbersCount /*0x508f06*/
             && *(unsigned char *)(v9 + 1632)
             && *(unsigned char *)(*(unsigned int *)(v9 + 1312) + 5796)
             && !*(unsigned char *)(v9 + 129)
@@ -2437,13 +2437,13 @@ void * HouseClass::CanTogglePower()
              || *(unsigned int *)&dword_A8B238)
             && *(unsigned int *)(v9 + 172) != 19
             && *(unsigned int *)(v9 + 180) != 19 )
-          {
-            break; /*0x508f06*/
-          }
-          ++v7; /*0x508f08*/
-          ++absorbersCount; /*0x508f09*/
-          if ( v7 >= bunkersCount ) /*0x508f0e*/
-            goto LABEL_30; /*0x508f0e*/
+            {
+              break; /*0x508f06*/
+            }
+            ++v7; /*0x508f08*/
+            ++absorbersCount; /*0x508f09*/
+            if ( v7 >= bunkersCount ) /*0x508f0e*/
+              goto LABEL_30; /*0x508f0e*/
         }
         if ( !*(unsigned int *)(v9 + 1284) /*0x508f20*/
           && !(*(uint8_t (__thiscall **)(unsigned int))(*(unsigned int *)v9 + 468))(*absorbersCount) )
@@ -2453,7 +2453,7 @@ void * HouseClass::CanTogglePower()
         }
       }
     }
-    goto LABEL_30; /*0x508f2a*/
+      goto LABEL_30; /*0x508f2a*/
   }
   return result; /*0x508f54*/
 }
@@ -2491,14 +2491,14 @@ CellStruct * * HouseClass::UpdateAITryFireSW(void *a1)
           case 0:
             v12 = *(unsigned int *)(a1->supersCount + 4 * i); /*0x509968*/
             if ( a1->enemyHouseIndex != -1 )
-            {
+          {
               v5 = (*((unsigned short *)&(a1->preferredTargetCell[0]))) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509980*/
               v11 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509987*/
               if ( v5 && (*(((unsigned short *)&(a1->preferredTargetCell[0])) + 1)) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
               {
                 v7 = a1->preferredTargetType == 1
-                   ? HouseClass::FindSWBuilding(a1, &v13)
-                   : HouseClass::FindSWTarget(a1, &v14, a1->preferredTargetType);
+                ? HouseClass::FindSWBuilding(a1, &v13)
+                : HouseClass::FindSWTarget(a1, &v14, a1->preferredTargetType);
                 v6 = *v7; /*0x5099cb*/
               }
               else
@@ -2508,7 +2508,7 @@ CellStruct * * HouseClass::UpdateAITryFireSW(void *a1)
               v11 = v6; /*0x5099d4*/
               if ( v6 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948] ) /*0x5099d8*/
                 goto LABEL_33; /*0x5099d8*/
-            }
+          }
             break; /*0x5099d8*/
           case 2:
             HouseClass::Fire_LightningStorm((int)a1, *(unsigned int *)(a1->supersCount + 4 * i)); /*0x509a0d*/
@@ -2530,26 +2530,26 @@ CellStruct * * HouseClass::UpdateAITryFireSW(void *a1)
             v12 = *(unsigned int *)(a1->supersCount + 4 * i); /*0x509a52*/
             v11 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509a56*/
             if ( !v5 || (*(((unsigned short *)&(a1->preferredDefensiveCell2[0])) + 1)) != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] ) /*0x509a63*/
-            {
+          {
               v8 = a1->preferredDefensiveCell2[0]; /*0x509a65*/
               goto LABEL_32; /*0x509a6b*/
-            }
+          }
             if ( ((*((unsigned short *)&(a1->preferredDefensiveCell[0]))) != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] /*0x509a99*/
                || (*(((unsigned short *)&(a1->preferredDefensiveCell[0])) + 1)) != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950])
               && *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3808)
-               + a1->preferredDefensiveCellStartTime > *(int *)&((unsigned int *)&stru_A8EB00)[416] )
-            {
+              + a1->preferredDefensiveCellStartTime > *(int *)&((unsigned int *)&stru_A8EB00)[416] )
+          {
               v8 = a1->preferredDefensiveCell[0]; /*0x509a9b*/
-  LABEL_32:
+              LABEL_32:
               v11 = v8; /*0x509aa1*/
-              if ( v8 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948] ) /*0x509aa8*/
+                if ( v8 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948] ) /*0x509aa8*/
               {
   LABEL_33:
                 v9 = (*(int (__thiscall **)(int *, int *))(a1->supers[0] + 16))(a1->supers, &v12); /*0x509aca*/
-                SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)a1, v9, (int)&v11); /*0x509acd*/
+    SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)a1, v9, (int)&v11); /*0x509acd*/
               }
-              break; /*0x509acd*/
-            }
+                break; /*0x509acd*/
+          }
             break; /*0x509acd*/
           default:
             break;
@@ -2625,9 +2625,9 @@ int HouseClass_RespawnStartingBuildings(void ** a2, unsigned int * a3, int a4)
       v11 = ((Cell *)(v10))->IsBridge(); /*0x50d365*/
       if ( v11 && (v12 = v11->u32_520, v12 == v8) && v11->u32_21C == v5 )
       {
-        v13 = *v11; /*0x50d386*/
-        v22[0] = -*(unsigned int *)(v12 + 160); /*0x50d38a*/
-        (*(void (__thiscall **)(int *, int *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(v13 + 364))( /*0x50d3ac*/
+          v13 = *v11; /*0x50d386*/
+          v22[0] = -*(unsigned int *)(v12 + 160); /*0x50d38a*/
+          (*(void (__thiscall **)(int *, int *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(v13 + 364))( /*0x50d3ac*/
           v11,
           v22,
           0,
@@ -2705,9 +2705,9 @@ int HouseClass::RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned in
         case 16:
           v10 = (*(int (__thiscall **)(int, int))(*(unsigned int *)v9 + 140))(v9, v5); /*0x50d4a4*/
           if ( v10 )
-  LABEL_9:
+        LABEL_9:
             v7 = (*(unsigned char *)(v10 + 20) & 1) != 0 ? v10 : 0;
-          else
+            else
             v7 = 0; /*0x50d4ae*/
           break; /*0x50d4b0*/
         default:
@@ -2794,7 +2794,7 @@ void HouseClass::LostPoweredCenter(int a2, void *a2_2)
           {
   LABEL_16:
             if ( !dword_A8E7AC ) /*0x50e18f*/
-              ((VoxClass *)(g_Str_EVA_RobotTanksOffline))->FindAndPlay(-1); /*0x50e19b*/
+    ((VoxClass *)(g_Str_EVA_RobotTanksOffline))->FindAndPlay(-1); /*0x50e19b*/
           }
         }
       }
@@ -2886,18 +2886,18 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
       {
   LABEL_11:
         if ( v33 < v6 ) /*0x5d71c8*/
-          goto LABEL_16; /*0x5d71c8*/
-        if ( (v32 || !v6) && v34 > 0 ) /*0x5d71dc*/
-        {
+    goto LABEL_16; /*0x5d71c8*/
+    if ( (v32 || !v6) && v34 > 0 ) /*0x5d71dc*/
+  {
           if ( v30->q018->vt_slot_8(/*0x5d71eb*/
                  &v30.q018, v34 + v6, 0) )
           {
   LABEL_16:
             v11 = v33++; /*0x5d71f2*/
-            *(unsigned int *)(v30.q01C + 4 * v11) = v7; /*0x5d7201*/
+    *(unsigned int *)(v30.q01C + 4 * v11) = v7; /*0x5d7201*/
           }
           v6 = v31; /*0x5d7204*/
-        }
+  }
       }
       else
       {
@@ -2917,7 +2917,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
   InfantryTypeVector_field_0x14 = v30.q014; /*0x5d7216*/
   LABEL_20:
   v12 = 0; /*0x5d721a*/
-  if ( dword_A8E358 > 0 ) /*0x5d7223*/
+    if ( dword_A8E358 > 0 ) /*0x5d7223*/
   {
     InfantryTypeVector_field_0x08 = v30.q008; /*0x5d7229*/
     while ( 1 ) /*0x5d7239*/
@@ -2935,24 +2935,24 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
           break; /*0x5d7274*/
         }
       }
-  LABEL_33:
+      LABEL_33:
       if ( ++v12 >= dword_A8E358 ) /*0x5d72a9*/
         goto LABEL_34; /*0x5d72a9*/
-      InfantryTypeVector_field_0x14 = v30.q014; /*0x5d722f*/
+        InfantryTypeVector_field_0x14 = v30.q014; /*0x5d722f*/
     }
     if ( v30->vt_slot_8(/*0x5d7283*/
            &v30, InfantryTypeVector_field_0x14 + InfantryTypeVector_field_0x08, 0) )
     {
   LABEL_31:
       v15 = v30.q010++; /*0x5d728a*/
-      *(unsigned int *)(v30.u32_4 + 4 * v15) = v14; /*0x5d7299*/
+    *(unsigned int *)(v30.u32_4 + 4 * v15) = v14; /*0x5d7299*/
     }
     InfantryTypeVector_field_0x08 = v30.q008; /*0x5d729c*/
     goto LABEL_33; /*0x5d729c*/
   }
   LABEL_34:
   v16 = v33; /*0x5d72ab*/
-  if ( v33 || v30.q010 ) /*0x5d72b9*/
+    if ( v33 || v30.q010 ) /*0x5d72b9*/
   {
     v18 = 20; /*0x5d731a*/
     v19 = *a1; /*0x5d731f*/
@@ -3015,21 +3015,21 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
       operator delete((void *)((void *)v30.q01C)); /*0x5d7487*/
     return 1; /*0x5d7487*/
   }
-  *(unsigned int *)v30.__pad_000 = &vt_VectorClass; /*0x5d72bf*/
-  if ( v30.u32_4 && (((unsigned char *)&(v30.q00C))[1]) ) /*0x5d72d1*/
+    *(unsigned int *)v30.__pad_000 = &vt_VectorClass; /*0x5d72bf*/
+    if ( v30.u32_4 && (((unsigned char *)&(v30.q00C))[1]) ) /*0x5d72d1*/
   {
     operator delete((void *)((void *)v30.u32_4)); /*0x5d72d4*/
     v30.u32_4 = 0; /*0x5d72dc*/
   }
-  (((unsigned char *)&(v30.q00C))[1]) = 0; /*0x5d72e4*/
-  v30.q008 = 0; /*0x5d72eb*/
-  v30.q018 = (int)&vt_VectorClass; /*0x5d72ef*/
-  if ( v30.q01C ) /*0x5d72f7*/
+    (((unsigned char *)&(v30.q00C))[1]) = 0; /*0x5d72e4*/
+    v30.q008 = 0; /*0x5d72eb*/
+    v30.q018 = (int)&vt_VectorClass; /*0x5d72ef*/
+    if ( v30.q01C ) /*0x5d72f7*/
   {
     if ( v32 ) /*0x5d72ff*/
       operator delete((void *)((void *)v30.q01C)); /*0x5d7302*/
   }
-  return 0; /*0x5d730a*/
+    return 0; /*0x5d730a*/
 }
 }
 // 0x5D74A0
@@ -3113,7 +3113,7 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
   v1 = 0; /*0x5ee9e4*/
   p_uniqueId = &dword_A8B230[124].uniqueId; /*0x5ee9e6*/
   do /*0x5eea04*/
-    v17[v1++] = (Multiplayer)(*p_uniqueId++ != -1); /*0x5ee9f1*/
+  v17[v1++] = (Multiplayer)(*p_uniqueId++ != -1); /*0x5ee9f1*/
   while ( v1 < 16 ); /*0x5eea04*/
   nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5eea06*/
   for ( i = 0; i < stru_A80220.nextArrayIndex; ++i ) /*0x5eea11*/
@@ -3315,7 +3315,7 @@ VectorCursor * HouseClass::vt_placeholder_07(char a2)
 {
   /* X11: vtable install elided (implicit via VectorCursorGraphicMenuItemDynamicVectorClass virtuals 0x4f28c9) */
   if ( (a2 & 1) != 0 ) /*0x4f28cf*/
-    operator delete((void *)(this)); /*0x4f28d2*/
+  operator delete((void *)(this)); /*0x4f28d2*/
   return this; /*0x4f28dc*/
 }
 } // namespace gamemd
@@ -3476,9 +3476,7 @@ unsigned int * HouseClass::vt_placeholder_10()
 namespace gamemd {
 VectorClass_flat * HouseClass_24::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
-
-  v3 = *&Block->__pad_004; /*0x4f2b63*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4f2b63*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f2b66*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4f2b70*/
   {
@@ -3553,9 +3551,9 @@ double HouseClass::GiveTiberium_Storage(float aP1, int aP2)
   this->siloMoney = v4; /*0x4f9628*/
   LOWORD(result) = Math::RoundToInt( /*0x4f9654*/
                      (double)*(int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * aP2) + 184)
-                   * *(float *)(this->relatedTagsCapacity + 328)
-                   * aP1
-                   + (double)this->balance);
+  * *(float *)(this->relatedTagsCapacity + 328)
+  * aP1
+  + (double)this->balance);
   this->balance = result; /*0x4f965d*/
   return result; /*0x4f9664*/
 

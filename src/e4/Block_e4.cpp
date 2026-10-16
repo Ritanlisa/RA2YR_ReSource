@@ -11,8 +11,7 @@ namespace gamemd {  // G42.18 ns repair
 void * Block::Copy(const void * a2, void *a2_2)
 {
 
-  void *result; // eax
-  result = a2_2; /*0x6260d5*/
+  void *result = a2_2; // eax /*0x6260d5*/
   if ( a2_2 != a2_2 ) /*0x6260d9*/
     memcpy(a2_2, a2_2, 0x300u); /*0x6260e3*/
   return result; /*0x6260e6*/

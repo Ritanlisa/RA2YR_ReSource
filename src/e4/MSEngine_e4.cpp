@@ -24,12 +24,10 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
 
   char *v7; // edi
 
-  int v3; // ebx
-  v3 = a2; /*0x5acd32*/
+  int v3 = a2; // ebx /*0x5acd32*/
   if ( a2 ) /*0x5acd3d*/
   {
-  char *v5; // ebp
-    v5 = a3; /*0x5acd43*/
+    char *v5 = a3; // ebp /*0x5acd43*/
     LOBYTE(this->m_C) = 0; /*0x5acd47*/
     if ( a3 ) /*0x5acd4d*/
     {
@@ -37,7 +35,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     }
     else
     {
-  int v6; // eax
+      int v6; // eax
       v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x5acd55*/
       if ( v6 ) /*0x5acd5f*/
         v7 = (char *)v6; /*0x5acd64*/
@@ -49,19 +47,18 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     {
       if ( *&this->__pad_004 ) /*0x5acd8b*/
       {
-  int m_8; // ecx
+        int m_8; // ecx
         m_8 = this->m_8; /*0x5acd92*/
         if ( a2 < m_8 ) /*0x5acd97*/
           m_8 = a2; /*0x5acd99*/
         if ( m_8 > 0 ) /*0x5acd9d*/
         {
-  int v10; // eax
-          v10 = 0; /*0x5acd9f*/
+          int v10 = 0; // eax /*0x5acd9f*/
           do /*0x5acdc3*/
           {
-  char *v11; // ebx
+            char *v11; // ebx
             v11 = &v7[v10]; /*0x5acda4*/
-  unsigned int *v12; // edx
+            unsigned int *v12; // edx
             v12 = (unsigned int *)(v10 + *&this->__pad_004); /*0x5acda7*/
             v10 += 16; /*0x5acda9*/
             --m_8; /*0x5acdac*/
@@ -105,12 +102,10 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 
   char *v7; // edi
 
-  int v3; // ebx
-  v3 = a2; /*0x5aced2*/
+  int v3 = a2; // ebx /*0x5aced2*/
   if ( a2 ) /*0x5acedd*/
   {
-  char *v5; // ebp
-    v5 = a3; /*0x5acee3*/
+    char *v5 = a3; // ebp /*0x5acee3*/
     LOBYTE(this->m_C) = 0; /*0x5acee7*/
     if ( a3 ) /*0x5aceed*/
     {
@@ -118,7 +113,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     }
     else
     {
-  int v6; // eax
+      int v6; // eax
       v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x5acef5*/
       if ( v6 ) /*0x5aceff*/
         v7 = (char *)v6; /*0x5acf04*/
@@ -130,19 +125,18 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       return 0; /*0x5acfb4*/
     if ( *&this->__pad_004 ) /*0x5acf25*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = this->m_8; /*0x5acf2c*/
       if ( a2 < m_8 ) /*0x5acf31*/
         m_8 = a2; /*0x5acf33*/
       if ( m_8 > 0 ) /*0x5acf37*/
       {
-  int v9; // eax
-        v9 = 0; /*0x5acf39*/
+        int v9 = 0; // eax /*0x5acf39*/
         do /*0x5acf5d*/
         {
-  char *v10; // ebx
+          char *v10; // ebx
           v10 = &v7[v9]; /*0x5acf3e*/
-  unsigned int *v11; // edx
+          unsigned int *v11; // edx
           v11 = (unsigned int *)(v9 + *&this->__pad_004); /*0x5acf41*/
           v9 += 16; /*0x5acf43*/
           --m_8; /*0x5acf46*/
@@ -169,8 +163,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   {
     (*(void (**)(_DynamicVectorClass_V_TRect_H *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x5acf97*/
   }
-  int v12; // eax
-  v12 = this->m_8; /*0x5acf9a*/
+  int v12 = this->m_8; // eax /*0x5acf9a*/
   if ( v12 < this->m_10 ) /*0x5acfa2*/
     this->m_10 = v12; /*0x5acfa4*/
   return (gamemd::AbstractClass **)(1); /*0x5acfa7*/
@@ -205,8 +198,7 @@ CampaignClass * MSEngine::Destructor(void *a1)
   this->u32_39 = 0; /*0x5ceeb2*/
   this->q034 = 0; /*0x5ceeb5*/
   DeleteAndZero(&this->m_8); /*0x5ceeb8*/
-  void *MSEngine_field_0x4; // eax
-  MSEngine_field_0x4 = this->__pad_004; /*0x5ceebd*/
+  void *MSEngine_field_0x4 = this->__pad_004; // eax /*0x5ceebd*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ceec0) */
   if ( MSEngine_field_0x4 && BYTE1(this->m_C) ) /*0x5ceeca*/
   {
@@ -225,8 +217,7 @@ CampaignClass * MSEngine::Construct(void *a1, void *a2, void *a3, void *a4, void
 
   void (**v3)(void **, int, unsigned int); // edx
 
-  void **p_MSEngine_field_0x8; // ecx
-  p_MSEngine_field_0x8 = &this->m_8; /*0x5d1aa5*/
+  void **p_MSEngine_field_0x8 = &this->m_8; // ecx /*0x5d1aa5*/
   p_MSEngine_field_0x8[1] = 0; /*0x5d1ab2*/
   p_MSEngine_field_0x8[2] = 0; /*0x5d1ab5*/
   *((unsigned char *)p_MSEngine_field_0x8 + 12) = 1; /*0x5d1ab8*/
@@ -269,13 +260,11 @@ CampaignClass * MSEngine::Destruct(void *a1)
   void *v12; // eax
   int result; // eax
 
-  int v2; // ebp
-  v2 = 0; /*0x5d1b37*/
+  int v2 = 0; // ebp /*0x5d1b37*/
   for ( *(unsigned int *)this->vtable1 = &vt_MSEngine; v2 < this->u32_40; ++v2 ) /*0x5d1b45*/
   {
-  int v3; // eax
-    v3 = this->q034; /*0x5d1b47*/
-  void *v4; // edi
+    int v3 = this->q034; // eax /*0x5d1b47*/
+    void *v4; // edi
     v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/
     if ( v4 ) /*0x5d1b4f*/
     {
@@ -283,8 +272,7 @@ CampaignClass * MSEngine::Destruct(void *a1)
       __3_YAXPAX_Z(v4); /*0x5d1b59*/
     }
   }
-  char *v5; // ebp
-  v5 = &this->u32_30; /*0x5d1b6c*/
+  char *v5 = &this->u32_30; // ebp /*0x5d1b6c*/
   (*(void (**)(char *))(this->u32_30 + 12))(&this->u32_30); /*0x5d1b71*/
   int i; // edi
   for ( i = 0; i < this->u32_28; ++i ) /*0x5d1b7b*/
@@ -342,7 +330,7 @@ int MSEngine::ProcessEvents(char aP1, int a3)
     result = (*(int (**)(char *, char *))(this->u32_18 + 16))this->u32_18, &aP1); /*0x5d1e19*/
     if ( result == -1 ) /*0x5d1e1f*/
       break; /*0x5d1e1f*/
-  int v6; // ecx
+    int v6; // ecx
     v6 = *(unsigned int *)(this->u32_1C + 4 * result); /*0x5d1e24*/
     result = (*(int (**)(int))(*(unsigned int *)v6 + 28))(v6); /*0x5d1e29*/
     if ( (unsigned char)result || !a3 ) /*0x5d1e32*/
@@ -406,17 +394,16 @@ char MSEngine::AddRef(int a2)
   m_8 = *&this->m_8; /*0x5acccb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x5accd0*/
   {
-  int v3; // esi
-    v3 = 0; /*0x5accd2*/
+    int v3 = 0; // esi /*0x5accd2*/
     if ( m_8 <= 0 ) /*0x5accd6*/
       return 1; /*0x5acd1a*/
-  int v4; // edx
+    int v4; // edx
     v4 = *(unsigned int *)(a2 + 4); /*0x5accd8*/
-  unsigned int *v5; // eax
+    unsigned int *v5; // eax
     v5 = (unsigned int *)(*&this->__pad_004); /*0x5accdb*/
-  unsigned int *v6; // ecx
+    unsigned int *v6; // ecx
     v6 = (unsigned int *)(v4 + 8); /*0x5accde*/
-  int v7; // edx
+    int v7; // edx
     v7 = v4 - (unsigned int)v5; /*0x5acce1*/
     while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] ) /*0x5acd07*/
     {
@@ -454,8 +441,7 @@ CampaignClass * MSEngine::Init(unsigned int * a2, void *a2_2, void *a3_1, void *
     return 0; /*0x5ace5e*/
   int m_8; // esi
   m_8 = *&this->m_8; /*0x5ace64*/
-  int result; // eax
-  result = 0; /*0x5ace67*/
+  int result = 0; // eax /*0x5ace67*/
   if ( m_8 <= 0 ) /*0x5ace6b*/
     return -1; /*0x5acea0*/
   unsigned int *i; // ecx
@@ -486,8 +472,7 @@ int MSEngine::FindItem(unsigned int * a2)
 
   int m_10; // esi
   m_10 = *&this->m_10; /*0x5acfc3*/
-  int result; // eax
-  result = 0; /*0x5acfc6*/
+  int result = 0; // eax /*0x5acfc6*/
   if ( m_10 <= 0 ) /*0x5acfcb*/
     return -1; /*0x5ad000*/
   unsigned int *i; // ecx
@@ -504,8 +489,7 @@ namespace gamemd {
 VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x5ad4d3*/
+  void *v3 = *&Block->__pad_004; // eax /*0x5ad4d3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClassTRect; /*0x5ad4d6*/
   if ( v3 && (Block->u8_E) ) /*0x5ad4e0*/
   {
@@ -526,8 +510,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1,
 {
 
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x5ad523*/
+  void *v3 = *&Block->__pad_004; // eax /*0x5ad523*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClassTRect; /*0x5ad526*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5ad530*/
   {

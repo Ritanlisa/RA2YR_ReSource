@@ -43,7 +43,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a
          g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
          0) )
   {
-  int v10; // eax
+    int v10; // eax
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
   }
@@ -81,7 +81,7 @@ int LightSourceClass::Constructor(void *a1, void *a2, void *a3, void *a4)
          g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = g_MissionQueueFrame.random[133]++; /*0x5548c3*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = this; /*0x5548d2*/
   }
@@ -178,9 +178,9 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   {
     --g_MissionQueueFrame.random[133]; /*0x55519f*/
     for ( ; /*0x5551a5*/
-          v3 < g_MissionQueueFrame.random[133];
-          *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[130]
-                                                                                + 4 * v3) )
+    v3 < g_MissionQueueFrame.random[133];
+    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[130]
+    + 4 * v3) )
     {
       ++v3; /*0x5551ad*/
     }

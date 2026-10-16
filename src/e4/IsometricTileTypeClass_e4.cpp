@@ -35,7 +35,7 @@ int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   v3 = *((unsigned int *)a2_2 + 175); /*0x549bc4*/
   if ( v3 ) /*0x549bcc*/
   {
-  int v4; // eax
+    int v4; // eax
     v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
     Power::TimerProcess(v4); /*0x549bdb*/
   }
@@ -103,8 +103,7 @@ int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 
   if ( this->u32_2BC == a2 ) /*0x549ddc*/
     this->u32_2BC = 0; /*0x549dde*/
-  int result; // eax
-  result = this->u32_2C8; /*0x549de8*/
+  int result = this->u32_2C8; // eax /*0x549de8*/
   if ( result != -1 && *(unsigned int *)(FootClass_Array.primaryFacing[3] + 4 * result) == a2 ) /*0x549e02*/
     this->u32_2C8 = -1; /*0x549e04*/
   return result; /*0x549e0e*/
@@ -202,7 +201,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
   if ( a2 ) /*0x54a3dc*/
   {
     LOBYTE(this->vtable4) = 0; /*0x54a3e2*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x54a3e8*/
       v4 = a3; /*0x54a3fe*/
     else
@@ -212,11 +211,11 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x54a47a*/
     if ( *&this->vtable2 ) /*0x54a408*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = (int)(this->vtable3); /*0x54a40f*/
       if ( a2 < m_8 ) /*0x54a414*/
         m_8 = a2; /*0x54a416*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x54a41c*/
         ++i; /*0x54a421*/
       if ( BYTE1(this->vtable4) ) /*0x54a42e*/
@@ -246,10 +245,8 @@ namespace gamemd {
 int IsometricTileTypeClass::FindItem(unsigned int * a2)
 {
 
-  int m_10; // edx
-  m_10 = *&this->uniqueId; /*0x54a480*/
-  int result; // eax
-  result = 0; /*0x54a483*/
+  int m_10 = *&this->uniqueId; // edx /*0x54a480*/
+  int result = 0; // eax /*0x54a483*/
   if ( m_10 <= 0 ) /*0x54a488*/
     return -1; /*0x54a49f*/
   unsigned int *i; // ecx
@@ -267,8 +264,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 {
 
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x54a763*/
+  void *v3 = *&Block->__pad_004; // eax /*0x54a763*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x54a766*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x54a770*/
   {

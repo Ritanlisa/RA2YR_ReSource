@@ -26,7 +26,7 @@ HWND E4Recv_696AE0::sub_696AE0()
   {
     if ( result ) /*0x696b15*/
     {
-  char *p_vtable2; // esi
+      char *p_vtable2; // esi
       p_vtable2 = (char *)&this->?; /*0x696b21*/
       SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)p_vtable2); /*0x696b30*/
       SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x696b3f*/
@@ -35,11 +35,11 @@ HWND E4Recv_696AE0::sub_696AE0()
       if ( strlen(p_vtable2) ) /*0x696b4f*/
       {
         _strupr(p_vtable2); /*0x696b5b*/
-  LRESULT v6; // edi
+        LRESULT v6; // edi
         v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)p_vtable2); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
-  char *v8; // [esp+10h] [ebp-8h]
+          char *v8; // [esp+10h] [ebp-8h]
           v8 = (char *)__2_YAPAXI_Z(0x29u); /*0x696b8c*/
           strcpy(v8, p_vtable2); /*0x696ba2*/
           result = SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
@@ -54,7 +54,7 @@ HWND E4Recv_696AE0::sub_696AE0()
                  dword_A8DB54 + dword_A8DB60,
                  0) )
           {
-  int v7; // eax
+            int v7; // eax
             v7 = dword_A8DB5C++; /*0x696c02*/
             *(unsigned int *)(dword_A8DB50 + 4 * v7) = (unsigned int)(v8); /*0x696c11*/
           }
@@ -87,15 +87,13 @@ HWND E4Recv_696C40::sub_696C40()
     if ( result > 0 ) /*0x696c73*/
     {
       result = SendMessageA(v3, 0x188u, 0, 0); /*0x696c7f*/
-  LRESULT v4; // esi
-      v4 = result; /*0x696c81*/
+      LRESULT v4 = result; // esi /*0x696c81*/
       if ( result != -1 ) /*0x696c86*/
       {
         SendMessageA(v3, 0x182u, result, 0); /*0x696c91*/
         if ( v4 < dword_A8DB5C ) /*0x696c9b*/
         {
-  int v5; // eax
-          v5 = v4; /*0x696c9e*/
+          int v5 = v4; // eax /*0x696c9e*/
           if ( v4 < --dword_A8DB5C ) /*0x696ca8*/
           {
             do /*0x696cc0*/

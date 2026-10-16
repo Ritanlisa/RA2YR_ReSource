@@ -40,7 +40,7 @@ namespace gamemd { int sub_45DD20(int p0); }  // x4:signals@0x45dd20
 namespace gamemd { int sub_45DD50(int p0); }  // x4:signals@0x45dd50
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ObjectTypeClass_Read(ObjectClass *p_this);  // x4:ida@0x6cee60
+int ObjectTypeClass_Read(ObjectClass *p_this);  // x4:ida@0x6cee60
 } // namespace gamemd
 
 // 0x46C790
@@ -56,7 +56,7 @@ BulletTypeClass * ObjectTypeClass::FindOrCreate(ObjectClass * Source)
   v2 = 0; /*0x46c7bd*/
   if ( dword_A83C90 <= 0 ) /*0x46c7c1*/
   {
-LABEL_6:
+    LABEL_6:
     v3 = (BulletTypeClass *)__2_YAPAXI_Z(0x2F8u); /*0x46c7e6*/
     if ( v3 ) /*0x46c7f5*/
       return BulletTypeClass::Construct(v3, Source); /*0x46c801*/
@@ -78,8 +78,7 @@ int ObjectTypeClass::loadTypeMember_473980()
 
   if ( !this ) /*0x473987*/
     return -1; /*0x4739bd*/
-  int v2; // edi
-  v2 = 0; /*0x473989*/
+  int v2 = 0; // edi /*0x473989*/
   char **v3; // esi
   v3 = (char **)(off_81B7C8); /*0x47398b*/
   while ( _strcmpi(v3[1], (char *)this) && _strcmpi(*v3, (char *)this) ) /*0x4739af*/
@@ -100,8 +99,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
   if ( ((INIClass *)this)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
     return a4; /*0x4749a4*/
-  int v4; // edi
-  v4 = 0; /*0x474964*/
+  int v4 = 0; // edi /*0x474964*/
   char **v5; // esi
   v5 = (char **)(&off_81B9B0); /*0x474966*/
   while ( _strcmpi(Destination, *v5) ) /*0x47497d*/
@@ -122,7 +120,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 
   if ( a4 == -1 ) /*0x474f5a*/
   {
-  char v6; // [esp+0h] [ebp-3Ch] BYREF
+    char v6; // [esp+0h] [ebp-3Ch] BYREF
     v6 = 0; /*0x474f6a*/
     v4 = &v6; /*0x474f6f*/
   }
@@ -160,8 +158,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_2F = 0; /*0x5f70eb*/
   this->NoSpawnAlt = 0; /*0x5f70f1*/
   this->u32_31 = 0; /*0x5f70f7*/
-  int v4; // ecx
-  v4 = 18; /*0x5f70fd*/
+  int v4 = 18; // ecx /*0x5f70fd*/
   do /*0x5f710b*/
   {
     *v3 = 0; /*0x5f7102*/
@@ -170,10 +167,8 @@ int ObjectTypeClass::ConstructFull(char *aP1)
     --v4; /*0x5f710a*/
   }
   while ( v4 ); /*0x5f710b*/
-  int *v5; // eax
-  v5 = &this->q056; /*0x5f710d*/
-  int v6; // ecx
-  v6 = 18; /*0x5f7113*/
+  int *v5 = &this->q056; // eax /*0x5f710d*/
+  int v6 = 18; // ecx /*0x5f7113*/
   do /*0x5f7121*/
   {
     *v5 = 0; /*0x5f7118*/
@@ -257,7 +252,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
          dword_AC142C + dword_AC1420,
          0) )
   {
-  int v7; // eax
+    int v7; // eax
     v7 = dword_AC1428++; /*0x5f72fb*/
     *((unsigned int *)dword_AC141C + v7) = (unsigned int)(this); /*0x5f730a*/
   }
@@ -275,8 +270,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
   int *v3; // eax
   v3 = (int *)(&this->ChargerTurrets[3]); /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
-  int v4; // edx
-  v4 = 18; /*0x5f733b*/
+  int v4 = 18; // edx /*0x5f733b*/
   do /*0x5f7349*/
   {
     *v3 = 0; /*0x5f7340*/
@@ -287,8 +281,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
   while ( v4 ); /*0x5f7349*/
   char *v5; // eax
   v5 = (char *)(&this->u32_158); /*0x5f734b*/
-  int v6; // edx
-  v6 = 18; /*0x5f7351*/
+  int v6 = 18; // edx /*0x5f7351*/
   do /*0x5f735f*/
   {
     *(unsigned int *)v5 = 0; /*0x5f7356*/
@@ -379,10 +372,8 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
   this->u32_24C = 0; /*0x5f7532*/
   this->u32_250 = 0; /*0x5f7538*/
   this->q254 = 0; /*0x5f753e*/
-  ObjectTypeClass *v3; // edi
-  v3 = &this->NoSpawnAlt_2; /*0x5f7547*/
-  int v4; // ebx
-  v4 = 18; /*0x5f754d*/
+  ObjectTypeClass *v3 = &this->NoSpawnAlt_2; // edi /*0x5f7547*/
+  int v4 = 18; // ebx /*0x5f754d*/
   do /*0x5f755d*/
   {
     v3 = (ObjectTypeClass *)((char *)v3 - 8); /*0x5f7552*/
@@ -390,10 +381,8 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
     --v4; /*0x5f755c*/
   }
   while ( v4 ); /*0x5f755d*/
-  ObjectTypeClass *v5; // edi
-  v5 = &this->u32_158; /*0x5f755f*/
-  int v6; // ebx
-  v6 = 18; /*0x5f7565*/
+  ObjectTypeClass *v5 = &this->u32_158; // edi /*0x5f755f*/
+  int v6 = 18; // ebx /*0x5f7565*/
   do /*0x5f7575*/
   {
     v5 = (ObjectTypeClass *)((char *)v5 - 8); /*0x5f756a*/
@@ -417,20 +406,17 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPBRD_SHP ) /*0x5f7807*/
     {
-  int v1; // eax
+      int v1; // eax
       v1 = *(unsigned int *)(FileSystem_PIPBRD_SHP - 4); /*0x5f7809*/
-  void *v2; // ebp
+      void *v2; // ebp
       v2 = (void *)(FileSystem_PIPBRD_SHP - 4); /*0x5f780c*/
-  int v3; // edx
-      v3 = 9 * v1; /*0x5f780f*/
-  int v4; // eax
-      v4 = v1 - 1; /*0x5f7812*/
-  FileTreeNode *v5; // esi
+      int v3 = 9 * v1; // edx /*0x5f780f*/
+      int v4 = v1 - 1; // eax /*0x5f7812*/
+      FileTreeNode *v5; // esi
       v5 = (FileTreeNode *)(FileSystem_PIPBRD_SHP + 4 * v3); /*0x5f7813*/
       if ( v4 >= 0 ) /*0x5f7816*/
       {
-  int v6; // edi
-        v6 = v4 + 1; /*0x5f7818*/
+        int v6 = v4 + 1; // edi /*0x5f7818*/
         do /*0x5f7826*/
         {
           v5 -= 9; /*0x5f781b*/
@@ -447,20 +433,17 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPS_SHP ) /*0x5f7847*/
     {
-  int v7; // eax
+      int v7; // eax
       v7 = *(unsigned int *)(FileSystem_PIPS_SHP - 4); /*0x5f7849*/
-  void *v8; // ebp
+      void *v8; // ebp
       v8 = (void *)(FileSystem_PIPS_SHP - 4); /*0x5f784c*/
-  int v9; // edx
-      v9 = 9 * v7; /*0x5f784f*/
-  int v10; // eax
-      v10 = v7 - 1; /*0x5f7852*/
-  FileTreeNode *v11; // esi
+      int v9 = 9 * v7; // edx /*0x5f784f*/
+      int v10 = v7 - 1; // eax /*0x5f7852*/
+      FileTreeNode *v11; // esi
       v11 = (FileTreeNode *)(FileSystem_PIPS_SHP + 4 * v9); /*0x5f7853*/
       if ( v10 >= 0 ) /*0x5f7856*/
       {
-  int v12; // edi
-        v12 = v10 + 1; /*0x5f7858*/
+        int v12 = v10 + 1; // edi /*0x5f7858*/
         do /*0x5f7866*/
         {
           v11 -= 9; /*0x5f785b*/
@@ -477,20 +460,17 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPS2_SHP ) /*0x5f7887*/
     {
-  int v13; // eax
+      int v13; // eax
       v13 = *(unsigned int *)(FileSystem_PIPS2_SHP - 4); /*0x5f7889*/
-  void *v14; // ebp
+      void *v14; // ebp
       v14 = (void *)(FileSystem_PIPS2_SHP - 4); /*0x5f788c*/
-  int v15; // edx
-      v15 = 9 * v13; /*0x5f788f*/
-  int v16; // eax
-      v16 = v13 - 1; /*0x5f7892*/
-  FileTreeNode *v17; // esi
+      int v15 = 9 * v13; // edx /*0x5f788f*/
+      int v16 = v13 - 1; // eax /*0x5f7892*/
+      FileTreeNode *v17; // esi
       v17 = (FileTreeNode *)(FileSystem_PIPS2_SHP + 4 * v15); /*0x5f7893*/
       if ( v16 >= 0 ) /*0x5f7896*/
       {
-  int v18; // edi
-        v18 = v16 + 1; /*0x5f7898*/
+        int v18 = v16 + 1; // edi /*0x5f7898*/
         do /*0x5f78a6*/
         {
           v17 -= 9; /*0x5f789b*/
@@ -507,20 +487,17 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_TALKBUBL_SHP ) /*0x5f78c7*/
     {
-  int v19; // eax
+      int v19; // eax
       v19 = *(unsigned int *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78c9*/
-  void *v20; // ebp
+      void *v20; // ebp
       v20 = (void *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78cc*/
-  int v21; // edx
-      v21 = 9 * v19; /*0x5f78cf*/
-  int v22; // eax
-      v22 = v19 - 1; /*0x5f78d2*/
-  FileTreeNode *v23; // esi
+      int v21 = 9 * v19; // edx /*0x5f78cf*/
+      int v22 = v19 - 1; // eax /*0x5f78d2*/
+      FileTreeNode *v23; // esi
       v23 = (FileTreeNode *)(FileSystem_TALKBUBL_SHP + 4 * v21); /*0x5f78d3*/
       if ( v22 >= 0 ) /*0x5f78d6*/
       {
-  int v24; // edi
-        v24 = v22 + 1; /*0x5f78d8*/
+        int v24 = v22 + 1; // edi /*0x5f78d8*/
         do /*0x5f78e6*/
         {
           v23 -= 9; /*0x5f78db*/
@@ -627,7 +604,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt(void *a1)
     {
       v15 = 71; /*0x5f9258*/
       v8 = 0; /*0x5f925d*/
-  LABEL_40:
+      LABEL_40:
       this->Image_d = SearchMIXFile(&Source, v8); /*0x5f927d*/
     }
   }
@@ -680,7 +657,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
          (char *)&Destination,
          128) )
   {
-  int Index; // eax
+    int Index; // eax
     Index = VocClass::FindIndex(&Destination); /*0x5f93b5*/
     if ( Index != -1 ) /*0x5f93bd*/
       CrushSound = Index; /*0x5f93bf*/
@@ -948,10 +925,9 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     aP0->ChargerTurrets[0] = 0; /*0x5f98d2*/
     aP0->ChargerTurrets[1] = 0; /*0x5f98d8*/
     aP0->ChargerTurrets[2] = 0; /*0x5f98de*/
-  int *v9; // eax
+    int *v9; // eax
     v9 = &aP0->ChargerTurrets[4]; /*0x5f98e4*/
-  int v10; // ecx
-    v10 = 18; /*0x5f98ea*/
+    int v10 = 18; // ecx /*0x5f98ea*/
     do /*0x5f9904*/
     {
       *(v9 - 1) = 0; /*0x5f98ef*/
@@ -964,7 +940,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     while ( v10 ); /*0x5f9904*/
     if ( aP0->AlphaImageFile[0] ) /*0x5f9906*/
     {
-  char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
+      char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
       _makepath(Buffer, 0, 0, aP0->AlphaImageFile, Ext); /*0x5f9923*/
       aP0->AlphaImage = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x5f9936*/
     }
@@ -980,8 +956,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 
   int result; // eax
 
-  Object *v1; // eax
-  v1 = dword_A83D4C; /*0x712040*/
+  Object *v1 = dword_A83D4C; // eax /*0x712040*/
   if ( !dword_A83D4C ) /*0x71204a*/
     return *&this->u32_6F0; /*0x7120bf*/
   if ( dword_A83D4C[1].__pad_C[19] ) /*0x71204c*/
@@ -1435,55 +1410,55 @@ int ObjectTypeClass::DeserializeArrays()
   result = COMObject::GetSizeMaxWrapper(v19, v20); /*0x7170ac*/
   if ( result >= 0 ) /*0x7170b3*/
   {
-  int v2; // eax
+    int v2; // eax
     v2 = 4 * *(unsigned int *)&v19[1].__pad_14D[67] + 4 + *v20; /*0x7170c8*/
     *v20 = v2; /*0x7170ca*/
-  int v3; // eax
+    int v3; // eax
     v3 = v2 + 4 * *(unsigned int *)&v19[1].__pad_14D[95] + 4; /*0x7170d2*/
     *v20 = v3; /*0x7170d6*/
-  int v4; // eax
+    int v4; // eax
     v4 = v3 + 4 * *(unsigned int *)&v19[1].__pad_14D[123] + 4; /*0x7170de*/
     *v20 = v4; /*0x7170e2*/
-  int v5; // eax
+    int v5; // eax
     v5 = v4 + 4 * *(unsigned int *)&v19[1].__pad_14D[151] + 4; /*0x7170ea*/
     *v20 = v5; /*0x7170ee*/
-  int v6; // eax
+    int v6; // eax
     v6 = v5 + 4 * *(unsigned int *)&v19[1].ImageFile[8] + 4; /*0x7170f6*/
     *v20 = v6; /*0x7170fa*/
-  int v7; // eax
+    int v7; // eax
     v7 = v6 + 4 * *(unsigned int *)&v19[1].AlphaImageFile[9] + 4; /*0x717102*/
     *v20 = v7; /*0x717106*/
-  int v8; // eax
+    int v8; // eax
     v8 = v7 + 4 * *(unsigned int *)&v19[1].HasRadialIndicator + 4; /*0x71710e*/
     *v20 = v8; /*0x717112*/
-  int v9; // eax
+    int v9; // eax
     v9 = v8 + 4 * v19[1].VoxelCaches[4] + 4; /*0x71711a*/
     *v20 = v9; /*0x71711e*/
-  int v10; // eax
+    int v10; // eax
     v10 = v9 + 4 * v19[1].VoxelCaches[11] + 4; /*0x717126*/
     *v20 = v10; /*0x71712a*/
-  int v11; // eax
+    int v11; // eax
     v11 = v10 + 4 * v19[1].VoxelCaches[18] + 4; /*0x717132*/
     *v20 = v11; /*0x717136*/
-  int v12; // eax
+    int v12; // eax
     v12 = v11 + 4 * *(unsigned int *)&v19[2].AlphaImageFile[1] + 4; /*0x71713e*/
     *v20 = v12; /*0x717142*/
-  int v13; // eax
+    int v13; // eax
     v13 = v12 + 4 * *(unsigned int *)&v19[2].Selectable + 4; /*0x71714a*/
     *v20 = v13; /*0x71714e*/
-  int v14; // eax
+    int v14; // eax
     v14 = v13 + 4 * *(unsigned int *)&v19[1].Name[44] + 4; /*0x717156*/
     *v20 = v14; /*0x71715a*/
-  int v15; // eax
+    int v15; // eax
     v15 = v14 + 4 * (int)v19[2].AlphaImage + 4; /*0x717162*/
     *v20 = v15; /*0x717166*/
-  int v16; // eax
+    int v16; // eax
     v16 = v15 + 4 * *(unsigned int *)&v19[1].__pad_14D[23] + 4; /*0x71716e*/
     *v20 = v16; /*0x717172*/
-  int v17; // eax
+    int v17; // eax
     v17 = v16 + 4 * (int)v19[1].AlphaImage + 4; /*0x71717a*/
     *v20 = v17; /*0x71717e*/
-  int v18; // eax
+    int v18; // eax
     v18 = v17 + 4 * v19[2].VoxelCaches[7] + 4; /*0x717186*/
     *v20 = v18; /*0x71718a*/
     *v20 = v18 + 4 * v19[2].VoxelCaches[14] + 4; /*0x717196*/
@@ -1534,10 +1509,8 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
   this->vtable2 = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return &this->AbstractTypeClass; /*0x717c30*/
-  void *vtable2; // ecx
-  vtable2 = this->vtable3; /*0x717c32*/
-  int v6; // eax
-  v6 = 0; /*0x717c35*/
+  void *vtable2 = this->vtable3; // ecx /*0x717c32*/
+  int v6 = 0; // eax /*0x717c35*/
   BYTE1(this->u8_D) = 1; /*0x717c39*/
   if ( (int)vtable2 <= 0 ) /*0x717c3d*/
     return &this->AbstractTypeClass; /*0x717c3d*/
@@ -1556,8 +1529,7 @@ namespace gamemd {
 unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 {
 
-  int v1; // esi
-  v1 = 2 * dword_889F58; /*0x41cbfc*/
+  int v1 = 2 * dword_889F58; // esi /*0x41cbfc*/
   *(unsigned int *)a1->vfptr = 256; /*0x41cc07*/
   *(unsigned int *)&a1->vfptr[4] = 256; /*0x41cc09*/
   *(unsigned int *)&a1->vfptr[8] = v1; /*0x41cc0c*/
@@ -1655,10 +1627,8 @@ int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, 
 
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
   INIClass::GetString(aP1, a2, (&off_81BA88)[a4], Destination, 32); /*0x474e62*/
-  int v4; // edi
-  v4 = 0; /*0x474e67*/
-  char **v5; // esi
-  v5 = &off_81BA88; /*0x474e69*/
+  int v4 = 0; // edi /*0x474e67*/
+  char **v5 = &off_81BA88; // esi /*0x474e69*/
   while ( _strcmpi(Destination, *v5) ) /*0x474e80*/
   {
     ++v5; /*0x474e82*/
@@ -1724,10 +1694,9 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
   {
     if ( v8[12] ) /*0x476281*/
       strcat(&v8[12], Str); /*0x4762a8*/
-  int v5; // eax
-    v5 = aP3->vtable2; /*0x4762b1*/
+    int v5 = aP3->vtable2; // eax /*0x4762b1*/
     v8[4] = 0; /*0x4762b4*/
-  int v6; // ecx
+    int v6; // ecx
     v6 = *(unsigned int *)(v5 + 4 * i); /*0x4762bc*/
     v8[4] = (*(((unsigned char *)&(v6)) + (sizeof(v6) - 1))); /*0x4762c6*/
     *(unsigned int *)v8 = v6 & 0xFFFFFF; /*0x4762ce*/
@@ -1765,7 +1734,7 @@ int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2
   {
     if ( _strcmpi(v4, (char *)g_INI_Key_Normal) ) /*0x4775fa*/
     {
-  bool v6; // zf
+      bool v6; // zf
       v6 = _strcmpi(v4, aStrong) == 0; /*0x477624*/
       result = 2; /*0x477626*/
       if ( !v6 ) /*0x47762b*/
@@ -1786,10 +1755,8 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
 
   if ( !this ) /*0x48dff7*/
     return -1; /*0x48e01c*/
-  int v2; // edi
-  v2 = 0; /*0x48dff9*/
-  char **v3; // esi
-  v3 = off_81DA58; /*0x48dffb*/
+  int v2 = 0; // edi /*0x48dff9*/
+  char **v3 = off_81DA58; // esi /*0x48dffb*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x48e00e*/
   {
     ++v3; /*0x48e010*/
@@ -1815,8 +1782,7 @@ namespace gamemd {
 void ObjectTypeClass::ReleaseWaveAndString(void *a1)
 {
 
-  void *vtable0; // edi
-  vtable0 = a1->vfptr; /*0x5f61a4*/
+  void *vtable0 = a1->vfptr; // edi /*0x5f61a4*/
   if ( a1->vfptr ) /*0x5f61a4*/
   {
     WaveClass::Destroy((WaveClass *)a1->vfptr); /*0x5f61ac*/
@@ -1848,13 +1814,11 @@ namespace gamemd {
 void ObjectTypeClass::CleanupWeapons()
 {
 
-  char *v1; // esi
-  v1 = &this->q0CC; /*0x5f8084*/
-  int v2; // ebp
-  v2 = 18; /*0x5f808a*/
+  char *v1 = &this->q0CC; // esi /*0x5f8084*/
+  int v2 = 18; // ebp /*0x5f808a*/
   do /*0x5f8107*/
   {
-  void *v3; // edi
+    void *v3; // edi
     v3 = (void *)*((unsigned int *)v1 - 1); /*0x5f8091*/
     if ( v3 ) /*0x5f8096*/
     {
@@ -1862,7 +1826,7 @@ void ObjectTypeClass::CleanupWeapons()
       operator delete((void *)(v3)); /*0x5f80a0*/
       *((unsigned int *)v1 - 1) = 0; /*0x5f80a8*/
     }
-  void **v4; // edi
+    void **v4; // edi
     v4 = *(void ***)v1; /*0x5f80ab*/
     if ( *(unsigned int *)v1 ) /*0x5f80ab*/
     {
@@ -1870,7 +1834,7 @@ void ObjectTypeClass::CleanupWeapons()
       operator delete((void *)(v4)); /*0x5f80b9*/
       *(unsigned int *)v1 = 0; /*0x5f80c1*/
     }
-  void *v5; // edi
+    void *v5; // edi
     v5 = (void *)*((unsigned int *)v1 + 35); /*0x5f80c3*/
     if ( v5 ) /*0x5f80cb*/
     {
@@ -1878,7 +1842,7 @@ void ObjectTypeClass::CleanupWeapons()
       operator delete((void *)(v5)); /*0x5f80d5*/
       *((unsigned int *)v1 + 35) = 0; /*0x5f80dd*/
     }
-  void *v6; // edi
+    void *v6; // edi
     v6 = (void *)*((unsigned int *)v1 + 36); /*0x5f80e3*/
     if ( v6 ) /*0x5f80eb*/
     {
@@ -1925,8 +1889,7 @@ int ObjectTypeClass::FindByName(void *a1)
 
   if ( !this ) /*0x6e5e77*/
     return 0; /*0x6e5e77*/
-  int v2; // ebx
-  v2 = 0; /*0x6e5e7e*/
+  int v2 = 0; // ebx /*0x6e5e7e*/
   if ( g_MultiplayerCleanup <= 0 ) /*0x6e5e82*/
     return 0; /*0x6e5eb8*/
   while ( 1 ) /*0x6e5e8a*/
@@ -1978,8 +1941,7 @@ int ObjectTypeClass::loadTypeMember_5717A50(int a2)
 {
 
 
-  int result; // eax
-  result = a2; /*0x717a50*/
+  int result = a2; // eax /*0x717a50*/
   if ( a2 <= 0 ) /*0x717a56*/
     result = 1; /*0x717a58*/
   this->vtable2 = (void *)result; /*0x717a5d*/
@@ -2002,8 +1964,7 @@ int ObjectTypeClass::loadTypeMember_5717A80(int a2)
 {
 
 
-  int result; // eax
-  result = a2; /*0x717a80*/
+  int result = a2; // eax /*0x717a80*/
   if ( a2 <= 0 ) /*0x717a86*/
     result = 1; /*0x717a88*/
   this->vtable3 = (void *)result; /*0x717a8d*/
@@ -2026,8 +1987,7 @@ int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
 {
 
 
-  int result; // eax
-  result = a2; /*0x717ab0*/
+  int result = a2; // eax /*0x717ab0*/
   if ( a2 <= 0 ) /*0x717ab6*/
     result = 1; /*0x717ab8*/
   this->vtable4 = (void *)result; /*0x717abd*/
@@ -2069,21 +2029,20 @@ int ObjectTypeClass::ReadDestroyAnim()
 {
 
   INIClass::ClearSection((int)aTerrain, 0); /*0x71cb9f*/
-  int result; // eax
-  result = dword_A8E998; /*0x71cba4*/
+  int result = dword_A8E998; // eax /*0x71cba4*/
   int i; // ebx
   for ( i = 0; i < dword_A8E998; ++i ) /*0x71cbad*/
   {
-  int v4; // esi
+    int v4; // esi
     v4 = *((unsigned int *)dword_A8E98C + i); /*0x71cbba*/
     if ( v4 && !*(unsigned char *)(v4 + 129) ) /*0x71cbc1*/
     {
       if ( *(unsigned char *)(v4 + 144) ) /*0x71cbcb*/
       {
-  int v5; // [esp+8h] [ebp-14h]
-  unsigned char v6[4]; // [esp+Ch] [ebp-10h] BYREF
+        int v5; // [esp+8h] [ebp-14h]
+        unsigned char v6[4]; // [esp+Ch] [ebp-10h] BYREF
         v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v4 + 440))(v4, v6); /*0x71cbe6*/
-  char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
+        char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
         sprintf(Buffer, "%d", (int16_t)v5 + 1000 * (*((signed short *)(((unsigned char *)&(v5)) + 2)))); /*0x71cc09*/
         INIClass::SetString((uint8_t *)aTerrain, Buffer, (char *)(*(unsigned int *)(v4 + 200) + 36)); /*0x71cc29*/
       }

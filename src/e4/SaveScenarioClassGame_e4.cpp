@@ -33,7 +33,7 @@ namespace gamemd { int Map_Save_681200(int* p0); }  // x4:signals@0x681200
 namespace gamemd { int Map_Save_681240(int* p0); }  // x4:signals@0x681240
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int Map_Save_6812C0(int p0);  // x4:signals@0x6812c0
+int Map_Save_6812C0(int p0);  // x4:signals@0x6812c0
 } // namespace gamemd
 
 // 0x67CEF0
@@ -84,7 +84,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
       (*(void (__stdcall **)(int))(*ppstgOpen->__pad_000.ComPtr_field_0x08 + 8))(ppstgOpen[0].ComPtr_field_0x08); /*0x67d09a*/
     if ( *ppstgOpen->__pad_000.__pad_0 ) /*0x67d0a3*/
     {
-  LABEL_9:
+      LABEL_9:
       (*(void (__stdcall **)(unsigned int))(**ppstgOpen->__pad_000.__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d0a9*/
       return 0; /*0x67d0bb*/
     }

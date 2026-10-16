@@ -69,66 +69,66 @@ unsigned int GameMode_e4::ReadFlagsFromINI(CCINIClass * aP1, void * aDestroyable
   *(unsigned int *)this = v11; /*0x6b8d28*/
   unsigned int v12; // eax
   v12 = *(unsigned int *)this & 0xFFFDFFFF /*0x6b8d4f*/
-      | ((INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aIonstorms, (v11 & 0x20000) != 0) & 1) << 17);
+  | ((INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aIonstorms, (v11 & 0x20000) != 0) & 1) << 17);
   *(unsigned int *)this = v12; /*0x6b8d53*/
   unsigned int v13; // eax
   v13 = *(unsigned int *)this & 0xFFFEFFFF /*0x6b8d7a*/
-      | ((INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aMeteorites, (((unsigned char *)&(v12))[2]) & 1) & 1) << 16);
+  | ((INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aMeteorites, (((unsigned char *)&(v12))[2]) & 1) & 1) << 16);
   *(unsigned int *)this = v13; /*0x6b8d7c*/
   unsigned int result; // eax
   result = *(unsigned int *)this & 0xFFFBFFFF /*0x6b8da5*/
-         | ((INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aVisceroids, (v13 & 0x40000) != 0) & 1) << 18);
+  | ((INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aVisceroids, (v13 & 0x40000) != 0) & 1) << 18);
   *(unsigned int *)this = result; /*0x6b8da7*/
   if ( !*(unsigned int *)&dword_A8B238 || ((unsigned int *)&stru_A8EB00)[391] ) /*0x6b8dbb*/
   {
-  unsigned int v15; // eax
+    unsigned int v15; // eax
     v15 = *(unsigned int *)this & 0xFFFFFFBF /*0x6b8de5*/
-        | ((INIClass::ReadBool_Overwrite(
+    | ((INIClass::ReadBool_Overwrite(
               a2,
               off_8401CC,
               (uint8_t *)g_INI_Key_TiberiumGrows,
               (result & 0x40) != 0)
-          & 1) << 6);
+    & 1) << 6);
     *(unsigned int *)this = v15; /*0x6b8de9*/
-  char v16; // al
+    char v16; // al
     v16 = INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aTiberiumspread, (v15 & 0x80) != 0); /*0x6b8dfd*/
-  int v17; // ecx
+    int v17; // ecx
     v17 = *(unsigned int *)this; /*0x6b8e02*/
     (*((unsigned char *)&(v17))) = *(unsigned int *)this & 0x7F; /*0x6b8e0a*/
-  int v18; // eax
+    int v18; // eax
     v18 = v17 | ((v16 & 1) << 7); /*0x6b8e0d*/
     *(unsigned int *)this = v18; /*0x6b8e11*/
-  char v19; // al
+    char v19; // al
     v19 = INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aDestroyablebri, (v18 & 0x8000) != 0); /*0x6b8e25*/
-  int v20; // ecx
+    int v20; // ecx
     v20 = *(unsigned int *)this; /*0x6b8e2a*/
     (((unsigned char *)&(v20))[1]) = (((unsigned char *)&(*(unsigned int *)this))[1]) & 0x7F; /*0x6b8e32*/
-  int v21; // eax
+    int v21; // eax
     v21 = v20 | ((v19 & 1) << 15); /*0x6b8e35*/
     *(unsigned int *)this = v21; /*0x6b8e39*/
-  char v22; // al
+    char v22; // al
     v22 = INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aFixedalliance, (v21 & 0x400) != 0); /*0x6b8e4d*/
-  int v23; // ecx
+    int v23; // ecx
     v23 = *(unsigned int *)this; /*0x6b8e52*/
     (((unsigned char *)&(v23))[1]) = (((unsigned char *)&(*(unsigned int *)this))[1]) & 0xFB; /*0x6b8e5a*/
-  int v24; // eax
+    int v24; // eax
     v24 = v23 | ((v22 & 1) << 10); /*0x6b8e5d*/
     *(unsigned int *)this = v24; /*0x6b8e61*/
-  char v25; // al
+    char v25; // al
     v25 = INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)g_INI_Key_FogOfWar, (v24 & 0x1000) != 0); /*0x6b8e75*/
-  int v26; // ecx
+    int v26; // ecx
     v26 = *(unsigned int *)this; /*0x6b8e7a*/
     (((unsigned char *)&(v26))[1]) = (((unsigned char *)&(*(unsigned int *)this))[1]) & 0xEF; /*0x6b8e82*/
-  int v27; // eax
+    int v27; // eax
     v27 = v26 | ((v25 & 1) << 12); /*0x6b8e85*/
     *(unsigned int *)this = v27; /*0x6b8e89*/
-  unsigned int v28; // eax
+    unsigned int v28; // eax
     v28 = *(unsigned int *)this & 0xFFFFFFDF /*0x6b8ead*/
-        | (32 * (INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aInert, (v27 & 0x20) != 0) & 1));
+    | (32 * (INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aInert, (v27 & 0x20) != 0) & 1));
     *(unsigned int *)this = v28; /*0x6b8eb1*/
-  char v29; // al
+    char v29; // al
     v29 = INIClass::ReadBool_Overwrite(a2, off_8401CC, (uint8_t *)aHarvesterimmun, (v28 & 0x800) != 0); /*0x6b8ec5*/
-  int v30; // ecx
+    int v30; // ecx
     v30 = *(unsigned int *)this; /*0x6b8eca*/
     (((unsigned char *)&(v30))[1]) = (((unsigned char *)&(*(unsigned int *)this))[1]) & 0xF7; /*0x6b8ed2*/
     result = v30 | ((v29 & 1) << 11); /*0x6b8ed5*/

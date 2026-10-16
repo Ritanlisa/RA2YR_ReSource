@@ -11,7 +11,7 @@
 namespace gamemd {  // G42.18 ns repair
 int BuildingAnim::GetType()
 {
-
+  
   int v0; // eax
   v0 = FindBuildingAnimByName((gamemd::AbstractClass *)(off_822724), 1); /*0x4e12db*/
   if ( v0 ) /*0x4e12e2*/

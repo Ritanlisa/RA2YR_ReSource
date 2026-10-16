@@ -55,13 +55,12 @@ char Dial8Class_48::AddRef(int a2)
   m_8 = this->m_8; /*0x4a7d82*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a7d8d*/
   {
-  int v3; // edx
-    v3 = 0; /*0x4a7d8f*/
+    int v3 = 0; // edx /*0x4a7d8f*/
     if ( m_8 <= 0 ) /*0x4a7d93*/
       return 1; /*0x4a7db3*/
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x4a7d95*/
-  int v5; // ecx
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a7d9b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a7da4*/
     {
@@ -84,7 +83,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x4a7dcc*/
   {
     LOBYTE(this->m_C) = 0; /*0x4a7dd6*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4a7ddc*/
       v4 = a3; /*0x4a7df2*/
     else
@@ -94,11 +93,11 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x4a7e05*/
       {
-  int m_8; // ecx
+        int m_8; // ecx
         m_8 = this->m_8; /*0x4a7e0c*/
         if ( a2 < m_8 ) /*0x4a7e11*/
           m_8 = a2; /*0x4a7e13*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a7e19*/
           ++i; /*0x4a7e1e*/
         if ( BYTE1(this->m_C) ) /*0x4a7e2b*/
@@ -147,10 +146,8 @@ int Dial8Class_48::Read(unsigned int * a2, void *a2_2, void *a3)
 
   if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->q00C))) ) /*0x4a7ea0*/
     return 0; /*0x4a7ea8*/
-  int m_8; // edx
-  m_8 = a2_2->q008; /*0x4a7eae*/
-  int result; // eax
-  result = 0; /*0x4a7eb1*/
+  int m_8 = a2_2->q008; // edx /*0x4a7eae*/
+  int result = 0; // eax /*0x4a7eb1*/
   if ( m_8 <= 0 ) /*0x4a7eb5*/
     return -1; /*0x4a7ecc*/
   unsigned int *i; // ecx
@@ -183,7 +180,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
   if ( a2 ) /*0x4a7f0c*/
   {
     LOBYTE(this->m_C) = 0; /*0x4a7f12*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4a7f18*/
       v4 = a3; /*0x4a7f2e*/
     else
@@ -193,11 +190,11 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x4a7faa*/
     if ( *&this->q004 ) /*0x4a7f38*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = this->m_8; /*0x4a7f3f*/
       if ( a2 < m_8 ) /*0x4a7f44*/
         m_8 = a2; /*0x4a7f46*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a7f4c*/
         ++i; /*0x4a7f51*/
       if ( BYTE1(this->m_C) ) /*0x4a7f5e*/
@@ -214,8 +211,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4a7f8e*/
   }
-  int v7; // eax
-  v7 = this->m_8; /*0x4a7f91*/
+  int v7 = this->m_8; // eax /*0x4a7f91*/
   if ( v7 < this->m_10 ) /*0x4a7f99*/
     this->m_10 = v7; /*0x4a7f9b*/
   return 1; /*0x4a7f9e*/
@@ -230,8 +226,7 @@ int Dial8Class_48::FindItem(unsigned int * a2)
 
   int m_10; // edx
   m_10 = this->m_10; /*0x4a7fb0*/
-  int result; // eax
-  result = 0; /*0x4a7fb3*/
+  int result = 0; // eax /*0x4a7fb3*/
   if ( m_10 <= 0 ) /*0x4a7fb8*/
     return -1; /*0x4a7fcf*/
   unsigned int *i; // ecx
@@ -248,8 +243,7 @@ namespace gamemd {
 VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x4a8033*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4a8033*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4a8036*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4a8040*/
   {
@@ -269,8 +263,7 @@ namespace gamemd {
 DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x4a8083*/
+  void *v3 = *&Block->__pad_004; // eax /*0x4a8083*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4a8086*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4a8090*/
   {

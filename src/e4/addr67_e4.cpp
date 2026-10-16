@@ -49,31 +49,31 @@ int sub_679CC0()
 
   if ( !byte_B053B8 ) /*0x679cd0*/
   {
-  void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
+    void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
     v1[1] = (void *)((unsigned int)(0));
     v1[2] = 0; /*0x679cde*/
-  unsigned int v2[10]; // [esp+10h] [ebp-B8h] BYREF
+    unsigned int v2[10]; // [esp+10h] [ebp-B8h] BYREF
     ((GenericList *)(v2))->Constructor(); /*0x679ce2*/
     v2[0] = (unsigned int)(&vt_List); /*0x679ceb*/
     memset(&v2[7], 0, 12); /*0x679cf8*/
-  char v3; // [esp+38h] [ebp-90h]
+    char v3; // [esp+38h] [ebp-90h]
     v3 = 0; /*0x679d04*/
-  int v4; // [esp+3Ch] [ebp-8Ch]
+    int v4; // [esp+3Ch] [ebp-8Ch]
     v4 = 0; /*0x679d08*/
-  int v5; // [esp+40h] [ebp-88h]
+    int v5; // [esp+40h] [ebp-88h]
     v5 = 0; /*0x679d0c*/
-  char v6; // [esp+44h] [ebp-84h]
+    char v6; // [esp+44h] [ebp-84h]
     v6 = 0; /*0x679d10*/
     v1[0] = (void*)(&CCINIClass_Vtable); /*0x679d14*/
-  unsigned int v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
+    unsigned int v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
     CCFileClass::Construct(v7, g_Str_File_CoopCampMD_ini); /*0x679d1c*/
     if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
     v7[0] = (unsigned int)(&vt_CCFileClass); /*0x679d51*/
-  int v9; // [esp+C0h] [ebp-8h]
+    int v9; // [esp+C0h] [ebp-8h]
     v9 = 0; /*0x679d59*/
-  unsigned char v8[12]; // [esp+B4h] [ebp-14h] BYREF
+    unsigned char v8[12]; // [esp+B4h] [ebp-14h] BYREF
     Vector::Clear((int)v8); /*0x679d60*/
     v7[0] = (unsigned int)&off_7E1668; /*0x679d69*/
     ((BufferIOFileClass *)(v7))->Dtor(); /*0x679d71*/
@@ -92,17 +92,17 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
   if ( ((INIClass *)edx0)->GetString(aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
   {
     (&v17)->BuildingTypeConstructor(0, 0); /*0x67b591*/
-  int v19; // [esp+20h] [ebp-88h]
+    int v19; // [esp+20h] [ebp-88h]
     v19 = 10; /*0x67b59a*/
-  int v18; // [esp+1Ch] [ebp-8Ch]
+    int v18; // [esp+1Ch] [ebp-8Ch]
     v18 = 0; /*0x67b5a8*/
     /* X11: vtable install elided (implicit via TypeList virtuals 0x67b5ac) */
-  char *i; // eax
+    char *i; // eax
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
         break; /*0x67b5c2*/
-  int v7; // edi
+      int v7; // edi
       v7 = (i)->FindOrCreate(); /*0x67b5cb*/
       if ( v7 /*0x67b5fb*/
         && (v18 < v17.Capacity
@@ -110,7 +110,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
          && v19 > 0
          && (*((uint8_t (**)(VectorClass *, int, unsigned int))v17.vfptr + 2))(&v17, v19 + v17.Capacity, 0)) )
       {
-  int v8; // eax
+        int v8; // eax
         v8 = v18++; /*0x67b606*/
         *((unsigned int *)v17.Items + v8) = v7; /*0x67b611*/
       }
@@ -123,12 +123,12 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     (aP0)->CopyBuilding(&v17); /*0x67b640*/
     /* X11: vtable install elided (implicit via TypeList virtuals 0x67b645) */
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b64b) */
-  void *v9; // ecx
+    void *v9; // ecx
     v9 = (void *)v19; /*0x67b657*/
     aP0[1].vfptr = (void *)v18; /*0x67b65b*/
-  void *Items; // eax
+    void *Items; // eax
     Items = v17.Items; /*0x67b65e*/
-  bool v11; // zf
+    bool v11; // zf
     v11 = v17.Items == 0; /*0x67b662*/
     aP0[1].Items = v9; /*0x67b664*/
     if ( !v11 && v17.IsAllocated ) /*0x67b671*/
@@ -147,20 +147,18 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     if ( aP0 != a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
-  int Capacity; // eax
+      int Capacity; // eax
       Capacity = a4->Capacity; /*0x67b6b6*/
       aP0->Capacity = Capacity; /*0x67b6bb*/
       if ( Capacity ) /*0x67b6be*/
       {
-  int v14; // eax
+        int v14; // eax
         v14 = (int)(operator new(4 * Capacity)); /*0x67b6c8*/
         aP0->Items = (void *)v14; /*0x67b6d2*/
         if ( v14 ) /*0x67b6d5*/
         {
-  int v15; // ecx
-          v15 = aP0->Capacity; /*0x67b6d7*/
-  int v16; // eax
-          v16 = 0; /*0x67b6da*/
+          int v15 = aP0->Capacity; // ecx /*0x67b6d7*/
+          int v16 = 0; // eax /*0x67b6da*/
           aP0->IsAllocated = 1; /*0x67b6de*/
           if ( v15 > 0 ) /*0x67b6e2*/
           {
@@ -201,12 +199,12 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     v17.q014 = 10; /*0x67bb5a*/
     v17.q010 = 0; /*0x67bb68*/
     *(unsigned int *)v17.__pad_000 = (unsigned int)(&vt_TypeList); /*0x67bb6c*/
-  char *i; // eax
+    char *i; // eax
     for ( i = strtok((char *)&v17.q01C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
     {
       if ( !*i ) /*0x67bb80*/
         break; /*0x67bb82*/
-  int v7; // edi
+      int v7; // edi
       v7 = KeywordType::FindOrCreate2(i); /*0x67bb8b*/
       if ( v7 /*0x67bbbb*/
         && (v17.q010 < v17.q008
@@ -217,7 +215,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
               v17.q014 + v17.q008,
               0)) )
       {
-  int v8; // eax
+        int v8; // eax
         v8 = v17.q010++; /*0x67bbc6*/
         *(unsigned int *)(v17.u32_4 + 4 * v8) = v7; /*0x67bbd1*/
       }
@@ -230,12 +228,11 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
     *(unsigned int *)aP0 = (unsigned int)(&vt_TypeList); /*0x67bc05*/
     *(unsigned int *)v17.__pad_000 = (unsigned int)(&vt_VectorClass); /*0x67bc0b*/
-  int InfantryTypeVector_field_0x14; // ecx
-    InfantryTypeVector_field_0x14 = v17.q014; /*0x67bc17*/
+    int InfantryTypeVector_field_0x14 = v17.q014; // ecx /*0x67bc17*/
     aP0->u32_10 = v17.q010; /*0x67bc1b*/
-  void *InfantryTypeVector_field_0x04; // eax
+    void *InfantryTypeVector_field_0x04; // eax
     InfantryTypeVector_field_0x04 = (void *)v17.u32_4; /*0x67bc1e*/
-  bool v11; // zf
+    bool v11; // zf
     v11 = v17.u32_4 == 0; /*0x67bc22*/
     aP0->u32_14 = InfantryTypeVector_field_0x14; /*0x67bc24*/
     if ( !v11 && (((unsigned char *)&(v17.q00C))[1]) ) /*0x67bc31*/
@@ -254,7 +251,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     if ( (unsigned int *)aP0 != a4 ) /*0x67bc6c*/
     {
       ((_VectorClass_PBVInfantryTypeClass *)aP0)->Cleanup(); /*0x67bc70*/
-  int v13; // eax
+      int v13; // eax
       v13 = a4[2]; /*0x67bc76*/
       aP0->u32_8 = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/

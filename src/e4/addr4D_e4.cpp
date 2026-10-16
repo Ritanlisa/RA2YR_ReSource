@@ -54,14 +54,12 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
     }
     while ( v2 < g_FootClassConfig ); /*0x4d16bb*/
   }
-  int v3; // kr00_4
-  v3 = aP0->u32_38; /*0x4d16d7*/
+  int v3 = aP0->u32_38; // kr00_4 /*0x4d16d7*/
   v17[0] = aP0->u32_34 / 256; /*0x4d16df*/
   v17[1] = v3 / 256; /*0x4d16e4*/
   int16_t v18[2]; // [esp+18h] [ebp-4h] BYREF
   *(unsigned int *)v18 = *(unsigned int *)v17; /*0x4d16f3*/
-  int v4; // edx
-  v4 = g_MissionState; /*0x4d170e*/
+  int v4 = g_MissionState; // edx /*0x4d170e*/
   int v5; // esi
   v5 = 74 * (v17[1] - ((v17[0] + v17[1]) << 9) - v17[0]) - aP0->vtable4 + 0x7FFFFFFF; /*0x4d1714*/
   if ( g_MissionState ) /*0x4d171c*/
@@ -74,20 +72,19 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
       byte_8B3CCC = 1; /*0x4d174d*/
     }
     *(unsigned int *)v17 = v5; /*0x4d175f*/
-  int v6; // eax
+    int v6; // eax
     v6 = sub_4D2F00((int)g_MissionPool, v4, (int *)v17); /*0x4d1763*/
     if ( v6 ) /*0x4d176a*/
     {
-  int v7; // eax
+      int v7; // eax
       v7 = (v6 - (int)g_MissionPool) >> 3; /*0x4d1772*/
       if ( v7 != -1 ) /*0x4d1778*/
       {
-  signed int v8; // ecx
-        v8 = v7 + 1; /*0x4d177a*/
-  size_t i; // eax
+        signed int v8 = v7 + 1; // ecx /*0x4d177a*/
+        size_t i; // eax
         for ( i = g_MissionState; v8 < (int)g_MissionState; i = g_MissionState ) /*0x4d1784*/
         {
-  unsigned int *v10; // eax
+          unsigned int *v10; // eax
           v10 = (unsigned int *)((char *)g_MissionPool + 8 * v8++);
           *(v10 - 2) = *v10; /*0x4d1792*/
           *(v10 - 1) = v10[1]; /*0x4d1798*/
@@ -101,17 +98,15 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   }
   if ( aP0->vtable4 == (void *)(6) ) /*0x4d17d0*/
   {
-  Cell *v11; // eax
+    Cell *v11; // eax
     v11 = (Cell *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v18); /*0x4d17dc*/
-  unsigned int *v12; // eax
+    unsigned int *v12; // eax
     v12 = ((Cell *)(v11))->IsBridge(); /*0x4d17e3*/
     if ( v12 ) /*0x4d17ea*/
     {
       v12->u8_6E7 = 0; /*0x4d17ec*/
-  unsigned int *v13; // ecx
-      v13 = v12 + 343; /*0x4d17f2*/
-  int v14; // edx
-      v14 = 21; /*0x4d17f8*/
+      unsigned int *v13 = v12 + 343; // ecx /*0x4d17f2*/
+      int v14 = 21; // edx /*0x4d17f8*/
       do /*0x4d180d*/
       {
         if ( *v13 ) /*0x4d17fd*/
@@ -147,37 +142,35 @@ namespace gamemd {
 int sub_4D2370()
 {
 
-  int result; // eax
-  result = g_FootClassConfig; /*0x4d2373*/
-  int v2; // esi
-  v2 = 0; /*0x4d2379*/
+  int result = g_FootClassConfig; // eax /*0x4d2373*/
+  int v2 = 0; // esi /*0x4d2379*/
   int i; // [esp+Ch] [ebp-18h]
   for ( i = 0; v2 < g_FootClassConfig; i = v2 ) /*0x4d2381*/
   {
-  int v3; // edi
+    int v3; // edi
     v3 = *((unsigned int *)dword_8B3D14 + v2); /*0x4d2399*/
     if ( *(unsigned int *)(v3 + 48) == 6 /*0x4d23ae*/
       && (*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))(**(unsigned int **)(v3 + 96), 0) )
     {
-  unsigned short *v4; // esi
+      unsigned short *v4; // esi
       if ( *(unsigned int *)(v3 + 48) == 6 ) /*0x4d23bf*/
         v4 = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))( /*0x4d23d0*/
                         **(unsigned int **)(v3 + 96),
                         0);
       else
         v4 = 0; /*0x4d23d4*/
-  int v5; // edi
-  unsigned char v12[4]; // [esp+14h] [ebp-10h] BYREF
+      int v5; // edi
+      unsigned char v12[4]; // [esp+14h] [ebp-10h] BYREF
       v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 96))(v3, v12); /*0x4d23e2*/
-  int v11; // [esp+10h] [ebp-14h] BYREF
+      int v11; // [esp+10h] [ebp-14h] BYREF
       v11 = v5; /*0x4d23e4*/
       while ( *v4 != 0x7FFF || v4[1] != 0x7FFF ) /*0x4d23f9*/
       {
-  int v9; // [esp+8h] [ebp-1Ch]
+        int v9; // [esp+8h] [ebp-1Ch]
         (*((unsigned short *)&(v9))) = v5 + *v4; /*0x4d2408*/
         (*(((unsigned short *)&(v9)) + 1)) = (*(((unsigned short *)&(v5)) + 1)) + v4[1]; /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
-  unsigned int *v6; // eax
+        unsigned int *v6; // eax
         v6 = (unsigned int *)(((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v11)); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
         v6->u32_140 |= 0x400000u; /*0x4d2439*/
@@ -186,13 +179,13 @@ int sub_4D2370()
     }
     else
     {
-  unsigned int *v7; // edi
+      unsigned int *v7; // edi
       v7 = (unsigned int *)(v3 + 52); /*0x4d243d*/
-  unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
+      unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
       v13[0] = *v7; /*0x4d2442*/
       v13[1] = v7[1]; /*0x4d244e*/
       v13[2] = v7[2]; /*0x4d2455*/
-  CellClass *v8; // eax
+      CellClass *v8; // eax
       v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x4d245e*/
       v8->flags[0] |= 0x400000u; /*0x4d2474*/
     }
@@ -230,7 +223,7 @@ int sub_4D2F00(int a1, int a2, int * a3)
     if ( v5 <= v4 ) /*0x4d2f1e*/
       break; /*0x4d2f1e*/
     v3 /= 2; /*0x4d2f20*/
-  LABEL_7:
+    LABEL_7:
     if ( v3 <= 0 ) /*0x4d2f32*/
       return 0; /*0x4d2f32*/
   }
@@ -273,8 +266,8 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   if ( v4 < 0 && v4 != -2147467262 ) /*0x4db926*/
     sub_7DC720(v4); /*0x4db929*/
   if ( !v8 ) /*0x4db934*/
-LABEL_13:
-    sub_7DC720(-2147467261); /*0x4db93b*/
+    LABEL_13:
+  sub_7DC720(-2147467261); /*0x4db93b*/
   (*(void (**)(int, int))(*(unsigned int *)v8 + 12))(v8, v2); /*0x4db949*/
   v5 = (LPVOID)this->M1652; /*0x4db94c*/
   result = (int)ppv; /*0x4db952*/
@@ -682,28 +675,27 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
 
   unsigned int *v6; // esi
 
-  int v2; // ebx
-  v2 = 0; /*0x4d4fc9*/
+  int v2 = 0; // ebx /*0x4d4fc9*/
   while ( 1 ) /*0x4d4fd4*/
   {
-  unsigned short *v3; // eax
-  char v11[4]; // [esp+18h] [ebp-4h] BYREF
+    unsigned short *v3; // eax
+    char v11[4]; // [esp+18h] [ebp-4h] BYREF
     v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->AbstractClass + 110))(this, v11); /*0x4d4fd4*/
-  int v9; // [esp+10h] [ebp-Ch]
+    int v9; // [esp+10h] [ebp-Ch]
     LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
-  __int16 v10[2]; // [esp+14h] [ebp-8h] BYREF
+    __int16 v10[2]; // [esp+14h] [ebp-8h] BYREF
     *(unsigned int *)v10 = v9; /*0x4d500c*/
-  Cell *v4; // eax
+    Cell *v4; // eax
     v4 = (Cell *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v10); /*0x4d5010*/
-  unsigned int *v5; // eax
+    unsigned int *v5; // eax
     v5 = (v4)->IsBridge(); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/
     {
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
-  int v7; // ebp
+        int v7; // ebp
         v7 = v5->vt_slot_60(); /*0x4d5039*/
         if ( v7 == (*((int (**)(ObjectClass *))this->AbstractClass + 15))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
@@ -733,12 +725,11 @@ void E4Recv_4DF280::sub_4DF280()
   int v4; // [esp+4h] [ebp-14h]
   int16_t v4[2]; // [esp+8h] [ebp-10h] BYREF
 
-  int v2; // ecx
-  v2 = this->M1484; /*0x4df286*/
+  int v2 = this->M1484; // ecx /*0x4df286*/
   if ( v2 ) /*0x4df28e*/
   {
-  unsigned int *v3; // eax
-  unsigned char v6[12]; // [esp+Ch] [ebp-Ch] BYREF
+    unsigned int *v3; // eax
+    unsigned char v6[12]; // [esp+Ch] [ebp-Ch] BYREF
     v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v2 + 72))(v2, v6); /*0x4df297*/
     (*((unsigned short *)&(v4))) = *v3 / 256; /*0x4df2aa*/
     (*(((unsigned short *)&(v4)) + 1)) = v3[1] / 256; /*0x4df2c3*/

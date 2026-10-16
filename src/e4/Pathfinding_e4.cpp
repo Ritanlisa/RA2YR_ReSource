@@ -432,9 +432,9 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
             HIWORD(a1) = WORD1(v82) + n; /*0x5a5a09*/
             LODWORD(v81[0]) = (unsigned int)(a1); /*0x5a5a21*/
             if ( !*((unsigned char *)dword_ABED10 /*0x5a5a51*/
-                  + 80 * (__int16)(m + v82)
-                  + 80 * g_MapCellWidth * (__int16)(WORD1(v82) + n)
-                  + 69)
+            + 80 * (__int16)(m + v82)
+            + 80 * g_MapCellWidth * (__int16)(WORD1(v82) + n)
+            + 69)
               || *((unsigned int *)(&dword_87F7E8)->To_CellObj((__int16 *)v81) + 14) != dword_ABC2B0 )
             {
               LOBYTE(a2) = 0; /*0x5a5a53*/
@@ -442,8 +442,8 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
           }
         }
         if ( (unsigned char)a2 ) /*0x5a5a6a*/
-LABEL_98:
-          PlaceMapSeedClassBuildings((int)v79 + dword_AA10A4, &v82, -1, -1); /*0x5a5a7f*/
+          LABEL_98:
+        PlaceMapSeedClassBuildings((int)v79 + dword_AA10A4, &v82, -1, -1); /*0x5a5a7f*/
         --v80; /*0x5a5a89*/
       }
       while ( *(float *)&v80 != 0.0 ); /*0x5a5a8d*/

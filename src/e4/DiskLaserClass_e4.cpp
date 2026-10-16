@@ -34,7 +34,7 @@
 namespace gamemd {  // G42.18c ns repair
 void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
 {
-
+  
   *(unsigned int *)Block->tail_0 = &vt_DiskLaserClass; /*0x4a7c9d*/
   Block->__pad_004 = (int)&vt_DiskLaserClass; /*0x4a7ca3*/
   Block->u32_8 = (int)&vt_DiskLaserClass; /*0x4a7caa*/
@@ -62,7 +62,7 @@ void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
 namespace gamemd {  // G42.18c ns repair
 int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
 {
-
+  
   int Prefix_0; // edi
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(aP0), aP1); /*0x4a7ba1*/
   if ( Prefix_0 >= 0 ) /*0x4a7ba5*/

@@ -12,7 +12,7 @@
 namespace gamemd {  // G42.18 ns repair
 long long Camera::UpdateTilt()
 {
-
+  
   double v0; // st7
   v0 = Math::Sin(dbl_ABDFA8 - dbl_ABEC88); /*0x58b612*/
   int64_t result; // rax

@@ -17,8 +17,7 @@ int16_t EventQueue::Process(void *a1)
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
-  int v2; // eax
-  v2 = this->q314; /*0x54f025*/
+  int v2 = this->q314; // eax /*0x54f025*/
   if ( v2 == this->q318 ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
@@ -44,12 +43,9 @@ short EventQueue::Read(void *a1, void *a2, void *a3)
       MessageLoop(); /*0x54f09c*/
   }
   while ( this->q314 == *&this->q318 || !EventQueue::Check(this) ); /*0x54f0b3*/
-  int v3; // ecx
-  v3 = this->q314; /*0x54f0bd*/
-  int v4; // edi
-  v4 = *&this->q318; /*0x54f0c3*/
-  int16_t result; // ax
-  result = 0; /*0x54f0c9*/
+  int v3 = this->q314; // ecx /*0x54f0bd*/
+  int v4 = *&this->q318; // edi /*0x54f0c3*/
+  int16_t result = 0; // ax /*0x54f0c9*/
   if ( v3 != v4 ) /*0x54f0cd*/
   {
     result = *((unsigned short *)this + v3 + 138); /*0x54f0cf*/
@@ -57,19 +53,15 @@ short EventQueue::Read(void *a1, void *a2, void *a3)
   }
   if ( (uint8_t)result == 1 || (uint8_t)result == 4 || (uint8_t)result == 2 ) /*0x54f106*/
   {
-  int v6; // edx
-    v6 = this->q314; /*0x54f108*/
-  uint16_t v7; // cx
-    v7 = 0; /*0x54f10e*/
+    int v6 = this->q314; // edx /*0x54f108*/
+    uint16_t v7 = 0; // cx /*0x54f10e*/
     if ( v6 != v4 ) /*0x54f112*/
     {
       v7 = *((unsigned short *)this + v6 + 138); /*0x54f114*/
       this->q314 = (v6 + 1) % 256; /*0x54f12d*/
     }
-  int v8; // ebx
-    v8 = this->q314; /*0x54f134*/
-  uint16_t v9; // dx
-    v9 = 0; /*0x54f140*/
+    int v8 = this->q314; // ebx /*0x54f134*/
+    uint16_t v9 = 0; // dx /*0x54f140*/
     *(unsigned int *)this = v7; /*0x54f144*/
     if ( v8 != v4 ) /*0x54f146*/
     {
@@ -82,10 +74,8 @@ short EventQueue::Read(void *a1, void *a2, void *a3)
   }
   else if ( (uint8_t)result == 10 ) /*0x54f17e*/
   {
-  int v10; // ecx
-    v10 = this->q314; /*0x54f180*/
-  int16_t v11; // dx
-    v11 = 0; /*0x54f186*/
+    int v10 = this->q314; // ecx /*0x54f180*/
+    int16_t v11 = 0; // dx /*0x54f186*/
     if ( v10 != v4 ) /*0x54f18a*/
     {
       v11 = *((unsigned short *)this + v10 + 138); /*0x54f18c*/
@@ -101,8 +91,7 @@ namespace gamemd {
 int16_t EventQueue::Check(void *a1, void *a2, void *a3)
 {
 
-  int v1; // eax
-  v1 = this->q314; /*0x54f650*/
+  int v1 = this->q314; // eax /*0x54f650*/
   if ( v1 == this->q318 ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else

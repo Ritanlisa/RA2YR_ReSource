@@ -29,8 +29,8 @@ int LinkClass::Destroy(void *a1)
 namespace gamemd {
 int LinkClass::Destruct(void *a1)
 {
-
-
+  
+  
   /* X11: vtable install elided (implicit via LinkClass virtuals 0x5565a5) */
   LinkClass *Prev; // edi
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
@@ -49,7 +49,7 @@ int LinkClass::Destruct(void *a1)
   if ( Prev == this && (LinkClass *)result != this ) /*0x5565e2*/
     return (*(int (**)(int))(*(unsigned int *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/
-
+  
 }
 } // namespace gamemd
 // 0x4E1AD0

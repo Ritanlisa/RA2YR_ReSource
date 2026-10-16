@@ -27,8 +27,7 @@ namespace gamemd {  // G42.18 ns repair
 HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
 {
 
-  int *v2; // edi
-  v2 = pStm; /*0x69ee97*/
+  int *v2 = pStm; // edi /*0x69ee97*/
   int v3; // ebx
   v3 = SwizzleManager::SaveLoad((int *)a1->0, pStm); /*0x69eea2*/
   if ( v3 < 0 ) /*0x69eea6*/
@@ -68,7 +67,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x69ef2b*/
   if ( !v4->Piggybackee ) /*0x69ef36*/
   {
-  int v12; // edx
+    int v12; // edx
     v12 = *(unsigned int *)v3->IStream_field_00; /*0x69efd3*/
     (*((unsigned char *)&(a3))) = 0; /*0x69efdf*/
     (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x69efe4*/
@@ -83,14 +82,14 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   pPStm = 0; /*0x69ef53*/
   if ( Piggybackee ) /*0x69ef5d*/
   {
-  int v8; // edi
+    int v8; // edi
     v8 = (**(int (__stdcall ***)(ILocomotion *, void *, ShipLocomotionClass **))Piggybackee)( /*0x69ef6e*/
            Piggybackee,
            &unk_820270,
            &a1);
     if ( v8 >= 0 ) /*0x69ef72*/
     {
-  int *v9; // ebx
+      int *v9; // ebx
       v9 = (int *)a1; /*0x69ef8b*/
       if ( pPStm ) /*0x69ef91*/
         (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x69ef96*/

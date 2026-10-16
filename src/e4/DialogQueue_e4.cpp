@@ -45,9 +45,9 @@ int DialogQueue::RemoveEntry(void *a1)
   {
     --g_MissionQueueFrame.ls640BkgdName[11]; /*0x5d4efa*/
     for ( ; /*0x5d4f00*/
-          result < g_MissionQueueFrame.ls640BkgdName[11];
-          *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result - 4) = *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8]
-                                                                                         + 4 * result) )
+    result < g_MissionQueueFrame.ls640BkgdName[11];
+    *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result - 4) = *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8]
+    + 4 * result) )
     {
       ++result; /*0x5d4f08*/
     }

@@ -24,8 +24,7 @@ namespace gamemd {  // G42.18 ns repair
 HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
 {
 
-  int *v2; // edi
-  v2 = pStm; /*0x4af787*/
+  int *v2 = pStm; // edi /*0x4af787*/
   int v3; // ebx
   v3 = SwizzleManager::SaveLoad((int *)a1->0, pStm); /*0x4af792*/
   if ( v3 < 0 ) /*0x4af796*/
@@ -65,7 +64,7 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x4af81b*/
   if ( !v4->Piggybackee ) /*0x4af826*/
   {
-  int v12; // edx
+    int v12; // edx
     v12 = *(unsigned int *)v3->IStream_field_00; /*0x4af8c3*/
     (*((unsigned char *)&(a3))) = 0; /*0x4af8cf*/
     (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x4af8d4*/
@@ -80,14 +79,14 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   pPStm = 0; /*0x4af843*/
   if ( Piggybackee ) /*0x4af84d*/
   {
-  int v8; // edi
+    int v8; // edi
     v8 = (**(int (__stdcall ***)(ILocomotion *, void *, DriveLocomotionClass **))Piggybackee)( /*0x4af85e*/
            Piggybackee,
            &unk_820270,
            &a1);
     if ( v8 >= 0 ) /*0x4af862*/
     {
-  int *v9; // ebx
+      int *v9; // ebx
       v9 = (int *)a1; /*0x4af87b*/
       if ( pPStm ) /*0x4af881*/
         (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x4af886*/

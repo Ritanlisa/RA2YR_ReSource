@@ -24,7 +24,7 @@ int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int MechLocomotionClass::BeginMove(int * a1, int * a2)
 {
-
+  
   int result; // eax
   result = SwizzleManager::SaveLoad((int *)a1->0, a2); /*0x5b19ab*/
   if ( result >= 0 ) /*0x5b19b2*/

@@ -95,7 +95,7 @@ namespace gamemd { int sub_4053E0(int p0); }  // x4:signals@0x4053e0
 namespace gamemd { int sub_405430(int p0); }  // x4:signals@0x405430
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int InitializeTileAudioOcclusion(int p0, float* p1);  // x4:signals@0x756860
+int InitializeTileAudioOcclusion(int p0, float* p1);  // x4:signals@0x756860
 } // namespace gamemd
 
 // 0x750920
@@ -105,15 +105,13 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
 
   if ( !VocClass_VoicesEnabled ) /*0x75092c*/
     return 0; /*0x75092e*/
-  AudioPool *v5; // ebx
-  v5 = 0; /*0x750935*/
+  AudioPool *v5 = 0; // ebx /*0x750935*/
   if ( a1 >= 0 && a1 < g_VocPlayState ) /*0x750943*/
     v5 = (AudioPool *)**((unsigned int **)g_VocAudioConfig + a1); /*0x75094d*/
-  VocClass *v6; // esi
-  v6 = 0; /*0x750953*/
+  VocClass *v6 = 0; // esi /*0x750953*/
   if ( a4 ) /*0x750957*/
   {
-  ObjectClass *v7; // eax
+    ObjectClass *v7; // eax
     v7 = (ObjectClass *)AudioSource::Get(a4); /*0x75095b*/
     v6 = (VocClass *)v7; /*0x750960*/
     if ( v7 ) /*0x750964*/
@@ -127,10 +125,9 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
   }
   if ( v5 ) /*0x75097d*/
   {
-  unsigned int v8; // eax
+    unsigned int v8; // eax
     (*((unsigned short *)&(v8))) = Math::RoundToInt(a3 * 16384.0); /*0x750989*/
-  unsigned int v9; // edi
-    v9 = v8; /*0x75098e*/
+    unsigned int v9 = v8; // edi /*0x75098e*/
     if ( v8 >= 0x4000 ) /*0x750996*/
       v9 = 0x4000; /*0x750998*/
     if ( v6 || (v6 = (VocClass *)(v5)->ProcessQueue()) != 0 ) /*0x7509ac*/
@@ -279,7 +276,7 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
       sub_4052E0((ObjectClass *)v9); /*0x750db3*/
     }
     if ( v5 ) /*0x750dba*/
-  LABEL_15:
+      LABEL_15:
     SetAudioSource((int)a2, v5, (int)v7); /*0x750e0c*/
     return v5; /*0x750e16*/
   }
@@ -314,7 +311,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
           &BytesPerSector,
           &NumberOfFreeClusters,
           &TotalNumberOfClusters) )
-    goto LABEL_2; /*0x751e0b*/
+  goto LABEL_2; /*0x751e0b*/
   v5 = BytesPerSector * SectorsPerCluster; /*0x751e2c*/
   v6 = NumberOfFreeClusters == 0; /*0x751e36*/
   a2[34] = NumberOfFreeClusters * BytesPerSector * SectorsPerCluster; /*0x751e38*/
@@ -331,7 +328,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
           (LPSTR)a2 + 72,
           0x40u) )
   {
-  LABEL_2:
+    LABEL_2:
     Debug::Log(); /*0x751e0d*/
     return 0; /*0x751e23*/
   }
@@ -345,8 +342,7 @@ int ThemeManager_Update(int a1, int a2, int a3)
 
   int result; // eax
   result = (int)g_InfantryDrawState; /*0x752480*/
-  int v4; // ebp
-  v4 = a2; /*0x752487*/
+  int v4 = a2; // ebp /*0x752487*/
   if ( g_InfantryDrawState ) /*0x75248b*/
   {
     if ( a1 >= 0 && a1 < g_InfantrySelectState ) /*0x75249f*/
@@ -354,7 +350,7 @@ int ThemeManager_Update(int a1, int a2, int a3)
       result = dword_B1D3D8; /*0x7524a5*/
       if ( !dword_B1D3D8 ) /*0x7524ac*/
       {
-  int *v5; // ebx
+        int *v5; // ebx
         v5 = (int *)*((unsigned int *)g_InfantryRenderPool + a1); /*0x7524b7*/
         result = dword_B1D4C4; /*0x7524ba*/
         if ( v5 != (int *)dword_B1D4C4 ) /*0x7524c1*/
@@ -365,7 +361,7 @@ int ThemeManager_Update(int a1, int a2, int a3)
             a3 = v5->u32_48; /*0x7524d9*/
           if ( dword_B1D4C4 && v4 == 2 ) /*0x7524e4*/
           {
-  int i; // esi
+            int i; // esi
             for ( i = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7524f5*/
             {
               LinkedList::Init((unsigned int **)i); /*0x7524f9*/
@@ -382,7 +378,7 @@ int ThemeManager_Update(int a1, int a2, int a3)
             ThemeClass::ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
-  int *v7; // eax
+          int *v7; // eax
           v7 = (int *)((v5)->FindByData()); /*0x75255e*/
           if ( !v7 || v7[6] != v4 ) /*0x75256a*/
             Audio_Load((int)v5, v4, a3); /*0x752575*/
@@ -469,7 +465,7 @@ void ThemeClass_Update()
   LinkedList::Init(v4); /*0x752847*/
   if ( dword_B1D4B8 ) /*0x752853*/
   {
-  LABEL_11:
+    LABEL_11:
     operator delete((void *)(dword_B1D4B8)); /*0x752824*/
     dword_B1D4B8 = 0; /*0x75282d*/
   }
@@ -516,10 +512,10 @@ void ThemeQueue_ClearPlaylist(int a1)
 
   if ( a1 >= 0 && a1 < g_InfantrySelectState ) /*0x752a4e*/
   {
-  int i; // esi
+    int i; // esi
     for ( i = (*((unsigned int *)g_InfantryRenderPool + a1))->FindByData(); /*0x752a61*/
-          i;
-          i = (*((unsigned int *)g_InfantryRenderPool + a1))->FindByData() )
+    i;
+    i = (*((unsigned int *)g_InfantryRenderPool + a1))->FindByData() )
     {
       if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/
         LinkedList::Init((unsigned int **)i); /*0x752a6a*/
@@ -583,9 +579,9 @@ int TauntClass_Play(int a1)
     case 9: /*0x752bb0*/
       v4 = v1; /*0x752c3b*/
       v3 = aTauntsTauyu02i; /*0x752c3c*/
-  LABEL_16:
+      LABEL_16:
       sprintf(Buffer, v3, v4); /*0x752c41*/
-  LABEL_17:
+      LABEL_17:
       result = (int)(ThreadAudioMixerMain(dword_B1D4D8, Buffer, 0)); /*0x752c4b*/
       break; /*0x752c62*/
     default:
@@ -616,7 +612,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
          dword_B1D4A8 + dword_B1D4B4,
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = g_InfantrySelectState++; /*0x752d3b*/
     *((unsigned int *)g_InfantryRenderPool + v3) = (unsigned int)(this); /*0x752d4a*/
   }
@@ -670,7 +666,7 @@ int CCINIClass::InitFromINIEVA()
         }
         if ( v6 == -1 ) /*0x7530b7*/
         {
-  LABEL_10:
+          LABEL_10:
           v7 = operator new(0x54u); /*0x7530bd*/
           if ( v7 ) /*0x7530cb*/
           {
@@ -733,12 +729,12 @@ int E4Recv_7531A0::EVA_LoadINI()
   int result; // eax
   for ( result = g_InfantrySelectState; g_InfantrySelectState > 0; result = g_InfantrySelectState ) /*0x7531d6*/
   {
-  void *v2; // esi
+    void *v2; // esi
     v2 = *(void **)g_InfantryRenderPool; /*0x7531de*/
     if ( *(unsigned int *)g_InfantryRenderPool ) /*0x7531de*/
     {
       v4 = *(ObjectClass **)g_InfantryRenderPool; /*0x7531f4*/
-  int v3; // eax
+      int v3; // eax
       v3 = (*(int (__thiscall **)(int *, ObjectClass **))(dword_B1D4A0 + 16))(&dword_B1D4A0, &v4); /*0x7531f8*/
       if ( v3 != -1 && v3 < g_InfantrySelectState && v3 < --g_InfantrySelectState ) /*0x753213*/
       {
@@ -783,21 +779,17 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
   unsigned int *v8; // ecx
   v8 = (unsigned int *)(136 * stru_B2D804.Buffer_field_1C + 11721064); /*0x75413e*/
   v7[2] = aP2; /*0x754141*/
-  int v9; // ebp
-  v9 = 0; /*0x754144*/
+  int v9 = 0; // ebp /*0x754144*/
   *v8 = 1176256512; /*0x754149*/
-  int v10; // edx
-  v10 = v18; /*0x75414b*/
+  int v10 = v18; // edx /*0x75414b*/
   v18 = -971227136; /*0x75414f*/
   v7[1] = a2; /*0x754157*/
   v8[1] = v10; /*0x75415a*/
-  int v11; // edx
-  v11 = v19; /*0x75415d*/
+  int v11 = v19; // edx /*0x75415d*/
   v19 = -971227136; /*0x754161*/
   *v7 = a1; /*0x754169*/
   v8[2] = v11; /*0x75416b*/
-  float *v12; // edi
-  v12 = &v7->u32_B; /*0x754175*/
+  float *v12 = &v7->u32_B; // edi /*0x754175*/
   float *v20; // [esp+20h] [ebp+4h]
   v20 = (float *)(Info + 64); /*0x754178*/
   v7[7] = (VoxelSection *)v17; /*0x75417c*/
@@ -805,9 +797,9 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
   v7[9] = (VoxelSection *)v19; /*0x754189*/
   do /*0x754238*/
   {
-  VoxelSection **v13; // ebx
+    VoxelSection **v13; // ebx
     v13 = (VoxelSection **)(v12 - 1); /*0x754199*/
-  float *v14; // eax
+    float *v14; // eax
     v14 = TransformMatrix3x4Point((float *)&v17, a4, v20); /*0x75419c*/
     *(v12 - 1) = *v14; /*0x7541a5*/
     *v12 = v14[1]; /*0x7541aa*/
@@ -823,7 +815,7 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
       v7[8] = *(VoxelSection **)v12; /*0x7541fa*/
     if ( v12[1] < (double)v7->u32_18 ) /*0x754208*/
     {
-  VoxelSection *v15; // edx
+      VoxelSection *v15; // edx
       v15 = (VoxelSection *)v12->u32_4; /*0x75420a*/
       v7[3] = (VoxelSection *)v9; /*0x75420d*/
       v7[6] = v15; /*0x754210*/
@@ -855,8 +847,7 @@ namespace gamemd {
 int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
 {
 
-  int v3; // edi
-  v3 = 0; /*0x75430e*/
+  int v3 = 0; // edi /*0x75430e*/
   float v33; // [esp+18h] [ebp-Ch] BYREF
   v33 = (*(float *)&dword_B2D5E0 + *(float *)&dword_B2D948) * 0.5; /*0x754318*/
   float v34; // [esp+1Ch] [ebp-8h]
@@ -865,7 +856,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
   v35 = (*(float *)&dword_B2D5E8 + *(float *)&dword_B2D950) * 0.5; /*0x754344*/
   if ( dword_B2FB70 > 0 ) /*0x754348*/
   {
-  unsigned int **v5; // esi
+    unsigned int **v5; // esi
     v5 = (unsigned int **)&unk_B3FF78; /*0x75434a*/
     do /*0x754367*/
     {
@@ -875,16 +866,13 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
     }
     while ( v3 < dword_B2FB70 ); /*0x754367*/
   }
-  int v6; // ebp
-  v6 = dword_B2D820; /*0x754369*/
+  int v6 = dword_B2D820; // ebp /*0x754369*/
   if ( dword_B2D820 > 0 ) /*0x754371*/
   {
-  unsigned int *v7; // ecx
-    v7 = &unk_B2FE78; /*0x754373*/
-  char *v8; // eax
+    unsigned int *v7 = &unk_B2FE78; // ecx /*0x754373*/
+    char *v8; // eax
     v8 = (char *)&unk_B2D958; /*0x754378*/
-  int v9; // edx
-    v9 = dword_B2D820; /*0x75437d*/
+    int v9 = dword_B2D820; // edx /*0x75437d*/
     do /*0x75438a*/
     {
       *v7 = v8; /*0x75437f*/
@@ -894,27 +882,23 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
     }
     while ( v9 ); /*0x75438a*/
   }
-  int v10; // ecx
-  v10 = v6 - 1; /*0x75438c*/
+  int v10 = v6 - 1; // ecx /*0x75438c*/
   if ( v6 - 1 > 0 ) /*0x754391*/
   {
-  int v11; // eax
-    v11 = 1; /*0x754393*/
-  char *v12; // edi
+    int v11 = 1; // eax /*0x754393*/
+    char *v12; // edi
     v12 = (char *)&unk_B2FE78; /*0x754398*/
-  int v31; // [esp+10h] [ebp-14h]
+    int v31; // [esp+10h] [ebp-14h]
     v31 = 1; /*0x75439d*/
     do /*0x7543df*/
     {
       if ( v11 < v6 ) /*0x7543a3*/
       {
-  char *v13; // ecx
-        v13 = v12 + 4; /*0x7543a5*/
-  int v14; // ebp
-        v14 = v6 - v11; /*0x7543a8*/
+        char *v13 = v12 + 4; // ecx /*0x7543a5*/
+        int v14 = v6 - v11; // ebp /*0x7543a8*/
         do /*0x7543c3*/
         {
-  int v15; // edx
+          int v15; // edx
           v15 = *(unsigned int *)v12; /*0x7543aa*/
           if ( *(float *)(*&v12->u32_90) > (double)*(float *)(*(unsigned int *)v13 + 36) ) /*0x7543b9*/
           {
@@ -939,10 +923,9 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
   {
     if ( v10 >= 0 ) /*0x7543ec*/
     {
-  unsigned int ***v16; // esi
+      unsigned int ***v16; // esi
       v16 = (unsigned int ***)(4 * v10 + 11730552); /*0x7543ee*/
-  int v17; // edi
-      v17 = v10 + 1; /*0x7543f5*/
+      int v17 = v10 + 1; // edi /*0x7543f5*/
       do /*0x75440b*/
       {
         (**v16)->ProcessColor(*v16, &v33); /*0x754402*/
@@ -954,11 +937,10 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
   }
   else
   {
-  int v18; // esi
-    v18 = 0; /*0x75440f*/
+    int v18 = 0; // esi /*0x75440f*/
     if ( v6 > 0 ) /*0x754413*/
     {
-  unsigned int ***v19; // edi
+      unsigned int ***v19; // edi
       v19 = (unsigned int ***)&unk_B2FE78; /*0x754415*/
       do /*0x754434*/
       {
@@ -975,16 +957,13 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
   int v21; // ecx
   v21 = aP0[2]; /*0x75445b*/
   aP0[3] = v20; /*0x75445e*/
-  double v22; // st7
-  v22 = v33; /*0x754467*/
+  double v22 = v33; // st7 /*0x754467*/
   int v23; // eax
   v23 = aP0[3]; /*0x754476*/
   *aP0 = 128 - v21 / 2; /*0x754478*/
-  int v24; // edx
-  v24 = 128 - v23 / 2; /*0x754487*/
+  int v24 = 128 - v23 / 2; // edx /*0x754487*/
   aP0[3] = v23 + 8; /*0x754489*/
-  int v25; // esi
-  v25 = *aP0; /*0x75448c*/
+  int v25 = *aP0; // esi /*0x75448c*/
   aP0[1] = v24; /*0x75448e*/
   aP0[2] = v21 + 8; /*0x75449c*/
   *aP0 = v25 - 4; /*0x75449f*/
@@ -997,8 +976,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
   v26 = aP0[2] / 2; /*0x7544cf*/
   int v27; // eax
   v27 = Math::RoundToInt(v22); /*0x7544d1*/
-  double v28; // st7
-  v28 = v34; /*0x7544dc*/
+  double v28 = v34; // st7 /*0x7544dc*/
   *a1 = v27 - v26; /*0x7544e0*/
   int v29; // esi
   v29 = aP0[3] / 2; /*0x7544ea*/
@@ -1016,18 +994,16 @@ char RenderVoxels(void * a1, void * a2, void * a3, void * a4)
   unsigned int v20; // edx
   unsigned int v21; // edx
 
-  int *v4; // ecx
-  v4 = a4; /*0x757120*/
+  int *v4 = a4; // ecx /*0x757120*/
   g_VoxelOffsetTable[0] = 0; /*0x757127*/
-  unsigned int v5; // esi
-  v5 = 1; /*0x757141*/
+  unsigned int v5 = 1; // esi /*0x757141*/
   if ( *((unsigned char *)a4 + 50) > 1u ) /*0x757146*/
   {
-  unsigned short *v6; // eax
+    unsigned short *v6; // eax
     v6 = (unsigned short *)(g_VoxelOffsetTable + 2); /*0x757148*/
     do /*0x75716f*/
     {
-  int16_t v7; // dx
+      int16_t v7; // dx
       v7 = *(v6 - 1); /*0x75714d*/
       v6 += 2; /*0x757151*/
       *(v6 - 1) = *((unsigned short *)a4 + 21) + v7; /*0x757158*/
@@ -1047,47 +1023,46 @@ char RenderVoxels(void * a1, void * a2, void * a3, void * a4)
   {
     do /*0x757347*/
     {
-  int *v9; // eax
+      int *v9; // eax
       (*(((unsigned short *)&(v9)) + 1)) = (*(((unsigned short *)&(a4)) + 1)); /*0x757196*/
-  int16_t v32; // [esp+34h] [ebp-8h]
+      int16_t v32; // [esp+34h] [ebp-8h]
       v32 = (int16_t)a4; /*0x75719d*/
-  int v33; // [esp+38h] [ebp-4h]
+      int v33; // [esp+38h] [ebp-4h]
       v33 = v4[3]; /*0x7571a6*/
-  int16_t v30; // [esp+2Ch] [ebp-10h]
+      int16_t v30; // [esp+2Ch] [ebp-10h]
       v30 = a3; /*0x7571aa*/
-  int16_t v31; // [esp+30h] [ebp-Ch]
+      int16_t v31; // [esp+30h] [ebp-Ch]
       v31 = a2; /*0x7571ae*/
-  unsigned int v25; // [esp+18h] [ebp-24h]
+      unsigned int v25; // [esp+18h] [ebp-24h]
       v25 = 0; /*0x7571b2*/
       if ( *((unsigned char *)v4 + 48) ) /*0x7571a1*/
       {
         do /*0x757306*/
         {
-  int16_t v29; // [esp+28h] [ebp-14h]
+          int16_t v29; // [esp+28h] [ebp-14h]
           v29 = (int16_t)a4; /*0x7571c7*/
-  int *v10; // edx
+          int *v10; // edx
           v10 = (int *)*v4; /*0x7571cb*/
-  int16_t v27; // [esp+20h] [ebp-1Ch]
+          int16_t v27; // [esp+20h] [ebp-1Ch]
           v27 = a3; /*0x7571cd*/
-  int16_t v28; // [esp+24h] [ebp-18h]
+          int16_t v28; // [esp+24h] [ebp-18h]
           v28 = a2; /*0x7571d1*/
-  int *v11; // eax
+          int *v11; // eax
           v11 = *(int **)(*v4 + 4 * v4[3]); /*0x7571d5*/
           if ( v11 != (int *)-1 ) /*0x7571db*/
           {
-  unsigned char *v12; // esi
+            unsigned char *v12; // esi
             v12 = (char *)v11 + v4[2]; /*0x7571e4*/
             v11 = (int *)*((uint8_t *)v4 + 50); /*0x7571e8*/
-  int *v22; // [esp+Ch] [ebp-30h]
+            int *v22; // [esp+Ch] [ebp-30h]
             v22 = v11; /*0x7571ed*/
             if ( *((unsigned char *)v4 + 50) ) /*0x7571e8*/
             {
               do /*0x7572c6*/
               {
                 (*((unsigned char *)&(v10))) = *v12; /*0x7571f7*/
-  uint8_t *v13; // esi
-                v13 = v12 + 1; /*0x7571f9*/
-  uint8_t v14; // al
+                uint8_t *v13 = v12 + 1; // esi /*0x7571f9*/
+                uint8_t v14; // al
                 v14 = (uint8_t)v10; /*0x7571fe*/
                 (*((unsigned short *)&(v10))) = *((unsigned short *)v4 + 23) * (uint8_t)v10; /*0x757206*/
                 (*((unsigned short *)&(a1))) = g_VoxelOffsetTable[v14]; /*0x757210*/
@@ -1096,25 +1071,23 @@ char RenderVoxels(void * a1, void * a2, void * a3, void * a4)
                 a2 += (int)a1; /*0x757222*/
                 a1 = (int *)((char *)a4 + (unsigned int)v10); /*0x757228*/
                 v10 = (int *)((char *)v22 - v14); /*0x75722e*/
-  int v15; // eax
-                v15 = *v13; /*0x757232*/
-  char *v16; // esi
+                int v15 = *v13; // eax /*0x757232*/
+                char *v16; // esi
                 v16 = (char *)(v13 + 1); /*0x757234*/
                 a4 = a1; /*0x757237*/
                 v22 = v10; /*0x75723b*/
                 if ( v15 ) /*0x75723f*/
                 {
-  int v24; // [esp+14h] [ebp-28h]
+                  int v24; // [esp+14h] [ebp-28h]
                   v24 = v15; /*0x757243*/
                   v22 = (int *)((char *)v10 - v15); /*0x757247*/
                   do /*0x7572bd*/
                   {
-  char v23; // [esp+10h] [ebp-2Ch]
+                    char v23; // [esp+10h] [ebp-2Ch]
                     v23 = *v16; /*0x75724f*/
-  int v17; // edx
+                    int v17; // edx
                     v17 = (((unsigned char *)&(a3))[1]); /*0x757260*/
-  int v18; // eax
-                    v18 = v17 | a2 & 0xFF00; /*0x757263*/
+                    int v18 = v17 | a2 & 0xFF00; // eax /*0x757263*/
                     v16 += 2; /*0x757276*/
                     if ( (uint16_t)((uint16_t)a4 >> 8) > (uint8_t)byte_B1D5E0[v18] ) /*0x75727c*/
                     {
@@ -1171,18 +1144,16 @@ char ProcessVoxelDepthSamples(unsigned int a1, int a2, int a3, unsigned int a4)
   bool v17; // zf
   unsigned int v18; // edx
 
-  unsigned int v4; // ecx
-  v4 = a4; /*0x757360*/
+  unsigned int v4 = a4; // ecx /*0x757360*/
   g_VoxelOffsetTable[0] = 0; /*0x757369*/
-  unsigned int v5; // esi
-  v5 = 1; /*0x757380*/
+  unsigned int v5 = 1; // esi /*0x757380*/
   if ( *(unsigned char *)(a4 + 50) > 1u ) /*0x757385*/
   {
-  unsigned short *v6; // eax
+    unsigned short *v6; // eax
     v6 = (unsigned short *)(g_VoxelOffsetTable + 2); /*0x757387*/
     do /*0x7573ae*/
     {
-  int16_t v7; // di
+      int16_t v7; // di
       v7 = *(unsigned short *)(a4 + 42) + *(v6 - 1); /*0x757392*/
       v6 += 2; /*0x757396*/
       *(v6 - 1) = v7; /*0x757399*/
@@ -1203,61 +1174,58 @@ char ProcessVoxelDepthSamples(unsigned int a1, int a2, int a3, unsigned int a4)
   {
     do /*0x757585*/
     {
-  int16_t v28; // [esp+30h] [ebp-10h]
+      int16_t v28; // [esp+30h] [ebp-10h]
       v28 = a3; /*0x7573d7*/
-  int v31; // [esp+3Ch] [ebp-4h]
+      int v31; // [esp+3Ch] [ebp-4h]
       v31 = *(unsigned int *)(v4 + 12); /*0x7573db*/
-  unsigned int v9; // eax
+      unsigned int v9; // eax
       (*(((unsigned short *)&(v9)) + 1)) = (*(((unsigned short *)&(a4)) + 1)); /*0x7573df*/
-  int16_t v30; // [esp+38h] [ebp-8h]
+      int16_t v30; // [esp+38h] [ebp-8h]
       v30 = a4; /*0x7573e3*/
-  int16_t v29; // [esp+34h] [ebp-Ch]
+      int16_t v29; // [esp+34h] [ebp-Ch]
       v29 = a2; /*0x7573ec*/
-  unsigned int v23; // [esp+1Ch] [ebp-24h]
+      unsigned int v23; // [esp+1Ch] [ebp-24h]
       v23 = 0; /*0x7573f0*/
       if ( *(unsigned char *)(v4 + 48) ) /*0x7573e7*/
       {
         do /*0x757544*/
         {
-  int16_t v27; // [esp+2Ch] [ebp-14h]
+          int16_t v27; // [esp+2Ch] [ebp-14h]
           v27 = a4; /*0x757401*/
-  unsigned int v10; // edx
+          unsigned int v10; // edx
           v10 = *(unsigned int *)(v4 + 4); /*0x757405*/
-  int16_t v25; // [esp+24h] [ebp-1Ch]
+          int16_t v25; // [esp+24h] [ebp-1Ch]
           v25 = a3; /*0x757408*/
-  int16_t v26; // [esp+28h] [ebp-18h]
+          int16_t v26; // [esp+28h] [ebp-18h]
           v26 = a2; /*0x75740c*/
-  unsigned int v11; // eax
+          unsigned int v11; // eax
           v11 = *(unsigned int *)(v10 + 4 * *(unsigned int *)(v4 + 12)); /*0x757410*/
           if ( v11 != -1 ) /*0x757416*/
           {
-  uint8_t *v12; // esi
+            uint8_t *v12; // esi
             v12 = (uint8_t *)(v11 + *(unsigned int *)(v4 + 8)); /*0x75741f*/
             v11 = *(uint8_t *)(v4 + 50); /*0x757423*/
-  unsigned int v19; // [esp+10h] [ebp-30h]
+            unsigned int v19; // [esp+10h] [ebp-30h]
             v19 = v11; /*0x757428*/
             if ( *(unsigned char *)(v4 + 50) ) /*0x757423*/
             {
               do /*0x757504*/
               {
-  int v13; // eax
-                v13 = *v12; /*0x757434*/
-  uint8_t *v14; // esi
-                v14 = v12 - 1; /*0x757436*/
+                int v13 = *v12; // eax /*0x757434*/
+                uint8_t *v14 = v12 - 1; // esi /*0x757436*/
                 if ( v13 ) /*0x757439*/
                 {
-  int v22; // [esp+18h] [ebp-28h]
+                  int v22; // [esp+18h] [ebp-28h]
                   v22 = v13; /*0x757443*/
                   v19 -= v13; /*0x757449*/
                   do /*0x7574bf*/
                   {
-  char v20; // [esp+14h] [ebp-2Ch]
+                    char v20; // [esp+14h] [ebp-2Ch]
                     v20 = *(v14 - 1); /*0x757453*/
                     v14 -= 2; /*0x757464*/
-  int v15; // edx
+                    int v15; // edx
                     v15 = (((unsigned char *)&(a3))[1]); /*0x757465*/
-  int v16; // eax
-                    v16 = v15 | a2 & 0xFF00; /*0x757468*/
+                    int v16 = v15 | a2 & 0xFF00; // eax /*0x757468*/
                     if ( (uint16_t)(((unsigned char *)&(a4))[1]) > (uint8_t)byte_B1D5E0[v16] ) /*0x75747e*/
                     {
                       byte_B1D5E0[v16] = (((unsigned char *)&(a4))[1]); /*0x757484*/
@@ -1277,7 +1245,7 @@ char ProcessVoxelDepthSamples(unsigned int a1, int a2, int a3, unsigned int a4)
                   }
                   while ( !v17 ); /*0x7574bf*/
                 }
-  uint8_t v21; // [esp+14h] [ebp-2Ch]
+                uint8_t v21; // [esp+14h] [ebp-2Ch]
                 v21 = *(v14 - 1); /*0x7574c5*/
                 v12 = v14 - 2; /*0x7574c9*/
                 (*((unsigned short *)&(v10))) = *(unsigned short *)(v4 + 46) * v21; /*0x7574d2*/
@@ -1326,15 +1294,14 @@ char ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
   unsigned int v22; // eax
 
   g_VoxelOffsetTable[0] = 0; /*0x757987*/
-  unsigned int v6; // esi
-  v6 = 1; /*0x7579a1*/
+  unsigned int v6 = 1; // esi /*0x7579a1*/
   if ( *(unsigned char *)(a5 + 50) > 1u ) /*0x7579a6*/
   {
-  unsigned short *v7; // eax
+    unsigned short *v7; // eax
     v7 = (unsigned short *)(g_VoxelOffsetTable + 2); /*0x7579a8*/
     do /*0x7579cf*/
     {
-  int16_t v8; // dx
+      int16_t v8; // dx
       v8 = *(v7 - 1); /*0x7579ad*/
       v7 += 2; /*0x7579b1*/
       *(v7 - 1) = *(unsigned short *)(a5 + 42) + v8; /*0x7579b8*/
@@ -1355,42 +1322,40 @@ char ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
   {
     do /*0x757bd7*/
     {
-  int16_t v33; // [esp+34h] [ebp-10h]
+      int16_t v33; // [esp+34h] [ebp-10h]
       v33 = a4; /*0x7579f4*/
-  int v36; // [esp+40h] [ebp-4h]
+      int v36; // [esp+40h] [ebp-4h]
       v36 = *(unsigned int *)(a5 + 12); /*0x7579f8*/
-  int16_t v34; // [esp+38h] [ebp-Ch]
+      int16_t v34; // [esp+38h] [ebp-Ch]
       v34 = a3; /*0x757a01*/
-  int16_t v35; // [esp+3Ch] [ebp-8h]
+      int16_t v35; // [esp+3Ch] [ebp-8h]
       v35 = a1; /*0x757a05*/
-  unsigned int v28; // [esp+20h] [ebp-24h]
+      unsigned int v28; // [esp+20h] [ebp-24h]
       v28 = 0; /*0x757a09*/
       if ( *(unsigned char *)(a5 + 48) ) /*0x7579fc*/
       {
         do /*0x757b9a*/
         {
-  int16_t v30; // [esp+28h] [ebp-1Ch]
+          int16_t v30; // [esp+28h] [ebp-1Ch]
           v30 = a4; /*0x757a1c*/
-  int16_t v31; // [esp+2Ch] [ebp-18h]
+          int16_t v31; // [esp+2Ch] [ebp-18h]
           v31 = a3; /*0x757a20*/
-  int v10; // eax
+          int v10; // eax
           v10 = *(unsigned int *)(*(unsigned int *)a5 + 4 * *(unsigned int *)(a5 + 12)); /*0x757a24*/
-  int16_t v32; // [esp+30h] [ebp-14h]
+          int16_t v32; // [esp+30h] [ebp-14h]
           v32 = a1; /*0x757a27*/
           if ( v10 != -1 ) /*0x757a2e*/
           {
-  uint8_t *v11; // esi
+            uint8_t *v11; // esi
             v11 = (uint8_t *)(v10 + *(unsigned int *)(a5 + 8)); /*0x757a37*/
-  int v37; // [esp+48h] [ebp+4h]
+            int v37; // [esp+48h] [ebp+4h]
             v37 = *(uint8_t *)(a5 + 50); /*0x757a40*/
             if ( *(unsigned char *)(a5 + 50) ) /*0x757a3b*/
             {
               do /*0x757b5e*/
               {
-  uint8_t v12; // al
-                v12 = *v11; /*0x757a4a*/
-  uint8_t *v13; // esi
-                v13 = v11 + 1; /*0x757a4c*/
+                uint8_t v12 = *v11; // al /*0x757a4a*/
+                uint8_t *v13 = v11 + 1; // esi /*0x757a4c*/
                 (*((unsigned short *)&(a2))) = g_VoxelOffsetTable[v12]; /*0x757a5a*/
                 a4 += a2; /*0x757a62*/
                 (*((unsigned short *)&(a2))) = (*(((unsigned short *)&(g_VoxelOffsetTable[v12])) + 1)); /*0x757a64*/
@@ -1398,26 +1363,23 @@ char ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
                 (*((unsigned short *)&(a2))) = *(unsigned short *)(a5 + 46) * v12; /*0x757a74*/
                 a1 += a2; /*0x757a79*/
                 a2 = v37 - v12; /*0x757a7f*/
-  int v14; // eax
-                v14 = *v13; /*0x757a83*/
-  uint8_t *v15; // esi
-                v15 = v13 + 1; /*0x757a85*/
-  int v26; // [esp+18h] [ebp-2Ch]
+                int v14 = *v13; // eax /*0x757a83*/
+                uint8_t *v15 = v13 + 1; // esi /*0x757a85*/
+                int v26; // [esp+18h] [ebp-2Ch]
                 v26 = a3; /*0x757a88*/
-  unsigned int v25; // [esp+14h] [ebp-30h]
+                unsigned int v25; // [esp+14h] [ebp-30h]
                 v25 = a1; /*0x757a8c*/
                 v37 = a2; /*0x757a90*/
                 if ( v14 ) /*0x757a94*/
                 {
-  int v27; // [esp+1Ch] [ebp-28h]
+                  int v27; // [esp+1Ch] [ebp-28h]
                   v27 = v14; /*0x757a9c*/
                   v37 = a2 - v14; /*0x757aa0*/
                   do /*0x757b51*/
                   {
                     a2 = (((unsigned char *)&(a4))[1]); /*0x757ab3*/
-  int v16; // eax
-                    v16 = a2 | a3 & 0xFF00; /*0x757ab6*/
-  uint16_t v17; // dx
+                    int v16 = a2 | a3 & 0xFF00; // eax /*0x757ab6*/
+                    uint16_t v17; // dx
                     v17 = (((unsigned char *)&(a1))[1]); /*0x757ab8*/
                     if ( v17 <= (uint8_t)byte_B1D5E0[v16] ) /*0x757ac7*/
                     {
@@ -1425,13 +1387,10 @@ char ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
                     }
                     else
                     {
-  uint8_t v18; // bl
-                      v18 = *v15; /*0x757ac9*/
-  uint8_t *v19; // esi
-                      v19 = v15 + 1; /*0x757acb*/
-  uint8_t v20; // bp
-                      v20 = v18; /*0x757ad2*/
-  uint8_t v24; // [esp+10h] [ebp-34h]
+                      uint8_t v18 = *v15; // bl /*0x757ac9*/
+                      uint8_t *v19 = v15 + 1; // esi /*0x757acb*/
+                      uint8_t v20 = v18; // bp /*0x757ad2*/
+                      uint8_t v24; // [esp+10h] [ebp-34h]
                       v24 = *v19; /*0x757ad6*/
                       v15 = v19 + 1; /*0x757ada*/
                       byte_B1D5E0[v16] = v17; /*0x757adf*/
@@ -1490,15 +1449,14 @@ char VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
   bool v19; // cf
 
   g_VoxelOffsetTable[0] = 0; /*0x757bf9*/
-  unsigned int v5; // esi
-  v5 = 1; /*0x757c10*/
+  unsigned int v5 = 1; // esi /*0x757c10*/
   if ( *(unsigned char *)(a4 + 50) > 1u ) /*0x757c15*/
   {
-  unsigned short *v6; // eax
+    unsigned short *v6; // eax
     v6 = (unsigned short *)(g_VoxelOffsetTable + 2); /*0x757c17*/
     do /*0x757c3e*/
     {
-  int16_t v7; // di
+      int16_t v7; // di
       v7 = *(unsigned short *)(a4 + 42) + *(v6 - 1); /*0x757c22*/
       v6 += 2; /*0x757c26*/
       *(v6 - 1) = v7; /*0x757c29*/
@@ -1523,54 +1481,51 @@ char VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
   {
     do /*0x757e5d*/
     {
-  int16_t v31; // [esp+38h] [ebp-10h]
+      int16_t v31; // [esp+38h] [ebp-10h]
       v31 = a3; /*0x757c6a*/
-  int v34; // [esp+44h] [ebp-4h]
+      int v34; // [esp+44h] [ebp-4h]
       v34 = *(unsigned int *)(a4 + 12); /*0x757c6e*/
-  int16_t v32; // [esp+3Ch] [ebp-Ch]
+      int16_t v32; // [esp+3Ch] [ebp-Ch]
       v32 = a1; /*0x757c77*/
-  int16_t v33; // [esp+40h] [ebp-8h]
+      int16_t v33; // [esp+40h] [ebp-8h]
       v33 = a2; /*0x757c7b*/
-  unsigned int v26; // [esp+24h] [ebp-24h]
+      unsigned int v26; // [esp+24h] [ebp-24h]
       v26 = 0; /*0x757c7f*/
       if ( *(unsigned char *)(a4 + 48) ) /*0x757c72*/
       {
         do /*0x757e18*/
         {
-  int v9; // edx
+          int v9; // edx
           v9 = *(unsigned int *)(a4 + 12); /*0x757c89*/
-  int16_t v28; // [esp+2Ch] [ebp-1Ch]
+          int16_t v28; // [esp+2Ch] [ebp-1Ch]
           v28 = a3; /*0x757c8f*/
-  int16_t v29; // [esp+30h] [ebp-18h]
+          int16_t v29; // [esp+30h] [ebp-18h]
           v29 = a1; /*0x757c93*/
-  int v10; // eax
+          int v10; // eax
           v10 = *(unsigned int *)(*(unsigned int *)(a4 + 4) + 4 * v9); /*0x757c97*/
-  int16_t v30; // [esp+34h] [ebp-14h]
+          int16_t v30; // [esp+34h] [ebp-14h]
           v30 = a2; /*0x757c9a*/
           if ( v10 != -1 ) /*0x757ca1*/
           {
-  uint8_t *v11; // esi
+            uint8_t *v11; // esi
             v11 = (uint8_t *)(v10 + *(unsigned int *)(a4 + 8)); /*0x757caa*/
-  int v23; // [esp+18h] [ebp-30h]
+            int v23; // [esp+18h] [ebp-30h]
             v23 = *(uint8_t *)(a4 + 50); /*0x757cb3*/
             if ( *(unsigned char *)(a4 + 50) ) /*0x757cae*/
             {
               do /*0x757dd4*/
               {
-  int v12; // eax
-                v12 = *v11; /*0x757cbf*/
-  uint8_t *v13; // esi
-                v13 = v11 - 1; /*0x757cc1*/
+                int v12 = *v11; // eax /*0x757cbf*/
+                uint8_t *v13 = v11 - 1; // esi /*0x757cc1*/
                 if ( v12 ) /*0x757cc4*/
                 {
-  int v25; // [esp+20h] [ebp-28h]
+                  int v25; // [esp+20h] [ebp-28h]
                   v25 = v12; /*0x757cce*/
                   v23 -= v12; /*0x757cd4*/
                   do /*0x757d89*/
                   {
                     v9 = (((unsigned char *)&(a3))[1]); /*0x757ce7*/
-  int v14; // eax
-                    v14 = v9 | a1 & 0xFF00; /*0x757cea*/
+                    int v14 = v9 | a1 & 0xFF00; // eax /*0x757cea*/
                     (*((unsigned short *)&(v9))) = (((unsigned char *)&(a2))[1]); /*0x757cef*/
                     if ( (uint16_t)(((unsigned char *)&(a2))[1]) <= (uint8_t)byte_B1D5E0[v14] ) /*0x757cfe*/
                     {
@@ -1578,12 +1533,12 @@ char VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
                     }
                     else
                     {
-  uint8_t v24; // [esp+1Ch] [ebp-2Ch]
+                      uint8_t v24; // [esp+1Ch] [ebp-2Ch]
                       v24 = *v13; /*0x757d03*/
                       v13 -= 2; /*0x757d11*/
-  int v15; // ebx
+                      int v15; // ebx
                       v15 = (uint8_t)g_VoxelShadeTable[v24] << 8; /*0x757d31*/
-  int v16; // ebp
+                      int v16; // ebp
                       v16 = v13[1]; /*0x757d34*/
                       byte_B1D5E0[v14] = v9; /*0x757d3a*/
                       byte_B1D5E1[v14] = v9; /*0x757d40*/
@@ -1605,7 +1560,7 @@ char VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
                   }
                   while ( !v17 ); /*0x757d89*/
                 }
-  uint8_t v22; // [esp+14h] [ebp-34h]
+                uint8_t v22; // [esp+14h] [ebp-34h]
                 v22 = *(v13 - 1); /*0x757d93*/
                 v11 = v13 - 2; /*0x757d97*/
                 (*((unsigned short *)&(v9))) = g_VoxelOffsetTable[v22]; /*0x757da1*/
@@ -1657,18 +1612,16 @@ char ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
   unsigned int v20; // edx
   unsigned int v21; // edx
 
-  int *v4; // ecx
-  v4 = a4; /*0x7581f0*/
+  int *v4 = a4; // ecx /*0x7581f0*/
   g_VoxelOffsetTable[0] = 0; /*0x7581f7*/
-  unsigned int v5; // esi
-  v5 = 1; /*0x758211*/
+  unsigned int v5 = 1; // esi /*0x758211*/
   if ( *((unsigned char *)a4 + 50) > 1u ) /*0x758216*/
   {
-  unsigned short *v6; // eax
+    unsigned short *v6; // eax
     v6 = (unsigned short *)(g_VoxelOffsetTable + 2); /*0x758218*/
     do /*0x75823f*/
     {
-  int16_t v7; // dx
+      int16_t v7; // dx
       v7 = *(v6 - 1); /*0x75821d*/
       v6 += 2; /*0x758221*/
       *(v6 - 1) = *((unsigned short *)a4 + 21) + v7; /*0x758228*/
@@ -1688,47 +1641,46 @@ char ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
   {
     do /*0x758415*/
     {
-  int *v9; // eax
+      int *v9; // eax
       (*(((unsigned short *)&(v9)) + 1)) = (*(((unsigned short *)&(a4)) + 1)); /*0x758266*/
-  int16_t v32; // [esp+34h] [ebp-8h]
+      int16_t v32; // [esp+34h] [ebp-8h]
       v32 = (int16_t)a4; /*0x75826d*/
-  int v33; // [esp+38h] [ebp-4h]
+      int v33; // [esp+38h] [ebp-4h]
       v33 = v4[3]; /*0x758276*/
-  int16_t v30; // [esp+2Ch] [ebp-10h]
+      int16_t v30; // [esp+2Ch] [ebp-10h]
       v30 = a3; /*0x75827a*/
-  int16_t v31; // [esp+30h] [ebp-Ch]
+      int16_t v31; // [esp+30h] [ebp-Ch]
       v31 = a2; /*0x75827e*/
-  unsigned int v25; // [esp+18h] [ebp-24h]
+      unsigned int v25; // [esp+18h] [ebp-24h]
       v25 = 0; /*0x758282*/
       if ( *((unsigned char *)v4 + 48) ) /*0x758271*/
       {
         do /*0x7583d4*/
         {
-  int16_t v29; // [esp+28h] [ebp-14h]
+          int16_t v29; // [esp+28h] [ebp-14h]
           v29 = (int16_t)a4; /*0x758297*/
-  int *v10; // edx
+          int *v10; // edx
           v10 = (int *)*v4; /*0x75829b*/
-  int16_t v27; // [esp+20h] [ebp-1Ch]
+          int16_t v27; // [esp+20h] [ebp-1Ch]
           v27 = a3; /*0x75829d*/
-  int16_t v28; // [esp+24h] [ebp-18h]
+          int16_t v28; // [esp+24h] [ebp-18h]
           v28 = a2; /*0x7582a1*/
-  int *v11; // eax
+          int *v11; // eax
           v11 = *(int **)(*v4 + 4 * v4[3]); /*0x7582a5*/
           if ( v11 != (int *)-1 ) /*0x7582ab*/
           {
-  unsigned char *v12; // esi
+            unsigned char *v12; // esi
             v12 = (char *)v11 + v4[2]; /*0x7582b4*/
             v11 = (int *)*((uint8_t *)v4 + 50); /*0x7582b8*/
-  int *v22; // [esp+Ch] [ebp-30h]
+            int *v22; // [esp+Ch] [ebp-30h]
             v22 = v11; /*0x7582bd*/
             if ( *((unsigned char *)v4 + 50) ) /*0x7582b8*/
             {
               do /*0x758394*/
               {
                 (*((unsigned char *)&(v10))) = *v12; /*0x7582c7*/
-  uint8_t *v13; // esi
-                v13 = v12 + 1; /*0x7582c9*/
-  uint8_t v14; // al
+                uint8_t *v13 = v12 + 1; // esi /*0x7582c9*/
+                uint8_t v14; // al
                 v14 = (uint8_t)v10; /*0x7582ce*/
                 (*((unsigned short *)&(v10))) = *((unsigned short *)v4 + 23) * (uint8_t)v10; /*0x7582d6*/
                 (*((unsigned short *)&(a1))) = g_VoxelOffsetTable[v14]; /*0x7582e0*/
@@ -1737,25 +1689,23 @@ char ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
                 a2 += (int)a1; /*0x7582f2*/
                 a1 = (int *)((char *)a4 + (unsigned int)v10); /*0x7582f8*/
                 v10 = (int *)((char *)v22 - v14); /*0x7582fe*/
-  int v15; // eax
-                v15 = *v13; /*0x758302*/
-  char *v16; // esi
+                int v15 = *v13; // eax /*0x758302*/
+                char *v16; // esi
                 v16 = (char *)(v13 + 1); /*0x758304*/
                 a4 = a1; /*0x758307*/
                 v22 = v10; /*0x75830b*/
                 if ( v15 ) /*0x75830f*/
                 {
-  int v24; // [esp+14h] [ebp-28h]
+                  int v24; // [esp+14h] [ebp-28h]
                   v24 = v15; /*0x758313*/
                   v22 = (int *)((char *)v10 - v15); /*0x758317*/
                   do /*0x75838b*/
                   {
-  char v23; // [esp+10h] [ebp-2Ch]
+                    char v23; // [esp+10h] [ebp-2Ch]
                     v23 = *v16; /*0x75831f*/
-  int v17; // edx
+                    int v17; // edx
                     v17 = (((unsigned char *)&(a3))[1]); /*0x758330*/
-  int v18; // eax
-                    v18 = v17 | a2 & 0xFF00; /*0x758333*/
+                    int v18 = v17 | a2 & 0xFF00; // eax /*0x758333*/
                     ++v16; /*0x758346*/
                     if ( (uint16_t)((uint16_t)a4 >> 8) > (uint8_t)byte_B1D5E0[v18] ) /*0x75834a*/
                     {
@@ -1812,18 +1762,16 @@ char ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
   bool v17; // zf
   unsigned int v18; // edx
 
-  unsigned int v4; // ecx
-  v4 = a4; /*0x758430*/
+  unsigned int v4 = a4; // ecx /*0x758430*/
   g_VoxelOffsetTable[0] = 0; /*0x758439*/
-  unsigned int v5; // esi
-  v5 = 1; /*0x758450*/
+  unsigned int v5 = 1; // esi /*0x758450*/
   if ( *(unsigned char *)(a4 + 50) > 1u ) /*0x758455*/
   {
-  unsigned short *v6; // eax
+    unsigned short *v6; // eax
     v6 = (unsigned short *)(g_VoxelOffsetTable + 2); /*0x758457*/
     do /*0x75847e*/
     {
-  int16_t v7; // di
+      int16_t v7; // di
       v7 = *(unsigned short *)(a4 + 42) + *(v6 - 1); /*0x758462*/
       v6 += 2; /*0x758466*/
       *(v6 - 1) = v7; /*0x758469*/
@@ -1844,60 +1792,58 @@ char ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
   {
     do /*0x758653*/
     {
-  int16_t v28; // [esp+30h] [ebp-10h]
+      int16_t v28; // [esp+30h] [ebp-10h]
       v28 = a3; /*0x7584a7*/
-  int v31; // [esp+3Ch] [ebp-4h]
+      int v31; // [esp+3Ch] [ebp-4h]
       v31 = *(unsigned int *)(v4 + 12); /*0x7584ab*/
-  unsigned int v9; // eax
+      unsigned int v9; // eax
       (*(((unsigned short *)&(v9)) + 1)) = (*(((unsigned short *)&(a4)) + 1)); /*0x7584af*/
-  int16_t v30; // [esp+38h] [ebp-8h]
+      int16_t v30; // [esp+38h] [ebp-8h]
       v30 = a4; /*0x7584b3*/
-  int16_t v29; // [esp+34h] [ebp-Ch]
+      int16_t v29; // [esp+34h] [ebp-Ch]
       v29 = a2; /*0x7584bc*/
-  unsigned int v23; // [esp+1Ch] [ebp-24h]
+      unsigned int v23; // [esp+1Ch] [ebp-24h]
       v23 = 0; /*0x7584c0*/
       if ( *(unsigned char *)(v4 + 48) ) /*0x7584b7*/
       {
         do /*0x758612*/
         {
-  int16_t v27; // [esp+2Ch] [ebp-14h]
+          int16_t v27; // [esp+2Ch] [ebp-14h]
           v27 = a4; /*0x7584d1*/
-  unsigned int v10; // edx
+          unsigned int v10; // edx
           v10 = *(unsigned int *)(v4 + 4); /*0x7584d5*/
-  int16_t v25; // [esp+24h] [ebp-1Ch]
+          int16_t v25; // [esp+24h] [ebp-1Ch]
           v25 = a3; /*0x7584d8*/
-  int16_t v26; // [esp+28h] [ebp-18h]
+          int16_t v26; // [esp+28h] [ebp-18h]
           v26 = a2; /*0x7584dc*/
-  unsigned int v11; // eax
+          unsigned int v11; // eax
           v11 = *(unsigned int *)(v10 + 4 * *(unsigned int *)(v4 + 12)); /*0x7584e0*/
           if ( v11 != -1 ) /*0x7584e6*/
           {
-  char *v12; // esi
+            char *v12; // esi
             v12 = (char *)(v11 + *(unsigned int *)(v4 + 8)); /*0x7584ef*/
             v11 = *(uint8_t *)(v4 + 50); /*0x7584f3*/
-  unsigned int v19; // [esp+10h] [ebp-30h]
+            unsigned int v19; // [esp+10h] [ebp-30h]
             v19 = v11; /*0x7584f8*/
             if ( *(unsigned char *)(v4 + 50) ) /*0x7584f3*/
             {
               do /*0x7585d2*/
               {
-  int v13; // eax
+                int v13; // eax
                 v13 = (uint8_t)*v12; /*0x758504*/
-  char *v14; // esi
-                v14 = v12 - 1; /*0x758506*/
+                char *v14 = v12 - 1; // esi /*0x758506*/
                 if ( v13 ) /*0x758509*/
                 {
-  int v22; // [esp+18h] [ebp-28h]
+                  int v22; // [esp+18h] [ebp-28h]
                   v22 = v13; /*0x758513*/
                   v19 -= v13; /*0x758519*/
                   do /*0x75858d*/
                   {
-  char v20; // [esp+14h] [ebp-2Ch]
+                    char v20; // [esp+14h] [ebp-2Ch]
                     v20 = *v14; /*0x758521*/
-  int v15; // edx
+                    int v15; // edx
                     v15 = (((unsigned char *)&(a3))[1]); /*0x758532*/
-  int v16; // eax
-                    v16 = v15 | a2 & 0xFF00; /*0x758535*/
+                    int v16 = v15 | a2 & 0xFF00; // eax /*0x758535*/
                     --v14; /*0x758548*/
                     if ( (uint16_t)(((unsigned char *)&(a4))[1]) > (uint8_t)byte_B1D5E0[v16] ) /*0x75854c*/
                     {
@@ -1918,7 +1864,7 @@ char ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
                   }
                   while ( !v17 ); /*0x75858d*/
                 }
-  uint8_t v21; // [esp+14h] [ebp-2Ch]
+                uint8_t v21; // [esp+14h] [ebp-2Ch]
                 v21 = *(v14 - 1); /*0x758593*/
                 v12 = v14 - 2; /*0x758597*/
                 (*((unsigned short *)&(v10))) = *(unsigned short *)(v4 + 46) * v21; /*0x7585a0*/
@@ -1986,7 +1932,7 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
     || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->?, 768) != 768
     || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->?, (int)this->? << 8) != (int)this->? << 8 )
   {
-LABEL_5:
+    LABEL_5:
     v3 = 1; /*0x758b4c*/
   }
   (*(void (**)(int *))(*a2 + 52))(a2); /*0x758b55*/
@@ -2065,7 +2011,7 @@ int E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
       a4 = a4; /*0x75a1a0*/
       return this->M4.vt_slot_36(a3, a4) != a4; /*0x75a1b3*/
     case 6: /*0x75a136*/
-  LABEL_5:
+      LABEL_5:
       result = 1; /*0x75a1b6*/
       break; /*0x75a1bc*/
     case 7: /*0x75a136*/
@@ -2074,27 +2020,27 @@ int E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
     case 8: /*0x75a136*/
       if ( a4 <= 0 ) /*0x75a1e1*/
       {
-        v10 = &this->M4; /*0x75a21c*/
-        result = this->M4.vt_slot_40(a4, a3) == 0; /*0x75a22a*/
-        if ( !result ) /*0x75a22b*/
-        {
-          result = (*(int (__thiscall **)(int, int *, int))(this->u32_28)(v10, &a4, 1) != 1; /*0x75a240*/
+      v10 = &this->M4; /*0x75a21c*/
+      result = this->M4.vt_slot_40(a4, a3) == 0; /*0x75a22a*/
+      if ( !result ) /*0x75a22b*/
+      {
+        result = (*(int (__thiscall **)(int, int *, int))(this->u32_28)(v10, &a4, 1) != 1; /*0x75a240*/
           if ( !result ) /*0x75a242*/
             result = (*(int (__thiscall **)(int, int, int))(this->u32_2C)(v10, -1, 1) == 0; /*0x75a254*/
         }
-      }
+    }
       else
-      {
+    {
         v9 = &this->M4; /*0x75a1ea*/
         result = this->M4.vt_slot_40(a4 - 1, a3) == 0; /*0x75a1f9*/
         if ( !result ) /*0x75a1fa*/
           result = (*(int (__thiscall **)(int, int *, int))(this->u32_28)(v9, &a4, 1) != 1; /*0x75a210*/
-      }
+    }
       break; /*0x75a212*/
     case 9: /*0x75a136*/
       v11 = (*(int (__thiscall **)(int))(this->M4 + 44))&this->u32_10; /*0x75a25e*/
       *a3 = v11; /*0x75a265*/
-  LABEL_14:
+    LABEL_14:
       result = 0; /*0x75a267*/
       break; /*0x75a267*/
     default:
@@ -2146,14 +2092,14 @@ int sub_75A350(int a1, int a2, unsigned char * a3, unsigned int a4)
   {
     case 2: /*0x75a367*/
       for ( i = 0; i < 256; ++i ) /*0x75a374*/
-        a3[i] *= 4; /*0x75a37c*/
+      a3[i] *= 4; /*0x75a37c*/
       memcpy((void *)(v4 + 516), a3, 0x300u); /*0x75a392*/
       *(unsigned char *)(v4 + 1320) = 1; /*0x75a395*/
       result = 0; /*0x75a39d*/
       break; /*0x75a3a0*/
     case 3: /*0x75a367*/
       if ( *(unsigned int *)(v4 + 1296) != -1 ) /*0x75a3a8*/
-        sub_748380((uint16_t *)a3, a4 >> 1); /*0x75a3b4*/
+      sub_748380((uint16_t *)a3, a4 >> 1); /*0x75a3b4*/
       *(unsigned int *)(v4 + 1356) = *(unsigned int *)(v4 + 1284); /*0x75a3c1*/
       result = 0; /*0x75a3bf*/
       break; /*0x75a3c8*/
@@ -2223,8 +2169,8 @@ int sub_75F230(unsigned int * a1, unsigned int * a2)
   }
   LABEL_11:
   v10 = (v3 <= 0) - 1; /*0x75f31d*/
-  (v10) = ((v10) & ~0xFF) | ((unsigned int)(v10 & 0xFC) & 0xFF); /*0x75f326*/
-  return v10 + 4; /*0x75f2b3*/
+    (v10) = ((v10) & ~0xFF) | ((unsigned int)(v10 & 0xFC) & 0xFF); /*0x75f326*/
+    return v10 + 4; /*0x75f2b3*/
 }
 }
 // 0x7500F0
@@ -3791,9 +3737,7 @@ void nullsub_258()
 namespace gamemd {
 bool BitArray_Test(int a1)
 {
-  int result; // eax
-
-  result = a1 >> 3; /*0x75a81b*/
+  int result = a1 >> 3; // eax /*0x75a81b*/
   (*((unsigned char *)&(result))) = ((uint8_t)(1 << (a1 & 7)) & (uint8_t)byte_B45BA8[a1 >> 3]) != 0; /*0x75a824*/
   return result; /*0x75a827*/
 }
@@ -4228,8 +4172,8 @@ int sub_75EF30(unsigned short * a1, int a2)
     v2 = 255; /*0x75efe2*/
   result = v3 >> g_BitMask_Red << g_BitShift_Blue; /*0x75f00f*/
   *a1 = result /*0x75f013*/
-      | ((int)(uint8_t)((uint8_t)(*a1 >> g_BitMask_Green) << g_BitMask_Blue) >> g_BitMask_Blue << g_BitMask_Green)
-      | (v2 >> g_BitShift_Green_0 << g_BitShift_Red);
+  | ((int)(uint8_t)((uint8_t)(*a1 >> g_BitMask_Green) << g_BitMask_Blue) >> g_BitMask_Blue << g_BitMask_Green)
+  | (v2 >> g_BitShift_Green_0 << g_BitShift_Red);
   return result; /*0x75f016*/
 }
 } // namespace gamemd

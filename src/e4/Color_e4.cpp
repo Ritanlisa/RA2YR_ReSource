@@ -51,8 +51,7 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
 {
 
 
-  double v4; // st7
-  v4 = 1.0 - a4; /*0x661028*/
+  double v4 = 1.0 - a4; // st7 /*0x661028*/
   LOBYTE(this->Color_field_00) = Math::RoundToInt(v4); /*0x66109d*/
   BYTE1(this->Color_field_00) = Math::RoundToInt(v4); /*0x661105*/
   double v6; // st7
@@ -145,12 +144,10 @@ unsigned int * Color::RGBFromFloat(int aP1, float a3, void *a3_1)
 {
 
 
-  double v3; // st7
-  v3 = 1.0 - a3; /*0x75f547*/
+  double v3 = 1.0 - a3; // st7 /*0x75f547*/
   int v5; // eax
   LOWORD(v5) = Math::RoundToInt(v3); /*0x75f565*/
-  int v6; // ebp
-  v6 = v5; /*0x75f56d*/
+  int v6 = v5; // ebp /*0x75f56d*/
   int v7; // eax
   LOWORD(v7) = Math::RoundToInt(v3); /*0x75f57a*/
   int v10; // [esp+4h] [ebp-8h]

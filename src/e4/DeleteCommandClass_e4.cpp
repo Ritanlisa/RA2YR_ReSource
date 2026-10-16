@@ -109,13 +109,12 @@ char DeleteCommandClass_28::AddRef(int a2)
   m_8 = this->m_8; /*0x53c522*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x53c52d*/
   {
-  int v3; // edx
-    v3 = 0; /*0x53c52f*/
+    int v3 = 0; // edx /*0x53c52f*/
     if ( m_8 <= 0 ) /*0x53c533*/
       return 1; /*0x53c553*/
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x53c535*/
-  int v5; // ecx
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x53c53b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x53c544*/
     {
@@ -138,7 +137,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x53c56c*/
   {
     LOBYTE(this->m_C) = 0; /*0x53c576*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x53c57c*/
       v4 = a3; /*0x53c592*/
     else
@@ -148,11 +147,11 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x53c5a5*/
       {
-  int m_8; // ecx
+        int m_8; // ecx
         m_8 = this->m_8; /*0x53c5ac*/
         if ( a2 < m_8 ) /*0x53c5b1*/
           m_8 = a2; /*0x53c5b3*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x53c5b9*/
           ++i; /*0x53c5be*/
         if ( BYTE1(this->m_C) ) /*0x53c5cb*/
@@ -201,10 +200,8 @@ int DeleteCommandClass_28::Read(unsigned int * a2, void *a2_2, void *a3)
 
   if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->q00C))) ) /*0x53c640*/
     return 0; /*0x53c648*/
-  int m_8; // edx
-  m_8 = a2_2->q008; /*0x53c64e*/
-  int result; // eax
-  result = 0; /*0x53c651*/
+  int m_8 = a2_2->q008; // edx /*0x53c64e*/
+  int result = 0; // eax /*0x53c651*/
   if ( m_8 <= 0 ) /*0x53c655*/
     return -1; /*0x53c66c*/
   unsigned int *i; // ecx
@@ -237,7 +234,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   if ( a2 ) /*0x53c6ac*/
   {
     LOBYTE(this->m_C) = 0; /*0x53c6b2*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x53c6b8*/
       v4 = a3; /*0x53c6ce*/
     else
@@ -247,11 +244,11 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x53c74a*/
     if ( *&this->q004 ) /*0x53c6d8*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = this->m_8; /*0x53c6df*/
       if ( a2 < m_8 ) /*0x53c6e4*/
         m_8 = a2; /*0x53c6e6*/
-  int i; // eax
+      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x53c6ec*/
         ++i; /*0x53c6f1*/
       if ( BYTE1(this->m_C) ) /*0x53c6fe*/
@@ -268,8 +265,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x53c72e*/
   }
-  int v7; // eax
-  v7 = this->m_8; /*0x53c731*/
+  int v7 = this->m_8; // eax /*0x53c731*/
   if ( v7 < this->m_10 ) /*0x53c739*/
     this->m_10 = v7; /*0x53c73b*/
   return 1; /*0x53c73e*/
@@ -284,8 +280,7 @@ int DeleteCommandClass_28::FindItem(unsigned int * a2)
 
   int m_10; // edx
   m_10 = this->m_10; /*0x53c750*/
-  int result; // eax
-  result = 0; /*0x53c753*/
+  int result = 0; // eax /*0x53c753*/
   if ( m_10 <= 0 ) /*0x53c758*/
     return -1; /*0x53c76f*/
   unsigned int *i; // ecx
@@ -302,8 +297,7 @@ namespace gamemd {
 VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x53c783*/
+  void *v3 = *&Block->__pad_004; // eax /*0x53c783*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x53c786*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x53c790*/
   {
@@ -324,8 +318,7 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1
 {
 
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x53c7d3*/
+  void *v3 = *&Block->__pad_004; // eax /*0x53c7d3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x53c7d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x53c7e0*/
   {

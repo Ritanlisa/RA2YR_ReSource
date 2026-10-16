@@ -43,12 +43,9 @@ namespace gamemd {
 int Math_Sqrt(double a1)
 {
 
-  double v2; // st7
-  v2 = a1; /*0x4cac40*/
-  bool v3; // c0
-  v3 = a1 < 0.0; /*0x4cac44*/
-  char v4; // c2
-  v4 = 0; /*0x4cac44*/
+  double v2 = a1; // st7 /*0x4cac40*/
+  bool v3 = a1 < 0.0; // c0 /*0x4cac44*/
+  char v4 = 0; // c2 /*0x4cac44*/
   bool v5; // c3
   v5 = a1 == 0.0; /*0x4cac44*/
   int16_t v1; // fps
@@ -58,7 +55,7 @@ int Math_Sqrt(double a1)
   {
     if ( a1 <= 0.0 ) /*0x4cac65*/
       v2 = a1 * -1.0; /*0x4cac67*/
-  float v7; // [esp+4h] [ebp+4h]
+    float v7; // [esp+4h] [ebp+4h]
     v7 = v2; /*0x4cac6d*/
     return (((int16_t)(((*((unsigned int *)&(v7))) >> 23) - 127) >> 1) + 127) << 23; /*0x4caca0*/
   }
@@ -72,8 +69,7 @@ int Math_SinCos(double a1)
 
   int v1; // eax
   (*((unsigned short *)&(v1))) = Math::RoundToInt(a1 * flt_8223B0); /*0x4cacba*/
-  char v2; // cl
-  v2 = v1 & 1; /*0x4cacc4*/
+  char v2 = v1 & 1; // cl /*0x4cacc4*/
   int result; // eax
   result = (v1 / 2) & 0x80001FFF; /*0x4cacc9*/
   if ( result < 0 )
@@ -93,8 +89,7 @@ int Math_ArcTan2(double a1)
 
   int v1; // eax
   (*((unsigned short *)&(v1))) = Math::RoundToInt(a1 * flt_8223B4); /*0x4cad0a*/
-  char v2; // cl
-  v2 = v1 & 1; /*0x4cad14*/
+  char v2 = v1 & 1; // cl /*0x4cad14*/
   signed int v3; // eax
   v3 = (v1 / 2) & 0x80001FFF; /*0x4cad19*/
   int result; // eax
@@ -117,8 +112,7 @@ int Math::Sin(double a1)
 
   int v1; // eax
   (*((unsigned short *)&(v1))) = Math::RoundToInt(a1 * 651.8986469044033); /*0x4cad5a*/
-  int result; // eax
-  result = v1 & 0x80000FFF; /*0x4cad5f*/
+  int result = v1 & 0x80000FFF; // eax /*0x4cad5f*/
   if ( result < 0 )
     return (((unsigned short)result - 1) | 0xFFFFF000) + 1 + ((int)((((unsigned short)result - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
   return result; /*0x4cad7b*/
@@ -134,43 +128,36 @@ int Math_CalcAngle(double a1, double a2)
   v18 = a2; /*0x4cae35*/
   float v19; // [esp+10h] [ebp+Ch]
   v19 = a1; /*0x4cae3d*/
-  double v3; // st7
-  v3 = v19; /*0x4cae4b*/
+  double v3 = v19; // st7 /*0x4cae4b*/
   char v4; // c3
   if ( v4 ) /*0x4cae54*/
   {
-  bool v5; // c0
-    v5 = v3 < 0.0; /*0x4cae56*/
-  char v6; // c2
-    v6 = 0; /*0x4cae56*/
-  bool v7; // c3
+    bool v5 = v3 < 0.0; // c0 /*0x4cae56*/
+    char v6 = 0; // c2 /*0x4cae56*/
+    bool v7; // c3
     v7 = v3 == 0.0; /*0x4cae56*/
-  int16_t v2; // fps
+    int16_t v2; // fps
     (*((unsigned short *)&(result))) = v2; /*0x4cae5c*/
     if ( v3 != 0.0 ) /*0x4cae61*/
     {
-  bool v10; // c0
-      v10 = v19 < 0.0; /*0x4cae6f*/
-  char v11; // c2
-      v11 = 0; /*0x4cae6f*/
-  bool v12; // c3
+      bool v10 = v19 < 0.0; // c0 /*0x4cae6f*/
+      char v11 = 0; // c2 /*0x4cae6f*/
+      bool v12; // c3
       v12 = v19 == 0.0; /*0x4cae6f*/
-  int16_t v9; // fps
+      int16_t v9; // fps
       (*((unsigned short *)&(result))) = v9; /*0x4cae75*/
     }
   }
   else
   {
-  int v13; // eax
+    int v13; // eax
     (*((unsigned short *)&(v13))) = Math::RoundToInt(v3 / v18 / flt_8650B8); /*0x4cae96*/
     result = abs32(v13); /*0x4cae9e*/
-  bool v15; // c0
-    v15 = v19 < 0.0; /*0x4caed1*/
-  char v16; // c2
-    v16 = 0; /*0x4caed1*/
-  bool v17; // c3
+    bool v15 = v19 < 0.0; // c0 /*0x4caed1*/
+    char v16 = 0; // c2 /*0x4caed1*/
+    bool v17; // c3
     v17 = v19 == 0.0; /*0x4caed1*/
-  int16_t v14; // fps
+    int16_t v14; // fps
     (*((unsigned short *)&(result))) = v14; /*0x4caed7*/
   }
   return result; /*0x4cae6a*/
@@ -181,17 +168,14 @@ namespace gamemd {
 float * Math::BuildRotationMatrix(float *aP1, float *a2, float a3)
 {
 
-  double v3; // kr00_8
-  v3 = a3; /*0x5ae762*/
+  double v3 = a3; // kr00_8 /*0x5ae762*/
   float v16; // [esp+10h] [ebp+8h]
   v16 = Math::ArcTan2(a3); /*0x5ae76f*/
   double v5; // st7
   v5 = Math::SinCos(v3); /*0x5ae775*/
-  double v7; // st6
-  v7 = *a2 * *a2; /*0x5ae787*/
+  double v7 = *a2 * *a2; // st6 /*0x5ae787*/
   *aP1 = (1.0 - v7) * v16 + v7; /*0x5ae797*/
-  double v8; // st6
-  v8 = 1.0 - v16; /*0x5ae7a1*/
+  double v8 = 1.0 - v16; // st6 /*0x5ae7a1*/
   *(aP1 + 1) = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   double v9; // st5
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
@@ -205,8 +189,7 @@ float * Math::BuildRotationMatrix(float *aP1, float *a2, float a3)
   *(aP1 + 5) = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
   double v12; // st5
   v12 = a2[2] * a2[1] * v8; /*0x5ae7fb*/
-  double v13; // st4
-  v13 = v5 * *a2; /*0x5ae7ff*/
+  double v13 = v5 * *a2; // st4 /*0x5ae7ff*/
   *(aP1 + 7) = 0.0; /*0x5ae801*/
   *(aP1 + 6) = v12 - v13; /*0x5ae806*/
   *(aP1 + 8) = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
@@ -227,8 +210,7 @@ int Math::DistSq2D(unsigned int *aP1)
   int *v2; // edx
   unsigned char v6[8]; // [esp+4h] [ebp-Ch] BYREF
   v2 = (int *)(*(int (**)(Math *, unsigned char *))(*(unsigned int *)this->q000 + 72))(this, v6); /*0x5f656e*/
-  int v3; // eax
-  v3 = *v2; /*0x5f6574*/
+  int v3 = *v2; // eax /*0x5f6574*/
   int v4; // ecx
   v4 = v2[1]; /*0x5f6576*/
   int v7; // [esp+Ch] [ebp-4h]
@@ -260,19 +242,17 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
   v22 = v6 + v7 + a2[1] * a3[1] + *a2 * *a3; /*0x6465df*/
   if ( v22 + 1.0 <= 0.00001 ) /*0x6465f4*/
   {
-  double v25; // [esp+20h] [ebp-20h]
+    double v25; // [esp+20h] [ebp-20h]
     v25 = Math::SinCos((1.0 - a4) * 1.570796326794895); /*0x6466c1*/
-  double v13; // st7
+    double v13; // st7
     v13 = Math::SinCos(a4 * 1.570796326794895); /*0x6466d1*/
-  float *v14; // eax
-    v14 = a2; /*0x6466df*/
-  int v15; // edx
-    v15 = 4; /*0x6466e3*/
+    float *v14 = a2; // eax /*0x6466df*/
+    int v15 = 4; // edx /*0x6466e3*/
     do /*0x6466fd*/
     {
-  double v16; // st6
+      double v16; // st6
       v16 = *(float *)((char *)(unsigned int)(v14)+ (char *)a3 - (char *)a2) * v13; /*0x6466eb*/
-  double v17; // st5
+      double v17; // st5
       v17 = *v14++ * v25; /*0x6466ef*/
       --v15; /*0x6466f6*/
       *(float *)((char *)(unsigned int)(v14)+ (char *)&v27 - (char *)a2 - 4) = v16 + v17; /*0x6466f9*/
@@ -288,36 +268,31 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
     }
     else
     {
-  double v23; // [esp+18h] [ebp-28h]
+      double v23; // [esp+18h] [ebp-28h]
       v23 = Math::ArcTan2_Table(v22); /*0x646620*/
-  double v26; // [esp+28h] [ebp-18h]
+      double v26; // [esp+28h] [ebp-18h]
       v26 = Math::SinCos(v23); /*0x646633*/
       v24 = Math::SinCos((1.0 - a4) * v23) / v26; /*0x646653*/
       v8 = Math::SinCos(a4 * v23) / v26; /*0x646666*/
     }
-  float *v9; // eax
-    v9 = a2; /*0x646685*/
-  int v10; // edx
-    v10 = 4; /*0x646689*/
+    float *v9 = a2; // eax /*0x646685*/
+    int v10 = 4; // edx /*0x646689*/
     do /*0x6466a3*/
     {
-  double v11; // st6
+      double v11; // st6
       v11 = *(float *)((char *)(unsigned int)(v9)+ (char *)a3 - (char *)a2) * v8; /*0x646691*/
-  double v12; // st5
+      double v12; // st5
       v12 = *v9++ * v24; /*0x646695*/
       --v10; /*0x64669c*/
       *(float *)((char *)(unsigned int)(v9)+ (char *)&v27 - (char *)a2 - 4) = v11 + v12; /*0x64669f*/
     }
     while ( v10 ); /*0x6466a3*/
   }
-  int v18; // eax
-  v18 = v28; /*0x646703*/
+  int v18 = v28; // eax /*0x646703*/
   *a1 = v27; /*0x64670b*/
-  int v19; // edx
-  v19 = v29; /*0x64670d*/
+  int v19 = v29; // edx /*0x64670d*/
   a1[1] = v18; /*0x646713*/
-  int v20; // eax
-  v20 = v30; /*0x646716*/
+  int v20 = v30; // eax /*0x646716*/
   a1[2] = v19; /*0x64671a*/
   a1[3] = v20; /*0x64671d*/
   return a1; /*0x646722*/
@@ -366,10 +341,8 @@ double Math::ArcTan(double a1)
   (*((unsigned short *)&(v2))) = Math::RoundToInt(a1 / flt_8650B8); /*0x4cadee*/
   int result; // eax
   result = abs32(v2); /*0x4cadf6*/
-  bool v4; // c0
-  v4 = v8 < 0.0; /*0x4cae12*/
-  char v5; // c2
-  v5 = 0; /*0x4cae12*/
+  bool v4 = v8 < 0.0; // c0 /*0x4cae12*/
+  char v5 = 0; // c2 /*0x4cae12*/
   bool v6; // c3
   v6 = v8 == 0.0; /*0x4cae12*/
   int16_t v3; // fps
@@ -406,10 +379,8 @@ void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int
 {
   unsigned int v8; // eax
 
-  int v4; // ebx
-  v4 = a4; /*0x5c7db1*/
-  unsigned int v5; // esi
-  v5 = 0; /*0x5c7db6*/
+  int v4 = a4; // ebx /*0x5c7db1*/
+  unsigned int v5 = 0; // esi /*0x5c7db6*/
   if ( a4 <= 0 ) /*0x5c7dba*/
   {
     *a1 = *a1; /*0x5c7df4*/
@@ -418,9 +389,9 @@ void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int
   {
     do /*0x5c7de8*/
     {
-  uint16_t v6; // ax
+      uint16_t v6; // ax
       v6 = *a2++; /*0x5c7dcc*/
-  unsigned int v7; // eax
+      unsigned int v7; // eax
       v7 = v5 + (uint16_t)*a1 + a3 * v6; /*0x5c7dda*/
       *a1++ = v7; /*0x5c7ddc*/
       v8 = (*(((unsigned short *)&(v7)) + 1)); /*0x5c7de2*/

@@ -31,8 +31,7 @@ namespace gamemd {  // G42.18 ns repair
 int sub_6F2040()
 {
 
-  int result; // eax
-  result = dword_A8ECB0; /*0x6f2040*/
+  int result = dword_A8ECB0; // eax /*0x6f2040*/
   int i; // esi
   for ( i = 0; i < dword_A8ECB0; ++i ) /*0x6f204a*/
   {
@@ -50,8 +49,7 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
 
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4371e5*/
     return 0; /*0x4371e8*/
-  int v6; // ebx
-  v6 = *a3; /*0x4371fa*/
+  int v6 = *a3; // ebx /*0x4371fa*/
   int v7; // eax
   v7 = (*((int (**)(void **))*a1 + 28))(a1); /*0x4371fc*/
   int v8; // edx

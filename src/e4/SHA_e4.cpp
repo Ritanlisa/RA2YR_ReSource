@@ -12,8 +12,8 @@
 namespace gamemd {  // G42.18 ns repair
 int SHA1::ComputeThunk(char *aP1, void *a2)
 {
-
+  
   return SHA1::Compute(&this->q00C, aP1); /*0x69e9ed*/
-
+  
 }
 } // namespace gamemd

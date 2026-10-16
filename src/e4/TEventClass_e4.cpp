@@ -96,11 +96,11 @@ DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, in
         goto LABEL_44; /*0x71ec3f*/
       if ( *(unsigned int *)&DataGlobal_A8EB00[644] - v27 < v28 ) /*0x71ec4b*/
       {
-        v28 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v27; /*0x71ec4d*/
-LABEL_44:
-        if ( v28 ) /*0x71ec51*/
-          goto LABEL_139; /*0x71ec51*/
-      }
+      v28 -= *(unsigned int *)&DataGlobal_A8EB00[644] - v27; /*0x71ec4d*/
+      LABEL_44:
+      if ( v28 ) /*0x71ec51*/
+        goto LABEL_139; /*0x71ec51*/
+    }
       LOBYTE(v18) = 1; /*0x71ec5a*/
       return v18; /*0x71ec60*/
     case 14: /*0x71e964*/
@@ -113,7 +113,7 @@ LABEL_44:
       if ( *(unsigned int *)&DataGlobal_A8EB00[644] - (int)vtable3 >= abstractFlags ) /*0x71ec17*/
         goto LABEL_153; /*0x71ec17*/
       abstractFlags -= *(unsigned int *)&DataGlobal_A8EB00[644] - (unsigned int)vtable3; /*0x71ec1d*/
-LABEL_39:
+      LABEL_39:
       if ( abstractFlags ) /*0x71ec21*/
         goto LABEL_139; /*0x71ec21*/
       LOBYTE(v18) = 1; /*0x71ec2a*/
@@ -152,16 +152,16 @@ LABEL_39:
       v13 = stru_A8EB00.ObjectTypeClass[1] + 4 * v11; /*0x71e985*/
       while ( strcmp((const char *)(*(unsigned int *)v13 + 36), (const char *)TEventClass_field_38) ) /*0x71e9bb*/
       {
-        --v11; /*0x71e9bd*/
-        v13 -= 4; /*0x71e9be*/
-        if ( v11 < 0 ) /*0x71e9c3*/
-        {
-          v10 = a6; /*0x71e9c5*/
-          goto LABEL_8; /*0x71e9c9*/
-        }
+      --v11; /*0x71e9bd*/
+      v13 -= 4; /*0x71e9be*/
+      if ( v11 < 0 ) /*0x71e9c3*/
+      {
+        v10 = a6; /*0x71e9c5*/
+        goto LABEL_8; /*0x71e9c9*/
       }
+    }
       v10 = v11; /*0x71e9cb*/
-LABEL_8:
+      LABEL_8:
       if ( v10 >= stru_A8EB00.ObjectTypeClass[4] ) /*0x71e9d3*/
         goto LABEL_139; /*0x71e9d3*/
       if ( v10 < 0 ) /*0x71e9db*/
@@ -174,16 +174,16 @@ LABEL_8:
         goto LABEL_139; /*0x71e9fd*/
       while ( 1 ) /*0x71ea03*/
       {
-        if ( (*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v17) + 132))(*(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v17)) == v15 ) /*0x71ea16*/
-          ++v14; /*0x71ea18*/
-        if ( v14 >= TEventClass_field_34 ) /*0x71ea1b*/
-          break; /*0x71ea1b*/
-        if ( --v17 < 0 ) /*0x71ea22*/
-        {
-          LOBYTE(v18) = 0; /*0x71ea27*/
-          return v18; /*0x71ea2d*/
-        }
+      if ( (*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v17) + 132))(*(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v17)) == v15 ) /*0x71ea16*/
+        ++v14; /*0x71ea18*/
+      if ( v14 >= TEventClass_field_34 ) /*0x71ea1b*/
+        break; /*0x71ea1b*/
+      if ( --v17 < 0 ) /*0x71ea22*/
+      {
+        LOBYTE(v18) = 0; /*0x71ea27*/
+        return v18; /*0x71ea2d*/
       }
+    }
       goto LABEL_153; /*0x71ea1b*/
     case 61: /*0x71e964*/
       v19 = -1; /*0x71ea36*/
@@ -195,16 +195,16 @@ LABEL_8:
       v22 = stru_A8EB00.ObjectTypeClass[1] + 4 * v20; /*0x71ea4a*/
       while ( strcmp((const char *)(*(unsigned int *)v22 + 36), (const char *)v21) ) /*0x71ea80*/
       {
-        --v20; /*0x71ea82*/
-        v22 -= 4; /*0x71ea83*/
-        if ( v20 < 0 ) /*0x71ea88*/
-        {
-          v19 = a6; /*0x71ea8a*/
-          goto LABEL_22; /*0x71ea8e*/
-        }
+      --v20; /*0x71ea82*/
+      v22 -= 4; /*0x71ea83*/
+      if ( v20 < 0 ) /*0x71ea88*/
+      {
+        v19 = a6; /*0x71ea8a*/
+        goto LABEL_22; /*0x71ea8e*/
       }
+    }
       v19 = v20; /*0x71ea90*/
-LABEL_22:
+      LABEL_22:
       if ( v19 >= stru_A8EB00.ObjectTypeClass[4] || v19 < 0 ) /*0x71eaa0*/
         goto LABEL_139; /*0x71eaa0*/
       v23 = *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v19); /*0x71eab2*/
@@ -213,12 +213,12 @@ LABEL_22:
         goto LABEL_153; /*0x71eaba*/
       while ( (*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v24) + 132))(*(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v24)) != v23 ) /*0x71ead2*/
       {
-        if ( --v24 < 0 ) /*0x71ead9*/
-        {
-          LOBYTE(v18) = 1; /*0x71eade*/
-          return v18; /*0x71eae4*/
-        }
+      if ( --v24 < 0 ) /*0x71ead9*/
+      {
+        LOBYTE(v18) = 1; /*0x71eade*/
+        return v18; /*0x71eae4*/
       }
+    }
       goto LABEL_139; /*0x71ead2*/
     default:
       if ( !TEventClass_field_2C ) /*0x71ec65*/
@@ -228,351 +228,351 @@ LABEL_22:
         && TEventClass_field_2C != 21
         && TEventClass_field_2C != 22 )
       {
-        switch ( TEventClass_field_2C ) /*0x71ec93*/
-        {
-          case 1: /*0x71ec93*/
-          case 2: /*0x71ec93*/
-          case 3: /*0x71ec93*/
-          case 4: /*0x71ec93*/
-          case 6: /*0x71ec93*/
-          case 7: /*0x71ec93*/
-          case 18: /*0x71ec93*/
-          case 19: /*0x71ec93*/
-          case 20: /*0x71ec93*/
-          case 21: /*0x71ec93*/
-          case 22: /*0x71ec93*/
-          case 23: /*0x71ec93*/
-          case 24: /*0x71ec93*/
-          case 25: /*0x71ec93*/
-          case 26: /*0x71ec93*/
-          case 29: /*0x71ec93*/
-          case 31: /*0x71ec93*/
-          case 33: /*0x71ec93*/
-          case 34: /*0x71ec93*/
-          case 35: /*0x71ec93*/
-          case 38: /*0x71ec93*/
-          case 39: /*0x71ec93*/
-          case 40: /*0x71ec93*/
-          case 41: /*0x71ec93*/
-          case 42: /*0x71ec93*/
-          case 43: /*0x71ec93*/
-          case 44: /*0x71ec93*/
-          case 48: /*0x71ec93*/
-          case 49: /*0x71ec93*/
-          case 50: /*0x71ec93*/
-          case 53: /*0x71ec93*/
-          case 54: /*0x71ec93*/
-          case 59: /*0x71ec93*/
-            if ( a2 == TEventClass_field_2C && !DataGlobal_A8EB00[619] ) /*0x71eca9*/
-              break; /*0x71eca9*/
-            goto LABEL_139; /*0x71eca9*/
-          default:
-            break;
-        }
+      switch ( TEventClass_field_2C ) /*0x71ec93*/
+      {
+        case 1: /*0x71ec93*/
+        case 2: /*0x71ec93*/
+        case 3: /*0x71ec93*/
+        case 4: /*0x71ec93*/
+        case 6: /*0x71ec93*/
+        case 7: /*0x71ec93*/
+        case 18: /*0x71ec93*/
+        case 19: /*0x71ec93*/
+        case 20: /*0x71ec93*/
+        case 21: /*0x71ec93*/
+        case 22: /*0x71ec93*/
+        case 23: /*0x71ec93*/
+        case 24: /*0x71ec93*/
+        case 25: /*0x71ec93*/
+        case 26: /*0x71ec93*/
+        case 29: /*0x71ec93*/
+        case 31: /*0x71ec93*/
+        case 33: /*0x71ec93*/
+        case 34: /*0x71ec93*/
+        case 35: /*0x71ec93*/
+        case 38: /*0x71ec93*/
+        case 39: /*0x71ec93*/
+        case 40: /*0x71ec93*/
+        case 41: /*0x71ec93*/
+        case 42: /*0x71ec93*/
+        case 43: /*0x71ec93*/
+        case 44: /*0x71ec93*/
+        case 48: /*0x71ec93*/
+        case 49: /*0x71ec93*/
+        case 50: /*0x71ec93*/
+        case 53: /*0x71ec93*/
+        case 54: /*0x71ec93*/
+        case 59: /*0x71ec93*/
+          if ( a2 == TEventClass_field_2C && !DataGlobal_A8EB00[619] ) /*0x71eca9*/
+            break; /*0x71eca9*/
+          goto LABEL_139; /*0x71eca9*/
+        default:
+          break;
       }
+    }
       switch ( TEventClass_field_2C ) /*0x71ecd6*/
       {
-        case 1: /*0x71ecd6*/
-        case 25: /*0x71ecd6*/
-        case 26: /*0x71ecd6*/
-        case 24: /*0x71ecd6*/
-        case 59: /*0x71ecd6*/
-          if ( a2 == TEventClass_field_2C ) /*0x71f1bf*/
+      case 1: /*0x71ecd6*/
+      case 25: /*0x71ecd6*/
+      case 26: /*0x71ecd6*/
+      case 24: /*0x71ecd6*/
+      case 59: /*0x71ecd6*/
+        if ( a2 == TEventClass_field_2C ) /*0x71f1bf*/
+        {
+        v53 = (HouseClass *)this->TEventClass_field_34; /*0x71f1c1*/
+        if ( v53 == (HouseClass *)-1 || (v53)->FindOwner() ) /*0x71f1c9*/
+        {
+          if ( a4 ) /*0x71f1d8*/
           {
-            v53 = (HouseClass *)this->TEventClass_field_34; /*0x71f1c1*/
-            if ( v53 == (HouseClass *)-1 || (v53)->FindOwner() ) /*0x71f1c9*/
-            {
-              if ( a4 ) /*0x71f1d8*/
-              {
-                v54 = (HouseClass *)this->TEventClass_field_34; /*0x71f1da*/
-                if ( v54 == (HouseClass *)-1 /*0x71f1f5*/
+            v54 = (HouseClass *)this->TEventClass_field_34; /*0x71f1da*/
+            if ( v54 == (HouseClass *)-1 /*0x71f1f5*/
                   || (v55 = (*(int (**)(int))(*(unsigned int *)a4 + 56))(a4),
                       v55 == *(unsigned int *)((v54)->FindOwner() + 48)) )
-                {
-                  *(unsigned char *)a6 = 1; /*0x71f1ff*/
-                  this->TEventClass_field_54 = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
-LABEL_153:
-                  LOBYTE(v18) = 1; /*0x71f20c*/
-                  return v18; /*0x71f20f*/
-                }
-              }
+            {
+              *(unsigned char *)a6 = 1; /*0x71f1ff*/
+              this->TEventClass_field_54 = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
+              LABEL_153:
+              LOBYTE(v18) = 1; /*0x71f20c*/
+              return v18; /*0x71f20f*/
             }
           }
-LABEL_139:
-          LOBYTE(v18) = 0; /*0x71f163*/
-          return v18; /*0x71f16c*/
-        case 53: /*0x71ecd6*/
-          if ( a2 == 53 ) /*0x71ece3*/
+        }
+      }
+        LABEL_139:
+        LOBYTE(v18) = 0; /*0x71f163*/
+        return v18; /*0x71f16c*/
+      case 53: /*0x71ecd6*/
+        if ( a2 == 53 ) /*0x71ece3*/
+        {
+        if ( a4 ) /*0x71ecef*/
+        {
+          v29 = (HouseClass *)this->TEventClass_field_34; /*0x71ecf5*/
+          if ( v29 != (HouseClass *)-1 ) /*0x71ecfb*/
           {
-            if ( a4 ) /*0x71ecef*/
+            if ( (v29)->FindOwner() ) /*0x71ed01*/
             {
-              v29 = (HouseClass *)this->TEventClass_field_34; /*0x71ecf5*/
-              if ( v29 != (HouseClass *)-1 ) /*0x71ecfb*/
+              if ( (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
               {
-                if ( (v29)->FindOwner() ) /*0x71ed01*/
+                v30 = (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
+                if ( *(unsigned int *)(v30 + 48) == *(unsigned int *)(((HouseClass *)this->TEventClass_field_34)->FindOwner() /*0x71ed40*/
+                      + 48) )
                 {
-                  if ( (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
-                  {
-                    v30 = (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
-                    if ( *(unsigned int *)(v30 + 48) == *(unsigned int *)(((HouseClass *)this->TEventClass_field_34)->FindOwner() /*0x71ed40*/
-                                                            + 48) )
-                    {
-                      *(unsigned char *)a6 = 1; /*0x71ed4d*/
-                      LOBYTE(v18) = 1; /*0x71ed50*/
-                      return v18; /*0x71ed56*/
-                    }
-                  }
+                  *(unsigned char *)a6 = 1; /*0x71ed4d*/
+                  LOBYTE(v18) = 1; /*0x71ed50*/
+                  return v18; /*0x71ed56*/
                 }
               }
             }
           }
-          goto LABEL_139; /*0x71ed40*/
-        case 54: /*0x71ecd6*/
-          if ( a2 == 54 ) /*0x71ed60*/
-          {
-            if ( a4 ) /*0x71ed6c*/
-            {
-              v31 = (*(int (**)(int, int))(*(unsigned int *)a4 + 204))(a4, 1); /*0x71ed7c*/
-              if ( (*(int (**)(int))(*(unsigned int *)v31 + 44))(v31) == 16 /*0x71eda2*/
+        }
+      }
+        goto LABEL_139; /*0x71ed40*/
+      case 54: /*0x71ecd6*/
+        if ( a2 == 54 ) /*0x71ed60*/
+        {
+        if ( a4 ) /*0x71ed6c*/
+        {
+          v31 = (*(int (**)(int, int))(*(unsigned int *)a4 + 204))(a4, 1); /*0x71ed7c*/
+          if ( (*(int (**)(int))(*(unsigned int *)v31 + 44))(v31) == 16 /*0x71eda2*/
                 && this->TEventClass_field_34 != -1
                 && (*(int (**)(int))(*(unsigned int *)v31 + 64))(v31) == this->TEventClass_field_34 )
-              {
-                *(unsigned char *)a6 = 1; /*0x71edaf*/
-                LOBYTE(v18) = 1; /*0x71edb2*/
-                return v18; /*0x71edb8*/
-              }
-            }
-          }
-          goto LABEL_139; /*0x71eda2*/
-        case 34: /*0x71ecd6*/
-          if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)dword_A8B230, &v59, this->TEventClass_field_34)); /*0x71eddb*/
-            v33 = *WorldCoords; /*0x71ede0*/
-            v34 = WorldCoords[1]; /*0x71ede6*/
-            v35 = WorldCoords[2]; /*0x71edeb*/
-            v36 = (int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a4 + 72))(a4, v62); /*0x71edf3*/
-            v37 = v36[1]; /*0x71edf6*/
-            v38 = *v36; /*0x71edf9*/
-            v39 = v36[2]; /*0x71edfb*/
-            v60 = v37 - v34; /*0x71ee00*/
-            __asm { fild [esp+2Ch+var_14] } /*0x71ee06*/
-            v61 = v39 - v35; /*0x71ee0c*/
-            __asm { fild [esp+2Ch+var_10] } /*0x71ee10*/
-            v59 = v38 - v33; /*0x71ee14*/
-            __asm /*0x71ee1b*/
-            {
-              fild [esp+34h+var_18]
-              fld st
-              fmul st, st(1)
-              fld st(2)
-              fmul st, st(3)
-              faddp st(1), st
-              fld st(3)
-              fmul st, st(4)
-              faddp st(1), st
-              fstp [esp+34h+var_38+4]; double
-              fstp st
-              fstp st
-              fstp st
-            }
-            Math::Sqrt(v57); /*0x71ee38*/
-            LOWORD(v18) = Math::RoundToInt(v7); /*0x71ee40*/
-            LOBYTE(v18) = v18 <= 1280; /*0x71ee4d*/
-            return v18; /*0x71ee54*/
+            *(unsigned char *)a6 = 1; /*0x71edaf*/
+            LOBYTE(v18) = 1; /*0x71edb2*/
+            return v18; /*0x71edb8*/
           }
-          goto LABEL_139; /*0x71edc6*/
+        }
       }
+        goto LABEL_139; /*0x71eda2*/
+      case 34: /*0x71ecd6*/
+        if ( a2 == 34 ) /*0x71edc6*/
+        {
+        WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)dword_A8B230, &v59, this->TEventClass_field_34)); /*0x71eddb*/
+        v33 = *WorldCoords; /*0x71ede0*/
+        v34 = WorldCoords[1]; /*0x71ede6*/
+        v35 = WorldCoords[2]; /*0x71edeb*/
+        v36 = (int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a4 + 72))(a4, v62); /*0x71edf3*/
+        v37 = v36[1]; /*0x71edf6*/
+        v38 = *v36; /*0x71edf9*/
+        v39 = v36[2]; /*0x71edfb*/
+        v60 = v37 - v34; /*0x71ee00*/
+        __asm { fild [esp+2Ch+var_14] } /*0x71ee06*/
+        v61 = v39 - v35; /*0x71ee0c*/
+        __asm { fild [esp+2Ch+var_10] } /*0x71ee10*/
+        v59 = v38 - v33; /*0x71ee14*/
+        __asm /*0x71ee1b*/
+        {
+          fild [esp+34h+var_18]
+          fld st
+          fmul st, st(1)
+          fld st(2)
+          fmul st, st(3)
+          faddp st(1), st
+          fld st(3)
+          fmul st, st(4)
+          faddp st(1), st
+          fstp [esp+34h+var_38+4]; double
+          fstp st
+          fstp st
+          fstp st
+        }
+        Math::Sqrt(v57); /*0x71ee38*/
+        LOWORD(v18) = Math::RoundToInt(v7); /*0x71ee40*/
+        LOBYTE(v18) = v18 <= 1280; /*0x71ee4d*/
+        return v18; /*0x71ee54*/
+      }
+        goto LABEL_139; /*0x71edc6*/
+    }
       if ( TEventClass_field_2C == 44 /*0x71ee7c*/
         && (a2 != 44 || !a7 || this->TEventClass_field_34 != *(unsigned int *)(*(unsigned int *)(a7 + 540) + 48)) )
       {
-        goto LABEL_139; /*0x71ee7c*/
-      }
+      goto LABEL_139; /*0x71ee7c*/
+    }
       if ( a3 ) /*0x71ee88*/
       {
-        switch ( TEventClass_field_2C ) /*0x71eea2*/
-        {
-          case 12: /*0x71eea2*/
-            if ( (*(int (**)(int))(a3->u32_24 + 24))(a3 + 36) >= this->TEventClass_field_34 ) /*0x71ef0e*/
-              goto LABEL_122; /*0x71ef0e*/
-            LOBYTE(v18) = 0; /*0x71ef17*/
-            return v18; /*0x71ef1d*/
-          case 15: /*0x71eea2*/
-            if ( a3->u32_5488 >= this->TEventClass_field_34 ) /*0x71f04a*/
-              goto LABEL_122; /*0x71f04a*/
-            LOBYTE(v18) = 0; /*0x71f04f*/
-            return v18; /*0x71f055*/
-          case 16: /*0x71eea2*/
-            if ( a3->u32_5434 >= this->TEventClass_field_34 ) /*0x71f063*/
-              goto LABEL_122; /*0x71f063*/
-            goto LABEL_139; /*0x71f063*/
-          case 17: /*0x71eea2*/
-            if ( a3->u32_2F0 <= 0 ) /*0x71ef47*/
-              goto LABEL_122; /*0x71ef47*/
-            v44 = a3->u32_78; /*0x71ef4d*/
-            v45 = 0; /*0x71ef50*/
-            if ( v44 <= 0 ) /*0x71ef54*/
-              goto LABEL_122; /*0x71ef54*/
-            v46 = a3->u32_6C; /*0x71ef5a*/
-            while ( 1 ) /*0x71ef5d*/
-            {
-              v47 = *v46; /*0x71ef5d*/
-              if ( *v46 ) /*0x71ef5d*/
-              {
-                if ( !*(unsigned char *)(v47 + 129) && *(unsigned int *)(*(unsigned int *)(v47 + 1312) + 3768) ) /*0x71ef73*/
-                  goto LABEL_139; /*0x71ef7b*/
-              }
-              ++v45; /*0x71ef81*/
-              ++v46; /*0x71ef82*/
-              if ( v45 >= v44 ) /*0x71ef87*/
-                goto LABEL_122; /*0x71ef87*/
-            }
-          case 18: /*0x71eea2*/
-            if ( a3->u8_1F9 ) /*0x71ef8e*/
-              goto LABEL_122; /*0x71ef96*/
-            LOBYTE(v18) = 0; /*0x71ef9f*/
-            return v18; /*0x71efa5*/
-          case 19: /*0x71eea2*/
-            v48 = a3->u32_26C; /*0x71efeb*/
-            goto LABEL_112; /*0x71efeb*/
-          case 20: /*0x71eea2*/
-            if ( a3->u32_274 != this->TEventClass_field_34 ) /*0x71f00e*/
-              goto LABEL_139; /*0x71f00e*/
-            *(unsigned char *)a6 = 1; /*0x71f018*/
-            goto LABEL_122; /*0x71f01b*/
-          case 21: /*0x71eea2*/
-            if ( a3->u32_270 != this->TEventClass_field_34 ) /*0x71f028*/
-              goto LABEL_139; /*0x71f028*/
-            *(unsigned char *)a6 = 1; /*0x71f032*/
-            goto LABEL_122; /*0x71f035*/
-          case 22: /*0x71eea2*/
-            v48 = a3->u32_278; /*0x71f037*/
-LABEL_112:
-            if ( v48 != this->TEventClass_field_34 ) /*0x71eff4*/
-              goto LABEL_139; /*0x71eff4*/
-            *(unsigned char *)a6 = 1; /*0x71effe*/
-            goto LABEL_122; /*0x71f001*/
-          case 23: /*0x71eea2*/
-            waveEffect = FootClass_Array.?; /*0x71eea9*/
-            v41 = 0; /*0x71eeaf*/
-            if ( (int)FootClass_Array.? <= 0 ) /*0x71eeb3*/
-              goto LABEL_91; /*0x71eeb3*/
-            auxParticles1 = FootClass_Array.?; /*0x71eeb8*/
-            break; /*0x71eeb8*/
-          case 32: /*0x71eea2*/
-            if ( !(&a3->DynamicVector_5550)->GetOrGrow(this->TEventClass_field_34) ) /*0x71efb9*/
-              goto LABEL_139; /*0x71efb9*/
-            *(unsigned char *)a6 = 1; /*0x71efc3*/
-            goto LABEL_122; /*0x71efc6*/
-          case 52: /*0x71eea2*/
-            if ( (*(int (**)(int))(a3->u32_24 + 24))(a3 + 36) <= this->TEventClass_field_34 ) /*0x71ef2d*/
-              goto LABEL_122; /*0x71ef2d*/
-            LOBYTE(v18) = 0; /*0x71ef36*/
-            return v18; /*0x71ef3c*/
-          case 57: /*0x71eea2*/
-            if ( (&a3->DynamicVector_5550)->GetOrGrow(this->TEventClass_field_34) ) /*0x71efd5*/
-              goto LABEL_139; /*0x71efdc*/
-            *(unsigned char *)a6 = 1; /*0x71efe6*/
-            goto LABEL_122; /*0x71efe9*/
-          default:
-            goto LABEL_122;
+      switch ( TEventClass_field_2C ) /*0x71eea2*/
+      {
+        case 12: /*0x71eea2*/
+          if ( (*(int (**)(int))(a3->u32_24 + 24))(a3 + 36) >= this->TEventClass_field_34 ) /*0x71ef0e*/
+            goto LABEL_122; /*0x71ef0e*/
+          LOBYTE(v18) = 0; /*0x71ef17*/
+          return v18; /*0x71ef1d*/
+        case 15: /*0x71eea2*/
+          if ( a3->u32_5488 >= this->TEventClass_field_34 ) /*0x71f04a*/
+            goto LABEL_122; /*0x71f04a*/
+          LOBYTE(v18) = 0; /*0x71f04f*/
+          return v18; /*0x71f055*/
+        case 16: /*0x71eea2*/
+          if ( a3->u32_5434 >= this->TEventClass_field_34 ) /*0x71f063*/
+            goto LABEL_122; /*0x71f063*/
+          goto LABEL_139; /*0x71f063*/
+        case 17: /*0x71eea2*/
+          if ( a3->u32_2F0 <= 0 ) /*0x71ef47*/
+            goto LABEL_122; /*0x71ef47*/
+          v44 = a3->u32_78; /*0x71ef4d*/
+          v45 = 0; /*0x71ef50*/
+          if ( v44 <= 0 ) /*0x71ef54*/
+            goto LABEL_122; /*0x71ef54*/
+          v46 = a3->u32_6C; /*0x71ef5a*/
+          while ( 1 ) /*0x71ef5d*/
+          {
+          v47 = *v46; /*0x71ef5d*/
+          if ( *v46 ) /*0x71ef5d*/
+          {
+            if ( !*(unsigned char *)(v47 + 129) && *(unsigned int *)(*(unsigned int *)(v47 + 1312) + 3768) ) /*0x71ef73*/
+              goto LABEL_139; /*0x71ef7b*/
+          }
+          ++v45; /*0x71ef81*/
+          ++v46; /*0x71ef82*/
+          if ( v45 >= v44 ) /*0x71ef87*/
+            goto LABEL_122; /*0x71ef87*/
         }
-        while ( 1 ) /*0x71eebe*/
-        {
-          vtable0 = auxParticles1->ObjectClass; /*0x71eebe*/
-          if ( *((unsigned int *)auxParticles1->ObjectClass + 9) == this->TEventClass_field_30 /*0x71eecc*/
+        case 18: /*0x71eea2*/
+          if ( a3->u8_1F9 ) /*0x71ef8e*/
+            goto LABEL_122; /*0x71ef96*/
+          LOBYTE(v18) = 0; /*0x71ef9f*/
+          return v18; /*0x71efa5*/
+        case 19: /*0x71eea2*/
+          v48 = a3->u32_26C; /*0x71efeb*/
+          goto LABEL_112; /*0x71efeb*/
+        case 20: /*0x71eea2*/
+          if ( a3->u32_274 != this->TEventClass_field_34 ) /*0x71f00e*/
+            goto LABEL_139; /*0x71f00e*/
+          *(unsigned char *)a6 = 1; /*0x71f018*/
+          goto LABEL_122; /*0x71f01b*/
+        case 21: /*0x71eea2*/
+          if ( a3->u32_270 != this->TEventClass_field_34 ) /*0x71f028*/
+            goto LABEL_139; /*0x71f028*/
+          *(unsigned char *)a6 = 1; /*0x71f032*/
+          goto LABEL_122; /*0x71f035*/
+        case 22: /*0x71eea2*/
+          v48 = a3->u32_278; /*0x71f037*/
+          LABEL_112:
+          if ( v48 != this->TEventClass_field_34 ) /*0x71eff4*/
+            goto LABEL_139; /*0x71eff4*/
+          *(unsigned char *)a6 = 1; /*0x71effe*/
+          goto LABEL_122; /*0x71f001*/
+        case 23: /*0x71eea2*/
+          waveEffect = FootClass_Array.?; /*0x71eea9*/
+          v41 = 0; /*0x71eeaf*/
+          if ( (int)FootClass_Array.? <= 0 ) /*0x71eeb3*/
+            goto LABEL_91; /*0x71eeb3*/
+          auxParticles1 = FootClass_Array.?; /*0x71eeb8*/
+          break; /*0x71eeb8*/
+        case 32: /*0x71eea2*/
+          if ( !(&a3->DynamicVector_5550)->GetOrGrow(this->TEventClass_field_34) ) /*0x71efb9*/
+            goto LABEL_139; /*0x71efb9*/
+          *(unsigned char *)a6 = 1; /*0x71efc3*/
+          goto LABEL_122; /*0x71efc6*/
+        case 52: /*0x71eea2*/
+          if ( (*(int (**)(int))(a3->u32_24 + 24))(a3 + 36) <= this->TEventClass_field_34 ) /*0x71ef2d*/
+            goto LABEL_122; /*0x71ef2d*/
+          LOBYTE(v18) = 0; /*0x71ef36*/
+          return v18; /*0x71ef3c*/
+        case 57: /*0x71eea2*/
+          if ( (&a3->DynamicVector_5550)->GetOrGrow(this->TEventClass_field_34) ) /*0x71efd5*/
+            goto LABEL_139; /*0x71efdc*/
+          *(unsigned char *)a6 = 1; /*0x71efe6*/
+          goto LABEL_122; /*0x71efe9*/
+        default:
+          goto LABEL_122;
+      }
+      while ( 1 ) /*0x71eebe*/
+      {
+        vtable0 = auxParticles1->ObjectClass; /*0x71eebe*/
+        if ( *((unsigned int *)auxParticles1->ObjectClass + 9) == this->TEventClass_field_30 /*0x71eecc*/
             && !vtable0[21]
             && *((unsigned char *)vtable0 + 130) )
-          {
-            break; /*0x71eecc*/
-          }
-          ++v41; /*0x71eed6*/
-          auxParticles1 = &auxParticles1->vtable2; /*0x71eed7*/
-          if ( v41 >= (int)FootClass_Array.? ) /*0x71eedc*/
-            goto LABEL_91; /*0x71eedc*/
-        }
-        *(unsigned char *)a6 = 1; /*0x71eee4*/
-        waveEffect = FootClass_Array.?; /*0x71eee7*/
-LABEL_91:
-        if ( (WaveClass *)v41 == waveEffect ) /*0x71eeef*/
         {
-          LOBYTE(v18) = 0; /*0x71eef8*/
-          return v18; /*0x71eefe*/
+          break; /*0x71eecc*/
         }
+        ++v41; /*0x71eed6*/
+        auxParticles1 = &auxParticles1->vtable2; /*0x71eed7*/
+        if ( v41 >= (int)FootClass_Array.? ) /*0x71eedc*/
+          goto LABEL_91; /*0x71eedc*/
       }
-LABEL_122:
+      *(unsigned char *)a6 = 1; /*0x71eee4*/
+      waveEffect = FootClass_Array.?; /*0x71eee7*/
+      LABEL_91:
+      if ( (WaveClass *)v41 == waveEffect ) /*0x71eeef*/
+      {
+        LOBYTE(v18) = 0; /*0x71eef8*/
+        return v18; /*0x71eefe*/
+      }
+    }
+      LABEL_122:
       Owner = ((HouseClass *)this->TEventClass_field_34)->FindOwner(); /*0x71f069*/
       if ( Owner ) /*0x71f075*/
       {
-        switch ( this->TEventClass_field_2C ) /*0x71f092*/
-        {
-          case 3: /*0x71f092*/
-            if ( *(unsigned char *)(Owner + 580) ) /*0x71f0e1*/
-              break; /*0x71f0e9*/
-            LOBYTE(v18) = 0; /*0x71f0f2*/
-            return v18; /*0x71f0f8*/
-          case 5: /*0x71f092*/
-            if ( *(unsigned char *)(Owner + 500) ) /*0x71f0fb*/
-              break; /*0x71f103*/
-            LOBYTE(v18) = 0; /*0x71f10c*/
-            return v18; /*0x71f112*/
-          case 9: /*0x71f092*/
-            if ( ((VectorClass *)(Owner + 21860))->GetCount() > 0 ) /*0x71f13c*/
-              goto LABEL_139; /*0x71f13c*/
-            if ( ((VectorClass *)(Owner + 21880))->GetCount() <= 0 ) /*0x71f14b*/
-              break; /*0x71f14b*/
-            LOBYTE(v18) = 0; /*0x71f150*/
-            return v18; /*0x71f156*/
-          case 0xA: /*0x71f092*/
-            if ( *(int *)(Owner + 752) <= 0 ) /*0x71f11d*/
-              break; /*0x71f11d*/
-            LOBYTE(v18) = 0; /*0x71f126*/
-            return v18; /*0x71f12c*/
-          case 0xB: /*0x71f092*/
-            if ( *(int *)(Owner + 752) <= 0 /*0x71f1af*/
+      switch ( this->TEventClass_field_2C ) /*0x71f092*/
+      {
+        case 3: /*0x71f092*/
+          if ( *(unsigned char *)(Owner + 580) ) /*0x71f0e1*/
+            break; /*0x71f0e9*/
+          LOBYTE(v18) = 0; /*0x71f0f2*/
+          return v18; /*0x71f0f8*/
+        case 5: /*0x71f092*/
+          if ( *(unsigned char *)(Owner + 500) ) /*0x71f0fb*/
+            break; /*0x71f103*/
+          LOBYTE(v18) = 0; /*0x71f10c*/
+          return v18; /*0x71f112*/
+        case 9: /*0x71f092*/
+          if ( ((VectorClass *)(Owner + 21860))->GetCount() > 0 ) /*0x71f13c*/
+            goto LABEL_139; /*0x71f13c*/
+          if ( ((VectorClass *)(Owner + 21880))->GetCount() <= 0 ) /*0x71f14b*/
+            break; /*0x71f14b*/
+          LOBYTE(v18) = 0; /*0x71f150*/
+          return v18; /*0x71f156*/
+        case 0xA: /*0x71f092*/
+          if ( *(int *)(Owner + 752) <= 0 ) /*0x71f11d*/
+            break; /*0x71f11d*/
+          LOBYTE(v18) = 0; /*0x71f126*/
+          return v18; /*0x71f12c*/
+        case 0xB: /*0x71f092*/
+          if ( *(int *)(Owner + 752) <= 0 /*0x71f1af*/
               && ((VectorClass *)(Owner + 21860))->GetCount() <= 0
               && ((VectorClass *)(Owner + 21880))->GetCount() <= 0 )
-            {
-              break; /*0x71f1af*/
-            }
-            goto LABEL_139; /*0x71f1af*/
-          case 0x1E: /*0x71f092*/
-            HouseClass::GetPowerRatio((HouseClass *)Owner); /*0x71f09b*/
-            __asm /*0x71f0a0*/
-            {
-              fcomp ds:dbl_7E1718
-              fnstsw ax
-            }
-            if ( (_AX & 0x100) != 0 ) /*0x71f0ab*/
-              break; /*0x71f0ab*/
-            LOBYTE(v18) = 0; /*0x71f0b4*/
-            return v18; /*0x71f0ba*/
-          case 0x37: /*0x71f092*/
-            v52 = *(unsigned int *)(Owner + 748); /*0x71f159*/
-            goto LABEL_138; /*0x71f159*/
-          case 0x38: /*0x71f092*/
-            if ( *(unsigned int *)(Owner + 744) - *(unsigned int *)(Owner + 748) > 0 ) /*0x71f17f*/
-              goto LABEL_139; /*0x71f17f*/
-            v52 = *(unsigned int *)(Owner + 756); /*0x71f181*/
-LABEL_138:
-            if ( v52 > 0 ) /*0x71f161*/
-              goto LABEL_139; /*0x71f161*/
-            break; /*0x71f161*/
-          case 0x3A: /*0x71f092*/
-            HouseClass::GetPowerRatio((HouseClass *)Owner); /*0x71f0bf*/
-            __asm /*0x71f0c4*/
-            {
-              fcomp ds:dbl_7E1718
-              fnstsw ax
-            }
-            if ( (_AX & 0x100) == 0 ) /*0x71f0cf*/
-              break; /*0x71f0cf*/
-            LOBYTE(v18) = 0; /*0x71f0d8*/
-            return v18; /*0x71f0de*/
-          default:
-            break;
+          {
+          break; /*0x71f1af*/
         }
+          goto LABEL_139; /*0x71f1af*/
+        case 0x1E: /*0x71f092*/
+          HouseClass::GetPowerRatio((HouseClass *)Owner); /*0x71f09b*/
+          __asm /*0x71f0a0*/
+          {
+          fcomp ds:dbl_7E1718
+          fnstsw ax
+        }
+          if ( (_AX & 0x100) != 0 ) /*0x71f0ab*/
+            break; /*0x71f0ab*/
+          LOBYTE(v18) = 0; /*0x71f0b4*/
+          return v18; /*0x71f0ba*/
+        case 0x37: /*0x71f092*/
+          v52 = *(unsigned int *)(Owner + 748); /*0x71f159*/
+          goto LABEL_138; /*0x71f159*/
+        case 0x38: /*0x71f092*/
+          if ( *(unsigned int *)(Owner + 744) - *(unsigned int *)(Owner + 748) > 0 ) /*0x71f17f*/
+            goto LABEL_139; /*0x71f17f*/
+          v52 = *(unsigned int *)(Owner + 756); /*0x71f181*/
+          LABEL_138:
+          if ( v52 > 0 ) /*0x71f161*/
+            goto LABEL_139; /*0x71f161*/
+          break; /*0x71f161*/
+        case 0x3A: /*0x71f092*/
+          HouseClass::GetPowerRatio((HouseClass *)Owner); /*0x71f0bf*/
+          __asm /*0x71f0c4*/
+          {
+          fcomp ds:dbl_7E1718
+          fnstsw ax
+        }
+          if ( (_AX & 0x100) == 0 ) /*0x71f0cf*/
+            break; /*0x71f0cf*/
+          LOBYTE(v18) = 0; /*0x71f0d8*/
+          return v18; /*0x71f0de*/
+        default:
+          break;
       }
+    }
       LOBYTE(v18) = 1; /*0x71f1b1*/
       return v18;
   }
@@ -726,8 +726,8 @@ void * TEventClass::Fire(void ** Block, char a2)
   {
     --g_BuildingLoadQueue_Array.GateCloseDelay[0]; /*0x71facf*/
     for ( ; /*0x71fad5*/
-          v3 < g_BuildingLoadQueue_Array.GateCloseDelay[0];
-          *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3) )
+    v3 < g_BuildingLoadQueue_Array.GateCloseDelay[0];
+    *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3) )
     {
       ++v3; /*0x71fadd*/
     }
@@ -741,9 +741,9 @@ void * TEventClass::Fire(void ** Block, char a2)
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x71fb18*/
     for ( ; /*0x71fb1e*/
-          v4 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v4) )
+    v4 < g_BuildingLoadQueue_Array.LightBlueTint;
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
+    + 4 * v4) )
     {
       ++v4; /*0x71fb26*/
     }
@@ -757,9 +757,9 @@ void * TEventClass::Fire(void ** Block, char a2)
   {
     --dword_B0F1B0; /*0x71fb61*/
     for ( ; /*0x71fb67*/
-          v5 < DataGlobal_B0E840[2254];
-          *(unsigned int *)(DataGlobal_B0E840[2251] + 4 * v5 - 4) = *(unsigned int *)(DataGlobal_B0E840[2251]
-                                                                                + 4 * v5) )
+    v5 < DataGlobal_B0E840[2254];
+    *(unsigned int *)(DataGlobal_B0E840[2251] + 4 * v5 - 4) = *(unsigned int *)(DataGlobal_B0E840[2251]
+    + 4 * v5) )
     {
       ++v5; /*0x71fb6f*/
     }
@@ -782,7 +782,7 @@ int TEventClass::ProcessEvent(int a2)
   TEventClass_field_28 = (int)(this->TEventClass_field_28); /*0x71f82e*/
   if ( TEventClass_field_28 ) /*0x71f833*/
   {
-  int v4; // eax
+    int v4; // eax
     v4 = (*(int (**)(int))(*(unsigned int *)(TEventClass_field_28 + 4) + 16))(TEventClass_field_28 + 4); /*0x71f83c*/
     Power::TimerProcess(v4); /*0x71f842*/
   }
@@ -791,7 +791,7 @@ int TEventClass::ProcessEvent(int a2)
   TEventClass_field_30 = (int)(this->TEventClass_field_30); /*0x71f852*/
   if ( TEventClass_field_30 ) /*0x71f857*/
   {
-  int v6; // eax
+    int v6; // eax
     v6 = (*(int (**)(int))(*(unsigned int *)(TEventClass_field_30 + 4) + 16))(TEventClass_field_30 + 4); /*0x71f860*/
     Power::TimerProcess(v6); /*0x71f866*/
   }

@@ -53,32 +53,30 @@ bool sub_46D650()
   v1 = (HWND)((void *)0xBC6)->FindByHandle(); /*0x46d68b*/
   if ( v1 ) /*0x46d692*/
   {
-  HWND DlgItem; // eax
+    HWND DlgItem; // eax
     DlgItem = GetDlgItem(v1, 1842); /*0x46d69a*/
     if ( DlgItem ) /*0x46d6a2*/
       PostMessageA(DlgItem, 0x405u, 1u, dword_A8EB68); /*0x46d6b3*/
   }
-  int v3; // ebp
-  v3 = 0; /*0x46d6bc*/
+  int v3 = 0; // ebp /*0x46d6bc*/
   LPARAM *v4; // esi
   v4 = (LPARAM *)(&dword_A8DA90); /*0x46d6be*/
   do /*0x46d7fd*/
   {
-  int v5; // ecx
-    v5 = *v4; /*0x46d6c3*/
+    int v5 = *v4; // ecx /*0x46d6c3*/
     if ( *v4 && v5 != g_HouseClass_ObserverFlags && v5 != g_Lobby_PlayerCount ) /*0x46d6d7*/
     {
-  int v6; // edi
+      int v6; // edi
       v6 = *(v4 - 266); /*0x46d6d9*/
       if ( SessionClass::GetOption(v5) != v6 ) /*0x46d6e6*/
         v0 = 1; /*0x46d6e8*/
       SessionClass::SetOption(*v4, v6); /*0x46d6ed*/
-  int v7; // edi
+      int v7; // edi
       v7 = *(v4 - 258); /*0x46d6f4*/
       if ( SessionClass::GetPlayerSide(*v4) != v7 ) /*0x46d701*/
         v0 = 1; /*0x46d703*/
       ((SessionClass *)(*v4))->SetPlayerOption(v7); /*0x46d708*/
-  int v8; // edi
+      int v8; // edi
       v8 = *(v4 - 250); /*0x46d70f*/
       if ( SessionClass::GetPlayerColor(*v4) != v8 ) /*0x46d71c*/
         v0 = 1; /*0x46d71e*/
@@ -89,27 +87,27 @@ bool sub_46D650()
     SessionClass::GetPlayerSide(*v4); /*0x46d73b*/
     SessionClass::GetOption(*v4); /*0x46d743*/
     Debug::Log(); /*0x46d750*/
-  LPARAM v9; // eax
+    LPARAM v9; // eax
     v9 = *(v4 - 242); /*0x46d755*/
     if ( *(v4 - 2557) != v9 ) /*0x46d766*/
       v0 = 1; /*0x46d768*/
     *(v4 - 2557) = v9; /*0x46d76a*/
-  LPARAM v10; // eax
+    LPARAM v10; // eax
     v10 = *(v4 - 234); /*0x46d770*/
     if ( *(v4 - 2549) != v10 ) /*0x46d77c*/
       v0 = 1; /*0x46d77e*/
     *(v4 - 2549) = v10; /*0x46d780*/
-  LPARAM v11; // eax
+    LPARAM v11; // eax
     v11 = *(v4 - 226); /*0x46d786*/
     if ( *(v4 - 2565) != v11 ) /*0x46d792*/
       v0 = 1; /*0x46d794*/
     *(v4 - 2565) = v11; /*0x46d796*/
-  LPARAM v12; // eax
+    LPARAM v12; // eax
     v12 = *(v4 - 218); /*0x46d79c*/
     if ( *(v4 - 2541) != v12 ) /*0x46d7a8*/
       v0 = 1; /*0x46d7aa*/
     *(v4 - 2541) = v12; /*0x46d7ac*/
-  LPARAM v13; // eax
+    LPARAM v13; // eax
     v13 = *(v4 - 210); /*0x46d7b2*/
     if ( *(v4 - 2533) != v13 ) /*0x46d7be*/
       v0 = 1; /*0x46d7c0*/
@@ -130,15 +128,13 @@ char sub_46D8B0()
   int PlayerSide; // eax
   int v8; // [esp-4h] [ebp-10h]
 
-  char v1; // bl
-  v1 = 0; /*0x46d8b3*/
-  int v2; // edi
-  v2 = 0; /*0x46d8b5*/
+  char v1 = 0; // bl /*0x46d8b3*/
+  int v2 = 0; // edi /*0x46d8b5*/
   const wchar_t **v3; // esi
   v3 = (const wchar_t **)dword_A8DA90; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-  char *v4; // eax
+    char *v4; // eax
     v4 = CharToWideString(&g_NetworkPlayerBuffer); /*0x46d8c1*/
     if ( !wcscmp((const wchar_t *)v4, *v3) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
@@ -208,28 +204,25 @@ void sub_46DA70()
 
   int nextArrayIndex; // ebx
   nextArrayIndex = stru_A80220.nextArrayIndex; /*0x46da74*/
-  int v2; // esi
-  v2 = 0; /*0x46da7b*/
+  int v2 = 0; // esi /*0x46da7b*/
   dword_A8D580 = 0; /*0x46da7f*/
   int v18; // [esp+Ch] [ebp-4h]
   v18 = stru_A80220.nextArrayIndex; /*0x46da85*/
   int i; // [esp+8h] [ebp-8h]
   for ( i = 0; v2 < nextArrayIndex; i = v2 ) /*0x46da8d*/
   {
-  int v3; // edi
+    int v3; // edi
     v3 = *((unsigned int *)stru_A80220.vfptr3 + v2); /*0x46da9a*/
     if ( v3 /*0x46dab7*/
       && *(unsigned char *)(v3->u32_34 + 422) != 1
       && (uint8_t)((House *)(*((House **)stru_A80220.vfptr3 + v2)))->IsCurrentPlayer() )
     {
-  size_t v4; // ebp
+      size_t v4; // ebp
       v4 = dword_A8D580++; /*0x46dacf*/
-  int v5; // esi
-      v5 = 112 * v4; /*0x46dae1*/
+      int v5 = 112 * v4; // esi /*0x46dae1*/
       *((unsigned int *)&dword_A8D228 + 28 * v4) = 0; /*0x46daea*/
       wcscpy((wchar_t *)&unk_A8D1FC + 56 * v4, &v3->u8_1602A); /*0x46daf5*/
-  int v6; // eax
-      v6 = 0; /*0x46dafa*/
+      int v6 = 0; // eax /*0x46dafa*/
       *((unsigned int *)&dword_A8D22C + 28 * v4) = 0; /*0x46daff*/
       *((unsigned int *)&dword_A8D23C + 28 * v4) = 0; /*0x46db05*/
       *((unsigned int *)&dword_A8D24C + 28 * v4) = 0; /*0x46db0b*/
@@ -240,25 +233,21 @@ void sub_46DA70()
         ++*((unsigned int *)&dword_A8D228 + 28 * v4); /*0x46db34*/
         dword_A8D584 = v4; /*0x46db3a*/
       }
-  int *v7; // ecx
-      v7 = &v3->u32_53E4; /*0x46db40*/
-  int v8; // edx
-      v8 = 20; /*0x46db46*/
+      int *v7 = &v3->u32_53E4; // ecx /*0x46db40*/
+      int v8 = 20; // edx /*0x46db46*/
       do /*0x46db53*/
       {
-  int v9; // ebp
+        int v9; // ebp
         v9 = *v7++; /*0x46db4b*/
         v6 += v9; /*0x46db50*/
         --v8; /*0x46db52*/
       }
       while ( v8 ); /*0x46db53*/
-  int *v10; // ecx
-      v10 = &v3->u32_5438; /*0x46db55*/
-  int v11; // edx
-      v11 = 20; /*0x46db5b*/
+      int *v10 = &v3->u32_5438; // ecx /*0x46db55*/
+      int v11 = 20; // edx /*0x46db5b*/
       do /*0x46db68*/
       {
-  int v12; // ebp
+        int v12; // ebp
         v12 = *v10++; /*0x46db60*/
         v6 += v12; /*0x46db65*/
         --v11; /*0x46db67*/
@@ -266,18 +255,17 @@ void sub_46DA70()
       while ( v11 ); /*0x46db68*/
       *(unsigned int *)((char *)&dword_A8D23C + v5) = v6; /*0x46db6a*/
       *(unsigned int *)((char *)&dword_A8D22C + v5) = v3->u32_5488 + v3->u32_5434; /*0x46db84*/
-  int Count; // ebp
+      int Count; // ebp
       Count = (&v3->VectorClass_5550)->GetCount(); /*0x46db95*/
-  int v14; // ebp
+      int v14; // ebp
       v14 = (&v3->VectorClass_5564)->GetCount() + Count; /*0x46dba2*/
-  int v15; // ebp
+      int v15; // ebp
       v15 = (&v3->VectorClass_5578)->GetCount() + v14; /*0x46dbaf*/
       *(unsigned int *)((char *)&dword_A8D24C + v5) = v3->u32_5488 /*0x46dbc8*/
-                                              + (&v3->VectorClass_558C)->GetCount()
-                                              + v15
-                                              + v3->u32_5434;
-  int v16; // edi
-      v16 = v3->u32_54E8; /*0x46dbce*/
+      + (&v3->VectorClass_558C)->GetCount()
+      + v15
+      + v3->u32_5434;
+      int v16 = v3->u32_54E8; // edi /*0x46dbce*/
       if ( v16 > 0 ) /*0x46dbd6*/
         dword_A8D25C[v5 / 4u] += v16; /*0x46dbd8*/
       Debug::Log(); /*0x46dc1c*/
@@ -300,27 +288,27 @@ BOOL sub_46DCC0(HWND hDlg, bool a2)
     result = IsKnownPointer((wchar_t *)*(&dword_A8DA90 + i)); /*0x46dcda*/
     if ( result && i != dword_A8DA8C )
     {
-  int v5; // eax
+      int v5; // eax
       if ( i )
         v5 = i != 1 ? -1 : 1042;
       else
         v5 = 1041; /*0x46dcef*/
-  HWND DlgItem; // eax
+      HWND DlgItem; // eax
       DlgItem = GetDlgItem(hDlg, v5); /*0x46dd09*/
       EnableWindow(DlgItem, a2); /*0x46dd17*/
-  int ResourceID2CSF; // eax
+      int ResourceID2CSF; // eax
       ResourceID2CSF = GetResourceID2CSF((int)((void *)i)); /*0x46dd1f*/
-  HWND v8; // eax
+      HWND v8; // eax
       v8 = GetDlgItem(hDlg, ResourceID2CSF); /*0x46dd26*/
       EnableWindow(v8, a2); /*0x46dd2a*/
-  int ResourceIDCSF; // eax
+      int ResourceIDCSF; // eax
       ResourceIDCSF = GetResourceIDCSF((int)((void *)i)); /*0x46dd32*/
-  HWND v10; // eax
+      HWND v10; // eax
       v10 = GetDlgItem(hDlg, ResourceIDCSF); /*0x46dd39*/
       EnableWindow(v10, a2); /*0x46dd3d*/
-  int ResourceID3CSF; // eax
+      int ResourceID3CSF; // eax
       ResourceID3CSF = GetResourceID3CSF((int)((void *)i)); /*0x46dd45*/
-  HWND v12; // eax
+      HWND v12; // eax
       v12 = GetDlgItem(hDlg, ResourceID3CSF); /*0x46dd4c*/
       result = EnableWindow(v12, a2); /*0x46dd50*/
     }
@@ -361,8 +349,7 @@ void * EnableGameModeControls(HWND hDlg, bool a2)
   if ( (unsigned char)result ) /*0x46ddf1*/
   {
     result = GetDlgItem(hDlg, 1842); /*0x46ddf9*/
-  HWND v13; // edi
-    v13 = result; /*0x46ddfb*/
+    HWND v13 = result; // edi /*0x46ddfb*/
     if ( result ) /*0x46ddff*/
     {
       EnableWindow(result, a2); /*0x46de03*/
@@ -684,8 +671,7 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   ppv = (LPVOID)(0);
   if ( CoCreateInstance((const IID &)(&rclsid), 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
-  LPVOID v10; // esi
-  v10 = ppv; /*0x46b0a4*/
+  LPVOID v10 = ppv; // esi /*0x46b0a4*/
   ((Particle *)((int *)ppv))->Init((int)(aP0), aP1, aP2, aP3, aP4, a6, aP7); /*0x46b0a6*/
   return (LPVOID)((int)v10); /*0x46b07c*/
 }
@@ -1131,8 +1117,7 @@ int sub_46D810()
   PlayerSide = ((int *)*(unsigned int *)(dword_A8DA78))->GetPlayerSide(); /*0x46d864*/
   int PlayerColor; // [esp+3Fh] [ebp-191h]
   PlayerColor = ((SessionClass *)*(unsigned int *)(dword_A8DA78))->GetPlayerColor(); /*0x46d874*/
-  int result; // eax
-  result = dword_A8DA90; /*0x46d878*/
+  int result = dword_A8DA90; // eax /*0x46d878*/
   if ( dword_A8DA90 ) /*0x46d881*/
   {
     Network::SendToPlayer((int)&unk_A8E9C0, (int)&v2, 455, 1, (wchar_t *)dword_A8DA90); /*0x46d895*/

@@ -64,8 +64,7 @@ namespace gamemd {
 AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a5_1, void *a6, void *a7, void *a8, void *a9)
 {
 
-  unsigned int *v6; // ebp
-  v6 = &this->DSurface_field_0x1C; /*0x4ba5b0*/
+  unsigned int *v6 = &this->DSurface_field_0x1C; // ebp /*0x4ba5b0*/
   this->Width = aP1; /*0x4ba5b5*/
   this->Height = aP2; /*0x4ba5b8*/
   this->LockCount = 0; /*0x4ba5bb*/
@@ -99,7 +98,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
     {
       memset(this->DSurface_field_0x20, 0, 0x6Cu); /*0x4ba665*/
       *this->DSurface_field_0x20 = 108; /*0x4ba66a*/
-  int v8; // eax
+      int v8; // eax
       (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)this->u32_74)(*v6, this->DSurface_field_0x20); /*0x4ba67a*/
       v8 = this->DSurface_field_0x20; /*0x4ba67d*/
       this->Width = (unsigned int)(v8->u32_54 + 7) >> 3; /*0x4ba689*/
@@ -334,11 +333,11 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
     g_BitMask_Red = v25; /*0x4baa83*/
     stru_820320.Rate = -1; /*0x4baa89*/
     LOWORD(g_DDraw_Gray127) = (127 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4baac1*/
-                            | (127 >> v22 << g_BitMask_Green)
-                            | (127 >> v25 << v24);
+    | (127 >> v22 << g_BitMask_Green)
+    | (127 >> v25 << v24);
     HIWORD(g_DDraw_Gray127) = (63 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4baaff*/
-                            | (63 >> v22 << g_BitMask_Green)
-                            | (63 >> v25 << v24);
+    | (63 >> v22 << g_BitMask_Green)
+    | (63 >> v25 << v24);
     word_8A0DEC = (31 >> g_BitShift_Green_0 << g_BitShift_Red) | (31 >> v22 << g_BitMask_Green) | (31 >> v25 << v24); /*0x4bab38*/
     if ( v24 ) /*0x4bab3f*/
       goto LABEL_60; /*0x4bab3f*/
@@ -370,7 +369,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
       {
 LABEL_60:
         Debug::Log(); /*0x4bac11*/
-        return v5; /*0x4bac27*/
+  return v5; /*0x4bac27*/
       }
     }
     else if ( v25 != 2 || g_BitMask_Green != 6 || v22 != 3 || g_BitShift_Red != 11 || g_BitShift_Green_0 != 3 ) /*0x4babba*/
@@ -695,9 +694,9 @@ LABEL_53:
   {
 LABEL_71:
     v35 = v43.X; /*0x4bb4e3*/
-    v37 = v43.Y; /*0x4bb4e7*/
-    v41 = v43.Width; /*0x4bb4eb*/
-    v39 = v43.Height; /*0x4bb4ef*/
+  v37 = v43.Y; /*0x4bb4e7*/
+  v41 = v43.Width; /*0x4bb4eb*/
+  v39 = v43.Height; /*0x4bb4ef*/
   }
   v65 = v37; /*0x4bb4f3*/
   v66 = v41; /*0x4bb4f7*/
@@ -777,46 +776,46 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
       if ( !(*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C + 108))(this->DSurface_field_0x1C) /*0x4bb6c1*/
         && !(*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C + 96))(this->DSurface_field_0x1C) )
       {
-        DSurface_field_0xC = this->LockCount; /*0x4bb6cc*/
-        if ( (int)DSurface_field_0xC > 0 ) /*0x4bb6d1*/
-        {
+              DSurface_field_0xC = this->LockCount; /*0x4bb6cc*/
+              if ( (int)DSurface_field_0xC > 0 ) /*0x4bb6d1*/
+              {
           DSurface_field_0x0 = this->vtable1; /*0x4bb6d3*/
           this->LockCount = 0; /*0x4bb6db*/
           (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb6de*/
           ++this->LockCount; /*0x4bb6e7*/
           (*((void (**)(DSurface *))this->vtable1 + 24))(this); /*0x4bb6ec*/
           this->LockCount = DSurface_field_0xC; /*0x4bb6ef*/
-        }
-LABEL_15:
+            }
+              LABEL_15:
         v8 = (int *)(*((int (**)(DSurface *, char *))this->vtable1 + 30))(this, v32); /*0x4bb6f2*/
-        v9 = ClipRectIntersection(v31, (int *)a2, v8, 0, 0); /*0x4bb710*/
-        v30[0] = *v9; /*0x4bb719*/
-        v30[1] = v9->vtable2; /*0x4bb722*/
-        v30[2] = v9->vtable3; /*0x4bb729*/
-        v10 = *(unsigned int *)a3; /*0x4bb72d*/
-        v11 = v9->vtable4; /*0x4bb72f*/
-        v12 = *(unsigned int *)a2; /*0x4bb732*/
-        v13 = a2->u32_4; /*0x4bb734*/
-        v30[3] = v11; /*0x4bb737*/
-        v14 = *(unsigned int *)(a3 + 4); /*0x4bb73b*/
-        v25 = v10 + v12; /*0x4bb740*/
-        v15 = v13 + v14; /*0x4bb748*/
-        v16 = *(unsigned int *)(a3 + 8); /*0x4bb74b*/
-        v17 = *(unsigned int *)(a3 + 12); /*0x4bb74e*/
-        v26 = v15; /*0x4bb751*/
-        v27 = v16; /*0x4bb755*/
-        v28 = v17; /*0x4bb762*/
-        v18 = ClipRectIntersection(v31, &v25, v30, 0, 0); /*0x4bb76b*/
-        v19 = *v18; /*0x4bb76d*/
-        v25 = *v18; /*0x4bb76f*/
-        v20 = v18->vtable2; /*0x4bb773*/
-        v26 = v20; /*0x4bb776*/
-        v21 = v18->vtable3; /*0x4bb77a*/
-        v27 = v21; /*0x4bb77d*/
-        v22 = v18->vtable4; /*0x4bb781*/
-        v28 = v22; /*0x4bb786*/
-        if ( v21 > 0 && v22 > 0 ) /*0x4bb792*/
-        {
+                v9 = ClipRectIntersection(v31, (int *)a2, v8, 0, 0); /*0x4bb710*/
+                v30[0] = *v9; /*0x4bb719*/
+                v30[1] = v9->vtable2; /*0x4bb722*/
+                v30[2] = v9->vtable3; /*0x4bb729*/
+                v10 = *(unsigned int *)a3; /*0x4bb72d*/
+                v11 = v9->vtable4; /*0x4bb72f*/
+                v12 = *(unsigned int *)a2; /*0x4bb732*/
+                v13 = a2->u32_4; /*0x4bb734*/
+                v30[3] = v11; /*0x4bb737*/
+                v14 = *(unsigned int *)(a3 + 4); /*0x4bb73b*/
+                v25 = v10 + v12; /*0x4bb740*/
+                v15 = v13 + v14; /*0x4bb748*/
+                v16 = *(unsigned int *)(a3 + 8); /*0x4bb74b*/
+                v17 = *(unsigned int *)(a3 + 12); /*0x4bb74e*/
+                v26 = v15; /*0x4bb751*/
+                v27 = v16; /*0x4bb755*/
+                v28 = v17; /*0x4bb762*/
+                v18 = ClipRectIntersection(v31, &v25, v30, 0, 0); /*0x4bb76b*/
+                v19 = *v18; /*0x4bb76d*/
+                v25 = *v18; /*0x4bb76f*/
+                v20 = v18->vtable2; /*0x4bb773*/
+                v26 = v20; /*0x4bb776*/
+                v21 = v18->vtable3; /*0x4bb77a*/
+                v27 = v21; /*0x4bb77d*/
+                v22 = v18->vtable4; /*0x4bb781*/
+                v28 = v22; /*0x4bb786*/
+                if ( v21 > 0 && v22 > 0 ) /*0x4bb792*/
+              {
           v23 = this->DSurface_field_0x1C; /*0x4bb79c*/
           v29[0] = v19; /*0x4bb79f*/
           v29[2] = v19 + v21; /*0x4bb7a3*/
@@ -832,7 +831,7 @@ LABEL_15:
                    0,
                    16778240,
                    v33) == 0;
-        }
+            }
       }
     }
   }
@@ -889,7 +888,7 @@ int DSurface_FillRectWithFlags(DSurface *aP0, DSurface *aP0, int a2, int a3, uns
   v32 = v5; /*0x4bb839*/
   if ( (*(int (**)(void))(*(unsigned int *)v5 + 112))() < 2 ) /*0x4bb845*/
     return 0; /*0x4bb847*/
-    if ( (int)aP0->Height <= 0 || (int)aP0->LockCount <= 0 )
+  if ( (int)aP0->Height <= 0 || (int)aP0->LockCount <= 0 )
     return 0; /*0x4bb865*/
   v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
   v9 = ClipRectIntersection(v42, v8, (int *)aP0, 0, 0); /*0x4bb888*/
@@ -995,8 +994,8 @@ void DSurface::BlitStretch(int a1, int a2, int a3)
           v10 = 255; /*0x4bbbaf*/
         a1 += 2; /*0x4bbbba*/
         *(unsigned short *)(a1 - 2) = (v8 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4bbbec*/
-                           | (v9 >> g_BitMask_Blue << g_BitMask_Green)
-                           | (v10 >> g_BitMask_Red << g_BitShift_Blue);
+        | (v9 >> g_BitMask_Blue << g_BitMask_Green)
+        | (v10 >> g_BitMask_Red << g_BitShift_Blue);
       }
       v11 = v13 == 1; /*0x4bbc0a*/
       v12 += 0x20000; /*0x4bbc0b*/
@@ -1299,8 +1298,8 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
                   if ( v49 > 255 ) /*0x4bc141*/
                     v49 = 255; /*0x4bc143*/
                   *(unsigned short *)((char *)v107 + v34) = (v50 >> g_BitMask_Red << g_BitShift_Blue) /*0x4bc17b*/
-                                                  | (v51 >> g_BitMask_Blue << g_BitMask_Green)
-                                                  | (v49 >> g_BitShift_Green_0 << g_BitShift_Red);
+                  | (v51 >> g_BitMask_Blue << g_BitMask_Green)
+                  | (v49 >> g_BitShift_Green_0 << g_BitShift_Red);
                   if ( a9 ) /*0x4bc188*/
                     *SamplePosition = v111; /*0x4bc199*/
                   v47 = g_ZBufferDescriptor; /*0x4bc19c*/
@@ -1378,8 +1377,8 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
                   if ( v72 > 255 ) /*0x4bc604*/
                     v72 = 255; /*0x4bc606*/
                   *(unsigned short *)((char *)v109 + v34) = (v73 >> g_BitMask_Red << g_BitShift_Blue) /*0x4bc63e*/
-                                                  | (v74 >> g_BitMask_Blue << g_BitMask_Green)
-                                                  | (v72 >> g_BitShift_Green_0 << g_BitShift_Red);
+                  | (v74 >> g_BitMask_Blue << g_BitMask_Green)
+                  | (v72 >> g_BitShift_Green_0 << g_BitShift_Red);
                   if ( a9 ) /*0x4bc64b*/
                     *SamplePosition = v111; /*0x4bc65c*/
                   v70 = g_ZBufferDescriptor; /*0x4bc65f*/
@@ -1436,7 +1435,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
           {
   LABEL_50:
             (*(void (**)(unsigned int))(*(unsigned int *)v95[0] + 96))(v95[0]); /*0x4bc284*/
-            return 1; /*0x4bc296*/
+    return 1; /*0x4bc296*/
           }
           v60 = g_ZBufferDescriptor; /*0x4bc2c0*/
           while ( 1 ) /*0x4bc2c6*/
@@ -1457,8 +1456,8 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
               if ( v62 > 255 ) /*0x4bc3a4*/
                 v62 = 255; /*0x4bc3a6*/
               *(unsigned short *)(v34 + 2 * v108) = (v63 >> g_BitMask_Red << g_BitShift_Blue) /*0x4bc3de*/
-                                          | (v64 >> g_BitMask_Blue << g_BitMask_Green)
-                                          | (v62 >> g_BitShift_Green_0 << g_BitShift_Red);
+              | (v64 >> g_BitMask_Blue << g_BitMask_Green)
+              | (v62 >> g_BitShift_Green_0 << g_BitShift_Red);
               if ( a9 ) /*0x4bc3eb*/
                 *SamplePosition = v111; /*0x4bc3fc*/
               v60 = g_ZBufferDescriptor; /*0x4bc3ff*/
@@ -1478,29 +1477,29 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
               goto LABEL_71; /*0x4bc439*/
             v66 = (unsigned short *)((char *)v66 - v60[1].Stream_field_0C); /*0x4bc445*/
             v111 += v88; /*0x4bc44d*/
-  LABEL_73:
+            LABEL_73:
             v68 = v92[0]; /*0x4bc483*/
-            if ( v92[0] > 0 ) /*0x4bc489*/
+              if ( v92[0] > 0 ) /*0x4bc489*/
             {
               v111 += v83; /*0x4bc49c*/
               v68 = v92[0] - v85; /*0x4bc4a3*/
             }
-            v69 = v66 + 1; /*0x4bc4a9*/
-            v93 = v84 + v65; /*0x4bc4ae*/
-            v92[0] = v86 + v68; /*0x4bc4b8*/
-            if ( (unsigned int)v69 >= v60[1].Stream_field_08 ) /*0x4bc4c1*/
-              v69 = (unsigned short *)((char *)v69 - v60[1].Stream_field_0C); /*0x4bc4c3*/
-            SamplePosition = v69; /*0x4bc4ca*/
-            if ( ++v108 >= v89 ) /*0x4bc4e2*/
-              goto LABEL_50; /*0x4bc4e2*/
+              v69 = v66 + 1; /*0x4bc4a9*/
+              v93 = v84 + v65; /*0x4bc4ae*/
+              v92[0] = v86 + v68; /*0x4bc4b8*/
+              if ( (unsigned int)v69 >= v60[1].Stream_field_08 ) /*0x4bc4c1*/
+                v69 = (unsigned short *)((char *)v69 - v60[1].Stream_field_0C); /*0x4bc4c3*/
+              SamplePosition = v69; /*0x4bc4ca*/
+              if ( ++v108 >= v89 ) /*0x4bc4e2*/
+                goto LABEL_50; /*0x4bc4e2*/
           }
           v67 = &SamplePosition[pad_0]; /*0x4bc459*/
           if ( (unsigned int)v66 < v60[1].Stream_field_04 ) /*0x4bc45d*/
             v67 = (unsigned short *)((char *)v66 + v60[1].Stream_field_0C); /*0x4bc462*/
           v66 = v67; /*0x4bc464*/
-  LABEL_71:
+          LABEL_71:
           v111 += v88; /*0x4bc466*/
-          goto LABEL_73; /*0x4bc47a*/
+            goto LABEL_73; /*0x4bc47a*/
         }
       }
     }
@@ -2414,8 +2413,8 @@ void* DSurface::DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, i
               v19 = v18->u32_2 >> g_BitMask_Red; /*0x4bf895*/
               LOWORD(v18) = (unsigned __int8)(BYTE1(a8) >> g_BitMask_Blue); /*0x4bf8ab*/
               *v15 = ((unsigned __int8)((unsigned __int8)a8 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x4bf8cd*/
-                   | ((unsigned int)v18 << g_BitMask_Green)
-                   | (v19 << g_BitShift_Blue);
+              | ((unsigned int)v18 << g_BitMask_Green)
+              | (v19 << g_BitShift_Blue);
               v20 = *v17 + *v16; /*0x4bf8d2*/
               *v16 = v20; /*0x4bf8da*/
               if ( v22 && *v17 < 0.0 ) /*0x4bf8f0*/
@@ -2429,15 +2428,15 @@ void* DSurface::DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, i
                 *v16 = 1.0; /*0x4bf918*/
               }
               *v17 = -*v17; /*0x4bf922*/
-LABEL_16:
+              LABEL_16:
               ++v15; /*0x4bf924*/
-              ++v71; /*0x4bf938*/
+                ++v71; /*0x4bf938*/
             }
             while ( v71 <= v62 - v60 ); /*0x4bf874*/
           }
-LABEL_17:
+          LABEL_17:
           (*((void (**)(DSurface *))v8->vtable1 + 24))(v8); /*0x4bf942*/
-          return 1; /*0x4bf953*/
+            return 1; /*0x4bf953*/
         }
         if ( v60 == v62 ) /*0x4bf960*/
         {
@@ -2459,8 +2458,8 @@ LABEL_17:
             v29 = v28->u32_2 >> g_BitMask_Red; /*0x4bf9d9*/
             LOWORD(v28) = (unsigned __int8)(BYTE1(a8) >> g_BitMask_Blue); /*0x4bf9ef*/
             *v70 = ((unsigned __int8)((unsigned __int8)a8 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x4bfa15*/
-                 | ((unsigned int)v28 << g_BitMask_Green)
-                 | (v29 << g_BitShift_Blue);
+            | ((unsigned int)v28 << g_BitMask_Green)
+            | (v29 << g_BitShift_Blue);
             v30 = *v27 + *v26; /*0x4bfa1a*/
             *v26 = v30; /*0x4bfa22*/
             if ( v32 && *v27 < 0.0 ) /*0x4bfa38*/
@@ -2474,12 +2473,12 @@ LABEL_17:
               *v26 = 1.0; /*0x4bfa60*/
             }
             *v27 = -*v27; /*0x4bfa6a*/
-LABEL_31:
+            LABEL_31:
             v33 = v74 == 1; /*0x4bfa6c*/
-            v70 = (unsigned short *)((char *)v70 + (unsigned int)v72); /*0x4bfa7b*/
-            v74 = (unsigned int *)((char *)v74 - 1); /*0x4bfa7f*/
-            if ( v33 ) /*0x4bfa83*/
-              goto LABEL_17; /*0x4bfa83*/
+              v70 = (unsigned short *)((char *)v70 + (unsigned int)v72); /*0x4bfa7b*/
+              v74 = (unsigned int *)((char *)v74 - 1); /*0x4bfa7f*/
+              if ( v33 ) /*0x4bfa83*/
+                goto LABEL_17; /*0x4bfa83*/
           }
         }
         v34 = v63 - v61; /*0x4bfaa1*/
@@ -2500,7 +2499,7 @@ LABEL_31:
           {
 LABEL_61:
             v8 = this; /*0x4bfd08*/
-            goto LABEL_17; /*0x4bfd08*/
+  goto LABEL_17; /*0x4bfd08*/
           }
           v40 = a8; /*0x4bfaea*/
           v41 = a7; /*0x4bfaee*/
@@ -2511,8 +2510,8 @@ LABEL_61:
             v43 = v42->u32_2 >> g_BitMask_Red; /*0x4bfb27*/
             LOWORD(v42) = (unsigned __int8)(BYTE1(a8) >> g_BitMask_Blue); /*0x4bfb3d*/
             v70[v38] = ((unsigned __int8)((unsigned __int8)a8 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x4bfb63*/
-                     | ((unsigned int)v42 << g_BitMask_Green)
-                     | (v43 << g_BitShift_Blue);
+            | ((unsigned int)v42 << g_BitMask_Green)
+            | (v43 << g_BitShift_Blue);
             v44 = *v41 + *v40; /*0x4bfb69*/
             *v40 = v44; /*0x4bfb71*/
             if ( v46 && *v41 < 0.0 ) /*0x4bfb87*/
@@ -2526,14 +2525,14 @@ LABEL_61:
               *v40 = 1.0; /*0x4bfbaf*/
             }
             *v41 = -*v41; /*0x4bfbb9*/
-LABEL_45:
+            LABEL_45:
             if ( v39 > 0 ) /*0x4bfbbd*/
             {
               v39 -= v57; /*0x4bfbc9*/
               v70 = (unsigned short *)((char *)v70 + v73); /*0x4bfbcb*/
             }
-            v39 += v75; /*0x4bfbd7*/
-            if ( ++v38 > v58 ) /*0x4bfbdc*/
+              v39 += v75; /*0x4bfbd7*/
+              if ( ++v38 > v58 ) /*0x4bfbdc*/
             {
               (*((void (**)(DSurface *))this->vtable1 + 24))(this); /*0x4bfbeb*/
               return 1; /*0x4bfbf7*/
@@ -2554,8 +2553,8 @@ LABEL_45:
           v52 = v51->u32_2 >> g_BitMask_Red; /*0x4bfc48*/
           LOWORD(v51) = (unsigned __int8)(BYTE1(a8) >> g_BitMask_Blue); /*0x4bfc5e*/
           v70[v50] = ((unsigned __int8)((unsigned __int8)a8 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x4bfc84*/
-                   | ((unsigned int)v51 << g_BitMask_Green)
-                   | (v52 << g_BitShift_Blue);
+          | ((unsigned int)v51 << g_BitMask_Green)
+          | (v52 << g_BitShift_Blue);
           v53 = *v49 + *v48; /*0x4bfc8a*/
           *v48 = v53; /*0x4bfc92*/
           if ( v55 && *v49 < 0.0 ) /*0x4bfca8*/
@@ -2569,18 +2568,18 @@ LABEL_45:
             *v48 = 1.0; /*0x4bfcd0*/
           }
           *v49 = -*v49; /*0x4bfcda*/
-LABEL_58:
+          LABEL_58:
           if ( v47 > 0 ) /*0x4bfcde*/
           {
             ++v50; /*0x4bfce4*/
             v47 -= v75; /*0x4bfce7*/
           }
-          v47 += v57; /*0x4bfcf1*/
-          v33 = v59 == 1; /*0x4bfcf9*/
-          v70 = (unsigned short *)((char *)v70 + v73); /*0x4bfcfa*/
-          --v59; /*0x4bfcfe*/
-          if ( v33 ) /*0x4bfd02*/
-            goto LABEL_61; /*0x4bfd02*/
+            v47 += v57; /*0x4bfcf1*/
+            v33 = v59 == 1; /*0x4bfcf9*/
+            v70 = (unsigned short *)((char *)v70 + v73); /*0x4bfcfa*/
+            --v59; /*0x4bfcfe*/
+            if ( v33 ) /*0x4bfd02*/
+              goto LABEL_61; /*0x4bfd02*/
         }
       }
     }
@@ -2848,63 +2847,63 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
   if ( v23 <= v19 ) /*0x4bffc7*/
   {
     v106 = v23 + v33; /*0x4bffd1*/
-  LABEL_16:
+    LABEL_16:
     v34 = v106; /*0x4bffd8*/
-    goto LABEL_17; /*0x4bffd8*/
+      goto LABEL_17; /*0x4bffd8*/
   }
   v34 = v23 - v33; /*0x4bffcb*/
   LABEL_17:
   v35 = v88[0]; /*0x4bffdf*/
-  (*(void (**)(unsigned int))(*(unsigned int *)v88[0] + 112))(v88[0]); /*0x4bffe7*/
-  result = (*(int (**)(int, int, int))(*(unsigned int *)v35 + 92))(v35, v89, v90); /*0x4bfff8*/
-  v36 = result; /*0x4c0001*/
-  v105 = result; /*0x4c0005*/
-  if ( !g_ZBufferDescriptor ) /*0x4c000c*/
-    goto LABEL_121; /*0x4c000c*/
-  Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4c0016*/
-  v88[2] = v90; /*0x4c001d*/
-  SamplePosition = (unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v89, v90 - Stream_field_04); /*0x4c0034*/
-  v39 = *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4); /*0x4c003a*/
-  v88[2] = v90; /*0x4c003d*/
-  v40 = (unsigned short *)StreamClass::ReadAndSeek(*(int **)&g_VisibleSurfaceDescriptor, v89, v90 - v39); /*0x4c004e*/
-  v82 = -1; /*0x4c0055*/
-  (*((unsigned short *)&(v41))) = (*((unsigned short *)&(g_ZBufferDescriptor->Stream_field_04))) + (*((unsigned short *)&(g_ZBufferDescriptor[1].Stream_field_10))); /*0x4c0061*/
-  result = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4c0065*/
-  v96 = result; /*0x4c0068*/
-  v110 = v34 + v41 - v90 - v93; /*0x4c0076*/
-  if ( !v36 ) /*0x4c007d*/
+    (*(void (**)(unsigned int))(*(unsigned int *)v88[0] + 112))(v88[0]); /*0x4bffe7*/
+    result = (*(int (**)(int, int, int))(*(unsigned int *)v35 + 92))(v35, v89, v90); /*0x4bfff8*/
+    v36 = result; /*0x4c0001*/
+    v105 = result; /*0x4c0005*/
+    if ( !g_ZBufferDescriptor ) /*0x4c000c*/
+      goto LABEL_121; /*0x4c000c*/
+    Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4c0016*/
+    v88[2] = v90; /*0x4c001d*/
+    SamplePosition = (unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v89, v90 - Stream_field_04); /*0x4c0034*/
+    v39 = *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4); /*0x4c003a*/
+    v88[2] = v90; /*0x4c003d*/
+    v40 = (unsigned short *)StreamClass::ReadAndSeek(*(int **)&g_VisibleSurfaceDescriptor, v89, v90 - v39); /*0x4c004e*/
+    v82 = -1; /*0x4c0055*/
+    (*((unsigned short *)&(v41))) = (*((unsigned short *)&(g_ZBufferDescriptor->Stream_field_04))) + (*((unsigned short *)&(g_ZBufferDescriptor[1].Stream_field_10))); /*0x4c0061*/
+    result = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4c0065*/
+    v96 = result; /*0x4c0068*/
+    v110 = v34 + v41 - v90 - v93; /*0x4c0076*/
+    if ( !v36 ) /*0x4c007d*/
   {
   LABEL_121:
     (*((unsigned char *)&(result))) = 0; /*0x4c073b*/
     return result; /*0x4c073e*/
   }
-  (*((unsigned char *)&(v88[1]))) = (uint8_t)(a6 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4c00a5*/
-  (((unsigned char *)&(v88[1]))[1]) = (uint8_t)(a6 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4c00c6*/
-  v42 = v91[1] - v90; /*0x4c00ce*/
-  (((unsigned char *)&(v88[1]))[2]) = (uint8_t)(a6 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4c00d6*/
-  v85 = (*((unsigned char *)&(v88[1]))); /*0x4c00e3*/
-  v86 = (((unsigned char *)&(v88[1]))[1]); /*0x4c00f0*/
-  (*((unsigned int *)&(v87))) = (((unsigned char *)&(v88[1]))[2]); /*0x4c00fd*/
-  v99 = v91[0] - v89; /*0x4c010b*/
-  v43 = (int)v97 - v34; /*0x4c011a*/
-  v44 = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 116))(v88[0]); /*0x4c011c*/
-  v81 = v44; /*0x4c0121*/
-  if ( v42 < 0 ) /*0x4c0125*/
+    (*((unsigned char *)&(v88[1]))) = (uint8_t)(a6 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4c00a5*/
+    (((unsigned char *)&(v88[1]))[1]) = (uint8_t)(a6 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4c00c6*/
+    v42 = v91[1] - v90; /*0x4c00ce*/
+    (((unsigned char *)&(v88[1]))[2]) = (uint8_t)(a6 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4c00d6*/
+    v85 = (*((unsigned char *)&(v88[1]))); /*0x4c00e3*/
+    v86 = (((unsigned char *)&(v88[1]))[1]); /*0x4c00f0*/
+    (*((unsigned int *)&(v87))) = (((unsigned char *)&(v88[1]))[2]); /*0x4c00fd*/
+    v99 = v91[0] - v89; /*0x4c010b*/
+    v43 = (int)v97 - v34; /*0x4c011a*/
+    v44 = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 116))(v88[0]); /*0x4c011c*/
+    v81 = v44; /*0x4c0121*/
+    if ( v42 < 0 ) /*0x4c0125*/
   {
     v81 = -v44; /*0x4c0129*/
     v96 = -v96; /*0x4c0133*/
     v82 = 1; /*0x4c0137*/
   }
-  v80 = 1; /*0x4c0141*/
-  v45 = abs32(v42); /*0x4c014e*/
-  if ( v43 < 0 ) /*0x4c0152*/
-    v80 = -1; /*0x4c0154*/
-  v98 = 2 * v45; /*0x4c0164*/
-  v46 = abs32(v43); /*0x4c0168*/
-  v47 = 2 * v99; /*0x4c0173*/
-  v83 = 2 * v99; /*0x4c0179*/
-  v76 = 2 * v46; /*0x4c017d*/
-  if ( v46 <= v99 || v46 <= v45 ) /*0x4c0189*/
+    v80 = 1; /*0x4c0141*/
+    v45 = abs32(v42); /*0x4c014e*/
+    if ( v43 < 0 ) /*0x4c0152*/
+      v80 = -1; /*0x4c0154*/
+    v98 = 2 * v45; /*0x4c0164*/
+    v46 = abs32(v43); /*0x4c0168*/
+    v47 = 2 * v99; /*0x4c0173*/
+    v83 = 2 * v99; /*0x4c0179*/
+    v76 = 2 * v46; /*0x4c017d*/
+    if ( v46 <= v99 || v46 <= v45 ) /*0x4c0189*/
   {
     if ( v99 <= v45 ) /*0x4c0375*/
     {
@@ -2930,8 +2929,8 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
             {
               v67 = v110; /*0x4c05f2*/
               *(unsigned short *)((char *)v101 + v105) = (((*((unsigned int *)&(v87))) * v68) >> 7 >> g_BitMask_Red << g_BitShift_Blue) /*0x4c060b*/
-                                              | ((v86 * v68) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
-                                              | ((v85 * v68) >> 7 >> g_BitShift_Green_0 << g_BitShift_Red);
+              | ((v86 * v68) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
+              | ((v85 * v68) >> 7 >> g_BitShift_Green_0 << g_BitShift_Red);
             }
             if ( a9 ) /*0x4c0634*/
               *SamplePosition = v67; /*0x4c0636*/
@@ -3005,8 +3004,8 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
               (*((unsigned short *)&(v60))) = a6; /*0x4c0423*/
             else
               v60 = (((*((unsigned int *)&(v87))) * v59) >> 7 >> g_BitMask_Red << g_BitShift_Blue) /*0x4c041f*/
-                  | ((v86 * v59) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
-                  | ((v85 * v59) >> 7 >> g_BitShift_Green_0 << g_BitShift_Red);
+            | ((v86 * v59) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
+            | ((v85 * v59) >> 7 >> g_BitShift_Green_0 << g_BitShift_Red);
             *(unsigned short *)(v105 + 2 * v78) = v60; /*0x4c0436*/
             if ( a9 ) /*0x4c0443*/
               *SamplePosition = v110; /*0x4c044d*/
@@ -3062,7 +3061,7 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
       }
     }
   }
-  else
+    else
   {
     v48 = v98 - v46; /*0x4c0195*/
     v77 = v47 - v46; /*0x4c019b*/
@@ -3081,8 +3080,8 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
             (*((unsigned short *)&(v52))) = a6; /*0x4c0235*/
           else
             v52 = (((*((unsigned int *)&(v87))) * v51) >> 7 >> g_BitMask_Red << g_BitShift_Blue) /*0x4c0231*/
-                | ((v86 * v51) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
-                | ((v85 * v51) >> 7 >> g_BitShift_Green_0 << g_BitShift_Red);
+          | ((v86 * v51) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
+          | ((v85 * v51) >> 7 >> g_BitShift_Green_0 << g_BitShift_Red);
           *(unsigned short *)((char *)v100 + v105) = v52; /*0x4c024b*/
           if ( a9 ) /*0x4c0258*/
             *SamplePosition = v110; /*0x4c0262*/
@@ -3139,9 +3138,9 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
       while ( v88[1] ); /*0x4c0358*/
     }
   }
-  result = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 96))(v88[0]); /*0x4c0364*/
-  (*((unsigned char *)&(result))) = 1; /*0x4c036a*/
-  return result; /*0x4c0367*/
+    result = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 96))(v88[0]); /*0x4c0364*/
+    (*((unsigned char *)&(result))) = 1; /*0x4c036a*/
+    return result; /*0x4c0367*/
 }
 }  // G42.18c ns repair
 // 0x4C0750
@@ -3452,7 +3451,7 @@ int DSurface::DrawDashedLineStipple(int * a2, int * a3, int16_t a4, int a5, int 
           --v83; /*0x4c0b16*/
         }
         while ( v83 );
-LABEL_154:
+        LABEL_154:
         a6 = v43; /*0x4c0e13*/
       }
     }
@@ -3642,7 +3641,7 @@ LABEL_154:
         goto LABEL_154; /*0x4c0e0d*/
       }
     }
-LABEL_155:
+    LABEL_155:
     (*((void (**)(DSurface *))this->vtable1 + 24))(this); /*0x4c0e17*/
   }
   return a6; /*0x4c077f*/
@@ -4177,8 +4176,8 @@ ObjectClass * *  DSurface::RenderToSurface(int *aP1)
         v19 = DSurface_field_0x28 - 1; /*0x5d1f8c*/
         v20 = j; /*0x5d1f8f*/
         for ( this->q028 = v19; /*0x5d1f96*/
-              v20 < this->q028;
-              *(unsigned int *)(this->DSurface_field_0x1C + 4 * v20 - 4) = *(unsigned int *)(this->DSurface_field_0x1C + 4 * v20) )
+        v20 < this->q028;
+        *(unsigned int *)(this->DSurface_field_0x1C + 4 * v20 - 4) = *(unsigned int *)(this->DSurface_field_0x1C + 4 * v20) )
         {
           ++v20; /*0x5d1f9b*/
         }
@@ -4250,18 +4249,18 @@ int  DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_
             v16 = *v13; /*0x621c2f*/
             v14 = v14; /*0x621c32*/
             v17 = g_ScreenSaverState /*0x621c6d*/
-                & ((v14 * (uint16_t)(v16 & g_ScreenSaverState)
-                  + v12 * (unsigned int)(uint16_t)(v15 & g_ScreenSaverState)) >> 8);
+            & ((v14 * (uint16_t)(v16 & g_ScreenSaverState)
+            + v12 * (unsigned int)(uint16_t)(v15 & g_ScreenSaverState)) >> 8);
             v18 = v14 * (uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & v16) /*0x621c8a*/
-                + v12 * (uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & a3);
+            + v12 * (uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & a3);
             v15 = a3; /*0x621c8c*/
             v12 = v12; /*0x621ca0*/
             v19 = v14 * (uint16_t)(v16 & g_CreditsScreenState); /*0x621cb1*/
             v4 = a0; /*0x621cb8*/
             v13 = v13 + 1; /*0x621cbe*/
             *v13++ = ((v19 + v12 * (unsigned int)(uint16_t)(a3 & g_CreditsScreenState)) >> 8) /*0x621cca*/
-                   | (*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & (v18 >> 8)
-                   | v17;
+            | (*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & (v18 >> 8)
+            | v17;
             if ( ++v21 >= a0[2] + *a0 ) /*0x621ce0*/
               break; /*0x621ce0*/
             v12 = a4; /*0x621c27*/
@@ -4370,24 +4369,24 @@ int DSurface::CommitBuffers()
   v3 = this->u32_764; /*0x7bdfb0*/
   if ( v3 ) /*0x7bdfb8*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7bdfcb*/
+      (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7bdfcb*/
       this,
       5,
       v3,
       4 * *(unsigned __int16 *)&this->u32_EC);
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_764, 0); /*0x7bdfda*/
+      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_764, 0); /*0x7bdfda*/
   }
   if ( !*&this->u32_94 ) /*0x7bdfe0*/
   {
     v4 = this->u32_78C; /*0x7bdfea*/
     if ( v4 ) /*0x7bdff2*/
     {
-      (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)( /*0x7bdfff*/
+        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)( /*0x7bdfff*/
         this,
         5,
         v4,
         *&this->u32_98);
-      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_78C, 0); /*0x7be00e*/
+        (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_78C, 0); /*0x7be00e*/
     }
   }
   v5 = this->u32_794; /*0x7be014*/
@@ -4411,12 +4410,12 @@ int DSurface::CommitBuffers()
   v8 = this->u32_7B8; /*0x7be094*/
   if ( v8 ) /*0x7be09c*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)( /*0x7be0a9*/
+      (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)( /*0x7be0a9*/
       this,
       5,
       v8,
       *&this->u32_9C);
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_7B8, 0); /*0x7be0b8*/
+      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_7B8, 0); /*0x7be0b8*/
   }
   v9 = 0; /*0x7be0c6*/
   for ( i = this->u32_6E4; v9 < *&this->q0088; i = v11 ) /*0x7be0d1*/
@@ -4467,22 +4466,22 @@ int DSurface::CommitBuffers()
   v20 = this->u32_760; /*0x7be1ea*/
   if ( v20 ) /*0x7be1f2*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7be204*/
+      (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7be204*/
       this,
       5,
       v20,
       2 * *((unsigned __int16 *)&this->q440));
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_760, 0); /*0x7be213*/
+      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_760, 0); /*0x7be213*/
   }
   v21 = this->u32_754; /*0x7be219*/
   if ( v21 ) /*0x7be221*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7be236*/
+      (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7be236*/
       this,
       5,
       v21,
       6 * *((unsigned __int16 *)&this->u32_7604));
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_754, 0); /*0x7be245*/
+      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)(this, 3, this->u32_754, 0); /*0x7be245*/
   }
   v22 = this->u32_73C; /*0x7be24b*/
   v47 = v22; /*0x7be253*/
@@ -4500,12 +4499,12 @@ int DSurface::CommitBuffers()
       v27 = *v25; /*0x7be27c*/
       if ( *v25 ) /*0x7be27c*/
       {
-        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)( /*0x7be29d*/
+          (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)( /*0x7be29d*/
           this,
           5,
           v27,
           v26 * ((*(unsigned int *)(this->u32_744 + v41 + 4) + 1) & 0xFFFFFFFE));
-        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)(this, 3, v27, 0); /*0x7be2a6*/
+          (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)(this, 3, v27, 0); /*0x7be2a6*/
       }
       if ( v25 ) /*0x7be2ae*/
       {
@@ -4549,12 +4548,12 @@ int DSurface::CommitBuffers()
       v36 = *v34; /*0x7be371*/
       if ( *v34 ) /*0x7be371*/
       {
-        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)( /*0x7be392*/
+          (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)( /*0x7be392*/
           this,
           5,
           v36,
           v35 * ((*(unsigned int *)(this->u32_734 + v42 + 8) + 1) & 0xFFFFFFFE));
-        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)(this, 3, v36, 0); /*0x7be39b*/
+          (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->q044)(this, 3, v36, 0); /*0x7be39b*/
       }
       if ( v34 ) /*0x7be3a3*/
       {
@@ -4591,12 +4590,12 @@ int DSurface::CommitBuffers()
   result = this->u32_71C; /*0x7be468*/
   if ( result ) /*0x7be470*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7be483*/
+      (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7be483*/
       this,
       5,
       result,
       4 * *((unsigned __int16 *)&this->q196));
-    return (*(int (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)( /*0x7be492*/
+      return (*(int (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)( /*0x7be492*/
              this,
              3,
              this->u32_71C,
@@ -4627,12 +4626,12 @@ int DSurface::Flip()
     v2 = *&this->u32_158; /*0x7c2c9e*/
     if ( v2 ) /*0x7c2ca6*/
     {
-      (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7c2cba*/
+        (*(void (__cdecl **)(DSurface *, int, int, int))&this->q044)( /*0x7c2cba*/
         this,
         5,
         v2,
         *&this->u32_15C * *&this->q160);
-      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)( /*0x7c2cc9*/
+        (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q044)( /*0x7c2cc9*/
         this,
         3,
         *&this->u32_158,
@@ -4717,7 +4716,7 @@ int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
   v7[1] = aP2 - 3; /*0x63d458*/
   v7[3] = 6; /*0x63d45c*/
   return (*(int (**)(AudioStream *, unsigned int *, unsigned int *, DSurface *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63d46a*/
-                                                                              + 84))(
+  + 84))(
            DSurface_Composite,
            v8,
            v7,

@@ -69,8 +69,7 @@ namespace gamemd {
 int CCFileClass::GetFileSize(void *a1, void *a2)
 {
 
-  DWORD FileSize; // edi
-  FileSize = 0; /*0x65d0d4*/
+  DWORD FileSize = 0; // edi /*0x65d0d4*/
   int result; // eax
   result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
@@ -80,11 +79,11 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
       FileSize = GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
-  int v4; // ebx
+        int v4; // ebx
         v4 = *(unsigned int *)this->vtable1; /*0x65d0fd*/
-  int v6; // [esp-8h] [ebp-10h]
+        int v6; // [esp-8h] [ebp-10h]
         v6 = *&this->FileNameAllocated; /*0x65d0ff*/
-  DWORD LastError; // eax
+        DWORD LastError; // eax
         LastError = GetLastError(); /*0x65d102*/
         (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
         result = -1 - (unsigned int)this->Handle; /*0x65d113*/
@@ -117,19 +116,16 @@ void CCFileClass::ProcessStream(unsigned int a1)
     {
       if ( v1[8] <= a1 && *(unsigned short *)v1 == 0xFFFF && v1->uniqueId ) /*0x69e33d*/
       {
-  void *v3; // esi
-        v3 = v1->vtable4; /*0x69e342*/
+        void *v3 = v1->vtable4; // esi /*0x69e342*/
         if ( v3 ) /*0x69e347*/
         {
           if ( *(unsigned short *)v3 == 0xFFFF ) /*0x69e34d*/
           {
             BTree::DeleteSubtree(v1->vtable4); /*0x69e351*/
-  int v4; // eax
-            v4 = v3->u32_18; /*0x69e356*/
+            int v4 = v3->u32_18; // eax /*0x69e356*/
             if ( v4 ) /*0x69e35b*/
               *(unsigned int *)(v4 + 28) = v3->u32_1C; /*0x69e360*/
-  int v5; // eax
-            v5 = v3->u32_1C; /*0x69e363*/
+            int v5 = v3->u32_1C; // eax /*0x69e363*/
             if ( v5 ) /*0x69e368*/
               *(unsigned int *)(v5 + 24) = v3->u32_18; /*0x69e36d*/
             else
@@ -155,25 +151,23 @@ void CCFileClass::ProcessStream(unsigned int a1)
   {
     if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-  unsigned char *v7; // ebp
+      unsigned char *v7; // ebp
       v7 = (unsigned char *)((char *)dword_B077B4 + 16); /*0x69e3b6*/
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e3b3*/
       {
-  void *v8; // ecx
+        void *v8; // ecx
         v8 = (void *)*((unsigned int *)dword_B077B4 + 3); /*0x69e3bd*/
-  unsigned int *v9; // edi
+        unsigned int *v9; // edi
         v9 = (unsigned int *)((char *)dword_B077B4 + 12); /*0x69e3c0*/
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/
         *v7 = 0; /*0x69e3d0*/
       }
-  int v10; // eax
-      v10 = v6->nextArrayIndex; /*0x69e3d3*/
+      int v10 = v6->nextArrayIndex; // eax /*0x69e3d3*/
       if ( v10 ) /*0x69e3d8*/
         *(unsigned int *)(v10 + 28) = v6->referenceCount; /*0x69e3dd*/
-  int v11; // eax
-      v11 = v6->referenceCount; /*0x69e3e0*/
+      int v11 = v6->referenceCount; // eax /*0x69e3e0*/
       if ( v11 ) /*0x69e3e5*/
         *(unsigned int *)(v11 + 24) = v6->nextArrayIndex; /*0x69e3ea*/
       else

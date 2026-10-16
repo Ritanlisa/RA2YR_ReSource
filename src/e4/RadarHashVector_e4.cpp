@@ -18,21 +18,17 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
 
 
-  int v3; // ebp
-  v3 = a2; /*0x658b12*/
+  int v3 = a2; // ebp /*0x658b12*/
   if ( a2 ) /*0x658b1e*/
   {
-  char *v5; // edi
-    v5 = a3; /*0x658b24*/
+    char *v5 = a3; // edi /*0x658b24*/
     LOBYTE(this->m_C) = 0; /*0x658b28*/
     if ( a3 ) /*0x658b2d*/
     {
       if ( a2 - 1 >= 0 ) /*0x658b67*/
       {
-  char *v9; // eax
-        v9 = a3 + 4; /*0x658b69*/
-  int v10; // ecx
-        v10 = a2; /*0x658b6c*/
+        char *v9 = a3 + 4; // eax /*0x658b69*/
+        int v10 = a2; // ecx /*0x658b6c*/
         do /*0x658b79*/
         {
           *((unsigned int *)v9 - 1) = 0; /*0x658b6d*/
@@ -46,16 +42,14 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     }
     else
     {
-  int v6; // eax
+      int v6; // eax
       v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x658b35*/
       if ( v6 ) /*0x658b3f*/
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
         {
-  unsigned int *v7; // ecx
-          v7 = &v6->vtable2; /*0x658b48*/
-  int v8; // edx
-          v8 = a2; /*0x658b4b*/
+          unsigned int *v7 = &v6->vtable2; // ecx /*0x658b48*/
+          int v8 = a2; // edx /*0x658b4b*/
           do /*0x658b58*/
           {
             *(v7 - 1) = 0; /*0x658b4c*/
@@ -78,19 +72,18 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       return 0; /*0x658c11*/
     if ( *&this->q004 ) /*0x658b87*/
     {
-  int m_8; // ecx
+      int m_8; // ecx
       m_8 = this->m_8; /*0x658b8c*/
       if ( a2 < m_8 ) /*0x658b91*/
         m_8 = a2; /*0x658b93*/
       if ( m_8 > 0 ) /*0x658b97*/
       {
-  int v12; // eax
-        v12 = 0; /*0x658b99*/
+        int v12 = 0; // eax /*0x658b99*/
         do /*0x658bbf*/
         {
-  unsigned int *v13; // edx
+          unsigned int *v13; // edx
           v13 = (unsigned int *)(*&this->q004 + v12); /*0x658ba0*/
-  char *v14; // ebx
+          char *v14; // ebx
           v14 = &v5[v12]; /*0x658ba2*/
           v12 += 16; /*0x658ba5*/
           --m_8; /*0x658ba8*/
@@ -116,8 +109,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   {
     (*(void (**)(_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x658bf5*/
   }
-  int v15; // eax
-  v15 = this->m_8; /*0x658bf8*/
+  int v15 = this->m_8; // eax /*0x658bf8*/
   if ( v15 < this->m_10 ) /*0x658c00*/
     this->m_10 = v15; /*0x658c02*/
   return (gamemd::AbstractClass **)(1); /*0x658c05*/
@@ -141,9 +133,9 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
     {
       if ( aP2 - 1 >= 0 ) /*0x658e0f*/
       {
-  unsigned int *v4; // eax
+        unsigned int *v4; // eax
         v4 = (unsigned int *)(a3 + 4); /*0x658e11*/
-  int v5; // ecx
+        int v5; // ecx
         v5 = (int)(aP2); /*0x658e14*/
         do /*0x658e21*/
         {
@@ -159,15 +151,14 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
     }
     else
     {
-  int v6; // eax
+      int v6; // eax
       v6 = __2_YAPAXI_Z(16 * aP2); /*0x658e2e*/
       if ( v6 ) /*0x658e38*/
       {
         if ( aP2 - 1 >= 0 ) /*0x658e3f*/
         {
-  unsigned int *v7; // ecx
-          v7 = &v6->vtable2; /*0x658e41*/
-  int v8; // edx
+          unsigned int *v7 = &v6->vtable2; // ecx /*0x658e41*/
+          int v8; // edx
           v8 = (int)(aP2); /*0x658e44*/
           do /*0x658e51*/
           {
@@ -217,8 +208,7 @@ int RadarHashVector::Read(unsigned int * a2, void *a2_2, void *a3)
     return 0; /*0x658aae*/
   int m_8; // edx
   m_8 = *(unsigned int *)&a2_2->q008; /*0x658ab4*/
-  int result; // eax
-  result = 0; /*0x658ab7*/
+  int result = 0; // eax /*0x658ab7*/
   if ( m_8 <= 0 ) /*0x658abb*/
     return -1; /*0x658ae6*/
   unsigned int *i; // ecx
@@ -247,8 +237,7 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
 
   int m_10; // edx
   m_10 = *&this->m_10; /*0x658c20*/
-  int result; // eax
-  result = 0; /*0x658c25*/
+  int result = 0; // eax /*0x658c25*/
   if ( m_10 <= 0 ) /*0x658c2b*/
     return -1; /*0x658c56*/
   unsigned int *i; // ecx
@@ -268,23 +257,20 @@ char * RadarHashVector::Destructor(char a2)
 
   if ( (a2 & 2) != 0 ) /*0x658c6a*/
   {
-  int v3; // eax
+    int v3; // eax
     v3 = *((unsigned int *)this - 1); /*0x658c6c*/
-  char *v4; // ebp
+    char *v4; // ebp
     v4 = (char *)this - 4; /*0x658c70*/
-  int v5; // ecx
-    v5 = 3 * v3; /*0x658c73*/
-  int v6; // eax
-    v6 = v3 - 1; /*0x658c76*/
-  char *v7; // esi
+    int v5 = 3 * v3; // ecx /*0x658c73*/
+    int v6 = v3 - 1; // eax /*0x658c76*/
+    char *v7; // esi
     v7 = &this->__pad_0[8 * v5]; /*0x658c77*/
     if ( v6 >= 0 ) /*0x658c7a*/
     {
-  int v8; // edi
-      v8 = v6 + 1; /*0x658c7d*/
+      int v8 = v6 + 1; // edi /*0x658c7d*/
       do /*0x658caa*/
       {
-  void *v9; // eax
+        void *v9; // eax
         v9 = (void *)*((unsigned int *)v7 - 5); /*0x658c82*/
         v7 -= 24; /*0x658c85*/
         *(unsigned int *)v7 = (unsigned int)(&vt_VectorClassHashObject); /*0x658c8a*/
@@ -305,7 +291,7 @@ char * RadarHashVector::Destructor(char a2)
   }
   else
   {
-  void *v11; // eax
+    void *v11; // eax
     v11 = (void *)(*&this->q004); /*0x658cc5*/
     *(unsigned int *)this->__pad_0 = &vt_VectorClassHashObject; /*0x658ccc*/
     if ( v11 && BYTE1(this->m_C) ) /*0x658cd4*/
@@ -327,8 +313,7 @@ namespace gamemd {
 VectorClass_flat * RadarHashVector::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x658d13*/
+  void *v3 = *&Block->__pad_004; // eax /*0x658d13*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClassHashObject; /*0x658d16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x658d20*/
   {

@@ -38,36 +38,35 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
   *(unsigned int *)aP1->__pad_B4 = 0; /*0x436c06*/
   if ( aP1 == 3 ) /*0x436c0c*/
   {
-  int v5; // edx
-  Object *nextArrayIndex; // [esp+38h] [ebp-30h] BYREF
+    int v5; // edx
+    Object *nextArrayIndex; // [esp+38h] [ebp-30h] BYREF
     v5 = *(unsigned int *)(*((int (**)(BuildingLightClass *, Object **))aP1->ObjectClass + 110))( /*0x436c21*/
                       aP1,
                       &nextArrayIndex);
-  ObjectClass *FollowingObject; // eax
+    ObjectClass *FollowingObject; // eax
     FollowingObject = v4->FollowingObject; /*0x436c23*/
-  int v25; // [esp+3Ch] [ebp-2Ch]
+    int v25; // [esp+3Ch] [ebp-2Ch]
     v25 = v5; /*0x436c29*/
-  void *v19; // [esp+24h] [ebp-44h]
+    void *v19; // [esp+24h] [ebp-44h]
     v19 = &unk_98967F; /*0x436c2d*/
-  unsigned int *v22; // [esp+30h] [ebp-38h]
+    unsigned int *v22; // [esp+30h] [ebp-38h]
     v22 = 0; /*0x436c3b*/
     nextArrayIndex = FollowingObject->vtable4.?; /*0x436c3f*/
-  int v17; // [esp+1Ch] [ebp-4Ch]
+    int v17; // [esp+1Ch] [ebp-4Ch]
     v17 = -1; /*0x436c43*/
     do /*0x436d74*/
     {
-  int v7; // ebx
-      v7 = -1; /*0x436c53*/
-  int v21; // [esp+2Ch] [ebp-3Ch]
+      int v7 = -1; // ebx /*0x436c53*/
+      int v21; // [esp+2Ch] [ebp-3Ch]
       v21 = -1; /*0x436c58*/
-  int v18; // [esp+20h] [ebp-48h]
+      int v18; // [esp+20h] [ebp-48h]
       LOWORD(v18) = v25 + v17; /*0x436c5c*/
       do /*0x436d62*/
       {
         HIWORD(v18) = v7 + HIWORD(v25); /*0x436c6c*/
-  __int16 v23[2]; // [esp+34h] [ebp-34h] BYREF
+        __int16 v23[2]; // [esp+34h] [ebp-34h] BYREF
         *(unsigned int *)v23 = v18; /*0x436c7b*/
-  unsigned int *v8; // esi
+        unsigned int *v8; // esi
         v8 = (unsigned int *)*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v23) + 57); /*0x436c84*/
         if ( v8 ) /*0x436c8c*/
         {
@@ -77,33 +76,31 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
                || v8->ReturnZeroPos() == 1)
               && !(unsigned __int8)(nextArrayIndex)->IsAlliedWithObjectHouse((int)v8) )
             {
-  int v9; // eax
-              v9 = *v8; /*0x436ccc*/
-  int *location; // ecx
+              int v9 = *v8; // eax /*0x436ccc*/
+              int *location; // ecx
               location = (int *)(v4->FollowingObject); /*0x436cce*/
-  int v11; // edi
+              int v11; // edi
               v11 = (int)(v4->FollowingObject); /*0x436cd0*/
-  int v12; // ebx
-              v12 = location->vtable2; /*0x436cd2*/
-  int v29; // [esp+58h] [ebp-10h]
+              int v12 = location->vtable2; // ebx /*0x436cd2*/
+              int v29; // [esp+58h] [ebp-10h]
               v29 = location->vtable3; /*0x436cdf*/
-  unsigned int *v13; // eax
-  char v30[12]; // [esp+5Ch] [ebp-Ch] BYREF
+              unsigned int *v13; // eax
+              char v30[12]; // [esp+5Ch] [ebp-Ch] BYREF
               v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(v9 + 72))(v8, v30); /*0x436ce3*/
-  int v14; // ecx
+              int v14; // ecx
               v14 = v13[1] - v12; /*0x436ced*/
-  int v26; // [esp+44h] [ebp-24h]
+              int v26; // [esp+44h] [ebp-24h]
               v26 = *v13 - v11; /*0x436cf3*/
-  int v15; // edx
+              int v15; // edx
               v15 = v13[2]; /*0x436cf7*/
-  int v27; // [esp+48h] [ebp-20h]
+              int v27; // [esp+48h] [ebp-20h]
               v27 = v14; /*0x436cfa*/
-  int v28; // [esp+4Ch] [ebp-1Ch]
+              int v28; // [esp+4Ch] [ebp-1Ch]
               v28 = v15 - v29; /*0x436d07*/
               Math::Sqrt((double)v26 * (double)v26 + (double)(v15 - v29) * (double)(v15 - v29) + (double)v14 /*0x436d2c*/
-                                                                                               * (double)v14);
-  double v2; // st7
-  void *v16; // eax
+              * (double)v14);
+              double v2; // st7
+              void *v16; // eax
               LOWORD(v16) = Math::RoundToInt(v2); /*0x436d34*/
               if ( (int)v16 < (int)v19 ) /*0x436d3d*/
               {
@@ -180,31 +177,29 @@ signed int BuildingLightClass::UpdateOscillation()
   vtable3 = (unsigned int *)(this->vtable4); /*0x513d42*/
   if ( vtable3[376] != -1 ) /*0x513d4c*/
   {
-  int *v3; // eax
+    int *v3; // eax
     v3 = (int *)(vtable3 + 39); /*0x513d52*/
-  int v29; // [esp+28h] [ebp-Ch] BYREF
+    int v29; // [esp+28h] [ebp-Ch] BYREF
     v29 = *v3; /*0x513d59*/
-  int v30; // [esp+2Ch] [ebp-8h]
+    int v30; // [esp+2Ch] [ebp-8h]
     v30 = v3[1]; /*0x513d65*/
-  int v31; // [esp+30h] [ebp-4h]
+    int v31; // [esp+30h] [ebp-4h]
     v31 = v3[2]; /*0x513d71*/
-  int GroundHeight; // edi
+    int GroundHeight; // edi
     GroundHeight = Cell::GetGroundHeight(&v29); /*0x513d7a*/
-  unsigned int *v5; // eax
+    unsigned int *v5; // eax
     v5 = (unsigned int *)(this->vtable4); /*0x513d7c*/
-  int *v6; // ecx
+    int *v6; // ecx
     v6 = (int *)(v5 + 39); /*0x513d8b*/
-  int v7; // eax
+    int v7; // eax
     v7 = v5[376] & 7; /*0x513d8d*/
-  int v8; // edx
-    v8 = *v6; /*0x513d90*/
-  int v9; // ebx
+    int v8 = *v6; // edx /*0x513d90*/
+    int v9; // ebx
     v9 = v6[1]; /*0x513d92*/
-  int v10; // ebp
+    int v10; // ebp
     v10 = v6[2]; /*0x513d95*/
-  int v11; // ecx
-    v11 = 8 * v7 + 9041624; /*0x513d98*/
-  int v12; // eax
+    int v11 = 8 * v7 + 9041624; // ecx /*0x513d98*/
+    int v12; // eax
     v12 = v8 + g_DDrawSurfaceManager.scenario[2 * v7 + 102]; /*0x513dab*/
     v30 = v9 + *(unsigned int *)(v11 + 4); /*0x513dad*/
     v29 = v12; /*0x513dbb*/
@@ -255,19 +250,19 @@ signed int BuildingLightClass::UpdateOscillation()
   {
     if ( (unsigned __int8)StreamClass::GetDirty(&this->BuildingLightClass_field_E0) ) /*0x513ea1*/
       *&this->q060 = ((double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 1484) /*0x513ec8*/
-                              + (double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 1484)
-                              - (double)v28)
-                             / (double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 1484)
-                             * (double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 5816)
-                             + *(double *)&this->?[4];
+    + (double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 1484)
+    - (double)v28)
+    / (double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 1484)
+    * (double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 5816)
+    + *(double *)&this->?[4];
     v24 = *(unsigned int *)&g_RulesClass_Instance; /*0x513ecd*/
     result = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1484) / 4; /*0x513edf*/
     if ( v28 < result ) /*0x513ee4*/
     {
       result = (unsigned int)((unsigned __int64)(1431655766LL /*0x513ef5*/
-                                               * *(int *)(*(unsigned int *)&g_RulesClass_Instance + 5816)) >> 32) >> 31;
+      * *(int *)(*(unsigned int *)&g_RulesClass_Instance + 5816)) >> 32) >> 31;
       *&this->q060 = (double)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5816) / 3) /*0x513f05*/
-                             + *(double *)&this->?[4];
+      + *(double *)&this->?[4];
       v24 = *(unsigned int *)&g_RulesClass_Instance; /*0x513f08*/
     }
   }

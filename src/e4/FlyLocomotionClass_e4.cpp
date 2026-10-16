@@ -34,8 +34,7 @@ int FlyLocomotionClass::LocomotionClass()
   this->MovingDestination[2] = dword_8B3C80; /*0x4cc9c7*/
   this->XYZ2[0] = dword_8B3C78; /*0x4cc9d3*/
   this->XYZ2[1] = dword_8B3C7C; /*0x4cc9dc*/
-  int v2; // edx
-  v2 = dword_8B3C80; /*0x4cc9df*/
+  int v2 = dword_8B3C80; // edx /*0x4cc9df*/
   this->TargetSpeed[1] = 0; /*0x4cc9e5*/
   this->CurrentSpeed[1] = 0; /*0x4cc9e8*/
   this->HasMoveOrder = 0; /*0x4cc9eb*/

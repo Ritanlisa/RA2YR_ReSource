@@ -48,7 +48,7 @@ int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
       v15 = v13; /*0x758f41*/
       LOBYTE(v6) = v7; /*0x758f45*/
     }
-LABEL_13:
+    LABEL_13:
     ++v7; /*0x758f4e*/
   }
   return v6; /*0x758f5b*/
@@ -93,26 +93,26 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
     case 8: /*0x759fc6*/
       if ( a4 <= 0 ) /*0x75a03d*/
       {
-        v9 = (int)(&this->u32_4); /*0x75a078*/
-        result = (*(int (**)(int, int, unsigned int *))(this->u32_4 + 40))(&this->u32_4, a4, a3) == 0; /*0x75a086*/
-        if ( !result ) /*0x75a087*/
-        {
-          result = (*(int (**)(int, int *, int))(this->u32_28)(v9, &a4, 1) != 1; /*0x75a09c*/
+      v9 = (int)(&this->u32_4); /*0x75a078*/
+      result = (*(int (**)(int, int, unsigned int *))(this->u32_4 + 40))(&this->u32_4, a4, a3) == 0; /*0x75a086*/
+      if ( !result ) /*0x75a087*/
+      {
+        result = (*(int (**)(int, int *, int))(this->u32_28)(v9, &a4, 1) != 1; /*0x75a09c*/
           if ( !result ) /*0x75a09e*/
             result = (*(int (**)(int, int, int))(this->u32_2C)(v9, -1, 1) == 0; /*0x75a0b0*/
         }
-      }
+    }
       else
-      {
+    {
         v8 = (int)(&this->u32_4); /*0x75a046*/
         result = (*(int (**)(int, int, unsigned int *))(this->u32_4 + 40))(&this->u32_4, a4 - 1, a3) == 0; /*0x75a055*/
         if ( !result ) /*0x75a056*/
           result = (*(int (**)(int, int *, int))(this->u32_28)(v8, &a4, 1) != 1; /*0x75a06c*/
-      }
+    }
       break; /*0x75a06e*/
     case 9: /*0x759fc6*/
       *a3 = (*(int (**)(int))(this->u32_4 + 44))&this->u32_10; /*0x75a0c1*/
-  LABEL_13:
+    LABEL_13:
       result = 0; /*0x75a0c3*/
       break; /*0x75a0c3*/
     default:

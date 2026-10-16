@@ -59,18 +59,16 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     a1->health = Strength; /*0x451420*/
     if ( a1->IsDamaged ) /*0x451423*/
     {
-  int v4; // edi
-      v4 = 0; /*0x45142d*/
+      int v4 = 0; // edi /*0x45142d*/
       a1->IsDamaged = 0; /*0x45142f*/
-  int v5; // esi
-      v5 = 0; /*0x451436*/
-  int *Anims; // ebx
+      int v5 = 0; // esi /*0x451436*/
+      int *Anims; // ebx
       Anims = a1->Anims; /*0x451438*/
       do /*0x451475*/
       {
         if ( *Anims ) /*0x45143e*/
         {
-  BuildingTypeClass *Type; // ecx
+          BuildingTypeClass *Type; // ecx
           Type = a1->Type; /*0x451443*/
           if ( (BuildingTypeClass *)((char *)Type + v5 * 4) != (BuildingTypeClass *)-3916 ) /*0x451452*/
           {
@@ -93,23 +91,20 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     }
     if ( (_AX & 0x4100) == 0 ) /*0x45148f*/
     {
-  ParticleSystemClass *damageParticles; // ecx
+      ParticleSystemClass *damageParticles; // ecx
       damageParticles = a1->damageParticles; /*0x451491*/
       if ( damageParticles ) /*0x451499*/
         (*((void (**)(ParticleSystemClass *))damageParticles->vfptr + 62))(damageParticles); /*0x45149d*/
     }
-  int v11; // edi
-    v11 = 3; /*0x4514a3*/
-  int v12; // esi
-    v12 = 51; /*0x4514a8*/
-  int *v13; // ebx
+    int v11 = 3; // edi /*0x4514a3*/
+    int v12 = 51; // esi /*0x4514a8*/
+    int *v13; // ebx
     v13 = &a1->Anims[3]; /*0x4514ad*/
     do /*0x4514ea*/
     {
       if ( !*v13 ) /*0x4514b3*/
       {
-  BuildingTypeClass *v14; // ecx
-        v14 = a1->Type; /*0x4514b8*/
+        BuildingTypeClass *v14 = a1->Type; // ecx /*0x4514b8*/
         if ( (BuildingTypeClass *)((char *)v14 + v12 * 4) != (BuildingTypeClass *)-3916 ) /*0x4514c7*/
         {
           if ( (*((unsigned char *)&(v14->BuildingAnim[v12 + 12]))) ) /*0x4514c9*/
@@ -123,14 +118,12 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     while ( v12 <= 102 ); /*0x4514ea*/
     a1->needsRedraw = 1; /*0x4514ec*/
   }
-  BuildingTypeClass *v15; // ecx
-  v15 = a1->Type; /*0x4514f9*/
+  BuildingTypeClass *v15 = a1->Type; // ecx /*0x4514f9*/
   if ( v15 == *(BuildingTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 2172) ) /*0x451505*/
   {
-  int SuperWeaponToken; // eax
+    int SuperWeaponToken; // eax
     SuperWeaponToken = a1->SuperWeaponToken; /*0x45150b*/
-  int v17; // ebx
-    v17 = SuperWeaponToken + 1; /*0x451511*/
+    int v17 = SuperWeaponToken + 1; // ebx /*0x451511*/
     if ( SuperWeaponToken + 1 > 2 ) /*0x451517*/
       v17 = 0; /*0x451519*/
     if ( v17 != SuperWeaponToken && !v15->TurretAnimIsVoxel ) /*0x451523*/
@@ -138,12 +131,12 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       BuildingClass::ClearAnims((gamemd::BuildingClass *)(a1), 9); /*0x451535*/
       if ( v17 != -1 ) /*0x45153d*/
       {
-  char v26[64]; // [esp+10h] [ebp-40h] BYREF
+        char v26[64]; // [esp+10h] [ebp-40h] BYREF
         strcpy(v26, a1->Type->ImageFile); /*0x45156b*/
-  unsigned int v18; // edx
+        unsigned int v18; // edx
         v18 = strlen((const char *)(asc_818D7C)) + 1; /*0x45158c*/
         memcpy(&v26[strlen(v26)],(const void *)(asc_818D7C), v18); /*0x451599*/
-  unsigned int v19; // ecx
+        unsigned int v19; // ecx
         v19 = strlen(v26); /*0x4515b3*/
         v26[v19] = v17 + 66; /*0x4515b6*/
         v26[v19 + 1] = 0; /*0x4515ba*/
@@ -156,7 +149,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
   }
   else
   {
-  char UpgradeLevel; // al
+    char UpgradeLevel; // al
     UpgradeLevel = a1->UpgradeLevel; /*0x4515e9*/
     if ( UpgradeLevel == *(unsigned int *)&v15->__pad_F70[1392] ) /*0x4515fa*/
     {
@@ -172,11 +165,10 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
         fcomp qword ptr [eax+1700h]
         fnstsw ax
       }
-  BOOL v23; // edx
+      BOOL v23; // edx
       v23 = (_EAX & 0x4100) != 0; /*0x451625*/
-  int v24; // eax
-      v24 = a1->UpgradeLevel - 1; /*0x451637*/
-  int *v25; // ecx
+      int v24 = a1->UpgradeLevel - 1; // eax /*0x451637*/
+      int *v25; // ecx
       if ( v23 ) /*0x45163c*/
         v25 = &a1->Type->BuildingAnim[17 * v24 + 16]; /*0x451649*/
       else
@@ -216,25 +208,23 @@ int sub_452000(unsigned int * a1)
   v16 = 21; /*0x452095*/
   do /*0x45211d*/
   {
-  unsigned int *v5; // eax
+    unsigned int *v5; // eax
     v5 = (unsigned int *)*v15; /*0x4520a1*/
     if ( *v15 ) /*0x4520a1*/
     {
-  int v6; // ecx
+      int v6; // ecx
       v6 = v5[50]; /*0x4520a7*/
       if ( v6 && *(unsigned char *)(v6 + 860) ) /*0x4520b1*/
       {
         v5[53] = v17; /*0x4520c3*/
         v5[63] = (uint16_t)v3; /*0x4520c9*/
       }
-  int v7; // ebx
+      int v7; // ebx
       v7 = *((char *)a1 + 1773); /*0x4520cf*/
       if ( v7 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x4520e9*/
         (*((unsigned char *)&(v7))) = 16; /*0x4520eb*/
-  unsigned int *v8; // ecx
-      v8 = a1 + 343; /*0x4520f0*/
-  int v9; // ebp
-      v9 = 21; /*0x4520f2*/
+      unsigned int *v8 = a1 + 343; // ecx /*0x4520f0*/
+      int v9 = 21; // ebp /*0x4520f2*/
       do /*0x452107*/
       {
         if ( *v8 ) /*0x4520f7*/
@@ -255,8 +245,7 @@ int sub_452000(unsigned int * a1)
     (*((unsigned char *)&(v11))) = 16; /*0x45213f*/
   int *v12; // ecx
   v12 = (int *)(a1 + 343); /*0x452144*/
-  int v13; // esi
-  v13 = 21; /*0x452146*/
+  int v13 = 21; // esi /*0x452146*/
   do /*0x45215b*/
   {
     result = *v12; /*0x45214b*/
@@ -279,7 +268,7 @@ int sub_452D40()
   int i; // edi
   for ( i = 0; i < stru_A8EB00.vfptr[20]; ++i ) /*0x452d4a*/
   {
-  BuildingClass *v3; // esi
+    BuildingClass *v3; // esi
     v3 = *(BuildingClass **)(stru_A8EB00.vfptr[17] + 4 * i); /*0x452d52*/
     if ( v3 && v3->Type->LaserFencePost && !dword_A8E7AC && v3->isAliveFlag && !v3->inLimbo ) /*0x452d7c*/
     {
@@ -441,7 +430,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
         v21 = v40; /*0x456c7c*/
         v22 = v41 + v19; /*0x456c80*/
         v23 = v40; /*0x456c83*/
-  LABEL_20:
+        LABEL_20:
         v29 = *v16; /*0x456d78*/
         v47[0] = v23 - DSurface_ViewBounds; /*0x456d88*/
         (*(((unsigned int *)&(v48)) + 1)) = v20 - dword_886FA4; /*0x456d91*/
@@ -849,8 +838,7 @@ namespace gamemd {
 void * E4Recv_45DD20::sub_45DD20()
 {
 
-  int v1; // edx
-  v1 = 0; /*0x45dd20*/
+  int v1 = 0; // edx /*0x45dd20*/
   ObjectClass **v2; // eax
   v2 = (ObjectClass **)&stru_81926C.Name[8]; /*0x45dd22*/
   while ( *(gamemd::ObjectClass *)(v2) != this ) /*0x45dd29*/
@@ -868,8 +856,7 @@ namespace gamemd {
 int E4Recv_45DD50::sub_45DD50()
 {
 
-  int v2; // edi
-  v2 = 0; /*0x45dd55*/
+  int v2 = 0; // edi /*0x45dd55*/
   char **v3; // esi
   v3 = (char **)&stru_81926C.Name[7]; /*0x45dd57*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x45dd6a*/
@@ -898,8 +885,7 @@ int E4Recv_4517D0::sub_4517D0()
   int *v2; // eax
   unsigned int v16[3]; // [esp+20h] [ebp-18h] BYREF
   v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(this->vfptr + 172))(this, v16); /*0x4517e2*/
-  int v3; // edi
-  v3 = 0; /*0x4517ea*/
+  int v3 = 0; // edi /*0x4517ea*/
   int v13; // [esp+14h] [ebp-24h]
   v13 = *v2; /*0x4517ec*/
   int v14; // [esp+18h] [ebp-20h]
@@ -913,25 +899,20 @@ int E4Recv_4517D0::sub_4517D0()
   v12 = (int **)(&this->u32_55C); /*0x451804*/
   do /*0x451879*/
   {
-  int *v6; // esi
-    v6 = *v12; /*0x45180c*/
+    int *v6 = *v12; // esi /*0x45180c*/
     if ( *v12 ) /*0x45180c*/
     {
-  unsigned int *v7; // eax
-  unsigned int v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
+      unsigned int *v7; // eax
+      unsigned int v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
       v7 = Matrix3x4::TransformCell( /*0x45182b*/
              (float *)g_TacticalClass_Instance,
              v17,
              (int *)(this->M1312 + v3 + 3964));
-  int v8; // ecx
-      v8 = v13 + *v7; /*0x45183a*/
-  int v9; // edx
-      v9 = v7->vtable2; /*0x45183c*/
-  int v10; // eax
-      v10 = v7->vtable3; /*0x45183f*/
+      int v8 = v13 + *v7; // ecx /*0x45183a*/
+      int v9 = v7->vtable2; // edx /*0x45183c*/
+      int v10 = v7->vtable3; // eax /*0x45183f*/
       v16[1] = v14 + v9; /*0x45184a*/
-  int v11; // edx
-      v11 = *v6; /*0x45184e*/
+      int v11 = *v6; // edx /*0x45184e*/
       v16[2] = v4 + v10; /*0x451850*/
       v16[0] = v8; /*0x451858*/
       result = (*(int (**)(int *, unsigned int *))(v11 + 436))(v6, v16); /*0x45185f*/
@@ -1000,8 +981,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   int *v4; // eax
   int v9; // edi
   v4 = (int *)(*(int (**)(TechnoClass *, int *))(this->vfptr + 72))(this, &v9); /*0x4528b2*/
-  int v5; // edi
-  v5 = *v4; /*0x4528b5*/
+  int v5 = *v4; // edi /*0x4528b5*/
   int v6; // ebx
   v6 = v4[1]; /*0x4528bb*/
   int v7; // ebp
@@ -1037,10 +1017,8 @@ namespace gamemd {
 unsigned int * sub_455DD0(int a1, unsigned int * a2)
 {
 
-  int v2; // esi
-  v2 = a1; /*0x455ddc*/
-  unsigned int *v3; // edi
-  v3 = a2; /*0x455de7*/
+  int v2 = a1; // esi /*0x455ddc*/
+  unsigned int *v3 = a2; // edi /*0x455de7*/
   unsigned int *v12; // [esp+30h] [ebp-18h]
   v12 = 0; /*0x455df5*/
   int v9; // [esp+24h] [ebp-24h]
@@ -1050,8 +1028,7 @@ unsigned int * sub_455DD0(int a1, unsigned int * a2)
     byte_89C828 |= 1u; /*0x455e11*/
     dword_89C7F0 = Math::RoundToInt(dbl_89C820 * 20.0); /*0x455e1c*/
   }
-  int v4; // eax
-  v4 = 0; /*0x455e27*/
+  int v4 = 0; // eax /*0x455e27*/
   int v14; // [esp+38h] [ebp-10h]
   v14 = *(unsigned int *)(v2 + 144); /*0x455e2b*/
   int v11; // [esp+2Ch] [ebp-1Ch]
@@ -1060,19 +1037,19 @@ unsigned int * sub_455DD0(int a1, unsigned int * a2)
     return 0; /*0x455f00*/
   while ( 1 ) /*0x455e47*/
   {
-  unsigned int *v5; // esi
+    unsigned int *v5; // esi
     v5 = *(unsigned int **)(*(unsigned int *)(v2 + 132) + 4 * v4); /*0x455e47*/
     if ( (*(int (**)(unsigned int *, int, unsigned int *))(*v3 + 632))(v3, 15, v5) ) /*0x455e4f*/
     {
-  int v15; // [esp+3Ch] [ebp-Ch]
+      int v15; // [esp+3Ch] [ebp-Ch]
       v15 = v5[39] - v3[39]; /*0x455e7f*/
-  int v16; // [esp+40h] [ebp-8h]
+      int v16; // [esp+40h] [ebp-8h]
       v16 = v5[40] - v3[40]; /*0x455e88*/
-  int v17; // [esp+44h] [ebp-4h]
+      int v17; // [esp+44h] [ebp-4h]
       v17 = v5[41] - v3[41]; /*0x455e92*/
-  double v6; // st7
+      double v6; // st7
       v6 = Math::Sqrt((double)v15 * (double)v15 + (double)v17 * (double)v17 + (double)v16 * (double)v16); /*0x455eb7*/
-  int v7; // eax
+      int v7; // eax
       v7 = Math::RoundToInt(v6); /*0x455ebf*/
       if ( v7 < v9 && v7 < dword_89C7F0 ) /*0x455ed0*/
       {
@@ -1289,10 +1266,8 @@ int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
 {
 
 
-  int result; // eax
-  result = 3 * a2 + 963; /*0x45e8bc*/
-  char *v6; // edx
-  v6 = &this->u32_C * a2; /*0x45e8c3*/
+  int result = 3 * a2 + 963; // eax /*0x45e8bc*/
+  char *v6 = &this->u32_C * a2; // edx /*0x45e8c3*/
   *((unsigned int *)v6 + 961) = a3; /*0x45e8c6*/
   *((unsigned int *)v6 + 962) = a4; /*0x45e8d0*/
   this->u32_524 + result) = a5; /*0x45e8da*/
@@ -1311,20 +1286,19 @@ char sub_45E8F0()
   if ( !dword_89DDBC ) /*0x45e8fb*/
   {
     dword_89DDBC = (unsigned int)((void *)SearchMIXFile((char *)(aBuildngzSha), 0));
-  unsigned int v6[4]; // [esp+4h] [ebp-10h] BYREF
+    unsigned int v6[4]; // [esp+4h] [ebp-10h] BYREF
     Building::GetFoundationSize(v6, 0); /*0x45e917*/
     SubFile = MixFileClass::GetSubFile((gamemd::MixFileClass *)((char **)dword_89DDBC), 0); /*0x45e924*/
-  int v1; // esi
+    int v1; // esi
     v1 = *((int16_t *)dword_89DDBC + 1); /*0x45e92f*/
     if ( *((int16_t *)dword_89DDBC + 2) > 0 ) /*0x45e939*/
     {
-  int v2; // edx
-      v2 = SubFile; /*0x45e93c*/
-  int v3; // edi
+      int v2 = SubFile; // edx /*0x45e93c*/
+      int v3; // edi
       v3 = *((int16_t *)dword_89DDBC + 2); /*0x45e93e*/
       do /*0x45e95a*/
       {
-  int i; // ecx
+        int i; // ecx
         for ( i = 0; i < v1; ++i ) /*0x45e944*/
         {
           (*((unsigned char *)&(SubFile))) = *(unsigned char *)(v2 + i); /*0x45e946*/

@@ -32,12 +32,10 @@ void BulkData::InitMissionHashing(void *a1)
   ComputeHash(&Time, v2); /*0x697af1*/
   char *inited; // eax
   inited = Object_Init_7CBC11(aPath); /*0x697afb*/
-  const char *v4; // esi
-  v4 = inited; /*0x697b00*/
+  const char *v4 = inited; // esi /*0x697b00*/
   if ( inited ) /*0x697b07*/
   {
-  unsigned int v5; // ebx
-    v5 = 0; /*0x697b10*/
+    unsigned int v5 = 0; // ebx /*0x697b10*/
     if ( strlen(inited) ) /*0x697b12*/
     {
       do /*0x697b35*/

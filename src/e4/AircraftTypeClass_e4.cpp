@@ -83,7 +83,7 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   v5 = 0; /*0x41c974*/
   if ( v3 <= 0 ) /*0x41c978*/
   {
-LABEL_11:
+    LABEL_11:
     v5 = -1; /*0x41c98c*/
   }
   else
@@ -120,8 +120,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   int v10; // eax
 
   int v3; // ecx
-  int v4; // esi
-  v4 = v3; /*0x41cc2f*/
+  int v4 = v3; // esi /*0x41cc2f*/
   INIClass::ResetSection(); /*0x41cc33*/
   uint8_t ***v18; // [esp+0h] [ebp-8Ch]
   if ( !(uint8_t)ObjectTypeClass::LoadExtras((TechnoTypeClass *)this, a2, v18) ) /*0x41cc3b*/
@@ -132,8 +131,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
                      &v4->BarrelVoxel,
                      aLandable,
                      v4->Landable_2);
-  char v6; // cl
-  v6 = *&v4->AirportBound_2; /*0x41cc61*/
+  char v6 = *&v4->AirportBound_2; // cl /*0x41cc61*/
   v4->Landable_2 = Bool_Overwrite; /*0x41cc67*/
   char v7; // al
   v7 = INIClass::ReadBool_Overwrite((int *)this, &v4->BarrelVoxel, aAirportbound, v6); /*0x41cc76*/
@@ -187,8 +185,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
                              v17);
   char v11; // al
   v11 = INIClass::ReadBool_Overwrite((int *)this, &v4->BarrelVoxel, aFlyby, v4->FlyBy_2); /*0x41cd63*/
-  char v12; // cl
-  v12 = v4->FlyBack; /*0x41cd68*/
+  char v12 = v4->FlyBack; // cl /*0x41cd68*/
   v4->FlyBy_2 = v11; /*0x41cd6e*/
   v4->FlyBack = INIClass::ReadBool_Overwrite((int *)this, &v4->BarrelVoxel, aFlyback, v12); /*0x41cd83*/
   return (gamemd::AnimTypeClass **)(1); /*0x41cd8a*/

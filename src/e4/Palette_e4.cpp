@@ -197,7 +197,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       v52 = 0; /*0x6423b7*/
       if ( v27 > 0 ) /*0x6423bb*/
         break; /*0x6423bb*/
-  LABEL_37:
+      LABEL_37:
       if ( ++v44 >= v61.Height ) /*0x642529*/
         goto LABEL_38; /*0x642529*/
     }
@@ -240,7 +240,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
           v32 = (uint8_t)v55; /*0x642466*/
         }
         v37 = v30; /*0x6424d0*/
-  LABEL_31:
+        LABEL_31:
         if ( v37 != -1 && v37 < 256 ) /*0x6424dc*/
         {
           v21 = (int)(a2); /*0x6424f3*/
@@ -249,7 +249,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
         v21 = (int)(a2); /*0x6424de*/
       }
       (*((unsigned char *)&(v37))) = 0; /*0x6424ed*/
-  LABEL_36:
+      LABEL_36:
       *v51 = v37; /*0x6424fa*/
       v27 = (int)(v61.Width); /*0x642500*/
       ++v51; /*0x642505*/
@@ -303,18 +303,16 @@ namespace gamemd {  // G42.18c ns repair
 int Palette::FindClosestColor(Palette *a2, void *a2_1)
 {
 
-  int v2; // ebx
-  v2 = 0; /*0x626208*/
+  int v2 = 0; // ebx /*0x626208*/
   int v8; // [esp+10h] [ebp-4h]
   v8 = 0; /*0x62620b*/
-  int v3; // esi
-  v3 = -1; /*0x62620f*/
+  int v3 = -1; // esi /*0x62620f*/
   do /*0x626237*/
   {
-  uint8_t *v7; // [esp-4h] [ebp-18h]
+    uint8_t *v7; // [esp-4h] [ebp-18h]
     v7 = (uint8_t *)this; /*0x626218*/
     this += 3; /*0x626219*/
-  int v5; // eax
+    int v5; // eax
     v5 = Palette::CalcColorDistance((unsigned char *)(a2), v7); /*0x62621c*/
     if ( v3 == -1 || v5 < v3 ) /*0x626228*/
     {
@@ -339,8 +337,7 @@ unsigned char * Palette::ConvertIndices(int a2)
   v4 = (unsigned short *)(Hash_Check()); /*0x632bf3*/
   if ( v3 <= 0 ) /*0x632bfa*/
     return (unsigned char *)(this); /*0x632c31*/
-  unsigned short *v5; // esi
-  v5 = v4; /*0x632c02*/
+  unsigned short *v5 = v4; // esi /*0x632c02*/
   int16_t *v6; // edi
   v6 = (int16_t *)this->m_Colors + 1; /*0x632c04*/
   do /*0x632c23*/

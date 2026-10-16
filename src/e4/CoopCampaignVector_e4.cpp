@@ -24,8 +24,7 @@ namespace gamemd {
 VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
-  v3 = *&Block->__pad_004; /*0x5c5943*/
+  void *v3 = *&Block->__pad_004; // eax /*0x5c5943*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5c5946*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x5c5950*/
   {

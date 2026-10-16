@@ -14,17 +14,16 @@ namespace gamemd {  // G42.18 ns repair
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
 
-  unsigned short *result; // eax
-  result = a6; /*0x494924*/
+  unsigned short *result = a6; // eax /*0x494924*/
   if ( a4 > 0 ) /*0x49492a*/
   {
-  int v12; // edi
+    int v12; // edi
     v12 = *(unsigned int *)&g_VisibleSurfaceDescriptor; /*0x494938*/
-  unsigned short *v14; // [esp+18h] [ebp+18h]
+    unsigned short *v14; // [esp+18h] [ebp+18h]
     v14 = (unsigned short *)a4; /*0x49493e*/
     do /*0x49499a*/
     {
-  uint8_t v13; // dl
+      uint8_t v13; // dl
       v13 = *a2++; /*0x494942*/
       if ( v13 && *result ) /*0x49494d*/
       {
@@ -47,17 +46,16 @@ namespace gamemd {
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
 
-  unsigned short *result; // eax
-  result = a6; /*0x494a44*/
+  unsigned short *result = a6; // eax /*0x494a44*/
   if ( a4 > 0 ) /*0x494a4a*/
   {
-  int v12; // edi
+    int v12; // edi
     v12 = *(unsigned int *)&g_VisibleSurfaceDescriptor; /*0x494a58*/
-  unsigned short *v14; // [esp+18h] [ebp+18h]
+    unsigned short *v14; // [esp+18h] [ebp+18h]
     v14 = (unsigned short *)a4; /*0x494a5e*/
     do /*0x494aba*/
     {
-  uint8_t v13; // dl
+      uint8_t v13; // dl
       v13 = *a2++; /*0x494a62*/
       if ( v13 && !*result ) /*0x494a6d*/
       {
@@ -91,13 +89,13 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
   v17 = (unsigned __int16 *)result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
-  Stream *v13; // ebp
+    Stream *v13; // ebp
     v13 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x494bab*/
-  unsigned __int16 *v16; // [esp+20h] [ebp+14h]
+    unsigned __int16 *v16; // [esp+20h] [ebp+14h]
     v16 = (unsigned __int16 *)a4; /*0x494bb1*/
     do /*0x494c31*/
     {
-  unsigned __int16 v15; // ax
+      unsigned __int16 v15; // ax
       v15 = *a6++; /*0x494bbf*/
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
@@ -135,13 +133,13 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
   v18 = (unsigned __int16 *)result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
-  Stream *v14; // ebp
+    Stream *v14; // ebp
     v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x494c8b*/
-  unsigned __int16 *v17; // [esp+20h] [ebp+14h]
+    unsigned __int16 *v17; // [esp+20h] [ebp+14h]
     v17 = (unsigned __int16 *)a4; /*0x494c91*/
     do /*0x494d16*/
     {
-  unsigned __int16 v16; // ax
+      unsigned __int16 v16; // ax
       v16 = *a6++; /*0x494c9f*/
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {

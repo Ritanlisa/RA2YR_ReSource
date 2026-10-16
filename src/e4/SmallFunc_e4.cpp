@@ -84,14 +84,14 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
       Base = *(unsigned int **)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[192] + 4 * v7); /*0x6f1a7f*/
       goto LABEL_11; /*0x6f1a82*/
     }
-  LABEL_7:
+    LABEL_7:
     v8 = (TeamTypeClass *)operator new(0xF8u); /*0x6f1a5d*/
     if ( v8 ) /*0x6f1a67*/
       Base = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
     else
-  LABEL_10:
-      Base = 0; /*0x6f1a84*/
-  LABEL_11:
+      LABEL_10:
+    Base = 0; /*0x6f1a84*/
+    LABEL_11:
     result = Base->LoadFromINI_15(a1); /*0x6f1a86*/
     ++i; /*0x6f1a8e*/
   }
@@ -107,13 +107,12 @@ void sub_40D1B0()
   dword_884D00 = (int)&vt_MouseClass; /*0x40d1bc*/
   int *v0; // esi
   v0 = (int *)(&dword_884B84); /*0x40d1c6*/
-  int v1; // edi
-  v1 = 4; /*0x40d1cb*/
+  int v1 = 4; // edi /*0x40d1cb*/
   do /*0x40d1f0*/
   {
     v0 -= 997; /*0x40d1d0*/
     Array::ForEachReverse(v0 + 20, 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d1e3*/
-  ObjectClass *v2; // [esp+0h] [ebp-8h]
+    ObjectClass *v2; // [esp+0h] [ebp-8h]
     nullsub_57(v2); /*0x40d1ea*/
     --v1; /*0x40d1ef*/
   }
@@ -135,10 +134,10 @@ int sub_59B6D0()
   {
     if ( CellClass::IsTerrainType((gamemd::CellClass *)(i)) ) /*0x59b6ef*/
     {
-  signed int j; // esi
+      signed int j; // esi
       for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
       {
-  unsigned int *NeighbourContent; // edi
+        unsigned int *NeighbourContent; // edi
         NeighbourContent = (unsigned int *)((i)->GetNeighbourContent(j));
         if ( (NeighbourContent)->IsEmpty() ) /*0x59b706*/
           NeighbourContent[14] = dword_AA0E18; /*0x59b714*/
@@ -159,8 +158,7 @@ int sub_59C530()
   int result; // eax
   for ( result = (&dword_87F7E8)->CellIteratorNext(); result; result = (&dword_87F7E8)->CellIteratorNext() ) /*0x59c549*/
   {
-  int v1; // ecx
-    v1 = result->u32_38; /*0x59c54b*/
+    int v1 = result->u32_38; // ecx /*0x59c54b*/
     if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x59c55d*/
     {
       result->u32_38 = 0; /*0x59c55f*/
@@ -176,8 +174,7 @@ namespace gamemd {
 char sub_5A1F60()
 {
 
-  char v0; // bl
-  v0 = 1; /*0x5a1f68*/
+  char v0 = 1; // bl /*0x5a1f68*/
   Mouse::SetBounds((int)&dword_87F7E8, 0); /*0x5a1f6a*/
   (&dword_87F7E8)->CellIteratorReset(); /*0x5a1f74*/
   int i; // eax

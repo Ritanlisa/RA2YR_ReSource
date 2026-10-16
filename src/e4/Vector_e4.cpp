@@ -29,8 +29,7 @@ namespace gamemd {
 int Vector::Cleanup(void *a1, void *a2)
 {
 
-  int result; // eax
-  result = *&this->q004; /*0x512d36*/
+  int result = *&this->q004; // eax /*0x512d36*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x512d3d*/
   {
     operator delete((void *)(*&this->q004)); /*0x512d43*/
@@ -46,8 +45,7 @@ namespace gamemd {
 int Vector::Destructor(void *a1)
 {
 
-  int result; // eax
-  result = *&this->q004; /*0x513106*/
+  int result = *&this->q004; // eax /*0x513106*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x51310d*/
   {
     operator delete((void *)(*&this->q004)); /*0x513113*/
@@ -64,17 +62,17 @@ int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
 
   this->IsInitialized = a3 * this->__pad_010 /*0x5ae8ab*/
-                       + a4 * this->m_8
-                       + a2 * *(float *)this
-                       + this->IsInitialized;
+  + a4 * this->m_8
+  + a2 * *(float *)this
+  + this->IsInitialized;
   this->u32_1C = a2 * this->__pad_010 /*0x5ae8ca*/
-                       + a3 * this->u32_14
-                       + a4 * this->u32_18
-                       + this->u32_1C;
+  + a3 * this->u32_14
+  + a4 * this->u32_18
+  + this->u32_1C;
   this->u32_2C = a2 * this->u32_20 /*0x5ae8e9*/
-                        + a3 * this->u32_24
-                        + a4 * this->u32_28
-                        + this->u32_2C;
+  + a3 * this->u32_24
+  + a4 * this->u32_28
+  + this->u32_2C;
   int result; // eax
   return result; /*0x5ae8ec*/
 }
@@ -84,8 +82,7 @@ namespace gamemd {
 int Vector::Cleanup2(void *a1)
 {
 
-  int result; // eax
-  result = *&this->q004; /*0x67abe6*/
+  int result = *&this->q004; // eax /*0x67abe6*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x67abed*/
   {
     operator delete((void *)(*&this->q004)); /*0x67abf3*/
@@ -153,16 +150,14 @@ int Vector::RemoveAt(int aP1, void *a2)
 
   char *Vector_field_0x10; // edx
   Vector_field_0x10 = (char *)this->__pad_010; /*0x45ae10*/
-  int result; // eax
-  result = aP1; /*0x45ae13*/
+  int result = aP1; // eax /*0x45ae13*/
   if ( aP1 >= (int)Vector_field_0x10 ) /*0x45ae19*/
   {
     LOBYTE(result) = 0; /*0x45ae3c*/
   }
   else
   {
-  char *v4; // edx
-    v4 = Vector_field_0x10 - 1; /*0x45ae1b*/
+    char *v4 = Vector_field_0x10 - 1; // edx /*0x45ae1b*/
     this->__pad_010 = (unsigned char)(v4); /*0x45ae1e*/
     if ( aP1 < (int)v4 ) /*0x45ae21*/
     {
@@ -201,8 +196,7 @@ void Vector::ReallocDynamic(int a2, void *a2_1)
     *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
   }
   operator delete((void *)(*(void **)v3)); /*0x4d2e9b*/
-  int v7; // eax
-  v7 = a2 + v3->vtable3; /*0x4d2ea6*/
+  int v7 = a2 + v3->vtable3; // eax /*0x4d2ea6*/
   *(unsigned int *)v3 = (unsigned int)(v3); /*0x4d2ea8*/
   v3->vtable3 = v7; /*0x4d2eaa*/
   v3->uniqueId = 0; /*0x4d2ead*/
@@ -215,10 +209,8 @@ namespace gamemd {
 int Vector::Find(unsigned int * a2, void *a2_1)
 {
 
-  int v2; // edx
-  v2 = this->__pad_010; /*0x4e0550*/
-  int result; // eax
-  result = 0; /*0x4e0553*/
+  int v2 = this->__pad_010; // edx /*0x4e0550*/
+  int result = 0; // eax /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
   unsigned int *i; // ecx
@@ -250,8 +242,7 @@ char Vector::Grow()
   v2 = *(unsigned int *)this->Cl_ph; /*0x7aeec4*/
   if ( *(unsigned int *)this->Cl_ph < (int)this->q004 ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
-  int v4; // esi
-  v4 = 2 * v2; /*0x7aeed4*/
+  int v4 = 2 * v2; // esi /*0x7aeed4*/
   int v6; // [esp+4h] [ebp-4h]
   v6 = 2 * v2; /*0x7aeedb*/
   if ( 2 * v2 < 10 ) /*0x7aeedf*/

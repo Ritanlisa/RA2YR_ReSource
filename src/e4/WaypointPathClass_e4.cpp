@@ -45,7 +45,7 @@ int WaypointPathClass::Init(void *a1, void *a2)
          dword_B72610 + dword_B7261C,
          0) )
   {
-  int v2; // eax
+    int v2; // eax
     v2 = dword_B72618++; /*0x7637b9*/
     *((unsigned int *)dword_B7260C + v2) = this; /*0x7637c8*/
   }
@@ -80,7 +80,7 @@ int WaypointPathClass::Construct(unsigned int aP1, void *a2, void *a3, void *a4,
           dword_B72610 + dword_B7261C,
           0)) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = dword_B72618++; /*0x7638a7*/
     *((unsigned int *)dword_B7260C + v3) = (unsigned int)(this); /*0x7638b6*/
   }
@@ -94,8 +94,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 
   AbstractClass *v2; // esi
   v2 = (AbstractClass *)a1; /*0x763c76*/
-  int v3; // edi
-  v3 = a2; /*0x763c7b*/
+  int v3 = a2; // edi /*0x763c7b*/
   int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x763c81*/
   if ( result >= 0 ) /*0x763c8a*/
@@ -112,7 +111,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
     result = (*(int (__stdcall **)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a1, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
-  WaypointPathClass *p_vtable1; // esi
+      WaypointPathClass *p_vtable1; // esi
       p_vtable1 = (WaypointPathClass *)&v2[1].vfptr1; /*0x763cd8*/
       if ( p_vtable1 ) /*0x763cdd*/
       {
@@ -121,8 +120,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
         p_vtable1->abstractFlags = 10; /*0x763cee*/
         p_vtable1->uniqueId = 0; /*0x763cf5*/
       }
-  int v6; // ebp
-      v6 = 0; /*0x763cfc*/
+      int v6 = 0; // ebp /*0x763cfc*/
       if ( (int)a1 <= 0 ) /*0x763d00*/
       {
         return 0; /*0x763d78*/
@@ -131,20 +129,19 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       {
         while ( 1 ) /*0x763d02*/
         {
-  int v7; // eax
+          int v7; // eax
           v7 = *(unsigned int *)v3; /*0x763d02*/
-  int v15; // [esp+28h] [ebp-Ch] BYREF
+          int v15; // [esp+28h] [ebp-Ch] BYREF
           v15 = 0; /*0x763d0d*/
-  int v16; // [esp+2Ch] [ebp-8h]
+          int v16; // [esp+2Ch] [ebp-8h]
           v16 = 0; /*0x763d11*/
-  int v17; // [esp+30h] [ebp-4h]
+          int v17; // [esp+30h] [ebp-4h]
           v17 = 0; /*0x763d15*/
           result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v7 + 12))(v3, &v15, 12, 0); /*0x763d19*/
           if ( result < 0 ) /*0x763d1e*/
             break; /*0x763d1e*/
-  void *vtable2; // ecx
-          vtable2 = p_vtable1->vfptr2; /*0x763d20*/
-  int abstractFlags; // eax
+          void *vtable2 = p_vtable1->vfptr2; // ecx /*0x763d20*/
+          int abstractFlags; // eax
           if ( p_vtable1->uniqueId < (int)vtable2 /*0x763d42*/
             || ((p_vtable1->u8_D) || !vtable2)
             && (abstractFlags = p_vtable1->abstractFlags, abstractFlags > 0)
@@ -153,16 +150,14 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
                  (int)vtable2 + abstractFlags,
                  0) )
           {
-  int uniqueId; // eax
+            int uniqueId; // eax
             uniqueId = p_vtable1->uniqueId; /*0x763d49*/
-  int v11; // ecx
-            v11 = uniqueId + 1; /*0x763d4c*/
-  int v12; // edx
-            v12 = 3 * uniqueId; /*0x763d4f*/
-  char *vtable1; // eax
+            int v11 = uniqueId + 1; // ecx /*0x763d4c*/
+            int v12 = 3 * uniqueId; // edx /*0x763d4f*/
+            char *vtable1; // eax
             vtable1 = (char *)p_vtable1->vfptr1; /*0x763d52*/
             p_vtable1->uniqueId = v11; /*0x763d55*/
-  char *v14; // ecx
+            char *v14; // ecx
             v14 = &vtable1[4 * v12]; /*0x763d58*/
             *(unsigned int *)v14 = v15; /*0x763d5f*/
             *((unsigned int *)v14 + 1) = v16; /*0x763d65*/
@@ -193,18 +188,17 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
     return &this->AbstractClass; /*0x764780*/
   if ( !a3 ) /*0x764788*/
   {
-  int *v7; // eax
+    int *v7; // eax
     v7 = (int *)__2_YAPAXI_Z(12 * a2 + 4); /*0x7647bd*/
     if ( v7 ) /*0x7647c7*/
     {
       v8 = v7 + 1; /*0x7647cc*/
       *v7 = a2; /*0x7647cf*/
-  unsigned int *v9; // eax
+      unsigned int *v9; // eax
       v9 = (unsigned int *)(v7 + 1); /*0x7647d3*/
       if ( a2 - 1 >= 0 ) /*0x7647d5*/
       {
-  int v10; // ecx
-        v10 = a2; /*0x7647d7*/
+        int v10 = a2; // ecx /*0x7647d7*/
         do /*0x7647e4*/
         {
           *v9 = 0; /*0x7647d8*/
@@ -228,12 +222,10 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
     return &this->AbstractClass; /*0x7647fe*/
   }
   *a3 = a2; /*0x764790*/
-  unsigned int *v4; // eax
-  v4 = a3 + 1; /*0x764794*/
+  unsigned int *v4 = a3 + 1; // eax /*0x764794*/
   if ( a2 - 1 >= 0 ) /*0x764796*/
   {
-  int v5; // ecx
-    v5 = a2; /*0x764798*/
+    int v5 = a2; // ecx /*0x764798*/
     do /*0x7647a5*/
     {
       *v4 = 0; /*0x764799*/
@@ -285,21 +277,19 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x763da3*/
   if ( result >= 0 ) /*0x763daa*/
   {
-  int v4; // edx
-    v4 = *a1; /*0x763daf*/
+    int v4 = *a1; // edx /*0x763daf*/
     aP2 = aP0->waypoints[4]; /*0x763dbb*/
     result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x763dbf*/
     if ( result >= 0 ) /*0x763dc4*/
     {
-  int v5; // ebp
-      v5 = 0; /*0x763dca*/
+      int v5 = 0; // ebp /*0x763dca*/
       if ( aP2 <= 0 ) /*0x763dce*/
       {
         return 0; /*0x763df4*/
       }
       else
       {
-  int i; // edi
+        int i; // edi
         for ( i = 0; ; i += 12 ) /*0x763dd0*/
         {
           result = (*(int (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, aP0->waypoints[1] + i, 12, 0); /*0x763de1*/

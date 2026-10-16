@@ -39,7 +39,7 @@ int DialogClass::Reposition(int hWnd, int a2)
     SendMessageA(hWnd, 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
   if ( a2 ) /*0x775c46*/
   {
-  HWND WindowLongA; // eax
+    HWND WindowLongA; // eax
     WindowLongA = (HWND)GetWindowLongA(hWnd, -8); /*0x775c4b*/
     GetWindowRect(WindowLongA, &v10); /*0x775c57*/
     Rect.left -= v10.left; /*0x775c79*/
@@ -55,7 +55,7 @@ int DialogClass::Reposition(int hWnd, int a2)
   }
   else
   {
-  HWND DialogParamA; // esi
+    HWND DialogParamA; // esi
     DialogParamA = CreateDialogParamA(g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0); /*0x775cac*/
     GetClientRect(DialogParamA, &v10); /*0x775cb4*/
     DestroyWindow(DialogParamA); /*0x775cbb*/
@@ -83,8 +83,7 @@ ATOM DialogClass::RegisterWinClasses()
 
   WNDCLASSA WndClass; // [esp+0h] [ebp-28h] BYREF
 
-  int result; // eax
-  result = 1; /*0x60d456*/
+  int result = 1; // eax /*0x60d456*/
   if ( dword_AC48CC != 1 ) /*0x60d460*/
   {
     dword_AC48CC = 1; /*0x60d469*/

@@ -47,7 +47,7 @@ void * WeaponTypeClass::Create(AbstractClass * Source, void *a2, void *a3, void 
   v2 = 0; /*0x5126ad*/
   if ( dword_A83CA8 <= 0 ) /*0x5126b1*/
   {
-  LABEL_6:
+    LABEL_6:
     v3 = (SuperWeaponTypeClass *)operator new(0x1B0u); /*0x5126d6*/
     if ( v3 ) /*0x5126e5*/
       return (void *)(((SuperWeaponTypeClass *)(v3))->Construct((char *)(Source))); /*0x5126f1*/
@@ -73,7 +73,7 @@ int WeaponTypeClass::Process(ObjectClass * Source)
   v2 = 0; /*0x6cef1d*/
   if ( dword_A8E340 <= 0 ) /*0x6cef21*/
   {
-  LABEL_6:
+    LABEL_6:
     v3 = operator new(0x100u); /*0x6cef46*/
     if ( v3 ) /*0x6cef55*/
       return ((int)v3)->SuperWeaponTypeClass(Source); /*0x6cef61*/
@@ -185,7 +185,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
          dword_887570 + dword_88757C,
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = g_WeaponTypePool++; /*0x771ed7*/
     *((unsigned int *)g_WeaponTypeConfig + v3) = (unsigned int)(aP1); /*0x771ee6*/
   }
@@ -285,7 +285,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   Projectile = a2_2->Projectile; /*0x772b5e*/
   if ( Projectile ) /*0x772b66*/
   {
-  int v10; // eax
+    int v10; // eax
     v10 = (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)&Projectile->vfptr[4] + 16))(&Projectile->vfptr[4]); /*0x772b6f*/
     Power::TimerProcess(v10); /*0x772b75*/
   }
@@ -295,7 +295,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   Warhead = a2_2->Warhead; /*0x772b96*/
   if ( Warhead ) /*0x772b9e*/
   {
-  int v12; // eax
+    int v12; // eax
     v12 = (*((int (__stdcall **)(void **))Warhead->WarheadTypeClass_field_0x4 + 4))(&Warhead->WarheadTypeClass_field_0x4); /*0x772ba7*/
     Power::TimerProcess(v12); /*0x772bad*/
   }
@@ -344,8 +344,8 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
   WeaponTypeClass *v5; // edi
   v5 = (int *)(aP0);
   int *Report; // ebp
-    Report = (int *)(aP0->Report);
-    (*(void (**)(int *))(aP0-((unsigned int *)(>Report))[0] + 12))(aP0->Report);
+  Report = (int *)(aP0->Report);
+  (*(void (**)(int *))(aP0-((unsigned int *)(>Report))[0] + 12))(aP0->Report);
   (*(void (**)(int *))(v5->DownReport[0] + 12))(v5->DownReport); /*0x772cf4*/
   int *v7; // esi
   v7 = (int *)(a2); /*0x772cf7*/
@@ -360,9 +360,9 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       ((DynamicVectorClass *)v5->Anim)->AnimTypeConstructor(0, 0); /*0x772d2b*/
       v5-((unsigned int *)(>Anim))[0] = (int)&vt_TypeList; /*0x772d30*/
     }
-  int v4; // ebx
+    int v4; // ebx
     v7->vt_entry_68(&aP0, 4, 0, v4); /*0x772d42*/
-  int i; // ebx
+    int i; // ebx
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
       v7->vt_entry_68(&a3, 4, 0); /*0x772d5b*/
@@ -374,7 +374,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       *Report = (int)&vt_TypeList; /*0x772d84*/
     }
     v7->vt_entry_68(&a2, 4, 0); /*0x772d97*/
-  int j; // ebx
+    int j; // ebx
     for ( j = 0; j < (int)a2; ++j ) /*0x772da2*/
     {
       v7->vt_entry_68(&a3, 4, 0); /*0x772db0*/
@@ -383,7 +383,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     if ( v5 != (WeaponTypeClass *)-216 ) /*0x772dce*/
       TypeList::Construct((TypeList *)v5->DownReport); /*0x772dd2*/
     v7->vt_entry_68(&a2, 4); /*0x772de3*/
-  int k; // ebx
+    int k; // ebx
     for ( k = 0; k < (int)aP0; ++k ) /*0x772dee*/
     {
       v7->vt_entry_68(&a2, 4, 0); /*0x772dfc*/
@@ -395,7 +395,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->AssaultAnim); /*0x772e51*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OccupantAnim); /*0x772e62*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OpenToppedAnim); /*0x772e73*/
-  int m; // esi
+    int m; // esi
     for ( m = 0; m < v5-((unsigned int *)(>Anim))[4]; ++m ) /*0x772e83*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5-((unsigned int *)(>Anim))[1] + 4 * m)); /*0x772e94*/
     return 0; /*0x772ea4*/
@@ -412,26 +412,23 @@ int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, unsigned int * a2, void * a3, v
   result = AbstractClass::SaveLoad_Prefix((int *)a1,(int *)(a2), (int)a3); /*0x772ec1*/
   if ( result >= 0 ) /*0x772ec8*/
   {
-  int v7; // edx
-    v7 = *a2; /*0x772ed4*/
+    int v7 = *a2; // edx /*0x772ed4*/
     a3 = (int *)a1->Anim[4]; /*0x772ee1*/
-  int v5; // ebx
+    int v5; // ebx
     (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5); /*0x772ee5*/
-  int i; // ebx
+    int i; // ebx
     for ( i = 0; i < (int)(a4); ++i ) /*0x772ef0*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->Anim[1] + 4 * i, 4, 0); /*0x772f03*/
-  int v9; // edx
-    v9 = *a2; /*0x772f13*/
+    int v9 = *a2; // edx /*0x772f13*/
     a4 = a1->Report[4]; /*0x772f1f*/
     (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x772f23*/
-  int j; // ebx
+    int j; // ebx
     for ( j = 0; j < a4; ++j ) /*0x772f2e*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->Report[1] + 4 * j, 4, 0); /*0x772f41*/
-  int v11; // edx
-    v11 = *a2; /*0x772f51*/
+    int v11 = *a2; // edx /*0x772f51*/
     a4 = a1->DownReport[4]; /*0x772f5d*/
     (*(void (__stdcall **)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x772f61*/
-  int k; // ebx
+    int k; // ebx
     for ( k = 0; k < (int)a3; ++k ) /*0x772f6c*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->DownReport[1] + 4 * k, 4, 0); /*0x772f7f*/
     return 0; /*0x772f89*/
@@ -445,8 +442,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
 {
 
   AbstractClass *v2; // ecx
-  AbstractClass *v3; // esi
-  v3 = v2; /*0x7730f3*/
+  AbstractClass *v3 = v2; // esi /*0x7730f3*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x7730f7) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x7730fd) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x773104) */
@@ -517,16 +513,14 @@ char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
   v10 = 0; /*0x475b91*/
   char v11; // [esp+8Bh] [ebp-1h]
   v11 = 0; /*0x475b93*/
-  int v4; // eax
-  v4 = dword_A83C78; /*0x475b94*/
+  int v4 = dword_A83C78; // eax /*0x475b94*/
   if ( dword_A83C78 > 32 ) /*0x475b9c*/
     v4 = 32; /*0x475b9e*/
-  int v5; // edx
-  v5 = 0; /*0x475ba3*/
+  int v5 = 0; // edx /*0x475ba3*/
   v4 = v4; /*0x475ba5*/
   if ( v4 > 0 ) /*0x475bab*/
   {
-  char *v6; // ebx
+    char *v6; // ebx
     v6 = (char *)dword_A83C6C; /*0x475bb2*/
     do /*0x475c3a*/
     {

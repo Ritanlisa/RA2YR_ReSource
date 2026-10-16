@@ -28,11 +28,10 @@ wchar_t DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
   else
   {
     (*(void (**)(int *, DropListClass *, int))(*v5 + 184))(v5, this, a2); /*0x4b5056*/
-  int v7; // ebx
-    v7 = *v5; /*0x4b505e*/
-  int v8; // eax
+    int v7 = *v5; // ebx /*0x4b505e*/
+    int v8; // eax
     v8 = (*((int (**)(wchar_t **))*v4 + 41))(v4); /*0x4b5062*/
-  const wchar_t *v9; // eax
+    const wchar_t *v9; // eax
     v9 = (const wchar_t *)v5->GetClamped(v8); /*0x4b506b*/
     return (wchar_t)(wcscpy(v4[13], v9)); /*0x4b5076*/
   }

@@ -67,7 +67,7 @@ BulletClass::BulletClass()
          *(unsigned int *)&DataGlobal_A8EC64 + *(unsigned int *)&DataGlobal_A8EC70,
          0) )
   {
-  int v2; // eax
+    int v2; // eax
     v2 = (*(unsigned int *)&DataGlobal_A8EB00[592])++; /*0x4664a8*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[580] + 4 * v2) = this; /*0x4664b7*/
   }
@@ -89,7 +89,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   if ( a1->q158 ) /*0x466586*/
   {
     v5 = (gamemd::BulletClass *)(a1); /*0x4665a0*/
-  int v2; // eax
+    int v2; // eax
     v2 = (*(int (**)(int *, BulletClass **))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 16))( /*0x4665a4*/
            g_BuildingLoadQueue_Array.ForbiddenHouses,
            &v5);
@@ -97,9 +97,9 @@ BulletClass * * BulletClass::Dtor(void *a1)
     {
       --g_BuildingLoadQueue_Array.SecondSpawnOffset[1]; /*0x4665b9*/
       for ( ; /*0x4665bf*/
-            v2 < g_BuildingLoadQueue_Array.SecondSpawnOffset[1];
-            *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v2 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0]
-                                                                                            + 4 * v2) )
+      v2 < g_BuildingLoadQueue_Array.SecondSpawnOffset[1];
+      *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v2 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0]
+      + 4 * v2) )
       {
         ++v2; /*0x4665c7*/
       }
@@ -117,8 +117,8 @@ BulletClass * * BulletClass::Dtor(void *a1)
   {
     --*(unsigned int *)&((unsigned int *)&stru_A8EB00)[364]; /*0x466630*/
     for ( ; /*0x466636*/
-          v3 < *(int *)&((unsigned int *)&stru_A8EB00)[364];
-          *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[352] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[352] + 4 * v3) )
+    v3 < *(int *)&((unsigned int *)&stru_A8EB00)[364];
+    *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[352] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[352] + 4 * v3) )
     {
       ++v3; /*0x46663e*/
     }

@@ -70,7 +70,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
           v3 = 0; /*0x6e4fb5*/
           if ( (int)FootClass_Array.? <= 0 ) /*0x6e4fb9*/
           {
-LABEL_9:
+            LABEL_9:
             v3 = -1; /*0x6e4fcd*/
           }
           else
@@ -106,7 +106,7 @@ LABEL_9:
             v7 = 0; /*0x6e501a*/
             if ( FootClass_Array.?[0] <= 0 ) /*0x6e501e*/
             {
-LABEL_22:
+              LABEL_22:
               v7 = -1; /*0x6e5032*/
             }
             else
@@ -172,12 +172,12 @@ LABEL_22:
              v16 + g_BuildingLoadQueue_Array.UnitExitSound,
              0) )
       {
-LABEL_43:
+        LABEL_43:
         v17 = (*(unsigned int *)&DataGlobal_B0F6A8)++; /*0x6e5116*/
         *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * v17) = (unsigned int)(v15); /*0x6e5125*/
       }
       v16 = *(unsigned int *)&DataGlobal_B0F6A0; /*0x6e5128*/
-LABEL_45:
+      LABEL_45:
       v15 = v15->nextTrigger; /*0x6e512d*/
     }
     while ( v15 ); /*0x6e50d9*/
@@ -190,9 +190,9 @@ LABEL_45:
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6e515c*/
     for ( ; /*0x6e5162*/
-          v18 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v18 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                          + 4 * v18) )
+    v18 < g_BuildingLoadQueue_Array.LightBlueTint;
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v18 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
+    + 4 * v18) )
     {
       ++v18; /*0x6e516a*/
     }
@@ -205,9 +205,9 @@ LABEL_45:
   {
     --g_BuildingLoadQueue_Array.unknown___2; /*0x6e51a5*/
     for ( ; /*0x6e51ab*/
-          v19 < g_BuildingLoadQueue_Array.unknown___2;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1] + 4 * v19 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1]
-                                                                                        + 4 * v19) )
+    v19 < g_BuildingLoadQueue_Array.unknown___2;
+    *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1] + 4 * v19 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1]
+    + 4 * v19) )
     {
       ++v19; /*0x6e51b3*/
     }
@@ -253,8 +253,7 @@ int TagClass::Unlink(void *a1)
 
   this->firstTrigger[8].destroyed = 0; /*0x71ade9*/
   this->firstTrigger[8].timer[1] = 0; /*0x71adf2*/
-  int v2; // eax
-  v2 = this->u32_44; /*0x71adf8*/
+  int v2 = this->u32_44; // eax /*0x71adf8*/
   this->firstTrigger = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {
@@ -262,8 +261,7 @@ int TagClass::Unlink(void *a1)
       v2->occuredEvents = 0; /*0x71ae07*/
     TagClass::Unlink(this->u32_44)); /*0x71ae0d*/
   }
-  int result; // eax
-  result = this->uniqueId; /*0x71ae12*/
+  int result = this->uniqueId; // eax /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
     if ( result->enabled == this ) /*0x71ae1c*/
@@ -343,7 +341,7 @@ int TagClass::ProcessTag(int * a2)
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
-  int v5; // eax
+    int v5; // eax
     v5 = (*((int (**)(void **))firstTrigger->uniqueId + 4))(&firstTrigger->uniqueId); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }

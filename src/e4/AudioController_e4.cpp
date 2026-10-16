@@ -44,48 +44,48 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
         v7 = *(unsigned int *)(a1 + 132); /*0x409e45*/
         if ( v7 && a4 ) /*0x409e51*/
         {
-          v8 = *(unsigned int *)(a1 + 132); /*0x409e57*/
-          if ( v7 > v17 ) /*0x409e5b*/
-            v8 = v17; /*0x409e5d*/
-          if ( !v8 ) /*0x409e61*/
-            goto LABEL_25; /*0x409e61*/
-          v9 = a4; /*0x409e78*/
-          a4 += v8; /*0x409e7a*/
-          memcpy((void *)(*(unsigned int *)(a1 + 124) + *(unsigned int *)(a1 + 128) - v7), v9, v8); /*0x409e7f*/
-          v20 += v8; /*0x409e9c*/
-          v17 -= v8; /*0x409ea0*/
-          *(unsigned int *)(a1 + 132) -= v8; /*0x409ea4*/
-          *(unsigned int *)(a1 + 168) = 1; /*0x409eaa*/
-        }
+        v8 = *(unsigned int *)(a1 + 132); /*0x409e57*/
+        if ( v7 > v17 ) /*0x409e5b*/
+          v8 = v17; /*0x409e5d*/
+        if ( !v8 ) /*0x409e61*/
+          goto LABEL_25; /*0x409e61*/
+        v9 = a4; /*0x409e78*/
+        a4 += v8; /*0x409e7a*/
+        memcpy((void *)(*(unsigned int *)(a1 + 124) + *(unsigned int *)(a1 + 128) - v7), v9, v8); /*0x409e7f*/
+        v20 += v8; /*0x409e9c*/
+        v17 -= v8; /*0x409ea0*/
+        *(unsigned int *)(a1 + 132) -= v8; /*0x409ea4*/
+        *(unsigned int *)(a1 + 168) = 1; /*0x409eaa*/
+      }
         else
         {
-          v10 = *(unsigned int *)(a1 + 120); /*0x409ebb*/
-          *(unsigned int *)(a1 + 132) = 0; /*0x409ebe*/
-          *(unsigned int *)(a1 + 116) = v10; /*0x409ec4*/
-        }
+        v10 = *(unsigned int *)(a1 + 120); /*0x409ebb*/
+        *(unsigned int *)(a1 + 132) = 0; /*0x409ebe*/
+        *(unsigned int *)(a1 + 116) = v10; /*0x409ec4*/
+      }
         continue; /*0x409eb6*/
       case 1: /*0x409e3e*/
         v11 = *(unsigned int *)(a1 + 152); /*0x409ecc*/
         if ( !v11 ) /*0x409ed4*/
         {
-          v12 = *(unsigned int *)(a1 + 120); /*0x409ed6*/
-          *(unsigned int *)(a1 + 168) = 0; /*0x409ed9*/
-          *(unsigned int *)(a1 + 116) = v12; /*0x409edf*/
-          continue; /*0x409ee2*/
-        }
+        v12 = *(unsigned int *)(a1 + 120); /*0x409ed6*/
+        *(unsigned int *)(a1 + 168) = 0; /*0x409ed9*/
+        *(unsigned int *)(a1 + 116) = v12; /*0x409edf*/
+        continue; /*0x409ee2*/
+      }
         v13 = *(unsigned int *)(a1 + 152); /*0x409eeb*/
         if ( v11 > v18 ) /*0x409eef*/
           v13 = v18; /*0x409ef1*/
         if ( v13 ) /*0x409ef5*/
         {
-          memcpy(a2, (const void *)(*(unsigned int *)(a1 + 144) + *(unsigned int *)(a1 + 148) - v11), v13); /*0x409f16*/
-          v21 += v13; /*0x409f39*/
-          a2 += v13; /*0x409f3d*/
-          v18 -= v13; /*0x409f41*/
-          *(unsigned int *)(a1 + 152) -= v13; /*0x409f45*/
-          continue; /*0x409f4d*/
-        }
-  LABEL_25:
+        memcpy(a2, (const void *)(*(unsigned int *)(a1 + 144) + *(unsigned int *)(a1 + 148) - v11), v13); /*0x409f16*/
+        v21 += v13; /*0x409f39*/
+        a2 += v13; /*0x409f3d*/
+        v18 -= v13; /*0x409f41*/
+        *(unsigned int *)(a1 + 152) -= v13; /*0x409f45*/
+        continue; /*0x409f4d*/
+      }
+        LABEL_25:
         if ( a5 ) /*0x409fa8*/
           *a5 = v20; /*0x409fae*/
         if ( a3 ) /*0x409fb6*/
@@ -124,7 +124,7 @@ void AudioController::GetVolume()
   {
     if ( DataGlobal_B0FCCD ) /*0x72d182*/
     {
-  void *v1; // esi
+      void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FAB8; /*0x72d185*/
       if ( *(unsigned int *)&DataGlobal_B0FAB8 ) /*0x72d18d*/
       {

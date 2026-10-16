@@ -131,7 +131,7 @@ int sub_5FC120(int a1, int a2, int * a3)
     if ( v5 <= v4 ) /*0x5fc13e*/
       break; /*0x5fc13e*/
     v3 /= 2; /*0x5fc140*/
-  LABEL_7:
+    LABEL_7:
     if ( v3 <= 0 ) /*0x5fc152*/
       return 0; /*0x5fc152*/
   }

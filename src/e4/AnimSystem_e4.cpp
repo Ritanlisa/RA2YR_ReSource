@@ -16,9 +16,8 @@ char AnimSystem::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6
   int i; // edx
   for ( i = 0; i < 18; ++i ) /*0x75a791*/
   {
-  int v1; // eax
-    v1 = i >> 3; /*0x75a79e*/
-  char v2; // cl
+    int v1 = i >> 3; // eax /*0x75a79e*/
+    char v2; // cl
     v2 = ~(1 << (i & 7)) & byte_B45BA8[i >> 3]; /*0x75a7a9*/
     ((unsigned int *)(byte_B45BA8))[v1] = v2; /*0x75a7af*/
   }

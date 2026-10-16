@@ -74,7 +74,7 @@ int E4Recv_501750::sub_501750(int a2)
         }
         (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x501897*/
       }
-  LABEL_14:
+      LABEL_14:
       (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x50189a*/
       return (*(char (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x5018ab*/
     }
@@ -136,8 +136,8 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   if ( v12 ) /*0x50483a*/
     aP0->u32_5600 = *(unsigned int *)(v12 + 48); /*0x504842*/
   else
-  LABEL_18:
-    aP0->u32_5600 = -1; /*0x50484f*/
+    LABEL_18:
+  aP0->u32_5600 = -1; /*0x50484f*/
 }
 }
 // 0x5004E0
@@ -195,15 +195,14 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
   v6 = *(int16_t *)a2; /*0x505ff7*/
   int v8; // edi
   v8 = *(unsigned int *)(*(unsigned int *)(a1 + 90208) /*0x506002*/
-                 + 4 * (v6 + *(unsigned int *)(a1 + 22364) * (v5 - *(unsigned int *)(a1 + 22360)) - *(unsigned int *)(a1 + 22356)));
-  int v9; // eax
-  v9 = 0; /*0x506005*/
+  + 4 * (v6 + *(unsigned int *)(a1 + 22364) * (v5 - *(unsigned int *)(a1 + 22360)) - *(unsigned int *)(a1 + 22356)));
+  int v9 = 0; // eax /*0x506005*/
   if ( a5 != (void *)(-1) ) /*0x50600a*/
   {
-  int v14; // [esp+1Ch] [ebp-8h]
+    int v14; // [esp+1Ch] [ebp-8h]
     v14 = v6 - *(int16_t *)(a1 + 22352); /*0x50601e*/
     __asm { fild [esp+1Ch+var_8] } /*0x506025*/
-  unsigned int v15; // [esp+2Ch] [ebp+8h]
+    unsigned int v15; // [esp+2Ch] [ebp+8h]
     v15 = *(int16_t *)(a1 + 22354) - v5; /*0x50602b*/
     __asm /*0x50602f*/
     {
@@ -211,13 +210,13 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
       fild [esp+1Ch+arg_4]
     }
     __asm { fstp [esp+24h+var_24]; double }
-  double v12; // [esp+0h] [ebp-24h]
-  double v13; // [esp+8h] [ebp-1Ch]
+    double v12; // [esp+0h] [ebp-24h]
+    double v13; // [esp+8h] [ebp-1Ch]
     Math::CalcAngle(v12, v13); /*0x50603c*/
     __asm { fsub ds:dbl_7E2820 } /*0x506041*/
     __asm { fmul ds:dbl_7E2818 }
     (*((unsigned short *)&(v15))) = Math::RoundToInt(a3); /*0x506055*/
-  int64_t v10; // rax
+    int64_t v10; // rax
     v10 = 32 * a5 - (uint8_t)(((v15 >> 7) + 1) >> 1); /*0x506071*/
     v9 = ((*(((unsigned int *)&(v10)) + 1)) ^ v10) - (*(((unsigned int *)&(v10)) + 1)); /*0x506074*/
     if ( v9 >= 128 ) /*0x50607b*/
@@ -248,25 +247,23 @@ namespace gamemd {
 int HouseClass::sub_5092F0(int a2)
 {
 
-  int result; // eax
-  result = a2; /*0x5092f0*/
+  int result = a2; // eax /*0x5092f0*/
   this->radarVisibleTo |= 1 << *(unsigned int *)(*(unsigned int *)(a2 + 52) + 184); /*0x509313*/
   if ( (Object *)a2 == (gamemd::Object *)(dword_A83D4C) ) /*0x509321*/
   {
-  int i; // edi
+    int i; // edi
     for ( i = 0; i < dword_A8EC88; ++i ) /*0x509330*/
     {
-  int *v5; // ecx
+      int *v5; // ecx
       v5 = (int *)*((unsigned int *)dword_A8EC7C + i); /*0x509337*/
       if ( v5 && !*((unsigned char *)v5 + 129) && (TechnoClass *)v5[135] == (gamemd::TechnoClass *)(this) ) /*0x50934e*/
       {
-  int v8[3]; // [esp+8h] [ebp-Ch] BYREF
+        int v8[3]; // [esp+8h] [ebp-Ch] BYREF
         v8[0] = v5[39]; /*0x509360*/
         v8[1] = v5[40]; /*0x50936a*/
-  int v6; // eax
-        v6 = *v5; /*0x50936e*/
+        int v6 = *v5; // eax /*0x50936e*/
         v8[2] = v5[41]; /*0x509373*/
-  int v7; // eax
+        int v7; // eax
         v7 = (*(int (**)(int *))(v6 + 132))(v5); /*0x509377*/
         MapClass::RevealArea0((MapClass *)&dword_87F7E8, v8, *(unsigned int *)(v7 + 1512), this, 0, 0, 0, 1, 1); /*0x50938e*/
       }
@@ -278,20 +275,20 @@ int HouseClass::sub_5092F0(int a2)
 } // namespace gamemd
 
 
-  int v2; // esi
-  int result; // eax
-  unsigned int *i; // edx
+int v2; // esi
+int result; // eax
+unsigned int *i; // edx
 
-    v2 = this->u32_5614;
-  result = 0; /*0x5093c8*/
-  if ( v2 > 0 ) /*0x5093cd*/
+v2 = this->u32_5614;
+result = 0; /*0x5093c8*/
+if ( v2 > 0 ) /*0x5093cd*/
+{
+  for ( i = (unsigned int *)this->u32_5608; *i != a2; i += 2 )
   {
-        for ( i = (unsigned int *)this->u32_5608; *i != a2; i += 2 )
-    {
-      if ( ++result >= v2 ) /*0x5093e5*/
-        return result; /*0x5093e5*/
-    }
-    return UpdateHouseClassAnger( /*0x5093f5*/
+    if ( ++result >= v2 ) /*0x5093e5*/
+      return result; /*0x5093e5*/
+  }
+  return UpdateHouseClassAnger( /*0x5093f5*/
              (unsigned int)this,
              (int)i,
              -*(unsigned int *)(this->u32_5608 + 8 * result + 4),
@@ -326,7 +323,7 @@ void sub_50B920(int a1, int a2, int a3)
   }
   else
   {
-  double v6; // st6
+    double v6; // st6
     v6 = *(double *)a1 * 240.0 / v5; /*0x50b997*/
     *(double *)a1 = v6; /*0x50b999*/
     if ( v6 > 255.0 ) /*0x50b9a6*/
@@ -334,7 +331,7 @@ void sub_50B920(int a1, int a2, int a3)
       *(unsigned int *)a1 = 0; /*0x50b9a8*/
       a1->u32_4 = 1081073664; /*0x50b9ae*/
     }
-  double v7; // st6
+    double v7; // st6
     v7 = *(double *)a2 * 240.0 / v5; /*0x50b9b9*/
     *(double *)a2 = v7; /*0x50b9bb*/
     if ( v7 > 255.0 ) /*0x50b9c8*/
@@ -342,7 +339,7 @@ void sub_50B920(int a1, int a2, int a3)
       *(unsigned int *)a2 = 0; /*0x50b9ca*/
       *(unsigned int *)(a2 + 4) = 1081073664; /*0x50b9d0*/
     }
-  double v8; // st7
+    double v8; // st7
     v8 = *(double *)a3 * 240.0 / v5; /*0x50b9db*/
     *(double *)a3 = v8; /*0x50b9dd*/
     if ( v8 > 255.0 ) /*0x50b9ea*/

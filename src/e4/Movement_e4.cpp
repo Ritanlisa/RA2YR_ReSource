@@ -431,7 +431,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
       v67 = v65 + 18; /*0x5b2752*/
     }
     a2->vtable3 = v67; /*0x5b275f*/
-  LABEL_34:
+    LABEL_34:
     if ( v66 >= g_MissionQueueFrame.localVariables[307] / -2 ) /*0x5b2773*/
     {
       if ( v66 <= g_MissionQueueFrame.localVariables[307] / 2 ) /*0x5b27fa*/

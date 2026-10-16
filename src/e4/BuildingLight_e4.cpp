@@ -124,7 +124,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
           v32 = v42; /*0x5ff9de*/
           if ( v4 ) /*0x5ff9e2*/
           {
-LABEL_23:
+            LABEL_23:
             v11 = v3[5]; /*0x5ffb1c*/
             if ( (v11 & 1) != 0 ) /*0x5ffb21*/
             {
@@ -145,8 +145,8 @@ LABEL_23:
                       v45 = (unsigned __int8)(v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ffba9*/
                       v46 = (unsigned __int8)(v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ffbc2*/
                       *v10 = (((256 - (unsigned __int8)v35) * v44) >> 8 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x5ffc1a*/
-                           | (((256 - (unsigned __int8)v35) * v46) >> 8 >> g_BitMask_Red << g_BitShift_Blue)
-                           | (((256 - (unsigned __int8)v35) * v45) >> 8 >> g_BitMask_Blue << g_BitMask_Green);
+                      | (((256 - (unsigned __int8)v35) * v46) >> 8 >> g_BitMask_Red << g_BitShift_Blue)
+                      | (((256 - (unsigned __int8)v35) * v45) >> 8 >> g_BitMask_Blue << g_BitMask_Green);
                       v12 = v49; /*0x5ffc1d*/
                       v9 = v36; /*0x5ffc21*/
                     }
@@ -248,8 +248,8 @@ LABEL_23:
                       if ( v27 > 255 ) /*0x5ffee1*/
                         v27 = 255; /*0x5ffee3*/
                       *v10 = (v26 >> g_BitMask_Red << g_BitShift_Blue) /*0x5fff14*/
-                           | (v29 >> g_BitMask_Blue << g_BitMask_Green)
-                           | (v27 >> g_BitShift_Green_0 << g_BitShift_Red);
+                      | (v29 >> g_BitMask_Blue << g_BitMask_Green)
+                      | (v27 >> g_BitShift_Green_0 << g_BitShift_Red);
                       v23 = v49; /*0x5fff17*/
                       v9 = v36; /*0x5fff1b*/
                     }

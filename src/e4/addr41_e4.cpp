@@ -50,7 +50,7 @@
 namespace gamemd { int j_Time_GetElapsedMS(); }  // x4:empty@0x412540
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int LookupWaypointName(ObjectClass *p_this);  // x4:ida@0x5b3910
+int LookupWaypointName(ObjectClass *p_this);  // x4:ida@0x5b3910
 } // namespace gamemd
 
 // 0x4116A0
@@ -97,7 +97,7 @@ int sub_4116A0(unsigned int a1)
     if ( v16 ) /*0x411747*/
     {
       v8 = a1; /*0x411749*/
-  LABEL_11:
+      LABEL_11:
       v7 += v8; /*0x411769*/
       goto LABEL_12; /*0x411769*/
     }
@@ -120,14 +120,14 @@ int sub_4116A0(unsigned int a1)
   if ( v7 - v10 > v7 ) /*0x411789*/
   {
     v11 = 0; /*0x41178b*/
-  LABEL_14:
+    LABEL_14:
     *(unsigned int *)(v3 + 20) = v11; /*0x41178d*/
     *(unsigned int *)(v3 + 24) = v5; /*0x411792*/
     v12 = 60 /*0x4117ba*/
-        * (v11
-         / (*(uint8_t *)(v1 + 62)
-          * (*(uint8_t *)(v1 + 63) >> 3)))
-        / *(uint16_t *)(v1 + 60);
+    * (v11
+            / (*(uint8_t *)(v1 + 62)
+            * (*(uint8_t *)(v1 + 63) >> 3)))
+    / *(uint16_t *)(v1 + 60);
     *(unsigned int *)(v3 + 32) = v12; /*0x4117bc*/
     v13 = *(unsigned int *)(v1 + 196); /*0x4117bf*/
     if ( v12 >= v13 ) /*0x4117c7*/
@@ -157,8 +157,7 @@ namespace gamemd {
 int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3, int a4)
 {
 
-  int result; // eax
-  result = -1; /*0x411824*/
+  int result = -1; // eax /*0x411824*/
   switch ( a2 ) /*0x411835*/
   {
     case 1: /*0x411835*/
@@ -170,39 +169,38 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       break; /*0x41186e*/
     case 3: /*0x411835*/
       Debug::Log(); /*0x411874*/
-  LONG LockCount; // eax
+      LONG LockCount; // eax
       LockCount = dwUser[2].LockCount; /*0x411880*/
-  int v6; // ebp
-      v6 = 188 * LockCount + 8943480; /*0x411894*/
+      int v6 = 188 * LockCount + 8943480; // ebp /*0x411894*/
       if ( byte_887778[188 * LockCount] == 1 ) /*0x41189b*/
       {
-        if ( dword_887804[47 * LockCount] ) /*0x4118a1*/
+      if ( dword_887804[47 * LockCount] ) /*0x4118a1*/
+      {
+        Debug::Log(); /*0x4118b2*/
+        int v7; // esi
+        v7 = 188 * dwUser[2].LockCount + 8943480; /*0x4118ce*/
+        if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x4118c5*/
         {
-          Debug::Log(); /*0x4118b2*/
-  int v7; // esi
-          v7 = 188 * dwUser[2].LockCount + 8943480; /*0x4118ce*/
-          if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x4118c5*/
-          {
-            EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x4118de*/
-            (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v7 + 140) + 72))(*(unsigned int *)(v7 + 140)); /*0x4118ed*/
-            (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v7 + 140) + 8))(*(unsigned int *)(v7 + 140)); /*0x4118f9*/
-            *(unsigned int *)(v7 + 140) = 0; /*0x411901*/
-            *(unsigned int *)(v7 + 64) = 0; /*0x411907*/
-            *(unsigned int *)(v7 + 68) = 0; /*0x41190a*/
-            *(unsigned int *)(v7 + 72) = 0; /*0x41190d*/
-            *(unsigned int *)(v7 + 76) = 0; /*0x411910*/
-            LeaveCriticalSection((LPCRITICAL_SECTION)(v7 + 160)); /*0x411913*/
-          }
+          EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x4118de*/
+          (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v7 + 140) + 72))(*(unsigned int *)(v7 + 140)); /*0x4118ed*/
+          (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v7 + 140) + 8))(*(unsigned int *)(v7 + 140)); /*0x4118f9*/
+          *(unsigned int *)(v7 + 140) = 0; /*0x411901*/
+          *(unsigned int *)(v7 + 64) = 0; /*0x411907*/
+          *(unsigned int *)(v7 + 68) = 0; /*0x41190a*/
+          *(unsigned int *)(v7 + 72) = 0; /*0x41190d*/
+          *(unsigned int *)(v7 + 76) = 0; /*0x411910*/
+          LeaveCriticalSection((LPCRITICAL_SECTION)(v7 + 160)); /*0x411913*/
         }
-        Debug::Log(); /*0x41191e*/
-        timeKillEvent(*(unsigned int *)(v6 + 96)); /*0x41192a*/
-        *(unsigned int *)(v6 + 96) = 0; /*0x411935*/
-        Debug::Log(); /*0x411938*/
-        timeEndPeriod(0x10u); /*0x411942*/
-        *(unsigned char *)v6 = 0; /*0x41194d*/
-        Debug::Log(); /*0x411950*/
-        DeleteCriticalSection((LPCRITICAL_SECTION)(v6 + 160)); /*0x41195f*/
       }
+      Debug::Log(); /*0x41191e*/
+      timeKillEvent(*(unsigned int *)(v6 + 96)); /*0x41192a*/
+      *(unsigned int *)(v6 + 96) = 0; /*0x411935*/
+      Debug::Log(); /*0x411938*/
+      timeEndPeriod(0x10u); /*0x411942*/
+      *(unsigned char *)v6 = 0; /*0x41194d*/
+      Debug::Log(); /*0x411950*/
+      DeleteCriticalSection((LPCRITICAL_SECTION)(v6 + 160)); /*0x41195f*/
+    }
       Debug::Log(); /*0x41196a*/
       result = -1; /*0x411972*/
       break; /*0x411979*/
@@ -212,75 +210,73 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
     case 5: /*0x411835*/
       result = SubmitDirectSoundBufferData(dwUser, a3, a4); /*0x41199b*/
       break; /*0x4119a7*/
-  LONG v8; // eax
+      LONG v8; // eax
     case 6: /*0x411835*/
       v8 = dwUser[2].LockCount; /*0x4119ac*/
-  int v9; // esi
-      v9 = 188 * v8 + 8943480; /*0x4119b7*/
-  struct _RTL_CRITICAL_SECTION *v10; // edi
+      int v9 = 188 * v8 + 8943480; // esi /*0x4119b7*/
+      struct _RTL_CRITICAL_SECTION *v10; // edi
       v10 = (struct _RTL_CRITICAL_SECTION *)(188 * v8 + 8943640); /*0x4119be*/
       EnterCriticalSection(v10); /*0x4119c5*/
       if ( *(unsigned char *)v9 == 1 ) /*0x4119ce*/
       {
-  int v11; // eax
-        v11 = *(unsigned int *)(v9 + 140); /*0x4119d0*/
-        if ( v11 ) /*0x4119d8*/
-          (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v11 + 72))(*(unsigned int *)(v9 + 140)); /*0x4119dd*/
-      }
+      int v11; // eax
+      v11 = *(unsigned int *)(v9 + 140); /*0x4119d0*/
+      if ( v11 ) /*0x4119d8*/
+        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v11 + 72))(*(unsigned int *)(v9 + 140)); /*0x4119dd*/
+    }
       *(unsigned int *)(v9 + 40) |= 1u; /*0x4119e7*/
       LeaveCriticalSection(v10); /*0x4119ea*/
       result = -1; /*0x4119f3*/
       break; /*0x4119f7*/
-  int v15; // esi
+      int v15; // esi
     case 7: /*0x411835*/
       v15 = 188 * dwUser[2].LockCount + 8943480; /*0x411aad*/
       if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x411aa4*/
       {
-        EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x411abd*/
-        (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v15 + 140) + 72))(*(unsigned int *)(v15 + 140)); /*0x411acc*/
-        (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v15 + 140) + 8))(*(unsigned int *)(v15 + 140)); /*0x411ad8*/
-        *(unsigned int *)(v15 + 140) = 0; /*0x411ae0*/
-        *(unsigned int *)(v15 + 64) = 0; /*0x411ae6*/
-        *(unsigned int *)(v15 + 68) = 0; /*0x411ae9*/
-        *(unsigned int *)(v15 + 72) = 0; /*0x411aec*/
-        *(unsigned int *)(v15 + 76) = 0; /*0x411aef*/
-        LeaveCriticalSection((LPCRITICAL_SECTION)(v15 + 160)); /*0x411af2*/
-      }
+      EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x411abd*/
+      (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v15 + 140) + 72))(*(unsigned int *)(v15 + 140)); /*0x411acc*/
+      (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v15 + 140) + 8))(*(unsigned int *)(v15 + 140)); /*0x411ad8*/
+      *(unsigned int *)(v15 + 140) = 0; /*0x411ae0*/
+      *(unsigned int *)(v15 + 64) = 0; /*0x411ae6*/
+      *(unsigned int *)(v15 + 68) = 0; /*0x411ae9*/
+      *(unsigned int *)(v15 + 72) = 0; /*0x411aec*/
+      *(unsigned int *)(v15 + 76) = 0; /*0x411aef*/
+      LeaveCriticalSection((LPCRITICAL_SECTION)(v15 + 160)); /*0x411af2*/
+    }
       result = -1; /*0x411af8*/
       break; /*0x411af8*/
-  LONG v12; // eax
+      LONG v12; // eax
     case 8: /*0x411835*/
       v12 = dwUser[2].LockCount; /*0x4119fe*/
-  int v13; // esi
-      v13 = 188 * v12 + 8943480; /*0x411a12*/
+      int v13 = 188 * v12 + 8943480; // esi /*0x411a12*/
       if ( byte_887778[188 * v12] && dword_887804[47 * v12] ) /*0x411a1b*/
       {
-        EnterCriticalSection((LPCRITICAL_SECTION)(188 * v12 + 8943640)); /*0x411a2a*/
-        if ( (*(int (__stdcall **)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v13 + 140) + 48))( /*0x411a3d*/
+      EnterCriticalSection((LPCRITICAL_SECTION)(188 * v12 + 8943640)); /*0x411a2a*/
+      if ( (*(int (__stdcall **)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v13 + 140) + 48))( /*0x411a3d*/
                *(unsigned int *)(v13 + 140),
                0,
                0,
                1) )
-        {
-          LeaveCriticalSection((LPCRITICAL_SECTION)(v13 + 160)); /*0x411a7c*/
-          result = -13; /*0x411a82*/
-        }
-        else
-        {
-          *(unsigned int *)(v13 + 28) = Time::GetElapsedMS() - *(unsigned int *)(v13 + 24); /*0x411a52*/
-          Debug::Log(); /*0x411a55*/
-  int v14; // eax
-          v14 = *(unsigned int *)(v13 + 40); /*0x411a5a*/
-          (*((unsigned char *)&(v14))) = v14 & 0xFE; /*0x411a60*/
-          *(unsigned int *)(v13 + 40) = v14; /*0x411a62*/
-          LeaveCriticalSection((LPCRITICAL_SECTION)(v13 + 160)); /*0x411a69*/
-          result = -1; /*0x411a6f*/
-        }
+      {
+        LeaveCriticalSection((LPCRITICAL_SECTION)(v13 + 160)); /*0x411a7c*/
+        result = -13; /*0x411a82*/
       }
       else
       {
-        result = -13; /*0x411a8c*/
+        *(unsigned int *)(v13 + 28) = Time::GetElapsedMS() - *(unsigned int *)(v13 + 24); /*0x411a52*/
+        Debug::Log(); /*0x411a55*/
+        int v14; // eax
+        v14 = *(unsigned int *)(v13 + 40); /*0x411a5a*/
+        (*((unsigned char *)&(v14))) = v14 & 0xFE; /*0x411a60*/
+        *(unsigned int *)(v13 + 40) = v14; /*0x411a62*/
+        LeaveCriticalSection((LPCRITICAL_SECTION)(v13 + 160)); /*0x411a69*/
+        result = -1; /*0x411a6f*/
       }
+    }
+      else
+      {
+      result = -13; /*0x411a8c*/
+    }
       break; /*0x411a75*/
     default:
       return result;
@@ -300,8 +296,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   Debug::Log(); /*0x411b47*/
   if ( !Audio::IsSoundEnabled() ) /*0x411b4f*/
     return (gamemd::AbstractClass **)(-13); /*0x411b4f*/
-  int v3; // eax
-  v3 = 0; /*0x411b5c*/
+  int v3 = 0; // eax /*0x411b5c*/
   char *v4; // ecx
   v4 = (char *)(byte_887778); /*0x411b5e*/
   do /*0x411b75*/
@@ -325,9 +320,9 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   v6 = *(unsigned int *)(dwUser + 160); /*0x411bc7*/
   if ( v6 == -1 )
   {
-  int v7; // edx
+    int v7; // edx
     v7 = *(unsigned int *)(dwUser + 112); /*0x411bdf*/
-  unsigned int v8; // ecx
+    unsigned int v8; // ecx
     v8 = *(uint16_t *)(dwUser + 14); /*0x411be4*/
     *((unsigned short *)v5 + 4) = (unsigned int)(v7 == (uint16_t)v8 ? *aP1 : v7 * (unsigned int)*aP1 / v8);
   }
@@ -365,16 +360,15 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 
   LONG LockCount; // eax
   LockCount = lpCriticalSection[2].LockCount; /*0x411df7*/
-  int v3; // esi
-  v3 = 188 * LockCount + 8943480; /*0x411e0c*/
+  int v3 = 188 * LockCount + 8943480; // esi /*0x411e0c*/
   if ( (dword_8877A0[47 * LockCount] & 1) == 0 ) /*0x411e13*/
   {
-  struct _RTL_CRITICAL_SECTION *lpCriticalSectiona; // [esp+38h] [ebp+4h]
+    struct _RTL_CRITICAL_SECTION *lpCriticalSectiona; // [esp+38h] [ebp+4h]
     lpCriticalSectiona = (struct _RTL_CRITICAL_SECTION *)(188 * LockCount + 8943640); /*0x411e9b*/
     EnterCriticalSection(lpCriticalSectiona); /*0x411e9f*/
-  int v6; // eax
+    int v6; // eax
     v6 = *(unsigned int *)(v3 + 140); /*0x411ea5*/
-  int **v7; // edi
+    int **v7; // edi
     v7 = (int **)(v3 + 140); /*0x411eab*/
     if ( v6 ) /*0x411eb3*/
     {
@@ -398,14 +392,14 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     *(unsigned int *)(v3 + 132) = 0; /*0x411f13*/
     *(unsigned short *)(v3 + 136) = 0; /*0x411f16*/
     *(unsigned short *)(v3 + 120) = 1; /*0x411f1a*/
-  uint16_t v8; // ax
+    uint16_t v8; // ax
     v8 = *(uint8_t *)(v3 + 11); /*0x411f1f*/
-  int16_t v9; // dx
+    int16_t v9; // dx
     v9 = *(uint8_t *)(v3 + 10); /*0x411f24*/
     *(unsigned short *)(v3 + 134) = v8; /*0x411f29*/
-  int v10; // ecx
+    int v10; // ecx
     v10 = *(uint16_t *)(v3 + 8); /*0x411f30*/
-  uint16_t v11; // ax
+    uint16_t v11; // ax
     v11 = v9 * (v8 >> 3); /*0x411f38*/
     *(unsigned short *)(v3 + 132) = v11; /*0x411f3b*/
     *(unsigned int *)(v3 + 124) = v10; /*0x411f4a*/
@@ -421,26 +415,23 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     {
       dword_88776C(lpCriticalSection); /*0x411f84*/
       dword_88776C(lpCriticalSection); /*0x411f8b*/
-  int *v13; // eax
-      v13 = *v7; /*0x411f91*/
+      int *v13 = *v7; // eax /*0x411f91*/
       *(unsigned int *)(v3 + 68) = 0; /*0x411f96*/
       *(unsigned int *)(v3 + 156) = 0; /*0x411f99*/
       *(unsigned int *)(v3 + 148) = 0; /*0x411f9f*/
       (*(void (__stdcall **)(int *, unsigned int))(*v13 + 52))(v13, 0); /*0x411fa9*/
-  int v14; // eax
+      int v14; // eax
       v14 = Math::RoundToInt(*(float *)&flt_A8EB9C * 255.0); /*0x411fb8*/
-  int *v15; // edx
-      v15 = *v7; /*0x411fbd*/
+      int *v15 = *v7; // edx /*0x411fbd*/
       *(unsigned int *)(v3 + 4) = v14; /*0x411fc1*/
-  int v16; // esi
-      v16 = *v15; /*0x411fca*/
-  int v17; // eax
+      int v16 = *v15; // esi /*0x411fca*/
+      int v17; // eax
       v17 = sub_40A900((uint8_t)v14); /*0x411fcc*/
       (*(void (__stdcall **)(int *, int))(v16 + 60))(*v7, v17); /*0x411fd5*/
-  int v18; // esi
+      int v18; // esi
       v18 = (*(int (__stdcall **)(int *, unsigned int, unsigned int, int))(**v7 + 48))(*v7, 0, 0, 1); /*0x411fe8*/
       LeaveCriticalSection(lpCriticalSectiona); /*0x411feb*/
-  int v19; // eax
+      int v19; // eax
       v19 = -(v18 != 0); /*0x411ff6*/
       (*((unsigned char *)&(v19))) = v19 & 0xF4; /*0x411ff9*/
       return v19 - 1; /*0x411ffc*/
@@ -464,7 +455,7 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
   {
     *(unsigned int *)(v3 + 28) = Time::GetElapsedMS() - *(unsigned int *)(v3 + 24); /*0x411e5d*/
     Debug::Log(); /*0x411e60*/
-  int v4; // eax
+    int v4; // eax
     v4 = *(unsigned int *)(v3 + 40); /*0x411e65*/
     (*((unsigned char *)&(v4))) = v4 & 0xFE; /*0x411e6b*/
     *(unsigned int *)(v3 + 40) = v4; /*0x411e6d*/
@@ -586,7 +577,7 @@ int SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
           v25 = &v20[4 * v23]; /*0x412193*/
           v24 = &v21[4 * v23]; /*0x412193*/
           v26 = v22; /*0x412195*/
-  LABEL_18:
+          LABEL_18:
           memcpy(v24, v25, v26 & 3); /*0x4121aa*/
           (*(void (__stdcall **)(unsigned int, char *, unsigned int, char *, unsigned int))(**(unsigned int **)(v14 + 140) + 76))( /*0x4121cc*/
             *(unsigned int *)(v14 + 140),
@@ -663,7 +654,7 @@ void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR d
     || ((*(void (__stdcall **)(int, unsigned char *))(*(unsigned int *)v9 + 36))(v9, v15), (v15[0] & 5) == 0) )
   {
     LeaveCriticalSection((LPCRITICAL_SECTION)(v6 + 160)); /*0x412529*/
-  LABEL_21:
+    LABEL_21:
     InterlockedDecrement(v7); /*0x41252f*/
     return; /*0x412530*/
   }
@@ -760,27 +751,26 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
   INIClass::ResetSection((gamemd::INIClass *)(a1)); /*0x41b119*/
   int result; // eax
   result = INIClass::GetKeyCount(a1->__pad_0, aAircraft); /*0x41b126*/
-  int v4; // ecx
-  v4 = 0; /*0x41b12b*/
+  int v4 = 0; // ecx /*0x41b12b*/
   v39 = result; /*0x41b12f*/
   for ( i = 0; i < v39; ++i ) /*0x41b137*/
   {
-  uint8_t *StringByIndex; // eax
+    uint8_t *StringByIndex; // eax
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, aAircraft, v4); /*0x41b14a*/
     (a1)->GetString(aAircraft, StringByIndex, 0, String, 128); /*0x41b164*/
-  char *v6; // eax
+    char *v6; // eax
     v6 = strtok(String, Str); /*0x41b173*/
-  int v7; // esi
+    int v7; // esi
     v7 = (v6)->FindByName(); /*0x41b182*/
     if ( v7 != -1 ) /*0x41b187*/
     {
-  TypeClass *v8; // eax
+      TypeClass *v8; // eax
       v8 = (int)((TypeClass *)strtok(0, Str));
-  int v9; // edi
+      int v9; // edi
       v9 = (int)((v8)->FindByName()); /*0x41b1a3*/
       if ( v9 != -1 ) /*0x41b1a8*/
       {
-  IUnknown *v10; // esi
+        IUnknown *v10; // esi
         v10 = (int)((IUnknown *)*((unsigned int *)stru_A80220.vfptr3 + v7));
         v11 = (void *)((int)(operator new(0x6D8u))); /*0x41b1bc*/
         if ( v11 ) /*0x41b1c6*/
@@ -1088,23 +1078,20 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
   v9 = (__int16 *)(this->M16 + this->M16); /*0x410de9*/
   int v10; // eax
   v10 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
-  int v11; // edx
-  v11 = a5; /*0x410df1*/
-  int v12; // eax
-  v12 = v10 / 2 - a5; /*0x410df7*/
+  int v11 = a5; // edx /*0x410df1*/
+  int v12 = v10 / 2 - a5; // eax /*0x410df7*/
   if ( v8 && a6 > 0 ) /*0x410e03*/
   {
-  int v16; // [esp+14h] [ebp+4h]
+    int v16; // [esp+14h] [ebp+4h]
     v16 = a6; /*0x410e05*/
     do /*0x410e38*/
     {
       if ( v11 > 0 ) /*0x410e0b*/
       {
-  int v13; // ecx
-        v13 = v11; /*0x410e0d*/
+        int v13 = v11; // ecx /*0x410e0d*/
         do /*0x410e26*/
         {
-  __int16 v14; // dx
+          __int16 v14; // dx
           v14 = *v9++; /*0x410e0f*/
           *v8++ = v14; /*0x410e15*/
           if ( (unsigned int)v9 >= this->M28 ) /*0x410e20*/
@@ -1129,20 +1116,16 @@ namespace gamemd {
 char * sub_410E70(char * a1, int a2, unsigned short a3)
 {
 
-  char *v3; // edx
-  v3 = a1; /*0x410e70*/
-  int v4; // ebx
-  v4 = a2; /*0x410e75*/
+  char *v3 = a1; // edx /*0x410e70*/
+  int v4 = a2; // ebx /*0x410e75*/
   if ( ((uint8_t)a1 & 2) != 0 && a2 ) /*0x410e86*/
   {
     *(unsigned short *)a1 = a3; /*0x410e88*/
     v3 = a1 + 2; /*0x410e8b*/
     v4 = a2 - 1; /*0x410e8e*/
   }
-  char *result; // eax
-  result = 0; /*0x410e91*/
-  unsigned int v6; // esi
-  v6 = v4 >> 1; /*0x410e96*/
+  char *result = 0; // eax /*0x410e91*/
+  unsigned int v6 = v4 >> 1; // esi /*0x410e96*/
   if ( v4 >> 1 ) /*0x410e96*/
   {
     memset32(v3, 65537 * a3, v6); /*0x410eae*/
@@ -1201,16 +1184,13 @@ int E4Recv_412610::sub_412610()
 
   char *v1; // edi
   v1 = (char *)(this); /*0x412612*/
-  int v2; // esi
-  v2 = 0; /*0x412614*/
+  int v2 = 0; // esi /*0x412614*/
   while ( v1 ) /*0x412618*/
   {
     if ( !isxdigit(*v1) ) /*0x41261e*/
       break; /*0x412628*/
-  char v3; // al
-    v3 = *v1; /*0x41262a*/
-  int v4; // esi
-    v4 = 16 * v2; /*0x41262c*/
+    char v3 = *v1; // al /*0x41262a*/
+    int v4 = 16 * v2; // esi /*0x41262c*/
     ++v1; /*0x41262f*/
     if ( v3 < 48 || v3 > 57 ) /*0x412636*/
       v2 = v4 + toupper(v3) - 55; /*0x41264d*/
@@ -1365,8 +1345,7 @@ int sub_412870()
 
   unsigned int *v0; // esi
   v0 = (unsigned int *)(g_CellClassManager);
-  int v1; // edi
-  v1 = 400; /*0x412878*/
+  int v1 = 400; // edi /*0x412878*/
   do /*0x41289c*/
   {
     EventClass::resetEvent(v0, 0, 0); /*0x412883*/
@@ -1395,11 +1374,10 @@ void sub_4128F0()
 
   unsigned int *v0; // esi
   v0 = (unsigned int *)(g_CellClassManager);
-  int v1; // ebp
-  v1 = 400; /*0x4128f9*/
+  int v1 = 400; // ebp /*0x4128f9*/
   do /*0x412917*/
   {
-  int v2; // edi
+    int v2; // edi
     v2 = v0[2]; /*0x412902*/
     (*(void (**)(unsigned int *))(*v0 + 12))(v0); /*0x412907*/
     (*(void (**)(unsigned int *, int, unsigned int))(*v0 + 8))(v0, v2, 0); /*0x412910*/
@@ -1407,8 +1385,7 @@ void sub_4128F0()
     --v1; /*0x412916*/
   }
   while ( v1 ); /*0x412917*/
-  int v3; // esi
-  v3 = dword_889E10; /*0x41291e*/
+  int v3 = dword_889E10; // esi /*0x41291e*/
   (*(void (**)(int *))(dword_889E08 + 12))(&dword_889E08); /*0x412929*/
   (*(void (**)(int *, int, unsigned int))(dword_889E08 + 8))(&dword_889E08, v3, 0); /*0x412939*/
   dword_889E08 = (int)&vt_VectorClass; /*0x412948*/
@@ -1421,11 +1398,10 @@ void sub_4128F0()
   dword_889E10 = 0; /*0x41296d*/
   void **v4; // esi
   v4 = (void **)(&dword_889E0C); /*0x412973*/
-  int v5; // edi
-  v5 = 400; /*0x412978*/
+  int v5 = 400; // edi /*0x412978*/
   do /*0x4129a1*/
   {
-  void *v6; // eax
+    void *v6; // eax
     v6 = *(v4 - 6); /*0x41297d*/
     v4 -= 6; /*0x412980*/
     *(v4 - 1) = &vt_VectorClass; /*0x412985*/
@@ -2117,19 +2093,19 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
     if ( a2 ) /*0x41fefa*/
     {
       a2 = (unsigned int *)*HouseClass::GetCurrentOption(((HouseClass *)a1), (unsigned int *)(&a1)); /*0x41ff14*/
-  int *CurrentOption; // eax
- CurrentOption = (int *)(HouseClass::GetCurrentOption(((HouseClass *)a2), (unsigned int *)(&a1))); /*0x41ff1b*/
-  int v6; // esi
+      int *CurrentOption; // eax
+      CurrentOption = (int *)(HouseClass::GetCurrentOption(((HouseClass *)a2), (unsigned int *)(&a1))); /*0x41ff1b*/
+      int v6; // esi
       v6 = *(unsigned int *)(v3 + 236); /*0x41ff22*/
       aP0 = (IUnknown *)(*CurrentOption); /*0x41ff28*/
       if ( !*(unsigned char *)(v3 + 241) ) /*0x41ff37*/
       {
-  int TileIndex; // edi
+        int TileIndex; // edi
         TileIndex = ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&aP0, v6, 0); /*0x41ffa2*/
-// 0x56d230
+        // 0x56d230
         return ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)&a2, v6, 0) == TileIndex; /*0x41ffbd*/
-} // namespace gamemd
-}
-}
+      } // namespace gamemd
+    }
+  }
 }
 }

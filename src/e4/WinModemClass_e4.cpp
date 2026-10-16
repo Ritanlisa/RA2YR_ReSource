@@ -26,24 +26,21 @@ int WinModemClass::ReadSerial()
   DWORD NumberOfBytesTransferred; // [esp+10h] [ebp-18h] BYREF
   struct _COMSTAT Stat; // [esp+1Ch] [ebp-Ch] BYREF
 
-  char v2; // al
-  v2 = this->u32_50; /*0x77498b*/
+  char v2 = this->u32_50; // al /*0x77498b*/
   DWORD v16; // [esp+14h] [ebp-14h]
   v16 = 0; /*0x77498e*/
   if ( v2 ) /*0x774994*/
   {
-  void *v3; // edx
+    void *v3; // edx
     v3 = (void *)(*(unsigned int *)this->__pad_158 + 24)); /*0x774996*/
     NumberOfBytesTransferred = 0; /*0x7749a4*/
     if ( GetOverlappedResult(v3, (LPOVERLAPPED)(&this->q040), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
     {
-  DWORD v4; // ecx
-      v4 = NumberOfBytesTransferred; /*0x7749b2*/
+      DWORD v4 = NumberOfBytesTransferred; // ecx /*0x7749b2*/
       this->u32_50 = 0; /*0x7749b6*/
       if ( v4 ) /*0x7749bb*/
       {
-  DWORD v5; // eax
-        v5 = 0; /*0x7749bd*/
+        DWORD v5 = 0; // eax /*0x7749bd*/
         do /*0x7749e4*/
         {
           *(unsigned char *)(this->u32_24 + this->u32_58) = *(unsigned char *)(this + v5++ + 108); /*0x7749cd*/
@@ -61,15 +58,13 @@ int WinModemClass::ReadSerial()
     }
   }
   ResetEvent(*(unsigned int *)this->u32_CC + 20)); /*0x774a15*/
-  int cbInQue; // edi
-  cbInQue = 1; /*0x774a29*/
+  int cbInQue = 1; // edi /*0x774a29*/
   DWORD Errors; // [esp+18h] [ebp-10h] BYREF
   if ( ClearCommError(*(unsigned int *)this->__pad_158 + 24), &Errors, &Stat) ) /*0x774a2e*/
   {
-  DWORD v8; // ecx
-    v8 = Errors; /*0x774a38*/
+    DWORD v8 = Errors; // ecx /*0x774a38*/
     cbInQue = Stat.cbInQue; /*0x774a3c*/
-  DWORD cbOutQue; // eax
+    DWORD cbOutQue; // eax
     cbOutQue = Stat.cbOutQue; /*0x774a40*/
     v10 = Errors == 0; /*0x774a44*/
     this->u32_1C = Stat.cbInQue; /*0x774a46*/
@@ -91,17 +86,17 @@ int WinModemClass::ReadSerial()
   }
   while ( 1 ) /*0x774a86*/
   {
-  void *v11; // ecx
+    void *v11; // ecx
     v11 = (void *)(*(unsigned int *)this->__pad_158 + 24)); /*0x774a86*/
     NumberOfBytesTransferred = 0; /*0x774a95*/
-  BOOL v12; // eax
+    BOOL v12; // eax
     v12 = ReadFile(v11, (LPVOID)this->__pad_158 + 88), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)(&this->q040)); /*0x774a99*/
     v12 = v12; /*0x774aa1*/
     if ( !v12 ) /*0x774aa6*/
       break; /*0x774aa6*/
     if ( NumberOfBytesTransferred ) /*0x774aae*/
     {
-  DWORD i; // eax
+      DWORD i; // eax
       for ( i = 0; i < NumberOfBytesTransferred; ++i ) /*0x774ab0*/
       {
         *(unsigned char *)(this->u32_24 + this->u32_58) = *(unsigned char *)(i + &this->q06C); /*0x774abf*/
@@ -132,16 +127,14 @@ int WinModemClass::ReadBytes(unsigned char *a2, int a3)
 
   if ( !((int)this)->ReadSerial() ) /*0x774b37*/
     return 0; /*0x774ba9*/
-  int v4; // ebx
-  v4 = this->u32_58 - this->u32_54; /*0x774b46*/
+  int v4 = this->u32_58 - this->u32_54; // ebx /*0x774b46*/
   int v5; // ebx
   v5 = v4 + (v4 < 0 ? 0x2000 : 0);
   if ( v5 > a3 ) /*0x774b56*/
     v5 = a3; /*0x774b58*/
   if ( v5 <= 0 ) /*0x774b5c*/
     return v5; /*0x774ba2*/
-  int v7; // ebp
-  v7 = v5; /*0x774b63*/
+  int v7 = v5; // ebp /*0x774b63*/
   do /*0x774b96*/
   {
     v8 = (void (*)(void))this->u32_64; /*0x774b65*/
@@ -214,7 +207,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   v7 = (int)(aP4); /*0x774d24*/
   Ticks = Timer::GetTicks(); /*0x774d28*/
   v21 = (int)(aP4); /*0x774d30*/
-LABEL_2:
+  LABEL_2:
   v19 = Timer::GetTicks(); /*0x774d38*/
   while ( 1 )
   {
@@ -258,7 +251,7 @@ LABEL_2:
       }
       if ( !v13 ) /*0x774e2b*/
       {
-LABEL_20:
+        LABEL_20:
         Str[a4 - 1] = 0; /*0x774e31*/
         v15 = (char *)(strstr(Str, word_832678)); /*0x774e45*/
         if ( v15 ) /*0x774e4c*/
@@ -276,7 +269,7 @@ LABEL_20:
             v15 = strchr(Str, 10); /*0x774eb1*/
           if ( v15 ) /*0x774eb5*/
           {
-LABEL_38:
+            LABEL_38:
             while ( *v15 == 13 || *v15 == 10 ) /*0x774ebf*/
               ++v15; /*0x774ec1*/
             if ( v15 != Str ) /*0x774ec6*/
@@ -433,7 +426,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     }
     if ( v19 < 1 ) /*0x77529b*/
     {
-LABEL_16:
+      LABEL_16:
       v11 = 1; /*0x77529d*/
       goto LABEL_21; /*0x7752a2*/
     }
@@ -446,7 +439,7 @@ LABEL_16:
       else
         v11 = v20 - v21; /*0x7752be*/
     }
-LABEL_21:
+    LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
     (*(void (**)(WinModemClass *, int, char *, int, int))(*(unsigned int *)this->vtable1 + 20))( /*0x7752e6*/
       this,
@@ -582,8 +575,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
 {
 
 
-  int v3; // eax
-  v3 = this->u32_5C; /*0x775613*/
+  int v3 = this->u32_5C; // eax /*0x775613*/
   /* X11: vtable install elided (implicit via WinModemClass virtuals 0x775616) */
   if ( v3 != -1 ) /*0x77561f*/
   {

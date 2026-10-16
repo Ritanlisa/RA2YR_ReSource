@@ -53,7 +53,7 @@ RadSiteClass::RadSiteClass()
          dword_B04BD8 + dword_B04BE4,
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = dword_B04BE0++; /*0x65b284*/
     *((unsigned int *)dword_B04BD4 + v3) = (unsigned int)(this); /*0x65b293*/
   }
@@ -89,7 +89,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x65b3e9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x65b3f2*/
-  int v3; // edx
+      int v3; // edx
       v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x65b3f7*/
       aP0-((unsigned int *)(>RadLevelTimer))[2] = 0; /*0x65b3fd*/
       aP0-((unsigned int *)(>RadLevelTimer))[0] = v3; /*0x65b404*/

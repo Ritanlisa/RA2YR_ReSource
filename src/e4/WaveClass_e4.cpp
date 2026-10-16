@@ -77,14 +77,14 @@ int WaveClass::LoadWaveData(int a2, int a3)
       {
   LABEL_17:
         v11 = 0; /*0x75f799*/
-        if ( v6 > 0 ) /*0x75f79d*/
-        {
+    if ( v6 > 0 ) /*0x75f79d*/
+  {
           do /*0x75f7b8*/
-            ObjectPtr::RegisterForTracking( /*0x75f7ae*/
+          ObjectPtr::RegisterForTracking( /*0x75f7ae*/
               (int)&SwizzleManagerClass_Instance,
               (int *)(v4->u32_1F4 + 4 * v11++));
           while ( v11 < a2 ); /*0x75f7b8*/
-        }
+  }
       }
       else
       {
@@ -134,8 +134,8 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   {
     --*(unsigned int *)&DataGlobal_A8EB00[328]; /*0x76324f*/
     for ( ; /*0x763255*/
-          v3 < *(int *)&DataGlobal_A8EB64;
-          *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB58 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB58 + 4 * v3) )
+    v3 < *(int *)&DataGlobal_A8EB64;
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB58 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB58 + 4 * v3) )
     {
       ++v3; /*0x76325d*/
     }
@@ -197,9 +197,9 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       v9 = (unsigned int *)v6->firstObject; /*0x75f3df*/
     for ( ; v9; v9 = (unsigned int *)v9[12] ) /*0x75f3e7*/
     {
-      v10 = (unsigned int *)(this->Owner); /*0x75f3e9*/
-      if ( v9 != v10 && *((unsigned char *)v9 + 144) && *((unsigned char *)v9 + 116) && !*((unsigned char *)v9 + 129) && (int)v9[27] > 0 ) /*0x75f413*/
-        (*(void (**)(unsigned int *, int *, unsigned int, int, unsigned int *, unsigned int, unsigned int, unsigned int))(*v9 + 364))( /*0x75f42c*/
+          v10 = (unsigned int *)(this->Owner); /*0x75f3e9*/
+          if ( v9 != v10 && *((unsigned char *)v9 + 144) && *((unsigned char *)v9 + 116) && !*((unsigned char *)v9 + 129) && (int)v9[27] > 0 ) /*0x75f413*/
+            (*(void (**)(unsigned int *, int *, unsigned int, int, unsigned int *, unsigned int, unsigned int, unsigned int))(*v9 + 364))( /*0x75f42c*/
           v9,
           &v18,
           0,

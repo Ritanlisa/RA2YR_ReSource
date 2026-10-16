@@ -179,7 +179,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations(void *a1)
     }
     if ( v22 ) /*0x454c4d*/
     {
-  LABEL_52:
+      LABEL_52:
       BuildingClass::GetHealthRatio(); /*0x454c59*/
       _EDX = *(unsigned int *)&g_RulesClass_Instance; /*0x454c60*/
       __asm /*0x454c66*/
@@ -208,7 +208,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations(void *a1)
       }
       return; /*0x454cd1*/
     }
-  LABEL_51:
+    LABEL_51:
     if ( !*(unsigned char *)(v20 + 22395) ) /*0x454c57*/
       return; /*0x454c57*/
     goto LABEL_52; /*0x454c57*/
@@ -226,7 +226,7 @@ int Animation::GetProgress()
   {
     if ( this->q014 ) /*0x4a52fb*/
     {
-  int v2; // edx
+      int v2; // edx
       v2 = (int)(this->q008); /*0x4a5311*/
       result = (int)(this->q010); /*0x4a5314*/
       if ( v2 != -1 ) /*0x4a531a*/
@@ -258,7 +258,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   *(unsigned int *)&v23.headNode = 6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {
-  void *v6; // esi
+    void *v6; // esi
     v6 = *(void **)this; /*0x770574*/
     ((String *)((String *)&aP2))->Assign((const char *)(off_83E188)); /*0x77057f*/
     INIClass::ReadTokenizedPair(v5,(unsigned int *)(v4), v3, v6, 0, (char **)&aP2); /*0x770590*/
@@ -286,20 +286,20 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   unknown_libname_73(&aP2); /*0x770678*/
   int i; // edi
   for ( i = String::Tokenize((String *)&a1, 0, Str, (void **)&aP2); /*0x770697*/
-        i != -1;
-        i = String::Tokenize((String *)&a1, i, Str, (void **)&aP2) )
+  i != -1;
+  i = String::Tokenize((String *)&a1, i, Str, (void **)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP2); /*0x77069d*/
-  int v9; // ecx
+    int v9; // ecx
     v9 = *(unsigned int *)&v22[900]; /*0x7706a2*/
-  int v10; // eax
-  int v24; // [esp+1Ch] [ebp-4h]
+    int v10; // eax
+    int v24; // [esp+1Ch] [ebp-4h]
     v24 = v10; /*0x7706a5*/
     if ( *(unsigned int *)&v22[908] >= v9 ) /*0x7706ac*/
     {
       if ( !*(unsigned char *)&v22[905] && v9 ) /*0x7706b7*/
         continue; /*0x7706b7*/
-  int v11; // eax
+      int v11; // eax
       v11 = *(unsigned int *)&v22[912]; /*0x7706b9*/
       if ( v11 <= 0 /*0x7706c9*/
         || !(*(uint8_t (**)(Animation *, int, unsigned int))(*(unsigned int *)&v22[892] + 8))(
@@ -310,9 +310,9 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7706c9*/
       }
     }
-  int v12; // eax
+    int v12; // eax
     v12 = *(unsigned int *)&v22[908]; /*0x7706d0*/
-  int v13; // edx
+    int v13; // edx
     v13 = *(unsigned int *)&v22[896]; /*0x7706d3*/
     *(unsigned int *)&v22[908] = v12 + 1; /*0x7706d9*/
     *(unsigned int *)(v13 + 4 * v12) = v24; /*0x7706e0*/
@@ -333,20 +333,19 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   unknown_libname_73(&aP2); /*0x770797*/
   int j; // edi
   for ( j = String::Tokenize((String *)&a1, 0, Str, (void **)&aP2); /*0x7707b6*/
-        j != -1;
-        j = String::Tokenize((String *)&a1, j, Str, (void **)&aP2) )
+  j != -1;
+  j = String::Tokenize((String *)&a1, j, Str, (void **)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP2); /*0x7707bc*/
-  int v16; // ecx
+    int v16; // ecx
     v16 = *(unsigned int *)&v22[924]; /*0x7707c1*/
-  int v17; // eax
-  int v18; // ebx
-    v18 = v17; /*0x7707c4*/
+    int v17; // eax
+    int v18 = v17; // ebx /*0x7707c4*/
     if ( *(unsigned int *)&v22[932] >= v16 ) /*0x7707c9*/
     {
       if ( !*(unsigned char *)&v22[929] && v16 ) /*0x7707d4*/
         continue; /*0x7707d4*/
-  int v19; // eax
+      int v19; // eax
       v19 = *(unsigned int *)&v22[936]; /*0x7707d6*/
       if ( v19 <= 0 /*0x7707e6*/
         || !(*(uint8_t (**)(Animation *, int, unsigned int))(*(unsigned int *)&v22[916] + 8))(
@@ -357,9 +356,9 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7707e6*/
       }
     }
-  int v20; // eax
+    int v20; // eax
     v20 = *(unsigned int *)&v22[932]; /*0x7707ed*/
-  int v21; // edx
+    int v21; // edx
     v21 = *(unsigned int *)&v22[920]; /*0x7707f0*/
     *(unsigned int *)&v22[932] = v20 + 1; /*0x7707f6*/
     *(unsigned int *)(v21 + 4 * v20) = v18; /*0x7707f9*/

@@ -54,10 +54,9 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 
   if ( aP1 && (*(int (**)(void *))(*(unsigned int *)aP1 + 44))(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
   {
-  AbstractClass *v4; // eax
+    AbstractClass *v4; // eax
     v4 = (AbstractClass *)__2_YAPAXI_Z(0x5Cu); /*0x438eaf*/
-  AbstractClass *v5; // esi
-    v5 = v4; /*0x438eb4*/
+    AbstractClass *v5 = v4; // esi /*0x438eb4*/
     if ( v4 ) /*0x438ebb*/
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
@@ -79,7 +78,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
              dword_89C670 + dword_89C67C,
              0) )
       {
-  int v6; // eax
+        int v6; // eax
         v6 = dword_89C678++; /*0x438f44*/
         *((unsigned int *)dword_89C66C + v6) = (unsigned int)(v5); /*0x438f53*/
       }
@@ -92,14 +91,14 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
     v5[1].uniqueId = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x438f75*/
-  int v7; // ecx
+    int v7; // ecx
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4048); /*0x438f87*/
     v5[1].vtable3 = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
     aP2[14] = v5; /*0x438f8f*/
-  void *vtable2; // eax
+    void *vtable2; // eax
     vtable2 = this->vtable2; /*0x438f92*/
-  int abstractFlags; // ecx
+    int abstractFlags; // ecx
     if ( this->uniqueId < (int)vtable2 /*0x438fb4*/
       || (BYTE1(this->vtable3) || !vtable2)
       && (abstractFlags = this->abstractFlags, abstractFlags > 0)
@@ -108,9 +107,9 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
            (int)vtable2 + abstractFlags,
            0) )
     {
-  int uniqueId; // eax
+      int uniqueId; // eax
       uniqueId = this->uniqueId; /*0x438fbb*/
-  unsigned int *vtable1; // edx
+      unsigned int *vtable1; // edx
       vtable1 = (unsigned int *)(this->vtable1); /*0x438fbe*/
       this->uniqueId = uniqueId + 1; /*0x438fc4*/
       vtable1[uniqueId] = (unsigned int)(v5); /*0x438fc7*/
@@ -120,7 +119,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       if ( (unsigned __int8)(aP1->owner)->IsHumanPlayer() ) /*0x438fe6*/
       {
-  unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
+        unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
         v12[0] = (unsigned int)(aP2[39]); /*0x438ffc*/
         v12[1] = (unsigned int)(aP2[40]); /*0x439007*/
         v12[2] = (unsigned int)(aP2[41]); /*0x439013*/
@@ -167,11 +166,9 @@ namespace gamemd {
 VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void * a2, void * p_vtable0, void * a4, void * a5)
 {
 
-  AbstractClass *v6; // ebp
-  v6 = this; /*0x4fb9b2*/
+  AbstractClass *v6 = this; // ebp /*0x4fb9b2*/
   int v5; // ecx
-  int v7; // esi
-  v7 = v5; /*0x4fb9b7*/
+  int v7 = v5; // esi /*0x4fb9b7*/
   if ( *(AbstractClass **)(v5 + 21728) == this ) /*0x4fb9c1*/
     *(unsigned int *)(v5 + 21728) = 0; /*0x4fb9c3*/
   this = (AbstractClass *)__RTDynamicCast( /*0x4fb9e1*/
@@ -181,19 +178,17 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
                             0);
   if ( this ) /*0x4fb9e5*/
   {
-  int v8; // eax
+    int v8; // eax
     v8 = (*(int (**)(int, AbstractClass **))(v7->conYards + 16))(v7 + 56, &this); /*0x4fb9f4*/
     if ( v8 != -1 ) /*0x4fb9fa*/
     {
-  int v9; // ecx
-      v9 = *&v7->buildingsCount; /*0x4fb9fc*/
+      int v9 = *&v7->buildingsCount; // ecx /*0x4fb9fc*/
       if ( v8 < v9 ) /*0x4fba01*/
       {
-  int v10; // ecx
-        v10 = v9 - 1; /*0x4fba03*/
+        int v10 = v9 - 1; // ecx /*0x4fba03*/
         for ( *(unsigned int *)(v7 + 72) = v10; /*0x4fba09*/
-              v8 < v7->buildingsCount;
-              *(unsigned int *)(v7->conYardsCount + 4 * v8 - 4) = *(unsigned int *)(v7->conYardsCount + 4 * v8) )
+        v8 < v7->buildingsCount;
+        *(unsigned int *)(v7->conYardsCount + 4 * v8 - 4) = *(unsigned int *)(v7->conYardsCount + 4 * v8) )
         {
           ++v8; /*0x4fba0e*/
         }
@@ -202,148 +197,127 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
   }
   if ( (*((int (**)(AbstractClass *))v6->vfptr + 11))(v6) == 6 && (unsigned char)p_vtable0 ) /*0x4fba32*/
   {
-  int v11; // edx
-    v11 = v7->unitRepairStations; /*0x4fba38*/
+    int v11 = v7->unitRepairStations; // edx /*0x4fba38*/
     p_vtable0 = &v6->vfptr; /*0x4fba45*/
-  int v12; // eax
+    int v12; // eax
     v12 = (*(int (**)(int, void ***, int))(v11 + 16))(v7 + 80, &p_vtable0, a2); /*0x4fba49*/
     if ( v12 != -1 ) /*0x4fba4f*/
       Vector::RemoveAt(&v7->unitRepairStations, v12); /*0x4fba54*/
-  int v13; // edx
-    v13 = v7->occupiables; /*0x4fba59*/
+    int v13 = v7->occupiables; // edx /*0x4fba59*/
     a4 = &v6->vfptr; /*0x4fba6c*/
-  int v14; // eax
+    int v14; // eax
     v14 = (*(int (**)(int, void ***))(v13 + 16))(v7 + 128, &a4); /*0x4fba70*/
     if ( v14 != -1 ) /*0x4fba76*/
     {
-  int v15; // ecx
-      v15 = *&v7->cloningVatsCount; /*0x4fba78*/
+      int v15 = *&v7->cloningVatsCount; // ecx /*0x4fba78*/
       if ( v14 < v15 ) /*0x4fba7d*/
       {
-  int v16; // ecx
-        v16 = v15 - 1; /*0x4fba7f*/
+        int v16 = v15 - 1; // ecx /*0x4fba7f*/
         for ( *(unsigned int *)(v7 + 144) = v16; /*0x4fba85*/
-              v14 < v7->cloningVatsCount;
-              *(unsigned int *)(v7->occupiablesCount + 4 * v14 - 4) = *(unsigned int *)(v7->occupiablesCount + 4 * v14) )
+        v14 < v7->cloningVatsCount;
+        *(unsigned int *)(v7->occupiablesCount + 4 * v14 - 4) = *(unsigned int *)(v7->occupiablesCount + 4 * v14) )
         {
           ++v14; /*0x4fba8a*/
         }
       }
     }
-  int v17; // eax
-    v17 = v7->secretLabs; /*0x4fba99*/
+    int v17 = v7->secretLabs; // eax /*0x4fba99*/
     a4 = &v6->vfptr; /*0x4fbaa9*/
-  int v18; // eax
+    int v18; // eax
     v18 = (*(int (**)(int, void ***))(v17 + 16))(v7 + 152, &a4); /*0x4fbab0*/
     if ( v18 != -1 ) /*0x4fbab6*/
       Vector::RemoveAt(&v7->secretLabs, v18); /*0x4fbabb*/
-  int v19; // edx
-    v19 = v7->productionFactory_plants; /*0x4fbac0*/
+    int v19 = v7->productionFactory_plants; // edx /*0x4fbac0*/
     a4 = &v6->vfptr; /*0x4fbad3*/
-  int v20; // eax
+    int v20; // eax
     v20 = (*(int (**)(int, void ***))(v19 + 16))(v7 + 176, &a4); /*0x4fbad7*/
     if ( v20 != -1 ) /*0x4fbadd*/
     {
-  int v21; // ecx
-      v21 = *&v7->countResourceDestinations; /*0x4fbadf*/
+      int v21 = *&v7->countResourceDestinations; // ecx /*0x4fbadf*/
       if ( v20 < v21 ) /*0x4fbae4*/
       {
-  int v22; // ecx
-        v22 = v21 - 1; /*0x4fbae6*/
+        int v22 = v21 - 1; // ecx /*0x4fbae6*/
         for ( *(unsigned int *)(v7 + 192) = v22; /*0x4fbaec*/
-              v20 < v7->countResourceDestinations;
-              *(unsigned int *)(v7->productionFactory_plants_count + 4 * v20 - 4) = *(unsigned int *)(v7->productionFactory_plants_count + 4 * v20) )
+        v20 < v7->countResourceDestinations;
+        *(unsigned int *)(v7->productionFactory_plants_count + 4 * v20 - 4) = *(unsigned int *)(v7->productionFactory_plants_count + 4 * v20) )
         {
           ++v20; /*0x4fbaf1*/
         }
       }
     }
-  int v23; // eax
-    v23 = *&v7->infantrySelfHeal; /*0x4fbb00*/
+    int v23 = *&v7->infantrySelfHeal; // eax /*0x4fbb00*/
     a4 = &v6->vfptr; /*0x4fbb10*/
-  int v24; // eax
+    int v24; // eax
     v24 = (*(int (**)(int, void ***))(v23 + 16))(v7 + 200, &a4); /*0x4fbb17*/
     if ( v24 != -1 ) /*0x4fbb1d*/
       Vector::RemoveAt(&v7->infantrySelfHeal, v24); /*0x4fbb22*/
-  int v25; // edx
-    v25 = v7->firepowerMultiplier; /*0x4fbb27*/
+    int v25 = v7->firepowerMultiplier; // edx /*0x4fbb27*/
     a4 = &v6->vfptr; /*0x4fbb3a*/
-  int v26; // eax
+    int v26; // eax
     v26 = (*(int (**)(int, void ***))(v25 + 16))(v7 + 224, &a4); /*0x4fbb3e*/
     if ( v26 != -1 ) /*0x4fbb44*/
     {
-  int v27; // ecx
-      v27 = *&v7->airspeedMultiplier; /*0x4fbb46*/
+      int v27 = *&v7->airspeedMultiplier; // ecx /*0x4fbb46*/
       if ( v26 < v27 ) /*0x4fbb4b*/
       {
-  int v28; // ecx
-        v28 = v27 - 1; /*0x4fbb4d*/
+        int v28 = v27 - 1; // ecx /*0x4fbb4d*/
         for ( *(unsigned int *)(v7 + 240) = v28; /*0x4fbb53*/
-              v26 < v7->airspeedMultiplier;
-              *(unsigned int *)(v7->Tactical_E4 + 4 * v26 - 4) = *(unsigned int *)(v7->Tactical_E4 + 4 * v26) )
+        v26 < v7->airspeedMultiplier;
+        *(unsigned int *)(v7->Tactical_E4 + 4 * v26 - 4) = *(unsigned int *)(v7->Tactical_E4 + 4 * v26) )
         {
           ++v26; /*0x4fbb58*/
         }
       }
     }
-  int v29; // eax
-    v29 = v7->armorMultiplier; /*0x4fbb67*/
+    int v29 = v7->armorMultiplier; // eax /*0x4fbb67*/
     a4 = &v6->vfptr; /*0x4fbb77*/
-  int v30; // eax
+    int v30; // eax
     v30 = (*(int (**)(int, void ***))(v29 + 16))(v7 + 248, &a4); /*0x4fbb7e*/
     if ( v30 != -1 ) /*0x4fbb84*/
       Vector::RemoveAt(&v7->armorMultiplier, v30); /*0x4fbb89*/
-  int v31; // edx
-    v31 = v7->buildTimeMultiplier; /*0x4fbb8e*/
+    int v31 = v7->buildTimeMultiplier; // edx /*0x4fbb8e*/
     a4 = &v6->vfptr; /*0x4fbba1*/
-  int v32; // eax
+    int v32; // eax
     v32 = (*(int (**)(int, void ***))(v31 + 16))(v7 + 272, &a4); /*0x4fbba5*/
     if ( v32 != -1 ) /*0x4fbbab*/
       Vector::RemoveAt(&v7->buildTimeMultiplier, v32); /*0x4fbbb0*/
-  int v33; // edx
-    v33 = v7->iqLevel; /*0x4fbbb5*/
+    int v33 = v7->iqLevel; // edx /*0x4fbbb5*/
     a4 = &v6->vfptr; /*0x4fbbc8*/
-  int v34; // eax
+    int v34; // eax
     v34 = (*(int (**)(int, void ***))(v33 + 16))(v7 + 296, &a4); /*0x4fbbcc*/
     if ( v34 != -1 ) /*0x4fbbd2*/
     {
-  int v35; // ecx
-      v35 = *&v7->startingEdge; /*0x4fbbd4*/
+      int v35 = *&v7->startingEdge; // ecx /*0x4fbbd4*/
       if ( v34 < v35 ) /*0x4fbbd9*/
       {
-  int v36; // ecx
-        v36 = v35 - 1; /*0x4fbbdb*/
+        int v36 = v35 - 1; // ecx /*0x4fbbdb*/
         for ( *(unsigned int *)(v7 + 312) = v36; /*0x4fbbe1*/
-              v34 < v7->startingEdge;
-              *(unsigned int *)(v7->techLevel + 4 * v34 - 4) = *(unsigned int *)(v7->techLevel + 4 * v34) )
+        v34 < v7->startingEdge;
+        *(unsigned int *)(v7->techLevel + 4 * v34 - 4) = *(unsigned int *)(v7->techLevel + 4 * v34) )
         {
           ++v34; /*0x4fbbe6*/
         }
       }
     }
-  int v37; // eax
-    v37 = *&v7->q140; /*0x4fbbf5*/
+    int v37 = *&v7->q140; // eax /*0x4fbbf5*/
     a4 = &v6->vfptr; /*0x4fbc05*/
-  int v38; // eax
+    int v38; // eax
     v38 = (*(int (**)(int, void ***))(v37 + 16))(v7 + 320, &a4); /*0x4fbc0c*/
     if ( v38 != -1 ) /*0x4fbc12*/
       Vector::RemoveAt(&v7->q140, v38); /*0x4fbc17*/
-  int v39; // edx
-    v39 = v7->absorbers; /*0x4fbc1c*/
+    int v39 = v7->absorbers; // edx /*0x4fbc1c*/
     a4 = &v6->vfptr; /*0x4fbc29*/
-  int v40; // eax
+    int v40; // eax
     v40 = (*(int (**)(int, void ***))(v39 + 16))(v7 + 104, &a4); /*0x4fbc2d*/
     if ( v40 != -1 ) /*0x4fbc33*/
     {
-  int v41; // ecx
-      v41 = *&v7->bunkersCount; /*0x4fbc35*/
+      int v41 = *&v7->bunkersCount; // ecx /*0x4fbc35*/
       if ( v40 < v41 ) /*0x4fbc3a*/
       {
-  int v42; // ecx
-        v42 = v41 - 1; /*0x4fbc3c*/
+        int v42 = v41 - 1; // ecx /*0x4fbc3c*/
         for ( *(unsigned int *)(v7 + 120) = v42; /*0x4fbc42*/
-              v40 < v7->bunkersCount;
-              *(unsigned int *)(v7->absorbersCount + 4 * v40 - 4) = *(unsigned int *)(v7->absorbersCount + 4 * v40) )
+        v40 < v7->bunkersCount;
+        *(unsigned int *)(v7->absorbersCount + 4 * v40 - 4) = *(unsigned int *)(v7->absorbersCount + 4 * v40) )
         {
           ++v40; /*0x4fbc47*/
         }
@@ -351,10 +325,8 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     }
     ((float *)v7)->CalculateCostMultipliers(); /*0x4fbc58*/
   }
-  void ***result; // eax
-  result = &v7->planningPaths; /*0x4fbc5d*/
-  int v44; // ecx
-  v44 = 12; /*0x4fbc63*/
+  void ***result = &v7->planningPaths; // eax /*0x4fbc5d*/
+  int v44 = 12; // ecx /*0x4fbc63*/
   do /*0x4fbc73*/
   {
     if ( *result == (void **)v6 ) /*0x4fbc6b*/
@@ -395,29 +367,29 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c03da*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c03ea*/
-  int v3; // ebx
-  int v8; // [esp+4h] [ebp-20h] BYREF
-  int v9; // [esp+8h] [ebp-1Ch]
-  int *v10; // [esp+Ch] [ebp-18h]
+    int v3; // ebx
+    int v8; // [esp+4h] [ebp-20h] BYREF
+    int v9; // [esp+8h] [ebp-1Ch]
+    int *v10; // [esp+Ch] [ebp-18h]
     Frame::Present((int)DSurface_Alternate, v3, a2, a3, 0, v8, v9, v10); /*0x5c03f7*/
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
       GetClientRect(g_hWnd, &Rect); /*0x5c0419*/
       ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5c042b*/
-  int v5; // edx
+      int v5; // edx
       v5 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5c0446*/
-  int v6; // ecx
+      int v6; // ecx
       v6 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5c0449*/
-  int v7; // edi
+      int v7; // edi
       v7 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5c044b*/
       v10 = *(int **)(g_MissionQueueFrame.localVariables[604] + 60); /*0x5c044e*/
       v9 = v6; /*0x5c0454*/
       v8 = Rect.left + v7; /*0x5c045e*/
-  int v11; // [esp+10h] [ebp-14h]
+      int v11; // [esp+10h] [ebp-14h]
       v11 = v5; /*0x5c0462*/
       return (*((int (**)(DSurface *, int *, unsigned int, int, unsigned int, int))g_DSurface_Primary /*0x5c0477*/
-              + 2))(
+      + 2))(
                g_DSurface_Primary,
                &v8,
                *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8),
@@ -492,13 +464,12 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
   int i; // ebx
   for ( i = dword_A8EC88 - 1; i >= 0; --i ) /*0x70d4c6*/
   {
-  bool v4; // cl
-    v4 = 1; /*0x70d4d2*/
-  unsigned int *v5; // esi
+    bool v4 = 1; // cl /*0x70d4d2*/
+    unsigned int *v5; // esi
     v5 = (unsigned int *)*((unsigned int *)dword_A8EC7C + i); /*0x70d4d6*/
     if ( v2 ) /*0x70d4d9*/
     {
-  int v6; // eax
+      int v6; // eax
       v6 = v5[165]; /*0x70d4db*/
       if ( v6 ) /*0x70d4e3*/
       {
@@ -521,7 +492,7 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
   int j; // ecx
   for ( j = dword_8B40F8 - 1; j >= 0; --j ) /*0x70d560*/
   {
-  int v8; // eax
+    int v8; // eax
     v8 = *((unsigned int *)dword_8B40EC + j); /*0x70d567*/
     if ( *(unsigned int *)(v8 + 60) == a1 ) /*0x70d56d*/
       *(unsigned int *)(v8 + 60) = 0; /*0x70d56f*/
@@ -566,8 +537,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
     case 13: /*0x725911*/
       for ( i = 0; i < *(int *)&DataGlobal_B0F6D8; ++i ) /*0x7259e8*/
         (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(*(unsigned int *)&DataGlobal_B0F6CC /*0x7259f7*/
-                                                                           + 4 * i)
-                                                             + 40))(
+      + 4 * i)
+      + 40))(
           *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F6CC + 4 * i),
           a1,
           a2);
@@ -575,8 +546,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
     case 4: /*0x725911*/
       for ( j = 0; j < g_BuildingLoadQueue_Array.SecondSpawnOffset[1]; ++j ) /*0x725a28*/
         (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.SecretHouses[0] /*0x725a3a*/
-                                                                           + 4 * j)
-                                                             + 40))(
+      + 4 * j)
+      + 40))(
           *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * j),
           a1,
           a2);
@@ -589,8 +560,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       do /*0x72595f*/
       {
         (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.PowerDrain /*0x725954*/
-                                                                           + 4 * v5)
-                                                             + 40))(
+          + 4 * v5)
+          + 40))(
           *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v5),
           a1,
           a2);
@@ -610,7 +581,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
         g_TacticalClass_Instance,
         a1,
         1);
-  LABEL_20:
+    LABEL_20:
     Array::RemoveItemByValue((int)a1, a2); /*0x7259c8*/
     return; /*0x7259d9*/
   }
@@ -621,8 +592,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
   {
     for ( m = 0; m < g_BuildingLoadQueue_Array.LightBlueTint; ++m ) /*0x725a6f*/
       (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.LightIntensity /*0x725a7d*/
-                                                                         + 4 * m)
-                                                           + 40))(
+        + 4 * m)
+        + 40))(
         *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * m),
         a1,
         a2);
@@ -635,8 +606,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       case 12: /*0x725ab1*/
         for ( n = 0; n < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation1[1]; ++n ) /*0x725b34*/
           (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(*(unsigned int *)&g_BuildingLoadQueue_Array.BuildupLoaded /*0x725b42*/
-                                                                             + 4 * n)
-                                                               + 40))(
+        + 4 * n)
+        + 40))(
             *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.BuildupLoaded + 4 * n),
             a1,
             a2);
@@ -645,7 +616,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       case 34: /*0x725ab1*/
         for ( ii = 0; ii < g_BuildingLoadQueue_Array.PaletteFile[1]; ++ii ) /*0x725bc3*/
           (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(((unsigned int *)&g_BuildingLoadQueue_Array)[0] + 4 * ii) /*0x725bd1*/
-                                                               + 40))(
+        + 40))(
             *(unsigned int *)(((unsigned int *)&g_BuildingLoadQueue_Array)[0] + 4 * ii),
             a1,
             a2);
@@ -653,8 +624,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       case 38: /*0x725ab1*/
         for ( jj = 0; jj < g_BuildingLoadQueue_Array.unknown___2; ++jj ) /*0x725b05*/
           (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.ExitCoord[1] /*0x725b18*/
-                                                                             + 4 * jj)
-                                                               + 40))(
+        + 4 * jj)
+        + 40))(
             *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1] + 4 * jj),
             a1,
             a2);
@@ -662,8 +633,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       case 44: /*0x725ab1*/
         for ( kk = 0; kk < *(int *)&DataGlobal_B0F628; ++kk ) /*0x725ac1*/
           (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(*(unsigned int *)&DataGlobal_B0F61C /*0x725ad0*/
-                                                                             + 4 * kk)
-                                                               + 40))(
+        + 4 * kk)
+        + 40))(
             *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F61C + 4 * kk),
             a1,
             a2);
@@ -674,8 +645,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       case 48: /*0x725ab1*/
         for ( mm = 0; mm < g_BuildingLoadQueue_Array.GateCloseDelay[0]; ++mm ) /*0x725b6b*/
           (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] /*0x725b7d*/
-                                                                             + 4 * mm)
-                                                               + 40))(
+        + 4 * mm)
+        + 40))(
             *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * mm),
             a1,
             a2);
@@ -683,8 +654,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       case 51: /*0x725ab1*/
         for ( nn = 0; nn < g_BuildingLoadQueue_Array.PaletteFile[7]; ++nn ) /*0x725b99*/
           (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.PaletteFile[4] /*0x725ba7*/
-                                                                             + 4 * nn)
-                                                               + 40))(
+        + 4 * nn)
+        + 40))(
             *(unsigned int *)(g_BuildingLoadQueue_Array.PaletteFile[4] + 4 * nn),
             a1,
             a2);
@@ -692,8 +663,8 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       case 60: /*0x725ab1*/
         for ( i1 = 0; i1 < g_BuildingLoadQueue_Array.TargetCoordOffset[1]; ++i1 ) /*0x725bed*/
           (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.Adjacent /*0x725bfb*/
-                                                                             + 4 * i1)
-                                                               + 40))(
+        + 4 * i1)
+        + 40))(
             *(unsigned int *)(g_BuildingLoadQueue_Array.Adjacent + 4 * i1),
             a1,
             a2);
@@ -772,9 +743,9 @@ int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0_
   result = aP0->IsClean(&aP0, 4, 0); /*0x410348*/
   if ( result >= 0 ) /*0x41034d*/
   {
-  int v6; // ebx
+    int v6; // ebx
     v6 = (int)(*aP0); /*0x410352*/
-  int v7; // eax
+    int v7; // eax
     v7 = aP0->COMStub_Ret176_12(0); /*0x410358*/
     result = aP0->IsClean(aP0, v7); /*0x41035e*/
     if ( result >= 0 ) /*0x410364*/
@@ -923,7 +894,7 @@ Surface * AbstractClass::getObjectValue(char a2)
 {
   /* X11: vtable install elided (implicit via Surface virtuals 0x4115d9) */
   if ( (a2 & 1) != 0 ) /*0x4115df*/
-    operator delete((void *)(this)); /*0x4115e2*/
+  operator delete((void *)(this)); /*0x4115e2*/
   return (gamemd::Surface *)((std::locale::facet *)this); /*0x4115ec*/
 }
 } // namespace gamemd

@@ -50,8 +50,7 @@ namespace gamemd {
 int32_t Commands::Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7)
 {
 
-  char result; // al
-  result = byte_A8B8B4; /*0x537a90*/
+  char result = byte_A8B8B4; // al /*0x537a90*/
   if ( byte_A8B8B4 ) /*0x537a97*/
   {
     result = byte_A8B8B5 == 0; /*0x537aa0*/

@@ -20,8 +20,7 @@ AbstractClass * Isometric::InitTables(unsigned int *aP1, void *a2)
 {
 
 
-  char v2; // al
-  v2 = byte_89E770; /*0x47b3a9*/
+  char v2 = byte_89E770; // al /*0x47b3a9*/
   if ( (byte_89E770 & 1) == 0 ) /*0x47b3b3*/
   {
     v2 = byte_89E770 | 1; /*0x47b3bb*/
@@ -200,13 +199,13 @@ AbstractClass * Isometric::InitTables(unsigned int *aP1, void *a2)
   result = Math::RoundToInt((double)(dword_89E7C0 * this->u32_11B) + 0.5); /*0x47bab0*/
   if ( this->u8_11C ) /*0x47bab5*/
   {
-  int v5; // ecx
+    int v5; // ecx
     v5 = 40 * (*(unsigned __int8 *)(&this->u8_11C) - 1); /*0x47baec*/
-  double v6; // st7
+    double v6; // st7
     v6 = (double)(unsigned __int8)aP1[1] * *(double *)(v5 + 8505608) * dbl_89E740 /*0x47bb17*/
-       + (double)(unsigned __int8)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
-       + *(double *)(v5 + 8505616)
-       + *(double *)(v5 + 8505632);
+    + (double)(unsigned __int8)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
+    + *(double *)(v5 + 8505616)
+    + *(double *)(v5 + 8505632);
     if ( v6 < 0.0 ) /*0x47bb28*/
       v6 = 0.0; /*0x47bb2c*/
     if ( v6 > *(double *)&qword_81C918[5 * *(unsigned __int8 *)(&this->u8_11C) - 5] ) /*0x47bb3d*/

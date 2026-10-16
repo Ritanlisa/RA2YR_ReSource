@@ -61,7 +61,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
          g_BuildingLoadQueue_Array.?[5] + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = g_BuildingLoadQueue_Array.?[0]++; /*0x71a4c4*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.?[4] + 4 * v3) = this; /*0x71a4d3*/
   }
@@ -99,7 +99,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
          g_BuildingLoadQueue_Array.?[5] + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
-  int v3; // eax
+    int v3; // eax
     v3 = g_BuildingLoadQueue_Array.?[0]++; /*0x71a576*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.?[4] + 4 * v3) = this; /*0x71a585*/
   }
@@ -196,7 +196,7 @@ void ** TemporalClass::ProcessTimeWarp()
     }
     else
     {
-LABEL_10:
+      LABEL_10:
       v14 = (TemporalClass *)this->u32_44; /*0x71a84e*/
       WarpPerStep = 0; /*0x71a851*/
       if ( v14 ) /*0x71a855*/
@@ -221,7 +221,7 @@ LABEL_10:
             v41 = *v23; /*0x71a8e3*/
             v42 = v23[1]; /*0x71a8ea*/
             v43 = v23[2]; /*0x71a8f6*/
-                        result = AnimClass::ctor( /*0x71a909*/                        (AnimClass *)result,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 832)),                        &v41,                        0,                        1,                        (void *)0x600,                        0,                        0);
+            result = AnimClass::ctor( /*0x71a909*/                        (AnimClass *)result,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 832)),                        &v41,                        0,                        1,                        (void *)0x600,                        0,                        0);
           }
         }
         else
@@ -278,8 +278,8 @@ LABEL_10:
             {
               if ( v31 )
                 v32 = v31->getAltitude(*(unsigned int *)this->__pad_028) == 6
-                    ? (BuildingClass *)v31
-                    : 0;
+              ? (BuildingClass *)v31
+              : 0;
               else
                 v32 = 0; /*0x71a9fd*/
               BuildingClass::RemoveLimpet(v32); /*0x71aa15*/
@@ -303,8 +303,8 @@ LABEL_10:
             if ( v35 )
             {
               v36 = (*(int (**)(unsigned int))(*&v35->suspendedMission))(v34->spawnManager) == 6
-                  ? (BuildingClass *)v35
-                  : 0;
+              ? (BuildingClass *)v35
+              : 0;
               BuildingClass::UpdateDamageAnim(v36); /*0x71aa90*/
             }
             v37 = *(TechnoClass **)(*(unsigned int *)this->__pad_028 + 728); /*0x71aa98*/
@@ -344,8 +344,7 @@ int TemporalClass::GetWarpPerStep(int a2, void *a2_1)
 {
 
 
-  int WarpPerStep; // ebx
-  WarpPerStep = 0; /*0x71ab14*/
+  int WarpPerStep = 0; // ebx /*0x71ab14*/
   TemporalClass *v4; // ecx
   v4 = (TemporalClass *)this->u32_44; /*0x71ab17*/
   if ( v4 && a2 <= 50 ) /*0x71ab25*/
@@ -384,8 +383,8 @@ void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
   {
     --g_BuildingLoadQueue_Array.?[0]; /*0x71b1f8*/
     for ( ; /*0x71b1fe*/
-          v3 < g_BuildingLoadQueue_Array;
-          *(unsigned int *)(g_BuildingLoadQueue_Count + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Count + 4 * v3) )
+    v3 < g_BuildingLoadQueue_Array;
+    *(unsigned int *)(g_BuildingLoadQueue_Count + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Count + 4 * v3) )
     {
       ++v3; /*0x71b206*/
     }
@@ -469,9 +468,9 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
     return 0; /*0x71ae94*/
   if ( (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 1 ) /*0x71aea7*/
   {
-  int Member; // eax
+    int Member; // eax
     Member = ((int)(a1))->GetMember(0); /*0x71aead*/
-  unsigned int *v3; // edi
+    unsigned int *v3; // edi
     v3 = (unsigned int *)Member; /*0x71aeb2*/
     if ( Member ) /*0x71aeb6*/
     {
@@ -479,11 +478,11 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
       {
         if ( v3->q520->WeaponsFactory ) /*0x71aeca*/
         {
-  unsigned int v5[3]; // [esp+8h] [ebp-Ch] BYREF
+          unsigned int v5[3]; // [esp+8h] [ebp-Ch] BYREF
           v5[0] = a1[39]; /*0x71aedc*/
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
-  unsigned int *v4; // eax
+          unsigned int *v4; // eax
           v4 = (&dword_87F7E8)->To_Cell(v5); /*0x71aef8*/
           if ( ((Cell *)(v4))->IsBridge() == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/

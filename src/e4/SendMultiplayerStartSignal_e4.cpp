@@ -14,7 +14,7 @@
 namespace gamemd {  // G42.18 ns repair
 LRESULT sub_5E23A0()
 {
-
+  
   HWND Current; // eax
   Current = (HWND)(Dialog::GetCurrent());
   HWND DlgItem; // eax
@@ -27,7 +27,7 @@ LRESULT sub_5E23A0()
 namespace gamemd {
 LRESULT sub_7A27D0()
 {
-
+  
   HWND Current; // eax
   Current = (HWND)(Dialog::GetCurrent()); /*0x7a27d0*/
   HWND DlgItem; // eax

@@ -35,14 +35,12 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
 
-  unsigned int *v3; // edx
-  v3 = aP3; /*0x4b0ad0*/
+  unsigned int *v3 = aP3; // edx /*0x4b0ad0*/
   int v5; // eax
   if ( *aP3 != g_DDraw_ClipRect || aP3[1] != (unsigned int)qword_8A0794 || (v5 = aP3[2], v5 != (*(((unsigned int *)&(qword_8A0794)) + 1))) ) /*0x4b0afe*/
   {
     (*((unsigned char *)&(v5))) = aP1->q060; /*0x4b0b04*/
-  int v6; // ebp
-    v6 = a3_1; /*0x4b0b07*/
+    int v6 = a3_1; // ebp /*0x4b0b07*/
     if ( !(unsigned char)v5 ) /*0x4b0b0d*/
     {
       v5 = aP1->u32_58; /*0x4b0b13*/
@@ -51,35 +49,32 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
         v5 = byte_7E7B28[12 * v5]; /*0x4b0b22*/
         if ( v5 ) /*0x4b0b2c*/
         {
-  int v7; // eax
-          v7 = 4 * v5; /*0x4b0b32*/
-  int v8; // ecx
+          int v7 = 4 * v5; // eax /*0x4b0b32*/
+          int v8; // ecx
           v8 = ((unsigned int *)(dword_7E7A28))[v7]; /*0x4b0b35*/
           v5 = ((unsigned int *)(dword_7E7A34))[v7]; /*0x4b0b3b*/
           if ( v5 > -1 ) /*0x4b0b44*/
           {
-  int *v9; // ecx
+            int *v9; // ecx
             v9 = (int *)(v8 + 12 * v5); /*0x4b0b4d*/
             a3_1 = v9[2]; /*0x4b0b53*/
             if ( aP1->u32_5C < v5 ) /*0x4b0b5c*/
             {
-  int v10; // eax
+              int v10; // eax
               v10 = v9[1]; /*0x4b0b64*/
-  int v18[2]; // [esp+10h] [ebp-14h] BYREF
+              int v18[2]; // [esp+10h] [ebp-14h] BYREF
               v18[0] = *v9; /*0x4b0b67*/
               v18[1] = v10; /*0x4b0b6f*/
-  int v19; // [esp+18h] [ebp-Ch] BYREF
+              int v19; // [esp+18h] [ebp-Ch] BYREF
               v5 = (int)JumpjetLocomotion::TransformCoords((JumpjetLocomotion *)aP1, &v19, v18, &a3_1); /*0x4b0b80*/
-  int v11; // edi
+              int v11; // edi
               v11 = *(unsigned int *)v5; /*0x4b0b85*/
-  int v12; // ebx
-              v12 = v5->u32_4; /*0x4b0b89*/
+              int v12 = v5->u32_4; // ebx /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
               {
-  int v13; // eax
+                int v13; // eax
                 v13 = (*(int (**)(unsigned int))(*aP1->ptr_30 + 464))(aP1->ptr_30); /*0x4b0b93*/
-  int v14; // ecx
-                v14 = aP1->ptr_30; /*0x4b0b99*/
+                int v14 = aP1->ptr_30; // ecx /*0x4b0b99*/
                 v19 = v11; /*0x4b0b9c*/
                 v20 = v12; /*0x4b0ba0*/
                 v21 = v13; /*0x4b0ba4*/
@@ -91,10 +86,9 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
               {
-  int v15; // eax
+                int v15; // eax
                 v15 = (*(int (**)(unsigned int))(*aP1->ptr_30 + 464))(aP1->ptr_30); /*0x4b0bde*/
-  int v16; // ecx
-                v16 = aP1->ptr_30; /*0x4b0be4*/
+                int v16 = aP1->ptr_30; // ecx /*0x4b0be4*/
                 v21 = v15; /*0x4b0be7*/
                 v19 = v11; /*0x4b0beb*/
                 v20 = v12; /*0x4b0bef*/
@@ -592,12 +586,10 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
 {
 
 
-  int v4; // eax
-  v4 = *aP3; /*0x4b478d*/
+  int v4 = *aP3; // eax /*0x4b478d*/
   int v5; // ebx
   v5 = dword_7E7B30[3 * (int)this->u32_58]; /*0x4b4791*/
-  int v6; // edi
-  v6 = *aP2; /*0x4b479f*/
+  int v6 = *aP2; // edi /*0x4b479f*/
   int v7; // esi
   v7 = aP2[1]; /*0x4b47a1*/
   if ( (v5 & 1) != 0 ) /*0x4b47a4*/
@@ -902,9 +894,9 @@ void* JumpjetLocomotion::Land()
       goto LABEL_65; /*0x54cfb5*/
     }
   }
-LABEL_64:
+  LABEL_64:
   v46 = 1; /*0x54cfb7*/
-LABEL_65:
+  LABEL_65:
   v38 = *(unsigned int *)this->u32_C; /*0x54cfbc*/
   if ( v38 && (*(int (**)(int))(*&v38->u32_720))(v38) > 0 ) /*0x54cfcf*/
   {
@@ -925,7 +917,7 @@ LABEL_65:
   }
   if ( v47 ) /*0x54d00d*/
     *(unsigned char *)(*(unsigned int *)this->u32_C + 140) = 1; /*0x54d012*/
-LABEL_74:
+  LABEL_74:
   if ( ((*(int (**)(unsigned int))(**(unsigned int **)this->u32_C + 456))(*(unsigned int *)this->u32_C) <= 0 /*0x54d043*/
      || (LOBYTE(v40) = v45) != 0)
     && (!*(unsigned char *)(*(unsigned int *)this->u32_C + 1709) || (LOBYTE(v40) = v46) != 0) )
@@ -1067,7 +1059,7 @@ void* JumpjetLocomotion::UpdateFacing()
   if ( (v13 == 2 || v13 == 3) && !this->u32_3C ) /*0x54d208*/
   {
     *&this->q088 = 6.283185307179586 / (15.0 / *&this->ptr_34) /*0x54d224*/
-                                  + *&this->q088;
+    + *&this->q088;
   }
   else
   {
@@ -1155,7 +1147,7 @@ void* JumpjetLocomotion::UpdateFacing()
     {
       v59 += LODWORD(v60) - v26; /*0x54d45f*/
     }
-LABEL_49:
+    LABEL_49:
     v57 = 1; /*0x54d4bb*/
     goto LABEL_50; /*0x54d4bb*/
   }
@@ -1179,7 +1171,7 @@ LABEL_49:
     v26 = v26 <= 0 ? 0 : v26;
     goto LABEL_49; /*0x54d4b9*/
   }
-LABEL_50:
+  LABEL_50:
   v36 = (int)this->q040 / 256; /*0x54d4c0*/
   v37 = (int)this->q044 / 256; /*0x54d4e9*/
   v38 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)this->u32_C + 440))( /*0x54d4ec*/
@@ -1212,7 +1204,7 @@ LABEL_50:
   LOWORD(v42) = Math::RoundToInt(v14); /*0x54d575*/
   LODWORD(v60) = v42; /*0x54d57a*/
   v61 = (double)(*(__int16 *)(&this->q054)->GetValue(&v59) - 0x3FFF) /*0x54d5a2*/
-      * -0.00009587672516830327;
+  * -0.00009587672516830327;
   v43 = HIDWORD(v61); /*0x54d5aa*/
   v44 = LODWORD(v61); /*0x54d5ae*/
   v60 = (double)SLODWORD(v60); /*0x54d5b4*/
@@ -1233,8 +1225,8 @@ LABEL_50:
     if ( v48
       && (*(int (**)(unsigned char *))(*&v48->u32_B0))(v48) == 15
       && ((v49 = *(unsigned int *)this->u32_C) != 0
-        ? (v50 = (*(int (**)(unsigned int))(*(unsigned int *)v49 + 44))(*(unsigned int *)this->u32_C) == 15 ? v49 : 0)
-        : (v50 = 0),
+      ? (v50 = (*(int (**)(unsigned int))(*(unsigned int *)v49 + 44))(*(unsigned int *)this->u32_C) == 15 ? v49 : 0)
+    : (v50 = 0),
           *(unsigned char *)(*(unsigned int *)(v50 + 1728) + 3787)
        && *&this->q050 == 2
        && (v51 = *(unsigned int *)this->u32_C, *(unsigned int *)(v51 + 692))) )

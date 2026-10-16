@@ -30,7 +30,7 @@ namespace gamemd { struct rc_ptr { void* vfptr; }; }  // minimal E2 carrier (4B)
 
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int FillPersonaInfoWOL(int p_this, HWND hDlg, char **a3, wchar_t **a4);  // x4:ida@0x77a9f0
+int FillPersonaInfoWOL(int p_this, HWND hDlg, char **a3, wchar_t **a4);  // x4:ida@0x77a9f0
 } // namespace gamemd
 
 // 0x7A3D90
@@ -107,7 +107,7 @@ int ComStreamClass::Write(int a2, uint8_t *a3, const char *lParam, const char *l
         EnableWindow(v11, 0); /*0x7a3f52*/
         v12 = GetDlgItem(v5, 1837); /*0x7a3f63*/
         SendMessageA(v12, 0xF1u, 1u, 0); /*0x7a3f66*/
-  LABEL_14:
+        LABEL_14:
         v15 = GetDlgItem(v5, 1771); /*0x7a3f99*/
         v10(v15, 1); /*0x7a3fa4*/
         ((String *)((String *)v22))->Assign(lParama); /*0x7a3fb2*/
@@ -201,7 +201,7 @@ int ComStreamClass::QueryInterface(unsigned int *a2, char **a3, int a4, int a1, 
     v6 = *v3 == 0; /*0x7ac8e6*/
     if ( !*v3 || *v5 == *a4 && v5[1] == a4[1] && v5[2] == a4[2] && v5[3] == a4[3] ) /*0x7ac910*/
       break; /*0x7ac910*/
-LABEL_17:
+    LABEL_17:
     v8 = v3[5]; /*0x7ac933*/
     v3 += 3; /*0x7ac936*/
     if ( !v8 ) /*0x7ac93b*/
@@ -231,40 +231,35 @@ AbstractClass * * ComStreamClass::readData()
 
   if ( LOBYTE(this->q014) != 1 ) /*0x7ae0e8*/
   {
-  int ComStreamClass_field_0x08; // esi
-    ComStreamClass_field_0x08 = this->q008; /*0x7ae0f0*/
-  unsigned int *v3; // ebp
+    int ComStreamClass_field_0x08 = this->q008; // esi /*0x7ae0f0*/
+    unsigned int *v3; // ebp
     v3 = *(unsigned int **)this->__pad_000; /*0x7ae0f3*/
-  int v4; // edi
-    v4 = this->q00C + 1; /*0x7ae0fc*/
+    int v4 = this->q00C + 1; // edi /*0x7ae0fc*/
     this->q008 = 2 * ComStreamClass_field_0x08; /*0x7ae0fd*/
-  unsigned int *v13; // [esp+4h] [ebp-4h]
+    unsigned int *v13; // [esp+4h] [ebp-4h]
     v13 = v3; /*0x7ae100*/
     this->q00C = v4; /*0x7ae108*/
-  void *v5; // edi
+    void *v5; // edi
     v5 = (void *)__2_YAPAXI_Z(8 * ComStreamClass_field_0x08); /*0x7ae113*/
-  unsigned int v6; // edx
-    v6 = 4 * this->q008; /*0x7ae118*/
+    unsigned int v6 = 4 * this->q008; // edx /*0x7ae118*/
     *(unsigned int *)this->__pad_000 = (unsigned int)(v5); /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( ComStreamClass_field_0x08 > 0 ) /*0x7ae12f*/
     {
-  int *v7; // edi
+      int *v7; // edi
       v7 = (int *)(v3); /*0x7ae131*/
-  int v8; // ebp
-      v8 = ComStreamClass_field_0x08; /*0x7ae133*/
+      int v8 = ComStreamClass_field_0x08; // ebp /*0x7ae133*/
       do /*0x7ae167*/
       {
-  int v9; // esi
-        v9 = *v7; /*0x7ae135*/
+        int v9 = *v7; // esi /*0x7ae135*/
         if ( *v7 ) /*0x7ae135*/
         {
           do /*0x7ae161*/
           {
-  int v10; // edx
+            int v10; // edx
             v10 = ((int (*)(int))this->q018)(v9) /*0x7ae14b*/
-                & ((1 << this->q00C) - 1);
-  int v11; // ecx
+            & ((1 << this->q00C) - 1);
+            int v11; // ecx
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10); /*0x7ae14f*/
             *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10) = v9; /*0x7ae155*/
             v12 = *(unsigned int *)(v9 + 72); /*0x7ae157*/
@@ -291,42 +286,36 @@ void ComStreamClass::flushStream()
 
   int v12; // eax
 
-  unsigned int ComStreamClass_field_0x08; // esi
-  ComStreamClass_field_0x08 = this->q008; /*0x7aef55*/
+  unsigned int ComStreamClass_field_0x08 = this->q008; // esi /*0x7aef55*/
   if ( ComStreamClass_field_0x08 > this->q030 && LOBYTE(this->q014) != 1 ) /*0x7aef67*/
   {
-  int *v3; // ebp
+    int *v3; // ebp
     v3 = *(int **)this->__pad_000; /*0x7aef70*/
-  int ComStreamClass_field_0x0C; // edi
-    ComStreamClass_field_0x0C = this->q00C; /*0x7aef73*/
-  int *v13; // [esp+8h] [ebp-4h]
+    int ComStreamClass_field_0x0C = this->q00C; // edi /*0x7aef73*/
+    int *v13; // [esp+8h] [ebp-4h]
     v13 = *(int **)this->__pad_000; /*0x7aef76*/
     this->q008 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
     this->q00C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
-  void *v5; // edi
+    void *v5; // edi
     v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
-  unsigned int v6; // edx
-    v6 = 4 * this->q008; /*0x7aef94*/
+    unsigned int v6 = 4 * this->q008; // edx /*0x7aef94*/
     *(unsigned int *)this->__pad_000 = (unsigned int)(v5); /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)ComStreamClass_field_0x08 > 0 ) /*0x7aefab*/
     {
-  int *v7; // edi
-      v7 = v3; /*0x7aefad*/
-  unsigned int v8; // ebp
-      v8 = ComStreamClass_field_0x08; /*0x7aefaf*/
+      int *v7 = v3; // edi /*0x7aefad*/
+      unsigned int v8 = ComStreamClass_field_0x08; // ebp /*0x7aefaf*/
       do /*0x7aefe3*/
       {
-  int v9; // esi
-        v9 = *v7; /*0x7aefb1*/
+        int v9 = *v7; // esi /*0x7aefb1*/
         if ( *v7 ) /*0x7aefb1*/
         {
           do /*0x7aefdd*/
           {
-  int v10; // edx
+            int v10; // edx
             v10 = ((int (*)(int))this->q018)(v9) /*0x7aefc7*/
-                & ((1 << this->q00C) - 1);
-  int v11; // ecx
+            & ((1 << this->q00C) - 1);
+            int v11; // ecx
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10); /*0x7aefcb*/
             *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10) = v9; /*0x7aefd1*/
             v12 = *(unsigned int *)(v9 + 72); /*0x7aefd3*/
@@ -398,7 +387,7 @@ int ComStreamClass::Seek(int a2, int a3, int a4, int a1, int a5)
   if ( !a3 ) /*0x7a4088*/
   {
     dword_B77E60 = a4; /*0x7a4092*/
-  int v8; // [esp+10h] [ebp+10h]
+    int v8; // [esp+10h] [ebp+10h]
     dword_B77E64 = v8; /*0x7a4097*/
   }
   HWND v4; // eax

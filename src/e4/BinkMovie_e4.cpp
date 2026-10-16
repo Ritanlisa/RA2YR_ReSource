@@ -36,8 +36,8 @@
 #include "e4/classes/ToggleClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ParseMovieSubtitles(char* p0);  // x4:signals@0x6c9f10
-    int nullsub_40(int p0);  // x4:signals@0x6c9f00
+int ParseMovieSubtitles(char* p0);  // x4:signals@0x6c9f10
+int nullsub_40(int p0);  // x4:signals@0x6c9f00
 } // namespace gamemd
 
 // 0x432690
@@ -93,8 +93,7 @@ int BinkMovie::Stop(void *a1, void *a2)
     BinkClose(this->u32_4); /*0x43272a*/
     this->u32_4 = 0; /*0x432730*/
   }
-  int result; // eax
-  result = this->u32_28; /*0x432737*/
+  int result = this->u32_28; // eax /*0x432737*/
   if ( result != -1 ) /*0x43273d*/
   {
     result = CloseHandle(this->u32_28); /*0x432740*/
@@ -170,7 +169,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   if ( v8 ) /*0x4327e0*/
   {
     v9 = (int)(BinkOpen(v6, 0)); /*0x4327e4*/
-LABEL_14:
+    LABEL_14:
     a2_1->u32_4 = v9; /*0x43284f*/
     goto LABEL_15; /*0x43284f*/
   }
@@ -187,15 +186,15 @@ LABEL_14:
       goto LABEL_14; /*0x432849*/
     }
   }
-LABEL_15:
+  LABEL_15:
   if ( a2_1->u32_4 )
   {
     dword_89C490 = flt_A8EB9C; /*0x43287c*/
     v13 = Math::RoundToInt(*(float *)&flt_A8EB9C * 32768.0); /*0x43288d*/
     BinkSetVolume(a2_1->u32_4, v13); /*0x432897*/
     a2_1->u32_24 = 0x3C /*0x4328b5*/
-                           / (unsigned int)(*(unsigned int *)(a2_1->u32_4 + 20)
-                                          / *(unsigned int *)(a2_1->u32_4 + 24));
+    / (unsigned int)(*(unsigned int *)(a2_1->u32_4 + 20)
+    / *(unsigned int *)(a2_1->u32_4 + 24));
     v14 = (unsigned int *)BinkMovie::CreateSurfaceTracker(v6); /*0x4328b8*/
     v15 = a2_1->u32_4; /*0x4328bd*/
     a2_1->q_20 = v14; /*0x4328c0*/
@@ -260,7 +259,7 @@ LABEL_15:
       bottom = (char *)a2_1 + lDistanceToMove[0] - (char *)v22; /*0x432a07*/
     if ( bottom < 1 ) /*0x432a0c*/
     {
-LABEL_40:
+      LABEL_40:
       left = lDistanceToMove[1]; /*0x432a16*/
       v22 = (LPCSTR *)lDistanceToMove[2]; /*0x432a1a*/
       v27 = lDistanceToMove[3]; /*0x432a1e*/
@@ -375,7 +374,7 @@ int BinkMovie::BinkMovie::Play(void *a1_1)
           v10[1] = v12.top + BinkMovie_field_0x14; /*0x432dd6*/
           v10[0] = v12.left + BinkMovie_field_0x10; /*0x432de1*/
           (*(void (**)(DSurface *, unsigned int *, int, int *, unsigned int, int))(g_DSurface_Primary /*0x432dec*/
-                                                                                + 8))(
+          + 8))(
             g_DSurface_Primary,
             v10,
             v9,
@@ -688,8 +687,8 @@ int BinkMovie::HandleKeyboard(int a1, HWND a2)
   if ( v7 ) /*0x6035a0*/
     v4 = v7[27]; /*0x6035a6*/
   else
-  LABEL_5:
-    v4 = 0; /*0x60343e*/
+    LABEL_5:
+  v4 = 0; /*0x60343e*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x603441*/
   if ( (v4 == 148 /*0x603574*/
      || v4 == 216
@@ -730,7 +729,7 @@ int BinkMovie::HandleKeyboard(int a1, HWND a2)
     if ( DlgCtrlID == 1770 || DlgCtrlID == 1772 ) /*0x60358a*/
       return 100; /*0x60358a*/
     v6 = DlgCtrlID == 1771; /*0x60358c*/
-  LABEL_46:
+    LABEL_46:
     if ( v6 ) /*0x6035c3*/
       return 100; /*0x6035cd*/
     return 0; /*0x6035c3*/
@@ -905,7 +904,7 @@ int BinkMovie::InitKeyframeTracking(char * Source, void * aSubtitlemdTxt)
   CCFileClass::Construct(&v8, aSubtitlemdTxt); /*0x6c9b79*/
   if ( !(uint8_t)((CCFileClass *)(&v8))->Open(0) ) /*0x6c9b8a*/
   {
-  LABEL_6:
+    LABEL_6:
     /* X11: vtable install elided (implicit via CCFileClass virtuals 0x6c9be2) */
     v10 = 0; /*0x6c9bee*/
     Vector::Clear((int)v9); /*0x6c9bf5*/
@@ -1072,7 +1071,7 @@ AbstractClass * * BinkMovie::ProcessKeyframe(unsigned int *aP1)
     {
       if ( v7 != 1 ) /*0x6c9e44*/
       {
-LABEL_7:
+        LABEL_7:
         v13 = v6; /*0x6c9e52*/
         pad_0 = v18->MovieHandle; /*0x6c9e66*/
         Font::Print((int)v5, v18->u32_10, v17, v14, v8, v13, v16, 0, 0, 0); /*0x6c9e78*/
@@ -1102,9 +1101,7 @@ namespace gamemd {
 unsigned int * BinkMovie::VtableDispatch(int a2)
 {
 
-  int v3; // ecx
-
-  v3 = a2; /*0x6c9ec3*/
+  int v3 = a2; // ecx /*0x6c9ec3*/
   *(unsigned int *)this->MovieHandle = a2; /*0x6c9ec9*/
   this->u32_804 = 0; /*0x6c9ecb*/
   a2 = 0; /*0x6c9ed1*/

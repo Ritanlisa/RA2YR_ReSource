@@ -39,29 +39,23 @@ char * GameConfig::ComputeCRC()
 {
 
 
-  unsigned int v0; // ebx
-  v0 = 0; /*0x5e84e8*/
+  unsigned int v0 = 0; // ebx /*0x5e84e8*/
   unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
   memcpy(v11, &unk_ABE050, sizeof(v11)); /*0x5e84ea*/
   int *v1; // ebp
   v1 = (int *)(&dword_ABE010); /*0x5e84ec*/
   int *v10; // [esp+10h] [ebp-104h]
   v10 = (int *)(&dword_ABE010); /*0x5e84fd*/
-  int v2; // edx
-  v2 = 320; /*0x5e8501*/
+  int v2 = 320; // edx /*0x5e8501*/
   memset(&unk_ABE050, 0, 0x100u); /*0x5e8506*/
   do /*0x5e854a*/
   {
-  unsigned int v3; // edi
-    v3 = v0 >> 31; /*0x5e850a*/
+    unsigned int v3 = v0 >> 31; // edi /*0x5e850a*/
     if ( v2 < 4 ) /*0x5e8510*/
     {
-  int v5; // eax
-      v5 = 0; /*0x5e8526*/
-  int *v6; // esi
-      v6 = v1; /*0x5e8528*/
-  int v7; // ebp
-      v7 = v2; /*0x5e852e*/
+      int v5 = 0; // eax /*0x5e8526*/
+      int *v6 = v1; // esi /*0x5e8528*/
+      int v7 = v2; // ebp /*0x5e852e*/
       v2 = 0; /*0x5e8530*/
       do /*0x5e853d*/
       {
@@ -75,7 +69,7 @@ char * GameConfig::ComputeCRC()
     }
     else
     {
-  int v4; // eax
+      int v4; // eax
       v4 = *v1++; /*0x5e8512*/
       v10 = v1; /*0x5e8518*/
       v0 = v3 + v4 + 2 * v0; /*0x5e851f*/
@@ -104,11 +98,11 @@ int GameConfig::ComputeHash()
   int i; // esi
   for ( i = 1; i <= v1; ++i ) /*0x679db7*/
   {
-  int v3; // eax
+    int v3; // eax
     v3 = ((void *)i)->Find(); /*0x679dbb*/
     if ( v3 ) /*0x679dc2*/
     {
-  int v4; // eax
+      int v4; // eax
       v4 = (int)(GameConfig::Constructor(v3)); /*0x679dc6*/
       v0 += Hash::ComputeHashSHA1(v4); /*0x679dd2*/
     }
@@ -155,14 +149,12 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
 
   CCFileClass v6; // [esp+Ch] [ebp-6Ch] BYREF
 
-  GameConfig *v1; // edi
-  v1 = this; /*0x5d67b5*/
+  GameConfig *v1 = this; // edi /*0x5d67b5*/
   if ( !*&this->q038 ) /*0x5d67bd*/
   {
-  int v2; // eax
+    int v2; // eax
     v2 = (int)(__2_YAPAXI_Z(0x58u)); /*0x5d67c9*/
-  int v3; // esi
-    v3 = v2; /*0x5d67ce*/
+    int v3 = v2; // esi /*0x5d67ce*/
     if ( v2 ) /*0x5d67d5*/
     {
       *(unsigned int *)(v2 + 4) = 0; /*0x5d67de*/
@@ -193,9 +185,9 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
     if ( (unsigned __int8)(&v6)->Open(0) ) /*0x5d6846*/
       CCINIClass::Load(*&v1->q038, (int)&v6, 0, 0); /*0x5d685a*/
     *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x5d6863*/
-  int v8; // [esp+70h] [ebp-8h]
+    int v8; // [esp+70h] [ebp-8h]
     v8 = 0; /*0x5d686b*/
-  char v7[12]; // [esp+64h] [ebp-14h] BYREF
+    char v7[12]; // [esp+64h] [ebp-14h] BYREF
     Vector::Clear((int)v7); /*0x5d686f*/
     *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x5d6878*/
     ((BufferIOFileClass *)&v6)->Dtor(); /*0x5d6880*/
@@ -210,11 +202,10 @@ int  GameConfig::BuildChecksum(char * Buffer)
 {
 
 
-  int v2; // ecx
-  v2 = dword_B76B1C; /*0x77e7a5*/
+  int v2 = dword_B76B1C; // ecx /*0x77e7a5*/
   if ( dword_B76B1C > 0 ) /*0x77e7ad*/
   {
-  int *v3; // eax
+    int *v3; // eax
     v3 = (int *)(dword_B76E58); /*0x77e7af*/
     do /*0x77e7c0*/
     {
@@ -223,8 +214,7 @@ int  GameConfig::BuildChecksum(char * Buffer)
     }
     while ( v2 ); /*0x77e7c0*/
   }
-  int v4; // esi
-  v4 = CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash; /*0x77e7db*/
+  int v4 = CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash; // esi /*0x77e7db*/
   char v5; // al
   v5 = GameOption::CheckDuplicate(&byte_A8B8E0); /*0x77e7dd*/
   unsigned __int8 v6; // al

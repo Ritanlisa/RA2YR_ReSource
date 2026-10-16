@@ -97,8 +97,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
     (unsigned __int8 *)v10,
     (unsigned __int8 *)g_INI_Key_Rate,
     *(double *)&this->?);
-  void *vtable0; // eax
-  vtable0 = this->ObjectClass; /*0x5b38b9*/
+  void *vtable0 = this->ObjectClass; // eax /*0x5b38b9*/
   __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
   *&this->uniqueId = _RT1; /*0x5b38bb*/
   char *v13; // eax
@@ -116,7 +115,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
   }
   if ( (_AX & 0x4000) != 0 ) /*0x5b38f0*/
   {
-  int abstractFlags; // ecx
+    int abstractFlags; // ecx
     abstractFlags = this->abstractFlags; /*0x5b38f5*/
     this->AARate = this->AARate; /*0x5b38f8*/
     this->referenceCount = abstractFlags; /*0x5b38fb*/

@@ -34,8 +34,7 @@ namespace gamemd {
 int Selection::ClearGlobals()
 {
 
-  int result; // eax
-  result = 0; /*0x734270*/
+  int result = 0; // eax /*0x734270*/
   if ( this ) /*0x734274*/
   {
     if ( this == (Selection *)g_BuildingLoadQueue_Array.QueueingCell[1] ) /*0x734287*/

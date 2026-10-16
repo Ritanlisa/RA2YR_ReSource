@@ -73,10 +73,10 @@ AbstractClass * * sub_777420(ObjectClass *self)
   result = Dialog::GetCurrent(); /*0x777599*/
   if ( result ) /*0x7775a1*/
   {
-  HWND Current; // eax
+    HWND Current; // eax
     Current = (HWND)((gamemd::AbstractClass **)((HWND)Dialog::GetCurrent()));
     SetActiveWindow(Current); /*0x7775a9*/
-  HWND v5; // eax
+    HWND v5; // eax
     v5 = (HWND)Dialog::GetCurrent(); /*0x7775af*/
     return (gamemd::AbstractClass **)((int)SetFocus(v5)); /*0x7775b5*/
   }

@@ -25,7 +25,7 @@ char SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
   wchar_t *v8; // eax
   int v10; // [esp+Ch] [ebp-Ch]
   char * v11;
-
+  
   v3 = (char *)((int)(a2));
   v4 = (char *)((int)(a2 + nIDDlgItem)); /*0x5ebed0*/
   v11 = (char *)((int)(a2 + nIDDlgItem)); /*0x5ebedd*/

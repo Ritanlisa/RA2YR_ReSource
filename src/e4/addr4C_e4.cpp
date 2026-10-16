@@ -211,7 +211,7 @@ int sub_4C1600()
     result = (**(int (__stdcall ***)(int, void *, int *))dword_8A0E00)(dword_8A0E00, &unk_7F8070, &dword_8A0DF4); /*0x4c1630*/
     if ( !result ) /*0x4c1634*/
     {
-  unsigned int v2[79]; // [esp+20h] [ebp-13Ch] BYREF
+      unsigned int v2[79]; // [esp+20h] [ebp-13Ch] BYREF
       memset(v2, 0, sizeof(v2)); /*0x4c1644*/
       v2[0] = 316; /*0x4c164b*/
       if ( !(*(int (__stdcall **)(int, unsigned int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 44))(dword_8A0E00, v2, 0) /*0x4c1687*/
@@ -249,7 +249,7 @@ void InitializeRadialGradientTexture()
              &g_DrawColorState);
   if ( !result ) /*0x4c16d6*/
   {
-  ObjectClass *v17; // [esp+44h] [ebp-C0h]
+    ObjectClass *v17; // [esp+44h] [ebp-C0h]
     if ( sub_4C14D0(v17) ) /*0x4c16dc*/
       return -1; /*0x4c16ef*/
     result = (*(int (__stdcall **)(int, char *, unsigned int))(*(unsigned int *)dword_8A0DF4 + 24))( /*0x4c16fe*/
@@ -263,21 +263,20 @@ void InitializeRadialGradientTexture()
                  (*(((unsigned int *)&(g_DrawColorState)) + 1)));
       if ( !result ) /*0x4c171d*/
       {
-  unsigned int v25[27]; // [esp+98h] [ebp-6Ch] BYREF
+        unsigned int v25[27]; // [esp+98h] [ebp-6Ch] BYREF
         memset(v25, 0, sizeof(v25)); /*0x4c172e*/
-  int v4; // eax
-        v4 = *AudioStream_field_0x1C; /*0x4c1730*/
+        int v4 = *AudioStream_field_0x1C; // eax /*0x4c1730*/
         v25[0] = 108; /*0x4c1738*/
         result = (*(int (__stdcall **)(unsigned int *, unsigned int *))(v4 + 88))(AudioStream_field_0x1C, v25); /*0x4c1740*/
         if ( !result ) /*0x4c1745*/
         {
-  unsigned int v24[11]; // [esp+6Ch] [ebp-98h] BYREF
+          unsigned int v24[11]; // [esp+6Ch] [ebp-98h] BYREF
           memset(v24, 0, sizeof(v24)); /*0x4c175a*/
-  void *v18[2]; // [esp+58h] [ebp-ACh]
+          void *v18[2]; // [esp+58h] [ebp-ACh]
           *(unsigned long long *)v18 = v25[3]; /*0x4c1764*/
           v24[3] = v25[3]; /*0x4c1768*/
           __asm { fild qword ptr [esp+0C0h+var_AC] } /*0x4c176c*/
-  void *v19[2]; // [esp+58h] [ebp-ACh]
+          void *v19[2]; // [esp+58h] [ebp-ACh]
           *(unsigned long long *)v19 = v25[2]; /*0x4c1775*/
           v24[4] = v25[2]; /*0x4c177d*/
           __asm /*0x4c1781*/
@@ -298,48 +297,44 @@ void InitializeRadialGradientTexture()
                        (*(((unsigned int *)&(g_DrawColorState)) + 1)));
             if ( !result ) /*0x4c17c4*/
             {
-  ObjectClass *v5; // eax
+              ObjectClass *v5; // eax
               v5 = (ObjectClass *)operator new(0x78u); /*0x4c17cc*/
               if ( v5 ) /*0x4c17d6*/
               {
                 dword_8A0E04 = (unsigned int)((AudioStream *)sub_4A3270(v5, 256, 256, 0));
                 if ( dword_8A0E04 ) /*0x4c17f1*/
                 {
-  void *v6; // eax
+                  void *v6; // eax
                   v6 = (unsigned short *)(malloc(0x20000u));
-  const void *v20; // [esp+58h] [ebp-ACh]
+                  const void *v20; // [esp+58h] [ebp-ACh]
                   v20 = v6; /*0x4c1802*/
                   if ( !v6 ) /*0x4c1806*/
                     return 2; /*0x4c19a2*/
-  int v7; // edi
-                  v7 = -128; /*0x4c180c*/
-  unsigned short *v8; // ebx
+                  int v7 = -128; // edi /*0x4c180c*/
+                  unsigned short *v8; // ebx
                   v8 = (unsigned short *)(v6); /*0x4c1811*/
-  int v21; // [esp+60h] [ebp-A4h]
+                  int v21; // [esp+60h] [ebp-A4h]
                   v21 = -128; /*0x4c1813*/
                   do /*0x4c18db*/
                   {
-  int v9; // edi
-                    v9 = v7 * v7; /*0x4c1817*/
-  int v10; // esi
-                    v10 = -128; /*0x4c181a*/
+                    int v9 = v7 * v7; // edi /*0x4c1817*/
+                    int v10 = -128; // esi /*0x4c181a*/
                     do /*0x4c18c0*/
                     {
-  int v23; // [esp+68h] [ebp-9Ch]
+                      int v23; // [esp+68h] [ebp-9Ch]
                       v23 = v9 + v10 * v10; /*0x4c1829*/
                       __asm /*0x4c182d*/
                       {
                         fild [esp+0C8h+var_9C]
                         fstp [esp+0C8h+var_C8]; double
                       }
-  double v16; // [esp+3Ch] [ebp-C8h]
+                      double v16; // [esp+3Ch] [ebp-C8h]
                       Math::Sqrt(v16); /*0x4c1834*/
                       __asm { fmul ds:dbl_7E3D90 } /*0x4c1839*/
-  double v1; // st7
-  int v11; // eax
+                      double v1; // st7
+                      int v11; // eax
                       (*((unsigned short *)&(v11))) = Math::RoundToInt(v1); /*0x4c1842*/
-  int v12; // edx
-                      v12 = 400 - v11; /*0x4c184c*/
+                      int v12 = 400 - v11; // edx /*0x4c184c*/
                       if ( 400 - v11 >= 0 ) /*0x4c184e*/
                       {
                         if ( v12 > 255 ) /*0x4c186d*/
@@ -352,8 +347,8 @@ void InitializeRadialGradientTexture()
                       ++v8; /*0x4c1886*/
                       ++v10; /*0x4c18af*/
                       *(v8 - 1) = (v12 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4c18b0*/
-                                | (v12 >> g_BitMask_Blue << g_BitMask_Green)
-                                | (v12 >> g_BitMask_Red << g_BitShift_Blue);
+                      | (v12 >> g_BitMask_Blue << g_BitMask_Green)
+                      | (v12 >> g_BitMask_Red << g_BitShift_Blue);
                     }
                     while ( v10 + 128 < 256 ); /*0x4c18c0*/
                     v7 = v21 + 1; /*0x4c18ca*/
@@ -367,15 +362,15 @@ void InitializeRadialGradientTexture()
                   result = (*(int (__stdcall **)(unsigned int *, unsigned int *))(*v22 + 88))(v22, v25); /*0x4c1923*/
                   if ( !result ) /*0x4c1928*/
                   {
-  ObjectClass *v13; // eax
+                    ObjectClass *v13; // eax
                     v13 = (gamemd::ObjectClass *)((unsigned int)((ObjectClass *)operator new(0x78u)));
                     if ( v13 ) /*0x4c193a*/
                       dword_8A0E08 = (unsigned int)((DDraw *)sub_4A3270(v13, v25[3], v25[2], 1)); /*0x4c194f*/
                     else
                       dword_8A0E08 = 0; /*0x4c1956*/
-  ObjectClass *v14; // eax
+                    ObjectClass *v14; // eax
                     v14 = (ObjectClass *)operator new(0x18004u); /*0x4c1965*/
-  StructTable *v15; // eax
+                    StructTable *v15; // eax
                     if ( v14 ) /*0x4c196f*/
                       v15 = (StructTable *)sub_4A3630(v14); /*0x4c1973*/
                     else
@@ -413,12 +408,10 @@ void sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, 
   ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&a4), v15); /*0x4c1e9a*/
   int v9; // eax
   v9 = ZCoordToScreenY(a3); /*0x4c1ea3*/
-  int v10; // esi
-  v10 = a8 - v9 - 2; /*0x4c1eb2*/
+  int v10 = a8 - v9 - 2; // esi /*0x4c1eb2*/
   int v11; // eax
   v11 = ZCoordToScreenY(a6); /*0x4c1eb5*/
-  int v12; // eax
-  v12 = a9 - v11 - 2; /*0x4c1ec8*/
+  int v12 = a9 - v11 - 2; // eax /*0x4c1ec8*/
   int v13; // edx
   if ( *(unsigned int *)(dword_87F6C4 + 4) == 1 ) /*0x4c1ecf*/
     v13 = *(uint8_t *)(*(unsigned int *)(dword_87F6C4 + 372) + a7); /*0x4c1ee0*/
@@ -443,9 +436,9 @@ int E4Recv_4C2790::sub_4C2790()
 
   if ( this->owningHouseIndex )
   {
-  int v4[2]; // [esp+10h] [ebp-8h] BYREF
+    int v4[2]; // [esp+10h] [ebp-8h] BYREF
     ((Coord *)g_TacticalClass_Instance)->To_Screen(this, v4); /*0x4c27aa*/
-  int v3[2]; // [esp+8h] [ebp-10h] BYREF
+    int v3[2]; // [esp+8h] [ebp-10h] BYREF
     Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->?, v3); /*0x4c27be*/
     if ( (unsigned __int8)ClipLine(v4, v3, &DSurface_ViewBounds.field_0) )
       Lightning::Draw(
@@ -459,8 +452,7 @@ int E4Recv_4C2790::sub_4C2790()
         LOBYTE(this->fallRate) != 0 ? 5 : 10);
     ++this->M28; /*0x4c281a*/
   }
-  int result; // eax
-  result = this->owningHouseIndex >> 1; /*0x4c2821*/
+  int result = this->owningHouseIndex >> 1; // eax /*0x4c2821*/
   this->owningHouseIndex = result; /*0x4c2823*/
   return result; /*0x4c2820*/
 
@@ -471,21 +463,20 @@ namespace gamemd {
 void sub_4C2830()
 {
 
-  int result; // eax
-  result = dword_8A0E98 - 1; /*0x4c2839*/
+  int result = dword_8A0E98 - 1; // eax /*0x4c2839*/
   int i; // [esp+1Ch] [ebp-20h]
   for ( i = dword_8A0E98 - 1; i >= 0; --i ) /*0x4c2843*/
   {
-  int *v2; // eax
+    int *v2; // eax
     v2 = (int *)*((unsigned int *)dword_8A0E8C + result); /*0x4c284f*/
-  void *Block; // [esp+18h] [ebp-24h] BYREF
+    void *Block; // [esp+18h] [ebp-24h] BYREF
     Block = v2; /*0x4c2852*/
-  int v3; // ecx
+    int v3; // ecx
     v3 = v2[8]; /*0x4c2856*/
     if ( v3 ) /*0x4c285b*/
     {
-  int *v4; // edx
-  char v20[12]; // [esp+30h] [ebp-Ch] BYREF
+      int *v4; // edx
+      char v20[12]; // [esp+30h] [ebp-Ch] BYREF
       v4 = (int *)(*(int (**)(int, char *, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v3 + 176))( /*0x4c2888*/
                     v3,
                     v20,
@@ -493,15 +484,14 @@ void sub_4C2830()
                     0,
                     0,
                     0);
-  int v5; // eax
-      v5 = *v4; /*0x4c288a*/
-  int v6; // ecx
+      int v5 = *v4; // eax /*0x4c288a*/
+      int v6; // ecx
       v6 = v4[1]; /*0x4c288e*/
-  int v7; // edx
+      int v7; // edx
       v7 = v4[2]; /*0x4c2891*/
       if ( v5 != dword_8A0E50 || v6 != dword_8A0E54 || v7 != dword_8A0E58 ) /*0x4c28a4*/
       {
-  unsigned int *v8; // esi
+        unsigned int *v8; // esi
         v8 = (unsigned int *)(Block);
         *(unsigned int *)Block = v5; /*0x4c28aa*/
         v8[1] = v6; /*0x4c28ac*/
@@ -509,19 +499,17 @@ void sub_4C2830()
       }
       v2 = (int *)Block; /*0x4c28b2*/
     }
-  int *v9; // ebx
-    v9 = v2 + 10; /*0x4c28b9*/
-  int *v10; // esi
-    v10 = v2; /*0x4c28be*/
+    int *v9 = v2 + 10; // ebx /*0x4c28b9*/
+    int *v10 = v2; // esi /*0x4c28be*/
     if ( v2[10] ) /*0x4c28b6*/
     {
-  int v19[2]; // [esp+28h] [ebp-14h] BYREF
+      int v19[2]; // [esp+28h] [ebp-14h] BYREF
       ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(v2), v19); /*0x4c28ce*/
-  int v18[2]; // [esp+20h] [ebp-1Ch] BYREF
+      int v18[2]; // [esp+20h] [ebp-1Ch] BYREF
       ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v10->u32_3, v18); /*0x4c28e2*/
       if ( (uint8_t)ClipLine(v19, v18, &DSurface_ViewBounds.field_0) ) /*0x4c28f4*/
       {
-  int v11; // eax
+        int v11; // eax
         v11 = -(v10->u8_2C != 0); /*0x4c2904*/
         (*((unsigned char *)&(v11))) = v11 & 0xFB; /*0x4c2906*/
         ((Lightning *)v10)->Draw(*v10, v10->__pad_004, v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
@@ -531,7 +519,7 @@ void sub_4C2830()
     *v9 >>= 1; /*0x4c2944*/
     if ( !Block->DiskLaserClass_field_0x28 ) /*0x4c294a*/
     {
-  int v12; // eax
+      int v12; // eax
       v12 = (*(int (**)(int *, void **))(dword_8A0E88 + 16))(&dword_8A0E88, &Block); /*0x4c2960*/
       if ( v12 != -1 && v12 < dword_8A0E98 && v12 < --dword_8A0E98 ) /*0x4c297b*/
       {
@@ -542,14 +530,11 @@ void sub_4C2830()
         }
         while ( v12 < dword_8A0E98 ); /*0x4c2993*/
       }
-  void *v13; // edx
-      v13 = Block; /*0x4c299b*/
+      void *v13 = Block; // edx /*0x4c299b*/
       if ( Block ) /*0x4c299d*/
       {
-  int v14; // ecx
-        v14 = Block->needsSave; /*0x4c299f*/
-  unsigned int *v15; // eax
-        v15 = &Block->needsSave; /*0x4c29a2*/
+        int v14 = Block->needsSave; // ecx /*0x4c299f*/
+        unsigned int *v15 = &Block->needsSave; // eax /*0x4c29a2*/
         if ( v14 ) /*0x4c29a7*/
         {
           *(unsigned int *)(v14 + 1756) = 0; /*0x4c29a9*/
@@ -571,11 +556,11 @@ ParticleSystemClass * * sub_4C29E0()
   int i; // esi
   for ( i = 0; i < dword_8A0E98; ++i ) /*0x4c29ed*/
   {
-  unsigned int *v2; // eax
+    unsigned int *v2; // eax
     v2 = (unsigned int *)*((unsigned int *)dword_8A0E8C + i); /*0x4c29f4*/
     if ( v2 ) /*0x4c29f9*/
     {
-  int v3; // ecx
+      int v3; // ecx
       v3 = v2[8]; /*0x4c29fb*/
       if ( v3 ) /*0x4c2a00*/
       {
@@ -678,7 +663,7 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
   v5[1] = (unsigned int)(vtable2); /*0x4c3e12*/
   v5[3] = 18; /*0x4c3e16*/
   return (*(int (**)(AudioStream *, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x4c3e28*/
-                                                                                    + 8))(
+  + 8))(
            g_DSurface_Hidden_2,
            v5,
            a2,
@@ -756,7 +741,7 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
   {
     if ( *(unsigned int *)&TeamTypeClass_Array - (int)vtable2 >= uniqueId ) /*0x4c95f4*/
     {
-LABEL_14:
+      LABEL_14:
       vtable0 = this->AbstractClass; /*0x4c964f*/
       goto LABEL_15; /*0x4c964f*/
     }
@@ -782,11 +767,11 @@ LABEL_14:
       LOWORD(v9) = v9 - (*(unsigned short *)&TeamTypeClass_Array - (unsigned short)v10); /*0x4c9631*/
     }
     v11 = v9; /*0x4c9633*/
-LABEL_11:
+    LABEL_11:
     LOWORD(v14) = (unsigned short)v14 - v11 * (v6 / (__int16)v8); /*0x4c9635*/
   }
   LOWORD(vtable0) = (unsigned short)v14; /*0x4c9645*/
-LABEL_15:
+  LABEL_15:
   LOWORD(a3) = *a3 - (unsigned short)vtable0; /*0x4c9651*/
   *a2 = (unsigned int)(a3); /*0x4c966b*/
   return a2; /*0x4c9655*/
@@ -818,9 +803,9 @@ void sub_4CB4C0()
   if ( VirtualQuery(Math::SinCos, &Buffer, 0x1Cu) ) /*0x4cb4e5*/
   {
     BaseAddress = Buffer.BaseAddress; /*0x4cb50a*/
-  SIZE_T RegionSize; // edi
+    SIZE_T RegionSize; // edi
     RegionSize = Buffer.RegionSize; /*0x4cb50c*/
-  DWORD flOldProtect; // [esp+10h] [ebp-20h] BYREF
+    DWORD flOldProtect; // [esp+10h] [ebp-20h] BYREF
     flOldProtect = 0; /*0x4cb50e*/
     if ( VirtualProtect(Buffer.BaseAddress, Buffer.RegionSize, 8u, &flOldProtect) ) /*0x4cb516*/
     {
@@ -830,7 +815,7 @@ void sub_4CB4C0()
         GetLastError(); /*0x4cb550*/
         Debug::Log(); /*0x4cb55c*/
       }
-  HANDLE CurrentProcess; // eax
+      HANDLE CurrentProcess; // eax
       CurrentProcess = GetCurrentProcess(); /*0x4cb568*/
       FlushInstructionCache(CurrentProcess, 0, 0); /*0x4cb56f*/
     }
@@ -1064,7 +1049,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
           (*((unsigned short *)&(a4))) = v28 - *(unsigned short *)ProgressTimer::GetValue((unsigned short *)*v6 + 452, &a4),
           (uint8_t)UnitClass::CompareCoordinateMagnitude(&a4)) )
     {
-  LABEL_32:
+      LABEL_32:
       v63[2] = a6; /*0x4cf259*/
       v33 = *v6; /*0x4cf25d*/
       v63[0] = v24; /*0x4cf260*/
@@ -1096,9 +1081,9 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       goto LABEL_44; /*0x4cf2d4*/
     if ( !v55 ) /*0x4cf2e2*/
     {
-  LABEL_43:
+      LABEL_43:
       v37 = (*v6)->CalcTargetFacing((int *)&a4, (*v6)[173]); /*0x4cf304*/
-  LABEL_51:
+      LABEL_51:
       FacingClass::Update((char *)*v6 + 928, v37); /*0x4cf3c2*/
       goto LABEL_52; /*0x4cf3cb*/
     }
@@ -1109,7 +1094,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     }
     else
     {
-  LABEL_44:
+      LABEL_44:
       (*((unsigned short *)&(a4))) = 0; /*0x4cf320*/
       if ( !v55 /*0x4cf34a*/
         || ((*((unsigned short *)&(a4))) = (*(uint16_t (__stdcall **)(int))(*(unsigned int *)v55 + 16))(v55) << 13, !v55)
@@ -1387,8 +1372,8 @@ unsigned int * E4Recv_4C2B40::sub_4C2B40(unsigned int * a2)
   NeedsSaveOrLink = (void *)(this->M32); /*0x4c2b40*/
   if ( NeedsSaveOrLink ) /*0x4c2b4c*/
   {
-  unsigned int *v3; // ecx
-  unsigned char v5[12]; // [esp+10h] [ebp-Ch] BYREF
+    unsigned int *v3; // ecx
+    unsigned char v5[12]; // [esp+10h] [ebp-Ch] BYREF
     v3 = (unsigned int *)(*(int (**)(void *, unsigned char *, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)NeedsSaveOrLink + 176))( /*0x4c2b75*/
                      NeedsSaveOrLink,
                      v5,
@@ -1451,7 +1436,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   this->M64 = BuildingAnim::GetType(); /*0x4c302d*/
   if ( aP7 == -1 || a9 == -1 ) /*0x4c3035*/
   {
-  int Instance; // eax
+    int Instance; // eax
     Instance = TextRenderer::GetInstance(); /*0x4c3039*/
     if ( a9 == -1 ) /*0x4c3043*/
       this->M24 = *(unsigned int *)(Instance + 28) + 1; /*0x4c3049*/
@@ -1459,7 +1444,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
     {
       if ( wcslen(this->M52) ) /*0x4c3055*/
       {
-  int v13; // eax
+        int v13; // eax
         v13 = Text::MeasureWidth(this->M52, 0); /*0x4c3069*/
         this->u32_44 = 0; /*0x4c3071*/
         this->M20 = v13 + 6; /*0x4c3078*/
@@ -1631,8 +1616,7 @@ unsigned char * sub_4C37D0(int a1, unsigned char * a2, int a3, unsigned char a4)
   v16 = a2; /*0x4c37d4*/
   if ( !a2 ) /*0x4c37dc*/
     return 0; /*0x4c38c7*/
-  int v5; // eax
-  v5 = 0; /*0x4c37e3*/
+  int v5 = 0; // eax /*0x4c37e3*/
   unsigned char *v12; // [esp+4h] [ebp-10h]
   v12 = a2; /*0x4c37e7*/
   int v15; // [esp+Ch] [ebp-8h]
@@ -1641,21 +1625,19 @@ unsigned char * sub_4C37D0(int a1, unsigned char * a2, int a3, unsigned char a4)
   {
     if ( v5 <= 240 && v5 ) /*0x4c37fc*/
     {
-  int v6; // eax
+      int v6; // eax
       v6 = a1 + 2 * (v5 % 256) + v5 % 256; /*0x4c3813*/
-  int16_t v13; // [esp+8h] [ebp-Ch] BYREF
+      int16_t v13; // [esp+8h] [ebp-Ch] BYREF
       v13 = *(unsigned short *)v6; /*0x4c3818*/
-  char v14; // [esp+Ah] [ebp-Ah]
+      char v14; // [esp+Ah] [ebp-Ah]
       v14 = *(unsigned char *)(v6 + 2); /*0x4c3820*/
       ((uint8_t *)&v13)->Lerp(a4, (uint8_t *)(a1 + 2 * (a3 % 256) + a3 % 256)); /*0x4c3845*/
-  int v7; // ebx
-      v7 = -1; /*0x4c384a*/
-  int v8; // ebp
-      v8 = 0; /*0x4c384d*/
-  int i; // esi
+      int v7 = -1; // ebx /*0x4c384a*/
+      int v8 = 0; // ebp /*0x4c384d*/
+      int i; // esi
       for ( i = 240; i < 255; ++i ) /*0x4c384f*/
       {
-  int v10; // eax
+        int v10; // eax
         v10 = Palette::CalcColorDistance((uint8_t *)(a1 + 2 * (i % 256) + i % 256), (uint8_t *)&v13); /*0x4c3870*/
         if ( v7 == -1 || v10 < v8 ) /*0x4c387c*/
         {
@@ -1693,18 +1675,15 @@ char * sub_4C3A20(int a1, int a2, int a3, char * a4)
 
   if ( !a3 || !a2 ) /*0x4c3a39*/
     return a4; /*0x4c3ab3*/
-  char *v4; // ebp
-  v4 = a4; /*0x4c3a3b*/
+  char *v4 = a4; // ebp /*0x4c3a3b*/
   if ( a4 || (v4 = (char *)operator new((a3 + 1) << 8)) != 0 ) /*0x4c3a56*/
   {
-  int v5; // ebx
-    v5 = 0; /*0x4c3a62*/
+    int v5 = 0; // ebx /*0x4c3a62*/
     memset(v4, 0xFFu, 0x100u); /*0x4c3a64*/
-  unsigned char *v6; // edi
-    v6 = v4 + 256; /*0x4c3a68*/
+    unsigned char *v6 = v4 + 256; // edi /*0x4c3a68*/
     if ( a3 > 0 ) /*0x4c3a6e*/
     {
-  uint8_t *v7; // esi
+      uint8_t *v7; // esi
       v7 = (uint8_t *)(a2 + 1); /*0x4c3a74*/
       do /*0x4c3aa5*/
       {
@@ -1728,13 +1707,12 @@ int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
 
   if ( !a2 ) /*0x4c3ad8*/
     return 0; /*0x4c3b4a*/
-  int v6; // esi
-  v6 = 0; /*0x4c3ae0*/
+  int v6 = 0; // esi /*0x4c3ae0*/
   uint8_t *v7; // ebp
   v7 = (uint8_t *)&a1[2 * (a3 % 256) + a3 % 256]; /*0x4c3af3*/
   do /*0x4c3b3f*/
   {
-  int v8; // eax
+    int v8; // eax
     v8 = (int)&a1[2 * (v6 % 256) + v6 % 256]; /*0x4c3b0a*/
     (*((unsigned short *)&(a3))) = *(unsigned short *)v8; /*0x4c3b0f*/
     (((unsigned char *)&(a3))[2]) = *(unsigned char *)(v8 + 2); /*0x4c3b20*/
@@ -1752,19 +1730,17 @@ namespace gamemd {
 unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
 {
 
-  uint8_t v6; // bp
-  v6 = a4; /*0x4c3b7d*/
+  uint8_t v6 = a4; // bp /*0x4c3b7d*/
   int v7; // eax
   v7 = (int)&a1[2 * (a3 % 256) + a3 % 256]; /*0x4c3b81*/
-  int v8; // esi
-  v8 = 1; /*0x4c3b83*/
+  int v8 = 1; // esi /*0x4c3b83*/
   (*((unsigned short *)&(a3))) = *(unsigned short *)v7; /*0x4c3b8b*/
   (*((unsigned char *)&(v7))) = *(unsigned char *)(v7 + 2); /*0x4c3b90*/
   *a2 = 0; /*0x4c3b93*/
   (((unsigned char *)&(a3))[2]) = v7; /*0x4c3b96*/
   do /*0x4c3be3*/
   {
-  int v9; // eax
+    int v9; // eax
     v9 = (int)&a1[2 * (v8 % 256) + v8 % 256]; /*0x4c3bad*/
     (*((unsigned short *)&(a4))) = *(unsigned short *)v9; /*0x4c3bbc*/
     (((unsigned char *)&(a4))[2]) = *(unsigned char *)(v9 + 2); /*0x4c3bc4*/
@@ -1971,14 +1947,13 @@ int E4Recv_4C4FC0::sub_4C4FC0(int a2)
 
   int result; // eax
   result = Power::TimerProcess((int)this->AbstractClass); /*0x4c4fcd*/
-  void *vtable1; // ecx
-  vtable1 = this->M4; /*0x4c4fd2*/
+  void *vtable1 = this->M4; // ecx /*0x4c4fd2*/
   if ( vtable1 ) /*0x4c4fd7*/
   {
-  int v5; // eax
+    int v5; // eax
     v5 = (*(int (**)(void *))(*(unsigned int *)vtable1 + 44))(vtable1); /*0x4c4fdb*/
     Power::TimerProcess(v5); /*0x4c4fe1*/
-  int v6; // eax
+    int v6; // eax
     v6 = (*(int (**)(char *))(*((unsigned int *)this->? + 1) + 16))((char *)this->? + 4); /*0x4c4ff0*/
     return Power::TimerProcess(v6); /*0x4c4ff6*/
   }
@@ -2756,9 +2731,9 @@ int sub_4C84E0()
     case 1: /*0x4c84ed*/
       if ( !AllocConsole() ) /*0x4c85a0*/
       {
-        FreeConsole(); /*0x4c85ac*/
-        AllocConsole(); /*0x4c85ae*/
-      }
+      FreeConsole(); /*0x4c85ac*/
+      AllocConsole(); /*0x4c85ae*/
+    }
       _cwprintf(aErrorRecursive); /*0x4c85b5*/
       Sleep(0xFA0u); /*0x4c85c2*/
       sub_7DD1D7(); /*0x4c85c8*/
@@ -2996,8 +2971,7 @@ double globalHelper_0CB3D0(gamemd::AbstractClass* aP0, AbstractClass * aP1)
 {
   double result; // st7
 
-  double v3; // st7
-  v3 = aP0; /*0x4cb3da*/
+  double v3 = aP0; // st7 /*0x4cb3da*/
   char v4; // c3
   if ( v4 ) /*0x4cb3e3*/
   {
@@ -3016,7 +2990,7 @@ double globalHelper_0CB3D0(gamemd::AbstractClass* aP0, AbstractClass * aP1)
   }
   else
   {
-  int v6; // eax
+    int v6; // eax
     v6 = abs32(Math::RoundToInt(v3 / aP1 / flt_8650B8)); /*0x4cb430*/
     if ( v6 >= 4097 ) /*0x4cb437*/
       result = 1.5707964; /*0x4cb442*/
@@ -3343,11 +3317,10 @@ bool sub_4CC680(int a1, int a2, int a3)
 
   int SlopeIndex; // ebx
   SlopeIndex = Cell::GetSlopeIndex(a2); /*0x4cc690*/
-  BOOL result; // eax
-  result = 0; /*0x4cc6c3*/
+  BOOL result = 0; // eax /*0x4cc6c3*/
   if ( Cell::GetSlopeIndex(a3) - SlopeIndex >= 4 ) /*0x4cc69e*/
   {
-  int v5; // esi
+    int v5; // esi
     v5 = Cell::GetSlopeIndex(a1); /*0x4cc6a9*/
     if ( Cell::GetSlopeIndex(a3) - v5 > 0 ) /*0x4cc6b4*/
       return 1; /*0x4cc69e*/

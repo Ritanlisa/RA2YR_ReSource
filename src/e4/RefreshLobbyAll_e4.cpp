@@ -27,8 +27,7 @@ int sub_5E8D40()
     return -1; /*0x5e8d49*/
   const wchar_t *v1; // ebx
   v1 = *(const wchar_t **)dword_A8DA78; /*0x5e8d55*/
-  int v2; // edi
-  v2 = 0; /*0x5e8d57*/
+  int v2 = 0; // edi /*0x5e8d57*/
   const wchar_t **v3; // esi
   v3 = (const wchar_t **)&dword_A8DA90; /*0x5e8d59*/
   while ( !*v3 || _wcsicmp(v1, *v3) ) /*0x5e8d70*/
@@ -49,8 +48,7 @@ int sub_5EA8E0(int a1)
 
   int v1; // ecx
   v1 = *(&dword_A8DA90 + a1); /*0x5ea8e0*/
-  int result; // eax
-  result = 0; /*0x5ea8e7*/
+  int result = 0; // eax /*0x5ea8e7*/
   if ( v1 && (v1 == g_Lobby_PlayerTeam || v1 == g_Lobby_PlayerSide || v1 == g_Lobby_PlayerColor) /*0x5ea909*/
     || *(unsigned int *)(v1 + 119) == 1 )
   {
@@ -140,11 +138,11 @@ void sub_7A0E50()
   int i; // esi
   for ( i = 0; i < 8; ++i ) /*0x7a0e51*/
   {
-  wchar_t *v1; // ecx
+    wchar_t *v1; // ecx
     v1 = *(wchar_t **)((char *)&dword_A8DA90 + i * 4); /*0x7a0e53*/
     if ( !v1 || !IsKnownPointer(v1) ) /*0x7a0e5d*/
       ((unsigned int *)(dword_B76440))[i] = -1; /*0x7a0e66*/
-  char *v2; // eax
+    char *v2; // eax
     v2 = ToWideStringChar((IUnknown *)(*(char **)((char *)&dword_A8DA90 + i * 4))); /*0x7a0e76*/
     SetGameOptionsPing(v2, ((unsigned int *)(dword_B76440))[i]); /*0x7a0e83*/
   }

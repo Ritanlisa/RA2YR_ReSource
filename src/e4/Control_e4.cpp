@@ -18,8 +18,7 @@ namespace gamemd {  // G42.18 ns repair
 int Control::DispatchClick(int aP1, void *a2)
 {
 
-  int v3; // ecx
-  v3 = this->u32_28; /*0x48e623*/
+  int v3 = this->u32_28; // ecx /*0x48e623*/
   if ( v3 ) /*0x48e628*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/
   return ((GadgetClass *)(aP1))->ClearState(); /*0x48e63d*/
@@ -60,9 +59,9 @@ int Control::RepositionControlsDialog(HWND hWnd)
   if ( !*(unsigned int *)&g_DialogHashMap_Count ) /*0x60b9b7*/
     goto LABEL_5; /*0x60b9b7*/
   v4 = *(unsigned int **)(*(unsigned int *)&g_DialogHashMap_Base /*0x60b9d8*/
-                  + 4
-                  * ((*(int (**)(HWND *))&g_DialogHashMap_Hasher)(&v14)
-                   & ((1 << g_DialogHashMap_Buckets) - 1)));
+  + 4
+  * ((*(int (**)(HWND *))&g_DialogHashMap_Hasher)(&v14)
+  & ((1 << g_DialogHashMap_Buckets) - 1)));
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
@@ -75,8 +74,8 @@ int Control::RepositionControlsDialog(HWND hWnd)
   if ( v9 ) /*0x60bd09*/
     v5 = (Dialog *)v9[27]; /*0x60bd0f*/
   else
-  LABEL_5:
-    v5 = 0; /*0x60b9f5*/
+    LABEL_5:
+  v5 = 0; /*0x60b9f5*/
   DlgCtrlID = GetDlgCtrlID(hWnd); /*0x60ba02*/
   result = nHeight; /*0x60ba0e*/
   v8 = X; /*0x60ba12*/
@@ -142,7 +141,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
       }
       if ( v5 == 188 ) /*0x60bc40*/
       {
-  LABEL_75:
+        LABEL_75:
         result = ((SessionClass *)&dword_A8B238)->GetGameSpeed(); /*0x60bce4*/
         if ( (unsigned char)result ) /*0x60bcf0*/
           return result; /*0x60bcf0*/
@@ -161,7 +160,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
         || v5 == 214
         || v5 == 259 )
       {
-  LABEL_74:
+        LABEL_74:
         if ( v5 == 189 /*0x60bcda*/
           || v5 == 258
           || v5 == 3014
@@ -203,7 +202,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
         }
         v3 += 2; /*0x60be02*/
       }
-  LABEL_170:
+      LABEL_170:
       if ( (HWND)v3 == v14 ) /*0x60c078*/
         goto LABEL_171; /*0x60c078*/
       return MoveWindow(hWnd, X, v3, nWidth, nHeight, 0); /*0x60c0a9*/
@@ -222,7 +221,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
         return result; /*0x60be56*/
       ++X; /*0x60be66*/
       ++nWidth; /*0x60be6a*/
-  LABEL_169:
+      LABEL_169:
       if ( X != v8 ) /*0x60c072*/
         return MoveWindow(hWnd, X, v3, nWidth, nHeight, 0); /*0x60c072*/
       goto LABEL_170; /*0x60c072*/
@@ -251,7 +250,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
         --v3; /*0x60c062*/
         goto LABEL_170; /*0x60c063*/
       }
-  LABEL_167:
+      LABEL_167:
       v10 = X - 1; /*0x60c065*/
       goto LABEL_168; /*0x60c069*/
     }
@@ -312,7 +311,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
     if ( DlgCtrlID == 1896 ) /*0x60bfe7*/
     {
       v10 = X + 1; /*0x60bfed*/
-  LABEL_168:
+      LABEL_168:
       X = v10; /*0x60c06a*/
       goto LABEL_169; /*0x60c06a*/
     }
@@ -342,9 +341,9 @@ int Control::CheckControlTypeDialog()
   if ( !*(unsigned int *)&g_DialogHashMap_Count ) /*0x60c54d*/
     goto LABEL_7; /*0x60c54d*/
   result = *(unsigned int *)(*(unsigned int *)&g_DialogHashMap_Base /*0x60c570*/
-                     + 4
-                     * ((*(int (**)(Control **))&g_DialogHashMap_Hasher)(&v3)
-                      & ((1 << g_DialogHashMap_Buckets) - 1)));
+  + 4
+  * ((*(int (**)(Control **))&g_DialogHashMap_Hasher)(&v3)
+  & ((1 << g_DialogHashMap_Buckets) - 1)));
   if ( !result ) /*0x60c575*/
     goto LABEL_7; /*0x60c575*/
   while ( *(Control **)result != v3 ) /*0x60c57d*/
@@ -427,7 +426,7 @@ int Control::CheckControlTypeDialog()
   }
   else
   {
-  LABEL_7:
+    LABEL_7:
     (*((unsigned char *)&(result))) = 0; /*0x60c599*/
   }
   return result; /*0x60c58b*/

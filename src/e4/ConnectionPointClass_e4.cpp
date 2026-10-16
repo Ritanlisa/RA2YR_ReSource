@@ -34,28 +34,27 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   if ( (int *)(v3 + 4) != &a1->ConnectionPointClass_field_0x1C ) /*0x4a07ab*/
   {
     VectorClass::ClearAndFree2(v3 + 4); /*0x4a07af*/
-  int v4; // eax
+    int v4; // eax
     v4 = *((unsigned int *)a1 + 9); /*0x4a07b5*/
     *(unsigned int *)(v3 + 12) = v4; /*0x4a07ba*/
     if ( v4 ) /*0x4a07bd*/
     {
-  int v5; // eax
+      int v5; // eax
       v5 = (int)(__2_YAPAXI_Z(8 * v4)); /*0x4a07c7*/
       *(unsigned int *)(v3 + 8) = v5; /*0x4a07d1*/
       if ( v5 ) /*0x4a07d4*/
       {
-  int v6; // eax
+        int v6; // eax
         v6 = *(unsigned int *)(v3 + 12); /*0x4a07d6*/
-  int v7; // ecx
-        v7 = 0; /*0x4a07d9*/
+        int v7 = 0; // ecx /*0x4a07d9*/
         *(unsigned char *)(v3 + 17) = 1; /*0x4a07dd*/
         if ( v6 > 0 ) /*0x4a07e1*/
         {
           do /*0x4a0806*/
           {
-  unsigned int *v8; // edx
+            unsigned int *v8; // edx
             v8 = (unsigned int *)(a1->ConnectionPointClass_field_0x20 + 8 * v7); /*0x4a07ef*/
-  unsigned int *v9; // eax
+            unsigned int *v9; // eax
             v9 = (unsigned int *)(*(unsigned int *)(v3 + 8) + 8 * v7++); /*0x4a07f4*/
             *v9 = *v8; /*0x4a07f9*/
             v9[1] = v8[1]; /*0x4a07fe*/
@@ -79,7 +78,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   int i; // esi
   for ( i = 0; i < *(unsigned int *)(v3 + 20); ++i ) /*0x4a0837*/
   {
-  int v11; // [esp-Ch] [ebp-14h]
+    int v11; // [esp-Ch] [ebp-14h]
     v11 = *(unsigned int *)(*(unsigned int *)(v3 + 8) + 8 * i); /*0x4a083f*/
     (*(void (**)(int))(*(unsigned int *)v11 + 4))(v11); /*0x4a0842*/
   }
@@ -120,7 +119,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x4a128c*/
   {
     LOBYTE(this->m_C) = 0; /*0x4a1296*/
-  unsigned int *v4; // edi
+    unsigned int *v4; // edi
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
@@ -130,11 +129,11 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x4a12c5*/
       {
-  int m_8; // ecx
+        int m_8; // ecx
         m_8 = this->m_8; /*0x4a12cc*/
         if ( a2 < m_8 ) /*0x4a12d1*/
           m_8 = a2; /*0x4a12d3*/
-  int i; // eax
+        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a12d9*/
           ++i; /*0x4a12de*/
         if ( BYTE1(this->m_C) ) /*0x4a12eb*/
@@ -179,7 +178,7 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int
   {
     if ( !*((unsigned char *)a1 + 41) && v4 ) /*0x4a0697*/
       return -2147220991; /*0x4a0697*/
-  int v5; // eax
+    int v5; // eax
     v5 = *((int *)a1 + 12); /*0x4a0699*/
     if ( v5 <= 0 /*0x4a06a9*/
       || !(*(uint8_t (**)(int *, int, int))(a1->ConnectionPointClass_field_0x1C + 8))(
@@ -207,8 +206,7 @@ int ConnectionPointClass::EnumConnections(int a2)  // G42.41c: truth 0x4A0700 = 
 {
 
 
-  int v2; // eax
-  v2 = 0; /*0x4a0705*/
+  int v2 = 0; // eax /*0x4a0705*/
   int v3; // esi
   v3 = *((unsigned int *)a2 + 11); /*0x4a0707*/
   if ( v3 <= 0 ) /*0x4a070d*/
@@ -223,14 +221,13 @@ int ConnectionPointClass::EnumConnections(int a2)  // G42.41c: truth 0x4A0700 = 
   v6 = *((unsigned int *)a2 + 11); /*0x4a072f*/
   if ( v2 < v6 ) /*0x4a0734*/
   {
-  int v7; // ecx
-    v7 = v6 - 1; /*0x4a0736*/
-  int ConnectionPointClass_field_0x20; // ecx
+    int v7 = v6 - 1; // ecx /*0x4a0736*/
+    int ConnectionPointClass_field_0x20; // ecx
     for ( *((unsigned int *)a2 + 11) = v7; /*0x4a073c*/
-          v2 < *((unsigned int *)a2 + 11);
-          *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v2 - 4) = *(unsigned int *)(ConnectionPointClass_field_0x20
-                                                                                + 8 * v2
-                                                                                + 4) )
+    v2 < *((unsigned int *)a2 + 11);
+    *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v2 - 4) = *(unsigned int *)(ConnectionPointClass_field_0x20
+    + 8 * v2
+    + 4) )
     {
       ConnectionPointClass_field_0x20 = a2->ConnectionPointClass_field_0x20; /*0x4a073e*/
       ++v2; /*0x4a0741*/
@@ -258,13 +255,12 @@ char ConnectionPointClass_9::AddRef(int a2)
   m_8 = this->m_8; /*0x4a1242*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a124d*/
   {
-  int v3; // edx
-    v3 = 0; /*0x4a124f*/
+    int v3 = 0; // edx /*0x4a124f*/
     if ( m_8 <= 0 ) /*0x4a1253*/
       return 1; /*0x4a1273*/
-  unsigned int *v4; // eax
+    unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x4a1255*/
-  int v5; // ecx
+    int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a125b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a1264*/
     {
@@ -287,8 +283,7 @@ int ConnectionPointClass_9::Advise(unsigned int * a2)
     return 0; /*0x4a1368*/
   int m_8; // edx
   m_8 = this->m_8; /*0x4a136e*/
-  int result; // eax
-  result = 0; /*0x4a1371*/
+  int result = 0; // eax /*0x4a1371*/
   if ( m_8 <= 0 ) /*0x4a1375*/
     return -1; /*0x4a138c*/
   unsigned int *i; // ecx

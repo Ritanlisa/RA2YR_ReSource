@@ -24,7 +24,7 @@
 namespace gamemd {  // G42.18 ns repair
 int TClassFactory_CampaignClass::GetClassName()
 {
-
+  
   LONG v1; // esi
   volatile LONG *Block; // [esp+Ch] [ebp+4h]
   v1 = InterlockedDecrement(Block + 1); /*0x6c0270*/
@@ -37,7 +37,7 @@ int TClassFactory_CampaignClass::GetClassName()
 namespace gamemd {
 int TClassFactory_MechLocomotionClass::GetClassName()
 {
-
+  
   LONG v1; // esi
   volatile LONG *Block; // [esp+Ch] [ebp+4h]
   v1 = InterlockedDecrement(Block + 1); /*0x6c4d70*/
@@ -54,7 +54,7 @@ int TClassFactory_CampaignClass::ddtor(int a2, int a3, unsigned int *a4, int a1)
   int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
   unsigned int *v9; // [esp+18h] [ebp+10h]
-
+  
   if ( !v9 ) /*0x6c0298*/
     return -2147024809; /*0x6c029b*/
   *v9 = 0; /*0x6c02a8*/
@@ -78,7 +78,7 @@ int TClassFactory_CampaignClass::ddtor(int a2, int a3, unsigned int *a4, int a1)
 namespace gamemd {
 int TClassFactory_CampaignClass::GetSize(int a2, int a1, int a3, int a4)
 {
-
+  
   int v2; // ecx
   v2 = *(unsigned int *)(a2 + 4); /*0x6c031a*/
   int v3; // ecx
@@ -95,7 +95,7 @@ int TClassFactory_CampaignClass::GetSize(int a2, int a1, int a3, int a4)
 namespace gamemd {
 LONG TClassFactory_MechLocomotionClass::AddRef(void *a1)
 {
-
+  
   int v2; // [esp+4h] [ebp+4h]
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c4d4e*/
 }
@@ -108,7 +108,7 @@ int TClassFactory_MechLocomotionClass::ddtor(int a2, int a3, unsigned int *a4)
   int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
   unsigned int *v9; // [esp+18h] [ebp+10h]
-
+  
   if ( !v9 ) /*0x6c4d98*/
     return -2147024809; /*0x6c4d9b*/
   *v9 = 0; /*0x6c4da8*/
@@ -132,7 +132,7 @@ int TClassFactory_MechLocomotionClass::ddtor(int a2, int a3, unsigned int *a4)
 namespace gamemd {
 int TClassFactory_MechLocomotionClass::GetSize(int a2)
 {
-
+  
   int v2; // ecx
   v2 = *(unsigned int *)(a2 + 4); /*0x6c4e1a*/
   int v3; // ecx

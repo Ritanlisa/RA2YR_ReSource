@@ -41,7 +41,7 @@ unsigned int * Waypoint::FindByCell(unsigned short *aP1)
     v7 = 0; /*0x5023e8*/
     if ( *(int *)(*(unsigned int *)i + 56) > 0 ) /*0x5023ef*/
       break; /*0x5023ef*/
-LABEL_12:
+    LABEL_12:
     v10 = ++v2; /*0x502437*/
     if ( v2 >= 12 ) /*0x50243b*/
       return 0; /*0x50244c*/
@@ -86,8 +86,7 @@ int Waypoint::FindCell(unsigned int * a2)
 {
 
 
-  int v3; // ecx
-  v3 = 0; /*0x763a59*/
+  int v3 = 0; // ecx /*0x763a59*/
   Waypoint *v7; // [esp+14h] [ebp-4h]
   v7 = this; /*0x763a5b*/
   void *v6; // [esp+10h] [ebp-8h]
@@ -96,9 +95,9 @@ int Waypoint::FindCell(unsigned int * a2)
     return 0; /*0x763adc*/
   unsigned int *i; // edi
   for ( i = (unsigned int *)(*&this->u32_2C); /*0x763a6e*/
-        (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
+  (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
      || (unsigned __int16)(i[1] / 256) != (unsigned __int16)(a2[1] / 256);
-        i += 3 )
+  i += 3 )
   {
     if ( ++v3 >= (int)v6 ) /*0x763ac5*/
       return 0; /*0x763ac5*/

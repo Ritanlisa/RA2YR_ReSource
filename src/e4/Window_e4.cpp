@@ -23,24 +23,19 @@ namespace gamemd {
 char Window::ClampToScreen(int * a1)
 {
 
-  char v1; // bl
-  v1 = 0; /*0x776d86*/
-  int v2; // eax
-  v2 = *a1; /*0x776d89*/
+  char v1 = 0; // bl /*0x776d86*/
+  int v2 = *a1; // eax /*0x776d89*/
   if ( *a1 < 0 ) /*0x776d8d*/
   {
-  int v3; // ecx
-    v3 = a1->q008; /*0x776d8f*/
+    int v3 = a1->q008; // ecx /*0x776d8f*/
     *a1 = 0; /*0x776d92*/
     v1 = 1; /*0x776d9a*/
     a1->q008 = v3 - v2; /*0x776d9c*/
   }
-  int v4; // eax
-  v4 = a1->__pad_004; /*0x776d9f*/
+  int v4 = a1->__pad_004; // eax /*0x776d9f*/
   if ( v4 < 0 ) /*0x776da4*/
   {
-  int v5; // ecx
-    v5 = a1->CampaignScore_field_0x0C; /*0x776da6*/
+    int v5 = a1->CampaignScore_field_0x0C; // ecx /*0x776da6*/
     a1->__pad_004 = 0; /*0x776da9*/
     v1 = 1; /*0x776db2*/
     a1->CampaignScore_field_0x0C = v5 - v4; /*0x776db4*/

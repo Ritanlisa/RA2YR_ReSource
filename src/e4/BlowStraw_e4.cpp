@@ -72,7 +72,7 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
     this->u32_5545 = 1; /*0x6d06b4*/
     (*(void (**)(TabClass *, unsigned int))(TabClass_field_0x0 + 56))(this, 0); /*0x6d06ba*/
   }
-LABEL_6:
+  LABEL_6:
   v7 = *((unsigned int *)dword_B0FC58 + 1); /*0x6d06bd*/
   if ( *a2 >= *(unsigned int *)dword_B0FC58 && *a2 < *(unsigned int *)dword_B0FC58 + dword_886FA8 ) /*0x6d06dd*/
   {
@@ -232,7 +232,7 @@ CellStruct * * sub_731AF0()
   v5 = 0; /*0x731b50*/
   if ( *(int *)&((unsigned int *)&stru_A8EB00)[228] <= 0 ) /*0x731b54*/
   {
-  LABEL_5:
+    LABEL_5:
     (*((unsigned char *)&(g_BuildingLoadQueue_Array.QueueingCell[0]))) = 1; /*0x731b43*/
     return (gamemd::CellStruct **)(result); /*0x731b4d*/
   }
@@ -278,8 +278,7 @@ TabClass * BlowStraw_29::Read(char * Block, char a2, void *a3)
 
   int *v3; // esi
   v3 = (int *)((char *)Block + 21484); /*0x5be9e5*/
-  int v4; // edi
-  v4 = 4; /*0x5be9eb*/
+  int v4 = 4; // edi /*0x5be9eb*/
   do /*0x5bea06*/
   {
     v3 -= 997; /*0x5be9f5*/

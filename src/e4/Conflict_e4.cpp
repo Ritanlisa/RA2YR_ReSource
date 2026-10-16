@@ -78,7 +78,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
     }
   }
   v8 = v6; /*0x766c9d*/
-LABEL_14:
+  LABEL_14:
   LOBYTE(this->m_C) = 1; /*0x766c9f*/
   if ( !v8 ) /*0x766ca5*/
     return 0; /*0x766caa*/
@@ -114,20 +114,18 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
   int v12; // eax
   int v14; // [esp+10h] [ebp-4h]
 
-  int m_8; // ebp
-  m_8 = a2; /*0x766dc3*/
+  int m_8 = a2; // ebp /*0x766dc3*/
   if ( a2 ) /*0x766dcd*/
   {
     LOBYTE(this->m_C) = 0; /*0x766dd7*/
     if ( a3 ) /*0x766ddd*/
     {
       *a3 = a2; /*0x766e21*/
-  ComPtr *v8; // esi
+      ComPtr *v8; // esi
       v8 = (ComPtr *)(a3 + 1); /*0x766e23*/
       if ( a2 - 1 >= 0 ) /*0x766e2f*/
       {
-  int v9; // ebx
-        v9 = a2; /*0x766e31*/
+        int v9 = a2; // ebx /*0x766e31*/
         do /*0x766e45*/
         {
           ComPtr::Constructor(v8); /*0x766e36*/
@@ -142,13 +140,13 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     }
     else
     {
-  int *v5; // eax
+      int *v5; // eax
       v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x766de7*/
       if ( v5 ) /*0x766df1*/
       {
         *v5 = a2; /*0x766df3*/
         v6 = (ComPtr *)(v5 + 1); /*0x766df5*/
-  Conflict_WorldDominationTour *v7; // esi
+        Conflict_WorldDominationTour *v7; // esi
         v7 = (Conflict_WorldDominationTour *)(v5 + 1); /*0x766dfb*/
         if ( a2 - 1 >= 0 ) /*0x766dff*/
         {
@@ -174,7 +172,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     {
       if ( a2 >= this->m_8 ) /*0x766e61*/
         m_8 = this->m_8; /*0x766e63*/
-  int i; // esi
+      int i; // esi
       for ( i = 0; i < m_8; ++i ) /*0x766e69*/
         ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*&this->u32_4 + 8 * i + 4)); /*0x766e76*/
       if ( BYTE1(this->m_C) ) /*0x766e80*/
@@ -193,7 +191,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
   else
   {
     (*(void (**)(_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x766eb9*/
-                                                                                           + 12))(this);
+    + 12))(this);
   }
   v12 = this->m_8; /*0x766ebc*/
   if ( v12 < this->m_10 ) /*0x766ec4*/
@@ -264,8 +262,7 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, void *a3_2)
 {
 
-  int v3; // edi
-  v3 = *&a3_2->u32_4 + 8 * a3_2; /*0x76685d*/
+  int v3 = *&a3_2->u32_4 + 8 * a3_2; // edi /*0x76685d*/
   ComPtr::Constructor((ComPtr *)a3_2); /*0x766862*/
   *(unsigned int *)(a3_2) = (unsigned int)(&vt_rc_ptr); /*0x766867*/
   ComPtr::Set((ComPtr *)a3_2, v3->u32_4); /*0x766873*/
@@ -310,13 +307,12 @@ char Conflict_WorldDominationTour_12::AddRef(int a2)
   m_8 = this->m_8; /*0x766bc6*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x766bcf*/
   {
-  int v3; // edx
-    v3 = 0; /*0x766bd1*/
+    int v3 = 0; // edx /*0x766bd1*/
     if ( m_8 <= 0 ) /*0x766bd5*/
       return 1; /*0x766bfb*/
-  unsigned int *v4; // ecx
+    unsigned int *v4; // ecx
     v4 = (unsigned int *)(*&this->u32_4 + 4); /*0x766bdd*/
-  unsigned int *i; // eax
+    unsigned int *i; // eax
     for ( i = (unsigned int *)(*(unsigned int *)(a2 + 4) + 4); *v4 == *i; i += 2 ) /*0x766be0*/
     {
       ++v3; /*0x766beb*/
@@ -355,10 +351,8 @@ int Conflict_WorldDominationTour_12::Read(int a2, void *a2_2, void *a3)
 
   if ( !(*((unsigned char *)&(a2_2->q00C))) ) /*0x766d60*/
     return 0; /*0x766d68*/
-  int m_8; // edx
-  m_8 = a2_2->q008; /*0x766d6e*/
-  int result; // eax
-  result = 0; /*0x766d71*/
+  int m_8 = a2_2->q008; // edx /*0x766d6e*/
+  int result = 0; // eax /*0x766d71*/
   if ( m_8 <= 0 ) /*0x766d75*/
     return -1; /*0x766d90*/
   unsigned int *i; // ecx
@@ -388,8 +382,7 @@ int Conflict_WorldDominationTour_12::IndexOf(int a2)
 
   int m_10; // edx
   m_10 = this->m_10; /*0x766f40*/
-  int result; // eax
-  result = 0; /*0x766f43*/
+  int result = 0; // eax /*0x766f43*/
   if ( m_10 <= 0 ) /*0x766f48*/
     return -1; /*0x766f63*/
   unsigned int *i; // ecx

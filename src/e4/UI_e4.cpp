@@ -65,7 +65,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int SendMultiplayerStartSignal_Start(char *p_this);  // x4:ida@0x5dbec0
+int SendMultiplayerStartSignal_Start(char *p_this);  // x4:ida@0x5dbec0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aMsgPlanningmod_10;  // data: 0x836cb4 truth(IDA G42.57w9)
@@ -92,7 +92,7 @@ int sub_52B6D0(int a1, int a2, int * a3)
     if ( v5 <= v4 ) /*0x52b6ee*/
       break; /*0x52b6ee*/
     v3 /= 2; /*0x52b6f0*/
-  LABEL_7:
+    LABEL_7:
     if ( v3 <= 0 ) /*0x52b702*/
       return 0; /*0x52b702*/
   }
@@ -123,12 +123,10 @@ int UI_Get(HWND hWnd, unsigned int * a2)
   char GameSpeed; // bl
   GameSpeed = SessionClass::GetGameSpeed(dword_A8B238); /*0x60af6e*/
   GetWindowRect(Parent, &Rect); /*0x60af76*/
-  int v6; // ebp
-  v6 = 0; /*0x60af7c*/
+  int v6 = 0; // ebp /*0x60af7c*/
   if ( !GameSpeed )
     v6 = (Rect.right - Rect.left - 800) / 2 < 0 ? 0 : (Rect.right - Rect.left - 800) / 2;
-  int v7; // ecx
-  v7 = 0; /*0x60afb0*/
+  int v7 = 0; // ecx /*0x60afb0*/
   if ( !GameSpeed )
     v7 = (Rect.bottom - Rect.top - 600) / 2 < 0 ? 0 : (Rect.bottom - Rect.top - 600) / 2;
   MoveWindow(hWnd, v6 + *a2, v7 + a2[1], a2[2], a2[3], 0); /*0x60afe4*/
@@ -140,8 +138,7 @@ namespace gamemd {
 int sub_622610()
 {
 
-  int result; // eax
-  result = dword_AC48EC; /*0x622610*/
+  int result = dword_AC48EC; // eax /*0x622610*/
   bool v2; // zf
   v2 = dword_AC48EC == 0; /*0x622615*/
   if ( dword_AC48EC > 0 ) /*0x622617*/
@@ -223,7 +220,7 @@ int sub_725070(int a1, int a2, unsigned int * a3)
     if ( v5 <= v4 ) /*0x72508e*/
       break; /*0x72508e*/
     v3 /= 2; /*0x725090*/
-  LABEL_7:
+    LABEL_7:
     if ( v3 <= 0 ) /*0x7250a2*/
       return 0; /*0x7250a2*/
   }
@@ -241,13 +238,12 @@ namespace gamemd {
 int sub_6AC430()
 {
 
-  int v1; // eax
-  v1 = 26; /*0x6ac43b*/
+  int v1 = 26; // eax /*0x6ac43b*/
   if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6ac435*/
     v1 = 18; /*0x6ac444*/
   unsigned int v2; // eax
   v2 = (int)((uint64_t)(1374389535LL /*0x6ac46c*/
-                              * (g_DSurface_ViewBounds - g_SidebarBounds - v1 + g_DSurface_SidebarBounds - 7)) >> 32) >> 4;
+  * (g_DSurface_ViewBounds - g_SidebarBounds - v1 + g_DSurface_SidebarBounds - 7)) >> 32) >> 4;
   return 2 * ((v2 >> 31) + v2); /*0x6ac478*/
 }
 }
@@ -260,16 +256,14 @@ wchar_t * * sub_730EA0()
   result = (wchar_t *)(dword_A8ECC8);
   if ( (int)dword_A8ECC8 > 0 ) /*0x730eab*/
   {
-  wchar_t *v1; // ebp
+    wchar_t *v1; // ebp
     v1 = (wchar_t *)(dword_A8ECC8);
-  int v2; // edi
-    v2 = 0; /*0x730eaf*/
-  char v3; // bl
-    v3 = 1; /*0x730eb3*/
+    int v2 = 0; // edi /*0x730eaf*/
+    char v3 = 1; // bl /*0x730eb3*/
     while ( 1 ) /*0x730eb7*/
     {
       result = (wchar_t *)dword_A8ECBC; /*0x730eb7*/
-  unsigned char *v4; // esi
+      unsigned char *v4; // esi
       v4 = (unsigned char *)*((unsigned int *)dword_A8ECBC + v2); /*0x730ebc*/
       if ( v4 ) /*0x730ec1*/
       {
@@ -308,8 +302,8 @@ void * sub_730F30()
     result = *(wchar_t **)&((unsigned int *)&stru_A8EB00)[416]; /*0x730f51*/
     if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1408) < *(int *)&((unsigned int *)&stru_A8EB00)[416] ) /*0x730f5a*/
     {
-  char *v2; // eax
-  char v3[112]; // [esp+0h] [ebp-70h] BYREF
+      char *v2; // eax
+      char v3[112]; // [esp+0h] [ebp-70h] BYREF
       v2 = (char *)(((int)(v3))->AddEvent((int)dword_A83D4C->relatedTagsCount, 0x2Du));
       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x730f7b*/
       {
@@ -334,16 +328,14 @@ void * sub_730FE0()
   result = (wchar_t *)(dword_A8ECC8);
   if ( (int)dword_A8ECC8 > 0 ) /*0x730feb*/
   {
-  wchar_t *v2; // ebp
+    wchar_t *v2; // ebp
     v2 = (wchar_t *)(dword_A8ECC8);
-  int v3; // edi
-    v3 = 0; /*0x730fef*/
-  char v4; // bl
-    v4 = 1; /*0x730ff3*/
+    int v3 = 0; // edi /*0x730fef*/
+    char v4 = 1; // bl /*0x730ff3*/
     while ( 1 ) /*0x730ff7*/
     {
       result = (wchar_t *)dword_A8ECBC; /*0x730ff7*/
-  unsigned char *v5; // esi
+      unsigned char *v5; // esi
       v5 = (unsigned char *)*((unsigned int *)dword_A8ECBC + v3); /*0x730ffc*/
       if ( v5 ) /*0x731001*/
       {
@@ -395,7 +387,7 @@ AbstractClass * * sub_7318F0()
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5301)
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5307) )
             {
-  char v2[112]; // [esp+0h] [ebp-70h] BYREF
+              char v2[112]; // [esp+0h] [ebp-70h] BYREF
               result = (char *)(((int)(v2))->Add2((int)dword_A83D4C->relatedTagsCount, 3u, (int)result));
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x7319ab*/
               {
@@ -480,7 +472,7 @@ int UI_Get_60B1D0(HWND hWnd, HWND a2)
   v14 = 0; /*0x60b244*/
   if ( !GameSpeed )
     v14 = ((Rect.bottom - Rect.top - 600) / 2 < 0 ? 0 : (Rect.bottom - Rect.top - 600) / 2)
-        - ((*((unsigned int *)v13 + 1) - 600) / 2 < 0 ? 0 : (*((unsigned int *)v13 + 1) - 600) / 2);
+  - ((*((unsigned int *)v13 + 1) - 600) / 2 < 0 ? 0 : (*((unsigned int *)v13 + 1) - 600) / 2);
   v6 = v17.right - v17.left; /*0x60b296*/
   top = v17.top; /*0x60b298*/
   v8 = v17.bottom - v17.top; /*0x60b29c*/
@@ -508,7 +500,7 @@ int UI_Get_60B1D0(HWND hWnd, HWND a2)
         }
       }
     }
-  LABEL_9:
+    LABEL_9:
     right = Rect.right; /*0x60b2de*/
     top = v17.top; /*0x60b2e2*/
   }
@@ -542,11 +534,11 @@ bool UI_Helper_602B90(int a1, HWND a2)
   if ( v7 ) /*0x602d54*/
     v4 = v7[27]; /*0x602d5a*/
   else
-  LABEL_5:
-    v4 = 0; /*0x602bde*/
+    LABEL_5:
+  v4 = 0; /*0x602bde*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x602be1*/
   return (v4 == 188 || v4 == 189 || v4 == 194 || v4 == 201 || v4 == 3014) /*0x602d41*/
-      && (DlgCtrlID == 1746
+  && (DlgCtrlID == 1746
        || DlgCtrlID == 1747
        || DlgCtrlID == 1748
        || DlgCtrlID == 1749
@@ -554,8 +546,8 @@ bool UI_Helper_602B90(int a1, HWND a2)
        || DlgCtrlID == 1751
        || DlgCtrlID == 1752
        || DlgCtrlID == 1753)
-      || (v4 == 258 || v4 == 188 || v4 == 189 || v4 == 194 || v4 == 201)
-      && (DlgCtrlID == 1754
+  || (v4 == 258 || v4 == 188 || v4 == 189 || v4 == 194 || v4 == 201)
+  && (DlgCtrlID == 1754
        || DlgCtrlID == 1755
        || DlgCtrlID == 1756
        || DlgCtrlID == 1757
@@ -563,8 +555,8 @@ bool UI_Helper_602B90(int a1, HWND a2)
        || DlgCtrlID == 1759
        || DlgCtrlID == 1760
        || DlgCtrlID == 1761)
-      || (v4 == 194 || v4 == 201)
-      && (DlgCtrlID == 1876
+  || (v4 == 194 || v4 == 201)
+  && (DlgCtrlID == 1876
        || DlgCtrlID == 1877
        || DlgCtrlID == 1878
        || DlgCtrlID == 1879
@@ -572,7 +564,7 @@ bool UI_Helper_602B90(int a1, HWND a2)
        || DlgCtrlID == 1881
        || DlgCtrlID == 1882
        || DlgCtrlID == 1883)
-      || v4 == 3014 && (DlgCtrlID == 1919 || DlgCtrlID == 1755);
+  || v4 == 3014 && (DlgCtrlID == 1919 || DlgCtrlID == 1755);
 }
 }
 // 0x603240
@@ -601,8 +593,8 @@ int UI_Helper_603240(int a1, HWND a2)
   if ( v7 ) /*0x6033dc*/
     v4 = v7[27]; /*0x6033e2*/
   else
-  LABEL_5:
-    v4 = 0; /*0x60328e*/
+    LABEL_5:
+  v4 = 0; /*0x60328e*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x603291*/
   return (v4 == 148 /*0x6033c6*/
        || v4 == 216
@@ -634,7 +626,7 @@ int UI_Helper_603240(int a1, HWND a2)
        || v4 == 264
        || v4 == 3014
        || v4 == 3015)
-      && DlgCtrlID == 1820;
+  && DlgCtrlID == 1820;
 }
 }
 // 0x60D2C0
@@ -735,11 +727,11 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
                 v12 = v12; /*0x6218fc*/
                 g_GameScreenConfig = 255 - v12; /*0x621908*/
                 v14 = g_ScreenSaverState /*0x62192d*/
-                    & ((g_GameScreenConfig * (uint16_t)(v13 & g_ScreenSaverState)
-                      + v12 * (unsigned int)(uint16_t)(v7 & g_ScreenSaverState)) >> 8);
+                & ((g_GameScreenConfig * (uint16_t)(v13 & g_ScreenSaverState)
+                + v12 * (unsigned int)(uint16_t)(v7 & g_ScreenSaverState)) >> 8);
                 v15 = (*(((unsigned short *)&(g_ScreenSaverState)) + 1)) /*0x621946*/
-                    & ((g_GameScreenConfig * (uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & v13)
-                      + v12 * (unsigned int)(uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & v7)) >> 8);
+                & ((g_GameScreenConfig * (uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & v13)
+                + v12 * (unsigned int)(uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & v7)) >> 8);
                 v16 = (int)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState));
                 v4 = (unsigned int *)(aP0); /*0x62195b*/
                 v6 = v20; /*0x62195f*/
@@ -1358,8 +1350,8 @@ int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
       v18 = *(unsigned short *)v8; /*0x6ac4d7*/
       v19 = *(unsigned char *)(v8 + 2); /*0x6ac4e1*/
       v9 = ((uint8_t)v18 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6ac52e*/
-         | ((*(((unsigned char *)&(v18)) + (sizeof(v18) - 1))) >> g_BitMask_Blue << g_BitMask_Green)
-         | (v19 >> g_BitMask_Red << g_BitShift_Blue);
+      | ((*(((unsigned char *)&(v18)) + (sizeof(v18) - 1))) >> g_BitMask_Blue << g_BitMask_Green)
+      | (v19 >> g_BitMask_Red << g_BitShift_Blue);
       v10 = a3[2]; /*0x6ac536*/
       v11 = a3[1]; /*0x6ac539*/
       v21[0] = *a3; /*0x6ac53c*/
@@ -1535,9 +1527,7 @@ int sub_72D030()
 namespace gamemd {
 char sub_72D120()
 {
-  char result; // al
-
-  result = byte_B0FCCE; /*0x72d120*/
+  char result = byte_B0FCCE; // al /*0x72d120*/
   if ( !byte_B0FCCE ) /*0x72d127*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72d133*/
@@ -1746,9 +1736,7 @@ char sub_731A10()
 namespace gamemd {
 int sub_731A30()
 {
-  int result; // eax
-
-  result = dword_A8B538; /*0x731a30*/
+  int result = dword_A8B538; // eax /*0x731a30*/
   if ( !dword_A8B538 ) /*0x731a37*/
     return ((int *)&dword_87F7E8)->ToggleZoom(-1); /*0x731a40*/
   return result; /*0x731a45*/

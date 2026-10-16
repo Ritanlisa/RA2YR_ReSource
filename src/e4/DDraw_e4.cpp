@@ -21,15 +21,13 @@ namespace gamemd {  // G42.18 ns repair
 int DDraw::ReleaseSurfaces(void *a1)
 {
 
-  int v2; // eax
-  v2 = this->u32_74; /*0x4a3373*/
+  int v2 = this->u32_74; // eax /*0x4a3373*/
   if ( v2 ) /*0x4a3378*/
   {
     (*(void (__stdcall **)(int))(*(unsigned int *)v2 + 8))(v2); /*0x4a337d*/
     this->u32_74 = 0; /*0x4a3380*/
   }
-  int result; // eax
-  result = this->u32_70; /*0x4a3387*/
+  int result = this->u32_70; // eax /*0x4a3387*/
   if ( result ) /*0x4a338c*/
   {
     result = (*(int (__stdcall **)(unsigned int))(*(unsigned int *)result + 8))(this->u32_70); /*0x4a3391*/
@@ -85,7 +83,7 @@ int DDraw::CapabilityCheck()
     }
   }
   v0 = aFailed_1; /*0x4a3ed7*/
-LABEL_7:
+  LABEL_7:
   Debug::Log_0("%s\n", v0); /*0x4a3edc*/
   Debug::Log(aCheckingOverla); /*0x4a3eec*/
   byte_8205D5 = 1; /*0x4a3ef8*/
@@ -182,8 +180,7 @@ int DDraw::CleanupSurfaces(void *a1)
     (*(void (**)(int))(*(unsigned int *)dword_8A0DF4 + 8))(dword_8A0DF4); /*0x4c1a6a*/
     dword_8A0DF4 = 0; /*0x4c1a6d*/
   }
-  int result; // eax
-  result = dword_8A0E00; /*0x4c1a73*/
+  int result = dword_8A0E00; // eax /*0x4c1a73*/
   if ( dword_8A0E00 ) /*0x4c1a7a*/
   {
     result = (*(int (**)(int))(*(unsigned int *)dword_8A0E00 + 8))(dword_8A0E00); /*0x4c1a7f*/
@@ -203,10 +200,10 @@ int DDraw::HandleSuspend()
   if ( ((unsigned int *)&stru_A8EB00)[412] != 1 ) /*0x5d253b*/
   {
     Debug::Log(); /*0x5d2546*/
-  int i; // edi
+    int i; // edi
     for ( i = 0; i < this->u32_28; ++i ) /*0x5d2555*/
     {
-  int v4; // ecx
+      int v4; // ecx
       v4 = *(unsigned int *)(this->u32_1C + 4 * i); /*0x5d255a*/
       (*(void (**)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
     }
@@ -218,10 +215,10 @@ int DDraw::HandleSuspend()
     }
     Debug::Log(); /*0x5d25a0*/
     result = this->u32_28; /*0x5d25a5*/
-  int j; // edi
+    int j; // edi
     for ( j = 0; j < result; ++j ) /*0x5d25af*/
     {
-  int v6; // ecx
+      int v6; // ecx
       v6 = *(unsigned int *)(this->u32_1C + 4 * j); /*0x5d25b4*/
       (*(void (**)(int))(*(unsigned int *)v6 + 12))(v6); /*0x5d25b9*/
       result = this->u32_28; /*0x5d25bc*/
@@ -243,7 +240,7 @@ int DDraw_LogError(UINT uType, int a2)
     }
     else
     {
-  CHAR Text[80]; // [esp+0h] [ebp-50h] BYREF
+      CHAR Text[80]; // [esp+0h] [ebp-50h] BYREF
       sprintf(Text, "DDRAW.DLL Error code = %08X", uType); /*0x4a3e10*/
       return MessageBoxA((HWND)(g_hWnd), Text, g_Str_Direct_X, 0x30u); /*0x4a3e2a*/
     }
@@ -264,10 +261,10 @@ char DDraw::CheckCapabilities()
 
   if ( g_lpDirectDraw7 ) /*0x4a462e*/
   {
-  unsigned int v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
+    unsigned int v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
     memset(v4, 0, sizeof(v4)); /*0x4a4645*/
     v4[0] = 316; /*0x4a464b*/
-  HRESULT v1; // eax
+    HRESULT v1; // eax
     v1 = g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v4, 0); /*0x4a4659*/
     if ( v1 ) /*0x4a465f*/
     {
@@ -277,7 +274,7 @@ char DDraw::CheckCapabilities()
       }
       else
       {
-  CHAR Text[80]; // [esp+Ch] [ebp-18Ch] BYREF
+        CHAR Text[80]; // [esp+Ch] [ebp-18Ch] BYREF
         sprintf(Text, "DDRAW.DLL Error code = %08X", v1); /*0x4a4683*/
         MessageBoxA((HWND)(g_hWnd), Text, g_Str_Direct_X, 0x30u); /*0x4a469e*/
       }

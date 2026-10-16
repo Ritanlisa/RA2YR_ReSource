@@ -119,14 +119,13 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   int v30[3]; // [esp+138h] [ebp-14h] BYREF
   int v31; // [esp+144h] [ebp-8h]
 
-  void *inited; // ebx
-  inited = 0; /*0x76d4da*/
+  void *inited = 0; // ebx /*0x76d4da*/
   int v7; // eax
   v7 = Count::Get(&this->__pad_458); /*0x76d4e3*/
   ((int)(&v25))->Construct(v7 + 44, 0); /*0x76d4f0*/
   while ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 4))(&v25) ) /*0x76d4fd*/
   {
-  WDTObject *v8; // eax
+    WDTObject *v8; // eax
     v8 = (WDTObject *)((FileClass *)(*(unsigned int *)(v25.q004 + 4) /*0x76d512*/ + 8 * v25.VectorCursor_field_0x08))->SetState();
     v9 = (int (***)(unsigned int, int))(v8)->GetAndClearFlag(); /*0x76d519*/
     if ( v9 ) /*0x76d520*/
@@ -211,7 +210,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       {
         v20 = (MSShapeAnim *)__2_YAPAXI_Z(0x40u); /*0x76d78c*/
         v21 = v20
-            ? (MSAnim *)MSShapeAnim::Constructor(
+        ? (MSAnim *)MSShapeAnim::Constructor(
                           v20,
                           this->u8_474,
                           v16,
@@ -220,7 +219,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                           5,
                           1,
                           512)
-            : 0;
+        : 0;
         (v21)->SetField(this->u32_478 - 1); /*0x76d7c8*/
         (v21)->GetField(0); /*0x76d7d0*/
         TerritoryUpdateDisplayWOL((ObjectClass *)v21, 0); /*0x76d7d8*/
@@ -273,7 +272,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             ((int)((Trigger *)&v25))->processTrigger(&this->__pad_494, 0); /*0x76d963*/
             while ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 4))(&v25) ) /*0x76d970*/
             {
-                            if ( !(unsigned __int8)((const char **)(/*0x76d98a*/ (String *)&v28))->Compare(*(const char ***)(*(unsigned int *)(v25.q004 + 4) + 4 * v25.VectorCursor_field_0x08)) )
+              if ( !(unsigned __int8)((const char **)(/*0x76d98a*/ (String *)&v28))->Compare(*(const char ***)(*(unsigned int *)(v25.q004 + 4) + 4 * v25.VectorCursor_field_0x08)) )
                 break; /*0x76d991*/
               (*(void (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 8))(&v25); /*0x76d99b*/
             }
