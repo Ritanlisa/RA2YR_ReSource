@@ -3294,17 +3294,17 @@ void Voxel_Section::Draw()
     if ( !INIClass::BinarySearchSection(a2, &_ESI->q024) ) /*0x75d3c0*/
       return 0; /*0x75deb2*/
     __asm { fld dword ptr [esi+124h] } /*0x75d3d2*/
-    __asm { fstp [esp+154h+var_154]; double }
+    __asm { fstp [esp+154h+var_154] } /*; double*/
     INIClass::ReadDouble_Overwrite((double *)a2, &_ESI->q024, aCellspread, v83); /*0x75d3e6*/
     __asm { fstp dword ptr [esi+124h] } /*0x75d3eb*/
     *(float *)_ESI->q124 = _ET1; /*0x75d3eb*/
     __asm { fld dword ptr [esi+128h] } /*0x75d3f1*/
-    __asm { fstp [esp+154h+var_154]; double }
+    __asm { fstp [esp+154h+var_154] } /*; double*/
     INIClass::ReadDouble_Overwrite((double *)a2, &_ESI->q024, aCellinset, v83); /*0x75d405*/
     __asm { fstp dword ptr [esi+128h] } /*0x75d40a*/
     *&_ESI->u32_128 = _ET1; /*0x75d40a*/
     __asm { fld dword ptr [esi+12Ch] } /*0x75d410*/
-    __asm { fstp [esp+154h+var_154]; double }
+    __asm { fstp [esp+154h+var_154] } /*; double*/
     INIClass::ReadDouble_Overwrite( /*0x75d424*/
       (double *)a2,
       &_ESI->q024,
@@ -3323,7 +3323,7 @@ void Voxel_Section::Draw()
                                         aDelaykillframe,
                                         *&_ESI->u32_134);
     __asm { fld dword ptr [esi+138h] } /*0x75d466*/
-    __asm { fstp [esp+154h+var_154]; double }
+    __asm { fstp [esp+154h+var_154] } /*; double*/
     INIClass::ReadDouble_Overwrite( /*0x75d477*/
       (double *)a2,
       &_ESI->q024,
@@ -3332,7 +3332,7 @@ void Voxel_Section::Draw()
     __asm { fstp dword ptr [esi+138h] } /*0x75d47c*/
     *&_ESI->u32_138 = _ET1; /*0x75d47c*/
     __asm { fld dword ptr [esi+13Ch] } /*0x75d482*/
-    __asm { fstp [esp+154h+var_154]; double }
+    __asm { fstp [esp+154h+var_154] } /*; double*/
     INIClass::ReadDouble_Overwrite( /*0x75d496*/
       (double *)a2,
       &_ESI->q024,

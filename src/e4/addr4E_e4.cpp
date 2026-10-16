@@ -4923,8 +4923,7 @@ namespace gamemd {
 unsigned int *  VectorClass::HouseClass_vt_00(char a2)
 {
 
-  void *v3; // eax
-  v3 = this->Items; /*0x4ef4e3*/
+  void *v3 = this->Items; // eax /*0x4ef4e3*/
   *this = &vt_VectorClass; /*0x4ef4e6*/
   if ( v3 && this->IsAllocated ) /*0x4ef4f0*/
   {

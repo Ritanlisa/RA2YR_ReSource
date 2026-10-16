@@ -159,7 +159,7 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
   v10 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa9a8*/                         (int *)&CCINIClass_INI_RA2MD,(uint8_t *)(g_INI_Key_Video),                         aAllowvramsideb,                         *(unsigned char *)&_ESI[54]);
   __asm { fld dword ptr [esi+38h] } /*0x5fa9ad*/
   _ESI[54] = v10; /*0x5fa9b8*/
-  __asm { fstp [esp+1A8h+var_1A8]; double } /*0x5fa9bb*/
+  __asm { fstp [esp+1A8h+var_1A8] } /*; double*/ /*0x5fa9bb*/
   double v34; // [esp+0h] [ebp-1A8h]
   INIClass::ReadDouble_Overwrite( /*0x5fa9c8*/
     (double *)&CCINIClass_INI_RA2MD,
@@ -190,7 +190,7 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
   __asm { fstp [esp+1A8h+var_1A8] }
   Debug::Log(); /*0x5faa0b*/
   __asm { fld dword ptr [esi+3Ch] } /*0x5faa10*/
-  __asm { fstp [esp+1A8h+var_1A8]; double }
+  __asm { fstp [esp+1A8h+var_1A8] } /*; double*/
   double v36; // [esp+0h] [ebp-1A8h]
   INIClass::ReadDouble_Overwrite( /*0x5faa28*/
     (double *)&CCINIClass_INI_RA2MD,
@@ -228,7 +228,7 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
   __asm { fstp [esp+1A8h+var_1A8] }
   Debug::Log(); /*0x5faa80*/
   __asm { fld dword ptr [esi+40h] } /*0x5faa85*/
-  __asm { fstp [esp+1A8h+var_1A8]; double }
+  __asm { fstp [esp+1A8h+var_1A8] } /*; double*/
   double v38; // [esp+0h] [ebp-1A8h]
   INIClass::ReadDouble_Overwrite( /*0x5faa9d*/
     (double *)&CCINIClass_INI_RA2MD,

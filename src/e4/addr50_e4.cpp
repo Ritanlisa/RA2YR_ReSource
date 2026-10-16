@@ -209,7 +209,7 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
       fstp [esp+1Ch+var_1C]; double
       fild [esp+1Ch+arg_4]
     }
-    __asm { fstp [esp+24h+var_24]; double }
+    __asm { fstp [esp+24h+var_24] } /*; double*/
     double v12; // [esp+0h] [ebp-24h]
     double v13; // [esp+8h] [ebp-1Ch]
     Math::CalcAngle(v12, v13); /*0x50603c*/

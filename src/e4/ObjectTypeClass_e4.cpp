@@ -142,8 +142,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   char v10; // [esp+20h] [ebp-4h]
 
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
-  int *v3; // eax
-  v3 = &this->TurretVoxel; /*0x5f70a3*/
+  int *v3 = &this->TurretVoxel; // eax /*0x5f70a3*/
   this->u32_98 = 0; /*0x5f70a9*/
   this->__pad_099 = 0; /*0x5f70af*/
   this->u32_9A = 0; /*0x5f70b5*/
@@ -267,8 +266,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
 
 
   AbstractTypeClass::Init((int)this, aP1); /*0x5f7328*/
-  int *v3; // eax
-  v3 = &this->q194; /*0x5f732f*/
+  int *v3 = &this->q194; // eax /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
   int v4 = 18; // edx /*0x5f733b*/
   do /*0x5f7349*/
@@ -279,8 +277,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
-  char *v5; // eax
-  v5 = &this->u32_158; /*0x5f734b*/
+  char *v5 = &this->u32_158; // eax /*0x5f734b*/
   int v6 = 18; // edx /*0x5f7351*/
   do /*0x5f735f*/
   {

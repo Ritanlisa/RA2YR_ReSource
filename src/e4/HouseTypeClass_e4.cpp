@@ -218,115 +218,115 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v27 = INIClass::ReadBool_Overwrite((int *)v4, (unsigned __int8 *)(_EBX + 36), aSmartai, v26); /*0x511abe*/
   __asm { fld dword ptr [ebx+100h] } /*0x511ac3*/
   _EBX->SmartAI = v27; /*0x511ace*/
-  __asm { fstp [esp+0F8h+var_F8]; double } /*0x511ad4*/
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/ /*0x511ad4*/
   double v60; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aArmorinfantrym, v60); /*0x511add*/
   __asm { fstp dword ptr [ebx+100h] } /*0x511ae2*/
   _EBX->armorInfantryMult_d = *(float *)&_RT1; /*0x511ae2*/
   __asm { fld dword ptr [ebx+104h] } /*0x511ae8*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v61; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aArmorunitsmult, v61); /*0x511afc*/
   __asm { fstp dword ptr [ebx+104h] } /*0x511b01*/
   _EBX->armorUnitsMult_d = *(float *)&_RT1; /*0x511b01*/
   __asm { fld dword ptr [ebx+108h] } /*0x511b07*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v62; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aArmoraircraftm, v62); /*0x511b1b*/
   __asm { fstp dword ptr [ebx+108h] } /*0x511b20*/
   _EBX->armorAircraftMult_d = *(float *)&_RT1; /*0x511b20*/
   __asm { fld dword ptr [ebx+10Ch] } /*0x511b26*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v63; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aArmorbuildings, v63); /*0x511b3a*/
   __asm { fstp dword ptr [ebx+10Ch] } /*0x511b3f*/
   _EBX->armorBuildingsMult_d = *(float *)&_RT1; /*0x511b3f*/
   __asm { fld dword ptr [ebx+110h] } /*0x511b45*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v64; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aArmordefensesm, v64); /*0x511b59*/
   __asm { fstp dword ptr [ebx+110h] } /*0x511b5e*/
   _EBX->armorDefensesMult_d = *(float *)&_RT1; /*0x511b5e*/
   __asm { fld dword ptr [ebx+114h] } /*0x511b64*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v65; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aCostinfantrymu, v65); /*0x511b78*/
   __asm { fstp dword ptr [ebx+114h] } /*0x511b7d*/
   _EBX->costInfantryMult_d = *(float *)&_RT1; /*0x511b7d*/
   __asm { fld dword ptr [ebx+118h] } /*0x511b83*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v66; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aCostunitsmult, v66); /*0x511b97*/
   __asm { fstp dword ptr [ebx+118h] } /*0x511b9c*/
   _EBX->costUnitsMult_d = *(float *)&_RT1; /*0x511b9c*/
   __asm { fld dword ptr [ebx+11Ch] } /*0x511ba2*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v67; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aCostaircraftmu, v67); /*0x511bb6*/
   __asm { fstp dword ptr [ebx+11Ch] } /*0x511bbb*/
   _EBX->costAircraftMult_d = *(float *)&_RT1; /*0x511bbb*/
   __asm { fld dword ptr [ebx+120h] } /*0x511bc1*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v68; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aCostbuildingsm, v68); /*0x511bd5*/
   __asm { fstp dword ptr [ebx+120h] } /*0x511bda*/
   _EBX->costBuildingsMult_d = *(float *)&_RT1; /*0x511bda*/
   __asm { fld dword ptr [ebx+124h] } /*0x511be0*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v69; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aCostdefensesmu, v69); /*0x511bf4*/
   __asm { fstp dword ptr [ebx+124h] } /*0x511bf9*/
   _EBX->costDefensesMult_d = *(float *)&_RT1; /*0x511bf9*/
   __asm { fld dword ptr [ebx+128h] } /*0x511bff*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v70; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aSpeedinfantrym, v70); /*0x511c13*/
   __asm { fstp dword ptr [ebx+128h] } /*0x511c18*/
   _EBX->currentSpeed_infantry_mult_d = *(float *)&_RT1; /*0x511c18*/
   __asm { fld dword ptr [ebx+12Ch] } /*0x511c1e*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v71; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aSpeedunitsmult, v71); /*0x511c32*/
   __asm { fstp dword ptr [ebx+12Ch] } /*0x511c37*/
   _EBX->currentSpeed_units_mult_d = *(float *)&_RT1; /*0x511c37*/
   __asm { fld dword ptr [ebx+130h] } /*0x511c3d*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v72; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aSpeedaircraftm, v72); /*0x511c51*/
   __asm { fstp dword ptr [ebx+130h] } /*0x511c56*/
   _EBX->currentSpeed_aircraft_mult_d = *(float *)&_RT1; /*0x511c56*/
   __asm { fld dword ptr [ebx+134h] } /*0x511c5c*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v73; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aBuildtimeinfan, v73); /*0x511c70*/
   __asm { fstp dword ptr [ebx+134h] } /*0x511c75*/
   _EBX->buildtimeInfantryMult_d = *(float *)&_RT1; /*0x511c75*/
   __asm { fld dword ptr [ebx+138h] } /*0x511c7b*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v74; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aBuildtimeunits, v74); /*0x511c8f*/
   __asm { fstp dword ptr [ebx+138h] } /*0x511c94*/
   _EBX->buildtimeUnitsMult_d = *(float *)&_RT1; /*0x511c94*/
   __asm { fld dword ptr [ebx+13Ch] } /*0x511c9a*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v75; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aBuildtimeaircr, v75); /*0x511cae*/
   __asm { fstp dword ptr [ebx+13Ch] } /*0x511cb3*/
   _EBX->buildtimeAircraftMult_d = *(float *)&_RT1; /*0x511cb3*/
   __asm { fld dword ptr [ebx+140h] } /*0x511cb9*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v76; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aBuildtimebuild, v76); /*0x511ccd*/
   __asm { fstp dword ptr [ebx+140h] } /*0x511cd2*/
   _EBX->buildtimeBuildingsMult_d = *(float *)&_RT1; /*0x511cd2*/
   __asm { fld dword ptr [ebx+144h] } /*0x511cd8*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v77; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aBuildtimedefen, v77); /*0x511cec*/
   __asm { fstp dword ptr [ebx+144h] } /*0x511cf1*/
   _EBX->buildtimeDefensesMult_d = *(float *)&_RT1; /*0x511cf1*/
   __asm { fld dword ptr [ebx+148h] } /*0x511cf7*/
-  __asm { fstp [esp+0F8h+var_F8]; double }
+  __asm { fstp [esp+0F8h+var_F8] } /*; double*/
   double v78; // [esp+0h] [ebp-F8h]
   INIClass::ReadDouble_Overwrite((double *)v4, (unsigned __int8 *)(_EBX + 36), aIncomemult, v78); /*0x511d0b*/
   __asm { fstp dword ptr [ebx+148h] } /*0x511d10*/
@@ -365,8 +365,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   int UnitTypeVector_field_0x10 = Destination.uniqueId; // edx /*0x511dee*/
   int UnitTypeVector_field_0x18 = Destination.nextArrayIndex; // ecx /*0x511df2*/
   *(unsigned int *)(_EBX + 352) = Destination.abstractFlags; /*0x511df6*/
-  void *UnitTypeVector_field_0x04; // eax
-  UnitTypeVector_field_0x04 = Destination.ptr_4; /*0x511df9*/
+  void *UnitTypeVector_field_0x04 = Destination.ptr_4; // eax /*0x511df9*/
   *(unsigned int *)(_EBX + 348) = UnitTypeVector_field_0x10; /*0x511dfd*/
   *(unsigned int *)(_EBX + 356) = UnitTypeVector_field_0x18; /*0x511e02*/
   *(unsigned int *)Destination.__pad_000 = &vt_VectorClass; /*0x511e05*/

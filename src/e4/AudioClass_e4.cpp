@@ -44,8 +44,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   {
     if ( BuildingClass::FindByCellHash(j) == this->u32_98 && BuildingClass::IsTiberiumSiloEligible(j) ) /*0x722931*/
     {
-      Cell *p_occupant; // ecx
-      p_occupant = &j->objectTypeFlags; /*0x72294a*/
+      Cell *p_occupant = &j->objectTypeFlags; // ecx /*0x72294a*/
       Cell *v17; // [esp+Ch] [ebp-8h]
       v17 = &j->objectTypeFlags; /*0x72294d*/
       *(unsigned int *)(this->u32_FC + 8 * this->u32_F0) = (unsigned int)(j->objectTypeFlags); /*0x722953*/

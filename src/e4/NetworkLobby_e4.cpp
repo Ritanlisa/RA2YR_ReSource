@@ -96,10 +96,8 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
         int v10; // edi
         v10 = *(unsigned int *)this->__pad_000; /*0x5d425d*/
         *(unsigned int *)this->__pad_000 = (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_000 + 36))(*(unsigned int *)this->__pad_000); /*0x5d4266*/
-        unsigned short *v11; // eax
-        v11 = &this->u32_1480; /*0x5d4268*/
-        char *v12; // ecx
-        v12 = &this->u32_2C8; /*0x5d426e*/
+        unsigned short *v11 = &this->u32_1480; // eax /*0x5d4268*/
+        char *v12 = &this->u32_2C8; // ecx /*0x5d426e*/
         int v13 = 14; // edx /*0x5d4274*/
         do /*0x5d428d*/
         {

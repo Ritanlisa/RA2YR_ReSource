@@ -34,8 +34,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
 {
 
 
-  char **v5; // ebp
-  v5 = &this->q020; /*0x76fc68*/
+  char **v5 = &this->q020; // ebp /*0x76fc68*/
   int v6; // ebx
   v6 = aP3[1] + this->u32_1C; /*0x76fc6b*/
   int v7 = *aP3 + this->u32_18; // edi /*0x76fc72*/

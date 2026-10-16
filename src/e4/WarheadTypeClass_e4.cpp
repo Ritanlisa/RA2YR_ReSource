@@ -117,8 +117,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
 
   int v4; // edi
 
-  void *v2; // eax
-  v2 = this->vtable4; /*0x52ab84*/
+  void *v2 = this->vtable4; // eax /*0x52ab84*/
   /* X11: vtable install elided (implicit via INISection virtuals 0x52ab87) */
   free(v2); /*0x52ab8e*/
   this->vtable4 = 0; /*0x52ab98*/
@@ -190,8 +189,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       }
     }
   }
-  char *result; // eax
-  result = &this->AnimList; /*0x52ac84*/
+  char *result = &this->AnimList; // eax /*0x52ac84*/
   this->AnimList = (unsigned int)(&vt_GenericNode); /*0x52ac89*/
   if ( this != (char *)-20 ) /*0x52ac8f*/
   {

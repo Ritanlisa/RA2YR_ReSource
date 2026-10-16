@@ -100,8 +100,7 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
     v3 = dword_A8E8E0++; /*0x6e7f12*/
     *((unsigned int *)dword_A8E8D4 + v3) = (unsigned int)(this); /*0x6e7f21*/
   }
-  ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
-  p_TaskForceClass_field_0xA4 = &this->q0A4; /*0x6e7f28*/
+  ObjectTypeClass **p_TaskForceClass_field_0xA4 = &this->q0A4; // eax /*0x6e7f28*/
   int v5 = 6; // ecx /*0x6e7f2a*/
   do /*0x6e7f38*/
   {
@@ -267,8 +266,7 @@ char TaskForceClass::GetUnitType(char * a2)
   if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, a2) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
   int v3 = 0; // esi /*0x6e8527*/
-  ObjectTypeClass **p_TaskForceClass_field_0xA4; // ebx
-  p_TaskForceClass_field_0xA4 = &this->q0A4; /*0x6e8529*/
+  ObjectTypeClass **p_TaskForceClass_field_0xA4 = &this->q0A4; // ebx /*0x6e8529*/
   do /*0x6e857d*/
   {
     char Buffer[32]; // [esp+8h] [ebp-20h] BYREF

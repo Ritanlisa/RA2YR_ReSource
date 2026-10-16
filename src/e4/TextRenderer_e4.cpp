@@ -230,8 +230,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   v18 = 0; /*0x642f91*/
   int v11; // eax
   v11 = Text::MeasureWidth((int)v17, 0); /*0x642f98*/
-  int v12; // ebx
-  v12 = Instance->u32_1C; /*0x642fa1*/
+  int v12 = Instance->u32_1C; // ebx /*0x642fa1*/
   *a1 = v5 + v11 + v16 + 26; /*0x642fb4*/
   if ( v15 > v6 ) /*0x642fb6*/
     v6 = v15; /*0x642fb8*/

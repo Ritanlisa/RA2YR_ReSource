@@ -7526,7 +7526,7 @@ void BuildingClass::ProcessSuperWeaponEffects()
                 fstp [esp+0F4h+var_B8]
                 fild dword ptr [ecx+16B8h]
               }
-              __asm { fstp [esp+0F4h+var_F8+4]; double }
+              __asm { fstp [esp+0F4h+var_F8+4] } /*; double*/
               Math::Sqrt(v78); /*0x44d278*/
               v47 = ((v47) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFFu); /*0x44d280*/
               v59 = v47; /*0x44d285*/
@@ -7535,7 +7535,7 @@ void BuildingClass::ProcessSuperWeaponEffects()
               {
                 _EDX = *(unsigned int *)&g_RulesClass_Instance; /*0x44d2a0*/
                 __asm { fild dword ptr [edx+16B8h] } /*0x44d2ae*/
-                __asm { fstp [esp+0F4h+var_F8+4]; double }
+                __asm { fstp [esp+0F4h+var_F8+4] } /*; double*/
                 Math::Sqrt(v78); /*0x44d2c2*/
                 v50 = ((v50) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFFu); /*0x44d2ca*/
                 v60 = v50; /*0x44d2cf*/
@@ -18373,7 +18373,7 @@ int UnitClass::ProcessResourceHarvesting()
     if ( v18 > 0 ) /*0x73d5ac*/
     {
       __asm { fild [esp+20h+var_10] } /*0x73d5ae*/
-      __asm { fstp [esp+28h+var_28]; float }
+      __asm { fstp [esp+28h+var_28] } /*; float*/
       Float::Accumulate(&this->tiltSidewaysAngle, v15, v9); /*0x73d5b9*/
       this->animation[0] = 0; /*0x73d5be*/
       v13 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5408); /*0x73d5d5*/

@@ -750,7 +750,7 @@ long long sub_46BAA0()
     fld dbl_89DE78
     fsub dbl_89DEA0
   }
-  __asm { fstp [esp+8+var_8]; double }
+  __asm { fstp [esp+8+var_8] } /*; double*/
   double v2; // [esp+0h] [ebp-8h]
   Math::Sin(v2); /*0x46bab2*/
   __asm { fmul dbl_89DE98 } /*0x46bab7*/

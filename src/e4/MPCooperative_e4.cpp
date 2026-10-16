@@ -167,8 +167,7 @@ int MPCooperative::WriteCoopSaveINI()
   v1 = (char *)this; /*0x49be49*/
   if ( !LOBYTE(this->vtable1) ) /*0x49be4d*/
     return 1; /*0x49be4d*/
-  char *v2; // ebp
-  v2 = &this->u32_1C; /*0x49be58*/
+  char *v2 = &this->u32_1C; // ebp /*0x49be58*/
   if ( !this->u32_1C ) /*0x49be55*/
     return 1; /*0x49c0c5*/
   CCFileClass::Construct(&v19, g_Str_File_coopsave_ini); /*0x49be70*/
@@ -307,8 +306,7 @@ int MPCooperative::ReadCoopSaveINI()
   v1 = (char *)(this); /*0x49d129*/
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
-  char *v2; // ebx
-  v2 = &this->u32_1C; /*0x49d137*/
+  char *v2 = &this->u32_1C; // ebx /*0x49d137*/
   if ( !this->u32_1C ) /*0x49d134*/
     return 0; /*0x49d13c*/
   unsigned int v16[22]; // [esp+Ch] [ebp-128h] BYREF

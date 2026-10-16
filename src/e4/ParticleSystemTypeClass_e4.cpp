@@ -102,7 +102,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
          ParticleSystemTypeClass_field_0x2A8);
   __asm { fld dword ptr [esi+2A0h] } /*0x644385*/
   _ESI->ParticleSystemTypeClass_field_0x2A8 = v8; /*0x644390*/
-  __asm { fstp [esp+68h+var_68]; double } /*0x644396*/
+  __asm { fstp [esp+68h+var_68] } /*; double*/ /*0x644396*/
   double v37; // [esp+0h] [ebp-68h]
   INIClass::ReadDouble_Overwrite( /*0x64439f*/
     (double *)aP1,
@@ -112,7 +112,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   __asm { fstp dword ptr [esi+2A0h] } /*0x6443a4*/
   *&_ESI->q2A0 = _ET1; /*0x6443a4*/
   __asm { fld dword ptr [esi+2ACh] } /*0x6443aa*/
-  __asm { fstp [esp+68h+var_68]; double }
+  __asm { fstp [esp+68h+var_68] } /*; double*/
   double v38; // [esp+0h] [ebp-68h]
   INIClass::ReadDouble_Overwrite( /*0x6443be*/
     (double *)aP1,
@@ -122,7 +122,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   __asm { fstp dword ptr [esi+2ACh] } /*0x6443c3*/
   *&_ESI->q2AC = _ET1; /*0x6443c3*/
   __asm { fld dword ptr [esi+2B0h] } /*0x6443c9*/
-  __asm { fstp [esp+68h+var_68]; double }
+  __asm { fstp [esp+68h+var_68] } /*; double*/
   double v39; // [esp+0h] [ebp-68h]
   INIClass::ReadDouble_Overwrite( /*0x6443dd*/
     (double *)aP1,

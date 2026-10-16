@@ -170,8 +170,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
 {
 
 
-  int *p_EnumConnectionsClass_field_0x04; // esi
-  p_EnumConnectionsClass_field_0x04 = &this->M4; /*0x4a02bc*/
+  int *p_EnumConnectionsClass_field_0x04 = &this->M4; // esi /*0x4a02bc*/
   this->M8 = 0; /*0x4a02c1*/
   this->M12 = 0; /*0x4a02c4*/
   LOBYTE(this->M16) = 1; /*0x4a02c7*/
@@ -239,8 +238,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
 {
 
 
-  int *p_EnumConnectionsClass_field_0x04; // esi
-  p_EnumConnectionsClass_field_0x04 = &this->M4; /*0x4a038f*/
+  int *p_EnumConnectionsClass_field_0x04 = &this->M4; // esi /*0x4a038f*/
   this->M8 = 0; /*0x4a0394*/
   this->M12 = 0; /*0x4a0397*/
   LOBYTE(this->M16) = 1; /*0x4a039a*/

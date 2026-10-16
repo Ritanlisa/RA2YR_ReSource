@@ -589,8 +589,7 @@ namespace gamemd {
 TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
-  v3 = this->Items; /*0x5129f3*/
+  void *v3 = this->Items; // eax /*0x5129f3*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5129f6) */
   if ( v3 && this->IsAllocated ) /*0x512a00*/
   {
@@ -885,8 +884,7 @@ namespace gamemd {
 TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
-  v3 = this->Items; /*0x5ac653*/
+  void *v3 = this->Items; // eax /*0x5ac653*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ac656) */
   if ( v3 && this->IsAllocated ) /*0x5ac660*/
   {
@@ -1282,8 +1280,7 @@ namespace gamemd {
 TypeList_flat * TypeList_VoxelAnim::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
-  v3 = this->Items; /*0x67a993*/
+  void *v3 = this->Items; // eax /*0x67a993*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x67a996) */
   if ( v3 && this->IsAllocated ) /*0x67a9a0*/
   {
@@ -1324,8 +1321,7 @@ namespace gamemd {
 TypeList_flat * TypeList_cptr_TerrainTypeClass::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
-  v3 = this->Items; /*0x67aa33*/
+  void *v3 = this->Items; // eax /*0x67aa33*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x67aa36) */
   if ( v3 && this->IsAllocated ) /*0x67aa40*/
   {

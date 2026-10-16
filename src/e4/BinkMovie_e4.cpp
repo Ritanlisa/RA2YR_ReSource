@@ -80,8 +80,7 @@ int BinkMovie::Stop(void *a1, void *a2)
 {
 
 
-  void *BinkMovie_field_0x20; // edi
-  BinkMovie_field_0x20 = this->q_20; /*0x432704*/
+  void *BinkMovie_field_0x20 = this->q_20; // edi /*0x432704*/
   if ( BinkMovie_field_0x20 ) /*0x432709*/
   {
     BinkMovie::FreeSurfaceTracker((BinkMovie *)this->q_20); /*0x43270d*/

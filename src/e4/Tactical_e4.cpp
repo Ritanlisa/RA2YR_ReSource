@@ -78,8 +78,7 @@ void * Tactical::ConstructTacticalSurface()
   this->HouseClass_6C = -1; /*0x42a70d*/
   this->q070 = 0; /*0x42a710*/
   this->u32_72 = 0; /*0x42a714*/
-  unsigned int *v2; // edi
-  v2 = &this->q074; /*0x42a718*/
+  unsigned int *v2 = &this->q074; // edi /*0x42a718*/
   int v3 = 3; // ebp /*0x42a71b*/
   do /*0x42a73d*/
   {
@@ -201,8 +200,7 @@ void * Tactical::ConstructTacticalSurface()
   for ( i = 0; i <= *v20; *(unsigned int *)(v20[2] + 4 * i - 4) = 0 ) /*0x42a864*/
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
-  char *v22; // ecx
-  v22 = &this->q074; /*0x42a87c*/
+  char *v22 = &this->q074; // ecx /*0x42a87c*/
   char *v26; // [esp+14h] [ebp-8h]
   v26 = &this->u32_BC; /*0x42a87f*/
   char *v25; // [esp+10h] [ebp-Ch]

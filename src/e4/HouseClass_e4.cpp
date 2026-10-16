@@ -1703,7 +1703,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
           fstp [esp+16Ch+var_16C]; double
           fild [esp+16Ch+var_140]
         }
-        __asm { fstp [esp+174h+var_174]; double }
+        __asm { fstp [esp+174h+var_174] } /*; double*/
         Math::CalcAngle(v103, v105); /*0x50714f*/
         __asm { fsub ds:dbl_7E2820 } /*0x507154*/
         __asm { fmul ds:dbl_7E2818 }

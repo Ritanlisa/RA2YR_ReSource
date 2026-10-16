@@ -184,8 +184,7 @@ int AudioStream::SetupPlayback()
     *(unsigned int *)(AudioStream_field_0x24 + 12) = 0; /*0x404763*/
     return 0; /*0x40476a*/
   }
-  char *v6; // edx
-  v6 = &this->q160; /*0x40476b*/
+  char *v6 = &this->q160; // edx /*0x40476b*/
   do /*0x404780*/
   {
     *(unsigned int *)v6 = v3; /*0x404771*/

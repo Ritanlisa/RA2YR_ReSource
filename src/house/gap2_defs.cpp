@@ -7678,7 +7678,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
       }
       v89 = -(int16_t)v64; /*0x5065ee*/
       __asm { fild [esp+0F8h+var_4C] } /*0x5065f8*/
-      __asm { fstp [esp+0F8h+var_FC+4]; double }
+      __asm { fstp [esp+0F8h+var_FC+4] } /*; double*/
       *(unsigned int *)v65 = (*((signed short *)(((unsigned char *)&(v64)) + 2))); /*0x506606*/
       __asm /*0x50660d*/
       {

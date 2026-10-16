@@ -111,8 +111,7 @@ int Audio::ReleaseChannelRefs()
   }
   else
   {
-    RefCount **v4; // esi
-    v4 = &this->q028; /*0x404d91*/
+    RefCount **v4 = &this->q028; // esi /*0x404d91*/
     do /*0x404dad*/
     {
       (*v4)->Decrement(); /*0x404d96*/

@@ -564,7 +564,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
     {
       if ( aP2 >= (gamemd::AbstractClass *)(4) ) /*0x7d0a66*/
         __asm { jmp dword ptr ds:loc_7D0A7C+4[eax*4] } /*0x7d0a6d*/
-      __asm { jmp dword ptr ds:TrailUp0_0[ecx*4]; jumptable 007D0A55 case 0 } /*0x7d0a74*/
+      __asm { jmp dword ptr ds:TrailUp0_0[ecx*4] } /*; jumptable 007D0A55 case 0*/ /*0x7d0a74*/
     }
     v5 = (unsigned int)(aP2)>> 2; /*0x7d0a48*/
     switch ( v5 ) /*0x7d0a7c*/
@@ -5730,30 +5730,30 @@ int unknown_libname_77()
   switch ( a1 & 0x3F ) /*0x7d7ffd*/
   {
     case 0: /*0x7d7ffd*/
-      __asm { fdiv st, st; jumptable 007D7FFD case 0 } /*0x7d8004*/
+      __asm { fdiv st, st } /*; jumptable 007D7FFD case 0*/ /*0x7d8004*/
       return; /*0x7d8009*/
     case 1: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d800d*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d800d*/
       goto LABEL_4; /*0x7d800d*/
     case 2: /*0x7d7ffd*/
       LABEL_4:
-      __asm { fdivr st, st; jumptable 007D7FFD case 2 } /*0x7d800f*/
+      __asm { fdivr st, st } /*; jumptable 007D7FFD case 2*/ /*0x7d800f*/
       return; /*0x7d8014*/
     case 3: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8018*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8018*/
       goto LABEL_6; /*0x7d8018*/
     case 4: /*0x7d7ffd*/
       LABEL_6:
-      __asm { fdiv st, st; jumptable 007D7FFD case 4 } /*0x7d801a*/
+      __asm { fdiv st, st } /*; jumptable 007D7FFD case 4*/ /*0x7d801a*/
       return; /*0x7d801f*/
     case 5: /*0x7d7ffd*/
-      __asm { fdivp st, st; jumptable 007D7FFD case 5 } /*0x7d8020*/
+      __asm { fdivp st, st } /*; jumptable 007D7FFD case 5*/ /*0x7d8020*/
       return; /*0x7d8025*/
     case 6: /*0x7d7ffd*/
-      __asm { fdivr st, st; jumptable 007D7FFD case 6 } /*0x7d8026*/
+      __asm { fdivr st, st } /*; jumptable 007D7FFD case 6*/ /*0x7d8026*/
       return; /*0x7d802b*/
     case 7: /*0x7d7ffd*/
-      __asm { fdivrp st, st; jumptable 007D7FFD case 7 } /*0x7d802c*/
+      __asm { fdivrp st, st } /*; jumptable 007D7FFD case 7*/ /*0x7d802c*/
       return; /*0x7d8031*/
     case 8: /*0x7d7ffd*/
       __asm /*0x7d8032*/
@@ -5771,7 +5771,7 @@ int unknown_libname_77()
     }
       return; /*0x7d804d*/
     case 9: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8051*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8051*/
       goto LABEL_12; /*0x7d8051*/
     case 0xA: /*0x7d7ffd*/
       LABEL_12:
@@ -5788,7 +5788,7 @@ int unknown_libname_77()
     }
       return; /*0x7d8068*/
     case 0xB: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d806c*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d806c*/
       goto LABEL_14; /*0x7d806c*/
     case 0xC: /*0x7d7ffd*/
       LABEL_14:
@@ -5846,7 +5846,7 @@ int unknown_libname_77()
     }
       return; /*0x7d80dd*/
     case 0x11: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d80e1*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d80e1*/
       goto LABEL_20; /*0x7d80e1*/
     case 0x12: /*0x7d7ffd*/
       LABEL_20:
@@ -5865,7 +5865,7 @@ int unknown_libname_77()
     }
       return; /*0x7d80fc*/
     case 0x13: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8100*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8100*/
       goto LABEL_22; /*0x7d8100*/
     case 0x14: /*0x7d7ffd*/
       LABEL_22:
@@ -5937,7 +5937,7 @@ int unknown_libname_77()
     }
       return; /*0x7d8181*/
     case 0x19: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8185*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8185*/
       goto LABEL_28; /*0x7d8185*/
     case 0x1A: /*0x7d7ffd*/
       LABEL_28:
@@ -5956,7 +5956,7 @@ int unknown_libname_77()
     }
       return; /*0x7d81a0*/
     case 0x1B: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d81a4*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d81a4*/
       goto LABEL_30; /*0x7d81a4*/
     case 0x1C: /*0x7d7ffd*/
       LABEL_30:
@@ -6028,7 +6028,7 @@ int unknown_libname_77()
     }
       return; /*0x7d8225*/
     case 0x21: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8229*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8229*/
       goto LABEL_36; /*0x7d8229*/
     case 0x22: /*0x7d7ffd*/
       LABEL_36:
@@ -6047,7 +6047,7 @@ int unknown_libname_77()
     }
       return; /*0x7d8244*/
     case 0x23: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8248*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8248*/
       goto LABEL_38; /*0x7d8248*/
     case 0x24: /*0x7d7ffd*/
       LABEL_38:
@@ -6119,7 +6119,7 @@ int unknown_libname_77()
     }
       return; /*0x7d82c9*/
     case 0x29: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d82cd*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d82cd*/
       goto LABEL_44; /*0x7d82cd*/
     case 0x2A: /*0x7d7ffd*/
       LABEL_44:
@@ -6138,7 +6138,7 @@ int unknown_libname_77()
     }
       return; /*0x7d82e8*/
     case 0x2B: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d82ec*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d82ec*/
       goto LABEL_46; /*0x7d82ec*/
     case 0x2C: /*0x7d7ffd*/
       LABEL_46:
@@ -6210,7 +6210,7 @@ int unknown_libname_77()
     }
       return; /*0x7d836d*/
     case 0x31: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8371*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8371*/
       goto LABEL_52; /*0x7d8371*/
     case 0x32: /*0x7d7ffd*/
       LABEL_52:
@@ -6229,7 +6229,7 @@ int unknown_libname_77()
     }
       return; /*0x7d838c*/
     case 0x33: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8390*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8390*/
       goto LABEL_54; /*0x7d8390*/
     case 0x34: /*0x7d7ffd*/
       LABEL_54:
@@ -6301,7 +6301,7 @@ int unknown_libname_77()
     }
       return; /*0x7d8411*/
     case 0x39: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8415*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8415*/
       goto LABEL_60; /*0x7d8415*/
     case 0x3A: /*0x7d7ffd*/
       LABEL_60:
@@ -6320,7 +6320,7 @@ int unknown_libname_77()
     }
       return; /*0x7d8430*/
     case 0x3B: /*0x7d7ffd*/
-      __asm { int 6; - internal hardware - UNDEFINED OPCODE (80286+) } /*0x7d8434*/
+      __asm { int 6 } /*; - internal hardware - UNDEFINED OPCODE (80286+)*/ /*0x7d8434*/
       goto LABEL_62; /*0x7d8434*/
     case 0x3C: /*0x7d7ffd*/
       LABEL_62:

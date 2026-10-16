@@ -2788,7 +2788,7 @@ void sub_6CE380()
   }
   _CIpow(a2, a1); /*0x6ce38c*/
   __asm { fadd st, st } /*0x6ce391*/
-  __asm { fstp [esp+8+var_8]; double }
+  __asm { fstp [esp+8+var_8] } /*; double*/
   double v2; // [esp+0h] [ebp-8h]
   Math::Sqrt(v2); /*0x6ce399*/
   __asm { fstp dbl_B0C0B0 } /*0x6ce39e*/

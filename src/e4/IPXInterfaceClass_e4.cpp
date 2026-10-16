@@ -330,8 +330,7 @@ void * IPXInterfaceClass::bindSocket(void *a1)
   a1->u32_3F070 = -1; /*0x7b1a1a*/
   *(unsigned int *)a1 = (unsigned int)(&vt_WinsockInterfaceClass); /*0x7b1a20*/
   a1->u32_FC1A0 = 0; /*0x7b1a26*/
-  unsigned char *v2; // eax
-  v2 = &a1->u32_66; /*0x7b1a2c*/
+  unsigned char *v2 = &a1->u32_66; // eax /*0x7b1a2c*/
   int v3 = 128; // edx /*0x7b1a2f*/
   do /*0x7b1a6f*/
   {

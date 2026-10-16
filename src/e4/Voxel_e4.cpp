@@ -2631,7 +2631,7 @@ int Voxel::SectionProject(int * a2, int a3)
   }
   Matrix3x4::Identity(&v89); /*0x761dd2*/
   __asm { fld [esp+0C8h+var_B4+4] } /*0x761dd7*/
-  __asm { fstp [esp+0CCh+var_D0+4]; float }
+  __asm { fstp [esp+0CCh+var_D0+4] } /*; float*/
   Matrix2D::Rotate(v89.m_Data, v55); /*0x761de6*/
   v25 = TransformMatrix3x4Point(&v56, (float *)v89.m_Data, &v76); /*0x761dfb*/
   v76 = *v25; /*0x761e02*/
@@ -3214,7 +3214,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   }
   Matrix3x4::Identity(&v89); /*0x762853*/
   __asm { fld [esp+0C8h+var_B4+4] } /*0x762858*/
-  __asm { fstp [esp+0CCh+var_D0+4]; float }
+  __asm { fstp [esp+0CCh+var_D0+4] } /*; float*/
   Matrix2D::Rotate(v89.m_Data, v55); /*0x762867*/
   v24 = TransformMatrix3x4Point(&v56, (float *)v89.m_Data, &v74); /*0x76287c*/
   v74 = *v24; /*0x762883*/

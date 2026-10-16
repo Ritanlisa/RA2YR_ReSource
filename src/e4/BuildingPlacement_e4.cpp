@@ -91,8 +91,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v49; // [esp+64h] [ebp-8h]
   int v50; // [esp+68h] [ebp-4h]
 
-  BuildingPlacement *v2; // ebp
-  v2 = &this->q040; /*0x54c55e*/
+  BuildingPlacement *v2 = &this->q040; // ebp /*0x54c55e*/
   CellClass *v3; // eax
   v3 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &this->q040)); /*0x54c562*/
   int BuildingPlacement_field_0x0C = this->q00C; // ecx /*0x54c567*/

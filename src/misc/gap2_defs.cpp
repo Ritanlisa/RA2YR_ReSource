@@ -2758,22 +2758,22 @@ int RulesClass::LoadFromINI() {
                                    aAircraftfogrev,
                                    _ESI->GUIMainButtonSound);
       __asm { fld dword ptr [esi+570h] } /*0x66eb47*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aMinlowpowerpro, *(double *)v331); /*0x66eb5b*/
       __asm { fstp dword ptr [esi+570h] } /*0x66eb60*/
       *&_ESI->u32_570 = *(float *)&_RT1; /*0x66eb60*/
       __asm { fld dword ptr [esi+574h] } /*0x66eb66*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aMaxlowpowerpro, *(double *)v331); /*0x66eb80*/
       __asm { fstp dword ptr [esi+574h] } /*0x66eb85*/
       *&_ESI->u32_574 = *(float *)&_RT1; /*0x66eb85*/
       __asm { fld dword ptr [esi+578h] } /*0x66eb8b*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aLowpowerpenalt, *(double *)v331); /*0x66eba5*/
       __asm { fstp dword ptr [esi+578h] } /*0x66ebaa*/
       *&_ESI->u32_578 = *(float *)&_RT1; /*0x66ebaa*/
       __asm { fld dword ptr [esi+57Ch] } /*0x66ebb0*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aMultiplefactor, *(double *)v331); /*0x66ebc9*/
       __asm { fstp dword ptr [esi+57Ch] } /*0x66ebce*/
       *&_ESI->u32_57C = *(float *)&_RT1; /*0x66ebce*/
@@ -3355,7 +3355,7 @@ int RulesClass::LoadFromINI() {
                                            aSpypowerblacko,
                                            *&_ESI->u32_D64);
       __asm { fld dword ptr [esi+0D68h] } /*0x66fc17*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aSpymoneystealp, *(double *)v331); /*0x66fc2b*/
       __asm { fstp dword ptr [esi+0D68h] } /*0x66fc30*/
       *&_ESI->u32_D68 = _ET1; /*0x66fc30*/
@@ -3365,7 +3365,7 @@ int RulesClass::LoadFromINI() {
                                aAttackcursoron,
                                _ESI->u8_D6C);
       __asm { fld dword ptr [esi+0F3Ch] } /*0x66fc5c*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aPurifierbonus, *(double *)v331); /*0x66fc70*/
       __asm { fstp dword ptr [esi+0F3Ch] } /*0x66fc75*/
       *&_ESI->u32_F3C = _ET1; /*0x66fc75*/
@@ -3536,7 +3536,7 @@ int RulesClass::LoadFromINI() {
                                            aAisafedistance,
                                            *&_ESI->u32_D74);
       __asm { fld dword ptr [esi+0D70h] } /*0x66ffb8*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aAiminorsuperre, *(double *)v331); /*0x66ffcc*/
       __asm { fstp dword ptr [esi+0D70h] } /*0x66ffd1*/
       *&_ESI->u32_D70 = *(float *)&_RT1; /*0x66ffd1*/
@@ -3818,7 +3818,7 @@ int RulesClass::LoadFromINI() {
                                            aAicapturelowmo_0,
                                            *&_ESI->Color_EBC);
       __asm { fld dword ptr [esi+0EC0h] } /*0x6704f0*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; int }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; int*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aAicapturewound_0, *(double *)v331); /*0x670504*/
       __asm { fstp dword ptr [esi+0EC0h] } /*0x670509*/
       *&_ESI->u32_EC0 = *(float *)&_RT1; /*0x670509*/
@@ -4489,27 +4489,27 @@ int RulesClass::LoadFromINI() {
                                            aV3rockettiltfr,
                                            *&_ESI->u32_4B4);
       __asm { fld dword ptr [esi+4B8h] } /*0x671242*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketpitchi, *(double *)v331); /*0x671256*/
       __asm { fstp dword ptr [esi+4B8h] } /*0x67125b*/
       *&_ESI->u32_4B8 = *(float *)&_RT1; /*0x67125b*/
       __asm { fld dword ptr [esi+4BCh] } /*0x671261*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketpitchf, *(double *)v331); /*0x67127b*/
       __asm { fstp dword ptr [esi+4BCh] } /*0x671280*/
       *&_ESI->u32_4BC = *(float *)&_RT1; /*0x671280*/
       __asm { fld dword ptr [esi+4C0h] } /*0x671286*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketturnra, *(double *)v331); /*0x6712a0*/
       __asm { fstp dword ptr [esi+4C0h] } /*0x6712a5*/
       *&_ESI->u32_4C0 = *(float *)&_RT1; /*0x6712a5*/
       __asm { fild dword ptr [esi+4C4h] } /*0x6712ab*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketraiser, *(double *)v331); /*0x6712c4*/
       v280 = ((v280) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x6712c9*/
       *&_ESI->u32_4C4 = v280; /*0x6712ce*/
       __asm { fld dword ptr [esi+4C8h] } /*0x6712da*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketaccele, *(double *)v331); /*0x6712ee*/
       __asm { fstp dword ptr [esi+4C8h] } /*0x6712f3*/
       *&_ESI->u32_4C8 = *(float *)&_RT1; /*0x6712f3*/
@@ -4554,27 +4554,27 @@ int RulesClass::LoadFromINI() {
                                            aDmisltiltframe,
                                            *&_ESI->u32_4E8);
       __asm { fld dword ptr [esi+4ECh] } /*0x6713fc*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislpitchinit, *(double *)v331); /*0x671410*/
       __asm { fstp dword ptr [esi+4ECh] } /*0x671415*/
       *&_ESI->u32_4EC = *(float *)&_RT1; /*0x671415*/
       __asm { fld dword ptr [esi+4F0h] } /*0x67141b*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislpitchfina, *(double *)v331); /*0x671434*/
       __asm { fstp dword ptr [esi+4F0h] } /*0x671439*/
       *&_ESI->u32_4F0 = *(float *)&_RT1; /*0x671439*/
       __asm { fld dword ptr [esi+4F4h] } /*0x67143f*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislturnrate, *(double *)v331); /*0x671459*/
       __asm { fstp dword ptr [esi+4F4h] } /*0x67145e*/
       *&_ESI->u32_4F4 = *(float *)&_RT1; /*0x67145e*/
       __asm { fild dword ptr [esi+4F8h] } /*0x671464*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislraiserate, *(double *)v331); /*0x67147e*/
       v281 = ((v281) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x671483*/
       *&_ESI->u32_4F8 = v281; /*0x671488*/
       __asm { fld dword ptr [esi+4FCh] } /*0x671493*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislaccelerat, *(double *)v331); /*0x6714a7*/
       __asm { fstp dword ptr [esi+4FCh] } /*0x6714ac*/
       *&_ESI->u32_4FC = *(float *)&_RT1; /*0x6714ac*/
@@ -4619,27 +4619,27 @@ int RulesClass::LoadFromINI() {
                                            aCmisltiltframe,
                                            *&_ESI->u32_51C);
       __asm { fld dword ptr [esi+520h] } /*0x6715b5*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislpitchinit, *(double *)v331); /*0x6715c9*/
       __asm { fstp dword ptr [esi+520h] } /*0x6715ce*/
       *&_ESI->q520 = *(float *)&_RT1; /*0x6715ce*/
       __asm { fld dword ptr [esi+524h] } /*0x6715d4*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislpitchfina, *(double *)v331); /*0x6715ee*/
       __asm { fstp dword ptr [esi+524h] } /*0x6715f3*/
       *&_ESI->q524 = *(float *)&_RT1; /*0x6715f3*/
       __asm { fld dword ptr [esi+528h] } /*0x6715f9*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislturnrate, *(double *)v331); /*0x671612*/
       __asm { fstp dword ptr [esi+528h] } /*0x671617*/
       *&_ESI->q528 = *(float *)&_RT1; /*0x671617*/
       __asm { fild dword ptr [esi+52Ch] } /*0x67161d*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislraiserate, *(double *)v331); /*0x671637*/
       v282 = ((v282) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x67163c*/
       *&_ESI->u32_52C = v282; /*0x671641*/
       __asm { fld dword ptr [esi+4FCh] } /*0x67164d*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislaccelerat, *(double *)v331); /*0x671661*/
       __asm { fstp dword ptr [esi+530h] } /*0x671666*/
       *&_ESI->q530 = *(float *)&_RT1; /*0x671666*/
@@ -4774,12 +4774,12 @@ int RulesClass::LoadFromINI() {
                                                aRadarcombatfla,
                                                (int)_ESI->InfantryNuked);
       __asm { fld dword ptr [esi+80h] } /*0x6719b1*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRadareventspee, *(double *)v331); /*0x6719c5*/
       __asm { fstp dword ptr [esi+80h] } /*0x6719ca*/
       _ESI->InfantryExplode = (AnimTypeClass *)((unsigned int)(_RT1)); /*0x6719ca*/
       __asm { fld dword ptr [esi+84h] } /*0x6719d0*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; int }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; int*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRadareventrota, *(double *)v331); /*0x6719ea*/
       __asm { fstp dword ptr [esi+84h] } /*0x6719ef*/
       _ESI->FlamingInfantry = (AnimTypeClass *)((unsigned int)(_RT1)); /*0x6719ef*/
@@ -4834,7 +4834,7 @@ int RulesClass::LoadFromINI() {
                                              aRadareventminr,
                                              (int)_ESI->NukeTakeOff);
       __asm { fld dword ptr [esi+78h] } /*0x671ac1*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRadareventcolo, *(double *)v331); /*0x671ad2*/
       __asm { fstp dword ptr [esi+78h] } /*0x671ad7*/
       _ESI->Wake = (AnimTypeClass *)((unsigned int)(_RT1)); /*0x671ad7*/
@@ -4959,12 +4959,12 @@ int RulesClass::LoadFromINI() {
                                             aTreestrength,
                                             *&_ESI->q1144);
       __asm { fld dword ptr [esi+17F8h] } /*0x671df7*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aEngineercaptur, *(double *)v331); /*0x671e0b*/
       __asm { fstp dword ptr [esi+17F8h] } /*0x671e10*/
       _ESI->WallPenetratorThreshold[0] = ((int)(_RT1)); /*0x671e10*/
       __asm { fld dword ptr [esi+17FCh] } /*0x671e16*/
-      __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
+      __asm { fstp qword ptr [esp+0D8h+var_D8] } /*; double*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aEngineercaptur, *(double *)v331); /*0x671e30*/
       __asm { fstp dword ptr [esi+17FCh] } /*0x671e35*/
       _ESI->WallPenetratorThreshold[1] = ((int)(_RT1)); /*0x671e35*/

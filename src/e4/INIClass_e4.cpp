@@ -410,8 +410,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
     return 0; /*0x526ccd*/
   unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
   memset(v10, 0, sizeof(v10)); /*0x526cda*/
-  char *v3; // esi
-  v3 = &aP1->needsSave_flag; /*0x526d02*/
+  char *v3 = &aP1->needsSave_flag; // esi /*0x526d02*/
   int v4; // edi
   v4 = Checksummer::Add_Buffer(v10, aP2, strlen((const char *)aP2)); /*0x526d05*/
   aP2 = (gamemd::CCINIClass *)((unsigned __int8 *)v4); /*0x526d07*/

@@ -3362,7 +3362,7 @@ void sub_5C5E90()
   }
   _CIpow(a2, a1); /*0x5c5e9c*/
   __asm { fadd st, st } /*0x5c5ea1*/
-  __asm { fstp [esp+8+var_8]; double }
+  __asm { fstp [esp+8+var_8] } /*; double*/
   double v2; // [esp+0h] [ebp-8h]
   Math::Sqrt(v2); /*0x5c5ea9*/
   __asm { fstp dbl_ABF540 } /*0x5c5eae*/

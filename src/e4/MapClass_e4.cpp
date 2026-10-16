@@ -83,8 +83,7 @@ unsigned int * MapClass::AllocArrays()
 {
   unsigned int *result; // eax
 
-  void **v1; // esi
-  v1 = &this->q130; /*0x42c1c8*/
+  void **v1 = &this->q130; // esi /*0x42c1c8*/
   char *v2; // edi
   v2 = (char *)(&unk_87F810 - (void *)this); /*0x42c1cb*/
   int v3 = 3; // ebx /*0x42c1cd*/

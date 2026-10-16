@@ -4,10 +4,10 @@
   "merged": 0,
   "files_touched": 0,
   "skip_reasons": {
-   "next_not_simple_assign": 44707,
+   "next_not_simple_assign": 44711,
    "stack_typed_decl": 15871,
-   "name_mismatch": 1663,
-   "rhs_not_pure_read": 8413,
+   "name_mismatch": 1664,
+   "rhs_not_pure_read": 8356,
    "self_reference": 1103,
    "rhs_charset_unsafe": 994,
    "comment_between": 29,

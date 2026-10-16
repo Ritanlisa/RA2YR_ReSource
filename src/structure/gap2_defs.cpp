@@ -606,7 +606,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                     __asm { fstp [esp+0DCh+var_64] } /*0x435ed6*/
                     Matrix3x4::Identity(&v94); /*0x435ee4*/
                     __asm { fld [esp+0D4h+var_64] } /*0x435ee9*/
-                    __asm { fstp [esp+0D8h+var_DC+4]; float }
+                    __asm { fstp [esp+0D8h+var_DC+4] } /*; float*/
                     Matrix2D::Rotate(v94.m_Data, v59); /*0x435ef8*/
                     v64 = v23 - v75; /*0x435f0b*/
                     __asm { fild [esp+0D4h+var_C4] } /*0x435f11*/

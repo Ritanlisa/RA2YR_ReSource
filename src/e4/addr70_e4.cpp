@@ -987,8 +987,7 @@ namespace gamemd {
 int E4Recv_70F740::sub_70F740(int a2)
 {
 
-  ObjectClass *v2; // ecx
-  v2 = &this->u32_180; /*0x70f74c*/
+  ObjectClass *v2 = &this->u32_180; // ecx /*0x70f74c*/
   v2->vfptr = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x70f752*/
   int v4; // [esp+4h] [ebp-8h]
   v2->vfptr1 = (void *)v4; /*0x70f758*/

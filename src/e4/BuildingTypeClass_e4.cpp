@@ -662,8 +662,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f357*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f36a*/
-    unsigned char *v7; // esi
-    v7 = &this->DeployingAnimLoaded_d; /*0x45f375*/
+    unsigned char *v7 = &this->DeployingAnimLoaded_d; // esi /*0x45f375*/
     if ( this->DeployingAnimLoaded_d && this->DeployingAnim_2 ) /*0x45f37f*/
     {
       operator delete((this->DeployingAnim_2)); /*0x45f38a*/
@@ -690,8 +689,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f42f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f442*/
-    unsigned char *v9; // esi
-    v9 = &this->RoofDeployingAnimLoaded; /*0x45f44d*/
+    unsigned char *v9 = &this->RoofDeployingAnimLoaded; // esi /*0x45f44d*/
     if ( this->RoofDeployingAnimLoaded && this->RoofDeployingAnim ) /*0x45f457*/
     {
       operator delete((this->RoofDeployingAnim)); /*0x45f462*/
@@ -987,8 +985,7 @@ void BuildingTypeClass::LoadVoxel()
     CCFileClass::Construct(&v28, Buffer); /*0x45fd01*/
     if ( (unsigned __int8)CCFileClass::Open(&v28, 0) ) /*0x45fd0e*/
     {
-      void *v13; // esi
-      v13 = this->q0C0; /*0x45fd1b*/
+      void *v13 = this->q0C0; // esi /*0x45fd1b*/
       if ( v13 ) /*0x45fd23*/
       {
         WaveClass::Destroy((WaveClass *)this->u32_D2E); /*0x45fd27*/
@@ -1004,8 +1001,7 @@ void BuildingTypeClass::LoadVoxel()
       this->q0C0 = (int)v15; /*0x45fd63*/
       _makepath(Buffer, 0, 0, Destination, g_Str_File__HVA); /*0x45fd74*/
       CCFileClass::Construct(&v22, Buffer); /*0x45fd88*/
-      void *v16; // esi
-      v16 = this->q0C4; /*0x45fd8d*/
+      void *v16 = this->q0C4; // esi /*0x45fd8d*/
       if ( v16 ) /*0x45fd95*/
       {
         String::Release((String *)this->u32_D2E); /*0x45fd99*/

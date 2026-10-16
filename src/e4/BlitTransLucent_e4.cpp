@@ -224,8 +224,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 {
 
 
-  void *m_8; // eax
-  m_8 = this->ptr_8; /*0x49a348*/
+  void *m_8 = this->ptr_8; // eax /*0x49a348*/
   /* X11: vtable install elided (implicit via BlitTransLucent25Alpha virtuals 0x49a34b) */
   FractalNoise::Dtor(m_8); /*0x49a352*/
   this->m_8 = 0; /*0x49a35b*/

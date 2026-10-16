@@ -108,8 +108,7 @@ char * E4Recv_724000::sub_724000(int a2)
 {
 
 
-  char *v3; // ecx
-  v3 = &this->u8_234; /*0x72400a*/
+  char *v3 = &this->u8_234; // ecx /*0x72400a*/
   this->M4 = 0; /*0x724010*/
   this->M8 = a2; /*0x724013*/
   this->M12 = 0; /*0x724016*/

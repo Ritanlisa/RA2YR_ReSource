@@ -1250,8 +1250,7 @@ int E4Recv_6375B0::sub_6375B0()
     v3 = 0; /*0x6375c9*/
   }
   memcpy(v3, this, 0x6Cu); /*0x6375d3*/
-  int *p_health; // esi
-  p_health = &this->health; /*0x6375d3*/
+  int *p_health = &this->health; // esi /*0x6375d3*/
   *((unsigned short *)v3 + 54) = *(unsigned short *)p_health; /*0x6375d5*/
   v3[110] = *((unsigned char *)p_health + 2); /*0x6375d7*/
   if ( *v3 == 4 ) /*0x6375dd*/

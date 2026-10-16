@@ -442,8 +442,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     v1->q140 = VoxelAnimClass_field_0x140 - 1; /*0x749f90*/
   if ( v1->q140 <= 0 ) /*0x749f9c*/
   {
-    int *v7; // esi
-    v7 = &v1->location; /*0x749fa2*/
+    int *v7 = &v1->location; // esi /*0x749fa2*/
     v97 = (int)(*&v1->location); /*0x749fac*/
     v98 = *&v1->__pad_0A0; /*0x749fbd*/
     v99 = *&v1->q0A4; /*0x749fc4*/

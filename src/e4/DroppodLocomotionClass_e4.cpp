@@ -245,8 +245,7 @@ HRESULT DropPodLocomotionClass::BeginMove(DropPodLocomotionClass * a1, int * pSt
     return v3; /*0x4b62b8*/
   ILocomotion *Piggybackee; // eax
   Piggybackee = a1->Piggybackee; /*0x4b628e*/
-  LPVOID *p_Piggybackee; // esi
-  p_Piggybackee = &a1->Piggybackee; /*0x4b6291*/
+  LPVOID *p_Piggybackee = &a1->Piggybackee; // esi /*0x4b6291*/
   if ( Piggybackee ) /*0x4b6296*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b629b*/
   *p_Piggybackee = 0; /*0x4b62a5*/

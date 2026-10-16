@@ -448,7 +448,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   }
   __asm { fld dword ptr [ebp+0F8h] } /*0x6cebda*/
   *(unsigned int *)(_EBP + 196) = v20; /*0x6cebe5*/
-  __asm { fstp qword ptr [esp+408h+var_408]; double } /*0x6cebeb*/
+  __asm { fstp qword ptr [esp+408h+var_408] } /*; double*/ /*0x6cebeb*/
   INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)(_EBP + 36), g_INI_Key_Range, v34); /*0x6cebf4*/
   v21 = *(unsigned int *)(_EBP + 252); /*0x6cebf9*/
   __asm { fstp dword ptr [ebp+0F8h] } /*0x6cec01*/

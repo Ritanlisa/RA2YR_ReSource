@@ -2537,7 +2537,7 @@ long long sub_5B76C0()
     fld dbl_ABF090
     fsub dbl_ABF0B8
   }
-  __asm { fstp [esp+8+var_8]; double }
+  __asm { fstp [esp+8+var_8] } /*; double*/
   double v2; // [esp+0h] [ebp-8h]
   Math::Sin(v2); /*0x5b76d2*/
   __asm { fmul dbl_ABF0B0 } /*0x5b76d7*/

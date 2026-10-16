@@ -278,7 +278,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         }
         _ESI[1] = _RT1; /*0x4161e8*/
         Math::Hypotenuse2D(v73); /*0x4161eb*/
-        __asm { fstp qword ptr [esp+80h+var_84+4]; double } /*0x4161fb*/
+        __asm { fstp qword ptr [esp+80h+var_84+4] } /*; double*/ /*0x4161fb*/
         Math::CalcAngle(v75, v63); /*0x416200*/
         __asm { fsub ds:dbl_7E2820 } /*0x416205*/
         __asm { fmul ds:dbl_7E2818 }
@@ -659,7 +659,7 @@ void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, 
   __asm { fld [esp+60h+arg_20] } /*0x43993c*/
   v25 = v17; /*0x439944*/
   v26 = v18; /*0x439948*/
-  __asm { fstp dword ptr [esp+64h+var_68+4]; float } /*0x439950*/
+  __asm { fstp dword ptr [esp+64h+var_68+4] } /*; float*/ /*0x439950*/
   v24 = v16; /*0x439957*/
   v19 = FromQuaternionAxisAngle(&v27, &v24, v23); /*0x43995b*/
   Float4::Copy((float *)this->u32_40, v30, v19); /*0x439969*/
@@ -7555,7 +7555,7 @@ int BulletClass::ComputeImpactTrajectory(int a1) {
   v15 = *(unsigned int *)(a1 + 40); /*0x662107*/
   __asm { fld dword ptr [esi+54h] } /*0x66210b*/
   v4 = (char *)this->vfptr3 + 156; /*0x66210e*/
-  __asm { fstp [esp+38h+var_38]; double } /*0x662119*/
+  __asm { fstp [esp+38h+var_38] } /*; double*/ /*0x662119*/
   v5 = *((unsigned int *)this->vfptr3 + 40); /*0x66211c*/
   v17[0] = *v4; /*0x66211f*/
   v17[1] = v5; /*0x662123*/
@@ -7577,7 +7577,7 @@ int BulletClass::ComputeImpactTrajectory(int a1) {
     fstp st
     fld dword ptr [esi+54h]
   }
-  __asm { fstp [esp+38h+var_38]; double }
+  __asm { fstp [esp+38h+var_38] } /*; double*/
   Math::SinCos(v12); /*0x662189*/
   __asm { fimul [esp+38h+var_14] } /*0x66218e*/
   __asm { fiadd [esp+30h+var_4] }

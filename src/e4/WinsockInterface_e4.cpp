@@ -190,8 +190,7 @@ void * WinsockInterface::ProcessPacket(int a2)
 
 
   int v3 = 6; // ebp /*0x77027a*/
-  void **v4; // edi
-  v4 = &this->ptr_4; /*0x77027f*/
+  void **v4 = &this->ptr_4; // edi /*0x77027f*/
   *(unsigned int *)this = a2; /*0x770282*/
   int v5; // ebx
   v5 = (int)(&this->u8_8); /*0x770284*/
@@ -205,8 +204,7 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v3; /*0x7702b5*/
   }
   while ( v3 ); /*0x7702b6*/
-  unsigned int *v6; // edi
-  v6 = &this->u8_37C; /*0x7702b8*/
+  unsigned int *v6 = &this->u8_37C; // edi /*0x7702b8*/
   int v7 = 2; // ebp /*0x7702be*/
   do /*0x7702e2*/
   {

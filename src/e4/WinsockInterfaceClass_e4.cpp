@@ -37,8 +37,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
     WSACleanup(); /*0x7b1ad3*/
     this->u32_3F068 = 0; /*0x7b1ad8*/
   }
-  void *v3; // eax
-  v3 = this->u32_3C; /*0x7b1ade*/
+  void *v3 = this->u32_3C; // eax /*0x7b1ade*/
   this->u32_38 = (unsigned int)(&vt_VectorClass); /*0x7b1ae1*/
   if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
@@ -47,8 +46,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   }
   this->u32_45 = 0; /*0x7b1afd*/
   this->u32_40 = 0; /*0x7b1b00*/
-  void *v4; // eax
-  v4 = this->u32_24; /*0x7b1b03*/
+  void *v4 = this->u32_24; // eax /*0x7b1b03*/
   this->u32_20 = (unsigned int)(&vt_VectorClass); /*0x7b1b06*/
   if ( v4 && this->u32_2D ) /*0x7b1b11*/
   {
@@ -57,8 +55,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   }
   this->u32_2D = 0; /*0x7b1b22*/
   this->u32_28 = 0; /*0x7b1b25*/
-  void *v5; // eax
-  v5 = this->u32_C; /*0x7b1b28*/
+  void *v5 = this->u32_C; // eax /*0x7b1b28*/
   this->__pad_008 = (unsigned int)(&vt_VectorClass); /*0x7b1b2b*/
   if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {

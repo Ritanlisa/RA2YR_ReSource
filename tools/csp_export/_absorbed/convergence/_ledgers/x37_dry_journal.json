@@ -122,11 +122,11 @@
    "unknown-type:PaletteClass": 1
   },
   "files_scanned": 622,
-  "run_nonsig": 3097,
-  "functions_scanned": 5286,
-  "decls_seen": 36721,
-  "decls_already_minimal": 2106,
-  "functions_untouched": 4066,
+  "run_nonsig": 3092,
+  "functions_scanned": 5271,
+  "decls_seen": 36706,
+  "decls_already_minimal": 2091,
+  "functions_untouched": 4051,
   "skip_type": 660,
   "skip_func_goto_decls": 23768,
   "functions_goto_skip": 1200,
@@ -4160,24 +4160,28 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v10",
    "type": "void * v10",
-   "decl_line_1based": 226,
-   "insert_line_1based": 271,
-   "first_use_line_1based": 271,
+   "decl_line_1based": 225,
+   "insert_line_1based": 270,
+   "first_use_line_1based": 270,
    "d_ins": 3,
    "min_depth_seen": 3,
    "n_uses": 15,
    "uses": [
     [
-     271,
+     270,
      4
     ],
     [
-     272,
+     271,
      9
+    ],
+    [
+     273,
+     24
     ],
     [
      274,
@@ -4189,46 +4193,42 @@
     ],
     [
      276,
-     24
+     23
     ],
     [
      277,
-     23
-    ],
-    [
-     278,
      24
     ],
     [
-     279,
+     278,
      30
     ],
     [
-     280,
+     279,
      23
     ],
     [
-     284,
+     283,
      6
     ],
     [
-     286,
+     285,
      22
     ],
     [
-     287,
+     286,
      81
     ],
     [
-     288,
+     287,
      9
     ],
     [
-     289,
+     288,
      31
     ],
     [
-     289,
+     288,
      36
     ]
    ],
@@ -4237,10 +4237,43 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v11",
    "type": "int v11",
+   "decl_line_1based": 226,
+   "insert_line_1based": 289,
+   "first_use_line_1based": 289,
+   "d_ins": 3,
+   "min_depth_seen": 3,
+   "n_uses": 4,
+   "uses": [
+    [
+     289,
+     4
+    ],
+    [
+     298,
+     6
+    ],
+    [
+     307,
+     15
+    ],
+    [
+     324,
+     15
+    ]
+   ],
+   "decl_text": "  int v11; // ebx"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 224,
+   "func_close_line": 339,
+   "name": "v12",
+   "type": "int v12",
    "decl_line_1based": 227,
    "insert_line_1based": 290,
    "first_use_line_1based": 290,
@@ -4261,40 +4294,7 @@
      15
     ],
     [
-     325,
-     15
-    ]
-   ],
-   "decl_text": "  int v11; // ebx"
-  },
-  {
-   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
-   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
-   "name": "v12",
-   "type": "int v12",
-   "decl_line_1based": 228,
-   "insert_line_1based": 291,
-   "first_use_line_1based": 291,
-   "d_ins": 3,
-   "min_depth_seen": 3,
-   "n_uses": 4,
-   "uses": [
-    [
-     291,
-     4
-    ],
-    [
-     300,
-     6
-    ],
-    [
-     309,
-     15
-    ],
-    [
-     327,
+     326,
      15
     ]
    ],
@@ -4303,35 +4303,35 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "Viewport",
    "type": "int * Viewport",
-   "decl_line_1based": 229,
-   "insert_line_1based": 296,
-   "first_use_line_1based": 296,
+   "decl_line_1based": 228,
+   "insert_line_1based": 295,
+   "first_use_line_1based": 295,
    "d_ins": 4,
    "min_depth_seen": 4,
    "n_uses": 5,
    "uses": [
     [
-     296,
+     295,
      6
     ],
     [
-     297,
+     296,
      16
     ],
     [
-     298,
+     297,
      15
     ],
     [
-     299,
+     298,
      13
     ],
     [
-     300,
+     299,
      13
     ]
    ],
@@ -4340,27 +4340,27 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v14",
    "type": "ConvertClass * v14",
-   "decl_line_1based": 230,
-   "insert_line_1based": 304,
-   "first_use_line_1based": 304,
+   "decl_line_1based": 229,
+   "insert_line_1based": 303,
+   "first_use_line_1based": 303,
    "d_ins": 4,
    "min_depth_seen": 4,
    "n_uses": 3,
    "uses": [
     [
-     304,
+     303,
      6
     ],
     [
-     305,
+     304,
      11
     ],
     [
-     306,
+     305,
      26
     ]
    ],
@@ -4369,23 +4369,23 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v15",
    "type": "void * v15",
-   "decl_line_1based": 231,
-   "insert_line_1based": 307,
-   "first_use_line_1based": 307,
+   "decl_line_1based": 230,
+   "insert_line_1based": 306,
+   "first_use_line_1based": 306,
    "d_ins": 4,
    "min_depth_seen": 4,
    "n_uses": 2,
    "uses": [
     [
-     307,
+     306,
      6
     ],
     [
-     310,
+     309,
      39
     ]
    ],
@@ -4394,23 +4394,23 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v16",
    "type": "unsigned int * v16",
-   "decl_line_1based": 232,
-   "insert_line_1based": 311,
-   "first_use_line_1based": 311,
+   "decl_line_1based": 231,
+   "insert_line_1based": 310,
+   "first_use_line_1based": 310,
    "d_ins": 4,
    "min_depth_seen": 4,
    "n_uses": 2,
    "uses": [
     [
-     311,
+     310,
      6
     ],
     [
-     312,
+     311,
      39
     ]
    ],
@@ -4419,10 +4419,35 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v17",
    "type": "int v17",
+   "decl_line_1based": 232,
+   "insert_line_1based": 317,
+   "first_use_line_1based": 317,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     317,
+     6
+    ],
+    [
+     319,
+     15
+    ]
+   ],
+   "decl_text": "  int v17; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 224,
+   "func_close_line": 339,
+   "name": "v18",
+   "type": "int v18",
    "decl_line_1based": 233,
    "insert_line_1based": 318,
    "first_use_line_1based": 318,
@@ -4436,31 +4461,6 @@
     ],
     [
      320,
-     15
-    ]
-   ],
-   "decl_text": "  int v17; // eax"
-  },
-  {
-   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
-   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
-   "name": "v18",
-   "type": "int v18",
-   "decl_line_1based": 234,
-   "insert_line_1based": 319,
-   "first_use_line_1based": 319,
-   "d_ins": 4,
-   "min_depth_seen": 4,
-   "n_uses": 2,
-   "uses": [
-    [
-     319,
-     6
-    ],
-    [
-     321,
      32
     ]
    ],
@@ -4469,10 +4469,35 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v19",
    "type": "int v19",
+   "decl_line_1based": 234,
+   "insert_line_1based": 320,
+   "first_use_line_1based": 320,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     320,
+     6
+    ],
+    [
+     322,
+     12
+    ]
+   ],
+   "decl_text": "  int v19; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 224,
+   "func_close_line": 339,
+   "name": "v20",
+   "type": "int v20",
    "decl_line_1based": 235,
    "insert_line_1based": 321,
    "first_use_line_1based": 321,
@@ -4485,32 +4510,7 @@
      6
     ],
     [
-     323,
-     12
-    ]
-   ],
-   "decl_text": "  int v19; // eax"
-  },
-  {
-   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
-   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
-   "name": "v20",
-   "type": "int v20",
-   "decl_line_1based": 236,
-   "insert_line_1based": 322,
-   "first_use_line_1based": 322,
-   "d_ins": 4,
-   "min_depth_seen": 4,
-   "n_uses": 2,
-   "uses": [
-    [
-     322,
-     6
-    ],
-    [
-     328,
+     327,
      66
     ]
    ],
@@ -4519,23 +4519,23 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v21",
    "type": "void * v21",
-   "decl_line_1based": 237,
-   "insert_line_1based": 326,
-   "first_use_line_1based": 326,
+   "decl_line_1based": 236,
+   "insert_line_1based": 325,
+   "first_use_line_1based": 325,
    "d_ins": 4,
    "min_depth_seen": 4,
    "n_uses": 2,
    "uses": [
     [
-     326,
+     325,
      6
     ],
     [
-     331,
+     330,
      32
     ]
    ],
@@ -4544,10 +4544,35 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v22",
    "type": "int v22",
+   "decl_line_1based": 237,
+   "insert_line_1based": 327,
+   "first_use_line_1based": 327,
+   "d_ins": 4,
+   "min_depth_seen": 4,
+   "n_uses": 2,
+   "uses": [
+    [
+     327,
+     6
+    ],
+    [
+     328,
+     33
+    ]
+   ],
+   "decl_text": "  int v22; // eax"
+  },
+  {
+   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
+   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
+   "func_open_line": 224,
+   "func_close_line": 339,
+   "name": "v23",
+   "type": "int v23",
    "decl_line_1based": 238,
    "insert_line_1based": 328,
    "first_use_line_1based": 328,
@@ -4561,18 +4586,18 @@
     ],
     [
      329,
-     33
+     122
     ]
    ],
-   "decl_text": "  int v22; // eax"
+   "decl_text": "  int v23; // eax"
   },
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
-   "name": "v23",
-   "type": "int v23",
+   "func_open_line": 224,
+   "func_close_line": 339,
+   "name": "v24",
+   "type": "int v24",
    "decl_line_1based": 239,
    "insert_line_1based": 329,
    "first_use_line_1based": 329,
@@ -4586,31 +4611,6 @@
     ],
     [
      330,
-     122
-    ]
-   ],
-   "decl_text": "  int v23; // eax"
-  },
-  {
-   "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
-   "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
-   "name": "v24",
-   "type": "int v24",
-   "decl_line_1based": 240,
-   "insert_line_1based": 330,
-   "first_use_line_1based": 330,
-   "d_ins": 4,
-   "min_depth_seen": 4,
-   "n_uses": 2,
-   "uses": [
-    [
-     330,
-     6
-    ],
-    [
-     331,
      47
     ]
    ],
@@ -4619,23 +4619,23 @@
   {
    "file": "D:/RA2YR_ReSource/src/e4/ScoreScreen_e4.cpp",
    "func": "AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void *",
-   "func_open_line": 225,
-   "func_close_line": 340,
+   "func_open_line": 224,
+   "func_close_line": 339,
    "name": "v26",
    "type": "int v26",
-   "decl_line_1based": 241,
-   "insert_line_1based": 310,
-   "first_use_line_1based": 310,
+   "decl_line_1based": 240,
+   "insert_line_1based": 309,
+   "first_use_line_1based": 309,
    "d_ins": 4,
    "min_depth_seen": 4,
    "n_uses": 2,
    "uses": [
     [
-     310,
+     309,
      6
     ],
     [
-     312,
+     311,
      54
     ]
    ],

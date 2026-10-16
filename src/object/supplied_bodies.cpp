@@ -2071,7 +2071,7 @@ int TechnoClass::ComputeTargetAngle()
       fstp st
       fild dword ptr [ecx+16B8h]
     }
-    __asm { fstp [esp+58h+var_58]; double }
+    __asm { fstp [esp+58h+var_58] } /*; double*/
     v29 = (TechnoClass *)ObjectClass::DistanceTo((ObjectClass *)this, (int)v64); /*0x43ebf9*/
     v30 = TechnoClass::ComputeScanRange(v29, v49); /*0x43ec07*/
     v31 = (int *)this->GetTurretScreenPos(v60, 0); /*0x43ec12*/
@@ -2089,7 +2089,7 @@ int TechnoClass::ComputeTargetAngle()
       fstp qword ptr [esp+5Ch+var_38]
       fild dword ptr [ecx+16B8h]
     }
-    __asm { fstp qword ptr [esp]; double }
+    __asm { fstp qword ptr [esp] } /*; double*/
     Math::Sqrt(v53[0]); /*0x43ec8c*/
     (*((unsigned short *)&(v36))) = Math::RoundToInt(v3); /*0x43ec94*/
     v36 = v36; /*0x43ec99*/
@@ -2098,7 +2098,7 @@ int TechnoClass::ComputeTargetAngle()
     {
       _EDX = dword_8871E0; /*0x43ecb0*/
       __asm { fild dword ptr [edx+16B8h] } /*0x43ecbe*/
-      __asm { fstp qword ptr [esp]; double }
+      __asm { fstp qword ptr [esp] } /*; double*/
       Math::Sqrt(v53[0]); /*0x43ecd2*/
       (*((unsigned short *)&(v39))) = Math::RoundToInt(v3); /*0x43ecda*/
       v39 = v39; /*0x43ecdf*/
@@ -9360,7 +9360,7 @@ int TechnoClass::CalculateDamage()
     fstp [esp+68h+var_20]
     fld dword ptr [esi+54h]
   }
-  __asm { fstp [esp+68h+var_68]; double }
+  __asm { fstp [esp+68h+var_68] } /*; double*/
   v37 = v6[2]; /*0x66310f*/
   Math::ArcTan2(v16); /*0x663113*/
   __asm { fmul [esp+68h+var_20] } /*0x663118*/
@@ -9396,7 +9396,7 @@ int TechnoClass::CalculateDamage()
   }
   (*((unsigned short *)&(v9))) = Math::RoundToInt(v1); /*0x663195*/
   __asm { fld dword ptr [esi+54h] } /*0x66319a*/
-  __asm { fstp [esp+70h+var_68]; double }
+  __asm { fstp [esp+70h+var_68] } /*; double*/
   v10 = v9; /*0x6631ac*/
   v30 = v37; /*0x6631ae*/
   Math::SinCos(v17); /*0x6631b2*/

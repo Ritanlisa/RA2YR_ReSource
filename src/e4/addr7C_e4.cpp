@@ -5142,7 +5142,7 @@ void * memcpy(void * a0, const void * aP1, size_t Size)
     {
       if ( Size >= 4 ) /*0x7ca0d6*/
         __asm { jmp dword ptr ds:loc_7CA0EC+4[eax*4] } /*0x7ca0dd*/
-      __asm { jmp dword ptr ds:TrailUp0[ecx*4]; jumptable 007CA0C5 case 0 } /*0x7ca0e4*/
+      __asm { jmp dword ptr ds:TrailUp0[ecx*4] } /*; jumptable 007CA0C5 case 0*/ /*0x7ca0e4*/
     }
     v5 = Size >> 2; /*0x7ca0b8*/
     switch ( v5 ) /*0x7ca0ec*/

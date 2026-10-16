@@ -6576,7 +6576,7 @@ int InfantryClass::ProcessTiberiumHarvest()
       if ( v15 > 0 ) /*0x522f68*/
       {
         __asm { fild [esp+14h+var_4] } /*0x522f6a*/
-        __asm { fstp [esp+1Ch+var_1C]; float }
+        __asm { fstp [esp+1Ch+var_1C] } /*; float*/
         Float::Accumulate(&this->isAliveFlag, v12, v7); /*0x522f75*/
         __asm { fstp st } /*0x522f7a*/
       }

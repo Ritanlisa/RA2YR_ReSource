@@ -848,8 +848,7 @@ namespace gamemd {
 TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1)
 {
 
-  void *v3; // eax
-  v3 = this->vtable2; /*0x477ac3*/
+  void *v3 = this->vtable2; // eax /*0x477ac3*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x477ac6) */
   if ( v3 && this->ParticleTypeClass_field_2BC ) /*0x477ad0*/
   {

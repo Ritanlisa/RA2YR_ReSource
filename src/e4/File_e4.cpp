@@ -368,8 +368,7 @@ File * * File::LoadPaletteData(unsigned short *aP1)
     int v8; // ecx
     v8 = *(unsigned int *)v5; /*0x625b55*/
     int v9 = v7; // ebx /*0x625b57*/
-    unsigned int *v10; // esi
-    v10 = &v5->u32_4; /*0x625b5c*/
+    unsigned int *v10 = &v5->u32_4; // esi /*0x625b5c*/
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *(unsigned int *)(v7 + 4) = *(v10 - 1); /*0x625b64*/
     size_t v11; // ebp

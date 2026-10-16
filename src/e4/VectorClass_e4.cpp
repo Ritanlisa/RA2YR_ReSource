@@ -184,8 +184,7 @@ int VectorClass_flat::RemoveObjectById()
   v7 = (gamemd::VectorClass *)(this); /*0x4137a0*/
   if ( !this->u32_2590 ) /*0x4137a1*/
     return 0; /*0x4137ab*/
-  VectorClass *v2; // esi
-  v2 = &this->u32_960; /*0x4137b6*/
+  VectorClass *v2 = &this->u32_960; // esi /*0x4137b6*/
   int v3 = this->u32_2580; // eax /*0x4137c3*/
   v7 = (VectorClass *)*this->u32_25801); /*0x4137c7*/
   int v4; // eax
@@ -661,8 +660,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
 {
 
 
-  char *p_IsInitialized; // esi
-  p_IsInitialized = &aP1->IsInitialized; /*0x4a0c2c*/
+  char *p_IsInitialized = &aP1->IsInitialized; // esi /*0x4a0c2c*/
   aP1->Items = 0; /*0x4a0c2f*/
   aP1->Capacity = 0; /*0x4a0c32*/
   aP1->Count = 0; /*0x4a0c37*/

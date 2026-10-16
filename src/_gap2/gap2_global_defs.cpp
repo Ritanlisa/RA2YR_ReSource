@@ -151,8 +151,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     if ( v4 > this->ptr_140 ) /*0x403071*/
       this->ptr_140 = (ra2::game::AbstractClass *)(v4); /*0x403073*/
     this->ptr_138 = (LineTrail *)(v3); /*0x40307f*/
-    char *p_bombVisible; // ebx
-    p_bombVisible = &this->u32_68; /*0x40308b*/
+    char *p_bombVisible = &this->u32_68; // ebx /*0x40308b*/
     (&this->bombVisible)->InitChannels(); /*0x403094*/
     char *v6; // ecx
     v6 = (char *)this->u32_E8; /*0x403099*/
@@ -19652,7 +19651,7 @@ void* Gap2Recv_65DD30::ConstructTeamMembers() {
       if ( v31 > 0 && BYTE1(this->location[2]) ) /*0x65de61*/
       {
         __asm { fild [esp+2Ch+var_8] } /*0x65de6b*/
-        __asm { fstp [esp+34h+var_34]; float }
+        __asm { fstp [esp+34h+var_34] } /*; float*/
         Float::Accumulate(&v17->tiltSidewaysAngle, v23, 0); /*0x65de7b*/
         __asm { fstp st } /*0x65de80*/
       }
@@ -30953,7 +30952,7 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
   else
     v7 = g_Str_Invalid_Voc; /*0x7504e9*/
   __asm { fld flt_8464B4 } /*0x7504ee*/
-  __asm { fstp [esp+820h+var_820]; double }
+  __asm { fstp [esp+820h+var_820] } /*; double*/
   INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)v7, g_INI_Key_Volume, v40); /*0x750502*/
   __asm /*0x750507*/
   {
@@ -30999,7 +30998,7 @@ char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
   else
     v13 = g_Str_Invalid_Voc; /*0x750584*/
   __asm { fld flt_8464B8 } /*0x750589*/
-  __asm { fstp [esp+820h+var_820]; double }
+  __asm { fstp [esp+820h+var_820] } /*; double*/
   INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)v13, aMinvolume, v41); /*0x75059d*/
   __asm /*0x7505a2*/
   {

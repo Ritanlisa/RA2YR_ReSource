@@ -165,8 +165,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
       this->u32_3B4 = a6; /*0x771393*/
     }
     int v14 = this->u32_3C8; // ecx /*0x771396*/
-    ScoreScreen *v15; // esi
-    v15 = &this->u32_60; /*0x7713a2*/
+    ScoreScreen *v15 = &this->u32_60; // esi /*0x7713a2*/
     int v16; // eax
     if ( this->u32_3D0 < v14 /*0x7713c7*/
       || (this->u32_3CD || !v14)

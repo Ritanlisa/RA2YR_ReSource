@@ -2152,7 +2152,7 @@ char AudioEvent::LoadFromINI(uint8_t ***a2) {
   if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)_ESI) ) /*0x752dd3*/
     return 0; /*0x752fec*/
   __asm { fld dword ptr [esi+28h] } /*0x752de7*/
-  __asm { fstp [esp+20Ch+var_20C]; double }
+  __asm { fstp [esp+20Ch+var_20C] } /*; double*/
   INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)_ESI, g_INI_Key_Volume, v5); /*0x752df9*/
   __asm { fstp dword ptr [esi+28h] } /*0x752dfe*/
   _ESI->u32_28 = _ET1; /*0x752dfe*/
