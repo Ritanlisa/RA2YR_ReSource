@@ -697,7 +697,7 @@ extern uint32_t FileSystem_WRENCH_SHP; // data: 0x89DDC8
 extern uint32_t g_GameModeOptionState; // data: 0x89E000
 extern uint8_t g_IsWindowed[1024];  // X34-L5 array retype (binary width+bound)
 extern int32_t Direction_X_Offsets; // data: 0x89F688
-extern uint32_t g_CellDirectionOffsets; // data: 0x89F690
+extern unsigned int g_CellDirectionOffsets; // data: 0x89F690
 extern uint32_t g_DirectionOffsetPool; // data: 0x89F698
 extern uint32_t Direction_Y_Offsets; // data: 0x89F6A0
 extern void* lpBaseAddress; // data: 0x89F75C
@@ -862,7 +862,7 @@ extern uint32_t TriggerClass_Array; // data: 0xA8EAE8
 extern void* g_TriggerClassCapacity; // data: 0xA8EAEC
 extern uint32_t g_ProductionQueueState; // data: 0xA8EAF8
 extern uint32_t VoxelAnimTypeClass_Array; // data: 0xA8EB28
-extern uint32_t g_MultiplayerPool; // data: 0xA8EB38
+extern unsigned int g_MultiplayerPool; // data: 0xA8EB38
 extern uint32_t BuildingClass_Array; // data: 0xA8EB40
 extern void* g_BuildingClass_InstanceCount; // data: 0xA8EB44
 extern uint32_t g_BuildingProductionState; // data: 0xA8EB50

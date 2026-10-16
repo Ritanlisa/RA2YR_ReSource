@@ -1042,7 +1042,7 @@ extern int g_Cell_BuildabilityLUT;  // data: 0xAA0E28
 extern int g_Cell_PositionLUT;  // data: 0x87F8DC
 extern int g_CellClassArray;  // data: 0xABDC50
 extern int g_CellClassManager;  // data: 0x887888
-extern int g_CellDirectionOffsets;  // data: 0x89F690
+extern unsigned int g_CellDirectionOffsets;  // data: 0x89F690
 extern int g_CellPassabilityLUT;  // data: 0xAA0738
 extern int g_CellPositionOffset;  // data: 0x87F8E0
 extern int g_CellTileLookup;  // data: 0xABC1D8
@@ -1487,7 +1487,7 @@ extern int g_MultiplayerLogState;  // data: 0xA8ECB0
 extern int g_MultiplayerMode;  // data: 0xABFD70
 extern int g_MultiplayerModeConfig;  // data: 0xABFDA0
 extern int g_MultiplayerOptions;  // data: 0xA8B8D8
-extern int g_MultiplayerPool;  // data: 0xA8EB38
+extern unsigned int g_MultiplayerPool;  // data: 0xA8EB38
 extern int g_MultiplayerSetupState;  // data: 0xA8BB08
 extern int g_MultiplayerSyncState;  // data: 0x8B41CC
 extern int g_Network_IsHosting;  // data: 0xA8DBA0
@@ -1528,7 +1528,7 @@ extern int g_PlayerInfoCount;  // data: 0xA8DA74
 extern int g_PlayerNameListEnd;  // data: 0xA8DAB0
 extern int g_ProductionQueueState;  // data: 0xA8EAF8
 extern int g_RadarBlipManager;  // data: 0x880990
-extern int g_RadarBlipPool;  // data: 0x88098C
+extern unsigned int g_RadarBlipPool;  // data: 0x88098C
 extern int g_Randomizer;  // data: 0xABE890
 extern int g_RandomMap_BuildObject;  // data: 0xABDF90
 extern int g_RandomMap_TerrainState;  // data: 0xABDF94
@@ -1557,7 +1557,7 @@ extern int g_ScreenRenderLUT1;  // data: 0x879B30
 extern int g_ScreenRenderLUT2;  // data: 0x87B170
 extern char g_ScreenRenderMask[256];  // X34-L5 array retype (binary width+bound)
 extern int g_ScreenSaverState;  // data: 0xAC48B8
-extern int g_ScriptActionPool;  // data: 0xAC4BF0
+extern unsigned int g_ScriptActionPool;  // data: 0xAC4BF0
 extern int g_ScriptConfig;  // data: 0xAC4C98
 extern int g_ScriptPool;  // data: 0xAC4CCC
 extern int g_ScriptState;  // data: 0xAC4C38
@@ -2000,14 +2000,14 @@ extern int g_UIManager;  // data: 0xAC4F58
 extern int g_UIPointerTable;  // data: 0xAC1170
 extern int g_UnitClassPool;  // data: 0x8B410C
 extern int g_UnitSelectionState;  // data: 0xB1CFB8
-extern int g_UnitTooltipState;  // data: 0xB0FE6C
+extern unsigned int g_UnitTooltipState;  // data: 0xB0FE6C
 extern int g_UnitTypeCount2;  // data: 0xA83CE4
 extern int g_Tubes_Count;  // data: 0x8B4148
 extern int g_UnitTypeInitState;  // data: 0xA83D08
 extern int g_VeinholeMonsterPool;  // data: 0xB1D2F0
 extern int g_VeinholePool;  // data: 0xB1D2A0
 extern int g_VisibilitySystem;  // data: 0x89C3B0
-extern int g_VisibleSurfaceDescriptor;  // data: 0x87E8A4
+extern unsigned int g_VisibleSurfaceDescriptor;  // data: 0x87E8A4
 extern int g_VocAudioConfig;  // data: 0xB1D37C
 extern int g_VocPlayState;  // data: 0xB1D388
 extern int g_VoxelColorPalette;  // data: 0xB41178

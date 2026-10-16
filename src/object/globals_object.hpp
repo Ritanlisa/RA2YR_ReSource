@@ -189,7 +189,7 @@ extern void* g_DialogControlPool; // data: 0xB0FB50
 // UnitTooltip
 // ============================================================
 
-extern uint32_t g_UnitTooltipState; // data: 0xB0FE6C
+extern unsigned int g_UnitTooltipState; // data: 0xB0FE6C
 
 } // namespace game
 } // namespace ra2

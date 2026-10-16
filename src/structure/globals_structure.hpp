@@ -37,7 +37,7 @@ extern void* g_TeamClassPool; // data: 0x8B40EC
 // Script globals
 // ============================================================
 
-extern uint32_t g_ScriptActionPool; // data: 0xAC4BF0
+extern unsigned int g_ScriptActionPool; // data: 0xAC4BF0
 
 extern uint32_t g_ScriptState; // data: 0xAC4C38
 

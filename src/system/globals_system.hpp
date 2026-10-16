@@ -144,7 +144,7 @@ extern uint32_t g_BuildingLoadQueue_Capacity; // data: 0xB0E848
 
 extern uint32_t g_Shroud_CellArray; // data: 0x87F924
 
-extern uint32_t g_VisibleSurfaceDescriptor; // data: 0x87E8A4
+extern unsigned int g_VisibleSurfaceDescriptor; // data: 0x87E8A4
 
 extern void* g_hWnd; // data: 0xB73550
 

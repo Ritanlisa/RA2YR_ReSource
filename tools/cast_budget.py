@@ -14,7 +14,13 @@ L317 hardening (vs the naive census that reported +368 for zero casts):
      (the `(T)-x` arrow misread);
   3. bare `(identifier)` with no star/&/::/scalar keyword excluded
      (receiver-wrap false positive).
-
+X50 correction (instrument accuracy, not a threshold change):
+  4. preprocessor CONDITIONAL lines (`#if/#ifdef/#ifndef/#elif`) are skipped
+     -- the dual-universe guard lines `#if !defined(A) && !defined(B)` were
+     misread as `(GAMEMD_DEF_X)` casts (+140 cast_class artifact, I366);
+     an equal 55 older guard artifacts of the same shape were silently in
+     the baseline. `#define` lines are KEPT: they can carry real cast text
+     (8 macro casts verified in-tree). All budget checks remain intact.
 Metrics per run:
   cast_ptr      (T)( where T carries * or &  -- the R1-relevant family
   cast_scalar   (T)( where T is a scalar keyword / known scalar typedef
@@ -106,6 +112,10 @@ def measure():
         files += 1
         for raw in txt.split('\n'):
             ln = strip_line_comment(raw)
+            # X50: conditional directives are not casts (guard-line artifact,
+            # I366). #define lines kept -- real macro casts live there.
+            if re.match(r'\s*#\s*(?:if|ifdef|ifndef|elif)\b', ln):
+                continue
             if ARTIFACT_FNPTR.search(ln):
                 artifact += 1
             if ARTIFACT_DEFPARAM.search(ln) and re.match(
