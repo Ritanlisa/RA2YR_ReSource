@@ -503,7 +503,7 @@ struct ObjectClass {
     ObjectClass* nextArrayIndex;  // 0x18
     ObjectClass* referenceCount;  // 0x1C
     void* NeedsSaveOrLink;  // 0x20
-    unsigned int objectTypeFlags;  // 0x24
+    unsigned int occupant;  // 0x24
     unsigned int owningHouseIndex;  // 0x28
     int fallRate;  // 0x2C
     ObjectClass* nextObject;  // 0x30

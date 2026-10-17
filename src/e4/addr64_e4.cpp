@@ -778,12 +778,12 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int a3, int 
   v101.m_18 = 0; /*0x6487d3*/
   Ticks = Timer::GetTicks(); /*0x6487e0*/
   v100 = a3; /*0x6487f3*/
-  *(unsigned int *)&v101.u32_C = Timer::GetTicks(); /*0x648800*/
-  *(unsigned int *)&v101.u32_10 = *(unsigned int *)&v101.u32_34; /*0x648804*/
-  *(unsigned int *)&v101.u32_14 = arg4; /*0x64880c*/
+  *(unsigned int *)&v101.__pad_6[6] = Timer::GetTicks(); /*0x648800*/
+  *(unsigned int *)&v101.__pad_6[10] = *(unsigned int *)&v101.u32_34; /*0x648804*/
+  *(unsigned int *)&v101.__pad_6[14] = arg4; /*0x64880c*/
   *(unsigned int *)v101.__pad_0 = Timer::GetTicks(); /*0x648819*/
-  *(unsigned int *)&v101.u32_4 = *(unsigned int *)&v101.u32_34; /*0x64882b*/
-  *(unsigned int *)&v101.ptr_8 = a4; /*0x64882f*/
+  *(unsigned int *)&v101.m_2[2] = *(unsigned int *)&v101.u32_34; /*0x64882b*/
+  *(unsigned int *)&v101.__pad_6[2] = a4; /*0x64882f*/
   *(unsigned int *)&v101.u32_40 = Timer::GetTicks(); /*0x64883f*/
   *(unsigned int *)&v101.u32_44 = *(unsigned int *)&v101.__pad_1C[88]; /*0x648843*/
   *(unsigned int *)&v101.u32_28 = 180; /*0x648859*/
@@ -921,10 +921,10 @@ LABEL_27:
   }
 LABEL_34:
   v8->vt_slot_4(); /*0x648b90*/
-  v25 = *(unsigned int *)&v101.u32_14; /*0x648b9b*/
-  if ( *(unsigned int *)&v101.u32_C != -1 ) /*0x648ba2*/
+  v25 = *(unsigned int *)&v101.__pad_6[14]; /*0x648b9b*/
+  if ( *(unsigned int *)&v101.__pad_6[6] != -1 ) /*0x648ba2*/
   {
-    v26 = Timer::GetTicks() - *(unsigned int *)&v101.u32_C; /*0x648bad*/
+    v26 = Timer::GetTicks() - *(unsigned int *)&v101.__pad_6[6]; /*0x648bad*/
     if ( v26 >= v25 ) /*0x648bb3*/
       goto LABEL_38; /*0x648bb3*/
     v25 -= v26; /*0x648bb5*/
@@ -938,7 +938,7 @@ LABEL_38:
   v28 = v94 == 0; /*0x648be5*/
   *(unsigned int *)&v101.__pad_1C[84] = aP0 == 0; /*0x648bf2*/
   v29 = (*(int (**)(int *))(v27 + 16))(v8); /*0x648bfc*/
-  *(unsigned int *)&v101.u32_2C = v29; /*0x648c02*/
+  *(unsigned int *)&v101.__pad_2C = v29; /*0x648c02*/
   dword_AFA418 = Timer::GetTicks() - *(unsigned int *)&v101.u32_40; /*0x648c11*/
   if ( v29 > 0 ) /*0x648c16*/
   {

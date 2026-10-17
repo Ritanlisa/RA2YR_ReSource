@@ -124,7 +124,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
         v5 = &g_MissionQueueFrame.waypoints[1470]; /*0x58bb82*/
       }
     }
-    v2[122].vtable1 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bbda*/
+    v2[122].vfptr = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bbda*/
     dword_A8B230[122].vtable2 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bbed*/
     dword_A8B230[122].vtable3 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bbfe*/
     result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bc0a*/

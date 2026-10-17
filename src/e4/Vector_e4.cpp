@@ -17,7 +17,7 @@ void Vector::Math_Vector2D_Magnitude()
 
 
   double result; // st7
-  result = (double)this->q004; /*0x4c1b50*/
+  result = (double)this->Vector_field_0x4; /*0x4c1b50*/
   Math::Sqrt((double)*(int *)this->Cl_ph * (double)*(int *)this->Cl_ph + result * result); /*0x4c1b69*/
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
@@ -29,11 +29,11 @@ namespace gamemd {
 int Vector::Cleanup(void *a1, void *a2)
 {
 
-  int result = *&this->q004; // eax /*0x512d36*/
+  int result = *&this->Vector_field_0x4; // eax /*0x512d36*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x512d3d*/
   {
-    operator delete((void *)(*&this->q004)); /*0x512d43*/
-    *&this->q004 = 0; /*0x512d4b*/
+    operator delete((void *)(*&this->Vector_field_0x4)); /*0x512d43*/
+    *&this->Vector_field_0x4 = 0; /*0x512d4b*/
   }
   (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x512d4e*/
   *&this->m_8 = 0; /*0x512d51*/
@@ -45,11 +45,11 @@ namespace gamemd {
 int Vector::Destructor(void *a1)
 {
 
-  int result = *&this->q004; // eax /*0x513106*/
+  int result = *&this->Vector_field_0x4; // eax /*0x513106*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x51310d*/
   {
-    operator delete((void *)(*&this->q004)); /*0x513113*/
-    *&this->q004 = 0; /*0x51311b*/
+    operator delete((void *)(*&this->Vector_field_0x4)); /*0x513113*/
+    *&this->Vector_field_0x4 = 0; /*0x51311b*/
   }
   (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x51311e*/
   *&this->m_8 = 0; /*0x513121*/
@@ -82,11 +82,11 @@ namespace gamemd {
 int Vector::Cleanup2(void *a1)
 {
 
-  int result = *&this->q004; // eax /*0x67abe6*/
+  int result = *&this->Vector_field_0x4; // eax /*0x67abe6*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x67abed*/
   {
-    operator delete((void *)(*&this->q004)); /*0x67abf3*/
-    *&this->q004 = 0; /*0x67abfb*/
+    operator delete((void *)(*&this->Vector_field_0x4)); /*0x67abf3*/
+    *&this->Vector_field_0x4 = 0; /*0x67abfb*/
   }
   (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x67abfe*/
   *&this->m_8 = 0; /*0x67ac01*/
@@ -219,7 +219,7 @@ int Vector::Find(unsigned int * a2, void *a2_1)
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
   unsigned int *i; // ecx
-  for ( i = *&this->q004; *i != *a2; ++i ) /*0x4e055e*/
+  for ( i = *&this->Vector_field_0x4; *i != *a2; ++i ) /*0x4e055e*/
   {
     if ( ++result >= v2 ) /*0x4e056d*/
       return -1; /*0x4e056d*/
@@ -232,7 +232,7 @@ namespace gamemd {
 BOOL Vector::HasCapacity()
 {
 
-  return this->m_8 < *(unsigned int *)(*&this->q004 + 16); /*0x76f0bd*/
+  return this->m_8 < *(unsigned int *)(*&this->Vector_field_0x4 + 16); /*0x76f0bd*/
 
 }
 } // namespace gamemd

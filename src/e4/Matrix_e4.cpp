@@ -34,7 +34,7 @@ int Matrix3x4::Translate(float aP1, void *a2)
 {
 
   this->u32_C = aP1 * *(float *)this + this->u32_C; /*0x5ae989*/
-  this->u32_1C = aP1 * this->u32_10 + this->u32_1C; /*0x5ae996*/
+  this->u32_1C = aP1 *& this->m_Data[16] + this->u32_1C; /*0x5ae996*/
   this->u32_2C = aP1 * this->u32_20 + this->u32_2C; /*0x5ae9a3*/
   int result; // eax
   return result; /*0x5ae9a6*/

@@ -343,10 +343,10 @@ LABEL_158:
       return result; /*0x6de49d*/
     case 0x19:
       Speed = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].vfptr3); /*0x6de4ab*/
-      Timer::Start((Timer *)&v120.u32_10, 15 * *(unsigned int *)(a1 + 144) + Speed); /*0x6de4c5*/
+      Timer::Start((Timer *)&v120.__pad_C[4], 15 * *(unsigned int *)(a1 + 144) + Speed); /*0x6de4c5*/
       v55 = &dword_A8B230[127].vfptr3; /*0x6de4d3*/
-      dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.u32_10; /*0x6de4d8*/
-      v55[1] = *(unsigned int *)&v120.u32_14; /*0x6de4de*/
+      dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.__pad_C[4]; /*0x6de4d8*/
+      v55[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de4de*/
       v55[2] = *(unsigned int *)&v120.q018; /*0x6de4e5*/
       ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de4ed*/
       return result; /*0x6de4fe*/
@@ -357,25 +357,25 @@ LABEL_158:
         Timer::Start((Timer *)&v120, v57 - 15 * *(unsigned int *)(a1 + 144)); /*0x6de58b*/
         v58 = &dword_A8B230[127].vfptr3; /*0x6de59a*/
         dword_A8B230[127].vfptr3 = *(unsigned int *)v120.__pad_0; /*0x6de5a0*/
-        v58[1] = *(unsigned int *)&v120.q004; /*0x6de5a6*/
+        v58[1] = *(unsigned int *)&v120.Coord_field_0x2[2]; /*0x6de5a6*/
         v58[2] = v120.Coord_field_0x8; /*0x6de5ad*/
         ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de5b5*/
       }
       else
       {
-        Timer::Start((Timer *)&v120.u32_10, 0); /*0x6de527*/
+        Timer::Start((Timer *)&v120.__pad_C[4], 0); /*0x6de527*/
         v56 = &dword_A8B230[127].vfptr3; /*0x6de536*/
-        dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.u32_10; /*0x6de53c*/
-        v56[1] = *(unsigned int *)&v120.u32_14; /*0x6de542*/
+        dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.__pad_C[4]; /*0x6de53c*/
+        v56[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de542*/
         v56[2] = *(unsigned int *)&v120.q018; /*0x6de54e*/
         ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de551*/
       }
       return result; /*0x6de562*/
     case 0x1B:
-      Timer::Start((Timer *)&v120.u32_10, 15 * *(unsigned int *)(a1 + 144)); /*0x6de5da*/
+      Timer::Start((Timer *)&v120.__pad_C[4], 15 * *(unsigned int *)(a1 + 144)); /*0x6de5da*/
       v59 = &dword_A8B230[127].vfptr3; /*0x6de5e9*/
-      dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.u32_10; /*0x6de5ef*/
-      v59[1] = *(unsigned int *)&v120.u32_14; /*0x6de5f5*/
+      dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.__pad_C[4]; /*0x6de5ef*/
+      v59[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de5f5*/
       v59[2] = *(unsigned int *)&v120.q018; /*0x6de5fc*/
       v60 = dword_A8B230; /*0x6de5ff*/
       if ( dword_A8B230[127].vfptr3 == -1 ) /*0x6de60b*/
@@ -384,7 +384,7 @@ LABEL_158:
         v60 = dword_A8B230; /*0x6de619*/
       }
       v60[127].nextArrayIndex = (int)&g_TypeClass_DefaultString; /*0x6de627*/
-      ScriptAction::CopyStringField(&v120.u32_2C, &g_INI_DefaultBuffer); /*0x6de631*/
+      ScriptAction::CopyStringField(&v120.__pad_C[32], &g_INI_DefaultBuffer); /*0x6de631*/
       ScriptAction::CopyStructField( /*0x6de64c*/
         (ScriptAction *)&dword_A8B230[127].referenceCount,
         &v120.u32_4C,

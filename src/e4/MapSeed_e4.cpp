@@ -42,7 +42,7 @@ int MapSeed::IsCellInBounds(void *a1)
 
 
   int v1; // edx
-  v1 = *(__int16 *)this->__pad_000; /*0x5ac230*/
+  v1 = *(__int16 *)&this->__pad_0; /*0x5ac230*/
   int result = *&this->__pad_002; // eax /*0x5ac233*/
   int v3 = result + v1; // esi /*0x5ac23e*/
   LOBYTE(result) = result + v1 > g_MissionQueueFrame.localVariables[160] /*0x5ac261*/
@@ -71,9 +71,9 @@ int MapSeed::CheckName(void *a1)
   (&v8)->ToLower(); /*0x79c534*/
   if ( !((String *)this)->Length() /*0x79c5aa*/
     || (v7 = String::ToLowerCopy((String *)&g_WebBrowser, &v9),
-        v2 = String::ToLowerCopy(&v8, (char **)&v8.ptr_4),
+        v2 = String::ToLowerCopy(&v8, (char **)&v8.m_3[1]),
         v3 = String::Compare((String *)v2, (const char **)v7),
-        DeleteAndZero((ObjectClass *)&v8.ptr_4),
+        DeleteAndZero((ObjectClass *)&v8.m_3[1]),
         DeleteAndZero((ObjectClass *)&v9),
         v3)
     || (unsigned __int8)ValidateStringContains((const char **)this, v4, asc_84BA18) )
@@ -94,17 +94,17 @@ int MapSeed::CheckName(void *a1)
     {
       while ( 1 ) /*0x79c5d2*/
       {
-        unknown_libname_73(&v8.ptr_4); /*0x79c5d2*/
+        unknown_libname_73(&v8.m_3[1]); /*0x79c5d2*/
         if ( v6 >= 0 && v6 < *(int *)g_WindowManager ) /*0x79c5e1*/
-          String::Reassign((String *)&v8.ptr_4, (const char **)(*(unsigned int *)g_WOL_LoginQueue + 4 * v6)); /*0x79c5f1*/
-        ((String *)&v8.ptr_4)->ToLower(); /*0x79c5fa*/
-        if ( (unsigned __int8)String::Compare((String *)&v8.ptr_4, (const char **)&v8) ) /*0x79c608*/
+          String::Reassign((String *)&v8.m_3[1], (const char **)(*(unsigned int *)g_WOL_LoginQueue + 4 * v6)); /*0x79c5f1*/
+        ((String *)&v8.m_3[1])->ToLower(); /*0x79c5fa*/
+        if ( (unsigned __int8)String::Compare((String *)&v8.m_3[1], (const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
-        DeleteAndZero((ObjectClass *)&v8.ptr_4); /*0x79c615*/
+        DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
         if ( ++v6 >= *(int *)g_WindowManager ) /*0x79c622*/
           goto LABEL_12; /*0x79c622*/
       }
-      DeleteAndZero((ObjectClass *)&v8.ptr_4); /*0x79c634*/
+      DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c634*/
       result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c63d*/
       (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x79c642*/
     }

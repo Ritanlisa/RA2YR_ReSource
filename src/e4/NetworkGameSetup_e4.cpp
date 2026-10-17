@@ -30,7 +30,7 @@ int NetworkGameSetup::ReadRulesUnknown()
 
 
   int result; // eax
-  result = (int)GetDlgItem(*(HWND *)this->__pad_000, 1363); /*0x5b975b*/
+  result = (int)GetDlgItem(*(HWND *)&this->__pad_0, 1363); /*0x5b975b*/
   if ( result ) /*0x5b9763*/
   {
     result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b976f*/

@@ -13,11 +13,11 @@ namespace gamemd {  // G42.18 ns repair
 int ObjectVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
   
-  this->q004 = 0; /*0x4d044b*/
+  this->ObjectVector_field_0x04 = 0; /*0x4d044b*/
   this->q008 = aP1; /*0x4d044e*/
   (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4d0451*/
   (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4d0455*/
-  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4d0458*/
+  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d0458*/
   if ( aP1 ) /*0x4d045e*/
   {
     if ( aP2 ) /*0x4d0466*/

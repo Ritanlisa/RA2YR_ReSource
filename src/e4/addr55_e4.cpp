@@ -1362,15 +1362,15 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
   if ( (a2 & 4) != 0 ) /*0x557b1e*/
   {
     if ( a4 == &this->u32_58 ) /*0x557b25*/
-      (*(void (**)(ListClass *, int))(*(unsigned int *)this->vtable1 + 196))(this, 1); /*0x557b2b*/
+      (*(void (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 196))(this, 1); /*0x557b2b*/
     result = (unsigned char)this - 72; /*0x557b31*/
     if ( a4 == &this->u32_B8 ) /*0x557b39*/
-      result = (*(int (**)(ListClass *, unsigned int))(*(unsigned int *)this->vtable1 + 196))(this, 0); /*0x557b41*/
+      result = (*(int (**)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 196))(this, 0); /*0x557b41*/
   }
   if ( a4 == &this->u32_118 ) /*0x557b4f*/
   {
     int v6; // edi
-    v6 = *(unsigned int *)this->vtable1; /*0x557b53*/
+    v6 = *(unsigned int *)this->__pad_0; /*0x557b53*/
     int v7; // eax
     v7 = (*(int (**)(char *))(this->u32_118 + 144))(&this->u32_118); /*0x557b55*/
     return (*(char (**)(ListClass *, int))(v6 + 192))(this, v7); /*0x557b5e*/

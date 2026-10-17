@@ -50,8 +50,8 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
       for ( i = 0; i < 3; ++i ) /*0x4310b9*/
       {
         unsigned int *v7; // eax
-        v7 = *(unsigned int **)p_Radar_field_0xC->__pad_000; /*0x4310bb*/
-        if ( *(unsigned int *)p_Radar_field_0xC->__pad_000 ) /*0x4310bb*/
+        v7 = *(unsigned int **)&p_Radar_field_0xC->__pad_0; /*0x4310bb*/
+        if ( *(unsigned int *)&p_Radar_field_0xC->__pad_0 ) /*0x4310bb*/
         {
           int v17; // [esp+28h] [ebp-8h]
           v17 = a3 - v7[1]; /*0x4310d6*/

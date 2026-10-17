@@ -38,7 +38,7 @@ unsigned int * AudioQueue::CreateNode()
   (v2)->InitEmpty(); /*0x402b0e*/
   *v2->q008.__pad_0 = 0; /*0x402b13*/
   v2[1].DListNode_field_0x04 = (int)this; /*0x402b1c*/
-  if ( ((int (*)(DListNode *))this->u32_14)(v2) ) /*0x402b1f*/
+  if ( ((int (*)(DListNode *))this->AudioQueue_field_0x14)(v2) ) /*0x402b1f*/
   {
     if ( v2 ) /*0x402b28*/
     {

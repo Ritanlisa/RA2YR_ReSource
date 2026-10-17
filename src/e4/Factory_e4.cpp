@@ -410,14 +410,14 @@ int Factory::FindExitCellByName(void *a1)
 {
 
 
-  if ( !_strcmpi(this->q000, g_Str__none_) ) /*0x523c9a*/
+  if ( !_strcmpi(this->__pad_0, g_Str__none_) ) /*0x523c9a*/
     return -1; /*0x523c9a*/
-  if ( !_strcmpi(this->q000, g_Str_none) ) /*0x523cac*/
+  if ( !_strcmpi(this->__pad_0, g_Str_none) ) /*0x523cac*/
     return -1; /*0x523cac*/
   int v2 = 0; // esi /*0x523cbd*/
   if ( dword_A8E358 <= 0 ) /*0x523cc1*/
     return -1; /*0x523ce6*/
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E34C + v2) + 36), this->q000) ) /*0x523cda*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E34C + v2) + 36), this->__pad_0) ) /*0x523cda*/
   {
     if ( ++v2 >= dword_A8E358 ) /*0x523ce4*/
       return -1; /*0x523ce4*/

@@ -29,7 +29,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
   /* X11: vtable install elided (implicit via ScoreAnimClass virtuals 0x691029) */
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     operator delete((this)); /*0x691032*/
-  return &this->vtable1; /*0x69103c*/
+  return &this->m_0; /*0x69103c*/
 }
 } // namespace gamemd
 // 0x6910A0
@@ -41,7 +41,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   char *v4; // eax
 
   v3 = (void *)this->field_C; /*0x6910a6*/
-  *(unsigned int *)this->__pad_0 = &vt_ScoreFontClass; /*0x6910a9*/
+  *(unsigned int *)&this->m_0 = &vt_ScoreFontClass; /*0x6910a9*/
   if ( v3 && this->q010 == 1 ) /*0x6910b7*/
   {
     __3_YAXPAX_Z(v3); /*0x6910ba*/

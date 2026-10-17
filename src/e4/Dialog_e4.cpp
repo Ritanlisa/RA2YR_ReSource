@@ -93,77 +93,77 @@ int Dialog::InitializeGameSettings()
 
   Debug::Log(); /*0x5b5bcb*/
   HWND DlgItem; // eax
-  DlgItem = GetDlgItem(*(HWND *)this->__pad_000, 1641); /*0x5b5be1*/
+  DlgItem = GetDlgItem(*(HWND *)&this->__pad_0, 1641); /*0x5b5be1*/
   if ( DlgItem ) /*0x5b5bf0*/
     SendMessageA(DlgItem, 0x405u, 1u, *(LPARAM *)&g_Rules_MultiEngineer); /*0x5b5c00*/
   HWND v3; // eax
-  v3 = GetDlgItem(*(HWND *)this->__pad_000, 1360); /*0x5b5c0a*/
+  v3 = GetDlgItem(*(HWND *)&this->__pad_0, 1360); /*0x5b5c0a*/
   if ( v3 ) /*0x5b5c0e*/
     SendMessageA(v3, 0x405u, 1u, g_RulesInitConfig); /*0x5b5c1e*/
   HWND v4; // eax
-  v4 = GetDlgItem(*(HWND *)this->__pad_000, 1026); /*0x5b5c28*/
+  v4 = GetDlgItem(*(HWND *)&this->__pad_0, 1026); /*0x5b5c28*/
   if ( v4 ) /*0x5b5c2c*/
     SendMessageA(v4, 0x405u, 1u, *(LPARAM *)&g_Rules_Bases); /*0x5b5c3c*/
   HWND v5; // eax
-  v5 = GetDlgItem(*(HWND *)this->__pad_000, 1362); /*0x5b5c46*/
+  v5 = GetDlgItem(*(HWND *)&this->__pad_0, 1362); /*0x5b5c46*/
   if ( v5 ) /*0x5b5c4a*/
     SendMessageA(v5, 0x405u, 1u, *(LPARAM *)&g_Rules_AlliesAllowed); /*0x5b5c5a*/
   HWND v6; // eax
-  v6 = GetDlgItem(*(HWND *)this->__pad_000, 1321); /*0x5b5c64*/
+  v6 = GetDlgItem(*(HWND *)&this->__pad_0, 1321); /*0x5b5c64*/
   if ( v6 ) /*0x5b5c68*/
     SendMessageA(v6, 0x405u, 1u, 6 - *(unsigned int *)&g_Rules_EngineerCount); /*0x5b5c7f*/
   HWND v7; // eax
-  v7 = GetDlgItem(*(HWND *)this->__pad_000, 1363); /*0x5b5c89*/
+  v7 = GetDlgItem(*(HWND *)&this->__pad_0, 1363); /*0x5b5c89*/
   if ( v7 ) /*0x5b5c8d*/
     SendMessageA(v7, 0x405u, 1u, *(LPARAM *)&DataGlobal_A8B278); /*0x5b5c9d*/
   HWND v8; // eax
-  v8 = GetDlgItem(*(HWND *)this->__pad_000, 1643); /*0x5b5ca7*/
+  v8 = GetDlgItem(*(HWND *)&this->__pad_0, 1643); /*0x5b5ca7*/
   if ( v8 ) /*0x5b5cab*/
     SendMessageA(v8, 0xF1u, dword_A8B320 == 1, 0); /*0x5b5cc3*/
   HWND v9; // eax
-  v9 = GetDlgItem(*(HWND *)this->__pad_000, 1642); /*0x5b5ccd*/
+  v9 = GetDlgItem(*(HWND *)&this->__pad_0, 1642); /*0x5b5ccd*/
   if ( v9 ) /*0x5b5cd1*/
     SendMessageA(v9, 0xF1u, Bases == 1, 0); /*0x5b5ce9*/
   HWND v10; // eax
-  v10 = GetDlgItem(*(HWND *)this->__pad_000, 1361); /*0x5b5cf3*/
+  v10 = GetDlgItem(*(HWND *)&this->__pad_0, 1361); /*0x5b5cf3*/
   if ( v10 ) /*0x5b5cf7*/
     SendMessageA(v10, 0xF1u, MultiEngineer == 1, 0); /*0x5b5d0f*/
   HWND v11; // eax
-  v11 = GetDlgItem(*(HWND *)this->__pad_000, 1358); /*0x5b5d19*/
+  v11 = GetDlgItem(*(HWND *)&this->__pad_0, 1358); /*0x5b5d19*/
   if ( v11 ) /*0x5b5d1d*/
     SendMessageA(v11, 0xF1u, ShortGame == 1, 0); /*0x5b5d35*/
   HWND v12; // eax
-  v12 = GetDlgItem(*(HWND *)this->__pad_000, 1690); /*0x5b5d3f*/
+  v12 = GetDlgItem(*(HWND *)&this->__pad_0, 1690); /*0x5b5d3f*/
   if ( v12 ) /*0x5b5d43*/
     SendMessageA(v12, 0xF1u, SWAllowed == 1, 0); /*0x5b5d5b*/
   HWND v13; // eax
-  v13 = GetDlgItem(*(HWND *)this->__pad_000, 1693); /*0x5b5d65*/
+  v13 = GetDlgItem(*(HWND *)&this->__pad_0, 1693); /*0x5b5d65*/
   if ( v13 ) /*0x5b5d69*/
     SendMessageA(v13, 0xF1u, g_Rules_ShortGame == 1, 0); /*0x5b5d81*/
   HWND v14; // eax
-  v14 = GetDlgItem(*(HWND *)this->__pad_000, 1356); /*0x5b5d8b*/
+  v14 = GetDlgItem(*(HWND *)&this->__pad_0, 1356); /*0x5b5d8b*/
   if ( v14 ) /*0x5b5d8f*/
     SendMessageA(v14, 0xF1u, Crates == 1, 0); /*0x5b5da7*/
   HWND v15; // eax
-  v15 = GetDlgItem(*(HWND *)this->__pad_000, 1357); /*0x5b5db1*/
+  v15 = GetDlgItem(*(HWND *)&this->__pad_0, 1357); /*0x5b5db1*/
   if ( v15 ) /*0x5b5db5*/
     SendMessageA(v15, 0xF1u, byte_A8B31F == 1, 0); /*0x5b5dcd*/
   HWND v16; // eax
-  v16 = GetDlgItem(*(HWND *)this->__pad_000, 1572); /*0x5b5dd7*/
+  v16 = GetDlgItem(*(HWND *)&this->__pad_0, 1572); /*0x5b5dd7*/
   if ( v16 ) /*0x5b5ddb*/
     SendMessageA(v16, 0xF1u, BridgeDestruction == 1, 0); /*0x5b5df3*/
   HWND v17; // eax
-  v17 = GetDlgItem(*(HWND *)this->__pad_000, 1430); /*0x5b5dfd*/
+  v17 = GetDlgItem(*(HWND *)&this->__pad_0, 1430); /*0x5b5dfd*/
   if ( v17 ) /*0x5b5e01*/
     SendMessageA(v17, 0xF1u, byte_A8B31D == 1, 0); /*0x5b5e19*/
   HWND v18; // eax
-  v18 = GetDlgItem(*(HWND *)this->__pad_000, 1448); /*0x5b5e23*/
+  v18 = GetDlgItem(*(HWND *)&this->__pad_0, 1448); /*0x5b5e23*/
   if ( v18 ) /*0x5b5e27*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)&MEMORY[0xA8B322]); /*0x5b5e36*/
   if ( !g_UIControlState || !*(unsigned int *)g_UIControlState ) /*0x5b5e41*/
-    (*(Session **)this->__pad_000)->PrepareGame(); /*0x5b5e48*/
+    (*(Session **)&this->__pad_0)->PrepareGame(); /*0x5b5e48*/
   HWND v19; // eax
-  v19 = GetDlgItem(*(HWND *)this->__pad_000, 1); /*0x5b5e51*/
+  v19 = GetDlgItem(*(HWND *)&this->__pad_0, 1); /*0x5b5e51*/
   if ( v19 ) /*0x5b5e55*/
     EnableWindow(v19, 1); /*0x5b5e59*/
   return PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1716), 0x2000, 1.0, 0); /*0x5b5e7c*/

@@ -19,11 +19,11 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2, void *a3)
 
 
   AbstractClass *v4 = 0; // ebx /*0x4d2db9*/
-  this->ptr_4 = 0; /*0x4d2dbd*/
+  this->FoggedObject_field_0x4 = 0; /*0x4d2dbd*/
   this->u32_8 = aP1; /*0x4d2dc0*/
   this->u32_C = 1; /*0x4d2dc3*/
   this->u32_D = 0; /*0x4d2dc7*/
-  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4d2dca*/
+  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/

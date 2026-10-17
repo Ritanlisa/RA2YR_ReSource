@@ -107,10 +107,10 @@ int House::AnnounceUpgrade(int aP1)
 
   if ( (CellClass *)this == &unk_ABDC50 ) /*0x47d2bf*/
     return result; /*0x47d2bf*/
-  v4 = &this->u32_24; /*0x47d2c5*/
-  v5 = (unsigned __int8 *)(dword_87F850 + 4 * CellToTileIndexMap((ObjectClass *)&dword_87F7E8, &this->u32_24)); /*0x47d2da*/
+  v4 = &this->u32_C[24]; /*0x47d2c5*/
+  v5 = (unsigned __int8 *)(dword_87F850 + 4 * CellToTileIndexMap((ObjectClass *)&dword_87F7E8, &this->u32_C[24])); /*0x47d2da*/
   v57 = v5; /*0x47d2e2*/
-  v6 = (unsigned __int8 *)(dword_87F858 + 10 * CellToTileIndexMap((ObjectClass *)&dword_87F7E8, &this->u32_24)); /*0x47d2f3*/
+  v6 = (unsigned __int8 *)(dword_87F858 + 10 * CellToTileIndexMap((ObjectClass *)&dword_87F7E8, &this->u32_C[24])); /*0x47d2f3*/
   v7 = this->ptr_44; /*0x47d2f6*/
   v56 = v6; /*0x47d2fc*/
   if ( v7 != -1 ) /*0x47d300*/
@@ -235,7 +235,7 @@ LABEL_48:
               {
                 v32 = (TubeClass *)__2_YAPAXI_Z(0x1C4u); /*0x47d929*/
                 if ( v32 ) /*0x47d933*/
-                  TubeClass::Construct(v32, &this->u32_24, dword_81CC20[v31]); /*0x47d940*/
+                  TubeClass::Construct(v32, &this->u32_C[24], dword_81CC20[v31]); /*0x47d940*/
               }
             }
           }
@@ -711,8 +711,8 @@ int House::UpdateHouseAI()
   v26 = *&this->u32_250; /*0x4fd7a0*/
   if ( v26 == 4 ) /*0x4fd7ae*/
   {
-    (*(void (**)(char *))(*&this->u32_24 + 52))(&this->u32_24); /*0x4fd7b7*/
-    (*(void (**)(char *))(*&this->u32_24 + 56))(&this->u32_24); /*0x4fd7bd*/
+    (*(void (**)(char *))(*&this->u32_24 + 52))(&this->u32_C[24]); /*0x4fd7b7*/
+    (*(void (**)(char *))(*&this->u32_24 + 56))(&this->u32_C[24]); /*0x4fd7bd*/
   }
   else
   {

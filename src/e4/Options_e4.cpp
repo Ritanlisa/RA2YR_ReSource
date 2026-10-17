@@ -438,9 +438,9 @@ int Options::DeleteAndZero(void *a1, void *a2)
   int result; // eax
 
   int v2 = 0; // ebx /*0x6244e4*/
-  if ( *(int *)this->q000 <= 0 ) /*0x6244e9*/
+  if ( *(int *)this->__pad_0 <= 0 ) /*0x6244e9*/
   {
-    *(unsigned int *)this->q000 = 0; /*0x62451b*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x62451b*/
   }
   else
   {
@@ -451,12 +451,12 @@ int Options::DeleteAndZero(void *a1, void *a2)
       v4 = (char *)this->field_8 + v3; /*0x6244f4*/
       DeleteAndZero::Alt(&v4->u32_8); /*0x6244f9*/
       DeleteAndZero::Alt(&v4->__pad_004); /*0x624501*/
-      result = *(unsigned int *)this->q000; /*0x624506*/
+      result = *(unsigned int *)this->__pad_0; /*0x624506*/
       ++v2; /*0x624508*/
       v3 += 24; /*0x624509*/
     }
-    while ( v2 < *(unsigned int *)this->q000 ); /*0x62450e*/
-    *(unsigned int *)this->q000 = 0; /*0x624511*/
+    while ( v2 < *(unsigned int *)this->__pad_0 ); /*0x62450e*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x624511*/
   }
   return result; /*0x624518*/
 
@@ -469,7 +469,7 @@ char Options::EnsureCapacity(void *a1)
 
 
   int v2; // eax
-  v2 = *(unsigned int *)this->q000; /*0x6248a5*/
+  v2 = *(unsigned int *)this->__pad_0; /*0x6248a5*/
   int v3; // ecx
   v3 = (int)this->field_4; /*0x6248a8*/
   if ( 3 * v2 > v3 ) /*0x6248b0*/
@@ -485,7 +485,7 @@ char Options::EnsureCapacity(void *a1)
   void *v8; // [esp+8h] [ebp-4h]
   v8 = v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
-    memcpy(v6, v7, 24 * *(unsigned int *)this->q000); /*0x624901*/
+    memcpy(v6, v7, 24 * *(unsigned int *)this->__pad_0); /*0x624901*/
   __3_YAXPAX_Z(this->field_8); /*0x62490f*/
   this->field_8 = v8; /*0x62491b*/
   this->field_4 = (void *)v5; /*0x62491e*/
@@ -500,8 +500,8 @@ int Options::GrowBuffer()
 
 
   int v2; // eax
-  v2 = *(unsigned int *)this->q000; /*0x6253b4*/
-  if ( *(unsigned int *)this->q000 < (int)this->field_4 ) /*0x6253bb*/
+  v2 = *(unsigned int *)this->__pad_0; /*0x6253b4*/
+  if ( *(unsigned int *)this->__pad_0 < (int)this->field_4 ) /*0x6253bb*/
     return 0; /*0x6253bd*/
   int v4 = 2 * v2; // esi /*0x6253c4*/
   int v6; // [esp+4h] [ebp-4h]
@@ -516,7 +516,7 @@ int Options::GrowBuffer()
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
   if ( this->field_8 ) /*0x625403*/
   {
-    memcpy(v5, this->field_8, 4 * *(unsigned int *)this->q000); /*0x625418*/
+    memcpy(v5, this->field_8, 4 * *(unsigned int *)this->__pad_0); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
   __3_YAXPAX_Z(this->field_8); /*0x625429*/
@@ -533,7 +533,7 @@ int Options::ReadOptionValue()
 
 
   int v2; // eax
-  v2 = *(unsigned int *)this->q000; /*0x6254d5*/
+  v2 = *(unsigned int *)this->__pad_0; /*0x6254d5*/
   int v3; // ecx
   v3 = (int)this->field_4; /*0x6254d8*/
   if ( 3 * v2 > v3 ) /*0x6254e0*/
@@ -549,7 +549,7 @@ int Options::ReadOptionValue()
   void *v8; // [esp+8h] [ebp-4h]
   v8 = v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
-    memcpy(v6, v7, 20 * *(unsigned int *)this->q000); /*0x625531*/
+    memcpy(v6, v7, 20 * *(unsigned int *)this->__pad_0); /*0x625531*/
   __3_YAXPAX_Z(this->field_8); /*0x62553f*/
   this->field_8 = v8; /*0x62554b*/
   this->field_4 = (void *)v5; /*0x62554e*/
@@ -709,8 +709,8 @@ int Options::SaveOptionValue()
 
 
   int v2; // eax
-  v2 = *(unsigned int *)this->q000; /*0x625a24*/
-  if ( *(unsigned int *)this->q000 < (int)this->field_4 ) /*0x625a2b*/
+  v2 = *(unsigned int *)this->__pad_0; /*0x625a24*/
+  if ( *(unsigned int *)this->__pad_0 < (int)this->field_4 ) /*0x625a2b*/
     return 0; /*0x625a2d*/
   int v4 = 2 * v2; // ebp /*0x625a33*/
   if ( 2 * v2 < 10 ) /*0x625a3b*/
@@ -722,7 +722,7 @@ int Options::SaveOptionValue()
   v7 = v5; /*0x625a64*/
   void *v6 = this->field_8; // esi /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
-    memcpy(v5, v6, 20 * *(unsigned int *)this->q000); /*0x625a80*/
+    memcpy(v5, v6, 20 * *(unsigned int *)this->__pad_0); /*0x625a80*/
   __3_YAXPAX_Z(this->field_8); /*0x625a8d*/
   this->field_4 = (void *)v4; /*0x625a99*/
   this->field_8 = v7; /*0x625a9c*/

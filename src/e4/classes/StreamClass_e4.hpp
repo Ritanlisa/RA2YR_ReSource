@@ -8,7 +8,7 @@ namespace gamemd {
 struct StreamClass {
     char __pad_0[4];  // 0x0
     void* m_Data;  // 0x4
-    unsigned int __pad_008;  // 0x8
+    unsigned int m_Position;  // 0x8
     char m_Size[4];  // 0xC
     int StreamClass_field_0C;  // 0x10
 // --- flat members (BEGIN) ---

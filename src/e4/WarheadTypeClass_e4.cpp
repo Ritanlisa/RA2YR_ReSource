@@ -100,7 +100,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x52538e*/
+    (*(void (**)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->q0 + 12))(this); /*0x52538e*/
   }
   int v7; // eax
   v7 = (int)(this->vtable3); /*0x525391*/

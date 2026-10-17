@@ -105,7 +105,7 @@ namespace gamemd {
 int AudioStream::Reset(void *a1, void *a2)
 {
 
-  *(unsigned int *)this->__pad_000 = 0; /*0x403822*/
+  *(unsigned int *)&this->__pad_0 = 0; /*0x403822*/
   this->u8_4 = 0; /*0x403824*/
   this->q008 = 0; /*0x403827*/
   this->q00C = 0; /*0x40382a*/
@@ -414,7 +414,7 @@ namespace gamemd {
 void AudioStream::InitNodeFields()
 {
 
-  *(unsigned int *)this->__pad_000 = 0; /*0x4084e2*/
+  *(unsigned int *)&this->__pad_0 = 0; /*0x4084e2*/
   this->u8_4 = 0; /*0x4084e4*/
   this->u32_14 = 0; /*0x4084e7*/
   this->u32_18 = 0; /*0x4084ea*/
@@ -827,7 +827,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
             v57 = *(unsigned int *)v77.Cl_ph; /*0x4bf4e1*/
             *(unsigned short *)(*(unsigned int *)v77.Cl_ph + v99) = ((v58 * (v72 + ((v37 * (unsigned __int8)v78.Cl_ph) >> 8))) >> 7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4bf4e5*/
                                                      | ((v58 * (v71 + ((v37 * (unsigned __int8)v78.m_1) >> 8))) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
-                                                     | ((v58 * (v70 + ((v37 * (unsigned __int8)v78.__pad_0[2]) >> 8))) >> 7 >> g_BitMask_Red << g_BitShift_Blue);
+                                                     | ((v58 * (v70 + ((v37 *& (unsigned __int8)v78.Cl_ph[2]) >> 8))) >> 7 >> g_BitMask_Red << g_BitShift_Blue);
           }
           if ( (int)v94 > 0 ) /*0x4bf4f2*/
           {

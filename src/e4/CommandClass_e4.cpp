@@ -37,7 +37,7 @@ int CommandClass::BuildBar()
   v2 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0); /*0x6d1207*/
   do /*0x6d1224*/
   {
-    (*(void (**)(ShapeButtonClass *))(*(unsigned int *)v2->vtable1 + 32))(v2); /*0x6d1210*/
+    (*(void (**)(ShapeButtonClass *))(*(unsigned int *)v2->__pad_0 + 32))(v2); /*0x6d1210*/
     (*(void (**)(CommandClass *, ShapeButtonClass *))(*&this->u32_C0))(this, v2); /*0x6d1218*/
     v2 += 8; /*0x6d121b*/
   }

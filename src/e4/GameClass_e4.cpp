@@ -122,7 +122,7 @@ int GameClass::loadScenarioFiles(int aP1)
   int v11; // [esp+2Ch] [ebp-14h]
   struct tagRECT Rect; // [esp+30h] [ebp-10h] BYREF
 
-  result = this->u32_4; /*0x5d2267*/
+  result = this->GameClass_field_0x4; /*0x5d2267*/
   if ( result > 0 ) /*0x5d226c*/
   {
     GetClientRect((HWND)(g_hWnd), &Rect); /*0x5d227e*/
@@ -133,7 +133,7 @@ int GameClass::loadScenarioFiles(int aP1)
         stru_887598.lineTrailer,
         aP1,
         0);
-    result = this->u32_4; /*0x5d22ab*/
+    result = this->GameClass_field_0x4; /*0x5d22ab*/
     v5 = 0; /*0x5d22af*/
     if ( result > 0 ) /*0x5d22b3*/
     {
@@ -160,9 +160,9 @@ int GameClass::loadScenarioFiles(int aP1)
         result = v7 + 16; /*0x5d2314*/
         v7 += 16; /*0x5d2319*/
       }
-      while ( v5 < this->u32_4 ); /*0x5d231d*/
+      while ( v5 < this->GameClass_field_0x4 ); /*0x5d231d*/
     }
-    this->u32_4 = 0; /*0x5d2320*/
+    this->GameClass_field_0x4 = 0; /*0x5d2320*/
     if ( stru_887598.lineTrailer ) /*0x5d2330*/
       return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x5d2337*/
                stru_887598.lineTrailer,
@@ -190,7 +190,7 @@ int GameClass::FrameLoop(int a2)
     do /*0x5d24dc*/
     {
       Event::Dispatch(); /*0x5d2437*/
-      (*(void (**)(GameClass *))(*(unsigned int *)this->__pad_000 + 8))(this); /*0x5d2440*/
+      (*(void (**)(GameClass *))(*(unsigned int *)&this->__pad_0 + 8))(this); /*0x5d2440*/
       DDraw *v9; // [esp+0h] [ebp-28h]
       DDraw::WaitForIdle(v9); /*0x5d2443*/
       ((DSurface *)this)->RenderToSurface((int *)g_DSurface_Hidden); /*0x5d2451*/
@@ -254,7 +254,7 @@ int GameClass::FindOpenSlot()
     v4 = *(GameClass **)(dword_A8B8CC + 4 * v2); /*0x5d6387*/
     if ( (unsigned __int8)((void *)((int)v4))->Sed() ) /*0x5d638c*/
     {
-      inited = (*(int (**)(MultiplayerGameMode *))(*(unsigned int *)this->__pad_000 + 60))(this); /*0x5d6399*/
+      inited = (*(int (**)(MultiplayerGameMode *))(*(unsigned int *)&this->__pad_0 + 60))(this); /*0x5d6399*/
     }
     else
     {
@@ -276,7 +276,7 @@ namespace gamemd {
 int GameClass::GetRelatedObject()
 {
 
-  int Pipe_field_0x04 = this->u32_4; // ecx /*0x631d30*/
+  int Pipe_field_0x04 = this->GameClass_field_0x4; // ecx /*0x631d30*/
   if ( Pipe_field_0x04 ) /*0x631d35*/
     return (*(int (**)(int))(*(unsigned int *)Pipe_field_0x04 + 4))(Pipe_field_0x04); /*0x631d39*/
   else

@@ -406,7 +406,7 @@ LABEL_151:
             v30 = 0; /*0x6ad3bf*/
             do
             {
-              v31 = (ObjectClass *)v30->vtable1 + 1); /*0x6ad3c3*/
+              v31 = (ObjectClass *)v30->vfptr + 1); /*0x6ad3c3*/
               if ( v30 )
               {
                 if ( v30 == 1 )

@@ -38,7 +38,7 @@ namespace gamemd {
 unsigned int AbstractClassVector::Write(int a2)
 {
   if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4e0480*/
-    return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4e0495*/
+    return (unsigned int)(a2 - *&this->AbstractClassVector_field_0x04) >> 2; /*0x4e0495*/
   else
     return 0; /*0x4e0487*/
 }
@@ -48,11 +48,11 @@ namespace gamemd {
 int AbstractClassVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
-  this->q004 = 0; /*0x4e0e8b*/
+  this->AbstractClassVector_field_0x04 = 0; /*0x4e0e8b*/
   this->q008 = aP1; /*0x4e0e8e*/
   (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4e0e91*/
   (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4e0e95*/
-  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4e0e98*/
+  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/

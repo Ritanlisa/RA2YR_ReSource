@@ -110,7 +110,7 @@ void * ThemeClass::InitializeThemes(char * a2)
       v7 = 0; /*0x720606*/
       if ( this->u32_24 <= 0 ) /*0x72060a*/
         goto LABEL_10; /*0x72060a*/
-      while ( _strcmpi(*(char **)(this->u32_18 + 4 * v7), Destination) ) /*0x720622*/
+      while ( _strcmpi(*(char **)(&this->m_Name[16] + 4 * v7), Destination) ) /*0x720622*/
       {
         if ( ++v7 >= this->u32_24 ) /*0x72062a*/
           goto LABEL_10; /*0x72062a*/
@@ -138,7 +138,7 @@ LABEL_10:
         if ( this->u32_24 < v10 /*0x7206d1*/
           || (this->u32_21 || !v10)
           && (v11 = this->ThemeClass_field_28, v11 > 0)
-          && (*(unsigned __int8 (**)(int, int, unsigned int))(this->u32_14 + 8))(&this->u32_14, v10 + v11, 0) )
+          && (*(unsigned __int8 (**)(int, int, unsigned int))(this->u32_14 + 8))(&this->m_Name[12], v10 + v11, 0) )
         {
           v12 = this->u32_24; /*0x7206d8*/
           v13 = *&this->u32_18; /*0x7206db*/
@@ -148,7 +148,7 @@ LABEL_10:
       }
       else
       {
-        v9 = *(char **)(this->u32_18 + 4 * v7); /*0x7206ec*/
+        v9 = *(char **)(&this->m_Name[16] + 4 * v7); /*0x7206ec*/
       }
       ThemeClass::ReadThemeEntry((int)v9, a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/

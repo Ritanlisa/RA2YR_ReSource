@@ -324,7 +324,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   Items = (void *)v24.Items; /*0x721c17*/
   *(unsigned int *)(v5 + 216) = CapacityIncrement; /*0x721c1b*/
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
-  v24.vfptr = (int)&vt_VectorClass_AnimTypeClass_const; /*0x721c21*/
+  v24.DynamicVectorClass = (int)&vt_VectorClass_AnimTypeClass_const; /*0x721c21*/
   if ( Items && v24.IsAllocated[0] ) /*0x721c34*/
     __3_YAXPAX_Z(Items); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/

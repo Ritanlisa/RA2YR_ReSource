@@ -51,7 +51,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5acd7b*/
     if ( v7 ) /*0x5acd7f*/
     {
-      if ( *&this->__pad_004 ) /*0x5acd8b*/
+      if ( *&this->MSEngine_field_0x4 ) /*0x5acd8b*/
       {
         m_8 = this->m_8; /*0x5acd92*/
         if ( a2 < m_8 ) /*0x5acd97*/
@@ -62,7 +62,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
           do /*0x5acdc3*/
           {
             v11 = &v7[v10]; /*0x5acda4*/
-            v12 = (unsigned int *)(v10 + *&this->__pad_004); /*0x5acda7*/
+            v12 = (unsigned int *)(v10 + *&this->MSEngine_field_0x4); /*0x5acda7*/
             v10 += 16; /*0x5acda9*/
             --m_8; /*0x5acdac*/
             *(unsigned int *)v11 = *v12; /*0x5acdaf*/
@@ -76,11 +76,11 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
         }
         if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5acdcd*/
         {
-          __3_YAXPAX_Z(*&this->__pad_004); /*0x5acdd8*/
-          *&this->__pad_004 = 0; /*0x5acde0*/
+          __3_YAXPAX_Z(*&this->MSEngine_field_0x4); /*0x5acdd8*/
+          *&this->MSEngine_field_0x4 = 0; /*0x5acde0*/
         }
       }
-      *&this->__pad_004 = v7; /*0x5acde9*/
+      *&this->MSEngine_field_0x4 = v7; /*0x5acde9*/
       this->m_8 = v3; /*0x5acdf1*/
       BYTE1(this->m_C) = v5 == 0; /*0x5acdf4*/
       return 1; /*0x5acdfa*/
@@ -133,7 +133,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5acf1b*/
     if ( !v7 ) /*0x5acf1f*/
       return 0; /*0x5acfb4*/
-    if ( *&this->__pad_004 ) /*0x5acf25*/
+    if ( *&this->MSEngine_field_0x4 ) /*0x5acf25*/
     {
       m_8 = this->m_8; /*0x5acf2c*/
       if ( a2 < m_8 ) /*0x5acf31*/
@@ -144,7 +144,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
         do /*0x5acf5d*/
         {
           v10 = &v7[v9]; /*0x5acf3e*/
-          v11 = (unsigned int *)(v9 + *&this->__pad_004); /*0x5acf41*/
+          v11 = (unsigned int *)(v9 + *&this->MSEngine_field_0x4); /*0x5acf41*/
           v9 += 16; /*0x5acf43*/
           --m_8; /*0x5acf46*/
           *(unsigned int *)v10 = *v11; /*0x5acf49*/
@@ -158,11 +158,11 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       }
       if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5acf67*/
       {
-        __3_YAXPAX_Z(*&this->__pad_004); /*0x5acf72*/
-        *&this->__pad_004 = 0; /*0x5acf7a*/
+        __3_YAXPAX_Z(*&this->MSEngine_field_0x4); /*0x5acf72*/
+        *&this->MSEngine_field_0x4 = 0; /*0x5acf7a*/
       }
     }
-    *&this->__pad_004 = v7; /*0x5acf83*/
+    *&this->MSEngine_field_0x4 = v7; /*0x5acf83*/
     this->m_8 = v3; /*0x5acf8b*/
     BYTE1(this->m_C) = v5 == 0; /*0x5acf8e*/
   }
@@ -246,7 +246,7 @@ CampaignClass * MSEngine::Construct(void *a1, void *a2, void *a3, void *a4, void
   this->u32_40 = 0; /*0x5d1af9*/
   v3 = (void (**)(void **, int, unsigned int))*p_MSEngine_field_0x8; /*0x5d1afc*/
   *(unsigned int *)this->__pad_0 = &vt_MSEngine; /*0x5d1b01*/
-  this->__pad_004 = 0; /*0x5d1b07*/
+  this->MSEngine_field_0x4 = 0; /*0x5d1b07*/
   v3[2](p_MSEngine_field_0x8, 20, 0); /*0x5d1b0a*/
   (*(void (**)(char *))(this->u32_18 + 12))(&this->u32_18); /*0x5d1b11*/
   (*(void (**)(char *))(this->u32_30 + 12))(&this->u32_30); /*0x5d1b18*/
@@ -355,12 +355,12 @@ CampaignClass * MSEngine::ClearBuffer(void *a1_1)
 
 
   void *v2; // eax
-  v2 = (void *)(*&this->__pad_004); /*0x5ac526*/
+  v2 = (void *)(*&this->MSEngine_field_0x4); /*0x5ac526*/
   *&this->m_10 = 0; /*0x5ac529*/
   if ( v2 && (this->IsAllocated) ) /*0x5ac530*/
   {
     RA2_OPDEL(v2); /*0x5ac536*/
-    *&this->__pad_004 = 0; /*0x5ac53e*/
+    *&this->MSEngine_field_0x4 = 0; /*0x5ac53e*/
   }
   (this->m_C) = 0; /*0x5ac541*/
   *&this->m_8 = 0; /*0x5ac544*/
@@ -374,7 +374,7 @@ namespace gamemd {
 unsigned int MSEngine::PointerToIndex(int a2)
 {
   if ( (this->m_C) ) /*0x5ac550*/
-    return (unsigned int)(a2 - *&this->__pad_004) >> 4; /*0x5ac565*/
+    return (unsigned int)(a2 - *&this->MSEngine_field_0x4) >> 4; /*0x5ac565*/
   else
     return 0; /*0x5ac557*/
 }
@@ -386,7 +386,7 @@ unsigned int * MSEngine::Shutdown(unsigned int * a2, int a3)
 {
 
   unsigned int *v3; // ecx
-  v3 = (unsigned int *)(*&this->__pad_004 + 16 * a3); /*0x5ac57d*/
+  v3 = (unsigned int *)(*&this->MSEngine_field_0x4 + 16 * a3); /*0x5ac57d*/
   *a2 = *v3; /*0x5ac587*/
   a2[1] = v3[1]; /*0x5ac58c*/
   a2[2] = v3[2]; /*0x5ac592*/
@@ -410,7 +410,7 @@ char MSEngine::AddRef(int a2)
     int v4; // edx
     v4 = *(unsigned int *)(a2 + 4); /*0x5accd8*/
     unsigned int *v5; // eax
-    v5 = (unsigned int *)(*&this->__pad_004); /*0x5accdb*/
+    v5 = (unsigned int *)(*&this->MSEngine_field_0x4); /*0x5accdb*/
     unsigned int *v6; // ecx
     v6 = (unsigned int *)(v4 + 8); /*0x5accde*/
     int v7; // edx
@@ -434,8 +434,8 @@ CampaignClass * MSEngine::ddtor(void *a1)
 {
   if ( *&this->IsAllocated && (this->q00E) ) /*0x5ace2d*/
   {
-    operator delete((void *)(*&this->__pad_004)); /*0x5ace33*/
-    *&this->__pad_004 = 0; /*0x5ace3b*/
+    operator delete((void *)(*&this->MSEngine_field_0x4)); /*0x5ace33*/
+    *&this->MSEngine_field_0x4 = 0; /*0x5ace3b*/
   }
   (this->IsAllocated) = 0; /*0x5ace3e*/
   *&this->m_8 = 0; /*0x5ace41*/
@@ -455,7 +455,7 @@ CampaignClass * MSEngine::Init(unsigned int * a2, void *a2_2, void *a3_1, void *
   if ( m_8 <= 0 ) /*0x5ace6b*/
     return -1; /*0x5acea0*/
   unsigned int *i; // ecx
-  for ( i = *&this->__pad_004; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5ace71*/
+  for ( i = *&this->MSEngine_field_0x4; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5ace71*/
   {
     if ( ++result >= m_8 ) /*0x5ace9e*/
       return -1; /*0x5ace9e*/
@@ -469,7 +469,7 @@ namespace gamemd {
 unsigned int MSEngine::Run(int a2)
 {
   if ( (this->m_C) ) /*0x5aceb0*/
-    return (unsigned int)(a2 - *&this->__pad_004) >> 4; /*0x5acec5*/
+    return (unsigned int)(a2 - *&this->MSEngine_field_0x4) >> 4; /*0x5acec5*/
   else
     return 0; /*0x5aceb7*/
 }
@@ -486,7 +486,7 @@ int MSEngine::FindItem(unsigned int * a2)
   if ( m_10 <= 0 ) /*0x5acfcb*/
     return -1; /*0x5ad000*/
   unsigned int *i; // ecx
-  for ( i = *&this->__pad_004; *i != *a2 || i->vtable2 != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
+  for ( i = *&this->MSEngine_field_0x4; *i != *a2 || i->vtable2 != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
   {
     if ( ++result >= m_10 ) /*0x5acffe*/
       return -1; /*0x5acffe*/

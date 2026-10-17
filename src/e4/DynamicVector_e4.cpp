@@ -96,7 +96,7 @@ namespace gamemd {
 unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2, void *a3_1)
 {
 
-  *&aP1->vtable2 = 0; /*0x42f67a*/
+  *&aP1->vfptr1 = 0; /*0x42f67a*/
   aP1->vtable3 = aP2; /*0x42f681*/
   aP1->vtable4 = (void *)(1); /*0x42f684*/
   aP1->u32_D = 0; /*0x42f688*/
@@ -105,7 +105,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   {
     if ( a3_1 ) /*0x42f69a*/
     {
-      *&aP1->vtable2 = a3_1; /*0x42f69d*/
+      *&aP1->vfptr1 = a3_1; /*0x42f69d*/
     }
     else
     {
@@ -113,14 +113,14 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
       v4 = operator new(4 * aP2); /*0x42f6ae*/
       if ( !v4 ) /*0x42f6b8*/
         v4 = 0; /*0x42f6c1*/
-      *&aP1->vtable2 = (void *)(v4); /*0x42f6c3*/
+      *&aP1->vfptr1 = (void *)(v4); /*0x42f6c3*/
       aP1->u32_D = 1; /*0x42f6c6*/
     }
   }
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x42f6ca) */
   *(unsigned int *)aP1->abstractFlags = 10; /*0x42f6d0*/
   aP1->uniqueId = 0; /*0x42f6d7*/
-  return (unsigned int *)(aP1->vtable1); /*0x42f6e0*/
+  return (unsigned int *)(aP1->vfptr); /*0x42f6e0*/
 }
 } // namespace gamemd
 
@@ -202,7 +202,7 @@ int DynamicVector::GetOrGrow(int aP1)
   int DynamicVector_field_0x8 = this->Capacity; // edi /*0x49fae9*/
   if ( aP1 < DynamicVector_field_0x8 ) /*0x49faee*/
     return *(unsigned int *)(*&this->Items + 4 * aP1); /*0x49fb26*/
-  if ( (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->vtable1 + 8))( /*0x49fafa*/
+  if ( (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( /*0x49fafa*/
          this,
          aP1 + 10,
          0) )
@@ -270,7 +270,7 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     int v4; // eax
     v4 = *(unsigned int *)this->CapacityIncrement; /*0x538798*/
     if ( v4 <= 0 /*0x5387a8*/
-      || !(*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->vtable1 + 8))(
+      || !(*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
             this,
             DynamicVector_field_0x8 + v4,
             0) )
@@ -300,7 +300,7 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
   if ( result < DynamicVector_field_0x8 /*0x5ad7fd*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->vtable1 + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),
@@ -329,8 +329,8 @@ char DynamicVector::GrowCapacity()
 
 
   int v2; // eax
-  v2 = *(unsigned int *)this->vtable1; /*0x624814*/
-  if ( *(unsigned int *)this->vtable1 < *&this->Items ) /*0x62481b*/
+  v2 = *(unsigned int *)this->__pad_0; /*0x624814*/
+  if ( *(unsigned int *)this->__pad_0 < *&this->Items ) /*0x62481b*/
     return 0; /*0x62481d*/
   int v4 = 2 * v2; // ebp /*0x624823*/
   if ( 2 * v2 < 10 ) /*0x62482b*/
@@ -343,7 +343,7 @@ char DynamicVector::GrowCapacity()
   const void *DynamicVector_field_0x8; // esi
   DynamicVector_field_0x8 = (const void *)this->Capacity; /*0x62485a*/
   if ( DynamicVector_field_0x8 ) /*0x62485f*/
-    memcpy(v5, DynamicVector_field_0x8, 24 * *(unsigned int *)this->vtable1); /*0x624870*/
+    memcpy(v5, DynamicVector_field_0x8, 24 * *(unsigned int *)this->__pad_0); /*0x624870*/
   __3_YAXPAX_Z((void *)this->Capacity); /*0x62487d*/
   *&this->Items = (void *)(v4); /*0x624889*/
   this->Capacity = v7; /*0x62488c*/
@@ -428,7 +428,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   *(unsigned int *)this->ClearAndFree2_ph = &vt_DynamicVectorClass; /*0x67acb3*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x67acb9*/
   this->Count = 0; /*0x67acc0*/
-  return (unsigned int *)(this->vtable1); /*0x67acc9*/
+  return (unsigned int *)(this->__pad_0); /*0x67acc9*/
 
 }
 } // namespace gamemd

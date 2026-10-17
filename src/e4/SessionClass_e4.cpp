@@ -231,10 +231,10 @@ MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
     return 0; /*0x5adf78*/
   }
   Debug::Log(); /*0x5adf84*/
-  String::Assign((String *)&v13.ptr_4, v4 + 36); /*0x5adf91*/
+  String::Assign((String *)&v13.m_3[1], v4 + 36); /*0x5adf91*/
   pad_50 = this->__pad_50; /*0x5adf96*/
-  v7 = SessionClass::LoadMapSelection((SessionClass *)pad_50, (char **)&v13.ptr_4) == 0; /*0x5adfab*/
-  DeleteAndZero((ObjectClass *)&v13.ptr_4); /*0x5adfae*/
+  v7 = SessionClass::LoadMapSelection((SessionClass *)pad_50, (char **)&v13.m_3[1]) == 0; /*0x5adfab*/
+  DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5adfae*/
   if ( v7 || (v8 = CampaignClass::Check((CampaignClass *)pad_50, aP1->u16_35A0)) == 0 ) /*0x5adfea*/
   {
     SessionClass::Destruct((SessionClass *)pad_50); /*0x5adfb9*/
@@ -255,21 +255,21 @@ LABEL_14:
       goto LABEL_17; /*0x5ae094*/
   }
   v11 = StringTable::Find((StringTable *)pad_50, (const char **)v10[v9]); /*0x5ae037*/
-  String::AssignFromPtr((String *)&v13.ptr_4, (const char **)(v11 + 4)); /*0x5ae041*/
-  String::ToLower((String *)&v13.ptr_4); /*0x5ae04a*/
+  String::AssignFromPtr((String *)&v13.m_3[1], (const char **)(v11 + 4)); /*0x5ae041*/
+  String::ToLower((String *)&v13.m_3[1]); /*0x5ae04a*/
   String::AssignFromPtr(&v13, aP2); /*0x5ae058*/
   String::ToLower(&v13); /*0x5ae061*/
-  if ( !v11 || !(unsigned __int8)String::Compare((String *)&v13.ptr_4, (const char **)&v13) ) /*0x5ae073*/
+  if ( !v11 || !(unsigned __int8)String::Compare((String *)&v13.m_3[1], (const char **)&v13) ) /*0x5ae073*/
   {
     DeleteAndZero((ObjectClass *)&v13); /*0x5ae080*/
-    DeleteAndZero((ObjectClass *)&v13.ptr_4); /*0x5ae089*/
+    DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5ae089*/
     goto LABEL_14; /*0x5ae089*/
   }
   v12 = String::GetOrEmpty_Alt((String *)(v11 + 4)); /*0x5ae09b*/
   ScenarioClass::SetFileName((char *)aP1, v12); /*0x5ae0a7*/
   aP1->u16_35A0 = Network_Load((ObjectClass *)pad_50, v11); /*0x5ae0b8*/
   DeleteAndZero((ObjectClass *)&v13); /*0x5ae0bf*/
-  DeleteAndZero((ObjectClass *)&v13.ptr_4); /*0x5ae0c8*/
+  DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x5ae0c8*/
 LABEL_17:
   SessionClass::Destruct((SessionClass *)pad_50); /*0x5ae0cd*/
   return strlen((const char *)(aP1 + 4700)) != 0; /*0x5adf6f*/

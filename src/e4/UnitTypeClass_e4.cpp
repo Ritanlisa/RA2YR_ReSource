@@ -430,7 +430,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
     int v30; // eax
     v30 = *(unsigned int *)&v4[1].NoCrew; /*0x747a03*/
     v4[1].SecretProduction = (TechnoTypeClass *)v29; /*0x747a09*/
-    *v4->vtable2.ColorAdd = v30 + v29; /*0x747a11*/
+    *v4->vfptr1.ColorAdd = v30 + v29; /*0x747a11*/
   }
   *(unsigned int *)&v4[1].IsBeingRepaired = INIClass::ReadInt_Overwrite( /*0x747a2e*/
                                         (bool *)&DataGlobal_887180,
@@ -460,11 +460,11 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
                                                 (uint8_t *)&v4->isTargetedByChrono,
                                                 aStartdeathfram,
                                                 parent_gap);
-  *v4->vtable2.ColorAdd = INIClass::ReadInt_Overwrite( /*0x747aa8*/
+  *v4->vfptr1.ColorAdd = INIClass::ReadInt_Overwrite( /*0x747aa8*/
                                 (bool *)&DataGlobal_887180,
                                 (uint8_t *)&v4->isTargetedByChrono,
                                 aMaxdeathcounte,
-                                *v4->vtable2.ColorAdd);
+                                *v4->vfptr1.ColorAdd);
   int v82; // [esp+Ch] [ebp-13Ch]
   v82 = 0; /*0x747aae*/
   int *BuildingClass_field_short_700; // [esp+8h] [ebp-140h]

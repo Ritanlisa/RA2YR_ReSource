@@ -56,7 +56,7 @@ int RawFileClass::Dtor(void *a1)
 namespace gamemd {
 int RawFileClass::Close(int a2, int a3)
 {
-  (*(void (**)(RawFileClass *, int))(*(unsigned int *)this->vtable1 + 8))(this, a2); /*0x65cb3c*/
-  return (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->vtable1 + 28))(this, a3); /*0x65cb4b*/
+  (*(void (**)(RawFileClass *, int))(*(unsigned int *)this->__tail_0 + 8))(this, a2); /*0x65cb3c*/
+  return (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->__tail_0 + 28))(this, a3); /*0x65cb4b*/
 }
 } // namespace gamemd

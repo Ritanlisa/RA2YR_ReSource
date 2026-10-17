@@ -38,7 +38,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
     return 0; /*0x773628*/
   CHAR ValueName[64]; // [esp+1Ch] [ebp-54Ch] BYREF
   strcpy(ValueName, a2); /*0x77364f*/
-  if ( !this->u32_8 ) /*0x773653*/
+  if ( !this->WebBrowser_field_0x8 ) /*0x773653*/
     strcat(ValueName, asc_84968C); /*0x773684*/
   DWORD cbData; // [esp+14h] [ebp-554h] BYREF
   cbData = 512; /*0x7736b1*/
@@ -49,7 +49,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   if ( v3 ) /*0x7736ca*/
     return 0; /*0x7736ca*/
   Debug::Log(); /*0x7736e5*/
-  if ( !this->u32_8 ) /*0x7736f2*/
+  if ( !this->WebBrowser_field_0x8 ) /*0x7736f2*/
     return WebBrowser::OpenURL(Data); /*0x773843*/
   mbstowcs(&this->q00C, (const char *)Data, 0x200u); /*0x773709*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) ) /*0x773726*/
@@ -67,16 +67,16 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   wchar_t Destination[260]; // [esp+360h] [ebp-208h] BYREF
   mbstowcs(Destination, (const char *)v12, 0x104u); /*0x7737d7*/
   wcscat(Destination, aFr); /*0x7737e9*/
-  if ( (*(int (**)(unsigned int, wchar_t *, unsigned int, unsigned int))(**&this->u32_8 + 64))( /*0x773808*/
-         this->u32_8,
+  if ( (*(int (**)(unsigned int, wchar_t *, unsigned int, unsigned int))(**&this->WebBrowser_field_0x8 + 64))( /*0x773808*/
+         this->WebBrowser_field_0x8,
          Destination,
          0,
          0) < 0 )
   return 0; /*0x773849*/
-  int v6 = this->u32_8; // eax /*0x77380a*/
+  int v6 = this->WebBrowser_field_0x8; // eax /*0x77380a*/
   if ( v6 ) /*0x77380f*/
   {
-    (*(void (**)(unsigned int))(*(unsigned int *)v6 + 28))(this->u32_8); /*0x773814*/
+    (*(void (**)(unsigned int))(*(unsigned int *)v6 + 28))(this->WebBrowser_field_0x8); /*0x773814*/
     this->u32_40C = 1; /*0x773817*/
   }
   return 1; /*0x77381e*/
@@ -428,8 +428,8 @@ int WebBrowser::GoBack()
   wcstombs(v5, v7, 0x40u); /*0x773d69*/
   String::Assign(&v2, (const char *)&v4[0].Flag_field_0x08); /*0x773d7a*/
   Debug::Log(); /*0x773d8e*/
-  LoadPlayerProfile(&v2.vtable2, (const char **)&v2); /*0x773d9e*/
-  *v4->__pad_000.__pad_0 = 0; /*0x773da9*/
+  LoadPlayerProfile(&v2.m_3[1], (const char **)&v2); /*0x773d9e*/
+  *&v4->__pad_0.__pad_0 = 0; /*0x773da9*/
   LOBYTE(v4[0].Flag_field_0x04) = 0; /*0x773dad*/
   ReadRegistryOptionsWOL((ObjectClass *)v4); /*0x773db1*/
   if ( (unsigned __int8)Flag::IsNot2(v4) ) /*0x773dba*/
@@ -439,8 +439,8 @@ int WebBrowser::GoBack()
   }
   String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&v4[0].Flag_field_0x08); /*0x773dee*/
   String::Assign_Alt((String *)&g_WebBrowserConfig, v5); /*0x773dfd*/
-  *(unsigned int *)&v2.vtable2 = &vt_rc_ptr_PlayerProfile; /*0x773e06*/
-  ComPtr::Release((ComPtr *)&v2.vtable2); /*0x773e0e*/
+  *(unsigned int *)&v2.m_3[1] = &vt_rc_ptr_PlayerProfile; /*0x773e06*/
+  ComPtr::Release((ComPtr *)&v2.m_3[1]); /*0x773e0e*/
   DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/
   return 0; /*0x773e1e*/
 

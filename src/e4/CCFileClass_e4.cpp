@@ -74,13 +74,13 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
   result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->vtable1 + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->__tail_0 + 24))(this) ) /*0x65d0e0*/
     {
       FileSize = GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
         int v4; // ebx
-        v4 = *(unsigned int *)this->vtable1; /*0x65d0fd*/
+        v4 = *(unsigned int *)this->__tail_0; /*0x65d0fd*/
         int v6; // [esp-8h] [ebp-10h]
         v6 = *&this->FileNameAllocated; /*0x65d0ff*/
         DWORD LastError; // eax
@@ -91,10 +91,10 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->vtable1 + 28))(this, 1) ) /*0x65d122*/
+    else if ( (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->__tail_0 + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int (**)(RawFileClass *))(*(unsigned int *)this->vtable1 + 44))(this); /*0x65d130*/
-      (*(void (**)(RawFileClass *))(*(unsigned int *)this->vtable1 + 52))(this); /*0x65d136*/
+      FileSize = (*(int (**)(RawFileClass *))(*(unsigned int *)this->__tail_0 + 44))(this); /*0x65d130*/
+      (*(void (**)(RawFileClass *))(*(unsigned int *)this->__tail_0 + 52))(this); /*0x65d136*/
     }
     result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
     this->FileName = (void *)result; /*0x65d140*/

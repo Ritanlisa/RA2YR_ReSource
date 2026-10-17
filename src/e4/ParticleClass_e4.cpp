@@ -234,7 +234,7 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x62d820*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0->vfptr, a1, aP2); /*0x62d820*/
   aP0->q130 = 1; /*0x62d825*/
   return result; /*0x62d82c*/
 }

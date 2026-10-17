@@ -113,7 +113,7 @@ unsigned int * Coord::ToCell(unsigned int *aP1)
 
 
   int v3; // [esp+0h] [ebp-4h]
-  LOWORD(v3) = *(unsigned int *)this->__pad_000 / 256; /*0x413a3f*/
+  LOWORD(v3) = *(unsigned int *)&this->__pad_0 / 256; /*0x413a3f*/
   HIWORD(v3) = *&this->u32_4 / 256; /*0x413a53*/
   *aP1 = v3; /*0x413a60*/
   return aP1; /*0x413a63*/
@@ -125,10 +125,10 @@ namespace gamemd {
 void * Coord::Subtract(int aP1, int aP2, int aP3, void *a4)
 {
 
-  *(unsigned int *)this->__pad_000 = aP1; /*0x41c23a*/
+  *(unsigned int *)&this->__pad_0 = aP1; /*0x41c23a*/
   *&this->u32_4 = aP2; /*0x41c240*/
-  this->u32_8 = (unsigned int)((void *)aP3); /*0x41c243*/
-  return (void *)(this->__pad_000); /*0x41c246*/
+  this->Coord_field_0x8 = (unsigned int)((void *)aP3); /*0x41c243*/
+  return (void *)(&this->__pad_0); /*0x41c246*/
 
 }
 }
@@ -139,9 +139,9 @@ int Coord::Length(void *a1)
 
 
   double Coord_field_0x8; // st7
-  Coord_field_0x8 = (double)(int)this->u32_8; /*0x41c380*/
+  Coord_field_0x8 = (double)(int)this->Coord_field_0x8; /*0x41c380*/
   Math::Sqrt( /*0x41c3a4*/
-    (double)*(int *)this->__pad_000 * (double)*(int *)this->__pad_000
+    (double)*(int *)&this->__pad_0 * (double)*(int *)&this->__pad_0
   + (double)*&this->u32_4 * (double)*&this->u32_4
   + Coord_field_0x8 * Coord_field_0x8);
   int v3; // kr00_4
@@ -300,8 +300,8 @@ void * Coord::Divide(int * a2, int a3)
   {
     int v4 = *&this->u32_4 / a3; // ebx /*0x71072f*/
     int v5; // eax
-    v5 = (int)this->u32_8 / a3; /*0x710735*/
-    *a2 = *(unsigned int *)this->__pad_000 / a3; /*0x71073d*/
+    v5 = (int)this->Coord_field_0x8 / a3; /*0x710735*/
+    *a2 = *(unsigned int *)&this->__pad_0 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/
     a2[2] = v5; /*0x710745*/
   }

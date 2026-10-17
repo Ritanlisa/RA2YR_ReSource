@@ -133,7 +133,7 @@ unsigned int * unknown_libname_36(ObjectClass *self)
   self->vfptr = 0; /*0x7636f4*/
   self->vfptr1 = 0; /*0x7636f6*/
   self->vfptr2 = 0; /*0x7636f9*/
-  return &self->vtable1; /*0x7636fc*/
+  return &self->vfptr; /*0x7636fc*/
 }
 }  // G42.18 ns repair
 // 0x764B90

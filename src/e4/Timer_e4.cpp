@@ -15,9 +15,9 @@ namespace gamemd {  // G42.18 ns repair
 void * Timer::Start(int aP1, void *a2)
 {
 
-  *(unsigned int *)this->q000 = *(unsigned int *)&TeamTypeClass_Array; /*0x46b64c*/
+  *(unsigned int *)this->__pad_0 = *(unsigned int *)&TeamTypeClass_Array; /*0x46b64c*/
   *&this->ptr_8 = (gamemd::AbstractClass *)(aP1); /*0x46b64e*/
-  return this->q000; /*0x46b651*/
+  return this->__pad_0; /*0x46b651*/
 
 }
 }  // G42.18 ns repair
@@ -51,7 +51,7 @@ namespace gamemd {
 DWORD * Timer::Init(DWORD a2, void *a2_1)
 {
 
-  *(unsigned int *)this->q000 = Timer::GetTicks(); /*0x4f1b0b*/
+  *(unsigned int *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/
   *&this->ptr_8 = (gamemd::AbstractClass *)(a2); /*0x4f1b11*/
   return (DWORD *)this; /*0x4f1b16*/
 
@@ -64,10 +64,10 @@ int Timer::GetRemainingMs(void *a1)
 
 
   int v1 = *&this->ptr_8; // edi /*0x4f1b26*/
-  if ( *(unsigned int *)this->q000 == -1 ) /*0x4f1b2c*/
+  if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x4f1b2c*/
     return *&this->ptr_8; /*0x4f1b4c*/
   int v2; // ecx
-  v2 = Timer::GetTicks() - *(unsigned int *)this->q000; /*0x4f1b3a*/
+  v2 = Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
   else
@@ -107,7 +107,7 @@ int Timer::GetHighPrecision()
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
     GetVersionString(&dword_82C24C,(unsigned char *)(unk_ABEED4), 0, 0); /*0x5b1e5e*/
-  if ( !*this && this->u32_4 == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
+  if ( !*this && this->m_2[2] == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
     return timeGetTime(); /*0x5b1eba*/
   int result; // eax
   unsigned int v3; // [esp+4h] [ebp-Ch] BYREF
@@ -124,8 +124,8 @@ int Timer::GetElapsed()
 
   int v1; // edi
   v1 = (int)(*&this->ptr_8); /*0x5f1396*/
-  if ( *(unsigned int *)this->q000 != -1 ) /*0x5f139c*/
-    v1 += Timer::GetTicks() - *(unsigned int *)this->q000; /*0x5f13a8*/
+  if ( *(unsigned int *)this->__pad_0 != -1 ) /*0x5f139c*/
+    v1 += Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x5f13a8*/
   return v1; /*0x5f13ac*/
 
 }
@@ -171,9 +171,9 @@ char Timer::SetFlag(char a2)
   int result; // eax
   LOBYTE(result) = a2; /*0x7500b0*/
   if ( a2 ) /*0x7500b6*/
-    *(unsigned int *)this->q000 = 0x40000000; /*0x7500b8*/
+    *(unsigned int *)this->__pad_0 = 0x40000000; /*0x7500b8*/
   else
-    *(unsigned int *)this->q000 = 0; /*0x7500c1*/
+    *(unsigned int *)this->__pad_0 = 0; /*0x7500c1*/
   return result; /*0x7500be*/
 
 }

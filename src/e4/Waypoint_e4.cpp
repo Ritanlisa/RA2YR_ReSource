@@ -66,7 +66,7 @@ namespace gamemd {
 unsigned char * Waypoint::InitInvalid(void *a1)
 {
 
-  this->q000 = -1; /*0x53ecb4*/
+  this->__pad_0 = -1; /*0x53ecb4*/
   this->__pad_0[1] = -1; /*0x53ecb6*/
   this->__pad_0[2] = -1; /*0x53ecb9*/
   this->__pad_0[3] = -1; /*0x53ecbc*/

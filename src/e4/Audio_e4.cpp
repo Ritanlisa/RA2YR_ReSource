@@ -436,8 +436,8 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
   this->u32_C = 255; /*0x5d048e*/
   if ( (unsigned __int8)String::NotEquals((String *)a1, 0) && Audio::IsSoundEnabled() ) /*0x5d04a2*/
   {
-    unknown_libname_73(&v7.u32_4); /*0x5d04b5*/
-    v4 = String::Tokenize(aP2, 0, Delimiter, (void **)&v7.u32_4); /*0x5d04d5*/
+    unknown_libname_73(&v7.m_3[1]); /*0x5d04b5*/
+    v4 = String::Tokenize(aP2, 0, Delimiter, (void **)&v7.m_3[1]); /*0x5d04d5*/
     unknown_libname_73(&v7); /*0x5d04d7*/
     String::Tokenize(aP2, v4, Delimiter, (void **)&v7); /*0x5d04e9*/
     if ( (unsigned __int8)String::NotEquals(&v7, 0) ) /*0x5d04f4*/
@@ -455,10 +455,10 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
       }
       this->u32_C = 255 * this->u32_C / 100; /*0x5d053f*/
     }
-    if ( this->u32_C > 0 && (unsigned __int8)String::NotEquals((String *)&v7.u32_4, 0) ) /*0x5d054f*/
+    if ( this->u32_C > 0 && (unsigned __int8)String::NotEquals((String *)&v7.m_3[1], 0) ) /*0x5d054f*/
       String::Reassign((String *)this, a1); /*0x5d055f*/
     DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
-    DeleteAndZero((ObjectClass *)&v7.u32_4); /*0x5d0571*/
+    DeleteAndZero((ObjectClass *)&v7.m_3[1]); /*0x5d0571*/
   }
   return this; /*0x5d0578*/
 

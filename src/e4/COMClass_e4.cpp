@@ -37,7 +37,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
       do /*0x76703f*/
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76702e*/
-        *(unsigned int *)v5->__pad_000 = &vt_rc_ptr; /*0x767033*/
+        *(unsigned int *)&v5->__pad_0 = &vt_rc_ptr; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }

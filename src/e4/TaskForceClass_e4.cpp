@@ -80,7 +80,7 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
 {
 
 
-  AbstractTypeClass::Constructor((int *)this->vtable1, aP1); /*0x6e7e8a*/
+  AbstractTypeClass::Constructor((int *)this->__pad_0, aP1); /*0x6e7e8a*/
   this->ptr_98 = (AbstractClass *)-1; /*0x6e7e8f*/
   this->Coord_9C = 0; /*0x6e7e99*/
   *(unsigned int *)this->q0A0 = 0; /*0x6e7ea3*/
@@ -212,7 +212,7 @@ namespace gamemd {
 int TaskForceClass::Check(void *a1, void *a2, void *a3)
 {
 
-  sprintf(byte_8A37A0, "%d,%s", *(unsigned int *)this->vtable1, (const char *)(this->vtable2 + 36)); /*0x4c4fa4*/
+  sprintf(byte_8A37A0, "%d,%s", *(unsigned int *)this->__pad_0, (const char *)(this->TaskForceClass_field_0x4 + 36)); /*0x4c4fa4*/
   return byte_8A37A0; /*0x4c4fb1*/
 
 }
@@ -302,7 +302,7 @@ int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x6e868f*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0->vfptr, a1, aP2); /*0x6e868f*/
   if ( result >= 0 ) /*0x6e8696*/
     return 0; /*0x6e8698*/
   return result; /*0x6e869a*/

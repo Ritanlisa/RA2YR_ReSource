@@ -188,7 +188,7 @@ LABEL_20:
           v24 = (unsigned int *)aP0; /*0x434eb6*/
           v11 = 0; /*0x434ebe*/
           v14 = 0; /*0x434ec0*/
-          v25 = aP0->u32_1C; /*0x434ec2*/
+          v25 = aP0->referenceCount; /*0x434ec2*/
           v51 += v25; /*0x434ec7*/
           if ( aP6 && v51 >= aP6 ) /*0x434ed7*/
             goto LABEL_57; /*0x434ed7*/
@@ -288,7 +288,7 @@ LABEL_50:
           v24 = (unsigned int *)aP0; /*0x435106*/
           v11 = 0; /*0x43510e*/
           v14 = 0; /*0x435110*/
-          v36 = aP0->u32_1C; /*0x435112*/
+          v36 = aP0->referenceCount; /*0x435112*/
           v51 += v36; /*0x435117*/
           if ( aP6 && v51 >= aP6 ) /*0x435127*/
           {

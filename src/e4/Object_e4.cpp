@@ -445,7 +445,7 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3, void *a4)  // G42.41k: d
   this->Object_field_0x8 = (int)&vt_OverlayClass; /*0x5fc39f*/
   *&this->q004 = &vt_OverlayClass; /*0x5fc3a6*/
   *(unsigned int *)this->__pad_C = &vt_OverlayClass; /*0x5fc3ac*/
-  AbstractClass::GenerateUniqueID(&this->q004); /*0x5fc3b3*/
+  AbstractClass::GenerateUniqueID(&this->Object_field_0x2[2]); /*0x5fc3b3*/
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
     && dword_A8EC64 > 0

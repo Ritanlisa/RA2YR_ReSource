@@ -206,7 +206,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   }
   else
   {
-    Destination.vtable1 = (unsigned __int8)Source; /*0x5118ef*/
+    Destination.__pad_0 = (unsigned __int8)Source; /*0x5118ef*/
   }
   if ( &Destination != &_EBX->buildtimeBuildingsMult ) /*0x51191a*/
   {
@@ -224,7 +224,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   INIClass::GetString((INIClass *)v4, (unsigned __int8 *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
   _EBX->Prefix = v81[0]; /*0x511974*/
   INIClass::ReadDouble_Overwrite( /*0x511990*/
-    &v4->vtable1,
+    &v4->vfptr,
     (unsigned __int8 *)(_EBX + 36),
     aFirepower,
     _EBX->firepowerMult_d);
@@ -233,7 +233,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   __asm { fstp qword ptr [ebx+0C8h] } /*0x5119a1*/
   _EBX->firepowerMult_d = _RT1; /*0x5119a1*/
   INIClass::ReadDouble_Overwrite( /*0x5119b1*/
-    &v4->vtable1,
+    &v4->vfptr,
     (unsigned __int8 *)(_EBX + 36),
     aGroundspeed,
     COERCE_DOUBLE((((v6 & 0xFFFFFFFFull)) << 32 | (v7 & 0xFFFFFFFFull))));
@@ -242,20 +242,20 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   __asm { fstp qword ptr [ebx+0D0h] } /*0x5119c2*/
   _EBX->groundspeedMult_d = _RT1; /*0x5119c2*/
   INIClass::ReadDouble_Overwrite( /*0x5119d2*/
-    &v4->vtable1,
+    &v4->vfptr,
     (unsigned __int8 *)(_EBX + 36),
     aAirspeed,
     COERCE_DOUBLE((((v9 & 0xFFFFFFFFull)) << 32 | (v10 & 0xFFFFFFFFull))));
   v12 = _EBX->armorMult_d; /*0x5119dd*/
   __asm { fstp qword ptr [ebx+0D8h] } /*0x5119e3*/
   _EBX->airspeedMult_d = _RT1; /*0x5119e3*/
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), g_INI_Key_Armor, v12); /*0x5119f3*/
+  INIClass::ReadDouble_Overwrite(&v4->vfptr, (unsigned __int8 *)(_EBX + 36), g_INI_Key_Armor, v12); /*0x5119f3*/
   v14 = _EBX->q0EC; /*0x5119f8*/
   v15 = _EBX->rofMult_d; /*0x5119fe*/
   __asm { fstp qword ptr [ebx+0E0h] } /*0x511a04*/
   _EBX->armorMult_d = _RT1; /*0x511a04*/
   INIClass::ReadDouble_Overwrite( /*0x511a14*/
-    &v4->vtable1,
+    &v4->vfptr,
     (unsigned __int8 *)(_EBX + 36),
     &off_825478,
     COERCE_DOUBLE((((v14 & 0xFFFFFFFFull)) << 32 | (v15 & 0xFFFFFFFFull))));
@@ -264,14 +264,14 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   __asm { fstp qword ptr [ebx+0E8h] } /*0x511a25*/
   _EBX->rofMult_d = _RT1; /*0x511a25*/
   INIClass::ReadDouble_Overwrite( /*0x511a35*/
-    &v4->vtable1,
+    &v4->vfptr,
     (unsigned __int8 *)(_EBX + 36),
     g_INI_Key_Cost,
     COERCE_DOUBLE((((v17 & 0xFFFFFFFFull)) << 32 | (v18 & 0xFFFFFFFFull))));
   v20 = _EBX->buildtimeMult_d; /*0x511a40*/
   __asm { fstp qword ptr [ebx+0F0h] } /*0x511a46*/
   _EBX->costMult_d = _RT1; /*0x511a46*/
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aBuildtime, v20); /*0x511a56*/
+  INIClass::ReadDouble_Overwrite(&v4->vfptr, (unsigned __int8 *)(_EBX + 36), aBuildtime, v20); /*0x511a56*/
   v22 = _EBX->Multiplay; /*0x511a5b*/
   __asm { fstp qword ptr [ebx+0F8h] } /*0x511a61*/
   _EBX->buildtimeMult_d = _RT1; /*0x511a61*/

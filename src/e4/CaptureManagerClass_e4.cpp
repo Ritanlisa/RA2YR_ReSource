@@ -963,7 +963,7 @@ int CaptureManagerClass::Capture(unsigned int * a2)
   if ( m_10 <= 0 ) /*0x472d78*/
     return -1; /*0x472d8f*/
   unsigned int *i; // ecx
-  for ( i = *&this->vtable2; *i != *a2; ++i ) /*0x472d7e*/
+  for ( i = *&this->vfptr1; *i != *a2; ++i ) /*0x472d7e*/
   {
     if ( ++result >= m_10 ) /*0x472d8d*/
       return -1; /*0x472d8d*/
@@ -1090,7 +1090,7 @@ unsigned int CaptureManagerClass::LoadTypeData(int a2)
 {
 
   if ( LOBYTE(this->vtable4) ) /*0x472ab0*/
-    return (unsigned int)(a2 - *&this->vtable2) >> 2; /*0x472ac5*/
+    return (unsigned int)(a2 - *&this->vfptr1) >> 2; /*0x472ac5*/
   else
     return 0; /*0x472ab7*/
 
@@ -1111,7 +1111,7 @@ char CaptureManagerClass::AddRef(int a2)
     if ( m_8 <= 0 ) /*0x472b53*/
       return 1; /*0x472b73*/
     unsigned int *v4; // eax
-    v4 = (unsigned int *)(*&this->vtable2); /*0x472b55*/
+    v4 = (unsigned int *)(*&this->vfptr1); /*0x472b55*/
     int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x472b5b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x472b64*/
@@ -1144,21 +1144,21 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->vtable4) = 1; /*0x472bb6*/
     if ( v4 ) /*0x472bba*/
     {
-      if ( *&this->vtable2 ) /*0x472bc5*/
+      if ( *&this->vfptr1 ) /*0x472bc5*/
       {
         int m_8 = this->vtable3; // ecx /*0x472bcc*/
         if ( a2 < m_8 ) /*0x472bd1*/
           m_8 = a2; /*0x472bd3*/
         int i; // eax
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x472bd9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vfptr1 + 4 * i - 4) ) /*0x472bd9*/
           ++i; /*0x472bde*/
         if ( BYTE1(this->vtable4) ) /*0x472beb*/
         {
-          __3_YAXPAX_Z(*&this->vtable2); /*0x472bf6*/
-          *&this->vtable2 = 0; /*0x472bfe*/
+          __3_YAXPAX_Z(*&this->vfptr1); /*0x472bf6*/
+          *&this->vfptr1 = 0; /*0x472bfe*/
         }
       }
-      *&this->vtable2 = v4; /*0x472c07*/
+      *&this->vfptr1 = v4; /*0x472c07*/
       this->vtable3 = a2; /*0x472c0f*/
       BYTE1(this->vtable4) = a3 == 0; /*0x472c12*/
       return 1; /*0x472c18*/
@@ -1170,7 +1170,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUControlNode *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x472c22*/
+    (*(void (**)(_VectorClass_PAUControlNode *))(*(unsigned int *)this->vfptr + 12))(this); /*0x472c22*/
     return 1; /*0x472c28*/
   }
 

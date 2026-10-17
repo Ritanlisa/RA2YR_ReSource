@@ -350,7 +350,7 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
   bool v7; // zf
 
   unsigned int v2 = aP1; // ebp /*0x720a81*/
-  if ( (aP1 <= -1 || *(unsigned char *)(*(unsigned int *)(this->u32_18 + 4 * aP1) + 649) || this->__pad_10) && aP1 >= 0 ) /*0x720aa7*/
+  if ( (aP1 <= -1 || *(unsigned char *)(*(unsigned int *)(&this->__pad_10[8] + 4 * aP1) + 649) || this->__pad_10) && aP1 >= 0 ) /*0x720aa7*/
     return v2; /*0x720b18*/
   if ( this->u32_12 == 1 ) /*0x720aad*/
   {

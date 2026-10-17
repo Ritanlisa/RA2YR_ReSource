@@ -244,13 +244,13 @@ namespace gamemd {
 unsigned int * File::LoadFileHVA(int a2, void *a2_1)
 {
 
-  this->__pad_000 = 0; /*0x5bd575*/
+  this->__pad_0 = 0; /*0x5bd575*/
   *&this->q004 = 0; /*0x5bd577*/
   *&this->ptr_8 = 0; /*0x5bd57a*/
   *&this->__pad_00C = 0; /*0x5bd57d*/
   if ( !((int)this)->ParseFileHVA(a2) ) /*0x5bd585*/
-    this->__pad_000 = 1; /*0x5bd58e*/
-  return (unsigned int *)(this->__pad_000); /*0x5bd593*/
+    this->__pad_0 = 1; /*0x5bd58e*/
+  return (unsigned int *)(&this->__pad_0); /*0x5bd593*/
 
 }
 }
@@ -610,7 +610,7 @@ namespace gamemd {
 unsigned int * File::LoadFileVXL(int a2, int a3, void *a3_1)
 {
 
-  this->__pad_000 = 0; /*0x755cd9*/
+  this->__pad_0 = 0; /*0x755cd9*/
   *&this->q004 = 0; /*0x755cdb*/
   *&this->ptr_8 = 0; /*0x755cde*/
   *&this->__pad_00C = 0; /*0x755ce1*/
@@ -618,8 +618,8 @@ unsigned int * File::LoadFileVXL(int a2, int a3, void *a3_1)
   *&this->__pad_014 = 0; /*0x755ce7*/
   *&this->ptr_18 = 0; /*0x755cea*/
   if ( !((int)this)->SortDepth(a2, a3) ) /*0x755cf5*/
-    this->__pad_000 = 1; /*0x755cfe*/
-  return (unsigned int *)(this->__pad_000); /*0x755d03*/
+    this->__pad_0 = 1; /*0x755cfe*/
+  return (unsigned int *)(&this->__pad_0); /*0x755d03*/
 
 }
 }

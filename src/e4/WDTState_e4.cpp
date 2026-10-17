@@ -181,7 +181,7 @@ int WDTState_4::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76bc63*/
-  *(unsigned int *)this->__pad_000 = &vt_rc_ptr; /*0x76bc68*/
+  *(unsigned int *)&this->__pad_0 = &vt_rc_ptr; /*0x76bc68*/
   return this->__pad_0; /*0x76bc70*/
 
 }

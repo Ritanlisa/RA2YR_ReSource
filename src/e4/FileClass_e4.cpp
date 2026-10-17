@@ -26,9 +26,9 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
   if ( this->u32_58 ) /*0x473ae3*/
   {
     int v4; // edi
-    v4 = *(unsigned int *)this->vtable1; /*0x473aeb*/
+    v4 = *(unsigned int *)this->__tail_0; /*0x473aeb*/
     int v5; // eax
-    v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)this->vtable1 + 4))(this); /*0x473aed*/
+    v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)this->__tail_0 + 4))(this); /*0x473aed*/
     (*(void (**)(CCFileClass *, int, unsigned int, int))(v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
   return FileClass::BufferedWriter((char *)aP1, nNumberOfBytesToWrite); /*0x473b0c*/

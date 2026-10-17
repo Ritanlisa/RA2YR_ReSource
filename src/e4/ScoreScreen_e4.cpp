@@ -115,12 +115,12 @@ namespace gamemd {
 unsigned int * ScoreScreen::Constructor(int aP1, int a3, int a4, void *a4_1)
 {
 
-  this->u32_8 = a3; /*0x690f3b*/
-  this->u32_4 = aP1; /*0x690f41*/
-  this->u32_C = Timer::GetTicks(); /*0x690f4d*/
+  this->ScoreScreen_field_0x08 = a3; /*0x690f3b*/
+  this->ScoreScreen_field_0x04 = aP1; /*0x690f41*/
+  this->ScoreScreen_field_0x0C = Timer::GetTicks(); /*0x690f4d*/
   this->q014 = 0; /*0x690f50*/
   this->u32_18 = a4; /*0x690f57*/
-  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_ScoreAnimClass); /*0x690f5a*/
+  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_ScoreAnimClass); /*0x690f5a*/
   return this->__pad_0; /*0x690f62*/
 
 }

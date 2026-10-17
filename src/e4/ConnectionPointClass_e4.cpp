@@ -315,7 +315,7 @@ unsigned int * ConnectionPointClass_9::QueryInterface(char a2)  // G42.41d: trut
 
   void *v3; // eax
   v3 = (void *)(*&this->q004); /*0x4a14f3*/
-  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4a14f6*/
+  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4a14f6*/
   if ( v3 && (((this->m_C) >> 8) & 0xFF) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/

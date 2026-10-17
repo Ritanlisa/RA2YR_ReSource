@@ -423,7 +423,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
       this->Height = (void *)*((unsigned int *)DSurface_field_0x20 + 2); /*0x4bace6*/
     }
   }
-  return &this->vtable1; /*0x4baceb*/
+  return &this->DSurface_field_0x0; /*0x4baceb*/
 
 }
 } // namespace gamemd

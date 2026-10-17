@@ -726,10 +726,10 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
   DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
   if ( String::Length(&v19) ) /*0x4f2d08*/
   {
-    unknown_libname_73(&v19.ptr_4); /*0x4f2d29*/
+    unknown_libname_73(&v19.m_3[1]); /*0x4f2d29*/
     String::Assign(&v20, &g_INI_DefaultBuffer); /*0x4f2d37*/
     String::Assign(&v21, g_INI_Key_Palette); /*0x4f2d45*/
-    INIClass::ReadString(a2, (char **)Source, (char **)&v21, (char **)&v20, (int)&v19.ptr_4); /*0x4f2d5c*/
+    INIClass::ReadString(a2, (char **)Source, (char **)&v21, (char **)&v20, (int)&v19.m_3[1]); /*0x4f2d5c*/
     DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
     if ( String::Length((String *)&v19.ptr_4) ) /*0x4f2d77*/

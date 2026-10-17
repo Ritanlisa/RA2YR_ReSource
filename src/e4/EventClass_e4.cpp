@@ -93,14 +93,14 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c65fc*/
   if ( aP1 < 0 ) /*0x4c660a*/
   {
-    this->u32_8 = -1; /*0x4c6631*/
+    this->EventClass_field_0x8 = -1; /*0x4c6631*/
     *this = 0; /*0x4c6635*/
     this->u32_3 = dword_A8ED84; /*0x4c663d*/
     return this; /*0x4c6640*/
   }
   else
   {
-    this->u32_8 = (unsigned int)(aP1); /*0x4c6610*/
+    this->EventClass_field_0x8 = (unsigned int)(aP1); /*0x4c6610*/
     *this = a3; /*0x4c661a*/
     this->u32_7 = a4; /*0x4c661c*/
     this->u32_2C = a5; /*0x4c6620*/

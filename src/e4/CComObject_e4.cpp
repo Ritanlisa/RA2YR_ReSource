@@ -561,8 +561,8 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
     while ( 1 ) /*0x7a7be3*/
     {
       ++v21; /*0x7a7be3*/
-      String::Assign((String *)&v19.ptr_4, (const char *)(v20 + 36)); /*0x7a7be7*/
-      String::ToLower((String *)&v19.ptr_4); /*0x7a7bf0*/
+      String::Assign((String *)&v19.m_3[1], (const char *)(v20 + 36)); /*0x7a7be7*/
+      String::ToLower((String *)&v19.m_3[1]); /*0x7a7bf0*/
       v8 = 0; /*0x7a7bf5*/
       if ( v6 <= 0 ) /*0x7a7bf9*/
         break; /*0x7a7bf9*/
@@ -576,7 +576,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
         }
         String::Assign(&v19, &v24[36]); /*0x7a7c2e*/
         String::ToLower(&v19); /*0x7a7c37*/
-        if ( (unsigned __int8)String::Compare((String *)&v19.ptr_4, (const char **)&v19) ) /*0x7a7c45*/
+        if ( (unsigned __int8)String::Compare((String *)&v19.m_3[1], (const char **)&v19) ) /*0x7a7c45*/
           break; /*0x7a7c45*/
         DeleteAndZero((ObjectClass *)&v19); /*0x7a7c52*/
         ++v8; /*0x7a7c57*/
@@ -589,13 +589,13 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
         break; /*0x7a7c68*/
       v20 = *(unsigned int *)(v20 + 32); /*0x7a7c75*/
       v10 = v20; /*0x7a7c72*/
-      DeleteAndZero((ObjectClass *)&v19.ptr_4); /*0x7a7c79*/
+      DeleteAndZero((ObjectClass *)&v19.m_3[1]); /*0x7a7c79*/
       if ( !v10 ) /*0x7a7c80*/
         goto LABEL_16; /*0x7a7c80*/
     }
 LABEL_15:
     v18 = 0; /*0x7a7c87*/
-    DeleteAndZero((ObjectClass *)&v19.ptr_4); /*0x7a7c90*/
+    DeleteAndZero((ObjectClass *)&v19.m_3[1]); /*0x7a7c90*/
   }
 LABEL_16:
   if ( v21 == v6 && v18 ) /*0x7a7ca1*/

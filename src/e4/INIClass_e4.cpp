@@ -323,7 +323,7 @@ INIClass::INIClass()
 
 
   unsigned int *result; // eax
-  result = (unsigned int *)(this->vtable1); /*0x535aa0*/
+  result = (unsigned int *)(this->__pad_0); /*0x535aa0*/
   int *sectionHead; // ecx
   sectionHead = (int *)(this->sectionHead); /*0x535aa6*/
   unsigned int *v3 = result + 7; // edx /*0x535aa9*/

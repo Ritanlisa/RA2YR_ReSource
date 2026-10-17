@@ -1263,7 +1263,7 @@ namespace gamemd {
 int RAMFileClass::nullsub_0_1()
 {
 
-  if ( (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->vtable1 + 24))(this) ) /*0x65c305*/
+  if ( (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) ) /*0x65c305*/
     return 0; /*0x65c31a*/
   this->q010 = 0; /*0x65c30c*/
   return 1; /*0x65c318*/
@@ -1276,7 +1276,7 @@ int RAMFileClass::nullsub_0_2(int a2)
 {
 
   if ( !this->ptr_8 /*0x65c35c*/
-    || (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->vtable1 + 24))(this) )
+    || (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) )
   {
     return 0; /*0x65c391*/
   }
@@ -1285,7 +1285,7 @@ int RAMFileClass::nullsub_0_2(int a2)
   this->u32_1C = 1; /*0x65c374*/
   if ( a2 == 2 ) /*0x65c378*/
     this->q010 = 0; /*0x65c37a*/
-  return (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->vtable1 + 24))(this); /*0x65c38d*/
+  return (*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x65c38d*/
 
 }
 }
@@ -1337,7 +1337,7 @@ AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
   int result; // eax
 
   if ( !this->ptr_8 /*0x65c42c*/
-    || !(*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->vtable1 + 24))(this) )
+    || !(*(unsigned __int8 (**)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) )
   {
     return (gamemd::AbstractClass **)(this->u32_14); /*0x65c494*/
   }

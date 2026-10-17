@@ -189,7 +189,7 @@ namespace gamemd {
 unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
 {
   if ( (this->vtable4) ) /*0x54a1c0*/
-    return (unsigned int)(a2 - *&this->vtable2) >> 2; /*0x54a1d5*/
+    return (unsigned int)(a2 - *&this->IsometricTileTypeClass_field_0x04) >> 2; /*0x54a1d5*/
   else
     return 0; /*0x54a1c7*/
 }
@@ -211,22 +211,22 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->vtable4) = 1; /*0x54a402*/
     if ( !v4 ) /*0x54a406*/
       return 0; /*0x54a47a*/
-    if ( *&this->vtable2 ) /*0x54a408*/
+    if ( *&this->IsometricTileTypeClass_field_0x04 ) /*0x54a408*/
     {
       int m_8; // ecx
       m_8 = (int)(this->vtable3); /*0x54a40f*/
       if ( a2 < m_8 ) /*0x54a414*/
         m_8 = a2; /*0x54a416*/
       int i; // eax
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x54a41c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->IsometricTileTypeClass_field_0x04 + 4 * i - 4) ) /*0x54a41c*/
         ++i; /*0x54a421*/
       if ( BYTE1(this->vtable4) ) /*0x54a42e*/
       {
-        __3_YAXPAX_Z(*&this->vtable2); /*0x54a439*/
-        *&this->vtable2 = 0; /*0x54a441*/
+        __3_YAXPAX_Z(*&this->IsometricTileTypeClass_field_0x04); /*0x54a439*/
+        *&this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a441*/
       }
     }
-    *&this->vtable2 = v4; /*0x54a44a*/
+    *&this->IsometricTileTypeClass_field_0x04 = v4; /*0x54a44a*/
     this->vtable3 = (void *)(a2); /*0x54a452*/
     BYTE1(this->vtable4) = a3 == 0; /*0x54a455*/
   }
@@ -252,7 +252,7 @@ int IsometricTileTypeClass::FindItem(unsigned int * a2)
   if ( m_10 <= 0 ) /*0x54a488*/
     return -1; /*0x54a49f*/
   unsigned int *i; // ecx
-  for ( i = *&this->vtable2; *i != *a2; ++i ) /*0x54a48e*/
+  for ( i = *&this->IsometricTileTypeClass_field_0x04; *i != *a2; ++i ) /*0x54a48e*/
   {
     if ( ++result >= m_10 ) /*0x54a49d*/
       return -1; /*0x54a49d*/
@@ -286,7 +286,7 @@ namespace gamemd {
 unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 {
 
-  this->vtable2 = 0; /*0x54a85b*/
+  this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a85b*/
   this->vtable3 = (void *)(a2); /*0x54a85e*/
   LOBYTE(this->vtable4) = 1; /*0x54a861*/
   BYTE1(this->vtable4) = 0; /*0x54a865*/

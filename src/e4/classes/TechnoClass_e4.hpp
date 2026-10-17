@@ -33,7 +33,7 @@ struct TechnoClass {
     void* nextArrayIndex;  // 0x18
     void* referenceCount;  // 0x1C
     void* NeedsSaveOrLink;  // 0x20
-    void* objectTypeFlags;  // 0x24
+    void* occupant;  // 0x24
     void* owningHouseIndex;  // 0x28
     void* fallRate;  // 0x2C
     void* nextObject;  // 0x30

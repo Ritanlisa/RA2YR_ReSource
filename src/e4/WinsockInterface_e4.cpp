@@ -190,7 +190,7 @@ void * WinsockInterface::ProcessPacket(int a2)
 
 
   int v3 = 6; // ebp /*0x77027a*/
-  void **v4 = &this->ptr_4; // edi /*0x77027f*/
+  void **v4 = &this->m_1[3]; // edi /*0x77027f*/
   *(unsigned int *)this = a2; /*0x770282*/
   int v5; // ebx
   v5 = (int)(&this->u8_8); /*0x770284*/
@@ -227,7 +227,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   this->u32_3D8 = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
   ((char **)&a2)->Assign(aOldcycle); /*0x77033b*/
-  String::Reassign(&this->ptr_4, (const char **)&a2); /*0x770348*/
+  String::Reassign(&this->m_1[3], (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
   ((char **)&a2)->Assign(aHistory); /*0x77035f*/
   String::Reassignthis->u8_988, (const char **)&a2); /*0x77036f*/

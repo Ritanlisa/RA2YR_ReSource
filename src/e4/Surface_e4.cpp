@@ -569,7 +569,7 @@ int Surface::RenderRadar()
         v48[1] = 0; /*0x655434*/
         v48[2] = v17; /*0x655439*/
         v48[3] = v18; /*0x655441*/
-        v19 = (int *)(GenerateImageThumbnail((float *)this->vtable1, v51, v48, &v39, 0)); /*0x655455*/
+        v19 = (int *)(GenerateImageThumbnail((float *)this->__pad_0, v51, v48, &v39, 0)); /*0x655455*/
         v20 = *v19; /*0x65545e*/
         v44 = v19->__pad_004; /*0x655463*/
         v21 = v19->q008; /*0x655467*/

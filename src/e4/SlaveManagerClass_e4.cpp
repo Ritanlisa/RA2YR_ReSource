@@ -97,7 +97,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6,
   this->master = a2; /*0x6af1e2*/
   this->house = a3; /*0x6af1e9*/
   *(unsigned int *)this = &vt_SlaveManagerClass_4; /*0x6af1f2*/
-  this->vtable2 = &vt_SlaveManagerClass_4; /*0x6af1f8*/
+  this->vfptr1 = &vt_SlaveManagerClass_4; /*0x6af1f8*/
   this->vtable3 = &vt_SlaveManagerClass_4; /*0x6af1ff*/
   this->vtable4 = &vt_SlaveManagerClass_4; /*0x6af206*/
   this->slaveOwner = a4; /*0x6af20d*/

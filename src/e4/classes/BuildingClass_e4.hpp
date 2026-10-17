@@ -38,7 +38,7 @@ struct BuildingClass {
     void* nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     int NeedsSaveOrLink;  // 0x20
-    void* objectTypeFlags;  // 0x24
+    void* occupant;  // 0x24
     void* owningHouseIndex;  // 0x28
     int fallRate;  // 0x2C
     IUnknown* nextObject;  // 0x30

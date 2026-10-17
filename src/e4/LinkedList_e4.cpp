@@ -337,7 +337,7 @@ int LinkedList_flat::RemoveNode()
     return (int)v2->vtable1; /*0x55677e*/
   if ( v3 == this ) /*0x55676b*/
     return 0; /*0x55676f*/
-  return (*(int (**)(LinkClass *))(*(unsigned int *)v3->vtable1 + 24))(v3); /*0x55676d*/
+  return (*(int (**)(LinkClass *))(*(unsigned int *)v3->__pad_0 + 24))(v3); /*0x55676d*/
 
 }
 } // namespace gamemd

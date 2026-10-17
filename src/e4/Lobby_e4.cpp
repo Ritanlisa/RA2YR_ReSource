@@ -381,7 +381,7 @@ LABEL_111:
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
     DeleteAndZero::Alt((DeleteAndZero *)&v38); /*0x5eb638*/
-    v36 = (ObjectClass *)v16->vtable1 + 1); /*0x5eb641*/
+    v36 = (ObjectClass *)v16->vfptr + 1); /*0x5eb641*/
   }
   while ( (int)&v16->vfptr + 1 < 8 );
 

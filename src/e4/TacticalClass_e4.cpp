@@ -546,7 +546,7 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
   result = byte_A9FA94; /*0x4f474e*/
   if ( !byte_A9FA94 ) /*0x4f4755*/
   {
-    result = (char)(Frame::Present( /*0x4f4761*/ (int)DSurface_Composite, v3, a2, a3, 0, *(int *)v6.q000, *(int *)&v6.u32_4, *(int **)&v6.u32_8));
+    result = (char)(Frame::Present( /*0x4f4761*/ (int)DSurface_Composite, v3, a2, a3, 0, *(int *)&v6.__pad_0, *(int *)&v6.u32_4, *(int **)&v6.u32_8));
     byte_A9FA94 = 0; /*0x4f4766*/
   }
   return (gamemd::AbstractClass **)(result);

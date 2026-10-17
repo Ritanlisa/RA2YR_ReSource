@@ -109,7 +109,7 @@ int CollectWOLConnectionTokens(void *a1)
   Debug::Log(); /*0x7a044d*/
   result = g_WOL_UserList.owningHouseIndex; /*0x7a0452*/
   v2 = 0; /*0x7a045a*/
-  *(unsigned int *)&v15.ptr_4 = 0; /*0x7a045e*/
+  *(unsigned int *)&v15.m_3[1] = 0; /*0x7a045e*/
   if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a0462*/
   {
     v3 = 0; /*0x7a0469*/
@@ -187,12 +187,12 @@ int CollectWOLConnectionTokens(void *a1)
         dword_B76AC4.vfptr3 = (void *)(vtable3 + 1); /*0x7a064e*/
         DeleteAndZero((ObjectClass *)&v15); /*0x7a0653*/
         v3 = v16; /*0x7a0658*/
-        v2 = *(unsigned int *)&v15.ptr_4; /*0x7a065c*/
+        v2 = *(unsigned int *)&v15.m_3[1]; /*0x7a065c*/
       }
       result = g_WOL_UserList.owningHouseIndex; /*0x7a0660*/
       ++v2; /*0x7a0665*/
       v3 += 108; /*0x7a0666*/
-      *(unsigned int *)&v15.ptr_4 = v2; /*0x7a066b*/
+      *(unsigned int *)&v15.m_3[1] = v2; /*0x7a066b*/
       v16 = v3; /*0x7a066f*/
     }
     while ( v2 < g_WOL_UserList.owningHouseIndex ); /*0x7a0673*/

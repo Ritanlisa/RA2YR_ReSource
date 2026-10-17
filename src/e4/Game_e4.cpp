@@ -246,10 +246,10 @@ void Game::initScenario(void *a1_1)
       int v4 = 3; // edi /*0x430994*/
       do /*0x4309b2*/
       {
-        if ( *(unsigned int *)v2->__pad_000 ) /*0x430999*/
+        if ( *(unsigned int *)&v2->__pad_0 ) /*0x430999*/
         {
-          __3_YAXPAX_Z(*(void **)v2->__pad_000); /*0x4309a0*/
-          *(unsigned int *)v2->__pad_000 = 0; /*0x4309a8*/
+          __3_YAXPAX_Z(*(void **)&v2->__pad_0); /*0x4309a0*/
+          *(unsigned int *)&v2->__pad_0 = 0; /*0x4309a8*/
         }
         v2 = &v2->ptr_4; /*0x4309ae*/
         --v4; /*0x4309b1*/

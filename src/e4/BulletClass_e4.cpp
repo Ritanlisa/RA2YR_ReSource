@@ -51,8 +51,8 @@ BulletClass::BulletClass()
   /* X11: vtable install elided (implicit via BulletClass virtuals 0x466425) */
   this->BulletClass_field_0x4 = &vt_BulletClass; /*0x46642b*/
   /* X11: vtable install elided (implicit via BulletClass virtuals 0x466431) */
-  *(unsigned int *)this->__pad_C = &vt_BulletClass; /*0x466438*/
-  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x46643f*/
+  *(unsigned int *)&this->q00C = &vt_BulletClass; /*0x466438*/
+  AbstractClass::GenerateUniqueID(&this->BulletClass_field_0x4); /*0x46643f*/
   *(unsigned int *)this->q134 = 0; /*0x466444*/
   *&this->TargetCoords = 0; /*0x46644a*/
   *&this->__pad_13C = 0; /*0x466450*/
@@ -146,7 +146,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
 namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x46afc4*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0->vfptr, a1, aP2); /*0x46afc4*/
 }
 } // namespace gamemd
 

@@ -104,7 +104,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
         ++i; /*0x5d423e*/
       if ( this->u8_19 && this->u8_1A ) /*0x5d424d*/
         ++i; /*0x5d4254*/
-      if ( i + 1 > *(unsigned int *)this->__pad_C ) /*0x5d425b*/
+      if ( i + 1 > *(unsigned int *)&this->q00C ) /*0x5d425b*/
       {
         v10 = *(char ***)this->__pad_0; /*0x5d425d*/
         *(unsigned int *)this->__pad_0 = (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 36))(*(unsigned int *)this->__pad_0); /*0x5d4266*/
@@ -128,7 +128,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     if ( !aP3 ) /*0x5d42a1*/
       v14 = &g_TypeClass_DefaultString; /*0x5d42a3*/
     *&this->u16_2B8 = a5; /*0x5d42b1*/
-    memset(&this->u32_28, 0, 0x144u); /*0x5d42c2*/
+    memset(&this->q00C[28], 0, 0x144u); /*0x5d42c2*/
     wcscpythis->u32_28, v14); /*0x5d42c5*/
     *&this->u16_16C = 0; /*0x5d42cb*/
     v15 = wcslen(v14); /*0x5d42d4*/
@@ -141,7 +141,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
       BYTE1(v17) = BYTE1(a3) | 0x80; /*0x5d42fb*/
       v18 = MessageListClass::clearMessages( /*0x5d430b*/
               v16,
-              (int)&this->u32_28,
+              (int)&this->q00C[28],
               *&this->u32_1C,
               *&this->q020,
               a2,
@@ -185,7 +185,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
         }
         while ( v22 ); /*0x5d4373*/
       }
-      --*(unsigned int *)this->__pad_C; /*0x5d4375*/
+      --*(unsigned int *)&this->q00C; /*0x5d4375*/
     }
     return *&this->u32_24; /*0x5d4378*/
   }

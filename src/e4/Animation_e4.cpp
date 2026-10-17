@@ -275,7 +275,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   v4 = (INIClass *)a1; /*0x770559*/
   v22 = this; /*0x77055f*/
   v5 = &this->q010; /*0x770563*/
-  *(unsigned int *)&v23.ptr_4 = 6; /*0x770566*/
+  *(unsigned int *)&v23.m_3[1] = 6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {
     v6 = *(void **)this; /*0x770574*/
@@ -289,16 +289,16 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 2, (char **)&v23); /*0x7705e0*/
     DeleteAndZero((ObjectClass *)&v23); /*0x7705e9*/
     v5 = &v5->__pad_094; /*0x7705f2*/
-    if ( !--*(unsigned int *)&v23.ptr_4 ) /*0x7705fd*/
+    if ( !--*(unsigned int *)&v23.m_3[1] ) /*0x7705fd*/
       break; /*0x7705fd*/
     this = v22; /*0x770570*/
   }
   String::Assign(&v23, aStartup); /*0x77060c*/
   v7 = StaticString::Factory(*(StaticString **)v22); /*0x77061c*/
-  ConcatStringAlloc((char **)&v23.ptr_4, (const char **)v7, (char **)&v23); /*0x770627*/
+  ConcatStringAlloc((char **)&v23.m_3[1], (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
   String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77063e*/
-  INIClass::ReadString(v4, v3, (char **)&v23.ptr_4, (char **)&aP2, (int)&a1); /*0x770655*/
+  INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
   DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
   unknown_libname_73(&aP2); /*0x770678*/
@@ -330,14 +330,14 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   }
   DeleteAndZero((ObjectClass *)&aP2); /*0x770702*/
   DeleteAndZero((ObjectClass *)&a1); /*0x77070b*/
-  DeleteAndZero((ObjectClass *)&v23.ptr_4); /*0x770714*/
+  DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x770714*/
   DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
   String::Assign(&v23, aTerritoryselec); /*0x77072b*/
   v14 = StaticString::Factory(*(StaticString **)v22); /*0x77073b*/
-  ConcatStringAlloc((char **)&v23.ptr_4, (const char **)v14, (char **)&v23); /*0x770746*/
+  ConcatStringAlloc((char **)&v23.m_3[1], (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
   String::Assign((String *)&aP2, &g_INI_DefaultBuffer); /*0x77075d*/
-  INIClass::ReadString(v4, v3, (char **)&v23.ptr_4, (char **)&aP2, (int)&a1); /*0x770774*/
+  INIClass::ReadString(v4, v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/
   DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/
   unknown_libname_73(&aP2); /*0x770797*/
@@ -369,7 +369,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   }
   DeleteAndZero((ObjectClass *)&aP2); /*0x77081b*/
   DeleteAndZero((ObjectClass *)&a1); /*0x770824*/
-  DeleteAndZero((ObjectClass *)&v23.ptr_4); /*0x77082d*/
+  DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x77082d*/
   DeleteAndZero((ObjectClass *)&v23); /*0x770836*/
 
 }

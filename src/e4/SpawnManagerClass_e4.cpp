@@ -612,7 +612,7 @@ namespace gamemd {
 unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
 {
 
-  this->vtable2 = 0; /*0x6b83a9*/
+  this->vfptr1 = 0; /*0x6b83a9*/
   this->vtable3 = (void *)aP1; /*0x6b83b0*/
   LOBYTE(this->vtable4) = 1; /*0x6b83b3*/
   BYTE1(this->IsAllocated) = 0; /*0x6b83b7*/
@@ -621,11 +621,11 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
   {
     if ( aP2 ) /*0x6b83c9*/
     {
-      this->vtable2 = (void *)aP2; /*0x6b83cb*/
+      this->vfptr1 = (void *)aP2; /*0x6b83cb*/
     }
     else
     {
-      this->vtable2 = __2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
+      this->vfptr1 = __2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
       (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x6b83df*/
     }
   }

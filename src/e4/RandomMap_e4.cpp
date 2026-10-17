@@ -82,7 +82,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2, void *a2_1)
   (*(this->q018 + (sizeof(this->q018) - 1))) = 1; /*0x58bfc4*/
   this->q01C = 0; /*0x58bfc7*/
   this->q020 = 0; /*0x58bfca*/
-  (this->u32_24) = 0; /*0x58bfcd*/
+  (this->RandomMap_field_0x24) = 0; /*0x58bfcd*/
   this->u32_2C = 0; /*0x58bfd0*/
   this->ptr_30 = 0; /*0x58bfd3*/
   (this->__pad_034) = 1; /*0x58bfd6*/

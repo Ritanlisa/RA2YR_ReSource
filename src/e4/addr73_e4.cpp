@@ -1041,7 +1041,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
     }
     LABEL_42:
     if ( v11 ) /*0x73355f*/
-      (**(void (***)(DynamicVector *, int))v11->vtable1)(v11, 1); /*0x733567*/
+      (**(void (***)(DynamicVector *, int))v11->__pad_0)(v11, 1); /*0x733567*/
     FillUnitTooltipUI(Destination, StringCSF); /*0x73356f*/
     v16 = 3; /*0x73357a*/
     if ( dword_A83D4C ) /*0x733584*/

@@ -130,10 +130,10 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
 {
 
 
-  aP1->__pad_004 = 0; /*0x658ded*/
+  aP1->RadarHashVector_field_0x04 = 0; /*0x658ded*/
   aP1->q008 = (int)(aP2); /*0x658df0*/
-  LOBYTE(aP1->u32_C) = 1; /*0x658df3*/
-  BYTE1(aP1->u32_C) = 0; /*0x658df7*/
+  LOBYTE(aP1->RadarHashVector_field_0x0C) = 1; /*0x658df3*/
+  BYTE1(aP1->RadarHashVector_field_0x0C) = 0; /*0x658df7*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x658dfa) */
   if ( aP2 ) /*0x658e00*/
   {
@@ -187,10 +187,10 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
       BYTE1(aP1->RadarHashVector_field_0x0C) = 1; /*0x658e5a*/
     }
   }
-  *(unsigned int *)aP1->__pad_0 = &vt_DynamicVectorClassHashObject; /*0x658e5e*/
+  *(unsigned int *)&aP1->MapClass_field_0x0 = &vt_DynamicVectorClassHashObject; /*0x658e5e*/
   aP1->q014 = 10; /*0x658e64*/
   aP1->q010 = 0; /*0x658e6b*/
-  return (unsigned int *)(aP1->vtable1); /*0x658e70*/
+  return (unsigned int *)(aP1->MapClass_field_0x0); /*0x658e70*/
 
 }
 } // namespace gamemd

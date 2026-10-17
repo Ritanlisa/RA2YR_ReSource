@@ -175,7 +175,7 @@ LABEL_6:
             *(unsigned int *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(unsigned short *)&to.sa_data[8] = v28; /*0x7b14a6*/
           }
-          if ( sendto(this->u32_3F06C, &v7->u32_1C, v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
+          if ( sendto(this->u32_3F06C, &v7->__pad_14[8], v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
             && WSAGetLastError() != 10035 )
           {
             break; /*0x7b14da*/

@@ -427,18 +427,18 @@ int Power::FinalizeDrain(int a2, void *a2_1)
 
 
   void *Power_field_0x4; // eax
-  Power_field_0x4 = (void *)(this->q004); /*0x4a1c10*/
+  Power_field_0x4 = (void *)(this->Power_field_0x4); /*0x4a1c10*/
   if ( !Power_field_0x4 ) /*0x4a1c15*/
     this->a2 = 0; /*0x4a1c17*/
   this->q008 + (unsigned int)Power_field_0x4) = a2; /*0x4a1c1f*/
   int result; // eax
-  result = (int)this->q004 + 1; /*0x4a1c27*/
-  this->q004 = (int)((void *)result); /*0x4a1c29*/
+  result = (int)this->Power_field_0x4 + 1; /*0x4a1c27*/
+  this->Power_field_0x4 = (int)((void *)result); /*0x4a1c29*/
   if ( result == 4 ) /*0x4a1c2f*/
   {
-    (this->q00C) = ((this->q00C) & ~0xFF) | ((this->q004) & 0xFF); /*0x4a1c34*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((this->Power_field_0x4) & 0xFF); /*0x4a1c34*/
     char *i; // eax
-    for ( i = (char *)this->q004 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
+    for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
       i[(unsigned int)&this->q020] = (char)this->a2; /*0x4a1c42*/
     a2 = (int)this->a2; /*0x4a1c50*/
     int *p_Power_field_0x8 = &a2; // esi /*0x4a1c57*/
@@ -454,7 +454,7 @@ int Power::FinalizeDrain(int a2, void *a2_1)
     while ( v7 ); /*0x4a1c7e*/
     result = ~v6; /*0x4a1c80*/
     this->Fla_ph = (void *)(result); /*0x4a1c83*/
-    this->q004 = 0; /*0x4a1c85*/
+    this->Power_field_0x4 = 0; /*0x4a1c85*/
   }
   return result; /*0x4a1c8e*/
 
