@@ -279,26 +279,28 @@ int TagTypeClass::GetAuxField()
 namespace gamemd {
 TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(char *Source)
 {
+
   int v2; // esi
   TriggerTypeClass *v3; // eax
 
   if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x727abc*/
     return 0; /*0x727b1f*/
   v2 = 0; /*0x727acd*/
-  if ( *(int *)FootClass_Array.unknown_short_3C8 <= 0 ) /*0x727ad1*/
+  if ( dword_8B4188 <= 0 ) /*0x727ad1*/
   {
-    LABEL_6:
-    v3 = (TriggerTypeClass *)operator new(0xB4u); /*0x727af6*/
+LABEL_6:
+    v3 = (TriggerTypeClass *)__2_YAPAXI_Z(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
-      return ((char *)(v3))->Construct(Source); /*0x727b11*/
+      return TriggerTypeClass::Construct(v3, Source); /*0x727b11*/
     return 0; /*0x727b05*/
   }
-  while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.targetLaserTimer[0] + 4 * v2) + 36), Source) ) /*0x727aea*/
+  while ( _strcmpi((const void *)(*((unsigned int *)dword_8B417C + v2) + 36), Source) ) /*0x727aea*/
   {
-    if ( ++v2 >= *(int *)FootClass_Array.unknown_short_3C8 ) /*0x727af4*/
+    if ( ++v2 >= dword_8B4188 ) /*0x727af4*/
       goto LABEL_6; /*0x727af4*/
   }
-  return *(unsigned int **)(FootClass_Array.targetLaserTimer[0] + 4 * v2); /*0x727b0f*/
+  return (unsigned int *)*((unsigned int *)dword_8B417C + v2); /*0x727b0f*/
+
 }
 }
 // 0x6E63A0

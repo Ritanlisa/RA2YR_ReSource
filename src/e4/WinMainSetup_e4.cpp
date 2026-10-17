@@ -25,8 +25,10 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 {
 
-  uint8_t result = g_DDraw_Force3D; // al /*0x6bb8e0*/
+  unsigned __int8 result; // al
   DDraw *v2; // [esp+0h] [ebp-4h]
+
+  result = g_DDraw_Force3D; /*0x6bb8e0*/
   if ( g_DDraw_Force3D ) /*0x6bb8ea*/
     result = DDraw::CleanupSurfaces(v2); /*0x6bb8ec*/
   if ( !byte_B0BCF5 ) /*0x6bb8f7*/
@@ -43,12 +45,12 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
     }
     if ( DSurface_Tile ) /*0x6bb931*/
     {
-      (*(void (**)(DSurface *, int))DSurface_Tile)(DSurface_Tile, 1); /*0x6bb937*/
+      (*(void (**)(DSurface *, int))DSurface_Tile->DSurface_field_0x0)(DSurface_Tile, 1); /*0x6bb937*/
       DSurface_Tile = 0; /*0x6bb939*/
     }
     if ( DSurface_Sidebar ) /*0x6bb947*/
     {
-      (*(void (**)(DSurface *, int))DSurface_Sidebar)(DSurface_Sidebar, 1); /*0x6bb94d*/
+      (*(void (**)(DSurface *, int))DSurface_Sidebar->DSurface_field_0x0)(DSurface_Sidebar, 1); /*0x6bb94d*/
       DSurface_Sidebar = 0; /*0x6bb94f*/
     }
     if ( DSurface_Composite ) /*0x6bb95d*/
@@ -58,13 +60,14 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
     }
     if ( g_DSurface_Primary ) /*0x6bb973*/
     {
-      (*(void (**)(DSurface *, int))g_DSurface_Primary)(g_DSurface_Primary, 1); /*0x6bb979*/
+      (*(void (**)(DSurface *, int))g_DSurface_Primary->DSurface_field_0x0)(g_DSurface_Primary, 1); /*0x6bb979*/
       g_DSurface_Primary = 0; /*0x6bb97b*/
     }
-    result = (uint8_t)sub_4A44F0((ObjectClass *)v2); /*0x6bb981*/
+    result = (unsigned __int8)sub_4A44F0((ObjectClass *)v2); /*0x6bb981*/
     byte_B0BCF5 = 1; /*0x6bb986*/
   }
-  return (gamemd::AbstractClass **)(result);
+  return result; /*0x6bb98d*/
+
 }
 }  // G42.18 ns repair
 // 0x72B130

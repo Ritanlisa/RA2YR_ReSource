@@ -25,36 +25,38 @@ namespace gamemd {  // G42.18 ns repair
 int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
 {
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)a2_2))->ProcessPower((int *)(a2_2)); /*0x549b79*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 165)); /*0x549b87*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 166)); /*0x549b95*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 167)); /*0x549ba3*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 168)); /*0x549bb1*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 173)); /*0x549bbf*/
   int v3; // eax
-  v3 = *((unsigned int *)a2_2 + 175); /*0x549bc4*/
+  int v4; // eax
+  unsigned __int8 *v5; // edx
+  unsigned __int8 *v6; // eax
+
+  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x549b79*/
+  Power::TimerProcess(this->u32_294); /*0x549b87*/
+  Power::TimerProcess(this->u32_298); /*0x549b95*/
+  Power::TimerProcess(this->u32_29C); /*0x549ba3*/
+  Power::TimerProcess(this->u32_2A0); /*0x549bb1*/
+  Power::TimerProcess(this->u32_2B4); /*0x549bbf*/
+  v3 = this->u32_2BC; /*0x549bc4*/
   if ( v3 ) /*0x549bcc*/
   {
-    int v4; // eax
-    v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
+    v4 = (*(int (**)(int))(*(unsigned int *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
     Power::TimerProcess(v4); /*0x549bdb*/
   }
-  Power::TimerProcess(*((unsigned int *)a2_2 + 176)); /*0x549be9*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 177)); /*0x549bf7*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 181)); /*0x549c05*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 182)); /*0x549c13*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 183)); /*0x549c21*/
-  int v5; // edx
-  (*((unsigned char *)&(v5))) = *((unsigned char *)a2_2 + 736); /*0x549c26*/
-  int v6; // eax
-  v6 = ((Power *)a2_2)->FlagProcess(v5); /*0x549c2f*/
-  (*((unsigned char *)&(v6))) = *((unsigned char *)a2_2 + 737); /*0x549c34*/
-  ((Power *)a2_2)->FlagProcess(v6); /*0x549c3d*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 185)); /*0x549c4b*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 186)); /*0x549c59*/
-  Power::TimerProcess(*((unsigned int *)a2_2 + 187)); /*0x549c67*/
-  return Power::TimerProcess(*((unsigned int *)a2_2 + 188)); /*0x549c7a*/
-}  // G42.18 ns repair
+  Power::TimerProcess(this->u32_2C0); /*0x549be9*/
+  Power::TimerProcess(this->u32_2C4); /*0x549bf7*/
+  Power::TimerProcess(this->u32_2D4); /*0x549c05*/
+  Power::TimerProcess(this->u32_2D8); /*0x549c13*/
+  Power::TimerProcess(this->u32_2DC); /*0x549c21*/
+  LOBYTE(v5) = this->u32_2E0; /*0x549c26*/
+  v6 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v5); /*0x549c2f*/
+  LOBYTE(v6) = this->u32_2E1; /*0x549c34*/
+  Power::FlagProcess((Power *)a2, (int)v6); /*0x549c3d*/
+  Power::TimerProcess(this->u32_2E4); /*0x549c4b*/
+  Power::TimerProcess(this->u32_2E8); /*0x549c59*/
+  Power::TimerProcess(this->u32_2EC); /*0x549c67*/
+  return Power::TimerProcess(this->u32_2F0); /*0x549c7a*/
+
+}
 } // namespace gamemd
 // 0x549C80
 namespace gamemd {

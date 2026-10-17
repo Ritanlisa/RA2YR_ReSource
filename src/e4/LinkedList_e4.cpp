@@ -67,12 +67,12 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
   Debug::Log(); /*0x479208*/
   if ( v5->u32_4 == -1 ) /*0x479216*/
   {
-    v6 = dword_A83D14; /*0x479218*/
-    if ( dword_A83D14 == -1 ) /*0x479220*/
-      v6 = dword_A83D18; /*0x479222*/
+    v6 = MEMORY[0xA83D14]; /*0x479218*/
+    if ( MEMORY[0xA83D14] == -1 ) /*0x479220*/
+      v6 = MEMORY[0xA83D18]; /*0x479222*/
     v5->u32_4 = v6; /*0x479227*/
   }
-  ((Theme *)&unk_A83D10)->Stop(0); /*0x479232*/
+  Theme::Stop((Theme *)&MEMORY[0xA83D10], 0); /*0x479232*/
   if ( g_MixFile_MOVIES ) /*0x47923e*/
   {
     Debug::Log(); /*0x479249*/
@@ -123,20 +123,20 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
     dword_884E34 = 0; /*0x479381*/
   }
   if ( !Map_Load_751C30() ) /*0x479387*/
-    return (gamemd::AbstractClass **)(1); /*0x47939b*/
+    return 1; /*0x47939b*/
   v8 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
   if ( v8 ) /*0x4793aa*/
-    v9 = (v8)->FromFile(aMainMix, (int)dword_886980); /*0x4793b8*/
+    v9 = MixFileClass::FromFile(v8, aMainMix, (int)dword_886980); /*0x4793b8*/
   else
     v9 = 0; /*0x4793bf*/
   dword_884E34 = (int)v9; /*0x4793c1*/
   Debug::Log(); /*0x4793cf*/
-  v10 = (char *)a2 + 1; /*0x4793d4*/
-  sprintf(Buffer, "MAPSMD%02d.MIX", &a2->AbstractClass_1); /*0x4793e7*/
+  v10 = &this->u8_1; /*0x4793d4*/
+  sprintf(Buffer, "MAPSMD%02d.MIX", &this->u8_1); /*0x4793e7*/
   Debug::Log(); /*0x4793f6*/
   v11 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
   if ( v11 ) /*0x479407*/
-    g_MixFile_MAPSMDFirst = (int)(v11)->FromFile(Buffer, (int)dword_886980); /*0x47941a*/
+    g_MixFile_MAPSMDFirst = (int)MixFileClass::FromFile(v11, Buffer, (int)dword_886980); /*0x47941a*/
   else
     g_MixFile_MAPSMDFirst = 0; /*0x479421*/
   sprintf(Buffer, "MAPS%02d.MIX", v10); /*0x479432*/
@@ -145,17 +145,17 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
   if ( !v12 ) /*0x479452*/
   {
     g_MixFile_MAPSFirst = 0; /*0x479489*/
-    LABEL_61:
+LABEL_61:
     Debug::Log(); /*0x479664*/
     return 0; /*0x47967c*/
   }
-  g_MixFile_MAPSFirst = (int)(v12)->FromFile(Buffer, (int)dword_886980); /*0x479467*/
+  g_MixFile_MAPSFirst = (int)MixFileClass::FromFile(v12, Buffer, (int)dword_886980); /*0x479467*/
   if ( !g_MixFile_MAPSFirst ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
   Debug::Log(); /*0x479496*/
   v13 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
   if ( v13 ) /*0x4794a7*/
-    g_MixFile_MULTIMD = (int)(v13)->FromFile(g_Str_File_MULTIMD_MIX, (int)dword_886980); /*0x4794ba*/
+    g_MixFile_MULTIMD = (int)MixFileClass::FromFile(v13, g_Str_File_MULTIMD_MIX, (int)dword_886980); /*0x4794ba*/
   else
     g_MixFile_MULTIMD = 0; /*0x4794c1*/
   Debug::Log(); /*0x4794cc*/
@@ -165,23 +165,23 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
     MixFileClass_MULTI = 0; /*0x479514*/
     goto LABEL_61; /*0x47951a*/
   }
-  MixFileClass_MULTI = (int)(v14)->FromFile(aMultiMix, (int)dword_886980); /*0x4794f2*/
+  MixFileClass_MULTI = (int)MixFileClass::FromFile(v14, aMultiMix, (int)dword_886980); /*0x4794f2*/
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v24, g_Str_File_THEMEMD_MIX); /*0x479526*/
   v16 = v15->vt_slot_20(0, a2); /*0x47953f*/
-  v24.? = (int)&vt_CCFileClass; /*0x479541*/
+  v24.FilePointer = (int)&CCFileClass::`vftable'; /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/
-  v24.? = (int)&off_7E1668; /*0x47955a*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v24.?); /*0x47955e*/
+  v24.FilePointer = (int)&off_7E1668; /*0x47955a*/
+  BufferIOFileClass::Dtor((BufferIOFileClass *)&v24.FilePointer); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
   {
     Debug::Log(); /*0x47956c*/
     v17 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x479573*/
     if ( v17 ) /*0x47957d*/
     {
-      g_MixFile_THEME = (int)(v17)->FromFile(g_Str_File_THEMEMD_MIX, (int)dword_886980); /*0x479590*/
+      g_MixFile_THEME = (int)MixFileClass::FromFile(v17, g_Str_File_THEMEMD_MIX, (int)dword_886980); /*0x479590*/
       goto LABEL_58; /*0x479595*/
     }
   }
@@ -191,28 +191,28 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
     v18 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
     if ( v18 ) /*0x4795a8*/
     {
-      g_MixFile_THEME = (int)(v18)->FromFile(g_Str_File_THEME_MIX, (int)dword_886980); /*0x4795bb*/
+      g_MixFile_THEME = (int)MixFileClass::FromFile(v18, g_Str_File_THEME_MIX, (int)dword_886980); /*0x4795bb*/
       goto LABEL_58; /*0x4795c0*/
     }
   }
   g_MixFile_THEME = 0; /*0x4795c2*/
-  LABEL_58:
-  Audio::LoadWAVFiles((Audio *)&unk_A83D10); /*0x4795c8*/
-  sprintf(Source, "MOVMD%02d.MIX", aP0); /*0x4795e4*/
-  v19 = CCFileClass::Construct((CCFileClass *)&v24.?, Source); /*0x4795f5*/
+LABEL_58:
+  Audio::LoadWAVFiles((Audio *)&MEMORY[0xA83D10]); /*0x4795c8*/
+  sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
+  v19 = CCFileClass::Construct((CCFileClass *)&v24.FilePointer, Source); /*0x4795f5*/
   v20 = v19->vt_slot_20(0); /*0x479609*/
-  *(unsigned int *)v24.CDFileClass = &vt_CCFileClass; /*0x47960b*/
+  *(unsigned int *)v24.__tail_0 = &CCFileClass::`vftable'; /*0x47960b*/
   v27 = 0; /*0x47960f*/
   Vector::Clear((int)&v25); /*0x479616*/
-  *(unsigned int *)v24.CDFileClass = &off_7E1668; /*0x47961f*/
-  ((BufferIOFileClass *)&v24)->Dtor(); /*0x479623*/
+  *(unsigned int *)v24.__tail_0 = &off_7E1668; /*0x47961f*/
+  BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x479623*/
   if ( v20 ) /*0x47962b*/
   {
     Debug::Log(); /*0x479637*/
     v21 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47963e*/
     if ( v21 ) /*0x479648*/
       goto LABEL_60; /*0x479648*/
-    LABEL_63:
+LABEL_63:
     g_MixFile_MOVIES = 0; /*0x4796bf*/
     goto LABEL_61; /*0x4796c5*/
   }
@@ -221,11 +221,11 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
   v21 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4796a7*/
   if ( !v21 ) /*0x4796b1*/
     goto LABEL_63; /*0x4796b1*/
-  LABEL_60:
-  g_MixFile_MOVIES = (int)(v21)->FromFile(Buffer, (int)dword_886980); /*0x47964a*/
+LABEL_60:
+  g_MixFile_MOVIES = (int)MixFileClass::FromFile(v21, Buffer, (int)dword_886980); /*0x47964a*/
   if ( !g_MixFile_MOVIES ) /*0x479662*/
     goto LABEL_61; /*0x479662*/
-  return (gamemd::AbstractClass **)(Map_Load_751C30()); /*0x479390*/
+  return Map_Load_751C30(); /*0x479390*/
 
 }
 } // namespace gamemd
@@ -371,27 +371,30 @@ namespace gamemd {
 void LinkedList_flat::RelinkNode(int a2)
 {
 
+  unsigned int v3; // ecx
+  unsigned int *v4; // eax
+
   if ( this->u32_18 != a2 ) /*0x632d1b*/
   {
     if ( a2 ) /*0x632d1f*/
     {
-      int v3; // ecx
-      v3 = *(unsigned int *)(a2 + 8); /*0x632d21*/
+      v3 = a2[2]; /*0x632d21*/
       if ( v3 ) /*0x632d26*/
       {
-        (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 12))(v3, 0); /*0x632d2c*/
-        *(unsigned int *)(a2 + 8) = 0; /*0x632d2f*/
+        (*(void (**)(unsigned int, unsigned int))(*(unsigned int *)v3 + 12))(v3, 0); /*0x632d2c*/
+        a2[2] = 0; /*0x632d2f*/
       }
     }
-    int v4 = this->u32_18; // eax /*0x632d36*/
+    v4 = this->u32_18; /*0x632d36*/
     if ( v4 ) /*0x632d3b*/
-      *(unsigned int *)(v4 + 8) = 0; /*0x632d3d*/
+      v4[2] = 0; /*0x632d3d*/
     this->u32_18 = a2; /*0x632d46*/
     if ( a2 ) /*0x632d49*/
-      *(unsigned int *)(a2 + 8) = this->u32_4 + 1); /*0x632d4e*/
-    this->u32_1C = (unsigned int)(this); /*0x632d54*/
-    this->u32_4 = this->u32_4 + 1); /*0x632d57*/
+      a2[2] = (unsigned int)(&this->q014); /*0x632d4e*/
+    this->u32_1C = (unsigned int *)this; /*0x632d54*/
+    this->u32_4 = &this->q014; /*0x632d57*/
   }
+
 }
 } // namespace gamemd
 // 0x6E5380

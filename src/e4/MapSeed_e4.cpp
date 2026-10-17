@@ -117,10 +117,11 @@ int MapSeed::CheckName(void *a1)
 namespace gamemd {
 AbstractClass * * MapSeed::InsertName()
 {
+
   int v2; // eax
   int v3; // esi
   String *v4; // ecx
-  int v5; // eax
+  int StringVector_field_0x10; // eax
   int v6; // esi
   String *v7; // ecx
   int v8; // eax
@@ -129,113 +130,108 @@ AbstractClass * * MapSeed::InsertName()
   const char *v11; // [esp+8h] [ebp-70h] BYREF
   char v12[108]; // [esp+Ch] [ebp-6Ch] BYREF
 
-  if ( (uint8_t)MapSeed::CheckName(this) ) /*0x79c656*/
+  if ( (unsigned __int8)MapSeed::CheckName(this) ) /*0x79c656*/
   {
     String::AssignFromPtr((String *)&v11, (const char **)this); /*0x79c668*/
-    v2 = *(unsigned int *)g_WindowManager; /*0x79c66d*/
-    v3 = *(unsigned int *)g_WindowManager; /*0x79c672*/
-    if ( *(int *)g_WindowManager >= (int)DataGlobal_B73AAC ) /*0x79c67e*/
+    v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c66d*/
+    v3 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c672*/
+    if ( *(int *)g_WindowManager.__pad_0 >= dword_B73AAC ) /*0x79c67e*/
     {
-      ((DynamicVector *)&g_WindowManager)->EnsureCapacity(); /*0x79c685*/
-      v2 = *(unsigned int *)g_WindowManager; /*0x79c68a*/
+      DynamicVector::EnsureCapacity((DynamicVector *)&g_WindowManager); /*0x79c685*/
+      v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c68a*/
     }
-    if ( v2 >= (int)DataGlobal_B73AAC ) /*0x79c695*/
+    if ( v2 >= dword_B73AAC ) /*0x79c695*/
     {
-      ((DynamicVector *)&g_WindowManager)->EnsureCapacity(); /*0x79c69c*/
-      v2 = *(unsigned int *)g_WindowManager; /*0x79c6a1*/
+      DynamicVector::EnsureCapacity((DynamicVector *)&g_WindowManager); /*0x79c69c*/
+      v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6a1*/
     }
     if ( v3 < v2 ) /*0x79c6a8*/
     {
-      memcpy( /*0x79c6c5*/
-        (void *)(*(unsigned int *)g_WOL_LoginQueue + 4 * v3 + 4),
-        (const void *)(*(unsigned int *)g_WOL_LoginQueue + 4 * v3),
-        4 * (v2 + 0x3FFFFFFF * v3));
-      v2 = *(unsigned int *)g_WindowManager; /*0x79c6ca*/
+      memcpy((char *)dword_B73AB0 + 4 * v3 + 4, (char *)dword_B73AB0 + 4 * v3, 4 * (v2 + 0x3FFFFFFF * v3)); /*0x79c6c5*/
+      v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6ca*/
     }
-    v4 = (String *)(*(unsigned int *)g_WOL_LoginQueue + 4 * v3); /*0x79c6d8*/
+    v4 = (String *)((char *)dword_B73AB0 + 4 * v3); /*0x79c6d8*/
     if ( v4 ) /*0x79c6dd*/
     {
       String::AssignFromPtr(v4, &v11); /*0x79c6e4*/
-      v2 = *(unsigned int *)g_WindowManager; /*0x79c6e9*/
+      v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6e9*/
     }
-    *(unsigned int *)g_WindowManager = v2 + 1; /*0x79c6ef*/
-    v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c6f4*/
-    v6 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c6f9*/
-    if ( *(int *)&stru_B76900.needsRedraw >= *(int *)&stru_B76900.hasParachute ) /*0x79c705*/
+    *(unsigned int *)g_WindowManager.__pad_0 = v2 + 1; /*0x79c6ef*/
+    StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c6f4*/
+    v6 = stru_B76970.StringVector_field_0x10; /*0x79c6f9*/
+    if ( stru_B76970.StringVector_field_0x10 >= stru_B76970.StringVector_field_0x14 ) /*0x79c705*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76900.needsRedraw); /*0x79c70c*/
-      v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c711*/
+      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76970.StringVector_field_0x10); /*0x79c70c*/
+      StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c711*/
     }
-    if ( v5 >= *(int *)&stru_B76900.hasParachute ) /*0x79c71c*/
+    if ( StringVector_field_0x10 >= stru_B76970.StringVector_field_0x14 ) /*0x79c71c*/
     {
-      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76900.needsRedraw); /*0x79c723*/
-      v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c728*/
+      DynamicVector::EnsureCapacity((DynamicVector *)&stru_B76970.StringVector_field_0x10); /*0x79c723*/
+      StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c728*/
     }
-    if ( v6 < v5 ) /*0x79c72f*/
+    if ( v6 < StringVector_field_0x10 ) /*0x79c72f*/
     {
       memcpy( /*0x79c74c*/
-        &stru_B76900.parachute->AnimClass_field_0x4 + v6,
-        &stru_B76900.parachute->AnimClass_field_0x0 + v6,
-        4 * (v5 + 0x3FFFFFFF * v6));
-      v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c751*/
+        (void *)(stru_B76970.StringVector_field_0x18 + 4 * v6 + 4),
+        (const void *)(stru_B76970.StringVector_field_0x18 + 4 * v6),
+        4 * (StringVector_field_0x10 + 0x3FFFFFFF * v6));
+      StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c751*/
     }
-    v7 = (String *)(&stru_B76900.parachute->AnimClass_field_0x0 + v6); /*0x79c75f*/
+    v7 = (String *)(stru_B76970.StringVector_field_0x18 + 4 * v6); /*0x79c75f*/
     if ( v7 ) /*0x79c764*/
     {
       String::AssignFromPtr(v7, &v11); /*0x79c76b*/
-      v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c770*/
+      StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c770*/
     }
-    *(unsigned int *)&stru_B76900.needsRedraw = v5 + 1; /*0x79c776*/
-    v8 = *(unsigned int *)g_WOL_BuddyList; /*0x79c77b*/
-    v9 = *(unsigned int *)g_WOL_BuddyList; /*0x79c780*/
-    if ( *(int *)g_WOL_BuddyList >= *(int *)&DataGlobal_B779B4 ) /*0x79c78c*/
+    stru_B76970.StringVector_field_0x10 = StringVector_field_0x10 + 1; /*0x79c776*/
+    v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c77b*/
+    v9 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c780*/
+    if ( *(int *)g_WOL_BuddyList.__pad_0 >= dword_B779B4 ) /*0x79c78c*/
     {
-      (&g_WOL_BuddyList)->EnsureCapacity(); /*0x79c793*/
-      v8 = *(unsigned int *)g_WOL_BuddyList; /*0x79c798*/
+      DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x79c793*/
+      v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c798*/
     }
-    if ( v8 >= *(int *)&DataGlobal_B779B4 ) /*0x79c7a3*/
+    if ( v8 >= dword_B779B4 ) /*0x79c7a3*/
     {
-      (&g_WOL_BuddyList)->EnsureCapacity(); /*0x79c7aa*/
-      v8 = *(unsigned int *)g_WOL_BuddyList; /*0x79c7af*/
+      DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x79c7aa*/
+      v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7af*/
     }
     if ( v9 < v8 ) /*0x79c7b6*/
     {
-      memcpy( /*0x79c7d3*/
-        (void *)(g_WOL_ChannelMgr + 4 * v9 + 4),
-        (const void *)(g_WOL_ChannelMgr + 4 * v9),
-        4 * (v8 + 0x3FFFFFFF * v9));
-      v8 = *(unsigned int *)g_WOL_BuddyList; /*0x79c7d8*/
+      memcpy(&dword_B779B8[v9 + 1], &dword_B779B8[v9], 4 * (v8 + 0x3FFFFFFF * v9)); /*0x79c7d3*/
+      v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7d8*/
     }
-    v10 = (String *)(g_WOL_ChannelMgr + 4 * v9); /*0x79c7e6*/
+    v10 = (String *)&dword_B779B8[v9]; /*0x79c7e6*/
     if ( v10 ) /*0x79c7eb*/
     {
       String::AssignFromPtr(v10, &v11); /*0x79c7f2*/
-      v8 = *(unsigned int *)g_WOL_BuddyList; /*0x79c7f7*/
+      v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7f7*/
     }
-    *(unsigned int *)g_WOL_BuddyList = v8 + 1; /*0x79c802*/
-    if ( ((String *)&g_WOL_AuthObject)->Length() ) /*0x79c807*/
+    *(unsigned int *)g_WOL_BuddyList.__pad_0 = v8 + 1; /*0x79c802*/
+    if ( String::Length((String *)&unk_B73ACC) ) /*0x79c807*/
     {
-      if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_ParseState) < 5 ) /*0x79c825*/
+      if ( (unsigned int)(time(0) - dword_B779D0) < 5 ) /*0x79c825*/
       {
-        LABEL_33:
+LABEL_33:
         DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
         return; /*0x79c8bb*/
       }
-      ((DeleteAndZero *)&g_WOL_AuthObject)->Alt2(); /*0x79c830*/
+      DeleteAndZero::Alt2((DeleteAndZero *)&unk_B73ACC); /*0x79c830*/
     }
-    if ( *(unsigned int *)&stru_B76900.needsRedraw ) /*0x79c83c*/
+    if ( stru_B76970.StringVector_field_0x10 ) /*0x79c83c*/
     {
-      if ( *(int *)&stru_B76900.needsRedraw > 0 ) /*0x79c83e*/
+      if ( stru_B76970.StringVector_field_0x10 > 0 ) /*0x79c83e*/
       {
-        ((String *)((String *)&g_WOL_AuthObject))->Reassign((const char **)stru_B76900.parachute); /*0x79c84b*/
-        DynamicArray::Remove((DynamicArray *)&stru_B76900.needsRedraw, 0); /*0x79c857*/
+        String::Reassign((String *)&unk_B73ACC, (const char **)stru_B76970.StringVector_field_0x18); /*0x79c84b*/
+        DynamicArray::Remove((DynamicArray *)&stru_B76970.StringVector_field_0x10, 0); /*0x79c857*/
       }
-      *(unsigned int *)g_WOL_ParseState = time(0); /*0x79c864*/
+      dword_B779D0 = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/
-      strcpy(&v12[36], ((String *)((String *)&g_WOL_AuthObject))->GetOrEmpty()); /*0x79c8a1*/
-      (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v12); /*0x79c8b3*/
+      strcpy(&v12[36], String::GetOrEmpty((String *)&unk_B73ACC)); /*0x79c8a1*/
+      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v12); /*0x79c8b3*/
     }
     goto LABEL_33; /*0x79c8b3*/
   }
+
 }
 } // namespace gamemd

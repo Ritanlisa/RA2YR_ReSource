@@ -81,78 +81,104 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 namespace gamemd {
 int SaveInfantryToINI(void * a1, void * a2, void * a3)
 {
-  void * v7;
-  HouseClass *owner; // ebp
-  int v9; // ebx
-  int isRecruitableByEnemy; // edx
-  int isRecruitableByAlly; // eax
+
+  int *v3; // ecx
+  double v4; // st7
+  int result; // eax
+  BuildingClass *v6; // esi
+  unsigned int v7; // edi
+  int owner; // ebp
+  const char *v9; // ebx
+  int v10; // edx
+  int v11; // eax
   int v12; // eax
-  int v13; // eax
-  int v14; // eax
+  __int16 *v13; // eax
+  unsigned __int16 *v14; // eax
   int v15; // [esp-34h] [ebp-F0h]
-  char *v16; // [esp-20h] [ebp-DCh]
+  int v16; // [esp-30h] [ebp-ECh]
+  int v17; // [esp-2Ch] [ebp-E8h]
+  const char *v18; // [esp-28h] [ebp-E4h]
+  int v19; // [esp-24h] [ebp-E0h]
+  char *v20; // [esp-20h] [ebp-DCh]
+  const char *v21; // [esp-20h] [ebp-DCh]
+  int v22; // [esp-1Ch] [ebp-D8h]
+  int v23; // [esp-18h] [ebp-D4h]
   int Field; // [esp-14h] [ebp-D0h]
+  int v25; // [esp-14h] [ebp-D0h]
   int controlGroup; // [esp-10h] [ebp-CCh]
-  int onBridge; // [esp-Ch] [ebp-C8h]
+  int v27; // [esp-10h] [ebp-CCh]
+  int v28; // [esp-Ch] [ebp-C8h]
+  int v29; // [esp-Ch] [ebp-C8h]
   int i; // [esp+8h] [ebp-B4h]
   char *queuedMission; // [esp+14h] [ebp-A8h]
-  Input v24; // [esp+20h] [ebp-9Ch] BYREF
-  int v25; // [esp+24h] [ebp-98h]
-  int v26; // [esp+28h] [ebp-94h]
-  int v27; // [esp+2Ch] [ebp-90h] BYREF
+  Input v34; // [esp+20h] [ebp-9Ch] BYREF
+  int v35; // [esp+24h] [ebp-98h]
+  int v36; // [esp+28h] [ebp-94h]
+  int v37; // [esp+2Ch] [ebp-90h] BYREF
   char Buffer[12]; // [esp+30h] [ebp-8Ch] BYREF
   char Source[128]; // [esp+3Ch] [ebp-80h] BYREF
 
-  int *v3; // ecx
-  INIClass::ClearSection(v3, (int)&g_INI_Key_Special.SidebarImage, 0); /*0x51ff02*/
-  int result = 0; // eax /*0x51ff0d*/
-  for ( i = 0; result < *(int *)&g_BuildingClass_Count; i = result ) /*0x51ff15*/
+  INIClass::ClearSection(v3, (int)aInfantry_0, 0); /*0x51ff02*/
+  result = 0; /*0x51ff0d*/
+  for ( i = 0; result < dword_A83DF8; i = result ) /*0x51ff15*/
   {
-    BuildingClass *v6; // esi
-    v6 = *(BuildingClass **)(*(unsigned int *)&g_InfantryClassLimit + 4 * result); /*0x51ff25*/
-    if ( !v6->inLimbo ) /*0x51ff28*/
+    v6 = (BuildingClass *)*((unsigned int *)dword_A83DEC + result); /*0x51ff25*/
+    if ( !v6->inLimbo[0] ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
-      if ( (*((int (**)(BuildingClass *, int, int))v6->vfptr + 97))(v6, a2, a3) == -1 ) /*0x51ff71*/
+      if ( (*(int (**)(BuildingClass *, int, int))(v6->vfptr + 388))(v6, a2, a3) == -1 ) /*0x51ff71*/
         queuedMission = (char *)v6->queuedMission; /*0x51ff79*/
       else
-        queuedMission = (char *)(*((int (**)(BuildingClass *))v6->vfptr + 97))(v6); /*0x51ff89*/
-      v7 = (unsigned int *)((unsigned int)(*(unsigned int *)(ProgressTimer)::GetValue((ProgressTimer *)v6->primaryFacing, &v27))); /*0x51ff9d*/
-      owner = (gamemd::HouseClass *)(v6->owner); /*0x51ffab*/
-      v9 = *&v6->q6C0 + 36; /*0x51ffb3*/
-      v24.Input_field_00 = v6->location[0]; /*0x51ffb6*/
-      isRecruitableByEnemy = (uint8_t)v6->isRecruitableByEnemy; /*0x51ffbf*/
-      v25 = v6->location[1]; /*0x51ffc5*/
-      isRecruitableByAlly = (uint8_t)v6->isRecruitableByAlly; /*0x51ffce*/
-      v26 = v6->location[2]; /*0x51ffd4*/
-      a3 = (void *)(isRecruitableByEnemy); /*0x51ffe0*/
-      a2 = (void *)(isRecruitableByAlly); /*0x51ffe7*/
-      onBridge = (uint8_t)v6->onBridge; /*0x51ffec*/
-      controlGroup = (int)(v6->controlGroup); /*0x51ffef*/
-      Field = FootClass::GetField(v6->veterancy); /*0x52000b*/
-      v16 = FromNameIndex((int)queuedMission); /*0x52001b*/
-      v12 = (&v24)->OffsetToDirection(); /*0x52001c*/
-      v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->vfptr + 110))( /*0x52002b*/
-              v6,
-              Buffer,
-              v12,
-              v16,
-              (uint8_t)(((v7 >> 7) + 1) >> 1));
-      v15 = *(int16_t *)(*((int (**)(BuildingClass *, char *, unsigned int))v6->vfptr + 110))( /*0x520048*/
-                          v6,
-                          Buffer,
-                          *(int16_t *)(v13 + 2));
+        queuedMission = (char *)(*(int (**)(BuildingClass *))(v6->vfptr + 388))(v6); /*0x51ff89*/
+      v7 = *ProgressTimer::GetValue((ProgressTimer *)v6->primaryFacing, &v37); /*0x51ff9d*/
+      owner = v6->owner; /*0x51ffab*/
+      v9 = (const char *)(*&v6->q6C0 + 36); /*0x51ffb3*/
+      v34.Input_field_00 = v6->location[0]; /*0x51ffb6*/
+      v10 = (unsigned __int8)v6->isRecruitableByEnemy[0]; /*0x51ffbf*/
+      v35 = v6->location[1]; /*0x51ffc5*/
+      v11 = (unsigned __int8)v6->isRecruitableByAlly[0]; /*0x51ffce*/
+      v36 = v6->location[2]; /*0x51ffd4*/
+      a3 = v10; /*0x51ffe0*/
+      a2 = v11; /*0x51ffe7*/
+      v28 = (unsigned __int8)v6->onBridge[0]; /*0x51ffec*/
+      controlGroup = v6->controlGroup; /*0x51ffef*/
+      Field = FootClass::GetField(&v6->veterancy); /*0x52000b*/
+      v20 = FromNameIndex((int)queuedMission); /*0x52001b*/
+      v12 = Input::OffsetToDirection(&v34); /*0x52001c*/
+      v13 = (__int16 *)(*(int (**)(BuildingClass *, char *, int, char *, unsigned int))(v6->vfptr + 440))( /*0x52002b*/
+                         v6,
+                         Buffer,
+                         v12,
+                         v20,
+                         (unsigned __int8)(((v7 >> 7) + 1) >> 1));
+      v15 = *(__int16 *)(*(int (**)(BuildingClass *, char *, unsigned int))(v6->vfptr + 440))(v6, Buffer, v13[1]); /*0x520048*/
       BuildingClass::GetHealthRatio(v6); /*0x52004b*/
-      double v4; // st7
       v4 = v4 * 256.0; /*0x520050*/
-      (*((unsigned short *)&(v14))) = Math::RoundToInt(v4); /*0x520056*/
-      sprintf(Source,(const char *const )((const char *const)stru_825538.Type), &owner->plainName[4], v9, v14, v15); /*0x520068*/
-      ((uint8_t *)(queuedMission))->SetString((uint8_t *)&g_INI_Key_Special.SidebarImage, Buffer, Source); /*0x520085*/
+      LOWORD(v14) = Math::RoundToInt(v4); /*0x520056*/
+      sprintf( /*0x520068*/
+        Source,
+        "%s,%s,%d,%d,%d,%d,%s,%d,%s,%d,%d,%d,%d,%d",
+        (const char *)(owner + 90100),
+        v9,
+        v14,
+        v15,
+        v16,
+        v17,
+        v18,
+        v19,
+        v21,
+        v22,
+        v23,
+        v25,
+        v27,
+        v29);
+      INIClass::SetString(queuedMission, (unsigned __int8 *)aInfantry_0, Buffer, Source); /*0x520085*/
       result = i; /*0x52008a*/
     }
     ++result; /*0x520094*/
   }
   return result; /*0x5200a5*/
+
 }
 }
 // 0x510B00

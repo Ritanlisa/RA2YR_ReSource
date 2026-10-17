@@ -364,67 +364,70 @@ AbstractClass * * Options::Screen_Save(void *a1)
 namespace gamemd {
 char Options::Screen_Dialog()
 {
+
   HWND v0; // eax
   HWND v1; // esi
-  LONG dwNewLong; // [esp+14h] [ebp-8h] BYREF
-
+  int v2; // ecx
+  HWND v3; // eax
+  HWND v4; // esi
+  int v5; // ecx
   char v7; // [esp+13h] [ebp-9h]
-  v7 = byte_A8E9A0; /*0x55fc92*/
-  byte_A8E9A0 = 0; /*0x55fc96*/
+  LONG dwNewLong; // [esp+14h] [ebp-8h] BYREF
+  LONG v9; // [esp+18h] [ebp-4h] BYREF
+
+  v7 = MEMORY[0xA8E9A0]; /*0x55fc92*/
+  MEMORY[0xA8E9A0] = 0; /*0x55fc96*/
   while ( 1 ) /*0x55fd14*/
   {
     while ( 1 ) /*0x55fcca*/
     {
       do /*0x55fcca*/
       {
-        memcpy(&unk_ABCE70,(const void *)(dword_A8EB60), 0xB8u); /*0x55fcb1*/
+        qmemcpy(&unk_ABCE70, MEMORY[0xA8EB60], 0xB8u); /*0x55fcb1*/
         dwNewLong = -1; /*0x55fcbd*/
         v0 = (HWND)CreateDialog(0); /*0x55fcc1*/
         v1 = v0; /*0x55fcc6*/
       }
       while ( !v0 ); /*0x55fcca*/
       SetWindowLongA(v0, 8, (LONG)&dwNewLong); /*0x55fcd4*/
-      ((Dialog *)(v1))->Show(); /*0x55fcd8*/
+      Dialog::Show(v1); /*0x55fcd8*/
       while ( dwNewLong < 0 ) /*0x55fce3*/
       {
-        if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x55fcec*/
+        if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
-        int v2; // ecx
-        (*((unsigned char *)&(v2))) = 0; /*0x55fcee*/
+        LOBYTE(v2) = 0; /*0x55fcee*/
         ScreenSaver::Process(v2); /*0x55fcf0*/
       }
       Options::Screen_Save(v1); /*0x55fcff*/
-      ((Dialog *)(v1))->Destroy(); /*0x55fd06*/
+      Dialog::Destroy(v1); /*0x55fd06*/
       if ( dwNewLong != 1485 ) /*0x55fd14*/
         break; /*0x55fd14*/
-      LONG v9; // [esp+18h] [ebp-4h] BYREF
       v9 = -1; /*0x55fd2d*/
-      (&dword_A8B238)->LoadNetworkConfig(); /*0x55fd31*/
-      HWND v3; // eax
+      ScenarioClass::LoadNetworkConfig(&dword_A8B238); /*0x55fd31*/
       v3 = (HWND)CreateDialog(0); /*0x55fd42*/
-      HWND v4 = v3; // esi /*0x55fd47*/
+      v4 = v3; /*0x55fd47*/
       if ( v3 ) /*0x55fd4b*/
       {
         SetWindowLongA(v3, 8, (LONG)&v9); /*0x55fd59*/
-        ((Dialog *)(v4))->Show(); /*0x55fd5d*/
+        Dialog::Show(v4); /*0x55fd5d*/
         while ( v9 < 0 ) /*0x55fd68*/
         {
-          if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x55fd71*/
+          if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
-          int v5; // ecx
-          (*((unsigned char *)&(v5))) = 0; /*0x55fd73*/
+          LOBYTE(v5) = 0; /*0x55fd73*/
           ScreenSaver::Process(v5); /*0x55fd75*/
         }
-        ((Dialog *)(v4))->Destroy(); /*0x55fd84*/
+        Dialog::Destroy(v4); /*0x55fd84*/
       }
     }
     if ( dwNewLong != 1486 ) /*0x55fd1c*/
       break; /*0x55fd1c*/
-    ShowHotkeyOptionsDialog((void *)(dword_A8EB60)); /*0x55fd1e*/
+    ShowHotkeyOptionsDialog(MEMORY[0xA8EB60]); /*0x55fd1e*/
   }
-  ScenarioClass::SaveGameOptions(dword_A8EB60); /*0x55fd8e*/
-  byte_A8E9A0 = v7; /*0x55fd9a*/
+  ScenarioClass::SaveGameOptions(MEMORY[0xA8EB60]); /*0x55fd8e*/
+  MEMORY[0xA8E9A0] = v7; /*0x55fd9a*/
   return v7; /*0x55fd97*/
+
 }
 }
 // 0x6244E0
@@ -603,78 +606,85 @@ namespace gamemd {
 void * Options::RebuildDropdownList(ObjectClass * aP1)
 {
 
-  DeleteAndZero v19; // [esp+1Ch] [ebp-14h] BYREF
-
   unsigned int *v2; // ebp
-  v2 = (unsigned int *)(aP1); /*0x6255f5*/
   int *v3; // edi
+  int v4; // ebx
+  void **v5; // esi
+  int v6; // eax
+  int v7; // ebp
+  char *v8; // edi
+  int v9; // eax
+  int v10; // ebx
+  int v11; // ecx
+  int v12; // edi
+  int v13; // edi
+  Struct *v14; // ecx
+  int v16; // [esp+10h] [ebp-20h]
+  int v18; // [esp+18h] [ebp-18h] BYREF
+  DeleteAndZero v19; // [esp+1Ch] [ebp-14h] BYREF
+  int v20; // [esp+28h] [ebp-8h]
+  int v21; // [esp+2Ch] [ebp-4h]
+
+  v2 = aP1; /*0x6255f5*/
   v3 = (int *)this; /*0x6255fb*/
-  int v4 = 0; // ebx /*0x625600*/
-  *(unsigned int *)this->q000 = (unsigned int)(*aP1); /*0x625602*/
-  void **v5 = &this->field_8; // esi /*0x625607*/
-  this->field_4 = aP1->q004; /*0x62560a*/
+  v4 = 0; /*0x625600*/
+  *(unsigned int *)this->__pad_0 = *aP1; /*0x625602*/
+  v5 = &this->field_8; /*0x625607*/
+  this->field_4 = aP1->vtable2; /*0x62560a*/
   this->field_8 = 0; /*0x625615*/
   this->field_C = 0; /*0x625617*/
   this->field_10 = 0; /*0x62561a*/
   unknown_libname_74(&v19); /*0x62561d*/
-  unknown_libname_74(&v19.q004); /*0x625626*/
-  int v18; // [esp+18h] [ebp-18h] BYREF
+  unknown_libname_74(&v19.DeleteAndZero_field_0x04); /*0x625626*/
   v18 = 0; /*0x62562e*/
-  v19.u32_8 = -1; /*0x625632*/
-  int v21; // [esp+2Ch] [ebp-4h]
+  v19.DeleteAndZero_field_0x08 = -1; /*0x625632*/
   v21 = -1; /*0x625636*/
-  int v6; // eax
   v6 = (int)*v5; /*0x62563a*/
-  int v20; // [esp+28h] [ebp-8h]
   v20 = 0; /*0x62563c*/
   if ( v6 > 0 ) /*0x625642*/
   {
-    int v7 = 0; // ebp /*0x625644*/
+    v7 = 0; /*0x625644*/
     do /*0x625665*/
     {
-      char *v8 = v5->u32_2 + v7; // edi /*0x62564b*/
-      DeleteAndZero::Alt(&v8->u32_8); /*0x625650*/
-      DeleteAndZero::Alt(&v8->__pad_004); /*0x625658*/
+      v8 = (char *)v5[2] + v7; /*0x62564b*/
+      DeleteAndZero::Alt((DeleteAndZero *)(v8 + 8)); /*0x625650*/
+      DeleteAndZero::Alt((DeleteAndZero *)(v8 + 4)); /*0x625658*/
       ++v4; /*0x62565f*/
       v7 += 24; /*0x625660*/
     }
     while ( v4 < (int)*v5 ); /*0x625665*/
-    v2 = (unsigned int *)(aP1); /*0x625667*/
+    v2 = aP1; /*0x625667*/
     v3 = (int *)this; /*0x62566b*/
   }
   *v5 = 0; /*0x62566f*/
-  int v9 = v2->vtable3; // eax /*0x625675*/
-  int v10 = 0; // ebx /*0x625678*/
+  v9 = v2->vtable3; /*0x625675*/
+  v10 = 0; /*0x625678*/
   if ( v9 > 0 ) /*0x62567c*/
   {
-    int v11 = 0; // ecx /*0x625682*/
-    int v16; // [esp+10h] [ebp-20h]
+    v11 = 0; /*0x625682*/
     v16 = 0; /*0x625684*/
     while ( 1 ) /*0x62568e*/
     {
       if ( v11 >= 0 && v10 < v9 ) /*0x625694*/
       {
-        int v12; // edi
         v12 = v11 + v2[4]; /*0x625699*/
         v18 = *(unsigned int *)v12; /*0x6256a5*/
         WideString::Reassign_Alt((void **)&v19, (const wchar_t **)(v12 + 4)); /*0x6256a9*/
-        WideString::Reassign_Alt((void **)&v19.q004, (const wchar_t **)(v12 + 8)); /*0x6256b6*/
-        v19.u32_8 = *(unsigned int *)(v12 + 12); /*0x6256be*/
+        WideString::Reassign_Alt((void **)&v19.DeleteAndZero_field_0x04, (const wchar_t **)(v12 + 8)); /*0x6256b6*/
+        v19.DeleteAndZero_field_0x08 = *(unsigned int *)(v12 + 12); /*0x6256be*/
         v20 = *(unsigned int *)(v12 + 16); /*0x6256c5*/
         v21 = *(unsigned int *)(v12 + 20); /*0x6256cc*/
       }
-      int v13; // edi
       v13 = (int)*v5; /*0x6256d0*/
       if ( (int)*v5 >= (int)v5[1] ) /*0x6256d7*/
-        ((DynamicVector *)v5)->GrowCapacity(); /*0x6256db*/
+        DynamicVector::GrowCapacity((DynamicVector *)v5); /*0x6256db*/
       if ( (int)*v5 >= (int)v5[1] ) /*0x6256e7*/
-        ((DynamicVector *)v5)->GrowCapacity(); /*0x6256eb*/
+        DynamicVector::GrowCapacity((DynamicVector *)v5); /*0x6256eb*/
       if ( v13 < (int)*v5 ) /*0x6256f4*/
-        memcpy(v5->u32_2 + 24 * v13 + 24, v5->u32_2 + 24 * v13, 24 * (unsigned int)*v5 - 24 * v13); /*0x625713*/
-      Struct *v14; // ecx
-      v14 = (Struct *)(v5->u32_2 + 24 * v13); /*0x625721*/
+        memcpy((char *)v5[2] + 24 * v13 + 24, (char *)v5[2] + 24 * v13, 24 * (unsigned int)*v5 - 24 * v13); /*0x625713*/
+      v14 = (Struct *)((char *)v5[2] + 24 * v13); /*0x625721*/
       if ( v14 ) /*0x625726*/
-        (v14)->WideStringCopy((int)&v18); /*0x62572d*/
+        Struct::WideStringCopy(v14, (int)&v18); /*0x62572d*/
       ++v10; /*0x625739*/
       *v5 = (char *)*v5 + 1; /*0x62573a*/
       v11 = v16 + 24; /*0x625740*/
@@ -686,7 +696,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     }
     v3 = (int *)this; /*0x625752*/
   }
-  DeleteAndZero::Alt((DeleteAndZero *)&v19.q004); /*0x62575a*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v19.DeleteAndZero_field_0x04); /*0x62575a*/
   DeleteAndZero::Alt(&v19); /*0x625763*/
   return v3; /*0x62576a*/
 

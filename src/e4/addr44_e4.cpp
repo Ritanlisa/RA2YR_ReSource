@@ -16,13 +16,18 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
 {
 
-  int v3 = 6; // ebx /*0x44f6ed*/
-  int v4 = 5; // edi /*0x44f6f2*/
+  int v3; // ebx
+  int v4; // edi
   unsigned int *v5; // eax
-  unsigned char v9[12]; // [esp+14h] [ebp-Ch] BYREF
-  v5 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->vfptr + 18))(this, v9); /*0x44f6f7*/
-  int v6 = *v5 / 256; // esi /*0x44f71b*/
+  int v6; // esi
   int v7; // ecx
+  unsigned char v9[12]; // [esp+14h] [ebp-Ch] BYREF
+  unsigned __int16 *v10; // [esp+28h] [ebp+8h]
+
+  v3 = 6; /*0x44f6ed*/
+  v4 = 5; /*0x44f6f2*/
+  v5 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *))(this->vfptr + 72))(this, v9); /*0x44f6f7*/
+  v6 = *v5 / 256; /*0x44f71b*/
   v7 = v5[1] / 256; /*0x44f71e*/
   if ( a3 ) /*0x44f72e*/
   {
@@ -33,16 +38,16 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
   {
     v3 = 0; /*0x44f739*/
   }
-  if ( (int16_t)v6 - *(unsigned int *)&DataGlobal_87F90C > *(unsigned int *)&g_AircraftTrackerPool / 2 ) /*0x44f751*/
+  if ( (__int16)v6 - dword_87F90C > dword_87F914 / 2 ) /*0x44f751*/
     v3 = -v3; /*0x44f753*/
-  if ( (int16_t)v7 - *(unsigned int *)&DataGlobal_87F910 > *(unsigned int *)&g_AircraftTrackerState / 2 ) /*0x44f76b*/
+  if ( (__int16)v7 - dword_87F910 > dword_87F918 / 2 ) /*0x44f76b*/
     v4 = -v4; /*0x44f76d*/
-  int v10; // [esp+28h] [ebp+8h]
-  (*((unsigned short *)&(v10))) = v6 + v3; /*0x44f77f*/
-  (*(((unsigned short *)&(v10)) + 1)) = v7 + v4; /*0x44f784*/
+  LOWORD(v10) = v6 + v3; /*0x44f77f*/
+  HIWORD(v10) = v7 + v4; /*0x44f784*/
   *a2 = v10; /*0x44f78f*/
   return a2; /*0x44f78d*/
-}  // G42.18 ns repair
+
+}
 } // namespace gamemd
 
 // 0x44FE60
@@ -50,17 +55,20 @@ namespace gamemd {
 int INIClass::sub_44FE60()
 {
 
-  INIClass::ClearSection((int)aStructures, 0); /*0x44fe6c*/
-  int result = dword_A8EB50; // eax /*0x44fe71*/
+  int result; // eax
   int i; // esi
-  for ( i = 0; i < dword_A8EB50; ++i ) /*0x44fe7a*/
+  unsigned __int8 *v4; // ecx
+
+  INIClass::ClearSection((int *)this, (int)aStructures, 0); /*0x44fe6c*/
+  result = *(unsigned int *)&stru_A8E960.altNextScenario[236]; /*0x44fe71*/
+  for ( i = 0; i < *(int *)&stru_A8E960.altNextScenario[236]; ++i ) /*0x44fe7a*/
   {
-    int v4; // ecx
-    v4 = *((unsigned int *)dword_A8EB44 + i); /*0x44fe82*/
-    if ( !*(unsigned char *)(v4 + 129) && !*(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5823) ) /*0x44fe95*/
-      (v4)->ReadConstructionData(this); /*0x44fea0*/
-    result = dword_A8EB50; /*0x44fea5*/
+    v4 = *(unsigned __int8 **)(*(unsigned int *)&stru_A8E960.altNextScenario[224] + 4 * i); /*0x44fe82*/
+    if ( !v4[129] && !*(unsigned char *)(*((unsigned int *)v4 + 328) + 5823) ) /*0x44fe95*/
+      BuildingClass::ReadConstructionData((BuildingClass *)v4, a2, this); /*0x44fea0*/
+    result = *(unsigned int *)&stru_A8E960.altNextScenario[236]; /*0x44fea5*/
   }
   return result; /*0x44feaf*/
+
 }
 } // namespace gamemd

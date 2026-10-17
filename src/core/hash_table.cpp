@@ -134,6 +134,7 @@ int SHA1::Compute(char *a2, int a1)
 // 0x69db30
 int SHA1::Transform(int *a1, unsigned int *a2)
 {
+
   int *v2; // ecx
   int v3; // esi
   int v4; // eax
@@ -173,11 +174,11 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   do /*0x69db76*/
   {
     v4 = *v2++; /*0x69db49*/
-    v5 = (*(((unsigned char *)&(v4)) + (sizeof(v4) - 1))) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
-    (*((unsigned char *)&(v4))) = 0; /*0x69db69*/
-    (((unsigned char *)&(v4))[1]) = (((unsigned char *)&(v4))[2]); /*0x69db6b*/
+    v5 = HIBYTE(v4) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
+    LOBYTE(v4) = 0; /*0x69db69*/
+    BYTE1(v4) = BYTE2(v4); /*0x69db6b*/
     --v3; /*0x69db71*/
-    *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (uint16_t)v4 | v5; /*0x69db72*/
+    *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
   }
   while ( v3 ); /*0x69db76*/
   v6 = (int *)&v34; /*0x69db78*/
@@ -193,13 +194,13 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   }
   while ( v7 ); /*0x69dba2*/
   v11 = 0; /*0x69dbb4*/
-  memcpy(v32, a2, sizeof(v32)); /*0x69dbb6*/
+  qmemcpy(v32, a2, sizeof(v32)); /*0x69dbb6*/
   v12 = v32[1]; /*0x69dbb8*/
   v13 = v32[2]; /*0x69dbbc*/
   v14 = v32[3]; /*0x69dbc0*/
   v15 = v32[0]; /*0x69dbc4*/
   v31 = 0; /*0x69dbcc*/
-  v29 = (unsigned int *)(v33); /*0x69dbd0*/
+  v29 = v33; /*0x69dbd0*/
   do
   {
     if ( v11 >= 20 ) /*0x69dbd7*/
@@ -216,7 +217,7 @@ int SHA1::Transform(int *a1, unsigned int *a2)
       v16 = v12 & (v14 ^ v13); /*0x69dbdd*/
     }
     v17 = v14 ^ v16; /*0x69dbfd*/
-  LABEL_13:
+LABEL_13:
     if ( v11 >= 20 )
     {
       if ( v11 >= 40 )
@@ -255,6 +256,7 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   a2[2] = v26; /*0x69dcb4*/
   a2[4] = result; /*0x69dcb8*/
   return result; /*0x69dcad*/
+
 }
 // PadMessage: append padding + length
 void SHA1::PadMessage()

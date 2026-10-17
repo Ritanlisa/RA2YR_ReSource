@@ -270,11 +270,19 @@ int E4Recv_490400::sub_490400()
 namespace gamemd {
 int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char * a11)
 {
-  int v18; // edi
 
-  int result = a5; // eax /*0x491b41*/
-  unsigned char *v14 = a2; // esi /*0x491b58*/
-  unsigned int v15 = a7; // edx /*0x491b5f*/
+  int result; // eax
+  unsigned char *v14; // esi
+  unsigned __int16 *v15; // edx
+  int v17; // eax
+  int v18; // edi
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // ebp
+
+  result = a5; /*0x491b41*/
+  v14 = a2; /*0x491b58*/
+  v15 = (unsigned __int16 *)a7; /*0x491b5f*/
   if ( a5 <= 0 ) /*0x491b61*/
   {
     v18 = a4; /*0x491b9a*/
@@ -289,42 +297,40 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
         result -= *a3++; /*0x491b6e*/
     }
     while ( result > 0 ); /*0x491b76*/
-    int v17 = -result; // eax /*0x491b82*/
+    v17 = -result; /*0x491b82*/
     v14 = &a2[v17]; /*0x491b84*/
     v18 = a4 - v17; /*0x491b86*/
     result = a7 + 2 * v17; /*0x491b88*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491b91*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x491b93*/
-    v15 = result; /*0x491b96*/
+    v15 = (unsigned __int16 *)result; /*0x491b96*/
   }
   while ( v18 > 0 ) /*0x491ba0*/
   {
-    uint8_t v19; // al
     v19 = *a3++; /*0x491ba2*/
     if ( v19 ) /*0x491bab*/
     {
-      v15 += 2; /*0x491bcf*/
-      int v21; // ebp
+      ++v15; /*0x491bcf*/
       v21 = a6 - *a11++; /*0x491bd2*/
-      if ( v21 < *(uint16_t *)(v15 - 2) ) /*0x491bdd*/
-        *v14 = *(unsigned char *)(v19 + ((unsigned int)(this->M4))); /*0x491bf2*/
+      if ( v21 < *(v15 - 1) ) /*0x491bdd*/
+        *v14 = *(unsigned char *)(v19 + *&this->M4); /*0x491bf2*/
       ++v14; /*0x491bf4*/
       --v18; /*0x491bf5*/
     }
     else
     {
-      uint8_t v20; // al
       v20 = *a3++; /*0x491bad*/
       v18 -= v20; /*0x491bbd*/
       v14 += v20; /*0x491bbf*/
-      v15 += 2 * v20; /*0x491bc1*/
+      v15 += v20; /*0x491bc1*/
       a11 += v20; /*0x491bc4*/
     }
     result = (int)g_ZBufferDescriptor; /*0x491bf6*/
-    if ( v15 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491bfe*/
-      v15 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x491c00*/
+    if ( (unsigned int)v15 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491bfe*/
+      v15 = (unsigned __int16 *)((char *)v15 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x491c00*/
   }
   return result; /*0x491c07*/
+
 }
 }
 // 0x491C50
@@ -332,17 +338,25 @@ namespace gamemd {
 int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 
-  int v19; // edi
-
   char *v12; // edx
-  v12 = *(char **)this->m_4; /*0x491c65*/
-  int result = a5; // eax /*0x491c67*/
+  int result; // eax
   Stream *v14; // ecx
-  v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491c6b*/
-  unsigned char *v15 = a1; // esi /*0x491c77*/
+  unsigned char *v15; // esi
+  unsigned __int16 *v16; // edx
+  int v18; // eax
+  int v19; // edi
+  unsigned __int8 v20; // al
+  int v21; // ebp
+  unsigned __int8 v24; // [esp+20h] [ebp+Ch]
+  unsigned __int8 v25; // [esp+20h] [ebp+Ch]
   char *v26; // [esp+3Ch] [ebp+28h]
+
+  v12 = *(char **)this->m_4; /*0x491c65*/
+  result = a5; /*0x491c67*/
+  v14 = g_ZBufferDescriptor; /*0x491c6b*/
+  v15 = a1; /*0x491c77*/
   v26 = v12; /*0x491c7b*/
-  unsigned int v16 = a7; // edx /*0x491c82*/
+  v16 = (unsigned __int16 *)a7; /*0x491c82*/
   if ( a5 <= 0 ) /*0x491c84*/
   {
     v19 = a4; /*0x491cb7*/
@@ -357,46 +371,43 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
         result -= *a2++; /*0x491c91*/
     }
     while ( result > 0 ); /*0x491c99*/
-    int v18 = -result; // eax /*0x491ca2*/
+    v18 = -result; /*0x491ca2*/
     v15 = &a1[v18]; /*0x491ca4*/
     v19 = a4 - v18; /*0x491ca6*/
     result = a7 + 2 * v18; /*0x491ca8*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491cae*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x491cb0*/
-    v16 = result; /*0x491cb3*/
+    v16 = (unsigned __int16 *)result; /*0x491cb3*/
   }
   while ( v19 > 0 ) /*0x491cbd*/
   {
-    unsigned __int8 v20; // al
     v20 = *a2++; /*0x491cbf*/
-    unsigned __int8 v24; // [esp+20h] [ebp+Ch]
     v24 = v20; /*0x491cc4*/
     if ( v20 ) /*0x491cc8*/
     {
-      v16 += 2; /*0x491cf5*/
-      int v21 = a6 - *a10; // ebp /*0x491cfb*/
+      ++v16; /*0x491cf5*/
+      v21 = a6 - *a10; /*0x491cfb*/
       result = (int)++a10; /*0x491d03*/
-      if ( v21 < *(unsigned __int16 *)(v16 - 2) ) /*0x491d0a*/
+      if ( v21 < *(v16 - 1) ) /*0x491d0a*/
       {
         result = this->M8; /*0x491d22*/
         *v15 = *(unsigned char *)((unsigned __int8)v26[v24] + result); /*0x491d28*/
       }
-      v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491d2a*/
+      v14 = g_ZBufferDescriptor; /*0x491d2a*/
       ++v15; /*0x491d30*/
       --v19; /*0x491d31*/
     }
     else
     {
-      unsigned __int8 v25; // [esp+20h] [ebp+Ch]
       v25 = *a2++; /*0x491cd0*/
       result = v25; /*0x491cd9*/
       v19 -= v25; /*0x491cde*/
       v15 += v25; /*0x491ce0*/
-      v16 += 2 * v25; /*0x491ce4*/
+      v16 += v25; /*0x491ce4*/
       a10 += v25; /*0x491ce7*/
     }
-    if ( v16 >= v14[1].Stream_field_08 ) /*0x491d35*/
-      v16 -= v14[1].Stream_field_0C; /*0x491d37*/
+    if ( (unsigned int)v16 >= v14[1].Stream_field_08 ) /*0x491d35*/
+      v16 = (unsigned __int16 *)((char *)v16 - v14[1].Stream_field_0C); /*0x491d37*/
   }
   return result; /*0x491d3e*/
 
@@ -407,16 +418,20 @@ namespace gamemd {
 int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapDestZRead_E * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 
+  int v11; // eax
+  unsigned __int16 *v12; // edx
+  unsigned __int8 *v14; // esi
+  Stream *v15; // ecx
+  int v18; // eax
   int v19; // ebx
 
-  int v11 = a5; // eax /*0x491d91*/
-  unsigned int v12 = a7; // edx /*0x491d95*/
-  unsigned __int8 *v14 = a1; // esi /*0x491da0*/
-  Stream *v15; // ecx
-  v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491da8*/
+  v11 = a5; /*0x491d91*/
+  v12 = (unsigned __int16 *)a7; /*0x491d95*/
+  v14 = a1; /*0x491da0*/
+  v15 = g_ZBufferDescriptor; /*0x491da8*/
   if ( a5 <= 0 ) /*0x491db5*/
   {
-    v19 = (int)(aP3); /*0x491de7*/
+    v19 = aP3; /*0x491de7*/
   }
   else
   {
@@ -428,21 +443,21 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
         v11 -= *a2++; /*0x491dc2*/
     }
     while ( v11 > 0 ); /*0x491dca*/
-    int v18 = -v11; // eax /*0x491dd0*/
+    v18 = -v11; /*0x491dd0*/
     v14 = &a1[v18]; /*0x491dd2*/
-    v19 = (int)(aP3 - v18); /*0x491dd4*/
+    v19 = aP3 - v18; /*0x491dd4*/
     v11 = a7 + 2 * v18; /*0x491dd6*/
     if ( (unsigned int)v11 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491dde*/
       v11 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x491de0*/
-    v12 = v11; /*0x491de3*/
+    v12 = (unsigned __int16 *)v11; /*0x491de3*/
   }
   while ( v19 > 0 ) /*0x491ded*/
   {
     if ( *a2++ ) /*0x491def*/
     {
-      v12 += 2; /*0x491e19*/
+      ++v12; /*0x491e19*/
       v11 = a6 - *a10++; /*0x491e1c*/
-      if ( v11 >= *(unsigned __int16 *)(v12 - 2) ) /*0x491e27*/
+      if ( v11 >= *(v12 - 1) ) /*0x491e27*/
       {
         ++v14; /*0x491e3e*/
         --v19; /*0x491e3f*/
@@ -455,7 +470,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
         LOBYTE(v11) = *(unsigned char *)(*&this->M4 + v11); /*0x491e36*/
         *(v14 - 1) = v11; /*0x491e39*/
       }
-      v15 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x491e40*/
+      v15 = g_ZBufferDescriptor; /*0x491e40*/
     }
     else
     {
@@ -463,10 +478,10 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
       v19 -= (unsigned __int8)v11; /*0x491e06*/
       v14 += (unsigned __int8)v11; /*0x491e08*/
       a10 += (unsigned __int8)v11; /*0x491e0a*/
-      v12 += 2 * (unsigned __int8)v11; /*0x491e0c*/
+      v12 += (unsigned __int8)v11; /*0x491e0c*/
     }
-    if ( v12 >= v15[1].Stream_field_08 ) /*0x491e49*/
-      v12 -= v15[1].Stream_field_0C; /*0x491e4b*/
+    if ( (unsigned int)v12 >= v15[1].Stream_field_08 ) /*0x491e49*/
+      v12 = (unsigned __int16 *)((char *)v12 - v15[1].Stream_field_0C); /*0x491e4b*/
   }
   return v11; /*0x491e52*/
 
@@ -477,11 +492,18 @@ namespace gamemd {
 int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 
+  int result; // eax
+  int v14; // esi
+  unsigned __int16 *v15; // edx
+  int v17; // eax
   int v18; // edi
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // ebp
 
-  int result = a5; // eax /*0x491ea1*/
-  int v14 = arg0; // esi /*0x491eb8*/
-  unsigned int v15 = a7; // edx /*0x491ebf*/
+  result = a5; /*0x491ea1*/
+  v14 = arg0; /*0x491eb8*/
+  v15 = (unsigned __int16 *)a7; /*0x491ebf*/
   if ( a5 <= 0 ) /*0x491ec1*/
   {
     v18 = a4; /*0x491efa*/
@@ -496,40 +518,37 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
         result -= *a2++; /*0x491ece*/
     }
     while ( result > 0 ); /*0x491ed6*/
-    int v17 = -result; // eax /*0x491ee2*/
+    v17 = -result; /*0x491ee2*/
     v14 = v17 + arg0; /*0x491ee4*/
     v18 = a4 - v17; /*0x491ee6*/
     result = a7 + 2 * v17; /*0x491ee8*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491ef1*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x491ef3*/
-    v15 = result; /*0x491ef6*/
+    v15 = (unsigned __int16 *)result; /*0x491ef6*/
   }
   while ( v18 > 0 ) /*0x491f00*/
   {
-    unsigned __int8 v19; // al
     v19 = *a2++; /*0x491f02*/
     if ( v19 ) /*0x491f0b*/
     {
-      v15 += 2; /*0x491f2f*/
-      int v21; // ebp
+      ++v15; /*0x491f2f*/
       v21 = a6 - *a10++; /*0x491f32*/
       ++v14; /*0x491f56*/
       --v18; /*0x491f57*/
-      if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491f41*/
+      if ( v21 < *(v15 - 1) ) /*0x491f41*/
         *(unsigned char *)(v14 - 1) = *(unsigned char *)(*(unsigned __int8 *)(v19 + *&this->M4) + this->M8); /*0x491f69*/
     }
     else
     {
-      unsigned __int8 v20; // al
       v20 = *a2++; /*0x491f0d*/
       v18 -= v20; /*0x491f1d*/
       v14 += v20; /*0x491f1f*/
       a10 += v20; /*0x491f21*/
-      v15 += 2 * v20; /*0x491f23*/
+      v15 += v20; /*0x491f23*/
     }
     result = (int)g_ZBufferDescriptor; /*0x491f70*/
-    if ( v15 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491f78*/
-      v15 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x491f7a*/
+    if ( (unsigned int)v15 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x491f78*/
+      v15 = (unsigned __int16 *)((char *)v15 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x491f7a*/
   }
   return result; /*0x491f81*/
 
@@ -826,10 +845,18 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
 namespace gamemd {
 int E4Recv_496310::sub_496310(int a5, int a2, uint8_t *a4, int a3, int a1, int aP2, int a6, int a7, int a8, int a9, int a10)
 {
-  uint8_t *v18; // ebx
 
-  int result = a3; // eax /*0x496310*/
-  int v14 = a3; // edx /*0x496314*/
+  int v12; // esi
+  int result; // eax
+  unsigned __int16 *v14; // edx
+  unsigned __int8 *v18; // ebx
+  unsigned __int8 v19; // al
+  int m_4; // eax
+  int v21; // ecx
+  unsigned __int8 v22; // [esp+18h] [ebp+Ch]
+
+  result = a3; /*0x496310*/
+  v14 = (unsigned __int16 *)a3; /*0x496314*/
   if ( a3 <= 0 ) /*0x496323*/
   {
     v18 = a4; /*0x496347*/
@@ -841,50 +868,57 @@ int E4Recv_496310::sub_496310(int a5, int a2, uint8_t *a4, int a3, int a1, int a
       if ( *(unsigned char *)a2++ ) /*0x496325*/
         --result; /*0x496335*/
       else
-        result -= *(uint8_t *)a2++; /*0x496330*/
+        result -= *(unsigned __int8 *)a2++; /*0x496330*/
     }
     while ( result > 0 ); /*0x496338*/
     result = -result; /*0x49633e*/
     v18 = &a4[-result]; /*0x496340*/
-    v14 = a3 + 2 * result; /*0x496342*/
+    v14 = (unsigned __int16 *)(a3 + 2 * result); /*0x496342*/
   }
   while ( (int)v18 > 0 ) /*0x49634d*/
   {
-    uint8_t v19; // al
     v19 = *(unsigned char *)a2++; /*0x496350*/
-    v19 = v19; /*0x496355*/
+    v22 = v19; /*0x496355*/
     if ( v19 ) /*0x496359*/
     {
-      int m_4 = this->M4; // eax /*0x496376*/
-      int v12; // esi
-      (*((unsigned short *)&(v12))) = this->M8; /*0x496379*/
-      v14 += 2; /*0x496383*/
-      int v21; // ecx
-      v21 = *(uint16_t *)(m_4 + 2 * v19); /*0x496386*/
-      (*((unsigned short *)&(m_4))) = *(unsigned short *)(v14 - 2) >> 2; /*0x49638e*/
+      m_4 = this->M4; /*0x496376*/
+      LOWORD(v12) = this->M8; /*0x496379*/
+      ++v14; /*0x496383*/
+      v21 = *(unsigned __int16 *)(m_4 + 2 * v22); /*0x496386*/
+      LOWORD(m_4) = *(v14 - 1) >> 2; /*0x49638e*/
       result = 3 * (v12 & m_4); /*0x49639a*/
       --v18; /*0x49639f*/
-      *(unsigned short *)(v14 - 2) = result + (v12 & ((uint16_t)v21 >> 2)); /*0x4963a0*/
+      *(v14 - 1) = result + (v12 & ((unsigned __int16)v21 >> 2)); /*0x4963a0*/
     }
     else
     {
-      (*((unsigned char *)&(result))) = *(unsigned char *)a2++; /*0x49635b*/
-      result = (uint8_t)result; /*0x496366*/
-      v18 -= (uint8_t)result; /*0x49636b*/
-      v14 += 2 * (uint8_t)result; /*0x49636d*/
+      LOBYTE(result) = *(unsigned char *)a2++; /*0x49635b*/
+      result = (unsigned __int8)result; /*0x496366*/
+      v18 -= (unsigned __int8)result; /*0x49636b*/
+      v14 += (unsigned __int8)result; /*0x49636d*/
     }
   }
   return result; /*0x4963a9*/
+
 }
 }
 // 0x4964D0
 namespace gamemd {
 int E4Recv_4964D0::sub_4964D0(int a5, int a2, uint8_t *a4, int a3, int a1, int aP2, int a6, int a7, int a8, int a9, int a10)
 {
-  uint8_t *v18; // ebx
 
-  int result = a3; // eax /*0x4964d0*/
-  int v14 = a3; // edx /*0x4964d4*/
+  int v12; // esi
+  int result; // eax
+  unsigned __int16 *v14; // edx
+  unsigned __int8 *v18; // ebx
+  unsigned __int8 v19; // al
+  int m_4; // eax
+  int v21; // eax
+  __int16 v22; // cx
+  unsigned __int8 v23; // [esp+18h] [ebp+Ch]
+
+  result = a3; /*0x4964d0*/
+  v14 = (unsigned __int16 *)a3; /*0x4964d4*/
   if ( a3 <= 0 ) /*0x4964e3*/
   {
     v18 = a4; /*0x496507*/
@@ -896,52 +930,59 @@ int E4Recv_4964D0::sub_4964D0(int a5, int a2, uint8_t *a4, int a3, int a1, int a
       if ( *(unsigned char *)a2++ ) /*0x4964e5*/
         --result; /*0x4964f5*/
       else
-        result -= *(uint8_t *)a2++; /*0x4964f0*/
+        result -= *(unsigned __int8 *)a2++; /*0x4964f0*/
     }
     while ( result > 0 ); /*0x4964f8*/
     result = -result; /*0x4964fe*/
     v18 = &a4[-result]; /*0x496500*/
-    v14 = a3 + 2 * result; /*0x496502*/
+    v14 = (unsigned __int16 *)(a3 + 2 * result); /*0x496502*/
   }
   while ( (int)v18 > 0 ) /*0x49650d*/
   {
-    uint8_t v19; // al
     v19 = *(unsigned char *)a2++; /*0x496510*/
-    v19 = v19; /*0x496515*/
+    v23 = v19; /*0x496515*/
     if ( v19 ) /*0x496519*/
     {
-      int m_4 = this->M4; // eax /*0x496536*/
-      int v12; // esi
-      (*((unsigned short *)&(v12))) = this->M8; /*0x496539*/
-      v14 += 2; /*0x496543*/
-      (*((unsigned short *)&(m_4))) = *(unsigned short *)(m_4 + 2 * v19) >> 2; /*0x49654a*/
-      int v21 = v12 & m_4; // eax /*0x49654e*/
-      int16_t v22 = 3 * v21; // cx /*0x496550*/
-      (*((unsigned short *)&(v21))) = *(unsigned short *)(v14 - 2) >> 2; /*0x496557*/
+      m_4 = this->M4; /*0x496536*/
+      LOWORD(v12) = this->M8; /*0x496539*/
+      ++v14; /*0x496543*/
+      LOWORD(m_4) = *(unsigned short *)(m_4 + 2 * v23) >> 2; /*0x49654a*/
+      v21 = v12 & m_4; /*0x49654e*/
+      v22 = 3 * v21; /*0x496550*/
+      LOWORD(v21) = *(v14 - 1) >> 2; /*0x496557*/
       result = v12 & v21; /*0x49655b*/
       --v18; /*0x49655f*/
-      *(unsigned short *)(v14 - 2) = result + v22; /*0x496560*/
+      *(v14 - 1) = result + v22; /*0x496560*/
     }
     else
     {
-      (*((unsigned char *)&(result))) = *(unsigned char *)a2++; /*0x49651b*/
-      result = (uint8_t)result; /*0x496526*/
-      v18 -= (uint8_t)result; /*0x49652b*/
-      v14 += 2 * (uint8_t)result; /*0x49652d*/
+      LOBYTE(result) = *(unsigned char *)a2++; /*0x49651b*/
+      result = (unsigned __int8)result; /*0x496526*/
+      v18 -= (unsigned __int8)result; /*0x49652b*/
+      v14 += (unsigned __int8)result; /*0x49652d*/
     }
   }
   return result; /*0x496569*/
+
 }
 }
 // 0x4965B0
 namespace gamemd {
 int E4Recv_4965B0::sub_4965B0(unsigned short *a2, uint8_t *a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, char *a10, char *a11, int a1, uint8_t *aP2, int aP3)
 {
-  int v18; // ebx
 
-  int result = a5; // eax /*0x4965b1*/
-  unsigned int v12 = a7; // edx /*0x4965b5*/
-  unsigned short *v15 = a2; // edi /*0x4965c9*/
+  int result; // eax
+  unsigned __int16 *v12; // edx
+  unsigned short *v15; // edi
+  int v17; // eax
+  int v18; // ebx
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // esi
+
+  result = a5; /*0x4965b1*/
+  v12 = (unsigned __int16 *)a7; /*0x4965b5*/
+  v15 = a2; /*0x4965c9*/
   if ( a5 <= 0 ) /*0x4965cf*/
   {
     v18 = a4; /*0x496608*/
@@ -956,55 +997,61 @@ int E4Recv_4965B0::sub_4965B0(unsigned short *a2, uint8_t *a3, int a4, int a5, i
         result -= *a3++; /*0x4965de*/
     }
     while ( result > 0 ); /*0x4965e6*/
-    int v17 = -result; // eax /*0x4965ec*/
+    v17 = -result; /*0x4965ec*/
     v18 = a4 - v17; /*0x4965ee*/
     v15 = &a2[v17]; /*0x4965f0*/
     result = a7 + 2 * v17; /*0x4965f3*/
-    if ( (unsigned int)result >= ((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_08 ) /*0x4965ff*/
-      result -= ((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_0C; /*0x496601*/
-    v12 = result; /*0x496604*/
+    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4965ff*/
+      result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496601*/
+    v12 = (unsigned __int16 *)result; /*0x496604*/
   }
   while ( v18 > 0 ) /*0x49660e*/
   {
-    uint8_t v19; // al
     v19 = *a3++; /*0x496610*/
     if ( v19 ) /*0x49661a*/
     {
-      v12 += 2; /*0x496641*/
-      int v21; // esi
+      ++v12; /*0x496641*/
       v21 = a6 - *a11++; /*0x496644*/
-      if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x49664f*/
-        *v15 = *(unsigned short *)(((unsigned int)(this->M4)) + 2 * v19); /*0x496665*/
+      if ( v21 < *(v12 - 1) ) /*0x49664f*/
+        *v15 = *(unsigned short *)(*&this->M4 + 2 * v19); /*0x496665*/
       ++v15; /*0x496668*/
       --v18; /*0x49666b*/
     }
     else
     {
-      uint8_t v20; // al
       v20 = *a3++; /*0x49661c*/
       v18 -= v20; /*0x49662d*/
       v15 += v20; /*0x496632*/
-      v12 += 2 * v20; /*0x496634*/
+      v12 += v20; /*0x496634*/
       a11 += v20; /*0x496636*/
     }
     result = (int)g_ZBufferDescriptor; /*0x49666c*/
-    if ( v12 >= ((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_08 ) /*0x496674*/
-      v12 -= ((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_0C; /*0x496676*/
+    if ( (unsigned int)v12 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496674*/
+      v12 = (unsigned __int16 *)((char *)v12 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x496676*/
   }
   return result; /*0x49667d*/
+
 }
 }
 // 0x4966D0
 namespace gamemd {
 int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
-  int v18; // ebx
 
-  int result = a5; // eax /*0x4966e7*/
-  int v14 = arg0; // edi /*0x4966f2*/
-  uint8_t *v23; // [esp+1Ch] [ebp+8h]
-  v23 = *(uint8_t **)this->u32_4; /*0x4966f6*/
-  unsigned int v15 = a7; // edx /*0x4966fa*/
+  int result; // eax
+  unsigned __int16 *v14; // edi
+  unsigned __int16 *v15; // edx
+  int v17; // eax
+  int v18; // ebx
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // esi
+  unsigned __int8 *v23; // [esp+1Ch] [ebp+8h]
+
+  result = a5; /*0x4966e7*/
+  v14 = (unsigned __int16 *)arg0; /*0x4966f2*/
+  v23 = *(unsigned __int8 **)this->m_4; /*0x4966f6*/
+  v15 = (unsigned __int16 *)a7; /*0x4966fa*/
   if ( a5 <= 0 ) /*0x496700*/
   {
     v18 = a4; /*0x496733*/
@@ -1019,42 +1066,40 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
         result -= *a2++; /*0x49670f*/
     }
     while ( result > 0 ); /*0x496717*/
-    int v17 = -result; // eax /*0x49671d*/
+    v17 = -result; /*0x49671d*/
     v18 = a4 - v17; /*0x49671f*/
-    v14 = arg0 + 2 * v17; /*0x496721*/
+    v14 = (unsigned __int16 *)(arg0 + 2 * v17); /*0x496721*/
     result = a7 + 2 * v17; /*0x496724*/
-    if ( (unsigned int)result >= ((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_08 ) /*0x49672a*/
-      result -= ((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_0C; /*0x49672c*/
-    v15 = result; /*0x49672f*/
+    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x49672a*/
+      result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x49672c*/
+    v15 = (unsigned __int16 *)result; /*0x49672f*/
   }
   while ( v18 > 0 ) /*0x496739*/
   {
-    uint8_t v19; // al
     v19 = *a2++; /*0x49673f*/
     if ( v19 ) /*0x496749*/
     {
-      v15 += 2; /*0x496770*/
-      int v21; // esi
+      ++v15; /*0x496770*/
       v21 = a6 - *a10++; /*0x496773*/
-      v14 += 2; /*0x496794*/
+      ++v14; /*0x496794*/
       --v18; /*0x496797*/
-      if ( v21 < *(uint16_t *)(v15 - 2) ) /*0x496782*/
-        *(unsigned short *)(v14 - 2) = *(unsigned short *)(this->M8 + 2 * v23[v19]); /*0x4967aa*/
+      if ( v21 < *(v15 - 1) ) /*0x496782*/
+        *(v14 - 1) = *(unsigned short *)(this->M8 + 2 * v23[v19]); /*0x4967aa*/
     }
     else
     {
-      uint8_t v20; // al
       v20 = *a2++; /*0x49674b*/
       v18 -= v20; /*0x49675c*/
       a10 += v20; /*0x49675e*/
-      v14 += 2 * v20; /*0x496763*/
-      v15 += 2 * v20; /*0x496765*/
+      v14 += v20; /*0x496763*/
+      v15 += v20; /*0x496765*/
     }
     result = (int)g_ZBufferDescriptor; /*0x4967b4*/
-    if ( v15 >= ((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_08 ) /*0x4967bc*/
-      v15 -= ((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_0C; /*0x4967be*/
+    if ( (unsigned int)v15 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4967bc*/
+      v15 = (unsigned __int16 *)((char *)v15 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4967be*/
   }
   return result; /*0x4967c9*/
+
 }
 }
 // 0x496930
@@ -1062,14 +1107,21 @@ namespace gamemd {
 int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 
+  int result; // eax
+  unsigned __int16 *v12; // edx
+  unsigned __int16 *v14; // esi
+  int v17; // eax
   int v18; // ebx
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // edi
 
-  int result = a5; // eax /*0x496931*/
-  int v12 = arg0; // edx /*0x496935*/
-  unsigned int v14 = a7; // esi /*0x496940*/
+  result = a5; /*0x496931*/
+  v12 = (unsigned __int16 *)arg0; /*0x496935*/
+  v14 = (unsigned __int16 *)a7; /*0x496940*/
   if ( a5 <= 0 ) /*0x496955*/
   {
-    v18 = (int)(aP3); /*0x496988*/
+    v18 = aP3; /*0x496988*/
   }
   else
   {
@@ -1081,41 +1133,37 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
         result -= *a2++; /*0x496964*/
     }
     while ( result > 0 ); /*0x49696c*/
-    int v17 = -result; // eax /*0x496972*/
-    v18 = (int)(aP3 - v17); /*0x496974*/
-    v12 = arg0 + 2 * v17; /*0x496976*/
+    v17 = -result; /*0x496972*/
+    v18 = aP3 - v17; /*0x496974*/
+    v12 = (unsigned __int16 *)(arg0 + 2 * v17); /*0x496976*/
     result = a7 + 2 * v17; /*0x496979*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x49697f*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496981*/
-    v14 = result; /*0x496984*/
+    v14 = (unsigned __int16 *)result; /*0x496984*/
   }
   while ( v18 > 0 ) /*0x49698e*/
   {
-    unsigned __int8 v19; // al
     v19 = *a2++; /*0x496994*/
     if ( v19 ) /*0x49699e*/
     {
-      v14 += 2; /*0x4969c5*/
-      int v21; // edi
+      ++v14; /*0x4969c5*/
       v21 = a6 - *a10++; /*0x4969c8*/
-      v12 += 2; /*0x4969e7*/
+      ++v12; /*0x4969e7*/
       --v18; /*0x496a0a*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x4969d7*/
-        *(unsigned short *)(v12 - 2) = 3 * (this->m_8 & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496a0b*/
-      + (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2));
+      if ( v21 < *(v14 - 1) ) /*0x4969d7*/
+        *(v12 - 1) = 3 * (this->m_8 & (*(v12 - 1) >> 2)) + (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2)); /*0x496a0b*/
     }
     else
     {
-      unsigned __int8 v20; // al
       v20 = *a2++; /*0x4969a0*/
       v18 -= v20; /*0x4969b1*/
       a10 += v20; /*0x4969b3*/
-      v12 += 2 * v20; /*0x4969b8*/
-      v14 += 2 * v20; /*0x4969ba*/
+      v12 += v20; /*0x4969b8*/
+      v14 += v20; /*0x4969ba*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496a19*/
-    if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496a21*/
-      v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496a23*/
+    if ( (unsigned int)v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496a21*/
+      v14 = (unsigned __int16 *)((char *)v14 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x496a23*/
   }
   return result; /*0x496a2e*/
 
@@ -1125,14 +1173,22 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
 namespace gamemd {
 int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
-  int v18; // ebx
 
-  int result = a5; // eax /*0x496a81*/
-  unsigned int v12 = a7; // edx /*0x496a85*/
-  unsigned short *v14 = a1; // esi /*0x496a90*/
+  int result; // eax
+  unsigned __int16 *v12; // edx
+  unsigned short *v14; // esi
+  int v17; // eax
+  int v18; // ebx
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // edi
+
+  result = a5; /*0x496a81*/
+  v12 = (unsigned __int16 *)a7; /*0x496a85*/
+  v14 = a1; /*0x496a90*/
   if ( a5 <= 0 ) /*0x496aa5*/
   {
-    v18 = (int)(aP3); /*0x496ad8*/
+    v18 = aP3; /*0x496ad8*/
   }
   else
   {
@@ -1144,56 +1200,62 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
         result -= *a2++; /*0x496ab4*/
     }
     while ( result > 0 ); /*0x496abc*/
-    int v17 = -result; // eax /*0x496ac2*/
-    v18 = (int)(aP3 - v17); /*0x496ac4*/
+    v17 = -result; /*0x496ac2*/
+    v18 = aP3 - v17; /*0x496ac4*/
     v14 = &a1[v17]; /*0x496ac6*/
     result = a7 + 2 * v17; /*0x496ac9*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496acf*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496ad1*/
-    v12 = result; /*0x496ad4*/
+    v12 = (unsigned __int16 *)result; /*0x496ad4*/
   }
   while ( v18 > 0 ) /*0x496ade*/
   {
-    uint8_t v19; // al
     v19 = *a2++; /*0x496ae4*/
     if ( v19 ) /*0x496aee*/
     {
-      v12 += 2; /*0x496b15*/
-      int v21; // edi
+      ++v12; /*0x496b15*/
       v21 = a6 - *a10++; /*0x496b18*/
       --v18; /*0x496b51*/
-      if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x496b27*/
-        *v14 = (this->u16_8 & (*v14 >> 1)) + (this->u16_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 1)); /*0x496b52*/
+      if ( v21 < *(v12 - 1) ) /*0x496b27*/
+        *v14 = (this->m_8 & (*v14 >> 1)) + (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 1)); /*0x496b52*/
       ++v14; /*0x496b59*/
     }
     else
     {
-      uint8_t v20; // al
       v20 = *a2++; /*0x496af0*/
       v18 -= v20; /*0x496b01*/
       a10 += v20; /*0x496b03*/
       v14 += v20; /*0x496b08*/
-      v12 += 2 * v20; /*0x496b0a*/
+      v12 += v20; /*0x496b0a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496b62*/
-    if ( v12 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496b6a*/
-      v12 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496b6c*/
+    if ( (unsigned int)v12 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496b6a*/
+      v12 = (unsigned __int16 *)((char *)v12 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x496b6c*/
   }
   return result; /*0x496b77*/
+
 }
 }
 // 0x496BC0
 namespace gamemd {
 int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
-  int v18; // ebx
 
-  int result = a5; // eax /*0x496bc1*/
-  int v12 = arg0; // edx /*0x496bc5*/
-  unsigned int v14 = a7; // esi /*0x496bd0*/
+  int result; // eax
+  unsigned __int16 *v12; // edx
+  unsigned __int16 *v14; // esi
+  int v17; // eax
+  int v18; // ebx
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // edi
+
+  result = a5; /*0x496bc1*/
+  v12 = (unsigned __int16 *)arg0; /*0x496bc5*/
+  v14 = (unsigned __int16 *)a7; /*0x496bd0*/
   if ( a5 <= 0 ) /*0x496be5*/
   {
-    v18 = (int)(aP3); /*0x496c18*/
+    v18 = aP3; /*0x496c18*/
   }
   else
   {
@@ -1205,43 +1267,40 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
         result -= *a2++; /*0x496bf4*/
     }
     while ( result > 0 ); /*0x496bfc*/
-    int v17 = -result; // eax /*0x496c02*/
-    v18 = (int)(aP3 - v17); /*0x496c04*/
-    v12 = arg0 + 2 * v17; /*0x496c06*/
+    v17 = -result; /*0x496c02*/
+    v18 = aP3 - v17; /*0x496c04*/
+    v12 = (unsigned __int16 *)(arg0 + 2 * v17); /*0x496c06*/
     result = a7 + 2 * v17; /*0x496c09*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496c0f*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496c11*/
-    v14 = result; /*0x496c14*/
+    v14 = (unsigned __int16 *)result; /*0x496c14*/
   }
   while ( v18 > 0 ) /*0x496c1e*/
   {
-    uint8_t v19; // al
     v19 = *a2++; /*0x496c24*/
     if ( v19 ) /*0x496c2e*/
     {
-      v14 += 2; /*0x496c55*/
-      int v21; // edi
+      ++v14; /*0x496c55*/
       v21 = a6 - *a10++; /*0x496c58*/
-      v12 += 2; /*0x496c77*/
+      ++v12; /*0x496c77*/
       --v18; /*0x496c9a*/
-      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496c67*/
-        *(unsigned short *)(v12 - 2) = (this->m_8 & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496c9b*/
-      + 3 * (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2));
+      if ( v21 < *(v14 - 1) ) /*0x496c67*/
+        *(v12 - 1) = (this->m_8 & (*(v12 - 1) >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2)); /*0x496c9b*/
     }
     else
     {
-      uint8_t v20; // al
       v20 = *a2++; /*0x496c30*/
       v18 -= v20; /*0x496c41*/
       a10 += v20; /*0x496c43*/
-      v12 += 2 * v20; /*0x496c48*/
-      v14 += 2 * v20; /*0x496c4a*/
+      v12 += v20; /*0x496c48*/
+      v14 += v20; /*0x496c4a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496ca9*/
-    if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496cb1*/
-      v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496cb3*/
+    if ( (unsigned int)v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496cb1*/
+      v14 = (unsigned __int16 *)((char *)v14 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x496cb3*/
   }
   return result; /*0x496cbe*/
+
 }
 }
 // 0x496D10
@@ -1249,14 +1308,21 @@ namespace gamemd {
 int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
 {
 
+  int result; // eax
+  unsigned __int16 *v12; // edx
+  unsigned __int16 *v14; // esi
+  int v17; // eax
   int v18; // ebx
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // edi
 
-  int result = a5; // eax /*0x496d11*/
-  int v12 = arg0; // edx /*0x496d15*/
-  unsigned int v14 = a7; // esi /*0x496d20*/
+  result = a5; /*0x496d11*/
+  v12 = (unsigned __int16 *)arg0; /*0x496d15*/
+  v14 = (unsigned __int16 *)a7; /*0x496d20*/
   if ( a5 <= 0 ) /*0x496d35*/
   {
-    v18 = (int)(aP3); /*0x496d68*/
+    v18 = aP3; /*0x496d68*/
   }
   else
   {
@@ -1268,41 +1334,37 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
         result -= *a2++; /*0x496d44*/
     }
     while ( result > 0 ); /*0x496d4c*/
-    int v17 = -result; // eax /*0x496d52*/
-    v18 = (int)(aP3 - v17); /*0x496d54*/
-    v12 = arg0 + 2 * v17; /*0x496d56*/
+    v17 = -result; /*0x496d52*/
+    v18 = aP3 - v17; /*0x496d54*/
+    v12 = (unsigned __int16 *)(arg0 + 2 * v17); /*0x496d56*/
     result = a7 + 2 * v17; /*0x496d59*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496d5f*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496d61*/
-    v14 = result; /*0x496d64*/
+    v14 = (unsigned __int16 *)result; /*0x496d64*/
   }
   while ( v18 > 0 ) /*0x496d6e*/
   {
-    unsigned __int8 v19; // al
     v19 = *a2++; /*0x496d74*/
     if ( v19 ) /*0x496d7e*/
     {
-      v14 += 2; /*0x496da5*/
-      int v21; // edi
+      ++v14; /*0x496da5*/
       v21 = a6 - *a10++; /*0x496da8*/
-      v12 += 2; /*0x496dc7*/
+      ++v12; /*0x496dc7*/
       --v18; /*0x496def*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x496db7*/
-        *(unsigned short *)(v12 - 2) = 3 * (this->m_8 & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x496df0*/
-      + (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2));
+      if ( v21 < *(v14 - 1) ) /*0x496db7*/
+        *(v12 - 1) = 3 * (this->m_8 & (v12[arg20 - 1] >> 2)) + (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2)); /*0x496df0*/
     }
     else
     {
-      unsigned __int8 v20; // al
       v20 = *a2++; /*0x496d80*/
       v18 -= v20; /*0x496d91*/
       a10 += v20; /*0x496d93*/
-      v12 += 2 * v20; /*0x496d98*/
-      v14 += 2 * v20; /*0x496d9a*/
+      v12 += v20; /*0x496d98*/
+      v14 += v20; /*0x496d9a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496dfe*/
-    if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496e06*/
-      v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496e08*/
+    if ( (unsigned int)v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496e06*/
+      v14 = (unsigned __int16 *)((char *)v14 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x496e08*/
   }
   return result; /*0x496e13*/
 
@@ -1313,14 +1375,21 @@ namespace gamemd {
 int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
 {
 
+  int result; // eax
+  unsigned short *v12; // edx
+  unsigned __int16 *v14; // esi
+  int v17; // eax
   int v18; // ebx
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // edi
 
-  int result = a5; // eax /*0x496e61*/
-  unsigned short *v12 = a1; // edx /*0x496e65*/
-  unsigned int v14 = a7; // esi /*0x496e70*/
+  result = a5; /*0x496e61*/
+  v12 = a1; /*0x496e65*/
+  v14 = (unsigned __int16 *)a7; /*0x496e70*/
   if ( a5 <= 0 ) /*0x496e85*/
   {
-    v18 = (int)(aP3); /*0x496eb8*/
+    v18 = aP3; /*0x496eb8*/
   }
   else
   {
@@ -1332,40 +1401,37 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
         result -= *a2++; /*0x496e94*/
     }
     while ( result > 0 ); /*0x496e9c*/
-    int v17 = -result; // eax /*0x496ea2*/
-    v18 = (int)(aP3 - v17); /*0x496ea4*/
+    v17 = -result; /*0x496ea2*/
+    v18 = aP3 - v17; /*0x496ea4*/
     v12 = &a1[v17]; /*0x496ea6*/
     result = a7 + 2 * v17; /*0x496ea9*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496eaf*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496eb1*/
-    v14 = result; /*0x496eb4*/
+    v14 = (unsigned __int16 *)result; /*0x496eb4*/
   }
   while ( v18 > 0 ) /*0x496ebe*/
   {
-    unsigned __int8 v19; // al
     v19 = *a2++; /*0x496ec4*/
     if ( v19 ) /*0x496ece*/
     {
-      v14 += 2; /*0x496ef5*/
-      int v21; // edi
+      ++v14; /*0x496ef5*/
       v21 = a6 - *a10++; /*0x496ef8*/
       --v18; /*0x496f36*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x496f07*/
+      if ( v21 < *(v14 - 1) ) /*0x496f07*/
         *v12 = (this->m_8 & (v12[arg20] >> 1)) + (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 1)); /*0x496f37*/
       ++v12; /*0x496f3e*/
     }
     else
     {
-      unsigned __int8 v20; // al
       v20 = *a2++; /*0x496ed0*/
       v18 -= v20; /*0x496ee1*/
       a10 += v20; /*0x496ee3*/
       v12 += v20; /*0x496ee8*/
-      v14 += 2 * v20; /*0x496eea*/
+      v14 += v20; /*0x496eea*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496f47*/
-    if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496f4f*/
-      v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496f51*/
+    if ( (unsigned int)v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496f4f*/
+      v14 = (unsigned __int16 *)((char *)v14 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x496f51*/
   }
   return result; /*0x496f5c*/
 
@@ -1376,14 +1442,21 @@ namespace gamemd {
 int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
 {
 
+  int result; // eax
+  unsigned __int16 *v12; // edx
+  unsigned __int16 *v14; // esi
+  int v17; // eax
   int v18; // ebx
+  unsigned __int8 v19; // al
+  unsigned __int8 v20; // al
+  int v21; // edi
 
-  int result = a5; // eax /*0x496fb1*/
-  int v12 = arg0; // edx /*0x496fb5*/
-  unsigned int v14 = a7; // esi /*0x496fc0*/
+  result = a5; /*0x496fb1*/
+  v12 = (unsigned __int16 *)arg0; /*0x496fb5*/
+  v14 = (unsigned __int16 *)a7; /*0x496fc0*/
   if ( a5 <= 0 ) /*0x496fd5*/
   {
-    v18 = (int)(aP3); /*0x497008*/
+    v18 = aP3; /*0x497008*/
   }
   else
   {
@@ -1395,41 +1468,37 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
         result -= *a2++; /*0x496fe4*/
     }
     while ( result > 0 ); /*0x496fec*/
-    int v17 = -result; // eax /*0x496ff2*/
-    v18 = (int)(aP3 - v17); /*0x496ff4*/
-    v12 = arg0 + 2 * v17; /*0x496ff6*/
+    v17 = -result; /*0x496ff2*/
+    v18 = aP3 - v17; /*0x496ff4*/
+    v12 = (unsigned __int16 *)(arg0 + 2 * v17); /*0x496ff6*/
     result = a7 + 2 * v17; /*0x496ff9*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x496fff*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x497001*/
-    v14 = result; /*0x497004*/
+    v14 = (unsigned __int16 *)result; /*0x497004*/
   }
   while ( v18 > 0 ) /*0x49700e*/
   {
-    unsigned __int8 v19; // al
     v19 = *a2++; /*0x497014*/
     if ( v19 ) /*0x49701e*/
     {
-      v14 += 2; /*0x497045*/
-      int v21; // edi
+      ++v14; /*0x497045*/
       v21 = a6 - *a10++; /*0x497048*/
-      v12 += 2; /*0x497067*/
+      ++v12; /*0x497067*/
       --v18; /*0x49708f*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x497057*/
-        *(unsigned short *)(v12 - 2) = (this->m_8 & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x497090*/
-      + 3 * (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2));
+      if ( v21 < *(v14 - 1) ) /*0x497057*/
+        *(v12 - 1) = (this->m_8 & (v12[arg20 - 1] >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->M4 + 2 * v19) >> 2)); /*0x497090*/
     }
     else
     {
-      unsigned __int8 v20; // al
       v20 = *a2++; /*0x497020*/
       v18 -= v20; /*0x497031*/
       a10 += v20; /*0x497033*/
-      v12 += 2 * v20; /*0x497038*/
-      v14 += 2 * v20; /*0x49703a*/
+      v12 += v20; /*0x497038*/
+      v14 += v20; /*0x49703a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x49709e*/
-    if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4970a6*/
-      v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x4970a8*/
+    if ( (unsigned int)v14 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4970a6*/
+      v14 = (unsigned __int16 *)((char *)v14 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4970a8*/
   }
   return result; /*0x4970b3*/
 
@@ -1440,14 +1509,20 @@ namespace gamemd {
 unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlitTransXlatZReadWrite_G * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 
+  int v11; // edx
+  unsigned short *result; // eax
+  unsigned __int16 *v13; // esi
+  int v17; // edx
   int v18; // ebp
+  unsigned __int8 v19; // dl
+  unsigned __int8 v20; // dl
 
-  int v11 = a5; // edx /*0x497101*/
-  unsigned short *result = a6; // eax /*0x497105*/
-  int v13 = arg0; // esi /*0x49710c*/
+  v11 = a5; /*0x497101*/
+  result = a6; /*0x497105*/
+  v13 = (unsigned __int16 *)arg0; /*0x49710c*/
   if ( a5 <= 0 ) /*0x49711f*/
   {
-    v18 = (int)(aP3); /*0x497154*/
+    v18 = aP3; /*0x497154*/
   }
   else
   {
@@ -1459,23 +1534,22 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
         v11 -= *a2++; /*0x49712c*/
     }
     while ( v11 > 0 ); /*0x497134*/
-    int v17 = -v11; // edx /*0x49713a*/
-    v18 = (int)(aP3 - v17); /*0x49713c*/
-    v13 = arg0 + 2 * v17; /*0x49713e*/
+    v17 = -v11; /*0x49713a*/
+    v18 = aP3 - v17; /*0x49713c*/
+    v13 = (unsigned __int16 *)(arg0 + 2 * v17); /*0x49713e*/
     result = &a6[v17]; /*0x497141*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x49714d*/
       result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x49714f*/
   }
   while ( v18 > 0 ) /*0x49715a*/
   {
-    unsigned __int8 v19; // dl
     v19 = *a2++; /*0x497160*/
     if ( v19 ) /*0x497169*/
     {
-      v13 += 2; /*0x4971a9*/
+      ++v13; /*0x4971a9*/
       if ( arg10 - *a10 < (unsigned __int16)*result ) /*0x497199*/
       {
-        *(unsigned short *)(v13 - 2) = *(unsigned short *)(*&this->M4 + 2 * v19); /*0x4971b7*/
+        *(v13 - 1) = *(unsigned short *)(*&this->M4 + 2 * v19); /*0x4971b7*/
         *result = arg10 - *a10; /*0x4971c1*/
       }
       ++result; /*0x4971c9*/
@@ -1484,11 +1558,10 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
     }
     else
     {
-      unsigned __int8 v20; // dl
       v20 = *a2++; /*0x49716b*/
       v18 -= v20; /*0x49717c*/
       a10 += v20; /*0x49717e*/
-      v13 += 2 * v20; /*0x497183*/
+      v13 += v20; /*0x497183*/
       result += v20; /*0x497185*/
     }
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4971d7*/
@@ -1503,13 +1576,24 @@ namespace gamemd {
 unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 
+  unsigned __int16 *result; // eax
+  int v13; // ecx
+  unsigned __int16 *v14; // esi
+  int v17; // ecx
   int v18; // ebx
-
-  unsigned __int16 *result = a6; // eax /*0x497240*/
+  unsigned __int8 v19; // cl
+  unsigned __int8 v20; // cl
+  int v21; // ecx
+  int v22; // ecx
+  char *v23; // edi
+  __int16 v24; // cx
   unsigned __int8 *v26; // [esp+1Ch] [ebp+8h]
-  v26 = *(unsigned __int8 **)this->u32_4; /*0x497244*/
-  int v13 = a5; // ecx /*0x497248*/
-  int v14 = arg0; // esi /*0x49724d*/
+  unsigned __int8 v27; // [esp+20h] [ebp+Ch]
+
+  result = a6; /*0x497240*/
+  v26 = *(unsigned __int8 **)this->m_4; /*0x497244*/
+  v13 = a5; /*0x497248*/
+  v14 = (unsigned __int16 *)arg0; /*0x49724d*/
   if ( a5 <= 0 ) /*0x497258*/
   {
     v18 = a4; /*0x49728f*/
@@ -1524,35 +1608,33 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
         v13 -= *a2++; /*0x497267*/
     }
     while ( v13 > 0 ); /*0x49726f*/
-    int v17 = -v13; // ecx /*0x497275*/
+    v17 = -v13; /*0x497275*/
     v18 = a4 - v17; /*0x497277*/
-    v14 = arg0 + 2 * v17; /*0x497279*/
+    v14 = (unsigned __int16 *)(arg0 + 2 * v17); /*0x497279*/
     result = &a6[v17]; /*0x49727c*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x497288*/
       result = (unsigned __int16 *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x49728a*/
   }
   while ( v18 > 0 ) /*0x497295*/
   {
-    unsigned __int8 v19; // cl
     v19 = *a2++; /*0x49729b*/
-    unsigned __int8 v27; // [esp+20h] [ebp+Ch]
     v27 = v19; /*0x4972a1*/
     if ( v19 ) /*0x4972a9*/
     {
-      int v22 = arg10 - *a10; // ecx /*0x4972d1*/
-      char *v23 = a10 + 1; // edi /*0x4972d8*/
+      v22 = arg10 - *a10; /*0x4972d1*/
+      v23 = a10 + 1; /*0x4972d8*/
       if ( v22 >= *result ) /*0x4972db*/
       {
         a10 = v23 + 1; /*0x49731b*/
-        v14 += 2; /*0x49731c*/
+        ++v14; /*0x49731c*/
         ++result; /*0x49731f*/
       }
       else
       {
-        v14 += 2; /*0x4972ed*/
+        ++v14; /*0x4972ed*/
         ++result; /*0x4972f0*/
-        *(unsigned short *)(v14 - 2) = *(unsigned short *)(this->M8 + 2 * v26[v27]); /*0x497305*/
-        __int16 v24 = *v23; // cx /*0x49730d*/
+        *(v14 - 1) = *(unsigned short *)(this->M8 + 2 * v26[v27]); /*0x497305*/
+        v24 = *v23; /*0x49730d*/
         a10 = v23 + 1; /*0x497313*/
         *(result - 1) = arg10 - v24; /*0x497314*/
       }
@@ -1560,12 +1642,11 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
     }
     else
     {
-      unsigned __int8 v20; // cl
       v20 = *a2++; /*0x4972ab*/
       v18 -= v20; /*0x4972bd*/
       a10 += v20; /*0x4972bf*/
-      int v21 = 2 * v20; // ecx /*0x4972c1*/
-      v14 += v21; /*0x4972c4*/
+      v21 = 2 * v20; /*0x4972c1*/
+      v14 = (unsigned __int16 *)((char *)v14 + v21); /*0x4972c4*/
       result = (unsigned __int16 *)((char *)result + v21); /*0x4972c6*/
     }
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x49732c*/
@@ -2455,29 +2536,36 @@ namespace gamemd {
 AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
 {
 
+  int v3; // eax
+  char *v4; // edi
+  int v5; // edx
+  int v6; // eax
+  int *v7; // esi
+  int v8; // ebp
+  void *v9; // eax
+  void *v10; // eax
+  void *fallRate; // eax
+  void *abstractFlags; // eax
+  char *v14; // [esp+Ch] [ebp-4h]
 
   if ( (a2 & 2) != 0 ) /*0x49e7cc*/
   {
-    int v3; // eax
-    v3 = *((unsigned int *)Block - 1); /*0x49e7d2*/
-    char *v4; // edi
-    v4 = (char *)Block - 4; /*0x49e7d5*/
-    char *v14; // [esp+Ch] [ebp-4h]
-    v14 = (char *)Block - 4; /*0x49e7d8*/
-    int v5 = 19 * v3; // edx /*0x49e7df*/
-    int v6 = v3 - 1; // eax /*0x49e7e2*/
+    v3 = *((unsigned int *)this - 1); /*0x49e7d2*/
+    v4 = (char *)this - 4; /*0x49e7d5*/
+    v14 = (char *)this - 4; /*0x49e7d8*/
+    v5 = 19 * v3; /*0x49e7df*/
+    v6 = v3 - 1; /*0x49e7e2*/
     if ( v6 >= 0 ) /*0x49e7e6*/
     {
-      int *v7 = &Block->fallRate + v5; // esi /*0x49e7e9*/
-      int v8 = v6 + 1; // ebp /*0x49e7ec*/
+      v7 = &this->fallRate + v5; /*0x49e7e9*/
+      v8 = v6 + 1; /*0x49e7ec*/
       do /*0x49e84a*/
       {
         v7 -= 19; /*0x49e7f6*/
         DeleteAndZero((ObjectClass *)(v7 + 7)); /*0x49e7fc*/
         DeleteAndZero((ObjectClass *)(v7 + 6)); /*0x49e804*/
-        void *v9; // eax
         v9 = (void *)*v7; /*0x49e809*/
-        *(v7 - 1) = (int)&vt_VectorClassDynamicVectorClass; /*0x49e80b*/
+        *(v7 - 1) = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e80b*/
         if ( v9 && *((unsigned char *)v7 + 9) ) /*0x49e812*/
         {
           __3_YAXPAX_Z(v9); /*0x49e818*/
@@ -2485,9 +2573,8 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
         }
         *((unsigned char *)v7 + 9) = 0; /*0x49e822*/
         v7[1] = 0; /*0x49e825*/
-        void *v10; // eax
         v10 = (void *)*(v7 - 6); /*0x49e828*/
-        *(v7 - 7) = (int)&vt_VectorClassDynamicVectorClass; /*0x49e82b*/
+        *(v7 - 7) = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e82b*/
         if ( v10 && *((unsigned char *)v7 - 15) ) /*0x49e832*/
         {
           __3_YAXPAX_Z(v10); /*0x49e838*/
@@ -2506,31 +2593,29 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
   }
   else
   {
-    DeleteAndZeroBlock->ObjectClass_28); /*0x49e86d*/
-    DeleteAndZeroBlock->ObjectClass_28); /*0x49e875*/
-    void *fallRate; // eax
-    fallRate = (void *)Block->fallRate; /*0x49e87a*/
-    Block->owningHouseIndex = (int)&vt_VectorClassDynamicVectorClass; /*0x49e886*/
-    if ( fallRate && BYTE1(Block->attachedTag) ) /*0x49e88b*/
+    DeleteAndZerothis->spawnStatus); /*0x49e86d*/
+    DeleteAndZerothis->customSound); /*0x49e875*/
+    fallRate = (void *)this->fallRate; /*0x49e87a*/
+    this->owningHouseIndex = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e886*/
+    if ( fallRate && BYTE1(this->attachedTag) ) /*0x49e88b*/
     {
       __3_YAXPAX_Z(fallRate); /*0x49e891*/
-      Block->fallRate = 0; /*0x49e899*/
+      this->fallRate = 0; /*0x49e899*/
     }
-    BYTE1(Block->attachedTag) = 0; /*0x49e89c*/
-    Block->nextObject = 0; /*0x49e89f*/
-    void *abstractFlags; // eax
-    abstractFlags = (void *)Block->?; /*0x49e8a2*/
-    Block->? = (int)&vt_VectorClassDynamicVectorClass; /*0x49e8a5*/
-    if ( abstractFlags && BYTE1(Block->?) ) /*0x49e8ac*/
+    BYTE1(this->attachedTag) = 0; /*0x49e89c*/
+    this->nextObject = 0; /*0x49e89f*/
+    abstractFlags = (void *)this->abstractFlags; /*0x49e8a2*/
+    this->uniqueId = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e8a5*/
+    if ( abstractFlags && BYTE1(this->referenceCount) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(abstractFlags); /*0x49e8b2*/
-      Block->Straw_14 = 0; /*0x49e8ba*/
+      this->abstractFlags = 0; /*0x49e8ba*/
     }
-    BYTE1(Block->?) = 0; /*0x49e8c1*/
-    Block->u32_18 = 0; /*0x49e8c6*/
+    BYTE1(this->referenceCount) = 0; /*0x49e8c1*/
+    this->nextArrayIndex = 0; /*0x49e8c6*/
     if ( (a2 & 1) != 0 ) /*0x49e8c9*/
-      __3_YAXPAX_Z(Block); /*0x49e8cc*/
-    return (char *)Block; /*0x49e8d4*/
+      __3_YAXPAX_Z(this); /*0x49e8cc*/
+    return (char *)this; /*0x49e8d4*/
   }
 
 }
@@ -2589,18 +2674,21 @@ namespace gamemd {
 char E4Recv_4912B0::sub_4912B0(int a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-
-  int v9 = *&this->M4; // ebx /*0x4912c5*/
-  int v10 = a4 + 1; // ecx /*0x4912cb*/
+  unsigned __int16 *v9; // ebx
+  int v10; // ecx
   unsigned short *v11; // edi
+  int v13; // eax
+
+  v9 = *(unsigned __int16 **)&this->M4; /*0x4912c5*/
+  v10 = a4 + 1; /*0x4912cb*/
   v11 = (unsigned short *)(a2 - 2); /*0x4912cf*/
-  int v13 = 0; // eax /*0x4912d5*/
+  v13 = 0; /*0x4912d5*/
   while ( --v10 ) /*0x4912d7*/
   {
     ++v11; /*0x4912da*/
     LOBYTE(v13) = *a3++; /*0x4912dd*/
     if ( (unsigned char)v13 ) /*0x4912e2*/
-      *v11 = *(unsigned short *)(v9 + 2 * v13); /*0x4912e8*/
+      *v11 = v9[v13]; /*0x4912e8*/
   }
   return v13; /*0x4912ed*/
 
@@ -3560,24 +3648,26 @@ char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5,
 {
 
   int v10; // eax
-  (*((unsigned char *)&(v10))) = a5; /*0x492740*/
+  int v13; // ebx
+  int v14; // eax
+  __int16 v15; // bp
+  unsigned __int8 v17; // [esp+Ch] [ebp+Ch]
+
+  LOBYTE(v10) = a5; /*0x492740*/
   if ( a5 > 0 ) /*0x492746*/
   {
-    int v13 = a5; // ebx /*0x492754*/
+    v13 = a5; /*0x492754*/
     do /*0x492791*/
     {
-      (*((unsigned char *)&(v10))) = *a4++; /*0x492756*/
-      uint8_t v17; // [esp+Ch] [ebp+Ch]
+      LOBYTE(v10) = *a4++; /*0x492756*/
       v17 = v10; /*0x49275b*/
       if ( (unsigned char)v10 ) /*0x49275f*/
       {
-        (*((unsigned short *)&(a2))) = *((unsigned short *)a1 + 4); /*0x492768*/
-        int v14; // eax
-        v14 = (uint16_t)*a3; /*0x492776*/
-        (*((unsigned short *)&(v14))) = (uint16_t)v14 >> 2; /*0x492779*/
+        LOWORD(a2) = this->u16_8; /*0x492768*/
+        v14 = (unsigned __int16)*a3; /*0x492776*/
+        LOWORD(v14) = (unsigned __int16)v14 >> 2; /*0x492779*/
         v10 = a2 & v14; /*0x492781*/
-        int16_t v15; // bp
-        v15 = a2 & (*(unsigned short *)(a1->m_4 + 2 * v17) >> 2); /*0x492783*/
+        v15 = a2 & (*(unsigned short *)(this->Data + 2 * v17) >> 2); /*0x492783*/
         a2 = 3 * v10; /*0x492785*/
         *a3 = 3 * v10 + v15; /*0x49278a*/
       }
@@ -3587,6 +3677,7 @@ char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5,
     while ( v13 ); /*0x492791*/
   }
   return v10; /*0x492797*/
+
 }
 } // namespace gamemd
 
@@ -5203,11 +5294,17 @@ namespace gamemd {
 int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTransDarkenZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 
+  int result; // eax
+  unsigned __int16 *v12; // edx
+  unsigned short *v14; // esi
+  int v17; // eax
   int v18; // ebx
+  unsigned __int8 v20; // al
+  int v21; // edi
 
-  int result = a5; // eax /*0x496821*/
-  unsigned int v12 = a7; // edx /*0x496825*/
-  unsigned short *v14 = a1; // esi /*0x496830*/
+  result = a5; /*0x496821*/
+  v12 = (unsigned __int16 *)a7; /*0x496825*/
+  v14 = a1; /*0x496830*/
   if ( a5 <= 0 ) /*0x496845*/
   {
     v18 = aP3; /*0x496878*/
@@ -5222,38 +5319,36 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
         result -= *a2++; /*0x496854*/
     }
     while ( result > 0 ); /*0x49685c*/
-    int v17 = -result; // eax /*0x496862*/
+    v17 = -result; /*0x496862*/
     v18 = aP3 - v17; /*0x496864*/
     v14 = &a1[v17]; /*0x496866*/
     result = a7 + 2 * v17; /*0x496869*/
     if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x49686f*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496871*/
-    v12 = result; /*0x496874*/
+    v12 = (unsigned __int16 *)result; /*0x496874*/
   }
   while ( v18 > 0 ) /*0x49687e*/
   {
     if ( *a2++ ) /*0x496880*/
     {
-      v12 += 2; /*0x4968ad*/
-      int v21; // edi
+      ++v12; /*0x4968ad*/
       v21 = a6 - *a10++; /*0x4968b0*/
-      if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x4968bb*/
+      if ( v21 < *(v12 - 1) ) /*0x4968bb*/
         *v14 = *&this->u16_4 & (*v14 >> 1); /*0x4968cb*/
       --v18; /*0x4968ce*/
       ++v14; /*0x4968cf*/
     }
     else
     {
-      unsigned __int8 v20; // al
       v20 = *a2++; /*0x496888*/
       v18 -= v20; /*0x496899*/
       a10 += v20; /*0x49689b*/
       v14 += v20; /*0x4968a0*/
-      v12 += 2 * v20; /*0x4968a2*/
+      v12 += v20; /*0x4968a2*/
     }
     result = (int)g_ZBufferDescriptor; /*0x4968d2*/
-    if ( v12 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4968da*/
-      v12 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x4968dc*/
+    if ( (unsigned int)v12 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4968da*/
+      v12 = (unsigned __int16 *)((char *)v12 - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4968dc*/
   }
   return result; /*0x4968e3*/
 
@@ -6437,39 +6532,42 @@ namespace gamemd {
 int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
 {
 
-  int *v18; // [esp+1Ch] [ebp-14h]
-  v18 = a1; /*0x49f42a*/
-  double v16; // [esp+10h] [ebp-20h] BYREF
-  (*((unsigned short *)&(v16))) = 0; /*0x49f438*/
   char v6; // al
-  v6 = Random::State(&dword_A8B230[14].NeedsSaveOrLink); /*0x49f43f*/
-  int16_t v7; // cx
-  (*((unsigned char *)&(v7))) = 0; /*0x49f448*/
-  (*(((unsigned char *)&(v7)) + (sizeof(v7) - 1))) = v6; /*0x49f44a*/
+  __int16 v7; // cx
   int v8; // edi
+  int v9; // eax
+  int v10; // eax
+  int v11; // edi
+  int v12; // ebx
+  int v13; // ecx
+  int *result; // eax
+  int *v15; // edx
+  double v16; // [esp+10h] [ebp-20h] BYREF
+  int v17; // [esp+18h] [ebp-18h]
+  int *v18; // [esp+1Ch] [ebp-14h]
+  double v19; // [esp+20h] [ebp-10h]
+  double v20; // [esp+28h] [ebp-8h]
+  int v21; // [esp+34h] [ebp+4h]
+
+  v18 = a1; /*0x49f42a*/
+  LOWORD(v16) = 0; /*0x49f438*/
+  v6 = Random::State((unsigned int *)dword_A8B230 + 134); /*0x49f43f*/
+  LOBYTE(v7) = 0; /*0x49f448*/
+  HIBYTE(v7) = v6; /*0x49f44a*/
   v8 = a2[2]; /*0x49f451*/
   v16 = (double)(v7 - 0x3FFF) * -0.00009587672516830327; /*0x49f46c*/
-  double v19; // [esp+20h] [ebp-10h]
   v19 = (double)a4; /*0x49f47e*/
-  double v20; // [esp+28h] [ebp-8h]
   v20 = (double)a2[1]; /*0x49f485*/
   Math::SinCos(v16); /*0x49f489*/
-  int v9; // eax
-  (*((unsigned short *)&(v9))) = Math::RoundToInt(a3); /*0x49f496*/
-  int v21; // [esp+34h] [ebp+4h]
+  LOWORD(v9) = Math::RoundToInt(a3); /*0x49f496*/
   v21 = v9; /*0x49f49d*/
   Math::ArcTan2(v16); /*0x49f4a1*/
-  int v10; // eax
-  (*((unsigned short *)&(v10))) = Math::RoundToInt(a3 * v19 + (double)*a2); /*0x49f4af*/
-  ((Coord *)(&v16))->Subtract(v10, v21, v8); /*0x49f4bf*/
-  int v11; // edi
-  v11 = (*(((unsigned int *)&(v16)) + 1)); /*0x49f4c4*/
-  int v12; // ebx
-  int v17; // [esp+18h] [ebp-18h]
+  LOWORD(v10) = Math::RoundToInt(a3 * v19 + (double)*a2); /*0x49f4af*/
+  Coord::Subtract(&v16, v10, v21, v8); /*0x49f4bf*/
+  v11 = HIDWORD(v16); /*0x49f4c4*/
   v12 = v17; /*0x49f4c8*/
-  int v13; // ecx
-  v13 = (*((unsigned int *)&(v16))); /*0x49f4d0*/
-  if ( (unsigned int)((*((signed int *)&(v16))) / 256) >= 0x200 || (unsigned int)((*((signed int *)(((unsigned char *)&(v16)) + 4))) / 256) >= 0x200 ) /*0x49f4f8*/
+  v13 = LODWORD(v16); /*0x49f4d0*/
+  if ( (unsigned int)(SLODWORD(v16) / 256) >= 0x200 || (unsigned int)(SHIDWORD(v16) / 256) >= 0x200 ) /*0x49f4f8*/
   {
     v13 = *a2; /*0x49f4fa*/
     v11 = a2[1]; /*0x49f4fc*/
@@ -6477,15 +6575,16 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
   }
   if ( a5 ) /*0x49f508*/
   {
-    v13 = v13 - (uint8_t)v13 + 128; /*0x49f51d*/
-    v11 = v11 - (uint8_t)v11 + 128; /*0x49f523*/
+    v13 = v13 - (unsigned __int8)v13 + 128; /*0x49f51d*/
+    v11 = v11 - (unsigned __int8)v11 + 128; /*0x49f523*/
   }
-  int *result = v18; // eax /*0x49f529*/
-  int *v15 = v18; // edx /*0x49f52d*/
+  result = v18; /*0x49f529*/
+  v15 = v18; /*0x49f52d*/
   *v18 = v13; /*0x49f52f*/
   v15[1] = v11; /*0x49f531*/
   v15[2] = v12; /*0x49f537*/
   return result; /*0x49f534*/
+
 }
 } // namespace gamemd
 

@@ -162,27 +162,31 @@ namespace gamemd {  // G42.18c ns repair
 void* RulesClass::readAudioVisual()
 {
 
-
   int result; // eax
+  int Int_Overwrite; // eax
+  int v4; // ecx
+  int BerserkColor; // eax
+  int IronCurtainColor; // ecx
+  double v9; // [esp-8h] [ebp-10h]
   bool *v10; // [esp+Ch] [ebp+4h]
-  result = (int)(INIClass::BinarySearchSection((int)v10, (unsigned __int8 *)aElevationmodel)); /*0x66d160*/
+
+  result = INIClass::BinarySearchSection((int)v10, (unsigned __int8 *)aElevationmodel); /*0x66d160*/
   if ( result ) /*0x66d16c*/
   {
-    int Int_Overwrite; // eax
-    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66d183*/                       v10,                       (unsigned __int8 *)aElevationmodel,(uint8_t *)(aElevationincre),                       this->ColorAdd[9]);
-    int v4; // ecx
+    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66d183*/
+                      v10,
+                      (unsigned __int8 *)aElevationmodel,
+                      aElevationincre,
+                      this->ColorAdd[9]);
     v4 = this->ColorAdd[11]; /*0x66d188*/
     this->ColorAdd[9] = Int_Overwrite; /*0x66d18e*/
-    double v9; // [esp-8h] [ebp-10h]
-    HIDWORD(v9) = (unsigned int)(this->LaserTargetColor); /*0x66d1a0*/
+    HIDWORD(v9) = this->LaserTargetColor; /*0x66d1a0*/
     LODWORD(v9) = v4; /*0x66d1a1*/
     INIClass::ReadDouble_Overwrite((double *)v10, (unsigned __int8 *)aElevationmodel, aElevationincre_0, v9); /*0x66d1aa*/
-    int BerserkColor; // eax
-    BerserkColor = (int)(this->BerserkColor); /*0x66d1af*/
-    int IronCurtainColor; // ecx
-    IronCurtainColor = (int)(this->IronCurtainColor); /*0x66d1b5*/
+    BerserkColor = this->BerserkColor; /*0x66d1af*/
+    IronCurtainColor = this->IronCurtainColor; /*0x66d1b5*/
     __asm { fstp qword ptr [esi+1840h] } /*0x66d1bb*/
-    *&this->RepairRate = _RT1; /*0x66d1bb*/
+    *&this->RadLightDelay_d = _RT1; /*0x66d1bb*/
     result = INIClass::ReadDouble_Overwrite( /*0x66d1d1*/
                (double *)v10,
                (unsigned __int8 *)aElevationmodel,
@@ -196,7 +200,7 @@ void* RulesClass::readAudioVisual()
   {
     LOBYTE(result) = 0; /*0x66d1e4*/
   }
-  return (void *)(result); /*0x66d1dc*/
+  return result; /*0x66d1dc*/
 
 }
 }  // G42.18c ns repair
@@ -205,43 +209,54 @@ namespace gamemd {  // G42.18c ns repair
 INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
 {
 
-
   int result; // eax
+  int v2; // edi
+  double *v3; // ebp
+  char *v4; // eax
+  const char *v5; // esi
+  char *v6; // eax
+  GlobalArray *v7; // esi
+  char *v8; // eax
+  char *v9; // esi
+  char *v10; // esi
+  char String[128]; // [esp+0h] [ebp-80h] BYREF
   unsigned __int8 ***v13; // [esp+84h] [ebp+4h]
-  result = (int)(INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aPowerups)); /*0x673e90*/
+
+  result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aPowerups); /*0x673e90*/
   if ( result ) /*0x673e9c*/
   {
-    int v2 = 0; // edi /*0x673ea5*/
-    double *v3 = dbl_89EC28; // ebp /*0x673ea7*/
+    v2 = 0; /*0x673ea5*/
+    v3 = dbl_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
-      char String[128]; // [esp+0h] [ebp-80h] BYREF
-      result = (/*0x673ed0*/ (INIClass *)v13)->GetString((unsigned __int8 *)aPowerups, (&off_7E523C)[v2], a0None, String, 128);
+      result = INIClass::GetString( /*0x673ed0*/
+                 (INIClass *)v13,
+                 (unsigned __int8 *)aPowerups,
+                 (&off_7E523C)[v2],
+                 a0None,
+                 String,
+                 128);
       if ( result ) /*0x673ed7*/
       {
-        char *v4; // eax
-        v4 = strtok(String, Str); /*0x673ee7*/
-        const char *v5 = v4; // esi /*0x673eec*/
+        v4 = strtok(String, Delimiter); /*0x673ee7*/
+        v5 = v4; /*0x673eec*/
         if ( v4 ) /*0x673ef3*/
         {
-          (v4)->Trim(); /*0x673ef7*/
+          String::Trim(v4); /*0x673ef7*/
           dword_81DA8C[v2] = atoi(v5); /*0x673f05*/
         }
-        char *v6; // eax
-        v6 = strtok(0, Str); /*0x673f13*/
-        GlobalArray *v7; // esi
+        v6 = strtok(0, Delimiter); /*0x673f13*/
         v7 = (GlobalArray *)v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
-          (v6)->Trim(); /*0x673f23*/
+          String::Trim(v6); /*0x673f23*/
           dword_81DAD8[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
-        char *v8; // eax
-        v8 = strtok(0, Str); /*0x673f3d*/
-        char *v9 = v8; // esi /*0x673f42*/
+        v8 = strtok(0, Delimiter); /*0x673f3d*/
+        v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
-          (v8)->Trim(); /*0x673f4d*/
+          String::Trim(v8); /*0x673f4d*/
           if ( _strcmpi(v9, off_825BF8) ) /*0x673f58*/
           {
             if ( !_strcmpi(v9, g_Str_no) ) /*0x673f73*/
@@ -252,8 +267,7 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
             byte_89ECC0[v2] = 1; /*0x673f64*/
           }
         }
-        result = (int)strtok(0, Str); /*0x673f8c*/
-        char *v10; // esi
+        result = (int)strtok(0, Delimiter); /*0x673f8c*/
         v10 = (char *)result; /*0x673f91*/
         if ( result ) /*0x673f98*/
         {
@@ -264,7 +278,7 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
           }
           else
           {
-            (v10)->Trim(); /*0x673fbc*/
+            String::Trim(v10); /*0x673fbc*/
             result = atof(v10); /*0x673fc2*/
           }
           __asm { fstp qword ptr [ebp+0] } /*0x673fca*/
@@ -281,7 +295,7 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
   {
     LOBYTE(result) = 0; /*0x673feb*/
   }
-  return (gamemd::INIClass **)(result); /*0x673fe2*/
+  return result; /*0x673fe2*/
 
 }
 }  // G42.18c ns repair
@@ -290,70 +304,70 @@ namespace gamemd {  // G42.18c ns repair
 INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, void * aJumpjetcontrol, void * aTurnrate, void * aWobbledeviatio, void * aWobblesperseco)
 {
 
-
   int result; // eax
+  int Int_Overwrite; // eax
+  int v4; // edx
+  int v5; // edx
+  int v7; // eax
+  unsigned int v8; // ecx
+  unsigned int v9; // edx
+  unsigned int v10; // ecx
+  unsigned int v11; // edx
+  int v13; // ecx
+  double v15; // [esp-8h] [ebp-10h]
   bool *v16; // [esp+Ch] [ebp+4h]
-  result = (int)(INIClass::BinarySearchSection((int)v16, (unsigned __int8 *)aJumpjetcontrol)); /*0x6743e0*/
+
+  result = INIClass::BinarySearchSection((int)v16, (unsigned __int8 *)aJumpjetcontrol); /*0x6743e0*/
   if ( result ) /*0x6743ec*/
   {
-    *(unsigned int *)&aClimb->__pad_240[460] = INIClass::ReadInt_Overwrite( /*0x67440c*/
+    *&this->TurnRate = INIClass::ReadInt_Overwrite( /*0x67440c*/
                                          v16,
                                          (unsigned __int8 *)aJumpjetcontrol,
                                          aTurnrate,
-                                         *(unsigned int *)&aClimb->__pad_240[460]);
-    int Int_Overwrite; // eax
+                                         *&this->TurnRate);
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x674427*/
                       v16,
                       (unsigned __int8 *)aJumpjetcontrol,
                       g_INI_Key_Speed,
-                      *(unsigned int *)&aClimb->__pad_240[464]);
-    int v4; // edx
-    v4 = *(unsigned int *)&aClimb->__pad_240[476]; /*0x67442c*/
-    *(unsigned int *)&aClimb->__pad_240[464] = Int_Overwrite; /*0x674432*/
-    double v15; // [esp-8h] [ebp-10h]
+                      *&this->Speed);
+    v4 = *&this->q41C; /*0x67442c*/
+    *&this->Speed = Int_Overwrite; /*0x674432*/
     HIDWORD(v15) = v4; /*0x674444*/
-    LODWORD(v15) = *(unsigned int *)&aClimb->__pad_240[472]; /*0x674445*/
+    LODWORD(v15) = *&this->q418; /*0x674445*/
     INIClass::ReadDouble_Overwrite((double *)v16, (unsigned __int8 *)aJumpjetcontrol, aClimb, v15); /*0x67444e*/
-    int v5; // edx
-    v5 = *(unsigned int *)&aClimb->__pad_240[480]; /*0x674453*/
+    v5 = *&this->Climb; /*0x674453*/
     __asm { fstp qword ptr [esi+418h] } /*0x67445b*/
-    *(double *)&aClimb->__pad_240[472] = _RT1; /*0x67445b*/
-    int v7; // eax
-    v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol,(uint8_t *)(aCruiseheight), v5); /*0x67446d*/
-    unsigned int v8; // ecx
-    v8 = *(unsigned int *)&aClimb->__pad_240[492]; /*0x674472*/
-    unsigned int v9; // edx
-    v9 = *(unsigned int *)&aClimb->__pad_240[488]; /*0x674478*/
-    *(unsigned int *)&aClimb->__pad_240[480] = v7; /*0x67447e*/
+    *&this->q418 = _RT1; /*0x67445b*/
+    v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol, aCruiseheight, v5); /*0x67446d*/
+    v8 = *&this->q42C; /*0x674472*/
+    v9 = *&this->q428; /*0x674478*/
+    *&this->Climb = v7; /*0x67447e*/
     INIClass::ReadDouble_Overwrite( /*0x674493*/
       (double *)v16,
       (unsigned __int8 *)aJumpjetcontrol,
-      (unsigned __int8 *)&DataGlobal_81AF8C[436],
+      (unsigned __int8 *)&DataGlobal_81B140,
       COERCE_DOUBLE(__PAIR64__(v8, v9)));
-    unsigned int v10; // ecx
-    v10 = *(unsigned int *)&aClimb->__pad_240[500]; /*0x674498*/
-    unsigned int v11; // edx
-    v11 = *(unsigned int *)&aClimb->__pad_240[496]; /*0x67449e*/
+    v10 = *&this->q434; /*0x674498*/
+    v11 = *&this->q430; /*0x67449e*/
     __asm { fstp qword ptr [esi+428h] } /*0x6744a4*/
-    *(double *)&aClimb->__pad_240[488] = _RT1; /*0x6744a4*/
+    *&this->q428 = _RT1; /*0x6744a4*/
     INIClass::ReadDouble_Overwrite( /*0x6744b9*/
       (double *)v16,
       (unsigned __int8 *)aJumpjetcontrol,
       aWobblesperseco,
       COERCE_DOUBLE(__PAIR64__(v10, v11)));
-    int v13; // ecx
-    v13 = *(unsigned int *)&aClimb->__pad_240[504]; /*0x6744be*/
+    v13 = *&this->WobbleDeviation; /*0x6744be*/
     __asm { fstp qword ptr [esi+430h] } /*0x6744c4*/
-    *(double *)&aClimb->__pad_240[496] = _RT1; /*0x6744c4*/
-    result = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol,(uint8_t *)(aWobbledeviatio), v13); /*0x6744d9*/
-    *(unsigned int *)&aClimb->__pad_240[504] = result; /*0x6744de*/
+    *&this->q430 = _RT1; /*0x6744c4*/
+    result = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol, aWobbledeviatio, v13); /*0x6744d9*/
+    *&this->WobbleDeviation = result; /*0x6744de*/
     LOBYTE(result) = 1; /*0x6744e5*/
   }
   else
   {
     LOBYTE(result) = 0; /*0x6744ec*/
   }
-  return (gamemd::INIClass **)(result); /*0x6744e4*/
+  return result; /*0x6744e4*/
 
 }
 }  // G42.18c ns repair
@@ -658,34 +672,42 @@ int  RulesClass::readAI(unsigned int * a2)
 namespace gamemd {  // G42.18c ns repair
 void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
-  void *Block; // [esp+10h] [ebp-98h]
-  char v20; // [esp+19h] [ebp-8Fh]
 
+  char *i; // eax
+  unsigned int *v7; // edi
+  int v8; // eax
+  int v9; // ecx
+  void *v10; // eax
+  bool v11; // zf
+  int v13; // eax
+  int v14; // eax
+  int v15; // ecx
+  int v16; // eax
+  void **v17; // [esp+Ch] [ebp-9Ch] BYREF
+  void *Block; // [esp+10h] [ebp-98h]
+  int v19; // [esp+14h] [ebp-94h]
+  char v20; // [esp+19h] [ebp-8Fh]
+  int v21; // [esp+1Ch] [ebp-8Ch]
+  int v22; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
-  if ( ((INIClass *)edx0)->GetString(aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
+
+  if ( INIClass::GetString((INIClass *)edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
   {
-    void **v17; // [esp+Ch] [ebp-9Ch] BYREF
-    ((RulesClass *)&v17)->readIQ(0, 0); /*0x67be11*/
-    int v22; // [esp+20h] [ebp-88h]
+    RulesClass::readIQ((RulesClass *)&v17, 0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
-    int v21; // [esp+1Ch] [ebp-8Ch]
     v21 = 0; /*0x67be28*/
-    v17 = &vt_TypeList; /*0x67be2c*/
-    char *i; // eax
-    for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67be3e*/
+    v17 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67be2c*/
+    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
         break; /*0x67be42*/
-      int v7; // edi
-      v7 = (i)->FindOrCreate(); /*0x67be4b*/
-      int v19; // [esp+14h] [ebp-94h]
+      v7 = TerrainTypeClass::FindOrCreate(i); /*0x67be4b*/
       if ( v7 /*0x67be7b*/
         && (v21 < v19
          || (v20 || !v19)
          && v22 > 0
-         && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v17[2])(&v17, v22 + v19, 0)) )
+         && ((unsigned __int8 (*)(void ***, int, unsigned int))v17[2])(&v17, v22 + v19, 0)) )
       {
-        int v8; // eax
         v8 = v21++; /*0x67be86*/
         *((unsigned int *)Block + v8) = v7; /*0x67be91*/
       }
@@ -694,19 +716,18 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67beb0*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67beb3*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67beb7*/
-    *(unsigned int *)a1 = &vt_VectorClass; /*0x67beba*/
+    *(unsigned int *)a1 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67beba*/
     System_Load_67BFA0((ObjectClass *)a1, &v17); /*0x67bec0*/
-    *(unsigned int *)a1 = &vt_TypeList; /*0x67bec5*/
-    v17 = &vt_VectorClass; /*0x67becb*/
-    int v9 = v22; // ecx /*0x67bed7*/
+    *(unsigned int *)a1 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67bec5*/
+    v17 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67becb*/
+    v9 = v22; /*0x67bed7*/
     *(unsigned int *)(a1 + 16) = v21; /*0x67bedb*/
-    void *v10 = Block; // eax /*0x67bede*/
-    bool v11; // zf
+    v10 = Block; /*0x67bede*/
     v11 = Block == 0; /*0x67bee2*/
     *(unsigned int *)(a1 + 20) = v9; /*0x67bee4*/
     if ( !v11 && v20 ) /*0x67bef1*/
     {
-      operator delete((v10)); /*0x67bef8*/
+      __3_YAXPAX_Z(v10); /*0x67bef8*/
       return (void *)a1; /*0x67bf0b*/
     }
   }
@@ -716,23 +737,20 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67bf1c*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67bf1f*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67bf23*/
-    *(unsigned int *)a1 = &vt_VectorClass; /*0x67bf26*/
+    *(unsigned int *)a1 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67bf26*/
     if ( (unsigned int *)a1 != a5 ) /*0x67bf2c*/
     {
-      ((_VectorClass_PBVTerrainTypeClass *)a1)->TryFreeAndClear(); /*0x67bf30*/
-      int v13; // eax
+      TypeList_cptr_TerrainTypeClass::TryFreeAndClear((_VectorClass_PBVTerrainTypeClass *)a1); /*0x67bf30*/
       v13 = a5[2]; /*0x67bf36*/
       *(unsigned int *)(a1 + 8) = v13; /*0x67bf3b*/
       if ( v13 ) /*0x67bf3e*/
       {
-        int v14; // eax
-        v14 = operator new(4 * v13); /*0x67bf48*/
+        v14 = __2_YAPAXI_Z(4 * v13); /*0x67bf48*/
         *(unsigned int *)(a1 + 4) = v14; /*0x67bf52*/
         if ( v14 ) /*0x67bf55*/
         {
-          int v15; // ecx
           v15 = *(unsigned int *)(a1 + 8); /*0x67bf57*/
-          int v16 = 0; // eax /*0x67bf5a*/
+          v16 = 0; /*0x67bf5a*/
           *(unsigned char *)(a1 + 13) = 1; /*0x67bf5e*/
           if ( v15 > 0 ) /*0x67bf62*/
           {
@@ -753,9 +771,10 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     }
     *(unsigned int *)(a1 + 16) = a5[4]; /*0x67bf83*/
     *(unsigned int *)(a1 + 20) = a5[5]; /*0x67bf89*/
-    *(unsigned int *)a1 = &vt_TypeList; /*0x67bf8c*/
+    *(unsigned int *)a1 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67bf8c*/
   }
   return (void *)a1; /*0x67bf02*/
+
 }
 }  // G42.18c ns repair
 // 0x67C430
@@ -812,14 +831,14 @@ int RulesClass::readSpecialWeapons(void * aAlliedwalltran, void * aWallmodel, vo
                        v7,
                        (unsigned __int8 *)aWallmodel,
                        aAlliedwalltran,
-                       aAlliedwalltran->ForceShieldColor);
-    FallBackCoefficient = aAlliedwalltran->FallBackCoefficient; /*0x66d228*/
-    LOBYTE(aAlliedwalltran->ForceShieldColor) = Bool_Overwrite; /*0x66d22e*/
-    HIDWORD(v6) = aAlliedwalltran->CrewCount; /*0x66d240*/
+                       this->ForceShieldColor);
+    FallBackCoefficient = this->FallBackCoefficient; /*0x66d228*/
+    LOBYTE(this->ForceShieldColor) = Bool_Overwrite; /*0x66d22e*/
+    HIDWORD(v6) = this->CrewCount; /*0x66d240*/
     *(float *)&v6 = FallBackCoefficient; /*0x66d241*/
     result = INIClass::ReadDouble_Overwrite((double *)v7, (unsigned __int8 *)aWallmodel, aWallpenetrator, v6); /*0x66d24a*/
     __asm { fstp qword ptr [esi+1858h] } /*0x66d24f*/
-    *(double *)&aAlliedwalltran->FallBackCoefficient = _RT1; /*0x66d24f*/
+    *&this->FallBackCoefficient = _RT1; /*0x66d24f*/
     LOBYTE(result) = 1; /*0x66d256*/
   }
   else
@@ -834,53 +853,56 @@ int RulesClass::readSpecialWeapons(void * aAlliedwalltran, void * aWallmodel, vo
 namespace gamemd {  // G42.18c ns repair
 int RulesClass::ReadColors(void * aColors)
 {
+
   char *v1; // ebp
   int result; // eax
   int v3; // ebx
   int i; // edi
-  uint8_t *StringByIndex; // esi
+  unsigned __int8 *StringByIndex; // esi
   int Color; // eax
-  uint8_t v7[4]; // [esp+4h] [ebp-8h] BYREF
+  unsigned __int8 v7[4]; // [esp+4h] [ebp-8h] BYREF
   int v8; // [esp+8h] [ebp-4h] BYREF
   INIEntry *v9; // [esp+10h] [ebp+4h] BYREF
 
   v1 = (char *)v9; /*0x66d3a9*/
-  result = INIClass::BinarySearchSection((int)v9, (uint8_t *)aColors); /*0x66d3b0*/
+  result = INIClass::BinarySearchSection((int)v9, (unsigned __int8 *)aColors); /*0x66d3b0*/
   if ( result ) /*0x66d3bc*/
   {
-    result = INIClass::GetKeyCount(v1, (uint8_t *)aColors); /*0x66d3cd*/
+    result = INIClass::GetKeyCount(v1, (unsigned __int8 *)aColors); /*0x66d3cd*/
     v3 = result; /*0x66d3d2*/
     for ( i = 0; i < v3; ++i ) /*0x66d3d8*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v1, (uint8_t *)aColors, i); /*0x66d3f4*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aColors, i); /*0x66d3f4*/
       v7[0] = 0; /*0x66d404*/
       v7[1] = 0; /*0x66d409*/
       v7[2] = 0; /*0x66d40e*/
-      Color = ((INIEntry *)v1)->ReadColor((int)&v8, (uint8_t *)aColors, StringByIndex, v7); /*0x66d413*/
-      (*((unsigned short *)&(v9))) = *(unsigned short *)Color; /*0x66d41b*/
-      (((unsigned char *)&(v9))[2]) = *(unsigned char *)(Color + 2); /*0x66d425*/
+      Color = INIEntry::ReadColor((INIEntry *)v1, (int)&v8, (unsigned __int8 *)aColors, StringByIndex, v7); /*0x66d413*/
+      LOWORD(v9) = *(unsigned short *)Color; /*0x66d41b*/
+      BYTE2(v9) = *(unsigned char *)(Color + 2); /*0x66d425*/
       System_Read((const char *)StringByIndex, (int)&v9); /*0x66d42d*/
       System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)&stru_886380, (int)&FileSystem_TEMPERAT_PAL, 1); /*0x66d444*/
       result = System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)&stru_886380, (int)&FileSystem_TEMPERAT_PAL, 53); /*0x66d45b*/
     }
-    (*((unsigned char *)&(result))) = 1; /*0x66d46c*/
+    LOBYTE(result) = 1; /*0x66d46c*/
   }
   else
   {
-    (*((unsigned char *)&(result))) = 0; /*0x66d475*/
+    LOBYTE(result) = 0; /*0x66d475*/
   }
   return result; /*0x66d46e*/
+
 }
 }  // G42.18c ns repair
 // 0x66D480
 namespace gamemd {  // G42.18c ns repair
 int RulesClass::ReadColorAdd(void * aColoradd)
 {
+
   INIClass *v1; // edi
   int result; // eax
   int v4; // esi
   char *v5; // ebp
-  uint8_t *StringByIndex; // eax
+  unsigned __int8 *StringByIndex; // eax
   int Coord; // eax
   char *v8; // edx
   char v9; // cl
@@ -890,21 +912,21 @@ int RulesClass::ReadColorAdd(void * aColoradd)
   INIClass *v13; // [esp+18h] [ebp+4h] BYREF
 
   v1 = v13; /*0x66d48b*/
-  result = INIClass::BinarySearchSection((int)v13, (uint8_t *)aColoradd); /*0x66d494*/
+  result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aColoradd); /*0x66d494*/
   if ( result ) /*0x66d4a2*/
   {
-    result = INIClass::GetKeyCount(v1->unused, (uint8_t *)aColoradd); /*0x66d4ae*/
+    result = INIClass::GetKeyCount(v1->unused, (unsigned __int8 *)aColoradd); /*0x66d4ae*/
     v4 = 0; /*0x66d4b3*/
     v12 = result; /*0x66d4b7*/
     if ( result > 0 ) /*0x66d4bb*/
     {
-      v5 = (char *)aColoradd + 6260; /*0x66d4bd*/
+      v5 = &this->q1874; /*0x66d4bd*/
       do /*0x66d511*/
       {
-        StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v1->unused, (uint8_t *)aColoradd, v4); /*0x66d4cd*/
-        (*((unsigned short *)&(v13))) = 0; /*0x66d4e6*/
-        (((unsigned char *)&(v13))[2]) = 0; /*0x66d4ee*/
-        Coord = INIClass::GetCoord(v1, (int)v11, (uint8_t *)aColoradd, StringByIndex, (uint8_t *)&v13); /*0x66d4f2*/
+        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->unused, (unsigned __int8 *)aColoradd, v4); /*0x66d4cd*/
+        LOWORD(v13) = 0; /*0x66d4e6*/
+        BYTE2(v13) = 0; /*0x66d4ee*/
+        Coord = INIClass::GetCoord(v1, (int)v11, (unsigned __int8 *)aColoradd, StringByIndex, (unsigned __int8 *)&v13); /*0x66d4f2*/
         v8 = v5; /*0x66d4f9*/
         ++v4; /*0x66d4fb*/
         v5 += 3; /*0x66d4fc*/
@@ -916,13 +938,14 @@ int RulesClass::ReadColorAdd(void * aColoradd)
       }
       while ( v10 ); /*0x66d511*/
     }
-    (*((unsigned char *)&(result))) = 1; /*0x66d516*/
+    LOBYTE(result) = 1; /*0x66d516*/
   }
   else
   {
-    (*((unsigned char *)&(result))) = 0; /*0x66d521*/
+    LOBYTE(result) = 0; /*0x66d521*/
   }
   return result; /*0x66d514*/
+
 }
 }  // G42.18c ns repair
 // 0x672280

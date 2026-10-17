@@ -311,38 +311,39 @@ namespace gamemd {  // G42.18c ns repair
 AnimTypeClass * * OverlayTypeClass::GetCategory()
 {
 
+  void *result; // eax
+  SHPStruct *v3; // edi
   CCFileClass v4; // [esp+4h] [ebp-26Ch] BYREF
+  int v5[3]; // [esp+5Ch] [ebp-214h] BYREF
+  int v6; // [esp+68h] [ebp-208h]
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
-  void *result = this->Image; // eax /*0x5fede9*/
+  result = this->Image; /*0x5fede9*/
   if ( !result && this->DrawFlat ) /*0x5fedf7*/
   {
     Debug::Log(); /*0x5fee0e*/
-    if ( this->Theater_d ) /*0x5fee13*/
+    if ( this->Theater ) /*0x5fee13*/
     {
-      _makepath(Buffer, 0, 0, this->LandType, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5fee4f*/
+      _makepath(Buffer, 0, 0, this->ImageFile, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5fee4f*/
     }
-    else if ( this->NewTheater_d ) /*0x5fee59*/
+    else if ( this->NewTheater ) /*0x5fee59*/
     {
-      _makepath(Buffer, 0, 0, this->LandType, Ext); /*0x5fee78*/
+      _makepath(Buffer, 0, 0, this->ImageFile, Ext); /*0x5fee78*/
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
     CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
-    SHPStruct *v3; // edi
-    v3 = (SHPStruct *)(&v4)->ReadEntireFile(); /*0x5feead*/
+    v3 = (SHPStruct *)CCFileClass::ReadEntireFile(&v4); /*0x5feead*/
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
-    *(unsigned int *)v4.CDFileClass = &vt_CCFileClass; /*0x5feec4*/
-    int v6; // [esp+68h] [ebp-208h]
+    *(unsigned int *)v4.__tail_0 = &CCFileClass::`vftable'; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
-    int v5[3]; // [esp+5Ch] [ebp-214h] BYREF
     Vector::Clear((int)v5); /*0x5feed4*/
-    *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
-    ((BufferIOFileClass *)&v4)->Dtor(); /*0x5feee5*/
-    return (gamemd::AnimTypeClass **)(v3); /*0x5feeea*/
+    *(unsigned int *)v4.__tail_0 = &off_7E1668; /*0x5feedd*/
+    BufferIOFileClass::Dtor((BufferIOFileClass *)&v4); /*0x5feee5*/
+    return v3; /*0x5feeea*/
   }
-  return (gamemd::AnimTypeClass **)(result); /*0x5feeed*/
+  return result; /*0x5feeed*/
 
 }
 }  // G42.18c ns repair
@@ -584,43 +585,43 @@ namespace gamemd {  // G42.18c ns repair
 int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
 {
 
-
   MixFileClass *v4; // eax
-  v4 = (MixFileClass *)(*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fed06*/
   int DamageLevels; // ecx
+  int LandType; // esi
+  unsigned __int16 *v7; // eax
+  char v8; // cl
+  int PixelData; // ecx
+  unsigned __int16 v11; // [esp+4h] [ebp-4h]
+
+  v4 = (MixFileClass *)(*(int (**)(OverlayTypeClass *))(this->vfptr + 156))(this); /*0x5fed06*/
   if ( v4 /*0x5fed28*/
     || (DamageLevels = this->DamageLevels) != 0
     && (v4 = (MixFileClass *)(*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
   {
-    int v6; // esi
-    v6 = this->LandType[0]; /*0x5fed2e*/
-    if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) ) /*0x5fed4f*/
+    LandType = this->LandType; /*0x5fed2e*/
+    if ( (LandType < 127 || LandType > 138) && (LandType < 147 || LandType > 158) ) /*0x5fed4f*/
     {
-      int PixelData; // ecx
       PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/
       *(unsigned short *)a2 = *(unsigned short *)PixelData; /*0x5fedad*/
-      a2->UINameLabel[0x20] = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
+      a2->ptr_2 = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
       return a2; /*0x5feda4*/
     }
     else
     {
-      int v7; // eax
-      v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
-      __int16 v11; // [esp+4h] [ebp-4h]
-      v11 = *(unsigned short *)v7; /*0x5fed67*/
-      char v8; // cl
-      v8 = HIBYTE(*(unsigned short *)v7); /*0x5fed6f*/
+      v7 = (unsigned __int16 *)MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
+      v11 = *v7; /*0x5fed67*/
+      v8 = HIBYTE(*v7); /*0x5fed6f*/
       BYTE1(a3) = v7->u32_2; /*0x5fed73*/
       LOBYTE(a3) = v11; /*0x5fed7b*/
       *(unsigned short *)a2 = a3; /*0x5fed86*/
-      a2->UINameLabel[0x20] = v8; /*0x5fed8a*/
+      a2->ptr_2 = v8; /*0x5fed8a*/
       return a2; /*0x5fed77*/
     }
   }
   else
   {
     *(unsigned short *)a2 = 0; /*0x5fedd2*/
-    a2->UINameLabel[0x20] = 0; /*0x5fedd6*/
+    a2->ptr_2 = 0; /*0x5fedd6*/
     return a2; /*0x5fedbb*/
   }
 

@@ -24,11 +24,12 @@ namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)
 namespace gamemd {  // G42.18 ns repair
 long MainMenu_Screen(void * a1, void * a2)
 {
+
   HWND v2; // esi
   HWND DlgItem; // esi
   int v4; // ecx
   int v5; // eax
-  uint16_t v6; // ax
+  unsigned __int16 v6; // ax
   int v7; // esi
   int v8; // esi
   const char **v9; // edi
@@ -39,14 +40,14 @@ long MainMenu_Screen(void * a1, void * a2)
 
   dwNewLong = 18; /*0x531cc7*/
   SetSoundWarning(-1); /*0x531ccf*/
-  v2 = (HWND)CreateDialog(0xE2u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))MainMenu::DlgProc, 0); /*0x531ce5*/
+  v2 = (HWND)CreateDialog(0xE2u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))MainMenu::DlgProc, 0); /*0x531ce5*/
   hWnd = v2; /*0x531ce9*/
   if ( v2 ) /*0x531ced*/
   {
     SetWindowLongA(v2, 8, (LONG)&dwNewLong); /*0x531cfe*/
-    SetDialogParent(v2,(HWND)(g_hWnd)); /*0x531d0c*/
-    ((Dialog *)(v2))->Show(); /*0x531d13*/
-    SetFocus((HWND)(g_hWnd)); /*0x531d1f*/
+    SetDialogParent(v2, g_hWnd); /*0x531d0c*/
+    Dialog::Show(v2); /*0x531d13*/
+    SetFocus(g_hWnd); /*0x531d1f*/
     DlgItem = GetDlgItem(v2, 1818); /*0x531d31*/
     if ( DlgItem ) /*0x531d35*/
     {
@@ -54,8 +55,8 @@ long MainMenu_Screen(void * a1, void * a2)
         v4 = (g_DisplayWidth - 800) / 2; /*0x531d51*/
       else
         v4 = 0; /*0x531d43*/
-      if ( g_abs_8A00A8 > (unsigned char [1])(600) ) /*0x531d5d*/
-        v5 = (g_abs_8A00A8 - 600) / 2; /*0x531d6b*/
+      if ( MEMORY[0x8A00A8] > 600 ) /*0x531d5d*/
+        v5 = (MEMORY[0x8A00A8] - 600) / 2; /*0x531d6b*/
       else
         v5 = 0; /*0x531d5f*/
       SetWindowPos(DlgItem, 0, v4, v5, -1, -1, 0xDu); /*0x531d78*/
@@ -67,40 +68,40 @@ long MainMenu_Screen(void * a1, void * a2)
     }
     do /*0x531f04*/
     {
-      if ( (uint8_t)Dialog::PumpMessages() ) /*0x531db2*/
+      if ( (unsigned __int8)Dialog::PumpMessages() ) /*0x531db2*/
         dwNewLong = 7; /*0x531dbb*/
       if ( g_LoadScreenFlag ) /*0x531dca*/
       {
         g_LoadScreenFlag = 0; /*0x531dd0*/
-        Screen::Capture(1, 0,(int)(a1), a2); /*0x531dd7*/
-        (0)->Present(); /*0x531de6*/
+        Screen::Capture(1, 0, a1, a2); /*0x531dd7*/
+        Frame::Present(0); /*0x531de6*/
       }
-      if ( (uint16_t)EventQueue::Process(dword_87F770) ) /*0x531df1*/
+      if ( (unsigned __int16)EventQueue::Process(dword_87F770) ) /*0x531df1*/
       {
-        v6 = (uint16_t)((void *)(EventQueue::Read(dword_87F770)));
-        a1 = (void *)(v6); /*0x531e0d*/
+        v6 = EventQueue::Read(dword_87F770); /*0x531e05*/
+        a1 = v6; /*0x531e0d*/
         if ( (v6 & 0x800) == 0 ) /*0x531e16*/
         {
-          a2 = (void *)((char)v6);
+          a2 = (char)v6; /*0x531e1c*/
           if ( !isalnum((char)v6) || (unsigned char)a1 == 126 ) /*0x531e33*/
           {
-            memset((void *)(byte_A8F7B8), 0, sizeof(byte_A8F7B8)); /*0x531f3e*/
+            memset(MEMORY[0xA8F7B8], 0, sizeof(MEMORY[0xA8F7B8])); /*0x531f3e*/
           }
           else
           {
-            v11[0] = (unsigned char)(a1);
+            v11[0] = a1; /*0x531e3d*/
             v11[1] = 0; /*0x531e42*/
             Debug::Log_0(v11); /*0x531e47*/
-            v7 = strlen((const char *)(byte_A8F7B8)); /*0x531e5e*/
+            v7 = strlen(MEMORY[0xA8F7B8]); /*0x531e5e*/
             if ( v7 >= 31 ) /*0x531e63*/
             {
               v7 = 0; /*0x531e65*/
-              ((unsigned int *)(byte_A8F7B8))[0] = 0; /*0x531e67*/
+              MEMORY[0xA8F7B8][0] = 0; /*0x531e67*/
             }
-            ((unsigned int *)(byte_A8F7B8))[v7] = toupper((char)a1); /*0x531e77*/
+            MEMORY[0xA8F7B8][v7] = toupper((char)a1); /*0x531e77*/
             v8 = 0; /*0x531e7d*/
             v9 = (const char **)off_825C2C; /*0x531e7f*/
-            while ( !strstr(byte_A8F7B8, *v9) ) /*0x531e96*/
+            while ( !strstr(MEMORY[0xA8F7B8], *v9) ) /*0x531e96*/
             {
               v9 += 4; /*0x531e98*/
               ++v8; /*0x531e9b*/
@@ -108,28 +109,29 @@ long MainMenu_Screen(void * a1, void * a2)
                 goto LABEL_27; /*0x531ea2*/
             }
             *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) = *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/
-            memset((void *)(byte_A8F7B8), 0, sizeof(byte_A8F7B8)); /*0x531ec8*/
+            memset(MEMORY[0xA8F7B8], 0, sizeof(MEMORY[0xA8F7B8])); /*0x531ec8*/
             PlayVocClass(1.0, 0); /*0x531edb*/
             g_LoadScreenFlag = 0; /*0x531ee4*/
-            Screen::Capture(1, 0,(int)(a1), a2); /*0x531eeb*/
-            (0)->Present(); /*0x531efa*/
+            Screen::Capture(1, 0, a1, a2); /*0x531eeb*/
+            Frame::Present(0); /*0x531efa*/
           }
         }
       }
-      LABEL_27:
+LABEL_27:
       ; /*0x531eff*/
     }
     while ( dwNewLong == 18 ); /*0x531f04*/
-    ((Dialog *)(hWnd))->Destroy(); /*0x531f0e*/
+    Dialog::Destroy(hWnd); /*0x531f0e*/
     GetSystemTime(&SystemTime); /*0x531f18*/
-    ((Random *)(SystemTime.wMilliseconds))->AdvanceRandomBytes(); /*0x531f28*/
+    Random::AdvanceRandomBytes(SystemTime.wMilliseconds); /*0x531f28*/
   }
   else
   {
     dwNewLong = 7; /*0x531f42*/
   }
-  SetFocus((HWND)(g_hWnd)); /*0x531f50*/
+  SetFocus(g_hWnd); /*0x531f50*/
   return dwNewLong; /*0x531f5a*/
+
 }
 }  // G42.18 ns repair
 // 0x531F60

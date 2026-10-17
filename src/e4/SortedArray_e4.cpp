@@ -127,8 +127,8 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   char *v7; // ecx
   int v9; // ecx
   int i; // ecx
-  int v11; // edi
-  int v12; // eax
+  unsigned int v11; // edi
+  unsigned int *v12; // eax
   unsigned int *v13; // edi
   int v14; // eax
   int v15; // [esp+10h] [ebp-8h]
@@ -138,13 +138,13 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     return 0; /*0x5388ae*/
   if ( !this->u32_C ) /*0x5388b0*/
   {
-    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
+    qsort(*(void **)this, v3, 8u, CompareFuncInt); /*0x5388c2*/
     this->u32_10 = 0; /*0x5388ca*/
     this->u32_C = 1; /*0x5388d1*/
   }
   v4 = this->u32_4; /*0x5388d9*/
   v5 = *(unsigned int **)this; /*0x5388e0*/
-  v15 = (int)(*aP1); /*0x5388e4*/
+  v15 = *aP1; /*0x5388e4*/
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/
@@ -154,13 +154,13 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     if ( v15 >= v6 ) /*0x5388fd*/
       break; /*0x5388fd*/
     v4 /= 2; /*0x5388ff*/
-    LABEL_9:
+LABEL_9:
     if ( v4 <= 0 ) /*0x538915*/
       return 0; /*0x538915*/
   }
   if ( v6 != v15 ) /*0x538907*/
   {
-    v5 = (unsigned int *)(v7 + 8); /*0x538909*/
+    v5 = v7 + 8; /*0x538909*/
     v4 += -1 - v4 / 2; /*0x538911*/
     goto LABEL_9; /*0x538911*/
   }
@@ -169,11 +169,11 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   v9 = (int)&v7[-*(unsigned int *)this] >> 3; /*0x53892b*/
   if ( v9 == -1 ) /*0x538931*/
     return 0; /*0x538920*/
-  for ( i = v9 + 1; i < this->u32_4; *(unsigned int *)(v12 - 4) = *(unsigned int *)(v12 + 4) ) /*0x538939*/
+  for ( i = v9 + 1; i < this->u32_4; *(v12 - 1) = v12[1] ) /*0x538939*/
   {
-    v11 = *(unsigned int *)(*&this->u32_20 * i); /*0x53893d*/
-    v12 = *&this->u32_20 * i++; /*0x538940*/
-    *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
+    v11 = *(unsigned int *)(*(unsigned int *)this + 8 * i); /*0x53893d*/
+    v12 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x538940*/
+    *(v12 - 2) = v11; /*0x538944*/
   }
   v13 = *(unsigned int **)this; /*0x538957*/
   v14 = this->u32_4 - 1; /*0x538959*/
@@ -181,7 +181,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/
   this->u32_10 = 0; /*0x538966*/
-  return (gamemd::ObjectClass **)(1); /*0x538917*/
+  return 1; /*0x538917*/
 
 }
 } // namespace gamemd
@@ -201,7 +201,7 @@ int SortedArray::FindPair(int * a2)
   v3 = this->u32_4; /*0x538985*/
   if ( !v3 ) /*0x53898b*/
     return 0; /*0x53898b*/
-  v4 = (unsigned int *)(*&this->u32_10); /*0x53898d*/
+  v4 = *&this->u32_10; /*0x53898d*/
   if ( v4 && *v4 == *a2 ) /*0x53899e*/
     return 1; /*0x5389a6*/
   if ( !this->u32_C ) /*0x5389a9*/
@@ -222,19 +222,19 @@ int SortedArray::FindPair(int * a2)
     if ( v9 <= v7 ) /*0x5389e8*/
       break; /*0x5389e8*/
     v6 /= 2; /*0x5389ea*/
-    LABEL_12:
+LABEL_12:
     if ( v6 <= 0 ) /*0x5389fc*/
       return 0; /*0x5389fc*/
   }
   if ( v9 != v7 ) /*0x5389ee*/
   {
-    v8 = (unsigned int *)(v10 + 8); /*0x5389f0*/
+    v8 = v10 + 8; /*0x5389f0*/
     v6 += -1 - v6 / 2; /*0x5389f8*/
     goto LABEL_12; /*0x5389f8*/
   }
   if ( !v10 ) /*0x538a09*/
     return 0; /*0x538a04*/
-  this->u32_10 = (unsigned int)(v10); /*0x538a0d*/
+  this->u32_10 = v10; /*0x538a0d*/
   return 1; /*0x5389a0*/
 
 }

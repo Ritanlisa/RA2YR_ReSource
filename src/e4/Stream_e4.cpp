@@ -51,22 +51,25 @@ namespace gamemd {
 int Stream::ReadIntArray(int a2)
 {
 
-  int v2 = a2; // esi /*0x49fb72*/
+  unsigned int *v2; // esi
   int result; // eax
-  result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
+  unsigned int v5; // eax
+  int v6; // ebx
+
+  v2 = (unsigned int *)a2; /*0x49fb72*/
+  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
              a2,
              &this->Stream_field_10,
              4,
              0);
   if ( result >= 0 ) /*0x49fb89*/
   {
-    int v5; // eax
-    v5 = *(unsigned int *)v2; /*0x49fb8e*/
-    a2 = (int)(this->a2); /*0x49fb9a*/
-    result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
+    v5 = *v2; /*0x49fb8e*/
+    a2 = this->a2; /*0x49fb9a*/
+    result = (*(int (**)(unsigned int *, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
-      int v6 = 0; // ebx /*0x49fba9*/
+      v6 = 0; /*0x49fba9*/
       if ( a2 <= 0 ) /*0x49fbad*/
       {
         return 0; /*0x49fbcd*/
@@ -75,7 +78,7 @@ int Stream::ReadIntArray(int a2)
       {
         while ( 1 ) /*0x49fbbd*/
         {
-          result = (*(int (__stdcall **)(int, int, int, unsigned int))(*(unsigned int *)v2 + 16))( /*0x49fbbd*/
+          result = (*(int (**)(unsigned int *, int, int, unsigned int))(*v2 + 16))( /*0x49fbbd*/
                      v2,
                      this->Stream_field_04 + 4 * v6,
                      4,
@@ -89,6 +92,7 @@ int Stream::ReadIntArray(int a2)
     }
   }
   return result; /*0x49fbcf*/
+
 }
 } // namespace gamemd
 // 0x67A4A0

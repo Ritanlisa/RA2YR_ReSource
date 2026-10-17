@@ -45,34 +45,37 @@ int sub_6F2040()
 namespace gamemd {  // G42.18c ns repair
 char Helper::ProcessData(void ** a1, int a2, int * a3)
 {
+
+  int v6; // ebx
+  int v7; // eax
+  int v8; // edx
+  void *v9; // eax
+  void *v10[4]; // [esp+8h] [ebp-30h] BYREF
   XSurface v11; // [esp+18h] [ebp-20h] BYREF
+  int v12; // [esp+28h] [ebp-10h]
+  int v13[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4371e5*/
     return 0; /*0x4371e8*/
-  int v6 = *a3; // ebx /*0x4371fa*/
-  int v7; // eax
+  v6 = *a3; /*0x4371fa*/
   v7 = (*((int (**)(void **))*a1 + 28))(a1); /*0x4371fc*/
-  int v8; // edx
   v8 = *(unsigned int *)(a2 + 12); /*0x437202*/
-  ((unsigned int *)&v11)[0] = *(unsigned int *)(a2 + 8); /*0x437205*/
-  ((unsigned int *)&v11)[0] = v8; /*0x437215*/
+  v11.Width = *(unsigned int *)(a2 + 8); /*0x437205*/
+  v11.Height = v8; /*0x437215*/
   v11.LockCount = 0; /*0x437219*/
-  *(unsigned int *)v11.Surface = &XSurface_Vtable; /*0x437221*/
-  int v12; // [esp+28h] [ebp-10h]
+  *(unsigned int *)v11.__pad_0 = &XSurface_Vtable; /*0x437221*/
   v12 = v7; /*0x437229*/
-  int v13[3]; // [esp+2Ch] [ebp-Ch] BYREF
-  Buffer::Init((Buffer *)v13, v6, v7 * v8 * ((char *)&v11)); /*0x43722d*/
-  void *v9; // eax
+  Buffer::Init((Buffer *)v13, v6, v7 * v8 * v11.Width); /*0x43722d*/
   v9 = *(void **)(a2 + 8); /*0x437235*/
-  void *v10[4]; // [esp+8h] [ebp-30h] BYREF
   v10[3] = *(void **)(a2 + 12); /*0x437241*/
-  *(unsigned int *)v11.Surface = &BSurface_Vtable; /*0x43724b*/
+  *(unsigned int *)v11.__pad_0 = &BSurface_Vtable; /*0x43724b*/
   v10[0] = 0; /*0x437253*/
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/
-  (*((unsigned char *)&(v6))) = (unsigned char)((&v11)->BlitPart(v10, a1, (void **)a2, 0, 1)); /*0x437270*/
+  LOBYTE(v6) = XSurface::BlitPart(&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
   Vector::Clear((int)v13); /*0x437272*/
   return v6; /*0x4371e7*/
+
 }
 }  // G42.18c ns repair
 // 0x550240

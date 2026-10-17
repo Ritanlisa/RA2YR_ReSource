@@ -66,6 +66,14 @@ namespace gamemd {
 int WWMouseClass::hideCursor()
 {
 
+  int WWMouseClass_field_0x24; // ecx
+  int WWMouseClass_field_0x44; // ebp
+  int v4; // edx
+  int v5; // edi
+  int v6; // ebx
+  char *v7; // edx
+  unsigned int v9[4]; // [esp+8h] [ebp-20h] BYREF
+  unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b994f*/
     Debug::Log(); /*0x7b9960*/
@@ -77,25 +85,22 @@ int WWMouseClass::hideCursor()
         Debug::Log(); /*0x7b99a5*/
       if ( *&this->q050 > 0 && *&this->q054 > 0 ) /*0x7b99ba*/
       {
-        int WWMouseClass_field_0x24 = this->outBuffer; // ecx /*0x7b99bc*/
+        WWMouseClass_field_0x24 = this->outBuffer; /*0x7b99bc*/
         if ( WWMouseClass_field_0x24 ) /*0x7b99c1*/
         {
-          int WWMouseClass_field_0x44 = this->__pad_044; // ebp /*0x7b99c3*/
+          WWMouseClass_field_0x44 = this->WWMouseClass_field_0x44; /*0x7b99c3*/
           if ( WWMouseClass_field_0x44 ) /*0x7b99c8*/
           {
-            int v4 = *&this->q04C; // edx /*0x7b99cd*/
-            int v5 = *&this->q050; // edi /*0x7b99d3*/
-            int v6 = *&this->q054; // ebx /*0x7b99d7*/
-            unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
-            v10[0] = (unsigned int)((char *)this->q02C + *(unsigned int *)this->q048); /*0x7b99da*/
-            char *v7; // edx
+            v4 = *&this->q04C; /*0x7b99cd*/
+            v5 = *&this->q050; /*0x7b99d3*/
+            v6 = *&this->q054; /*0x7b99d7*/
+            v10[0] = (char *)this->WWMouseClass_field_0x2C + *(unsigned int *)this->__pad_48; /*0x7b99da*/
             v7 = (char *)this->q_30 + v4; /*0x7b99e1*/
-            unsigned int v9[4]; // [esp+8h] [ebp-20h] BYREF
             v9[0] = 0; /*0x7b99e7*/
             v9[1] = 0; /*0x7b99eb*/
             v10[2] = v5; /*0x7b99f4*/
             v10[3] = v6; /*0x7b99f9*/
-            v10[1] = (unsigned int)(v7); /*0x7b99fd*/
+            v10[1] = v7; /*0x7b99fd*/
             v9[2] = v5; /*0x7b9a01*/
             v9[3] = v6; /*0x7b9a05*/
             (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)WWMouseClass_field_0x24 + 8))( /*0x7b9a11*/
@@ -211,13 +216,21 @@ namespace gamemd {
 void WWMouseClass::releaseMouse()
 {
 
+  int v2; // edx
+  int WWMouseClass_field_0x24; // ecx
+  int WWMouseClass_field_0x44; // ebx
+  int v5; // edx
+  int v6; // edi
+  int v7; // ebp
+  char *v8; // edx
+  unsigned int v9[4]; // [esp+4h] [ebp-20h] BYREF
+  unsigned int v10[4]; // [esp+14h] [ebp-10h] BYREF
 
   if ( this && (*(unsigned __int8 (**)(WWMouseClass *))(*(unsigned int *)this->HandleClick_ph + 28))(this) ) /*0x7b9c40*/
   {
     Debug::Log(); /*0x7b9c51*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9c72*/
       Debug::Log(); /*0x7b9c83*/
-    int v2; // edx
     v2 = *(unsigned int *)this->HandleClick_ph; /*0x7b9c8b*/
     LOBYTE(this->Count) = 0; /*0x7b9c8f*/
     if ( !(*(unsigned __int8 (**)(WWMouseClass *))(v2 + 8))(this) ) /*0x7b9c93*/
@@ -226,25 +239,22 @@ void WWMouseClass::releaseMouse()
         Debug::Log(); /*0x7b9cc1*/
       if ( *&this->q050 > 0 && *&this->q054 > 0 ) /*0x7b9cd6*/
       {
-        int WWMouseClass_field_0x24 = this->outBuffer; // ecx /*0x7b9cd8*/
+        WWMouseClass_field_0x24 = this->outBuffer; /*0x7b9cd8*/
         if ( WWMouseClass_field_0x24 ) /*0x7b9cdd*/
         {
-          int WWMouseClass_field_0x44 = this->__pad_044; // ebx /*0x7b9cdf*/
+          WWMouseClass_field_0x44 = this->WWMouseClass_field_0x44; /*0x7b9cdf*/
           if ( WWMouseClass_field_0x44 ) /*0x7b9ce4*/
           {
-            int v5 = *&this->q04C; // edx /*0x7b9ce9*/
-            int v6 = *&this->q050; // edi /*0x7b9cef*/
-            int v7 = *&this->q054; // ebp /*0x7b9cf3*/
-            unsigned int v10[4]; // [esp+14h] [ebp-10h] BYREF
-            v10[0] = (unsigned int)((char *)this->q02C + *(unsigned int *)this->q048); /*0x7b9cf6*/
-            char *v8; // edx
+            v5 = *&this->q04C; /*0x7b9ce9*/
+            v6 = *&this->q050; /*0x7b9cef*/
+            v7 = *&this->q054; /*0x7b9cf3*/
+            v10[0] = (char *)this->WWMouseClass_field_0x2C + *(unsigned int *)this->__pad_48; /*0x7b9cf6*/
             v8 = (char *)this->q_30 + v5; /*0x7b9cfd*/
-            unsigned int v9[4]; // [esp+4h] [ebp-20h] BYREF
             v9[0] = 0; /*0x7b9d03*/
             v9[1] = 0; /*0x7b9d07*/
             v10[2] = v6; /*0x7b9d10*/
             v10[3] = v7; /*0x7b9d15*/
-            v10[1] = (unsigned int)(v8); /*0x7b9d19*/
+            v10[1] = v8; /*0x7b9d19*/
             v9[2] = v6; /*0x7b9d1d*/
             v9[3] = v7; /*0x7b9d21*/
             (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)WWMouseClass_field_0x24 + 8))( /*0x7b9d2d*/

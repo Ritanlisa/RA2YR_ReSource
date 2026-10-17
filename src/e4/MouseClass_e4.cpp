@@ -28,31 +28,31 @@ namespace gamemd {  // G42.18 ns repair
 char MouseClass::ToggleContextGadget(int a1, int a2)
 {
 
+  unsigned int v2; // eax
+  ShapeButtonClass *v3; // ecx
+  unsigned int v5; // eax
+  ShapeButtonClass *v6; // ecx
 
   if ( a1 == 4551 ) /*0x6d1779*/
   {
-    unsigned int v2; // eax
     v2 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1780*/
     if ( v2 <= 0x18 ) /*0x6d1789*/
     {
-      ShapeButtonClass *v3; // ecx
-      v3 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v2); /*0x6d1796*/
+      v3 = &stru_B0C1C0 + 8 * v2; /*0x6d1796*/
       if ( v3 ) /*0x6d179e*/
       {
         if ( !BYTE1(v3[3].ShapeButtonClass_field_0x08) ) /*0x6d17a0*/
-          ((GadgetClass *)v3)->Show(); /*0x6d17a7*/
+          GadgetClass::Show((GadgetClass *)v3); /*0x6d17a7*/
       }
     }
     return 1; /*0x6d17ac*/
   }
   else if ( a1 == 4552 ) /*0x6d17b6*/
   {
-    unsigned int v5; // eax
     v5 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d17be*/
     if ( v5 <= 0x18 ) /*0x6d17c7*/
     {
-      ShapeButtonClass *v6; // ecx
-      v6 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v5); /*0x6d17d4*/
+      v6 = &stru_B0C1C0 + 8 * v5; /*0x6d17d4*/
       if ( v6 ) /*0x6d17dc*/
       {
         if ( BYTE1(v6[3].ShapeButtonClass_field_0x08) ) /*0x6d17de*/

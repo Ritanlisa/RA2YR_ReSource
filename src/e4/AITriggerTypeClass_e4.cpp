@@ -38,10 +38,11 @@
 namespace gamemd {  // G42.18 ns repair
 int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
+
   AITriggerTypeClass *v3; // edi
   int v4; // esi
   bool result; // al
-  int v6; // ebx
+  DynamicVector *v6; // ebx
   int AITriggerTypeClass_field_0x18; // esi
   int v8; // ebp
   int v9; // edi
@@ -51,14 +52,14 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   v3 = this; /*0x41ec9b*/
   v4 = 0; /*0x41ec9d*/
   v11 = 0; /*0x41eca5*/
-  if ( stru_A80220.nextArrayIndex <= 0 ) /*0x41ecaa*/
+  if ( dword_A80238 <= 0 ) /*0x41ecaa*/
     return v11; /*0x41ecaa*/
-  while ( *(unsigned int *)(*(unsigned int *)(*((unsigned int *)stru_A80220.vfptr3 + v4) + 52) + 188) != (&g_INI_Key_Civilian)->Find() ) /*0x41eccc*/
+  while ( *(unsigned int *)(*(unsigned int *)(*(&dword_A8022C->vfptr + v4) + 52) + 188) != HouseTypeClass::Find(&g_INI_Key_Civilian) ) /*0x41eccc*/
   {
-    if ( ++v4 >= stru_A80220.nextArrayIndex ) /*0x41ecd6*/
+    if ( ++v4 >= dword_A80238 ) /*0x41ecd6*/
       return 0; /*0x41ece2*/
   }
-  v6 = *((unsigned int *)stru_A80220.vfptr3 + v4); /*0x41ece5*/
+  v6 = (DynamicVector *)*(&dword_A8022C->vfptr + v4); /*0x41ece5*/
   if ( !v6 ) /*0x41ecea*/
     return v11; /*0x41ee23*/
   AITriggerTypeClass_field_0x18 = v3[3].AITriggerTypeClass_field_0x18; /*0x41ecf0*/
@@ -69,22 +70,22 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
     switch ( (*(int (**)(int))(*(unsigned int *)AITriggerTypeClass_field_0x18 + 44))(AITriggerTypeClass_field_0x18) ) /*0x41ed21*/
     {
       case 3: /*0x41ed21*/
-        v9 = ((DynamicVector *)((DynamicVector *)(v6 + 21900)))->GetOrGrow(v8); /*0x41ed73*/
+        v9 = DynamicVector::GetOrGrow(&v6->DynamicVector_558C, v8); /*0x41ed73*/
         goto LABEL_12; /*0x41ed73*/
       case 7: /*0x41ed21*/
-        v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21840)))->GetOrGrow(v8); /*0x41ed2f*/
+        v10 = DynamicVector::GetOrGrow(&v6->DynamicVector_5550, v8); /*0x41ed2f*/
         v3 = this; /*0x41ed37*/
         break; /*0x41ed3b*/
       case 16: /*0x41ed21*/
-        v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21880)))->GetOrGrow(v8); /*0x41ed59*/
+        v10 = DynamicVector::GetOrGrow(&v6->DynamicVector_5578, v8); /*0x41ed59*/
         v3 = this; /*0x41ed61*/
         break; /*0x41ed65*/
       case 40: /*0x41ed21*/
-        v10 = ((DynamicVector *)((DynamicVector *)(v6 + 21860)))->GetOrGrow(v8); /*0x41ed44*/
+        v10 = DynamicVector::GetOrGrow(&v6->DynamicVector_5564, v8); /*0x41ed44*/
         v3 = this; /*0x41ed4c*/
         break; /*0x41ed50*/
       default:
-        LABEL_12:
+LABEL_12:
         v10 = v9; /*0x41ed75*/
         v3 = this; /*0x41ed77*/
         break; /*0x41ed7c*/
@@ -117,7 +118,8 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
       return v11;
   }
   return result; /*0x41ecdc*/
-}  // G42.18 ns repair
+
+}
 } // namespace gamemd
 // 0x41EE90
 namespace gamemd {
@@ -342,7 +344,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   char *v35; // eax
   char *v36; // eax
   char *v37; // eax
-  int v38; // eax
+  HouseClass **v38; // eax
   int v39; // esi
   int MaxBuildLevel; // eax
   int v41; // eax
@@ -351,99 +353,99 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   __int64 v45; // [esp+14h] [ebp-26Ch] BYREF
   SuperWeaponTypeClass v46[2]; // [esp+1Ch] [ebp-264h] BYREF
 
-  INIClass::ResetSection((INIClass *)a2_2); /*0x41f595*/
+  INIClass::ResetSection((INIClass *)a2); /*0x41f595*/
   if ( !INIClass::GetString( /*0x41f5b9*/
-          (INIClass *)a2_2,
+          (INIClass *)a2,
           (unsigned __int8 *)aAitriggertypes,
-          (unsigned __int8 *)&a2_2->AITriggerTypeClass_field_0x24,
+          (unsigned __int8 *)&this->AITriggerTypeClass_field_0x24,
           &g_INI_DefaultBuffer,
-          v46[0].?,
+          v46[0].Name,
           512) )
-  return 0; /*0x41f5b9*/
-  v4 = strtok(v46[0].?, Str); /*0x41f5d3*/
+    return 0; /*0x41f5b9*/
+  v4 = strtok(v46[0].Name, Delimiter); /*0x41f5d3*/
   if ( !v4 ) /*0x41f5df*/
     return 0; /*0x41f5df*/
-  strncpy(&v46[0].?[8], v4, 0x30u); /*0x41f5ed*/
-  LOBYTE(v46[0].?) = 0; /*0x41f5fe*/
-  if ( &v46[0].?[8] != (char *)a2_2 + 100 ) /*0x41f602*/
+  strncpy(&v46[0].__pad_24[12], v4, 0x30u); /*0x41f5ed*/
+  LOBYTE(v46[0].UIName) = 0; /*0x41f5fe*/
+  if ( &v46[0].__pad_24[12] != &this->Name ) /*0x41f602*/
   {
-    memcpy((char *)a2_2 + 100, &v46[0].?[8], 0x30u); /*0x41f60d*/
-    *((unsigned char *)a2_2 + 148) = v46[0].?; /*0x41f60f*/
+    qmemcpy(&this->Name, &v46[0].__pad_24[12], 0x30u); /*0x41f60d*/
+    this->u32_94 = v46[0].UIName; /*0x41f60f*/
   }
-  v5 = strtok(0, Str); /*0x41f616*/
+  v5 = strtok(0, Delimiter); /*0x41f616*/
   if ( !v5 ) /*0x41f620*/
     return 0; /*0x41f620*/
   strncpy((char *)v46, v5, 0x18u); /*0x41f62e*/
-  HIBYTE(v46[0].?) = 0; /*0x41f63a*/
-  ((char *)v46)->Trim(); /*0x41f63e*/
-  *((unsigned int *)a2_2 + 55) = 0; /*0x41f643*/
+  HIBYTE(v46[0].abstractFlags) = 0; /*0x41f63a*/
+  String::Trim((char *)v46); /*0x41f63e*/
+  this->u32_DC = 0; /*0x41f643*/
   if ( _strcmpi((char *)v46, (char *)off_818114) ) /*0x41f655*/
-    *((unsigned int *)a2_2 + 55) = ((TeamTypeClass *)v46)->FindByName(); /*0x41f66a*/
-  v6 = strtok(0, Str); /*0x41f676*/
+    this->u32_DC = TeamTypeClass::FindByName((TeamTypeClass *)v46); /*0x41f66a*/
+  v6 = strtok(0, Delimiter); /*0x41f676*/
   if ( !v6 ) /*0x41f680*/
     return 0; /*0x41f680*/
   strncpy((char *)v46, v6, 0x18u); /*0x41f68e*/
-  HIBYTE(v46[0].?) = 0; /*0x41f69a*/
-  ((char *)v46)->Trim(); /*0x41f69e*/
-  *((unsigned int *)a2_2 + 40) = 0; /*0x41f6a3*/
-  *((unsigned int *)a2_2 + 42) = -1; /*0x41f6a9*/
+  HIBYTE(v46[0].abstractFlags) = 0; /*0x41f69a*/
+  String::Trim((char *)v46); /*0x41f69e*/
+  this->q0A0 = 0; /*0x41f6a3*/
+  this->q0A8 = -1; /*0x41f6a9*/
   if ( _strcmpi((char *)v46, (char *)off_818118) ) /*0x41f6bf*/
   {
     if ( _strcmpi((char *)v46, (char *)off_818114) ) /*0x41f6e2*/
     {
-      v7 = (v46)->FindByName(); /*0x41f6f2*/
-      *((unsigned int *)a2_2 + 42) = v7; /*0x41f6fa*/
+      v7 = SuperWeaponTypeClass::FindByName(v46); /*0x41f6f2*/
+      this->q0A8 = v7; /*0x41f6fa*/
       if ( v7 != -1 ) /*0x41f700*/
-        *((unsigned int *)a2_2 + 40) = 1; /*0x41f702*/
+        this->q0A0 = 1; /*0x41f702*/
     }
   }
   else
   {
-    *((unsigned int *)a2_2 + 40) = 2; /*0x41f6cb*/
+    this->q0A0 = 2; /*0x41f6cb*/
   }
-  if ( !strtok(0, Str) ) /*0x41f712*/
+  if ( !strtok(0, Delimiter) ) /*0x41f712*/
     return 0; /*0x41f712*/
-  *((unsigned int *)a2_2 + 44) = 0; /*0x41f728*/
-  v8 = strtok(0, Str); /*0x41f72e*/
+  this->u32_B0 = 0; /*0x41f728*/
+  v8 = strtok(0, Delimiter); /*0x41f72e*/
   if ( !v8 ) /*0x41f738*/
     return 0; /*0x41f738*/
-  *((unsigned int *)a2_2 + 38) = atoi(v8); /*0x41f74a*/
-  v9 = strtok(0, Str); /*0x41f750*/
+  this->q098 = atoi(v8); /*0x41f74a*/
+  v9 = strtok(0, Delimiter); /*0x41f750*/
   if ( !v9 ) /*0x41f75a*/
     return 0; /*0x41f75a*/
   strncpy((char *)v46, v9, 0x18u); /*0x41f768*/
-  HIBYTE(v46[0].?) = 0; /*0x41f774*/
-  ((char *)v46)->Trim(); /*0x41f778*/
+  HIBYTE(v46[0].abstractFlags) = 0; /*0x41f774*/
+  String::Trim((char *)v46); /*0x41f778*/
   v10 = 0; /*0x41f781*/
-  ExitCellByName = ((Factory *)v46)->FindExitCellByName(); /*0x41f783*/
+  ExitCellByName = Factory::FindExitCellByName((Factory *)v46); /*0x41f783*/
   if ( ExitCellByName != -1 ) /*0x41f78b*/
   {
     v10 = *((unsigned int *)dword_A8E34C + ExitCellByName); /*0x41f793*/
     goto LABEL_26; /*0x41f796*/
   }
-  Index = ((BuildingTypeClass *)v46)->FindIndex(); /*0x41f79c*/
+  Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)v46); /*0x41f79c*/
   if ( Index != -1 ) /*0x41f7a4*/
   {
-    v13 = (unsigned int *)(dword_A83CE4); /*0x41f7a6*/
-    LABEL_25:
+    v13 = *(unsigned int **)((char *)&stru_A83CD9.vfptr2 + 3); /*0x41f7a6*/
+LABEL_25:
     v10 = v13[Index]; /*0x41f7db*/
     goto LABEL_26; /*0x41f7db*/
   }
-  v14 = (int)(((TypeClass *)v46)->FindByName()); /*0x41f7b2*/
+  v14 = TypeClass::FindByName((TypeClass *)v46); /*0x41f7b2*/
   if ( v14 != -1 ) /*0x41f7ba*/
   {
     v10 = *((unsigned int *)dword_A8B21C + v14); /*0x41f7c2*/
     goto LABEL_26; /*0x41f7c5*/
   }
-  Index = ((BuildingTypeClass *)v46)->FindIndexByName(); /*0x41f7cb*/
+  Index = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)v46); /*0x41f7cb*/
   if ( Index != -1 ) /*0x41f7d3*/
   {
-    v13 = (unsigned int *)(dword_A83C6C); /*0x41f7d5*/
+    v13 = dword_A83C6C; /*0x41f7d5*/
     goto LABEL_25; /*0x41f7d5*/
   }
-  LABEL_26:
-  *((unsigned int *)a2_2 + 54) = v10; /*0x41f7de*/
-  v15 = strtok(0, Str); /*0x41f7ea*/
+LABEL_26:
+  this->u32_D8 = v10; /*0x41f7de*/
+  v15 = strtok(0, Delimiter); /*0x41f7ea*/
   if ( !v15 ) /*0x41f7f4*/
     return 0; /*0x41faf5*/
   strcpy(v44, "00"); /*0x41f807*/
@@ -475,12 +477,12 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
       }
       if ( v16 >= 0x20 ) /*0x41f85c*/
         break; /*0x41f85c*/
-      *((unsigned char *)a2_2 + v16 + 228) = globalHelper_0C9DBD((int)v44, (int)&v45, 16); /*0x41f86f*/
+      *((unsigned char *)this + v16 + 228) = globalHelper_0C9DBD((int)v44, (int)&v45, 16); /*0x41f86f*/
       ++v16; /*0x41f87b*/
     }
     while ( *v18 ); /*0x41f876*/
   }
-  v22 = strtok(0, Str); /*0x41f886*/
+  v22 = strtok(0, Delimiter); /*0x41f886*/
   if ( v22 ) /*0x41f890*/
   {
     atof(v22); /*0x41f893*/
@@ -491,9 +493,9 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
       fild [esp+280h+var_26C]
       fstp qword ptr [ebp+0B8h]
     }
-    *((double *)a2_2 + 23) = _RT1; /*0x41f8ac*/
+    this->u32_B8 = _RT1; /*0x41f8ac*/
   }
-  v25 = strtok(0, Str); /*0x41f8b8*/
+  v25 = strtok(0, Delimiter); /*0x41f8b8*/
   if ( v25 ) /*0x41f8c2*/
   {
     atof(v25); /*0x41f8c5*/
@@ -504,9 +506,9 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
       fild [esp+280h+var_26C]
       fstp qword ptr [ebp+0C0h]
     }
-    *((double *)a2_2 + 24) = _RT1; /*0x41f8de*/
+    this->q0C0 = _RT1; /*0x41f8de*/
   }
-  v28 = strtok(0, Str); /*0x41f8ea*/
+  v28 = strtok(0, Delimiter); /*0x41f8ea*/
   if ( v28 ) /*0x41f8f4*/
   {
     atof(v28); /*0x41f8f7*/
@@ -517,57 +519,57 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
       fild [esp+280h+var_26C]
       fstp qword ptr [ebp+0C8h]
     }
-    *((double *)a2_2 + 25) = _RT1; /*0x41f910*/
+    this->q0C8 = _RT1; /*0x41f910*/
   }
-  v31 = strtok(0, Str); /*0x41f91c*/
+  v31 = strtok(0, Delimiter); /*0x41f91c*/
   if ( v31 ) /*0x41f926*/
-    *((unsigned char *)a2_2 + 208) = atoi(v31) != 0; /*0x41f936*/
-  strtok(0, Str); /*0x41f942*/
-  v32 = strtok(0, Str); /*0x41f94d*/
+    this->q0D0 = atoi(v31) != 0; /*0x41f936*/
+  strtok(0, Delimiter); /*0x41f942*/
+  v32 = strtok(0, Delimiter); /*0x41f94d*/
   if ( v32 ) /*0x41f957*/
-    *((unsigned int *)a2_2 + 43) = atoi(v32); /*0x41f962*/
-  v33 = strtok(0, Str); /*0x41f96e*/
+    this->q0AC = atoi(v32); /*0x41f962*/
+  v33 = strtok(0, Delimiter); /*0x41f96e*/
   if ( v33 ) /*0x41f978*/
-    *((unsigned char *)a2_2 + 209) = atoi(v33) != 0; /*0x41f988*/
-  v34 = strtok(0, Str); /*0x41f994*/
+    this->u8_D1 = atoi(v33) != 0; /*0x41f988*/
+  v34 = strtok(0, Delimiter); /*0x41f994*/
   if ( v34 ) /*0x41f99e*/
   {
-    strncpy((char *)&v46[0].?, v34, 0x18u); /*0x41f9a8*/
-    v46[0].?[7] = 0; /*0x41f9b4*/
-    String::Trim((char *)&v46[0].?); /*0x41f9b8*/
-    *((unsigned int *)a2_2 + 56) = 0; /*0x41f9bd*/
-    if ( _strcmpi((char *)&v46[0].?, (char *)off_818114) ) /*0x41f9cf*/
-      *((unsigned int *)a2_2 + 56) = TeamTypeClass::FindByName((TeamTypeClass *)&v46[0].?); /*0x41f9e4*/
+    strncpy((char *)&v46[0].nextArrayIndex, v34, 0x18u); /*0x41f9a8*/
+    v46[0].__pad_24[11] = 0; /*0x41f9b4*/
+    String::Trim((char *)&v46[0].nextArrayIndex); /*0x41f9b8*/
+    this->FootClass_E0 = 0; /*0x41f9bd*/
+    if ( _strcmpi((char *)&v46[0].nextArrayIndex, (char *)off_818114) ) /*0x41f9cf*/
+      this->FootClass_E0 = TeamTypeClass::FindByName((TeamTypeClass *)&v46[0].nextArrayIndex); /*0x41f9e4*/
   }
-  v35 = strtok(0, Str); /*0x41f9f0*/
+  v35 = strtok(0, Delimiter); /*0x41f9f0*/
   if ( v35 ) /*0x41f9fa*/
-    *((unsigned char *)a2_2 + 210) = atoi(v35) != 0; /*0x41fa0a*/
-  v36 = strtok(0, Str); /*0x41fa16*/
+    this->u8_D2 = atoi(v35) != 0; /*0x41fa0a*/
+  v36 = strtok(0, Delimiter); /*0x41fa16*/
   if ( v36 ) /*0x41fa20*/
-    *((unsigned char *)a2_2 + 211) = atoi(v36) != 0; /*0x41fa30*/
-  v37 = strtok(0, Str); /*0x41fa3c*/
+    this->u8_D3 = atoi(v36) != 0; /*0x41fa30*/
+  v37 = strtok(0, Delimiter); /*0x41fa3c*/
   if ( v37 ) /*0x41fa46*/
-    *((unsigned char *)a2_2 + 212) = atoi(v37) != 0; /*0x41fa56*/
-  v38 = *((unsigned int *)a2_2 + 55); /*0x41fa5c*/
+    this->u8_D4 = atoi(v37) != 0; /*0x41fa56*/
+  v38 = (HouseClass **)this->u32_DC; /*0x41fa5c*/
   if ( v38 ) /*0x41fa64*/
   {
-    v39 = *((unsigned int *)a2_2 + 44); /*0x41fa6c*/
-    if ( v39 <= HouseClass::GetMaxBuildLevel(*(HouseClass **)(v38 + 228)) ) /*0x41fa79*/
-      MaxBuildLevel = HouseClass::GetMaxBuildLevel(*(HouseClass **)(*((unsigned int *)a2_2 + 55) + 228)); /*0x41fa8b*/
+    v39 = this->u32_B0; /*0x41fa6c*/
+    if ( v39 <= HouseClass::GetMaxBuildLevel(v38[57]) ) /*0x41fa79*/
+      MaxBuildLevel = HouseClass::GetMaxBuildLevel(*(HouseClass **)(this->u32_DC + 228)); /*0x41fa8b*/
     else
       MaxBuildLevel = v39; /*0x41fa7b*/
-    *((unsigned int *)a2_2 + 44) = MaxBuildLevel; /*0x41fa90*/
+    this->u32_B0 = MaxBuildLevel; /*0x41fa90*/
   }
-  v41 = *((unsigned int *)a2_2 + 56); /*0x41fa96*/
+  v41 = this->FootClass_E0; /*0x41fa96*/
   if ( v41 ) /*0x41fa9e*/
   {
-    v42 = *((unsigned int *)a2_2 + 44); /*0x41faa6*/
+    v42 = this->u32_B0; /*0x41faa6*/
     if ( v42 > HouseClass::GetMaxBuildLevel(v41->Tactical_E4) ) /*0x41fab3*/
     {
-      *((unsigned int *)a2_2 + 44) = v42; /*0x41fab8*/
+      this->u32_B0 = v42; /*0x41fab8*/
       return 1; /*0x41fac9*/
     }
-    *((unsigned int *)a2_2 + 44) = HouseClass::GetMaxBuildLevel(*(HouseClass **)(*((unsigned int *)a2_2 + 56) + 228)); /*0x41fadd*/
+    this->u32_B0 = HouseClass::GetMaxBuildLevel(*(HouseClass **)&this->FootClass_E0->Tactical_E4); /*0x41fadd*/
   }
   return 1; /*0x41fab7*/
 
@@ -758,35 +760,36 @@ namespace gamemd {
 char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
 
   if ( a2 ) /*0x42041c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x420426*/
-    unsigned int *v4; // edi
+    LOBYTE(this->m_C) = 0; /*0x420426*/
     if ( a3 ) /*0x42042c*/
       v4 = a3; /*0x420442*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x42043e*/
-    LOBYTE(this->q00C) = 1; /*0x420446*/
+    LOBYTE(this->m_C) = 1; /*0x420446*/
     if ( v4 ) /*0x42044a*/
     {
       if ( *&this->q004 ) /*0x420455*/
       {
-        int m_8 = this->q008; // ecx /*0x42045c*/
+        m_8 = this->m_8; /*0x42045c*/
         if ( a2 < m_8 ) /*0x420461*/
           m_8 = a2; /*0x420463*/
-        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x420469*/
           ++i; /*0x42046e*/
-        if ( BYTE1(this->q00C) ) /*0x42047b*/
+        if ( BYTE1(this->m_C) ) /*0x42047b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x420486*/
           *&this->q004 = 0; /*0x42048e*/
         }
       }
-      *&this->q004 = (int)(v4); /*0x420497*/
-      this->q008 = a2; /*0x42049f*/
-      BYTE1(this->q00C) = a3 == 0; /*0x4204a2*/
+      *&this->q004 = v4; /*0x420497*/
+      this->m_8 = a2; /*0x42049f*/
+      BYTE1(this->m_C) = a3 == 0; /*0x4204a2*/
       return 1; /*0x4204a8*/
     }
     else
@@ -796,7 +799,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAlphaLightingRemapClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4204b2*/
+    (*(void (**)(_VectorClass_PAVAlphaLightingRemapClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4204b2*/
     return 1; /*0x4204b8*/
   }
 

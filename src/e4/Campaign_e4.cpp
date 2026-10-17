@@ -47,7 +47,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   m_8 = a2; /*0x765843*/
   if ( !a2 ) /*0x76584d*/
   {
-    (*(void (**)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x76594d*/
+    (*(void (**)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76594d*/
     return 1; /*0x765953*/
   }
   LOBYTE(this->m_C) = 0; /*0x765857*/
@@ -61,7 +61,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *(unsigned int *)v6->__pad_000 = &vt_rc_ptr; /*0x7658bd*/
+        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x7658bd*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x7658c3*/
         --v9; /*0x7658c6*/
       }
@@ -86,7 +86,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x76588d*/
+        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x76588d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x765893*/
         --v7; /*0x765896*/
       }
@@ -95,16 +95,16 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     }
   }
   v8 = v6; /*0x7658cd*/
-  LABEL_14:
+LABEL_14:
   LOBYTE(this->m_C) = 1; /*0x7658cf*/
   if ( !v8 ) /*0x7658d5*/
     return 0; /*0x7658da*/
   if ( *&this->q004 ) /*0x7658e1*/
   {
-    if ( a2 >= this->q008 ) /*0x7658ed*/
-      m_8 = this->q008; /*0x7658ef*/
+    if ( a2 >= this->m_8 ) /*0x7658ed*/
+      m_8 = this->m_8; /*0x7658ef*/
     for ( i = 0; i < m_8; ++i ) /*0x7658f5*/
-      ComPtr::Set(&v8->ComPtr_field_0x08 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x765902*/
+      ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x765902*/
     if ( BYTE1(this->m_C) ) /*0x76590c*/
     {
       v12 = *(void (****)(unsigned int, int))&this->q004; /*0x765913*/
@@ -114,8 +114,8 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     }
     m_8 = a2; /*0x765927*/
   }
-  *&this->q004 = (int)(v8); /*0x765936*/
-  this->q008 = m_8; /*0x765939*/
+  *&this->q004 = v8; /*0x765936*/
+  this->m_8 = m_8; /*0x765939*/
   BYTE1(this->m_C) = a3 == 0; /*0x76593c*/
   return 1; /*0x7658d7*/
 

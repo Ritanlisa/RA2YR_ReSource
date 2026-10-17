@@ -29,27 +29,32 @@ namespace gamemd {
 AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 {
 
+  int m_8; // ebp
+  int *v5; // eax
   ComPtr *v6; // ebx
+  MSFrameAnim *v7; // esi
+  ComPtr *v8; // esi
+  int v9; // ebx
+  int i; // esi
   void (***v11)(unsigned int, int); // ecx
   int v12; // eax
   int v14; // [esp+10h] [ebp-4h]
 
-  int m_8 = a2; // ebp /*0x769fe3*/
+  m_8 = a2; /*0x769fe3*/
   if ( a2 ) /*0x769fed*/
   {
     LOBYTE(this->m_C) = 0; /*0x769ff7*/
     if ( a3 ) /*0x769ffd*/
     {
       *a3 = a2; /*0x76a041*/
-      ComPtr *v8; // esi
       v8 = (ComPtr *)(a3 + 1); /*0x76a043*/
       if ( a2 - 1 >= 0 ) /*0x76a04f*/
       {
-        int v9 = a2; // ebx /*0x76a051*/
+        v9 = a2; /*0x76a051*/
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *(unsigned int *)v8->__pad_000 = &vt_rc_ptr; /*0x76a05b*/
+          *(unsigned int *)v8->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a05b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76a061*/
           --v9; /*0x76a064*/
         }
@@ -60,13 +65,11 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
     }
     else
     {
-      int *v5; // eax
       v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x76a007*/
       if ( v5 ) /*0x76a011*/
       {
         *v5 = a2; /*0x76a013*/
         v6 = (ComPtr *)(v5 + 1); /*0x76a015*/
-        MSFrameAnim *v7; // esi
         v7 = (MSFrameAnim *)(v5 + 1); /*0x76a01b*/
         if ( a2 - 1 >= 0 ) /*0x76a01f*/
         {
@@ -92,7 +95,6 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
     {
       if ( a2 >= this->m_8 ) /*0x76a081*/
         m_8 = this->m_8; /*0x76a083*/
-      int i; // esi
       for ( i = 0; i < m_8; ++i ) /*0x76a089*/
         ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*&this->__pad_004 + 8 * i + 4)); /*0x76a096*/
       if ( BYTE1(this->m_C) ) /*0x76a0a0*/
@@ -104,7 +106,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       }
       m_8 = a2; /*0x76a0bb*/
     }
-    *&this->__pad_004 = (unsigned char)(v6); /*0x76a0ca*/
+    *&this->__pad_004 = v6; /*0x76a0ca*/
     this->m_8 = m_8; /*0x76a0cd*/
     BYTE1(this->m_C) = a3 == 0; /*0x76a0d0*/
   }
@@ -115,7 +117,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   v12 = this->m_8; /*0x76a0dc*/
   if ( v12 < this->INIClass_10 ) /*0x76a0e4*/
     this->INIClass_10 = v12; /*0x76a0e6*/
-  return (gamemd::AbstractClass **)(1); /*0x76a0e9*/
+  return 1; /*0x76a0e9*/
 
 }
 }
@@ -278,11 +280,14 @@ namespace gamemd {
 char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+  int v7; // eax
 
   if ( a2 ) /*0x76a2bc*/
   {
     LOBYTE(this->m_C) = 0; /*0x76a2c2*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x76a2c8*/
       v4 = a3; /*0x76a2de*/
     else
@@ -292,11 +297,9 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
       return 0; /*0x76a35a*/
     if ( *&this->__pad_004 ) /*0x76a2e8*/
     {
-      int m_8; // ecx
       m_8 = this->m_8; /*0x76a2ef*/
       if ( a2 < m_8 ) /*0x76a2f4*/
         m_8 = a2; /*0x76a2f6*/
-      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->__pad_004 + 4 * i - 4) ) /*0x76a2fc*/
         ++i; /*0x76a301*/
       if ( BYTE1(this->m_C) ) /*0x76a30e*/
@@ -305,16 +308,16 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
         *&this->__pad_004 = 0; /*0x76a321*/
       }
     }
-    *&this->__pad_004 = (unsigned char)(v4); /*0x76a32a*/
+    *&this->__pad_004 = v4; /*0x76a32a*/
     this->m_8 = a2; /*0x76a332*/
     BYTE1(this->m_C) = a3 == 0; /*0x76a335*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->vtable1 /*0x76a33e*/
-    + 12))(this);
+    (*(void (**)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x76a33e*/
+                                                                                              + 12))(this);
   }
-  int v7 = this->m_8; // eax /*0x76a341*/
+  v7 = this->m_8; /*0x76a341*/
   if ( v7 < this->INIClass_10 ) /*0x76a349*/
     this->INIClass_10 = v7; /*0x76a34b*/
   return 1; /*0x76a34e*/

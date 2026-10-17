@@ -232,76 +232,81 @@ namespace gamemd {
 char MultiplayerSiege::CheckStatus(int a1)
 {
 
-
   MPCombatTeam *v1; // eax
-  v1 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5ca9b4*/
   wchar_t **v2; // edi
+  int MultiplayerSiege_field_08; // ecx
+  int v4; // eax
+  int MultiplayerSiege_field_10; // eax
+  int MultiplayerSiege_field_04; // edx
+  MPCombatTeam *v7; // eax
+  wchar_t **v8; // edi
+  int v9; // ecx
+  int v10; // eax
+  int v11; // eax
+  unsigned int *v12; // edx
+  MPCombatTeam *v13; // eax
+  wchar_t **v14; // edi
+  int v15; // ecx
+  int v16; // eax
+  unsigned int *v17; // edx
+
+  v1 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5ca9b4*/
   if ( v1 ) /*0x5ca9be*/
-    v2 = (v1)->Constructor(); /*0x5ca9c7*/
+    v2 = MPCombatTeam::Constructor(v1); /*0x5ca9c7*/
   else
     v2 = 0; /*0x5ca9cb*/
-  int MultiplayerSiege_field_08; // ecx
-  MultiplayerSiege_field_08 = a1->MultiplayerSiege_field_08; /*0x5ca9d1*/
-  int v4; // eax
-  if ( a1->MultiplayerSiege_field_10 < MultiplayerSiege_field_08 /*0x5ca9f6*/
-    || (BYTE1(a1->MultiplayerSiege_field_0C) || !MultiplayerSiege_field_08)
-    && (v4 = *((unsigned int *)a1 + 5), v4 > 0)
-    && (*(unsigned __int8 (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
-         a1,
+  MultiplayerSiege_field_08 = this->MultiplayerSiege_field_08; /*0x5ca9d1*/
+  if ( this->MultiplayerSiege_field_10 < MultiplayerSiege_field_08 /*0x5ca9f6*/
+    || (BYTE1(this->MultiplayerSiege_field_0C) || !MultiplayerSiege_field_08)
+    && (v4 = this->u32_14, v4 > 0)
+    && (*(unsigned __int8 (**)(MultiplayerSiege *, int, unsigned int))(this->MultiplayerSiege_field_00 + 8))(
+         this,
          MultiplayerSiege_field_08 + v4,
          0) )
   {
-    int MultiplayerSiege_field_10; // eax
-    MultiplayerSiege_field_10 = a1->MultiplayerSiege_field_10; /*0x5ca9fd*/
-    int MultiplayerSiege_field_04; // edx
-    MultiplayerSiege_field_04 = a1->MultiplayerSiege_field_04; /*0x5caa00*/
-    a1->MultiplayerSiege_field_10 = MultiplayerSiege_field_10 + 1; /*0x5caa06*/
-    *(unsigned int *)(MultiplayerSiege_field_04 + 4 * MultiplayerSiege_field_10) = (unsigned int)(v2); /*0x5caa09*/
+    MultiplayerSiege_field_10 = this->MultiplayerSiege_field_10; /*0x5ca9fd*/
+    MultiplayerSiege_field_04 = this->MultiplayerSiege_field_04; /*0x5caa00*/
+    this->MultiplayerSiege_field_10 = MultiplayerSiege_field_10 + 1; /*0x5caa06*/
+    *(unsigned int *)(MultiplayerSiege_field_04 + 4 * MultiplayerSiege_field_10) = v2; /*0x5caa09*/
   }
-  MPCombatTeam *v7; // eax
   v7 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa0e*/
-  wchar_t **v8; // edi
   if ( v7 ) /*0x5caa18*/
-    v8 = (v7)->MPTeam(); /*0x5caa21*/
+    v8 = MPCombatTeam::MPTeam(v7); /*0x5caa21*/
   else
     v8 = 0; /*0x5caa25*/
-  int v9 = a1->MultiplayerSiege_field_08; // ecx /*0x5caa27*/
-  int v10; // eax
-  if ( a1->MultiplayerSiege_field_10 < v9 /*0x5caa4c*/
-    || (BYTE1(a1->MultiplayerSiege_field_0C) || !v9)
-    && (v10 = *((unsigned int *)a1 + 5), v10 > 0)
-    && (*(unsigned __int8 (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
-         a1,
+  v9 = this->MultiplayerSiege_field_08; /*0x5caa27*/
+  if ( this->MultiplayerSiege_field_10 < v9 /*0x5caa4c*/
+    || (BYTE1(this->MultiplayerSiege_field_0C) || !v9)
+    && (v10 = this->u32_14, v10 > 0)
+    && (*(unsigned __int8 (**)(MultiplayerSiege *, int, unsigned int))(this->MultiplayerSiege_field_00 + 8))(
+         this,
          v9 + v10,
          0) )
   {
-    int v11 = a1->MultiplayerSiege_field_10; // eax /*0x5caa53*/
-    int v12 = a1->MultiplayerSiege_field_04; // edx /*0x5caa56*/
-    a1->MultiplayerSiege_field_10 = v11 + 1; /*0x5caa5c*/
-    *(unsigned int *)(v12 + 4 * v11) = (unsigned int)(v8); /*0x5caa5f*/
+    v11 = this->MultiplayerSiege_field_10; /*0x5caa53*/
+    v12 = (unsigned int *)this->MultiplayerSiege_field_04; /*0x5caa56*/
+    this->MultiplayerSiege_field_10 = v11 + 1; /*0x5caa5c*/
+    v12[v11] = (unsigned int)v8; /*0x5caa5f*/
   }
-  MPCombatTeam *v13; // eax
   v13 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa64*/
-  wchar_t **v14; // edi
   if ( v13 ) /*0x5caa6e*/
-    v14 = (v13)->Constructor2(); /*0x5caa77*/
+    v14 = MPCombatTeam::Constructor2(v13); /*0x5caa77*/
   else
     v14 = 0; /*0x5caa7b*/
-  int v15 = a1->MultiplayerSiege_field_08; // ecx /*0x5caa7d*/
-  int v16; // eax
-  if ( a1->MultiplayerSiege_field_10 < v15 /*0x5caaa7*/
-    || ((LOBYTE(v16) = BYTE1(a1->MultiplayerSiege_field_0C), (unsigned char)v16) || !v15)
-    && (v16 = *((unsigned int *)a1 + 5), v16 > 0)
-    && (LOBYTE(v16) = (*(int (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
-                        a1,
+  v15 = this->MultiplayerSiege_field_08; /*0x5caa7d*/
+  if ( this->MultiplayerSiege_field_10 < v15 /*0x5caaa7*/
+    || ((LOBYTE(v16) = BYTE1(this->MultiplayerSiege_field_0C), (unsigned char)v16) || !v15)
+    && (v16 = this->u32_14, v16 > 0)
+    && (LOBYTE(v16) = (*(int (**)(MultiplayerSiege *, int, unsigned int))(this->MultiplayerSiege_field_00 + 8))(
+                        this,
                         v15 + v16,
                         0),
         (unsigned char)v16) )
   {
-    v16 = a1->MultiplayerSiege_field_10; /*0x5caaa9*/
-    int v17 = a1->MultiplayerSiege_field_04; // edx /*0x5caaac*/
-    a1->MultiplayerSiege_field_10 = v16 + 1; /*0x5caab2*/
-    *(unsigned int *)(v17 + 4 * v16) = (unsigned int)(v14); /*0x5caab5*/
+    v16 = this->MultiplayerSiege_field_10; /*0x5caaa9*/
+    v17 = (unsigned int *)this->MultiplayerSiege_field_04; /*0x5caaac*/
+    this->MultiplayerSiege_field_10 = v16 + 1; /*0x5caab2*/
+    v17[v16] = (unsigned int)v14; /*0x5caab5*/
   }
   return v16; /*0x5caab8*/
 

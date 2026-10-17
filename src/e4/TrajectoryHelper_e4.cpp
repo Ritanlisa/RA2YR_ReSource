@@ -108,142 +108,143 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
 namespace gamemd {
 unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char * a2, int a3, int a4, int a5, int a6, int a7, void * other)
 {
-  unsigned char *v8; // ebx
-  unsigned int *v10; // esi
-  int SlopeIndex; // ebx
-  int v12; // ebx
-  int v13; // eax
-  bool v14; // al
-  void *v15; // ecx
-  unsigned int *v16; // eax
-  int v17; // edi
-  int v18; // ebx
-  int v19; // ecx
-  double v20; // st7
-  int *v21; // eax
-  int v22; // esi
-  int v23; // ebp
-  int v24; // edx
-  int v25; // eax
-  int *v26; // eax
-  int v27; // ecx
-  signed int v28; // ecx
-  signed int v29; // esi
-  signed int v30; // edi
-  signed int v31; // eax
-  bool v32; // cc
-  unsigned int *v33; // esi
-  int v34; // ebx
-  int v35; // ebx
-  int v37; // eax
-  bool v38; // al
-  void *v39; // ecx
-  int v41; // [esp+20h] [ebp-24h]
-  unsigned int *v42; // [esp+20h] [ebp-24h]
-  int v43; // [esp+24h] [ebp-20h] BYREF
-  unsigned char *v44; // [esp+28h] [ebp-1Ch]
-  int v45; // [esp+2Ch] [ebp-18h] BYREF
-  int v46; // [esp+30h] [ebp-14h]
-  int v47; // [esp+34h] [ebp-10h]
-  char v48[12]; // [esp+38h] [ebp-Ch] BYREF
 
-  v8 = a2; /*0x4cc36b*/
-  (*((unsigned short *)&(v41))) = a4 / 256; /*0x4cc382*/
-  (*(((unsigned short *)&(v41)) + 1)) = a5 / 256; /*0x4cc3a0*/
-  v44 = a1; /*0x4cc3a9*/
-  v43 = v41; /*0x4cc3ad*/
-  v10 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43)); /*0x4cc3b6*/
-  v42 = v10; /*0x4cc3bc*/
-  if ( *(unsigned char *)(a7 + 662) ) /*0x4cc3c0*/
+  unsigned char *v9; // ebx
+  unsigned int *v11; // esi
+  int SlopeIndex; // ebx
+  int v13; // ebx
+  int v14; // eax
+  bool v15; // al
+  HouseClass *v16; // ecx
+  unsigned int *v17; // eax
+  int v18; // edi
+  int v19; // ebx
+  int v20; // ecx
+  int v21; // eax
+  int *v22; // eax
+  int v23; // esi
+  int v24; // ebp
+  int v25; // edx
+  int v26; // eax
+  int *v27; // eax
+  int v28; // ecx
+  signed int v29; // ecx
+  signed int v30; // esi
+  signed int v31; // edi
+  signed int v32; // eax
+  bool v33; // cc
+  unsigned int *v34; // esi
+  int v35; // ebx
+  int v36; // ebx
+  int v38; // eax
+  bool v39; // al
+  HouseClass *v40; // ecx
+  unsigned __int16 *v41; // [esp+20h] [ebp-24h]
+  unsigned int *v43; // [esp+20h] [ebp-24h]
+  __int16 v44[2]; // [esp+24h] [ebp-20h] BYREF
+  unsigned char *v45; // [esp+28h] [ebp-1Ch]
+  int v46; // [esp+2Ch] [ebp-18h] BYREF
+  int v47; // [esp+30h] [ebp-14h]
+  int v48; // [esp+34h] [ebp-10h]
+  char v49[12]; // [esp+38h] [ebp-Ch] BYREF
+
+  v9 = a2; /*0x4cc36b*/
+  LOWORD(v41) = a5 / 256; /*0x4cc382*/
+  HIWORD(v41) = a6 / 256; /*0x4cc3a0*/
+  v45 = a1; /*0x4cc3a9*/
+  *(unsigned int *)v44 = v41; /*0x4cc3ad*/
+  v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v44); /*0x4cc3b6*/
+  v43 = v11; /*0x4cc3bc*/
+  if ( *(unsigned char *)(a8 + 662) ) /*0x4cc3c0*/
   {
-    SlopeIndex = ((int)v10)->GetSlopeIndex(); /*0x4cc3d5*/
-    if ( SlopeIndex - (a3)->GetSlopeIndex() >= 4 ) /*0x4cc3e1*/
+    SlopeIndex = Cell::GetSlopeIndex((int)v11); /*0x4cc3d5*/
+    if ( SlopeIndex - Cell::GetSlopeIndex(a4) >= 4 ) /*0x4cc3e1*/
     {
-      v12 = ((int)v10)->GetSlopeIndex(); /*0x4cc3ec*/
-      if ( v12 - ((int)a1)->GetSlopeIndex() > 0 ) /*0x4cc3f7*/
+      v13 = Cell::GetSlopeIndex((int)v11); /*0x4cc3ec*/
+      if ( v13 - Cell::GetSlopeIndex((int)a1) > 0 ) /*0x4cc3f7*/
         goto LABEL_16; /*0x4cc3f7*/
     }
-    v8 = a2; /*0x4cc3fd*/
+    v9 = a2; /*0x4cc3fd*/
   }
-  if ( *(unsigned char *)(a7 + 664) ) /*0x4cc405*/
+  if ( *(unsigned char *)(a8 + 664) ) /*0x4cc405*/
   {
-    v13 = v10->u32_44; /*0x4cc413*/
-    v14 = v13 != -1 && *(unsigned char *)(*(unsigned int *)&dword_A83D84->vfptr[4 * v13] + 680); /*0x4cc432*/
-    if ( v10 != (unsigned int *)v8 /*0x4cc47c*/
-      && v14
-      && a1->u32_11B <= v8->u32_11B
-      && (!(*((unsigned char *)&(dword_8871E0[1][3])))
-       || (v15 = *&dword_A8022C->vtable1]) == 0
-       || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
+    v14 = v11->u32_44; /*0x4cc413*/
+    v15 = v14 != -1 && *(unsigned char *)(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 4 * v14) + 680); /*0x4cc432*/
+    if ( v11 != (unsigned int *)v9 /*0x4cc47c*/
+      && v15
+      && a1->u32_11B <= v9->u32_11B
+      && (!LOBYTE(dword_8871E0->ForceShieldColor)
+       || (v16 = (HouseClass *)*(&dword_A8022C->vfptr + v11->u32_50)) == 0
+       || !(unsigned __int8)HouseClass::IsAlliedWith(v16)) )
     {
-      LABEL_16:
-      v16 = (unsigned int *)v10->vt_slot_72(&v45); /*0x4cc489*/
-      v17 = a4 - *v16; /*0x4cc49c*/
-      v18 = v16[1]; /*0x4cc4a2*/
-      v19 = v16[2]; /*0x4cc4a7*/
-      v46 = a5 - v18; /*0x4cc4ae*/
-      v47 = a6 - v19; /*0x4cc4b8*/
-      v45 = v17; /*0x4cc4bc*/
-      v20 = Math::Sqrt( /*0x4cc4e1*/
-              (double)v17 * (double)v17
-    + (double)(a6 - v19) * (double)(a6 - v19)
-    + (double)(a5 - v18) * (double)(a5 - v18));
-      if ( (int)Math::RoundToInt(v20) <= 85 ) /*0x4cc4f1*/
-        return v10; /*0x4cc665*/
-      v21 = (int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)a1 + 72))(a1, &v45); /*0x4cc501*/
-      v22 = *v21; /*0x4cc504*/
-      v23 = v21[1]; /*0x4cc50a*/
-      v24 = v21[2]; /*0x4cc50d*/
-      v25 = *(unsigned int *)a2; /*0x4cc510*/
-      v47 = v24; /*0x4cc512*/
-      v26 = (int *)(*(int (**)(unsigned char *, char *))(v25 + 72))(a2, v48); /*0x4cc51b*/
-      v27 = *v26; /*0x4cc51e*/
-      v46 = v26[1]; /*0x4cc523*/
-      v47 = v26[2]; /*0x4cc52a*/
-      v28 = abs32(v22 - v27); /*0x4cc539*/
-      v29 = abs32(v23 - v46); /*0x4cc548*/
-      v30 = abs32(v17); /*0x4cc555*/
-      v31 = abs32(a5 - v18); /*0x4cc55a*/
-      v32 = v29 <= v28; /*0x4cc55c*/
-      if ( v29 < v28 ) /*0x4cc55e*/
+LABEL_16:
+      v17 = (unsigned int *)v11->vt_slot_72(&v46); /*0x4cc489*/
+      v18 = a5 - *v17; /*0x4cc49c*/
+      v19 = v17[1]; /*0x4cc4a2*/
+      v20 = v17[2]; /*0x4cc4a7*/
+      v47 = a6 - v19; /*0x4cc4ae*/
+      v48 = a7 - v20; /*0x4cc4b8*/
+      v46 = v18; /*0x4cc4bc*/
+      Math::Sqrt((double)v18 * (double)v18 + (double)(a7 - v20) * (double)(a7 - v20) + (double)(a6 - v19) /*0x4cc4e1*/
+                                                                                     * (double)(a6 - v19));
+      LOWORD(v21) = Math::RoundToInt(a3); /*0x4cc4e9*/
+      if ( v21 <= 85 ) /*0x4cc4f1*/
+        return v11; /*0x4cc665*/
+      v22 = (int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)a1 + 72))(a1, &v46); /*0x4cc501*/
+      v23 = *v22; /*0x4cc504*/
+      v24 = v22[1]; /*0x4cc50a*/
+      v25 = v22[2]; /*0x4cc50d*/
+      v26 = *(unsigned int *)a2; /*0x4cc510*/
+      v48 = v25; /*0x4cc512*/
+      v27 = (int *)(*(int (**)(unsigned char *, char *))(v26 + 72))(a2, v49); /*0x4cc51b*/
+      v28 = *v27; /*0x4cc51e*/
+      v47 = v27[1]; /*0x4cc523*/
+      v48 = v27[2]; /*0x4cc52a*/
+      v29 = abs32(v23 - v28); /*0x4cc539*/
+      v30 = abs32(v24 - v47); /*0x4cc548*/
+      v31 = abs32(v18); /*0x4cc555*/
+      v32 = abs32(a6 - v19); /*0x4cc55a*/
+      v33 = v30 <= v29; /*0x4cc55c*/
+      if ( v30 < v29 ) /*0x4cc55e*/
       {
-        if ( v31 > v30 ) /*0x4cc562*/
+        if ( v32 > v31 ) /*0x4cc562*/
         {
-          LABEL_22:
-          v33 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43)); /*0x4cc574*/
-          if ( *(unsigned char *)(a7 + 662) ) /*0x4cc589*/
+LABEL_22:
+          v34 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v44); /*0x4cc574*/
+          if ( *(unsigned char *)(a8 + 662) ) /*0x4cc589*/
           {
-            v34 = (a3)->GetSlopeIndex(); /*0x4cc59e*/
-            if ( ((int)v33)->GetSlopeIndex() - v34 >= 4 ) /*0x4cc5aa*/
+            v35 = Cell::GetSlopeIndex(a4); /*0x4cc59e*/
+            if ( Cell::GetSlopeIndex((int)v34) - v35 >= 4 ) /*0x4cc5aa*/
             {
-              v35 = ((int)v44)->GetSlopeIndex(); /*0x4cc5b7*/
-              if ( ((int)v33)->GetSlopeIndex() - v35 > 0 ) /*0x4cc5c2*/
-                return v42; /*0x4cc5cf*/
+              v36 = Cell::GetSlopeIndex((int)v45); /*0x4cc5b7*/
+              if ( Cell::GetSlopeIndex((int)v34) - v36 > 0 ) /*0x4cc5c2*/
+                return v43; /*0x4cc5cf*/
             }
           }
-          if ( *(unsigned char *)(a7 + 664) ) /*0x4cc5d2*/
+          if ( *(unsigned char *)(a8 + 664) ) /*0x4cc5d2*/
           {
-            v37 = v33[17]; /*0x4cc5e0*/
-            v38 = v37 != -1 && *(unsigned char *)(*(unsigned int *)&dword_A83D84->vfptr[4 * v37] + 680); /*0x4cc5ff*/
-            if ( v33 != (unsigned int *)a2 && v38 && v44->u32_11B <= a2[283] ) /*0x4cc61f*/
+            v38 = v34[17]; /*0x4cc5e0*/
+            v39 = v38 != -1 && *(unsigned char *)(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 4 * v38) + 680); /*0x4cc5ff*/
+            if ( v34 != (unsigned int *)a2 && v39 && v45->u32_11B <= a2[283] ) /*0x4cc61f*/
             {
-              if ( !(*((unsigned char *)&(dword_8871E0[1][3]))) ) /*0x4cc627*/
-                return v42; /*0x4cc627*/
-              v39 = *(void **)&(&dword_A8022C->vfptr)[4 * v33[20]]; /*0x4cc639*/
-              if ( !v39 || !(uint8_t)(v39)->IsAlliedWith(other) ) /*0x4cc645*/
-                return v42; /*0x4cc64c*/
+              if ( !LOBYTE(dword_8871E0->ForceShieldColor) ) /*0x4cc627*/
+                return v43; /*0x4cc627*/
+              v40 = (HouseClass *)*(&dword_A8022C->vfptr + v34[20]); /*0x4cc639*/
+              if ( !v40 || !(unsigned __int8)HouseClass::IsAlliedWith(v40) ) /*0x4cc645*/
+                return v43; /*0x4cc64c*/
             }
           }
           return 0; /*0x4cc64c*/
         }
-        v32 = v29 <= v28; /*0x4cc564*/
+        v33 = v30 <= v29; /*0x4cc564*/
       }
-      if ( v32 || v30 <= v31 ) /*0x4cc56e*/
-        return v42; /*0x4cc659*/
+      if ( v33 || v31 <= v32 ) /*0x4cc56e*/
+        return v43; /*0x4cc659*/
       goto LABEL_22; /*0x4cc56e*/
     }
   }
   return 0; /*0x4cc5c8*/
+
 }
 }
 // 0x4CC310

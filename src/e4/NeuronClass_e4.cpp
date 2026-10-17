@@ -118,11 +118,13 @@ namespace gamemd {
 char NeuronClass_25::Release(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
 
   if ( a2 ) /*0x43ab7c*/
   {
     LOBYTE(this->m_C) = 0; /*0x43ab86*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x43ab8c*/
       v4 = a3; /*0x43aba2*/
     else
@@ -132,11 +134,9 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x43abb5*/
       {
-        int m_8; // ecx
         m_8 = this->m_8; /*0x43abbc*/
         if ( a2 < m_8 ) /*0x43abc1*/
           m_8 = a2; /*0x43abc3*/
-        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x43abc9*/
           ++i; /*0x43abce*/
         if ( BYTE1(this->m_C) ) /*0x43abdb*/
@@ -145,7 +145,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x43abee*/
         }
       }
-      *&this->q004 = (int)(v4); /*0x43abf7*/
+      *&this->q004 = v4; /*0x43abf7*/
       this->m_8 = a2; /*0x43abff*/
       BYTE1(this->m_C) = a3 == 0; /*0x43ac02*/
       return 1; /*0x43ac08*/
@@ -157,7 +157,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVNeuronClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x43ac12*/
+    (*(void (**)(_VectorClass_PAVNeuronClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x43ac12*/
     return 1; /*0x43ac18*/
   }
 

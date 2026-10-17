@@ -254,8 +254,18 @@ int WinsockInterface::Init(void *a1, void *a2)
 {
 
   int result; // eax
+  WSAData *v3; // eax
+  int v4; // edx
+  struct WSAData *v5; // esi
   INT v6; // eax
+  int v7; // ebp
+  int *v8; // esi
   INT v9; // ebx
+  int v10; // eax
+  WSAData *v11; // [esp+8h] [ebp-1008h]
+  DWORD dwBufferLength; // [esp+Ch] [ebp-1004h] BYREF
+  unsigned char ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
+  char v14; // [esp+28h] [ebp-FE8h] BYREF
 
   Debug::Log(); /*0x7b1df3*/
   if ( LOBYTE(this->m_3F068) ) /*0x7b1df8*/
@@ -270,17 +280,13 @@ int WinsockInterface::Init(void *a1, void *a2)
       byte_B7809C = 1; /*0x7b1e41*/
       MessageBoxA(g_hWnd, aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
-    int v3; // eax
-    v3 = (int)(__2_YAPAXI_Z(0x590u)); /*0x7b1e53*/
-    int v4; // edx
-    v4 = *(unsigned int *)this->q000; /*0x7b1e58*/
-    struct WSAData *v5; // esi
-    v5 = (struct WSAData *)v3; /*0x7b1e5a*/
-    struct WSAData *v11; // [esp+8h] [ebp-1008h]
-    v11 = (struct WSAData *)v3; /*0x7b1e61*/
+    v3 = (WSAData *)__2_YAPAXI_Z(0x590u); /*0x7b1e53*/
+    v4 = *(unsigned int *)this->__pad_0; /*0x7b1e58*/
+    v5 = v3; /*0x7b1e5a*/
+    v11 = v3; /*0x7b1e61*/
     this->u32_3F06C = -1; /*0x7b1e65*/
     (*(void (**)(WinsockInterface *))(v4 + 20))(this); /*0x7b1e6f*/
-    (*(void (**)(WinsockInterface *))(*(unsigned int *)this->q000 + 24))(this); /*0x7b1e76*/
+    (*(void (**)(WinsockInterface *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x7b1e76*/
     Debug::Log(); /*0x7b1e7e*/
     if ( WSAStartup(0x101u, v5) ) /*0x7b1e8c*/
     {
@@ -301,9 +307,7 @@ int WinsockInterface::Init(void *a1, void *a2)
       {
         Debug::Log(); /*0x7b1efa*/
         *&this->ptr_4 = 546; /*0x7b1f0a*/
-        DWORD dwBufferLength; // [esp+Ch] [ebp-1004h] BYREF
         dwBufferLength = 4096; /*0x7b1f18*/
-        unsigned char ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
         v6 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/
         if ( v6 == -1 ) /*0x7b1f28*/
         {
@@ -311,17 +315,15 @@ int WinsockInterface::Init(void *a1, void *a2)
         }
         else
         {
-          int v7 = 0x7FFFFFFF; // ebp /*0x7b1f2c*/
+          v7 = 0x7FFFFFFF; /*0x7b1f2c*/
           if ( v6 > 0 ) /*0x7b1f31*/
           {
-            int *v8; // esi
-            char v14; // [esp+28h] [ebp-FE8h] BYREF
             v8 = (int *)&v14; /*0x7b1f34*/
             v9 = v6; /*0x7b1f38*/
             do /*0x7b1f63*/
             {
               Debug::Log(); /*0x7b1f46*/
-              int v10 = *v8; // eax /*0x7b1f4b*/
+              v10 = *v8; /*0x7b1f4b*/
               if ( *v8 && v10 != -1 && v7 >= v10 ) /*0x7b1f5b*/
                 v7 = *v8; /*0x7b1f5d*/
               v8 += 8; /*0x7b1f5f*/

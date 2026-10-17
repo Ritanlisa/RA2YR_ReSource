@@ -659,11 +659,14 @@ namespace gamemd {
 char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+  void *v7; // eax
 
   if ( a2 ) /*0x512e7c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x512e82*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x512e88*/
       v4 = a3; /*0x512e9e*/
     else
@@ -673,11 +676,9 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
       return 0; /*0x512f1a*/
     if ( *&this->Items ) /*0x512ea8*/
     {
-      int m_8; // ecx
-      m_8 = (int)(this->Capacity); /*0x512eaf*/
+      m_8 = this->Capacity; /*0x512eaf*/
       if ( a2 < m_8 ) /*0x512eb4*/
         m_8 = a2; /*0x512eb6*/
-      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x512ebc*/
         ++i; /*0x512ec1*/
       if ( BYTE1(this->IsInitialized) ) /*0x512ece*/
@@ -687,17 +688,16 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
       }
     }
     *&this->Items = v4; /*0x512eea*/
-    this->Capacity = (void *)(a2); /*0x512ef2*/
+    this->Capacity = a2; /*0x512ef2*/
     BYTE1(this->IsInitialized) = a3 == 0; /*0x512ef5*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x512efe*/
+    (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x512efe*/
   }
-  int v7; // eax
-  v7 = (int)(this->Capacity); /*0x512f01*/
-  if ( v7 < this->Count ) /*0x512f09*/
-    this->Count = (void *)(v7); /*0x512f0b*/
+  v7 = (void *)this->Capacity; /*0x512f01*/
+  if ( (int)v7 < this->Count ) /*0x512f09*/
+    this->Count = (int)v7; /*0x512f0b*/
   return 1; /*0x512f0e*/
 
 }
@@ -770,27 +770,29 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
 {
 
+  int v3; // eax
+  void *v4; // eax
+  int Capacity; // ecx
+  int v6; // eax
 
   this->u32_4 = 0; /*0x51374d*/
   this->u32_8 = 0; /*0x513750*/
   this->u32_C = 1; /*0x513753*/
   this->u32_D = 0; /*0x513757*/
-  this->DynamicVectorClass = &vt_VectorClass; /*0x51375a*/
+  this->DynamicVectorClass = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51375a*/
   if ( this != (TypeList *)aP1 ) /*0x513760*/
   {
-    ((_VectorClass_PBVUnitTypeClass *)this)->Destructor(); /*0x513762*/
-    int v3; // eax
-    v3 = (int)(aP1[2]); /*0x513768*/
+    Vector::Destructor((_VectorClass_PBVUnitTypeClass *)this); /*0x513762*/
+    v3 = aP1[2]; /*0x513768*/
     this->u32_8 = v3; /*0x51376d*/
     if ( v3 ) /*0x513770*/
     {
-      void *v4; // eax
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x513776*/
-      this->u32_4 = (unsigned int)(v4); /*0x513780*/
+      v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x513776*/
+      this->u32_4 = v4; /*0x513780*/
       if ( v4 ) /*0x513783*/
       {
-        int Capacity = this->u32_8; // ecx /*0x513785*/
-        int v6 = 0; // eax /*0x513788*/
+        Capacity = this->u32_8; /*0x513785*/
+        v6 = 0; /*0x513788*/
         this->u32_D = 1; /*0x51378c*/
         if ( Capacity > 0 ) /*0x513790*/
         {
@@ -809,9 +811,9 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
       this->u32_D = 0; /*0x5137ab*/
     }
   }
-  this->u32_10 = (unsigned int)(aP1[4]); /*0x5137b1*/
-  this->u32_14 = (unsigned int)(aP1[5]); /*0x5137b7*/
-  this->DynamicVectorClass = &vt_TypeList; /*0x5137ba*/
+  this->u32_10 = aP1[4]; /*0x5137b1*/
+  this->u32_14 = aP1[5]; /*0x5137b7*/
+  this->DynamicVectorClass = &TypeList<UnitTypeClass const *>::`vftable'; /*0x5137ba*/
   return &this->DynamicVectorClass; /*0x5137c2*/
 
 }
@@ -821,48 +823,52 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1, void *a2)
 {
 
-  this->DynamicVectorClass = 0; /*0x5255fd*/
-  this->DynamicVectorClass = 0; /*0x525600*/
-  this->DynamicVectorClass = (void *)(1); /*0x525603*/
-  this->DynamicVectorClass = 0; /*0x525607*/
-  this->DynamicVectorClass = &vt_VectorClass; /*0x52560a*/
-  if ( this != (TypeList *)aP1 ) /*0x525610*/
+  int v3; // eax
+  void *v4; // eax
+  int Capacity; // ecx
+  int v6; // eax
+
+  this->u32_4 = 0; /*0x5255fd*/
+  this->u32_8 = 0; /*0x525600*/
+  this->u32_C = 1; /*0x525603*/
+  this->u32_D = 0; /*0x525607*/
+  this->DynamicVectorClass = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52560a*/
+  if ( this != (TypeList *)a2 ) /*0x525610*/
   {
-    DynamicVectorClass::Destroy_Alt(); /*0x525612*/
-    int v3; // eax
-    v3 = (int)(aP1[2]); /*0x525618*/
-    this->DynamicVectorClass = (void *)(v3); /*0x52561d*/
+    DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)this); /*0x525612*/
+    v3 = a2[2]; /*0x525618*/
+    this->u32_8 = v3; /*0x52561d*/
     if ( v3 ) /*0x525620*/
     {
-      void *v4; // eax
-      v4 = operator new(4 * v3); /*0x525626*/
-      *&this->u32_4 = (unsigned int)(v4); /*0x525630*/
+      v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x525626*/
+      this->u32_4 = v4; /*0x525630*/
       if ( v4 ) /*0x525633*/
       {
-        int Capacity = this->u32_8; // ecx /*0x525635*/
-        int v6 = 0; // eax /*0x525638*/
-        this->DynamicVectorClass = (void *)(1); /*0x52563c*/
+        Capacity = this->u32_8; /*0x525635*/
+        v6 = 0; /*0x525638*/
+        this->u32_D = 1; /*0x52563c*/
         if ( Capacity > 0 ) /*0x525640*/
         {
           do /*0x525654*/
           {
-            *((unsigned int *)this->DynamicVectorClass + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x52564b*/
+            *((unsigned int *)this->u32_4 + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x52564b*/
             ++v6; /*0x525651*/
           }
-          while ( v6 < this->DynamicVectorClass ); /*0x525654*/
+          while ( v6 < this->u32_8 ); /*0x525654*/
         }
       }
     }
     else
     {
       this->u32_4 = 0; /*0x525658*/
-      this->DynamicVectorClass = 0; /*0x52565b*/
+      this->u32_D = 0; /*0x52565b*/
     }
   }
-  this->DynamicVectorClass = (void *)(aP1[4]); /*0x525661*/
-  this->DynamicVectorClass = (void *)(aP1[5]); /*0x525667*/
-  this->DynamicVectorClass = &vt_TypeList; /*0x52566a*/
+  this->u32_10 = a2[4]; /*0x525661*/
+  this->u32_14 = a2[5]; /*0x525667*/
+  this->DynamicVectorClass = &TypeList<AnimTypeClass const *>::`vftable'; /*0x52566a*/
   return &this->DynamicVectorClass; /*0x525672*/
+
 }
 }  // G42.18c ns repair
 // 0x5AC400

@@ -19,14 +19,19 @@ namespace gamemd {  // G42.18 ns repair
 int TextBuffer::Init(void *a1, void *a2)
 {
 
+  int v1; // edi
+  TextBuffer *v2; // ebx
+  TextBuffer *v3; // edx
+  TextBuffer *v4; // eax
+  int v5; // esi
 
-  int v1 = 0; // edi /*0x5bcc93*/
-  TextBuffer *v2 = &this->u32_1F40; // ebx /*0x5bcc95*/
+  v1 = 0; /*0x5bcc93*/
+  v2 = this + 2000; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
-    TextBuffer *v3 = this + v1; // edx /*0x5bcc9b*/
-    TextBuffer *v4 = v2; // eax /*0x5bcc9e*/
-    int v5 = 80; // esi /*0x5bcca0*/
+    v3 = this + v1; /*0x5bcc9b*/
+    v4 = v2; /*0x5bcc9e*/
+    v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/
     {
       *v3 = (TextBuffer)32; /*0x5bcca5*/
@@ -41,7 +46,7 @@ int TextBuffer::Init(void *a1, void *a2)
   }
   while ( v1 < 25 ); /*0x5bccbe*/
   this->q2734 = 1; /*0x5bccc8*/
-  return ((Text *)this)->DrawRepeated(0, 0, 80, 25); /*0x5bccd4*/
+  return Text::DrawRepeated((Text *)this, 0, 0, 80, 25); /*0x5bccd4*/
 
 }
 } // namespace gamemd

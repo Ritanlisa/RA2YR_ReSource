@@ -48,18 +48,20 @@ char sub_5E9580()
 {
 
   int v0; // edx
-  v0 = (int)((LPARAM *)(0));
   LPARAM *v1; // ecx
-  v1 = (LPARAM *)(&dword_A8DA90); /*0x5e9597*/
+  LPARAM v2; // eax
+
+  v0 = 0; /*0x5e9595*/
+  v1 = &MEMORY[0xA8DA90]; /*0x5e9597*/
   while ( 1 ) /*0x5e959c*/
   {
-    LPARAM v2 = *v1; // eax /*0x5e959c*/
+    v2 = *v1; /*0x5e959c*/
     if ( *v1 ) /*0x5e959c*/
     {
       if ( v2 != g_HouseClass_ObserverFlags /*0x5e95c2*/
         && v2 != g_Lobby_PlayerCount
         && v2 != g_Lobby_MaxPlayers
-        && (wchar_t *)v2 != (wchar_t *)(g_Lobby_PlayerReady)
+        && (wchar_t *)v2 != g_Lobby_PlayerReady
         && v0 == g_MPCooperativeState
         && *(unsigned int *)(v2 + 107) == -1 )
       {
@@ -68,9 +70,10 @@ char sub_5E9580()
     }
     ++v1; /*0x5e95c4*/
     ++v0; /*0x5e95c7*/
-    if ( (int)v1 >= (int)&dword_A8DAB0 ) /*0x5e95ce*/
+    if ( (int)v1 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e95ce*/
       return 0; /*0x5e95d5*/
   }
   return 1; /*0x5e95d0*/
+
 }
 } // namespace gamemd

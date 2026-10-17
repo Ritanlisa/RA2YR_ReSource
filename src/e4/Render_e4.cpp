@@ -666,55 +666,58 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
 {
+
   char *v4; // eax
   wchar_t *StringCSF; // eax
   int v7; // edi
-  int v8; // esi
+  wchar_t *v8; // esi
   char *v9; // eax
 
-  v4 = ((String *)(a2))->GetOrEmpty_Alt(); /*0x780d9f*/
-  if ( _strcmpi(v4,(const char *)(aRandmapSed)) ) /*0x780da5*/
+  v4 = String::GetOrEmpty_Alt(a2); /*0x780d9f*/
+  if ( _strcmpi(v4, aRandmapSed) ) /*0x780da5*/
   {
     v7 = 0; /*0x780ddb*/
     if ( dword_A8B8D8 <= 0 ) /*0x780ddf*/
     {
-      LABEL_6:
-      ((WideString *)((WideString *)a1))->Assign((wchar_t *)(&g_TypeClass_DefaultString)); /*0x780e0b*/
+LABEL_6:
+      WideString::Assign((WideString *)a1, &g_TypeClass_DefaultString); /*0x780e0b*/
       return a1; /*0x780e17*/
     }
     else
     {
       while ( 1 ) /*0x780de6*/
       {
-        v8 = *(unsigned int *)(dword_A8B8CC + 4 * v7); /*0x780de6*/
-        v9 = ((String *)(a2))->GetOrEmpty_Alt(); /*0x780def*/
-        if ( !_strcmpi(v9, (char *)(v8 + 88)) ) /*0x780df5*/
+        v8 = *(wchar_t **)(dword_A8B8CC + 4 * v7); /*0x780de6*/
+        v9 = String::GetOrEmpty_Alt(a2); /*0x780def*/
+        if ( !_strcmpi(v9, v8 + 44) ) /*0x780df5*/
           break; /*0x780df5*/
         if ( ++v7 >= dword_A8B8D8 ) /*0x780e09*/
           goto LABEL_6; /*0x780e09*/
       }
-      ((WideString *)((WideString *)a1))->Assign((wchar_t *)v8); /*0x780e21*/
+      WideString::Assign((WideString *)a1, v8); /*0x780e21*/
       return a1; /*0x780e26*/
     }
   }
   else
   {
-    StringCSF = GetStringCSF((char *)(aTxtRandomMapDe), 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
-    ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x780dca*/
+    StringCSF = GetStringCSF(aTxtRandomMapDe, 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
+    WideString::Assign((WideString *)a1, StringCSF); /*0x780dca*/
     return a1; /*0x780dcf*/
   }
+
 }
 }
 // 0x7C7371
 namespace gamemd {  // G42.18c ns repair
 void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6)
 {
+
   int v6; // eax
   int v7; // edx
   int v8; // esi
   unsigned short *v9; // edi
   signed int v10; // ebp
-  int v11; // ebx
+  unsigned __int8 *v11; // ebx
   bool v12; // zf
   bool k; // cc
   unsigned int v14; // ecx
@@ -727,7 +730,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
   unsigned short *v21; // edi
   unsigned int v22; // ebp
   signed int v23; // ebp
-  int v24; // ebx
+  unsigned __int8 *v24; // ebx
   bool v25; // zf
   bool i; // cc
   unsigned int v27; // ecx
@@ -740,7 +743,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
   int v34; // edx
   unsigned int v35; // ebp
   signed int v36; // ebp
-  int v37; // ebx
+  unsigned __int8 *v37; // ebx
   bool v38; // zf
   bool j; // cc
   unsigned int v40; // ecx
@@ -756,7 +759,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
     if ( a4 == 2 ) /*0x7c73b2*/
     {
       v18 = *(unsigned int *)a6; /*0x7c778c*/
-      v19 = *(uint16_t *)(a6 + 4); /*0x7c778e*/
+      v19 = *(unsigned __int16 *)(a6 + 4); /*0x7c778e*/
       v20 = a1; /*0x7c7792*/
       v21 = a2; /*0x7c7795*/
       v22 = a5 >> 1; /*0x7c779b*/
@@ -770,35 +773,35 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v45 = v22 - 12; /*0x7c77c3*/
             v24 = 0; /*0x7c77c7*/
             v23 = ((v22 - 12) >> 4) + 1; /*0x7c77c9*/
-            LABEL_121:
-            v30 = *(uint8_t *)(v20 + 2) << 16; /*0x7c7ae0*/
-            (*((unsigned short *)&(v30))) = *(unsigned short *)v20; /*0x7c7ae8*/
-            (*((unsigned char *)&(v24))) = *(unsigned short *)v20; /*0x7c7aeb*/
+LABEL_121:
+            v30 = *(unsigned __int8 *)(v20 + 2) << 16; /*0x7c7ae0*/
+            LOWORD(v30) = *(unsigned short *)v20; /*0x7c7ae8*/
+            LOBYTE(v24) = *(unsigned short *)v20; /*0x7c7aeb*/
             v27 = v30 >> 8; /*0x7c7aed*/
             --v20; /*0x7c7af0*/
             v21 -= 4; /*0x7c7af3*/
-            (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c7af6*/
+            LOBYTE(v19) = g_ScreenRenderMask[(unsigned int)v24] | v19; /*0x7c7af6*/
             goto LABEL_79; /*0x7c7afc*/
           case 2: /*0x7c77b6*/
             v45 = v22 - 8; /*0x7c77d3*/
             v24 = 0; /*0x7c77d7*/
             v23 = ((v22 - 8) >> 4) + 1; /*0x7c77d9*/
-            LABEL_119:
-            (*((unsigned short *)&(v27))) = *(unsigned short *)v20; /*0x7c7aa4*/
-            (*((unsigned char *)&(v24))) = *(unsigned short *)v20; /*0x7c7aa9*/
+LABEL_119:
+            LOWORD(v27) = *(unsigned short *)v20; /*0x7c7aa4*/
+            LOBYTE(v24) = *(unsigned short *)v20; /*0x7c7aa9*/
             v21 -= 8; /*0x7c7aab*/
             v20 -= 2; /*0x7c7aae*/
-            (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c7ab1*/
+            LOBYTE(v19) = g_ScreenRenderMask[(unsigned int)v24] | v19; /*0x7c7ab1*/
             goto LABEL_87; /*0x7c7ab7*/
           case 3: /*0x7c77b6*/
             v45 = v22 - 4; /*0x7c77e3*/
             v24 = 0; /*0x7c77e7*/
             v23 = ((v22 - 4) >> 4) + 1; /*0x7c77e9*/
-            LABEL_117:
-            (*((unsigned char *)&(v24))) = *(unsigned char *)v20; /*0x7c7a70*/
+LABEL_117:
+            LOBYTE(v24) = *(unsigned char *)v20; /*0x7c7a70*/
             v21 -= 12; /*0x7c7a76*/
             v20 -= 3; /*0x7c7a79*/
-            (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c7a7c*/
+            LOBYTE(v19) = g_ScreenRenderMask[(unsigned int)v24] | v19; /*0x7c7a7c*/
             goto LABEL_95; /*0x7c7a82*/
         }
       }
@@ -809,10 +812,10 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
       for ( i = v25; !i; i = v23-- <= 1 ) /*0x7c77af*/
       {
         v28 = *(unsigned int *)v20; /*0x7c796b*/
-        (*((unsigned char *)&(v24))) = *(unsigned int *)v20; /*0x7c796d*/
-        (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c796f*/
+        LOBYTE(v24) = *(unsigned int *)v20; /*0x7c796d*/
+        LOBYTE(v19) = g_ScreenRenderMask[(unsigned int)v24] | v19; /*0x7c796f*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c77f0*/
-        (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c77f7*/
+        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c77f7*/
         if ( v18 > 0x7FFF ) /*0x7c7803*/
         {
           v18 = 0x7FFF; /*0x7c7998*/
@@ -821,12 +824,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v18 = -32768; /*0x7c79a4*/
         }
-        (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c7814*/
+        LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c7814*/
         *v21 = v18; /*0x7c781a*/
-        LABEL_75:
-        (*((unsigned char *)&(v24))) = (((unsigned char *)&(v28))[1]); /*0x7c781d*/
+LABEL_75:
+        LOBYTE(v24) = BYTE1(v28); /*0x7c781d*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c781f*/
-        (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7826*/
+        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7826*/
         if ( v18 > 0x7FFF ) /*0x7c7832*/
         {
           v18 = 0x7FFF; /*0x7c79b0*/
@@ -835,12 +838,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v18 = -32768; /*0x7c79bc*/
         }
-        (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c7843*/
+        LOBYTE(v19) = g_ScreenRenderMask[(unsigned int)v24] | v19; /*0x7c7843*/
         v21[2] = v18; /*0x7c7849*/
-        v27 = (*(((unsigned short *)&(v28)) + 1)); /*0x7c784d*/
-        LABEL_79:
+        v27 = HIWORD(v28); /*0x7c784d*/
+LABEL_79:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c7850*/
-        (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7857*/
+        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7857*/
         if ( v18 > 0x7FFF ) /*0x7c7863*/
         {
           v18 = 0x7FFF; /*0x7c79c8*/
@@ -849,12 +852,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v18 = -32768; /*0x7c79d4*/
         }
-        (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c7874*/
+        LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c7874*/
         v21[4] = v18; /*0x7c787a*/
-        LABEL_83:
-        (*((unsigned char *)&(v24))) = v27; /*0x7c787e*/
+LABEL_83:
+        LOBYTE(v24) = v27; /*0x7c787e*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c7880*/
-        (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7887*/
+        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7887*/
         if ( v18 > 0x7FFF ) /*0x7c7893*/
         {
           v18 = 0x7FFF; /*0x7c79e0*/
@@ -863,11 +866,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v18 = -32768; /*0x7c79ec*/
         }
-        (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c78a4*/
+        LOBYTE(v19) = g_ScreenRenderMask[(unsigned int)v24] | v19; /*0x7c78a4*/
         v21[6] = v18; /*0x7c78aa*/
-        LABEL_87:
+LABEL_87:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c78ae*/
-        (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c78b5*/
+        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c78b5*/
         if ( v18 > 0x7FFF ) /*0x7c78c1*/
         {
           v18 = 0x7FFF; /*0x7c79f8*/
@@ -876,12 +879,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v18 = -32768; /*0x7c7a04*/
         }
-        (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c78d2*/
+        LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c78d2*/
         v21[8] = v18; /*0x7c78d8*/
-        LABEL_91:
-        (*((unsigned char *)&(v24))) = (((unsigned char *)&(v27))[1]); /*0x7c78dc*/
+LABEL_91:
+        LOBYTE(v24) = BYTE1(v27); /*0x7c78dc*/
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c78de*/
-        (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c78e5*/
+        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c78e5*/
         if ( v18 > 0x7FFF ) /*0x7c78f1*/
         {
           v18 = 0x7FFF; /*0x7c7a10*/
@@ -890,11 +893,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v18 = -32768; /*0x7c7a1c*/
         }
-        (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderMask))[v24] | v19; /*0x7c7902*/
+        LOBYTE(v19) = g_ScreenRenderMask[(unsigned int)v24] | v19; /*0x7c7902*/
         v21[10] = v18; /*0x7c7908*/
-        LABEL_95:
+LABEL_95:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c790c*/
-        (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7913*/
+        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7913*/
         if ( v18 > 0x7FFF ) /*0x7c791f*/
         {
           v18 = 0x7FFF; /*0x7c7a28*/
@@ -903,11 +906,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v18 = -32768; /*0x7c7a34*/
         }
-        (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c7930*/
+        LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c7930*/
         v21[12] = v18; /*0x7c7936*/
-        LABEL_99:
+LABEL_99:
         v18 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v19); /*0x7c793a*/
-        (*((unsigned short *)&(v19))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7941*/
+        LOWORD(v19) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v19); /*0x7c7941*/
         if ( v18 > 0x7FFF ) /*0x7c794d*/
         {
           v18 = 0x7FFF; /*0x7c7a40*/
@@ -928,35 +931,35 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
           case 0u: /*0x7c7982*/
             break;
           case 1u: /*0x7c7982*/
-            (*((unsigned char *)&(v24))) = 16 * *(unsigned char *)v20; /*0x7c7a5f*/
+            LOBYTE(v24) = 16 * *(unsigned char *)v20; /*0x7c7a5f*/
             v21 -= 14; /*0x7c7a61*/
-            (*((unsigned char *)&(v19))) = ((unsigned int *)(g_ScreenRenderFlag))[v24] | v19; /*0x7c7a64*/
+            LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c7a64*/
             goto LABEL_99; /*0x7c7a6a*/
           case 2u: /*0x7c7982*/
             goto LABEL_117;
           case 3u: /*0x7c7982*/
-            (*((unsigned short *)&(v27))) = 16 * *(unsigned short *)v20; /*0x7c7a8d*/
-            (*((unsigned char *)&(v24))) = 16 * *(unsigned char *)v20; /*0x7c7a91*/
+            LOWORD(v27) = 16 * *(unsigned short *)v20; /*0x7c7a8d*/
+            LOBYTE(v24) = 16 * *(unsigned char *)v20; /*0x7c7a91*/
             v21 -= 10; /*0x7c7a93*/
-            (*((unsigned char *)&(v19))) = g_ScreenRenderFlag[v24] | v19; /*0x7c7a96*/
+            LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c7a96*/
             goto LABEL_91; /*0x7c7a9c*/
           case 4u: /*0x7c7982*/
             goto LABEL_119;
           case 5u: /*0x7c7982*/
-            v29 = *(uint8_t *)(v20 + 2) << 16; /*0x7c7ac1*/
-            (*((unsigned short *)&(v29))) = *(unsigned short *)v20; /*0x7c7ac4*/
+            v29 = *(unsigned __int8 *)(v20 + 2) << 16; /*0x7c7ac1*/
+            LOWORD(v29) = *(unsigned short *)v20; /*0x7c7ac4*/
             v27 = v29 >> 4; /*0x7c7ac9*/
-            (*((unsigned char *)&(v24))) = 16 * *(unsigned short *)v20; /*0x7c7acc*/
+            LOBYTE(v24) = 16 * *(unsigned short *)v20; /*0x7c7acc*/
             v21 -= 6; /*0x7c7acf*/
-            (*((unsigned char *)&(v19))) = g_ScreenRenderFlag[v24] | v19; /*0x7c7ad2*/
+            LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c7ad2*/
             goto LABEL_83; /*0x7c7ad8*/
           case 6u: /*0x7c7982*/
             goto LABEL_121;
           case 7u: /*0x7c7982*/
             v28 = 16 * *(unsigned int *)v20; /*0x7c7b08*/
-            (*((unsigned char *)&(v24))) = 16 * *(unsigned char *)v20; /*0x7c7b0b*/
+            LOBYTE(v24) = 16 * *(unsigned char *)v20; /*0x7c7b0b*/
             v21 -= 2; /*0x7c7b0d*/
-            (*((unsigned char *)&(v19))) = g_ScreenRenderFlag[v24] | v19; /*0x7c7b10*/
+            LOBYTE(v19) = g_ScreenRenderFlag[(unsigned int)v24] | v19; /*0x7c7b10*/
             goto LABEL_75; /*0x7c7b16*/
         }
       }
@@ -965,7 +968,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
       v31 = a2 + 1; /*0x7c7b54*/
       v32 = (a5 >> 3) + a1; /*0x7c7b5d*/
       v33 = *(unsigned int *)(a6 + 6); /*0x7c7b61*/
-      v34 = *(uint16_t *)(a6 + 10); /*0x7c7b64*/
+      v34 = *(unsigned __int16 *)(a6 + 10); /*0x7c7b64*/
       v35 = a5 >> 1; /*0x7c7b6b*/
       if ( a5 >> 1 >= 0x10 && (v32 & 3) != 0 ) /*0x7c7b77*/
       {
@@ -977,35 +980,35 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v46 = v35 - 12; /*0x7c7b93*/
             v37 = 0; /*0x7c7b97*/
             v36 = ((v35 - 12) >> 4) + 1; /*0x7c7b99*/
-            LABEL_180:
-            v43 = *(uint8_t *)(v32 + 2) << 16; /*0x7c7eb4*/
-            (*((unsigned short *)&(v43))) = *(unsigned short *)v32; /*0x7c7ebc*/
-            (*((unsigned char *)&(v37))) = *(unsigned short *)v32; /*0x7c7ebf*/
+LABEL_180:
+            v43 = *(unsigned __int8 *)(v32 + 2) << 16; /*0x7c7eb4*/
+            LOWORD(v43) = *(unsigned short *)v32; /*0x7c7ebc*/
+            LOBYTE(v37) = *(unsigned short *)v32; /*0x7c7ebf*/
             v40 = v43 >> 8; /*0x7c7ec1*/
             --v32; /*0x7c7ec4*/
             v31 -= 4; /*0x7c7ec7*/
-            (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7eca*/
+            LOBYTE(v34) = g_ScreenRenderMask[(unsigned int)v37] | v34; /*0x7c7eca*/
             goto LABEL_138; /*0x7c7ed0*/
           case 2: /*0x7c7b86*/
             v46 = v35 - 8; /*0x7c7ba3*/
             v37 = 0; /*0x7c7ba7*/
             v36 = ((v35 - 8) >> 4) + 1; /*0x7c7ba9*/
-            LABEL_178:
-            (*((unsigned short *)&(v40))) = *(unsigned short *)v32; /*0x7c7e78*/
-            (*((unsigned char *)&(v37))) = *(unsigned short *)v32; /*0x7c7e7d*/
+LABEL_178:
+            LOWORD(v40) = *(unsigned short *)v32; /*0x7c7e78*/
+            LOBYTE(v37) = *(unsigned short *)v32; /*0x7c7e7d*/
             v31 -= 8; /*0x7c7e7f*/
             v32 -= 2; /*0x7c7e82*/
-            (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7e85*/
+            LOBYTE(v34) = g_ScreenRenderMask[(unsigned int)v37] | v34; /*0x7c7e85*/
             goto LABEL_146; /*0x7c7e8b*/
           case 3: /*0x7c7b86*/
             v46 = v35 - 4; /*0x7c7bb3*/
             v37 = 0; /*0x7c7bb7*/
             v36 = ((v35 - 4) >> 4) + 1; /*0x7c7bb9*/
-            LABEL_176:
-            (*((unsigned char *)&(v37))) = *(unsigned char *)v32; /*0x7c7e44*/
+LABEL_176:
+            LOBYTE(v37) = *(unsigned char *)v32; /*0x7c7e44*/
             v31 -= 12; /*0x7c7e4a*/
             v32 -= 3; /*0x7c7e4d*/
-            (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7e50*/
+            LOBYTE(v34) = g_ScreenRenderMask[(unsigned int)v37] | v34; /*0x7c7e50*/
             goto LABEL_154; /*0x7c7e56*/
         }
       }
@@ -1016,10 +1019,10 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
       for ( j = v38; !j; j = v36-- <= 1 ) /*0x7c7b7f*/
       {
         v41 = *(unsigned int *)v32; /*0x7c7d3b*/
-        (*((unsigned char *)&(v37))) = *(unsigned int *)v32; /*0x7c7d3d*/
-        (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7d3f*/
+        LOBYTE(v37) = *(unsigned int *)v32; /*0x7c7d3d*/
+        LOBYTE(v34) = g_ScreenRenderMask[(unsigned int)v37] | v34; /*0x7c7d3f*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7bc0*/
-        (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7bc7*/
+        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7bc7*/
         if ( v33 > 0x7FFF ) /*0x7c7bd3*/
         {
           v33 = 0x7FFF; /*0x7c7d6c*/
@@ -1028,12 +1031,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v33 = -32768; /*0x7c7d78*/
         }
-        (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7be4*/
+        LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7be4*/
         *v31 = v33; /*0x7c7bea*/
-        LABEL_134:
-        (*((unsigned char *)&(v37))) = (((unsigned char *)&(v41))[1]); /*0x7c7bed*/
+LABEL_134:
+        LOBYTE(v37) = BYTE1(v41); /*0x7c7bed*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7bef*/
-        (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7bf6*/
+        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7bf6*/
         if ( v33 > 0x7FFF ) /*0x7c7c02*/
         {
           v33 = 0x7FFF; /*0x7c7d84*/
@@ -1042,12 +1045,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v33 = -32768; /*0x7c7d90*/
         }
-        (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7c13*/
+        LOBYTE(v34) = g_ScreenRenderMask[(unsigned int)v37] | v34; /*0x7c7c13*/
         v31[2] = v33; /*0x7c7c19*/
-        v40 = (*(((unsigned short *)&(v41)) + 1)); /*0x7c7c1d*/
-        LABEL_138:
+        v40 = HIWORD(v41); /*0x7c7c1d*/
+LABEL_138:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c20*/
-        (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c27*/
+        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c27*/
         if ( v33 > 0x7FFF ) /*0x7c7c33*/
         {
           v33 = 0x7FFF; /*0x7c7d9c*/
@@ -1056,12 +1059,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v33 = -32768; /*0x7c7da8*/
         }
-        (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7c44*/
+        LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7c44*/
         v31[4] = v33; /*0x7c7c4a*/
-        LABEL_142:
-        (*((unsigned char *)&(v37))) = v40; /*0x7c7c4e*/
+LABEL_142:
+        LOBYTE(v37) = v40; /*0x7c7c4e*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c50*/
-        (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c57*/
+        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c57*/
         if ( v33 > 0x7FFF ) /*0x7c7c63*/
         {
           v33 = 0x7FFF; /*0x7c7db4*/
@@ -1070,11 +1073,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v33 = -32768; /*0x7c7dc0*/
         }
-        (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7c74*/
+        LOBYTE(v34) = g_ScreenRenderMask[(unsigned int)v37] | v34; /*0x7c7c74*/
         v31[6] = v33; /*0x7c7c7a*/
-        LABEL_146:
+LABEL_146:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7c7e*/
-        (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c85*/
+        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7c85*/
         if ( v33 > 0x7FFF ) /*0x7c7c91*/
         {
           v33 = 0x7FFF; /*0x7c7dcc*/
@@ -1083,12 +1086,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v33 = -32768; /*0x7c7dd8*/
         }
-        (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7ca2*/
+        LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7ca2*/
         v31[8] = v33; /*0x7c7ca8*/
-        LABEL_150:
-        (*((unsigned char *)&(v37))) = (((unsigned char *)&(v40))[1]); /*0x7c7cac*/
+LABEL_150:
+        LOBYTE(v37) = BYTE1(v40); /*0x7c7cac*/
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7cae*/
-        (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7cb5*/
+        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7cb5*/
         if ( v33 > 0x7FFF ) /*0x7c7cc1*/
         {
           v33 = 0x7FFF; /*0x7c7de4*/
@@ -1097,11 +1100,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v33 = -32768; /*0x7c7df0*/
         }
-        (*((unsigned char *)&(v34))) = g_ScreenRenderMask[v37] | v34; /*0x7c7cd2*/
+        LOBYTE(v34) = g_ScreenRenderMask[(unsigned int)v37] | v34; /*0x7c7cd2*/
         v31[10] = v33; /*0x7c7cd8*/
-        LABEL_154:
+LABEL_154:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7cdc*/
-        (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7ce3*/
+        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7ce3*/
         if ( v33 > 0x7FFF ) /*0x7c7cef*/
         {
           v33 = 0x7FFF; /*0x7c7dfc*/
@@ -1110,11 +1113,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v33 = -32768; /*0x7c7e08*/
         }
-        (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7d00*/
+        LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7d00*/
         v31[12] = v33; /*0x7c7d06*/
-        LABEL_158:
+LABEL_158:
         v33 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v34); /*0x7c7d0a*/
-        (*((unsigned short *)&(v34))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7d11*/
+        LOWORD(v34) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v34); /*0x7c7d11*/
         if ( v33 > 0x7FFF ) /*0x7c7d1d*/
         {
           v33 = 0x7FFF; /*0x7c7e14*/
@@ -1135,35 +1138,35 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
           case 0u: /*0x7c7d52*/
             break;
           case 1u: /*0x7c7d52*/
-            (*((unsigned char *)&(v37))) = 16 * *(unsigned char *)v32; /*0x7c7e33*/
+            LOBYTE(v37) = 16 * *(unsigned char *)v32; /*0x7c7e33*/
             v31 -= 14; /*0x7c7e35*/
-            (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7e38*/
+            LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7e38*/
             goto LABEL_158; /*0x7c7e3e*/
           case 2u: /*0x7c7d52*/
             goto LABEL_176;
           case 3u: /*0x7c7d52*/
-            (*((unsigned short *)&(v40))) = 16 * *(unsigned short *)v32; /*0x7c7e61*/
-            (*((unsigned char *)&(v37))) = 16 * *(unsigned char *)v32; /*0x7c7e65*/
+            LOWORD(v40) = 16 * *(unsigned short *)v32; /*0x7c7e61*/
+            LOBYTE(v37) = 16 * *(unsigned char *)v32; /*0x7c7e65*/
             v31 -= 10; /*0x7c7e67*/
-            (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7e6a*/
+            LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7e6a*/
             goto LABEL_150; /*0x7c7e70*/
           case 4u: /*0x7c7d52*/
             goto LABEL_178;
           case 5u: /*0x7c7d52*/
-            v42 = *(uint8_t *)(v32 + 2) << 16; /*0x7c7e95*/
-            (*((unsigned short *)&(v42))) = *(unsigned short *)v32; /*0x7c7e98*/
+            v42 = *(unsigned __int8 *)(v32 + 2) << 16; /*0x7c7e95*/
+            LOWORD(v42) = *(unsigned short *)v32; /*0x7c7e98*/
             v40 = v42 >> 4; /*0x7c7e9d*/
-            (*((unsigned char *)&(v37))) = 16 * *(unsigned short *)v32; /*0x7c7ea0*/
+            LOBYTE(v37) = 16 * *(unsigned short *)v32; /*0x7c7ea0*/
             v31 -= 6; /*0x7c7ea3*/
-            (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7ea6*/
+            LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7ea6*/
             goto LABEL_142; /*0x7c7eac*/
           case 6u: /*0x7c7d52*/
             goto LABEL_180;
           case 7u: /*0x7c7d52*/
             v41 = 16 * *(unsigned int *)v32; /*0x7c7edc*/
-            (*((unsigned char *)&(v37))) = 16 * *(unsigned char *)v32; /*0x7c7edf*/
+            LOBYTE(v37) = 16 * *(unsigned char *)v32; /*0x7c7edf*/
             v31 -= 2; /*0x7c7ee1*/
-            (*((unsigned char *)&(v34))) = g_ScreenRenderFlag[v37] | v34; /*0x7c7ee4*/
+            LOBYTE(v34) = g_ScreenRenderFlag[(unsigned int)v37] | v34; /*0x7c7ee4*/
             goto LABEL_134; /*0x7c7eea*/
         }
       }
@@ -1173,7 +1176,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
     else if ( a4 == 1 ) /*0x7c73bd*/
     {
       v6 = *(unsigned int *)a6; /*0x7c73c7*/
-      v7 = *(uint16_t *)(a6 + 4); /*0x7c73c9*/
+      v7 = *(unsigned __int16 *)(a6 + 4); /*0x7c73c9*/
       v8 = a1; /*0x7c73cd*/
       v9 = a2; /*0x7c73d0*/
       if ( (int)a5 >= 16 && (a1 & 3) != 0 ) /*0x7c73e0*/
@@ -1186,35 +1189,35 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
             v44 = a5 - 12; /*0x7c73fb*/
             v11 = 0; /*0x7c73ff*/
             v10 = ((a5 - 12) >> 4) + 1; /*0x7c7401*/
-            LABEL_62:
-            v17 = *(uint8_t *)(v8 + 2) << 16; /*0x7c771c*/
-            (*((unsigned short *)&(v17))) = *(unsigned short *)v8; /*0x7c7724*/
-            (*((unsigned char *)&(v11))) = *(unsigned short *)v8; /*0x7c7727*/
+LABEL_62:
+            v17 = *(unsigned __int8 *)(v8 + 2) << 16; /*0x7c771c*/
+            LOWORD(v17) = *(unsigned short *)v8; /*0x7c7724*/
+            LOBYTE(v11) = *(unsigned short *)v8; /*0x7c7727*/
             v14 = v17 >> 8; /*0x7c7729*/
             --v8; /*0x7c772c*/
             v9 -= 2; /*0x7c772f*/
-            (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c7732*/
+            LOBYTE(v7) = g_ScreenRenderMask[(unsigned int)v11] | v7; /*0x7c7732*/
             goto LABEL_19; /*0x7c7738*/
           case 2: /*0x7c73ef*/
             v44 = a5 - 8; /*0x7c740b*/
             v11 = 0; /*0x7c740f*/
             v10 = ((a5 - 8) >> 4) + 1; /*0x7c7411*/
-            LABEL_60:
-            (*((unsigned short *)&(v14))) = *(unsigned short *)v8; /*0x7c76e0*/
-            (*((unsigned char *)&(v11))) = *(unsigned short *)v8; /*0x7c76e5*/
+LABEL_60:
+            LOWORD(v14) = *(unsigned short *)v8; /*0x7c76e0*/
+            LOBYTE(v11) = *(unsigned short *)v8; /*0x7c76e5*/
             v9 -= 4; /*0x7c76e7*/
             v8 -= 2; /*0x7c76ea*/
-            (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c76ed*/
+            LOBYTE(v7) = g_ScreenRenderMask[(unsigned int)v11] | v7; /*0x7c76ed*/
             goto LABEL_27; /*0x7c76f3*/
           case 3: /*0x7c73ef*/
             v44 = a5 - 4; /*0x7c741b*/
             v11 = 0; /*0x7c741f*/
             v10 = ((a5 - 4) >> 4) + 1; /*0x7c7421*/
-            LABEL_58:
-            (*((unsigned char *)&(v11))) = *(unsigned char *)v8; /*0x7c76ac*/
+LABEL_58:
+            LOBYTE(v11) = *(unsigned char *)v8; /*0x7c76ac*/
             v9 -= 6; /*0x7c76b2*/
             v8 -= 3; /*0x7c76b5*/
-            (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c76b8*/
+            LOBYTE(v7) = g_ScreenRenderMask[(unsigned int)v11] | v7; /*0x7c76b8*/
             goto LABEL_35; /*0x7c76be*/
         }
       }
@@ -1225,10 +1228,10 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
       for ( k = v12; !k; k = v10-- <= 1 ) /*0x7c73e8*/
       {
         v15 = *(unsigned int *)v8; /*0x7c75a3*/
-        (*((unsigned char *)&(v11))) = *(unsigned int *)v8; /*0x7c75a5*/
-        (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c75a7*/
+        LOBYTE(v11) = *(unsigned int *)v8; /*0x7c75a5*/
+        LOBYTE(v7) = g_ScreenRenderMask[(unsigned int)v11] | v7; /*0x7c75a7*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7428*/
-        (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c742f*/
+        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c742f*/
         if ( v6 > 0x7FFF ) /*0x7c743b*/
         {
           v6 = 0x7FFF; /*0x7c75d4*/
@@ -1237,12 +1240,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v6 = -32768; /*0x7c75e0*/
         }
-        (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c744c*/
+        LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c744c*/
         *v9 = v6; /*0x7c7452*/
-        LABEL_15:
-        (*((unsigned char *)&(v11))) = (((unsigned char *)&(v15))[1]); /*0x7c7455*/
+LABEL_15:
+        LOBYTE(v11) = BYTE1(v15); /*0x7c7455*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7457*/
-        (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c745e*/
+        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c745e*/
         if ( v6 > 0x7FFF ) /*0x7c746a*/
         {
           v6 = 0x7FFF; /*0x7c75ec*/
@@ -1251,12 +1254,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v6 = -32768; /*0x7c75f8*/
         }
-        (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c747b*/
+        LOBYTE(v7) = g_ScreenRenderMask[(unsigned int)v11] | v7; /*0x7c747b*/
         v9[1] = v6; /*0x7c7481*/
-        v14 = (*(((unsigned short *)&(v15)) + 1)); /*0x7c7485*/
-        LABEL_19:
+        v14 = HIWORD(v15); /*0x7c7485*/
+LABEL_19:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7488*/
-        (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c748f*/
+        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c748f*/
         if ( v6 > 0x7FFF ) /*0x7c749b*/
         {
           v6 = 0x7FFF; /*0x7c7604*/
@@ -1265,12 +1268,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v6 = -32768; /*0x7c7610*/
         }
-        (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c74ac*/
+        LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c74ac*/
         v9[2] = v6; /*0x7c74b2*/
-        LABEL_23:
-        (*((unsigned char *)&(v11))) = v14; /*0x7c74b6*/
+LABEL_23:
+        LOBYTE(v11) = v14; /*0x7c74b6*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c74b8*/
-        (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c74bf*/
+        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c74bf*/
         if ( v6 > 0x7FFF ) /*0x7c74cb*/
         {
           v6 = 0x7FFF; /*0x7c761c*/
@@ -1279,11 +1282,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v6 = -32768; /*0x7c7628*/
         }
-        (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c74dc*/
+        LOBYTE(v7) = g_ScreenRenderMask[(unsigned int)v11] | v7; /*0x7c74dc*/
         v9[3] = v6; /*0x7c74e2*/
-        LABEL_27:
+LABEL_27:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c74e6*/
-        (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c74ed*/
+        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c74ed*/
         if ( v6 > 0x7FFF ) /*0x7c74f9*/
         {
           v6 = 0x7FFF; /*0x7c7634*/
@@ -1292,12 +1295,12 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v6 = -32768; /*0x7c7640*/
         }
-        (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c750a*/
+        LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c750a*/
         v9[4] = v6; /*0x7c7510*/
-        LABEL_31:
-        (*((unsigned char *)&(v11))) = (((unsigned char *)&(v14))[1]); /*0x7c7514*/
+LABEL_31:
+        LOBYTE(v11) = BYTE1(v14); /*0x7c7514*/
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7516*/
-        (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c751d*/
+        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c751d*/
         if ( v6 > 0x7FFF ) /*0x7c7529*/
         {
           v6 = 0x7FFF; /*0x7c764c*/
@@ -1306,11 +1309,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v6 = -32768; /*0x7c7658*/
         }
-        (*((unsigned char *)&(v7))) = g_ScreenRenderMask[v11] | v7; /*0x7c753a*/
+        LOBYTE(v7) = g_ScreenRenderMask[(unsigned int)v11] | v7; /*0x7c753a*/
         v9[5] = v6; /*0x7c7540*/
-        LABEL_35:
+LABEL_35:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7544*/
-        (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c754b*/
+        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c754b*/
         if ( v6 > 0x7FFF ) /*0x7c7557*/
         {
           v6 = 0x7FFF; /*0x7c7664*/
@@ -1319,11 +1322,11 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
         {
           v6 = -32768; /*0x7c7670*/
         }
-        (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c7568*/
+        LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c7568*/
         v9[6] = v6; /*0x7c756e*/
-        LABEL_39:
+LABEL_39:
         v6 += *(int *)((char *)&g_ScreenRenderLUT1 + 2 * v7); /*0x7c7572*/
-        (*((unsigned short *)&(v7))) = *(int16_t *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c7579*/
+        LOWORD(v7) = *(__int16 *)((char *)&g_ScreenRenderLUT2 + v7); /*0x7c7579*/
         if ( v6 > 0x7FFF ) /*0x7c7585*/
         {
           v6 = 0x7FFF; /*0x7c767c*/
@@ -1344,35 +1347,35 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
           case 0u: /*0x7c75ba*/
             break;
           case 1u: /*0x7c75ba*/
-            (*((unsigned char *)&(v11))) = 16 * *(unsigned char *)v8; /*0x7c769b*/
+            LOBYTE(v11) = 16 * *(unsigned char *)v8; /*0x7c769b*/
             v9 -= 7; /*0x7c769d*/
-            (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c76a0*/
+            LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c76a0*/
             goto LABEL_39; /*0x7c76a6*/
           case 2u: /*0x7c75ba*/
             goto LABEL_58;
           case 3u: /*0x7c75ba*/
-            (*((unsigned short *)&(v14))) = 16 * *(unsigned short *)v8; /*0x7c76c9*/
-            (*((unsigned char *)&(v11))) = 16 * *(unsigned char *)v8; /*0x7c76cd*/
+            LOWORD(v14) = 16 * *(unsigned short *)v8; /*0x7c76c9*/
+            LOBYTE(v11) = 16 * *(unsigned char *)v8; /*0x7c76cd*/
             v9 -= 5; /*0x7c76cf*/
-            (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c76d2*/
+            LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c76d2*/
             goto LABEL_31; /*0x7c76d8*/
           case 4u: /*0x7c75ba*/
             goto LABEL_60;
           case 5u: /*0x7c75ba*/
-            v16 = *(uint8_t *)(v8 + 2) << 16; /*0x7c76fd*/
-            (*((unsigned short *)&(v16))) = *(unsigned short *)v8; /*0x7c7700*/
+            v16 = *(unsigned __int8 *)(v8 + 2) << 16; /*0x7c76fd*/
+            LOWORD(v16) = *(unsigned short *)v8; /*0x7c7700*/
             v14 = v16 >> 4; /*0x7c7705*/
-            (*((unsigned char *)&(v11))) = 16 * *(unsigned short *)v8; /*0x7c7708*/
+            LOBYTE(v11) = 16 * *(unsigned short *)v8; /*0x7c7708*/
             v9 -= 3; /*0x7c770b*/
-            (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c770e*/
+            LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c770e*/
             goto LABEL_23; /*0x7c7714*/
           case 6u: /*0x7c75ba*/
             goto LABEL_62;
           case 7u: /*0x7c75ba*/
             v15 = 16 * *(unsigned int *)v8; /*0x7c7744*/
-            (*((unsigned char *)&(v11))) = 16 * *(unsigned char *)v8; /*0x7c7747*/
+            LOBYTE(v11) = 16 * *(unsigned char *)v8; /*0x7c7747*/
             --v9; /*0x7c7749*/
-            (*((unsigned char *)&(v7))) = g_ScreenRenderFlag[v11] | v7; /*0x7c774c*/
+            LOBYTE(v7) = g_ScreenRenderFlag[(unsigned int)v11] | v7; /*0x7c774c*/
             goto LABEL_15; /*0x7c7752*/
         }
       }
@@ -1380,6 +1383,7 @@ void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, uns
       *(unsigned short *)(a6 + 4) = v7; /*0x7c75c5*/
     }
   }
+
 }
 }  // G42.18c ns repair
 // 0x731BF0

@@ -39,30 +39,30 @@ int FileSystem::ProcessNextFileExtension()
   unsigned int *v6; // eax
   DynamicVectorArray *v7; // eax
   unsigned int *v8; // ebp
-  int v9; // esi
+  signed int v9; // esi
   int v10; // edi
   int v11; // eax
   Flag *v12; // ebx
   int v15; // edi
-  int v16; // eax
-  int v17; // ebp
+  unsigned int *v16; // eax
+  signed int v17; // ebp
   int v18; // edi
   const char *v19; // edi
   const char *v20; // edi
   unsigned int *v21; // eax
   int k; // ebp
-  int v23; // edi
+  unsigned int *v23; // edi
   int v24; // ecx
   Flag *v25; // ebx
   const char *v26; // eax
   int i; // [esp+10h] [ebp-18h]
   int j; // [esp+10h] [ebp-18h]
   int v29; // [esp+14h] [ebp-14h]
-  int v30; // [esp+18h] [ebp-10h]
+  unsigned int *v30; // [esp+18h] [ebp-10h]
   unsigned int *v31; // [esp+18h] [ebp-10h]
   int v32; // [esp+1Ch] [ebp-Ch]
 
-  v1 = (gamemd::FileSystem *)(g_FileExtensionState); /*0x626da7*/
+  v1 = g_FileExtensionState; /*0x626da7*/
   if ( !g_FileExtensionState ) /*0x626db1*/
   {
     v2 = (FileSystem *)__2_YAPAXI_Z(0x10u); /*0x626db9*/
@@ -75,7 +75,7 @@ int FileSystem::ProcessNextFileExtension()
       if ( v3 ) /*0x626ddb*/
       {
         StringVector::Construct(v3, 0, 0); /*0x626de1*/
-        *(unsigned int *)v4->__pad_000 = &vt_DynamicVectorClass; /*0x626de6*/
+        *(unsigned int *)v4->__pad_0 = &DynamicVectorClass<char *>::`vftable'; /*0x626de6*/
         v4->StringVector_field_0x14 = 10; /*0x626dec*/
         v4->StringVector_field_0x10 = 0; /*0x626df3*/
       }
@@ -83,16 +83,16 @@ int FileSystem::ProcessNextFileExtension()
       {
         v4 = 0; /*0x626df8*/
       }
-      *(unsigned int *)&v1[4] = (unsigned int)(v4); /*0x626dfc*/
+      *(unsigned int *)&v1[4] = v4; /*0x626dfc*/
       v5 = (FileExtension *)__2_YAPAXI_Z(0x18u); /*0x626dff*/
       if ( v5 ) /*0x626e09*/
         v6 = FileExtension::Constructor(v5, 0, 0); /*0x626e0f*/
       else
         v6 = 0; /*0x626e16*/
-      *(unsigned int *)&v1[8] = (unsigned int)(v6); /*0x626e1a*/
+      *(unsigned int *)&v1[8] = v6; /*0x626e1a*/
       v7 = (DynamicVectorArray *)__2_YAPAXI_Z(0x10u); /*0x626e1d*/
       if ( v7 ) /*0x626e27*/
-        *(unsigned int *)&v1[12] = (unsigned int)(DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31)); /*0x626e39*/
+        *(unsigned int *)&v1[12] = DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31); /*0x626e39*/
       else
         *(unsigned int *)&v1[12] = 0; /*0x626e40*/
     }
@@ -100,7 +100,7 @@ int FileSystem::ProcessNextFileExtension()
     {
       v1 = 0; /*0x626e45*/
     }
-    g_FileExtensionState = (int)(v1); /*0x626e47*/
+    g_FileExtensionState = v1; /*0x626e47*/
   }
   v8 = *(unsigned int **)&v1[12]; /*0x626e4d*/
   v9 = 0; /*0x626e50*/
@@ -113,7 +113,7 @@ int FileSystem::ProcessNextFileExtension()
       v10 = i + *v8; /*0x626e6e*/
       if ( *(int *)(v10 + 16) > 0 ) /*0x626e73*/
         break; /*0x626e73*/
-      LABEL_19:
+LABEL_19:
       v9 = 0; /*0x626e95*/
       if ( ++v32 >= v8[2] ) /*0x626ea6*/
         return 0; /*0x626ebd*/
@@ -122,7 +122,7 @@ int FileSystem::ProcessNextFileExtension()
     {
       v11 = 65 * v9++; /*0x626e7d*/
       v12 = (Flag *)(*(unsigned int *)(v10 + 4) + 4 * v11); /*0x626e80*/
-      if ( !(unsigned __int8)(v12)->IsZero() ) /*0x626e85*/
+      if ( !(unsigned __int8)Flag::IsZero(v12) ) /*0x626e85*/
         break; /*0x626e85*/
       if ( v9 >= *(unsigned int *)(v10 + 16) ) /*0x626e91*/
         goto LABEL_19; /*0x626e91*/
@@ -130,15 +130,16 @@ int FileSystem::ProcessNextFileExtension()
     if ( v12 ) /*0x626ec0*/
     {
       v15 = *(unsigned int *)&g_FileExtensionState[12]; /*0x626ece*/
-      v16 = *(unsigned int *)v15 + 24 * ((*(int (**)(Flag *))(v15 + 4))(v12) % *(unsigned int *)(v15 + 8)); /*0x626ee1*/
-      v17 = *(unsigned int *)(v16 + 16) - 1; /*0x626ee4*/
+      v16 = (unsigned int *)(*(unsigned int *)v15 /*0x626ee1*/
+                           + 24 * ((*(int (**)(Flag *))(v15 + 4))(v12) % *(unsigned int *)(v15 + 8)));
+      v17 = v16[4] - 1; /*0x626ee4*/
       v30 = v16; /*0x626ee5*/
       if ( v17 >= 0 ) /*0x626ee9*/
       {
         v18 = 260 * v17; /*0x626ef6*/
         for ( j = 260 * v17; ; v18 = j ) /*0x626ef9*/
         {
-          v19 = (const char *)(*(unsigned int *)(v16 + 4) + v18); /*0x626f0b*/
+          v19 = (const char *)(v16[1] + v18); /*0x626f0b*/
           if ( (unsigned __int8)String::Equals(v19, v12->__pad_0) ) /*0x626f0f*/
             break; /*0x626f0f*/
           --v17; /*0x626f1c*/
@@ -159,10 +160,10 @@ int FileSystem::ProcessNextFileExtension()
               break; /*0x626f71*/
             for ( k = 24 * v32; ; k += 24 ) /*0x626f77*/
             {
-              v23 = *v21 + k; /*0x626f7e*/
-              if ( v9 < *(unsigned int *)(v23 + 16) ) /*0x626f83*/
+              v23 = (unsigned int *)(*v21 + k); /*0x626f7e*/
+              if ( v9 < (int)v23[4] ) /*0x626f83*/
                 break; /*0x626f83*/
-              LABEL_36:
+LABEL_36:
               v9 = 0; /*0x626fb2*/
               if ( ++v32 >= v21[2] ) /*0x626fba*/
                 return v29; /*0x626fba*/
@@ -170,10 +171,10 @@ int FileSystem::ProcessNextFileExtension()
             while ( 1 ) /*0x626f8d*/
             {
               v24 = 65 * v9++; /*0x626f8d*/
-              v25 = (Flag *)(*(unsigned int *)(v23 + 4) + 4 * v24); /*0x626f90*/
-              if ( !(unsigned __int8)(v25)->IsZero() ) /*0x626f95*/
+              v25 = (Flag *)(v23[1] + 4 * v24); /*0x626f90*/
+              if ( !(unsigned __int8)Flag::IsZero(v25) ) /*0x626f95*/
                 break; /*0x626f95*/
-              if ( v9 >= *(unsigned int *)(v23 + 16) ) /*0x626fa1*/
+              if ( v9 >= (int)v23[4] ) /*0x626fa1*/
               {
                 v21 = v31; /*0x626fa3*/
                 goto LABEL_36; /*0x626fa3*/
@@ -181,7 +182,7 @@ int FileSystem::ProcessNextFileExtension()
             }
             if ( !v25 ) /*0x626fc0*/
               break; /*0x626fc0*/
-            v26 = (*(FileSystem **)&g_FileExtensionState[12])->openFile(v25->__pad_0); /*0x626fcb*/
+            v26 = FileSystem::openFile(*(FileSystem **)&g_FileExtensionState[12], v25->__pad_0); /*0x626fcb*/
             if ( !v26 ) /*0x626fd2*/
               break; /*0x626fd2*/
           }

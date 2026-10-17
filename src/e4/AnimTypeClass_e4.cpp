@@ -514,31 +514,42 @@ namespace gamemd {
 int AnimTypeClass::GetDamage()
 {
 
-  CCFileClass v7; // [esp+4h] [ebp-2D8h] BYREF
-  CCFileClass v10; // [esp+70h] [ebp-26Ch] BYREF
-
   int result; // eax
+  const char *ImageFile; // eax
+  SHPStruct *v4; // eax
+  SHPStruct *v5; // eax
+  SHPStruct *Image; // esi
+  CCFileClass v7; // [esp+4h] [ebp-2D8h] BYREF
+  char v8[12]; // [esp+5Ch] [ebp-280h] BYREF
+  int v9; // [esp+68h] [ebp-274h]
+  CCFileClass v10; // [esp+70h] [ebp-26Ch] BYREF
+  char v11[12]; // [esp+C8h] [ebp-214h] BYREF
+  int v12; // [esp+D4h] [ebp-208h]
+  char Buffer[512]; // [esp+DCh] [ebp-200h] BYREF
+
   result = (int)this->Image; /*0x428c39*/
   if ( !result && this->DemandLoad ) /*0x428c47*/
   {
     Debug::Log(); /*0x428c5e*/
-    const char *ImageFile; // eax
     ImageFile = this->ImageFile; /*0x428c69*/
-    if ( !this->ImageFile ) /*0x428c63*/
+    if ( !this->ImageFile[0] ) /*0x428c63*/
       ImageFile = (const char *)this->LoopStart; /*0x428c76*/
-    char Buffer[512]; // [esp+DCh] [ebp-200h] BYREF
     _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x428c8b*/
-    if ( this->Theater_d ) /*0x428c90*/
+    if ( this->Theater ) /*0x428c90*/
     {
-      _makepath(Buffer, 0, 0, (const char *)this->vtable4, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428ccc*/
+      _makepath( /*0x428ccc*/
+        Buffer,
+        0,
+        0,
+        (const char *)this->LoopStart,
+        (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId);
     }
-    else if ( this->NewTheater_d ) /*0x428cd6*/
+    else if ( this->NewTheater ) /*0x428cd6*/
     {
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
     }
     CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
-    SHPStruct *v4; // eax
-    v4 = (SHPStruct *)(&v7)->ReadEntireFile(); /*0x428d0d*/
+    v4 = (SHPStruct *)CCFileClass::ReadEntireFile(&v7); /*0x428d0d*/
     this->Image = v4; /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
     {
@@ -546,31 +557,25 @@ int AnimTypeClass::GetDamage()
     }
     else
     {
-      ((ObjectTypeClass *)Buffer)->SetRTTI71(); /*0x428d2c*/
+      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x428d2c*/
       CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
-      SHPStruct *v5; // eax
-      v5 = (SHPStruct *)(&v10)->ReadEntireFile(); /*0x428d46*/
+      v5 = (SHPStruct *)CCFileClass::ReadEntireFile(&v10); /*0x428d46*/
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         this->ImageAllocated = 1; /*0x428d55*/
-      *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x428d63*/
-      int v12; // [esp+D4h] [ebp-208h]
+      *(unsigned int *)v10.__tail_0 = &CCFileClass::`vftable'; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
-      char v11[12]; // [esp+C8h] [ebp-214h] BYREF
       Vector::Clear((int)v11); /*0x428d76*/
-      *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
-      ((BufferIOFileClass *)&v10)->Dtor(); /*0x428d87*/
+      *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x428d7f*/
+      BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
     }
-    (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
-    SHPStruct *Image; // esi
+    (*((void (**)(AnimTypeClass *, int))this->vfptr + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = this->Image; /*0x428da2*/
-    *(unsigned int *)v7.CDFileClass = &vt_CCFileClass; /*0x428dac*/
-    int v9; // [esp+68h] [ebp-274h]
+    *(unsigned int *)v7.__tail_0 = &CCFileClass::`vftable'; /*0x428dac*/
     v9 = 0; /*0x428db4*/
-    char v8[12]; // [esp+5Ch] [ebp-280h] BYREF
     Vector::Clear((int)v8); /*0x428dbc*/
-    *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
-    ((BufferIOFileClass *)&v7)->Dtor(); /*0x428dcd*/
+    *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x428dc5*/
+    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x428dcd*/
     return (int)Image; /*0x428dd2*/
   }
   return result; /*0x428dd4*/

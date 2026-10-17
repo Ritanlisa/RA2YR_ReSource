@@ -37,30 +37,34 @@ AbstractClass * * Count::DecrementRefCountsAudio()
 namespace gamemd {
 int Count::SetupAllCountriesLobby()
 {
-  BOOL result; // eax
-  int PlayerSide; // esi
 
-  ObjectClass *v1 = 0; // ecx /*0x46f6da*/
+  ObjectClass *v1; // ecx
   int **v2; // esi
-  v2 = (int **)dword_A8DA90; /*0x46f6dc*/
-  int v10; // [esp+18h] [ebp-8h]
-  v10 = 0; /*0x46f6e2*/
+  int ResourceID2CSF; // ebp
+  BOOL result; // eax
+  int *v5; // ebx
+  int v6; // edi
+  int PlayerSide; // esi
   int **v8; // [esp+10h] [ebp-10h]
-  v8 = (int **)dword_A8DA90; /*0x46f6e6*/
+  int v10; // [esp+18h] [ebp-8h]
+  HWND hWnd; // [esp+1Ch] [ebp-4h]
+
+  v1 = 0; /*0x46f6da*/
+  v2 = (int **)MEMORY[0xA8DA90]; /*0x46f6dc*/
+  v10 = 0; /*0x46f6e2*/
+  v8 = (int **)MEMORY[0xA8DA90]; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
-    int ResourceID2CSF; // ebp
     ResourceID2CSF = GetResourceID2CSF(v1); /*0x46f6ef*/
-    HWND hWnd; // [esp+1Ch] [ebp-4h]
     hWnd = GetDlgItem((HWND)this, ResourceID2CSF); /*0x46f700*/
     result = ShowWindow(hWnd, 0); /*0x46f704*/
     if ( result ) /*0x46f70c*/
     {
-      int *v5 = *v2; // ebx /*0x46f718*/
-      int v6 = -2; // edi /*0x46f71c*/
+      v5 = *v2; /*0x46f718*/
+      v6 = -2; /*0x46f71c*/
       if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x46f730*/
         v6 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 10))(dword_A8B23C); /*0x46f737*/
-      if ( (uint8_t)((Player *)v5)->IsObserver() ) /*0x46f73b*/
+      if ( (unsigned __int8)Player::IsObserver((Player *)v5) ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
       }
@@ -82,22 +86,22 @@ int Count::SetupAllCountriesLobby()
       }
       else
       {
-        PlayerSide = (v5)->GetPlayerSide(); /*0x46f786*/
+        PlayerSide = SessionClass::GetPlayerSide(v5); /*0x46f786*/
       }
       if ( dword_A8B23C /*0x46f795*/
-        && !(*((uint8_t (**)(ObjectClass *, int))dword_A8B23C->vfptr + 7))(dword_A8B23C, PlayerSide) )
+        && !(*((unsigned __int8 (**)(ObjectClass *, int))dword_A8B23C->vfptr + 7))(dword_A8B23C, PlayerSide) )
       {
         PlayerSide = v6; /*0x46f79e*/
-        if ( (uint8_t)((Player *)v5)->IsObserver() ) /*0x46f7a0*/
+        if ( (unsigned __int8)Player::IsObserver((Player *)v5) ) /*0x46f7a0*/
         {
           *(v8 - 2557) = (int *)v6; /*0x46f7ad*/
         }
-        else if ( (uint8_t)IsKnownPointer((ObjectClass *)v5) ) /*0x46f7b7*/
+        else if ( (unsigned __int8)IsKnownPointer((ObjectClass *)v5) ) /*0x46f7b7*/
         {
-          ((SessionClass *)(*v8))->SetPlayerOption(v6); /*0x46f7c7*/
+          SessionClass::SetPlayerOption(*v8, v6); /*0x46f7c7*/
         }
       }
-      SetupLobbyCountryCombo(ResourceID2CSF, PlayerSide); /*0x46f7d3*/
+      SetupLobbyCountryCombo((HWND)this, ResourceID2CSF, PlayerSide); /*0x46f7d3*/
       result = ShowWindow(hWnd, 5); /*0x46f7df*/
       v2 = v8; /*0x46f7e5*/
     }
@@ -105,8 +109,9 @@ int Count::SetupAllCountriesLobby()
     v1 = (ObjectClass *)++v10; /*0x46f7f0*/
     v8 = v2; /*0x46f7fb*/
   }
-  while ( (int)v2 < (int)&dword_A8DAB0 ); /*0x46f7ff*/
+  while ( (int)v2 < (int)&MEMORY[0xA8DAB0] ); /*0x46f7ff*/
   return result; /*0x46f805*/
+
 }
 } // namespace gamemd
 // 0x5F1EA0

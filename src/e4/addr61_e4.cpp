@@ -35,6 +35,7 @@
 namespace gamemd {  // G42.18 ns repair
 AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
 {
+
   void *v2; // eax
   void *v3; // eax
   unsigned int *v4; // ecx
@@ -46,16 +47,16 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   double v10; // st7
   HWND *v11; // eax
   void *WindowLongA; // eax
-  int64_t v14; // [esp+8h] [ebp-208h] BYREF
+  __int64 v14; // [esp+8h] [ebp-208h] BYREF
   void *v15[128]; // [esp+10h] [ebp-200h] BYREF
 
-  DynamicArray::Resize(&dword_AC1B48, (int *)&hWnd, &v14); /*0x61058a*/
+  DynamicArray::Resize(&stru_AC1B48, (int *)&hWnd, &v14); /*0x61058a*/
   memset(v15, 0, sizeof(v15)); /*0x6105a0*/
   v15[26] = (void *)11; /*0x6105a4*/
   v15[25] = (void *)g_FogOfWarState; /*0x6105ac*/
-  v2 = operator new(4u); /*0x6105b0*/
+  v2 = __2_YAPAXI_Z(4u); /*0x6105b0*/
   if ( v2 ) /*0x6105bc*/
-    v3 = unknown_libname_74(v2); /*0x6105c0*/
+    v3 = (void *)unknown_libname_74(v2); /*0x6105c0*/
   else
     v3 = 0; /*0x6105c7*/
   v15[15] = v3; /*0x6105c9*/
@@ -65,10 +66,10 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   Dialog::BindGadgetData(&dword_AC1B00, (int *)&hWnd, (char *)v15); /*0x6105f2*/
   if ( v15[10] ) /*0x6105fd*/
   {
-    operator delete((v15[10])); /*0x610600*/
+    __3_YAXPAX_Z(v15[10]); /*0x610600*/
     v15[10] = 0; /*0x610608*/
   }
-  v4 = (unsigned int *)(v15[13]);
+  v4 = v15[13]; /*0x61060c*/
   if ( v15[13] ) /*0x610612*/
   {
     do /*0x61064d*/
@@ -90,19 +91,19 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
           *v5 = *v6; /*0x610634*/
         else
           v15[13] = *(void **)v6; /*0x61063a*/
-        operator delete((v6)); /*0x61063f*/
-        v4 = (unsigned int *)(v15[13]); /*0x610644*/
+        __3_YAXPAX_Z(v6); /*0x61063f*/
+        v4 = v15[13]; /*0x610644*/
       }
-      LABEL_16:
+LABEL_16:
       ;
     }
     while ( v4 ); /*0x61064d*/
   }
   if ( v15[15] ) /*0x610655*/
     DeleteAndZero::OrFree((void **)v15[15], 1); /*0x610659*/
-  if ( unk_AC18C4 ) /*0x610666*/
+  if ( dword_AC18C4 ) /*0x610666*/
   {
-    v14 = (unsigned int)(unk_AC18C4 - 1); /*0x610671*/
+    v14 = (unsigned int)(dword_AC18C4 - 1); /*0x610671*/
     *(float *)&v14 = (double)v14 / (double)dword_AC18C8; /*0x610691*/
     v7 = dword_AC18D8(&hWnd) & ((1 << dword_AC18CC) - 1); /*0x6106af*/
     v8 = (HWND *)*((unsigned int *)g_DialogPool + v7); /*0x6106b1*/
@@ -110,11 +111,11 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
     {
       if ( *v8 == hWnd ) /*0x6106c7*/
       {
-        v9 = (HWND)((unsigned int)(v8[2]));
-        operator delete((*((void **)g_DialogPool + v7))); /*0x6106cd*/
+        v9 = v8[2]; /*0x6106c9*/
+        __3_YAXPAX_Z(*((void **)g_DialogPool + v7)); /*0x6106cd*/
         v10 = *(float *)&v14; /*0x6106db*/
-        *((unsigned int *)g_DialogPool + v7) = (unsigned int)(v9); /*0x6106df*/
-        --unk_AC18C4; /*0x6106ee*/
+        *((unsigned int *)g_DialogPool + v7) = v9; /*0x6106df*/
+        --dword_AC18C4; /*0x6106ee*/
         if ( v10 > dbl_AC18E0 ) /*0x6106f8*/
           goto LABEL_31; /*0x6106f8*/
         goto LABEL_30; /*0x6106f8*/
@@ -130,21 +131,23 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
             goto LABEL_29; /*0x61070e*/
         }
         v8[2] = v11[2]; /*0x610716*/
-        --unk_AC18C4; /*0x610720*/
-        operator delete((v11)); /*0x610726*/
+        --dword_AC18C4; /*0x610720*/
+        __3_YAXPAX_Z(v11); /*0x610726*/
       }
-      LABEL_29:
+LABEL_29:
       if ( *(float *)&v14 <= dbl_AC18E0 ) /*0x61073d*/
-        LABEL_30:
-      HashTable::Shrink2(&g_DialogPool); /*0x61073f*/
+LABEL_30:
+        HashTable::Shrink2(&g_DialogPool); /*0x61073f*/
     }
   }
-  LABEL_31: WindowLongA = (gamemd::AbstractClass **)((void *)GetWindowLongA(hWnd, -21));
+LABEL_31:
+  WindowLongA = (void *)GetWindowLongA(hWnd, -21); /*0x610749*/
   if ( WindowLongA ) /*0x61075c*/
-    operator delete((WindowLongA)); /*0x61075f*/
+    __3_YAXPAX_Z(WindowLongA); /*0x61075f*/
   SetWindowLongA(hWnd, -21, 0); /*0x610772*/
-  ((Object*)hWnd)->RemoveObjectArray(); /*0x61077f*/
-  return (gamemd::AbstractClass **)(1); /*0x610784*/
+  Object::RemoveObjectArray(hWnd); /*0x61077f*/
+  return 1; /*0x610784*/
+
 }
 }  // G42.18 ns repair
 // 0x610810
@@ -275,23 +278,35 @@ AbstractClass * * sub_610BF0()
 namespace gamemd {
 void sub_612930()
 {
-  int v12; // eax
 
-  unsigned int v0 = dword_AC1860; // eax /*0x612930*/
+  unsigned int v0; // eax
   unsigned int i; // edi
+  unsigned int *v2; // esi
+  void *v3; // eax
+  unsigned int v4; // ecx
+  unsigned int **v5; // ebx
+  int v6; // esi
+  unsigned int **v7; // edi
+  int v8; // ebp
+  unsigned int *v9; // esi
+  int v10; // edx
+  unsigned int v11; // ecx
+  unsigned int *v12; // eax
+
+  v0 = dword_AC1860; /*0x612930*/
   for ( i = 0; i < dword_AC1860; v0 = dword_AC1860 ) /*0x61293d*/
   {
-    unsigned int *v2; // esi
-    v2 = (unsigned int *)*((unsigned int *)stru_AC1858 + i); /*0x612944*/
+    v2 = *(unsigned int **)(*(unsigned int *)DataGlobal_AC1858 + 4 * i); /*0x612944*/
     while ( v2 ) /*0x612949*/
     {
-      void *v3 = v2; // eax /*0x61294b*/
-      v2 = v2->vtable4; /*0x61294d*/
-      operator delete((v3)); /*0x612951*/
+      v3 = v2; /*0x61294b*/
+      v2 = (unsigned int *)v2[3]; /*0x61294d*/
+      __3_YAXPAX_Z(v3); /*0x612951*/
     }
-    *((unsigned int *)stru_AC1858 + i++) = 0; /*0x612964*/
+    ++i; /*0x612963*/
+    *(unsigned int *)(*(unsigned int *)DataGlobal_AC1858 + 4 * i - 4) = 0; /*0x612964*/
   }
-  unsigned int v4 = dword_AC1888; // ecx /*0x612975*/
+  v4 = dword_AC1888; /*0x612975*/
   dword_AC185C = 0; /*0x61297b*/
   if ( v0 > dword_AC1888 ) /*0x612987*/
   {
@@ -299,31 +314,28 @@ void sub_612930()
     {
       if ( byte_AC186C || v0 <= v4 ) /*0x61299d*/
         break; /*0x61299d*/
-      int *v5; // ebx
-      v5 = (int *)stru_AC1858; /*0x6129a9*/
-      int v6 = v0; // esi /*0x6129af*/
+      v5 = *(unsigned int ***)DataGlobal_AC1858; /*0x6129a9*/
+      v6 = v0; /*0x6129af*/
       dword_AC1860 = v0 >> 1; /*0x6129b4*/
       --dword_AC1864; /*0x6129c0*/
-      stru_AC1858 = (unsigned char)(operator new(4 * (v0 >> 1))); /*0x6129d9*/
-      memset(stru_AC1858, 0, 4 * dword_AC1860); /*0x6129e1*/
+      *(unsigned int *)DataGlobal_AC1858 = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x6129d9*/
+      memset(*(void **)DataGlobal_AC1858, 0, 4 * dword_AC1860); /*0x6129e1*/
       if ( v6 > 0 ) /*0x6129e3*/
       {
-        int *v7 = v5; // edi /*0x6129e5*/
-        int v8 = v6; // ebp /*0x6129e7*/
+        v7 = v5; /*0x6129e5*/
+        v8 = v6; /*0x6129e7*/
         do /*0x612a22*/
         {
-          int v9 = *v7; // esi /*0x6129e9*/
+          v9 = *v7; /*0x6129e9*/
           if ( *v7 ) /*0x6129e9*/
           {
             do /*0x612a1c*/
             {
-              int v10; // edx
               v10 = dword_AC1870(v9) & ((1 << dword_AC1864) - 1); /*0x612a05*/
-              int v11; // ecx
-              v11 = *((unsigned int *)stru_AC1858 + v10); /*0x612a0c*/
-              *((unsigned int *)stru_AC1858 + v10) = v9; /*0x612a0f*/
-              v12 = *(unsigned int *)(v9 + 12); /*0x612a12*/
-              *(unsigned int *)(v9 + 12) = v11; /*0x612a15*/
+              v11 = *(unsigned int *)(*(unsigned int *)DataGlobal_AC1858 + 4 * v10); /*0x612a0c*/
+              *(unsigned int *)(*(unsigned int *)DataGlobal_AC1858 + 4 * v10) = v9; /*0x612a0f*/
+              v12 = (unsigned int *)v9[3]; /*0x612a12*/
+              v9[3] = v11; /*0x612a15*/
               v9 = v12; /*0x612a1a*/
             }
             while ( v12 ); /*0x612a1c*/
@@ -333,23 +345,25 @@ void sub_612930()
         }
         while ( v8 ); /*0x612a22*/
       }
-      operator delete((v5)); /*0x612a25*/
+      __3_YAXPAX_Z(v5); /*0x612a25*/
       v4 = dword_AC1888; /*0x612a2a*/
       v0 = dword_AC1860; /*0x612a30*/
     }
     while ( dword_AC1860 > (unsigned int)dword_AC1888 ); /*0x612a3a*/
   }
-  operator delete((void *)(stru_AC1858)); /*0x612a46*/
+  __3_YAXPAX_Z(*(void **)DataGlobal_AC1858); /*0x612a46*/
+
 }
 }
 // 0x612A60
 namespace gamemd {
 AbstractClass * * sub_612A60(HWND v4, UINT Msg, HDC hdc, LPARAM lParam)
 {
-  LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
+
+  LRESULT (*v4)(HWND, UINT, WPARAM, LPARAM); // esi
   int v5; // eax
   HWND v6; // ecx
-  LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (**v7)(HWND, UINT, WPARAM, LPARAM); // eax
   int v8; // eax
   HWND v9; // ecx
   HDC v10; // esi
@@ -357,7 +371,8 @@ AbstractClass * * sub_612A60(HWND v4, UINT Msg, HDC hdc, LPARAM lParam)
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
   v4 = 0; /*0x612a69*/
-  if ( dword_AC1B4C && (v5 = *((unsigned int *)dword_AC1B48 + (dword_AC1B60(&v4) & ((1 << dword_AC1B54) - 1)))) != 0 ) /*0x612a93*/
+  if ( MEMORY[0xAC1B4C] /*0x612a93*/
+    && (v5 = *((unsigned int *)stru_AC1B48 + (MEMORY[0xAC1B60](&v4) & ((1 << MEMORY[0xAC1B54]) - 1)))) != 0 )
   {
     v6 = v4; /*0x612a95*/
     while ( *(HWND *)v5 != v4 ) /*0x612a9b*/
@@ -366,7 +381,7 @@ AbstractClass * * sub_612A60(HWND v4, UINT Msg, HDC hdc, LPARAM lParam)
       if ( !v5 ) /*0x612aa2*/
         goto LABEL_10; /*0x612aa2*/
     }
-    v7 = (HWND)((LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v5 + 4));
+    v7 = (LRESULT (**)(HWND, UINT, WPARAM, LPARAM))(v5 + 4); /*0x612aaa*/
     if ( v7 ) /*0x612aaf*/
       v4 = *v7; /*0x612ab1*/
   }
@@ -374,7 +389,7 @@ AbstractClass * * sub_612A60(HWND v4, UINT Msg, HDC hdc, LPARAM lParam)
   {
     v6 = v4; /*0x612ab5*/
   }
-  LABEL_10:
+LABEL_10:
   ScreenDialogToClient(v6, &v12); /*0x612ab9*/
   GetClientRect(v4, &Rect); /*0x612acc*/
   if ( dword_AC1B04 && (v8 = *((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v4) & ((1 << dword_AC1B0C) - 1)))) != 0 ) /*0x612aff*/
@@ -393,11 +408,12 @@ AbstractClass * * sub_612A60(HWND v4, UINT Msg, HDC hdc, LPARAM lParam)
     v9 = v4; /*0x612b15*/
   }
   if ( Msg != 307 ) /*0x612b22*/
-    return (gamemd::AbstractClass **)((HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam)); /*0x612b5b*/
-  v10 = (HDC)((gamemd::AbstractClass **)(hdc)); /*0x612b2a*/
+    return (HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam); /*0x612b5b*/
+  v10 = hdc; /*0x612b2a*/
   SetTextColor(hdc, dword_AC18A4); /*0x612b30*/
   SetBkMode(v10, 1); /*0x612b39*/
-  return (gamemd::AbstractClass **)(GetStockObject(5)); /*0x612b47*/
+  return GetStockObject(5); /*0x612b47*/
+
 }
 namespace gamemd {
 AbstractClass * * NetworkLobbyPaintProc(HWND v4, unsigned int a2, int a3, unsigned int a4)

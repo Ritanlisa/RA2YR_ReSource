@@ -57,151 +57,151 @@ extern unsigned int g_DDraw_Gray127;  // data: 0x8a0de8 truth(IDA G42.57w9)
 namespace gamemd {  // G42.18 ns repair
 char JumpjetLocomotionClass_Process(int a1)
 {
-  DriveLocomotionClass *v1; // esi
-  char *v2; // edi
-  int v3; // eax
-  int v4; // ecx
-  FootClass *v5; // ecx
-  AbstractClass *v6; // ecx
-  int *v7; // edx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  AbstractClass *movementDestination; // ecx
-  FootClass *v12; // ecx
-  AbstractClass *v13; // ebp
-  unsigned short *v14; // eax
-  FootClass *v15; // ecx
-  FootClass *Owner; // ecx
-  FootClass *v18; // ecx
-  AnimClass *v19; // eax
-  int *location; // ecx
-  FootClass *v21; // ecx
-  FootClass *v22; // eax
-  FootClass *v23; // eax
-  AbstractClass *v24; // ecx
-  unsigned int *v25; // eax
-  FootClass *v26; // ecx
-  int v27; // ecx
-  FootClass *v28; // eax
-  char v29; // [esp-4h] [ebp-24h]
-  int v30; // [esp+10h] [ebp-10h] BYREF
-  int v31; // [esp+14h] [ebp-Ch]
-  int v32; // [esp+18h] [ebp-8h]
 
-  v1 = (gamemd::DriveLocomotionClass *)(a1);
-  v2 = (char *)a1 - 4; /*0x4b0518*/
-  v3 = *(uint8_t *)((*((int (**)(FootClass *))a1->Owner->vfptr + 111))(a1->Owner) + 284); /*0x4b0521*/
-  v4 = v2->u32_1C; /*0x4b0523*/
-  if ( v3 != v4 ) /*0x4b0528*/
+  double v1; // st7
+  DriveLocomotionClass *v2; // esi
+  char *v3; // edi
+  int v4; // eax
+  int v5; // ecx
+  char v6; // al
+  int v7; // ecx
+  int v8; // ecx
+  int *v9; // edx
+  int v10; // eax
+  int v11; // ecx
+  int v12; // edx
+  int v13; // ecx
+  unsigned int *v14; // ecx
+  unsigned short *v15; // ebp
+  unsigned short *v16; // eax
+  FootClass *v17; // ecx
+  unsigned int *Owner; // ecx
+  unsigned char *v20; // ecx
+  AnimClass *v21; // eax
+  int *v22; // ecx
+  int v23; // ecx
+  unsigned char *v24; // eax
+  int v25; // eax
+  int v26; // ecx
+  unsigned int *eax70; // eax
+  unsigned char *v28; // ecx
+  FootClass *v27; // ecx
+  int v30; // eax
+  char v31; // [esp-4h] [ebp-24h]
+  int v32; // [esp+10h] [ebp-10h] BYREF
+  int v33; // [esp+14h] [ebp-Ch]
+  int v34; // [esp+18h] [ebp-8h]
+
+  v2 = this; /*0x4b0506*/
+  v3 = (char *)this - 4; /*0x4b0518*/
+  v4 = *(unsigned __int8 *)((*(int (**)(int))(*(unsigned int *)this->Owner + 444))(this->Owner) + 284); /*0x4b0521*/
+  v5 = *((unsigned int *)v3 + 7); /*0x4b0523*/
+  if ( v4 != v5 ) /*0x4b0528*/
   {
-    v2->COMObject_20 = v4; /*0x4b052a*/
-    v2->u32_1C = v3; /*0x4b0533*/
-    Timer::Start((int)((Timer *)&v30), 3); /*0x4b0536*/
-    v2->u32_24 = v30; /*0x4b0547*/
-    *((unsigned int *)v2 + 10) = v31; /*0x4b054d*/
-    *((unsigned int *)v2 + 11) = v32; /*0x4b0554*/
-    *((unsigned int *)v2 + 12) = 3; /*0x4b0557*/
+    *((unsigned int *)v3 + 8) = v5; /*0x4b052a*/
+    *((unsigned int *)v3 + 7) = v4; /*0x4b0533*/
+    Timer::Start((Timer *)&v32, 3); /*0x4b0536*/
+    *((unsigned int *)v3 + 9) = v32; /*0x4b0547*/
+    *((unsigned int *)v3 + 10) = v33; /*0x4b054d*/
+    *((unsigned int *)v3 + 11) = v34; /*0x4b0554*/
+    *((unsigned int *)v3 + 12) = 3; /*0x4b0557*/
   }
-  if ( v1->MovementSpeed[1] == -1 || !(*(((unsigned char *)&(v1->TrackIndex)) + (sizeof(v1->TrackIndex) - 1))) ) /*0x4b056a*/
+  if ( v2->MovementSpeed[1] == -1 || !HIBYTE(v2->TrackIndex) ) /*0x4b056a*/
   {
-    movementDestination = (gamemd::AbstractClass *)(v1->Owner->movementDestination);
-    if ( movementDestination /*0x4b06ad*/
-      && (*((int (**)(AbstractClass *))movementDestination->vfptr + 11))(movementDestination) == 11
-      && (v12 = v1->Owner,
-          v13 = (unsigned int)(v12->movementDestination)+ 1,
-          v14 = (unsigned short *)(*((int (**)(FootClass *, DriveLocomotionClass **))v12->vfptr + 110))(v12, &a1),
-          *v14 == (*((unsigned short *)&(v13->vfptr))))
-      && v14[1] == (*(((unsigned short *)&(v13->vfptr)) + 1)) )
+    v13 = *(unsigned int *)(v2->Owner + 1444); /*0x4b066f*/
+    if ( v13 /*0x4b06ad*/
+      && (*(int (**)(int))(*(unsigned int *)v13 + 44))(v13) == 11
+      && (v14 = (unsigned int *)v2->Owner,
+          v15 = (unsigned short *)(v14[361] + 36),
+          v16 = (unsigned short *)(*(int (**)(unsigned int *, DriveLocomotionClass **))(*v14 + 440))(v14, &this),
+          *v16 == *v15)
+      && v16[1] == v15[1] )
     {
-      v15 = (FootClass *)v2->u32_C; /*0x4b06af*/
-      if ( !*&v15->q598 ) /*0x4b06b2*/
+      v17 = (FootClass *)*((unsigned int *)v3 + 3); /*0x4b06af*/
+      if ( !*&v17->q598 ) /*0x4b06b2*/
         goto LABEL_27; /*0x4b06b8*/
     }
     else
     {
-      Owner = v1->Owner; /*0x4b06d5*/
-      if ( Owner->currentMission != (void *)(5) /*0x4b0732*/
-        || (*(((unsigned char *)&(v1->TrackIndex)) + (sizeof(v1->TrackIndex) - 1)))
-        || v1->SlopeTimer[3] == g_DDraw_ClipRect && *(unsigned long long *)v1->Dest == qword_8A0794
-        || Owner->location[0] != v1->SlopeTimer[3]
-        || Owner->location[1] != v1->Dest[0]
-        || Owner->location[2] != v1->Dest[1] )
+      Owner = (unsigned int *)v2->Owner; /*0x4b06d5*/
+      if ( Owner[43] != 5 /*0x4b0732*/
+        || HIBYTE(v2->TrackIndex)
+        || v2->SlopeTimer[3] == g_DDraw_ClipRect && *(unsigned long long *)v2->Dest == qword_8A0794
+        || Owner[39] != v2->SlopeTimer[3]
+        || Owner[40] != v2->Dest[0]
+        || Owner[41] != v2->Dest[1] )
       {
-        if ( (uint8_t)((void *)((int)Owner->primaryFacing))->Active() ) /*0x4b077b*/
+        if ( (unsigned __int8)TimerClass::Active((int)(Owner + 226)) ) /*0x4b077b*/
         {
-          (((unsigned char *)&(v1->TrackIndex))[2]) = 1; /*0x4b0788*/
+          BYTE2(v2->TrackIndex) = 1; /*0x4b0788*/
           goto LABEL_39; /*0x4b0788*/
         }
-        if ( (((unsigned char *)&(v1->TrackIndex))[2]) ) /*0x4b0896*/
+        if ( BYTE2(v2->TrackIndex) ) /*0x4b0896*/
         {
-          (((unsigned char *)&(v1->TrackIndex))[2]) = 0; /*0x4b089b*/
-          (*((void (**)(FootClass *, unsigned int))v1->Owner->vfptr + 99))(v1->Owner, 0); /*0x4b08a4*/
-          v22 = v1->Owner; /*0x4b08aa*/
-          if ( !v22->isAliveFlag || v22->inLimbo || v22->isFallingDown ) /*0x4b08bd*/
+          BYTE2(v2->TrackIndex) = 0; /*0x4b089b*/
+          (*(void (**)(int, unsigned int))(*(unsigned int *)v2->Owner + 396))(v2->Owner, 0); /*0x4b08a4*/
+          v24 = (unsigned char *)v2->Owner; /*0x4b08aa*/
+          if ( !v24[144] || v24[129] || v24[141] ) /*0x4b08bd*/
             return 0; /*0x4b08ce*/
         }
-        if ( (*((int (**)(FootClass *))v1->Owner->vfptr + 97))(v1->Owner) == 5 /*0x4b08fd*/
-          && !(*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->0 + 16))(v1)
-          || (*((int (**)(FootClass *))v1->Owner->vfptr + 97))(v1->Owner) == 16 )
+        if ( (*(int (**)(int))(*(unsigned int *)v2->Owner + 388))(v2->Owner) == 5 /*0x4b08fd*/
+          && !(*(unsigned __int8 (**)(DriveLocomotionClass *))(*(unsigned int *)&v2->0 + 16))(v2)
+          || (*(int (**)(int))(*(unsigned int *)v2->Owner + 388))(v2->Owner) == 16 )
         {
           goto LABEL_39; /*0x4b08fd*/
         }
-        if ( !(*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->0 + 16))(v1) ) /*0x4b0906*/
+        if ( !(*(unsigned __int8 (**)(DriveLocomotionClass *))(*&v2->Powered + 16))(v2) ) /*0x4b0906*/
         {
-          v23 = v1->Owner; /*0x4b0911*/
-          if ( v23->pathDirections[0] == -1 ) /*0x4b091b*/
+          v25 = v2->Owner; /*0x4b0911*/
+          if ( *(unsigned int *)(v25 + 1504) == -1 ) /*0x4b091b*/
           {
-            if ( v23->isSinking ) /*0x4b0921*/
+            if ( *(unsigned char *)(v25 + 973) ) /*0x4b0921*/
             {
-              if ( *((unsigned int *)v2 + 16) != g_DDraw_ClipRect || *(unsigned long long *)(v2 + 68) != qword_8A0794 ) /*0x4b0940*/
+              if ( *((unsigned int *)v3 + 16) != g_DDraw_ClipRect || *(unsigned long long *)(v3 + 68) != qword_8A0794 ) /*0x4b0940*/
               {
-                v2->u32_40 = g_DDraw_ClipRect; /*0x4b094f*/
-                *(unsigned long long *)(v2 + 68) = qword_8A0794; /*0x4b0957*/
-                v2[99] = 0; /*0x4b0963*/
+                *((unsigned int *)v3 + 16) = g_DDraw_ClipRect; /*0x4b094f*/
+                *(unsigned long long *)(v3 + 68) = qword_8A0794; /*0x4b0957*/
+                v3[99] = 0; /*0x4b0963*/
               }
-              v1->SpeedAccum = 0; /*0x4b0966*/
-              v1->MovementSpeed[0] = 0; /*0x4b0969*/
+              v2->SpeedAccum = 0; /*0x4b0966*/
+              v2->MovementSpeed[0] = 0; /*0x4b0969*/
             }
             else
             {
-              v24 = (gamemd::AbstractClass *)(v23->movementDestination);
-              if ( v24 ) /*0x4b0979*/
+              v26 = *(unsigned int *)(v25 + 1444); /*0x4b0971*/
+              if ( v26 ) /*0x4b0979*/
               {
-                v25 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v24->vfptr + 19))( /*0x4b0987*/
-                                  v24,
-                                  &v30,
-                                  v1->Owner);
-                (*(void (__stdcall **)(DriveLocomotionClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v1->0 + 68))( /*0x4b09a3*/
-                  v1,
-                  *v25,
-                  v25[1],
-                  v25[2]);
+                eax70 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v26 + 76))(v26, &v32, v2->Owner); /*0x4b0987*/
+                (*(void (**)(DriveLocomotionClass *, unsigned int, unsigned int, unsigned int))(*&v2->q044 + 68))( /*0x4b09a3*/
+                  v2,
+                  *eax70,
+                  eax70[1],
+                  eax70[2]);
               }
             }
             goto LABEL_39; /*0x4b096c*/
           }
         }
-        v26 = v1->Owner; /*0x4b09ab*/
-        if ( v26->isInPlayfield /*0x4b09e2*/
-          && (*((int (**)(FootClass *))v26->vfptr + 97))(v26) != 7
-          && (*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->0 + 16))(v1)
-          && !(*((uint8_t (**)(FootClass *, int *))v1->Owner->vfptr + 179))(
-                v1->Owner,
-                &v1->SlopeTimer[3]) )
+        v28 = (unsigned char *)v2->Owner; /*0x4b09ab*/
+        if ( v28[981] /*0x4b09e2*/
+          && (*(int (**)(unsigned char *))(*(unsigned int *)v28 + 388))(v28) != 7
+          && (*(unsigned __int8 (**)(DriveLocomotionClass *))(*(unsigned int *)&v2->0 + 16))(v2)
+          && !(*(unsigned __int8 (**)(int, int *))(*(unsigned int *)v2->Owner + 716))(
+                v2->Owner,
+                &v2->SlopeTimer[3]) )
         {
-          if ( *(&v2->u32_40) != g_DDraw_ClipRect || *(unsigned long long *)(v2 + 68) != qword_8A0794 ) /*0x4b0a03*/
+          if ( *((unsigned int *)v3 + 16) != g_DDraw_ClipRect || *(unsigned long long *)(v3 + 68) != qword_8A0794 ) /*0x4b0a03*/
           {
-            *((unsigned int *)v2 + 16) = g_DDraw_ClipRect; /*0x4b0a12*/
-            *(unsigned long long *)(v2 + 68) = qword_8A0794; /*0x4b0a1a*/
-            v2[99] = 0; /*0x4b0a26*/
+            *((unsigned int *)v3 + 16) = g_DDraw_ClipRect; /*0x4b0a12*/
+            *(unsigned long long *)(v3 + 68) = qword_8A0794; /*0x4b0a1a*/
+            v3[99] = 0; /*0x4b0a26*/
           }
-          v27 = *((unsigned int *)v2 + 3); /*0x4b0a29*/
-          if ( *(unsigned int *)(v27 + 1432) ) /*0x4b0a2c*/
+          v27 = (FootClass *)*((unsigned int *)v3 + 3); /*0x4b0a29*/
+          if ( *&v27->q598 ) /*0x4b0a2c*/
           {
-            ((FootClass *)v27)->ClearPathIndex(); /*0x4b0a44*/
-            if ( (*(uint8_t (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))( /*0x4b0a51*/
-                   v2->u32_C,
+            FootClass::ClearPathIndex(v27); /*0x4b0a44*/
+            if ( (*(unsigned __int8 (**)(unsigned int, unsigned int, int))(**((unsigned int **)v3 + 3) + 1156))( /*0x4b0a51*/
+                   *((unsigned int *)v3 + 3),
                    0,
                    1) )
             {
@@ -210,103 +210,104 @@ char JumpjetLocomotionClass_Process(int a1)
           }
           else
           {
-            (*(void (**)(int, unsigned int, int))(*(unsigned int *)v27 + 1152))(v27, 0, 1); /*0x4b0a39*/
+            (*(void (**)(FootClass *, unsigned int, int))(v27->vfptr + 1152))(v27, 0, 1); /*0x4b0a39*/
           }
           goto LABEL_39; /*0x4b0a3f*/
         }
-        (*((unsigned char *)&(a1))) = 0; /*0x4b0a75*/
-        JumpjetLocomotion::Update((int)&v1[-1].Piggybackee, &a1, 1, 0); /*0x4b0a79*/
-        if ( (unsigned char)a1 ) /*0x4b0a82*/
+        LOBYTE(this) = 0; /*0x4b0a75*/
+        JumpjetLocomotion::Update((int)&v2[-1].Piggybackee, &this, 1, 0); /*0x4b0a79*/
+        if ( (unsigned char)this ) /*0x4b0a82*/
           return 0; /*0x4b0a8d*/
-        if ( !v1->Owner->isAliveFlag ) /*0x4b0a93*/
+        if ( !*(unsigned char *)(v2->Owner + 144) ) /*0x4b0a93*/
           return 0; /*0x4b0aa4*/
-        v29 = 0; /*0x4b0aa7*/
+        v31 = 0; /*0x4b0aa7*/
         goto LABEL_87; /*0x4b0aa7*/
       }
-      v15 = (FootClass *)v2->u32_C; /*0x4b0734*/
-      if ( !*&v15->q598 ) /*0x4b073d*/
+      v17 = (FootClass *)*((unsigned int *)v3 + 3); /*0x4b0734*/
+      if ( !*&v17->q598 ) /*0x4b073d*/
       {
-        LABEL_27:
-        (*((void (**)(FootClass *, unsigned int, int))v15->vfptr + 288))(v15, 0, 1); /*0x4b06be*/
+LABEL_27:
+        (*(void (**)(FootClass *, unsigned int, int))(v17->vfptr + 1152))(v17, 0, 1); /*0x4b06be*/
         return 0; /*0x4b06d2*/
       }
     }
-    (v15)->ClearPathIndex(); /*0x4b0756*/
-    (*(void (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))(*(&v2->u32_C), 0, 1); /*0x4b0763*/
+    FootClass::ClearPathIndex(v17); /*0x4b0756*/
+    (*(void (**)(unsigned int, unsigned int, int))(**((unsigned int **)v3 + 3) + 1156))(*((unsigned int *)v3 + 3), 0, 1); /*0x4b0763*/
     return 0; /*0x4b0772*/
   }
-  if ( JumpjetLocomotion::ProcessCollision((int)&v1[-1].Piggybackee, 0) || !v1->Owner->isAliveFlag ) /*0x4b0586*/
+  v1 = JumpjetLocomotion::ProcessCollision((int)&v2[-1].Piggybackee, v1, 0); /*0x4b0576*/
+  if ( v6 || !*(unsigned char *)(v2->Owner + 144) ) /*0x4b0586*/
     return 0; /*0x4b058c*/
-  if ( v1->MovementSpeed[1] == -1 /*0x4b05c4*/
-    && ((*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->0 + 16))(v1)
-     || v1->Owner->pathDirections[0] != -1)
-    && ((*((int (**)(FootClass *))v1->Owner->vfptr + 11))(v1->Owner) != 1 || !(((unsigned char *)&(v1->Owner[1].uniqueId))[1])) )
+  if ( v2->MovementSpeed[1] == -1 /*0x4b05c4*/
+    && ((*(unsigned __int8 (**)(DriveLocomotionClass *))(*(unsigned int *)&v2->0 + 16))(v2)
+     || *(unsigned int *)(v2->Owner + 1504) != -1)
+    && ((*(int (**)(int))(*(unsigned int *)v2->Owner + 44))(v2->Owner) != 1 || !*(unsigned char *)(v2->Owner + 1745)) )
   {
-    v5 = v1->Owner; /*0x4b05d0*/
-    (*((unsigned char *)&(a1))) = 0; /*0x4b05d3*/
-    if ( (*((int (**)(FootClass *))v5->vfptr + 11))(v5) == 1 ) /*0x4b05df*/
+    v7 = v2->Owner; /*0x4b05d0*/
+    LOBYTE(this) = 0; /*0x4b05d3*/
+    if ( (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7) == 1 ) /*0x4b05df*/
     {
-      v6 = v1->Owner->movementDestination; /*0x4b05e4*/
-      if ( v6 ) /*0x4b05ec*/
+      v8 = *(unsigned int *)(v2->Owner + 1444); /*0x4b05e4*/
+      if ( v8 ) /*0x4b05ec*/
       {
-        if ( (*((int (**)(AbstractClass *))v6->vfptr + 11))(v6) == 15 ) /*0x4b05f6*/
+        if ( (*(int (**)(int))(*(unsigned int *)v8 + 44))(v8) == 15 ) /*0x4b05f6*/
         {
-          v7 = (int *)(*((int (**)(AbstractClass *, int *, FootClass *))v1->Owner->movementDestination->vfptr /*0x4b060f*/
-          + 19))(
-                        v1->Owner->movementDestination,
-                        &v30,
-                        v1->Owner);
-          v8 = *v7; /*0x4b0611*/
-          v9 = v7[1]; /*0x4b0615*/
-          v10 = v7[2]; /*0x4b0618*/
-          if ( v8 != v1->SlopeTimer[3] || v9 != v1->Dest[0] || v10 != v1->Dest[1] ) /*0x4b0625*/
-            (*(void (__stdcall **)(DriveLocomotionClass *, int, int, int))(*(unsigned int *)v1->0 + 68))(v1, v8, v9, v10); /*0x4b0638*/
+          v9 = (int *)(*(int (**)(unsigned int, int *, int))(**(unsigned int **)(v2->Owner + 1444) + 76))( /*0x4b060f*/
+                        *(unsigned int *)(v2->Owner + 1444),
+                        &v32,
+                        v2->Owner);
+          v10 = *v9; /*0x4b0611*/
+          v11 = v9[1]; /*0x4b0615*/
+          v12 = v9[2]; /*0x4b0618*/
+          if ( v10 != v2->SlopeTimer[3] || v11 != v2->Dest[0] || v12 != v2->Dest[1] ) /*0x4b0625*/
+            (*(void (**)(DriveLocomotionClass *, int, int, int))(*&v2->q044 + 68))(v2, v10, v11, v12); /*0x4b0638*/
         }
       }
     }
-    JumpjetLocomotion::Update((int)&v1[-1].Piggybackee, &a1, 1, 0); /*0x4b0647*/
-    if ( (unsigned char)a1 || !v1->Owner->isAliveFlag ) /*0x4b0659*/
+    JumpjetLocomotion::Update((int)&v2[-1].Piggybackee, &this, 1, 0); /*0x4b0647*/
+    if ( (unsigned char)this || !*(unsigned char *)(v2->Owner + 144) ) /*0x4b0659*/
       return 0; /*0x4b065f*/
-    v29 = 1; /*0x4b0665*/
-    LABEL_87:
-    JumpjetLocomotion::ProcessCollision((int)&v1[-1].Piggybackee, v29); /*0x4b0aa8*/
-    v28 = v1->Owner; /*0x4b0aaf*/
-    if ( !v28 || !v28->isAliveFlag ) /*0x4b0ab6*/
+    v31 = 1; /*0x4b0665*/
+LABEL_87:
+    JumpjetLocomotion::ProcessCollision((int)&v2[-1].Piggybackee, v1, v31); /*0x4b0aa8*/
+    v30 = v2->Owner; /*0x4b0aaf*/
+    if ( !v30 || !*(unsigned char *)(v30 + 144) ) /*0x4b0ab6*/
       return 0; /*0x4b0ac5*/
   }
-  LABEL_39:
-  if ( (*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->0 + 128))(v1) ) /*0x4b078f*/
+LABEL_39:
+  if ( (*(unsigned __int8 (**)(DriveLocomotionClass *))(*&v2->q080 + 128))(v2) ) /*0x4b078f*/
   {
-    if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % 10) ) /*0x4b07a8*/
+    if ( !(*(unsigned int *)&stru_A8E960.random[528] % 10) ) /*0x4b07a8*/
     {
-      v18 = v1->Owner; /*0x4b07ae*/
-      if ( !v18->onBridge && *(unsigned int *)((*((int (**)(FootClass *))v18->vfptr + 111))(v18) + 236) == 2 ) /*0x4b07c8*/
+      v20 = (unsigned char *)v2->Owner; /*0x4b07ae*/
+      if ( !v20[140] && *(unsigned int *)((*(int (**)(unsigned char *))(*(unsigned int *)v20 + 444))(v20) + 236) == 2 ) /*0x4b07c8*/
       {
-        if ( *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 148) ) /*0x4b07cf*/
+        if ( dword_8871E0->InfantryBrute ) /*0x4b07cf*/
         {
-          v19 = (AnimClass *)operator new(0x1C8u); /*0x4b07dc*/
-          if ( v19 ) /*0x4b07e6*/
+          v21 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b07dc*/
+          if ( v21 ) /*0x4b07e6*/
           {
-            location = v1->Owner->location; /*0x4b07ec*/
-            v30 = *location; /*0x4b07fd*/
-            v31 = location[1]; /*0x4b0804*/
-            v32 = location[2]; /*0x4b0810*/
-            AnimClass::ctor( /*0x4b0823*/               v19,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 148)),               &v30,               0,               1,               (void *)0x600,               0,               0);
+            v22 = (int *)(v2->Owner + 156); /*0x4b07ec*/
+            v32 = *v22; /*0x4b07fd*/
+            v33 = v22[1]; /*0x4b0804*/
+            v34 = v22[2]; /*0x4b0810*/
+            AnimClass::ctor(v21, (void *)dword_8871E0->InfantryBrute, &v32, 0, 1, (void *)0x600, 0, 0); /*0x4b0823*/
           }
         }
       }
     }
   }
-  if ( v1->SlopeTimer[3] == g_DDraw_ClipRect /*0x4b0856*/
-    && v1->Dest[0] == (unsigned int)qword_8A0794
-    && *(unsigned long long *)&v1->Dest[1] == (((unsigned long)(unsigned int)((*(((unsigned int *)&(qword_8A0794)) + 1)))) | ((unsigned long)(unsigned int)(g_DDraw_ClipRect) << 32))
-    && *(unsigned long long *)v1->HeadToCoord == qword_8A0794 )
+  if ( v2->SlopeTimer[3] == g_DDraw_ClipRect /*0x4b0856*/
+    && v2->Dest[0] == (unsigned int)qword_8A0794
+    && *(unsigned long long *)&v2->Dest[1] == __PAIR64__(g_DDraw_ClipRect, HIDWORD(qword_8A0794))
+    && *(unsigned long long *)v2->HeadToCoord == qword_8A0794 )
   {
-    v21 = v1->Owner; /*0x4b085d*/
-    if ( v21->pathDirections[0] == -1 && *(double *)v21->currentSpeed_percentage > 0.0 ) /*0x4b087a*/
-      (*((void (**)(FootClass *, unsigned int, unsigned int))v21->vfptr + 337))(v21, 0, 0); /*0x4b0880*/
+    v23 = v2->Owner; /*0x4b085d*/
+    if ( *(unsigned int *)(v23 + 1504) == -1 && *(double *)(v23 + 1400) > 0.0 ) /*0x4b087a*/
+      (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v23 + 1348))(v23, 0, 0); /*0x4b0880*/
   }
-  return (*(char (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->0 + 16))(v1); /*0x4b06cb*/
+  return (*(char (**)(DriveLocomotionClass *))(*&v2->q598 + 16))(v2); /*0x4b06cb*/
+
 }
 }  // G42.18 ns repair
 // 0x4B69E0
@@ -1315,24 +1316,26 @@ short BlendMinimapPixel(unsigned short a1, unsigned short a2, int a3)
 {
 
   int v3; // eax
-  (*((unsigned short *)&(v3))) = a1; /*0x4bf658*/
+
+  LOWORD(v3) = a1; /*0x4bf658*/
   switch ( a3 ) /*0x4bf664*/
   {
     case 0: /*0x4bf664*/
-      (*((unsigned short *)&(v3))) = a2; /*0x4bf6c0*/
+      LOWORD(v3) = a2; /*0x4bf6c0*/
       break; /*0x4bf6c0*/
     case 25: /*0x4bf664*/
-      v3 = 4 * ((*(((unsigned short *)&(g_DDraw_Gray127)) + 1)) & (a1 >> 2)); /*0x4bf6ba*/
+      v3 = 4 * (HIWORD(g_DDraw_Gray127) & (a1 >> 2)); /*0x4bf6ba*/
       break; /*0x4bf6bd*/
     case 50: /*0x4bf664*/
-      v3 = ((uint16_t)g_DDraw_Gray127 & (a2 >> 1)) + ((uint16_t)g_DDraw_Gray127 & (a1 >> 1)); /*0x4bf6a2*/
+      v3 = ((unsigned __int16)g_DDraw_Gray127 & (a2 >> 1)) + ((unsigned __int16)g_DDraw_Gray127 & (a1 >> 1)); /*0x4bf6a2*/
       break; /*0x4bf6a5*/
     case 75: /*0x4bf664*/
-      v3 = 4 * ((*(((unsigned short *)&(g_DDraw_Gray127)) + 1)) & (a1 >> 2)); /*0x4bf67d*/
+      v3 = 4 * (HIWORD(g_DDraw_Gray127) & (a1 >> 2)); /*0x4bf67d*/
       break; /*0x4bf680*/
     default:
       return v3;
   }
   return v3; /*0x4bf67c*/
+
 }
 } // namespace gamemd

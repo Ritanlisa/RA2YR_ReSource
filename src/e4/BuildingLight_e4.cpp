@@ -71,38 +71,37 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
   unsigned __int8 v45; // [esp+45h] [ebp-4Fh]
   unsigned __int8 v46; // [esp+46h] [ebp-4Eh]
   int v47[2]; // [esp+4Ch] [ebp-48h] BYREF
-  int v48[2]; // [esp+54h] [ebp-40h] BYREF
+  unsigned int v48[2]; // [esp+54h] [ebp-40h] BYREF
   int v49; // [esp+5Ch] [ebp-38h]
   int v50; // [esp+60h] [ebp-34h]
-  int v51[4]; // [esp+64h] [ebp-30h] BYREF
-  int v52[4]; // [esp+74h] [ebp-20h] BYREF
-  int v53[4]; // [esp+84h] [ebp-10h] BYREF
+  unsigned int v51[4]; // [esp+64h] [ebp-30h] BYREF
+  unsigned int v52[4]; // [esp+74h] [ebp-20h] BYREF
+  unsigned int v53[4]; // [esp+84h] [ebp-10h] BYREF
 
   v3 = v2; /*0x5ff858*/
   v43 = v2; /*0x5ff85c*/
   v4 = v2[5] & 0xF; /*0x5ff863*/
-  if ( (v2[5] & 0xE) != 0 /*0x5ff879*/
-    || (v5 = PingPongBuffer::GetWriteOffset(), *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= v5) )
+  if ( (v2[5] & 0xE) != 0 || (v5 = PingPongBuffer::GetWriteOffset(), (unsigned int)dword_ABCD44 >= v5) ) /*0x5ff879*/
   {
-    LOBYTE(v5) = (unsigned char)(((Coord *)g_TacticalClass_Instance)->To_Screen(v3, v47)); /*0x5ff88b*/
+    LOBYTE(v5) = Coord::To_Screen((Coord *)g_TacticalClass_Instance, v3, v47); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/
     {
-      if ( ((int)dword_A8B230[0].vtable0 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((int)v3), !(unsigned char)v5) ) /*0x5ff8b2*/
+      if ( (dword_A8B230->vfptr & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((int)v3), !(unsigned char)v5) ) /*0x5ff8b2*/
       {
         v52[0] = v47[0] - 128; /*0x5ff8c9*/
         v53[0] = DSurface_ViewBounds.field_0; /*0x5ff8d9*/
-        v53[1] = (int)DSurface_ViewBounds.field_4; /*0x5ff8e6*/
+        v53[1] = dword_886FA4; /*0x5ff8e6*/
         v6 = v3[3]; /*0x5ff8ed*/
-        v53[3] = *(unsigned int *)&g_DSurface_WindowOffset; /*0x5ff8f0*/
+        v53[3] = dword_886FAC; /*0x5ff8f0*/
         v7 = byte_83358C[v6]; /*0x5ff8ff*/
         v52[1] = v47[1] - 64; /*0x5ff906*/
-        v39 = (gamemd::AudioStream *)(g_DSurface_Hidden_2); /*0x5ff912*/
+        v39 = g_DSurface_Hidden_2; /*0x5ff912*/
         v52[2] = 255; /*0x5ff916*/
         v52[3] = 127; /*0x5ff91e*/
-        v53[2] = *(unsigned int *)g_Map_VisibleRectOffset; /*0x5ff925*/
+        v53[2] = dword_886FA8; /*0x5ff925*/
         if ( v7 < 64 ) /*0x5ff92c*/
           v7 = v7 * v3[4] / 64; /*0x5ff93d*/
-        v8 = *(unsigned int *)g_DSurface_Hidden_2; /*0x5ff946*/
+        v8 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x5ff946*/
         v40 = dword_AC1698[v7]; /*0x5ff94a*/
         v9 = (*(int (**)(AudioStream *))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
         v48[0] = 0; /*0x5ff95a*/
@@ -115,7 +114,16 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
         v31 = 0; /*0x5ff9a7*/
         v50 = 127; /*0x5ff9ac*/
         v51[3] = 127; /*0x5ff9b0*/
-        LOBYTE(v5) = (unsigned char)(CalcSurfaceBlitRects((int)v39, v53, v52, v40, v51, v48, &v31, (int *)&v41, (int *)&v42)); /*0x5ff9b7*/
+        LOBYTE(v5) = CalcSurfaceBlitRects( /*0x5ff9b7*/
+                       (int)v39,
+                       (CellStruct *)v53,
+                       (CellStruct *)v52,
+                       v40,
+                       (CellStruct *)v51,
+                       (CellStruct *)v48,
+                       &v31,
+                       (int *)&v41,
+                       (int *)&v42);
         if ( (unsigned char)v5 ) /*0x5ff9be*/
         {
           v10 = v41; /*0x5ff9c4*/
@@ -124,7 +132,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
           v32 = v42; /*0x5ff9de*/
           if ( v4 ) /*0x5ff9e2*/
           {
-            LABEL_23:
+LABEL_23:
             v11 = v3[5]; /*0x5ffb1c*/
             if ( (v11 & 1) != 0 ) /*0x5ffb21*/
             {
@@ -145,8 +153,8 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
                       v45 = (unsigned __int8)(v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ffba9*/
                       v46 = (unsigned __int8)(v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ffbc2*/
                       *v10 = (((256 - (unsigned __int8)v35) * v44) >> 8 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x5ffc1a*/
-                      | (((256 - (unsigned __int8)v35) * v46) >> 8 >> g_BitMask_Red << g_BitShift_Blue)
-                      | (((256 - (unsigned __int8)v35) * v45) >> 8 >> g_BitMask_Blue << g_BitMask_Green);
+                           | (((256 - (unsigned __int8)v35) * v46) >> 8 >> g_BitMask_Red << g_BitShift_Blue)
+                           | (((256 - (unsigned __int8)v35) * v45) >> 8 >> g_BitMask_Blue << g_BitMask_Green);
                       v12 = v49; /*0x5ffc1d*/
                       v9 = v36; /*0x5ffc21*/
                     }
@@ -248,8 +256,8 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
                       if ( v27 > 255 ) /*0x5ffee1*/
                         v27 = 255; /*0x5ffee3*/
                       *v10 = (v26 >> g_BitMask_Red << g_BitShift_Blue) /*0x5fff14*/
-                      | (v29 >> g_BitMask_Blue << g_BitMask_Green)
-                      | (v27 >> g_BitShift_Green_0 << g_BitShift_Red);
+                           | (v29 >> g_BitMask_Blue << g_BitMask_Green)
+                           | (v27 >> g_BitShift_Green_0 << g_BitShift_Red);
                       v23 = v49; /*0x5fff17*/
                       v9 = v36; /*0x5fff1b*/
                     }
@@ -303,7 +311,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
       }
     }
   }
-  return (gamemd::Coord **)(v5); /*0x5fff77*/
+  return v5; /*0x5fff77*/
 
 }
 }  // G42.18 ns repair

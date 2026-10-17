@@ -107,69 +107,68 @@ namespace gamemd {
 void CCFileClass::ProcessStream(unsigned int a1)
 {
 
-
-  unsigned int *v1; // edi
-  v1 = (unsigned int *)(dword_B077B0); /*0x69e324*/
-  if ( dword_B077B0 ) /*0x69e330*/
-  {
-    do /*0x69e3a1*/
-    {
-      if ( v1[8] <= a1 && *(unsigned short *)v1 == 0xFFFF && v1->uniqueId ) /*0x69e33d*/
-      {
-        void *v3 = v1->vtable4; // esi /*0x69e342*/
-        if ( v3 ) /*0x69e347*/
-        {
-          if ( *(unsigned short *)v3 == 0xFFFF ) /*0x69e34d*/
-          {
-            BTree::DeleteSubtree(v1->vtable4); /*0x69e351*/
-            int v4 = v3->u32_18; // eax /*0x69e356*/
-            if ( v4 ) /*0x69e35b*/
-              *(unsigned int *)(v4 + 28) = v3->u32_1C; /*0x69e360*/
-            int v5 = v3->u32_1C; // eax /*0x69e363*/
-            if ( v5 ) /*0x69e368*/
-              *(unsigned int *)(v5 + 24) = v3->u32_18; /*0x69e36d*/
-            else
-              dword_B077B0 = (void *)v3->u32_18; /*0x69e375*/
-            if ( v3->u32_8 ) /*0x69e37a*/
-            {
-              free(*((void **)v3 + 2)); /*0x69e382*/
-              v3->u32_8 = 0; /*0x69e38a*/
-            }
-          }
-          __3_YAXPAX_Z(v3); /*0x69e38e*/
-        }
-        v1->vtable4 = 0; /*0x69e396*/
-        v1->uniqueId = 0; /*0x69e399*/
-      }
-      v1 = v1->nextArrayIndex; /*0x69e39c*/
-    }
-    while ( v1 ); /*0x69e3a1*/
-  }
+  void *i; // edi
+  void *v3; // esi
+  unsigned int *v4; // eax
+  unsigned int *v5; // eax
   void *v6; // esi
-  v6 = (void *)(dword_B077B4); /*0x69e3a3*/
+  unsigned char *v7; // ebp
+  MixFileClass *v8; // ecx
+  unsigned int *v9; // edi
+  unsigned int *v10; // eax
+  unsigned int *v11; // eax
+
+  for ( i = dword_B077B0; i; i = (void *)*((unsigned int *)i + 6) ) /*0x69e330*/
+  {
+    if ( *((unsigned int *)i + 8) <= a1 && *(unsigned short *)i == 0xFFFF && *((unsigned char *)i + 16) ) /*0x69e33d*/
+    {
+      v3 = (void *)*((unsigned int *)i + 3); /*0x69e342*/
+      if ( v3 ) /*0x69e347*/
+      {
+        if ( *(unsigned short *)v3 == 0xFFFF ) /*0x69e34d*/
+        {
+          BTree::DeleteSubtree(*((BTree **)i + 3)); /*0x69e351*/
+          v4 = (unsigned int *)v3->u32_18; /*0x69e356*/
+          if ( v4 ) /*0x69e35b*/
+            v4[7] = v3->u32_1C; /*0x69e360*/
+          v5 = (unsigned int *)v3->u32_1C; /*0x69e363*/
+          if ( v5 ) /*0x69e368*/
+            v5[6] = v3->u32_18; /*0x69e36d*/
+          else
+            dword_B077B0 = (void *)v3->u32_18; /*0x69e375*/
+          if ( v3->u32_8 ) /*0x69e37a*/
+          {
+            free(*((void **)v3 + 2)); /*0x69e382*/
+            v3->u32_8 = 0; /*0x69e38a*/
+          }
+        }
+        __3_YAXPAX_Z(v3); /*0x69e38e*/
+      }
+      *((unsigned int *)i + 3) = 0; /*0x69e396*/
+      *((unsigned char *)i + 16) = 0; /*0x69e399*/
+    }
+  }
+  v6 = dword_B077B4; /*0x69e3a3*/
   if ( dword_B077B4 ) /*0x69e3ab*/
   {
     if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      unsigned char *v7; // ebp
-      v7 = (unsigned char *)((char *)dword_B077B4 + 16); /*0x69e3b6*/
+      v7 = (char *)dword_B077B4 + 16; /*0x69e3b6*/
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e3b3*/
       {
-        void *v8; // ecx
-        v8 = (void *)*((unsigned int *)dword_B077B4 + 3); /*0x69e3bd*/
-        unsigned int *v9; // edi
-        v9 = (unsigned int *)((char *)dword_B077B4 + 12); /*0x69e3c0*/
+        v8 = (MixFileClass *)*((unsigned int *)dword_B077B4 + 3); /*0x69e3bd*/
+        v9 = (char *)dword_B077B4 + 12; /*0x69e3c0*/
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/
         *v7 = 0; /*0x69e3d0*/
       }
-      int v10 = v6->nextArrayIndex; // eax /*0x69e3d3*/
+      v10 = (unsigned int *)v6->nextArrayIndex; /*0x69e3d3*/
       if ( v10 ) /*0x69e3d8*/
-        *(unsigned int *)(v10 + 28) = v6->referenceCount; /*0x69e3dd*/
-      int v11 = v6->referenceCount; // eax /*0x69e3e0*/
+        v10[7] = v6->referenceCount; /*0x69e3dd*/
+      v11 = (unsigned int *)v6->referenceCount; /*0x69e3e0*/
       if ( v11 ) /*0x69e3e5*/
-        *(unsigned int *)(v11 + 24) = v6->nextArrayIndex; /*0x69e3ea*/
+        v11[6] = v6->nextArrayIndex; /*0x69e3ea*/
       else
         dword_B077B0 = (void *)v6->nextArrayIndex; /*0x69e3f2*/
       if ( v6->vtable3 ) /*0x69e3f7*/

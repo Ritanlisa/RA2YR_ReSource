@@ -69,15 +69,17 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
 {
 
   char *v8; // eax
-  v8 = (char *)operator new(0x30u); /*0x76f918*/
   char *v9; // edi
+
+  v8 = (char *)__2_YAPAXI_Z(0x30u); /*0x76f918*/
   if ( v8 ) /*0x76f922*/
-    v9 = WorldDominationTour::Territory::Constructor(v8, edx0, a2, Source, a4, aP5); /*0x76f940*/
+    v9 = WorldDominationTour::Territory::Constructor(v8, a2, a3, Source, a5, a6); /*0x76f940*/
   else
     v9 = 0; /*0x76f944*/
-  ComPtr::Constructor((ComPtr *)a1); /*0x76f948*/
-  *(unsigned int *)a1 = &vt_rc_ptr; /*0x76f94f*/
-  ComPtr::Set((ComPtr *)a1, (int)v9); /*0x76f956*/
-  return a1; /*0x76f95d*/
+  ComPtr::Constructor((ComPtr *)this); /*0x76f948*/
+  *(unsigned int *)this = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76f94f*/
+  ComPtr::Set((ComPtr *)this, (int)v9); /*0x76f956*/
+  return this; /*0x76f95d*/
+
 }
 } // namespace gamemd

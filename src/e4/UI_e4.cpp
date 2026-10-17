@@ -445,6 +445,7 @@ void sub_6D0E60()
 namespace gamemd {
 int UI_Get_60B1D0(HWND hWnd, HWND a2)
 {
+
   HWND Parent; // esi
   char GameSpeed; // bl
   LONG right; // ecx
@@ -462,7 +463,7 @@ int UI_Get_60B1D0(HWND hWnd, HWND a2)
 
   v13 = a2; /*0x60b1d9*/
   Parent = GetParent(hWnd); /*0x60b1e9*/
-  GameSpeed = SessionClass::GetGameSpeed(dword_A8B238); /*0x60b1f0*/
+  GameSpeed = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60b1f0*/
   GetWindowRect(Parent, &Rect); /*0x60b1fe*/
   GetWindowRect(hWnd, &v17); /*0x60b206*/
   right = Rect.right; /*0x60b20a*/
@@ -472,14 +473,14 @@ int UI_Get_60B1D0(HWND hWnd, HWND a2)
   v14 = 0; /*0x60b244*/
   if ( !GameSpeed )
     v14 = ((Rect.bottom - Rect.top - 600) / 2 < 0 ? 0 : (Rect.bottom - Rect.top - 600) / 2)
-  - ((*((unsigned int *)v13 + 1) - 600) / 2 < 0 ? 0 : (*((unsigned int *)v13 + 1) - 600) / 2);
+        - ((*((unsigned int *)v13 + 1) - 600) / 2 < 0 ? 0 : (*((unsigned int *)v13 + 1) - 600) / 2);
   v6 = v17.right - v17.left; /*0x60b296*/
   top = v17.top; /*0x60b298*/
   v8 = v17.bottom - v17.top; /*0x60b29c*/
   v13 = hWnd; /*0x60b29e*/
   if ( dword_AC1B04 ) /*0x60b2a4*/
   {
-    v9 = (HWND *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v13) & ((1 << dword_AC1B0C) - 1))); /*0x60b2c5*/
+    v9 = *(HWND **)(*(unsigned int *)dword_AC1B00.__pad_0 + 4 * (dword_AC1B18(&v13) & ((1 << dword_AC1B0C) - 1))); /*0x60b2c5*/
     if ( v9 ) /*0x60b2ca*/
     {
       while ( *v9 != v13 ) /*0x60b2d2*/
@@ -488,7 +489,7 @@ int UI_Get_60B1D0(HWND hWnd, HWND a2)
         if ( !v9 ) /*0x60b2dc*/
           goto LABEL_9; /*0x60b2dc*/
       }
-      v12 = &v9->u32_1;
+      v12 = v9 + 1; /*0x60b327*/
       if ( v12 ) /*0x60b32c*/
       {
         v10 = v12[55]; /*0x60b32e*/
@@ -500,12 +501,13 @@ int UI_Get_60B1D0(HWND hWnd, HWND a2)
         }
       }
     }
-    LABEL_9:
+LABEL_9:
     right = Rect.right; /*0x60b2de*/
     top = v17.top; /*0x60b2e2*/
   }
   v10 = (168 - v6) / 2; /*0x60b2f0*/
   return MoveWindow(hWnd, right - v10 - v6 - v15 - Rect.left, v14 + top - Rect.top, v6, v8, 0); /*0x60b31b*/
+
 }
 }
 // 0x602B90
@@ -660,31 +662,33 @@ unsigned int * sub_60D2C0(int a1, int a2)
 namespace gamemd {
 void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
 {
-  ObjectClass * v5;
+
+  unsigned int *v4; // esi
+  int v5; // ebp
   int v6; // ebx
-  int16_t v7; // di
+  __int16 v7; // di
   int v8; // ecx
   int v9; // eax
-  unsigned short *v10; // ecx
+  unsigned __int16 *v10; // ecx
   int v11; // eax
-  uint8_t v12; // al
-  int16_t v13; // si
+  unsigned __int8 v12; // al
+  unsigned __int16 v13; // si
   unsigned int v14; // ebp
-  int16_t v15; // di
+  __int16 v15; // di
   int v16; // ecx
   unsigned int v17; // eax
   bool v18; // zf
   int v19; // [esp+Ch] [ebp-24h]
   int v20; // [esp+10h] [ebp-20h]
-  unsigned short *v21; // [esp+14h] [ebp-1Ch]
+  unsigned __int16 *v21; // [esp+14h] [ebp-1Ch]
   int v22; // [esp+18h] [ebp-18h]
   int v23; // [esp+1Ch] [ebp-14h]
-  int v24; // [esp+20h] [ebp-10h]
+  unsigned __int16 *v24; // [esp+20h] [ebp-10h]
+  __int16 v25; // [esp+24h] [ebp-Ch]
   int v28; // [esp+38h] [ebp+8h]
 
-  unsigned int *v4; // esi
-  v4 = (unsigned int *)((int)(aP0));
-  v5 = (gamemd::ObjectClass *)((int)(aP1)); /*0x6217ec*/
+  v4 = aP0; /*0x6217ea*/
+  v5 = aP1; /*0x6217ec*/
   v6 = (aP0[2] * a4) >> 16; /*0x6217fa*/
   v19 = 1; /*0x6217fd*/
   v20 = v6; /*0x621805*/
@@ -695,7 +699,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
       v6 = 1; /*0x621813*/
       v20 = 1; /*0x621818*/
     }
-    v24 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x62182c*/
+    v24 = (unsigned __int16 *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x62182c*/
     if ( v24 ) /*0x621830*/
     {
       v28 = 0; /*0x621839*/
@@ -704,8 +708,8 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
         v7 = a3; /*0x62184a*/
         do /*0x6219b1*/
         {
-          v8 = *v4 + (v28 + v4[1]) * ((*(int (**)(int))(v5->isOnMap)(v5) / 2); /*0x62186b*/
-          v9 = v4[3] / 4; /*0x621876*/
+          v8 = *v4 + (v28 + v4->vtable2) * ((*(int (**)(int))(*(unsigned int *)v5 + 116))(v5) / 2); /*0x62186b*/
+          v9 = v4->vtable4 / 4; /*0x621876*/
           if ( v28 == 3 * v9 ) /*0x621880*/
             v19 = 1; /*0x621882*/
           if ( v28 == v9 ) /*0x62188e*/
@@ -713,7 +717,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
           if ( v6 > 0 ) /*0x62189a*/
           {
             v23 = v6; /*0x6218a4*/
-            v10 = (unsigned short *)(v24 + 2 * v8); /*0x6218a8*/
+            v10 = &v24[v8]; /*0x6218a8*/
             v11 = 255; /*0x6218ab*/
             v21 = v10; /*0x6218b0*/
             v22 = 255; /*0x6218b4*/
@@ -721,26 +725,26 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
             {
               if ( v19 ) /*0x6218be*/
               {
-                v12 = v11 / v4[2]; /*0x6218c5*/
+                v12 = v11 / v4->vtable3; /*0x6218c5*/
                 v13 = *v10; /*0x6218d8*/
-                v7 = v7; /*0x6218e7*/
-                v12 = v12; /*0x6218fc*/
+                v25 = v7; /*0x6218e7*/
+                g_GameScreenFlags = v12; /*0x6218fc*/
                 g_GameScreenConfig = 255 - v12; /*0x621908*/
                 v14 = g_ScreenSaverState /*0x62192d*/
-                & ((g_GameScreenConfig * (uint16_t)(v13 & g_ScreenSaverState)
-                + v12 * (unsigned int)(uint16_t)(v7 & g_ScreenSaverState)) >> 8);
-                v15 = (*(((unsigned short *)&(g_ScreenSaverState)) + 1)) /*0x621946*/
-                & ((g_GameScreenConfig * (uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & v13)
-                + v12 * (unsigned int)(uint16_t)((*(((unsigned short *)&(g_ScreenSaverState)) + 1)) & v7)) >> 8);
-                v16 = (int)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState));
-                v4 = (unsigned int *)(aP0); /*0x62195b*/
+                    & ((g_GameScreenConfig * (unsigned __int16)(v13 & g_ScreenSaverState)
+                      + v12 * (unsigned int)(unsigned __int16)(v7 & g_ScreenSaverState)) >> 8);
+                v15 = HIWORD(g_ScreenSaverState) /*0x621946*/
+                    & ((g_GameScreenConfig * (unsigned __int16)(HIWORD(g_ScreenSaverState) & v13)
+                      + v12 * (unsigned int)(unsigned __int16)(HIWORD(g_ScreenSaverState) & v7)) >> 8);
+                v16 = g_GameScreenConfig * (unsigned __int16)(v13 & g_CreditsScreenState); /*0x621958*/
+                v4 = aP0; /*0x62195b*/
                 v6 = v20; /*0x62195f*/
-                v17 = v16 + v12 * (uint16_t)(v7 & g_CreditsScreenState); /*0x621963*/
+                v17 = v16 + v12 * (unsigned __int16)(v25 & g_CreditsScreenState); /*0x621963*/
                 v10 = v21; /*0x621965*/
-                (*((unsigned short *)&(v14))) = v15 | v14; /*0x621969*/
+                LOWORD(v14) = v15 | v14; /*0x621969*/
                 v7 = a3; /*0x62196b*/
                 *v21 = (v17 >> 8) | v14; /*0x621974*/
-                v5 = (gamemd::ObjectClass *)((int)(aP1)); /*0x621977*/
+                v5 = aP1; /*0x621977*/
               }
               else
               {
@@ -757,11 +761,12 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
           }
           ++v28; /*0x6219ad*/
         }
-        while ( v28 < v4[3] ); /*0x6219b1*/
+        while ( v28 < v4->vtable4 ); /*0x6219b1*/
       }
-      (*(void (**)(int))(v5->nextArrayIndex)(v5); /*0x6219bd*/
+      (*(void (**)(int))(*(unsigned int *)v5 + 96))(v5); /*0x6219bd*/
     }
   }
+
 }
 }
 // 0x6D0FD0
@@ -1024,16 +1029,18 @@ HWND sub_5E2340(void * aGuiHostgamesta_0)
 namespace gamemd {
 wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
 {
+
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
   wchar_t *v8; // [esp+10h] [ebp-4h] BYREF
 
   unknown_libname_74(&v8); /*0x603f0d*/
-  lParam[0] = a3; /*0x603f1e*/
-  lParam[1] = a4; /*0x603f2b*/
+  lParam[0] = LPARAM; /*0x603f1e*/
+  lParam[1] = LPARAM; /*0x603f2b*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f2f*/
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v8); /*0x603f3c*/
-  ((DeleteAndZero *)&v8)->Alt(); /*0x603f45*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v8); /*0x603f45*/
   return a1; /*0x603f4c*/
+
 }
 } // namespace gamemd
 
@@ -1317,22 +1324,23 @@ int * E4Recv_643670::UI_Render_643670(int a5, int a1, size_t a2, int a3, int a4)
 namespace gamemd {
 int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
 {
+
   char result; // al
   int v5; // ebx
-  int v6; // edi
-  int BuildingAnimByName; // eax
+  Char *v6; // edi
+  Color *BuildingAnimByName; // eax
   int v8; // eax
   int v9; // esi
   int v10; // ebp
   int v11; // edx
   int v12; // ecx
-  unsigned short *v13; // ebp
-  unsigned char v14[4]; // [esp+0h] [ebp-30h] BYREF
-  int v15; // [esp+4h] [ebp-2Ch]
+  unsigned __int16 *v13; // ebp
+  int v14; // [esp+0h] [ebp-30h] BYREF
+  unsigned __int16 *v15; // [esp+4h] [ebp-2Ch]
   int v16; // [esp+8h] [ebp-28h] BYREF
   int v17; // [esp+Ch] [ebp-24h] BYREF
-  int16_t v18; // [esp+10h] [ebp-20h]
-  uint8_t v19; // [esp+12h] [ebp-1Eh]
+  __int16 v18; // [esp+10h] [ebp-20h]
+  unsigned __int8 v19; // [esp+12h] [ebp-1Eh]
   int v20; // [esp+18h] [ebp-18h]
   unsigned int v21[4]; // [esp+20h] [ebp-10h] BYREF
 
@@ -1343,15 +1351,15 @@ int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
     if ( a1 ) /*0x6ac496*/
     {
       v5 = a2[1]; /*0x6ac49f*/
-      v6 = g_FogOfWarState; /*0x6ac4a5*/
+      v6 = (Char *)g_FogOfWarState; /*0x6ac4a5*/
       v20 = *a2; /*0x6ac4b5*/
-      BuildingAnimByName = FindBuildingAnimByName(aDarkred, 1); /*0x6ac4b9*/
-      v8 = ((uint8_t *)(BuildingAnimByName + 776))->ConvertToRGB((int)v14); /*0x6ac4c9*/
+      BuildingAnimByName = (Color *)FindBuildingAnimByName(aDarkred, 1); /*0x6ac4b9*/
+      v8 = Color::ConvertToRGB(BuildingAnimByName + 194, (int)&v14); /*0x6ac4c9*/
       v18 = *(unsigned short *)v8; /*0x6ac4d7*/
       v19 = *(unsigned char *)(v8 + 2); /*0x6ac4e1*/
-      v9 = ((uint8_t)v18 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6ac52e*/
-      | ((*(((unsigned char *)&(v18)) + (sizeof(v18) - 1))) >> g_BitMask_Blue << g_BitMask_Green)
-      | (v19 >> g_BitMask_Red << g_BitShift_Blue);
+      v9 = ((unsigned __int8)v18 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6ac52e*/
+         | (HIBYTE(v18) >> g_BitMask_Blue << g_BitMask_Green)
+         | (v19 >> g_BitMask_Red << g_BitShift_Blue);
       v10 = a3[2]; /*0x6ac536*/
       v11 = a3[1]; /*0x6ac539*/
       v21[0] = *a3; /*0x6ac53c*/
@@ -1359,15 +1367,16 @@ int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
       v21[1] = v11; /*0x6ac547*/
       v21[3] = v11 + v12; /*0x6ac54b*/
       v21[2] = v21[0] + v10; /*0x6ac551*/
-      Char::Swap((unsigned char *)v6, 1); /*0x6ac555*/
-      ((TextGroup *)((unsigned int *)v6))->SetRect(v21); /*0x6ac561*/
-      ((Property *)((unsigned short *)v6))->Set(v9); /*0x6ac569*/
-      v13 = (unsigned short *)v15; /*0x6ac57a*/
-      Text::Layout((unsigned int *)v6, (uint16_t *)v15, &v17, &v16, a4); /*0x6ac584*/
-      return Font::Print(v6, DSurface_Sidebar, v13, v20, v6->u32_1C - v16 + v5, a4, 0, 0, 0, 0); /*0x6ac5b2*/
+      Char::Swap(v6, 1); /*0x6ac555*/
+      TextGroup::SetRect((TextGroup *)v6, v21); /*0x6ac561*/
+      Property::Set((Property *)v6, v9); /*0x6ac569*/
+      v13 = v15; /*0x6ac57a*/
+      Text::Layout((Text *)v6, v15, &v17, &v16, a4); /*0x6ac584*/
+      return Font::Print((int)v6, (int)DSurface_Sidebar, v13, v20, *(unsigned int *)&v6[7] - v16 + v5, a4, 0, 0, 0, 0); /*0x6ac5b2*/
     }
   }
   return result; /*0x6ac5bb*/
+
 }
 }
 // 0x6BA120
@@ -1932,15 +1941,16 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
 namespace gamemd {
 void sub_7A2750()
 {
+
   HWND Current; // eax
   HWND DlgItem; // esi
   bool v2; // bl
   wchar_t *StringCSF; // eax
   void *v4; // [esp+8h] [ebp-4h] BYREF
 
-  Current = (HWND)(Dialog::GetCurrent()); /*0x7a2753*/
+  Current = Dialog::GetCurrent(); /*0x7a2753*/
   DlgItem = GetDlgItem(Current, 1439); /*0x7a2768*/
-  ((String *)((char **)&v4))->Assign(0); /*0x7a276c*/
+  String::Assign((char **)&v4, 0); /*0x7a276c*/
   v2 = SendMultiplayerStartSignal_Start_77EBA0((const char **)&v4) != 1; /*0x7a2781*/
   DeleteAndZero(&v4); /*0x7a2784*/
   if ( v2 ) /*0x7a278b*/
@@ -1949,6 +1959,7 @@ void sub_7A2750()
     StringCSF = GetStringCSF(aGuiHostgamesta_0, 0, g_Str_File_wonline_cpp, 29202); /*0x7a27ae*/
     Dialog::ShowMessage(-1, (size_t)StringCSF); /*0x7a27b6*/
   }
+
 }
 } // namespace gamemd
 

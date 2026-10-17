@@ -43,23 +43,28 @@ namespace gamemd {
 int Math_Sqrt(double a1)
 {
 
-  double v2 = a1; // st7 /*0x4cac40*/
-  bool v3 = a1 < 0.0; // c0 /*0x4cac44*/
-  char v4 = 0; // c2 /*0x4cac44*/
+  __int16 v1; // fps
+  double v2; // st7
+  bool v3; // c0
+  char v4; // c2
   bool v5; // c3
-  v5 = a1 == 0.0; /*0x4cac44*/
-  int16_t v1; // fps
   int result; // eax
-  (*((unsigned short *)&(result))) = v1; /*0x4cac4a*/
+  unsigned int *v7; // [esp+4h] [ebp+4h]
+
+  v2 = a1; /*0x4cac40*/
+  v3 = a1 < 0.0; /*0x4cac44*/
+  v4 = 0; /*0x4cac44*/
+  v5 = a1 == 0.0; /*0x4cac44*/
+  LOWORD(result) = v1; /*0x4cac4a*/
   if ( a1 != 0.0 ) /*0x4cac4f*/
   {
     if ( a1 <= 0.0 ) /*0x4cac65*/
       v2 = a1 * -1.0; /*0x4cac67*/
-    float v7; // [esp+4h] [ebp+4h]
-    v7 = v2; /*0x4cac6d*/
-    return (((int16_t)(((*((unsigned int *)&(v7))) >> 23) - 127) >> 1) + 127) << 23; /*0x4caca0*/
+    *(float *)&v7 = v2; /*0x4cac6d*/
+    return (((__int16)(((unsigned int)v7 >> 23) - 127) >> 1) + 127) << 23; /*0x4caca0*/
   }
   return result; /*0x4cac59*/
+
 }
 }
 // 0x4CACB0

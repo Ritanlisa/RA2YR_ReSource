@@ -119,38 +119,40 @@ namespace gamemd {
 TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
 {
 
+  signed int KeyCount; // ebx
+  int i; // edi
+  unsigned __int8 *StringByIndex; // eax
+  int result; // eax
+  int v7; // ebx
+  int j; // ebp
+  unsigned int *v9; // edi
+  int v10; // [esp-4h] [ebp-38h]
   char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
 
-  int KeyCount; // ebx
   KeyCount = INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces); /*0x6e8357*/
-  int i; // edi
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
-    unsigned __int8 *StringByIndex; // eax
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
-    (a1)->GetString(g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
+    INIClass::GetString(a1, g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/
-  int result = dword_A8E8E0; // eax /*0x6e83a6*/
-  int v7 = 0; // ebx /*0x6e83ab*/
-  int j; // ebp
+  result = dword_A8E8E0; /*0x6e83a6*/
+  v7 = 0; /*0x6e83ab*/
   for ( j = 0; j < dword_A8E8E0; ++j ) /*0x6e83b1*/
   {
-    int v9; // edi
-    v9 = *((unsigned int *)dword_A8E8D4 + j); /*0x6e83bc*/
-    if ( *(unsigned int *)(v9 + 160) == a2 ) /*0x6e83c5*/
+    v9 = (unsigned int *)*((unsigned int *)dword_A8E8D4 + j); /*0x6e83bc*/
+    if ( v9[40] == a2 ) /*0x6e83c5*/
     {
-      int v10; // [esp-4h] [ebp-38h]
       v10 = v7++; /*0x6e83cd*/
       sprintf(Buffer, "%d", v10); /*0x6e83d5*/
-      (Buffer)->Trim(); /*0x6e83e1*/
-      INIClass::SetString(a1->__pad_0, g_INI_Key_TaskForces, Buffer, (char *)(v9 + 36)); /*0x6e83f6*/
-      (*(void (**)(int, INIClass *))(*(unsigned int *)v9 + 104))(v9, a1); /*0x6e8400*/
+      String::Trim(Buffer); /*0x6e83e1*/
+      INIClass::SetString(a1->__pad_0, g_INI_Key_TaskForces, Buffer, (char *)v9 + 36); /*0x6e83f6*/
+      (*(void (**)(unsigned int *, INIClass *))(*v9 + 104))(v9, a1); /*0x6e8400*/
     }
     result = dword_A8E8E0; /*0x6e8403*/
   }
-  return (gamemd::TaskForceClass *)(result); /*0x6e840d*/
+  return result; /*0x6e840d*/
 
 }
 } // namespace gamemd

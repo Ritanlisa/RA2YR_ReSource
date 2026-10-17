@@ -30,18 +30,19 @@ int sub_53EC40(unsigned char a1, char a2)
 namespace gamemd {
 size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
 {
-  LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // ebx
+
+  LRESULT (*v4)(HWND, UINT, WPARAM, LPARAM); // ebx
   int v5; // eax
   int v6; // eax
-  LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (**v7)(HWND, UINT, WPARAM, LPARAM); // eax
   size_t v8; // esi
   const wchar_t *v9; // ebx
-  signed int v10; // ebp
+  int v10; // ebp
   void *v11; // ebx
   int v12; // esi
   LPWSTR v13; // edx
   WCHAR *v14; // ecx
-  signed int v15; // edi
+  int v15; // edi
   WCHAR v16; // ax
   const wchar_t *v17; // esi
   WCHAR *v19; // [esp-8h] [ebp-428h]
@@ -54,11 +55,11 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   v4 = 0; /*0x6149bd*/
   lpWideCharStr = a2; /*0x6149c3*/
   hWnda = hWnd; /*0x6149c7*/
-  if ( dword_AC1B4C ) /*0x6149cb*/
+  if ( *(unsigned int *)&stru_AC1B48.__pad_0[4] ) /*0x6149cb*/
   {
-    v5 = dword_AC1B60(&hWnda); /*0x6149d1*/
+    v5 = (*(int (**)(HWND *))&stru_AC1B48.__pad_10[8])(&hWnda); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
-    v6 = *((unsigned int *)dword_AC1B48 + (v5 & ((1 << dword_AC1B54) - 1))); /*0x6149f0*/
+    v6 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * (v5 & ((1 << SLOBYTE(stru_AC1B48.Dialog_field_0xC)) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/
     {
       while ( *(HWND *)v6 != hWnda ) /*0x6149f9*/
@@ -67,12 +68,12 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
         if ( !v6 ) /*0x614a00*/
           goto LABEL_8; /*0x614a00*/
       }
-      v7 = (LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v6 + 4); /*0x614a08*/
+      v7 = (LRESULT (**)(HWND, UINT, WPARAM, LPARAM))(v6 + 4); /*0x614a08*/
       if ( v7 ) /*0x614a0d*/
         v4 = *v7; /*0x614a0f*/
     }
   }
-  LABEL_8:
+LABEL_8:
   v8 = 0; /*0x614a11*/
   lParam[0] = 0; /*0x614a27*/
   CallWindowProcA(v4, hWnd, 0xDu, 0x400u, (LPARAM)lParam); /*0x614a2c*/
@@ -83,11 +84,11 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   *lpWideCharStr = 0; /*0x614a6d*/
   MultiByteToWideChar(0, 0, lParam, -1, v19, cchWideChar); /*0x614a72*/
   if ( a4 ) /*0x614a7a*/
-    *a4 = _mbsnccnt((const uint8_t *)lParam, v8); /*0x614a8a*/
+    *a4 = _mbsnccnt((const unsigned __int8 *)lParam, v8); /*0x614a8a*/
   if ( cchWideChar > 0 ) /*0x614a8e*/
     v9[cchWideChar - 1] = 0; /*0x614a90*/
   v10 = wcslen(v9); /*0x614a9d*/
-  v11 = operator new(2 * v10 + 6); /*0x614aab*/
+  v11 = (void *)__2_YAPAXI_Z(2 * v10 + 6); /*0x614aab*/
   memset(v11, 0, 2 * v10 + 6); /*0x614ab9*/
   v12 = 0; /*0x614abd*/
   if ( v10 > 0 ) /*0x614ac6*/
@@ -113,8 +114,9 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   }
   v17 = lpWideCharStr; /*0x614afe*/
   wcscpy(lpWideCharStr, (const wchar_t *)v11); /*0x614b04*/
-  operator delete((v11)); /*0x614b0a*/
+  __3_YAXPAX_Z(v11); /*0x614b0a*/
   return wcslen(v17); /*0x614b18*/
+
 }
 }
 // 0x58C6F0

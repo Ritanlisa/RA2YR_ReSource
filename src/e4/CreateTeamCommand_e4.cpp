@@ -132,24 +132,26 @@ namespace gamemd {
 AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int v5; // ecx
+  int i; // eax
+  void *v7; // eax
 
   if ( a2 ) /*0x5386ac*/
   {
     this->qC = 0; /*0x5386b2*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x5386b8*/
       v4 = a3; /*0x5386ce*/
     else
-      v4 = (unsigned int *)(__2_YAPAXI_Z(4 * a2)); /*0x5386ca*/
+      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5386ca*/
     this->qC = 1; /*0x5386d2*/
     if ( !v4 ) /*0x5386d6*/
       return 0; /*0x53874a*/
     if ( this->__pad_004 ) /*0x5386d8*/
     {
-      int v5 = this->Capacity; // ecx /*0x5386df*/
+      v5 = this->Capacity; /*0x5386df*/
       if ( a2 < v5 ) /*0x5386e4*/
         v5 = a2; /*0x5386e6*/
-      int i; // eax
       for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->__pad_004 + 4 * i - 4) ) /*0x5386ec*/
         ++i; /*0x5386f1*/
       if ( this->IsAllocated ) /*0x5386fe*/
@@ -158,7 +160,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
         this->__pad_004 = 0; /*0x538711*/
       }
     }
-    this->__pad_004 = (unsigned char)(v4); /*0x53871a*/
+    this->__pad_004 = v4; /*0x53871a*/
     this->Capacity = a2; /*0x538722*/
     this->IsAllocated = a3 == 0; /*0x538725*/
   }
@@ -166,10 +168,10 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
   {
     (*(void (**)(void *))(*&this->u32_30))(this); /*0x53872e*/
   }
-  int v7 = this->Capacity; // eax /*0x538731*/
-  if ( v7 < this->q010 ) /*0x538739*/
-    this->q010 = (void *)(v7); /*0x53873b*/
-  return (gamemd::AbstractClass **)(1); /*0x53873e*/
+  v7 = (void *)this->Capacity; /*0x538731*/
+  if ( (int)v7 < this->q010 ) /*0x538739*/
+    this->q010 = v7; /*0x53873b*/
+  return 1; /*0x53873e*/
 
 }
 }

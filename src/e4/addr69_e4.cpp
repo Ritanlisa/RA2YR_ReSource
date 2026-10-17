@@ -436,7 +436,8 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
 namespace gamemd {
 char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
 {
-  char *v6; // ebp
+
+  unsigned __int16 *v6; // ebp
   size_t v7; // esi
   wchar_t *StringCSF; // eax
   int v9; // edi
@@ -448,7 +449,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   unsigned char *v15; // eax
   int v16; // esi
   int v17; // esi
-  uint16_t v18; // dx
+  unsigned __int16 v18; // dx
   int v19; // esi
   int v20; // eax
   char v21; // bl
@@ -475,48 +476,48 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   LPCSTR v43[9]; // [esp+74h] [ebp-24h] BYREF
 
   nNumberOfBytesToWrite = a2; /*0x6941ae*/
-  Ticks = TimerGetTicks(); /*0x6941bb*/
+  Ticks = Timer::GetTicks(); /*0x6941bb*/
   v35 = 0; /*0x6941bf*/
-  ((Waypoint *)v42)->InitInvalid(); /*0x6941c7*/
+  Waypoint::InitInvalid((Waypoint *)v42); /*0x6941c7*/
   v23 = 0; /*0x6941cc*/
-  v6 = (char *)operator new(0x1E7u); /*0x6941e1*/
+  v6 = (unsigned __int16 *)__2_YAPAXI_Z(0x1E7u); /*0x6941e1*/
   Debug::Log(); /*0x6941e3*/
   RawFileClass::Construct((BufferIOFileClass *)v43, a1); /*0x6941f0*/
-  if ( (uint8_t)((FileClass *)((RawFileClass *)v43))->Open(0) ) /*0x6941fb*/
+  if ( (unsigned __int8)FileClass::Open((RawFileClass *)v43, 0) ) /*0x6941fb*/
     FileClass::Delete((RawFileClass *)v43); /*0x694208*/
   FileClass::Open2((RawFileClass *)v43, (const CHAR *)2); /*0x694213*/
   v7 = a2 / 0xC0; /*0x69422c*/
   v25 = a2 / 0xC0; /*0x69422f*/
   if ( a2 % 0xC0 ) /*0x69422a*/
     v25 = ++v7; /*0x694238*/
-  Block = operator new(v7); /*0x69424e*/
+  Block = (void *)__2_YAPAXI_Z(v7); /*0x69424e*/
   memset(Block, 0, v7); /*0x694253*/
   v26 = 0; /*0x694257*/
-  lpBuffer = (LPCVOID)operator new(a2); /*0x694269*/
+  lpBuffer = (LPCVOID)__2_YAPAXI_Z(a2); /*0x694269*/
   if ( a4 ) /*0x694279*/
   {
-    ((ProgressAnim*)(&dword_AC4F58))->Init(0, 1079574528, 1, 0); /*0x69428f*/
-    ((int)&dword_AC4F58)->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
-    StringCSF = GetStringCSF((char *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 355); /*0x6942c2*/
-    ((int *)g_UIManager)->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
+    ProgressAnim::Init((int)&stru_AC4B48.__pad_2F4[284], 0, 1079574528, 1, 0); /*0x69428f*/
+    SHPClass::Load((int)&stru_AC4B48.__pad_2F4[284], g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
+    StringCSF = GetStringCSF(aGuiMaptransfer, 0, aDRa2mdpostSend, 355); /*0x6942c2*/
+    TextRenderer::MeasureBuilding((int *)&stru_AC4B48.__pad_2F4[284], -1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
-    LoadScreen::Render((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
-    Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 0.0, NAN); /*0x694302*/
+    LoadScreen::Render((int)&stru_AC4B48.__pad_2F4[284], a2, (int)v6, NAN); /*0x6942ea*/
+    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 0.0, NAN); /*0x694302*/
   }
   v9 = a3; /*0x694307*/
   if ( a3 == 3 || (v10 = 10800, a3 != 4) ) /*0x69431b*/
     v10 = 3600; /*0x69431d*/
-  Ticks = TimerGetTicks(); /*0x69432b*/
+  Ticks = Timer::GetTicks(); /*0x69432b*/
   v34 = v40; /*0x694333*/
   v35 = v10; /*0x69433f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694343*/
   {
-    (&unk_A8E9C0)->createConnection(); /*0x69434a*/
-    TacticalClass::SetCameraPosition(&unk_A8E9C0, 120, -1, 1200); /*0x69435d*/
+    IPXManagerClass::createConnection((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x69434a*/
+    TacticalClass::SetCameraPosition((IPXManagerClass *)&stru_A8E960.nextScenario[96], 120, -1, 1200); /*0x69435d*/
   }
   if ( a3 == 3 || (v11 = 10800, a3 != 4) ) /*0x69436f*/
     v11 = 3600; /*0x694371*/
-  Ticks = TimerGetTicks(); /*0x694383*/
+  Ticks = Timer::GetTicks(); /*0x694383*/
   v34 = v40; /*0x694387*/
   v35 = v11; /*0x69438b*/
   v12 = 0; /*0x69438f*/
@@ -524,44 +525,44 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   {
     MessageLoop(); /*0x69452f*/
     Event::Dispatch(); /*0x694534*/
-    if ( ObjectTypeClass::CreateInstance(&unk_A8EA70, (int)v6, (int)v32) <= 0 ) /*0x69454b*/
+    if ( ObjectTypeClass::CreateInstance((ObjectTypeClass *)&stru_A8E960.altNextScenario[12], (int)v6, (int)v32) <= 0 ) /*0x69454b*/
       goto LABEL_43; /*0x69454b*/
     if ( *(unsigned int *)v6 != 112 ) /*0x694555*/
       goto LABEL_43; /*0x694555*/
-    v18 = v6->u32_18; /*0x694561*/
+    v18 = v6[12]; /*0x694561*/
     if ( *((unsigned char *)Block + v18) ) /*0x694567*/
       goto LABEL_43; /*0x69456a*/
     *((unsigned char *)Block + v18) = 1; /*0x694570*/
     ++v26; /*0x69457c*/
     v12 += 100; /*0x694580*/
-    v39 = TimerGetTicks(); /*0x69458c*/
+    v39 = Timer::GetTicks(); /*0x69458c*/
     Ticks = v39; /*0x694595*/
     v34 = v40; /*0x69459b*/
     v35 = 1800; /*0x69459f*/
     v41 = 1800; /*0x6945ad*/
     Debug::Log(); /*0x6945b1*/
-    memcpy((char *)lpBuffer + 192 * v6->u32_30, v6 + 28, v6->u32_34); /*0x6945dd*/
+    qmemcpy((char *)lpBuffer + 192 * v6[12], v6 + 14, v6[13]); /*0x6945dd*/
     if ( a4 ) /*0x6945eb*/
     {
       v30 = v12 / v25; /*0x694604*/
-      Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, (double)(v12 / v25), NAN); /*0x694611*/
+      Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, (double)(v12 / v25), NAN); /*0x694611*/
     }
     if ( v26 == v25 ) /*0x694620*/
     {
       if ( a4 ) /*0x694685*/
-        Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 100.0, NAN); /*0x69469d*/
+        Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x69469d*/
       v23 = 1; /*0x6946a2*/
-      LABEL_53:
+LABEL_53:
       v21 = v23; /*0x6946a7*/
       goto LABEL_54; /*0x6946a7*/
     }
-    LABEL_42:
+LABEL_42:
     v9 = a3; /*0x694622*/
-    LABEL_43:
+LABEL_43:
     v19 = v35; /*0x694629*/
     if ( Ticks != -1 ) /*0x694634*/
     {
-      v20 = TimerGetTicks() - Ticks; /*0x69463f*/
+      v20 = Timer::GetTicks() - Ticks; /*0x69463f*/
       if ( v20 >= v19 ) /*0x694645*/
         goto LABEL_53; /*0x694645*/
       v19 -= v20; /*0x694647*/
@@ -572,19 +573,19 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   MessageLoop(); /*0x6943a3*/
   Event::Dispatch(); /*0x6943a8*/
   v29 = 487; /*0x6943c2*/
-  if ( !((Network *)((Network *)&unk_A8E9C0))->Send((int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
+  if ( !Network::Send((Network *)&stru_A8E960.nextScenario[96], (int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
     goto LABEL_43; /*0x6943ca*/
   v13 = NetworkID::Compare(v42, (int)&stru_A8BB1C); /*0x6943e0*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6943ec*/
   {
     Flagged = GameSettings::FindFlagged(); /*0x6943ee*/
-    v13 = Flagged && !_strcmpi(Flagged + 36, v6 + 4); /*0x69440f*/
+    v13 = Flagged && !_strcmpi(Flagged + 36, v6 + 2); /*0x69440f*/
   }
   if ( *(unsigned int *)v6 != 18 ) /*0x694415*/
     goto LABEL_43; /*0x694415*/
   if ( !v13 ) /*0x69441d*/
     goto LABEL_43; /*0x69441d*/
-  v15 = (unsigned char *)((char *)Block + v6->u32_30); /*0x69442d*/
+  v15 = (char *)Block + v6[12]; /*0x69442d*/
   if ( *v15 ) /*0x69442f*/
     goto LABEL_43; /*0x694432*/
   v16 = v26; /*0x694438*/
@@ -593,48 +594,50 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v26 = v16 + 1; /*0x694448*/
   if ( v9 == 3 || (v17 = 10800, v9 != 4) ) /*0x694454*/
     v17 = 3600; /*0x694456*/
-  v36 = TimerGetTicks(); /*0x694471*/
+  v36 = Timer::GetTicks(); /*0x694471*/
   v38 = v17 / 2; /*0x69447a*/
   Ticks = v36; /*0x69447e*/
   v34 = v37; /*0x694482*/
   v35 = v17 / 2; /*0x694486*/
   if ( v36 != -1 ) /*0x69448a*/
-    TimerGetTicks(); /*0x694490*/
+    Timer::GetTicks(); /*0x694490*/
   Debug::Log(); /*0x6944b5*/
-  memcpy((char *)lpBuffer + 192 * v6->u32_30, v6 + 28, v6->u32_34); /*0x6944e1*/
+  qmemcpy((char *)lpBuffer + 192 * v6[12], v6 + 14, v6[13]); /*0x6944e1*/
   if ( a4 ) /*0x6944ef*/
   {
     v30 = v12 / v25; /*0x694508*/
-    Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, (double)(v12 / v25), NAN); /*0x694515*/
+    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, (double)(v12 / v25), NAN); /*0x694515*/
   }
   if ( v26 != v25 ) /*0x694524*/
     goto LABEL_42; /*0x694524*/
   v21 = 1; /*0x694659*/
   if ( a4 ) /*0x69465d*/
-    Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 100.0, NAN); /*0x694675*/
-  LABEL_54:
+    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x694675*/
+LABEL_54:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6946b4*/
-    IPXManagerClass::destroyConnection(&unk_A8E9C0); /*0x6946bb*/
-  ((RawFileClass *)v43)->Write2(lpBuffer, nNumberOfBytesToWrite); /*0x6946ce*/
-  operator delete(((void *)lpBuffer)); /*0x6946d8*/
-  operator delete((Block)); /*0x6946e2*/
+    IPXManagerClass::destroyConnection((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x6946bb*/
+  FileClass::Write2((RawFileClass *)v43, lpBuffer, nNumberOfBytesToWrite); /*0x6946ce*/
+  __3_YAXPAX_Z((void *)lpBuffer); /*0x6946d8*/
+  __3_YAXPAX_Z(Block); /*0x6946e2*/
   Debug::Log(); /*0x6946fa*/
-  ((RawFileClass *)v43)->CloseHandle(); /*0x694706*/
+  FileClass::CloseHandle((RawFileClass *)v43); /*0x694706*/
   Debug::Log(); /*0x694710*/
-  if ( !v21 && (uint8_t)((FileClass *)((RawFileClass *)v43))->Open(0) ) /*0x694722*/
+  if ( !v21 && (unsigned __int8)FileClass::Open((RawFileClass *)v43, 0) ) /*0x694722*/
   {
     FileClass::Delete((RawFileClass *)v43); /*0x69472f*/
     Debug::Log(); /*0x694739*/
   }
-  operator delete((v6)); /*0x694742*/
-  ((RawFileClass *)((BufferIOFileClass *)v43))->Dtor(); /*0x69474e*/
+  __3_YAXPAX_Z(v6); /*0x694742*/
+  RawFileClass::Dtor((BufferIOFileClass *)v43); /*0x69474e*/
   return v21; /*0x694755*/
+
 }
 }
 // 0x694760
 namespace gamemd {
 int Network_SendFile(char * Source, int a2, char a3, char a4)
 {
+
   int result; // eax
   int Size; // ebx
   int v8; // edi
@@ -686,7 +689,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   CCFileClass v54; // [esp+54h] [ebp-6DCh] BYREF
   int v55[3]; // [esp+ACh] [ebp-684h] BYREF
   int v56; // [esp+B8h] [ebp-678h]
-  Waypoint v57; // [esp+C0h] [ebp-670h] BYREF
+  Waypoint Buffer; // [esp+C0h] [ebp-670h] BYREF
   unsigned char v58[163]; // [esp+1A8h] [ebp-588h] BYREF
   char v59[89]; // [esp+24Bh] [ebp-4E5h] BYREF
   int v60; // [esp+2A4h] [ebp-48Ch] BYREF
@@ -697,57 +700,64 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   int v65[114]; // [esp+568h] [ebp-1C8h] BYREF
 
   v51 = a2; /*0x694772*/
-  TimerGetTicks(); /*0x694776*/
+  Timer::GetTicks(); /*0x694776*/
   v47 = 0; /*0x69478b*/
   Debug::Log(); /*0x694790*/
   CCFileClass::Construct(&v54, Source); /*0x69479d*/
-  if ( !(uint8_t)((CCFileClass *)(&v54))->Open(0) ) /*0x6947a7*/
+  if ( !(unsigned __int8)CCFileClass::Open(&v54, 0) ) /*0x6947a7*/
   {
-    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x6947b7) */
+    *(unsigned int *)v54.__tail_0 = &CCFileClass::`vftable'; /*0x6947b7*/
     v56 = 0; /*0x6947bf*/
     Vector::Clear((int)v55); /*0x6947c6*/
-    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x6947cf) */
-    result = ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x6947d7*/
-    (*((unsigned char *)&(result))) = 0; /*0x6947dc*/
+    *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x6947cf*/
+    result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x6947d7*/
+    LOBYTE(result) = 0; /*0x6947dc*/
     return result; /*0x6947e8*/
   }
   Size = CCFileClass::GetSize(&v54); /*0x6947f4*/
   v49 = Size; /*0x6947fa*/
-  Ticks = TimerGetTicks(); /*0x694803*/
+  Ticks = Timer::GetTicks(); /*0x694803*/
   Debug::Log(); /*0x69481d*/
   if ( a2 != 1 && a2 != 2 ) /*0x694831*/
   {
     v60 = 17; /*0x69484f*/
     strcpy(v63, Source); /*0x69485d*/
     v62 = Size; /*0x69486c*/
-    strcpy(v61, ToWideStringChar((IUnknown *)((char *)*dword_A8DA78))); /*0x694897*/
+    strcpy(v61, ToWideStringChar(**(char ***)&stru_A8D804.__pad_3D[567])); /*0x694897*/
     if ( a3 ) /*0x6948a9*/
     {
       v8 = 1; /*0x6948b0*/
-      if ( dword_A8DA84 > 1 ) /*0x6948b7*/
+      if ( *(int *)&stru_A8D804.__pad_3D[579] > 1 ) /*0x6948b7*/
       {
         while ( 1 ) /*0x6948c0*/
         {
           Event::Dispatch(); /*0x6948c0*/
-          if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455,(void *)(1), (wchar_t *)((unsigned int *)(dword_A8DA78))[v8]) ) /*0x6948e3*/
+          if ( Network::SendToPlayer( /*0x6948e3*/
+                 (int)&stru_A8E960.nextScenario[96],
+                 (int)&v60,
+                 455,
+                 1,
+                 *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v8)) )
+          {
             goto LABEL_12; /*0x6948ea*/
+          }
           v9 = 3600; /*0x6948f0*/
           if ( Ticks == -1 ) /*0x6948f6*/
           {
-            LABEL_11:
+LABEL_11:
             if ( !v9 ) /*0x69490d*/
               goto LABEL_12; /*0x69490d*/
           }
           else
           {
-            v10 = TimerGetTicks() - Ticks; /*0x694901*/
+            v10 = Timer::GetTicks() - Ticks; /*0x694901*/
             if ( v10 < 3600 ) /*0x694907*/
             {
               v9 = 3600 - v10; /*0x694909*/
               goto LABEL_11; /*0x694909*/
             }
-            LABEL_12:
-            if ( ++v8 >= dword_A8DA84 ) /*0x694917*/
+LABEL_12:
+            if ( ++v8 >= *(int *)&stru_A8D804.__pad_3D[579] ) /*0x694917*/
               goto LABEL_21; /*0x694917*/
           }
         }
@@ -757,13 +767,13 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     v11 = 0; /*0x694923*/
     if ( dword_A8BB18 <= 0 ) /*0x694927*/
     {
-      LABEL_21:
-      while ( (&unk_A8E9C0)->GetQueueCount() > 0 ) /*0x6949ba*/
+LABEL_21:
+      while ( Network::GetQueueCount((IPXManagerClass *)&stru_A8E960.nextScenario[96]) > 0 ) /*0x6949ba*/
       {
         v14 = 3600; /*0x6949c4*/
         if ( Ticks != -1 ) /*0x6949cb*/
         {
-          v15 = TimerGetTicks() - Ticks; /*0x6949d6*/
+          v15 = Timer::GetTicks() - Ticks; /*0x6949d6*/
           if ( v15 >= 3600 ) /*0x6949dc*/
             goto LABEL_34; /*0x6949dc*/
           v14 = 3600 - v15; /*0x6949e2*/
@@ -778,24 +788,31 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     {
       Event::Dispatch(); /*0x694930*/
       Debug::Log(); /*0x69494b*/
-      if ( Network::SendToPlayer((int)&unk_A8E9C0, (int)&v60, 455,(void *)(1), (wchar_t *)dword_A8DA78[((unsigned int *)(byte_A8BB10))[v11]]) ) /*0x694978*/
+      if ( Network::SendToPlayer( /*0x694978*/
+             (int)&stru_A8E960.nextScenario[96],
+             (int)&v60,
+             455,
+             1,
+             *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * byte_A8BB10[v11])) )
+      {
         goto LABEL_20; /*0x69497f*/
+      }
       v12 = 3600; /*0x694985*/
       if ( Ticks == -1 ) /*0x69498b*/
       {
-        LABEL_19:
+LABEL_19:
         if ( !v12 ) /*0x6949a2*/
           goto LABEL_20; /*0x6949a2*/
       }
       else
       {
-        v13 = TimerGetTicks() - Ticks; /*0x694996*/
+        v13 = Timer::GetTicks() - Ticks; /*0x694996*/
         if ( v13 < 3600 ) /*0x69499c*/
         {
           v12 = 3600 - v13; /*0x69499e*/
           goto LABEL_19; /*0x69499e*/
         }
-        LABEL_20:
+LABEL_20:
         if ( ++v11 >= dword_A8BB18 ) /*0x6949ac*/
           goto LABEL_21; /*0x6949ac*/
       }
@@ -804,13 +821,13 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   *(unsigned int *)v58 = 111; /*0x694a1d*/
   strcpy(v59, Source); /*0x694a2b*/
   *(unsigned int *)&v58[158] = Size; /*0x694a42*/
-  ((int *)&unk_A8EA70)->WriteBlock((int)v58, 250, 1); /*0x694a4f*/
-  while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 0 ) /*0x694a60*/
+  Stream::WriteBlock((int *)&stru_A8E960.altNextScenario[12], (int)v58, 250, 1); /*0x694a4f*/
+  while ( Count::GetCountQueue((Count *)&stru_A8E960.altNextScenario[12]) > 0 ) /*0x694a60*/
   {
     v16 = 3600; /*0x694a66*/
     if ( Ticks != -1 ) /*0x694a6d*/
     {
-      v17 = TimerGetTicks() - Ticks; /*0x694a78*/
+      v17 = Timer::GetTicks() - Ticks; /*0x694a78*/
       if ( v17 >= 3600 ) /*0x694a7e*/
         break; /*0x694a7e*/
       v16 = 3600 - v17; /*0x694a80*/
@@ -819,45 +836,48 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
       break; /*0x694a84*/
     Event::Dispatch(); /*0x694a86*/
   }
-  LABEL_34:
+LABEL_34:
   v18 = 3600; /*0x694a99*/
   if ( Ticks != -1 ) /*0x694aa4*/
   {
-    v19 = TimerGetTicks() - Ticks; /*0x694aaf*/
+    v19 = Timer::GetTicks() - Ticks; /*0x694aaf*/
     if ( v19 >= 3600 ) /*0x694ab5*/
     {
-      LABEL_38:
+LABEL_38:
       Debug::Log(); /*0x694abd*/
-      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x694ad1) */
+      *(unsigned int *)v54.__tail_0 = &CCFileClass::`vftable'; /*0x694ad1*/
       v56 = 0; /*0x694ad9*/
       Vector::Clear((int)v55); /*0x694ae4*/
-      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x694aed) */
-      result = ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x694af5*/
-      (*((unsigned char *)&(result))) = 0; /*0x694afa*/
+      *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x694aed*/
+      result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x694af5*/
+      LOBYTE(result) = 0; /*0x694afa*/
       return result; /*0x694b06*/
     }
     v18 = 3600 - v19; /*0x694ab7*/
   }
   if ( !v18 ) /*0x694abb*/
     goto LABEL_38; /*0x694abb*/
-  (&v57)->InitInvalid(); /*0x694b10*/
+  Waypoint::InitInvalid(&Buffer); /*0x694b10*/
   v20 = 0; /*0x694b1c*/
   if ( a3 ) /*0x694b20*/
-    v21 = dword_A8DA84 - 1; /*0x694b28*/
+    v21 = *(unsigned int *)&stru_A8D804.__pad_3D[579] - 1; /*0x694b28*/
   else
     v21 = dword_A8BB18; /*0x694b2d*/
-  v44 = TimerGetTicks(); /*0x694b3c*/
+  v44 = Timer::GetTicks(); /*0x694b3c*/
   if ( a2 == 1 || a2 == 2 ) /*0x694b59*/
   {
     while ( 1 ) /*0x694bce*/
     {
       Event::Dispatch(); /*0x694bce*/
-      if ( ObjectTypeClass::CreateInstance(&unk_A8EA70, (int)v64, (int)v53) > 0 && v64[0] == 113 ) /*0x694bf5*/
+      if ( ObjectTypeClass::CreateInstance((ObjectTypeClass *)&stru_A8E960.altNextScenario[12], (int)v64, (int)v53) > 0 /*0x694bf5*/
+        && v64[0] == 113 )
+      {
         break; /*0x694bf5*/
+      }
       v24 = 3600; /*0x694bfb*/
       if ( v44 != -1 ) /*0x694c02*/
       {
-        v25 = TimerGetTicks() - v44; /*0x694c0d*/
+        v25 = Timer::GetTicks() - v44; /*0x694c0d*/
         if ( v25 >= 3600 ) /*0x694c13*/
           goto LABEL_62; /*0x694c13*/
         v24 = 3600 - v25; /*0x694c15*/
@@ -873,12 +893,15 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     {
       Event::Dispatch(); /*0x694b60*/
       v48 = 455; /*0x694b84*/
-      if ( ((Network *)((Network *)&unk_A8E9C0))->Send((int)v65, (int)&v48, (int)&v57, (int)v52) && v65[0] == 21 ) /*0x694b9c*/
+      if ( Network::Send((Network *)&stru_A8E960.nextScenario[96], (int)v65, (int)&v48, (int)&Buffer, (int)v52) /*0x694b9c*/
+        && v65[0] == 21 )
+      {
         ++v20; /*0x694b9e*/
+      }
       v22 = 3600; /*0x694ba3*/
       if ( v44 != -1 ) /*0x694baa*/
       {
-        v23 = TimerGetTicks() - v44; /*0x694bb5*/
+        v23 = Timer::GetTicks() - v44; /*0x694bb5*/
         if ( v23 >= 3600 ) /*0x694bbb*/
           break; /*0x694bbb*/
         v22 = 3600 - v23; /*0x694bbd*/
@@ -886,33 +909,33 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     }
     while ( v22 && v20 < v21 ); /*0x694bc5*/
   }
-  LABEL_62:
+LABEL_62:
   v26 = (v49 + 191) / 192; /*0x694c2e*/
-  FileClass::Load((gamemd::FileClass *)(&v54), (const CHAR *)1); /*0x694c51*/
+  FileClass::Load(&v54, (const CHAR *)1); /*0x694c51*/
   v27 = 0; /*0x694c56*/
   if ( a4 ) /*0x694c61*/
   {
-    ((int)&g_UIManager)->Init(0, 1079574528, 1, 0); /*0x694c75*/
-    ((int)&g_UIManager)->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x694c86*/
-    StringCSF = GetStringCSF((char *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 658); /*0x694ca5*/
-    ((int *)&g_UIManager)->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
+    ProgressAnim::Init((int)&stru_AC4B48.__pad_2F4[284], 0, 1079574528, 1, 0); /*0x694c75*/
+    SHPClass::Load((int)&stru_AC4B48.__pad_2F4[284], g_Str_File_PROGBARM_SHP, 0, 0); /*0x694c86*/
+    StringCSF = GetStringCSF(aGuiMaptransfer, 0, aDRa2mdpostSend, 658); /*0x694ca5*/
+    TextRenderer::MeasureBuilding((int *)&stru_AC4B48.__pad_2F4[284], -1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
     Screen::Capture(1, 0, v26, 0); /*0x694cbb*/
-    LoadScreen::Render((int)&g_UIManager, v26, 0, NAN); /*0x694ccd*/
-    Network::UpdateLatencyDisplay((int)&g_UIManager, 0, 0.0, NAN); /*0x694ce2*/
+    LoadScreen::Render((int)&stru_AC4B48.__pad_2F4[284], v26, 0, NAN); /*0x694ccd*/
+    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 0.0, NAN); /*0x694ce2*/
   }
   v29 = v51; /*0x694ce7*/
-  TimerGetTicks(); /*0x694d03*/
+  Timer::GetTicks(); /*0x694d03*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694d20*/
   {
-    (&unk_A8E9C0)->createConnection(); /*0x694d27*/
-    TacticalClass::SetCameraPosition(&unk_A8E9C0, 240, -1, 1200); /*0x694d3d*/
+    IPXManagerClass::createConnection((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x694d27*/
+    TacticalClass::SetCameraPosition((IPXManagerClass *)&stru_A8E960.nextScenario[96], 240, -1, 1200); /*0x694d3d*/
   }
   if ( v29 == 3 || (v30 = 10800, v29 != 4) ) /*0x694d4f*/
     v30 = 3600; /*0x694d51*/
-  v45 = TimerGetTicks(); /*0x694d63*/
+  v45 = Timer::GetTicks(); /*0x694d63*/
   v46 = v30; /*0x694d6b*/
   v48 = 0; /*0x694d6f*/
-  LABEL_70:
+LABEL_70:
   v31 = v49; /*0x694d77*/
   do /*0x694fb0*/
   {
@@ -921,7 +944,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
       v32 = v46; /*0x694d7f*/
       if ( v45 != -1 ) /*0x694d86*/
       {
-        v33 = TimerGetTicks() - v45; /*0x694d91*/
+        v33 = Timer::GetTicks() - v45; /*0x694d91*/
         if ( v33 >= v46 ) /*0x694d97*/
           goto LABEL_115; /*0x694d97*/
         v32 = v46 - v33; /*0x694d9d*/
@@ -934,71 +957,76 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
       Event::Dispatch(); /*0x694fc0*/
       if ( v27 >= v26 ) /*0x694fcc*/
       {
-        if ( !Count::GetCountQueue((Count *)&unk_A8EA70) ) /*0x6950e3*/
+        if ( !Count::GetCountQueue((Count *)&stru_A8E960.altNextScenario[12]) ) /*0x6950e3*/
         {
           v47 = 1; /*0x69514d*/
           if ( a4 ) /*0x695154*/
-            Network::UpdateLatencyDisplay((int)&g_UIManager, 0, 100.0, NAN); /*0x69516c*/
-          LABEL_115:
+            Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x69516c*/
+LABEL_115:
           v42 = v47; /*0x695171*/
           goto LABEL_116; /*0x695171*/
         }
       }
       else
       {
-        if ( Count::GetCountQueue((Count *)&unk_A8EA70) >= 2 ) /*0x694fda*/
+        if ( Count::GetCountQueue((Count *)&stru_A8E960.altNextScenario[12]) >= 2 ) /*0x694fda*/
           goto LABEL_70; /*0x694fda*/
-        *(unsigned int *)&v57.u32_C = 112; /*0x694fe6*/
-        *(unsigned short *)&v57.q024 = v27; /*0x694ff1*/
-        *(unsigned short *)&v57.__pad_0[38] = v31; /*0x694ff9*/
+        *(unsigned int *)&Buffer.u32_C = 112; /*0x694fe6*/
+        *(unsigned short *)&Buffer.q024 = v27; /*0x694ff1*/
+        *(unsigned short *)&Buffer.__pad_0[38] = v31; /*0x694ff9*/
         if ( v31 >= 192 ) /*0x695001*/
-          *(unsigned short *)&v57.__pad_0[38] = 192; /*0x695003*/
-        v31 -= *(uint16_t *)&v57.__pad_0[38]; /*0x695021*/
+          *(unsigned short *)&Buffer.__pad_0[38] = 192; /*0x695003*/
+        v31 -= *(unsigned __int16 *)&Buffer.__pad_0[38]; /*0x695021*/
         v49 = v31; /*0x695028*/
-        v41 = CCFileClass::Read(&v54, &v57.q028, *(uint16_t *)&v57.__pad_0[38]); /*0x69502c*/
-        if ( v41 == *(uint16_t *)&v57.__pad_0[38] ) /*0x695040*/
+        v41 = CCFileClass::Read(&v54, &Buffer.q028, *(unsigned __int16 *)&Buffer.__pad_0[38]); /*0x69502c*/
+        if ( v41 == *(unsigned __int16 *)&Buffer.__pad_0[38] ) /*0x695040*/
         {
           if ( v45 != -1 ) /*0x69504f*/
-            TimerGetTicks(); /*0x695055*/
+            Timer::GetTicks(); /*0x695055*/
           Debug::Log(); /*0x695072*/
-          Stream::WriteBlock((int)((int *)&unk_A8EA70), (int)&v57.u32_C, 220, 1); /*0x69508e*/
+          Stream::WriteBlock((int *)&stru_A8E960.altNextScenario[12], (int)&Buffer.u32_C, 220, 1); /*0x69508e*/
         }
         ++v27; /*0x69509e*/
         v48 += 100; /*0x6950a4*/
         if ( !a4 ) /*0x6950a8*/
           goto LABEL_70; /*0x6950a8*/
         v50 = v48 / v26; /*0x6950c5*/
-        Network::UpdateLatencyDisplay((int)&g_UIManager, 0, (double)(v48 / v26), NAN); /*0x6950d2*/
+        Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, (double)(v48 / v26), NAN); /*0x6950d2*/
       }
     }
     MessageLoop(); /*0x694dbd*/
     Event::Dispatch(); /*0x694dc2*/
     if ( v27 < v26 ) /*0x694dce*/
     {
-      if ( (&unk_A8E9C0)->GetQueueCount() < 10 ) /*0x694ddc*/
+      if ( Network::GetQueueCount((IPXManagerClass *)&stru_A8E960.nextScenario[96]) < 10 ) /*0x694ddc*/
       {
-        *(unsigned int *)&v57.u32_C = 18; /*0x694de4*/
-        *(unsigned short *)&v57.q024 = v27; /*0x694def*/
-        *(unsigned short *)&v57.__pad_0[38] = v31; /*0x694df7*/
+        *(unsigned int *)&Buffer.u32_C = 18; /*0x694de4*/
+        *(unsigned short *)&Buffer.q024 = v27; /*0x694def*/
+        *(unsigned short *)&Buffer.__pad_0[38] = v31; /*0x694df7*/
         if ( v31 >= 192 ) /*0x694dff*/
-          *(unsigned short *)&v57.__pad_0[38] = 192; /*0x694e01*/
-        v34 = ToWideStringChar((IUnknown *)((char *)*dword_A8DA78)); /*0x694e17*/
+          *(unsigned short *)&Buffer.__pad_0[38] = 192; /*0x694e01*/
+        v34 = ToWideStringChar(**(char ***)&stru_A8D804.__pad_3D[567]); /*0x694e17*/
         v35 = v49; /*0x694e31*/
-        strcpy(&v57.u32_10, v34); /*0x694e38*/
-        v49 = v35 - *(uint16_t *)&v57.__pad_0[38]; /*0x694e5c*/
-        v36 = CCFileClass::Read(&v54, &v57.q028, *(uint16_t *)&v57.__pad_0[38]); /*0x694e60*/
-        if ( v36 == *(uint16_t *)&v57.__pad_0[38] ) /*0x694e74*/
+        strcpy(&Buffer.u32_10, v34); /*0x694e38*/
+        v49 = v35 - *(unsigned __int16 *)&Buffer.__pad_0[38]; /*0x694e5c*/
+        v36 = CCFileClass::Read(&v54, &Buffer.q028, *(unsigned __int16 *)&Buffer.__pad_0[38]); /*0x694e60*/
+        if ( v36 == *(unsigned __int16 *)&Buffer.__pad_0[38] ) /*0x694e74*/
         {
           if ( v45 != -1 ) /*0x694e85*/
-            TimerGetTicks(); /*0x694e8b*/
+            Timer::GetTicks(); /*0x694e8b*/
           Debug::Log(); /*0x694ea6*/
           if ( a3 ) /*0x694eb7*/
           {
-            for ( i = 1; i < dword_A8DA84; ++i ) /*0x694ec5*/
+            for ( i = 1; i < *(int *)&stru_A8D804.__pad_3D[579]; ++i ) /*0x694ec5*/
             {
               do /*0x694ef6*/
               {
-                v38 = Network::SendToPlayer((int)&unk_A8E9C0, (int)&v57.u32_C, 220, 1, (wchar_t *)dword_A8DA78[i]); /*0x694eed*/
+                v38 = Network::SendToPlayer( /*0x694eed*/
+                        (int)&stru_A8E960.nextScenario[96],
+                        (int)&Buffer.u32_C,
+                        220,
+                        1,
+                        *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * i));
                 Event::Dispatch(); /*0x694eef*/
               }
               while ( !v38 ); /*0x694ef6*/
@@ -1011,11 +1039,11 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
               do /*0x694f42*/
               {
                 v40 = Network::SendToPlayer( /*0x694f39*/
-                        (int)&unk_A8E9C0,
-                        (int)&v57.u32_C,
+                        (int)&stru_A8E960.nextScenario[96],
+                        (int)&Buffer.u32_C,
                         220,
                         1,
-                        (wchar_t *)dword_A8DA78[byte_A8BB10[j]]);
+                        *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * byte_A8BB10[j]));
                 Event::Dispatch(); /*0x694f3b*/
               }
               while ( !v40 ); /*0x694f42*/
@@ -1027,32 +1055,33 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
         if ( a4 ) /*0x694f63*/
         {
           v50 = v48 / v26; /*0x694f80*/
-          Network::UpdateLatencyDisplay((int)&g_UIManager, 0, (double)(v48 / v26), NAN); /*0x694f8d*/
+          Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, (double)(v48 / v26), NAN); /*0x694f8d*/
         }
       }
       goto LABEL_70; /*0x694f92*/
     }
-    if ( (&unk_A8E9C0)->GetQueueCount() ) /*0x694f97*/
+    if ( Network::GetQueueCount((IPXManagerClass *)&stru_A8E960.nextScenario[96]) ) /*0x694f97*/
       goto LABEL_70; /*0x694f9e*/
   }
-  while ( (&unk_A8E9C0)->GetQueueCount() ); /*0x694fb0*/
+  while ( Network::GetQueueCount((IPXManagerClass *)&stru_A8E960.nextScenario[96]) ); /*0x694fb0*/
   if ( v45 != -1 ) /*0x6950f5*/
-    TimerGetTicks(); /*0x6950fb*/
+    Timer::GetTicks(); /*0x6950fb*/
   Debug::Log(); /*0x695114*/
   v42 = 1; /*0x695125*/
   if ( a4 ) /*0x695127*/
-    Network::UpdateLatencyDisplay((int)&g_UIManager, 0, 100.0, NAN); /*0x69513f*/
-  LABEL_116:
+    Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, 100.0, NAN); /*0x69513f*/
+LABEL_116:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x69517c*/
-    IPXManagerClass::destroyConnection(&unk_A8E9C0); /*0x695183*/
+    IPXManagerClass::destroyConnection((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x695183*/
   Debug::Log(); /*0x69519c*/
-  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x6951ab) */
+  *(unsigned int *)v54.__tail_0 = &CCFileClass::`vftable'; /*0x6951ab*/
   v56 = 0; /*0x6951b3*/
   Vector::Clear((int)v55); /*0x6951be*/
-  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x6951c7) */
-  result = ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x6951cf*/
-  (*((unsigned char *)&(result))) = v42; /*0x6951d4*/
+  *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x6951c7*/
+  result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x6951cf*/
+  LOBYTE(result) = v42; /*0x6951d4*/
   return result; /*0x6947de*/
+
 }
 }
 // 0x6951F0
@@ -1365,6 +1394,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 namespace gamemd {
 int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
 {
+
   int v7; // edi
   void *v8; // ebp
   signed int v9; // esi
@@ -1390,7 +1420,7 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
   char v31[64]; // [esp+174h] [ebp-40h] BYREF
 
   CCFileClass::Construct(&v20, aP0); /*0x699507*/
-  if ( (uint8_t)((CCFileClass *)(&v20))->Open(0) && FileClass::Load(&v20, (const CHAR *)1) ) /*0x699526*/
+  if ( (unsigned __int8)CCFileClass::Open(&v20, 0) && FileClass::Load(&v20, (const CHAR *)1) ) /*0x699526*/
   {
     v7 = 0; /*0x699533*/
     v8 = 0; /*0x699535*/
@@ -1399,8 +1429,8 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
       v7 += 5; /*0x69953b*/
       v9 = v7 * CCFileClass::GetSize(&v20) / 100; /*0x69955b*/
       if ( v8 ) /*0x69955d*/
-        operator delete((v8)); /*0x699560*/
-      v8 = operator new(v9 + 1); /*0x699571*/
+        __3_YAXPAX_Z(v8); /*0x699560*/
+      v8 = (void *)__2_YAPAXI_Z(v9 + 1); /*0x699571*/
       if ( !v8 ) /*0x699578*/
         break; /*0x699578*/
       BufferIOFileClass::Seek(&v20, 0, 0); /*0x699584*/
@@ -1423,8 +1453,8 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
             v17 = v13 + 1; /*0x6995f5*/
             v15 = (v13 + 1) * CCFileClass::GetSize(&v20) / 100; /*0x699616*/
             if ( v14 ) /*0x699618*/
-              operator delete((v14)); /*0x69961b*/
-            v14 = operator new(v15 + 1); /*0x69962c*/
+              __3_YAXPAX_Z(v14); /*0x69961b*/
+            v14 = (void *)__2_YAPAXI_Z(v15 + 1); /*0x69962c*/
             if ( !v14 ) /*0x699633*/
               goto LABEL_20; /*0x699633*/
             BufferIOFileClass::Seek(&v20, -v15, 2u); /*0x699644*/
@@ -1439,45 +1469,45 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
               Node::Init((MixFileClass *)&v27.needsSave_flag); /*0x6996bc*/
               v27.INIClass_field_3C = 0; /*0x6996d5*/
               v28 = 0; /*0x6996dc*/
-              /* X11: vtable install elided (implicit via CCINIClass virtuals 0x6996e3) */
+              *(unsigned int *)v27.__pad_0 = &CCINIClass_Vtable; /*0x6996e3*/
               v25.Buffer_field_14 = 0; /*0x6996ea*/
               v25.Buffer_field_18 = 0; /*0x6996f1*/
-              v25.Buffer_field_10 = (int)&vt_Straw; /*0x6996f8*/
+              v25.Buffer_field_10 = (int)&Straw::`vftable'; /*0x6996f8*/
               Buffer::Init((Buffer *)&v25.Buffer_field_1C, (int)v8, v19 - (unsigned char *)v8); /*0x699703*/
               v26 = 0; /*0x69970f*/
-              v25.Buffer_field_10 = (int)&vt_BufferStraw; /*0x699720*/
-              CCINIClass::LoadAndVerifyDigest((int *)v27.vtable1, (int)&v25.Buffer_field_10, 0, 0); /*0x69972b*/
+              v25.Buffer_field_10 = (int)&BufferStraw::`vftable'; /*0x699720*/
+              CCINIClass::LoadAndVerifyDigest((int *)v27.__pad_0, (int)&v25.Buffer_field_10, 0, 0); /*0x69972b*/
               v29.headNode[0] = 0; /*0x699737*/
               v29.headNode[1] = 0; /*0x69973e*/
               INISectionList::Constructor((INISectionList *)&v29.headNode[2]); /*0x699745*/
               Node::Init((MixFileClass *)&v29.needsSave_flag); /*0x699751*/
-              /* X11: vtable install elided (implicit via CCINIClass virtuals 0x699756) */
+              *(unsigned int *)v29.__pad_0 = &CCINIClass_Vtable; /*0x699756*/
               v29.INIClass_field_3C = 0; /*0x699764*/
               v30 = 0; /*0x69976b*/
-              v23.__pad_004 = 0; /*0x69977f*/
+              v23.Straw_field_0x04 = 0; /*0x69977f*/
               v24 = 0; /*0x699786*/
-              /* X11: vtable install elided (implicit via Straw virtuals 0x69978d) */
+              *(unsigned int *)v23.__pad_0 = &Straw::`vftable'; /*0x69978d*/
               Buffer::Init(&v25, (int)v14, strlen((const char *)v14) + 1); /*0x699798*/
               v25.Buffer_field_0C = 0; /*0x6997ae*/
-              /* X11: vtable install elided (implicit via BufferStraw virtuals 0x6997b5) */
-              CCINIClass::LoadAndVerifyDigest((int *)v29.vtable1, (int)&v23, 0, 0); /*0x6997c0*/
-              *a5 = INIClass::ReadInt_Overwrite((bool *)v27.vtable1, aBasic, aMinplayers, *a5); /*0x6997e5*/
-              *a6 = INIClass::ReadInt_Overwrite((bool *)v27.vtable1, aBasic, aMaxplayers, *a6); /*0x69981b*/
+              *(unsigned int *)v23.__pad_0 = &BufferStraw::`vftable'; /*0x6997b5*/
+              CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
+              *a5 = INIClass::ReadInt_Overwrite((bool *)v27.__pad_0, aBasic, aMinplayers, *a5); /*0x6997e5*/
+              *a6 = INIClass::ReadInt_Overwrite((bool *)v27.__pad_0, aBasic, aMaxplayers, *a6); /*0x69981b*/
               INIClass::GetString( /*0x699833*/
                 &v27,
                 aBasic,
-                (uint8_t *)g_INI_Key_GameMode,
+                (unsigned __int8 *)g_INI_Key_GameMode,
                 &g_INI_DefaultBuffer,
                 aP3,
                 256);
-              INIClass::GetString(&v27, aBasic, (uint8_t *)g_INI_Key_Name, g_Str_No_Name, v31, 64); /*0x699858*/
-              BulkCharToWide(a1, (uint8_t *)v31, -1); /*0x69986a*/
-              INIClass::GetString(&v29, (uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
-              *a4 = INIClass::ReadBool_Overwrite((int *)v27.vtable1, aBasic, (uint8_t *)g_INI_Key_Official, 0); /*0x6998ba*/
+              INIClass::GetString(&v27, aBasic, (unsigned __int8 *)g_INI_Key_Name, g_Str_No_Name, v31, 64); /*0x699858*/
+              BulkCharToWide(a1, (unsigned __int8 *)v31, -1); /*0x69986a*/
+              INIClass::GetString(&v29, (unsigned __int8 *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
+              *a4 = INIClass::ReadBool_Overwrite((int *)v27.__pad_0, aBasic, (unsigned __int8 *)g_INI_Key_Official, 0); /*0x6998ba*/
               Debug::Log(); /*0x6998d9*/
               Debug::Log(); /*0x6998eb*/
-              operator delete((v8)); /*0x6998f1*/
-              operator delete((v14)); /*0x6998f7*/
+              __3_YAXPAX_Z(v8); /*0x6998f1*/
+              __3_YAXPAX_Z(v14); /*0x6998f7*/
               Vector::Clear((int)&v25); /*0x699906*/
               Straw::Dtor(&v23); /*0x699912*/
               HashTable::DestroyHashTableINIClass(&v29); /*0x69991e*/
@@ -1488,8 +1518,8 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
             }
             if ( v17 >= 100 ) /*0x699670*/
             {
-              operator delete((v8)); /*0x69967a*/
-              operator delete((v14)); /*0x699680*/
+              __3_YAXPAX_Z(v8); /*0x69967a*/
+              __3_YAXPAX_Z(v14); /*0x699680*/
               goto LABEL_20; /*0x699688*/
             }
             v13 = v17; /*0x699672*/
@@ -1498,17 +1528,18 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
       }
       if ( v7 >= 100 ) /*0x6995c7*/
       {
-        operator delete((v8)); /*0x6995ce*/
+        __3_YAXPAX_Z(v8); /*0x6995ce*/
         break; /*0x6995d6*/
       }
     }
   }
-  LABEL_20:
-  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x699947) */
+LABEL_20:
+  *(unsigned int *)v20.__tail_0 = &CCFileClass::`vftable'; /*0x699947*/
   v22 = 0; /*0x699953*/
   Vector::Clear((int)v21); /*0x69995a*/
-  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x699963) */
-  return ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x699970*/
+  *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x699963*/
+  return BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x699970*/
+
 }
 }
 // 0x69B690
@@ -1519,8 +1550,8 @@ int ObjectClass::sub_69B690()
   int result; // eax
   int v3; // edi
   int v4; // edx
-  int *v5; // esi
-  int v6; // ecx
+  unsigned int **v5; // esi
+  unsigned int *v6; // ecx
   int v7; // ecx
   int v8; // ecx
   char *i; // edx
@@ -1534,9 +1565,9 @@ int ObjectClass::sub_69B690()
     v4 = 0; /*0x69b6b9*/
     if ( v3 <= 0 ) /*0x69b6bd*/
     {
-      LABEL_10:
+LABEL_10:
       v8 = 0; /*0x69b6e5*/
-      for ( i = &this->hasParachute; *(unsigned int *)i != result; i += 4 ) /*0x69b6e7*/
+      for ( i = this->hasParachute; *(unsigned int *)i != result; i += 4 ) /*0x69b6e7*/
       {
         if ( ++v8 >= 8 ) /*0x69b6f8*/
           return result; /*0x69b6f8*/
@@ -1544,14 +1575,14 @@ int ObjectClass::sub_69B690()
     }
     else
     {
-      v5 = (int *)this->u32_2840; /*0x69b6bf*/
+      v5 = (unsigned int **)this->u32_2840; /*0x69b6bf*/
       while ( 1 ) /*0x69b6c5*/
       {
         v6 = *v5; /*0x69b6c5*/
-        if ( *(unsigned int *)(*v5 + 87) == -2 && *(unsigned int *)(v6 + 83) == -1 ) /*0x69b6d0*/
+        if ( *(unsigned int *)((char *)*v5 + 87) == -2 && *(unsigned int *)((char *)v6 + 83) == -1 ) /*0x69b6d0*/
           v7 = -2; /*0x69b6d2*/
         else
-          v7 = *(unsigned int *)(v6 + 83); /*0x69b6d6*/
+          v7 = *(unsigned int *)((char *)v6 + 83); /*0x69b6d6*/
         if ( v7 == result ) /*0x69b6db*/
           break; /*0x69b6db*/
         ++v4; /*0x69b6dd*/

@@ -87,23 +87,25 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5, void *a5_2, 
 namespace gamemd {
 bool BSurface::CreateTripleBuffer(void *a1)
 {
+
+  int v2; // ecx
   void (***v3)(unsigned int, int); // ecx
   int v4; // ecx
   void (***v5)(unsigned int, int); // ecx
   int v6; // ecx
   void (***v7)(unsigned int, int); // ecx
-  unsigned int *v8; // edi
-  int v9; // eax
+  int v8; // edi
+  __int16 *v9; // eax
   int v10; // ebx
   int v11; // ebp
   int v12; // eax
-  unsigned int *v13; // edi
-  int v14; // eax
+  int v13; // edi
+  __int16 *v14; // eax
   int v15; // ebx
   int v16; // ebp
   int v17; // eax
-  unsigned int *v18; // edi
-  int v19; // eax
+  int v18; // edi
+  __int16 *v19; // eax
   int v20; // ebx
   int v21; // ebp
   int v22; // eax
@@ -111,32 +113,32 @@ bool BSurface::CreateTripleBuffer(void *a1)
 
   if ( this->Width ) /*0x7b8c66*/
   {
-    int v2 = this->q044; // ecx /*0x7b8c6f*/
+    v2 = this->q044; /*0x7b8c6f*/
     if ( v2 /*0x7b8c9a*/
-      && (*(int16_t *)(this->Width + 2) > (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2)
-       || *(int16_t *)(this->Width + 4) > (*(int (**)(unsigned int))(*this->q044 + 128))(this->q044)) )
+      && (*(__int16 *)(this->Width + 2) > (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2)
+       || *(__int16 *)(this->Width + 4) > (*(int (**)(unsigned int))(*this->q044 + 128))(this->q044)) )
     {
-      v3 = *(void (****)(unsigned int, int))&this->q110; /*0x7b8c9c*/
+      v3 = *(void (****)(unsigned int, int))(&this->q044); /*0x7b8c9c*/
       if ( v3 ) /*0x7b8ca1*/
         (**v3)(v3, 1); /*0x7b8ca7*/
       this->q044 = 0; /*0x7b8ca9*/
     }
     v4 = this->q058; /*0x7b8cac*/
     if ( v4 /*0x7b8cd7*/
-      && (*(int16_t *)(this->Width + 2) > (*(int (**)(int))(*(unsigned int *)v4 + 124))(v4)
-       || *(int16_t *)(this->Width + 4) > (*(int (**)(unsigned int))(*this->q058 + 128))(this->q058)) )
+      && (*(__int16 *)(this->Width + 2) > (*(int (**)(int))(*(unsigned int *)v4 + 124))(v4)
+       || *(__int16 *)(this->Width + 4) > (*(int (**)(unsigned int))(*this->q058 + 128))(this->q058)) )
     {
-      v5 = *(void (****)(unsigned int, int))(&this->Height8); /*0x7b8cd9*/
+      v5 = *(void (****)(unsigned int, int))(&this->q058); /*0x7b8cd9*/
       if ( v5 ) /*0x7b8cde*/
         (**v5)(v5, 1); /*0x7b8ce4*/
       this->q058 = 0; /*0x7b8ce6*/
     }
     v6 = this->q06C; /*0x7b8ce9*/
     if ( v6 /*0x7b8d14*/
-      && (*(int16_t *)(this->Width + 2) > (*(int (**)(int))(*(unsigned int *)v6 + 124))(v6)
-       || *(int16_t *)(this->Width + 4) > (*(int (**)(unsigned int))(*this->q06C + 128))(this->q06C)) )
+      && (*(__int16 *)(this->Width + 2) > (*(int (**)(int))(*(unsigned int *)v6 + 124))(v6)
+       || *(__int16 *)(this->Width + 4) > (*(int (**)(unsigned int))(*this->q06C + 128))(this->q06C)) )
     {
-      v7 = *(void (****)(unsigned int, int))&this->q1B0; /*0x7b8d16*/
+      v7 = *(void (****)(unsigned int, int))(&this->q06C); /*0x7b8d16*/
       if ( v7 ) /*0x7b8d1b*/
         (**v7)(v7, 1); /*0x7b8d21*/
       this->q06C = 0; /*0x7b8d23*/
@@ -145,20 +147,20 @@ bool BSurface::CreateTripleBuffer(void *a1)
     {
       if ( !this->q044 ) /*0x7b8d33*/
       {
-        v8 = (unsigned int *)(operator new(0x20u)); /*0x7b8d3f*/
+        v8 = __2_YAPAXI_Z(0x20u); /*0x7b8d3f*/
         if ( v8 ) /*0x7b8d46*/
         {
           v9 = this->Width; /*0x7b8d4b*/
-          v10 = *(int16_t *)(v9 + 4); /*0x7b8d50*/
-          v11 = *(int16_t *)(v9 + 2); /*0x7b8d54*/
+          v10 = v9[2]; /*0x7b8d50*/
+          v11 = v9[1]; /*0x7b8d54*/
           v12 = (*(int (**)(unsigned int))(*this->ptr_24 + 112))(this->ptr_24); /*0x7b8d58*/
-          v8[4] = v12; /*0x7b8d5b*/
-          v8[1] = v11; /*0x7b8d6a*/
-          v8[2] = v10; /*0x7b8d6d*/
-          v8[3] = 0; /*0x7b8d70*/
-          *v8 = (unsigned int)(&XSurface_Vtable); /*0x7b8d77*/
-          Buffer::Init(v8 + 5, 0, v10 * v11 * v12); /*0x7b8d7d*/
-          *v8 = (unsigned int)(&BSurface_Vtable); /*0x7b8d82*/
+          *(unsigned int *)(v8 + 16) = v12; /*0x7b8d5b*/
+          *(unsigned int *)(v8 + 4) = v11; /*0x7b8d6a*/
+          *(unsigned int *)(v8 + 8) = v10; /*0x7b8d6d*/
+          *(unsigned int *)(v8 + 12) = 0; /*0x7b8d70*/
+          *(unsigned int *)v8 = &XSurface_Vtable; /*0x7b8d77*/
+          Buffer::Init((Buffer *)(v8 + 20), 0, v10 * v11 * v12); /*0x7b8d7d*/
+          *(unsigned int *)v8 = &BSurface_Vtable; /*0x7b8d82*/
         }
         else
         {
@@ -168,20 +170,20 @@ bool BSurface::CreateTripleBuffer(void *a1)
       }
       if ( !this->q058 ) /*0x7b8d8f*/
       {
-        v13 = (unsigned int *)(operator new(0x20u)); /*0x7b8d9d*/
+        v13 = __2_YAPAXI_Z(0x20u); /*0x7b8d9d*/
         if ( v13 ) /*0x7b8da4*/
         {
           v14 = this->Width; /*0x7b8da6*/
-          v15 = *(int16_t *)(v14 + 4); /*0x7b8dac*/
-          v16 = *(int16_t *)(v14 + 2); /*0x7b8db0*/
+          v15 = v14[2]; /*0x7b8dac*/
+          v16 = v14[1]; /*0x7b8db0*/
           v17 = (*(int (**)(unsigned int))(*this->ptr_24 + 112))(this->ptr_24); /*0x7b8db6*/
-          v13[4] = v17; /*0x7b8db9*/
-          v13[1] = v16; /*0x7b8dc8*/
-          v13[2] = v15; /*0x7b8dcb*/
-          v13[3] = 0; /*0x7b8dce*/
-          *v13 = (unsigned int)(&XSurface_Vtable); /*0x7b8dd5*/
-          Buffer::Init(v13 + 5, 0, v15 * v16 * v17); /*0x7b8ddb*/
-          *v13 = (unsigned int)(&BSurface_Vtable); /*0x7b8de0*/
+          *(unsigned int *)(v13 + 16) = v17; /*0x7b8db9*/
+          *(unsigned int *)(v13 + 4) = v16; /*0x7b8dc8*/
+          *(unsigned int *)(v13 + 8) = v15; /*0x7b8dcb*/
+          *(unsigned int *)(v13 + 12) = 0; /*0x7b8dce*/
+          *(unsigned int *)v13 = &XSurface_Vtable; /*0x7b8dd5*/
+          Buffer::Init((Buffer *)(v13 + 20), 0, v15 * v16 * v17); /*0x7b8ddb*/
+          *(unsigned int *)v13 = &BSurface_Vtable; /*0x7b8de0*/
         }
         else
         {
@@ -191,20 +193,20 @@ bool BSurface::CreateTripleBuffer(void *a1)
       }
       if ( !this->q06C ) /*0x7b8ded*/
       {
-        v18 = (unsigned int *)(operator new(0x20u)); /*0x7b8dfb*/
+        v18 = __2_YAPAXI_Z(0x20u); /*0x7b8dfb*/
         if ( v18 ) /*0x7b8e02*/
         {
           v19 = this->Width; /*0x7b8e07*/
-          v20 = *(int16_t *)(v19 + 4); /*0x7b8e0c*/
-          v21 = *(int16_t *)(v19 + 2); /*0x7b8e10*/
+          v20 = v19[2]; /*0x7b8e0c*/
+          v21 = v19[1]; /*0x7b8e10*/
           v22 = (*(int (**)(unsigned int))(*this->ptr_24 + 112))(this->ptr_24); /*0x7b8e14*/
-          v18[4] = v22; /*0x7b8e17*/
-          v18[1] = v21; /*0x7b8e26*/
-          v18[2] = v20; /*0x7b8e29*/
-          v18[3] = 0; /*0x7b8e2c*/
-          *v18 = (unsigned int)(&XSurface_Vtable); /*0x7b8e33*/
-          Buffer::Init(v18 + 5, 0, v20 * v21 * v22); /*0x7b8e39*/
-          *v18 = (unsigned int)(&BSurface_Vtable); /*0x7b8e3e*/
+          *(unsigned int *)(v18 + 16) = v22; /*0x7b8e17*/
+          *(unsigned int *)(v18 + 4) = v21; /*0x7b8e26*/
+          *(unsigned int *)(v18 + 8) = v20; /*0x7b8e29*/
+          *(unsigned int *)(v18 + 12) = 0; /*0x7b8e2c*/
+          *(unsigned int *)v18 = &XSurface_Vtable; /*0x7b8e33*/
+          Buffer::Init((Buffer *)(v18 + 20), 0, v20 * v21 * v22); /*0x7b8e39*/
+          *(unsigned int *)v18 = &BSurface_Vtable; /*0x7b8e3e*/
         }
         else
         {
@@ -217,9 +219,10 @@ bool BSurface::CreateTripleBuffer(void *a1)
   }
   else
   {
-    (*((unsigned char *)&(result))) = 0; /*0x7b8e70*/
+    LOBYTE(result) = 0; /*0x7b8e70*/
   }
   return result; /*0x7b8e62*/
+
 }
 }
 // 0x7BC970
@@ -227,58 +230,68 @@ namespace gamemd {
 unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
 {
 
-  void *v13; // ecx
-  void *Buffer; // ecx
+  int v6; // edi
+  int v7; // ecx
+  int v8; // eax
+  void *v9; // edi
+  int v10; // edi
+  int v11; // eax
+  int v12; // ecx
+  int v13; // ecx
+  int v14; // eax
+  int v15; // eax
+  int v16; // ecx
+  int v17; // ecx
+  int v18; // edx
+  int Buffer; // ecx
 
-  int v6 = a2; // edi /*0x7bc975*/
-  int v7 = a4; // ecx /*0x7bc979*/
-  int v8 = a5; // eax /*0x7bc97f*/
+  v6 = a2; /*0x7bc975*/
+  v7 = a4; /*0x7bc979*/
+  v8 = a5; /*0x7bc97f*/
   this->u32_2C = a5; /*0x7bc983*/
-  *(unsigned int *)this->XSurface = v6; /*0x7bc988*/
-  int v9 = a3; // edi /*0x7bc98a*/
+  *(unsigned int *)this->__pad_0 = v6; /*0x7bc988*/
+  v9 = (void *)a3; /*0x7bc98a*/
   this->u32_28 = v7; /*0x7bc98e*/
-  this->Width = (void *)(v9); /*0x7bc991*/
+  this->Width = (int)v9; /*0x7bc991*/
   this->Height = v7; /*0x7bc994*/
   this->LockCount = v8; /*0x7bc997*/
   this->u32_20 = 2 * v7 * v8; /*0x7bc99f*/
-  int v10; // edi
-  v10 = (int)(__2_YAPAXI_Z(0x20u)); /*0x7bc9a7*/
+  v10 = __2_YAPAXI_Z(0x20u); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/
   {
-    int v11 = this->u32_28; // eax /*0x7bc9b2*/
-    int v12 = this->u32_2C; // ecx /*0x7bc9b5*/
+    v11 = this->u32_28; /*0x7bc9b2*/
+    v12 = this->u32_2C; /*0x7bc9b5*/
     *(unsigned int *)(v10 + 4) = v11; /*0x7bc9b8*/
     *(unsigned int *)(v10 + 8) = v12; /*0x7bc9c0*/
     *(unsigned int *)(v10 + 12) = 0; /*0x7bc9c8*/
-    *(unsigned int *)v10 = (unsigned int)(&XSurface_Vtable); /*0x7bc9cb*/
+    *(unsigned int *)v10 = &XSurface_Vtable; /*0x7bc9cb*/
     *(unsigned int *)(v10 + 16) = 2; /*0x7bc9d1*/
     Buffer::Init((Buffer *)(v10 + 20), 0, 2 * v12 * v11); /*0x7bc9d8*/
-    *(unsigned int *)v10 = (unsigned int)(&BSurface_Vtable); /*0x7bc9dd*/
-    v13 = (void *)v10; /*0x7bc9e3*/
+    *(unsigned int *)v10 = &BSurface_Vtable; /*0x7bc9dd*/
+    v13 = v10; /*0x7bc9e3*/
   }
   else
   {
     v13 = 0; /*0x7bc9e7*/
   }
-  int v14 = this->u32_28; // eax /*0x7bc9ec*/
+  v14 = this->u32_28; /*0x7bc9ec*/
   a5 = this->u32_2C; /*0x7bc9ef*/
-  this->Buffer = (unsigned char *)(v13); /*0x7bc9f3*/
+  this->Buffer = v13; /*0x7bc9f3*/
   a2 = 0; /*0x7bc9f6*/
   a3 = 0; /*0x7bc9fa*/
   a4 = v14; /*0x7bc9fe*/
-  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))(v13, &a2, 0xFFFF); /*0x7bca0e*/
-  int v15; // eax
-  v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x7bca1c*/
-  int v16 = this->u32_2C; // ecx /*0x7bca1f*/
+  (*(void (**)(int, int *, int))(*(unsigned int *)v13 + 20))(v13, &a2, 0xFFFF); /*0x7bca0e*/
+  v15 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x7bca1c*/
+  v16 = this->u32_2C; /*0x7bca1f*/
   this->u32_18 = v15; /*0x7bca22*/
-  int v17 = this->u32_28 * v16; // ecx /*0x7bca25*/
+  v17 = this->u32_28 * v16; /*0x7bca25*/
   this->BytesPerPixel = 0; /*0x7bca29*/
-  this->ptr_24 = (void *)(0x8000); /*0x7bca2c*/
-  int v18 = v15 + 2 * v17; // edx /*0x7bca33*/
+  this->ptr_24 = 0x8000; /*0x7bca2c*/
+  v18 = v15 + 2 * v17; /*0x7bca33*/
   Buffer = this->Buffer; /*0x7bca36*/
   this->u32_1C = v18; /*0x7bca39*/
-  (*(void (**)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x7bca3e*/
-  return this->XSurface; /*0x7bca43*/
+  (*(void (**)(int))(*(unsigned int *)Buffer + 96))(Buffer); /*0x7bca3e*/
+  return this->__pad_0; /*0x7bca43*/
 
 }
 }

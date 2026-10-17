@@ -26,25 +26,25 @@ namespace gamemd {  // G42.18 ns repair
 Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
 
-  int referenceCount; // eax
+  int DynamicArray_field_0x10; // eax
   int v4; // ebx
   int v5; // ebp
   const char *v6; // ebx
   int v7; // eax
-  int v8; // ebp
+  char *v8; // ebp
   int v9; // edi
-  int occupant; // edx
+  char *v10; // edx
   int v11; // eax
   int v12; // ebp
   int v13; // eax
   char *v14; // edx
   int v15; // esi
-  int abstractFlags; // eax
+  int v16; // eax
   int v17; // esi
   int v18; // esi
   String *v19; // ecx
   int v20; // esi
-  char *vtable3; // eax
+  int v21; // eax
   int v22; // esi
   int v23; // esi
   String *v24; // ecx
@@ -62,7 +62,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
   memset(v34, 0, 513); /*0x7aa893*/
   *(unsigned int *)&v33[4] = 0; /*0x7aa89b*/
   memset(&v33[12], 0, 12); /*0x7aa8a1*/
-  if ( !BYTE1(DataGlobal_B77DC0) ) /*0x7aa8ad*/
+  if ( !byte_B77DC1 ) /*0x7aa8ad*/
   {
     *(unsigned int *)&v33[8] = 0; /*0x7aa8c0*/
     if ( a2 == 262459 ) /*0x7aa8ca*/
@@ -71,11 +71,11 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     }
     else
     {
-      if ( CChatEventSink::Check((CChatEventSink *)&g_WOL_RequestState, &v33[8], 0) ) /*0x7aa8e4*/
-        ((CChatEventSink *)&g_WOL_RequestState)->EnsureCapacity(0); /*0x7aa8f3*/
+      if ( CChatEventSink::Check((CChatEventSink *)&dword_B76520, &v33[8], 0) ) /*0x7aa8e4*/
+        CChatEventSink::EnsureCapacity((CChatEventSink *)&dword_B76520, 0); /*0x7aa8f3*/
       if ( a2 < 0 ) /*0x7aa8fa*/
       {
-        LABEL_103:
+LABEL_103:
         *(unsigned int *)&v33[12] = 0; /*0x7aaf7c*/
         __3_YAXPAX_Z(*(void **)&v33[20]); /*0x7aaf89*/
         goto LABEL_104; /*0x7aaf89*/
@@ -84,30 +84,30 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
       {
         Debug::Log(); /*0x7aa91d*/
         memset(&v33[32], 0, 0x10Cu); /*0x7aa930*/
-        referenceCount = dword_B76AE0; /*0x7aa932*/
+        DynamicArray_field_0x10 = stru_B76AD0.DynamicArray_field_0x10; /*0x7aa932*/
         v4 = 0; /*0x7aa937*/
-        if ( dword_B76AE0 > 0 ) /*0x7aa93b*/
+        if ( stru_B76AD0.DynamicArray_field_0x10 > 0 ) /*0x7aa93b*/
         {
           v5 = 0; /*0x7aa93d*/
           do /*0x7aa985*/
           {
-            if ( v5 >= 0 && v4 < referenceCount ) /*0x7aa945*/
-              memcpy(&v33[32], (const void *)(stru_B76AC4.occupant + v5), 0x10Cu); /*0x7aa959*/
+            if ( v5 >= 0 && v4 < DynamicArray_field_0x10 ) /*0x7aa945*/
+              qmemcpy(&v33[32], (char *)dword_B76AE8 + v5, 0x10Cu); /*0x7aa959*/
             if ( *(unsigned int *)&v33[72] != -1 ) /*0x7aa962*/
             {
               Array::InsertElement((Array *)&v33[12], &v33[32], *(int *)&v33[12]); /*0x7aa972*/
-              referenceCount = dword_B76AE0; /*0x7aa977*/
+              DynamicArray_field_0x10 = stru_B76AD0.DynamicArray_field_0x10; /*0x7aa977*/
             }
             ++v4; /*0x7aa97c*/
             v5 += 268; /*0x7aa97d*/
           }
-          while ( v4 < referenceCount ); /*0x7aa985*/
+          while ( v4 < DynamicArray_field_0x10 ); /*0x7aa985*/
         }
-        dword_B76AE0 = 0; /*0x7aa987*/
+        stru_B76AD0.DynamicArray_field_0x10 = 0; /*0x7aa987*/
       }
       else
       {
-        *(unsigned int *)&g_WOL_AuthPool = 0; /*0x7aa910*/
+        *(unsigned int *)stru_B73E10.__pad_0 = 0; /*0x7aa910*/
       }
     }
     v6 = a3; /*0x7aa98d*/
@@ -121,27 +121,27 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
           {
             if ( *((unsigned int *)v6 + 10) != -1 ) /*0x7aa9cd*/
             {
-              v7 = stru_B76AC4.?; /*0x7aa9d3*/
+              v7 = stru_B76AD0.DynamicArray_field_0x10; /*0x7aa9d3*/
               v8 = 0; /*0x7aa9d8*/
               v9 = 0; /*0x7aa9da*/
-              if ( stru_B76AC4.? > 0 ) /*0x7aa9de*/
+              if ( stru_B76AD0.DynamicArray_field_0x10 > 0 ) /*0x7aa9de*/
               {
-                occupant = stru_B76AC4.occupant; /*0x7aa9e4*/
+                v10 = (char *)dword_B76AE8; /*0x7aa9e4*/
                 while ( 1 ) /*0x7aa9ea*/
                 {
                   if ( v9 >= 0 && v9 < v7 ) /*0x7aa9f0*/
-                    v8 = occupant; /*0x7aa9f2*/
+                    v8 = v10; /*0x7aa9f2*/
                   if ( v8 ) /*0x7aa9f6*/
                   {
-                    v11 = strcmp(&v8->u32_34, v6 + 52); /*0x7aaa04*/
+                    v11 = strcmp(v8 + 52, v6 + 52); /*0x7aaa04*/
                     v6 = a3; /*0x7aaa27*/
                     if ( !v11 ) /*0x7aaa30*/
                       break; /*0x7aaa30*/
                   }
-                  v7 = stru_B76AC4.?; /*0x7aaa32*/
+                  v7 = stru_B76AD0.DynamicArray_field_0x10; /*0x7aaa32*/
                   ++v9; /*0x7aaa37*/
-                  occupant += 268; /*0x7aaa38*/
-                  if ( v9 >= stru_B76AC4.? ) /*0x7aaa40*/
+                  v10 += 268; /*0x7aaa38*/
+                  if ( v9 >= stru_B76AD0.DynamicArray_field_0x10 ) /*0x7aaa40*/
                     goto LABEL_88; /*0x7aaa40*/
                 }
                 Debug::Log(); /*0x7aaa54*/
@@ -151,7 +151,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
           }
           else
           {
-            Array::InsertElement((Array *)&dword_B76AE0, v6, dword_B76AE0); /*0x7aaa74*/
+            Array::InsertElement((Array *)&stru_B76AD0.DynamicArray_field_0x10, v6, stru_B76AD0.DynamicArray_field_0x10); /*0x7aaa74*/
             v12 = 0; /*0x7aaa79*/
             v13 = *(unsigned int *)&v33[12]; /*0x7aaa7b*/
             if ( *(int *)&v33[12] > 0 ) /*0x7aaa81*/
@@ -160,7 +160,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
               while ( 1 ) /*0x7aaa8b*/
               {
                 if ( v12 >= 0 && v12 < v13 ) /*0x7aaa91*/
-                  memcpy(&v33[32], v14, 0x10Cu); /*0x7aaa9e*/
+                  qmemcpy(&v33[32], v14, 0x10Cu); /*0x7aaa9e*/
                 if ( !strcmp(&v33[84], v6 + 52) ) /*0x7aaaad*/
                   break; /*0x7aaaad*/
                 v13 = *(unsigned int *)&v33[12]; /*0x7aaad4*/
@@ -175,64 +175,64 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
               Debug::Log(); /*0x7aab01*/
               *((unsigned int *)a3 + 10) = v15; /*0x7aab09*/
             }
-            LABEL_43:
+LABEL_43:
             String::Assign_Bool((String *)v33, v6 + 52); /*0x7aab0c*/
-            ((CChatEventSink *)v33)->EncodeString(39); /*0x7aab1f*/
-            ((String *)v33)->ToLower(); /*0x7aab28*/
+            CChatEventSink::EncodeString((CChatEventSink *)v33, 39); /*0x7aab1f*/
+            String::ToLower((String *)v33); /*0x7aab28*/
             if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x7aab41*/
             {
               unknown_libname_73(&v33[24]); /*0x7aab4b*/
-              abstractFlags = g_WebBrowserConfig.u32_34; /*0x7aab50*/
+              v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aab50*/
               v17 = 0; /*0x7aab55*/
-              if ( g_WebBrowserConfig.u32_34 <= 0 ) /*0x7aab59*/
+              if ( *(int *)stru_B777A0.__pad_0 <= 0 ) /*0x7aab59*/
               {
-                LABEL_51:
+LABEL_51:
                 v18 = 0; /*0x7aab96*/
-                if ( abstractFlags < 0 ) /*0x7aab9a*/
-                  v18 = abstractFlags; /*0x7aab9c*/
-                if ( v18 >= dword_B777A4 ) /*0x7aaba4*/
+                if ( v16 < 0 ) /*0x7aab9a*/
+                  v18 = v16; /*0x7aab9c*/
+                if ( v18 >= stru_B777A0.DynamicArray_field_0x04 ) /*0x7aaba4*/
                 {
-                  ((DynamicVector *)&dword_B777A0)->EnsureCapacity(); /*0x7aabab*/
-                  abstractFlags = dword_B777A0; /*0x7aabb0*/
+                  DynamicVector::EnsureCapacity((DynamicVector *)&stru_B777A0); /*0x7aabab*/
+                  v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aabb0*/
                 }
-                if ( abstractFlags >= dword_B777A4 ) /*0x7aabbb*/
+                if ( v16 >= stru_B777A0.DynamicArray_field_0x04 ) /*0x7aabbb*/
                 {
-                  ((DynamicVector *)&dword_B777A0)->EnsureCapacity(); /*0x7aabc2*/
-                  abstractFlags = dword_B777A0; /*0x7aabc7*/
+                  DynamicVector::EnsureCapacity((DynamicVector *)&stru_B777A0); /*0x7aabc2*/
+                  v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aabc7*/
                 }
-                if ( v18 < abstractFlags ) /*0x7aabce*/
+                if ( v18 < v16 ) /*0x7aabce*/
                 {
                   memcpy( /*0x7aabeb*/
-                    (void *)(g_WebBrowserConfig.? + 4 * v18 + 4),
-                    (const void *)(g_WebBrowserConfig.? + 4 * v18),
-                    4 * (abstractFlags + 0x3FFFFFFF * v18));
-                  abstractFlags = dword_B777A0; /*0x7aabf0*/
+                    (void *)(stru_B777A0.DynamicArray_field_0x08 + 4 * v18 + 4),
+                    (const void *)(stru_B777A0.DynamicArray_field_0x08 + 4 * v18),
+                    4 * (v16 + 0x3FFFFFFF * v18));
+                  v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aabf0*/
                 }
-                v19 = (String *)(dword_B777A8 + 4 * v18); /*0x7aabfe*/
+                v19 = (String *)(stru_B777A0.DynamicArray_field_0x08 + 4 * v18); /*0x7aabfe*/
                 if ( v19 ) /*0x7aac03*/
                 {
                   String::AssignFromPtr(v19, (const char **)v33); /*0x7aac0a*/
-                  abstractFlags = dword_B777A0; /*0x7aac0f*/
+                  v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aac0f*/
                 }
-                dword_B777A0 = abstractFlags + 1; /*0x7aac15*/
+                *(unsigned int *)stru_B777A0.__pad_0 = v16 + 1; /*0x7aac15*/
               }
               else
               {
                 while ( 1 ) /*0x7aab5b*/
                 {
-                  if ( v17 >= 0 && v17 < abstractFlags ) /*0x7aab61*/
-                    String::Reassign((String *)&v33[24], (const char **)(dword_B777A8 + 4 * v17)); /*0x7aab71*/
+                  if ( v17 >= 0 && v17 < v16 ) /*0x7aab61*/
+                    String::Reassign((String *)&v33[24], (const char **)(stru_B777A0.DynamicArray_field_0x08 + 4 * v17)); /*0x7aab71*/
                   if ( (unsigned __int8)String::Compare((String *)&v33[24], (const char **)v33) ) /*0x7aab7f*/
                     break; /*0x7aab7f*/
-                  abstractFlags = g_WebBrowserConfig.u32_34; /*0x7aab8c*/
-                  if ( ++v17 >= g_WebBrowserConfig.u32_34 ) /*0x7aab94*/
+                  v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aab8c*/
+                  if ( ++v17 >= *(int *)stru_B777A0.__pad_0 ) /*0x7aab94*/
                     goto LABEL_51; /*0x7aab94*/
                 }
               }
               DeleteAndZero((ObjectClass *)&v33[24]); /*0x7aac1e*/
             }
-            v20 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool /*0x7aac42*/
-              + 4 * (dword_B76548(v33) & ((1 << SLOBYTE(DataGlobal_B7653C)) - 1)));
+            v20 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 /*0x7aac42*/
+                            + 4 * (dword_B76548(v33) & ((1 << dword_B7653C) - 1)));
             if ( v20 ) /*0x7aac47*/
             {
               while ( !(unsigned __int8)String::Compare((String *)v20, (const char **)v33) ) /*0x7aac57*/
@@ -244,62 +244,62 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
             }
             else
             {
-              LABEL_66:
+LABEL_66:
               unknown_libname_73(&v33[28]); /*0x7aac64*/
-              vtable3 = (char *)stru_B765EC.?; /*0x7aac6d*/
+              v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aac6d*/
               v22 = 0; /*0x7aac72*/
-              if ( (int)stru_B765EC.? <= 0 ) /*0x7aac76*/
+              if ( *(int *)stru_B765F8.__pad_0 <= 0 ) /*0x7aac76*/
               {
-                LABEL_72:
+LABEL_72:
                 v23 = 0; /*0x7aacb3*/
-                if ( (int)vtable3 < 0 ) /*0x7aacb7*/
-                  v23 = (int)vtable3; /*0x7aacb9*/
-                if ( v23 >= stru_B765EC.? ) /*0x7aacc1*/
+                if ( v21 < 0 ) /*0x7aacb7*/
+                  v23 = v21; /*0x7aacb9*/
+                if ( v23 >= *(int *)&stru_B765F8.DynamicVector_field_0x1[3] ) /*0x7aacc1*/
                 {
-                  ((DynamicVector *)&dword_B765F8)->EnsureCapacity(); /*0x7aacc8*/
-                  vtable3 = (char *)stru_B765EC.?; /*0x7aaccd*/
+                  DynamicVector::EnsureCapacity(&stru_B765F8); /*0x7aacc8*/
+                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aaccd*/
                 }
-                if ( (int)vtable3 >= stru_B765EC.? ) /*0x7aacd8*/
+                if ( v21 >= *(int *)&stru_B765F8.DynamicVector_field_0x1[3] ) /*0x7aacd8*/
                 {
-                  ((DynamicVector *)&dword_B765F8)->EnsureCapacity(); /*0x7aacdf*/
-                  vtable3 = (char *)dword_B765F8; /*0x7aace4*/
+                  DynamicVector::EnsureCapacity(&stru_B765F8); /*0x7aacdf*/
+                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aace4*/
                 }
-                if ( v23 < (int)vtable3 ) /*0x7aaceb*/
+                if ( v23 < v21 ) /*0x7aaceb*/
                 {
                   memcpy( /*0x7aad08*/
-                    (void *)(stru_B765EC.? + 4 * v23 + 4),
-                    (const void *)(stru_B765EC.? + 4 * v23),
-                    4 * (unsigned int)&vtable3[0x3FFFFFFF * v23]);
-                  vtable3 = (char *)dword_B765F8; /*0x7aad0d*/
+                    (void *)(stru_B765F8.DynamicVector_field_0x8 + 4 * v23 + 4),
+                    (const void *)(stru_B765F8.DynamicVector_field_0x8 + 4 * v23),
+                    4 * (v21 + 0x3FFFFFFF * v23));
+                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aad0d*/
                 }
-                v24 = (String *)(dword_B76600 + 4 * v23); /*0x7aad1b*/
+                v24 = (String *)(stru_B765F8.DynamicVector_field_0x8 + 4 * v23); /*0x7aad1b*/
                 if ( v24 ) /*0x7aad20*/
                 {
                   String::AssignFromPtr(v24, (const char **)v33); /*0x7aad27*/
-                  vtable3 = (char *)dword_B765F8; /*0x7aad2c*/
+                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aad2c*/
                 }
-                dword_B765F8 = (unsigned int)(vtable3 + 1); /*0x7aad32*/
+                *(unsigned int *)stru_B765F8.__pad_0 = v21 + 1; /*0x7aad32*/
               }
               else
               {
                 while ( 1 ) /*0x7aac78*/
                 {
-                  if ( v22 >= 0 && v22 < (int)vtable3 ) /*0x7aac7e*/
-                    String::Reassign((String *)&v33[28], (const char **)(dword_B76600 + 4 * v22)); /*0x7aac8e*/
+                  if ( v22 >= 0 && v22 < v21 ) /*0x7aac7e*/
+                    String::Reassign((String *)&v33[28], (const char **)(stru_B765F8.DynamicVector_field_0x8 + 4 * v22)); /*0x7aac8e*/
                   if ( (unsigned __int8)String::Compare((String *)&v33[28], (const char **)v33) ) /*0x7aac9c*/
                     break; /*0x7aac9c*/
-                  vtable3 = (char *)stru_B765EC.?; /*0x7aaca9*/
-                  if ( ++v22 >= (int)stru_B765EC.? ) /*0x7aacb1*/
+                  v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aaca9*/
+                  if ( ++v22 >= *(int *)stru_B765F8.__pad_0 ) /*0x7aacb1*/
                     goto LABEL_72; /*0x7aacb1*/
                 }
               }
               DeleteAndZero((ObjectClass *)&v33[28]); /*0x7aad3b*/
             }
-            v25 = (gamemd::HashTable *)(g_WOL_HashTable); /*0x7aad40*/
+            v25 = g_WOL_HashTable; /*0x7aad40*/
             v26 = *(unsigned int *)(*(unsigned int *)v25->__pad_0 /*0x7aad5c*/
-              + 4
-              * (((int (*)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v33)
-              & ((1 << v25->HashTable_field_0x0C) - 1)));
+                            + 4
+                            * (((int (*)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v33)
+                             & ((1 << v25->HashTable_field_0x0C) - 1)));
             if ( v26 ) /*0x7aad61*/
             {
               while ( !(unsigned __int8)String::Compare((String *)v26, (const char **)v33) ) /*0x7aad71*/
@@ -311,8 +311,8 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
             }
             else
             {
-              LABEL_87:
-              strcat(v34, ((String *)v33)->GetOrEmpty()); /*0x7aad7a*/
+LABEL_87:
+              strcat(v34, String::GetOrEmpty((String *)v33)); /*0x7aad7a*/
               strcat(v34, asc_8318B8); /*0x7aadd7*/
               ++*(unsigned int *)&v33[4]; /*0x7aade5*/
             }
@@ -320,14 +320,14 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
         }
         else
         {
-          Array::InsertElement((Array *)&g_WOL_AuthPool, v6, *(int *)&g_WOL_AuthPool); /*0x7aa9ae*/
+          Array::InsertElement((Array *)&stru_B73E10, v6, *(int *)stru_B73E10.__pad_0); /*0x7aa9ae*/
         }
-        LABEL_88:
+LABEL_88:
         if ( *(int *)&v33[4] > 20 ) /*0x7aadee*/
         {
           (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(*(unsigned int *)g_UIPointerTable + 20))( /*0x7aae1f*/
             g_UIPointerTable,
-            g_WOL_ConnectFlag,
+            byte_B761A8,
             g_WOL_GameConfig,
             v34,
             g_NetworkRematchState & 0xFFFF00,
@@ -336,7 +336,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
             0);
           (*(void (**)(LPVOID, char *, int, char *, int))(*(unsigned int *)g_UIPointerTable + 56))( /*0x7aae4b*/
             g_UIPointerTable,
-            g_WOL_ConnectFlag,
+            byte_B761A8,
             g_WOL_GameConfig,
             v34,
             g_NetworkRematchState & 0xFFFF00);
@@ -351,7 +351,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
       {
         (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(*(unsigned int *)g_UIPointerTable + 20))( /*0x7aaead*/
           g_UIPointerTable,
-          g_WOL_ConnectFlag,
+          byte_B761A8,
           g_WOL_GameConfig,
           v34,
           g_NetworkRematchState & 0xFFFF00,
@@ -360,7 +360,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
           0);
         (*(void (**)(LPVOID, char *, int, char *, int))(*(unsigned int *)g_UIPointerTable + 56))( /*0x7aaed9*/
           g_UIPointerTable,
-          g_WOL_ConnectFlag,
+          byte_B761A8,
           g_WOL_GameConfig,
           v34,
           g_NetworkRematchState & 0xFFFF00);
@@ -374,7 +374,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     }
     else
     {
-      v27 = (ObjectClass *)((Dialog *)0x116)->FindByHandle(); /*0x7aaf27*/
+      v27 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x116); /*0x7aaf27*/
       if ( v27 ) /*0x7aaf2e*/
         FillBuddyListWOL(v27); /*0x7aaf32*/
       if ( *(unsigned int *)&v33[8] ) /*0x7aaf3d*/
@@ -384,7 +384,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
       else
       {
         PopulateWOLLobbyListBox(v32); /*0x7aaf3f*/
-        v28 = (HWND)((Dialog *)0x113)->FindByHandle(); /*0x7aaf49*/
+        v28 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x7aaf49*/
         v29 = v28; /*0x7aaf4e*/
         if ( v28 ) /*0x7aaf52*/
         {
@@ -398,7 +398,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
   }
   *(unsigned int *)&v33[12] = 0; /*0x7aa8af*/
   __3_YAXPAX_Z(0); /*0x7aa8b4*/
-  LABEL_104:
+LABEL_104:
   DeleteAndZero((ObjectClass *)v33); /*0x7aaf8e*/
   return 0; /*0x7aaf9a*/
 

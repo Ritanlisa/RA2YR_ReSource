@@ -124,77 +124,81 @@ bool sub_46D650()
 namespace gamemd {
 char sub_46D8B0()
 {
-  uint8_t (**vtable0)(ObjectClass *, int); // esi
+
+  char v1; // bl
+  int v2; // edi
+  const wchar_t **v3; // esi
+  char *v4; // eax
+  unsigned __int8 (**vtable0)(ObjectClass *, int); // esi
   int PlayerSide; // eax
   int v8; // [esp-4h] [ebp-10h]
 
-  char v1 = 0; // bl /*0x46d8b3*/
-  int v2 = 0; // edi /*0x46d8b5*/
-  const wchar_t **v3; // esi
-  v3 = (const wchar_t **)dword_A8DA90; /*0x46d8b7*/
+  v1 = 0; /*0x46d8b3*/
+  v2 = 0; /*0x46d8b5*/
+  v3 = (const wchar_t **)MEMORY[0xA8DA90]; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-    char *v4; // eax
     v4 = CharToWideString(&g_NetworkPlayerBuffer); /*0x46d8c1*/
     if ( !wcscmp((const wchar_t *)v4, *v3) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
     ++v3; /*0x46d8d6*/
     ++v2; /*0x46d8d9*/
-    if ( (int)v3 >= (int)&dword_A8DAB0 ) /*0x46d8e0*/
+    if ( (int)v3 >= (int)&MEMORY[0xA8DAB0] ) /*0x46d8e0*/
       return 0; /*0x46d8e7*/
   }
   if ( v2 == -1 ) /*0x46d8eb*/
     return 0; /*0x46d8f2*/
-  if ( ((int *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerSide() != *(unsigned int *)&stru_A8D600.__pad_64[7] ) /*0x46d907*/
+  if ( SessionClass::GetPlayerSide((int *)MEMORY[0xA8DA90][v2]) != *(unsigned int *)&stru_A8D600.__pad_64[7] ) /*0x46d907*/
     v1 = 1; /*0x46d909*/
   if ( dword_A8B23C ) /*0x46d913*/
   {
-    if ( (*((uint8_t (**)(ObjectClass *, unsigned int))dword_A8B23C->vfptr + 7))( /*0x46d918*/
+    if ( (*((unsigned __int8 (**)(ObjectClass *, unsigned int))dword_A8B23C->vfptr + 7))( /*0x46d918*/
            dword_A8B23C,
            *(unsigned int *)&stru_A8D600.__pad_64[7]) )
     {
-      ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetPlayerOption(*(int *)&stru_A8D600.__pad_64[7]); /*0x46d926*/
+      SessionClass::SetPlayerOption((int *)MEMORY[0xA8DA90][v2], *(int *)&stru_A8D600.__pad_64[7]); /*0x46d926*/
     }
     else if ( dword_A8B23C ) /*0x46d92f*/
     {
-      vtable0 = (uint8_t (**)(ObjectClass *, int))dword_A8B23C->vfptr; /*0x46d938*/
-      PlayerSide = ((int *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerSide(); /*0x46d93a*/
+      vtable0 = (unsigned __int8 (**)(ObjectClass *, int))dword_A8B23C->vfptr; /*0x46d938*/
+      PlayerSide = SessionClass::GetPlayerSide((int *)MEMORY[0xA8DA90][v2]); /*0x46d93a*/
       if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
         v8 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 10))(dword_A8B23C); /*0x46d958*/
-        ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetPlayerOption(v8); /*0x46d960*/
+        SessionClass::SetPlayerOption((int *)MEMORY[0xA8DA90][v2], v8); /*0x46d960*/
       }
     }
   }
-  if ( ((SessionClass *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerColor() != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d979*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)MEMORY[0xA8DA90][v2]) != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d979*/
     v1 = 1; /*0x46d97b*/
   if ( IsAvailableColorhWnd(*(int *)DataGlobal_A8D66F) ) /*0x46d97d*/
   {
-    if ( ((SessionClass *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerColor() != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d998*/
+    if ( SessionClass::GetPlayerColor((SessionClass *)MEMORY[0xA8DA90][v2]) != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d998*/
     {
-      ((int *)((unsigned int *)(dword_A8DA90))[v2])->SetPlayerColor(-2); /*0x46d9a3*/
+      SessionClass::SetPlayerColor((int *)MEMORY[0xA8DA90][v2], -2); /*0x46d9a3*/
       v1 = 1; /*0x46d9a8*/
     }
   }
   else
   {
-    ((int *)((unsigned int *)(dword_A8DA90))[v2])->SetPlayerColor(*(int *)DataGlobal_A8D66F); /*0x46d9b9*/
+    SessionClass::SetPlayerColor((int *)MEMORY[0xA8DA90][v2], *(int *)DataGlobal_A8D66F); /*0x46d9b9*/
   }
-  if ( ((SessionClass *)((unsigned int *)(dword_A8DA90))[v2])->GetPlayerColor() != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9d2*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)MEMORY[0xA8DA90][v2]) != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9d2*/
     v1 = 1; /*0x46d9d4*/
   if ( sub_4E50A0(*(int *)&DataGlobal_A8D667) ) /*0x46d9d6*/
   {
-    if ( ((int *)((unsigned int *)(dword_A8DA90))[v2])->GetOption() != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9f1*/
+    if ( SessionClass::GetOption((int *)MEMORY[0xA8DA90][v2]) != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9f1*/
     {
-      SessionClass::SetOption((int *)((unsigned int *)(dword_A8DA90))[v2], -2); /*0x46d9fc*/
+      SessionClass::SetOption((int *)MEMORY[0xA8DA90][v2], -2); /*0x46d9fc*/
       return v1; /*0x46da06*/
     }
   }
   else
   {
-    SessionClass::SetOption((int *)((unsigned int *)(dword_A8DA90))[v2], *(int *)&DataGlobal_A8D667); /*0x46da15*/
+    SessionClass::SetOption((int *)MEMORY[0xA8DA90][v2], *(int *)&DataGlobal_A8D667); /*0x46da15*/
   }
   return v1; /*0x46d8e2*/
+
 }
 }
 // 0x46DA70

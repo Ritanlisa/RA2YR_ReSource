@@ -33,20 +33,42 @@ namespace gamemd {  // G42.18 ns repair
 int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
 
-  unsigned int *v29; // [esp+14h] [ebp-18h]
-
+  unsigned int *v8; // eax
+  unsigned int *v9; // esi
+  unsigned int *v10; // ecx
+  char v11; // dl
+  unsigned short *v12; // eax
+  unsigned short *v13; // edx
+  __int16 v14; // cx
+  int v15; // eax
+  int v16; // edx
+  char *v17; // esi
+  int v18; // edi
+  bool v19; // bl
+  int *v20; // eax
+  int *v21; // ebp
+  int v22; // ecx
+  int v23; // eax
+  int v24; // eax
+  int v25; // edx
+  int v26; // edx
   unsigned int *v28; // [esp+10h] [ebp-1Ch]
-  v28 = (unsigned int *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
+  unsigned int *v29; // [esp+14h] [ebp-18h]
+  int v30; // [esp+18h] [ebp-14h] BYREF
+  int v31; // [esp+1Ch] [ebp-10h]
+  int v32; // [esp+20h] [ebp-Ch]
+  int v33; // [esp+24h] [ebp-8h]
   int i; // [esp+28h] [ebp-4h]
+
+  v28 = (unsigned int *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
-    unsigned int *v8; // eax
-    v8 = (unsigned int *)(__2_YAPAXI_Z(0x18u)); /*0x5a0189*/
-    unsigned int *v9 = v8; // esi /*0x5a018e*/
+    v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
+    v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
-      (v8)->CellConstructor(0, 0); /*0x5a019b*/
-      *v9 = (unsigned int)(&vt_DynamicVectorClass); /*0x5a01a0*/
+      VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
+      *v9 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a01a0*/
       v9->u32_14 = 10; /*0x5a01a6*/
       v9->q010 = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/
@@ -55,33 +77,25 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     {
       v29 = 0; /*0x5a01b6*/
     }
-    unsigned int *v10 = v28; // ecx /*0x5a01ba*/
-    int v31; // [esp+1Ch] [ebp-10h]
+    v10 = v28; /*0x5a01ba*/
     v31 = 0; /*0x5a01be*/
     v29->u32_14 = 3 * v28[4]; /*0x5a01cc*/
     if ( (int)v28[4] > 0 ) /*0x5a01d4*/
     {
       while ( 2 ) /*0x5a01da*/
       {
-        char v11 = 0; // dl /*0x5a01da*/
-        int v33; // [esp+24h] [ebp-8h]
+        v11 = 0; /*0x5a01da*/
         v33 = 0; /*0x5a01dc*/
         while ( 1 ) /*0x5a01f3*/
         {
-          unsigned short *v12; // eax
           v12 = (unsigned short *)(v10[1] + 4 * v31); /*0x5a01f3*/
-          unsigned short *v13; // edx
           v13 = (unsigned short *)(4 * (v11 & 7) + 9041544); /*0x5a01fe*/
-          __int16 v14 = *v13 + *v12; // cx /*0x5a0205*/
+          v14 = *v13 + *v12; /*0x5a0205*/
           LOWORD(v13) = v12[1] + v13[1]; /*0x5a020c*/
-          int v32; // [esp+20h] [ebp-Ch]
           LOWORD(v32) = v14; /*0x5a0210*/
           HIWORD(v32) = (unsigned short)v13; /*0x5a0215*/
-          int v30; // [esp+18h] [ebp-14h] BYREF
           v30 = v32; /*0x5a021e*/
-          int v15; // eax
           v15 = (__int16)v13; /*0x5a0225*/
-          int v16; // edx
           v16 = (__int16)v13 + v14; /*0x5a0228*/
           if ( v16 > dword_ABED04 /*0x5a0285*/
             && v14 - v15 < dword_ABED04
@@ -92,32 +106,27 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             && v15 >= a4
             && v15 < a6 + a4 )
           {
-            char *v17; // esi
             v17 = (char *)dword_ABED10 + 80 * v14 + 80 * g_MapCellWidth * v15; /*0x5a02a4*/
-            int v18; // edi
             v18 = *((unsigned int *)v17 + 14); /*0x5a02a8*/
-            bool v19; // bl
             v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
-            int *v20; // eax
-            v20 = (int *)(&dword_87F7E8)->To_CellObj((__int16 *)&v30); /*0x5a02c6*/
-            int *v21 = v20; // ebp /*0x5a02cd*/
-            if ( (!v18 || v19) && ((v20)->IsEmpty() || v19 && (v21)->IsGroundTypeRange()) ) /*0x5a02e6*/
+            v20 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v30); /*0x5a02c6*/
+            v21 = v20; /*0x5a02cd*/
+            if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
             {
-              int v22 = v29->Capacity; // ecx /*0x5a02ff*/
-              int v23; // eax
+              v22 = v29->Capacity; /*0x5a02ff*/
               if ( v29->q010 < v22 /*0x5a0324*/
                 || (*(&v29->IsAllocated) || !v22)
                 && (v23 = v29->u32_14, v23 > 0)
                 && v29->Release(v22 + v23, 0) )
               {
-                int v24 = v29->q010; // eax /*0x5a032b*/
-                int v25 = v29->Items; // edx /*0x5a032e*/
+                v24 = v29->q010; /*0x5a032b*/
+                v25 = v29->Items; /*0x5a032e*/
                 v29->q010 = v24 + 1; /*0x5a0334*/
                 *(unsigned int *)(v25 + 4 * v24) = v30; /*0x5a033b*/
               }
               *((unsigned int *)v17 + 14) = a1; /*0x5a0348*/
-              if ( a7 && (v21)->IsEmpty() ) /*0x5a034f*/
-                *((unsigned char *)(&dword_87F7E8)->To_CellObj((__int16 *)&v30) + 283) = a8; /*0x5a036b*/
+              if ( a7 && Cell::IsEmpty(v21) ) /*0x5a034f*/
+                *((unsigned char *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v30) + 283) = a8; /*0x5a036b*/
             }
             else if ( v18 != a1 ) /*0x5a02f3*/
             {
@@ -134,7 +143,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
           v10 = v28; /*0x5a01e2*/
         }
         v10 = v28; /*0x5a0383*/
-        int v26 = v28->q010; // edx /*0x5a038c*/
+        v26 = v28->q010; /*0x5a038c*/
         if ( ++v31 < v26 ) /*0x5a0395*/
           continue; /*0x5a0395*/
         break;
@@ -227,6 +236,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
 namespace gamemd {
 char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
 {
+
   int v4; // ecx
   int v5; // esi
   int Int_Overwrite; // eax
@@ -249,100 +259,105 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   DynamicVector v25; // [esp+28h] [ebp-9Ch] BYREF
 
   v5 = v4; /*0x721a5f*/
-  INIClass::ResetSection((INIClass *)aP1); /*0x721a63*/
-  if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)v5, (uint8_t ***)aP1) ) /*0x721a6b*/
+  INIClass::ResetSection((INIClass *)this); /*0x721a63*/
+  if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)v5, (unsigned __int8 ***)this) ) /*0x721a6b*/
     return 0; /*0x721cea*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x721a8b*/                     (bool *)aP1,                     &v5->objectTypeFlags,(uint8_t *)(aSpread),                     v5->Spread);
+  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x721a8b*/
+                    (bool *)this,
+                    (unsigned __int8 *)(v5 + 36),
+                    aSpread,
+                    v5->Spread);
   v20 = v5->u32_A0; /*0x721a9d*/
   v5->Spread = Int_Overwrite; /*0x721aa6*/
-  INIClass::ReadDouble_Overwrite((double *)aP1, &v5->objectTypeFlags, aSpreadpercenta, v20); /*0x721aac*/
+  INIClass::ReadDouble_Overwrite(&this->vtable1, (unsigned __int8 *)(v5 + 36), aSpreadpercenta, v20); /*0x721aac*/
   v7 = v5->Growth_d; /*0x721ab1*/
   __asm { fstp qword ptr [esi+0A0h] } /*0x721ab9*/
   v5->u32_A0 = _RT1; /*0x721ab9*/
-  v9 = INIClass::ReadInt_Overwrite((bool *)aP1, &v5->objectTypeFlags,(uint8_t *)(aGrowth), v7); /*0x721ac6*/
+  v9 = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(v5 + 36), aGrowth, v7); /*0x721ac6*/
   v21 = v5->Spread_d; /*0x721ad8*/
   v5->Growth_d = v9; /*0x721ae1*/
-  INIClass::ReadDouble_Overwrite((double *)aP1, &v5->objectTypeFlags, aGrowthpercenta, v21); /*0x721ae7*/
+  INIClass::ReadDouble_Overwrite(&this->vtable1, (unsigned __int8 *)(v5 + 36), aGrowthpercenta, v21); /*0x721ae7*/
   v10 = v5->GrowthPercentage; /*0x721aec*/
   __asm { fstp qword ptr [esi+0B0h] } /*0x721af4*/
   v5->Spread_d = _RT1; /*0x721af4*/
-  v12 = INIClass::ReadInt_Overwrite((bool *)aP1, &v5->objectTypeFlags,(uint8_t *)(aValue), v10); /*0x721b01*/
+  v12 = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(v5 + 36), aValue, v10); /*0x721b01*/
   v13 = v5->Power_d; /*0x721b06*/
   v5->GrowthPercentage = v12; /*0x721b0c*/
-  v14 = INIClass::ReadInt_Overwrite((bool *)aP1, &v5->objectTypeFlags,(uint8_t *)(aPower_0), v13); /*0x721b1b*/
+  v14 = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(v5 + 36), aPower_0, v13); /*0x721b1b*/
   v22 = v5->GrowthPercentage_d; /*0x721b28*/
   v5->Power_d = v14; /*0x721b2f*/
   v5->GrowthPercentage_d = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
-                            (BuildingTypeClass *)aP1,
-                            &v5->objectTypeFlags,
-                            (uint8_t *)&g_INI_Key_Color,
+                            (BuildingTypeClass *)this,
+                            (unsigned __int8 *)(v5 + 36),
+                            (unsigned __int8 *)aColor,
                             v22);
   if ( INIClass::GetString( /*0x721b57*/
-         (INIClass *)aP1,
-         &v5->objectTypeFlags,
+         (INIClass *)this,
+         (unsigned __int8 *)(v5 + 36),
          aDebris,
          &g_INI_DefaultBuffer,
-         (char *)&v25.q01C,
+         (char *)&v25.DynamicVector_field_0x1C,
          128) )
   {
-    ((DynamicVectorClass *)&v25)->AnimTypeConstructor(0, 0); /*0x721b6c*/
-    *(unsigned int *)v25.WeaponType = &vt_TypeList; /*0x721b7b*/
-    for ( i = strtok((char *)&v25.q01C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
+    DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
+    *(unsigned int *)v25.ClearAndFree2_ph = &TypeList<AnimTypeClass const *>::`vftable'; /*0x721b7b*/
+    for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Delimiter); i; i = strtok(0, Delimiter) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
         break; /*0x721b92*/
-      v23 = (i)->FindOrCreate(); /*0x721b9d*/
+      v23 = AnimTypeClass::FindOrCreate(i); /*0x721b9d*/
       if ( v23 ) /*0x721ba1*/
         DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
     }
-    (&v24)->AnimTypeCopy(&v25); /*0x721bcd*/
-    *(unsigned int *)v25.WeaponType = &vt_VectorClass; /*0x721bd6*/
+    TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
+    *(unsigned int *)v25.ClearAndFree2_ph = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
   else
   {
     TypeList::AnimTypeCopy(&v24, &v5->u32_C4); /*0x721bf0*/
   }
-  (&v5->u32_C4)->CopyDefault(&v24); /*0x721c03*/
-  CapacityIncrement = (int)(((char *)&v24)); /*0x721c0c*/
+  VectorClass::CopyDefault(&v5->u32_C4, &v24); /*0x721c03*/
+  CapacityIncrement = v24.CapacityIncrement; /*0x721c0c*/
   unknown_18 = v24.unknown_18; /*0x721c10*/
-  *&v5->Debris = (unsigned int)(((char *)&v24)); /*0x721c14*/
-  Items = ((char *)&v24); /*0x721c17*/
+  *(unsigned int *)(v5 + 212) = v24.Count; /*0x721c14*/
+  Items = (void *)v24.Items; /*0x721c17*/
   *(unsigned int *)(v5 + 216) = CapacityIncrement; /*0x721c1b*/
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
-  v24.DynamicVectorClass = &vt_VectorClass; /*0x721c21*/
-  if ( Items && ((char *)&v24) ) /*0x721c34*/
-    operator delete((Items)); /*0x721c37*/
+  v24.vfptr = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x721c21*/
+  if ( Items && v24.IsAllocated[0] ) /*0x721c34*/
+    __3_YAXPAX_Z(Items); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
-             (bool *)aP1,
-             &v5->objectTypeFlags,
-             (uint8_t *)g_INI_Key_Image,
+             (bool *)this,
+             (unsigned __int8 *)(v5 + 36),
+             (unsigned __int8 *)g_INI_Key_Image,
              -1) )
   {
     case -1: /*0x721c55*/
       goto LABEL_19;
     case 2: /*0x721c55*/
-      v5->Image_d = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 108); /*0x721c69*/
+      v5->Image_d = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 108); /*0x721c69*/
       v5->Tactical_E4 = 12; /*0x721c6f*/
-      v5->q0E8 = 12; /*0x721c75*/
+      v5->u32_E8 = 12; /*0x721c75*/
       return 1; /*0x721c85*/
     case 3: /*0x721c55*/
-      v5->Image_d = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 508); /*0x721c94*/
+      v5->Image_d = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 508); /*0x721c94*/
       goto LABEL_18; /*0x721c9a*/
     case 4: /*0x721c55*/
-      v5->Image_d = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 588); /*0x721ca8*/
+      v5->Image_d = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 588); /*0x721ca8*/
       goto LABEL_18; /*0x721cae*/
     default:
-      v5->Image_d = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 408); /*0x721cbb*/
-      LABEL_18:
+      v5->Image_d = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 408); /*0x721cbb*/
+LABEL_18:
       *(unsigned int *)(v5 + 236) = 8; /*0x721cc1*/
       v5->Tactical_E4 = 12; /*0x721cd0*/
-      v5->q0E8 = 12; /*0x721cd6*/
-      LABEL_19:
+      v5->u32_E8 = 12; /*0x721cd6*/
+LABEL_19:
       result = 1; /*0x721cdc*/
       break; /*0x721ce6*/
   }
   return result; /*0x721c7b*/
+
 }
 }
 // 0x721E80

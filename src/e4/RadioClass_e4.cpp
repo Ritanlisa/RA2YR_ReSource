@@ -217,19 +217,19 @@ namespace gamemd {
 int RadioClass::ExecuteAction(int aP1, char aP2)
 {
 
-
-  ((ObjectClass *)this)->Unlink(); /*0x65aacf*/
   int result; // eax
-  result = this->radioLinks[2]; /*0x65aad4*/
   int i; // ecx
+  unsigned int *v6; // eax
+  unsigned int v7; // edx
+  unsigned int *v8; // eax
+
+  Object::Unlink((ObjectClass *)this); /*0x65aacf*/
+  result = this->radioLinks[2]; /*0x65aad4*/
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {
-    int v6; // eax
-    v6 = this->radioLinks[1]; /*0x65aae0*/
-    int v7; // edx
-    v7 = *(unsigned int *)(v6 + 4 * i); /*0x65aae6*/
-    unsigned int *v8; // eax
-    v8 = (unsigned int *)(v6 + 4 * i); /*0x65aae9*/
+    v6 = (unsigned int *)this->radioLinks[1]; /*0x65aae0*/
+    v7 = v6[i]; /*0x65aae6*/
+    v8 = &v6[i]; /*0x65aae9*/
     if ( v7 == aP1 ) /*0x65aaee*/
     {
       if ( aP2 ) /*0x65aaf2*/

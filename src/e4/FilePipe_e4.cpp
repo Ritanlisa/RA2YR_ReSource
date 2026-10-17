@@ -148,11 +148,13 @@ namespace gamemd {
 int FilePipe_38::Seek(int a2, int a3, void *a3_2)
 {
 
-  int v3; // ecx
-  v3 = ((unsigned int)(a3_2->Items)) + 3 * a3_2; /*0x47796d*/
-  *(unsigned short *)a3_2 = *(unsigned short *)v3; /*0x477978*/
-  *(unsigned char *)((unsigned int)(a3_2)+ 2) = *(unsigned char *)(v3 + 2); /*0x47797f*/
-  return a3_2; /*0x47797b*/
+  unsigned __int16 *v3; // ecx
+
+  v3 = (unsigned __int16 *)(*&this->Items + 3 * a3); /*0x47796d*/
+  *(unsigned short *)a2 = *v3; /*0x477978*/
+  *(unsigned char *)(a2 + 2) = *((unsigned char *)v3 + 2); /*0x47797f*/
+  return a2; /*0x47797b*/
+
 }
 } // namespace gamemd
 
@@ -182,41 +184,43 @@ namespace gamemd {
 char FilePipe_30::Release(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+  int v7; // eax
 
   if ( a2 ) /*0x47814c*/
   {
-    LOBYTE(this->__pad_00C) = 0; /*0x478152*/
-    unsigned int *v4; // edi
+    LOBYTE(this->m_C) = 0; /*0x478152*/
     if ( a3 ) /*0x478158*/
       v4 = a3; /*0x47816e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x47816a*/
-    LOBYTE(this->__pad_00C) = 1; /*0x478172*/
+    LOBYTE(this->m_C) = 1; /*0x478172*/
     if ( !v4 ) /*0x478176*/
       return 0; /*0x4781ea*/
     if ( *&this->u32_4 ) /*0x478178*/
     {
-      int m_8 = this->Capacity; // ecx /*0x47817f*/
+      m_8 = this->Capacity; /*0x47817f*/
       if ( a2 < m_8 ) /*0x478184*/
         m_8 = a2; /*0x478186*/
-      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x47818c*/
         ++i; /*0x478191*/
-      if ( BYTE1(this->__pad_00C) ) /*0x47819e*/
+      if ( BYTE1(this->m_C) ) /*0x47819e*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x4781a9*/
         *&this->u32_4 = 0; /*0x4781b1*/
       }
     }
-    *&this->u32_4 = (unsigned int)(v4); /*0x4781ba*/
+    *&this->u32_4 = v4; /*0x4781ba*/
     this->Capacity = a2; /*0x4781c2*/
-    BYTE1(this->__pad_00C) = a3 == 0; /*0x4781c5*/
+    BYTE1(this->m_C) = a3 == 0; /*0x4781c5*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4781ce*/
+    (*(void (**)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4781ce*/
   }
-  int v7 = this->Capacity; // eax /*0x4781d1*/
+  v7 = this->Capacity; /*0x4781d1*/
   if ( v7 < this->m_10 ) /*0x4781d9*/
     this->m_10 = v7; /*0x4781db*/
   return 1; /*0x4781de*/
@@ -229,17 +233,21 @@ namespace gamemd {
 int FilePipe_30::Read(unsigned int * a2, void *a2_2, void *a3)
 {
 
-  int m_10 = a2_2->q010; // edx /*0x4781f0*/
-  int result = 0; // eax /*0x4781f3*/
+  int m_10; // edx
+  int result; // eax
+  unsigned int *i; // ecx
+
+  m_10 = this->m_10; /*0x4781f0*/
+  result = 0; /*0x4781f3*/
   if ( m_10 <= 0 ) /*0x4781f8*/
     return -1; /*0x47820f*/
-  unsigned int *i; // ecx
-  for ( i = *(unsigned int **)&a2_2->q004; *(unsigned int)(i) != *(unsigned int *)(a2_2); ++i ) /*0x4781fe*/
+  for ( i = *&this->u32_4; *i != *a2; ++i ) /*0x4781fe*/
   {
     if ( ++result >= m_10 ) /*0x47820d*/
       return -1; /*0x47820d*/
   }
   return result; /*0x478212*/
+
 }
 }
 // 0x4782E0
@@ -403,41 +411,43 @@ namespace gamemd {
 char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+  int v7; // eax
 
   if ( a2 ) /*0x4b9e2c*/
   {
-    LOBYTE(this->__pad_00C) = 0; /*0x4b9e32*/
-    unsigned int *v4; // edi
+    LOBYTE(this->m_C) = 0; /*0x4b9e32*/
     if ( a3 ) /*0x4b9e38*/
       v4 = a3; /*0x4b9e4e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4b9e4a*/
-    LOBYTE(this->__pad_00C) = 1; /*0x4b9e52*/
+    LOBYTE(this->m_C) = 1; /*0x4b9e52*/
     if ( !v4 ) /*0x4b9e56*/
       return 0; /*0x4b9eca*/
     if ( *&this->u32_4 ) /*0x4b9e58*/
     {
-      int m_8 = this->Capacity; // ecx /*0x4b9e5f*/
+      m_8 = this->Capacity; /*0x4b9e5f*/
       if ( a2 < m_8 ) /*0x4b9e64*/
         m_8 = a2; /*0x4b9e66*/
-      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4b9e6c*/
         ++i; /*0x4b9e71*/
-      if ( BYTE1(this->__pad_00C) ) /*0x4b9e7e*/
+      if ( BYTE1(this->m_C) ) /*0x4b9e7e*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x4b9e89*/
         *&this->u32_4 = 0; /*0x4b9e91*/
       }
     }
-    *&this->u32_4 = (unsigned int)(v4); /*0x4b9e9a*/
+    *&this->u32_4 = v4; /*0x4b9e9a*/
     this->Capacity = a2; /*0x4b9ea2*/
-    BYTE1(this->__pad_00C) = a3 == 0; /*0x4b9ea5*/
+    BYTE1(this->m_C) = a3 == 0; /*0x4b9ea5*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4b9eae*/
+    (*(void (**)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4b9eae*/
   }
-  int v7 = this->Capacity; // eax /*0x4b9eb1*/
+  v7 = this->Capacity; /*0x4b9eb1*/
   if ( v7 < this->m_10 ) /*0x4b9eb9*/
     this->m_10 = v7; /*0x4b9ebb*/
   return 1; /*0x4b9ebe*/
@@ -469,41 +479,43 @@ namespace gamemd {
 char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+  int v7; // eax
 
   if ( a2 ) /*0x4ba08c*/
   {
-    LOBYTE(this->__pad_00C) = 0; /*0x4ba092*/
-    unsigned int *v4; // edi
+    LOBYTE(this->m_C) = 0; /*0x4ba092*/
     if ( a3 ) /*0x4ba098*/
       v4 = a3; /*0x4ba0ae*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4ba0aa*/
-    LOBYTE(this->__pad_00C) = 1; /*0x4ba0b2*/
+    LOBYTE(this->m_C) = 1; /*0x4ba0b2*/
     if ( !v4 ) /*0x4ba0b6*/
       return 0; /*0x4ba12a*/
     if ( *&this->u32_4 ) /*0x4ba0b8*/
     {
-      int m_8 = this->Capacity; // ecx /*0x4ba0bf*/
+      m_8 = this->Capacity; /*0x4ba0bf*/
       if ( a2 < m_8 ) /*0x4ba0c4*/
         m_8 = a2; /*0x4ba0c6*/
-      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4ba0cc*/
         ++i; /*0x4ba0d1*/
-      if ( BYTE1(this->__pad_00C) ) /*0x4ba0de*/
+      if ( BYTE1(this->m_C) ) /*0x4ba0de*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x4ba0e9*/
         *&this->u32_4 = 0; /*0x4ba0f1*/
       }
     }
-    *&this->u32_4 = (unsigned int)(v4); /*0x4ba0fa*/
+    *&this->u32_4 = v4; /*0x4ba0fa*/
     this->Capacity = a2; /*0x4ba102*/
-    BYTE1(this->__pad_00C) = a3 == 0; /*0x4ba105*/
+    BYTE1(this->m_C) = a3 == 0; /*0x4ba105*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4ba10e*/
+    (*(void (**)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4ba10e*/
   }
-  int v7 = this->Capacity; // eax /*0x4ba111*/
+  v7 = this->Capacity; /*0x4ba111*/
   if ( v7 < this->m_10 ) /*0x4ba119*/
     this->m_10 = v7; /*0x4ba11b*/
   return 1; /*0x4ba11e*/

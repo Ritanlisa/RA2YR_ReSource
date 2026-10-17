@@ -11,44 +11,47 @@ namespace gamemd {  // G42.18 ns repair
 void E4Recv_7AE830::sub_7AE830()
 {
 
-  int v12; // eax
+  unsigned int vfptr2; // esi
+  unsigned int **vfptr; // ebp
+  int vfptr3; // edi
+  void *v5; // edi
+  unsigned int v6; // edx
+  unsigned int **v7; // edi
+  unsigned int v8; // ebp
+  unsigned int *v9; // esi
+  int v10; // edx
+  unsigned int v11; // ecx
+  unsigned int *v12; // eax
+  int v13; // [esp+8h] [ebp-4h]
 
-  unsigned int vtable2; // esi
-  vtable2 = (unsigned int)this->M8; /*0x7ae835*/
-  if ( (ObjectClass *)vtable2 > this->nextObject && LOBYTE(this->M20) != 1 ) /*0x7ae847*/
+  vfptr2 = this->vfptr2; /*0x7ae835*/
+  if ( vfptr2 > this->nextObject && LOBYTE(this->abstractFlags) != 1 ) /*0x7ae847*/
   {
-    int *vtable0; // ebp
-    vtable0 = (int *)this->AbstractClass; /*0x7ae850*/
-    char *vtable3; // edi
-    vtable3 = (char *)this->M12; /*0x7ae853*/
-    int *v13; // [esp+8h] [ebp-4h]
-    v13 = (int *)this->AbstractClass; /*0x7ae856*/
-    this->M8 = (unsigned int)((void *)(vtable2 >> 1)); /*0x7ae85c*/
-    this->M12 = (unsigned int)(vtable3 - 1); /*0x7ae864*/
-    void *v5; // edi
-    v5 = __2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x7ae86f*/
-    unsigned int v6; // edx
-    v6 = 4 * (int)this->M8; /*0x7ae874*/
-    this->AbstractClass = v5; /*0x7ae87b*/
+    vfptr = (unsigned int **)this->vfptr; /*0x7ae850*/
+    vfptr3 = this->vfptr3; /*0x7ae853*/
+    v13 = this->vfptr; /*0x7ae856*/
+    this->vfptr2 = vfptr2 >> 1; /*0x7ae85c*/
+    this->vfptr3 = vfptr3 - 1; /*0x7ae864*/
+    v5 = (void *)__2_YAPAXI_Z(4 * (vfptr2 >> 1)); /*0x7ae86f*/
+    v6 = 4 * this->vfptr2; /*0x7ae874*/
+    this->vfptr = (int)v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
-    if ( (int)vtable2 > 0 ) /*0x7ae88b*/
+    if ( (int)vfptr2 > 0 ) /*0x7ae88b*/
     {
-      int *v7 = vtable0; // edi /*0x7ae88d*/
-      unsigned int v8 = vtable2; // ebp /*0x7ae88f*/
+      v7 = vfptr; /*0x7ae88d*/
+      v8 = vfptr2; /*0x7ae88f*/
       do /*0x7ae8c3*/
       {
-        int v9 = *v7; // esi /*0x7ae891*/
+        v9 = *v7; /*0x7ae891*/
         if ( *v7 ) /*0x7ae891*/
         {
           do /*0x7ae8bd*/
           {
-            int v10; // edx
-            v10 = ((int (*)(int))this->M12)(v9) & ((1 << (int)this->M12) - 1); /*0x7ae8a7*/
-            int v11; // ecx
-            v11 = *((unsigned int *)this->AbstractClass + v10); /*0x7ae8ab*/
-            *((unsigned int *)this->AbstractClass + v10) = v9; /*0x7ae8b1*/
-            v12 = *(unsigned int *)(v9 + 8); /*0x7ae8b3*/
-            *(unsigned int *)(v9 + 8) = v11; /*0x7ae8b6*/
+            v10 = ((int (*)(unsigned int *))this->nextArrayIndex)(v9) & ((1 << this->vfptr3) - 1); /*0x7ae8a7*/
+            v11 = *(unsigned int *)(this->vfptr + 4 * v10); /*0x7ae8ab*/
+            *(unsigned int *)(this->vfptr + 4 * v10) = v9; /*0x7ae8b1*/
+            v12 = (unsigned int *)v9[2]; /*0x7ae8b3*/
+            v9[2] = v11; /*0x7ae8b6*/
             v9 = v12; /*0x7ae8b9*/
           }
           while ( v12 ); /*0x7ae8bd*/
@@ -57,9 +60,9 @@ void E4Recv_7AE830::sub_7AE830()
         --v8; /*0x7ae8c2*/
       }
       while ( v8 ); /*0x7ae8c3*/
-      vtable0 = v13; /*0x7ae8c5*/
+      vfptr = (unsigned int **)v13; /*0x7ae8c5*/
     }
-    __3_YAXPAX_Z(vtable0); /*0x7ae8ca*/
+    __3_YAXPAX_Z(vfptr); /*0x7ae8ca*/
   }
 
 }

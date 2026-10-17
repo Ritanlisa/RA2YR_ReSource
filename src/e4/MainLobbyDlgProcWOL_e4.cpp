@@ -42,45 +42,47 @@ namespace gamemd {
 void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
 {
 
+  HWND DlgItem; // ebp
+  HWND v4; // eax
+  wchar_t *StringCSF; // eax
+  HWND v6; // ebp
+  wchar_t *v7; // eax
+  HWND v8; // ebp
+  wchar_t *v9; // eax
+  HWND v10; // ebp
+  wchar_t *v11; // eax
+  HWND v12; // ebp
+  wchar_t *v13; // eax
+  HWND v14; // esi
+  wchar_t *v15; // eax
+  WideString v16[4]; // [esp+10h] [ebp-4h] BYREF
+
   if ( a2 ) /*0x77a8e5*/
   {
-    HWND DlgItem; // ebp
     DlgItem = GetDlgItem(hDlg, 1576); /*0x77a8ef*/
     SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x77a8fe*/
     InvalidateRect(DlgItem, 0, 0); /*0x77a905*/
   }
-  HWND v4; // eax
   v4 = GetDlgItem(hDlg, 1775); /*0x77a911*/
   SendMessageA(v4, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x77a920*/
-  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF(g_Str_GUI_UnknownStats, 0, g_Str_File_WOLPersonaInformation_cpp, 892); /*0x77a933*/
-  void *v16; // [esp+10h] [ebp-4h] BYREF
-  ((WideString *)((wchar_t **)&v16))->Assign(StringCSF); /*0x77a93d*/
-  HWND v6; // ebp
+  WideString::Assign(v16, StringCSF); /*0x77a93d*/
   v6 = GetDlgItem(hDlg, 1776); /*0x77a94e*/
-  wchar_t *v7; // eax
-  v7 = ((wchar_t **)&v16)->GetOrEmpty_Alt(); /*0x77a950*/
+  v7 = WideString::GetOrEmpty_Alt(v16); /*0x77a950*/
   SendMessageA(v6, 0x4B2u, 0, (LPARAM)v7); /*0x77a95e*/
-  HWND v8; // ebp
   v8 = GetDlgItem(hDlg, 1777); /*0x77a96c*/
-  wchar_t *v9; // eax
-  v9 = ((wchar_t **)&v16)->GetOrEmpty_Alt(); /*0x77a96e*/
+  v9 = WideString::GetOrEmpty_Alt(v16); /*0x77a96e*/
   SendMessageA(v8, 0x4B2u, 0, (LPARAM)v9); /*0x77a97c*/
-  HWND v10; // ebp
   v10 = GetDlgItem(hDlg, 1793); /*0x77a98a*/
-  wchar_t *v11; // eax
-  v11 = ((wchar_t **)&v16)->GetOrEmpty_Alt(); /*0x77a98c*/
+  v11 = WideString::GetOrEmpty_Alt(v16); /*0x77a98c*/
   SendMessageA(v10, 0x4B2u, 0, (LPARAM)v11); /*0x77a99a*/
-  HWND v12; // ebp
   v12 = GetDlgItem(hDlg, 1780); /*0x77a9a8*/
-  wchar_t *v13; // eax
-  v13 = ((wchar_t **)&v16)->GetOrEmpty_Alt(); /*0x77a9aa*/
+  v13 = WideString::GetOrEmpty_Alt(v16); /*0x77a9aa*/
   SendMessageA(v12, 0x4B2u, 0, (LPARAM)v13); /*0x77a9b8*/
-  HWND v14; // esi
   v14 = GetDlgItem(hDlg, 1781); /*0x77a9c6*/
-  wchar_t *v15; // eax
-  v15 = ((wchar_t **)&v16)->GetOrEmpty_Alt(); /*0x77a9c8*/
+  v15 = WideString::GetOrEmpty_Alt(v16); /*0x77a9c8*/
   SendMessageA(v14, 0x4B2u, 0, (LPARAM)v15); /*0x77a9d6*/
-  (&v16)->Alt(); /*0x77a9dc*/
+  DeleteAndZero::Alt((DeleteAndZero *)v16); /*0x77a9dc*/
+
 }
 } // namespace gamemd

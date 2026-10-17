@@ -15,13 +15,14 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 {
 
-
-  char *v6; // [esp+8h] [ebp-8h]
-  v6 = &this->u8_18; /*0x765387*/
-  int v7; // [esp+Ch] [ebp-4h]
-  v7 = 0; /*0x76538f*/
+  int v4; // edx
   void **v5; // [esp+4h] [ebp-Ch] BYREF
-  v5 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x765397*/
+  char *v6; // [esp+8h] [ebp-8h]
+  int v7; // [esp+Ch] [ebp-4h]
+
+  v6 = &this->u8_18; /*0x765387*/
+  v7 = 0; /*0x76538f*/
+  v5 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x765397*/
   if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
   {
     do /*0x7653db*/
@@ -32,10 +33,10 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
     }
     while ( ((unsigned __int8 (*)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
-  int v4 = v7; // edx /*0x7653ea*/
-  a2[1] = (unsigned int)(v6); /*0x7653ef*/
+  v4 = v7; /*0x7653ea*/
+  a2[1] = v6; /*0x7653ef*/
   a2[2] = v4; /*0x7653f2*/
-  *a2 = (unsigned int)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x7653f5*/
+  *a2 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x7653f5*/
   return a2; /*0x7653ee*/
 
 }

@@ -11,12 +11,14 @@
 namespace gamemd {  // G42.18 ns repair
 int BuildingAnim::GetType()
 {
-  
-  int v0; // eax
-  v0 = FindBuildingAnimByName((gamemd::AbstractClass *)(off_822724), 1); /*0x4e12db*/
+
+  unsigned int *v0; // eax
+
+  v0 = (unsigned int *)FindBuildingAnimByName(off_822724, 1); /*0x4e12db*/
   if ( v0 ) /*0x4e12e2*/
-    return *(unsigned int *)v0; /*0x4e12e4*/
+    return *v0; /*0x4e12e4*/
   else
     return 0; /*0x4e12e7*/
-}  // G42.18 ns repair
+
+}
 } // namespace gamemd

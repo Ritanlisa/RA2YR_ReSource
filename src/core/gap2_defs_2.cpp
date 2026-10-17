@@ -213,6 +213,7 @@ int COMObject::TrackCurrent(int a1) {
 // 0x4E19A0
 namespace gamemd { 
 int COMObject::ActivateGlobal() {
+
   int v2; // eax
 
   if ( dword_8B3E90 ) /*0x4e19ab*/
@@ -221,25 +222,28 @@ int COMObject::ActivateGlobal() {
     (*(void (**)(int))(*(unsigned int *)dword_8B3E90 + 84))(dword_8B3E90); /*0x4e19ba*/
   }
   v2 = *(unsigned int *)this->Hovered; /*0x4e19bd*/
-  (((unsigned char *)&(v2))[1]) |= 1u; /*0x4e19c0*/
+  BYTE1(v2) |= 1u; /*0x4e19c0*/
   *(unsigned int *)this->Hovered = v2; /*0x4e19c3*/
   dword_8B3E90 = (int)this; /*0x4e19c6*/
   return v2; /*0x4e19cc*/
+
 }
 }
 // 0x4E19D0
 namespace gamemd { 
 int COMObject::DeactivateGlobal() {
+
   int v1; // eax
 
   if ( (ShpButtonClass *)dword_8B3E90 == this ) /*0x4e19d6*/
   {
     v1 = *(unsigned int *)this->Hovered; /*0x4e19d8*/
-    (((unsigned char *)&(v1))[1]) &= ~1u; /*0x4e19db*/
+    BYTE1(v1) &= ~1u; /*0x4e19db*/
     *(unsigned int *)this->Hovered = v1; /*0x4e19de*/
     dword_8B3E90 = 0; /*0x4e19e1*/
   }
   return v1; /*0x4e19eb*/
+
 }
 }
 // 0x4E19F0
@@ -304,14 +308,16 @@ void* COMObject::SwapReference(int a2) {
 // 0x53EDE0
 namespace gamemd { 
 int Struct::Copy6Bytes(int a2, int aP1, int a3, int a4, int a5, int a1) {
+
   char *v2; // ecx
-  int16_t result; // ax
+  __int16 result; // ax
 
   v2 = &this->u32_4; /*0x53ede4*/
   *(unsigned int *)v2 = *(unsigned int *)a2; /*0x53ede9*/
-  result = a2->Initialized; /*0x53edeb*/
+  result = *(unsigned short *)(a2 + 4); /*0x53edeb*/
   *((unsigned short *)v2 + 2) = result; /*0x53edef*/
   return result; /*0x53edf3*/
+
 }
 }
 // 0x54A120
@@ -527,6 +533,8 @@ int COMObject::ValidatePtr() {
 // 0x69B8C0
 namespace gamemd { 
 void Player::RandomAssign() {
+
+  int v1; // ebp
   int i; // ebx
   int v3; // esi
   int v4; // eax
@@ -537,29 +545,30 @@ void Player::RandomAssign() {
   int v9; // eax
   int v10; // eax
   int v11; // edx
-  int v13; // ecx
+  unsigned int **v12; // esi
+  unsigned int *v13; // ecx
   int v14; // ecx
   int v15; // ecx
   int v17; // [esp+14h] [ebp-4h]
 
   Debug::Log(); /*0x69b8d0*/
-  dword_A8DA84 = dword_A8DA84; /*0x69b8d5*/
-  for ( i = 0; i < dword_A8DA84; ++i ) /*0x69b8e2*/
+  v1 = *(unsigned int *)&stru_A8D804.__pad_3D[579]; /*0x69b8d5*/
+  for ( i = 0; i < v1; ++i ) /*0x69b8e2*/
   {
-    v3 = dword_A8DA78[i]; /*0x69b8f2*/
-    v4 = v3->MaxWidth; /*0x69b8f5*/
+    v3 = *(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * i); /*0x69b8f2*/
+    v4 = v3->q04F; /*0x69b8f5*/
     if ( v4 == -3 || v3->u32_4B == -3 ) /*0x69b8ff*/
     {
       v3->u32_4B = -3; /*0x69b977*/
-      v3->MaxWidth = -1; /*0x69b97a*/
-      v3->__pad_14C = 8; /*0x69b97d*/
+      v3->q04F = -1; /*0x69b97a*/
+      v3->q053 = 8; /*0x69b97d*/
       v3->u32_57 = -1; /*0x69b984*/
     }
     else
     {
       if ( v4 == -2 ) /*0x69b904*/
       {
-        v3->MaxWidth = -1; /*0x69b90d*/
+        v3->q04F = -1; /*0x69b90d*/
         v5 = this->q004; /*0x69b910*/
         if ( v5 ) /*0x69b915*/
           v3->u32_4B = (*(int (**)(int))(*(unsigned int *)v5 + 108))(v5); /*0x69b91c*/
@@ -569,20 +578,20 @@ void Player::RandomAssign() {
       if ( v3->u32_57 == -2 ) /*0x69b941*/
       {
         v3->u32_57 = -1; /*0x69b943*/
-        v3->__pad_14C = -1; /*0x69b946*/
+        v3->q053 = -1; /*0x69b946*/
         do /*0x69b966*/
           v6 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x69b95e*/
         while ( NetworkSession::IsPlayerInGame((NetworkSession *)&dword_A8B238, v6) ); /*0x69b966*/
-        v3->__pad_14C = v6; /*0x69b96f*/
+        v3->q053 = v6; /*0x69b96f*/
       }
     }
     if ( !i ) /*0x69b989*/
-      dword_A8B394 = v3->__pad_14C; /*0x69b98e*/
+      dword_A8B394 = v3->q053; /*0x69b98e*/
     ToWideStringChar((char *)v3); /*0x69b9b1*/
     Debug::Log(); /*0x69b9bd*/
   }
   v17 = 0; /*0x69b9ce*/
-  v7 = &g_CampaignPlayerArray; /*0x69b9d6*/
+  v7 = &stru_A8B250.__pad_0[76]; /*0x69b9d6*/
   do /*0x69baa0*/
   {
     if ( *(unsigned int *)v7 == -2 ) /*0x69b9e4*/
@@ -602,9 +611,9 @@ void Player::RandomAssign() {
         if ( v10 == -2 ) /*0x69ba2a*/
           break; /*0x69ba2a*/
         v11 = 0; /*0x69ba32*/
-        if ( dword_A8DA84 <= 0 ) /*0x69ba36*/
+        if ( *(int *)&stru_A8D804.__pad_3D[579] <= 0 ) /*0x69ba36*/
         {
-  LABEL_32:
+LABEL_32:
           v15 = 132; /*0x69ba5e*/
           while ( *(unsigned int *)(&dword_A8B238 + v15) != v10 ) /*0x69ba69*/
           {
@@ -615,31 +624,32 @@ void Player::RandomAssign() {
         }
         else
         {
-          dword_A8DA78 = dword_A8DA78; /*0x69ba38*/
+          v12 = *(unsigned int ***)&stru_A8D804.__pad_3D[567]; /*0x69ba38*/
           while ( 1 ) /*0x69ba3e*/
           {
-            v13 = *dword_A8DA78; /*0x69ba3e*/
-            if ( *(unsigned int *)(*dword_A8DA78 + 87) == -2 && *(unsigned int *)(v13 + 83) == -1 ) /*0x69ba49*/
+            v13 = *v12; /*0x69ba3e*/
+            if ( *(unsigned int *)((char *)*v12 + 87) == -2 && *(unsigned int *)((char *)v13 + 83) == -1 ) /*0x69ba49*/
               v14 = -2; /*0x69ba4b*/
             else
-              v14 = *(unsigned int *)(v13 + 83); /*0x69ba4f*/
+              v14 = *(unsigned int *)((char *)v13 + 83); /*0x69ba4f*/
             if ( v14 == v10 ) /*0x69ba54*/
               break; /*0x69ba54*/
             ++v11; /*0x69ba56*/
-            ++dword_A8DA78; /*0x69ba57*/
-            if ( v11 >= dword_A8DA84 ) /*0x69ba5c*/
+            ++v12; /*0x69ba57*/
+            if ( v11 >= *(int *)&stru_A8D804.__pad_3D[579] ) /*0x69ba5c*/
               goto LABEL_32; /*0x69ba5c*/
           }
         }
       }
-  LABEL_35:
+LABEL_35:
       *((unsigned int *)v7 + 8) = v10; /*0x69ba76*/
     }
     Debug::Log(); /*0x69ba8a*/
     v7 += 4; /*0x69ba92*/
     ++v17; /*0x69ba9c*/
   }
-  while ( (int)v7 < (int)&g_CampaignConfig ); /*0x69baa0*/
+  while ( (int)v7 < (int)&stru_A8B250.__pad_0[108] ); /*0x69baa0*/
+
 }
 }
 // 0x6ABAC0
@@ -760,6 +770,7 @@ int PlayerClass::HasOccupiedCell() {
 // 0x732600
 namespace gamemd { 
 int PlayerClass::UpdateAIUnits() {
+
   int HeightMap; // eax
   EventClass *v2; // esi
   int v3; // ebp
@@ -775,15 +786,15 @@ int PlayerClass::UpdateAIUnits() {
   int v13; // ecx
   int v16; // [esp+14h] [ebp-4h] BYREF
 
-  if ( DataGlobal_B0FE64 ) /*0x732613*/
+  if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732613*/
   {
-    HeightMap = operator new(0x18u); /*0x732619*/
+    HeightMap = __2_YAPAXI_Z(0x18u); /*0x732619*/
     v2 = (EventClass *)HeightMap; /*0x73261e*/
     v3 = 0; /*0x732620*/
     if ( HeightMap ) /*0x732627*/
     {
-      (*((unsigned char *)&(HeightMap))) = (uint8_t)EventClass::resetEvent((EventClass *)HeightMap, 0, 0); /*0x73262d*/
-      v2->__pad_000 = (int)0; /*0x732632*/
+      LOBYTE(HeightMap) = (unsigned __int8)EventClass::resetEvent((EventClass *)HeightMap, 0, 0); /*0x73262d*/
+      v2->EventClass_field_0x0 = (int)&DynamicVectorClass<TechnoClass *>::`vftable'; /*0x732632*/
       *&v2->q014 = 10; /*0x732638*/
       *(unsigned int *)v2->Count = 0; /*0x73263f*/
     }
@@ -791,27 +802,27 @@ int PlayerClass::UpdateAIUnits() {
     {
       v2 = 0; /*0x732644*/
     }
-    v4 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[164]; /*0x732647*/
-    if ( *(int *)&((unsigned int *)&stru_A8EB00)[164] > 0 ) /*0x73264f*/
+    v4 = *(unsigned int *)&MEMORY[0xA8EB00].?[164]; /*0x732647*/
+    if ( *(int *)&MEMORY[0xA8EB00].?[164] > 0 ) /*0x73264f*/
     {
       do /*0x7326a6*/
       {
-        v5 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[152] + 4 * v3); /*0x73265a*/
-        (*((unsigned char *)&(HeightMap))) = StepTechnoClassCleanupIfHuman(v5, this); /*0x73265f*/
+        v5 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[152] + 4 * v3); /*0x73265a*/
+        LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v5, this); /*0x73265f*/
         if ( (unsigned char)HeightMap ) /*0x732666*/
         {
-          EventClass_field_0x8 = v2->u32_8; /*0x732668*/
+          EventClass_field_0x8 = v2->EventClass_field_0x8; /*0x732668*/
           if ( *(unsigned int *)v2->Count < (int)EventClass_field_0x8 /*0x732692*/
-            || (((*((unsigned char *)&(HeightMap))) = (v2->IsAllocated), (unsigned char)HeightMap) || !EventClass_field_0x8)
+            || ((LOBYTE(HeightMap) = BYTE1(v2->EventClass_field_0xC), (unsigned char)HeightMap) || !EventClass_field_0x8)
             && (HeightMap = *&v2->q014, HeightMap > 0)
-            && ((*((unsigned char *)&(HeightMap))) = (*(int (**)(EventClass *, int, unsigned int))(v2->__pad_000 + 8))(
+            && (LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v2->EventClass_field_0x0 + 8))(
                                       v2,
                                       (int)EventClass_field_0x8 + HeightMap,
                                       0),
                 (unsigned char)HeightMap) )
           {
             HeightMap = *(unsigned int *)v2->Count; /*0x732694*/
-            EventClass_field_0x4 = v2->q004; /*0x732697*/
+            EventClass_field_0x4 = v2->EventClass_field_0x4; /*0x732697*/
             *(unsigned int *)v2->Count = HeightMap + 1; /*0x73269d*/
             EventClass_field_0x4[HeightMap] = v5; /*0x7326a0*/
           }
@@ -823,12 +834,12 @@ int PlayerClass::UpdateAIUnits() {
   }
   else
   {
-    v8 = (EventClass *)operator new(0x18u); /*0x7326ae*/
+    v8 = (EventClass *)__2_YAPAXI_Z(0x18u); /*0x7326ae*/
     v2 = v8; /*0x7326b3*/
     if ( v8 ) /*0x7326ba*/
     {
       EventClass::resetEvent(v8, 0, 0); /*0x7326c2*/
-      v2->__pad_000 = (int)0; /*0x7326c7*/
+      v2->EventClass_field_0x0 = (int)&DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7326c7*/
       *&v2->q014 = 10; /*0x7326cd*/
       *(unsigned int *)v2->Count = 0; /*0x7326d4*/
     }
@@ -846,9 +857,9 @@ int PlayerClass::UpdateAIUnits() {
         if ( (*(unsigned char *)(HeightMap + 20) & 1) != 0 ) /*0x73270c*/
         {
           v16 = HeightMap; /*0x732714*/
-          (*((unsigned char *)&(HeightMap))) = StepTechnoClassCleanupIfHuman(HeightMap, this); /*0x732718*/
+          LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, this); /*0x732718*/
           if ( (unsigned char)HeightMap ) /*0x73271f*/
-            (*((unsigned char *)&(HeightMap))) = DynamicVector::AddItem((DynamicVector *)v2, &v16); /*0x732728*/
+            LOBYTE(HeightMap) = DynamicVector::AddItem((DynamicVector *)v2, &v16); /*0x732728*/
         }
       }
     }
@@ -856,12 +867,13 @@ int PlayerClass::UpdateAIUnits() {
   v11 = *(unsigned int *)v2->Count; /*0x732732*/
   for ( j = 0; j < v11; ++j ) /*0x732739*/
   {
-    v13 = *((unsigned int *)v2->q004 + j); /*0x73273e*/
-    (*((unsigned char *)&(HeightMap))) = (*(int (**)(int))(*(unsigned int *)v13 + 336))(v13); /*0x732743*/
+    v13 = *((unsigned int *)v2->EventClass_field_0x4 + j); /*0x73273e*/
+    LOBYTE(HeightMap) = (*(int (**)(int))(*(unsigned int *)v13 + 336))(v13); /*0x732743*/
   }
   if ( v2 ) /*0x732750*/
-    (*((unsigned char *)&(HeightMap))) = (*(char (**)(EventClass *, int))v2->__pad_000)(v2, 1); /*0x732758*/
+    LOBYTE(HeightMap) = (*(char (**)(EventClass *, int))v2->EventClass_field_0x0)(v2, 1); /*0x732758*/
   return HeightMap; /*0x73275a*/
+
 }
 }
 // 0x765790
@@ -887,6 +899,7 @@ void* COMClass::getTypeInfo(int a2) {
 // 0x7659F0
 namespace gamemd { 
 int COMClass::registerObject(int a1, void* a2) {
+
   int m_8; // ebp
   int *v5; // eax
   ComPtr *v6; // ebx
@@ -901,7 +914,7 @@ int COMClass::registerObject(int a1, void* a2) {
   m_8 = a1; /*0x7659f3*/
   if ( a1 ) /*0x7659fd*/
   {
-    (this->q00C) = 0; /*0x765a07*/
+    LOBYTE(this->m_C) = 0; /*0x765a07*/
     if ( a2 ) /*0x765a0d*/
     {
       *a2 = a1; /*0x765a51*/
@@ -912,7 +925,7 @@ int COMClass::registerObject(int a1, void* a2) {
         do /*0x765a75*/
         {
           ComPtr::Constructor(v8); /*0x765a66*/
-          *(unsigned int *)v8->__pad_000 = 0; /*0x765a6b*/
+          *(unsigned int *)v8->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x765a6b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x765a71*/
           --v9; /*0x765a74*/
         }
@@ -923,7 +936,7 @@ int COMClass::registerObject(int a1, void* a2) {
     }
     else
     {
-      v5 = (int *)operator new(8 * a1 + 4); /*0x765a17*/
+      v5 = (int *)__2_YAPAXI_Z(8 * a1 + 4); /*0x765a17*/
       if ( v5 ) /*0x765a21*/
       {
         *v5 = a1; /*0x765a23*/
@@ -946,16 +959,16 @@ int COMClass::registerObject(int a1, void* a2) {
         v6 = 0; /*0x765a4d*/
       }
     }
-    (this->q00C) = 1; /*0x765a7f*/
+    LOBYTE(this->m_C) = 1; /*0x765a7f*/
     if ( !v6 ) /*0x765a83*/
       return 0; /*0x765b06*/
     if ( *&this->q004 ) /*0x765a85*/
     {
-      if ( a1 >= this->q008 ) /*0x765a91*/
-        m_8 = this->q008; /*0x765a93*/
+      if ( a1 >= this->m_8 ) /*0x765a91*/
+        m_8 = this->m_8; /*0x765a93*/
       for ( i = 0; i < m_8; ++i ) /*0x765a99*/
-        ComPtr::Set(&v6->ComPtr_field_0x08 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x765aa6*/
-      if ( (this->q00D) ) /*0x765ab0*/
+        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x765aa6*/
+      if ( BYTE1(this->m_C) ) /*0x765ab0*/
       {
         v11 = *(void (****)(unsigned int, int))&this->q004; /*0x765ab7*/
         if ( v11 ) /*0x765abc*/
@@ -965,17 +978,18 @@ int COMClass::registerObject(int a1, void* a2) {
       m_8 = a1; /*0x765acb*/
     }
     *&this->q004 = v6; /*0x765ada*/
-    this->q008 = m_8; /*0x765add*/
-    (this->q00D) = a2 == 0; /*0x765ae0*/
+    this->m_8 = m_8; /*0x765add*/
+    BYTE1(this->m_C) = a2 == 0; /*0x765ae0*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x765ae9*/
+    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x765ae9*/
   }
-  v12 = this->q008; /*0x765aec*/
-  if ( v12 < this->q010 ) /*0x765af4*/
-    this->q010 = v12; /*0x765af6*/
+  v12 = this->m_8; /*0x765aec*/
+  if ( v12 < this->m_10 ) /*0x765af4*/
+    this->m_10 = v12; /*0x765af6*/
   return 1; /*0x765af9*/
+
 }
 }
 // 0x765B10

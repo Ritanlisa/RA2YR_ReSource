@@ -81,13 +81,13 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
           if ( v7 >= v9 ) /*0x413fc1*/
             goto LABEL_9; /*0x413fc1*/
         }
-        ((Power *)v3 + 21)->ChangedHouse(1); /*0x413fcd*/
+        Power::ChangedHouse((Power *)v3 + 21, 1); /*0x413fcd*/
       }
     }
-    LABEL_9:
-    ((BuildingTypeClass *)(v3 + 226))->GetPowerOutput(v3->Type->ROT); /*0x413fd2*/
-    ((BuildingTypeClass *)(v3 + 232))->GetPowerOutput(v3->Type->ROT); /*0x414001*/
-    Value = (unsigned int *)(ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18)); /*0x41400d*/
+LABEL_9:
+    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 226), v3->Type->ROT); /*0x413fd2*/
+    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 232), v3->Type->ROT); /*0x414001*/
+    Value = ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18); /*0x41400d*/
     FacingClass::Set_SyncLog(&v3->secondaryFacing, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
     v13 = (*(int (**)(int))(*v3->Type + 188))(v3[433]); /*0x414024*/
@@ -103,8 +103,8 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
   }
   v16 = v3->focus; /*0x41405d*/
   if ( v16 ) /*0x414065*/
-    return (gamemd::AircraftTypeClass *)((unsigned int *)BuildingClass::PowerUpdate(v16, v3)); /*0x414068*/
-  return (gamemd::AircraftTypeClass *)(result); /*0x41406d*/
+    return (unsigned int *)BuildingClass::PowerUpdate(v16, v3); /*0x414068*/
+  return result; /*0x41406d*/
 
 }
 }  // G42.18 ns repair
@@ -397,148 +397,150 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
 namespace gamemd {
 void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, void * a4)
 {
+
   void *ClosestPlacementCell; // edi
   int v6; // eax
   int v7; // ebx
-  int v8; // eax
-  int v9; // eax
+  unsigned __int8 *v8; // eax
+  unsigned __int8 *v9; // eax
   Array *v10; // eax
   Array *v11; // ebx
-  int v12; // eax
+  unsigned __int8 *v12; // eax
   int v13; // eax
-  int v14; // ebx
-  int v15; // eax
+  unsigned int *v14; // ebx
+  unsigned __int8 *v15; // eax
 
-  ClosestPlacementCell = a2; /*0x41aa83*/
+  ClosestPlacementCell = (void *)a2; /*0x41aa83*/
   if ( !a2 ) /*0x41aa8b*/
   {
-    LABEL_53:
-    (*((unsigned char *)&(v6))) = FootClass::AssignDestination((FootClass *)a1, (int)ClosestPlacementCell, (int)a3); /*0x41adac*/
+LABEL_53:
+    LOBYTE(v6) = FootClass::AssignDestination((FootClass *)this, (int)ClosestPlacementCell, (int)a3); /*0x41adac*/
     return v6; /*0x41adb4*/
   }
-  if ( !(*(uint8_t (**)(int))(*(unsigned int *)a2 + 84))(a2) ) /*0x41aa9a*/
+  if ( !(*(unsigned __int8 (**)(int))(*(unsigned int *)a2 + 84))(a2) ) /*0x41aa9a*/
   {
-    if ( (*(int (__stdcall **)(int))(*(unsigned int *)((unsigned int)(a2)+ 4) + 12))(a2 + 4) != 6 /*0x41aada*/
-      || (*(int (**)(Class_7E22A4 *))(*(unsigned int *)a1 + 388))(a1) != 7 && *((unsigned int *)a1 + 45) != 7 )
+    if ( (*(int (**)(int))(*(unsigned int *)(a2 + 4) + 12))(a2 + 4) != 6 /*0x41aada*/
+      || (*(int (**)(Class_7E22A4 *))(*&this->u32_610))(this) != 7 && this->u32_B4 != 7 )
     {
       goto LABEL_35; /*0x41aada*/
     }
-    if ( (uint8_t)((Team *)((Team *)a1))->AllMembersValid() ) /*0x41aae8*/
+    if ( (unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x41aae8*/
     {
       v10 = (Array *)AbstractClass::IsTechnoType((AbstractClass *)a2); /*0x41ac4e*/
       v11 = v10; /*0x41ac53*/
       if ( !v10 ) /*0x41ac57*/
         goto LABEL_35; /*0x41ac57*/
-      if ( (uint8_t)Array::ContainsValue(v10, (int)a1) ) /*0x41ac5c*/
+      if ( (unsigned __int8)Array::ContainsValue(v10, (int)this) ) /*0x41ac5c*/
       {
-        if ( (uint8_t)Array::Contains(v11, (int)a1) ) /*0x41ac72*/
+        if ( (unsigned __int8)Array::Contains(v11, (int)this) ) /*0x41ac72*/
           goto LABEL_35; /*0x41ac72*/
-        v6 = (*(int (**)(Class_7E22A4 *, int))(*(unsigned int *)a1 + 628))(a1, 14); /*0x41ac81*/
+        v6 = (*(int (**)(Class_7E22A4 *, int))(*&this->u32_9D0))(this, 14); /*0x41ac81*/
         if ( v6 == 1 ) /*0x41ac8a*/
           return v6; /*0x41ac8a*/
-        (*(void (**)(Class_7E22A4 *, int))(*(unsigned int *)a1 + 628))(a1, 3); /*0x41ac96*/
-        v12 = *(unsigned int *)((unsigned int)(a2)+ 1312); /*0x41ac9c*/
-        if ( !*(unsigned char *)(v12 + 5801) && !*(unsigned char *)(v12 + 5802) ) /*0x41acac*/
+        (*(void (**)(Class_7E22A4 *, int))(*&this->u32_9D0))(this, 3); /*0x41ac96*/
+        v12 = *(unsigned __int8 **)(a2 + 1312); /*0x41ac9c*/
+        if ( !v12[5801] && !v12[5802] ) /*0x41acac*/
           goto LABEL_35; /*0x41acb4*/
-        TechnoClass::SetFocus((TechnoClass *)a1,(int)(a2)); /*0x41acb9*/
+        TechnoClass::SetFocus((TechnoClass *)this, a2); /*0x41acb9*/
         goto LABEL_34; /*0x41acb9*/
       }
     }
     else
     {
-      if ( !(uint8_t)Array::ContainsValue((Array *)a2, (int)a1) ) /*0x41aaf8*/
+      if ( !(unsigned __int8)Array::ContainsValue((Array *)a2, (int)this) ) /*0x41aaf8*/
       {
-        TechnoClass::SetFocus((TechnoClass *)a1,(int)(a2)); /*0x41ab09*/
-        if ( *(unsigned char *)(*(unsigned int *)((unsigned int)(a2)+ 1312) + 5835) ) /*0x41ab1a*/
+        TechnoClass::SetFocus((TechnoClass *)this, a2); /*0x41ab09*/
+        if ( *(unsigned char *)(*(unsigned int *)(a2 + 1312) + 5835) ) /*0x41ab1a*/
         {
-          ClosestPlacementCell = (void *)(*(int (**)(Class_7E22A4 *, int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1320))( /*0x41ab4a*/
-                                           a1,
-                                           *((unsigned int *)a1 + 433) + 1000,
+          ClosestPlacementCell = (void *)(*(int (**)(Class_7E22A4 *, int, unsigned int, unsigned int))(*&this->u32_14A0))( /*0x41ab4a*/
+                                           this,
+                                           this->u32_6C4 + 1000,
                                            0,
                                            0);
-          (*(void (**)(Class_7E22A4 *, unsigned int, int))(*(unsigned int *)a1 + 1152))(a1, 0, 1); /*0x41ab4c*/
+          (*(void (**)(Class_7E22A4 *, unsigned int, int))(*&this->u32_1200))(this, 0, 1); /*0x41ab4c*/
           v7 = 2; /*0x41ab54*/
           if ( ClosestPlacementCell /*0x41ab6b*/
-            && (*(int (**)(Class_7E22A4 *, int, void *))(*(unsigned int *)a1 + 632))(
-                 a1,
+            && (*(int (**)(Class_7E22A4 *, int, void *))(*&this->u32_9E0))(
+                 this,
                  15,
                  ClosestPlacementCell) == 1 )
           {
-            (*(void (**)(Class_7E22A4 *, int, void *))(*(unsigned int *)a1 + 632))(a1, 2, ClosestPlacementCell); /*0x41ab73*/
+            (*(void (**)(Class_7E22A4 *, int, void *))(*&this->u32_9E0))(this, 2, ClosestPlacementCell); /*0x41ab73*/
             v7 = 7; /*0x41ab79*/
           }
           else
           {
-            ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((TechnoClass *)a1); /*0x41ab87*/
+            ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((TechnoClass *)this); /*0x41ab87*/
           }
-          (*(void (**)(Class_7E22A4 *, int))(*(unsigned int *)a1 + 488))(a1, v7); /*0x41ab90*/
-          if ( (*(uint8_t (**)(Class_7E22A4 *))(*(unsigned int *)a1 + 512))(a1) ) /*0x41ab9a*/
-            (*(void (**)(Class_7E22A4 *))(*(unsigned int *)a1 + 492))(a1); /*0x41aba8*/
+          (*(void (**)(Class_7E22A4 *, int))(*&this->u32_7A0))(this, v7); /*0x41ab90*/
+          if ( (*(unsigned __int8 (**)(Class_7E22A4 *))(*&this->q800))(this) ) /*0x41ab9a*/
+            (*(void (**)(Class_7E22A4 *))(*&this->u32_7B0))(this); /*0x41aba8*/
         }
         if ( *(unsigned char *)(*(unsigned int *)(a2 + 1312) + 5801) ) /*0x41abb2*/
         {
-          *((unsigned int *)a1 + 320) = a2; /*0x41abc4*/
-          LABEL_34:
+          this->u32_500 = a2; /*0x41abc4*/
+LABEL_34:
           ClosestPlacementCell = 0; /*0x41acbe*/
         }
-        LABEL_35:
-        v13 = (*(int (**)(Class_7E22A4 *))(*(unsigned int *)a1 + 444))(a1); /*0x41acc0*/
-        if ( (v13->u32_140 & 0x100) == 0 ) /*0x41acd3*/
+LABEL_35:
+        v13 = (*(int (**)(Class_7E22A4 *))(*&this->u32_6F0))(this); /*0x41acc0*/
+        if ( (*(unsigned int *)(v13 + 320) & 0x100) == 0 ) /*0x41acd3*/
         {
           v14 = v13->u32_E4; /*0x41acd9*/
           if ( v14 ) /*0x41ace1*/
           {
-            while ( (Class_7E22A4 *)v14 == a1 || (*(int (**)(int))(*(unsigned int *)v14 + 44))(v14) != 6 ) /*0x41acf5*/
+            while ( v14 == (unsigned int *)this || (*(int (**)(unsigned int *))(*v14 + 44))(v14) != 6 ) /*0x41acf5*/
             {
-              v14 = *(unsigned int *)(v14 + 48); /*0x41acf7*/
+              v14 = (unsigned int *)v14[12]; /*0x41acf7*/
               if ( !v14 ) /*0x41acfc*/
                 goto LABEL_53; /*0x41acfc*/
             }
-            v15 = *(unsigned int *)(v14 + 1312); /*0x41ad19*/
-            if ( *(unsigned char *)(v15 + 5801) || *(unsigned char *)(v15 + 5802) ) /*0x41ad29*/
+            v15 = (unsigned __int8 *)v14[328]; /*0x41ad19*/
+            if ( v15[5801] || v15[5802] ) /*0x41ad29*/
             {
-              if ( !*((unsigned int *)a1 + 413) ) /*0x41ad33*/
+              if ( !this->u32_674 ) /*0x41ad33*/
                 sub_7DC720(-2147467261); /*0x41ad42*/
-              if ( !(*(uint8_t (__stdcall **)(unsigned int))(**((unsigned int **)a1 + 413) + 96))(*((unsigned int *)a1 + 413)) /*0x41ad5d*/
+              if ( !(*(unsigned __int8 (**)(unsigned int))(*this->u32_674 + 96))(this->u32_674) /*0x41ad5d*/
                 && !HouseClass::IonSensitivesShouldBeOffline() )
               {
-                if ( !*((unsigned int *)a1 + 413) ) /*0x41ad66*/
+                if ( !this->u32_674 ) /*0x41ad66*/
                   sub_7DC720(-2147467261); /*0x41ad75*/
-                (*(void (__stdcall **)(unsigned int))(**((unsigned int **)a1 + 413) + 88))(*((unsigned int *)a1 + 413)); /*0x41ad83*/
+                (*(void (**)(unsigned int))(*this->u32_674 + 88))(this->u32_674); /*0x41ad83*/
               }
-              if ( Team::GetMember((Team *)a1, 0) == v14 /*0x41ad9e*/
-                && ClosestPlacementCell != (void *)Team::GetMember((Team *)a1, 0) )
+              if ( (unsigned int *)Team::GetMember((Team *)this, 0) == v14 /*0x41ad9e*/
+                && ClosestPlacementCell != (void *)Team::GetMember((Team *)this, 0) )
               {
-                (*(void (**)(Class_7E22A4 *, int))(*(unsigned int *)a1 + 628))(a1, 3); /*0x41ada6*/
+                (*(void (**)(Class_7E22A4 *, int))(*&this->u32_9D0))(this, 3); /*0x41ada6*/
               }
             }
           }
         }
         goto LABEL_53; /*0x41ada6*/
       }
-      if ( (*(int (**)(Class_7E22A4 *, int, int))(*(unsigned int *)a1 + 632))(a1, 14, a2) != 1 ) /*0x41abdf*/
+      if ( (*(int (**)(Class_7E22A4 *, int, int))(*&this->u32_9E0))(this, 14, a2) != 1 ) /*0x41abdf*/
       {
-        (*(void (**)(Class_7E22A4 *, int))(*(unsigned int *)a1 + 628))(a1, 3); /*0x41abe7*/
-        v8 = *(unsigned int *)(a2 + 1312); /*0x41abed*/
-        if ( *(unsigned char *)(v8 + 5801) || *(unsigned char *)(v8 + 5802) ) /*0x41abfd*/
+        (*(void (**)(Class_7E22A4 *, int))(*&this->u32_9D0))(this, 3); /*0x41abe7*/
+        v8 = *(unsigned __int8 **)(a2 + 1312); /*0x41abed*/
+        if ( v8[5801] || v8[5802] ) /*0x41abfd*/
         {
-          TechnoClass::SetFocus((TechnoClass *)a1, a2); /*0x41ac0a*/
+          TechnoClass::SetFocus((TechnoClass *)this, a2); /*0x41ac0a*/
           ClosestPlacementCell = 0; /*0x41ac0f*/
         }
       }
-      v9 = *(unsigned int *)(a2 + 1312); /*0x41ac11*/
-      if ( *(unsigned char *)(v9 + 5801) || *(unsigned char *)(v9 + 5802) ) /*0x41ac21*/
+      v9 = *(unsigned __int8 **)(a2 + 1312); /*0x41ac11*/
+      if ( v9[5801] || v9[5802] ) /*0x41ac21*/
       {
-        if ( *((unsigned int *)a1 + 361) ) /*0x41ac38*/
-          TechnoClass::SetFocus((TechnoClass *)a1, *((unsigned int *)a1 + 361)); /*0x41ac45*/
+        if ( this->u32_5A4 ) /*0x41ac38*/
+          TechnoClass::SetFocus((TechnoClass *)this, this->u32_5A4); /*0x41ac45*/
         goto LABEL_35; /*0x41ac4a*/
       }
     }
-    TechnoClass::SetFocus((TechnoClass *)a1, (int)ClosestPlacementCell); /*0x41ac2e*/
+    TechnoClass::SetFocus((TechnoClass *)this, (int)ClosestPlacementCell); /*0x41ac2e*/
     goto LABEL_35; /*0x41ac33*/
   }
-  (*((unsigned char *)&(v6))) = FootClass::AssignDestination((FootClass *)a1, 0, (int)a3); /*0x41aaa6*/
+  LOBYTE(v6) = FootClass::AssignDestination((FootClass *)this, 0, (int)a3); /*0x41aaa6*/
   return v6; /*0x41aaab*/
+
 }
 }
 // 0x41ADF0

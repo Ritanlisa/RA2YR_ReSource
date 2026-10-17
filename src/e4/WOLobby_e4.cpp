@@ -355,15 +355,17 @@ namespace gamemd {
 wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM)
 {
 
-  wchar_t *v7; // [esp+10h] [ebp-4h] BYREF
-  unknown_libname_74(&v7); /*0x603f6d*/
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
-  lParam[0] = a3; /*0x603f83*/
+  wchar_t *v7; // [esp+10h] [ebp-4h] BYREF
+
+  unknown_libname_74(&v7); /*0x603f6d*/
+  lParam[0] = LPARAM; /*0x603f83*/
   lParam[1] = -1; /*0x603f87*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f8f*/
   WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v7); /*0x603f9c*/
-  ((DeleteAndZero *)&v7)->Alt(); /*0x603fa5*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v7); /*0x603fa5*/
   return a1; /*0x603fac*/
+
 }
 } // namespace gamemd
 
@@ -424,26 +426,28 @@ void sub_72BB10()
 namespace gamemd {
 CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 {
+
   wchar_t *StringCSF; // eax
+  LRESULT v5; // eax
+  char v7[108]; // [esp+4h] [ebp-6Ch] BYREF
 
   if ( wParam == -1 ) /*0x78109d*/
   {
-    StringCSF = GetStringCSF((char *)(aSttLobbylistus), 0, g_Str_File_wonline_cpp, 3050); /*0x7810a4*/
+    StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3050); /*0x7810a4*/
   }
   else
   {
-    LRESULT v5; // eax
     v5 = SendMessageA(a2, 0x199u, wParam, 0); /*0x7810af*/
-    if ( v5 >= 0 && v5 < (int)dword_B77900 ) /*0x7810c1*/
+    if ( v5 >= 0 && v5 < *(int *)&stru_B778FC.m_3[1] ) /*0x7810c1*/
     {
-      char v7[108]; // [esp+4h] [ebp-6Ch] BYREF
-      memcpy(v7, (char *)dword_B77908 + 108 * v5, sizeof(v7)); /*0x7810ee*/
+      qmemcpy(v7, (char *)dword_B77908 + 108 * v5, sizeof(v7)); /*0x7810ee*/
       FormatWOLPlayerInfo(a1, v7); /*0x7810f2*/
-      return (gamemd::CampaignScore *)(a1); /*0x7810ff*/
+      return a1; /*0x7810ff*/
     }
-    StringCSF = GetStringCSF((char *)(aSttLobbylistus), 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
+    StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
   }
-  ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x78111b*/
-  return (gamemd::CampaignScore *)(a1); /*0x7810fb*/
+  WideString::Assign((WideString *)a1, StringCSF); /*0x78111b*/
+  return a1; /*0x7810fb*/
+
 }
 } // namespace gamemd

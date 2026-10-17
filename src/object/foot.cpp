@@ -579,28 +579,29 @@ void FootClass::onMovementDone() {
 }
 // 0x709290
 bool FootClass::CanEnterCell(uint32_t a) { return false; 
-  int v3; // eax
-  int v4; // eax
+
+  unsigned int *v3; // eax
+  unsigned int v4; // eax
   bool result; // al
   FactoryClass *v6; // ecx
   int v7; // edi
   FactoryClass *v8; // ecx
   int v9; // edi
-  int *v10; // eax
-  int v11; // eax
+  unsigned __int8 **v10; // eax
+  unsigned __int8 *v11; // eax
   bool v12; // bl
   bool v13; // al
 
-  if ( !*(unsigned int *)(a1 + 692) && !(uint8_t)House::IsCurrentPlayer(*(House **)(a1 + 540)) ) /*0x7092aa*/
+  if ( !*(unsigned int *)(a1 + 692) && !(unsigned __int8)House::IsCurrentPlayer(*(House **)(a1 + 540)) ) /*0x7092aa*/
   {
     if ( a1 ) /*0x7092b5*/
     {
       if ( (*(unsigned char *)(a1 + 20) & 4) != 0 ) /*0x7092c3*/
       {
-        v3 = *(unsigned int *)(a1 + 1492); /*0x7092c5*/
+        v3 = *(unsigned int **)(a1 + 1492); /*0x7092c5*/
         if ( v3 ) /*0x7092cd*/
         {
-          v4 = *(unsigned int *)(v3 + 36); /*0x7092cf*/
+          v4 = v3[9]; /*0x7092cf*/
           if ( !*(unsigned char *)(v4 + 175) && *(unsigned char *)(v4 + 173) && *(unsigned int *)(a1 + 172) == 2 ) /*0x7092ec*/
             return 1; /*0x7092ec*/
         }
@@ -612,11 +613,11 @@ bool FootClass::CanEnterCell(uint32_t a) { return false;
     return result; /*0x7092fb*/
   if ( *(unsigned int *)(a1 + 172) == 2 )
   {
-    if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 3434) ) /*0x709317*/
+    if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)a1 + 132))(a1) + 3434) ) /*0x709317*/
     {
       if ( !a1 || (*(unsigned char *)(a1 + 20) & 4) == 0 ) /*0x709331*/
         return 0; /*0x709338*/
-      if ( *(unsigned int *)(a1 + 1444) == (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 444))(a1) ) /*0x709349*/
+      if ( *(unsigned int *)(a1 + 1444) == (*(int (**)(int))(*(unsigned int *)a1 + 444))(a1) ) /*0x709349*/
       {
         v6 = *(FactoryClass **)(a1 + 1300); /*0x70934b*/
         if ( !v6 || FactoryClass::GetState(v6) <= 0 ) /*0x709360*/
@@ -627,13 +628,13 @@ bool FootClass::CanEnterCell(uint32_t a) { return false;
     {
       if ( a1 )
       {
-        if ( (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 44))(a1) == 1 )
+        if ( (*(int (**)(int))(*(unsigned int *)a1 + 44))(a1) == 1 )
         {
-          if ( *(unsigned char *)(*(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
+          if ( *(unsigned char *)(*(unsigned int *)((*(int (**)(int))(*(unsigned int *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
                         + 3603) )
           {
             v7 = (*(unsigned char *)(a1 + 20) & 4) != 0 ? a1 : 0;
-            if ( *(unsigned int *)(v7 + 1444) == (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 444))(a1) ) /*0x7093bc*/
+            if ( *(unsigned int *)(v7 + 1444) == (*(int (**)(int))(*(unsigned int *)a1 + 444))(a1) ) /*0x7093bc*/
             {
               v8 = *(FactoryClass **)(a1 + 1300); /*0x7093be*/
               if ( !v8 || FactoryClass::GetState(v8) <= 0 ) /*0x7093d3*/
@@ -644,22 +645,23 @@ bool FootClass::CanEnterCell(uint32_t a) { return false;
       }
     }
   }
-  if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
+  if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
     return 1; /*0x7093df*/
   if ( *(unsigned int *)(a1 + 172) != 5 ) /*0x7093f0*/
     return 0; /*0x7093f7*/
-  v9 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a1 + 996))(a1, a2); /*0x709403*/
-  v10 = (int *)(*(int (__thiscall **)(int, int))(*(unsigned int *)a1 + 1016))(a1, v9); /*0x70940a*/
+  v9 = (*(int (**)(int, int))(*(unsigned int *)a1 + 996))(a1, a2); /*0x709403*/
+  v10 = (unsigned __int8 **)(*(int (**)(int, int))(*(unsigned int *)a1 + 1016))(a1, v9); /*0x70940a*/
   v12 = 0; /*0x709424*/
   if ( v10 ) /*0x709412*/
   {
     v11 = *v10; /*0x709414*/
     if ( v11 ) /*0x709418*/
     {
-      if ( *(unsigned char *)(v11 + 336) ) /*0x70941a*/
+      if ( v11[336] ) /*0x70941a*/
         v12 = 1; /*0x709412*/
     }
   }
-  v13 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 740))(a1, *(unsigned int *)(a1 + 692)) == v9; /*0x70943d*/
+  v13 = (*(int (**)(int, unsigned int))(*(unsigned int *)a1 + 740))(a1, *(unsigned int *)(a1 + 692)) == v9; /*0x70943d*/
   return !v12 || !v13; /*0x709450*/
+
 }

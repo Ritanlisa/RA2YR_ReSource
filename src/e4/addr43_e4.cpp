@@ -496,6 +496,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
 namespace gamemd {
 MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IUnknown * aP3, unsigned int * a4, int * a5, TechnoClass * aP6, int a8, int a9, TechnoClass * aP9, int a11, int a12, TechnoClass * aP12, int a14, int a15)
 {
+
   int v16; // edx
   int v17; // esi
   int v18; // ebp
@@ -513,7 +514,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   int v30; // ecx
   int v31; // ebp
   int v32; // edi
-  uint16_t *v33; // edi
+  unsigned __int16 *v33; // edi
   int v34; // eax
   int v35; // ebp
   int v36; // eax
@@ -528,10 +529,10 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   int v46; // [esp+48h] [ebp-5Ch]
   int v47; // [esp+4Ch] [ebp-58h]
   int v48; // [esp+50h] [ebp-54h]
-  StreamClass *m_Stream; // [esp+54h] [ebp-50h]
+  int m_Stream; // [esp+54h] [ebp-50h]
   int v50; // [esp+58h] [ebp-4Ch]
-  int v51; // [esp+5Ch] [ebp-48h]
-  int v52; // [esp+60h] [ebp-44h]
+  StreamObj v51; // [esp+5Ch] [ebp-48h]
+  unsigned int *v52; // [esp+60h] [ebp-44h]
   char v53[8]; // [esp+64h] [ebp-40h] BYREF
   char v54[8]; // [esp+6Ch] [ebp-38h] BYREF
   int v55; // [esp+74h] [ebp-30h] BYREF
@@ -552,7 +553,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   int v70; // [esp+BCh] [ebp+18h]
   int v71; // [esp+C0h] [ebp+1Ch]
 
-  v16 = (int)(a5[1]);
+  v16 = a5[1]; /*0x437a23*/
   v62 = *a5; /*0x437a26*/
   v63 = v16; /*0x437a2a*/
   v17 = 0; /*0x437a2e*/
@@ -562,25 +563,25 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v65 = a5[3]; /*0x437a49*/
   v42 = 0; /*0x437a4d*/
   m_Stream = 0; /*0x437a53*/
-  v58 = (int)(*aP2); /*0x437a57*/
+  v58 = *aP2; /*0x437a57*/
   v51 = 0; /*0x437a5b*/
   v69 = 0; /*0x437a62*/
-  v59 = (int)(aP2[1]); /*0x437a69*/
+  v59 = aP2[1]; /*0x437a69*/
   v46 = 0; /*0x437a6d*/
   v47 = 0; /*0x437a74*/
-  v60 = (int)(aP2[2]); /*0x437a78*/
-  v61 = (int)(aP2[3]); /*0x437a8d*/
+  v60 = aP2[2]; /*0x437a78*/
+  v61 = aP2[3]; /*0x437a8d*/
   v18 = 24 * a9 + 8484624; /*0x437a9c*/
   v50 = 0; /*0x437aa7*/
   v19 = 0; /*0x437aab*/
-  v52 = v18; /*0x437aad*/
-  result = IntersectSurfaceRects((IUnknown *)(&v58), (int)a1, &v62, (int)a4); /*0x437ab1*/
+  v52 = (unsigned int *)v18; /*0x437aad*/
+  result = IntersectSurfaceRects(&v58, (int)a1, &v62, (int)a4); /*0x437ab1*/
   if ( !result ) /*0x437ab8*/
-    return (gamemd::MouseClass **)(result); /*0x437ab8*/
+    return result; /*0x437ab8*/
   v71 = v62 - *a4; /*0x437ad6*/
   v48 = v63 - a4[1]; /*0x437ae7*/
   v41 = CellStruct::Copy((CellStruct *)&v58, v53); /*0x437afd*/
-  v21 = (Coord2D *)CellStruct::Copy((gamemd::CellStruct *)(a1), &v55); /*0x437b02*/
+  v21 = (Coord2D *)CellStruct::Copy(a1, &v55); /*0x437b02*/
   v22 = Coord2D::Add(v21, v54, v41); /*0x437b09*/
   v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))(aP0, *v22, v22->vtable2); /*0x437b28*/
   if ( !v68 ) /*0x437b2f*/
@@ -591,21 +592,21 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x437b5e*/
     v56 = (char *)a1->field_4 + v59; /*0x437b61*/
     v25 = (int)&v56[-Stream_field_04]; /*0x437b67*/
-    SamplePosition = ((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v23, v25); /*0x437b73*/
+    SamplePosition = Audio::GetSamplePosition(&g_ZBufferDescriptor->m_Stream, v23, v25); /*0x437b73*/
     v46 = *(unsigned int *)(v18 + 8); /*0x437b7c*/
     v69 = 0; /*0x437b80*/
     v47 = *(unsigned int *)(v18 + 12); /*0x437b91*/
-    m_Stream = ((unsigned int *)(g_ZBufferDescriptor))[2].m_Stream; /*0x437b95*/
+    m_Stream = g_ZBufferDescriptor[2].m_Stream; /*0x437b95*/
     v26 = v47 / v46; /*0x437b9e*/
     if ( *(unsigned char *)(v18 + 20) ) /*0x437ba0*/
     {
       v27 = a12; /*0x437bcd*/
       v17 = *(unsigned int *)(v18 + 4) /*0x437bd4*/
-      * ((a8 + (uint16_t)((*((unsigned short *)&(((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_10))) - v25))
-      / *(unsigned int *)(v18 + 4));
+          * ((a8 + (unsigned __int16)(LOWORD(g_ZBufferDescriptor[1].Stream_field_10) - v25))
+           / *(unsigned int *)(v18 + 4));
       if ( a12 ) /*0x437bd9*/
       {
-        LABEL_7:
+LABEL_7:
         v28 = (int *)(*(int (**)(int, int *))(*(unsigned int *)v27 + 120))(v27, &v55); /*0x437bdf*/
         v29 = *v28; /*0x437bed*/
         v50 = v28[2]; /*0x437bf6*/
@@ -618,9 +619,9 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     else
     {
       v17 = a8 /*0x437c67*/
-      + (uint16_t)((*((unsigned short *)&(g_ZBufferDescriptor->Stream_field_04)))
-                             + (*((unsigned short *)&(((unsigned int *)(g_ZBufferDescriptor))[1].Stream_field_10)))
-                             - (*((unsigned short *)&(a1->field_4)))
+          + (unsigned __int16)(LOWORD(g_ZBufferDescriptor->Stream_field_04)
+                             + LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
+                             - LOWORD(a1->field_4)
                              - aP2->vtable4
                              - aP2->vtable2
                              + 1);
@@ -638,16 +639,16 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     }
     v42 = (char *)&unk_89C568; /*0x437ccc*/
   }
-  LABEL_12:
-  if ( *(unsigned int *)&g_VisibleSurfaceDescriptor ) /*0x437cdc*/
+LABEL_12:
+  if ( dword_87E8A4 ) /*0x437cdc*/
   {
     v31 = a1->field_0 + v58; /*0x437ce7*/
-    v32 = (int)a1->field_4 + v59 - *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4); /*0x437cfa*/
-    v44 = (*(int **)&g_VisibleSurfaceDescriptor)->ReadAndSeek(v31, v32); /*0x437d18*/
-    v51 = *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 40); /*0x437d1c*/
-    v19 = (2 * (v32 & 1)) | ((uint8_t)v31 ^ (uint8_t)v32) & 1; /*0x437d20*/
+    v32 = (int)a1->field_4 + v59 - *(unsigned int *)&dword_87E8A4[1]; /*0x437cfa*/
+    v44 = StreamClass::ReadAndSeek((int *)dword_87E8A4, v31, v32); /*0x437d18*/
+    v51 = dword_87E8A4[10]; /*0x437d1c*/
+    v19 = (2 * (v32 & 1)) | ((unsigned __int8)v31 ^ (unsigned __int8)v32) & 1; /*0x437d20*/
   }
-  v33 = (uint16_t *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP3 + 92))(aP3, 0, 0); /*0x437d36*/
+  v33 = (unsigned __int16 *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP3 + 92))(aP3, 0, 0); /*0x437d36*/
   if ( v33 ) /*0x437d3a*/
   {
     v34 = v48; /*0x437d51*/
@@ -656,13 +657,13 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
       do /*0x437d64*/
       {
         v19 ^= 3u; /*0x437d5b*/
-        v33 = (uint16_t *)((char *)v33 + *v33); /*0x437d61*/
+        v33 = (unsigned __int16 *)((char *)v33 + *v33); /*0x437d61*/
         --v34; /*0x437d63*/
       }
       while ( v34 ); /*0x437d64*/
     }
-    v35 = (int)(aP0); /*0x437d66*/
-    v70 = (*(int (**)(int))(*&aP0->u32_1D0))(aP0); /*0x437d76*/
+    v35 = aP0; /*0x437d66*/
+    v70 = (*(int (**)(int))(*(unsigned int *)aP0 + 116))(aP0); /*0x437d76*/
     v36 = v65; /*0x437d7d*/
     if ( v65 >= v61 ) /*0x437d83*/
       v36 = v61; /*0x437d85*/
@@ -671,9 +672,9 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
       v67 = v36; /*0x437d96*/
       do /*0x437eda*/
       {
-        v37 = (int)(*aP6); /*0x437da4*/
+        v37 = *aP6; /*0x437da4*/
         if ( (unsigned short)a15 ) /*0x437daa*/
-          (*(void (**)(int *, int, uint16_t *, int, int, int, int, int, int, int, char *, int))(v37 + 8))( /*0x437de4*/
+          (*(void (**)(int *, int, unsigned __int16 *, int, int, int, int, int, int, int, char *, int))(v37 + 8))( /*0x437de4*/
             aP6,
             v68,
             v33 + 1,
@@ -687,7 +688,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
             v42,
             a15);
         else
-          (*(void (**)(int *, int, uint16_t *, int, int, int, int, int, int, int, char *))(v37 + 4))( /*0x437e20*/
+          (*(void (**)(int *, int, unsigned __int16 *, int, int, int, int, int, int, int, char *))(v37 + 4))( /*0x437e20*/
             aP6,
             v68,
             v33 + 1,
@@ -701,10 +702,10 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
             v42);
         v68 += v70; /*0x437e38*/
         v19 ^= 3u; /*0x437e45*/
-        v33 = (uint16_t *)((char *)v33 + *v33); /*0x437e48*/
+        v33 = (unsigned __int16 *)((char *)v33 + *v33); /*0x437e48*/
         if ( g_ZBufferDescriptor ) /*0x437e4c*/
         {
-          v38 = SamplePosition + 2 * (unsigned int)m_Stream; /*0x437e56*/
+          v38 = SamplePosition + 2 * m_Stream; /*0x437e56*/
           if ( v38 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x437e5e*/
             v38 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x437e60*/
           SamplePosition = v38; /*0x437e63*/
@@ -718,29 +719,30 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
             v69 += v46; /*0x437e95*/
             if ( v69 >= v47 ) /*0x437e9c*/
             {
-              v17 += *(unsigned int *)(v52 + 16); /*0x437ea2*/
+              v17 += v52[4]; /*0x437ea2*/
               v69 = v39 - v47; /*0x437ea7*/
             }
           }
-          v40 = v44 + 2 * v51; /*0x437eb6*/
-          if ( v40 >= *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 28) ) /*0x437ec2*/
-            v40 -= *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 32); /*0x437ec4*/
+          v40 = v44 + 2 * *(unsigned int *)&v51; /*0x437eb6*/
+          if ( v40 >= *(unsigned int *)&dword_87E8A4[7] ) /*0x437ec2*/
+            v40 -= *(unsigned int *)&dword_87E8A4[8]; /*0x437ec4*/
           v44 = v40; /*0x437ec7*/
         }
         --v67; /*0x437ed3*/
       }
       while ( v67 ); /*0x437eda*/
-      v35 = (int)(aP0); /*0x437ee0*/
+      v35 = aP0; /*0x437ee0*/
     }
     (*(void (**)(int))(*(unsigned int *)v35 + 96))(v35); /*0x437ee9*/
     (*(void (**)(int))(*(unsigned int *)aP3 + 96))(aP3); /*0x437ef5*/
-    return (gamemd::MouseClass **)(1); /*0x437ef8*/
+    return 1; /*0x437ef8*/
   }
   else
   {
-    (*(void (**)(int))(*&aP0->q180))(aP0); /*0x437d42*/
+    (*(void (**)(int))(*(unsigned int *)aP0 + 96))(aP0); /*0x437d42*/
     return 0; /*0x437d45*/
   }
+
 }
 }
 // 0x437F50
@@ -2351,19 +2353,20 @@ namespace gamemd {
 int E4Recv_43EE50::sub_43EE50()
 {
 
-
-  if ( !(*(unsigned __int8 (**)(TechnoClass *))(this->vtable0 + 1020))(this) || !this->M1408 ) /*0x43ee63*/
-    return 0; /*0x43eea7*/
   unsigned int *Value; // eax
-  int v5; // [esp+8h] [ebp-4h] BYREF
-  Value = ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v5); /*0x43ee76*/
-  int v3 = this->M1408; // esi /*0x43ee7d*/
+  unsigned int *v3; // esi
   int result; // eax
+  int v5; // [esp+8h] [ebp-4h] BYREF
+
+  if ( !(*(unsigned __int8 (**)(TechnoClass *))(this->vfptr + 1020))(this) || !this->M1408 ) /*0x43ee63*/
+    return 0; /*0x43eea7*/
+  Value = ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v5); /*0x43ee76*/
+  v3 = (unsigned int *)this->M1408; /*0x43ee7d*/
   result = dword_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F]; /*0x43ee8e*/
   if ( v3 ) /*0x43ee95*/
   {
-    *(unsigned int *)(v3 + 172) = result; /*0x43ee97*/
-    *(unsigned int *)(v3 + 196) = 0; /*0x43ee9d*/
+    v3[43] = result; /*0x43ee97*/
+    v3[49] = 0; /*0x43ee9d*/
   }
   return result; /*0x43eea3*/
 

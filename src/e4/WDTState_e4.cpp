@@ -14,27 +14,32 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 {
 
+  int m_8; // ebp
+  int *v5; // eax
   ComPtr *v6; // ebx
+  WDTState *v7; // esi
+  ComPtr *v8; // esi
+  int v9; // ebx
+  int i; // esi
   void (***v11)(unsigned int, int); // ecx
   int v12; // eax
   int v14; // [esp+10h] [ebp-4h]
 
-  int m_8 = a2; // ebp /*0x76ba73*/
+  m_8 = a2; /*0x76ba73*/
   if ( a2 ) /*0x76ba7d*/
   {
-    LOBYTE(this->__pad_00C) = 0; /*0x76ba87*/
+    LOBYTE(this->m_C) = 0; /*0x76ba87*/
     if ( a3 ) /*0x76ba8d*/
     {
       *a3 = a2; /*0x76bad1*/
-      ComPtr *v8; // esi
       v8 = (ComPtr *)(a3 + 1); /*0x76bad3*/
       if ( a2 - 1 >= 0 ) /*0x76badf*/
       {
-        int v9 = a2; // ebx /*0x76bae1*/
+        v9 = a2; /*0x76bae1*/
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          *(unsigned int *)v8->__pad_000 = &vt_rc_ptr; /*0x76baeb*/
+          *(unsigned int *)v8->__pad_0 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76baeb*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76baf1*/
           --v9; /*0x76baf4*/
         }
@@ -45,13 +50,11 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     }
     else
     {
-      int *v5; // eax
       v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x76ba97*/
       if ( v5 ) /*0x76baa1*/
       {
         *v5 = a2; /*0x76baa3*/
         v6 = (ComPtr *)(v5 + 1); /*0x76baa5*/
-        WDTState *v7; // esi
         v7 = (WDTState *)(v5 + 1); /*0x76baab*/
         if ( a2 - 1 >= 0 ) /*0x76baaf*/
         {
@@ -76,7 +79,6 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     {
       if ( a2 >= this->Capacity ) /*0x76bb11*/
         m_8 = this->Capacity; /*0x76bb13*/
-      int i; // esi
       for ( i = 0; i < m_8; ++i ) /*0x76bb19*/
         ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x76bb26*/
       if ( BYTE1(this->m_C) ) /*0x76bb30*/
@@ -88,7 +90,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       }
       m_8 = a2; /*0x76bb4b*/
     }
-    *&this->q004 = (int)(v6); /*0x76bb5a*/
+    *&this->q004 = v6; /*0x76bb5a*/
     this->Capacity = m_8; /*0x76bb5d*/
     BYTE1(this->m_C) = a3 == 0; /*0x76bb60*/
   }
@@ -99,7 +101,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   v12 = this->Capacity; /*0x76bb6c*/
   if ( v12 < this->m_10 ) /*0x76bb74*/
     this->m_10 = v12; /*0x76bb76*/
-  return (gamemd::AbstractClass **)(1); /*0x76bb79*/
+  return 1; /*0x76bb79*/
 
 }
 }  // G42.18 ns repair

@@ -364,11 +364,11 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
   SpawnManagerClass *v2; // ebx
   int v3; // esi
   int Prefix_0; // ebp
-  int v5; // edi
-  int *spawns; // esi
+  unsigned int *v5; // edi
+  int *p_spawns; // esi
   int v7; // eax
-  int v8; // eax
-  int v9; // ecx
+  unsigned int *v8; // eax
+  unsigned int v9; // ecx
   int spawnVectorCapacity; // ecx
   int v11; // eax
   int v12; // eax
@@ -376,40 +376,40 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
   int v14; // esi
   int v16; // [esp+28h] [ebp-4h] BYREF
 
-  v2 = (gamemd::SpawnManagerClass *)(aP1); /*0x6b7f12*/
-  v3 = (int)(aP1_4); /*0x6b7f18*/
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP1, aP1_4); /*0x6b7f24*/
+  v2 = this; /*0x6b7f12*/
+  v3 = a2; /*0x6b7f18*/
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x6b7f24*/
   v5 = 0; /*0x6b7f26*/
   if ( Prefix_0 >= 0 ) /*0x6b7f2a*/
   {
     if ( v2 ) /*0x6b7f32*/
     {
-      AbstractClass::InitVtables((AbstractClass *)v2, (int)&aP1); /*0x6b7f3b*/
-      ((SpawnManagerClass *)v2->spawns)->Constructor_6B83A0(0, 0); /*0x6b7f45*/
-      *&v2->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b7f51*/
+      AbstractClass::InitVtables((AbstractClass *)v2, (int)&this); /*0x6b7f3b*/
+      SpawnManagerClass::Constructor_6B83A0(&v2->spawns, 0, 0); /*0x6b7f45*/
+      *&v2->creationFrame = *(unsigned int *)&stru_A8E960.random[528]; /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       Timer::Start(&v2->SpawnManagerClass_field_5C, 0); /*0x6b7f5a*/
-      v2->AbstractClass = &vt_SpawnManagerClass; /*0x6b7f5f*/
-      /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7f65) */
-      /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7f6c) */
-      /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7f73) */
+      v2->vfptr = (int)&SpawnManagerClass::`vftable'; /*0x6b7f5f*/
+      v2->vfptr1 = (int)&SpawnManagerClass::`vftable'; /*0x6b7f65*/
+      v2->vfptr2 = (int)&SpawnManagerClass::`vftable'; /*0x6b7f6c*/
+      v2->vfptr3 = (int)&SpawnManagerClass::`vftable'; /*0x6b7f73*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/
     if ( Prefix_0 >= 0 ) /*0x6b7f8c*/
     {
-      spawns = v2->spawns; /*0x6b7f92*/
+      p_spawns = &v2->spawns; /*0x6b7f92*/
       if ( v2 != (SpawnManagerClass *)-56 ) /*0x6b7f97*/
       {
-        SpawnControlVector::Constructor((SpawnControlVector *)v2->spawns, 0, 0); /*0x6b7f9d*/
-        *spawns = (int)&vt_DynamicVectorClass; /*0x6b7fa2*/
+        SpawnControlVector::Constructor(&v2->spawns, 0, 0); /*0x6b7f9d*/
+        *p_spawns = (int)&DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b7fa2*/
         *&v2->spawnVectorCapacity = 10; /*0x6b7fa8*/
-        *(unsigned int *)v2->spawnVectorCount = 0; /*0x6b7faf*/
+        *(unsigned int *)v2->__pad_48 = 0; /*0x6b7faf*/
       }
       v7 = v16; /*0x6b7fb2*/
-      aP1 = 0; /*0x6b7fb6*/
+      this = 0; /*0x6b7fb6*/
       if ( v16 <= 0 ) /*0x6b7fbc*/
       {
-        LABEL_20:
+LABEL_20:
         v14 = 0; /*0x6b804d*/
         if ( v7 > 0 ) /*0x6b8051*/
         {
@@ -428,31 +428,31 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       {
         while ( 1 ) /*0x6b7fc8*/
         {
-          v8 = __2_YAPAXI_Z(0x18u); /*0x6b7fc8*/
+          v8 = (unsigned int *)__2_YAPAXI_Z(0x18u); /*0x6b7fc8*/
           if ( v8 ) /*0x6b7fd2*/
           {
-            v9 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b7fd4*/
-            *(unsigned int *)(v8 + 16) = 0; /*0x6b7fda*/
-            *(unsigned int *)(v8 + 8) = v9; /*0x6b7fdd*/
+            v9 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6b7fd4*/
+            v8[4] = 0; /*0x6b7fda*/
+            v8[2] = v9; /*0x6b7fdd*/
             v5 = v8; /*0x6b7fe0*/
           }
-          Prefix_0 = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)aP1_4 + 12))(aP1_4, v5, 24, 0); /*0x6b7ff1*/
+          Prefix_0 = (*(int (**)(int, unsigned int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, v5, 24, 0); /*0x6b7ff1*/
           if ( Prefix_0 < 0 ) /*0x6b7ff5*/
             break; /*0x6b7ff5*/
           spawnVectorCapacity = v2->spawnVectorCapacity; /*0x6b7ffb*/
-          if ( *(unsigned int *)v2->spawnVectorCount < spawnVectorCapacity /*0x6b8020*/
+          if ( *(unsigned int *)v2->__pad_48 < spawnVectorCapacity /*0x6b8020*/
             || (BYTE1(v2->creationFrame) || !spawnVectorCapacity)
             && (v11 = *&v2->spawnVectorCapacity, v11 > 0)
-            && spawns->Release(v2->spawns, spawnVectorCapacity + v11, 0) )
+            && p_spawns->Release(&v2->spawns, spawnVectorCapacity + v11, 0) )
           {
-            v12 = *(unsigned int *)v2->spawnVectorCount; /*0x6b8027*/
+            v12 = *(unsigned int *)v2->__pad_48; /*0x6b8027*/
             spawnVectorCount = v2->spawnVectorCount; /*0x6b802a*/
-            *(unsigned int *)v2->spawnVectorCount = v12 + 1; /*0x6b8030*/
+            *(unsigned int *)v2->__pad_48 = v12 + 1; /*0x6b8030*/
             *(unsigned int *)(spawnVectorCount + 4 * v12) = v5; /*0x6b8033*/
           }
           v7 = v16; /*0x6b803a*/
-          aP1 = (SpawnManagerClass *)((char *)aP1 + 1); /*0x6b8041*/
-          if ( (int)aP1 >= v16 ) /*0x6b8045*/
+          this = &this->AbstractClass_1; /*0x6b8041*/
+          if ( (int)this >= v16 ) /*0x6b8045*/
             goto LABEL_20; /*0x6b8045*/
           v5 = 0; /*0x6b7fc4*/
         }

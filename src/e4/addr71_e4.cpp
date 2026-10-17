@@ -49,18 +49,32 @@ namespace gamemd {
 UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
 
+  unsigned int *i; // edi
+  bool v6; // bl
+  int v7; // eax
+  unsigned int *v8; // eax
+  TechnoClass *v9; // ecx
+  int v10; // ecx
+  unsigned int *v11; // ecx
   unsigned int *v12; // eax
+  int *vfptr3; // ecx
+  int v14; // edi
+  void *v15; // eax
+  Cell *v16; // eax
+  TechnoClass *v17; // ecx
+  int v18; // ecx
+  unsigned int *v19; // eax
+  int v20; // ecx
+  char v22; // [esp+31h] [ebp-5h]
   __int16 v23[2]; // [esp+32h] [ebp-4h] BYREF
 
-  unsigned int *i; // edi
   for ( i = (unsigned int *)Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->firstObject; i; i = (unsigned int *)i[12] ) /*0x7187bf*/
   {
     if ( (*(unsigned __int8 (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
     {
-      *(unsigned int *)v23 = *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 160); /*0x7187e7*/
-      (*(void (**)(int, __int16 *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)this->vtable3 /*0x718804*/
-        + 364))(
-        this->vtable3,
+      *(unsigned int *)v23 = *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 160); /*0x7187e7*/
+      (*(void (**)(int, __int16 *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)this->vfptr3 + 364))( /*0x718804*/
+        this->vfptr3,
         v23,
         0,
         *&dword_8871E0->u32_FA8,
@@ -70,55 +84,49 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         0);
     }
   }
-  char v22; // [esp+31h] [ebp-5h]
   v22 = 0; /*0x718814*/
-  if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278) /*0x71885d*/
+  if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 3278) /*0x71885d*/
     && ((Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->flags & 0x100) != 0
      || Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->landType == 1) )
   {
     v22 = 1; /*0x71885f*/
   }
-  bool v6 = 0; // bl /*0x718867*/
-  if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1660) == 3 ) /*0x718878*/
+  v6 = 0; /*0x718867*/
+  if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 1660) == 3 ) /*0x718878*/
   {
     v6 = 1; /*0x71887d*/
-    if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1040) ) /*0x718887*/
+    if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 1040) ) /*0x718887*/
     {
-      int v7; // eax
-      v7 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718896*/
-      v6 = (*(HouseClass **)(this->vtable3 + 540))->GainedPoweredCenter(v7); /*0x7188af*/
+      v7 = (*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3); /*0x718896*/
+      v6 = HouseClass::GainedPoweredCenter(*(HouseClass **)(this->vfptr3 + 540), v7); /*0x7188af*/
     }
   }
   v23[0] = a2 / 256; /*0x7188c1*/
   v23[1] = a3 / 256; /*0x7188da*/
-  if ( *((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj(v23) + 59) != 2 /*0x718962*/
+  if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23) + 59) != 2 /*0x718962*/
     || v6
-    || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278)
-    || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15
+    || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 3278)
+    || (*(int (**)(int))(*(unsigned int *)this->vfptr3 + 44))(this->vfptr3) == 15
     || (Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->flags & 0x100) != 0
     || Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->landType == 1 )
   {
-    int *vtable3; // ecx
-    vtable3 = (int *)this->vtable3; /*0x718a01*/
+    vfptr3 = (int *)this->vfptr3; /*0x718a01*/
     v23[0] = a2 / 256; /*0x718a14*/
     v23[1] = a3 / 256; /*0x718a2f*/
-    int v14 = *vtable3; // edi /*0x718a3c*/
-    void *v15; // eax
-    v15 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718a46*/
-    if ( (*(int (**)(int, void *, int, int, unsigned int, int))(v14 + 428))(this->vtable3, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
+    v14 = *vfptr3; /*0x718a3c*/
+    v15 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718a46*/
+    if ( (*(int (**)(int, void *, int, int, unsigned int, int))(v14 + 428))(this->vfptr3, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       v23[0] = a2 / 256; /*0x718a80*/
       v23[1] = a3 / 256; /*0x718a95*/
-      Cell *v16; // eax
-      v16 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718aa2*/
-      if ( !(unsigned __int8)(v16)->IsGroundTypeRange() /*0x718abd*/
-        || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15 )
+      v16 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718aa2*/
+      if ( !(unsigned __int8)Cell::IsGroundTypeRange(v16) /*0x718abd*/
+        || (*(int (**)(int))(*(unsigned int *)this->vfptr3 + 44))(this->vfptr3) == 15 )
       {
-        int v19; // eax
-        v19 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718b23*/
-        int v20 = this->vtable3; // ecx /*0x718b2f*/
-        *(unsigned int *)v23 = *(unsigned int *)(v19 + 160); /*0x718b32*/
+        v19 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3); /*0x718b23*/
+        v20 = this->vfptr3; /*0x718b2f*/
+        *(unsigned int *)v23 = v19[40]; /*0x718b32*/
         LOBYTE(v12) = (*(char (**)(int, __int16 *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v20 + 364))( /*0x718b53*/
                         v20,
                         v23,
@@ -131,18 +139,17 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
       }
       else
       {
-        *(unsigned char *)(this->vtable3 + 973) = 1; /*0x718ac2*/
-        (*(void (**)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718ace*/
-        v12 = (unsigned int *)this->vtable3; /*0x718ad4*/
-        TechnoClass *v17 = v12->threatAvoidValue; // ecx /*0x718ad7*/
+        *(unsigned char *)(this->vfptr3 + 973) = 1; /*0x718ac2*/
+        (*(void (**)(int))(*(unsigned int *)this->vfptr3 + 928))(this->vfptr3); /*0x718ace*/
+        v12 = (unsigned int *)this->vfptr3; /*0x718ad4*/
+        v17 = v12->poweredUnitCenters; /*0x718ad7*/
         if ( v17 ) /*0x718adf*/
         {
           TechnoClass::MutateAll(v17, v12->q428, v12->q42C); /*0x718aef*/
-          int v18; // ecx
-          v18 = *(unsigned int *)(this->vtable3 + 728); /*0x718af7*/
+          v18 = *(unsigned int *)(this->vfptr3 + 728); /*0x718af7*/
           if ( v18 ) /*0x718aff*/
             (*(void (**)(int, int))(*(unsigned int *)v18 + 32))(v18, 1); /*0x718b05*/
-          v12 = (unsigned int *)this->vtable3; /*0x718b08*/
+          v12 = (unsigned int *)this->vfptr3; /*0x718b08*/
           v12->poweredUnitCenters = 0; /*0x718b0e*/
         }
       }
@@ -150,34 +157,31 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   }
   else
   {
-    *(unsigned char *)(this->vtable3 + 973) = 1; /*0x71896b*/
-    (*(void (**)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718977*/
-    unsigned int *v8; // eax
-    v8 = (unsigned int *)this->vtable3; /*0x71897d*/
-    TechnoClass *v9 = v8->threatAvoidValue; // ecx /*0x718980*/
+    *(unsigned char *)(this->vfptr3 + 973) = 1; /*0x71896b*/
+    (*(void (**)(int))(*(unsigned int *)this->vfptr3 + 928))(this->vfptr3); /*0x718977*/
+    v8 = (unsigned int *)this->vfptr3; /*0x71897d*/
+    v9 = (TechnoClass *)v8[182]; /*0x718980*/
     if ( v9 ) /*0x718988*/
     {
       TechnoClass::MutateAll(v9, v8[266], v8[267]); /*0x718998*/
-      int v10; // ecx
-      v10 = *(unsigned int *)(this->vtable3 + 728); /*0x7189a0*/
+      v10 = *(unsigned int *)(this->vfptr3 + 728); /*0x7189a0*/
       if ( v10 ) /*0x7189a8*/
         (*(void (**)(int, int))(*(unsigned int *)v10 + 32))(v10, 1); /*0x7189ae*/
-      *(unsigned int *)(this->vtable3 + 728) = 0; /*0x7189b4*/
+      *(unsigned int *)(this->vfptr3 + 728) = 0; /*0x7189b4*/
     }
-    unsigned int *v11; // ecx
-    v11 = (unsigned int *)this->vtable3; /*0x7189be*/
+    v11 = (unsigned int *)this->vfptr3; /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
       LOBYTE(v12) = (*(char (**)(unsigned int *, unsigned int))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
     }
     else
     {
-      v12 = v11->CreateSound; /*0x7189dd*/
+      v12 = (unsigned int *)v11[267]; /*0x7189dd*/
       if ( v12 ) /*0x7189e5*/
         LOBYTE(v12) = (*(char (**)(unsigned int *, unsigned int))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
     }
   }
-  return (gamemd::UnitTypeClass **)((char)v12); /*0x7189d4*/
+  return (char)v12; /*0x7189d4*/
 
 }
 }

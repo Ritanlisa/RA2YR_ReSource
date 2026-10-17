@@ -21,23 +21,25 @@ char ThemeManager::ProcessCallback(void *a1)
 {
 
   int v2; // ebp
+  unsigned __int64 v3; // rax
+  unsigned __int64 v4; // kr00_8
+
   v2 = Audio::Callback(); /*0x4080fa*/
-  uint64_t v3; // rax
-  (*((unsigned int *)&(v3))) = *((unsigned int *)a1 + 5); /*0x4080fc*/
-  uint64_t v4; // kr00_8
-  v4 = *(unsigned long long *)(v3 + 32) + (((unsigned long)(unsigned int)(v2)) | ((unsigned long)(unsigned int)((*(((unsigned int *)&(v3)) + 1))) << 32)); /*0x408104*/
-  while ( (*(unsigned char *)((unsigned int)(a1)+ 12) & 1) != 0 ) /*0x408107*/
+  LODWORD(v3) = this->u32_14; /*0x4080fc*/
+  v4 = *(unsigned long long *)(v3 + 32) + __PAIR64__(HIDWORD(v3), v2); /*0x408104*/
+  while ( (this->u8_C & 1) != 0 ) /*0x408107*/
   {
-    (*((unsigned int *)&(v3))) = *((unsigned int *)a1 + 5); /*0x40810d*/
-    if ( *(unsigned int *)(v3 + 20) == v3->q018 ) /*0x408118*/
+    LODWORD(v3) = this->u32_14; /*0x40810d*/
+    if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
       break; /*0x408118*/
-    (*((unsigned int *)&(v3))) = Audio::Callback(); /*0x40811a*/
+    LODWORD(v3) = Audio::Callback(); /*0x40811a*/
     if ( v3 >= v4 ) /*0x408127*/
       break; /*0x408127*/
-    (*((unsigned char *)&(v3))) = Event::Dispatch(); /*0x408129*/
+    LOBYTE(v3) = Event::Dispatch(); /*0x408129*/
   }
   return v3; /*0x408130*/
-}  // G42.18 ns repair
+
+}
 } // namespace gamemd
 // 0x720770
 namespace gamemd {

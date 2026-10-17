@@ -104,13 +104,14 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
 namespace gamemd {
 HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
 {
+
   IPXGlobalConnClass *v7; // ebp
   int v8; // esi
   int v9; // ebp
   int v10; // edi
   char LinkedIndex; // al
   int v12; // edi
-  int v13; // edx
+  unsigned __int8 *v13; // edx
   int v15; // [esp+Ch] [ebp-28h] BYREF
   IPXGlobalConnClass *v16; // [esp+10h] [ebp-24h]
   int v17[2]; // [esp+14h] [ebp-20h] BYREF
@@ -121,56 +122,61 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
 
   v7 = this; /*0x5403f4*/
   v16 = this; /*0x5403fc*/
-  ((Waypoint *)&v18)->InitInvalid(); /*0x540400*/
-  *(unsigned int *)v18.__pad_000 = *a3; /*0x540413*/
-  v18.q004 = a3[1]; /*0x54041a*/
+  Waypoint::InitInvalid((Waypoint *)&v18); /*0x540400*/
+  *(unsigned int *)v18.__pad_0 = *a3; /*0x540413*/
+  v18.NetworkID_field_0x04 = a3[1]; /*0x54041a*/
   v19 = a3[2]; /*0x540421*/
   if ( aP4 ) /*0x540425*/
   {
-    ((Network *)((Network *)a3))->CopyAddress(&v15, (int)v17); /*0x540431*/
-    v15 = (int)(*aP4); /*0x540442*/
-    (&v18)->Assign(&v15, (int)v17, 0); /*0x54044c*/
+    Network::CopyAddress((Network *)a3, &v15, (int)v17); /*0x540431*/
+    v15 = *aP4; /*0x540442*/
+    NetworkID::Assign(&v18, &v15, (int)v17, 0); /*0x54044c*/
   }
-  if ( *(unsigned int *)&dword_A8B238 == 4 && !(unsigned char)a6 && byte_A8DBA0 && (*((unsigned char *)&(v7[3].IPXGlobalConnClass_field_0x20))) ) /*0x540477*/
+  if ( *(unsigned int *)&dword_A8B238 == 4 /*0x540477*/
+    && !(unsigned char)a6
+    && stru_A8D804.__pad_3D[863]
+    && LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) )
   {
     v8 = a2; /*0x540485*/
     if ( !*(unsigned char *)(a2 + 3) ) /*0x540489*/
     {
       v20 = v18; /*0x5404a0*/
       v21 = v19; /*0x5404b6*/
-      ((Network *)((Network *)&v20))->CopyAddress(&v15, (int)v17); /*0x5404ba*/
-      (&v20)->Assign(&v15, (int)v17, aP3); /*0x5404d2*/
+      Network::CopyAddress((Network *)&v20, &v15, (int)v17); /*0x5404ba*/
+      NetworkID::Assign(&v20, &v15, (int)v17, aP3); /*0x5404d2*/
       v9 = -1; /*0x5404dc*/
       v10 = 0; /*0x5404df*/
-      if ( dword_A8DA84 > 0 ) /*0x5404e3*/
+      if ( *(int *)&stru_A8D804.__pad_3D[579] > 0 ) /*0x5404e3*/
       {
-        while ( !(uint8_t)GUID::Compare((char *)(dword_A8DA78[v10] + 40), (int)&v20) ) /*0x5404fd*/
+        while ( !(unsigned __int8)GUID::Compare( /*0x5404fd*/
+                                    (char *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 40),
+                                    (int)&v20) )
         {
-          if ( ++v10 >= dword_A8DA84 ) /*0x540507*/
+          if ( ++v10 >= *(int *)&stru_A8D804.__pad_3D[579] ) /*0x540507*/
             goto LABEL_13; /*0x540507*/
         }
-        v9 = *(unsigned int *)(dword_A8DA78[v10] + 111); /*0x540514*/
+        v9 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * v10) + 111); /*0x540514*/
       }
-      LABEL_13:
-      LinkedIndex = ((Factory *)((Factory *)&g_NetworkEventQueue))->GetLinkedIndex(v9); /*0x540517*/
+LABEL_13:
+      LinkedIndex = Factory::GetLinkedIndex(&dword_B052D0, v9); /*0x540517*/
       if ( !LinkedIndex ) /*0x540524*/
         LinkedIndex = 1; /*0x540526*/
       v7 = v16; /*0x540528*/
       *(unsigned char *)(a2 + 3) = LinkedIndex; /*0x54052c*/
     }
-    v18 = qword_A8DBA4; /*0x540540*/
+    v18 = *(NetworkID *)&stru_A8D804.__pad_3D[867]; /*0x540540*/
     v12 = *(unsigned int *)&dword_841F3C; /*0x54054a*/
-    v19 = dword_A8DBAC; /*0x540554*/
-    if ( (uint8_t)GUID::Compare(qword_A8DBB0.__pad_0, *dword_A8DA78 + 40) /*0x54057b*/
-      && (uint8_t)((bool *)v18.__pad_000)->Compare(*dword_A8DA78 + 40) )
+    v19 = *(unsigned int *)&stru_A8D804.__pad_3D[875]; /*0x540554*/
+    if ( (unsigned __int8)GUID::Compare(&stru_A8D804.__pad_3D[879], **(unsigned int **)&stru_A8D804.__pad_3D[567] + 40) /*0x54057b*/
+      && (unsigned __int8)NetworkID::Compare((bool *)v18.__pad_0, **(unsigned int **)&stru_A8D804.__pad_3D[567] + 40) )
     {
-      v13 = a2 + 8; /*0x540584*/
+      v13 = (unsigned __int8 *)(a2 + 8); /*0x540584*/
       *(unsigned short *)(a2 + 12) = 0; /*0x540587*/
       *(unsigned int *)(a2 + 8) = 0; /*0x54058d*/
     }
     else
     {
-      v12 = *(unsigned int *)&dword_A8DBBC; /*0x54059b*/
+      v12 = *(unsigned int *)&stru_A8D804.__pad_3D[891]; /*0x54059b*/
       *(unsigned short *)(a2 + 12) = dword_841F3C; /*0x5405a4*/
       *(unsigned int *)(a2 + 8) = 0; /*0x5405a8*/
     }
@@ -179,16 +185,15 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   {
     v8 = a2; /*0x5405b0*/
     v12 = aP3; /*0x5405b4*/
-    v13 = a2 + 8; /*0x5405b8*/
+    v13 = (unsigned __int8 *)(a2 + 8); /*0x5405b8*/
     *(unsigned short *)(a2 + 12) = 0; /*0x5405bb*/
     *(unsigned int *)(a2 + 8) = 0; /*0x5405c1*/
   }
-  if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5405cf*/
+  if ( dword_887628 ) /*0x5405cf*/
   {
-    (*((unsigned char *)&(v13))) = (*((unsigned char *)&(v7[3].IPXGlobalConnClass_field_0x20))) == 0; /*0x5405da*/
-    (*(void (**)(unsigned int, int, int, NetworkID *, int, int, int, int))(**(unsigned int **)&stru_887598.isAliveFlag /*0x5405f2*/
-      + 12))(
-      *(unsigned int *)&stru_887598.isAliveFlag,
+    LOBYTE(v13) = LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) == 0; /*0x5405da*/
+    (*(void (**)(WinsockInterface *, int, int, NetworkID *, int, int, unsigned __int8 *, int))(*(unsigned int *)dword_887628->__pad_0 + 12))( /*0x5405f2*/
+      dword_887628,
       v8,
       arg4,
       &v18,
@@ -197,7 +202,8 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
       v13,
       v12);
   }
-  return (gamemd::HashTable_flat **)(1); /*0x5405f5*/
+  return 1; /*0x5405f5*/
+
 }
 } // namespace gamemd
 // 0x5400D0
@@ -265,29 +271,33 @@ namespace gamemd {
 int IPXGlobalConnClass::SendPacket(int a2, short a3)
 {
 
+  int IPXGlobalConnClass_field_0x04; // ecx
+  int v5; // ebp
+  int v6; // esi
+  int TileIndex; // eax
+  unsigned __int16 *v8; // edi
+  PacketQueue *v9; // ecx
+  int v11; // [esp+Ch] [ebp-414h] BYREF
+  int v12; // [esp+10h] [ebp-410h] BYREF
   Waypoint v13; // [esp+14h] [ebp-40Ch] BYREF
 
-  int IPXGlobalConnClass_field_0x04 = this->PlayerIndex; // ecx /*0x54034b*/
-  int v5 = 0; // ebp /*0x54034e*/
-  int v6 = 0; // esi /*0x540350*/
+  IPXGlobalConnClass_field_0x04 = this->PlayerIndex; /*0x54034b*/
+  v5 = 0; /*0x54034e*/
+  v6 = 0; /*0x540350*/
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) <= 0 ) /*0x540357*/
     return 0; /*0x5403de*/
   do /*0x5403cd*/
   {
-    int TileIndex; // eax
-    TileIndex = ((Terrain *)IPXGlobalConnClass_field_0x04)->GetTileIndex(v6); /*0x54035f*/
-    int v8 = TileIndex; // edi /*0x540364*/
+    TileIndex = Terrain::GetTileIndex((Terrain *)IPXGlobalConnClass_field_0x04, v6); /*0x54035f*/
+    v8 = (unsigned __int16 *)TileIndex; /*0x540364*/
     if ( (*(unsigned char *)TileIndex & 2) == 0 /*0x540392*/
       && *(unsigned int *)(TileIndex + 24)
-      && (unsigned __int8)(*(bool **)(TileIndex + 28))->Compare(a2)
-      && *(unsigned short *)(v8 + 32) == a3 )
+      && (unsigned __int8)NetworkID::Compare(*(bool **)(TileIndex + 28), a2)
+      && v8[16] == a3 )
     {
-      (&v13)->InitInvalid(); /*0x540398*/
-      PacketQueue *v9; // ecx
+      Waypoint::InitInvalid(&v13); /*0x540398*/
       v9 = (PacketQueue *)this->PlayerIndex; /*0x5403b3*/
-      int v11; // [esp+Ch] [ebp-414h] BYREF
       v11 = 12; /*0x5403b7*/
-      int v12; // [esp+10h] [ebp-410h] BYREF
       PacketQueue::ExtractEntry(v9, &v13.u32_C, &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
       ++v5; /*0x5403c5*/
     }

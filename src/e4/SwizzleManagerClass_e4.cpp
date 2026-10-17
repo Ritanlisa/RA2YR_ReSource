@@ -22,18 +22,29 @@ namespace gamemd {  // G42.18 ns repair
 int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 {
 
+  int v3; // ebp
+  unsigned int *v5; // esi
+  unsigned int *v6; // eax
+  unsigned int *v7; // ecx
+  int v8; // edx
+  unsigned int *v9; // eax
+  int v10; // ecx
+  int m_8; // edx
+  int v13; // ecx
+  int v14; // eax
+  unsigned int *v15; // ebx
 
-  int v3 = a2; // ebp /*0x6cf5a2*/
+  v3 = a2; /*0x6cf5a2*/
   if ( a2 ) /*0x6cf5ae*/
   {
-    unsigned int *v5 = a3; // esi /*0x6cf5b4*/
+    v5 = a3; /*0x6cf5b4*/
     LOBYTE(this->m_C) = 0; /*0x6cf5b8*/
     if ( a3 ) /*0x6cf5bd*/
     {
-      unsigned int *v9 = a3; // eax /*0x6cf5f3*/
+      v9 = a3; /*0x6cf5f3*/
       if ( a2 - 1 >= 0 ) /*0x6cf5f7*/
       {
-        int v10 = a2; // ecx /*0x6cf5f9*/
+        v10 = a2; /*0x6cf5f9*/
         do /*0x6cf603*/
         {
           *v9 = 0; /*0x6cf5fa*/
@@ -46,15 +57,13 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
     }
     else
     {
-      int v6; // eax
-      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x6cf5c7*/
+      v6 = (unsigned int *)__2_YAPAXI_Z(8 * a2); /*0x6cf5c7*/
       if ( v6 ) /*0x6cf5d1*/
       {
-        unsigned int *v7; // ecx
-        v7 = (unsigned int *)v6; /*0x6cf5d6*/
+        v7 = v6; /*0x6cf5d6*/
         if ( a2 - 1 >= 0 ) /*0x6cf5da*/
         {
-          int v8 = a2; // edx /*0x6cf5dc*/
+          v8 = a2; /*0x6cf5dc*/
           do /*0x6cf5e6*/
           {
             *v7 = 0; /*0x6cf5dd*/
@@ -64,7 +73,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
           }
           while ( v8 ); /*0x6cf5e6*/
         }
-        v5 = (unsigned int *)v6; /*0x6cf5e8*/
+        v5 = v6; /*0x6cf5e8*/
       }
       else
       {
@@ -76,17 +85,15 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x6cf616*/
       {
-        int m_8; // edx
         m_8 = this->m_8; /*0x6cf61b*/
         if ( a2 < m_8 ) /*0x6cf620*/
           m_8 = a2; /*0x6cf622*/
-        int v13 = 0; // ecx /*0x6cf624*/
+        v13 = 0; /*0x6cf624*/
         if ( m_8 > 0 ) /*0x6cf628*/
         {
           do /*0x6cf647*/
           {
-            int v14 = 2 * v13; // eax /*0x6cf62d*/
-            unsigned int *v15; // ebx
+            v14 = 2 * v13; /*0x6cf62d*/
             v15 = (unsigned int *)(*&this->q004 + 8 * v13++); /*0x6cf636*/
             v5[v14] = *v15; /*0x6cf63d*/
             v5[v14 + 1] = v15[1]; /*0x6cf643*/
@@ -100,7 +107,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x6cf660*/
         }
       }
-      *&this->q004 = (int)(v5); /*0x6cf66b*/
+      *&this->q004 = v5; /*0x6cf66b*/
       this->m_8 = v3; /*0x6cf671*/
       BYTE1(this->m_C) = a3 == 0; /*0x6cf674*/
       return 1; /*0x6cf67a*/
@@ -112,7 +119,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6cf684*/
+    (*(void (**)(_VectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf684*/
     return 1; /*0x6cf68a*/
   }
 
@@ -123,18 +130,30 @@ namespace gamemd {
 AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 {
 
+  int v3; // ebp
+  unsigned int *v5; // edi
+  unsigned int *v6; // eax
+  unsigned int *v7; // ecx
+  int v8; // edx
+  unsigned int *v9; // eax
+  int v10; // ecx
+  int m_8; // edx
+  int v12; // ecx
+  int v13; // eax
+  unsigned int *v14; // ebx
+  int v15; // eax
 
-  int v3 = a2; // ebp /*0x6cf722*/
+  v3 = a2; /*0x6cf722*/
   if ( a2 ) /*0x6cf72e*/
   {
-    unsigned int *v5 = a3; // edi /*0x6cf734*/
+    v5 = a3; /*0x6cf734*/
     LOBYTE(this->m_C) = 0; /*0x6cf738*/
     if ( a3 ) /*0x6cf73d*/
     {
-      unsigned int *v9 = a3; // eax /*0x6cf773*/
+      v9 = a3; /*0x6cf773*/
       if ( a2 - 1 >= 0 ) /*0x6cf777*/
       {
-        int v10 = a2; // ecx /*0x6cf779*/
+        v10 = a2; /*0x6cf779*/
         do /*0x6cf783*/
         {
           *v9 = 0; /*0x6cf77a*/
@@ -147,15 +166,13 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
     }
     else
     {
-      int v6; // eax
-      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x6cf747*/
+      v6 = (unsigned int *)__2_YAPAXI_Z(8 * a2); /*0x6cf747*/
       if ( v6 ) /*0x6cf751*/
       {
-        unsigned int *v7; // ecx
-        v7 = (unsigned int *)v6; /*0x6cf756*/
+        v7 = v6; /*0x6cf756*/
         if ( a2 - 1 >= 0 ) /*0x6cf75a*/
         {
-          int v8 = a2; // edx /*0x6cf75c*/
+          v8 = a2; /*0x6cf75c*/
           do /*0x6cf766*/
           {
             *v7 = 0; /*0x6cf75d*/
@@ -165,7 +182,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
           }
           while ( v8 ); /*0x6cf766*/
         }
-        v5 = (unsigned int *)v6; /*0x6cf768*/
+        v5 = v6; /*0x6cf768*/
       }
       else
       {
@@ -177,17 +194,15 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x6cf814*/
     if ( *&this->q004 ) /*0x6cf791*/
     {
-      int m_8; // edx
       m_8 = this->m_8; /*0x6cf796*/
       if ( a2 < m_8 ) /*0x6cf79b*/
         m_8 = a2; /*0x6cf79d*/
-      int v12 = 0; // ecx /*0x6cf79f*/
+      v12 = 0; /*0x6cf79f*/
       if ( m_8 > 0 ) /*0x6cf7a3*/
       {
         do /*0x6cf7c2*/
         {
-          int v13 = 2 * v12; // eax /*0x6cf7a8*/
-          unsigned int *v14; // ebx
+          v13 = 2 * v12; /*0x6cf7a8*/
           v14 = (unsigned int *)(*&this->q004 + 8 * v12++); /*0x6cf7b1*/
           v5[v13] = *v14; /*0x6cf7b8*/
           v5[v13 + 1] = v14[1]; /*0x6cf7be*/
@@ -201,18 +216,18 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x6cf7db*/
       }
     }
-    *&this->q004 = (int)(v5); /*0x6cf7e6*/
+    *&this->q004 = v5; /*0x6cf7e6*/
     this->m_8 = v3; /*0x6cf7ec*/
     BYTE1(this->m_C) = a3 == 0; /*0x6cf7ef*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6cf7f8*/
+    (*(void (**)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf7f8*/
   }
-  int v15 = this->m_8; // eax /*0x6cf7fb*/
+  v15 = this->m_8; /*0x6cf7fb*/
   if ( v15 < this->m_10 ) /*0x6cf803*/
     this->m_10 = v15; /*0x6cf805*/
-  return (gamemd::AbstractClass **)(1); /*0x6cf808*/
+  return 1; /*0x6cf808*/
 
 }
 }
@@ -288,10 +303,13 @@ namespace gamemd {
 unsigned int * SwizzleManagerClass_19::Lookup(unsigned int * a2, int a3)
 {
 
-  int v3 = *&this->q004; // edx /*0x6cf540*/
-  *a2 = *(unsigned int *)(v3 + 8 * a3); /*0x6cf54f*/
-  a2[1] = *(unsigned int *)(v3 + 8 * a3 + 4); /*0x6cf556*/
+  unsigned int *v3; // edx
+
+  v3 = *&this->q004; /*0x6cf540*/
+  *a2 = v3[2 * a3]; /*0x6cf54f*/
+  a2[1] = v3[2 * a3 + 1]; /*0x6cf556*/
   return a2; /*0x6cf551*/
+
 }
 } // namespace gamemd
 

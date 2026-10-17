@@ -28,17 +28,19 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
 {
 
   ReferenceCounted *v6; // eax
-  v6 = (ReferenceCounted *)operator new(0xD4u); /*0x767fbb*/
   void *v7; // edi
+
+  v6 = (ReferenceCounted *)__2_YAPAXI_Z(0xD4u); /*0x767fbb*/
   if ( v6 ) /*0x767fc5*/
-    v7 = ConstructWDTSelection_Create_767FB0_Create(v6, a2, a3, aP3); /*0x767fd9*/
+    v7 = ConstructWDTSelection_Create_767FB0_Create(v6, a2, a3, a4); /*0x767fd9*/
   else
     v7 = 0; /*0x767fdd*/
-  ComPtr::Constructor((ComPtr *)a1); /*0x767fe1*/
-  *(unsigned int *)a1 = &vt_rc_ptr; /*0x767fe8*/
-  ComPtr::Set((ComPtr *)a1, (int)v7); /*0x767fef*/
-  return a1; /*0x767ff6*/
-}  // G42.18 ns repair
+  ComPtr::Constructor((ComPtr *)this); /*0x767fe1*/
+  *(unsigned int *)this = &rc_ptr<WorldDominationTour::Map>::`vftable'; /*0x767fe8*/
+  ComPtr::Set((ComPtr *)this, (int)v7); /*0x767fef*/
+  return this; /*0x767ff6*/
+
+}
 } // namespace gamemd
 
 // 0x76BFB0

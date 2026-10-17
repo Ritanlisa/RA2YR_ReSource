@@ -86,85 +86,89 @@ int sub_679CC0()
 namespace gamemd {
 int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass_flat * aP2, unsigned char * a3, unsigned int * a4)
 {
-  VectorClass v17; // [esp+Ch] [ebp-9Ch] BYREF
 
+  char *i; // eax
+  int v7; // edi
+  void *v8; // eax
+  int v9; // ecx
+  void *Items; // eax
+  bool v11; // zf
+  int Capacity; // eax
+  void *v14; // eax
+  int v15; // ecx
+  int v16; // eax
+  VectorClass v17; // [esp+Ch] [ebp-9Ch] BYREF
+  void *v18; // [esp+1Ch] [ebp-8Ch]
+  int v19; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
-  if ( ((INIClass *)edx0)->GetString(aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
+
+  if ( INIClass::GetString((INIClass *)edx0, aP2, a3, &g_INI_DefaultBuffer, String, 128) ) /*0x67b57c*/
   {
-    (&v17)->BuildingTypeConstructor(0, 0); /*0x67b591*/
-    int v19; // [esp+20h] [ebp-88h]
+    VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
-    int v18; // [esp+1Ch] [ebp-8Ch]
     v18 = 0; /*0x67b5a8*/
-    /* X11: vtable install elided (implicit via TypeList virtuals 0x67b5ac) */
-    char *i; // eax
-    for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67b5be*/
+    v17.vfptr = (int)&TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b5ac*/
+    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
         break; /*0x67b5c2*/
-      int v7; // edi
-      v7 = (i)->FindOrCreate(); /*0x67b5cb*/
+      v7 = BuildingTypeClass::FindOrCreate(i); /*0x67b5cb*/
       if ( v7 /*0x67b5fb*/
-        && (v18 < v17.Capacity
-         || (v17.IsAllocated || !v17.Capacity)
+        && ((int)v18 < v17.Capacity
+         || (v17.IsAllocated[0] || !v17.Capacity)
          && v19 > 0
-         && (*((uint8_t (**)(VectorClass *, int, unsigned int))v17.vfptr + 2))(&v17, v19 + v17.Capacity, 0)) )
+         && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v17.vfptr + 8))(&v17, v19 + v17.Capacity, 0)) )
       {
-        int v8; // eax
-        v8 = v18++; /*0x67b606*/
-        *((unsigned int *)v17.Items + v8) = v7; /*0x67b611*/
+        v8 = v18; /*0x67b606*/
+        v18 = (char *)v18 + 1; /*0x67b609*/
+        *(unsigned int *)(v17.Items + 4 * (unsigned int)v8) = v7; /*0x67b611*/
       }
     }
     aP0->Items = 0; /*0x67b62d*/
     aP0->Capacity = 0; /*0x67b630*/
-    aP0->IsInitialized = 1; /*0x67b633*/
-    aP0->IsAllocated = 0; /*0x67b637*/
-    /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b63a) */
-    (aP0)->CopyBuilding(&v17); /*0x67b640*/
-    /* X11: vtable install elided (implicit via TypeList virtuals 0x67b645) */
-    /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b64b) */
-    void *v9; // ecx
-    v9 = (void *)v19; /*0x67b657*/
-    aP0[1].vfptr = (void *)v18; /*0x67b65b*/
-    void *Items; // eax
-    Items = v17.Items; /*0x67b65e*/
-    bool v11; // zf
+    aP0->IsInitialized[0] = 1; /*0x67b633*/
+    aP0->IsAllocated[0] = 0; /*0x67b637*/
+    aP0->vfptr = (int)&VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b63a*/
+    VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
+    aP0->vfptr = (int)&TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b645*/
+    v17.vfptr = (int)&VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b64b*/
+    v9 = v19; /*0x67b657*/
+    aP0[1].vfptr = (int)v18; /*0x67b65b*/
+    Items = (void *)v17.Items; /*0x67b65e*/
     v11 = v17.Items == 0; /*0x67b662*/
     aP0[1].Items = v9; /*0x67b664*/
-    if ( !v11 && v17.IsAllocated ) /*0x67b671*/
+    if ( !v11 && v17.IsAllocated[0] ) /*0x67b671*/
     {
-      operator delete((Items)); /*0x67b678*/
-      return (int)(aP0); /*0x67b68b*/
+      __3_YAXPAX_Z(Items); /*0x67b678*/
+      return aP0; /*0x67b68b*/
     }
   }
   else
   {
     aP0->Items = 0; /*0x67b699*/
     aP0->Capacity = 0; /*0x67b69c*/
-    aP0->IsInitialized = 1; /*0x67b69f*/
-    aP0->IsAllocated = 0; /*0x67b6a3*/
-    /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b6a6) */
+    aP0->IsInitialized[0] = 1; /*0x67b69f*/
+    aP0->IsAllocated[0] = 0; /*0x67b6a3*/
+    aP0->vfptr = (int)&VectorClass<BuildingTypeClass const *>::`vftable'; /*0x67b6a6*/
     if ( aP0 != a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
-      int Capacity; // eax
       Capacity = a4->Capacity; /*0x67b6b6*/
       aP0->Capacity = Capacity; /*0x67b6bb*/
       if ( Capacity ) /*0x67b6be*/
       {
-        int v14; // eax
-        v14 = (int)(operator new(4 * Capacity)); /*0x67b6c8*/
-        aP0->Items = (void *)v14; /*0x67b6d2*/
+        v14 = (void *)__2_YAPAXI_Z(4 * Capacity); /*0x67b6c8*/
+        aP0->Items = (int)v14; /*0x67b6d2*/
         if ( v14 ) /*0x67b6d5*/
         {
-          int v15 = aP0->Capacity; // ecx /*0x67b6d7*/
-          int v16 = 0; // eax /*0x67b6da*/
-          aP0->IsAllocated = 1; /*0x67b6de*/
+          v15 = aP0->Capacity; /*0x67b6d7*/
+          v16 = 0; /*0x67b6da*/
+          aP0->IsAllocated[0] = 1; /*0x67b6de*/
           if ( v15 > 0 ) /*0x67b6e2*/
           {
             do /*0x67b6f6*/
             {
-              *((unsigned int *)aP0->Items + v16) = *((unsigned int *)a4->Items + v16); /*0x67b6ed*/
+              *(unsigned int *)(aP0->Items + 4 * v16) = *(unsigned int *)(a4->Items + 4 * v16); /*0x67b6ed*/
               ++v16; /*0x67b6f3*/
             }
             while ( v16 < aP0->Capacity ); /*0x67b6f6*/
@@ -174,14 +178,15 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
       else
       {
         aP0->Items = 0; /*0x67b6fa*/
-        aP0->IsAllocated = 0; /*0x67b6fd*/
+        aP0->IsAllocated[0] = 0; /*0x67b6fd*/
       }
     }
     aP0[1].vfptr = a4[1].vfptr; /*0x67b703*/
     aP0[1].Items = a4[1].Items; /*0x67b709*/
-    /* X11: vtable install elided (implicit via TypeList virtuals 0x67b70c) */
+    aP0->vfptr = (int)&TypeList<BuildingTypeClass const *>::`vftable'; /*0x67b70c*/
   }
-  return (int)(aP0); /*0x67b682*/
+  return aP0; /*0x67b682*/
+
 }
 }
 // 0x67BB10
@@ -292,13 +297,15 @@ namespace gamemd {  // G42.18c ns repair
 int RulesClass::sub_674500()
 {
 
-  RulesClass *v2; // [esp+Ch] [ebp+4h]
-  ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674515*/
-  ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674527*/
   int result; // eax
-  result = ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674539*/
-  (*((unsigned char *)&(result))) = 1; /*0x67453f*/
+  RulesClass *v2; // [esp+Ch] [ebp+4h]
+
+  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674515*/
+  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674527*/
+  result = INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674539*/
+  LOBYTE(result) = 1; /*0x67453f*/
   return result; /*0x67453e*/
+
 }
 }  // G42.18c ns repair
 // 0x679EC0
@@ -341,10 +348,12 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
-  if ( ((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
-    return (gamemd::InfantryTypeClass *)(KeywordType::FindOrCreate2(Destination)); /*0x67baeb*/
+
+  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
+    return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else
-    return (gamemd::InfantryTypeClass *)(a4); /*0x67baf9*/
+    return a4; /*0x67baf9*/
+
 }
 }
 // 0x67BD30
@@ -353,10 +362,12 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 {
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
-  if ( ((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
-    return (gamemd::AircraftTypeClass *)(KeywordClass::FindOrCreate(Destination)); /*0x67bd5b*/
+
+  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
+    return KeywordClass::FindOrCreate(Destination); /*0x67bd5b*/
   else
-    return (gamemd::AircraftTypeClass *)(a4); /*0x67bd69*/
+    return a4; /*0x67bd69*/
+
 }
 }
 // 0x67C480

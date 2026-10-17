@@ -31,81 +31,83 @@
 namespace gamemd {  // G42.18 ns repair
 int InfantryClass::ScanTarget(int * a1)
 {
-  void (**vtable0)(FootClass *, void *, int); // edi
-  int16_t *PlacementCellsAlt; // eax
+
+  int vfptr; // edi
+  __int16 *PlacementCellsAlt; // eax
   void *v4; // eax
-  int (**v5)(FootClass *, int, int *, unsigned int); // edx
+  int v5; // edx
   int v6; // eax
   double v7; // st7
-  int v8; // eax
+  unsigned __int16 *v8; // eax
   int v9; // ebp
   int *v10; // eax
   int v11; // edi
   int v12; // ebx
   int *v13; // eax
   int v14; // ecx
-  int v15; // eax
+  unsigned __int16 *v15; // eax
   int result; // eax
-  int v17; // [esp+48h] [ebp-24h] BYREF
+  unsigned __int16 *v17; // [esp+48h] [ebp-24h] BYREF
   int v18; // [esp+4Ch] [ebp-20h]
   int v19; // [esp+50h] [ebp-1Ch]
   unsigned char v20[12]; // [esp+54h] [ebp-18h] BYREF
   unsigned char v21[12]; // [esp+60h] [ebp-Ch] BYREF
 
-  if ( *(unsigned char *)((*((int (**)(FootClass *))a1->vfptr + 33))(a1) + 912) /*0x4d4dde*/
-    && !(*((int (**)(FootClass *))a1->vfptr + 114))(a1) )
+  if ( *(unsigned char *)((*(int (**)(FootClass *))&this->vfptr->hasParachute)(this) + 912) /*0x4d4dde*/
+    && !(*(int (**)(FootClass *))&this->vfptr->forceShielded)(this) )
   {
-    vtable0 = (void (**)(FootClass *, void *, int))a1->vfptr; /*0x4d4de8*/
-    PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((char *)a1,(unsigned int *)(&v17), (int)a1); /*0x4d4df4*/
-    v4 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(PlacementCellsAlt); /*0x4d4dff*/
-    vtable0[288](a1, v4, 1); /*0x4d4e07*/
+    vfptr = this->vfptr; /*0x4d4de8*/
+    PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt((char *)this, &v17, (int)this); /*0x4d4df4*/
+    v4 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, PlacementCellsAlt); /*0x4d4dff*/
+    (*(void (**)(FootClass *, void *, int))(vfptr + 1152))(this, v4, 1); /*0x4d4e07*/
   }
-  if ( a1->FootClass_field_bool_68E ) /*0x4d4e0d*/
+  if ( this->FootClass_field_bool_68E[0] ) /*0x4d4e0d*/
   {
-    v17 = a1->location[0]; /*0x4d4e21*/
-    v5 = (int (**)(FootClass *, int, int *, unsigned int))a1->vfptr; /*0x4d4e25*/
-    v18 = a1->location[1]; /*0x4d4e2a*/
-    v19 = a1->location[2]; /*0x4d4e36*/
-    v6 = v5[241](a1, 1, &v17, 0); /*0x4d4e3e*/
+    v17 = (unsigned __int16 *)this->location[0]; /*0x4d4e21*/
+    v5 = this->vfptr; /*0x4d4e25*/
+    v18 = this->location[1]; /*0x4d4e2a*/
+    v19 = this->location[2]; /*0x4d4e36*/
+    v6 = (*(int (**)(FootClass *, int, unsigned __int16 **, unsigned int))(v5 + 964))(this, 1, &v17, 0); /*0x4d4e3e*/
     if ( v6 ) /*0x4d4e46*/
     {
-      (*((void (**)(FootClass *, int))a1->vfptr + 242))(a1, v6); /*0x4d4e4d*/
-      a1->FootClass_field_bool_68E = 0; /*0x4d4e53*/
+      (*(void (**)(FootClass *, int))&this->vfptr->unknown_short_3C8)(this, v6); /*0x4d4e4d*/
+      this->FootClass_field_bool_68E[0] = 0; /*0x4d4e53*/
     }
   }
-  if ( a1->target ) /*0x4d4e5a*/
-    (*((void (**)(FootClass *, unsigned int))a1->vfptr + 335))(a1, 0); /*0x4d4e6a*/
+  if ( this->target ) /*0x4d4e5a*/
+    (*(void (**)(FootClass *, unsigned int))&this->vfptr->FootClass_field_53C)(this, 0); /*0x4d4e6a*/
   else
-    (*((void (**)(FootClass *, unsigned int, int))a1->vfptr + 289))(a1, 0, 1); /*0x4d4e7a*/
-  v7 = *((double *)MissionClass::GetMissionControl((MissionClass *)a1) + 2) * 900.0; /*0x4d4e8a*/
-  (*((unsigned short *)&(v8))) = Math::RoundToInt(v7); /*0x4d4e90*/
-  v9 = v8 + Random::Range((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink, 0, 2); /*0x4d4eb3*/
-  if ( !a1->target
-    || (!a1
-     || (*((int (**)(FootClass *))a1->vfptr + 11))(a1) != 15
-     || !*((unsigned char *)((*((int (**)(FootClass *))a1->vfptr + 11))(a1) == 15 ? a1 + 1 : (FootClass *)1728)->vfptr
-    + 1685))
-    && (!*(unsigned int *)(*((int (**)(FootClass *, unsigned int))a1->vfptr + 254))(a1, 0)
-     || *(int *)(*(unsigned int *)(*((int (**)(FootClass *, unsigned int))a1->vfptr + 254))(a1, 0) + 180) > 512) )
+    (*(void (**)(FootClass *, unsigned int, int))&this->vfptr->q484)(this, 0, 1); /*0x4d4e7a*/
+  v7 = *((double *)MissionClass::GetMissionControl((MissionClass *)this) + 2) * 900.0; /*0x4d4e8a*/
+  LOWORD(v8) = Math::RoundToInt(v7); /*0x4d4e90*/
+  v9 = (int)v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d4eb3*/
+  if ( !this->target
+    || (!this
+     || (*(int (**)(FootClass *))&this->vfptr->fallRate)(this) != 15
+     || !*(unsigned char *)(((*(int (**)(FootClass *))&this->vfptr->fallRate)(this) == 15 ? &this->AbstractClass_1 : (FootClass *)1728)->vfptr
+                  + 1685))
+    && (!*(unsigned int *)(*(int (**)(FootClass *, unsigned int))&this->vfptr->barrelRecoil)(this, 0)
+     || *(int *)(*(unsigned int *)(*(int (**)(FootClass *, unsigned int))&this->vfptr->barrelRecoil)(this, 0) + 180) > 512) )
   {
     return v9; /*0x4d4f1c*/
   }
-  v10 = (int *)(*((int (**)(AbstractClass *, unsigned char *))a1->target->vfptr + 18))(a1->target, v20); /*0x4d4f30*/
+  v10 = (int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->target + 72))(this->target, v20); /*0x4d4f30*/
   v11 = *v10; /*0x4d4f33*/
   v12 = v10[1]; /*0x4d4f35*/
-  v13 = (int *)(*((int (**)(FootClass *, unsigned char *))a1->vfptr + 18))(a1, v21); /*0x4d4f41*/
+  v13 = (int *)(*(int (**)(FootClass *, unsigned char *))&this->vfptr->q048)(this, v21); /*0x4d4f41*/
   v14 = *v13; /*0x4d4f44*/
   v18 = v13[1] - v12; /*0x4d4f4d*/
-  v17 = v14 - v11; /*0x4d4f51*/
+  v17 = (unsigned __int16 *)(v14 - v11); /*0x4d4f51*/
   Math::Sqrt((double)(v14 - v11) * (double)(v14 - v11) + (double)v18 * (double)v18); /*0x4d4f71*/
-  (*((unsigned short *)&(v15))) = Math::RoundToInt(v7); /*0x4d4f79*/
+  LOWORD(v15) = Math::RoundToInt(v7); /*0x4d4f79*/
   v17 = v15; /*0x4d4f83*/
-  if ( v15 > 768 ) /*0x4d4f88*/
+  if ( (int)v15 > 768 ) /*0x4d4f88*/
     return v9; /*0x4d4fa9*/
   result = v9; /*0x4d4f99*/
-  if ( (double)v17 >= 281.6 ) /*0x4d4f9b*/
+  if ( (double)(int)v17 >= 281.6 ) /*0x4d4f9b*/
     return v9 / 2; /*0x4d4fa3*/
   return result; /*0x4d4fa0*/
+
 }
 }  // G42.18 ns repair
 // 0x4D5350

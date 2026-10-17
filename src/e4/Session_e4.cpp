@@ -39,30 +39,31 @@ namespace gamemd {  // G42.18 ns repair
 int Session::RemoveTeam(int (***aP1)(unsigned int, int))
 {
 
-
   int result; // eax
-  result = (int)aP1; /*0x5d1d80*/
-  if ( aP1 ) /*0x5d1d87*/
+  void **v3; // esi
+  void *v4; // ecx
+  char *v5; // ecx
+
+  result = (int)int; /*0x5d1d80*/
+  if ( int ) /*0x5d1d87*/
   {
-    void **v3 = &this->field_18; // esi /*0x5d1d8c*/
-    result = (*((int (**)(void **, unsigned int))this->field_18 + 4))(&this->field_18, &aP1); /*0x5d1d96*/
+    v3 = &this->field_18; /*0x5d1d8c*/
+    result = (*((int (**)(void **, unsigned int))this->field_18 + 4))(&this->field_18, &int); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
-      result = (*((int (**)(void **, unsigned int))*v3 + 4))(v3, &aP1); /*0x5d1da7*/
+      result = (*((int (**)(void **, unsigned int))*v3 + 4))(v3, &int); /*0x5d1da7*/
       if ( result != -1 ) /*0x5d1dad*/
       {
-        int v4; // ecx
-        v4 = (int)v3[4]; /*0x5d1daf*/
-        if ( result < v4 ) /*0x5d1db4*/
+        v4 = v3[4]; /*0x5d1daf*/
+        if ( result < (int)v4 ) /*0x5d1db4*/
         {
-          void *v5; // ecx
-          v5 = (void *)(v4 - 1); /*0x5d1db6*/
+          v5 = (char *)v4 - 1; /*0x5d1db6*/
           for ( v3[4] = v5; result < (int)v3[4]; *(v3->vtable2 + result - 1) = *(v3->vtable2 + result) ) /*0x5d1dbc*/
             ++result; /*0x5d1dc1*/
         }
       }
-      if ( aP1 ) /*0x5d1dd6*/
-        return (**aP1)(aP1, 1); /*0x5d1ddc*/
+      if ( int ) /*0x5d1dd6*/
+        return (**int)(int, 1); /*0x5d1ddc*/
     }
   }
   return result; /*0x5d1dde*/
@@ -286,28 +287,28 @@ namespace gamemd {
 int Session::StartGame(HWND hWnd)
 {
 
-
-  if ( !(unsigned __int8)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions)) ) /*0x5ed381*/
-    return Session::PrepareGame(hWnd); /*0x5ed3f1*/
   Skirmish *v2; // esi
-  v2 = (gamemd::Skirmish *)(g_UIControlState); /*0x5ed38b*/
+  ObjectClass *v3; // eax
+  Skirmish *v4; // eax
+
+  if ( !(unsigned __int8)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])) ) /*0x5ed381*/
+    return Session::PrepareGame(this); /*0x5ed3f1*/
+  v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5ed397*/
     __3_YAXPAX_Z(v2); /*0x5ed39d*/
   }
-  ObjectClass *v3; // eax
   v3 = (ObjectClass *)__2_YAPAXI_Z(4u); /*0x5ed3a7*/
-  Skirmish *v4; // eax
   if ( v3 ) /*0x5ed3b2*/
     v4 = (Skirmish *)unknown_libname_27(v3); /*0x5ed3b6*/
   else
     v4 = 0; /*0x5ed3bd*/
-  g_UIControlState = (int)(v4); /*0x5ed3c6*/
-  ((Surface *)v4)->LoadToSurfaceSHP(ExistingFileName); /*0x5ed3cb*/
+  g_UIControlState = v4; /*0x5ed3c6*/
+  Surface::LoadToSurfaceSHP((Surface *)v4, ExistingFileName); /*0x5ed3cb*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x5ed3d6*/
-    Session::PrepareGame(hWnd); /*0x5ed3dd*/
-  return InvalidateRect((HWND)hWnd, 0, 0); /*0x5ed3ed*/
+    Session::PrepareGame(this); /*0x5ed3dd*/
+  return InvalidateRect((HWND)this, 0, 0); /*0x5ed3ed*/
 
 }
 } // namespace gamemd

@@ -23,21 +23,21 @@ int ConnectionClass::allocPacketSlot(const void *a2, signed int a3, const void *
 
   int v6; // edx
   signed int v8; // ebx
-  int v9; // eax
-  unsigned char *v10; // ecx
+  unsigned __int8 *v9; // eax
+  unsigned __int8 *v10; // ecx
   int v12; // ebx
   int v13; // esi
   int v14; // eax
   signed int v15; // [esp+14h] [ebp+8h]
 
-  v6 = *(unsigned int *)aP1->Active; /*0x48b755*/
-  if ( aP1->PhoneNumber[8] == v6 || aP1 > aP1->LastPacketTime ) /*0x48b768*/
+  v6 = *(unsigned int *)this->Active; /*0x48b755*/
+  if ( this->PhoneNumber[8] == v6 || a3 > this->LastPacketTime ) /*0x48b768*/
     return 0; /*0x48b768*/
   v8 = 0; /*0x48b76a*/
   if ( v6 <= 0 ) /*0x48b772*/
     goto LABEL_9; /*0x48b772*/
-  v9 = aP1->PhoneNumber[7]; /*0x48b774*/
-  v10 = (unsigned char *)v9; /*0x48b777*/
+  v9 = (unsigned __int8 *)this->PhoneNumber[7]; /*0x48b774*/
+  v10 = v9; /*0x48b777*/
   while ( (*v10 & 1) != 0 ) /*0x48b77c*/
   {
     ++v8; /*0x48b77e*/
@@ -48,33 +48,33 @@ int ConnectionClass::allocPacketSlot(const void *a2, signed int a3, const void *
   v15 = v8; /*0x48b78f*/
   if ( v8 == -1 ) /*0x48b793*/
   {
-    LABEL_9:
+LABEL_9:
     Debug::Log(); /*0x48b795*/
     return 0; /*0x48b7a7*/
   }
   v12 = 24 * v8; /*0x48b7ae*/
-  *(unsigned int *)(v9 + v12) |= 1u; /*0x48b7b7*/
-  *(unsigned int *)(v12 + aP1->PhoneNumber[7]) &= ~2u; /*0x48b7c4*/
-  *(unsigned int *)(aP1->PhoneNumber[7] + v12) &= ~4u; /*0x48b7d2*/
-  v13 = dword_887340; /*0x48b7d9*/
-  if ( dword_887338 != -1 ) /*0x48b7e2*/
-    v13 += Timer::GetTicks() - dword_887338; /*0x48b7f4*/
-  *(unsigned int *)(aP1->PhoneNumber[7] + v12 + 4) = v13; /*0x48b7fb*/
-  *(unsigned int *)(aP1->PhoneNumber[7] + v12 + 8) = aP1; /*0x48b806*/
-  memcpy(*(void **)(aP1->PhoneNumber[7] + v12 + 12), aP1, aP1); /*0x48b816*/
-  if ( aP1 && aP1 > 0 && aP1 <= aP1->PacketsSent ) /*0x48b832*/
+  *(unsigned int *)&v9[v12] |= 1u; /*0x48b7b7*/
+  *(unsigned int *)(v12 + this->PhoneNumber[7]) &= ~2u; /*0x48b7c4*/
+  *(unsigned int *)(this->PhoneNumber[7] + v12) &= ~4u; /*0x48b7d2*/
+  v13 = *(unsigned int *)&stru_887338.__pad_6[2]; /*0x48b7d9*/
+  if ( *(unsigned int *)stru_887338.__pad_0 != -1 ) /*0x48b7e2*/
+    v13 += Timer::GetTicks() - *(unsigned int *)stru_887338.__pad_0; /*0x48b7f4*/
+  *(unsigned int *)(this->PhoneNumber[7] + v12 + 4) = v13; /*0x48b7fb*/
+  *(unsigned int *)(this->PhoneNumber[7] + v12 + 8) = a3; /*0x48b806*/
+  qmemcpy(*(void **)(this->PhoneNumber[7] + v12 + 12), a2, a3); /*0x48b816*/
+  if ( a4 && a5 > 0 && a5 <= this->PacketsSent ) /*0x48b832*/
   {
-    memcpy(*(void **)(aP1->PhoneNumber[7] + v12 + 20), aP1, aP1); /*0x48b842*/
-    *(unsigned int *)(aP1->PhoneNumber[7] + v12 + 16) = aP1; /*0x48b84e*/
+    qmemcpy(*(void **)(this->PhoneNumber[7] + v12 + 20), a4, a5); /*0x48b842*/
+    *(unsigned int *)(this->PhoneNumber[7] + v12 + 16) = a5; /*0x48b84e*/
   }
   else
   {
-    *(unsigned int *)(aP1->PhoneNumber[7] + v12 + 16) = 0; /*0x48b857*/
+    *(unsigned int *)(this->PhoneNumber[7] + v12 + 16) = 0; /*0x48b857*/
   }
-  *(unsigned int *)(aP1->PhoneNumber[10] + 4 * aP1->PhoneNumber[8]) = v15; /*0x48b86a*/
-  v14 = aP1->PhoneNumber[9] + 1; /*0x48b874*/
-  ++aP1->PhoneNumber[8]; /*0x48b875*/
-  aP1->PhoneNumber[9] = v14; /*0x48b878*/
+  *(unsigned int *)(this->PhoneNumber[10] + 4 * this->PhoneNumber[8]) = v15; /*0x48b86a*/
+  v14 = this->PhoneNumber[9] + 1; /*0x48b874*/
+  ++this->PhoneNumber[8]; /*0x48b875*/
+  this->PhoneNumber[9] = v14; /*0x48b878*/
   return 1; /*0x48b7a2*/
 
 }
@@ -177,14 +177,14 @@ int ConnectionClass::receivePacket(int a2, int a3)
   Terrain *v14; // ecx
   int v15; // edi
   int TileType; // eax
-  int v17; // eax
+  unsigned __int8 *v17; // eax
   int v18; // ecx
   int v19; // ecx
   int v20; // eax
   Terrain *v21; // ecx
   int v22; // edi
-  int v23; // eax
-  int v24; // eax
+  unsigned int *v23; // eax
+  unsigned int *v24; // eax
   int v25; // eax
   int v26; // eax
   __int16 v27; // [esp+10h] [ebp-10h] BYREF
@@ -201,7 +201,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
   {
     if ( v5 == 1 ) /*0x48c0d5*/
     {
-      PlayerIndex = (int)(this->PlayerIndex); /*0x48c0db*/
+      PlayerIndex = this->PlayerIndex; /*0x48c0db*/
       if ( *(unsigned int *)(PlayerIndex + 8) - *(unsigned int *)(PlayerIndex + 56) > 1 ) /*0x48c0e9*/
       {
         if ( ConnectionClass::allocPacketSlot((ModemConnectionClass *)PlayerIndex, (const void *)a2, a3, 0, 0) ) /*0x48c115*/
@@ -233,19 +233,19 @@ int ConnectionClass::receivePacket(int a2, int a3)
       v13 = this->PhoneNumber[11]; /*0x48c18e*/
       if ( *(unsigned int *)(a2 + 4) <= v13 && v13 != -1 ) /*0x48c19b*/
       {
-        LABEL_40:
+LABEL_40:
         v25 = *(unsigned int *)(a2 + 4); /*0x48c288*/
         v27 = this->PhoneNumber[3]; /*0x48c28f*/
         v28 = 2; /*0x48c29c*/
         *(unsigned int *)&v29[1] = v25; /*0x48c2a1*/
-        if ( byte_A8DBA0 ) /*0x48c2a5*/
+        if ( stru_A8D804.__pad_3D[863] ) /*0x48c2a5*/
           v29[0] = *(unsigned char *)(a2 + 3); /*0x48c2aa*/
         else
           v29[0] = 0; /*0x48c2b0*/
         Debug::Log(); /*0x48c2c6*/
-        v26 = dword_A8EA0C; /*0x48c2cb*/
-        LOBYTE(v26) = this == (ModemConnectionClass *)dword_A8EA0C; /*0x48c2d7*/
-        (*(void (**)(ModemConnectionClass *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->vtable1 + 36))( /*0x48c2ea*/
+        v26 = *(unsigned int *)&stru_A8E960.nextScenario[172]; /*0x48c2cb*/
+        LOBYTE(v26) = this == *(ModemConnectionClass **)&stru_A8E960.nextScenario[172]; /*0x48c2d7*/
+        (*(void (**)(ModemConnectionClass *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 36))( /*0x48c2ea*/
           this,
           &v27,
           14,
@@ -257,22 +257,22 @@ int ConnectionClass::receivePacket(int a2, int a3)
       }
       v14 = (Terrain *)this->PlayerIndex; /*0x48c1a1*/
       v15 = 0; /*0x48c1a4*/
-      if ( v14->q038 > 0 ) /*0x48c1ab*/
+      if ( v14->Terrain_field_0x38 > 0 ) /*0x48c1ab*/
       {
         do /*0x48c1ae*/
         {
-          TileType = (v14)->GetTileType(v15); /*0x48c1ae*/
+          TileType = Terrain::GetTileType(v14, v15); /*0x48c1ae*/
           if ( TileType ) /*0x48c1b5*/
           {
-            v17 = *(unsigned int *)(TileType + 12); /*0x48c1b7*/
-            if ( !*(unsigned char *)(v17 + 2) && *(unsigned int *)(v17 + 4) == *(unsigned int *)(a2 + 4) ) /*0x48c1c9*/
+            v17 = *(unsigned __int8 **)(TileType + 12); /*0x48c1b7*/
+            if ( !v17[2] && *((unsigned int *)v17 + 1) == *(unsigned int *)(a2 + 4) ) /*0x48c1c9*/
               goto LABEL_40; /*0x48c1c9*/
           }
           v14 = (Terrain *)this->PlayerIndex; /*0x48c1cf*/
         }
-        while ( ++v15 < v14->q038 ); /*0x48c1ae*/
+        while ( ++v15 < v14->Terrain_field_0x38 ); /*0x48c1ae*/
       }
-      v18 = (int)(this->PlayerIndex); /*0x48c1d8*/
+      v18 = this->PlayerIndex; /*0x48c1d8*/
       if ( (*(unsigned int *)(v18 + 8) - *(unsigned int *)(v18 + 56) > 1 || *(unsigned int *)(a2 + 4) == this->PhoneNumber[11] + 1) /*0x48c216*/
         && ConnectionClass::allocPacketSlot((ModemConnectionClass *)v18, (const void *)a2, a3, 0, 0) )
       {
@@ -286,22 +286,22 @@ int ConnectionClass::receivePacket(int a2, int a3)
             v21 = (Terrain *)this->PlayerIndex; /*0x48c24a*/
             this->PhoneNumber[11] = v20; /*0x48c24d*/
             v22 = 0; /*0x48c250*/
-            if ( v21->q038 <= 0 ) /*0x48c257*/
+            if ( v21->Terrain_field_0x38 <= 0 ) /*0x48c257*/
               break; /*0x48c257*/
             while ( 1 ) /*0x48c25a*/
             {
-              v23 = (v21)->GetTileType(v22); /*0x48c25a*/
+              v23 = (unsigned int *)Terrain::GetTileType(v21, v22); /*0x48c25a*/
               if ( v23 ) /*0x48c261*/
               {
-                v24 = *(unsigned int *)(v23 + 12); /*0x48c263*/
-                if ( !*(unsigned char *)(v24 + 2) && *(unsigned int *)(v24 + 4) == this->PhoneNumber[11] + 1 ) /*0x48c276*/
+                v24 = (unsigned int *)v23[3]; /*0x48c263*/
+                if ( !*((unsigned char *)v24 + 2) && v24[1] == this->PhoneNumber[11] + 1 ) /*0x48c276*/
                   break; /*0x48c276*/
               }
               v21 = (Terrain *)this->PlayerIndex; /*0x48c278*/
-              if ( ++v22 >= v21->q038 ) /*0x48c27f*/
+              if ( ++v22 >= v21->Terrain_field_0x38 ) /*0x48c27f*/
                 goto LABEL_40; /*0x48c27f*/
             }
-            v20 = *(unsigned int *)(v24 + 4); /*0x48c283*/
+            v20 = v24[1]; /*0x48c283*/
           }
         }
         goto LABEL_40; /*0x48c257*/
@@ -311,20 +311,20 @@ int ConnectionClass::receivePacket(int a2, int a3)
     return 0; /*0x48c309*/
   }
   Debug::Log(); /*0x48c079*/
-  v6 = (int)(this->PlayerIndex); /*0x48c07e*/
+  v6 = this->PlayerIndex; /*0x48c07e*/
   v7 = 0; /*0x48c084*/
   if ( *(int *)(v6 + 40) > 0 ) /*0x48c08b*/
   {
     while ( 1 ) /*0x48c08e*/
     {
-      TileIndex = (unsigned int *)((Terrain *)v6)->GetTileIndex(v7); /*0x48c08e*/
+      TileIndex = (unsigned int *)Terrain::GetTileIndex((Terrain *)v6, v7); /*0x48c08e*/
       if ( TileIndex ) /*0x48c095*/
       {
         v9 = TileIndex[5]; /*0x48c097*/
         if ( *(unsigned int *)(a2 + 4) == *(unsigned int *)(v9 + 4) && !*(unsigned char *)(v9 + 2) ) /*0x48c0a2*/
           break; /*0x48c0a2*/
       }
-      v6 = (int)(this->PlayerIndex); /*0x48c0a9*/
+      v6 = this->PlayerIndex; /*0x48c0a9*/
       if ( ++v7 >= *(unsigned int *)(v6 + 40) ) /*0x48c0b0*/
         return 1; /*0x48c0be*/
     }
@@ -342,38 +342,38 @@ int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
   int v4; // esi
   Terrain *PlayerIndex; // ecx
   int TileType; // eax
-  int v7; // ecx
-  char v8; // dl
+  unsigned __int8 *v7; // ecx
+  unsigned __int8 v8; // dl
   int v10; // edx
   bool v11; // zf
 
   v4 = 0; /*0x48c326*/
   PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c328*/
-  if ( PlayerIndex->u32_38 <= 0 ) /*0x48c330*/
+  if ( PlayerIndex->Terrain_field_0x38 <= 0 ) /*0x48c330*/
     return 0; /*0x48c36a*/
   while ( 1 ) /*0x48c333*/
   {
-    TileType = (PlayerIndex)->GetTileType(v4); /*0x48c333*/
+    TileType = Terrain::GetTileType(PlayerIndex, v4); /*0x48c333*/
     if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x48c33f*/
       goto LABEL_7; /*0x48c33f*/
-    v7 = *(unsigned int *)(TileType + 12); /*0x48c341*/
-    v8 = *(unsigned char *)(v7 + 2); /*0x48c344*/
-    if ( !v8 && *(unsigned int *)(v7 + 4) == this->PhoneNumber[12] + 1 ) /*0x48c354*/
+    v7 = *(unsigned __int8 **)(TileType + 12); /*0x48c341*/
+    v8 = v7[2]; /*0x48c344*/
+    if ( !v8 && *((unsigned int *)v7 + 1) == this->PhoneNumber[12] + 1 ) /*0x48c354*/
       break; /*0x48c354*/
     if ( v8 == 1 ) /*0x48c359*/
       goto LABEL_10; /*0x48c359*/
-    LABEL_7:
+LABEL_7:
     PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c35b*/
-    if ( ++v4 >= PlayerIndex->u32_38 ) /*0x48c362*/
+    if ( ++v4 >= PlayerIndex->Terrain_field_0x38 ) /*0x48c362*/
       return 0; /*0x48c362*/
   }
-  this->PhoneNumber[12] = *(unsigned int *)(v7 + 4); /*0x48c370*/
-  LABEL_10:
+  this->PhoneNumber[12] = *((unsigned int *)v7 + 1); /*0x48c370*/
+LABEL_10:
   v10 = *(unsigned int *)(TileType + 8) - 14; /*0x48c373*/
   v11 = *(unsigned int *)(TileType + 8) == 14; /*0x48c37e*/
   *(unsigned int *)TileType |= 2u; /*0x48c380*/
   if ( v10 >= 0 && !v11 ) /*0x48c382*/
-    memcpy(a2, (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
+    qmemcpy(a2, (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
   *a3 = v10; /*0x48c3a5*/
   return 1; /*0x48c364*/
 
@@ -384,58 +384,72 @@ namespace gamemd {
 int ConnectionClass::serviceSendQueue()
 {
 
-
-  int v2 = 0; // esi /*0x48c3e9*/
-  int v21; // [esp+18h] [ebp-8h]
-  v21 = 0; /*0x48c3eb*/
+  int v2; // esi
   int PlayerIndex; // ecx
-  PlayerIndex = (int)(this->PlayerIndex); /*0x48c3f3*/
+  int TileIndex; // eax
+  int v5; // ebx
+  int v6; // ebp
+  int v7; // ebx
+  int v8; // esi
+  int v9; // ebp
+  int v10; // ecx
+  int v11; // edx
+  int v12; // eax
+  unsigned __int8 *v13; // eax
+  int v14; // eax
+  unsigned int v15; // ebp
+  unsigned int v16; // eax
+  int v17; // eax
+  unsigned int v18; // eax
+  int v19; // eax
+  int v21; // [esp+18h] [ebp-8h]
+  int v22; // [esp+1Ch] [ebp-4h]
+
+  v2 = 0; /*0x48c3e9*/
+  v21 = 0; /*0x48c3eb*/
+  PlayerIndex = this->PlayerIndex; /*0x48c3f3*/
   if ( PlayerIndex->q028 > 0 ) /*0x48c3fb*/
   {
     do /*0x48c45f*/
     {
-      int TileIndex; // eax
-      TileIndex = ((Terrain *)PlayerIndex)->GetTileIndex(v2); /*0x48c3fe*/
-      int v5 = TileIndex; // ebx /*0x48c403*/
+      TileIndex = Terrain::GetTileIndex((Terrain *)PlayerIndex, v2); /*0x48c3fe*/
+      v5 = TileIndex; /*0x48c403*/
       if ( (*(unsigned char *)TileIndex & 2) != 0 ) /*0x48c408*/
       {
         if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) ) /*0x48c40d*/
         {
-          int v6 = dword_887340; // ebp /*0x48c419*/
-          if ( dword_887338 != -1 ) /*0x48c422*/
-            v6 += Timer::GetTicks() - dword_887338; /*0x48c434*/
-          ((ConnectionClass *)this->PlayerIndex)->initQueue(v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
+          v6 = *(unsigned int *)&stru_887338.__pad_6[2]; /*0x48c419*/
+          if ( *(unsigned int *)stru_887338.__pad_0 != -1 ) /*0x48c422*/
+            v6 += Timer::GetTicks() - *(unsigned int *)stru_887338.__pad_0; /*0x48c434*/
+          ConnectionClass::initQueue((ConnectionClass *)this->PlayerIndex, v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
         }
         PacketQueue::ExtractEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0, 0); /*0x48c452*/
       }
-      PlayerIndex = (int)(this->PlayerIndex); /*0x48c458*/
+      PlayerIndex = this->PlayerIndex; /*0x48c458*/
       ++v2; /*0x48c45b*/
     }
     while ( v2 < PlayerIndex->q028 ); /*0x48c45f*/
   }
-  int v7 = 0; // ebx /*0x48c464*/
-  int v22; // [esp+1Ch] [ebp-4h]
+  v7 = 0; /*0x48c464*/
   v22 = *(unsigned int *)(this->PlayerIndex + 40); /*0x48c46b*/
   if ( v22 <= 0 ) /*0x48c46f*/
     return 1; /*0x48c46f*/
   do /*0x48c552*/
   {
-    int v8; // esi
-    v8 = ((Terrain *)this->PlayerIndex)->GetTileIndex(v7); /*0x48c47e*/
+    v8 = Terrain::GetTileIndex((Terrain *)this->PlayerIndex, v7); /*0x48c47e*/
     if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
-      int v9 = dword_887340; // ebp /*0x48c48e*/
-      if ( dword_887338 != -1 ) /*0x48c497*/
-        v9 += Timer::GetTicks() - dword_887338; /*0x48c4a9*/
-      int v10; // ecx
+      v9 = *(unsigned int *)&stru_887338.__pad_6[2]; /*0x48c48e*/
+      if ( *(unsigned int *)stru_887338.__pad_0 != -1 ) /*0x48c497*/
+        v9 += Timer::GetTicks() - *(unsigned int *)stru_887338.__pad_0; /*0x48c4a9*/
       v10 = *(unsigned int *)(v8 + 8); /*0x48c4ab*/
       if ( (unsigned int)(v9 - v10) > this->PhoneNumber[4] ) /*0x48c4b7*/
       {
-        int v11 = dword_A8EA0C; // edx /*0x48c4bd*/
+        v11 = *(unsigned int *)&stru_A8E960.nextScenario[172]; /*0x48c4bd*/
         LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
-        LOBYTE(v11) = this == (ModemConnectionClass *)dword_A8EA0C; /*0x48c4cb*/
-        (*(void (**)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->vtable1 /*0x48c4e2*/
-          + 36))(
+        LOBYTE(v11) = this == *(ModemConnectionClass **)&stru_A8E960.nextScenario[172]; /*0x48c4cb*/
+        (*(void (**)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->__pad_0 /*0x48c4e2*/
+                                                                                                 + 36))(
           this,
           *(unsigned int *)(v8 + 20),
           *(unsigned int *)(v8 + 16),
@@ -443,7 +457,6 @@ int ConnectionClass::serviceSendQueue()
           *(unsigned int *)(v8 + 24),
           v11,
           v10);
-        int v12; // eax
         v12 = *(unsigned int *)(v8 + 12); /*0x48c4e5*/
         *(unsigned int *)(v8 + 8) = v9; /*0x48c4e8*/
         if ( v12 ) /*0x48c4ed*/
@@ -452,35 +465,28 @@ int ConnectionClass::serviceSendQueue()
         }
         else
         {
-          int v13; // eax
-          v13 = *(unsigned int *)(v8 + 20); /*0x48c4ef*/
+          v13 = *(unsigned __int8 **)(v8 + 20); /*0x48c4ef*/
           *(unsigned int *)(v8 + 4) = v9; /*0x48c4f2*/
-          if ( *(unsigned char *)(v13 + 2) == 1 ) /*0x48c4f9*/
+          if ( v13[2] == 1 ) /*0x48c4f9*/
           {
-            int v14; // eax
             v14 = *(unsigned int *)v8; /*0x48c4fb*/
             LOBYTE(v14) = *(unsigned int *)v8 | 2; /*0x48c4fd*/
             *(unsigned int *)v8 = v14; /*0x48c4ff*/
           }
         }
-        unsigned int v15; // ebp
         v15 = *(unsigned int *)(v8 + 12) + 1; /*0x48c509*/
         *(unsigned int *)(v8 + 12) = v15; /*0x48c50a*/
-        unsigned int v16; // eax
         v16 = this->PhoneNumber[5]; /*0x48c50d*/
         if ( v16 != -1 && v15 > v16 ) /*0x48c519*/
         {
-          int v17; // eax
           v17 = *(unsigned int *)v8; /*0x48c51b*/
           v21 = 1; /*0x48c51d*/
           LOBYTE(v17) = *(unsigned int *)v8 | 4; /*0x48c525*/
           *(unsigned int *)v8 = v17; /*0x48c527*/
         }
-        unsigned int v18; // eax
         v18 = this->PhoneNumber[6]; /*0x48c529*/
         if ( v18 != -1 && *(unsigned int *)(v8 + 8) - *(unsigned int *)(v8 + 4) > v18 ) /*0x48c53b*/
         {
-          int v19; // eax
           v19 = *(unsigned int *)v8; /*0x48c53d*/
           v21 = 1; /*0x48c53f*/
           LOBYTE(v19) = *(unsigned int *)v8 | 4; /*0x48c547*/

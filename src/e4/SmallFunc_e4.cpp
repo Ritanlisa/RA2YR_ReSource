@@ -229,10 +229,12 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 {
 
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
-  if ( ((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
-    return ((BuildingTypeClass *)(Destination))->FindOrCreate(); /*0x67bd0b*/
+
+  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
+    return BuildingTypeClass::FindOrCreate(Destination); /*0x67bd0b*/
   else
-    return (gamemd::BuildingTypeClass *)(a4); /*0x67bd19*/
+    return a4; /*0x67bd19*/
+
 }
 }
 // 0x67BD80

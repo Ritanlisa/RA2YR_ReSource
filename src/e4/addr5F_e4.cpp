@@ -182,12 +182,13 @@ char HandlePlayerDisconnection(int a1, int a2)
 namespace gamemd {
 AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
 {
+
   int v3; // ebp
   wchar_t *StringCSF; // eax
   LPARAM v5; // esi
   char v6; // bl
   wchar_t *v7; // eax
-  void * MessageBox;
+  HWND MessageBox; // eax
   int v9; // esi
   TechnoTypeClass *v10; // ecx
   wchar_t *v11; // eax
@@ -203,22 +204,22 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
 
-  v19 = (char)((gamemd::AbstractClass **)((*(((unsigned char *)&(a1)) + (sizeof(a1) - 1)))));
+  v19 = HIBYTE(a1); /*0x5f2cf2*/
   v3 = 3; /*0x5f2cfb*/
-  if ( a3 == (void *)(1) ) /*0x5f2d00*/
-    StringCSF = GetStringCSF((char *)aTxtModemConner_0, 0,(const char *)(g_Str_File_NullMgr_CPP), 1580); /*0x5f2d13*/
+  if ( a3 == 1 ) /*0x5f2d00*/
+    StringCSF = GetStringCSF((wchar_t *)aTxtModemConner_0, 0, g_Str_File_NullMgr_CPP, 1580); /*0x5f2d13*/
   else
-    StringCSF = GetStringCSF((char *)(aTxtWaitingForC_0), 0, g_Str_File_NullMgr_CPP, 1582); /*0x5f2d26*/
+    StringCSF = GetStringCSF(aTxtWaitingForC_0, 0, g_Str_File_NullMgr_CPP, 1582); /*0x5f2d26*/
   v5 = (LPARAM)StringCSF; /*0x5f2d30*/
   Debug::Log(); /*0x5f2d32*/
   v6 = 1; /*0x5f2d41*/
   g_NetworkTestFlag = 0; /*0x5f2d52*/
-  v7 = GetStringCSF((char *)(g_Str_TXT_CANCEL), 0, g_Str_File_NullMgr_CPP, 1589); /*0x5f2d59*/
-  MessageBox = (HWND)(CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag)); /*0x5f2d62*/
-  v21 = (HWND)(MessageBox); /*0x5f2d69*/
+  v7 = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1589); /*0x5f2d59*/
+  MessageBox = CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag); /*0x5f2d62*/
+  v21 = MessageBox; /*0x5f2d69*/
   if ( !MessageBox ) /*0x5f2d6d*/
-    return (gamemd::AbstractClass **)(3); /*0x5f3155*/
-  ((Dialog *)(MessageBox))->Show(); /*0x5f2d76*/
+    return 3; /*0x5f3155*/
+  Dialog::Show((Dialog *)MessageBox); /*0x5f2d76*/
   (*(void (**)(HWND, int (*)(), int))(*(unsigned int *)g_ClipboardBuffer + 36))( /*0x5f2d88*/
     g_ClipboardBuffer,
     PumpEventLoop,
@@ -227,16 +228,16 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   v9 = 3600; /*0x5f2d92*/
   while ( 1 )
   {
-    if ( (uint8_t)Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2dab*/
+    if ( (unsigned __int8)Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2dab*/
     {
-      v3 = (int)((HWND)(6));
+      v3 = 6; /*0x5f30f5*/
       Debug::Log(); /*0x5f30fa*/
-      v14 = (HWND)(g_ClipboardBuffer); /*0x5f30ff*/
+      v14 = g_ClipboardBuffer; /*0x5f30ff*/
       if ( !g_ClipboardBuffer ) /*0x5f310a*/
         goto LABEL_36; /*0x5f310a*/
       goto LABEL_35; /*0x5f310a*/
     }
-    (*((unsigned char *)&(v10))) = 0; /*0x5f2db1*/
+    LOBYTE(v10) = 0; /*0x5f2db1*/
     ScreenSaver::Process(v10, v18); /*0x5f2db3*/
     memset(Source, 0, 0xF0u); /*0x5f2dc3*/
     v9 = (*(int (**)(HWND, int, unsigned char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))(
@@ -248,64 +249,64 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
     Debug::Log(); /*0x5f2ded*/
     if ( v9 == -1000 ) /*0x5f2dfb*/
     {
-      v3 = (int)((HWND)(6));
+      v3 = 6; /*0x5f30c0*/
       Debug::Log(); /*0x5f30c5*/
-      v14 = (HWND)(g_ClipboardBuffer); /*0x5f30ca*/
+      v14 = g_ClipboardBuffer; /*0x5f30ca*/
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/
         goto LABEL_36; /*0x5f30d5*/
-      LABEL_35:
-      (((unsigned char *)&(Buffer))[2]) = 0; /*0x5f310c*/
-      (*((unsigned short *)&(Buffer))) = word_8327A0; /*0x5f3118*/
-      ((WinModemClass *)((int *)v14))->WriteSerial(&Buffer, 2u); /*0x5f3124*/
+LABEL_35:
+      BYTE2(Buffer) = 0; /*0x5f310c*/
+      LOWORD(Buffer) = word_8327A0; /*0x5f3118*/
+      WinModemClass::WriteSerial((int *)v14, &Buffer, 2u); /*0x5f3124*/
       goto LABEL_36; /*0x5f3124*/
     }
-    _strupr((char *)(Source)); /*0x5f2e06*/
-    if ( strlen((const char *)(Source)) ) /*0x5f2e0f*/
+    _strupr(Source); /*0x5f2e06*/
+    if ( strlen(Source) ) /*0x5f2e0f*/
       Debug::Log(); /*0x5f2e28*/
-    if ( !strncmp((const char *)(Source), aRing, 4u) ) /*0x5f2e3c*/
+    if ( !strncmp(Source, aRing, 4u) ) /*0x5f2e3c*/
     {
       Debug::Log(); /*0x5f2e4d*/
-      v11 = GetStringCSF((char *)(aTxtAnswering), 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
+      v11 = GetStringCSF(aTxtAnswering, 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
       Network_Start(hWnd, (LPARAM)v11); /*0x5f2e71*/
       Debug::Log(); /*0x5f2e7b*/
-      ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(aAta, strlen(aAta)); /*0x5f2e9e*/
+      WinModemClass::WriteSerial((int *)g_ClipboardBuffer, aAta, strlen(aAta)); /*0x5f2e9e*/
       v19 = 1; /*0x5f2ea7*/
       v9 = *(unsigned int *)(Buffer + 36); /*0x5f2eac*/
       goto LABEL_22; /*0x5f2eaf*/
     }
     if ( strstr(Source, aConnect) ) /*0x5f2ebe*/
     {
-      memset((void *)(byte_AC1288), 0, 0x50u); /*0x5f2ed8*/
-      strncpy((char *)(byte_AC1288), Source, 0x4Fu); /*0x5f2ee4*/
+      memset(byte_AC1288, 0, 0x50u); /*0x5f2ed8*/
+      strncpy(byte_AC1288, Source, 0x4Fu); /*0x5f2ee4*/
       v3 = 0; /*0x5f2eed*/
       Debug::Log(); /*0x5f2ef5*/
     }
-    else if ( !strncmp((const char *)(Source), aBusy, 4u) ) /*0x5f2f0e*/
+    else if ( !strncmp(Source, aBusy, 4u) ) /*0x5f2f0e*/
     {
       v3 = 2; /*0x5f2f1e*/
       Debug::Log(); /*0x5f2f29*/
     }
-    else if ( !strncmp((const char *)(Source), aNoC, 4u) ) /*0x5f2f42*/
+    else if ( !strncmp(Source, aNoC, 4u) ) /*0x5f2f42*/
     {
       v3 = 1; /*0x5f2f52*/
       Debug::Log(); /*0x5f2f5d*/
     }
     else
     {
-      if ( strncmp((const char *)(Source), aErro, 4u) ) /*0x5f2f73*/
+      if ( strncmp(Source, aErro, 4u) ) /*0x5f2f73*/
         goto LABEL_22; /*0x5f2f7d*/
       v3 = 3; /*0x5f2f83*/
       Debug::Log(); /*0x5f2f8e*/
       v21 = (HWND)asc_82083C; /*0x5f2f9d*/
-      v16 = GetStringCSF((char *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fba*/
-      v12 = (int *)GetStringCSF((char *)(aTxtErrorError), 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
+      v16 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fba*/
+      v12 = (int *)GetStringCSF(aTxtErrorError, 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
       Dialog::ShowMessageBox(v12, v16, 0, 0, 0, v18); /*0x5f2fd6*/
     }
     v6 = 0; /*0x5f2fdb*/
-    LABEL_22:
+LABEL_22:
     if ( v9 <= 0 ) /*0x5f2fdf*/
       break; /*0x5f2fdf*/
-    LABEL_25:
+LABEL_25:
     if ( v6 != 1 ) /*0x5f2ff1*/
       goto LABEL_36; /*0x5f2ff1*/
   }
@@ -317,26 +318,27 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   if ( (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 ) /*0x5f3009*/
   {
     Debug::Log(); /*0x5f3038*/
-    if ( strlen((const char *)(Source)) ) /*0x5f3041*/
+    if ( strlen(Source) ) /*0x5f3041*/
       Debug::Log(); /*0x5f305a*/
     v21 = (HWND)asc_82083C; /*0x5f3079*/
-    v17 = GetStringCSF((char *)(g_Str_TXT_OK), 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3086*/
-    v13 = (int *)GetStringCSF((char *)(g_Str_TXT_ERROR_TIMEOUT), 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
+    v17 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3086*/
+    v13 = (int *)GetStringCSF(g_Str_TXT_ERROR_TIMEOUT, 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
     Dialog::ShowMessageBox(v13, v17, 0, 0, 0, v18); /*0x5f30a2*/
     Debug::Log(); /*0x5f30ac*/
     v3 = 5; /*0x5f30b4*/
   }
   else
   {
-    sprintf((char *const )(byte_AC1288), "%s", aConnected); /*0x5f301a*/
+    sprintf(byte_AC1288, "%s", aConnected); /*0x5f301a*/
     v3 = 0; /*0x5f3024*/
     Debug::Log(); /*0x5f3026*/
   }
-  LABEL_36:
+LABEL_36:
   (*(void (**)(HWND, unsigned int))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, 0); /*0x5f3129*/
   g_NetworkTestFlag = 0; /*0x5f313a*/
-  ((Dialog *)(v21))->Destroy(); /*0x5f3141*/
-  return (gamemd::AbstractClass **)(v3); /*0x5f3149*/
+  Dialog::Destroy((Dialog *)v21); /*0x5f3141*/
+  return v3; /*0x5f3149*/
+
 }
 }
 // 0x5F33B0
@@ -362,20 +364,31 @@ void* sub_5F33B0()
 namespace gamemd {
 unsigned int * sub_5F66A0(unsigned int * a1, int a2)
 {
-  bool v12; // zf
 
   int v2; // edi
+  int v3; // esi
+  int v4; // ebx
+  int v5; // ecx
+  int v6; // eax
+  unsigned int *v7; // ebp
+  unsigned int *v8; // ebp
+  int *v9; // ebp
+  int v10; // edx
+  int v11; // edi
+  bool v12; // zf
+  unsigned int *v14; // [esp+10h] [ebp-28h]
+  int v15; // [esp+14h] [ebp-24h]
+
   v2 = *(unsigned int *)(a2 + 16); /*0x5f66a7*/
-  int v3 = 0; // esi /*0x5f66ae*/
-  int v4 = 0; // ebx /*0x5f66b0*/
-  int v5 = 0; // ecx /*0x5f66b2*/
-  int v6 = 0; // eax /*0x5f66b4*/
+  v3 = 0; /*0x5f66ae*/
+  v4 = 0; /*0x5f66b0*/
+  v5 = 0; /*0x5f66b2*/
+  v6 = 0; /*0x5f66b4*/
   if ( v2 > 0 ) /*0x5f66bc*/
   {
-    int v7; // ebp
-    v7 = *(unsigned int *)(a2 + 4); /*0x5f66c2*/
-    v3 = *(unsigned int *)(*(unsigned int *)v7 + 156); /*0x5f66d0*/
-    v4 = *(unsigned int *)(*(unsigned int *)v7 + 160); /*0x5f66d9*/
+    v7 = *(unsigned int **)(a2 + 4); /*0x5f66c2*/
+    v3 = *(unsigned int *)(*v7 + 156); /*0x5f66d0*/
+    v4 = *(unsigned int *)(*v7 + 160); /*0x5f66d9*/
     if ( v2 - 1 < 0 ) /*0x5f66f5*/
     {
       v5 = 0; /*0x5f6762*/
@@ -383,18 +396,13 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
     else
     {
       v5 = 0; /*0x5f66f7*/
-      unsigned int *v8; // ebp
-      v8 = (unsigned int *)(v7 + 4 * (v2 - 1)); /*0x5f66fb*/
-      unsigned int *v14; // [esp+10h] [ebp-28h]
+      v8 = &v7[v2 - 1]; /*0x5f66fb*/
       v14 = v8; /*0x5f6700*/
-      int v15; // [esp+14h] [ebp-24h]
       v15 = *(unsigned int *)(a2 + 16); /*0x5f6704*/
       do /*0x5f675e*/
       {
-        int *v9; // ebp
         v9 = (int *)(*v8 + 156); /*0x5f6711*/
-        int v10 = *v9; // edx /*0x5f6713*/
-        int v11; // edi
+        v10 = *v9; /*0x5f6713*/
         v11 = v9[1]; /*0x5f6718*/
         if ( *v9 < v3 ) /*0x5f6722*/
         {
@@ -423,6 +431,7 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
   a1[2] = v5; /*0x5f6771*/
   a1[3] = v6; /*0x5f6774*/
   return a1; /*0x5f6777*/
+
 }
 }
 // 0x5FBEF0
@@ -430,34 +439,37 @@ namespace gamemd {
 char sub_5FBEF0()
 {
 
-  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
-  dwNewLong = -1; /*0x5fbefe*/
   HWND Dialog; // esi
-  Dialog = (HWND)CreateDialog(0xA3u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))HotkeyOptions::DlgProc, 0); /*0x5fbf0b*/
+  int v1; // ecx
+  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
+
+  dwNewLong = -1; /*0x5fbefe*/
+  Dialog = (HWND)CreateDialog(0xA3u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))HotkeyOptions::DlgProc, 0); /*0x5fbf0b*/
   if ( Dialog ) /*0x5fbf0f*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5fbf19*/
-    ((Dialog *)(Dialog))->Show(); /*0x5fbf21*/
+    Dialog::Show(Dialog); /*0x5fbf21*/
     while ( dwNewLong < 0 ) /*0x5fbf2c*/
     {
       if ( Dialog::PumpMessages() == 1 ) /*0x5fbf35*/
         dwNewLong = 2; /*0x5fbf37*/
-      if ( !byte_A8E9A0 ) /*0x5fbf46*/
+      if ( !MEMORY[0xA8E9A0] ) /*0x5fbf46*/
       {
-        int v1; // ecx
-        (*((unsigned char *)&(v1))) = 0; /*0x5fbf48*/
+        LOBYTE(v1) = 0; /*0x5fbf48*/
         ScreenSaver::Process(v1); /*0x5fbf4a*/
       }
     }
-    ((Dialog *)(Dialog))->Destroy(); /*0x5fbf59*/
+    Dialog::Destroy(Dialog); /*0x5fbf59*/
   }
   return 1; /*0x5fbf60*/
+
 }
 }
 // 0x5FDD20
 namespace gamemd {
 int FindBuildingByTiberiumType(int aP0)
 {
+
   int v1; // eax
   int v2; // ebx
   char *v3; // edi
@@ -465,18 +477,19 @@ int FindBuildingByTiberiumType(int aP0)
   int v5; // edx
   int v6; // esi
   const char *v8[17]; // [esp-34h] [ebp-48h] BYREF
+  int v9; // [esp+10h] [ebp-4h]
 
   if ( aP0 == -1 ) /*0x5fdd28*/
     return -1; /*0x5fdd28*/
-  v1 = *((unsigned int *)dword_A83D84 + aP0); /*0x5fdd33*/
-  v1 = v1; /*0x5fdd36*/
+  v1 = *((unsigned int *)MEMORY[0xA83D84] + aP0); /*0x5fdd33*/
+  v9 = v1; /*0x5fdd36*/
   if ( !*(unsigned char *)(v1 + 681) ) /*0x5fdd3a*/
     return -1; /*0x5fddd8*/
   v2 = 0; /*0x5fdd4e*/
   if ( dword_B0F4F8 <= 0 ) /*0x5fdd52*/
   {
-    LABEL_11:
-    memcpy(v8, (const void *)(v1 + 100), 0x31u); /*0x5fdda4*/
+LABEL_11:
+    qmemcpy(v8, (const void *)(v1 + 100), 0x31u); /*0x5fdda4*/
     Debug::Log("Overlay %s not really tiberium\n", v8[0]); /*0x5fddb9*/
     return 0; /*0x5fddc1*/
   }
@@ -486,7 +499,7 @@ int FindBuildingByTiberiumType(int aP0)
     while ( 1 ) /*0x5fdd5a*/
     {
       v4 = *(unsigned int **)v3; /*0x5fdd5a*/
-      v5 = *(unsigned int *)(*(unsigned int *)(v3->radioLinks + 660); /*0x5fdd62*/
+      v5 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)v3 + 224) + 660); /*0x5fdd62*/
       if ( aP0 >= v5 && aP0 < v5 + v4[58] ) /*0x5fdd76*/
         break; /*0x5fdd76*/
       v6 = v4[58]; /*0x5fdd78*/
@@ -496,12 +509,13 @@ int FindBuildingByTiberiumType(int aP0)
       v3 += 4; /*0x5fdd99*/
       if ( v2 >= dword_B0F4F8 ) /*0x5fdd9e*/
       {
-        v1 = v1; /*0x5fdda0*/
+        v1 = v9; /*0x5fdda0*/
         goto LABEL_11; /*0x5fdda0*/
       }
     }
     return v4[38]; /*0x5fddc9*/
   }
+
 }
 }
 // 0x5FDDF0
@@ -665,6 +679,7 @@ void sub_5FF390()
 namespace gamemd {
 AbstractClass * * GenerateRangeRingTextures()
 {
+
   int v1; // ebx
   int *v2; // ebp
   Surface *v3; // eax
@@ -678,11 +693,11 @@ AbstractClass * * GenerateRangeRingTextures()
   int v11; // ebp
   Surface *v12; // eax
   Surface *v13; // esi
-  int v14; // eax
+  unsigned __int16 *v14; // eax
   int k; // esi
   Surface *v16; // ecx
   char *result; // eax
-  uint16_t v18; // cx
+  unsigned __int16 v18; // cx
   int v19; // [esp+2Eh] [ebp-54h] BYREF
   int i; // [esp+32h] [ebp-50h]
   int v21; // [esp+36h] [ebp-4Ch]
@@ -702,21 +717,21 @@ AbstractClass * * GenerateRangeRingTextures()
   v1 = 0; /*0x5ff429*/
   if ( !byte_AC1834 ) /*0x5ff430*/
   {
-    v2 = (int *)(dword_AC1698);
+    v2 = dword_AC1698; /*0x5ff43b*/
     for ( i = 1; i < 129; i += 2 ) /*0x5ff440*/
     {
       if ( !*v2 ) /*0x5ff444*/
       {
-        v3 = (Surface *)operator new(0x20u); /*0x5ff44b*/
+        v3 = (Surface *)__2_YAPAXI_Z(0x20u); /*0x5ff44b*/
         v4 = v3; /*0x5ff450*/
         if ( v3 ) /*0x5ff457*/
         {
           Surface::Construct(v3, 256, 128); /*0x5ff465*/
           *v4->Width.__pad_0 = 0; /*0x5ff46d*/
-          /* X11: vtable install elided (implicit via XSurface virtuals 0x5ff476) */
+          *(unsigned int *)v4->__pad_0 = &XSurface_Vtable; /*0x5ff476*/
           v4[1].Width = 1; /*0x5ff47c*/
           Buffer::Init((Buffer *)&v4[1].Height, 0, 0x8000); /*0x5ff47f*/
-          /* X11: vtable install elided (implicit via BSurface virtuals 0x5ff484) */
+          *(unsigned int *)v4->__pad_0 = &BSurface_Vtable; /*0x5ff484*/
         }
         else
         {
@@ -725,12 +740,12 @@ AbstractClass * * GenerateRangeRingTextures()
         *v2 = (int)v4; /*0x5ff48e*/
       }
       (*(void (**)(int, unsigned int))(*(unsigned int *)*v2 + 24))(*v2, 0); /*0x5ff497*/
-      Surface::Construct((Surface *)&v31, 256, 256); /*0x5ff4a8*/
+      Surface::Construct(&v31, 256, 256); /*0x5ff4a8*/
       v31.LockCount = 0; /*0x5ff4b1*/
-      *(unsigned int *)v31.Surface = &XSurface_Vtable; /*0x5ff4bb*/
+      *(unsigned int *)v31.__pad_0 = &XSurface_Vtable; /*0x5ff4bb*/
       v32 = 1; /*0x5ff4c3*/
       Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff4c7*/
-      *(unsigned int *)v31.Surface = &BSurface_Vtable; /*0x5ff4d0*/
+      *(unsigned int *)v31.__pad_0 = &BSurface_Vtable; /*0x5ff4d0*/
       XSurface::Fill(&v31, 0); /*0x5ff4d9*/
       v5 = i; /*0x5ff4de*/
       if ( i > 0 ) /*0x5ff4e6*/
@@ -741,7 +756,7 @@ AbstractClass * * GenerateRangeRingTextures()
           v7 = v6; /*0x5ff4f3*/
           if ( v6 > 255 ) /*0x5ff4f5*/
             v7 = 255; /*0x5ff4f7*/
-          ((Draw *)&v31)->Ellipse(128, 128, v5, 0, 0, 255, 255, v7); /*0x5ff520*/
+          Draw::Ellipse((Draw *)&v31, 128, 128, v5, 0, 0, 255, 255, v7); /*0x5ff520*/
           v5 -= 2; /*0x5ff525*/
           v6 += 4; /*0x5ff528*/
         }
@@ -768,7 +783,7 @@ AbstractClass * * GenerateRangeRingTextures()
       }
       Vector::Clear((int)v33); /*0x5ff584*/
       ++v2; /*0x5ff58d*/
-      *(unsigned int *)v31.Surface = &Surface_Vtable; /*0x5ff593*/
+      *(unsigned int *)v31.__pad_0 = &Surface_Vtable; /*0x5ff593*/
     }
     i = 0; /*0x5ff5aa*/
     v10 = (Surface **)&unk_AC1798; /*0x5ff5ae*/
@@ -777,16 +792,16 @@ AbstractClass * * GenerateRangeRingTextures()
     {
       if ( !*v10 ) /*0x5ff5b8*/
       {
-        v12 = (Surface *)operator new(0x20u); /*0x5ff5be*/
+        v12 = (Surface *)__2_YAPAXI_Z(0x20u); /*0x5ff5be*/
         v13 = v12; /*0x5ff5c3*/
         if ( v12 ) /*0x5ff5ca*/
         {
           Surface::Construct(v12, 256, 128); /*0x5ff5d8*/
           *v13->Width.__pad_0 = 0; /*0x5ff5e0*/
-          /* X11: vtable install elided (implicit via XSurface virtuals 0x5ff5e9) */
+          *(unsigned int *)v13->__pad_0 = &XSurface_Vtable; /*0x5ff5e9*/
           v13[1].Width = 1; /*0x5ff5ef*/
           Buffer::Init((Buffer *)&v13[1].Height, 0, 0x8000); /*0x5ff5f6*/
-          /* X11: vtable install elided (implicit via BSurface virtuals 0x5ff5fb) */
+          *(unsigned int *)v13->__pad_0 = &BSurface_Vtable; /*0x5ff5fb*/
         }
         else
         {
@@ -795,16 +810,16 @@ AbstractClass * * GenerateRangeRingTextures()
         *v10 = v13; /*0x5ff605*/
       }
       (*(void (**)(Surface *, unsigned int))(*(unsigned int *)(*v10)->__pad_0 + 24))(*v10, 0); /*0x5ff60c*/
-      Surface::Construct((Surface *)&v31, 256, 256); /*0x5ff61d*/
+      Surface::Construct(&v31, 256, 256); /*0x5ff61d*/
       v31.LockCount = 0; /*0x5ff626*/
-      *(unsigned int *)v31.Surface = &XSurface_Vtable; /*0x5ff630*/
+      *(unsigned int *)v31.__pad_0 = &XSurface_Vtable; /*0x5ff630*/
       v32 = 1; /*0x5ff638*/
       Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff640*/
-      *(unsigned int *)v31.Surface = &BSurface_Vtable; /*0x5ff649*/
+      *(unsigned int *)v31.__pad_0 = &BSurface_Vtable; /*0x5ff649*/
       XSurface::Fill(&v31, 0); /*0x5ff652*/
-      v21 = 60 * *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1960); /*0x5ff684*/
-      (*((unsigned short *)&(v14))) = Math::RoundToInt((double)v21 * -0.002790178571428571); /*0x5ff692*/
-      ((Draw *)&v31)->Ellipse(128, 128, i - v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
+      v21 = 60 * dword_8871E0->BuildWeapons; /*0x5ff684*/
+      LOWORD(v14) = Math::RoundToInt((double)v21 * -0.002790178571428571); /*0x5ff692*/
+      Draw::Ellipse((Draw *)&v31, 128, 128, i - (unsigned int)v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
       for ( k = 0; k < 128; ++k ) /*0x5ff6ae*/
       {
         v30 = 1; /*0x5ff6ba*/
@@ -827,31 +842,32 @@ AbstractClass * * GenerateRangeRingTextures()
       Vector::Clear((int)v33); /*0x5ff702*/
       v11 -= 6; /*0x5ff70b*/
       ++v10; /*0x5ff70f*/
-      *(unsigned int *)v31.Surface = &Surface_Vtable; /*0x5ff715*/
+      *(unsigned int *)v31.__pad_0 = &Surface_Vtable; /*0x5ff715*/
       ++i; /*0x5ff71d*/
     }
     while ( v11 > 68 ); /*0x5ff721*/
     byte_AC1834 = 1; /*0x5ff727*/
   }
-  dword_833588 = DDraw_GetStatus(); /*0x5ff73d*/
+  dword_833588 = DDraw::GetStatus(); /*0x5ff73d*/
   v22 = 5; /*0x5ff742*/
-  (*(((unsigned char *)&(v19)) + (sizeof(v19) - 1))) = 0; /*0x5ff74a*/
+  HIBYTE(v19) = 0; /*0x5ff74a*/
   result = GetVersionString(&v22, (unsigned char *)&v19 + 3, 0, 0); /*0x5ff74e*/
-  if ( (*(((unsigned char *)&(v19)) + (sizeof(v19) - 1))) && !dword_AC1838 ) /*0x5ff763*/
+  if ( HIBYTE(v19) && !dword_AC1838 ) /*0x5ff763*/
   {
-    dword_AC1838 = (unsigned int)((void *)operator new(0x40000u)); /*0x5ff776*/
+    dword_AC1838 = (void *)__2_YAPAXI_Z(0x40000u); /*0x5ff776*/
     do /*0x5ff7ed*/
     {
-      (((unsigned char *)&(v21))[1]) = (uint8_t)((uint16_t)v1 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ff7aa*/
-      (*((unsigned char *)&(v18))) = 0; /*0x5ff7bb*/
-      (*(((unsigned char *)&(v18)) + (sizeof(v18) - 1))) = (uint8_t)((uint16_t)v1 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x5ff7bd*/
-      (((unsigned char *)&(v21))[2]) = (uint8_t)((uint16_t)v1 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ff7bf*/
-      result = (char *)(((unsigned char *)&(v21))[2]); /*0x5ff7dc*/
-      *((unsigned int *)dword_AC1838 + v1++) = (((unsigned char *)&(v21))[2]) | (((((unsigned char *)&(v21))[1]) | v18) << 8); /*0x5ff7e3*/
+      BYTE1(v21) = (unsigned __int8)((unsigned __int16)v1 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ff7aa*/
+      LOBYTE(v18) = 0; /*0x5ff7bb*/
+      HIBYTE(v18) = (unsigned __int8)((unsigned __int16)v1 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x5ff7bd*/
+      BYTE2(v21) = (unsigned __int8)((unsigned __int16)v1 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ff7bf*/
+      result = (char *)BYTE2(v21); /*0x5ff7dc*/
+      *((unsigned int *)dword_AC1838 + v1++) = BYTE2(v21) | ((BYTE1(v21) | v18) << 8); /*0x5ff7e3*/
     }
     while ( v1 < 0x10000 ); /*0x5ff7ed*/
   }
-  return (gamemd::AbstractClass **)(result); /*0x5ff7ef*/
+  return result; /*0x5ff7ef*/
+
 }
 }
 // 0x5F1350

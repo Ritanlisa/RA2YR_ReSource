@@ -190,6 +190,8 @@ int CommandClass::BuildBar()
 namespace gamemd {
 int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
 {
+
+  int v2; // edi
   int *v4; // esi
   int result; // eax
   unsigned int *v6; // ebp
@@ -198,52 +200,53 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
   int v9; // eax
   int v10; // edx
   int v11; // ebx
+  int v12; // edi
   int i; // eax
   char *v14; // ecx
   int v15; // ecx
 
-  a2 = a2; /*0x724584*/
-  v4 = (int *)(aP1 + 147); /*0x72458c*/
-  a2 = (void *)(*(unsigned int *)a2); /*0x724592*/
-  if ( aP1->u32_250 ) /*0x724596*/
+  v2 = a2; /*0x724584*/
+  v4 = &this->q24C; /*0x72458c*/
+  a2 = *(unsigned int *)a2; /*0x724592*/
+  if ( this->u32_4 ) /*0x724596*/
   {
-    if ( CommandClass::executeAction(aP1 + 147, &a2) ) /*0x7245a4*/
+    if ( CommandClass::executeAction(&this->q24C, &a2) ) /*0x7245a4*/
       goto LABEL_22; /*0x7245ab*/
-    result = CommandClass::BinarySearchAction((CommandClass *)v4, (unsigned int *)&a2); /*0x7245b8*/
+    result = CommandClass::BinarySearchAction((char **)v4, (unsigned int *)&a2); /*0x7245b8*/
     if ( result ) /*0x7245bf*/
     {
       v4->uniqueId = result; /*0x7245c1*/
-      (*((unsigned char *)&(result))) = 0; /*0x7245c7*/
+      LOBYTE(result) = 0; /*0x7245c7*/
       return result; /*0x7245ca*/
     }
   }
-  result = (int)(operator new(0x1Cu)); /*0x7245cf*/
+  result = __2_YAPAXI_Z(0x1Cu); /*0x7245cf*/
   v6 = (unsigned int *)result; /*0x7245d4*/
   if ( result ) /*0x7245db*/
   {
-    *(unsigned int *)result = *(unsigned int *)a2; /*0x7245e6*/
-    result->vtable2 = *(unsigned int *)(a2 + 4); /*0x7245ee*/
-    result->vtable3 = *(unsigned int *)(a2 + 8); /*0x7245f3*/
-    result->vtable4 = *(unsigned int *)(a2 + 12); /*0x7245f9*/
-    result->uniqueId = *(unsigned int *)(a2 + 16); /*0x7245ff*/
-    result->abstractFlags = *(unsigned int *)(a2 + 20); /*0x724605*/
-    result->nextArrayIndex = *(unsigned char *)(a2 + 24); /*0x724611*/
-    v7 = aP1->u32_23C; /*0x724614*/
-    if ( aP1->u32_244 < v7 /*0x724641*/
-      || (aP1->u8_241 || !v7)
-      && (v8 = aP1->u32_248, v8 > 0)
-      && (*(uint8_t (**)(int *, int, unsigned int))(aP1->u32_234 + 8))(aP1 + 141, v7 + v8, 0) )
+    *(unsigned int *)result = *(unsigned int *)v2; /*0x7245e6*/
+    result->vtable2 = *(unsigned int *)(v2 + 4); /*0x7245ee*/
+    *(unsigned int *)(result + 8) = *(unsigned int *)(v2 + 8); /*0x7245f3*/
+    *(unsigned int *)(result + 12) = *(unsigned int *)(v2 + 12); /*0x7245f9*/
+    *(unsigned int *)(result + 16) = *(unsigned int *)(v2 + 16); /*0x7245ff*/
+    result->abstractFlags = *(unsigned int *)(v2 + 20); /*0x724605*/
+    result->nextArrayIndex = *(unsigned char *)(v2 + 24); /*0x724611*/
+    v7 = this->q008; /*0x724614*/
+    if ( this->q008 < v7 /*0x724641*/
+      || (this->u32_241 || !v7)
+      && (v8 = *(this + 146), v8 > 0)
+      && (*(unsigned __int8 (**)(int *, int, unsigned int))(*(this + 141) + 8))(this + 141, v7 + v8, 0) )
     {
-      v9 = aP1->u32_244; /*0x72464c*/
-      v10 = aP1->u32_238; /*0x72464f*/
-      aP1->u32_244 = v9 + 1; /*0x724655*/
-      *(unsigned int *)(v10 + 4 * v9) = (unsigned int)(v6); /*0x724658*/
+      v9 = this->u32_10; /*0x72464c*/
+      v10 = this->u32_4; /*0x72464f*/
+      this->u32_10 = v9 + 1; /*0x724655*/
+      *(unsigned int *)(v10 + 4 * v9) = v6; /*0x724658*/
       result = v4->vtable3; /*0x72465e*/
       if ( v4[1] + 1 <= result ) /*0x724664*/
       {
-        LABEL_19:
+LABEL_19:
         *(unsigned int *)(*v4 + 8 * v4[1]) = *v6; /*0x7246f4*/
-        *(unsigned int *)(*v4 + 8 * v4[1] + 4) = (unsigned int)(v6); /*0x724704*/
+        *(unsigned int *)(*v4 + 8 * v4[1] + 4) = v6; /*0x724704*/
         result = v4[1] + 1; /*0x72470b*/
         v4->vtable4 = 0; /*0x72470c*/
         v4->vtable2 = result; /*0x724710*/
@@ -257,35 +260,36 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       }
       else
       {
-        a2 = (void *)(10); /*0x72466e*/
+        a2 = 10; /*0x72466e*/
       }
-      v11 = (int)(result + a2); /*0x72468a*/
-      result = operator new(8 * (result + a2)); /*0x724695*/
-      result = result; /*0x72469a*/
+      v11 = result + a2; /*0x72468a*/
+      result = __2_YAPAXI_Z(8 * (result + a2)); /*0x724695*/
+      v12 = result; /*0x72469a*/
       if ( result ) /*0x7246a1*/
       {
-        Array::ForEach((int *)result, 8, v11, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
-        for ( i = 0; i < v4->vtable2; *(unsigned int *)(result + 8 * i - 4) = *(unsigned int *)&v14[8 * i - 4] ) /*0x7246b8*/
+        Array::ForEach((int *)result, 8, v11, (int (*)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
+        for ( i = 0; i < v4->vtable2; *(unsigned int *)(v12 + 8 * i - 4) = *(unsigned int *)&v14[8 * i - 4] ) /*0x7246b8*/
         {
           v14 = (char *)*v4; /*0x7246ba*/
           ++i; /*0x7246bc*/
-          *(unsigned int *)(result + 8 * i - 8) = *(unsigned int *)(*v4 + 8 * i - 8); /*0x7246c1*/
+          *(unsigned int *)(v12 + 8 * i - 8) = *(unsigned int *)(*v4 + 8 * i - 8); /*0x7246c1*/
         }
-        operator delete(((void *)*v4)); /*0x7246d7*/
+        __3_YAXPAX_Z((void *)*v4); /*0x7246d7*/
         v15 = a2 + v4->vtable3; /*0x7246e6*/
-        *v4 = result; /*0x7246e8*/
+        *v4 = v12; /*0x7246e8*/
         v4->vtable3 = v15; /*0x7246ea*/
         v4->uniqueId = 0; /*0x7246ed*/
         goto LABEL_19; /*0x7246ed*/
       }
-      LABEL_20:
-      (*((unsigned char *)&(result))) = 1; /*0x724713*/
+LABEL_20:
+      LOBYTE(result) = 1; /*0x724713*/
       return result; /*0x724719*/
     }
-    operator delete((v6)); /*0x72471d*/
+    __3_YAXPAX_Z(v6); /*0x72471d*/
   }
-  LABEL_22:
-  (*((unsigned char *)&(result))) = 0; /*0x724725*/
+LABEL_22:
+  LOBYTE(result) = 0; /*0x724725*/
   return result; /*0x7245c4*/
+
 }
 } // namespace gamemd

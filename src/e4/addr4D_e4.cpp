@@ -142,36 +142,42 @@ namespace gamemd {
 int sub_4D2370()
 {
 
-  int result = g_FootClassConfig; // eax /*0x4d2373*/
-  int v2 = 0; // esi /*0x4d2379*/
+  int result; // eax
+  int v2; // esi
+  int v3; // edi
+  unsigned short *v4; // esi
+  unsigned __int16 *v5; // edi
+  unsigned int *v6; // eax
+  unsigned int *v7; // edi
+  CellClass *v8; // eax
+  unsigned __int16 *v9; // [esp+8h] [ebp-1Ch]
   int i; // [esp+Ch] [ebp-18h]
+  unsigned __int16 *v11; // [esp+10h] [ebp-14h] BYREF
+  unsigned char v12[4]; // [esp+14h] [ebp-10h] BYREF
+  unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
+
+  result = g_FootClassConfig; /*0x4d2373*/
+  v2 = 0; /*0x4d2379*/
   for ( i = 0; v2 < g_FootClassConfig; i = v2 ) /*0x4d2381*/
   {
-    int v3; // edi
     v3 = *((unsigned int *)dword_8B3D14 + v2); /*0x4d2399*/
     if ( *(unsigned int *)(v3 + 48) == 6 /*0x4d23ae*/
       && (*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))(**(unsigned int **)(v3 + 96), 0) )
     {
-      unsigned short *v4; // esi
       if ( *(unsigned int *)(v3 + 48) == 6 ) /*0x4d23bf*/
         v4 = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))( /*0x4d23d0*/
                         **(unsigned int **)(v3 + 96),
                         0);
       else
         v4 = 0; /*0x4d23d4*/
-      int v5; // edi
-      unsigned char v12[4]; // [esp+14h] [ebp-10h] BYREF
-      v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 96))(v3, v12); /*0x4d23e2*/
-      int v11; // [esp+10h] [ebp-14h] BYREF
+      v5 = *(unsigned __int16 **)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 96))(v3, v12); /*0x4d23e2*/
       v11 = v5; /*0x4d23e4*/
       while ( *v4 != 0x7FFF || v4[1] != 0x7FFF ) /*0x4d23f9*/
       {
-        int v9; // [esp+8h] [ebp-1Ch]
-        (*((unsigned short *)&(v9))) = v5 + *v4; /*0x4d2408*/
-        (*(((unsigned short *)&(v9)) + 1)) = (*(((unsigned short *)&(v5)) + 1)) + v4[1]; /*0x4d240d*/
+        LOWORD(v9) = (unsigned short)v5 + *v4; /*0x4d2408*/
+        HIWORD(v9) = HIWORD(v5) + v4[1]; /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
-        unsigned int *v6; // eax
-        v6 = (unsigned int *)(((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v11)); /*0x4d2420*/
+        v6 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v11); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
         v6->u32_140 |= 0x400000u; /*0x4d2439*/
       }
@@ -179,20 +185,18 @@ int sub_4D2370()
     }
     else
     {
-      unsigned int *v7; // edi
       v7 = (unsigned int *)(v3 + 52); /*0x4d243d*/
-      unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
       v13[0] = *v7; /*0x4d2442*/
       v13[1] = v7[1]; /*0x4d244e*/
       v13[2] = v7[2]; /*0x4d2455*/
-      CellClass *v8; // eax
-      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x4d245e*/
-      v8->flags[0] |= 0x400000u; /*0x4d2474*/
+      v8 = Coord::To_Cell((Coord *)&dword_87F7E8, v13); /*0x4d245e*/
+      v8->flags |= 0x400000u; /*0x4d2474*/
     }
     result = g_FootClassConfig; /*0x4d247c*/
     ++v2; /*0x4d2481*/
   }
   return result; /*0x4d2491*/
+
 }
 }
 // 0x4D2ED0

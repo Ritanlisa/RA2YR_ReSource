@@ -37,64 +37,68 @@ namespace gamemd {  // G42.18 ns repair
 int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4)
 {
 
-  a1->MovementSpeed[1] = a2; /*0x6a0323*/
-  a1->TrackNumber = 0; /*0x6a0326*/
-  int v4 = g_OverlayTypeConfig; // eax /*0x6a032d*/
+  int v4; // eax
+  char *v5; // esi
+  int *v6; // edi
+  int v7; // ecx
+  __int64 v8; // kr08_8
+  CellClass *v9; // eax
+  int v11; // [esp-4h] [ebp-20h]
+  unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
+  __int64 v13; // [esp+14h] [ebp-8h]
+
+  this->MovementSpeed[1] = a2; /*0x6a0323*/
+  this->TrackNumber = 0; /*0x6a0326*/
+  v4 = g_OverlayTypeConfig; /*0x6a032d*/
   if ( a3 != g_OverlayTypeConfig || a4 != qword_B077FC ) /*0x6a0340*/
   {
-    char *v5; // esi
-    v5 = (char *)a1 - 4; /*0x6a0358*/
-    int64_t v13; // [esp+14h] [ebp-8h]
+    v5 = (char *)this - 4; /*0x6a0358*/
     v13 = a4; /*0x6a035f*/
-    int *v6; // edi
-    v6 = &a1->Dest[2]; /*0x6a0363*/
-    unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
+    v6 = &this->Dest[2]; /*0x6a0363*/
     v12 = a3; /*0x6a036a*/
-    if ( *v6 != g_OverlayTypeConfig || (((unsigned long)(unsigned int)(a1->HeadToCoord[0])) | ((unsigned long)(unsigned int)(a1->HeadToCoord[1]) << 32)) != qword_B077FC ) /*0x6a0375*/
+    if ( *v6 != g_OverlayTypeConfig || __PAIR64__(this->HeadToCoord[1], this->HeadToCoord[0]) != qword_B077FC ) /*0x6a0375*/
     {
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
-      a1->HeadToCoord[0] = qword_B077FC; /*0x6a038d*/
-      int v7; // ecx
-      v7 = (*(((unsigned int *)&(qword_B077FC)) + 1)); /*0x6a0390*/
+      this->HeadToCoord[0] = qword_B077FC; /*0x6a038d*/
+      v7 = HIDWORD(qword_B077FC); /*0x6a0390*/
       v5->u32_63 = 0; /*0x6a0396*/
-      a1->HeadToCoord[1] = v7; /*0x6a039a*/
+      this->HeadToCoord[1] = v7; /*0x6a039a*/
       v4 = g_OverlayTypeConfig; /*0x6a039d*/
     }
-    if ( (((unsigned long)(unsigned int)(a3)) | ((unsigned long)(unsigned int)(a4) << 32)) != (((unsigned long)(unsigned int)(v4)) | ((unsigned long)(unsigned int)(qword_B077FC) << 32)) /*0x6a03be*/
-      || ((*((unsigned char *)&(v4))) = (((unsigned char *)&(qword_B077FC))[4]), (*(((unsigned int *)&(a4)) + 1)) != (*(((unsigned int *)&(qword_B077FC)) + 1))) )
+    if ( __PAIR64__(a4, a3) != __PAIR64__(qword_B077FC, v4) /*0x6a03be*/
+      || (LOBYTE(v4) = BYTE4(qword_B077FC), HIDWORD(a4) != HIDWORD(qword_B077FC)) )
     {
-      int64_t v8 = v13; // kr08_8 /*0x6a03c4*/
+      v8 = v13; /*0x6a03c4*/
       v5->u32_63 = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
-      *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
-      int v11; // [esp-4h] [ebp-20h]
-      v11 = v5->q00C; /*0x6a03dd*/
-      CellClass *v9; // eax
-      v9 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12)); /*0x6a03e4*/
-      if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(v5->q00C + 129) ) /*0x6a03f7*/
+      *(unsigned long long *)this->HeadToCoord = v8; /*0x6a03d0*/
+      v11 = v5->vtable4; /*0x6a03dd*/
+      v9 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12); /*0x6a03e4*/
+      if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(v5->vtable4 + 129) ) /*0x6a03f7*/
       {
-        (*((unsigned char *)&(v4))) = *(unsigned char *)(v5->q00C + 144); /*0x6a043d*/
+        LOBYTE(v4) = *(unsigned char *)(v5->vtable4 + 144); /*0x6a043d*/
         if ( (unsigned char)v4 ) /*0x6a0445*/
         {
-          (*((unsigned char *)&(v4))) = g_OverlayTypeConfig; /*0x6a0447*/
+          LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/
           *v6 = g_OverlayTypeConfig; /*0x6a044c*/
-          *(unsigned long long *)a1->HeadToCoord = qword_B077FC; /*0x6a0454*/
+          *(unsigned long long *)this->HeadToCoord = qword_B077FC; /*0x6a0454*/
           v5->u32_63 = 0; /*0x6a0460*/
         }
       }
       else
       {
-        WalkLocomotion::MoveTo((int)a1 - 4, &v12, 1); /*0x6a040a*/
-        (*((unsigned char *)&(v4))) = (unsigned char)a1 + 48; /*0x6a040f*/
-        a1->SlopeTimer[3] = a3; /*0x6a041a*/
-        *(unsigned long long *)a1->Dest = a4; /*0x6a041c*/
-        a1->SpeedAccum = 0; /*0x6a0422*/
-        a1->MovementSpeed[0] = 1072693248; /*0x6a0429*/
+        WalkLocomotion::MoveTo((int)this - 4, &v12, 1); /*0x6a040a*/
+        LOBYTE(v4) = (unsigned char)&this->ptr_30; /*0x6a040f*/
+        this->SlopeTimer[3] = a3; /*0x6a041a*/
+        *(unsigned long long *)this->Dest = a4; /*0x6a041c*/
+        this->SpeedAccum = 0; /*0x6a0422*/
+        this->MovementSpeed[0] = 1072693248; /*0x6a0429*/
       }
     }
   }
   return v4; /*0x6a0430*/
-}  // G42.18 ns repair
+
+}
 } // namespace gamemd
 // 0x6A3F50
 namespace gamemd {

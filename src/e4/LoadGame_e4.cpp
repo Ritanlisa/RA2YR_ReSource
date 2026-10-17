@@ -252,76 +252,80 @@ int LoadGame::LoadBlock300(int a2)
 namespace gamemd {
 int LoadGame::RestoreAudioState()
 {
-  int NextAlt; // ebx
 
-  LoadGame *v1 = this; // edi /*0x751717*/
+  LoadGame *v1; // edi
   int Next; // esi
-  Next = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); /*0x751727*/
+  int NextAlt; // ebx
+  int result; // eax
+  AudioMixer *v5; // ecx
+  int v6; // ebx
+  int v7; // ebp
+  int *v8; // eax
+  int *v9; // esi
+  int v10; // ebx
+  int v11; // eax
+  int v13; // [esp+24h] [ebp-2Ch]
+  int v14; // [esp+28h] [ebp-28h] BYREF
+  int v15; // [esp+2Ch] [ebp-24h]
+  int v16; // [esp+30h] [ebp-20h]
+  int v17; // [esp+3Ch] [ebp-14h]
+  unsigned int v18[4]; // [esp+40h] [ebp-10h] BYREF
+
+  v1 = this; /*0x751717*/
+  Next = AudioQueue::GetNext((AudioQueue *)&stru_B1D290.isAliveFlag); /*0x751727*/
   if ( Next ) /*0x75172b*/
   {
     do /*0x751763*/
     {
-      NextAlt = ((AudioQueue *)((AudioQueue *)Next))->GetNextAlt(); /*0x751737*/
-      (&Next->u32_C)->Stop(); /*0x751739*/
+      NextAlt = AudioQueue::GetNextAlt((AudioQueue *)Next); /*0x751737*/
+      AudioController::Stop(&Next->u32_C); /*0x751739*/
       LinkedList::Init((LinkedList *)Next); /*0x751740*/
-      PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), Next); /*0x75174d*/
+      PushFrontLinkedListAlt(dword_B1D3A4, Next); /*0x75174d*/
       Next = NextAlt; /*0x751758*/
       --dword_B1D3A8; /*0x75175d*/
     }
     while ( NextAlt ); /*0x751763*/
   }
-  this->AudioMixer::Shutdown(); /*0x751765*/
-  int result; // eax
-  int v14; // [esp+28h] [ebp-28h] BYREF
-  result = (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)v1->s_IsLoading + 12))(v1, &v14, 4, 0); /*0x751776*/
+  AudioMixer::Shutdown(); /*0x751765*/
+  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))(v1, &v14, 4, 0); /*0x751776*/
   if ( result >= 0 ) /*0x75177b*/
   {
-    int v13; // [esp+24h] [ebp-2Ch]
     v13 = 0; /*0x751785*/
     if ( v14 > 0 ) /*0x75178f*/
     {
       while ( 1 ) /*0x7517a1*/
       {
-        unsigned int v18[4]; // [esp+40h] [ebp-10h] BYREF
-        result = (*(int (__stdcall **)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)v1->s_IsLoading + 12))(v1, v18, 16, 0); /*0x7517a1*/
-        int v16; // [esp+30h] [ebp-20h]
+        result = (*(int (**)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))(v1, v18, 16, 0); /*0x7517a1*/
         v16 = result; /*0x7517a6*/
         if ( result < 0 ) /*0x7517aa*/
           break; /*0x7517aa*/
         if ( v18[0] != -1 && v18[0] < g_VocPlayState && v18[0] >= 0 ) /*0x7517cb*/
         {
-          AudioMixer *v5; // ecx
           v5 = (AudioMixer *)**((unsigned int **)g_VocAudioConfig + v18[0]); /*0x7517da*/
           if ( v5 ) /*0x7517de*/
           {
-            if ( (v5)->SetVolume() ) /*0x7517e4*/
+            if ( AudioMixer::SetVolume(v5) ) /*0x7517e4*/
             {
-              int v6; // ebx
               v6 = v18[1]; /*0x7517f9*/
-              int v7; // ebp
               v7 = v18[2]; /*0x7517fd*/
-              int v17; // [esp+3Ch] [ebp-14h]
               v17 = v18[3]; /*0x751803*/
-              int v15; // [esp+2Ch] [ebp-24h]
               v15 = v18[0]; /*0x751807*/
               if ( v18[0] >= 0 ) /*0x75180b*/
               {
-                int *v8; // eax
                 v8 = LinkedList::Next((LinkedList *)dword_B1D3A4); /*0x751813*/
-                int *v9 = v8; // esi /*0x751818*/
+                v9 = v8; /*0x751818*/
                 if ( v8 ) /*0x75181c*/
                 {
                   AudioController::Init((AudioController *)(v8 + 3)); /*0x751823*/
-                  ((DListNode *)v9)->InitEmpty(); /*0x75182a*/
+                  DListNode::InitEmpty((DListNode *)v9); /*0x75182a*/
                   v9->u32_30 = 0; /*0x751831*/
                   v9->u32_2C = 0; /*0x75183a*/
                   v9[8] = v6; /*0x75183d*/
-                  int v10 = v17; // ebx /*0x75183f*/
+                  v10 = v17; /*0x75183f*/
                   v9[9] = v7; /*0x751843*/
                   v9[10] = v10; /*0x751846*/
-                  StartAudioControllerAt(v15,&v9->q008, &v9->u32_C); /*0x75184d*/
+                  StartAudioControllerAt(v15, v9 + 8, &v9->u32_C); /*0x75184d*/
                   InsertAfterDListNode((int)&stru_B1D290.isAliveFlag, v9); /*0x751859*/
-                  int v11; // eax
                   v11 = ++dword_B1D3A8; /*0x751869*/
                   if ( dword_B1D3A8 > dword_B1D3AC ) /*0x751871*/
                     dword_B1D3AC = v11; /*0x751873*/
@@ -337,6 +341,7 @@ int LoadGame::RestoreAudioState()
     }
   }
   return result; /*0x751895*/
+
 }
 } // namespace gamemd
 // 0x7533F0

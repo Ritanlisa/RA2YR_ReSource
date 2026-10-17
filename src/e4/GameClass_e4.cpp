@@ -288,54 +288,61 @@ namespace gamemd {
 void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
 {
 
+  char *v3; // ebx
+  int v5; // ebp
+  unsigned int *v6; // ecx
+  int v7; // eax
+  int v8; // eax
+  signed int v9; // edi
+  bool v10; // zf
   int v12[64]; // [esp+8h] [ebp-100h] BYREF
 
-  char *v3; // ebx
-  v3 = (char *)(Src); /*0x632dc7*/
+  v3 = Src; /*0x632dc7*/
   if ( Src && aP2 >= 1 && *&this->u32_38 ) /*0x632de7*/
   {
-    int v5 = 0; // ebp /*0x632df6*/
+    v5 = 0; /*0x632df6*/
     if ( this->u32_C ) /*0x632df2*/
     {
       if ( *&this->u32_34 ) /*0x632e01*/
       {
-        signed int v9 = this->u32_140; // edi /*0x632e6f*/
+        v9 = this->u32_140; /*0x632e6f*/
         if ( v9 >= aP2 ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
         memcpy(&this->__pad_24[this->u32_13C - this->u32_140 + 24], Src, v9); /*0x632e97*/
-        v3 = (char *)(&Src[v9]); /*0x632eb0*/
-        bool v10; // zf
+        v3 = &Src[v9]; /*0x632eb0*/
         v10 = this->u32_140 == v9; /*0x632eb2*/
         aP2 -= v9; /*0x632eb4*/
         this->u32_140 -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/
-          return (void *)(v5 + Delegate::Dispatch((int)((Pipe *)this), (int)v3, aP2)); /*0x632ec1*/
-        BigInt::RSAOperation((char *)(/*0x632ed6*/           *&this->u32_38),           &this->u32_38,           this->u32_13C,           (char *)v12);
-        (&this->GameClass_30)->processFrame((int)v12, 56); /*0x632ee5*/
+          return v5 + Delegate::Dispatch((Pipe *)this, (int)v3, aP2); /*0x632ec1*/
+        BigInt::RSAOperation( /*0x632ed6*/
+          *&this->u32_38,
+          (char *)&this->field_3C,
+          this->u32_13C,
+          (char *)v12);
+        GameClass::processFrame(&this->ptr_14, (int)v12, 56); /*0x632ee5*/
       }
       else
       {
         memset(v12, 0, sizeof(v12)); /*0x632e17*/
-        (*(void (**)(unsigned int, int *, int))(**&this->int + 8))( /*0x632e21*/
-          *&this->int,
+        (*(void (**)(unsigned int, int *, int))(**&this->q10 + 8))( /*0x632e21*/
+          *&this->q10,
           v12,
           56);
-        int v6 = *&this->u32_38; // ecx /*0x632e24*/
-        int v7; // eax
+        v6 = *&this->u32_38; /*0x632e24*/
         if ( v6 ) /*0x632e29*/
-          v7 = (*(unsigned int *)(v6 + 512) - 1) / 8 * (55 / ((*(unsigned int *)(v6 + 512) - 1) / 8) + 1); /*0x632e4a*/
+          v7 = (int)(v6[128] - 1) / 8 * (55 / ((int)(v6[128] - 1) / 8) + 1); /*0x632e4a*/
         else
           v7 = 0; /*0x632e2b*/
-        int v8; // eax
-        v8 = BigInt::DecryptBlock((char *)(v6), (char *)v12, v7, &this->GameClass_30); /*0x632e57*/
-        v5 = Delegate::Dispatch((int)((Pipe *)this), (int)&this->field_3C, v8); /*0x632e65*/
-        (&this->GameClass_30)->processFrame((int)v12, 56); /*0x632e6d*/
+        v8 = BigInt::DecryptBlock((int)v6, (char *)v12, v7, &this->u32_38); /*0x632e57*/
+        v5 = Delegate::Dispatch((Pipe *)this, (int)&this->field_3C, v8); /*0x632e65*/
+        GameClass::processFrame(&this->u32_3C, (int)v12, 56); /*0x632e6d*/
       }
       this->u32_C = 0; /*0x632eea*/
     }
-    return (void *)(v5 + Delegate::Dispatch((int)((Pipe *)this), (int)v3, aP2)); /*0x632f0a*/
+    return v5 + Delegate::Dispatch((Pipe *)this, (int)v3, aP2); /*0x632f0a*/
   }
-  return ((Pipe *)this)->Dispatch((int)Src, aP2); /*0x632f02*/
+  return Delegate::Dispatch((Pipe *)this, (int)Src, aP2); /*0x632f02*/
 
 }
 }
@@ -344,68 +351,78 @@ namespace gamemd {
 int GameClass::ReadEncryptedStream(char * a2, signed int Size)
 {
 
+  char *v3; // ebp
+  signed int v4; // edi
+  int m_38; // eax
+  int v7; // eax
+  int v8; // ecx
+  int v9; // ebx
+  int v10; // eax
+  unsigned int *v12; // ecx
+  int v13; // eax
+  int v14; // eax
+  int m_140; // eax
+  signed int v16; // [esp+10h] [ebp-104h]
   char Src[256]; // [esp+14h] [ebp-100h] BYREF
 
-  char *v3 = a2; // ebp /*0x633138*/
-  signed int v4 = Size; // edi /*0x633141*/
+  v3 = a2; /*0x633138*/
+  v4 = Size; /*0x633141*/
   if ( !a2 ) /*0x63314c*/
-    return Delegate::Invoke((int)((Straw *)this), (int)a2, Size); /*0x63314c*/
+    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x63314c*/
   if ( Size < 1 ) /*0x633155*/
-    return Delegate::Invoke((int)((Straw *)this), (int)a2, Size); /*0x633155*/
-  int m_38 = this->u32_38; // eax /*0x63315b*/
+    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x633155*/
+  m_38 = this->m_38; /*0x63315b*/
   if ( !m_38 ) /*0x633160*/
-    return ((Straw *)this)->Invoke((int)a2, Size); /*0x6332e5*/
-  signed int v16; // [esp+10h] [ebp-104h]
+    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x6332e5*/
   v16 = 0; /*0x633169*/
-  if ( LOBYTE(this->u32_C) ) /*0x633166*/
+  if ( LOBYTE(this->m_C) ) /*0x633166*/
   {
-    if ( this->u32_34 == 1 ) /*0x63317d*/
+    if ( this->m_34 == 1 ) /*0x63317d*/
     {
-      int v7; // eax
-      v7 = Delegate::Invoke((int)(/*0x6331a6*/              (Straw *)this),              (int)Src,              ((*(unsigned int *)(m_38 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(m_38 + 512) - 1) / 8) + 1));
-      int v8 = this->u32_38; // ecx /*0x6331ab*/
-      int v9 = v7; // ebx /*0x6331ae*/
-      int v10; // eax
+      v7 = Delegate::Invoke( /*0x6331a6*/
+             (Straw *)this,
+             (int)Src,
+             ((*(unsigned int *)(m_38 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(m_38 + 512) - 1) / 8) + 1));
+      v8 = this->m_38; /*0x6331ab*/
+      v9 = v7; /*0x6331ae*/
       if ( v8 ) /*0x6331b2*/
         v10 = ((*(unsigned int *)(v8 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(v8 + 512) - 1) / 8) + 1); /*0x6331d4*/
       else
         v10 = 0; /*0x6331b4*/
       if ( v9 != v10 ) /*0x6331d9*/
         return 0; /*0x6331e7*/
-      BigInt::RSAOperation((char *)(v8), Src, v9, &this->u32_3C); /*0x6331f4*/
-      (&this->ptr_14)->updateUI((int)&this->u32_3C, 56); /*0x6331fc*/
+      BigInt::RSAOperation(v8, Src, v9, &this->u32_3C); /*0x6331f4*/
+      GameClass::updateUI(&this->ptr_14, (int)&this->m_3C, 56); /*0x6331fc*/
     }
     else
     {
       memset(Src, 0, sizeof(Src)); /*0x63320d*/
-      (*(void (**)(int, char *, int))(*(unsigned int *)this->int + 8))(this->int, Src, 56); /*0x633217*/
-      int v12 = this->u32_38; // ecx /*0x63321a*/
-      int v13; // eax
+      (*(void (**)(int, char *, int))(*(unsigned int *)this->m_10 + 8))(this->m_10, Src, 56); /*0x633217*/
+      v12 = (unsigned int *)this->m_38; /*0x63321a*/
       if ( v12 ) /*0x63321f*/
-        v13 = (*(unsigned int *)(v12 + 512) - 1) / 8 * (55 / ((*(unsigned int *)(v12 + 512) - 1) / 8) + 1); /*0x633240*/
+        v13 = (int)(v12[128] - 1) / 8 * (55 / ((int)(v12[128] - 1) / 8) + 1); /*0x633240*/
       else
         v13 = 0; /*0x633221*/
-      int v14; // eax
-      v14 = BigInt::DecryptBlock((char *)(v12), Src, v13, &this->u32_3C); /*0x63324d*/
-      this->u32_140 = v14; /*0x633258*/
-      this->u32_13C = v14; /*0x63325e*/
-      (&this->ptr_14)->updateUI((int)Src, 56); /*0x633268*/
+      v14 = BigInt::DecryptBlock((int)v12, Src, v13, &this->u32_3C); /*0x63324d*/
+      this->m_140 = v14; /*0x633258*/
+      this->m_13C = v14; /*0x63325e*/
+      GameClass::updateUI(&this->ptr_14, (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
-    LOBYTE(this->u32_C) = 0; /*0x633274*/
+    LOBYTE(this->m_C) = 0; /*0x633274*/
   }
-  int m_140 = this->u32_140; // eax /*0x633278*/
+  m_140 = this->m_140; /*0x633278*/
   if ( m_140 > 0 ) /*0x633280*/
   {
     if ( v4 >= m_140 ) /*0x633284*/
-      v4 = this->u32_140; /*0x633286*/
-    memcpy(a2, &this->u32_3C + this->u32_13C - m_140, v4); /*0x633297*/
+      v4 = this->m_140; /*0x633286*/
+    memcpy(a2, &this->u32_3C + this->m_13C - m_140, v4); /*0x633297*/
     v3 = &a2[v4]; /*0x6332ac*/
     v16 = v4; /*0x6332b2*/
-    this->u32_140 -= v4; /*0x6332b6*/
+    this->m_140 -= v4; /*0x6332b6*/
     v4 = Size - v4; /*0x6332c3*/
   }
-  return v16 + Delegate::Invoke((int)((Straw *)this), (int)v3, v4); /*0x6331db*/
+  return v16 + Delegate::Invoke((Straw *)this, (int)v3, v4); /*0x6331db*/
 
 }
 }

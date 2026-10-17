@@ -144,37 +144,44 @@ int sub_6269A0()
 {
 
   FileSystem *v1; // eax
-  v1 = (gamemd::FileSystem *)(g_FileExtensionState);
+  FileSystem *v2; // eax
+  FileSystem *v3; // edi
+  StringVector *v4; // eax
+  StringVector *v5; // esi
+  VectorClass *v6; // eax
+  VectorClass *v7; // esi
+  DynamicVectorArray *v8; // eax
+  int v9; // esi
+  int v10; // edi
+
+  v1 = g_FileExtensionState; /*0x6269a0*/
   if ( !g_FileExtensionState ) /*0x6269a9*/
   {
-    FileSystem *v2; // eax
-    v2 = (FileSystem *)operator new(0x10u); /*0x6269b1*/
-    FileSystem *v3 = v2; // edi /*0x6269b6*/
+    v2 = (FileSystem *)__2_YAPAXI_Z(0x10u); /*0x6269b1*/
+    v3 = v2; /*0x6269b6*/
     if ( v2 ) /*0x6269bd*/
     {
       *(unsigned int *)v2 = -1; /*0x6269c5*/
-      StringVector *v4; // eax
-      v4 = (StringVector *)operator new(0x18u); /*0x6269cb*/
-      StringVector *v5 = v4; // esi /*0x6269d0*/
+      v4 = (StringVector *)__2_YAPAXI_Z(0x18u); /*0x6269cb*/
+      v5 = v4; /*0x6269d0*/
       if ( v4 ) /*0x6269d7*/
       {
         StringVector::Construct(v4, 0, 0); /*0x6269df*/
-        *(unsigned int *)v5->__pad_000 = &vt_DynamicVectorClass; /*0x6269e4*/
-        v5->q014 = 10; /*0x6269ea*/
-        v5->q010 = 0; /*0x6269f1*/
+        *(unsigned int *)v5->__pad_0 = &DynamicVectorClass<char *>::`vftable'; /*0x6269e4*/
+        v5->StringVector_field_0x14 = 10; /*0x6269ea*/
+        v5->StringVector_field_0x10 = 0; /*0x6269f1*/
       }
       else
       {
         v5 = 0; /*0x6269fa*/
       }
-      *(unsigned int *)&v3[4] = (unsigned int)(v5); /*0x6269fe*/
-      VectorClass *v6; // eax
-      v6 = (VectorClass *)operator new(0x18u); /*0x626a01*/
-      VectorClass *v7 = v6; // esi /*0x626a06*/
+      *(unsigned int *)&v3[4] = v5; /*0x6269fe*/
+      v6 = (VectorClass *)__2_YAPAXI_Z(0x18u); /*0x626a01*/
+      v7 = v6; /*0x626a06*/
       if ( v6 ) /*0x626a0d*/
       {
-        (v6)->ConstructHSV(0, 0); /*0x626a15*/
-        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x626a1a) */
+        VectorClass::ConstructHSV(v6, 0, 0); /*0x626a15*/
+        v7->vfptr = &DynamicVectorClass<HSVClass>::`vftable'; /*0x626a1a*/
         v7[1].Items = (void *)10; /*0x626a20*/
         v7[1].vfptr = 0; /*0x626a27*/
       }
@@ -182,11 +189,10 @@ int sub_6269A0()
       {
         v7 = 0; /*0x626a30*/
       }
-      *(unsigned int *)&v3[8] = (unsigned int)(v7); /*0x626a34*/
-      DynamicVectorArray *v8; // eax
-      v8 = (DynamicVectorArray *)operator new(0x10u); /*0x626a37*/
+      *(unsigned int *)&v3[8] = v7; /*0x626a34*/
+      v8 = (DynamicVectorArray *)__2_YAPAXI_Z(0x10u); /*0x626a37*/
       if ( v8 ) /*0x626a41*/
-        *(unsigned int *)&v3[12] = (unsigned int)(DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31)); /*0x626a53*/
+        *(unsigned int *)&v3[12] = DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31); /*0x626a53*/
       else
         *(unsigned int *)&v3[12] = 0; /*0x626a5c*/
       v1 = v3; /*0x626a56*/
@@ -195,23 +201,23 @@ int sub_6269A0()
     {
       v1 = 0; /*0x626a63*/
     }
-    g_FileExtensionState = (int)(v1);
+    g_FileExtensionState = v1; /*0x626a65*/
   }
-  int v9 = 0; // esi /*0x626a6d*/
-  int v10; // edi
+  v9 = 0; /*0x626a6d*/
   v10 = *(unsigned int *)(*(unsigned int *)&v1[4] + 16); /*0x626a6f*/
   if ( v10 > 0 ) /*0x626a74*/
   {
     do /*0x626a90*/
     {
-      operator delete((*(void **)(*(unsigned int *)(*(unsigned int *)&v1[4] + 4) + 4 * v9))); /*0x626a80*/
-      v1 = (gamemd::FileSystem *)(g_FileExtensionState); /*0x626a85*/
+      __3_YAXPAX_Z(*(void **)(*(unsigned int *)(*(unsigned int *)&v1[4] + 4) + 4 * v9)); /*0x626a80*/
+      v1 = g_FileExtensionState; /*0x626a85*/
       ++v9; /*0x626a8d*/
     }
     while ( v9 < v10 ); /*0x626a90*/
   }
   (*(void (**)(unsigned int))(**(unsigned int **)&v1[4] + 12))(*(unsigned int *)&v1[4]); /*0x626a99*/
-  return (*(int (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(g_FileExtensionState))[8] + 12))(*(unsigned int *)&((unsigned int *)(g_FileExtensionState))[8]); /*0x626aa9*/
+  return (*(int (**)(unsigned int))(**(unsigned int **)&g_FileExtensionState[8] + 12))(*(unsigned int *)&g_FileExtensionState[8]); /*0x626aa9*/
+
 }
 }
 // 0x626AB0
@@ -219,99 +225,107 @@ namespace gamemd {
 char sub_626AB0(const char * a1, int a2)
 {
 
+  FileSystem *v2; // eax
+  FileSystem *v3; // ebp
+  StringVector *v4; // eax
+  StringVector *v5; // esi
+  VectorClass *v6; // eax
+  VectorClass *v7; // esi
+  DynamicVectorArray *v8; // eax
+  char *v9; // ebp
+  int v10; // esi
+  int v11; // eax
+  int v12; // ecx
+  int v13; // eax
+  unsigned int *v14; // edx
+  int v15; // esi
+  int v16; // ecx
+  int v17; // eax
+  int v18; // eax
+  int v19; // ecx
+  int v20; // edx
+  int v21; // edx
+
   if ( !g_FileExtensionState ) /*0x626ac5*/
   {
-    unsigned int *v2; // eax
-    v2 = (unsigned int *)(operator new(0x10u));
-    unsigned int *v3 = v2; // ebp /*0x626ad2*/
+    v2 = (FileSystem *)__2_YAPAXI_Z(0x10u); /*0x626acd*/
+    v3 = v2; /*0x626ad2*/
     if ( v2 ) /*0x626ad9*/
     {
-      *v2 = (unsigned int)((unsigned int *)(-1));
-      unsigned int *v4; // eax
-      v4 = (unsigned int *)(operator new(0x18u)); /*0x626ae8*/
-      unsigned int *v5 = v4; // esi /*0x626aed*/
+      *(unsigned int *)v2 = -1; /*0x626ae1*/
+      v4 = (StringVector *)__2_YAPAXI_Z(0x18u); /*0x626ae8*/
+      v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
-        *v5 = (unsigned int)(&vt_DynamicVectorClass); /*0x626b06*/
-        v5->u32_14 = 10; /*0x626b0c*/
-        v5->q010 = 0; /*0x626b0f*/
+        *(unsigned int *)v5->__pad_0 = &DynamicVectorClass<char *>::`vftable'; /*0x626b06*/
+        v5->StringVector_field_0x14 = 10; /*0x626b0c*/
+        v5->StringVector_field_0x10 = 0; /*0x626b0f*/
       }
       else
       {
         v5 = 0; /*0x626b18*/
       }
-      v3[1] = (unsigned int)((unsigned int *)(v5));
-      unsigned int *v6; // eax
-      v6 = (unsigned int *)(operator new(0x18u)); /*0x626b1f*/
-      unsigned int *v7 = v6; // esi /*0x626b24*/
+      *(unsigned int *)&v3[4] = v5; /*0x626b1c*/
+      v6 = (VectorClass *)__2_YAPAXI_Z(0x18u); /*0x626b1f*/
+      v7 = v6; /*0x626b24*/
       if ( v6 ) /*0x626b2b*/
       {
-        (v6)->ConstructHSV(0, 0); /*0x626b33*/
-        *v7 = (unsigned int)(&vt_DynamicVectorClass); /*0x626b38*/
-        v7->u32_14 = 10; /*0x626b3e*/
-        v7->q010 = 0; /*0x626b41*/
+        VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
+        v7->vfptr = (int)&DynamicVectorClass<HSVClass>::`vftable'; /*0x626b38*/
+        v7[1].Items = 10; /*0x626b3e*/
+        v7[1].vfptr = 0; /*0x626b41*/
       }
       else
       {
         v7 = 0; /*0x626b4a*/
       }
-      v3[2] = (unsigned int)((int)(v7));
-      int *v8; // eax
-      v8 = (int *)operator new(0x10u); /*0x626b51*/
+      *(unsigned int *)&v3[8] = v7; /*0x626b4e*/
+      v8 = (DynamicVectorArray *)__2_YAPAXI_Z(0x10u); /*0x626b51*/
       if ( v8 ) /*0x626b5b*/
-        v3[3] = (unsigned int)(DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31)); /*0x626b6c*/
+        *(unsigned int *)&v3[12] = DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31); /*0x626b6c*/
       else
-        v3[3] = 0; /*0x626b79*/
-      g_FileExtensionState = (int)(v3); /*0x626b6f*/
+        *(unsigned int *)&v3[12] = 0; /*0x626b79*/
+      g_FileExtensionState = v3; /*0x626b6f*/
     }
     else
     {
       g_FileExtensionState = 0; /*0x626b84*/
     }
   }
-  char *v9; // ebp
-  v9 = (char *)operator new(0x100u); /*0x626b9c*/
+  v9 = (char *)__2_YAPAXI_Z(0x100u); /*0x626b9c*/
   strcpy(v9, a1); /*0x626bb5*/
-  int v10; // esi
-  v10 = *((unsigned int *)g_FileExtensionState + 1); /*0x626bc4*/
-  int v11; // eax
+  v10 = *(unsigned int *)&g_FileExtensionState[4]; /*0x626bc4*/
   v11 = *(unsigned int *)(v10 + 8); /*0x626bc7*/
-  int v12; // ecx
   if ( *(unsigned int *)(v10 + 16) < v11 /*0x626bec*/
     || (*(unsigned char *)(v10 + 13) || !v11)
     && (v12 = *(unsigned int *)(v10 + 20), v12 > 0)
-    && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v10 + 8))(v10, v11 + v12, 0) )
+    && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v10 + 8))(v10, v11 + v12, 0) )
   {
-    int v13; // eax
     v13 = *(unsigned int *)(v10 + 16); /*0x626bf3*/
-    int v14; // edx
-    v14 = *(unsigned int *)(v10 + 4); /*0x626bf6*/
+    v14 = *(unsigned int **)(v10 + 4); /*0x626bf6*/
     *(unsigned int *)(v10 + 16) = v13 + 1; /*0x626bfc*/
-    *(unsigned int *)(v14 + 4 * v13) = (unsigned int)(v9); /*0x626bff*/
+    v14[v13] = (unsigned int)v9; /*0x626bff*/
   }
-  int v15; // esi
-  v15 = *((unsigned int *)g_FileExtensionState + 2); /*0x626c07*/
-  int v16; // ecx
+  v15 = *(unsigned int *)&g_FileExtensionState[8]; /*0x626c07*/
   v16 = *(unsigned int *)(v15 + 8); /*0x626c0a*/
-  int v17; // eax
   if ( *(unsigned int *)(v15 + 16) < v16 /*0x626c34*/
-    || (((*((unsigned char *)&(v17))) = *(unsigned char *)(v15 + 13), (unsigned char)v17) || !v16)
+    || ((LOBYTE(v17) = *(unsigned char *)(v15 + 13), (unsigned char)v17) || !v16)
     && (v17 = *(unsigned int *)(v15 + 20), v17 > 0)
-    && ((*((unsigned char *)&(v17))) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))(v15, v16 + v17, 0), (unsigned char)v17) )
+    && (LOBYTE(v17) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))(v15, v16 + v17, 0), (unsigned char)v17) )
   {
-    int v18; // eax
     v18 = *(unsigned int *)(v15 + 16); /*0x626c36*/
-    int v19 = v18 + 1; // ecx /*0x626c39*/
-    int v20 = 3 * v18; // edx /*0x626c3c*/
+    v19 = v18 + 1; /*0x626c39*/
+    v20 = 3 * v18; /*0x626c3c*/
     v17 = *(unsigned int *)(v15 + 4); /*0x626c3f*/
     *(unsigned int *)(v15 + 16) = v19; /*0x626c42*/
-    int v21 = v17 + v20; // edx /*0x626c45*/
+    v21 = v17 + v20; /*0x626c45*/
     *(unsigned short *)v21 = *(unsigned short *)a2; /*0x626c4e*/
-    (*((unsigned char *)&(v17))) = *(unsigned char *)(a2 + 2); /*0x626c51*/
+    LOBYTE(v17) = *(unsigned char *)(a2 + 2); /*0x626c51*/
     *(unsigned char *)(v21 + 2) = v17; /*0x626c54*/
   }
   return v17; /*0x626c57*/
+
 }
 }
 // 0x7C8F46
@@ -357,6 +371,7 @@ int sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *), int a2, int a
 namespace gamemd {
 AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
 {
+
   int v6; // esi
   unsigned int *v7; // eax
   bool v8; // zf
@@ -367,21 +382,22 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
     v6 = 0; /*0x68c9d8*/
     if ( dword_B054E0 > 0 ) /*0x68c9dc*/
       break; /*0x68c9dc*/
-    LABEL_6:
-    v9 = (char *)operator new(0x33Cu); /*0x68ca15*/
+LABEL_6:
+    v9 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x68ca15*/
     if ( v9 ) /*0x68ca24*/
-      FontClass::InitMetrics(v9, aP0,(int)(a1), aP3, a4, a5, 1); /*0x68ca37*/
+      FontClass::InitMetrics(v9, aP0, a1, aP3, a4, a5, 1); /*0x68ca37*/
   }
-  v7 = (unsigned int *)(dword_B054D4);
+  v7 = dword_B054D4; /*0x68c9de*/
   while ( 1 ) /*0x68c9f6*/
   {
-    v8 = (gamemd::AbstractClass **)(_strcmpi((const char *)(aP0), *(const void **)(v7[v6] + 772)) == 0);
-    v7 = (unsigned int *)(dword_B054D4); /*0x68c9f8*/
+    v8 = _strcmpi(aP0, *(const void **)(v7[v6] + 772)) == 0; /*0x68c9f6*/
+    v7 = dword_B054D4; /*0x68c9f8*/
     if ( v8 && *(unsigned int *)(*((unsigned int *)dword_B054D4 + v6) + 784) == a5 ) /*0x68ca08*/
-      return (gamemd::AbstractClass **)(v6); /*0x68ca40*/
+      return v6; /*0x68ca40*/
     if ( ++v6 >= dword_B054E0 ) /*0x68ca13*/
       goto LABEL_6; /*0x68ca13*/
   }
+
 }
 }
 // 0x5BDB90
@@ -506,28 +522,30 @@ void sub_748360()
 namespace gamemd {
 rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectClass * aP4)
 {
+
+  int v7; // ecx
+  void *v8; // esi
   void *inited; // esi
   String v11; // [esp-8h] [ebp-14h] BYREF
 
-  void *v8; // esi
-  v8 = operator new(0x18u); /*0x76688e*/
+  v8 = (void *)__2_YAPAXI_Z(0x18u); /*0x76688e*/
   if ( v8 ) /*0x766895*/
   {
-    *(unsigned int *)&v11.ptr_4 = aP4; /*0x76689f*/
-    int v7; // ecx
-    *(unsigned int *)v11.q000 = v7; /*0x7668a0*/
+    *(unsigned int *)&v11.ptr_4 = a5; /*0x76689f*/
+    *(unsigned int *)v11.__pad_0 = v7; /*0x7668a0*/
     String::AssignFromPtr(&v11, (const char **)&a4); /*0x7668a4*/
-    inited = System_Init_766A10(v8, a2, a3, *(void **)v11.q000, *(int *)&v11.ptr_4); /*0x7668b6*/
+    inited = System_Init_766A10(v8, a2, a3, *(void **)v11.__pad_0, *(int *)&v11.ptr_4); /*0x7668b6*/
   }
   else
   {
     inited = 0; /*0x7668ba*/
   }
-  ComPtr::Constructor((ComPtr *)a1); /*0x7668be*/
-  *(unsigned int *)a1 = &vt_rc_ptrWorldDominationTourValueGameOption; /*0x7668c5*/
-  ComPtr::Set((ComPtr *)a1, (int)inited); /*0x7668cc*/
+  ComPtr::Constructor((ComPtr *)this); /*0x7668be*/
+  *(unsigned int *)this = &rc_ptr<WorldDominationTour::ValueGameOption<unsigned char>>::`vftable'; /*0x7668c5*/
+  ComPtr::Set((ComPtr *)this, (int)inited); /*0x7668cc*/
   DeleteAndZero((ObjectClass *)&a4); /*0x7668d5*/
-  return a1; /*0x7668dc*/
+  return this; /*0x7668dc*/
+
 }
 } // namespace gamemd
 

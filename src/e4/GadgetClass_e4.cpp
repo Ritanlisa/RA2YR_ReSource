@@ -149,11 +149,11 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
         if ( !v4 ) /*0x60ab12*/
           goto LABEL_7; /*0x60ab12*/
       }
-      v3 = (unsigned int *)(v4 + 1); /*0x60ab1a*/
-      v15 = (unsigned int *)(v4 + 1); /*0x60ab1d*/
+      v3 = v4 + 1; /*0x60ab1a*/
+      v15 = v4 + 1; /*0x60ab1d*/
     }
   }
-  LABEL_7:
+LABEL_7:
   if ( v3 ) /*0x60ab23*/
   {
     v14 = Parent; /*0x60ab2e*/
@@ -168,12 +168,12 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
       if ( !v5 ) /*0x60ab66*/
         goto LABEL_12; /*0x60ab66*/
     }
-    v9 = &v5->u32_1; /*0x60acaf*/
+    v9 = v5 + 1; /*0x60acaf*/
     if ( v9 ) /*0x60acb4*/
       v6 = v9[27]; /*0x60acba*/
     else
-      LABEL_12:
-    v6 = 0; /*0x60ab68*/
+LABEL_12:
+      v6 = 0; /*0x60ab68*/
     DlgCtrlID = GetDlgCtrlID(hWnd); /*0x60ab6b*/
     if ( (v6 == 148 /*0x60ac9e*/
        || v6 == 216
@@ -254,7 +254,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
       goto LABEL_85; /*0x60ae5c*/
     if ( !strcmp(ClassName, g_INI_Key_ListBox) && (v16 = 0, HashTable::Get(&dword_AC1B00, &v17, &v16)) ) /*0x60aeab*/
     {
-      v11 = v16->q068 == 1; /*0x60aebc*/
+      v11 = *(unsigned int *)(v16 + 104) == 1; /*0x60aebc*/
     }
     else
     {
@@ -264,17 +264,17 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
     }
     if ( v11 ) /*0x60af0e*/
     {
-      LABEL_85:
+LABEL_85:
       v12 = 192; /*0x60af10*/
-      LABEL_87:
+LABEL_87:
       v15[50] = v12; /*0x60af19*/
-      return (gamemd::AbstractClass **)(1); /*0x60af1d*/
+      return 1; /*0x60af1d*/
     }
-    LABEL_86:
+LABEL_86:
     v12 = 0; /*0x60af17*/
     goto LABEL_87; /*0x60af17*/
   }
-  return (gamemd::AbstractClass **)(1); /*0x60af23*/
+  return 1; /*0x60af23*/
 
 }
 }
@@ -283,21 +283,21 @@ namespace gamemd {
 AbstractClass * * GadgetClass::SetTooltip(void * String)
 {
 
+  int v3; // eax
+  wchar_t *v4; // eax
 
   if ( this->u32_28 ) /*0x623564*/
   {
-    __3_YAXPAX_Z(this->u32_C80)); /*0x62356c*/
+    __3_YAXPAX_Z(this->u32_28); /*0x62356c*/
     this->u32_28 = 0; /*0x623574*/
   }
   if ( String ) /*0x623581*/
   {
     if ( *String ) /*0x623583*/
     {
-      int v3; // eax
       v3 = wcslen(String); /*0x62358a*/
-      wchar_t *v4; // eax
       v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
-      this->u32_28 = (unsigned int)(v4); /*0x62359b*/
+      this->u32_28 = v4; /*0x62359b*/
       wcscpy(v4, String); /*0x62359e*/
     }
   }

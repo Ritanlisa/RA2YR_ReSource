@@ -119,34 +119,44 @@ namespace gamemd {
 int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, void *a6_1)
 {
 
+  int result; // eax
+  unsigned int *FoundationSize; // eax
+  int v9; // ebx
+  int Default; // edi
+  int *v11; // ebp
+  int v12; // eax
+  int v13; // ebp
+  int v14; // edi
+  int *Viewport; // eax
+  int v16; // kr04_4
+  int Instance; // [esp+4h] [ebp-3Ch]
+  int v18; // [esp+8h] [ebp-38h]
+  int v19; // [esp+Ch] [ebp-34h]
+  int v20; // [esp+18h] [ebp-28h]
+  int v21[7]; // [esp+20h] [ebp-20h] BYREF
+  __int16 v22; // [esp+3Eh] [ebp-2h]
+  int v23; // [esp+44h] [ebp+4h]
 
-  int result = a2; // eax /*0x642c80*/
-  if ( a2 == -1 && aP2 == -1 ) /*0x642c9a*/
+  result = a2; /*0x642c80*/
+  if ( a2 == -1 && a3 == -1 ) /*0x642c9a*/
   {
-    int v19; // [esp+Ch] [ebp-34h]
     v19 = this->u32_61; /*0x642cb1*/
-    unsigned int *FoundationSize; // eax
-    int v21[7]; // [esp+20h] [ebp-20h] BYREF
     FoundationSize = Building::GetFoundationSize(v21, 0); /*0x642cb5*/
-    int v9 = 0; // ebx /*0x642cbc*/
-    int Default = 0; // edi /*0x642cc2*/
-    int v20; // [esp+18h] [ebp-28h]
+    v9 = 0; /*0x642cbc*/
+    Default = 0; /*0x642cc2*/
     v20 = FoundationSize[2]; /*0x642cce*/
-    int v18; // [esp+8h] [ebp-38h]
     v18 = FoundationSize[3] + 6; /*0x642cd8*/
-    if ( aP4 ) /*0x642ce2*/
+    if ( a5 ) /*0x642ce2*/
     {
-      Default = (0)->FindDefault(); /*0x642ceb*/
+      Default = BuildingType::FindDefault(0); /*0x642ceb*/
       if ( Default ) /*0x642cef*/
       {
         v9 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
         Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-    int Instance; // [esp+4h] [ebp-3Ch]
-    Instance = (int)(TextRenderer::GetInstance()); /*0x642d10*/
-    int *v11 = v21; // ebp /*0x642d14*/
-    int v23; // [esp+44h] [ebp+4h]
+    Instance = TextRenderer::GetInstance(); /*0x642d10*/
+    v11 = v21; /*0x642d14*/
     v23 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
@@ -155,34 +165,30 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, v
       --v23; /*0x642d39*/
     }
     while ( v23 ); /*0x642d3d*/
-    __int16 v22; // [esp+3Eh] [ebp-2h]
     v22 = 0; /*0x642d4c*/
-    int v12; // eax
     v12 = Text::MeasureWidth((int)v21, 0); /*0x642d53*/
     if ( v18 > Default ) /*0x642d6b*/
       Default = v18; /*0x642d6d*/
     if ( Default <= *(unsigned int *)(Instance + 28) ) /*0x642d71*/
       Default = *(unsigned int *)(Instance + 28); /*0x642d73*/
-    int v13 = v9 + v12 + v20 + 36; // ebp /*0x642d79*/
-    int v14 = Default + 4; // edi /*0x642d7c*/
+    v13 = v9 + v12 + v20 + 36; /*0x642d79*/
+    v14 = Default + 4; /*0x642d7c*/
     if ( v19 > 1 ) /*0x642d82*/
       v14 *= v19; /*0x642d87*/
-    int *Viewport; // eax
-    Viewport = (int *)(Display::GetViewport(v21)); /*0x642d8d*/
-    int v16; // kr04_4
+    Viewport = Display::GetViewport(v21); /*0x642d8d*/
     v16 = Viewport[2] - v13; /*0x642dac*/
     result = (Viewport[3] - v14) / 2; /*0x642db9*/
-    this->u32_1A = v16 / 2; /*0x642dbb*/
-    this->u32_1B = result; /*0x642dbe*/
+    this->u32_68 = v16 / 2; /*0x642dbb*/
+    this->u32_6C = result; /*0x642dbe*/
   }
   else
   {
-    this->u32_1A = a2; /*0x642dc4*/
-    this->u32_1B = aP2; /*0x642dc7*/
+    this->u32_68 = a2; /*0x642dc4*/
+    this->u32_6C = a3; /*0x642dc7*/
   }
   LOBYTE(result) = a6; /*0x642dd2*/
-  this->u32_14 = aP3; /*0x642dd6*/
-  this->u32_70 = aP4; /*0x642dd9*/
+  this->u32_50 = a4; /*0x642dd6*/
+  this->u32_70 = a5; /*0x642dd9*/
   this->u32_71 = a6; /*0x642ddc*/
   return result; /*0x642ddf*/
 

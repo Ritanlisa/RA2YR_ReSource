@@ -99,31 +99,32 @@ int CellClass::QuickPassable() {
 // 0x52AF50
 namespace gamemd {
 unsigned int * INIClass::sectionExists() {
+
   unsigned int *result; // eax
   int *sectionHead; // edx
   int v3; // ebx
-  int v4; // edi
+  unsigned int *v4; // edi
   int v5; // edi
-  int v6; // edi
+  unsigned int *v6; // edi
 
-  result = this->vtable1; /*0x52af50*/
+  result = this->__pad_0; /*0x52af50*/
   sectionHead = this->sectionHead; /*0x52af59*/
   this->headNode[1] = 0; /*0x52af5f*/
   this->headNode[2] = 0; /*0x52af62*/
-  this->headNode[0] = (int)0; /*0x52af65*/
+  this->headNode[0] = (int)&GenericNode::`vftable'; /*0x52af65*/
   this->sectionHead[1] = 0; /*0x52af6b*/
   this->sectionHead[2] = 0; /*0x52af6e*/
-  this->sectionHead[0] = (int)0; /*0x52af71*/
-  /* X11: vtable install elided (implicit via class virtuals 0x52af77) — binary-proven install, was 0 */
+  this->sectionHead[0] = (int)&GenericNode::`vftable'; /*0x52af71*/
+  *(unsigned int *)this->__pad_0 = &GenericList::`vftable'; /*0x52af77*/
   if ( this != (INIClass *)-16 ) /*0x52af7d*/
   {
     v3 = this->sectionHead[1]; /*0x52af7f*/
     if ( v3 ) /*0x52af84*/
     {
-      v4 = this->sectionHead[2]; /*0x52af86*/
+      v4 = (unsigned int *)this->sectionHead[2]; /*0x52af86*/
       if ( v4 ) /*0x52af8b*/
       {
-        *(unsigned int *)(v4 + 4) = v3; /*0x52af8d*/
+        v4[1] = v3; /*0x52af8d*/
         *(unsigned int *)(this->sectionHead[1] + 8) = this->sectionHead[2]; /*0x52af96*/
         this->sectionHead[2] = 0; /*0x52af99*/
         this->sectionHead[1] = 0; /*0x52af9c*/
@@ -133,12 +134,13 @@ unsigned int * INIClass::sectionExists() {
   v5 = this->headNode[1]; /*0x52af9f*/
   this->sectionHead[2] = (int)this->headNode; /*0x52afa2*/
   this->sectionHead[1] = v5; /*0x52afa5*/
-  v6 = this->headNode[1]; /*0x52afa8*/
+  v6 = (unsigned int *)this->headNode[1]; /*0x52afa8*/
   if ( v6 ) /*0x52afad*/
-    *(unsigned int *)(v6 + 8) = sectionHead; /*0x52afaf*/
+    v6[2] = (unsigned int)sectionHead; /*0x52afaf*/
   this->headNode[1] = (int)sectionHead; /*0x52afb2*/
-  /* X11: vtable install elided (implicit via class virtuals 0x52afb7) — binary-proven install, was 0 */
+  *(unsigned int *)this->__pad_0 = &List<INIClass::INIEntry *>::`vftable'; /*0x52afb7*/
   return result; /*0x52afb5*/
+
 }
 } // namespace gamemd
 
@@ -398,31 +400,32 @@ int * CellClass::GetScreenRect(int *a2) {
 // 0x52ACE0
 namespace gamemd {
 unsigned int * GenericList::Constructor() {
+
   unsigned int *result; // eax
   GenericList *v2; // edx
-  int v3; // ebx
-  int v4; // edi
+  unsigned int v3; // ebx
+  unsigned int *v4; // edi
   int v5; // edi
-  int v6; // edi
+  unsigned int *v6; // edi
 
   result = &this->vtable; /*0x52ace0*/
   v2 = &this->u32_10; /*0x52ace9*/
   this->u32_8 = 0; /*0x52acef*/
   this->u32_C = 0; /*0x52acf2*/
-  this->u32_4 = 0; /*0x52acf5*/
+  this->u32_4 = &GenericNode::`vftable'; /*0x52acf5*/
   this->u32_14 = 0; /*0x52acfb*/
   this->u32_18 = 0; /*0x52acfe*/
-  this->u32_10 = 0; /*0x52ad01*/
-  /* X11: vtable install elided (implicit via class virtuals 0x52ad07) — binary-proven install, was 0 */
+  this->u32_10 = &GenericNode::`vftable'; /*0x52ad01*/
+  this->vtable = (int)&GenericList::`vftable'; /*0x52ad07*/
   if ( this != (GenericList *)-16 ) /*0x52ad0d*/
   {
     v3 = this->u32_14; /*0x52ad0f*/
     if ( v3 ) /*0x52ad14*/
     {
-      v4 = this->u32_18; /*0x52ad16*/
+      v4 = (unsigned int *)this->u32_18; /*0x52ad16*/
       if ( v4 ) /*0x52ad1b*/
       {
-        *(unsigned int *)(v4 + 4) = v3; /*0x52ad1d*/
+        v4[1] = v3; /*0x52ad1d*/
         *(GenericList *)(this->u32_14 + 8) = this->u32_18; /*0x52ad26*/
         this->u32_18 = 0; /*0x52ad29*/
         this->u32_14 = 0; /*0x52ad2c*/
@@ -430,13 +433,14 @@ unsigned int * GenericList::Constructor() {
     }
   }
   v5 = this->u32_8; /*0x52ad2f*/
-  this->u32_18 = &this->u32_8; /*0x52ad32*/
+  this->u32_18 = &this->u32_4; /*0x52ad32*/
   this->u32_14 = v5; /*0x52ad35*/
-  v6 = this->u32_8; /*0x52ad38*/
+  v6 = (unsigned int *)this->u32_8; /*0x52ad38*/
   if ( v6 ) /*0x52ad3d*/
-    *(unsigned int *)(v6 + 8) = v2; /*0x52ad3f*/
+    v6[2] = (unsigned int)v2; /*0x52ad3f*/
   this->u32_8 = v2; /*0x52ad42*/
   return result; /*0x52ad45*/
+
 }
 } // namespace gamemd
 
@@ -516,9 +520,10 @@ unsigned short * CellClass::initCellData(unsigned short *a2) {
 // 0x589E20
 namespace gamemd {
 char RadarClass::updateRadarCells(int a2, unsigned int *a3) {
-  unsigned int *RadarClass_field_0x0; // ecx
+
+  int RadarClass_field_0x0; // ecx
   int v4; // edx
-  char *v5; // esi
+  int v5; // esi
   unsigned int *v6; // ecx
   int v7; // eax
   int v8; // ecx
@@ -526,29 +531,29 @@ char RadarClass::updateRadarCells(int a2, unsigned int *a3) {
   int v10; // eax
   int v11; // ecx
   int v12; // edx
-  int v13; // eax
+  unsigned int *v13; // eax
   unsigned int *v14; // ecx
 
-  RadarClass_field_0x0 = this->vtable1; /*0x589e24*/
-  v4 = RadarClass_field_0x0[6 * a2 + 4]; /*0x589e30*/
-  v5 = (char *)&RadarClass_field_0x0[6 * a2]; /*0x589e34*/
-  v6 = (unsigned int *)v5->__pad_004; /*0x589e37*/
+  RadarClass_field_0x0 = this->RadarClass_field_0x0; /*0x589e24*/
+  v4 = *(unsigned int *)(RadarClass_field_0x0 + 24 * a2 + 16); /*0x589e30*/
+  v5 = RadarClass_field_0x0 + 24 * a2; /*0x589e34*/
+  v6 = *(unsigned int **)(v5 + 4); /*0x589e37*/
   v7 = v4 - 1; /*0x589e3b*/
   if ( v4 - 1 < 0 ) /*0x589e40*/
   {
-  LABEL_4:
-    v8 = v5->u32_8; /*0x589e4e*/
+LABEL_4:
+    v8 = *(unsigned int *)(v5 + 8); /*0x589e4e*/
     if ( v4 < v8 /*0x589e70*/
-      || (v5[13] || !v8)
-      && (v9 = v5->Straw_14, v9 > 0)
-      && v5->vt_slot_8(v8 + v9, 0) )
+      || (*(unsigned char *)(v5 + 13) || !v8)
+      && (v9 = *(unsigned int *)(v5 + 20), v9 > 0)
+      && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v5 + 8))(v5, v8 + v9, 0) )
     {
-      v10 = v5->u32_10; /*0x589e77*/
+      v10 = *(unsigned int *)(v5 + 16); /*0x589e77*/
       v11 = v10 + 1; /*0x589e7a*/
       v12 = 3 * v10; /*0x589e7d*/
-      v13 = v5->__pad_004; /*0x589e80*/
-      v5->u32_10 = v11; /*0x589e83*/
-      v14 = (unsigned int *)(v13 + 4 * v12); /*0x589e86*/
+      v13 = *(unsigned int **)(v5 + 4); /*0x589e80*/
+      *(unsigned int *)(v5 + 16) = v11; /*0x589e83*/
+      v14 = &v13[v12]; /*0x589e86*/
       *v14 = *a3; /*0x589e8b*/
       v14[1] = a3[1]; /*0x589e90*/
       v14[2] = a3[2]; /*0x589e96*/
@@ -565,6 +570,7 @@ char RadarClass::updateRadarCells(int a2, unsigned int *a3) {
     }
     return 0; /*0x589ea3*/
   }
+
 }
 } // namespace gamemd
 
@@ -632,12 +638,13 @@ unsigned int * TacticalClass::PixelToCellCheck(int *a2) {
 // 0x6D2280
 namespace gamemd {
 unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3) {
+
   int v3; // esi
   int v4; // esi
   float *v5; // eax
-  int v6; // eax
-  int v7; // esi
-  int v8; // eax
+  unsigned __int16 *v6; // eax
+  unsigned __int16 *v7; // esi
+  unsigned __int16 *v8; // eax
   float v10[3]; // [esp+8h] [ebp-18h] BYREF
   float v11; // [esp+14h] [ebp-Ch] BYREF
   float v12; // [esp+18h] [ebp-8h]
@@ -653,23 +660,24 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
   else
   {
     v4 = this->visibleArea[1] + v3; /*0x6d22bf*/
-    (*((unsigned int *)&(v10[0]))) = this->visibleArea[0] + *a3; /*0x6d22c1*/
-    (*((unsigned int *)&(v10[1]))) = v4; /*0x6d22c5*/
-    v11 = (float)(*((signed int *)&(v10[0]))); /*0x6d22dc*/
+    LODWORD(v10[0]) = this->visibleArea[0] + *a3; /*0x6d22c1*/
+    LODWORD(v10[1]) = v4; /*0x6d22c5*/
+    v11 = (float)SLODWORD(v10[0]); /*0x6d22dc*/
     v13 = 0; /*0x6d22e4*/
     v12 = (float)v4; /*0x6d22ec*/
     v5 = TransformMatrix3x4Point(v10, (float *)this->TacticalClass_field_DE4, &v11); /*0x6d22f0*/
     v11 = *v5; /*0x6d22f7*/
     v12 = v5[1]; /*0x6d2302*/
     v13 = *((unsigned int *)v5 + 2); /*0x6d2309*/
-    (*((unsigned short *)&(v6))) = Math::RoundToInt(v11); /*0x6d230d*/
+    LOWORD(v6) = Math::RoundToInt(v11); /*0x6d230d*/
     v7 = v6; /*0x6d2316*/
-    (*((unsigned short *)&(v8))) = Math::RoundToInt(v12); /*0x6d2318*/
+    LOWORD(v8) = Math::RoundToInt(v12); /*0x6d2318*/
     *a2 = v7; /*0x6d2325*/
     a2->vtable2 = v8; /*0x6d2327*/
     a2->vtable3 = 0; /*0x6d232c*/
     return a2; /*0x6d232a*/
   }
+
 }
 } // namespace gamemd
 

@@ -11,13 +11,15 @@ namespace gamemd {  // G42.18 ns repair
 void* CellStruct::Add(CellStruct *aP0, unsigned int *aP1, unsigned short *aP2)  // G57w11: def 同步 hpp（raw 0x42D510）
 {
 
-  int16_t v3; // dx
-  v3 = (aP0->u32_2) + *aP2; /*0x42d51f*/
+  __int16 v3; // dx
   unsigned short *v5; // [esp+8h] [ebp+8h]
-  (*(((unsigned short *)&(v5)) + 1)) = (*(aP0->u32_2 + 1)) + aP2[1]; /*0x42d522*/
-  (*((unsigned short *)&(v5))) = v3; /*0x42d52b*/
-  *aP1 = (unsigned int)(v5); /*0x42d534*/
-  return aP1; /*0x42d536*/
+
+  v3 = LOWORD(this->field_0) + *a3; /*0x42d51f*/
+  HIWORD(v5) = HIWORD(this->field_0) + a3[1]; /*0x42d522*/
+  LOWORD(v5) = v3; /*0x42d52b*/
+  *a2 = v5; /*0x42d534*/
+  return a2; /*0x42d536*/
+
 }
 }  // G42.18 ns repair
 // 0x437F30
@@ -25,12 +27,14 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * CellStruct::Copy(CellStruct *aP0, void* aP1)  // G57w11: def 同步 hpp（raw 0x437F30 this+a2，a2_1 未用已删）
 {
 
+  void *v3; // edx
+  void *v4; // ecx
 
-  int v3 = aP0->field_0; // edx /*0x437f34*/
-  void *v4 = aP0->field_4; // ecx /*0x437f36*/
-  *aP1 = (void *)(v3); /*0x437f39*/
-  aP1[1] = v4; /*0x437f3b*/
-  return (unsigned int *)(aP1); /*0x437f3e*/
+  v3 = (void *)this->field_0; /*0x437f34*/
+  v4 = this->field_4; /*0x437f36*/
+  *a2 = v3; /*0x437f39*/
+  a2[1] = v4; /*0x437f3b*/
+  return a2; /*0x437f3e*/
 
 }
 }  // G42.18 ns repair
@@ -46,14 +50,15 @@ namespace gamemd {
 void* CellStruct::Sub(unsigned int *aP1, unsigned short *aP2)
 {
 
-
-  __int16 v3 = this->field_0; // dx /*0x588c60*/
+  __int16 v3; // dx
   __int16 v4; // cx
-  v4 = HIWORD(this->field_0) - aP2[1]; /*0x588c6e*/
   unsigned short *v6; // [esp+8h] [ebp+8h]
+
+  v3 = this->field_0; /*0x588c60*/
+  v4 = HIWORD(this->field_0) - aP2[1]; /*0x588c6e*/
   LOWORD(v6) = v3 - *aP2; /*0x588c76*/
   HIWORD(v6) = v4; /*0x588c7b*/
-  *aP1 = (unsigned int)(v6); /*0x588c84*/
+  *aP1 = v6; /*0x588c84*/
   return aP1; /*0x588c86*/
 
 }

@@ -352,7 +352,45 @@ namespace gamemd {
 int VoxelAnimClass::VoxelAnimClass_Update()
 {
 
-#374 *v40; // eax
+  VoxelAnimClass *v1; // ebx
+  int VoxelAnimClass_field_0x104; // eax
+  unsigned int *v3; // eax
+  int VoxelAnimClass_field_0x140; // eax
+  int v6; // ebp
+  int *v7; // esi
+  bool v8; // zf
+  int v9; // edi
+  bool v10; // al
+  AnimClass *v11; // eax
+  int v12; // edx
+  int v13; // ecx
+  int v14; // esi
+  AnimClass *v15; // eax
+  AnimClass *v16; // eax
+  int v17; // edx
+  int v18; // ecx
+  int v19; // esi
+  AnimClass *v20; // esi
+  int v21; // eax
+  double v22; // st7
+  int v23; // eax
+  double v24; // st7
+  int v25; // eax
+  int v26; // edx
+  int v27; // eax
+  int v28; // edi
+  unsigned int *Coords; // eax
+  int v30; // eax
+  int v31; // edi
+  int *v32; // eax
+  int v33; // eax
+  int *v34; // eax
+  int v35; // eax
+  int v36; // eax
+  int v37; // esi
+  int v38; // eax
+  int v39; // esi
+  VoxelAnimClass *v40; // eax
   int v41; // edi
   int v42; // edx
   unsigned __int8 *v43; // esi
@@ -361,7 +399,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   int v46; // eax
   int *StartCoords; // esi
   int v48; // eax
-  signed int v49; // ecx
+  int v49; // ecx
   int v50; // edx
   int v51; // esi
   int v52; // edx
@@ -369,9 +407,9 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   unsigned int *v54; // eax
   CellClass *v55; // esi
   CellClass *v56; // edi
-#374 *v57; // ebp
+  Object *v57; // ebp
   int v58; // eax
-#374 *v59; // ebp
+  Object *v59; // ebp
   int v60; // eax
   AnimClass *v61; // esi
   int v62; // eax
@@ -385,14 +423,14 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   int v70; // edx
   int v71; // ecx
   unsigned int *v72; // eax
-  ObjectClass *i; // edi
+  int *i; // edi
   int v74; // ebp
   unsigned int *v75; // eax
   int v76; // ecx
-  unsigned int *v77; // eax
-  void *vtable0; // esi
+  int v77; // eax
+  int v78; // esi
   int v79; // eax
-  int (**VoxelAnimClass_field_0x0)(VoxelAnimClass *, int); // esi
+  int VoxelAnimClass_field_0x0; // esi
   int v81; // eax
   int v82; // [esp-14h] [ebp-90h]
   unsigned int *v83; // [esp-10h] [ebp-8Ch]
@@ -406,9 +444,9 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   int v91; // [esp+18h] [ebp-64h]
   __int16 v92[2]; // [esp+1Ch] [ebp-60h] BYREF
   int v93; // [esp+20h] [ebp-5Ch] BYREF
-  int v94; // [esp+24h] [ebp-58h]
-  int v95; // [esp+28h] [ebp-54h] BYREF
-  VoxelAnimClass *smudgeTypeIndex; // [esp+2Ch] [ebp-50h] BYREF
+  Object *v94; // [esp+24h] [ebp-58h]
+  __int16 v95[2]; // [esp+28h] [ebp-54h] BYREF
+  __int16 v96[2]; // [esp+2Ch] [ebp-50h] BYREF
   int v97; // [esp+30h] [ebp-4Ch] BYREF
   int v98; // [esp+34h] [ebp-48h]
   int v99; // [esp+38h] [ebp-44h]
@@ -424,214 +462,199 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   int v109; // [esp+70h] [ebp-Ch]
   int v110; // [esp+78h] [ebp-4h]
 
-  VoxelAnimClass *v1 = this; // ebx /*0x749f34*/
-  unsigned int *VoxelAnimClass_field_0x104; // eax
-  VoxelAnimClass_field_0x104 = (unsigned int *)(this->q104); /*0x749f38*/
-  smudgeTypeIndex = this; /*0x749f3f*/
-  if ( VoxelAnimClass_field_0x104[183] != -1 ) /*0x749f4a*/
+  v1 = this; /*0x749f34*/
+  VoxelAnimClass_field_0x104 = this->VoxelAnimClass_field_0x104; /*0x749f38*/
+  *(unsigned int *)v96 = this; /*0x749f3f*/
+  if ( *(unsigned int *)(VoxelAnimClass_field_0x104 + 732) != -1 ) /*0x749f4a*/
   {
-    unsigned int *v3; // eax
-    v3 = (unsigned int *)(*((int (**)(VoxelAnimClass *, int *))this->vtable1 + 18))(this, &v101); /*0x749f5b*/
+    v3 = (unsigned int *)(*(int (**)(VoxelAnimClass *, int *))(this->VoxelAnimClass_field_0x0 + 72))(this, &v101); /*0x749f5b*/
     StartAudioController(v3, &v1->q114); /*0x749f62*/
   }
   if ( v1->ParticleSystemClass_110 ) /*0x749f67*/
-    return (*((int (**)(VoxelAnimClass *))v1->vtable1 + 62))(v1); /*0x749f82*/
-  int VoxelAnimClass_field_0x140 = v1->q140; // eax /*0x749f83*/
-  int v6 = 0; // ebp /*0x749f89*/
+    return (*(int (**)(VoxelAnimClass *))(v1->VoxelAnimClass_field_0x0 + 248))(v1); /*0x749f82*/
+  VoxelAnimClass_field_0x140 = v1->VoxelAnimClass_field_0x140; /*0x749f83*/
+  v6 = 0; /*0x749f89*/
   if ( VoxelAnimClass_field_0x140 ) /*0x749f8d*/
-    v1->q140 = VoxelAnimClass_field_0x140 - 1; /*0x749f90*/
-  if ( v1->q140 <= 0 ) /*0x749f9c*/
+    v1->VoxelAnimClass_field_0x140 = VoxelAnimClass_field_0x140 - 1; /*0x749f90*/
+  if ( v1->VoxelAnimClass_field_0x140 <= 0 ) /*0x749f9c*/
   {
-    int *v7 = &v1->location; // esi /*0x749fa2*/
-    v97 = (int)(*&v1->location); /*0x749fac*/
+    v7 = &v1->location; /*0x749fa2*/
+    v97 = *&v1->location; /*0x749fac*/
     v98 = *&v1->__pad_0A0; /*0x749fbd*/
     v99 = *&v1->q0A4; /*0x749fc4*/
-    bool v8; // zf
-    v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v97)->landType == 2; /*0x749fd5*/
-    v101 = (int)(*&v1->location); /*0x749fda*/
+    v8 = Coord::To_Cell((Coord *)&dword_87F7E8, &v97)->landType == 2; /*0x749fd5*/
+    v101 = *&v1->location; /*0x749fda*/
     v102 = *&v1->__pad_0A0; /*0x749fe1*/
-    int v9 = *&v1->q0A4; // edi /*0x749fe5*/
-    v97 = (int)(*&v1->location); /*0x749fea*/
+    v9 = *&v1->q0A4; /*0x749fe5*/
+    v97 = *&v1->location; /*0x749fea*/
     v98 = *&v1->__pad_0A0; /*0x749ff6*/
     v88 = v8; /*0x74a002*/
     v99 = *&v1->q0A4; /*0x74a007*/
-    bool v10; // al
-    v10 = v9 >= (int)(dword_B1D1BC + Cell::GetGroundHeight((unsigned int *)(&v97))); /*0x74a01e*/
+    v10 = v9 >= (int)(dword_B1D1BC + Cell::GetGroundHeight(&v97)); /*0x74a01e*/
     v87 = v10; /*0x74a023*/
     if ( !v88 || v10 ) /*0x74a02f*/
     {
-      if ( *((unsigned int *)v1->q104 + 186) ) /*0x74a144*/
+      if ( *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 744) ) /*0x74a144*/
       {
-        AnimClass *v20; // esi
         v20 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a15a*/
         if ( v20 ) /*0x74a161*/
         {
-          int v21; // eax
           LOWORD(v21) = Math::RoundToInt(*&v1->u32_C8); /*0x74a169*/
-          double v22 = *&v1->q0CC; // st7 /*0x74a16e*/
+          v22 = *&v1->q0CC; /*0x74a16e*/
           v97 = v21; /*0x74a174*/
-          int v23; // eax
           LOWORD(v23) = Math::RoundToInt(v22); /*0x74a178*/
-          double v24 = *&v1->q0D0; // st7 /*0x74a17d*/
+          v24 = *&v1->q0D0; /*0x74a17d*/
           v98 = v23; /*0x74a183*/
-          int v25; // eax
           LOWORD(v25) = Math::RoundToInt(v24); /*0x74a187*/
-          void **v26; // edx
-          v26 = (void **)v1->q104; /*0x74a18c*/
+          v26 = v1->VoxelAnimClass_field_0x104; /*0x74a18c*/
           v99 = v25; /*0x74a19a*/
-          AnimClass::ctor(v20,(int *)(v26[186]), &v97, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
+          AnimClass::ctor(v20, *(void **)(v26 + 744), &v97, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
         }
-        unsigned int *v27; // eax
-        v27 = (unsigned int *)(v1->q104); /*0x74a1b4*/
-        int v28; // edi
-        v28 = v27[188]; /*0x74a1c9*/
-        v84 = v27[190]; /*0x74a1cf*/
-        unsigned int *Coords; // eax
+        v27 = v1->VoxelAnimClass_field_0x104; /*0x74a1b4*/
+        v28 = *(unsigned int *)(v27 + 752); /*0x74a1c9*/
+        v84 = *(unsigned int *)(v27 + 760); /*0x74a1cf*/
         Coords = (unsigned int *)Coord::GetCoords(&v101, 0); /*0x74a1d8*/
         PlaySoundEffectAt(Coords, v28, v83, v84, 1, 0); /*0x74a1e1*/
-        unsigned int *v30; // eax
-        v30 = (unsigned int *)(v1->q104); /*0x74a1e6*/
-        v90 = v30[190]; /*0x74a1f6*/
-        int v31; // edi
-        v31 = v30[188]; /*0x74a1fa*/
-        int *v32; // eax
+        v30 = v1->VoxelAnimClass_field_0x104; /*0x74a1e6*/
+        v90 = *(unsigned int *)(v30 + 760); /*0x74a1f6*/
+        v31 = *(unsigned int *)(v30 + 752); /*0x74a1fa*/
         v32 = (int *)Coord::GetCoords(&v101, 0); /*0x74a205*/
-        CreateSmokeEffectAt(v31, v90, *v32, v32->vtable2, v32->vtable3, v85, 0); /*0x74a225*/
+        CreateSmokeEffectAt(v31, v90, *v32, v32->q004, v32->q008, v85, 0); /*0x74a225*/
       }
     }
-    else if ( *((unsigned char *)v1->q104 + 720) ) /*0x74a040*/
+    else if ( *(unsigned char *)(v1->VoxelAnimClass_field_0x104 + 720) ) /*0x74a040*/
     {
-      AnimClass *v11; // eax
       v11 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a04a*/
       if ( v11 ) /*0x74a054*/
       {
-        int v12 = *v7; // edx /*0x74a05a*/
-        int v13 = *&v1->__pad_0A0; // ecx /*0x74a05c*/
-        int v14 = *&v1->q0A4; // esi /*0x74a05f*/
+        v12 = *v7; /*0x74a05a*/
+        v13 = *&v1->__pad_0A0; /*0x74a05c*/
+        v14 = *&v1->q0A4; /*0x74a05f*/
         v97 = v12; /*0x74a064*/
         v98 = v13; /*0x74a068*/
         v99 = v14 + 5; /*0x74a081*/
-        AnimClass::ctor( /*0x74a099*/           v11,(int *)(*(void **)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3012)                    + 4 * *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3024)                    - 4)),           &v97,           0,           1,           (void *)0x600,           0,           0);
+        AnimClass::ctor( /*0x74a099*/
+          v11,
+          *(void **)(dword_8871E0->Normal[10] + 4 * dword_8871E0->Normal[13] - 4),
+          &v97,
+          0,
+          1,
+          (void *)0x600,
+          0,
+          0);
       }
     }
     else
     {
-      AnimClass *v15; // eax
       v15 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a0a3*/
       if ( v15 ) /*0x74a0ad*/
       {
         v97 = *v7; /*0x74a0bc*/
         v98 = *&v1->__pad_0A0; /*0x74a0c4*/
         v99 = *&v1->q0A4; /*0x74a0d0*/
-        AnimClass::ctor( /*0x74a0e3*/           v15,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 148)),           &v97,           0,           1,           (void *)0x600,           0,           0);
+        AnimClass::ctor(v15, (void *)dword_8871E0->InfantryBrute, &v97, 0, 1, (void *)0x600, 0, 0); /*0x74a0e3*/
       }
-      AnimClass *v16; // eax
       v16 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a0ed*/
       if ( v16 ) /*0x74a0f7*/
       {
-        int v17 = *v7; // edx /*0x74a0fd*/
-        int v18 = *&v1->__pad_0A0; // ecx /*0x74a0ff*/
-        int v19 = *&v1->q0A4; // esi /*0x74a102*/
+        v17 = *v7; /*0x74a0fd*/
+        v18 = *&v1->__pad_0A0; /*0x74a0ff*/
+        v19 = *&v1->q0A4; /*0x74a102*/
         v97 = v17; /*0x74a107*/
         v98 = v18; /*0x74a111*/
         v99 = v19 + 10; /*0x74a124*/
-        AnimClass::ctor( /*0x74a134*/           v16,(int *)(**(void ***)(*(unsigned int *)&g_RulesClass_Instance + 3012)),           &v97,           0,           1,           (void *)0x600,           0,           0);
+        AnimClass::ctor(v16, *(void **)dword_8871E0->Normal[10], &v97, 0, 1, (void *)0x600, 0, 0); /*0x74a134*/
       }
     }
     if ( !v88 || v87 ) /*0x74a238*/
     {
-      unsigned char *v33; // eax
-      v33 = (unsigned char *)(v1->q104); /*0x74a23e*/
+      v33 = v1->VoxelAnimClass_field_0x104; /*0x74a23e*/
       v108 = 0; /*0x74a244*/
       v109 = 0; /*0x74a248*/
       v110 = 0; /*0x74a24c*/
-      if ( v33[720] ) /*0x74a250*/
+      if ( *(unsigned char *)(v33 + 720) ) /*0x74a250*/
       {
-        int *v34; // eax
         v34 = (int *)Coord::GetCoords(&v101, v86); /*0x74a269*/
         v97 = *v34; /*0x74a270*/
-        v98 = v34->vtable2; /*0x74a277*/
-        v99 = v34->vtable3; /*0x74a27e*/
-        unsigned int *v35; // eax
-        v35 = (unsigned int *)(v1->q104); /*0x74a282*/
-        if ( v35[181] ) /*0x74a288*/
+        v98 = v34->q004; /*0x74a277*/
+        v99 = v34->q008; /*0x74a27e*/
+        v35 = v1->VoxelAnimClass_field_0x104; /*0x74a282*/
+        if ( *(unsigned int *)(v35 + 724) ) /*0x74a288*/
         {
-          int v36; // eax
-          v36 = v35[182]; /*0x74a290*/
+          v36 = *(unsigned int *)(v35 + 728); /*0x74a290*/
           if ( v36 > 0 ) /*0x74a298*/
           {
-            int v37; // esi
             v37 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v36); /*0x74a2b3*/
-            int v38; // eax
             v38 = v37 /*0x74a2cd*/
-            + Random::Range(
+                + Random::Range(
                     (Random *)&dword_A8B230[14].NeedsSaveOrLink,
                     0,
-                    *((unsigned int *)v1->q104 + 182));
+                    *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 728));
             if ( v38 > 0 ) /*0x74a2d1*/
             {
-              int v39 = v38; // esi /*0x74a2d3*/
+              v39 = v38; /*0x74a2d3*/
               do /*0x74a301*/
               {
-                v40 = (#374 *)__2_YAPAXI_Z(0x148u); /*0x74a2da*/
+                v40 = (VoxelAnimClass *)__2_YAPAXI_Z(0x148u); /*0x74a2da*/
                 if ( v40 ) /*0x74a2e4*/
-                  DamageAnimClass::Constructor(v40, *((unsigned int *)v1->q104 + 181), &v97, 0); /*0x74a2fb*/
+                  DamageAnimClass::Constructor(v40, *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 724), &v97, 0); /*0x74a2fb*/
                 --v39; /*0x74a300*/
               }
               while ( v39 ); /*0x74a301*/
             }
           }
         }
-        if ( *((unsigned char *)v1->q104 + 768) && !v87 ) /*0x74a31d*/
+        if ( *(unsigned char *)(v1->VoxelAnimClass_field_0x104 + 768) && !v87 ) /*0x74a31d*/
         {
           v41 = 0; /*0x74a323*/
           v91 = 0; /*0x74a325*/
           do /*0x74a572*/
           {
             v42 = v41 & 7; /*0x74a347*/
-            LOWORD(v89) = v97 / 256 + LOWORD(g_DDrawSurfaceManager.scenario[v42 + 82]); /*0x74a363*/
-            HIWORD(v89) = v98 / 256 + HIWORD(g_DDrawSurfaceManager.scenario[v42 + 82]); /*0x74a372*/
+            LOWORD(v89) = v97 / 256 + LOWORD(dword_89F688[v42]); /*0x74a363*/
+            HIWORD(v89) = v98 / 256 + HIWORD(dword_89F688[v42]); /*0x74a372*/
             *(unsigned int *)v92 = v89; /*0x74a381*/
-            v43 = (unsigned __int8 *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v92); /*0x74a38a*/
+            v43 = (unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v92); /*0x74a38a*/
             if ( (unsigned __int8)IsCoordValidMap((int)v43, 0) ) /*0x74a390*/
             {
-              v44 = *(CellClass **)(g_BuildingLoadQueue_Array.?[2] + 4 * FindBuildingByTiberiumType(127)); /*0x74a3b2*/
+              v44 = (CellClass *)*(&dword_B0F4EC->vfptr + FindBuildingByTiberiumType(127)); /*0x74a3b2*/
               if ( v43[284] ) /*0x74a3b8*/
               {
-                v94 = __2_YAPAXI_Z(0xB0u); /*0x74a3ca*/
+                v94 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x74a3ca*/
                 if ( v94 ) /*0x74a3d0*/
                 {
                   v93 = v43->ptr_24; /*0x74a3e8*/
                   v45 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x74a3ec*/
                   Object::SpawnAtCell( /*0x74a427*/
-                    (#374 *)v94,
-                    *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array
-                    + 4 * ((int)v44->altObject + (unsigned int)v44->jumpjet->? + 2 * v43[284] + v45)
-                    - 8),
+                    v94,
+                    *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)
+                              + 4 * (v45 + v44->altObject + *(unsigned int *)(v44->jumpjet + 660) + 2 * v43[284])
+                              - 8),
                     (__int16 *)&v93,
                     -1);
                 }
               }
               else
               {
-                v94 = __2_YAPAXI_Z(0xB0u); /*0x74a431*/
+                v94 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x74a431*/
                 if ( v94 ) /*0x74a437*/
                 {
-                  v95 = v43->ptr_24; /*0x74a44b*/
+                  *(unsigned int *)v95 = v43->ptr_24; /*0x74a44b*/
                   v46 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x74a44f*/
                   Object::SpawnAtCell( /*0x74a477*/
-                    (#374 *)v94,
-                    *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * ((int)v44->jumpjet->? + v46)),
-                    (__int16 *)&v95,
+                    v94,
+                    *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)
+                              + 4 * (v46 + *(unsigned int *)(v44->jumpjet + 660))),
+                    v95,
                     -1);
                 }
               }
-              v94 = (int)(v43 + 36); /*0x74a482*/
-              ((short *)(v44))->RegisterForRedraw(&v43->u32_48); /*0x74a486*/
+              v94 = &v43->ptr_24; /*0x74a482*/
+              CellClass::RegisterForRedraw(v44, &v43->u32_48); /*0x74a486*/
               v43[286] = 0; /*0x74a48f*/
-              StartCoords = ((House *)v43)->GetStartCoords(v100); /*0x74a49e*/
+              StartCoords = House::GetStartCoords((House *)v43, v100); /*0x74a49e*/
               v48 = *StartCoords; /*0x74a4a6*/
-              v49 = StartCoords[1] - (unsigned int)DSurface_ViewBounds.field_4; /*0x74a4ab*/
+              v49 = StartCoords[1] - dword_886FA4; /*0x74a4ab*/
               v50 = StartCoords[2]; /*0x74a4ad*/
               v51 = StartCoords[3]; /*0x74a4b2*/
               v106 = v50; /*0x74a4b5*/
@@ -665,7 +688,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                   v51 = v104; /*0x74a516*/
                   if ( v104 + v53 < v49 + v107 ) /*0x74a525*/
                     v51 = v107 - v53 + v49 + 1; /*0x74a52d*/
-                  v1 = smudgeTypeIndex; /*0x74a531*/
+                  v1 = *(VoxelAnimClass **)v96; /*0x74a531*/
                   v48 = v52; /*0x74a535*/
                   v49 = v53; /*0x74a537*/
                   v50 = v6; /*0x74a539*/
@@ -675,72 +698,73 @@ int VoxelAnimClass::VoxelAnimClass_Update()
               v108 = v48; /*0x74a557*/
               v6 = v50; /*0x74a55b*/
               v110 = v51; /*0x74a55d*/
-              BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v94); /*0x74a561*/
+              BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v94); /*0x74a561*/
               v41 = v91; /*0x74a566*/
             }
             v91 = ++v41; /*0x74a56e*/
           }
           while ( v41 < 8 ); /*0x74a572*/
           Cell::CreateCrater(v108, v109, v6, v110, 0); /*0x74a59f*/
-          return (*((int (**)(VoxelAnimClass *))v1->vtable1 + 62))(v1); /*0x74a5b5*/
+          return (*(int (**)(VoxelAnimClass *))(v1->VoxelAnimClass_field_0x0 + 248))(v1); /*0x74a5b5*/
         }
       }
-      else if ( v33[768] ) /*0x74a5b6*/
+      else if ( *(unsigned char *)(v33 + 768) ) /*0x74a5b6*/
       {
         if ( !v87 ) /*0x74a5ca*/
         {
           v54 = (unsigned int *)Coord::GetCoords(&v101, v86); /*0x74a5db*/
-          v55 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v54); /*0x74a5eb*/
+          v55 = Coord::To_Cell((Coord *)&dword_87F7E8, v54); /*0x74a5eb*/
           if ( (unsigned __int8)IsCoordValidMap((int)v55, 0) ) /*0x74a5f0*/
           {
-            v56 = *(CellClass **)(g_BuildingLoadQueue_Array.?[2] + 4 * FindBuildingByTiberiumType(127)); /*0x74a612*/
-            if ( v55->slopeIndex ) /*0x74a618*/
+            v56 = (CellClass *)*(&dword_B0F4EC->vfptr + FindBuildingByTiberiumType(127)); /*0x74a612*/
+            if ( v55->slopeIndex[0] ) /*0x74a618*/
             {
-              v57 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x74a627*/
+              v57 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x74a627*/
               if ( v57 ) /*0x74a62e*/
               {
-                smudgeTypeIndex = (VoxelAnimClass *)v55->smudgeTypeIndex; /*0x74a647*/
+                *(unsigned int *)v96 = v55->smudgeTypeIndex; /*0x74a647*/
                 v58 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x74a64b*/
                 Object::SpawnAtCell( /*0x74a682*/
                   v57,
-                  *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array
+                  *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)
                             + 4
-                            * ((int)v56->altObject
-                            + (unsigned int)v56->jumpjet->?
-                             + 2 * (unsigned __int8)v55->slopeIndex
-                            + v58)
+                            * (v58
+                             + v56->altObject
+                             + *(unsigned int *)(v56->jumpjet + 660)
+                             + 2 * (unsigned __int8)v55->slopeIndex[0])
                             - 8),
-                  (__int16 *)&smudgeTypeIndex,
+                  v96,
                   -1);
               }
             }
             else
             {
-              v59 = (#374 *)__2_YAPAXI_Z(0xB0u); /*0x74a689*/
+              v59 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x74a689*/
               if ( v59 ) /*0x74a690*/
               {
-                smudgeTypeIndex = (VoxelAnimClass *)v55->smudgeTypeIndex; /*0x74a6a4*/
+                *(unsigned int *)v96 = v55->smudgeTypeIndex; /*0x74a6a4*/
                 v60 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x74a6a8*/
                 Object::SpawnAtCell( /*0x74a6ce*/
                   v59,
-                  *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * ((int)v56->jumpjet->? + v60)),
-                  (__int16 *)&smudgeTypeIndex,
+                  *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3)
+                            + 4 * (v60 + *(unsigned int *)(v56->jumpjet + 660))),
+                  v96,
                   -1);
               }
             }
             CellClass::RegisterForRedraw(v56, &v55->q11E); /*0x74a6d9*/
-            v55->powerup = 0; /*0x74a6e2*/
-            ((House *)v55)->GetStartCoords(&v108); /*0x74a6ec*/
-            BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v55->smudgeTypeIndex); /*0x74a6f7*/
+            v55->powerup[0] = 0; /*0x74a6e2*/
+            House::GetStartCoords((House *)v55, &v108); /*0x74a6ec*/
+            BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v55->smudgeTypeIndex); /*0x74a6f7*/
           }
         }
       }
     }
-    return (*((int (**)(VoxelAnimClass *))v1->vtable1 + 62))(v1); /*0x74a70d*/
+    return (*(int (**)(VoxelAnimClass *))(v1->VoxelAnimClass_field_0x0 + 248))(v1); /*0x74a70d*/
   }
-  if ( *((unsigned int *)v1->q104 + 187) ) /*0x74a714*/
+  if ( *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 748) ) /*0x74a714*/
   {
-    if ( !(*(unsigned int *)&DataGlobal_A8EB00[644] % 2) ) /*0x74a732*/
+    if ( !(*(unsigned int *)&stru_A8E960.random[528] % 2) ) /*0x74a732*/
     {
       v61 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a73f*/
       if ( v61 ) /*0x74a746*/
@@ -753,31 +777,31 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v98 = v64; /*0x74a76e*/
         LOWORD(v66) = Math::RoundToInt(v65 * 0.01924500897298839 + 0.5); /*0x74a77e*/
         v99 = v66; /*0x74a783*/
-        AnimClass::ctor(v61, *((void **)v1->q104 + 187), &v97, (void *)1, 1, (void *)0x600, 0, 0); /*0x74a7a6*/
+        AnimClass::ctor(v61, *(void **)(v1->VoxelAnimClass_field_0x104 + 748), &v97, (void *)1, 1, (void *)0x600, 0, 0); /*0x74a7a6*/
       }
     }
   }
   v67 = JumpjetLocomotionClass::Update2(&v1->q_B0, &v1->q_B0); /*0x74a7b3*/
-  if ( *((unsigned char *)v1->q104 + 720) ) /*0x74a7be*/
+  if ( *(unsigned char *)(v1->VoxelAnimClass_field_0x104 + 720) ) /*0x74a7be*/
     *&v1->q0DC = *&v1->q0DC + *&v1->q0B8; /*0x74a7d4*/
   v68 = v67 - 1; /*0x74a7da*/
   if ( v68 ) /*0x74a7db*/
   {
     if ( v68 == 1 ) /*0x74a7de*/
-      v1->q140 = 0; /*0x74a7e4*/
+      v1->VoxelAnimClass_field_0x140 = 0; /*0x74a7e4*/
   }
   else
   {
     v97 = *&v1->location; /*0x74a7f9*/
     v98 = *&v1->__pad_0A0; /*0x74a80a*/
     v99 = *&v1->q0A4; /*0x74a811*/
-    if ( Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v97)->landType == 2 ) /*0x74a821*/
+    if ( Coord::To_Cell((Coord *)&dword_87F7E8, &v97)->landType == 2 ) /*0x74a821*/
     {
-      v1->q140 = 0; /*0x74a823*/
+      v1->VoxelAnimClass_field_0x140 = 0; /*0x74a823*/
     }
     else
     {
-      if ( *((unsigned int *)v1->q104 + 185) ) /*0x74a834*/
+      if ( *(unsigned int *)(v1->VoxelAnimClass_field_0x104 + 740) ) /*0x74a834*/
       {
         v69 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a841*/
         if ( v69 ) /*0x74a84b*/
@@ -787,26 +811,26 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           v71 = *&v1->q0A4; /*0x74a856*/
           v100[1] = v70; /*0x74a85b*/
           v100[2] = v71; /*0x74a85f*/
-          AnimClass::ctor(v69, *((void **)v1->q104 + 185), v100, 0, 1, (void *)0x600, 0, 0); /*0x74a87f*/
+          AnimClass::ctor(v69, *(void **)(v1->VoxelAnimClass_field_0x104 + 740), v100, 0, 1, (void *)0x600, 0, 0); /*0x74a87f*/
         }
       }
       v72 = (unsigned int *)Coord::GetCoords(&v105, v86); /*0x74a88b*/
-      for ( i = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v72)->firstObject; i; i = i->nextObject ) /*0x74a8a3*/
+      for ( i = (int *)Coord::To_Cell((Coord *)&dword_87F7E8, v72)->firstObject; i; i = (int *)i[12] ) /*0x74a8a3*/
       {
-        v74 = i->location[0]; /*0x74a8af*/
-        v102 = i->location[1]; /*0x74a8b8*/
-        v103 = i->location[2]; /*0x74a8ca*/
+        v74 = i[39]; /*0x74a8af*/
+        v102 = i[40]; /*0x74a8b8*/
+        v103 = i[41]; /*0x74a8ca*/
         v75 = (unsigned int *)Coord::GetCoords(&v108, v86); /*0x74a8ce*/
         v76 = abs32(*v75 - v74) + abs32(v75[1] - v102); /*0x74a8ee*/
-        v77 = v1->q104; /*0x74a8f0*/
-        if ( v76 <= v77[189] ) /*0x74a8fc*/
+        v77 = v1->VoxelAnimClass_field_0x104; /*0x74a8f0*/
+        if ( v76 <= *(unsigned int *)(v77 + 756) ) /*0x74a8fc*/
         {
-          vtable0 = i->AbstractClass; /*0x74a904*/
-          v82 = v77[190]; /*0x74a90e*/
+          v78 = *i; /*0x74a904*/
+          v82 = *(unsigned int *)(v77 + 760); /*0x74a90e*/
           v79 = ZCoordToScreenY(v76); /*0x74a90f*/
-          (*((void (**)(ObjectClass *, int, int, int, unsigned int, unsigned int, unsigned int, unsigned int))vtable0 + 91))( /*0x74a923*/
+          (*(void (**)(int *, int, int, int, unsigned int, unsigned int, unsigned int, unsigned int))(v78 + 364))( /*0x74a923*/
             i,
-            (int)v1->q104 + 752,
+            v1->VoxelAnimClass_field_0x104 + 752,
             v79,
             v82,
             0,
@@ -817,9 +841,9 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       }
     }
   }
-  VoxelAnimClass_field_0x0 = (int (**)(VoxelAnimClass *, int))v1->vtable1; /*0x74a934*/
+  VoxelAnimClass_field_0x0 = v1->VoxelAnimClass_field_0x0; /*0x74a934*/
   v81 = Coord::GetCoords(&v108, v86); /*0x74a941*/
-  return VoxelAnimClass_field_0x0[109](v1, v81); /*0x749f7b*/
+  return (*(int (**)(VoxelAnimClass *, int))(VoxelAnimClass_field_0x0 + 436))(v1, v81); /*0x749f7b*/
 
 }
 }
@@ -986,6 +1010,7 @@ namespace gamemd {
 char VoxelAnimClass::UpdateMatrix()
 {
 
+  unsigned int *v3; // eax
   int (***v4)(unsigned int, void *, int *); // eax
   int v5; // esi
   int v6; // eax
@@ -993,13 +1018,12 @@ char VoxelAnimClass::UpdateMatrix()
   int v8; // [esp+10h] [ebp-8h] BYREF
   int v9; // [esp+14h] [ebp-4h] BYREF
 
-  if ( *&this->objectTypeFlags > Cell::GetGroundHeight(this->referenceCount) + 120 ) /*0x4d02cc*/
+  if ( *&this->objectTypeFlags > (signed int)(Cell::GetGroundHeight(&this->referenceCount) + 120) ) /*0x4d02cc*/
     return 1; /*0x4d02d4*/
-  int v3; // eax
-  v3 = *(unsigned int *)this->vtable4; /*0x4d02d5*/
-  if ( *(unsigned int *)(v3 + 692) && *(unsigned int *)(v3 + 764) ) /*0x4d02e2*/
+  v3 = *(unsigned int **)this->__pad_C; /*0x4d02d5*/
+  if ( v3[173] && v3[191] ) /*0x4d02e2*/
     return 1; /*0x4d02f2*/
-  v4 = *(int (****)(unsigned int, void *, int *))this->vtable4; /*0x4d02f3*/
+  v4 = *(int (****)(unsigned int, void *, int *))this->__pad_C; /*0x4d02f3*/
   v8 = 0; /*0x4d02f6*/
   if ( !v4 ) /*0x4d0300*/
     return 0; /*0x4d0300*/

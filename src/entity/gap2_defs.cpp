@@ -53,10 +53,11 @@ extern unsigned char vt_VectorClass_SmudgeClass[4];  // data: 0x7E9DC4  // G57w1
 // 0x415EE0
 namespace gamemd { 
 void* BulletClass::FlightUpdate(int a1, int a2) {
+
   double result; // st7
   int v6; // ebx
-  int v7; // eax
-  int v8; // esi
+  double *v7; // eax
+  double *v8; // esi
   unsigned int v14; // ebx
   unsigned int *Value; // ebx
   int v21; // edx
@@ -65,10 +66,10 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
   unsigned int *v26; // eax
   int v27; // edx
   int v28; // eax
-  int16_t v29; // bx
+  __int16 v29; // bx
   unsigned int v31; // ebx
-  int16_t v34; // bx
-  int64_t v38; // rcx
+  __int16 v34; // bx
+  __int64 v38; // rcx
   Class_7E22A4 *v46; // esi
   unsigned int *v47; // eax
   unsigned int *v48; // eax
@@ -97,6 +98,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
   unsigned int v71[3]; // [esp+60h] [ebp-34h] BYREF
   double v72; // [esp+6Ch] [ebp-28h]
   int v73[2]; // [esp+7Ch] [ebp-18h] BYREF
+  double v74; // [esp+84h] [ebp-10h]
   double v75; // [esp+8Ch] [ebp-8h]
 
   if ( this->__pad_118 ) /*0x415eee*/
@@ -105,18 +107,18 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
   }
   else
   {
-    v6 = (*((unsigned int *)&(a2))); /*0x415f0b*/
-    v7 = TechnoClass::FireWeapon((TechnoClass *)this); /*0x415f12*/
+    v6 = LODWORD(a2); /*0x415f0b*/
+    v7 = (double *)TechnoClass::FireWeapon((TechnoClass *)this); /*0x415f12*/
     v8 = v7; /*0x415f17*/
-    v65 = (double *)v7; /*0x415f1b*/
+    v65 = v7; /*0x415f1b*/
     if ( v7 ) /*0x415f1f*/
     {
       if ( !*(unsigned int *)(v7->u32_AC + 732) ) /*0x415f2b*/
       {
         if ( !this->q674 ) /*0x415f39*/
           sub_7DC720(-2147467261); /*0x415f48*/
-        v66 = (*(int (__stdcall **)(unsigned int))(*this->q293) + 132))(this->q674); /*0x415f5c*/
-        _ESI = (double *)(v8 + 232); /*0x415f60*/
+        v66 = (*(int (**)(unsigned int))(*this->q674 + 132))(this->q674); /*0x415f5c*/
+        _ESI = v8 + 29; /*0x415f60*/
         __asm { fild [esp+78h+var_64] } /*0x415f66*/
         __asm { fstp qword ptr [esp+78h+var_54+4] }
         BulletClass::NormalizeZeroVector(_ESI); /*0x415f70*/
@@ -142,7 +144,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
           fstp qword ptr [esi+10h]
         }
         _ESI[2] = _RT1; /*0x415f98*/
-        v66 = *(int16_t *)Vector::ToFacingMath(&v66, v64) - 0x3FFF; /*0x415fa9*/
+        v66 = *(__int16 *)Vector::ToFacingMath(&v66, v64) - 0x3FFF; /*0x415fa9*/
         __asm /*0x415faf*/
         {
           fild [esp+78h+var_64]
@@ -162,7 +164,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
           v14 = *(unsigned int *)&v67[4]; /*0x415fd7*/
           Math::ArcTan2(*(double *)v67); /*0x415fe1*/
           __asm { fdivr qword ptr [esi] } /*0x415fe6*/
-          v57 = COERCE_DOUBLE((((unsigned long)(unsigned int)(*(unsigned int *)v67)) | ((unsigned long)(unsigned int)(v14) << 32))); /*0x415fed*/
+          v57 = COERCE_DOUBLE(__PAIR64__(v14, *(unsigned int *)v67)); /*0x415fed*/
           __asm { fstp qword ptr [esi] } /*0x415fee*/
           *_ESI = _RT1; /*0x415fee*/
           Math::ArcTan2(v57); /*0x415ff0*/
@@ -185,7 +187,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         Value = ProgressTimer::GetValue(&this->ProgressTimer_3A0, v67); /*0x416051*/
         Vector2::NormalizeNonZero((int *)_ESI); /*0x416053*/
         Function::sub_41C430(_ESI); /*0x41605a*/
-        v21 = *(int16_t *)Value; /*0x41605f*/
+        v21 = *(__int16 *)Value; /*0x41605f*/
         __asm { fstp qword ptr [esp+78h+var_54+4] } /*0x416062*/
         v66 = v21 - 0x3FFF; /*0x41606f*/
         __asm /*0x416073*/
@@ -201,7 +203,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
           fstp qword ptr [esi]
         }
         *_ESI = _RT1; /*0x416089*/
-        v66 = *(int16_t *)Value - 0x3FFF; /*0x416093*/
+        v66 = *(__int16 *)Value - 0x3FFF; /*0x416093*/
         __asm /*0x416097*/
         {
           fild [esp+80h+var_64]
@@ -210,25 +212,25 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         }
         Math::SinCos(v62); /*0x4160a4*/
         __asm { fmul qword ptr [esp+80h+var_54+4] } /*0x4160a9*/
-        v6 = (*((unsigned int *)&(a2))); /*0x4160ad*/
+        v6 = LODWORD(a2); /*0x4160ad*/
         __asm /*0x4160b3*/
         {
           fchs
           fstp qword ptr [esi+8]
         }
         _ESI[1] = _RT1; /*0x4160b5*/
-        v8 = (int)v65; /*0x4160b8*/
+        v8 = v65; /*0x4160b8*/
       }
       if ( *(unsigned int *)(v8->u32_AC + 732) == 1 ) /*0x4160c9*/
       {
-        v24 = (unsigned int *)this->GetCoords_0(v67); /*0x4160dd*/
-        v25 = (unsigned int *)(*(int (__thiscall **)(int, double *))(v6->turretChargeTimer)(v6, &v70); /*0x4160e6*/
+        v24 = (unsigned int *)(*(int (**)(Class_7E22A4 *, unsigned char *))(*&this->q_120))(this, v67); /*0x4160dd*/
+        v25 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)v6 + 72))(v6, &v70); /*0x4160e6*/
         v26 = Coord::Subtract((Coord *)&v71[1], *v25 - *v24, v25[1] - v24[1], v25[2] - v24[2]); /*0x416106*/
-        (*((unsigned int *)&(v68))) = *v26; /*0x41610d*/
-        v27 = v26->u32_4; /*0x416111*/
+        LODWORD(v68) = *v26; /*0x41610d*/
+        v27 = v26->q004; /*0x416111*/
         __asm { fild [esp+78h+var_54+4] } /*0x416114*/
-        v28 = v26->u32_8; /*0x416118*/
-        (*(((unsigned int *)&(v68)) + 1)) = v27; /*0x41611b*/
+        v28 = v26->q008; /*0x416118*/
+        HIDWORD(v68) = v27; /*0x41611b*/
         v69 = v28; /*0x41611f*/
         __asm /*0x416123*/
         {
@@ -237,10 +239,10 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         }
         __asm
         {
-          fstp qword ptr [esp+58h]
+          fstp [esp+80h+var_28]
           fild [esp+80h+var_48]
         }
-        v72 = v72; /*0x416144*/
+        v74 = v72; /*0x416144*/
         __asm /*0x41614c*/
         {
           fstp [esp+88h+var_8]
@@ -269,7 +271,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         __asm { fmul qword ptr [esp+80h+var_54+4] } /*0x4161ca*/
         __asm { fstp qword ptr [esi] }
         *_ESI = _RT1; /*0x4161cf*/
-        Math::SinCos(COERCE_DOUBLE((((unsigned long)(unsigned int)(*(unsigned int *)v67)) | ((unsigned long)(unsigned int)(v31) << 32)))); /*0x4161d6*/
+        Math::SinCos(COERCE_DOUBLE(__PAIR64__(v31, *(unsigned int *)v67))); /*0x4161d6*/
         __asm { fmul qword ptr [esp+88h+var_54+4] } /*0x4161db*/
         __asm
         {
@@ -278,12 +280,12 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         }
         _ESI[1] = _RT1; /*0x4161e8*/
         Math::Hypotenuse2D(v73); /*0x4161eb*/
-        __asm { fstp qword ptr [esp+80h+var_84+4] } /*; double*/ /*0x4161fb*/
+        __asm { fstp qword ptr [esp+80h+var_84+4]; double } /*0x4161fb*/
         Math::CalcAngle(v75, v63); /*0x416200*/
         __asm { fsub ds:dbl_7E2820 } /*0x416205*/
         __asm { fmul ds:dbl_7E2818 }
         v34 = Math::RoundToInt(result); /*0x416219*/
-        v66 = *(int16_t *)Vector::ToFacingMath((int *)v67, v64) - 0x3FFF; /*0x416231*/
+        v66 = *(__int16 *)Vector::ToFacingMath((int *)v67, v64) - 0x3FFF; /*0x416231*/
         __asm /*0x416237*/
         {
           fild [esp+78h+var_64]
@@ -320,19 +322,19 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v38 = *(unsigned long long *)v67; /*0x4162a8*/
         Math::ArcTan2(*(double *)v67); /*0x4162ae*/
         __asm { fmul qword ptr [esi] } /*0x4162b3*/
-        v60 = COERCE_DOUBLE((((unsigned long)(unsigned int)(*(unsigned int *)v67)) | ((unsigned long)(unsigned int)((*(((unsigned int *)&(v38)) + 1))) << 32))); /*0x4162ba*/
+        v60 = COERCE_DOUBLE(__PAIR64__(HIDWORD(v38), *(unsigned int *)v67)); /*0x4162ba*/
         __asm { fstp qword ptr [esi] } /*0x4162bb*/
         *_ESI = _RT1; /*0x4162bb*/
         Math::ArcTan2(v60); /*0x4162bd*/
         __asm { fmul qword ptr [esi+8] } /*0x4162c2*/
-        v56 = COERCE_DOUBLE((((unsigned long)(unsigned int)(*(unsigned int *)v67)) | ((unsigned long)(unsigned int)((*(((unsigned int *)&(v38)) + 1))) << 32))); /*0x4162ca*/
+        v56 = COERCE_DOUBLE(__PAIR64__(HIDWORD(v38), *(unsigned int *)v67)); /*0x4162ca*/
         __asm { fstp qword ptr [esi+8] } /*0x4162cb*/
         v65[30] = _RT1; /*0x4162cb*/
         Math::SinCos(v56); /*0x4162ce*/
         __asm { fmul qword ptr [esp+90h+var_54+4] } /*0x4162d3*/
         __asm { fstp qword ptr [esi+10h] }
         v65[31] = _RT1; /*0x4162de*/
-        _EAX = *(unsigned int *)this->vt_slot_1016(0); /*0x4162e9*/
+        _EAX = *(unsigned int *)(*(int (**)(Class_7E22A4 *, unsigned int))(*&this->u32_FE0))(this, 0); /*0x4162e9*/
         __asm /*0x4162ed*/
         {
           fild dword ptr [eax+0A8h]
@@ -362,60 +364,60 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         }
         v65[31] = _RT1; /*0x416318*/
       }
-      if ( (uint8_t)House::IsHumanPlayer(this->u32_D5)) ) /*0x416325*/
+      if ( (unsigned __int8)House::IsHumanPlayer(this->u32_21C) ) /*0x416325*/
       {
-        v46 = &this->Coord_9C6; /*0x416332*/
+        v46 = &this->Coord_9C; /*0x416332*/
         v68 = this->Coord_9C; /*0x41633c*/
         v69 = this->q0A4; /*0x41634f*/
-        if ( (uint8_t)Cell::IsPassable(&v68) ) /*0x416358*/
+        if ( (unsigned __int8)Cell::IsPassable(&v68) ) /*0x416358*/
           goto LABEL_21; /*0x416358*/
         Coord::Subtract((Coord *)&v68, 512, 512, 0); /*0x416375*/
         v47 = Coord::Subtract( /*0x41639d*/
                 (Coord *)&v71[1],
-                *(unsigned int *)v46 + (*((unsigned int *)&(v68))),
-                this->q0A0 + (*(((unsigned int *)&(v68)) + 1)),
+                *(unsigned int *)v46 + LODWORD(v68),
+                this->q0A0 + HIDWORD(v68),
                 this->q0A4 + v69);
         *(unsigned int *)v67 = *v47; /*0x4163a4*/
         *(unsigned long long *)&v67[4] = *(unsigned long long *)(v47 + 1); /*0x4163ab*/
-        if ( (uint8_t)Cell::IsPassable(v67) ) /*0x4163c0*/
+        if ( (unsigned __int8)Cell::IsPassable(v67) ) /*0x4163c0*/
           goto LABEL_21; /*0x4163c0*/
         Coord::Subtract((Coord *)&v68, -512, -512, 0); /*0x4163dd*/
         v48 = Coord::Subtract( /*0x416405*/
                 (Coord *)&v71[1],
-                *(unsigned int *)v46 + (*((unsigned int *)&(v68))),
-                this->q0A0 + (*(((unsigned int *)&(v68)) + 1)),
+                *(unsigned int *)v46 + LODWORD(v68),
+                this->q0A0 + HIDWORD(v68),
                 this->q0A4 + v69);
         *(unsigned int *)v67 = *v48; /*0x41640c*/
         *(unsigned long long *)&v67[4] = *(unsigned long long *)(v48 + 1); /*0x416413*/
-        if ( (uint8_t)Cell::IsPassable(v67) ) /*0x416428*/
+        if ( (unsigned __int8)Cell::IsPassable(v67) ) /*0x416428*/
           goto LABEL_21; /*0x416428*/
         Coord::Subtract((Coord *)&v68, 512, -512, 0); /*0x416445*/
         v49 = Coord::Subtract( /*0x41646d*/
                 (Coord *)&v71[1],
-                *(unsigned int *)v46 + (*((unsigned int *)&(v68))),
-                this->q0A0 + (*(((unsigned int *)&(v68)) + 1)),
+                *(unsigned int *)v46 + LODWORD(v68),
+                this->q0A0 + HIDWORD(v68),
                 this->q0A4 + v69);
         *(unsigned int *)v67 = *v49; /*0x416474*/
         *(unsigned long long *)&v67[4] = *(unsigned long long *)(v49 + 1); /*0x41647b*/
-        if ( (uint8_t)Cell::IsPassable(v67) /*0x416514*/
+        if ( (unsigned __int8)Cell::IsPassable(v67) /*0x416514*/
           || (Coord::Subtract((Coord *)&v68, 512, -512, 0),
               v50 = Coord::Subtract(
                       (Coord *)&v71[1],
-                      *(unsigned int *)v46 + (*((unsigned int *)&(v68))),
-                      this->q0A0 + (*(((unsigned int *)&(v68)) + 1)),
+                      *(unsigned int *)v46 + LODWORD(v68),
+                      this->q0A0 + HIDWORD(v68),
                       this->q0A4 + v69),
               *(unsigned int *)v67 = *v50,
               *(unsigned long long *)&v67[4] = *(unsigned long long *)(v50 + 1),
-              (uint8_t)Cell::IsPassable(v67))
-          || (v51 = (unsigned int *)(*(int (__thiscall **)(unsigned int, unsigned int *))(*(unsigned int *)(*((unsigned int *)&(a2))) + 72))(
-                                (*((unsigned int *)&(a2))),
+              (unsigned __int8)Cell::IsPassable(v67))
+          || (v51 = (unsigned int *)(*(int (**)(unsigned int, unsigned int *))(*(unsigned int *)LODWORD(a2) + 72))(
+                                LODWORD(a2),
                                 &v71[1]),
-              (uint8_t)Cell::IsPassable(v51)) )
+              (unsigned __int8)Cell::IsPassable(v51)) )
         {
-  LABEL_21:
-          (*((unsigned int *)&(v68))) = *(unsigned int *)v46; /*0x416529*/
+LABEL_21:
+          LODWORD(v68) = *(unsigned int *)v46; /*0x416529*/
           v52 = (void *)this->u32_21C; /*0x41652d*/
-          (*(((unsigned int *)&(v68)) + 1)) = this->q0A0; /*0x416538*/
+          HIDWORD(v68) = this->q0A0; /*0x416538*/
           v69 = this->q0A4; /*0x416545*/
           MapClass::RevealArea1( /*0x416557*/
             (MapClass *)&dword_87F7E8,
@@ -429,8 +431,8 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
             0);
           v53 = *(unsigned int *)v46; /*0x41655f*/
           v54 = this->q0A4; /*0x416561*/
-          (*(((unsigned int *)&(v68)) + 1)) = this->q0A0; /*0x416566*/
-          (*((unsigned int *)&(v68))) = v53; /*0x416572*/
+          HIDWORD(v68) = this->q0A0; /*0x416566*/
+          LODWORD(v68) = v53; /*0x416572*/
           v55 = (void *)this->u32_21C; /*0x416576*/
           v69 = v54; /*0x416580*/
           MapClass::RevealArea1( /*0x416595*/
@@ -447,9 +449,10 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
       }
     }
     if ( this->Tactical_6CA ) /*0x41659e*/
-      return ((double (__thiscall *)(Class_7E22A4 *))*(unsigned int *)(*&this->u32_3E0))(this); /*0x4165ac*/
+      return ((double (*)(Class_7E22A4 *))*(unsigned int *)(*&this->u32_3E0))(this); /*0x4165ac*/
   }
   return result; /*0x415eff*/
+
 }
 }
 // 0x425510

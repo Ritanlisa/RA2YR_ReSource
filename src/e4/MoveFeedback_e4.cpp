@@ -26,22 +26,35 @@ namespace gamemd {  // G42.18 ns repair
 int MoveFeedback::ProcessCommand()
 {
 
+  char v1; // bl
   int result; // eax
   int v3; // esi
-
-  char v1 = g_MoveFeedback; // bl /*0x7327d9*/
+  int v4; // ebp
+  int v5; // ebx
+  int v6; // edi
+  int v7; // ecx
+  unsigned int *v8; // edx
+  EventClass *v9; // eax
+  int v10; // edi
+  int v11; // ebp
+  int v12; // ebp
+  int i; // edi
+  int v14; // ecx
   char v15; // [esp+13h] [ebp-9h]
+  int v17; // [esp+18h] [ebp-4h] BYREF
+
+  v1 = g_MoveFeedback; /*0x7327d9*/
   v15 = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
-  if ( DataGlobal_B0FE64 ) /*0x7327f5*/
+  if ( byte_B0FE64 ) /*0x7327f5*/
   {
-    result = (int)(__2_YAPAXI_Z(0x18u)); /*0x7327fb*/
+    result = __2_YAPAXI_Z(0x18u); /*0x7327fb*/
     v3 = result; /*0x732800*/
-    int v4 = 0; // ebp /*0x732802*/
+    v4 = 0; /*0x732802*/
     if ( result ) /*0x732809*/
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
-      *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x732814*/
+      *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x732814*/
       v3->CapacityIncrement = 10; /*0x73281a*/
       v3->Count = 0; /*0x732821*/
     }
@@ -49,28 +62,26 @@ int MoveFeedback::ProcessCommand()
     {
       v3 = 0; /*0x732826*/
     }
-    int v5; // ebx
-    v5 = *(unsigned int *)&DataGlobal_A8EB00[392]; /*0x732828*/
-    if ( *(int *)&DataGlobal_A8EB00[392] > 0 ) /*0x732830*/
+    v5 = *(unsigned int *)&stru_A8E960.random[276]; /*0x732828*/
+    if ( *(int *)&stru_A8E960.random[276] > 0 ) /*0x732830*/
     {
       do /*0x732887*/
       {
-        int v6; // edi
-        v6 = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v4); /*0x73283b*/
+        v6 = *(unsigned int *)(*(unsigned int *)&stru_A8E960.random[264] + 4 * v4); /*0x73283b*/
         result = StepTechnoClassCleanupIfHuman(v6, this); /*0x732840*/
         if ( (unsigned char)result ) /*0x732847*/
         {
-          int v7 = v3->Capacity; // ecx /*0x732849*/
+          v7 = v3->Capacity; /*0x732849*/
           result = v3->Count; /*0x73284c*/
           if ( result < v7 /*0x732873*/
             || ((LOBYTE(result) = v3->IsAllocated, (unsigned char)result) || !v7)
             && (result = v3->CapacityIncrement, result > 0)
-            && (result = (*(int (**)(int, int, unsigned int))(*&v3->q020))(v3, v7 + result, 0), (unsigned char)result) )
+            && (result = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v3 + 8))(v3, v7 + result, 0), (unsigned char)result) )
           {
             result = v3->Count; /*0x732875*/
-            int v8 = v3->Items; // edx /*0x732878*/
+            v8 = v3->Items; /*0x732878*/
             v3->Count = result + 1; /*0x73287e*/
-            *(unsigned int *)(v8 + 4 * result) = v6; /*0x732881*/
+            v8[result] = v6; /*0x732881*/
           }
         }
         ++v4; /*0x732884*/
@@ -81,14 +92,13 @@ int MoveFeedback::ProcessCommand()
   }
   else
   {
-    EventClass *v9; // eax
     v9 = (EventClass *)__2_YAPAXI_Z(0x18u); /*0x73288f*/
     v3 = (int)v9; /*0x732894*/
-    int v10 = 0; // edi /*0x732896*/
+    v10 = 0; /*0x732896*/
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x7328a8*/
+      *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7328a8*/
       v3->CapacityIncrement = 10; /*0x7328ae*/
       v3->Count = 0; /*0x7328b5*/
     }
@@ -97,7 +107,7 @@ int MoveFeedback::ProcessCommand()
       v3 = 0; /*0x7328ba*/
     }
     result = GetHeightMap((ObjectClass *)g_TacticalClass_Instance); /*0x7328c2*/
-    int v11 = result; // ebp /*0x7328c7*/
+    v11 = result; /*0x7328c7*/
     if ( result > 0 ) /*0x7328cb*/
     {
       do /*0x73290b*/
@@ -105,13 +115,12 @@ int MoveFeedback::ProcessCommand()
         result = GetCoordDataMap(v10); /*0x7328d4*/
         if ( result ) /*0x7328db*/
         {
-          if ( (result->AudioBuffer_14 & 1) != 0 ) /*0x7328e7*/
+          if ( (*(unsigned char *)(result + 20) & 1) != 0 ) /*0x7328e7*/
           {
-            int v17; // [esp+18h] [ebp-4h] BYREF
             v17 = result; /*0x7328ef*/
             result = StepTechnoClassCleanupIfHuman(result, this); /*0x7328f3*/
             if ( (unsigned char)result ) /*0x7328fa*/
-              result = ((DynamicVector *)v3)->AddItem(&v17); /*0x732903*/
+              result = DynamicVector::AddItem((DynamicVector *)v3, &v17); /*0x732903*/
           }
         }
         ++v10; /*0x732908*/
@@ -119,11 +128,9 @@ int MoveFeedback::ProcessCommand()
       while ( v10 < v11 ); /*0x73290b*/
     }
   }
-  int v12 = v3->Count; // ebp /*0x73290d*/
-  int i; // edi
+  v12 = v3->Count; /*0x73290d*/
   for ( i = 0; i < v12; ++i ) /*0x732914*/
   {
-    int v14; // ecx
     v14 = *(unsigned int *)(v3->Items + 4 * i); /*0x732919*/
     result = (*(int (**)(int))(*(unsigned int *)v14 + 332))(v14); /*0x73291e*/
   }

@@ -48,17 +48,17 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * SuperWeaponTypeClass::IsAvailable()
 {
 
-  int v2; // edi
+  int *p_ThirdSurvivorDivisor; // edi
   char v3; // cl
   int v4; // eax
   int v5; // edx
   int v6; // ecx
   int v7; // edi
   int v8; // ebp
-  int v9; // ecx
+  unsigned int *v9; // ecx
   int v11; // ebp
   unsigned int *BuildableFromArray; // eax
-  int v13; // edi
+  int *p_HarvesterLoadRate; // edi
   char v14; // cl
   int v15; // eax
   int v16; // edx
@@ -66,7 +66,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   int v18; // edi
   int v19; // ebp
   int v20; // ecx
-  int v21; // edi
+  int *v21; // edi
   int v22; // edx
   int v23; // ecx
   int v24; // eax
@@ -88,20 +88,20 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   v36 = this->q15C > 0; /*0x4f6565*/
   v33 = this->u32_158 > 0; /*0x4f656c*/
   v37 = this->q160 > 0; /*0x4f6573*/
-  v2 = *(unsigned int *)&g_RulesClass_Instance + 2848; /*0x4f657d*/
-  v32 = (int)this->qB20 > 0; /*0x4f6583*/
-  v3 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->qB20 + 152)); /*0x4f6598*/
-  v4 = v2->uniqueId; /*0x4f659a*/
+  p_ThirdSurvivorDivisor = &dword_8871E0->ThirdSurvivorDivisor; /*0x4f657d*/
+  v32 = this->UIName > 0; /*0x4f6583*/
+  v3 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152)); /*0x4f6598*/
+  v4 = p_ThirdSurvivorDivisor->uniqueId; /*0x4f659a*/
   v5 = 1 << v3; /*0x4f659d*/
   v6 = 0; /*0x4f659f*/
   if ( v4 <= 0 ) /*0x4f65a3*/
   {
-    LABEL_5:
+LABEL_5:
     v9 = 0; /*0x4f65bd*/
   }
   else
   {
-    v7 = v2->vtable2; /*0x4f65a5*/
+    v7 = p_ThirdSurvivorDivisor->vtable2; /*0x4f65a5*/
     v8 = v7; /*0x4f65a8*/
     while ( (v5 & *(unsigned int *)(*(unsigned int *)v8 + 1740)) == 0 ) /*0x4f65b3*/
     {
@@ -110,31 +110,29 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
       if ( v6 >= v4 ) /*0x4f65bb*/
         goto LABEL_5; /*0x4f65bb*/
     }
-    v9 = *(unsigned int *)(v7 + 4 * v6); /*0x4f65f4*/
+    v9 = *(unsigned int **)(v7 + 4 * v6); /*0x4f65f4*/
   }
-  if ( (&this->DynamicVector_5564)->GetOrGrow(*(unsigned int *)(v9 + 3576)) ) /*0x4f65cc*/
+  if ( DynamicVector::GetOrGrow(&this->DynamicVector_5564, v9[894]) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
-    return (gamemd::AbstractClass **)(1); /*0x4f65f3*/
-  v11 = (*(int (**)(int *))(this->ActionValue + 24))(this->ActionValue); /*0x4f6603*/
+    return 1; /*0x4f65f3*/
+  v11 = (*(int (**)(char *))(*(unsigned int *)this->ActionValue + 24))(this->ActionValue); /*0x4f6603*/
   v38 = v11; /*0x4f6612*/
-  BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
-                         (HouseClass *)this,
-                         *(unsigned int *)&g_RulesClass_Instance + 2276);
-  v13 = *(unsigned int *)&g_RulesClass_Instance + 2876; /*0x4f6623*/
+  BuildableFromArray = HouseClass::FirstBuildableFromArray((HouseClass *)this, (int)&dword_8871E0->V3Rocket[4]); /*0x4f6616*/
+  p_HarvesterLoadRate = &dword_8871E0->HarvesterLoadRate; /*0x4f6623*/
   v34 = BuildableFromArray != 0; /*0x4f662c*/
-  v14 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->SidebarImageFile_0x18 + 152)); /*0x4f6641*/
-  v15 = *(unsigned int *)(v13 + 16); /*0x4f6643*/
+  v14 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152)); /*0x4f6641*/
+  v15 = p_HarvesterLoadRate[4]; /*0x4f6643*/
   v16 = 1 << v14; /*0x4f6646*/
   v17 = 0; /*0x4f6648*/
   if ( v15 <= 0 ) /*0x4f664c*/
   {
-    LABEL_17:
+LABEL_17:
     v20 = 0; /*0x4f666a*/
   }
   else
   {
-    v18 = *(unsigned int *)(v13 + 4); /*0x4f664e*/
+    v18 = p_HarvesterLoadRate[1]; /*0x4f664e*/
     v19 = v18; /*0x4f6651*/
     while ( (v16 & *(unsigned int *)(*(unsigned int *)v19 + 1740)) == 0 ) /*0x4f665c*/
     {
@@ -152,9 +150,9 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   v35 = v20 != 0; /*0x4f6673*/
   if ( v20 ) /*0x4f6677*/
   {
-    v21 = *(unsigned int *)&g_RulesClass_Instance + 2876; /*0x4f668c*/
-    v22 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->qB3C + 152)); /*0x4f669e*/
-    v23 = *(unsigned int *)(v21 + 16); /*0x4f66a0*/
+    v21 = &dword_8871E0->HarvesterLoadRate; /*0x4f668c*/
+    v22 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(*&this->SidebarImageFile_0x18 + 152)); /*0x4f669e*/
+    v23 = v21[4]; /*0x4f66a0*/
     v24 = 0; /*0x4f66a3*/
     if ( v23 <= 0 ) /*0x4f66a7*/
     {
@@ -162,7 +160,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
     }
     else
     {
-      v25 = *(unsigned int *)(v21 + 4); /*0x4f66a9*/
+      v25 = v21[1]; /*0x4f66a9*/
       v26 = v25; /*0x4f66ac*/
       while ( (v22 & *(unsigned int *)(*(unsigned int *)v26 + 1740)) == 0 ) /*0x4f66b7*/
       {
@@ -185,39 +183,39 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   {
     v27 = 0x7FFFFFFF; /*0x4f6706*/
   }
-  LABEL_28:
-  v28 = HouseClass::FirstBuildableFromArray((HouseClass *)this, *(unsigned int *)&g_RulesClass_Instance + 2360); /*0x4f670b*/
+LABEL_28:
+  v28 = HouseClass::FirstBuildableFromArray((HouseClass *)this, (int)&dword_8871E0->DMisl[12]); /*0x4f670b*/
   v29 = v28->vt_slot_132(this); /*0x4f6728*/
   if ( !v34 && v35 ) /*0x4f6738*/
   {
     if ( v33 ) /*0x4f6740*/
-      return (gamemd::AbstractClass **)(1); /*0x4f674b*/
+      return 1; /*0x4f674b*/
     if ( v37 && v11 >= v27 ) /*0x4f6756*/
-      return (gamemd::AbstractClass **)(1); /*0x4f6761*/
-    return (gamemd::AbstractClass **)(v32 && v11 >= v27 + v29); /*0x4f6772*/
+      return 1; /*0x4f6761*/
+    return v32 && v11 >= v27 + v29; /*0x4f6772*/
   }
-  v30 = HouseClass::FirstBuildableFromArray((HouseClass *)this, *(unsigned int *)&g_RulesClass_Instance + 2276); /*0x4f678f*/
+  v30 = HouseClass::FirstBuildableFromArray((HouseClass *)this, (int)&dword_8871E0->V3Rocket[4]); /*0x4f678f*/
   v31 = v30->GetSpecialValue(this); /*0x4f6799*/
   if ( v34 && !v35 ) /*0x4f67ad*/
   {
     if ( v33 ) /*0x4f67b5*/
-      return (gamemd::AbstractClass **)(1); /*0x4f67c0*/
-    return (gamemd::AbstractClass **)(v32 && v11 >= v31); /*0x4f67cb*/
+      return 1; /*0x4f67c0*/
+    return v32 && v11 >= v31; /*0x4f67cb*/
   }
   if ( v36 ) /*0x4f67dd*/
   {
     if ( v37 && v11 >= v27 ) /*0x4f67e9*/
-      return (gamemd::AbstractClass **)(1); /*0x4f67e9*/
+      return 1; /*0x4f67e9*/
     if ( v32 ) /*0x4f67f1*/
     {
       if ( v11 < v27 + v29 ) /*0x4f67f7*/
-        return (gamemd::AbstractClass **)(v11 >= v31); /*0x4f67fb*/
-      return (gamemd::AbstractClass **)(1); /*0x4f681c*/
+        return v11 >= v31; /*0x4f67fb*/
+      return 1; /*0x4f681c*/
     }
   }
   else if ( v32 && v11 > v31 ) /*0x4f6811*/
   {
-    return (gamemd::AbstractClass **)(1); /*0x4f6811*/
+    return 1; /*0x4f6811*/
   }
   return 0; /*0x4f65ea*/
 
@@ -707,24 +705,27 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * a2, unsigned char * a3, CCINIC
 namespace gamemd {
 int SuperWeaponTypeClass::FindByName(void *a1)
 {
-  int v4; // esi
 
-  if ( !_strcmpi((char *)this, g_Str__random_) ) /*0x5117db*/
+  int v3; // ebx
+  int *v4; // esi
+
+  if ( !_strcmpi(this, g_Str__random_) ) /*0x5117db*/
     return -2; /*0x5117e9*/
   if ( !this ) /*0x5117f2*/
     return -1; /*0x5117f2*/
-  int v3 = 0; // ebx /*0x5117f9*/
+  v3 = 0; /*0x5117f9*/
   if ( dword_A83CA8 <= 0 ) /*0x5117fd*/
     return -1; /*0x511833*/
   while ( 1 ) /*0x511805*/
   {
-    v4 = *((unsigned int *)dword_A83C9C + v3); /*0x511805*/
-    if ( !_strcmpi((char *)(v4 + 100), (char *)this) || !_strcmpi((char *)(v4 + 36), (char *)this) ) /*0x51181d*/
+    v4 = (int *)*((unsigned int *)dword_A83C9C + v3); /*0x511805*/
+    if ( !_strcmpi(v4 + 25, this) || !_strcmpi(v4 + 9, this) ) /*0x51181d*/
       break; /*0x51181d*/
     if ( ++v3 >= dword_A83CA8 ) /*0x511831*/
       return -1; /*0x511831*/
   }
-  return *(unsigned int *)(v4 + 184); /*0x5117e7*/
+  return v4[46]; /*0x5117e7*/
+
 }
 } // namespace gamemd
 

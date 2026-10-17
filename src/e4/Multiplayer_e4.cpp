@@ -251,114 +251,122 @@ int Multiplayer::ShowProgress(int a2)
 {
 
   int result; // eax
-  (*((unsigned char *)&(result))) = byte_A8ED6B; /*0x69ae90*/
-  if ( !byte_A8ED6B ) /*0x69aea1*/
+  double v3; // st7
+  unsigned __int16 *v5; // eax
+  int i; // esi
+  int v8; // esi
+  int v9; // eax
+  unsigned __int16 *v10; // eax
+  int v11; // esi
+  int v12; // eax
+  int Ticks; // [esp+8h] [ebp-1DCh]
+  int v14; // [esp+14h] [ebp-1D0h]
+  double v15; // [esp+14h] [ebp-1D0h]
+  int v16[113]; // [esp+1Ch] [ebp-1C8h] BYREF
+  __int16 v17; // [esp+1E0h] [ebp-4h]
+  char v18; // [esp+1E2h] [ebp-2h]
+
+  LOBYTE(result) = stru_A8E960.random[503]; /*0x69ae90*/
+  if ( !stru_A8E960.random[503] ) /*0x69aea1*/
   {
-    int v14; // [esp+14h] [ebp-1D0h]
     v14 = a2; /*0x69aeb4*/
-    if ( (((unsigned char *)&(((unsigned int *)(dword_A8B230))[375].vfptr))[1]) ) /*0x69aeb8*/
+    if ( BYTE1(dword_A8B230[375].vfptr) ) /*0x69aeb8*/
       v14 = a2 / 2; /*0x69aec7*/
     __asm { fild dword ptr [esp+1E4h+var_1D0] } /*0x69aecb*/
     __asm { fstp [esp+1E8h+var_1D0] }
-    result = Progress::GetWeighted((int)&dword_AC4F58, 0); /*0x69aeda*/
+    result = Progress::GetWeighted((int)&stru_AC4B48.__pad_2F4[284], 0); /*0x69aeda*/
     __asm { fmul ds:dbl_7E2AC0 } /*0x69aedf*/
     __asm
     {
       fcomp [esp+1E4h+var_1D0]
       fnstsw ax
     }
-    double v15; // [esp+14h] [ebp-1D0h]
     if ( (result & 0x100) != 0 ) /*0x69aef1*/
-      result = Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, v15, NAN); /*0x69af0a*/
+      result = Network::UpdateLatencyDisplay((int)&stru_AC4B48.__pad_2F4[284], 0, v15, NAN); /*0x69af0a*/
     if ( this->u32_284C != 1 ) /*0x69af16*/
     {
-      int Ticks; // [esp+8h] [ebp-1DCh]
-      Ticks = TimerGetTicks(); /*0x69af26*/
+      Ticks = Timer::GetTicks(); /*0x69af26*/
       switch ( *(unsigned int *)this ) /*0x69af3e*/
       {
-        int v16[113]; // [esp+1Ch] [ebp-1C8h] BYREF
         case 1: /*0x69af3e*/
         case 2: /*0x69af3e*/
           memset(v16, 0, 250); /*0x69b099*/
           v16[0] = 108; /*0x69b0a2*/
-          Progress::GetWeighted((int)&dword_AC4F58, 0); /*0x69b0aa*/
+          Progress::GetWeighted((int)&stru_AC4B48.__pad_2F4[284], 0); /*0x69b0aa*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69b0af*/
-          double v3; // st7
-          int v10; // eax
-          (*((unsigned short *)&(v10))) = Math::RoundToInt(v3); /*0x69b0b5*/
-          *(int *)((char *)&v16[6] + 1) = v10; /*0x69b0c0*/
-          (*((unsigned char *)&(v16[6]))) = dword_A8DB30; /*0x69b0d5*/
-          Stream::WriteBlock(&unk_A8EA70.vfptr, (int)v16, 250, 0); /*0x69b0d9*/
-          Stream::ReadPacket((int)&unk_A8EA70); /*0x69b0e3*/
-          while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 5 ) /*0x69b0f5*/
+          LOWORD(v10) = Math::RoundToInt(v3); /*0x69b0b5*/
+          *(int *)((char *)&v16[6] + 1) = (int)v10; /*0x69b0c0*/
+          LOBYTE(v16[6]) = stru_A8D804.__pad_3D[751]; /*0x69b0d5*/
+          Stream::WriteBlock((int *)&stru_A8E960.altNextScenario[12], (int)v16, 250, 0); /*0x69b0d9*/
+          Stream::ReadPacket((int)&stru_A8E960.altNextScenario[12]); /*0x69b0e3*/
+          while ( Count::GetCountQueue((Count *)&stru_A8E960.altNextScenario[12]) > 5 ) /*0x69b0f5*/
           {
-          int v11 = 240; // esi /*0x69b101*/
-          if ( Ticks != -1 ) /*0x69b107*/
-          {
-            int v12; // eax
-            v12 = TimerGetTicks() - Ticks; /*0x69b112*/
-            if ( v12 >= 240 ) /*0x69b118*/
-              return Event::Dispatch(); /*0x69b118*/
-            v11 = 240 - v12; /*0x69b11a*/
+            v11 = 240; /*0x69b101*/
+            if ( Ticks != -1 ) /*0x69b107*/
+            {
+              v12 = Timer::GetTicks() - Ticks; /*0x69b112*/
+              if ( v12 >= 240 ) /*0x69b118*/
+                return Event::Dispatch(); /*0x69b118*/
+              v11 = 240 - v12; /*0x69b11a*/
+            }
+            if ( v11 <= 0 ) /*0x69b11e*/
+              break; /*0x69b11e*/
+            Sleep(0x14u); /*0x69b122*/
+            EventQueue::Process((EventQueue *)dword_87F770); /*0x69b12a*/
+            Stream::ReadPacket((int)&stru_A8E960.altNextScenario[12]); /*0x69b134*/
           }
-          if ( v11 <= 0 ) /*0x69b11e*/
-            break; /*0x69b11e*/
-          Sleep(0x14u); /*0x69b122*/
-          ((EventQueue *)dword_87F770)->Process(); /*0x69b12a*/
-          Stream::ReadPacket((int)&unk_A8EA70); /*0x69b134*/
-        }
           break; /*0x69b146*/
         case 3: /*0x69af3e*/
         case 4: /*0x69af3e*/
           memset(v16, 0, sizeof(v16)); /*0x69af52*/
-          int16_t v17; // [esp+1E0h] [ebp-4h]
           v17 = 0; /*0x69af54*/
-          char v18; // [esp+1E2h] [ebp-2h]
           v18 = 0; /*0x69af56*/
           v16[0] = 15; /*0x69af5c*/
-          Progress::GetWeighted((int)&dword_AC4F58, 0); /*0x69af64*/
+          Progress::GetWeighted((int)&stru_AC4B48.__pad_2F4[284], 0); /*0x69af64*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69af69*/
-          int v5; // eax
-          (*((unsigned short *)&(v5))) = Math::RoundToInt(v3); /*0x69af6f*/
-          *(int *)((char *)&v16[11] + 3) = v5; /*0x69af7a*/
-          strcpy((char *)&v16[1], ToWideStringChar((IUnknown *)((char *)*dword_A8DA78))); /*0x69af9e*/
+          LOWORD(v5) = Math::RoundToInt(v3); /*0x69af6f*/
+          *(int *)((char *)&v16[11] + 3) = (int)v5; /*0x69af7a*/
+          strcpy((char *)&v16[1], ToWideStringChar(**(char ***)&stru_A8D804.__pad_3D[567])); /*0x69af9e*/
           __asm /*0x69afa7*/
           {
-          fild [esp+1E8h+var_199]
-          fcomp ds:dbl_7F12F0
-          fnstsw ax
-        }
+            fild [esp+1E8h+var_199]
+            fcomp ds:dbl_7F12F0
+            fnstsw ax
+          }
           if ( (_AX & 0x100) != 0 ) /*0x69afb6*/
           {
-          Network::SendMessage(&unk_A8E9C0.Socket, (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
-        }
+            Network::SendMessage((int *)&stru_A8E960.nextScenario[96], (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
+          }
           else
           {
-          int i; // esi
-          for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
-          {
-            Debug::Log(); /*0x69afe6*/
-            Network::SendToPlayer((int)&unk_A8E9C0, (int)v16, 51,(void *)(1), (wchar_t *)((unsigned int *)(dword_A8DA78))[i]); /*0x69b006*/
+            for ( i = 1; i < *(int *)&stru_A8D804.__pad_3D[579]; ++i ) /*0x69afdf*/
+            {
+              Debug::Log(); /*0x69afe6*/
+              Network::SendToPlayer( /*0x69b006*/
+                (int)&stru_A8E960.nextScenario[96],
+                (int)v16,
+                51,
+                1,
+                *(wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[567] + 4 * i));
+            }
           }
-        }
           Event::Dispatch(); /*0x69b015*/
-          while ( (&unk_A8E9C0)->GetQueueCount() > 5 ) /*0x69b027*/
+          while ( Network::GetQueueCount((IPXManagerClass *)&stru_A8E960.nextScenario[96]) > 5 ) /*0x69b027*/
           {
-          int v8 = 240; // esi /*0x69b037*/
-          if ( Ticks != -1 ) /*0x69b03d*/
-          {
-            int v9; // eax
-            v9 = TimerGetTicks() - Ticks; /*0x69b048*/
-            if ( v9 >= 240 ) /*0x69b04e*/
-              return Event::Dispatch(); /*0x69b04e*/
-            v8 = 240 - v9; /*0x69b054*/
+            v8 = 240; /*0x69b037*/
+            if ( Ticks != -1 ) /*0x69b03d*/
+            {
+              v9 = Timer::GetTicks() - Ticks; /*0x69b048*/
+              if ( v9 >= 240 ) /*0x69b04e*/
+                return Event::Dispatch(); /*0x69b04e*/
+              v8 = 240 - v9; /*0x69b054*/
+            }
+            if ( v8 <= 0 ) /*0x69b058*/
+              break; /*0x69b058*/
+            Sleep(0x14u); /*0x69b060*/
+            MessageLoop(); /*0x69b062*/
+            Event::Dispatch(); /*0x69b067*/
           }
-          if ( v8 <= 0 ) /*0x69b058*/
-            break; /*0x69b058*/
-          Sleep(0x14u); /*0x69b060*/
-          MessageLoop(); /*0x69b062*/
-          Event::Dispatch(); /*0x69b067*/
-        }
           break; /*0x69b079*/
         default:
           return Event::Dispatch();
@@ -367,6 +375,7 @@ int Multiplayer::ShowProgress(int a2)
     }
   }
   return result; /*0x69b081*/
+
 }
 } // namespace gamemd
 // 0x53F1F0

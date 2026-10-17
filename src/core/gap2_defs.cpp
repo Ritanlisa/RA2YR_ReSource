@@ -37,6 +37,7 @@ namespace gamemd {
 // 0x41DB40
 namespace gamemd { 
 int WTFMode::ResetUnitFlags() {
+
   WTFMode *v1; // eax
   int v3; // ecx
   unsigned int *v4; // esi
@@ -44,9 +45,10 @@ int WTFMode::ResetUnitFlags() {
   unsigned int *v6; // esi
   WTFMode *v7; // edx
   WTFMode **v8; // ecx
+  int v9; // edi
 
-  (*((unsigned char *)&(v1))) = byte_A8E9A0; /*0x41db40*/
-  if ( byte_A8E9A0 ) /*0x41db4d*/
+  LOBYTE(v1) = MEMORY[0xA8E9A0]; /*0x41db40*/
+  if ( MEMORY[0xA8E9A0] ) /*0x41db4d*/
   {
     v3 = this->q05C; /*0x41db53*/
     v1 = (WTFMode *)this->q05C; /*0x41db56*/
@@ -69,16 +71,16 @@ int WTFMode::ResetUnitFlags() {
         while ( v1 ); /*0x41db88*/
       }
     }
-  LABEL_8:
+LABEL_8:
     v4 = (unsigned int *)this->q05C; /*0x41db8a*/
     v5 = 0; /*0x41db8f*/
     if ( v4 ) /*0x41db93*/
     {
       do /*0x41dbc8*/
       {
-        (*(void (__thiscall **)(unsigned int *, int, unsigned int))(*v4 + 488))(v4, 4, 0); /*0x41db9c*/
-        (*(void (__thiscall **)(unsigned int *, unsigned int))(*v4 + 968))(v4, 0); /*0x41dba7*/
-        (*((unsigned char *)&(v1))) = (*(int (__thiscall **)(unsigned int *, unsigned int, int))(*v4 + 1152))(v4, 0, 1); /*0x41dbb4*/
+        (*(void (**)(unsigned int *, int, unsigned int))(*v4 + 488))(v4, 4, 0); /*0x41db9c*/
+        (*(void (**)(unsigned int *, unsigned int))(*v4 + 968))(v4, 0); /*0x41dba7*/
+        LOBYTE(v1) = (*(int (**)(unsigned int *, unsigned int, int))(*v4 + 1152))(v4, 0, 1); /*0x41dbb4*/
         v4 = (unsigned int *)v4[374]; /*0x41dbba*/
         ++v5; /*0x41dbc0*/
       }
@@ -88,28 +90,28 @@ int WTFMode::ResetUnitFlags() {
     this->u8_3D = 0; /*0x41dbcd*/
     if ( v6 ) /*0x41dbd2*/
     {
-      v1 = (WTFMode *)(*(int (__thiscall **)(unsigned int *))(*v6 + 44))(v6); /*0x41dbd8*/
+      v1 = (WTFMode *)(*(int (**)(unsigned int *))(*v6 + 44))(v6); /*0x41dbd8*/
       if ( v1 == 6 && (WTFMode *)v6[165] == this ) /*0x41dbe6*/
       {
-        (*((unsigned char *)&(v1))) = dword_889FC8; /*0x41dbe8*/
+        LOBYTE(v1) = dword_889FC8; /*0x41dbe8*/
         v7 = 0; /*0x41dbed*/
         if ( dword_889FC8 > 0 ) /*0x41dbf1*/
         {
           v8 = (WTFMode **)dword_889FBC; /*0x41dbf3*/
-          dword_889FC8 = dword_889FC8; /*0x41dbf9*/
+          v9 = dword_889FC8; /*0x41dbf9*/
           do /*0x41dc0c*/
           {
             v1 = *v8; /*0x41dbfb*/
             if ( *v8 != this && *(unsigned int **)&v1[80] == v6 ) /*0x41dc04*/
               v7 = *v8; /*0x41dc06*/
             ++v8; /*0x41dc08*/
-            --dword_889FC8; /*0x41dc0b*/
+            --v9; /*0x41dc0b*/
           }
-          while ( dword_889FC8 ); /*0x41dc0c*/
+          while ( v9 ); /*0x41dc0c*/
         }
         v6[165] = v7; /*0x41dc10*/
-        if ( !v7 && byte_A8E9A0 ) /*0x41dc1e*/
-          (*((unsigned char *)&(v1))) = (*(int (__thiscall **)(unsigned int *, int))(*v6 + 292))(v6, 2); /*0x41dc26*/
+        if ( !v7 && MEMORY[0xA8E9A0] ) /*0x41dc1e*/
+          LOBYTE(v1) = (*(int (**)(unsigned int *, int))(*v6 + 292))(v6, 2); /*0x41dc26*/
         if ( (WTFMode *)v6[165] == this ) /*0x41dc32*/
           v6[165] = 0; /*0x41dc34*/
       }
@@ -117,6 +119,7 @@ int WTFMode::ResetUnitFlags() {
     this->q050 = 0; /*0x41dc3b*/
   }
   return (char)v1; /*0x41dc3f*/
+
 }
 }
 // 0x47EC40
@@ -394,6 +397,7 @@ int Stream::WriteBlock(int a1, int a2, int a3) {
 // 0x5F1C60
 namespace gamemd { 
 int Stream::ReadPacket() {
+
   unsigned int v3; // ecx
   int v4; // edi
   char *v5; // eax
@@ -412,12 +416,12 @@ int Stream::ReadPacket() {
   if ( !this->u32_3C ) /*0x5f1c69*/
     return 0; /*0x5f1c79*/
   v3 = WinModemClass::ReadBytes( /*0x5f1c97*/
-         this->u32_58 + this->PacketsReceived,
+         this->u32_58 + this->q050,
          this->u32_54 - this->u32_58)
      + this->u32_58;
   this->u32_58 = v3; /*0x5f1c9c*/
   if ( v3 < 0xB ) /*0x5f1c9f*/
-    return (*(int (__thiscall **)(unsigned int))(**&this->u32_58 + 20))(this->u32_38); /*0x5f1c9f*/
+    return (*(int (**)(unsigned int))(**&this->u32_38 + 20))(this->u32_38); /*0x5f1c9f*/
   v4 = 0; /*0x5f1cb4*/
   if ( (int)(v3 - 2) < 0 ) /*0x5f1cb8*/
     goto LABEL_11; /*0x5f1cb8*/
@@ -429,19 +433,19 @@ int Stream::ReadPacket() {
   }
   if ( v4 == -1 ) /*0x5f1ccf*/
   {
-  LABEL_11:
-    memcpy(*&this->q050, (const void *)(this->PacketsReceived + v4), 1u); /*0x5f1cd1*/
+LABEL_11:
+    memcpy(*&this->q050, (const void *)(this->q050 + v4), 1u); /*0x5f1cd1*/
     v6 = this->u32_38; /*0x5f1ce0*/
     this->u32_58 = 1; /*0x5f1ce3*/
-    return (*(int (__thiscall **)(int))(v6->abstractFlags)(v6); /*0x5f1cef*/
+    return (*(int (**)(int))(*(unsigned int *)v6 + 20))(v6); /*0x5f1cef*/
   }
   else if ( v3 - v4 >= 6 ) /*0x5f1d05*/
   {
     v7 = &v5[v4]; /*0x5f1d36*/
     if ( *(unsigned short *)&v5[v4 + 4] == 0xDEAF ) /*0x5f1d39*/
     {
-      v10 = this->Active; /*0x5f1d6a*/
-      v11 = *((uint16_t *)v7 + 1); /*0x5f1d6d*/
+      v10 = this->Stream_field_08; /*0x5f1d6a*/
+      v11 = *((unsigned __int16 *)v7 + 1); /*0x5f1d6d*/
       if ( v11 <= v10 ) /*0x5f1d75*/
       {
         v16 = v11 + v4 + 10; /*0x5f1dbb*/
@@ -452,38 +456,38 @@ int Stream::ReadPacket() {
             memcpy(v5, &v5[v4], v3 - v4); /*0x5f1dcc*/
             this->u32_58 -= v4; /*0x5f1dd9*/
           }
-          return (*(int (__thiscall **)(unsigned int))(**&this->u32_38 + 20))(this->u32_38); /*0x5f1cb0*/
+          return (*(int (**)(unsigned int))(**&this->u32_38 + 20))(this->u32_38); /*0x5f1cb0*/
         }
         if ( Audio_Read(v7 + 6, v11) == *(unsigned int *)&v5[v11 + 6 + v4] ) /*0x5f1e06*/
         {
-          if ( !(*(int (__thiscall **)(unsigned int, int, int))(**&this->Stream_field_0C + 12))( /*0x5f1e58*/
+          if ( !(*(int (**)(unsigned int, int, int))(**&this->u32_38 + 12))( /*0x5f1e58*/
                   this->u32_38,
-                  this->PacketsReceived + v4 + 6,
+                  this->q050 + v4 + 6,
                   v11) )
             ++this->u32_6C; /*0x5f1e5f*/
-          memcpy(*&this->u32_58, (const void *)(this->PacketsReceived + v16), this->u32_58 - v16); /*0x5f1e74*/
+          memcpy(*&this->q050, (const void *)(this->q050 + v16), this->u32_58 - v16); /*0x5f1e74*/
           this->u32_58 -= v16; /*0x5f1e81*/
-          return (*(int (__thiscall **)(unsigned int))(**&this->u32_14 + 20))(this->u32_38); /*0x5f1e8b*/
+          return (*(int (**)(unsigned int))(**&this->u32_38 + 20))(this->u32_38); /*0x5f1e8b*/
         }
         else
         {
           ++this->u32_70; /*0x5f1e11*/
           Debug::Log(aSerialPacketFa); /*0x5f1e14*/
           v14 = v4 + 2; /*0x5f1e1f*/
-          memcpy(*&this->u32_58, (const void *)(this->PacketsReceived + v14), this->u32_58 - v14); /*0x5f1e2a*/
+          memcpy(*&this->q050, (const void *)(this->q050 + v14), this->u32_58 - v14); /*0x5f1e2a*/
           v15 = this->u32_38; /*0x5f1e32*/
           this->u32_58 -= v14; /*0x5f1e3a*/
-          return (*(int (__thiscall **)(int))(v15->abstractFlags)(v15); /*0x5f1e3f*/
+          return (*(int (**)(int))(*(unsigned int *)v15 + 20))(v15); /*0x5f1e3f*/
         }
       }
       else
       {
         Debug::Log("Serial packet length too long by %d bytes\n", v11 - v10); /*0x5f1d7f*/
         v12 = v4 + 2; /*0x5f1d8a*/
-        memcpy(*&this->u32_58, (const void *)(this->PacketsReceived + v12), this->u32_58 - v12); /*0x5f1d95*/
+        memcpy(*&this->q050, (const void *)(this->q050 + v12), this->u32_58 - v12); /*0x5f1d95*/
         v13 = this->u32_38; /*0x5f1d9d*/
         this->u32_58 -= v12; /*0x5f1da5*/
-        return (*(int (__thiscall **)(int))(v13->abstractFlags)(v13); /*0x5f1daa*/
+        return (*(int (**)(int))(*(unsigned int *)v13 + 20))(v13); /*0x5f1daa*/
       }
     }
     else
@@ -492,15 +496,16 @@ int Stream::ReadPacket() {
       memcpy(v5, &v5[v8], v3 - v8); /*0x5f1d46*/
       v9 = this->u32_38; /*0x5f1d4e*/
       this->u32_58 -= v8; /*0x5f1d56*/
-      return (*(int (__thiscall **)(int))(v9->abstractFlags)(v9); /*0x5f1d5b*/
+      return (*(int (**)(int))(*(unsigned int *)v9 + 20))(v9); /*0x5f1d5b*/
     }
   }
   else
   {
     memcpy(v5, &v5[v4], v3 - v4); /*0x5f1d0d*/
     this->u32_58 -= v4; /*0x5f1d1a*/
-    return (*(int (__thiscall **)(unsigned int))(**&this->u32_14 + 20))(this->u32_38); /*0x5f1d24*/
+    return (*(int (**)(unsigned int))(**&this->u32_38 + 20))(this->u32_38); /*0x5f1d24*/
   }
+
 }
 // 0x5AF080
 namespace gamemd { 

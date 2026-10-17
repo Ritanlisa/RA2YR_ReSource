@@ -78,6 +78,7 @@ int Lobby::InvalidatePlayerSlots(HWND hDlg)
 namespace gamemd {
 void Lobby::UpdatePlayerLabels()
 {
+
   int v1; // esi
   int v2; // eax
   int PlayerCountMap; // esi
@@ -115,10 +116,10 @@ void Lobby::UpdatePlayerLabels()
   bool v35; // [esp+3h] [ebp-11h]
   ObjectClass *v36; // [esp+4h] [ebp-10h]
   int v37; // [esp+8h] [ebp-Ch]
-  int64_t v38; // [esp+Ch] [ebp-8h] BYREF
+  __int64 v38; // [esp+Ch] [ebp-8h] BYREF
 
-  (*(((unsigned int *)&(v38)) + 1)) = (unsigned int)(this); /*0x5eb063*/
-  if ( dword_A8B23C && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vfptr + 16))(dword_A8B23C) /*0x5eb07a*/
+  HIDWORD(v38) = this; /*0x5eb063*/
+  if ( dword_A8B23C && !(*((unsigned __int8 (**)(ObjectClass *))dword_A8B23C->vfptr + 16))(dword_A8B23C) /*0x5eb07a*/
     || (v33 = 1, Network::IsMultiplayerActive()) )
   {
     v33 = 0; /*0x5eb088*/
@@ -157,26 +158,26 @@ void Lobby::UpdatePlayerLabels()
     goto LABEL_23; /*0x5eb118*/
   }
   if ( v2 < 6 ) /*0x5eb111*/
-    LABEL_23:
-  ++v2; /*0x5eb11a*/
-  LABEL_24:
+LABEL_23:
+    ++v2; /*0x5eb11a*/
+LABEL_24:
   if ( v1 < v2 ) /*0x5eb11d*/
-    LABEL_25:
-  v37 = v1 + 1; /*0x5eb11f*/
-  LABEL_26:
+LABEL_25:
+    v37 = v1 + 1; /*0x5eb11f*/
+LABEL_26:
   v36 = 0; /*0x5eb124*/
   do
   {
     v34 = 0; /*0x5eb13d*/
     if ( v36 == g_MPCooperativeState ) /*0x5eb142*/
     {
-      if ( *(unsigned int *)&g_GameRulesOptions == -1 ) /*0x5eb151*/
+      if ( *(unsigned int *)&stru_A8B250.__pad_0[4] == -1 ) /*0x5eb151*/
       {
         PlayerCountMap = 8; /*0x5eb153*/
       }
       else
       {
-        PlayerCountMap = ReadPlayerCountMap(*(int *)&g_GameRulesOptions); /*0x5eb165*/
+        PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb165*/
         if ( dword_A8B23C ) /*0x5eb169*/
         {
           v4 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 38))(dword_A8B23C); /*0x5eb16d*/
@@ -197,7 +198,7 @@ void Lobby::UpdatePlayerLabels()
       }
       if ( (int)v36 > PlayerCountMap ) /*0x5eb1a5*/
       {
-        v5 = dword_A8DA90[(unsigned int)v36]; /*0x5eb1a7*/
+        v5 = MEMORY[0xA8DA90][(unsigned int)v36]; /*0x5eb1a7*/
         if ( v5 != g_HouseClass_ObserverFlags /*0x5eb1d2*/
           && (!v5 || v5 != g_Lobby_PlayerTeam && v5 != g_Lobby_PlayerSide && v5 != g_Lobby_PlayerColor) )
         {
@@ -242,11 +243,11 @@ void Lobby::UpdatePlayerLabels()
     {
       v6 = 1041; /*0x5eb1f7*/
     }
-    v7 = (HWND)(*(((unsigned int *)&(v38)) + 1)); /*0x5eb259*/
-    DlgItem = GetDlgItem((HWND)(*(((unsigned int *)&(v38)) + 1)), v6); /*0x5eb265*/
+    v7 = (HWND)HIDWORD(v38); /*0x5eb259*/
+    DlgItem = GetDlgItem((HWND)HIDWORD(v38), v6); /*0x5eb265*/
     v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
-    v9 = (wchar_t *)dword_A8DA90[(unsigned int)v36]; /*0x5eb291*/
+    v9 = (wchar_t *)MEMORY[0xA8DA90][(unsigned int)v36]; /*0x5eb291*/
     v10 = v9; /*0x5eb29a*/
     if ( v9 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x5eb29c*/
     {
@@ -279,7 +280,7 @@ void Lobby::UpdatePlayerLabels()
       StringCSF = GetStringCSF(g_Str_GUI_OpenObserver, 0, g_Str_File_netshare_cpp, 5448); /*0x5eb357*/
     }
     v10 = StringCSF; /*0x5eb35c*/
-    LABEL_79:
+LABEL_79:
     if ( v9 /*0x5eb380*/
       && (v9 == (wchar_t *)g_Lobby_PlayerTeam
        || v9 == (wchar_t *)g_Lobby_PlayerSide
@@ -288,7 +289,7 @@ void Lobby::UpdatePlayerLabels()
     {
       v10 = GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5455); /*0x5eb398*/
     }
-    ((WideString *)((wchar_t **)&v38))->Assign(v10); /*0x5eb39f*/
+    WideString::Assign((wchar_t **)&v38, v10); /*0x5eb39f*/
     v12 = CharToWideString(unk_A8B380); /*0x5eb3a9*/
     if ( !wcscmp((const wchar_t *)v12, (const wchar_t *)&g_CurrentPlayerName) ) /*0x5eb3b4*/
     {
@@ -313,13 +314,13 @@ void Lobby::UpdatePlayerLabels()
         {
           if ( !v34 || v36 != g_MPCooperativeState ) /*0x5eb44d*/
             goto LABEL_111; /*0x5eb44d*/
-          if ( *(unsigned int *)&g_GameRulesOptions == -1 ) /*0x5eb458*/
+          if ( *(unsigned int *)&stru_A8B250.__pad_0[4] == -1 ) /*0x5eb458*/
           {
             v17 = 8; /*0x5eb45a*/
           }
           else
           {
-            v17 = ReadPlayerCountMap(*(int *)&g_GameRulesOptions); /*0x5eb46c*/
+            v17 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb46c*/
             if ( dword_A8B23C ) /*0x5eb470*/
             {
               v18 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 38))(dword_A8B23C); /*0x5eb474*/
@@ -340,7 +341,7 @@ void Lobby::UpdatePlayerLabels()
           }
           if ( (int)v36 < v17 ) /*0x5eb4ac*/
           {
-            LABEL_111:
+LABEL_111:
             v19 = GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare_cpp, 5479); /*0x5eb4bf*/
             v20 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v19); /*0x5eb4cd*/
             SendMessageA(DlgItem, 0x151u, v20, g_HouseClass_ObserverFlags); /*0x5eb4dd*/
@@ -375,14 +376,15 @@ void Lobby::UpdatePlayerLabels()
       SendMessageA(DlgItem, 0x151u, v31, (LPARAM)v9); /*0x5eb609*/
       v16 = v36; /*0x5eb60b*/
     }
-    v32 = ((wchar_t **)&v38)->GetOrEmpty_Alt(); /*0x5eb613*/
+    v32 = WideString::GetOrEmpty_Alt((wchar_t **)&v38); /*0x5eb613*/
     SendMessageA(DlgItem, 0x4C0u, 0xFFFFFFFF, (LPARAM)v32); /*0x5eb621*/
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
-    ((DeleteAndZero *)&v38)->Alt(); /*0x5eb638*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v38); /*0x5eb638*/
     v36 = (ObjectClass *)v16->vtable1 + 1); /*0x5eb641*/
   }
   while ( (int)&v16->vfptr + 1 < 8 );
+
 }
 } // namespace gamemd
 // 0x5EBA00
@@ -515,39 +517,42 @@ int Lobby::SetupPlayerWidgets(HWND hDlg)
 namespace gamemd {
 int Lobby::BuildPlayerList()
 {
+
+  wchar_t **v1; // esi
+  wchar_t *v2; // edi
+  char **v3; // eax
+  const char **PlayerTypeString; // eax
+  char *v5; // eax
   ObjectClass v7; // [esp+8h] [ebp-110h] BYREF
 
-  strcpy((char *)&v7.uniqueId,(const char *)(asc_84A480)); /*0x77dbb5*/
-  wchar_t **v1; // esi
-  v1 = (wchar_t **)dword_A8DA90; /*0x77dbbe*/
+  strcpy((char *)&v7.uniqueId, asc_84A480); /*0x77dbb5*/
+  v1 = (wchar_t **)MEMORY[0xA8DA90]; /*0x77dbbe*/
   do /*0x77dc6e*/
   {
-    wchar_t *v2 = *v1; // edi /*0x77dbc3*/
+    v2 = *v1; /*0x77dbc3*/
     unknown_libname_73(&v7); /*0x77dbc9*/
-    if ( (uint8_t)IsKnownPointer((ObjectClass *)v2) ) /*0x77dbd0*/
+    if ( (unsigned __int8)IsKnownPointer((ObjectClass *)v2) ) /*0x77dbd0*/
     {
-      ((WideString *)((wchar_t **)&v7.vfptr1))->Assign(v2); /*0x77dbde*/
-      char **v3; // eax
+      WideString::Assign((wchar_t **)&v7.vfptr1, v2); /*0x77dbde*/
       v3 = ToWideStringCharAlt((char **)&v7.vfptr2, (const wchar_t **)&v7.vfptr1); /*0x77dbeb*/
-      ((String *)((String *)&v7))->Reassign((const char **)v3); /*0x77dbf5*/
+      String::Reassign((String *)&v7, (const char **)v3); /*0x77dbf5*/
       DeleteAndZero((ObjectClass *)&v7.vfptr2); /*0x77dbfe*/
-      ((DeleteAndZero *)&v7.vfptr1)->Alt(); /*0x77dc07*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v7.vfptr1); /*0x77dc07*/
     }
     else
     {
-      const char **PlayerTypeString; // eax
       PlayerTypeString = (const char **)GetPlayerTypeString((String *)&v7.vfptr3, v2); /*0x77dc14*/
-      ((String *)((String *)&v7))->Reassign(PlayerTypeString); /*0x77dc1e*/
+      String::Reassign((String *)&v7, PlayerTypeString); /*0x77dc1e*/
       DeleteAndZero((ObjectClass *)&v7.vfptr3); /*0x77dc27*/
     }
-    char *v5; // eax
-    v5 = ((String *)((String *)&v7))->GetOrEmpty(); /*0x77dc35*/
+    v5 = String::GetOrEmpty((String *)&v7); /*0x77dc35*/
     strncat((char *)&v7.uniqueId, v5, 0x100u); /*0x77dc40*/
-    strncat((char *)&v7.uniqueId, Str, 0x100u); /*0x77dc54*/
+    strncat((char *)&v7.uniqueId, Delimiter, 0x100u); /*0x77dc54*/
     DeleteAndZero(&v7); /*0x77dc60*/
     ++v1; /*0x77dc65*/
   }
-  while ( (int)v1 < (int)&dword_A8DAB0 ); /*0x77dc6e*/
-  return (*(int (__stdcall **)(LPVOID, int *))(*(unsigned int *)ppv + 60))(ppv, &v7.uniqueId); /*0x77dc84*/
+  while ( (int)v1 < (int)&MEMORY[0xA8DAB0] ); /*0x77dc6e*/
+  return (*(int (**)(LPVOID, int *))(*(unsigned int *)ppv + 60))(ppv, &v7.uniqueId); /*0x77dc84*/
+
 }
 } // namespace gamemd

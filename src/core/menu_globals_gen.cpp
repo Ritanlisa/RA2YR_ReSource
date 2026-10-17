@@ -1538,6 +1538,7 @@ REVERSE(0x684370, "IDA decompilation", "None")
 // 0x684370
 int WaitForMultiplayerLoadSync(void)
 {
+
   int v1; // ebx
   int v2; // esi
   int v3; // eax
@@ -1546,8 +1547,8 @@ int WaitForMultiplayerLoadSync(void)
   int i; // esi
   char *v11; // edi
   int v12; // edi
-  int64_t v13; // [esp+10h] [ebp-40h]
-  int64_t v14; // [esp+18h] [ebp-38h]
+  __int64 v13; // [esp+10h] [ebp-40h]
+  __int64 v14; // [esp+18h] [ebp-38h]
   int v15; // [esp+20h] [ebp-30h]
   int v16; // [esp+28h] [ebp-28h]
   int Ticks; // [esp+2Ch] [ebp-24h]
@@ -1555,10 +1556,10 @@ int WaitForMultiplayerLoadSync(void)
 
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x68438d*/
     return 1; /*0x68460b*/
-  TimerGetTicks(); /*0x684397*/
-  Ticks = TimerGetTicks(); /*0x6843b5*/
+  Timer::GetTicks(); /*0x684397*/
+  Ticks = Timer::GetTicks(); /*0x6843b5*/
   v18 = 300; /*0x6843b9*/
-  v15 = TimerGetTicks(); /*0x6843cb*/
+  v15 = Timer::GetTicks(); /*0x6843cb*/
   v16 = 3600; /*0x6843d3*/
   Progress::GetAverage((Progress *)&g_UIManager); /*0x6843e0*/
   __asm { fstp [esp+50h+var_40] } /*0x6843e5*/
@@ -1577,7 +1578,7 @@ int WaitForMultiplayerLoadSync(void)
     v2 = v16; /*0x684422*/
     if ( v15 != -1 ) /*0x68442b*/
     {
-      v3 = TimerGetTicks() - v15; /*0x684436*/
+      v3 = Timer::GetTicks() - v15; /*0x684436*/
       if ( v3 >= v16 ) /*0x68443c*/
         break; /*0x68443c*/
       v2 = v16 - v3; /*0x684442*/
@@ -1594,7 +1595,7 @@ int WaitForMultiplayerLoadSync(void)
     if ( (_AX & 0x100) == 0 )
     {
       __asm { fstp st } /*0x6845ed*/
-      Multiplayer::ShowProgress((int)((Multiplayer *)&dword_A8B238), (((unsigned char *)&(((unsigned int *)(dword_A8B230))[375].vfptr))[1]) != 0 ? 200 : 100);
+      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].vfptr) != 0 ? 200 : 100);
       return 1; /*0x684605*/
     }
     __asm /*0x68446b*/
@@ -1604,27 +1605,27 @@ int WaitForMultiplayerLoadSync(void)
     }
     if ( (_AX & 0x4000) == 0 ) /*0x684474*/
     {
-      v15 = TimerGetTicks(); /*0x684490*/
+      v15 = Timer::GetTicks(); /*0x684490*/
       v16 = 7200; /*0x684498*/
       v13 = v14; /*0x6844a4*/
     }
     v6 = v18; /*0x6844b0*/
     if ( Ticks != -1 ) /*0x6844b6*/
     {
-      v7 = TimerGetTicks() - Ticks; /*0x6844c1*/
+      v7 = Timer::GetTicks() - Ticks; /*0x6844c1*/
       if ( v7 >= v18 ) /*0x6844c7*/
         goto LABEL_18; /*0x6844c7*/
       v6 = v18 - v7; /*0x6844c9*/
     }
     if ( v6 <= 0 )
     {
-  LABEL_18:
-      Ticks = TimerGetTicks(); /*0x6844d3*/
+LABEL_18:
+      Ticks = Timer::GetTicks(); /*0x6844d3*/
       v18 = 60; /*0x6844f1*/
-      Multiplayer::ShowProgress((int)((Multiplayer *)&dword_A8B238), (((unsigned char *)&(((unsigned int *)(dword_A8B230))[375].vfptr))[1]) != 0 ? 200 : 100);
+      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].vfptr) != 0 ? 200 : 100);
     }
   }
-  for ( i = 1; i < dword_A8DA84; ++i ) /*0x68453f*/
+  for ( i = 1; i < MEMORY[0xA8DA84]; ++i ) /*0x68453f*/
   {
     Progress::GetWeighted((int)&g_UIManager, v1); /*0x68454b*/
     __asm /*0x684550*/
@@ -1634,23 +1635,24 @@ int WaitForMultiplayerLoadSync(void)
     }
     if ( (_AX & 0x100) != 0 ) /*0x68455b*/
     {
-      v11 = (char *)((unsigned int *)(dword_A8DA78))[i]; /*0x684562*/
-      ToWideStringChar((IUnknown *)(v11)); /*0x684567*/
-      ToWideStringChar((IUnknown *)(v11)); /*0x684570*/
+      v11 = (char *)MEMORY[0xA8DA78][i]; /*0x684562*/
+      ToWideStringChar(v11); /*0x684567*/
+      ToWideStringChar(v11); /*0x684570*/
       Debug::Log(); /*0x68457c*/
-      v12 = *(unsigned int *)((&dword_A8DA78)[i] + 111); /*0x684591*/
-      HandleNetworkPlayerDisconnect((wchar_t *)(v12), 1); /*0x684596*/
-      if ( SessionClass::IsValidHouse((void*)(&dword_A8B238), *((void **)stru_A80220.vfptr3 + v12)) ) /*0x6845aa*/
+      v12 = *(unsigned int *)(MEMORY[0xA8DA78][i] + 111); /*0x684591*/
+      HandleNetworkPlayerDisconnect(v12, 1); /*0x684596*/
+      if ( SessionClass::IsValidHouse((int)&dword_A8B238, *((#375 **)stru_A80220.vfptr3 + v12)) ) /*0x6845aa*/
       {
         dword_A8E2AC = -1; /*0x6845bf*/
-        memset((void *)(word_A8E258), 0, 0x28u); /*0x6845c9*/
-        ((unsigned int *)(word_A8E258))[20] = 0; /*0x6845cb*/
+        memset(word_A8E258, 0, 0x28u); /*0x6845c9*/
+        word_A8E258[20] = 0; /*0x6845cb*/
       }
       --i; /*0x6845cd*/
     }
     ++v1; /*0x6845d3*/
   }
   return 0; /*0x68452e*/
+
 }
 
 // Multiplayer::FindStartPositions @ 0x688380 (813B)

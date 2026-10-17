@@ -122,17 +122,18 @@ int sub_5E2FA0()
 namespace gamemd {
 int sub_5E95E0()
 {
+
   ObjectClass *v1; // edx
   LPARAM *v2; // ecx
   LPARAM v3; // eax
-  uint8_t v5; // [esp+0h] [ebp-Ch]
+  unsigned __int8 v5; // [esp+0h] [ebp-Ch]
   int v6; // [esp+4h] [ebp-8h]
 
-  v6 = (int)((LPARAM *)(dword_A8B548));
+  v6 = dword_A8B548; /*0x5e95f0*/
   if ( dword_A8B548 >= dword_A8BB0C ) /*0x5e95f4*/
     v6 = dword_A8BB0C; /*0x5e95f6*/
   v1 = 0; /*0x5e9618*/
-  v2 = (LPARAM *)(dword_A8DA90); /*0x5e961a*/
+  v2 = MEMORY[0xA8DA90]; /*0x5e961a*/
   while ( 1 ) /*0x5e961f*/
   {
     v3 = *v2; /*0x5e961f*/
@@ -141,27 +142,28 @@ int sub_5E95E0()
       if ( v3 != g_HouseClass_ObserverFlags /*0x5e9645*/
         && v3 != g_Lobby_PlayerCount
         && v3 != g_Lobby_MaxPlayers
-        && (wchar_t *)v3 != (wchar_t *)(g_Lobby_PlayerReady)
-        && v1 == (gamemd::ObjectClass *)(g_MPCooperativeState)
-        && v3->u32_6B == -1 )
+        && (wchar_t *)v3 != g_Lobby_PlayerReady
+        && v1 == g_MPCooperativeState
+        && *(unsigned int *)(v3 + 107) == -1 )
       {
         break; /*0x5e9645*/
       }
     }
     ++v2; /*0x5e9647*/
-    v1 = &v1->AbstractClass_1; /*0x5e964a*/
-    if ( (int)v2 >= (int)&dword_A8DAB0 ) /*0x5e9651*/
+    v1 = (ObjectClass *)((char *)v1 + 1); /*0x5e964a*/
+    if ( (int)v2 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e9651*/
     {
       v5 = 0; /*0x5e9653*/
       goto LABEL_13; /*0x5e9653*/
     }
   }
   v5 = 1; /*0x5e968d*/
-  LABEL_13:
-  if ( dword_A8DA84 - v5 <= v6 ) /*0x5e9671*/
+LABEL_13:
+  if ( MEMORY[0xA8DA84] - v5 <= v6 ) /*0x5e9671*/
     return 0; /*0x5e9694*/
   Debug::Log(); /*0x5e967f*/
   return 1; /*0x5e9689*/
+
 }
 }
 // 0x796960

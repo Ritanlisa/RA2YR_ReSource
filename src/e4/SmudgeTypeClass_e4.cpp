@@ -110,29 +110,29 @@ namespace gamemd {  // G42.18c ns repair
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
 
-
   int v7; // ebx
-  v7 = (*((int (**)(SmudgeTypeClass *))this->ObjectTypeClass + 39))(this); /*0x6b55ff*/
+  int v8; // edx
+  int Width; // ecx
+  unsigned int *v10; // esi
+  int v11; // eax
+  int v12; // [esp-1Ch] [ebp-2Ch]
+  int v13; // [esp+8h] [ebp-8h] BYREF
+  int v14; // [esp+Ch] [ebp-4h]
+
+  v7 = (*((int (**)(SmudgeTypeClass *))this->vfptr + 39))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
-    int v8; // edx
     v8 = a2[1]; /*0x6b5614*/
-    int v13; // [esp+8h] [ebp-8h] BYREF
     v13 = *a2; /*0x6b5619*/
-    int v14; // [esp+Ch] [ebp-4h]
     v14 = v8; /*0x6b561d*/
     if ( a4 ) /*0x6b5621*/
     {
-      int Width; // ecx
       Width = this->Width; /*0x6b5623*/
       v14 += -15 * (a4 / Width + a4 % Width); /*0x6b5659*/
       v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
     }
-    unsigned int *v10; // esi
-    v10 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a6)); /*0x6b5674*/
-    int v12; // [esp-1Ch] [ebp-2Ch]
+    v10 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a6); /*0x6b5674*/
     v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
-    int v11; // eax
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10->ptr_34, v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }

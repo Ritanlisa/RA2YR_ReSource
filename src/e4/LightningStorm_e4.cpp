@@ -174,23 +174,47 @@ namespace gamemd {
 int LightningStorm::Strike2(int a1, int a2, int a3)
 {
 
-
   unsigned int *v3; // esi
-  v3 = Coord::To_Cell(&dword_87F7E8, &a1); /*0x53a31a*/
   int *Coords; // eax
+  int v5; // ecx
+  int v6; // edx
+  void *v7; // edi
+  void **v8; // eax
+  void **v9; // edi
+  int v10; // eax
+  void **v11; // eax
+  RulesClass *v12; // eax
+  unsigned int v13; // eax
+  int Climb; // ebp
+  void *WarheadVersusMultiplier; // ebx
+  void **v16; // edi
+  void *v17; // eax
+  unsigned int *v18; // ebx
+  int ClosestObjectCell; // eax
+  int v20; // edi
+  void **v21; // edi
+  void **v22; // esi
+  int v23; // eax
+  char v25; // [esp+12h] [ebp-2Eh]
+  char v26; // [esp+13h] [ebp-2Dh]
+  int v27; // [esp+14h] [ebp-2Ch]
+  int v28; // [esp+18h] [ebp-28h]
   int v29; // [esp+1Ch] [ebp-24h] BYREF
-  Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
-  int v5 = Coords->vtable2; // ecx /*0x53a328*/
-  int v6 = Coords->vtable3; // edx /*0x53a32b*/
+  int v30; // [esp+20h] [ebp-20h]
+  int v31; // [esp+28h] [ebp-18h] BYREF
+  int v32; // [esp+2Ch] [ebp-14h]
+  void **v33; // [esp+30h] [ebp-10h]
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
+
+  v3 = Coord::To_Cell(&dword_87F7E8, &a1); /*0x53a31a*/
+  Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
+  v5 = Coords[1]; /*0x53a328*/
+  v6 = Coords[2]; /*0x53a32b*/
   v34[0] = *Coords; /*0x53a32e*/
   v34[1] = v5; /*0x53a337*/
   v34[2] = v6; /*0x53a33b*/
-  void *v7; // edi
-  v7 = *(void **)(dword_8871E0->q730 + 4 * ((unsigned int)Random::State(&dword_A8B230[14].NeedsSaveOrLink) % dword_8871E0->q730)); /*0x53a363*/
-  void **v8; // eax
+  v7 = *(void **)(dword_8871E0->AbstractClass_2DC + 4 * ((unsigned int)Random::State((unsigned int *)dword_A8B230 + 134) % dword_8871E0->AbstractClass_2DC)); /*0x53a363*/
   v8 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a366*/
-  void **v9; // edi
   if ( v8 ) /*0x53a370*/
     v9 = AnimClass::ctor(v8, v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
   else
@@ -203,55 +227,38 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
          dword_A9FA2C + dword_A9FA20,
          0) )
   {
-    int v10; // eax
     v10 = dword_A9FA28++; /*0x53a3d5*/
     *((unsigned int *)dword_A9FA1C + v10) = v9; /*0x53a3e4*/
   }
-  int v27; // [esp+14h] [ebp-2Ch]
   v27 = v3->objectTypeFlags; /*0x53a40f*/
-  int v28; // [esp+18h] [ebp-28h]
   v28 = *((char *)v3 + 283); /*0x53a413*/
-  void **v11; // eax
   v11 = (void **)(v28 * dword_A9FA90 + ((v3->currentRank & 0x100) != 0 ? dword_A9FA84 : 0));
-  int v31; // [esp+28h] [ebp-18h] BYREF
   v31 = ((__int16)v27 << 8) + 128; /*0x53a43d*/
-  int v32; // [esp+2Ch] [ebp-14h]
   v32 = (SHIWORD(v27) << 8) + 128; /*0x53a441*/
-  void **v33; // [esp+30h] [ebp-10h]
   v33 = v11; /*0x53a445*/
   if ( v31 != dword_A9FA30 || __PAIR64__((unsigned int)v11, (SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
   {
-    RulesClass *v12 = dword_8871E0; // eax /*0x53a45f*/
-    if ( dword_8871E0->q730 > 0 ) /*0x53a46c*/
+    v12 = dword_8871E0; /*0x53a45f*/
+    if ( dword_8871E0->q744 > 0 ) /*0x53a46c*/
     {
-      unsigned int v13; // eax
-      v13 = Random::State(&dword_A8B230[14].NeedsSaveOrLink); /*0x53a47a*/
-      StartAudioControllerAt(*(unsigned int *)(dword_8871E0->q730 + 4 * (v13 % dword_8871E0->q730)), (int)&v31, 0); /*0x53a49e*/
+      v13 = Random::State((unsigned int *)dword_A8B230 + 134); /*0x53a47a*/
+      StartAudioControllerAt(*(unsigned int *)(dword_8871E0 + 4 * (v13 % dword_8871E0)), (int)&v31, 0); /*0x53a49e*/
       v12 = dword_8871E0; /*0x53a4a3*/
     }
-    int Climb; // ebp
     Climb = v12[1].?; /*0x53a4ae*/
-    void *WarheadVersusMultiplier; // ebx
     WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(Climb, HIDWORD(v12[1].?), v3[59], &v31); /*0x53a4c7*/
-    void **v16; // edi
     v16 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a4d3*/
     if ( v16 ) /*0x53a4da*/
     {
-      void *v17; // eax
       v17 = (void *)Return::HRESULT_Fail(v31, v32, (int)v33); /*0x53a4f7*/
       AnimClass::ctor(v16, WarheadVersusMultiplier, &v31, 0, 1, (void *)0x2600, v17, 0); /*0x53a50e*/
     }
-    char v25; // [esp+12h] [ebp-2Eh]
     v25 = 0; /*0x53a515*/
-    unsigned int *v18; // ebx
     v18 = Cell::IsBridge(v3); /*0x53a51f*/
     v29 = 0; /*0x53a524*/
-    int v30; // [esp+20h] [ebp-20h]
     v30 = 0; /*0x53a528*/
-    int ClosestObjectCell; // eax
     ClosestObjectCell = Object::FindClosestObjectCell(v3, &v29, 0, 0); /*0x53a538*/
-    int v20 = ClosestObjectCell; // edi /*0x53a53d*/
-    char v26; // [esp+13h] [ebp-2Dh]
+    v20 = ClosestObjectCell; /*0x53a53d*/
     if ( !ClosestObjectCell /*0x53a552*/
       || (v26 = 1, (*(int (**)(int))(*(unsigned int *)ClosestObjectCell + 44))(ClosestObjectCell) != 15) )
     {
@@ -287,18 +294,17 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     {
       if ( (unsigned char)v11 ) /*0x53a61b*/
       {
-        v11 = (void **)Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 2, 4); /*0x53a62c*/
+        v11 = (void **)Random::Range((unsigned int *)dword_A8B230 + 134, 2, 4); /*0x53a62c*/
         if ( (int)v11 > 0 ) /*0x53a633*/
         {
-          void **v21 = v11; // edi /*0x53a635*/
+          v21 = v11; /*0x53a635*/
           do /*0x53a691*/
           {
             v11 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a63c*/
-            void **v22 = v11; // esi /*0x53a641*/
+            v22 = v11; /*0x53a641*/
             if ( v11 ) /*0x53a648*/
             {
-              int v23; // eax
-              v23 = Random::Range(&dword_A8B230[14].NeedsSaveOrLink, 0, dword_8871E0->ExecutePlanSound - 1); /*0x53a665*/
+              v23 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, dword_8871E0->ExecutePlanSound - 1); /*0x53a665*/
               LOBYTE(v11) = (unsigned __int8)AnimClass::ctor( /*0x53a68b*/
                                                v22,
                                                *(void **)(dword_8871E0->DefaultChronoSound + 4 * v23),

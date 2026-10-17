@@ -147,26 +147,28 @@ namespace gamemd {
 int Vector::RemoveAt(int aP1, void *a2)
 {
 
-
   char *Vector_field_0x10; // edx
-  Vector_field_0x10 = (char *)this->__pad_010; /*0x45ae10*/
-  int result = aP1; // eax /*0x45ae13*/
-  if ( aP1 >= (int)Vector_field_0x10 ) /*0x45ae19*/
+  int result; // eax
+  char *v4; // edx
+
+  Vector_field_0x10 = (char *)this->Vector_field_0x10; /*0x45ae10*/
+  result = a2; /*0x45ae13*/
+  if ( a2 >= (int)Vector_field_0x10 ) /*0x45ae19*/
   {
     LOBYTE(result) = 0; /*0x45ae3c*/
   }
   else
   {
-    char *v4 = Vector_field_0x10 - 1; // edx /*0x45ae1b*/
-    this->__pad_010 = (unsigned char)(v4); /*0x45ae1e*/
-    if ( aP1 < (int)v4 ) /*0x45ae21*/
+    v4 = Vector_field_0x10 - 1; /*0x45ae1b*/
+    this->Vector_field_0x10 = v4; /*0x45ae1e*/
+    if ( a2 < (int)v4 ) /*0x45ae21*/
     {
       do /*0x45ae34*/
       {
         ++result; /*0x45ae27*/
-        *((unsigned int *)this->q004 + result - 1) = *((unsigned int *)this->q004 + result); /*0x45ae2b*/
+        *((unsigned int *)this->Vector_field_0x4 + result - 1) = *((unsigned int *)this->Vector_field_0x4 + result); /*0x45ae2b*/
       }
-      while ( result < (int)this->__pad_010 ); /*0x45ae34*/
+      while ( result < (int)this->Vector_field_0x10 ); /*0x45ae34*/
     }
     LOBYTE(result) = 1; /*0x45ae37*/
   }
@@ -180,27 +182,30 @@ namespace gamemd {
 void Vector::ReallocDynamic(int a2, void *a2_1)
 {
 
-  if ( a2 < 0 ) /*0x4d2e4c*/
-    return 0; /*0x4d2e4c*/
   char *v3; // edi
-  v3 = (char *)operator new(8 * (a2 + v3->vtable3)); /*0x4d2e60*/
-  if ( !v3 ) /*0x4d2e67*/
-    return 0; /*0x4d2ec0*/
   int i; // ecx
   int v5; // eax
   unsigned int *v6; // edx
-  for ( i = 0; i < v3->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
+  int v7; // eax
+
+  if ( a2 < 0 ) /*0x4d2e4c*/
+    return 0; /*0x4d2e4c*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable3)); /*0x4d2e60*/
+  if ( !v3 ) /*0x4d2e67*/
+    return 0; /*0x4d2ec0*/
+  for ( i = 0; i < this->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
   {
     v5 = 8 * i; /*0x4d2e79*/
-    v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x4d2e82*/
+    v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x4d2e82*/
     *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
   }
-  operator delete((*(void **)v3)); /*0x4d2e9b*/
-  int v7 = a2 + v3->vtable3; // eax /*0x4d2ea6*/
-  *(unsigned int *)v3 = (unsigned int)(v3); /*0x4d2ea8*/
-  v3->vtable3 = v7; /*0x4d2eaa*/
-  v3->uniqueId = 0; /*0x4d2ead*/
+  __3_YAXPAX_Z(*(void **)this); /*0x4d2e9b*/
+  v7 = a2 + this->vtable3; /*0x4d2ea6*/
+  *(unsigned int *)this = v3; /*0x4d2ea8*/
+  this->vtable3 = v7; /*0x4d2eaa*/
+  this->uniqueId = 0; /*0x4d2ead*/
   return 1; /*0x4d2eb4*/
+
 }
 } // namespace gamemd
 
@@ -237,30 +242,31 @@ namespace gamemd {
 char Vector::Grow()
 {
 
-
   int v2; // eax
-  v2 = *(unsigned int *)this->Cl_ph; /*0x7aeec4*/
-  if ( *(unsigned int *)this->Cl_ph < (int)this->q004 ) /*0x7aeecb*/
-    return 0; /*0x7aeecd*/
-  int v4 = 2 * v2; // esi /*0x7aeed4*/
+  int v4; // esi
+  void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
+
+  v2 = *(unsigned int *)this->Cl_ph; /*0x7aeec4*/
+  if ( *(unsigned int *)this->Cl_ph < (int)this->Vector_field_0x4 ) /*0x7aeecb*/
+    return 0; /*0x7aeecd*/
+  v4 = 2 * v2; /*0x7aeed4*/
   v6 = 2 * v2; /*0x7aeedb*/
   if ( 2 * v2 < 10 ) /*0x7aeedf*/
   {
     v6 = 10; /*0x7aeee1*/
     v4 = 10; /*0x7aeee9*/
   }
-  void *v5; // ebp
-  v5 = __2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
+  v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
-  if ( this->m_8 ) /*0x7aef13*/
+  if ( this->Vector_field_0x8 ) /*0x7aef13*/
   {
-    memcpy(v5, this->m_8, 4 * *(unsigned int *)this->Cl_ph); /*0x7aef28*/
+    qmemcpy(v5, this->Vector_field_0x8, 4 * *(unsigned int *)this->Cl_ph); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
-  __3_YAXPAX_Z(this->m_8); /*0x7aef39*/
-  this->q004 = (int)((void *)v4); /*0x7aef41*/
-  this->m_8 = (unsigned int)(v5); /*0x7aef44*/
+  __3_YAXPAX_Z(this->Vector_field_0x8); /*0x7aef39*/
+  this->Vector_field_0x4 = (void *)v4; /*0x7aef41*/
+  this->Vector_field_0x8 = v5; /*0x7aef44*/
   return 1; /*0x7aeecf*/
 
 }

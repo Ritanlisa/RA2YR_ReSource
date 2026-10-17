@@ -15,84 +15,95 @@ namespace gamemd {  // G42.18 ns repair
 int Coord::ToGridIndex(int aP1, int aP2, int aP3)
 {
 
-  (*(void (**)(int, int))(*(unsigned int *)aP1 + 760))(aP1, aP3); /*0x4138d4*/
   int v4; // esi
+  int v5; // edi
+  int v6; // ebx
+  int v7; // ecx
+  int v8; // eax
+  int v9; // ebx
+  int v10; // eax
+  int v11; // edi
+  int v12; // eax
+  int v13; // esi
+  int v14; // eax
+  int result; // eax
+  int v16; // edi
+  char *v17; // esi
+  int v18; // eax
+  int v19; // ecx
+  int v20; // ecx
+  char *v21; // esi
+  int v22; // ecx
+  unsigned int *v23; // edx
+
+  (*(void (**)(unsigned int, int))(*(unsigned int *)aP1 + 760))(aP1, aP3); /*0x4138d4*/
   if ( (aP2 & 0x8000u) == 0 ) /*0x4138e1*/
-    v4 = (int16_t)aP2; /*0x4138e7*/
+    v4 = (__int16)aP2; /*0x4138e7*/
   else
     v4 = 0; /*0x4138e3*/
-  int v5; // edi
   if ( aP2 >= 0 ) /*0x4138f2*/
-    v5 = (*((signed short *)(((unsigned char *)&(aP2)) + 2))); /*0x4138f8*/
+    v5 = SHIWORD(aP2); /*0x4138f8*/
   else
     v5 = 0; /*0x4138f4*/
-  int v6 = 19; // ebx /*0x41390d*/
-  if ( v4 / (*(unsigned int *)&g_AircraftTrackerPool / 20) <= 19 ) /*0x413921*/
-    v6 = v4 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413923*/
-  int v7; // ecx
-  v7 = *(unsigned int *)&g_AircraftTrackerState / 20; /*0x41393e*/
-  int v8; // eax
-  v8 = v5 / (*(unsigned int *)&g_AircraftTrackerState / 20); /*0x413941*/
+  v6 = 19; /*0x41390d*/
+  if ( v4 / (dword_87F914 / 20) <= 19 ) /*0x413921*/
+    v6 = v4 / (dword_87F914 / 20); /*0x413923*/
+  v7 = dword_87F918 / 20; /*0x41393e*/
+  v8 = v5 / (dword_87F918 / 20); /*0x413941*/
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
-  int v9 = v6 + 20 * v8; // ebx /*0x413957*/
-  int v10; // eax
+  v9 = v6 + 20 * v8; /*0x413957*/
   if ( (aP3 & 0x8000u) == 0 ) /*0x41395a*/
-    v10 = (int16_t)aP3; /*0x413960*/
+    v10 = (__int16)aP3; /*0x413960*/
   else
     v10 = 0; /*0x41395c*/
-  int v11; // edi
   if ( aP3 >= 0 ) /*0x41396b*/
-    v11 = (*((signed short *)(((unsigned char *)&(aP3)) + 2))); /*0x413971*/
+    v11 = SHIWORD(aP3); /*0x413971*/
   else
     v11 = 0; /*0x41396d*/
-  int v12; // eax
-  v12 = v10 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413975*/
-  int v13 = 19; // esi /*0x413977*/
+  v12 = v10 / (dword_87F914 / 20); /*0x413975*/
+  v13 = 19; /*0x413977*/
   if ( v12 <= 19 ) /*0x41397f*/
     v13 = v12; /*0x413981*/
-  int v14 = v11 / v7; // eax /*0x413986*/
+  v14 = v11 / v7; /*0x413986*/
   if ( v11 / v7 > 19 ) /*0x41398b*/
     v14 = 19; /*0x41398d*/
-  int result = 5 * v14; // eax /*0x413992*/
-  int v16 = v13 + 4 * result; // edi /*0x413995*/
+  result = 5 * v14; /*0x413992*/
+  v16 = v13 + 4 * result; /*0x413995*/
   if ( v9 != v16 ) /*0x41399a*/
   {
-    char *v17 = &this->q018 * v9; // esi /*0x4139ae*/
-    int v18; // eax
-    v18 = (*(int (**)(char *, int *))(*(unsigned int *)v17 + 16))(v17, &aP1); /*0x4139b4*/
+    v17 = (unsigned char *)this + 24 * v9; /*0x4139ae*/
+    v18 = (*(int (**)(char *, unsigned int *))(*(unsigned int *)v17 + 16))(v17, &aP1); /*0x4139b4*/
     if ( v18 != -1 ) /*0x4139ba*/
     {
-      int v19; // ecx
       v19 = *((unsigned int *)v17 + 4); /*0x4139bc*/
       if ( v18 < v19 ) /*0x4139c1*/
       {
-        int v20 = v19 - 1; // ecx /*0x4139c3*/
+        v20 = v19 - 1; /*0x4139c3*/
         for ( *((unsigned int *)v17 + 4) = v20; /*0x4139c9*/
-        v18 < *((unsigned int *)v17 + 4);
-        *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18 - 4) = *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18) )
+              v18 < *((unsigned int *)v17 + 4);
+              *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18 - 4) = *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18) )
         {
           ++v18; /*0x4139ce*/
         }
       }
     }
-    char *v21 = &this->q018 * v16; // esi /*0x4139e4*/
+    v21 = (unsigned char *)this + 24 * v16; /*0x4139e4*/
     result = *((unsigned int *)v21 + 2); /*0x4139e7*/
-    int v22; // ecx
     if ( *((unsigned int *)v21 + 4) < result /*0x413a0f*/
       || (v21[13] || !result)
       && (v22 = *((unsigned int *)v21 + 5), v22 > 0)
-      && (result = (*(int (**)(char *, int, unsigned int))(*(unsigned int *)v21 + 8))(&this->q018 * v16, result + v22, 0),
+      && (result = (*(int (**)(char *, int, unsigned int))(*(unsigned int *)v21 + 8))((unsigned char *)this + 24 * v16, result + v22, 0),
           (unsigned char)result) )
     {
       result = *((unsigned int *)v21 + 4); /*0x413a11*/
-      int v23; // edx
-      v23 = *((unsigned int *)v21 + 1); /*0x413a14*/
+      v23 = (unsigned int *)*((unsigned int *)v21 + 1); /*0x413a14*/
       *((unsigned int *)v21 + 4) = result + 1; /*0x413a1a*/
-      *(unsigned int *)(v23 + 4 * result) = aP1; /*0x413a21*/
+      v23[result] = aP1; /*0x413a21*/
     }
   }
   return result; /*0x413a24*/
+
 }
 }  // G42.18 ns repair
 // 0x413A30
@@ -148,19 +159,24 @@ unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
 {
 
   int v2; // ecx
-  v2 = v2; /*0x4399a2*/
-  int v4; // eax
-  (*((unsigned short *)&(v4))) = Math::RoundToInt(v2->nextArrayIndex); /*0x4399a8*/
-  v4 = v4; /*0x4399b0*/
-  int v6; // eax
-  (*((unsigned short *)&(v6))) = Math::RoundToInt(v2->referenceCount); /*0x4399b2*/
-  v6 = v6; /*0x4399ba*/
-  int v8; // eax
-  (*((unsigned short *)&(v8))) = Math::RoundToInt(v2->needsSave); /*0x4399bc*/
-  *outCoords = v4; /*0x4399c7*/
-  outCoords->vtable2 = v6; /*0x4399cb*/
-  outCoords->vtable3 = v8; /*0x4399cf*/
-  return (int)outCoords; /*0x4399c9*/
+  int v3; // esi
+  unsigned __int16 *v4; // eax
+  unsigned __int16 *v5; // edi
+  unsigned __int16 *v6; // eax
+  unsigned __int16 *v7; // ebx
+  unsigned __int16 *v8; // eax
+
+  v3 = v2; /*0x4399a2*/
+  LOWORD(v4) = Math::RoundToInt(*(float *)(v2 + 24)); /*0x4399a8*/
+  v5 = v4; /*0x4399b0*/
+  LOWORD(v6) = Math::RoundToInt(v3->referenceCount); /*0x4399b2*/
+  v7 = v6; /*0x4399ba*/
+  LOWORD(v8) = Math::RoundToInt(v3->needsSave); /*0x4399bc*/
+  *this = (int)v5; /*0x4399c7*/
+  this->q004 = (int)v7; /*0x4399cb*/
+  this->q008 = (int)v8; /*0x4399cf*/
+  return (int)this; /*0x4399c9*/
+
 }
 }
 // 0x43A0D0

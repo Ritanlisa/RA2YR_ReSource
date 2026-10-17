@@ -34,42 +34,42 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
 {
 
+  int ExitCellByName; // eax
+  int v4; // edx
+  int Index; // eax
+  int v7; // edx
+  int v8; // eax
+  char *v9; // [esp-10h] [ebp-54h]
   TypeClass v10; // [esp+4h] [ebp-40h] BYREF
 
-  char *v9; // [esp-10h] [ebp-54h]
   v9 = Buffer; /*0x4c4f09*/
-  *(unsigned int *)this->vtable1 = 0; /*0x4c4f0a*/
-  this->vtable2 = 0; /*0x4c4f10*/
+  *(unsigned int *)this->__pad_0 = 0; /*0x4c4f0a*/
+  this->TaskForceClass_field_0x4 = 0; /*0x4c4f10*/
   sscanf(v9, "%d,%s", &Buffer, &v10); /*0x4c4f17*/
-  *(unsigned int *)this->vtable1 = (unsigned int)(Buffer); /*0x4c4f27*/
-  int ExitCellByName; // eax
-  ExitCellByName = ((Factory *)&v10)->FindExitCellByName(); /*0x4c4f29*/
+  *(unsigned int *)this->__pad_0 = Buffer; /*0x4c4f27*/
+  ExitCellByName = Factory::FindExitCellByName((Factory *)&v10); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
-    int Index; // eax
-    Index = ((BuildingTypeClass *)&v10)->FindIndex(); /*0x4c4f4c*/
+    Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)&v10); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      int v8; // eax
-      v8 = (int)((&v10)->FindByName()); /*0x4c4f6f*/
+      v8 = TypeClass::FindByName(&v10); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
-        this->vtable2 = (void *)(*((unsigned int *)dword_A8B21C + v8)); /*0x4c4f82*/
-      return (unsigned int *)(this->vtable1); /*0x4c4f85*/
+        this->TaskForceClass_field_0x4 = *((unsigned int *)dword_A8B21C + v8); /*0x4c4f82*/
+      return this->__pad_0; /*0x4c4f85*/
     }
     else
     {
-      int v7; // edx
-      v7 = *((unsigned int *)dword_A83CE4 + Index); /*0x4c4f5c*/
-      this->vtable2 = (void *)(v7); /*0x4c4f61*/
-      return (unsigned int *)(this->vtable1); /*0x4c4f5f*/
+      v7 = *((unsigned int *)MEMORY[0xA83CE4] + Index); /*0x4c4f5c*/
+      this->TaskForceClass_field_0x4 = v7; /*0x4c4f61*/
+      return this->__pad_0; /*0x4c4f5f*/
     }
   }
   else
   {
-    int v4; // edx
     v4 = *((unsigned int *)dword_A8E34C + ExitCellByName); /*0x4c4f39*/
-    this->vtable2 = (void *)(v4); /*0x4c4f3e*/
-    return (unsigned int *)(this->vtable1); /*0x4c4f3c*/
+    this->TaskForceClass_field_0x4 = v4; /*0x4c4f3e*/
+    return this->__pad_0; /*0x4c4f3c*/
   }
 
 }

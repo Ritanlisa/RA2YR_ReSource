@@ -79,14 +79,14 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
   v3 = a3; /*0x6a6af3*/
   if ( a3 == -1 ) /*0x6a6afe*/
     v3 = this->M21404; /*0x6a6b00*/
-  v4 = &this->u8_F94 * v3 + 5444; /*0x6a6b19*/
+  v4 = (char *)this + 3988 * v3 + 5444; /*0x6a6b19*/
   v5 = 26; /*0x6a6b20*/
-  v14 = (unsigned int *)(v4); /*0x6a6b25*/
+  v14 = v4; /*0x6a6b25*/
   NeedsSaveOrLink = dword_A8B230[374].NeedsSaveOrLink; /*0x6a6b29*/
   if ( NeedsSaveOrLink ) /*0x6a6b31*/
     v5 = 18; /*0x6a6b33*/
   v12 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6b77*/
-  if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a6b7b*/
+  if ( MEMORY[0xA83D4C] == (Object *)HouseClass_Observer ) /*0x6a6b7b*/
     v12 = 1; /*0x6a6b7d*/
   if ( !aP1 ) /*0x6a6b8b*/
   {
@@ -94,7 +94,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     if ( NeedsSaveOrLink ) /*0x6a6bae*/
       v9 = 18; /*0x6a6bb0*/
     v10 = g_DSurface_ViewBounds - g_SidebarBounds - v9; /*0x6a6bb5*/
-    if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a6bd0*/
+    if ( MEMORY[0xA83D4C] == (Object *)HouseClass_Observer ) /*0x6a6bd0*/
     {
       v7 = v14; /*0x6a6bdd*/
       if ( v14[17] + (v10 + g_DSurface_SidebarBounds - 7) / 50 / 2 >= dword_884CF8 ) /*0x6a6be8*/
@@ -113,9 +113,9 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
   if ( v14[17] ) /*0x6a6b91*/
   {
     v8 = v14[18] - v12; /*0x6a6ba3*/
-    LABEL_18:
+LABEL_18:
     v7[18] = v8; /*0x6a6c09*/
-    (*((void (**)(ObjectClass *, unsigned int))this->AbstractClass + 14))(this, 0); /*0x6a6c14*/
+    (*((void (**)(ObjectClass *, unsigned int))this->vfptr + 14))(this, 0); /*0x6a6c14*/
     return 1; /*0x6a6c20*/
   }
   return 0; /*0x6a6c1d*/
@@ -246,29 +246,34 @@ namespace gamemd {
 BombClass * * E4Recv_6A93F0::sub_6A93F0()
 {
 
+  int v2; // eax
+  int v3; // esi
+  int v4; // ecx
+  unsigned int v5; // eax
+  int v6; // ebp
 
-  LOBYTE(this->M28) = 1; /*0x6a93f8*/
-  int v2 = 26; // eax /*0x6a9408*/
+  LOBYTE(this->referenceCount) = 1; /*0x6a93f8*/
+  v2 = 26; /*0x6a9408*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/
-  int v3 = 0; // esi /*0x6a942f*/
-  int v4 = g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7; // ecx /*0x6a9431*/
-  unsigned int v5; // eax
+  v3 = 0; /*0x6a942f*/
+  v4 = g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7; /*0x6a9431*/
   v5 = (unsigned int)((unsigned __int64)(1374389535LL * v4) >> 32) >> 31; /*0x6a943c*/
-  int v6; // ebp
   v6 = 2 * (v4 / 50); /*0x6a9443*/
   if ( v6 > 0 ) /*0x6a9447*/
   {
     do /*0x6a9494*/
     {
-      ((LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720))->Reset(); /*0x6a9465*/
-      LOBYTE(v5) = ((int)(/*0x6a948c*/ (GScreenClass *)&DataGlobal_87F7E8))->InsertOrdered(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
+      Hash::Reset((LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720)); /*0x6a9465*/
+      LOBYTE(v5) = Hash::InsertOrdered( /*0x6a948c*/
+                     (GScreenClass *)&DataGlobal_87F7E8,
+                     56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
       ++v3; /*0x6a9491*/
     }
     while ( v3 < v6 ); /*0x6a9494*/
   }
   g_CameoRenderFlag = 1; /*0x6a9498*/
-  return (gamemd::BombClass **)(v5); /*0x6a9496*/
+  return v5; /*0x6a9496*/
 
 }
 }
@@ -376,11 +381,12 @@ int SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
 namespace gamemd {
 void HideSkirmishSpawnLocations(HWND hDlg, int a2)
 {
+
   int v3; // esi
   int v4; // esi
   LRESULT v5; // ebp
   WPARAM v6; // ebx
-  char *v7; // esi
+  ObjectClass *v7; // esi
   int nIDDlgItem; // [esp+10h] [ebp-18h]
   int nIDDlgItema; // [esp+10h] [ebp-18h]
   HWND nIDDlgItemb; // [esp+10h] [ebp-18h]
@@ -439,14 +445,14 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
         }
         SendDlgItemMessageA(hDlg, v4, 0x14Eu, v6, 0); /*0x6ae13c*/
       }
-      LABEL_22:
-      SetupSkirmishSpawnLocationEntry((gamemd::SessionClass *)(hDlg), v4); /*0x6ae146*/
+LABEL_22:
+      SetupSkirmishSpawnLocationEntry(hDlg, v4); /*0x6ae146*/
       if ( ++nIDDlgItem + 1 >= 8 ) /*0x6ae158*/
         break; /*0x6ae158*/
     }
     if ( a2 < 8 )
     {
-      v7 = (char *)(a2 - 1); /*0x6ae177*/
+      v7 = (ObjectClass *)(a2 - 1); /*0x6ae177*/
       do
       {
         if ( v7 )
@@ -480,11 +486,12 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
         {
           nIDDlgItema = 1291; /*0x6ae17e*/
         }
-        hWnda = (HWND)GetResourceIDHardcodedCSF(++v7); /*0x6ae1f4*/
-        ResourceID2CSF = (HWND)GetResourceID2CSF((int)(v7)); /*0x6ae1ff*/
-        ResourceIDCSF = (HWND)GetResourceIDCSF((int)(v7)); /*0x6ae20a*/
-        ResourceID3CSF = (HWND)GetResourceID3CSF((int)(v7)); /*0x6ae215*/
-        ResourceID4CSF = (HWND)GetResourceID4CSF((int)(v7)); /*0x6ae21e*/
+        v7 = (ObjectClass *)((char *)v7 + 1); /*0x6ae1ea*/
+        hWnda = (HWND)GetResourceIDHardcodedCSF(v7); /*0x6ae1f4*/
+        ResourceID2CSF = (HWND)GetResourceID2CSF(v7); /*0x6ae1ff*/
+        ResourceIDCSF = (HWND)GetResourceIDCSF(v7); /*0x6ae20a*/
+        ResourceID3CSF = (HWND)GetResourceID3CSF(v7); /*0x6ae215*/
+        ResourceID4CSF = (HWND)GetResourceID4CSF(v7); /*0x6ae21e*/
         nIDDlgItemb = GetDlgItem(hDlg, nIDDlgItema); /*0x6ae22e*/
         hWndb = GetDlgItem(hDlg, (int)hWnda); /*0x6ae23a*/
         DlgItem = GetDlgItem(hDlg, (int)ResourceID2CSF); /*0x6ae242*/
@@ -498,9 +505,10 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
         ShowWindow(v19, 0); /*0x6ae295*/
         ShowWindow(v21, 0); /*0x6ae29e*/
       }
-      while ( (int)(v7 + 1) < 8 );
+      while ( (int)&v7->vfptr + 1 < 8 );
     }
   }
+
 }
 }
 // 0x6AE2C0
@@ -508,54 +516,56 @@ namespace gamemd {
 bool ShowSkirmishSetupScreen(void * a1, void * a2)
 {
 
+  int v2; // ebx
   ObjectClass *v3; // esi
-  ObjectClass *v10; // [esp+0h] [ebp-8h]
-  v10 = v3; /*0x6ae2cc*/
-  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
-  dwNewLong = -1; /*0x6ae2ce*/
-  (*(RulesClass **)&g_RulesClass_Instance)->LoadCountries(); /*0x6ae2d6*/
-  RulesClass::ReadDataList(*(RulesClass **)&g_RulesClass_Instance); /*0x6ae2e8*/
   int i; // esi
-  for ( i = 0; i < dword_A83CA8; ++i ) /*0x6ae2f6*/
-    (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
-      *((unsigned int *)dword_A83C9C + i),
-      *(unsigned int *)&DataGlobal_887048);
-  LoadingScreen::Init(); /*0x6ae317*/
   HWND Dialog; // esi
+  LONG j; // eax
+  TechnoTypeClass *v7; // ecx
+  Skirmish *v8; // esi
+  ObjectClass *v10; // [esp+0h] [ebp-8h]
+  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
+
+  v10 = v3; /*0x6ae2cc*/
+  dwNewLong = -1; /*0x6ae2ce*/
+  RulesClass::LoadCountries(dword_8871E0); /*0x6ae2d6*/
+  RulesClass::ReadDataList(dword_8871E0); /*0x6ae2e8*/
+  for ( i = 0; i < dword_A83CA8; ++i ) /*0x6ae2f6*/
+    (*(void (**)(unsigned int, unsigned __int8 ***))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
+      *((unsigned int *)dword_A83C9C + i),
+      dword_887048);
+  LoadingScreen::Init(); /*0x6ae317*/
   Dialog = (HWND)CreateDialog(0x102u, Skirmish::Setup_DlgProc, 0); /*0x6ae32d*/
   if ( Dialog ) /*0x6ae331*/
   {
-    dword_B0B59C = (unsigned int)(Dialog);
+    dword_B0B59C = Dialog; /*0x6ae337*/
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6ae341*/
-    ((Dialog *)((Dialog *)Dialog))->Show(); /*0x6ae349*/
-    LONG j; // eax
+    Dialog::Show((Dialog *)Dialog); /*0x6ae349*/
     for ( j = dwNewLong; dwNewLong != 1559; j = dwNewLong ) /*0x6ae357*/
     {
       if ( j == 1472 ) /*0x6ae35e*/
         break; /*0x6ae35e*/
-      if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x6ae367*/
+      if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x6ae367*/
         break; /*0x6ae367*/
-      TechnoTypeClass *v7; // ecx
-      (*((unsigned char *)&(v7))) = 0; /*0x6ae369*/
+      LOBYTE(v7) = 0; /*0x6ae369*/
       ScreenSaver::Process(v7, v10); /*0x6ae36b*/
     }
-    ((Dialog *)((Dialog *)Dialog))->Destroy(); /*0x6ae37d*/
+    Dialog::Destroy((Dialog *)Dialog); /*0x6ae37d*/
     dword_B0B59C = 0; /*0x6ae382*/
   }
-  Skirmish *v8; // esi
-  v8 = (gamemd::Skirmish *)(g_UIControlState);
+  v8 = g_UIControlState; /*0x6ae38c*/
   if ( g_UIControlState ) /*0x6ae394*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x6ae398*/
-    operator delete((v8)); /*0x6ae39e*/
+    __3_YAXPAX_Z(v8); /*0x6ae39e*/
     g_UIControlState = 0; /*0x6ae3a6*/
   }
   CleanupFileTree(v10); /*0x6ae3b0*/
-  SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x6ae3ba*/
-  int v2; // ebx
+  SaveConfigWOL((TechnoClass *)&dword_A8B238); /*0x6ae3ba*/
   if ( dwNewLong == 1472 ) /*0x6ae3c9*/
-    Screen::Capture(1, 0, v2,(int)(a2)); /*0x6ae3cf*/
+    Screen::Capture(1, 0, v2, a2); /*0x6ae3cf*/
   return dwNewLong == 1559; /*0x6ae3e0*/
+
 }
 }
 // 0x6AFD60
@@ -605,224 +615,224 @@ int TechnoClass::ProcessDeployAction()
       occupant = (unsigned int *)this->occupant; /*0x6afd7a*/
       if ( occupant ) /*0x6afd7f*/
       {
-      v3 = (*(int (**)(int))(*occupant + 44))(this->occupant); /*0x6afd89*/
-      if ( v3 == 6 ) /*0x6afd8f*/
-      {
-        v5 = occupant[43]; /*0x6afd95*/
-        if ( v5 != 19 && v5 != 18 ) /*0x6afda7*/
+        v3 = (*(int (**)(int))(*occupant + 44))(this->occupant); /*0x6afd89*/
+        if ( v3 == 6 ) /*0x6afd8f*/
         {
-          this->customSound_controller[3] = 5; /*0x6afdad*/
-          this->customSound_controller[4] = 0x7FFFFFFF; /*0x6afdb4*/
+          v5 = occupant[43]; /*0x6afd95*/
+          if ( v5 != 19 && v5 != 18 ) /*0x6afda7*/
+          {
+            this->customSound_controller[3] = 5; /*0x6afdad*/
+            this->customSound_controller[4] = 0x7FFFFFFF; /*0x6afdb4*/
+          }
         }
       }
-    }
       break; /*0x6afdc0*/
     case 1:
       v6 = (unsigned int *)this->occupant; /*0x6afdc1*/
       if ( v6 && (*(int (**)(int))(*v6 + 44))(this->occupant) == 1 && (v3 = v6[361]) != 0 ) /*0x6afddc*/
       {
-      this->customSound_controller[3] = 2; /*0x6afdde*/
-      this->customSound_controller[4] = 0x7FFFFFFF; /*0x6afde5*/
-    }
+        this->customSound_controller[3] = 2; /*0x6afdde*/
+        this->customSound_controller[4] = 0x7FFFFFFF; /*0x6afde5*/
+      }
       else
       {
-      v3 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6afe1c*/
+        v3 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6afe1c*/
                           this->occupant,
                           &v31,
-                          *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6024) / 256,
+                          dword_8871E0->ExtraInfantryLight / 256,
                           1);
-      v30 = v3; /*0x6afe25*/
-      *(unsigned int *)v29 = v3; /*0x6afe29*/
-      if ( v3 == dword_B0B5B8 /*0x6afe57*/
-          || (v3 = *BuildingClass::FindPlacementCells2((unsigned int *)((BuildingClass *)this), &v32, v3),
+        v30 = v3; /*0x6afe25*/
+        *(unsigned int *)v29 = v3; /*0x6afe29*/
+        if ( v3 == dword_B0B5B8 /*0x6afe57*/
+          || (v3 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v32, v3),
               *(unsigned int *)v29 = v3,
               v3 == dword_B0B5B8) )
-      {
-        this->customSound_controller[3] = 0; /*0x6afe67*/
-        this->customSound_controller[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6afe74*/
+        {
+          this->customSound_controller[3] = 0; /*0x6afe67*/
+          this->customSound_controller[4] = *(unsigned int *)&stru_A8E960.random[528]; /*0x6afe74*/
+        }
+        else
+        {
+          v7 = *(unsigned int *)this->occupant; /*0x6afe87*/
+          v8 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v29); /*0x6afe8e*/
+          (*(void (**)(int, void *, int))(v7 + 1152))(this->occupant, v8, 1); /*0x6afe97*/
+          LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))(this->occupant, 2, 0); /*0x6afea6*/
+          this->customSound_controller[3] = 2; /*0x6afeac*/
+          this->customSound_controller[4] = 0x7FFFFFFF; /*0x6afeb3*/
+        }
       }
-      else
-      {
-        v7 = *(unsigned int *)this->occupant; /*0x6afe87*/
-        v8 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v29); /*0x6afe8e*/
-        (*(void (**)(int, void *, int))(v7 + 1152))(this->occupant, v8, 1); /*0x6afe97*/
-        LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))(this->occupant, 2, 0); /*0x6afea6*/
-        this->customSound_controller[3] = 2; /*0x6afeac*/
-        this->customSound_controller[4] = 0x7FFFFFFF; /*0x6afeb3*/
-      }
-    }
       break; /*0x6afdf1*/
     case 2:
       v9 = (unsigned int *)this->occupant; /*0x6afec0*/
       if ( v9 && (v3 = (*(int (**)(int))(*v9 + 44))(this->occupant), v3 == 1) ) /*0x6afed1*/
       {
-      v3 = v9[361]; /*0x6afee9*/
-      if ( !v3 ) /*0x6afef1*/
-      {
-        LOBYTE(v3) = TechnoClass::Deploy(v28, v1); /*0x6afef9*/
-        if ( (unsigned char)v3 ) /*0x6aff00*/
+        v3 = v9[361]; /*0x6afee9*/
+        if ( !v3 ) /*0x6afef1*/
         {
-          this->customSound_controller[3] = 4; /*0x6aff02*/
-          this->customSound_controller[4] = 0x7FFFFFFF; /*0x6aff09*/
-        }
-        else
-        {
-          v10 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6aff16*/
-          this->customSound_controller[3] = 3; /*0x6aff23*/
-          this->customSound_controller[0] = v10; /*0x6aff2a*/
-          v3 = v36; /*0x6aff2c*/
-          this->customSound_controller[4] = 0x7FFFFFFF; /*0x6aff30*/
-          this->customSound_controller[1] = v3; /*0x6aff38*/
-          this->customSound_controller[2] = 30; /*0x6aff3c*/
+          LOBYTE(v3) = TechnoClass::Deploy(v28, v1); /*0x6afef9*/
+          if ( (unsigned char)v3 ) /*0x6aff00*/
+          {
+            this->customSound_controller[3] = 4; /*0x6aff02*/
+            this->customSound_controller[4] = 0x7FFFFFFF; /*0x6aff09*/
+          }
+          else
+          {
+            v10 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6aff16*/
+            this->customSound_controller[3] = 3; /*0x6aff23*/
+            this->customSound_controller[0] = v10; /*0x6aff2a*/
+            v3 = v36; /*0x6aff2c*/
+            this->customSound_controller[4] = 0x7FFFFFFF; /*0x6aff30*/
+            this->customSound_controller[1] = v3; /*0x6aff38*/
+            this->customSound_controller[2] = 30; /*0x6aff3c*/
+          }
         }
       }
-    }
       else
       {
-      this->customSound_controller[3] = 0; /*0x6afed3*/
-      this->customSound_controller[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6afee0*/
-    }
+        this->customSound_controller[3] = 0; /*0x6afed3*/
+        this->customSound_controller[4] = *(unsigned int *)&stru_A8E960.random[528]; /*0x6afee0*/
+      }
       break; /*0x6afee8*/
     case 3:
       v11 = this->occupant; /*0x6aff43*/
       if ( v11 && (*(int (**)(int))(*(unsigned int *)v11 + 44))(this->occupant) == 1 ) /*0x6aff54*/
       {
-      LOBYTE(v3) = TechnoClass::Deploy(v28, v1); /*0x6aff6d*/
-      if ( !(unsigned char)v3 ) /*0x6aff74*/
-        goto LABEL_51; /*0x6aff74*/
-      this->customSound_controller[3] = 4; /*0x6aff7a*/
-      this->customSound_controller[4] = 0x7FFFFFFF; /*0x6aff81*/
-    }
+        LOBYTE(v3) = TechnoClass::Deploy(v28, v1); /*0x6aff6d*/
+        if ( !(unsigned char)v3 ) /*0x6aff74*/
+          goto LABEL_51; /*0x6aff74*/
+        this->customSound_controller[3] = 4; /*0x6aff7a*/
+        this->customSound_controller[4] = 0x7FFFFFFF; /*0x6aff81*/
+      }
       else
       {
-      this->customSound_controller[3] = 0; /*0x6aff56*/
-      LOBYTE(v3) = DataGlobal_A8EB00[644]; /*0x6aff5d*/
-      this->customSound_controller[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6aff62*/
-    }
+        this->customSound_controller[3] = 0; /*0x6aff56*/
+        LOBYTE(v3) = stru_A8E960.random[528]; /*0x6aff5d*/
+        this->customSound_controller[4] = *(unsigned int *)&stru_A8E960.random[528]; /*0x6aff62*/
+      }
       break; /*0x6aff6a*/
     case 4:
       v3 = (*(int (**)(int))(*(unsigned int *)this->occupant + 44))(this->occupant); /*0x6aff93*/
       if ( v3 == 6
         && ((v12 = this->occupant) != 0
-        ? (v3 = (*(int (**)(int))(*(unsigned int *)v12 + 44))(this->occupant) == 6 ? v12 : 0)
-      : (v3 = 0),
+          ? (v3 = (*(int (**)(int))(*(unsigned int *)v12 + 44))(this->occupant) == 6 ? v12 : 0)
+          : (v3 = 0),
             v3->q534) )
       {
-      this->customSound_controller[3] = 5; /*0x6affc2*/
-      this->customSound_controller[4] = 0x7FFFFFFF; /*0x6affc9*/
-    }
+        this->customSound_controller[3] = 5; /*0x6affc2*/
+        this->customSound_controller[4] = 0x7FFFFFFF; /*0x6affc9*/
+      }
       else
       {
-      v13 = this->occupant; /*0x6affd6*/
-      if ( v13 )
-      {
-        v3 = (*(int (**)(int))(*(unsigned int *)v13 + 44))(v13); /*0x6affe3*/
-        if ( v3 == 1 )
+        v13 = this->occupant; /*0x6affd6*/
+        if ( v13 )
         {
-          v14 = this->occupant; /*0x6affef*/
-          v3 = v14 ? ((*(int (**)(int))(*(unsigned int *)v14 + 44))(this->occupant) == 1 ? v14 : 0) : 0;
-          if ( !*&v3->u8_68C && *(unsigned int *)(this->occupant + 172) == 5 ) /*0x6b0022*/
+          v3 = (*(int (**)(int))(*(unsigned int *)v13 + 44))(v13); /*0x6affe3*/
+          if ( v3 == 1 )
           {
-            this->customSound_controller[3] = 2; /*0x6b0028*/
-            this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b002f*/
+            v14 = this->occupant; /*0x6affef*/
+            v3 = v14 ? ((*(int (**)(int))(*(unsigned int *)v14 + 44))(this->occupant) == 1 ? v14 : 0) : 0;
+            if ( !*(unsigned char *)(v3 + 1676) && *(unsigned int *)(this->occupant + 172) == 5 ) /*0x6b0022*/
+            {
+              this->customSound_controller[3] = 2; /*0x6b0028*/
+              this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b002f*/
+            }
           }
         }
       }
-    }
       break; /*0x6affd5*/
     case 5:
       v15 = this->occupant; /*0x6b003c*/
       if ( v15 && (*(int (**)(int))(*(unsigned int *)v15 + 44))(v15) == 1 ) /*0x6b004b*/
       {
-      this->customSound_controller[3] = 0; /*0x6b004d*/
-      LOBYTE(v3) = DataGlobal_A8EB00[644]; /*0x6b0054*/
-      this->customSound_controller[4] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b0059*/
-    }
+        this->customSound_controller[3] = 0; /*0x6b004d*/
+        LOBYTE(v3) = stru_A8E960.random[528]; /*0x6b0054*/
+        this->customSound_controller[4] = *(unsigned int *)&stru_A8E960.random[528]; /*0x6b0059*/
+      }
       else
       {
-      v3 = *(unsigned int *)(*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)this->occupant + 824))( /*0x6b008d*/
+        v3 = *(unsigned int *)(*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)this->occupant + 824))( /*0x6b008d*/
                           this->occupant,
                           &v31,
-                          *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6016) / 256,
+                          dword_8871E0->WeedCapacity / 256,
                           0);
-      v30 = v3; /*0x6b0096*/
-      if ( v3 == dword_B0B5B8 ) /*0x6b009a*/
-      {
-        *(unsigned int *)v29 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6b00e7*/
+        v30 = v3; /*0x6b0096*/
+        if ( v3 == dword_B0B5B8 ) /*0x6b009a*/
+        {
+          *(unsigned int *)v29 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6b00e7*/
                                         this->occupant,
                                         &v31,
-                                        *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6024) / 256,
+                                        dword_8871E0->ExtraInfantryLight / 256,
                                         1);
-        v30 = *BuildingClass::FindPlacementCells2((unsigned int *)((BuildingClass *)this), &v33, *(int *)v29); /*0x6b0100*/
-        v16 = (unsigned int *)(((CellStruct *)&v30)->Sub(&v34, v29)); /*0x6b0104*/
-        v17 = v16->u32_4; /*0x6b0109*/
-        v18 = *(__int16 *)v16; /*0x6b010d*/
-        v31 = v17; /*0x6b0110*/
-        __asm { fild [esp+38h+var_20] } /*0x6b0117*/
-        v31 = v18; /*0x6b011b*/
-        __asm /*0x6b011f*/
-        {
-          fild [esp+38h+var_20]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
-          faddp st(1), st
-          fstp [esp+38h+var_38]; double
-          fstp st
-          fstp st
-        }
-        Math::Sqrt(v26); /*0x6b0134*/
-        v19 = Math::RoundToInt(v1); /*0x6b0144*/
-        v20 = (CellStruct *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->occupant + 440))( /*0x6b014d*/
+          v30 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v33, *(int *)v29); /*0x6b0100*/
+          v16 = CellStruct::Sub((CellStruct *)&v30, &v34, v29); /*0x6b0104*/
+          v17 = *((__int16 *)v16 + 1); /*0x6b0109*/
+          v18 = *(__int16 *)v16; /*0x6b010d*/
+          v31 = v17; /*0x6b0110*/
+          __asm { fild [esp+38h+var_20] } /*0x6b0117*/
+          v31 = v18; /*0x6b011b*/
+          __asm /*0x6b011f*/
+          {
+            fild [esp+38h+var_20]
+            fld st
+            fmul st, st(1)
+            fld st(2)
+            fmul st, st(3)
+            faddp st(1), st
+            fstp [esp+38h+var_38]; double
+            fstp st
+            fstp st
+          }
+          Math::Sqrt(v26); /*0x6b0134*/
+          v19 = Math::RoundToInt(v1); /*0x6b0144*/
+          v20 = (CellStruct *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->occupant + 440))( /*0x6b014d*/
                                 this->occupant,
                                 v35);
-        v21 = (unsigned int *)((v20)->Sub(&v34, v29)); /*0x6b015f*/
-        v22 = *(__int16 *)v21; /*0x6b0168*/
-        v31 = *((__int16 *)v21 + 1); /*0x6b016b*/
-        __asm { fild [esp+38h+var_20] } /*0x6b0172*/
-        v31 = v22; /*0x6b0176*/
-        __asm /*0x6b017a*/
-        {
-          fild [esp+38h+var_20]
-          fld st
-          fmul st, st(1)
-          fld st(2)
-          fmul st, st(3)
-          faddp st(1), st
-          fstp [esp+38h+var_38]; double
-          fstp st
-          fstp st
-        }
-        Math::Sqrt(v27); /*0x6b018f*/
-        v23 = Math::RoundToInt(v1); /*0x6b01b8*/
-        v3 = v19 + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6028) / 256; /*0x6b01bb*/
-        if ( v3 < v23 ) /*0x6b01bf*/
-        {
-          *(unsigned char *)(this->occupant + 1272) = 1; /*0x6b01c4*/
-          v24 = (*(int (**)(int))(*(unsigned int *)this->occupant + 444))(this->occupant); /*0x6b01d0*/
-          TechnoClass::SetFocus((TechnoClass *)this->occupant, v24); /*0x6b01da*/
-          LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))( /*0x6b01e8*/
+          v21 = CellStruct::Sub(v20, &v34, v29); /*0x6b015f*/
+          v22 = *(__int16 *)v21; /*0x6b0168*/
+          v31 = *((__int16 *)v21 + 1); /*0x6b016b*/
+          __asm { fild [esp+38h+var_20] } /*0x6b0172*/
+          v31 = v22; /*0x6b0176*/
+          __asm /*0x6b017a*/
+          {
+            fild [esp+38h+var_20]
+            fld st
+            fmul st, st(1)
+            fld st(2)
+            fmul st, st(3)
+            faddp st(1), st
+            fstp [esp+38h+var_38]; double
+            fstp st
+            fstp st
+          }
+          Math::Sqrt(v27); /*0x6b018f*/
+          v23 = Math::RoundToInt(v1); /*0x6b01b8*/
+          v3 = v19 + dword_8871E0->ExtraAircraftLight / 256; /*0x6b01bb*/
+          if ( v3 < v23 ) /*0x6b01bf*/
+          {
+            *(unsigned char *)(this->occupant + 1272) = 1; /*0x6b01c4*/
+            v24 = (*(int (**)(int))(*(unsigned int *)this->occupant + 444))(this->occupant); /*0x6b01d0*/
+            TechnoClass::SetFocus((TechnoClass *)this->occupant, v24); /*0x6b01da*/
+            LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))( /*0x6b01e8*/
                            this->occupant,
                            19,
                            0);
-          this->customSound_controller[3] = 6; /*0x6b01ee*/
-          this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b01f5*/
+            this->customSound_controller[3] = 6; /*0x6b01ee*/
+            this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b01f5*/
+          }
         }
+        if ( this->customSound_controller[3] != 6 ) /*0x6b0200*/
+          LOBYTE(v3) = FactoryClass::PlaceExitUnits((FactoryClass *)this); /*0x6b0204*/
       }
-      if ( this->customSound_controller[3] != 6 ) /*0x6b0200*/
-        LOBYTE(v3) = FactoryClass::PlaceExitUnits((FactoryClass *)this); /*0x6b0204*/
-    }
       break; /*0x6b0061*/
     case 6:
       v3 = (*(int (**)(int))(*(unsigned int *)this->occupant + 44))(this->occupant); /*0x6b0214*/
       if ( v3 == 1 ) /*0x6b021a*/
       {
-      LOBYTE(v3) = (unsigned __int8)Event_Process_6B0490(this); /*0x6b021e*/
-      LABEL_51:
-      this->customSound_controller[3] = 1; /*0x6b0223*/
-      this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b022a*/
-    }
+        LOBYTE(v3) = (unsigned __int8)Event_Process_6B0490(this); /*0x6b021e*/
+LABEL_51:
+        this->customSound_controller[3] = 1; /*0x6b0223*/
+        this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b022a*/
+      }
       break; /*0x6b022a*/
     default:
       return v3;

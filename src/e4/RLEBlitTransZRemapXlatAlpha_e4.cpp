@@ -14,24 +14,26 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlatAlpha_ushort * aP4, int a6, int _2C, unsigned short * a7, int a9, int a10, int a11)
 {
-  RLEBlitTransZRemapXlatAlpha_ushort * v15;
+
+  unsigned __int16 *result; // eax
+  int v14; // edx
+  int v15; // edx
   int v17; // edx
   int v18; // ebx
-  uint8_t v19; // dl
-  uint8_t v20; // dl
+  unsigned __int8 v19; // dl
+  unsigned __int8 v20; // dl
   int v21; // esi
   int v22; // esi
-  int v23; // [esp+18h] [ebp+4h]
-  uint8_t *v24; // [esp+1Ch] [ebp+8h]
+  unsigned __int16 *v23; // [esp+18h] [ebp+4h]
+  unsigned __int8 *v24; // [esp+1Ch] [ebp+8h]
 
-  uint16_t *result = a7; // eax /*0x497a2c*/
-  v24 = *(uint8_t **)*&this->__pad_004; /*0x497a30*/
-  int v14; // edx
+  result = a7; /*0x497a2c*/
+  v24 = *(unsigned __int8 **)this->m_4; /*0x497a30*/
   v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;
   if ( v14 > 254 ) /*0x497a51*/
     v14 = 254; /*0x497a53*/
-  v23 = this->m_C + (v14 << 9); /*0x497a60*/
-  v15 = (gamemd::RLEBlitTransZRemapXlatAlpha_ushort *)((int)(aP4)); /*0x497a64*/
+  v23 = (unsigned __int16 *)(this->m_C + (v14 << 9)); /*0x497a60*/
+  v15 = aP4; /*0x497a64*/
   if ( aP4 <= 0 ) /*0x497a6a*/
   {
     v18 = a4; /*0x497aa5*/
@@ -46,12 +48,12 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
         v15 -= *a2++; /*0x497a79*/
     }
     while ( v15 > 0 ); /*0x497a81*/
-    v17 = (int)(-v15); /*0x497a91*/
+    v17 = -v15; /*0x497a91*/
     v18 = a4 - v17; /*0x497a93*/
     arg0 += 2 * v17; /*0x497a95*/
     result = &a7[v17]; /*0x497a98*/
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 28) ) /*0x497a9e*/
-      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 32)); /*0x497aa0*/
+    if ( (unsigned int)result >= *(unsigned int *)&dword_87E8A4[7] ) /*0x497a9e*/
+      result = (unsigned __int16 *)((char *)result - *(unsigned int *)&dword_87E8A4[8]); /*0x497aa0*/
   }
   while ( v18 > 0 ) /*0x497aab*/
   {
@@ -59,10 +61,10 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
     if ( v19 ) /*0x497abf*/
     {
       arg0 += 2; /*0x497ae8*/
-      v22 = v24[v19] | *(uint16_t *)(v23 + 2 * *result); /*0x497b03*/
+      v22 = v24[v19] | v23[*result]; /*0x497b03*/
       --v18; /*0x497b09*/
       ++result; /*0x497b0a*/
-      *(unsigned short *)(arg0 - 2) = *(unsigned short *)(*&this->m_8 + 2 * v22); /*0x497b14*/
+      *(unsigned short *)(arg0 - 2) = *(unsigned short *)(this->m_8 + 2 * v22); /*0x497b14*/
     }
     else
     {
@@ -70,13 +72,14 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
       v18 -= v20; /*0x497ad3*/
       v21 = 2 * v20; /*0x497ad5*/
       arg0 += v21; /*0x497ad7*/
-      result = (uint16_t *)((char *)result + v21); /*0x497ad9*/
+      result = (unsigned __int16 *)((char *)result + v21); /*0x497ad9*/
     }
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 28) ) /*0x497b21*/
-      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 32)); /*0x497b23*/
+    if ( (unsigned int)result >= *(unsigned int *)&dword_87E8A4[7] ) /*0x497b21*/
+      result = (unsigned __int16 *)((char *)result - *(unsigned int *)&dword_87E8A4[8]); /*0x497b23*/
   }
   return result; /*0x497b2a*/
-}  // G42.18 ns repair
+
+}
 } // namespace gamemd
 // 0x497B40
 namespace gamemd {

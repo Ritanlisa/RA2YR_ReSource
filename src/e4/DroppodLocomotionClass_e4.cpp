@@ -41,97 +41,112 @@ namespace gamemd {  // G42.18 ns repair
 int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
 {
 
-  FootClass *Owner; // ecx
-  Owner = a1->Owner; /*0x4b5b7b*/
+  double v1; // st7
+  int *Owner; // ecx
+  unsigned __int16 *v4; // esi
+  unsigned __int16 *v5; // eax
+  double v6; // rax
+  double v7; // st7
+  unsigned __int16 *v8; // eax
+  int v9; // ecx
+  int v10; // eax
+  int *v11; // esi
+  char *v12; // ebx
+  unsigned int *v13; // ebp
+  AnimClass *v14; // esi
+  void *v15; // eax
+  AnimClass *v17; // eax
+  AnimClass *v18; // eax
+  AnimClass *v19; // eax
+  unsigned int *DropPodWeapon; // esi
+  AnimClass *v21; // ebp
+  int Index; // eax
+  CellClass *v23; // eax
+  int ClosestObjectCell; // eax
+  int *v25; // eax
+  unsigned int v26; // ebp
+  unsigned int v27; // eax
+  AnimClass *v28; // edi
+  void *WarheadVersusMultiplier; // eax
+  double v30; // [esp-8h] [ebp-48h]
+  void *v31; // [esp-8h] [ebp-48h]
+  void *v32; // [esp-8h] [ebp-48h]
+  double v33; // [esp+10h] [ebp-30h] BYREF
+  int v34[2]; // [esp+1Ch] [ebp-24h] BYREF
+  int v35; // [esp+24h] [ebp-1Ch]
   int v36; // [esp+28h] [ebp-18h] BYREF
-  v36 = Owner->location[0]; /*0x4b5b88*/
   int v37; // [esp+2Ch] [ebp-14h]
-  v37 = Owner->location[1]; /*0x4b5b8f*/
-  int v4; // esi
-  v4 = Owner->location[2]; /*0x4b5b93*/
+  unsigned __int16 *v38; // [esp+30h] [ebp-10h]
   int v39[3]; // [esp+34h] [ebp-Ch] BYREF
+  DropPodLocomotionClass *thisa; // [esp+44h] [ebp+4h]
+
+  Owner = (int *)this->Owner; /*0x4b5b7b*/
+  v36 = Owner[39]; /*0x4b5b88*/
+  v37 = Owner[40]; /*0x4b5b8f*/
+  v4 = (unsigned __int16 *)Owner[41]; /*0x4b5b93*/
   v39[0] = v36; /*0x4b5b96*/
-  int v38; // [esp+30h] [ebp-10h]
   v38 = v4; /*0x4b5b9a*/
   v39[1] = v37; /*0x4b5b9e*/
-  v39[2] = v4; /*0x4b5ba2*/
-  DropPodLocomotionClass *thisa; // [esp+44h] [ebp+4h]
-  thisa = (DropPodLocomotionClass *)((*((int (**)(FootClass *))Owner->vfptr + 114))(Owner) / 10 + 2); /*0x4b5bc9*/
-  if ( *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1452) > (int)thisa ) /*0x4b5bd5*/
-    thisa = *(DropPodLocomotionClass **)(*(unsigned int *)&g_RulesClass_Instance + 1452); /*0x4b5bd7*/
-  double v30; // [esp-8h] [ebp-48h]
-  v30 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 1456); /*0x4b5bf3*/
-  int v34[2]; // [esp+1Ch] [ebp-24h] BYREF
-  if ( !a1->q018 ) /*0x4b5bdb*/
+  v39[2] = (int)v4; /*0x4b5ba2*/
+  thisa = (DropPodLocomotionClass *)((*(int (**)(int *))(*Owner + 456))(Owner) / 10 + 2); /*0x4b5bc9*/
+  if ( dword_8871E0->DropPodSpeed > (int)thisa ) /*0x4b5bd5*/
+    thisa = (DropPodLocomotionClass *)dword_8871E0->DropPodSpeed; /*0x4b5bd7*/
+  v30 = *(double *)dword_8871E0->DropPodAngle; /*0x4b5bf3*/
+  if ( !this->q018 ) /*0x4b5bdb*/
     *(double *)v34 = (double)v36; /*0x4b5c1c*/
-  double v33; // [esp+10h] [ebp-30h] BYREF
   v33 = (double)(int)thisa; /*0x4b5bf4*/
   Math::ArcTan2(v30); /*0x4b5bf8*/
-  double v1; // st7
-  int v5; // eax
-  (*((unsigned short *)&(v5))) = Math::RoundToInt(v1); /*0x4b5c38*/
-  v36 = v5; /*0x4b5c41*/
-  double v6; // rax
-  v6 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 1456); /*0x4b5c50*/
-  *(double *)v34 = (double)v38; /*0x4b5c56*/
+  LOWORD(v5) = Math::RoundToInt(v1); /*0x4b5c38*/
+  v36 = (int)v5; /*0x4b5c41*/
+  v6 = *(double *)dword_8871E0->DropPodAngle; /*0x4b5c50*/
+  *(double *)v34 = (double)(int)v38; /*0x4b5c56*/
   Math::SinCos(v6); /*0x4b5c5c*/
-  double v7; // st7
   v7 = *(double *)v34 - v1 * v33; /*0x4b5c68*/
-  int v8; // eax
-  (*((unsigned short *)&(v8))) = Math::RoundToInt(v7); /*0x4b5c6c*/
-  FootClass *v9 = a1->Owner; // ecx /*0x4b5c71*/
+  LOWORD(v8) = Math::RoundToInt(v7); /*0x4b5c6c*/
+  v9 = this->Owner; /*0x4b5c71*/
   v38 = v8; /*0x4b5c74*/
-  int v10; // eax
-  v10 = (*((int (**)(FootClass *))v9->vfptr + 114))(v9); /*0x4b5c7a*/
-  FootClass *v11 = a1->Owner; // esi /*0x4b5c80*/
+  v10 = (*(int (**)(int))(*(unsigned int *)v9 + 456))(v9); /*0x4b5c7a*/
+  v11 = (int *)this->Owner; /*0x4b5c80*/
   if ( v10 > 0 ) /*0x4b5c87*/
   {
-    (*((void (**)(FootClass *, int *))v11->vfptr + 109))(v11, &v36); /*0x4b5eaa*/
-    unsigned int *v20; // esi
-    v20 = *(unsigned int **)(*(unsigned int *)&g_RulesClass_Instance + 1444); /*0x4b5eb6*/
-    if ( v20 ) /*0x4b5ebe*/
+    (*(void (**)(int *, int *))(*v11 + 436))(v11, &v36); /*0x4b5eaa*/
+    DropPodWeapon = (unsigned int *)dword_8871E0->DropPodWeapon; /*0x4b5eb6*/
+    if ( DropPodWeapon ) /*0x4b5ebe*/
     {
-      if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % 6) ) /*0x4b5ecf*/
+      if ( !(*(unsigned int *)&stru_A8E960.random[528] % 6) ) /*0x4b5ecf*/
       {
-        AnimClass *v21; // ebp
-        v21 = (AnimClass *)operator new(0x1C8u); /*0x4b5edf*/
+        v21 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5edf*/
         if ( v21 ) /*0x4b5ee6*/
         {
-          int Index; // eax
-          Index = (&stru_820320)->FindIndex(); /*0x4b5eed*/
-          ((AnimClass *)(v21))->ctor(*(void **)(FootClass_Array.primaryFacing[3] + 4 * Index), v39, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
+          Index = AnimTypeClass::FindIndex(&stru_820320); /*0x4b5eed*/
+          AnimClass::ctor(v21, *((void **)dword_8B4154 + Index), v39, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
         }
       }
-      if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % 3) ) /*0x4b5f1f*/
+      if ( !(*(unsigned int *)&stru_A8E960.random[528] % 3) ) /*0x4b5f1f*/
       {
         v33 = 0.0; /*0x4b5f39*/
-        CellClass *v23; // eax
-        v23 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &a1->IsOutOfMap)); /*0x4b5f41*/
-        int ClosestObjectCell; // eax
-        ClosestObjectCell = ((Object *)((Object *)v23))->FindClosestObjectCell((unsigned int *)(&v33), 0, 0); /*0x4b5f48*/
-        if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->Owner->owner, ClosestObjectCell) ) /*0x4b5f57*/
+        v23 = Coord::To_Cell((Coord *)&dword_87F7E8, this->IsOutOfMap); /*0x4b5f41*/
+        ClosestObjectCell = Object::FindClosestObjectCell((Object *)v23, &v33, 0, 0); /*0x4b5f48*/
+        if ( !(unsigned __int8)Object::IsAlliedWithObjectHouse(*(Object **)&this->Owner->u32_21C, ClosestObjectCell) ) /*0x4b5f57*/
         {
-          int *v25; // eax
-          v25 = RandomCoordScatter((int *)&v33, &a1->IsOutOfMap, v7, 85, 0); /*0x4b5f6d*/
-          unsigned int v26; // ebp
-          v26 = v20[51]; /*0x4b5f74*/
+          v25 = RandomCoordScatter((int *)&v33, (int *)this->IsOutOfMap, v7, 85, 0); /*0x4b5f6d*/
+          v26 = DropPodWeapon[51]; /*0x4b5f74*/
           v34[0] = *v25; /*0x4b5f7a*/
           v34[1] = v25->vtable2; /*0x4b5f86*/
-          int v35; // [esp+24h] [ebp-1Ch]
           v35 = v25->vtable3; /*0x4b5f8d*/
-          unsigned int v27; // eax
           v27 = Random::State(&Randomizer_Global); /*0x4b5f91*/
-          StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)),(unsigned int *)(&v36), 0); /*0x4b5fa8*/
-          PlaySoundEffectAt(v34, 2 * v20[41], &a1->Owner->vfptr, v20[43], 1, 0); /*0x4b5fc7*/
-          AnimClass *v28; // edi
-          v28 = (AnimClass *)operator new(0x1C8u); /*0x4b5fd6*/
+          StartAudioControllerAt(*(unsigned int *)(DropPodWeapon[48] + 4 * (v27 % v26)), &v36, 0); /*0x4b5fa8*/
+          PlaySoundEffectAt(v34, 2 * DropPodWeapon[41], (unsigned int *)this->Owner, DropPodWeapon[43], 1, 0); /*0x4b5fc7*/
+          v28 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
           if ( v28 ) /*0x4b5fdd*/
           {
-            void *v32; // [esp-8h] [ebp-48h]
-            v32 = (void *)Return::HRESULT_Fail((gamemd::BulletClass *)(v34[0]), v34[1], v35); /*0x4b5ffe*/
-            void *WarheadVersusMultiplier; // eax
-            WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(2 * v20[41], v20[43], 0,(gamemd::BulletClass *)(v34)); /*0x4b6020*/
-            AnimClass::ctor(v28,(int *)(WarheadVersusMultiplier), v34, 0, 1, (void *)0x2600, v32, 0); /*0x4b6028*/
+            v32 = (void *)Return::HRESULT_Fail(v34[0], v34[1], v35); /*0x4b5ffe*/
+            WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier( /*0x4b6020*/
+                                                2 * DropPodWeapon[41],
+                                                DropPodWeapon[43],
+                                                0,
+                                                v34);
+            AnimClass::ctor(v28, WarheadVersusMultiplier, v34, 0, 1, (void *)0x2600, v32, 0); /*0x4b6028*/
           }
         }
       }
@@ -140,75 +155,58 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
   }
   else
   {
-    (*((void (**)(FootClass *, unsigned int))v11->vfptr + 115))(v11, 0); /*0x4b5c92*/
-    v36 = v11->location[0]; /*0x4b5ca4*/
-    v37 = v11->location[1]; /*0x4b5cab*/
-    v38 = v11->location[2]; /*0x4b5cb2*/
-    (*((void (**)(FootClass *))v11->vfptr + 53))(v11); /*0x4b5cba*/
-    char *v12; // ebx
-    v12 = (char *)a1 - 4; /*0x4b5cc3*/
-    (*(void (__stdcall **)(char *))(*((unsigned int *)a1 - 1) + 4))((char *)a1 - 4); /*0x4b5cc7*/
-    int *locomotor; // ebp
-    locomotor = a1->Owner->locomotor; /*0x4b5ccd*/
-    if ( *locomotor ) /*0x4b5cd3*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4b5cdd*/
-    *locomotor = 0; /*0x4b5ce3*/
-    (*(void (__stdcall **)(int *, int *))(a1->RefCount + 16))(&a1->RefCount, locomotor); /*0x4b5cee*/
-    if ( (*((uint8_t (**)(FootClass *, int *, unsigned int))v11->vfptr + 54))(v11, &v36, 0) ) /*0x4b5cfc*/
+    (*(void (**)(int *, unsigned int))(*v11 + 460))(v11, 0); /*0x4b5c92*/
+    v36 = v11[39]; /*0x4b5ca4*/
+    v37 = v11[40]; /*0x4b5cab*/
+    v38 = (unsigned __int16 *)v11[41]; /*0x4b5cb2*/
+    (*(void (**)(int *))(*v11 + 212))(v11); /*0x4b5cba*/
+    v12 = (char *)this - 4; /*0x4b5cc3*/
+    (*(void (**)(char *))(*((unsigned int *)this - 1) + 4))((char *)this - 4); /*0x4b5cc7*/
+    v13 = (unsigned int *)&this->Owner->u32_674; /*0x4b5ccd*/
+    if ( *v13 ) /*0x4b5cd3*/
+      (*(void (**)(unsigned int))(*(unsigned int *)*v13 + 8))(*v13); /*0x4b5cdd*/
+    *v13 = 0; /*0x4b5ce3*/
+    (*(void (**)(int *, unsigned int *))(this->RefCount + 16))(&this->RefCount, v13); /*0x4b5cee*/
+    if ( (*(unsigned __int8 (**)(int *, int *, unsigned int))(*v11 + 216))(v11, &v36, 0) ) /*0x4b5cfc*/
     {
-      AnimClass *v17; // eax
-      v17 = (AnimClass *)operator new(0x1C8u); /*0x4b5dae*/
+      v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
       if ( v17 ) /*0x4b5db8*/
-        AnimClass::ctor( /*0x4b5dd8*/           v17,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 76)),           &v36,           0,           1,           (void *)0x600,           0,           0);
-      if ( a1->q018 ) /*0x4b5ddd*/
+        AnimClass::ctor(v17, (void *)dword_8871E0->FlashFrameTime, &v36, 0, 1, (void *)0x600, 0, 0); /*0x4b5dd8*/
+      if ( this->q018 ) /*0x4b5ddd*/
       {
-        AnimClass *v18; // eax
-        v18 = (AnimClass *)operator new(0x1C8u); /*0x4b5de9*/
+        v18 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5de9*/
         if ( v18 ) /*0x4b5df3*/
-          AnimClass::ctor( /*0x4b5e16*/             v18,(int *)(*(void **)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 264) + 4)),             &v36,             0,             1,             (void *)0x600,             0,             0);
+          AnimClass::ctor(v18, *(void **)(dword_8871E0->GUIMoveOutSound + 4), &v36, 0, 1, (void *)0x600, 0, 0); /*0x4b5e16*/
       }
       else
       {
-        AnimClass *v19; // eax
-        v19 = (AnimClass *)operator new(0x1C8u); /*0x4b5e18*/
+        v19 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5e18*/
         if ( v19 ) /*0x4b5e22*/
-          AnimClass::ctor( /*0x4b5e47*/             v19,(int *)(**(void ***)(*(unsigned int *)&g_RulesClass_Instance + 264)),             &v36,             0,             1,             (void *)0x600,             0,             0);
+          AnimClass::ctor(v19, *(void **)dword_8871E0->GUIMoveOutSound, &v36, 0, 1, (void *)0x600, 0, 0); /*0x4b5e47*/
       }
-      (*((void (**)(FootClass *, int))v11->vfptr + 73))(v11, 1); /*0x4b5e52*/
-      (*((void (**)(FootClass *, unsigned int))v11->vfptr + 115))(v11, 0); /*0x4b5e5e*/
-      (*((void (**)(FootClass *, unsigned int, int))v11->vfptr + 289))(v11, 0, 1); /*0x4b5e6c*/
-      (*((void (**)(FootClass *))v11->vfptr + 123))(v11); /*0x4b5e76*/
-      (*((void (**)(FootClass *, int *, unsigned int, unsigned int))v11->vfptr + 93))(v11, &dword_8A0820, 0, 0); /*0x4b5e89*/
+      (*(void (**)(int *, int))(*v11 + 292))(v11, 1); /*0x4b5e52*/
+      (*(void (**)(int *, unsigned int))(*v11 + 460))(v11, 0); /*0x4b5e5e*/
+      (*(void (**)(int *, unsigned int, int))(*v11 + 1156))(v11, 0, 1); /*0x4b5e6c*/
+      (*(void (**)(int *))(*v11 + 492))(v11); /*0x4b5e76*/
+      (*(void (**)(int *, int *, unsigned int, unsigned int))(*v11 + 372))(v11, &dword_8A0820, 0, 0); /*0x4b5e89*/
     }
     else
     {
-      PlaySoundEffectAt( /*0x4b5d28*/
-        &v36,
-        100,
-        &a1->Owner->vfptr,
-        *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),
-        1,
-        0);
-      AnimClass *v14; // esi
-      v14 = (AnimClass *)operator new(0x1C8u); /*0x4b5d37*/
+      PlaySoundEffectAt(&v36, 100, (unsigned int *)this->Owner, *&dword_8871E0->u32_FA8, 1, 0); /*0x4b5d28*/
+      v14 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x4b5d37*/
       if ( v14 ) /*0x4b5d3e*/
       {
-        void *v31; // [esp-8h] [ebp-48h]
-        v31 = (void *)Return::HRESULT_Fail((gamemd::BulletClass *)(v36), v37, v38); /*0x4b5d64*/
-        void *v15; // eax
-        v15 = (void *)GetWarheadVersusMultiplier( /*0x4b5d8a*/
-                        100,
-                        *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),
-                        0,
-                        &v36);
-        AnimClass::ctor(v14,(int *)(v15), &v36, 0, 1, (void *)0x2600, v31, 0); /*0x4b5d92*/
-        (*(void (__stdcall **)(char *))(*(unsigned int *)v12 + 8))((char *)a1 - 4); /*0x4b5d9a*/
+        v31 = (void *)Return::HRESULT_Fail(v36, v37, (int)v38); /*0x4b5d64*/
+        v15 = (void *)GetWarheadVersusMultiplier(100, *&dword_8871E0->u32_FA8, 0, &v36); /*0x4b5d8a*/
+        AnimClass::ctor(v14, v15, &v36, 0, 1, (void *)0x2600, v31, 0); /*0x4b5d92*/
+        (*(void (**)(char *))(*(unsigned int *)v12 + 8))((char *)this - 4); /*0x4b5d9a*/
         return 1; /*0x4b5da6*/
       }
     }
-    (*(void (__stdcall **)(char *))(*(unsigned int *)v12 + 8))((char *)a1 - 4); /*0x4b5e92*/
+    (*(void (**)(char *))(*(unsigned int *)v12 + 8))((char *)this - 4); /*0x4b5e92*/
     return 1; /*0x4b5e95*/
   }
+
 }
 }  // G42.18 ns repair
 // 0x4B6200

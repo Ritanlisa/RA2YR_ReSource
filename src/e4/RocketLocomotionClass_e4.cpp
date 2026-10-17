@@ -169,11 +169,13 @@ namespace gamemd {
 char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
 
   if ( a2 ) /*0x66485c*/
   {
     LOBYTE(this->m_C) = 0; /*0x664866*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x66486c*/
       v4 = a3; /*0x664882*/
     else
@@ -183,11 +185,9 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x664895*/
       {
-        int m_8; // ecx
         m_8 = this->m_8; /*0x66489c*/
         if ( a2 < m_8 ) /*0x6648a1*/
           m_8 = a2; /*0x6648a3*/
-        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6648a9*/
           ++i; /*0x6648ae*/
         if ( BYTE1(this->m_C) ) /*0x6648bb*/
@@ -196,7 +196,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x6648ce*/
         }
       }
-      *&this->q004 = (int)(v4); /*0x6648d7*/
+      *&this->q004 = v4; /*0x6648d7*/
       this->m_8 = a2; /*0x6648df*/
       BYTE1(this->m_C) = a3 == 0; /*0x6648e2*/
       return 1; /*0x6648e8*/
@@ -208,7 +208,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6648f2*/
+    (*(void (**)(_VectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6648f2*/
     return 1; /*0x6648f8*/
   }
 
@@ -267,11 +267,14 @@ namespace gamemd {
 char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+  int v7; // eax
 
   if ( a2 ) /*0x66499c*/
   {
     LOBYTE(this->m_C) = 0; /*0x6649a2*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x6649a8*/
       v4 = a3; /*0x6649be*/
     else
@@ -281,11 +284,9 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
       return 0; /*0x664a3a*/
     if ( *&this->q004 ) /*0x6649c8*/
     {
-      int m_8; // ecx
       m_8 = this->m_8; /*0x6649cf*/
       if ( a2 < m_8 ) /*0x6649d4*/
         m_8 = a2; /*0x6649d6*/
-      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6649dc*/
         ++i; /*0x6649e1*/
       if ( BYTE1(this->m_C) ) /*0x6649ee*/
@@ -294,15 +295,15 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x664a01*/
       }
     }
-    *&this->q004 = (int)(v4); /*0x664a0a*/
+    *&this->q004 = v4; /*0x664a0a*/
     this->m_8 = a2; /*0x664a12*/
     BYTE1(this->m_C) = a3 == 0; /*0x664a15*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x664a1e*/
+    (*(void (**)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x664a1e*/
   }
-  int v7 = this->m_8; // eax /*0x664a21*/
+  v7 = this->m_8; /*0x664a21*/
   if ( v7 < this->m_10 ) /*0x664a29*/
     this->m_10 = v7; /*0x664a2b*/
   return 1; /*0x664a2e*/

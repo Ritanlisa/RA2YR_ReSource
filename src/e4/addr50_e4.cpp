@@ -86,58 +86,62 @@ int E4Recv_501750::sub_501750(int a2)
 namespace gamemd {
 int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 {
+
   int v4; // ebx
+  __int64 v5; // rax
   int v6; // ecx
   int v7; // ebp
   int v8; // ecx
-  unsigned int *v9; // edi
+  int v9; // edi
   int v10; // ecx
-  int v12; // [esp+14h] [ebp+4h]
+  unsigned int *v12; // [esp+14h] [ebp+4h]
   int v13; // [esp+18h] [ebp+8h]
 
   v4 = 0; /*0x504793*/
-  aP0 = aP0; /*0x50479c*/
+  v5 = aP0; /*0x50479c*/
   if ( aP0->u32_5614 > 0 ) /*0x5047a2*/
   {
     do /*0x5047c8*/
     {
-      v6 = aP0->u32_5608; /*0x5047ac*/
-      v7 = *(unsigned int *)(v6 + 8 * (*(((unsigned int *)&(aP0)) + 1))); /*0x5047b2*/
-      v8 = v6 + 8 * (*(((unsigned int *)&(aP0)) + 1)); /*0x5047b5*/
+      v6 = v5->u32_5608; /*0x5047ac*/
+      v7 = *(unsigned int *)(v6 + 8 * HIDWORD(v5)); /*0x5047b2*/
+      v8 = v6 + 8 * HIDWORD(v5); /*0x5047b5*/
       if ( v7 == a4 ) /*0x5047ba*/
         *(unsigned int *)(v8 + 4) += a3; /*0x5047bc*/
-      ++(*(((unsigned int *)&(aP0)) + 1)); /*0x5047c5*/
+      ++HIDWORD(v5); /*0x5047c5*/
     }
-    while ( (*((signed int *)(((unsigned char *)&(aP0)) + 4))) < aP0->u32_5614 ); /*0x5047c8*/
+    while ( SHIDWORD(v5) < v5->u32_5614 ); /*0x5047c8*/
   }
   v12 = 0; /*0x5047d0*/
-  if ( aP0->u32_5614 <= 0 ) /*0x5047d6*/
+  if ( v5->u32_5614 <= 0 ) /*0x5047d6*/
     goto LABEL_18; /*0x5047d6*/
-  v9 = aP0->u32_5608; /*0x5047d8*/
-  v13 = *&aP0->u32_5614; /*0x5047de*/
+  v9 = v5->u32_5608; /*0x5047d8*/
+  v13 = *(unsigned int *)(v5 + 22036); /*0x5047de*/
   do /*0x504832*/
   {
-    (*(((unsigned int *)&(aP0)) + 1)) = *v9; /*0x5047e5*/
-    if ( v9[1] > v4 && !*(unsigned char *)((*(((unsigned int *)&(aP0)) + 1)) + 501) ) /*0x5047eb*/
+    HIDWORD(v5) = *(unsigned int *)v9; /*0x5047e5*/
+    if ( *(unsigned int *)(v9 + 4) > v4 && !*(unsigned char *)(HIDWORD(v5) + 501) ) /*0x5047eb*/
     {
-      if ( !(*(((unsigned int *)&(aP0)) + 1)) /*0x50481e*/
-        || (*(((unsigned int *)&(aP0)) + 1)) != (unsigned int)aP0
-        && (v10 = *(unsigned int *)((*(((unsigned int *)&(aP0)) + 1)) + 48), v10 != aP0->ptr_30)
-        && (v10 == -1 || ((1 << v10) & aP0->ptr_5788) == 0) )
+      if ( !HIDWORD(v5) /*0x50481e*/
+        || HIDWORD(v5) != (unsigned int)v5
+        && (v10 = *(unsigned int *)(HIDWORD(v5) + 48), v10 != v5->ptr_30)
+        && (v10 == -1 || ((1 << v10) & v5->ptr_5788) == 0) )
       {
-        v4 = v9[1]; /*0x504820*/
-        v12 = *v9; /*0x504822*/
+        v4 = *(unsigned int *)(v9 + 4); /*0x504820*/
+        v12 = *(unsigned int **)v9; /*0x504822*/
       }
     }
-    v9 += 2; /*0x50482a*/
+    v9 += 8; /*0x50482a*/
     --v13; /*0x50482e*/
   }
   while ( v13 ); /*0x504832*/
   if ( v12 ) /*0x50483a*/
-    aP0->u32_5600 = *(unsigned int *)(v12 + 48); /*0x504842*/
+    v5->u32_5600 = v12[12]; /*0x504842*/
   else
-    LABEL_18:
-  aP0->u32_5600 = -1; /*0x50484f*/
+LABEL_18:
+    v5->u32_5600 = -1; /*0x50484f*/
+  return v5; /*0x50483f*/
+
 }
 }
 // 0x5004E0
@@ -171,16 +175,18 @@ int globalHelper_005F80(int a1, int * a2, int a3, int a4)
 {
 
   int v4; // esi
-  v4 = *(int16_t *)a2 - *(int16_t *)(a1 + 22352); /*0x505f92*/
-  int64_t v5; // rax
-  v5 = *((int16_t *)a2 + 1) - *(int16_t *)(a1 + 22354); /*0x505f9a*/
+  __int64 v5; // rax
   signed int v6; // ecx
-  v6 = ((*(((unsigned int *)&(v5)) + 1)) ^ v5) - (*(((unsigned int *)&(v5)) + 1)); /*0x505fa2*/
   signed int v7; // eax
+
+  v4 = *(__int16 *)a2 - *(__int16 *)(a1 + 22352); /*0x505f92*/
+  v5 = *((__int16 *)a2 + 1) - *(__int16 *)(a1 + 22354); /*0x505f9a*/
+  v6 = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x505fa2*/
   v7 = abs32(v4); /*0x505fa7*/
   if ( v7 <= v6 ) /*0x505fab*/
     v7 = v6; /*0x505fad*/
   return a3 + 1000 * v7; /*0x505fa1*/
+
 }
 } // namespace gamemd
 
@@ -190,39 +196,42 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
 {
 
   int v5; // esi
-  v5 = *((int16_t *)a2 + 1); /*0x505fd5*/
   int v6; // edx
-  v6 = *(int16_t *)a2; /*0x505ff7*/
   int v8; // edi
+  int v9; // eax
+  __int64 v10; // rax
+  double v12; // [esp+0h] [ebp-24h]
+  double v13; // [esp+8h] [ebp-1Ch]
+  int v14; // [esp+1Ch] [ebp-8h]
+  unsigned int v15; // [esp+2Ch] [ebp+8h]
+
+  v5 = *((__int16 *)a2 + 1); /*0x505fd5*/
+  v6 = *(__int16 *)a2; /*0x505ff7*/
   v8 = *(unsigned int *)(*(unsigned int *)(a1 + 90208) /*0x506002*/
-  + 4 * (v6 + *(unsigned int *)(a1 + 22364) * (v5 - *(unsigned int *)(a1 + 22360)) - *(unsigned int *)(a1 + 22356)));
-  int v9 = 0; // eax /*0x506005*/
-  if ( a5 != (void *)(-1) ) /*0x50600a*/
+                 + 4 * (v6 + *(unsigned int *)(a1 + 22364) * (v5 - *(unsigned int *)(a1 + 22360)) - *(unsigned int *)(a1 + 22356)));
+  v9 = 0; /*0x506005*/
+  if ( a5 != -1 ) /*0x50600a*/
   {
-    int v14; // [esp+1Ch] [ebp-8h]
-    v14 = v6 - *(int16_t *)(a1 + 22352); /*0x50601e*/
+    v14 = v6 - *(__int16 *)(a1 + 22352); /*0x50601e*/
     __asm { fild [esp+1Ch+var_8] } /*0x506025*/
-    unsigned int v15; // [esp+2Ch] [ebp+8h]
-    v15 = *(int16_t *)(a1 + 22354) - v5; /*0x50602b*/
+    v15 = *(__int16 *)(a1 + 22354) - v5; /*0x50602b*/
     __asm /*0x50602f*/
     {
       fstp [esp+1Ch+var_1C]; double
       fild [esp+1Ch+arg_4]
     }
-    __asm { fstp [esp+24h+var_24] } /*; double*/
-    double v12; // [esp+0h] [ebp-24h]
-    double v13; // [esp+8h] [ebp-1Ch]
+    __asm { fstp [esp+24h+var_24]; double }
     Math::CalcAngle(v12, v13); /*0x50603c*/
     __asm { fsub ds:dbl_7E2820 } /*0x506041*/
     __asm { fmul ds:dbl_7E2818 }
-    (*((unsigned short *)&(v15))) = Math::RoundToInt(a3); /*0x506055*/
-    int64_t v10; // rax
-    v10 = 32 * a5 - (uint8_t)(((v15 >> 7) + 1) >> 1); /*0x506071*/
-    v9 = ((*(((unsigned int *)&(v10)) + 1)) ^ v10) - (*(((unsigned int *)&(v10)) + 1)); /*0x506074*/
+    LOWORD(v15) = Math::RoundToInt(a3); /*0x506055*/
+    v10 = 32 * a5 - (unsigned __int8)(((v15 >> 7) + 1) >> 1); /*0x506071*/
+    v9 = (HIDWORD(v10) ^ v10) - HIDWORD(v10); /*0x506074*/
     if ( v9 >= 128 ) /*0x50607b*/
       v9 = 255 - v9; /*0x506084*/
   }
   return a4 + 1000 * (v9 + (v8 << 7)); /*0x50608e*/
+
 }
 } // namespace gamemd
 

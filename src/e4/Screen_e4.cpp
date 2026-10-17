@@ -27,49 +27,52 @@ int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
 {
 
   int *v4; // edi
-  v4 = (int *)((unsigned int *)((int *)a2));
-  int *v12; // [esp+12h] [ebp-14h]
-  (*(((unsigned char *)&(v12)) + (sizeof(v12) - 1))) = (unsigned char)(a1); /*0x52fecb*/
-  if ( !a2 ) /*0x52fecf*/
-    v4 = (int *)(g_DSurface_Hidden); /*0x52fed1*/
-  v4->COMStub_6(0, a4, a3); /*0x52fede*/
   int v5; // ebx
-  v5 = v4->IsAboveScreenMargin(); /*0x52fee8*/
   int v6; // ebp
-  v6 = v4->vt_slot_128(); /*0x52fef4*/
+  unsigned int *v7; // eax
+  unsigned int *v8; // esi
+  int result; // eax
+  int v10; // [esp+Ah] [ebp-1Ch]
+  int v11; // [esp+Eh] [ebp-18h]
+  int *v12; // [esp+12h] [ebp-14h]
   int v13[2]; // [esp+1Eh] [ebp-8h] BYREF
+  int retaddr; // [esp+26h] [ebp+0h]
+
+  v4 = (int *)a2; /*0x52fec5*/
+  HIBYTE(v12) = a1; /*0x52fecb*/
+  if ( !a2 ) /*0x52fecf*/
+    v4 = g_DSurface_Hidden; /*0x52fed1*/
+  v4->COMStub_6(0, a4, a3); /*0x52fede*/
+  v5 = v4->IsAboveScreenMargin(); /*0x52fee8*/
+  v6 = v4->vt_slot_128(); /*0x52fef4*/
   v13[0] = 0; /*0x52fef6*/
   v13[1] = 0; /*0x52fefc*/
-  int retaddr; // [esp+26h] [ebp+0h]
   retaddr = v5; /*0x52ff00*/
-  unsigned int *v7; // eax
-  v7 = (unsigned int *)(operator new(0x20u)); /*0x52ff08*/
-  unsigned int *v8 = v7; // esi /*0x52ff0d*/
+  v7 = __2_YAPAXI_Z(0x20u); /*0x52ff08*/
+  v8 = v7; /*0x52ff0d*/
   if ( v7 ) /*0x52ff14*/
   {
-    v7[2] = (unsigned int)(v6);
+    v7[2] = v6; /*0x52ff16*/
     v7[1] = v5; /*0x52ff24*/
     v7[3] = 0; /*0x52ff27*/
-    *v7 = (unsigned int)(&XSurface_Vtable); /*0x52ff2e*/
+    *v7 = &XSurface_Vtable; /*0x52ff2e*/
     v7[4] = 2; /*0x52ff34*/
     Buffer::Init(v7 + 5, 0, 2 * v5 * v6); /*0x52ff3b*/
-    *v8 = (unsigned int)(&BSurface_Vtable); /*0x52ff40*/
+    *v8 = &BSurface_Vtable; /*0x52ff40*/
   }
   else
   {
     v8 = 0; /*0x52ff48*/
   }
   Render_Draw((int)v8, v13, 0); /*0x52ff52*/
-  int result; // eax
   result = v4->COMStub_AddRef(v8); /*0x52ff60*/
   if ( v8 ) /*0x52ff67*/
     result = (*(int (**)(unsigned int *, int))*v8)(v8, 1); /*0x52ff6f*/
-  (*((unsigned char *)&(result))) = (*(((unsigned char *)&(v12)) + (sizeof(v12) - 1))); /*0x52ff71*/
-  int v10; // [esp+Ah] [ebp-1Ch]
-  int v11; // [esp+Eh] [ebp-18h]
-  if ( (*(((unsigned char *)&(v12)) + (sizeof(v12) - 1))) ) /*0x52ff77*/
-    return Frame::Present((void *)((int)v4), 1, 0, (int)v4, 0, v10, v11, v12); /*0x52ff7f*/
+  LOBYTE(result) = HIBYTE(v12); /*0x52ff71*/
+  if ( HIBYTE(v12) ) /*0x52ff77*/
+    return Frame::Present((int)v4, 1, 0, (int)v4, 0, v10, v11, v12); /*0x52ff7f*/
   return result; /*0x52ff84*/
+
 }
 }  // G42.18 ns repair
 // 0x68F060

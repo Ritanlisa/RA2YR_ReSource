@@ -67,41 +67,42 @@ namespace gamemd {  // G42.18 ns repair
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
 
+  int v1; // ebp
+  int i; // edi
+  unsigned int *v3; // esi
   int v4; // eax
-
-  int v1 = 0; // ebp /*0x6b4dde*/
-  char *v9; // [esp+18h] [ebp-90h]
-  v9 = (char *)(this); /*0x6b4de3*/
-  INIClass::ClearSection((int)this, (int)unk_81732C, 0); /*0x6b4de7*/
+  char *v5; // ebx
   int v7; // [esp+10h] [ebp-98h]
+  __int16 v8[2]; // [esp+14h] [ebp-94h] BYREF
+  char *v9; // [esp+18h] [ebp-90h]
+  char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
+  char Source[128]; // [esp+28h] [ebp-80h] BYREF
+
+  v1 = 0; /*0x6b4dde*/
+  v9 = this; /*0x6b4de3*/
+  INIClass::ClearSection((int *)this, (int)aSmudge, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
   {
-    int i; // edi
     for ( i = 0; i < 512; ++i ) /*0x6b4df0*/
     {
-      __int16 v8[2]; // [esp+14h] [ebp-94h] BYREF
       v8[0] = i; /*0x6b4df6*/
       v8[1] = v1; /*0x6b4e01*/
-      unsigned int *v3; // esi
-      v3 = (unsigned int *)((&dword_87F7E8)->To_CellObj(v8)); /*0x6b4e0b*/
+      v3 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v8); /*0x6b4e0b*/
       v4 = v3->u32_48; /*0x6b4e0d*/
-      if ( v4 != -1 && !v3->u8_11F ) /*0x6b4e15*/
+      if ( v4 != -1 && !v3->u32_11F ) /*0x6b4e15*/
       {
-        int v5; // ebx
-        v5 = *((unsigned int *)dword_A8EC1C + v4); /*0x6b4e29*/
-        char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
+        v5 = *(char **)(*(unsigned int *)&stru_A8E960.random[168] + 4 * v4); /*0x6b4e29*/
         sprintf(Buffer, "%d", v7); /*0x6b4e37*/
-        char Source[128]; // [esp+28h] [ebp-80h] BYREF
-        sprintf(Source, "%s,%d,%d,%d", (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
-        LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)unk_81732C, Buffer, Source); /*0x6b4e71*/
+        sprintf(Source, "%s,%d,%d,%d", v5 + 36, i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
+        LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)aSmudge, Buffer, Source); /*0x6b4e71*/
         ++v7; /*0x6b4e76*/
       }
     }
     ++v1; /*0x6b4e87*/
   }
   while ( v1 < 512 ); /*0x6b4e8e*/
-  return (gamemd::INIClass **)(v4); /*0x6b4e94*/
+  return v4; /*0x6b4e94*/
 
 }
 } // namespace gamemd
@@ -653,22 +654,24 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 {
 
-  void *v5; // [esp+0h] [ebp-Ch] BYREF
-  v5 = (void *)*a2; /*0x747eb9*/
-  void *v6; // [esp+4h] [ebp-8h]
-  v6 = (void *)a2[1]; /*0x747eca*/
-  int v7; // [esp+8h] [ebp-4h]
-  v7 = a2[2]; /*0x747ed1*/
   int GroundHeight; // eax
+  int v3; // ecx
+  int v5; // [esp+0h] [ebp-Ch] BYREF
+  int v6; // [esp+4h] [ebp-8h]
+  void *v7; // [esp+8h] [ebp-4h]
+
+  v5 = *a2; /*0x747eb9*/
+  v6 = a2[1]; /*0x747eca*/
+  v7 = (void *)a2[2]; /*0x747ed1*/
   GroundHeight = Cell::GetGroundHeight(&v5); /*0x747ed5*/
-  void *v3; // ecx
-  v3 = (void *)v7; /*0x747eda*/
-  if ( v7 < GroundHeight ) /*0x747ee0*/
-    v3 = (void *)Cell::GetGroundHeight(&v5); /*0x747ef1*/
-  a1->vfptr = v5; /*0x747efe*/
-  a1->vfptr1 = v6; /*0x747f04*/
-  a1->vfptr2 = v3; /*0x747f08*/
-  return (unsigned int *)a1; /*0x747f0b*/
+  v3 = (int)v7; /*0x747eda*/
+  if ( (int)v7 < GroundHeight ) /*0x747ee0*/
+    v3 = Cell::GetGroundHeight(&v5); /*0x747ef1*/
+  this->vfptr = v5; /*0x747efe*/
+  this->vfptr1 = v6; /*0x747f04*/
+  this->vfptr2 = v3; /*0x747f08*/
+  return (unsigned int *)this; /*0x747f0b*/
+
 }
 }  // G42.18c ns repair
 // 0x747F20

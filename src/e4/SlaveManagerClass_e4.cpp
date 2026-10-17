@@ -73,80 +73,81 @@ namespace gamemd {
 void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6, void *a6_1, void *a7, void *a8)
 {
 
+  int v7; // eax
+  int v8; // ecx
   int *v9; // ebp
+  int v10; // ebx
+  int v11; // eax
+  int v12; // eax
+  int v13; // ecx
+  int v14; // eax
+  int v15; // eax
+  unsigned int *v16; // edx
+  int v17; // eax
   int v19; // [esp+10h] [ebp-8h]
+  int i; // [esp+1Ch] [ebp+4h]
 
-  ((AbstractClass *)this)->Constructor(); /*0x6af1a8*/
+  AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
   SlaveControlVector::Constructor(&this->slaves, 0, 0); /*0x6af1b6*/
-  this->slaves = (unsigned int)(&vt_DynamicVectorClass); /*0x6af1c3*/
+  this->slaves = &DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af1c3*/
   this->slaveVectorCapacity = 10; /*0x6af1c9*/
-  this->slaveVectorCount = 0; /*0x6af1d0*/
-  this->creationFrame = dword_A8ED84; /*0x6af1d8*/
+  this->__pad_048 = 0; /*0x6af1d0*/
+  this->creationFrame = *(unsigned int *)&stru_A8E960.random[528]; /*0x6af1d8*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af1df*/
-  this->master = aP1; /*0x6af1e2*/
-  this->house = (gamemd::HouseClass *)(a3); /*0x6af1e9*/
-  /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af1f2) */
-  /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af1f8) */
-  /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af1ff) */
-  /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af206) */
-  this->slaveOwner = (gamemd::HouseClass *)(a4); /*0x6af20d*/
+  this->master = a2; /*0x6af1e2*/
+  this->house = a3; /*0x6af1e9*/
+  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af1f2*/
+  this->vtable2 = &SlaveManagerClass::`vftable'; /*0x6af1f8*/
+  this->vtable3 = &SlaveManagerClass::`vftable'; /*0x6af1ff*/
+  this->vtable4 = &SlaveManagerClass::`vftable'; /*0x6af206*/
+  this->slaveOwner = a4; /*0x6af20d*/
   this->slaveType = a5; /*0x6af210*/
   this->slaveCount = a6; /*0x6af213*/
-  int i; // [esp+1Ch] [ebp+4h]
   for ( i = 0; i < this->slaveOwner; ++i ) /*0x6af21a*/
   {
-    int *v7; // eax
-    v7 = (int *)__2_YAPAXI_Z(0x14u); /*0x6af223*/
+    v7 = __2_YAPAXI_Z(0x14u); /*0x6af223*/
     if ( v7 ) /*0x6af22d*/
     {
-      wchar_t *v8; // ecx
-      v8 = (wchar_t *)(dword_A8ED84); /*0x6af22f*/
-      v7[4] = 0; /*0x6af235*/
-      v7[2] = (int)v8; /*0x6af238*/
-      v9 = v7; /*0x6af23b*/
+      v8 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6af22f*/
+      *(unsigned int *)(v7 + 16) = 0; /*0x6af235*/
+      *(unsigned int *)(v7 + 8) = v8; /*0x6af238*/
+      v9 = (int *)v7; /*0x6af23b*/
     }
     else
     {
       v9 = 0; /*0x6af23f*/
     }
-    int v10; // ebx
-    v10 = (int)(**&this->house); /*0x6af249*/
-    int v11; // eax
-    v11 = (*(int (**)(unsigned int))(**&this->master + 60))(this->master); /*0x6af24b*/
-    int v12; // eax
+    v10 = *this->house; /*0x6af249*/
+    v11 = (*(int (**)(unsigned int))(*this->master + 60))(this->master); /*0x6af24b*/
     v12 = (*(int (**)(unsigned int, int))(v10 + 140))(this->house, v11); /*0x6af252*/
     *v9 = v12; /*0x6af25a*/
     if ( v12 ) /*0x6af25f*/
     {
       (*(void (**)(int))(*(unsigned int *)v12 + 212))(v12); /*0x6af265*/
-      *(unsigned int *)(*v9 + 732) = (unsigned int)(this->master); /*0x6af274*/
+      *(unsigned int *)(*v9 + 732) = this->master; /*0x6af274*/
       v9[1] = 0; /*0x6af27a*/
-      v9[2] = (int)dword_A8ED84; /*0x6af284*/
+      v9[2] = *(unsigned int *)&stru_A8E960.random[528]; /*0x6af284*/
       v9[3] = v19; /*0x6af28a*/
       v9[4] = 0; /*0x6af28d*/
     }
-    int v13; // ecx
-    v13 = (int)(this->slaveVectorCapacity); /*0x6af290*/
-    if ( this->slaveVectorCount >= v13 ) /*0x6af298*/
+    v13 = this->slaveVectorCapacity; /*0x6af290*/
+    if ( this->__pad_048 >= v13 ) /*0x6af298*/
     {
       if ( !this->u32_45 && v13 ) /*0x6af2a1*/
         continue; /*0x6af2a1*/
-      int v14; // eax
-      v14 = (int)(this->slaveVectorCapacity); /*0x6af2a3*/
+      v14 = this->slaveVectorCapacity; /*0x6af2a3*/
       if ( v14 <= 0 /*0x6af2b2*/
         || !(*(unsigned __int8 (**)(int, int, unsigned int))&this->slaves->Capacity)(&this->slaves, v13 + v14, 0) )
       {
         continue; /*0x6af2b2*/
       }
     }
-    int v15; // eax
-    v15 = (int)(this->slaveVectorCount); /*0x6af2b9*/
-    int v16; // edx
-    v16 = (int)(this->slaveVectorCount); /*0x6af2bc*/
-    this->slaveVectorCount = v15 + 1; /*0x6af2c2*/
-    *(unsigned int *)(v16 + 4 * v15) = (unsigned int)(v9); /*0x6af2c5*/
+    v15 = this->__pad_048; /*0x6af2b9*/
+    v16 = this->slaveVectorCount; /*0x6af2bc*/
+    this->__pad_048 = v15 + 1; /*0x6af2c2*/
+    v16[v15] = (unsigned int)v9; /*0x6af2c5*/
   }
-  this->creationFrame = dword_A8ED84; /*0x6af2e7*/
+  this->creationFrame = *(unsigned int *)&stru_A8E960.random[528]; /*0x6af2e7*/
   this->SlaveManagerClass_field_54 = v19; /*0x6af2ee*/
   this->SlaveManagerClass_field_58 = 10; /*0x6af2f1*/
   this->SlaveManagerClass_field_5C = 0; /*0x6af2f4*/
@@ -159,9 +160,8 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6,
          dword_B0B5F8 + dword_B0B604,
          0) )
   {
-    int v17; // eax
     v17 = dword_B0B600++; /*0x6af33b*/
-    *((unsigned int *)dword_B0B5F4 + v17) = (unsigned int)(this); /*0x6af34a*/
+    *((unsigned int *)dword_B0B5F4 + v17) = this; /*0x6af34a*/
   }
   return this; /*0x6af34f*/
 
@@ -341,72 +341,74 @@ char SlaveManagerClass::UpdateSlaves()
 namespace gamemd {
 TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, void * a3)
 {
+
   int v3; // ecx
-  BuildingTypeClass **v5; // ebx
+  int v4; // ebp
+  int v5; // ebx
   int result; // eax
   int v7; // ecx
   int v8; // edi
   wchar_t *v9; // esi
   int v10; // ecx
-  void (**v11)(wchar_t *); // ebx
+  int v11; // ebx
   int v12; // ecx
   int v13; // eax
-  void *FoundationWidth; // eax
+  int FoundationWidth; // eax
   int *v15; // ecx
   int FoundationHeight; // eax
   int v17; // ebx
   CellStruct *v18; // eax
-  HouseClass **v19; // eax
-  void (**v20)(wchar_t *); // ebx
+  int *v19; // eax
+  int v20; // ebx
   Cell *v21; // eax
   int v22; // eax
   int v23; // ecx
   int v24; // ebx
-  int16_t v25; // ax
+  __int16 v25; // ax
   int *v26; // ecx
   int v27; // eax
   int v28; // ecx
   CellStruct *v29; // eax
-  void (**v30)(wchar_t *); // ebx
+  int v30; // ebx
   Cell *v31; // eax
   int v32; // eax
   int v33; // ecx
   int v34; // ebx
-  void *v35; // eax
+  int v35; // eax
   int *v36; // ecx
   int v37; // eax
   int v38; // ebx
   CellStruct *v39; // eax
-  HouseClass **v40; // eax
+  int *v40; // eax
   int v41; // ecx
-  int16_t slaveOwner; // bx
+  __int16 slaveOwner; // bx
   unsigned int *v43; // eax
   int v44; // ecx
   int v45; // ebx
-  void *v46; // eax
+  int v46; // eax
   int *v47; // ecx
   int v48; // eax
   int v49; // ebx
   CellStruct *v50; // eax
-  void **v51; // eax
-  uint16_t vtable1; // bx
-  int (**v53)(wchar_t *); // edx
+  int *v51; // eax
+  unsigned __int16 vfptr1; // bx
+  int v53; // edx
   unsigned int *v54; // eax
   int v55; // eax
   int v56; // ecx
   int v57; // eax
   int v58; // ecx
-  int v59; // edi
-  int16_t v60; // ax
-  int *v61; // ecx
+  BuildingTypeClass **v59; // edi
+  __int16 v60; // ax
+  BuildingTypeClass *v61; // ecx
   int v62; // eax
   int v63; // ecx
   CellStruct *v64; // eax
-  void **v65; // eax
-  void (**v66)(wchar_t *); // edi
+  int *v65; // eax
+  int v66; // edi
   int v67; // edx
   int v68; // ecx
-  int v69; // eax
+  unsigned int *v69; // eax
   int v70; // edx
   int v71; // ecx
   int v72; // ecx
@@ -415,14 +417,14 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
   unsigned short *v77; // [esp+2h] [ebp-A8h]
   SlaveManagerClass v78; // [esp+Eh] [ebp-9Ch] BYREF
   char v79[4]; // [esp+76h] [ebp-34h] BYREF
-  int16_t v80[2]; // [esp+7Ah] [ebp-30h] BYREF
+  __int16 v80[2]; // [esp+7Ah] [ebp-30h] BYREF
   char v81[12]; // [esp+7Eh] [ebp-2Ch] BYREF
   int v82; // [esp+8Ah] [ebp-20h] BYREF
   unsigned int v83[3]; // [esp+8Eh] [ebp-1Ch] BYREF
   char v84[8]; // [esp+9Ah] [ebp-10h] BYREF
   unsigned int v85[2]; // [esp+A2h] [ebp-8h] BYREF
 
-  v3 = v3; /*0x6af6c8*/
+  v4 = v3; /*0x6af6c8*/
   v5 = 0; /*0x6af6ca*/
   result = 0; /*0x6af6cc*/
   v7 = *(unsigned int *)(v3 + 72); /*0x6af6ce*/
@@ -431,130 +433,129 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
   {
     while ( 1 )
     {
-      v8 = *(unsigned int *)(*(unsigned int *)(v3 + 60) + 4 * result); /*0x6af6e6*/
+      v8 = *(unsigned int *)(*(unsigned int *)(v4 + 60) + 4 * result); /*0x6af6e6*/
       v9 = *(wchar_t **)v8; /*0x6af6e9*/
       if ( !*(unsigned int *)v8 && *(unsigned int *)(v8 + 4) != 6 ) /*0x6af6f9*/
       {
         *(unsigned int *)v8 = 0; /*0x6af707*/
         *(unsigned int *)(v8 + 4) = 6; /*0x6af709*/
-        v10 = *(unsigned int *)(v3 + 48); /*0x6af711*/
-        *(unsigned int *)(v8 + 8) = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af717*/
+        v10 = *(unsigned int *)(v4 + 48); /*0x6af711*/
+        *(unsigned int *)(v8 + 8) = *(unsigned int *)&stru_A8E960.random[528]; /*0x6af717*/
         *(unsigned int *)(v8 + 12) = v83[1]; /*0x6af721*/
         *(unsigned int *)(v8 + 16) = v10; /*0x6af724*/
       }
       switch ( *(unsigned int *)(v8 + 4) )
       {
         case 1:
-          v78.vfptr = *(void **)v9; /*0x6af744*/
-          v78.abstractFlags = *(unsigned int *)(*((int (**)(wchar_t *, char *, int, unsigned int, int *, int))v78.vfptr /*0x6af778*/
-          + 206))(
+          v78.vfptr = *(unsigned int *)v9; /*0x6af744*/
+          v78.abstractFlags = *(unsigned int *)(*(int (**)(wchar_t *, char *, int, unsigned int, int *, int))(v78.vfptr + 824))( /*0x6af778*/
                                            v9,
                                            v84,
-                                           *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6020) / 256,
+                                           dword_8871E0->ExtraUnitLight / 256,
                                            0,
                                            p_SlaveManagerClass_field_5C,
                                            a3);
           if ( v78.abstractFlags == dword_B0B5B8 )
           {
-          TechnoClass::SetFocus((TechnoClass *)v9, 0); /*0x6af7c5*/
-          v12 = *(unsigned int *)(v3 + 36); /*0x6af7ca*/
-          if ( v12 && (*(int (**)(int))(v12->fallRate)(v12) == 6 )
+            TechnoClass::SetFocus((TechnoClass *)v9, 0); /*0x6af7c5*/
+            v12 = *(unsigned int *)(v4 + 36); /*0x6af7ca*/
+            if ( v12 && (*(int (**)(int))(*(unsigned int *)v12 + 44))(v12) == 6 )
             {
-              v78.vfptr2 = *(void **)(v3 + 36); /*0x6af7e4*/
+              v78.vfptr2 = *(unsigned int *)(v4 + 36); /*0x6af7e4*/
               if ( v78.vfptr2 )
               {
-                v13 = (*(int (**)(void *))(*(unsigned int *)v78.vfptr2 + 44))(v78.vfptr2); /*0x6af7ec*/
-                v5 = v13 == 6 ? (BuildingTypeClass **)v78.vfptr2 : 0;
+                v13 = (*(int (**)(int))(*(unsigned int *)v78.vfptr2 + 44))(v78.vfptr2); /*0x6af7ec*/
+                v5 = v13 == 6 ? v78.vfptr2 : 0;
               }
-              FoundationWidth = (void *)((BuildingTypeClass *)(v5[328]))->GetFoundationWidth(); /*0x6af806*/
-              v15 = (int *)v5[328]; /*0x6af80b*/
+              FoundationWidth = BuildingTypeClass::GetFoundationWidth(*(BuildingTypeClass **)(v5 + 1312)); /*0x6af806*/
+              v15 = *(int **)(v5 + 1312); /*0x6af80b*/
               v78.vfptr2 = FoundationWidth; /*0x6af813*/
               FoundationHeight = BuildingTypeClass::GetFoundationHeight(v15, 0); /*0x6af817*/
-              v17 = *(unsigned int *)(v3 + 36); /*0x6af81f*/
-              v77 = CellStruct::Set((CellStruct *)v83, (*((unsigned short *)&(v78.vfptr2))) - 1, FoundationHeight / 2); /*0x6af839*/
-              v18 = (CellStruct *)(*(int (**)(int, int *))(v17->airstrikeTintTimer)(v17, &v78.creationFrame); /*0x6af849*/
-              v19 = (HouseClass **)CellStruct::Add(v18, &v82, v77); /*0x6af851*/
+              v17 = *(unsigned int *)(v4 + 36); /*0x6af81f*/
+              v77 = CellStruct::Set((CellStruct *)v83, LOWORD(v78.vfptr2) - 1, FoundationHeight / 2); /*0x6af839*/
+              v18 = (CellStruct *)(*(int (**)(int, int *))(*(unsigned int *)v17 + 440))(v17, &v78.creationFrame); /*0x6af849*/
+              v19 = CellStruct::Add(v18, &v82, v77); /*0x6af851*/
             }
             else
             {
-                                     v19 = (HouseClass **)(*(int (**)(unsigned int, int16_t *))(**(unsigned int **)(v3 + 36) + 440))( /*0x6af862*/
-                                     *(unsigned int *)(v3 + 36),
-                                     v80);
+              v19 = (int *)(*(int (**)(unsigned int, __int16 *))(**(unsigned int **)(v4 + 36) + 440))( /*0x6af862*/
+                             *(unsigned int *)(v4 + 36),
+                             v80);
             }
-            v20 = *(void (***)(wchar_t *))v9; /*0x6af86a*/
+            v20 = *(unsigned int *)v9; /*0x6af86a*/
             v78.slaveOwner = *v19; /*0x6af870*/
             a3 = 1; /*0x6af874*/
             p_SlaveManagerClass_field_5C = (int *)CellCoord::To_CellObj( /*0x6af881*/
-                                                    (CellCoord *)&DataGlobal_87F7E8,
-                                                    (int16_t *)&v78.slaveOwner);
-            v20[288](v9); /*0x6af884*/
+                                                    (CellCoord *)&dword_87F7E8,
+                                                    (__int16 *)&v78.slaveOwner);
+            (*(void (**)(wchar_t *))(v20 + 1152))(v9); /*0x6af884*/
             (*(void (**)(wchar_t *, int, unsigned int))(*(unsigned int *)v9 + 488))(v9, 2, 0); /*0x6af892*/
             *(unsigned int *)(v8 + 4) = 4; /*0x6af898*/
-        }
+          }
           else
-        {
-            v11 = *(void (***)(wchar_t *))v9; /*0x6af78c*/
+          {
+            v11 = *(unsigned int *)v9; /*0x6af78c*/
             a3 = 1; /*0x6af792*/
             p_SlaveManagerClass_field_5C = (int *)CellCoord::To_CellObj( /*0x6af79f*/
-                                                    (CellCoord *)&DataGlobal_87F7E8,
-                                                    (int16_t *)&v78.abstractFlags);
-            v11[288](v9); /*0x6af7a2*/
+                                                    (CellCoord *)&dword_87F7E8,
+                                                    (__int16 *)&v78.abstractFlags);
+            (*(void (**)(wchar_t *))(v11 + 1152))(v9); /*0x6af7a2*/
             (*(void (**)(wchar_t *, int, unsigned int))(*(unsigned int *)v9 + 488))(v9, 2, 0); /*0x6af7b0*/
             *(unsigned int *)(v8 + 4) = 2; /*0x6af7b6*/
-        }
+          }
           goto LABEL_62; /*0x6af89f*/
         case 2:
           v21 = (Cell *)(*(int (**)(wchar_t *))(*(unsigned int *)v9 + 444))(v9); /*0x6af8a8*/
-          if ( (uint8_t)Cell::IsBridge2(v21) ) /*0x6af8b0*/
-        {
+          if ( (unsigned __int8)Cell::IsBridge2(v21) ) /*0x6af8b0*/
+          {
             SlaveManagerClass::Check((SlaveManagerClass *)v9); /*0x6af8bb*/
             *(unsigned int *)(v8 + 4) = 3; /*0x6af8c0*/
-        }
+          }
           else if ( !v9->q5A4 ) /*0x6af8cc*/
-        {
+          {
             *(unsigned int *)(v8 + 4) = 1; /*0x6af8d8*/
-        }
+          }
           goto LABEL_62; /*0x6af8c7*/
         case 3:
           if ( SlaveManagerClass::CheckIsOne((SlaveManagerClass *)v9) ) /*0x6af8e6*/
-        {
+          {
             v22 = (*(int (**)(wchar_t *, int *, int))(*(unsigned int *)v9 + 444))( /*0x6af8f7*/
                     v9,
                     p_SlaveManagerClass_field_5C,
                     a3);
             TechnoClass::SetFocus((TechnoClass *)v9, v22); /*0x6af900*/
-            v23 = *(unsigned int *)(v3 + 36); /*0x6af905*/
-            if ( v23 && (*(int (**)(int))(v23->fallRate)(v23) == 6 ) /*0x6af914*/
+            v23 = *(unsigned int *)(v4 + 36); /*0x6af905*/
+            if ( v23 && (*(int (**)(int))(*(unsigned int *)v23 + 44))(v23) == 6 ) /*0x6af914*/
             {
-              v24 = IsObjectTypeBuildingType(*(unsigned int *)(v3 + 36)); /*0x6af91e*/
-              v25 = ((BuildingTypeClass *)(v24->q520))->GetFoundationWidth(); /*0x6af926*/
-              v26 = v24->q520; /*0x6af92b*/
-              (*((unsigned short *)&(v78.master))) = v25 - 1; /*0x6af934*/
+              v24 = IsObjectTypeBuildingType(*(unsigned int *)(v4 + 36)); /*0x6af91e*/
+              v25 = BuildingTypeClass::GetFoundationWidth(v24->BuildingTypeClass_520); /*0x6af926*/
+              v26 = v24->BuildingTypeClass_520; /*0x6af92b*/
+              LOWORD(v78.master) = v25 - 1; /*0x6af934*/
               v27 = BuildingTypeClass::GetFoundationHeight(v26, 0); /*0x6af939*/
-              v28 = *(unsigned int *)(v3 + 36); /*0x6af93f*/
-              (*(((unsigned short *)&(v78.master)) + 1)) = v27 / 2; /*0x6af946*/
-              v29 = (CellStruct *)(*(int (**)(int, int *))(v28->airstrikeTintTimer)(v28, v78.slaves); /*0x6af95c*/
+              v28 = *(unsigned int *)(v4 + 36); /*0x6af93f*/
+              HIWORD(v78.master) = v27 / 2; /*0x6af946*/
+              v29 = (CellStruct *)(*(int (**)(int, int *))(*(unsigned int *)v28 + 440))(v28, &v78.slaves); /*0x6af95c*/
               v78.referenceCount = *CellStruct::Add(v29, &v78.slaveVectorCapacity, &v78.master); /*0x6af96b*/
             }
             else
             {
-                                                v78.referenceCount = *(unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(v3 + 36) + 440))( /*0x6af983*/
-                                                *(unsigned int *)(v3 + 36),
+              v78.referenceCount = *(unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(v4 + 36) + 440))( /*0x6af983*/
+                                                *(unsigned int *)(v4 + 36),
                                                 &v78.SlaveManagerClass_field_54);
             }
-            v30 = *(void (***)(wchar_t *))v9; /*0x6af987*/
+            v30 = *(unsigned int *)v9; /*0x6af987*/
             a3 = 1; /*0x6af98d*/
             p_SlaveManagerClass_field_5C = (int *)CellCoord::To_CellObj( /*0x6af99a*/
-                                                    (CellCoord *)&DataGlobal_87F7E8,
-                                                    (int16_t *)&v78.referenceCount);
-            v30[288](v9); /*0x6af99d*/
+                                                    (CellCoord *)&dword_87F7E8,
+                                                    (__int16 *)&v78.referenceCount);
+            (*(void (**)(wchar_t *))(v30 + 1152))(v9); /*0x6af99d*/
             (*(void (**)(wchar_t *, int, unsigned int))(*(unsigned int *)v9 + 488))(v9, 2, 0); /*0x6af9ab*/
             *(unsigned int *)(v8 + 4) = 4; /*0x6af9b1*/
-        }
+          }
           else
-        {
-            v31 = (Cell *)(*(int (**)(wchar_t *))(*&v9->q6F0))(v9); /*0x6af9c1*/
-            if ( (uint8_t)Cell::IsBridge2(v31) ) /*0x6af9c9*/
+          {
+            v31 = (Cell *)(*(int (**)(wchar_t *))(*(unsigned int *)v9 + 444))(v9); /*0x6af9c1*/
+            if ( (unsigned __int8)Cell::IsBridge2(v31) ) /*0x6af9c9*/
             {
               if ( !SlaveManagerClass::IsMasterHarvester((SlaveManagerClass *)v9) ) /*0x6af9e5*/
                 *(unsigned int *)(v8 + 4) = 1; /*0x6af9f2*/
@@ -564,137 +565,136 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
               SlaveManagerClass::VtableDispatch((SlaveManagerClass *)v9); /*0x6af9d4*/
               *(unsigned int *)(v8 + 4) = 1; /*0x6af9d9*/
             }
-        }
+          }
           goto LABEL_62; /*0x6af9b8*/
         case 4:
           v32 = v9->q5A4; /*0x6af9fe*/
-          (*(((unsigned char *)&(v78.vfptr1)) + (sizeof(v78.vfptr1) - 1))) = 0; /*0x6afa04*/
+          HIBYTE(v78.vfptr1) = 0; /*0x6afa04*/
           if ( v32 ) /*0x6afa0b*/
-        {
-            v33 = *(unsigned int *)(v3 + 36); /*0x6afa11*/
-            if ( v33 && (*(int (**)(int))(v33->fallRate)(v33) == 6 ) /*0x6afa20*/
+          {
+            v33 = *(unsigned int *)(v4 + 36); /*0x6afa11*/
+            if ( v33 && (*(int (**)(int))(*(unsigned int *)v33 + 44))(v33) == 6 ) /*0x6afa20*/
             {
-              v34 = IsObjectTypeBuildingType(*(unsigned int *)(v3 + 36)); /*0x6afa2a*/
-              v35 = (void *)((BuildingTypeClass *)(v34->BuildingTypeClass_520))->GetFoundationWidth(); /*0x6afa32*/
+              v34 = IsObjectTypeBuildingType(*(unsigned int *)(v4 + 36)); /*0x6afa2a*/
+              v35 = BuildingTypeClass::GetFoundationWidth(v34->BuildingTypeClass_520); /*0x6afa32*/
               v36 = v34->BuildingTypeClass_520; /*0x6afa37*/
               v78.vfptr = v35; /*0x6afa3f*/
               v37 = BuildingTypeClass::GetFoundationHeight(v36, 0); /*0x6afa43*/
-              v38 = *(unsigned int *)(v3 + 36); /*0x6afa4c*/
-              v73 = CellStruct::Set((CellStruct *)v80, (*((unsigned short *)&(v78.vfptr))) - 1, v37 / 2); /*0x6afa67*/
-              v39 = (CellStruct *)(*(int (**)(int, int *, int *))(v38->airstrikeTintTimer)( /*0x6afa75*/
+              v38 = *(unsigned int *)(v4 + 36); /*0x6afa4c*/
+              v73 = CellStruct::Set((CellStruct *)v80, LOWORD(v78.vfptr) - 1, v37 / 2); /*0x6afa67*/
+              v39 = (CellStruct *)(*(int (**)(int, int *, int *))(*(unsigned int *)v38 + 440))( /*0x6afa75*/
                                     v38,
                                     &v82,
                                     &v78.SlaveManagerClass_field_54);
-              v40 = (HouseClass **)CellStruct::Add(v39, v73, p_SlaveManagerClass_field_5C); /*0x6afa7d*/
+              v40 = CellStruct::Add(v39, v73, p_SlaveManagerClass_field_5C); /*0x6afa7d*/
             }
             else
             {
-                                     v40 = (HouseClass **)(*(int (**)(unsigned int, int *, int *))(**(unsigned int **)(v3 + 36) + 440))( /*0x6afa8e*/
-                                     *(unsigned int *)(v3 + 36),
-                                     &v78.SlaveManagerClass_field_5C,
-                                     p_SlaveManagerClass_field_5C);
+              v40 = (int *)(*(int (**)(unsigned int, int *, int *))(**(unsigned int **)(v4 + 36) + 440))( /*0x6afa8e*/
+                             *(unsigned int *)(v4 + 36),
+                             &v78.SlaveManagerClass_field_5C,
+                             p_SlaveManagerClass_field_5C);
             }
             v41 = v9->q5A4; /*0x6afa94*/
             v78.slaveOwner = *v40; /*0x6afaa3*/
-            slaveOwner = (int16_t)v78.slaveOwner; /*0x6afa9a*/
+            slaveOwner = v78.slaveOwner; /*0x6afa9a*/
             p_SlaveManagerClass_field_5C = v85; /*0x6afaa9*/
             v43 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)v41 + 72))(v41); /*0x6afaaa*/
             v83[0] = *(unsigned int *)CellStruct::Set((CellStruct *)&v78.slaveCount, *v43 / 256, v43[1] / 256); /*0x6afad9*/
-            (*((unsigned short *)&(v78.vfptr2))) = (*((unsigned short *)&(v83[0]))) - slaveOwner; /*0x6afaef*/
-            (*(((unsigned short *)&(v78.vfptr2)) + 1)) = (*(((unsigned short *)&(v83[0])) + 1)) - (*(((unsigned short *)&(v78.house)) + 1)); /*0x6afaf4*/
+            LOWORD(v78.vfptr2) = LOWORD(v83[0]) - slaveOwner; /*0x6afaef*/
+            HIWORD(v78.vfptr2) = HIWORD(v83[0]) - HIWORD(v78.house); /*0x6afaf4*/
             v78.vfptr = v78.vfptr2; /*0x6afb01*/
-            if ( (int16_t)SlaveManagerClass::Calc2DDistance(&v78) > *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance /*0x6afb19*/
-            + 3576) )
-            (*(((unsigned char *)&(v78.vfptr1)) + (sizeof(v78.vfptr1) - 1))) = 1; /*0x6afb1b*/
-        }
-          v44 = *(unsigned int *)(v3 + 36); /*0x6afb20*/
-          if ( v44 && (*(int (**)(int))(v44->fallRate)(v44) == 6 ) /*0x6afb2f*/
-        {
-            v45 = IsObjectTypeBuildingType(*(unsigned int *)(v3 + 36)); /*0x6afb39*/
-            v46 = (void *)((BuildingTypeClass *)(v45->gattlingValue))->GetFoundationWidth(); /*0x6afb41*/
-            v47 = v45->gattlingValue; /*0x6afb46*/
+            if ( (__int16)SlaveManagerClass::Calc2DDistance(&v78) > *&dword_8871E0->u32_DF8 ) /*0x6afb19*/
+              HIBYTE(v78.vfptr1) = 1; /*0x6afb1b*/
+          }
+          v44 = *(unsigned int *)(v4 + 36); /*0x6afb20*/
+          if ( v44 && (*(int (**)(int))(*(unsigned int *)v44 + 44))(v44) == 6 ) /*0x6afb2f*/
+          {
+            v45 = IsObjectTypeBuildingType(*(unsigned int *)(v4 + 36)); /*0x6afb39*/
+            v46 = BuildingTypeClass::GetFoundationWidth(v45->BuildingTypeClass_520); /*0x6afb41*/
+            v47 = v45->BuildingTypeClass_520; /*0x6afb46*/
             v78.vfptr = v46; /*0x6afb4e*/
             v48 = BuildingTypeClass::GetFoundationHeight(v47, 0); /*0x6afb52*/
-            v49 = *(unsigned int *)(v3 + 36); /*0x6afb5a*/
-            v74 = CellStruct::Set((CellStruct *)v78.slaves, (*((unsigned short *)&(v78.vfptr))) - 1, v48 / 2); /*0x6afb71*/
-            v50 = (CellStruct *)(*(int (**)(int, char *, int *))(v49->airstrikeTintTimer)( /*0x6afb7e*/
+            v49 = *(unsigned int *)(v4 + 36); /*0x6afb5a*/
+            v74 = CellStruct::Set((CellStruct *)&v78.slaves, LOWORD(v78.vfptr) - 1, v48 / 2); /*0x6afb71*/
+            v50 = (CellStruct *)(*(int (**)(int, char *, int *))(*(unsigned int *)v49 + 440))( /*0x6afb7e*/
                                   v49,
-                                  v78.slaveVectorCount,
+                                  v78.__pad_48,
                                   &v78.slaveVectorCapacity);
-            v51 = (void **)CellStruct::Add(v50, v74, p_SlaveManagerClass_field_5C); /*0x6afb86*/
-        }
+            v51 = CellStruct::Add(v50, v74, p_SlaveManagerClass_field_5C); /*0x6afb86*/
+          }
           else
-        {
-                             v51 = (void **)(*(int (**)(unsigned int, char *, int *))(**(unsigned int **)(v3 + 36) + 440))( /*0x6afb97*/
-                             *(unsigned int *)(v3 + 36),
-                             &v78.creationFrame,
-                             p_SlaveManagerClass_field_5C);
-        }
-          v53 = *(int (***)(wchar_t *))v9; /*0x6afb9f*/
+          {
+            v51 = (int *)(*(int (**)(unsigned int, char *, int *))(**(unsigned int **)(v4 + 36) + 440))( /*0x6afb97*/
+                           *(unsigned int *)(v4 + 36),
+                           &v78.creationFrame,
+                           p_SlaveManagerClass_field_5C);
+          }
+          v53 = *(unsigned int *)v9; /*0x6afb9f*/
           p_SlaveManagerClass_field_5C = &v78.SlaveManagerClass_field_5C; /*0x6afba7*/
           v78.vfptr1 = *v51; /*0x6afba8*/
-          vtable1 = (uint16_t)v78.vfptr1; /*0x6afb9d*/
-          v54 = (unsigned int *)v53[110](v9); /*0x6afbac*/
-          if ( *v54 == (((unsigned int)(unsigned short)(vtable1)) | ((unsigned int)(unsigned short)((*(((unsigned short *)&(v78.vfptr)) + 1))) << 16)) ) /*0x6afbb5*/
-        {
+          vfptr1 = v78.vfptr1; /*0x6afb9d*/
+          v54 = (unsigned int *)(*(int (**)(wchar_t *))(v53 + 440))(v9); /*0x6afbac*/
+          if ( *v54 == __PAIR32__(HIWORD(v78.vfptr), vfptr1) ) /*0x6afbb5*/
+          {
             if ( !v9->q5A4 ) /*0x6afbc2*/
             {
-              InfantryClass::SlaveGiveMoney_RecordBalanceBefore((int *)v9, *(unsigned int **)(v3 + 36)); /*0x6afbd2*/
-              (*(void (**)(wchar_t *))(*&v9->q350))(v9); /*0x6afbdb*/
-              v55 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6afbe1*/
-              v56 = *(unsigned int *)(v3 + 52); /*0x6afbe6*/
+              InfantryClass::SlaveGiveMoney_RecordBalanceBefore((int *)v9, *(unsigned int **)(v4 + 36)); /*0x6afbd2*/
+              (*(void (**)(wchar_t *))(*(unsigned int *)v9 + 212))(v9); /*0x6afbdb*/
+              v55 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6afbe1*/
+              v56 = *(unsigned int *)(v4 + 52); /*0x6afbe6*/
               *(unsigned int *)(v8 + 4) = 5; /*0x6afbec*/
               *(unsigned int *)(v8 + 8) = v55; /*0x6afbf3*/
               *(unsigned int *)(v8 + 12) = v85[0]; /*0x6afbfc*/
               *(unsigned int *)(v8 + 16) = v56; /*0x6afbff*/
               goto LABEL_62; /*0x6afc02*/
             }
-            LABEL_47:
-            if ( !(*(((unsigned char *)&(v78.vfptr1)) + (sizeof(v78.vfptr1) - 1))) ) /*0x6afc17*/
+LABEL_47:
+            if ( !HIBYTE(v78.vfptr1) ) /*0x6afc17*/
               goto LABEL_62; /*0x6afc17*/
-              goto LABEL_48; /*0x6afc17*/
-        }
+            goto LABEL_48; /*0x6afc17*/
+          }
           if ( v9->q5A4 ) /*0x6afc07*/
             goto LABEL_47; /*0x6afc0f*/
-        LABEL_48:
-          v57 = IsObjectTypeBuildingType(*(unsigned int *)(v3 + 36)); /*0x6afc1d*/
-          v58 = *(unsigned int *)(v3 + 36); /*0x6afc25*/
+LABEL_48:
+          v57 = IsObjectTypeBuildingType(*(unsigned int *)(v4 + 36)); /*0x6afc1d*/
+          v58 = *(unsigned int *)(v4 + 36); /*0x6afc25*/
           if ( v57 ) /*0x6afc2a*/
-        {
-            v59 = IsObjectTypeBuildingType(v58); /*0x6afc31*/
-            v60 = ((BuildingTypeClass *)(*(BuildingTypeClass **)(v59 + 1312)))->GetFoundationWidth(); /*0x6afc39*/
-            v61 = *(int **)(v59 + 1312); /*0x6afc3e*/
-            (*((unsigned short *)&(v78.uniqueId))) = v60 - 1; /*0x6afc47*/
-            v62 = BuildingTypeClass::GetFoundationHeight(v61, 0); /*0x6afc4c*/
-            v63 = *(unsigned int *)(v3 + 36); /*0x6afc52*/
-            (*(((unsigned short *)&(v78.uniqueId)) + 1)) = v62 / 2; /*0x6afc59*/
-            v64 = (CellStruct *)(*(int (**)(int, char *, int *, int *))(v63->airstrikeTintTimer)( /*0x6afc72*/
+          {
+            v59 = (BuildingTypeClass **)IsObjectTypeBuildingType(v58); /*0x6afc31*/
+            v60 = BuildingTypeClass::GetFoundationWidth(v59[328]); /*0x6afc39*/
+            v61 = v59[328]; /*0x6afc3e*/
+            LOWORD(v78.uniqueId) = v60 - 1; /*0x6afc47*/
+            v62 = BuildingTypeClass::GetFoundationHeight(&v61->vfptr, 0); /*0x6afc4c*/
+            v63 = *(unsigned int *)(v4 + 36); /*0x6afc52*/
+            HIWORD(v78.uniqueId) = v62 / 2; /*0x6afc59*/
+            v64 = (CellStruct *)(*(int (**)(int, char *, int *, int *))(*(unsigned int *)v63 + 440))( /*0x6afc72*/
                                   v63,
                                   v79,
                                   &v78.SlaveManagerClass_field_60,
                                   &v78.uniqueId);
-            v65 = (void **)CellStruct::Add(v64, &v78.SlaveManagerClass_field_5C, (unsigned short *)a3); /*0x6afc7a*/
-        }
+            v65 = CellStruct::Add(v64, &v78.SlaveManagerClass_field_5C, (unsigned short *)a3); /*0x6afc7a*/
+          }
           else
-        {
-                             v65 = (void **)(*(int (**)(int, char *, int *, int))(v58->airstrikeTintTimer)( /*0x6afc8b*/
-                             v58,
-                             v81,
-                             &v78.SlaveManagerClass_field_5C,
-                             a3);
-        }
-          v66 = *(void (***)(wchar_t *))v9; /*0x6afc93*/
+          {
+            v65 = (int *)(*(int (**)(int, char *, int *, int))(*(unsigned int *)v58 + 440))( /*0x6afc8b*/
+                           v58,
+                           v81,
+                           &v78.SlaveManagerClass_field_5C,
+                           a3);
+          }
+          v66 = *(unsigned int *)v9; /*0x6afc93*/
           v78.NeedsSaveOrLink = *v65; /*0x6afc99*/
           a3 = 1; /*0x6afc9d*/
           p_SlaveManagerClass_field_5C = (int *)CellCoord::To_CellObj( /*0x6afcaa*/
-                                                  (CellCoord *)&DataGlobal_87F7E8,
-                                                  (int16_t *)&v78.NeedsSaveOrLink);
-          v66[288](v9); /*0x6afcad*/
-          (*(void (**)(wchar_t *, int, unsigned int))(*&v9->q7A0))(v9, 2, 0); /*0x6afcbb*/
-        LABEL_62:
-          v72 = *(unsigned int *)(v3 + 72); /*0x6afd20*/
-          result = (int)++v78.NeedsSaveOrLink; /*0x6afd27*/
-          if ( (int)v78.NeedsSaveOrLink >= v72 ) /*0x6afd2e*/
+                                                  (CellCoord *)&dword_87F7E8,
+                                                  (__int16 *)&v78.NeedsSaveOrLink);
+          (*(void (**)(wchar_t *))(v66 + 1152))(v9); /*0x6afcad*/
+          (*(void (**)(wchar_t *, int, unsigned int))(*(unsigned int *)v9 + 488))(v9, 2, 0); /*0x6afcbb*/
+LABEL_62:
+          v72 = *(unsigned int *)(v4 + 72); /*0x6afd20*/
+          result = ++v78.NeedsSaveOrLink; /*0x6afd27*/
+          if ( v78.NeedsSaveOrLink >= v72 ) /*0x6afd2e*/
             return result; /*0x6afd2e*/
           v5 = 0; /*0x6af6e1*/
           break; /*0x6af6e1*/
@@ -703,31 +703,31 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
           v68 = *(unsigned int *)(v8 + 16); /*0x6afcc6*/
           if ( v67 == -1 ) /*0x6afccc*/
             goto LABEL_55; /*0x6afccc*/
-          if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v67 >= v68 ) /*0x6afcd7*/
+          if ( *(unsigned int *)&stru_A8E960.random[528] - v67 >= v68 ) /*0x6afcd7*/
             goto LABEL_56; /*0x6afcd7*/
-          v68 -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v67; /*0x6afcd9*/
-        LABEL_55:
+          v68 -= *(unsigned int *)&stru_A8E960.random[528] - v67; /*0x6afcd9*/
+LABEL_55:
           if ( !v68 ) /*0x6afcdd*/
-        {
-  LABEL_56:
-            v69 = v9->q6C0; /*0x6afcdf*/
-    *((unsigned int *)v9 + 27) = *(unsigned int *)(v69 + 160); /*0x6afceb*/
-    *((unsigned int *)v9 + 28) = *(unsigned int *)(v69 + 160); /*0x6afcf4*/
-    *(unsigned int *)(v8 + 4) = 0; /*0x6afcf7*/
-        }
+          {
+LABEL_56:
+            v69 = (unsigned int *)*((unsigned int *)v9 + 432); /*0x6afcdf*/
+            *((unsigned int *)v9 + 27) = v69[40]; /*0x6afceb*/
+            *((unsigned int *)v9 + 28) = v69[40]; /*0x6afcf4*/
+            *(unsigned int *)(v8 + 4) = 0; /*0x6afcf7*/
+          }
           goto LABEL_62; /*0x6afcfa*/
         case 6:
           v70 = *(unsigned int *)(v8 + 8); /*0x6afcfc*/
           v71 = *(unsigned int *)(v8 + 16); /*0x6afcff*/
           if ( v70 == -1 ) /*0x6afd05*/
             goto LABEL_60; /*0x6afd05*/
-          if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v70 >= v71 ) /*0x6afd10*/
+          if ( *(unsigned int *)&stru_A8E960.random[528] - v70 >= v71 ) /*0x6afd10*/
             goto LABEL_61; /*0x6afd10*/
-          v71 -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v70; /*0x6afd12*/
-        LABEL_60:
+          v71 -= *(unsigned int *)&stru_A8E960.random[528] - v70; /*0x6afd12*/
+LABEL_60:
           if ( !v71 ) /*0x6afd16*/
-        LABEL_61:
-            SlaveManagerClass::CreateSlave((SlaveManagerClass *)v3, (wchar_t **)v8); /*0x6afd1b*/
+LABEL_61:
+            SlaveManagerClass::CreateSlave((SlaveManagerClass *)v4, (wchar_t **)v8); /*0x6afd1b*/
           goto LABEL_62; /*0x6afd1b*/
         default:
           goto LABEL_62;
@@ -735,6 +735,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
     }
   }
   return result; /*0x6afd36*/
+
 }
 }
 // 0x6B0A20
@@ -749,11 +750,11 @@ int SlaveManagerClass::LostSlave(int aP1, void *a2)
   int slaveType; // ecx
   int v7; // [esp+10h] [ebp-8h]
 
-  result = *(unsigned int *)this->slaveVectorCount - 1; /*0x6b0a26*/
+  result = *(unsigned int *)this->__pad_48 - 1; /*0x6b0a26*/
   if ( result >= 0 ) /*0x6b0a2a*/
   {
     slaveVectorCount = this->slaveVectorCount; /*0x6b0a2c*/
-    for ( i = (unsigned int **)(slaveVectorCount + 4 * result); **i != aP1; --i ) /*0x6b0a33*/
+    for ( i = (unsigned int **)(slaveVectorCount + 4 * result); **i != a2; --i ) /*0x6b0a33*/
     {
       if ( --result < 0 ) /*0x6b0a42*/
         return result; /*0x6b0a42*/
@@ -765,9 +766,9 @@ int SlaveManagerClass::LostSlave(int aP1, void *a2)
     v5[1] = 6; /*0x6b0a66*/
     slaveType = this->slaveType; /*0x6b0a73*/
     result = (int)(v5 + 2); /*0x6b0a76*/
-    *(unsigned int *)result = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b0a79*/
-    result->u32_4 = v7; /*0x6b0a7f*/
-    result->VtableStub_8 = slaveType; /*0x6b0a82*/
+    *(unsigned int *)result = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x6b0a79*/
+    *(unsigned int *)(result + 4) = v7; /*0x6b0a7f*/
+    *(unsigned int *)(result + 8) = slaveType; /*0x6b0a82*/
   }
   return result; /*0x6b0a44*/
 

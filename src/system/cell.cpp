@@ -212,19 +212,20 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 // 0x48e5a0
 int CellClass::Draw(int a1, int a2, void * a3) const
 {
-  int v5; // eax
+
+  unsigned __int8 *v5; // eax
   int v6; // ecx
 
   if ( a1 ) /*0x48e5af*/
   {
-    v5 = this->smudgeTypeIndex; /*0x48e5b1*/
+    v5 = (unsigned __int8 *)this->smudgeTypeIndex; /*0x48e5b1*/
     if ( v5 ) /*0x48e5b6*/
     {
-      (((unsigned char *)&(v5))[1]) |= 0x80u; /*0x48e5b8*/
+      BYTE1(v5) |= 0x80u; /*0x48e5b8*/
       *a2 = v5; /*0x48e5be*/
-      if ( (a1 & 0x40) != 0 && (this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
+      if ( (a1 & 0x40) != 0 && (*&this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
       {
-        (((unsigned char *)&(v5))[1]) |= 0x40u; /*0x48e5c8*/
+        BYTE1(v5) |= 0x40u; /*0x48e5c8*/
         *a2 = v5; /*0x48e5cb*/
       }
     }
@@ -235,12 +236,14 @@ int CellClass::Draw(int a1, int a2, void * a3) const
   }
   v6 = this->__pad_028; /*0x48e5d5*/
   if ( v6 ) /*0x48e5da*/
-    (*(void (__thiscall **)(int, int, unsigned int *, ControlClass *))(*(unsigned int *)v6 + 76))(v6, a1, a2, this); /*0x48e5e1*/
+    (*(void (**)(int, int, unsigned int *, ControlClass *))(*(unsigned int *)v6 + 76))(v6, a1, a2, this); /*0x48e5e1*/
   return COMObject::ActivateThunk((GadgetClass *)this, a1, (int)a2, 0); /*0x48e5ef*/
+
 }
 // 0x7235a0
 int CellClass::RegisterForRedraw(int16_t *a2, int a1, int a5, int a6)
 {
+
   unsigned char *result; // eax
   int v4; // eax
   unsigned int *v5; // edi
@@ -248,26 +251,26 @@ int CellClass::RegisterForRedraw(int16_t *a2, int a1, int a5, int a6)
   unsigned int v7; // ecx
   unsigned int v8; // edx
   int v9; // ebx
-  int v10; // ebp
+  float *v10; // ebp
   unsigned int v11; // eax
   unsigned int v12; // [esp+8h] [ebp-8h]
   int v13; // [esp+Ch] [ebp-4h]
   float v14; // [esp+14h] [ebp+4h]
 
   v13 = Cell::PosToIndex((Cell *)a2); /*0x7235b8*/
-  result = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x7235bc*/
+  result = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a2); /*0x7235bc*/
   if ( result->u32_11E < 0xBu ) /*0x7235c8*/
   {
     if ( *(unsigned int *)this->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
       BuildingClass::RebuildOccupancy2((BuildingClass *)this); /*0x7235e2*/
-    *(unsigned int *)(*&this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
-    *(float *)(*&this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C + 4) = (float)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
+    *(unsigned int *)(*(unsigned int *)this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
+    *(float *)(*(unsigned int *)this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C + 4) = (float)(*(unsigned int *)&stru_A8E960.random[528] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
     v4 = *(unsigned int *)this->CellClass_field_10C; /*0x723636*/
     v5 = *(unsigned int **)this->unknown110; /*0x723642*/
-    v6 = *&this->unknown118 + 8 * v4; /*0x723648*/
+    v6 = *(unsigned int *)this->unknown118 + 8 * v4; /*0x723648*/
     *(unsigned int *)this->CellClass_field_10C = v4 + 1; /*0x72364c*/
     v7 = *v5 + 1; /*0x723657*/
-    v14 = v6->q004; /*0x72365a*/
+    v14 = *(float *)(v6 + 4); /*0x72365a*/
     v12 = v6; /*0x723661*/
     v8 = v7 >> 1; /*0x723665*/
     if ( v7 < v5[1] ) /*0x723669*/
@@ -277,8 +280,8 @@ int CellClass::RegisterForRedraw(int16_t *a2, int a1, int a5, int a6)
         do /*0x72368f*/
         {
           v9 = v5[2]; /*0x723671*/
-          v10 = *(unsigned int *)(v9 + 4 * v8); /*0x723674*/
-          if ( *(float *)(v10 + 4) <= (double)v14 ) /*0x723683*/
+          v10 = *(float **)(v9 + 4 * v8); /*0x723674*/
+          if ( v10[1] <= (double)v14 ) /*0x723683*/
             break; /*0x723683*/
           *(unsigned int *)(v9 + 4 * v7) = v10; /*0x723685*/
           v7 = v8; /*0x723688*/
@@ -299,10 +302,12 @@ int CellClass::RegisterForRedraw(int16_t *a2, int a1, int a5, int a6)
     result[v13] = 1; /*0x7236be*/
   }
   return result; /*0x7236c2*/
+
 }
 // 0x47e8a0
 char CellClass::AddContent(ObjectClass* content, bool on_bridge)
 {
+
   int v3; // eax
   int v5; // esi
   int i; // eax
@@ -319,7 +324,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
   int v18; // [esp+28h] [ebp+8h]
   int v19; // [esp+28h] [ebp+8h]
 
-  (*((unsigned char *)&(v3))) = on_bridge; /*0x47e8a0*/
+  LOBYTE(v3) = on_bridge; /*0x47e8a0*/
   if ( on_bridge ) /*0x47e8ae*/
     v5 = this->altObject; /*0x47e8b0*/
   else
@@ -328,20 +333,20 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
   {
     if ( content->getAltitude() == 6 && v5 ) /*0x47e8d9*/
     {
-      for ( i = v5->vtable4; i; i = *(unsigned int *)(i + 48) ) /*0x47e8e0*/
+      for ( i = v5->ptr_30; i; i = *(unsigned int *)(i + 48) ) /*0x47e8e0*/
         v5 = i; /*0x47e8e2*/
-      v5->vtable4 = content; /*0x47e8eb*/
+      v5->ptr_30 = content; /*0x47e8eb*/
       content[12] = 0; /*0x47e8ee*/
     }
     else if ( on_bridge ) /*0x47e8fd*/
     {
-      if ( !v5 || v5->vtable4 != content ) /*0x47e906*/
+      if ( !v5 || v5->ptr_30 != content ) /*0x47e906*/
       {
         content[12] = v5; /*0x47e908*/
         this->altObject = content; /*0x47e90b*/
       }
     }
-    else if ( !v5 || v5->vtable4 != content ) /*0x47e91a*/
+    else if ( !v5 || v5->ptr_30 != content ) /*0x47e91a*/
     {
       content[12] = v5; /*0x47e91c*/
       this->firstObject = content; /*0x47e91f*/
@@ -350,26 +355,26 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v13 = 128; /*0x47e94b*/
     v14 = 128; /*0x47e94f*/
     inited = Isometric::InitTables(this, &v13); /*0x47e953*/
-    v15 = ((int16_t)v18 << 8) + 128; /*0x47e962*/
-    v16 = ((*((signed short *)(((unsigned char *)&(v18)) + 2))) << 8) + 128; /*0x47e966*/
+    v15 = ((__int16)v18 << 8) + 128; /*0x47e962*/
+    v16 = (SHIWORD(v18) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
     if ( !Cell::IsPassable(&v15) /*0x47e9cf*/
       && (v19 = this->smudgeTypeIndex,
           v13 = 128,
           v14 = 128,
           v8 = Isometric::InitTables(this, &v13),
-          v15 = ((int16_t)v19 << 8) + 128,
-          v16 = ((*((signed short *)(((unsigned char *)&(v19)) + 2))) << 8) + 128,
+          v15 = ((__int16)v19 << 8) + 128,
+          v16 = (SHIWORD(v19) << 8) + 128,
           v17 = v8,
           !Game::Stub3((int)&v15))
       || dword_A8B238[0] )
     {
-      content->IsNotNull(dword_A83D4C); /*0x47e9dc*/
+      content->IsNotNull(MEMORY[0xA83D4C]); /*0x47e9dc*/
     }
     v3 = content->getAltitude(); /*0x47e9e7*/
     if ( v3 != 15 ) /*0x47e9ee*/
     {
-      (*((unsigned char *)&(v3))) = content->getCoordCenter(); /*0x47e9f9*/
+      LOBYTE(v3) = content->getCoordCenter(); /*0x47e9f9*/
       if ( (unsigned char)v3 ) /*0x47ea01*/
       {
         if ( content->getAltitude() == 6 ) /*0x47ea0e*/
@@ -388,11 +393,12 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v16 = content[40]; /*0x47ea68*/
           v17 = content[41]; /*0x47ea74*/
         }
-        (*((unsigned char *)&(v3))) = content->SetCellOverlayFlag(&v15); /*0x47ea43*/
+        LOBYTE(v3) = (*(int (**)(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
       }
     }
   }
   return v3; /*0x47ea49*/
+
 }
 // 0x47ea90
 void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)

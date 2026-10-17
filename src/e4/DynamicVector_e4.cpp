@@ -61,24 +61,25 @@ namespace gamemd {
 char DynamicVector::AddItem(unsigned int *aP1)
 {
 
-
-  int DynamicVector_field_0x8 = this->Capacity; // ecx /*0x413a73*/
+  int DynamicVector_field_0x8; // ecx
   int result; // eax
-  result = (int)this->Count; /*0x413a76*/
+  unsigned int *v5; // edx
+
+  DynamicVector_field_0x8 = this->Capacity; /*0x413a73*/
+  result = this->Count; /*0x413a76*/
   if ( result < DynamicVector_field_0x8 /*0x413a9d*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->vtable1 + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),
         (unsigned char)result) )
   {
-    result = (int)this->Count; /*0x413aa5*/
-    int v5; // edx
-    v5 = (int)(*&this->Items); /*0x413aa8*/
-    this->Count = &result->AbstractClass_1; /*0x413aae*/
-    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x413ab8*/
+    result = this->Count; /*0x413aa5*/
+    v5 = *&this->Items; /*0x413aa8*/
+    this->Count = result + 1; /*0x413aae*/
+    v5[result] = *aP1; /*0x413ab8*/
     LOBYTE(result) = 1; /*0x413abb*/
   }
   else
@@ -162,24 +163,25 @@ namespace gamemd {
 char DynamicVector::Add_Alt(unsigned int *aP1, void *a2)
 {
 
-
-  int DynamicVector_field_0x8 = this->Capacity; // ecx /*0x477ec3*/
+  int DynamicVector_field_0x8; // ecx
   int result; // eax
-  result = (int)this->Count; /*0x477ec6*/
+  unsigned int *v5; // edx
+
+  DynamicVector_field_0x8 = this->Capacity; /*0x477ec3*/
+  result = this->Count; /*0x477ec6*/
   if ( result < DynamicVector_field_0x8 /*0x477eed*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->vtable1 + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),
         (unsigned char)result) )
   {
-    result = (int)this->Count; /*0x477ef5*/
-    int v5; // edx
-    v5 = (int)(*&this->Items); /*0x477ef8*/
-    this->Count = &result->AbstractClass_1; /*0x477efe*/
-    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x477f08*/
+    result = this->Count; /*0x477ef5*/
+    v5 = *&this->Items; /*0x477ef8*/
+    this->Count = result + 1; /*0x477efe*/
+    v5[result] = *a2; /*0x477f08*/
     LOBYTE(result) = 1; /*0x477f0b*/
   }
   else
@@ -224,24 +226,25 @@ namespace gamemd {
 char DynamicVector::Add_Alt4(unsigned int *aP1, void *a2)
 {
 
-
-  int DynamicVector_field_0x8 = this->Capacity; // ecx /*0x5253b3*/
+  int DynamicVector_field_0x8; // ecx
   int result; // eax
-  result = (int)this->Count; /*0x5253b6*/
+  unsigned int *v5; // edx
+
+  DynamicVector_field_0x8 = this->Capacity; /*0x5253b3*/
+  result = this->Count; /*0x5253b6*/
   if ( result < DynamicVector_field_0x8 /*0x5253dd*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->vtable1 + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),
         (unsigned char)result) )
   {
-    result = (int)this->Count; /*0x5253e5*/
-    int v5; // edx
-    v5 = (int)(*&this->Items); /*0x5253e8*/
-    this->Count = &result->AbstractClass_1; /*0x5253ee*/
-    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x5253f8*/
+    result = this->Count; /*0x5253e5*/
+    v5 = *&this->Items; /*0x5253e8*/
+    this->Count = result + 1; /*0x5253ee*/
+    v5[result] = *a2; /*0x5253f8*/
     LOBYTE(result) = 1; /*0x5253fb*/
   }
   else
@@ -435,24 +438,25 @@ namespace gamemd {
 char DynamicVector::Add2(unsigned int *aP1, void *a2, void *a3, void *a4)
 {
 
-
-  int DynamicVector_field_0x8 = this->Capacity; // ecx /*0x67ad83*/
+  int DynamicVector_field_0x8; // ecx
   int result; // eax
-  result = (int)this->Count; /*0x67ad86*/
+  unsigned int *v5; // edx
+
+  DynamicVector_field_0x8 = this->Capacity; /*0x67ad83*/
+  result = this->Count; /*0x67ad86*/
   if ( result < DynamicVector_field_0x8 /*0x67adad*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->vtable1 + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),
         (unsigned char)result) )
   {
-    result = (int)this->Count; /*0x67adb5*/
-    int v5; // edx
-    v5 = (int)(*&this->Items); /*0x67adb8*/
-    this->Count = &result->AbstractClass_1; /*0x67adbe*/
-    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x67adc8*/
+    result = this->Count; /*0x67adb5*/
+    v5 = *&this->Items; /*0x67adb8*/
+    this->Count = result + 1; /*0x67adbe*/
+    v5[result] = *a2; /*0x67adc8*/
     LOBYTE(result) = 1; /*0x67adcb*/
   }
   else
@@ -524,27 +528,30 @@ namespace gamemd {
 char DynamicVector::Add(DynamicVector * aP1, void *a2_1, void *a3_1)
 {
 
+  int DynamicVector_field_0x8; // ecx
+  int v4; // eax
+  int DynamicVector_field_0x10; // eax
+  unsigned int *v7; // edx
 
-  int DynamicVector_field_0x8 = aP1->Capacity; // ecx /*0x6c6403*/
-  if ( (int)aP1->Count >= DynamicVector_field_0x8 ) /*0x6c640b*/
+  DynamicVector_field_0x8 = this->Capacity; /*0x6c6403*/
+  if ( this->Count >= DynamicVector_field_0x8 ) /*0x6c640b*/
   {
-    if ( !aP1->IsAllocated && DynamicVector_field_0x8 ) /*0x6c6416*/
+    if ( !this->IsAllocated && DynamicVector_field_0x8 ) /*0x6c6416*/
       return 0; /*0x6c6416*/
-    int v4; // eax
-    v4 = *(unsigned int *)aP1->CapacityIncrement; /*0x6c6418*/
+    v4 = *(unsigned int *)this->CapacityIncrement; /*0x6c6418*/
     if ( v4 <= 0 /*0x6c6428*/
-      || !(*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)aP1->vtable1 + 8))(
-            aP1,
+      || !(*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
+            this,
             DynamicVector_field_0x8 + v4,
             0) )
     {
       return 0; /*0x6c642f*/
     }
   }
-  void *DynamicVector_field_0x10 = aP1->Count; // eax /*0x6c6435*/
-  int v7 = *&aP1->Items; // edx /*0x6c6438*/
-  aP1->Count = &DynamicVector_field_0x10->AbstractClass_1; /*0x6c643e*/
-  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *a2_1; /*0x6c6448*/
+  DynamicVector_field_0x10 = this->Count; /*0x6c6435*/
+  v7 = *&this->Items; /*0x6c6438*/
+  this->Count = DynamicVector_field_0x10 + 1; /*0x6c643e*/
+  v7[DynamicVector_field_0x10] = *a2; /*0x6c6448*/
   return 1; /*0x6c6431*/
 
 }

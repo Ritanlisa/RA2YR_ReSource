@@ -95,9 +95,11 @@ int TClassFactory_CampaignClass::GetSize(int a2, int a1, int a3, int a4)
 namespace gamemd {
 LONG TClassFactory_MechLocomotionClass::AddRef(void *a1)
 {
-  
-  int v2; // [esp+4h] [ebp+4h]
-  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c4d4e*/
+
+  LONG *v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement(v2 + 1); /*0x6c4d4e*/
+
 }
 } // namespace gamemd
 // 0x6C4D90

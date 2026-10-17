@@ -119,6 +119,7 @@ void TriggerClass::Destroy()
 // 0x7264c0
 bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire, bool persistent, TechnoClass* source)
 {
+
   char v7; // bl
   TriggerClass *v8; // edi
   int Owner; // eax
@@ -131,36 +132,37 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire
   if ( force_fire ) /*0x7264e7*/
     goto LABEL_16; /*0x7264e7*/
   v7 = 0; /*0x7264f0*/
-  v8 = (gamemd::TriggerClass *)(this->buildingType->FirstEvent); /*0x7264f2*/
+  v8 = *(TriggerClass **)&this->buildingType->FirstEvent; /*0x7264f2*/
   if ( !v8 ) /*0x7264fa*/
     goto LABEL_16; /*0x7264fa*/
   do /*0x72658b*/
   {
     if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
       || (v11 = source,
-          Owner = (*(HouseClass **)(this->buildingType->House + 180))->FindOwner(),
-          TEventClass::Execute((int)((TEventClass *)v8), event, Owner, object, (int *)(&this->abstractFlags2), (int)&persistent, v11)) )
+          Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(this->buildingType + 164) + 180)),
+          TEventClass::Execute((TEventClass *)v8, event, Owner, object, &this->timer, (int)&persistent, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
         this->house = TriggerClass::GetValue(v8); /*0x726561*/
-      if ( persistent && ((TEventClass *)v8)->GetStateA() && ((TEventClass *)v8)->GetStateB_SpyEvent() ) /*0x726579*/
+      if ( persistent && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
         this->occuredEvents |= 1 << v7; /*0x726582*/
     }
     else
     {
       v12 = 0; /*0x726549*/
     }
-    v8 = v8->nextTrigger; /*0x726585*/
+    v8 = (TriggerClass *)v8->nextTrigger; /*0x726585*/
     ++v7; /*0x726588*/
   }
   while ( v8 ); /*0x72658b*/
   if ( v12 ) /*0x726598*/
   {
-  LABEL_16:
+LABEL_16:
     if ( persistent ) /*0x7265a0*/
-      ((BuildingClass *)this)->ProcessUpgradeEffects(); /*0x7265a4*/
+      BuildingClass::ProcessUpgradeEffects((BuildingClass *)this); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
+
 }
 bool TriggerClass::FireActions(ObjectClass* obj, CellStruct location)
 {

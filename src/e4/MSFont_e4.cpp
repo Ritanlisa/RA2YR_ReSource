@@ -18,18 +18,30 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
 
+  int v3; // ebp
+  unsigned int *v5; // edi
+  unsigned int *v6; // eax
+  unsigned int *v7; // ecx
+  int v8; // edx
+  unsigned int *v9; // eax
+  int v10; // ecx
+  int m_8; // edx
+  int v12; // ecx
+  int v13; // eax
+  unsigned int *v14; // ebx
+  int v15; // eax
 
-  int v3 = a2; // ebp /*0x5d55a2*/
+  v3 = a2; /*0x5d55a2*/
   if ( a2 ) /*0x5d55ae*/
   {
-    unsigned int *v5 = a3; // edi /*0x5d55b4*/
+    v5 = a3; /*0x5d55b4*/
     LOBYTE(this->m_C) = 0; /*0x5d55b8*/
     if ( a3 ) /*0x5d55bd*/
     {
-      unsigned int *v9 = a3; // eax /*0x5d55f3*/
+      v9 = a3; /*0x5d55f3*/
       if ( a2 - 1 >= 0 ) /*0x5d55f7*/
       {
-        int v10 = a2; // ecx /*0x5d55f9*/
+        v10 = a2; /*0x5d55f9*/
         do /*0x5d5603*/
         {
           *v9 = 0; /*0x5d55fa*/
@@ -42,15 +54,13 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     else
     {
-      int v6; // eax
-      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x5d55c7*/
+      v6 = (unsigned int *)__2_YAPAXI_Z(8 * a2); /*0x5d55c7*/
       if ( v6 ) /*0x5d55d1*/
       {
-        unsigned int *v7; // ecx
-        v7 = (unsigned int *)v6; /*0x5d55d6*/
+        v7 = v6; /*0x5d55d6*/
         if ( a2 - 1 >= 0 ) /*0x5d55da*/
         {
-          int v8 = a2; // edx /*0x5d55dc*/
+          v8 = a2; /*0x5d55dc*/
           do /*0x5d55e6*/
           {
             *v7 = 0; /*0x5d55dd*/
@@ -60,7 +70,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
           }
           while ( v8 ); /*0x5d55e6*/
         }
-        v5 = (unsigned int *)v6; /*0x5d55e8*/
+        v5 = v6; /*0x5d55e8*/
       }
       else
       {
@@ -72,17 +82,15 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
       return 0; /*0x5d5694*/
     if ( *&this->q004 ) /*0x5d5611*/
     {
-      int m_8; // edx
       m_8 = this->m_8; /*0x5d5616*/
       if ( a2 < m_8 ) /*0x5d561b*/
         m_8 = a2; /*0x5d561d*/
-      int v12 = 0; // ecx /*0x5d561f*/
+      v12 = 0; /*0x5d561f*/
       if ( m_8 > 0 ) /*0x5d5623*/
       {
         do /*0x5d5642*/
         {
-          int v13 = 2 * v12; // eax /*0x5d5628*/
-          unsigned int *v14; // ebx
+          v13 = 2 * v12; /*0x5d5628*/
           v14 = (unsigned int *)(*&this->q004 + 8 * v12++); /*0x5d5631*/
           v5[v13] = *v14; /*0x5d5638*/
           v5[v13 + 1] = v14[1]; /*0x5d563e*/
@@ -96,18 +104,18 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x5d565b*/
       }
     }
-    *&this->q004 = (int)(v5); /*0x5d5666*/
+    *&this->q004 = v5; /*0x5d5666*/
     this->m_8 = v3; /*0x5d566c*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d566f*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_UAcceleratorTracker *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x5d5678*/
+    (*(void (**)(_DynamicVectorClass_UAcceleratorTracker *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5678*/
   }
-  int v15 = this->m_8; // eax /*0x5d567b*/
+  v15 = this->m_8; /*0x5d567b*/
   if ( v15 < this->m_10 ) /*0x5d5683*/
     this->m_10 = v15; /*0x5d5685*/
-  return (gamemd::AbstractClass **)(1); /*0x5d5688*/
+  return 1; /*0x5d5688*/
 
 }
 }  // G42.18 ns repair
@@ -219,11 +227,13 @@ namespace gamemd {
 char MSFont_18::Release(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
 
   if ( a2 ) /*0x5d519c*/
   {
     LOBYTE(this->m_C) = 0; /*0x5d51a6*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x5d51ac*/
       v4 = a3; /*0x5d51c2*/
     else
@@ -233,11 +243,9 @@ char MSFont_18::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x5d51d5*/
       {
-        int m_8; // ecx
         m_8 = this->m_8; /*0x5d51dc*/
         if ( a2 < m_8 ) /*0x5d51e1*/
           m_8 = a2; /*0x5d51e3*/
-        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d51e9*/
           ++i; /*0x5d51ee*/
         if ( BYTE1(this->m_C) ) /*0x5d51fb*/
@@ -246,7 +254,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x5d520e*/
         }
       }
-      *&this->q004 = (int)(v4); /*0x5d5217*/
+      *&this->q004 = v4; /*0x5d5217*/
       this->m_8 = a2; /*0x5d521f*/
       BYTE1(this->m_C) = a3 == 0; /*0x5d5222*/
       return 1; /*0x5d5228*/
@@ -258,7 +266,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUHWND *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x5d5232*/
+    (*(void (**)(_VectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5232*/
     return 1; /*0x5d5238*/
   }
 
@@ -317,11 +325,14 @@ namespace gamemd {
 char MSFont_18::SetCapacity(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+  int v7; // eax
 
   if ( a2 ) /*0x5d52dc*/
   {
     LOBYTE(this->m_C) = 0; /*0x5d52e2*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x5d52e8*/
       v4 = a3; /*0x5d52fe*/
     else
@@ -331,11 +342,9 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x5d537a*/
     if ( *&this->q004 ) /*0x5d5308*/
     {
-      int m_8; // ecx
       m_8 = this->m_8; /*0x5d530f*/
       if ( a2 < m_8 ) /*0x5d5314*/
         m_8 = a2; /*0x5d5316*/
-      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d531c*/
         ++i; /*0x5d5321*/
       if ( BYTE1(this->m_C) ) /*0x5d532e*/
@@ -344,15 +353,15 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x5d5341*/
       }
     }
-    *&this->q004 = (int)(v4); /*0x5d534a*/
+    *&this->q004 = v4; /*0x5d534a*/
     this->m_8 = a2; /*0x5d5352*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d5355*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUHWND *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x5d535e*/
+    (*(void (**)(_DynamicVectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d535e*/
   }
-  int v7 = this->m_8; // eax /*0x5d5361*/
+  v7 = this->m_8; /*0x5d5361*/
   if ( v7 < this->m_10 ) /*0x5d5369*/
     this->m_10 = v7; /*0x5d536b*/
   return 1; /*0x5d536e*/

@@ -76,32 +76,32 @@ namespace gamemd {
 void * ThemeClass::InitializeThemes(char * a2)
 {
 
-  char *v2; // edi
-  int KeyCount; // ebp
+  INIClass *v2; // edi
+  signed int KeyCount; // ebp
   int v5; // esi
   unsigned __int8 *StringByIndex; // eax
   int v7; // esi
-  unsigned int *v8; // eax
+  int v8; // eax
   char *v9; // ebp
   int v10; // eax
   int v11; // ecx
   int v12; // eax
-  int v13; // edx
+  unsigned int *v13; // edx
   void *result; // eax
-  void *Enabled; // eax
+  AudioStream *Enabled; // eax
   int v16; // [esp+0h] [ebp-38h] BYREF
   int i; // [esp+10h] [ebp-28h]
-  int v18; // [esp+14h] [ebp-24h]
+  signed int v18; // [esp+14h] [ebp-24h]
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
-  v2 = a2; /*0x720597*/
-  KeyCount = INIClass::GetKeyCount(a2, (unsigned __int8 *)g_INI_Key_Themes); /*0x7205a9*/
+  v2 = (INIClass *)a2; /*0x720597*/
+  KeyCount = INIClass::GetKeyCount((char *)a2, g_INI_Key_Themes); /*0x7205a9*/
   v5 = 0; /*0x7205ab*/
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2, (unsigned __int8 *)g_INI_Key_Themes, v5); /*0x7205d1*/
-    if ( (/*0x7205de*/ (unsigned __int8 ***)v2)->GetString((unsigned __int8 *)g_INI_Key_Themes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2->__pad_0, g_INI_Key_Themes, v5); /*0x7205d1*/
+    if ( INIClass::GetString(v2, g_INI_Key_Themes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x7205de*/
     {
       if ( &v16 == (int *)-24 ) /*0x7205f1*/
         goto LABEL_10; /*0x7205f1*/
@@ -110,27 +110,27 @@ void * ThemeClass::InitializeThemes(char * a2)
       v7 = 0; /*0x720606*/
       if ( this->u32_24 <= 0 ) /*0x72060a*/
         goto LABEL_10; /*0x72060a*/
-      while ( _strcmpi(*(const void **)(this->u32_18 + 4 * v7), Destination) ) /*0x720622*/
+      while ( _strcmpi(*(char **)(this->u32_18 + 4 * v7), Destination) ) /*0x720622*/
       {
         if ( ++v7 >= this->u32_24 ) /*0x72062a*/
           goto LABEL_10; /*0x72062a*/
       }
       if ( v7 == -1 ) /*0x720631*/
       {
-        LABEL_10:
-        v8 = (unsigned int *)(__2_YAPAXI_Z(0x290u)); /*0x720637*/
+LABEL_10:
+        v8 = __2_YAPAXI_Z(0x290u); /*0x720637*/
         v9 = 0; /*0x720641*/
         if ( v8 ) /*0x720648*/
         {
-          v8[160] = 0; /*0x72064a*/
-          v8[161] = 0; /*0x720650*/
-          *((unsigned short *)v8 + 256) = 0; /*0x720656*/
-          *((unsigned char *)v8 + 648) = 1; /*0x72065d*/
-          *((unsigned char *)v8 + 649) = 0; /*0x720664*/
-          *((unsigned char *)v8 + 650) = 0; /*0x72066b*/
-          v8[163] = -1; /*0x720672*/
+          *(unsigned int *)(v8 + 640) = 0; /*0x72064a*/
+          *(unsigned int *)(v8 + 644) = 0; /*0x720650*/
+          *(unsigned short *)(v8 + 512) = 0; /*0x720656*/
+          *(unsigned char *)(v8 + 648) = 1; /*0x72065d*/
+          *(unsigned char *)(v8 + 649) = 0; /*0x720664*/
+          *(unsigned char *)(v8 + 650) = 0; /*0x72066b*/
+          *(unsigned int *)(v8 + 652) = -1; /*0x720672*/
           *(unsigned char *)v8 = 0; /*0x72067c*/
-          *((unsigned char *)v8 + 256) = 0; /*0x72067f*/
+          *(unsigned char *)(v8 + 256) = 0; /*0x72067f*/
           v9 = (char *)v8; /*0x720686*/
         }
         strcpy(v9, Destination); /*0x7206a0*/
@@ -141,33 +141,33 @@ void * ThemeClass::InitializeThemes(char * a2)
           && (*(unsigned __int8 (**)(int, int, unsigned int))(this->u32_14 + 8))(&this->u32_14, v10 + v11, 0) )
         {
           v12 = this->u32_24; /*0x7206d8*/
-          v13 = this->u32_18; /*0x7206db*/
+          v13 = *&this->u32_18; /*0x7206db*/
           this->u32_24 = v12 + 1; /*0x7206e1*/
-          *(unsigned int *)(v13 + 4 * v12) = (unsigned int)(v9); /*0x7206e4*/
+          v13[v12] = (unsigned int)v9; /*0x7206e4*/
         }
       }
       else
       {
         v9 = *(char **)(this->u32_18 + 4 * v7); /*0x7206ec*/
       }
-      ((int)v9)->ReadThemeEntry((unsigned __int8 ***)a2); /*0x7206f6*/
+      ThemeClass::ReadThemeEntry((int)v9, a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/
       KeyCount = v18; /*0x7206ff*/
-      v2 = a2; /*0x720703*/
+      v2 = (INIClass *)a2; /*0x720703*/
     }
     ++v5; /*0x720707*/
   }
   result = Audio::GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = Audio::GetEnabled(); /*0x720724*/
-    result = (Enabled)->Constructor(0x4E20u); /*0x72072b*/
+    Enabled = (AudioStream *)Audio::GetEnabled(); /*0x720724*/
+    result = AudioStream::Constructor(Enabled, 0x4E20u); /*0x72072b*/
     this->ThemeClass_field_2C = result; /*0x720732*/
     if ( result ) /*0x720735*/
     {
-      SetAudioFileName((int)result,(const char *)(aMusicStream)); /*0x72073e*/
-      AudioQueue::IsEmpty((int)(this->ThemeClass_field_2C), g_MixerChannel_Theme); /*0x72074c*/
-      return (void *)AudioQueue::IsNotEmpty((int)(this->ThemeClass_field_2C), g_MixerChannel_Stream); /*0x72075a*/
+      SetAudioFileName((int)result, aMusicStream); /*0x72073e*/
+      AudioQueue::IsEmpty(this->ThemeClass_field_2C, (int)g_MixerChannel_Theme); /*0x72074c*/
+      return (void *)AudioQueue::IsNotEmpty(this->ThemeClass_field_2C, (int)g_MixerChannel_Stream); /*0x72075a*/
     }
   }
   return result; /*0x72075f*/
@@ -179,47 +179,50 @@ namespace gamemd {
 int ThemeClass::ClearQueues()
 {
 
-  int result = dword_B1D4BC; // eax /*0x752370*/
+  int result; // eax
+  int i; // esi
+  int j; // esi
+  int *v3; // edi
+  int k; // esi
+
+  result = dword_B1D4BC; /*0x752370*/
   if ( dword_B1D4BC ) /*0x752377*/
   {
     if ( dword_B1D4B8 ) /*0x75238c*/
     {
       *(unsigned int *)(*((unsigned int *)dword_B1D4B8 + 3) + 80) = 2; /*0x752391*/
-      operator delete((void *)(dword_B1D4B8)); /*0x75239b*/
+      __3_YAXPAX_Z(dword_B1D4B8); /*0x75239b*/
       dword_B1D4B8 = 0; /*0x7523a3*/
     }
-    int i; // esi
-    for ( i = ((AudioQueue *)(&stru_B1D3F0))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3F0))->GetNext() ) /*0x7523bb*/
+    for ( i = AudioQueue::GetNext(&stru_B1D3F0); i; i = AudioQueue::GetNext(&stru_B1D3F0) ) /*0x7523bb*/
     {
       LinkedList::Init((unsigned int **)i); /*0x7523bf*/
-      *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = (unsigned int)((gamemd::Init)(2)); /*0x7523c8*/
-      operator delete(((void *)i)); /*0x7523cb*/
+      *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x7523c8*/
+      __3_YAXPAX_Z((void *)i); /*0x7523cb*/
     }
-    int j; // esi
-    for ( j = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); j; j = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7523f1*/
+    for ( j = AudioQueue::GetNext(&stru_B1D3C8); j; j = AudioQueue::GetNext(&stru_B1D3C8) ) /*0x7523f1*/
     {
       LinkedList::Init((unsigned int **)j); /*0x7523f5*/
-      *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = (unsigned int)((gamemd::Init)(2)); /*0x7523fe*/
-      operator delete(((void *)j)); /*0x752401*/
+      *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = 2; /*0x7523fe*/
+      __3_YAXPAX_Z((void *)j); /*0x752401*/
     }
-    int *v3; // edi
     v3 = (int *)stru_B1D450; /*0x752419*/
     do /*0x752457*/
     {
-      result = ((AudioQueue *)(v3))->GetNext(); /*0x752420*/
-      int k; // esi
+      result = AudioQueue::GetNext(v3); /*0x752420*/
       for ( k = result; result; k = result ) /*0x752429*/
       {
         LinkedList::Init((unsigned int **)k); /*0x75242d*/
-        *(unsigned int *)(k->vtable4 + 80) = (gamemd::Init)(2); /*0x752436*/
-        operator delete(((void *)k)); /*0x752439*/
-        result = ((AudioQueue *)(v3))->GetNext(); /*0x752443*/
+        *(unsigned int *)(k->u32_C + 80) = 2; /*0x752436*/
+        __3_YAXPAX_Z((void *)k); /*0x752439*/
+        result = AudioQueue::GetNext(v3); /*0x752443*/
       }
       v3 += 3; /*0x75244e*/
     }
-    while ( (int)v3 < (int)&unk_B1D480 ); /*0x752457*/
+    while ( (int)v3 < (int)&dword_B1D480 ); /*0x752457*/
   }
   return result; /*0x75245c*/
+
 }
 } // namespace gamemd
 // 0x752AB0

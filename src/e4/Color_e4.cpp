@@ -15,35 +15,37 @@ int Color::ConvertToRGB(int a2, void *a2_1)
 {
 
   int v2; // esi
-  v2 = (this->u32_2); /*0x51744b*/
   int v3; // ebx
-  v3 = (this->u32_1); /*0x517453*/
   int v4; // ecx
-  v4 = 3 * (this->Color_field_00); /*0x51745c*/
+  unsigned int v5; // eax
+  unsigned int v6; // eax
+  unsigned int v7; // edx
+  __int16 v9; // [esp+10h] [ebp-20h]
   unsigned int v10[5]; // [esp+14h] [ebp-1Ch]
+  int v11; // [esp+28h] [ebp-8h]
+  unsigned int v12; // [esp+2Ch] [ebp-4h]
+
+  v2 = BYTE2(this->Color_field_00); /*0x51744b*/
+  v3 = BYTE1(this->Color_field_00); /*0x517453*/
+  v4 = 3 * LOBYTE(this->Color_field_00); /*0x51745c*/
   v10[2] = v2; /*0x51745f*/
   v4 *= 2; /*0x517463*/
   v10[1] = v2; /*0x517467*/
   v10[3] = v2 * (255 - v3 * (v4 % 255) / 0xFFu) / 0xFF; /*0x51749b*/
-  int v11; // [esp+28h] [ebp-8h]
   v11 = v2 * (255 - v3) / 255; /*0x5174b7*/
   v10[4] = v11; /*0x5174bb*/
-  unsigned int v12; // [esp+2Ch] [ebp-4h]
   v12 = v2 * (255 - v3 * (255 - v4 % 255) / 0xFFu) / 0xFF; /*0x5174e2*/
-  unsigned int v5; // eax
   v5 = ((unsigned int)(v4 / 255) > 4 ? -4 : 2) + v4 / 255;
-  int16_t v9; // [esp+10h] [ebp-20h]
-  (*((unsigned char *)&(v9))) = v10[v5]; /*0x51750f*/
-  unsigned int v6; // eax
+  LOBYTE(v9) = v10[v5]; /*0x51750f*/
   v6 = (v5 > 4 ? -4 : 2) + v5;
-  unsigned int v7; // edx
   v7 = v6 + (v6 > 4 ? -4 : 2);
-  (*((unsigned char *)&(v6))) = v10[v6]; /*0x51752c*/
-  (*(((unsigned char *)&(v9)) + (sizeof(v9) - 1))) = v10[v7]; /*0x517535*/
+  LOBYTE(v6) = v10[v6]; /*0x51752c*/
+  HIBYTE(v9) = v10[v7]; /*0x517535*/
   *(unsigned short *)a2 = v9; /*0x517544*/
   a2->field_2 = v6; /*0x51754a*/
   return a2; /*0x517530*/
-}  // G42.18 ns repair
+
+}
 } // namespace gamemd
 // 0x661020
 namespace gamemd {

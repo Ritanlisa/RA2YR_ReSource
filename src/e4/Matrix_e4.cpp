@@ -45,39 +45,39 @@ namespace gamemd {
 unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3)
 {
 
-
-  int v13; // [esp+28h] [ebp+8h]
-  v13 = (int)(*a3); /*0x6d2372*/
+  float *v4; // eax
+  int v5; // esi
+  int v6; // eax
   int v8; // [esp+4h] [ebp-1Ch]
+  float v9; // [esp+8h] [ebp-18h] BYREF
+  float v10; // [esp+Ch] [ebp-14h]
+  int v11; // [esp+10h] [ebp-10h]
+  float v12[3]; // [esp+14h] [ebp-Ch] BYREF
+  int v13; // [esp+28h] [ebp+8h]
+
+  v13 = *a3; /*0x6d2372*/
   if ( v13 >= dword_B0CE30 || (v8 = a3[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
   {
-    *aP2 = dword_B0CE08; /*0x6d2404*/
-    aP2[1] = dword_B0CE0C; /*0x6d240c*/
-    aP2[2] = dword_B0CE10; /*0x6d2415*/
-    return (unsigned int *)(aP2); /*0x6d23f7*/
+    *a2 = dword_B0CE08; /*0x6d2404*/
+    a2[1] = dword_B0CE0C; /*0x6d240c*/
+    a2[2] = dword_B0CE10; /*0x6d2415*/
+    return a2; /*0x6d23f7*/
   }
   else
   {
-    float v9; // [esp+8h] [ebp-18h] BYREF
     v9 = (float)v13; /*0x6d2398*/
-    int v11; // [esp+10h] [ebp-10h]
     v11 = 0; /*0x6d23a4*/
-    float v10; // [esp+Ch] [ebp-14h]
     v10 = (float)v8; /*0x6d23ac*/
-    float *v4; // eax
-    float v12[3]; // [esp+14h] [ebp-Ch] BYREF
-    v4 = TransformMatrix3x4Point(v12, aP1 + 889, &v9); /*0x6d23b0*/
+    v4 = TransformMatrix3x4Point(v12, this + 889, &v9); /*0x6d23b0*/
     v9 = *v4; /*0x6d23b7*/
     v10 = v4[1]; /*0x6d23c2*/
     v11 = *((unsigned int *)v4 + 2); /*0x6d23c9*/
-    int v5; // esi
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/
-    int v6; // eax
     v6 = Math::RoundToInt(v10); /*0x6d23d8*/
-    *aP2 = v5; /*0x6d23e5*/
-    aP2[1] = v6; /*0x6d23e7*/
-    aP2[2] = 0; /*0x6d23ec*/
-    return (unsigned int *)(aP2); /*0x6d23ea*/
+    *a2 = v5; /*0x6d23e5*/
+    a2[1] = v6; /*0x6d23e7*/
+    a2[2] = 0; /*0x6d23ec*/
+    return a2; /*0x6d23ea*/
   }
 
 }

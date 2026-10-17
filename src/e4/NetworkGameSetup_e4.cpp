@@ -46,6 +46,9 @@ namespace gamemd {
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
 
+  char *v3; // eax
+  unsigned int v4; // edi
+  HWND DlgItem; // esi
   int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
@@ -60,20 +63,18 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     strcpy((char *)&v8[1], unk_A8B380); /*0x5ba9c4*/
     LOBYTE(v8[6]) = dword_A8B394; /*0x5ba9d4*/
     wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5ba9d8*/
-    ((int *)&unk_A8EA70)->WriteBlock((int)v8, 250, 1); /*0x5ba9f1*/
-    Stream::ReadPacket((int)&unk_A8EA70); /*0x5ba9fb*/
-    char *v3; // eax
+    Stream::WriteBlock((int *)&MEMORY[0xA8EA70], (int)v8, 250, 1); /*0x5ba9f1*/
+    Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5ba9fb*/
     v3 = CharToWideString(unk_A8B380); /*0x5baa05*/
-    unsigned int v4 = dword_A8B394; // edi /*0x5baa0d*/
+    v4 = dword_A8B394; /*0x5baa0d*/
     Format = (wchar_t *)v3; /*0x5baa19*/
-    HWND DlgItem; // esi
-    DlgItem = GetDlgItem(*(HWND *)this->__pad_000, 1343); /*0x5baa23*/
+    DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1343); /*0x5baa23*/
     if ( DlgItem ) /*0x5baa27*/
     {
       if ( v4 >= 8 ) /*0x5baa2b*/
         v6 = Math::InitDegToRad; /*0x5baa3b*/
       else
-        v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))dword_8316A8[v4]; /*0x5baa32*/
+        v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))lParam[v4]; /*0x5baa32*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5baa54*/
       DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5baa66*/
     }

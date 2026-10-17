@@ -62,6 +62,12 @@ APPLY = '--apply' in sys.argv
 ONLY_FILE = None
 if '--file' in sys.argv:
     ONLY_FILE = sys.argv[sys.argv.index('--file') + 1].replace('\\', '/')
+ONLY_FILES = None
+if '--files-from' in sys.argv:
+    # X54: JSON list of repo-relative paths -- scope the pass to them
+    with open(sys.argv[sys.argv.index('--files-from') + 1],
+              encoding='utf-8') as _ff:
+        ONLY_FILES = set(x.replace('\\', '/') for x in json.load(_ff))
 ONLY_FORMS = None
 if '--forms' in sys.argv:
     ONLY_FORMS = set(sys.argv[sys.argv.index('--forms') + 1].split(','))
@@ -2912,6 +2918,8 @@ def main():
         if any(x in s for x in SKIP_PARTS):
             continue
         if ONLY_FILE and ONLY_FILE not in s:
+            continue
+        if ONLY_FILES is not None and s not in ONLY_FILES:
             continue
         files.append(p)
     print('files:', len(files), '| apply:', APPLY, flush=True)

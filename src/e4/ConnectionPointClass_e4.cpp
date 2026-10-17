@@ -115,11 +115,13 @@ namespace gamemd {
 AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
 
   if ( a2 ) /*0x4a128c*/
   {
     LOBYTE(this->m_C) = 0; /*0x4a1296*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
@@ -129,11 +131,9 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x4a12c5*/
       {
-        int m_8; // ecx
         m_8 = this->m_8; /*0x4a12cc*/
         if ( a2 < m_8 ) /*0x4a12d1*/
           m_8 = a2; /*0x4a12d3*/
-        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a12d9*/
           ++i; /*0x4a12de*/
         if ( BYTE1(this->m_C) ) /*0x4a12eb*/
@@ -142,10 +142,10 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x4a12fe*/
         }
       }
-      *&this->q004 = (int)(v4); /*0x4a1307*/
+      *&this->q004 = v4; /*0x4a1307*/
       this->m_8 = a2; /*0x4a130f*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a1312*/
-      return (gamemd::AbstractClass **)(1); /*0x4a1318*/
+      return 1; /*0x4a1318*/
     }
     else
     {
@@ -154,8 +154,8 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4a1322*/
-    return (gamemd::AbstractClass **)(1); /*0x4a1328*/
+    (*(void (**)(_VectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a1322*/
+    return 1; /*0x4a1328*/
   }
 
 }

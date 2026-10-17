@@ -93,35 +93,49 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 {
 
   AbstractClass *v2; // esi
-  v2 = (AbstractClass *)a1; /*0x763c76*/
-  int v3 = a2; // edi /*0x763c7b*/
+  unsigned int *v3; // edi
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x763c81*/
+  WaypointPathClass *p_vfptr1; // esi
+  int v6; // ebp
+  unsigned int v7; // eax
+  int vfptr2; // ecx
+  int abstractFlags; // eax
+  int uniqueId; // eax
+  int v11; // ecx
+  int v12; // edx
+  int vfptr1; // eax
+  unsigned int *v14; // ecx
+  int v15; // [esp+28h] [ebp-Ch] BYREF
+  int v16; // [esp+2Ch] [ebp-8h]
+  int v17; // [esp+30h] [ebp-4h]
+
+  v2 = (AbstractClass *)this; /*0x763c76*/
+  v3 = (unsigned int *)a2; /*0x763c7b*/
+  result = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x763c81*/
   if ( result >= 0 ) /*0x763c8a*/
   {
     if ( v2 ) /*0x763c92*/
     {
       AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
-      /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x763ca0) */
-      /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763ca7) */
-      /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763cad) */
-      /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763cb4) */
-      /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763cbb) */
+      v2[1].vfptr1 = (int)&DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ca0*/
+      v2->vfptr = (int)&WaypointPathClass::`vftable'; /*0x763ca7*/
+      v2->vfptr1 = (int)&WaypointPathClass::`vftable'; /*0x763cad*/
+      v2->vfptr2 = (int)&WaypointPathClass::`vftable'; /*0x763cb4*/
+      v2->vfptr3 = (int)&WaypointPathClass::`vftable'; /*0x763cbb*/
     }
-    result = (*(int (__stdcall **)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a1, 4, 0); /*0x763ccd*/
+    result = v3->vt_entry_68(&this, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
-      WaypointPathClass *p_vtable1; // esi
-      p_vtable1 = (WaypointPathClass *)&v2[1].vfptr1; /*0x763cd8*/
-      if ( p_vtable1 ) /*0x763cdd*/
+      p_vfptr1 = (WaypointPathClass *)&v2[1].vfptr1; /*0x763cd8*/
+      if ( p_vfptr1 ) /*0x763cdd*/
       {
-        WaypointPathClass::computePath(p_vtable1, 0, 0); /*0x763ce3*/
-        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x763ce8) */
-        p_vtable1->abstractFlags = 10; /*0x763cee*/
-        p_vtable1->uniqueId = 0; /*0x763cf5*/
+        WaypointPathClass::computePath(p_vfptr1, 0, 0); /*0x763ce3*/
+        p_vfptr1->vfptr = (int)&DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ce8*/
+        p_vfptr1->abstractFlags = 10; /*0x763cee*/
+        p_vfptr1->uniqueId = 0; /*0x763cf5*/
       }
-      int v6 = 0; // ebp /*0x763cfc*/
-      if ( (int)a1 <= 0 ) /*0x763d00*/
+      v6 = 0; /*0x763cfc*/
+      if ( (int)this <= 0 ) /*0x763d00*/
       {
         return 0; /*0x763d78*/
       }
@@ -129,47 +143,40 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       {
         while ( 1 ) /*0x763d02*/
         {
-          int v7; // eax
-          v7 = *(unsigned int *)v3; /*0x763d02*/
-          int v15; // [esp+28h] [ebp-Ch] BYREF
+          v7 = *v3; /*0x763d02*/
           v15 = 0; /*0x763d0d*/
-          int v16; // [esp+2Ch] [ebp-8h]
           v16 = 0; /*0x763d11*/
-          int v17; // [esp+30h] [ebp-4h]
           v17 = 0; /*0x763d15*/
-          result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v7 + 12))(v3, &v15, 12, 0); /*0x763d19*/
+          result = (*(int (**)(unsigned int *, int *, int, unsigned int))(v7 + 12))(v3, &v15, 12, 0); /*0x763d19*/
           if ( result < 0 ) /*0x763d1e*/
             break; /*0x763d1e*/
-          void *vtable2 = p_vtable1->vfptr2; // ecx /*0x763d20*/
-          int abstractFlags; // eax
-          if ( p_vtable1->uniqueId < (int)vtable2 /*0x763d42*/
-            || ((p_vtable1->u8_D) || !vtable2)
-            && (abstractFlags = p_vtable1->abstractFlags, abstractFlags > 0)
-            && (*((uint8_t (**)(WaypointPathClass *, int, unsigned int))p_vtable1->vfptr + 2))(
-                 p_vtable1,
-                 (int)vtable2 + abstractFlags,
+          vfptr2 = p_vfptr1->vfptr2; /*0x763d20*/
+          if ( p_vfptr1->uniqueId < vfptr2 /*0x763d42*/
+            || (BYTE1(p_vfptr1->vfptr3) || !vfptr2)
+            && (abstractFlags = p_vfptr1->abstractFlags, abstractFlags > 0)
+            && (*(unsigned __int8 (**)(WaypointPathClass *, int, unsigned int))(p_vfptr1->vfptr + 8))(
+                 p_vfptr1,
+                 vfptr2 + abstractFlags,
                  0) )
           {
-            int uniqueId; // eax
-            uniqueId = p_vtable1->uniqueId; /*0x763d49*/
-            int v11 = uniqueId + 1; // ecx /*0x763d4c*/
-            int v12 = 3 * uniqueId; // edx /*0x763d4f*/
-            char *vtable1; // eax
-            vtable1 = (char *)p_vtable1->vfptr1; /*0x763d52*/
-            p_vtable1->uniqueId = v11; /*0x763d55*/
-            char *v14; // ecx
-            v14 = &vtable1[4 * v12]; /*0x763d58*/
-            *(unsigned int *)v14 = v15; /*0x763d5f*/
-            *((unsigned int *)v14 + 1) = v16; /*0x763d65*/
-            *((unsigned int *)v14 + 2) = v17; /*0x763d6c*/
+            uniqueId = p_vfptr1->uniqueId; /*0x763d49*/
+            v11 = uniqueId + 1; /*0x763d4c*/
+            v12 = 3 * uniqueId; /*0x763d4f*/
+            vfptr1 = p_vfptr1->vfptr1; /*0x763d52*/
+            p_vfptr1->uniqueId = v11; /*0x763d55*/
+            v14 = (unsigned int *)(vfptr1 + 4 * v12); /*0x763d58*/
+            *v14 = v15; /*0x763d5f*/
+            v14[1] = v16; /*0x763d65*/
+            v14[2] = v17; /*0x763d6c*/
           }
-          if ( ++v6 >= (int)a1 ) /*0x763d76*/
+          if ( ++v6 >= (int)this ) /*0x763d76*/
             return 0; /*0x763d76*/
         }
       }
     }
   }
   return result; /*0x763d7a*/
+
 }
 }
 // 0x764760
@@ -177,28 +184,31 @@ namespace gamemd {
 unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3_1)
 {
 
+  unsigned int *v4; // eax
+  int v5; // ecx
+  int *v7; // eax
   void *v8; // edx
+  unsigned int *v9; // eax
+  int v10; // ecx
 
-  this->vtable2 = 0; /*0x76476d*/
-  this->vtable3 = (void *)a2; /*0x764770*/
-  LOBYTE(this->vtable4) = 1; /*0x764773*/
-  BYTE1(this->u8_D) = 0; /*0x764777*/
-  this->AbstractClass = &vt_VectorClass; /*0x76477a*/
+  this->vfptr1 = 0; /*0x76476d*/
+  this->vfptr2 = (void *)a2; /*0x764770*/
+  LOBYTE(this->vfptr3) = 1; /*0x764773*/
+  BYTE1(this->vfptr3) = 0; /*0x764777*/
+  this->vfptr = &VectorClass<WaypointClass>::`vftable'; /*0x76477a*/
   if ( !a2 ) /*0x764780*/
-    return &this->AbstractClass; /*0x764780*/
+    return &this->vfptr; /*0x764780*/
   if ( !a3 ) /*0x764788*/
   {
-    int *v7; // eax
     v7 = (int *)__2_YAPAXI_Z(12 * a2 + 4); /*0x7647bd*/
     if ( v7 ) /*0x7647c7*/
     {
       v8 = v7 + 1; /*0x7647cc*/
       *v7 = a2; /*0x7647cf*/
-      unsigned int *v9; // eax
-      v9 = (unsigned int *)(v7 + 1); /*0x7647d3*/
+      v9 = v7 + 1; /*0x7647d3*/
       if ( a2 - 1 >= 0 ) /*0x7647d5*/
       {
-        int v10 = a2; // ecx /*0x7647d7*/
+        v10 = a2; /*0x7647d7*/
         do /*0x7647e4*/
         {
           *v9 = 0; /*0x7647d8*/
@@ -208,24 +218,24 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
           --v10; /*0x7647e3*/
         }
         while ( v10 ); /*0x7647e4*/
-        this->vtable2 = v8; /*0x7647e6*/
-        BYTE1(this->u8_D) = 1; /*0x7647e9*/
-        return &this->AbstractClass; /*0x7647f2*/
+        this->vfptr1 = v8; /*0x7647e6*/
+        BYTE1(this->vfptr3) = 1; /*0x7647e9*/
+        return &this->vfptr; /*0x7647f2*/
       }
     }
     else
     {
       v8 = 0; /*0x7647f5*/
     }
-    this->vtable2 = v8; /*0x7647f7*/
-    BYTE1(this->u8_D) = 1; /*0x7647fa*/
-    return &this->AbstractClass; /*0x7647fe*/
+    this->vfptr1 = v8; /*0x7647f7*/
+    BYTE1(this->vfptr3) = 1; /*0x7647fa*/
+    return &this->vfptr; /*0x7647fe*/
   }
   *a3 = a2; /*0x764790*/
-  unsigned int *v4 = a3 + 1; // eax /*0x764794*/
+  v4 = a3 + 1; /*0x764794*/
   if ( a2 - 1 >= 0 ) /*0x764796*/
   {
-    int v5 = a2; // ecx /*0x764798*/
+    v5 = a2; /*0x764798*/
     do /*0x7647a5*/
     {
       *v4 = 0; /*0x764799*/
@@ -236,8 +246,8 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
     }
     while ( v5 ); /*0x7647a5*/
   }
-  this->vtable2 = a3 + 1; /*0x7647a7*/
-  return &this->AbstractClass; /*0x7647ac*/
+  this->vfptr1 = a3 + 1; /*0x7647a7*/
+  return &this->vfptr; /*0x7647ac*/
 
 }
 }

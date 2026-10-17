@@ -173,31 +173,37 @@ namespace gamemd {
 int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 {
 
-
   SideClass *v2; // esi
-  v2 = (gamemd::SideClass *)(a0); /*0x6a4782*/
   int v3; // edi
-  v3 = (int)(aP1); /*0x6a4787*/
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix_0(a0, aP1); /*0x6a478d*/
+  void **p_houseTypes; // esi
+  int i; // ebp
+  void *v7; // eax
+  int v8; // ecx
+  void *v9; // eax
+  unsigned int *v10; // edx
+
+  v2 = this; /*0x6a4782*/
+  v3 = a2; /*0x6a4787*/
+  result = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x6a478d*/
   if ( result >= 0 ) /*0x6a4796*/
   {
     if ( v2 ) /*0x6a47a4*/
     {
-      AbstractTypeClass::Init((int)v2, (int)&aP1); /*0x6a47ad*/
+      AbstractTypeClass::Init((int)v2, (int)&a2); /*0x6a47ad*/
       v2->houseTypesCount = 0; /*0x6a47b2*/
-      v2[1].AbstractClass = 0; /*0x6a47b8*/
-      LOBYTE(v2[1].?) = 1; /*0x6a47be*/
-      BYTE1(v2[1].?) = 0; /*0x6a47c5*/
-      v2[1].? = (void *)10; /*0x6a47cb*/
-      v2[1].? = 0; /*0x6a47d1*/
-      v2->houseTypes = &vt_TypeList; /*0x6a47d7*/
-      v2->AbstractClass = &vt_SideClass; /*0x6a47e1*/
-      /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47e7) */
-      /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47ee) */
-      /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47f5) */
+      v2[1].vfptr = 0; /*0x6a47b8*/
+      LOBYTE(v2[1].vfptr1) = 1; /*0x6a47be*/
+      BYTE1(v2[1].vfptr1) = 0; /*0x6a47c5*/
+      v2[1].vfptr3 = (void *)10; /*0x6a47cb*/
+      v2[1].vfptr2 = 0; /*0x6a47d1*/
+      v2->houseTypes = &TypeList<int>::`vftable'; /*0x6a47d7*/
+      v2->vfptr = &SideClass::`vftable'; /*0x6a47e1*/
+      v2->vfptr1 = &SideClass::`vftable'; /*0x6a47e7*/
+      v2->vfptr2 = &SideClass::`vftable'; /*0x6a47ee*/
+      v2->vfptr3 = &SideClass::`vftable'; /*0x6a47f5*/
     }
-    void **p_houseTypes = &v2->houseTypes; // esi /*0x6a47fc*/
+    p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
     {
       p_houseTypes[1] = 0; /*0x6a4806*/
@@ -206,20 +212,17 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *((unsigned char *)p_houseTypes + 13) = 0; /*0x6a4810*/
       p_houseTypes[5] = (void *)10; /*0x6a4813*/
       p_houseTypes[4] = 0; /*0x6a4816*/
-      *p_houseTypes = &vt_TypeList; /*0x6a4819*/
+      *p_houseTypes = &TypeList<int>::`vftable'; /*0x6a4819*/
     }
-    (*(void (**)(int, int *, int, unsigned int))(*&v3->q030))(v3, &aP1, 4, 0); /*0x6a482a*/
-    int i; // ebp
-    for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a2, 4, 0); /*0x6a482a*/
+    for ( i = 0; i < a2; ++i ) /*0x6a4833*/
     {
-      (*(void (**)(int, SideClass **, int, unsigned int))(*&v3->q030))(v3, &a0, 4, 0); /*0x6a4840*/
-      void *v7; // eax
+      (*(void (**)(int, SideClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &this, 4, 0); /*0x6a4840*/
       v7 = p_houseTypes[2]; /*0x6a4843*/
       if ( (int)p_houseTypes[4] >= (int)v7 ) /*0x6a484b*/
       {
         if ( !*((unsigned char *)p_houseTypes + 13) && v7 ) /*0x6a4854*/
           continue; /*0x6a4854*/
-        int v8; // ecx
         v8 = (int)p_houseTypes[5]; /*0x6a4856*/
         if ( v8 <= 0 /*0x6a4865*/
           || !(*((unsigned __int8 (**)(void **, int, unsigned int))*p_houseTypes + 2))(
@@ -230,12 +233,10 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
           continue; /*0x6a4865*/
         }
       }
-      void *v9; // eax
       v9 = p_houseTypes[4]; /*0x6a486c*/
-      unsigned int *v10; // edx
-      v10 = (unsigned int *)(p_houseTypes[1]); /*0x6a486f*/
+      v10 = p_houseTypes[1]; /*0x6a486f*/
       p_houseTypes[4] = (char *)v9 + 1; /*0x6a4875*/
-      v10[(unsigned int)v9] = (unsigned int)(a0); /*0x6a487c*/
+      v10[(unsigned int)v9] = this; /*0x6a487c*/
     }
     return 0; /*0x6a4888*/
   }
@@ -290,23 +291,26 @@ namespace gamemd {
 int SideClass::FindByName(void *a1)
 {
 
-  if ( !_strcmpi((char *)a1,(const char *)(g_Str__random_)) ) /*0x49d9fb*/
+  int v3; // ebx
+  char *v4; // esi
+
+  if ( !_strcmpi((char *)this, g_Str__random_) ) /*0x49d9fb*/
     return -2; /*0x49da09*/
-  if ( !a1 ) /*0x49da12*/
+  if ( !this ) /*0x49da12*/
     return -1; /*0x49da12*/
-  int v3 = 0; // ebx /*0x49da19*/
+  v3 = 0; /*0x49da19*/
   if ( dword_A83CA8 <= 0 ) /*0x49da1d*/
     return -1; /*0x49da53*/
   while ( 1 ) /*0x49da25*/
   {
-    int v4; // esi
-    v4 = *((unsigned int *)dword_A83C9C + v3); /*0x49da25*/
-    if ( !_strcmpi((char *)(v4 + 100), (char *)a1) || !_strcmpi((char *)(v4 + 36), (char *)a1) ) /*0x49da3d*/
+    v4 = (char *)*((unsigned int *)dword_A83C9C + v3); /*0x49da25*/
+    if ( !_strcmpi(v4 + 100, (char *)this) || !_strcmpi(v4 + 36, (char *)this) ) /*0x49da3d*/
       break; /*0x49da3d*/
     if ( ++v3 >= dword_A83CA8 ) /*0x49da51*/
       return -1; /*0x49da51*/
   }
   return v3; /*0x49da07*/
+
 }
 } // namespace gamemd
 

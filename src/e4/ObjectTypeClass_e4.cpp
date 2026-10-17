@@ -264,11 +264,15 @@ namespace gamemd {
 BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
+  int *v3; // eax
+  int v4; // edx
+  char *v5; // eax
+  int v6; // edx
 
-  AbstractTypeClass::Init((int)this, aP1); /*0x5f7328*/
-  int *v3 = &this->q194; // eax /*0x5f732f*/
+  AbstractTypeClass::Init((int)this, a2); /*0x5f7328*/
+  v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
-  int v4 = 18; // edx /*0x5f733b*/
+  v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
   {
     *v3 = 0; /*0x5f7340*/
@@ -277,8 +281,8 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
-  char *v5 = &this->u32_158; // eax /*0x5f734b*/
-  int v6 = 18; // edx /*0x5f7351*/
+  v5 = &this->u32_158; /*0x5f734b*/
+  v6 = 18; /*0x5f7351*/
   do /*0x5f735f*/
   {
     *(unsigned int *)v5 = 0; /*0x5f7356*/
@@ -307,11 +311,11 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
   this->VoxelCaches[17] = 0; /*0x5f73c7*/
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  this->AbstractTypeClass = &vt_ObjectTypeClass; /*0x5f73d9*/
-  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73df) */
-  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73e6) */
-  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73ed) */
-  return &this->AbstractTypeClass; /*0x5f73f6*/
+  this->vfptr = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
+  this->vfptr1 = &ObjectTypeClass::`vftable'; /*0x5f73df*/
+  this->vfptr2 = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
+  this->vfptr3 = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
+  return &this->vfptr; /*0x5f73f6*/
 
 }
 } // namespace gamemd
@@ -1678,28 +1682,31 @@ namespace gamemd {
 char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3)
 {
 
+  int i; // ebp
+  unsigned int *v5; // eax
+  unsigned int v6; // ecx
   unsigned char v8[521]; // [esp+Ch] [ebp-20Ch] BYREF
+  __int16 v9; // [esp+215h] [ebp-3h]
+  char v10; // [esp+217h] [ebp-1h]
+
   *(unsigned int *)&v8[8] = this; /*0x47624d*/
   v8[12] = g_INI_DefaultBuffer; /*0x476252*/
   memset(&v8[13], 0, 0x1FCu); /*0x476268*/
-  int16_t v9; // [esp+215h] [ebp-3h]
   v9 = 0; /*0x47626a*/
-  char v10; // [esp+217h] [ebp-1h]
   v10 = 0; /*0x47626c*/
-  int i; // ebp
   for ( i = 0; i < aP3->uniqueId; ++i ) /*0x476274*/
   {
     if ( v8[12] ) /*0x476281*/
-      strcat(&v8[12], Str); /*0x4762a8*/
-    int v5 = aP3->vtable2; // eax /*0x4762b1*/
+      strcat(&v8[12], Delimiter); /*0x4762a8*/
+    v5 = aP3->vtable2; /*0x4762b1*/
     v8[4] = 0; /*0x4762b4*/
-    int v6; // ecx
-    v6 = *(unsigned int *)(v5 + 4 * i); /*0x4762bc*/
-    v8[4] = (*(((unsigned char *)&(v6)) + (sizeof(v6) - 1))); /*0x4762c6*/
+    v6 = v5[i]; /*0x4762bc*/
+    v8[4] = HIBYTE(v6); /*0x4762c6*/
     *(unsigned int *)v8 = v6 & 0xFFFFFF; /*0x4762ce*/
     strcat(&v8[12], (const char *)(System_Read_6E7330((ObjectClass *)v8) + 36)); /*0x4762fa*/
   }
   return INIClass::SetString(*(char **)&v8[8], Block, a2, &v8[12]); /*0x47632e*/
+
 }
 } // namespace gamemd
 // 0x476FC0
@@ -1811,46 +1818,50 @@ namespace gamemd {
 void ObjectTypeClass::CleanupWeapons()
 {
 
-  char *v1 = &this->q0CC; // esi /*0x5f8084*/
-  int v2 = 18; // ebp /*0x5f808a*/
+  char *v1; // esi
+  int v2; // ebp
+  void *v3; // edi
+  void **v4; // edi
+  void *v5; // edi
+  void *v6; // edi
+
+  v1 = &this->q0CC; /*0x5f8084*/
+  v2 = 18; /*0x5f808a*/
   do /*0x5f8107*/
   {
-    void *v3; // edi
     v3 = (void *)*((unsigned int *)v1 - 1); /*0x5f8091*/
     if ( v3 ) /*0x5f8096*/
     {
       WaveClass::Destroy(*((unsigned int *)v1 - 1)); /*0x5f809a*/
-      operator delete((v3)); /*0x5f80a0*/
+      __3_YAXPAX_Z(v3); /*0x5f80a0*/
       *((unsigned int *)v1 - 1) = 0; /*0x5f80a8*/
     }
-    void **v4; // edi
     v4 = *(void ***)v1; /*0x5f80ab*/
     if ( *(unsigned int *)v1 ) /*0x5f80ab*/
     {
-      ((String *)(*(void ***)v1))->Release(); /*0x5f80b3*/
-      operator delete((v4)); /*0x5f80b9*/
+      String::Release(*(void ***)v1); /*0x5f80b3*/
+      __3_YAXPAX_Z(v4); /*0x5f80b9*/
       *(unsigned int *)v1 = 0; /*0x5f80c1*/
     }
-    void *v5; // edi
     v5 = (void *)*((unsigned int *)v1 + 35); /*0x5f80c3*/
     if ( v5 ) /*0x5f80cb*/
     {
       WaveClass::Destroy(*((unsigned int *)v1 + 35)); /*0x5f80cf*/
-      operator delete((v5)); /*0x5f80d5*/
+      __3_YAXPAX_Z(v5); /*0x5f80d5*/
       *((unsigned int *)v1 + 35) = 0; /*0x5f80dd*/
     }
-    void *v6; // edi
     v6 = (void *)*((unsigned int *)v1 + 36); /*0x5f80e3*/
     if ( v6 ) /*0x5f80eb*/
     {
-      ((String *)(*((void ***)v1 + 36)))->Release(); /*0x5f80ef*/
-      operator delete((v6)); /*0x5f80f5*/
+      String::Release(*((void ***)v1 + 36)); /*0x5f80ef*/
+      __3_YAXPAX_Z(v6); /*0x5f80f5*/
       *((unsigned int *)v1 + 36) = 0; /*0x5f80fd*/
     }
     v1 += 8; /*0x5f8103*/
     --v2; /*0x5f8106*/
   }
   while ( v2 ); /*0x5f8107*/
+
 }
 } // namespace gamemd
 // 0x5F9AE0
@@ -1927,7 +1938,7 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A30(int a2)
 {
 
-  this->AbstractTypeClass = (void *)a2; /*0x717a34*/
+  this->vfptr = (void *)a2; /*0x717a34*/
   return a2; /*0x717a36*/
 
 }

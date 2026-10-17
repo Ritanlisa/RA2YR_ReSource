@@ -104,21 +104,35 @@ namespace gamemd {  // G42.18 ns repair
 uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
 
-  int *v3; // edi
-  v3 = (int *)(dword_ABF168);
-  dword_ABF230 = (unsigned int)(aP0); /*0x5bc190*/
-  dword_ABF234 = (unsigned int)(a2); /*0x5bc196*/
-  byte_ABF238 = a3; /*0x5bc19c*/
+  Text **v3; // edi
+  unsigned int *v4; // eax
+  unsigned int *v5; // esi
+  int v6; // edi
+  unsigned int *v7; // ebp
+  unsigned char *v8; // ecx
+  unsigned int *v9; // eax
+  int v10; // edx
+  Text **v11; // ebx
+  Text *v12; // ecx
+  int v13; // edi
+  unsigned int *v14; // ebp
+  unsigned char *v15; // edx
+  unsigned int *v16; // eax
+  int v17; // esi
+  unsigned __int8 result; // al
+  Text **v19; // [esp+10h] [ebp-4h]
   int v20; // [esp+18h] [ebp+4h]
+
+  v3 = &dword_ABF168; /*0x5bc18b*/
+  hInstance = aP0; /*0x5bc190*/
+  hWndParent = a2; /*0x5bc196*/
+  byte_ABF238 = a3; /*0x5bc19c*/
   v20 = 0; /*0x5bc1a1*/
-  int *v19; // [esp+10h] [ebp-4h]
-  v19 = (int *)(dword_ABF168); /*0x5bc1a5*/
+  v19 = &dword_ABF168; /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
-    unsigned int *v4; // eax
-    v4 = (unsigned int *)((unsigned char *)(operator new(0x2738u)));
-    unsigned char *v5; // esi
-    v5 = (unsigned char *)(v4); /*0x5bc1b3*/
+    v4 = (unsigned int *)__2_YAPAXI_Z(0x2738u); /*0x5bc1ae*/
+    v5 = v4; /*0x5bc1b3*/
     if ( v4 ) /*0x5bc1ba*/
     {
       v4[2503] = 0; /*0x5bc1c0*/
@@ -128,14 +142,13 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
       v4[2506] = 0; /*0x5bc1d8*/
       v4[2507] = 80; /*0x5bc1de*/
       v4[2508] = 25; /*0x5bc1e8*/
-      int v6 = 0; // edi /*0x5bc1f2*/
-      unsigned int *v7 = v4 + 500; // ebp /*0x5bc1f4*/
+      v6 = 0; /*0x5bc1f2*/
+      v7 = v4 + 500; /*0x5bc1f4*/
       do /*0x5bc219*/
       {
-        unsigned char *v8; // ecx
-        v8 = &v5[v6]; /*0x5bc1fa*/
-        unsigned int *v9 = v7; // eax /*0x5bc1fd*/
-        int v10 = 80; // edx /*0x5bc1ff*/
+        v8 = (char *)v5 + v6; /*0x5bc1fa*/
+        v9 = v7; /*0x5bc1fd*/
+        v10 = 80; /*0x5bc1ff*/
         do /*0x5bc210*/
         {
           *v8 = 32; /*0x5bc204*/
@@ -149,35 +162,31 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
         ++v7; /*0x5bc213*/
       }
       while ( v6 < 25 ); /*0x5bc219*/
-      v5[10036] = 1; /*0x5bc223*/
-      Text::DrawRepeated(v5, 0, 0, 80, 25); /*0x5bc22a*/
+      v5->u8_2734 = 1; /*0x5bc223*/
+      Text::DrawRepeated((Text *)v5, 0, 0, 80, 25); /*0x5bc22a*/
       v3 = v19; /*0x5bc22f*/
     }
     else
     {
       v5 = 0; /*0x5bc235*/
     }
-    *v3++ = (int)v5; /*0x5bc23b*/
+    *v3++ = (Text *)v5; /*0x5bc23b*/
     ++v20; /*0x5bc247*/
     v19 = v3; /*0x5bc24b*/
   }
   while ( (int)v3 < (int)&dword_ABF188 ); /*0x5bc24f*/
-  int *v11; // ebx
-  v11 = (int *)(dword_ABF168); /*0x5bc25b*/
-  dword_ABF23C = ((unsigned int *)(dword_ABF168))[0]; /*0x5bc260*/
+  v11 = &dword_ABF168; /*0x5bc25b*/
+  dword_ABF23C = dword_ABF168; /*0x5bc260*/
   do /*0x5bc2b2*/
   {
-    unsigned char *v12; // ecx
-    v12 = (unsigned char *)*v11; /*0x5bc266*/
-    int v13 = 0; // edi /*0x5bc268*/
-    int v14 = *v11 + 2000; // ebp /*0x5bc26a*/
+    v12 = *v11; /*0x5bc266*/
+    v13 = 0; /*0x5bc268*/
+    v14 = (unsigned int *)&(*v11)[500]; /*0x5bc26a*/
     do /*0x5bc293*/
     {
-      unsigned char *v15; // edx
-      v15 = &v12[v13]; /*0x5bc270*/
-      unsigned int *v16; // eax
-      v16 = (unsigned int *)v14; /*0x5bc273*/
-      int v17 = 80; // esi /*0x5bc275*/
+      v15 = (char *)v12 + v13; /*0x5bc270*/
+      v16 = v14; /*0x5bc273*/
+      v17 = 80; /*0x5bc275*/
       do /*0x5bc28a*/
       {
         *v15 = 32; /*0x5bc27a*/
@@ -188,15 +197,15 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
       }
       while ( v17 ); /*0x5bc28a*/
       ++v13; /*0x5bc28c*/
-      v14 += 4; /*0x5bc28d*/
+      ++v14; /*0x5bc28d*/
     }
     while ( v13 < 25 ); /*0x5bc293*/
-    v12[10036] = 1; /*0x5bc29d*/
+    LOBYTE(v12[2509].Text_field_00) = 1; /*0x5bc29d*/
     Text::DrawRepeated(v12, 0, 0, 80, 25); /*0x5bc2a4*/
     ++v11; /*0x5bc2a9*/
   }
   while ( (int)v11 < (int)&dword_ABF188 ); /*0x5bc2b2*/
-  uint8_t result = byte_ABF239; // al /*0x5bc2b4*/
+  result = byte_ABF239; /*0x5bc2b4*/
   if ( byte_ABF239 ) /*0x5bc2bf*/
   {
     result = byte_ABF238; /*0x5bc2c1*/
@@ -205,11 +214,12 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
       if ( !dword_ABF240 ) /*0x5bc2d1*/
         CreateDebugOutput(); /*0x5bc2d3*/
       byte_ABF23A = 1; /*0x5bc2e0*/
-      ShowWindow((HWND)(dword_ABF240), 1); /*0x5bc2e7*/
-      return (uint8_t)SetFocus((HWND)(dword_ABF234)); /*0x5bc2f4*/
+      ShowWindow(dword_ABF240, 1); /*0x5bc2e7*/
+      return (unsigned __int8)SetFocus(hWndParent); /*0x5bc2f4*/
     }
   }
   return result; /*0x5bc2b9*/
+
 }
 }  // G42.18 ns repair
 // 0x69A1F0

@@ -70,37 +70,44 @@ AbstractClass * * NetworkClass::RecordEvent()
 {
 
   unsigned char *WaypointCoords; // eax
-  unsigned char v4[8]; // [esp+8h] [ebp-78h] BYREF
-  WaypointCoords = ((ScriptAction *)v4)->GetWaypointCoords(this); /*0x6ffe0a*/
-  char v5[108]; // [esp+10h] [ebp-70h] BYREF
-  uint8_t v8; // [esp+84h] [ebp+4h]
-  EventClass::Add(v5, (int)dword_A83D4C->relatedTagsCount, v8, *(unsigned int *)WaypointCoords, WaypointCoords->vtable2); /*0x6ffe34*/
   int result; // eax
+  char *v3; // edi
+  unsigned char v4[8]; // [esp+8h] [ebp-78h] BYREF
+  char v5[108]; // [esp+10h] [ebp-70h] BYREF
+  __int16 v6; // [esp+7Ch] [ebp-4h]
+  char v7; // [esp+7Eh] [ebp-2h]
+  unsigned __int8 v8; // [esp+84h] [ebp+4h]
+
+  WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v4, this); /*0x6ffe0a*/
+  EventClass::Add( /*0x6ffe34*/
+    v5,
+    *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48),
+    v8,
+    *(unsigned int *)WaypointCoords,
+    WaypointCoords[4]);
   result = FactoryClass::GetFlag(); /*0x6ffe39*/
   if ( (unsigned char)result ) /*0x6ffe40*/
   {
-    result = (v5)->ExecutePlanningModeCmd(); /*0x6ffe46*/
-    (*((unsigned char *)&(result))) = 0; /*0x6ffe4b*/
+    result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
+    LOBYTE(result) = 0; /*0x6ffe4b*/
   }
   else
   {
-    if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ffe5f*/
+    if ( *(int *)&dword_A802C8 < 128 ) /*0x6ffe5f*/
     {
-      char *v3; // edi
-      v3 = (char *)&byte_A802D4 + 111 * dword_A802D0; /*0x6ffe75*/
-      memcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
+      v3 = &byte_A802D4[111 * dword_A802D0]; /*0x6ffe75*/
+      qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
-      int16_t v6; // [esp+7Ch] [ebp-4h]
       *(unsigned short *)v3 = v6; /*0x6ffe7e*/
-      char v7; // [esp+7Eh] [ebp-2h]
       v3[2] = v7; /*0x6ffe80*/
       dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
-      result = (int)++stru_A80220.lineTrailer; /*0x6ffea7*/
+      result = ++*(unsigned int *)&dword_A802C8; /*0x6ffea7*/
     }
-    (*((unsigned char *)&(result))) = 1; /*0x6ffeae*/
+    LOBYTE(result) = 1; /*0x6ffeae*/
   }
-  return (gamemd::AbstractClass **)(result); /*0x6ffe4d*/
+  return result; /*0x6ffe4d*/
+
 }
 }
 // 0x7B1C50

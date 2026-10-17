@@ -79,11 +79,13 @@ namespace gamemd {
 char Dial8Class_48::Release(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
 
   if ( a2 ) /*0x4a7dcc*/
   {
     LOBYTE(this->m_C) = 0; /*0x4a7dd6*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x4a7ddc*/
       v4 = a3; /*0x4a7df2*/
     else
@@ -93,11 +95,9 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x4a7e05*/
       {
-        int m_8; // ecx
         m_8 = this->m_8; /*0x4a7e0c*/
         if ( a2 < m_8 ) /*0x4a7e11*/
           m_8 = a2; /*0x4a7e13*/
-        int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a7e19*/
           ++i; /*0x4a7e1e*/
         if ( BYTE1(this->m_C) ) /*0x4a7e2b*/
@@ -106,7 +106,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x4a7e3e*/
         }
       }
-      *&this->q004 = (int)(v4); /*0x4a7e47*/
+      *&this->q004 = v4; /*0x4a7e47*/
       this->m_8 = a2; /*0x4a7e4f*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a7e52*/
       return 1; /*0x4a7e58*/
@@ -118,7 +118,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4a7e62*/
+    (*(void (**)(_VectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7e62*/
     return 1; /*0x4a7e68*/
   }
 
@@ -144,19 +144,23 @@ namespace gamemd {
 int Dial8Class_48::Read(unsigned int * a2, void *a2_2, void *a3)
 {
 
-  if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->q00C))) ) /*0x4a7ea0*/
+  int result; // eax
+  int m_8; // edx
+  unsigned int *i; // ecx
+
+  if ( !LOBYTE(this->m_C) ) /*0x4a7ea0*/
     return 0; /*0x4a7ea8*/
-  int m_8 = a2_2->q008; // edx /*0x4a7eae*/
-  int result = 0; // eax /*0x4a7eb1*/
+  m_8 = this->m_8; /*0x4a7eae*/
+  result = 0; /*0x4a7eb1*/
   if ( m_8 <= 0 ) /*0x4a7eb5*/
     return -1; /*0x4a7ecc*/
-  unsigned int *i; // ecx
-  for ( i = *(unsigned int **)&a2_2->q004; *(unsigned int)(i) != *(unsigned int *)(a2_2); ++i ) /*0x4a7ebb*/
+  for ( i = *&this->q004; *i != *a2; ++i ) /*0x4a7ebb*/
   {
     if ( ++result >= m_8 ) /*0x4a7eca*/
       return -1; /*0x4a7eca*/
   }
   return result; /*0x4a7eaa*/
+
 }
 } // namespace gamemd
 
@@ -176,11 +180,14 @@ namespace gamemd {
 char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
 {
 
+  unsigned int *v4; // edi
+  int m_8; // ecx
+  int i; // eax
+  int v7; // eax
 
   if ( a2 ) /*0x4a7f0c*/
   {
     LOBYTE(this->m_C) = 0; /*0x4a7f12*/
-    unsigned int *v4; // edi
     if ( a3 ) /*0x4a7f18*/
       v4 = a3; /*0x4a7f2e*/
     else
@@ -190,11 +197,9 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x4a7faa*/
     if ( *&this->q004 ) /*0x4a7f38*/
     {
-      int m_8; // ecx
       m_8 = this->m_8; /*0x4a7f3f*/
       if ( a2 < m_8 ) /*0x4a7f44*/
         m_8 = a2; /*0x4a7f46*/
-      int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a7f4c*/
         ++i; /*0x4a7f51*/
       if ( BYTE1(this->m_C) ) /*0x4a7f5e*/
@@ -203,15 +208,15 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x4a7f71*/
       }
     }
-    *&this->q004 = (int)(v4); /*0x4a7f7a*/
+    *&this->q004 = v4; /*0x4a7f7a*/
     this->m_8 = a2; /*0x4a7f82*/
     BYTE1(this->m_C) = a3 == 0; /*0x4a7f85*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4a7f8e*/
+    (*(void (**)(_DynamicVectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
   }
-  int v7 = this->m_8; // eax /*0x4a7f91*/
+  v7 = this->m_8; /*0x4a7f91*/
   if ( v7 < this->m_10 ) /*0x4a7f99*/
     this->m_10 = v7; /*0x4a7f9b*/
   return 1; /*0x4a7f9e*/

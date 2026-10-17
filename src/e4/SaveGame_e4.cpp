@@ -411,78 +411,79 @@ namespace gamemd {
 int SaveGame::LoadVeinholeData()
 {
 
-
   int v2; // ecx
-  v2 = *(unsigned int *)this->q000; /*0x74ed74*/
-  int uniqueId; // [esp+90h] [ebp-14h] BYREF
-  uniqueId = stru_B1D290.?; /*0x74ed7a*/
-  if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &uniqueId, 4, 0) < 0 ) /*0x74ed83*/
-    return 0; /*0x74ed8e*/
   int v4; // edi
-  v4 = Object::ComputeAllocationSize(); /*0x74ed9a*/
   int v5; // eax
-  v5 = *(unsigned int *)this->q000; /*0x74ed9c*/
-  int v15; // [esp+98h] [ebp-Ch]
-  v15 = v4; /*0x74eda3*/
-  if ( (*(int (**)(SaveGame *, int, int, unsigned int))(v5 + 16))( /*0x74edac*/
-         this,
-         stru_B1D290.customSound_controller[4],
-         v4,
-         0) < 0 )
-  return 0; /*0x74edac*/
-  int v6 = 0; // ebx /*0x74edbc*/
+  int v6; // ebx
+  int v7; // ecx
+  unsigned int *v8; // eax
+  unsigned int v9; // edi
+  unsigned int v10; // ebp
+  int i; // ebx
+  int v12; // ecx
+  int v13; // [esp+90h] [ebp-14h] BYREF
   int v14; // [esp+94h] [ebp-10h]
+  int v15; // [esp+98h] [ebp-Ch]
+  int v16; // [esp+9Ch] [ebp-8h] BYREF
+  int v17; // [esp+A0h] [ebp-4h] BYREF
+
+  v2 = *(unsigned int *)this->__pad_0; /*0x74ed74*/
+  v13 = dword_B1D2A0; /*0x74ed7a*/
+  if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &v13, 4, 0) < 0 ) /*0x74ed83*/
+    return 0; /*0x74ed8e*/
+  v4 = Object::ComputeAllocationSize(); /*0x74ed9a*/
+  v5 = *(unsigned int *)this->__pad_0; /*0x74ed9c*/
+  v15 = v4; /*0x74eda3*/
+  if ( (*(int (**)(SaveGame *, void *, int, unsigned int))(v5 + 16))(this, dword_B1D2F0, v4, 0) < 0 ) /*0x74edac*/
+    return 0; /*0x74edac*/
+  v6 = 0; /*0x74edbc*/
   v14 = 0; /*0x74edc0*/
-  if ( uniqueId > 0 ) /*0x74edc4*/
+  if ( v13 > 0 ) /*0x74edc4*/
   {
     while ( 1 ) /*0x74edd6*/
     {
-      int v7; // ecx
-      v7 = *(unsigned int *)this->q000; /*0x74edd6*/
-      int v16; // [esp+9Ch] [ebp-8h] BYREF
-      v16 = *((unsigned int *)stru_B1D290.? + v6); /*0x74ede5*/
+      v7 = *(unsigned int *)this->__pad_0; /*0x74edd6*/
+      v16 = *((unsigned int *)dword_B1D294 + v6); /*0x74ede5*/
       if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v7 + 16))(this, &v16, 4, 0) < 0 /*0x74ee50*/
-        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(
+        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
              this,
-             *((unsigned int *)stru_B1D290.? + v6),
+             *((unsigned int *)dword_B1D294 + v6),
              264,
              0) < 0
-        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(
+        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
              this,
-             *(unsigned int *)(*((unsigned int *)stru_B1D290.? + v6) + 196),
+             *(unsigned int *)(*((unsigned int *)dword_B1D294 + v6) + 196),
              v4,
              0) < 0
-        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(
+        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
              this,
-             *(unsigned int *)(*((unsigned int *)stru_B1D290.? + v6) + 180),
-             8 * *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 220),
+             *(unsigned int *)(*((unsigned int *)dword_B1D294 + v6) + 180),
+             8 * dword_8871E0->AircraftFogReveal,
              0) < 0 )
       {
         break; /*0x74ee50*/
       }
-      int v8; // eax
-      v8 = *((unsigned int *)stru_B1D290.? + v6); /*0x74ee62*/
-      int v9; // edi
-      v9 = *(unsigned int *)(v8 + 176); /*0x74ee65*/
-      int v10; // ebp
-      v10 = *(unsigned int *)(v8 + 180); /*0x74ee6b*/
-      if ( (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
-        && (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(this, v9 + 4, 4, 0) >= 0 )
+      v8 = (unsigned int *)*((unsigned int *)dword_B1D294 + v6); /*0x74ee62*/
+      v9 = v8[44]; /*0x74ee65*/
+      v10 = v8[45]; /*0x74ee6b*/
+      if ( (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
+        && (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
+             this,
+             v9 + 4,
+             4,
+             0) >= 0 )
       {
-        int i; // ebx
         for ( i = 0; i < *(unsigned int *)(v9 + 4); ++i ) /*0x74ee93*/
         {
-          int v12; // ecx
-          v12 = *(unsigned int *)this->q000; /*0x74ee98*/
-          int v17; // [esp+A0h] [ebp-4h] BYREF
-          v17 = (*(unsigned int *)(*(unsigned int *)(v9 + 8) + 4 * i) - v10) >> 3; /*0x74eeac*/
+          v12 = *(unsigned int *)this->__pad_0; /*0x74ee98*/
+          v17 = (int)(*(unsigned int *)(*(unsigned int *)(v9 + 8) + 4 * i) - v10) >> 3; /*0x74eeac*/
           if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v12 + 16))(this, &v17, 4, 0) < 0 ) /*0x74eeb5*/
             break; /*0x74eeb5*/
         }
         v6 = v14; /*0x74eebf*/
       }
       v14 = ++v6; /*0x74eeca*/
-      if ( v6 >= uniqueId ) /*0x74eece*/
+      if ( v6 >= v13 ) /*0x74eece*/
         return 1; /*0x74eece*/
       v4 = v15; /*0x74edcc*/
     }
@@ -575,25 +576,28 @@ namespace gamemd {
 int SaveGame::SaveIteratedData(int a2)
 {
 
-  int result; // eax
-
-  int v2 = a2; // esi /*0x413853*/
-  int v3 = 0; // ebp /*0x413858*/
+  unsigned int *v2; // esi
+  int v3; // ebp
   char *i; // edi
+  unsigned int v5; // ecx
+  int result; // eax
+  int v7; // ebx
+
+  v2 = (unsigned int *)a2; /*0x413853*/
+  v3 = 0; /*0x413858*/
   for ( i = &this->q004; ; i += 24 ) /*0x41385a*/
   {
-    int v5; // ecx
-    v5 = *(unsigned int *)v2; /*0x413860*/
+    v5 = *v2; /*0x413860*/
     a2 = *((unsigned int *)i + 3); /*0x41386c*/
-    result = (*(int (**)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x413870*/
+    result = (*(int (**)(unsigned int *, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x413870*/
     if ( result < 0 ) /*0x413875*/
       break; /*0x413875*/
-    int v7 = 0; // ebx /*0x41387b*/
+    v7 = 0; /*0x41387b*/
     if ( a2 > 0 ) /*0x41387f*/
     {
       do /*0x41388e*/
       {
-        result = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v2 + 16))(v2, *(unsigned int *)i + 4 * v7, 4, 0); /*0x41388e*/
+        result = (*(int (**)(unsigned int *, int, int, unsigned int))(*v2 + 16))(v2, *(unsigned int *)i + 4 * v7, 4, 0); /*0x41388e*/
         if ( result < 0 ) /*0x413893*/
           return result; /*0x413893*/
       }

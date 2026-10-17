@@ -276,36 +276,37 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
 char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
+
   unsigned int *v4; // edi
   int m_8; // ecx
   int i; // eax
 
   if ( new_size ) /*0x55a1fc*/
   {
-    (this->__pad_00C) = 0; /*0x55a206*/
+    LOBYTE(this->m_C) = 0; /*0x55a206*/
     if ( out_buffer ) /*0x55a20c*/
       v4 = out_buffer; /*0x55a222*/
     else
-      v4 = (unsigned int *)operator new(4 * new_size); /*0x55a21e*/
-    (this->__pad_00C) = 1; /*0x55a226*/
+      v4 = (unsigned int *)__2_YAPAXI_Z(4 * new_size); /*0x55a21e*/
+    LOBYTE(this->m_C) = 1; /*0x55a226*/
     if ( v4 ) /*0x55a22a*/
     {
-      if ( *&this->mode ) /*0x55a235*/
+      if ( *&this->__pad_004 ) /*0x55a235*/
       {
-        m_8 = (int)(this->Capacity);
+        m_8 = this->Capacity; /*0x55a23c*/
         if ( new_size < m_8 ) /*0x55a241*/
           m_8 = new_size; /*0x55a243*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->mode + 4 * i - 4) ) /*0x55a249*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->__pad_004 + 4 * i - 4) ) /*0x55a249*/
           ++i; /*0x55a24e*/
-        if ( (this->IsAllocated) ) /*0x55a25b*/
+        if ( BYTE1(this->m_C) ) /*0x55a25b*/
         {
-          operator delete((void *)(*&this->mode)); /*0x55a266*/
-          *&this->mode = 0; /*0x55a26e*/
+          __3_YAXPAX_Z(*&this->__pad_004); /*0x55a266*/
+          *&this->__pad_004 = 0; /*0x55a26e*/
         }
       }
-      *&this->mode = (unsigned int)(v4); /*0x55a277*/
-      this->Capacity = (unsigned int *)(new_size); /*0x55a27f*/
-      (this->IsAllocated) = (void *)(out_buffer == 0); /*0x55a282*/
+      *&this->__pad_004 = v4; /*0x55a277*/
+      this->Capacity = new_size; /*0x55a27f*/
+      BYTE1(this->m_C) = out_buffer == 0; /*0x55a282*/
       return 1; /*0x55a288*/
     }
     else
@@ -315,9 +316,10 @@ char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
   }
   else
   {
-    this->ddtor(); /*0x55a292*/
+    (*(void (**)(_VectorClass_PAVFileEntryClass *))(*(unsigned int *)this->extension + 12))(this); /*0x55a292*/
     return 1; /*0x55a298*/
   }
+
 }
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {

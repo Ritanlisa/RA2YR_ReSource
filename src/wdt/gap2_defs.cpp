@@ -78,6 +78,7 @@ namespace gamemd { namespace wdt {
 }
 // 0x5c2500
 void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
+
   int result; // eax
   HWND v3; // ebx
   ObjectClass *v4; // edi
@@ -91,6 +92,7 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
   int v12; // ebx
   int v13; // [esp+10h] [ebp-14h] BYREF
   int v14; // [esp+14h] [ebp-10h] BYREF
+  int v15; // [esp+18h] [ebp-Ch]
   MovieClass *v16; // [esp+1Ch] [ebp-8h]
   int v17; // [esp+20h] [ebp-4h]
 
@@ -102,18 +104,18 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
   {
     v6 = this->q33C; /*0x5c251b*/
     v7 = dword_A8BB0C; /*0x5c2521*/
-    dword_A8BB0C = dword_A8BB0C; /*0x5c252b*/
+    v15 = dword_A8BB0C; /*0x5c252b*/
     v13 = 0; /*0x5c2536*/
-    (*((unsigned char *)&(result))) = Movie::GetSection((int)&g_DDrawSurfaceManager, v6, &v14); /*0x5c253a*/
+    LOBYTE(result) = Movie::GetSection((int)&g_DDrawSurfaceManager, v6, &v14); /*0x5c253a*/
     v8 = v14; /*0x5c253f*/
     if ( v14 ) /*0x5c2545*/
     {
-      if ( v14->__pad_008 ) /*0x5c254b*/
+      if ( *(unsigned int *)(v14 + 32) ) /*0x5c254b*/
       {
         v9 = v5->u32_40; /*0x5c2554*/
         if ( v9 ) /*0x5c2559*/
         {
-          if ( (uint8_t)Movie::GetState(v9, &v13) ) /*0x5c2560*/
+          if ( (unsigned __int8)Movie::GetState(v9, &v13) ) /*0x5c2560*/
           {
             result = v13; /*0x5c2579*/
           }
@@ -129,19 +131,19 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
           result = 0; /*0x5c2571*/
           v13 = 0; /*0x5c2573*/
         }
-        if ( result < v8->__pad_008 ) /*0x5c2584*/
+        if ( result < v8->u32_20 ) /*0x5c2584*/
         {
-          v17 = *(unsigned int *)(*(unsigned int *)(v8->unknown50 + 4 * result) + 16); /*0x5c2595*/
+          v17 = *(unsigned int *)(*(unsigned int *)(v8->q014 + 4 * result) + 16); /*0x5c2595*/
           if ( v7 > 0 ) /*0x5c2599*/
           {
-            v10 = (int **)dword_A8DA90; /*0x5c259b*/
+            v10 = (int **)&stru_A8D804.__pad_3D[591]; /*0x5c259b*/
             do /*0x5c260f*/
             {
               ResourceID2CSF = GetResourceID2CSF(v4); /*0x5c25ab*/
               MovieClass::ReadConfig(v16, v3, ResourceID2CSF); /*0x5c25af*/
               if ( v17 <= 1 ) /*0x5c25b9*/
               {
-                v12 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(v14->unknown50 + 4 * v13) + 4)); /*0x5c25ee*/
+                v12 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(*(unsigned int *)(v14 + 20) + 4 * v13) + 4)); /*0x5c25ee*/
                 SetupLobbyCountryCombo(hDlg, ResourceID2CSF, v12); /*0x5c25f3*/
                 SessionClass::SetPlayerOption(*v10, v12); /*0x5c25fc*/
                 v3 = hDlg; /*0x5c2601*/
@@ -154,9 +156,9 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
               v4 = (ObjectClass *)((char *)v4 + 1); /*0x5c2609*/
               ++v10; /*0x5c260a*/
             }
-            while ( (int)v4 < dword_A8BB0C ); /*0x5c260f*/
+            while ( (int)v4 < v15 ); /*0x5c260f*/
             v5 = (CampaignCoop *)v16; /*0x5c2611*/
-            v7 = dword_A8BB0C; /*0x5c2615*/
+            v7 = v15; /*0x5c2615*/
           }
           DisableCampaignSlots(v3, v7); /*0x5c261b*/
           result = Dialog::FindGameUI(); /*0x5c2620*/
@@ -167,6 +169,7 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
     }
   }
   return result; /*0x5c2633*/
+
 }
 // 0x76BFE0
 namespace gamemd { namespace wdt { 

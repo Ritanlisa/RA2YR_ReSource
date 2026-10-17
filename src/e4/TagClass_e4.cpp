@@ -332,21 +332,21 @@ namespace gamemd {
 int TagClass::ProcessTag(int * a2)
 {
 
-
-  ((AbstractClass *)this)->ProcessPower(); /*0x6e56e9*/
   int v3; // eax
-  v3 = (*((int (**)(void **))this->buildingType->? + 4))(&this->buildingType->?); /*0x6e56f7*/
-  Power::TimerProcess(v3); /*0x6e56fd*/
   TriggerClass *firstTrigger; // eax
+  int v5; // eax
+
+  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6e56e9*/
+  v3 = (*((int (**)(void **))this->buildingType->vfptr1 + 4))(&this->buildingType->vfptr1); /*0x6e56f7*/
+  Power::TimerProcess(v3); /*0x6e56fd*/
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
-    int v5; // eax
-    v5 = (*((int (**)(void **))firstTrigger->uniqueId + 4))(&firstTrigger->uniqueId); /*0x6e5710*/
+    v5 = (*((int (**)(void **))firstTrigger->vfptr1 + 4))(&firstTrigger->vfptr1); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
-  return ((Power *)a2)->FlagProcess((int)firstTrigger); /*0x6e5726*/
+  return Power::FlagProcess((Power *)a2, (int)firstTrigger); /*0x6e5726*/
 
 }
 } // namespace gamemd

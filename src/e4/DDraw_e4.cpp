@@ -257,14 +257,16 @@ int DDraw_LogError(UINT uType, int a2)
 namespace gamemd {
 char DDraw::CheckCapabilities()
 {
+
   int v0; // eax
+  HRESULT v1; // eax
+  CHAR Text[80]; // [esp+Ch] [ebp-18Ch] BYREF
+  unsigned int v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
 
   if ( g_lpDirectDraw7 ) /*0x4a462e*/
   {
-    unsigned int v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
     memset(v4, 0, sizeof(v4)); /*0x4a4645*/
     v4[0] = 316; /*0x4a464b*/
-    HRESULT v1; // eax
     v1 = g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v4, 0); /*0x4a4659*/
     if ( v1 ) /*0x4a465f*/
     {
@@ -274,34 +276,34 @@ char DDraw::CheckCapabilities()
       }
       else
       {
-        CHAR Text[80]; // [esp+Ch] [ebp-18Ch] BYREF
         sprintf(Text, "DDRAW.DLL Error code = %08X", v1); /*0x4a4683*/
-        MessageBoxA((HWND)(g_hWnd), Text, g_Str_Direct_X, 0x30u); /*0x4a469e*/
+        MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u); /*0x4a469e*/
       }
-      (*((unsigned char *)&(v0))) = 0; /*0x4a466f*/
+      LOBYTE(v0) = 0; /*0x4a466f*/
     }
     else
     {
       v0 = (v4[1] & 0x40) != 0; /*0x4a46b8*/
-      if ( (*((signed char *)&(v4[1]))) < 0 ) /*0x4a46c0*/
-        (*((unsigned char *)&(v0))) = v0 | 2; /*0x4a46c2*/
+      if ( SLOBYTE(v4[1]) < 0 ) /*0x4a46c0*/
+        LOBYTE(v0) = v0 | 2; /*0x4a46c2*/
       if ( (v4[1] & 0x10000) != 0 ) /*0x4a46ca*/
-        (*((unsigned char *)&(v0))) = v0 | 4; /*0x4a46cc*/
+        LOBYTE(v0) = v0 | 4; /*0x4a46cc*/
       if ( (v4[1] & 0x8000000) != 0 ) /*0x4a46d4*/
-        (*((unsigned char *)&(v0))) = v0 | 8; /*0x4a46d6*/
+        LOBYTE(v0) = v0 | 8; /*0x4a46d6*/
       if ( (v4[1] & 0x4000000) != 0 ) /*0x4a46de*/
-        (*((unsigned char *)&(v0))) = v0 | 0x10; /*0x4a46e0*/
+        LOBYTE(v0) = v0 | 0x10; /*0x4a46e0*/
       if ( (v4[1] & 0x2000000) != 0 ) /*0x4a46e8*/
-        (*((unsigned char *)&(v0))) = v0 | 0x20; /*0x4a46ea*/
+        LOBYTE(v0) = v0 | 0x20; /*0x4a46ea*/
       if ( (v4[1] & 0x200) != 0 ) /*0x4a46ef*/
-        (*((unsigned char *)&(v0))) = v0 | 0x40; /*0x4a46f1*/
+        LOBYTE(v0) = v0 | 0x40; /*0x4a46f1*/
     }
   }
   else
   {
-    (*((unsigned char *)&(v0))) = 0; /*0x4a4630*/
+    LOBYTE(v0) = 0; /*0x4a4630*/
   }
   return v0; /*0x4a4632*/
+
 }
 } // namespace gamemd
 // 0x4BBC90

@@ -123,6 +123,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
 namespace gamemd {
 void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
 {
+
   int v2; // esi
   int *v3; // eax
   int *v4; // esi
@@ -136,18 +137,18 @@ void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
   v2 = 0; /*0x691c35*/
   if ( dword_8B41D8 <= 0 ) /*0x691c39*/
   {
-    LABEL_6:
-    v3 = (int *)operator new(0x234u); /*0x691c62*/
+LABEL_6:
+    v3 = (int *)__2_YAPAXI_Z(0x234u); /*0x691c62*/
     v4 = v3; /*0x691c6c*/
     if ( v3 ) /*0x691c73*/
     {
-      ((AbstractTypeClass *)(v3))->Constructor(Source); /*0x691c7c*/
+      AbstractTypeClass::Constructor(v3, Source); /*0x691c7c*/
       v4->Coord_9C = 0; /*0x691c81*/
       v4->q0A0 = 0; /*0x691c8b*/
-      *v4 = (int)&vt_ScriptTypeClass; /*0x691c95*/
-      v4->u32_4 = (int)&vt_ScriptTypeClass; /*0x691c9b*/
-      v4->u32_8 = (int)&vt_ScriptTypeClass; /*0x691ca2*/
-      v4->q00C = (int)&vt_ScriptTypeClass; /*0x691ca9*/
+      *v4 = (int)&ScriptTypeClass::`vftable'; /*0x691c95*/
+      v4->vtable2 = (int)&ScriptTypeClass::`vftable'; /*0x691c9b*/
+      v4->vtable3 = (int)&ScriptTypeClass::`vftable'; /*0x691ca2*/
+      v4->vtable4 = (int)&ScriptTypeClass::`vftable'; /*0x691ca9*/
       v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
         || (byte_8B41D5 || !dword_8B41D0)
@@ -160,13 +161,13 @@ void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
             v6) )
       {
         dword_8B41D8 = v5 + 1; /*0x691cf6*/
-        *((unsigned int *)dword_8B41CC + v5) = (unsigned int)(v4); /*0x691d02*/
+        *((unsigned int *)dword_8B41CC + v5) = v4; /*0x691d02*/
         v5 = dword_8B41D8; /*0x691d05*/
       }
       v7 = 0; /*0x691d0b*/
       if ( v5 <= 0 ) /*0x691d0f*/
       {
-        LABEL_17:
+LABEL_17:
         v7 = -1; /*0x691d23*/
       }
       else
@@ -180,17 +181,18 @@ void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
             goto LABEL_17; /*0x691d21*/
         }
       }
-      v4->u32_98 = v7; /*0x691d26*/
+      v4->q098 = v7; /*0x691d26*/
       return v4; /*0x691d30*/
     }
     return 0; /*0x691d3e*/
   }
-  while ( _strcmpi((char *)(*((unsigned int *)dword_8B41CC + v2) + 36), Source) ) /*0x691c52*/
+  while ( _strcmpi((const void *)(*((unsigned int *)dword_8B41CC + v2) + 36), Source) ) /*0x691c52*/
   {
     if ( ++v2 >= dword_8B41D8 ) /*0x691c60*/
       goto LABEL_6; /*0x691c60*/
   }
   return (int *)*((unsigned int *)dword_8B41CC + v2); /*0x691d2e*/
+
 }
 }
 // 0x6E85F0
@@ -793,20 +795,30 @@ namespace gamemd {
 AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
 {
 
+  int *v4; // ebx
+  int *v5; // eax
   int *v6; // edi
+  unsigned int *v7; // eax
+  int v8; // ecx
+  int *v9; // eax
+  int v10; // ecx
+  int m_8; // ecx
+  int v13; // eax
+  unsigned int *v14; // edx
+  void *v15; // eax
 
   if ( a2 ) /*0x6f22fc*/
   {
-    int *v4 = a3; // ebx /*0x6f2302*/
-    LOBYTE(this->q00C) = 0; /*0x6f2306*/
+    v4 = a3; /*0x6f2302*/
+    LOBYTE(this->m_C) = 0; /*0x6f2306*/
     if ( a3 ) /*0x6f230c*/
     {
       *a3 = a2; /*0x6f2347*/
       v6 = a3 + 1; /*0x6f234b*/
       if ( a2 - 1 >= 0 ) /*0x6f234e*/
       {
-        int *v9 = a3 + 2; // eax /*0x6f2350*/
-        int v10 = a2; // ecx /*0x6f2353*/
+        v9 = a3 + 2; /*0x6f2350*/
+        v10 = a2; /*0x6f2353*/
         do /*0x6f235e*/
         {
           *v9 = 0; /*0x6f2354*/
@@ -818,7 +830,6 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
     }
     else
     {
-      int *v5; // eax
       v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x6f2316*/
       if ( v5 ) /*0x6f2320*/
       {
@@ -826,8 +837,8 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
         v6 = v5 + 1; /*0x6f2329*/
         if ( a2 - 1 >= 0 ) /*0x6f232c*/
         {
-          unsigned int *v7 = v5 + 2; // eax /*0x6f232e*/
-          int v8 = a2; // ecx /*0x6f2331*/
+          v7 = v5 + 2; /*0x6f232e*/
+          v8 = a2; /*0x6f2331*/
           do /*0x6f233c*/
           {
             *v7 = 0; /*0x6f2332*/
@@ -842,38 +853,38 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
         v6 = 0; /*0x6f2340*/
       }
     }
-    LOBYTE(this->q00C) = 1; /*0x6f2362*/
+    LOBYTE(this->m_C) = 1; /*0x6f2362*/
     if ( v6 ) /*0x6f2366*/
     {
       if ( *&this->q004 ) /*0x6f2371*/
       {
-        int m_8 = this->q008; // ecx /*0x6f2378*/
+        m_8 = this->m_8; /*0x6f2378*/
         if ( a2 < m_8 ) /*0x6f237d*/
           m_8 = a2; /*0x6f237f*/
-        int v13 = 0; // eax /*0x6f2381*/
+        v13 = 0; /*0x6f2381*/
         if ( m_8 > 0 ) /*0x6f2385*/
         {
           do /*0x6f239d*/
           {
-            int v14 = *&this->q004; // edx /*0x6f2387*/
+            v14 = *&this->q004; /*0x6f2387*/
             ++v13; /*0x6f238a*/
-            v6[2 * v13 - 2] = *(unsigned int *)(v14 + 8 * v13 - 8); /*0x6f2391*/
-            v6[2 * v13 - 1] = *(unsigned int *)(v14 + 8 * v13 - 4); /*0x6f2399*/
+            v6[2 * v13 - 2] = v14[2 * v13 - 2]; /*0x6f2391*/
+            v6[2 * v13 - 1] = v14[2 * v13 - 1]; /*0x6f2399*/
           }
           while ( v13 < m_8 ); /*0x6f239d*/
           v4 = a3; /*0x6f239f*/
         }
-        if ( BYTE1(this->q00C) ) /*0x6f23a3*/
+        if ( BYTE1(this->m_C) ) /*0x6f23a3*/
         {
-          int v15 = *&this->q004; // eax /*0x6f23aa*/
+          v15 = *&this->q004; /*0x6f23aa*/
           if ( v15 ) /*0x6f23af*/
-            __3_YAXPAX_Z((void *)(v15 - 4)); /*0x6f23b9*/
+            __3_YAXPAX_Z((char *)v15 - 4); /*0x6f23b9*/
           *&this->q004 = 0; /*0x6f23c1*/
         }
       }
       *&this->q004 = v6; /*0x6f23ca*/
-      this->q008 = a2; /*0x6f23d2*/
-      BYTE1(this->q00C) = v4 == 0; /*0x6f23d5*/
+      this->m_8 = a2; /*0x6f23d2*/
+      BYTE1(this->m_C) = v4 == 0; /*0x6f23d5*/
       return 1; /*0x6f23db*/
     }
     else
@@ -883,7 +894,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6f23e5*/
+    (*(void (**)(_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f23e5*/
     return 1; /*0x6f23eb*/
   }
 
@@ -894,20 +905,32 @@ namespace gamemd {
 AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 {
 
+  int *v4; // ebp
+  int *v5; // eax
   int *v6; // edi
+  unsigned int *v7; // eax
+  int v8; // ecx
+  int *v9; // eax
+  int v10; // ecx
+  int m_8; // ecx
+  int v12; // eax
+  unsigned int *v13; // edx
+  int *v14; // eax
+  int *v15; // ebp
+  int v16; // eax
 
   if ( a2 ) /*0x6f24bc*/
   {
-    int *v4 = a3; // ebp /*0x6f24c2*/
-    LOBYTE(this->q00C) = 0; /*0x6f24c6*/
+    v4 = a3; /*0x6f24c2*/
+    LOBYTE(this->m_C) = 0; /*0x6f24c6*/
     if ( a3 ) /*0x6f24cc*/
     {
       *a3 = a2; /*0x6f2507*/
       v6 = a3 + 1; /*0x6f250c*/
       if ( a2 - 1 >= 0 ) /*0x6f250f*/
       {
-        int *v9 = a3 + 2; // eax /*0x6f2511*/
-        int v10 = a2; // ecx /*0x6f2514*/
+        v9 = a3 + 2; /*0x6f2511*/
+        v10 = a2; /*0x6f2514*/
         do /*0x6f251f*/
         {
           *v9 = 0; /*0x6f2515*/
@@ -919,7 +942,6 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
     }
     else
     {
-      int *v5; // eax
       v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x6f24d6*/
       if ( v5 ) /*0x6f24e0*/
       {
@@ -927,8 +949,8 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
         v6 = v5 + 1; /*0x6f24e9*/
         if ( a2 - 1 >= 0 ) /*0x6f24ec*/
         {
-          unsigned int *v7 = v5 + 2; // eax /*0x6f24ee*/
-          int v8 = a2; // ecx /*0x6f24f1*/
+          v7 = v5 + 2; /*0x6f24ee*/
+          v8 = a2; /*0x6f24f1*/
           do /*0x6f24fc*/
           {
             *v7 = 0; /*0x6f24f2*/
@@ -943,34 +965,34 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
         v6 = 0; /*0x6f2500*/
       }
     }
-    LOBYTE(this->q00C) = 1; /*0x6f2523*/
+    LOBYTE(this->m_C) = 1; /*0x6f2523*/
     if ( !v6 ) /*0x6f2527*/
       return 0; /*0x6f25c7*/
     if ( *&this->q004 ) /*0x6f252d*/
     {
-      int m_8 = this->q008; // ecx /*0x6f2534*/
+      m_8 = this->m_8; /*0x6f2534*/
       if ( a2 < m_8 ) /*0x6f2539*/
         m_8 = a2; /*0x6f253b*/
-      int v12 = 0; // eax /*0x6f253d*/
+      v12 = 0; /*0x6f253d*/
       if ( m_8 > 0 ) /*0x6f2541*/
       {
         do /*0x6f2559*/
         {
-          int v13 = *&this->q004; // edx /*0x6f2543*/
+          v13 = *&this->q004; /*0x6f2543*/
           ++v12; /*0x6f2546*/
-          v6[2 * v12 - 2] = *(unsigned int *)(v13 + 8 * v12 - 8); /*0x6f254d*/
-          v6[2 * v12 - 1] = *(unsigned int *)(v13 + 8 * v12 - 4); /*0x6f2555*/
+          v6[2 * v12 - 2] = v13[2 * v12 - 2]; /*0x6f254d*/
+          v6[2 * v12 - 1] = v13[2 * v12 - 1]; /*0x6f2555*/
         }
         while ( v12 < m_8 ); /*0x6f2559*/
         v4 = a3; /*0x6f255b*/
       }
-      if ( BYTE1(this->q00C) ) /*0x6f255f*/
+      if ( BYTE1(this->m_C) ) /*0x6f255f*/
       {
-        int *v14 = *&this->q004; // eax /*0x6f2566*/
+        v14 = *&this->q004; /*0x6f2566*/
         if ( v14 ) /*0x6f256b*/
         {
-          int *v15 = v14 - 1; // ebp /*0x6f2570*/
-          Array::ForEachReverse(v14, 8, *(v14 - 1), (int (*)(int))nullsub_240); /*0x6f257c*/
+          v15 = v14 - 1; /*0x6f2570*/
+          Array::ForEachReverse(v14, 8, *(v14 - 1), nullsub_240); /*0x6f257c*/
           __3_YAXPAX_Z(v15); /*0x6f2582*/
           v4 = a3; /*0x6f2587*/
         }
@@ -978,16 +1000,16 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
       }
     }
     *&this->q004 = v6; /*0x6f2597*/
-    this->q008 = a2; /*0x6f259f*/
-    BYTE1(this->q00C) = v4 == 0; /*0x6f25a2*/
+    this->m_8 = a2; /*0x6f259f*/
+    BYTE1(this->m_C) = v4 == 0; /*0x6f25a2*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6f25ab*/
+    (*(void (**)(_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f25ab*/
   }
-  int v16 = this->q008; // eax /*0x6f25ae*/
-  if ( v16 < this->q010 ) /*0x6f25b6*/
-    this->q010 = v16; /*0x6f25b8*/
+  v16 = this->m_8; /*0x6f25ae*/
+  if ( v16 < this->m_10 ) /*0x6f25b6*/
+    this->m_10 = v16; /*0x6f25b8*/
   return 1; /*0x6f25bb*/
 
 }

@@ -163,18 +163,20 @@ int AnimClass::SimpleCtor()
 namespace gamemd {
 void TerrainClass::ClearAnimationLinkFlags()
 {
+
   int i; // edx
-  int v2; // eax
+  TerrainClass **v2; // eax
 
   if ( this ) /*0x422b82*/
   {
-    for ( i = 0; i < dword_A8E9B8; ++i ) /*0x422b8d*/
+    for ( i = 0; i < *(int *)&stru_A8E960.nextScenario[88]; ++i ) /*0x422b8d*/
     {
-      v2 = *((unsigned int *)dword_A8E9AC + i); /*0x422b94*/
-      if ( *(TerrainClass **)(v2 + 204) == this ) /*0x422b9d*/
-        *(unsigned char *)(v2 + 405) = 0; /*0x422b9f*/
+      v2 = *(TerrainClass ***)(*(unsigned int *)&stru_A8E960.nextScenario[76] + 4 * i); /*0x422b94*/
+      if ( v2[51] == this ) /*0x422b9d*/
+        *((unsigned char *)v2 + 405) = 0; /*0x422b9f*/
     }
   }
+
 }
 } // namespace gamemd
 
@@ -247,27 +249,28 @@ bool AnimClass::UpdateMirrorState(int a2) {
 namespace gamemd {
 int AnimClass::UpdateProjectileTrajectory()
 {
+
   float *v1; // edi
   char *v3; // esi
   int v4; // ebx
-  Coord *AnimClass_field_0xC8; // eax
+  int AnimClass_field_0xC8; // eax
   AnimClass *v6; // edi
   int *v7; // eax
   unsigned int *Coords; // eax
-  ObjectClass *firstObject; // edi
+  unsigned int *firstObject; // edi
   unsigned int *v10; // esi
   unsigned int *v11; // eax
-  Coord *v12; // ebx
+  int v12; // ebx
   int v13; // esi
-  int v14; // eax
-  void *vtable0; // edx
+  unsigned __int16 *v14; // eax
+  int v15; // edx
   int v16; // eax
-  void (__thiscall **AnimClass_field_0x0)(AnimClass *, int); // esi
+  int AnimClass_field_0x0; // esi
   int v18; // eax
   int v20; // [esp-8h] [ebp-60h]
   unsigned int *v21; // [esp+Ch] [ebp-4Ch]
-  int v22; // [esp+1Ch] [ebp-3Ch] BYREF
-  void (__thiscall **v23)(ObjectClass *, unsigned int *, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int); // [esp+20h] [ebp-38h]
+  unsigned __int16 *v22; // [esp+1Ch] [ebp-3Ch] BYREF
+  int v23; // [esp+20h] [ebp-38h]
   int v24; // [esp+24h] [ebp-34h]
   char v25[12]; // [esp+28h] [ebp-30h] BYREF
   int v26[3]; // [esp+34h] [ebp-24h] BYREF
@@ -278,40 +281,48 @@ int AnimClass::UpdateProjectileTrajectory()
   v4 = JumpjetLocomotionClass::Update2(&this->q128, v1); /*0x423946*/
   AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x423948*/
   v24 = v4; /*0x42394e*/
-  if ( AnimClass_field_0xC8[2].__pad_C[202] ) /*0x423952*/
+  if ( *(unsigned char *)(AnimClass_field_0xC8 + 854) ) /*0x423952*/
     v3->fallRate = v3->fallRate + v3->vtable3; /*0x423962*/
   if ( v4 == 1 ) /*0x423968*/
   {
-    if ( *&this->u32_CA.__pad_C[116] ) /*0x423987*/
+    if ( *(unsigned int *)(this->AnimClass_field_0xC8 + 768) ) /*0x423987*/
     {
-      v6 = (AnimClass *)operator new(0x1C8u); /*0x42399b*/
+      v6 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x42399b*/
       if ( v6 ) /*0x4239a2*/
       {
-        v7 = (int *)(*((int (__thiscall **)(AnimClass *, char *))this->vtable1 + 18))(this, v25); /*0x4239bb*/
-        AnimClass::ctor(v6, *&this->u32_CA.__pad_C[116], v7, 0, 1, (void *)0x600, 0, 0); /*0x4239ce*/
+        v7 = (int *)(*(int (**)(AnimClass *, char *))(this->AnimClass_field_0x0 + 72))(this, v25); /*0x4239bb*/
+        AnimClass::ctor(v6, *(void **)(this->AnimClass_field_0xC8 + 768), v7, 0, 1, (void *)0x600, 0, 0); /*0x4239ce*/
       }
     }
     Coords = (unsigned int *)Coord::GetCoords(v26, v21); /*0x4239da*/
-    firstObject = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, Coords)->firstObject; /*0x4239ea*/
+    firstObject = (unsigned int *)Coord::To_Cell((Coord *)&dword_87F7E8, Coords)->firstObject; /*0x4239ea*/
     if ( firstObject ) /*0x4239f2*/
     {
       do /*0x423a88*/
       {
-        v10 = (unsigned int *)(*((int (__thiscall **)(ObjectClass *, char *))firstObject->vfptr + 18))(firstObject, v27); /*0x423a08*/
+        v10 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*firstObject + 72))(firstObject, v27); /*0x423a08*/
         v11 = (unsigned int *)Coord::GetCoords(v28, v21); /*0x423a11*/
         v12 = this->AnimClass_field_0xC8; /*0x423a29*/
         v13 = abs32(v11[1] - v10[1]) + abs32(*v11 - *v10); /*0x423a3a*/
-        if ( v13 <= *(unsigned int *)&v12[2].__pad_C[168] ) /*0x423a44*/
+        if ( v13 <= *(unsigned int *)(v12 + 820) ) /*0x423a44*/
         {
-          (*((unsigned short *)&(v14))) = Math::RoundToInt(*(double *)&v12[2].__pad_C[28]); /*0x423a4c*/
-          vtable0 = firstObject->vfptr; /*0x423a51*/
+          LOWORD(v14) = Math::RoundToInt(*(double *)(v12 + 680)); /*0x423a4c*/
+          v15 = *firstObject; /*0x423a51*/
           v22 = v14; /*0x423a55*/
-          v20 = *(unsigned int *)&v12[2].__pad_C[164]; /*0x423a65*/
-          v23 = (void (__thiscall **)(ObjectClass *, unsigned int *, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))vtable0; /*0x423a68*/
+          v20 = *(unsigned int *)(v12 + 816); /*0x423a65*/
+          v23 = v15; /*0x423a68*/
           v16 = ZCoordToScreenY(v13); /*0x423a6c*/
-          v23[91](firstObject, &v22, v16, v20, 0, 0, 0, 0); /*0x423a7d*/
+          (*(void (**)(unsigned int *, unsigned __int16 **, int, int, unsigned int, unsigned int, unsigned int, unsigned int))(v23 + 364))( /*0x423a7d*/
+            firstObject,
+            &v22,
+            v16,
+            v20,
+            0,
+            0,
+            0,
+            0);
         }
-        firstObject = firstObject->nextObject; /*0x423a83*/
+        firstObject = (unsigned int *)firstObject[12]; /*0x423a83*/
       }
       while ( firstObject ); /*0x423a88*/
       v4 = v24; /*0x423a8e*/
@@ -319,12 +330,13 @@ int AnimClass::UpdateProjectileTrajectory()
   }
   else if ( v4 == 2 ) /*0x42396b*/
   {
-    (*((void (__thiscall **)(AnimClass *))this->vtable1 + 62))(this); /*0x423976*/
+    (*(void (**)(AnimClass *))(this->AnimClass_field_0x0 + 248))(this); /*0x423976*/
   }
-  AnimClass_field_0x0 = (void (__thiscall **)(AnimClass *, int))this->vtable1; /*0x423a92*/
+  AnimClass_field_0x0 = this->AnimClass_field_0x0; /*0x423a92*/
   v18 = Coord::GetCoords(v28, v21); /*0x423aa0*/
-  AnimClass_field_0x0[109](this, v18); /*0x423aa8*/
+  (*(void (**)(AnimClass *, int))(AnimClass_field_0x0 + 436))(this, v18); /*0x423aa8*/
   return v4; /*0x423aae*/
+
 }
 } // namespace gamemd
 
@@ -332,10 +344,11 @@ int AnimClass::UpdateProjectileTrajectory()
 namespace gamemd {
 int AnimClass::SaveLoad_Prefix(int a2, int a3)
 {
+
   int Register; // edi
   int v4; // eax
   int v6; // eax
-  int v7; // eax
+  unsigned int *v7; // eax
 
   Register = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x425291*/
   if ( Register >= 0 ) /*0x425295*/
@@ -344,10 +357,10 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
     {
       ObjectClass::Init((ObjectClass *)a2, (int)&a3); /*0x4252a6*/
       __4type_info_AAEAAV0_ABV0__Z(&a2->u32_B4, (int)&a3); /*0x4252b6*/
-      *(unsigned int *)a2 = 0; /*0x4252bb*/
-      /* X11: vtable install elided (implicit via class virtuals 0x4252c1) — binary-proven install, was 0 */
-      /* X11: vtable install elided (implicit via class virtuals 0x4252c8) — binary-proven install, was 0 */
-      /* X11: vtable install elided (implicit via off_7E3328 virtuals 0x4252cf) */
+      *(unsigned int *)a2 = &AnimClass::`vftable'; /*0x4252bb*/
+      a2->vtable2 = &AnimClass::`vftable'; /*0x4252c1*/
+      a2->vtable3 = &AnimClass::`vftable'; /*0x4252c8*/
+      a2->vtable4 = &off_7E3328; /*0x4252cf*/
     }
     AudioController::Init(&a2->AudioController_1A0); /*0x4252dc*/
     AudioController::Init(&a2->AudioController_1B4); /*0x4252e7*/
@@ -355,7 +368,7 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->q0CC); /*0x425309*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->u32_17C); /*0x42531a*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->q_180); /*0x42532b*/
-    v4 = a2->occupant; /*0x425330*/
+    v4 = a2->q0D8; /*0x425330*/
     if ( v4 <= -1 ) /*0x425339*/
     {
       if ( a2->u32_DC ) /*0x42535f*/
@@ -363,23 +376,24 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
         v6 = FileExtension::MapHandler(&a2->u32_DC); /*0x42536f*/
         if ( v6 ) /*0x425376*/
         {
-          v7 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)v6 + 24))(v6, 0); /*0x42537e*/
+          v7 = (unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)v6 + 24))(v6, 0); /*0x42537e*/
           if ( v7 ) /*0x425383*/
           {
-            a2->u32_D4 = *(unsigned int *)(v7 + 780); /*0x42538b*/
+            a2->u32_D4 = v7[195]; /*0x42538b*/
             return Register; /*0x425395*/
           }
         }
       }
       a2->u32_D4 = 0; /*0x425398*/
     }
-    else if ( v4 < *(int *)g_AnimClass_SaveState ) /*0x425341*/
+    else if ( v4 < dword_B054E0 ) /*0x425341*/
     {
-      a2->u32_D4 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * v4) + 780); /*0x425352*/
+      a2->u32_D4 = *(unsigned int *)(*((unsigned int *)dword_B054D4 + v4) + 780); /*0x425352*/
       return Register; /*0x42535c*/
     }
   }
   return Register; /*0x42535a*/
+
 }
 } // namespace gamemd
 
@@ -387,42 +401,44 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
 namespace gamemd {
 int AnimClass::ProcessPower(int *a2)
 {
-  unsigned int *AnimClass_field_0xCC; // eax
+
+  int AnimClass_field_0xCC; // eax
   int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // edx
-  int v9; // eax
-  int v10; // ecx
+  unsigned __int8 *v5; // ecx
+  unsigned __int8 *v6; // eax
+  unsigned __int8 *v7; // ecx
+  unsigned __int8 *v8; // edx
+  unsigned __int8 *v9; // eax
+  unsigned __int8 *v10; // ecx
 
   HouseClass::ProcessPower((ObjectClass *)this); /*0x425419*/
   AnimClass_field_0xCC = this->AnimClass_field_0xCC; /*0x42541e*/
   if ( AnimClass_field_0xCC ) /*0x425426*/
   {
-    v4 = (*(int (__stdcall **)(unsigned int *))(AnimClass_field_0xCC[1] + 16))(AnimClass_field_0xCC + 1); /*0x42542f*/
+    v4 = (*(int (**)(int))(*(unsigned int *)(AnimClass_field_0xCC + 4) + 16))(AnimClass_field_0xCC + 4); /*0x42542f*/
     Power::TimerProcess(v4); /*0x425435*/
   }
   Power::TimerProcess(this->AnimClass_field_0xD0); /*0x425443*/
-  Power::TimerProcess(this->__pad_0FC); /*0x425451*/
+  Power::TimerProcess(this->AnimClass_field_0xFC); /*0x425451*/
   Power::TimerProcess(this->AnimClass_field_0x100); /*0x42545f*/
   Power::TimerProcess(this->AnimClass_field_0x104); /*0x42546d*/
-  Power::TimerProcess((int)this->AnimClass_field_0x184->__pad_0); /*0x42547b*/
+  Power::TimerProcess(this->AnimClass_field_0x184); /*0x42547b*/
   Checksummer::Add_double((Checksummer *)a2, this->AnimClass_field_0x188, *(unsigned int *)this->__pad_18C); /*0x425490*/
   Power::TimerProcess(this->AnimClass_field_0x190); /*0x42549e*/
-  (*((unsigned char *)&(v5))) = this->__pad_194; /*0x4254a3*/
-  Power::FlagProcess((Power *)a2, v5); /*0x4254ac*/
-  v6 = Power::TimerProcess((uint8_t)this->q195); /*0x4254bc*/
-  (*((unsigned char *)&(v6))) = this->q196; /*0x4254c1*/
-  Power::FlagProcess((Power *)a2, v6); /*0x4254ca*/
-  (*((unsigned char *)&(v7))) = this->q197; /*0x4254cf*/
-  Power::FlagProcess((Power *)a2, v7); /*0x4254d8*/
-  (*((unsigned char *)&(v8))) = this->q19B; /*0x4254dd*/
-  v9 = Power::FlagProcess((Power *)a2, v8); /*0x4254e6*/
-  (*((unsigned char *)&(v9))) = this->q19C; /*0x4254eb*/
-  Power::FlagProcess((Power *)a2, v9); /*0x4254f4*/
-  (*((unsigned char *)&(v10))) = this->q19E; /*0x4254f9*/
-  return Power::FlagProcess((Power *)a2, v10); /*0x425507*/
+  LOBYTE(v5) = this->__pad_194; /*0x4254a3*/
+  Power::FlagProcess((Power *)a2, (int)v5); /*0x4254ac*/
+  v6 = (unsigned __int8 *)Power::TimerProcess((unsigned __int8)this->q195); /*0x4254bc*/
+  LOBYTE(v6) = this->q196; /*0x4254c1*/
+  Power::FlagProcess((Power *)a2, (int)v6); /*0x4254ca*/
+  LOBYTE(v7) = this->q197; /*0x4254cf*/
+  Power::FlagProcess((Power *)a2, (int)v7); /*0x4254d8*/
+  LOBYTE(v8) = this->q19B; /*0x4254dd*/
+  v9 = (unsigned __int8 *)Power::FlagProcess((Power *)a2, (int)v8); /*0x4254e6*/
+  LOBYTE(v9) = this->q19C; /*0x4254eb*/
+  Power::FlagProcess((Power *)a2, (int)v9); /*0x4254f4*/
+  LOBYTE(v10) = this->q19E; /*0x4254f9*/
+  return Power::FlagProcess((Power *)a2, (int)v10); /*0x425507*/
+
 }
 } // namespace gamemd
 
@@ -430,7 +446,8 @@ int AnimClass::ProcessPower(int *a2)
 namespace gamemd {
 int AnimClass::resetAnimation()
 {
-  int v2; // eax
+
+  unsigned __int8 *v2; // eax
   int v3; // edi
   unsigned short *v4; // eax
   Object *v5; // ebp
@@ -439,29 +456,29 @@ int AnimClass::resetAnimation()
   int v8; // eax
   unsigned int v10; // [esp+10h] [ebp-20h]
   int i; // [esp+10h] [ebp-20h]
-  int16_t v12[2]; // [esp+18h] [ebp-18h] BYREF
+  __int16 v12[2]; // [esp+18h] [ebp-18h] BYREF
   int v13; // [esp+1Ch] [ebp-14h] BYREF
   int v14; // [esp+20h] [ebp-10h]
   int v15[3]; // [esp+24h] [ebp-Ch] BYREF
 
-  v2 = *&this->q196; /*0x44954b*/
-  if ( !*(unsigned char *)(v2 + 5821) ) /*0x449551*/
+  v2 = *(unsigned __int8 **)&this->BuildingTypeClass_520; /*0x44954b*/
+  if ( !v2[5821] ) /*0x449551*/
     return 0; /*0x449551*/
-  v3 = *(unsigned int *)(*(unsigned int *)(v2 + 3796) + 40); /*0x449567*/
-  v4 = (unsigned short *)(*((int (__thiscall **)(AnimClass *, int *))this->vtable1 + 110))(this, &v13); /*0x449573*/
-  (*(((unsigned short *)&(v10)) + 1)) = (*(((unsigned short *)&(v3)) + 1)) + v4[1]; /*0x449596*/
-  (*((unsigned short *)&(v10))) = v3 + *v4 - 1; /*0x4495a1*/
-  v15[1] = ((*((signed short *)(((unsigned char *)&(v10)) + 2))) << 8) + 128; /*0x4495be*/
+  v3 = *(unsigned int *)(*((unsigned int *)v2 + 949) + 40); /*0x449567*/
+  v4 = (unsigned short *)(*(int (**)(AnimClass *, int *))(this->AnimClass_field_0x0 + 440))(this, &v13); /*0x449573*/
+  HIWORD(v10) = HIWORD(v3) + v4[1]; /*0x449596*/
+  LOWORD(v10) = v3 + *v4 - 1; /*0x4495a1*/
+  v15[1] = (SHIWORD(v10) << 8) + 128; /*0x4495be*/
   *(unsigned int *)v12 = v10; /*0x4495c2*/
-  v15[0] = ((int16_t)v10 << 8) + 128; /*0x4495cc*/
+  v15[0] = ((__int16)v10 << 8) + 128; /*0x4495cc*/
   v15[2] = 0; /*0x4495d6*/
-  v5 = (Object *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v12); /*0x4495e4*/
+  v5 = (Object *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v12); /*0x4495e4*/
   v13 = 0; /*0x4495ea*/
   v14 = 0; /*0x4495ee*/
   ClosestObjectCell = Object::FindClosestObjectCell(v5, &v13, 0, (int)this); /*0x4495f2*/
   if ( !ClosestObjectCell ) /*0x4495f9*/
     return 0; /*0x44969e*/
-  ClosestObjectCell->vt_slot_132(); /*0x449603*/
+  (*(void (**)(int))(*(unsigned int *)ClosestObjectCell + 132))(ClosestObjectCell); /*0x449603*/
   Debug::Log(); /*0x449612*/
   Cell::ApplyDamage((Cell *)v5, (int)&g_BuildingClassPool, 1, 1, 0); /*0x449626*/
   for ( i = 0; i < 8; ++i ) /*0x44962b*/
@@ -472,12 +489,13 @@ int AnimClass::resetAnimation()
     v8 = Object::FindClosestObjectCell(NeighbourContent, &v13, 0, (int)this); /*0x44964e*/
     if ( v8 ) /*0x449655*/
     {
-      v8->vt_slot_132(); /*0x44965b*/
+      (*(void (**)(int))(*(unsigned int *)v8 + 132))(v8); /*0x44965b*/
       Debug::Log(); /*0x44966a*/
       Cell::ApplyDamage((Cell *)NeighbourContent, (int)v15, 1, 1, 0); /*0x44967e*/
     }
   }
   return 1; /*0x449691*/
+
 }
 } // namespace gamemd
 
@@ -553,36 +571,37 @@ int RadSiteClass::GetSpread() const {  // g57c5 W7: const-sync (rad_site.hpp:53)
 namespace gamemd {
 int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7)  // g57e2 W5e: raw 8th param
 {
-  wchar_t *v9; // eax
+
+  int v9; // eax
   int v10; // eax
   int v11; // eax
   int AnimClass_field_0xC8; // eax
   int AnimClass_field_0xCC; // ecx
-  int v14; // eax
+  unsigned int *v14; // eax
   unsigned int *v15; // eax
   unsigned int *v17; // ecx
   int v18; // ecx
-  int v19; // eax
+  unsigned int *v19; // eax
   unsigned int *v20; // ecx
   int v21; // edx
   char *ProductionTimeMult; // eax
   int v23; // ecx
-  int v24; // edx
-  int v25; // eax
+  unsigned int *v24; // edx
+  unsigned int v25; // eax
   int v26; // eax
   int v27; // eax
   double v28; // st7
   int v29; // eax
   double v30; // st7
   double v31; // st7
-  float v32; // eax
-  float v33; // eax
+  unsigned __int16 *v32; // eax
+  unsigned __int16 *v33; // eax
   float v34; // eax
   unsigned int *v35; // eax
   int v36; // ecx
   int v37; // eax
   int *v38; // eax
-  int v39; // edx
+  unsigned int *v39; // edx
   unsigned int *v40; // edi
   unsigned int *v41; // eax
   int v42; // ecx
@@ -623,9 +642,9 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   ObjectClass::ctor((ObjectClass *)this); /*0x421eae*/
   this->AnimClass_field_0xAC = 0; /*0x421eb8*/
   this->q_B0 = 0; /*0x421ebe*/
-  v9 = dword_A8ED84; /*0x421ec4*/
+  v9 = *(unsigned int *)&stru_A8E960.random[528]; /*0x421ec4*/
   this->AnimClass_field_0xBC = 0; /*0x421ec9*/
-  this->AnimClass_field_0xB4 = (int)v9; /*0x421ecf*/
+  this->AnimClass_field_0xB4 = v9; /*0x421ecf*/
   this->AnimClass_field_0xC0 = 0; /*0x421ed5*/
   *(unsigned int *)this->__pad_C4 = 1; /*0x421edb*/
   this->AnimClass_field_0xC8 = (int)a1; /*0x421ee5*/
@@ -633,7 +652,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   this->AnimClass_field_0xD0 = -1; /*0x421ef4*/
   this->AnimClass_field_0xD4 = 0; /*0x421efa*/
   *(unsigned int *)this->__pad_D8 = -1; /*0x421f00*/
-  this->__pad_0FC = 1000; /*0x421f06*/
+  this->AnimClass_field_0xFC = 1000; /*0x421f06*/
   this->AnimClass_field_0x100 = 0; /*0x421f10*/
   this->AnimClass_field_0x104 = 0; /*0x421f16*/
   this->AnimClass_field_0x108 = Map_InvalidCoord_X; /*0x421f32*/
@@ -674,24 +693,24 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   this->q19C = 1; /*0x422009*/
   this->SuperClass_19D = 0; /*0x422010*/
   this->q19E = 0; /*0x422016*/
-  /* X11: vtable install elided (implicit via class virtuals 0x42201c) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x422022) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via class virtuals 0x422028) — binary-proven install, was 0 */
-  /* X11: vtable install elided (implicit via off_7E3328 virtuals 0x422030) */
+  this->AnimClass_field_0x0 = (int)&AnimClass::`vftable'; /*0x42201c*/
+  this->AnimClass_field_0x4 = (int)&AnimClass::`vftable'; /*0x422022*/
+  this->AnimClass_field_0x8 = (int)&AnimClass::`vftable'; /*0x422028*/
+  *(unsigned int *)this->__pad_C = &off_7E3328; /*0x422030*/
   this->PaletteName = 0; /*0x422037*/
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x42203d*/
   AudioController::Init(&this->AudioController_1A0); /*0x422048*/
   AudioController::Init(&this->AudioController_1B4); /*0x422053*/
-  if ( dword_A8E9B8 < dword_A8E9B0 /*0x42208b*/
-    || (byte_A8E9B5 || !dword_A8E9B0)
-    && dword_A8E9BC > 0
-    && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8E9A8 + 8))(
-         &dword_A8E9A8,
-         dword_A8E9BC + dword_A8E9B0,
+  if ( *(int *)&stru_A8E960.nextScenario[88] < *(int *)&stru_A8E960.nextScenario[80] /*0x42208b*/
+    || (stru_A8E960.nextScenario[85] || !*(unsigned int *)&stru_A8E960.nextScenario[80])
+    && *(int *)&stru_A8E960.nextScenario[92] > 0
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_A8E960.nextScenario[72] + 8))(
+         &stru_A8E960.nextScenario[72],
+         *(unsigned int *)&stru_A8E960.nextScenario[92] + *(unsigned int *)&stru_A8E960.nextScenario[80],
          0) )
   {
-    v11 = dword_A8E9B8++; /*0x422098*/
-    *((unsigned int *)dword_A8E9AC + v11) = this; /*0x4220a7*/
+    v11 = (*(unsigned int *)&stru_A8E960.nextScenario[88])++; /*0x422098*/
+    *(unsigned int *)(*(unsigned int *)&stru_A8E960.nextScenario[76] + 4 * v11) = this; /*0x4220a7*/
   }
   AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x4220aa*/
   this->isAliveFlag = 1; /*0x4220b0*/
@@ -701,15 +720,15 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
     v17 = (unsigned int *)this->AnimClass_field_0xC8; /*0x42213d*/
     if ( v17[176] == -1 ) /*0x42214a*/
     {
-      *(unsigned int *)(this->AnimClass_field_0xC8 + 704) = *(int16_t *)((*(int (__thiscall **)(unsigned int *))(*v17 + 156))(v17) /*0x42215e*/
+      *(unsigned int *)(this->AnimClass_field_0xC8 + 704) = *(__int16 *)((*(int (**)(unsigned int *))(*v17 + 156))(v17) /*0x42215e*/
                                                                  + 6);
       v18 = this->AnimClass_field_0xC8; /*0x422164*/
       if ( *(unsigned char *)(v18 + 882) ) /*0x42216a*/
         *(int *)(v18 + 704) /= 2; /*0x42217d*/
     }
-    v19 = this->AnimClass_field_0xC8; /*0x422183*/
-    if ( *(unsigned int *)(v19 + 700) == -1 ) /*0x422190*/
-      *(unsigned int *)(v19 + 700) = *(unsigned int *)(v19 + 704); /*0x422198*/
+    v19 = (unsigned int *)this->AnimClass_field_0xC8; /*0x422183*/
+    if ( v19[175] == -1 ) /*0x422190*/
+      v19[175] = v19[176]; /*0x422198*/
     if ( a6 ) /*0x4221a3*/
       this->AnimClass_field_0x100 = (int)a6; /*0x4221a5*/
     else
@@ -724,14 +743,16 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         ProductionTimeMult = (char *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, v21, v23); /*0x4221f5*/
     }
     if ( *(unsigned char *)(this->AnimClass_field_0xC8 + 866) ) /*0x422200*/
-      ProductionTimeMult = Rules::GetProductionTimeMult((Rules *)&dword_A8EB60, (int)ProductionTimeMult); /*0x42220e*/
-    this->AnimClass_field_0xB4 = (int)dword_A8ED84; /*0x42221f*/
+      ProductionTimeMult = Rules::GetProductionTimeMult( /*0x42220e*/
+                             (Rules *)&stru_A8E960.altNextScenario[252],
+                             (int)ProductionTimeMult);
+    this->AnimClass_field_0xB4 = *(unsigned int *)&stru_A8E960.random[528]; /*0x42221f*/
     this->AnimClass_field_0xB8 = v73; /*0x422241*/
     this->AnimClass_field_0xBC = (int)ProductionTimeMult; /*0x422244*/
     this->AnimClass_field_0xC0 = (int)ProductionTimeMult; /*0x422247*/
-    v24 = this->AnimClass_field_0xC8; /*0x42224d*/
+    v24 = (unsigned int *)this->AnimClass_field_0xC8; /*0x42224d*/
     this->AnimClass_field_0xAC = 0; /*0x422253*/
-    v25 = *(unsigned int *)(v24 + 868); /*0x422259*/
+    v25 = v24[217]; /*0x422259*/
     if ( v25 == 3 || v25 == 4 ) /*0x422267*/
       ObjectClass::SetAnim((ObjectClass *)this, dword_8871E0->GDIWallDefense[1]); /*0x422281*/
     else
@@ -745,15 +766,15 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
       *(unsigned int *)this->__pad_C4 = -*(unsigned int *)this->__pad_C4; /*0x4222bd*/
     }
     v27 = this->AnimClass_field_0xC8; /*0x4222c3*/
-    if ( v27->u8_35A || v27->q356 ) /*0x4222d1*/
+    if ( *(unsigned char *)(v27 + 858) || *(unsigned char *)(v27 + 854) ) /*0x4222d1*/
     {
       this->__pad_194 = 1; /*0x4222ea*/
-      if ( v27->q356 ) /*0x4222f1*/
+      if ( *(unsigned char *)(v27 + 854) ) /*0x4222f1*/
       {
         v55 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x422310*/
         v58 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x422324*/
         v28 = *(double *)(this->AnimClass_field_0xC8 + 792); /*0x42232e*/
-        (*((unsigned short *)&(v29))) = Math::RoundToInt(v28); /*0x42233c*/
+        LOWORD(v29) = Math::RoundToInt(v28); /*0x42233c*/
         v56 = (double)((int)abs32(v55) % v29) - *(double *)(this->AnimClass_field_0xC8 + 808); /*0x422375*/
         v63 = (double)((int)abs32(v58) % v29) - *(double *)(this->AnimClass_field_0xC8 + 808); /*0x422387*/
         v64 = v56; /*0x42238b*/
@@ -765,18 +786,19 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
           v64 = v30; /*0x4223b0*/
         }
         v31 = (double)(int)(70 - abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 20)); /*0x4223e6*/
-        (*((unsigned short *)&(v32))) = Math::RoundToInt(v31); /*0x4223f4*/
-        v69 = v32; /*0x4223fc*/
-        (*((unsigned short *)&(v33))) = Math::RoundToInt(v31); /*0x42240b*/
-        v70 = v33; /*0x422413*/
-        (*((unsigned short *)&(v34))) = Math::RoundToInt((double)a2[2] - v31 * v65); /*0x422422*/
+        LOWORD(v32) = Math::RoundToInt(v31); /*0x4223f4*/
+        v69 = *(float *)&v32; /*0x4223fc*/
+        LOWORD(v33) = Math::RoundToInt(v31); /*0x42240b*/
+        v70 = *(float *)&v33; /*0x422413*/
+        LOWORD(v34) = Math::RoundToInt((double)a2[2] - v31 * v65); /*0x422422*/
         v71 = v34; /*0x422427*/
         ObjectClass::Deploy((ObjectClass *)this); /*0x422433*/
         if ( this->AnimClass_field_0xCC ) /*0x422438*/
         {
           Coords = (unsigned int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x422452*/
-          v35 = (unsigned int *)this->AnimClass_field_0xCC->UpdateZAdjust(/*0x42245d*/
-                            this->AnimClass_field_0xCC, &v75);
+          v35 = (unsigned int *)(*(int (**)(int, CoordStruct *))(*(unsigned int *)this->AnimClass_field_0xCC + 72))( /*0x42245d*/
+                            this->AnimClass_field_0xCC,
+                            &v75);
           v72.vfptr = (void *)(*v35 + *Coords); /*0x422468*/
           v36 = Coords[1] + v35[1]; /*0x422472*/
           v37 = Coords[2] + v35[2]; /*0x422475*/
@@ -790,13 +812,13 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
           v67 = v38->vtable2; /*0x42249b*/
           v37 = v38->vtable3; /*0x42249f*/
         }
-        v39 = this->AnimClass_field_0xC8; /*0x4224a2*/
+        v39 = (unsigned int *)this->AnimClass_field_0xC8; /*0x4224a2*/
         v68 = v37; /*0x4224ae*/
         AnimClass::InitRotation( /*0x4224d4*/
           &this->q128,
           &vfptr,
-          *(unsigned int *)(v39 + 784),
-          *(unsigned int *)(v39 + 788),
+          v39[196],
+          v39[197],
           1610612736,
           1073112678,
           0,
@@ -810,8 +832,9 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         if ( this->AnimClass_field_0xCC ) /*0x4224e5*/
         {
           v40 = (unsigned int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x4224ff*/
-          v41 = (unsigned int *)this->AnimClass_field_0xCC->UpdateZAdjust(/*0x422508*/
-                            this->AnimClass_field_0xCC, &out);
+          v41 = (unsigned int *)(*(int (**)(int, CoordStruct *))(*(unsigned int *)this->AnimClass_field_0xCC + 72))( /*0x422508*/
+                            this->AnimClass_field_0xCC,
+                            &out);
           v42 = *v40 + *v41; /*0x422512*/
           v43 = v40[1] + v41[1]; /*0x42251a*/
           v44 = v40[2] + v41[2]; /*0x42251f*/
@@ -831,10 +854,10 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         v47 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x422579*/
         v48 = this->AnimClass_field_0xC8; /*0x42257e*/
         v57 = v47; /*0x422584*/
-        (*((unsigned short *)&(v49))) = Math::RoundToInt(*(double *)(v48 + 808) + *(double *)(v48 + 808)); /*0x422590*/
+        LOWORD(v49) = Math::RoundToInt(*(double *)(v48 + 808) + *(double *)(v48 + 808)); /*0x422590*/
         v62 = v49; /*0x42259e*/
         v50 = (double)((int)abs32(v60) % v49) - *(double *)(v48 + 808); /*0x4225b2*/
-        (*((unsigned short *)&(v51))) = Math::RoundToInt(v50); /*0x4225d0*/
+        LOWORD(v51) = Math::RoundToInt(v50); /*0x4225d0*/
         v61 = (double)((int)abs32(v46) % v51) + *(double *)(v48 + 792); /*0x4225f8*/
         v52 = (double)((int)abs32(v57) % v62) - *(double *)(v48 + 808); /*0x422621*/
         v71 = v61; /*0x422627*/
@@ -863,7 +886,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         (MapClass *)&dword_87F7E8,
         a2,
         *&dword_8871E0->TypeList_14BC / 256,
-        dword_A83D4C,
+        *(void **)((char *)&stru_A83CD9.estimatedHealth + 3),
         0,
         0,
         0,
@@ -873,7 +896,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         (MapClass *)&dword_87F7E8,
         a2,
         *&dword_8871E0->TypeList_14BC / 256,
-        dword_A83D4C,
+        *(void **)((char *)&stru_A83CD9.estimatedHealth + 3),
         0,
         0,
         0,
@@ -885,7 +908,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
       v53 = 1; /*0x4226c7*/
     v54 = v53 * *(unsigned char *)(this->AnimClass_field_0xC8 + 708); /*0x4226d8*/
     this->q195 = v54; /*0x4226dc*/
-    if ( (uint8_t)v54 <= 1u ) /*0x4226e2*/
+    if ( (unsigned __int8)v54 <= 1u ) /*0x4226e2*/
       v54 = 1; /*0x4226eb*/
     this->q195 = v54; /*0x4226f0*/
     if ( !this->AnimClass_field_0x184 ) /*0x4226f6*/
@@ -896,18 +919,19 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   {
     AnimClass_field_0xCC = this->AnimClass_field_0xCC; /*0x4220bb*/
     if ( AnimClass_field_0xCC ) /*0x4220c3*/
-      AnimClass_field_0xCC->GetDirty(this); /*0x4220c8*/
+      (*(void (**)(int, AnimClass *))(*(unsigned int *)AnimClass_field_0xCC + 96))(AnimClass_field_0xCC, this); /*0x4220c8*/
     BuildingClass::AimTurret((BuildingClass *)this, 0); /*0x4220ce*/
     Mixer::ReleaseChannel(&this->AudioController_1A0); /*0x4220d9*/
     if ( !this->q198 ) /*0x4220de*/
     {
-      v14 = this->AnimClass_field_0xC8; /*0x4220e6*/
+      v14 = (unsigned int *)this->AnimClass_field_0xC8; /*0x4220e6*/
       if ( v14 ) /*0x4220ee*/
       {
-        if ( *(unsigned int *)(v14 + 764) != -1 ) /*0x4220f7*/
+        if ( v14[191] != -1 ) /*0x4220f7*/
         {
-          v15 = (unsigned int *)this->UpdateZAdjust(/*0x422109*/
-                            this, &v72);
+          v15 = (unsigned int *)(*(int (**)(AnimClass *, CoordStruct *))(this->AnimClass_field_0x0 + 72))( /*0x422109*/
+                            this,
+                            &v72);
           StartAudioControllerAt( /*0x42211a*/
             *(unsigned int *)(this->AnimClass_field_0xC8 + 764),
             v15,
@@ -918,6 +942,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
     ObjectClass::Destroy((ObjectClass *)this); /*0x422121*/
     return (void **)this; /*0x422126*/
   }
+
 }
 } // namespace gamemd
 
@@ -1010,6 +1035,7 @@ int RadSiteClass::Add(int a2)
 namespace gamemd {
 double RadSiteClass::GetRadLevelAt(short *a2)
 {
+
   double v2; // st7
   void *v4; // esi
   int *v5; // eax
@@ -1019,33 +1045,34 @@ double RadSiteClass::GetRadLevelAt(short *a2)
   unsigned int *v9; // eax
   int v10; // esi
   int v11; // edx
-  int v12; // eax
+  unsigned __int16 *v12; // eax
   int SpreadInLeptons; // ecx
   double result; // st7
   int v15; // [esp+24h] [ebp-Ch] BYREF
   int v16; // [esp+28h] [ebp-8h]
   int v17; // [esp+2Ch] [ebp-4h]
-  int16_t *v18; // [esp+34h] [ebp+4h]
+  __int16 *v18; // [esp+34h] [ebp+4h]
 
-  v4 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)this->BaseCell); /*0x65b90b*/
-  v18 = (int16_t *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x65b91a*/
-  v5 = (int *)v4->vt_slot_72(&v15); /*0x65b925*/
+  v4 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &this->BaseCell); /*0x65b90b*/
+  v18 = (__int16 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a2); /*0x65b91a*/
+  v5 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v4 + 72))(v4, &v15); /*0x65b925*/
   v6 = *v5; /*0x65b928*/
   v7 = v5[1]; /*0x65b92e*/
   v8 = v5[2]; /*0x65b933*/
-  v9 = (unsigned int *)v18->vt_slot_72(&v15); /*0x65b93b*/
+  v9 = (unsigned int *)(*(int (**)(__int16 *, int *))(*(unsigned int *)v18 + 72))(v18, &v15); /*0x65b93b*/
   v10 = v6 - *v9; /*0x65b945*/
   v11 = v9[2]; /*0x65b94c*/
   v16 = v7 - v9[1]; /*0x65b94f*/
   v15 = v10; /*0x65b959*/
   v17 = v8 - v11; /*0x65b95d*/
   Math::Sqrt((double)v10 * (double)v10 + (double)(v8 - v11) * (double)(v8 - v11) + (double)v16 * (double)v16); /*0x65b982*/
-  (*((unsigned short *)&(v12))) = Math::RoundToInt(v2); /*0x65b98a*/
+  LOWORD(v12) = Math::RoundToInt(v2); /*0x65b98a*/
   SpreadInLeptons = this->SpreadInLeptons; /*0x65b98f*/
   result = 0.0; /*0x65b992*/
-  if ( v12 <= SpreadInLeptons ) /*0x65b99e*/
-    return (double)(SpreadInLeptons - v12) / (double)this->SpreadInLeptons * (double)this->RadLevel; /*0x65b9b0*/
+  if ( (int)v12 <= SpreadInLeptons ) /*0x65b99e*/
+    return (double)(SpreadInLeptons - (int)v12) / (double)this->SpreadInLeptons * (double)this->RadLevel; /*0x65b9b0*/
   return result; /*0x65b9b3*/
+
 }
 } // namespace gamemd
 
@@ -1145,6 +1172,7 @@ int RadSiteClass::Radiate(int a1)
 namespace gamemd {
 int RadSiteClass::Deactivate(unsigned int *a1)
 {
+
   int v1; // eax
   int v2; // edx
   int v3; // esi
@@ -1164,7 +1192,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
   int v17; // eax
   double v18; // st7
   void *v19; // eax
-  int16_t v20[2]; // [esp+24h] [ebp-5Ch] BYREF
+  __int16 v20[2]; // [esp+24h] [ebp-5Ch] BYREF
   int v21; // [esp+28h] [ebp-58h]
   unsigned int *v22; // [esp+2Ch] [ebp-54h]
   int v23; // [esp+30h] [ebp-50h]
@@ -1172,7 +1200,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
   int v25; // [esp+38h] [ebp-48h]
   int v26; // [esp+3Ch] [ebp-44h]
   double v27; // [esp+40h] [ebp-40h]
-  uint64_t v28; // [esp+48h] [ebp-38h]
+  unsigned __int64 v28; // [esp+48h] [ebp-38h]
   double v29; // [esp+50h] [ebp-30h]
   int v30; // [esp+5Ch] [ebp-24h]
   int v31; // [esp+60h] [ebp-20h]
@@ -1180,17 +1208,17 @@ int RadSiteClass::Deactivate(unsigned int *a1)
   char v33[12]; // [esp+68h] [ebp-18h] BYREF
   char v34[12]; // [esp+74h] [ebp-Ch] BYREF
 
-  v1 = a1[28] / ((unsigned int *)&dword_8871E0[1])[1]; /*0x65bb67*/
-  v2 = *((int16_t *)a1 + 32); /*0x65bb6d*/
+  v1 = a1[28] / dword_8871E0[1].?[1]; /*0x65bb67*/
+  v2 = *((__int16 *)a1 + 32); /*0x65bb6d*/
   v3 = a1[17]; /*0x65bb71*/
   v22 = a1; /*0x65bb74*/
   v4 = v2 - v3; /*0x65bb78*/
   v24 = v4 + 2 * v3 + 1; /*0x65bb82*/
   v25 = v1 + 1; /*0x65bb87*/
-  result = *((int16_t *)a1 + 33) - v3; /*0x65bb8f*/
+  result = *((__int16 *)a1 + 33) - v3; /*0x65bb8f*/
   v23 = result; /*0x65bb91*/
   v6 = result + 2 * v3 + 1; /*0x65bb95*/
-  v28 = (((unsigned long)(unsigned int)(v6)) | ((unsigned long)(unsigned int)(v4) << 32)); /*0x65bb9b*/
+  v28 = __PAIR64__(v4, v6); /*0x65bb9b*/
   if ( result < v6 ) /*0x65bb9f*/
   {
     do /*0x65bce9*/
@@ -1203,13 +1231,13 @@ int RadSiteClass::Deactivate(unsigned int *a1)
         {
           v20[0] = v21; /*0x65bbcd*/
           v20[1] = v23; /*0x65bbdb*/
-          v7 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)a1 + 32); /*0x65bbe5*/
+          v7 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)a1 + 32); /*0x65bbe5*/
           v8 = CellCoord::To_CellObj(&dword_87F7E8, v20); /*0x65bbf8*/
-          v9 = (int *)v7->vt_slot_72(v33); /*0x65bc01*/
+          v9 = (int *)(*(int (**)(void *, char *))(*(unsigned int *)v7 + 72))(v7, v33); /*0x65bc01*/
           v10 = *v9; /*0x65bc04*/
           v11 = v9[1]; /*0x65bc0b*/
           v12 = v9[2]; /*0x65bc0e*/
-          v13 = (unsigned int *)(*(int (__thiscall **)(void *, char *))(*(unsigned int *)v8 + 72))(v8, v34); /*0x65bc16*/
+          v13 = (unsigned int *)(*(int (**)(void *, char *))(*(unsigned int *)v8 + 72))(v8, v34); /*0x65bc16*/
           v14 = v13[1]; /*0x65bc22*/
           v30 = v10 - *v13; /*0x65bc25*/
           v15 = v13[2]; /*0x65bc2b*/
@@ -1219,11 +1247,11 @@ int RadSiteClass::Deactivate(unsigned int *a1)
                                                                                                  * (double)v31);
           v17 = Math::RoundToInt(v16); /*0x65bc65*/
           v18 = 0.0; /*0x65bc6e*/
-          (*((unsigned int *)&(v27))) = v22[18]; /*0x65bc79*/
-          if ( v17 <= (*((signed int *)&(v27))) ) /*0x65bc7d*/
+          LODWORD(v27) = v22[18]; /*0x65bc79*/
+          if ( v17 <= SLODWORD(v27) ) /*0x65bc7d*/
           {
-            v26 = (*((unsigned int *)&(v27))) - v17; /*0x65bc83*/
-            v18 = (double)((*((unsigned int *)&(v27))) - v17) / (double)(*((signed int *)&(v27))) * (double)(int)v22[19]; /*0x65bc8f*/
+            v26 = LODWORD(v27) - v17; /*0x65bc83*/
+            v18 = (double)(LODWORD(v27) - v17) / (double)SLODWORD(v27) * (double)(int)v22[19]; /*0x65bc8f*/
           }
           v27 = v18 / (double)(int)v22[20] * v29; /*0x65bca3*/
           v19 = CellCoord::To_CellObj(&dword_87F7E8, v20); /*0x65bca7*/
@@ -1232,7 +1260,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
             break; /*0x65bccc*/
           a1 = v22; /*0x65bbbf*/
         }
-        v4 = (*(((unsigned int *)&(v28)) + 1)); /*0x65bcd6*/
+        v4 = HIDWORD(v28); /*0x65bcd6*/
         v6 = v28; /*0x65bcd6*/
         a1 = v22; /*0x65bcda*/
       }
@@ -1241,6 +1269,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
     while ( v23 < v6 ); /*0x65bce9*/
   }
   return result; /*0x65bcef*/
+
 }
 } // namespace gamemd
 

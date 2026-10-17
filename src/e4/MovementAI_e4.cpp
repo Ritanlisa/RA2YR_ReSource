@@ -12,9 +12,11 @@ namespace gamemd {  // G42.18 ns repair
 int MovementAI::IsPathMovementAllowed()
 {
 
-  if ( !byte_A8E9A0 ) /*0x487e0b*/
-    return this->u32_100 != 0; /*0x487e0b*/
   unsigned int *v2; // esi
+  BOOL v3; // eax
+
+  if ( !MEMORY[0xA8E9A0] ) /*0x487e0b*/
+    return this->u32_100 != 0; /*0x487e0b*/
   v2 = (unsigned int *)this->u32_E4; /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
     return this->u32_100 != 0; /*0x487e15*/
@@ -24,13 +26,13 @@ int MovementAI::IsPathMovementAllowed()
     if ( !v2 ) /*0x487e28*/
       return this->u32_100 != 0; /*0x487e28*/
   }
-  BOOL v3; // eax
   if ( this->u32_100 == 1 ) /*0x487e45*/
-    (*((unsigned char *)&(v3))) = 0; /*0x487e48*/
+    LOBYTE(v3) = 0; /*0x487e48*/
   else
     return this->u32_100 != 0; /*0x487e2a*/
   return v3; /*0x487e34*/
-}  // G42.18 ns repair
+
+}
 } // namespace gamemd
 // 0x4A5150
 namespace gamemd {

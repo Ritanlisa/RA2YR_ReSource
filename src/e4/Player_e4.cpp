@@ -19,14 +19,17 @@ namespace gamemd {  // G42.18 ns repair
 void Player::BuildListString(wchar_t * Destination)
 {
 
+  wchar_t **v2; // edi
+  wchar_t *v3; // esi
+  wchar_t **v4; // eax
+  wchar_t *v5; // eax
   DeleteAndZero v6; // [esp+Ch] [ebp-Ch] BYREF
 
-  *(unsigned short *)Destination = 0; /*0x5e8dc8*/
-  wchar_t **v2; // edi
-  v2 = (wchar_t **)dword_A8DA90; /*0x5e8dcd*/
+  *(unsigned short *)this = 0; /*0x5e8dc8*/
+  v2 = (wchar_t **)&stru_A8D804.__pad_3D[591]; /*0x5e8dcd*/
   do /*0x5e8e89*/
   {
-    wchar_t *v3 = *v2; // esi /*0x5e8dd2*/
+    v3 = *v2; /*0x5e8dd2*/
     unknown_libname_74(&v6); /*0x5e8dd8*/
     if ( !v3 /*0x5e8e17*/
       || v3 == (wchar_t *)g_HouseClass_ObserverFlags
@@ -37,25 +40,23 @@ void Player::BuildListString(wchar_t * Destination)
       || v3 == (wchar_t *)g_Lobby_PlayerSide
       || v3 == (wchar_t *)g_Lobby_PlayerColor )
     {
-      GetPlayerTypeString((char **)&v6.q004, v3); /*0x5e8e2b*/
-      wchar_t **v4; // eax
-      v4 = CharStringToWide((wchar_t **)&v6.u32_8, (const char **)&v6.q004); /*0x5e8e38*/
-      WideString::Reassign_Alt((void **)&v6, (const wchar_t **)v4); /*0x5e8e42*/
-      ((DeleteAndZero *)&v6.u32_8)->Alt(); /*0x5e8e4b*/
-      DeleteAndZero((ObjectClass *)&v6.q004); /*0x5e8e54*/
+      GetPlayerTypeString((String *)&v6.DeleteAndZero_field_0x04, v3); /*0x5e8e2b*/
+      v4 = CharStringToWide((wchar_t **)&v6.DeleteAndZero_field_0x08, (const char **)&v6.DeleteAndZero_field_0x04); /*0x5e8e38*/
+      WideString::Reassign_Alt((WideString *)&v6, (const wchar_t **)v4); /*0x5e8e42*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v6.DeleteAndZero_field_0x08); /*0x5e8e4b*/
+      DeleteAndZero((ObjectClass *)&v6.DeleteAndZero_field_0x04); /*0x5e8e54*/
     }
     else
     {
-      WideString::Assign_Alt((void **)&v6, v3); /*0x5e8e1e*/
+      WideString::Assign_Alt((WideString *)&v6, v3); /*0x5e8e1e*/
     }
-    wchar_t *v5; // eax
-    v5 = (wchar_t *)(((wchar_t **)&v6)->GetOrEmpty()); /*0x5e8e5d*/
-    wcscat((wchar_t *)Destination, v5); /*0x5e8e64*/
-    wcscat((wchar_t *)Destination, asc_8304FC); /*0x5e8e6f*/
-    (&v6)->Alt(); /*0x5e8e7b*/
+    v5 = WideString::GetOrEmpty((WideString *)&v6); /*0x5e8e5d*/
+    wcscat((wchar_t *)this, v5); /*0x5e8e64*/
+    wcscat((wchar_t *)this, asc_8304FC); /*0x5e8e6f*/
+    DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
     ++v2; /*0x5e8e80*/
   }
-  while ( (int)v2 < (int)&dword_A8DAB0 ); /*0x5e8e89*/
+  while ( (int)v2 < (int)&stru_A8D804.__pad_3D[623] ); /*0x5e8e89*/
 
 }
 } // namespace gamemd

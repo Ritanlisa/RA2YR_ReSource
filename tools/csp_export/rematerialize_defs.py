@@ -55,6 +55,22 @@ ANCHOR = re.compile(r'/\*0x([0-9a-fA-F]+)\*/')
 DEF_HEAD = re.compile(r'^[^/]*?\b([A-Za-z_]\w*)::\s*~?\w+\s*\(([^)]*)\)')
 BAK = '.omo' + os.sep + 'rematerialize_defs_backup'
 
+# X54 (typed-snapshot lane): optional cache-dir override + explicit target
+# list + dedicated manifest path.  Targets mode REPLACES only the listed
+# addrs (force, subject to the same RC3 loss guard) and reads renders from
+# the given cache dir (e.g. .omo/ida_cache_x40).
+CACHE_DIR = '.omo/ida_cache'
+MANIFEST_OUT = None
+TARGETS = None
+for _a in sys.argv[1:]:
+    if _a.startswith('--cache-dir='):
+        CACHE_DIR = _a.split('=', 1)[1]
+    elif _a.startswith('--manifest-out='):
+        MANIFEST_OUT = _a.split('=', 1)[1]
+    elif _a.startswith('--targets='):
+        with open(_a.split('=', 1)[1], encoding='utf-8') as _tf:
+            TARGETS = json.load(_tf)
+
 
 def _core(text):
     """Content of `text` with comments and whitespace stripped -- the
@@ -72,7 +88,10 @@ def _sha(text):
 def _backup_before_write(p):
     """RC3: byte-exact pre-run backup before a whole-file rewrite
     (earliest state kept -- fix_dupdef_corpses pattern)."""
-    bdir = os.path.join(BAK, os.path.dirname(p))
+    rel = os.path.relpath(p)  # X54: relative -- os.path.join discards the
+    # BAK prefix when dirname(p) is absolute (Windows path-join semantics),
+    # which wrote .pre files INTO src/ in targets mode.
+    bdir = os.path.join(BAK, os.path.dirname(rel))
     os.makedirs(bdir, exist_ok=True)
     b = os.path.join(bdir, os.path.basename(p) + '.pre')
     if not os.path.exists(b):
@@ -85,6 +104,9 @@ TOKEN_MAP = [
     (re.compile(r'\b_BYTE\b'), 'unsigned char'),
     (re.compile(r'\b_WORD\b'), 'unsigned short'),
     (re.compile(r'\b_QWORD\b'), 'unsigned long long'),
+    # X54: digit-leading IDA callee names are illegal C++ identifiers
+    # (Function::41C430); legalize with the corpus's sub_ prefix.
+    (re.compile(r'\b([A-Za-z_]\w*::)(\d\w*)\('), r'\1sub_\2('),
 ]
 
 s = json.load(open('signals.json', encoding='utf-8'))
@@ -99,7 +121,7 @@ def enc_cache(a):
     if st in _cache:
         return _cache[st]
     try:
-        dec = json.load(open('.omo/ida_cache/func_0x%X.json' % st,
+        dec = json.load(open('%s/func_0x%X.json' % (CACHE_DIR, st),
                              encoding='utf-8')).get('decompiled', '')
     except OSError:
         dec = ''
@@ -226,8 +248,49 @@ stats = Counter()
 files_changed = 0
 manifest = {}
 lossguard = {}
-files = (glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp')
-         + glob.glob('src/system/gap2*.cpp'))
+if TARGETS is not None:
+    # X54 targets mode: {addr(hex str) -> file} map; only these defs are
+    # (force-)replaced, renders read from --cache-dir.
+    ROOT = os.getcwd()
+    TSET = {}
+    for k, v in TARGETS.items():
+        try:
+            TSET[int(k, 16)] = v.replace('\\', '/')
+        except (ValueError, TypeError):
+            continue
+    files = sorted({os.path.join(ROOT, f) for f in TSET.values()
+                    if os.path.exists(os.path.join(ROOT, f))})
+else:
+    TSET = None
+    files = (glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp')
+             + glob.glob('src/system/gap2*.cpp'))
+class _HeadMatch(object):
+    """Synthetic match for marker-driven (non-`::`) def heads: exposes
+    .group(2) = parameter text, balanced-paren aware."""
+
+    def __init__(self, params):
+        self._p = params
+
+    def group(self, n):
+        return self._p if n == 2 else None
+
+
+def _balanced_params(line):
+    """Parameter text from the first '(' to its matching ')' (nestable)."""
+    a = line.find('(')
+    if a < 0:
+        return None
+    d = 0
+    for k in range(a, len(line)):
+        if line[k] == '(':
+            d += 1
+        elif line[k] == ')':
+            d -= 1
+            if d == 0:
+                return line[a + 1:k]
+    return None
+
+
 for p in files:
     raw = open(p, encoding='utf-8', errors='replace').read()
     lines = raw.split('\n')
@@ -235,6 +298,24 @@ for p in files:
     i = 0
     while i < len(lines):
         hm = DEF_HEAD.search(lines[i])
+        if TSET is not None and hm is None:
+            # X54 marker-driven def location: the marker pins the def even
+            # when the head has no `Cls::` (global/CRT shapes).
+            mm = re.match(r'^//\s*0x([0-9a-fA-F]{6,8})\s*$', lines[i].strip())
+            if mm and int(mm.group(1), 16) in TSET:
+                h = i + 1
+                steps = 0
+                while h < len(lines) and steps < 4:
+                    s2 = lines[h].strip()
+                    if s2:
+                        steps += 1
+                        if '(' in s2:
+                            params = _balanced_params(lines[h])
+                            if params is not None:
+                                hm = _HeadMatch(params)
+                                i = h
+                            break
+                    h += 1
         if not hm:
             i += 1
             continue
@@ -268,6 +349,9 @@ for p in files:
         mkey = ('%X' % addr) if addr is not None else \
             'NOADDR@%s:%d' % (p.replace('\\', '/'), i + 1)
         if addr is not None:
+            if TSET is not None and int(addr) not in TSET:
+                i = j + 1
+                continue
             dec = enc_cache(addr)
             want = Counter(a.lower() for a in ANCHOR.findall(dec)) if dec else None
             got = Counter(a.lower() for a in ANCHOR.findall('\n'.join(block)))
@@ -275,7 +359,8 @@ for p in files:
             # missing/EMPTY body with a non-empty cache = glue-corpse or
             # anchorless v6-restored lines (stubs carry none by design but
             # also carry no def-level glue).
-            damaged = bool(want and (not got or want != got))
+            damaged = bool(want and (not got or want != got)) or \
+                (TSET is not None and dec)
             if dec and (ALL_DEFS or damaged):
                 sig_end = dec.find('{')
                 if sig_end > 0:
@@ -293,6 +378,22 @@ for p in files:
                     skip_this = ('__thiscall' in sig_head
                                  and len(corpus_n) == len(cparams_n) - 1)
                     src = cparams[1:] if skip_this else cparams
+                    # X54: bodies keep the `this` receiver verbatim (the
+                    # dominant corpus convention -- canon_member_lowering's
+                    # F-THIS keys on the literal).  Never rename it away.
+                    if (not skip_this and cparams
+                            and cparams[0] == 'this'):
+                        src = cparams[1:]
+                    # X54: positional renaming is only DEFINED when the
+                    # filtered param sequences have equal length.  A typed
+                    # cache signature (e.g. 4 params) against an old
+                    # demoted corpus head (2 params) has no positional
+                    # meaning -- renaming would clobber (a3->a2 over a2->a1).
+                    # Keep the render's own names verbatim instead.
+                    src_n = [x for x in src if x]
+                    if len(src_n) != len(corpus_n):
+                        stats['param-mismatch-kept'] += 1
+                        src = []
                     factor, elem = this_scale(sig_head)
                     body = param_rename(body, src, corpus_p, False)
                     if skip_this or '__thiscall' not in sig_head:
@@ -348,17 +449,21 @@ for p in files:
             open(p, 'w', encoding='utf-8', newline='').write(text2)
 print('files changed:', files_changed)
 print(dict(stats))
-if APPLY:
-    os.makedirs('.omo', exist_ok=True)
-    with open('.omo/rematerialize_defs_manifest.json', 'w',
-              encoding='utf-8') as f:
+if APPLY or MANIFEST_OUT:
+    # manifest on dry-run only when an explicit --manifest-out is given
+    # (never clobber the standing manifest from a bare dry-run)
+    mpath = MANIFEST_OUT or '.omo/rematerialize_defs_manifest.json'
+    os.makedirs(os.path.dirname(mpath) or '.', exist_ok=True)
+    with open(mpath, 'w', encoding='utf-8') as f:
         json.dump({'_meta': {'generator': 'rematerialize_defs.py',
                              'policy': 'rc3-loss-guard (plan #10)',
-                             'apply': True, 'all_defs': ALL_DEFS,
+                             'apply': APPLY, 'all_defs': ALL_DEFS,
+                             'targets_mode': TARGETS is not None,
+                             'cache_dir': CACHE_DIR,
                              'files_changed': files_changed,
                              'stats': dict(stats)},
                    'defs': manifest}, f, indent=1)
-    print('manifest written: .omo/rematerialize_defs_manifest.json')
+    print('manifest written: %s' % mpath)
 if lossguard:
     os.makedirs(os.path.join('.omo', 'unresolved_reports'), exist_ok=True)
     rpt = os.path.join('.omo', 'unresolved_reports',
