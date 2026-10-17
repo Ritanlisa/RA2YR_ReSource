@@ -29,8 +29,45 @@ ROOT = Path(__file__).parent.parent
 FUNCTIONS_JSON = ROOT / "injectFunctionTest" / "functions.json"
 IDA_FUNC_DB = ROOT / "tools" / "ida_function_db.json"
 MEMBER_LOOKUP = ROOT / "tools" / "member_lookup.json"
+MEMBER_SIZEOF = ROOT / "tools" / "member_sizeof.json"  # X61: authority sizeof map (til > class_layouts > csp_canon)
 GLOBALS_DIR = ROOT / "src"
 OUTPUT_DIR = ROOT / ".omo" / "translation_maps"
+
+# ── X61 garbage-guard: class sizeof authority ──
+# An offset >= sizeof(class) can never name a real member. The guard makes a
+# bad entry in member_lookup.json impossible to use silently: WARNING naming
+# class+offset, then skip (no silent fallback). Absence of the sizeof map
+# degrades to old behavior (no guard) rather than failing the tool.
+_MEMBER_SIZEOF_CACHE = None
+
+
+def load_member_sizeof():
+    """Load tools/member_sizeof.json (X61). Returns {} if absent."""
+    global _MEMBER_SIZEOF_CACHE
+    if _MEMBER_SIZEOF_CACHE is not None:
+        return _MEMBER_SIZEOF_CACHE
+    try:
+        with open(MEMBER_SIZEOF, 'r', encoding='utf-8') as f:
+            _MEMBER_SIZEOF_CACHE = json.load(f).get('sizeof', {})
+    except (OSError, ValueError):
+        _MEMBER_SIZEOF_CACHE = {}
+    return _MEMBER_SIZEOF_CACHE
+
+
+def sizeof_guard(cls, byte_offset):
+    """True if the offset is WITHIN the class sizeof (or sizeof unknown)."""
+    sz = load_member_sizeof().get(cls)
+    if sz is None or byte_offset < sz:
+        return True
+    print(f"WARNING[X61]: member offset {byte_offset} exceeds sizeof({cls})={sz} "
+          f"— entry quarantined/skipped (garbage guard)", file=sys.stderr)
+    return False
+
+
+def sizeof_guard_quiet(cls, byte_offset):
+    """sizeof_guard without the WARNING (bulk filtering in nearest-member scans)."""
+    sz = load_member_sizeof().get(cls)
+    return sz is None or byte_offset < sz
 
 # ── Inheritance chain (same as lookup_member.py) ──
 INHERITANCE_CHAIN = {
@@ -235,17 +272,19 @@ def load_global_addresses():
 def resolve_member(member_lookup, cls, byte_offset):
     """Resolve a byte offset to a member name using inheritance chain.
     Returns (found_class, member_name, member_type) or (None, None, None).
+    X61 garbage-guard: offsets beyond the class sizeof are skipped with a
+    WARNING (never used silently).
     """
     off_str = str(byte_offset)
     # Search target class first
-    if cls in member_lookup and off_str in member_lookup[cls]:
+    if cls in member_lookup and off_str in member_lookup[cls] and sizeof_guard(cls, byte_offset):
         m = member_lookup[cls][off_str]
         return cls, m['name'], m.get('type', '?')
 
     # Walk parent chain
     chain = INHERITANCE_CHAIN.get(cls, [])
     for parent in chain:
-        if parent in member_lookup and off_str in member_lookup[parent]:
+        if parent in member_lookup and off_str in member_lookup[parent] and sizeof_guard(parent, byte_offset):
             m = member_lookup[parent][off_str]
             return parent, m['name'], m.get('type', '?')
 
@@ -255,11 +294,15 @@ def resolve_member(member_lookup, cls, byte_offset):
 def find_nearest_members(member_lookup, cls, byte_offset):
     """Find nearest known members above and below the offset."""
     # Collect all offsets from cls and its inheritance chain
+    # X61 garbage-guard: drop offsets at/ beyond each class's sizeof.
     all_offsets = set()
     chain = [cls] + INHERITANCE_CHAIN.get(cls, [])
     for c in chain:
         if c in member_lookup:
-            all_offsets.update(int(k) for k in member_lookup[c].keys())
+            for k in member_lookup[c].keys():
+                off = int(k)
+                if sizeof_guard_quiet(c, off):
+                    all_offsets.add(off)
 
     sorted_offs = sorted(all_offsets)
     prev = max((k for k in sorted_offs if k <= byte_offset), default=None)

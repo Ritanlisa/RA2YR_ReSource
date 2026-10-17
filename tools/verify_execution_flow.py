@@ -191,6 +191,7 @@ class Maps:
         self.global_to_addr = {}
         self.member_lookup = {}
         self.member_name_to_off = {}
+        self.member_sizeof = {}  # X61: authority sizeof map (loaded lazily)
         self.class_vtable = {}
         self.class_parent = {}
         self.class_file = {}
@@ -310,6 +311,13 @@ def load_member_lookup(M):
         return
     with open(MEMBER_LOOKUP_JSON, "r", encoding="utf-8") as f:
         M.member_lookup = json.load(f)
+    # X61: authority sizeof map for the garbage-guard (absent file -> no guard)
+    sizeof_path = PROJECT_ROOT / "tools" / "member_sizeof.json"
+    try:
+        with open(sizeof_path, "r", encoding="utf-8") as f:
+            M.member_sizeof = json.load(f).get("sizeof", {})
+    except (OSError, ValueError):
+        M.member_sizeof = {}
 
 
 def build_member_name_index(M):
@@ -362,7 +370,16 @@ def _inheritance_chain(cls, M):
 def resolve_member_offset(cls, name, M):
     if not cls:
         return None
-    return M.member_name_to_off.get(cls, {}).get(name)
+    off = M.member_name_to_off.get(cls, {}).get(name)
+    # X61 garbage-guard: an offset beyond the class sizeof can never be a real
+    # member. WARNING naming class/offset, then skip (no silent fallback).
+    if off is not None and M.member_sizeof:
+        sz = M.member_sizeof.get(cls)
+        if sz is not None and off >= sz:
+            print(f"WARNING[X61]: member {cls}::{name} offset {off} exceeds "
+                  f"sizeof({cls})={sz} — skipped (garbage guard)", file=sys.stderr)
+            return None
+    return off
 
 
 # ===================================================================
