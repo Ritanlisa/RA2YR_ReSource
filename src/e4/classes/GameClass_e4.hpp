@@ -45,7 +45,7 @@ struct PKStrawClass {
 };
 struct GameClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    unsigned int * __pad_0;  // 0x0
+    unsigned int __pad_0;  // 0x0
     unsigned int * GameClass_field_0x4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC

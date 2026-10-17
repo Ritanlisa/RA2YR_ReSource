@@ -7,7 +7,7 @@
 namespace gamemd {
 
 struct UnitTypeVector {
-    char __pad_0[4];  // 0x0
+    unsigned int __pad_0;  // 0x0
     int UnitTypeVector_field_0x04;  // 0x4
     unsigned int __pad_008;  // 0x8
     int UnitTypeVector_field_0x0C;  // 0xC

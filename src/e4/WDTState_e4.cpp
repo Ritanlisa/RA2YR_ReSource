@@ -96,7 +96,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76bb69*/
+    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(this->__pad_0 + 12))(this); /*0x76bb69*/
   }
   v12 = this->Capacity; /*0x76bb6c*/
   if ( v12 < this->m_10 ) /*0x76bb74*/
@@ -181,7 +181,7 @@ int WDTState_4::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76bc63*/
-  *(unsigned int *)&this->__pad_0 = &vt_rc_ptr; /*0x76bc68*/
+  this->__pad_0 = (unsigned int)&vt_rc_ptr; /*0x76bc68*/
   return this->__pad_0; /*0x76bc70*/
 
 }

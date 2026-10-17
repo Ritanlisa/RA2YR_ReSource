@@ -187,7 +187,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
       BYTE1(aP1->RadarHashVector_field_0x0C) = 1; /*0x658e5a*/
     }
   }
-  *(unsigned int *)&aP1->MapClass_field_0x0 = &vt_DynamicVectorClassHashObject; /*0x658e5e*/
+  aP1->MapClass_field_0x0 = (unsigned int)&vt_DynamicVectorClassHashObject; /*0x658e5e*/
   aP1->q014 = 10; /*0x658e64*/
   aP1->q010 = 0; /*0x658e6b*/
   return (unsigned int *)(aP1->MapClass_field_0x0); /*0x658e70*/

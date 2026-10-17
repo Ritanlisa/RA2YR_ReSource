@@ -47,7 +47,7 @@ unsigned int * CoopCampaignVector::Construct(int aP1, int aP2, void *a3, void *a
   this->q008 = aP1; /*0x5c5a8e*/
   (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5c5a91*/
   (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5c5a95*/
-  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5c5a98*/
+  this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/

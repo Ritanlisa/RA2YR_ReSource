@@ -42,7 +42,7 @@ int MapSeed::IsCellInBounds(void *a1)
 
 
   int v1; // edx
-  v1 = *(__int16 *)&this->__pad_0; /*0x5ac230*/
+  v1 = this->__pad_0; /*0x5ac230*/
   int result = *&this->__pad_002; // eax /*0x5ac233*/
   int v3 = result + v1; // esi /*0x5ac23e*/
   LOBYTE(result) = result + v1 > g_MissionQueueFrame.localVariables[160] /*0x5ac261*/

@@ -30,7 +30,7 @@ int NetworkGameSetup::ReadRulesUnknown()
 
 
   int result; // eax
-  result = (int)GetDlgItem(*(HWND *)&this->__pad_0, 1363); /*0x5b975b*/
+  result = (int)GetDlgItem(this->__pad_0, 1363); /*0x5b975b*/
   if ( result ) /*0x5b9763*/
   {
     result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b976f*/
@@ -68,7 +68,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     v3 = CharToWideString(unk_A8B380); /*0x5baa05*/
     v4 = dword_A8B394; /*0x5baa0d*/
     Format = (wchar_t *)v3; /*0x5baa19*/
-    DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1343); /*0x5baa23*/
+    DlgItem = GetDlgItem(this->__pad_0, 1343); /*0x5baa23*/
     if ( DlgItem ) /*0x5baa27*/
     {
       if ( v4 >= 8 ) /*0x5baa2b*/

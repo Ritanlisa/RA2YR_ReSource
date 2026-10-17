@@ -1257,7 +1257,7 @@ public:
     int q010;  // X10 supply (member_lookup)
 
 
-    unsigned short __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    short __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 // 12 methods in IDA
 // CSP: MapSeedClass matched via T1

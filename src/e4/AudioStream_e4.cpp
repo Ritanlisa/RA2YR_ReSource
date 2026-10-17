@@ -105,7 +105,7 @@ namespace gamemd {
 int AudioStream::Reset(void *a1, void *a2)
 {
 
-  *(unsigned int *)&this->__pad_0 = 0; /*0x403822*/
+  this->__pad_0 = 0; /*0x403822*/
   this->u8_4 = 0; /*0x403824*/
   this->q008 = 0; /*0x403827*/
   this->q00C = 0; /*0x40382a*/
@@ -414,7 +414,7 @@ namespace gamemd {
 void AudioStream::InitNodeFields()
 {
 
-  *(unsigned int *)&this->__pad_0 = 0; /*0x4084e2*/
+  this->__pad_0 = 0; /*0x4084e2*/
   this->u8_4 = 0; /*0x4084e4*/
   this->u32_14 = 0; /*0x4084e7*/
   this->u32_18 = 0; /*0x4084ea*/

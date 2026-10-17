@@ -8,7 +8,7 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct MapFile {
-    int __pad_0;  // 0x0
+    unsigned int __pad_0;  // 0x0
     int MapFile_field_0x04;  // 0x4
     int q008;  // 0x8
     int MapFile_field_0x0C;  // 0xC

@@ -104,7 +104,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   a1->ConnectionPointClass_field_0x1C = (int)&vt_DynamicVectorClass; /*0x4a08a9*/
   *((unsigned int *)a1 + 12) = 10; /*0x4a08b0*/
   *((unsigned int *)a1 + 11) = 0; /*0x4a08b7*/
-  *(unsigned int *)a1->__pad_0 = &vt_ConnectionPointClass; /*0x4a08ba*/
+  a1->__pad_0 = (unsigned int)&vt_ConnectionPointClass; /*0x4a08ba*/
   (*(void (**)(int))(*(unsigned int *)a3 + 4))(a3); /*0x4a08c3*/
   return a1->__pad_0; /*0x4a08c8*/
 
@@ -154,7 +154,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a1322*/
+    (*(void (**)(_VectorClass_PAUIConnectionPoint *))(this->__pad_0 + 12))(this); /*0x4a1322*/
     return 1; /*0x4a1328*/
   }
 
@@ -315,7 +315,7 @@ unsigned int * ConnectionPointClass_9::QueryInterface(char a2)  // G42.41d: trut
 
   void *v3; // eax
   v3 = (void *)(*&this->q004); /*0x4a14f3*/
-  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4a14f6*/
+  this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4a14f6*/
   if ( v3 && (((this->m_C) >> 8) & 0xFF) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/

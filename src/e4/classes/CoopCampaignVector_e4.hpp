@@ -8,7 +8,7 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct CoopCampaignVector {
-    char __pad_0[4];  // 0x0
+    unsigned int __pad_0;  // 0x0
     int CoopCampaignVector_field_0x04;  // 0x4
     int q008;  // 0x8
     int CoopCampaignVector_field_0x0C;  // 0xC

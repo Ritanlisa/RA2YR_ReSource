@@ -190,7 +190,7 @@ int GameClass::FrameLoop(int a2)
     do /*0x5d24dc*/
     {
       Event::Dispatch(); /*0x5d2437*/
-      (*(void (**)(GameClass *))(*(unsigned int *)&this->__pad_0 + 8))(this); /*0x5d2440*/
+      (*(void (**)(GameClass *))(this->__pad_0 + 8))(this); /*0x5d2440*/
       DDraw *v9; // [esp+0h] [ebp-28h]
       DDraw::WaitForIdle(v9); /*0x5d2443*/
       ((DSurface *)this)->RenderToSurface((int *)g_DSurface_Hidden); /*0x5d2451*/
@@ -254,7 +254,7 @@ int GameClass::FindOpenSlot()
     v4 = *(GameClass **)(dword_A8B8CC + 4 * v2); /*0x5d6387*/
     if ( (unsigned __int8)((void *)((int)v4))->Sed() ) /*0x5d638c*/
     {
-      inited = (*(int (**)(MultiplayerGameMode *))(*(unsigned int *)&this->__pad_0 + 60))(this); /*0x5d6399*/
+      inited = (*(int (**)(MultiplayerGameMode *))(this->__pad_0 + 60))(this); /*0x5d6399*/
     }
     else
     {

@@ -7,7 +7,7 @@
 namespace gamemd {
 
 struct MapSeed {
-    unsigned short __pad_0;  // 0x0
+    short __pad_0;  // 0x0
     unsigned char __pad_002;  // 0x2
     char __pad_3[1];  // 0x3
     unsigned int MapSeed_field_0x04;  // 0x4

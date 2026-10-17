@@ -6,7 +6,7 @@
 
 namespace gamemd {
 struct FoggedObject {
-    char __pad_0[4];  // 0x0
+    unsigned int __pad_0;  // 0x0
     int FoggedObject_field_0x4;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

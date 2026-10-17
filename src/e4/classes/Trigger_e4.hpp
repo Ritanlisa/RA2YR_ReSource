@@ -9,7 +9,7 @@ struct MSAnim;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct MSShapeAnim;  // fix_fwd_type_supply
 struct Trigger {
-    char __pad_0[4];  // 0x0
+    unsigned int __pad_0;  // 0x0
     MSAnim* Trigger_field_0x4;  // 0x4
     unsigned int q008;  // 0x8
     unsigned char q00C;  // 0xC

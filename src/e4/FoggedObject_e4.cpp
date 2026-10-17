@@ -23,7 +23,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2, void *a3)
   this->u32_8 = aP1; /*0x4d2dc0*/
   this->u32_C = 1; /*0x4d2dc3*/
   this->u32_D = 0; /*0x4d2dc7*/
-  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d2dca*/
+  this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/

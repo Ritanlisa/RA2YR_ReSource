@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct InfantryTypeVector {
-    char __pad_0[4];  // 0x0
+    unsigned int __pad_0;  // 0x0
     unsigned int InfantryTypeVector_field_0x04;  // 0x4
     unsigned int u32_8;  // 0x8
     int InfantryTypeVector_field_0x0C;  // 0xC

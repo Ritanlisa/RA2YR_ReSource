@@ -7,7 +7,7 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct ConnectionPointClass_9 {
-    char __pad_0[4];  // 0x0
+    unsigned int __pad_0;  // 0x0
     int q004;  // 0x4
     unsigned int m_8;  // 0x8
     unsigned int m_C;  // 0xC

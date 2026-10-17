@@ -7,7 +7,7 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct WDTState_4 {
-    char __pad_0[4];  // 0x0
+    unsigned int __pad_0;  // 0x0
     int q004;  // 0x4
     int Capacity;  // 0x8
     unsigned int m_C;  // 0xC

@@ -592,7 +592,7 @@ public:
     unsigned int u32_9;  // X10 supply (member_lookup)
 
 
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    HWND __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_NetworkGameSetup_DEF
 // 2 methods in IDA

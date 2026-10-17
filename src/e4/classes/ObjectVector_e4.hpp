@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct ObjectVector {
-    char __pad_0[4];  // 0x0
+    unsigned int __pad_0;  // 0x0
     int ObjectVector_field_0x04;  // 0x4
     int ObjectVector_field_0x08;  // 0x8
     int ObjectVector_field_0x0C;  // 0xC

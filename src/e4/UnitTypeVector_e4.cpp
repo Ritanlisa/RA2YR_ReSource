@@ -16,7 +16,7 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
   this->__pad_008 = a2; /*0x51394e*/
   (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x513951*/
   (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513955*/
-  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x513958*/
+  this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
     if ( a3 ) /*0x513966*/

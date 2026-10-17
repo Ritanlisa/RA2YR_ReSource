@@ -10,7 +10,7 @@ namespace gamemd {
 #ifndef GAMEMD_G2_NetworkGameSetup_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_NetworkGameSetup_DEF 1
 struct NetworkGameSetup {
-    unsigned int __pad_0;  // 0x0
+    HWND __pad_0;  // 0x0
     int NetworkGameSetup_field_0x04;  // 0x4
     int q008;  // 0x8
     int NetworkGameSetup_field_0x0C;  // 0xC
