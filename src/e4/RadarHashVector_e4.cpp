@@ -285,7 +285,7 @@ char * RadarHashVector::Destructor(char a2)
       {
         v9 = (void *)*((unsigned int *)v7 - 5); /*0x658c82*/
         v7 -= 24; /*0x658c85*/
-        *(unsigned int *)v7 = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658c8a*/
+        *(unsigned int *)v7 = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658c8a*/
         if ( v9 && v7[13] ) /*0x658c92*/
         {
           __3_YAXPAX_Z(v9); /*0x658c98*/
@@ -304,7 +304,7 @@ char * RadarHashVector::Destructor(char a2)
   else
   {
     v11 = *&this->q004; /*0x658cc5*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658ccc*/
+    *(unsigned int *)this->__pad_0 = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658ccc*/
     if ( v11 && BYTE1(this->m_C) ) /*0x658cd4*/
     {
       __3_YAXPAX_Z(v11); /*0x658cda*/

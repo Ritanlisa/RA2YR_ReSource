@@ -38,5 +38,8 @@ int m_8;  // 0x8 [X35-L7 kind=int]
     unsigned char __pad_00C;  // X10 supply (csp_canon_members)
     unsigned int u32_4;  // X10 supply (member_lookup)
     unsigned char __pad_011;  // 0x11 [X30:canon]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

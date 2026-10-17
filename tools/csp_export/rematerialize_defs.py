@@ -109,6 +109,16 @@ TOKEN_MAP = [
     (re.compile(r'\b([A-Za-z_]\w*::)(\d\w*)\('), r'\1sub_\2('),
 ]
 
+# X55 W1: IDA renders vtable references as `Cls::`vftable'' -- the backtick
+# is not C++ (C2001 newline-in-constant + C2015 + C2018 0x60 cascade, ~3
+# errors per site).  Corpus convention = the `vt_<Name>` externs in
+# e4_globals.hpp (`extern unsigned char vt_X[4];  // data: 0xADDR`).  The
+# rewrite is address-authoritative: demangled ref -> vtable address (IDA
+# names dump) -> in-tree vt_ symbol for that address.  Rule lives in the
+# shared side-effect-free module (single source of truth) -- also used by
+# the X55 tree fixer.
+from vtable_ref_norm import fix_vftable_refs  # noqa: E402
+
 s = json.load(open('signals.json', encoding='utf-8'))
 STARTS = sorted(int(a, 16) for a, sym in s['symbols'].items()
                 if isinstance(sym, dict) and sym.get('kind') == 'function')
@@ -368,6 +378,9 @@ for p in files:
                     body = dec[sig_end + 1:dec.rfind('}')]
                     for tm, rep in TOKEN_MAP:
                         body = tm.sub(rep, body)
+                    # X55 W1: backtick vftable refs -> address-authoritative
+                    # vt_ extern refs (see fix_vftable_refs).
+                    body = fix_vftable_refs(body)
                     cparams = cache_params(sig_head)
                     cparams_n = [x for x in cparams if x]
                     corpus_p = corpus_params(hm.group(2))
@@ -449,6 +462,8 @@ for p in files:
             open(p, 'w', encoding='utf-8', newline='').write(text2)
 print('files changed:', files_changed)
 print(dict(stats))
+if VFT_STATS:
+    print('vftable-normalizer:', dict(VFT_STATS))
 if APPLY or MANIFEST_OUT:
     # manifest on dry-run only when an explicit --manifest-out is given
     # (never clobber the standing manifest from a bare dry-run)

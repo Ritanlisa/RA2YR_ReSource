@@ -221,6 +221,10 @@ public:
      void ReleaseBuffer();  // 0x538B80
 
     static int32_t  s_KeyMap[256];  // 0x00
+
+
+    void * vtable3;  // 0xC [X55 W3 supply (render vocab)]
+    void * vtable2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 // ============================================================================
@@ -399,6 +403,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadCampaignScoreAssetsGame();  // 0x72D300
     void* LoadScreenAssets();  // 0x72D460
     // --- gap2 auto-generated stub declarations (END) ---
+
+
+    void * vtable2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vtable4;  // 0x10 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_E4_CampaignScore
 // 2 methods in IDA

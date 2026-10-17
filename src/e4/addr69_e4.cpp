@@ -706,7 +706,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   CCFileClass::Construct(&v54, Source); /*0x69479d*/
   if ( !(unsigned __int8)CCFileClass::Open(&v54, 0) ) /*0x6947a7*/
   {
-    *(unsigned int *)v54.__tail_0 = &CCFileClass::`vftable'; /*0x6947b7*/
+    *(unsigned int *)v54.__tail_0 = &vt_CCFileClass; /*0x6947b7*/
     v56 = 0; /*0x6947bf*/
     Vector::Clear((int)v55); /*0x6947c6*/
     *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x6947cf*/
@@ -845,7 +845,7 @@ LABEL_34:
     {
 LABEL_38:
       Debug::Log(); /*0x694abd*/
-      *(unsigned int *)v54.__tail_0 = &CCFileClass::`vftable'; /*0x694ad1*/
+      *(unsigned int *)v54.__tail_0 = &vt_CCFileClass; /*0x694ad1*/
       v56 = 0; /*0x694ad9*/
       Vector::Clear((int)v55); /*0x694ae4*/
       *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x694aed*/
@@ -1074,7 +1074,7 @@ LABEL_116:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x69517c*/
     IPXManagerClass::destroyConnection((IPXManagerClass *)&stru_A8E960.nextScenario[96]); /*0x695183*/
   Debug::Log(); /*0x69519c*/
-  *(unsigned int *)v54.__tail_0 = &CCFileClass::`vftable'; /*0x6951ab*/
+  *(unsigned int *)v54.__tail_0 = &vt_CCFileClass; /*0x6951ab*/
   v56 = 0; /*0x6951b3*/
   Vector::Clear((int)v55); /*0x6951be*/
   *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x6951c7*/
@@ -1472,10 +1472,10 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
               *(unsigned int *)v27.__pad_0 = &CCINIClass_Vtable; /*0x6996e3*/
               v25.Buffer_field_14 = 0; /*0x6996ea*/
               v25.Buffer_field_18 = 0; /*0x6996f1*/
-              v25.Buffer_field_10 = (int)&Straw::`vftable'; /*0x6996f8*/
+              v25.Buffer_field_10 = (int)&vt_Straw; /*0x6996f8*/
               Buffer::Init((Buffer *)&v25.Buffer_field_1C, (int)v8, v19 - (unsigned char *)v8); /*0x699703*/
               v26 = 0; /*0x69970f*/
-              v25.Buffer_field_10 = (int)&BufferStraw::`vftable'; /*0x699720*/
+              v25.Buffer_field_10 = (int)&vt_BufferStraw; /*0x699720*/
               CCINIClass::LoadAndVerifyDigest((int *)v27.__pad_0, (int)&v25.Buffer_field_10, 0, 0); /*0x69972b*/
               v29.headNode[0] = 0; /*0x699737*/
               v29.headNode[1] = 0; /*0x69973e*/
@@ -1486,10 +1486,10 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
               v30 = 0; /*0x69976b*/
               v23.Straw_field_0x04 = 0; /*0x69977f*/
               v24 = 0; /*0x699786*/
-              *(unsigned int *)v23.__pad_0 = &Straw::`vftable'; /*0x69978d*/
+              *(unsigned int *)v23.__pad_0 = &vt_Straw; /*0x69978d*/
               Buffer::Init(&v25, (int)v14, strlen((const char *)v14) + 1); /*0x699798*/
               v25.Buffer_field_0C = 0; /*0x6997ae*/
-              *(unsigned int *)v23.__pad_0 = &BufferStraw::`vftable'; /*0x6997b5*/
+              *(unsigned int *)v23.__pad_0 = &vt_BufferStraw; /*0x6997b5*/
               CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
               *a5 = INIClass::ReadInt_Overwrite((bool *)v27.__pad_0, aBasic, aMinplayers, *a5); /*0x6997e5*/
               *a6 = INIClass::ReadInt_Overwrite((bool *)v27.__pad_0, aBasic, aMaxplayers, *a6); /*0x69981b*/
@@ -1534,7 +1534,7 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
     }
   }
 LABEL_20:
-  *(unsigned int *)v20.__tail_0 = &CCFileClass::`vftable'; /*0x699947*/
+  *(unsigned int *)v20.__tail_0 = &vt_CCFileClass; /*0x699947*/
   v22 = 0; /*0x699953*/
   Vector::Clear((int)v21); /*0x69995a*/
   *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x699963*/

@@ -51,6 +51,11 @@ struct WWMouseClass {
     unsigned int m_ScrollY;  // [X30:default]
     unsigned int outBuffer;  // [X30:default]
     unsigned int q_30;  // [X30:default]
+
+
+    unsigned int WWMouseClass_field_0x44;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int WWMouseClass_field_0x2C;  // 0x2C [X55 W3 supply (render vocab)]
+    int __pad_48;  // 0x48 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

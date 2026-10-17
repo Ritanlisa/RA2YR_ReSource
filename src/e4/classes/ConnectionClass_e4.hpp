@@ -32,6 +32,9 @@ int PlayerIndex;  // 0x4 [X35-L7 kind=int]
     void* q020;  // X10 supply (member_lookup)
     unsigned char __pad_009;  // 0x9 [X30:canon]
     unsigned int PhoneNumber;  // [X30:default]
+
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_TREE_UNIVERSE
 

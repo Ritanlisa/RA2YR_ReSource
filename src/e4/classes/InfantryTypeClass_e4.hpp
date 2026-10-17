@@ -645,6 +645,9 @@ bool __pad_237;  // 0x237 [X35-L7 kind=bool]
     unsigned int Crushable_d;  // [X30:default]
     void* qE10;  // 0xE10 [X30:member_lookup]
     int qE30;  // 0xE30 [X30:type_map]
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

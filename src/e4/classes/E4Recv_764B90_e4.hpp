@@ -29,5 +29,8 @@ struct E4Recv_764B90 {
     unsigned int u32_28;  // X10 supply (member_lookup)
     unsigned int u32_44;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
+
+
+    unsigned char u8_10;  // 0x10 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

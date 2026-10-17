@@ -22,5 +22,8 @@ struct Super {
     int GetDefaultTimer(void *a1 = 0);  // 0x6CC260
     unsigned int field_24;  // [X30:default]
     unsigned int field_28;  // [X30:default]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -326,7 +326,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
       v13 = 0; /*0x72aed2*/
     *a3 = v13; /*0x72aedb*/
   }
-  *(unsigned int *)v17.__tail_0 = &CCFileClass::`vftable'; /*0x72aee1*/
+  *(unsigned int *)v17.__tail_0 = &vt_CCFileClass; /*0x72aee1*/
   v19 = 0; /*0x72aee9*/
   Vector::Clear((int)v18); /*0x72aef1*/
   *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x72aefa*/

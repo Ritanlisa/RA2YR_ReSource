@@ -134,6 +134,17 @@ public:
     int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x75e2c0
     int ReadINI(int a1, int a2, int a3);  // 0x772080
     // === FUNCS-MOVE (END) ===
+
+
+    int WarheadTypeClass_field_0x100;  // 0x100 [X55 W3 supply (render vocab)]
+    unsigned int WarheadTypeClass_field_0xF8;  // 0xF8 [X55 W3 supply (render vocab)]
+    unsigned int __pad_FC;  // 0xFC [X55 W3 supply (render vocab)]
+    unsigned int WarheadTypeClass_field_0x17C;  // 0x17C [X55 W3 supply (render vocab)]
+    int WarheadTypeClass_field_0x180;  // 0x180 [X55 W3 supply (render vocab)]
+    int WarheadTypeClass_field_0x184;  // 0x184 [X55 W3 supply (render vocab)]
+    int WarheadTypeClass_field_0x188;  // 0x188 [X55 W3 supply (render vocab)]
+    int WarheadTypeClass_field_0x114;  // 0x114 [X55 W3 supply (render vocab)]
+    int WarheadTypeClass_field_0x120;  // 0x120 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

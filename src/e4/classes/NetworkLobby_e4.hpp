@@ -50,5 +50,11 @@ struct NetworkLobby {
     int u32_8;  // X10 supply (member_lookup)
     int u8_19;  // X10 supply (member_lookup)
     int u8_1A;  // X10 supply (member_lookup)
+
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int __pad_3FD;  // 0x3FD [X55 W3 supply (render vocab)]
+    unsigned int __pad_C;  // 0xC [X55 W3 supply (render vocab)]
+    int NetworkLobby_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

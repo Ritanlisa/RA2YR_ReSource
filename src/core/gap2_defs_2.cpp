@@ -794,7 +794,7 @@ int PlayerClass::UpdateAIUnits() {
     if ( HeightMap ) /*0x732627*/
     {
       LOBYTE(HeightMap) = (unsigned __int8)EventClass::resetEvent((EventClass *)HeightMap, 0, 0); /*0x73262d*/
-      v2->EventClass_field_0x0 = (int)&DynamicVectorClass<TechnoClass *>::`vftable'; /*0x732632*/
+      v2->EventClass_field_0x0 = (int)&vt_DynamicVectorClass_TechnoClass; /*0x732632*/
       *&v2->q014 = 10; /*0x732638*/
       *(unsigned int *)v2->Count = 0; /*0x73263f*/
     }
@@ -839,7 +839,7 @@ int PlayerClass::UpdateAIUnits() {
     if ( v8 ) /*0x7326ba*/
     {
       EventClass::resetEvent(v8, 0, 0); /*0x7326c2*/
-      v2->EventClass_field_0x0 = (int)&DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7326c7*/
+      v2->EventClass_field_0x0 = (int)&vt_DynamicVectorClass_TechnoClass; /*0x7326c7*/
       *&v2->q014 = 10; /*0x7326cd*/
       *(unsigned int *)v2->Count = 0; /*0x7326d4*/
     }
@@ -925,7 +925,7 @@ int COMClass::registerObject(int a1, void* a2) {
         do /*0x765a75*/
         {
           ComPtr::Constructor(v8); /*0x765a66*/
-          *(unsigned int *)v8->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x765a6b*/
+          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x765a6b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x765a71*/
           --v9; /*0x765a74*/
         }

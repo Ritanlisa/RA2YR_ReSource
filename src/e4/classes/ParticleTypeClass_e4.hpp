@@ -175,6 +175,15 @@ void* m_8;  // 0x8 [X35-L7 kind=void*]
     unsigned int ParticleTypeClass_2B8;  // [X30:default]
     int ParticleTypeClass_field_0x314;  // 0x314 [X30:type_map]
     unsigned int uniqueId;  // [X30:default]
+
+
+    unsigned int ParticleTypeClass_field_0x2D4;  // 0x2D4 [X55 W3 supply (render vocab)]
+    unsigned int ParticleTypeClass_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int ParticleTypeClass_field_0x2E4;  // 0x2E4 [X55 W3 supply (render vocab)]
+    unsigned int __pad_2FC;  // 0x2FC [X55 W3 supply (render vocab)]
+    unsigned int ParticleTypeClass_field_0x2B4;  // 0x2B4 [X55 W3 supply (render vocab)]
+    unsigned int ParticleTypeClass_field_0x2B0;  // 0x2B0 [X55 W3 supply (render vocab)]
+    int ParticleTypeClass_field_0x310;  // 0x310 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

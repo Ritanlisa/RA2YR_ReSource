@@ -48,6 +48,20 @@ struct AITriggerTypeClass {
 unsigned int AITriggerTypeClass_field_0x28;  // 0x28 [X35-L7 kind=unsigned int]
     unsigned int Coord_9C;  // [X30:default]
     unsigned int Tactical_E4;  // [X30:default]
+
+
+    unsigned int u32_B0;  // 0xB0 [X55 W3 supply (render vocab)]
+    unsigned int u32_DC;  // 0xDC [X55 W3 supply (render vocab)]
+    unsigned int q0A0;  // 0xA0 [X55 W3 supply (render vocab)]
+    unsigned int q0A8;  // 0xA8 [X55 W3 supply (render vocab)]
+    unsigned int u32_94;  // 0x94 [X55 W3 supply (render vocab)]
+    unsigned int q098;  // 0x98 [X55 W3 supply (render vocab)]
+    unsigned int q0D0;  // 0xD0 [X55 W3 supply (render vocab)]
+    unsigned int q0AC;  // 0xAC [X55 W3 supply (render vocab)]
+    unsigned char u8_D1;  // 0xD1 [X55 W3 supply (render vocab)]
+    unsigned char u8_D2;  // 0xD2 [X55 W3 supply (render vocab)]
+    unsigned char u8_D3;  // 0xD3 [X55 W3 supply (render vocab)]
+    unsigned char u8_D4;  // 0xD4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

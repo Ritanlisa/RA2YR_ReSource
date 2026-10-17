@@ -2403,7 +2403,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
   }
   EventClass::resetEvent((EventClass *)&v25, 0, 0); /*0x63ad87*/
   v2 = 0; /*0x63ad8e*/
-  *(unsigned int *)v25.__pad_0 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x63ad92*/
+  *(unsigned int *)v25.__pad_0 = &vt_DynamicVectorClass_TechnoClass; /*0x63ad92*/
   v26 = 10; /*0x63ad9a*/
   *(unsigned int *)v25.__tail_10 = 0; /*0x63ada2*/
   v27 = 0; /*0x63ada6*/
@@ -2565,7 +2565,7 @@ LABEL_37:
       ++*(unsigned int *)stru_AC4B48.__pad_B8; /*0x63b008*/
     }
   }
-  *(unsigned int *)v25.__pad_0 = &VectorClass<TechnoClass *>::`vftable'; /*0x63b012*/
+  *(unsigned int *)v25.__pad_0 = &vt_VectorClass_TechnoClass; /*0x63b012*/
   VectorClass_Techno::ddtor(&v25); /*0x63b01a*/
   return result; /*0x63b01f*/
 

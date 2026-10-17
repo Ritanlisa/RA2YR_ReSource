@@ -1968,7 +1968,7 @@ unsigned int * sub_627020()
       v2[2] = 0; /*0x627063*/
       *((unsigned char *)v2 + 12) = 1; /*0x627066*/
       *((unsigned char *)v2 + 13) = 0; /*0x62706a*/
-      *v2 = &DynamicVectorClass<char *>::`vftable'; /*0x62706d*/
+      *v2 = &vt_DynamicVectorClass_char; /*0x62706d*/
       v2[5] = 10; /*0x627073*/
       v2[4] = 0; /*0x62707a*/
     }
@@ -1984,7 +1984,7 @@ unsigned int * sub_627020()
       v3[2] = 0; /*0x627095*/
       *((unsigned char *)v3 + 12) = 1; /*0x627098*/
       *((unsigned char *)v3 + 13) = 0; /*0x62709c*/
-      *v3 = &DynamicVectorClass<HSVClass>::`vftable'; /*0x62709f*/
+      *v3 = &vt_DynamicVectorClass_HSVClass; /*0x62709f*/
       v3[5] = 10; /*0x6270a5*/
       v3[4] = 0; /*0x6270ac*/
     }
@@ -2268,9 +2268,9 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   AbstractClass *v15; // [esp+14h] [ebp-4h] BYREF
 
   v3 = v2; /*0x62e073*/
-  v2->vfptr = (int)&ParticleSystemClass::`vftable'; /*0x62e077*/
-  v2->vfptr1 = (int)&ParticleSystemClass::`vftable'; /*0x62e07d*/
-  v2->vfptr2 = (int)&ParticleSystemClass::`vftable'; /*0x62e084*/
+  v2->vfptr = (int)&vt_ParticleSystemClass_4; /*0x62e077*/
+  v2->vfptr1 = (int)&vt_ParticleSystemClass_4; /*0x62e07d*/
+  v2->vfptr2 = (int)&vt_ParticleSystemClass_4; /*0x62e084*/
   v2->vfptr3 = (int)&off_7EFB70; /*0x62e08b*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x62e092*/
   ObjectClass::Undeploy((ObjectClass *)v3); /*0x62e099*/
@@ -2351,7 +2351,7 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
     }
   }
   v12 = v3->abstractFlags.vfptr3; /*0x62e23e*/
-  v3[5].vfptr2 = (int)&VectorClass<ParticleClass *>::`vftable'; /*0x62e244*/
+  v3[5].vfptr2 = (int)&vt_VectorClass_ParticleClass; /*0x62e244*/
   if ( v12 && BYTE1(v3[5].abstractFlags) ) /*0x62e252*/
   {
     __3_YAXPAX_Z(v12); /*0x62e25b*/

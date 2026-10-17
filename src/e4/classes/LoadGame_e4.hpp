@@ -29,6 +29,9 @@ struct LoadGame {
     int __pad_000;  // 0x0 [X30:type_map]
     unsigned int s_IsLoading;  // [X30:default]
     unsigned int s_LoadVersion;  // [X30:default]
+
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

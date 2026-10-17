@@ -47,6 +47,12 @@ int* houseTypes_d;  // 0x98 [X35-L7 kind=int*]
     unsigned char u32_A5;  // 0xA5 (offset-truth)
     unsigned int u32_A8;  // 0xA8 (offset-truth)
     unsigned char __pad_05D;  // 0x5D [X30:canon]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

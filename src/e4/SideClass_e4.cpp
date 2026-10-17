@@ -197,11 +197,11 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       BYTE1(v2[1].vfptr1) = 0; /*0x6a47c5*/
       v2[1].vfptr3 = (void *)10; /*0x6a47cb*/
       v2[1].vfptr2 = 0; /*0x6a47d1*/
-      v2->houseTypes = &TypeList<int>::`vftable'; /*0x6a47d7*/
-      v2->vfptr = &SideClass::`vftable'; /*0x6a47e1*/
-      v2->vfptr1 = &SideClass::`vftable'; /*0x6a47e7*/
-      v2->vfptr2 = &SideClass::`vftable'; /*0x6a47ee*/
-      v2->vfptr3 = &SideClass::`vftable'; /*0x6a47f5*/
+      v2->houseTypes = &vt_TypeList_int; /*0x6a47d7*/
+      v2->vfptr = &vt_SideClass_4; /*0x6a47e1*/
+      v2->vfptr1 = &vt_SideClass_4; /*0x6a47e7*/
+      v2->vfptr2 = &vt_SideClass_4; /*0x6a47ee*/
+      v2->vfptr3 = &vt_SideClass_4; /*0x6a47f5*/
     }
     p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
@@ -212,7 +212,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *((unsigned char *)p_houseTypes + 13) = 0; /*0x6a4810*/
       p_houseTypes[5] = (void *)10; /*0x6a4813*/
       p_houseTypes[4] = 0; /*0x6a4816*/
-      *p_houseTypes = &TypeList<int>::`vftable'; /*0x6a4819*/
+      *p_houseTypes = &vt_TypeList_int; /*0x6a4819*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a2, 4, 0); /*0x6a482a*/
     for ( i = 0; i < a2; ++i ) /*0x6a4833*/

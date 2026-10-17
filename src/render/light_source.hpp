@@ -74,6 +74,9 @@ protected:
     int Write(int a1, int a2);  // 0x5550c0
     int Seek(int a1, int a2, int a3);  // 0x555110
     // === FUNCS-MOVE (END) ===
+
+
+    unsigned int u32_AC;  // 0xAC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

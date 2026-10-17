@@ -593,7 +593,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   ObjectVector::Construct(&v101, 0, 0); /*0x6b3003*/
   v8 = (unsigned __int16 *)v5; /*0x6b3008*/
   v9 = v6; /*0x6b300b*/
-  *(unsigned int *)v101.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x6b3010*/
+  *(unsigned int *)v101.__pad_0 = &vt_DynamicVectorClass_ObjectClass; /*0x6b3010*/
   v101.ObjectVector_field_0x14 = 10; /*0x6b3018*/
   v101.ObjectVector_field_0x10 = 0; /*0x6b3023*/
   v100 = (unsigned __int16 *)v5; /*0x6b3027*/
@@ -990,7 +990,7 @@ LABEL_110:
     }
     while ( v61 <= v62 ); /*0x6b3811*/
   }
-  *(unsigned int *)v101.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x6b381b*/
+  *(unsigned int *)v101.__pad_0 = &vt_VectorClass_ObjectClass; /*0x6b381b*/
   if ( v101.ObjectVector_field_0x04 && BYTE1(v101.ObjectVector_field_0x0C) ) /*0x6b382d*/
     __3_YAXPAX_Z((void *)v101.ObjectVector_field_0x04); /*0x6b3830*/
   return 1; /*0x6b3838*/
@@ -1578,7 +1578,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
     return 0; /*0x6b59e6*/
   Game::LockMutex((Game *)&v30, 0, 0); /*0x6b59f4*/
   v6 = 0; /*0x6b59fe*/
-  v30 = &DynamicVectorClass<SmudgeTypeClass const *>::`vftable'; /*0x6b5a02*/
+  v30 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5a02*/
   v35 = 10; /*0x6b5a0a*/
   for ( i = 0; v6 < *(int *)&stru_A8E960.random[180]; ++v6 ) /*0x6b5a16*/
   {
@@ -1605,7 +1605,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   v9 = 10; /*0x6b5ad1*/
   v10 = 0; /*0x6b5ad6*/
   v11 = i; /*0x6b5ad8*/
-  v24 = &DynamicVectorClass<SmudgeTypeClass const *>::`vftable'; /*0x6b5adc*/
+  v24 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5adc*/
   v29 = 10; /*0x6b5ae6*/
   v28 = 0; /*0x6b5aea*/
   if ( i > 0 ) /*0x6b5aee*/
@@ -1672,7 +1672,7 @@ LABEL_37:
       UnitClass::Create(v16, *((void **)Block + v17), v4, -1); /*0x6b5bee*/
     }
   }
-  v24 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x6b5c3c*/
+  v24 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5c3c*/
   if ( Block && BYTE1(v27) ) /*0x6b5c46*/
   {
     __3_YAXPAX_Z(Block); /*0x6b5c49*/
@@ -1680,7 +1680,7 @@ LABEL_37:
   }
   BYTE1(v27) = 0; /*0x6b5c59*/
   v26 = 0; /*0x6b5c5f*/
-  v30 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x6b5c63*/
+  v30 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5c63*/
   if ( v31 ) /*0x6b5c67*/
   {
     if ( v33 ) /*0x6b5c6d*/
@@ -1741,7 +1741,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   }
   Game::LockMutex((Game *)&v31, 0, 0); /*0x6b5ce4*/
   v7 = 0; /*0x6b5cee*/
-  v31 = &DynamicVectorClass<SmudgeTypeClass const *>::`vftable'; /*0x6b5cf2*/
+  v31 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5cf2*/
   v36 = 10; /*0x6b5cfa*/
   for ( i = 0; v7 < *(int *)&stru_A8E960.random[180]; ++v7 ) /*0x6b5d06*/
   {
@@ -1768,7 +1768,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   v10 = 10; /*0x6b5dc1*/
   v11 = 0; /*0x6b5dc6*/
   v12 = i; /*0x6b5dc8*/
-  v25 = &DynamicVectorClass<SmudgeTypeClass const *>::`vftable'; /*0x6b5dcc*/
+  v25 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5dcc*/
   v30 = 10; /*0x6b5dd6*/
   v29 = 0; /*0x6b5dda*/
   if ( i > 0 ) /*0x6b5dde*/
@@ -1835,7 +1835,7 @@ LABEL_37:
       UnitClass::Create(v17, *((void **)Block + v18), v4, -1); /*0x6b5ede*/
     }
   }
-  v25 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x6b5f2c*/
+  v25 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5f2c*/
   if ( Block && BYTE1(v28) ) /*0x6b5f36*/
   {
     __3_YAXPAX_Z(Block); /*0x6b5f39*/
@@ -1844,7 +1844,7 @@ LABEL_37:
   result = (int)v32; /*0x6b5f45*/
   BYTE1(v28) = 0; /*0x6b5f49*/
   v27 = 0; /*0x6b5f4f*/
-  v31 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x6b5f53*/
+  v31 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5f53*/
   if ( v32 ) /*0x6b5f57*/
   {
     if ( v34 ) /*0x6b5f5d*/
@@ -2380,7 +2380,7 @@ LABEL_31:
     if ( v47 / (double)v45 >= v5->DiskLaserClass_field_0x28 ) /*0x6ba0c9*/
       Render_Load_6BAFA0((ObjectClass *)v5); /*0x6ba0cd*/
     DeleteAndZero((ObjectClass *)v48); /*0x6ba0d6*/
-    *(unsigned int *)&v48[56] = &CCFileClass::`vftable'; /*0x6ba0e2*/
+    *(unsigned int *)&v48[56] = &vt_CCFileClass; /*0x6ba0e2*/
     *(unsigned int *)&v48[156] = 0; /*0x6ba0ea*/
     Vector::Clear((int)&v48[144]); /*0x6ba0f1*/
     *(unsigned int *)&v48[56] = &off_7E1668; /*0x6ba0fa*/
@@ -2389,7 +2389,7 @@ LABEL_31:
   }
   else
   {
-    *(unsigned int *)&v48[56] = &CCFileClass::`vftable'; /*0x6b9d68*/
+    *(unsigned int *)&v48[56] = &vt_CCFileClass; /*0x6b9d68*/
     *(unsigned int *)&v48[156] = 0; /*0x6b9d70*/
     Vector::Clear((int)&v48[144]); /*0x6b9d77*/
     *(unsigned int *)&v48[56] = &off_7E1668; /*0x6b9d80*/

@@ -40,6 +40,11 @@ struct DriveLocomotionClass {
 unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
 unsigned int __pad_060;  // 0x60 [X35-L7 kind=unsigned int]
     unsigned char __pad_066;  // 0x66 [X30:canon]
+
+
+    unsigned int q044;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int q080;  // 0x80 [X55 W3 supply (render vocab)]
+    int q598;  // 0x598 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

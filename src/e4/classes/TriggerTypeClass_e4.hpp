@@ -50,6 +50,12 @@ struct TriggerTypeClass {
     static int GetFlags(TriggerTypeClass * aP1);
     unsigned int *  Construct(char * Source, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x726c80
     unsigned char __pad_05D;  // 0x5D [X30:canon]
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_1C8;  // 0x1C8 [X55 W3 supply (render vocab)]
+    unsigned int u32_6AD;  // 0x6AD [X55 W3 supply (render vocab)]
+    unsigned int u32_6C4;  // 0x6C4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

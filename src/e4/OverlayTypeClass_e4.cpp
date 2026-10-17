@@ -336,7 +336,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
-    *(unsigned int *)v4.__tail_0 = &CCFileClass::`vftable'; /*0x5feec4*/
+    *(unsigned int *)v4.__tail_0 = &vt_CCFileClass; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
     *(unsigned int *)v4.__tail_0 = &off_7E1668; /*0x5feedd*/

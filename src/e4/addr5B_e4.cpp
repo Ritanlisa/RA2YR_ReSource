@@ -118,7 +118,7 @@ void sub_5B3B10()
   if ( (byte_ABF008 & 1) == 0 ) /*0x5b3b1b*/
   {
     byte_ABF008 |= 1u; /*0x5b3b25*/
-    dword_ABEFD8 = (int)&GenericList::`vftable'; /*0x5b3b2b*/
+    dword_ABEFD8 = (int)&vt_GenericList; /*0x5b3b2b*/
 LABEL_3:
     v0 = dword_ABEFE0; /*0x5b3b37*/
     while ( dword_ABEFE0 && *(unsigned int *)(dword_ABEFE0 + 4) && *(unsigned int *)(dword_ABEFE0 + 8) && dword_ABEFE0 ) /*0x5b3b4d*/
@@ -139,7 +139,7 @@ LABEL_3:
         }
       }
     }
-    dword_ABEFE8 = (int)&GenericNode::`vftable'; /*0x5b3b7f*/
+    dword_ABEFE8 = (int)&vt_GenericNode; /*0x5b3b7f*/
     if ( &dword_ABEFE8 && dword_ABEFEC && dword_ABEFF0 ) /*0x5b3b98*/
     {
       *(unsigned int *)(dword_ABEFF0 + 4) = dword_ABEFEC; /*0x5b3b9a*/
@@ -148,7 +148,7 @@ LABEL_3:
       dword_ABEFF0 = 0; /*0x5b3bb2*/
       dword_ABEFEC = 0; /*0x5b3bb8*/
     }
-    dword_ABEFDC = (int)&GenericNode::`vftable'; /*0x5b3bc3*/
+    dword_ABEFDC = (int)&vt_GenericNode; /*0x5b3bc3*/
     if ( &dword_ABEFDC && v0 && dword_ABEFE4 ) /*0x5b3bda*/
     {
       *(unsigned int *)(dword_ABEFE4 + 4) = v0; /*0x5b3bdc*/
@@ -709,10 +709,10 @@ LABEL_15:
     v6 = (void *)__2_YAPAXI_Z(4 * Buffer); /*0x5bb435*/
     v15.Pipe_field_0x04 = 0; /*0x5bb437*/
     v15.Pipe_field_0x08 = 0; /*0x5bb448*/
-    *(unsigned int *)v15.__pad_0 = &Pipe::`vftable'; /*0x5bb44c*/
+    *(unsigned int *)v15.__pad_0 = &vt_Pipe; /*0x5bb44c*/
     Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
-    *(unsigned int *)v15.__pad_0 = &BufferPipe::`vftable'; /*0x5bb467*/
+    *(unsigned int *)v15.__pad_0 = &vt_BufferPipe; /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v18.BufferOffset, 0, 0x2000); /*0x5bb46f*/
     Pipe::SetDelegate((Pipe *)&v18.BufferOffset, (int)&v15); /*0x5bb47d*/
     v7 = Compression::Read(&v18.BufferOffset, v5, Buffer); /*0x5bb499*/
@@ -2048,7 +2048,7 @@ void MixFileClass::sub_5B3F50()
   unsigned int *v7; // eax
 
   CountFiles = (void *)this->CountFiles; /*0x5b3f56*/
-  *(unsigned int *)this->__pad_0 = &MixFileClass::`vftable'; /*0x5b3f59*/
+  *(unsigned int *)this->__pad_0 = &vt_MixFileClass; /*0x5b3f59*/
   if ( CountFiles ) /*0x5b3f61*/
     free(CountFiles); /*0x5b3f64*/
   if ( this->MixFileClass_field_24 && BYTE2(this->FileSize) ) /*0x5b3f73*/
@@ -2078,7 +2078,7 @@ void MixFileClass::sub_5B3F50()
       }
     }
   }
-  *(unsigned int *)this->__pad_0 = &GenericNode::`vftable'; /*0x5b3fc0*/
+  *(unsigned int *)this->__pad_0 = &vt_GenericNode; /*0x5b3fc0*/
   if ( this ) /*0x5b3fc6*/
   {
     v6 = this->Previous; /*0x5b3fc8*/

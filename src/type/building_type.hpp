@@ -381,6 +381,41 @@ public:  // g57c5 W4b supply slot
 public:  // g57c5 W4b supply slot
     int32_t q684;  // 0x684 (PR 0x44BA4A cmp dword ptr [ecx+684h],0FFFFFFFFh; W20M26)
     char __pad_1714;  // 0x1714 g57c5 W4b (self-desc vocab, ml slot witness)
+
+
+    unsigned int qE00;  // 0xE00 [X55 W3 supply (render vocab)]
+    unsigned int u32_F08;  // 0xF08 [X55 W3 supply (render vocab)]
+    unsigned int u32_F0C;  // 0xF0C [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_E04;  // 0xE04 [X55 W3 supply (render vocab)]
+    unsigned int u32_E08;  // 0xE08 [X55 W3 supply (render vocab)]
+    unsigned int qE10;  // 0xE10 [X55 W3 supply (render vocab)]
+    unsigned int u32_E14;  // 0xE14 [X55 W3 supply (render vocab)]
+    unsigned int u32_E1C;  // 0xE1C [X55 W3 supply (render vocab)]
+    unsigned int u32_E20;  // 0xE20 [X55 W3 supply (render vocab)]
+    unsigned int u32_E2C;  // 0xE2C [X55 W3 supply (render vocab)]
+    unsigned int u32_E48;  // 0xE48 [X55 W3 supply (render vocab)]
+    unsigned int qE50;  // 0xE50 [X55 W3 supply (render vocab)]
+    unsigned int qEC0;  // 0xEC0 [X55 W3 supply (render vocab)]
+    unsigned int u32_EC4;  // 0xEC4 [X55 W3 supply (render vocab)]
+    unsigned int u32_ECC;  // 0xECC [X55 W3 supply (render vocab)]
+    unsigned int qED0;  // 0xED0 [X55 W3 supply (render vocab)]
+    unsigned int u32_161C;  // 0x161C [X55 W3 supply (render vocab)]
+    unsigned int qF10;  // 0xF10 [X55 W3 supply (render vocab)]
+    unsigned int u32_F14;  // 0xF14 [X55 W3 supply (render vocab)]
+    unsigned int u32_F18;  // 0xF18 [X55 W3 supply (render vocab)]
+    unsigned int qF20;  // 0xF20 [X55 W3 supply (render vocab)]
+    unsigned int u32_F24;  // 0xF24 [X55 W3 supply (render vocab)]
+    unsigned int u32_F34;  // 0xF34 [X55 W3 supply (render vocab)]
+    unsigned int u32_F38;  // 0xF38 [X55 W3 supply (render vocab)]
+    unsigned int u32_F3C;  // 0xF3C [X55 W3 supply (render vocab)]
+    unsigned int qF40;  // 0xF40 [X55 W3 supply (render vocab)]
+    unsigned int u32_F44;  // 0xF44 [X55 W3 supply (render vocab)]
+    unsigned int u32_F48;  // 0xF48 [X55 W3 supply (render vocab)]
+    unsigned int u32_F5C;  // 0xF5C [X55 W3 supply (render vocab)]
+    unsigned int u32_D35;  // 0xD35 [X55 W3 supply (render vocab)]
+    unsigned int u32_D36;  // 0xD36 [X55 W3 supply (render vocab)]
+    unsigned int u32_D3B;  // 0xD3B [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

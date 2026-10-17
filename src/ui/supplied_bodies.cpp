@@ -1939,7 +1939,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
   ShpButtonClass *v3; // eax
   unsigned __int8 *v4; // eax
 
-  *(unsigned int *)this->__pad_0 = &GadgetClass::`vftable'; /*0x4e1a65*/
+  *(unsigned int *)this->__pad_0 = &vt_GadgetClass; /*0x4e1a65*/
   v3 = (ShpButtonClass *)dword_8B3E90; /*0x4e1a6b*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e1a72*/
   {
@@ -2474,7 +2474,7 @@ wchar_t ** ListBox::Constructor() {
     v1 = 1; /*0x5c1054*/
     v4 = FormatWideString((wchar_t **)&v6, (const wchar_t *)this); /*0x5c1059*/
     MultiplayerTeam::Constructor(v3, (const wchar_t **)v4, (wchar_t *)this); /*0x5c1062*/
-    *(unsigned int *)v3->__pad_0 = &MultiplayerBattleTeam::`vftable'; /*0x5c1067*/
+    *(unsigned int *)v3->__pad_0 = &vt_MultiplayerBattleTeam; /*0x5c1067*/
   }
   else
   {
@@ -2560,7 +2560,7 @@ char FontClass::LoadFontResources(int16_t a2) {
     if ( !v13 ) /*0x5d303f*/
     {
 LABEL_15:
-      v16[0] = &CCFileClass::`vftable'; /*0x5d3045*/
+      v16[0] = &vt_CCFileClass; /*0x5d3045*/
       v18 = 0; /*0x5d304d*/
       Vector::Clear((int)v17); /*0x5d3051*/
       v16[0] = &off_7E1668; /*0x5d305a*/
@@ -2572,7 +2572,7 @@ LABEL_15:
     this->u32_8 = v15->vtable2; /*0x5d3080*/
   }
   Audio::IsSoundEnabled(); /*0x5d3083*/
-  v16[0] = &CCFileClass::`vftable'; /*0x5d308c*/
+  v16[0] = &vt_CCFileClass; /*0x5d308c*/
   v18 = 0; /*0x5d3094*/
   Vector::Clear((int)v17); /*0x5d3098*/
   v16[0] = &off_7E1668; /*0x5d30a1*/
@@ -3122,7 +3122,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   int v33; // [esp-10h] [ebp-30h]
 
   ListClass::Constructor((int)this, a2, a3, a4, a5, a6); /*0x6b1b44*/
-  *(unsigned int *)this->__pad_0 = &SliderClass::`vftable'; /*0x6b1b51*/
+  *(unsigned int *)this->__pad_0 = &vt_SliderClass; /*0x6b1b51*/
   this->u32_44 = a7 != 0; /*0x6b1b5c*/
   this->u32_3C = 0; /*0x6b1b5f*/
   this->u32_40 = 0; /*0x6b1b62*/

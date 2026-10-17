@@ -19,5 +19,8 @@ struct E4Recv_634B20 {
     unsigned int lineTrailer;  // [X30:default]
     unsigned int nextObject;  // [X30:default]
     unsigned int occupant;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -34,5 +34,8 @@ struct Options {
     void * field_C;  // 0xC
     unsigned int field_4;  // [X30:default]
     unsigned int field_8;  // [X30:default]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

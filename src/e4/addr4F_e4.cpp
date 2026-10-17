@@ -340,10 +340,10 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   v9 = v8 + 88; /*0x4f1d18*/
   *(unsigned int *)(v8 + 84) = 0; /*0x4f1d1b*/
   sub_4F2C00((VectorClass *)(v8 + 88), 0, 0); /*0x4f1d22*/
-  *(unsigned int *)(v8 + 88) = &DynamicVectorClass<GraphicMenuItem *>::`vftable'; /*0x4f1d27*/
+  *(unsigned int *)(v8 + 88) = &vt_DynamicVectorClass_GraphicMenuItem; /*0x4f1d27*/
   *(unsigned int *)(v8 + 108) = 10; /*0x4f1d2d*/
   *(unsigned int *)(v8 + 104) = 0; /*0x4f1d34*/
-  *(unsigned int *)v8 = &GraphicMenu::`vftable'; /*0x4f1d3b*/
+  *(unsigned int *)v8 = &vt_GraphicMenu; /*0x4f1d3b*/
   unknown_libname_73(&v38.vfptr2); /*0x4f1d42*/
   String::Assign((String *)&v38.vfptr3, &g_INI_DefaultBuffer); /*0x4f1d50*/
   String::Assign((String *)&v38, aBackground); /*0x4f1d5e*/
@@ -365,7 +365,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
     String::Concat2((String *)&v38.vfptr2, (char **)&v38, aVqa); /*0x4f1dd6*/
     v12 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[2], (char **)&v38); /*0x4f1de4*/
     v13 = v12->Open(0, p_nextObject); /*0x4f1df8*/
-    v38.ambientSoundController[3] = (int)&CCFileClass::`vftable'; /*0x4f1dfa*/
+    v38.ambientSoundController[3] = (int)&vt_CCFileClass; /*0x4f1dfa*/
     v39 = 0; /*0x4f1e02*/
     Vector::Clear((int)&v38.location[1]); /*0x4f1e09*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1e12*/
@@ -408,7 +408,7 @@ LABEL_18:
     String::Concat2((String *)&v38.vfptr3, (char **)&v38.uniqueId, aBik_0); /*0x4f1e66*/
     v15 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[3], (char **)&v38.uniqueId); /*0x4f1e74*/
     v16 = v15->Open(0); /*0x4f1e89*/
-    v38.ambientSoundController[3] = (int)&CCFileClass::`vftable'; /*0x4f1e8b*/
+    v38.ambientSoundController[3] = (int)&vt_CCFileClass; /*0x4f1e8b*/
     v39 = 0; /*0x4f1e93*/
     Vector::Clear((int)&v38.location[1]); /*0x4f1e9e*/
     v38.ambientSoundController[3] = (int)&off_7E1668; /*0x4f1ea7*/
@@ -952,7 +952,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
   this->M48 = 0; /*0x4f34a7*/
   unknown_libname_73(&this->q034); /*0x4f34aa*/
   v15 = a9; /*0x4f34af*/
-  *(unsigned int *)this = &GraphicMenuImageItem::`vftable'; /*0x4f34b3*/
+  *(unsigned int *)this = &vt_GraphicMenuImageItem; /*0x4f34b3*/
   if ( String::Length(v15) && (a3 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
   {
     String::Assign((char **)&a2, aHighlightsound); /*0x4f34df*/
@@ -1256,7 +1256,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   *(unsigned int *)(a2 + 8) = 0; /*0x4fa234*/
   *(unsigned char *)(a2 + 12) = 1; /*0x4fa237*/
   *(unsigned char *)(a2 + 13) = 0; /*0x4fa23b*/
-  *(unsigned int *)a2 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x4fa23e*/
+  *(unsigned int *)a2 = &vt_VectorClass_TeamTypeClass_const; /*0x4fa23e*/
   if ( (void ***)a2 != &v11 ) /*0x4fa244*/
   {
     VectorClass::ClearAndFree3(a2); /*0x4fa248*/
@@ -1294,8 +1294,8 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   v9 = Block; /*0x4fa2a5*/
   v4 = Block == 0; /*0x4fa2a9*/
   *(unsigned int *)(a2 + 20) = v8; /*0x4fa2ab*/
-  *(unsigned int *)a2 = &TypeList<TeamTypeClass const *>::`vftable'; /*0x4fa2ae*/
-  v11 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x4fa2b4*/
+  *(unsigned int *)a2 = &vt_TypeList_TeamTypeClass_const; /*0x4fa2ae*/
+  v11 = &vt_VectorClass_TeamTypeClass_const; /*0x4fa2b4*/
   if ( !v4 && v14 ) /*0x4fa2c2*/
     __3_YAXPAX_Z(v9); /*0x4fa2c5*/
   return a2; /*0x4fa2cf*/
@@ -1534,20 +1534,20 @@ int sub_4F1B80(char ** a1, int a2)
     v5.headNode[1] = 0; /*0x4f1be3*/
     v5.sectionHead[1] = 0; /*0x4f1be7*/
     v5.sectionHead[2] = 0; /*0x4f1beb*/
-    v5.sectionHead[0] = (int)&GenericNode::`vftable'; /*0x4f1bef*/
+    v5.sectionHead[0] = (int)&vt_GenericNode; /*0x4f1bef*/
     GenericNode::Constructor((MixFileClass *)&v5.sectionCount); /*0x4f1bf7*/
     LinkedList::Prepend((LinkedList *)v5.sectionHead, (int)&v5.sectionCount); /*0x4f1c0d*/
-    v5.headNode[2] = (int)&List<INIClass::INISection *>::`vftable'; /*0x4f1c16*/
+    v5.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x4f1c16*/
     memset(&v5.needsSave_flag, 0, 13); /*0x4f1c24*/
     v5.unknown38 = 0; /*0x4f1c34*/
     v5.INIClass_field_3C = 0; /*0x4f1c38*/
-    *(unsigned int *)v5.__pad_0 = &INIClass::`vftable'; /*0x4f1c3c*/
+    *(unsigned int *)v5.__pad_0 = &vt_INIClass; /*0x4f1c3c*/
     if ( FileStraw::Open((FileStraw *)&v5, (int)&v6, 0) <= 0 ) /*0x4f1c4b*/
       v3 = 0; /*0x4f1c5c*/
     else
       v3 = LoadFromINIGraphicMenu(v4, &v5, a2); /*0x4f1c58*/
     HashTable::DestroyHashTableINIClass(&v5); /*0x4f1c62*/
-    *(unsigned int *)v6.__tail_0 = &CCFileClass::`vftable'; /*0x4f1c6e*/
+    *(unsigned int *)v6.__tail_0 = &vt_CCFileClass; /*0x4f1c6e*/
     v8 = 0; /*0x4f1c76*/
     Vector::Clear((int)v7); /*0x4f1c7d*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x4f1c86*/
@@ -1556,7 +1556,7 @@ int sub_4F1B80(char ** a1, int a2)
   }
   else
   {
-    *(unsigned int *)v6.__tail_0 = &CCFileClass::`vftable'; /*0x4f1bab*/
+    *(unsigned int *)v6.__tail_0 = &vt_CCFileClass; /*0x4f1bab*/
     v8 = 0; /*0x4f1bb3*/
     Vector::Clear((int)v7); /*0x4f1bba*/
     *(unsigned int *)v6.__tail_0 = &off_7E1668; /*0x4f1bc3*/

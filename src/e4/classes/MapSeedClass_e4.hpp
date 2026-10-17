@@ -40,6 +40,10 @@ void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int is_active;  // [X30:default]
     unsigned int max_entries;  // [X30:default]
     unsigned int mode;  // [X30:default]
+
+
+    int MapSeedClass_field_0x04;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int MapSeedClass_field_0x0C;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

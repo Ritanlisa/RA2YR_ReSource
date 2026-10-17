@@ -140,6 +140,9 @@ protected:
     int readLoadoutData(int a1);  // 0x513a00
     int ReadCountryName(int a1, int a2, int a3, int a4, int a5);  // 0x67b8f0
     // === FUNCS-MOVE (END) ===
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

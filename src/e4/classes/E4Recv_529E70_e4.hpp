@@ -12,5 +12,9 @@ struct E4Recv_529E70 {
 // --- flat members (END) ---
     char **  sub_529E70(char ** a2, char * Source, char ** a4, char ** a5);  // 0x529E70
     unsigned int owningHouseIndex;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -31,6 +31,10 @@ struct StringVector {
     unsigned char __pad_011;  // 0x11 [X30:canon]
     int StringVector_field_0x10;  // 0x10 [X30:member_lookup]
     int StringVector_field_0x14;  // 0x14 [X30:member_lookup]
+
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int StringVector_field_0x18;  // 0x18 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

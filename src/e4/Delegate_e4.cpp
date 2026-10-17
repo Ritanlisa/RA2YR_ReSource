@@ -256,7 +256,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int Previous; // ecx
   unsigned int *v4; // eax
 
-  *(unsigned int *)this->m_items = &GenericNode::`vftable'; /*0x52ae27*/
+  *(unsigned int *)this->m_items = &vt_GenericNode; /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     Previous = this->Previous; /*0x52ae2f*/

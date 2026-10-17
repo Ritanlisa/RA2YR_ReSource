@@ -72,6 +72,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_C;  // G42.39 data supply
 
     unsigned int u32_10;  // G42.39 data supply
+
+
+    unsigned int q24C;  // 0x24C [X55 W3 supply (render vocab)]
+    unsigned int q008;  // 0x8 [X55 W3 supply (render vocab)]
+    unsigned int u32_241;  // 0x241 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_CommandClass_DEF
 

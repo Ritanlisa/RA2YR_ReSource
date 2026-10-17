@@ -70,5 +70,12 @@ unsigned int u32_1498;  // 0x1498 [X35-L7 kind=unsigned int]
     Coord* q000;  // 0x0 [X30:type_map]
 unsigned int q004;  // 0x4 [X35-L7 kind=unsigned int]
 unsigned int q008;  // 0x8 [X35-L7 kind=unsigned int]
+
+
+    int u32_10;  // 0x10 [X55 W3 supply (render vocab)]
+    int u32_14;  // 0x14 [X55 W3 supply (render vocab)]
+    unsigned int q00C;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    int Coord_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

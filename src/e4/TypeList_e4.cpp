@@ -779,7 +779,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x513750*/
   this->u32_C = 1; /*0x513753*/
   this->u32_D = 0; /*0x513757*/
-  this->DynamicVectorClass = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51375a*/
+  this->DynamicVectorClass = &vt_VectorClass_UnitTypeClass_const; /*0x51375a*/
   if ( this != (TypeList *)aP1 ) /*0x513760*/
   {
     Vector::Destructor((_VectorClass_PBVUnitTypeClass *)this); /*0x513762*/
@@ -813,7 +813,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x5137b1*/
   this->u32_14 = aP1[5]; /*0x5137b7*/
-  this->DynamicVectorClass = &TypeList<UnitTypeClass const *>::`vftable'; /*0x5137ba*/
+  this->DynamicVectorClass = &vt_TypeList_UnitTypeClass_const; /*0x5137ba*/
   return &this->DynamicVectorClass; /*0x5137c2*/
 
 }
@@ -832,7 +832,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1, void *a2)
   this->u32_8 = 0; /*0x525600*/
   this->u32_C = 1; /*0x525603*/
   this->u32_D = 0; /*0x525607*/
-  this->DynamicVectorClass = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52560a*/
+  this->DynamicVectorClass = &vt_VectorClass_AnimTypeClass_const; /*0x52560a*/
   if ( this != (TypeList *)a2 ) /*0x525610*/
   {
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)this); /*0x525612*/
@@ -866,7 +866,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1, void *a2)
   }
   this->u32_10 = a2[4]; /*0x525661*/
   this->u32_14 = a2[5]; /*0x525667*/
-  this->DynamicVectorClass = &TypeList<AnimTypeClass const *>::`vftable'; /*0x52566a*/
+  this->DynamicVectorClass = &vt_TypeList_AnimTypeClass_const; /*0x52566a*/
   return &this->DynamicVectorClass; /*0x525672*/
 
 }

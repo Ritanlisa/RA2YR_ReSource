@@ -47,6 +47,9 @@ int persistence;  // 0x28 [X35-L7 kind=int]
     void* q0A0;  // X10 supply (member_lookup)
     unsigned int Coord_9C;  // [X30:default]
     unsigned int vfptr;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

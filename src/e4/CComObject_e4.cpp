@@ -1677,14 +1677,14 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
           LOBYTE(v14.ComPtr_field_0x0C) = 0; /*0x7aba07*/
           ReadRegistryOptionsWOL((ObjectClass *)&v14.ComPtr_field_0x08); /*0x7aba0b*/
           ComPtr::Constructor(&v14); /*0x7aba14*/
-          *(unsigned int *)v14.__pad_0 = &rc_ptr<PlayerProfile>::`vftable'; /*0x7aba22*/
+          *(unsigned int *)v14.__pad_0 = &vt_rc_ptr_PlayerProfile; /*0x7aba22*/
           if ( (unsigned __int8)Flag::IsNot2((Flag *)&v14.ComPtr_field_0x08) ) /*0x7aba26*/
           {
             PlayerProfile = LoadPlayerProfile( /*0x7aba38*/
                               (ObjectClass *)&v14.ComPtr_field_0x20,
                               (const char **)&g_WindowManager.__pad_EC[684]);
             ComPtr::Set(&v14, (int)PlayerProfile->vfptr1); /*0x7aba45*/
-            v14.ComPtr_field_0x20 = (int)&rc_ptr<PlayerProfile>::`vftable'; /*0x7aba4e*/
+            v14.ComPtr_field_0x20 = (int)&vt_rc_ptr_PlayerProfile; /*0x7aba4e*/
             ComPtr::Release((ComPtr *)&v14.ComPtr_field_0x20); /*0x7aba52*/
           }
           else
@@ -1696,7 +1696,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
             SaveProfileWOL(v14.ComPtr_field_0x04, (const char **)&g_WindowManager.__pad_EC[684]); /*0x7aba92*/
           Debug::Log(); /*0x7abaa0*/
           v12 = 1; /*0x7abaac*/
-          *(unsigned int *)v14.__pad_0 = &rc_ptr<PlayerProfile>::`vftable'; /*0x7abab1*/
+          *(unsigned int *)v14.__pad_0 = &vt_rc_ptr_PlayerProfile; /*0x7abab1*/
           ComPtr::Release(&v14); /*0x7abab5*/
         }
         v4 = *(unsigned int *)(v4 + 32); /*0x7ababa*/

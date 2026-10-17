@@ -1858,7 +1858,7 @@ int CampaignClass::LoadFromINI() {
     *&this->u32_6828 = 0; /*0x49db33*/
     *&this->q6028 = 0; /*0x49db36*/
     this->scenario[56] = 0; /*0x49db39*/
-    *(unsigned int *)v71.__tail_0 = &CCFileClass::`vftable'; /*0x49db3c*/
+    *(unsigned int *)v71.__tail_0 = &vt_CCFileClass; /*0x49db3c*/
     v73 = 0; /*0x49db44*/
     Vector::Clear((int)v72); /*0x49db4b*/
     *(unsigned int *)v71.__tail_0 = &off_7E1668; /*0x49db54*/
@@ -1881,7 +1881,7 @@ int CampaignClass::LoadFromINI() {
         do /*0x49dbf7*/
         {
           CampaignClass::Constructor_0((CampaignClass *)v8, 0, 0); /*0x49dbbe*/
-          *v8 = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49dbca*/
+          *v8 = &vt_DynamicVectorClass_DynamicVectorClass_char; /*0x49dbca*/
           v8->u32_14 = 10; /*0x49dbd0*/
           v8->q010 = 0; /*0x49dbd7*/
           CampaignClass::Constructor((CampaignClass *)(v8 + 6), 0, 0); /*0x49dbde*/
@@ -1990,7 +1990,7 @@ int CampaignClass::LoadFromINI() {
             v19->vtable3 = 0; /*0x49df13*/
             v19->vtable4 = 1; /*0x49df16*/
             v19->q00D = 0; /*0x49df1a*/
-            *(unsigned int *)v19 = &DynamicVectorClass<char *>::`vftable'; /*0x49df1d*/
+            *(unsigned int *)v19 = &vt_DynamicVectorClass_char; /*0x49df1d*/
             v19->abstractFlags = 10; /*0x49df23*/
             v19->uniqueId = 0; /*0x49df2a*/
             v20 = *&this->q6028; /*0x49df2d*/
@@ -2073,7 +2073,7 @@ LABEL_42:
               *(unsigned int *)(v39 + 8) = 0; /*0x49e12a*/
               *(unsigned char *)(v39 + 12) = 1; /*0x49e12d*/
               *(unsigned char *)(v39 + 13) = 0; /*0x49e131*/
-              *(unsigned int *)v39 = &DynamicVectorClass<char *>::`vftable'; /*0x49e134*/
+              *(unsigned int *)v39 = &vt_DynamicVectorClass_char; /*0x49e134*/
               *(unsigned int *)(v39 + 20) = 10; /*0x49e13a*/
               *(unsigned int *)(v39 + 16) = 0; /*0x49e141*/
               v40 = *&this->q6028; /*0x49e144*/
@@ -2173,7 +2173,7 @@ LABEL_77:
   *&this->q6028 = 0; /*0x49db84*/
 LABEL_80:
   this->scenario[56] = 1; /*0x49e36f*/
-  *(unsigned int *)v71.__tail_0 = &CCFileClass::`vftable'; /*0x49e37a*/
+  *(unsigned int *)v71.__tail_0 = &vt_CCFileClass; /*0x49e37a*/
   v73 = 0; /*0x49e382*/
   Vector::Clear((int)v72); /*0x49e389*/
   *(unsigned int *)v71.__tail_0 = &off_7E1668; /*0x49e392*/

@@ -88,6 +88,20 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     char u8_3A28;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
     void* vtable1;  // X10 supply (csp_canon_members)
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_3828;  // 0x3828 [X55 W3 supply (render vocab)]
+    unsigned int u32_2028;  // 0x2028 [X55 W3 supply (render vocab)]
+    unsigned int u32_3028;  // 0x3028 [X55 W3 supply (render vocab)]
+    unsigned int u32_2828;  // 0x2828 [X55 W3 supply (render vocab)]
+    unsigned int u32_8028;  // 0x8028 [X55 W3 supply (render vocab)]
+    unsigned int u32_4028;  // 0x4028 [X55 W3 supply (render vocab)]
+    unsigned int u32_4828;  // 0x4828 [X55 W3 supply (render vocab)]
+    unsigned int u32_5028;  // 0x5028 [X55 W3 supply (render vocab)]
+    unsigned int u32_5828;  // 0x5828 [X55 W3 supply (render vocab)]
+    unsigned int u32_7028;  // 0x7028 [X55 W3 supply (render vocab)]
+    unsigned int u32_7828;  // 0x7828 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -148,5 +148,12 @@ int q014;  // 0x14 [X35-L7 kind=int]
     unsigned int Capacity;  // [X30:default]
     unsigned int ClearAndFree2_ph;  // [X30:default]
     int DynamicVector_field_0x1C;  // 0x1C [X30:type_map]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int DynamicVector_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int DynamicVector_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
+    int __pad_20;  // 0x20 [X55 W3 supply (render vocab)]
+    int DynamicVector_field_0x28;  // 0x28 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

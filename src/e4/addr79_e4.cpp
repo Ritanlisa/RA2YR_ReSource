@@ -3352,7 +3352,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
         v47 = GetDlgItem((HWND)v4, 1791); /*0x799b1e*/
         SendMessageA(v47, 0xF1u, v48, 0); /*0x799b21*/
         DeleteAndZero((ObjectClass *)&v55.DeleteAndZero_field_0x04); /*0x799b27*/
-        v62 = &rc_ptr<PlayerProfile>::`vftable'; /*0x799b30*/
+        v62 = &vt_rc_ptr_PlayerProfile; /*0x799b30*/
         ComPtr::Release((ComPtr *)&v62); /*0x799b38*/
         DeleteAndZero::Alt(&v55); /*0x799b41*/
       }
@@ -3449,7 +3449,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             SendMessageA(v32, 0x49Du, 0, 0); /*0x7998a6*/
             InvalidateRect(v32, 0, 0); /*0x7998ad*/
           }
-          v60 = &rc_ptr<PlayerProfile>::`vftable'; /*0x7998b3*/
+          v60 = &vt_rc_ptr_PlayerProfile; /*0x7998b3*/
           ComPtr::Release((ComPtr *)&v60); /*0x7998bb*/
           result = 0; /*0x7998c3*/
           break; /*0x7998c9*/
@@ -3547,7 +3547,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             v15 = GetDlgItem((HWND)v4, 1671); /*0x79933d*/
             EnableWindow(v15, v51); /*0x799340*/
             DeleteAndZero((ObjectClass *)&hWnd); /*0x799346*/
-            v60 = &rc_ptr<PlayerProfile>::`vftable'; /*0x79934f*/
+            v60 = &vt_rc_ptr_PlayerProfile; /*0x79934f*/
             ComPtr::Release((ComPtr *)&v60); /*0x799357*/
             return 0; /*0x799365*/
           case 1577: /*0x79915a*/
@@ -3561,7 +3561,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
               WOLOption::SetValue((int)v61, (const char **)&hWnd.m_3[1]); /*0x7993a1*/
               SaveProfileWOL((int)v61, (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x7993af*/
             }
-            v60 = &rc_ptr<PlayerProfile>::`vftable'; /*0x7993b8*/
+            v60 = &vt_rc_ptr_PlayerProfile; /*0x7993b8*/
             ComPtr::Release((ComPtr *)&v60); /*0x7993c0*/
             DeleteAndZero((ObjectClass *)&hWnd.m_3[1]); /*0x7993c9*/
             return 0; /*0x7993d7*/
@@ -3622,7 +3622,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
         SaveProfileWOL((int)v61, (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x799522*/
       }
 LABEL_67:
-      v60 = &rc_ptr<PlayerProfile>::`vftable'; /*0x799662*/
+      v60 = &vt_rc_ptr_PlayerProfile; /*0x799662*/
       ComPtr::Release((ComPtr *)&v60); /*0x79966e*/
       return 0; /*0x799676*/
     }

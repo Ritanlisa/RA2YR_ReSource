@@ -2565,7 +2565,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
         DeleteAndZero((ObjectClass *)(v7 + 7)); /*0x49e7fc*/
         DeleteAndZero((ObjectClass *)(v7 + 6)); /*0x49e804*/
         v9 = (void *)*v7; /*0x49e809*/
-        *(v7 - 1) = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e80b*/
+        *(v7 - 1) = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e80b*/
         if ( v9 && *((unsigned char *)v7 + 9) ) /*0x49e812*/
         {
           __3_YAXPAX_Z(v9); /*0x49e818*/
@@ -2574,7 +2574,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
         *((unsigned char *)v7 + 9) = 0; /*0x49e822*/
         v7[1] = 0; /*0x49e825*/
         v10 = (void *)*(v7 - 6); /*0x49e828*/
-        *(v7 - 7) = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e82b*/
+        *(v7 - 7) = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e82b*/
         if ( v10 && *((unsigned char *)v7 - 15) ) /*0x49e832*/
         {
           __3_YAXPAX_Z(v10); /*0x49e838*/
@@ -2596,7 +2596,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
     DeleteAndZerothis->spawnStatus); /*0x49e86d*/
     DeleteAndZerothis->customSound); /*0x49e875*/
     fallRate = (void *)this->fallRate; /*0x49e87a*/
-    this->owningHouseIndex = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e886*/
+    this->owningHouseIndex = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e886*/
     if ( fallRate && BYTE1(this->attachedTag) ) /*0x49e88b*/
     {
       __3_YAXPAX_Z(fallRate); /*0x49e891*/
@@ -2605,7 +2605,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
     BYTE1(this->attachedTag) = 0; /*0x49e89c*/
     this->nextObject = 0; /*0x49e89f*/
     abstractFlags = (void *)this->abstractFlags; /*0x49e8a2*/
-    this->uniqueId = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e8a5*/
+    this->uniqueId = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e8a5*/
     if ( abstractFlags && BYTE1(this->referenceCount) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(abstractFlags); /*0x49e8b2*/

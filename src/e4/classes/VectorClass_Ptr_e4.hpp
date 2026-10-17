@@ -14,5 +14,10 @@ struct VectorClass_Ptr {
     AbstractClass * *  ResizeAndCopy(int a2, unsigned int * a3);  // 0x5AD010
 
     unsigned int u32_C;  // X10 supply (member_lookup)
+
+
+    unsigned int m_C;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned char __tail_10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

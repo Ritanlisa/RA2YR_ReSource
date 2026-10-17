@@ -389,10 +389,10 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       *&v2->creationFrame = *(unsigned int *)&stru_A8E960.random[528]; /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       Timer::Start(&v2->SpawnManagerClass_field_5C, 0); /*0x6b7f5a*/
-      v2->vfptr = (int)&SpawnManagerClass::`vftable'; /*0x6b7f5f*/
-      v2->vfptr1 = (int)&SpawnManagerClass::`vftable'; /*0x6b7f65*/
-      v2->vfptr2 = (int)&SpawnManagerClass::`vftable'; /*0x6b7f6c*/
-      v2->vfptr3 = (int)&SpawnManagerClass::`vftable'; /*0x6b7f73*/
+      v2->vfptr = (int)&vt_SpawnManagerClass_4; /*0x6b7f5f*/
+      v2->vfptr1 = (int)&vt_SpawnManagerClass_4; /*0x6b7f65*/
+      v2->vfptr2 = (int)&vt_SpawnManagerClass_4; /*0x6b7f6c*/
+      v2->vfptr3 = (int)&vt_SpawnManagerClass_4; /*0x6b7f73*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/
     if ( Prefix_0 >= 0 ) /*0x6b7f8c*/
@@ -401,7 +401,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       if ( v2 != (SpawnManagerClass *)-56 ) /*0x6b7f97*/
       {
         SpawnControlVector::Constructor(&v2->spawns, 0, 0); /*0x6b7f9d*/
-        *p_spawns = (int)&DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b7fa2*/
+        *p_spawns = (int)&vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b7fa2*/
         *&v2->spawnVectorCapacity = 10; /*0x6b7fa8*/
         *(unsigned int *)v2->__pad_48 = 0; /*0x6b7faf*/
       }

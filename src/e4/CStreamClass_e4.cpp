@@ -105,8 +105,8 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
 
   v4 = v3; /*0x4a3112*/
   CStreamClass_field_0x08 = v3->CStreamClass_field_0x08; /*0x4a3116*/
-  *(unsigned int *)v3->__pad_0 = &CStreamClass::`vftable'; /*0x4a3119*/
-  v3->CStreamClass_field_0x04 = (int)&CStreamClass::`vftable'; /*0x4a3121*/
+  *(unsigned int *)v3->__pad_0 = &vt_CStreamClass_2; /*0x4a3119*/
+  v3->CStreamClass_field_0x04 = (int)&vt_CStreamClass_2; /*0x4a3121*/
   if ( CStreamClass_field_0x08 ) /*0x4a3128*/
   {
     if ( BYTE1(v3->CStreamClass_field_0x10) /*0x4a314b*/

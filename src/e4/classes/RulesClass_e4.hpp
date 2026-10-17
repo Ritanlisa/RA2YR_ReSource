@@ -614,6 +614,15 @@ unsigned int __pad_1460;  // 0x1460 [X35-L7 kind=unsigned int]
     unsigned char __pad_1779;  // 0x1779 [X30:canon]
     unsigned char __pad_17DB;  // 0x17DB [X30:canon]
     unsigned char __pad_17F5;  // 0x17F5 [X30:canon]
+
+
+    int q418;  // 0x418 [X55 W3 supply (render vocab)]
+    int q428;  // 0x428 [X55 W3 supply (render vocab)]
+    int q430;  // 0x430 [X55 W3 supply (render vocab)]
+    unsigned int q41C;  // 0x41C [X55 W3 supply (render vocab)]
+    unsigned int q42C;  // 0x42C [X55 W3 supply (render vocab)]
+    int q434;  // 0x434 [X55 W3 supply (render vocab)]
+    unsigned int q1874;  // 0x1874 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

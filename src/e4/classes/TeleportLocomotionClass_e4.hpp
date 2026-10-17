@@ -38,6 +38,9 @@ unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
     unsigned char __pad_012;  // 0x12 [X30:canon]
 bool __pad_037;  // 0x37 [X35-L7 kind=bool]
     unsigned int attachedBomb;  // [X30:default]
+
+
+    unsigned int u32_48;  // 0x48 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

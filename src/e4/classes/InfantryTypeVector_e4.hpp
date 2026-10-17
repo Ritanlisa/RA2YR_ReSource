@@ -26,6 +26,11 @@ struct InfantryTypeVector {
     int q010;  // 0x10
 unsigned int InfantryTypeVector_field_0x04;  // 0x4 [X35-L7 kind=unsigned int]
     char __pad_0[4];  // 0x0 [X30:member_lookup]
+
+
+    int __pad_004;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int u32_D;  // 0xD [X55 W3 supply (render vocab)]
+    unsigned int u32_8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

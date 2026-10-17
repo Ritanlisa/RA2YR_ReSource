@@ -53,6 +53,12 @@ protected:
     void* QueryInterface(int a1);  // 0x4d2d60 -- FoggedObjectClass::QueryInterface
     void* DrawVector_Constructor(int a1, int a2);  // 0x4d2db0 -- FoggedObject::DrawVector_Constructor
     // === SYMBOL-ANCHOR (END) ===
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

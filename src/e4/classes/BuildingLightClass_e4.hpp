@@ -106,8 +106,11 @@ struct BuildingLightClass {
     unsigned char __pad_0D4;  // X10 supply (csp_canon_members)
     ParticleSystemClass* q388;  // X10 supply (member_lookup)
     unsigned char __pad_0D9;  // 0xD9 [X30:canon]
+
+
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int q0A0;  // 0xA0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_CORE_OWNS_BUILDINGLIGHT
-
 
 } // namespace gamemd

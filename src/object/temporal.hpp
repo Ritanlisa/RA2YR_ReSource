@@ -51,6 +51,9 @@ public:
     int32_t     creationFrame;       // +0x2C (this+44)
     int32_t     TemporalClass_field_30;           // +0x30 (this+48)
     int32_t     TemporalClass_field_34;           // +0x34 (this+52)
+
+
+    unsigned int __pad_28;  // 0x28 [X55 W3 supply (render vocab)]
 };
 
 } // namespace game

@@ -147,6 +147,9 @@ public:
     int SaveLoad_Prefix(int a1, int a2);  // 0x428800
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x428970
     // === FUNCS-MOVE (END) ===
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

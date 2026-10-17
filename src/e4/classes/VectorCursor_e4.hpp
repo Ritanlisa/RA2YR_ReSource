@@ -26,6 +26,10 @@ unsigned int VectorCursor_field_0x08;  // 0x8 [X35-L7 kind=unsigned int]
     int VectorCursor_field_0x14;  // 0x14 [X30:member_lookup]
     int VectorCursor_field_0x18;  // 0x18 [X30:member_lookup]
     char __pad_000[4];  // 0x0 [X30:member_lookup]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int VectorCursor_field_0x04;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

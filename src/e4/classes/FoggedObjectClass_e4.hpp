@@ -64,6 +64,12 @@ struct FoggedObjectClass {
     void* q060;  // 0x60 [X30:type_map]
     unsigned int HouseClass_6C;  // [X30:default]
     unsigned int q6E7;  // 0x6E7 [X30:default]
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

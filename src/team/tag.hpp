@@ -173,6 +173,9 @@ protected:
     int GetClassIdentifier(int a1, int a2);  // 0x6e63a0
     int LoadTypeData(int a1, int a2);  // 0x6e6410
     // === FUNCS-MOVE (END) ===
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

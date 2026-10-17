@@ -444,6 +444,11 @@ int Construct(int a2, LPVOID ppv, void *a1 = 0, void *a3 = 0, void *a4 = 0, void
     unsigned char __pad_5E4;  // 0x5E4 [X30:canon]
     unsigned char __pad_6AC;  // 0x6AC [X30:canon]
     unsigned char __pad_6E3;  // 0x6E3 [X30:canon]
+
+
+    unsigned char u8_A7;  // 0xA7 [X55 W3 supply (render vocab)]
+    unsigned int u32_A6;  // 0xA6 [X55 W3 supply (render vocab)]
+    unsigned int u32_A5;  // 0xA5 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

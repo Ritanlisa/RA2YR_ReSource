@@ -552,6 +552,9 @@ public:  // g57c5 W4b supply slot
     void* vtable2;  // X10 supply (csp_canon_members)
     void* vtable3;  // X10 supply (csp_canon_members)
     void* vtable4;  // X10 supply (csp_canon_members)
+
+
+    unsigned int u32_94;  // 0x94 [X55 W3 supply (render vocab)]
 };
 // 7 methods in IDA
 // CSP: AnimFile matched via T1
@@ -885,6 +888,9 @@ public:
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q008;  // X10 supply (member_lookup)
     int q00C;  // X10 supply (member_lookup)
+
+
+    void * vtable1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 // 4 methods in IDA
 class FilePipe
@@ -978,6 +984,11 @@ public:
 
     int q010;  // X10 supply (member_lookup)
     int q014;  // X10 supply (member_lookup)
+
+
+    int __pad_004;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int u32_D;  // 0xD [X55 W3 supply (render vocab)]
+    unsigned int u32_8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 // 2 methods in IDA
 // CSP: IsoCoord matched via T1
@@ -1082,6 +1093,21 @@ public:
     void* vtable2;  // X10 supply (csp_canon_members)
     void* vtable3;  // X10 supply (csp_canon_members)
     void* vtable4;  // X10 supply (csp_canon_members)
+
+    int u32_298;  // 0x298 [X55 W3 supply (render vocab)]
+    unsigned int u32_29C;  // 0x29C [X55 W3 supply (render vocab)]
+    unsigned int u32_2A0;  // 0x2A0 [X55 W3 supply (render vocab)]
+    unsigned int u32_2C0;  // 0x2C0 [X55 W3 supply (render vocab)]
+    unsigned int u32_2C4;  // 0x2C4 [X55 W3 supply (render vocab)]
+    unsigned int u32_2D4;  // 0x2D4 [X55 W3 supply (render vocab)]
+    unsigned int u32_2D8;  // 0x2D8 [X55 W3 supply (render vocab)]
+    unsigned int u32_2DC;  // 0x2DC [X55 W3 supply (render vocab)]
+    unsigned int u32_2E0;  // 0x2E0 [X55 W3 supply (render vocab)]
+    unsigned int u32_2E1;  // 0x2E1 [X55 W3 supply (render vocab)]
+    unsigned int u32_2E4;  // 0x2E4 [X55 W3 supply (render vocab)]
+    unsigned int u32_2E8;  // 0x2E8 [X55 W3 supply (render vocab)]
+    unsigned int u32_2EC;  // 0x2EC [X55 W3 supply (render vocab)]
+    unsigned int u32_2F0;  // 0x2F0 [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 class Lightning
@@ -1229,6 +1255,9 @@ public:
 
     int q008;  // X10 supply (member_lookup)
     int q010;  // X10 supply (member_lookup)
+
+
+    unsigned short __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 // 12 methods in IDA
 // CSP: MapSeedClass matched via T1
@@ -1787,6 +1816,9 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 
     bool IsAllocated;  // X10 supply (csp_canon_members)
+
+
+    unsigned int m_8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 // CSP: ActionQueue matched via T1
@@ -2272,6 +2304,9 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int HandleChatChannelList(int a1, int a2, int a3);  // 0x7aa870
     // === FUNCS-MOVE (END) ===
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 // 2 methods in IDA
 // CSP: CDROM matched via T1
@@ -2465,6 +2500,9 @@ public:
     int Release();  // 0x7ac820
     int QueryInterface(int a1, int a2, int a3);  // 0x7ac870
     // === FUNCS-MOVE (END) ===
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 // CSP: Compression matched via T1
@@ -2605,6 +2643,10 @@ public:
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q004;  // X10 supply (member_lookup)
     void* q008;  // X10 supply (member_lookup)
+
+
+    unsigned int u32_AC;  // 0xAC [X55 W3 supply (render vocab)]
+    unsigned int q0A4;  // 0xA4 [X55 W3 supply (render vocab)]
 };
 // 4 methods in IDA
 class Dial8Class
@@ -2745,6 +2787,8 @@ public:
     unsigned int u32_30;  // X10 supply (member_lookup)
     unsigned int u32_4;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 // CSP: DynamicClass matched via T1
@@ -4151,6 +4195,7 @@ public:
     unsigned int u32_34;  // X10 supply (member_lookup)
     unsigned int u32_38;  // X10 supply (member_lookup)
     unsigned int u32_40;  // X10 supply (member_lookup)
+
 };
 // 2 methods in IDA
 class Performance
@@ -4201,6 +4246,8 @@ public:
     uint8_t Pipe_field_0x0C[4];
 
     void* vtable1;  // X10 supply (csp_canon_members)
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 class PlanManager
@@ -6072,6 +6119,7 @@ public:
     uint32_t u32_10;  // X10 supply (member_lookup)
     int u32_14;  // X10 supply (member_lookup)
     uint32_t u32_4;  // X10 supply (member_lookup)
+
 };
 // 2 methods in IDA
 // CSP: ToggleClass matched via T1
@@ -6152,6 +6200,8 @@ public:
     int q010;  // X10 supply (member_lookup)
 
     int q00C;  // X10 supply (member_lookup)
+
+    void * vtable1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 // CSP: VQAClass matched via T1

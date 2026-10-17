@@ -18,6 +18,10 @@ struct KeyboardConfig {
 // --- flat members (END) ---
     AbstractClass * ReleaseBuffer(int a2, void *v3);
     static int LoadINI();
+
+
+    void * vtable3;  // 0xC [X55 W3 supply (render vocab)]
+    void * vtable2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

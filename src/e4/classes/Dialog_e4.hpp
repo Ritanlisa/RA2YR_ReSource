@@ -124,5 +124,12 @@ struct Dialog {
     unsigned int u32_3C;  // X10 supply (member_lookup)
     unsigned int u32_3F;  // X10 supply (member_lookup)
     int u32_8;  // X10 supply (member_lookup)
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int __pad_40;  // 0x40 [X55 W3 supply (render vocab)]
+    unsigned int Dialog_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
+    unsigned int __pad_2C;  // 0x2C [X55 W3 supply (render vocab)]
+    unsigned int Dialog_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

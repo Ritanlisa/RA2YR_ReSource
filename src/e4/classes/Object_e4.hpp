@@ -52,5 +52,8 @@ struct Object {
     int Object_field_0x8;  // 0x8 [X30:member_lookup]
     int Object_field_0xAC;  // 0xAC [X30:member_lookup]
     char __pad_C[36];  // 0xC [X30:member_lookup]
+
+
+    unsigned int Object_field_0x13C;  // 0x13C [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -89,17 +89,17 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6,
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
   SlaveControlVector::Constructor(&this->slaves, 0, 0); /*0x6af1b6*/
-  this->slaves = &DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af1c3*/
+  this->slaves = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af1c3*/
   this->slaveVectorCapacity = 10; /*0x6af1c9*/
   this->__pad_048 = 0; /*0x6af1d0*/
   this->creationFrame = *(unsigned int *)&stru_A8E960.random[528]; /*0x6af1d8*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af1df*/
   this->master = a2; /*0x6af1e2*/
   this->house = a3; /*0x6af1e9*/
-  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af1f2*/
-  this->vtable2 = &SlaveManagerClass::`vftable'; /*0x6af1f8*/
-  this->vtable3 = &SlaveManagerClass::`vftable'; /*0x6af1ff*/
-  this->vtable4 = &SlaveManagerClass::`vftable'; /*0x6af206*/
+  *(unsigned int *)this = &vt_SlaveManagerClass_4; /*0x6af1f2*/
+  this->vtable2 = &vt_SlaveManagerClass_4; /*0x6af1f8*/
+  this->vtable3 = &vt_SlaveManagerClass_4; /*0x6af1ff*/
+  this->vtable4 = &vt_SlaveManagerClass_4; /*0x6af206*/
   this->slaveOwner = a4; /*0x6af20d*/
   this->slaveType = a5; /*0x6af210*/
   this->slaveCount = a6; /*0x6af213*/

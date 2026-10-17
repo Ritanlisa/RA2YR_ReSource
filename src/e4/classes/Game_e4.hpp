@@ -106,5 +106,8 @@ struct Game {
     unsigned char u8_14D9;  // X10 supply (member_lookup)
     unsigned char u8_14DA;  // X10 supply (member_lookup)
     unsigned int q0282;  // 0x282
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

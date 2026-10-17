@@ -15,5 +15,8 @@ struct E4Recv_541170 {
     AbstractClass * *  sub_541170(int a2, int a3, int a4, int a5);  // 0x541170
     unsigned int ambientSoundController;  // [X30:default]
     unsigned int location;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

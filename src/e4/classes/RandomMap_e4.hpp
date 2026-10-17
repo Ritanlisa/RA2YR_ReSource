@@ -156,5 +156,10 @@ char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
     ObjectClass* __pad_078;  // 0x78 [X30:type_map]
     int RandomMap_field_0x10;  // 0x10 [X30:type_map]
     int RandomMap_field_0x8;  // 0x8 [X30:type_map]
+
+
+    int RandomMap_field_0x24;  // 0x24 [X55 W3 supply (render vocab)]
+    unsigned int RandomMap_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
+    unsigned int RandomMap_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

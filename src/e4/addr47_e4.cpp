@@ -91,7 +91,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
-    *(unsigned int *)v21.ClearAndFree2_ph = &TypeList<int>::`vftable'; /*0x47712a*/
+    *(unsigned int *)v21.ClearAndFree2_ph = &vt_TypeList_int; /*0x47712a*/
     for ( i = (BuildingTypeClass *)strtok(v21.__pad_20, Delimiter); i; i = (BuildingTypeClass *)strtok(0, Delimiter) ) /*0x477144*/
     {
       if ( !LOBYTE(i->vfptr) ) /*0x47714a*/
@@ -194,17 +194,17 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
-    a1->vfptr = (int)&TypeList<int>::`vftable'; /*0x4773d9*/
-    *(unsigned int *)v21.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x4773df*/
+    a1->vfptr = (int)&vt_TypeList_int; /*0x4773d9*/
+    *(unsigned int *)v21.ClearAndFree2_ph = &vt_VectorClass_int; /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
-    a5 = &VectorClass<int>::`vftable'; /*0x4773ef*/
+    a5 = &vt_VectorClass_int; /*0x4773ef*/
     VectorClass::Destroy((int)&a5); /*0x4773f6*/
     return a1; /*0x4773fb*/
   }
   else
   {
     VectorClass::Copy(a1, &a5); /*0x477413*/
-    a5 = &VectorClass<int>::`vftable'; /*0x47741f*/
+    a5 = &vt_VectorClass_int; /*0x47741f*/
     VectorClass::Destroy((int)&a5); /*0x47742a*/
     return a1; /*0x47742f*/
   }
@@ -2017,7 +2017,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v9 = -1732584194; /*0x4745a5*/
   v10 = 271733878; /*0x4745ad*/
   v11 = -1009589776; /*0x4745b5*/
-  *(unsigned int *)v6.__pad_0 = &SHAPipe::`vftable'; /*0x4745bd*/
+  *(unsigned int *)v6.__pad_0 = &vt_SHAPipe; /*0x4745bd*/
   INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
   SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/

@@ -98,5 +98,8 @@ struct House {
     AbstractClass* __pad_C;  // 0xC [X30:type_map]
     unsigned int armorMultiplier;  // [X30:default]
     unsigned int controlGroup;  // [X30:default]
+
+
+    unsigned int u32_30;  // 0x30 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -98,5 +98,21 @@ struct AudioStream {
     int u32_D4;  // X10 supply (member_lookup)
     unsigned char u8_4;  // X10 supply (member_lookup)
 unsigned int u32_70;  // 0x70 [X35-L7 kind=unsigned int]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int AudioStream_field_0x1E0;  // 0x1E0 [X55 W3 supply (render vocab)]
+    int AudioStream_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
+    unsigned int AudioStream_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
+    int AudioStream_field_0x24;  // 0x24 [X55 W3 supply (render vocab)]
+    int AudioStream_field_0x28;  // 0x28 [X55 W3 supply (render vocab)]
+    unsigned int AudioStream_field_0xAC;  // 0xAC [X55 W3 supply (render vocab)]
+    int q164;  // 0x164 [X55 W3 supply (render vocab)]
+    unsigned int AudioStream_field_0xC0;  // 0xC0 [X55 W3 supply (render vocab)]
+    int AudioStream_field_0x4;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int u32_198;  // 0x198 [X55 W3 supply (render vocab)]
+    unsigned int u32_19C;  // 0x19C [X55 W3 supply (render vocab)]
+    int q168;  // 0x168 [X55 W3 supply (render vocab)]
+    unsigned int u32_1C0;  // 0x1C0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

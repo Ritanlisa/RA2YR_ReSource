@@ -54,7 +54,7 @@ int MoveFeedback::ProcessCommand()
     if ( result ) /*0x732809*/
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
-      *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x732814*/
+      *(unsigned int *)v3 = &vt_DynamicVectorClass_TechnoClass; /*0x732814*/
       v3->CapacityIncrement = 10; /*0x73281a*/
       v3->Count = 0; /*0x732821*/
     }
@@ -98,7 +98,7 @@ int MoveFeedback::ProcessCommand()
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7328a8*/
+      *(unsigned int *)v3 = &vt_DynamicVectorClass_TechnoClass; /*0x7328a8*/
       v3->CapacityIncrement = 10; /*0x7328ae*/
       v3->Count = 0; /*0x7328b5*/
     }

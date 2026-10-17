@@ -35,5 +35,8 @@ struct AITriggerTypeClass_40 {
     int q00C;  // X10 supply (member_lookup)
     int q010;  // X10 supply (member_lookup)
     unsigned char __pad_011;  // 0x11 [X30:canon]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

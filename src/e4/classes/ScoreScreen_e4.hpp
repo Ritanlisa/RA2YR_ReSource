@@ -38,6 +38,10 @@ unsigned int ScoreScreen_field_0x04;  // 0x4 [X35-L7 kind=unsigned int]
 unsigned int ScoreScreen_field_0x08;  // 0x8 [X35-L7 kind=unsigned int]
     AbstractClass* ScoreScreen_field_0x14;  // 0x14 [X30:type_map]
     int __pad_0;  // 0x0 [X30:type_map]
+
+
+    unsigned int ScoreScreen_field_0x0C;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int ScoreScreen_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

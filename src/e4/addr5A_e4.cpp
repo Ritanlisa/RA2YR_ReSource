@@ -1165,7 +1165,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
   StringVector::Construct((StringVector *)v41, 0, 0); /*0x5a65ac*/
   v7 = *(unsigned int *)&v41[8]; /*0x5a65b1*/
   v8 = 10; /*0x5a65b5*/
-  *(unsigned int *)v41 = &DynamicVectorClass<char *>::`vftable'; /*0x5a65ba*/
+  *(unsigned int *)v41 = &vt_DynamicVectorClass_char; /*0x5a65ba*/
   *(unsigned int *)&v41[20] = 10; /*0x5a65c2*/
   *(unsigned int *)&v41[16] = 0; /*0x5a65c6*/
   v9 = off_82B138; /*0x5a65ca*/
@@ -1287,7 +1287,7 @@ LABEL_48:
       v6 = v33; /*0x5a6640*/
     }
   }
-  *(unsigned int *)v41 = &VectorClass<char *>::`vftable'; /*0x5a68f5*/
+  *(unsigned int *)v41 = &vt_VectorClass_char; /*0x5a68f5*/
   if ( *(unsigned int *)&v41[4] ) /*0x5a6903*/
   {
     if ( v41[13] ) /*0x5a690b*/

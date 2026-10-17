@@ -40,6 +40,9 @@ struct FogOfWar {
     unsigned int u32_14A0;  // X10 supply (member_lookup)
     unsigned int u32_14D9;  // X10 supply (member_lookup)
     int u32_4830;  // X10 supply (member_lookup)
+
+
+    unsigned int u32_120C;  // 0x120C [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

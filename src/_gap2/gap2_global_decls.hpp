@@ -123,6 +123,13 @@ namespace gamemd {
     unsigned int M1376;  // 0x560 [X30:canon]
     int q120;  // 0x120 [X30:fn-atom]
     int u64_130;  // 0x130 [X30:fn-atom]
+
+
+    unsigned int u32_12C;  // 0x12C [X55 W3 supply (render vocab)]
+    unsigned int q128;  // 0x128 [X55 W3 supply (render vocab)]
+    unsigned int q104;  // 0x104 [X55 W3 supply (render vocab)]
+    unsigned int u32_15C;  // 0x15C [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
     struct Gap2Recv_4048B0 {
         int PrefetchAudioSamples();  // G42.39 def-derived
@@ -199,6 +206,9 @@ public:  // g57c5 W4 supply slot
     unsigned int M148;  // 0x94 [X30:canon]
     unsigned int M164;  // 0xA4 [X30:canon]
     unsigned int M132;  // 0x132 [X30:canon]
+
+
+    unsigned int q084;  // 0x84 [X55 W3 supply (render vocab)]
 };
     struct Gap2Recv_415C60 {
     int M1492;  // G42.39a supply

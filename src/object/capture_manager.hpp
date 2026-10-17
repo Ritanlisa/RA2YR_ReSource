@@ -93,6 +93,13 @@ public:
     int32_t                     overloadCount;     // +0x44 (this+68)
     int32_t                     linkCount;         // +0x28 (this+40)
     int32_t                     CaptureManagerClass_field_2C;          // +0x2C (this+44)
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int q0A0;  // 0xA0 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace game

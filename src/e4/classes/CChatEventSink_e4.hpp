@@ -27,6 +27,10 @@ void* q000;  // 0x0 [X35-L7 kind=void*]
     int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
     int q014;  // 0x14
+
+
+    unsigned int CChatEventSink_field_0x30;  // 0x30 [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

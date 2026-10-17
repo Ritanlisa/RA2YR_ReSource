@@ -85,6 +85,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned char __pad_0B4;  // X10 supply (csp_canon_members)
     unsigned char __pad_0D4;  // X10 supply (csp_canon_members)
     ParticleSystemClass* q388;  // X10 supply (member_lookup)
+
+
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int q0A0;  // 0xA0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_E4_OWNS_BUILDINGLIGHT
 

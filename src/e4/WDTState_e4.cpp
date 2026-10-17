@@ -39,7 +39,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          *(unsigned int *)v8->__pad_0 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76baeb*/
+          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr_WDTTerritory; /*0x76baeb*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76baf1*/
           --v9; /*0x76baf4*/
         }

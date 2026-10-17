@@ -10,5 +10,8 @@ struct E4Recv_636F00 {
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
     int  sub_636F00(int a2, int a3);  // 0x636F00
+
+
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

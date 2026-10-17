@@ -199,6 +199,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* IsAllocated;  // X10 supply (csp_canon_members)
 
     unsigned char __pad_00C;  // X10 supply (csp_canon_members)
+
+
+    unsigned int __pad_004;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 // ============================================================================

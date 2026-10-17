@@ -1019,9 +1019,14 @@ void Update_TogglePower(double);  // 0x4F8440
     unsigned int u32_5778;  // X10 supply (member_lookup)
     unsigned int u32_5779;  // X10 supply (member_lookup)
     unsigned char u8_5789;  // X10 supply (member_lookup)
+
+
+    unsigned int q200;  // 0x200 [X55 W3 supply (render vocab)]
+    unsigned int q204;  // 0x204 [X55 W3 supply (render vocab)]
+    unsigned int u32_27C;  // 0x27C [X55 W3 supply (render vocab)]
+    int u32_294;  // 0x294 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_HouseClass_DEF
-
 
 } // namespace gamemd
 

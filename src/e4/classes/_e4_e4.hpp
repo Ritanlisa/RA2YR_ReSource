@@ -18,6 +18,11 @@ struct _e4 {
     int Seek(int a2);
     unsigned int Write(int a2);
     wchar_t * ddtor();
+
+
+    unsigned int m_C;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int m_8;  // 0x8 [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

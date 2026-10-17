@@ -3745,7 +3745,7 @@ int TechnoClass::EvacuateFootprintCells()
   v23 = *v37 / 256; /*0x458aae*/
   v24 = v37[1] / 256; /*0x458ac6*/
   EventClass::resetEvent((EventClass *)&v31, 0, 0); /*0x458acb*/
-  v31 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x458ad0*/
+  v31 = &vt_DynamicVectorClass_TechnoClass; /*0x458ad0*/
   v36 = 10; /*0x458ad8*/
   v35 = 0; /*0x458ae0*/
   while ( *v3 != 0x7FFF || v3[1] != 0x7FFF ) /*0x458af8*/
@@ -3850,7 +3850,7 @@ LABEL_28:
       (*(void (**)(int *))(*v15 + 248))(v15); /*0x458d6f*/
   }
   result = (int)Block; /*0x458d7e*/
-  v31 = &VectorClass<TechnoClass *>::`vftable'; /*0x458d82*/
+  v31 = &vt_VectorClass_TechnoClass; /*0x458d82*/
   if ( Block && BYTE1(v34) ) /*0x458d92*/
     __3_YAXPAX_Z(Block); /*0x458d95*/
   LOBYTE(result) = 1; /*0x458da0*/
@@ -10376,7 +10376,7 @@ int TechnoClass::PushNearbyUnits()
     if ( (unsigned char)result ) /*0x6f4f5f*/
     {
       EventClass::resetEvent((EventClass *)&v15, 0, 0); /*0x6f4f6e*/
-      v15 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x6f4f78*/
+      v15 = &vt_DynamicVectorClass_TechnoClass; /*0x6f4f78*/
       v20 = 10; /*0x6f4f80*/
       v19 = 0; /*0x6f4f88*/
       for ( i = *(unsigned int *)&stru_A8E960.random[276] - 1; i >= 0; --i ) /*0x6f4f95*/
@@ -10402,7 +10402,7 @@ int TechnoClass::PushNearbyUnits()
       for ( j = v19 - 1; j >= 0; --j ) /*0x6f504f*/
         (*(void (**)(unsigned int, TechnoClass *))(**((unsigned int **)Block + j) + 968))(*((unsigned int *)Block + j), this); /*0x6f505b*/
       result = (int)Block; /*0x6f5064*/
-      v15 = &VectorClass<TechnoClass *>::`vftable'; /*0x6f5068*/
+      v15 = &vt_VectorClass_TechnoClass; /*0x6f5068*/
       if ( Block ) /*0x6f5072*/
       {
         if ( BYTE1(v18) ) /*0x6f507a*/
@@ -13298,7 +13298,7 @@ void FootClass::UpdateLocomotion()
               v40 = 1; /*0x6fbb04*/
               v27 = *(unsigned int *)&stru_A8E960.random[276] - 1; /*0x6fbb09*/
               v41 = 0; /*0x6fbb0c*/
-              v37 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x6fbb12*/
+              v37 = &vt_DynamicVectorClass_TechnoClass; /*0x6fbb12*/
               v43 = 10; /*0x6fbb1a*/
               for ( i = 0; v27 >= 0; --v27 ) /*0x6fbb26*/
               {
@@ -13325,7 +13325,7 @@ void FootClass::UpdateLocomotion()
                 (*(void (**)(unsigned int, TechnoClass *))(**((unsigned int **)Block + j) + 968))( /*0x6fbbe3*/
                   *((unsigned int *)Block + j),
                   this);
-              v37 = &VectorClass<TechnoClass *>::`vftable'; /*0x6fbbf0*/
+              v37 = &vt_VectorClass_TechnoClass; /*0x6fbbf0*/
               if ( Block && v41 ) /*0x6fbc00*/
                 __3_YAXPAX_Z(Block); /*0x6fbc03*/
             }

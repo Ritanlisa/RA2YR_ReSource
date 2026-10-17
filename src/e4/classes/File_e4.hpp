@@ -58,5 +58,10 @@ unsigned int q004;  // 0x4 [X35-L7 kind=unsigned int]
     unsigned int BufferSize;  // [X30:default]
     int __pad_0;  // 0x0 [X30:type_map]
     unsigned int ptr_80;  // 0x80 [X30:default]
+
+
+    unsigned int u32_98;  // 0x98 [X55 W3 supply (render vocab)]
+    unsigned char u8_38;  // 0x38 [X55 W3 supply (render vocab)]
+    unsigned char u8_39;  // 0x39 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

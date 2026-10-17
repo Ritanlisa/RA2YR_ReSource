@@ -117,11 +117,11 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
     if ( v2 ) /*0x763c92*/
     {
       AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
-      v2[1].vfptr1 = (int)&DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ca0*/
-      v2->vfptr = (int)&WaypointPathClass::`vftable'; /*0x763ca7*/
-      v2->vfptr1 = (int)&WaypointPathClass::`vftable'; /*0x763cad*/
-      v2->vfptr2 = (int)&WaypointPathClass::`vftable'; /*0x763cb4*/
-      v2->vfptr3 = (int)&WaypointPathClass::`vftable'; /*0x763cbb*/
+      v2[1].vfptr1 = (int)&vt_DynamicVectorClass_WaypointClass; /*0x763ca0*/
+      v2->vfptr = (int)&vt_WaypointPathClass_4; /*0x763ca7*/
+      v2->vfptr1 = (int)&vt_WaypointPathClass_4; /*0x763cad*/
+      v2->vfptr2 = (int)&vt_WaypointPathClass_4; /*0x763cb4*/
+      v2->vfptr3 = (int)&vt_WaypointPathClass_4; /*0x763cbb*/
     }
     result = v3->vt_entry_68(&this, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
@@ -130,7 +130,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       if ( p_vfptr1 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(p_vfptr1, 0, 0); /*0x763ce3*/
-        p_vfptr1->vfptr = (int)&DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ce8*/
+        p_vfptr1->vfptr = (int)&vt_DynamicVectorClass_WaypointClass; /*0x763ce8*/
         p_vfptr1->abstractFlags = 10; /*0x763cee*/
         p_vfptr1->uniqueId = 0; /*0x763cf5*/
       }
@@ -195,7 +195,7 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
   this->vfptr2 = (void *)a2; /*0x764770*/
   LOBYTE(this->vfptr3) = 1; /*0x764773*/
   BYTE1(this->vfptr3) = 0; /*0x764777*/
-  this->vfptr = &VectorClass<WaypointClass>::`vftable'; /*0x76477a*/
+  this->vfptr = &vt_VectorClass_WaypointClass; /*0x76477a*/
   if ( !a2 ) /*0x764780*/
     return &this->vfptr; /*0x764780*/
   if ( !a3 ) /*0x764788*/

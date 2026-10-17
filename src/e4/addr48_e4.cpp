@@ -315,12 +315,12 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   v113 = aP1; /*0x48929b*/
   v114 = (int)aP0; /*0x48929f*/
   sub_48B070(0, 0); /*0x4892a3*/
-  v117 = &DynamicVectorClass<DamageGroup *>::`vftable'; /*0x4892aa*/
+  v117 = &vt_DynamicVectorClass_4; /*0x4892aa*/
   v122 = 10; /*0x4892b2*/
   v121 = 0; /*0x4892ba*/
   if ( !aP1 || (*(unsigned char *)dword_A8B230 & 0x20) != 0 || (v8 = aP3) == 0 ) /*0x4892d7*/
   {
-    v117 = &VectorClass<DamageGroup *>::`vftable'; /*0x48a4bb*/
+    v117 = &vt_VectorClass_DamageGroup; /*0x48a4bb*/
     if ( Block && BYTE1(v120) ) /*0x48a4cd*/
       __3_YAXPAX_Z(Block); /*0x48a4d0*/
     return 1; /*0x48a4da*/
@@ -593,7 +593,7 @@ LABEL_82:
   ((void (*)(void ***, int, unsigned int))v117[2])(&v117, v53, 0); /*0x489b0f*/
   if ( v107 ) /*0x489b18*/
   {
-    v117 = &VectorClass<DamageGroup *>::`vftable'; /*0x489b1e*/
+    v117 = &vt_VectorClass_DamageGroup; /*0x489b1e*/
     if ( Block ) /*0x489b28*/
     {
       if ( BYTE1(v120) ) /*0x489b30*/
@@ -886,7 +886,7 @@ LABEL_213:
     ParticleSystemClass::CreateParticle(v94, v94); /*0x48a479*/
   }
   v96 = v111 == 0; /*0x48a489*/
-  v117 = &VectorClass<DamageGroup *>::`vftable'; /*0x48a491*/
+  v117 = &vt_VectorClass_DamageGroup; /*0x48a491*/
   if ( Block && BYTE1(v120) ) /*0x48a4a1*/
     __3_YAXPAX_Z(Block); /*0x48a4a4*/
   return v96; /*0x489b40*/
@@ -1862,11 +1862,11 @@ int E4Recv_4887F0::sub_4887F0()
 
   v2 = this->M372; /*0x4887f5*/
   v3 = &this->M372; /*0x4887fb*/
-  *(unsigned int *)this->__pad_0 = &ColorListClass::`vftable'; /*0x488803*/
+  *(unsigned int *)this->__pad_0 = &vt_ColorListClass; /*0x488803*/
   (*(void (**)(char *))(v2 + 12))(&this->M372); /*0x488809*/
   this->M400 = 0; /*0x48880e*/
   v4 = (void *)*((unsigned int *)v3 + 1); /*0x488814*/
-  *(unsigned int *)v3 = &VectorClass<int>::`vftable'; /*0x488819*/
+  *(unsigned int *)v3 = &vt_VectorClass_int; /*0x488819*/
   if ( v4 && v3[13] ) /*0x488821*/
   {
     __3_YAXPAX_Z(v4); /*0x488827*/

@@ -13,6 +13,11 @@ struct DynamicArray {
     char  Remove(int a2, void *a1 = 0);  // 0x7acd60
     static char Grow(void *aP0);
     int __pad_000;  // 0x0 [X30:type_map]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int DynamicArray_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+    int DynamicArray_field_0x08;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

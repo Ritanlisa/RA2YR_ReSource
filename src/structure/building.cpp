@@ -384,14 +384,14 @@ int BuildingClass::Construct(int a2, int a3)
   this->FiringOccupantIndex = 0; /*0x43b8b7*/
   this->Audio7 = 1; /*0x43b8bd*/
   this->q679 = 0; /*0x43b8c4*/
-  this->Overpowerers = &DynamicVectorClass<InfantryClass *>::`vftable'; /*0x43b8ca*/
+  this->Overpowerers = &vt_DynamicVectorClass_InfantryClass; /*0x43b8ca*/
   this->q680 = 10; /*0x43b8d0*/
   this->q67C = 0; /*0x43b8d6*/
   this->locomotorSource = 0; /*0x43b8dc*/
   this->Audio8 = 0; /*0x43b8e2*/
   this->q690 = 1; /*0x43b8e8*/
   this->u32_691 = 0; /*0x43b8ef*/
-  this->Occupants_d = &DynamicVectorClass<InfantryClass *>::`vftable'; /*0x43b8f5*/
+  this->Occupants_d = &vt_DynamicVectorClass_InfantryClass; /*0x43b8f5*/
   this->q698 = 10; /*0x43b8fb*/
   this->q694 = 0; /*0x43b901*/
   this->FiringOccupantIndex_d = 0; /*0x43b907*/
@@ -718,7 +718,7 @@ int BuildingClass::Dtor()
   (*(void (**)(int *))(this->Audio7[3] + 12))(&this->Audio7[3]); /*0x43c05f*/
   (*(void (**)(int *, int, unsigned int))(this->Audio7[3] + 8))(&this->Audio7[3], v26, 0); /*0x43c069*/
   v27 = (void *)this->Audio7[4]; /*0x43c06c*/
-  this->Audio7[3] = (int)&VectorClass<InfantryClass *>::`vftable'; /*0x43c073*/
+  this->Audio7[3] = (int)&vt_VectorClass_InfantryClass; /*0x43c073*/
   if ( v27 && BYTE1(this->Audio8[1]) ) /*0x43c07b*/
   {
     __3_YAXPAX_Z(v27); /*0x43c083*/
@@ -727,7 +727,7 @@ int BuildingClass::Dtor()
   BYTE1(this->Audio8[1]) = 0; /*0x43c08e*/
   this->Audio8[0] = 0; /*0x43c092*/
   Occupants = (void *)this->Occupants; /*0x43c095*/
-  this->Overpowerers = (int)&VectorClass<InfantryClass *>::`vftable'; /*0x43c098*/
+  this->Overpowerers = (int)&vt_VectorClass_InfantryClass; /*0x43c098*/
   if ( Occupants && BYTE1(this->Audio7[0]) ) /*0x43c0a3*/
   {
     __3_YAXPAX_Z(Occupants); /*0x43c0ab*/

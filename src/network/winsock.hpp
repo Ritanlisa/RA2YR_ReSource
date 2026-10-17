@@ -46,6 +46,21 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessPacket(int a1);  // 0x770270 -- WinsockInterface::ProcessPacket
     // === SYMBOL-ANCHOR (END) ===
+
+
+    unsigned int u32_3F068;  // 0x3F068 [X55 W3 supply (render vocab)]
+    int u32_10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int u32_3C;  // 0x3C [X55 W3 supply (render vocab)]
+    unsigned int u32_45;  // 0x45 [X55 W3 supply (render vocab)]
+    unsigned int u32_24;  // 0x24 [X55 W3 supply (render vocab)]
+    unsigned int u32_2D;  // 0x2D [X55 W3 supply (render vocab)]
+    unsigned int u32_C;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int u32_15;  // 0x15 [X55 W3 supply (render vocab)]
+    int u32_38;  // 0x38 [X55 W3 supply (render vocab)]
+    int u32_40;  // 0x40 [X55 W3 supply (render vocab)]
+    int u32_20;  // 0x20 [X55 W3 supply (render vocab)]
+    int u32_28;  // 0x28 [X55 W3 supply (render vocab)]
+    int __pad_008;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 // CSP: IPXInterfaceClass matched via T1
@@ -153,6 +168,25 @@ protected:
     int sendPacket(int a1);  // 0x7b4550 -- UDPInterfaceClass::sendPacket
     void* receivePacket(int a1);  // 0x7b45d0 -- UDPInterfaceClass::receivePacket
     // === SYMBOL-ANCHOR (END) ===
+
+
+    int u32_48;  // 0x48 [X55 W3 supply (render vocab)]
+    int u32_30;  // 0x30 [X55 W3 supply (render vocab)]
+    unsigned int m_C;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int u32_3C;  // 0x3C [X55 W3 supply (render vocab)]
+    int u32_24;  // 0x24 [X55 W3 supply (render vocab)]
+    unsigned int m_8;  // 0x8 [X55 W3 supply (render vocab)]
+    unsigned int u32_3F300;  // 0x3F300 [X55 W3 supply (render vocab)]
+    int m_10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int u32_3F06C;  // 0x3F06C [X55 W3 supply (render vocab)]
+    unsigned int u32_3F070;  // 0x3F070 [X55 W3 supply (render vocab)]
+    unsigned int u32_3F560;  // 0x3F560 [X55 W3 supply (render vocab)]
+    unsigned int u32_3F060;  // 0x3F060 [X55 W3 supply (render vocab)]
+    int q018;  // 0x18 [X55 W3 supply (render vocab)]
+    unsigned int u32_3F568;  // 0x3F568 [X55 W3 supply (render vocab)]
+    unsigned int u32_3F56C;  // 0x3F56C [X55 W3 supply (render vocab)]
+    unsigned int u32_3F5AC;  // 0x3F5AC [X55 W3 supply (render vocab)]
+    unsigned int u32_3F064;  // 0x3F064 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

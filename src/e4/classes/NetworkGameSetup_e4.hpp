@@ -20,6 +20,9 @@ struct NetworkGameSetup {
     int q008;  // X10 supply (member_lookup)
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_NetworkGameSetup_DEF
 

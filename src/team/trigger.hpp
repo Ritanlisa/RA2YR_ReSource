@@ -162,6 +162,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* vtable2;  // X10 supply (csp_canon_members)
     void* vtable3;  // X10 supply (csp_canon_members)
     void* vtable4;  // X10 supply (csp_canon_members)
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 // --- TriggerTypeClass ---
@@ -280,6 +283,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_C4;  // X10 supply (member_lookup)
     unsigned int u32_D0;  // X10 supply (member_lookup)
     unsigned int u32_E0;  // X10 supply (member_lookup)
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_1C8;  // 0x1C8 [X55 W3 supply (render vocab)]
+    unsigned int u32_6AD;  // 0x6AD [X55 W3 supply (render vocab)]
+    unsigned int u32_6C4;  // 0x6C4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

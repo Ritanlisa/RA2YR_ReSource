@@ -68,7 +68,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
-      *v9 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a01a0*/
+      *v9 = &vt_DynamicVectorClass_Cell; /*0x5a01a0*/
       v9->u32_14 = 10; /*0x5a01a6*/
       v9->q010 = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/
@@ -300,7 +300,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
-    *(unsigned int *)v25.ClearAndFree2_ph = &TypeList<AnimTypeClass const *>::`vftable'; /*0x721b7b*/
+    *(unsigned int *)v25.ClearAndFree2_ph = &vt_TypeList_AnimTypeClass_const; /*0x721b7b*/
     for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Delimiter); i; i = strtok(0, Delimiter) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
@@ -310,7 +310,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
         DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
-    *(unsigned int *)v25.ClearAndFree2_ph = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x721bd6*/
+    *(unsigned int *)v25.ClearAndFree2_ph = &vt_VectorClass_AnimTypeClass_const; /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
   else
@@ -324,7 +324,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   Items = (void *)v24.Items; /*0x721c17*/
   *(unsigned int *)(v5 + 216) = CapacityIncrement; /*0x721c1b*/
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
-  v24.vfptr = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x721c21*/
+  v24.vfptr = (int)&vt_VectorClass_AnimTypeClass_const; /*0x721c21*/
   if ( Items && v24.IsAllocated[0] ) /*0x721c34*/
     __3_YAXPAX_Z(Items); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/

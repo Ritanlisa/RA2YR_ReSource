@@ -153,6 +153,9 @@ unsigned int __pad_194;  // 0x194 [X35-L7 kind=unsigned int]
     unsigned int objectTypeFlags;  // [X30:default]
     uint8_t u8_D94;  // 0xD94 [X30:member_lookup]
     unsigned int uniqueId;  // [X30:default]
+
+
+    unsigned int q_200;  // 0x200 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

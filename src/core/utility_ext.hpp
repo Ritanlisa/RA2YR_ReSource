@@ -96,6 +96,9 @@ public:
     unsigned int m_C;  // 0xC (offset-truth)
 
     bool IsAllocated;  // X10 supply (csp_canon_members)
+
+
+    unsigned int m_10;  // 0x10 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_MoveFeedback_DEF
 #endif  // GAMEMD_E4_MoveFeedback
@@ -153,6 +156,9 @@ public:
     int u8_D;  // X10 supply (member_lookup)
 
     int q010;  // X10 supply (member_lookup)
+
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_E4_LoadGame
 
@@ -206,6 +212,12 @@ public:
     uint32_t    Buffer_field_1C;           // 0x1C
     uint32_t    Buffer_field_20;           // 0x20
     uint32_t    Buffer_field_24;           // 0x24
+
+
+    unsigned int q044;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int q040;  // 0x40 [X55 W3 supply (render vocab)]
+    int q030;  // 0x30 [X55 W3 supply (render vocab)]
+    unsigned int u32_73C;  // 0x73C [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 
@@ -2242,6 +2254,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q004;  // X10 supply (member_lookup)
     int q008;  // X10 supply (member_lookup)
+
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int m_C;  // 0xC [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_E4_StringVector
 // 1 methods in IDA
@@ -2383,6 +2399,9 @@ public:
 
     int q004;  // X10 supply (member_lookup)
     unsigned int u32_10;  // X10 supply (member_lookup)
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_E4_Vector4
 // 1 methods in IDA

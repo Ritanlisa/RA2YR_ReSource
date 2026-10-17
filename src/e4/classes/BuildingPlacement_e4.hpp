@@ -36,6 +36,11 @@ struct BuildingPlacement {
     unsigned int u32_80;  // X10 supply (member_lookup)
     int __pad_000;  // 0x0 [X30:type_map]
 unsigned int BuildingPlacement_field_0x20;  // 0x20 [X35-L7 kind=unsigned int]
+
+
+    unsigned int BuildingPlacement_field_0x0C;  // 0xC [X55 W3 supply (render vocab)]
+    int BuildingPlacement_field_0x04;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

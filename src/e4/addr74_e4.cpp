@@ -139,7 +139,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   INIClass::ResetSection(a1); /*0x74327f*/
   Block = 0; /*0x74328e*/
   v49 = 1; /*0x743292*/
-  v46 = &DynamicVectorClass<int>::`vftable'; /*0x743297*/
+  v46 = &vt_DynamicVectorClass_int; /*0x743297*/
   v52 = 10; /*0x74329f*/
   v51 = 0; /*0x7432a7*/
   v50 = 0; /*0x7432ab*/
@@ -292,7 +292,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
     }
     v40 = dword_8B4118; /*0x7436a1*/
   }
-  v46 = &VectorClass<int>::`vftable'; /*0x7436b4*/
+  v46 = &vt_VectorClass_int; /*0x7436b4*/
   if ( Block ) /*0x7436bd*/
   {
     if ( v50 ) /*0x7436c5*/
@@ -761,7 +761,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   this->abstractFlags = 0; /*0x74bc07*/
   LOBYTE(this->nextArrayIndex) = 1; /*0x74bc0a*/
   BYTE1(this->nextArrayIndex) = 0; /*0x74bc0e*/
-  this->vfptr3 = (int)&VectorClass<unsigned char>::`vftable'; /*0x74bc11*/
+  this->vfptr3 = (int)&vt_VectorClass_unsigned_char_7F65F4; /*0x74bc11*/
   this->vfptr2 = -1; /*0x74bc17*/
   LOBYTE(this->vfptr1) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
   this->vfptr2 = *(unsigned int *)(a2 + 8); /*0x74bc27*/
@@ -1817,7 +1817,7 @@ char * E4Recv_74BBA0::sub_74BBA0(int a2, int a3)
   *((unsigned int *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
   v4[13] = 0; /*0x74bbca*/
-  *(unsigned int *)v4 = &VectorClass<unsigned char>::`vftable'; /*0x74bbcd*/
+  *(unsigned int *)v4 = &vt_VectorClass_unsigned_char_7F65F4; /*0x74bbcd*/
   (*(void (**)(char *, unsigned int, int))(*(unsigned int *)v4 + 8))(v4, (unsigned int)(a2 + 7) >> 3, a3); /*0x74bbda*/
   return this; /*0x74bbdf*/
 

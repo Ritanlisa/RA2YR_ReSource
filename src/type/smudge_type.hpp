@@ -55,6 +55,9 @@ public:
     int PowerDrainUpdate(int a1);  // 0x6b57f0 -- SmudgeTypeClass::PowerDrainUpdate
     int GetAuxField();  // 0x6b6150 -- SmudgeTypeClass::GetAuxField
     // === SYMBOL-ANCHOR (END) ===
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -342,6 +342,14 @@ public:  // g57c5 W4 supply slot
     void* vfptr1;  // X10 supply (csp_canon_members)
     void* vfptr2;  // X10 supply (csp_canon_members)
     void* vfptr3;  // X10 supply (csp_canon_members)
+
+
+    unsigned int DisplayClass_field_0x11B0;  // 0x11B0 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11D0;  // 0x11D0 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11D4;  // 0x11D4 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11D8;  // 0x11D8 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11DC;  // 0x11DC [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11E0;  // 0x11E0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -257,6 +257,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* vtable3;  // X10 supply (csp_canon_members)
     void* vtable4;  // X10 supply (csp_canon_members)
     void* waveEffect;  // X10 supply (csp_canon_members)
+
+
+    unsigned char u8_A7;  // 0xA7 [X55 W3 supply (render vocab)]
+    unsigned int u32_A6;  // 0xA6 [X55 W3 supply (render vocab)]
+    unsigned int u32_A5;  // 0xA5 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

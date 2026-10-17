@@ -417,7 +417,7 @@ AbstractClass * * sub_68C050()
     {
       VectorClass::Construct(&v14, 0, 0); /*0x68c086*/
       v3 = 10; /*0x68c091*/
-      v14.vfptr = (int)&DynamicVectorClass<int>::`vftable'; /*0x68c096*/
+      v14.vfptr = (int)&vt_DynamicVectorClass_int; /*0x68c096*/
       v16 = 10; /*0x68c09e*/
       v15 = 0; /*0x68c0a2*/
       v4 = 0; /*0x68c0ac*/
@@ -492,7 +492,7 @@ LABEL_25:
         goto LABEL_25; /*0x68c19f*/
       }
 LABEL_29:
-      v14.vfptr = (int)&VectorClass<int>::`vftable'; /*0x68c1ca*/
+      v14.vfptr = (int)&vt_VectorClass_int; /*0x68c1ca*/
       if ( v14.Items ) /*0x68c1d9*/
       {
         if ( v14.IsAllocated[0] ) /*0x68c1e1*/
@@ -1520,7 +1520,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       do /*0x769eb7*/
       {
         ComPtr::Constructor(v6); /*0x769ea8*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769ead*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x769ead*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769eb3*/
         --v9; /*0x769eb6*/
       }
@@ -1545,7 +1545,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       do /*0x769e87*/
       {
         ComPtr::Constructor(v6); /*0x769e78*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769e7d*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x769e7d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769e83*/
         --v7; /*0x769e86*/
       }
@@ -1849,7 +1849,7 @@ void sub_58CE90()
         }
       }
       v6 = (void *)v4[11]; /*0x58cf43*/
-      v4[10] = &VectorClass<Cell>::`vftable'; /*0x58cf46*/
+      v4[10] = &vt_VectorClass_Cell; /*0x58cf46*/
       if ( v6 && *((unsigned char *)v4 + 53) ) /*0x58cf51*/
       {
         __3_YAXPAX_Z(v6); /*0x58cf57*/

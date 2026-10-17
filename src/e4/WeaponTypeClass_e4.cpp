@@ -452,10 +452,10 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
 
   v3 = v2; /*0x7730f3*/
-  v2->vfptr = (int)&WeaponTypeClass::`vftable'; /*0x7730f7*/
-  v2->vfptr1 = (int)&WeaponTypeClass::`vftable'; /*0x7730fd*/
-  v2->vfptr2 = (int)&WeaponTypeClass::`vftable'; /*0x773104*/
-  v2->vfptr3 = (int)&WeaponTypeClass::`vftable'; /*0x77310b*/
+  v2->vfptr = (int)&vt_WeaponTypeClass_4; /*0x7730f7*/
+  v2->vfptr1 = (int)&vt_WeaponTypeClass_4; /*0x7730fd*/
+  v2->vfptr2 = (int)&vt_WeaponTypeClass_4; /*0x773104*/
+  v2->vfptr3 = (int)&vt_WeaponTypeClass_4; /*0x77310b*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x773112*/
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
@@ -473,7 +473,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
     while ( v4 < g_WeaponTypePool ); /*0x77316c*/
   }
   NeedsSaveOrLink = v3->nextArrayIndex.NeedsSaveOrLink; /*0x77316e*/
-  v3[6].referenceCount = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x773174*/
+  v3[6].referenceCount = (int)&vt_VectorClass_AnimTypeClass_const; /*0x773174*/
   if ( NeedsSaveOrLink && BYTE1(v3[7].vfptr1) ) /*0x773182*/
   {
     __3_YAXPAX_Z(NeedsSaveOrLink); /*0x77318b*/
@@ -482,7 +482,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   BYTE1(v3[7].vfptr1) = 0; /*0x773199*/
   v3[7].vfptr = 0; /*0x77319f*/
   vfptr1 = v3->nextArrayIndex.vfptr1; /*0x7731a5*/
-  v3[6].vfptr = (int)&VectorClass<int>::`vftable'; /*0x7731ab*/
+  v3[6].vfptr = (int)&vt_VectorClass_int; /*0x7731ab*/
   if ( vfptr1 && BYTE1(v3[6].vfptr3) ) /*0x7731b9*/
   {
     __3_YAXPAX_Z(vfptr1); /*0x7731c2*/
@@ -491,7 +491,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   BYTE1(v3[6].vfptr3) = 0; /*0x7731d0*/
   v3[6].vfptr2 = 0; /*0x7731d6*/
   vfptr3 = v3->abstractFlags.vfptr3; /*0x7731dc*/
-  v3[5].vfptr2 = (int)&VectorClass<int>::`vftable'; /*0x7731e2*/
+  v3[5].vfptr2 = (int)&vt_VectorClass_int; /*0x7731e2*/
   if ( vfptr3 && BYTE1(v3[5].abstractFlags) ) /*0x7731f0*/
   {
     __3_YAXPAX_Z(vfptr3); /*0x7731f9*/

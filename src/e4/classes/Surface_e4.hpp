@@ -110,6 +110,12 @@ struct Surface {
     void* __pad_0;  // 0x0 [X30:type_map]
     unsigned int vtable27;  // 0x68 [X30:default]
     unsigned char vtable28;  // 0x6C [X30:member_lookup]
+
+
+    unsigned int u32_BC;  // 0xBC [X55 W3 supply (render vocab)]
+    unsigned int u32_CC;  // 0xCC [X55 W3 supply (render vocab)]
+    unsigned int u32_1A4;  // 0x1A4 [X55 W3 supply (render vocab)]
+    unsigned int u32_1CC;  // 0x1CC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -52,6 +52,35 @@ struct IdaRegVar {
     // sizeof(IdaRegVar)==4 保持 &r[i] == (unsigned long*)r + i 地址精确)
     IdaRegVar& operator*() { return *(IdaRegVar *)v; }
     IdaRegVar& operator[](long i) { return ((IdaRegVar *)v)[i]; }
+
+
+    unsigned int __pad_28;  // 0x28 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int q298;  // 0x298 [X55 W3 supply (render vocab)]
+    unsigned int ParticleSystemTypeClass_field_0x29C;  // 0x29C [X55 W3 supply (render vocab)]
+    unsigned int q2A4;  // 0x2A4 [X55 W3 supply (render vocab)]
+    unsigned int ParticleSystemTypeClass_field_0x2A8;  // 0x2A8 [X55 W3 supply (render vocab)]
+    unsigned int ParticleSystemTypeClass_field_0x2D0;  // 0x2D0 [X55 W3 supply (render vocab)]
+    unsigned int __pad_2D8;  // 0x2D8 [X55 W3 supply (render vocab)]
+    unsigned int __pad_C3C;  // 0xC3C [X55 W3 supply (render vocab)]
+    unsigned int q1A0;  // 0x1A0 [X55 W3 supply (render vocab)]
+    unsigned int u32_D4;  // 0xD4 [X55 W3 supply (render vocab)]
+    unsigned int q0DC;  // 0xDC [X55 W3 supply (render vocab)]
+    unsigned int q0EC;  // 0xEC [X55 W3 supply (render vocab)]
+    unsigned int q0F4;  // 0xF4 [X55 W3 supply (render vocab)]
+    unsigned int ParticleSystemTypeClass_field_0x294;  // 0x294 [X55 W3 supply (render vocab)]
+    unsigned int q2A0;  // 0x2A0 [X55 W3 supply (render vocab)]
+    unsigned int q2AC;  // 0x2AC [X55 W3 supply (render vocab)]
+    unsigned int ParticleSystemTypeClass_field_0x2B4;  // 0x2B4 [X55 W3 supply (render vocab)]
+    unsigned int q2DC;  // 0x2DC [X55 W3 supply (render vocab)]
+    unsigned int ParticleSystemTypeClass_field_0x2E4;  // 0x2E4 [X55 W3 supply (render vocab)]
+    unsigned int q2E0;  // 0x2E0 [X55 W3 supply (render vocab)]
+    unsigned int q052;  // 0x52 [X55 W3 supply (render vocab)]
+    unsigned int q042;  // 0x42 [X55 W3 supply (render vocab)]
+    unsigned int q043;  // 0x43 [X55 W3 supply (render vocab)]
 };
 inline unsigned long operator+(const IdaRegVar& r, long d) { return r.v + d; }
 inline unsigned long operator+(long d, const IdaRegVar& r) { return d + r.v; }

@@ -84,6 +84,13 @@ public:
     int32_t                     SpawnManagerClass_field_68;           // +0x68 (this+104)
     int32_t                     SpawnManagerClass_field_6C;           // +0x6C (this+108)
     int32_t                     SpawnManagerClass_field_70;           // +0x70 (this+112)
+
+
+    int __pad_48;  // 0x48 [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace game

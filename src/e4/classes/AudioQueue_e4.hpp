@@ -65,5 +65,8 @@ struct AudioQueue {
     AudioQueue* __pad_000;  // 0x0 [X30:type_map]
     AudioQueue* AudioQueue_F8;  // 0xF8 [X30:member_lookup]
     AudioQueue* __pad_0;  // 0x0 [X30:type_map]
+
+
+    unsigned int AudioQueue_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

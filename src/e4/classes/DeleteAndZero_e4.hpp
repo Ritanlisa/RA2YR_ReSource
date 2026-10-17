@@ -23,6 +23,14 @@ struct DeleteAndZero {
     unsigned int uniqueId;  // [X30:default]
     unsigned int vfptr;  // [X30:default]
     unsigned int vtable3;  // 0x8 [X30:member_lookup]
+
+
+    unsigned int DeleteAndZero_field_0x04;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int DeleteAndZero_field_0x08;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

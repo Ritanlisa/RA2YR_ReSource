@@ -44,6 +44,9 @@ struct ColorStruct {
     unsigned int field_34;  // [X30:default]
     unsigned int field_50;  // [X30:default]
     unsigned int field_54;  // [X30:default]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_ColorStruct_DEF
 

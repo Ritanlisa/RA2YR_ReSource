@@ -38,6 +38,9 @@ struct XSurface {
     static int BlitWhole(int* p0, int p1, int p2);  // x4:signals@0x7bbaf0
 void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned char q014;  // 0x14
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

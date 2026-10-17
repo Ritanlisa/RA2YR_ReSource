@@ -129,7 +129,7 @@ int WebBrowser::ShowDialog(void *a1)
       *(unsigned int *)(v4 + 8) = 0; /*0x773f7d*/
       *(unsigned char *)(v4 + 1036) = 0; /*0x773f84*/
       *(unsigned int *)(v4 + 1040) = 0; /*0x773f8b*/
-      *(unsigned int *)v4 = &WebBrowser::`vftable'; /*0x773f95*/
+      *(unsigned int *)v4 = &vt_WebBrowser; /*0x773f95*/
       Debug::Log(); /*0x773f9b*/
       v6[260] = (unsigned int)v3; /*0x773fa3*/
       Debug::Log(); /*0x773fae*/
@@ -439,7 +439,7 @@ int WebBrowser::GoBack()
   }
   String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&v4[0].Flag_field_0x08); /*0x773dee*/
   String::Assign_Alt((String *)&g_WebBrowserConfig, v5); /*0x773dfd*/
-  *(unsigned int *)&v2.vtable2 = &rc_ptr<PlayerProfile>::`vftable'; /*0x773e06*/
+  *(unsigned int *)&v2.vtable2 = &vt_rc_ptr_PlayerProfile; /*0x773e06*/
   ComPtr::Release((ComPtr *)&v2.vtable2); /*0x773e0e*/
   DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/
   return 0; /*0x773e1e*/

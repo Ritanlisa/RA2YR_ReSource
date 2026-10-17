@@ -332,11 +332,11 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   v43.referenceCount = 0; /*0x5cef0f*/
   v43.NeedsSaveOrLink = 0; /*0x5cef13*/
   GenericList::Constructor((GenericList *)&v43.occupant); /*0x5cef17*/
-  v43.occupant = (int)&List<INIClass::INISection *>::`vftable'; /*0x5cef20*/
+  v43.occupant = (int)&vt_List_INIClass_INISection; /*0x5cef20*/
   memset(&v43.ambientSoundController[1], 0, 13); /*0x5cef28*/
   v43.customSound_controller[0] = 0; /*0x5cef39*/
   v43.customSound_controller[1] = 0; /*0x5cef3d*/
-  v43.nextArrayIndex = (int)&INIClass::`vftable'; /*0x5cef41*/
+  v43.nextArrayIndex = (int)&vt_INIClass; /*0x5cef41*/
   unknown_libname_73(&v43.vfptr3); /*0x5cef49*/
   unknown_libname_73(&v43.vfptr1); /*0x5cef52*/
   SessionClass::Destruct(uniqueId); /*0x5cef59*/
@@ -573,7 +573,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     DeleteAndZero((ObjectClass *)&v43.vfptr1); /*0x5cf59a*/
     DeleteAndZero((ObjectClass *)&v43.vfptr3); /*0x5cf5a3*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v43.nextArrayIndex); /*0x5cf5ac*/
-    v43.customSound_controller[2] = (int)&CCFileClass::`vftable'; /*0x5cf5b8*/
+    v43.customSound_controller[2] = (int)&vt_CCFileClass; /*0x5cf5b8*/
     v45 = 0; /*0x5cf5c0*/
     Vector::Clear((int)v44); /*0x5cf5c7*/
     v43.customSound_controller[2] = (int)&off_7E1668; /*0x5cf5d0*/
@@ -587,7 +587,7 @@ LABEL_17:
     DeleteAndZero((ObjectClass *)&v43.vfptr1); /*0x5cf089*/
     DeleteAndZero((ObjectClass *)&v43.vfptr3); /*0x5cf092*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v43.nextArrayIndex); /*0x5cf09b*/
-    v43.customSound_controller[2] = (int)&CCFileClass::`vftable'; /*0x5cf0a7*/
+    v43.customSound_controller[2] = (int)&vt_CCFileClass; /*0x5cf0a7*/
     v45 = 0; /*0x5cf0af*/
     Vector::Clear((int)v44); /*0x5cf0b6*/
     v43.customSound_controller[2] = (int)&off_7E1668; /*0x5cf0bf*/
@@ -688,7 +688,7 @@ CampaignClass * * SessionClass::loadSettings()
     }
   }
   v7 = *&this->q058; /*0x5d00cf*/
-  *&this->u32_54 = &VectorClass<MapSelection *>::`vftable'; /*0x5d00d2*/
+  *&this->u32_54 = &vt_VectorClass_MapSelection; /*0x5d00d2*/
   if ( v7 && this->u8_61 ) /*0x5d00dd*/
   {
     __3_YAXPAX_Z(v7); /*0x5d00e3*/
@@ -697,7 +697,7 @@ CampaignClass * * SessionClass::loadSettings()
   this->u8_61 = 0; /*0x5d00ee*/
   *&this->q05C = 0; /*0x5d00f1*/
   v8 = (void *)this->Handle[2]; /*0x5d00f4*/
-  this->Handle[1] = (int)&VectorClass<MSTextEntry *>::`vftable'; /*0x5d00f7*/
+  this->Handle[1] = (int)&vt_VectorClass_MSTextEntry; /*0x5d00f7*/
   if ( v8 && BYTE1(this->Handle[4]) ) /*0x5d0102*/
   {
     __3_YAXPAX_Z(v8); /*0x5d0108*/
@@ -706,7 +706,7 @@ CampaignClass * * SessionClass::loadSettings()
   BYTE1(this->Handle[4]) = 0; /*0x5d0113*/
   this->Handle[3] = 0; /*0x5d0116*/
   v9 = (void *)this->Config[4]; /*0x5d0119*/
-  this->Config[3] = (int)&VectorClass<Point2D>::`vftable'; /*0x5d011c*/
+  this->Config[3] = (int)&vt_VectorClass_Point2D; /*0x5d011c*/
   if ( v9 && BYTE1(this->Config[6]) ) /*0x5d0127*/
   {
     __3_YAXPAX_Z(v9); /*0x5d012d*/
@@ -1571,11 +1571,11 @@ AbstractClass * * SessionClass::LoadMissionList()
   GenericList::Constructor((GenericList *)&v60.headNode[2]); /*0x69999a*/
   v3 = this->unknown_310[224]; /*0x69999f*/
   v4 = &this->unknown_310[224]; /*0x6999a5*/
-  v60.headNode[2] = (int)&List<INIClass::INISection *>::`vftable'; /*0x6999ad*/
+  v60.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x6999ad*/
   memset(&v60.needsSave_flag, 0, 13); /*0x6999b5*/
   v60.unknown38 = 0; /*0x6999c6*/
   v60.INIClass_field_3C = 0; /*0x6999ca*/
-  *(unsigned int *)v60.__pad_0 = &INIClass::`vftable'; /*0x6999ce*/
+  *(unsigned int *)v60.__pad_0 = &vt_INIClass; /*0x6999ce*/
   (*(void (**)(int *))(v3 + 12))(v4); /*0x6999d6*/
   CCFileClass::Construct(&v63, aMissionsmdPkt); /*0x6999e2*/
   if ( (unsigned __int8)CCFileClass::Open(&v63, 0) ) /*0x6999ec*/
@@ -1819,7 +1819,7 @@ AbstractClass * * SessionClass::LoadMissionList()
     while ( FindNextFileA(hFindFileb, &FindFileData) ); /*0x69a190*/
     FindClose(hFindFileb); /*0x69a1a3*/
   }
-  *(unsigned int *)v63.__tail_0 = &CCFileClass::`vftable'; /*0x69a1b2*/
+  *(unsigned int *)v63.__tail_0 = &vt_CCFileClass; /*0x69a1b2*/
   v65 = 0; /*0x69a1ba*/
   Vector::Clear((int)v64); /*0x69a1c1*/
   *(unsigned int *)v63.__tail_0 = &off_7E1668; /*0x69a1ca*/
@@ -1856,10 +1856,10 @@ wchar_t *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Source, wch
   v10 = &v8->SkirmishPreferences[6]; /*0x69a99c*/
   p_Side2[5] = 10; /*0x69a9ad*/
   p_Side2[4] = 0; /*0x69a9b0*/
-  *p_Side2 = (int)&TypeList<enum DiskID>::`vftable'; /*0x69a9b7*/
+  *p_Side2 = (int)&vt_TypeList_enum_DiskID; /*0x69a9b7*/
   VectorClass::WstringConstructor(&v8->q474, 0, 0); /*0x69a9bd*/
   v11 = Source; /*0x69a9c2*/
-  v8->SkirmishPreferences[6] = (int)&DynamicVectorClass<Wstring>::`vftable'; /*0x69a9c6*/
+  v8->SkirmishPreferences[6] = (int)&vt_DynamicVectorClass_Wstring; /*0x69a9c6*/
   v8->SkirmishPreferences[11] = 10; /*0x69a9cf*/
   v8->SkirmishPreferences[10] = 0; /*0x69a9d2*/
   if ( v11 ) /*0x69a9d9*/
@@ -2108,13 +2108,13 @@ void SessionClass::SetupNetwork()
   v1 = 0; /*0x69bd65*/
   v55 = 1; /*0x69bd6f*/
   AbstractClass::updateAnimationState((AbstractClass *)&v66, 0, 0); /*0x69bd77*/
-  v66 = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x69bd81*/
+  v66 = &vt_DynamicVectorClass_NodeNameType; /*0x69bd81*/
   v71 = 10; /*0x69bd89*/
   v70 = 0; /*0x69bd91*/
   Debug::Log(); /*0x69bd95*/
   if ( this->StartSpots[4] < 2 ) /*0x69bda6*/
   {
-    v66 = &VectorClass<NodeNameType *>::`vftable'; /*0x69bdac*/
+    v66 = &vt_VectorClass_NodeNameType; /*0x69bdac*/
     MPCooperative::updateScoreBoard((int)&v66); /*0x69bdb4*/
     return; /*0x69bdbe*/
   }
@@ -2392,7 +2392,7 @@ LABEL_58:
     (*(void (**)(WinsockInterface *, int))(*(unsigned int *)dword_887628->__pad_0 + 92))(dword_887628, v47); /*0x69c457*/
     (*(void (**)(WinsockInterface *))(*(unsigned int *)dword_887628->__pad_0 + 28))(dword_887628); /*0x69c462*/
   }
-  v66 = &VectorClass<NodeNameType *>::`vftable'; /*0x69c469*/
+  v66 = &vt_VectorClass_NodeNameType; /*0x69c469*/
   if ( Block ) /*0x69c473*/
   {
     if ( v69 ) /*0x69c47b*/

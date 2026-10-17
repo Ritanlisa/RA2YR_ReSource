@@ -145,10 +145,10 @@ LABEL_6:
       AbstractTypeClass::Constructor(v3, Source); /*0x691c7c*/
       v4->Coord_9C = 0; /*0x691c81*/
       v4->q0A0 = 0; /*0x691c8b*/
-      *v4 = (int)&ScriptTypeClass::`vftable'; /*0x691c95*/
-      v4->vtable2 = (int)&ScriptTypeClass::`vftable'; /*0x691c9b*/
-      v4->vtable3 = (int)&ScriptTypeClass::`vftable'; /*0x691ca2*/
-      v4->vtable4 = (int)&ScriptTypeClass::`vftable'; /*0x691ca9*/
+      *v4 = (int)&vt_ScriptTypeClass_4; /*0x691c95*/
+      v4->vtable2 = (int)&vt_ScriptTypeClass_4; /*0x691c9b*/
+      v4->vtable3 = (int)&vt_ScriptTypeClass_4; /*0x691ca2*/
+      v4->vtable4 = (int)&vt_ScriptTypeClass_4; /*0x691ca9*/
       v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
         || (byte_8B41D5 || !dword_8B41D0)

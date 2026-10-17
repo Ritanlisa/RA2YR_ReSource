@@ -1110,12 +1110,12 @@ char sub_7BC1F0(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 
   if ( a1->vt_slot_112() == 1 ) /*0x7bc1ff*/
   {
-    v7 = &BlitPlain<unsigned char>::`vftable'; /*0x7bc20a*/
+    v7 = &vt_BlitPlain_unsigned_char; /*0x7bc20a*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc218*/
   }
   else
   {
-    v7 = &BlitPlain<unsigned short>::`vftable'; /*0x7bc223*/
+    v7 = &vt_BlitPlain_unsigned_short; /*0x7bc223*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc240*/
   }
 
@@ -1130,12 +1130,12 @@ char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 
   if ( a1->vt_slot_112() == 1 ) /*0x7bc25f*/
   {
-    v7 = &BlitTrans<unsigned char>::`vftable'; /*0x7bc26a*/
+    v7 = &vt_BlitTrans_unsigned_char; /*0x7bc26a*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc278*/
   }
   else
   {
-    v7 = &BlitTrans<unsigned short>::`vftable'; /*0x7bc283*/
+    v7 = &vt_BlitTrans_unsigned_short; /*0x7bc283*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc2a0*/
   }
 

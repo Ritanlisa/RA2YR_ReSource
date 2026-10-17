@@ -35,7 +35,11 @@ struct AudioCodec;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; 
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_DSurface  // G57c2 dedup: full flat carrier DSurface_e4.hpp wins (include order verified carrier-first)
 #define GAMEMD_E4_FLAT_DSurface 1  // G57w8: twin-guard dedup, define restored
-struct DSurface { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct DSurface { void* vfptr; 
+
+    unsigned int DSurface_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    int u32_1;  // 0x1 [X55 W3 supply (render vocab)]
+};  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_DSurface
 } // namespace gamemd
 namespace gamemd {
@@ -234,7 +238,22 @@ struct BinkMovieClass;  // G57c2 dedup: fwd only -- other def lives in classes.h
 namespace gamemd {
 #if !defined(GAMEMD_E4_FLAT_CCINIClass) && !defined(GAMEMD_E4_GAP2_AUDIO_EXT)  // G57c2 + G57c9: flat carrier wins; audio-chain leak TUs (addr40: AudioList_e4 -> audio_ext -> audio.hpp -> system file family) get the gap2 rich def instead
 #ifndef GAMEMD_E4_FLAT_CCINIClass  // G57c2 dedup: full flat carrier CCINIClass_e4.hpp wins (include order verified carrier-first)
-struct CCINIClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct CCINIClass { void* vfptr; 
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_C8;  // 0xC8 [X55 W3 supply (render vocab)]
+    unsigned int u32_C4;  // 0xC4 [X55 W3 supply (render vocab)]
+    unsigned int u32_A0;  // 0xA0 [X55 W3 supply (render vocab)]
+    unsigned int u32_C0;  // 0xC0 [X55 W3 supply (render vocab)]
+    unsigned char u8_A5;  // 0xA5 [X55 W3 supply (render vocab)]
+    unsigned char u8_A6;  // 0xA6 [X55 W3 supply (render vocab)]
+    unsigned int q0A8;  // 0xA8 [X55 W3 supply (render vocab)]
+    unsigned char u8_A9;  // 0xA9 [X55 W3 supply (render vocab)]
+    unsigned char u8_AB;  // 0xAB [X55 W3 supply (render vocab)]
+    unsigned int q0B0;  // 0xB0 [X55 W3 supply (render vocab)]
+    unsigned char u8_B1;  // 0xB1 [X55 W3 supply (render vocab)]
+    unsigned int q0AC;  // 0xAC [X55 W3 supply (render vocab)]
+};  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_CCINIClass
 #endif  // GAMEMD_E4_FLAT_CCINIClass
 } // namespace gamemd

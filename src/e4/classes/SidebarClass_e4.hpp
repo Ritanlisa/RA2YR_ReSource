@@ -87,6 +87,13 @@ struct SidebarClass {
     unsigned char __pad_14DC;  // 0x14DC [X30:canon]
     char __pad_CD2[960];  // 0xCD2 [X30:member_lookup]
     unsigned int somecount_4C;  // [X30:default]
+
+
+    unsigned int __pad_1092;  // 0x1092 [X55 W3 supply (render vocab)]
+    unsigned int __pad_B8;  // 0xB8 [X55 W3 supply (render vocab)]
+    unsigned int __pad_524;  // 0x524 [X55 W3 supply (render vocab)]
+    unsigned int __pad_1452;  // 0x1452 [X55 W3 supply (render vocab)]
+    unsigned int __pad_194;  // 0x194 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

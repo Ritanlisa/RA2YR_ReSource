@@ -693,7 +693,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   this->Capacity = 0; /*0x4779f0*/
   this->IsInitialized[0] = 1; /*0x4779f3*/
   this->IsAllocated[0] = 0; /*0x4779f7*/
-  this->vfptr = (int)&VectorClass<int>::`vftable'; /*0x4779fa*/
+  this->vfptr = (int)&vt_VectorClass_int; /*0x4779fa*/
   if ( this != (DynamicVectorClass *)a2 ) /*0x477a00*/
   {
     VectorClass::Destroy((int)this); /*0x477a02*/
@@ -727,7 +727,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   }
   this->Count = a2[4]; /*0x477a51*/
   this->CapacityIncrement = a2[5]; /*0x477a57*/
-  this->vfptr = (int)&DynamicVectorClass<int>::`vftable'; /*0x477a5a*/
+  this->vfptr = (int)&vt_DynamicVectorClass_int; /*0x477a5a*/
   return &this->vfptr; /*0x477a62*/
 
 }

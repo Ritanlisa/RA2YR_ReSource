@@ -42,6 +42,11 @@ private:
     void* DrawText();  // 0x4a61c0 -- TextRenderer::DrawText
     int MeasureBuilding(int a1, int a2, int a3, int a4, int a5);  // 0x642c80 -- TextRenderer::MeasureBuilding
     // === SYMBOL-ANCHOR (END) ===
+
+
+    unsigned int u32_68;  // 0x68 [X55 W3 supply (render vocab)]
+    unsigned int u32_6C;  // 0x6C [X55 W3 supply (render vocab)]
+    unsigned int u32_50;  // 0x50 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

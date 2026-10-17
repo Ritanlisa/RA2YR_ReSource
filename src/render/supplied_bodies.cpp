@@ -1876,7 +1876,7 @@ unsigned int * PaletteClass::Load()
   CCFileClass::Construct2(&v11, (char **)this); /*0x5cb5a6*/
   if ( !(unsigned __int8)CCFileClass::Open(&v11, 0) || (v2 = (char *)CCFileClass::ReadEntireFile(&v11)) == 0 ) /*0x5cb5c5*/
   {
-    *(unsigned int *)v11.__tail_0 = &CCFileClass::`vftable'; /*0x5cb5cb*/
+    *(unsigned int *)v11.__tail_0 = &vt_CCFileClass; /*0x5cb5cb*/
     v13 = 0; /*0x5cb5d3*/
     Vector::Clear((int)v12); /*0x5cb5db*/
     *(unsigned int *)v11.__tail_0 = &off_7E1668; /*0x5cb5e4*/
@@ -1903,7 +1903,7 @@ unsigned int * PaletteClass::Load()
     v9 = ConvertClass::Construct(v8, (int)&stru_886080, (int)&stru_886080, (int)g_DSurface_Primary, 1, 0); /*0x5cb67d*/
   else
     v9 = 0; /*0x5cb681*/
-  *(unsigned int *)v11.__tail_0 = &CCFileClass::`vftable'; /*0x5cb687*/
+  *(unsigned int *)v11.__tail_0 = &vt_CCFileClass; /*0x5cb687*/
   v13 = 0; /*0x5cb68f*/
   Vector::Clear((int)v12); /*0x5cb697*/
   *(unsigned int *)v11.__tail_0 = &off_7E1668; /*0x5cb6a0*/
@@ -3508,7 +3508,7 @@ void Voxel_Section::Draw()
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v86, 0, 0); /*0x75d68c*/
-    *(unsigned int *)v86.ClearAndFree2_ph = &TypeList<AnimTypeClass const *>::`vftable'; /*0x75d69b*/
+    *(unsigned int *)v86.ClearAndFree2_ph = &vt_TypeList_AnimTypeClass_const; /*0x75d69b*/
     for ( i = strtok((char *)&v86.DynamicVector_field_0x1C, Delimiter); i; i = strtok(0, Delimiter) ) /*0x75d6ad*/
     {
       if ( !*i ) /*0x75d6af*/
@@ -3518,7 +3518,7 @@ void Voxel_Section::Draw()
         DynamicVector::Add_Alt4(&v86, &v84); /*0x75d6cc*/
     }
     TypeList::AnimTypeCopy(&v85, &v86); /*0x75d6ed*/
-    *(unsigned int *)v86.ClearAndFree2_ph = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x75d6f6*/
+    *(unsigned int *)v86.ClearAndFree2_ph = &vt_VectorClass_AnimTypeClass_const; /*0x75d6f6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v86); /*0x75d6fe*/
   }
   else
@@ -3532,7 +3532,7 @@ void Voxel_Section::Draw()
   Items = v85.Count; /*0x75d736*/
   *(unsigned int *)_ESI->__pad_118 = CapacityIncrement; /*0x75d73a*/
   *&_ESI->q018 = unknown_18; /*0x75d73f*/
-  v85.DynamicVectorClass = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x75d742*/
+  v85.DynamicVectorClass = &vt_VectorClass_AnimTypeClass_const; /*0x75d742*/
   if ( Items && v85.unknown_18 ) /*0x75d752*/
     __3_YAXPAX_Z(Items); /*0x75d755*/
   _ESI->WarheadTypeClass_field_0x120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
@@ -3760,7 +3760,7 @@ void Voxel_Section::Draw()
          128) )
   {
     DynamicVector::Constructor_VoxelAnim(&v86, 0, 0); /*0x75db12*/
-    *(unsigned int *)v86.ClearAndFree2_ph = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x75db21*/
+    *(unsigned int *)v86.ClearAndFree2_ph = &vt_TypeList_VoxelAnimTypeClass_const; /*0x75db21*/
     for ( j = strtok((char *)&v86.DynamicVector_field_0x1C, Delimiter); j; j = strtok(0, Delimiter) ) /*0x75db33*/
     {
       if ( !*j ) /*0x75db35*/
@@ -3780,14 +3780,14 @@ void Voxel_Section::Draw()
       }
     }
     Voxel_Section::Constructor((Voxel_Section *)&v85, &v86); /*0x75dba9*/
-    v85.DynamicVectorClass = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x75dbb2*/
-    *(unsigned int *)v86.ClearAndFree2_ph = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x75dbba*/
+    v85.DynamicVectorClass = &vt_TypeList_VoxelAnimTypeClass_const; /*0x75dbb2*/
+    *(unsigned int *)v86.ClearAndFree2_ph = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x75dbba*/
     Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)&v86); /*0x75dbc2*/
   }
   else
   {
     Voxel_Section::Constructor((Voxel_Section *)&v85, _ESI->DebrisTypes); /*0x75dbd4*/
-    v85.DynamicVectorClass = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x75dbd9*/
+    v85.DynamicVectorClass = &vt_TypeList_VoxelAnimTypeClass_const; /*0x75dbd9*/
   }
   if ( _ESI->DebrisTypes != (int *)&v85 ) /*0x75dbed*/
   {
@@ -3827,13 +3827,13 @@ void Voxel_Section::Draw()
   v60 = v85.?; /*0x75dc52*/
   *(unsigned int *)_ESI->__pad_1A0 = v58; /*0x75dc56*/
   *&_ESI->u32_1A4 = v59; /*0x75dc5b*/
-  v85.DynamicVectorClass = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x75dc5e*/
+  v85.DynamicVectorClass = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x75dc5e*/
   if ( v60 && v85.? ) /*0x75dc6e*/
     __3_YAXPAX_Z(v60); /*0x75dc71*/
   v79 = 0; /*0x75dc88*/
   v80 = 0; /*0x75dc8b*/
   v81 = 1; /*0x75dc8e*/
-  v78 = &VectorClass<int>::`vftable'; /*0x75dc95*/
+  v78 = &vt_VectorClass_int; /*0x75dc95*/
   if ( &v78 != &_ESI->u32_1A8 ) /*0x75dc9b*/
   {
     VectorClass::Destroy((int)&v78); /*0x75dc9f*/
@@ -3856,7 +3856,7 @@ void Voxel_Section::Draw()
   }
   p_WarheadTypeClass_field_0x24 = *(unsigned __int8 **)&_ESI->u32_1B8; /*0x75dd01*/
   LODWORD(v83) = _ESI->WarheadTypeClass_field_0x1BC[0]; /*0x75dd0c*/
-  v78 = &TypeList<int>::`vftable'; /*0x75dd0f*/
+  v78 = &vt_TypeList_int; /*0x75dd0f*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4_ESI->q024); /*0x75dd15*/
   IntList = (char *)INIClass::ReadIntList( /*0x75dd22*/
                       (INIClass *)a2,
@@ -3908,7 +3908,7 @@ void Voxel_Section::Draw()
   v68 = *((unsigned int *)IntList + 6); /*0x75dda5*/
   v69 = v85.?; /*0x75dda8*/
   *(unsigned int *)_ESI->__pad_1C0 = v68; /*0x75ddac*/
-  v85.DynamicVectorClass = &VectorClass<int>::`vftable'; /*0x75ddb1*/
+  v85.DynamicVectorClass = &vt_VectorClass_int; /*0x75ddb1*/
   if ( v69 && v85.? ) /*0x75ddc1*/
     __3_YAXPAX_Z(v69); /*0x75ddc4*/
   if ( INIClass::GetString( /*0x75dde6*/

@@ -12,5 +12,8 @@ struct E4Recv_7187A0 {
 // --- flat members (END) ---
     UnitTypeClass * *  ProcessUnitDeploymentAtCell(int a2, int a3, int a4);  // 0x7187A0
     unsigned int vtable3;  // 0x8 [X30:default]
+
+
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

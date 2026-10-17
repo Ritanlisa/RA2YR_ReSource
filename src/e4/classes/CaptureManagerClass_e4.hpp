@@ -79,6 +79,13 @@ int CaptureManagerClass_field_2C;  // 0x50 [X35-L7 kind=int]
     unsigned int u32_9C;  // 0x9C (offset-truth)
     unsigned int u32_A4;  // 0xA4 (offset-truth)
     int __pad_03C;  // 0x3C [X30:type_map]
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int q0A0;  // 0xA0 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

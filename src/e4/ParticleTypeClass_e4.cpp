@@ -288,7 +288,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x644f6d*/
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor((ParticleTypeClass *)v44, 0, 0); /*0x644f85*/
-  v44[0] = &TypeList<RGBClass>::`vftable'; /*0x644f8a*/
+  v44[0] = &vt_TypeList_RGBClass; /*0x644f8a*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4this->BarrelVoxel); /*0x644f9a*/
   RGBColorList = (unsigned int *)INIClass::ReadRGBColorList( /*0x644fac*/
                              (INIClass *)aP1,
@@ -306,7 +306,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   this->ColorList = RGBColorList[4]; /*0x644fbd*/
   this->ParticleTypeClass_field_0x2CC = RGBColorList[5]; /*0x644fc6*/
   *(unsigned int *)this->__pad_2D0 = RGBColorList[6]; /*0x644fd3*/
-  *(unsigned int *)v52.__pad_0 = &VectorClass<RGBClass>::`vftable'; /*0x644fd9*/
+  *(unsigned int *)v52.__pad_0 = &vt_VectorClass_RGBClass; /*0x644fd9*/
   FilePipe_38::ddtor(&v52); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (bool *)aP1,
@@ -657,11 +657,11 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)v3, (int)&a2); /*0x645689*/
       ParticleTypeClass::Constructor(&v3->ParticleTypeClass_2B8, 0, 0); /*0x645698*/
-      v3->ParticleTypeClass_2B8 = (VectorClass *)&TypeList<RGBClass>::`vftable'; /*0x64569d*/
-      v3->ArrayIndex = &ParticleTypeClass::`vftable'; /*0x6456a3*/
-      v3->ParticleTypeClass_field_28C = &ParticleTypeClass::`vftable'; /*0x6456a9*/
-      v3->BehavesLike = &ParticleTypeClass::`vftable'; /*0x6456b0*/
-      v3->ParticleTypeClass_field_0xC = &ParticleTypeClass::`vftable'; /*0x6456b7*/
+      v3->ParticleTypeClass_2B8 = (VectorClass *)&vt_TypeList_RGBClass; /*0x64569d*/
+      v3->ArrayIndex = &vt_ParticleTypeClass_4; /*0x6456a3*/
+      v3->ParticleTypeClass_field_28C = &vt_ParticleTypeClass_4; /*0x6456a9*/
+      v3->BehavesLike = &vt_ParticleTypeClass_4; /*0x6456b0*/
+      v3->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass_4; /*0x6456b7*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->__pad_2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/

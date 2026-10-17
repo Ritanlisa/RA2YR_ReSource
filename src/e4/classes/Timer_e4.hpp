@@ -37,5 +37,19 @@ struct Timer {
     unsigned int u32_318;  // X10 supply (member_lookup)
     unsigned int u32_4;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+
+
+    unsigned int __pad_1C;  // 0x1C [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_48;  // 0x48 [X55 W3 supply (render vocab)]
+    unsigned int u32_34;  // 0x34 [X55 W3 supply (render vocab)]
+    unsigned int u32_64;  // 0x64 [X55 W3 supply (render vocab)]
+    unsigned int q050;  // 0x50 [X55 W3 supply (render vocab)]
+    unsigned int u32_40;  // 0x40 [X55 W3 supply (render vocab)]
+    unsigned int u32_44;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int u32_28;  // 0x28 [X55 W3 supply (render vocab)]
+    unsigned int q020;  // 0x20 [X55 W3 supply (render vocab)]
+    unsigned int u32_24;  // 0x24 [X55 W3 supply (render vocab)]
+    unsigned int u32_3C;  // 0x3C [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

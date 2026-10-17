@@ -59,6 +59,13 @@ int SpawnManagerClass_field_68;  // 0x68 [X35-L7 kind=int]
     int u8_D;  // X10 supply (member_lookup)
     unsigned int u32_45;  // 0x45
     int __pad_048;  // 0x48 [X30:type_map]
+
+
+    int __pad_48;  // 0x48 [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

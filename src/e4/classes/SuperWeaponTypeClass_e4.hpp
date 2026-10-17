@@ -137,6 +137,9 @@ unsigned int q168;  // 0x168 [X35-L7 kind=unsigned int]
     AbstractClass* AbstractClass_184;  // 0x184 [X30:member_lookup]
     unsigned int ParticleSystemClass_110;  // [X30:default]
     unsigned int WarheadTypeClass_1A8;  // [X30:default]
+
+
+    unsigned int __pad_24;  // 0x24 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

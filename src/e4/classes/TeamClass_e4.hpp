@@ -134,6 +134,11 @@ int unknown44;  // 0x44 [X35-L7 kind=int]
     unsigned int ParticleSystemClass_110;  // [X30:default]
     unsigned int vfptr;  // [X30:default]
     unsigned int vfptr2;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int q21C;  // 0x21C [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

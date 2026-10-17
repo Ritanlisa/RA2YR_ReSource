@@ -18,5 +18,9 @@ struct E4Recv_528220 {
     unsigned int attachedBomb;  // [X30:default]
     unsigned int fallRate;  // [X30:default]
     unsigned int owningHouseIndex;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

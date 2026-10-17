@@ -42,10 +42,10 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   this->ScoreScreen_field_0x08 = 0; /*0x690a1c*/
   this->ScoreScreen_field_0x0C = 0; /*0x690a1f*/
   this->ScoreScreen_field_0x14 = 0; /*0x690a22*/
-  *(unsigned int *)this->__pad_0 = &ScoreFontClass::`vftable'; /*0x690a25*/
+  *(unsigned int *)this->__pad_0 = &vt_ScoreFontClass; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
-  *(unsigned int *)this->__pad_0 = &ScoreFullFontClass::`vftable'; /*0x690a44*/
+  *(unsigned int *)this->__pad_0 = &vt_ScoreFullFontClass; /*0x690a44*/
   LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690a4a*/
   v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
@@ -56,7 +56,7 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
-    *(unsigned int *)v5.__tail_0 = &CCFileClass::`vftable'; /*0x690a91*/
+    *(unsigned int *)v5.__tail_0 = &vt_CCFileClass; /*0x690a91*/
     v7 = 0; /*0x690a99*/
     Vector::Clear((int)v6); /*0x690a9d*/
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690aa6*/
@@ -83,10 +83,10 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->ScoreScreen_field_0x08 = 0; /*0x690aec*/
   this->ScoreScreen_field_0x0C = 0; /*0x690aef*/
   this->ScoreScreen_field_0x14 = 0; /*0x690af2*/
-  *(unsigned int *)this->__pad_0 = &ScoreFontClass::`vftable'; /*0x690af5*/
+  *(unsigned int *)this->__pad_0 = &vt_ScoreFontClass; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++dword_B0558C; /*0x690b0c*/
-  *(unsigned int *)this->__pad_0 = &ScoreBigFontClass::`vftable'; /*0x690b14*/
+  *(unsigned int *)this->__pad_0 = &vt_ScoreBigFontClass; /*0x690b14*/
   LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690b1a*/
   v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
@@ -97,7 +97,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
-    *(unsigned int *)v5.__tail_0 = &CCFileClass::`vftable'; /*0x690b61*/
+    *(unsigned int *)v5.__tail_0 = &vt_CCFileClass; /*0x690b61*/
     v7 = 0; /*0x690b69*/
     Vector::Clear((int)v6); /*0x690b6d*/
     *(unsigned int *)v5.__tail_0 = &off_7E1668; /*0x690b76*/

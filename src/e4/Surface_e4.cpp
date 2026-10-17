@@ -298,7 +298,7 @@ int sub_626C60()
     if ( v2 ) /*0x626c98*/
     {
       StringVector::Construct(v2, 0, 0); /*0x626ca0*/
-      *v3 = &DynamicVectorClass<char *>::`vftable'; /*0x626caa*/
+      *v3 = &vt_DynamicVectorClass_char; /*0x626caa*/
       v3->u32_14 = 10; /*0x626cb0*/
       v3->q010 = 0; /*0x626cb3*/
     }
@@ -312,7 +312,7 @@ int sub_626C60()
     if ( v4 ) /*0x626cd4*/
     {
       VectorClass::ConstructHSV(v4, 0, 0); /*0x626cdc*/
-      *v5 = &DynamicVectorClass<HSVClass>::`vftable'; /*0x626ce1*/
+      *v5 = &vt_DynamicVectorClass_HSVClass; /*0x626ce1*/
       v5->u32_14 = 10; /*0x626ce7*/
       v5->q010 = 0; /*0x626cea*/
     }
@@ -414,7 +414,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
       0,
       1);
     (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x641e74*/
-    *(unsigned int *)v9.__tail_0 = &CCFileClass::`vftable'; /*0x641e7a*/
+    *(unsigned int *)v9.__tail_0 = &vt_CCFileClass; /*0x641e7a*/
     v11 = 0; /*0x641e82*/
     Vector::Clear((int)v10); /*0x641e8a*/
     *(unsigned int *)v9.__tail_0 = &off_7E1668; /*0x641e93*/
@@ -424,7 +424,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
   else
   {
 LABEL_11:
-    *(unsigned int *)v9.__tail_0 = &CCFileClass::`vftable'; /*0x641eaf*/
+    *(unsigned int *)v9.__tail_0 = &vt_CCFileClass; /*0x641eaf*/
     v11 = 0; /*0x641eb7*/
     Vector::Clear((int)v10); /*0x641ebf*/
     *(unsigned int *)v9.__tail_0 = &off_7E1668; /*0x641ec8*/

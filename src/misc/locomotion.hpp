@@ -221,6 +221,9 @@ protected:
 
     unsigned int u32_18;  // X10 supply (member_lookup)
     unsigned int u32_54;  // X10 supply (member_lookup)
+
+
+    unsigned char __pad_50;  // 0x50 [X55 W3 supply (render vocab)]
 };
 
 //============================================================================
@@ -316,6 +319,11 @@ protected:
     // === FUNCS-MOVE (END) ===
 
     void* vtable3;  // X10 supply (csp_canon_members)
+
+
+    unsigned int q044;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int q080;  // 0x80 [X55 W3 supply (render vocab)]
+    int q598;  // 0x598 [X55 W3 supply (render vocab)]
 };
 static_assert(sizeof(DriveLocomotionClass) == 0x70, "DriveLocomotionClass size");
 
@@ -1010,6 +1018,9 @@ public:
 protected:
     TeleportLocomotionClass() = default; // IDA 0x718000 -- TeleportLocomotionClass::TeleportLocomotionClass; 0x718000
     explicit TeleportLocomotionClass(noinit_t) noexcept;  // 0x718000
+
+
+    unsigned int u32_48;  // 0x48 [X55 W3 supply (render vocab)]
 };
 
 //============================================================================

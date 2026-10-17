@@ -167,7 +167,7 @@ int sub_6269A0()
       if ( v4 ) /*0x6269d7*/
       {
         StringVector::Construct(v4, 0, 0); /*0x6269df*/
-        *(unsigned int *)v5->__pad_0 = &DynamicVectorClass<char *>::`vftable'; /*0x6269e4*/
+        *(unsigned int *)v5->__pad_0 = &vt_DynamicVectorClass_char; /*0x6269e4*/
         v5->StringVector_field_0x14 = 10; /*0x6269ea*/
         v5->StringVector_field_0x10 = 0; /*0x6269f1*/
       }
@@ -181,7 +181,7 @@ int sub_6269A0()
       if ( v6 ) /*0x626a0d*/
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626a15*/
-        v7->vfptr = &DynamicVectorClass<HSVClass>::`vftable'; /*0x626a1a*/
+        v7->vfptr = &vt_DynamicVectorClass_HSVClass; /*0x626a1a*/
         v7[1].Items = (void *)10; /*0x626a20*/
         v7[1].vfptr = 0; /*0x626a27*/
       }
@@ -258,7 +258,7 @@ char sub_626AB0(const char * a1, int a2)
       if ( v4 ) /*0x626af9*/
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
-        *(unsigned int *)v5->__pad_0 = &DynamicVectorClass<char *>::`vftable'; /*0x626b06*/
+        *(unsigned int *)v5->__pad_0 = &vt_DynamicVectorClass_char; /*0x626b06*/
         v5->StringVector_field_0x14 = 10; /*0x626b0c*/
         v5->StringVector_field_0x10 = 0; /*0x626b0f*/
       }
@@ -272,7 +272,7 @@ char sub_626AB0(const char * a1, int a2)
       if ( v6 ) /*0x626b2b*/
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
-        v7->vfptr = (int)&DynamicVectorClass<HSVClass>::`vftable'; /*0x626b38*/
+        v7->vfptr = (int)&vt_DynamicVectorClass_HSVClass; /*0x626b38*/
         v7[1].Items = 10; /*0x626b3e*/
         v7[1].vfptr = 0; /*0x626b41*/
       }
@@ -541,7 +541,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
     inited = 0; /*0x7668ba*/
   }
   ComPtr::Constructor((ComPtr *)this); /*0x7668be*/
-  *(unsigned int *)this = &rc_ptr<WorldDominationTour::ValueGameOption<unsigned char>>::`vftable'; /*0x7668c5*/
+  *(unsigned int *)this = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x7668c5*/
   ComPtr::Set((ComPtr *)this, (int)inited); /*0x7668cc*/
   DeleteAndZero((ObjectClass *)&a4); /*0x7668d5*/
   return this; /*0x7668dc*/

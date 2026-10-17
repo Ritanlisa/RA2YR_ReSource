@@ -19,5 +19,8 @@ struct E4Recv_45E8B0 {
     int  sub_45E8B0(int a2, int a3, int a4, int a5);  // 0x45E8B0
 
     unsigned int u32_524;  // X10 supply (member_lookup)
+
+
+    unsigned int u32_F08;  // 0xF08 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

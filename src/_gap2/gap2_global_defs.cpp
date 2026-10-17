@@ -7569,7 +7569,7 @@ void Gap2Recv_569760::DestroyCliffMap(int a2, int a3, IUnknown * aP3) {
   VectorClass::CellConstructor((VectorClass *)&v81, 0, 0); /*0x5697c5*/
   v7 = g_TerrainSoundTable2; /*0x5697ce*/
   v8 = g_TerrainSoundConfig; /*0x5697d4*/
-  *(unsigned int *)v81.__pad_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5697dd*/
+  *(unsigned int *)v81.__pad_0 = &vt_DynamicVectorClass_Cell; /*0x5697dd*/
   v82 = 10; /*0x5697e5*/
   *(unsigned int *)v81.__tail_10 = 0; /*0x5697f4*/
   for ( i = 1; i < 30; ++i ) /*0x5697fc*/
@@ -7762,7 +7762,7 @@ LABEL_44:
   }
   if ( i == 30 ) /*0x569d93*/
   {
-    *(unsigned int *)v81.__pad_0 = &VectorClass<Cell>::`vftable'; /*0x569d99*/
+    *(unsigned int *)v81.__pad_0 = &vt_VectorClass_Cell; /*0x569d99*/
     Buffer::Cleanup(&v81); /*0x569da1*/
   }
   else
@@ -7873,7 +7873,7 @@ LABEL_44:
       Terrain::ConnectivityGraph((Terrain *)this); /*0x56a032*/
     if ( *(unsigned int *)v81.__tail_10 ) /*0x56a03d*/
       LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v81); /*0x56a048*/
-    *(unsigned int *)v81.__pad_0 = &VectorClass<Cell>::`vftable'; /*0x56a051*/
+    *(unsigned int *)v81.__pad_0 = &vt_VectorClass_Cell; /*0x56a051*/
     if ( *(unsigned int *)&v81.u16_4 ) /*0x56a05b*/
     {
       if ( BYTE1(v81.m_C) ) /*0x56a063*/
@@ -9560,7 +9560,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
   v6 = 1 << (a3 + 1); /*0x5840d6*/
   v48 = v6; /*0x5840e3*/
   WordVector::Constructor(&v59, 0, 0); /*0x5840e7*/
-  v59 = (WordVector)&DynamicVectorClass<unsigned short>::`vftable'; /*0x5840f0*/
+  v59 = (WordVector)&vt_DynamicVectorClass_unsigned_short_7E3844; /*0x5840f0*/
   v64 = 10; /*0x5840fa*/
   v63 = 0; /*0x584102*/
   if ( Block && v62 ) /*0x58410e*/
@@ -9713,7 +9713,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
           }
           if ( v53 == *(unsigned short *)(this->estimatedHealth + 2 * (a3 + 4 * v29 + v29)) && !v50[j] ) /*0x58441c*/
           {
-            v59 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x584522*/
+            v59 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x584522*/
             if ( Block && v62 ) /*0x584534*/
               __3_YAXPAX_Z(Block); /*0x584537*/
             return 1; /*0x584542*/
@@ -9770,7 +9770,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
     }
     while ( v37 ); /*0x5844ef*/
   }
-  v59 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x5844f5*/
+  v59 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x5844f5*/
   if ( Block ) /*0x5844ff*/
   {
     if ( v62 ) /*0x584507*/
@@ -10253,13 +10253,13 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
 
   v37 = (LayerClass *)this; /*0x585941*/
   VectorClass::CellConstructor((VectorClass *)&v41, 0, 0); /*0x585945*/
-  *(unsigned int *)v41.__pad_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x585958*/
+  *(unsigned int *)v41.__pad_0 = &vt_DynamicVectorClass_Cell; /*0x585958*/
   v42 = 10; /*0x58595c*/
   *(unsigned int *)v41.__tail_10 = 0; /*0x585960*/
   Buffer::Cleanup(&v41); /*0x585964*/
   v42 = 100; /*0x58596f*/
   VectorClass::CellConstructor((VectorClass *)&v39, 0, 0); /*0x585977*/
-  *(unsigned int *)v39.__pad_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x585980*/
+  *(unsigned int *)v39.__pad_0 = &vt_DynamicVectorClass_Cell; /*0x585980*/
   v40 = 10; /*0x585984*/
   *(unsigned int *)v39.__tail_10 = 0; /*0x585988*/
   Buffer::Cleanup(&v39); /*0x58598c*/
@@ -10415,9 +10415,9 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
     }
     ++v28; /*0x585cc7*/
   }
-  *(unsigned int *)v39.__pad_0 = &VectorClass<Cell>::`vftable'; /*0x585cd9*/
+  *(unsigned int *)v39.__pad_0 = &vt_VectorClass_Cell; /*0x585cd9*/
   Buffer::Cleanup(&v39); /*0x585cdd*/
-  *(unsigned int *)v41.__pad_0 = &VectorClass<Cell>::`vftable'; /*0x585ce6*/
+  *(unsigned int *)v41.__pad_0 = &vt_VectorClass_Cell; /*0x585ce6*/
   Buffer::Cleanup(&v41); /*0x585cea*/
 
 }
@@ -10468,7 +10468,7 @@ void Gap2Recv_5868A0::UpdateAreaConnectivityMap(IUnknown * v35) {
   Block = 0; /*0x5868bc*/
   v12 = 0; /*0x5868c0*/
   LOWORD(v13) = 1; /*0x5868c4*/
-  v10 = (int)&DynamicVectorClass<Cell>::`vftable'; /*0x5868cd*/
+  v10 = (int)&vt_DynamicVectorClass_Cell; /*0x5868cd*/
   v15 = 10; /*0x5868d5*/
   v14 = 0; /*0x5868d9*/
   if ( v7 ) /*0x5868dd*/
@@ -10506,7 +10506,7 @@ LABEL_11:
   }
 LABEL_13:
   LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v10); /*0x58695a*/
-  v10 = (int)&VectorClass<Cell>::`vftable'; /*0x58696c*/
+  v10 = (int)&vt_VectorClass_Cell; /*0x58696c*/
   if ( Block ) /*0x586977*/
   {
     if ( BYTE1(v13) ) /*0x58697f*/
@@ -12085,7 +12085,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   v26[2] = dword_87F8EC - 8; /*0x5948ac*/
   v26[3] = dword_87F8F0 - 8; /*0x5948b0*/
   VectorClass::CellConstructor(&v27, 0, 0); /*0x5948b4*/
-  v27.vfptr = (int)&DynamicVectorClass<Cell>::`vftable'; /*0x5948b9*/
+  v27.vfptr = (int)&vt_DynamicVectorClass_Cell; /*0x5948b9*/
   v29 = 10; /*0x5948c1*/
   v28 = 0; /*0x5948c9*/
   do /*0x5948f1*/
@@ -12161,13 +12161,13 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
       (**(void (***)(int, int))this->vfptr)(this->vfptr, 1); /*0x594b21*/
     Items = (void *)v27.Items; /*0x594b23*/
     this->vfptr = (int)v9; /*0x594b27*/
-    v27.vfptr = (int)&VectorClass<Cell>::`vftable'; /*0x594b2b*/
+    v27.vfptr = (int)&vt_VectorClass_Cell; /*0x594b2b*/
     if ( Items && v27.IsAllocated[0] ) /*0x594b3b*/
       __3_YAXPAX_Z(Items); /*0x594b3e*/
   }
   else
   {
-    v27.vfptr = (int)&VectorClass<Cell>::`vftable'; /*0x594a29*/
+    v27.vfptr = (int)&vt_VectorClass_Cell; /*0x594a29*/
     if ( v27.Items ) /*0x594a33*/
     {
       if ( v27.IsAllocated[0] ) /*0x594a3f*/
@@ -12300,12 +12300,12 @@ void* Gap2Recv_597430::Team_Start_597430() {
   rc_ptr v8[4]; // [esp+14h] [ebp-8h] BYREF
 
   ComPtr::Constructor((ComPtr *)&v6); /*0x59743c*/
-  v6 = &rc_ptr<WDTTerritory>::`vftable'; /*0x59744e*/
+  v6 = &vt_rc_ptr_WDTTerritory; /*0x59744e*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x59745f*/
   {
     WDTTerritoryClass = FindWDTTerritoryClass(v8, *(int *)dword_A8B240); /*0x59746b*/
     ComPtr::Set((ComPtr *)&v6, WDTTerritoryClass->u32_4); /*0x597478*/
-    *(unsigned int *)v8 = &rc_ptr<WDTTerritory>::`vftable'; /*0x597481*/
+    *(unsigned int *)v8 = &vt_rc_ptr_WDTTerritory; /*0x597481*/
     ComPtr::Release((ComPtr *)v8); /*0x597485*/
   }
   v3 = v7; /*0x59748a*/
@@ -12379,7 +12379,7 @@ void* Gap2Recv_597430::Team_Start_597430() {
     this->customSound_controller[4] = *(unsigned __int8 *)(v3 + 54); /*0x597593*/
     this->ambientSoundController[1] = *(unsigned int *)(v3 + 24); /*0x597599*/
   }
-  v6 = &rc_ptr<WDTTerritory>::`vftable'; /*0x5975a0*/
+  v6 = &vt_rc_ptr_WDTTerritory; /*0x5975a0*/
   return ComPtr::Release((ComPtr *)&v6); /*0x5975a9*/
 
 }
@@ -13332,7 +13332,7 @@ void Gap2Recv_5A82E0::ScatterMapSeedBuildings(void* a2) {
   StringVector::Construct(&v36, 0, 0); /*0x5a8368*/
   StringVector_field_0x08 = v36.StringVector_field_0x08; /*0x5a836d*/
   StringVector_field_0x14 = 10; /*0x5a8371*/
-  *(unsigned int *)v36.__pad_0 = &DynamicVectorClass<char *>::`vftable'; /*0x5a8376*/
+  *(unsigned int *)v36.__pad_0 = &vt_DynamicVectorClass_char; /*0x5a8376*/
   v36.StringVector_field_0x14 = 10; /*0x5a837e*/
   v36.StringVector_field_0x10 = 0; /*0x5a8382*/
   v8 = off_82B1B0; /*0x5a8386*/
@@ -13475,7 +13475,7 @@ LABEL_47:
     }
     while ( v34 < (int)v12 ); /*0x5a86e5*/
   }
-  *(unsigned int *)v36.__pad_0 = &VectorClass<char *>::`vftable'; /*0x5a86f4*/
+  *(unsigned int *)v36.__pad_0 = &vt_VectorClass_char; /*0x5a86f4*/
   if ( v36.StringVector_field_0x04 ) /*0x5a86fd*/
   {
     if ( BYTE1(v36.StringVector_field_0x0C) ) /*0x5a8705*/
@@ -20699,7 +20699,7 @@ int RulesClass::ResetRules() {
     GenericNode::Constructor((MixFileClass *)v19.sectionHead); /*0x668a86*/
     GenericNode::Constructor((MixFileClass *)&v19.sectionCount); /*0x668a8f*/
     LinkedList::Prepend((LinkedList *)v19.sectionHead, (int)&v19.sectionCount); /*0x668aa5*/
-    v19.headNode[2] = (int)&List<INIClass::INISection *>::`vftable'; /*0x668ab6*/
+    v19.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x668ab6*/
     memset(&v19.needsSave_flag, 0, 13); /*0x668abe*/
     memset(&v19.unknown38, 0, 9); /*0x668acf*/
     *(unsigned int *)v19.__pad_0 = &CCINIClass_Vtable; /*0x668adc*/
@@ -20739,7 +20739,7 @@ int RulesClass::ResetRules() {
     RulesClass::Addition(v17); /*0x668baa*/
   }
 LABEL_99:
-  *(unsigned int *)v20.__tail_0 = &CCFileClass::`vftable'; /*0x668baf*/
+  *(unsigned int *)v20.__tail_0 = &vt_CCFileClass; /*0x668baf*/
   v22 = 0; /*0x668bbe*/
   Vector::Clear((int)v21); /*0x668bc5*/
   *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x668bce*/
@@ -22838,7 +22838,7 @@ LABEL_27:
                 *((unsigned char *)v25 + 36) = 0; /*0x68fef0*/
                 v25[6] = v23; /*0x68fef7*/
                 v25[10] = v35; /*0x68fefa*/
-                *v25 = &ScorePrintClass::`vftable'; /*0x68fefd*/
+                *v25 = &vt_ScorePrintClass; /*0x68fefd*/
                 v26 = (unsigned int)v25; /*0x68ff03*/
               }
               else
@@ -31813,7 +31813,7 @@ void* Gap2Recv_765380::FindWDTTerritoryClass_Find(void* a2, int a3) {
 
   v6 = &this->u8_18; /*0x765387*/
   v7 = 0; /*0x76538f*/
-  v5 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x765397*/
+  v5 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x765397*/
   if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
   {
     do /*0x7653db*/
@@ -31827,7 +31827,7 @@ void* Gap2Recv_765380::FindWDTTerritoryClass_Find(void* a2, int a3) {
   v4 = v7; /*0x7653ea*/
   a2[1] = v6; /*0x7653ef*/
   a2[2] = v4; /*0x7653f2*/
-  *a2 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x7653f5*/
+  *a2 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x7653f5*/
   return a2; /*0x7653ee*/
 
 }

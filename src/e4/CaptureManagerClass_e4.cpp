@@ -826,13 +826,13 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
     {
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x47274b*/
       CaptureManagerClass::Constructor_473140(&v3->controlNodes, 0, 0); /*0x472757*/
-      v3->controlNodes = (int)&DynamicVectorClass<ControlNode *>::`vftable'; /*0x47275c*/
+      v3->controlNodes = (int)&vt_DynamicVectorClass_ControlNode; /*0x47275c*/
       *(unsigned int *)v3->CaptureManagerClass_field_30 = 10; /*0x472762*/
       v3->originalOwner = 0; /*0x472769*/
-      v3->vfptr = (int)&CaptureManagerClass::`vftable'; /*0x47276c*/
-      v3->vfptr1 = (int)&CaptureManagerClass::`vftable'; /*0x472773*/
-      v3->vfptr2 = (int)&CaptureManagerClass::`vftable'; /*0x47277a*/
-      v3->vfptr3 = (int)&CaptureManagerClass::`vftable'; /*0x472781*/
+      v3->vfptr = (int)&vt_CaptureManagerClass_4; /*0x47276c*/
+      v3->vfptr1 = (int)&vt_CaptureManagerClass_4; /*0x472773*/
+      v3->vfptr2 = (int)&vt_CaptureManagerClass_4; /*0x47277a*/
+      v3->vfptr3 = (int)&vt_CaptureManagerClass_4; /*0x472781*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->overloadCount); /*0x472791*/
     v6 = *v2; /*0x472796*/

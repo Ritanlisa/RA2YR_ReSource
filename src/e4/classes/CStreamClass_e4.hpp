@@ -40,6 +40,16 @@ struct CStreamClass {
     void* __pad_008;  // 0x8 [X30:type_map]
     int __pad_011;  // 0x11 [X30:type_map]
     unsigned char __pad_01A;  // 0x1A [X30:canon]
+
+
+    int CStreamClass_field_0x08;  // 0x8 [X55 W3 supply (render vocab)]
+    int CStreamClass_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
+    unsigned int CStreamClass_field_0x18;  // 0x18 [X55 W3 supply (render vocab)]
+    unsigned int CStreamClass_field_0x20;  // 0x20 [X55 W3 supply (render vocab)]
+    unsigned int CStreamClass_field_0x1C;  // 0x1C [X55 W3 supply (render vocab)]
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int CStreamClass_field_0x04;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int CStreamClass_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

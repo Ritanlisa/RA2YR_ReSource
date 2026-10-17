@@ -563,7 +563,7 @@ int InitCommands()
     v1 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532166*/
     if ( v1 ) /*0x532170*/
     {
-      *v1 = &MultiplayerDebugCommandClass::`vftable'; /*0x532172*/
+      *v1 = &vt_MultiplayerDebugCommandClass; /*0x532172*/
       v2 = v1; /*0x532178*/
     }
     else
@@ -584,7 +584,7 @@ int InitCommands()
     v4 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5321d2*/
     if ( v4 ) /*0x5321dc*/
     {
-      *v4 = &MultiplayerSyncCommandClass::`vftable'; /*0x5321de*/
+      *v4 = &vt_MultiplayerSyncCommandClass; /*0x5321de*/
       v5 = v4; /*0x5321e4*/
     }
     else
@@ -606,7 +606,7 @@ int InitCommands()
   v7 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53223f*/
   if ( v7 ) /*0x532249*/
   {
-    *v7 = &FollowCommandClass::`vftable'; /*0x53224b*/
+    *v7 = &vt_FollowCommandClass; /*0x53224b*/
     v8 = v7; /*0x532251*/
   }
   else
@@ -627,7 +627,7 @@ int InitCommands()
   v10 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5322ac*/
   if ( v10 ) /*0x5322b6*/
   {
-    *v10 = &View1CommandClass::`vftable'; /*0x5322b8*/
+    *v10 = &vt_View1CommandClass; /*0x5322b8*/
     v11 = v10; /*0x5322be*/
   }
   else
@@ -648,7 +648,7 @@ int InitCommands()
   v13 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532319*/
   if ( v13 ) /*0x532323*/
   {
-    *v13 = &View2CommandClass::`vftable'; /*0x532325*/
+    *v13 = &vt_View2CommandClass; /*0x532325*/
     v14 = v13; /*0x53232b*/
   }
   else
@@ -669,7 +669,7 @@ int InitCommands()
   v16 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532386*/
   if ( v16 ) /*0x532390*/
   {
-    *v16 = &View3CommandClass::`vftable'; /*0x532392*/
+    *v16 = &vt_View3CommandClass; /*0x532392*/
     v17 = v16; /*0x532398*/
   }
   else
@@ -690,7 +690,7 @@ int InitCommands()
   v19 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5323f3*/
   if ( v19 ) /*0x5323fd*/
   {
-    *v19 = &View4CommandClass::`vftable'; /*0x5323ff*/
+    *v19 = &vt_View4CommandClass; /*0x5323ff*/
     v20 = v19; /*0x532405*/
   }
   else
@@ -711,7 +711,7 @@ int InitCommands()
   v22 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532460*/
   if ( v22 ) /*0x53246a*/
   {
-    *v22 = &SetView1CommandClass::`vftable'; /*0x53246c*/
+    *v22 = &vt_SetView1CommandClass; /*0x53246c*/
     v23 = v22; /*0x532472*/
   }
   else
@@ -732,7 +732,7 @@ int InitCommands()
   v25 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5324cd*/
   if ( v25 ) /*0x5324d7*/
   {
-    *v25 = &SetView2CommandClass::`vftable'; /*0x5324d9*/
+    *v25 = &vt_SetView2CommandClass; /*0x5324d9*/
     v26 = v25; /*0x5324df*/
   }
   else
@@ -753,7 +753,7 @@ int InitCommands()
   v28 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53253a*/
   if ( v28 ) /*0x532544*/
   {
-    *v28 = &SetView3CommandClass::`vftable'; /*0x532546*/
+    *v28 = &vt_SetView3CommandClass; /*0x532546*/
     v29 = v28; /*0x53254c*/
   }
   else
@@ -774,7 +774,7 @@ int InitCommands()
   v31 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5325a7*/
   if ( v31 ) /*0x5325b1*/
   {
-    *v31 = &SetView4CommandClass::`vftable'; /*0x5325b3*/
+    *v31 = &vt_SetView4CommandClass; /*0x5325b3*/
     v32 = v31; /*0x5325b9*/
   }
   else
@@ -795,7 +795,7 @@ int InitCommands()
   v34 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532614*/
   if ( v34 ) /*0x53261e*/
   {
-    *v34 = &OptionsCommandClass::`vftable'; /*0x532620*/
+    *v34 = &vt_OptionsCommandClass; /*0x532620*/
     v175 = v34; /*0x532626*/
   }
   else
@@ -816,7 +816,7 @@ int InitCommands()
   v36 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532689*/
   if ( v36 ) /*0x532693*/
   {
-    *v36 = &SidebarUpCommandClass::`vftable'; /*0x532695*/
+    *v36 = &vt_SidebarUpCommandClass; /*0x532695*/
     v37 = v36; /*0x53269b*/
   }
   else
@@ -837,7 +837,7 @@ int InitCommands()
   v39 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5326f5*/
   if ( v39 ) /*0x5326ff*/
   {
-    *v39 = &SidebarDownCommandClass::`vftable'; /*0x532701*/
+    *v39 = &vt_SidebarDownCommandClass; /*0x532701*/
     v40 = v39; /*0x532707*/
   }
   else
@@ -858,7 +858,7 @@ int InitCommands()
   v42 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532762*/
   if ( v42 ) /*0x53276c*/
   {
-    *v42 = &CenterREventCommandClass::`vftable'; /*0x53276e*/
+    *v42 = &vt_CenterREventCommandClass; /*0x53276e*/
     v176 = v42; /*0x532774*/
   }
   else
@@ -879,7 +879,7 @@ int InitCommands()
   v44 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5327d7*/
   if ( v44 ) /*0x5327e1*/
   {
-    *v44 = &BeaconPlacementCommandClass::`vftable'; /*0x5327e3*/
+    *v44 = &vt_BeaconPlacementCommandClass; /*0x5327e3*/
     v45 = v44; /*0x5327e9*/
   }
   else
@@ -900,7 +900,7 @@ int InitCommands()
   v47 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532843*/
   if ( v47 ) /*0x53284d*/
   {
-    *v47 = &ToggleSellCommandClass::`vftable'; /*0x53284f*/
+    *v47 = &vt_ToggleSellCommandClass; /*0x53284f*/
     v48 = v47; /*0x532855*/
   }
   else
@@ -921,7 +921,7 @@ int InitCommands()
   v50 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5328b0*/
   if ( v50 ) /*0x5328ba*/
   {
-    *v50 = &ToggleRepairCommandClass::`vftable'; /*0x5328bc*/
+    *v50 = &vt_ToggleRepairCommandClass; /*0x5328bc*/
     v51 = v50; /*0x5328c2*/
   }
   else
@@ -942,7 +942,7 @@ int InitCommands()
   v53 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53291d*/
   if ( v53 ) /*0x532927*/
   {
-    *v53 = &AllianceCommandClass::`vftable'; /*0x532929*/
+    *v53 = &vt_AllianceCommandClass; /*0x532929*/
     v54 = v53; /*0x53292f*/
   }
   else
@@ -963,7 +963,7 @@ int InitCommands()
   v56 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53298a*/
   if ( v56 ) /*0x532994*/
   {
-    *v56 = &CenterBaseCommandClass::`vftable'; /*0x532996*/
+    *v56 = &vt_CenterBaseCommandClass; /*0x532996*/
     v57 = v56; /*0x53299c*/
   }
   else
@@ -984,7 +984,7 @@ int InitCommands()
   v59 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5329f7*/
   if ( v59 ) /*0x532a01*/
   {
-    *v59 = &CenterViewCommandClass::`vftable'; /*0x532a03*/
+    *v59 = &vt_CenterViewCommandClass; /*0x532a03*/
     v60 = v59; /*0x532a09*/
   }
   else
@@ -1005,7 +1005,7 @@ int InitCommands()
   v62 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532a64*/
   if ( v62 ) /*0x532a6e*/
   {
-    *v62 = &ScatterCommandClass::`vftable'; /*0x532a70*/
+    *v62 = &vt_ScatterCommandClass; /*0x532a70*/
     v63 = v62; /*0x532a76*/
   }
   else
@@ -1026,7 +1026,7 @@ int InitCommands()
   v65 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532ad1*/
   if ( v65 ) /*0x532adb*/
   {
-    *v65 = &GuardCommandClass::`vftable'; /*0x532add*/
+    *v65 = &vt_GuardCommandClass; /*0x532add*/
     v66 = v65; /*0x532ae3*/
   }
   else
@@ -1047,7 +1047,7 @@ int InitCommands()
   v68 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532b3e*/
   if ( v68 ) /*0x532b48*/
   {
-    *v68 = &StopCommandClass::`vftable'; /*0x532b4a*/
+    *v68 = &vt_StopCommandClass; /*0x532b4a*/
     v69 = v68; /*0x532b50*/
   }
   else
@@ -1068,7 +1068,7 @@ int InitCommands()
   v71 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532bab*/
   if ( v71 ) /*0x532bb5*/
   {
-    *v71 = &AllToCheerCommandClass::`vftable'; /*0x532bb7*/
+    *v71 = &vt_AllToCheerCommandClass; /*0x532bb7*/
     v72 = v71; /*0x532bbd*/
   }
   else
@@ -1089,7 +1089,7 @@ int InitCommands()
   v74 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532c18*/
   if ( v74 ) /*0x532c22*/
   {
-    *v74 = &DeployCommandClass::`vftable'; /*0x532c24*/
+    *v74 = &vt_DeployCommandClass; /*0x532c24*/
     v75 = v74; /*0x532c2a*/
   }
   else
@@ -1110,7 +1110,7 @@ int InitCommands()
   v77 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532c85*/
   if ( v77 ) /*0x532c8f*/
   {
-    *v77 = &PrevObjectCommandClass::`vftable'; /*0x532c91*/
+    *v77 = &vt_PrevObjectCommandClass; /*0x532c91*/
     v78 = v77; /*0x532c97*/
   }
   else
@@ -1131,7 +1131,7 @@ int InitCommands()
   v80 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532cf2*/
   if ( v80 ) /*0x532cfc*/
   {
-    *v80 = &NextObjectCommandClass::`vftable'; /*0x532cfe*/
+    *v80 = &vt_NextObjectCommandClass; /*0x532cfe*/
     v81 = v80; /*0x532d04*/
   }
   else
@@ -1152,7 +1152,7 @@ int InitCommands()
   v83 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532d5f*/
   if ( v83 ) /*0x532d69*/
   {
-    *v83 = &PlanningModeCommandClass::`vftable'; /*0x532d6b*/
+    *v83 = &vt_PlanningModeCommandClass; /*0x532d6b*/
     v84 = v83; /*0x532d71*/
   }
   else
@@ -1173,7 +1173,7 @@ int InitCommands()
   v86 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532dcc*/
   if ( v86 ) /*0x532dd6*/
   {
-    *v86 = &CombatantSelectCommandClass::`vftable'; /*0x532dd8*/
+    *v86 = &vt_CombatantSelectCommandClass; /*0x532dd8*/
     v87 = v86; /*0x532dde*/
   }
   else
@@ -1194,7 +1194,7 @@ int InitCommands()
   v89 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532e39*/
   if ( v89 ) /*0x532e43*/
   {
-    *v89 = &TypeSelectCommandClass::`vftable'; /*0x532e45*/
+    *v89 = &vt_TypeSelectCommandClass; /*0x532e45*/
     v90 = v89; /*0x532e4b*/
   }
   else
@@ -1215,7 +1215,7 @@ int InitCommands()
   v92 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532ea6*/
   if ( v92 ) /*0x532eb0*/
   {
-    *v92 = &HealthNavCommandClass::`vftable'; /*0x532eb2*/
+    *v92 = &vt_HealthNavCommandClass; /*0x532eb2*/
     v93 = v92; /*0x532eb8*/
   }
   else
@@ -1236,7 +1236,7 @@ int InitCommands()
   v95 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532f13*/
   if ( v95 ) /*0x532f1d*/
   {
-    *v95 = &VeterancyNavCommandClass::`vftable'; /*0x532f1f*/
+    *v95 = &vt_VeterancyNavCommandClass; /*0x532f1f*/
     v96 = v95; /*0x532f25*/
   }
   else
@@ -1257,7 +1257,7 @@ int InitCommands()
   v98 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532f80*/
   if ( v98 ) /*0x532f8a*/
   {
-    *v98 = &SetStructureTabCommandClass::`vftable'; /*0x532f8c*/
+    *v98 = &vt_SetStructureTabCommandClass; /*0x532f8c*/
     v99 = v98; /*0x532f92*/
   }
   else
@@ -1278,7 +1278,7 @@ int InitCommands()
   v101 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x532fed*/
   if ( v101 ) /*0x532ff7*/
   {
-    *v101 = &SetDefenseTabCommandClass::`vftable'; /*0x532ff9*/
+    *v101 = &vt_SetDefenseTabCommandClass; /*0x532ff9*/
     v102 = v101; /*0x532fff*/
   }
   else
@@ -1299,7 +1299,7 @@ int InitCommands()
   v104 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x53305a*/
   if ( v104 ) /*0x533064*/
   {
-    *v104 = &SetUnitTabCommandClass::`vftable'; /*0x533066*/
+    *v104 = &vt_SetUnitTabCommandClass; /*0x533066*/
     v105 = v104; /*0x53306c*/
   }
   else
@@ -1320,7 +1320,7 @@ int InitCommands()
   v107 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x5330c7*/
   if ( v107 ) /*0x5330d1*/
   {
-    *v107 = &SetInfantryTabCommandClass::`vftable'; /*0x5330d3*/
+    *v107 = &vt_SetInfantryTabCommandClass; /*0x5330d3*/
     v108 = v107; /*0x5330d9*/
   }
   else
@@ -1342,7 +1342,7 @@ int InitCommands()
   if ( v110 ) /*0x53313e*/
   {
     v110[1] = 1; /*0x533140*/
-    *v110 = &CreateTeamCommandClass::`vftable'; /*0x533147*/
+    *v110 = &vt_CreateTeamCommandClass; /*0x533147*/
     v111 = v110; /*0x53314d*/
   }
   else
@@ -1364,7 +1364,7 @@ int InitCommands()
   if ( v113 ) /*0x5331b2*/
   {
     v113[1] = 2; /*0x5331b4*/
-    *v113 = &CreateTeamCommandClass::`vftable'; /*0x5331bb*/
+    *v113 = &vt_CreateTeamCommandClass; /*0x5331bb*/
     v114 = v113; /*0x5331c1*/
   }
   else
@@ -1386,7 +1386,7 @@ int InitCommands()
   if ( v116 ) /*0x533226*/
   {
     v116[1] = 3; /*0x533228*/
-    *v116 = &CreateTeamCommandClass::`vftable'; /*0x53322f*/
+    *v116 = &vt_CreateTeamCommandClass; /*0x53322f*/
     v117 = v116; /*0x533235*/
   }
   else
@@ -1408,7 +1408,7 @@ int InitCommands()
   if ( v119 ) /*0x53329a*/
   {
     v119[1] = 4; /*0x53329c*/
-    *v119 = &CreateTeamCommandClass::`vftable'; /*0x5332a3*/
+    *v119 = &vt_CreateTeamCommandClass; /*0x5332a3*/
     v120 = v119; /*0x5332a9*/
   }
   else
@@ -1430,7 +1430,7 @@ int InitCommands()
   if ( v122 ) /*0x53330e*/
   {
     v122[1] = 5; /*0x533310*/
-    *v122 = &CreateTeamCommandClass::`vftable'; /*0x533317*/
+    *v122 = &vt_CreateTeamCommandClass; /*0x533317*/
     v123 = v122; /*0x53331d*/
   }
   else

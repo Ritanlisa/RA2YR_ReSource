@@ -581,6 +581,11 @@ unsigned int u32_898;  // 0x898 [X35-L7 kind=unsigned int]
     char __pad_6B8[36];  // 0x6B8 [X30:member_lookup]
     UnitTypeClass* q6C0;  // 0x6C0 [X30:type_map]
     unsigned int vfptr;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

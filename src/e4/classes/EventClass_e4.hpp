@@ -69,5 +69,11 @@ struct EventClass {
     int EventClass_field_0x0;  // 0x0 [X30:type_map]
     int EventClass_field_0x4;  // 0x4 [X30:type_map]
     int EventClass_field_0xC;  // 0xC [X30:type_map]
+
+
+    unsigned int m_C;  // 0xC [X55 W3 supply (render vocab)]
+    int m_8;  // 0x8 [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    int EventClass_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

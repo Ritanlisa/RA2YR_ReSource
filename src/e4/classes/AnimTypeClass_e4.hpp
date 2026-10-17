@@ -225,6 +225,9 @@ char __pad_238;  // 0x238 [X35-L7 kind=char]
     unsigned int LegalTarget_d;  // [X30:default]
     unsigned int RadarInvisible_d;  // [X30:default]
     unsigned int Selectable_d;  // [X30:default]
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -138,6 +138,9 @@ public:
     unsigned int u32_E6C;  // X10 supply (member_lookup)
 
     unsigned int u32_E88;  // X10 supply (member_lookup)
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 // G22 E1: InfantryTypes registry (0xA8E348; ctor register / dtor compaction).

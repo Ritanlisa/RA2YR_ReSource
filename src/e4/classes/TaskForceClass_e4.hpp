@@ -55,5 +55,8 @@ void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int Coord_9C;  // [X30:default]
     int TaskForceClass_field_0x4;  // 0x4 [X30:type_map]
     char __pad_A0[4];  // 0xA0 [X30:member_lookup]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

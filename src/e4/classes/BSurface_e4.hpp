@@ -41,5 +41,8 @@ unsigned int ptr_24;  // 0x24 [X35-L7 kind=unsigned int]
     unsigned int u32_28;  // X10 supply (member_lookup)
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned int Height8;  // [X30:default]
+
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

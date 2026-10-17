@@ -1404,7 +1404,7 @@ void sub_4128F0()
   v3 = dword_889E10; /*0x41291e*/
   (*(void (**)(int *))(dword_889E08 + 12))(&dword_889E08); /*0x412929*/
   (*(void (**)(int *, int, unsigned int))(dword_889E08 + 8))(&dword_889E08, v3, 0); /*0x412939*/
-  dword_889E08 = (int)&VectorClass<TechnoClass *>::`vftable'; /*0x412948*/
+  dword_889E08 = (int)&vt_VectorClass_TechnoClass; /*0x412948*/
   if ( dword_889E0C && byte_889E15 ) /*0x412956*/
   {
     __3_YAXPAX_Z(dword_889E0C); /*0x412959*/
@@ -1418,7 +1418,7 @@ void sub_4128F0()
   {
     v6 = *(v4 - 6); /*0x41297d*/
     v4 -= 6; /*0x412980*/
-    *(v4 - 1) = &VectorClass<TechnoClass *>::`vftable'; /*0x412985*/
+    *(v4 - 1) = &vt_VectorClass_TechnoClass; /*0x412985*/
     if ( v6 ) /*0x412988*/
     {
       if ( *((unsigned char *)v4 + 9) ) /*0x41298a*/

@@ -34,6 +34,10 @@ int cells38Capacity;  // 0x24 [X35-L7 kind=int]
     unsigned int m_8;  // pad compile-supply (G41.47)
     unsigned int m_10;  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+
+
+    unsigned int q08C;  // 0x8C [X55 W3 supply (render vocab)]
+    int u32_74;  // 0x74 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_BaseClass_DEF
 

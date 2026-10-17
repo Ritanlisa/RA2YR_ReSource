@@ -631,10 +631,10 @@ bool Team_Start_76ED10(void * a1, void * a2)
     {
       v6 = 0; /*0x76ee77*/
     }
-    v9 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76ee7d*/
+    v9 = &vt_rc_ptr_WDTTerritory; /*0x76ee7d*/
     ComPtr::Release(&v9); /*0x76ee85*/
   }
-  v11 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76ee8e*/
+  v11 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76ee8e*/
   ComPtr::Release(&v11); /*0x76ee96*/
   SelectionInitializeWOL((int)v13); /*0x76ee9f*/
   return v6; /*0x76ed22*/

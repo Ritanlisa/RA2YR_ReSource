@@ -148,5 +148,9 @@ Pipe* m_14;  // 0x14 [X35-L7 kind=Pipe*]
     unsigned int u32_3C;  // X10 supply (member_lookup)
     unsigned int u32_17C;  // 0x17C
     unsigned char __pad_024;  // 0x24 [X30:canon]
+
+
+    unsigned int m_13C;  // 0x13C [X55 W3 supply (render vocab)]
+    unsigned int m_34;  // 0x34 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

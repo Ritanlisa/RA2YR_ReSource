@@ -51,6 +51,13 @@ unsigned int AirstrikeClass_field_50;  // 0x50 [X35-L7 kind=unsigned int]
     int32_t vtable22;  // 0x54 [X30:member_lookup]
     void* vtable26;  // 0x64 [X30:member_lookup]
     unsigned int vtable33;  // 0x80 [X30:member_lookup]
+
+
+    unsigned int u32_34;  // 0x34 [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -16,6 +16,9 @@ struct NetworkID {
     int q004;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
     int NetworkID_field_0x04;  // 0x4 [X30:member_lookup]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -41,6 +41,9 @@ int Remove(unsigned int * a2);
     unsigned int Tail;  // [X30:default]
     unsigned int m_Next;  // [X30:default]
     unsigned int m_Prev;  // [X30:default]
+
+
+    unsigned char u8_1;  // 0x1 [X55 W3 supply (render vocab)]
 };
 
 

@@ -813,6 +813,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int visibilityFlags;  // X10 supply (csp_canon_members)
     void* vtable2;  // X10 supply (csp_canon_members)
     void* vtable3;  // X10 supply (csp_canon_members)
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int __pad_6B4;  // 0x6B4 [X55 W3 supply (render vocab)]
+    unsigned int q_610;  // 0x610 [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 // External globals
@@ -857,6 +865,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_6C;  // X10 supply (member_lookup)
     unsigned int u32_7D4;  // X10 supply (member_lookup)
     unsigned char u8_F94;  // X10 supply (member_lookup)
+
+
+    int q258;  // 0x258 [X55 W3 supply (render vocab)]
+    unsigned char u8_1F5;  // 0x1F5 [X55 W3 supply (render vocab)]
+    int q264;  // 0x264 [X55 W3 supply (render vocab)]
+    int q004;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int q21C;  // 0x21C [X55 W3 supply (render vocab)]
+    unsigned int q1FC;  // 0x1FC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

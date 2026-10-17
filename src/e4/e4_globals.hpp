@@ -15787,3 +15787,212 @@ extern unsigned int dword_820334; // data: 0x820334 剧场文件名指针表 (0x
 extern unsigned int dword_820324; // data: 0x820324 剧场文件名指针表 (0x4B6D3D)
 // ---- G29.5 generated declarations for residual MEMORY sites ----
 
+// X55 W1 supply (render vftable refs, addr-authoritative)
+extern unsigned char vt_MultiplayerDebugCommandClass[4];  // data: 0x7EBE14
+extern unsigned char vt_MultiplayerSyncCommandClass[4];  // data: 0x7EBDEC
+extern unsigned char vt_FollowCommandClass[4];  // data: 0x7EBDC4
+extern unsigned char vt_View1CommandClass[4];  // data: 0x7EBD9C
+extern unsigned char vt_View2CommandClass[4];  // data: 0x7EBD74
+extern unsigned char vt_View3CommandClass[4];  // data: 0x7EBD4C
+extern unsigned char vt_View4CommandClass[4];  // data: 0x7EBD24
+extern unsigned char vt_SetView1CommandClass[4];  // data: 0x7EBCFC
+extern unsigned char vt_SetView2CommandClass[4];  // data: 0x7EBCD4
+extern unsigned char vt_SetView3CommandClass[4];  // data: 0x7EBCAC
+extern unsigned char vt_SetView4CommandClass[4];  // data: 0x7EBC84
+extern unsigned char vt_OptionsCommandClass[4];  // data: 0x7EBC5C
+extern unsigned char vt_SidebarUpCommandClass[4];  // data: 0x7EBC34
+extern unsigned char vt_SidebarDownCommandClass[4];  // data: 0x7EBC0C
+extern unsigned char vt_CenterREventCommandClass[4];  // data: 0x7EBBE4
+extern unsigned char vt_BeaconPlacementCommandClass[4];  // data: 0x7EBBBC
+extern unsigned char vt_ToggleSellCommandClass[4];  // data: 0x7EBB94
+extern unsigned char vt_ToggleRepairCommandClass[4];  // data: 0x7EBB6C
+extern unsigned char vt_AllianceCommandClass[4];  // data: 0x7EBB44
+extern unsigned char vt_CenterBaseCommandClass[4];  // data: 0x7EBB1C
+extern unsigned char vt_CenterViewCommandClass[4];  // data: 0x7EBAF4
+extern unsigned char vt_ScatterCommandClass[4];  // data: 0x7EBACC
+extern unsigned char vt_GuardCommandClass[4];  // data: 0x7EBAA4
+extern unsigned char vt_StopCommandClass[4];  // data: 0x7EBA7C
+extern unsigned char vt_AllToCheerCommandClass[4];  // data: 0x7EBA54
+extern unsigned char vt_DeployCommandClass[4];  // data: 0x7EBA2C
+extern unsigned char vt_PrevObjectCommandClass[4];  // data: 0x7EBA04
+extern unsigned char vt_NextObjectCommandClass[4];  // data: 0x7EB9DC
+extern unsigned char vt_PlanningModeCommandClass[4];  // data: 0x7EB9B4
+extern unsigned char vt_CombatantSelectCommandClass[4];  // data: 0x7EB98C
+extern unsigned char vt_TypeSelectCommandClass[4];  // data: 0x7EB964
+extern unsigned char vt_HealthNavCommandClass[4];  // data: 0x7EB93C
+extern unsigned char vt_VeterancyNavCommandClass[4];  // data: 0x7EB914
+extern unsigned char vt_SetStructureTabCommandClass[4];  // data: 0x7EB8EC
+extern unsigned char vt_SetDefenseTabCommandClass[4];  // data: 0x7EB8C4
+extern unsigned char vt_SetUnitTabCommandClass[4];  // data: 0x7EB89C
+extern unsigned char vt_SetInfantryTabCommandClass[4];  // data: 0x7EB874
+
+// X55 W2 supply (render ida-labels + string labels; til-typed where IDA has a type)
+extern unsigned char byte_841F43;  // data: 0x841F43 [X55 W2 no-til-type]
+extern unsigned char byte_841F4B;  // data: 0x841F4B [X55 W2 no-til-type]
+extern unsigned char byte_841FF3;  // data: 0x841FF3 [X55 W2 no-til-type]
+extern unsigned char byte_841FFB;  // data: 0x841FFB [X55 W2 no-til-type]
+extern char byte_B761A8[128];  // data: 0xB761A8 [X55 W2 til type]
+extern unsigned int dword_A8B3A4;  // data: 0xA8B3A4 [X55 W2 no-til-type]
+extern unsigned int dword_AA1030;  // data: 0xAA1030 [X55 W2 no-til-type]
+extern unsigned int dword_AA1034;  // data: 0xAA1034 [X55 W2 no-til-type]
+extern unsigned int dword_AA1038;  // data: 0xAA1038 [X55 W2 no-til-type]
+extern unsigned int dword_AC18C4;  // data: 0xAC18C4 [X55 W2 no-til-type]
+namespace gamemd { struct Factory; }  // X55 W2 fwd
+extern gamemd::Factory dword_B052D0;  // data: 0xB052D0 [X55 W2 til type]
+extern unsigned int dword_B779D0;  // data: 0xB779D0 [X55 W2 no-til-type]
+namespace gamemd { struct AnimTypeClass; }  // X55 W2 fwd
+extern gamemd::AnimTypeClass * off_8399AC;  // data: 0x8399AC [X55 W2 til type]
+extern char off_842070[];  // data: 0x842070 [X55 W2 til type]
+extern unsigned long long qword_886FB8;  // data: 0x886FB8 [X55 W2 no-til-type]
+namespace gamemd { struct VoxClass; }  // X55 W2 fwd
+extern gamemd::VoxClass stru_8190C8;  // data: 0x8190C8 [X55 W2 til type]
+namespace gamemd { struct BuildingTypeClass; }  // X55 W2 fwd
+extern gamemd::BuildingTypeClass stru_842DD4;  // data: 0x842DD4 [X55 W2 til type]
+namespace gamemd { struct CellClass; }  // X55 W2 fwd
+extern gamemd::CellClass stru_87E8B8;  // data: 0x87E8B8 [X55 W2 til type]
+namespace gamemd { struct Timer; }  // X55 W2 fwd
+extern gamemd::Timer stru_887338;  // data: 0x887338 [X55 W2 til type]
+namespace gamemd { struct ObjectClass; }  // X55 W2 fwd
+extern gamemd::ObjectClass stru_A83CD9;  // data: 0xA83CD9 [X55 W2 til type]
+namespace gamemd { struct WideString; }  // X55 W2 fwd
+extern gamemd::WideString stru_A8D610;  // data: 0xA8D610 [X55 W2 til type]
+namespace gamemd { struct NetworkLobby; }  // X55 W2 fwd
+extern gamemd::NetworkLobby stru_A8D804;  // data: 0xA8D804 [X55 W2 til type]
+namespace gamemd { struct ScenarioClass; }  // X55 W2 fwd
+extern gamemd::ScenarioClass stru_A8E960;  // data: 0xA8E960 [X55 W2 til type]
+namespace gamemd { struct Vector4; }  // X55 W2 fwd
+extern gamemd::Vector4 stru_ABDF90;  // data: 0xABDF90 [X55 W2 til type]
+namespace gamemd { struct MapResourceClass; }  // X55 W2 fwd
+extern gamemd::MapResourceClass stru_ABDFD8;  // data: 0xABDFD8 [X55 W2 til type]
+extern gamemd::ObjectClass stru_ABE890;  // data: 0xABE890 [X55 W2 til type]
+namespace gamemd { struct Dialog; }  // X55 W2 fwd
+extern gamemd::Dialog stru_AC1B48;  // data: 0xAC1B48 [X55 W2 til type]
+namespace gamemd { struct SidebarClass; }  // X55 W2 fwd
+extern gamemd::SidebarClass stru_AC4B48;  // data: 0xAC4B48 [X55 W2 til type]
+extern gamemd::Timer stru_B0EA70;  // data: 0xB0EA70 [X55 W2 til type]
+namespace gamemd { struct DynamicVector; }  // X55 W2 fwd
+extern gamemd::DynamicVector stru_B0F618;  // data: 0xB0F618 [X55 W2 til type]
+extern gamemd::DynamicVector stru_B0F670;  // data: 0xB0F670 [X55 W2 til type]
+extern gamemd::DynamicVector stru_B0F6C8;  // data: 0xB0F6C8 [X55 W2 til type]
+namespace gamemd { struct AudioQueue; }  // X55 W2 fwd
+extern gamemd::AudioQueue stru_B1D320;  // data: 0xB1D320 [X55 W2 til type]
+namespace gamemd { struct CChatEventSink; }  // X55 W2 fwd
+extern gamemd::CChatEventSink stru_B73E10;  // data: 0xB73E10 [X55 W2 til type]
+extern gamemd::DynamicVector stru_B765F8;  // data: 0xB765F8 [X55 W2 til type]
+namespace gamemd { struct StringVector; }  // X55 W2 fwd
+extern gamemd::StringVector stru_B76970;  // data: 0xB76970 [X55 W2 til type]
+namespace gamemd { struct DynamicArray; }  // X55 W2 fwd
+extern gamemd::DynamicArray stru_B76AD0;  // data: 0xB76AD0 [X55 W2 til type]
+extern gamemd::DynamicArray stru_B777A0;  // data: 0xB777A0 [X55 W2 til type]
+extern gamemd::DynamicVector stru_B77820;  // data: 0xB77820 [X55 W2 til type]
+namespace gamemd { struct String; }  // X55 W2 fwd
+extern gamemd::String stru_B778FC;  // data: 0xB778FC [X55 W2 til type]
+extern unsigned char unk_ABCF60[1];  // data: 0xABCF60 [X55 W2 no-til-type]
+extern char aGrey[];  // [X55 W2 string label]
+extern char aTxtNameColon[];  // [X55 W2 string label]
+extern char aAfps[];  // [X55 W2 string label]
+extern char aBasic[];  // [X55 W2 string label]
+extern char aSmudge[];  // [X55 W2 string label]
+extern char aTxtKillsColon[];  // [X55 W2 string label]
+extern char aColor[];  // [X55 W2 string label]
+extern char aInfantry_0[];  // [X55 W2 string label]
+extern char aMmpbShp[];  // [X55 W2 string label]
+extern char aGreentile[];  // [X55 W2 string label]
+extern char aCursorcheat[];  // [X55 W2 string label]
+extern char aTxtScenarioToo[];  // [X55 W2 string label]
+extern char aTxtNatNoPrevie[];  // [X55 W2 string label]
+extern char aMmp[];  // [X55 W2 string label]
+extern char aCleartoroughla[];  // [X55 W2 string label]
+extern char aNam[];  // [X55 W2 string label]
+extern char aMaxdc[];  // [X55 W2 string label]
+extern char aPlrs[];  // [X55 W2 string label]
+extern char aMonorailslopes[];  // [X55 W2 string label]
+extern char aShrt[];  // [X55 W2 string label]
+extern char aXvelocity[];  // [X55 W2 string label]
+extern char aStartstateai[];  // [X55 W2 string label]
+extern char aNextparticleof[];  // [X55 W2 string label]
+extern char aBlacktile[];  // [X55 W2 string label]
+extern char aCred[];  // [X55 W2 string label]
+extern char aTunnels[];  // [X55 W2 string label]
+extern char aColorlist[];  // [X55 W2 string label]
+extern char aCliffset[];  // [X55 W2 string label]
+extern char aZvelocityrange[];  // [X55 W2 string label]
+extern char aDRa2mdpostMode[];  // [X55 W2 string label]
+extern char aDDDS[];  // [X55 W2 string label]
+extern char aSlopesetpieces_0[];  // [X55 W2 string label]
+extern char aTauntsTauge02i[];  // [X55 W2 string label]
+extern char aAcco[];  // [X55 W2 string label]
+extern char aFini[];  // [X55 W2 string label]
+extern char aCShadowShp[];  // [X55 W2 string label]
+extern char aDura[];  // [X55 W2 string label]
+extern char aBridgeset[];  // [X55 W2 string label]
+extern char aRmcache[];  // [X55 W2 string label]
+extern char aHeightbase[];  // [X55 W2 string label]
+extern char aDecodingPublic[];  // [X55 W2 string label]
+extern char aCleartogreenla[];  // [X55 W2 string label]
+extern char aLocalsize[];  // [X55 W2 string label]
+extern char aPavetile[];  // [X55 W2 string label]
+extern char aWaterset[];  // [X55 W2 string label]
+extern char aDirttracktunne[];  // [X55 W2 string label]
+extern char aTauntsTauir02i[];  // [X55 W2 string label]
+extern char aCleartopavelat[];  // [X55 W2 string label]
+extern char aCleartosandlat[];  // [X55 W2 string label]
+extern char aCleartile[];  // [X55 W2 string label]
+extern char aSid[];  // [X55 W2 string label]
+extern char aSupr[];  // [X55 W2 string label]
+extern char aScen[];  // [X55 W2 string label]
+extern char aMmrampbase[];  // [X55 W2 string label]
+extern char aMaxec[];  // [X55 W2 string label]
+extern char aDirttunnels[];  // [X55 W2 string label]
+extern char aWdtt[];  // [X55 W2 string label]
+extern char aSlopesetpieces[];  // [X55 W2 string label]
+extern char aYvelocity[];  // [X55 W2 string label]
+extern char aUnit[];  // [X55 W2 string label]
+extern char aMode[];  // [X55 W2 string label]
+extern char aIpa[];  // [X55 W2 string label]
+extern char aMaxdeathcounte[];  // [X55 W2 string label]
+extern char aVers[];  // [X55 W2 string label]
+extern char aPngs[];  // [X55 W2 string label]
+extern char aTime[];  // [X55 W2 string label]
+extern char aRoughtile[];  // [X55 W2 string label]
+extern char aTauntsTauyu02i[];  // [X55 W2 string label]
+extern char aShorepieces[];  // [X55 W2 string label]
+extern char aVelocity[];  // [X55 W2 string label]
+extern char aDeacc[];  // [X55 W2 string label]
+extern char aColorspeed[];  // [X55 W2 string label]
+extern char aIdno[];  // [X55 W2 string label]
+extern char aDeleteonstatel[];  // [X55 W2 string label]
+extern char aSpid[];  // [X55 W2 string label]
+extern char aCid[];  // [X55 W2 string label]
+extern char aSped[];  // [X55 W2 string label]
+extern char aWoodbridgeset[];  // [X55 W2 string label]
+extern char aEndstateai[];  // [X55 W2 string label]
+extern char aWindeffect[];  // [X55 W2 string label]
+extern char aStartcolor1[];  // [X55 W2 string label]
+extern char aStartframe[];  // [X55 W2 string label]
+extern char aTranslucency[];  // [X55 W2 string label]
+extern char aDDS[];  // [X55 W2 string label]
+extern char aPngr[];  // [X55 W2 string label]
+extern char aRadius[];  // [X55 W2 string label]
+extern char aStartdeathfram[];  // [X55 W2 string label]
+extern char aRampsmooth[];  // [X55 W2 string label]
+extern char aBase[];  // [X55 W2 string label]
+extern char aSize[];  // [X55 W2 string label]
+extern char aGuiCursorcheat[];  // [X55 W2 string label]
+extern char aDate[];  // [X55 W2 string label]
+extern char aGsku[];  // [X55 W2 string label]
+extern char aTracktunnels[];  // [X55 W2 string label]
+extern char aTrny[];  // [X55 W2 string label]
+extern char aOosy[];  // [X55 W2 string label]
+extern char aTxtNeedAtLeast[];  // [X55 W2 string label]
+extern char aBamr[];  // [X55 W2 string label]
+extern char aCrat[];  // [X55 W2 string label]
+extern char aRampbase[];  // [X55 W2 string label]
+extern char aAipl[];  // [X55 W2 string label]
+extern char aSawWaypointInf[];  // [X55 W2 string label]
+extern char aTranslucent50s[];  // [X55 W2 string label]
+extern char aMiscpavetile[];  // [X55 W2 string label]
+extern char aStartfiringfra[];  // [X55 W2 string label]
+extern char aSandtile[];  // [X55 W2 string label]
+extern char aTranslucent25s[];  // [X55 W2 string label]
+extern char aMinzvelocity[];  // [X55 W2 string label]

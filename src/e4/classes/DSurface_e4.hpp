@@ -118,6 +118,10 @@ unsigned int DSurface_field_0x20;  // 0x20 [X35-L7 kind=unsigned int]
     unsigned int Height;  // [X30:default]
     unsigned int LockCount;  // [X30:default]
     unsigned int Width;  // [X30:default]
+
+
+    unsigned int DSurface_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    int u32_1;  // 0x1 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

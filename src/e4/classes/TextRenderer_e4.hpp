@@ -30,6 +30,11 @@ struct TextRenderer {
     unsigned int u32_1B;  // X10 supply (member_lookup)
     unsigned char __pad_000;  // 0x0 [X30:canon]
     unsigned int DrawTextA;  // [X30:default]
+
+
+    unsigned int u32_68;  // 0x68 [X55 W3 supply (render vocab)]
+    unsigned int u32_6C;  // 0x6C [X55 W3 supply (render vocab)]
+    unsigned int u32_50;  // 0x50 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -390,6 +390,17 @@ protected:
     unsigned char __pad_13C;  // X10 supply (csp_canon_members)
     unsigned char q0F8[4];  /* char[4] */  // X10 supply (member_lookup)
     unsigned int u32_F4;  // X10 supply (member_lookup)
+
+
+    unsigned int MapClass_field_0xF4;  // 0xF4 [X55 W3 supply (render vocab)]
+    unsigned int MapClass_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
+    unsigned int __pad_F8;  // 0xF8 [X55 W3 supply (render vocab)]
+    unsigned int MapClass_field_0x2C;  // 0x2C [X55 W3 supply (render vocab)]
+    int MapClass_field_0x28;  // 0x28 [X55 W3 supply (render vocab)]
+    unsigned int q04C;  // 0x4C [X55 W3 supply (render vocab)]
+    unsigned int MapClass_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    int __pad_18;  // 0x18 [X55 W3 supply (render vocab)]
+    unsigned int MapClass_field_0x13C;  // 0x13C [X55 W3 supply (render vocab)]
 };
 #endif
 

@@ -302,6 +302,10 @@ struct CampaignScore {
     unsigned int u32_7E;  // 0x7E [X30:default]
     unsigned int u32_9E;  // 0x9E [X30:default]
     unsigned int u32_B0;  // 0xB0 [X30:default]
+
+
+    void * vtable2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vtable4;  // 0x10 [X55 W3 supply (render vocab)]
 };
 
 struct DialogControl_OwnerDraw {
@@ -502,6 +506,9 @@ struct HashTable {
     unsigned char *__pad_0;  // 0x0
     AbstractClass* __pad_000;  // 0x0 [X30:type_map]
 unsigned int HashTable_field_0x10;  // 0x10 [X35-L7 kind=unsigned int]
+
+
+    int HashTable_field_0x30;  // 0x30 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_TREE_UNIVERSE (HashTable)
 

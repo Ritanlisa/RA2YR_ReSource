@@ -43,5 +43,11 @@ unsigned int Terrain_field_0x60;  // 0x60 [X35-L7 kind=unsigned int]
     int __pad_18;  // 0x18 [X30:type_map]
     char __pad_44[28];  // 0x44 [X30:member_lookup]
     void* __pad_68;  // 0x68 [X30:type_map]
+
+
+    unsigned int q04C;  // 0x4C [X55 W3 supply (render vocab)]
+    unsigned int u32_6C;  // 0x6C [X55 W3 supply (render vocab)]
+    unsigned int __pad_28;  // 0x28 [X55 W3 supply (render vocab)]
+    int q054;  // 0x54 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

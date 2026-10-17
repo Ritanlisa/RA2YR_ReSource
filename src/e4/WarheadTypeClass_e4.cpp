@@ -129,7 +129,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   int v13; // ecx
 
   v2 = (void *)this->vtable4; /*0x52ab84*/
-  *(unsigned int *)this = &INIClass::INISection::`vftable'; /*0x52ab87*/
+  *(unsigned int *)this = &vt_INIClass_INISection; /*0x52ab87*/
   free(v2); /*0x52ab8e*/
   this->vtable4 = 0; /*0x52ab98*/
   while ( 1 ) /*0x52ab9b*/
@@ -162,7 +162,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   this->CombatLightSize = 0; /*0x52ac0e*/
   this->Particle = 0; /*0x52ac11*/
   this->Wall = 0; /*0x52ac14*/
-  this->uniqueId = &GenericList::`vftable'; /*0x52ac1a*/
+  this->uniqueId = &vt_GenericList; /*0x52ac1a*/
   while ( 1 ) /*0x52ac21*/
   {
     v5 = this->InfDeath; /*0x52ac21*/
@@ -182,7 +182,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       v5->ptr_4 = 0; /*0x52ac52*/
     }
   }
-  this->CellInset = &GenericNode::`vftable'; /*0x52ac5c*/
+  this->CellInset = &vt_GenericNode; /*0x52ac5c*/
   if ( this != (char *)-32 ) /*0x52ac62*/
   {
     v8 = this->__pad_024; /*0x52ac64*/
@@ -199,7 +199,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     }
   }
   result = &this->AnimList; /*0x52ac84*/
-  this->AnimList = &GenericNode::`vftable'; /*0x52ac89*/
+  this->AnimList = &vt_GenericNode; /*0x52ac89*/
   if ( this != (char *)-20 ) /*0x52ac8f*/
   {
     v11 = this->InfDeath; /*0x52ac91*/
@@ -215,7 +215,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       }
     }
   }
-  *(unsigned int *)this = &GenericNode::`vftable'; /*0x52acb3*/
+  *(unsigned int *)this = &vt_GenericNode; /*0x52acb3*/
   if ( this ) /*0x52acb9*/
   {
     v13 = this->vtable2; /*0x52acbb*/
@@ -1005,7 +1005,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v7 = (unsigned int *)INIClassIntList; /*0x77236b*/
   INIClassIntList->uniqueId = *(unsigned int *)(v4 + 204); /*0x772377*/
   v7->u32_14 = *(unsigned int *)(v4 + 208); /*0x77237d*/
-  *v7 = &TypeList<int>::`vftable'; /*0x772382*/
+  *v7 = &vt_TypeList_int; /*0x772382*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->__pad_024); /*0x772388*/
   INIClassIntList = GetINIClassIntList( /*0x77239c*/
                       (int)&v67,
@@ -1026,7 +1026,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v10 = v9->VectorClass_18; /*0x7723b5*/
   v11 = *(void **)&v67.Items; /*0x7723b8*/
   *(unsigned int *)(v4 + 212) = v10; /*0x7723bc*/
-  *(unsigned int *)v67.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x7723c1*/
+  *(unsigned int *)v67.ClearAndFree2_ph = &vt_VectorClass_int; /*0x7723c1*/
   if ( v11 && v67.IsAllocated ) /*0x7723d1*/
     __3_YAXPAX_Z(v11); /*0x7723d4*/
   INIClassIntList = (int)&v60; /*0x7723e8*/
@@ -1034,7 +1034,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v12 = (unsigned int *)INIClassIntList; /*0x7723f1*/
   INIClassIntList->uniqueId = *(unsigned int *)(v4 + 232); /*0x7723fd*/
   v12->u32_14 = *(unsigned int *)(v4 + 236); /*0x772405*/
-  *v12 = &TypeList<int>::`vftable'; /*0x772408*/
+  *v12 = &vt_TypeList_int; /*0x772408*/
   v13 = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->__pad_024); /*0x77240e*/
   INIClassIntList = GetINIClassIntList( /*0x772422*/
                       (int)&v67,
@@ -1053,7 +1053,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   *(unsigned int *)(v4 + 232) = INIClassIntList->uniqueId; /*0x772432*/
   *(unsigned int *)(v4 + 236) = v14->u32_14; /*0x772438*/
   *(unsigned int *)(v4 + 240) = v14->VectorClass_18; /*0x77243e*/
-  *(unsigned int *)v67.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x772447*/
+  *(unsigned int *)v67.ClearAndFree2_ph = &vt_VectorClass_int; /*0x772447*/
   if ( *(unsigned int *)&v67.Items && v67.IsAllocated ) /*0x772457*/
     __3_YAXPAX_Z(*(void **)&v67.Items); /*0x77245a*/
   if ( INIClass::GetString( /*0x772479*/
@@ -1065,7 +1065,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v67, 0, 0); /*0x77248e*/
-    *(unsigned int *)v67.ClearAndFree2_ph = &TypeList<AnimTypeClass const *>::`vftable'; /*0x77249d*/
+    *(unsigned int *)v67.ClearAndFree2_ph = &vt_TypeList_AnimTypeClass_const; /*0x77249d*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x7724af*/
     {
       if ( !*i ) /*0x7724b1*/
@@ -1075,7 +1075,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
         DynamicVector::Add_Alt4(&v67, &INIClassIntList); /*0x7724ce*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v67.DynamicVector_field_0x1C, &v67); /*0x7724ef*/
-    *(unsigned int *)v67.ClearAndFree2_ph = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x7724f8*/
+    *(unsigned int *)v67.ClearAndFree2_ph = &vt_VectorClass_AnimTypeClass_const; /*0x7724f8*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v67); /*0x772500*/
   }
   else
@@ -1089,7 +1089,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v18 = *(void **)v67.__pad_20; /*0x772538*/
   *(unsigned int *)(v4 + 260) = v16; /*0x77253c*/
   *(unsigned int *)(v4 + 264) = v17; /*0x772541*/
-  v67.DynamicVector_field_0x1C = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x772544*/
+  v67.DynamicVector_field_0x1C = (int)&vt_VectorClass_AnimTypeClass_const; /*0x772544*/
   if ( v18 && BYTE1(v67.DynamicVector_field_0x28) ) /*0x772554*/
     __3_YAXPAX_Z(v18); /*0x772557*/
   v19 = v4->AssaultAnim_d; /*0x77255f*/

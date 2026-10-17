@@ -153,6 +153,12 @@ int GetSendCount();
     unsigned int q016;  // 0x16
     unsigned int q00C;  // 0xC
     char __pad_14[14];  // 0x14 [X30:member_lookup]
+
+
+    unsigned int Network_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    int Network_field_0x60;  // 0x60 [X55 W3 supply (render vocab)]
+    int Network_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+    int q008;  // 0x8 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_NETWORK_FLAT_DEF
 } // namespace gamemd

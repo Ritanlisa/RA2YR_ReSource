@@ -154,6 +154,9 @@ public:
     virtual HRESULT Read(void* pv, uint32_t cb, uint32_t* pcbRead) = 0;  // 0x4A3020
 
     void*       IStream_field_00;       // 0x00
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 // ============================================================================
@@ -254,6 +257,12 @@ public:
 
     unsigned int u32_168;  // X10 supply (member_lookup)
     unsigned int u32_AC;  // X10 supply (member_lookup)
+
+
+    unsigned int q044;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int q040;  // 0x40 [X55 W3 supply (render vocab)]
+    int q030;  // 0x30 [X55 W3 supply (render vocab)]
+    unsigned int u32_73C;  // 0x73C [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 

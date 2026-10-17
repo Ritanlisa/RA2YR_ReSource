@@ -127,7 +127,7 @@ LABEL_14:
         goto LABEL_14; /*0x7a3f97*/
     }
   }
-  v22[0].vfptr.vfptr1 = (int)&rc_ptr<PlayerProfile>::`vftable'; /*0x7a3fd1*/
+  v22[0].vfptr.vfptr1 = (int)&vt_rc_ptr_PlayerProfile; /*0x7a3fd1*/
   ComPtr::Release((ComPtr *)&v22[0].vfptr.vfptr1); /*0x7a3fdd*/
 LABEL_16:
   if ( lParam ) /*0x7a3fed*/

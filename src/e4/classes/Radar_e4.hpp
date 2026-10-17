@@ -76,5 +76,14 @@ struct Radar {
     int __pad_0;  // 0x0 [X30:type_map]
     char __pad_64[424];  // 0x64 [X30:member_lookup]
     void* u32_BC;  // 0xBC [X30:type_map]
+
+
+    unsigned int Radar_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int Radar_field_0x20C;  // 0x20C [X55 W3 supply (render vocab)]
+    int Radar_field_0x18;  // 0x18 [X55 W3 supply (render vocab)]
+    unsigned int Radar_field_0x1C;  // 0x1C [X55 W3 supply (render vocab)]
+    int Radar_field_0x20;  // 0x20 [X55 W3 supply (render vocab)]
+    int __pad_10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int Radar_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

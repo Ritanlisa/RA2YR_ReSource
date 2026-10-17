@@ -175,6 +175,12 @@ public:
 
 protected:
     Surface();  // abstract — construct via XSurface/BSurface/DSurface only
+
+
+    unsigned int u32_BC;  // 0xBC [X55 W3 supply (render vocab)]
+    unsigned int u32_CC;  // 0xCC [X55 W3 supply (render vocab)]
+    unsigned int u32_1A4;  // 0x1A4 [X55 W3 supply (render vocab)]
+    unsigned int u32_1CC;  // 0x1CC [X55 W3 supply (render vocab)]
 };
 
 class XSurface : public Surface
@@ -282,6 +288,9 @@ public:
 protected:
     explicit XSurface(noinit_t) noexcept
 ; // unmatched: no callgraph reference and no git history record
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 // CSP: BSurface matched via T3
@@ -309,6 +318,9 @@ protected:
     bool CreateTripleBuffer();  // 0x7b8c60 -- BSurface::CreateTripleBuffer
     void* ConstructEx(int a1, int a2, int a3, int a4);  // 0x7bc970 -- BSurface::ConstructEx
     // === SYMBOL-ANCHOR (END) ===
+
+
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 class DSurface : public XSurface
@@ -443,6 +455,9 @@ public:  // g57c5 W4b supply slot
     void* DSurface_field_0xC;  // 0xC g57c5 W4b (self-desc vocab, ml slot witness)
 
     void* vtable1;  // X10 supply (csp_canon_members)
+
+
+    int u32_1;  // 0x1 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

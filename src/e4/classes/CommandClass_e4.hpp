@@ -18,6 +18,13 @@ struct CommandClass {
 
     unsigned int u32_C0;  // X10 supply (member_lookup)
     unsigned int __tail_0;  // [X30:default]
+
+
+    unsigned int q24C;  // 0x24C [X55 W3 supply (render vocab)]
+    int u32_4;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int q008;  // 0x8 [X55 W3 supply (render vocab)]
+    int u32_10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int u32_241;  // 0x241 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_CommandClass_DEF
 

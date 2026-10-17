@@ -28,6 +28,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
 
     void* vtable1;  // X10 supply (csp_canon_members)
+
+
+    unsigned int u32_14;  // 0x14 [X55 W3 supply (render vocab)]
+    unsigned int u32_18;  // 0x18 [X55 W3 supply (render vocab)]
+    unsigned int u32_1C;  // 0x1C [X55 W3 supply (render vocab)]
 };
 
 template <typename T>

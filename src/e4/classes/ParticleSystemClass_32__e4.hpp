@@ -21,5 +21,9 @@ struct ParticleSystemClass_32_ {
     int q004;  // X10 supply (member_lookup)
     int q010;  // X10 supply (member_lookup)
     unsigned char __pad_011;  // 0x11 [X30:canon]
+
+
+    unsigned int m_10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -51,6 +51,22 @@ int finalMovie;  // 0x228 [X35-L7 kind=int]
 void* q000;  // 0x0 [X35-L7 kind=void*]
     unsigned int Coord_9C;  // [X30:default]
     unsigned char q174;  // 0x174 [X30:member_lookup]
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_3828;  // 0x3828 [X55 W3 supply (render vocab)]
+    unsigned int u32_2028;  // 0x2028 [X55 W3 supply (render vocab)]
+    unsigned int u32_3028;  // 0x3028 [X55 W3 supply (render vocab)]
+    unsigned int u32_2828;  // 0x2828 [X55 W3 supply (render vocab)]
+    unsigned int u32_8028;  // 0x8028 [X55 W3 supply (render vocab)]
+    unsigned int u32_4028;  // 0x4028 [X55 W3 supply (render vocab)]
+    unsigned int u32_4828;  // 0x4828 [X55 W3 supply (render vocab)]
+    unsigned int u32_5028;  // 0x5028 [X55 W3 supply (render vocab)]
+    unsigned int u32_5828;  // 0x5828 [X55 W3 supply (render vocab)]
+    unsigned int q6028;  // 0x6028 [X55 W3 supply (render vocab)]
+    unsigned int u32_6828;  // 0x6828 [X55 W3 supply (render vocab)]
+    unsigned int u32_7028;  // 0x7028 [X55 W3 supply (render vocab)]
+    unsigned int u32_7828;  // 0x7828 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

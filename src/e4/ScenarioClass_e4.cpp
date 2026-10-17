@@ -407,7 +407,7 @@ LABEL_13:
   }
 LABEL_14:
   v9 = ++*(unsigned int *)&stru_A8D804.__pad_3D[627]; /*0x683bce*/
-  if ( !(unsigned __int8)CD::`vftable'(dword_81C1D0) ) /*0x683bf6*/
+  if ( !(unsigned __int8)vt_CD(dword_81C1D0) ) /*0x683bf6*/
   {
 LABEL_21:
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x683d3c*/
@@ -419,7 +419,7 @@ LABEL_21:
   v19.headNode[0] = 0; /*0x683c18*/
   v19.headNode[1] = 0; /*0x683c1c*/
   GenericList::Constructor((GenericList *)&v19.headNode[2]); /*0x683c20*/
-  v19.headNode[2] = (int)&List<INIClass::INISection *>::`vftable'; /*0x683c29*/
+  v19.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x683c29*/
   memset(&v19.needsSave_flag, 0, 13); /*0x683c32*/
   memset(&v19.unknown38, 0, 9); /*0x683c42*/
   *(unsigned int *)v19.__pad_0 = &CCINIClass_Vtable; /*0x683c4e*/
@@ -434,7 +434,7 @@ LABEL_21:
       Movie::PlayWrapper(Bool, (int)v4, v9, 1, 1, 1); /*0x683cbd*/
     }
   }
-  *(unsigned int *)v20.__tail_0 = &CCFileClass::`vftable'; /*0x683cc9*/
+  *(unsigned int *)v20.__tail_0 = &vt_CCFileClass; /*0x683cc9*/
   v22 = 0; /*0x683cd1*/
   Vector::Clear((int)v21); /*0x683cd8*/
   *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x683ce1*/
@@ -583,14 +583,14 @@ int ScenarioClass_Construct(void * a2)
   int v13[3]; // [esp+C0h] [ebp-14h] BYREF
   int v14; // [esp+CCh] [ebp-8h]
 
-  result = CD::`vftable'(dword_81C1D0); /*0x68674c*/
+  result = vt_CD(dword_81C1D0); /*0x68674c*/
   if ( result ) /*0x686754*/
   {
     *(unsigned int *)&stru_A8E960.random[528] = 0; /*0x686765*/
     v11.headNode[0] = 0; /*0x68676b*/
     v11.headNode[1] = 0; /*0x68676f*/
     GenericList::Constructor((GenericList *)&v11.headNode[2]); /*0x686773*/
-    v11.headNode[2] = (int)&List<INIClass::INISection *>::`vftable'; /*0x68677c*/
+    v11.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x68677c*/
     Node::Init((MixFileClass *)&v11.needsSave_flag); /*0x686784*/
     v11.INIClass_field_3C = 0; /*0x68678d*/
     v11.ownsFile[0] = 0; /*0x686792*/
@@ -608,7 +608,7 @@ int ScenarioClass_Construct(void * a2)
       v9 = v6 & 3; /*0x68683c*/
       qmemcpy(v7, v8, v9); /*0x68683f*/
       Map = ScenarioClass::LoadMap(0, (INIClass *)&v11, a2, (ObjectClass *)&v7[v9]); /*0x686851*/
-      *(unsigned int *)v12.__tail_0 = &CCFileClass::`vftable'; /*0x686853*/
+      *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x686853*/
       v14 = 0; /*0x68685b*/
       Vector::Clear((int)v13); /*0x686862*/
       *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x68686b*/
@@ -619,7 +619,7 @@ int ScenarioClass_Construct(void * a2)
     else
     {
       Debug::Log(); /*0x6867cc*/
-      *(unsigned int *)v12.__tail_0 = &CCFileClass::`vftable'; /*0x6867db*/
+      *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x6867db*/
       v14 = 0; /*0x6867e3*/
       Vector::Clear((int)v13); /*0x6867ea*/
       *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x6867f3*/
@@ -1490,7 +1490,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   *(unsigned int *)&v78.m_1[3] = 0; /*0x68a2da*/
   v78.m_8 = 0; /*0x68a2dd*/
   LOWORD(v78.m_C) = 1; /*0x68a2e0*/
-  *(unsigned int *)v78.__pad_0 = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x68a2e7*/
+  *(unsigned int *)v78.__pad_0 = &vt_VectorClass_TechnoTypeClass; /*0x68a2e7*/
   if ( &v78 != (_VectorClass_PAVTechnoTypeClass *)(_ESI + 13524) ) /*0x68a2ed*/
   {
     TypeList_TechnoType::ddtor(&v78); /*0x68a2f1*/
@@ -1516,7 +1516,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                                                         (int)Destination,
                                                         aBasic,
                                                         (unsigned __int8 *)aAllowableunits,
-                                                        &TypeList<TechnoTypeClass *>::`vftable',
+                                                        &vt_TypeList_TechnoTypeClass,
                                                         *(void **)&v78.m_1[3],
                                                         v78.m_8,
                                                         v78.m_C,
@@ -1561,7 +1561,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v19 = *(unsigned int *)&TechnoTypeList[1].m_1[3]; /*0x68a3f8*/
   v20 = Block; /*0x68a3fb*/
   *(unsigned int *)(_ESI + 13548) = v19; /*0x68a3ff*/
-  *(unsigned int *)Destination = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x68a404*/
+  *(unsigned int *)Destination = &vt_VectorClass_TechnoTypeClass; /*0x68a404*/
   if ( v20 && v86 ) /*0x68a414*/
     __3_YAXPAX_Z(v20); /*0x68a417*/
   v21 = &_ESI->ambientCurrent; /*0x68a422*/
@@ -1570,7 +1570,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   *(unsigned int *)&v78.m_1[3] = 0; /*0x68a432*/
   v78.m_8 = 0; /*0x68a435*/
   LOWORD(v78.m_C) = 1; /*0x68a438*/
-  *(unsigned int *)v78.__pad_0 = &VectorClass<int>::`vftable'; /*0x68a43f*/
+  *(unsigned int *)v78.__pad_0 = &vt_VectorClass_int; /*0x68a43f*/
   if ( &v78 != (_VectorClass_PAVTechnoTypeClass *)(_ESI + 13552) ) /*0x68a445*/
   {
     VectorClass::Destroy((int)&v78); /*0x68a447*/
@@ -1607,7 +1607,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   }
   *(unsigned int *)v22->__tail_10 = *(unsigned int *)(_ESI + 13568); /*0x68a4b2*/
   *v22->u32_4.__pad_0 = *(unsigned int *)(_ESI + 13572); /*0x68a4b8*/
-  *(unsigned int *)v22->__pad_0 = &TypeList<int>::`vftable'; /*0x68a4bb*/
+  *(unsigned int *)v22->__pad_0 = &vt_TypeList_int; /*0x68a4bb*/
   IntList = (_VectorClass_PAVTechnoTypeClass *)INIClass::ReadIntList( /*0x68a4cd*/
                                                  (INIClass *)a3,
                                                  (int)Destination,
@@ -1658,7 +1658,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v34 = *(unsigned int *)&IntList[1].m_1[3]; /*0x68a54a*/
   v35 = Block; /*0x68a54d*/
   *(unsigned int *)(_ESI + 13576) = v34; /*0x68a551*/
-  *(unsigned int *)Destination = &VectorClass<int>::`vftable'; /*0x68a556*/
+  *(unsigned int *)Destination = &vt_VectorClass_int; /*0x68a556*/
   if ( v35 && v86 ) /*0x68a566*/
     __3_YAXPAX_Z(v35); /*0x68a569*/
   *(unsigned char *)(_ESI + 13478) = INIClass::ReadBool_Overwrite( /*0x68a589*/

@@ -77,6 +77,11 @@ public:
 
 protected:
     VoxelAnimClass() = default;
+
+
+    unsigned int VoxelAnimClass_field_0x104;  // 0x104 [X55 W3 supply (render vocab)]
+    unsigned int VoxelAnimClass_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int VoxelAnimClass_field_0x140;  // 0x140 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

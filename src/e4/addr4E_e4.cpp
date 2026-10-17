@@ -104,7 +104,7 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x4e0a11*/
   this->IsInitialized = 1; /*0x4e0a14*/
   this->IsAllocated = 0; /*0x4e0a18*/
-  this->vfptr = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
+  this->vfptr = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
     if ( a3 ) /*0x4e0a2a*/
@@ -153,7 +153,7 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
       this->IsAllocated = 1; /*0x4e0a86*/
     }
   }
-  this->vfptr = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
+  this->vfptr = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
   this->u32_14 = 10; /*0x4e0a90*/
   this->q010 = 0; /*0x4e0a97*/
   return &this->vfptr; /*0x4e0aa0*/

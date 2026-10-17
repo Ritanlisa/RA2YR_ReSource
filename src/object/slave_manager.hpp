@@ -89,6 +89,11 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ctor(int a1, int a2, int a3, int a4, int a5);  // 0x6af1a0 -- SlaveManagerClass::ctor
     // === SYMBOL-ANCHOR (END) ===
+
+
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int __pad_48;  // 0x48 [X55 W3 supply (render vocab)]
 };
 
 } // namespace game

@@ -112,6 +112,9 @@ public:
     int Capacity = 0;
     bool IsInitialized = true;
     bool IsAllocated = false;
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 template <typename T>
@@ -211,6 +214,9 @@ public:
 
     // 0x67AE70 — TypeList::operator== [distinct vtable slot 1, identical body]
     bool operator==(const VectorClass<T>& other) const override;
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 #include "vector.inl"

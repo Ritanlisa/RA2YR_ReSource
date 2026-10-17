@@ -132,5 +132,13 @@ unsigned int * ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerG
     unsigned int u32_6C;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+
+
+    unsigned int MPCooperative_field_0x324;  // 0x324 [X55 W3 supply (render vocab)]
+    unsigned int MPCooperative_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned char u8_49;  // 0x49 [X55 W3 supply (render vocab)]
+    unsigned int __pad_328;  // 0x328 [X55 W3 supply (render vocab)]
+    unsigned int MPCooperative_field_0x33C;  // 0x33C [X55 W3 supply (render vocab)]
+    int MPCooperative_field_0x40;  // 0x40 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

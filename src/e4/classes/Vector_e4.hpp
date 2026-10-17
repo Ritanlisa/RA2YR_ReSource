@@ -37,5 +37,11 @@ unsigned int m_8;  // 0x8 [X35-L7 kind=unsigned int]
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned int u32_D;  // X10 supply (member_lookup)
     int __pad_000;  // 0x0 [X30:type_map]
+
+
+    int Vector_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
+    int Vector_field_0x4;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int Vector_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

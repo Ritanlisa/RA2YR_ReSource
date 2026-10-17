@@ -27,6 +27,10 @@ struct SortedArray {
     int u32_20;  // X10 supply (member_lookup)
     unsigned int u32_4;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+
+
+    int SortedArray_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+    int SortedArray_field_0x04;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

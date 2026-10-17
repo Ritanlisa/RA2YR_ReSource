@@ -123,6 +123,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int q054;  // X10 supply (member_lookup)
     int q058;  // X10 supply (member_lookup)
     unsigned char u32_5C[16];  /* char[16] */  // X10 supply (member_lookup)
+
+
+    unsigned int WWMouseClass_field_0x44;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int WWMouseClass_field_0x2C;  // 0x2C [X55 W3 supply (render vocab)]
+    int __pad_48;  // 0x48 [X55 W3 supply (render vocab)]
 };
 
 class MouseClass : public RadarClass

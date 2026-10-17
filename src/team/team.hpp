@@ -182,6 +182,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* q0DC;  // X10 supply (member_lookup)
     int u32_C4;  // X10 supply (member_lookup)
     unsigned int u32_D8;  // X10 supply (member_lookup)
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int q21C;  // 0x21C [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -678,7 +678,7 @@ int Audio::LoadWAVFiles(void *a1_1)
               *(float *)(HIDWORD(v6) + 644) = (float)(int)v6; /*0x7208ec*/
             }
           }
-          *(unsigned int *)v10.__tail_0 = &CCFileClass::`vftable'; /*0x7208f9*/
+          *(unsigned int *)v10.__tail_0 = &vt_CCFileClass; /*0x7208f9*/
           v12 = 0; /*0x720901*/
           Vector::Clear((int)v11); /*0x72090c*/
           *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x720915*/
@@ -2774,14 +2774,14 @@ rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
     else
       v7 = 0; /*0x764b70*/
     ComPtr::Constructor((ComPtr *)this); /*0x764b74*/
-    *(unsigned int *)this = &rc_ptr<WorldDominationTour::Campaign>::`vftable'; /*0x764b7b*/
+    *(unsigned int *)this = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x764b7b*/
     ComPtr::Set((ComPtr *)this, (int)v7); /*0x764b82*/
     return this; /*0x764b87*/
   }
   else
   {
     ComPtr::Constructor((ComPtr *)this); /*0x764b42*/
-    *(unsigned int *)this = &rc_ptr<WorldDominationTour::Campaign>::`vftable'; /*0x764b47*/
+    *(unsigned int *)this = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x764b47*/
     return this; /*0x764b4d*/
   }
 
@@ -2802,7 +2802,7 @@ rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
   else
     WDT = 0; /*0x76abc0*/
   ComPtr::Constructor((ComPtr *)this); /*0x76abc4*/
-  *(unsigned int *)this = &rc_ptr<WDTState>::`vftable'; /*0x76abcb*/
+  *(unsigned int *)this = &vt_rc_ptr_WDTState; /*0x76abcb*/
   ComPtr::Set((ComPtr *)this, (int)WDT); /*0x76abd2*/
   return this; /*0x76abd9*/
 
@@ -2823,7 +2823,7 @@ rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
   else
     _76BF00 = 0; /*0x76beb0*/
   ComPtr::Constructor((ComPtr *)this); /*0x76beb4*/
-  *(unsigned int *)this = &rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x76bebb*/
+  *(unsigned int *)this = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x76bebb*/
   ComPtr::Set((ComPtr *)this, (int)_76BF00); /*0x76bec2*/
   return this; /*0x76bec9*/
 

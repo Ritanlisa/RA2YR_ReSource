@@ -244,5 +244,8 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned char __pad_1555C;  // 0x1555C [X30:canon]
     unsigned char __pad_1591C;  // 0x1591C [X30:canon]
     unsigned char __pad_15CDC;  // 0x15CDC [X30:canon]
+
+
+    unsigned int q1C8;  // 0x1C8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

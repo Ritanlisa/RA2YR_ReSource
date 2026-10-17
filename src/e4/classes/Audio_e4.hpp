@@ -60,5 +60,8 @@ unsigned int __pad_10;  // 0x10 [X35-L7 kind=unsigned int]
     unsigned int u32_A8;  // X10 supply (member_lookup)
     unsigned int u32_B0;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
+
+
+    int __pad_18;  // 0x18 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

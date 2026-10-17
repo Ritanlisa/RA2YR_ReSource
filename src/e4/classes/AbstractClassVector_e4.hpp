@@ -23,6 +23,9 @@ struct AbstractClassVector {
     unsigned char __pad_011;  // 0x11 [X30:canon]
     int AbstractClassVector_field_0x04;  // 0x4 [X30:member_lookup]
     char __pad_0[4];  // 0x0 [X30:member_lookup]
+
+
+    unsigned int m_8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

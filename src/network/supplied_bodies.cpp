@@ -1549,7 +1549,7 @@ void ModemGame::ReceiveMapPreview()
     v13 = 0; /*0x5b74cc*/
     Buffer::Init(&v14, (int)(v4 + 4), FileSize); /*0x5b74de*/
     v14.Buffer_field_0C = 0; /*0x5b74ee*/
-    *(unsigned int *)v12.__pad_0 = &BufferStraw::`vftable'; /*0x5b74f2*/
+    *(unsigned int *)v12.__pad_0 = &vt_BufferStraw; /*0x5b74f2*/
     LZOStraw::Constructor((LZOStraw *)v15, 1, 0x2000); /*0x5b74fa*/
     Delegate::Set(v15, (int)&v12); /*0x5b7508*/
     v6 = (char *)__2_YAPAXI_Z(2 * v5); /*0x5b7519*/

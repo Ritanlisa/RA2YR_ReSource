@@ -195,6 +195,9 @@ struct ColorStruct
 
     // unmatched: no callgraph reference and no git history record
     bool operator!=(const ColorStruct& rhs) const;
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_ColorStruct_DEF
 

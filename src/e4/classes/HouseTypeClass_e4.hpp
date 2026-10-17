@@ -152,6 +152,9 @@ int veteranAircraftCount_d;  // 0x160 [X35-L7 kind=int]
     unsigned int u32_184;  // X10 supply (member_lookup)
     int u8_175;  // X10 supply (member_lookup)
     int u8_D;  // X10 supply (member_lookup)
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

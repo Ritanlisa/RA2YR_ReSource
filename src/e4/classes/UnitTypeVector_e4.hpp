@@ -24,6 +24,9 @@ struct UnitTypeVector {
     int UnitTypeVector_field_0x04;  // 0x4 [X30:member_lookup]
     char __pad_0[4];  // 0x0 [X30:member_lookup]
     unsigned int nextArrayIndex;  // [X30:default]
+
+
+    void * vtable1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

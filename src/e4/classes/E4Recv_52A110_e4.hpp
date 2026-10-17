@@ -12,5 +12,9 @@ struct E4Recv_52A110 {
 // --- flat members (END) ---
     void * sub_52A110(float * a2, unsigned char * a3, float a4, float * a5);  // 0x52A110
     unsigned int owningHouseIndex;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

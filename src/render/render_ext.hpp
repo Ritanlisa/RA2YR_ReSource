@@ -268,6 +268,9 @@ public:
     static uint8_t* s_FogMap;       // 0x00
     static int32_t  s_MapWidth;     // 0x04
     static int32_t  s_MapHeight;    // 0x08
+
+
+    unsigned int u32_120C;  // 0x120C [X55 W3 supply (render vocab)]
 };
 
 // ============================================================================
@@ -382,6 +385,11 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void LoadSidebarAnimations(int a1, int a2);  // 0x770550 -- Animation::LoadSidebarAnimations
     // === SYMBOL-ANCHOR (END) ===
+
+
+    unsigned int u32_D40;  // 0xD40 [X55 W3 supply (render vocab)]
+    unsigned int u32_1050;  // 0x1050 [X55 W3 supply (render vocab)]
+    unsigned int u32_1060;  // 0x1060 [X55 W3 supply (render vocab)]
 };
 
 // ============================================================================
@@ -933,6 +941,9 @@ virtual char RenderBuildingPlacementPreview(unsigned int *,int *,char);  // 0x47
     unsigned int u32_E4;  // X10 supply (member_lookup)
     bool u32_E48;  // X10 supply (member_lookup)
     unsigned int u32_EC;  // X10 supply (member_lookup)
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 class BuildingPlacementClass

@@ -13,5 +13,9 @@ struct E4Recv_52A2F0 {
 // --- flat members (END) ---
     void* owningHouseIndex;  // 0x0 (no offset truth)
     Color * *  sub_52A2F0(float * a2, float Source, char ** a4, float * a5);  // 0x52A2F0
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

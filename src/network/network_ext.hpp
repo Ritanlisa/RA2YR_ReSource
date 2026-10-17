@@ -26,6 +26,11 @@ struct Network {
     unsigned char Network_field_0x6F;  // 0x6F
     unsigned char __pad_73[1];  // 0x73
     unsigned char __pad_87[0x171];  // 0x87
+
+
+    unsigned int Network_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    int Network_field_0x60;  // 0x60 [X55 W3 supply (render vocab)]
+    int Network_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_NETWORK_FLAT_DEF
 
@@ -69,6 +74,9 @@ public:
     int ProcessTurn(int a1);  // 0x5ca800 -- MultiplayerSiege::ProcessTurn
     void* QueryInterface(int a1);  // 0x5cabd0 -- MultiplayerSiege::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
+
+
+    unsigned int u32_14;  // 0x14 [X55 W3 supply (render vocab)]
 };
 
 // ============================================================================
@@ -582,6 +590,9 @@ public:
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned int u32_9;  // X10 supply (member_lookup)
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_NetworkGameSetup_DEF
 // 2 methods in IDA

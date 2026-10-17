@@ -136,12 +136,12 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   }
   v24 = a2; /*0x76d545*/
   Trigger::checkCondition((Trigger *)&v28.owningHouseIndex, 0, 0); /*0x76d54c*/
-  v28.owningHouseIndex = (int)&DynamicVectorClass<MSAnim *>::`vftable'; /*0x76d561*/
+  v28.owningHouseIndex = (int)&vt_DynamicVectorClass_MSAnim; /*0x76d561*/
   v28.ambientSoundController[0] = 10; /*0x76d565*/
   v28.attachedBomb = 0; /*0x76d569*/
   Trigger::checkCondition((Trigger *)&v28.uniqueId, 0, 0); /*0x76d56d*/
   v10 = this->u32_45C; /*0x76d572*/
-  v28.uniqueId = (int)&DynamicVectorClass<MSAnim *>::`vftable'; /*0x76d57c*/
+  v28.uniqueId = (int)&vt_DynamicVectorClass_MSAnim; /*0x76d57c*/
   v28.occupant = 10; /*0x76d585*/
   v28.NeedsSaveOrLink = 0; /*0x76d589*/
   VectorCursor::Construct((VectorCursor *)&v25.VectorCursor_field_0x0C, v10 + 44, 0); /*0x76d58d*/
@@ -201,7 +201,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           }
           inited = 0; /*0x76d734*/
         }
-        v28.ambientSoundController[1] = (int)&CCFileClass::`vftable'; /*0x76d73d*/
+        v28.ambientSoundController[1] = (int)&vt_CCFileClass; /*0x76d73d*/
         v28.location[2] = 0; /*0x76d745*/
         Vector::Clear((int)v28.isInLogic); /*0x76d74c*/
         v28.ambientSoundController[1] = (int)&off_7E1668; /*0x76d755*/
@@ -240,7 +240,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           *(unsigned int *)(v28.abstractFlags + 4 * v22) = v21; /*0x76d837*/
         }
       }
-      *(unsigned int *)v29.__tail_0 = &CCFileClass::`vftable'; /*0x76d841*/
+      *(unsigned int *)v29.__tail_0 = &vt_CCFileClass; /*0x76d841*/
       v31 = 0; /*0x76d84c*/
       Vector::Clear((int)v30); /*0x76d853*/
       BufferIOFileClass::Destruct((BufferIOFileClass *)&v29); /*0x76d85f*/
@@ -249,10 +249,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   }
   p_owningHouseIndex = &v28.owningHouseIndex; /*0x76d88b*/
   v27 = 0; /*0x76d897*/
-  v25.VectorCursor_field_0x18 = (int)&VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76d89b*/
+  v25.VectorCursor_field_0x18 = (int)&vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d89b*/
   v28.vfptr2 = (int)&v28.uniqueId; /*0x76d89f*/
   v28.vfptr3 = 0; /*0x76d8a3*/
-  v28.vfptr1 = (int)&VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76d8a7*/
+  v28.vfptr1 = (int)&vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d8a7*/
   if ( CampaignProperties_WorldDominationTour_22::AddRef((_VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim *)&v28.vfptr1) ) /*0x76d8ab*/
   {
     do /*0x76da41*/
@@ -288,7 +288,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             }
             if ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d9b5*/
               nullsub_24(v24); /*0x76d9ca*/
-            *(unsigned int *)v25.__pad_0 = &VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable'; /*0x76d9cf*/
+            *(unsigned int *)v25.__pad_0 = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76d9cf*/
           }
           DeleteAndZero(&v28); /*0x76d9d7*/
           PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
@@ -302,16 +302,16 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     while ( (*(unsigned __int8 (**)(int *))(v28.vfptr1 + 4))(&v28.vfptr1) ); /*0x76da41*/
   }
   ComPtr::Set(&this->ComPtr_488, a3->FilePointer); /*0x76da5d*/
-  v28.vfptr1 = (int)&VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76da66*/
-  v25.VectorCursor_field_0x18 = (int)&VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76da6a*/
-  v25.VectorCursor_field_0x0C = (int)&VectorCursor<rc_ptr<WorldDominationTour::Territory>,DynamicVectorClass<rc_ptr<WorldDominationTour::Territory>>>::`vftable'; /*0x76da76*/
-  v28.uniqueId = (int)&VectorClass<MSAnim *>::`vftable'; /*0x76da7e*/
+  v28.vfptr1 = (int)&vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76da66*/
+  v25.VectorCursor_field_0x18 = (int)&vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76da6a*/
+  v25.VectorCursor_field_0x0C = (int)&vt_VectorCursor_rc_ptr_WorldDominationTour_Territory_DynamicVectorClass_rc_ptr_WorldDominationTour_Territory; /*0x76da76*/
+  v28.uniqueId = (int)&vt_VectorClass_MSAnim; /*0x76da7e*/
   if ( v28.abstractFlags && BYTE1(v28.referenceCount) ) /*0x76da8b*/
   {
     __3_YAXPAX_Z((void *)v28.abstractFlags); /*0x76da8e*/
     v28.abstractFlags = 0; /*0x76da96*/
   }
-  v28.owningHouseIndex = (int)&VectorClass<MSAnim *>::`vftable'; /*0x76da9e*/
+  v28.owningHouseIndex = (int)&vt_VectorClass_MSAnim; /*0x76da9e*/
   v28.nextArrayIndex = 0; /*0x76daa2*/
   BYTE1(v28.referenceCount) = 0; /*0x76daa9*/
   if ( v28.fallRate ) /*0x76daaf*/

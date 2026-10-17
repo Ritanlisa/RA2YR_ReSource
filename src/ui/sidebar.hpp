@@ -269,6 +269,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
     int q05C;  // X10 supply (member_lookup)
     int u32_2C;  // X10 supply (member_lookup)
+
+
+    unsigned int __pad_1092;  // 0x1092 [X55 W3 supply (render vocab)]
+    unsigned int __pad_B8;  // 0xB8 [X55 W3 supply (render vocab)]
+    unsigned int __pad_524;  // 0x524 [X55 W3 supply (render vocab)]
+    unsigned int __pad_1452;  // 0x1452 [X55 W3 supply (render vocab)]
+    unsigned int __pad_194;  // 0x194 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

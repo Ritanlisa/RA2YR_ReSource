@@ -1121,7 +1121,7 @@ LABEL_32:
             while ( v28 < dword_ABDFA0 ); /*0x58ee5c*/
           }
           v29 = v27->u32_2C; /*0x58ee5e*/
-          v27->q028 = &VectorClass<Cell>::`vftable'; /*0x58ee61*/
+          v27->q028 = &vt_VectorClass_Cell; /*0x58ee61*/
           if ( v29 ) /*0x58ee66*/
           {
             if ( v27->u8_35 ) /*0x58ee68*/
@@ -1917,7 +1917,7 @@ void sub_58C100()
         }
       }
       v4 = (void *)v2[11]; /*0x58c184*/
-      v2[10] = &VectorClass<Cell>::`vftable'; /*0x58c187*/
+      v2[10] = &vt_VectorClass_Cell; /*0x58c187*/
       if ( v4 ) /*0x58c190*/
       {
         if ( *((unsigned char *)v2 + 53) ) /*0x58c192*/

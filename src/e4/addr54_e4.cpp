@@ -451,7 +451,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   GenericNode::Constructor(v76); /*0x545175*/
   GenericNode::Constructor(v77); /*0x54517e*/
   LinkedList::Prepend(v76, (int)v77); /*0x545194*/
-  v75[3] = &List<INIClass::INISection *>::`vftable'; /*0x5451a0*/
+  v75[3] = &vt_List_INIClass_INISection; /*0x5451a0*/
   memset(&v77[3], 0, 12); /*0x5451a8*/
   v78 = 0; /*0x5451b4*/
   v79 = 0; /*0x5451b9*/
@@ -960,7 +960,7 @@ LABEL_26:
             v58 = CCFileClass::Open(v171, 0); /*0x5466ad*/
             if ( v58 && !v65 ) /*0x5466b9*/
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x5466cc*/
-            v171[0] = &CCFileClass::`vftable'; /*0x5466db*/
+            v171[0] = &vt_CCFileClass; /*0x5466db*/
             v173 = 0; /*0x5466e6*/
             Vector::Clear((int)v172); /*0x5466f1*/
             v171[0] = &off_7E1668; /*0x546702*/
@@ -986,7 +986,7 @@ LABEL_26:
             v58 = CCFileClass::Open(v174, 0); /*0x5467ca*/
             if ( v58 && !v65 ) /*0x5467d4*/
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x5467e7*/
-            v174[0] = &CCFileClass::`vftable'; /*0x5467f6*/
+            v174[0] = &vt_CCFileClass; /*0x5467f6*/
             v176 = 0; /*0x546801*/
             Vector::Clear((int)v175); /*0x546808*/
             v174[0] = &off_7E1668; /*0x546814*/
@@ -1007,7 +1007,7 @@ LABEL_26:
             v58 = CCFileClass::Open(v165, 0); /*0x54687a*/
             if ( v58 && !v65 ) /*0x546884*/
               strncpy((char *)(v3 + 757), v182, 0xEu); /*0x546897*/
-            v165[0] = &CCFileClass::`vftable'; /*0x5468a6*/
+            v165[0] = &vt_CCFileClass; /*0x5468a6*/
             v167 = 0; /*0x5468b1*/
             Vector::Clear((int)v166); /*0x5468b8*/
             v165[0] = &off_7E1668; /*0x5468c4*/
@@ -1035,7 +1035,7 @@ LABEL_189:
           v58 = CCFileClass::Open(v177, 0); /*0x54695e*/
           if ( v58 && !v65 ) /*0x546968*/
             strncpy((char *)(v3 + 757), v182, 0xEu); /*0x54697b*/
-          v177[0] = &CCFileClass::`vftable'; /*0x54698a*/
+          v177[0] = &vt_CCFileClass; /*0x54698a*/
           v179 = 0; /*0x546995*/
           Vector::Clear((int)v178); /*0x54699c*/
           v177[0] = &off_7E1668; /*0x5469a8*/
@@ -1167,22 +1167,22 @@ LABEL_217:
     g_Cell_BuildabilityLUT = -1; /*0x546cb3*/
     g_TerrainBridgeIndex = -1; /*0x546cb9*/
   }
-  v168[0] = &CCFileClass::`vftable'; /*0x546ccb*/
+  v168[0] = &vt_CCFileClass; /*0x546ccb*/
   v170 = 0; /*0x546cd2*/
   Vector::Clear((int)v169); /*0x546cd9*/
   v168[0] = &off_7E1668; /*0x546cea*/
   BufferIOFileClass::Dtor(v168); /*0x546cf1*/
-  v161[0] = &CCFileClass::`vftable'; /*0x546cfd*/
+  v161[0] = &vt_CCFileClass; /*0x546cfd*/
   v163 = 0; /*0x546d04*/
   Vector::Clear((int)v162); /*0x546d0b*/
   v161[0] = &off_7E1668; /*0x546d17*/
   BufferIOFileClass::Dtor(v161); /*0x546d1e*/
-  v149[0] = (int)&CCFileClass::`vftable'; /*0x546d2a*/
+  v149[0] = (int)&vt_CCFileClass; /*0x546d2a*/
   v151 = 0; /*0x546d31*/
   Vector::Clear((int)v150); /*0x546d38*/
   v149[0] = (int)&off_7E1668; /*0x546d44*/
   BufferIOFileClass::Dtor(v149); /*0x546d4b*/
-  v158[0] = (int)&CCFileClass::`vftable'; /*0x546d57*/
+  v158[0] = (int)&vt_CCFileClass; /*0x546d57*/
   v160 = 0; /*0x546d5e*/
   Vector::Clear((int)v159); /*0x546d65*/
   v158[0] = (int)&off_7E1668; /*0x546d71*/
@@ -2039,7 +2039,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   unsigned int *v9; // eax
   __int16 v10; // cx
 
-  *(unsigned int *)this = &IPXManagerClass::`vftable'; /*0x5408f7*/
+  *(unsigned int *)this = &vt_IPXManagerClass; /*0x5408f7*/
   if ( dword_887628 ) /*0x540905*/
   {
     (**(void (***)(int, int))dword_887628)(dword_887628, 1); /*0x54090b*/

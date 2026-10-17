@@ -111,7 +111,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   v56 = (ObjectClass *)aP0; /*0x6f0ab9*/
   Team_Helper_6F2230(&v57, 0, 0); /*0x6f0ac9*/
   v5 = *(unsigned int *)(a2 + 22016); /*0x6f0ace*/
-  v57.vfptr = (int)&TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0ad4*/
+  v57.vfptr = (int)&vt_TypeList_TeamTypeClass_const; /*0x6f0ad4*/
   v55 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
     v55 = (unsigned int *)*(&dword_A8022C->vfptr + v5); /*0x6f0aee*/
@@ -177,7 +177,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     {
       v17 = 0; /*0x6f0bfa*/
       Team_Helper_6F27F0((VectorClass *)&v60, 0, 0); /*0x6f0c02*/
-      *(unsigned int *)v60.__pad_0 = &DynamicVectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f0c0b*/
+      *(unsigned int *)v60.__pad_0 = &vt_DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f0c0b*/
       v61 = 10; /*0x6f0c13*/
       v60.m_10 = 0; /*0x6f0c1b*/
       v62 = 0; /*0x6f0c1f*/
@@ -273,7 +273,7 @@ LABEL_51:
         *(unsigned int *)(v57.Items + 4 * v31) = v30; /*0x6f0dbf*/
       }
 LABEL_58:
-      *(unsigned int *)v60.__pad_0 = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f0dc2*/
+      *(unsigned int *)v60.__pad_0 = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass; /*0x6f0dc2*/
       if ( *(unsigned int *)&v60.m_1[3] && BYTE1(v60.m_C) ) /*0x6f0dd8*/
         Team_Helper_6F26E0(*(char **)&v60.m_1[3], 3); /*0x6f0de0*/
     }
@@ -294,7 +294,7 @@ LABEL_71:
     v41->vfptr2 = 0; /*0x6f0e73*/
     LOBYTE(v41->vfptr3) = 1; /*0x6f0e76*/
     BYTE1(v41->vfptr3) = 0; /*0x6f0e7a*/
-    v41->vfptr = (int)&VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0e7e*/
+    v41->vfptr = (int)&vt_VectorClass_TeamTypeClass_const; /*0x6f0e7e*/
     if ( !v42 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3((int)v41); /*0x6f0e8c*/
@@ -331,8 +331,8 @@ LABEL_71:
     v51 = v59; /*0x6f0f7f*/
     v41->uniqueId = v58; /*0x6f0f85*/
     v41->abstractFlags = v51; /*0x6f0f88*/
-    v41->vfptr = (int)&TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0f8b*/
-    v57.vfptr = (int)&VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f91*/
+    v41->vfptr = (int)&vt_TypeList_TeamTypeClass_const; /*0x6f0f8b*/
+    v57.vfptr = (int)&vt_VectorClass_TeamTypeClass_const; /*0x6f0f91*/
     if ( Items ) /*0x6f0f99*/
     {
       if ( v57.IsAllocated[0] ) /*0x6f0fa1*/
@@ -380,10 +380,10 @@ LABEL_70:
     v47->vfptr2 = 0; /*0x6f0f19*/
     LOBYTE(v47->vfptr3) = 1; /*0x6f0f1c*/
     BYTE1(v47->vfptr3) = 0; /*0x6f0f20*/
-    v47->vfptr = (int)&VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f24*/
+    v47->vfptr = (int)&vt_VectorClass_TeamTypeClass_const; /*0x6f0f24*/
     Team_Helper_6F2780(v47, &v57); /*0x6f0f2a*/
-    v41->vfptr = (int)&TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0f2f*/
-    v57.vfptr = (int)&VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f35*/
+    v41->vfptr = (int)&vt_TypeList_TeamTypeClass_const; /*0x6f0f2f*/
+    v57.vfptr = (int)&vt_VectorClass_TeamTypeClass_const; /*0x6f0f35*/
     v48 = (void *)v57.Items; /*0x6f0f3d*/
     v49 = v59; /*0x6f0f45*/
     v42 = v57.Items == 0; /*0x6f0f49*/

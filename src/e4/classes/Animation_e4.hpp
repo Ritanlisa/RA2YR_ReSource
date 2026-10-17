@@ -119,6 +119,11 @@ unsigned int u32_520;  // 0x520 [X35-L7 kind=unsigned int]
     unsigned int u32_1A08;  // 0x1A08 (offset-truth)
 
     unsigned int q1046;  // X10 supply (member_lookup)
+
+
+    unsigned int u32_D40;  // 0xD40 [X55 W3 supply (render vocab)]
+    unsigned int u32_1050;  // 0x1050 [X55 W3 supply (render vocab)]
+    unsigned int u32_1060;  // 0x1060 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

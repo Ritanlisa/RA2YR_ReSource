@@ -408,10 +408,10 @@ LABEL_9:
         *(unsigned int *)&stru_AC4B48.__pad_B8[56] = 0; /*0x634234*/
       if ( *(unsigned int **)&stru_AC4B48.__pad_9C[12] == p_vfptr ) /*0x634240*/
         *(unsigned int *)&stru_AC4B48.__pad_9C[12] = 0; /*0x634242*/
-      this->NeedsSaveOrLink = (int)&VectorClass<PlanningBranchClass *>::`vftable'; /*0x63424b*/
+      this->NeedsSaveOrLink = (int)&vt_VectorClass_PlanningBranchClass; /*0x63424b*/
       VectorClass::Cleanup2((int)&this->NeedsSaveOrLink); /*0x634251*/
       v16 = (void *)this->vfptr1; /*0x634256*/
-      this->vfptr = (int)&VectorClass<PlanningMemberClass *>::`vftable'; /*0x634259*/
+      this->vfptr = (int)&vt_VectorClass_PlanningMemberClass; /*0x634259*/
       if ( v16 ) /*0x634261*/
       {
         if ( BYTE1(this->vfptr3) ) /*0x634263*/
@@ -692,9 +692,9 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       {
         FactoryClass::ClearObjects((FactoryClass *)v4); /*0x6361f7*/
         Team_Remove((ObjectClass *)v4); /*0x6361fe*/
-        *(unsigned int *)(v4 + 32) = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x636206*/
+        *(unsigned int *)(v4 + 32) = &vt_VectorClass_PlanningBranchClass; /*0x636206*/
         VectorClass::Cleanup2(v4 + 32); /*0x63620c*/
-        *(unsigned int *)v4 = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x636213*/
+        *(unsigned int *)v4 = &vt_VectorClass_PlanningMemberClass; /*0x636213*/
         VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v4); /*0x636219*/
         __3_YAXPAX_Z((void *)v4); /*0x63621f*/
       }
@@ -1085,9 +1085,9 @@ LABEL_4:
     {
       FactoryClass::ClearObjects((FactoryClass *)v8); /*0x636c75*/
       Team_Remove((ObjectClass *)v8); /*0x636c7c*/
-      *(unsigned int *)(v8 + 32) = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x636c84*/
+      *(unsigned int *)(v8 + 32) = &vt_VectorClass_PlanningBranchClass; /*0x636c84*/
       VectorClass::Cleanup2(v8 + 32); /*0x636c8a*/
-      *(unsigned int *)v8 = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x636c91*/
+      *(unsigned int *)v8 = &vt_VectorClass_PlanningMemberClass; /*0x636c91*/
       VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v8); /*0x636c97*/
       __3_YAXPAX_Z((void *)v8); /*0x636c9d*/
     }
@@ -1264,10 +1264,10 @@ void TeamClass::Destructor(void * a2)
   TeamClass *v15; // [esp+10h] [ebp-4h] BYREF
 
   v2 = 0; /*0x6e8de5*/
-  this->vfptr = (int)&TeamClass::`vftable'; /*0x6e8de7*/
-  this->vfptr1 = (int)&TeamClass::`vftable'; /*0x6e8ded*/
-  this->vfptr2 = (int)&TeamClass::`vftable'; /*0x6e8df4*/
-  for ( this->vfptr3 = (int)&TeamClass::`vftable'; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
+  this->vfptr = (int)&vt_TeamClass_4; /*0x6e8de7*/
+  this->vfptr1 = (int)&vt_TeamClass_4; /*0x6e8ded*/
+  this->vfptr2 = (int)&vt_TeamClass_4; /*0x6e8df4*/
+  for ( this->vfptr3 = (int)&vt_TeamClass_4; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
   {
     v3 = (AITriggerTypeClass *)*((unsigned int *)dword_A8B204 + v2); /*0x6e8e10*/
     if ( v3[3].AITriggerTypeClass_field_0x1C == this->buildingType ) /*0x6e8e1e*/

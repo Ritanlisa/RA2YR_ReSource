@@ -65,6 +65,12 @@ protected:
     int SaveLoad_Prefix(int a1, int a2);  // 0x6a4780
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x6a48a0
     // === FUNCS-MOVE (END) ===
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

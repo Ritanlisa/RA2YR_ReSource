@@ -240,6 +240,14 @@ int LineTrailColor_2;  // 0x240 [X35-L7 kind=int]
     unsigned int uniqueId1;  // [X30:default]
     unsigned int uniqueId4;  // [X30:default]
     unsigned int uniqueId8;  // [X30:default]
+
+
+    unsigned int u32_2E8;  // 0x2E8 [X55 W3 supply (render vocab)]
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int u32_2FC;  // 0x2FC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

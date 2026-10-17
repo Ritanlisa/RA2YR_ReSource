@@ -211,6 +211,10 @@ public:  // g57c5 W4b supply slot
 
     unsigned int q130;  // X10 supply (member_lookup)
     unsigned int q199;  // X10 supply (member_lookup)
+
+
+    unsigned int q_200;  // 0x200 [X55 W3 supply (render vocab)]
+    unsigned char u8_D94;  // 0xD94 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

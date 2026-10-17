@@ -686,7 +686,7 @@ int Game::MakeScreenshot(int a1)
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
           v7 = CCFileClass::Construct(&v19, Buffer); /*0x537d27*/
           v8 = v7->vt_slot_20(0); /*0x537d3b*/
-          *(unsigned int *)v19.__tail_0 = &CCFileClass::`vftable'; /*0x537d3d*/
+          *(unsigned int *)v19.__tail_0 = &vt_CCFileClass; /*0x537d3d*/
           v21 = 0; /*0x537d48*/
           Vector::Clear((int)v20); /*0x537d4f*/
           *(unsigned int *)v19.__tail_0 = &off_7E1668; /*0x537d5b*/
@@ -695,7 +695,7 @@ int Game::MakeScreenshot(int a1)
         while ( v8 ); /*0x537d6d*/
         CCFileClass::Construct(&v16, Buffer); /*0x537d7b*/
         CompressScreenshot((int *)v16.__tail_0, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
-        *(unsigned int *)v16.__tail_0 = &CCFileClass::`vftable'; /*0x537d9b*/
+        *(unsigned int *)v16.__tail_0 = &vt_CCFileClass; /*0x537d9b*/
         v18 = 0; /*0x537da3*/
         Vector::Clear((int)v17); /*0x537daa*/
         *(unsigned int *)v16.__tail_0 = &off_7E1668; /*0x537db3*/
@@ -901,7 +901,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                   * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 380)
                                    & 1));
   Stream::WriteBlock(&MEMORY[0xA8EA70].vfptr, (int)v11, 250, 1); /*0x5ba91d*/
-  *(unsigned int *)v13.__tail_0 = &CCFileClass::`vftable'; /*0x5ba929*/
+  *(unsigned int *)v13.__tail_0 = &vt_CCFileClass; /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
   Vector::Clear((int)v14); /*0x5ba93f*/
   *(unsigned int *)v13.__tail_0 = &off_7E1668; /*0x5ba94b*/

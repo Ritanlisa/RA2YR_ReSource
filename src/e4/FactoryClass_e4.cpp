@@ -320,13 +320,13 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3->production[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor((TechnoTypeVector *)v3->onHold, 0, 0); /*0x4ca2b2*/
-      *(unsigned int *)v3->onHold = &DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca2b7*/
+      *(unsigned int *)v3->onHold = &vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4ca2b7*/
       *&v3->u32_54 = 10; /*0x4ca2bd*/
       *&v3->q050 = 0; /*0x4ca2c4*/
-      v3->vfptr = (int)&FactoryClass::`vftable'; /*0x4ca2c7*/
-      v3->vfptr1 = (int)&FactoryClass::`vftable'; /*0x4ca2cd*/
-      v3->vfptr2 = (int)&FactoryClass::`vftable'; /*0x4ca2d4*/
-      v3->vfptr3 = (int)&FactoryClass::`vftable'; /*0x4ca2db*/
+      v3->vfptr = (int)&vt_FactoryClass_4; /*0x4ca2c7*/
+      v3->vfptr1 = (int)&vt_FactoryClass_4; /*0x4ca2cd*/
+      v3->vfptr2 = (int)&vt_FactoryClass_4; /*0x4ca2d4*/
+      v3->vfptr3 = (int)&vt_FactoryClass_4; /*0x4ca2db*/
     }
     v5 = *v2; /*0x4ca2e2*/
     this = 0; /*0x4ca2ee*/

@@ -121,6 +121,15 @@ void Shrink2(void *a1 = 0);
     unsigned int u32_8;  // 0x8 (offset-truth)
 
     unsigned int u32_1C;  // X10 supply (member_lookup)
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int HashTable_field_0x08;  // 0x8 [X55 W3 supply (render vocab)]
+    unsigned int HashTable_field_0x0C;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int HashTable_field_0x18;  // 0x18 [X55 W3 supply (render vocab)]
+    unsigned int HashTable_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
+    unsigned int HashTable_field_0x04;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int HashTable_field_0x30;  // 0x30 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

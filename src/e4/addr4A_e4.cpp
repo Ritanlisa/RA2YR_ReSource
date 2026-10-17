@@ -626,7 +626,7 @@ void * LoadFileSHP(char * aP0, bool * aP1)
       {
 LABEL_6:
         *aP1 = !v7; /*0x4a392f*/
-        *(unsigned int *)v8.__tail_0 = &CCFileClass::`vftable'; /*0x4a3938*/
+        *(unsigned int *)v8.__tail_0 = &vt_CCFileClass; /*0x4a3938*/
         v9[3] = 0; /*0x4a3940*/
         Vector::Clear((int)v9); /*0x4a3948*/
         *(unsigned int *)v8.__tail_0 = &off_7E1668; /*0x4a3951*/
@@ -894,12 +894,12 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   if ( !g_lpDirectDraw7 ) /*0x4a4915*/
     return 0; /*0x4a4ab2*/
   sub_4A4E30(&v16, 0, 0); /*0x4a4923*/
-  v16.vfptr = (int)&DynamicVectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4937*/
+  v16.vfptr = (int)&vt_DynamicVectorClass_DDSURFACEDESC; /*0x4a4937*/
   v18 = 10; /*0x4a493f*/
   v17 = 0; /*0x4a4947*/
   if ( g_lpDirectDraw7->lpVtbl->EnumDisplayModes(g_lpDirectDraw7, 0, 0, &v16, (LPDDENUMMODESCALLBACK)sub_4A4850) || !v17 ) /*0x4a4967*/
   {
-    v16.vfptr = (int)&VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4a93*/
+    v16.vfptr = (int)&vt_VectorClass_DDSURFACEDESC; /*0x4a4a93*/
     if ( v16.Items && v16.IsAllocated[0] ) /*0x4a4aa5*/
       __3_YAXPAX_Z((void *)v16.Items); /*0x4a4aa8*/
     return 0; /*0x4a4aa8*/
@@ -934,7 +934,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   {
 LABEL_13:
     __3_YAXPAX_Z(v5); /*0x4a4a1a*/
-    v16.vfptr = (int)&VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4a28*/
+    v16.vfptr = (int)&vt_VectorClass_DDSURFACEDESC; /*0x4a4a28*/
     if ( v16.Items && v16.IsAllocated[0] ) /*0x4a4a38*/
     {
       __3_YAXPAX_Z((void *)v16.Items); /*0x4a4a3b*/
@@ -943,7 +943,7 @@ LABEL_13:
     return 0; /*0x4a4a38*/
   }
   qsort(v5, NumOfElements, 8u, sub_4A48C0); /*0x4a4a5b*/
-  v16.vfptr = (int)&VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4a69*/
+  v16.vfptr = (int)&vt_VectorClass_DDSURFACEDESC; /*0x4a4a69*/
   if ( v16.Items && v16.IsAllocated[0] ) /*0x4a4a79*/
     __3_YAXPAX_Z((void *)v16.Items); /*0x4a4a7c*/
   return v5; /*0x4a4a45*/
@@ -4304,8 +4304,8 @@ int sub_4A8630()
     *v0 = 0; /*0x4a863f*/
     *((unsigned char *)v0 + 4) = 1; /*0x4a8641*/
     *((unsigned char *)v0 + 5) = 0; /*0x4a8645*/
-    *(v0 - 2) = &VectorClass<ObjectClass *>::`vftable'; /*0x4a8648*/
-    *(v0 - 2) = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4a864f*/
+    *(v0 - 2) = &vt_VectorClass_ObjectClass; /*0x4a8648*/
+    *(v0 - 2) = &vt_DynamicVectorClass_ObjectClass; /*0x4a864f*/
     v0[3] = 10; /*0x4a8656*/
     v0[2] = 0; /*0x4a865d*/
     *(v0 - 2) = &off_7E6060; /*0x4a8660*/

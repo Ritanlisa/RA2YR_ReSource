@@ -264,6 +264,21 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
     unsigned char __pad_041;  // X10 supply (csp_canon_members)
     void* vtable1;  // X10 supply (csp_canon_members)
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_C8;  // 0xC8 [X55 W3 supply (render vocab)]
+    unsigned int u32_C4;  // 0xC4 [X55 W3 supply (render vocab)]
+    unsigned int u32_A0;  // 0xA0 [X55 W3 supply (render vocab)]
+    unsigned int u32_C0;  // 0xC0 [X55 W3 supply (render vocab)]
+    unsigned char u8_A5;  // 0xA5 [X55 W3 supply (render vocab)]
+    unsigned char u8_A6;  // 0xA6 [X55 W3 supply (render vocab)]
+    unsigned int q0A8;  // 0xA8 [X55 W3 supply (render vocab)]
+    unsigned char u8_A9;  // 0xA9 [X55 W3 supply (render vocab)]
+    unsigned char u8_AB;  // 0xAB [X55 W3 supply (render vocab)]
+    unsigned int q0B0;  // 0xB0 [X55 W3 supply (render vocab)]
+    unsigned char u8_B1;  // 0xB1 [X55 W3 supply (render vocab)]
+    unsigned int q0AC;  // 0xAC [X55 W3 supply (render vocab)]
 };
 #endif  // G57w8 CCINIClass
 

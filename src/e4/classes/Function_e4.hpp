@@ -18,6 +18,9 @@ struct Function {
 
     int q004;  // X10 supply (member_lookup)
     unsigned char __pad_000;  // 0x0 [X30:canon]
+
+
+    unsigned int Function_field_0x18;  // 0x18 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -94,6 +94,9 @@ public:
 
 protected:
     explicit SuperWeaponTypeClass(noinit_t) noexcept;  // 0x6CE5B0
+
+
+    unsigned int __pad_24;  // 0x24 [X55 W3 supply (render vocab)]
 };
 
 class SuperClass : public AbstractClass

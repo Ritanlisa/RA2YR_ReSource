@@ -52,6 +52,23 @@ void* q000;  // 0x0 [X35-L7 kind=void*]
     int IsometricTileTypeClass_field_0x04;  // 0x4 [X30:member_lookup]
 void* __pad_0;  // 0x0 [X35-L7 kind=void*]
     unsigned int uniqueId;  // [X30:default]
+
+
+    int u32_298;  // 0x298 [X55 W3 supply (render vocab)]
+    unsigned int u32_29C;  // 0x29C [X55 W3 supply (render vocab)]
+    unsigned int u32_2A0;  // 0x2A0 [X55 W3 supply (render vocab)]
+    unsigned int u32_2B4;  // 0x2B4 [X55 W3 supply (render vocab)]
+    unsigned int u32_2C0;  // 0x2C0 [X55 W3 supply (render vocab)]
+    unsigned int u32_2C4;  // 0x2C4 [X55 W3 supply (render vocab)]
+    unsigned int u32_2D4;  // 0x2D4 [X55 W3 supply (render vocab)]
+    unsigned int u32_2D8;  // 0x2D8 [X55 W3 supply (render vocab)]
+    unsigned int u32_2DC;  // 0x2DC [X55 W3 supply (render vocab)]
+    unsigned int u32_2E0;  // 0x2E0 [X55 W3 supply (render vocab)]
+    unsigned int u32_2E1;  // 0x2E1 [X55 W3 supply (render vocab)]
+    unsigned int u32_2E4;  // 0x2E4 [X55 W3 supply (render vocab)]
+    unsigned int u32_2E8;  // 0x2E8 [X55 W3 supply (render vocab)]
+    unsigned int u32_2EC;  // 0x2EC [X55 W3 supply (render vocab)]
+    unsigned int u32_2F0;  // 0x2F0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

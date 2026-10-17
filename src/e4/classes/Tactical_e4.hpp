@@ -105,5 +105,9 @@ unsigned int __pad_010;  // 0x10 [X35-L7 kind=unsigned int]
     unsigned int needsSave;  // [X30:default]
     int u16_26;  // 0x26 [X30:type_map]
     unsigned int uniqueId;  // [X30:default]
+
+
+    int __pad_34;  // 0x34 [X55 W3 supply (render vocab)]
+    unsigned int u32_11A8;  // 0x11A8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

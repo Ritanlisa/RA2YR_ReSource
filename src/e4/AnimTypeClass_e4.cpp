@@ -563,7 +563,7 @@ int AnimTypeClass::GetDamage()
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         this->ImageAllocated = 1; /*0x428d55*/
-      *(unsigned int *)v10.__tail_0 = &CCFileClass::`vftable'; /*0x428d63*/
+      *(unsigned int *)v10.__tail_0 = &vt_CCFileClass; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
       *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x428d7f*/
@@ -571,7 +571,7 @@ int AnimTypeClass::GetDamage()
     }
     (*((void (**)(AnimTypeClass *, int))this->vfptr + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = this->Image; /*0x428da2*/
-    *(unsigned int *)v7.__tail_0 = &CCFileClass::`vftable'; /*0x428dac*/
+    *(unsigned int *)v7.__tail_0 = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
     *(unsigned int *)v7.__tail_0 = &off_7E1668; /*0x428dc5*/

@@ -417,7 +417,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
       if ( aP0 != -1416 ) /*0x4db413*/
       {
         AbstractClassVector::Construct(&aP0->FootClass_DVC_588, 0, 0); /*0x4db419*/
-        *(unsigned int *)v6 = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4db41e*/
+        *(unsigned int *)v6 = &vt_DynamicVectorClass_AbstractClass; /*0x4db41e*/
         *(unsigned int *)(aP0 + 1436) = 10; /*0x4db424*/
         *(unsigned int *)(aP0 + 1432) = 0; /*0x4db42b*/
       }
@@ -436,7 +436,7 @@ LABEL_16:
           if ( aP0 != -1452 ) /*0x4db4c1*/
           {
             AbstractClassVector::Construct(&aP0->FootClass_DVC_5AC, 0, 0); /*0x4db4c7*/
-            *(unsigned int *)v12 = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4db4cc*/
+            *(unsigned int *)v12 = &vt_DynamicVectorClass_AbstractClass; /*0x4db4cc*/
             *(unsigned int *)(aP0 + 1472) = 10; /*0x4db4d2*/
             *(unsigned int *)(aP0 + 1468) = 0; /*0x4db4d9*/
           }

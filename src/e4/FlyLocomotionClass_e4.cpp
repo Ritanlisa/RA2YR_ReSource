@@ -75,11 +75,11 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( *(unsigned int *)(this->Owner + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v11, 0, 0); /*0x4cfea2*/
-  *(unsigned int *)v11.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfeb7*/
+  *(unsigned int *)v11.__pad_0 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfeb7*/
   v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
   v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  *(unsigned int *)v10.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfecd*/
+  *(unsigned int *)v10.__pad_0 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfecd*/
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
@@ -164,13 +164,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   (*(void (**)(unsigned int))(v9 + 968))(v8[v7]); /*0x4d011b*/
 LABEL_45:
-  *(unsigned int *)v10.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0121*/
+  *(unsigned int *)v10.__pad_0 = &vt_VectorClass_ObjectClass; /*0x4d0121*/
   if ( v10.ObjectVector_field_0x04 && BYTE1(v10.ObjectVector_field_0x0C) ) /*0x4d0136*/
   {
     __3_YAXPAX_Z((void *)v10.ObjectVector_field_0x04); /*0x4d0139*/
     v10.ObjectVector_field_0x04 = 0; /*0x4d0141*/
   }
-  *(unsigned int *)v11.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0149*/
+  *(unsigned int *)v11.__pad_0 = &vt_VectorClass_ObjectClass; /*0x4d0149*/
   BYTE1(v10.ObjectVector_field_0x0C) = 0; /*0x4d0150*/
   v10.ObjectVector_field_0x08 = 0; /*0x4d0154*/
   if ( v11.ObjectVector_field_0x04 ) /*0x4d0159*/

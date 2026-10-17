@@ -287,12 +287,12 @@ LABEL_17:
   v31[40] = 0; /*0x7a0810*/
   ReadRegistryOptionsWOL((ObjectClass *)&v31[36]); /*0x7a0815*/
   ComPtr::Constructor((ComPtr *)&v31[24]); /*0x7a081e*/
-  *(unsigned int *)&v31[24] = &rc_ptr<PlayerProfile>::`vftable'; /*0x7a082c*/
+  *(unsigned int *)&v31[24] = &vt_rc_ptr_PlayerProfile; /*0x7a082c*/
   if ( (unsigned __int8)Flag::IsNot2((Flag *)&v31[36]) ) /*0x7a0830*/
   {
     PlayerProfile = LoadPlayerProfile((ObjectClass *)&v31[16], (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x7a0842*/
     ComPtr::Set((ComPtr *)&v31[24], PlayerProfile->vfptr1); /*0x7a084f*/
-    *(unsigned int *)&v31[16] = &rc_ptr<PlayerProfile>::`vftable'; /*0x7a0858*/
+    *(unsigned int *)&v31[16] = &vt_rc_ptr_PlayerProfile; /*0x7a0858*/
     ComPtr::Release((ComPtr *)&v31[16]); /*0x7a085c*/
   }
   else
@@ -307,7 +307,7 @@ LABEL_17:
   String::Assign_Alt((String *)&v31[32], aMatchwdt); /*0x7a08a6*/
   matched = RequestMatchWOL_Helper(); /*0x7a08b4*/
   ComPtr::Constructor((ComPtr *)&v31[16]); /*0x7a08b6*/
-  *(unsigned int *)&v31[16] = &rc_ptr<WorldDominationTour::Campaign>::`vftable'; /*0x7a08c4*/
+  *(unsigned int *)&v31[16] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7a08c4*/
   ComPtr::Set((ComPtr *)&v31[16], matched[1]); /*0x7a08cc*/
   if ( *(unsigned int *)&v31[20] ) /*0x7a08d7*/
   {
@@ -325,11 +325,11 @@ LABEL_17:
         g_WOL_IdleHandler = 0; /*0x7a08fe*/
         g_WOL_GameProcessState = -1; /*0x7a0904*/
         g_WOL_GameListPool = time(0); /*0x7a091a*/
-        *(unsigned int *)&v31[16] = &rc_ptr<WorldDominationTour::Campaign>::`vftable'; /*0x7a091f*/
+        *(unsigned int *)&v31[16] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7a091f*/
         ComPtr::Release((ComPtr *)&v31[16]); /*0x7a0923*/
         DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a092c*/
         DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0935*/
-        *(unsigned int *)&v31[24] = &rc_ptr<PlayerProfile>::`vftable'; /*0x7a093e*/
+        *(unsigned int *)&v31[24] = &vt_rc_ptr_PlayerProfile; /*0x7a093e*/
         ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0946*/
         return 0; /*0x7a0957*/
       }
@@ -346,7 +346,7 @@ LABEL_34:
   v11 = FromStringInt((char **)&v31[4], *(int *)dword_A8B240); /*0x7a099f*/
   String::Append2((String *)&v31[8], v11); /*0x7a09a9*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a09b2*/
-  *(unsigned int *)&v31[16] = &rc_ptr<WorldDominationTour::Campaign>::`vftable'; /*0x7a09bb*/
+  *(unsigned int *)&v31[16] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7a09bb*/
   ComPtr::Release((ComPtr *)&v31[16]); /*0x7a09bf*/
 LABEL_35:
   StringCSF = GetStringCSF(aWolRequestingm, 0, g_Str_File_wonline_cpp, 28395); /*0x7a09c9*/
@@ -436,7 +436,7 @@ LABEL_50:
   DeleteAndZero((ObjectClass *)v31); /*0x7a0cdf*/
   DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a0ce8*/
   DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0cf1*/
-  *(unsigned int *)&v31[24] = &rc_ptr<PlayerProfile>::`vftable'; /*0x7a0cfa*/
+  *(unsigned int *)&v31[24] = &vt_rc_ptr_PlayerProfile; /*0x7a0cfa*/
   ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0cfe*/
   return 1; /*0x7a07c7*/
 
@@ -1585,10 +1585,10 @@ AbstractClass * * sub_7AF970(int a2)
   v8 = 0; /*0x7af999*/
   v9 = 0; /*0x7af99d*/
   v10 = 0; /*0x7af9a1*/
-  v6 = (OwnerDrawControl)&WorldDominationTour::FactionSelectDialogControl::`vftable'; /*0x7af9a5*/
+  v6 = (OwnerDrawControl)&vt_WorldDominationTour_FactionSelectDialogControl; /*0x7af9a5*/
   CCFileClass::Construct(&v12, aWdtfsbsmPcx); /*0x7af9ad*/
   v8 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7af9cb*/
-  *(unsigned int *)v12.__tail_0 = &CCFileClass::`vftable'; /*0x7af9cf*/
+  *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x7af9cf*/
   v14 = 0; /*0x7af9d3*/
   Vector::Clear((int)v13); /*0x7af9da*/
   *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x7af9e3*/
@@ -1597,7 +1597,7 @@ AbstractClass * * sub_7AF970(int a2)
   {
     CCFileClass::Construct(&v12, aWdtfsasmPcx); /*0x7af9ff*/
     v3 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7afa0c*/
-    *(unsigned int *)v12.__tail_0 = &CCFileClass::`vftable'; /*0x7afa18*/
+    *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x7afa18*/
     v9 = (void (***)(unsigned int, int))v3; /*0x7afa1c*/
     v14 = 0; /*0x7afa20*/
     Vector::Clear((int)v13); /*0x7afa27*/
@@ -1612,7 +1612,7 @@ AbstractClass * * sub_7AF970(int a2)
   v11 = v8; /*0x7afa76*/
   RunDialog(0x125u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)&v6); /*0x7afa7a*/
   v4 = v7; /*0x7afa7f*/
-  v6 = (OwnerDrawControl)&WorldDominationTour::FactionSelectDialogControl::`vftable'; /*0x7afa83*/
+  v6 = (OwnerDrawControl)&vt_WorldDominationTour_FactionSelectDialogControl; /*0x7afa83*/
   if ( v8 ) /*0x7afa91*/
     (*(void (**)(unsigned int *, int))*v8)(v8, 1); /*0x7afa97*/
   if ( v9 ) /*0x7afa9f*/

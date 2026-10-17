@@ -97,7 +97,7 @@ LABEL_13:
 LABEL_14:
       ++i; /*0x533e98*/
     }
-    *(unsigned int *)v10.__tail_0 = &CCFileClass::`vftable'; /*0x533ec0*/
+    *(unsigned int *)v10.__tail_0 = &vt_CCFileClass; /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x533ed8*/
@@ -108,7 +108,7 @@ LABEL_14:
   else
   {
     Debug::Log(); /*0x533efe*/
-    *(unsigned int *)v10.__tail_0 = &CCFileClass::`vftable'; /*0x533f0d*/
+    *(unsigned int *)v10.__tail_0 = &vt_CCFileClass; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
     *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x533f25*/

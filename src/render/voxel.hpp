@@ -241,6 +241,11 @@ protected:
     int ProcessFrame();  // 0x4caf20
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x74aa10
     // === FUNCS-MOVE (END) ===
+
+
+    unsigned int VoxelAnimClass_field_0x104;  // 0x104 [X55 W3 supply (render vocab)]
+    unsigned int VoxelAnimClass_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int VoxelAnimClass_field_0x140;  // 0x140 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

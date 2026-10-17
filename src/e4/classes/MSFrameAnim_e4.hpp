@@ -41,5 +41,8 @@ struct MSFrameAnim {
     unsigned char __pad_011;  // 0x11 [X30:canon]
     unsigned char __pad_01A;  // 0x1A [X30:canon]
     unsigned int INIClass_10;  // [X30:default]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

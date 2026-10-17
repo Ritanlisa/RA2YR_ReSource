@@ -30,5 +30,8 @@ struct WinsockInterface {
     unsigned int u32_3B4;  // 0x3B4
     unsigned int u32_3AC;  // 0x3AC
     unsigned int m_3F068;  // 0x3F068 [X30:default]
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

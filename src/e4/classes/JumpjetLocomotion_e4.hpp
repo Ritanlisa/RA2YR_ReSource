@@ -40,5 +40,12 @@ struct JumpjetLocomotion {
     unsigned int u32_C;  // X10 supply (member_lookup)
     int __pad_000;  // 0x0 [X30:type_map]
     unsigned char __pad_064;  // 0x64 [X30:canon]
+
+
+    unsigned int __pad_C;  // 0xC [X55 W3 supply (render vocab)]
+    int JumpjetLocomotion_field_0x74;  // 0x74 [X55 W3 supply (render vocab)]
+    int JumpjetLocomotion_field_0x40;  // 0x40 [X55 W3 supply (render vocab)]
+    int JumpjetLocomotion_field_0x44;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int JumpjetLocomotion_field_0x8C;  // 0x8C [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

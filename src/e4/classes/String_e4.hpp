@@ -69,5 +69,9 @@ struct String {
 unsigned int SessionClass_field_14;  // 0x14 [X35-L7 kind=unsigned int]
     unsigned int headNode;  // [X30:default]
     ObjectClass * vtable2;  // 0x4 [X30:member_lookup]
+
+
+    unsigned int u32_4;  // 0x4 [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

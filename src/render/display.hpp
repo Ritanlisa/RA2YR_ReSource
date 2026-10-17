@@ -183,6 +183,11 @@ protected:
     int ReadFromBuffer(int a1, int a2);  // 0x7ba4d0 -- DisplayClass::ReadFromBuffer
     void* GetViewport();  // 0x72ad20 -- Display::GetViewport
     // === SYMBOL-ANCHOR (END) ===
+
+
+    int __pad_140;  // 0x140 [X55 W3 supply (render vocab)]
+    unsigned int q12C;  // 0x12C [X55 W3 supply (render vocab)]
+    unsigned int q121;  // 0x121 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

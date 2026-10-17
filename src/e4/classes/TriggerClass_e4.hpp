@@ -46,6 +46,9 @@ unsigned int occuredEvents;  // 0x40 [X35-L7 kind=unsigned int]
     int RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP1, int aP2, int a1, int aP0);
     unsigned int u32_54;  // 0x54 (offset-truth)
     unsigned int abstractFlags2;  // [X30:default]
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

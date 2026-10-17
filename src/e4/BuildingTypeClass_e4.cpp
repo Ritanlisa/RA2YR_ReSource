@@ -263,13 +263,13 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->ProductionCompletionThreshold = 1; /*0x45e298*/
   this->CostRatePerFrame = 1; /*0x45e29e*/
   this->u32_1791 = 0; /*0x45e2a5*/
-  this->DockingOffsets = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e2ab*/
+  this->DockingOffsets = &vt_VectorClass_TPoint3D_int; /*0x45e2ab*/
   this->PreventsPlacementOverlap = __2_YAPAXI_Z(0xCu); /*0x45e2ba*/
   this->u32_1791 = 1; /*0x45e2c6*/
-  *(unsigned int *)this = &BuildingTypeClass::`vftable'; /*0x45e2cd*/
-  this->vtable2 = &BuildingTypeClass::`vftable'; /*0x45e2d3*/
-  this->vtable3 = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
-  this->vtable4 = &BuildingTypeClass::`vftable'; /*0x45e2e1*/
+  *(unsigned int *)this = &vt_BuildingTypeClass_4; /*0x45e2cd*/
+  this->vtable2 = &vt_BuildingTypeClass_4; /*0x45e2d3*/
+  this->vtable3 = &vt_BuildingTypeClass_4; /*0x45e2d9*/
+  this->vtable4 = &vt_BuildingTypeClass_4; /*0x45e2e1*/
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x45e2e8*/
   v4 = dword_A83C78; /*0x45e2ed*/
   if ( dword_A83C78 < dword_A83C70 /*0x45e32b*/
@@ -1017,7 +1017,7 @@ void BuildingTypeClass::LoadVoxel()
           Info = VoxelSection::GetInfo((VoxelSection *)this->BarrelVoxel[0], 0, 0); /*0x45fc12*/
           Matrix::Scale((Matrix *)this->ChargerTurrets[0], *(float *)(Info + 12)); /*0x45fc21*/
         }
-        *(unsigned int *)v22.__tail_0 = &CCFileClass::`vftable'; /*0x45fc2a*/
+        *(unsigned int *)v22.__tail_0 = &vt_CCFileClass; /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         Vector::Clear((int)v23); /*0x45fc36*/
         *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x45fc3f*/
@@ -1035,7 +1035,7 @@ void BuildingTypeClass::LoadVoxel()
         *v12 = 76; /*0x45fc7f*/
         v12[1] = 0; /*0x45fc82*/
       }
-      *(unsigned int *)v25.__tail_0 = &CCFileClass::`vftable'; /*0x45fc8c*/
+      *(unsigned int *)v25.__tail_0 = &vt_CCFileClass; /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
       Vector::Clear((int)v26); /*0x45fc9b*/
       *(unsigned int *)v25.__tail_0 = &off_7E1668; /*0x45fca4*/
@@ -1083,13 +1083,13 @@ void BuildingTypeClass::LoadVoxel()
           Matrix::Scale((Matrix *)this->ChargerTurrets[2], *(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
-      *(unsigned int *)v22.__tail_0 = &CCFileClass::`vftable'; /*0x45fdf3*/
+      *(unsigned int *)v22.__tail_0 = &vt_CCFileClass; /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
       Vector::Clear((int)v23); /*0x45fdff*/
       *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x45fe08*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fe0c*/
     }
-    *(unsigned int *)v28.__tail_0 = &CCFileClass::`vftable'; /*0x45fe18*/
+    *(unsigned int *)v28.__tail_0 = &vt_CCFileClass; /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
     Vector::Clear((int)v29); /*0x45fe2a*/
     *(unsigned int *)v28.__tail_0 = &off_7E1668; /*0x45fe36*/
@@ -1375,7 +1375,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
         *(unsigned int *)&v1[1].Weapon[252] = 0; /*0x465174*/
         v1[1].Weapon[256] = 1; /*0x465177*/
         v1[1].Weapon[257] = 0; /*0x46517b*/
-        *(unsigned int *)v4 = &VectorClass<TPoint3D<int>>::`vftable'; /*0x46517e*/
+        *(unsigned int *)v4 = &vt_VectorClass_TPoint3D_int; /*0x46517e*/
       }
       (*(void (**)(char *, int, unsigned int))(*(unsigned int *)v4 + 8))(v4, v14, 0); /*0x46518c*/
       v5 = 0; /*0x46518f*/

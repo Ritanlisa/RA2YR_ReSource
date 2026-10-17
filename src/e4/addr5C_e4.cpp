@@ -166,7 +166,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
     result = (unsigned int *)__2_YAPAXI_Z(0x14u); /*0x5c0885*/
     if ( result ) /*0x5c088f*/
     {
-      *result = (unsigned int)&BinkMovieHandle::`vftable'; /*0x5c0897*/
+      *result = (unsigned int)&vt_BinkMovieHandle; /*0x5c0897*/
       result[4] = (unsigned int)v9; /*0x5c089d*/
       if ( v9 ) /*0x5c08a0*/
       {
@@ -185,7 +185,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   if ( !v12 ) /*0x5c091e*/
     return 0; /*0x5c0955*/
   *(unsigned char *)(v12 + 20) = 0; /*0x5c0920*/
-  *(unsigned int *)v12 = &VQMovieHandle::`vftable'; /*0x5c0924*/
+  *(unsigned int *)v12 = &vt_VQMovieHandle; /*0x5c0924*/
   *(unsigned int *)(v12 + 16) = VQMovie; /*0x5c092a*/
   *(unsigned int *)(v12 + 8) = MovieClass::GetWidth(*VQMovie); /*0x5c0934*/
   v13[3] = MovieClass::GetHeight(*(MovieClass **)v13[4]); /*0x5c0941*/

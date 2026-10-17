@@ -696,7 +696,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     RulesClass::readIQ((RulesClass *)&v17, 0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
-    v17 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67be2c*/
+    v17 = &vt_TypeList_TerrainTypeClass_const; /*0x67be2c*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
@@ -716,10 +716,10 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67beb0*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67beb3*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67beb7*/
-    *(unsigned int *)a1 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67beba*/
+    *(unsigned int *)a1 = &vt_VectorClass_TerrainTypeClass_const; /*0x67beba*/
     System_Load_67BFA0((ObjectClass *)a1, &v17); /*0x67bec0*/
-    *(unsigned int *)a1 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67bec5*/
-    v17 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67becb*/
+    *(unsigned int *)a1 = &vt_TypeList_TerrainTypeClass_const; /*0x67bec5*/
+    v17 = &vt_VectorClass_TerrainTypeClass_const; /*0x67becb*/
     v9 = v22; /*0x67bed7*/
     *(unsigned int *)(a1 + 16) = v21; /*0x67bedb*/
     v10 = Block; /*0x67bede*/
@@ -737,7 +737,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67bf1c*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67bf1f*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67bf23*/
-    *(unsigned int *)a1 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67bf26*/
+    *(unsigned int *)a1 = &vt_VectorClass_TerrainTypeClass_const; /*0x67bf26*/
     if ( (unsigned int *)a1 != a5 ) /*0x67bf2c*/
     {
       TypeList_cptr_TerrainTypeClass::TryFreeAndClear((_VectorClass_PBVTerrainTypeClass *)a1); /*0x67bf30*/
@@ -771,7 +771,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     }
     *(unsigned int *)(a1 + 16) = a5[4]; /*0x67bf83*/
     *(unsigned int *)(a1 + 20) = a5[5]; /*0x67bf89*/
-    *(unsigned int *)a1 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67bf8c*/
+    *(unsigned int *)a1 = &vt_TypeList_TerrainTypeClass_const; /*0x67bf8c*/
   }
   return (void *)a1; /*0x67bf02*/
 

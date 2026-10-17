@@ -12,5 +12,10 @@ struct E4Recv_645D60 {
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
     ObjectClass * *  sub_645D60(float * a2);  // 0x645D60
+
+
+    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

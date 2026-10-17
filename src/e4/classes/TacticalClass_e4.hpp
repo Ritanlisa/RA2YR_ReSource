@@ -193,6 +193,15 @@ unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     unsigned int vtable24;  // 0x5C [X30:member_lookup]
     int vtable28;  // 0x6C [X30:member_lookup]
     int vtable46;  // 0xB4 [X30:type_map]
+
+
+    unsigned int u32_B4;  // 0xB4 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11B0;  // 0x11B0 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11D0;  // 0x11D0 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11D4;  // 0x11D4 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11D8;  // 0x11D8 [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11DC;  // 0x11DC [X55 W3 supply (render vocab)]
+    unsigned int DisplayClass_field_0x11E0;  // 0x11E0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

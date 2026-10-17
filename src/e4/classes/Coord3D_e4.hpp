@@ -14,6 +14,9 @@ unsigned int * Set(int aP1, int aP2, int a4);
     int Coord3D_field_0x04;  // 0x4 (W13A til Coord3D)
     int q008;  // 0x8
     unsigned char __pad_000;  // 0x0 [X30:canon]
+
+
+    int Coord3D_field_0x08;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

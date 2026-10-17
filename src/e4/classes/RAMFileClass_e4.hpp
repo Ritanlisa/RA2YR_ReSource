@@ -31,5 +31,8 @@ unsigned int q14;  // 0x14 [X35-L7 kind=unsigned int]
     unsigned char __pad_004;  // 0x4 [X30:canon]
     AbstractClass* RAMFileClass_field_0x8;  // 0x8 [X30:type_map]
 void* __pad_0;  // 0x0 [X35-L7 kind=void*]
+
+
+    unsigned int RAMFileClass_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

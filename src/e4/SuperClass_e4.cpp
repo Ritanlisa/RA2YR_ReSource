@@ -209,10 +209,10 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   int v9; // [esp+14h] [ebp-4h] BYREF
 
   v2 = *(unsigned __int8 **)(&this->u32_68); /*0x6cb124*/
-  *(unsigned int *)this = &SuperClass::`vftable'; /*0x6cb127*/
-  this->vtable2 = &SuperClass::`vftable'; /*0x6cb12f*/
-  this->vtable3 = &SuperClass::`vftable'; /*0x6cb136*/
-  this->vtable4 = &SuperClass::`vftable'; /*0x6cb13d*/
+  *(unsigned int *)this = &vt_SuperClass_4; /*0x6cb127*/
+  this->vtable2 = &vt_SuperClass_4; /*0x6cb12f*/
+  this->vtable3 = &vt_SuperClass_4; /*0x6cb136*/
+  this->vtable4 = &vt_SuperClass_4; /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
     v2[405] = 0; /*0x6cb146*/

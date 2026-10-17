@@ -44,6 +44,9 @@ int waypointCapacity;  // 0x44 [X35-L7 kind=int]
     unsigned int vfptr;  // [X30:default]
     unsigned int vfptr1;  // [X30:default]
     unsigned int vfptr2;  // [X30:default]
+
+
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

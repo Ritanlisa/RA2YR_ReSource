@@ -23,6 +23,9 @@ int MultiplayerSiege_field_10;  // 0x10 [X35-L7 kind=int]
     int Write(void ** a1);
 
     int32_t MultiplayerSiege_field_00;  // X10 supply (member_types)
+
+
+    unsigned int u32_14;  // 0x14 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

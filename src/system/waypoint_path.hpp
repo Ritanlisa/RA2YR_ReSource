@@ -63,5 +63,8 @@ public:
     uint8_t     WaypointClass_field_34;           // +0x34 (this+52)
     uint8_t     WaypointClass_field_35;           // +0x35 (this+53)
     uint8_t     pad_36[2];          // +0x36..+0x37
+
+
+    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -69,10 +69,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       v5[2].vfptr3 = 0; /*0x438ecb*/
-      v5->vfptr = &BombClass::`vftable'; /*0x438ece*/
-      v5->vfptr1 = &BombClass::`vftable'; /*0x438ed4*/
-      v5->vfptr2 = &BombClass::`vftable'; /*0x438edb*/
-      v5->vfptr3 = &BombClass::`vftable'; /*0x438ee2*/
+      v5->vfptr = &vt_BombClass_4; /*0x438ece*/
+      v5->vfptr1 = &vt_BombClass_4; /*0x438ed4*/
+      v5->vfptr2 = &vt_BombClass_4; /*0x438edb*/
+      v5->vfptr3 = &vt_BombClass_4; /*0x438ee2*/
       v5[1].vfptr1 = 0; /*0x438ee9*/
       v5[1].vfptr2 = 0; /*0x438eec*/
       LOBYTE(v5[2].uniqueId) = 0; /*0x438eef*/

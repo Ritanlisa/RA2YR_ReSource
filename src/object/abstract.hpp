@@ -64,6 +64,9 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int SetField(int a1);  // 0x5b36e0
     // === FUNCS-MOVE (END) ===
+
+
+    int __tail_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 class IRTTITypeInfo : IUnknown {

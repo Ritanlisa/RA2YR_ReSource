@@ -50,6 +50,14 @@ struct ProgressTimer
     void* GetValue(void *a1);  // 0x4c93d0 -- W19K4: out-param is pointer per raw 0x41A581 receiver-first
     static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
     // === SYMBOL-ANCHOR (END) ===
+
+
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int q08C;  // 0x8C [X55 W3 supply (render vocab)]
+    int ProgressTimer_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
+    int ProgressTimer_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int q09C;  // 0x9C [X55 W3 supply (render vocab)]
+    unsigned int ProgressTimer_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_E4_OWNS_PROGRESSTIMER
 

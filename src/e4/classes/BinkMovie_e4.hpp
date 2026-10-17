@@ -64,5 +64,10 @@ unsigned int BinkMovie_field_0x4;  // 0x4 [X35-L7 kind=unsigned int]
 unsigned int BinkMovie_field_0x8;  // 0x8 [X35-L7 kind=unsigned int]
     int BinkMovie_field_0xC;  // 0xC [X30:type_map]
     int __pad_0;  // 0x0 [X30:type_map]
+
+
+    int BinkMovie_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+    int __pad_18;  // 0x18 [X55 W3 supply (render vocab)]
+    int BinkMovie_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

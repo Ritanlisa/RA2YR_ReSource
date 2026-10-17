@@ -17,6 +17,10 @@ struct _VectorClass_PAVParticleClass {
     unsigned char u8_C;  // X10 supply (member_lookup)
     unsigned char u8_D;  // X10 supply (member_lookup)
     unsigned int m_8;  // 0x8 [X30:default]
+
+
+    unsigned int m_C;  // 0xC [X55 W3 supply (render vocab)]
+    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

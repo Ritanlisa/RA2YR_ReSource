@@ -52,6 +52,12 @@ unsigned int u32_744;  // 0x744 [X35-L7 kind=unsigned int]
     unsigned int u32_DC;  // X10 supply (member_lookup)
     unsigned int Buffer_field_046;  // 0x46 [X30:default]
     unsigned int Buffer_field_047;  // 0x47 [X30:default]
+
+
+    unsigned int q044;  // 0x44 [X55 W3 supply (render vocab)]
+    unsigned int q040;  // 0x40 [X55 W3 supply (render vocab)]
+    int q030;  // 0x30 [X55 W3 supply (render vocab)]
+    unsigned int u32_73C;  // 0x73C [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 

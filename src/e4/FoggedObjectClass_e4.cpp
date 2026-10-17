@@ -66,14 +66,14 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   this->u32_54 = -1; /*0x4d09dd*/
   this->u32_58 = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d09e7*/
-  this->q5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d09ec*/
+  this->q5C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d09ec*/
   this->q070 = 10; /*0x4d09f2*/
   this->HouseClass_6C = 0; /*0x4d09f9*/
   this->u32_74 = 1; /*0x4d0a02*/
-  this->vfptr = &FoggedObjectClass::`vftable'; /*0x4d0a06*/
-  this->vfptr1 = &FoggedObjectClass::`vftable'; /*0x4d0a0c*/
-  this->vfptr2 = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
-  this->vfptr3 = &FoggedObjectClass::`vftable'; /*0x4d0a1a*/
+  this->vfptr = &vt_FoggedObjectClass_4; /*0x4d0a06*/
+  this->vfptr1 = &vt_FoggedObjectClass_4; /*0x4d0a0c*/
+  this->vfptr2 = &vt_FoggedObjectClass_4; /*0x4d0a13*/
+  this->vfptr3 = &vt_FoggedObjectClass_4; /*0x4d0a1a*/
   v5 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
@@ -202,14 +202,14 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   this->q050 = v5; /*0x4d0c8c*/
   this->u32_58 = a4; /*0x4d0c8f*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d0c92*/
-  this->q5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d0c97*/
+  this->q5C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d0c97*/
   this->q070 = 10; /*0x4d0c9e*/
   this->HouseClass_6C = 0; /*0x4d0ca5*/
   this->u32_74 = 1; /*0x4d0cae*/
-  this->vfptr = (int)&FoggedObjectClass::`vftable'; /*0x4d0cb2*/
-  this->vfptr1 = (int)&FoggedObjectClass::`vftable'; /*0x4d0cb8*/
-  this->vfptr2 = (int)&FoggedObjectClass::`vftable'; /*0x4d0cbf*/
-  this->vfptr3 = (int)&FoggedObjectClass::`vftable'; /*0x4d0cc6*/
+  this->vfptr = (int)&vt_FoggedObjectClass_4; /*0x4d0cb2*/
+  this->vfptr1 = (int)&vt_FoggedObjectClass_4; /*0x4d0cb8*/
+  this->vfptr2 = (int)&vt_FoggedObjectClass_4; /*0x4d0cbf*/
+  this->vfptr3 = (int)&vt_FoggedObjectClass_4; /*0x4d0cc6*/
   v6 = Coord::To_Cell((Coord *)&dword_87F7E8, aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
@@ -365,14 +365,14 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   this->u32_54 = -1; /*0x4d0f73*/
   this->u32_58 = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d0f81*/
-  this->q5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d0f8a*/
+  this->q5C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d0f8a*/
   this->q070 = 10; /*0x4d0f90*/
   this->HouseClass_6C = 0; /*0x4d0f97*/
   this->u32_74 = a3; /*0x4d0fa2*/
-  *(unsigned int *)this = &FoggedObjectClass::`vftable'; /*0x4d0fa5*/
-  this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0fab*/
-  this->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d0fb2*/
-  this->vtable4 = &FoggedObjectClass::`vftable'; /*0x4d0fb9*/
+  *(unsigned int *)this = &vt_FoggedObjectClass_4; /*0x4d0fa5*/
+  this->vtable2 = &vt_FoggedObjectClass_4; /*0x4d0fab*/
+  this->vtable3 = &vt_FoggedObjectClass_4; /*0x4d0fb2*/
+  this->vtable4 = &vt_FoggedObjectClass_4; /*0x4d0fb9*/
   v8 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(a2->vfptr + 300))(a2, v52); /*0x4d0fc5*/
   this->q040 = *v8; /*0x4d0fd2*/
   this->u32_44 = v8[1]; /*0x4d0fd7*/
@@ -699,13 +699,13 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   {
     AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4d253b*/
     FoggedObject::DrawVector_Constructor((FoggedObject *)&v3[1].Cell, 0, 0); /*0x4d2547*/
-    v3[1].Cell = (int)&DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d254c*/
+    v3[1].Cell = (int)&vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d254c*/
     v3[2].uniqueId = 10; /*0x4d2552*/
     v3[2].vfptr3 = 0; /*0x4d2559*/
-    v3->vfptr = (int)&FoggedObjectClass::`vftable'; /*0x4d255c*/
-    v3->vfptr1 = (int)&FoggedObjectClass::`vftable'; /*0x4d2562*/
-    v3->vfptr2 = (int)&FoggedObjectClass::`vftable'; /*0x4d2569*/
-    v3->vfptr3 = (int)&FoggedObjectClass::`vftable'; /*0x4d2570*/
+    v3->vfptr = (int)&vt_FoggedObjectClass_4; /*0x4d255c*/
+    v3->vfptr1 = (int)&vt_FoggedObjectClass_4; /*0x4d2562*/
+    v3->vfptr2 = (int)&vt_FoggedObjectClass_4; /*0x4d2569*/
+    v3->vfptr3 = (int)&vt_FoggedObjectClass_4; /*0x4d2570*/
   }
   ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->House); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/

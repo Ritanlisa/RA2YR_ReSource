@@ -102,5 +102,19 @@ struct Cell {
     int Cell_field_0x38;  // 0x38 [X30:type_map]
     char __pad_3C[44];  // 0x3C [X30:member_lookup]
     int q004;  // 0x4 [X30:type_map]
+
+
+    int Cell_field_0x140;  // 0x140 [X55 W3 supply (render vocab)]
+    unsigned int Cell_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int u32_81;  // 0x81 [X55 W3 supply (render vocab)]
+    int u32_74;  // 0x74 [X55 W3 supply (render vocab)]
+    unsigned int q048;  // 0x48 [X55 W3 supply (render vocab)]
+    unsigned int Cell_field_0xF8;  // 0xF8 [X55 W3 supply (render vocab)]
+    unsigned int Cell_field_0xF4;  // 0xF4 [X55 W3 supply (render vocab)]
+    unsigned int Cell_field_0x6C;  // 0x6C [X55 W3 supply (render vocab)]
+    int Cell_field_0x68;  // 0x68 [X55 W3 supply (render vocab)]
+    int Cell_field_0x18;  // 0x18 [X55 W3 supply (render vocab)]
+    unsigned int Cell_field_0x13C;  // 0x13C [X55 W3 supply (render vocab)]
+    unsigned int Cell_field_0xE4;  // 0xE4 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

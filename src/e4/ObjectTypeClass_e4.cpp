@@ -311,10 +311,10 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
   this->VoxelCaches[17] = 0; /*0x5f73c7*/
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  this->vfptr = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
-  this->vfptr1 = &ObjectTypeClass::`vftable'; /*0x5f73df*/
-  this->vfptr2 = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
-  this->vfptr3 = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
+  this->vfptr = &vt_ObjectTypeClass_4; /*0x5f73d9*/
+  this->vfptr1 = &vt_ObjectTypeClass_4; /*0x5f73df*/
+  this->vfptr2 = &vt_ObjectTypeClass_4; /*0x5f73e6*/
+  this->vfptr3 = &vt_ObjectTypeClass_4; /*0x5f73ed*/
   return &this->vfptr; /*0x5f73f6*/
 
 }

@@ -110,6 +110,9 @@ char __pad_233;  // 0x233 [X35-L7 kind=char]
 char __pad_237;  // 0x237 [X35-L7 kind=char]
     bool __pad_2A1;  // 0x2A1 [X30:type_map]
     unsigned int Theater_d;  // [X30:default]
+
+
+    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

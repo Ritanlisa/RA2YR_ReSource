@@ -110,6 +110,11 @@ int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     unsigned int ParticleSystemClass_110;  // [X30:default]
     Mixer* q114;  // 0x114 [X30:type_map]
     unsigned int q_B0;  // [X30:default]
+
+
+    unsigned int VoxelAnimClass_field_0x104;  // 0x104 [X55 W3 supply (render vocab)]
+    unsigned int VoxelAnimClass_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
+    unsigned int VoxelAnimClass_field_0x140;  // 0x140 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

@@ -1461,7 +1461,7 @@ AbstractClass * * ObjectClass::sub_42A900()
   {
     v11 = (void *)*((unsigned int *)v9 - 5); /*0x42aa0f*/
     v9 -= 24; /*0x42aa12*/
-    *(unsigned int *)v9 = &VectorClass<unsigned int>::`vftable'; /*0x42aa17*/
+    *(unsigned int *)v9 = &vt_VectorClass_unsigned_int; /*0x42aa17*/
     if ( v11 ) /*0x42aa1d*/
     {
       if ( v9[13] ) /*0x42aa1f*/
@@ -2313,7 +2313,7 @@ AbstractClass * * ObjectClass::sub_42CCD0(int a2)
   {
     v5 = *(unsigned short *)(v20 + 2 * v3); /*0x42cd12*/
     WordVector::Constructor(&v22, 0, 0); /*0x42cd16*/
-    v22 = (WordVector)&DynamicVectorClass<unsigned short>::`vftable'; /*0x42cd1f*/
+    v22 = (WordVector)&vt_DynamicVectorClass_unsigned_short_7E3844; /*0x42cd1f*/
     v27 = 10; /*0x42cd29*/
     v26 = 0; /*0x42cd31*/
     if ( Block && v25 ) /*0x42cd41*/
@@ -2330,7 +2330,7 @@ AbstractClass * * ObjectClass::sub_42CCD0(int a2)
       v8 = CellToTileIndexMap((ObjectClass *)&dword_87F7E8, v6); /*0x42cd8f*/
       sub_42CF80((ObjectClass *)this, *(unsigned __int16 *)(dword_87F858 + 10 * v8 + 2 * v3), v3); /*0x42cdac*/
       v9 = Block; /*0x42cdb1*/
-      v22 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x42cdb9*/
+      v22 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x42cdb9*/
       if ( Block && v25 ) /*0x42cdcd*/
         goto LABEL_25; /*0x42cdcd*/
     }
@@ -2370,7 +2370,7 @@ AbstractClass * * ObjectClass::sub_42CCD0(int a2)
         }
       }
       v9 = Block; /*0x42ce5c*/
-      v22 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x42ce64*/
+      v22 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x42ce64*/
       if ( Block && v25 ) /*0x42ce74*/
       {
 LABEL_25:

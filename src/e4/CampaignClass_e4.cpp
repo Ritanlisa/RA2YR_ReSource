@@ -326,13 +326,13 @@ LABEL_47:
   INIClass::SetInt(v28.__pad_0, (unsigned __int8 *)Block, aScore2, *&this->u32_7828, 0); /*0x49ca3e*/
   INIClass::WriteDigest(&v28, (int)&v30, 0); /*0x49ca51*/
   CCFileClass::Reset(&v30); /*0x49ca5d*/
-  *(unsigned int *)v30.__tail_0 = &CCFileClass::`vftable'; /*0x49ca67*/
+  *(unsigned int *)v30.__tail_0 = &vt_CCFileClass; /*0x49ca67*/
   v32 = 0; /*0x49ca77*/
   Vector::Clear((int)v31); /*0x49ca7e*/
   *(unsigned int *)v30.__tail_0 = &off_7E1668; /*0x49ca8f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v30); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
-  *(unsigned int *)v33.__tail_0 = &CCFileClass::`vftable'; /*0x49caab*/
+  *(unsigned int *)v33.__tail_0 = &vt_CCFileClass; /*0x49caab*/
   v35 = 0; /*0x49cab2*/
   Vector::Clear((int)v34); /*0x49cab9*/
   *(unsigned int *)v33.__tail_0 = &off_7E1668; /*0x49cac5*/

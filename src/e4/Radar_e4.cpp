@@ -879,7 +879,7 @@ AbstractClass * * Radar::Update(int16_t *aP1, void *a2, void *a3, void *a4)
       v6 = 0; /*0x5845bd*/
       WordVector::Constructor(&v109, 0, 0); /*0x5845c1*/
       v7 = *(unsigned int **)&v2->__pad_64[4 * i + 28]; /*0x5845c6*/
-      v109 = (WordVector)&DynamicVectorClass<unsigned short>::`vftable'; /*0x5845cd*/
+      v109 = (WordVector)&vt_DynamicVectorClass_unsigned_short_7E3844; /*0x5845cd*/
       v114 = 10; /*0x5845d5*/
       v113 = 0; /*0x5845dd*/
       v8 = v7[2]; /*0x5845e1*/
@@ -1115,7 +1115,7 @@ LABEL_73:
         v87 = v50; /*0x584c81*/
       }
       while ( v50 < 6144 ); /*0x584c85*/
-      v109 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x584c93*/
+      v109 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x584c93*/
       if ( Block && v112 ) /*0x584ca3*/
       {
         __3_YAXPAX_Z(Block); /*0x584ca6*/
@@ -1244,7 +1244,7 @@ LABEL_72:
           v108[1] = v28; /*0x584920*/
           Radar::ProcessSubzone(v2, v91, i, v86, &v104, v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v122, 0, 0); /*0x584932*/
-          v122.vfptr = (int)&DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58493b*/
+          v122.vfptr = (int)&vt_DynamicVectorClass_SubzoneConnectionStruct; /*0x58493b*/
           v124 = 10; /*0x584943*/
           v123 = 0; /*0x58494e*/
           VectorClass::CleanupSubzone((int)&v122); /*0x584955*/
@@ -1267,7 +1267,7 @@ LABEL_72:
             v39->Radar_field_0x20 = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
-          v122.vfptr = (int)&VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5849eb*/
+          v122.vfptr = (int)&vt_VectorClass_SubzoneConnectionStruct; /*0x5849eb*/
           if ( v122.Items && v122.IsAllocated[0] ) /*0x5849fd*/
           {
             __3_YAXPAX_Z((void *)v122.Items); /*0x584a00*/
@@ -1306,7 +1306,7 @@ LABEL_72:
     }
     while ( v76 >= 0 ); /*0x584d84*/
     MapClass::AllocArrays((char *)&stru_87E8B8); /*0x584d8b*/
-    v109 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x584d94*/
+    v109 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x584d94*/
     if ( Block && v112 ) /*0x584daa*/
       __3_YAXPAX_Z(Block); /*0x584db1*/
   }

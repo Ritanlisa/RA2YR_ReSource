@@ -54,5 +54,11 @@ char LoadWithProgress(void *a1 = 0, void *a2 = 0);
     unsigned int u32_17C;  // X10 supply (member_lookup)
     unsigned int u32_180;  // X10 supply (member_lookup)
     char __pad_84[20];  // 0x84 [X30:member_lookup]
+
+
+    unsigned int Scenario_field_0x2C;  // 0x2C [X55 W3 supply (render vocab)]
+    int Scenario_field_0x30;  // 0x30 [X55 W3 supply (render vocab)]
+    int Scenario_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
+    unsigned int Scenario_field_0x4;  // 0x4 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd
