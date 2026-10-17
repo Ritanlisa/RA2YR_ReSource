@@ -9,7 +9,7 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct SpawnManagerClass_25 {
     unsigned char __pad_000;  // 0x0
     char __pad_1[3];  // 0x1
-    int q004;  // 0x4
+    void *q004;  // 0x4
     unsigned int u32_8;  // 0x8
     int q00C;  // 0xC
     int q010;  // 0x10

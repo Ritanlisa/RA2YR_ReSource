@@ -968,8 +968,8 @@ public:
     _DWORD * Construct(int p0, int p1);  // 0x512DC0 (x13:signals; virt=nonvirtual)
     // +3 more virtual methods
 
-    uint8_t InfantryTypeVector_field_0x04[4];
-    uint8_t InfantryTypeVector_field_0x08[4];
+    void *InfantryTypeVector_field_0x04;
+    int InfantryTypeVector_field_0x08;
     uint8_t InfantryTypeVector_field_0x0C[4];
     uint8_t InfantryTypeVector_field_0x10[4];
     uint8_t InfantryTypeVector_field_0x14[4];

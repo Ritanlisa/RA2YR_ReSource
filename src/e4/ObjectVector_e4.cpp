@@ -15,8 +15,8 @@ int ObjectVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a5, void
   
   this->ObjectVector_field_0x04 = 0; /*0x4d044b*/
   this->q008 = aP1; /*0x4d044e*/
-  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x4d0451*/
-  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4d0455*/
+  (this->ObjectVector_field_0x0C) = ((this->ObjectVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x4d0451*/
+  (this->ObjectVector_field_0x0C) = ((this->ObjectVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4d0455*/
   this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4d0458*/
   if ( aP1 ) /*0x4d045e*/
   {

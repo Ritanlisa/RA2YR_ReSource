@@ -392,7 +392,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(unsigned int *)(v4 + 3744) = v11[1].vfptr; /*0x5241d4*/
-  *(unsigned int *)v48.ClearAndFree2_ph = &vt_VectorClass_int; /*0x5241d7*/
+  *(unsigned int *)v48.__pad_0 = &vt_VectorClass_int; /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
          (INIClass *)this,
@@ -403,7 +403,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x524210*/
-    *(unsigned int *)v48.ClearAndFree2_ph = &vt_TypeList_AnimTypeClass_const; /*0x52421f*/
+    *(unsigned int *)v48.__pad_0 = &vt_TypeList_AnimTypeClass_const; /*0x52421f*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
@@ -413,7 +413,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
-    *(unsigned int *)v48.ClearAndFree2_ph = &vt_VectorClass_AnimTypeClass_const; /*0x52427a*/
+    *(unsigned int *)v48.__pad_0 = &vt_VectorClass_AnimTypeClass_const; /*0x52427a*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
   }
   else
@@ -437,7 +437,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x5242fa*/
-    *(unsigned int *)v48.ClearAndFree2_ph = &vt_TypeList_AnimTypeClass_const; /*0x524309*/
+    *(unsigned int *)v48.__pad_0 = &vt_TypeList_AnimTypeClass_const; /*0x524309*/
     for ( j = strtok(String, Delimiter); j; j = strtok(0, Delimiter) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
@@ -447,7 +447,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x52433a*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x52435b*/
-    *(unsigned int *)v48.ClearAndFree2_ph = &vt_VectorClass_AnimTypeClass_const; /*0x524364*/
+    *(unsigned int *)v48.__pad_0 = &vt_VectorClass_AnimTypeClass_const; /*0x524364*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524368*/
   }
   else

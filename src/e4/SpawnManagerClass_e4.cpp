@@ -561,7 +561,7 @@ namespace gamemd {
 unsigned int SpawnManagerClass_25::LoadState(int a2)
 {
 
-  if ( ((this->IsInitialized) & 0xFF) ) /*0x6b8190*/
+  if ( ((this->q00C) & 0xFF) ) /*0x6b8190*/
     return (unsigned int)(a2 - *&this->Items) >> 2; /*0x6b81a5*/
   else
     return 0; /*0x6b8197*/
@@ -574,7 +574,7 @@ namespace gamemd {
 int SpawnManagerClass_25::SaveState(int a2)
 {
 
-  return *(unsigned int *)(*&this->Items + 4 * a2); /*0x6b81ba*/
+  return *(unsigned int *)(*&this->q004 + 4 * a2); /*0x6b81ba*/
 
 }
 } // namespace gamemd
@@ -585,13 +585,13 @@ char SpawnManagerClass_25::AddRef(int a2)
 {
 
 
-  int v2 = this->Capacity; // esi /*0x6b8222*/
+  int v2 = this->u32_8; // esi /*0x6b8222*/
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x6b822d*/
   {
     int v3 = 0; // edx /*0x6b822f*/
     if ( v2 <= 0 ) /*0x6b8233*/
       return 1; /*0x6b8253*/
-    unsigned int *v4 = *&this->Items; // eax /*0x6b8235*/
+    unsigned int *v4 = *&this->q004; // eax /*0x6b8235*/
     int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x6b823b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x6b8244*/
@@ -613,7 +613,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
 {
 
   this->vfptr1 = 0; /*0x6b83a9*/
-  this->vtable3 = (void *)aP1; /*0x6b83b0*/
+  this->vfptr2 = (void *)aP1; /*0x6b83b0*/
   LOBYTE(this->vtable4) = 1; /*0x6b83b3*/
   BYTE1(this->IsAllocated) = 0; /*0x6b83b7*/
   this->AbstractClass = &vt_VectorClass; /*0x6b83bb*/
@@ -645,40 +645,40 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6b840c*/
   {
-    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((0) & 0xFF); /*0x6b8412*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x6b8412*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x6b8418*/
       v4 = a3; /*0x6b842e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6b842a*/
-    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((1) & 0xFF); /*0x6b8432*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x6b8432*/
     if ( !v4 ) /*0x6b8436*/
       return 0; /*0x6b84aa*/
-    if ( *&this->Items ) /*0x6b8438*/
+    if ( *&this->q004 ) /*0x6b8438*/
     {
-      int m_8 = this->Capacity; // ecx /*0x6b843f*/
+      int m_8 = this->u32_8; // ecx /*0x6b843f*/
       if ( a2 < m_8 ) /*0x6b8444*/
         m_8 = a2; /*0x6b8446*/
       int i; // eax
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x6b844c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6b844c*/
         ++i; /*0x6b8451*/
-      if ( (((this->IsInitialized) >> 8) & 0xFF) ) /*0x6b845e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x6b845e*/
       {
-        __3_YAXPAX_Z(*&this->Items); /*0x6b8469*/
-        *&this->Items = 0; /*0x6b8471*/
+        __3_YAXPAX_Z(*&this->q004); /*0x6b8469*/
+        *&this->q004 = 0; /*0x6b8471*/
       }
     }
-    *&this->Items = v4; /*0x6b847a*/
-    this->Capacity = a2; /*0x6b8482*/
-    BYTE1(this->IsInitialized) = a3 == 0; /*0x6b8485*/
+    *&this->q004 = v4; /*0x6b847a*/
+    this->u32_8 = a2; /*0x6b8482*/
+    BYTE1(this->q00C) = a3 == 0; /*0x6b8485*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass *))(*(unsigned int *)this->ClearAndFree2_ph + 12))(this); /*0x6b848e*/
+    (*(void (**)(_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6b848e*/
   }
-  int v7 = this->Capacity; // eax /*0x6b8491*/
-  if ( v7 < this->Count ) /*0x6b8499*/
-    this->Count = v7; /*0x6b849b*/
+  int v7 = this->u32_8; // eax /*0x6b8491*/
+  if ( v7 < this->q010 ) /*0x6b8499*/
+    this->q010 = v7; /*0x6b849b*/
   return 1; /*0x6b849e*/
 
 }
@@ -690,12 +690,12 @@ int SpawnManagerClass_25::Spawn(unsigned int * a2)
 {
 
 
-  int m_10 = this->Count; // edx /*0x6b84b0*/
+  int m_10 = this->q010; // edx /*0x6b84b0*/
   int result = 0; // eax /*0x6b84b3*/
   if ( m_10 <= 0 ) /*0x6b84b8*/
     return -1; /*0x6b84cf*/
   unsigned int *i; // ecx
-  for ( i = *&this->Items; *i != *a2; ++i ) /*0x6b84be*/
+  for ( i = *&this->q004; *i != *a2; ++i ) /*0x6b84be*/
   {
     if ( ++result >= m_10 ) /*0x6b84cd*/
       return -1; /*0x6b84cd*/

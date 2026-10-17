@@ -14,8 +14,8 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
   
   this->UnitTypeVector_field_0x04 = 0; /*0x51394b*/
   this->__pad_008 = a2; /*0x51394e*/
-  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x513951*/
-  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513955*/
+  (this->UnitTypeVector_field_0x0C) = ((this->UnitTypeVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x513951*/
+  (this->UnitTypeVector_field_0x0C) = ((this->UnitTypeVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513955*/
   this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {

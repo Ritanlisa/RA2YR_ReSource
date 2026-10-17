@@ -467,7 +467,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     (v7)->CellConstructor(0, 0); /*0x594fde*/
     /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x594fe3) */
     v8[1].Items = (void *)10; /*0x594fe9*/
-    v8[1].vtable0 = 0; /*0x594ff0*/
+    v8[1].vfptr = 0; /*0x594ff0*/
     v39 = v8; /*0x594ff3*/
   }
   else
@@ -555,7 +555,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
         LABEL_36:
         vtable0 = v8[1].vtable0; /*0x595181*/
         v19 = v8->Items; /*0x595184*/
-        v8[1].vtable0 = &vtable0->AbstractClass_1; /*0x59518a*/
+        v8[1].vfptr = &vtable0->AbstractClass_1; /*0x59518a*/
         v19[(unsigned int)vtable0] = *v15; /*0x59518f*/
       }
       v10 = g_MissionQueueFrame.localVariables[163]; /*0x595192*/
@@ -655,7 +655,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
           LABEL_72:
           v33 = v8[1].vtable0; /*0x5953bf*/
           v34 = v8->Items; /*0x5953c2*/
-          v8[1].vtable0 = &v33->AbstractClass_1; /*0x5953c8*/
+          v8[1].vfptr = &v33->AbstractClass_1; /*0x5953c8*/
           v34[(unsigned int)v33] = *v57; /*0x5953d1*/
         }
         v10 = g_MissionQueueFrame.localVariables[163]; /*0x5953d4*/
@@ -676,7 +676,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   {
     v24 = v8[1].vtable0; /*0x59521c*/
     v25 = v8->Items; /*0x59521f*/
-    v8[1].vtable0 = &v24->AbstractClass_1; /*0x595225*/
+    v8[1].vfptr = &v24->AbstractClass_1; /*0x595225*/
     v25[(unsigned int)v24] = *v22; /*0x59522a*/
     return &v8->q010; /*0x595235*/
   }

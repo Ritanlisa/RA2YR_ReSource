@@ -206,7 +206,7 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1, void *a2)
   aP1->vfptr1 = (unsigned int)(a2)* aP1->vfptr1; /*0x5aea33*/
   aP1->abstractFlags = (unsigned int)(a2)* aP1->abstractFlags; /*0x5aea3d*/
   aP1->objectTypeFlags = (unsigned int)(a2)* aP1->objectTypeFlags; /*0x5aea47*/
-  aP1->vtable3 = (unsigned int)(a2)* aP1->vtable3; /*0x5aea51*/
+  aP1->vfptr2 = (unsigned int)(a2)* aP1->vfptr2; /*0x5aea51*/
   aP1->nextArrayIndex = (unsigned int)(a2)* aP1->nextArrayIndex; /*0x5aea5b*/
   aP1->owningHouseIndex = (unsigned int)(a2)* aP1->owningHouseIndex; /*0x5aea65*/
 }

@@ -80,7 +80,7 @@ void ParticleSystemClass::GetClassIdentifier()
     *&this->vtable2 = 0; /*0x4e848e*/
   }
   (this->IsAllocated) = 0; /*0x4e8491*/
-  *&this->vtable3 = 0; /*0x4e8494*/
+  *&this->m_8 = 0; /*0x4e8494*/
 }
 } // namespace gamemd
 
@@ -116,7 +116,7 @@ void ParticleSystemClass::initParticleArray()
     *&this->vtable2 = 0; /*0x4e879e*/
   }
   (this->IsAllocated) = 0; /*0x4e87a1*/
-  *&this->vtable3 = 0; /*0x4e87a4*/
+  *&this->m_8 = 0; /*0x4e87a4*/
 }
 } // namespace gamemd
 
@@ -127,7 +127,7 @@ void ParticleSystemClass_32::Destroy(void *a1)
 
   void *v2 = *&this->q004; // eax /*0x4e87e6*/
   this->m_10 = 0; /*0x4e87e9*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4e87f0*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x4e87f0*/
   {
     operator delete((v2)); /*0x4e87f6*/
     *&this->q004 = 0; /*0x4e87fe*/
@@ -164,7 +164,7 @@ void ParticleSystemClass_32::ReleaseBuffer(void *a1_1, void *a2_1)
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x4e8846*/
   this->m_10 = 0; /*0x4e8849*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4e8850*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x4e8850*/
   {
     operator delete((v2)); /*0x4e8856*/
     *&this->q004 = 0; /*0x4e885e*/

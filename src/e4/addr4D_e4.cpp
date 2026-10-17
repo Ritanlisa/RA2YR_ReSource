@@ -61,7 +61,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   *(unsigned int *)v18 = *(unsigned int *)v17; /*0x4d16f3*/
   int v4 = g_MissionState; // edx /*0x4d170e*/
   int v5; // esi
-  v5 = 74 * (v17[1] - ((v17[0] + v17[1]) << 9) - v17[0]) - aP0->vtable4 + 0x7FFFFFFF; /*0x4d1714*/
+  v5 = 74 * (v17[1] - ((v17[0] + v17[1]) << 9) - v17[0]) - aP0->vfptr3 + 0x7FFFFFFF; /*0x4d1714*/
   if ( g_MissionState ) /*0x4d171c*/
   {
     if ( !byte_8B3CCC ) /*0x4d1728*/
@@ -96,7 +96,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
       }
     }
   }
-  if ( aP0->vtable4 == (void *)(6) ) /*0x4d17d0*/
+  if ( aP0->vfptr3 == (void *)(6) ) /*0x4d17d0*/
   {
     Cell *v11; // eax
     v11 = (Cell *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v18); /*0x4d17dc*/

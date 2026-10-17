@@ -192,7 +192,7 @@ int VectorClass_flat::RemoveObjectById()
   if ( v4 != -1 ) /*0x4137d1*/
   {
     char *vtable0; // ecx
-    vtable0 = (char *)v2[1].vtable0; /*0x4137d3*/
+    vtable0 = (char *)v2[1].vfptr; /*0x4137d3*/
     if ( v4 < (int)vtable0 ) /*0x4137d8*/
     {
       char *v6 = vtable0 - 1; // ecx /*0x4137da*/
@@ -672,16 +672,16 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
 
 
   char *p_IsInitialized = &aP1->IsInitialized; // esi /*0x4a0c2c*/
-  aP1->Items = 0; /*0x4a0c2f*/
-  aP1->Capacity = 0; /*0x4a0c32*/
-  aP1->Count = 0; /*0x4a0c37*/
+  aP1->EnumConnectionPointsClass_field_0x10 = 0; /*0x4a0c2f*/
+  aP1->EnumConnectionPointsClass_field_0x14 = 0; /*0x4a0c32*/
+  aP1->q01C = 0; /*0x4a0c37*/
   aP1->CapacityIncrement[0] = 0; /*0x4a0c3a*/
   aP1->q018 = 1; /*0x4a0c3d*/
   aP1->u32_19 = 0; /*0x4a0c41*/
   *&aP1->IsInitialized = &vt_VectorClass; /*0x4a0c44*/
-  if ( &aP1->IsInitialized != (char *)a2_1 ) /*0x4a0c4a*/
+  if ( &aP1->q018 != (char *)a2_1 ) /*0x4a0c4a*/
   {
-    VectorClass::CleanupTyped((int)&aP1->IsInitialized); /*0x4a0c4e*/
+    VectorClass::CleanupTyped((int)&aP1->q018); /*0x4a0c4e*/
     int v4; // eax
     v4 = a2_1[2]; /*0x4a0c54*/
     *((unsigned int *)p_IsInitialized + 2) = v4; /*0x4a0c59*/
@@ -721,7 +721,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   for ( i = 0; i < *&aP1->q01C; ++i ) /*0x4a0cb9*/
   {
     int v10; // [esp-4h] [ebp-14h]
-    v10 = *((unsigned int *)aP1->Count + i); /*0x4a0cc1*/
+    v10 = *((unsigned int *)aP1->q01C + i); /*0x4a0cc1*/
     (*(void (**)(int))(*(unsigned int *)v10 + 4))(v10); /*0x4a0cc4*/
   }
   return aP1->__pad_0; /*0x4a0cd1*/

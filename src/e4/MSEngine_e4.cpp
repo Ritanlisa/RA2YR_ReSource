@@ -53,7 +53,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     {
       if ( *&this->MSEngine_field_0x4 ) /*0x5acd8b*/
       {
-        m_8 = this->m_8; /*0x5acd92*/
+        m_8 = this->MSEngine_field_0x8; /*0x5acd92*/
         if ( a2 < m_8 ) /*0x5acd97*/
           m_8 = a2; /*0x5acd99*/
         if ( m_8 > 0 ) /*0x5acd9d*/
@@ -81,7 +81,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
         }
       }
       *&this->MSEngine_field_0x4 = v7; /*0x5acde9*/
-      this->m_8 = v3; /*0x5acdf1*/
+      this->MSEngine_field_0x8 = v3; /*0x5acdf1*/
       BYTE1(this->m_C) = v5 == 0; /*0x5acdf4*/
       return 1; /*0x5acdfa*/
     }
@@ -135,7 +135,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       return 0; /*0x5acfb4*/
     if ( *&this->MSEngine_field_0x4 ) /*0x5acf25*/
     {
-      m_8 = this->m_8; /*0x5acf2c*/
+      m_8 = this->MSEngine_field_0x8; /*0x5acf2c*/
       if ( a2 < m_8 ) /*0x5acf31*/
         m_8 = a2; /*0x5acf33*/
       if ( m_8 > 0 ) /*0x5acf37*/
@@ -163,14 +163,14 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       }
     }
     *&this->MSEngine_field_0x4 = v7; /*0x5acf83*/
-    this->m_8 = v3; /*0x5acf8b*/
+    this->MSEngine_field_0x8 = v3; /*0x5acf8b*/
     BYTE1(this->m_C) = v5 == 0; /*0x5acf8e*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5acf97*/
   }
-  v12 = this->m_8; /*0x5acf9a*/
+  v12 = this->MSEngine_field_0x8; /*0x5acf9a*/
   if ( v12 < this->m_10 ) /*0x5acfa2*/
     this->m_10 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
@@ -204,7 +204,7 @@ CampaignClass * MSEngine::Destructor(void *a1)
   }
   this->u32_39 = 0; /*0x5ceeb2*/
   this->q034 = 0; /*0x5ceeb5*/
-  DeleteAndZero(&this->m_8); /*0x5ceeb8*/
+  DeleteAndZero(&this->MSEngine_field_0x8); /*0x5ceeb8*/
   void *MSEngine_field_0x4 = this->__pad_004; // eax /*0x5ceebd*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ceec0) */
   if ( MSEngine_field_0x4 && (((this->m_C) >> 8) & 0xFF) ) /*0x5ceeca*/
@@ -224,7 +224,7 @@ CampaignClass * MSEngine::Construct(void *a1, void *a2, void *a3, void *a4, void
 
   void (**v3)(void **, int, unsigned int); // edx
 
-  void **p_MSEngine_field_0x8 = &this->m_8; // ecx /*0x5d1aa5*/
+  void **p_MSEngine_field_0x8 = &this->MSEngine_field_0x8; // ecx /*0x5d1aa5*/
   p_MSEngine_field_0x8[1] = 0; /*0x5d1ab2*/
   p_MSEngine_field_0x8[2] = 0; /*0x5d1ab5*/
   *((unsigned char *)p_MSEngine_field_0x8 + 12) = 1; /*0x5d1ab8*/
@@ -363,7 +363,7 @@ CampaignClass * MSEngine::ClearBuffer(void *a1_1)
     *&this->MSEngine_field_0x4 = 0; /*0x5ac53e*/
   }
   (this->m_C) = 0; /*0x5ac541*/
-  *&this->m_8 = 0; /*0x5ac544*/
+  *&this->MSEngine_field_0x8 = 0; /*0x5ac544*/
 
 }
 } // namespace gamemd
@@ -401,7 +401,7 @@ char MSEngine::AddRef(int a2)
 {
 
   int m_8; // edi
-  m_8 = *&this->m_8; /*0x5acccb*/
+  m_8 = *&this->MSEngine_field_0x8; /*0x5acccb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x5accd0*/
   {
     int v3 = 0; // esi /*0x5accd2*/
@@ -438,7 +438,7 @@ CampaignClass * MSEngine::ddtor(void *a1)
     *&this->MSEngine_field_0x4 = 0; /*0x5ace3b*/
   }
   (this->IsAllocated) = 0; /*0x5ace3e*/
-  *&this->m_8 = 0; /*0x5ace41*/
+  *&this->MSEngine_field_0x8 = 0; /*0x5ace41*/
 }
 } // namespace gamemd
 
@@ -450,7 +450,7 @@ CampaignClass * MSEngine::Init(unsigned int * a2, void *a2_2, void *a3_1, void *
   if ( !(this->m_C) ) /*0x5ace50*/
     return 0; /*0x5ace5e*/
   int m_8; // esi
-  m_8 = *&this->m_8; /*0x5ace64*/
+  m_8 = *&this->MSEngine_field_0x8; /*0x5ace64*/
   int result = 0; // eax /*0x5ace67*/
   if ( m_8 <= 0 ) /*0x5ace6b*/
     return -1; /*0x5acea0*/

@@ -91,7 +91,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
-    *(unsigned int *)v21.ClearAndFree2_ph = &vt_TypeList_int; /*0x47712a*/
+    *(unsigned int *)v21.__pad_0 = &vt_TypeList_int; /*0x47712a*/
     for ( i = (BuildingTypeClass *)strtok(v21.__pad_20, Delimiter); i; i = (BuildingTypeClass *)strtok(0, Delimiter) ) /*0x477144*/
     {
       if ( !LOBYTE(i->vfptr) ) /*0x47714a*/
@@ -99,12 +99,12 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       v13 = 0; /*0x477159*/
       if ( !_strcmpi(i, aPower) ) /*0x47715b*/
       {
-        if ( v21.Count < v21.Capacity /*0x477194*/
-          || (v21.IsAllocated || !v21.Capacity)
+        if ( v21.Count < v21.DynamicVector_field_0x8 /*0x477194*/
+          || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ClearAndFree2_ph + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
-               v21.Capacity + *(unsigned int *)v21.CapacityIncrement,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
         {
           v14 = v21.Count++; /*0x47719f*/
@@ -114,12 +114,12 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
       if ( !_strcmpi(i, aFactory) ) /*0x4771b9*/
       {
-        if ( v21.Count < v21.Capacity /*0x4771f2*/
-          || (v21.IsAllocated || !v21.Capacity)
+        if ( v21.Count < v21.DynamicVector_field_0x8 /*0x4771f2*/
+          || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ClearAndFree2_ph + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
-               v21.Capacity + *(unsigned int *)v21.CapacityIncrement,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
         {
           v15 = v21.Count++; /*0x4771fd*/
@@ -129,12 +129,12 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
       if ( !_strcmpi(i, aBarracks) ) /*0x477217*/
       {
-        if ( v21.Count < v21.Capacity /*0x477250*/
-          || (v21.IsAllocated || !v21.Capacity)
+        if ( v21.Count < v21.DynamicVector_field_0x8 /*0x477250*/
+          || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ClearAndFree2_ph + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
-               v21.Capacity + *(unsigned int *)v21.CapacityIncrement,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
         {
           v16 = v21.Count++; /*0x47725b*/
@@ -144,12 +144,12 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
       if ( !_strcmpi(i, aRadar) ) /*0x477275*/
       {
-        if ( v21.Count < v21.Capacity /*0x4772ae*/
-          || (v21.IsAllocated || !v21.Capacity)
+        if ( v21.Count < v21.DynamicVector_field_0x8 /*0x4772ae*/
+          || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ClearAndFree2_ph + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
-               v21.Capacity + *(unsigned int *)v21.CapacityIncrement,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
         {
           v17 = v21.Count++; /*0x4772b9*/
@@ -159,12 +159,12 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
       if ( !_strcmpi(i, aTech) ) /*0x4772d3*/
       {
-        if ( v21.Count < v21.Capacity /*0x47730c*/
-          || (v21.IsAllocated || !v21.Capacity)
+        if ( v21.Count < v21.DynamicVector_field_0x8 /*0x47730c*/
+          || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
           && *(int *)v21.CapacityIncrement > 0
-          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ClearAndFree2_ph + 8))(
+          && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
-               v21.Capacity + *(unsigned int *)v21.CapacityIncrement,
+               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                0) )
         {
           v18 = v21.Count++; /*0x477317*/
@@ -181,12 +181,12 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
             DynamicVector::Add_Alt(&v21, &v21.DynamicVector_field_0x1C); /*0x4773a6*/
         }
       }
-      else if ( v21.Count < v21.Capacity /*0x47736a*/
-             || (v21.IsAllocated || !v21.Capacity)
+      else if ( v21.Count < v21.DynamicVector_field_0x8 /*0x47736a*/
+             || (v21.IsAllocated || !v21.DynamicVector_field_0x8)
              && *(int *)v21.CapacityIncrement > 0
-             && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.ClearAndFree2_ph + 8))(
+             && (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                   &v21,
-                  v21.Capacity + *(unsigned int *)v21.CapacityIncrement,
+                  v21.DynamicVector_field_0x8 + *(unsigned int *)v21.CapacityIncrement,
                   0) )
       {
         v19 = v21.Count++; /*0x477375*/
@@ -195,7 +195,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
     a1->vfptr = (int)&vt_TypeList_int; /*0x4773d9*/
-    *(unsigned int *)v21.ClearAndFree2_ph = &vt_VectorClass_int; /*0x4773df*/
+    *(unsigned int *)v21.__pad_0 = &vt_VectorClass_int; /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
     a5 = &vt_VectorClass_int; /*0x4773ef*/
     VectorClass::Destroy((int)&a5); /*0x4773f6*/

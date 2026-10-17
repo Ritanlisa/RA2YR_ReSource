@@ -213,7 +213,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
       v7 = KeywordType::FindOrCreate2(i); /*0x67bb8b*/
       if ( v7 /*0x67bbbb*/
         && (v17.q010 < v17.q008
-         || ((((unsigned char *)&(v17.q00C))[1]) || !v17.q008)
+         || ((((unsigned char *)&(v17.InfantryTypeVector_field_0x0C))[1]) || !v17.q008)
          && v17.q014 > 0
          && (*(uint8_t (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)&v17.__pad_0 + 8))(
               &v17,
@@ -240,7 +240,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     bool v11; // zf
     v11 = v17.InfantryTypeVector_field_0x04 == 0; /*0x67bc22*/
     aP0->u32_14 = InfantryTypeVector_field_0x14; /*0x67bc24*/
-    if ( !v11 && (((unsigned char *)&(v17.q00C))[1]) ) /*0x67bc31*/
+    if ( !v11 && (((unsigned char *)&(v17.InfantryTypeVector_field_0x0C))[1]) ) /*0x67bc31*/
     {
       operator delete((InfantryTypeVector_field_0x04)); /*0x67bc38*/
       return aP0; /*0x67bc4b*/

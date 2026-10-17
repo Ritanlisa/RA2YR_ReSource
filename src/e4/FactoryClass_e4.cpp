@@ -262,7 +262,7 @@ int FactoryClass::StartProduction(char a2)
     this->u32_E = 0; /*0x4c9e80*/
     this->u32_B = v2; /*0x4c9e83*/
     result = (int)v4; /*0x4c9e85*/
-    this->vtable4 = (int)v4; /*0x4c9e89*/
+    this->vfptr3 = (int)v4; /*0x4c9e89*/
     (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4c9e8c*/
     this->u8_D = 0; /*0x4c9e8e*/
   }

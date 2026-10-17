@@ -95,7 +95,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
       }
     }
     *&this->vtable2 = v4; /*0x52537a*/
-    this->vtable3 = (void *)(a2); /*0x525382*/
+    this->m_8 = (void *)(a2); /*0x525382*/
     BYTE1(this->vtable4) = a3 == 0; /*0x525385*/
   }
   else
@@ -128,10 +128,10 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   unsigned int *v12; // ecx
   int v13; // ecx
 
-  v2 = (void *)this->vtable4; /*0x52ab84*/
+  v2 = (void *)this->m_C; /*0x52ab84*/
   *(unsigned int *)this = &vt_INIClass_INISection; /*0x52ab87*/
   free(v2); /*0x52ab8e*/
-  this->vtable4 = 0; /*0x52ab98*/
+  this->m_C = 0; /*0x52ab98*/
   while ( 1 ) /*0x52ab9b*/
   {
     v3 = this->InfDeath; /*0x52ab9b*/
@@ -221,13 +221,13 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     v13 = this->vtable2; /*0x52acbb*/
     if ( v13 ) /*0x52acc0*/
     {
-      result = (char *)this->vtable3; /*0x52acc2*/
+      result = (char *)this->m_8; /*0x52acc2*/
       if ( result ) /*0x52acc7*/
       {
         *((unsigned int *)result + 1) = v13; /*0x52acc9*/
         result = (char *)this->vtable2; /*0x52accc*/
         *((unsigned int *)result + 2) = this->vtable3; /*0x52acd2*/
-        this->vtable3 = 0; /*0x52acd5*/
+        this->m_8 = 0; /*0x52acd5*/
         this->vtable2 = 0; /*0x52acd8*/
       }
     }

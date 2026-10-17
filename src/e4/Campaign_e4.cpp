@@ -101,8 +101,8 @@ LABEL_14:
     return 0; /*0x7658da*/
   if ( *&this->q004 ) /*0x7658e1*/
   {
-    if ( a2 >= this->m_8 ) /*0x7658ed*/
-      m_8 = this->m_8; /*0x7658ef*/
+    if ( a2 >= this->q008 ) /*0x7658ed*/
+      m_8 = this->q008; /*0x7658ef*/
     for ( i = 0; i < m_8; ++i ) /*0x7658f5*/
       ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x765902*/
     if ( BYTE1(this->m_C) ) /*0x76590c*/
@@ -115,7 +115,7 @@ LABEL_14:
     m_8 = a2; /*0x765927*/
   }
   *&this->q004 = v8; /*0x765936*/
-  this->m_8 = m_8; /*0x765939*/
+  this->q008 = m_8; /*0x765939*/
   BYTE1(this->m_C) = a3 == 0; /*0x76593c*/
   return 1; /*0x7658d7*/
 
@@ -277,7 +277,7 @@ int Campaign_WorldDominationTour_16::ddtor(void *a1)
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))&this->q004; /*0x765966*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x76596d*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x76596d*/
   {
     result = (**v2)(v2, 3); /*0x76597a*/
     *&this->q004 = 0; /*0x76597c*/

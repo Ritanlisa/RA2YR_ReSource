@@ -1159,7 +1159,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
         }
       }
       *&this->vfptr1 = v4; /*0x472c07*/
-      this->vtable3 = a2; /*0x472c0f*/
+      this->vfptr2 = a2; /*0x472c0f*/
       BYTE1(this->vtable4) = a3 == 0; /*0x472c12*/
       return 1; /*0x472c18*/
     }

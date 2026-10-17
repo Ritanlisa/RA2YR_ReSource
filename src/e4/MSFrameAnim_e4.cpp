@@ -194,7 +194,7 @@ int MSFrameAnim::initAnimation()
 
   v2 = *(int (****)(unsigned int, int))&this->__pad_004; /*0x769c56*/
   *&this->INIClass_10 = 0; /*0x769c59*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x769c60*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x769c60*/
   {
     result = (**v2)(v2, 3); /*0x769c6d*/
     *&this->__pad_004 = 0; /*0x769c6f*/
@@ -224,7 +224,7 @@ void MSFrameAnim::stopAnimation()
   void *v2; // eax
   v2 = (void *)(*&this->__pad_004); /*0x769cd6*/
   *&this->m_8 = 0; /*0x769cd9*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x769ce0*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x769ce0*/
   {
     operator delete((v2)); /*0x769ce6*/
     *&this->__pad_004 = 0; /*0x769cee*/

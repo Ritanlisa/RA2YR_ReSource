@@ -2041,12 +2041,12 @@ AbstractClass * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a
 
   if ( a2 ) /*0x4e9e2c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4e9e36*/
+    LOBYTE(this->u8_C) = 0; /*0x4e9e36*/
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
-    LOBYTE(this->m_C) = 1; /*0x4e9e56*/
+    LOBYTE(this->u8_C) = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
       if ( *&this->u32_4 ) /*0x4e9e65*/
@@ -2056,7 +2056,7 @@ AbstractClass * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a
           m_8 = a2; /*0x4e9e73*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4e9e79*/
           ++i; /*0x4e9e7e*/
-        if ( BYTE1(this->m_C) ) /*0x4e9e8b*/
+        if ( BYTE1(this->u8_C) ) /*0x4e9e8b*/
         {
           __3_YAXPAX_Z(*&this->u32_4); /*0x4e9e96*/
           *&this->u32_4 = 0; /*0x4e9e9e*/
@@ -2064,7 +2064,7 @@ AbstractClass * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a
       }
       *&this->u32_4 = v4; /*0x4e9ea7*/
       this->m_8 = a2; /*0x4e9eaf*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4e9eb2*/
+      BYTE1(this->u8_C) = a3 == 0; /*0x4e9eb2*/
       return 1; /*0x4e9eb8*/
     }
     else

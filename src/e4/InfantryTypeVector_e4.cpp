@@ -49,8 +49,8 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
 
   this->InfantryTypeVector_field_0x04 = 0; /*0x5138fb*/
   this->q008 = a2; /*0x5138fe*/
-  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x513901*/
-  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513905*/
+  (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x513901*/
+  (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513905*/
   this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
@@ -73,8 +73,8 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
 
   this->InfantryTypeVector_field_0x04 = 0; /*0x5d89ab*/
   this->q008 = a2; /*0x5d89ae*/
-  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x5d89b1*/
-  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5d89b5*/
+  (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x5d89b1*/
+  (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5d89b5*/
   this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5d89b8*/
   if ( a2 ) /*0x5d89be*/
   {

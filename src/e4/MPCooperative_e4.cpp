@@ -454,7 +454,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     ((VectorClass *)(u32_1A4))->Construct(0, 0); /*0x5c14dc*/
     /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5c14e1) */
     u32_1A4[1].Items = (void *)10; /*0x5c14e7*/
-    u32_1A4[1].vtable0 = 0; /*0x5c14ee*/
+    u32_1A4[1].vfptr = 0; /*0x5c14ee*/
     u32_1A4 = &u32_1A4->VectorClass_18; /*0x5c14f1*/
     --v11; /*0x5c14f4*/
   }
@@ -466,7 +466,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     ((VectorClass *)(p_MPCooperative_field_0x264))->Construct(0, 0); /*0x5c1506*/
     /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5c150b) */
     p_MPCooperative_field_0x264[1].Items = (void *)10; /*0x5c1511*/
-    p_MPCooperative_field_0x264[1].vtable0 = 0; /*0x5c1518*/
+    p_MPCooperative_field_0x264[1].vfptr = 0; /*0x5c1518*/
     p_MPCooperative_field_0x264 = &p_MPCooperative_field_0x264->VectorClass_18; /*0x5c151b*/
     --v13; /*0x5c151e*/
   }

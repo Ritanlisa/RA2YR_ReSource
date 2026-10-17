@@ -54,8 +54,8 @@ unsigned int * MapFile::Constructor(int a2, int a3, void *a3_1, void *a4)
 
   this->MapFile_field_0x04 = 0; /*0x69d77b*/
   this->q008 = a2; /*0x69d77e*/
-  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x69d781*/
-  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x69d785*/
+  (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x69d781*/
+  (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x69d785*/
   this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {

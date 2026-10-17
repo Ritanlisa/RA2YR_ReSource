@@ -19,7 +19,7 @@ void BlowPipe_31::ddtor(void *a1)
 
   void *v2 = *&this->q004; // eax /*0x63dc26*/
   this->m_10 = 0; /*0x63dc29*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x63dc30*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x63dc30*/
   {
     operator delete((v2)); /*0x63dc36*/
     *&this->q004 = 0; /*0x63dc3e*/
@@ -93,7 +93,7 @@ void BlowPipe_23::Clear_0()
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x63dce6*/
   this->m_10 = 0; /*0x63dce9*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x63dcf0*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x63dcf0*/
   {
     operator delete((v2)); /*0x63dcf6*/
     *&this->q004 = 0; /*0x63dcfe*/

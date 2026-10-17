@@ -61,7 +61,7 @@ int WaypointPathClass::Construct(unsigned int aP1, void *a2, void *a3, void *a4,
   AbstractClass::Constructor(); /*0x763813*/
   this->idxArray = -1; /*0x76381e*/
   this->u32_2C = 0; /*0x763825*/
-  this->vtable4 = 0; /*0x763828*/
+  this->vfptr3 = 0; /*0x763828*/
   this->WaypointClass_field_34 = 1; /*0x76382b*/
   this->WaypointClass_field_35 = 0; /*0x76382f*/
   this->waypoints = &vt_DynamicVectorClass; /*0x763832*/

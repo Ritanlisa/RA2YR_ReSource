@@ -654,7 +654,7 @@ LABEL_36:
   if ( v24 ) /*0x732c0c*/
     result = (*(int (**)(unsigned int *, int))*v24)(v24, 1); /*0x732c12*/
   if ( v6 ) /*0x732c16*/
-    return (**(int (***)(DynamicVector *, int))v6->ClearAndFree2_ph)(v6, 1); /*0x732c1e*/
+    return (**(int (***)(DynamicVector *, int))v6->__pad_0)(v6, 1); /*0x732c1e*/
   return result; /*0x732c20*/
 
 }

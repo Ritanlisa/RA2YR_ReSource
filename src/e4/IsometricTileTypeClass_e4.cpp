@@ -227,7 +227,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
       }
     }
     *&this->IsometricTileTypeClass_field_0x04 = v4; /*0x54a44a*/
-    this->vtable3 = (void *)(a2); /*0x54a452*/
+    this->m_8 = (void *)(a2); /*0x54a452*/
     BYTE1(this->vtable4) = a3 == 0; /*0x54a455*/
   }
   else
@@ -287,7 +287,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 {
 
   this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a85b*/
-  this->vtable3 = (void *)(a2); /*0x54a85e*/
+  this->m_8 = (void *)(a2); /*0x54a85e*/
   LOBYTE(this->vtable4) = 1; /*0x54a861*/
   BYTE1(this->vtable4) = 0; /*0x54a865*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x54a868) */

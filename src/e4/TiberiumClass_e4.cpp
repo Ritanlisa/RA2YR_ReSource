@@ -300,7 +300,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
-    *(unsigned int *)v25.ClearAndFree2_ph = &vt_TypeList_AnimTypeClass_const; /*0x721b7b*/
+    *(unsigned int *)v25.__pad_0 = &vt_TypeList_AnimTypeClass_const; /*0x721b7b*/
     for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Delimiter); i; i = strtok(0, Delimiter) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
@@ -310,7 +310,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
         DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
-    *(unsigned int *)v25.ClearAndFree2_ph = &vt_VectorClass_AnimTypeClass_const; /*0x721bd6*/
+    *(unsigned int *)v25.__pad_0 = &vt_VectorClass_AnimTypeClass_const; /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
   else

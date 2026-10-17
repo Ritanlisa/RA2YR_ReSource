@@ -65,12 +65,12 @@ char DynamicVector::AddItem(unsigned int *aP1)
   int result; // eax
   unsigned int *v5; // edx
 
-  DynamicVector_field_0x8 = this->Capacity; /*0x413a73*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x413a73*/
   result = this->Count; /*0x413a76*/
   if ( result < DynamicVector_field_0x8 /*0x413a9d*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),
@@ -97,8 +97,8 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
 {
 
   *&aP1->vfptr1 = 0; /*0x42f67a*/
-  aP1->vtable3 = aP2; /*0x42f681*/
-  aP1->vtable4 = (void *)(1); /*0x42f684*/
+  aP1->vfptr2 = aP2; /*0x42f681*/
+  aP1->vfptr3 = (void *)(1); /*0x42f684*/
   aP1->u32_D = 0; /*0x42f688*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x42f68c) */
   if ( aP2 ) /*0x42f692*/
@@ -167,12 +167,12 @@ char DynamicVector::Add_Alt(unsigned int *aP1, void *a2)
   int result; // eax
   unsigned int *v5; // edx
 
-  DynamicVector_field_0x8 = this->Capacity; /*0x477ec3*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x477ec3*/
   result = this->Count; /*0x477ec6*/
   if ( result < DynamicVector_field_0x8 /*0x477eed*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),
@@ -199,7 +199,7 @@ int DynamicVector::GetOrGrow(int aP1)
 {
 
 
-  int DynamicVector_field_0x8 = this->Capacity; // edi /*0x49fae9*/
+  int DynamicVector_field_0x8 = this->DynamicVector_field_0x8; // edi /*0x49fae9*/
   if ( aP1 < DynamicVector_field_0x8 ) /*0x49faee*/
     return *(unsigned int *)(*&this->Items + 4 * aP1); /*0x49fb26*/
   if ( (*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( /*0x49fafa*/
@@ -209,7 +209,7 @@ int DynamicVector::GetOrGrow(int aP1)
   {
     int i; // eax
     for ( i = DynamicVector_field_0x8; /*0x49fb08*/
-    i < this->Capacity;
+    i < this->DynamicVector_field_0x8;
     *(unsigned int *)(*&this->Items + 4 * i - 4) = 0 )
     {
       ++i; /*0x49fb0d*/
@@ -230,12 +230,12 @@ char DynamicVector::Add_Alt4(unsigned int *aP1, void *a2)
   int result; // eax
   unsigned int *v5; // edx
 
-  DynamicVector_field_0x8 = this->Capacity; /*0x5253b3*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x5253b3*/
   result = this->Count; /*0x5253b6*/
   if ( result < DynamicVector_field_0x8 /*0x5253dd*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),
@@ -262,7 +262,7 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
 {
 
 
-  int DynamicVector_field_0x8 = this->Capacity; // ecx /*0x538783*/
+  int DynamicVector_field_0x8 = this->DynamicVector_field_0x8; // ecx /*0x538783*/
   if ( (int)this->Count >= DynamicVector_field_0x8 ) /*0x53878b*/
   {
     if ( !this->IsAllocated && DynamicVector_field_0x8 ) /*0x538796*/
@@ -294,7 +294,7 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
 {
 
 
-  int DynamicVector_field_0x8 = this->Capacity; // ecx /*0x5ad7d3*/
+  int DynamicVector_field_0x8 = this->DynamicVector_field_0x8; // ecx /*0x5ad7d3*/
   int result; // eax
   result = (int)this->Count; /*0x5ad7d6*/
   if ( result < DynamicVector_field_0x8 /*0x5ad7fd*/
@@ -341,12 +341,12 @@ char DynamicVector::GrowCapacity()
   int v7; // [esp+4h] [ebp-4h]
   v7 = (int)v5; /*0x624854*/
   const void *DynamicVector_field_0x8; // esi
-  DynamicVector_field_0x8 = (const void *)this->Capacity; /*0x62485a*/
+  DynamicVector_field_0x8 = (const void *)this->DynamicVector_field_0x8; /*0x62485a*/
   if ( DynamicVector_field_0x8 ) /*0x62485f*/
     memcpy(v5, DynamicVector_field_0x8, 24 * *(unsigned int *)this->__pad_0); /*0x624870*/
-  __3_YAXPAX_Z((void *)this->Capacity); /*0x62487d*/
+  __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8); /*0x62487d*/
   *&this->Items = (void *)(v4); /*0x624889*/
-  this->Capacity = v7; /*0x62488c*/
+  this->DynamicVector_field_0x8 = v7; /*0x62488c*/
   return 1; /*0x62481f*/
 
 }
@@ -409,7 +409,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
 {
 
   *&this->Items = 0; /*0x67ac79*/
-  this->Capacity = a2; /*0x67ac80*/
+  this->DynamicVector_field_0x8 = a2; /*0x67ac80*/
   this->IsInitialized = 1; /*0x67ac83*/
   this->IsAllocated = 0; /*0x67ac87*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x67ac8b) */
@@ -425,7 +425,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
       this->IsAllocated = 1; /*0x67acaf*/
     }
   }
-  *(unsigned int *)this->ClearAndFree2_ph = &vt_DynamicVectorClass; /*0x67acb3*/
+  *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClass; /*0x67acb3*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x67acb9*/
   this->Count = 0; /*0x67acc0*/
   return (unsigned int *)(this->__pad_0); /*0x67acc9*/
@@ -442,12 +442,12 @@ char DynamicVector::Add2(unsigned int *aP1, void *a2, void *a3, void *a4)
   int result; // eax
   unsigned int *v5; // edx
 
-  DynamicVector_field_0x8 = this->Capacity; /*0x67ad83*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x67ad83*/
   result = this->Count; /*0x67ad86*/
   if ( result < DynamicVector_field_0x8 /*0x67adad*/
     || (this->IsAllocated || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->CapacityIncrement, result > 0)
-    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->ClearAndFree2_ph + 8))(
+    && (result = (*(int (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
                    DynamicVector_field_0x8 + result,
                    0),

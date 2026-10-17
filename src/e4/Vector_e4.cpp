@@ -36,7 +36,7 @@ int Vector::Cleanup(void *a1, void *a2)
     *&this->Vector_field_0x4 = 0; /*0x512d4b*/
   }
   (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x512d4e*/
-  *&this->m_8 = 0; /*0x512d51*/
+  *&this->Vector_field_0x8 = 0; /*0x512d51*/
   return result; /*0x512d54*/
 }
 }
@@ -52,7 +52,7 @@ int Vector::Destructor(void *a1)
     *&this->Vector_field_0x4 = 0; /*0x51311b*/
   }
   (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x51311e*/
-  *&this->m_8 = 0; /*0x513121*/
+  *&this->Vector_field_0x8 = 0; /*0x513121*/
   return result; /*0x513124*/
 }
 }
@@ -62,7 +62,7 @@ int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
 
   this->IsInitialized = a3 * this->__pad_010 /*0x5ae8ab*/
-  + a4 * this->m_8
+  + a4 * this->Vector_field_0x8
   + a2 * *(float *)this
   + this->IsInitialized;
   this->u32_1C = a2 * this->__pad_010 /*0x5ae8ca*/
@@ -89,7 +89,7 @@ int Vector::Cleanup2(void *a1)
     *&this->Vector_field_0x4 = 0; /*0x67abfb*/
   }
   (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x67abfe*/
-  *&this->m_8 = 0; /*0x67ac01*/
+  *&this->Vector_field_0x8 = 0; /*0x67ac01*/
   return result; /*0x67ac04*/
 }
 }
@@ -132,12 +132,12 @@ int Vector::Clear(void *a1)
 {
 
   int result; // eax
-  (*((unsigned char *)&(result))) = this->m_8; /*0x43ae53*/
+  (*((unsigned char *)&(result))) = this->Vector_field_0x8; /*0x43ae53*/
   if ( (unsigned char)result ) /*0x43ae58*/
     operator delete((*(void **)this)); /*0x43ae5d*/
   *(unsigned int *)this = 0; /*0x43ae65*/
   this->__pad_010 = 0; /*0x43ae6b*/
-  this->m_8 = 0; /*0x43ae72*/
+  this->Vector_field_0x8 = 0; /*0x43ae72*/
   return result; /*0x43ae76*/
 }
 } // namespace gamemd
@@ -232,7 +232,7 @@ namespace gamemd {
 BOOL Vector::HasCapacity()
 {
 
-  return this->m_8 < *(unsigned int *)(*&this->Vector_field_0x4 + 16); /*0x76f0bd*/
+  return this->Vector_field_0x8 < *(unsigned int *)(*&this->Vector_field_0x4 + 16); /*0x76f0bd*/
 
 }
 } // namespace gamemd

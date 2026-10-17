@@ -108,7 +108,7 @@ int AudioStream::Reset(void *a1, void *a2)
   this->__pad_0 = 0; /*0x403822*/
   this->u8_4 = 0; /*0x403824*/
   this->q008 = 0; /*0x403827*/
-  this->q00C = 0; /*0x40382a*/
+  this->AudioStream_field_0xC = 0; /*0x40382a*/
   this->u32_10 = 0; /*0x40382d*/
   this->u32_14 = 0; /*0x403830*/
   this->u32_18 = 0; /*0x403833*/

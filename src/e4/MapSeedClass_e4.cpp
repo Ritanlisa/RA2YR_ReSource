@@ -674,7 +674,7 @@ namespace gamemd {  // G42.18c ns repair
 int MapSeedClass::GenerateSeed(unsigned int * a2)
 {
 
-  if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x5acb80*/
+  if ( !(*((unsigned char *)&(*&this->MapSeedClass_field_0x0C))) ) /*0x5acb80*/
     return 0; /*0x5acb88*/
   int m_8 = *&this->Capacity; // edx /*0x5acb8e*/
   int result = 0; // eax /*0x5acb91*/

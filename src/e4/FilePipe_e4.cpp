@@ -122,7 +122,7 @@ void FilePipe_30::ddtor(void *a1)
 
   void *v2 = *&this->u32_4; // eax /*0x4778a6*/
   this->m_10 = 0; /*0x4778a9*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4778b0*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x4778b0*/
   {
     operator delete((v2)); /*0x4778b6*/
     *&this->u32_4 = 0; /*0x4778be*/
@@ -385,7 +385,7 @@ void FilePipe_30::Clear_0()
   void *v2; // eax
   v2 = (void *)(*&this->u32_4); /*0x4b9c46*/
   this->m_10 = 0; /*0x4b9c49*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4b9c50*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x4b9c50*/
   {
     operator delete((v2)); /*0x4b9c56*/
     *&this->u32_4 = 0; /*0x4b9c5e*/

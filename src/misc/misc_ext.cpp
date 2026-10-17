@@ -3323,29 +3323,29 @@ char InfantryTypeVector::Release(int p0, int* p1)
 
   if ( p0 ) /*0x512c8c*/
   {
-    (this->IsInitialized) = 0; /*0x512c96*/
+    (this->InfantryTypeVector_field_0x0C) = 0; /*0x512c96*/
     if ( p1 ) /*0x512c9c*/
       v4 = p1; /*0x512cb2*/
     else
       v4 = (unsigned int *)operator new(4 * p0); /*0x512cae*/
-    (this->IsInitialized) = 1; /*0x512cb6*/
+    (this->InfantryTypeVector_field_0x0C) = 1; /*0x512cb6*/
     if ( v4 ) /*0x512cba*/
     {
-      if ( *&this->Items ) /*0x512cc5*/
+      if ( *&this->InfantryTypeVector_field_0x04 ) /*0x512cc5*/
       {
-        m_8 = this->Capacity; /*0x512ccc*/
+        m_8 = this->InfantryTypeVector_field_0x08; /*0x512ccc*/
         if ( p0 < m_8 ) /*0x512cd1*/
           m_8 = p0; /*0x512cd3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x512cd9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->InfantryTypeVector_field_0x04 + 4 * i - 4) ) /*0x512cd9*/
           ++i; /*0x512cde*/
         if ( (this->IsAllocated) ) /*0x512ceb*/
         {
-          operator delete((void *)(*&this->Items)); /*0x512cf6*/
-          *&this->Items = 0; /*0x512cfe*/
+          operator delete((void *)(*&this->InfantryTypeVector_field_0x04)); /*0x512cf6*/
+          *&this->InfantryTypeVector_field_0x04 = 0; /*0x512cfe*/
         }
       }
-      *&this->Items = v4; /*0x512d07*/
-      this->Capacity = p0; /*0x512d0f*/
+      *&this->InfantryTypeVector_field_0x04 = v4; /*0x512d07*/
+      this->InfantryTypeVector_field_0x08 = p0; /*0x512d0f*/
       (this->IsAllocated) = p1 == 0; /*0x512d12*/
       return 1; /*0x512d18*/
     }
@@ -3367,9 +3367,9 @@ int InfantryTypeVector::AddType(int* p0)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !(this->IsInitialized) ) /*0x512d60*/
+  if ( !(this->InfantryTypeVector_field_0x0C) ) /*0x512d60*/
     return 0; /*0x512d68*/
-  m_8 = this->Capacity; /*0x512d6e*/
+  m_8 = this->InfantryTypeVector_field_0x08; /*0x512d6e*/
   result = 0; /*0x512d71*/
   if ( m_8 <= 0 ) /*0x512d75*/
     return -1; /*0x512d8c*/

@@ -43,7 +43,7 @@ void ParticleTypeClass::GetClassIdentifier()
     *&this->vtable2 = 0; /*0x47791e*/
   }
   (this->IsAllocated) = 0; /*0x477921*/
-  *&this->vtable3 = 0; /*0x477924*/
+  *&this->m_8 = 0; /*0x477924*/
 }
 }  // G42.18 ns repair
 // 0x4784F0
@@ -68,7 +68,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   if ( a2 ) /*0x4784fe*/
   {
     v5 = a3; /*0x478504*/
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x478508*/
+    (this->ParticleTypeClass_field_0xC) = ((this->ParticleTypeClass_field_0xC) & ~0xFF) | ((0) & 0xFF); /*0x478508*/
     if ( a3 ) /*0x47850d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
@@ -112,7 +112,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         v5 = 0; /*0x47853d*/
       }
     }
-    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x47855c*/
+    (this->ParticleTypeClass_field_0xC) = ((this->ParticleTypeClass_field_0xC) & ~0xFF) | ((1) & 0xFF); /*0x47855c*/
     if ( !v5 ) /*0x478560*/
       return 0; /*0x4785e2*/
     if ( *&this->vtable2 ) /*0x478562*/
@@ -135,7 +135,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         while ( m_8 ); /*0x478590*/
         v3 = (void *)a2; /*0x478592*/
       }
-      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x478598*/
+      if ( (((this->ParticleTypeClass_field_0xC) >> 8) & 0xFF) ) /*0x478598*/
       {
         __3_YAXPAX_Z(*&this->vtable2); /*0x4785a1*/
         *&this->vtable2 = 0; /*0x4785a9*/
@@ -143,7 +143,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     }
     *&this->vtable2 = v5; /*0x4785b4*/
     this->m_8 = (int)v3; /*0x4785ba*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4785bd*/
+    BYTE1(this->ParticleTypeClass_field_0xC) = a3 == 0; /*0x4785bd*/
   }
   else
   {

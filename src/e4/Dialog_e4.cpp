@@ -79,7 +79,7 @@ void Dialog::MapDialogResource(void *a1)
   if ( *&this->q004 == 48879 ) /*0x49f74a*/
   {
     Debug::Log(); /*0x49f751*/
-    g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx(this->q00C, 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
+    g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx(this->Dialog_field_0xC, 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
     Debug::Log(); /*0x49f77e*/
   }
 

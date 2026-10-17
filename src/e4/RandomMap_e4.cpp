@@ -67,7 +67,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2, void *a2_1)
   *(unsigned int *)this->__pad_000 = 0; /*0x58bf7a*/
   *&this->Items = 0; /*0x58bf7c*/
   this->__pad_008 = (void *)g_MissionQueueFrame.localVariables[164]; /*0x58bf8a*/
-  this->q00C = 0; /*0x58bf8d*/
+  this->RandomMap_field_0xC = 0; /*0x58bf8d*/
   this->q010 = (void *)*((char *)(/*0x58bfa6*/ (CellCoord *)&DataGlobal_87F7E8)->To_CellObj((int16_t *)&a2)
   + 283);
   Cell *v3; // eax
@@ -469,7 +469,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
         if ( v10 ) /*0x58d267*/
         {
           (v10)->CellConstructor(0, 0); /*0x58d26d*/
-          v11[1].vtable0 = 0; /*0x58d272*/
+          v11[1].vfptr = 0; /*0x58d272*/
           /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x58d275) */
           v11[1].Items = (void *)10; /*0x58d27b*/
           v12 = v11; /*0x58d282*/
@@ -526,7 +526,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
                       vtable0 = v12[1].vtable0; /*0x58d362*/
                       unsigned int *Items; // edx
                       Items = v12->Items; /*0x58d365*/
-                      v12[1].vtable0 = &vtable0->AbstractClass_1; /*0x58d36b*/
+                      v12[1].vfptr = &vtable0->AbstractClass_1; /*0x58d36b*/
                       Items[(unsigned int)vtable0] = v28; /*0x58d372*/
                     }
                     *(unsigned int *)(v19 + 60) = v26 + 1; /*0x58d375*/

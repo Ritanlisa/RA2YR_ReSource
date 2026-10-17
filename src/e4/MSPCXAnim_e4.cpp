@@ -112,7 +112,7 @@ void MSPCXAnim_42::FreeData()
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x5d05a6*/
   this->m_10 = 0; /*0x5d05a9*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5d05b0*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x5d05b0*/
   {
     operator delete((v2)); /*0x5d05b6*/
     *&this->q004 = 0; /*0x5d05be*/
@@ -141,7 +141,7 @@ void MSPCXAnim_42::FreeData_0()
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x5d0616*/
   this->m_10 = 0; /*0x5d0619*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5d0620*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x5d0620*/
   {
     operator delete((v2)); /*0x5d0626*/
     *&this->q004 = 0; /*0x5d062e*/
@@ -170,7 +170,7 @@ void MSPCXAnim_42::FreeData_1()
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x5d0676*/
   this->m_10 = 0; /*0x5d0679*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5d0680*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x5d0680*/
   {
     operator delete((v2)); /*0x5d0686*/
     *&this->q004 = 0; /*0x5d068e*/
@@ -198,7 +198,7 @@ void MSPCXAnim_26::ddtor(void *a1)
 
   void *v2 = *&this->q004; // eax /*0x5d06d6*/
   this->m_10 = 0; /*0x5d06d9*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5d06e0*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x5d06e0*/
   {
     operator delete((v2)); /*0x5d06e6*/
     *&this->q004 = 0; /*0x5d06ee*/
@@ -235,7 +235,7 @@ void MSPCXAnim_26::FreeData()
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x5d0736*/
   this->m_10 = 0; /*0x5d0739*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5d0740*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x5d0740*/
   {
     operator delete((v2)); /*0x5d0746*/
     *&this->q004 = 0; /*0x5d074e*/
@@ -272,7 +272,7 @@ void MSPCXAnim_26::FreeData_0()
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x5d0796*/
   this->m_10 = 0; /*0x5d0799*/
-  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x5d07a0*/
+  if ( v2 && (((unsigned char *)&(*&this->m_C))[1]) ) /*0x5d07a0*/
   {
     operator delete((v2)); /*0x5d07a6*/
     *&this->q004 = 0; /*0x5d07ae*/

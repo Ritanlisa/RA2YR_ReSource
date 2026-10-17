@@ -13,7 +13,7 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int CoopCampaignVector::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x5c5750*/
+  if ( (*((unsigned char *)&(*&this->CoopCampaignVector_field_0x0C))) ) /*0x5c5750*/
     return (unsigned int)(a2 - *&this->CoopCampaignVector_field_0x04) >> 2; /*0x5c5765*/
   else
     return 0; /*0x5c5757*/
@@ -45,8 +45,8 @@ unsigned int * CoopCampaignVector::Construct(int aP1, int aP2, void *a3, void *a
 
   this->CoopCampaignVector_field_0x04 = 0; /*0x5c5a8b*/
   this->q008 = aP1; /*0x5c5a8e*/
-  (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5c5a91*/
-  (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5c5a95*/
+  (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x5c5a91*/
+  (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5c5a95*/
   this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
