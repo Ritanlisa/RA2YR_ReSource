@@ -2017,7 +2017,7 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
           v20 = v3; /*0x53b900*/
           do /*0x53b9c8*/
           {
-            HIWORD(v9) = HIWORD(v15); /*0x53b904*/
+            (v9) = ((v9) & ~(0xFFFF << 16)) | ((((((v15) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x53b904*/
             if ( v15 > 0 ) /*0x53b90a*/
             {
               v23 = v15; /*0x53b914*/

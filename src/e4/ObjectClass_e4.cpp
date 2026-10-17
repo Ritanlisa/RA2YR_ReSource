@@ -794,7 +794,7 @@ LABEL_32:
   }
   v27 = *(void **)v34; /*0x4de535*/
 LABEL_34:
-  if ( __PAIR32__(v34[1], (unsigned __int16)v27) != g_FootClass_Pool ) /*0x4de541*/
+  if ( ((v34[1] & 0xFFFFu) << 16 | ((unsigned __int16)v27 & 0xFFFFu)) != g_FootClass_Pool ) /*0x4de541*/
   {
     this->vfptr = v27; /*0x4de558*/
     return &this->vfptr; /*0x4de55f*/
@@ -1324,7 +1324,7 @@ AbstractClass * * ObjectClass::Undeploy()
 
   if ( !stru_A8E960.nextScenario[64] || this->inLimbo[0] ) /*0x5f4d45*/
   {
-    LOBYTE(result) = 0; /*0x5f4eb7*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5f4eb7*/
   }
   else
   {
@@ -1361,7 +1361,7 @@ AbstractClass * * ObjectClass::Undeploy()
     result = (*(int (**)(ObjectClass *))&this->vfptr->transporter_2)(this); /*0x5f4e98*/
     this->inLimbo[0] = 1; /*0x5f4e9e*/
     this->needsRedraw[0] = 0; /*0x5f4ea5*/
-    LOBYTE(result) = 1; /*0x5f4eac*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5f4eac*/
   }
   return result; /*0x5f4eae*/
 
@@ -1452,7 +1452,7 @@ AbstractClass * * ObjectClass::Deploy()
   {
     this->inLimbo[0] = 1; /*0x5f521c*/
 LABEL_41:
-    LOBYTE(result) = 0; /*0x5f5223*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5f5223*/
     return result; /*0x5f5226*/
   }
   if ( this->isAliveFlag[0] )
@@ -1526,7 +1526,7 @@ LABEL_41:
       }
     }
   }
-  LOBYTE(result) = 1; /*0x5f5210*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5f5210*/
   return result; /*0x5f5212*/
 
 }
@@ -1561,7 +1561,7 @@ AbstractClass * * ObjectClass::Destroy2()
   (*((void (**)(ObjectClass *))this->AbstractClass + 84))(this); /*0x5f52e9*/
   if ( (ObjectClass *)MapClass::GetScrollMode((MapClass *)&DataGlobal_87F7E8) == this ) /*0x5f52fd*/
     MapClass::SetScrollMode((int)&DataGlobal_87F7E8, 0); /*0x5f5306*/
-  LOBYTE(v5) = v7; /*0x5f530b*/
+  (v5) = ((v5) & ~0xFF) | ((v7) & 0xFF); /*0x5f530b*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, v5); /*0x5f5311*/
   return result; /*0x5f5316*/
 
@@ -1585,7 +1585,7 @@ int ObjectClass::UpdateProductionDisplay()
       if ( !this->needsRedraw[0] && this->isOnMap[0] ) /*0x5f5879*/
       {
         result = (*(int (**)(TechnoClass *))(this->vtable0 + 308))(this); /*0x5f5886*/
-        LOBYTE(result) = 1; /*0x5f588d*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5f588d*/
         return result; /*0x5f5890*/
       }
     }
@@ -1610,18 +1610,18 @@ int ObjectClass::UpdateProductionDisplay()
         vtable0 = this->vtable0; /*0x5f58f3*/
         this->isOnMap[0] = 1; /*0x5f58f7*/
         result = (*(int (**)(TechnoClass *))(vtable0 + 308))(this); /*0x5f58fb*/
-        LOBYTE(result) = 1; /*0x5f5902*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5f5902*/
         return result; /*0x5f5905*/
       }
       if ( !v3 && this->isOnMap[0] ) /*0x5f590c*/
       {
         this->isOnMap[0] = 0; /*0x5f5913*/
-        LOBYTE(result) = 1; /*0x5f5917*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5f5917*/
         return result; /*0x5f591a*/
       }
     }
   }
-  LOBYTE(result) = 0; /*0x5f591e*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5f591e*/
   return result; /*0x5f588c*/
 
 }
@@ -2408,7 +2408,7 @@ int ObjectClass::IsAboveScreenMargin()
 
   int result; // eax
   result = (*(int (**)(IUnknown *))(this->field_0 + 456))(this); /*0x5f6c12*/
-  LOBYTE(result) = result > -20; /*0x5f6c20*/
+  (result) = ((result) & ~0xFF) | ((result > -20) & 0xFF); /*0x5f6c20*/
   return result; /*0x5f6c22*/
 
 }

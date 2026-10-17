@@ -1811,7 +1811,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       v33 = _ESI->q040; /*0x54bbf8*/
       int v32; // [esp+24h] [ebp-14h] BYREF
       if ( v34 == v33 && v20 == _ESI->u32_44 ) /*0x54bc01*/
-        LOWORD(v32) = 0; /*0x54bc03*/
+        (v32) = ((v32) & ~0xFFFF) | ((0) & 0xFFFF); /*0x54bc03*/
       __asm { fild [esp+24h+var_10] } /*0x54bc0a*/
       __asm
       {
@@ -1844,7 +1844,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
               0);
         }
       }
-      if ( *(unsigned int *)v31 == __PAIR32__(*(unsigned int *)(_ESI + 68) / 256, *(unsigned int *)(_ESI + 64) / 256) /*0x54bcee*/
+      if ( *(unsigned int *)v31 == ((*(unsigned int *)(_ESI + 68) / 256 & 0xFFFFu) << 16 | (*(unsigned int *)(_ESI + 64) / 256 & 0xFFFFu)) /*0x54bcee*/
         && !*(unsigned char *)((*(int (**)(unsigned int))(*_ESI->vtable4 + 132))(_ESI->vtable4) + 3434) )
       {
         int v24; // eax

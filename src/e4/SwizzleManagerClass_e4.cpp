@@ -38,7 +38,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x6cf5ae*/
   {
     v5 = a3; /*0x6cf5b4*/
-    LOBYTE(this->m_C) = 0; /*0x6cf5b8*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x6cf5b8*/
     if ( a3 ) /*0x6cf5bd*/
     {
       v9 = a3; /*0x6cf5f3*/
@@ -80,7 +80,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
         v5 = 0; /*0x6cf5ec*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x6cf607*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x6cf607*/
     if ( v5 ) /*0x6cf60b*/
     {
       if ( *&this->q004 ) /*0x6cf616*/
@@ -101,7 +101,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
           while ( v13 < m_8 ); /*0x6cf647*/
           v3 = a2; /*0x6cf649*/
         }
-        if ( BYTE1(this->m_C) ) /*0x6cf64f*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x6cf64f*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x6cf658*/
           *&this->q004 = 0; /*0x6cf660*/
@@ -147,7 +147,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   if ( a2 ) /*0x6cf72e*/
   {
     v5 = a3; /*0x6cf734*/
-    LOBYTE(this->m_C) = 0; /*0x6cf738*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x6cf738*/
     if ( a3 ) /*0x6cf73d*/
     {
       v9 = a3; /*0x6cf773*/
@@ -189,7 +189,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         v5 = 0; /*0x6cf76c*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x6cf787*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x6cf787*/
     if ( !v5 ) /*0x6cf78b*/
       return 0; /*0x6cf814*/
     if ( *&this->q004 ) /*0x6cf791*/
@@ -210,7 +210,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         while ( v12 < m_8 ); /*0x6cf7c2*/
         v3 = a2; /*0x6cf7c4*/
       }
-      if ( BYTE1(this->m_C) ) /*0x6cf7ca*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x6cf7ca*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x6cf7d3*/
         *&this->q004 = 0; /*0x6cf7db*/

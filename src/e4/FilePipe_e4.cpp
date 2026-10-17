@@ -21,7 +21,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   if ( a2 ) /*0x47834e*/
   {
     char *v5 = a3; // edi /*0x478354*/
-    LOBYTE(this->m_C) = 0; /*0x478358*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x478358*/
     if ( a3 ) /*0x47835d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478396*/
@@ -66,7 +66,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
         v5 = 0; /*0x47838d*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x4783ac*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4783ac*/
     if ( v5 ) /*0x4783b0*/
     {
       if ( *&this->Items ) /*0x4783bb*/
@@ -91,7 +91,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
           while ( m_8 ); /*0x4783e9*/
           v3 = a2; /*0x4783eb*/
         }
-        if ( BYTE1(this->m_C) ) /*0x4783f1*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4783f1*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x4783fa*/
           *&this->Items = 0; /*0x478402*/
@@ -191,12 +191,12 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x47814c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x478152*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x478152*/
     if ( a3 ) /*0x478158*/
       v4 = a3; /*0x47816e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x47816a*/
-    LOBYTE(this->m_C) = 1; /*0x478172*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x478172*/
     if ( !v4 ) /*0x478176*/
       return 0; /*0x4781ea*/
     if ( *&this->u32_4 ) /*0x478178*/
@@ -206,7 +206,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
         m_8 = a2; /*0x478186*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x47818c*/
         ++i; /*0x478191*/
-      if ( BYTE1(this->m_C) ) /*0x47819e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x47819e*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x4781a9*/
         *&this->u32_4 = 0; /*0x4781b1*/
@@ -418,12 +418,12 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4b9e2c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4b9e32*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4b9e32*/
     if ( a3 ) /*0x4b9e38*/
       v4 = a3; /*0x4b9e4e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4b9e4a*/
-    LOBYTE(this->m_C) = 1; /*0x4b9e52*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4b9e52*/
     if ( !v4 ) /*0x4b9e56*/
       return 0; /*0x4b9eca*/
     if ( *&this->u32_4 ) /*0x4b9e58*/
@@ -433,7 +433,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
         m_8 = a2; /*0x4b9e66*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4b9e6c*/
         ++i; /*0x4b9e71*/
-      if ( BYTE1(this->m_C) ) /*0x4b9e7e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4b9e7e*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x4b9e89*/
         *&this->u32_4 = 0; /*0x4b9e91*/
@@ -486,12 +486,12 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4ba08c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4ba092*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4ba092*/
     if ( a3 ) /*0x4ba098*/
       v4 = a3; /*0x4ba0ae*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4ba0aa*/
-    LOBYTE(this->m_C) = 1; /*0x4ba0b2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4ba0b2*/
     if ( !v4 ) /*0x4ba0b6*/
       return 0; /*0x4ba12a*/
     if ( *&this->u32_4 ) /*0x4ba0b8*/
@@ -501,7 +501,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
         m_8 = a2; /*0x4ba0c6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4ba0cc*/
         ++i; /*0x4ba0d1*/
-      if ( BYTE1(this->m_C) ) /*0x4ba0de*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4ba0de*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x4ba0e9*/
         *&this->u32_4 = 0; /*0x4ba0f1*/

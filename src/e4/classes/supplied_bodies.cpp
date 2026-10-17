@@ -968,7 +968,7 @@ LABEL_32:
   }
   if ( !v8 ) /*0x63b921*/
   {
-    LOBYTE(updated) = v53; /*0x63bd19*/
+    (updated) = ((updated) & ~0xFF) | ((v53) & 0xFF); /*0x63bd19*/
     if ( !v53 ) /*0x63bd1f*/
       return updated; /*0x63bd1f*/
     goto LABEL_55; /*0x63bd1f*/
@@ -1087,7 +1087,7 @@ LABEL_44:
     LOBYTE(updated) = DSurface::DrawMarker((DSurface *)v6, v45, v60.Coord3D_field_0x04); /*0x63bce7*/
     return updated; /*0x63bcf6*/
   }
-  LOBYTE(updated) = v53; /*0x63bcf7*/
+  (updated) = ((updated) & ~0xFF) | ((v53) & 0xFF); /*0x63bcf7*/
   if ( !v53 ) /*0x63bcfd*/
     return updated; /*0x63bcfd*/
   v60.Coord3D_field_0x04 = v44; /*0x63bd03*/
@@ -1684,7 +1684,7 @@ int ScriptAction::ExecuteMissionCmd()
       v10);
     qmemcpy(v9, v14, sizeof(v9)); /*0x6ffca4*/
     LOWORD(v10) = v15; /*0x6ffca6*/
-    BYTE2(v10) = v16; /*0x6ffca8*/
+    (v10) = ((v10) & ~(0xFF << 16)) | (((v16) & 0xFF) << 16); /*0x6ffca8*/
     Object_Helper_637DD0( /*0x6ffca9*/
       v9[0],
       v9[1],
@@ -1714,7 +1714,7 @@ int ScriptAction::ExecuteMissionCmd()
       v9[25],
       v9[26],
       v10);
-    LOBYTE(result) = 0; /*0x6ffcae*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ffcae*/
   }
   else
   {
@@ -1758,7 +1758,7 @@ int ScriptAction::ExecuteMissionCmd()
     ScriptAction::GetWaypointCoords((ScriptAction *)v12, v18); /*0x6ffdbb*/
     v8 = ScriptAction::GetWaypointCoords((ScriptAction *)v13, this); /*0x6ffdce*/
     Object_Init(v3, (int)v12, *(unsigned int *)v8, v8->vtable2, (int)v11); /*0x6ffde6*/
-    LOBYTE(result) = 1; /*0x6ffdee*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6ffdee*/
   }
   return result; /*0x6ffcb0*/
 

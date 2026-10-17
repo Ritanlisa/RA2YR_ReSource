@@ -46,7 +46,7 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
   *(unsigned int *)this->__pad_0 = &vt_ScoreFullFontClass; /*0x690a44*/
-  LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690a4a*/
+  (this->ScoreScreen_field_0x10) = ((this->ScoreScreen_field_0x10) & ~0xFF) | ((0) & 0xFF); /*0x690a4a*/
   v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
   if ( !v3 ) /*0x690a57*/
@@ -87,7 +87,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++dword_B0558C; /*0x690b0c*/
   *(unsigned int *)this->__pad_0 = &vt_ScoreBigFontClass; /*0x690b14*/
-  LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690b1a*/
+  (this->ScoreScreen_field_0x10) = ((this->ScoreScreen_field_0x10) & ~0xFF) | ((0) & 0xFF); /*0x690b1a*/
   v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/

@@ -85,12 +85,12 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a7dcc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4a7dd6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4a7dd6*/
     if ( a3 ) /*0x4a7ddc*/
       v4 = a3; /*0x4a7df2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a7dee*/
-    LOBYTE(this->m_C) = 1; /*0x4a7df6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4a7df6*/
     if ( v4 ) /*0x4a7dfa*/
     {
       if ( *&this->q004 ) /*0x4a7e05*/
@@ -100,7 +100,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x4a7e13*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a7e19*/
           ++i; /*0x4a7e1e*/
-        if ( BYTE1(this->m_C) ) /*0x4a7e2b*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4a7e2b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4a7e36*/
           *&this->q004 = 0; /*0x4a7e3e*/
@@ -148,7 +148,7 @@ int Dial8Class_48::Read(unsigned int * a2, void *a2_2, void *a3)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x4a7ea0*/
+  if ( !((this->m_C) & 0xFF) ) /*0x4a7ea0*/
     return 0; /*0x4a7ea8*/
   m_8 = this->m_8; /*0x4a7eae*/
   result = 0; /*0x4a7eb1*/
@@ -187,12 +187,12 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a7f0c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4a7f12*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4a7f12*/
     if ( a3 ) /*0x4a7f18*/
       v4 = a3; /*0x4a7f2e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a7f2a*/
-    LOBYTE(this->m_C) = 1; /*0x4a7f32*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4a7f32*/
     if ( !v4 ) /*0x4a7f36*/
       return 0; /*0x4a7faa*/
     if ( *&this->q004 ) /*0x4a7f38*/
@@ -202,7 +202,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
         m_8 = a2; /*0x4a7f46*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a7f4c*/
         ++i; /*0x4a7f51*/
-      if ( BYTE1(this->m_C) ) /*0x4a7f5e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4a7f5e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x4a7f69*/
         *&this->q004 = 0; /*0x4a7f71*/

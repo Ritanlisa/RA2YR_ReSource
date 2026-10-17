@@ -79,7 +79,7 @@ int MapSeed::CheckName(void *a1)
     || (unsigned __int8)ValidateStringContains((const char **)this, v4, asc_84BA18) )
   {
     result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c5b7*/
-    LOBYTE(result) = 0; /*0x79c5bc*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x79c5bc*/
   }
   else
   {
@@ -88,7 +88,7 @@ int MapSeed::CheckName(void *a1)
     {
       LABEL_12:
       result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c624*/
-      LOBYTE(result) = 1; /*0x79c62d*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x79c62d*/
     }
     else
     {
@@ -106,7 +106,7 @@ int MapSeed::CheckName(void *a1)
       }
       DeleteAndZero((ObjectClass *)&v8.ptr_4); /*0x79c634*/
       result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c63d*/
-      LOBYTE(result) = 0; /*0x79c642*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x79c642*/
     }
   }
   return result; /*0x79c54f*/

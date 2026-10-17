@@ -567,7 +567,7 @@ char * Buffer::FillCircularBufferScroll(int a2, int a3, uint16_t a4) {
       if ( v58 >= v44 ) /*0x4111a6*/
       {
         v45 = 2 * this->u32_28 * v44 - Buffer_field_10; /*0x4111b4*/
-        LODWORD(v45) = v45 - HIDWORD(v45); /*0x4111b5*/
+        (v45) = ((v45) & 0xFFFFFFFF00000000ull) | ((v45 - (((v45) >> 32) & 0xFFFFFFFFu)) & 0xFFFFFFFFull); /*0x4111b5*/
         v46 = (unsigned __int16 *)(v28 + Buffer_field_10); /*0x4111b7*/
         v47 = (int)v45 >> 1; /*0x4111bc*/
         if ( (((unsigned char)v28 + (unsigned char)Buffer_field_10) & 2) != 0 && v47 ) /*0x4111c5*/
@@ -642,21 +642,21 @@ LABEL_55:
       {
         *(unsigned short *)v28 = a4; /*0x4110ea*/
         v31 = (char *)(v28 + 2); /*0x4110ed*/
-        LOBYTE(v57) = --v32; /*0x4110f1*/
+        (v57) = ((v57) & ~0xFF) | ((--v32) & 0xFF); /*0x4110f1*/
       }
       v33 = 0; /*0x4110f7*/
       v34 = v32 >> 1; /*0x4110fc*/
       if ( v32 >> 1 ) /*0x4110fc*/
       {
         memset32(v31, 65537 * a4, v34); /*0x411113*/
-        LOBYTE(v32) = v57; /*0x411115*/
+        (v32) = ((v32) & ~0xFF) | ((v57) & 0xFF); /*0x411115*/
         v33 = (unsigned __int16 *)&v31[4 * v34]; /*0x411119*/
       }
       if ( (v32 & 1) != 0 && v33 ) /*0x411122*/
         *v33 = a4; /*0x411124*/
       v35 = this->Buffer_field_10; /*0x41112a*/
       v36 = 2 * this->u32_28 * this->u32_2C - v35; /*0x411135*/
-      LODWORD(v36) = v36 - HIDWORD(v36); /*0x411136*/
+      (v36) = ((v36) & 0xFFFFFFFF00000000ull) | ((v36 - (((v36) >> 32) & 0xFFFFFFFFu)) & 0xFFFFFFFFull); /*0x411136*/
       v37 = v35 + this->Buffer_field_18; /*0x41113d*/
       v38 = (int)v36 >> 1; /*0x41113f*/
       if ( (v37 & 2) != 0 && v38 ) /*0x41114c*/
@@ -870,7 +870,7 @@ LABEL_3:
     if ( v6 >= 3 ) /*0x431007*/
     {
       p_PlayerClass_field_0x0C = &v16->q00C; /*0x431012*/
-      v10 = __OFSUB__(v15 + 1, 8); /*0x431015*/
+      v10 = (((((v15 + 1) ^ (8)) & ((v15 + 1) ^ ((v15 + 1) - (8))))) < 0); /*0x431015*/
       v9 = v15 - 7 < 0; /*0x431015*/
       ++v15; /*0x431018*/
       v16 = (PlayerClass *)((char *)v16 + 12); /*0x43101c*/
@@ -3398,7 +3398,7 @@ int Vector8::EraseAt(int a2) {
   result = a2; /*0x589293*/
   if ( a2 >= v2 ) /*0x589299*/
   {
-    LOBYTE(result) = 0; /*0x5892c4*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5892c4*/
   }
   else
   {
@@ -3415,7 +3415,7 @@ int Vector8::EraseAt(int a2) {
       }
       while ( result < this->u32_10 ); /*0x5892bc*/
     }
-    LOBYTE(result) = 1; /*0x5892bf*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5892bf*/
   }
   return result; /*0x5892c1*/
 

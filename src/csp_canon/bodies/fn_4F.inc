@@ -274,7 +274,7 @@ bool String::Equals(ObjectClass * aP1, void *a2_1)
   result = strcmp((const char *)(this),(const char *)(aP1)); /*0x4f4cf0*/
   if ( !result ) /*0x4f4d0a*/
     return 1; /*0x4f4d0c*/
-  LOBYTE(result) = 0; /*0x4f4d29*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x4f4d29*/
   return result; /*0x4f4d15*/
 
 }

@@ -121,12 +121,12 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a128c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4a1296*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4a1296*/
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a12ae*/
-    LOBYTE(this->m_C) = 1; /*0x4a12b6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4a12b6*/
     if ( v4 ) /*0x4a12ba*/
     {
       if ( *&this->q004 ) /*0x4a12c5*/
@@ -136,7 +136,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x4a12d3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4a12d9*/
           ++i; /*0x4a12de*/
-        if ( BYTE1(this->m_C) ) /*0x4a12eb*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4a12eb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4a12f6*/
           *&this->q004 = 0; /*0x4a12fe*/
@@ -316,12 +316,12 @@ unsigned int * ConnectionPointClass_9::QueryInterface(char a2)  // G42.41d: trut
   void *v3; // eax
   v3 = (void *)(*&this->q004); /*0x4a14f3*/
   *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4a14f6*/
-  if ( v3 && BYTE1(this->m_C) ) /*0x4a1500*/
+  if ( v3 && (((this->m_C) >> 8) & 0xFF) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/
     *&this->q004 = 0; /*0x4a1510*/
   }
-  BYTE1(this->m_C) = 0; /*0x4a151b*/
+  (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4a151b*/
   this->m_8 = 0; /*0x4a1521*/
   if ( (a2 & 1) != 0 ) /*0x4a1528*/
     __3_YAXPAX_Z(this); /*0x4a152b*/

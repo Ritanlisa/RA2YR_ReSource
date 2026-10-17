@@ -145,7 +145,7 @@ int Audio::UpdatePlaybackPosition()
   AudioFile::GetCallback((AudioFile *)v2); /*0x4054b7*/
   v4 = *&this->u32_148; /*0x4054bc*/
   v5 = *(unsigned int *)this->__pad_18; /*0x4054c2*/
-  LOBYTE(v5) = v5 | 8; /*0x4054c5*/
+  (v5) = ((v5) & ~0xFF) | ((v5 | 8) & 0xFF); /*0x4054c5*/
   *(unsigned int *)this->__pad_18 = v5; /*0x4054c7*/
   BindChannelAudioStream(*&this->u32_B0, v4); /*0x4054d2*/
   EndBufferMixer((int *)(*&this->u32_B0 + 56), *&this->u32_14C); /*0x4054e6*/
@@ -162,7 +162,7 @@ int Audio::UpdatePlaybackPosition()
     *&this->u32_1C = 1; /*0x405547*/
     *&this->u32_148 = v4; /*0x40554e*/
     v8 = *(unsigned int *)this->__pad_18; /*0x405554*/
-    LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
+    (v8) = ((v8) & ~0xFF) | ((v8 & 0xFD) & 0xFF); /*0x405557*/
     *(unsigned int *)this->__pad_18 = v8; /*0x405559*/
     AudioStream::Stop(*&this->u32_B0); /*0x405562*/
     return 0; /*0x405567*/
@@ -276,7 +276,7 @@ int Audio::WaitForCallback()
   unsigned __int64 v3; // rax
   LODWORD(v3) = *&this->u32_4; /*0x4070c9*/
   unsigned __int64 v4; // kr00_8
-  v4 = *(unsigned long long *)this->__pad_10 + __PAIR64__(HIDWORD(v3), v2); /*0x4070cc*/
+  v4 = *(unsigned long long *)this->__pad_10 + ((((((v3) >> 32) & 0xFFFFFFFFu) & 0xFFFFFFFFull)) << 32 | (v2 & 0xFFFFFFFFull)); /*0x4070cc*/
   if ( (unsigned int)v3 != *&this->u32_8 ) /*0x4070d0*/
   {
     do /*0x4070ee*/
@@ -675,7 +675,7 @@ int Audio::LoadWAVFiles(void *a1_1)
               v6 = sub_408560((int)v9, v8[0]) / 0x3E8; /*0x7208dc*/
               HIDWORD(v6) = *v5; /*0x7208e1*/
               v8[1] = v6; /*0x7208e4*/
-              *(float *)(HIDWORD(v6) + 644) = (float)(int)v6; /*0x7208ec*/
+              *(float *)((((v6) >> 32) & 0xFFFFFFFFu) + 644) = (float)(int)v6; /*0x7208ec*/
             }
           }
           *(unsigned int *)v10.__tail_0 = &vt_CCFileClass; /*0x7208f9*/
@@ -1227,7 +1227,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
       v5 = (unsigned short *)((char *)v5 + 1); /*0x7c7f6d*/
       v9 = 4 * v8; /*0x7c7f6e*/
       LOBYTE(v9) = (unsigned __int8)v9 >> 2; /*0x7c7f71*/
-      if ( BYTE1(v9) == 2 ) /*0x7c7f77*/
+      if ( (v9) = ((v9) & ~(0xFF << 8)) | (((= 2) & 0xFF) << 8)) /*0x7c7f77*/
       {
         if ( (v9 & 0x20) != 0 ) /*0x7c7f7b*/
         {
@@ -1257,8 +1257,8 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
       }
       else
       {
-        LOBYTE(v9) = v9 + 1; /*0x7c7fa9*/
-        if ( BYTE1(v9) == 1 ) /*0x7c7fae*/
+        (v9) = ((v9) & ~0xFF) | ((v9 + 1) & 0xFF); /*0x7c7fa9*/
+        if ( (v9) = ((v9) & ~(0xFF << 8)) | (((= 1) & 0xFF) << 8)) /*0x7c7fae*/
         {
           do /*0x7c8007*/
           {
@@ -1300,11 +1300,11 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
             v7 -= 2; /*0x7c7ffd*/
             v6 += 2; /*0x7c8000*/
             LOBYTE(a1) = BYTE1(a1); /*0x7c8003*/
-            LOBYTE(v9) = v9 - 1; /*0x7c8005*/
+            (v9) = ((v9) & ~0xFF) | ((v9 - 1) & 0xFF); /*0x7c8005*/
           }
           while ( (unsigned char)v9 ); /*0x7c8007*/
         }
-        else if ( BYTE1(v9) ) /*0x7c8011*/
+        else if ( (((v9) >> 8) & 0xFF) ) /*0x7c8011*/
         {
           memset(v6, a1, (unsigned __int8)v9); /*0x7c80de*/
           v6 += (unsigned __int8)v9; /*0x7c80de*/
@@ -1333,10 +1333,10 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
                 LOBYTE(a1) = -1; /*0x7c8035*/
             }
             BYTE1(a1) = a1; /*0x7c803e*/
-            v24 = (unsigned __int8 *)__ROR4__(a1, 8); /*0x7c8040*/
-            LOBYTE(v21) = v20; /*0x7c8043*/
+            v24 = (unsigned __int8 *)_rotr(a1, 8); /*0x7c8040*/
+            (v21) = ((v21) & ~0xFF) | ((v20) & 0xFF); /*0x7c8043*/
             v23 = v21 >> 2; /*0x7c8045*/
-            LOBYTE(v23) = v23 & 3; /*0x7c8048*/
+            (v23) = ((v23) & ~0xFF) | ((v23 & 3) & 0xFF); /*0x7c8048*/
             LOBYTE(v24) = byte_7C80F2[v23] + (unsigned char)v24; /*0x7c804b*/
             v25 = __readeflags(); /*0x7c8051*/
             if ( byte_7C80F2[v23] < 0 ) /*0x7c8059*/
@@ -1352,10 +1352,10 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
                 LOBYTE(v24) = -1; /*0x7c805e*/
             }
             BYTE1(v24) = (unsigned char)v24; /*0x7c8067*/
-            v27 = (unsigned __int8 *)__ROR4__(v24, 8); /*0x7c8069*/
-            LOBYTE(v23) = v20; /*0x7c806c*/
+            v27 = (unsigned __int8 *)_rotr(v24, 8); /*0x7c8069*/
+            (v23) = ((v23) & ~0xFF) | ((v20) & 0xFF); /*0x7c806c*/
             v26 = v23 >> 4; /*0x7c806e*/
-            LOBYTE(v26) = v26 & 3; /*0x7c8071*/
+            (v26) = ((v26) & ~0xFF) | ((v26 & 3) & 0xFF); /*0x7c8071*/
             LOBYTE(v27) = byte_7C80F2[v26] + (unsigned char)v27; /*0x7c8074*/
             v28 = __readeflags(); /*0x7c807a*/
             if ( byte_7C80F2[v26] < 0 ) /*0x7c8082*/
@@ -1371,10 +1371,10 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
                 LOBYTE(v27) = -1; /*0x7c8087*/
             }
             BYTE1(v27) = (unsigned char)v27; /*0x7c8090*/
-            v30 = (unsigned __int8 *)__ROR4__(v27, 8); /*0x7c8092*/
-            LOBYTE(v26) = v20; /*0x7c8095*/
+            v30 = (unsigned __int8 *)_rotr(v27, 8); /*0x7c8092*/
+            (v26) = ((v26) & ~0xFF) | ((v20) & 0xFF); /*0x7c8095*/
             v29 = v26 >> 6; /*0x7c8097*/
-            LOBYTE(v29) = v29 & 3; /*0x7c809a*/
+            (v29) = ((v29) & ~0xFF) | ((v29 & 3) & 0xFF); /*0x7c809a*/
             LOBYTE(v30) = byte_7C80F2[v29] + (unsigned char)v30; /*0x7c809d*/
             v31 = __readeflags(); /*0x7c80a3*/
             if ( byte_7C80F2[v29] < 0 ) /*0x7c80ab*/
@@ -1389,12 +1389,12 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
               if ( v18 ) /*0x7c80ae*/
                 LOBYTE(v30) = -1; /*0x7c80b0*/
             }
-            v32 = __ROR4__(v30, 8); /*0x7c80b9*/
+            v32 = _rotr(v30, 8); /*0x7c80b9*/
             *(unsigned int *)v6 = v32; /*0x7c80bc*/
             v7 -= 4; /*0x7c80be*/
             v6 += 4; /*0x7c80c1*/
-            a1 = __ROL4__(v32, 8); /*0x7c80c4*/
-            LOBYTE(v9) = v9 - 1; /*0x7c80c7*/
+            a1 = _rotl(v32, 8); /*0x7c80c4*/
+            (v9) = ((v9) & ~0xFF) | ((v9 - 1) & 0xFF); /*0x7c80c7*/
           }
           while ( (unsigned char)v9 ); /*0x7c80c9*/
         }
@@ -1985,18 +1985,18 @@ int sub_7DF7C0(int * a1)
             break; /*0x7df87e*/
           LOBYTE(v16) = *v12; /*0x7df880*/
           v17 = v12 + 1; /*0x7df882*/
-          LOBYTE(v13) = v13 - v16; /*0x7df883*/
+          (v13) = ((v13) & ~0xFF) | ((v13 - v16) & 0xFF); /*0x7df883*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7df885*/
           BYTE1(v13) = *v17; /*0x7df88c*/
-          for ( i = v17 + 1; BYTE1(v13); g_VoxelRenderBuffer[(unsigned int)v19] = v20 ) /*0x7df891*/
+          for ( i = v17 + 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v19] = v20 ) /*0x7df891*/
           {
-            LOBYTE(v13) = v13 - 1; /*0x7df895*/
-            v19 = (unsigned __int8 *)HIWORD(v15); /*0x7df897*/
+            (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7df895*/
+            v19 = (unsigned __int8 *)(((v15) >> 16) & 0xFFFF); /*0x7df897*/
             v20 = *i; /*0x7df89a*/
-            LOBYTE(v19) = BYTE1(v15); /*0x7df89c*/
+            LOBYTE(v19) = (((v15) >> 8) & 0xFF); /*0x7df89c*/
             i += 2; /*0x7df89e*/
             v15 += v14; /*0x7df8a1*/
-            --BYTE1(v13); /*0x7df8a3*/
+            --(((v13) >> 8) & 0xFF); /*0x7df8a3*/
           }
           v12 = i + 1; /*0x7df8ad*/
         }
@@ -2005,15 +2005,15 @@ int sub_7DF7C0(int * a1)
       }
       *(v8 - 3) += *(int *)((char *)a1 + 30); /*0x7df830*/
       a1[3] += a1[4]; /*0x7df836*/
-      LOBYTE(v3) = v3 - 1; /*0x7df839*/
+      (v3) = ((v3) & ~0xFF) | ((v3 - 1) & 0xFF); /*0x7df839*/
     }
     while ( (unsigned char)v3 ); /*0x7df83b*/
     *(v8 - 3) = a1[9] + *(v8 - 2); /*0x7df843*/
     result = a1[5] + *(v8 - 1); /*0x7df849*/
     a1[3] = result; /*0x7df84c*/
-    --BYTE1(v3); /*0x7df84f*/
+    --(((v3) >> 8) & 0xFF); /*0x7df84f*/
   }
-  while ( BYTE1(v3) ); /*0x7df851*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7df851*/
   return result; /*0x7df855*/
 
 }
@@ -2092,21 +2092,21 @@ int sub_7DF8C0(int a1)
         while ( v13 ) /*0x7df97c*/
         {
           BYTE1(v13) = *v12; /*0x7df97e*/
-          for ( i = v12 - 1; BYTE1(v13); g_VoxelRenderBuffer[(unsigned int)v18] = v19 ) /*0x7df983*/
+          for ( i = v12 - 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v18] = v19 ) /*0x7df983*/
           {
-            LOBYTE(v13) = v13 - 1; /*0x7df987*/
+            (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7df987*/
             v17 = (char *)(i - 1); /*0x7df989*/
-            v18 = (unsigned __int8 *)HIWORD(v15); /*0x7df98a*/
+            v18 = (unsigned __int8 *)(((v15) >> 16) & 0xFFFF); /*0x7df98a*/
             v19 = *v17; /*0x7df98d*/
-            LOBYTE(v18) = BYTE1(v15); /*0x7df98f*/
+            LOBYTE(v18) = (((v15) >> 8) & 0xFF); /*0x7df98f*/
             i = (unsigned __int8 *)(v17 - 1); /*0x7df991*/
             v15 += v14; /*0x7df992*/
-            --BYTE1(v13); /*0x7df994*/
+            --(((v13) >> 8) & 0xFF); /*0x7df994*/
           }
           v20 = i - 1; /*0x7df99e*/
           v21 = *v20; /*0x7df9a1*/
           v12 = v20 - 1; /*0x7df9a3*/
-          LOBYTE(v13) = v13 - v21; /*0x7df9a4*/
+          (v13) = ((v13) & ~0xFF) | ((v13 - v21) & 0xFF); /*0x7df9a4*/
           v15 += g_VoxelOffsetTable[v21]; /*0x7df9a6*/
         }
         v8 = v22; /*0x7df9af*/
@@ -2114,15 +2114,15 @@ int sub_7DF8C0(int a1)
       }
       *(v8 - 3) += *(unsigned int *)(a1 + 30); /*0x7df931*/
       *(unsigned int *)(a1 + 12) += *(unsigned int *)(a1 + 16); /*0x7df937*/
-      LOBYTE(v3) = v3 - 1; /*0x7df93a*/
+      (v3) = ((v3) & ~0xFF) | ((v3 - 1) & 0xFF); /*0x7df93a*/
     }
     while ( (unsigned char)v3 ); /*0x7df93c*/
     *(v8 - 3) = *(unsigned int *)(a1 + 36) + *(v8 - 2); /*0x7df944*/
     result = *(unsigned int *)(a1 + 20) + *(v8 - 1); /*0x7df94a*/
     *(unsigned int *)(a1 + 12) = result; /*0x7df94d*/
-    --BYTE1(v3); /*0x7df950*/
+    --(((v3) >> 8) & 0xFF); /*0x7df950*/
   }
-  while ( BYTE1(v3) ); /*0x7df952*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7df952*/
   return result; /*0x7df956*/
 
 }
@@ -2201,20 +2201,20 @@ int sub_7DFD00(int a1)
         while ( v13 ) /*0x7dfdbc*/
         {
           BYTE1(v13) = *v12; /*0x7dfdbe*/
-          for ( i = (char *)(v12 - 1); BYTE1(v13); g_VoxelRenderBuffer[(unsigned int)v17] = v18 ) /*0x7dfdc3*/
+          for ( i = (char *)(v12 - 1); (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v17] = v18 ) /*0x7dfdc3*/
           {
-            LOBYTE(v13) = v13 - 1; /*0x7dfdc7*/
-            v17 = (unsigned __int8 *)HIWORD(v15); /*0x7dfdc9*/
+            (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7dfdc7*/
+            v17 = (unsigned __int8 *)(((v15) >> 16) & 0xFFFF); /*0x7dfdc9*/
             v18 = *i; /*0x7dfdcc*/
-            LOBYTE(v17) = BYTE1(v15); /*0x7dfdce*/
+            LOBYTE(v17) = (((v15) >> 8) & 0xFF); /*0x7dfdce*/
             --i; /*0x7dfdd0*/
             v15 += v14; /*0x7dfdd1*/
-            --BYTE1(v13); /*0x7dfdd3*/
+            --(((v13) >> 8) & 0xFF); /*0x7dfdd3*/
           }
           v19 = i - 1; /*0x7dfddd*/
           v20 = (unsigned __int8)*v19; /*0x7dfde0*/
           v12 = (unsigned __int8 *)(v19 - 1); /*0x7dfde2*/
-          LOBYTE(v13) = v13 - v20; /*0x7dfde3*/
+          (v13) = ((v13) & ~0xFF) | ((v13 - v20) & 0xFF); /*0x7dfde3*/
           v15 += g_VoxelOffsetTable[v20]; /*0x7dfde5*/
         }
         v8 = v21; /*0x7dfdee*/
@@ -2222,15 +2222,15 @@ int sub_7DFD00(int a1)
       }
       *(v8 - 3) += *(unsigned int *)(a1 + 30); /*0x7dfd74*/
       *(unsigned int *)(a1 + 12) += *(unsigned int *)(a1 + 16); /*0x7dfd7a*/
-      LOBYTE(v3) = v3 - 1; /*0x7dfd7d*/
+      (v3) = ((v3) & ~0xFF) | ((v3 - 1) & 0xFF); /*0x7dfd7d*/
     }
     while ( (unsigned char)v3 ); /*0x7dfd7f*/
     *(v8 - 3) = *(unsigned int *)(a1 + 36) + *(v8 - 2); /*0x7dfd87*/
     result = *(unsigned int *)(a1 + 20) + *(v8 - 1); /*0x7dfd8d*/
     *(unsigned int *)(a1 + 12) = result; /*0x7dfd90*/
-    --BYTE1(v3); /*0x7dfd93*/
+    --(((v3) >> 8) & 0xFF); /*0x7dfd93*/
   }
-  while ( BYTE1(v3) ); /*0x7dfd95*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7dfd95*/
   return result; /*0x7dfd99*/
 
 }
@@ -2991,7 +2991,7 @@ int sub_7C2180(int a1, unsigned int a2)
   else
   {
     v8 = -((*(int (__cdecl **)(int, int, int, unsigned __int8 *))(a1 + 64))(a1, 7, 1, v4) != 0); /*0x7c2245*/
-    LOBYTE(v8) = v8 & 0xFB; /*0x7c2248*/
+    (v8) = ((v8) & ~0xFF) | ((v8 & 0xFB) & 0xFF); /*0x7c2248*/
     return v8 - 1; /*0x7c224b*/
   }
 

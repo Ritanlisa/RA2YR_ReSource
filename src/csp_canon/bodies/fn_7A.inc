@@ -404,11 +404,11 @@ char DynamicVector::EnsureCapacity()
     __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8); /*0x7af079*/
     *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = v3; /*0x7af081*/
     this->DynamicVector_field_0x8 = (int)v4; /*0x7af084*/
-    LOBYTE(result) = 1; /*0x7af087*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7af087*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x7af00d*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7af00d*/
   }
   return result; /*0x7af00f*/
 

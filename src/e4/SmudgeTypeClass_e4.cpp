@@ -176,11 +176,11 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
       _makepath(Buffer, 0, 0, this->ArrayIndex, Ext); /*0x6b5784*/
     result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
     this->Image = (SHPStruct *)result; /*0x6b57c7*/
-    LOBYTE(result) = 1; /*0x6b57ce*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6b57ce*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x6b57db*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6b57db*/
   }
   return result; /*0x6b57cd*/
 

@@ -204,7 +204,7 @@ void* Gap2Recv_660BE0::UI_Create_734120_Create_660BE0() {
   else
   {
     v2 = dword_B04DD8 - 1 + (dword_B04DD8 - 1 < 0 ? 8 : 0);
-    if ( __PAIR32__(HIWORD(dword_B04D48[v2]), dword_B04D48[v2]) == dword_B04D68 )
+    if ( ((HIWORD(dword_B04D48[v2]) & 0xFFFFu) << 16 | (dword_B04D48[v2] & 0xFFFFu)) == dword_B04D68 )
     {
       v3 = dword_B04D48[dword_B04D88]; /*0x660c28*/
       dword_B04DD8 = dword_B04D88; /*0x660c2f*/
@@ -909,11 +909,11 @@ int Gap2Recv_66B900::ReadCrateRulesINI() {
     *((unsigned int *)this + 1306) = v22; /*0x66bb67*/
     result = INIClass::ReadStringValue((INIClass *)v26, (uint8_t *)aCraterules, aWatercrate, v23); /*0x66bb7c*/
     *((unsigned int *)this + 1307) = result; /*0x66bb82*/
-    LOBYTE(result) = 1; /*0x66bb89*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x66bb89*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x66bb96*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x66bb96*/
   }
   return result; /*0x66bb88*/
 

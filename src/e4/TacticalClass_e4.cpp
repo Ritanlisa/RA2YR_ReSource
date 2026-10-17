@@ -238,7 +238,7 @@ void* TacticalClass::ProcessScroll(int * a2)
 
   if ( !this->__pad_11B4 || HIBYTE(this->DisplayClass_field_0x11B0) || this->__pad_11B4 ) /*0x4ac3a3*/
   {
-    LOBYTE(v4) = this->DisplayClass_field_0x11D0; /*0x4ac436*/
+    (v4) = ((v4) & ~0xFF) | ((this->DisplayClass_field_0x11D0) & 0xFF); /*0x4ac436*/
     if ( (unsigned char)v4 ) /*0x4ac43e*/
     {
       v7 = (void *)a2[1]; /*0x4ac45b*/
@@ -262,7 +262,7 @@ void* TacticalClass::ProcessScroll(int * a2)
       if ( v4 > 4 ) /*0x4ac494*/
       {
         DisplayClass_field_0x11B0_high = HIBYTE(this->DisplayClass_field_0x11B0); /*0x4ac496*/
-        LOBYTE(v4) = 1; /*0x4ac49c*/
+        (v4) = ((v4) & ~0xFF) | ((1) & 0xFF); /*0x4ac49c*/
         this->__pad_11B4[27] = 1; /*0x4ac4a0*/
         LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4ac4a6*/
         if ( !DisplayClass_field_0x11B0_high && !this->__pad_11B4 ) /*0x4ac4af*/
@@ -1025,7 +1025,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
   v40 = (int *)(v12 / 60 + 4); /*0x6d6e17*/
   result = ClipRectIntersection(&v57, &DSurface_ViewBounds.field_0, aP1, 0, 0); /*0x6d6e20*/
   v15 = *result; /*0x6d6e25*/
-  HIWORD(v38[0]) = HIWORD(smudgeTypeIndex) - 2; /*0x6d6e27*/
+  HIWORD(v38[0]) = (((smudgeTypeIndex) >> 16) & 0xFFFF) - 2; /*0x6d6e27*/
   v51[0] = v15; /*0x6d6e2d*/
   v16 = v13 + 1; /*0x6d6e37*/
   v51[1] = result->u32_4; /*0x6d6e38*/
@@ -1039,10 +1039,10 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
     v33 = v16 + 1; /*0x6d6e5e*/
     do /*0x6d702b*/
     {
-      LOWORD(v35) = v16 / 2; /*0x6d6e69*/
-      HIWORD(v35) = v33 / 2; /*0x6d6e7b*/
+      (v35) = ((v35) & ~0xFFFF) | ((v16 / 2) & 0xFFFF); /*0x6d6e69*/
+      (v35) = ((v35) & ~(0xFFFF << 16)) | (((v33 / 2) & 0xFFFF) << 16); /*0x6d6e7b*/
       LOWORD(v34) = LOWORD(v38[0]) + v35; /*0x6d6e8a*/
-      HIWORD(v34) = HIWORD(v38[0]) + HIWORD(v35); /*0x6d6e95*/
+      HIWORD(v34) = HIWORD(v38[0]) + (((v35) >> 16) & 0xFFFF); /*0x6d6e95*/
       result = v40; /*0x6d6e9a*/
       *(unsigned int *)v32 = v34; /*0x6d6ea4*/
       if ( (int)v40 > 0 ) /*0x6d6ea8*/
@@ -1099,11 +1099,11 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
       v27 = (int)v40; /*0x6d7044*/
       do /*0x6d71cd*/
       {
-        LOWORD(v35) = v26 / 2; /*0x6d704f*/
-        HIWORD(v35) = v33 / 2; /*0x6d705d*/
+        (v35) = ((v35) & ~0xFFFF) | ((v26 / 2) & 0xFFFF); /*0x6d704f*/
+        (v35) = ((v35) & ~(0xFFFF << 16)) | (((v33 / 2) & 0xFFFF) << 16); /*0x6d705d*/
         result = *(int **)((char *)v38 + 2); /*0x6d706c*/
         LOWORD(v37) = LOWORD(v38[0]) + v35; /*0x6d7070*/
-        HIWORD(v37) = HIWORD(v38[0]) + HIWORD(v35); /*0x6d707b*/
+        HIWORD(v37) = HIWORD(v38[0]) + (((v35) >> 16) & 0xFFFF); /*0x6d707b*/
         *(unsigned int *)v32 = v37; /*0x6d7086*/
         if ( v27 > 0 ) /*0x6d708a*/
         {
@@ -1445,7 +1445,7 @@ void* TacticalClass::DrawPlacementCircles()
                   v20 = (unsigned int *)(*(int (**)(AbstractClass *, int *))(vfptr + 72))(v17, v57); /*0x6dc026*/
                   v54[0] = *v20 / 256; /*0x6dc03c*/
                   v54[1] = v20[1] / 256; /*0x6dc050*/
-                  LODWORD(v52) = (__int16)(HIWORD(v55) - v54[1]); /*0x6dc06b*/
+                  LODWORD(v52) = (__int16)((((v55) >> 16) & 0xFFFF) - v54[1]); /*0x6dc06b*/
                   v21 = (double)SLODWORD(v52); /*0x6dc06f*/
                   LODWORD(v52) = (__int16)(v18 - v54[0]); /*0x6dc073*/
                   Math::Sqrt((double)SLODWORD(v52) * (double)SLODWORD(v52) + v21 * v21); /*0x6dc08c*/
@@ -1474,7 +1474,7 @@ void* TacticalClass::DrawPlacementCircles()
               v27 = (unsigned int *)(*(int (**)(AbstractClass *, int *))(v26 + 72))(v24, v57); /*0x6dc114*/
               v54[0] = *v27 / 256; /*0x6dc12a*/
               v54[1] = v27[1] / 256; /*0x6dc13e*/
-              LODWORD(v52) = (__int16)(HIWORD(v55) - v54[1]); /*0x6dc159*/
+              LODWORD(v52) = (__int16)((((v55) >> 16) & 0xFFFF) - v54[1]); /*0x6dc159*/
               v28 = (double)SLODWORD(v52); /*0x6dc15d*/
               LODWORD(v52) = (__int16)(v25 - v54[0]); /*0x6dc161*/
               Math::Sqrt((double)SLODWORD(v52) * (double)SLODWORD(v52) + v28 * v28); /*0x6dc17a*/

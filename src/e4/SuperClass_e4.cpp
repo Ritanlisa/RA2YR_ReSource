@@ -445,10 +445,10 @@ int SuperClass::Lose()
 
   SuperClass *v3; // [esp+0h] [ebp-4h] BYREF
   v3 = this; /*0x6cb7b0*/
-  if ( !BYTE1(this->HouseClass_6C) ) /*0x6cb7b1*/
+  if ( !(((this->HouseClass_6C) >> 8) & 0xFF) ) /*0x6cb7b1*/
     return 0; /*0x6cb80d*/
   HIBYTE(this->HouseClass_6C) = 0; /*0x6cb7ba*/
-  BYTE1(this->HouseClass_6C) = 0; /*0x6cb7bd*/
+  (this->HouseClass_6C) = ((this->HouseClass_6C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6cb7bd*/
   v3 = this; /*0x6cb7ca*/
   int v1; // eax
   v1 = (*((int (**)(SuperClass *, SuperClass **))SuperClass_ShowTimers + 4))(&stru_A83D50, &v3); /*0x6cb7d4*/
@@ -1090,7 +1090,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     if ( v6 != -1 ) /*0x6cb3d5*/
       ((DynamicVector *)stru_B0F5B8)->RemoveItem(v6); /*0x6cb3dd*/
   }
-  if ( LOBYTE(this->HouseClass_6C) ) /*0x6cb3e2*/
+  if ( ((this->HouseClass_6C) & 0xFF) ) /*0x6cb3e2*/
   {
     v9 = this; /*0x6cb3f9*/
     int v7; // eax
@@ -1099,7 +1099,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
            &v9);
     if ( v7 != -1 ) /*0x6cb403*/
       ((DynamicVector *)stru_B0F5B8)->RemoveItem(v7); /*0x6cb40b*/
-    LOBYTE(this->HouseClass_6C) = 0; /*0x6cb410*/
+    (this->HouseClass_6C) = ((this->HouseClass_6C) & ~0xFF) | ((0) & 0xFF); /*0x6cb410*/
   }
   void **result; // eax
   result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6cb419*/
@@ -1265,7 +1265,7 @@ namespace gamemd {
 char SuperClass::CanFire()
 {
 
-  if ( LOBYTE(this->q070) ) /*0x6cc360*/
+  if ( ((this->q070) & 0xFF) ) /*0x6cc360*/
     return 0; /*0x6cc381*/
   if ( *((unsigned char *)this->u32_28 + 229) ) /*0x6cc36a*/
     return this->u32_7C != 0; /*0x6cc379*/
@@ -1366,7 +1366,7 @@ long long SuperClass::ExecuteAction(unsigned int a2, int a3)
   if ( (void *)a2 == this->u32_68 ) /*0x6ce00f*/
   {
     this->u32_68 = 0; /*0x6ce011*/
-    LOBYTE(this->HouseClass_6C) = 1; /*0x6ce014*/
+    (this->HouseClass_6C) = ((this->HouseClass_6C) & ~0xFF) | ((1) & 0xFF); /*0x6ce014*/
   }
   return result; /*0x6ce00e*/
 
@@ -1417,7 +1417,7 @@ bool SuperClass::ShouldFlashTab()
 {
 
 
-  if ( LOBYTE(this->q070) ) /*0x6ce1a0*/
+  if ( ((this->q070) & 0xFF) ) /*0x6ce1a0*/
     return 0; /*0x6ce1a5*/
   unsigned char *SuperClass_field_0x28 = this->u32_28; // eax /*0x6ce1a7*/
   if ( SuperClass_field_0x28[229] ) /*0x6ce1aa*/

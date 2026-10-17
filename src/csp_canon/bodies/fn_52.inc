@@ -445,11 +445,11 @@ char DynamicVector::Add_Alt4(unsigned int *aP1)
     v5 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x5253e8*/
     this->DynamicVector_field_0x10 = (unsigned int)((void *)(result + 1)); /*0x5253ee*/
     *(unsigned int *)(v5 + 4 * result) = (unsigned int)(*aP1); /*0x5253f8*/
-    LOBYTE(result) = 1; /*0x5253fb*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5253fb*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x5253df*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5253df*/
   }
   return result; /*0x5253e1*/
 

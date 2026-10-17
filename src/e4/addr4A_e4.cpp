@@ -1364,8 +1364,8 @@ int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5,
           a4,
           a5,
           ((unsigned __int8)v14 >> g_BitShift_Green_0 << g_BitShift_Red)
-        | (BYTE1(v14) >> g_BitMask_Blue << g_BitMask_Green)
-        | (BYTE2(v14) >> g_BitMask_Red << g_BitShift_Blue),
+        | ((((v14) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+        | ((((v14) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue),
           a7,
           a8,
           a9);
@@ -1630,7 +1630,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   uniqueId = this->uniqueId; /*0x4a6962*/
   this->abstractFlags = abs32(vtable1[2]); /*0x4a6965*/
   v13 = uniqueId + 3; /*0x4a6968*/
-  LOBYTE(v13) = (uniqueId + 3) & 0xFC; /*0x4a696b*/
+  (v13) = ((v13) & ~0xFF) | (((uniqueId + 3) & 0xFC) & 0xFF); /*0x4a696b*/
   this->referenceCount = v13; /*0x4a696d*/
   if ( (int)vtable1[2] <= 0 ) /*0x4a6975*/
   {
@@ -3932,8 +3932,8 @@ unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int
           a4,
           a5,
           ((unsigned __int8)v16 >> g_BitShift_Green_0 << g_BitShift_Red)
-        | (BYTE1(v16) >> g_BitMask_Blue << g_BitMask_Green)
-        | (BYTE2(v16) >> g_BitMask_Red << g_BitShift_Blue),
+        | ((((v16) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+        | ((((v16) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue),
           a7,
           a8,
           a9,

@@ -14,8 +14,8 @@ void* CellStruct::Add(CellStruct *aP0, unsigned int *aP1, unsigned short *aP2)  
   __int16 v3; // dx
   unsigned short *v5; // [esp+8h] [ebp+8h]
 
-  v3 = LOWORD(this->field_0) + *a3; /*0x42d51f*/
-  HIWORD(v5) = HIWORD(this->field_0) + a3[1]; /*0x42d522*/
+  v3 = ((this->field_0) & 0xFFFF) + *a3; /*0x42d51f*/
+  HIWORD(v5) = (((this->field_0) >> 16) & 0xFFFF) + a3[1]; /*0x42d522*/
   LOWORD(v5) = v3; /*0x42d52b*/
   *a2 = v5; /*0x42d534*/
   return a2; /*0x42d536*/
@@ -55,7 +55,7 @@ void* CellStruct::Sub(unsigned int *aP1, unsigned short *aP2)
   unsigned short *v6; // [esp+8h] [ebp+8h]
 
   v3 = this->field_0; /*0x588c60*/
-  v4 = HIWORD(this->field_0) - aP2[1]; /*0x588c6e*/
+  v4 = (((this->field_0) >> 16) & 0xFFFF) - aP2[1]; /*0x588c6e*/
   LOWORD(v6) = v3 - *aP2; /*0x588c76*/
   HIWORD(v6) = v4; /*0x588c7b*/
   *aP1 = v6; /*0x588c84*/

@@ -259,7 +259,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   int GroundHeight; // [esp+Ch] [ebp-4h]
   GroundHeight = 0; /*0x6e339f*/
   int v9; // [esp+8h] [ebp-8h]
-  v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
+  v9 = ((short)(((v7) >> 16) & 0xFFFF) << 8) + 128; /*0x6e33c0*/
   int v8; // [esp+4h] [ebp-Ch] BYREF
   v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
@@ -718,7 +718,7 @@ char E4Recv_6E0080::sub_6E0080(int a2, int a3, int a4, int a5)
   if ( g_GameCleanupState <= 0 ) /*0x6e00a6*/
     return 1; /*0x6e00fb*/
   __int16 v7; // bp
-  v7 = HIWORD(v11); /*0x6e00a9*/
+  v7 = (((v11) >> 16) & 0xFFFF); /*0x6e00a9*/
   do /*0x6e00ee*/
   {
     unsigned char *v8; // esi
@@ -916,8 +916,8 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e3643*/
   if ( (*((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(v6) + 80) & 0x100) != 0 ) /*0x6e365f*/
     GroundHeight += dword_B0E6D4; /*0x6e366d*/
-  LOWORD(v7) = v8 / 256; /*0x6e3681*/
-  HIWORD(v7) = v9 / 256; /*0x6e3696*/
+  (v7) = ((v7) & ~0xFFFF) | ((v8 / 256) & 0xFFFF); /*0x6e3681*/
+  (v7) = ((v7) & ~(0xFFFF << 16)) | (((v9 / 256) & 0xFFFF) << 16); /*0x6e3696*/
   if ( (unsigned __int8)LightningStorm::IsActive() ) /*0x6e369b*/
     return 0; /*0x6e36cc*/
   LightningStorm::Start( /*0x6e36bf*/

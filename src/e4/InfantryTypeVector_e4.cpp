@@ -49,8 +49,8 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
 
   this->u32_4 = 0; /*0x5138fb*/
   this->q008 = a2; /*0x5138fe*/
-  LOBYTE(this->q00C) = 1; /*0x513901*/
-  BYTE1(this->q00C) = 0; /*0x513905*/
+  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x513901*/
+  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513905*/
   *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
@@ -60,7 +60,7 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
       return this->__pad_0; /*0x51391e*/
     }
     this->InfantryTypeVector_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x51392d*/
-    BYTE1(this->InfantryTypeVector_field_0x0C) = 1; /*0x513930*/
+    (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x513930*/
   }
   return this->__pad_0; /*0x51391d*/
 
@@ -73,8 +73,8 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
 
   this->u32_4 = 0; /*0x5d89ab*/
   this->q008 = a2; /*0x5d89ae*/
-  LOBYTE(this->q00C) = 1; /*0x5d89b1*/
-  BYTE1(this->q00C) = 0; /*0x5d89b5*/
+  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x5d89b1*/
+  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5d89b5*/
   *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x5d89b8*/
   if ( a2 ) /*0x5d89be*/
   {
@@ -84,7 +84,7 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
       return this->__pad_0; /*0x5d89ce*/
     }
     this->InfantryTypeVector_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x5d89dd*/
-    BYTE1(this->InfantryTypeVector_field_0x0C) = 1; /*0x5d89e0*/
+    (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5d89e0*/
   }
   return this->__pad_0; /*0x5d89cd*/
 

@@ -624,7 +624,7 @@ LABEL_8:
     }
     v18 = -(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1) != 0); /*0x62a189*/
     v26[1] = (__int16)(v15 - 0x3FFF) - 0x3FFF; /*0x62a191*/
-    LOBYTE(v18) = v18 & 0xFC; /*0x62a195*/
+    (v18) = ((v18) & ~0xFF) | ((v18 & 0xFC) & 0xFF); /*0x62a195*/
     v19 = v33; /*0x62a19e*/
     v27 = v18 + 2; /*0x62a1a2*/
     *(double *)&v26[1] = (double)v26[1] * -0.00009587672516830327; /*0x62a1ac*/

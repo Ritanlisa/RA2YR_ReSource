@@ -1376,7 +1376,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
   if ( Type->GDIBarracks ) /*0x44efd8*/
   {
     LOWORD(v55) = v4 + 1; /*0x44efec*/
-    HIWORD(v55) = HIWORD(v51) + 2; /*0x44eff1*/
+    HIWORD(v55) = (((v51) >> 16) & 0xFFFF) + 2; /*0x44eff1*/
     *(unsigned int *)v48 = v55; /*0x44f004*/
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f008*/
     {
@@ -1392,7 +1392,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
   if ( *(unsigned char *)&this->Type->NODBarracks ) /*0x44f051*/
   {
     LOWORD(v56) = v4 + 2; /*0x44f062*/
-    HIWORD(v56) = HIWORD(v51) + 2; /*0x44f06e*/
+    HIWORD(v56) = (((v51) >> 16) & 0xFFFF) + 2; /*0x44f06e*/
     *(unsigned int *)v48 = v56; /*0x44f07d*/
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f081*/
     {
@@ -1408,7 +1408,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
   if ( *(unsigned char *)&this->Type->YuriBarracks ) /*0x44f0ca*/
   {
     LOWORD(v57) = v4 + 2; /*0x44f0dc*/
-    HIWORD(v57) = HIWORD(v51) + 1; /*0x44f0e1*/
+    HIWORD(v57) = (((v51) >> 16) & 0xFFFF) + 1; /*0x44f0e1*/
     *(unsigned int *)v48 = v57; /*0x44f0f4*/
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f0f8*/
     {
@@ -1486,7 +1486,7 @@ LABEL_12:
       v25 = v24; /*0x44f344*/
       v24 += 2; /*0x44f346*/
       LOWORD(v59) = v4 + *v25; /*0x44f358*/
-      HIWORD(v59) = HIWORD(v51) + v25[1]; /*0x44f361*/
+      HIWORD(v59) = (((v51) >> 16) & 0xFFFF) + v25[1]; /*0x44f361*/
       *(unsigned int *)v48 = v59; /*0x44f36a*/
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f374*/
       {
@@ -1494,7 +1494,7 @@ LABEL_12:
         v27 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x44f391*/
         if ( !(*(int (**)(int *, void *, int, int, unsigned int, unsigned int))(v26 + 428))(v5, v27, -1, -1, 0, 0) ) /*0x44f399*/
           goto LABEL_36; /*0x44f3a1*/
-        LOWORD(v4) = v51; /*0x44f331*/
+        (v4) = ((v4) & ~0xFFFF) | ((v51) & 0xFFFF); /*0x44f331*/
       }
     }
     goto LABEL_53; /*0x44f33e*/
@@ -1506,7 +1506,7 @@ LABEL_12:
   v50 = -1; /*0x44f3c9*/
   if ( BuildingTypeClass::GetFoundationWidth(v29) >= -1 ) /*0x44f3d5*/
   {
-    HIWORD(v60) = HIWORD(v51) + v31; /*0x44f3e1*/
+    HIWORD(v60) = (((v51) >> 16) & 0xFFFF) + v31; /*0x44f3e1*/
     do /*0x44f3ef*/
     {
       v32 = v51 + v30; /*0x44f3ef*/
@@ -1521,7 +1521,7 @@ LABEL_12:
         v30 = v50; /*0x44f437*/
       }
       LOWORD(v49) = v32; /*0x44f43f*/
-      HIWORD(v49) = HIWORD(v51) - 1; /*0x44f449*/
+      (v49) = ((v49) & ~(0xFFFF << 16)) | ((((((v51) >> 16) & 0xFFFF) - 1) & 0xFFFF) << 16); /*0x44f449*/
       *(unsigned int *)v48 = v49; /*0x44f458*/
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f45c*/
       {
@@ -1545,8 +1545,8 @@ LABEL_12:
     LOWORD(v61) = v51 + v41; /*0x44f4d7*/
     while ( 1 ) /*0x44f4e5*/
     {
-      v42 = HIWORD(v51) + v40; /*0x44f4e5*/
-      HIWORD(v61) = HIWORD(v51) + v40; /*0x44f4e8*/
+      v42 = (((v51) >> 16) & 0xFFFF) + v40; /*0x44f4e5*/
+      HIWORD(v61) = (((v51) >> 16) & 0xFFFF) + v40; /*0x44f4e8*/
       *(unsigned int *)v48 = v61; /*0x44f4f1*/
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f4fa*/
       {
@@ -1557,7 +1557,7 @@ LABEL_12:
         v40 = v49; /*0x44f52d*/
       }
       HIWORD(v50) = v42; /*0x44f535*/
-      LOWORD(v50) = v51 - 1; /*0x44f53f*/
+      (v50) = ((v50) & ~0xFFFF) | ((v51 - 1) & 0xFFFF); /*0x44f53f*/
       *(unsigned int *)v48 = v50; /*0x44f54e*/
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x44f552*/
       {
@@ -2285,7 +2285,7 @@ int BuildingClass::UpdateConstruction()
         v119 = v118[1]; /*0x444e1d*/
         v225[2] = 0; /*0x444e27*/
         LOWORD(v208) = dword_89F69C + (unsigned short)v208; /*0x444e4a*/
-        HIWORD(v208) = v119 / 256 + HIWORD(dword_89F69C); /*0x444e5a*/
+        HIWORD(v208) = v119 / 256 + (((dword_89F69C) >> 16) & 0xFFFF); /*0x444e5a*/
         ++dword_A8E7AC; /*0x444e63*/
         v204 = (unsigned int)v208; /*0x444e6f*/
         v120 = *(unsigned int *)v244; /*0x444e87*/
@@ -2334,7 +2334,7 @@ int BuildingClass::UpdateConstruction()
               }
             }
           }
-          v204 = (SHIWORD(v199) << 8) + 128; /*0x444a6e*/
+          v204 = ((short)(((v199) >> 16) & 0xFFFF) << 8) + 128; /*0x444a6e*/
           *(unsigned int *)v203 = ((__int16)v199 << 8) + 128; /*0x444a72*/
           v96 = (int *)(*(int (**)(BuildingClass *, char *))&this->vfptr->q048)(this, v242); /*0x444a82*/
           v211 = *v96; /*0x444a8e*/
@@ -2358,12 +2358,12 @@ int BuildingClass::UpdateConstruction()
             v100 = (unsigned short)v201 - 1; /*0x444b18*/
           }
           v101 = (int *)this->Type; /*0x444b28*/
-          v200 = SHIWORD(v204); /*0x444b30*/
+          v200 = (short)(((v204) >> 16) & 0xFFFF); /*0x444b30*/
           FoundationHeight = BuildingTypeClass::GetFoundationHeight(v101, 0); /*0x444b34*/
           v103 = HIWORD(v201); /*0x444b39*/
-          if ( SHIWORD(v201) < SHIWORD(v204) + FoundationHeight ) /*0x444b45*/
+          if ( SHIWORD(v201) < (short)(((v204) >> 16) & 0xFFFF) + FoundationHeight ) /*0x444b45*/
           {
-            if ( SHIWORD(v201) < SHIWORD(v204) ) /*0x444b50*/
+            if ( SHIWORD(v201) < (short)(((v204) >> 16) & 0xFFFF) ) /*0x444b50*/
               v103 = HIWORD(v201) + 1; /*0x444b52*/
           }
           else
@@ -2380,7 +2380,7 @@ int BuildingClass::UpdateConstruction()
           v208 = v105; /*0x444b7f*/
           if ( *(unsigned char *)(v106 + 5860) ) /*0x444b83*/
           {
-            if ( (int *)(__int16)v197 == (int *)((char *)v198 + 1) && SHIWORD(v197) == v200 + 2 ) /*0x444ba8*/
+            if ( (int *)(__int16)v197 == (int *)((char *)v198 + 1) && (v197) = ((v197) & ~(0xFFFF << 16)) | (((= v200 + 2) & 0xFFFF) << 16)) /*0x444ba8*/
             {
               v108 = (unsigned int *)((char *)v105 + *(unsigned int *)(v106 + 3788)); /*0x444bb8*/
               v109 = *(unsigned int *)(v106 + 3792); /*0x444bba*/
@@ -2395,7 +2395,7 @@ int BuildingClass::UpdateConstruction()
               v107 = v207; /*0x444bd4*/
             }
           }
-          if ( *(unsigned char *)(v106 + 5861) && (int *)(__int16)v197 == (int *)((char *)v198 + 2) && SHIWORD(v197) == v200 + 2 ) /*0x444c00*/
+          if ( *(unsigned char *)(v106 + 5861) && (int *)(__int16)v197 == (int *)((char *)v198 + 2) && (v197) = ((v197) & ~(0xFFFF << 16)) | (((= v200 + 2) & 0xFFFF) << 16)) /*0x444c00*/
           {
             v110 = *(unsigned int *)(v106 + 3792); /*0x444c08*/
             v107 += *(unsigned int *)(v106 + 3784); /*0x444c0e*/
@@ -2404,7 +2404,7 @@ int BuildingClass::UpdateConstruction()
             v208 = v108; /*0x444c24*/
             v209 += v110; /*0x444c28*/
           }
-          if ( *(unsigned char *)(v106 + 5862) && (int *)(__int16)v197 == (int *)((char *)v198 + 2) && SHIWORD(v197) == v200 + 1 ) /*0x444c52*/
+          if ( *(unsigned char *)(v106 + 5862) && (int *)(__int16)v197 == (int *)((char *)v198 + 2) && (v197) = ((v197) & ~(0xFFFF << 16)) | (((= v200 + 1) & 0xFFFF) << 16)) /*0x444c52*/
           {
             v111 = *(unsigned int *)(v106 + 3784) + v107; /*0x444c5e*/
             v112 = *(unsigned int *)(v106 + 3788); /*0x444c60*/
@@ -2455,7 +2455,7 @@ int BuildingClass::UpdateConstruction()
           v64 = *(unsigned int *)(*(int (**)(BuildingClass *, char *, char *))(v63 + 1236))(this, v229, v244); /*0x444653*/
           v65 = v64; /*0x444655*/
           *(unsigned int *)v202 = v64; /*0x444658*/
-          v66 = HIWORD(v64); /*0x444663*/
+          v66 = (((v64) >> 16) & 0xFFFF); /*0x444663*/
           if ( v64 == g_TerrainTypeTable ) /*0x444668*/
             return 0; /*0x444668*/
           v67 = this->vfptr; /*0x44467d*/
@@ -2483,17 +2483,17 @@ int BuildingClass::UpdateConstruction()
             v72 = v207 - 1; /*0x444738*/
           }
           v73 = (int *)this->Type; /*0x444748*/
-          *(unsigned int *)v203 = SHIWORD(v204); /*0x444750*/
+          *(unsigned int *)v203 = (short)(((v204) >> 16) & 0xFFFF); /*0x444750*/
           v74 = BuildingTypeClass::GetFoundationHeight(v73, 0); /*0x444759*/
-          v75 = HIWORD(v207); /*0x44475b*/
-          if ( SHIWORD(v207) < SHIWORD(v204) + v74 ) /*0x444767*/
+          v75 = (((v207) >> 16) & 0xFFFF); /*0x44475b*/
+          if ( (short)(((v207) >> 16) & 0xFFFF) < (short)(((v204) >> 16) & 0xFFFF) + v74 ) /*0x444767*/
           {
-            if ( SHIWORD(v207) < SHIWORD(v204) ) /*0x444772*/
-              v75 = HIWORD(v207) + 1; /*0x444774*/
+            if ( (short)(((v207) >> 16) & 0xFFFF) < (short)(((v204) >> 16) & 0xFFFF) ) /*0x444772*/
+              v75 = (((v207) >> 16) & 0xFFFF) + 1; /*0x444774*/
           }
           else
           {
-            v75 = HIWORD(v207) - 1; /*0x444769*/
+            v75 = (((v207) >> 16) & 0xFFFF) - 1; /*0x444769*/
           }
           v76 = (v72 << 8) + 128; /*0x444784*/
           v77 = (v75 << 8) + 128; /*0x44478a*/
@@ -2677,7 +2677,7 @@ int BuildingClass::UpdateConstruction()
       *(unsigned int *)v194 = &v215; /*0x444393*/
       *(unsigned int *)&v193[2] = 1; /*0x444394*/
       *(unsigned int *)v193 = 0; /*0x444395*/
-      HIWORD(v200) = v45 / 256; /*0x44439e*/
+      (v200) = ((v200) & ~(0xFFFF << 16)) | (((v45 / 256) & 0xFFFF) << 16); /*0x44439e*/
       v46 = *(unsigned int *)v244; /*0x4443a7*/
       v217 = v200; /*0x4443ad*/
       v47 = (*(int (**)(char *))(v46 + 132))(v244); /*0x4443ba*/
@@ -2736,7 +2736,7 @@ int BuildingClass::UpdateConstruction()
           v209 = *PlacementCellsAlt; /*0x443f90*/
           v227[1] = 0; /*0x443f94*/
           v226 = ((__int16)v209 << 8) + 128; /*0x443fac*/
-          v227[0] = (SHIWORD(v209) << 8) + 128; /*0x443fbb*/
+          v227[0] = ((short)(((v209) >> 16) & 0xFFFF) << 8) + 128; /*0x443fbb*/
           Field9 = AbstractClass::GetField9(); /*0x443fc2*/
           if ( (*(unsigned __int8 (**)(ObjectClass *, int *, int))(v17 + 216))(v4, &v226, Field9) ) /*0x443fd2*/
           {
@@ -2776,13 +2776,13 @@ LABEL_99:
       {
         if ( *(unsigned char *)(v4[10].vfptr3 + 3597) ) /*0x443d0a*/
           return 0; /*0x443d12*/
-        LOWORD(v212) = dword_87F8E8; /*0x443d24*/
-        HIWORD(v212) = dword_87F8E8; /*0x443d29*/
+        (v212) = ((v212) & ~0xFFFF) | ((dword_87F8E8) & 0xFFFF); /*0x443d24*/
+        (v212) = ((v212) & ~(0xFFFF << 16)) | (((dword_87F8E8) & 0xFFFF) << 16); /*0x443d29*/
         HIWORD(v206) = dword_87F8DC; /*0x443d33*/
-        LOWORD(v218) = dword_87F8E4; /*0x443d3c*/
+        (v218) = ((v218) & ~0xFFFF) | ((dword_87F8E4) & 0xFFFF); /*0x443d3c*/
         HIWORD(v218) = -(__int16)dword_87F8E4; /*0x443d43*/
-        LOWORD(v209) = dword_87F8E4 + 1; /*0x443d53*/
-        HIWORD(v209) = dword_87F8DC - dword_87F8E4; /*0x443d5c*/
+        (v209) = ((v209) & ~0xFFFF) | ((dword_87F8E4 + 1) & 0xFFFF); /*0x443d53*/
+        (v209) = ((v209) & ~(0xFFFF << 16)) | (((dword_87F8DC - dword_87F8E4) & 0xFFFF) << 16); /*0x443d5c*/
         LOWORD(v206) = dword_87F8E8 + dword_87F8E4 + 1; /*0x443d6f*/
         v7 = dword_87F8DC - dword_87F8E4 + dword_87F8E8; /*0x443d76*/
         v8 = this->vfptr; /*0x443d79*/
@@ -2790,10 +2790,10 @@ LABEL_99:
         v9 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(v8 + 72))(this, v236); /*0x443d88*/
         LOWORD(v217) = *v9 / 256; /*0x443d9b*/
         HIWORD(v217) = v9[1] / 256; /*0x443db3*/
-        if ( (__int16)(v217 - v205) - (__int16)(HIWORD(v217) - HIWORD(v205)) <= dword_87F8EC ) /*0x443dd7*/
+        if ( (__int16)(v217 - v205) - (__int16)((((v217) >> 16) & 0xFFFF) - (((v205) >> 16) & 0xFFFF)) <= dword_87F8EC ) /*0x443dd7*/
         {
           v199 = dword_87F8F0; /*0x443e31*/
-          LOWORD(v205) = v205 - 1; /*0x443e37*/
+          (v205) = ((v205) & ~0xFFFF) | ((v205 - 1) & 0xFFFF); /*0x443e37*/
           HIWORD(v205) = v7; /*0x443e3c*/
           v198 = 0; /*0x443e45*/
           v204 = v205; /*0x443e46*/
@@ -2804,8 +2804,8 @@ LABEL_99:
           LOWORD(v208) = dword_87F8EC; /*0x443dd9*/
           HIWORD(v217) = v7; /*0x443dde*/
           HIWORD(v208) = -(__int16)dword_87F8EC; /*0x443dea*/
-          LOWORD(v217) = v205 - 1; /*0x443def*/
-          LOWORD(v205) = dword_87F8EC + v205 - 1; /*0x443e04*/
+          (v217) = ((v217) & ~0xFFFF) | ((v205 - 1) & 0xFFFF); /*0x443def*/
+          (v205) = ((v205) & ~0xFFFF) | ((dword_87F8EC + v205 - 1) & 0xFFFF); /*0x443e04*/
           HIWORD(v205) = v7 - dword_87F8EC; /*0x443e09*/
           v204 = v205; /*0x443e18*/
           p_NeedsSaveOrLink = (Random *)&dword_A8B230[14].NeedsSaveOrLink; /*0x443e21*/
@@ -2819,7 +2819,7 @@ LABEL_99:
         v224[0] = ((__int16)v204 << 8) + 128; /*0x443e79*/
         ++dword_A8E7AC; /*0x443e84*/
         v12 = v4->vfptr; /*0x443e89*/
-        v224[1] = (SHIWORD(v204) << 8) + 128; /*0x443e95*/
+        v224[1] = ((short)(((v204) >> 16) & 0xFFFF) << 8) + 128; /*0x443e95*/
         v224[2] = 0; /*0x443e99*/
         if ( (*(unsigned __int8 (**)(ObjectClass *, unsigned int *, unsigned int))(v12 + 216))(v4, v224, 0) ) /*0x443ea0*/
         {
@@ -2891,8 +2891,8 @@ LABEL_146:
           v213 = v128; /*0x445010*/
           if ( v127 == g_BuildingClassPool && v128 == dword_89C84C && !dword_89C850 ) /*0x445025*/
             return 0; /*0x445025*/
-          LOWORD(v209) = v127 / 256; /*0x445039*/
-          HIWORD(v209) = v128 / 256; /*0x44504c*/
+          (v209) = ((v209) & ~0xFFFF) | ((v127 / 256) & 0xFFFF); /*0x445039*/
+          (v209) = ((v209) & ~(0xFFFF << 16)) | (((v128 / 256) & 0xFFFF) << 16); /*0x44504c*/
           *(unsigned int *)v123 = v209; /*0x445055*/
           v129 = v213; /*0x445057*/
           v130 = v212; /*0x44505b*/
@@ -2912,7 +2912,7 @@ LABEL_146:
           }
           else
           {
-            v137 = (SHIWORD(v136) << 8) + 128; /*0x44512c*/
+            v137 = ((short)(((v136) >> 16) & 0xFFFF) << 8) + 128; /*0x44512c*/
             v130 = ((__int16)v136 << 8) + 128; /*0x445132*/
             v129 = v137; /*0x445139*/
             v212 = v130; /*0x44513b*/
@@ -2933,8 +2933,8 @@ LABEL_146:
         v131 = v206; /*0x445151*/
         if ( v206 && (v130 != g_BuildingClassPool || v129 != dword_89C84C || v214 != dword_89C850) ) /*0x445175*/
         {
-          LOWORD(v209) = v130 / 256; /*0x445183*/
-          HIWORD(v209) = v129 / 256; /*0x445196*/
+          (v209) = ((v209) & ~0xFFFF) | ((v130 / 256) & 0xFFFF); /*0x445183*/
+          (v209) = ((v209) & ~(0xFFFF << 16)) | (((v129 / 256) & 0xFFFF) << 16); /*0x445196*/
           v206[1] = v209; /*0x44519f*/
           v129 = v213; /*0x4451a2*/
           v130 = v212; /*0x4451a6*/
@@ -2976,8 +2976,8 @@ LABEL_146:
         }
         return 0; /*0x445694*/
       }
-      LOWORD(v209) = v130 / 256; /*0x4451dc*/
-      HIWORD(v209) = v129 / 256; /*0x4451ef*/
+      (v209) = ((v209) & ~0xFFFF) | ((v130 / 256) & 0xFFFF); /*0x4451dc*/
+      (v209) = ((v209) & ~(0xFFFF << 16)) | (((v129 / 256) & 0xFFFF) << 16); /*0x4451ef*/
       v138 = this->owner; /*0x4451f8*/
       v222 = v209; /*0x4451fe*/
       v139 = *(unsigned int *)v244; /*0x445202*/
@@ -3052,8 +3052,8 @@ LABEL_146:
           if ( *(unsigned char *)(v155 + 5824) ) /*0x44535b*/
           {
             v198 = (int *)*((unsigned int *)v244 + 328); /*0x445369*/
-            LOWORD(v207) = v210 / 256; /*0x44537a*/
-            HIWORD(v207) = v211 / 256; /*0x44538f*/
+            (v207) = ((v207) & ~0xFFFF) | ((v210 / 256) & 0xFFFF); /*0x44537a*/
+            (v207) = ((v207) & ~(0xFFFF << 16)) | (((v211 / 256) & 0xFFFF) << 16); /*0x44538f*/
             v197 = this->owner; /*0x44539e*/
             v221[0] = v207; /*0x4453a5*/
             globalHelper_088570((int)v221, v197, (int)v198); /*0x4453a9*/
@@ -3064,8 +3064,8 @@ LABEL_146:
             if ( v156 && *(unsigned char *)(v156 + 680) ) /*0x4453ba*/
             {
               v198 = (int *)*((unsigned int *)v244 + 328); /*0x4453c8*/
-              LOWORD(v207) = v210 / 256; /*0x4453d9*/
-              HIWORD(v207) = v211 / 256; /*0x4453ee*/
+              (v207) = ((v207) & ~0xFFFF) | ((v210 / 256) & 0xFFFF); /*0x4453d9*/
+              (v207) = ((v207) & ~(0xFFFF << 16)) | (((v211 / 256) & 0xFFFF) << 16); /*0x4453ee*/
               v197 = this->owner; /*0x4453fd*/
               v220 = v207; /*0x445404*/
               ScanBuildingPlacementCells(&v220, v197, v198); /*0x445408*/

@@ -1416,7 +1416,7 @@ int TechnoClass_DrawVoxel(TechnoClass *ecx0, int64_t a2, int a3, int a4, int a5,
   AudioConfig v150[12]; // [esp+28Ch] [ebp-30h] BYREF
 
   v10 = v9; /*0x73b47f*/
-  v123 = __PAIR64__(ecx0, (unsigned int)this); /*0x73b488*/
+  v123 = (((ecx0 & 0xFFFFFFFFull)) << 32 | ((unsigned int)this & 0xFFFFFFFFull)); /*0x73b488*/
   v11 = v9[433]; /*0x73b494*/
   if ( !(*(unsigned __int8 (**)(unsigned int *, unsigned int))(*v9 + 1088))( /*0x73b4a3*/
           v9,
@@ -1555,7 +1555,7 @@ LABEL_10:
         v10,
         v11 + 192,
         v129,
-        HIDWORD(v123),
+        (((v123) >> 32) & 0xFFFFFFFFu),
         v11 + 640,
         &v134,
         &v124,

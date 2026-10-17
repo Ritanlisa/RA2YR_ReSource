@@ -34,7 +34,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   if ( a2 ) /*0x658b1e*/
   {
     v5 = a3; /*0x658b24*/
-    LOBYTE(this->m_C) = 0; /*0x658b28*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x658b28*/
     if ( a3 ) /*0x658b2d*/
     {
       if ( a2 - 1 >= 0 ) /*0x658b67*/
@@ -78,7 +78,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
         v5 = 0; /*0x658b5e*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x658b7d*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x658b7d*/
     if ( !v5 ) /*0x658b81*/
       return 0; /*0x658c11*/
     if ( *&this->q004 ) /*0x658b87*/
@@ -103,7 +103,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
         while ( m_8 ); /*0x658bbf*/
         v3 = a2; /*0x658bc1*/
       }
-      if ( BYTE1(this->m_C) ) /*0x658bc7*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x658bc7*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x658bd0*/
         *&this->q004 = 0; /*0x658bd8*/
@@ -305,12 +305,12 @@ char * RadarHashVector::Destructor(char a2)
   {
     v11 = *&this->q004; /*0x658cc5*/
     *(unsigned int *)this->__pad_0 = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658ccc*/
-    if ( v11 && BYTE1(this->m_C) ) /*0x658cd4*/
+    if ( v11 && (((this->m_C) >> 8) & 0xFF) ) /*0x658cd4*/
     {
       __3_YAXPAX_Z(v11); /*0x658cda*/
       *&this->q004 = 0; /*0x658ce2*/
     }
-    BYTE1(this->m_C) = 0; /*0x658ce9*/
+    (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x658ce9*/
     this->m_8 = 0; /*0x658cee*/
     if ( (a2 & 1) != 0 ) /*0x658cf1*/
       __3_YAXPAX_Z(this); /*0x658cf4*/

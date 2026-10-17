@@ -236,7 +236,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     &v4->vtable1,
     (unsigned __int8 *)(_EBX + 36),
     aGroundspeed,
-    COERCE_DOUBLE(__PAIR64__(v6, v7)));
+    COERCE_DOUBLE((((v6 & 0xFFFFFFFFull)) << 32 | (v7 & 0xFFFFFFFFull))));
   v9 = _EBX->q0DC; /*0x5119b6*/
   v10 = _EBX->airspeedMult_d; /*0x5119bc*/
   __asm { fstp qword ptr [ebx+0D0h] } /*0x5119c2*/
@@ -245,7 +245,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     &v4->vtable1,
     (unsigned __int8 *)(_EBX + 36),
     aAirspeed,
-    COERCE_DOUBLE(__PAIR64__(v9, v10)));
+    COERCE_DOUBLE((((v9 & 0xFFFFFFFFull)) << 32 | (v10 & 0xFFFFFFFFull))));
   v12 = _EBX->armorMult_d; /*0x5119dd*/
   __asm { fstp qword ptr [ebx+0D8h] } /*0x5119e3*/
   _EBX->airspeedMult_d = _RT1; /*0x5119e3*/
@@ -258,7 +258,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     &v4->vtable1,
     (unsigned __int8 *)(_EBX + 36),
     &off_825478,
-    COERCE_DOUBLE(__PAIR64__(v14, v15)));
+    COERCE_DOUBLE((((v14 & 0xFFFFFFFFull)) << 32 | (v15 & 0xFFFFFFFFull))));
   v17 = _EBX->q0F4; /*0x511a19*/
   v18 = _EBX->costMult_d; /*0x511a1f*/
   __asm { fstp qword ptr [ebx+0E8h] } /*0x511a25*/
@@ -267,7 +267,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     &v4->vtable1,
     (unsigned __int8 *)(_EBX + 36),
     g_INI_Key_Cost,
-    COERCE_DOUBLE(__PAIR64__(v17, v18)));
+    COERCE_DOUBLE((((v17 & 0xFFFFFFFFull)) << 32 | (v18 & 0xFFFFFFFFull))));
   v20 = _EBX->buildtimeMult_d; /*0x511a40*/
   __asm { fstp qword ptr [ebx+0F0h] } /*0x511a46*/
   _EBX->costMult_d = _RT1; /*0x511a46*/
@@ -698,7 +698,7 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass_flat * a2)
   if ( !v3 ) /*0x513389*/
   {
     this->vtable2 = 0; /*0x5133ca*/
-    BYTE1(this->u8_D) = 0; /*0x5133d1*/
+    (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5133d1*/
     return &this->AbstractClass; /*0x5133d5*/
   }
   void *v4; // eax
@@ -708,7 +708,7 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass_flat * a2)
     return &this->AbstractClass; /*0x5133a0*/
   void *vtable2 = this->vtable3; // ecx /*0x5133a2*/
   int v6 = 0; // eax /*0x5133a5*/
-  BYTE1(this->u8_D) = 1; /*0x5133a9*/
+  (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5133a9*/
   if ( (int)vtable2 <= 0 ) /*0x5133ad*/
     return &this->AbstractClass; /*0x5133ad*/
   do /*0x5133c1*/
@@ -1059,7 +1059,7 @@ namespace gamemd {
 unsigned int HouseTypeClass_36::Write(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x512930*/
+  if ( ((this->q00C) & 0xFF) ) /*0x512930*/
     return (unsigned int)(a2 - *&this->u32_4) >> 2; /*0x512945*/
   else
     return 0; /*0x512937*/
@@ -1085,7 +1085,7 @@ unsigned int * HouseTypeClass::readStartUnit()
   this->vtable2 = 0; /*0x512964*/
   this->vtable3 = 0; /*0x512967*/
   LOBYTE(this->vtable4) = 1; /*0x51296a*/
-  BYTE1(this->u8_D) = 0; /*0x51296e*/
+  (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x51296e*/
   this->abstractFlags = 10; /*0x512971*/
   this->uniqueId = 0; /*0x512978*/
   this->AbstractClass = &vt_TypeList; /*0x51297b*/
@@ -1102,12 +1102,12 @@ wchar_t * HouseTypeClass_28::ddtor(void *a1)
 
   void *v2 = *&this->u32_4; // eax /*0x512996*/
   this->q010 = 0; /*0x512999*/
-  if ( v2 && BYTE1(this->q00C) ) /*0x5129a0*/
+  if ( v2 && (((this->q00C) >> 8) & 0xFF) ) /*0x5129a0*/
   {
     __3_YAXPAX_Z(v2); /*0x5129a6*/
     *&this->u32_4 = 0; /*0x5129ae*/
   }
-  BYTE1(this->q00C) = 0; /*0x5129b1*/
+  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5129b1*/
   this->u32_8 = 0; /*0x5129b4*/
 
 }
@@ -1118,7 +1118,7 @@ namespace gamemd {
 unsigned int HouseTypeClass_28::Write(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x5129c0*/
+  if ( ((this->q00C) & 0xFF) ) /*0x5129c0*/
     return (unsigned int)(a2 - *&this->u32_4) >> 2; /*0x5129d5*/
   else
     return 0; /*0x5129c7*/
@@ -1214,7 +1214,7 @@ unsigned int * HouseTypeClass::readStartInfantry(unsigned int * a2, void *a2_1)
   if ( !v3 ) /*0x512be9*/
   {
     this->vtable2 = 0; /*0x512c2a*/
-    BYTE1(this->u8_D) = 0; /*0x512c31*/
+    (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x512c31*/
     return &this->AbstractClass; /*0x512c35*/
   }
   void *v4; // eax
@@ -1224,7 +1224,7 @@ unsigned int * HouseTypeClass::readStartInfantry(unsigned int * a2, void *a2_1)
     return &this->AbstractClass; /*0x512c00*/
   void *vtable2 = this->vtable3; // ecx /*0x512c02*/
   int v6 = 0; // eax /*0x512c05*/
-  BYTE1(this->u8_D) = 1; /*0x512c09*/
+  (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x512c09*/
   if ( (int)vtable2 <= 0 ) /*0x512c0d*/
     return &this->AbstractClass; /*0x512c0d*/
   do /*0x512c21*/
@@ -1274,13 +1274,13 @@ char HouseTypeClass_36::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x51324c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x513252*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x513252*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x513258*/
       v4 = a3; /*0x51326e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x51326a*/
-    LOBYTE(this->q00C) = 1; /*0x513272*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x513272*/
     if ( !v4 ) /*0x513276*/
       return 0; /*0x5132ea*/
     if ( *&this->u32_4 ) /*0x513278*/
@@ -1291,7 +1291,7 @@ char HouseTypeClass_36::Release(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x51328c*/
         ++i; /*0x513291*/
-      if ( BYTE1(this->q00C) ) /*0x51329e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x51329e*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x5132a9*/
         *&this->u32_4 = 0; /*0x5132b1*/
@@ -1367,13 +1367,13 @@ char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x51342c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x513436*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x513436*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x51343c*/
       v4 = a3; /*0x513452*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x51344e*/
-    LOBYTE(this->q00C) = 1; /*0x513456*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x513456*/
     if ( v4 ) /*0x51345a*/
     {
       if ( *&this->u32_4 ) /*0x513465*/
@@ -1384,7 +1384,7 @@ char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
         int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x513479*/
           ++i; /*0x51347e*/
-        if ( BYTE1(this->q00C) ) /*0x51348b*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x51348b*/
         {
           __3_YAXPAX_Z(*&this->u32_4); /*0x513496*/
           *&this->u32_4 = 0; /*0x51349e*/
@@ -1415,7 +1415,7 @@ int HouseTypeClass_36::IndexOf(unsigned int * a2)
 {
 
 
-  if ( !LOBYTE(this->q00C) ) /*0x513500*/
+  if ( !((this->q00C) & 0xFF) ) /*0x513500*/
     return 0; /*0x513508*/
   int m_8 = this->u32_8; // edx /*0x51350e*/
   int result = 0; // eax /*0x513511*/
@@ -1437,7 +1437,7 @@ namespace gamemd {
 unsigned int HouseTypeClass_36::PointerToIndex(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x513540*/
+  if ( ((this->q00C) & 0xFF) ) /*0x513540*/
     return (unsigned int)(a2 - *&this->u32_4) >> 2; /*0x513555*/
   else
     return 0; /*0x513547*/
@@ -1453,7 +1453,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
   this->vtable2 = 0; /*0x513569*/
   this->vtable3 = (void *)a2; /*0x513570*/
   LOBYTE(this->vtable4) = 1; /*0x513573*/
-  BYTE1(this->u8_D) = 0; /*0x513577*/
+  (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513577*/
   this->AbstractClass = &vt_VectorClass; /*0x51357b*/
   if ( a2 ) /*0x513581*/
   {
@@ -1464,7 +1464,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
     else
     {
       this->vtable2 = __2_YAPAXI_Z(4 * a2); /*0x51359c*/
-      BYTE1(this->u8_D) = 1; /*0x51359f*/
+      (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x51359f*/
     }
   }
   this->AbstractClass = &vt_DynamicVectorClass; /*0x5135a3*/
@@ -1483,13 +1483,13 @@ char HouseTypeClass_28::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x51361c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x513622*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x513622*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x513628*/
       v4 = a3; /*0x51363e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x51363a*/
-    LOBYTE(this->q00C) = 1; /*0x513642*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x513642*/
     if ( !v4 ) /*0x513646*/
       return 0; /*0x5136ba*/
     if ( *&this->u32_4 ) /*0x513648*/
@@ -1500,7 +1500,7 @@ char HouseTypeClass_28::Release(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x51365c*/
         ++i; /*0x513661*/
-      if ( BYTE1(this->q00C) ) /*0x51366e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x51366e*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x513679*/
         *&this->u32_4 = 0; /*0x513681*/
@@ -1581,7 +1581,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * a2)
   this->vtable2 = 0; /*0x5137dd*/
   this->vtable3 = 0; /*0x5137e0*/
   LOBYTE(this->vtable4) = 1; /*0x5137e3*/
-  BYTE1(this->u8_D) = 0; /*0x5137e7*/
+  (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5137e7*/
   this->AbstractClass = &vt_VectorClass; /*0x5137ea*/
   if ( this != (HouseTypeClass *)a2 ) /*0x5137f0*/
   {
@@ -1632,7 +1632,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * a2)
   this->vtable2 = 0; /*0x51386d*/
   this->vtable3 = 0; /*0x513870*/
   LOBYTE(this->vtable4) = 1; /*0x513873*/
-  BYTE1(this->u8_D) = 0; /*0x513877*/
+  (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513877*/
   this->AbstractClass = &vt_VectorClass; /*0x51387a*/
   if ( this != (HouseTypeClass *)a2 ) /*0x513880*/
   {

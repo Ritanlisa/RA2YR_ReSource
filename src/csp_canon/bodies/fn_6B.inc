@@ -131,8 +131,8 @@ long long E4Recv_6B1EE0::sub_6B1EE0()
     v5 = 4; /*0x6b1f13*/
   this->ambientSoundController[4] = v5; /*0x6b1f1b*/
   v7 = Math::RoundToInt(nextObject); /*0x6b1f22*/
-  WORD2(result) = HIWORD(v7); /*0x6b1f22*/
-  LOWORD(result) = v7; /*0x6b1f22*/
+  (result) = ((result) & ~(0xFFFFull << 32)) | ((((((v7) >> 16) & 0xFFFF)) & 0xFFFFull) << 32); /*0x6b1f22*/
+  (result) = ((result) & ~0xFFFF) | ((v7) & 0xFFFF); /*0x6b1f22*/
   if ( (int)result >= abstractFlags - v5 ) /*0x6b1f31*/
     this->customSound_controller[0] = abstractFlags - v5; /*0x6b1f3b*/
   else
@@ -176,12 +176,12 @@ char Gap2Recv_6B2520::System_Init_6B2520() {
 
   occupant = this->occupant; /*0x6b252c*/
   v6 = occupant; /*0x6b2531*/
-  v3 = SHIWORD(occupant) + (int16_t)occupant; /*0x6b253d*/
+  v3 = (short)(((occupant) >> 16) & 0xFFFF) + (int16_t)occupant; /*0x6b253d*/
   if ( v3 <= dword_ABED04 ) /*0x6b2542*/
     return 0; /*0x6b2542*/
-  if ( (int16_t)v6 - SHIWORD(v6) >= dword_ABED04 ) /*0x6b254c*/
+  if ( (int16_t)v6 - (short)(((v6) >> 16) & 0xFFFF) >= dword_ABED04 ) /*0x6b254c*/
     return 0; /*0x6b254c*/
-  if ( SHIWORD(v6) - (int16_t)v6 >= dword_ABED04 ) /*0x6b2552*/
+  if ( (short)(((v6) >> 16) & 0xFFFF) - (int16_t)v6 >= dword_ABED04 ) /*0x6b2552*/
     return 0; /*0x6b2552*/
   if ( v3 > dword_ABED08 ) /*0x6b255a*/
     return 0; /*0x6b255a*/
@@ -222,7 +222,7 @@ int Gap2Recv_6B4100::Map_Get_6B4100() {
 
   occupant = this->occupant; /*0x6b4113*/
   v17 = occupant; /*0x6b4120*/
-  v2 = SHIWORD(occupant) - dword_8759AC; /*0x6b412c*/
+  v2 = (short)(((occupant) >> 16) & 0xFFFF) - dword_8759AC; /*0x6b412c*/
   v3 = (int16_t)occupant - dword_8759A8; /*0x6b4130*/
   v4 = v2 * dword_8759A4 + v3; /*0x6b4136*/
   v5 = dword_8759A4 * (v2 + 1) + v3; /*0x6b4142*/
@@ -245,10 +245,10 @@ int Gap2Recv_6B4100::Map_Get_6B4100() {
   }
   while ( v11 ); /*0x6b417c*/
   v17 = occupant; /*0x6b4186*/
-  v12 = SHIWORD(occupant) + (int16_t)occupant; /*0x6b4192*/
+  v12 = (short)(((occupant) >> 16) & 0xFFFF) + (int16_t)occupant; /*0x6b4192*/
   if ( v12 <= g_MissionQueueFrame.localVariables[160] /*0x6b41b1*/
-    || (int16_t)occupant - SHIWORD(occupant) >= g_MissionQueueFrame.localVariables[160]
-    || SHIWORD(occupant) - (int16_t)occupant >= g_MissionQueueFrame.localVariables[160]
+    || (int16_t)occupant - (short)(((occupant) >> 16) & 0xFFFF) >= g_MissionQueueFrame.localVariables[160]
+    || (short)(((occupant) >> 16) & 0xFFFF) - (int16_t)occupant >= g_MissionQueueFrame.localVariables[160]
     || v12 > g_MissionQueueFrame.localVariables[161] )
   {
     v13 = this; /*0x6b421f*/
@@ -577,7 +577,7 @@ int E4Recv_6B93E0::sub_6B93E0()
   {
     v3 = *v1; /*0x6b93f7*/
     v4 = *(v1 - 2); /*0x6b93fe*/
-    LOBYTE(v5) = -1; /*0x6b9415*/
+    (v5) = ((v5) & ~0xFF) | ((-1) & 0xFF); /*0x6b9415*/
     if ( 15 * *(v1 - 1) / 10 <= 255 ) /*0x6b9422*/
       v5 = 15 * *(v1 - 1) / 10; /*0x6b9424*/
     *(v1 - 2) = v5; /*0x6b9426*/
@@ -687,7 +687,7 @@ char WriteRegistryKeyCOM(LPCSTR lpString2, LPCSTR, LPCSTR lpString)
       v4 = 1; /*0x6bb36a*/
     result = RegCloseKey(phkResult); /*0x6bb371*/
   }
-  IDA_LOBYTE(result) = v4; /*0x6bb377*/
+  (result) = ((result) & ~0xFF) | ((v4) & 0xFF); /*0x6bb377*/
   return result; /*0x6bb379*/
 }
 

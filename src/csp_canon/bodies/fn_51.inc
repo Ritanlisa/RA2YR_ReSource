@@ -698,7 +698,7 @@ int Gap2Recv_51FB00::PlaceScenarioInfantry() {
             {
               v18 = strtok(0, Str); /*0x51fc27*/
               v19 = atoi(v18); /*0x51fc2d*/
-              LOWORD(v17) = v19 % 128; /*0x51fc43*/
+              (v17) = ((v17) & ~0xFFFF) | ((v19 % 128) & 0xFFFF); /*0x51fc43*/
               v16 = v19 / 128; /*0x51fc4a*/
               v17 = (int16_t)v17; /*0x51fc4d*/
             }

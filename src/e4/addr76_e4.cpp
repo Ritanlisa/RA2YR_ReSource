@@ -201,7 +201,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
             ComPtr::Constructor((ComPtr *)&v24.vfptr3); /*0x764c97*/
             v10 = v25; /*0x764c9c*/
             v24.vfptr3 = (int)&vt_rc_ptr_WDTTerritory; /*0x764ca3*/
-            LOBYTE(v10) = v25 | 1; /*0x764cab*/
+            (v10) = ((v10) & ~0xFF) | ((v25 | 1) & 0xFF); /*0x764cab*/
             p_vfptr3 = &v24.vfptr3; /*0x764cad*/
             v25 = v10; /*0x764cb1*/
           }
@@ -215,7 +215,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
           if ( (v25 & 1) != 0 ) /*0x764cde*/
           {
             v11 = v25; /*0x764ce0*/
-            LOBYTE(v11) = v25 & 0xFE; /*0x764ceb*/
+            (v11) = ((v11) & ~0xFF) | ((v25 & 0xFE) & 0xFF); /*0x764ceb*/
             v24.vfptr3 = (int)&vt_rc_ptr_WDTTerritory; /*0x764ced*/
             v25 = v11; /*0x764cf5*/
             ComPtr::Release((ComPtr *)&v24.vfptr3); /*0x764cfc*/
@@ -725,7 +725,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   BYTE1(v51.m_C) = 1; /*0x769669*/
   Block = 0; /*0x76966e*/
   v53 = 30; /*0x769672*/
-  LOWORD(v54) = 1; /*0x769676*/
+  (v54) = ((v54) & ~0xFFFF) | ((1) & 0xFFFF); /*0x769676*/
   *(unsigned int *)v51.__tail_10 = &vt_VectorClass_WorldDominationTour_Centroid; /*0x76967f*/
   v6 = (int *)__2_YAPAXI_Z(0x168u); /*0x769687*/
   v7 = v6; /*0x76968c*/
@@ -735,7 +735,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
     v7 = 0; /*0x7696a5*/
   Block = v7; /*0x7696ab*/
   v55.vfptr2 = (int)&v51; /*0x7696af*/
-  BYTE1(v54) = 1; /*0x7696b7*/
+  (v54) = ((v54) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x7696b7*/
   v55.vfptr3 = 0; /*0x7696bc*/
   v55.vfptr1 = (int)&vt_VectorCursor_TRect_int_VectorClass_TRect_int; /*0x7696c0*/
   if ( Map_WorldDominationTour_38::AddRef((_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H *)&v55.vfptr1) ) /*0x7696c8*/
@@ -774,14 +774,14 @@ LABEL_67:
         v11 = abstractFlags + 1; /*0x769755*/
         if ( v53 < abstractFlags + 1 ) /*0x76975a*/
         {
-          LOBYTE(v54) = 0; /*0x76976b*/
+          (v54) = ((v54) & ~0xFF) | ((0) & 0xFF); /*0x76976b*/
           v12 = (int *)__2_YAPAXI_Z(12 * v11); /*0x769773*/
           v13 = v12; /*0x769778*/
           if ( v12 ) /*0x76977f*/
             Array::ForEach(v12, 12, abstractFlags + 1, (int (*)(int))unknown_libname_37); /*0x76978a*/
           else
             v13 = 0; /*0x769791*/
-          LOBYTE(v54) = 1; /*0x769795*/
+          (v54) = ((v54) & ~0xFF) | ((1) & 0xFF); /*0x769795*/
           if ( v13 ) /*0x76979a*/
           {
             if ( Block ) /*0x7697a0*/
@@ -805,12 +805,12 @@ LABEL_67:
                 while ( v14 ); /*0x7697cf*/
                 abstractFlags = v55.abstractFlags; /*0x7697d1*/
               }
-              if ( BYTE1(v54) ) /*0x7697db*/
+              if ( (((v54) >> 8) & 0xFF) ) /*0x7697db*/
                 __3_YAXPAX_Z(Block); /*0x7697e2*/
             }
             Block = v13; /*0x7697ea*/
             v53 = v11; /*0x7697ee*/
-            BYTE1(v54) = 1; /*0x7697f2*/
+            (v54) = ((v54) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x7697f2*/
           }
         }
         v18 = (char *)Block + 12 * abstractFlags; /*0x769810*/

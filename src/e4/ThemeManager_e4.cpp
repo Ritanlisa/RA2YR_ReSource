@@ -25,11 +25,11 @@ char ThemeManager::ProcessCallback(void *a1)
   unsigned __int64 v4; // kr00_8
 
   v2 = Audio::Callback(); /*0x4080fa*/
-  LODWORD(v3) = this->u32_14; /*0x4080fc*/
-  v4 = *(unsigned long long *)(v3 + 32) + __PAIR64__(HIDWORD(v3), v2); /*0x408104*/
+  (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((this->u32_14) & 0xFFFFFFFFull); /*0x4080fc*/
+  v4 = *(unsigned long long *)(v3 + 32) + ((((((v3) >> 32) & 0xFFFFFFFFu) & 0xFFFFFFFFull)) << 32 | (v2 & 0xFFFFFFFFull)); /*0x408104*/
   while ( (this->u8_C & 1) != 0 ) /*0x408107*/
   {
-    LODWORD(v3) = this->u32_14; /*0x40810d*/
+    (v3) = ((v3) & 0xFFFFFFFF00000000ull) | ((this->u32_14) & 0xFFFFFFFFull); /*0x40810d*/
     if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
       break; /*0x408118*/
     LODWORD(v3) = Audio::Callback(); /*0x40811a*/

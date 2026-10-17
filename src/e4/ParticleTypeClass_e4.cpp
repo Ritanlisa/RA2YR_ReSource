@@ -68,7 +68,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   if ( a2 ) /*0x4784fe*/
   {
     v5 = a3; /*0x478504*/
-    LOBYTE(this->m_C) = 0; /*0x478508*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x478508*/
     if ( a3 ) /*0x47850d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
@@ -112,7 +112,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         v5 = 0; /*0x47853d*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x47855c*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x47855c*/
     if ( !v5 ) /*0x478560*/
       return 0; /*0x4785e2*/
     if ( *&this->vtable2 ) /*0x478562*/
@@ -135,7 +135,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         while ( m_8 ); /*0x478590*/
         v3 = (void *)a2; /*0x478592*/
       }
-      if ( BYTE1(this->m_C) ) /*0x478598*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x478598*/
       {
         __3_YAXPAX_Z(*&this->vtable2); /*0x4785a1*/
         *&this->vtable2 = 0; /*0x4785a9*/
@@ -179,7 +179,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
   if ( !v3 ) /*0x478901*/
   {
     this->ParticleTypeClass_field_28C = 0; /*0x478974*/
-    BYTE1(this->ParticleTypeClass_field_0xC) = 0; /*0x478977*/
+    (this->ParticleTypeClass_field_0xC) = ((this->ParticleTypeClass_field_0xC) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x478977*/
     return &this->ArrayIndex; /*0x47897a*/
   }
   v4 = (char *)__2_YAPAXI_Z(3 * v3); /*0x478907*/
@@ -209,7 +209,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
     return &this->ArrayIndex; /*0x478935*/
   BehavesLike = this->BehavesLike; /*0x478937*/
   v8 = 0; /*0x47893a*/
-  BYTE1(this->ParticleTypeClass_field_0xC) = 1; /*0x47893e*/
+  (this->ParticleTypeClass_field_0xC) = ((this->ParticleTypeClass_field_0xC) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x47893e*/
   if ( (int)BehavesLike <= 0 ) /*0x478942*/
     return &this->ArrayIndex; /*0x478942*/
   v9 = 0; /*0x478944*/

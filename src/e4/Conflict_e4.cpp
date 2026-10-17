@@ -33,7 +33,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
     (*(void (**)(_VectorClass_V_rc_ptr_VGameOption_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x766d1d*/
     return 1; /*0x766d23*/
   }
-  LOBYTE(this->m_C) = 0; /*0x766c27*/
+  (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x766c27*/
   if ( a3 ) /*0x766c2d*/
   {
     *a3 = a2; /*0x766c73*/
@@ -123,7 +123,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
   m_8 = a2; /*0x766dc3*/
   if ( a2 ) /*0x766dcd*/
   {
-    LOBYTE(this->m_C) = 0; /*0x766dd7*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x766dd7*/
     if ( a3 ) /*0x766ddd*/
     {
       *a3 = a2; /*0x766e21*/
@@ -168,7 +168,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
         v6 = 0; /*0x766e1d*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x766e4f*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x766e4f*/
     if ( !v6 ) /*0x766e53*/
       return 0; /*0x766ed6*/
     if ( *&this->u32_4 ) /*0x766e55*/

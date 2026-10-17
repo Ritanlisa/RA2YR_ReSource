@@ -759,7 +759,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     }
     if ( !(unsigned __int8)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x7a80e2*/
     {
-      LOBYTE(v16) = dword_A8BB08; /*0x7a80ef*/
+      (v16) = ((v16) & ~0xFF) | ((dword_A8BB08) & 0xFF); /*0x7a80ef*/
       if ( !FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v16, 0) /*0x7a813d*/
         || (RawFileClass::Construct((BufferIOFileClass *)Buffer, (int)byte_A8B8E0),
             v17 = (unsigned __int8)FileClass::Open((RawFileClass *)Buffer, 0) != 0,
@@ -769,7 +769,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
         if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x7a814c*/
         {
           if ( dword_B76B24 /*0x7a8165*/
-            || (HIBYTE(v23.DeleteAndZero_field_0x08) = BYTE1(dword_B76B30) & 1, (dword_B76B30 & 0x100) != 0) )
+            || (HIBYTE(v23.DeleteAndZero_field_0x08) = (((dword_B76B30) >> 8) & 0xFF) & 1, (dword_B76B30 & 0x100) != 0) )
           {
             if ( *(unsigned int *)(**(unsigned int **)&stru_A8D804.__pad_3D[567] + 119) ) /*0x7a816f*/
             {

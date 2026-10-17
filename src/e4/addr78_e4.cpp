@@ -2666,7 +2666,7 @@ int WOL_LoginFlow()
       String::Assign_Alt((String *)&stru_B73E10.CChatEventSink_field_0x30, *(const char **)v41.__pad_0); /*0x78719b*/
       String::Assign_Alt((String *)&g_WebBrowserConfig, (const char *)v41.Flag_field_0x08); /*0x7871aa*/
       v8 = -1; /*0x7871b4*/
-      LOBYTE(dword_84A238) = 0; /*0x7871ba*/
+      (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x7871ba*/
       if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7871cb*/
       {
         LoadPlayerProfile((ObjectClass *)&v41.Flag_field_0x08, (const char **)&v39); /*0x7871d9*/
@@ -2768,7 +2768,7 @@ LABEL_48:
   SimpleDialogControl::Constructor((SimpleDialogControl *)&v43.Flag_field_0x08); /*0x7873dd*/
   v43.Flag_field_0x08 = (int)&off_7F7624; /*0x7873eb*/
   v14 = -((unsigned __int8)Flag::IsNot2(&v43) != 0); /*0x7873f6*/
-  LOBYTE(v14) = v14 & 0xF2; /*0x7873f8*/
+  (v14) = ((v14) & ~0xFF) | ((v14 & 0xF2) & 0xFF); /*0x7873f8*/
   v15 = v14 + 285; /*0x7873ff*/
   LoginFlowWOL_Load_72C600(); /*0x787401*/
   Screen::Capture(1, 0, (int)&off_7F7624, 0); /*0x78740a*/
@@ -4216,8 +4216,8 @@ int PopulateWOLUserList(HWND hWnd, char a2)
   else
   {
     unknown_libname_73(&v20); /*0x789701*/
-    LODWORD(v26) = 0; /*0x78970a*/
-    BYTE4(v26) = 0; /*0x789712*/
+    (v26) = ((v26) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x78970a*/
+    (v26) = ((v26) & ~(0xFFull << 32)) | (((0) & 0xFFull) << 32); /*0x789712*/
     ReadRegistryOptionsWOL((ObjectClass *)&v26); /*0x789717*/
     ComPtr::Constructor((ComPtr *)&v24); /*0x789720*/
     v24 = &vt_rc_ptr_PlayerProfile; /*0x78972e*/
@@ -4349,10 +4349,10 @@ char ValidateJoinWOL(ObjectClass *aP0, int a2, int a3, int a4)
       if ( ShowDialogConfirm(v10, 4, (unsigned __int8 (*)(void))GameLoop::Thunk, 1) == 6 ) /*0x789a06*/
       {
         v11 = -(v8 != 800); /*0x789a16*/
-        LOBYTE(v11) = v11 & 0x60; /*0x789a18*/
+        (v11) = ((v11) & ~0xFF) | ((v11 & 0x60) & 0xFF); /*0x789a18*/
         MEMORY[0xA8EB00].vfptr[33] = v11 + 800; /*0x789a1f*/
         v12 = -(v11 != 0); /*0x789a2b*/
-        LOBYTE(v12) = v12 & 0x88; /*0x789a2d*/
+        (v12) = ((v12) & ~0xFF) | ((v12 & 0x88) & 0xFF); /*0x789a2d*/
         MEMORY[0xA8EB00].vfptr[34] = v12 + 600; /*0x789a34*/
         ScenarioClass::SaveGameOptions((ScenarioClass *)&MEMORY[0xA8EB00].vfptr[24]); /*0x789a39*/
       }

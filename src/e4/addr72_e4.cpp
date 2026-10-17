@@ -2962,7 +2962,7 @@ char ObjectClass::sub_728540(int a2)
   __int16 v8; // [esp+Eh] [ebp-2h]
 
   occupant = this->occupant; /*0x728547*/
-  v8 = HIWORD(occupant); /*0x728551*/
+  v8 = (((occupant) >> 16) & 0xFFFF); /*0x728551*/
   if ( occupant == *(unsigned int *)a2 ) /*0x728555*/
     return 1; /*0x728555*/
   p_nextObject = &this->nextObject; /*0x728565*/

@@ -440,7 +440,7 @@ int E4Recv_5A1C70::sub_5A1C70()
   for ( j = 0; j < dword_ABDFA0; ++j ) /*0x5a1d5a*/
   {
     v9 = *(RandomMap **)(stru_ABDF90.Vector4_field_0x04 + 4 * j); /*0x5a1d67*/
-    if ( LOBYTE(v9->RandomMap_field_0x14) ) /*0x5a1d6a*/
+    if ( ((v9->RandomMap_field_0x14) & 0xFF) ) /*0x5a1d6a*/
     {
       v10 = v17->ambientSoundController[0]; /*0x5a1d75*/
       v11 = v10 == 3 || v10 == 4; /*0x5a1d86*/
@@ -775,7 +775,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
         LOWORD(v28) = *v45 + LOWORD(dword_89F688[v28]); /*0x5a48e5*/
         HIWORD(v49) = v29; /*0x5a48ee*/
         v30 = (__int16)v28; /*0x5a48f3*/
-        LOWORD(v49) = v28; /*0x5a48f9*/
+        (v49) = ((v49) & ~0xFFFF) | ((v28) & 0xFFFF); /*0x5a48f9*/
         v31 = v29 + (__int16)v28; /*0x5a48fe*/
         if ( v31 > dword_ABED04 && v30 - v29 < dword_ABED04 && v29 - v30 < dword_ABED04 && v31 <= dword_ABED08 ) /*0x5a492d*/
         {
@@ -1227,7 +1227,7 @@ LABEL_10:
         while ( *v20 != 0x7FFF || v20[1] != 0x7FFF ) /*0x5a6775*/
         {
           LOWORD(v31) = v19 + *v20; /*0x5a6781*/
-          HIWORD(v31) = HIWORD(v19) + v20[1]; /*0x5a6790*/
+          HIWORD(v31) = (((v19) >> 16) & 0xFFFF) + v20[1]; /*0x5a6790*/
           *(unsigned int *)v35 = v31; /*0x5a6799*/
           v21 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v35); /*0x5a67a7*/
           if ( !(unsigned __int8)CellClass::InBounds(v21) && !(unsigned __int8)CellClass::InMapDataRange(v21) /*0x5a67da*/
@@ -1244,7 +1244,7 @@ LABEL_10:
         v22 = *(unsigned int *)v16; /*0x5a6810*/
         v40[2] = 0; /*0x5a681d*/
         v40[0] = ((__int16)v19 << 8) + 128; /*0x5a6828*/
-        v40[1] = (SHIWORD(v19) << 8) + 128; /*0x5a6836*/
+        v40[1] = ((short)(((v19) >> 16) & 0xFFFF) << 8) + 128; /*0x5a6836*/
         if ( (*(unsigned __int8 (**)(int, unsigned int *, unsigned int))(v22 + 216))(v16, v40, 0) ) /*0x5a683d*/
         {
           v23 = *(unsigned int *)v16; /*0x5a684d*/
@@ -1341,7 +1341,7 @@ int PlaceRandomNeutralUnits(int a1)
   }
   while ( (unsigned int)result > 5 ); /*0x5a696e*/
   v19 = 0; /*0x5a6972*/
-  LODWORD(v21) = 0; /*0x5a6976*/
+  (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x5a6976*/
   if ( result > 0 ) /*0x5a697a*/
   {
     while ( 1 ) /*0x5a698e*/
@@ -1402,7 +1402,7 @@ LABEL_14:
           while ( v14 > 7 ); /*0x5a6aea*/
           v28[0] = ((__int16)v18 << 8) + 128; /*0x5a6b0c*/
           v15 = *v8; /*0x5a6b10*/
-          v28[1] = (SHIWORD(v18) << 8) + 128; /*0x5a6b16*/
+          v28[1] = ((short)(((v18) >> 16) & 0xFFFF) << 8) + 128; /*0x5a6b16*/
           v28[2] = 0; /*0x5a6b1d*/
           if ( (*(unsigned __int8 (**)(unsigned int *, unsigned int *, unsigned int))(v15 + 216))(v8, v28, 32 * v14) ) /*0x5a6b21*/
           {
@@ -1411,7 +1411,7 @@ LABEL_14:
             v8->estimatedHealth = v16; /*0x5a6b40*/
             v8->ModifyCellTiles(2); /*0x5a6b47*/
             v17 = 1; /*0x5a6b51*/
-            LODWORD(v21) = v21 + 1; /*0x5a6b57*/
+            (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((v21 + 1) & 0xFFFFFFFFull); /*0x5a6b57*/
           }
         }
         ++v11; /*0x5a6b5f*/
@@ -1454,7 +1454,7 @@ int E4Recv_5A6BA0::sub_5A6BA0()
   v5 = vtable0_high - 7; /*0x5a6bb6*/
   v11 = vtable0_low + 7; /*0x5a6bb9*/
   v6 = vtable0_high + 7; /*0x5a6bbd*/
-  if ( __OFSUB__(vtable0_low - 7, vtable0_low + 7) ) /*0x5a6bc0*/
+  if ( (((((vtable0_low - 7) ^ (vtable0_low + 7)) & ((vtable0_low - 7) ^ ((vtable0_low - 7) - (vtable0_low + 7))))) < 0) ) /*0x5a6bc0*/
     return 1; /*0x5a6bfa*/
   while ( 1 ) /*0x5a6bc4*/
   {
@@ -1755,10 +1755,10 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
   }
   while ( (__int16)v4 < aP2[2] + *aP2 + 1 ) /*0x5a70f2*/
   {
-    if ( SHIWORD(v21) >= aP2[3] + aP2[1] + 1 ) /*0x5a7117*/
+    if ( (short)(((v21) >> 16) & 0xFFFF) >= aP2[3] + aP2[1] + 1 ) /*0x5a7117*/
       break; /*0x5a7117*/
     v23 = v16 + (__int16)v4; /*0x5a711f*/
-    v24 = v17 + SHIWORD(v21); /*0x5a712d*/
+    v24 = v17 + (short)(((v21) >> 16) & 0xFFFF); /*0x5a712d*/
     v25 = v5 + v18; /*0x5a713b*/
     v26 = v6 + v19; /*0x5a7143*/
     if ( !(unsigned __int8)IsAreaClearMap(&v23, a4 == 4, a4 == 4) ) /*0x5a714c*/
@@ -1769,7 +1769,7 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
   }
   v8 = ((unsigned char)a4 - 4) & 7; /*0x5a719d*/
   v9 = (__int16 *)(4 * v8 + 9041544); /*0x5a71ac*/
-  HIWORD(v27) = HIWORD(v21) + HIWORD(dword_89F688[v8]); /*0x5a71c1*/
+  HIWORD(v27) = (((v21) >> 16) & 0xFFFF) + HIWORD(dword_89F688[v8]); /*0x5a71c1*/
   LOWORD(v27) = v4 + LOWORD(dword_89F688[v8]); /*0x5a71c6*/
   v10 = v27; /*0x5a71cb*/
   v11 = (__int16)v27 - *a1; /*0x5a71d7*/
@@ -1851,7 +1851,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
     || v16 > dword_ABED08 )
   {
 LABEL_31:
-    LOBYTE(result) = 0; /*0x5a742a*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5a742a*/
   }
   else
   {
@@ -1865,8 +1865,8 @@ LABEL_31:
         {
           do /*0x5a73a3*/
           {
-            LOWORD(v14) = v11; /*0x5a73a3*/
-            HIWORD(v14) = v10; /*0x5a73a8*/
+            (v14) = ((v14) & ~0xFFFF) | ((v11) & 0xFFFF); /*0x5a73a3*/
+            (v14) = ((v14) & ~(0xFFFF << 16)) | (((v10) & 0xFFFF) << 16); /*0x5a73a8*/
             v12 = (int *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v14); /*0x5a73b2*/
             if ( sub_4866D0(v12) ) /*0x5a73b6*/
             {
@@ -1894,7 +1894,7 @@ LABEL_31:
       }
       while ( v10 < aP0[3] + aP0[1] ); /*0x5a7418*/
     }
-    LOBYTE(result) = 1; /*0x5a7421*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5a7421*/
   }
   return result; /*0x5a741e*/
 
@@ -2079,7 +2079,7 @@ unsigned int PlaceMapSeedBuildingsStrategic(int a1)
       v9 = 0; /*0x5a7a03*/
       v10 = 0; /*0x5a7a05*/
       v11 = v8[v7]; /*0x5a7a07*/
-      v12 = SHIWORD(v11); /*0x5a7a0e*/
+      v12 = (short)(((v11) >> 16) & 0xFFFF); /*0x5a7a0e*/
       v24 = (__int16)v11; /*0x5a7a16*/
       v26 = 0; /*0x5a7a1c*/
       v27 = 0; /*0x5a7a20*/
@@ -2337,7 +2337,7 @@ LABEL_14:
             v17 = Math::RoundToInt((double)v30 * 0.000000001862645149664638); /*0x5a8907*/
           }
           while ( v17 > 7 ); /*0x5a890f*/
-          v31[1] = (SHIWORD(v21) << 8) + 128; /*0x5a8931*/
+          v31[1] = ((short)(((v21) >> 16) & 0xFFFF) << 8) + 128; /*0x5a8931*/
           v18 = *v8; /*0x5a8935*/
           v31[0] = ((__int16)v21 << 8) + 128; /*0x5a893b*/
           v31[2] = 0; /*0x5a8942*/
@@ -2865,7 +2865,7 @@ LABEL_25:
     v22 = *a2; /*0x5a90e8*/
     v43 = *(unsigned int *)(*(unsigned int *)(v19 + 4) + 8 * v17); /*0x5a90eb*/
     LOWORD(var50) = v22 - v43; /*0x5a90f6*/
-    HIWORD(var50) = a2[1] - HIWORD(v43); /*0x5a9104*/
+    HIWORD(var50) = a2[1] - (((v43) >> 16) & 0xFFFF); /*0x5a9104*/
     LODWORD(v37) = var50; /*0x5a910d*/
     if ( Map_Helper_5A7D00(*(unsigned int *)(v19 + 8), &v37, 1, 1) ) /*0x5a9114*/
       break; /*0x5a9114*/
@@ -2878,7 +2878,7 @@ LABEL_25:
   v24 = *a2; /*0x5a9162*/
   v43 = *(unsigned int *)(*(unsigned int *)(v19 + 4) + 8 * v17); /*0x5a9165*/
   LOWORD(v31) = v24 - v43; /*0x5a9179*/
-  HIWORD(v31) = a2[1] - HIWORD(v43); /*0x5a917e*/
+  HIWORD(v31) = a2[1] - (((v43) >> 16) & 0xFFFF); /*0x5a917e*/
   *a6 = v31; /*0x5a9187*/
   *a5 = *(unsigned int *)(v19 + 8); /*0x5a9197*/
   *a7 = v17; /*0x5a919a*/
@@ -3053,9 +3053,9 @@ unsigned int * InitializePathData()
   *v6 = v119; /*0x5a9d0f*/
   v6[1] = 0; /*0x5a9d13*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[256] + 8) = 1; /*0x5a9d22*/
-  LOWORD(v121) = 1; /*0x5a9d30*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5a9d30*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[256] + 12) = 2; /*0x5a9d35*/
-  HIWORD(v121) = 1; /*0x5a9d38*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5a9d38*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[272] = 0; /*0x5a9d4c*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[264] = 2; /*0x5a9d52*/
   v7 = (int *)__2_YAPAXI_Z(0x10u); /*0x5a9d58*/
@@ -3472,9 +3472,9 @@ unsigned int * InitializePathData()
   *v50 = v119; /*0x5aa726*/
   v50[1] = 6; /*0x5aa72d*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[520] + 8) = 65537; /*0x5aa73c*/
-  LOWORD(v123) = 0; /*0x5aa74a*/
+  (v123) = ((v123) & ~0xFFFF) | ((0) & 0xFFFF); /*0x5aa74a*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[520] + 12) = 7; /*0x5aa74f*/
-  HIWORD(v123) = 1; /*0x5aa752*/
+  (v123) = ((v123) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5aa752*/
   v119 = 0; /*0x5aa761*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[536] = 0; /*0x5aa76b*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[528] = 3; /*0x5aa771*/
@@ -3495,9 +3495,9 @@ unsigned int * InitializePathData()
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[532] + 8) = 1; /*0x5aa7b9*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[532] + 12) = 2; /*0x5aa7cc*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[532] + 16) = v123; /*0x5aa7de*/
-  LOWORD(v119) = 0; /*0x5aa7ec*/
+  (v119) = ((v119) & ~0xFFFF) | ((0) & 0xFFFF); /*0x5aa7ec*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[532] + 20) = 4; /*0x5aa7f1*/
-  HIWORD(v119) = 1; /*0x5aa7f4*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5aa7f4*/
   v121 = 1; /*0x5aa7f9*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[548] = 0; /*0x5aa803*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[540] = 3; /*0x5aa809*/
@@ -3516,11 +3516,11 @@ unsigned int * InitializePathData()
   *v54 = v121; /*0x5aa83e*/
   v54[1] = 2; /*0x5aa845*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[544] + 8) = v119; /*0x5aa854*/
-  LOWORD(v119) = 0; /*0x5aa862*/
+  (v119) = ((v119) & ~0xFFFF) | ((0) & 0xFFFF); /*0x5aa862*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[544] + 12) = 4; /*0x5aa867*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[544] + 16) = 0; /*0x5aa879*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[544] + 20) = 6; /*0x5aa88c*/
-  HIWORD(v119) = 1; /*0x5aa88f*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5aa88f*/
   v121 = 0; /*0x5aa894*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[560] = 0; /*0x5aa89e*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[552] = 3; /*0x5aa8a4*/
@@ -3539,11 +3539,11 @@ unsigned int * InitializePathData()
   *v56 = v121; /*0x5aa8d9*/
   v56[1] = 0; /*0x5aa8dd*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[556] + 8) = v119; /*0x5aa8ec*/
-  LOWORD(v119) = 1; /*0x5aa8fa*/
+  (v119) = ((v119) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aa8fa*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[556] + 12) = 4; /*0x5aa8ff*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[556] + 16) = 0; /*0x5aa911*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[556] + 20) = 6; /*0x5aa924*/
-  HIWORD(v119) = 0; /*0x5aa927*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5aa927*/
   v121 = 0; /*0x5aa92c*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[572] = 0; /*0x5aa936*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[564] = 3; /*0x5aa93c*/
@@ -3586,17 +3586,17 @@ unsigned int * InitializePathData()
   *v60 = v121; /*0x5aaa18*/
   v60[1] = 0; /*0x5aaa1c*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[580] + 8) = v119; /*0x5aaa2b*/
-  LOWORD(v119) = 1; /*0x5aaa39*/
+  (v119) = ((v119) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aaa39*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[580] + 12) = 2; /*0x5aaa3e*/
-  HIWORD(v119) = 1; /*0x5aaa4b*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5aaa4b*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[580] + 16) = 0x10000; /*0x5aaa50*/
-  LOWORD(v121) = 2; /*0x5aaa5e*/
+  (v121) = ((v121) & ~0xFFFF) | ((2) & 0xFFFF); /*0x5aaa5e*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[580] + 20) = 4; /*0x5aaa63*/
-  HIWORD(v121) = 2; /*0x5aaa70*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aaa70*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[580] + 24) = v125[0]; /*0x5aaa75*/
-  LOWORD(v123) = 2; /*0x5aaa83*/
+  (v123) = ((v123) & ~0xFFFF) | ((2) & 0xFFFF); /*0x5aaa83*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[580] + 28) = 6; /*0x5aaa88*/
-  HIWORD(v123) = 0; /*0x5aaa8b*/
+  (v123) = ((v123) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5aaa8b*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[596] = 0; /*0x5aaa90*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[588] = 3; /*0x5aaa96*/
   v61 = (int *)__2_YAPAXI_Z(0x18u); /*0x5aaa9c*/
@@ -3614,14 +3614,14 @@ unsigned int * InitializePathData()
   *v62 = v123; /*0x5aaacb*/
   v62[1] = 1; /*0x5aaad2*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[592] + 8) = v121; /*0x5aaae1*/
-  LOWORD(v121) = 1; /*0x5aaaef*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aaaef*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[592] + 12) = 3; /*0x5aaaf4*/
   v63 = v119; /*0x5aaafd*/
-  LOWORD(v119) = 2; /*0x5aab01*/
+  (v119) = ((v119) & ~0xFFFF) | ((2) & 0xFFFF); /*0x5aab01*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[592] + 16) = v63; /*0x5aab06*/
-  HIWORD(v119) = 2; /*0x5aab14*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aab14*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[592] + 20) = 5; /*0x5aab19*/
-  HIWORD(v121) = 1; /*0x5aab1c*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5aab1c*/
   v123 = 65537; /*0x5aab21*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[608] = 0; /*0x5aab2b*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[600] = 3; /*0x5aab31*/
@@ -3640,14 +3640,14 @@ unsigned int * InitializePathData()
   *v65 = v123; /*0x5aab66*/
   v65[1] = 7; /*0x5aab6d*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[604] + 8) = v121; /*0x5aab7c*/
-  LOWORD(v121) = 1; /*0x5aab8a*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aab8a*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[604] + 12) = 5; /*0x5aab8f*/
   v66 = v119; /*0x5aab98*/
-  LOWORD(v119) = 1; /*0x5aab9c*/
+  (v119) = ((v119) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aab9c*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[604] + 16) = v66; /*0x5aaba1*/
-  HIWORD(v119) = 1; /*0x5aabaf*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5aabaf*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[604] + 20) = 3; /*0x5aabb4*/
-  HIWORD(v121) = 1; /*0x5aabb7*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5aabb7*/
   v123 = 2; /*0x5aabbc*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[620] = 0; /*0x5aabc6*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[612] = 3; /*0x5aabcc*/
@@ -3666,14 +3666,14 @@ unsigned int * InitializePathData()
   *v68 = v123; /*0x5aac01*/
   v68[1] = 1; /*0x5aac08*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[616] + 8) = v121; /*0x5aac17*/
-  LOWORD(v121) = 2; /*0x5aac25*/
+  (v121) = ((v121) & ~0xFFFF) | ((2) & 0xFFFF); /*0x5aac25*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[616] + 12) = 7; /*0x5aac2a*/
   v69 = v119; /*0x5aac33*/
-  LOWORD(v119) = 2; /*0x5aac37*/
+  (v119) = ((v119) & ~0xFFFF) | ((2) & 0xFFFF); /*0x5aac37*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[616] + 16) = v69; /*0x5aac3c*/
-  HIWORD(v119) = 2; /*0x5aac4a*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aac4a*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[616] + 20) = 5; /*0x5aac4f*/
-  HIWORD(v121) = 0; /*0x5aac52*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5aac52*/
   v123 = 65537; /*0x5aac57*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[632] = 0; /*0x5aac61*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[624] = 3; /*0x5aac67*/
@@ -3694,9 +3694,9 @@ unsigned int * InitializePathData()
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[628] + 8) = v121; /*0x5aacb2*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[628] + 12) = 1; /*0x5aacc5*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[628] + 16) = v119; /*0x5aacd7*/
-  LOWORD(v119) = 2; /*0x5aace5*/
+  (v119) = ((v119) & ~0xFFFF) | ((2) & 0xFFFF); /*0x5aace5*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[628] + 20) = 3; /*0x5aacea*/
-  HIWORD(v119) = 0; /*0x5aaced*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5aaced*/
   v121 = 65537; /*0x5aacf2*/
   v123 = 65537; /*0x5aacfc*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[644] = 0; /*0x5aad06*/
@@ -3716,18 +3716,18 @@ unsigned int * InitializePathData()
   *v73 = v123; /*0x5aad46*/
   v73[1] = 7; /*0x5aad4d*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[640] + 8) = v121; /*0x5aad5c*/
-  LOWORD(v121) = 3; /*0x5aad6a*/
+  (v121) = ((v121) & ~0xFFFF) | ((3) & 0xFFFF); /*0x5aad6a*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[640] + 12) = 5; /*0x5aad6f*/
   v74 = v119; /*0x5aad78*/
-  LOWORD(v119) = 0; /*0x5aad7c*/
+  (v119) = ((v119) & ~0xFFFF) | ((0) & 0xFFFF); /*0x5aad7c*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[640] + 16) = v74; /*0x5aad81*/
-  HIWORD(v119) = 2; /*0x5aad8f*/
+  (v119) = ((v119) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aad8f*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[640] + 20) = 1; /*0x5aad94*/
-  HIWORD(v121) = 2; /*0x5aada1*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aada1*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[640] + 24) = 131074; /*0x5aada6*/
-  LOWORD(v123) = 3; /*0x5aadb4*/
+  (v123) = ((v123) & ~0xFFFF) | ((3) & 0xFFFF); /*0x5aadb4*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[640] + 28) = 3; /*0x5aadb9*/
-  HIWORD(v123) = 0; /*0x5aadbc*/
+  (v123) = ((v123) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5aadbc*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[656] = 0; /*0x5aadc1*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[648] = 3; /*0x5aadc7*/
   v75 = (int *)__2_YAPAXI_Z(0x18u); /*0x5aadcd*/
@@ -3745,13 +3745,13 @@ unsigned int * InitializePathData()
   *v76 = v123; /*0x5aadfc*/
   v76[1] = 1; /*0x5aae03*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[652] + 8) = v121; /*0x5aae12*/
-  LOWORD(v121) = 1; /*0x5aae20*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aae20*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[652] + 12) = 2; /*0x5aae25*/
-  HIWORD(v121) = 2; /*0x5aae32*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aae32*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[652] + 16) = v119; /*0x5aae37*/
-  LOWORD(v123) = 3; /*0x5aae45*/
+  (v123) = ((v123) & ~0xFFFF) | ((3) & 0xFFFF); /*0x5aae45*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[652] + 20) = 6; /*0x5aae4a*/
-  HIWORD(v123) = 0; /*0x5aae4d*/
+  (v123) = ((v123) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5aae4d*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[668] = 0; /*0x5aae52*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[660] = 2; /*0x5aae58*/
   v77 = (int *)__2_YAPAXI_Z(0x10u); /*0x5aae5e*/
@@ -3769,9 +3769,9 @@ unsigned int * InitializePathData()
   *v78 = v123; /*0x5aae8d*/
   v78[1] = 1; /*0x5aae94*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[664] + 8) = v121; /*0x5aaea3*/
-  LOWORD(v121) = 1; /*0x5aaeb1*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aaeb1*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[664] + 12) = 5; /*0x5aaeb6*/
-  HIWORD(v121) = 2; /*0x5aaeb9*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aaeb9*/
   v123 = 3; /*0x5aaebe*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[680] = 0; /*0x5aaec8*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[672] = 2; /*0x5aaece*/
@@ -3790,9 +3790,9 @@ unsigned int * InitializePathData()
   *v80 = v123; /*0x5aaf03*/
   v80[1] = 1; /*0x5aaf0a*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[676] + 8) = v121; /*0x5aaf19*/
-  LOWORD(v121) = 1; /*0x5aaf27*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aaf27*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[676] + 12) = 5; /*0x5aaf2c*/
-  HIWORD(v121) = 2; /*0x5aaf2f*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aaf2f*/
   v123 = 3; /*0x5aaf34*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[692] = 0; /*0x5aaf3e*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[684] = 2; /*0x5aaf44*/
@@ -3811,9 +3811,9 @@ unsigned int * InitializePathData()
   *v82 = v123; /*0x5aaf79*/
   v82[1] = 1; /*0x5aaf80*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[688] + 8) = v121; /*0x5aaf8f*/
-  LOWORD(v121) = 1; /*0x5aaf9d*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5aaf9d*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[688] + 12) = 5; /*0x5aafa2*/
-  HIWORD(v121) = 2; /*0x5aafa5*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5aafa5*/
   v123 = 3; /*0x5aafaa*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[704] = 0; /*0x5aafb4*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[696] = 2; /*0x5aafba*/
@@ -3832,9 +3832,9 @@ unsigned int * InitializePathData()
   *v84 = v123; /*0x5aafef*/
   v84[1] = 1; /*0x5aaff6*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[700] + 8) = v121; /*0x5ab005*/
-  LOWORD(v121) = 1; /*0x5ab013*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5ab013*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[700] + 12) = 5; /*0x5ab018*/
-  HIWORD(v121) = 1; /*0x5ab01b*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((1) & 0xFFFF) << 16); /*0x5ab01b*/
   v123 = 2; /*0x5ab020*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[716] = 0; /*0x5ab02a*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[708] = 2; /*0x5ab030*/
@@ -3853,9 +3853,9 @@ unsigned int * InitializePathData()
   *v86 = v123; /*0x5ab065*/
   v86[1] = 1; /*0x5ab06c*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[712] + 8) = v121; /*0x5ab07b*/
-  LOWORD(v121) = 1; /*0x5ab089*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5ab089*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[712] + 12) = 5; /*0x5ab08e*/
-  HIWORD(v121) = 0; /*0x5ab091*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5ab091*/
   v123 = 1; /*0x5ab096*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[728] = 0; /*0x5ab0a0*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[720] = 2; /*0x5ab0a6*/
@@ -3874,9 +3874,9 @@ unsigned int * InitializePathData()
   *v88 = v123; /*0x5ab0db*/
   v88[1] = 1; /*0x5ab0e2*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[724] + 8) = v121; /*0x5ab0f1*/
-  LOWORD(v121) = 1; /*0x5ab0ff*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5ab0ff*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[724] + 12) = 5; /*0x5ab104*/
-  HIWORD(v121) = 0; /*0x5ab107*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5ab107*/
   v123 = 1; /*0x5ab10c*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[740] = 0; /*0x5ab116*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[732] = 2; /*0x5ab11c*/
@@ -3895,9 +3895,9 @@ unsigned int * InitializePathData()
   *v90 = v123; /*0x5ab151*/
   v90[1] = 1; /*0x5ab158*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[736] + 8) = v121; /*0x5ab167*/
-  LOWORD(v123) = 1; /*0x5ab175*/
+  (v123) = ((v123) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5ab175*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[736] + 12) = 5; /*0x5ab17a*/
-  HIWORD(v123) = 2; /*0x5ab17d*/
+  (v123) = ((v123) & ~(0xFFFF << 16)) | (((2) & 0xFFFF) << 16); /*0x5ab17d*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[752] = 0; /*0x5ab182*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[744] = 1; /*0x5ab188*/
   v91 = (int *)__2_YAPAXI_Z(8u); /*0x5ab18e*/
@@ -4018,9 +4018,9 @@ unsigned int * InitializePathData()
   *v104 = v123; /*0x5ab3b7*/
   v104[1] = 1; /*0x5ab3be*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[820] + 8) = v121; /*0x5ab3cd*/
-  LOWORD(v121) = 1; /*0x5ab3db*/
+  (v121) = ((v121) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5ab3db*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[820] + 12) = 5; /*0x5ab3e0*/
-  HIWORD(v121) = 3; /*0x5ab3e3*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((3) & 0xFFFF) << 16); /*0x5ab3e3*/
   v120 = 5; /*0x5ab3e8*/
   v123 = 2; /*0x5ab3ec*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[836] = 0; /*0x5ab3f6*/
@@ -4040,11 +4040,11 @@ unsigned int * InitializePathData()
   *v106 = v123; /*0x5ab431*/
   v106[1] = 1; /*0x5ab438*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[832] + 8) = v121; /*0x5ab447*/
-  LOWORD(v121) = 3; /*0x5ab454*/
+  (v121) = ((v121) & ~0xFFFF) | ((3) & 0xFFFF); /*0x5ab454*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[832] + 12) = v120; /*0x5ab459*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[840] = 0; /*0x5ab45c*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[844] = 0; /*0x5ab462*/
-  HIWORD(v121) = 0; /*0x5ab468*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5ab468*/
   v123 = 0; /*0x5ab46d*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[860] = 0; /*0x5ab477*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[852] = 2; /*0x5ab47d*/
@@ -4063,9 +4063,9 @@ unsigned int * InitializePathData()
   *v108 = v123; /*0x5ab4b4*/
   v108[1] = 6; /*0x5ab4bb*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[856] + 8) = v121; /*0x5ab4ca*/
-  LOWORD(v121) = 3; /*0x5ab4d8*/
+  (v121) = ((v121) & ~0xFFFF) | ((3) & 0xFFFF); /*0x5ab4d8*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[856] + 12) = 2; /*0x5ab4dd*/
-  HIWORD(v121) = 0; /*0x5ab4e0*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5ab4e0*/
   v123 = 0; /*0x5ab4e5*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[872] = 0; /*0x5ab4ef*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[864] = 2; /*0x5ab4f5*/
@@ -4084,9 +4084,9 @@ unsigned int * InitializePathData()
   *v110 = v123; /*0x5ab52c*/
   v110[1] = 6; /*0x5ab533*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[868] + 8) = v121; /*0x5ab542*/
-  LOWORD(v121) = 3; /*0x5ab550*/
+  (v121) = ((v121) & ~0xFFFF) | ((3) & 0xFFFF); /*0x5ab550*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[868] + 12) = 2; /*0x5ab555*/
-  HIWORD(v121) = 0; /*0x5ab558*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5ab558*/
   v123 = 0; /*0x5ab55d*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[884] = 0; /*0x5ab567*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[876] = 2; /*0x5ab56d*/
@@ -4105,9 +4105,9 @@ unsigned int * InitializePathData()
   *v112 = v123; /*0x5ab5a2*/
   v112[1] = 6; /*0x5ab5a9*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[880] + 8) = v121; /*0x5ab5b8*/
-  LOWORD(v121) = 3; /*0x5ab5c6*/
+  (v121) = ((v121) & ~0xFFFF) | ((3) & 0xFFFF); /*0x5ab5c6*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[880] + 12) = 2; /*0x5ab5cb*/
-  HIWORD(v121) = 0; /*0x5ab5ce*/
+  (v121) = ((v121) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5ab5ce*/
   v123 = 0; /*0x5ab5d3*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[896] = 0; /*0x5ab5dd*/
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[888] = 2; /*0x5ab5e3*/
@@ -4699,7 +4699,7 @@ double sub_5A5AE0(short * a1, short * a2)
 
   v2 = abs32(a1[1] - a2[1]); /*0x5a5b06*/
   v3 = *a1 - *a2; /*0x5a5b08*/
-  v5 = (HIDWORD(v3) ^ v3) - HIDWORD(v3); /*0x5a5b0f*/
+  v5 = ((((v3) >> 32) & 0xFFFFFFFFu) ^ v3) - (((v3) >> 32) & 0xFFFFFFFFu); /*0x5a5b0f*/
   if ( v5 <= v2 ) /*0x5a5b13*/
     v5 = v2; /*0x5a5b15*/
   return (double)(unsigned int)Random::State(&stru_ABE890) * 3.0 * 2.328306437080797e-10 + (double)v5; /*0x5a5b45*/

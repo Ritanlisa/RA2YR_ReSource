@@ -180,7 +180,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           }
           else if ( dword_A8B238[0] == 4 ) /*0x6580f4*/
           {
-            SendMessageA(v17, 0xF1u, BYTE1(dword_A8D110), 0); /*0x658106*/
+            SendMessageA(v17, 0xF1u, (((dword_A8D110) >> 8) & 0xFF), 0); /*0x658106*/
           }
         }
         else
@@ -230,11 +230,11 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             {
               if ( dword_A8B238[0] == 3 ) /*0x6582ee*/
               {
-                LOBYTE(dword_A8D110) = v29 == 1; /*0x6582f9*/
+                (dword_A8D110) = ((dword_A8D110) & ~0xFF) | ((v29 == 1) & 0xFF); /*0x6582f9*/
                 return 0; /*0x658305*/
               }
               if ( dword_A8B238[0] == 4 ) /*0x65830b*/
-                BYTE1(dword_A8D110) = v29 == 1; /*0x658313*/
+                (dword_A8D110) = ((dword_A8D110) & ~(0xFF << 8)) | (((v29 == 1) & 0xFF) << 8); /*0x658313*/
             }
           }
           return 0; /*0x658313*/

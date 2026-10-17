@@ -128,7 +128,7 @@ int Mission_e4::ExecuteTechnoMissionAction()
         v10 = *(unsigned int *)(*(unsigned int *)(*&this->u32_6C0 + 3644) + 36 * v2 + 12); /*0x520cfa*/
         if ( v10 != -1 ) /*0x520d01*/
         {
-          LOWORD(v18) = (unsigned short)v10 << 13; /*0x520d11*/
+          (v18) = ((v18) & ~0xFFFF) | (((unsigned short)v10 << 13) & 0xFFFF); /*0x520d11*/
           FacingClass::Set_SyncLog(&this->__pad_18C[508], &v18); /*0x520d16*/
         }
       }
@@ -294,7 +294,7 @@ char Mission_e4::ProcessUnitMissionAI()
             v22 = v20; /*0x5210bb*/
             v19 = (*(int (**)(Mission *))(v9 + 800))(this); /*0x5210c9*/
             v10 = *((unsigned int *)((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(&v21) + 80) >> 8; /*0x5210de*/
-            LOBYTE(v10) = v10 & 1; /*0x5210e1*/
+            (v10) = ((v10) & ~0xFF) | ((v10 & 1) & 0xFF); /*0x5210e1*/
             v11 = (*(int (**)(Mission *, unsigned int, int, int))(*(unsigned int *)this->__pad_0 + 188))( /*0x5210e9*/
                     this,
                     0,

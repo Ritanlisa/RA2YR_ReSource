@@ -175,8 +175,8 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   {
     v4 = *v2++; /*0x69db49*/
     v5 = HIBYTE(v4) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
-    LOBYTE(v4) = 0; /*0x69db69*/
-    BYTE1(v4) = BYTE2(v4); /*0x69db6b*/
+    (v4) = ((v4) & ~0xFF) | ((0) & 0xFF); /*0x69db69*/
+    (v4) = ((v4) & ~(0xFF << 8)) | ((((((v4) >> 16) & 0xFF)) & 0xFF) << 8); /*0x69db6b*/
     --v3; /*0x69db71*/
     *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
   }

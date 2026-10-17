@@ -56,17 +56,17 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     v13 = a4; /*0x6a035f*/
     v6 = &this->Dest[2]; /*0x6a0363*/
     v12 = a3; /*0x6a036a*/
-    if ( *v6 != g_OverlayTypeConfig || __PAIR64__(this->HeadToCoord[1], this->HeadToCoord[0]) != qword_B077FC ) /*0x6a0375*/
+    if ( *v6 != g_OverlayTypeConfig || (((this->HeadToCoord[1] & 0xFFFFFFFFull)) << 32 | (this->HeadToCoord[0] & 0xFFFFFFFFull)) != qword_B077FC ) /*0x6a0375*/
     {
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
       this->HeadToCoord[0] = qword_B077FC; /*0x6a038d*/
-      v7 = HIDWORD(qword_B077FC); /*0x6a0390*/
+      v7 = (((qword_B077FC) >> 32) & 0xFFFFFFFFu); /*0x6a0390*/
       v5->u32_63 = 0; /*0x6a0396*/
       this->HeadToCoord[1] = v7; /*0x6a039a*/
       v4 = g_OverlayTypeConfig; /*0x6a039d*/
     }
-    if ( __PAIR64__(a4, a3) != __PAIR64__(qword_B077FC, v4) /*0x6a03be*/
-      || (LOBYTE(v4) = BYTE4(qword_B077FC), HIDWORD(a4) != HIDWORD(qword_B077FC)) )
+    if ( (((a4 & 0xFFFFFFFFull)) << 32 | (a3 & 0xFFFFFFFFull)) != (((qword_B077FC & 0xFFFFFFFFull)) << 32 | (v4 & 0xFFFFFFFFull)) /*0x6a03be*/
+      || ((v4) = ((v4) & ~0xFF) | (((((qword_B077FC) >> 32) & 0xFF)) & 0xFF), HIDWORD(a4) != (((qword_B077FC) >> 32) & 0xFFFFFFFFu)) )
     {
       v8 = v13; /*0x6a03c4*/
       v5->u32_63 = 1; /*0x6a03ca*/

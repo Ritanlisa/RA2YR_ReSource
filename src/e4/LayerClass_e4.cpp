@@ -212,7 +212,7 @@ LABEL_23:
           {
             if ( !aP11 /*0x56de4c*/
               || (v31 = v84 - 4 * (((unsigned int)v30->Cell_field_0x140 >> 8) & 1) - v30->u32_11B,
-                  (int)((HIDWORD(v31) ^ v31) - HIDWORD(v31)) < 2) )
+                  (int)(((((v31) >> 32) & 0xFFFFFFFFu) ^ v31) - (((v31) >> 32) & 0xFFFFFFFFu)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
                 && (aP13 || (v30->Cell_field_0x140 & 0x100) == 0)
@@ -271,7 +271,7 @@ LABEL_44:
           {
             if ( !aP11 /*0x56e062*/
               || (v40 = v84 - 4 * (((unsigned int)v39->Cell_field_0x140 >> 8) & 1) - v39->u32_11B,
-                  (int)((HIDWORD(v40) ^ v40) - HIDWORD(v40)) < 2) )
+                  (int)(((((v40) >> 32) & 0xFFFFFFFFu) ^ v40) - (((v40) >> 32) & 0xFFFFFFFFu)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
                 && (aP13 || (v39->Cell_field_0x140 & 0x100) == 0)
@@ -339,7 +339,7 @@ LABEL_67:
           {
             if ( !aP11 /*0x56e2a5*/
               || (v50 = v84 - 4 * (((unsigned int)v49->Cell_field_0x140 >> 8) & 1) - v49->u32_11B,
-                  (int)((HIDWORD(v50) ^ v50) - HIDWORD(v50)) < 2) )
+                  (int)(((((v50) >> 32) & 0xFFFFFFFFu) ^ v50) - (((v50) >> 32) & 0xFFFFFFFFu)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
                 && (aP13 || (v49->Cell_field_0x140 & 0x100) == 0)
@@ -366,7 +366,7 @@ LABEL_80:
         if ( v78 == 24 ) /*0x56e388*/
           goto LABEL_103; /*0x56e388*/
         HIWORD(v80) = v45 + (unsigned short)v82; /*0x56e39c*/
-        LOWORD(v80) = v79 + v86; /*0x56e3a6*/
+        (v80) = ((v80) & ~0xFFFF) | ((v79 + v86) & 0xFFFF); /*0x56e3a6*/
         v76 = (unsigned __int16 *)v80; /*0x56e3b4*/
         v54 = (__int16)(v79 + v86) + ((__int16)(v45 + (unsigned short)v82) << 9); /*0x56e3bb*/
         if ( v54 < 0x40000 ) /*0x56e3bd*/
@@ -393,7 +393,7 @@ LABEL_86:
           {
             if ( !aP11 /*0x56e4a7*/
               || (v57 = v84 - 4 * (((unsigned int)v56->Cell_field_0x140 >> 8) & 1) - v56->u32_11B,
-                  (int)((HIDWORD(v57) ^ v57) - HIDWORD(v57)) < 2) )
+                  (int)(((((v57) >> 32) & 0xFFFFFFFFu) ^ v57) - (((v57) >> 32) & 0xFFFFFFFFu)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/
                 && (aP13 || (v56->Cell_field_0x140 & 0x100) == 0)
@@ -448,7 +448,7 @@ LABEL_124:
     v92 = (v64 << 8) + 128; /*0x56e622*/
     v93 = 0; /*0x56e626*/
     v85 = (unsigned __int16 *)*Terrain::ClimbCheck(&v89, &v91); /*0x56e638*/
-    if ( v85 == (unsigned __int16 *)__PAIR32__(v64, v63) ) /*0x56e63c*/
+    if ( v85 == (unsigned __int16 *)((v64 & 0xFFFFu) << 16 | (v63 & 0xFFFFu)) ) /*0x56e63c*/
     {
       v65 = i; /*0x56e645*/
       v66 = v81; /*0x56e64b*/

@@ -396,16 +396,16 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     v12 = 2 * *((unsigned __int8 *)_EBX + 65); /*0x550c66*/
     v13 = 2 * *((unsigned __int8 *)_EBX + 66); /*0x550c68*/
     if ( v11 > 0xFF ) /*0x550c6f*/
-      LOBYTE(v11) = -1; /*0x550c71*/
+      (v11) = ((v11) & ~0xFF) | ((-1) & 0xFF); /*0x550c71*/
     if ( v13 > 0xFF ) /*0x550c7c*/
-      LOBYTE(v13) = -1; /*0x550c7e*/
+      (v13) = ((v13) & ~0xFF) | ((-1) & 0xFF); /*0x550c7e*/
     if ( v12 > 0xFF ) /*0x550c89*/
-      LOBYTE(v12) = -1; /*0x550c8b*/
+      (v12) = ((v12) & ~0xFF) | ((-1) & 0xFF); /*0x550c8b*/
     LOBYTE(v61) = v12; /*0x550c90*/
     HIBYTE(v61) = v13; /*0x550c94*/
     v62 = v11; /*0x550c9d*/
     v56 = v61; /*0x550ca1*/
-    LOBYTE(v12) = v11; /*0x550ca6*/
+    (v12) = ((v12) & ~0xFF) | ((v11) & 0xFF); /*0x550ca6*/
   }
   else
   {
@@ -430,7 +430,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   {
     v17 = v60; /*0x550d1f*/
     v18 = v60 & 1; /*0x550d25*/
-    LODWORD(v74) = v18; /*0x550d27*/
+    (v74) = ((v74) & 0xFFFFFFFF00000000ull) | ((v18) & 0xFFFFFFFFull); /*0x550d27*/
     while ( 1 )
     {
       if ( v18 ) /*0x550d33*/
@@ -444,13 +444,13 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
         v23 = dword_ABC804[v19]; /*0x550d64*/
         v64 += v22; /*0x550d6c*/
         v65 += v23; /*0x550d76*/
-        LODWORD(v63) = v20 + v63; /*0x550d84*/
-        v24 = v21 + HIDWORD(v63); /*0x550d8c*/
+        (v63) = ((v63) & 0xFFFFFFFF00000000ull) | ((v20 + v63) & 0xFFFFFFFFull); /*0x550d84*/
+        v24 = v21 + (((v63) >> 32) & 0xFFFFFFFFu); /*0x550d8c*/
         v25 = v22 + v68; /*0x550d92*/
         v17 = v60; /*0x550d94*/
-        HIDWORD(v63) = v24; /*0x550d9a*/
+        (v63) = ((v63) & 0xFFFFFFFFull) | ((unsigned long long)((v24) & 0xFFFFFFFFull) << 32); /*0x550d9a*/
         _EBX = (int *)v73; /*0x550d9e*/
-        LODWORD(v68) = v25; /*0x550da2*/
+        (v68) = ((v68) & 0xFFFFFFFF00000000ull) | ((v25) & 0xFFFFFFFFull); /*0x550da2*/
         HIDWORD(v68) += v23; /*0x550da6*/
       }
       else if ( (v71 & 1) != 0 ) /*0x550db3*/
@@ -459,7 +459,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
         v27 = dword_ABC804[4 * v17]; /*0x550dc2*/
         v69 += v26; /*0x550dca*/
         v65 += v27; /*0x550dd4*/
-        LODWORD(v63) = v26 + v63; /*0x550de4*/
+        (v63) = ((v63) & 0xFFFFFFFF00000000ull) | ((v26 + v63) & 0xFFFFFFFFull); /*0x550de4*/
         HIDWORD(v68) += v27; /*0x550de8*/
       }
       else
@@ -469,7 +469,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
         v70 += v28; /*0x550e03*/
         v64 += eax24; /*0x550e0d*/
         HIDWORD(v63) += v28; /*0x550e1d*/
-        LODWORD(v68) = eax24 + v68; /*0x550e21*/
+        (v68) = ((v68) & 0xFFFFFFFF00000000ull) | ((eax24 + v68) & 0xFFFFFFFFull); /*0x550e21*/
       }
       if ( !byte_8A0DF0 )
       {
@@ -1269,10 +1269,10 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
     if ( v14 >= 1.0 ) /*0x55502d*/
       v14 = 1.0; /*0x555031*/
     v15 = Math::RoundToInt(v14); /*0x555037*/
-    BYTE4(v15) = 0; /*0x55503e*/
-    v16 = -((unsigned __int8)ReturnFalse2(v15, HIDWORD(v15)) != 0); /*0x55504d*/
+    (v15) = ((v15) & ~(0xFFull << 32)) | (((0) & 0xFFull) << 32); /*0x55503e*/
+    v16 = -((unsigned __int8)ReturnFalse2(v15, (((v15) >> 32) & 0xFFFFFFFFu)) != 0); /*0x55504d*/
     dword_ABCA78 = dword_ABCA74; /*0x55504f*/
-    LOBYTE(v16) = v16 & 0xCF; /*0x555055*/
+    (v16) = ((v16) & ~0xFF) | ((v16 & 0xCF) & 0xFF); /*0x555055*/
     dword_829AE8 = v16 + 50; /*0x55505a*/
   }
 
@@ -1638,7 +1638,7 @@ LABEL_11:
           while ( v24 ); /*0x55be1b*/
           v20 = v62; /*0x55be1d*/
           v5 = v64; /*0x55be21*/
-          LOBYTE(v22) = v25; /*0x55be25*/
+          (v22) = ((v22) & ~0xFF) | ((v25) & 0xFF); /*0x55be25*/
           v21 = v68; /*0x55be27*/
         }
         *v23 = v22; /*0x55be2b*/
@@ -1742,7 +1742,7 @@ LABEL_25:
                   v50 += v51; /*0x55bf4f*/
                   do /*0x55bf58*/
                   {
-                    LOBYTE(v48) = v48 + 1; /*0x55bf51*/
+                    (v48) = ((v48) & ~0xFF) | ((v48 + 1) & 0xFF); /*0x55bf51*/
                     --v51; /*0x55bf57*/
                   }
                   while ( v51 ); /*0x55bf58*/
@@ -2651,7 +2651,7 @@ LABEL_128:
   {
     byte_ABCD58 = 0; /*0x55dec8*/
 LABEL_155:
-    LOBYTE(result) = 1; /*0x55decf*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x55decf*/
     return result; /*0x55ded2*/
   }
   v42 = ++*(unsigned int *)&stru_A8E960.random[528]; /*0x55de7e*/

@@ -2138,7 +2138,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         if ( stru_A8E960.random[552] ) /*0x54f924*/
           goto LABEL_45; /*0x54f924*/
         v10 = this->u32_318 - this->u32_314; /*0x54f938*/
-        if ( (int)(256 - ((HIDWORD(v10) ^ v10) - HIDWORD(v10))) < 3 ) /*0x54f947*/
+        if ( (int)(256 - (((((v10) >> 32) & 0xFFFFFFFFu) ^ v10) - (((v10) >> 32) & 0xFFFFFFFFu))) < 3 ) /*0x54f947*/
           goto LABEL_45; /*0x54f947*/
         EventClass::Enqueue((EventClass *)this, 1u, 1); /*0x54f94f*/
         goto LABEL_17; /*0x54f94f*/
@@ -2146,7 +2146,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         if ( stru_A8E960.random[552] ) /*0x54f958*/
           goto LABEL_45; /*0x54f958*/
         v11 = this->u32_318 - this->u32_314; /*0x54f971*/
-        if ( (int)(256 - ((HIDWORD(v11) ^ v11) - HIDWORD(v11))) >= 3 ) /*0x54f97b*/
+        if ( (int)(256 - (((((v11) >> 32) & 0xFFFFFFFFu) ^ v11) - (((v11) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54f97b*/
         {
           EventClass::Enqueue((EventClass *)this, 1u, 0); /*0x54f983*/
           if ( !(unsigned __int8)EventQueue::CheckPosition((EventQueue *)this) ) /*0x54f98a*/
@@ -2158,7 +2158,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         if ( stru_A8E960.random[552] ) /*0x54f9b2*/
           goto LABEL_45; /*0x54f9b2*/
         v12 = this->u32_318 - this->u32_314; /*0x54f9c6*/
-        if ( (int)(256 - ((HIDWORD(v12) ^ v12) - HIDWORD(v12))) < 3 ) /*0x54f9d5*/
+        if ( (int)(256 - (((((v12) >> 32) & 0xFFFFFFFFu) ^ v12) - (((v12) >> 32) & 0xFFFFFFFFu))) < 3 ) /*0x54f9d5*/
           goto LABEL_45; /*0x54f9d5*/
         EventClass::Enqueue((EventClass *)this, 1u, 1); /*0x54f9e1*/
         if ( !(unsigned __int8)EventQueue::CheckPosition((EventQueue *)this) ) /*0x54f9e8*/
@@ -2178,7 +2178,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         if ( !stru_A8E960.random[552] ) /*0x54fa0d*/
         {
           v13 = this->u32_318 - this->u32_314; /*0x54fa26*/
-          if ( (int)(256 - ((HIDWORD(v13) ^ v13) - HIDWORD(v13))) >= 3 ) /*0x54fa30*/
+          if ( (int)(256 - (((((v13) >> 32) & 0xFFFFFFFFu) ^ v13) - (((v13) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54fa30*/
           {
             EventClass::Enqueue((EventClass *)this, 4u, 0); /*0x54fa3c*/
             EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fa44*/
@@ -2192,7 +2192,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         if ( stru_A8E960.random[552] ) /*0x54fa5d*/
           goto LABEL_45; /*0x54fa5d*/
         v14 = this->u32_318 - this->u32_314; /*0x54fa76*/
-        if ( (int)(256 - ((HIDWORD(v14) ^ v14) - HIDWORD(v14))) >= 3 ) /*0x54fa80*/
+        if ( (int)(256 - (((((v14) >> 32) & 0xFFFFFFFFu) ^ v14) - (((v14) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54fa80*/
         {
           EventClass::Enqueue((EventClass *)this, 4u, 0); /*0x54fa88*/
           EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fa90*/
@@ -2204,7 +2204,7 @@ LABEL_39:
         if ( !stru_A8E960.random[552] ) /*0x54faac*/
         {
           v15 = this->u32_318 - this->u32_314; /*0x54fabc*/
-          if ( (int)(256 - ((HIDWORD(v15) ^ v15) - HIDWORD(v15))) >= 3 ) /*0x54facb*/
+          if ( (int)(256 - (((((v15) >> 32) & 0xFFFFFFFFu) ^ v15) - (((v15) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54facb*/
           {
             EventClass::Enqueue((EventClass *)this, 4u, 1); /*0x54fad3*/
             EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fadb*/
@@ -2235,7 +2235,7 @@ LABEL_39:
           if ( !stru_A8E960.random[552] ) /*0x54f870*/
           {
             v8 = this->u32_318 - this->u32_314; /*0x54f889*/
-            if ( (int)(256 - ((HIDWORD(v8) ^ v8) - HIDWORD(v8))) >= 2 ) /*0x54f893*/
+            if ( (int)(256 - (((((v8) >> 32) & 0xFFFFFFFFu) ^ v8) - (((v8) >> 32) & 0xFFFFFFFFu))) >= 2 ) /*0x54f893*/
             {
               EventClass::Enqueue((EventClass *)this, 0xAu, 0); /*0x54f89f*/
               EventBuffer::Enqueue((EventBuffer *)this, (unsigned __int8)wParam); /*0x54f8af*/
@@ -2250,7 +2250,7 @@ LABEL_39:
   if ( !stru_A8E960.random[552] ) /*0x54f8c0*/
   {
     v9 = this->u32_318 - this->u32_314; /*0x54f8d9*/
-    if ( (int)(256 - ((HIDWORD(v9) ^ v9) - HIDWORD(v9))) >= 3 ) /*0x54f8e3*/
+    if ( (int)(256 - (((((v9) >> 32) & 0xFFFFFFFFu) ^ v9) - (((v9) >> 32) & 0xFFFFFFFFu))) >= 3 ) /*0x54f8e3*/
     {
       EventClass::Enqueue((EventClass *)this, 1u, 0); /*0x54f8ef*/
 LABEL_17:
@@ -2467,7 +2467,7 @@ wchar_t ** ListBox::Constructor() {
   __int64 v6; // [esp+Ch] [ebp-8h] BYREF
 
   v1 = 0; /*0x5c1036*/
-  HIDWORD(v6) = 0; /*0x5c103c*/
+  (v6) = ((v6) & 0xFFFFFFFFull) | ((unsigned long long)((0) & 0xFFFFFFFFull) << 32); /*0x5c103c*/
   v3 = (MultiplayerTeam *)__2_YAPAXI_Z(0xCu); /*0x5c1045*/
   if ( v3 ) /*0x5c104c*/
   {

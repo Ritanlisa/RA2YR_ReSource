@@ -829,7 +829,7 @@ char SessionClass::GetGameSpeed()
 
   int result; // eax
 
-  LOBYTE(result) = this->CurrentlyInGame; /*0x69bbe0*/
+  (result) = ((result) & ~0xFF) | ((this->CurrentlyInGame) & 0xFF); /*0x69bbe0*/
   return result; /*0x69bbe6*/
 
 }
@@ -870,8 +870,8 @@ _DWORD * MapFile::Constructor(int a2, int a3)
 
   this->MapFile_field_0x04 = 0; /*0x69d77b*/
   this->MapFile_field_0x08 = a2; /*0x69d77e*/
-  LOBYTE(this->MapFile_field_0x0C) = 1; /*0x69d781*/
-  BYTE1(this->MapFile_field_0x0C) = 0; /*0x69d785*/
+  (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x69d781*/
+  (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x69d785*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
@@ -881,7 +881,7 @@ _DWORD * MapFile::Constructor(int a2, int a3)
       return this->__pad_0; /*0x69d79e*/
     }
     this->MapFile_field_0x04 = (unsigned int)(__2_YAPAXI_Z(4 * a2)); /*0x69d7ad*/
-    BYTE1(this->MapFile_field_0x0C) = 1; /*0x69d7b0*/
+    (this->MapFile_field_0x0C) = ((this->MapFile_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x69d7b0*/
   }
   return this->__pad_0; /*0x69d79d*/
 

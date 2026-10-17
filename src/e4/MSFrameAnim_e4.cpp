@@ -43,7 +43,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   m_8 = a2; /*0x769fe3*/
   if ( a2 ) /*0x769fed*/
   {
-    LOBYTE(this->m_C) = 0; /*0x769ff7*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x769ff7*/
     if ( a3 ) /*0x769ffd*/
     {
       *a3 = a2; /*0x76a041*/
@@ -88,7 +88,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         v6 = 0; /*0x76a03d*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x76a06f*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x76a06f*/
     if ( !v6 ) /*0x76a073*/
       return 0; /*0x76a0f6*/
     if ( *&this->__pad_004 ) /*0x76a075*/
@@ -287,12 +287,12 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x76a2bc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x76a2c2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x76a2c2*/
     if ( a3 ) /*0x76a2c8*/
       v4 = a3; /*0x76a2de*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x76a2da*/
-    LOBYTE(this->m_C) = 1; /*0x76a2e2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x76a2e2*/
     if ( !v4 ) /*0x76a2e6*/
       return 0; /*0x76a35a*/
     if ( *&this->__pad_004 ) /*0x76a2e8*/
@@ -302,7 +302,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
         m_8 = a2; /*0x76a2f6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->__pad_004 + 4 * i - 4) ) /*0x76a2fc*/
         ++i; /*0x76a301*/
-      if ( BYTE1(this->m_C) ) /*0x76a30e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x76a30e*/
       {
         __3_YAXPAX_Z(*&this->__pad_004); /*0x76a319*/
         *&this->__pad_004 = 0; /*0x76a321*/

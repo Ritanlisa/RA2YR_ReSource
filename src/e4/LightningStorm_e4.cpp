@@ -234,9 +234,9 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v28 = *((char *)v3 + 283); /*0x53a413*/
   v11 = (void **)(v28 * dword_A9FA90 + ((v3->currentRank & 0x100) != 0 ? dword_A9FA84 : 0));
   v31 = ((__int16)v27 << 8) + 128; /*0x53a43d*/
-  v32 = (SHIWORD(v27) << 8) + 128; /*0x53a441*/
+  v32 = ((short)(((v27) >> 16) & 0xFFFF) << 8) + 128; /*0x53a441*/
   v33 = v11; /*0x53a445*/
-  if ( v31 != dword_A9FA30 || __PAIR64__((unsigned int)v11, (SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
+  if ( v31 != dword_A9FA30 || ((((unsigned int)v11 & 0xFFFFFFFFull)) << 32 | (((short)(((v27) >> 16) & 0xFFFF) << 8) + 128 & 0xFFFFFFFFull)) != qword_A9FA34 ) /*0x53a451*/
   {
     v12 = dword_8871E0; /*0x53a45f*/
     if ( dword_8871E0->q744 > 0 ) /*0x53a46c*/

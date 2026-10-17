@@ -721,17 +721,17 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
       }
       (*(void (**)(int))(*(unsigned int *)v7 + 96))(v7); /*0x6ba562*/
       result = (*(int (**)(int))(*(unsigned int *)v5 + 96))(v5); /*0x6ba569*/
-      LOBYTE(result) = 1; /*0x6ba56f*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6ba56f*/
     }
     else
     {
       result = (*(int (**)(int))(*(unsigned int *)aP1 + 96))(aP1); /*0x6ba425*/
-      LOBYTE(result) = 0; /*0x6ba429*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ba429*/
     }
   }
   else
   {
-    LOBYTE(result) = 0; /*0x6ba3ff*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ba3ff*/
   }
   return result; /*0x6ba3fe*/
 
@@ -800,17 +800,17 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
       }
       (*(void (**)(int))(*(unsigned int *)aP1 + 96))(aP1); /*0x6ba662*/
       result = (*(int (**)(int))(*(unsigned int *)a3 + 96))(a3); /*0x6ba66b*/
-      LOBYTE(result) = 1; /*0x6ba671*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6ba671*/
     }
     else
     {
       result = (*(int (**)(int))(*(unsigned int *)aP1 + 96))(aP1); /*0x6ba5c5*/
-      LOBYTE(result) = 0; /*0x6ba5ca*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ba5ca*/
     }
   }
   else
   {
-    LOBYTE(result) = 0; /*0x6ba5a1*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ba5a1*/
   }
   return result; /*0x6ba59f*/
 
@@ -957,7 +957,7 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   v70 = (unsigned __int16 *)result; /*0x6ba7c7*/
   if ( !result ) /*0x6ba7cd*/
   {
-    LOBYTE(result) = 0; /*0x6ba7d2*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ba7d2*/
     return result; /*0x6ba7db*/
   }
   v19 = 0; /*0x6ba7e5*/
@@ -977,7 +977,7 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
     {
 LABEL_21:
       result = (*(int (**)(int))(*(unsigned int *)a2 + 96))(a2); /*0x6ba80f*/
-      LOBYTE(result) = 0; /*0x6ba81e*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ba81e*/
       return result; /*0x6ba827*/
     }
   }
@@ -1123,7 +1123,7 @@ LABEL_43:
   (*(void (**)(int))(*(unsigned int *)a2 + 96))(a2); /*0x6babfe*/
   (*(void (**)(int))(*(unsigned int *)a3 + 96))(a3); /*0x6bac13*/
   result = (*(int (**)(int))(*(unsigned int *)a4 + 96))(a4); /*0x6bac1f*/
-  LOBYTE(result) = 1; /*0x6bac25*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6bac25*/
   return result; /*0x6ba7cf*/
 
 }
@@ -1493,7 +1493,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 v42 = (unsigned __int16 *)(2 * v40 + v38); /*0x7607ba*/
                 v67 = v42; /*0x7607c6*/
                 v43 = v39 - v76 - this->u32_D0; /*0x7607ca*/
-                for ( j = (HIDWORD(v43) ^ v43) - HIDWORD(v43); v40 >= v59; v67 = v42 ) /*0x7607d7*/
+                for ( j = ((((v43) >> 32) & 0xFFFFFFFFu) ^ v43) - (((v43) >> 32) & 0xFFFFFFFFu); v40 >= v59; v67 = v42 ) /*0x7607d7*/
                 {
                   if ( *v42 > v87 ) /*0x7607e1*/
                   {
@@ -1607,7 +1607,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
               v23 = v22; /*0x7604cc*/
               v24 = v19; /*0x7604ce*/
               v75 = v19; /*0x7604d2*/
-              for ( m = (HIDWORD(v22) ^ v23) - HIDWORD(v22); v24 <= v62; v75 = v24 ) /*0x7604de*/
+              for ( m = ((((v22) >> 32) & 0xFFFFFFFFu) ^ v23) - (((v22) >> 32) & 0xFFFFFFFFu); v24 <= v62; v75 = v24 ) /*0x7604de*/
               {
                 if ( *v20 > v86 ) /*0x7604e8*/
                 {
@@ -1734,7 +1734,7 @@ int Surface::CommitSurfaceBuffersAudio()
   if ( !this->u32_88 ) /*0x7bd699*/
     return -8; /*0x7bd6af*/
   v3 = *((unsigned __int8 *)&this->u32_F3) * *((unsigned __int8 *)&this->u32_F3) * *((unsigned __int16 *)&this->u32_F3) + 4; /*0x7bd6cf*/
-  LOBYTE(v3) = v3 & 0xFC; /*0x7bd6d2*/
+  (v3) = ((v3) & ~0xFF) | ((v3 & 0xFC) & 0xFF); /*0x7bd6d2*/
   this->u32_774 = v3; /*0x7bd6d4*/
   v4 = this->u8_108; /*0x7bd6da*/
   if ( v4 == 1 || v4 == 4 ) /*0x7bd6e8*/
@@ -1949,7 +1949,7 @@ LABEL_57:
   }
   v30 = v29 + 8; /*0x7bdaa9*/
   v50 = this->u32_778; /*0x7bdaac*/
-  LOBYTE(v30) = v30 & 0xFC; /*0x7bdab1*/
+  (v30) = ((v30) & ~0xFF) | ((v30 & 0xFC) & 0xFF); /*0x7bdab1*/
   this->u32_154 |= 2u; /*0x7bdab6*/
   this->u32_76C = v30; /*0x7bdabc*/
   v31 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))&this->q044))(this, 2, 0, v50); /*0x7bdac2*/

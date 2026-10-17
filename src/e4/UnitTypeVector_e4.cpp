@@ -14,8 +14,8 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
   
   this->ptr_4 = 0; /*0x51394b*/
   this->__pad_008 = a2; /*0x51394e*/
-  LOBYTE(this->q00C) = 1; /*0x513951*/
-  BYTE1(this->q00C) = 0; /*0x513955*/
+  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x513951*/
+  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513955*/
   *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
@@ -25,7 +25,7 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
       return this->__pad_0; /*0x51396e*/
     }
     this->UnitTypeVector_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x51397d*/
-    BYTE1(this->UnitTypeVector_field_0x0C) = 1; /*0x513980*/
+    (this->UnitTypeVector_field_0x0C) = ((this->UnitTypeVector_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x513980*/
   }
   return this->__pad_0; /*0x51396d*/
   

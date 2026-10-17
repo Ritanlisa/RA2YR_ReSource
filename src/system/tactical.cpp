@@ -285,8 +285,8 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
     v29 = v16; /*0x6d768b*/
     v33 = v15; /*0x6d7692*/
     v30 = v15 / 2; /*0x6d769b*/
-    LOWORD(v28) = v25 + v16; /*0x6d76ae*/
-    HIWORD(v28) = v30 + HIWORD(v25); /*0x6d76b9*/
+    (v28) = ((v28) & ~0xFFFF) | ((v25 + v16) & 0xFFFF); /*0x6d76ae*/
+    HIWORD(v28) = v30 + (((v25) >> 16) & 0xFFFF); /*0x6d76b9*/
     result = v32; /*0x6d76be*/
     *(unsigned int *)v21 = v28; /*0x6d76c8*/
     if ( v32 > 0 ) /*0x6d76cc*/
@@ -499,12 +499,12 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           LOWORD(v15) = Math::RoundToInt(v40); /*0x6d7950*/
           v16 = viewRect[3]; /*0x6d796d*/
           v17 = viewRect[2]; /*0x6d7978*/
-          HIWORD(v42) = v15 / 256; /*0x6d799d*/
+          (v42) = ((v42) & ~(0xFFFF << 16)) | (((v15 / 256) & 0xFFFF) << 16); /*0x6d799d*/
           LODWORD(v18) = v16 / 15 + 17; /*0x6d79a4*/
           v19 = 0; /*0x6d79ac*/
           v38 = v18; /*0x6d79b3*/
           v20 = v17 / 60 + 4; /*0x6d79bc*/
-          LOWORD(v42) = v14 / 256 - 2; /*0x6d79c0*/
+          (v42) = ((v42) & ~0xFFFF) | ((v14 / 256 - 2) & 0xFFFF); /*0x6d79c0*/
           v37 = v20; /*0x6d79c5*/
           while ( v19 < SLODWORD(v18) ) /*0x6d79c9*/
           {
@@ -514,7 +514,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
             v36 = v19; /*0x6d79de*/
             HIWORD(v39) = v19 / 2; /*0x6d79e7*/
             LOWORD(v45) = v42 + v21; /*0x6d79fa*/
-            HIWORD(v45) = HIWORD(v39) + HIWORD(v42); /*0x6d7a05*/
+            HIWORD(v45) = HIWORD(v39) + (((v42) >> 16) & 0xFFFF); /*0x6d7a05*/
             *(unsigned int *)v31 = v45; /*0x6d7a10*/
             if ( v20 > 0 ) /*0x6d7a14*/
             {
@@ -660,7 +660,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a4)
   Coord::Subtract((Coord *)&v44, (int)v9, (int)v10, 0); /*0x6d7c9b*/
   v11 = *(unsigned int *)CellStruct::Set((CellStruct *)&v36, v44 / 256, v45 / 256); /*0x6d7ccb*/
   v12 = this->TacticalClass_field_2C; /*0x6d7ccd*/
-  HIWORD(v37[0]) = HIWORD(v11); /*0x6d7cd3*/
+  HIWORD(v37[0]) = (((v11) >> 16) & 0xFFFF); /*0x6d7cd3*/
   LOWORD(v37[0]) = v11 - 2; /*0x6d7ce0*/
   v13 = *v3; /*0x6d7ce9*/
   a2 = (int *)v37[0]; /*0x6d7ceb*/
@@ -684,7 +684,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a4)
   smudgeTypeIndex = Coord::To_Cell((Coord *)&dword_87F7E8, &v44)->smudgeTypeIndex; /*0x6d7d95*/
   v20 = v3->vfptr3; /*0x6d7d98*/
   v21 = v3->vfptr2; /*0x6d7da0*/
-  HIWORD(v37[0]) = HIWORD(smudgeTypeIndex) + 3; /*0x6d7db0*/
+  HIWORD(v37[0]) = (((smudgeTypeIndex) >> 16) & 0xFFFF) + 3; /*0x6d7db0*/
   v22 = v20 / 15 + 20; /*0x6d7dbc*/
   LOWORD(v37[0]) = smudgeTypeIndex - 2; /*0x6d7dc9*/
   v23 = 0; /*0x6d7dd3*/
@@ -697,13 +697,13 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a4)
     {
       v27 = v23 / 2; /*0x6d7ded*/
       ++v23; /*0x6d7def*/
-      LOWORD(v38) = v27; /*0x6d7df0*/
+      (v38) = ((v38) & ~0xFFFF) | ((v27) & 0xFFFF); /*0x6d7df0*/
       v36 = v23; /*0x6d7df7*/
-      HIWORD(v38) = v23 / 2; /*0x6d7e00*/
+      (v38) = ((v38) & ~(0xFFFF << 16)) | (((v23 / 2) & 0xFFFF) << 16); /*0x6d7e00*/
       v28 = LOWORD(v37[0]) + v27; /*0x6d7e0d*/
       result = *(unsigned int *)((char *)v37 + 2); /*0x6d7e0f*/
       LOWORD(a4) = v28; /*0x6d7e13*/
-      HIWORD(a4) = HIWORD(v37[0]) + HIWORD(v38); /*0x6d7e1e*/
+      HIWORD(a4) = HIWORD(v37[0]) + (((v38) >> 16) & 0xFFFF); /*0x6d7e1e*/
       a2 = a4; /*0x6d7e29*/
       if ( v25 > 0 ) /*0x6d7e2d*/
       {
@@ -923,7 +923,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
   smudgeTypeIndex = v9->smudgeTypeIndex; /*0x6d72b2*/
   v11 = (unsigned __int64)(2290649225LL * v10) >> 32; /*0x6d72b8*/
   v12 = this->vfptr2; /*0x6d72ba*/
-  LOWORD(smudgeTypeIndex) = smudgeTypeIndex - 2; /*0x6d72c8*/
+  (smudgeTypeIndex) = ((smudgeTypeIndex) & ~0xFFFF) | ((smudgeTypeIndex - 2) & 0xFFFF); /*0x6d72c8*/
   v37 = (v11 >> 3) + ((unsigned int)v11 >> 31) + 17; /*0x6d72de*/
   *(unsigned int *)v27 = smudgeTypeIndex; /*0x6d72e7*/
   v13 = v12 / 60 + 4; /*0x6d72ee*/
@@ -941,7 +941,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
         v39 = v14; /*0x6d7321*/
         v33 = v14 / 2; /*0x6d732a*/
         LOWORD(v32) = smudgeTypeIndex + v15; /*0x6d733d*/
-        HIWORD(v32) = v33 + HIWORD(smudgeTypeIndex); /*0x6d7348*/
+        HIWORD(v32) = v33 + (((smudgeTypeIndex) >> 16) & 0xFFFF); /*0x6d7348*/
         *(unsigned int *)v27 = v32; /*0x6d7353*/
         if ( v13 > 0 ) /*0x6d7357*/
         {
@@ -1694,7 +1694,7 @@ int TacticalClass::RenderCells()
         v45 = (int)&_EBX->field40 + 1; /*0x5505b8*/
         *(float *)&v44 = 1.0; /*0x5505bc*/
         LOBYTE(v51) = BYTE1(_EBX->field40); /*0x5505cd*/
-        LOBYTE(v49) = (unsigned char)v51 != 0; /*0x5505d1*/
+        (v49) = ((v49) & ~0xFF) | (((unsigned char)v51 != 0) & 0xFF); /*0x5505d1*/
         LOBYTE(v48) = v13 != 0; /*0x5505d8*/
         field40_high = HIBYTE(_EBX->field40); /*0x5505dc*/
         LOBYTE(v47) = field40_high != 0; /*0x5505e4*/
@@ -1732,7 +1732,7 @@ int TacticalClass::RenderCells()
                        1,
                        1,
                        v44);
-            LOBYTE(result) = v40; /*0x550658*/
+            (result) = ((result) & ~0xFF) | ((v40) & 0xFF); /*0x550658*/
             if ( v40 ) /*0x55065e*/
             {
               v15 = 4 * v7; /*0x55066c*/
@@ -1855,7 +1855,7 @@ int TacticalClass::RenderCells()
                      v8,
                      v10,
                      0);
-          LOBYTE(result) = v40; /*0x5508f9*/
+          (result) = ((result) & ~0xFF) | ((v40) & 0xFF); /*0x5508f9*/
           if ( v40 ) /*0x5508ff*/
           {
             v31 = 4 * v7; /*0x55090d*/
@@ -1990,9 +1990,9 @@ LABEL_19:
     this->u16_10A = v14; /*0x483f9f*/
     v16 = a2; /*0x483fa6*/
     this->u32_10C = result; /*0x483fab*/
-    LOWORD(result) = v20; /*0x483fb2*/
+    (result) = ((result) & ~0xFFFF) | ((v20) & 0xFFFF); /*0x483fb2*/
     this->u16_10E = v15; /*0x483fb7*/
-    v18 = WORD2(v20); /*0x483fbe*/
+    v18 = (((v20) >> 32) & 0xFFFF); /*0x483fbe*/
     this->u16_110 = v16; /*0x483fc3*/
     this->q112 = result; /*0x483fca*/
     this->q114 = v18; /*0x483fd1*/
@@ -2002,7 +2002,7 @@ LABEL_19:
     && (this->field24 != 0xFFFF || this->u16_26 != 0xFFFF) )
   {
     HIDWORD(v19) = (char *)&v20 + 4; /*0x483eb8*/
-    LODWORD(v19) = &v20; /*0x483ebd*/
+    (v19) = ((v19) & 0xFFFFFFFF00000000ull) | ((&v20) & 0xFFFFFFFFull); /*0x483ebd*/
     Tactical::CalculateTacticalLighting((Tactical *)this, &a3, &a4, (int *)&a5, (int *)&a6, (int *)&a7, &a2, v19); /*0x483eda*/
     if ( !this->q00D ) /*0x483edf*/
       goto LABEL_17; /*0x483edf*/
@@ -2019,7 +2019,7 @@ LABEL_19:
     if ( !this->q00D ) /*0x483f54*/
     {
 LABEL_17:
-      SurfaceClassPrimary = CreateSurfaceClassPrimary(a2, v20, SHIDWORD(v20)); /*0x483f68*/
+      SurfaceClassPrimary = CreateSurfaceClassPrimary(a2, v20, (int)(((v20) >> 32) & 0xFFFFFFFFu)); /*0x483f68*/
       this->q00D = SurfaceClassPrimary; /*0x483f6f*/
       if ( SurfaceClassPrimary ) /*0x483f72*/
         ++*(unsigned int *)(SurfaceClassPrimary + 404); /*0x483f74*/
@@ -2206,7 +2206,7 @@ int TacticalClass::InitView()
   v3 = (unsigned int *)*a3; /*0x4a91ba*/
   v4 = (unsigned __int16)*a3 == (unsigned __int16)dword_8A03F8; /*0x4a91bd*/
   a3 = (unsigned int *)*a3; /*0x4a91c6*/
-  if ( v4 && HIWORD(a3) == HIWORD(dword_8A03F8) ) /*0x4a91dc*/
+  if ( v4 && HIWORD(a3) == (((dword_8A03F8) >> 16) & 0xFFFF) ) /*0x4a91dc*/
   {
     v6 = (int *)(*(int (**)(MouseClass *, int *))(dword_887640->HandleClick_ph + 52))( /*0x4a91ef*/
                   dword_887640,
@@ -2376,7 +2376,7 @@ AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
   char v24; // [esp+10h] [ebp-Ch] BYREF
   int v25; // [esp+14h] [ebp-8h]
 
-  LOBYTE(v1) = dword_A8D5F8; /*0x6d2540*/
+  (v1) = ((v1) & ~0xFF) | ((dword_A8D5F8) & 0xFF); /*0x6d2540*/
   v2 = 0; /*0x6d2549*/
   if ( (dword_A8D5F8 & 2) != 0 ) /*0x6d2550*/
     return v1; /*0x6d2550*/

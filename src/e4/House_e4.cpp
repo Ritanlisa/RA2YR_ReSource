@@ -175,7 +175,7 @@ LABEL_19:
       BuildingClass::DetermineVisualState((BuildingClass *)this); /*0x47d551*/
       v17 = v56; /*0x47d55c*/
       v5[1] = this->u32_11B; /*0x47d560*/
-      LOBYTE(result) = this->u32_11B; /*0x47d563*/
+      (result) = ((result) & ~0xFF) | ((this->u32_11B) & 0xFF); /*0x47d563*/
       v17[8] = result; /*0x47d569*/
       *v5 = this->u32_4C; /*0x47d571*/
       return result; /*0x47d578*/
@@ -662,8 +662,8 @@ int House::UpdateHouseAI()
                 }
                 Math::Sqrt(v36); /*0x4fd6e9*/
                 v20 = Math::RoundToInt(v1); /*0x4fd6f1*/
-                LOWORD(v10) = HIWORD(v20); /*0x4fd6f1*/
-                LOWORD(v19) = v20; /*0x4fd6f1*/
+                (v10) = ((v10) & ~0xFFFF) | (((((v20) >> 16) & 0xFFFF)) & 0xFFFF); /*0x4fd6f1*/
+                (v19) = ((v19) & ~0xFFFF) | ((v20) & 0xFFFF); /*0x4fd6f1*/
                 if ( v19 < v11 ) /*0x4fd6f8*/
                 {
                   v3 = v12; /*0x4fd6fa*/
@@ -843,7 +843,7 @@ int House::IsHumanPlayer()
 
   if ( *(unsigned int *)&dword_A8B238 ) /*0x50b6f7*/
     return this == (House *)dword_A83D4C; /*0x50b720*/
-  return LOBYTE(this->q1EC) || BYTE1(this->q1EC); /*0x50b70f*/
+  return ((this->q1EC) & 0xFF) || (((this->q1EC) >> 8) & 0xFF); /*0x50b70f*/
 
 }
 }
@@ -855,9 +855,9 @@ int House::IsCurrentPlayer(void *a1)
 
   int result; // eax
   result = *(unsigned int *)&dword_A8B238; /*0x50b730*/
-  LOBYTE(result) = this->q1EC; /*0x50b737*/
+  (result) = ((result) & ~0xFF) | ((this->q1EC) & 0xFF); /*0x50b737*/
   if ( !*(unsigned int *)&dword_A8B238 ) /*0x50b73d*/
-    LOBYTE(result) = (unsigned char)result || BYTE1(this->q1EC); /*0x50b750*/
+    (result) = ((result) & ~0xFF) | (((unsigned char)result || (((this->q1EC) >> 8) & 0xFF)) & 0xFF); /*0x50b750*/
   return result; /*0x50b74f*/
 
 }

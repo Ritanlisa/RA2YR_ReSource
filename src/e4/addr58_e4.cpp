@@ -93,7 +93,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   if ( (v5[80] & 0x100) != 0 ) /*0x583618*/
   {
     v7 = -((v5[80] & 0x800) != 0); /*0x583631*/
-    LOBYTE(v7) = v7 & 0xFE; /*0x583634*/
+    (v7) = ((v7) & ~0xFF) | ((v7 & 0xFE) & 0xFF); /*0x583634*/
     v8 = v7 + 4; /*0x583637*/
     NeighbourContent = v5; /*0x58363b*/
     v22 = v8; /*0x58363d*/
@@ -142,10 +142,10 @@ LABEL_22:
     }
     if ( LayerClass::IsWithinUsableArea(&dword_87F7E8, (__int16 *)&v21, 1) ) /*0x583744*/
     {
-      if ( __PAIR32__(HIWORD(v22), v13) == dword_ABD480 ) /*0x583758*/
+      if ( (((((v22) >> 16) & 0xFFFF) & 0xFFFFu) << 16 | (v13 & 0xFFFFu)) == dword_ABD480 ) /*0x583758*/
         goto LABEL_28; /*0x583758*/
       v14 = (unsigned short *)aP2; /*0x58376c*/
-      v15 = (double)(__int16)(HIWORD(v21) - aP2->u32_2); /*0x58378e*/
+      v15 = (double)(__int16)((((v21) >> 16) & 0xFFFF) - aP2->u32_2); /*0x58378e*/
       aP2 = (__int16)(v21 - *(unsigned short *)aP2); /*0x583792*/
       v16 = Math::Sqrt((double)aP2 * (double)aP2 + v15 * v15); /*0x5837ab*/
       v17 = Math::RoundToInt(v16); /*0x5837ba*/
@@ -599,7 +599,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
         LOWORD(v5) = CellClass::IsPassable(&v11->mapCoords, aP2->u32_67C, aP2, aP1); /*0x58865f*/
         if ( (unsigned char)v5 ) /*0x588666*/
         {
-          LOWORD(v5) = ++v18; /*0x588674*/
+          (v5) = ((v5) & ~0xFFFF) | ((++v18) & 0xFFFF); /*0x588674*/
           if ( v18 < v22 ) /*0x58867b*/
             continue; /*0x58867b*/
         }
@@ -667,7 +667,7 @@ int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseCl
   v22 = result; /*0x588760*/
   if ( !result ) /*0x588764*/
     return result; /*0x588764*/
-  LOBYTE(result) = 0; /*0x58876b*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x58876b*/
   for ( i = 0; i < 8; i += 2 ) /*0x58876f*/
   {
     v5 = v3->q5B8 >> 8; /*0x58877d*/
@@ -1015,10 +1015,10 @@ AbstractClass * * BuildRandomMapTiles(ObjectClass *self)
     {
       v6 = *(unsigned int *)((char *)dword_ABED10 + v5); /*0x58ec49*/
       v31 = v6; /*0x58ec4c*/
-      v7 = SHIWORD(v6); /*0x58ec50*/
+      v7 = (short)(((v6) >> 16) & 0xFFFF); /*0x58ec50*/
       v8 = (__int16)v6; /*0x58ec55*/
-      v9 = SHIWORD(v6) + (__int16)v6; /*0x58ec58*/
-      if ( v9 > v4 && (__int16)v6 - SHIWORD(v6) < v4 && SHIWORD(v6) - (__int16)v6 < v4 && v9 <= dword_ABED08 ) /*0x58ec81*/
+      v9 = (short)(((v6) >> 16) & 0xFFFF) + (__int16)v6; /*0x58ec58*/
+      if ( v9 > v4 && (__int16)v6 - (short)(((v6) >> 16) & 0xFFFF) < v4 && (short)(((v6) >> 16) & 0xFFFF) - (__int16)v6 < v4 && v9 <= dword_ABED08 ) /*0x58ec81*/
       {
         v10 = *(unsigned int *)((char *)dword_ABED10 + v5 + 56); /*0x58ec8c*/
         if ( v10 >= 0 && v10 < dword_ABDFA0 ) /*0x58ec9e*/

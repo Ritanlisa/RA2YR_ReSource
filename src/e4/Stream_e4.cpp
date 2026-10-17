@@ -144,19 +144,19 @@ char * Stream::InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a
   if ( !TestBitArray(1) ) /*0x7592b7*/
   {
     v9 = this->u32_1B8; /*0x7592c0*/
-    LOBYTE(v9) = v9 | 4; /*0x7592c6*/
+    (v9) = ((v9) & ~0xFF) | ((v9 | 4) & 0xFF); /*0x7592c6*/
     this->u32_1B8 = v9; /*0x7592c8*/
   }
   if ( TestBitArray(10) ) /*0x7592d3*/
   {
     v10 = this->u32_1B8; /*0x7592dc*/
-    LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
+    (v10) = ((v10) & ~0xFF) | ((v10 | 0x40) & 0xFF); /*0x7592e2*/
     this->u32_1B8 = v10; /*0x7592e4*/
   }
   if ( TestBitArray(12) ) /*0x7592ef*/
   {
     v11 = this->u32_1B8; /*0x7592f8*/
-    LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
+    (v11) = ((v11) & ~0xFF) | ((v11 | 0x80) & 0xFF); /*0x7592fe*/
     this->u32_1B8 = v11; /*0x759300*/
   }
   v12 = this->u32_1BC | 8; /*0x75930c*/
@@ -164,29 +164,29 @@ char * Stream::InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a
   v13 = v12; /*0x75931e*/
   if ( (this->u32_52C & 2) != 0 ) /*0x759320*/
   {
-    LOBYTE(v13) = v12 | 0x20; /*0x759322*/
+    (v13) = ((v13) & ~0xFF) | ((v12 | 0x20) & 0xFF); /*0x759322*/
     this->u32_1BC = v13; /*0x759324*/
     if ( (this->u32_52C & 4) == 0 ) /*0x759333*/
       goto LABEL_14; /*0x759333*/
-    BYTE1(v13) = BYTE1(v12) | 1; /*0x759335*/
+    (v13) = ((v13) & ~(0xFF << 8)) | ((((((v12) >> 8) & 0xFF) | 1) & 0xFF) << 8); /*0x759335*/
   }
   else
   {
-    LOBYTE(v13) = v12 & 0xDF; /*0x75933a*/
+    (v13) = ((v13) & ~0xFF) | ((v12 & 0xDF) & 0xFF); /*0x75933a*/
   }
   this->u32_1BC = v13; /*0x75933c*/
   LABEL_14:
   v14 = TestBitArray(17); /*0x759342*/
   v15 = this->u32_1BC; /*0x75934e*/
   if ( v14 ) /*0x759354*/
-    LOBYTE(v15) = v15 | 4; /*0x759356*/
+    (v15) = ((v15) & ~0xFF) | ((v15 | 4) & 0xFF); /*0x759356*/
   else
-    LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
+    (v15) = ((v15) & ~0xFF) | ((v15 & 0xFB) & 0xFF); /*0x75935a*/
   this->u32_1BC = v15; /*0x759361*/
   v14 = TestBitArray(3); /*0x75936c*/
   v16 = this->u32_1BC; /*0x75936e*/
   if ( v14 ) /*0x759374*/
-    LOBYTE(v16) = v16 & 0xFE; /*0x759376*/
+    (v16) = ((v16) & ~0xFF) | ((v16 & 0xFE) & 0xFF); /*0x759376*/
   else
     v16 |= 1u; /*0x75937a*/
   this->u32_1BC = v16; /*0x759383*/

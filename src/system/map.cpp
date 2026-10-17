@@ -331,16 +331,16 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
   v5 = *a2; /*0x5880b4*/
   if ( *a2 != *a3 || a2[1] != a3[1] || a2[2] != a3[2] )
   {
-    LODWORD(v34) = v5 / 256; /*0x5880f3*/
-    HIDWORD(v34) = v4 / 256; /*0x5880f7*/
+    (v34) = ((v34) & 0xFFFFFFFF00000000ull) | ((v5 / 256) & 0xFFFFFFFFull); /*0x5880f3*/
+    (v34) = ((v34) & 0xFFFFFFFFull) | ((unsigned long long)((v4 / 256) & 0xFFFFFFFFull) << 32); /*0x5880f7*/
     if ( (unsigned __int16)(v5 / 256) == (unsigned __int16)(v4 / 256) )
     {
-      LOWORD(v34) = v5 / 256; /*0x588104*/
+      (v34) = ((v34) & ~0xFFFF) | ((v5 / 256) & 0xFFFF); /*0x588104*/
       WORD1(v34) = a2[1] / 256; /*0x58811a*/
-      v6 = WORD1(v34); /*0x588138*/
+      v6 = (((v34) >> 16) & 0xFFFF); /*0x588138*/
       v7 = a3[1] / 256; /*0x588141*/
-      v39 = SWORD1(v34) >= (unsigned __int16)v7 ? -1 : 1;
-      while ( (unsigned short)v34 != WORD2(v34) || v6 != (unsigned short)v7 ) /*0x58815d*/
+      v39 = (short)(((v34) >> 16) & 0xFFFF) >= (unsigned __int16)v7 ? -1 : 1;
+      while ( (unsigned short)v34 != (((v34) >> 32) & 0xFFFF) || v6 != (unsigned short)v7 ) /*0x58815d*/
       {
         v8 = (__int16)v34 + (v6 << 9); /*0x58816c*/
         if ( v8 < 0x40000 && (v9 = *(Cell **)(dword_87F924 + 4 * v8)) != 0 ) /*0x588182*/
@@ -380,12 +380,12 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
       v41 = v15 / 256; /*0x588208*/
       if ( (unsigned __int16)(v14 / 256) == (unsigned __int16)(v15 / 256) )
       {
-        WORD1(v34) = v14 / 256; /*0x588223*/
-        v6 = WORD1(v34); /*0x588234*/
-        v17 = (__int16)v34 >= SWORD2(v34) ? -1 : 1;
-        for ( i = v34; __PAIR32__(i, v16) != *(unsigned int *)((char *)&v34 + 2); LOWORD(v34) = i ) /*0x58823d*/
+        (v34) = ((v34) & ~(0xFFFF << 16)) | (((v14 / 256) & 0xFFFF) << 16); /*0x588223*/
+        v6 = (((v34) >> 16) & 0xFFFF); /*0x588234*/
+        v17 = (__int16)v34 >= (short)(((v34) >> 32) & 0xFFFF) ? -1 : 1;
+        for ( i = v34; ((i & 0xFFFFu) << 16 | (v16 & 0xFFFFu)) != *(unsigned int *)((char *)&v34 + 2); LOWORD(v34) = i ) /*0x58823d*/
         {
-          v19 = (__int16)i + (SWORD1(v34) << 9); /*0x588259*/
+          v19 = (__int16)i + ((short)(((v34) >> 16) & 0xFFFF) << 9); /*0x588259*/
           if ( v19 < 0x40000 && (v20 = *(Cell **)(dword_87F924 + 4 * v19)) != 0 ) /*0x58826f*/
           {
             v21 = v20; /*0x588271*/
@@ -415,7 +415,7 @@ LABEL_31:
               }
             }
           }
-          LOWORD(v16) = v41; /*0x5882b1*/
+          (v16) = ((v16) & ~0xFFFF) | ((v41) & 0xFFFF); /*0x5882b1*/
           i += v17; /*0x5882b5*/
         }
       }
@@ -556,7 +556,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
             + v11);
   v52[0] = *coords / 256; /*0x567971*/
   v17 = v14 / 256; /*0x567982*/
-  v18 = (BYTE4(v16) + (int)v16) >> 8; /*0x567985*/
+  v18 = ((((v16) >> 32) & 0xFF) + (int)v16) >> 8; /*0x567985*/
   v50 = v17; /*0x56798b*/
   v51 = v18; /*0x567990*/
   v52[1] = coords[1] / 256; /*0x56799d*/
@@ -684,7 +684,7 @@ LABEL_27:
             goto LABEL_47; /*0x567c56*/
           LOWORD(v57) = v52[0] - v54 + *(unsigned short *)v26; /*0x567c7c*/
           HIWORD(v57) = v52[1] - v55 + *((unsigned short *)v26 + 1); /*0x567c81*/
-          v37 = (__int16)v57 + (SHIWORD(v57) << 9); /*0x567c8f*/
+          v37 = (__int16)v57 + ((short)(((v57) >> 16) & 0xFFFF) << 9); /*0x567c8f*/
           if ( v37 >= 0x40000 || (v38 = *(CellClass **)(dword_87F924 + 4 * v37)) == 0 ) /*0x567ca5*/
           {
             dword_ABDC74 = v57; /*0x567cab*/
@@ -807,7 +807,7 @@ LABEL_10:
     v16 = dword_ABD490; /*0x567e57*/
     v17 = (int)((((v15 >> 31) + v15) << 8) + v10); /*0x567e73*/
     v18 = v13 / 256; /*0x567e82*/
-    v19 = (BYTE4(v17) + (int)v17) >> 8; /*0x567e85*/
+    v19 = ((((v17) >> 32) & 0xFF) + (int)v17) >> 8; /*0x567e85*/
     if ( radius ) /*0x567e8a*/
       v16 = (int *)(4 * dword_7ED3CC[radius] + 11261072); /*0x567e93*/
     for ( result = v29 - 1; v29; --v29 ) /*0x567ea3*/

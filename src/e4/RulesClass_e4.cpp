@@ -191,14 +191,14 @@ void* RulesClass::readAudioVisual()
                (double *)v10,
                (unsigned __int8 *)aElevationmodel,
                aElevationbonus,
-               COERCE_DOUBLE(__PAIR64__(BerserkColor, IronCurtainColor)));
+               COERCE_DOUBLE((((BerserkColor & 0xFFFFFFFFull)) << 32 | (IronCurtainColor & 0xFFFFFFFFull))));
     __asm { fstp qword ptr [esi+1848h] } /*0x66d1d6*/
     *&this->IronCurtainColor = _RT1; /*0x66d1d6*/
-    LOBYTE(result) = 1; /*0x66d1dd*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x66d1dd*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x66d1e4*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x66d1e4*/
   }
   return result; /*0x66d1dc*/
 
@@ -289,11 +289,11 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
       ++v2; /*0x673fd0*/
     }
     while ( (int)v3 < (int)byte_89ECC0 ); /*0x673fd7*/
-    LOBYTE(result) = 1; /*0x673fdf*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x673fdf*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x673feb*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x673feb*/
   }
   return result; /*0x673fe2*/
 
@@ -346,7 +346,7 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
       (double *)v16,
       (unsigned __int8 *)aJumpjetcontrol,
       (unsigned __int8 *)&DataGlobal_81B140,
-      COERCE_DOUBLE(__PAIR64__(v8, v9)));
+      COERCE_DOUBLE((((v8 & 0xFFFFFFFFull)) << 32 | (v9 & 0xFFFFFFFFull))));
     v10 = *&this->q434; /*0x674498*/
     v11 = *&this->q430; /*0x67449e*/
     __asm { fstp qword ptr [esi+428h] } /*0x6744a4*/
@@ -355,17 +355,17 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
       (double *)v16,
       (unsigned __int8 *)aJumpjetcontrol,
       aWobblesperseco,
-      COERCE_DOUBLE(__PAIR64__(v10, v11)));
+      COERCE_DOUBLE((((v10 & 0xFFFFFFFFull)) << 32 | (v11 & 0xFFFFFFFFull))));
     v13 = *&this->WobbleDeviation; /*0x6744be*/
     __asm { fstp qword ptr [esi+430h] } /*0x6744c4*/
     *&this->q430 = _RT1; /*0x6744c4*/
     result = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol, aWobbledeviatio, v13); /*0x6744d9*/
     *&this->WobbleDeviation = result; /*0x6744de*/
-    LOBYTE(result) = 1; /*0x6744e5*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6744e5*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x6744ec*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6744ec*/
   }
   return result; /*0x6744e4*/
 
@@ -839,11 +839,11 @@ int RulesClass::readSpecialWeapons(void * aAlliedwalltran, void * aWallmodel, vo
     result = INIClass::ReadDouble_Overwrite((double *)v7, (unsigned __int8 *)aWallmodel, aWallpenetrator, v6); /*0x66d24a*/
     __asm { fstp qword ptr [esi+1858h] } /*0x66d24f*/
     *&this->FallBackCoefficient = _RT1; /*0x66d24f*/
-    LOBYTE(result) = 1; /*0x66d256*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x66d256*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x66d25d*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x66d25d*/
   }
   return result; /*0x66d255*/
 
@@ -883,11 +883,11 @@ int RulesClass::ReadColors(void * aColors)
       System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)&stru_886380, (int)&FileSystem_TEMPERAT_PAL, 1); /*0x66d444*/
       result = System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)&stru_886380, (int)&FileSystem_TEMPERAT_PAL, 53); /*0x66d45b*/
     }
-    LOBYTE(result) = 1; /*0x66d46c*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x66d46c*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x66d475*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x66d475*/
   }
   return result; /*0x66d46e*/
 
@@ -938,11 +938,11 @@ int RulesClass::ReadColorAdd(void * aColoradd)
       }
       while ( v10 ); /*0x66d511*/
     }
-    LOBYTE(result) = 1; /*0x66d516*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x66d516*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x66d521*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x66d521*/
   }
   return result; /*0x66d514*/
 

@@ -27,11 +27,11 @@ int SortedArray::BinarySearch(int *aP1, void *a2)
   int result = this->u32_4; // eax /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
-    if ( !LOBYTE(this->u32_C) ) /*0x52b62e*/
+    if ( !((this->u32_C) & 0xFF) ) /*0x52b62e*/
     {
       qsort(*(void **)this->__pad_000, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int); /*0x52b640*/
       this->u32_10 = 0; /*0x52b648*/
-      LOBYTE(this->u32_C) = 1; /*0x52b64f*/
+      (this->u32_C) = ((this->u32_C) & ~0xFF) | ((1) & 0xFF); /*0x52b64f*/
     }
     int v4; // edi
     v4 = *(unsigned int *)this->__pad_000; /*0x52b659*/

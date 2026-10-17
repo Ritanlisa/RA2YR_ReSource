@@ -1557,13 +1557,13 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x67b05c*/
   {
-    LOBYTE(this->u32_C) = 0; /*0x67b062*/
+    (this->u32_C) = ((this->u32_C) & ~0xFF) | ((0) & 0xFF); /*0x67b062*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x67b068*/
       v4 = a3; /*0x67b07e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x67b07a*/
-    LOBYTE(this->u32_C) = 1; /*0x67b082*/
+    (this->u32_C) = ((this->u32_C) & ~0xFF) | ((1) & 0xFF); /*0x67b082*/
     if ( !v4 ) /*0x67b086*/
       return 0; /*0x67b0fa*/
     if ( *&this->u32_4 ) /*0x67b088*/
@@ -1574,7 +1574,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x67b09c*/
         ++i; /*0x67b0a1*/
-      if ( BYTE1(this->u32_C) ) /*0x67b0ae*/
+      if ( (((this->u32_C) >> 8) & 0xFF) ) /*0x67b0ae*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x67b0b9*/
         *&this->u32_4 = 0; /*0x67b0c1*/

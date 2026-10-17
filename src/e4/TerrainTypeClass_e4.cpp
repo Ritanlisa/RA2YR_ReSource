@@ -310,11 +310,11 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
     aP1->TemperateOccupationBits = v19; /*0x71e08b*/
     result = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->?, aSnowoccupation, SnowOccupationBits); /*0x71e09a*/
     aP1->SnowOccupationBits = result; /*0x71e0a0*/
-    LOBYTE(result) = 1; /*0x71e0a8*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x71e0a8*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x71e0b5*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x71e0b5*/
   }
   return result; /*0x71e0a7*/
 

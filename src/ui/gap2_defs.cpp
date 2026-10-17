@@ -410,7 +410,7 @@ int DropListClass::Open(char a2, unsigned int *a3, char *a4) {
       (*(void (**)(char *))(this->u32_B0 + 36))(&this->u32_B0); /*0x4b50ed*/
       DropListClass_field_0x24 = this->ID; /*0x4b50f0*/
       LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b50f3*/
-      BYTE1(DropListClass_field_0x24) |= 0x80u; /*0x4b50f7*/
+      (DropListClass_field_0x24) |= ((((0x80u)) & 0xFF) << 8); /*0x4b50f7*/
       *a3 = DropListClass_field_0x24; /*0x4b50fa*/
     }
     else
@@ -438,7 +438,7 @@ int DropListClass::Open(char a2, unsigned int *a3, char *a4) {
     wcsncpy((wchar_t *)this->DropListClass_field_0x34, v13, DropListClass_field_0x38); /*0x4b516c*/
     (*(void (**)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b5178*/
     v12 = this->ID; /*0x4b517b*/
-    BYTE1(v12) |= 0x80u; /*0x4b517e*/
+    (v12) |= ((((0x80u)) & 0xFF) << 8); /*0x4b517e*/
     *a3 = v12; /*0x4b5181*/
   }
   return v12; /*0x4b5183*/
@@ -936,7 +936,7 @@ int TauntCommandClass::Do(int a1) {
     {
       Time = timeGetTime(); /*0x536379*/
       if ( (dword_825C88 == -1 || (int)(Time - dword_825C88) > 5000) /*0x5363c0*/
-        && ((unsigned char)dword_A8D110 && *(unsigned int *)&dword_A8B238 == 3 || BYTE1(dword_A8D110) && *(unsigned int *)&dword_A8B238 == 4) )
+        && ((unsigned char)dword_A8D110 && *(unsigned int *)&dword_A8B238 == 3 || (((dword_A8D110) >> 8) & 0xFF) && *(unsigned int *)&dword_A8B238 == 4) )
       {
         dword_825C88 = Time; /*0x5363c6*/
         v19 = 29; /*0x5363d1*/
@@ -1184,7 +1184,7 @@ int CheckListClass::SetItemState(int a1) {
   int v3; // eax
   char *v4; // esi
 
-  LOBYTE(v3) = this->IsReadOnly; /*0x557a24*/
+  (v3) = ((v3) & ~0xFF) | ((this->IsReadOnly) & 0xFF); /*0x557a24*/
   if ( (unsigned char)v3 ) /*0x557a29*/
   {
     v4 = &this->u32_118; /*0x557a35*/
@@ -1206,7 +1206,7 @@ int CheckListClass::OnKeyUp(int a1) {
   int v3; // eax
   char *v4; // esi
 
-  LOBYTE(v3) = this->IsReadOnly; /*0x557a74*/
+  (v3) = ((v3) & ~0xFF) | ((this->IsReadOnly) & 0xFF); /*0x557a74*/
   if ( (unsigned char)v3 ) /*0x557a79*/
   {
     v4 = &this->u32_118; /*0x557a85*/
@@ -1328,7 +1328,7 @@ void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
   Type = BuildingAnim::GetType(); /*0x557d35*/
   if ( a5 ) /*0x557d3d*/
   {
-    BYTE1(v7) |= 0x20u; /*0x557d44*/
+    (v7) |= ((((0x20u)) & 0xFF) << 8); /*0x557d44*/
     v9 = *(unsigned int *)(*((unsigned int *)dword_B054D4 + Type) + 796); /*0x557d52*/
     v10 = (unsigned __int16 *)dword_87F6C4->radarFlashTimer[0]; /*0x557d5b*/
     if ( dword_87F6C4->vfptr1 == 1 ) /*0x557d61*/
@@ -1346,7 +1346,7 @@ void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
   }
   else if ( (v7 & 0x4000) == 0 ) /*0x557da1*/
   {
-    BYTE1(v7) |= 0x10u; /*0x557da3*/
+    (v7) |= ((((0x10u)) & 0xFF) << 8); /*0x557da3*/
   }
   v12 = (int *)this->u32_38; /*0x557daa*/
   v19[0] = a2; /*0x557db1*/
@@ -4027,7 +4027,7 @@ int SidebarClass::Init() {
       *v4->X.__pad_0 = 0; /*0x6a5450*/
       LOBYTE(v4[1].X) = 1; /*0x6a5453*/
       v4[1].Y = v9; /*0x6a5457*/
-      BYTE1(v4->Y) = 0; /*0x6a545d*/
+      (v4->Y) = ((v4->Y) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6a545d*/
       v4->Width = 2; /*0x6a5461*/
       LOBYTE(v4->Image) = 1; /*0x6a546a*/
       DialogControl::Show(v4 - 1); /*0x6a546e*/
@@ -4071,7 +4071,7 @@ int SidebarClass::Init() {
       (*(void (**)(SidebarClass *, int))(this->SidebarClass_field_0x0 + 216))(this, 1); /*0x6a556c*/
     }
     this->u32_5510 = 0; /*0x6a5574*/
-    LOBYTE(vfptr) = dword_A8B238; /*0x6a557a*/
+    (vfptr) = ((vfptr) & ~0xFF) | ((dword_A8B238) & 0xFF); /*0x6a557a*/
     if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x6a5587*/
     {
       v13 = 0; /*0x6a5595*/
@@ -4213,7 +4213,7 @@ int SidebarClass::UpdateCameoProductionState(void* a1) {
   int v8; // eax
   int v10; // [esp+14h] [ebp+4h]
 
-  LOBYTE(v3) = this->u32_53A5; /*0x6a5f26*/
+  (v3) = ((v3) & ~0xFF) | ((this->u32_53A5) & 0xFF); /*0x6a5f26*/
   if ( (unsigned char)v3 ) /*0x6a5f2e*/
   {
     if ( a1 ) /*0x6a5f3a*/
@@ -4432,8 +4432,8 @@ LABEL_11:
       goto LABEL_31; /*0x6a7a5f*/
     }
     v24 = dword_B0B34C; /*0x6a7b18*/
-    BYTE1(v12) &= ~0x40u; /*0x6a7b1e*/
-    BYTE1(v24) = BYTE1(dword_B0B34C) | 0x80; /*0x6a7b21*/
+    (v12) &= ~(((~(~0x40u)) & 0xFF) << 8); /*0x6a7b1e*/
+    (v24) = ((v24) & ~(0xFF << 8)) | ((((((dword_B0B34C) >> 8) & 0xFF) | 0x80) & 0xFF) << 8); /*0x6a7b21*/
     if ( v12 == v24 ) /*0x6a7b26*/
     {
       byte_B0B354 = 0; /*0x6a7b2c*/
@@ -4469,7 +4469,7 @@ LABEL_56:
     else
     {
       v29 = dword_B0B42C; /*0x6a7c5e*/
-      BYTE1(v29) = BYTE1(dword_B0B42C) | 0x80; /*0x6a7c64*/
+      (v29) = ((v29) & ~(0xFF << 8)) | ((((((dword_B0B42C) >> 8) & 0xFF) | 0x80) & 0xFF) << 8); /*0x6a7c64*/
       if ( v12 != v29 ) /*0x6a7c69*/
         goto LABEL_32; /*0x6a7c69*/
       byte_B0B434 = 0; /*0x6a7c6f*/
@@ -7527,7 +7527,7 @@ void* MouseClass::Construct(int a1, int a2) {
   this->m_ScrollY = 0; /*0x7b874e*/
   this->m_MaxX = 0; /*0x7b8751*/
   this->m_MaxY = -1; /*0x7b8754*/
-  LOBYTE(this->q_10) = 0; /*0x7b8757*/
+  (this->q_10) = ((this->q_10) & ~0xFF) | ((0) & 0xFF); /*0x7b8757*/
   this->CapacityIncrement = 0; /*0x7b875a*/
   *(unsigned int *)this->__pad_18 = 0; /*0x7b875d*/
   *&this->q01C = 0; /*0x7b8760*/

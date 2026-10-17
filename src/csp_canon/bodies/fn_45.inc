@@ -322,14 +322,14 @@ char Gap2Recv_459CA0::ProcessDataCellClass() {
   v9 = v2; /*0x459cc3*/
   if ( v1 ) /*0x459cc7*/
   {
-    v3 = HIWORD(v9); /*0x459ccd*/
+    v3 = (((v9) >> 16) & 0xFFFF); /*0x459ccd*/
     while ( *v1 != 0x7FFF || v1[1] != 0x7FFF ) /*0x459cdf*/
     {
       v4 = v1; /*0x459ce5*/
       v1 += 2; /*0x459cea*/
       v5 = v3 + v4[1]; /*0x459cf4*/
       LOWORD(v9) = *v4 + v2; /*0x459cf7*/
-      HIWORD(v9) = v5; /*0x459d00*/
+      (v9) = ((v9) & ~(0xFFFF << 16)) | (((v5) & 0xFFFF) << 16); /*0x459d00*/
       *(unsigned int *)v8 = v9; /*0x459d0f*/
       if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v8) ) /*0x459d13*/
       {
@@ -572,7 +572,7 @@ char DynamicVector::RemoveItem(int aP1)
   result = (int)(aP1); /*0x45add3*/
   if ( aP1 >= (int)DynamicVector_field_0x10 ) /*0x45add9*/
   {
-    LOBYTE(result) = 0; /*0x45adfc*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x45adfc*/
   }
   else
   {
@@ -588,7 +588,7 @@ char DynamicVector::RemoveItem(int aP1)
       }
       while ( result < (int)this->DynamicVector_field_0x10 ); /*0x45adf4*/
     }
-    LOBYTE(result) = 1; /*0x45adf7*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x45adf7*/
   }
   return result; /*0x45adf9*/
 
@@ -648,7 +648,7 @@ char sub_45E8F0()
   int i; // ecx
   unsigned int v6[4]; // [esp+4h] [ebp-10h] BYREF
 
-  IDA_LOBYTE(SubFile) = (unsigned char)dword_89DDBC; /*0x45e8f0*/
+  (SubFile) = ((SubFile) & ~0xFF) | (((unsigned char)dword_89DDBC) & 0xFF); /*0x45e8f0*/
   if ( !dword_89DDBC ) /*0x45e8fb*/
   {
     dword_89DDBC = (unsigned int)((void *)SearchMIXFile((char *)(aBuildngzSha), 0)); /*0x45e90d*/
@@ -666,7 +666,7 @@ char sub_45E8F0()
           IDA_LOBYTE(SubFile) = *(unsigned char *)(v2 + i); /*0x45e946*/
           if ( (unsigned char)SubFile ) /*0x45e94b*/
           {
-            IDA_LOBYTE(SubFile) = SubFile - 65; /*0x45e94d*/
+            (SubFile) = ((SubFile) & ~0xFF) | ((SubFile - 65) & 0xFF); /*0x45e94d*/
             *(unsigned char *)(v2 + i) = SubFile; /*0x45e94f*/
           }
         }

@@ -124,12 +124,12 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x43ab7c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x43ab86*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x43ab86*/
     if ( a3 ) /*0x43ab8c*/
       v4 = a3; /*0x43aba2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x43ab9e*/
-    LOBYTE(this->m_C) = 1; /*0x43aba6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x43aba6*/
     if ( v4 ) /*0x43abaa*/
     {
       if ( *&this->q004 ) /*0x43abb5*/
@@ -139,7 +139,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x43abc3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x43abc9*/
           ++i; /*0x43abce*/
-        if ( BYTE1(this->m_C) ) /*0x43abdb*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x43abdb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x43abe6*/
           *&this->q004 = 0; /*0x43abee*/

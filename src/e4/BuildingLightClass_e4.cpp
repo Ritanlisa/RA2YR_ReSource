@@ -60,10 +60,10 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
       int v21; // [esp+2Ch] [ebp-3Ch]
       v21 = -1; /*0x436c58*/
       int v18; // [esp+20h] [ebp-48h]
-      LOWORD(v18) = v25 + v17; /*0x436c5c*/
+      (v18) = ((v18) & ~0xFFFF) | ((v25 + v17) & 0xFFFF); /*0x436c5c*/
       do /*0x436d62*/
       {
-        HIWORD(v18) = v7 + HIWORD(v25); /*0x436c6c*/
+        (v18) = ((v18) & ~(0xFFFF << 16)) | (((v7 + (((v25) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x436c6c*/
         __int16 v23[2]; // [esp+34h] [ebp-34h] BYREF
         *(unsigned int *)v23 = v18; /*0x436c7b*/
         unsigned int *v8; // esi

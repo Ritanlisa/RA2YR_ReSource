@@ -260,7 +260,7 @@ int TActionClass::executeRepairAction(int a2)
     if ( *(int *)(i + 304) >= 0 ) /*0x577d2e*/
     {
       v6 = *(unsigned int *)(i + 320); /*0x577d36*/
-      LOBYTE(v6) = v6 & 0xFC; /*0x577d3f*/
+      (v6) = ((v6) & ~0xFF) | ((v6 & 0xFC) & 0xFF); /*0x577d3f*/
       *(unsigned int *)(i + 300) &= 0xFFFFFFE7; /*0x577d41*/
       *(unsigned int *)(i + 320) = v6; /*0x577d47*/
     }

@@ -299,7 +299,7 @@ LABEL_39:
   }
   if ( v2->SlopeTimer[3] == g_DDraw_ClipRect /*0x4b0856*/
     && v2->Dest[0] == (unsigned int)qword_8A0794
-    && *(unsigned long long *)&v2->Dest[1] == __PAIR64__(g_DDraw_ClipRect, HIDWORD(qword_8A0794))
+    && *(unsigned long long *)&v2->Dest[1] == (((g_DDraw_ClipRect & 0xFFFFFFFFull)) << 32 | ((((qword_8A0794) >> 32) & 0xFFFFFFFFu) & 0xFFFFFFFFull))
     && *(unsigned long long *)v2->HeadToCoord == qword_8A0794 )
   {
     v23 = v2->Owner; /*0x4b085d*/
@@ -649,7 +649,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, unsigned int *aP1, int a4, int 
     *v4 = g_DDraw_ClipRect; /*0x4b0e20*/
     aP1->ambientSoundController[2] = qword_8A0794; /*0x4b0e28*/
     int v5; // eax
-    v5 = HIDWORD(qword_8A0794); /*0x4b0e2b*/
+    v5 = (((qword_8A0794) >> 32) & 0xFFFFFFFFu); /*0x4b0e2b*/
     HIBYTE(aP1->customSound_controller[4]) = 0; /*0x4b0e30*/
     aP1->ambientSoundController[3] = v5; /*0x4b0e34*/
     v2 = g_DDraw_ClipRect; /*0x4b0e37*/
@@ -1324,13 +1324,13 @@ short BlendMinimapPixel(unsigned short a1, unsigned short a2, int a3)
       LOWORD(v3) = a2; /*0x4bf6c0*/
       break; /*0x4bf6c0*/
     case 25: /*0x4bf664*/
-      v3 = 4 * (HIWORD(g_DDraw_Gray127) & (a1 >> 2)); /*0x4bf6ba*/
+      v3 = 4 * ((((g_DDraw_Gray127) >> 16) & 0xFFFF) & (a1 >> 2)); /*0x4bf6ba*/
       break; /*0x4bf6bd*/
     case 50: /*0x4bf664*/
       v3 = ((unsigned __int16)g_DDraw_Gray127 & (a2 >> 1)) + ((unsigned __int16)g_DDraw_Gray127 & (a1 >> 1)); /*0x4bf6a2*/
       break; /*0x4bf6a5*/
     case 75: /*0x4bf664*/
-      v3 = 4 * (HIWORD(g_DDraw_Gray127) & (a1 >> 2)); /*0x4bf67d*/
+      v3 = 4 * ((((g_DDraw_Gray127) >> 16) & 0xFFFF) & (a1 >> 2)); /*0x4bf67d*/
       break; /*0x4bf680*/
     default:
       return v3;

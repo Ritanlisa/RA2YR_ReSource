@@ -217,13 +217,13 @@ LABEL_37:
       {
         v31 = Blocka; /*0x642447*/
         v32 = (unsigned __int8)v55; /*0x642451*/
-        v54[0] = BYTE1(v55); /*0x642460*/
+        v54[0] = (((v55) >> 8) & 0xFF); /*0x642460*/
         while ( 1 ) /*0x642490*/
         {
-          v33 = 16 * (*v31 & 0xF) - BYTE2(v55); /*0x642490*/
-          v34 = (HIDWORD(v33) ^ v33) - HIDWORD(v33) + abs32((((unsigned __int16)*v31 >> 4) & 0xF0) - v32); /*0x642499*/
+          v33 = 16 * (*v31 & 0xF) - (((v55) >> 16) & 0xFF); /*0x642490*/
+          v34 = ((((v33) >> 32) & 0xFFFFFFFFu) ^ v33) - (((v33) >> 32) & 0xFFFFFFFFu) + abs32((((unsigned __int16)*v31 >> 4) & 0xF0) - v32); /*0x642499*/
           v35 = (*v31 & 0xF0) - v54[0]; /*0x6424a4*/
-          v36 = (HIDWORD(v35) ^ v35) - HIDWORD(v35) + v34; /*0x6424a9*/
+          v36 = ((((v35) >> 32) & 0xFFFFFFFFu) ^ v35) - (((v35) >> 32) & 0xFFFFFFFFu) + v34; /*0x6424a9*/
           if ( !v36 ) /*0x6424ab*/
             break; /*0x6424ab*/
           if ( v36 < v50 ) /*0x6424b1*/
@@ -249,7 +249,7 @@ LABEL_31:
         }
         v21 = a2; /*0x6424de*/
       }
-      LOBYTE(v37) = 0; /*0x6424ed*/
+      (v37) = ((v37) & ~0xFF) | ((0) & 0xFF); /*0x6424ed*/
 LABEL_36:
       *v51 = v37; /*0x6424fa*/
       v27 = v61.Width; /*0x642500*/

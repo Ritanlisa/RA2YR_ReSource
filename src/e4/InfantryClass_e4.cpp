@@ -274,7 +274,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
       vtable1 = (void *)(dword_B0E844); /*0x517ef3*/
       dword_B0E850 = 0; /*0x517efc*/
-      LOBYTE(byte_B0E84C) = 1; /*0x517f02*/
+      (byte_B0E84C) = ((byte_B0E84C) & ~0xFF) | ((1) & 0xFF); /*0x517f02*/
     }
     v17[0] = v10; /*0x517f0d*/
     int v11; // eax

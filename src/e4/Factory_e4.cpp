@@ -42,7 +42,7 @@ int Factory::GetLinkedIndex(int aP1)
 
   if ( aP1 == -1 ) /*0x663d68*/
   {
-    LOBYTE(result) = -1; /*0x663d6a*/
+    (result) = ((result) & ~0xFF) | ((-1) & 0xFF); /*0x663d6a*/
   }
   else
   {
@@ -55,7 +55,7 @@ int Factory::GetLinkedIndex(int aP1)
     {
       if ( ++result >= (int)v3 ) /*0x663d8f*/
       {
-        LOBYTE(result) = -1; /*0x663d93*/
+        (result) = ((result) & ~0xFF) | ((-1) & 0xFF); /*0x663d93*/
         return result; /*0x663d96*/
       }
     }
@@ -63,7 +63,7 @@ int Factory::GetLinkedIndex(int aP1)
     LOBYTE(result) = result->u8_28; /*0x663d9c*/
     if ( !(unsigned char)result ) /*0x663da1*/
       LABEL_9:
-    LOBYTE(result) = -1; /*0x663da3*/
+    (result) = ((result) & ~0xFF) | ((-1) & 0xFF); /*0x663da3*/
   }
   return result; /*0x663d6c*/
 
@@ -207,7 +207,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2
           {
             v15 = *(unsigned int *)v10->__pad_0; /*0x718d13*/
             v70 = (int)v10->field_4 / 256; /*0x718d28*/
-            if ( *(unsigned int *)(*(int (**)(unsigned int, unsigned int *))(**(unsigned int **)v71 + 440))(*(unsigned int *)v71, v73) == __PAIR32__(v70, v15 / 256) ) /*0x718d3c*/
+            if ( *(unsigned int *)(*(int (**)(unsigned int, unsigned int *))(**(unsigned int **)v71 + 440))(*(unsigned int *)v71, v73) == ((v70 & 0xFFFFu) << 16 | (v15 / 256 & 0xFFFFu)) ) /*0x718d3c*/
               LOBYTE(a5) = 1; /*0x718d49*/
           }
         }
@@ -220,7 +220,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2
             v17 = *(unsigned int *)v10->__pad_0; /*0x718d78*/
             v18 = **(unsigned int **)v71; /*0x718d86*/
             v70 = (int)v10->field_4 / 256; /*0x718d8b*/
-            if ( *(unsigned int *)(*(int (**)(unsigned int *))(v18 + 440))(v73) == __PAIR32__(v70, v17 / 256) ) /*0x718da1*/
+            if ( *(unsigned int *)(*(int (**)(unsigned int *))(v18 + 440))(v73) == ((v70 & 0xFFFFu) << 16 | (v17 / 256 & 0xFFFFu)) ) /*0x718da1*/
               LOBYTE(a5) = 1; /*0x718dae*/
           }
         }
@@ -337,7 +337,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2
         v44 = (int)v10->field_4 / 256; /*0x7190d2*/
         LOWORD(this) = v43; /*0x7190dc*/
         HIWORD(this) = v44; /*0x7190e1*/
-        if ( __PAIR32__(v44, v43) != g_BuildingLoadQueue_Array.unknown_int_398 ) /*0x7190ee*/
+        if ( ((v44 & 0xFFFFu) << 16 | (v43 & 0xFFFFu)) != g_BuildingLoadQueue_Array.unknown_int_398 ) /*0x7190ee*/
         {
           v45 = *(unsigned int *)v7[3]; /*0x719106*/
           v46 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&this); /*0x719114*/

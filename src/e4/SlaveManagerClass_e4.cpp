@@ -635,7 +635,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
           v78.vfptr1 = *v51; /*0x6afba8*/
           vfptr1 = v78.vfptr1; /*0x6afb9d*/
           v54 = (unsigned int *)(*(int (**)(wchar_t *))(v53 + 440))(v9); /*0x6afbac*/
-          if ( *v54 == __PAIR32__(HIWORD(v78.vfptr), vfptr1) ) /*0x6afbb5*/
+          if ( *v54 == ((HIWORD(v78.vfptr) & 0xFFFFu) << 16 | (vfptr1 & 0xFFFFu)) ) /*0x6afbb5*/
           {
             if ( !v9->q5A4 ) /*0x6afbc2*/
             {
@@ -952,8 +952,8 @@ long long SlaveManagerClass::Calc2DDistance()
   }
   Math::Sqrt(v4); /*0x6b1a9c*/
   v3 = Math::RoundToInt(v1); /*0x6b1aa1*/
-  WORD2(result) = HIWORD(v3); /*0x6b1aa1*/
-  LOWORD(result) = v3; /*0x6b1aa1*/
+  (result) = ((result) & ~(0xFFFFull << 32)) | ((((((v3) >> 16) & 0xFFFF)) & 0xFFFFull) << 32); /*0x6b1aa1*/
+  (result) = ((result) & ~0xFFFF) | ((v3) & 0xFFFF); /*0x6b1aa1*/
   return result; /*0x6b1aa9*/
 
 }
@@ -1084,7 +1084,7 @@ namespace gamemd {
 unsigned int SlaveManagerClass_25::Write(int a2)
 {
 
-  if ( LOBYTE(this->IsInitialized) ) /*0x6b13e0*/
+  if ( ((this->IsInitialized) & 0xFF) ) /*0x6b13e0*/
     return (unsigned int)(a2 - *&this->Items) >> 2; /*0x6b13f5*/
   else
     return 0; /*0x6b13e7*/
@@ -1145,12 +1145,12 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6b15fc*/
   {
-    LOBYTE(this->IsInitialized) = 0; /*0x6b1602*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((0) & 0xFF); /*0x6b1602*/
     if ( a3 ) /*0x6b1608*/
       v4 = a3; /*0x6b161e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6b161a*/
-    LOBYTE(this->IsInitialized) = 1; /*0x6b1622*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((1) & 0xFF); /*0x6b1622*/
     if ( !v4 ) /*0x6b1626*/
       return 0; /*0x6b169a*/
     if ( *&this->Items ) /*0x6b1628*/
@@ -1160,7 +1160,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
         m_8 = a2; /*0x6b1636*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x6b163c*/
         ++i; /*0x6b1641*/
-      if ( BYTE1(this->IsInitialized) ) /*0x6b164e*/
+      if ( (((this->IsInitialized) >> 8) & 0xFF) ) /*0x6b164e*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x6b1659*/
         *&this->Items = 0; /*0x6b1661*/

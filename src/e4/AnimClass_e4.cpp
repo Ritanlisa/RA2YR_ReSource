@@ -462,7 +462,7 @@ LABEL_46:
   }
 LABEL_47:
   if ( (AnimClass_field_0x190 & 1) == 0 ) /*0x423101*/
-    BYTE1(AnimClass_field_0x190) |= 8u; /*0x423103*/
+    (AnimClass_field_0x190) |= ((((8u)) & 0xFF) << 8); /*0x423103*/
   *(unsigned int *)v101 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 114))(this); /*0x423110*/
   v25 = this->AnimClass_field_0xC8; /*0x423114*/
   v106 = 1000; /*0x42311a*/
@@ -664,7 +664,7 @@ LABEL_99:
         + *&this->u32_CA.__pad_C[184]
         - ZCoordToScreenY(v68)
         - 50;
-    BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x4236a4*/
+    (AnimClass_field_0x190) |= ((((0x20u)) & 0xFF) << 8); /*0x4236a4*/
     do /*0x423719*/
     {
       v70 = v67 + *&this->u32_CA.__pad_C[184]; /*0x4236bb*/
@@ -703,7 +703,7 @@ LABEL_99:
     v72 = (int (**)(AnimClass *))this->AnimClass_field_0x0; /*0x42375e*/
     v102 = v109 + v71; /*0x423766*/
     v73 = v72[116](this); /*0x42376a*/
-    BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x42379b*/
+    (AnimClass_field_0x190) |= ((((0x20u)) & 0xFF) << 8); /*0x42379b*/
     v80 = this->AnimClass_field_0x100 /*0x42379e*/
         + *&this->u32_CA.__pad_C[184]
         - ZCoordToScreenY(v73)
@@ -735,7 +735,7 @@ LABEL_99:
     v75 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 116))(this); /*0x4237d7*/
     v76 = this->AnimClass_field_0x100 + *&this->u32_CA.__pad_C[184] - ZCoordToScreenY(v75); /*0x4237ff*/
     v77 = AnimClass_field_0x190; /*0x423801*/
-    BYTE1(v77) = BYTE1(AnimClass_field_0x190) | 0x20; /*0x423806*/
+    (v77) = ((v77) & ~(0xFF << 8)) | ((((((AnimClass_field_0x190) >> 8) & 0xFF) | 0x20) & 0xFF) << 8); /*0x423806*/
     DrawToSurfaceSHP( /*0x423827*/
       (int)g_DSurface_Hidden_2,
       v105[0],

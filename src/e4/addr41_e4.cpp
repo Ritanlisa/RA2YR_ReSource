@@ -560,7 +560,7 @@ int SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
             0) )
     {
       v15 = *(unsigned int *)(v14 + 64); /*0x41213f*/
-      LODWORD(v40) = v15; /*0x412146*/
+      (v40) = ((v40) & 0xFFFFFFFF00000000ull) | ((v15) & 0xFFFFFFFFull); /*0x412146*/
       v16 = *(unsigned int **)(v14 + 4 * v15 + 88); /*0x41214a*/
       if ( v16 <= a1 ) /*0x412150*/
       {

@@ -553,12 +553,12 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7b2a2c*/
   {
-    LOBYTE(this->LocalNode) = 0; /*0x7b2a32*/
+    (this->LocalNode) = ((this->LocalNode) & ~0xFF) | ((0) & 0xFF); /*0x7b2a32*/
     if ( a3 ) /*0x7b2a38*/
       v4 = a3; /*0x7b2a4e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x7b2a4a*/
-    LOBYTE(this->LocalNode) = 1; /*0x7b2a52*/
+    (this->LocalNode) = ((this->LocalNode) & ~0xFF) | ((1) & 0xFF); /*0x7b2a52*/
     if ( !v4 ) /*0x7b2a56*/
       return 0; /*0x7b2aca*/
     if ( *&this->Initialized ) /*0x7b2a58*/
@@ -568,7 +568,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
         m_8 = a2; /*0x7b2a66*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Initialized + 4 * i - 4) ) /*0x7b2a6c*/
         ++i; /*0x7b2a71*/
-      if ( BYTE1(this->LocalNode) ) /*0x7b2a7e*/
+      if ( (((this->LocalNode) >> 8) & 0xFF) ) /*0x7b2a7e*/
       {
         __3_YAXPAX_Z(*&this->Initialized); /*0x7b2a89*/
         *&this->Initialized = 0; /*0x7b2a91*/
@@ -714,12 +714,12 @@ void IPXInterfaceClass::getSocketCount()
 
   void *v2 = *&this->Initialized; // eax /*0x7b2846*/
   this->Count = 0; /*0x7b2849*/
-  if ( v2 && BYTE1(this->IsInitialized) ) /*0x7b2850*/
+  if ( v2 && (((this->IsInitialized) >> 8) & 0xFF) ) /*0x7b2850*/
   {
     __3_YAXPAX_Z(v2); /*0x7b2856*/
     *&this->Items = 0; /*0x7b285e*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x7b2861*/
+  (this->IsInitialized) = ((this->IsInitialized) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x7b2861*/
   this->Capacity = 0; /*0x7b2864*/
 
 }
@@ -729,7 +729,7 @@ namespace gamemd {
 unsigned int IPXInterfaceClass::resetSocket(int a2)
 {
 
-  if ( LOBYTE(this->LocalNode) ) /*0x7b2870*/
+  if ( ((this->LocalNode) & 0xFF) ) /*0x7b2870*/
     return (unsigned int)(a2 - *&this->Initialized) >> 2; /*0x7b2885*/
   else
     return 0; /*0x7b2877*/
@@ -764,12 +764,12 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
 
   void *v3 = *&this->Initialized; // eax /*0x7b2b53*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x7b2b56) */
-  if ( v3 && BYTE1(this->LocalNode) ) /*0x7b2b60*/
+  if ( v3 && (((this->LocalNode) >> 8) & 0xFF) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/
     *&this->Initialized = 0; /*0x7b2b70*/
   }
-  BYTE1(this->LocalNode) = 0; /*0x7b2b7b*/
+  (this->LocalNode) = ((this->LocalNode) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x7b2b7b*/
   this->LocalNetwork = 0; /*0x7b2b81*/
   if ( (a2 & 1) != 0 ) /*0x7b2b88*/
     __3_YAXPAX_Z(this); /*0x7b2b8b*/

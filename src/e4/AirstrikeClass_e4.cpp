@@ -309,14 +309,14 @@ AbstractClass * * AirstrikeClass::UpdateAll()
       }
       else
       {
-        LOBYTE(v4) = 0; /*0x420ee7*/
+        (v4) = ((v4) & ~0xFF) | ((0) & 0xFF); /*0x420ee7*/
       }
       LABEL_8:
       byte_88A118[v2++] = v4; /*0x420ef8*/
       if ( v2 >= 0x10000 ) /*0x420f05*/
         goto LABEL_9; /*0x420f05*/
     }
-    LOBYTE(v4) = -1; /*0x420ef3*/
+    (v4) = ((v4) & ~0xFF) | ((-1) & 0xFF); /*0x420ef3*/
     goto LABEL_8; /*0x420ef3*/
   }
   LABEL_9:

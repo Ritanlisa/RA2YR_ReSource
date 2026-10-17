@@ -452,7 +452,7 @@ LABEL_26:
   v16 = 0; /*0x41f80e*/
   v17 = *v15 == 0; /*0x41f810*/
   v18 = v15; /*0x41f812*/
-  LODWORD(v45) = 0; /*0x41f818*/
+  (v45) = ((v45) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x41f818*/
   if ( !v17 ) /*0x41f81c*/
   {
     do /*0x41f876*/
@@ -860,13 +860,13 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x42055c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x420562*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x420562*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x420568*/
       v4 = a3; /*0x42057e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x42057a*/
-    LOBYTE(this->q00C) = 1; /*0x420582*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x420582*/
     if ( !v4 ) /*0x420586*/
       return 0; /*0x4205fa*/
     if ( *&this->q004 ) /*0x420588*/
@@ -877,7 +877,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x42059c*/
         ++i; /*0x4205a1*/
-      if ( BYTE1(this->q00C) ) /*0x4205ae*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x4205ae*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x4205b9*/
         *&this->q004 = 0; /*0x4205c1*/

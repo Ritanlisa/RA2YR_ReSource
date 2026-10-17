@@ -172,7 +172,7 @@ int TacticalClass::FillScanlinesTransparent(int a2, int a3, int a4, int a5) {
         {
           memset32((void *)nextArrayIndex, 8323199, v17); /*0x41141c*/
           v16 = &v24[2 * v17]; /*0x411422*/
-          LOBYTE(v14) = v25; /*0x411425*/
+          (v14) = ((v14) & ~0xFF) | ((v25) & 0xFF); /*0x411425*/
         }
         if ( (v14 & 1) != 0 && v16 ) /*0x41142f*/
           *v16 = 127; /*0x411431*/
@@ -3277,12 +3277,12 @@ bool CellClass::DetermineTileType() {
     {
       v34 = this->smudgeTypeIndex; /*0x47cf12*/
       LOWORD(v66) = dword_89F6A0 + v34; /*0x47cf21*/
-      HIWORD(v66) = *(&dword_89F6A0 + 1) + HIWORD(v34); /*0x47cf37*/
+      HIWORD(v66) = *(&dword_89F6A0 + 1) + (((v34) >> 16) & 0xFFFF); /*0x47cf37*/
       *(unsigned int *)v80 = v66; /*0x47cf40*/
       v33 = *((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v80) + 284) == 0; /*0x47cf58*/
       v35 = this->smudgeTypeIndex; /*0x47cf5d*/
       LOWORD(v66) = dword_89F690 + v35; /*0x47cf7c*/
-      HIWORD(v66) = *(&dword_89F690 + 1) + HIWORD(v35); /*0x47cf81*/
+      HIWORD(v66) = *(&dword_89F690 + 1) + (((v35) >> 16) & 0xFFFF); /*0x47cf81*/
       *(unsigned int *)v80 = v66; /*0x47cf90*/
       if ( !*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v80) + 284) ) /*0x47cf99*/
         v33 |= 2u; /*0x47cfa3*/
@@ -3298,13 +3298,13 @@ bool CellClass::DetermineTileType() {
     {
       v37 = this->smudgeTypeIndex; /*0x47cfc8*/
       LOWORD(v67) = LOWORD(dword_89F688[0]) + v37; /*0x47cfe7*/
-      HIWORD(v67) = HIWORD(dword_89F688[0]) + HIWORD(v37); /*0x47cfec*/
+      HIWORD(v67) = HIWORD(dword_89F688[0]) + (((v37) >> 16) & 0xFFFF); /*0x47cfec*/
       *(unsigned int *)v80 = v67; /*0x47cffb*/
       if ( !*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v80) + 284) ) /*0x47d004*/
         v33 |= 1u; /*0x47d00e*/
       v38 = this->smudgeTypeIndex; /*0x47d011*/
       LOWORD(v68) = v38 + dword_89F698; /*0x47d026*/
-      HIWORD(v68) = HIWORD(v38) + *(&dword_89F698 + 1); /*0x47d035*/
+      HIWORD(v68) = (((v38) >> 16) & 0xFFFF) + *(&dword_89F698 + 1); /*0x47d035*/
       *(unsigned int *)v80 = v68; /*0x47d03e*/
       if ( !*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v80) + 284) ) /*0x47d04c*/
         v33 |= 2u; /*0x47d056*/
@@ -3315,13 +3315,13 @@ bool CellClass::DetermineTileType() {
     {
       v39 = this->smudgeTypeIndex; /*0x47d071*/
       LOWORD(v69) = dword_89F690 + v39; /*0x47d090*/
-      HIWORD(v69) = *(&dword_89F690 + 1) + HIWORD(v39); /*0x47d095*/
+      HIWORD(v69) = *(&dword_89F690 + 1) + (((v39) >> 16) & 0xFFFF); /*0x47d095*/
       *(unsigned int *)v80 = v69; /*0x47d0a4*/
       if ( !*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v80) + 284) ) /*0x47d0ad*/
         v33 |= 1u; /*0x47d0b7*/
       v40 = this->smudgeTypeIndex; /*0x47d0ba*/
       LOWORD(v70) = dword_89F6A0 + v40; /*0x47d0c9*/
-      HIWORD(v70) = *(&dword_89F6A0 + 1) + HIWORD(v40); /*0x47d0df*/
+      HIWORD(v70) = *(&dword_89F6A0 + 1) + (((v40) >> 16) & 0xFFFF); /*0x47d0df*/
       *(unsigned int *)v80 = v70; /*0x47d0e8*/
       if ( !*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v80) + 284) ) /*0x47d0f6*/
         v33 |= 2u; /*0x47d100*/
@@ -3332,13 +3332,13 @@ bool CellClass::DetermineTileType() {
     {
       v41 = this->smudgeTypeIndex; /*0x47d11b*/
       LOWORD(v71) = v41 + dword_89F698; /*0x47d136*/
-      HIWORD(v71) = HIWORD(v41) + *(&dword_89F698 + 1); /*0x47d13f*/
+      HIWORD(v71) = (((v41) >> 16) & 0xFFFF) + *(&dword_89F698 + 1); /*0x47d13f*/
       *(unsigned int *)v80 = v71; /*0x47d14e*/
       if ( !*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v80) + 284) ) /*0x47d157*/
         v33 |= 1u; /*0x47d161*/
       v42 = this->smudgeTypeIndex; /*0x47d164*/
       LOWORD(v72) = LOWORD(dword_89F688[0]) + v42; /*0x47d173*/
-      HIWORD(v72) = HIWORD(dword_89F688[0]) + HIWORD(v42); /*0x47d189*/
+      HIWORD(v72) = HIWORD(dword_89F688[0]) + (((v42) >> 16) & 0xFFFF); /*0x47d189*/
       *(unsigned int *)v80 = v72; /*0x47d192*/
       if ( !*((unsigned char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v80) + 284) ) /*0x47d1a0*/
         v33 |= 2u; /*0x47d1aa*/
@@ -4352,7 +4352,7 @@ int CellClass::CreateFoggedObjects() {
   int i; // [esp+18h] [ebp-8h]
   unsigned char v12[4]; // [esp+1Ch] [ebp-4h] BYREF
 
-  LOBYTE(v1) = (unsigned char)dword_A8B230; /*0x486a70*/
+  (v1) = ((v1) & ~0xFF) | (((unsigned char)dword_A8B230) & 0xFF); /*0x486a70*/
   if ( ((int)dword_A8B230->vfptr & 0x1000) != 0 ) /*0x486a7d*/
   {
     v2 = 1; /*0x486a89*/
@@ -7734,7 +7734,7 @@ int TacticalClass::HandlePlayerAction(void* a1, int a2, void* a3, int a4, int a5
 
   HIWORD(v6) = HIWORD(a1); /*0x4aae94*/
   v56 = 0; /*0x4aaea1*/
-  LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4aaeab*/
+  (this->DisplayClass_field_0x11D0) = ((this->DisplayClass_field_0x11D0) & ~0xFF) | ((0) & 0xFF); /*0x4aaeab*/
   if ( a3 ) /*0x4aaeb2*/
   {
     v56 = a3; /*0x4aaeb8*/
@@ -8244,7 +8244,7 @@ int CellClass::ProcessVisibility(void* a1) {
     v15 = v5; /*0x4acc78*/
     flags = v5->flags; /*0x4acc7c*/
     v16 = (flags & 3) != 0; /*0x4acc86*/
-    LOBYTE(flags) = flags & 0xFC; /*0x4acc8b*/
+    (flags) = ((flags) & ~0xFF) | ((flags & 0xFC) & 0xFF); /*0x4acc8b*/
     v5->foggedness[0] = -2; /*0x4acc8d*/
     v5->flags = flags; /*0x4acc94*/
     if ( (v5->copyFlags & 8) != 0 ) /*0x4acca2*/
@@ -8401,7 +8401,7 @@ void ScenarioClass::LoadMapData(void* a1) {
   {
     abstractFlags = dword_A8B230[14].abstractFlags; /*0x4ad0f2*/
     LOWORD(j) = (*&this->q0F4 + *&this->q0F8) / 2; /*0x4ad0fa*/
-    HIWORD(j) = j; /*0x4ad0ff*/
+    (j) = ((j) & ~(0xFFFF << 16)) | (((j) & 0xFFFF) << 16); /*0x4ad0ff*/
     ScenarioClass::Set_Waypoint((char *)dword_A8B230, abstractFlags, j); /*0x4ad10a*/
   }
   if ( LOBYTE(dword_A8B230[204].vfptr) ) /*0x4ad115*/
@@ -9019,11 +9019,11 @@ int INIClass::ClearSection(int a1, void* a2) {
         this->u32_F = v8; /*0x52583a*/
       }
       while ( v8 ); /*0x52583d*/
-      LOBYTE(result) = 1; /*0x525842*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x525842*/
       return result; /*0x525848*/
     }
 LABEL_27:
-    LOBYTE(result) = 1; /*0x5259f7*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5259f7*/
     return result; /*0x5259fa*/
   }
   memset(v23, 0, sizeof(v23)); /*0x525852*/
@@ -9082,7 +9082,7 @@ LABEL_27:
     }
   }
   result = (*(int (**)(unsigned __int8 **, int))*v13)(v13, 1); /*0x5259ab*/
-  LOBYTE(result) = 1; /*0x5259b0*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5259b0*/
   return result; /*0x52583f*/
 
 }
@@ -11878,12 +11878,12 @@ LABEL_30:
     case 0: /*0x529787*/
     case 22: /*0x529787*/
     case 30: /*0x529787*/
-      LOBYTE(result) = 0; /*0x52979d*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x52979d*/
       break; /*0x52979d*/
     case 1: /*0x529787*/
     case 36: /*0x529787*/
     case 41: /*0x529787*/
-      LOBYTE(result) = 1; /*0x529791*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x529791*/
       break; /*0x529797*/
     default:
       goto LABEL_28;
@@ -12552,7 +12552,7 @@ int CellClass::GetTerrainFlag(int a2) {
     if ( v5 ) /*0x547213*/
       return (v5[9] >> 2) & 1; /*0x54721b*/
   }
-  LOBYTE(result) = 0; /*0x547221*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x547221*/
   return result; /*0x54721e*/
 
 }
@@ -13547,8 +13547,8 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
         v148[0] = (__int16)v50; /*0x566364*/
         do /*0x56642c*/
         {
-          LOWORD(v149) = v53; /*0x56636c*/
-          HIWORD(v149) = v50; /*0x566374*/
+          (v149) = ((v149) & ~0xFFFF) | ((v53) & 0xFFFF); /*0x56636c*/
+          (v149) = ((v149) & ~(0xFFFF << 16)) | (((v50) & 0xFFFF) << 16); /*0x566374*/
           v54 = (__int16)v53 + v148[0]; /*0x566379*/
           v55 = this->MapClass_field_0xF4; /*0x56637c*/
           if ( v54 > v55 /*0x5663ad*/
@@ -13597,12 +13597,12 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
   v63 = a1[1]; /*0x5664b1*/
   v64 = *a1; /*0x5664b4*/
   v148[0] = v62; /*0x5664b6*/
-  LOWORD(v155) = v62 - v161; /*0x5664bc*/
-  LOWORD(v149) = v64 + v63; /*0x5664cc*/
-  HIWORD(v149) = v63 - v64; /*0x5664d1*/
-  HIWORD(v155) = HIWORD(v62) - HIWORD(v161); /*0x5664da*/
+  (v155) = ((v155) & ~0xFFFF) | ((v62 - v161) & 0xFFFF); /*0x5664bc*/
+  (v149) = ((v149) & ~0xFFFF) | ((v64 + v63) & 0xFFFF); /*0x5664cc*/
+  (v149) = ((v149) & ~(0xFFFF << 16)) | (((v63 - v64) & 0xFFFF) << 16); /*0x5664d1*/
+  (v155) = ((v155) & ~(0xFFFF << 16)) | ((((((v62) >> 16) & 0xFFFF) - (((v161) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x5664da*/
   LOWORD(a2) = v62 - v161 - (v64 + v63); /*0x5664e9*/
-  HIWORD(a2) = HIWORD(v62) - HIWORD(v161) - (v63 - v64); /*0x5664f4*/
+  HIWORD(a2) = (((v62) >> 16) & 0xFFFF) - (((v161) >> 16) & 0xFFFF) - (v63 - v64); /*0x5664f4*/
   *(unsigned int *)v152 = a2; /*0x566503*/
   if ( smudgeTypeIndex > 0 ) /*0x566507*/
   {
@@ -13612,9 +13612,9 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
     {
       v161 = *v65; /*0x566523*/
       LOWORD(a2) = v161 + v152[0]; /*0x56652f*/
-      HIWORD(a2) = v152[1] + HIWORD(v161); /*0x566534*/
+      HIWORD(a2) = v152[1] + (((v161) >> 16) & 0xFFFF); /*0x566534*/
       v66 = (char *)(v65 - 9); /*0x566539*/
-      v67 = (__int16)(v161 + v152[0]) + ((__int16)(v152[1] + HIWORD(v161)) << 9); /*0x566545*/
+      v67 = (__int16)(v161 + v152[0]) + ((__int16)(v152[1] + (((v161) >> 16) & 0xFFFF)) << 9); /*0x566545*/
       if ( v67 < 0x40000 && (v68 = *(CellClass **)(this->CellClass_field_13C + 4 * v67)) != 0 ) /*0x56655b*/
       {
         v69 = v68; /*0x56655d*/
@@ -13780,12 +13780,12 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
     a2 = v103; /*0x566b05*/
     v105 = a1[1]; /*0x566b09*/
     v158 = v103; /*0x566b0c*/
-    if ( (__int16)v103 + SHIWORD(v103) < v104 - 2 * v105 + 1 /*0x566b77*/
-      || SHIWORD(v103) - (__int16)v103 > v104 + 2 * *a1 - 1
-      || (__int16)v103 + SHIWORD(v103) > v104 + 2 * (i + *(unsigned int *)this->radSite - v105 - dword_87F8E0)
-      || (__int16)v103 - SHIWORD(v103) > v104 + 2 * (MapClass_field_0xF4 - *a1 - dword_87F8DC) - 1 )
+    if ( (__int16)v103 + (short)(((v103) >> 16) & 0xFFFF) < v104 - 2 * v105 + 1 /*0x566b77*/
+      || (short)(((v103) >> 16) & 0xFFFF) - (__int16)v103 > v104 + 2 * *a1 - 1
+      || (__int16)v103 + (short)(((v103) >> 16) & 0xFFFF) > v104 + 2 * (i + *(unsigned int *)this->radSite - v105 - dword_87F8E0)
+      || (__int16)v103 - (short)(((v103) >> 16) & 0xFFFF) > v104 + 2 * (MapClass_field_0xF4 - *a1 - dword_87F8DC) - 1 )
     {
-      v106 = (__int16)v103 + (SHIWORD(v103) << 9); /*0x566b86*/
+      v106 = (__int16)v103 + ((short)(((v103) >> 16) & 0xFFFF) << 9); /*0x566b86*/
       v107 = *(unsigned int *)(this->CellClass_field_13C + 4 * v106); /*0x566b88*/
       if ( v107 ) /*0x566b8d*/
         (*(void (**)(int, int))(*(unsigned int *)v107 + 32))(v107, 1); /*0x566b93*/
@@ -14589,12 +14589,12 @@ int CellClass::RecursiveTileUpdate(void* a1, int a2, void* a3) {
   v9 = (unsigned short *)(4 * v7 + 9041544); /*0x570b41*/
   v61 = v9; /*0x570b4b*/
   LOWORD(v54) = smudgeTypeIndex + v8; /*0x570b53*/
-  HIWORD(v54) = HIWORD(smudgeTypeIndex) + v9[1]; /*0x570b5d*/
+  HIWORD(v54) = (((smudgeTypeIndex) >> 16) & 0xFFFF) + v9[1]; /*0x570b5d*/
   while ( 1 ) /*0x570b65*/
   {
     v10 = *v9; /*0x570b65*/
     smudgeTypeIndex = v6->smudgeTypeIndex; /*0x570b68*/
-    v11 = v9[1] + HIWORD(smudgeTypeIndex); /*0x570b71*/
+    v11 = v9[1] + (((smudgeTypeIndex) >> 16) & 0xFFFF); /*0x570b71*/
     v12 = smudgeTypeIndex + v10; /*0x570b75*/
     v13 = v11 << 9; /*0x570b7e*/
     v14 = v12 + v13 < 0; /*0x570b81*/
@@ -14725,14 +14725,14 @@ LABEL_33:
   }
   v35 = 0; /*0x570e7a*/
   result = v52; /*0x570e86*/
-  LOWORD(v36) = -1; /*0x570e8a*/
+  (v36) = ((v36) & ~0xFFFF) | ((-1) & 0xFFFF); /*0x570e8a*/
   v37 = 0; /*0x570e8e*/
   v56 = -1; /*0x570e90*/
   smudgeTypeIndex = 0; /*0x570e96*/
   if ( v52 <= 0 ) /*0x570e9e*/
   {
 LABEL_85:
-    LOBYTE(result) = 0; /*0x571039*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x571039*/
   }
   else
   {
@@ -14745,7 +14745,7 @@ LABEL_85:
         v36 = v20->smudgeTypeIndex; /*0x570ebb*/
         v56 = v36; /*0x570ebe*/
       }
-      if ( (flags & 0x80) == 0 && !v35 && ((unsigned short)v36 != 0xFFFF || HIWORD(v56) != 0xFFFF) ) /*0x570edb*/
+      if ( (flags & 0x80) == 0 && !v35 && ((unsigned short)v36 != 0xFFFF || (((v56) >> 16) & 0xFFFF) != 0xFFFF) ) /*0x570edb*/
         break; /*0x570edb*/
       v35 = (flags & 0x80) == 0; /*0x570ee8*/
       if ( (flags & 0x80) == 0 && !v37 ) /*0x570eef*/
@@ -14755,8 +14755,8 @@ LABEL_85:
       }
       v50 = v20->smudgeTypeIndex; /*0x570f10*/
       LOWORD(v55) = *v61 + v50; /*0x570f23*/
-      HIWORD(v55) = HIWORD(v50) + v61[1]; /*0x570f2b*/
-      v40 = (__int16)v55 + (SHIWORD(v55) << 9); /*0x570f36*/
+      HIWORD(v55) = (((v50) >> 16) & 0xFFFF) + v61[1]; /*0x570f2b*/
+      v40 = (__int16)v55 + ((short)(((v55) >> 16) & 0xFFFF) << 9); /*0x570f36*/
       if ( v40 < 0x40000 && (v41 = *(CellClass **)(dword_87F924 + 4 * v40)) != 0 ) /*0x570f4c*/
       {
         v51 = v41; /*0x570f4e*/
@@ -14797,7 +14797,7 @@ LABEL_85:
     *&v48->u32_44 = -1; /*0x571008*/
     BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v48->smudgeTypeIndex); /*0x571014*/
     result = CellClass::RecursiveTileUpdate(v60, a1, a2, a3); /*0x571028*/
-    LOBYTE(result) = 1; /*0x571030*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x571030*/
   }
   return result; /*0x571033*/
 
@@ -14887,7 +14887,7 @@ int CellClass::ProcessTileChange(int a1) {
     else
     {
       smudgeTypeIndex = v10->smudgeTypeIndex; /*0x571113*/
-      v38 = HIWORD(smudgeTypeIndex); /*0x57111a*/
+      v38 = (((smudgeTypeIndex) >> 16) & 0xFFFF); /*0x57111a*/
       v39 = 0; /*0x571121*/
       v42 = (flags & 0x800) != 0 ? 4 : 2;
       while ( 1 ) /*0x57113d*/
@@ -14907,7 +14907,7 @@ int CellClass::ProcessTileChange(int a1) {
         }
         if ( (v17->flags & 0x400) == 0 ) /*0x571192*/
           break; /*0x571192*/
-        LOBYTE(flags) = ++v39; /*0x571198*/
+        (flags) = ((flags) & ~0xFF) | ((++v39) & 0xFF); /*0x571198*/
         if ( v39 >= 4 ) /*0x5711a0*/
           return flags; /*0x5711a0*/
       }
@@ -15003,7 +15003,7 @@ LABEL_64:
           }
         }
         v32 = v26 & 7; /*0x57135e*/
-        LOWORD(flags) = dword_89F688[v32]; /*0x571361*/
+        (flags) = ((flags) & ~0xFFFF) | ((dword_89F688[v32]) & 0xFFFF); /*0x571361*/
         v33 = HIWORD(a1) + HIWORD(dword_89F688[v32]); /*0x571371*/
         occupationFlags = v2->occupationFlags; /*0x57137d*/
         LOWORD(v41) = v24 + flags; /*0x571386*/
@@ -15298,8 +15298,8 @@ LABEL_168:
         v12 = *v14; /*0x5715dc*/
         v3 = *(unsigned int *)&g_Shroud_CellArray; /*0x5715de*/
         *(unsigned int *)v122 = v12; /*0x5715e4*/
-        v15 = HIWORD(v12); /*0x5715e8*/
-        v16 = (__int16)v12 + (SHIWORD(v12) << 9); /*0x5715f5*/
+        v15 = (((v12) >> 16) & 0xFFFF); /*0x5715e8*/
+        v16 = (__int16)v12 + ((short)(((v12) >> 16) & 0xFFFF) << 9); /*0x5715f5*/
         if ( v16 < 0x40000 && (v17 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v16)) != 0 ) /*0x571605*/
         {
           v18 = v17; /*0x571607*/
@@ -15522,8 +15522,8 @@ LABEL_82:
       v55 = *v57; /*0x571b0f*/
       v3 = *(unsigned int *)&g_Shroud_CellArray; /*0x571b11*/
       *(unsigned int *)v122 = v55; /*0x571b17*/
-      v58 = HIWORD(v55); /*0x571b1b*/
-      v59 = (__int16)v55 + (SHIWORD(v55) << 9); /*0x571b28*/
+      v58 = (((v55) >> 16) & 0xFFFF); /*0x571b1b*/
+      v59 = (__int16)v55 + ((short)(((v55) >> 16) & 0xFFFF) << 9); /*0x571b28*/
       if ( v59 < 0x40000 && (v60 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v59)) != 0 ) /*0x571b38*/
       {
         v61 = v60; /*0x571b3a*/
@@ -15598,9 +15598,9 @@ LABEL_82:
     }
     CellClass::UpdateAnimations(v77); /*0x571c8f*/
     v114 = v64->u32_24; /*0x571c97*/
-    HIWORD(jj) = HIWORD(v114); /*0x571ca3*/
+    HIWORD(jj) = (((v114) >> 16) & 0xFFFF); /*0x571ca3*/
     LOWORD(jj) = v114 - 1; /*0x571ca8*/
-    v78 = (__int16)(v114 - 1) + (SHIWORD(v114) << 9); /*0x571cb6*/
+    v78 = (__int16)(v114 - 1) + ((short)(((v114) >> 16) & 0xFFFF) << 9); /*0x571cb6*/
     if ( v78 >= 0x40000 || (v79 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v78)) == 0 ) /*0x571ccc*/
     {
       g_MissionQueueFrame.briefing[139] = (int)jj; /*0x571cd2*/
@@ -15923,7 +15923,7 @@ int CellClass::ApplyCliffMod2(void* a1) {
         smudgeTypeIndex = v18->smudgeTypeIndex; /*0x575354*/
         v44 = 0; /*0x575357*/
         v42 = ((__int16)smudgeTypeIndex << 8) + 128; /*0x575382*/
-        v43 = (SHIWORD(smudgeTypeIndex) << 8) + 128; /*0x575386*/
+        v43 = ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 8) + 128; /*0x575386*/
         v44 = dword_ABDE88 * v18->level[0]; /*0x57539f*/
         v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x5753a9*/
         LOWORD(v21) = Math::RoundToInt(((double)v20 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v42); /*0x5753cc*/
@@ -16094,7 +16094,7 @@ int CellClass::ApplyCliffMod(void* a1) {
         smudgeTypeIndex = v18->smudgeTypeIndex; /*0x575676*/
         v44 = 0; /*0x575679*/
         v42 = ((__int16)smudgeTypeIndex << 8) + 128; /*0x5756a4*/
-        v43 = (SHIWORD(smudgeTypeIndex) << 8) + 128; /*0x5756a8*/
+        v43 = ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 8) + 128; /*0x5756a8*/
         v44 = dword_ABDE88 * v18->level[0]; /*0x5756c1*/
         v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x5756cb*/
         LOWORD(v21) = Math::RoundToInt(((double)v20 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v42); /*0x5756ee*/
@@ -16266,7 +16266,7 @@ int CellClass::ApplyTerrainMod2(void* a1) {
         smudgeTypeIndex = v18->smudgeTypeIndex; /*0x5759af*/
         v44 = 0; /*0x5759b2*/
         v42 = ((__int16)smudgeTypeIndex << 8) + 128; /*0x5759dd*/
-        v43 = (SHIWORD(smudgeTypeIndex) << 8) + 128; /*0x5759e1*/
+        v43 = ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 8) + 128; /*0x5759e1*/
         v44 = dword_ABDE88 * v18->level[0]; /*0x5759fa*/
         v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x575a04*/
         LOWORD(v21) = Math::RoundToInt(((double)v20 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v42); /*0x575a27*/
@@ -16437,7 +16437,7 @@ int CellClass::ApplyTerrainMod(void* a1) {
         smudgeTypeIndex = v18->smudgeTypeIndex; /*0x575ce1*/
         v44 = 0; /*0x575ce4*/
         v42 = ((__int16)smudgeTypeIndex << 8) + 128; /*0x575d0f*/
-        v43 = (SHIWORD(smudgeTypeIndex) << 8) + 128; /*0x575d13*/
+        v43 = ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 8) + 128; /*0x575d13*/
         v44 = dword_ABDE88 * v18->level[0]; /*0x575d2c*/
         v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x575d36*/
         LOWORD(v21) = Math::RoundToInt(((double)v20 * 4.656612877414201e-10 - 0.5) * 50.0 + (double)v42); /*0x575d59*/
@@ -16584,12 +16584,12 @@ int CellClass::RecursiveCraterUpdate(void* a1, int a2, void* a3) {
   v9 = (unsigned short *)(4 * v7 + 9041544); /*0x576261*/
   v61 = v9; /*0x57626b*/
   LOWORD(v54) = smudgeTypeIndex + v8; /*0x576273*/
-  HIWORD(v54) = HIWORD(smudgeTypeIndex) + v9[1]; /*0x57627d*/
+  HIWORD(v54) = (((smudgeTypeIndex) >> 16) & 0xFFFF) + v9[1]; /*0x57627d*/
   while ( 1 ) /*0x576285*/
   {
     v10 = *v9; /*0x576285*/
     smudgeTypeIndex = v6->smudgeTypeIndex; /*0x576288*/
-    v11 = v9[1] + HIWORD(smudgeTypeIndex); /*0x576291*/
+    v11 = v9[1] + (((smudgeTypeIndex) >> 16) & 0xFFFF); /*0x576291*/
     v12 = smudgeTypeIndex + v10; /*0x576295*/
     v13 = v11 << 9; /*0x57629e*/
     v14 = v12 + v13 < 0; /*0x5762a1*/
@@ -16720,14 +16720,14 @@ LABEL_33:
   }
   v35 = 0; /*0x57659a*/
   result = v52; /*0x5765a6*/
-  LOWORD(v36) = -1; /*0x5765aa*/
+  (v36) = ((v36) & ~0xFFFF) | ((-1) & 0xFFFF); /*0x5765aa*/
   v37 = 0; /*0x5765ae*/
   v56 = -1; /*0x5765b0*/
   smudgeTypeIndex = 0; /*0x5765b6*/
   if ( v52 <= 0 ) /*0x5765be*/
   {
 LABEL_85:
-    LOBYTE(result) = 0; /*0x576759*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x576759*/
   }
   else
   {
@@ -16740,7 +16740,7 @@ LABEL_85:
         v36 = v20->smudgeTypeIndex; /*0x5765db*/
         v56 = v36; /*0x5765de*/
       }
-      if ( (flags & 0x80) == 0 && !v35 && ((unsigned short)v36 != 0xFFFF || HIWORD(v56) != 0xFFFF) ) /*0x5765fb*/
+      if ( (flags & 0x80) == 0 && !v35 && ((unsigned short)v36 != 0xFFFF || (((v56) >> 16) & 0xFFFF) != 0xFFFF) ) /*0x5765fb*/
         break; /*0x5765fb*/
       v35 = (flags & 0x80) == 0; /*0x576608*/
       if ( (flags & 0x80) == 0 && !v37 ) /*0x57660f*/
@@ -16750,8 +16750,8 @@ LABEL_85:
       }
       v50 = v20->smudgeTypeIndex; /*0x576630*/
       LOWORD(v55) = *v61 + v50; /*0x576643*/
-      HIWORD(v55) = HIWORD(v50) + v61[1]; /*0x57664b*/
-      v40 = (__int16)v55 + (SHIWORD(v55) << 9); /*0x576656*/
+      HIWORD(v55) = (((v50) >> 16) & 0xFFFF) + v61[1]; /*0x57664b*/
+      v40 = (__int16)v55 + ((short)(((v55) >> 16) & 0xFFFF) << 9); /*0x576656*/
       if ( v40 < 0x40000 && (v41 = *(CellClass **)(dword_87F924 + 4 * v40)) != 0 ) /*0x57666c*/
       {
         v51 = v41; /*0x57666e*/
@@ -16792,7 +16792,7 @@ LABEL_85:
     *&v48->u32_44 = -1; /*0x576728*/
     BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v48->smudgeTypeIndex); /*0x576734*/
     result = CellClass::RecursiveCraterUpdate(v60, a1, a2, a3); /*0x576748*/
-    LOBYTE(result) = 1; /*0x576750*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x576750*/
   }
   return result; /*0x576753*/
 
@@ -17060,7 +17060,7 @@ LABEL_163:
               v13 = CellStruct::Add((CellStruct *)v106, v107, &dword_89F6A0); /*0x576cbf*/
             v11 = *v13; /*0x576cc4*/
             *(unsigned int *)v106 = v11; /*0x576cc6*/
-            v14 = (__int16)v11 + (SHIWORD(v11) << 9); /*0x576cd5*/
+            v14 = (__int16)v11 + ((short)(((v11) >> 16) & 0xFFFF) << 9); /*0x576cd5*/
             if ( v14 < 0x40000 && (v15 = *(CellClass **)(dword_87F924 + 4 * v14)) != 0 ) /*0x576ceb*/
             {
               v16 = v15; /*0x576ced*/
@@ -17199,11 +17199,11 @@ LABEL_163:
           CellClass::UpdateVariant6(&jj, 0); /*0x576ff3*/
           flags = v19->smudgeTypeIndex; /*0x577001*/
           LOWORD(jj) = LOWORD(dword_89F688[0]) + flags; /*0x577017*/
-          HIWORD(jj) = HIWORD(dword_89F688[0]) + HIWORD(flags); /*0x57701c*/
+          HIWORD(jj) = HIWORD(dword_89F688[0]) + (((flags) >> 16) & 0xFFFF); /*0x57701c*/
           Terrain::CreateCrater((Terrain *)this, (int)&jj); /*0x57702c*/
           flags = v19->smudgeTypeIndex; /*0x57703a*/
           LOWORD(jj) = dword_89F698 + flags; /*0x57704c*/
-          HIWORD(jj) = *(&dword_89F698 + 1) + HIWORD(flags); /*0x577055*/
+          HIWORD(jj) = *(&dword_89F698 + 1) + (((flags) >> 16) & 0xFFFF); /*0x577055*/
           Terrain::CreateCrater((Terrain *)this, (int)&jj); /*0x577065*/
           if ( MapClass::ClearRegions((MapClass *)this, v108) ) /*0x577071*/
             Terrain::ConnectivityGraph((Terrain *)this); /*0x57707c*/
@@ -17279,7 +17279,7 @@ LABEL_78:
           v53 = CellStruct::Add((CellStruct *)v107, v108, dword_89F688); /*0x5771ef*/
         v51 = *v53; /*0x5771f4*/
         *(unsigned int *)v107 = v51; /*0x5771f6*/
-        v54 = (__int16)v51 + (SHIWORD(v51) << 9); /*0x577205*/
+        v54 = (__int16)v51 + ((short)(((v51) >> 16) & 0xFFFF) << 9); /*0x577205*/
         if ( v54 < 0x40000 && (v55 = *(CellClass **)(dword_87F924 + 4 * v54)) != 0 ) /*0x57721b*/
         {
           v56 = v55; /*0x57721d*/
@@ -17350,9 +17350,9 @@ LABEL_78:
         }
         CellClass::UpdateAnimations(v70); /*0x577375*/
         flags = v59->smudgeTypeIndex; /*0x57737d*/
-        HIWORD(jj) = HIWORD(flags); /*0x577389*/
+        HIWORD(jj) = (((flags) >> 16) & 0xFFFF); /*0x577389*/
         LOWORD(jj) = flags - 1; /*0x57738e*/
-        v71 = (__int16)(flags - 1) + (SHIWORD(flags) << 9); /*0x57739c*/
+        v71 = (__int16)(flags - 1) + ((short)(((flags) >> 16) & 0xFFFF) << 9); /*0x57739c*/
         if ( v71 >= 0x40000 || (v72 = *(CellClass **)(dword_87F924 + 4 * v71)) == 0 ) /*0x5773b2*/
         {
           dword_ABDC74 = (int)jj; /*0x5773b8*/
@@ -17601,7 +17601,7 @@ int CellClass::ApplyTileModification(void* a1) {
     g_MissionQueueFrame.briefing[139] = v11; /*0x57bdb6*/
   }
   v56 = v4->ambientSoundController[2]; /*0x57bdc6*/
-  LOBYTE(v63) = 0; /*0x57bdca*/
+  (v63) = ((v63) & ~0xFF) | ((0) & 0xFF); /*0x57bdca*/
   v57 = 0; /*0x57bdcf*/
   PlacementRect = BuildingClass::GetPlacementRect(v4, &v73); /*0x57bde0*/
   StartCoords = House::GetStartCoords((House *)v4, &rcSrc2); /*0x57bde2*/
@@ -17699,7 +17699,7 @@ int CellClass::ApplyTileModification(void* a1) {
     BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v4->occupant); /*0x57c020*/
     LOWORD(v54) = *a1 - 1; /*0x57c032*/
     HIWORD(v54) = a1[1]; /*0x57c03b*/
-    LOBYTE(v63) = 1; /*0x57c047*/
+    (v63) = ((v63) & ~0xFF) | ((1) & 0xFF); /*0x57c047*/
     v56 = v54; /*0x57c04c*/
     CreateCliffRampMap((__int16 *)&v56); /*0x57c050*/
     HIWORD(v54) = a1[1]; /*0x57c05e*/
@@ -17894,7 +17894,7 @@ int CellClass::ApplyTileModification2(void* a1) {
   v5 = *a1 - 1; /*0x57c300*/
   HIWORD(v55) = a1[1]; /*0x57c302*/
   LOWORD(v55) = v5; /*0x57c30a*/
-  v6 = v5 + (SHIWORD(v55) << 9); /*0x57c315*/
+  v6 = v5 + ((short)(((v55) >> 16) & 0xFFFF) << 9); /*0x57c315*/
   if ( v6 < 0x40000 && (v7 = *(unsigned int *)(*(unsigned int *)&g_Shroud_CellArray + 4 * v6)) != 0 ) /*0x57c325*/
   {
     v56 = v7; /*0x57c327*/
@@ -17907,7 +17907,7 @@ int CellClass::ApplyTileModification2(void* a1) {
   v8 = *a1 + 1; /*0x57c341*/
   HIWORD(v55) = a1[1]; /*0x57c343*/
   LOWORD(v55) = v8; /*0x57c34b*/
-  v9 = v8 + (SHIWORD(v55) << 9); /*0x57c356*/
+  v9 = v8 + ((short)(((v55) >> 16) & 0xFFFF) << 9); /*0x57c356*/
   if ( v9 < 0x40000 && (v10 = *(unsigned int *)(*(unsigned int *)&g_Shroud_CellArray + 4 * v9)) != 0 ) /*0x57c366*/
   {
     v55 = v10; /*0x57c368*/
@@ -17919,7 +17919,7 @@ int CellClass::ApplyTileModification2(void* a1) {
     g_MissionQueueFrame.briefing[139] = v11; /*0x57c376*/
   }
   v53 = v4->ambientSoundController[2]; /*0x57c386*/
-  LOBYTE(v60) = 0; /*0x57c38a*/
+  (v60) = ((v60) & ~0xFF) | ((0) & 0xFF); /*0x57c38a*/
   v54 = 0; /*0x57c38f*/
   PlacementRect = BuildingClass::GetPlacementRect(v4, &v70); /*0x57c3a0*/
   StartCoords = House::GetStartCoords((House *)v4, &rcSrc2); /*0x57c3a2*/
@@ -18012,7 +18012,7 @@ int CellClass::ApplyTileModification2(void* a1) {
     BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, v30 + 36); /*0x57c5d2*/
     BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v4->occupant); /*0x57c5e0*/
     v51 = *(unsigned int *)a1 - 0x10000; /*0x57c5fb*/
-    LOBYTE(v60) = 1; /*0x57c607*/
+    (v60) = ((v60) & ~0xFF) | ((1) & 0xFF); /*0x57c607*/
     v53 = v51; /*0x57c60c*/
     CreateCliffStraightMap((__int16 *)&v53); /*0x57c610*/
     v53 = *(unsigned int *)a1 + 0x10000; /*0x57c630*/
@@ -18229,7 +18229,7 @@ int CellClass::ApplyTileModification3(void* a1) {
     g_MissionQueueFrame.briefing[139] = v11; /*0x57d026*/
   }
   v56 = v4->ambientSoundController[2]; /*0x57d036*/
-  LOBYTE(v63) = 0; /*0x57d03a*/
+  (v63) = ((v63) & ~0xFF) | ((0) & 0xFF); /*0x57d03a*/
   v57 = 0; /*0x57d03f*/
   PlacementRect = BuildingClass::GetPlacementRect(v4, &v73); /*0x57d050*/
   StartCoords = House::GetStartCoords((House *)v4, &rcSrc2); /*0x57d052*/
@@ -18327,7 +18327,7 @@ int CellClass::ApplyTileModification3(void* a1) {
     BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&v4->occupant); /*0x57d296*/
     LOWORD(v54) = *a1 - 1; /*0x57d2a8*/
     HIWORD(v54) = a1[1]; /*0x57d2b1*/
-    LOBYTE(v63) = 1; /*0x57d2bd*/
+    (v63) = ((v63) & ~0xFF) | ((1) & 0xFF); /*0x57d2bd*/
     v56 = v54; /*0x57d2c2*/
     CreateCliffBridgeMap((__int16 *)&v56); /*0x57d2c6*/
     HIWORD(v54) = a1[1]; /*0x57d2d4*/
@@ -18520,7 +18520,7 @@ int CellClass::ApplyTileModification4(void* a1) {
   v5 = *a1 - 1; /*0x57d580*/
   HIWORD(v54) = a1[1]; /*0x57d582*/
   LOWORD(v54) = v5; /*0x57d58a*/
-  v6 = v5 + (SHIWORD(v54) << 9); /*0x57d595*/
+  v6 = v5 + ((short)(((v54) >> 16) & 0xFFFF) << 9); /*0x57d595*/
   if ( v6 < 0x40000 && (v7 = *(unsigned int *)(*(unsigned int *)&g_Shroud_CellArray + 4 * v6)) != 0 ) /*0x57d5a5*/
   {
     v56 = v7; /*0x57d5a7*/
@@ -18533,7 +18533,7 @@ int CellClass::ApplyTileModification4(void* a1) {
   v8 = *a1 + 1; /*0x57d5c1*/
   HIWORD(v54) = a1[1]; /*0x57d5c3*/
   LOWORD(v54) = v8; /*0x57d5cb*/
-  v9 = v8 + (SHIWORD(v54) << 9); /*0x57d5d6*/
+  v9 = v8 + ((short)(((v54) >> 16) & 0xFFFF) << 9); /*0x57d5d6*/
   if ( v9 < 0x40000 && (v10 = *(unsigned int *)(*(unsigned int *)&g_Shroud_CellArray + 4 * v9)) != 0 ) /*0x57d5e6*/
   {
     v54 = v10; /*0x57d5e8*/
@@ -20263,7 +20263,7 @@ int RadarClass::RenderBlips(void* a1, int a2) {
   v6 = a1->vtable2; /*0x582d9b*/
   a2 = v5; /*0x582d9e*/
   *(unsigned int *)v57 = v6; /*0x582da2*/
-  v7 = (__int16)v5 + (SHIWORD(v5) << 9); /*0x582db1*/
+  v7 = (__int16)v5 + ((short)(((v5) >> 16) & 0xFFFF) << 9); /*0x582db1*/
   if ( v7 < 0x40000 && (v8 = *(Cell **)(dword_87F924 + 4 * v7)) != 0 ) /*0x582dc7*/
   {
     v9 = v8; /*0x582dc9*/
@@ -20298,7 +20298,7 @@ int RadarClass::RenderBlips(void* a1, int a2) {
     LOWORD(v59) = a2 + LOWORD(dword_89F688[v12]); /*0x582e49*/
     HIWORD(v59) = v13; /*0x582e4e*/
     a1 = v59; /*0x582e5c*/
-    v14 = (__int16)v11 + (SHIWORD(v11) << 9); /*0x582e66*/
+    v14 = (__int16)v11 + ((short)(((v11) >> 16) & 0xFFFF) << 9); /*0x582e66*/
     if ( v14 < 0x40000 && (v15 = *(InfantryClass **)(dword_87F924 + 4 * v14)) != 0 ) /*0x582e7c*/
     {
       v16 = v15; /*0x582e7e*/
@@ -20639,7 +20639,7 @@ int CellClass::SetTerrainType(void* a1) {
   if ( (flags & 0x80u) == 0 ) /*0x587238*/
   {
     smudgeTypeIndex = *(unsigned int *)(*(unsigned int *)&v6->__pad_28[4] + 36); /*0x58726a*/
-    v13 = (__int16)smudgeTypeIndex + (SHIWORD(smudgeTypeIndex) << 9); /*0x58727c*/
+    v13 = (__int16)smudgeTypeIndex + ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 9); /*0x58727c*/
     if ( v13 >= 0x40000 || (v10 = *(CellClass **)(dword_87F924 + 4 * v13)) == 0 ) /*0x587293*/
     {
 LABEL_18:
@@ -20652,7 +20652,7 @@ LABEL_18:
   else
   {
     smudgeTypeIndex = v6->smudgeTypeIndex; /*0x58723a*/
-    v12 = (__int16)smudgeTypeIndex + (SHIWORD(smudgeTypeIndex) << 9); /*0x58724c*/
+    v12 = (__int16)smudgeTypeIndex + ((short)(((smudgeTypeIndex) >> 16) & 0xFFFF) << 9); /*0x58724c*/
     if ( v12 >= 0x40000 ) /*0x58724e*/
       goto LABEL_18; /*0x58724e*/
     v10 = *(CellClass **)(dword_87F924 + 4 * v12); /*0x58725e*/
@@ -20711,7 +20711,7 @@ LABEL_42:
     TechnoClass::ApplySplashDamageToNeighbors(v20); /*0x5873cf*/
   }
   result = (*(int (**)(int *))(*v24 + 12))(v24); /*0x5873e5*/
-  LOBYTE(result) = v22; /*0x5873e8*/
+  (result) = ((result) & ~0xFF) | ((v22) & 0xFF); /*0x5873e8*/
   return result; /*0x5873ec*/
 
 }
@@ -21183,7 +21183,7 @@ int LayerClass::ClearFactoryCellAssignments() {
       v6 = *(unsigned int *)(v5 + 664); /*0x588b32*/
       v14 = v13 - *(unsigned __int8 *)(result + 287) % v6; /*0x588b47*/
       v7 = 0; /*0x588b4c*/
-      v15 = HIWORD(v13) - *(unsigned __int8 *)(result + 287) / v6; /*0x588b4e*/
+      v15 = (((v13) >> 16) & 0xFFFF) - *(unsigned __int8 *)(result + 287) / v6; /*0x588b4e*/
       if ( *(int *)(v5 + 668) > 0 ) /*0x588b5b*/
       {
         do /*0x588bc4*/
@@ -21711,8 +21711,8 @@ void* MixFileClass::FromFile(char *a1, int a2) {
   {
     v6 = (Src[1] & 2) != 0; /*0x5b3d09*/
     v5 = (Src[1] & 2) == 0; /*0x5b3d09*/
-    LOBYTE(this->FileSize) = Src[1] & 1; /*0x5b3d0b*/
-    BYTE1(this->FileSize) = v6; /*0x5b3d0e*/
+    (this->FileSize) = ((this->FileSize) & ~0xFF) | ((Src[1] & 1) & 0xFF); /*0x5b3d0b*/
+    (this->FileSize) = ((this->FileSize) & ~(0xFF << 8)) | (((v6) & 0xFF) << 8); /*0x5b3d0e*/
     if ( !v5 ) /*0x5b3d11*/
     {
       PKStrawClass::SetSource((int)&v27, a2); /*0x5b3d22*/
@@ -22103,7 +22103,7 @@ LABEL_6:
   if ( v7 >= 4 ) /*0x5cbdfc*/
   {
     v8 = this->q038; /*0x5cbe0a*/
-    LOWORD(v9) = dword_830084; /*0x5cbe0d*/
+    (v9) = ((v9) & ~0xFFFF) | ((dword_830084) & 0xFFFF); /*0x5cbe0d*/
   }
   else
   {
@@ -22491,7 +22491,7 @@ void ScenarioClass::DrawSHPFrameToSurface(int a2) {
 namespace gamemd { 
 bool ScenarioClass::updateTiberiumGrowth() {
 
-  return !LOBYTE(this->u32_C) || this->u32_40 >= 4u; /*0x5cc74f*/
+  return !((this->u32_C) & 0xFF) || this->u32_40 >= 4u; /*0x5cc74f*/
 
 }
 }
@@ -22793,7 +22793,7 @@ LABEL_6:
   if ( v7 >= 4 ) /*0x5cbdfc*/
   {
     v8 = this->q038; /*0x5cbe0a*/
-    LOWORD(v9) = dword_830084; /*0x5cbe0d*/
+    (v9) = ((v9) & ~0xFFFF) | ((dword_830084) & 0xFFFF); /*0x5cbe0d*/
   }
   else
   {
@@ -23181,7 +23181,7 @@ void ScenarioClass::DrawSHPFrameToSurface(int a2) {
 namespace gamemd { 
 bool ScenarioClass::updateTiberiumGrowth() {
 
-  return !LOBYTE(this->u32_C) || this->u32_40 >= 4u; /*0x5cc74f*/
+  return !((this->u32_C) & 0xFF) || this->u32_40 >= 4u; /*0x5cc74f*/
 
 }
 }
@@ -25342,7 +25342,7 @@ LABEL_41:
     *&this->u32_1218 = v36; /*0x65361e*/
     g_TooltipActive = 1; /*0x653621*/
   }
-  LOBYTE(v2) = byte_B04964; /*0x653628*/
+  (v2) = ((v2) & ~0xFF) | ((byte_B04964) & 0xFF); /*0x653628*/
   if ( byte_B04964 ) /*0x65362f*/
   {
     v38 = &this->RadarBounds; /*0x65363b*/
@@ -26615,7 +26615,7 @@ int INIClass::ReadDifficultyModifiers() {
 
   v2 = v1; /*0x66d277*/
   result = INIClass::BinarySearchSection((int)this, v14); /*0x66d27c*/
-  LOBYTE(result) = result != 0; /*0x66d283*/
+  (result) = ((result) & ~0xFF) | ((result != 0) & 0xFF); /*0x66d283*/
   if ( (unsigned char)result ) /*0x66d288*/
   {
     INIClass::ReadDouble_Overwrite((double *)this->__pad_0, v14, aFirepower_0, 1.0); /*0x66d29d*/
@@ -29561,7 +29561,7 @@ LABEL_41:
     *&this->u32_1218 = v36; /*0x65361e*/
     g_TooltipActive = 1; /*0x653621*/
   }
-  LOBYTE(v2) = byte_B04964; /*0x653628*/
+  (v2) = ((v2) & ~0xFF) | ((byte_B04964) & 0xFF); /*0x653628*/
   if ( byte_B04964 ) /*0x65362f*/
   {
     v38 = &this->RadarBounds; /*0x65363b*/
@@ -30834,7 +30834,7 @@ int INIClass::ReadDifficultyModifiers() {
 
   v2 = v1; /*0x66d277*/
   result = INIClass::BinarySearchSection((int)this, v14); /*0x66d27c*/
-  LOBYTE(result) = result != 0; /*0x66d283*/
+  (result) = ((result) & ~0xFF) | ((result != 0) & 0xFF); /*0x66d283*/
   if ( (unsigned char)result ) /*0x66d288*/
   {
     INIClass::ReadDouble_Overwrite((double *)this->__pad_0, v14, aFirepower_0, 1.0); /*0x66d29d*/
@@ -32101,7 +32101,7 @@ LABEL_41:
     *&this->u32_1218 = v36; /*0x65361e*/
     g_TooltipActive = 1; /*0x653621*/
   }
-  LOBYTE(v2) = byte_B04964; /*0x653628*/
+  (v2) = ((v2) & ~0xFF) | ((byte_B04964) & 0xFF); /*0x653628*/
   if ( byte_B04964 ) /*0x65362f*/
   {
     v38 = &this->RadarBounds; /*0x65363b*/
@@ -33336,7 +33336,7 @@ int INIClass::ReadDifficultyModifiers() {
 
   v2 = v1; /*0x66d277*/
   result = INIClass::BinarySearchSection((int)this, v14); /*0x66d27c*/
-  LOBYTE(result) = result != 0; /*0x66d283*/
+  (result) = ((result) & ~0xFF) | ((result != 0) & 0xFF); /*0x66d283*/
   if ( (unsigned char)result ) /*0x66d288*/
   {
     INIClass::ReadDouble_Overwrite((double *)this->__pad_0, v14, aFirepower_0, 1.0); /*0x66d29d*/
@@ -33800,7 +33800,7 @@ int INIClass::ReadDifficultyModifiers() {
 
   v2 = v1; /*0x66d277*/
   result = INIClass::BinarySearchSection((int)this, v14); /*0x66d27c*/
-  LOBYTE(result) = result != 0; /*0x66d283*/
+  (result) = ((result) & ~0xFF) | ((result != 0) & 0xFF); /*0x66d283*/
   if ( (unsigned char)result ) /*0x66d288*/
   {
     INIClass::ReadDouble_Overwrite((double *)this->__pad_0, v14, aFirepower_0, 1.0); /*0x66d29d*/
@@ -34360,7 +34360,7 @@ int ScenarioClass::SaveLoad_Prefix(void* a1) {
   (*(void (**)(int *, int **, int, unsigned int))(v12 + 16))(v7, &a1, 4, 0); /*0x68941a*/
   for ( k = 0; k < (int)a1; ++k ) /*0x689425*/
     (*(void (**)(int *, int, int, unsigned int))(*v7 + 16))(v7, this->ionRed + 4 * k, 4, 0); /*0x689438*/
-  LOBYTE(v14) = v16; /*0x689444*/
+  (v14) = ((v14) & ~0xFF) | ((v16) & 0xFF); /*0x689444*/
   if ( !v16 && *v3 == -1 ) /*0x68944f*/
   {
     v14 = Timer::GetTicks(); /*0x689454*/
@@ -34859,7 +34859,7 @@ bool ScenarioClass::Is_Waypoint_Valid(int a1) {
   result = a1; /*0x68bd80*/
   LOBYTE(result) = a1 <= 0x2BD /*0x68bdb6*/
                 && (*(&this->headNode * a1 + 793) != (unsigned short)dword_B05458
-                 || (LOWORD(result) = *(&this->headNode * a1 + 794), (unsigned short)result != HIWORD(dword_B05458)));
+                 || (LOWORD(result) = *(&this->headNode * a1 + 794), (unsigned short)result != (((dword_B05458) >> 16) & 0xFFFF)));
   return result; /*0x68bdb3*/
 
 }
@@ -34898,7 +34898,7 @@ int ScenarioClass::ReadWaypoints(int a1) {
     if ( v3 >= 0 ) /*0x68be3f*/
     {
       if ( *waypoints != (unsigned short)dword_B05458 /*0x68be58*/
-        || (LOWORD(Int_Overwrite) = waypoints[1], (unsigned short)Int_Overwrite != HIWORD(dword_B05458)) )
+        || (LOWORD(Int_Overwrite) = waypoints[1], (unsigned short)Int_Overwrite != (((dword_B05458) >> 16) & 0xFFFF)) )
       {
         v7 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, waypoints); /*0x68be60*/
         v8 = v7->u32_140; /*0x68be65*/
@@ -35909,7 +35909,7 @@ int FactoryClass::PlaceExitUnits() {
         v22 = HIWORD(v12); /*0x6b058c*/
       }
       *(unsigned int *)v25 = v12; /*0x6b0597*/
-      if ( __PAIR32__(v22, (unsigned __int16)v12) != dword_B0B5B8 ) /*0x6b059b*/
+      if ( ((v22 & 0xFFFFu) << 16 | ((unsigned __int16)v12 & 0xFFFFu)) != dword_B0B5B8 ) /*0x6b059b*/
       {
         v13 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v25); /*0x6b05b9*/
         v14 = (int *)(*(int (**)(void *, char *))(*(unsigned int *)v13 + 72))(v13, v31); /*0x6b05c7*/
@@ -35985,7 +35985,7 @@ void* FactoryClass::GetBridgeCell(void* a1) {
       LOWORD(v16) = FoundationWidth - 1; /*0x6b07b5*/
       FoundationHeight = BuildingTypeClass::GetFoundationHeight(v8, 0); /*0x6b07ba*/
       v10 = this->production[0]; /*0x6b07c0*/
-      HIWORD(v16) = FoundationHeight / 2; /*0x6b07c7*/
+      (v16) = ((v16) & ~(0xFFFF << 16)) | (((FoundationHeight / 2) & 0xFFFF) << 16); /*0x6b07c7*/
       v11 = (CellStruct *)(*(int (**)(int, int *))(*(unsigned int *)v10 + 440))(v10, &v19); /*0x6b07dd*/
       v12 = *CellStruct::Add(v11, &v18, &v16); /*0x6b07ea*/
       v20 = v12; /*0x6b07ed*/
@@ -35997,8 +35997,8 @@ void* FactoryClass::GetBridgeCell(void* a1) {
                          &v20);
       v20 = v12; /*0x6b0806*/
     }
-    LOWORD(v16) = v12; /*0x6b080e*/
-    HIWORD(v16) = HIWORD(v20) - 1; /*0x6b0818*/
+    (v16) = ((v16) & ~0xFFFF) | ((v12) & 0xFFFF); /*0x6b080e*/
+    (v16) = ((v16) & ~(0xFFFF << 16)) | ((((((v20) >> 16) & 0xFFFF) - 1) & 0xFFFF) << 16); /*0x6b0818*/
     *(unsigned int *)v17 = v16; /*0x6b0827*/
     v13 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v17); /*0x6b082b*/
     v14 = Cell::IsBridge(v13) == (unsigned int *)this->production[0]; /*0x6b083a*/
@@ -36487,7 +36487,7 @@ int RadarClass::DrawBlips(int a1) {
       {
         do /*0x6d5272*/
         {
-          LOWORD(v47) = v7 + dword_88095C; /*0x6d5155*/
+          (v47) = ((v47) & ~0xFFFF) | ((v7 + dword_88095C) & 0xFFFF); /*0x6d5155*/
           HIWORD(v47) = *(&dword_88095C + 1) + v10; /*0x6d5164*/
           v48[0] = dword_880960 + v7 + dword_88095C; /*0x6d5179*/
           v48[1] = *(&dword_88095C + 1) + v10 + *(&dword_880960 + 1); /*0x6d517e*/
@@ -36621,16 +36621,16 @@ int RadarClass::DrawBlips(int a1) {
         {
           while ( 1 ) /*0x6d55e4*/
           {
-            HIWORD(v50) = v34 + HIWORD(dword_88096A); /*0x6d55e4*/
+            (v50) = ((v50) & ~(0xFFFF << 16)) | (((v34 + (((dword_88096A) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x6d55e4*/
             v49[0] = dword_88096E + dword_88096A + (unsigned short)v32; /*0x6d55ed*/
-            v49[1] = HIWORD(dword_88096E) + v34 + HIWORD(dword_88096A); /*0x6d55fa*/
+            v49[1] = (((dword_88096E) >> 16) & 0xFFFF) + v34 + (((dword_88096A) >> 16) & 0xFFFF); /*0x6d55fa*/
             *(unsigned int *)v48 = *(unsigned int *)v49; /*0x6d5608*/
             v35 = 15360 * (((v49[0] << 8) + 128) / 256); /*0x6d5642*/
-            v36 = v35 - HIDWORD(v35); /*0x6d5645*/
+            v36 = v35 - (((v35) >> 32) & 0xFFFFFFFFu); /*0x6d5645*/
             v37 = 7680 * (((v49[0] << 8) + 128) / 256); /*0x6d5652*/
             v53 = -15360 * (((v49[1] << 8) + 128) / 256) / 2 + (v36 >> 1); /*0x6d5674*/
             v38 = v53 / 256 - this->RadarClass_field_0xB0; /*0x6d56b1*/
-            v52[1] = (7680 * (((v49[1] << 8) + 128) / 256) / 2 + (((int)v37 - HIDWORD(v37)) >> 1)) / 256 /*0x6d56b5*/
+            v52[1] = (7680 * (((v49[1] << 8) + 128) / 256) / 2 + (((int)v37 - (((v37) >> 32) & 0xFFFFFFFFu)) >> 1)) / 256 /*0x6d56b5*/
                    - *(unsigned int *)this->__pad_B4;
             v52[0] = v38 - 30; /*0x6d56c0*/
             if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v48) ) /*0x6d56ca*/

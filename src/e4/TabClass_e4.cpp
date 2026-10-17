@@ -24,9 +24,9 @@ unsigned int * TabClass::initStripClass()
 
   this->vtable1 = 0; /*0x4a2354*/
   this->__pad_004 = 0; /*0x4a2356*/
-  LOBYTE(this->u32_8) = 0; /*0x4a2359*/
-  BYTE1(this->u32_8) = 0; /*0x4a235c*/
-  BYTE2(this->u32_8) = 0; /*0x4a235f*/
+  (this->u32_8) = ((this->u32_8) & ~0xFF) | ((0) & 0xFF); /*0x4a2359*/
+  (this->u32_8) = ((this->u32_8) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4a235c*/
+  (this->u32_8) = ((this->u32_8) & ~(0xFF << 16)) | (((0) & 0xFF) << 16); /*0x4a235f*/
   this->u32_C = 0; /*0x4a2362*/
   return &this->vtable1; /*0x4a2365*/
 

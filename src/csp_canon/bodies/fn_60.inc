@@ -179,7 +179,7 @@ char Gap2Recv_60B7A0::UI_Get_60B7A0(HWND hWnd) {
     else
     {
       v8 = (v6 - 600) / 2; /*0x60b829*/
-      LOBYTE(v7) = v8 < 0; /*0x60b82b*/
+      (v7) = ((v7) & ~0xFF) | ((v8 < 0) & 0xFF); /*0x60b82b*/
       v7 = v8 & (v7 - 1); /*0x60b82f*/
     }
     v9 = Rect.left + v5; /*0x60b84a*/

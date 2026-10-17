@@ -711,7 +711,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     Vector::Clear((int)v55); /*0x6947c6*/
     *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x6947cf*/
     result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x6947d7*/
-    LOBYTE(result) = 0; /*0x6947dc*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6947dc*/
     return result; /*0x6947e8*/
   }
   Size = CCFileClass::GetSize(&v54); /*0x6947f4*/
@@ -850,7 +850,7 @@ LABEL_38:
       Vector::Clear((int)v55); /*0x694ae4*/
       *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x694aed*/
       result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x694af5*/
-      LOBYTE(result) = 0; /*0x694afa*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x694afa*/
       return result; /*0x694b06*/
     }
     v18 = 3600 - v19; /*0x694ab7*/
@@ -1079,7 +1079,7 @@ LABEL_116:
   Vector::Clear((int)v55); /*0x6951be*/
   *(unsigned int *)v54.__tail_0 = &off_7E1668; /*0x6951c7*/
   result = BufferIOFileClass::Dtor((BufferIOFileClass *)&v54); /*0x6951cf*/
-  LOBYTE(result) = v42; /*0x6951d4*/
+  (result) = ((result) & ~0xFF) | ((v42) & 0xFF); /*0x6951d4*/
   return result; /*0x6947de*/
 
 }

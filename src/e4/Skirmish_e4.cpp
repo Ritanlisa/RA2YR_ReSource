@@ -875,7 +875,7 @@ AbstractClass * * Skirmish::SetupGame(int hWnd, void *a2)
         break;
       default:
         v21 = -(v20 != 6); /*0x6ae966*/
-        LOBYTE(v21) = v21 & 0xFD; /*0x6ae968*/
+        (v21) = ((v21) & ~0xFF) | ((v21 & 0xFD) & 0xFF); /*0x6ae968*/
         hWnd = v21 + 2; /*0x6ae96d*/
         break;
     }
@@ -1023,7 +1023,7 @@ LABEL_44:
   stru_A8B250.__pad_0[18] = byte_A8B3D8; /*0x6aedb1*/
   stru_A8B250.__pad_0[19] = byte_A8B3D9; /*0x6aedbd*/
   stru_A8B250.__pad_0[20] = byte_A8B3DA; /*0x6aedcf*/
-  LOBYTE(dword_A8B320) = byte_A8B3DB; /*0x6aedd4*/
+  (dword_A8B320) = ((dword_A8B320) & ~0xFF) | ((byte_A8B3DB) & 0xFF); /*0x6aedd4*/
   stru_A8B250.__pad_0[17] = byte_A8B3DC; /*0x6aedda*/
   v42 = v36((HWND)this, 1358); /*0x6aede0*/
   if ( v42 ) /*0x6aede4*/

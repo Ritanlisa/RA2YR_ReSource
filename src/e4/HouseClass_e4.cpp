@@ -678,7 +678,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
     v62 = 0; /*0x4f601e*/
     if ( dword_A80238 > 0 ) /*0x4f6024*/
     {
-      LOBYTE(v66) = 0; /*0x4f602a*/
+      (v66) = ((v66) & ~0xFF) | ((0) & 0xFF); /*0x4f602a*/
       Destination[4] = 0; /*0x4f602e*/
       do /*0x4f6196*/
       {
@@ -1707,7 +1707,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
         __asm { fsub ds:dbl_7E2820 } /*0x507154*/
         __asm { fmul ds:dbl_7E2818 }
         v28 = Math::RoundToInt(a2); /*0x507163*/
-        LOWORD(v27) = HIWORD(v28); /*0x507163*/
+        (v27) = ((v27) & ~0xFFFF) | (((((v28) >> 16) & 0xFFFF)) & 0xFFFF); /*0x507163*/
         LOWORD(v112) = v28; /*0x507168*/
         v29 = ((unsigned int)((LODWORD(v112) >> 13) + 1) >> 1) & 3; /*0x50717b*/
         v30 = (*(int (__fastcall **)(int, int))(*(unsigned int *)v23 + 724))(v23, v27); /*0x507188*/
@@ -2008,7 +2008,7 @@ LABEL_87:
     Base = 0; /*0x50781a*/
     NumOfElements = 0; /*0x50781e*/
     v115 = 0; /*0x507822*/
-    LOBYTE(v116) = 0; /*0x507826*/
+    (v116) = ((v116) & ~0xFF) | ((0) & 0xFF); /*0x507826*/
     v117 = 0; /*0x50782b*/
     VectorClass::CellConstructor(&v119, 0, 0); /*0x50782f*/
     v119.vfptr = (int)&vt_DynamicVectorClass_Cell; /*0x507838*/
@@ -2041,7 +2041,7 @@ LABEL_87:
 LABEL_107:
           *((unsigned int *)Base + 2 * NumOfElements) = v76; /*0x5078dc*/
           *((float *)Base + 2 * NumOfElements + 1) = *(float *)&v110; /*0x5078eb*/
-          LOBYTE(v116) = 0; /*0x5078f4*/
+          (v116) = ((v116) & ~0xFF) | ((0) & 0xFF); /*0x5078f4*/
           ++NumOfElements; /*0x5078f9*/
         }
         ++v73; /*0x507901*/
@@ -2055,7 +2055,7 @@ LABEL_107:
       {
         qsort(Base, v78, 8u, globalHelper_0108F0); /*0x507927*/
         v117 = 0; /*0x50792f*/
-        LOBYTE(v116) = 1; /*0x507933*/
+        (v116) = ((v116) & ~0xFF) | ((1) & 0xFF); /*0x507933*/
       }
       v80 = (char *)Base + 8 * i + 4; /*0x507940*/
       if ( v120 < v119.Capacity /*0x50796c*/
@@ -2178,28 +2178,28 @@ LABEL_56:
   v57 = v134 == 0; /*0x50754d*/
   _EBP->waypointPath = 0; /*0x50754f*/
   v133 = (int)&vt_VectorClass_BuildingTypeClass; /*0x507555*/
-  if ( !v57 && BYTE1(v136) ) /*0x507567*/
+  if ( !v57 && (((v136) >> 8) & 0xFF) ) /*0x507567*/
   {
     __3_YAXPAX_Z(v56); /*0x50756a*/
     v134 = 0; /*0x507572*/
   }
-  BYTE1(v136) = 0; /*0x507580*/
+  (v136) = ((v136) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x507580*/
   v135 = 0; /*0x50758a*/
   v143 = (int)&vt_VectorClass_BuildingTypeClass; /*0x507591*/
-  if ( v144 && BYTE1(v146) ) /*0x5075a3*/
+  if ( v144 && (((v146) >> 8) & 0xFF) ) /*0x5075a3*/
   {
     __3_YAXPAX_Z(v144); /*0x5075a6*/
     v144 = 0; /*0x5075ae*/
   }
-  BYTE1(v146) = 0; /*0x5075bc*/
+  (v146) = ((v146) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5075bc*/
   v145 = 0; /*0x5075c6*/
   v138 = (int)&vt_VectorClass_BuildingTypeClass; /*0x5075cd*/
-  if ( v139 && BYTE1(v141) ) /*0x5075df*/
+  if ( v139 && (((v141) >> 8) & 0xFF) ) /*0x5075df*/
   {
     __3_YAXPAX_Z(v139); /*0x5075e2*/
     v139 = 0; /*0x5075ea*/
   }
-  BYTE1(v141) = 0; /*0x5075f5*/
+  (v141) = ((v141) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5075f5*/
   v140 = 0; /*0x5075ff*/
   v126.vfptr = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x507606*/
   if ( v126.Items && v126.IsAllocated[0] ) /*0x507616*/
@@ -3368,12 +3368,12 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4f292c*/
   {
-    LOBYTE(this->IsInitialized) = 0; /*0x4f2936*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((0) & 0xFF); /*0x4f2936*/
     if ( a3 ) /*0x4f293c*/
       v4 = a3; /*0x4f2952*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4f294e*/
-    LOBYTE(this->IsInitialized) = 1; /*0x4f2956*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((1) & 0xFF); /*0x4f2956*/
     if ( v4 ) /*0x4f295a*/
     {
       if ( *&this->Items ) /*0x4f2965*/
@@ -3383,7 +3383,7 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x4f2973*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x4f2979*/
           ++i; /*0x4f297e*/
-        if ( BYTE1(this->IsInitialized) ) /*0x4f298b*/
+        if ( (((this->IsInitialized) >> 8) & 0xFF) ) /*0x4f298b*/
         {
           __3_YAXPAX_Z(*&this->Items); /*0x4f2996*/
           *&this->Items = 0; /*0x4f299e*/
@@ -3413,12 +3413,12 @@ namespace gamemd {
 void HouseClass_24::ddtor(void *a1)
 {
 
-  if ( *&this->q004 && BYTE1(this->q00C) ) /*0x4f29dd*/
+  if ( *&this->q004 && (((this->q00C) >> 8) & 0xFF) ) /*0x4f29dd*/
   {
     __3_YAXPAX_Z(*&this->Items); /*0x4f29e3*/
     *&this->Items = 0; /*0x4f29eb*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x4f29ee*/
+  (this->IsInitialized) = ((this->IsInitialized) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4f29ee*/
   this->Capacity = 0; /*0x4f29f1*/
 
 }
@@ -3452,7 +3452,7 @@ namespace gamemd {
 unsigned int HouseClass_24::Write(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x4f2a40*/
+  if ( ((this->q00C) & 0xFF) ) /*0x4f2a40*/
     return (unsigned int)(a2 - *&this->Items) >> 2; /*0x4f2a55*/
   else
     return 0; /*0x4f2a47*/

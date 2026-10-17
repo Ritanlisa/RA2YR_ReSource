@@ -24,7 +24,7 @@ int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
   if ( a5 ) /*0x758eae*/
     v6 = *(unsigned int *)this->__pad_000; /*0x758eb0*/
   else
-    LOBYTE(v6) = 1; /*0x758eb4*/
+    (v6) = ((v6) & ~0xFF) | ((1) & 0xFF); /*0x758eb4*/
   v15 = 100000.0; /*0x758eb9*/
   v7 = 1; /*0x758ec1*/
   for ( i = 3; i < 768; i += 3 ) /*0x758ec6*/
@@ -46,7 +46,7 @@ int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
     if ( v13 < v15 ) /*0x758f3f*/
     {
       v15 = v13; /*0x758f41*/
-      LOBYTE(v6) = v7; /*0x758f45*/
+      (v6) = ((v6) & ~0xFF) | ((v7) & 0xFF); /*0x758f45*/
     }
     LABEL_13:
     ++v7; /*0x758f4e*/

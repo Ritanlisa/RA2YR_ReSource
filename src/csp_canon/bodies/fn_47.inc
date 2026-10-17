@@ -594,11 +594,11 @@ char DynamicVector::Add_Alt(unsigned int *aP1)
     v5 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x477ef8*/
     this->DynamicVector_field_0x10 = (unsigned int)((void *)(result + 1)); /*0x477efe*/
     *(unsigned int *)(v5 + 4 * result) = (unsigned int)(*aP1); /*0x477f08*/
-    LOBYTE(result) = 1; /*0x477f0b*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x477f0b*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x477eef*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x477eef*/
   }
   return result; /*0x477ef1*/
 

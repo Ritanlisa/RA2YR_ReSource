@@ -471,7 +471,7 @@ int Gap2Recv_5851B0::BuildTileAdjacencyTable(IUnknown * aP1) {
   v4 = aP1[1]; /*0x5851bf*/
   *(unsigned int *)v59 = v3; /*0x5851c2*/
   *(unsigned int *)v60 = v4; /*0x5851c6*/
-  v5 = (int16_t)v3 + (SHIWORD(v3) << 9); /*0x5851d5*/
+  v5 = (int16_t)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x5851d5*/
   if ( v5 < 0x40000 && (v6 = *(Cell **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v5)) != 0 ) /*0x5851eb*/
   {
     v7 = v6; /*0x5851ed*/
@@ -496,12 +496,12 @@ int Gap2Recv_5851B0::BuildTileAdjacencyTable(IUnknown * aP1) {
     *(unsigned int *)v63 = *CellStruct::Add((CellStruct *)v60, &aP1, v11); /*0x5852a0*/
     *(unsigned int *)v61 = *CellStruct::Add((CellStruct *)v60, &aP1, v12); /*0x5852ab*/
   }
-  LOBYTE(v65) = 0; /*0x5852b5*/
-  LOBYTE(v66) = 0; /*0x5852ba*/
-  LOBYTE(v67) = 0; /*0x5852bf*/
-  LOBYTE(v68) = 0; /*0x5852c4*/
-  LOBYTE(v69) = 0; /*0x5852c9*/
-  LOBYTE(v70) = 0; /*0x5852ce*/
+  (v65) = ((v65) & ~0xFF) | ((0) & 0xFF); /*0x5852b5*/
+  (v66) = ((v66) & ~0xFF) | ((0) & 0xFF); /*0x5852ba*/
+  (v67) = ((v67) & ~0xFF) | ((0) & 0xFF); /*0x5852bf*/
+  (v68) = ((v68) & ~0xFF) | ((0) & 0xFF); /*0x5852c4*/
+  (v69) = ((v69) & ~0xFF) | ((0) & 0xFF); /*0x5852c9*/
+  (v70) = ((v70) & ~0xFF) | ((0) & 0xFF); /*0x5852ce*/
   v13 = 0; /*0x5852d3*/
   p_isAliveFlag = &this->isAliveFlag; /*0x5852d5*/
   do /*0x585581*/
@@ -742,10 +742,10 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
       v21 = *((unsigned int *)this + 61); /*0x585b14*/
       v35 = *v20; /*0x585b1a*/
       aP1 = v35; /*0x585b1e*/
-      v22 = SHIWORD(v35) + (int16_t)v35; /*0x585b2a*/
+      v22 = (short)(((v35) >> 16) & 0xFFFF) + (int16_t)v35; /*0x585b2a*/
       if ( v22 > v21 /*0x585b56*/
-        && (int16_t)v35 - SHIWORD(v35) < v21
-        && SHIWORD(v35) - (int16_t)v35 < v21
+        && (int16_t)v35 - (short)(((v35) >> 16) & 0xFFFF) < v21
+        && (short)(((v35) >> 16) & 0xFFFF) - (int16_t)v35 < v21
         && v22 <= v21 + 2 * *((unsigned int *)this + 62) )
       {
         CellData = Tactical::GetCellData((Tactical *)&aP1); /*0x585b69*/
@@ -793,8 +793,8 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
   {
     v29 = *(unsigned int *)(*(unsigned int *)&v41.m_1[3] + 4 * v28); /*0x585c57*/
     v36 = v29; /*0x585c5a*/
-    v30 = SHIWORD(v29) - 1; /*0x585c63*/
-    v31 = SHIWORD(v29) + 2; /*0x585c66*/
+    v30 = (short)(((v29) >> 16) & 0xFFFF) - 1; /*0x585c63*/
+    v31 = (short)(((v29) >> 16) & 0xFFFF) + 2; /*0x585c66*/
     if ( v30 < v31 ) /*0x585c6b*/
     {
       v32 = (int16_t)v29 + 2; /*0x585c73*/

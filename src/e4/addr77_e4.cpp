@@ -1608,8 +1608,8 @@ int RunWOLMainLoop(char a1)
     DeleteAndZero((ObjectClass *)&v19); /*0x77b348*/
     if ( !String::Length((String *)&stru_B73E10.CChatEventSink_field_0x30) ) /*0x77b352*/
     {
-      LODWORD(v20) = 0; /*0x77b361*/
-      BYTE4(v20) = 0; /*0x77b365*/
+      (v20) = ((v20) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x77b361*/
+      (v20) = ((v20) & ~(0xFFull << 32)) | (((0) & 0xFFull) << 32); /*0x77b365*/
       ReadRegistryOptionsWOL((ObjectClass *)&v20); /*0x77b36a*/
       if ( (unsigned __int8)Flag::IsNot2((Flag *)&v20) ) /*0x77b373*/
       {

@@ -462,7 +462,7 @@ int Gap2Recv_643720::RenderBuildingProductionButton(int a2, ProgressScreenClass 
     v35 = v23; /*0x6439ab*/
   }
   v36 = v8 + v20; /*0x6439bb*/
-  LoadScreen::RenderProgressBackground(COERCE_DOUBLE(__PAIR64__(v17, v40[0])), v39, g_DSurface_Hidden, a2); /*0x6439d3*/
+  LoadScreen::RenderProgressBackground(COERCE_DOUBLE((((v17 & 0xFFFFFFFFull)) << 32 | (v40[0] & 0xFFFFFFFFull))), v39, g_DSurface_Hidden, a2); /*0x6439d3*/
   if ( a6 ) /*0x6439dc*/
   {
     PlayerSide = SessionClass::GetPlayerSide(*(unsigned int *)(dword_A8DA78 + 4 * a5)); /*0x6439ef*/

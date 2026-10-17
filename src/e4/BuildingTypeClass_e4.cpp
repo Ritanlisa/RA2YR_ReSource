@@ -1474,7 +1474,7 @@ int BuildingTypeClass::BuildingTypeClass::IsPowered()
 
 
   int result; // eax
-  LOBYTE(result) = this->FreeBuildup; /*0x465af3*/
+  (result) = ((result) & ~0xFF) | ((this->FreeBuildup) & 0xFF); /*0x465af3*/
   if ( (unsigned char)result ) /*0x465afb*/
   {
     result = this->Buildup[0]; /*0x465afd*/
@@ -1587,7 +1587,7 @@ int BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
           if ( v11 >= v3->vtable4 + v11 ) /*0x5940e9*/
           {
 LABEL_16:
-            LOBYTE(result) = 1; /*0x594170*/
+            (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x594170*/
             return result; /*0x594177*/
           }
           v12 = aP2; /*0x5940ef*/
@@ -1625,7 +1625,7 @@ LABEL_15:
       }
     }
   }
-  LOBYTE(result) = 0; /*0x59417d*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x59417d*/
   return result; /*0x594170*/
 
 }
@@ -2081,7 +2081,7 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   }
   int v6; // eax
   v6 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, aP2) + 80) >> 8; /*0x7460cd*/
-  LOBYTE(v6) = v6 & 1; /*0x7460d0*/
+  (v6) = ((v6) & ~0xFF) | ((v6 & 1) & 0xFF); /*0x7460d0*/
   return Pathfinding::CalcDistance((int)&g_AudioInitFlag, aP1, aP2, (int)this, 0, v6, 0) > 15; /*0x746052*/
 
 }
@@ -2407,7 +2407,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
   this->vtable2 = 0; /*0x47885d*/
   this->vtable3 = (void *)a2; /*0x478860*/
   LOBYTE(this->vtable4) = 1; /*0x478863*/
-  BYTE1(this->u32_D) = 0; /*0x478867*/
+  (this->u32_D) = ((this->u32_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x478867*/
   this->TechnoTypeClass = &vt_VectorClass; /*0x47886a*/
   if ( !a2 ) /*0x478870*/
     return &this->TechnoTypeClass; /*0x4788d0*/
@@ -2434,7 +2434,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
       v4 = (void *)v8; /*0x4788c7*/
     }
     this->vtable2 = v4; /*0x4788c9*/
-    BYTE1(this->u32_D) = 1; /*0x4788cc*/
+    (this->u32_D) = ((this->u32_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x4788cc*/
     return &this->TechnoTypeClass; /*0x4788cc*/
   }
   if ( a2 - 1 >= 0 ) /*0x47887f*/

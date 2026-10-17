@@ -211,7 +211,7 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
     __asm { fmul ds:dbl_7E2818 }
     IDA_LOWORD(v15) = Math::RoundToInt(a3); /*0x506055*/
     v10 = 32 * a5 - (uint8_t)(((v15 >> 7) + 1) >> 1); /*0x506071*/
-    v9 = (IDA_HIDWORD(v10) ^ v10) - IDA_HIDWORD(v10); /*0x506074*/
+    v9 = ((((v10) >> 32) & 0xFFFFFFFFu) ^ v10) - (((v10) >> 32) & 0xFFFFFFFFu); /*0x506074*/
     if ( v9 >= 128 ) /*0x50607b*/
       v9 = 255 - v9; /*0x506084*/
   }

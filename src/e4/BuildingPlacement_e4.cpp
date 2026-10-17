@@ -484,22 +484,22 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     {
       v11 = *(unsigned int *)(*(unsigned int *)(v5 + 4) + 4 * v37); /*0x595025*/
       if ( v10 ) /*0x59502c*/
-        v46 = *(unsigned int *)(80 * ((__int16)v11 + g_MapCellWidth * SHIWORD(v11)) + v10 + 56); /*0x595053*/
+        v46 = *(unsigned int *)(80 * ((__int16)v11 + g_MapCellWidth * (short)(((v11) >> 16) & 0xFFFF)) + v10 + 56); /*0x595053*/
       else
         v46 = -1; /*0x59502e*/
       v12 = v37 + 1; /*0x59505b*/
       if ( v37 + 1 < v9 )
       {
         v50 = (__int16)v11; /*0x595072*/
-        v52 = SHIWORD(v11); /*0x595076*/
+        v52 = (short)(((v11) >> 16) & 0xFFFF); /*0x595076*/
         do
         {
           v41 = *(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v12); /*0x59508b*/
           if ( v10 ) /*0x59509d*/
-            v13 = *(unsigned int *)(80 * ((__int16)v41 + g_MapCellWidth * SHIWORD(v41)) + v10 + 56); /*0x5950b3*/
+            v13 = *(unsigned int *)(80 * ((__int16)v41 + g_MapCellWidth * (short)(((v41) >> 16) & 0xFFFF)) + v10 + 56); /*0x5950b3*/
           else
             v13 = -1; /*0x59509f*/
-          v42 = (v50 - (__int16)v41) * (v50 - (__int16)v41) + (v52 - SHIWORD(v41)) * (v52 - SHIWORD(v41)); /*0x5950c6*/
+          v42 = (v50 - (__int16)v41) * (v50 - (__int16)v41) + (v52 - (short)(((v41) >> 16) & 0xFFFF)) * (v52 - (short)(((v41) >> 16) & 0xFFFF)); /*0x5950c6*/
           __asm /*0x5950ca*/
           {
             fild [esp+48h+var_28]
@@ -582,7 +582,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
           {
             v26 = *(unsigned int *)(*(unsigned int *)(v5 + 4) + 4 * v38); /*0x595244*/
             if ( v10 ) /*0x595250*/
-              v49 = *(unsigned int *)(80 * ((__int16)v26 + g_MapCellWidth * SHIWORD(v26)) + v10 + 56); /*0x595275*/
+              v49 = *(unsigned int *)(80 * ((__int16)v26 + g_MapCellWidth * (short)(((v26) >> 16) & 0xFFFF)) + v10 + 56); /*0x595275*/
             else
               v49 = -1; /*0x595252*/
             v27 = 0; /*0x595279*/
@@ -590,15 +590,15 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
             if ( v20 > 0 )
             {
               v56 = (__int16)v26; /*0x595299*/
-              v51 = SHIWORD(v26); /*0x59529d*/
+              v51 = (short)(((v26) >> 16) & 0xFFFF); /*0x59529d*/
               do
               {
                 v53 = *((unsigned int *)v39->Items + v27); /*0x5952b3*/
                 if ( v10 ) /*0x5952c5*/
-                  v28 = *(unsigned int *)(80 * ((__int16)v53 + g_MapCellWidth * SHIWORD(v53)) + v10 + 56); /*0x5952db*/
+                  v28 = *(unsigned int *)(80 * ((__int16)v53 + g_MapCellWidth * (short)(((v53) >> 16) & 0xFFFF)) + v10 + 56); /*0x5952db*/
                 else
                   v28 = -1; /*0x5952c7*/
-                v54 = (v56 - (__int16)v53) * (v56 - (__int16)v53) + (v51 - SHIWORD(v53)) * (v51 - SHIWORD(v53)); /*0x5952ee*/
+                v54 = (v56 - (__int16)v53) * (v56 - (__int16)v53) + (v51 - (short)(((v53) >> 16) & 0xFFFF)) * (v51 - (short)(((v53) >> 16) & 0xFFFF)); /*0x5952ee*/
                 __asm /*0x5952f2*/
                 {
                   fild [esp+48h+var_10]

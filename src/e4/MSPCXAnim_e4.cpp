@@ -33,7 +33,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
   if ( a2 ) /*0x5d09cc*/
   {
     v4 = a3; /*0x5d09d2*/
-    LOBYTE(this->m_C) = 0; /*0x5d09d6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d09d6*/
     if ( a3 ) /*0x5d09dc*/
     {
       v6 = a3; /*0x5d0a04*/
@@ -46,7 +46,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
       else
         v6 = 0; /*0x5d09fd*/
     }
-    LOBYTE(this->m_C) = 1; /*0x5d0a0c*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d0a0c*/
     if ( !v6 ) /*0x5d0a10*/
       return 0; /*0x5d0a90*/
     if ( *&this->q004 ) /*0x5d0a12*/
@@ -67,7 +67,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
         while ( v8 < m_8 ); /*0x5d0a3e*/
         v4 = a3; /*0x5d0a40*/
       }
-      if ( BYTE1(this->m_C) ) /*0x5d0a44*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d0a44*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x5d0a4f*/
         *&this->q004 = 0; /*0x5d0a57*/
@@ -324,12 +324,12 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d0c6c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d0c72*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d0c72*/
     if ( a3 ) /*0x5d0c78*/
       v4 = a3; /*0x5d0c8e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d0c8a*/
-    LOBYTE(this->m_C) = 1; /*0x5d0c92*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d0c92*/
     if ( !v4 ) /*0x5d0c96*/
       return 0; /*0x5d0d0a*/
     if ( *&this->q004 ) /*0x5d0c98*/
@@ -339,7 +339,7 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
         m_8 = a2; /*0x5d0ca6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d0cac*/
         ++i; /*0x5d0cb1*/
-      if ( BYTE1(this->m_C) ) /*0x5d0cbe*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d0cbe*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x5d0cc9*/
         *&this->q004 = 0; /*0x5d0cd1*/
@@ -392,12 +392,12 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d0ecc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d0ed2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d0ed2*/
     if ( a3 ) /*0x5d0ed8*/
       v4 = a3; /*0x5d0eee*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d0eea*/
-    LOBYTE(this->m_C) = 1; /*0x5d0ef2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d0ef2*/
     if ( !v4 ) /*0x5d0ef6*/
       return 0; /*0x5d0f6a*/
     if ( *&this->q004 ) /*0x5d0ef8*/
@@ -407,7 +407,7 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
         m_8 = a2; /*0x5d0f06*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d0f0c*/
         ++i; /*0x5d0f11*/
-      if ( BYTE1(this->m_C) ) /*0x5d0f1e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d0f1e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x5d0f29*/
         *&this->q004 = 0; /*0x5d0f31*/
@@ -488,12 +488,12 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d0fec*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d0ff6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d0ff6*/
     if ( a3 ) /*0x5d0ffc*/
       v4 = a3; /*0x5d1012*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d100e*/
-    LOBYTE(this->m_C) = 1; /*0x5d1016*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d1016*/
     if ( v4 ) /*0x5d101a*/
     {
       if ( *&this->q004 ) /*0x5d1025*/
@@ -503,7 +503,7 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
           m_8 = a2; /*0x5d1033*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d1039*/
           ++i; /*0x5d103e*/
-        if ( BYTE1(this->m_C) ) /*0x5d104b*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d104b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x5d1056*/
           *&this->q004 = 0; /*0x5d105e*/
@@ -587,12 +587,12 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d112c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d1132*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d1132*/
     if ( a3 ) /*0x5d1138*/
       v4 = a3; /*0x5d114e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d114a*/
-    LOBYTE(this->m_C) = 1; /*0x5d1152*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d1152*/
     if ( !v4 ) /*0x5d1156*/
       return 0; /*0x5d11ca*/
     if ( *&this->q004 ) /*0x5d1158*/
@@ -602,7 +602,7 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
         m_8 = a2; /*0x5d1166*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d116c*/
         ++i; /*0x5d1171*/
-      if ( BYTE1(this->m_C) ) /*0x5d117e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d117e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x5d1189*/
         *&this->q004 = 0; /*0x5d1191*/
@@ -683,12 +683,12 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d124c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d1256*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d1256*/
     if ( a3 ) /*0x5d125c*/
       v4 = a3; /*0x5d1272*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d126e*/
-    LOBYTE(this->m_C) = 1; /*0x5d1276*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d1276*/
     if ( v4 ) /*0x5d127a*/
     {
       if ( *&this->q004 ) /*0x5d1285*/
@@ -698,7 +698,7 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x5d1293*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d1299*/
           ++i; /*0x5d129e*/
-        if ( BYTE1(this->m_C) ) /*0x5d12ab*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d12ab*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x5d12b6*/
           *&this->q004 = 0; /*0x5d12be*/
@@ -782,12 +782,12 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d138c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d1392*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d1392*/
     if ( a3 ) /*0x5d1398*/
       v4 = a3; /*0x5d13ae*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d13aa*/
-    LOBYTE(this->m_C) = 1; /*0x5d13b2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d13b2*/
     if ( !v4 ) /*0x5d13b6*/
       return 0; /*0x5d142a*/
     if ( *&this->q004 ) /*0x5d13b8*/
@@ -797,7 +797,7 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
         m_8 = a2; /*0x5d13c6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d13cc*/
         ++i; /*0x5d13d1*/
-      if ( BYTE1(this->m_C) ) /*0x5d13de*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d13de*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x5d13e9*/
         *&this->q004 = 0; /*0x5d13f1*/
@@ -851,12 +851,12 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d15ec*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d15f2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d15f2*/
     if ( a3 ) /*0x5d15f8*/
       v4 = a3; /*0x5d160e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d160a*/
-    LOBYTE(this->m_C) = 1; /*0x5d1612*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d1612*/
     if ( !v4 ) /*0x5d1616*/
       return 0; /*0x5d168a*/
     if ( *&this->q004 ) /*0x5d1618*/
@@ -866,7 +866,7 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
         m_8 = a2; /*0x5d1626*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d162c*/
         ++i; /*0x5d1631*/
-      if ( BYTE1(this->m_C) ) /*0x5d163e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d163e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x5d1649*/
         *&this->q004 = 0; /*0x5d1651*/

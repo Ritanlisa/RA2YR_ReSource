@@ -238,7 +238,7 @@ LABEL_31:
         }
 LABEL_34:
         v19 = *(unsigned int *)(a1 + 336); /*0x7bf904*/
-        LOBYTE(v19) = v19 | 0x80; /*0x7bf90a*/
+        (v19) = ((v19) & ~0xFF) | ((v19 | 0x80) & 0xFF); /*0x7bf90a*/
         *(unsigned int *)(a1 + 336) = v19; /*0x7bf910*/
         if ( v7 == -1 ) /*0x7bf916*/
         {
@@ -251,12 +251,12 @@ LABEL_34:
         {
           v21 = v4[5]; /*0x7bf941*/
           v22 = v117; /*0x7bf944*/
-          BYTE1(v21) |= 2u; /*0x7bf948*/
+          (v21) |= ((((2u)) & 0xFF) << 8); /*0x7bf948*/
           v4[5] = v21; /*0x7bf94b*/
           v23 = *(unsigned int *)(a1 + 308); /*0x7bf94e*/
           *(unsigned int *)(a1 + 320) = v22; /*0x7bf954*/
           v24 = *(unsigned int *)(a1 + 336); /*0x7bf95a*/
-          BYTE1(v24) |= 1u; /*0x7bf960*/
+          (v24) |= ((((1u)) & 0xFF) << 8); /*0x7bf960*/
           *(unsigned int *)(a1 + 292) = v23; /*0x7bf964*/
           *(unsigned int *)(a1 + 308) = -1; /*0x7bf96a*/
           *(unsigned int *)(a1 + 336) = v24; /*0x7bf974*/
@@ -390,7 +390,7 @@ LABEL_199:
               if ( Audio_Helper_7C20B0(a1, g_AudioDSPState) != -1 ) /*0x7c007e*/
                 return -4; /*0x7c007e*/
               v59 = v28[5]; /*0x7c0084*/
-              LOBYTE(v59) = v59 | 4; /*0x7c0087*/
+              (v59) = ((v59) & ~0xFF) | ((v59 | 4) & 0xFF); /*0x7c0087*/
               v28[5] = v59; /*0x7c0089*/
               break;
             default:
@@ -428,7 +428,7 @@ LABEL_170:
                 v82 = *(unsigned int **)(a1 + 368); /*0x7c01e4*/
                 v28 = v115; /*0x7c01ea*/
                 v83 = v82[5]; /*0x7c01f3*/
-                BYTE1(v83) |= 4u; /*0x7c01f6*/
+                (v83) |= ((((4u)) & 0xFF) << 8); /*0x7c01f6*/
                 v82[5] = v83; /*0x7c01f9*/
               }
               else
@@ -465,7 +465,7 @@ LABEL_173:
                     {
                       v90 = *(unsigned int **)(a1 + 368); /*0x7c026e*/
                       v91 = v90[5]; /*0x7c0274*/
-                      BYTE1(v91) |= 4u; /*0x7c0277*/
+                      (v91) |= ((((4u)) & 0xFF) << 8); /*0x7c0277*/
                       v90[5] = v91; /*0x7c027a*/
                       goto LABEL_51; /*0x7c027d*/
                     }
@@ -511,7 +511,7 @@ LABEL_200:
                 v30 = 0; /*0x7c0011*/
                 v56[8] = 0; /*0x7c0013*/
                 v58 = v28[5]; /*0x7c0016*/
-                LOBYTE(v58) = v58 | 0x20; /*0x7c0019*/
+                (v58) = ((v58) & ~0xFF) | ((v58 | 0x20) & 0xFF); /*0x7c0019*/
                 v28[5] = v58; /*0x7c001b*/
               }
               goto LABEL_199; /*0x7c001e*/
@@ -547,7 +547,7 @@ LABEL_200:
               v30 = 0; /*0x7bff81*/
               v54[8] = 0; /*0x7bff83*/
               v55 = v28[5]; /*0x7bff86*/
-              LOBYTE(v55) = v55 | 2; /*0x7bff89*/
+              (v55) = ((v55) & ~0xFF) | ((v55 | 2) & 0xFF); /*0x7bff89*/
               v28[5] = v55; /*0x7bff8b*/
             }
             goto LABEL_199; /*0x7bff8e*/
@@ -616,7 +616,7 @@ LABEL_220:
           if ( DSP_AudioProcess(a1, g_AudioDSPState, v114) != -1 ) /*0x7bfeb6*/
             return -4; /*0x7bfeb6*/
           v52 = v28[5]; /*0x7bfebc*/
-          LOBYTE(v52) = v52 | 2; /*0x7bfebf*/
+          (v52) = ((v52) & ~0xFF) | ((v52 | 2) & 0xFF); /*0x7bfebf*/
           v30 = 0; /*0x7bfec1*/
           v28[5] = v52; /*0x7bfec3*/
         }
@@ -676,7 +676,7 @@ LABEL_123:
               return -4; /*0x7bfe7c*/
             }
             v51 = v50[5]; /*0x7bfe82*/
-            LOBYTE(v51) = v51 & 0xEF; /*0x7bfe85*/
+            (v51) = ((v51) & ~0xFF) | ((v51 & 0xEF) & 0xFF); /*0x7bfe85*/
             v30 = 0; /*0x7bfe87*/
             v50[5] = v51; /*0x7bfe89*/
             v50[8] = 0; /*0x7bfe8c*/
@@ -762,7 +762,7 @@ LABEL_104:
               qmemcpy((void *)(a1 + 452), (const void *)v39[2], v38); /*0x7bfc19*/
               *(unsigned int *)(a1 + 448) = v39[10]; /*0x7bfc25*/
               v41 = *(unsigned int *)(a1 + 420); /*0x7bfc2b*/
-              LOBYTE(v41) = v41 | 1; /*0x7bfc31*/
+              (v41) = ((v41) & ~0xFF) | ((v41 | 1) & 0xFF); /*0x7bfc31*/
               *(unsigned int *)(a1 + 420) = v41; /*0x7bfc33*/
             }
             v28 = v115; /*0x7bfc42*/
@@ -819,12 +819,12 @@ LABEL_73:
     if ( AudioStream::CalcReadPos((AudioStream *)a1) == -11 ) /*0x7bf9a8*/
     {
       v25 = *(unsigned int *)(a1 + 336); /*0x7bf9aa*/
-      LOBYTE(v25) = v25 | 1; /*0x7bf9b1*/
+      (v25) = ((v25) & ~0xFF) | ((v25 | 1) & 0xFF); /*0x7bf9b1*/
       *(unsigned int *)(a1 + 336) = v25; /*0x7bf9b4*/
       return -11; /*0x7bf9c4*/
     }
     v26 = *(unsigned int *)(a1 + 1980); /*0x7bf9cb*/
-    BYTE1(v26) |= 1u; /*0x7bf9d4*/
+    (v26) |= ((((1u)) & 0xFF) << 8); /*0x7bf9d4*/
     *(unsigned int *)(a1 + 336) &= ~1u; /*0x7bf9d7*/
     *(unsigned int *)(a1 + 1980) = v26; /*0x7bf9dd*/
   }
@@ -1002,12 +1002,12 @@ LABEL_30:
               if ( (a3 & 4) == 0 ) /*0x7c0ed6*/
               {
                 v17 = aP0->u32_170; /*0x7c0edc*/
-                LOBYTE(v7) = v7 & 0xFE; /*0x7c0ee2*/
+                (v7) = ((v7) & ~0xFF) | ((v7 & 0xFE) & 0xFF); /*0x7c0ee2*/
                 if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v17, v7) ) /*0x7c0eeb*/
                   return -4; /*0x7c0ef3*/
                 v18 = v17[5]; /*0x7c0ef9*/
                 v17[8] = 0; /*0x7c0efc*/
-                LOBYTE(v18) = v18 & 0xEF; /*0x7c0f03*/
+                (v18) = ((v18) & ~0xFF) | ((v18 & 0xEF) & 0xFF); /*0x7c0f03*/
                 v17[5] = v18; /*0x7c0f05*/
                 goto LABEL_64; /*0x7c0f08*/
               }
@@ -1016,7 +1016,7 @@ LABEL_30:
               if ( (a3 & 4) == 0 ) /*0x7c0e95*/
               {
                 v15 = aP0->u32_170; /*0x7c0e9b*/
-                LOBYTE(v7) = v7 & 0xFE; /*0x7c0ea1*/
+                (v7) = ((v7) & ~0xFF) | ((v7 & 0xFE) & 0xFF); /*0x7c0ea1*/
                 if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v15, v7) ) /*0x7c0eaa*/
                   return -4; /*0x7c0eb2*/
                 v16 = v15[5]; /*0x7c0eb8*/
@@ -1030,7 +1030,7 @@ LABEL_30:
               if ( (a3 & 4) == 0 ) /*0x7c0e54*/
               {
                 v13 = aP0->u32_170; /*0x7c0e5a*/
-                LOBYTE(v7) = v7 & 0xFE; /*0x7c0e60*/
+                (v7) = ((v7) & ~0xFF) | ((v7 & 0xFE) & 0xFF); /*0x7c0e60*/
                 if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v13, v7) ) /*0x7c0e69*/
                   return -4; /*0x7c0e71*/
                 v14 = v13[5]; /*0x7c0e77*/
@@ -1054,7 +1054,7 @@ LABEL_30:
               if ( (a3 & 0x10) == 0 ) /*0x7c0de5*/
               {
                 v12 = aP0->q164; /*0x7c0deb*/
-                LOBYTE(v7) = v7 & 0xFE; /*0x7c0df1*/
+                (v7) = ((v7) & ~0xFF) | ((v7 & 0xFE) & 0xFF); /*0x7c0df1*/
                 if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *v12, v7) ) /*0x7c0dfa*/
                   return -4; /*0x7c0e02*/
                 aP0->u32_174 = 0; /*0x7c0e08*/
@@ -1070,7 +1070,7 @@ LABEL_30:
               if ( (a3 & 1) == 0 ) /*0x7c0d62*/
               {
                 v10 = aP0->u32_170; /*0x7c0d68*/
-                LOBYTE(v7) = v7 & 0xFE; /*0x7c0d6e*/
+                (v7) = ((v7) & ~0xFF) | ((v7 & 0xFE) & 0xFF); /*0x7c0d6e*/
                 if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(aP0 + 64))(aP0, 5, *(unsigned int *)(v10 + 8), v7) ) /*0x7c0d78*/
                   return -4; /*0x7c0d80*/
                 v11 = *(unsigned int *)(v10 + 20); /*0x7c0d86*/
@@ -1101,7 +1101,7 @@ LABEL_30:
         }
       }
 LABEL_63:
-      LOBYTE(v7) = v7 & 0xFE; /*0x7c10cd*/
+      (v7) = ((v7) & ~0xFF) | ((v7 & 0xFE) & 0xFF); /*0x7c10cd*/
       if ( (*(int (__cdecl **)(int, int, int, unsigned int))(aP0 + 64))(aP0, 7, 1, v7) ) /*0x7c10d5*/
         return -6; /*0x7c111c*/
 LABEL_64:

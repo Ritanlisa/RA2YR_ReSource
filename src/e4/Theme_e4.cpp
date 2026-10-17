@@ -27,13 +27,13 @@ int Theme::QueueSong(int aP1, void *a2)
 
 
   int IsSoundEnabled; // eax
-  LOBYTE(IsSoundEnabled) = byte_A8EC74; /*0x720b20*/
+  (IsSoundEnabled) = ((IsSoundEnabled) & ~0xFF) | ((byte_A8EC74) & 0xFF); /*0x720b20*/
   if ( byte_A8EC74 ) /*0x720b2a*/
   {
     IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720b2c*/
     if ( IsSoundEnabled ) /*0x720b33*/
     {
-      LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720b35*/
+      (IsSoundEnabled) = ((IsSoundEnabled) & ~0xFF) | ((byte_A8ED64) & 0xFF); /*0x720b35*/
       if ( !byte_A8ED64 ) /*0x720b3c*/
       {
         LOBYTE(IsSoundEnabled) = aP1; /*0x720b3e*/

@@ -271,7 +271,7 @@ int WinsockInterface::Init(void *a1, void *a2)
   if ( LOBYTE(this->m_3F068) ) /*0x7b1df8*/
   {
     result = Debug::Log(); /*0x7b1e0a*/
-    LOBYTE(result) = 1; /*0x7b1e12*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b1e12*/
   }
   else
   {
@@ -292,7 +292,7 @@ int WinsockInterface::Init(void *a1, void *a2)
     {
       Debug::Log(); /*0x7b1e9b*/
       __3_YAXPAX_Z(v5); /*0x7b1ea1*/
-      LOBYTE(result) = 0; /*0x7b1ea9*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b1ea9*/
     }
     else
     {
@@ -301,7 +301,7 @@ int WinsockInterface::Init(void *a1, void *a2)
       {
         Debug::Log(); /*0x7b1fad*/
         __3_YAXPAX_Z(v5); /*0x7b1fb3*/
-        LOBYTE(result) = 0; /*0x7b1fbb*/
+        (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b1fbb*/
       }
       else
       {
@@ -337,7 +337,7 @@ int WinsockInterface::Init(void *a1, void *a2)
         }
         LOBYTE(this->m_3F068) = 1; /*0x7b1f7e*/
         __3_YAXPAX_Z(v5); /*0x7b1f85*/
-        LOBYTE(result) = 1; /*0x7b1f8d*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b1f8d*/
       }
     }
   }

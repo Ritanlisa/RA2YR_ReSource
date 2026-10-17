@@ -219,7 +219,7 @@ bool BSurface::CreateTripleBuffer(void *a1)
   }
   else
   {
-    LOBYTE(result) = 0; /*0x7b8e70*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b8e70*/
   }
   return result; /*0x7b8e62*/
 

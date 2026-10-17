@@ -217,8 +217,8 @@ LABEL_24:
                 v12[4] = 1; /*0x6b29df*/
               }
               if ( *(unsigned int *)v26 == a1 /*0x6b2a22*/
-                || __PAIR32__(v26[1] - 1, v26[0]) == a1
-                || v26[0] - 1 == (unsigned short)a1 && (v26[1] - 1 == HIWORD(a1) || __PAIR32__(v26[1], v26[0] - 1) == a1) )
+                || ((v26[1] - 1 & 0xFFFFu) << 16 | (v26[0] & 0xFFFFu)) == a1
+                || v26[0] - 1 == (unsigned short)a1 && (v26[1] - 1 == HIWORD(a1) || ((v26[1] & 0xFFFFu) << 16 | (v26[0] - 1 & 0xFFFFu)) == a1) )
               {
                 v12[6] = 1; /*0x6b2a2b*/
               }
@@ -575,11 +575,11 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   HIWORD(v83) = HIWORD(a3) + 14; /*0x6b2f93*/
   v4 = (__int16)(a3 - 14) < 0 ? 0 : (unsigned __int16)v3;
   v5 = SHIWORD(v3) < 0 ? 0 : HIWORD(v3);
-  LOWORD(v83) = dword_87F914 - dword_87F90C; /*0x6b2fad*/
+  (v83) = ((v83) & ~0xFFFF) | ((dword_87F914 - dword_87F90C) & 0xFFFF); /*0x6b2fad*/
   if ( dword_87F914 - dword_87F90C >= (__int16)(a3 + 14) ) /*0x6b2fb2*/
     LOWORD(v83) = a3 + 14; /*0x6b2fb4*/
-  v6 = HIWORD(v83); /*0x6b2fc4*/
-  if ( dword_87F918 - dword_87F910 < SHIWORD(v83) ) /*0x6b2fcd*/
+  v6 = (((v83) >> 16) & 0xFFFF); /*0x6b2fc4*/
+  if ( dword_87F918 - dword_87F910 < (short)(((v83) >> 16) & 0xFFFF) ) /*0x6b2fcd*/
     v6 = dword_87F918 - dword_87F910; /*0x6b2fcf*/
   v7 = 0; /*0x6b2fd2*/
   v90 = 0; /*0x6b2fdf*/
@@ -751,10 +751,10 @@ LABEL_31:
       v78 = v97; /*0x6b3343*/
     if ( (__int16)v97 > v80 ) /*0x6b334d*/
       v80 = v97; /*0x6b334f*/
-    if ( SHIWORD(v97) < v79 ) /*0x6b335e*/
-      v79 = HIWORD(v97); /*0x6b3360*/
-    if ( SHIWORD(v97) > v81 ) /*0x6b336a*/
-      v81 = HIWORD(v97); /*0x6b336c*/
+    if ( (short)(((v97) >> 16) & 0xFFFF) < v79 ) /*0x6b335e*/
+      v79 = (((v97) >> 16) & 0xFFFF); /*0x6b3360*/
+    if ( (short)(((v97) >> 16) & 0xFFFF) > v81 ) /*0x6b336a*/
+      v81 = (((v97) >> 16) & 0xFFFF); /*0x6b336c*/
     v36 = v82; /*0x6b3371*/
     v37 = &v104; /*0x6b3375*/
     v38 = 4; /*0x6b337c*/
@@ -848,10 +848,10 @@ LABEL_31:
       v78 = v77; /*0x6b34f5*/
     if ( (__int16)v77 > v80 ) /*0x6b34ff*/
       v80 = v77; /*0x6b3501*/
-    if ( SHIWORD(v77) < v79 ) /*0x6b3510*/
-      v79 = HIWORD(v77); /*0x6b3512*/
-    if ( SHIWORD(v77) > v81 ) /*0x6b351c*/
-      v81 = HIWORD(v77); /*0x6b351e*/
+    if ( (short)(((v77) >> 16) & 0xFFFF) < v79 ) /*0x6b3510*/
+      v79 = (((v77) >> 16) & 0xFFFF); /*0x6b3512*/
+    if ( (short)(((v77) >> 16) & 0xFFFF) > v81 ) /*0x6b351c*/
+      v81 = (((v77) >> 16) & 0xFFFF); /*0x6b351e*/
 LABEL_88:
     if ( v44 <= 0 || v93 <= 0 ) /*0x6b352d*/
     {
@@ -1036,7 +1036,7 @@ char ProcessSlaveManagerTerrain()
     v2 = v1[9]; /*0x6b3877*/
     v23 = v2; /*0x6b3886*/
     v3 = (__int16)v2 - dword_8759A8; /*0x6b3892*/
-    v4 = SHIWORD(v2) - dword_8759AC; /*0x6b389a*/
+    v4 = (short)(((v2) >> 16) & 0xFFFF) - dword_8759AC; /*0x6b389a*/
     v5 = v4 * dword_8759A4 + v3; /*0x6b38a5*/
     v6 = dword_8759A4 * (v4 + 1) + v3; /*0x6b38ad*/
     if ( *((unsigned char *)g_SlaveManagerPool + 8 * v5 + 5) /*0x6b38c7*/
@@ -1066,10 +1066,10 @@ char ProcessSlaveManagerTerrain()
       if ( v10 - v9 <= 15 ) /*0x6b391a*/
       {
         v23 = v2; /*0x6b3928*/
-        v12 = SHIWORD(v2) + (__int16)v2; /*0x6b3934*/
+        v12 = (short)(((v2) >> 16) & 0xFFFF) + (__int16)v2; /*0x6b3934*/
         if ( v12 > dword_ABED04 /*0x6b396f*/
-          && (__int16)v2 - SHIWORD(v2) < dword_ABED04
-          && SHIWORD(v2) - (__int16)v2 < dword_ABED04
+          && (__int16)v2 - (short)(((v2) >> 16) & 0xFFFF) < dword_ABED04
+          && (short)(((v2) >> 16) & 0xFFFF) - (__int16)v2 < dword_ABED04
           && v12 <= dword_ABED08
           && i[17] == -1
           && !i[57] )
@@ -1178,7 +1178,7 @@ LABEL_39:
       v5 = ++v18; /*0x6b3ca5*/
       if ( v18 >= 2 ) /*0x6b3cad*/
       {
-        LOBYTE(result) = 1; /*0x6b3cb6*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6b3cb6*/
         return result; /*0x6b3cbc*/
       }
       a2 = v16; /*0x6b3abe*/
@@ -1249,7 +1249,7 @@ LABEL_33:
   if ( (unsigned char)result || v16 ) /*0x6b3c87*/
     goto LABEL_39; /*0x6b3c87*/
 LABEL_42:
-  LOBYTE(result) = 0; /*0x6b3cbf*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6b3cbf*/
   return result; /*0x6b3cb3*/
 
 }
@@ -1290,7 +1290,7 @@ char sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
   v9 = SHIWORD(a3) - dword_8759AC; /*0x6b3d5f*/
   v10 = v9 + 2; /*0x6b3d61*/
   v19 = v9 + 2; /*0x6b3d66*/
-  if ( !__OFSUB__(v9, v9 + 2) ) /*0x6b3d6a*/
+  if ( !(((((v9) ^ (v9 + 2)) & ((v9) ^ ((v9) - (v9 + 2))))) < 0) ) /*0x6b3d6a*/
   {
     v11 = v8 + 2; /*0x6b3d70*/
     do /*0x6b3df7*/
@@ -1387,7 +1387,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
   v24 = 1; /*0x6b3ee9*/
   v30 = v7; /*0x6b3ef1*/
   v28 = v7 + 2; /*0x6b3ef5*/
-  if ( __OFSUB__(v7, v7 + 2) ) /*0x6b3ef9*/
+  if ( (((((v7) ^ (v7 + 2)) & ((v7) ^ ((v7) - (v7 + 2))))) < 0) ) /*0x6b3ef9*/
     return 1; /*0x6b4036*/
   v9 = v6 + 2; /*0x6b3eff*/
   while ( 1 ) /*0x6b3f02*/
@@ -1574,7 +1574,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   v4 = a0; /*0x6b59a4*/
   v22 = aP1; /*0x6b59a6*/
   v23 = a0; /*0x6b59aa*/
-  if ( __PAIR32__(a0[1] / 256, *a0 / 256) == Map_BottomRightCell ) /*0x6b59d5*/
+  if ( ((a0[1] / 256 & 0xFFFFu) << 16 | (*a0 / 256 & 0xFFFFu)) == Map_BottomRightCell ) /*0x6b59d5*/
     return 0; /*0x6b59e6*/
   Game::LockMutex((Game *)&v30, 0, 0); /*0x6b59f4*/
   v6 = 0; /*0x6b59fe*/
@@ -1734,9 +1734,9 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   v24 = a0; /*0x6b5c9a*/
   v5 = a0[1]; /*0x6b5cb6*/
   result = v5 / 256; /*0x6b5cbb*/
-  if ( __PAIR32__(v5 / 256, *a0 / 256) == Map_BottomRightCell ) /*0x6b5cc5*/
+  if ( ((v5 / 256 & 0xFFFFu) << 16 | (*a0 / 256 & 0xFFFFu)) == Map_BottomRightCell ) /*0x6b5cc5*/
   {
-    LOBYTE(result) = 0; /*0x6b5cd0*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6b5cd0*/
     return result; /*0x6b5cd6*/
   }
   Game::LockMutex((Game *)&v31, 0, 0); /*0x6b5ce4*/
@@ -1850,7 +1850,7 @@ LABEL_37:
     if ( v34 ) /*0x6b5f5d*/
       __3_YAXPAX_Z(v32); /*0x6b5f60*/
   }
-  LOBYTE(result) = 0; /*0x6b5f6b*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6b5f6b*/
   return result; /*0x6b5cd2*/
 
 }
@@ -1882,7 +1882,7 @@ void sub_6B6230()
         dwNewLong = 2; /*0x6b62ab*/
       if ( !MEMORY[0xA8E9A0] ) /*0x6b62ba*/
       {
-        LOBYTE(v2) = 0; /*0x6b62bc*/
+        (v2) = ((v2) & ~0xFF) | ((0) & 0xFF); /*0x6b62bc*/
         ScreenSaver::Process(v2); /*0x6b62be*/
       }
     }
@@ -3745,15 +3745,15 @@ LABEL_345:
   v230[0] = 0; /*0x6bdd9f*/
   v230[1] = 0; /*0x6bdda5*/
   v230[2] = 168; /*0x6bddb1*/
-  v230[3] = HIDWORD(qword_886FB8); /*0x6bddbd*/
+  v230[3] = (((qword_886FB8) >> 32) & 0xFFFFFFFFu); /*0x6bddbd*/
   v229[0] = 0; /*0x6bddca*/
   v229[1] = 0; /*0x6bddd0*/
   v229[2] = qword_886FB8 - 168; /*0x6bddd6*/
-  v229[3] = HIDWORD(qword_886FB8); /*0x6bdddc*/
+  v229[3] = (((qword_886FB8) >> 32) & 0xFFFFFFFFu); /*0x6bdddc*/
   v228[0] = 0; /*0x6bdde2*/
   v228[1] = 0; /*0x6bdde8*/
   v228[2] = qword_886FB8 - 168; /*0x6bddee*/
-  v228[3] = HIDWORD(qword_886FB8); /*0x6bddf4*/
+  v228[3] = (((qword_886FB8) >> 32) & 0xFFFFFFFFu); /*0x6bddf4*/
   AllocateSurfaceScreenSurfaces((int)&dword_886FB0, (int)v228, (int)v229, (int)v230, 0); /*0x6bde14*/
   if ( g_DDraw_Force3D && InitializeRadialGradientTexture(v210) ) /*0x6bde22*/
   {
@@ -4555,8 +4555,8 @@ long long E4Recv_6B1EE0::sub_6B1EE0()
     v5 = 4; /*0x6b1f13*/
   this->ambientSoundController[4] = v5; /*0x6b1f1b*/
   v7 = Math::RoundToInt(nextObject); /*0x6b1f22*/
-  WORD2(result) = HIWORD(v7); /*0x6b1f22*/
-  LOWORD(result) = v7; /*0x6b1f22*/
+  (result) = ((result) & ~(0xFFFFull << 32)) | ((((((v7) >> 16) & 0xFFFF)) & 0xFFFFull) << 32); /*0x6b1f22*/
+  (result) = ((result) & ~0xFFFF) | ((v7) & 0xFFFF); /*0x6b1f22*/
   if ( (int)result >= abstractFlags - v5 ) /*0x6b1f31*/
     this->customSound_controller[0] = abstractFlags - v5; /*0x6b1f3b*/
   else
@@ -5385,7 +5385,7 @@ int E4Recv_6B93E0::sub_6B93E0()
   {
     v3 = *v1; /*0x6b93f7*/
     v4 = *(v1 - 2); /*0x6b93fe*/
-    LOBYTE(v5) = -1; /*0x6b9415*/
+    (v5) = ((v5) & ~0xFF) | ((-1) & 0xFF); /*0x6b9415*/
     if ( 15 * *(v1 - 1) / 10 <= 255 ) /*0x6b9422*/
       v5 = 15 * *(v1 - 1) / 10; /*0x6b9424*/
     *(v1 - 2) = v5; /*0x6b9426*/

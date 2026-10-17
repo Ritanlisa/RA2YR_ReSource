@@ -166,14 +166,14 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
             if ( v9 < (int)qword_886FB8 ) /*0x5befdb*/
             {
               v10 = (int)v13[12]; /*0x5befdd*/
-              if ( v10 < SHIDWORD(qword_886FB8) ) /*0x5befec*/
+              if ( v10 < (int)(((qword_886FB8) >> 32) & 0xFFFFFFFFu) ) /*0x5befec*/
               {
                 v15 = (double)(int)qword_886FB8; /*0x5befee*/
                 v13[15] = (MovieContext)qword_886FB8; /*0x5beff4*/
                 *(unsigned short *)v16.__tail_0 = Math::RoundToInt(v15 / (double)v9); /*0x5bf001*/
                 v13[13] = 0; /*0x5bf008*/
                 v13[16] = v16; /*0x5bf00b*/
-                v13[14] = (MovieContext)((HIDWORD(qword_886FB8) - *(unsigned int *)&v16) / 2); /*0x5bf01d*/
+                v13[14] = (MovieContext)(((((qword_886FB8) >> 32) & 0xFFFFFFFFu) - *(unsigned int *)&v16) / 2); /*0x5bf01d*/
                 Debug::Log(); /*0x5bf02b*/
               }
             }

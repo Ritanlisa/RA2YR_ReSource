@@ -164,7 +164,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
           v14 = *(unsigned int *)&v67[4]; /*0x415fd7*/
           Math::ArcTan2(*(double *)v67); /*0x415fe1*/
           __asm { fdivr qword ptr [esi] } /*0x415fe6*/
-          v57 = COERCE_DOUBLE(__PAIR64__(v14, *(unsigned int *)v67)); /*0x415fed*/
+          v57 = COERCE_DOUBLE((((v14 & 0xFFFFFFFFull)) << 32 | (*(unsigned int *)v67 & 0xFFFFFFFFull))); /*0x415fed*/
           __asm { fstp qword ptr [esi] } /*0x415fee*/
           *_ESI = _RT1; /*0x415fee*/
           Math::ArcTan2(v57); /*0x415ff0*/
@@ -271,7 +271,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         __asm { fmul qword ptr [esp+80h+var_54+4] } /*0x4161ca*/
         __asm { fstp qword ptr [esi] }
         *_ESI = _RT1; /*0x4161cf*/
-        Math::SinCos(COERCE_DOUBLE(__PAIR64__(v31, *(unsigned int *)v67))); /*0x4161d6*/
+        Math::SinCos(COERCE_DOUBLE((((v31 & 0xFFFFFFFFull)) << 32 | (*(unsigned int *)v67 & 0xFFFFFFFFull)))); /*0x4161d6*/
         __asm { fmul qword ptr [esp+88h+var_54+4] } /*0x4161db*/
         __asm
         {
@@ -322,12 +322,12 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v38 = *(unsigned long long *)v67; /*0x4162a8*/
         Math::ArcTan2(*(double *)v67); /*0x4162ae*/
         __asm { fmul qword ptr [esi] } /*0x4162b3*/
-        v60 = COERCE_DOUBLE(__PAIR64__(HIDWORD(v38), *(unsigned int *)v67)); /*0x4162ba*/
+        v60 = COERCE_DOUBLE(((((((v38) >> 32) & 0xFFFFFFFFu) & 0xFFFFFFFFull)) << 32 | (*(unsigned int *)v67 & 0xFFFFFFFFull))); /*0x4162ba*/
         __asm { fstp qword ptr [esi] } /*0x4162bb*/
         *_ESI = _RT1; /*0x4162bb*/
         Math::ArcTan2(v60); /*0x4162bd*/
         __asm { fmul qword ptr [esi+8] } /*0x4162c2*/
-        v56 = COERCE_DOUBLE(__PAIR64__(HIDWORD(v38), *(unsigned int *)v67)); /*0x4162ca*/
+        v56 = COERCE_DOUBLE(((((((v38) >> 32) & 0xFFFFFFFFu) & 0xFFFFFFFFull)) << 32 | (*(unsigned int *)v67 & 0xFFFFFFFFull))); /*0x4162ca*/
         __asm { fstp qword ptr [esi+8] } /*0x4162cb*/
         v65[30] = _RT1; /*0x4162cb*/
         Math::SinCos(v56); /*0x4162ce*/

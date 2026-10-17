@@ -175,12 +175,12 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x66485c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x664866*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x664866*/
     if ( a3 ) /*0x66486c*/
       v4 = a3; /*0x664882*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x66487e*/
-    LOBYTE(this->m_C) = 1; /*0x664886*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x664886*/
     if ( v4 ) /*0x66488a*/
     {
       if ( *&this->q004 ) /*0x664895*/
@@ -190,7 +190,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
           m_8 = a2; /*0x6648a3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6648a9*/
           ++i; /*0x6648ae*/
-        if ( BYTE1(this->m_C) ) /*0x6648bb*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x6648bb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x6648c6*/
           *&this->q004 = 0; /*0x6648ce*/
@@ -274,12 +274,12 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x66499c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x6649a2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x6649a2*/
     if ( a3 ) /*0x6649a8*/
       v4 = a3; /*0x6649be*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6649ba*/
-    LOBYTE(this->m_C) = 1; /*0x6649c2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x6649c2*/
     if ( !v4 ) /*0x6649c6*/
       return 0; /*0x664a3a*/
     if ( *&this->q004 ) /*0x6649c8*/
@@ -289,7 +289,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
         m_8 = a2; /*0x6649d6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6649dc*/
         ++i; /*0x6649e1*/
-      if ( BYTE1(this->m_C) ) /*0x6649ee*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x6649ee*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x6649f9*/
         *&this->q004 = 0; /*0x664a01*/

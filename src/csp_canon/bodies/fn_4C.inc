@@ -317,7 +317,7 @@ double Math::ArcTan(double a1)
   v4 = v8 < 0.0; /*0x4cae12*/
   v5 = 0; /*0x4cae12*/
   v6 = v8 == 0.0; /*0x4cae12*/
-  LOWORD(result) = v3; /*0x4cae18*/
+  (result) = ((result) & ~0xFFFF) | ((v3) & 0xFFFF); /*0x4cae18*/
   return result; /*0x4cae21*/
 
 }

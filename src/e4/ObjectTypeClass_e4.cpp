@@ -1502,7 +1502,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
   if ( !v3 ) /*0x717c19*/
   {
     this->vtable2 = 0; /*0x717c5a*/
-    BYTE1(this->u8_D) = 0; /*0x717c61*/
+    (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x717c61*/
     return &this->AbstractTypeClass; /*0x717c65*/
   }
   void *v4; // eax
@@ -1512,7 +1512,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
     return &this->AbstractTypeClass; /*0x717c30*/
   void *vtable2 = this->vtable3; // ecx /*0x717c32*/
   int v6 = 0; // eax /*0x717c35*/
-  BYTE1(this->u8_D) = 1; /*0x717c39*/
+  (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x717c39*/
   if ( (int)vtable2 <= 0 ) /*0x717c3d*/
     return &this->AbstractTypeClass; /*0x717c3d*/
   do /*0x717c51*/

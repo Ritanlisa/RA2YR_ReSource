@@ -243,18 +243,18 @@ bool String::Equals_Alt(const char *a2)
     {
       result = strcmp((const char *)result, a2); /*0x7b4736*/
       if ( result ) /*0x7b4750*/
-        LOBYTE(result) = 0; /*0x7b4767*/
+        (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b4767*/
       else
         return 1; /*0x7b4752*/
     }
     else
     {
-      LOBYTE(result) = 0; /*0x7b476d*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b476d*/
     }
   }
   else
   {
-    LOBYTE(result) = 1; /*0x7b471f*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b471f*/
   }
   return result; /*0x7b4721*/
 
@@ -273,18 +273,18 @@ bool String::Compare(const char **a2)
     {
       result = strcmp((const char *)result, *a2); /*0x7b47a9*/
       if ( result ) /*0x7b47c3*/
-        LOBYTE(result) = 0; /*0x7b47da*/
+        (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b47da*/
       else
         return 1; /*0x7b47c5*/
     }
     else
     {
-      LOBYTE(result) = 0; /*0x7b47e0*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b47e0*/
     }
   }
   else
   {
-    LOBYTE(result) = 1; /*0x7b4790*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b4790*/
   }
   return result; /*0x7b4792*/
 
@@ -303,16 +303,16 @@ bool String::NotEquals(const char *a2)
     {
       result = strcmp((const char *)result, a2); /*0x7b4816*/
       if ( result ) /*0x7b4837*/
-        LOBYTE(result) = 1; /*0x7b4847*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b4847*/
     }
     else
     {
-      LOBYTE(result) = 1; /*0x7b484d*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b484d*/
     }
   }
   else
   {
-    LOBYTE(result) = 0; /*0x7b47ff*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b47ff*/
   }
   return result; /*0x7b4801*/
 
@@ -626,11 +626,11 @@ char String::Erase(int aP1, int a3)
     strcat(v8, (const char *)(a3 + v4 + *(unsigned int *)this->__pad_0)); /*0x7b50c1*/
     __3_YAXPAX_Z(*(void **)this->__pad_0); /*0x7b50cd*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(v8); /*0x7b50d9*/
-    LOBYTE(result) = 1; /*0x7b50db*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b50db*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x7b5058*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b5058*/
   }
   return result; /*0x7b5055*/
 
@@ -726,7 +726,7 @@ char String::Assign_Bool(const char *a2)
     result = strlen(a2) + 1; /*0x7b5a8d*/
     qmemcpy(*(void **)this->__pad_0, a2, result); /*0x7b5a9c*/
   }
-  LOBYTE(result) = 1; /*0x7b5aa7*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b5aa7*/
   return result; /*0x7b5aa5*/
 
 }
@@ -1215,7 +1215,7 @@ wchar_t MSPrintAnim::GetCharAt(size_t a2)
 
   result = wcslen(*(const wchar_t **)this->__pad_0); /*0x7b7116*/
   if ( a2 >= result ) /*0x7b7124*/
-    LOWORD(result) = 0; /*0x7b7130*/
+    (result) = ((result) & ~0xFFFF) | ((0) & 0xFFFF); /*0x7b7130*/
   else
     LOWORD(result) = *(unsigned short *)(*(unsigned int *)this->__pad_0 + 2 * a2); /*0x7b7129*/
   return result; /*0x7b7128*/
@@ -1345,12 +1345,12 @@ char WideString::IsASCII()
       if ( v3 >= result ) /*0x7b7db7*/
         goto LABEL_6; /*0x7b7db7*/
     }
-    LOBYTE(result) = 0; /*0x7b7dbd*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b7dbd*/
   }
   else
   {
 LABEL_6:
-    LOBYTE(result) = 1; /*0x7b7db9*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b7db9*/
   }
   return result; /*0x7b7dbb*/
 

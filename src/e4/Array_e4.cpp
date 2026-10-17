@@ -70,7 +70,7 @@ int Array::RemoveAt(int a2, void *a2_2)
   result = (int)(a2_2); /*0x63e593*/
   if ( a2_2 >= (int)Array_field_0x10 ) /*0x63e599*/
   {
-    LOBYTE(result) = 0; /*0x63e5bc*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x63e5bc*/
   }
   else
   {
@@ -85,7 +85,7 @@ int Array::RemoveAt(int a2, void *a2_2)
       }
       while ( result < (int)a2_2->Array_field_0x10 ); /*0x63e5b4*/
     }
-    LOBYTE(result) = 1; /*0x63e5b7*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x63e5b7*/
   }
   return result; /*0x63e5b9*/
 
@@ -115,7 +115,7 @@ int Array::ContainsValue(int aP1, void *a2)
   if ( (int)Array_field_0xE8 <= 0 ) /*0x65adfc*/
   {
     LABEL_6:
-    LOBYTE(result) = 0; /*0x65ae1a*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x65ae1a*/
   }
   else
   {
@@ -130,7 +130,7 @@ int Array::ContainsValue(int aP1, void *a2)
       if ( v4 >= (int)Array_field_0xE8 ) /*0x65ae18*/
         goto LABEL_6; /*0x65ae18*/
     }
-    LOBYTE(result) = 1; /*0x65ae22*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x65ae22*/
   }
   return result; /*0x65ae1a*/
 

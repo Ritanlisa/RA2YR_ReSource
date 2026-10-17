@@ -180,7 +180,7 @@ int PlayerClass::UpdateAIUnits() {
         {
           EventClass_field_0x8 = v2->EventClass_field_0x8; /*0x732668*/
           if ( *(unsigned int *)v2->__pad_10 < (int)EventClass_field_0x8 /*0x732692*/
-            || ((IDA_LOBYTE(HeightMap) = IDA_BYTE1(v2->EventClass_field_0xC), (unsigned char)HeightMap) || !EventClass_field_0x8)
+            || (((HeightMap) = ((HeightMap) & ~0xFF) | (((((v2->EventClass_field_0xC) >> 8) & 0xFF)) & 0xFF), (unsigned char)HeightMap) || !EventClass_field_0x8)
             && (HeightMap = *(unsigned int *)&v2->__pad_10[4], HeightMap > 0)
             && (IDA_LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v2->EventClass_field_0x0 + 8))(
                                       v2,

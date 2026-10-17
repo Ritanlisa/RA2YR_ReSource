@@ -18,7 +18,7 @@ int AbstractClassVector::Read(unsigned int * a2, void *a2_2, void *a3)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x4e0440*/
+  if ( !((this->m_C) & 0xFF) ) /*0x4e0440*/
     return 0; /*0x4e0448*/
   m_8 = this->m_8; /*0x4e044e*/
   result = 0; /*0x4e0451*/
@@ -50,8 +50,8 @@ int AbstractClassVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a
 
   this->q004 = 0; /*0x4e0e8b*/
   this->q008 = aP1; /*0x4e0e8e*/
-  LOBYTE(this->m_C) = 1; /*0x4e0e91*/
-  BYTE1(this->m_C) = 0; /*0x4e0e95*/
+  (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4e0e91*/
+  (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4e0e95*/
   *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
@@ -61,7 +61,7 @@ int AbstractClassVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a
       return this->__pad_0; /*0x4e0eae*/
     }
     this->AbstractClassVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x4e0ebd*/
-    BYTE1(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0ec0*/
+    (this->AbstractClassVector_field_0x0C) = ((this->AbstractClassVector_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x4e0ec0*/
   }
   return this->__pad_0; /*0x4e0ead*/
 

@@ -323,7 +323,7 @@ LABEL_8:
     v10 = v4; /*0x5c63bc*/
     v11 = *v4 & 0x80; /*0x5c63be*/
     v12 = v9 - v6; /*0x5c63c6*/
-    LOBYTE(v3) = -(v11 != 0); /*0x5c63c8*/
+    (v3) = ((v3) & ~0xFF) | ((-(v11 != 0)) & 0xFF); /*0x5c63c8*/
     v13 = (unsigned char *)(v9 + a1); /*0x5c63cd*/
     if ( v9 - v6 > 0 ) /*0x5c63d2*/
     {
@@ -840,7 +840,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
           v42 = v37 + a3 * v41; /*0x5c6fb9*/
           *(unsigned __int16 *)((char *)v38 + v39 - 2) = v42; /*0x5c6fbb*/
           --v40; /*0x5c6fc3*/
-          v37 = HIWORD(v42); /*0x5c6fc4*/
+          v37 = (((v42) >> 16) & 0xFFFF); /*0x5c6fc4*/
         }
         while ( v40 ); /*0x5c6fc6*/
       }
@@ -859,7 +859,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
           v32 = v27 + (__int16)-a3 * v31; /*0x5c6f46*/
           *(unsigned __int16 *)((char *)v28 + v29 - 2) = v32; /*0x5c6f48*/
           --v30; /*0x5c6f50*/
-          v27 = HIWORD(v32); /*0x5c6f51*/
+          v27 = (((v32) >> 16) & 0xFFFF); /*0x5c6f51*/
         }
         while ( v30 ); /*0x5c6f53*/
         v5 = a1; /*0x5c6f55*/
@@ -930,7 +930,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
         v22 = v19 + a3 * v21; /*0x5c6ebe*/
         *(unsigned __int16 *)((char *)v20 + v5 - (char *)v44 - 2) = v22; /*0x5c6ec0*/
         --v18; /*0x5c6ec8*/
-        v19 = HIWORD(v22); /*0x5c6ec9*/
+        v19 = (((v22) >> 16) & 0xFFFF); /*0x5c6ec9*/
       }
       while ( v18 ); /*0x5c6ecb*/
     }
@@ -974,7 +974,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
     v16 = v13 + (__int16)-a3 * v15; /*0x5c6e77*/
     *(unsigned __int16 *)((char *)v14 + v5 - (char *)v44 - 2) = v16; /*0x5c6e79*/
     --v12; /*0x5c6e81*/
-    v13 = HIWORD(v16); /*0x5c6e82*/
+    v13 = (((v16) >> 16) & 0xFFFF); /*0x5c6e82*/
   }
   while ( v12 ); /*0x5c6e84*/
   return 0; /*0x5c6e86*/
@@ -1807,7 +1807,7 @@ char sub_5C7BA0(const char * a1, unsigned short * a2, int a3)
               v15 = v11 + v28 * v14; /*0x5c7cb6*/
               *(v12 - 1) = v15; /*0x5c7cb8*/
               --v13; /*0x5c7cbf*/
-              v11 = HIWORD(v15); /*0x5c7cc0*/
+              v11 = (((v15) >> 16) & 0xFFFF); /*0x5c7cc0*/
             }
             while ( v13 ); /*0x5c7cc2*/
             v10 = a3; /*0x5c7cc4*/
@@ -2088,7 +2088,7 @@ LABEL_45:
       dword_ABF5B4 = 0; /*0x5c87f2*/
       memset(&dword_ABF6BC, 0, v46); /*0x5c87fb*/
       dword_ABF8C4 = 0; /*0x5c87ff*/
-      LOWORD(dword_ABF5A0) = 0; /*0x5c8808*/
+      (dword_ABF5A0) = ((dword_ABF5A0) & ~0xFFFF) | ((0) & 0xFFFF); /*0x5c8808*/
       dword_ABF5A8 = 0; /*0x5c8820*/
       dword_ABF8CC = 0; /*0x5c8825*/
       dword_ABF5AC = 0; /*0x5c882b*/
@@ -2098,7 +2098,7 @@ LABEL_45:
       dword_ABF5A4 = 0; /*0x5c8841*/
       dword_ABF8D4 = 0; /*0x5c8847*/
       dword_ABF8C8 = 0; /*0x5c884d*/
-      LOWORD(dword_ABF6B4) = 0; /*0x5c8853*/
+      (dword_ABF6B4) = ((dword_ABF6B4) & ~0xFFFF) | ((0) & 0xFFFF); /*0x5c8853*/
       dword_ABF59C = 0; /*0x5c885a*/
     }
     return 0; /*0x5c8863*/
@@ -2243,7 +2243,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
       v5 = 0; /*0x5c8b09*/
       *((unsigned short *)v6 - 1) = v9; /*0x5c8b0b*/
       --v7; /*0x5c8b14*/
-      v34 = BYTE2(v9) & 1; /*0x5c8b15*/
+      v34 = (((v9) >> 16) & 0xFF) & 1; /*0x5c8b15*/
     }
     while ( v7 ); /*0x5c8b19*/
   }
@@ -2281,7 +2281,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
         v14 = v13 - v37; /*0x5c8c15*/
         *((unsigned short *)v11 - 1) = v14; /*0x5c8c17*/
         --v12; /*0x5c8c20*/
-        v37 = BYTE2(v14) & 1; /*0x5c8c21*/
+        v37 = (((v14) >> 16) & 0xFF) & 1; /*0x5c8c21*/
       }
       while ( v12 ); /*0x5c8c25*/
       v10 = v36; /*0x5c8c27*/
@@ -2436,7 +2436,7 @@ char sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
       v7 += 2; /*0x5c8ea1*/
       v9 = v8 - v33; /*0x5c8ea4*/
       *((unsigned short *)v7 - 1) = v9; /*0x5c8ea6*/
-      v33 = BYTE2(v9) & 1; /*0x5c8eaf*/
+      v33 = (((v9) >> 16) & 0xFF) & 1; /*0x5c8eaf*/
       --v36; /*0x5c8eb8*/
     }
     while ( v36 ); /*0x5c8ebc*/
@@ -2581,14 +2581,14 @@ char ModCryptoExp(char * a1, int edx0)
     }
     while ( !*--v7 ); /*0x5c905f*/
   }
-  if ( v8 > 1 || HIDWORD(v4) > (unsigned __int16)dword_82FCE0 ) /*0x5c9072*/
+  if ( v8 > 1 || (((v4) >> 32) & 0xFFFFFFFFu) > (unsigned __int16)dword_82FCE0 ) /*0x5c9072*/
   {
 LABEL_17:
     v14 = &unk_82E174; /*0x5c90bb*/
     while ( 1 ) /*0x5c90c0*/
     {
       WORD2(v4) = *v14; /*0x5c90c0*/
-      if ( !ShiftBigIntAndScan(v25, (int)v2, SHIDWORD(v4), edx0) ) /*0x5c90ce*/
+      if ( !ShiftBigIntAndScan(v25, (int)v2, (int)(((v4) >> 32) & 0xFFFFFFFFu), edx0) ) /*0x5c90ce*/
         break; /*0x5c90ce*/
       if ( (unsigned int)++v14 >= 0x82FCE2 ) /*0x5c90e5*/
       {
@@ -2644,7 +2644,7 @@ LABEL_17:
     v4 = v12; /*0x5c9083*/
     WORD2(v4) = v11[v12 / 2]; /*0x5c9088*/
     v13 = (char *)&v11[v12 / 2]; /*0x5c908c*/
-    if ( WORD2(v4) <= v10 ) /*0x5c9092*/
+    if ( (((v4) >> 32) & 0xFFFF) <= v10 ) /*0x5c9092*/
     {
       if ( WORD2(v4) == v10 ) /*0x5c9098*/
         goto LABEL_15; /*0x5c9098*/
@@ -3941,7 +3941,7 @@ int sub_5C7E00(unsigned int * a1, unsigned short * a2, unsigned short * a3, int 
           v11 = *v8++; /*0x5c7e6b*/
           v12 = v10 + (unsigned __int16)*v9 + v7 * v11; /*0x5c7e79*/
           *v9++ = v12; /*0x5c7e7b*/
-          v10 = HIWORD(v12); /*0x5c7e84*/
+          v10 = (((v12) >> 16) & 0xFFFF); /*0x5c7e84*/
           --v17; /*0x5c7e8b*/
         }
         while ( v17 ); /*0x5c7e8f*/

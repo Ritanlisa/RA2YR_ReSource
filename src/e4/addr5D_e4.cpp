@@ -385,7 +385,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     v13 = *a2; /*0x5d45f1*/
     if ( (*a2 & 0x1000) != 0 && v12 >= 48 && v12 <= 57 ) /*0x5d4605*/
     {
-      BYTE1(v13) &= ~0x10u; /*0x5d4609*/
+      (v13) &= ~(((~(~0x10u)) & 0xFF) << 8); /*0x5d4609*/
       *a2 = v13; /*0x5d460c*/
     }
     else if ( (*a2 & 0x1000) != 0 || (v13 & 0x8000) != 0 || v12 < 32 ) /*0x5d461c*/

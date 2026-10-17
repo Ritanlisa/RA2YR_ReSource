@@ -662,7 +662,7 @@ int Gap2Recv_756860::InitializeTileAudioOcclusion(int a2, void* a3) {
             if ( *(unsigned int *)(v50 + 4 * v6) != -1 ) /*0x7569fe*/
             {
               v28 = result & 0xFF00 | ((uint16_t)v25 >> 8); /*0x756a1b*/
-              v29 = BYTE1(result); /*0x756a25*/
+              v29 = (((result) >> 8) & 0xFF); /*0x756a25*/
               v30 = *v24; /*0x756a27*/
               v31 = (uint16_t)(v29 + v20); /*0x756a35*/
               v48[0] = (uint16_t)(BYTE1(v25) + (unsigned short)v45); /*0x756a3c*/
@@ -722,7 +722,7 @@ int Gap2Recv_756860::InitializeTileAudioOcclusion(int a2, void* a3) {
             g_VoxelDepthBuffer[v36] = 1; /*0x756b50*/
           }
           LOWORD(v25) = v53[0] + (unsigned short)v25; /*0x756b5e*/
-          LOWORD(result) = v53[1] + result; /*0x756b60*/
+          (result) = ((result) & ~0xFFFF) | ((v53[1] + result) & 0xFFFF); /*0x756b60*/
           ++v6; /*0x756b62*/
           --v35; /*0x756b63*/
         }
@@ -968,12 +968,12 @@ char Gap2Recv_7597A0::Render_Load_7597A0() {
     this->disguiseAsType = v4[1]; /*0x7597ea*/
     v5 = v4[2]; /*0x7597f0*/
     this->disguisedAsHouse = v5; /*0x7597f6*/
-    LOBYTE(this->planningToken) = 1; /*0x7597fc*/
+    (this->planningToken) = ((this->planningToken) & ~0xFF) | ((1) & 0xFF); /*0x7597fc*/
     return 1; /*0x7597f4*/
   }
   else
   {
-    LOBYTE(this->planningToken) = 0; /*0x7597be*/
+    (this->planningToken) = ((this->planningToken) & ~0xFF) | ((0) & 0xFF); /*0x7597be*/
     return 0; /*0x7597c6*/
   }
 

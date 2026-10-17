@@ -195,7 +195,7 @@ int AudioThread::UpdateStats(int64_t a2) {
   unsigned __int64 v3; // kr00_8
 
   v3 = a2 - *((unsigned long long *)&this->q02C); /*0x403930*/
-  result = HIDWORD(v3); /*0x403930*/
+  result = (((v3) >> 32) & 0xFFFFFFFFu); /*0x403930*/
   *((unsigned long long *)&this->u32_10) = v3; /*0x403938*/
   ++this->q012; /*0x403942*/
   if ( *((unsigned long long *)&this->u32_1C) > *((unsigned long long *)&this->u32_1C) ) /*0x403957*/
@@ -861,7 +861,7 @@ LABEL_6:
         v100 = v26; /*0x42c528*/
         do /*0x42c73a*/
         {
-          HIWORD(v29) = 0; /*0x42c534*/
+          (v29) = ((v29) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x42c534*/
           v79 = 0; /*0x42c536*/
           _EBX = *(unsigned int *)v90; /*0x42c53e*/
           v75 = *(unsigned char *)(v90 + 4); /*0x42c543*/
@@ -1610,8 +1610,8 @@ LABEL_26:
   v13 = *(unsigned int *)(this->u32_C + 156); /*0x4ce9ee*/
   v14 = *(unsigned int *)(this->u32_C + 160); /*0x4ce9f0*/
   GroundHeight = *(unsigned int *)(this->u32_C + 164); /*0x4ce9f6*/
-  LOWORD(v51) = v13 / 256; /*0x4cea06*/
-  HIWORD(v51) = v14 / 256; /*0x4cea1d*/
+  (v51) = ((v51) & ~0xFFFF) | ((v13 / 256) & 0xFFFF); /*0x4cea06*/
+  (v51) = ((v51) & ~(0xFFFF << 16)) | (((v14 / 256) & 0xFFFF) << 16); /*0x4cea1d*/
   *(unsigned int *)v54 = v51; /*0x4cea26*/
   v51 = 0; /*0x4cea4d*/
   v15 = *LayerClass::Pathfinding_Find( /*0x4cea5c*/
@@ -1654,7 +1654,7 @@ LABEL_26:
     return 0; /*0x4cebfd*/
   }
   GroundHeight = 0; /*0x4cea91*/
-  v57 = (SHIWORD(v15) << 8) + 128; /*0x4cea9e*/
+  v57 = ((short)(((v15) >> 16) & 0xFFFF) << 8) + 128; /*0x4cea9e*/
   v56 = ((__int16)v15 << 8) + 128; /*0x4ceaa8*/
   GroundHeight = Cell::GetGroundHeight(&v56); /*0x4ceab1*/
   if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v52) + 80) & 0x100) != 0 ) /*0x4ceacd*/

@@ -529,7 +529,7 @@ int Team::AllMembersValid()
   if ( (int)v1 <= 0 ) /*0x65ae3a*/
   {
     LABEL_5:
-    LOBYTE(result) = 0; /*0x65ae4f*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x65ae4f*/
   }
   else
   {
@@ -541,7 +541,7 @@ int Team::AllMembersValid()
       if ( result >= (int)v1 ) /*0x65ae4d*/
         goto LABEL_5; /*0x65ae4d*/
     }
-    LOBYTE(result) = 1; /*0x65ae52*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x65ae52*/
   }
   return result; /*0x65ae51*/
 
@@ -617,7 +617,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
       MEMORY[0xA8B258] = (*(unsigned int *)(v10 + 56) & 0x10) != 0; /*0x76ee14*/
       LOBYTE(v7) = (*(unsigned int *)(v10 + 56) & 0x20) != 0; /*0x76ee20*/
       byte_A8B31F = 0; /*0x76ee22*/
-      LOBYTE(dword_A8B320) = v7; /*0x76ee29*/
+      (dword_A8B320) = ((dword_A8B320) & ~0xFF) | ((v7) & 0xFF); /*0x76ee29*/
       MEMORY[0xA8B260] = 1; /*0x76ee2f*/
       MEMORY[0xA8B261] = BYTE1(*(unsigned int *)(v10 + 56)) & 1; /*0x76ee3d*/
       MEMORY[0xA8B262] = (*(unsigned int *)(v10 + 56) & 0x400) != 0; /*0x76ee4b*/

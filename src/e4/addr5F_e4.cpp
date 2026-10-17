@@ -255,8 +255,8 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/
         goto LABEL_36; /*0x5f30d5*/
 LABEL_35:
-      BYTE2(Buffer) = 0; /*0x5f310c*/
-      LOWORD(Buffer) = word_8327A0; /*0x5f3118*/
+      (Buffer) = ((Buffer) & ~(0xFF << 16)) | (((0) & 0xFF) << 16); /*0x5f310c*/
+      (Buffer) = ((Buffer) & ~0xFFFF) | ((word_8327A0) & 0xFFFF); /*0x5f3118*/
       WinModemClass::WriteSerial((int *)v14, &Buffer, 2u); /*0x5f3124*/
       goto LABEL_36; /*0x5f3124*/
     }
@@ -455,7 +455,7 @@ char sub_5FBEF0()
         dwNewLong = 2; /*0x5fbf37*/
       if ( !MEMORY[0xA8E9A0] ) /*0x5fbf46*/
       {
-        LOBYTE(v1) = 0; /*0x5fbf48*/
+        (v1) = ((v1) & ~0xFF) | ((0) & 0xFF); /*0x5fbf48*/
         ScreenSaver::Process(v1); /*0x5fbf4a*/
       }
     }
@@ -861,8 +861,8 @@ AbstractClass * * GenerateRangeRingTextures()
       LOBYTE(v18) = 0; /*0x5ff7bb*/
       HIBYTE(v18) = (unsigned __int8)((unsigned __int16)v1 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x5ff7bd*/
       BYTE2(v21) = (unsigned __int8)((unsigned __int16)v1 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ff7bf*/
-      result = (char *)BYTE2(v21); /*0x5ff7dc*/
-      *((unsigned int *)dword_AC1838 + v1++) = BYTE2(v21) | ((BYTE1(v21) | v18) << 8); /*0x5ff7e3*/
+      result = (char *)(((v21) >> 16) & 0xFF); /*0x5ff7dc*/
+      *((unsigned int *)dword_AC1838 + v1++) = (((v21) >> 16) & 0xFF) | (((((v21) >> 8) & 0xFF) | v18) << 8); /*0x5ff7e3*/
     }
     while ( v1 < 0x10000 ); /*0x5ff7ed*/
   }

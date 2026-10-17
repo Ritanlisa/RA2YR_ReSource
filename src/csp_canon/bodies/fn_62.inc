@@ -939,7 +939,7 @@ void* ParticleClass::UpdateParticle(int a1) {
   this->ParticleClass_field_0x8[0] = (int)(void *)&ParticleClass_vftable; /*0x62d9b1*/
   this->ParticleClass_field_0xC = (void *)&ParticleClass_vftable; /*0x62d9b8*/
   ObjectClass::Undeploy((ObjectClass *)this); /*0x62d9bf*/
-  IDA_LOBYTE(v3) = 1; /*0x62d9c4*/
+  (v3) = ((v3) & ~0xFF) | ((1) & 0xFF); /*0x62d9c4*/
   AbstractClass::AnnounceExpiredPointer((void **)this, v3); /*0x62d9c8*/
   this->ParticleClass_field_0xAC = 0; /*0x62d9cd*/
   v6 = this; /*0x62d9e7*/
@@ -1574,7 +1574,7 @@ int ParticleSystemClass::SpawnParticle() {
         v16 = IDA_HIDWORD(v64); /*0x62f3ff*/
         v17 = IDA_LODWORD(v64); /*0x62f403*/
         v64 = Math::SinCos(v64); /*0x62f40e*/
-        v67 = Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v16, v17))); /*0x62f419*/
+        v67 = Math::ArcTan2(COERCE_DOUBLE((((v16 & 0xFFFFFFFFull)) << 32 | (v17 & 0xFFFFFFFFull)))); /*0x62f419*/
         v68 = v64; /*0x62f428*/
         v66 = 0.0; /*0x62f43b*/
         v18 = TransformMatrix3x4Point(v88, v90, &v66); /*0x62f443*/
@@ -1649,7 +1649,7 @@ int ParticleSystemClass::SpawnParticle() {
         *(float *)(IDA_LODWORD(v34) + 268) = v66; /*0x62f66b*/
         *(float *)(IDA_LODWORD(v34) + 272) = v67; /*0x62f671*/
         *(float *)(IDA_LODWORD(v34) + 276) = v68; /*0x62f678*/
-        v73 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, v60, IDA_SHIDWORD(v60)); /*0x62f69e*/
+        v73 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, v60, (int)(((v60) >> 32) & 0xFFFFFFFFu)); /*0x62f69e*/
         IDA_LODWORD(v72) = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 2147483646); /*0x62f6b4*/
         IDA_LODWORD(v64) = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 2147483646); /*0x62f6c3*/
         v37 = this->Type; /*0x62f6c7*/
@@ -1714,15 +1714,15 @@ int ParticleSystemClass::SpawnParticle() {
         v59[2] = 0; /*0x62f8ab*/
         v59[1] = 10; /*0x62f8ad*/
         IDA_HIBYTE(v59[0]) = v49; /*0x62f8af*/
-        IDA_LOWORD(v63) = 0; /*0x62f8b0*/
+        (v63) = ((v63) & ~0xFFFF) | ((0) & 0xFFFF); /*0x62f8b0*/
         v50 = v50; /*0x62f8bf*/
         IDA_LOWORD(v59[0]) = 0; /*0x62f8c5*/
         IDA_LOWORD(v61) = 0; /*0x62f8c8*/
         v59 = v59; /*0x62f8cc*/
         IDA_BYTE2(v59[0]) = 0; /*0x62f8d1*/
         IDA_HIBYTE(v57) = v50; /*0x62f8db*/
-        IDA_LOWORD(v59) = 0; /*0x62f8dc*/
-        IDA_BYTE2(v59) = 0; /*0x62f8e5*/
+        (v59) = ((v59) & ~0xFFFF) | ((0) & 0xFFFF); /*0x62f8dc*/
+        (v59) = ((v59) & ~(0xFF << 16)) | (((0) & 0xFF) << 16); /*0x62f8e5*/
         IDA_LOWORD(v57) = this->Type->q308; /*0x62f8fa*/
         IDA_BYTE2(v57) = this->Type->q30A; /*0x62f900*/
         TimerClass::Construct( /*0x62f940*/

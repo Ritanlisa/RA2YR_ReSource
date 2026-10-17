@@ -436,7 +436,7 @@ int Power::FinalizeDrain(int a2, void *a2_1)
   this->q004 = (int)((void *)result); /*0x4a1c29*/
   if ( result == 4 ) /*0x4a1c2f*/
   {
-    LOBYTE(this->q00C) = this->q004; /*0x4a1c34*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((this->q004) & 0xFF); /*0x4a1c34*/
     char *i; // eax
     for ( i = (char *)this->q004 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
       i[(unsigned int)&this->q020] = (char)this->a2; /*0x4a1c42*/

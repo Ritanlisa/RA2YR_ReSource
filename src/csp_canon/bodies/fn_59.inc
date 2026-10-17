@@ -108,7 +108,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
       v14 = v13 + 1; /*0x5917fa*/
       v15 = (v13 + 1) / 2 + 2; /*0x591800*/
       v16 = v11 + 1; /*0x591803*/
-      LODWORD(v73) = v16; /*0x591806*/
+      (v73) = ((v73) & 0xFFFFFFFF00000000ull) | ((v16) & 0xFFFFFFFFull); /*0x591806*/
       v69.MapSeed_field_0x04 = v12 - (v13 + 1) / 2; /*0x59180d*/
       MapSeed_field_0x10 = v15 + v69.MapSeed_field_0x04 + 3; /*0x591811*/
       v69.MapSeed_field_0x10 = MapSeed_field_0x10; /*0x591817*/
@@ -143,7 +143,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
         v4 = a3; /*0x59188f*/
       }
       v21 = *v4 + 1; /*0x59189b*/
-      LODWORD(v73) = v21; /*0x59189c*/
+      (v73) = ((v73) & 0xFFFFFFFF00000000ull) | ((v21) & 0xFFFFFFFFull); /*0x59189c*/
       v69.MapSeed_field_0x04 = v75; /*0x5918a0*/
       v22 = v15 + v75 + 2; /*0x5918a4*/
       v69.MapSeed_field_0x10 = v22; /*0x5918aa*/
@@ -178,7 +178,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
       }
       v26 = v74; /*0x591922*/
       v27 = *a2 - v74; /*0x59192c*/
-      LODWORD(v73) = v74 + 2; /*0x59192e*/
+      (v73) = ((v73) & 0xFFFFFFFF00000000ull) | ((v74 + 2) & 0xFFFFFFFFull); /*0x59192e*/
       v28 = v27 - 1; /*0x59193b*/
       v30 = a2[1] + 1; /*0x59193e*/
       v69.MapSeed_field_0x08 = a2[1] - v14 / 2; /*0x591942*/
@@ -214,7 +214,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
         while ( MapSeed_field_0x08 < v69.MapSeed_field_0x10 ); /*0x5919bd*/
       }
       v33 = v26 + 2; /*0x5919c3*/
-      LODWORD(v73) = v26 + 2; /*0x5919c6*/
+      (v73) = ((v73) & 0xFFFFFFFF00000000ull) | ((v26 + 2) & 0xFFFFFFFFull); /*0x5919c6*/
       v34 = a3[1]; /*0x5919ca*/
       v35 = *a3 - v26; /*0x5919d1*/
       v36 = v14 / 2 + v34; /*0x5919d3*/
@@ -303,9 +303,9 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
               v70 = *a2; /*0x591b86*/
               v71 = v54; /*0x591b8b*/
               v72[0] = v49 + v70; /*0x591b9a*/
-              v72[1] = WORD1(v73) + v54; /*0x591ba9*/
+              v72[1] = (((v73) >> 16) & 0xFFFF) + v54; /*0x591ba9*/
               LOWORD(v69.MapSeed_field_0x0C) = LOWORD(v69.MapSeed_field_0x18) + v49 + v70; /*0x591bb8*/
-              HIWORD(v69.MapSeed_field_0x0C) = WORD1(v73) + v54 + HIWORD(v69.MapSeed_field_0x18); /*0x591bc3*/
+              HIWORD(v69.MapSeed_field_0x0C) = (((v73) >> 16) & 0xFFFF) + v54 + HIWORD(v69.MapSeed_field_0x18); /*0x591bc3*/
               LOWORD(v69.MapSeed_field_0x10) = MapSeed_field_0x04 + LOWORD(v69.MapSeed_field_0x0C); /*0x591bd2*/
               HIWORD(v69.MapSeed_field_0x10) = HIWORD(v69.MapSeed_field_0x0C); /*0x591bd7*/
               v69.MapSeed_field_0x14 = v69.MapSeed_field_0x10; /*0x591be6*/
@@ -464,7 +464,7 @@ char MapSeedClass::PlaceCityBlockVariant(int16_t * a2, int16_t * a3, ObjectClass
   v60 = v56; /*0x592b68*/
   v13 = v12 + 7; /*0x592b6c*/
   v54 = v12 + 7; /*0x592b71*/
-  if ( !__OFSUB__(v12, v12 + 7) ) /*0x592b75*/
+  if ( !(((((v12) ^ (v12 + 7)) & ((v12) ^ ((v12) - (v12 + 7))))) < 0) ) /*0x592b75*/
   {
     v52 = (int)v56 + v58; /*0x592b81*/
     do /*0x592c14*/
@@ -539,7 +539,7 @@ char MapSeedClass::PlaceCityBlockVariant(int16_t * a2, int16_t * a3, ObjectClass
   v60 = v20; /*0x592ce4*/
   v22 = (int16_t *)(v21 + 2); /*0x592ce8*/
   a3 = (int16_t *)(v21 + 2); /*0x592ced*/
-  if ( !__OFSUB__(v21, v21 + 2) ) /*0x592cf1*/
+  if ( !(((((v21) ^ (v21 + 2)) & ((v21) ^ ((v21) - (v21 + 2))))) < 0) ) /*0x592cf1*/
   {
     do /*0x592d70*/
     {
@@ -572,7 +572,7 @@ char MapSeedClass::PlaceCityBlockVariant(int16_t * a2, int16_t * a3, ObjectClass
   v25 = (int16_t *)(v23 - 1); /*0x592d79*/
   v60 = (int16_t *)(v23 - 1); /*0x592d7e*/
   a3 = (int16_t *)(v23 + 1); /*0x592d82*/
-  if ( !__OFSUB__(v23, v23 + 1) ) /*0x592d86*/
+  if ( !(((((v23) ^ (v23 + 1)) & ((v23) ^ ((v23) - (v23 + 1))))) < 0) ) /*0x592d86*/
   {
     do /*0x592de9*/
     {
@@ -1146,7 +1146,7 @@ char MapSeedClass::PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClas
   v63 = v11; /*0x593c08*/
   v17 = v15 + 7; /*0x593c0c*/
   v56 = v15 + 7; /*0x593c11*/
-  if ( !__OFSUB__(v15, v15 + 7) ) /*0x593c15*/
+  if ( !(((((v15) ^ (v15 + 7)) & ((v15) ^ ((v15) - (v15 + 7))))) < 0) ) /*0x593c15*/
   {
     a3 = (int16_t *)(v11 + v61); /*0x593c1d*/
     do /*0x593c88*/
@@ -1215,11 +1215,11 @@ char MapSeedClass::PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClas
   v63 = v24; /*0x593d12*/
   v26 = (int16_t *)(v25 + 2); /*0x593d16*/
   a3 = (int16_t *)(v25 + 2); /*0x593d1b*/
-  if ( !__OFSUB__(v25, v25 + 2) ) /*0x593d1f*/
+  if ( !(((((v25) ^ (v25 + 2)) & ((v25) ^ ((v25) - (v25 + 2))))) < 0) ) /*0x593d1f*/
   {
     do /*0x593d80*/
     {
-      if ( !__OFSUB__(v24, v24 + 1) ) /*0x593d26*/
+      if ( !(((((v24) ^ (v24 + 1)) & ((v24) ^ ((v24) - (v24 + 1))))) < 0) ) /*0x593d26*/
       {
         do /*0x593d73*/
         {
@@ -1386,7 +1386,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   }
   while ( v3 > 2 ); /*0x5948f1*/
   NeedsSaveOrLink = ((unsigned int *)this)[0]; /*0x5948f3*/
-  LODWORD(v21) = 0; /*0x5948f6*/
+  (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x5948f6*/
   for ( i = v3 + 12 * (unsigned int)NeedsSaveOrLink + 3 * (unsigned int)NeedsSaveOrLink; v28 < i; LODWORD(v21) = v21 + 1 ) /*0x59490a*/
   {
     if ( (int)v21 >= 300 ) /*0x594918*/

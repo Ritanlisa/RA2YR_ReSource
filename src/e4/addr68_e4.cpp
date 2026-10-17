@@ -689,7 +689,7 @@ int PostLoadInitScenario()
       *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2); /*0x684ce9*/
       *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = *(int *)((char *)&dword_A8B230[373].referenceCount + 2); /*0x684d03*/
       v36 = ((__int16)v4 << 8) + 128; /*0x684d09*/
-      v37 = (SHIWORD(v4) << 8) + 128; /*0x684d21*/
+      v37 = ((short)(((v4) >> 16) & 0xFFFF) << 8) + 128; /*0x684d21*/
       GroundHeight = 0; /*0x684d2b*/
       GroundHeight = Cell::GetGroundHeight(&v36); /*0x684d3e*/
       TacticalClass::SetPositionThunk((RadarClass *)&v36); /*0x684d42*/
@@ -1602,7 +1602,7 @@ LABEL_35:
             {
               if ( v77 < v22 ) /*0x68899f*/
                 goto LABEL_45; /*0x68899f*/
-              if ( !BYTE1(v76) && v22 || v78 <= 0 ) /*0x6889b3*/
+              if ( !(((v76) >> 8) & 0xFF) && v22 || v78 <= 0 ) /*0x6889b3*/
                 goto LABEL_47; /*0x6889b3*/
               if ( ((unsigned __int8 (*)(void ***, int, unsigned int))v73[2])(&v73, v78 + v22, 0) ) /*0x6889c2*/
               {
@@ -1699,7 +1699,7 @@ LABEL_47:
           v86[2] = 0; /*0x688b8b*/
           v86[0] = ((__int16)v58 << 8) + 128; /*0x688b92*/
           v54[251] = v86; /*0x688ba9*/
-          v86[1] = (SHIWORD(v58) << 8) + 128; /*0x688bac*/
+          v86[1] = ((short)(((v58) >> 16) & 0xFFFF) << 8) + 128; /*0x688bac*/
           if ( (*(unsigned __int8 (**)(int *, unsigned int *, unsigned int))(v43 + 216))(v42, v86, 0) /*0x688bc5*/
             || FindInfantryDeployPosition(v42, (__int16 *)&v58, 1) )
           {
@@ -1789,12 +1789,12 @@ LABEL_47:
         v63 = 0; /*0x688dcf*/
         v62 = 0; /*0x688dd6*/
         v73 = &vt_VectorClass_InfantryTypeClass; /*0x688dda*/
-        if ( v74 && BYTE1(v76) ) /*0x688dea*/
+        if ( v74 && (((v76) >> 8) & 0xFF) ) /*0x688dea*/
         {
           __3_YAXPAX_Z(v74); /*0x688ded*/
           v74 = 0; /*0x688df5*/
         }
-        BYTE1(v76) = 0; /*0x688dfd*/
+        (v76) = ((v76) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x688dfd*/
         v75 = 0; /*0x688e04*/
         v67 = &vt_VectorClass_UnitTypeClass; /*0x688e08*/
         if ( v68 && v70 ) /*0x688e18*/
@@ -1969,11 +1969,11 @@ LABEL_8:
       if ( v13 > dword_87F90C + dword_87F914 - 1 ) /*0x689087*/
         v13 = dword_87F90C + dword_87F914 - 1; /*0x689089*/
       if ( v13 < dword_87F90C ) /*0x68908d*/
-        LOWORD(v13) = dword_87F90C; /*0x68908f*/
+        (v13) = ((v13) & ~0xFFFF) | ((dword_87F90C) & 0xFFFF); /*0x68908f*/
       if ( v14 > v32 ) /*0x689097*/
         v14 = v32; /*0x689099*/
       if ( v14 < dword_87F910 ) /*0x68909d*/
-        LOWORD(v14) = dword_87F910; /*0x68909f*/
+        (v14) = ((v14) & ~0xFFFF) | ((dword_87F910) & 0xFFFF); /*0x68909f*/
       LOWORD(v31) = v13; /*0x6890a6*/
       HIWORD(v31) = v14; /*0x6890ab*/
       v18 = v13; /*0x6890b0*/
@@ -1994,26 +1994,26 @@ LABEL_8:
         {
           v21 = v20 - v32; /*0x68911e*/
           if ( v21 < v15 ) /*0x689124*/
-            LOWORD(v21) = v15; /*0x689126*/
+            (v21) = ((v21) & ~0xFFFF) | ((v15) & 0xFFFF); /*0x689126*/
         }
         else
         {
           v21 = v32 + v20; /*0x689114*/
           if ( v21 > v38 ) /*0x689118*/
-            LOWORD(v21) = v38; /*0x68911a*/
+            (v21) = ((v21) & ~0xFFFF) | ((v38) & 0xFFFF); /*0x68911a*/
         }
         v22 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x68913d*/
         if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x689156*/
         {
           v23 = v19 - v22; /*0x689166*/
           if ( v23 < v16 ) /*0x68916a*/
-            LOWORD(v23) = v16; /*0x68916c*/
+            (v23) = ((v23) & ~0xFFFF) | ((v16) & 0xFFFF); /*0x68916c*/
         }
         else
         {
           v23 = v22 + v19; /*0x68915c*/
           if ( v23 > v39 ) /*0x689160*/
-            LOWORD(v23) = v39; /*0x689162*/
+            (v23) = ((v23) & ~0xFFFF) | ((v39) & 0xFFFF); /*0x689162*/
         }
         v24 = v35; /*0x68916e*/
         v3 = v34; /*0x689172*/
@@ -2559,8 +2559,8 @@ long long E4Recv_68B8A0::sub_68B8A0()
     v9 = v4; /*0x68b922*/
   }
   v6 = Math::RoundToInt((double)(int)v8 * 200.0 / (double)(int)v9); /*0x68b934*/
-  WORD2(result) = HIWORD(v6); /*0x68b934*/
-  LOWORD(result) = v6; /*0x68b934*/
+  (result) = ((result) & ~(0xFFFFull << 32)) | ((((((v6) >> 16) & 0xFFFF)) & 0xFFFFull) << 32); /*0x68b934*/
+  (result) = ((result) & ~0xFFFF) | ((v6) & 0xFFFF); /*0x68b934*/
   return result; /*0x68b939*/
 
 }

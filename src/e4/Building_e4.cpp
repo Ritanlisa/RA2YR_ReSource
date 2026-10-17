@@ -76,10 +76,10 @@ AnimClass * * Building::ComputePosition(int *aP1)
   v7 = v4; /*0x425d45*/
   v6 >>= 8; /*0x425d47*/
   v8 = (__int16)v6; /*0x425d4b*/
-  LOWORD(v39) = v6; /*0x425d54*/
+  (v39) = ((v39) & ~0xFFFF) | ((v6) & 0xFFFF); /*0x425d54*/
   v9 = (__int16)v6 - 5; /*0x425d61*/
   v10 = v7 / 256; /*0x425d67*/
-  HIWORD(v39) = v10; /*0x425d6c*/
+  (v39) = ((v39) & ~(0xFFFF << 16)) | (((v10) & 0xFFFF) << 16); /*0x425d6c*/
   *(unsigned int *)v34 = dword_89A150; /*0x425d71*/
   v32 = (__int16)v6; /*0x425d75*/
   if ( v9 < (__int16)v6 + 5 ) /*0x425d79*/
@@ -174,9 +174,9 @@ AnimClass * * Building::ComputePosition(int *aP1)
         v19 = -1; /*0x425f07*/
       }
       v21 = v39 + v20; /*0x425f1b*/
-      v22 = v19 + HIWORD(v39); /*0x425f21*/
+      v22 = v19 + (((v39) >> 16) & 0xFFFF); /*0x425f21*/
       v38[0] = v21; /*0x425f28*/
-      v38[1] = v19 + HIWORD(v39); /*0x425f2d*/
+      v38[1] = v19 + (((v39) >> 16) & 0xFFFF); /*0x425f2d*/
       if ( (unsigned __int8)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f3b*/
       {
         v23 = (v21 << 8) + 128; /*0x425f4a*/
@@ -184,7 +184,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
         goto LABEL_41; /*0x425f53*/
       }
       v38[0] = v21; /*0x425f5d*/
-      v38[1] = HIWORD(v39); /*0x425f62*/
+      v38[1] = (((v39) >> 16) & 0xFFFF); /*0x425f62*/
       if ( (unsigned __int8)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f78*/
       {
         *aP1 = (v21 << 8) + 128; /*0x425f99*/
@@ -217,7 +217,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
   {
     v28 = ((v27 + v26) % 8) & 7; /*0x426046*/
     v29 = v39 + LOWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426058*/
-    LOWORD(v28) = HIWORD(v39) + HIWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426061*/
+    LOWORD(v28) = (((v39) >> 16) & 0xFFFF) + HIWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426061*/
     v38[0] = v29; /*0x426066*/
     v38[1] = v28; /*0x42606f*/
     *(unsigned int *)v34 = *(unsigned int *)v38; /*0x42607d*/
@@ -264,7 +264,7 @@ int Building::GetRenderType()
   if ( Building_field_0xA0->q2A4 ) /*0x772a98*/
     result = 4; /*0x772aa2*/
   if ( Building_field_0xA0->u8_2A5 ) /*0x772aa7*/
-    LOBYTE(result) = result | 0xB8; /*0x772ab1*/
+    (result) = ((result) & ~0xFF) | ((result | 0xB8) & 0xFF); /*0x772ab1*/
   return result; /*0x772ab3*/
 
 }

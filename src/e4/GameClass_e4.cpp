@@ -409,7 +409,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
       GameClass::updateUI(&this->ptr_14, (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
-    LOBYTE(this->m_C) = 0; /*0x633274*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x633274*/
   }
   m_140 = this->m_140; /*0x633278*/
   if ( m_140 > 0 ) /*0x633280*/
@@ -532,13 +532,13 @@ int GameClass::ReadVersionFile()
     }
     (&v5)->Dtor(); /*0x74f9e0*/
     int v2 = *&this->u8_44; // eax /*0x74f9e5*/
-    LOBYTE(v2) = v2 | 8; /*0x74f9e9*/
+    (v2) = ((v2) & ~0xFF) | ((v2 | 8) & 0xFF); /*0x74f9e9*/
     *&this->u8_44 = v2; /*0x74f9ec*/
   }
   int v3 = *&this->u8_44; // eax /*0x74f9f0*/
   if ( (v3 & 2) != 0 ) /*0x74f9f5*/
     return *(unsigned short *)this->u32_8; /*0x74f9f7*/
-  LOBYTE(v3) = v3 | 2; /*0x74fa00*/
+  (v3) = ((v3) & ~0xFF) | ((v3 | 2) & 0xFF); /*0x74fa00*/
   *(unsigned short *)this->u32_8 = 1; /*0x74fa02*/
   *&this->u8_44 = v3; /*0x74fa08*/
   return 1; /*0x74f9fb*/
@@ -571,13 +571,13 @@ int GameClass::ReadVersionFile2()
     }
     (&v5)->Dtor(); /*0x74faa0*/
     int v2 = *&this->u8_44; // eax /*0x74faa5*/
-    LOBYTE(v2) = v2 | 8; /*0x74faa9*/
+    (v2) = ((v2) & ~0xFF) | ((v2 | 8) & 0xFF); /*0x74faa9*/
     *&this->u8_44 = v2; /*0x74faac*/
   }
   int v3 = *&this->u8_44; // eax /*0x74fab0*/
   if ( (v3 & 4) != 0 ) /*0x74fab5*/
     return *&this->u16_A; /*0x74fab7*/
-  LOBYTE(v3) = v3 | 4; /*0x74fac0*/
+  (v3) = ((v3) & ~0xFF) | ((v3 | 4) & 0xFF); /*0x74fac0*/
   *&this->u16_A = 1; /*0x74fac2*/
   *&this->u8_44 = v3; /*0x74fac8*/
   return 1; /*0x74fabb*/

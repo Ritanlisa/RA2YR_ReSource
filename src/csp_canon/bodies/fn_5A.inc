@@ -147,7 +147,7 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
             i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
       {
         v50 = *(unsigned int *)(i + 36); /*0x5a206b*/
-        *(unsigned int *)(80 * ((int16_t)v50 + g_MapCellWidth * SHIWORD(v50)) + g_MissionQueueFrame.localVariables[163] + 60) = 0; /*0x5a208c*/
+        *(unsigned int *)(80 * ((int16_t)v50 + g_MapCellWidth * (short)(((v50) >> 16) & 0xFFFF)) + g_MissionQueueFrame.localVariables[163] + 60) = 0; /*0x5a208c*/
       }
       v11 = v2 + 1; /*0x5a20a6*/
       v12 = 0; /*0x5a20a7*/
@@ -163,7 +163,7 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
         }
         while ( v12 <= *(unsigned int *)v6 ); /*0x5a20c1*/
       }
-      v14 = SHIWORD(v47); /*0x5a20c3*/
+      v14 = (short)(((v47) >> 16) & 0xFFFF); /*0x5a20c3*/
       *v6 = 0; /*0x5a20c8*/
       *v4 = v3; /*0x5a20ca*/
       v4[1] = 0; /*0x5a20cd*/
@@ -213,7 +213,7 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
             if ( v45 >= 400 ) /*0x5a2193*/
               break; /*0x5a2193*/
             v23 = v46; /*0x5a2199*/
-            *(unsigned char *)(80 * (SLOWORD(v46->field_0) + g_MapCellWidth * SHIWORD(v46->field_0)) /*0x5a21b9*/
+            *(unsigned char *)(80 * ((short)((v46->field_0) & 0xFFFF) + g_MapCellWidth * (short)(((v46->field_0) >> 16) & 0xFFFF)) /*0x5a21b9*/
                      + g_MissionQueueFrame.localVariables[163]
                      + 69) = 1;
             v24 = 0; /*0x5a21c2*/
@@ -223,12 +223,12 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
             {
               v52 = *CellStruct::Add(v23, &v57, (unsigned short *)(4 * (v24 & 7) + 9041544)); /*0x5a21ef*/
               *(unsigned int *)v43 = v52; /*0x5a21f3*/
-              v26 = SHIWORD(v52) + (int16_t)v52; /*0x5a21ff*/
+              v26 = (short)(((v52) >> 16) & 0xFFFF) + (int16_t)v52; /*0x5a21ff*/
               if ( v26 > g_MissionQueueFrame.localVariables[160] /*0x5a2243*/
-                && (int16_t)v52 - SHIWORD(v52) < g_MissionQueueFrame.localVariables[160]
-                && SHIWORD(v52) - (int16_t)v52 < g_MissionQueueFrame.localVariables[160]
+                && (int16_t)v52 - (short)(((v52) >> 16) & 0xFFFF) < g_MissionQueueFrame.localVariables[160]
+                && (short)(((v52) >> 16) & 0xFFFF) - (int16_t)v52 < g_MissionQueueFrame.localVariables[160]
                 && v26 <= g_MissionQueueFrame.localVariables[161]
-                && !*(unsigned int *)(80 * ((int16_t)v52 + g_MapCellWidth * SHIWORD(v52))
+                && !*(unsigned int *)(80 * ((int16_t)v52 + g_MapCellWidth * (short)(((v52) >> 16) & 0xFFFF))
                               + g_MissionQueueFrame.localVariables[163]
                               + 60) )
               {
@@ -237,7 +237,7 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
                 {
                   v28 = v43[0]; /*0x5a226d*/
                   v29 = v53; /*0x5a2271*/
-                  v30 = SHIWORD(v47); /*0x5a2275*/
+                  v30 = (short)(((v47) >> 16) & 0xFFFF); /*0x5a2275*/
                   *v25 = *(float *)v43; /*0x5a227a*/
                   v52 = (v28 - v29) * (v28 - v29) + (v43[1] - v30) * (v43[1] - v30); /*0x5a2297*/
                   __asm /*0x5a229b*/
@@ -361,7 +361,7 @@ double sub_5A5AE0(short * a1, short * a2)
 
   v2 = abs32(a1[1] - a2[1]); /*0x5a5b06*/
   v3 = *a1 - *a2; /*0x5a5b08*/
-  v5 = (IDA_HIDWORD(v3) ^ v3) - IDA_HIDWORD(v3); /*0x5a5b0f*/
+  v5 = ((((v3) >> 32) & 0xFFFFFFFFu) ^ v3) - (((v3) >> 32) & 0xFFFFFFFFu); /*0x5a5b0f*/
   if ( v5 <= v2 ) /*0x5a5b13*/
     v5 = v2; /*0x5a5b15*/
   return (double)(unsigned int)((Random *)(&unk_ABE890))->State() * 3.0 * 2.328306437080797e-10 + (double)v5; /*0x5a5b45*/
@@ -394,11 +394,11 @@ unsigned int * globalHelper_0A7640(unsigned int *a0, int aP1)
       v11 = *v9; /*0x5a7672*/
       if ( (int16_t)*v9 < v3 ) /*0x5a7676*/
         v3 = *v9; /*0x5a7678*/
-      if ( IDA_SHIWORD(v11) < v6 ) /*0x5a7683*/
+      if ( (short)(((v11) >> 16) & 0xFFFF) < v6 ) /*0x5a7683*/
         v6 = IDA_HIWORD(*v9); /*0x5a7685*/
       if ( (int16_t)*v9 > v2 ) /*0x5a768b*/
         v2 = *v9; /*0x5a768d*/
-      if ( IDA_SHIWORD(v11) > v4 ) /*0x5a7693*/
+      if ( (short)(((v11) >> 16) & 0xFFFF) > v4 ) /*0x5a7693*/
         v4 = IDA_HIWORD(*v9); /*0x5a7695*/
       v7 = v10 == 1; /*0x5a76a3*/
       --v9; /*0x5a76a4*/
@@ -582,11 +582,11 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
     v5 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x5ad808*/
     this->DynamicVector_field_0x10 = (unsigned int)((void *)(result + 1)); /*0x5ad80e*/
     *(unsigned int *)(v5 + 4 * result) = *(unsigned int *)aP1; /*0x5ad818*/
-    LOBYTE(result) = 1; /*0x5ad81b*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5ad81b*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x5ad7ff*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5ad7ff*/
   }
   return result; /*0x5ad801*/
 

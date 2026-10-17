@@ -639,13 +639,13 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   a4 = ((unsigned char)a4 == 0) << 10; /*0x47e097*/
   v38 = (a3 == 0) << 11; /*0x47e0af*/
   v9 = (v6 << 8) | *(unsigned int *)(a1 + 320) & 0xFFFFFE7F; /*0x47e0bf*/
-  BYTE1(v9) &= ~2u; /*0x47e0c5*/
+  (v9) &= ~(((~(~2u)) & 0xFF) << 8); /*0x47e0c5*/
   v10 = (v6 << 9) | v9; /*0x47e0c8*/
-  BYTE1(v10) &= ~0x10u; /*0x47e0ce*/
+  (v10) &= ~(((~(~0x10u)) & 0xFF) << 8); /*0x47e0ce*/
   v11 = (v6 << 16) | ((v6 << 12) | v10) & 0xFFFEFFFF; /*0x47e0d9*/
-  BYTE1(v11) &= ~4u; /*0x47e0db*/
+  (v11) &= ~(((~(~4u)) & 0xFF) << 8); /*0x47e0db*/
   v12 = a4 | v11; /*0x47e0de*/
-  BYTE1(v12) &= ~8u; /*0x47e0e4*/
+  (v12) &= ~(((~(~8u)) & 0xFF) << 8); /*0x47e0e4*/
   a1->u32_140 = v38 | ((v6 & 0xFFFFFDC1) << 7) | v12; /*0x47e0f0*/
   if ( v5 )
   {
@@ -666,17 +666,17 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v4 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x47e17d*/
   }
   flags = v4->flags; /*0x47e18f*/
-  BYTE1(flags) &= ~1u; /*0x47e195*/
+  (flags) &= ~(((~(~1u)) & 0xFF) << 8); /*0x47e195*/
   v47 = v5 != 0 ? a1 : 0;
   v14 = v39 | flags; /*0x47e19c*/
-  BYTE1(v14) &= ~2u; /*0x47e1a2*/
+  (v14) &= ~(((~(~2u)) & 0xFF) << 8); /*0x47e1a2*/
   *&v4->q02C = v47; /*0x47e1a5*/
   v15 = v40 | v14; /*0x47e1a8*/
-  BYTE1(v15) &= ~0x10u; /*0x47e1ae*/
+  (v15) &= ~(((~(~0x10u)) & 0xFF) << 8); /*0x47e1ae*/
   v16 = v8 | (v7 | v15) & 0xFFFEFFFF; /*0x47e1b9*/
-  BYTE1(v16) &= ~4u; /*0x47e1bb*/
+  (v16) &= ~(((~(~4u)) & 0xFF) << 8); /*0x47e1bb*/
   v17 = a4 | v16; /*0x47e1be*/
-  BYTE1(v17) &= ~8u; /*0x47e1c4*/
+  (v17) &= ~(((~(~8u)) & 0xFF) << 8); /*0x47e1c4*/
   v4->flags = v38 | v17; /*0x47e1cb*/
   if ( v5 )
   {
@@ -701,13 +701,13 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   }
   v20 = v4->flags; /*0x47e262*/
   *&v4->q02C = v47; /*0x47e268*/
-  BYTE1(v20) &= ~1u; /*0x47e26f*/
+  (v20) &= ~(((~(~1u)) & 0xFF) << 8); /*0x47e26f*/
   v21 = v39 | v20; /*0x47e272*/
-  BYTE1(v21) &= 0xEDu; /*0x47e278*/
+  (v21) &= ~(((~(0xEDu)) & 0xFF) << 8); /*0x47e278*/
   v22 = v8 | (v7 | v21) & 0xFFFEFFFF; /*0x47e283*/
-  BYTE1(v22) &= ~4u; /*0x47e285*/
+  (v22) &= ~(((~(~4u)) & 0xFF) << 8); /*0x47e285*/
   v23 = a4 | v22; /*0x47e288*/
-  BYTE1(v23) &= ~8u; /*0x47e28e*/
+  (v23) &= ~(((~(~8u)) & 0xFF) << 8); /*0x47e28e*/
   v4->flags = v38 | v23; /*0x47e295*/
   if ( v5 )
   {
@@ -734,7 +734,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     p_mapCoords = &v4->mapCoords; /*0x47e2d5*/
   }
   v26 = p_mapCoords->u32_140; /*0x47e321*/
-  BYTE1(v26) &= ~0x10u; /*0x47e327*/
+  (v26) &= ~(((~(~0x10u)) & 0xFF) << 8); /*0x47e327*/
   p_mapCoords->u32_140 = v7 | v26; /*0x47e32c*/
   v27 = ((unsigned char)v24 - 4) & 7; /*0x47e335*/
   if ( v27 < 8 ) /*0x47e33b*/
@@ -753,14 +753,14 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v28 = a1; /*0x47e33d*/
   }
   v31 = v28->u32_140; /*0x47e392*/
-  BYTE1(v31) &= ~1u; /*0x47e39c*/
+  (v31) &= ~(((~(~1u)) & 0xFF) << 8); /*0x47e39c*/
   v32 = v39 | v31; /*0x47e3a3*/
-  BYTE1(v32) &= ~2u; /*0x47e3a9*/
+  (v32) &= ~(((~(~2u)) & 0xFF) << 8); /*0x47e3a9*/
   v28->u32_2C = v47; /*0x47e3ac*/
   v33 = v40 | v32; /*0x47e3af*/
-  BYTE1(v33) &= ~4u; /*0x47e3b5*/
+  (v33) &= ~(((~(~4u)) & 0xFF) << 8); /*0x47e3b5*/
   v34 = v8 | (a4 | v33) & 0xFFFEEFFF; /*0x47e3c3*/
-  BYTE1(v34) &= ~8u; /*0x47e3c5*/
+  (v34) &= ~(((~(~8u)) & 0xFF) << 8); /*0x47e3c5*/
   v28->u32_140 = v38 | v34; /*0x47e3cc*/
   if ( v5 )
   {
@@ -853,13 +853,13 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   a4 = ((unsigned char)a4 == 0) << 10; /*0x47e4c7*/
   v38 = (a3 == 0) << 11; /*0x47e4df*/
   v9 = (v6 << 8) | *(unsigned int *)(a1 + 320) & 0xFFFFFE7F; /*0x47e4ef*/
-  BYTE1(v9) &= ~2u; /*0x47e4f5*/
+  (v9) &= ~(((~(~2u)) & 0xFF) << 8); /*0x47e4f5*/
   v10 = (v6 << 9) | v9; /*0x47e4f8*/
-  BYTE1(v10) &= ~0x10u; /*0x47e4fe*/
+  (v10) &= ~(((~(~0x10u)) & 0xFF) << 8); /*0x47e4fe*/
   v11 = (v6 << 16) | ((v6 << 12) | v10) & 0xFFFEFFFF; /*0x47e509*/
-  BYTE1(v11) &= ~4u; /*0x47e50b*/
+  (v11) &= ~(((~(~4u)) & 0xFF) << 8); /*0x47e50b*/
   v12 = a4 | v11; /*0x47e50e*/
-  BYTE1(v12) &= ~8u; /*0x47e514*/
+  (v12) &= ~(((~(~8u)) & 0xFF) << 8); /*0x47e514*/
   a1->u32_140 = v38 | ((v6 & 0xFFFFFDC1) << 7) | v12; /*0x47e520*/
   if ( v5 )
   {
@@ -880,17 +880,17 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v4 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v48); /*0x47e5ad*/
   }
   flags = v4->flags; /*0x47e5bf*/
-  BYTE1(flags) &= ~1u; /*0x47e5c5*/
+  (flags) &= ~(((~(~1u)) & 0xFF) << 8); /*0x47e5c5*/
   v47 = v5 != 0 ? a1 : 0;
   v14 = v39 | flags; /*0x47e5cc*/
-  BYTE1(v14) &= ~2u; /*0x47e5d2*/
+  (v14) &= ~(((~(~2u)) & 0xFF) << 8); /*0x47e5d2*/
   *&v4->q02C = v47; /*0x47e5d5*/
   v15 = v40 | v14; /*0x47e5d8*/
-  BYTE1(v15) &= ~0x10u; /*0x47e5de*/
+  (v15) &= ~(((~(~0x10u)) & 0xFF) << 8); /*0x47e5de*/
   v16 = v8 | (v7 | v15) & 0xFFFEFFFF; /*0x47e5e9*/
-  BYTE1(v16) &= ~4u; /*0x47e5eb*/
+  (v16) &= ~(((~(~4u)) & 0xFF) << 8); /*0x47e5eb*/
   v17 = a4 | v16; /*0x47e5ee*/
-  BYTE1(v17) &= ~8u; /*0x47e5f4*/
+  (v17) &= ~(((~(~8u)) & 0xFF) << 8); /*0x47e5f4*/
   v4->flags = v38 | v17; /*0x47e5fb*/
   if ( v5 )
   {
@@ -915,13 +915,13 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   }
   v20 = v4->flags; /*0x47e692*/
   *&v4->q02C = v47; /*0x47e698*/
-  BYTE1(v20) &= ~1u; /*0x47e69f*/
+  (v20) &= ~(((~(~1u)) & 0xFF) << 8); /*0x47e69f*/
   v21 = v39 | v20; /*0x47e6a2*/
-  BYTE1(v21) &= 0xEDu; /*0x47e6a8*/
+  (v21) &= ~(((~(0xEDu)) & 0xFF) << 8); /*0x47e6a8*/
   v22 = v8 | (v7 | v21) & 0xFFFEFFFF; /*0x47e6b3*/
-  BYTE1(v22) &= ~4u; /*0x47e6b5*/
+  (v22) &= ~(((~(~4u)) & 0xFF) << 8); /*0x47e6b5*/
   v23 = a4 | v22; /*0x47e6b8*/
-  BYTE1(v23) &= ~8u; /*0x47e6be*/
+  (v23) &= ~(((~(~8u)) & 0xFF) << 8); /*0x47e6be*/
   v4->flags = v38 | v23; /*0x47e6c5*/
   if ( v5 )
   {
@@ -948,7 +948,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     p_mapCoords = &v4->mapCoords; /*0x47e705*/
   }
   v26 = p_mapCoords->u32_140; /*0x47e751*/
-  BYTE1(v26) &= ~0x10u; /*0x47e757*/
+  (v26) &= ~(((~(~0x10u)) & 0xFF) << 8); /*0x47e757*/
   p_mapCoords->u32_140 = v7 | v26; /*0x47e75c*/
   v27 = ((unsigned char)v24 - 4) & 7; /*0x47e765*/
   if ( v27 < 8 ) /*0x47e76b*/
@@ -967,14 +967,14 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v28 = a1; /*0x47e76d*/
   }
   v31 = v28->u32_140; /*0x47e7c2*/
-  BYTE1(v31) &= ~1u; /*0x47e7cc*/
+  (v31) &= ~(((~(~1u)) & 0xFF) << 8); /*0x47e7cc*/
   v32 = v39 | v31; /*0x47e7d3*/
-  BYTE1(v32) &= ~2u; /*0x47e7d9*/
+  (v32) &= ~(((~(~2u)) & 0xFF) << 8); /*0x47e7d9*/
   v28->u32_2C = v47; /*0x47e7dc*/
   v33 = v40 | v32; /*0x47e7df*/
-  BYTE1(v33) &= ~4u; /*0x47e7e5*/
+  (v33) &= ~(((~(~4u)) & 0xFF) << 8); /*0x47e7e5*/
   v34 = v8 | (a4 | v33) & 0xFFFEEFFF; /*0x47e7f3*/
-  BYTE1(v34) &= ~8u; /*0x47e7f5*/
+  (v34) &= ~(((~(~8u)) & 0xFF) << 8); /*0x47e7f5*/
   v28->u32_140 = v38 | v34; /*0x47e7fc*/
   if ( v5 )
   {

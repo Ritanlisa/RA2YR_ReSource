@@ -264,10 +264,10 @@ int FogOfWar::RenderCell()
   v3 = (*(int (**)(int))(*(unsigned int *)v2 + 128))(v2); /*0x65616f*/
   v4 = v3 * (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2); /*0x65617b*/
   v5 = (char *)this->u32_1274; /*0x65617f*/
-  HIDWORD(v4) = (((BYTE4(v4) & 7) + (int)v4) >> 3) + 1; /*0x65618f*/
-  memset(v5, 0, 4 * (HIDWORD(v4) >> 2)); /*0x656194*/
-  v6 = &v5[4 * (HIDWORD(v4) >> 2)]; /*0x656194*/
-  v7 = BYTE4(v4) & 3; /*0x656198*/
+  (v4) = ((v4) & 0xFFFFFFFFull) | ((unsigned long long)((((((((v4) >> 32) & 0xFF) & 7) + (int)v4) >> 3) + 1) & 0xFFFFFFFFull) << 32); /*0x65618f*/
+  memset(v5, 0, 4 * ((((v4) >> 32) & 0xFFFFFFFFu) >> 2)); /*0x656194*/
+  v6 = &v5[4 * ((((v4) >> 32) & 0xFFFFFFFFu) >> 2)]; /*0x656194*/
+  v7 = (((v4) >> 32) & 0xFF) & 3; /*0x656198*/
   v8 = 0; /*0x65619b*/
   memset(v6, 0, v7); /*0x65619d*/
   v23 = 0; /*0x65619f*/
@@ -457,7 +457,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     v9 = *aP0 / 256; /*0x586559*/
     HIWORD(v12) = aP0[1] / 256 - v1 / 2; /*0x586580*/
     LOWORD(v12) = v9 - v1 / 2; /*0x586585*/
-    v6 = (__int16)v12 + (SHIWORD(v12) << 9); /*0x586593*/
+    v6 = (__int16)v12 + ((short)(((v12) >> 16) & 0xFFFF) << 9); /*0x586593*/
     if ( v6 >= 0x40000 || (NeighbourContent = *(CellClass **)(dword_87F924 + 4 * v6)) == 0 ) /*0x5865a9*/
     {
       dword_ABDC74 = v12; /*0x5865af*/

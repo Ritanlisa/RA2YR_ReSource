@@ -48,10 +48,10 @@ int Trigger::EnableOnce(char aP1, void *a2)
 
 
   int result; // eax
-  LOBYTE(result) = this->q048; /*0x554a60*/
+  (result) = ((result) & ~0xFF) | ((this->q048) & 0xFF); /*0x554a60*/
   if ( !(unsigned char)result ) /*0x554a65*/
   {
-    LOBYTE(this->q048) = 1; /*0x554a6b*/
+    (this->q048) = ((this->q048) & ~0xFF) | ((1) & 0xFF); /*0x554a6b*/
     return ((TacticalClass *)this)->ScrollView(aP1); /*0x554a70*/
   }
   return result; /*0x554a75*/

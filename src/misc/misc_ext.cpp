@@ -6201,7 +6201,7 @@ char MapSeed::PlaceCityBlock(int16_t* p0, int16_t* p1, void* p2)
     {
       v14 = v67; /*0x5911a8*/
       v15 = v13 + 1; /*0x5911b2*/
-      LODWORD(v62) = v64; /*0x5911b8*/
+      (v62) = ((v62) & 0xFFFFFFFF00000000ull) | ((v64) & 0xFFFFFFFFull); /*0x5911b8*/
       MapSeed_field_0x14 = (v13 + 1) / 2 + 3; /*0x5911cb*/
       v59.MapSeed_field_0x14 = MapSeed_field_0x14; /*0x5911d0*/
       v59.MapSeed_field_0x04 = v12 + 1; /*0x5911d6*/
@@ -6279,7 +6279,7 @@ char MapSeed::PlaceCityBlock(int16_t* p0, int16_t* p1, void* p2)
       v59.MapSeed_field_0x04 = v22 + 2; /*0x59131a*/
       v28 = v64 + 4; /*0x59131e*/
       v29 = p0[1] - v22; /*0x591325*/
-      LODWORD(v62) = v64 + 4; /*0x591327*/
+      (v62) = ((v62) & 0xFFFFFFFF00000000ull) | ((v64 + 4) & 0xFFFFFFFFull); /*0x591327*/
       v30 = v22 + 2 + v29 - 1; /*0x59132c*/
       v59.MapSeed_field_0x14 = v30; /*0x591330*/
       if ( v22 + 2 < v30 ) /*0x591334*/
@@ -6392,7 +6392,7 @@ char MapSeed::PlaceCityBlock(int16_t* p0, int16_t* p1, void* p2)
               v61[1] = v43 + v60[1]; /*0x59158b*/
               LOWORD(v59.MapSeed_field_0x10) = v42 + v46 + LOWORD(v59.MapSeed_field_0x20); /*0x59159f*/
               WORD1(v62) = HIWORD(v59.MapSeed_field_0x20) + v43 + v60[1]; /*0x5915a6*/
-              HIWORD(v59.MapSeed_field_0x10) = LOWORD(v59.MapSeed_field_0x0C) + WORD1(v62); /*0x5915ba*/
+              HIWORD(v59.MapSeed_field_0x10) = LOWORD(v59.MapSeed_field_0x0C) + (((v62) >> 16) & 0xFFFF); /*0x5915ba*/
               v59.MapSeed_field_0x1C = v59.MapSeed_field_0x10; /*0x5915c7*/
               v47 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&v59.MapSeed_field_0x1C); /*0x5915cc*/
               v48 = *v44; /*0x5915d5*/
@@ -6560,7 +6560,7 @@ char MapSeed::PlaceCityBuildings(int16_t* p0, int16_t* p1, void* p2)
     if ( (int)v72 <= v13 - 5 )
     {
       v14 = v68; /*0x591e3e*/
-      LODWORD(var20) = v68; /*0x591e45*/
+      (var20) = ((var20) & 0xFFFFFFFF00000000ull) | ((v68) & 0xFFFFFFFFull); /*0x591e45*/
       v15 = v13 + 1; /*0x591e49*/
       v16 = v69; /*0x591e4b*/
       v63.MapSeed_field_0x04 = v69; /*0x591e51*/
@@ -6764,7 +6764,7 @@ char MapSeed::PlaceCityBuildings(int16_t* p0, int16_t* p1, void* p2)
               v65[1] = v64[1] - v46; /*0x592277*/
               LOWORD(v63.MapSeed_field_0x10) = v65[0] + LOWORD(v63.MapSeed_field_0x20); /*0x59228f*/
               WORD1(var20) = HIWORD(v63.MapSeed_field_0x20) + v64[1] - v46; /*0x592296*/
-              HIWORD(v63.MapSeed_field_0x10) = LOWORD(v63.MapSeed_field_0x0C) + WORD1(var20); /*0x5922aa*/
+              HIWORD(v63.MapSeed_field_0x10) = LOWORD(v63.MapSeed_field_0x0C) + (((var20) >> 16) & 0xFFFF); /*0x5922aa*/
               v63.MapSeed_field_0x1C = v63.MapSeed_field_0x10; /*0x5922b7*/
               v50 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v63.MapSeed_field_0x1C); /*0x5922bc*/
               v51 = *v47; /*0x5922c5*/
@@ -8111,7 +8111,7 @@ char RadarHashVector::Release(int p0, char* p1)
   if ( p0 ) /*0x65897e*/
   {
     v5 = p1; /*0x658984*/
-    LOBYTE(this->m_C) = 0; /*0x658988*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x658988*/
     if ( p1 ) /*0x65898d*/
     {
       if ( p0 - 1 >= 0 ) /*0x6589c7*/
@@ -8155,7 +8155,7 @@ char RadarHashVector::Release(int p0, char* p1)
         v5 = 0; /*0x6589be*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x6589dd*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x6589dd*/
     if ( v5 ) /*0x6589e1*/
     {
       if ( *&this->q004 ) /*0x6589ec*/
@@ -8180,7 +8180,7 @@ char RadarHashVector::Release(int p0, char* p1)
           while ( m_8 ); /*0x658a24*/
           v3 = p0; /*0x658a26*/
         }
-        if ( BYTE1(this->m_C) ) /*0x658a2c*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x658a2c*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x658a35*/
           *&this->q004 = 0; /*0x658a3d*/
@@ -10585,7 +10585,7 @@ LABEL_222:
     v261 = *(unsigned int *)this->__pad_0 /*0x68e8c8*/
          + (640 - (*(int (**)(int, wchar_t *))(*(unsigned int *)v260 + 8))(v260, v259)) / 2;
     v262 = *(int *)(this->ScoreScreen_field_0x0C + 8); /*0x68e8d0*/
-    v294 = this->ScoreScreen_field_0x04 - (((int)v262 - HIDWORD(v262)) >> 1) + 357; /*0x68e8e1*/
+    v294 = this->ScoreScreen_field_0x04 - (((int)v262 - (((v262) >> 32) & 0xFFFFFFFFu)) >> 1) + 357; /*0x68e8e1*/
     v263 = __2_YAPAXI_Z(0x2Cu); /*0x68e8ea*/
     if ( v263 ) /*0x68e8f1*/
     {
@@ -12718,11 +12718,11 @@ int AlphaShapeClass::CTOR(int p0, int p1, int p2)
       v11 = i % 256 * (i / 256) / 127; /*0x420ab9*/
       if ( v11 > 255 ) /*0x420ac1*/
       {
-        LOBYTE(v11) = -1; /*0x420ad3*/
+        (v11) = ((v11) & ~0xFF) | ((-1) & 0xFF); /*0x420ad3*/
       }
       else if ( v11 < 0 ) /*0x420ac5*/
       {
-        LOBYTE(v11) = 0; /*0x420ac7*/
+        (v11) = ((v11) & ~0xFF) | ((0) & 0xFF); /*0x420ac7*/
       }
       byte_88A118[i] = v11; /*0x420ad8*/
     }
@@ -15154,8 +15154,8 @@ LABEL_13:
     retaddr = p_CCToolTip_field_0x10; /*0x478f91*/
     v28[1] = v25; /*0x478fcf*/
     v18 = ((unsigned __int8)dword_B0FA1C >> g_BitShift_Green_0 << g_BitShift_Red) /*0x478fda*/
-        | (BYTE1(dword_B0FA1C) >> g_BitMask_Blue << g_BitMask_Green)
-        | (BYTE2(dword_B0FA1C) >> g_BitMask_Red << g_BitShift_Blue);
+        | ((((dword_B0FA1C) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+        | ((((dword_B0FA1C) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
     (*(void (**)(AudioStream *, unsigned int *))(*(unsigned int *)v8->__pad_0 + 20))(v8, v28); /*0x478fde*/
     (*(void (**)(AudioStream *, int *, int))(*(unsigned int *)v8->__pad_0 + 88))(v8, &v27, v18); /*0x478feb*/
     Char::Swap((Char *)v11, 1); /*0x478ff2*/
@@ -16118,12 +16118,12 @@ LABEL_159:
         wcscpy((wchar_t *)v52, (const wchar_t *)v53); /*0x7a60fc*/
         v54 = *((unsigned int *)a4 + 6); /*0x7a6101*/
         *(unsigned int *)v152.__pad_0 = 0; /*0x7a6109*/
-        WORD2(v154) = 0; /*0x7a6112*/
+        (v154) = ((v154) & ~(0xFFFFull << 32)) | (((0) & 0xFFFFull) << 32); /*0x7a6112*/
         v55 = ntohl(v54); /*0x7a6117*/
-        BYTE2(v154) = BYTE1(v55); /*0x7a612b*/
+        (v154) = ((v154) & ~(0xFF << 16)) | ((((((v55) >> 8) & 0xFF)) & 0xFF) << 16); /*0x7a612b*/
         *(unsigned short *)((char *)&v154 + 3) = (unsigned __int8)v55; /*0x7a612b*/
         LOBYTE(v154) = HIBYTE(v55); /*0x7a612f*/
-        BYTE1(v154) = BYTE2(v55); /*0x7a613e*/
+        (v154) = ((v154) & ~(0xFF << 8)) | ((((((v55) >> 16) & 0xFF)) & 0xFF) << 8); /*0x7a613e*/
         NetworkAddress::Assign(&v155, &v152, (int)&v154, 0); /*0x7a6148*/
         v56 = *(unsigned int *)v155.m_Port; /*0x7a6156*/
         v52->u32_28 = v155.m_IP; /*0x7a615a*/
@@ -16351,15 +16351,15 @@ LABEL_251:
             *(unsigned char *)(v118 + 132) = 0; /*0x7a6c40*/
             v120 = CharToWideString(v119); /*0x7a6c41*/
             wcscpy((wchar_t *)v118, (const wchar_t *)v120); /*0x7a6c48*/
-            LODWORD(v154) = 0; /*0x7a6c59*/
+            (v154) = ((v154) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x7a6c59*/
             v121 = *((unsigned int *)a4 + 6); /*0x7a6c61*/
             *(unsigned int *)v152.__pad_0 = 0; /*0x7a6c64*/
             *(unsigned short *)&v152.ptr_4 = 0; /*0x7a6c69*/
             v122 = ntohl(v121); /*0x7a6c6e*/
-            v152.__pad_0[2] = BYTE1(v122); /*0x7a6c83*/
+            v152.__pad_0[2] = (((v122) >> 8) & 0xFF); /*0x7a6c83*/
             v152.m_3 = v122; /*0x7a6c83*/
             v152.q000 = HIBYTE(v122); /*0x7a6c87*/
-            v152.u8_1 = BYTE2(v122); /*0x7a6c96*/
+            v152.u8_1 = (((v122) >> 16) & 0xFF); /*0x7a6c96*/
             NetworkAddress::Assign(&v155, &v154, (int)&v152, 0); /*0x7a6ca0*/
             v123 = *(unsigned int *)v155.m_Port; /*0x7a6cac*/
             *(unsigned int *)(v118 + 40) = v155.m_IP; /*0x7a6cb0*/
@@ -16490,14 +16490,14 @@ LABEL_299:
           v138 = CharToWideString(v137); /*0x7a6fae*/
           wcscpy((wchar_t *)v136, (const wchar_t *)v138); /*0x7a6fb5*/
           v139 = *((unsigned int *)a4 + 6); /*0x7a6fba*/
-          LODWORD(v154) = 0; /*0x7a6fc2*/
+          (v154) = ((v154) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x7a6fc2*/
           *(unsigned int *)v152.__pad_0 = 0; /*0x7a6fca*/
           *(unsigned short *)&v152.ptr_4 = 0; /*0x7a6fcf*/
           v140 = ntohl(v139); /*0x7a6fd4*/
-          v152.__pad_0[2] = BYTE1(v140); /*0x7a6fe9*/
+          v152.__pad_0[2] = (((v140) >> 8) & 0xFF); /*0x7a6fe9*/
           v152.m_3 = v140; /*0x7a6fe9*/
           v152.q000 = HIBYTE(v140); /*0x7a6fed*/
-          v152.u8_1 = BYTE2(v140); /*0x7a6ffc*/
+          v152.u8_1 = (((v140) >> 16) & 0xFF); /*0x7a6ffc*/
           NetworkAddress::Assign(&v155, &v154, (int)&v152, 0); /*0x7a7006*/
           v141 = *(unsigned int *)v155.m_Port; /*0x7a7014*/
           v136->u32_28 = v155.m_IP; /*0x7a7018*/
@@ -16556,7 +16556,7 @@ LABEL_299:
           v85 += 4; /*0x7a67b8*/
         }
         while ( v85 < 8 ); /*0x7a67bd*/
-        if ( (int)v154 >= SHIDWORD(v154) && ((int)v154 > SHIDWORD(v154) || _strcmpi(a4 + 36, &v157[9]) < 0) ) /*0x7a67e7*/
+        if ( (int)v154 >= (int)(((v154) >> 32) & 0xFFFFFFFFu) && ((int)v154 > (int)(((v154) >> 32) & 0xFFFFFFFFu) || _strcmpi(a4 + 36, &v157[9]) < 0) ) /*0x7a67e7*/
         {
           v87 = *(unsigned int *)&stru_B778FC.m_3[1]; /*0x7a6803*/
           v88 = v82; /*0x7a6809*/
@@ -16916,8 +16916,8 @@ LABEL_56:
             v26 = ntohl(v25); /*0x7a76c1*/
             HIBYTE(v46.vfptr2) = v26; /*0x7a76ca*/
             LOBYTE(v46.vfptr2) = HIBYTE(v26); /*0x7a76d6*/
-            BYTE2(v46.vfptr2) = BYTE1(v26); /*0x7a76da*/
-            BYTE1(v46.vfptr2) = BYTE2(v26); /*0x7a76ef*/
+            BYTE2(v46.vfptr2) = (((v26) >> 8) & 0xFF); /*0x7a76da*/
+            BYTE1(v46.vfptr2) = (((v26) >> 16) & 0xFF); /*0x7a76ef*/
             NetworkAddress::Assign((NetworkAddress *)&v46.attachedTag, &v46.referenceCount, (int)&v46.vfptr2, 0); /*0x7a76f3*/
             attachedBomb = v46.attachedBomb; /*0x7a7701*/
             *(unsigned int *)(v23 + 40) = v46.attachedTag; /*0x7a7705*/
@@ -17966,7 +17966,7 @@ LABEL_21:
       else
       {
         v8 = -(_strnicmp(a3 + 52, aLob35, strlen(aLob35)) != 0); /*0x7a9a65*/
-        LOBYTE(v8) = v8 & 0xFC; /*0x7a9a67*/
+        (v8) = ((v8) & ~0xFF) | ((v8 & 0xFC) & 0xFF); /*0x7a9a67*/
         *(unsigned int *)v87.owningHouseIndex = v8 + 8; /*0x7a9a6c*/
       }
     }
@@ -19083,7 +19083,7 @@ LABEL_103:
         strcpy(byte_A8D63C, ToWideStringChar(**(char ***)&stru_A8D804.__pad_3D[567])); /*0x55edf7*/
         dword_A8D748 = dword_A8B394; /*0x55ee0a*/
         dword_A8D74C = WideString::Hash(&stru_A8D610); /*0x55ee14*/
-        LOBYTE(dword_A8D667) = 0; /*0x55ee20*/
+        (dword_A8D667) = ((dword_A8D667) & ~0xFF) | ((0) & 0xFF); /*0x55ee20*/
         if ( v89 == 3 ) /*0x55ee27*/
         {
           v45 = (const wchar_t *)PriQueue::GetItemPtr((PriQueue *)&unk_A8BC60); /*0x55ee2e*/
@@ -19232,7 +19232,7 @@ void Chat::RefreshMessagePositions()
   int v6; // edx
 
   DisableIME(); /*0x5d4393*/
-  LOBYTE(v2) = this->u32_19; /*0x5d4398*/
+  (v2) = ((v2) & ~0xFF) | ((this->u32_19) & 0xFF); /*0x5d4398*/
   if ( (unsigned char)v2 ) /*0x5d439d*/
   {
     v3 = (void (***)(unsigned int, int))this->u32_24; /*0x5d439f*/
@@ -19240,7 +19240,7 @@ void Chat::RefreshMessagePositions()
     if ( v3 ) /*0x5d43a8*/
       (**v3)(v3, 1); /*0x5d43ae*/
     nullsub_48(); /*0x5d43b0*/
-    LOBYTE(v2) = this->u32_1A; /*0x5d43b5*/
+    (v2) = ((v2) & ~0xFF) | ((this->u32_1A) & 0xFF); /*0x5d43b5*/
     if ( (unsigned char)v2 ) /*0x5d43ba*/
     {
       if ( this->u32_19 ) /*0x5d43bc*/
@@ -20484,7 +20484,7 @@ char CrateClass::ProcessPickup(int p0)
               if ( !p0->u32_90 ) /*0x481ab5*/
               {
 LABEL_119:
-                LOBYTE(result) = 0; /*0x482449*/
+                (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x482449*/
                 return result; /*0x482451*/
               }
             }
@@ -20811,7 +20811,7 @@ LABEL_111:
               *(unsigned int *)&v122.u32_14 = v42; /*0x482374*/
               if ( v42 != dword_89E748 ) /*0x48237d*/
               {
-                *(unsigned int *)&v122.u32_B0 = (SHIWORD(v42) << 8) + 128; /*0x4823a3*/
+                *(unsigned int *)&v122.u32_B0 = ((short)(((v42) >> 16) & 0xFFFF) << 8) + 128; /*0x4823a3*/
                 *(unsigned int *)&v122.__pad_0AC = ((__int16)v42 << 8) + 128; /*0x4823aa*/
                 *(unsigned int *)&v122.u32_B4 = 0; /*0x4823b1*/
                 if ( (*(unsigned __int8 (**)(unsigned int *, char *, unsigned int))(*v39 + 216))( /*0x4823c5*/
@@ -21017,7 +21017,7 @@ LABEL_121:
               Debug::Log(); /*0x48272d*/
               v57 = this->u32_24; /*0x482732*/
               v58 = ((__int16)v57 << 8) + 128; /*0x482751*/
-              v59 = (SHIWORD(v57) << 8) + 128; /*0x482753*/
+              v59 = ((short)(((v57) >> 16) & 0xFFFF) << 8) + 128; /*0x482753*/
               *(unsigned int *)v122.__pad_C = 128; /*0x482755*/
               *(unsigned int *)&v122.u32_10 = 128; /*0x482759*/
               v122.Coord_field_0x8 = Isometric::InitTables((int)this, v122.__pad_C); /*0x48276a*/
@@ -21423,7 +21423,7 @@ LABEL_221:
       }
     }
   }
-  LOBYTE(result) = 1; /*0x48338b*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x48338b*/
   return result; /*0x48244b*/
 
 }
@@ -21438,7 +21438,7 @@ void CrateClass::Update()
   int v5; // edx
   int v6; // ecx
 
-  LOBYTE(v1) = dword_A8B238; /*0x56bbe0*/
+  (v1) = ((v1) & ~0xFF) | ((dword_A8B238) & 0xFF); /*0x56bbe0*/
   if ( *(unsigned int *)&dword_A8B238 ) /*0x56bbea*/
   {
     LOBYTE(v1) = stru_A8B250.__pad_0[17]; /*0x56bbec*/
@@ -23746,7 +23746,7 @@ void GroupLabel::WndProc()
       else
       {
         v16 = v30; /*0x61e8e5*/
-        v27 = BYTE2(v26) >> g_BitMask_Red << g_BitShift_Blue; /*0x61e8f9*/
+        v27 = (((v26) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue; /*0x61e8f9*/
         v34 = ((int)(unsigned __int8)v26 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x61e925*/
             | ((unsigned __int8)g_DialogPool.__pad_208[205] >> g_BitMask_Blue << g_BitMask_Green)
             | v27;
@@ -32394,7 +32394,7 @@ int * __fastcall PrintTimerOnTactical::Start(int p0, int p1, int p2, int* p3, in
     else
     {
       v12 = Audio::Callback(); /*0x6d4ca9*/
-      v13 = __CFADD__(v12, 1000); /*0x6d4cae*/
+      v13 = (((v12) + (1000)) & 0xFFFFFFFFu) < ((v12) & 0xFFFFFFFFu); /*0x6d4cae*/
       *p4 = v12 + 1000; /*0x6d4cb3*/
       p5 = p5; /*0x6d4cb5*/
       p4[1] = v13 + v15; /*0x6d4cbf*/
@@ -43030,7 +43030,7 @@ NeuronClass::NeuronClass()
   /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a382) */
   this->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a389*/
   if ( g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.? /*0x43a3c5*/
-    || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)
+    || ((((g_BuildingLoadQueue_Array) >> 8) & 0xFF) || !g_BuildingLoadQueue_Array.?)
     && g_BuildingLoadQueue_Array.?[2] > 0
     && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&g_BuildingLoadQueue_Array.?[2] + 8))(
          &g_BuildingLoadQueue_Array.?[2],

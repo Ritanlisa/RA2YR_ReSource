@@ -147,8 +147,8 @@ int Coord::Length(void *a1)
   int v3; // kr00_4
   v3 = Math::RoundToInt(Coord_field_0x8); /*0x41c3ac*/
   __int64 result; // rax
-  WORD2(result) = HIWORD(v3); /*0x41c3ac*/
-  LOWORD(result) = v3; /*0x41c3ac*/
+  (result) = ((result) & ~(0xFFFFull << 32)) | ((((((v3) >> 16) & 0xFFFF)) & 0xFFFFull) << 32); /*0x41c3ac*/
+  (result) = ((result) & ~0xFFFF) | ((v3) & 0xFFFF); /*0x41c3ac*/
   return result; /*0x41c3a9*/
 
 }

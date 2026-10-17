@@ -34,14 +34,14 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   int v25; // [esp+24h] [ebp-20h] BYREF
   v25 = v21; /*0x4cc15f*/
   int v18; // [esp+10h] [ebp-34h]
-  LOWORD(v18) = v5 / 256; /*0x4cc171*/
-  HIWORD(v18) = v6 / 256; /*0x4cc184*/
+  (v18) = ((v18) & ~0xFFFF) | ((v5 / 256) & 0xFFFF); /*0x4cc171*/
+  (v18) = ((v18) & ~(0xFFFF << 16)) | (((v6 / 256) & 0xFFFF) << 16); /*0x4cc184*/
   int v26; // [esp+28h] [ebp-1Ch] BYREF
   v26 = v18; /*0x4cc18d*/
   int v7; // ebp
   v7 = abs32((__int16)v21 - (__int16)v18); /*0x4cc1aa*/
   signed int v8; // eax
-  v8 = abs32(SHIWORD(v21) - SHIWORD(v18)); /*0x4cc1af*/
+  v8 = abs32((short)(((v21) >> 16) & 0xFFFF) - (short)(((v18) >> 16) & 0xFFFF)); /*0x4cc1af*/
   if ( v7 <= v8 ) /*0x4cc1b3*/
     v7 = v8; /*0x4cc1b5*/
   int v9; // edi
@@ -87,8 +87,8 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     if ( result ) /*0x4cc288*/
       break; /*0x4cc288*/
     int v23; // [esp+1Ch] [ebp-28h]
-    LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
-    HIWORD(v23) = v15 / 256; /*0x4cc2b5*/
+    (v23) = ((v23) & ~0xFFFF) | ((v14 / 256) & 0xFFFF); /*0x4cc2a2*/
+    (v23) = ((v23) & ~(0xFFFF << 16)) | (((v15 / 256) & 0xFFFF) << 16); /*0x4cc2b5*/
     int v29; // [esp+34h] [ebp-10h] BYREF
     v29 = v23; /*0x4cc2be*/
     v13 = (&dword_87F7E8)->To_CellObj((__int16 *)&v29); /*0x4cc2c2*/

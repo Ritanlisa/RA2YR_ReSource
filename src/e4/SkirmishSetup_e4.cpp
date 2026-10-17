@@ -479,7 +479,7 @@ int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
   result += 4; /*0x6082c2*/
   if ( result
     && (!result->u8_BD || result->u32_B0 != 1 ? (v3 = 0) : (v3 = 1),
-        (result = IsWindowVisible((HWND)hWnd), LOBYTE(result) = result != 0, v3) && (unsigned char)result) )
+        (result = IsWindowVisible((HWND)hWnd), (result) = ((result) & ~0xFF) | ((result != 0) & 0xFF), v3) && (unsigned char)result) )
   {
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 416), 0x2000, 1.0, 0); /*0x60830f*/
     LOBYTE(v4) = IsWindowEnabled((HWND)hWnd); /*0x608329*/
@@ -489,12 +489,12 @@ int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
     EnumChildWindows((HWND)hWnd, Dialog::MapControlToAction, 0); /*0x608350*/
     EnableWindow((HWND)hWnd, (unsigned __int8)v4); /*0x60835d*/
     result = InvalidateRect((HWND)hWnd, 0, 0); /*0x608364*/
-    LOBYTE(result) = 1; /*0x60836a*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x60836a*/
   }
   else
   {
     LABEL_6:
-    LOBYTE(result) = 0; /*0x6082b8*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6082b8*/
   }
   return result; /*0x6082b8*/
 

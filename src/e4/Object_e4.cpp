@@ -159,25 +159,25 @@ int Object::IsAlliedWithObjectHouse(int aP1, void *a2)
     goto LABEL_9; /*0x4f9aa2*/
   if ( (Object *)result == this ) /*0x4f9aa6*/
   {
-    LOBYTE(result) = 1; /*0x4f9aa8*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4f9aa8*/
     return result; /*0x4f9aab*/
   }
   result = result->u32_30; /*0x4f9aae*/
   if ( (void *)result == this->q030 ) /*0x4f9ab6*/
   {
-    LOBYTE(result) = 1; /*0x4f9ab8*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4f9ab8*/
     return result; /*0x4f9abb*/
   }
   if ( result != -1 ) /*0x4f9ac1*/
   {
     v4 = result; /*0x4f9ac8*/
     result = this->u32_5788; /*0x4f9aca*/
-    LOBYTE(result) = (result & (1 << v4)) != 0; /*0x4f9ad5*/
+    (result) = ((result) & ~0xFF) | (((result & (1 << v4)) != 0) & 0xFF); /*0x4f9ad5*/
   }
   else
   {
     LABEL_9:
-    LOBYTE(result) = 0; /*0x4f9adb*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x4f9adb*/
   }
   return result; /*0x4f9aaa*/
 
@@ -200,25 +200,25 @@ int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
     goto LABEL_10; /*0x4f9b08*/
   if ( (Object *)result == this ) /*0x4f9b0c*/
   {
-    LOBYTE(result) = 1; /*0x4f9b0e*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4f9b0e*/
     return result; /*0x4f9b11*/
   }
   result = result->u32_30; /*0x4f9b14*/
   if ( (void *)result == this->q030 ) /*0x4f9b1c*/
   {
-    LOBYTE(result) = 1; /*0x4f9b1e*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4f9b1e*/
     return result; /*0x4f9b21*/
   }
   if ( result != -1 ) /*0x4f9b27*/
   {
     v4 = result; /*0x4f9b2e*/
     result = this->u32_5788; /*0x4f9b30*/
-    LOBYTE(result) = (result & (1 << v4)) != 0; /*0x4f9b3b*/
+    (result) = ((result) & ~0xFF) | (((result & (1 << v4)) != 0) & 0xFF); /*0x4f9b3b*/
   }
   else
   {
     LABEL_10:
-    LOBYTE(result) = 0; /*0x4f9b41*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x4f9b41*/
   }
   return result; /*0x4f9b10*/
 
@@ -1026,14 +1026,14 @@ char Object_Calc(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, i
         v12 = (unsigned int)(v17 * v10) >> 8; /*0x7def5c*/
         unsigned int v13; // eax
         v13 = (v17 * ((v18 >> 3) & 0xFC)) >> 8; /*0x7def5f*/
-        (*((unsigned char *)&(v12))) = !__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1;
-        (*((unsigned char *)&(v13))) = !__CFADD__((v18 >> 3) & 0xFC, (unsigned char)v13) ? (uint8_t)(((v18 >> 3) & 0xFC) + v13) : -1;
+        (*((unsigned char *)&(v12))) = !(((v11) + ((unsigned char)v12)) & 0xFFFFFFFFu) < ((v11) & 0xFFFFFFFFu) ? (uint8_t)(v11 + v12) : -1;
+        (*((unsigned char *)&(v13))) = !((((v18 >> 3) & 0xFC) + ((unsigned char)v13)) & 0xFFFFFFFFu) < (((v18 >> 3) & 0xFC) & 0xFFFFFFFFu) ? (uint8_t)(((v18 >> 3) & 0xFC) + v13) : -1;
         v8 = v12 >> 3 << 11; /*0x7def7a*/
         int v14; // edx
         v14 = (uint8_t)(8 * v18); /*0x7def8e*/
         unsigned int v15; // ecx
         v15 = (unsigned int)(v17 * v14) >> 8; /*0x7def94*/
-        (*((unsigned char *)&(v15))) = !__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1;
+        (*((unsigned char *)&(v15))) = !((((unsigned char)v14) + ((unsigned char)v15)) & 0xFFFFFFFFu) < (((unsigned char)v14) & 0xFFFFFFFFu) ? (uint8_t)(v14 + v15) : -1;
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 2)); /*0x7defa3*/
         *v7 = v9; /*0x7defa5*/
       }
@@ -1081,7 +1081,7 @@ char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
   do
   {
     v22 = a5; /*0x7df003*/
-    HIWORD(v8) = 0; /*0x7df008*/
+    (v8) = ((v8) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df008*/
     do
     {
       LOBYTE(v9) = *v6; /*0x7df00a*/
@@ -1094,12 +1094,12 @@ char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
         v11 = v10; /*0x7df02d*/
         v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df039*/
         v13 = (v17 * ((v18 >> 2) & 0xF8)) >> 8; /*0x7df03c*/
-        LOBYTE(v12) = !__CFADD__(v11, (unsigned char)v12) ? (unsigned __int8)(v11 + v12) : -1;
-        LOBYTE(v13) = !__CFADD__((v18 >> 2) & 0xF8, (unsigned char)v13) ? (unsigned __int8)(((v18 >> 2) & 0xF8) + v13) : -1;
+        LOBYTE(v12) = !(((v11) + ((unsigned char)v12)) & 0xFFFFFFFFu) < ((v11) & 0xFFFFFFFFu) ? (unsigned __int8)(v11 + v12) : -1;
+        LOBYTE(v13) = !((((v18 >> 2) & 0xF8) + ((unsigned char)v13)) & 0xFFFFFFFFu) < (((v18 >> 2) & 0xF8) & 0xFFFFFFFFu) ? (unsigned __int8)(((v18 >> 2) & 0xF8) + v13) : -1;
         v8 = v12 >> 2 << 10; /*0x7df057*/
         v14 = (unsigned __int8)(8 * v18); /*0x7df06b*/
         v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df071*/
-        LOBYTE(v15) = !__CFADD__((unsigned char)v14, (unsigned char)v15) ? (unsigned __int8)(v14 + v15) : -1;
+        LOBYTE(v15) = !((((unsigned char)v14) + ((unsigned char)v15)) & 0xFFFFFFFFu) < (((unsigned char)v14) & 0xFFFFFFFFu) ? (unsigned __int8)(v14 + v15) : -1;
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 3)); /*0x7df080*/
         *v7 = v9; /*0x7df082*/
       }
@@ -1148,7 +1148,7 @@ char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
   do
   {
     v22 = a5; /*0x7df0e0*/
-    HIWORD(v8) = 0; /*0x7df0e5*/
+    (v8) = ((v8) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df0e5*/
     do
     {
       LOBYTE(v9) = *v6; /*0x7df0e7*/
@@ -1161,12 +1161,12 @@ char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
         v11 = v10; /*0x7df10a*/
         v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df116*/
         v13 = (v17 * ((v18 >> 3) & 0xF8)) >> 8; /*0x7df119*/
-        LOBYTE(v12) = !__CFADD__(v11, (unsigned char)v12) ? (unsigned __int8)(v11 + v12) : -1;
-        LOBYTE(v13) = !__CFADD__((v18 >> 3) & 0xF8, (unsigned char)v13) ? (unsigned __int8)(((v18 >> 3) & 0xF8) + v13) : -1;
+        LOBYTE(v12) = !(((v11) + ((unsigned char)v12)) & 0xFFFFFFFFu) < ((v11) & 0xFFFFFFFFu) ? (unsigned __int8)(v11 + v12) : -1;
+        LOBYTE(v13) = !((((v18 >> 3) & 0xF8) + ((unsigned char)v13)) & 0xFFFFFFFFu) < (((v18 >> 3) & 0xF8) & 0xFFFFFFFFu) ? (unsigned __int8)(((v18 >> 3) & 0xF8) + v13) : -1;
         v8 = v12 >> 3 << 11; /*0x7df134*/
         v14 = (unsigned __int8)(4 * v18); /*0x7df148*/
         v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df14e*/
-        LOBYTE(v15) = !__CFADD__((unsigned char)v14, (unsigned char)v15) ? (unsigned __int8)(v14 + v15) : -1;
+        LOBYTE(v15) = !((((unsigned char)v14) + ((unsigned char)v15)) & 0xFFFFFFFFu) < (((unsigned char)v14) & 0xFFFFFFFFu) ? (unsigned __int8)(v14 + v15) : -1;
         v9 = (v15 >> 2) | v8 | (v13 >> 3 << 6); /*0x7df15d*/
         *v7 = v9; /*0x7df15f*/
       }
@@ -1215,7 +1215,7 @@ char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
   do
   {
     v22 = a5; /*0x7df1bd*/
-    HIWORD(v8) = 0; /*0x7df1c2*/
+    (v8) = ((v8) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df1c2*/
     do
     {
       LOBYTE(v9) = *v6; /*0x7df1c4*/
@@ -1228,12 +1228,12 @@ char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
         v11 = v10; /*0x7df1e7*/
         v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df1f3*/
         v13 = (v17 * ((v18 >> 2) & 0xF8)) >> 8; /*0x7df1f6*/
-        LOBYTE(v12) = !__CFADD__(v11, (unsigned char)v12) ? (unsigned __int8)(v11 + v12) : -1;
-        LOBYTE(v13) = !__CFADD__((v18 >> 2) & 0xF8, (unsigned char)v13) ? (unsigned __int8)(((v18 >> 2) & 0xF8) + v13) : -1;
+        LOBYTE(v12) = !(((v11) + ((unsigned char)v12)) & 0xFFFFFFFFu) < ((v11) & 0xFFFFFFFFu) ? (unsigned __int8)(v11 + v12) : -1;
+        LOBYTE(v13) = !((((v18 >> 2) & 0xF8) + ((unsigned char)v13)) & 0xFFFFFFFFu) < (((v18 >> 2) & 0xF8) & 0xFFFFFFFFu) ? (unsigned __int8)(((v18 >> 2) & 0xF8) + v13) : -1;
         v8 = v12 >> 3 << 10; /*0x7df211*/
         v14 = (unsigned __int8)(8 * v18); /*0x7df225*/
         v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df22b*/
-        LOBYTE(v15) = !__CFADD__((unsigned char)v14, (unsigned char)v15) ? (unsigned __int8)(v14 + v15) : -1;
+        LOBYTE(v15) = !((((unsigned char)v14) + ((unsigned char)v15)) & 0xFFFFFFFFu) < (((unsigned char)v14) & 0xFFFFFFFFu) ? (unsigned __int8)(v14 + v15) : -1;
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 3)); /*0x7df23a*/
         *v7 = v9; /*0x7df23c*/
       }
@@ -1278,7 +1278,7 @@ LABEL_2:
   while ( 2 ) /*0x7df2c1*/
   {
     v19 = a6; /*0x7df2c1*/
-    HIWORD(v10) = 0; /*0x7df2c9*/
+    (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df2c9*/
     do /*0x7df39c*/
     {
       while ( 1 ) /*0x7df340*/
@@ -1352,7 +1352,7 @@ LABEL_2:
   while ( 2 ) /*0x7df403*/
   {
     v19 = a6; /*0x7df403*/
-    HIWORD(v10) = 0; /*0x7df40b*/
+    (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df40b*/
     do /*0x7df4da*/
     {
       while ( 1 ) /*0x7df480*/
@@ -1426,7 +1426,7 @@ LABEL_2:
   while ( 2 ) /*0x7df541*/
   {
     v19 = a6; /*0x7df541*/
-    HIWORD(v10) = 0; /*0x7df549*/
+    (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df549*/
     do /*0x7df61a*/
     {
       while ( 1 ) /*0x7df5c0*/
@@ -1500,7 +1500,7 @@ LABEL_2:
   while ( 2 ) /*0x7df681*/
   {
     v19 = a6; /*0x7df681*/
-    HIWORD(v10) = 0; /*0x7df689*/
+    (v10) = ((v10) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x7df689*/
     do /*0x7df75b*/
     {
       while ( 1 ) /*0x7df700*/
@@ -1584,10 +1584,10 @@ int sub_5A7E90(int a1, unsigned short * a2)
           LOWORD(v9) = i + *a2; /*0x5a7ef4*/
           HIWORD(v9) = a2[1] + (unsigned short)v4; /*0x5a7ef9*/
           *(unsigned int *)v12 = v9; /*0x5a7f02*/
-          v7 = SHIWORD(v9) + (__int16)v9; /*0x5a7f0c*/
+          v7 = (short)(((v9) >> 16) & 0xFFFF) + (__int16)v9; /*0x5a7f0c*/
           if ( v7 > v5 ) /*0x5a7f11*/
           {
-            if ( (__int16)v9 - SHIWORD(v9) >= v5 || SHIWORD(v9) - (__int16)v9 >= v5 || v7 > dword_ABED08 ) /*0x5a7f27*/
+            if ( (__int16)v9 - (short)(((v9) >> 16) & 0xFFFF) >= v5 || (short)(((v9) >> 16) & 0xFFFF) - (__int16)v9 >= v5 || v7 > dword_ABED08 ) /*0x5a7f27*/
             {
               v2 = v10; /*0x5a7f69*/
             }

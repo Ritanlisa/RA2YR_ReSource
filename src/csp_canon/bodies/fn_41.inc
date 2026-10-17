@@ -386,7 +386,7 @@ int TacticalClass::FillScanlinesTransparent(int a2, int a3, int a4, int a5) {
         {
           memset32((void *)nextArrayIndex, 8323199, v17); /*0x41141c*/
           v16 = (unsigned short *)(v24 + 4 * v17); /*0x411422*/
-          LOBYTE(v14) = v25; /*0x411425*/
+          (v14) = ((v14) & ~0xFF) | ((v25) & 0xFF); /*0x411425*/
         }
         if ( (v14 & 1) != 0 && v16 ) /*0x41142f*/
           *v16 = 127; /*0x411431*/
@@ -574,11 +574,11 @@ char DynamicVector::AddItem(unsigned int *aP1)
     v5 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x413aa8*/
     this->DynamicVector_field_0x10 = (unsigned int)((void *)(result + 1)); /*0x413aae*/
     *(unsigned int *)(v5 + 4 * result) = (unsigned int)(*aP1); /*0x413ab8*/
-    LOBYTE(result) = 1; /*0x413abb*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x413abb*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x413a9f*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x413a9f*/
   }
   return result; /*0x413aa1*/
 
@@ -770,7 +770,7 @@ int MissionClass::vt_entry_1FC()
 
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x41bf30*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x41bf30*/
   return result; /*0x41bf32*/
 
 }
@@ -781,7 +781,7 @@ int TacticalClass::StubReturnFalse5()
 
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x41bf80*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x41bf80*/
   return result; /*0x41bf82*/
 
 }
@@ -863,7 +863,7 @@ int TacticalClass::StubReturnFalse10()
 
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x41c040*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x41c040*/
   return result; /*0x41c042*/
 
 }

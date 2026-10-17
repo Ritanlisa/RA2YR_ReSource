@@ -132,8 +132,8 @@ long long Coord::ScaleToScreenY()
   int v2; // kr00_4
 
   v2 = Math::RoundToInt(((double)(int)this - 0.5) * LightningStorm_CloudHeightFactor); /*0x6d2135*/
-  WORD2(result) = HIWORD(v2); /*0x6d2135*/
-  LOWORD(result) = v2; /*0x6d2135*/
+  (result) = ((result) & ~(0xFFFFull << 32)) | ((((((v2) >> 16) & 0xFFFF)) & 0xFFFFull) << 32); /*0x6d2135*/
+  (result) = ((result) & ~0xFFFF) | ((v2) & 0xFFFF); /*0x6d2135*/
   return result; /*0x6d213b*/
 
 }
@@ -195,7 +195,7 @@ int Gap2Recv_6D3290::DrawBuildingAnimFrame(AbstractClass * aP1, int * a2, char a
     do /*0x6d33bb*/
     {
       v22 = *(unsigned int *)(*(unsigned int *)v6 + 36); /*0x6d3307*/
-      v18 = (((SHIWORD(v22) << 8) + 128) / 256) << 8; /*0x6d334b*/
+      v18 = ((((short)(((v22) >> 16) & 0xFFFF) << 8) + 128) / 256) << 8; /*0x6d334b*/
       v17 = ((((int16_t)v22 << 8) + 128) / 256) << 8; /*0x6d3358*/
       v19 = 0; /*0x6d335c*/
       v7 = Coord::To_ScreenRaw(&v16, &v17); /*0x6d3360*/
@@ -400,7 +400,7 @@ int Gap2Recv_6D9CE0::FindBuildingsInScreenRect(int a2, int a3, int a4, int a5) {
           v28 = v10[2]; /*0x6d9d82*/
           v12 = 30 * v11 / 2 + 30 * *v10 / 2; /*0x6d9dcf*/
           v13 = -60 * v11 / 2 + 60 * *v10 / 2; /*0x6d9dd3*/
-          v14 = (BYTE4(v13) + (int)v13) >> 8; /*0x6d9deb*/
+          v14 = ((((v13) >> 32) & 0xFF) + (int)v13) >> 8; /*0x6d9deb*/
           LOWORD(v15) = Math::RoundToInt((double)v28 * dbl_B0CD48 + (double)(v28 >= 728) + 0.5); /*0x6d9e15*/
           v16 = v12 / 256 - v15; /*0x6d9e1a*/
           if ( v14 >= v24 && v14 <= v26 && v16 >= v25 && v16 <= v27 ) /*0x6d9e40*/

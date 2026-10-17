@@ -1482,8 +1482,8 @@ LABEL_27:
             v36 = -1; /*0x60dad2*/
           else
             v36 = ((int)(unsigned __int8)dword_AC4624 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x60db1a*/
-                | (BYTE1(dword_AC4624) >> g_BitMask_Blue << g_BitMask_Green)
-                | (BYTE2(dword_AC4624) >> g_BitMask_Red << g_BitShift_Blue);
+                | ((((dword_AC4624) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+                | ((((dword_AC4624) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
           if ( Y[0] && *(unsigned char *)(Y[0] + 205) ) /*0x60db24*/
           {
             if ( *(unsigned int *)&stru_AC1B48.__pad_208[136] == -1 ) /*0x60db36*/
@@ -1580,7 +1580,7 @@ LABEL_94:
                         v50 = -1; /*0x60decf*/
                       else
                         v50 = ((int)(unsigned __int8)v48 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x60df17*/
-                            | (BYTE1(v48) >> g_BitMask_Blue << g_BitMask_Green)
+                            | ((((v48) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
                             | ((unsigned __int8)v184.__pad_0[2] >> g_BitMask_Red << g_BitShift_Blue);
                       (*(void (**)(DSurface *, RECT *, int))(DSurface_Alternate->DSurface_field_0x0 + 20))( /*0x60df2a*/
                         DSurface_Alternate,
@@ -1636,9 +1636,9 @@ LABEL_94:
               v45 = dword_AC4880; /*0x60dd8e*/
               if ( dword_AC4880 != -1 ) /*0x60dd96*/
               {
-                v46 = BYTE2(dword_AC4880); /*0x60dd9e*/
+                v46 = (((dword_AC4880) >> 16) & 0xFF); /*0x60dd9e*/
 LABEL_92:
-                v45 = (BYTE1(v45) >> g_BitMask_Blue << g_BitMask_Green) /*0x60ddbc*/
+                v45 = ((((v45) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green) /*0x60ddbc*/
                     | (v46 >> g_BitMask_Red << g_BitShift_Blue)
                     | ((int)(unsigned __int8)v45 >> g_BitShift_Green_0 << g_BitShift_Red);
               }
@@ -1648,7 +1648,7 @@ LABEL_92:
               v45 = dword_AC4604; /*0x60dda6*/
               if ( dword_AC4604 != -1 ) /*0x60ddae*/
               {
-                v46 = BYTE2(dword_AC4604); /*0x60ddb6*/
+                v46 = (((dword_AC4604) >> 16) & 0xFF); /*0x60ddb6*/
                 goto LABEL_92; /*0x60ddb6*/
               }
             }
@@ -3780,7 +3780,7 @@ void LoadScreen::RenderLoop()
   if ( dword_A83CA8 <= 0 ) /*0x4b706d*/
   {
 LABEL_25:
-    LOBYTE(v34) = -1; /*0x4b708a*/
+    (v34) = ((v34) & ~0xFF) | ((-1) & 0xFF); /*0x4b708a*/
   }
   else
   {
@@ -4216,7 +4216,7 @@ LABEL_119:
             v89 = 0; /*0x4b7b14*/
           }
           if ( kk < v313 /*0x4b7b55*/
-            || (BYTE1(v314) || !v313)
+            || ((((v314) >> 8) & 0xFF) || !v313)
             && v316 > 0
             && (*(unsigned __int8 (**)(int *, int, unsigned int))(v311.unknown_18 + 8))(
                  &v311.unknown_18,
@@ -4555,7 +4555,7 @@ LABEL_216:
               v134 = 0; /*0x4b824f*/
             }
             if ( kk < v313 /*0x4b8290*/
-              || (BYTE1(v314) || !v313)
+              || ((((v314) >> 8) & 0xFF) || !v313)
               && v316 > 0
               && (*(unsigned __int8 (**)(int *, int, unsigned int))(v311.unknown_18 + 8))(
                    &v311.unknown_18,
@@ -4629,7 +4629,7 @@ LABEL_216:
           v146 = 0; /*0x4b840f*/
         }
         if ( kk < v313 /*0x4b8450*/
-          || (BYTE1(v314) || !v313)
+          || ((((v314) >> 8) & 0xFF) || !v313)
           && v316 > 0
           && (*(unsigned __int8 (**)(int *, int, unsigned int))(v311.unknown_18 + 8))(
                &v311.unknown_18,
@@ -5319,7 +5319,7 @@ LABEL_397:
   dword_87E8A4 = 0; /*0x4b949e*/
   v243 = (BSurface *)__2_YAPAXI_Z(0x30u); /*0x4b94a4*/
   if ( v243 ) /*0x4b94ae*/
-    dword_87E8A4 = (StreamObj *)BSurface::Construct(v243, v333, v334, v335, SHIDWORD(v335)); /*0x4b94e3*/
+    dword_87E8A4 = (StreamObj *)BSurface::Construct(v243, v333, v334, v335, (int)(((v335) >> 32) & 0xFFFFFFFFu)); /*0x4b94e3*/
   else
     dword_87E8A4 = 0; /*0x4b94ea*/
   v244 = g_ZBufferDescriptor; /*0x4b94f0*/
@@ -5331,7 +5331,7 @@ LABEL_397:
   }
   v245 = (BSurface *)__2_YAPAXI_Z(0x30u); /*0x4b9512*/
   if ( v245 ) /*0x4b951c*/
-    g_ZBufferDescriptor = (Stream *)BSurface::ConstructEx(v245, v333, v334, v335, SHIDWORD(v335)); /*0x4b9551*/
+    g_ZBufferDescriptor = (Stream *)BSurface::ConstructEx(v245, v333, v334, v335, (int)(((v335) >> 32) & 0xFFFFFFFFu)); /*0x4b9551*/
   else
     g_ZBufferDescriptor = 0; /*0x4b9558*/
   (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x4b9566*/
@@ -5344,12 +5344,12 @@ LABEL_397:
   v323.IsAllocated[0] = 0; /*0x4b95a2*/
   v323.Capacity = 0; /*0x4b95ac*/
   v311.unknown_18 = (int)&vt_VectorClass_CrossDissolveEffect; /*0x4b95b3*/
-  if ( v312 && BYTE1(v314) ) /*0x4b95c9*/
+  if ( v312 && (((v314) >> 8) & 0xFF) ) /*0x4b95c9*/
   {
     __3_YAXPAX_Z(v312); /*0x4b95cc*/
     v312 = 0; /*0x4b95d4*/
   }
-  BYTE1(v314) = 0; /*0x4b95e2*/
+  (v314) = ((v314) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4b95e2*/
   v313 = 0; /*0x4b95ec*/
   *(unsigned int *)v321.Render_ph = &off_7E8500; /*0x4b95f3*/
   if ( v321.LoadScreen_field_0x04 && BYTE1(v321.LoadScreen_field_0x0C) ) /*0x4b9609*/
@@ -7542,10 +7542,10 @@ void SyncDelayClass::ProcessNetworkSync()
   v2 = (int)*this; /*0x55deed*/
   if ( !*(unsigned int *)this ) /*0x55def2*/
     return v2; /*0x55def2*/
-  BYTE1(v2) &= ~8u; /*0x55def8*/
+  (v2) &= ~(((~(~8u)) & 0xFF) << 8); /*0x55def8*/
   v3 = v2; /*0x55defc*/
   v4 = (unsigned __int8 *)v2; /*0x55df03*/
-  BYTE1(v4) = BYTE1(v2) & 0xE8; /*0x55df05*/
+  BYTE1(v4) = (((v2) >> 8) & 0xFF) & 0xE8; /*0x55df05*/
   v14 = (int)v4; /*0x55df0a*/
   if ( dword_87F684 ) /*0x55df0e*/
   {
@@ -7623,36 +7623,36 @@ LABEL_24:
     {
       v2 = dword_ABCE14; /*0x55e0ab*/
       if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e0b0*/
-        BYTE1(v2) = BYTE1(dword_ABCE14) & 0xFE; /*0x55e0b2*/
+        (v2) = ((v2) & ~(0xFF << 8)) | ((((((dword_ABCE14) >> 8) & 0xFF) & 0xFE) & 0xFF) << 8); /*0x55e0b2*/
       else
-        BYTE1(v2) = BYTE1(dword_ABCE14) | 1; /*0x55e0c1*/
+        (v2) = ((v2) & ~(0xFF << 8)) | ((((((dword_ABCE14) >> 8) & 0xFF) | 1) & 0xFF) << 8); /*0x55e0c1*/
       dword_ABCE14 = v2; /*0x55e0b7*/
     }
     else if ( v4 == (unsigned __int8 *)39 ) /*0x55e0d3*/
     {
       v2 = dword_ABCE14; /*0x55e0db*/
       if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e0e0*/
-        BYTE1(v2) = BYTE1(dword_ABCE14) & 0xEF; /*0x55e0e2*/
+        (v2) = ((v2) & ~(0xFF << 8)) | ((((((dword_ABCE14) >> 8) & 0xFF) & 0xEF) & 0xFF) << 8); /*0x55e0e2*/
       else
-        BYTE1(v2) = BYTE1(dword_ABCE14) | 0x10; /*0x55e0f1*/
+        (v2) = ((v2) & ~(0xFF << 8)) | ((((((dword_ABCE14) >> 8) & 0xFF) | 0x10) & 0xFF) << 8); /*0x55e0f1*/
       dword_ABCE14 = v2; /*0x55e0e7*/
     }
     else if ( v4 == (unsigned __int8 *)38 ) /*0x55e103*/
     {
       v2 = dword_ABCE14; /*0x55e10b*/
       if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e110*/
-        LOBYTE(v2) = dword_ABCE14 & 0xFE; /*0x55e112*/
+        (v2) = ((v2) & ~0xFF) | ((dword_ABCE14 & 0xFE) & 0xFF); /*0x55e112*/
       else
-        LOBYTE(v2) = dword_ABCE14 | 1; /*0x55e120*/
+        (v2) = ((v2) & ~0xFF) | ((dword_ABCE14 | 1) & 0xFF); /*0x55e120*/
       dword_ABCE14 = v2; /*0x55e116*/
     }
     else if ( v4 == (unsigned __int8 *)40 ) /*0x55e131*/
     {
       v2 = dword_ABCE14; /*0x55e139*/
       if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e13e*/
-        LOBYTE(v2) = dword_ABCE14 & 0xEF; /*0x55e140*/
+        (v2) = ((v2) & ~0xFF) | ((dword_ABCE14 & 0xEF) & 0xFF); /*0x55e140*/
       else
-        LOBYTE(v2) = dword_ABCE14 | 0x10; /*0x55e14e*/
+        (v2) = ((v2) & ~0xFF) | ((dword_ABCE14 | 0x10) & 0xFF); /*0x55e14e*/
       dword_ABCE14 = v2; /*0x55e144*/
     }
   }

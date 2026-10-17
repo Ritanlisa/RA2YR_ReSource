@@ -152,12 +152,12 @@ int Voxel::BuildIndexTable()
       }
       v1 = i + 1; /*0x748334*/
     }
-    LOBYTE(result) = 1; /*0x748341*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x748341*/
   }
   else
   {
     LABEL_17:
-    LOBYTE(result) = 0; /*0x748348*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x748348*/
   }
   return result; /*0x748340*/
 
@@ -1318,14 +1318,14 @@ int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * 
 
   v5 = word_B46254[(int)this->q130 /*0x75ee44*/
   + (unsigned __int16)word_B4669C[300 * arg8 + abs32(a2 - (unsigned int)this->q0CC - aP2)]];
-  LODWORD(v5) = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x75ee47*/
+  (v5) = ((v5) & 0xFFFFFFFF00000000ull) | ((((((v5) >> 32) & 0xFFFFFFFFu) ^ v5) - (((v5) >> 32) & 0xFFFFFFFFu)) & 0xFFFFFFFFull); /*0x75ee47*/
   v6 = dword_B46648[(unsigned int)v5]; /*0x75ee50*/
   WORD2(v5) = a4[*(unsigned int *)&this->__pad_134[4 * v5 + 212]]; /*0x75ee57*/
-  v7 = ((v6 * (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitMask_Green) << g_BitMask_Blue)) >> 8) /*0x75eeb8*/
-  + (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitMask_Green) << g_BitMask_Blue);
-  v8 = ((v6 * (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitShift_Blue) << g_BitMask_Red)) >> 8) /*0x75eec6*/
-  + (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitShift_Blue) << g_BitMask_Red);
-  v9 = (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitShift_Red) << g_BitShift_Green_0); /*0x75eec8*/
+  v7 = ((v6 * (unsigned __int8)((unsigned __int8)((((v5) >> 32) & 0xFFFF) >> g_BitMask_Green) << g_BitMask_Blue)) >> 8) /*0x75eeb8*/
+  + (unsigned __int8)((unsigned __int8)((((v5) >> 32) & 0xFFFF) >> g_BitMask_Green) << g_BitMask_Blue);
+  v8 = ((v6 * (unsigned __int8)((unsigned __int8)((((v5) >> 32) & 0xFFFF) >> g_BitShift_Blue) << g_BitMask_Red)) >> 8) /*0x75eec6*/
+  + (unsigned __int8)((unsigned __int8)((((v5) >> 32) & 0xFFFF) >> g_BitShift_Blue) << g_BitMask_Red);
+  v9 = (unsigned __int8)((unsigned __int8)((((v5) >> 32) & 0xFFFF) >> g_BitShift_Red) << g_BitShift_Green_0); /*0x75eec8*/
   if ( v8 > 255 ) /*0x75eed3*/
     v8 = 255; /*0x75eed5*/
   v10 = 255; /*0x75eee0*/
@@ -1621,7 +1621,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
                 v42 = (unsigned __int16 *)(2 * v40 + v38); /*0x75ff6a*/
                 v67 = v42; /*0x75ff76*/
                 v43 = v39 - v76 - this->q0D0; /*0x75ff7a*/
-                for ( j = (HIDWORD(v43) ^ v43) - HIDWORD(v43); v40 >= v59; v67 = v42 ) /*0x75ff87*/
+                for ( j = ((((v43) >> 32) & 0xFFFFFFFFu) ^ v43) - (((v43) >> 32) & 0xFFFFFFFFu); v40 >= v59; v67 = v42 ) /*0x75ff87*/
                 {
                   if ( *v42 > v87 ) /*0x75ff91*/
                   {
@@ -1735,7 +1735,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
               v23 = v22; /*0x75fc7c*/
               v24 = v19; /*0x75fc7e*/
               v75 = v19; /*0x75fc82*/
-              for ( m = (HIDWORD(v22) ^ v23) - HIDWORD(v22); v24 <= v62; v75 = v24 ) /*0x75fc8e*/
+              for ( m = ((((v22) >> 32) & 0xFFFFFFFFu) ^ v23) - (((v22) >> 32) & 0xFFFFFFFFu); v24 <= v62; v75 = v24 ) /*0x75fc8e*/
               {
                 if ( *v20 > v86 ) /*0x75fc98*/
                 {
@@ -1788,7 +1788,7 @@ int Voxel::BlendColor(int a2, int aP2, int arg8, unsigned short *a4)
 
   v5 = word_B45E68[(int)this->q130 /*0x7601d9*/
   + (unsigned __int16)word_B4669C[300 * arg8 + abs32(a2 - (unsigned int)this->q0CC - aP2)]];
-  v6 = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x7601dc*/
+  v6 = ((((v5) >> 32) & 0xFFFFFFFFu) ^ v5) - (((v5) >> 32) & 0xFFFFFFFFu); /*0x7601dc*/
   if ( v6 >= 9 ) /*0x7601e1*/
     v6 = 9; /*0x7601e3*/
   v7 = a4[*(unsigned int *)&this->__pad_134[4 * v6 + 212]]; /*0x7601fb*/
@@ -2158,7 +2158,7 @@ void* Voxel::FaceBlit()
             *&this->u32_C4 / 256);
     v17 = *&this->u32_140; /*0x761349*/
     *(unsigned int *)v37 = *(unsigned int *)v16; /*0x761355*/
-    for ( i = COERCE_DOUBLE(__PAIR64__(*&this->q144, v17)); /*0x761376*/
+    for ( i = COERCE_DOUBLE((((*&this->q144 & 0xFFFFFFFFull)) << 32 | (v17 & 0xFFFFFFFFull))); /*0x761376*/
           0.050000001 * 0.5 + *&this->q138 >= i;
           i = i + 0.050000001 )
     {
@@ -3760,20 +3760,20 @@ int Voxel::FacePixelBuffer(int * a1)
             break; /*0x7dfa7e*/
           LOBYTE(v16) = *v12; /*0x7dfa80*/
           v17 = v12 + 1; /*0x7dfa82*/
-          LOBYTE(v13) = v13 - v16; /*0x7dfa83*/
+          (v13) = ((v13) & ~0xFF) | ((v13 - v16) & 0xFF); /*0x7dfa83*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7dfa85*/
           BYTE1(v13) = *v17; /*0x7dfa8c*/
-          for ( i = v17 + 1; BYTE1(v13); g_VoxelRenderBuffer[(unsigned int)v19] = g_VoxelColorPalette[(unsigned int)v20] ) /*0x7dfa91*/
+          for ( i = v17 + 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v19] = g_VoxelColorPalette[(unsigned int)v20] ) /*0x7dfa91*/
           {
-            LOBYTE(v13) = v13 - 1; /*0x7dfa95*/
-            v19 = (unsigned __int8 *)HIWORD(v15); /*0x7dfa97*/
+            (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7dfa95*/
+            v19 = (unsigned __int8 *)(((v15) >> 16) & 0xFFFF); /*0x7dfa97*/
             v20 = (unsigned __int8 *)(unsigned __int8)i[1]; /*0x7dfa9c*/
-            LOBYTE(v19) = BYTE1(v15); /*0x7dfa9f*/
+            LOBYTE(v19) = (((v15) >> 8) & 0xFF); /*0x7dfa9f*/
             BYTE1(v20) = g_VoxelShadeTable[(unsigned int)v20]; /*0x7dfaa1*/
             LOBYTE(v20) = *i; /*0x7dfaa7*/
             v15 += v14; /*0x7dfaa9*/
             i += 2; /*0x7dfaab*/
-            --BYTE1(v13); /*0x7dfaae*/
+            --(((v13) >> 8) & 0xFF); /*0x7dfaae*/
           }
           v12 = i + 1; /*0x7dfabe*/
         }
@@ -3782,15 +3782,15 @@ int Voxel::FacePixelBuffer(int * a1)
       }
       *(v8 - 3) += *(int *)((char *)a1 + 30); /*0x7dfa30*/
       a1[3] += a1[4]; /*0x7dfa36*/
-      LOBYTE(v3) = v3 - 1; /*0x7dfa39*/
+      (v3) = ((v3) & ~0xFF) | ((v3 - 1) & 0xFF); /*0x7dfa39*/
     }
     while ( (unsigned char)v3 ); /*0x7dfa3b*/
     *(v8 - 3) = a1[9] + *(v8 - 2); /*0x7dfa43*/
     result = a1[5] + *(v8 - 1); /*0x7dfa49*/
     a1[3] = result; /*0x7dfa4c*/
-    --BYTE1(v3); /*0x7dfa4f*/
+    --(((v3) >> 8) & 0xFF); /*0x7dfa4f*/
   }
-  while ( BYTE1(v3) ); /*0x7dfa51*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7dfa51*/
   return result; /*0x7dfa55*/
 
 }
@@ -3868,22 +3868,22 @@ int Voxel::FacePixelBufferEx(int a1)
         while ( v13 ) /*0x7dfb9c*/
         {
           BYTE1(v13) = *v12; /*0x7dfb9e*/
-          for ( i = v12 - 1; BYTE1(v13); g_VoxelRenderBuffer[(unsigned int)v17] = g_VoxelColorPalette[(unsigned int)v18] ) /*0x7dfba3*/
+          for ( i = v12 - 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v17] = g_VoxelColorPalette[(unsigned int)v18] ) /*0x7dfba3*/
           {
-            LOBYTE(v13) = v13 - 1; /*0x7dfba7*/
-            v17 = (unsigned __int8 *)HIWORD(v15); /*0x7dfba9*/
+            (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7dfba7*/
+            v17 = (unsigned __int8 *)(((v15) >> 16) & 0xFFFF); /*0x7dfba9*/
             v18 = (unsigned __int8 *)*i; /*0x7dfbae*/
-            LOBYTE(v17) = BYTE1(v15); /*0x7dfbb0*/
+            LOBYTE(v17) = (((v15) >> 8) & 0xFF); /*0x7dfbb0*/
             BYTE1(v18) = g_VoxelShadeTable[(unsigned int)v18]; /*0x7dfbb2*/
             LOBYTE(v18) = *(i - 1); /*0x7dfbb8*/
             v15 += v14; /*0x7dfbbb*/
             i -= 2; /*0x7dfbbd*/
-            --BYTE1(v13); /*0x7dfbc0*/
+            --(((v13) >> 8) & 0xFF); /*0x7dfbc0*/
           }
           v19 = i - 1; /*0x7dfbd0*/
           v20 = *v19; /*0x7dfbd3*/
           v12 = v19 - 1; /*0x7dfbd5*/
-          LOBYTE(v13) = v13 - v20; /*0x7dfbd6*/
+          (v13) = ((v13) & ~0xFF) | ((v13 - v20) & 0xFF); /*0x7dfbd6*/
           v15 += g_VoxelOffsetTable[v20]; /*0x7dfbd8*/
         }
         v8 = v21; /*0x7dfbe1*/
@@ -3891,15 +3891,15 @@ int Voxel::FacePixelBufferEx(int a1)
       }
       *(v8 - 3) += *(unsigned int *)(a1 + 30); /*0x7dfb51*/
       *(unsigned int *)(a1 + 12) += *(unsigned int *)(a1 + 16); /*0x7dfb57*/
-      LOBYTE(v3) = v3 - 1; /*0x7dfb5a*/
+      (v3) = ((v3) & ~0xFF) | ((v3 - 1) & 0xFF); /*0x7dfb5a*/
     }
     while ( (unsigned char)v3 ); /*0x7dfb5c*/
     *(v8 - 3) = *(unsigned int *)(a1 + 36) + *(v8 - 2); /*0x7dfb64*/
     result = *(unsigned int *)(a1 + 20) + *(v8 - 1); /*0x7dfb6a*/
     *(unsigned int *)(a1 + 12) = result; /*0x7dfb6d*/
-    --BYTE1(v3); /*0x7dfb70*/
+    --(((v3) >> 8) & 0xFF); /*0x7dfb70*/
   }
-  while ( BYTE1(v3) ); /*0x7dfb72*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7dfb72*/
   return result; /*0x7dfb76*/
 
 }
@@ -3982,18 +3982,18 @@ int Voxel::FacePixelBuffer3(int * a1)
             break; /*0x7dfcbe*/
           LOBYTE(v16) = *v12; /*0x7dfcc0*/
           v17 = v12 + 1; /*0x7dfcc2*/
-          LOBYTE(v13) = v13 - v16; /*0x7dfcc3*/
+          (v13) = ((v13) & ~0xFF) | ((v13 - v16) & 0xFF); /*0x7dfcc3*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7dfcc5*/
           BYTE1(v13) = *v17; /*0x7dfccc*/
-          for ( i = v17 + 1; BYTE1(v13); g_VoxelRenderBuffer[(unsigned int)v19] = v20 ) /*0x7dfcd1*/
+          for ( i = v17 + 1; (((v13) >> 8) & 0xFF); g_VoxelRenderBuffer[(unsigned int)v19] = v20 ) /*0x7dfcd1*/
           {
-            LOBYTE(v13) = v13 - 1; /*0x7dfcd5*/
-            v19 = (unsigned __int8 *)HIWORD(v15); /*0x7dfcd7*/
+            (v13) = ((v13) & ~0xFF) | ((v13 - 1) & 0xFF); /*0x7dfcd5*/
+            v19 = (unsigned __int8 *)(((v15) >> 16) & 0xFFFF); /*0x7dfcd7*/
             v20 = *i; /*0x7dfcda*/
-            LOBYTE(v19) = BYTE1(v15); /*0x7dfcdc*/
+            LOBYTE(v19) = (((v15) >> 8) & 0xFF); /*0x7dfcdc*/
             ++i; /*0x7dfcde*/
             v15 += v14; /*0x7dfcdf*/
-            --BYTE1(v13); /*0x7dfce1*/
+            --(((v13) >> 8) & 0xFF); /*0x7dfce1*/
           }
           v12 = i + 1; /*0x7dfceb*/
         }
@@ -4002,15 +4002,15 @@ int Voxel::FacePixelBuffer3(int * a1)
       }
       *(v8 - 3) += *(int *)((char *)a1 + 30); /*0x7dfc73*/
       a1[3] += a1[4]; /*0x7dfc79*/
-      LOBYTE(v3) = v3 - 1; /*0x7dfc7c*/
+      (v3) = ((v3) & ~0xFF) | ((v3 - 1) & 0xFF); /*0x7dfc7c*/
     }
     while ( (unsigned char)v3 ); /*0x7dfc7e*/
     *(v8 - 3) = a1[9] + *(v8 - 2); /*0x7dfc86*/
     result = a1[5] + *(v8 - 1); /*0x7dfc8c*/
     a1[3] = result; /*0x7dfc8f*/
-    --BYTE1(v3); /*0x7dfc92*/
+    --(((v3) >> 8) & 0xFF); /*0x7dfc92*/
   }
-  while ( BYTE1(v3) ); /*0x7dfc94*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7dfc94*/
   return result; /*0x7dfc98*/
 
 }

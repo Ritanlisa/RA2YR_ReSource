@@ -62,12 +62,12 @@ bool Weapon_Update(void * a1, void * a2)
   int v16[4]; // [esp+18h] [ebp-10h] BYREF
 
   v3 = v2; /*0x659ca5*/
-  if ( !LOBYTE(v2->vfptr2) ) /*0x659ca7*/
+  if ( !((v2->vfptr2) & 0xFF) ) /*0x659ca7*/
   {
-    LOBYTE(v2->vfptr2) = 1; /*0x659cae*/
+    (v2->vfptr2) = ((v2->vfptr2) & ~0xFF) | ((1) & 0xFF); /*0x659cae*/
     Weapon_Update_Update(v2); /*0x659cb2*/
   }
-  if ( BYTE1(v3->vfptr2) ) /*0x659cb7*/
+  if ( (((v3->vfptr2) >> 8) & 0xFF) ) /*0x659cb7*/
   {
     Weapon_Update_Update_659EE0(v3); /*0x659cc4*/
     v4 = *(unsigned int *)v3->onBridge; /*0x659cc9*/
@@ -186,7 +186,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
   v44 = v8; /*0x70c6d3*/
   __asm { fild [esp+0C4h+var_94] } /*0x70c6d7*/
   v40 = 0; /*0x70c6e5*/
-  LOWORD(v41) = v8 / 256; /*0x70c6ed*/
+  (v41) = ((v41) & ~0xFFFF) | ((v8 / 256) & 0xFFFF); /*0x70c6ed*/
   v9 = aP2[1]; /*0x70c6f2*/
   __asm { fstp [esp+0C8h+var_50] } /*0x70c6f5*/
   v54 = v9; /*0x70c6f9*/
@@ -203,7 +203,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     fild [esp+0C8h+var_68]
     fild [esp+0C8h+var_64]
   }
-  HIWORD(v41) = v9 / 256; /*0x70c725*/
+  (v41) = ((v41) & ~(0xFFFF << 16)) | (((v9 / 256) & 0xFFFF) << 16); /*0x70c725*/
   __asm /*0x70c72e*/
   {
     fstp [esp+0C8h+var_58]
@@ -243,10 +243,10 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     v49 = *v12; /*0x70c7b9*/
     v50 = v12->u32_4; /*0x70c7c0*/
     v51 = v12->u32_8; /*0x70c7c7*/
-    if ( __PAIR32__(v50 / 256, v49 / 256) != *(unsigned int *)v48 ) /*0x70c7ec*/
+    if ( ((v50 / 256 & 0xFFFFu) << 16 | (v49 / 256 & 0xFFFFu)) != *(unsigned int *)v48 ) /*0x70c7ec*/
     {
-      LOWORD(v44) = v49 / 256; /*0x70c7f9*/
-      HIWORD(v44) = v50 / 256; /*0x70c802*/
+      (v44) = ((v44) & ~0xFFFF) | ((v49 / 256) & 0xFFFF); /*0x70c7f9*/
+      (v44) = ((v44) & ~(0xFFFF << 16)) | (((v50 / 256) & 0xFFFF) << 16); /*0x70c802*/
       *(unsigned int *)v48 = v44; /*0x70c811*/
       v13 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v48); /*0x70c815*/
       if ( (v13->u32_140 & 0x100) != 0 /*0x70c83c*/

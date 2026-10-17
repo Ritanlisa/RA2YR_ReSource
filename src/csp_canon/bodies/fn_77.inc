@@ -479,14 +479,14 @@ char Window::ClampToScreen(int * a1)
   result = GetSystemMetrics(17); /*0x776de0*/
   if ( a1[3] <= result ) /*0x776de5*/
   {
-    LOBYTE(result) = v1; /*0x776e08*/
+    (result) = ((result) & ~0xFF) | ((v1) & 0xFF); /*0x776e08*/
   }
   else
   {
     a1[1] += GetSystemMetrics(17) - a1[3]; /*0x776df7*/
     result = GetSystemMetrics(17); /*0x776dfa*/
     a1[3] = result; /*0x776dfc*/
-    LOBYTE(result) = 1; /*0x776dff*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x776dff*/
   }
   return result; /*0x776e01*/
 

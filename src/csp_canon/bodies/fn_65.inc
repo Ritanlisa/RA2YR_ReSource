@@ -782,9 +782,9 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
         LOWORD(owningHouseIndex) = (uint8_t)(BYTE2(_ESI[1]) >> g_BitMask_Red); /*0x65985f*/
         WORD2(v22) = (uint8_t)(BYTE1(_ESI[1]) >> g_BitMask_Blue); /*0x659876*/
         HIDWORD(v22) <<= g_BitMask_Green; /*0x65987e*/
-        v23 = HIDWORD(v22) | (owningHouseIndex << g_BitShift_Blue); /*0x65988e*/
+        v23 = (((v22) >> 32) & 0xFFFFFFFFu) | (owningHouseIndex << g_BitShift_Blue); /*0x65988e*/
         WORD2(v22) = (uint8_t)(LOBYTE(_ESI[1]) >> g_BitShift_Green_0); /*0x659893*/
-        owningHouseIndex = (HIDWORD(v22) << g_BitShift_Red) | v23; /*0x6598a3*/
+        owningHouseIndex = ((((v22) >> 32) & 0xFFFFFFFFu) << g_BitShift_Red) | v23; /*0x6598a3*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, _ESI->location, &v38); /*0x6598a5*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, &_ESI->lineTrailer, v37); /*0x6598bc*/
         v41[0] = DSurface_ViewBounds.field_0; /*0x6598d2*/
@@ -1108,7 +1108,7 @@ void RadSiteClass::Constructor() {
   ((unsigned int *)this)[0] = (void *)&RadSiteClass_vftable; /*0x65b311*/
   v2 = (TerrainClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)this->BaseCell); /*0x65b318*/
   TerrainClass::SetFieldF8(v2, 0); /*0x65b321*/
-  IDA_LOBYTE(v3) = 1; /*0x65b326*/
+  (v3) = ((v3) & ~0xFF) | ((1) & 0xFF); /*0x65b326*/
   AbstractClass::AnnounceExpiredPointer(this, v3); /*0x65b32a*/
   LightSource = this->LightSource; /*0x65b32f*/
   if ( LightSource ) /*0x65b334*/

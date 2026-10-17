@@ -294,7 +294,7 @@ LABEL_50:
           {
 LABEL_57:
             result = BufferIO::Cleanup(v24, aP1); /*0x43514d*/
-            LOBYTE(result) = 1; /*0x43515a*/
+            (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x43515a*/
             return result; /*0x435160*/
           }
           aP4 += v36; /*0x435129*/
@@ -372,11 +372,11 @@ LABEL_59:
     }
 LABEL_73:
     result = BufferIO::Cleanup((unsigned int *)aP0, aP1); /*0x4352ed*/
-    LOBYTE(result) = 1; /*0x4352fe*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4352fe*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x43530a*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x43530a*/
   }
   return result; /*0x435157*/
 

@@ -85,7 +85,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   int v33; // [esp+68h] [ebp-14h]
   unsigned int v34[4]; // [esp+6Ch] [ebp-10h] BYREF
 
-  v2 = __PAIR64__(yBottom, xRight); /*0x560bf9*/
+  v2 = (((yBottom & 0xFFFFFFFFull)) << 32 | (xRight & 0xFFFFFFFFull)); /*0x560bf9*/
   Debug::Log(); /*0x560c00*/
   lParam = *(unsigned long long *)&g_DisplayWidth; /*0x560c13*/
   BitShift_Green = GetBitShift_Green(); /*0x560c20*/
@@ -142,7 +142,7 @@ LABEL_19:
     if ( g_DDraw_Initialized ) /*0x560ee6*/
     {
       Debug::Log(); /*0x560f1f*/
-      SetRect(&rc, 0, 0, v2, SHIDWORD(v2)); /*0x560f30*/
+      SetRect(&rc, 0, 0, v2, (int)(((v2) >> 32) & 0xFFFFFFFFu)); /*0x560f30*/
       WindowLongA = GetWindowLongA(g_hWnd, -20); /*0x560f4c*/
       v16 = GetMenu(g_hWnd) != 0; /*0x560f60*/
       v7 = GetWindowLongA(g_hWnd, -16); /*0x560f64*/
@@ -152,7 +152,7 @@ LABEL_19:
     else
     {
       Debug::Log(); /*0x560ee8*/
-      SetWindowPos(g_hWnd, 0, 0, 0, v2, SHIDWORD(v2), 2u); /*0x560efe*/
+      SetWindowPos(g_hWnd, 0, 0, 0, v2, (int)(((v2) >> 32) & 0xFFFFFFFFu), 2u); /*0x560efe*/
       Debug::Log(); /*0x560f09*/
       g_DSurface_Primary = (DSurface *)DSurface::CreatePrimary(0); /*0x560f18*/
     }
@@ -172,9 +172,9 @@ LABEL_19:
     v12 = Viewport[3]; /*0x560fda*/
     v32 = v11; /*0x560fdd*/
     v34[3] = v12; /*0x560fe1*/
-    rc.bottom = HIDWORD(qword_886FB8); /*0x560feb*/
-    v29[3] = HIDWORD(qword_886FB8); /*0x560fef*/
-    v33 = HIDWORD(qword_886FB8); /*0x560ff3*/
+    rc.bottom = (((qword_886FB8) >> 32) & 0xFFFFFFFFu); /*0x560feb*/
+    v29[3] = (((qword_886FB8) >> 32) & 0xFFFFFFFFu); /*0x560fef*/
+    v33 = (((qword_886FB8) >> 32) & 0xFFFFFFFFu); /*0x560ff3*/
     *(unsigned int *)v30 = 0; /*0x561006*/
     v31 = 0; /*0x56100a*/
     AllocateSurfaceScreenSurfaces((int)&dword_886FB0, (int)v30, (int)v29, (int)&rc, 0); /*0x56100e*/
@@ -236,7 +236,7 @@ LABEL_19:
       (*(void (**)(DSurface *, int))g_DSurface_Primary->DSurface_field_0x0)(g_DSurface_Primary, 1); /*0x560cf4*/
     g_DSurface_Primary = 0; /*0x560cf6*/
   }
-  if ( InitializeDDraw((int)g_hWnd, v2, HIDWORD(v2), 0x10u) ) /*0x560d07*/
+  if ( InitializeDDraw((int)g_hWnd, v2, (((v2) >> 32) & 0xFFFFFFFFu), 0x10u) ) /*0x560d07*/
   {
     Debug::Log(); /*0x560dd4*/
     dword_886FB0 = 0; /*0x560de2*/
@@ -524,10 +524,10 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
           v6 = *(unsigned int *)(v5 + 36); /*0x56af99*/
           Src = v6; /*0x56afa0*/
           v7 = this->M244; /*0x56afa9*/
-          Src = SHIWORD(v6) + (__int16)v6; /*0x56afb7*/
+          Src = (short)(((v6) >> 16) & 0xFFFF) + (__int16)v6; /*0x56afb7*/
           if ( Src > v7 /*0x56afea*/
-            && (__int16)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (__int16)v6 < v7
+            && (__int16)v6 - (short)(((v6) >> 16) & 0xFFFF) < v7
+            && (short)(((v6) >> 16) & 0xFFFF) - (__int16)v6 < v7
             && Src <= v7 + 2 * this->M248 )
           {
             Src = v6; /*0x56aff7*/
@@ -604,10 +604,10 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
           v6 = *(unsigned int *)(v5 + 36); /*0x56b2aa*/
           Src = v6; /*0x56b2b1*/
           v7 = this->M244; /*0x56b2ba*/
-          Src = SHIWORD(v6) + (__int16)v6; /*0x56b2c8*/
+          Src = (short)(((v6) >> 16) & 0xFFFF) + (__int16)v6; /*0x56b2c8*/
           if ( Src > v7 /*0x56b2fb*/
-            && (__int16)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (__int16)v6 < v7
+            && (__int16)v6 - (short)(((v6) >> 16) & 0xFFFF) < v7
+            && (short)(((v6) >> 16) & 0xFFFF) - (__int16)v6 < v7
             && Src <= v7 + 2 * this->M248 )
           {
             Src = v6; /*0x56b308*/
@@ -961,9 +961,9 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
       {
         v6 = *(unsigned int *)(v5 + 36); /*0x56b12e*/
         v7 = this->M244; /*0x56b131*/
-        HIWORD(a2) = HIWORD(v6); /*0x56b137*/
+        HIWORD(a2) = (((v6) >> 16) & 0xFFFF); /*0x56b137*/
         v8 = (__int16)v6; /*0x56b13b*/
-        v9 = SHIWORD(v6); /*0x56b13e*/
+        v9 = (short)(((v6) >> 16) & 0xFFFF); /*0x56b13e*/
         a2 = (int *)(SHIWORD(a2) + v8); /*0x56b148*/
         if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * v16[1].ambientSoundController[4] ) /*0x56b17b*/
         {

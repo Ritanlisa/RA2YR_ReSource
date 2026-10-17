@@ -908,7 +908,7 @@ int UnitClass::DeployToBuilding()
       v12 = ((__int64 (*)(UnitClass *, __int16 *))*((unsigned int *)this->vfptr + 110))(this, v31); /*0x738eb7*/
       v13 = LayerClass::Pathfinding_Find( /*0x738ec8*/
               (Type *)&DataGlobal_87F7E8,
-              SHIDWORD(v12),
+              (int)(((v12) >> 32) & 0xFFFFFFFFu),
               &v30,
               (__int16 *)v12,
               5,
@@ -2648,14 +2648,14 @@ int UnitClass::CalcMoveTarget()
     v67 = v5[10]; /*0x735a9a*/
     v75 = ((__int16)v67 << 8) + 128; /*0x735aae*/
     v11 = (__int16)v5[9]; /*0x735ab8*/
-    v12 = (SHIWORD(v67) << 8) + 128; /*0x735abb*/
+    v12 = ((short)(((v67) >> 16) & 0xFFFF) << 8) + 128; /*0x735abb*/
     v68 = v5[9]; /*0x735ac1*/
     ObjectVector_field_0x04 = v12; /*0x735aca*/
     ObjectVector_field_0x08 = 0; /*0x735ad9*/
     v78.ObjectVector_field_0x08 = 0; /*0x735add*/
     v13 = v5[112]; /*0x735ae1*/
     *(unsigned int *)v78.__pad_0 = (v11 << 8) + 128; /*0x735ae7*/
-    v14 = (SHIWORD(v68) << 8) + 128; /*0x735af2*/
+    v14 = ((short)(((v68) >> 16) & 0xFFFF) << 8) + 128; /*0x735af2*/
     v69 = v13; /*0x735af7*/
     v78.ObjectVector_field_0x04 = v14; /*0x735b01*/
     GroundHeight = Cell::GetGroundHeight(&v78); /*0x735b0a*/
@@ -2673,7 +2673,7 @@ int UnitClass::CalcMoveTarget()
       Math::SinCos(v74); /*0x735d90*/
       LOWORD(v41) = Math::RoundToInt(v9); /*0x735d9d*/
       LODWORD(v73[0]) = v41; /*0x735da8*/
-      Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v40, LODWORD(v74)))); /*0x735dac*/
+      Math::ArcTan2(COERCE_DOUBLE((((v40 & 0xFFFFFFFFull)) << 32 | (LODWORD(v74) & 0xFFFFFFFFull)))); /*0x735dac*/
       LOWORD(v42) = Math::RoundToInt(v9 * (double)(int)v65 + (double)v79); /*0x735dbc*/
       Coord::Subtract((Coord *)&v78, (int)v42, SLODWORD(v73[0]), v39); /*0x735dcc*/
       v44 = v38 & 0x80000001; /*0x735ddd*/
@@ -2688,7 +2688,7 @@ int UnitClass::CalcMoveTarget()
       else
         v45 = 362.0386719675124; /*0x735df8*/
       v48 = Math::RoundToInt(v45); /*0x735e14*/
-      LOWORD(v47) = HIWORD(v48); /*0x735e14*/
+      LOWORD(v47) = (((v48) >> 16) & 0xFFFF); /*0x735e14*/
       LOWORD(v46) = v48; /*0x735e14*/
       ObjectVector_field_0x08 = (int)v46; /*0x735e1d*/
       (*(void (__fastcall **)(UnitClass *, unsigned __int16 *, int *))&this->vfptr->AudioController_1B4)(this, v47, &v75); /*0x735e28*/
@@ -2732,7 +2732,7 @@ int UnitClass::CalcMoveTarget()
       Math::SinCos(v74); /*0x735c8f*/
       LOWORD(v31) = Math::RoundToInt(v9); /*0x735c9c*/
       v72 = v31; /*0x735ca7*/
-      Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v30, LODWORD(v74)))); /*0x735cab*/
+      Math::ArcTan2(COERCE_DOUBLE((((v30 & 0xFFFFFFFFull)) << 32 | (LODWORD(v74) & 0xFFFFFFFFull)))); /*0x735cab*/
       LOWORD(v32) = Math::RoundToInt(v9 * v66 + (double)v79); /*0x735cbb*/
       Coord::Subtract((Coord *)&v75, (int)v32, (int)v72, v29); /*0x735ccb*/
       v34 = v18 & 0x80000001; /*0x735cdc*/
@@ -3298,7 +3298,7 @@ LABEL_90:
       HIWORD(v134.m_Data) = v38[1] / 256; /*0x742161*/
       v134.StreamClass_field_0C = v134.m_Data; /*0x74216e*/
       v39 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&v134.StreamClass_field_0C); /*0x742173*/
-      v40 = BYTE1(v39->Cell_field_0x140) & 1; /*0x742183*/
+      v40 = (((v39->Cell_field_0x140) >> 8) & 0xFF) & 1; /*0x742183*/
       v133 = Cell::IsBuildableAdvanced(v39); /*0x742190*/
       *(unsigned int *)v134.m_Position = (*(int (**)(Class_7F5C70 *))(*&this->q720))(this); /*0x74219a*/
       if ( v130 ) /*0x7421a4*/

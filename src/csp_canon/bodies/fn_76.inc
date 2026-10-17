@@ -855,7 +855,7 @@ char Gap2Recv_76B180::ParseWDTTerritories(WDTState * aP1, int a3) {
       else
         v8 = 0; /*0x76b1d3*/
       ParseWDTTerritories_Parse_76B790(v8); /*0x76b1da*/
-      LOBYTE(v9) = 0; /*0x76b1e6*/
+      (v9) = ((v9) & ~0xFF) | ((0) & 0xFF); /*0x76b1e6*/
       v10 = v5 + 1; /*0x76b1e8*/
       *(unsigned int *)(v80 + 8) = *((unsigned int *)this + 8); /*0x76b1e9*/
       HIBYTE(v9) = *(unsigned char *)(v10 + aP1 - 1); /*0x76b1ec*/
@@ -864,7 +864,7 @@ char Gap2Recv_76B180::ParseWDTTerritories(WDTState * aP1, int a3) {
       v11 = *(unsigned char *)(v10 + aP1 + 1); /*0x76b205*/
       v10 += 2; /*0x76b211*/
       *(unsigned char *)(v80 + 14) = v11 + 0x80; /*0x76b212*/
-      LOBYTE(v12) = 0; /*0x76b21c*/
+      (v12) = ((v12) & ~0xFF) | ((0) & 0xFF); /*0x76b21c*/
       LOBYTE(v9) = *(unsigned char *)(v10 + aP1) + 0x80; /*0x76b21e*/
       ++v10; /*0x76b221*/
       *(unsigned char *)(v80 + 15) = v9; /*0x76b222*/
@@ -1205,8 +1205,8 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   *((unsigned int *)this + 299) = (uint16_t)Property::Set( /*0x76c448*/
                                                  (Property *)g_FogOfWarState,
                                                  ((uint8_t)dword_AC18A4 >> g_BitShift_Green_0 << g_BitShift_Red)
-                                               | (BYTE1(dword_AC18A4) >> g_BitMask_Blue << g_BitMask_Green)
-                                               | (BYTE2(dword_AC18A4) >> g_BitMask_Red << g_BitShift_Blue));
+                                               | ((((dword_AC18A4) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+                                               | ((((dword_AC18A4) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue));
   _771800 = ConstructWDTSelection_Create_771800((ObjectClass *)((char *)this + 88)); /*0x76c44e*/
   PriorityQueue::Add((PriorityQueue *)this, (int)_771800); /*0x76c456*/
   CCFileClass::Construct((CCFileClass *)&v21.customSound_controller[2], aWdtmapmdIni); /*0x76c464*/

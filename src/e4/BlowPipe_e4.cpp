@@ -153,12 +153,12 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e35c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x63e366*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63e366*/
     if ( a3 ) /*0x63e36c*/
       v4 = a3; /*0x63e382*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63e37e*/
-    LOBYTE(this->m_C) = 1; /*0x63e386*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63e386*/
     if ( v4 ) /*0x63e38a*/
     {
       if ( *&this->q004 ) /*0x63e395*/
@@ -168,7 +168,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
           m_8 = a2; /*0x63e3a3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e3a9*/
           ++i; /*0x63e3ae*/
-        if ( BYTE1(this->m_C) ) /*0x63e3bb*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63e3bb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x63e3c6*/
           *&this->q004 = 0; /*0x63e3ce*/
@@ -252,12 +252,12 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e49c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x63e4a2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63e4a2*/
     if ( a3 ) /*0x63e4a8*/
       v4 = a3; /*0x63e4be*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63e4ba*/
-    LOBYTE(this->m_C) = 1; /*0x63e4c2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63e4c2*/
     if ( !v4 ) /*0x63e4c6*/
       return 0; /*0x63e53a*/
     if ( *&this->q004 ) /*0x63e4c8*/
@@ -267,7 +267,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
         m_8 = a2; /*0x63e4d6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e4dc*/
         ++i; /*0x63e4e1*/
-      if ( BYTE1(this->m_C) ) /*0x63e4ee*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63e4ee*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x63e4f9*/
         *&this->q004 = 0; /*0x63e501*/
@@ -350,12 +350,12 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e69c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x63e6a6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63e6a6*/
     if ( a3 ) /*0x63e6ac*/
       v4 = a3; /*0x63e6c2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63e6be*/
-    LOBYTE(this->m_C) = 1; /*0x63e6c6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63e6c6*/
     if ( v4 ) /*0x63e6ca*/
     {
       if ( *&this->q004 ) /*0x63e6d5*/
@@ -365,7 +365,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x63e6e3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e6e9*/
           ++i; /*0x63e6ee*/
-        if ( BYTE1(this->m_C) ) /*0x63e6fb*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63e6fb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x63e706*/
           *&this->q004 = 0; /*0x63e70e*/
@@ -413,7 +413,7 @@ int BlowPipe_23::Read(unsigned int * a2, void *a2_2, void *a3)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x63e770*/
+  if ( !((this->m_C) & 0xFF) ) /*0x63e770*/
     return 0; /*0x63e778*/
   m_8 = this->m_8; /*0x63e77e*/
   result = 0; /*0x63e781*/
@@ -452,12 +452,12 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63e7dc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x63e7e2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63e7e2*/
     if ( a3 ) /*0x63e7e8*/
       v4 = a3; /*0x63e7fe*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63e7fa*/
-    LOBYTE(this->m_C) = 1; /*0x63e802*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63e802*/
     if ( !v4 ) /*0x63e806*/
       return 0; /*0x63e87a*/
     if ( *&this->q004 ) /*0x63e808*/
@@ -467,7 +467,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
         m_8 = a2; /*0x63e816*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e81c*/
         ++i; /*0x63e821*/
-      if ( BYTE1(this->m_C) ) /*0x63e82e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63e82e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x63e839*/
         *&this->q004 = 0; /*0x63e841*/
@@ -520,12 +520,12 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x63eadc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x63eae2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x63eae2*/
     if ( a3 ) /*0x63eae8*/
       v4 = a3; /*0x63eafe*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x63eafa*/
-    LOBYTE(this->m_C) = 1; /*0x63eb02*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x63eb02*/
     if ( !v4 ) /*0x63eb06*/
       return 0; /*0x63eb7a*/
     if ( *&this->q004 ) /*0x63eb08*/
@@ -535,7 +535,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
         m_8 = a2; /*0x63eb16*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63eb1c*/
         ++i; /*0x63eb21*/
-      if ( BYTE1(this->m_C) ) /*0x63eb2e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x63eb2e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x63eb39*/
         *&this->q004 = 0; /*0x63eb41*/

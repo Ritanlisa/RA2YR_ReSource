@@ -96,7 +96,7 @@ int RulesClass::sub_674500()
   ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674515*/
   ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674527*/
   result = ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674539*/
-  LOBYTE(result) = 1; /*0x67453f*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x67453f*/
   return result; /*0x67453e*/
 
 }
@@ -405,11 +405,11 @@ char DynamicVector::Add2(unsigned int *aP1)
     v5 = (unsigned int)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3]); /*0x67adb8*/
     this->DynamicVector_field_0x10 = (unsigned int)((void *)(result + 1)); /*0x67adbe*/
     *(unsigned int *)(v5 + 4 * result) = (unsigned int)(*aP1); /*0x67adc8*/
-    LOBYTE(result) = 1; /*0x67adcb*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x67adcb*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x67adaf*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x67adaf*/
   }
   return result; /*0x67adb1*/
 

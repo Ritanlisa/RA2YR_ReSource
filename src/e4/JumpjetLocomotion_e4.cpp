@@ -52,7 +52,7 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
   int v21; // [esp+20h] [ebp-4h]
 
   v3 = a2; /*0x4b0ad0*/
-  if ( *a2 != g_DDraw_ClipRect || a2[1] != (unsigned int)qword_8A0794 || (v5 = a2[2], v5 != HIDWORD(qword_8A0794)) ) /*0x4b0afe*/
+  if ( *a2 != g_DDraw_ClipRect || a2[1] != (unsigned int)qword_8A0794 || (v5 = a2[2], v5 != (((qword_8A0794) >> 32) & 0xFFFFFFFFu)) ) /*0x4b0afe*/
   {
     LOBYTE(v5) = this->ptr_60; /*0x4b0b04*/
     v6 = a3; /*0x4b0b07*/
@@ -923,8 +923,8 @@ LABEL_65:
     *(unsigned char *)(*(unsigned int *)this->__pad_C + 140) = 1; /*0x54d012*/
 LABEL_74:
   if ( ((*(int (**)(unsigned int))(**(unsigned int **)this->__pad_C + 456))(*(unsigned int *)this->__pad_C) <= 0 /*0x54d043*/
-     || (LOBYTE(v40) = v45) != 0)
-    && (!*(unsigned char *)(*(unsigned int *)this->__pad_C + 1709) || (LOBYTE(v40) = v46) != 0) )
+     || ((v40) = ((v40) & ~0xFF) | ((v45) & 0xFF)) != 0)
+    && (!*(unsigned char *)(*(unsigned int *)this->__pad_C + 1709) || ((v40) = ((v40) & ~0xFF) | ((v46) & 0xFF)) != 0) )
   {
     v41 = *(unsigned int *)this->__pad_C; /*0x54d045*/
     if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)v41 + 444))(v41) + 224) == v41 ) /*0x54d058*/
@@ -1051,7 +1051,7 @@ void* JumpjetLocomotion::UpdateFacing()
   (*(void (**)(unsigned int, unsigned int, unsigned int))(**(unsigned int **)this->__pad_C + 1348))( /*0x54d1ae*/
     *(unsigned int *)this->__pad_C,
     v9,
-    HIDWORD(v9));
+    (((v9) >> 32) & 0xFFFFFFFFu));
   v10 = this->JumpjetLocomotion_field_0x40 / 256; /*0x54d1da*/
   v11 = this->JumpjetLocomotion_field_0x44 / 256; /*0x54d1dd*/
   v12 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)this->__pad_C + 440))( /*0x54d1e0*/
@@ -1073,8 +1073,8 @@ void* JumpjetLocomotion::UpdateFacing()
   Math::SinCos(*&this->q088); /*0x54d248*/
   v14 = *(double *)&v9 * (double)*&this->__pad_038 + (double)*&this->u32_80; /*0x54d253*/
   v17 = Math::RoundToInt(v14); /*0x54d259*/
-  LOWORD(v16) = HIWORD(v17); /*0x54d259*/
-  LOWORD(v15) = v17; /*0x54d259*/
+  (v16) = ((v16) & ~0xFFFF) | (((((v17) >> 16) & 0xFFFF)) & 0xFFFF); /*0x54d259*/
+  (v15) = ((v15) & ~0xFFFF) | ((v17) & 0xFFFF); /*0x54d259*/
   v18 = *(unsigned int *)this->__pad_C; /*0x54d25e*/
   LODWORD(v60) = v15; /*0x54d261*/
   v19 = (*(int (__fastcall **)(int, int))(*(unsigned int *)v18 + 464))(v18, v16); /*0x54d270*/
@@ -1216,7 +1216,7 @@ LABEL_50:
   Math::SinCos(v61); /*0x54d5c0*/
   LOWORD(v45) = Math::RoundToInt(v14); /*0x54d5cd*/
   LODWORD(v61) = v45; /*0x54d5d4*/
-  Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v43, v44))); /*0x54d5d8*/
+  Math::ArcTan2(COERCE_DOUBLE((((v43 & 0xFFFFFFFFull)) << 32 | (v44 & 0xFFFFFFFFull)))); /*0x54d5d8*/
   LOWORD(v46) = Math::RoundToInt(v14 * v60 + (double)v64); /*0x54d5e8*/
   v47 = *(unsigned int *)this->__pad_C; /*0x54d5f1*/
   v66[1] = LODWORD(v61); /*0x54d5f4*/

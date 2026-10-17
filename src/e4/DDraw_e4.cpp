@@ -279,28 +279,28 @@ char DDraw::CheckCapabilities()
         sprintf(Text, "DDRAW.DLL Error code = %08X", v1); /*0x4a4683*/
         MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u); /*0x4a469e*/
       }
-      LOBYTE(v0) = 0; /*0x4a466f*/
+      (v0) = ((v0) & ~0xFF) | ((0) & 0xFF); /*0x4a466f*/
     }
     else
     {
       v0 = (v4[1] & 0x40) != 0; /*0x4a46b8*/
       if ( SLOBYTE(v4[1]) < 0 ) /*0x4a46c0*/
-        LOBYTE(v0) = v0 | 2; /*0x4a46c2*/
+        (v0) = ((v0) & ~0xFF) | ((v0 | 2) & 0xFF); /*0x4a46c2*/
       if ( (v4[1] & 0x10000) != 0 ) /*0x4a46ca*/
-        LOBYTE(v0) = v0 | 4; /*0x4a46cc*/
+        (v0) = ((v0) & ~0xFF) | ((v0 | 4) & 0xFF); /*0x4a46cc*/
       if ( (v4[1] & 0x8000000) != 0 ) /*0x4a46d4*/
-        LOBYTE(v0) = v0 | 8; /*0x4a46d6*/
+        (v0) = ((v0) & ~0xFF) | ((v0 | 8) & 0xFF); /*0x4a46d6*/
       if ( (v4[1] & 0x4000000) != 0 ) /*0x4a46de*/
-        LOBYTE(v0) = v0 | 0x10; /*0x4a46e0*/
+        (v0) = ((v0) & ~0xFF) | ((v0 | 0x10) & 0xFF); /*0x4a46e0*/
       if ( (v4[1] & 0x2000000) != 0 ) /*0x4a46e8*/
-        LOBYTE(v0) = v0 | 0x20; /*0x4a46ea*/
+        (v0) = ((v0) & ~0xFF) | ((v0 | 0x20) & 0xFF); /*0x4a46ea*/
       if ( (v4[1] & 0x200) != 0 ) /*0x4a46ef*/
-        LOBYTE(v0) = v0 | 0x40; /*0x4a46f1*/
+        (v0) = ((v0) & ~0xFF) | ((v0 | 0x40) & 0xFF); /*0x4a46f1*/
     }
   }
   else
   {
-    LOBYTE(v0) = 0; /*0x4a4630*/
+    (v0) = ((v0) & ~0xFF) | ((0) & 0xFF); /*0x4a4630*/
   }
   return v0; /*0x4a4632*/
 

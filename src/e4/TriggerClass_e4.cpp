@@ -87,8 +87,8 @@ char TriggerClass::FindByEventType(char a1)
     v6 = -1; /*0x610a42*/
   else
     v6 = ((int)(unsigned __int8)dword_AC48B0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x610a8d*/
-       | (BYTE1(dword_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
-       | (BYTE2(dword_AC48B0) >> g_BitMask_Red << g_BitShift_Blue);
+       | ((((dword_AC48B0) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+       | ((((dword_AC48B0) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
   (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
   (*(void (**)(int, __int128 *, int))(*(unsigned int *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
   (*(void (**)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/

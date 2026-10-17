@@ -76,7 +76,7 @@ int sub_7C61CF(int a1)
           *v5 = v6; /*0x7c61fc*/
           v7 = **(uint16_t **)(a1 + 68); /*0x7c6205*/
           IDA_LOWORD(v7) = *(unsigned short *)(*(unsigned int *)(a1 + 144) + 2 * v7); /*0x7c620e*/
-          IDA_LOBYTE(v7) = v4; /*0x7c6212*/
+          (v7) = ((v7) & ~0xFF) | ((v4) & 0xFF); /*0x7c6212*/
           **(unsigned short **)(a1 + 72) = *(unsigned short *)(*(unsigned int *)(a1 + 88) + 2 * v7); /*0x7c621b*/
         }
       }
@@ -1893,17 +1893,17 @@ int _alldiv(unsigned long long a1, long long a2)
   }
   if ( v3 ) /*0x7c930f*/
   {
-    v6 = IDA___PAIR64__(v3, a2); /*0x7c932b*/
+    v6 = (((v3 & 0xFFFFFFFFull)) << 32 | (a2 & 0xFFFFFFFFull)); /*0x7c932b*/
     v7 = a1; /*0x7c9333*/
     do /*0x7c9341*/
     {
       v6 >>= 1; /*0x7c9337*/
       v7 >>= 1; /*0x7c933b*/
     }
-    while ( IDA_HIDWORD(v6) ); /*0x7c9341*/
+    while ( (((v6) >> 32) & 0xFFFFFFFFu) ); /*0x7c9341*/
     v8 = v7 / (unsigned int)v6; /*0x7c9345*/
     v9 = v8 * (uint64_t)(unsigned int)a2; /*0x7c9351*/
-    if ( __CFADD__(IDA_HIDWORD(a2) * v8, IDA_HIDWORD(v9)) || (IDA_HIDWORD(v9) = (a2 * (uint64_t)v8) >> 32, v9 > a1) ) /*0x7c9363*/
+    if ( __CFADD__(IDA_HIDWORD(a2) * v8, (((v9) >> 32) & 0xFFFFFFFFu)) || (IDA_HIDWORD(v9) = (a2 * (uint64_t)v8) >> 32, v9 > a1) ) /*0x7c9363*/
       --v8; /*0x7c9365*/
     v5 = v8; /*0x7c9368*/
   }
@@ -1945,7 +1945,7 @@ unsigned int _aulldiv(unsigned long long a1, long long a2)
     while ( v4 ); /*0x7c93ba*/
     v8 = v6 / v5; /*0x7c93be*/
     v9 = v8 * (uint64_t)(unsigned int)a2; /*0x7c93ca*/
-    if ( __CFADD__(IDA_HIDWORD(a2) * v8, IDA_HIDWORD(v9)) || (IDA_HIDWORD(v9) = (a2 * (uint64_t)v8) >> 32, v9 > a1) ) /*0x7c93dc*/
+    if ( __CFADD__(IDA_HIDWORD(a2) * v8, (((v9) >> 32) & 0xFFFFFFFFu)) || (IDA_HIDWORD(v9) = (a2 * (uint64_t)v8) >> 32, v9 > a1) ) /*0x7c93dc*/
       --v8; /*0x7c93de*/
     return v8; /*0x7c93e1*/
   }
@@ -2746,7 +2746,7 @@ int _flush(unsigned int * aP0)  // G42.33 b24: dword-index body (MSVC6 _iobuf dw
         v4 = aP0[3]; /*0x7cb231*/
         if ( (v4 & 0x80u) != 0 ) /*0x7cb236*/
         {
-          IDA_LOBYTE(v4) = v4 & 0xFD; /*0x7cb238*/
+          (v4) = ((v4) & ~0xFF) | ((v4 & 0xFD) & 0xFF); /*0x7cb238*/
           aP0[3] = v4; /*0x7cb23a*/
         }
       }
@@ -2796,7 +2796,7 @@ int rand()
   v0 = (unsigned int *)_getptd(); /*0x7cb4aa G42.33 b24*/
   v1 = 214013 * v0[5] + 2531011; /*0x7cb4b8*/
   v0[5] = v1; /*0x7cb4be*/
-  return IDA_HIWORD(v1) & 0x7FFF; /*0x7cb4cb*/
+  return (((v1) >> 16) & 0xFFFF) & 0x7FFF; /*0x7cb4cb*/
 }
 
 // ==== BACKFILL 0x007CB4CC  _wcsncmp  cls=unknown  sig=csp  renamed_refs=0  residual=- ====

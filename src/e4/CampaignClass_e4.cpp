@@ -183,7 +183,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   if ( !LOBYTE(this->vfptr) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
   p_referenceCount = &this->referenceCount; /*0x49c5c4*/
-  if ( !LOBYTE(this->referenceCount) ) /*0x49c5c1*/
+  if ( !((this->referenceCount) & 0xFF) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   v3 = *&this->u32_3828; /*0x49c5d4*/
   if ( !byte_89F578 ) /*0x49c5d9*/

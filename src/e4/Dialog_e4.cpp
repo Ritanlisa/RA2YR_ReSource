@@ -1492,7 +1492,7 @@ LABEL_39:
     if ( v12 ) /*0x60ff9a*/
       v10[2] = v12; /*0x60ff9c*/
     v34 = (unsigned int)++dword_AC18C4; /*0x60ffaf*/
-    LODWORD(v34) = dword_AC18C8; /*0x60ffbc*/
+    (v34) = ((v34) & 0xFFFFFFFF00000000ull) | ((dword_AC18C8) & 0xFFFFFFFFull); /*0x60ffbc*/
     if ( (double)(unsigned int)dword_AC18C4 / (double)dword_AC18C8 >= dbl_AC18E8 ) /*0x60ffd3*/
       Dialog::GrowBuffer(&g_DialogPool); /*0x60ffda*/
   }
@@ -1570,7 +1570,7 @@ LABEL_54:
     if ( v24 ) /*0x6101bd*/
       *(unsigned int *)(v22 + 516) = v24; /*0x6101bf*/
     v34 = (unsigned int)++dword_AC1B04; /*0x6101d5*/
-    LODWORD(v34) = dword_AC1B08; /*0x6101e2*/
+    (v34) = ((v34) & 0xFFFFFFFF00000000ull) | ((dword_AC1B08) & 0xFFFFFFFFull); /*0x6101e2*/
     if ( (double)(unsigned int)dword_AC1B04 / (double)dword_AC1B08 >= dbl_AC1B28 ) /*0x6101f9*/
       HashTable::Grow2(&dword_AC1B00); /*0x610200*/
     if ( dword_AC1B04 ) /*0x61020b*/

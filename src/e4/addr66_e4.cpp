@@ -100,7 +100,7 @@ int Color_ComputeSaturation(unsigned int a1, int a2, int a3)
     v12 = v5; /*0x6613d5*/
   if ( v4 < v12 ) /*0x6613dd*/
     v12 = v4; /*0x6613df*/
-  LOBYTE(v15) = 0; /*0x6613e5*/
+  (v15) = ((v15) & ~0xFF) | ((0) & 0xFF); /*0x6613e5*/
   if ( v6 ) /*0x6613e9*/
   {
     v7 = v6 - v12; /*0x6613f5*/
@@ -428,7 +428,7 @@ LABEL_23:
 LABEL_29:
           v19 = v162; /*0x66249e*/
           v20 = -(*&dword_8871E0->q548 != *((unsigned int *)_EDI + 12)); /*0x6624a4*/
-          LOBYTE(v20) = v20 & 0xFC; /*0x6624a6*/
+          (v20) = ((v20) & ~0xFF) | ((v20 & 0xFC) & 0xFF); /*0x6624a6*/
           this->TrailerTimer[2] = v20 + 6; /*0x6624ab*/
           v21 = *((unsigned int *)_EDI + 1); /*0x6624b4*/
           this->MovingDestination[2] = *(unsigned int *)&stru_A8E960.random[528]; /*0x6624b7*/
@@ -631,7 +631,7 @@ LABEL_63:
         RefCount = this->RefCount; /*0x662975*/
         v66 = this->MovingDestination[0]; /*0x662978*/
         v67 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)this->Owner + 72))(this->Owner, &v161); /*0x662982*/
-        v151 = COERCE_DOUBLE(__PAIR64__(v67[1] - v66, *v67 - RefCount)); /*0x66298e*/
+        v151 = COERCE_DOUBLE((((v67[1] - v66 & 0xFFFFFFFFull)) << 32 | (*v67 - RefCount & 0xFFFFFFFFull))); /*0x66298e*/
         __asm /*0x662996*/
         {
           fild dword ptr [esp+0A8h+var_94+4]
@@ -937,7 +937,7 @@ LABEL_119:
         }
         LOWORD(v127) = Math::RoundToInt(v1); /*0x662ed0*/
         v150 = v127; /*0x662edb*/
-        Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v126, v164[1]))); /*0x662edf*/
+        Math::ArcTan2(COERCE_DOUBLE((((v126 & 0xFFFFFFFFull)) << 32 | (v164[1] & 0xFFFFFFFFull)))); /*0x662edf*/
         __asm /*0x662ee4*/
         {
           fmul qword ptr [esp+0B8h+var_64+4]
@@ -956,8 +956,8 @@ LABEL_119:
         v160 = v130; /*0x662f27*/
         v158 = v129; /*0x662f31*/
         v159 = v166; /*0x662f3c*/
-        LOWORD(v149) = v129 / 256; /*0x662f45*/
-        HIWORD(v149) = v166 / 256; /*0x662f58*/
+        (v149) = ((v149) & ~0xFFFF) | ((v129 / 256) & 0xFFFF); /*0x662f45*/
+        (v149) = ((v149) & ~(0xFFFF << 16)) | (((v166 / 256) & 0xFFFF) << 16); /*0x662f58*/
         v150 = v149; /*0x662f65*/
         if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, (__int16 *)&v150) ) /*0x662f6f*/
           (*(void (**)(int, int *))(*(unsigned int *)this->Owner + 436))(this->Owner, &v158); /*0x662f82*/

@@ -1403,11 +1403,11 @@ int SuperWeapon_Update()
 LABEL_52:
           if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v36) && !v35 ) /*0x53aa66*/
             break; /*0x53aa66*/
-          LOBYTE(v17) = --v37; /*0x53aa6c*/
+          (v17) = ((v17) & ~0xFF) | ((--v37) & 0xFF); /*0x53aa6c*/
           if ( v37 <= 0 ) /*0x53aa73*/
             return v17; /*0x53aa73*/
         }
-        LOBYTE(v17) = v37; /*0x53aa81*/
+        (v17) = ((v17) & ~0xFF) | ((v37) & 0xFF); /*0x53aa81*/
         if ( v37 > 0 ) /*0x53aa87*/
           LOBYTE(v17) = LightningStorm::Strike(*(int *)v36); /*0x53aa92*/
       }

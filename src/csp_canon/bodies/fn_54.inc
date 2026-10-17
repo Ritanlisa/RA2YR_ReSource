@@ -2585,8 +2585,8 @@ int TerrainClass::InitTheatre() {
         v18 = *(unsigned char *)(v11 + 47); /*0x549f68*/
         v19 = *(unsigned char *)(v11 + 46); /*0x549f6b*/
         IDA_BYTE2(v39) = *(unsigned char *)(v11 + 48); /*0x549f6e*/
-        IDA_BYTE1(v39) = v18; /*0x549f77*/
-        IDA_LOBYTE(v39) = v19; /*0x549f85*/
+        (v39) = ((v39) & ~(0xFF << 8)) | (((v18) & 0xFF) << 8); /*0x549f77*/
+        (v39) = ((v39) & ~0xFF) | ((v19) & 0xFF); /*0x549f85*/
         Color::ScaleRGB((int)&v37, 1.4); /*0x549f89*/
         Color::ScaleRGB((int)&v39, 1.4); /*0x549f9e*/
         v20 = 0.0; /*0x549fa3*/
@@ -2597,10 +2597,10 @@ int TerrainClass::InitTheatre() {
           v40 = (double)IDA_SLODWORD(v40) * 0.08333333333333333; /*0x549fbd*/
           v40 = v40; /*0x549fc1*/
           v23 = Color::Lerp2(&v34, (int)&v37, (int)&v43, v40); /*0x549fcc*/
-          IDA_BYTE1(v24) = 0; /*0x549fd4*/
+          (v24) = ((v24) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x549fd4*/
           v36 = *(unsigned short *)v23; /*0x549fd7*/
           IDA_LOBYTE(v24) = v23[2] >> g_BitMask_Red; /*0x549fee*/
-          IDA_LOWORD(v23) = (uint8_t)(IDA_HIBYTE(v36) >> g_BitMask_Blue); /*0x54a004*/
+          IDA_LOWORD(v23) = (uint8_t)((((v36) >> 8) & 0xFF) >> g_BitMask_Blue); /*0x54a004*/
           v25 = (unsigned int)v23 << g_BitMask_Green; /*0x54a008*/
           v26 = v25 | (v24 << g_BitShift_Blue); /*0x54a010*/
           IDA_LOWORD(v25) = (uint8_t)((uint8_t)v36 >> g_BitShift_Green_0); /*0x54a01e*/
@@ -2609,7 +2609,7 @@ int TerrainClass::InitTheatre() {
           v36 = *(unsigned short *)v27; /*0x54a042*/
           v21 += 2; /*0x54a050*/
           v28 = v27[2] >> g_BitMask_Red; /*0x54a05b*/
-          IDA_LOWORD(v27) = (uint8_t)(IDA_HIBYTE(v36) >> g_BitMask_Blue); /*0x54a071*/
+          IDA_LOWORD(v27) = (uint8_t)((((v36) >> 8) & 0xFF) >> g_BitMask_Blue); /*0x54a071*/
           ++IDA_LODWORD(v20); /*0x54a093*/
           *(v21 - 1) = ((uint8_t)((uint8_t)v36 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x54a094*/
                      | ((unsigned int)v27 << g_BitMask_Green)
@@ -2681,8 +2681,8 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 
   this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a85b*/
   this->IsometricTileTypeClass_field_0x08 = a2; /*0x54a85e*/
-  LOBYTE(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a861*/
-  BYTE1(this->IsometricTileTypeClass_field_0x0C) = 0; /*0x54a865*/
+  (this->IsometricTileTypeClass_field_0x0C) = ((this->IsometricTileTypeClass_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x54a861*/
+  (this->IsometricTileTypeClass_field_0x0C) = ((this->IsometricTileTypeClass_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x54a865*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x54a868*/
   if ( a2 ) /*0x54a86e*/
   {
@@ -2692,7 +2692,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
       return this->__pad_0; /*0x54a87e*/
     }
     this->IsometricTileTypeClass_field_0x04 = (unsigned int)(__2_YAPAXI_Z(4 * a2)); /*0x54a88d*/
-    BYTE1(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a890*/
+    (this->IsometricTileTypeClass_field_0x0C) = ((this->IsometricTileTypeClass_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x54a890*/
   }
   return this->__pad_0; /*0x54a87d*/
 
@@ -2990,7 +2990,7 @@ bool EventQueue::CheckPosition() {
   int result; // eax
 
   result = (this->q318 + 1) % 256; /*0x54f6c4*/
-  IDA_LOBYTE(result) = result == this->q314; /*0x54f6cb*/
+  (result) = ((result) & ~0xFF) | ((result == this->q314) & 0xFF); /*0x54f6cb*/
   return result; /*0x54f6ce*/
 }
 

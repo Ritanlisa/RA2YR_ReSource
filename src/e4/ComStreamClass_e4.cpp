@@ -98,7 +98,7 @@ int ComStreamClass::Write(int a2, uint8_t *a3, const char *lParam, const char *l
       v7 = GetDlgItem(v5, 1836); /*0x7a3f0f*/
       v8 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x7a3f11*/
       SendMessageA(v7, 0x4B4u, 0, (LPARAM)v8); /*0x7a3f1f*/
-      LOBYTE(dword_84A238) = 1; /*0x7a3f29*/
+      (dword_84A238) = ((dword_84A238) & ~0xFF) | ((1) & 0xFF); /*0x7a3f29*/
       v9 = GetDlgItem(v5, 1337); /*0x7a3f30*/
       v10 = (void (*)(HWND, BOOL))EnableWindow; /*0x7a3f32*/
       EnableWindow(v9, 1); /*0x7a3f39*/
@@ -242,7 +242,7 @@ AbstractClass * * ComStreamClass::readData()
   unsigned int *v12; // eax
   unsigned int **v13; // [esp+4h] [ebp-4h]
 
-  if ( LOBYTE(this->ComStreamClass_field_0x14) != 1 ) /*0x7ae0e8*/
+  if ( ((this->ComStreamClass_field_0x14) & 0xFF) != 1 ) /*0x7ae0e8*/
   {
     ComStreamClass_field_0x08 = this->ComStreamClass_field_0x08; /*0x7ae0f0*/
     v3 = *(unsigned int ***)this->__pad_0; /*0x7ae0f3*/
@@ -305,7 +305,7 @@ void ComStreamClass::flushStream()
   unsigned int **v13; // [esp+8h] [ebp-4h]
 
   ComStreamClass_field_0x08 = this->ComStreamClass_field_0x08; /*0x7aef55*/
-  if ( ComStreamClass_field_0x08 > this->ComStreamClass_field_0x30 && LOBYTE(this->ComStreamClass_field_0x14) != 1 ) /*0x7aef67*/
+  if ( ComStreamClass_field_0x08 > this->ComStreamClass_field_0x30 && ((this->ComStreamClass_field_0x14) & 0xFF) != 1 ) /*0x7aef67*/
   {
     v3 = *(unsigned int ***)this->__pad_0; /*0x7aef70*/
     ComStreamClass_field_0x0C = this->ComStreamClass_field_0x0C; /*0x7aef73*/

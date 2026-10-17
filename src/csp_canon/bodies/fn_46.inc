@@ -361,7 +361,7 @@ int BulletClass::UpdateFlightPath() {
   int v1; // eax
 
   v1 = -(*((unsigned char *)this->BulletClass_field_0xAC + 759) != 0); /*0x468b9e*/
-  IDA_LOBYTE(v1) = v1 & 0xFE; /*0x468ba0*/
+  (v1) = ((v1) & ~0xFF) | ((v1 & 0xFE) & 0xFF); /*0x468ba0*/
   return v1 + 3; /*0x468ba5*/
 }
 

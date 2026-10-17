@@ -34,10 +34,10 @@ char File::IsReady(int a2, void *a2_1)
 {
 
 
-  if ( !BYTE1(this->BufferSize) ) /*0x431f10*/
+  if ( !(((this->BufferSize) >> 8) & 0xFF) ) /*0x431f10*/
     return ((RawFileClass *)this)->Open(0); /*0x431f1e*/
   int result; // eax
-  LOBYTE(result) = 1; /*0x431f17*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x431f17*/
   return result; /*0x431f19*/
 
 }
@@ -523,7 +523,7 @@ LABEL_42:
               ++v9; /*0x734b3e*/
             }
             while ( (unsigned short)v8 ); /*0x734b44*/
-            LOWORD(v8) = dword_B17F24[0]; /*0x734b46*/
+            (v8) = ((v8) & ~0xFFFF) | ((dword_B17F24[0]) & 0xFFFF); /*0x734b46*/
           }
           v10 = 0; /*0x734b4b*/
           v11 = 1; /*0x734b50*/
@@ -899,7 +899,7 @@ int File::ParseAudioFileRIFF()
   if ( v51 != 1212368461 ) /*0x7c12e2*/
     return -4; /*0x7c12f0*/
   v3 = &this->u32_98; /*0x7c12f5*/
-  v4 = (unsigned __int8 *)(((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1); /*0x7c131e*/
+  v4 = (unsigned __int8 *)(((((v52 << 16) | v52 & 0xFF00) << 8) | (((((v52) >> 16) & 0xFFFF) | v52 & 0xFF0000) >> 8)) + 1); /*0x7c131e*/
   LOBYTE(v4) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c131f*/
   if ( (*((int (__cdecl **)(File *, int, File *, unsigned __int8 *))&this->q040))(this, 5, &this->u32_98, v4) ) /*0x7c1326*/
     return -4; /*0x7c133c*/
@@ -917,7 +917,7 @@ int File::ParseAudioFileRIFF()
       return -2; /*0x7c13a1*/
     if ( v51 != 1145259597 ) /*0x7c13aa*/
       return -4; /*0x7c13b8*/
-    v8 = (unsigned __int8 *)(((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1); /*0x7c13e0*/
+    v8 = (unsigned __int8 *)(((((v52 << 16) | v52 & 0xFF00) << 8) | (((((v52) >> 16) & 0xFFFF) | v52 & 0xFF0000) >> 8)) + 1); /*0x7c13e0*/
     LOBYTE(v8) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c13e1*/
     if ( (*((int (__cdecl **)(File *, int, unsigned int, unsigned __int8 *))&this->q040))(this, 5, this->u32_730, v8) ) /*0x7c13ee*/
       return -4; /*0x7c1404*/
@@ -936,7 +936,7 @@ int File::ParseAudioFileRIFF()
       return -2; /*0x7c1468*/
     if ( v51 != 1413695053 ) /*0x7c1471*/
       return -4; /*0x7c147f*/
-    v12 = (unsigned __int8 *)(((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1); /*0x7c14a7*/
+    v12 = (unsigned __int8 *)(((((v52 << 16) | v52 & 0xFF00) << 8) | (((((v52) >> 16) & 0xFFFF) | v52 & 0xFF0000) >> 8)) + 1); /*0x7c14a7*/
     LOBYTE(v12) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c14a8*/
     if ( (*((int (__cdecl **)(File *, int, unsigned int, unsigned __int8 *))&this->q040))(this, 5, this->u32_734, v12) ) /*0x7c14b5*/
       return -4; /*0x7c14cb*/

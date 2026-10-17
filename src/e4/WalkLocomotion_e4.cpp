@@ -54,7 +54,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3, void *a3)
   int v21; // [esp+20h] [ebp-4h]
 
   v3 = a2; /*0x6a01a0*/
-  if ( *a2 != g_OverlayTypeConfig || a2[1] != (unsigned int)qword_B077FC || (v5 = a2[2], v5 != HIDWORD(qword_B077FC)) ) /*0x6a01ce*/
+  if ( *a2 != g_OverlayTypeConfig || a2[1] != (unsigned int)qword_B077FC || (v5 = a2[2], v5 != (((qword_B077FC) >> 32) & 0xFFFFFFFFu)) ) /*0x6a01ce*/
   {
     LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
     v6 = a3; /*0x6a01d7*/

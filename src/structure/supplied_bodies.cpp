@@ -7300,7 +7300,7 @@ LABEL_20:
       vfptr = this->vfptr; /*0x44cced*/
       v64 = (unsigned int)(this->owner + 22404); /*0x44ccf6*/
       v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v64); /*0x44ccfc*/
-      (*(void (**)(BuildingClass *, void *, unsigned int))(vfptr + 972))(this, v21, HIDWORD(v64)); /*0x44cd04*/
+      (*(void (**)(BuildingClass *, void *, unsigned int))(vfptr + 972))(this, v21, (((v64) >> 32) & 0xFFFFFFFFu)); /*0x44cd04*/
       (*(void (**)(BuildingClass *, int, unsigned int))(this->vfptr + 488))(this, 5, 0); /*0x44cd12*/
     }
     if ( *(unsigned char *)(this->Type + 5827) ) /*0x44cd1e*/
@@ -7578,7 +7578,7 @@ LABEL_20:
               Math::ArcTan2(v78); /*0x44d3bd*/
               __asm { fdivr [esp+0F0h+var_D0] } /*0x44d3c2*/
               __asm { fstp [esp+0F8h+var_D0] }
-              Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v53, v54))); /*0x44d3cc*/
+              Math::ArcTan2(COERCE_DOUBLE((((v53 & 0xFFFFFFFFull)) << 32 | (v54 & 0xFFFFFFFFull)))); /*0x44d3cc*/
               __asm { fdivr [esp+0F8h+var_C8] } /*0x44d3d1*/
               __asm { fstp [esp+0E8h+var_C8] }
             }

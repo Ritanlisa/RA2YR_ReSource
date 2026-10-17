@@ -61,11 +61,11 @@ int AudioMixer::PlaySample(void *a1)
     unsigned int v15; // edx
     this->u32_1C = v15; /*0x407209*/
     unsigned __int64 v14; // kr00_8
-    v14 = __PAIR64__(v15, v10) - __PAIR64__(v9, v8); /*0x407205*/
+    v14 = (((v15 & 0xFFFFFFFFull)) << 32 | (v10 & 0xFFFFFFFFull)) - (((v9 & 0xFFFFFFFFull)) << 32 | (v8 & 0xFFFFFFFFull)); /*0x407205*/
     unsigned int v13; // edi
-    v13 = (__PAIR64__(v15, v10) - __PAIR64__(v9, v8)) >> 32; /*0x407205*/
+    v13 = ((((v15 & 0xFFFFFFFFull)) << 32 | (v10 & 0xFFFFFFFFull)) - (((v9 & 0xFFFFFFFFull)) << 32 | (v8 & 0xFFFFFFFFull))) >> 32; /*0x407205*/
     int AudioMixer_field_10 = v14; // ecx /*0x407205*/
-    if ( __PAIR64__(v13, v14) > __PAIR64__(AudioMixer_field_14, this->AudioMixer_field_10) ) /*0x40721b*/
+    if ( (((v13 & 0xFFFFFFFFull)) << 32 | (v14 & 0xFFFFFFFFull)) > (((AudioMixer_field_14 & 0xFFFFFFFFull)) << 32 | (this->AudioMixer_field_10 & 0xFFFFFFFFull)) ) /*0x40721b*/
       AudioMixer_field_10 = this->AudioMixer_field_10; /*0x40721d*/
     int v16 = AudioMixer_field_10 * this->AudioMixer_field_0C; // eax /*0x407226*/
     if ( v4 >= 0 ) /*0x40722b*/

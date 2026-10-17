@@ -52,7 +52,7 @@ ControlClass GadgetClass::Dtor(void *a1)
   {
     int v2; // eax
     v2 = *(unsigned int *)this->Hovered; /*0x4e13a1*/
-    BYTE1(v2) &= ~1u; /*0x4e13a4*/
+    (v2) &= ~(((~(~1u)) & 0xFF) << 8); /*0x4e13a4*/
     *(unsigned int *)this->Hovered = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
     dword_8B3E90 = 0; /*0x4e13ac*/

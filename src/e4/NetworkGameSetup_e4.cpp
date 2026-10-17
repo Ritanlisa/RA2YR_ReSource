@@ -35,7 +35,7 @@ int NetworkGameSetup::ReadRulesUnknown()
   {
     result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b976f*/
     *(unsigned int *)&DataGlobal_A8B278 = result; /*0x5b9775*/
-    BYTE1(this->q008) = 1; /*0x5b977a*/
+    (this->q008) = ((this->q008) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5b977a*/
   }
   return result; /*0x5b977e*/
 

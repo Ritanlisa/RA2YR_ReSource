@@ -527,7 +527,7 @@ void sub_4C2830()
       if ( (unsigned __int8)ClipLine(v19, v18, &DSurface_ViewBounds.field_0) ) /*0x4c28f4*/
       {
         v11 = -(v10->u8_2C != 0); /*0x4c2904*/
-        LOBYTE(v11) = v11 & 0xFB; /*0x4c2906*/
+        (v11) = ((v11) & ~0xFF) | ((v11 & 0xFB) & 0xFF); /*0x4c2906*/
         Lightning::Draw((Lightning *)v10, *v10, v10->__pad_004, v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
       }
       ++v10[7]; /*0x4c293d*/
@@ -769,7 +769,7 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
     goto LABEL_14; /*0x4c95fa*/
   v6 = (__int16)(LOWORD(this->AbstractClass) - LOWORD(this->M4)); /*0x4c9606*/
   v7 = (__int16)(LOWORD(this->AbstractClass) - LOWORD(this->M4)); /*0x4c960b*/
-  v8 = (int)((HIDWORD(v7) ^ v7) - HIDWORD(v7)) / abstractFlags; /*0x4c9611*/
+  v8 = (int)(((((v7) >> 32) & 0xFFFFFFFFu) ^ v7) - (((v7) >> 32) & 0xFFFFFFFFu)) / abstractFlags; /*0x4c9611*/
   v14 = this->AbstractClass; /*0x4c9615*/
   if ( (__int16)v8 > 0 ) /*0x4c961c*/
   {

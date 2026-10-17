@@ -50,7 +50,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     (*(void (**)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76594d*/
     return 1; /*0x765953*/
   }
-  LOBYTE(this->m_C) = 0; /*0x765857*/
+  (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x765857*/
   if ( a3 ) /*0x76585d*/
   {
     *a3 = a2; /*0x7658a3*/

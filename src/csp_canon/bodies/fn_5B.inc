@@ -384,7 +384,7 @@ int MissionClass::QueueMission() {
         this->missionQueued = 0; /*0x5b361a*/
       }
     }
-    IDA_LOBYTE(result) = v6; /*0x5b3621*/
+    (result) = ((result) & ~0xFF) | ((v6) & 0xFF); /*0x5b3621*/
     if ( v6 ) /*0x5b3627*/
     {
       result = (*((int (**)(MissionClass *))this->vtable1 + 128))(this); /*0x5b362d*/

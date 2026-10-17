@@ -53,7 +53,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
   LOBYTE(this->Image) = 0; /*0x41e3c5*/
   this->AlphaImage = 0; /*0x41e3cb*/
   this->MainVoxel = 0; /*0x41e3d1*/
-  LOBYTE(this->q0D0) = 0; /*0x41e3d7*/
+  (this->q0D0) = ((this->q0D0) & ~0xFF) | ((0) & 0xFF); /*0x41e3d7*/
   BYTE1(this->?[5]) = 0; /*0x41e3dd*/
   this->q0D8 = 0; /*0x41e3e3*/
   this->u32_DC = 0; /*0x41e3e9*/

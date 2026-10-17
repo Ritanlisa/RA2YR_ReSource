@@ -364,7 +364,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
       goto LABEL_17; /*0x5cf010*/
     unknown_08 = uniqueId->unknown_08; /*0x5cf012*/
     if ( uniqueId->unknown_10 < unknown_08 /*0x5cf038*/
-      || (BYTE1(uniqueId->unknown_0C) || !unknown_08)
+      || ((((uniqueId->unknown_0C) >> 8) & 0xFF) || !unknown_08)
       && (unknown_14 = uniqueId->unknown_14, unknown_14 > 0)
       && (*(unsigned __int8 (**)(SessionClass *, int, unsigned int))(uniqueId->GameMode + 8))(
            uniqueId,
@@ -1896,7 +1896,7 @@ wchar_t *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Source, wch
   v14 = a8; /*0x69aab2*/
   v8->Color2 = a7; /*0x69aab6*/
   v15 = *p_Side2; /*0x69aabc*/
-  LOBYTE(v8->Color) = v13; /*0x69aabe*/
+  (v8->Color) = ((v8->Color) & ~0xFF) | ((v13) & 0xFF); /*0x69aabe*/
   v8->Side = v14; /*0x69aac6*/
   (*(void (**)(int *))(v15 + 12))(p_Side2); /*0x69aacc*/
   v16 = p_Side2[2]; /*0x69aacf*/

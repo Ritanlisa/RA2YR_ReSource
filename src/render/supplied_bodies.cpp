@@ -308,7 +308,7 @@ int BuildingQueue::IsCellSuitable(int a2)
   result = (int)BridgeClass::GetCellData((BridgeClass *)this, a2); /*0x42e789*/
   if ( result ) /*0x42e790*/
   {
-    LOBYTE(result) = 1; /*0x42e793*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x42e793*/
     return result; /*0x42e796*/
   }
   v4 = 16 * a2 + this->BuildingQueue_field_0x08; /*0x42e79f*/
@@ -321,15 +321,15 @@ int BuildingQueue::IsCellSuitable(int a2)
   result = (int)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)(v4 + 4)); /*0x42e7c5*/
   if ( result->u32_44 == *(unsigned int *)(*((unsigned int *)v5 + 917) + 660) ) /*0x42e7d9*/
   {
-    LOBYTE(result) = 1; /*0x42e7dc*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x42e7dc*/
     return result; /*0x42e7df*/
   }
   result = (int)Cell::IsBridge((Cell *)result); /*0x42e7e4*/
   if ( result ) /*0x42e7eb*/
-    LOBYTE(result) = 1; /*0x42e7ee*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x42e7ee*/
   else
 LABEL_9:
-    LOBYTE(result) = 0; /*0x42e7f5*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x42e7f5*/
   return result; /*0x42e792*/
 
 }
@@ -864,7 +864,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
         {
           v72[0] = a3; /*0x488ace*/
           v72[1] = a4; /*0x488ad9*/
-          BYTE1(v14) |= 0x20u; /*0x488ae0*/
+          (v14) |= ((((0x20u)) & 0xFF) << 8); /*0x488ae0*/
           v15 = (int *)(this->u32_38 + 4 * a2); /*0x488ae3*/
           v63 = this->u32_30; /*0x488ae9*/
           v56 = v14; /*0x488af2*/
@@ -4108,12 +4108,12 @@ void XSurface::XSurface_DrawLineEx_raw(int a2, unsigned int *a3, unsigned int *a
   {
     if ( v12 == 1 ) /*0x7ba6f1*/
     {
-      HIWORD(v14) = HIWORD(v35); /*0x7ba6f7*/
+      (v14) = ((v14) & ~(0xFFFF << 16)) | ((((((v35) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x7ba6f7*/
       LOBYTE(v14) = a5; /*0x7ba701*/
       BYTE1(v14) = a5; /*0x7ba704*/
       v15 = v37 - v35 + 1; /*0x7ba706*/
       v16 = v14 << 16; /*0x7ba70a*/
-      LOWORD(v16) = v14; /*0x7ba70d*/
+      (v16) = ((v16) & ~0xFFFF) | ((v14) & 0xFFFF); /*0x7ba70d*/
       memset32(v13, v16, v15 >> 2); /*0x7ba713*/
       memset(&v13[2 * (v15 >> 2)], a5, v15 & 3); /*0x7ba71a*/
       (*(void (**)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7ba720*/

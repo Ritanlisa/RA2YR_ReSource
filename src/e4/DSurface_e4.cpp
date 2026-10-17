@@ -401,8 +401,8 @@ unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
   this->LockCount = 0; /*0x4bac71*/
   this->q010 = 0; /*0x4bac74*/
   this->u32_14 = 0; /*0x4bac77*/
-  LOBYTE(this->DSurface_field_0x18) = 0; /*0x4bac7a*/
-  BYTE1(this->DSurface_field_0x18) = 0; /*0x4bac7d*/
+  (this->DSurface_field_0x18) = ((this->DSurface_field_0x18) & ~0xFF) | ((0) & 0xFF); /*0x4bac7a*/
+  (this->DSurface_field_0x18) = ((this->DSurface_field_0x18) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x4bac7d*/
   this->DSurface_field_0x1C = a2; /*0x4bac80*/
   this->DSurface_field_0x20 = 0; /*0x4bac83*/
   /* X11: vtable install elided (implicit via DSurface virtuals 0x4bac86) */
@@ -557,7 +557,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     v13 = a8; /*0x4bb1b7*/
   if ( !v42 /*0x4bb1f8*/
     && v13 == 1
-    && (!BYTE1(this->DSurface_field_0x18)
+    && (!(((this->DSurface_field_0x18) >> 8) & 0xFF)
      || (*((unsigned __int8 (**)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
     && aP5[2] == a2[2]
     && aP5[3] == a2[3] )
@@ -2304,7 +2304,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
         v48 += v103; /*0x4be57e*/
         v56 = *(unsigned int *)&v93[4] == 1; /*0x4be580*/
         v87 = v49; /*0x4be581*/
-        *(unsigned long long *)v93 = __PAIR64__(*(unsigned int *)&v93[4], v48) - 0x100000000LL; /*0x4be589*/
+        *(unsigned long long *)v93 = (((*(unsigned int *)&v93[4] & 0xFFFFFFFFull)) << 32 | (v48 & 0xFFFFFFFFull)) - 0x100000000LL; /*0x4be589*/
       }
       while ( !v56 ); /*0x4be58d*/
     }
@@ -2888,7 +2888,7 @@ LABEL_17:
   if ( !v36 ) /*0x4c007d*/
   {
 LABEL_121:
-    LOBYTE(result) = 0; /*0x4c073b*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x4c073b*/
     return result; /*0x4c073e*/
   }
   LOBYTE(v88[1]) = (unsigned __int8)(a6 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4c00a5*/
@@ -3153,7 +3153,7 @@ LABEL_121:
     }
   }
   result = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 96))(v88[0]); /*0x4c0364*/
-  LOBYTE(result) = 1; /*0x4c036a*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4c036a*/
   return result; /*0x4c0367*/
 
 }
@@ -4305,7 +4305,7 @@ int DSurface::LockAndPrepareRect()
   {
     (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q058)(this, 7, 0, 0); /*0x7bd223*/
     v2 = this->u32_7BC; /*0x7bd226*/
-    LOBYTE(v2) = v2 & 0xBF; /*0x7bd22f*/
+    (v2) = ((v2) & ~0xFF) | ((v2 & 0xBF) & 0xFF); /*0x7bd22f*/
     this->u32_7BC = v2; /*0x7bd231*/
   }
   (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->q058)(this, 3, 0, 0); /*0x7bd23e*/

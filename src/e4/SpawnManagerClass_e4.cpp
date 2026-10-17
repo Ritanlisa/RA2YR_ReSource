@@ -561,7 +561,7 @@ namespace gamemd {
 unsigned int SpawnManagerClass_25::LoadState(int a2)
 {
 
-  if ( LOBYTE(this->IsInitialized) ) /*0x6b8190*/
+  if ( ((this->IsInitialized) & 0xFF) ) /*0x6b8190*/
     return (unsigned int)(a2 - *&this->Items) >> 2; /*0x6b81a5*/
   else
     return 0; /*0x6b8197*/
@@ -626,7 +626,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
     else
     {
       this->vtable2 = __2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
-      BYTE1(this->u8_D) = 1; /*0x6b83df*/
+      (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x6b83df*/
     }
   }
   this->AbstractClass = &vt_DynamicVectorClass; /*0x6b83e3*/
@@ -645,13 +645,13 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6b840c*/
   {
-    LOBYTE(this->IsInitialized) = 0; /*0x6b8412*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((0) & 0xFF); /*0x6b8412*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x6b8418*/
       v4 = a3; /*0x6b842e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6b842a*/
-    LOBYTE(this->IsInitialized) = 1; /*0x6b8432*/
+    (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((1) & 0xFF); /*0x6b8432*/
     if ( !v4 ) /*0x6b8436*/
       return 0; /*0x6b84aa*/
     if ( *&this->Items ) /*0x6b8438*/
@@ -662,7 +662,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x6b844c*/
         ++i; /*0x6b8451*/
-      if ( BYTE1(this->IsInitialized) ) /*0x6b845e*/
+      if ( (((this->IsInitialized) >> 8) & 0xFF) ) /*0x6b845e*/
       {
         __3_YAXPAX_Z(*&this->Items); /*0x6b8469*/
         *&this->Items = 0; /*0x6b8471*/

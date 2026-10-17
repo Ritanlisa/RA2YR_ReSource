@@ -222,7 +222,7 @@ int COMObject::ActivateGlobal() {
     (*(void (**)(int))(*(unsigned int *)dword_8B3E90 + 84))(dword_8B3E90); /*0x4e19ba*/
   }
   v2 = *(unsigned int *)this->Hovered; /*0x4e19bd*/
-  BYTE1(v2) |= 1u; /*0x4e19c0*/
+  (v2) |= ((((1u)) & 0xFF) << 8); /*0x4e19c0*/
   *(unsigned int *)this->Hovered = v2; /*0x4e19c3*/
   dword_8B3E90 = (int)this; /*0x4e19c6*/
   return v2; /*0x4e19cc*/
@@ -238,7 +238,7 @@ int COMObject::DeactivateGlobal() {
   if ( (ShpButtonClass *)dword_8B3E90 == this ) /*0x4e19d6*/
   {
     v1 = *(unsigned int *)this->Hovered; /*0x4e19d8*/
-    BYTE1(v1) &= ~1u; /*0x4e19db*/
+    (v1) &= ~(((~(~1u)) & 0xFF) << 8); /*0x4e19db*/
     *(unsigned int *)this->Hovered = v1; /*0x4e19de*/
     dword_8B3E90 = 0; /*0x4e19e1*/
   }
@@ -813,7 +813,7 @@ int PlayerClass::UpdateAIUnits() {
         {
           EventClass_field_0x8 = v2->EventClass_field_0x8; /*0x732668*/
           if ( *(unsigned int *)v2->Count < (int)EventClass_field_0x8 /*0x732692*/
-            || ((LOBYTE(HeightMap) = BYTE1(v2->EventClass_field_0xC), (unsigned char)HeightMap) || !EventClass_field_0x8)
+            || (((HeightMap) = ((HeightMap) & ~0xFF) | (((((v2->EventClass_field_0xC) >> 8) & 0xFF)) & 0xFF), (unsigned char)HeightMap) || !EventClass_field_0x8)
             && (HeightMap = *&v2->q014, HeightMap > 0)
             && (LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v2->EventClass_field_0x0 + 8))(
                                       v2,

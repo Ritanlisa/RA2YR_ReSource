@@ -364,7 +364,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
     {
       v29 = *&v9->u32_24; /*0x4842b5*/
       v13 = ((__int16)v29 << 8) + 128; /*0x4842cc*/
-      v14 = (SHIWORD(v29) << 8) + 128; /*0x4842ce*/
+      v14 = ((short)(((v29) >> 16) & 0xFFFF) << 8) + 128; /*0x4842ce*/
       v35[0] = 128; /*0x4842d0*/
       v35[1] = 128; /*0x4842d4*/
       Isometric::InitTables((int)v9, v35); /*0x4842dd*/
@@ -502,7 +502,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2, void *a
   v3 = (unsigned int *)*a3; /*0x4a91ba*/
   v4 = (unsigned __int16)*a3 == (unsigned __int16)dword_8A03F8; /*0x4a91bd*/
   a3 = (unsigned int *)*a3; /*0x4a91c6*/
-  if ( v4 && HIWORD(a3) == HIWORD(dword_8A03F8) ) /*0x4a91dc*/
+  if ( v4 && HIWORD(a3) == (((dword_8A03F8) >> 16) & 0xFFFF) ) /*0x4a91dc*/
   {
     v6 = (int *)(*(int (**)(MouseClass *, int *))(dword_887640->HandleClick_ph + 52))( /*0x4a91ef*/
                   dword_887640,
@@ -854,7 +854,7 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
           if ( (unsigned __int8)ScenarioClass::Is_Waypoint_Valid(v39, v38) ) /*0x640e8b*/
           {
             v60 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &a5, v38); /*0x640eb0*/
-            v41 = (SHIWORD(v60) << 8) + 128; /*0x640ec2*/
+            v41 = ((short)(((v60) >> 16) & 0xFFFF) << 8) + 128; /*0x640ec2*/
             Coord::Subtract((Coord *)&v74, ((__int16)v60 << 8) + 128, v41, 0); /*0x640ed4*/
             IsoCoord::ToScreenOffset(v74, v41, &v76, &v68); /*0x640eef*/
             v39 = (char *)dword_A8B230; /*0x640f32*/
@@ -1063,12 +1063,12 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
         }
       }
     }
-    LOBYTE(result) = 1; /*0x6925f3*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6925f3*/
   }
   else
   {
 LABEL_39:
-    LOBYTE(result) = 0; /*0x6925ff*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6925ff*/
   }
   return result; /*0x6925f0*/
 
@@ -1088,7 +1088,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
   int v13; // [esp+14h] [ebp-10h]
   int v14[3]; // [esp+18h] [ebp-Ch] BYREF
 
-  LOBYTE(v5) = byte_A8E378; /*0x6930a0*/
+  (v5) = ((v5) & ~0xFF) | ((byte_A8E378) & 0xFF); /*0x6930a0*/
   if ( byte_A8E378 && (stru_A8E960.random[488] || stru_A8E960.random[503]) ) /*0x6930c4*/
   {
     if ( stru_A8E960.nextScenario[64] ) /*0x6930d0*/
@@ -1165,7 +1165,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 {
                   if ( byte_884D40 ) /*0x69339d*/
                   {
-                    LOBYTE(v5) = byte_884D44; /*0x69339f*/
+                    (v5) = ((v5) & ~0xFF) | ((byte_884D44) & 0xFF); /*0x69339f*/
                     (*(void (**)(IUnknown *, unsigned int, int))(dword_87F7E8.field_0 + 72))(&dword_87F7E8, 0, v5); /*0x6933b1*/
                     byte_884D40 = 0; /*0x6933b4*/
                   }
@@ -1269,7 +1269,7 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
         v4 = *(unsigned int *)&g_DSurface_WindowOffset - *(__int16 *)(*(unsigned int *)&DataGlobal_A8EB00[3220] + 4); /*0x6d4ea0*/
         int v5; // kr00_4
         v5 = *(unsigned int *)g_Map_VisibleRectOffset - *(__int16 *)(*(unsigned int *)&DataGlobal_A8EB00[3220] + 2); /*0x6d4eb1*/
-        v13[1] = ((int)v4 - HIDWORD(v4)) >> 1; /*0x6d4eb9*/
+        v13[1] = ((int)v4 - (((v4) >> 32) & 0xFFFFFFFFu)) >> 1; /*0x6d4eb9*/
         v13[0] = v5 / 2; /*0x6d4ebd*/
         DrawToSurfaceSHP( /*0x6d4ee5*/
           (int)DSurface_Composite,
@@ -1438,9 +1438,9 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
   v9 = v8; /*0x6d6617*/
   LOWORD(v10) = Math::RoundToInt(v47); /*0x6d6619*/
   LODWORD(v49) = (unsigned __int8)v9; /*0x6d6631*/
-  LOWORD(v39) = v9 / 256; /*0x6d6638*/
+  (v39) = ((v39) & ~0xFFFF) | ((v9 / 256) & 0xFFFF); /*0x6d6638*/
   LODWORD(v50) = (unsigned __int8)v10; /*0x6d664c*/
-  HIWORD(v39) = v10 / 256; /*0x6d6663*/
+  (v39) = ((v39) & ~(0xFFFF << 16)) | (((v10 / 256) & 0xFFFF) << 16); /*0x6d6663*/
   v51 = 0; /*0x6d6668*/
   Coord::To_ScreenRaw(v45, &v49); /*0x6d666c*/
   v11 = aP2[1] - (unsigned int)DSurface_ViewBounds.field_4; /*0x6d6684*/
@@ -1489,13 +1489,13 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
         v33 = 0; /*0x6d6822*/
       if ( !v19 /*0x6d6858*/
         || (v20 = v18->u32_11B - *((char *)NeighbourContent + 283),
-            (int)((HIDWORD(v20) ^ v20) - HIDWORD(v20)) > 1)
+            (int)(((((v20) >> 32) & 0xFFFFFFFFu) ^ v20) - (((v20) >> 32) & 0xFFFFFFFFu)) > 1)
         || (v34 = 1, (NeighbourContent[80] & 0x100) != 0) )
       {
         v34 = 0; /*0x6d685a*/
       }
       if ( v19 /*0x6d688e*/
-        || (v21 = v18->u32_11B - v37->u32_11B, (int)((HIDWORD(v21) ^ v21) - HIDWORD(v21)) > 1)
+        || (v21 = v18->u32_11B - v37->u32_11B, (int)(((((v21) >> 32) & 0xFFFFFFFFu) ^ v21) - (((v21) >> 32) & 0xFFFFFFFFu)) > 1)
         || (v32 = 1, (v37->u32_140 & 0x100) != 0) )
       {
         v32 = 0; /*0x6d6890*/
@@ -1843,7 +1843,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   v17 = (int)*v15; /*0x6dbbe4*/
   v30.IsoCoord_field_0x04 = v16; /*0x6dbbeb*/
   int v18; // esi
-  v18 = (BYTE4(v17) + (int)v17) >> 8; /*0x6dbbf6*/
+  v18 = ((((v17) >> 32) & 0xFF) + (int)v17) >> 8; /*0x6dbbf6*/
   int v19; // eax
   v19 = ZCoordToScreenY(aP2[2]); /*0x6dbbf9*/
   unsigned int v31[2]; // [esp+20h] [ebp-10h] BYREF
@@ -2096,7 +2096,7 @@ namespace gamemd {
 unsigned int Tactical_42::PointerToIndex(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x6e4820*/
+  if ( ((this->q00C) & 0xFF) ) /*0x6e4820*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x6e4835*/
   else
     return 0; /*0x6e4827*/
@@ -2150,13 +2150,13 @@ char Tactical_42::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6e489c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x6e48a6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x6e48a6*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x6e48ac*/
       v4 = a3; /*0x6e48c2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6e48be*/
-    LOBYTE(this->q00C) = 1; /*0x6e48c6*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x6e48c6*/
     if ( v4 ) /*0x6e48ca*/
     {
       if ( *&this->q004 ) /*0x6e48d5*/
@@ -2167,7 +2167,7 @@ char Tactical_42::Release(int a2, unsigned int * a3)
         int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6e48e9*/
           ++i; /*0x6e48ee*/
-        if ( BYTE1(this->q00C) ) /*0x6e48fb*/
+        if ( (((this->q00C) >> 8) & 0xFF) ) /*0x6e48fb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x6e4906*/
           *&this->q004 = 0; /*0x6e490e*/
@@ -2237,7 +2237,7 @@ namespace gamemd {
 unsigned int Tactical_42::InitMap(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x6e49b0*/
+  if ( ((this->q00C) & 0xFF) ) /*0x6e49b0*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x6e49c5*/
   else
     return 0; /*0x6e49b7*/
@@ -2253,13 +2253,13 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6e49dc*/
   {
-    LOBYTE(this->q00C) = 0; /*0x6e49e2*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x6e49e2*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x6e49e8*/
       v4 = a3; /*0x6e49fe*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6e49fa*/
-    LOBYTE(this->q00C) = 1; /*0x6e4a02*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x6e4a02*/
     if ( !v4 ) /*0x6e4a06*/
       return 0; /*0x6e4a7a*/
     if ( *&this->q004 ) /*0x6e4a08*/
@@ -2270,7 +2270,7 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < Tactical_field_0x8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6e4a1c*/
         ++i; /*0x6e4a21*/
-      if ( BYTE1(this->q00C) ) /*0x6e4a2e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x6e4a2e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x6e4a39*/
         *&this->q004 = 0; /*0x6e4a41*/

@@ -166,11 +166,11 @@ int Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5
         BYTE1(v6) = a4; /*0x6200bf*/
         v11 = v7 - v5 + 1; /*0x6200c4*/
         v12 = v6 << 16; /*0x6200c6*/
-        LOWORD(v12) = v6; /*0x6200c9*/
+        (v12) = ((v12) & ~0xFFFF) | ((v6) & 0xFFFF); /*0x6200c9*/
         memset32(v10, v12, v11 >> 2); /*0x6200cf*/
         memset(&v10[2 * (v11 >> 2)], a4, v11 & 3); /*0x6200d6*/
         result = (*(int (**)(int))(*(unsigned int *)a1 + 96))(a1); /*0x6200de*/
-        LOBYTE(result) = 1; /*0x6200e1*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6200e1*/
         return result; /*0x6200ea*/
       }
       v13 = v7 - v5; /*0x6200ed*/
@@ -366,11 +366,11 @@ int Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5
       }
     }
     result = (*(int (**)(int))(*(unsigned int *)a1 + 96))(a1); /*0x620311*/
-    LOBYTE(result) = 1; /*0x620314*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x620314*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x6205bc*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6205bc*/
   }
   return result; /*0x6200e3*/
 
@@ -431,8 +431,8 @@ int Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
   v4 = a4; /*0x6208f8*/
   if ( a4 == -1 && dword_AC4624 != -1 ) /*0x620911*/
     v4 = ((int)(unsigned __int8)dword_AC4624 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x62095c*/
-       | (BYTE1(dword_AC4624) >> g_BitMask_Blue << g_BitMask_Green)
-       | (BYTE2(dword_AC4624) >> g_BitMask_Red << g_BitShift_Blue);
+       | ((((dword_AC4624) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+       | ((((dword_AC4624) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
   v7 = *(unsigned int *)&stru_AC1B48.__pad_40[12]; /*0x620963*/
   v29 = *(unsigned int *)&stru_AC1B48.__pad_40[16]; /*0x62096c*/
   v30 = *(unsigned int *)&stru_AC1B48.__pad_40[12]; /*0x620970*/
@@ -451,7 +451,7 @@ int Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
     v34 = -1; /*0x6209cc*/
   else
     v34 = ((int)(unsigned __int8)v7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x620a16*/
-        | (BYTE1(v7) >> g_BitMask_Blue << g_BitMask_Green)
+        | ((((v7) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
         | ((unsigned __int8)stru_AC1B48.__pad_40[14] >> g_BitMask_Red << g_BitShift_Blue);
   v8 = *a2; /*0x620a1d*/
   v9 = a2[1]; /*0x620a1f*/
@@ -511,7 +511,7 @@ int Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
         v22 = (v29 & 0xFF00) + (v30 & 0xFF00); /*0x620ba8*/
         v23 = (unsigned __int8 *)((unsigned __int8)(((unsigned __int8)v29 + (unsigned __int8)v30) / 2) /*0x620beb*/
                                 + ((((v29 & 0xFF0000) + (v30 & 0xFF0000)) / 2) & 0xFF0000)
-                                + ((((int)v22 - HIDWORD(v22)) >> 1) & 0xFF00));
+                                + ((((int)v22 - (((v22) >> 32) & 0xFFFFFFFFu)) >> 1) & 0xFF00));
         v42 = v23; /*0x620bf0*/
         if ( v23 == (unsigned __int8 *)-1 ) /*0x620bf4*/
           v4 = -1; /*0x620bf6*/
@@ -1436,7 +1436,7 @@ LABEL_48:
   v11 = v9 - Rect.left; /*0x622d0c*/
   v24.DeleteAndZero_field_0x08 = v10 - Rect.top; /*0x622d12*/
   unknown_libname_74(&a4); /*0x622d16*/
-  v12 = ChildWindowFromPointEx(hWnd, (POINT)__PAIR64__(v24.DeleteAndZero_field_0x08, v11), 1u); /*0x622d24*/
+  v12 = ChildWindowFromPointEx(hWnd, (POINT)(((v24.DeleteAndZero_field_0x08 & 0xFFFFFFFFull)) << 32 | (v11 & 0xFFFFFFFFull)), 1u); /*0x622d24*/
   v13 = v12; /*0x622d2a*/
   if ( v12 ) /*0x622d2e*/
   {

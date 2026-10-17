@@ -299,7 +299,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
       return this->__pad_0; /*0x54a87e*/
     }
     this->IsometricTileTypeClass_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x54a88d*/
-    BYTE1(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a890*/
+    (this->IsometricTileTypeClass_field_0x0C) = ((this->IsometricTileTypeClass_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x54a890*/
   }
   return this->__pad_0; /*0x54a87d*/
 

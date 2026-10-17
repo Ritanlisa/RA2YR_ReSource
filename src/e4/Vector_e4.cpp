@@ -155,7 +155,7 @@ int Vector::RemoveAt(int aP1, void *a2)
   result = a2; /*0x45ae13*/
   if ( a2 >= (int)Vector_field_0x10 ) /*0x45ae19*/
   {
-    LOBYTE(result) = 0; /*0x45ae3c*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x45ae3c*/
   }
   else
   {
@@ -170,7 +170,7 @@ int Vector::RemoveAt(int aP1, void *a2)
       }
       while ( result < (int)this->Vector_field_0x10 ); /*0x45ae34*/
     }
-    LOBYTE(result) = 1; /*0x45ae37*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x45ae37*/
   }
   return result; /*0x45ae39*/
 

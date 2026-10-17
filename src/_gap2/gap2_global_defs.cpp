@@ -500,7 +500,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
 
   if ( !dword_816108 ) /*0x4055cf*/
     this->referenceCount = 4; /*0x4055d1*/
-  LODWORD(v2) = this->referenceCount; /*0x4055d8*/
+  (v2) = ((v2) & 0xFFFFFFFF00000000ull) | ((this->referenceCount) & 0xFFFFFFFFull); /*0x4055d8*/
   while ( 2 ) /*0x4055e4*/
   {
     switch ( (int)v2 ) /*0x4055e4*/
@@ -625,7 +625,7 @@ LABEL_35:
               this->currentWeaponSlot = 0; /*0x405880*/
               this->temporalTargetingMe = 0; /*0x405886*/
               LODWORD(v2) = this->nextArrayIndex; /*0x40588c*/
-              LOBYTE(v2) = v2 | 1; /*0x40588f*/
+              (v2) = ((v2) & ~0xFF) | ((v2 | 1) & 0xFF); /*0x40588f*/
               this->nextArrayIndex = v2; /*0x405891*/
             }
           }
@@ -666,7 +666,7 @@ LABEL_41:
                 this->currentWeaponSlot = 0; /*0x405947*/
                 this->temporalTargetingMe = 0; /*0x40594d*/
                 nextArrayIndex = this->nextArrayIndex; /*0x405953*/
-                LOBYTE(nextArrayIndex) = nextArrayIndex | 1; /*0x405956*/
+                (nextArrayIndex) = ((nextArrayIndex) & ~0xFF) | ((nextArrayIndex | 1) & 0xFF); /*0x405956*/
                 this->nextArrayIndex = nextArrayIndex; /*0x405958*/
               }
             }
@@ -1044,7 +1044,7 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(ObjectClass * aP1) {
       }
       LOWORD(v13) = Math::RoundToInt(v2); /*0x4198fb*/
       v14 = v13; /*0x419902*/
-      Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v11, v12))); /*0x419904*/
+      Math::ArcTan2(COERCE_DOUBLE((((v11 & 0xFFFFFFFFull)) << 32 | (v12 & 0xFFFFFFFFull)))); /*0x419904*/
       __asm { fmul [esp+98h+var_40] } /*0x419909*/
       __asm { fadd qword ptr [esp+88h+var_28] }
       LOWORD(v15) = Math::RoundToInt(v2); /*0x419914*/
@@ -5574,7 +5574,7 @@ short Gap2Recv_50D6D0::SelectSimilarBuildingTypes(int a2) {
   v35 = this; /*0x50d6e4*/
   if ( (unsigned short)a2 == *(unsigned short *)&stru_A8E960.waypoints[6] ) /*0x50d6e8*/
   {
-    LOWORD(i) = HIWORD(a2); /*0x50d6ea*/
+    (i) = ((i) & ~0xFFFF) | (((((a2) >> 16) & 0xFFFF)) & 0xFFFF); /*0x50d6ea*/
     if ( HIWORD(a2) == *(unsigned short *)&stru_A8E960.waypoints[8] ) /*0x50d6f6*/
       return i; /*0x50d6f6*/
   }
@@ -5586,7 +5586,7 @@ short Gap2Recv_50D6D0::SelectSimilarBuildingTypes(int a2) {
   while ( 1 ) /*0x50d725*/
   {
     v4 = (unsigned int *)*((unsigned int *)dword_8B3DC4 + i); /*0x50d725*/
-    v5 = HIWORD(a2) + HIWORD(dword_ABD490[v30]); /*0x50d73c*/
+    v5 = (((a2) >> 16) & 0xFFFF) + HIWORD(dword_ABD490[v30]); /*0x50d73c*/
     v6 = (unsigned short *)(4 * v30 + 11261072); /*0x50d741*/
     LOWORD(v31) = a2 + LOWORD(dword_ABD490[v30]); /*0x50d74b*/
     HIWORD(v31) = v5; /*0x50d750*/
@@ -5605,7 +5605,7 @@ short Gap2Recv_50D6D0::SelectSimilarBuildingTypes(int a2) {
       ++v30; /*0x50d7c5*/
       if ( (int)v6 > (int)&dword_ABDA08 ) /*0x50d7c9*/
         return i; /*0x50d7c9*/
-      v9 = HIWORD(a2) + v6[1]; /*0x50d7d6*/
+      v9 = (((a2) >> 16) & 0xFFFF) + v6[1]; /*0x50d7d6*/
       v32[0] = a2 + *v6; /*0x50d7e0*/
       v32[1] = v9; /*0x50d7e7*/
       *(unsigned int *)v29 = *(unsigned int *)v32; /*0x50d7f9*/
@@ -5617,7 +5617,7 @@ short Gap2Recv_50D6D0::SelectSimilarBuildingTypes(int a2) {
     v14 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v12 + 72))(v12, v36); /*0x50d830*/
     if ( (*(unsigned __int8 (**)(unsigned int *, unsigned int, unsigned int, unsigned int))(v13 + 1288))(v4, *v14, v14[1], v14[2]) ) /*0x50d84a*/
     {
-      LOWORD(i) = ++v30; /*0x50d85c*/
+      (i) = ((i) & ~0xFFFF) | ((++v30) & 0xFFFF); /*0x50d85c*/
       if ( v30 > 350 ) /*0x50d866*/
         return i; /*0x50d866*/
     }
@@ -5650,7 +5650,7 @@ LABEL_23:
     v28 = v23->vtable3; /*0x50d979*/
     if ( (*(unsigned __int8 (**)(unsigned int *))(v21 + 1288))(v4) ) /*0x50d97e*/
     {
-      LOWORD(i) = ++v30; /*0x50d98c*/
+      (i) = ((i) & ~0xFFFF) | ((++v30) & 0xFFFF); /*0x50d98c*/
       if ( v30 > 350 ) /*0x50d996*/
         return i; /*0x50d996*/
     }
@@ -5662,7 +5662,7 @@ LABEL_23:
     ++v30; /*0x50d8d7*/
     if ( (int)v6 > (int)&dword_ABDA08 ) /*0x50d8db*/
       return i; /*0x50d9a7*/
-    v17 = HIWORD(a2) + v6[1]; /*0x50d8e8*/
+    v17 = (((a2) >> 16) & 0xFFFF) + v6[1]; /*0x50d8e8*/
     LOWORD(v33) = a2 + *v6; /*0x50d8f2*/
     HIWORD(v33) = v17; /*0x50d8f9*/
     *(unsigned int *)v29 = v33; /*0x50d90b*/
@@ -7279,7 +7279,7 @@ if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)(v2 + 4) + 16))(v2 + 4) ) /*
     v31 = v18; /*0x54befb*/
     v29 = v20; /*0x54beff*/
     if ( v21 && v18 == *(unsigned int *)(v3 + 68) ) /*0x54bf08*/
-      LOWORD(v28) = 0; /*0x54bf0a*/
+      (v28) = ((v28) & ~0xFFFF) | ((0) & 0xFFFF); /*0x54bf0a*/
     Math::CalcAngle((double)v31 - (double)*(int *)(v3 + 68), (double)v29 - (double)v30); /*0x54bf2d*/
     result = (result - 1.570796326794897) * -10430.06004058427; /*0x54bf3b*/
     LOWORD(v29) = Math::RoundToInt(result); /*0x54bf46*/
@@ -7576,8 +7576,8 @@ void Gap2Recv_569760::DestroyCliffMap(int a2, int a3, IUnknown * aP3) {
   {
     smudgeTypeIndex = v64->smudgeTypeIndex; /*0x569813*/
     LOWORD(v67) = LOWORD(dword_89F688[a3 & 7]) + smudgeTypeIndex; /*0x569826*/
-    HIWORD(v67) = HIWORD(dword_89F688[a3 & 7]) + HIWORD(smudgeTypeIndex); /*0x56982e*/
-    v9 = SHIWORD(v67) << 9; /*0x56983a*/
+    HIWORD(v67) = HIWORD(dword_89F688[a3 & 7]) + (((smudgeTypeIndex) >> 16) & 0xFFFF); /*0x56982e*/
+    v9 = (short)(((v67) >> 16) & 0xFFFF) << 9; /*0x56983a*/
     v10 = (__int16)v67 + v9 < 0; /*0x56983d*/
     v11 = (__int16)v67 + v9; /*0x56983d*/
     *(unsigned int *)v77 = v67; /*0x56983f*/
@@ -7614,7 +7614,7 @@ void Gap2Recv_569760::DestroyCliffMap(int a2, int a3, IUnknown * aP3) {
           v16->level[0] += 4; /*0x569969*/
           v17 = *CellStruct::Add((CellStruct *)v77, &v72, dword_89F688); /*0x56997d*/
           *(unsigned int *)v71 = v17; /*0x56997f*/
-          v18 = (__int16)v17 + (SHIWORD(v17) << 9); /*0x56998e*/
+          v18 = (__int16)v17 + ((short)(((v17) >> 16) & 0xFFFF) << 9); /*0x56998e*/
           if ( v18 >= 0x40000 || (v19 = *(CellClass **)(dword_87F924 + 4 * v18)) == 0 ) /*0x5699a4*/
           {
             dword_ABDC74 = v17; /*0x5699a6*/
@@ -7623,7 +7623,7 @@ void Gap2Recv_569760::DestroyCliffMap(int a2, int a3, IUnknown * aP3) {
           v19->level[0] += 4; /*0x5699bf*/
           v20 = *CellStruct::Add((CellStruct *)v77, &v73, &dword_89F698); /*0x5699d3*/
           *(unsigned int *)v71 = v20; /*0x5699d5*/
-          v21 = (__int16)v20 + (SHIWORD(v20) << 9); /*0x5699e4*/
+          v21 = (__int16)v20 + ((short)(((v20) >> 16) & 0xFFFF) << 9); /*0x5699e4*/
           if ( v21 >= 0x40000 || (v22 = *(CellClass **)(dword_87F924 + 4 * v21)) == 0 ) /*0x5699fa*/
           {
             dword_ABDC74 = v20; /*0x5699fc*/
@@ -7709,7 +7709,7 @@ LABEL_85:
     v29->level[0] += 4; /*0x569b8c*/
     v30 = *CellStruct::Add((CellStruct *)v77, &v74, &dword_89F690); /*0x569ba0*/
     *(unsigned int *)v71 = v30; /*0x569ba2*/
-    v31 = (__int16)v30 + (SHIWORD(v30) << 9); /*0x569bb1*/
+    v31 = (__int16)v30 + ((short)(((v30) >> 16) & 0xFFFF) << 9); /*0x569bb1*/
     if ( v31 >= 0x40000 || (v32 = *(CellClass **)(dword_87F924 + 4 * v31)) == 0 ) /*0x569bc7*/
     {
       dword_ABDC74 = v30; /*0x569bc9*/
@@ -7718,7 +7718,7 @@ LABEL_85:
     v32->level[0] += 4; /*0x569be2*/
     v33 = *CellStruct::Add((CellStruct *)v77, &v75, &dword_89F6A0); /*0x569bf6*/
     *(unsigned int *)v71 = v33; /*0x569bf8*/
-    v34 = (__int16)v33 + (SHIWORD(v33) << 9); /*0x569c07*/
+    v34 = (__int16)v33 + ((short)(((v33) >> 16) & 0xFFFF) << 9); /*0x569c07*/
     if ( v34 >= 0x40000 || (v35 = *(CellClass **)(dword_87F924 + 4 * v34)) == 0 ) /*0x569c1d*/
     {
       dword_ABDC74 = v33; /*0x569c1f*/
@@ -7783,7 +7783,7 @@ LABEL_44:
       v83 = a2->q024; /*0x569e07*/
       v78 = ((__int16)a2->q024 << 8) + 128; /*0x569e10*/
       v46 = dword_ABDE88 * a2->u8_11B; /*0x569e1b*/
-      v79 = (SHIWORD(v83) << 8) + 128; /*0x569e2e*/
+      v79 = ((short)(((v83) >> 16) & 0xFFFF) << 8) + 128; /*0x569e2e*/
       v80 = v46; /*0x569e36*/
       Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v78, &v75); /*0x569e42*/
       v47 = v76; /*0x569e4b*/
@@ -7824,8 +7824,8 @@ LABEL_44:
         }
         v70 = v44->smudgeTypeIndex; /*0x569f03*/
         LOWORD(v84) = LOWORD(dword_89F688[a3 & 7]) + v70; /*0x569f16*/
-        HIWORD(v84) = HIWORD(dword_89F688[a3 & 7]) + HIWORD(v70); /*0x569f1e*/
-        v52 = SHIWORD(v84) << 9; /*0x569f2a*/
+        HIWORD(v84) = HIWORD(dword_89F688[a3 & 7]) + (((v70) >> 16) & 0xFFFF); /*0x569f1e*/
+        v52 = (short)(((v84) >> 16) & 0xFFFF) << 9; /*0x569f2a*/
         v10 = (__int16)v84 + v52 < 0; /*0x569f2d*/
         v53 = (__int16)v84 + v52; /*0x569f2d*/
         *(unsigned int *)v77 = v84; /*0x569f2f*/
@@ -7949,8 +7949,8 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
         while ( 1 ) /*0x56a0dd*/
         {
           v9 = (unsigned int *)this->M316; /*0x56a0dd*/
-          HIWORD(v31) = result; /*0x56a0e3*/
-          LOWORD(v31) = v6; /*0x56a0ed*/
+          (v31) = ((v31) & ~(0xFFFF << 16)) | (((result) & 0xFFFF) << 16); /*0x56a0e3*/
+          (v31) = ((v31) & ~0xFFFF) | ((v6) & 0xFFFF); /*0x56a0ed*/
           if ( v9[(__int16)v6 + v8] ) /*0x56a0f2*/
           {
             v10 = v34 + (__int16)v6; /*0x56a101*/
@@ -7975,11 +7975,11 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
               if ( v13 == v4 + 4 ) /*0x56a1a0*/
               {
                 Cell::SetTileType((__int16 *)&v31, v4 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x56a1bd*/
-                v14 = HIWORD(v31) + *(&dword_89F6A0 + 1); /*0x56a1d5*/
+                v14 = (((v31) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1); /*0x56a1d5*/
                 LOWORD(v35) = dword_89F6A0 + v31; /*0x56a1da*/
-                HIWORD(v35) = HIWORD(v31) + *(&dword_89F6A0 + 1); /*0x56a1e8*/
+                HIWORD(v35) = (((v31) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1); /*0x56a1e8*/
                 v15 = dword_89F6A0 + v31; /*0x56a1ed*/
-                v16 = (__int16)(dword_89F6A0 + v31) + ((__int16)(HIWORD(v31) + *(&dword_89F6A0 + 1)) << 9); /*0x56a1f1*/
+                v16 = (__int16)(dword_89F6A0 + v31) + ((__int16)((((v31) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1)) << 9); /*0x56a1f1*/
                 if ( v16 >= 0x40000 || (v17 = *(CellClass **)(dword_87F924 + 4 * v16)) == 0 ) /*0x56a208*/
                 {
                   dword_ABDC74 = (int)v35; /*0x56a20a*/
@@ -8023,7 +8023,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
                 v22 = *CellStruct::Add((CellStruct *)&v31, &v41, dword_89F688); /*0x56a386*/
                 v39 = v22; /*0x56a388*/
                 v38 = v22; /*0x56a38c*/
-                v23 = (__int16)v22 + (SHIWORD(v22) << 9); /*0x56a39b*/
+                v23 = (__int16)v22 + ((short)(((v22) >> 16) & 0xFFFF) << 9); /*0x56a39b*/
                 if ( v23 >= 0x40000 || (v24 = *(CellClass **)(dword_87F924 + 4 * v23)) == 0 ) /*0x56a3b1*/
                 {
                   dword_ABDC74 = v22; /*0x56a3b3*/
@@ -8032,7 +8032,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
                 v24->level[0] += 4; /*0x56a3d0*/
                 v25 = *CellStruct::Add((CellStruct *)&v38, &v42, &dword_89F690); /*0x56a3e0*/
                 v39 = v25; /*0x56a3e2*/
-                v26 = (__int16)v25 + (SHIWORD(v25) << 9); /*0x56a3f1*/
+                v26 = (__int16)v25 + ((short)(((v25) >> 16) & 0xFFFF) << 9); /*0x56a3f1*/
                 if ( v26 >= 0x40000 || (v27 = *(CellClass **)(dword_87F924 + 4 * v26)) == 0 ) /*0x56a407*/
                 {
                   dword_ABDC74 = v25; /*0x56a409*/
@@ -8055,7 +8055,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
           if ( v6 >= v29 ) /*0x56a48c*/
             break; /*0x56a48c*/
           v8 = v34; /*0x56a0d5*/
-          LOWORD(result) = v33; /*0x56a0d9*/
+          (result) = ((result) & ~0xFFFF) | ((v33) & 0xFFFF); /*0x56a0d9*/
         }
         result = v33; /*0x56a492*/
       }
@@ -8172,13 +8172,13 @@ void Gap2Recv_56A4C0::FlattenCliffMap(void* a2) {
                   if ( v14 == g_TerrainSoundTable2 + 4 ) /*0x56a6ba*/
                   {
                     Cell::SetTileType((__int16 *)&a2, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x56a6d2*/
-                    v15 = HIWORD(a2) + *(&dword_89F6A0 + 1); /*0x56a6ea*/
-                    LOWORD(v36) = dword_89F6A0 + (unsigned short)a2; /*0x56a6ef*/
+                    v15 = (((a2) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1); /*0x56a6ea*/
+                    (v36) = ((v36) & ~0xFFFF) | ((dword_89F6A0 + (unsigned short)a2) & 0xFFFF); /*0x56a6ef*/
                     v16 = dword_89F6A0 + (unsigned short)a2; /*0x56a702*/
-                    v17 = (__int16)(dword_89F6A0 + (unsigned short)a2) + ((__int16)(HIWORD(a2) + *(&dword_89F6A0 + 1)) << 9); /*0x56a706*/
+                    v17 = (__int16)(dword_89F6A0 + (unsigned short)a2) + ((__int16)((((a2) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1)) << 9); /*0x56a706*/
                     if ( v17 >= 0x40000 || (v18 = *(CellClass **)(dword_87F924 + 4 * v17)) == 0 ) /*0x56a71d*/
                     {
-                      HIWORD(v36) = HIWORD(a2) + *(&dword_89F6A0 + 1); /*0x56a6fd*/
+                      HIWORD(v36) = (((a2) >> 16) & 0xFFFF) + *(&dword_89F6A0 + 1); /*0x56a6fd*/
                       dword_ABDC74 = v36; /*0x56a71f*/
                       v18 = &unk_ABDC50; /*0x56a725*/
                     }
@@ -8221,14 +8221,14 @@ void Gap2Recv_56A4C0::FlattenCliffMap(void* a2) {
                   if ( v14 == g_TerrainSoundConfig + 4 ) /*0x56a82e*/
                   {
                     Cell::SetTileType((__int16 *)&a2, g_TerrainSoundConfig + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x56a84b*/
-                    v23 = HIWORD(a2) + HIWORD(dword_89F688[0]); /*0x56a863*/
+                    v23 = (((a2) >> 16) & 0xFFFF) + HIWORD(dword_89F688[0]); /*0x56a863*/
                     LOWORD(v39) = LOWORD(dword_89F688[0]) + (unsigned short)a2; /*0x56a868*/
                     v24 = LOWORD(dword_89F688[0]) + (unsigned short)a2; /*0x56a87b*/
                     v25 = (__int16)(LOWORD(dword_89F688[0]) + (unsigned short)a2) /*0x56a87f*/
-                        + ((__int16)(HIWORD(a2) + HIWORD(dword_89F688[0])) << 9);
+                        + ((__int16)((((a2) >> 16) & 0xFFFF) + HIWORD(dword_89F688[0])) << 9);
                     if ( v25 >= 0x40000 || (v26 = *(CellClass **)(dword_87F924 + 4 * v25)) == 0 ) /*0x56a896*/
                     {
-                      HIWORD(v39) = HIWORD(a2) + HIWORD(dword_89F688[0]); /*0x56a876*/
+                      HIWORD(v39) = (((a2) >> 16) & 0xFFFF) + HIWORD(dword_89F688[0]); /*0x56a876*/
                       dword_ABDC74 = v39; /*0x56a898*/
                       v26 = &unk_ABDC50; /*0x56a89e*/
                     }
@@ -8531,7 +8531,7 @@ LABEL_12:
   if ( *aP1 < (__int16)*i ) /*0x56da8b*/
     goto LABEL_12; /*0x56da8b*/
   v7 = aP1[1] - SHIWORD(v10); /*0x56da98*/
-  if ( (int)((HIDWORD(v7) ^ v7) - HIDWORD(v7)) > a3 ) /*0x56daa3*/
+  if ( (int)(((((v7) >> 32) & 0xFFFFFFFFu) ^ v7) - (((v7) >> 32) & 0xFFFFFFFFu)) > a3 ) /*0x56daa3*/
     goto LABEL_12; /*0x56daa3*/
   return a4; /*0x56dab9*/
 
@@ -8554,7 +8554,7 @@ char Gap2Recv_56DB70::InvalidateTileRegionMap(IUnknown * aP1) {
   if ( result == -1 /*0x56dba2*/
     && (MapClass::ProcessRegion((MapClass *)this), result = GetRegionMap(this, aP1, 3, 0), v5 = result, result == -1) )
   {
-    LOBYTE(result) = 0; /*0x56dba6*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x56dba6*/
   }
   else
   {
@@ -8586,7 +8586,7 @@ char Gap2Recv_56DB70::InvalidateTileRegionMap(IUnknown * aP1) {
       }
       while ( result != -1 ); /*0x56dc0f*/
     }
-    LOBYTE(result) = v10; /*0x56dc12*/
+    (result) = ((result) & ~0xFF) | ((v10) & 0xFF); /*0x56dc12*/
   }
   return result; /*0x56dba4*/
 
@@ -9102,7 +9102,7 @@ LABEL_18:
       v37 = v12; /*0x580fd2*/
       if ( v11 >= v38 ) /*0x580fd6*/
         goto LABEL_37; /*0x580fd6*/
-      LOWORD(v8) = v35; /*0x580c55*/
+      (v8) = ((v8) & ~0xFFFF) | ((v35) & 0xFFFF); /*0x580c55*/
     }
     v13 = &v61[2 * v7 + 2]; /*0x580c63*/
     HIWORD(v43) = v8 - v11; /*0x580c6a*/
@@ -9855,7 +9855,7 @@ int Gap2Recv_584E50::UpdateCellConnectivityGraph(void* v56) {
   v4 = v56[1]; /*0x584e5f*/
   *(unsigned int *)v50 = v3; /*0x584e62*/
   *(unsigned int *)v51 = v4; /*0x584e66*/
-  v5 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x584e75*/
+  v5 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x584e75*/
   if ( v5 < 0x40000 && (v6 = *(Cell **)(dword_87F924 + 4 * v5)) != 0 ) /*0x584e8b*/
   {
     v7 = v6; /*0x584e8d*/
@@ -10071,7 +10071,7 @@ int Gap2Recv_5851B0::BuildTileAdjacencyTable(IUnknown * aP1) {
   v4 = aP1[1]; /*0x5851bf*/
   *(unsigned int *)v59 = v3; /*0x5851c2*/
   *(unsigned int *)v60 = v4; /*0x5851c6*/
-  v5 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x5851d5*/
+  v5 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x5851d5*/
   if ( v5 < 0x40000 && (v6 = *(Cell **)(dword_87F924 + 4 * v5)) != 0 ) /*0x5851eb*/
   {
     v7 = v6; /*0x5851ed*/
@@ -10338,10 +10338,10 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
       v21 = this->M244; /*0x585b14*/
       v35 = *v20; /*0x585b1a*/
       aP1 = v35; /*0x585b1e*/
-      v22 = SHIWORD(v35) + (__int16)v35; /*0x585b2a*/
+      v22 = (short)(((v35) >> 16) & 0xFFFF) + (__int16)v35; /*0x585b2a*/
       if ( v22 > v21 /*0x585b56*/
-        && (__int16)v35 - SHIWORD(v35) < v21
-        && SHIWORD(v35) - (__int16)v35 < v21
+        && (__int16)v35 - (short)(((v35) >> 16) & 0xFFFF) < v21
+        && (short)(((v35) >> 16) & 0xFFFF) - (__int16)v35 < v21
         && v22 <= v21 + 2 * this->M248 )
       {
         CellData = Tactical::GetCellData((Tactical *)&aP1); /*0x585b69*/
@@ -10389,8 +10389,8 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
   {
     v29 = *(unsigned int *)(*(unsigned int *)&v41.u16_4 + 4 * v28); /*0x585c57*/
     v36 = v29; /*0x585c5a*/
-    v30 = SHIWORD(v29) - 1; /*0x585c63*/
-    v31 = SHIWORD(v29) + 2; /*0x585c66*/
+    v30 = (short)(((v29) >> 16) & 0xFFFF) - 1; /*0x585c63*/
+    v31 = (short)(((v29) >> 16) & 0xFFFF) + 2; /*0x585c66*/
     if ( v30 < v31 ) /*0x585c6b*/
     {
       v32 = (__int16)v29 + 2; /*0x585c73*/
@@ -10467,7 +10467,7 @@ void Gap2Recv_5868A0::UpdateAreaConnectivityMap(IUnknown * v35) {
   v7 = *v35 < *v35 + v35[2]; /*0x5868ba*/
   Block = 0; /*0x5868bc*/
   v12 = 0; /*0x5868c0*/
-  LOWORD(v13) = 1; /*0x5868c4*/
+  (v13) = ((v13) & ~0xFFFF) | ((1) & 0xFFFF); /*0x5868c4*/
   v10 = (int)&vt_DynamicVectorClass_Cell; /*0x5868cd*/
   v15 = 10; /*0x5868d5*/
   v14 = 0; /*0x5868d9*/
@@ -10488,7 +10488,7 @@ LABEL_12:
       HIWORD(v16) = v8; /*0x5868f5*/
       if ( v14 < v4 ) /*0x5868fc*/
         goto LABEL_9; /*0x5868fc*/
-      if ( !BYTE1(v13) && v4 || v6 <= 0 ) /*0x58690c*/
+      if ( !(((v13) >> 8) & 0xFF) && v4 || v6 <= 0 ) /*0x58690c*/
         goto LABEL_11; /*0x58690c*/
       if ( (*(unsigned __int8 (**)(int *, int, unsigned int))(v10 + 8))(&v10, v6 + v4, 0) ) /*0x58691b*/
       {
@@ -10509,7 +10509,7 @@ LABEL_13:
   v10 = (int)&vt_VectorClass_Cell; /*0x58696c*/
   if ( Block ) /*0x586977*/
   {
-    if ( BYTE1(v13) ) /*0x58697f*/
+    if ( (((v13) >> 8) & 0xFF) ) /*0x58697f*/
       __3_YAXPAX_Z(Block); /*0x586982*/
   }
 
@@ -10825,7 +10825,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
       v14 = v13 + 1; /*0x5917fa*/
       v15 = (v13 + 1) / 2 + 2; /*0x591800*/
       v16 = v11 + 1; /*0x591803*/
-      LODWORD(v73) = v16; /*0x591806*/
+      (v73) = ((v73) & 0xFFFFFFFF00000000ull) | ((v16) & 0xFFFFFFFFull); /*0x591806*/
       v69.MapSeed_field_0x04 = v12 - (v13 + 1) / 2; /*0x59180d*/
       MapSeed_field_0x10 = v15 + v69.MapSeed_field_0x04 + 3; /*0x591811*/
       v69.MapSeed_field_0x10 = MapSeed_field_0x10; /*0x591817*/
@@ -10860,7 +10860,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
         v4 = a3; /*0x59188f*/
       }
       v21 = *v4 + 1; /*0x59189b*/
-      LODWORD(v73) = v21; /*0x59189c*/
+      (v73) = ((v73) & 0xFFFFFFFF00000000ull) | ((v21) & 0xFFFFFFFFull); /*0x59189c*/
       v69.MapSeed_field_0x04 = v75; /*0x5918a0*/
       v22 = v15 + v75 + 2; /*0x5918a4*/
       v69.MapSeed_field_0x10 = v22; /*0x5918aa*/
@@ -10895,7 +10895,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
       }
       v26 = v74; /*0x591922*/
       v27 = *a2 - v74; /*0x59192c*/
-      LODWORD(v73) = v74 + 2; /*0x59192e*/
+      (v73) = ((v73) & 0xFFFFFFFF00000000ull) | ((v74 + 2) & 0xFFFFFFFFull); /*0x59192e*/
       v28 = v27 - 1; /*0x59193b*/
       v30 = a2[1] + 1; /*0x59193e*/
       v69.MapSeed_field_0x08 = a2[1] - v14 / 2; /*0x591942*/
@@ -10931,7 +10931,7 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
         while ( MapSeed_field_0x08 < v69.MapSeed_field_0x10 ); /*0x5919bd*/
       }
       v33 = v26 + 2; /*0x5919c3*/
-      LODWORD(v73) = v26 + 2; /*0x5919c6*/
+      (v73) = ((v73) & 0xFFFFFFFF00000000ull) | ((v26 + 2) & 0xFFFFFFFFull); /*0x5919c6*/
       v34 = a3[1]; /*0x5919ca*/
       v35 = *a3 - v26; /*0x5919d1*/
       v36 = v14 / 2 + v34; /*0x5919d3*/
@@ -11020,9 +11020,9 @@ char Gap2Recv_591740::PlaceMapSeedCityArea(void* a2, void* a3, void* a4) {
               v70 = *a2; /*0x591b86*/
               v71 = v54; /*0x591b8b*/
               v72[0] = v49 + v70; /*0x591b9a*/
-              v72[1] = WORD1(v73) + v54; /*0x591ba9*/
+              v72[1] = (((v73) >> 16) & 0xFFFF) + v54; /*0x591ba9*/
               LOWORD(v69.MapSeed_field_0x0C) = LOWORD(v69.MapSeed_field_0x18) + v49 + v70; /*0x591bb8*/
-              HIWORD(v69.MapSeed_field_0x0C) = WORD1(v73) + v54 + HIWORD(v69.MapSeed_field_0x18); /*0x591bc3*/
+              HIWORD(v69.MapSeed_field_0x0C) = (((v73) >> 16) & 0xFFFF) + v54 + HIWORD(v69.MapSeed_field_0x18); /*0x591bc3*/
               LOWORD(v69.MapSeed_field_0x10) = MapSeed_field_0x04 + LOWORD(v69.MapSeed_field_0x0C); /*0x591bd2*/
               HIWORD(v69.MapSeed_field_0x10) = HIWORD(v69.MapSeed_field_0x0C); /*0x591bd7*/
               v69.MapSeed_field_0x14 = v69.MapSeed_field_0x10; /*0x591be6*/
@@ -11181,7 +11181,7 @@ char MapSeedClass::PlaceCityBlockVariant(int16_t * a2, int16_t * a3, ObjectClass
   v60 = v56; /*0x592b68*/
   v13 = v12 + 7; /*0x592b6c*/
   v54 = v12 + 7; /*0x592b71*/
-  if ( !__OFSUB__(v12, v12 + 7) ) /*0x592b75*/
+  if ( !(((((v12) ^ (v12 + 7)) & ((v12) ^ ((v12) - (v12 + 7))))) < 0) ) /*0x592b75*/
   {
     v52 = (int)v56 + v58; /*0x592b81*/
     do /*0x592c14*/
@@ -11256,7 +11256,7 @@ char MapSeedClass::PlaceCityBlockVariant(int16_t * a2, int16_t * a3, ObjectClass
   v60 = v20; /*0x592ce4*/
   v22 = (int16_t *)(v21 + 2); /*0x592ce8*/
   a3 = (int16_t *)(v21 + 2); /*0x592ced*/
-  if ( !__OFSUB__(v21, v21 + 2) ) /*0x592cf1*/
+  if ( !(((((v21) ^ (v21 + 2)) & ((v21) ^ ((v21) - (v21 + 2))))) < 0) ) /*0x592cf1*/
   {
     do /*0x592d70*/
     {
@@ -11289,7 +11289,7 @@ char MapSeedClass::PlaceCityBlockVariant(int16_t * a2, int16_t * a3, ObjectClass
   v25 = (int16_t *)(v23 - 1); /*0x592d79*/
   v60 = (int16_t *)(v23 - 1); /*0x592d7e*/
   a3 = (int16_t *)(v23 + 1); /*0x592d82*/
-  if ( !__OFSUB__(v23, v23 + 1) ) /*0x592d86*/
+  if ( !(((((v23) ^ (v23 + 1)) & ((v23) ^ ((v23) - (v23 + 1))))) < 0) ) /*0x592d86*/
   {
     do /*0x592de9*/
     {
@@ -11861,7 +11861,7 @@ char MapSeedClass::PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClas
   v63 = v11; /*0x593c08*/
   v17 = v15 + 7; /*0x593c0c*/
   v56 = v15 + 7; /*0x593c11*/
-  if ( !__OFSUB__(v15, v15 + 7) ) /*0x593c15*/
+  if ( !(((((v15) ^ (v15 + 7)) & ((v15) ^ ((v15) - (v15 + 7))))) < 0) ) /*0x593c15*/
   {
     a3 = (int16_t *)(v11 + v61); /*0x593c1d*/
     do /*0x593c88*/
@@ -11930,11 +11930,11 @@ char MapSeedClass::PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClas
   v63 = v24; /*0x593d12*/
   v26 = (int16_t *)(v25 + 2); /*0x593d16*/
   a3 = (int16_t *)(v25 + 2); /*0x593d1b*/
-  if ( !__OFSUB__(v25, v25 + 2) ) /*0x593d1f*/
+  if ( !(((((v25) ^ (v25 + 2)) & ((v25) ^ ((v25) - (v25 + 2))))) < 0) ) /*0x593d1f*/
   {
     do /*0x593d80*/
     {
-      if ( !__OFSUB__(v24, v24 + 1) ) /*0x593d26*/
+      if ( !(((((v24) ^ (v24 + 1)) & ((v24) ^ ((v24) - (v24 + 1))))) < 0) ) /*0x593d26*/
       {
         do /*0x593d73*/
         {
@@ -12095,7 +12095,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   }
   while ( v3 > 2 ); /*0x5948f1*/
   NeedsSaveOrLink = this->NeedsSaveOrLink; /*0x5948f3*/
-  LODWORD(v21) = 0; /*0x5948f6*/
+  (v21) = ((v21) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x5948f6*/
   for ( i = v3 + 12 * NeedsSaveOrLink + 3 * NeedsSaveOrLink; v28 < i; LODWORD(v21) = v21 + 1 ) /*0x59490a*/
   {
     if ( (int)v21 >= 300 ) /*0x594918*/
@@ -12484,7 +12484,7 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
             i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
       {
         v50 = *(unsigned int *)(i + 36); /*0x5a206b*/
-        *(unsigned int *)(80 * ((__int16)v50 + g_MapCellWidth * SHIWORD(v50)) + g_MissionQueueFrame.localVariables[163] + 60) = 0; /*0x5a208c*/
+        *(unsigned int *)(80 * ((__int16)v50 + g_MapCellWidth * (short)(((v50) >> 16) & 0xFFFF)) + g_MissionQueueFrame.localVariables[163] + 60) = 0; /*0x5a208c*/
       }
       v11 = v2 + 1; /*0x5a20a6*/
       v12 = 0; /*0x5a20a7*/
@@ -12500,7 +12500,7 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
         }
         while ( v12 <= *(unsigned int *)v6 ); /*0x5a20c1*/
       }
-      v14 = SHIWORD(v47); /*0x5a20c3*/
+      v14 = (short)(((v47) >> 16) & 0xFFFF); /*0x5a20c3*/
       *v6 = 0; /*0x5a20c8*/
       *v4 = v3; /*0x5a20ca*/
       v4[1] = 0; /*0x5a20cd*/
@@ -12550,7 +12550,7 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
             if ( v45 >= 400 ) /*0x5a2193*/
               break; /*0x5a2193*/
             v23 = v46; /*0x5a2199*/
-            *(unsigned char *)(80 * (SLOWORD(v46->field_0) + g_MapCellWidth * SHIWORD(v46->field_0)) /*0x5a21b9*/
+            *(unsigned char *)(80 * ((short)((v46->field_0) & 0xFFFF) + g_MapCellWidth * (short)(((v46->field_0) >> 16) & 0xFFFF)) /*0x5a21b9*/
                      + g_MissionQueueFrame.localVariables[163]
                      + 69) = 1;
             v24 = 0; /*0x5a21c2*/
@@ -12560,12 +12560,12 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
             {
               v52 = *CellStruct::Add(v23, &v57, (unsigned short *)(4 * (v24 & 7) + 9041544)); /*0x5a21ef*/
               *(unsigned int *)v43 = v52; /*0x5a21f3*/
-              v26 = SHIWORD(v52) + (__int16)v52; /*0x5a21ff*/
+              v26 = (short)(((v52) >> 16) & 0xFFFF) + (__int16)v52; /*0x5a21ff*/
               if ( v26 > g_MissionQueueFrame.localVariables[160] /*0x5a2243*/
-                && (__int16)v52 - SHIWORD(v52) < g_MissionQueueFrame.localVariables[160]
-                && SHIWORD(v52) - (__int16)v52 < g_MissionQueueFrame.localVariables[160]
+                && (__int16)v52 - (short)(((v52) >> 16) & 0xFFFF) < g_MissionQueueFrame.localVariables[160]
+                && (short)(((v52) >> 16) & 0xFFFF) - (__int16)v52 < g_MissionQueueFrame.localVariables[160]
                 && v26 <= g_MissionQueueFrame.localVariables[161]
-                && !*(unsigned int *)(80 * ((__int16)v52 + g_MapCellWidth * SHIWORD(v52))
+                && !*(unsigned int *)(80 * ((__int16)v52 + g_MapCellWidth * (short)(((v52) >> 16) & 0xFFFF))
                               + g_MissionQueueFrame.localVariables[163]
                               + 60) )
               {
@@ -12574,7 +12574,7 @@ char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
                 {
                   v28 = v43[0]; /*0x5a226d*/
                   v29 = v53; /*0x5a2271*/
-                  v30 = SHIWORD(v47); /*0x5a2275*/
+                  v30 = (short)(((v47) >> 16) & 0xFFFF); /*0x5a2275*/
                   *v25 = *(float *)v43; /*0x5a227a*/
                   v52 = (v28 - v29) * (v28 - v29) + (v43[1] - v30) * (v43[1] - v30); /*0x5a2297*/
                   __asm /*0x5a229b*/
@@ -12740,7 +12740,7 @@ void Gap2Recv_5A2F50::SmoothTerrainMap() {
       v15 = *((unsigned int *)_ESI + 3); /*0x5a30c5*/
       *((unsigned int *)_ESI + 4) = v60; /*0x5a30cc*/
       *((unsigned int *)_ESI + 3) = v15; /*0x5a30cf*/
-      *((unsigned int *)_ESI + 5) = HIDWORD(v60); /*0x5a30d2*/
+      *((unsigned int *)_ESI + 5) = (((v60) >> 32) & 0xFFFFFFFFu); /*0x5a30d2*/
     }
     else
     {
@@ -13222,7 +13222,7 @@ LABEL_24:
     {
       v19 = *(unsigned int *)(v13 + 36); /*0x5a3771*/
       LOWORD(v32) = v19 + *v18; /*0x5a3787*/
-      HIWORD(v32) = HIWORD(v19) + v18[1]; /*0x5a3790*/
+      HIWORD(v32) = (((v19) >> 16) & 0xFFFF) + v18[1]; /*0x5a3790*/
       *(unsigned int *)v35 = v32; /*0x5a379f*/
       if ( *((unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v35) + 284) != v17 + 5 ) /*0x5a37b5*/
         v28 = 0; /*0x5a37b7*/
@@ -14041,7 +14041,7 @@ LABEL_22:
           v33 = v29 + (unsigned __int16)*v30++; /*0x5c8297*/
           v34 = v33 + v31 * v32; /*0x5c829c*/
           *(v30 - 1) = v34; /*0x5c829e*/
-          v29 = HIWORD(v34); /*0x5c82a5*/
+          v29 = (((v34) >> 16) & 0xFFFF); /*0x5c82a5*/
           --v50; /*0x5c82ac*/
         }
         while ( v50 ); /*0x5c82b0*/
@@ -14062,7 +14062,7 @@ LABEL_22:
             v38 = *((unsigned __int16 *)v35 - 1) - v37 - v51; /*0x5c82f4*/
             *((unsigned short *)v35 - 1) = v38; /*0x5c82f6*/
             --v36; /*0x5c82ff*/
-            v51 = BYTE2(v38) & 1; /*0x5c8300*/
+            v51 = (((v38) >> 16) & 0xFF) & 1; /*0x5c8300*/
           }
           while ( v36 ); /*0x5c8304*/
           if ( (v38 & 0x10000) != 0 ) /*0x5c8308*/
@@ -16992,7 +16992,7 @@ LABEL_13:
   if ( !(unsigned char)v22 ) /*0x62fbd7*/
   {
     if ( !((int)MEMORY[0xA8ED84] % *(unsigned int *)(this->M172 + 668)) /*0x62fc0e*/
-      || (v22 = (int)MEMORY[0xA8ED84] / 3, !((int)MEMORY[0xA8ED84] % 3)) && (LOBYTE(v22) = v37) != 0 )
+      || (v22 = (int)MEMORY[0xA8ED84] / 3, !((int)MEMORY[0xA8ED84] % 3)) && ((v22) = ((v22) & ~0xFF) | ((v37) & 0xFF)) != 0 )
     {
       v23 = &this->M156; /*0x62fc1e*/
       v24 = (int)MEMORY[0xA8ED84] % 500; /*0x62fc27*/
@@ -18420,7 +18420,7 @@ int Gap2Recv_643720::RenderBuildingProductionButton(int a2, ProgressScreenClass 
     v35 = v23; /*0x6439ab*/
   }
   v36 = v8 + v20; /*0x6439bb*/
-  LoadScreen::RenderProgressBackground(COERCE_DOUBLE(__PAIR64__(v17, v40[0])), v39, g_DSurface_Hidden, a2); /*0x6439d3*/
+  LoadScreen::RenderProgressBackground(COERCE_DOUBLE((((v17 & 0xFFFFFFFFull)) << 32 | (v40[0] & 0xFFFFFFFFull))), v39, g_DSurface_Hidden, a2); /*0x6439d3*/
   if ( a6 ) /*0x6439dc*/
   {
     PlayerSide = SessionClass::GetPlayerSide(*(unsigned int *)(MEMORY[0xA8DA78] + 4 * a5)); /*0x6439ef*/
@@ -19272,9 +19272,9 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
         LOWORD(owningHouseIndex) = (unsigned __int8)(BYTE2(_ESI[1].abstractFlags) >> g_BitMask_Red); /*0x65985f*/
         WORD2(v22) = (unsigned __int8)(BYTE1(_ESI[1].abstractFlags) >> g_BitMask_Blue); /*0x659876*/
         HIDWORD(v22) <<= g_BitMask_Green; /*0x65987e*/
-        v23 = HIDWORD(v22) | (owningHouseIndex << g_BitShift_Blue); /*0x65988e*/
+        v23 = (((v22) >> 32) & 0xFFFFFFFFu) | (owningHouseIndex << g_BitShift_Blue); /*0x65988e*/
         WORD2(v22) = (unsigned __int8)(LOBYTE(_ESI[1].abstractFlags) >> g_BitShift_Green_0); /*0x659893*/
-        owningHouseIndex = (HIDWORD(v22) << g_BitShift_Red) | v23; /*0x6598a3*/
+        owningHouseIndex = ((((v22) >> 32) & 0xFFFFFFFFu) << g_BitShift_Red) | v23; /*0x6598a3*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, _ESI->location, &v38); /*0x6598a5*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, &_ESI->lineTrailer, v37); /*0x6598bc*/
         v41[0] = DSurface_ViewBounds.field_0; /*0x6598d2*/
@@ -20079,7 +20079,7 @@ char Gap2Recv_660050::RenderGradientTrapezoid() {
     case 0: /*0x660070*/
     case 3: /*0x660070*/
     case 4: /*0x660070*/
-      LOWORD(v36) = 255; /*0x660077*/
+      (v36) = ((v36) & ~0xFFFF) | ((255) & 0xFFFF); /*0x660077*/
       v2 = 255; /*0x660081*/
       v3 = -1; /*0x660086*/
       break; /*0x660089*/
@@ -20110,7 +20110,7 @@ LABEL_6:
     case 0: /*0x6600eb*/
     case 3: /*0x6600eb*/
     case 4: /*0x6600eb*/
-      LOWORD(v36) = 128; /*0x6600f2*/
+      (v36) = ((v36) & ~0xFFFF) | ((128) & 0xFFFF); /*0x6600f2*/
       v8 = 128; /*0x6600fc*/
       v9 = 0x80; /*0x660101*/
       break; /*0x660103*/
@@ -20899,11 +20899,11 @@ int Gap2Recv_66B900::ReadCrateRulesINI() {
     this->M5224 = v22; /*0x66bb67*/
     result = INIClass::ReadStringValue((INIClass *)v26, (unsigned __int8 *)aCraterules, aWatercrate, v23); /*0x66bb7c*/
     this->M5228 = result; /*0x66bb82*/
-    LOBYTE(result) = 1; /*0x66bb89*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x66bb89*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x66bb96*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x66bb96*/
   }
   return result; /*0x66bb88*/
 
@@ -22766,7 +22766,7 @@ int Gap2Recv_68FBB0::RenderScoreTypeText(int a2, int a3, ScoreScreen * aP3) {
         {
           if ( (unsigned char)v12 != 32 ) /*0x68fcc1*/
           {
-            LOWORD(v12) = (char)v12; /*0x68fcc6*/
+            (v12) = ((v12) & ~0xFFFF) | (((char)v12) & 0xFFFF); /*0x68fcc6*/
             v36[2] = (*(int (**)(unsigned int, int))(**&this->u32_C + 4))(this->u32_C, v12) /*0x68fcd5*/
                    + 1;
             v14 = this->u32_8; /*0x68fce3*/
@@ -22797,7 +22797,7 @@ LABEL_27:
             {
               if ( v4 + v20 >= a3 + 84 ) /*0x68fe40*/
               {
-                HIWORD(v21) = HIWORD(v33); /*0x68fe42*/
+                HIWORD(v21) = (((v33) >> 16) & 0xFFFF); /*0x68fe42*/
                 LOWORD(v21) = *(char *)(v33 + v13); /*0x68fe48*/
                 v38[2] = (*(int (**)(unsigned int *, unsigned __int16 *))(*v19 + 4))(v19, v21) + 1; /*0x68fe56*/
                 v22 = this->u32_8; /*0x68fe64*/
@@ -22885,7 +22885,7 @@ LABEL_27:
       {
         LOBYTE(v12) = *(unsigned char *)(v33 + a2 - 1); /*0x68fd39*/
         --v33; /*0x68fd43*/
-        LOWORD(v12) = (char)v12; /*0x68fd47*/
+        (v12) = ((v12) & ~0xFFFF) | (((char)v12) & 0xFFFF); /*0x68fd47*/
         v16 = (*(int (**)(unsigned int, int))(**&this->u32_C + 4))(this->u32_C, v12) + 1; /*0x68fd53*/
         v4 -= v16; /*0x68fd54*/
         v37[2] = v16; /*0x68fd56*/
@@ -23089,10 +23089,10 @@ char Gap2Recv_693440::ScrollMapEdge(void* a2) {
       {
         SystemMetrics = GetSystemMetrics(68); /*0x693489*/
         v5 = *a2 - this->M21840; /*0x69348f*/
-        if ( (int)((HIDWORD(v5) ^ v5) - HIDWORD(v5)) > 2 * SystemMetrics /*0x6934b4*/
+        if ( (int)(((((v5) >> 32) & 0xFFFFFFFFu) ^ v5) - (((v5) >> 32) & 0xFFFFFFFFu)) > 2 * SystemMetrics /*0x6934b4*/
           || (v6 = GetSystemMetrics(69),
               v7 = a2[1] - this->M21844,
-              (int)((HIDWORD(v7) ^ v7) - HIDWORD(v7)) > 2 * v6) )
+              (int)(((((v7) >> 32) & 0xFFFFFFFFu) ^ v7) - (((v7) >> 32) & 0xFFFFFFFFu)) > 2 * v6) )
         {
           this->M21848 = 1; /*0x6934b6*/
         }
@@ -24127,7 +24127,7 @@ char Gap2Recv_69E900::Helper_69E900(unsigned int a2) {
   if ( SubFile && a2 < *((__int16 *)SubFile + 3) && (v3 = (unsigned __int8 *)&SubFile[6 * a2 + 2]) != 0 ) /*0x69e91e*/
     return (unsigned __int8)(v3[8] & 2) >> 1; /*0x69e926*/
   else
-    LOBYTE(v4) = 0; /*0x69e92b*/
+    (v4) = ((v4) & ~0xFF) | ((0) & 0xFF); /*0x69e92b*/
   return v4; /*0x69e928*/
 
 }
@@ -24296,7 +24296,7 @@ int Gap2Recv_6B4100::Map_Get_6B4100() {
   int v17; // [esp+14h] [ebp-14h] BYREF
   v17 = occupant; /*0x6b4120*/
   int v2; // ecx
-  v2 = SHIWORD(occupant) - dword_8759AC; /*0x6b412c*/
+  v2 = (short)(((occupant) >> 16) & 0xFFFF) - dword_8759AC; /*0x6b412c*/
   int v3; // eax
   v3 = (__int16)occupant - dword_8759A8; /*0x6b4130*/
   int v4 = v2 * dword_8759A4 + v3; // esi /*0x6b4136*/
@@ -24326,10 +24326,10 @@ int Gap2Recv_6B4100::Map_Get_6B4100() {
   while ( v11 ); /*0x6b417c*/
   v17 = occupant; /*0x6b4186*/
   int v12; // ebx
-  v12 = SHIWORD(occupant) + (__int16)occupant; /*0x6b4192*/
+  v12 = (short)(((occupant) >> 16) & 0xFFFF) + (__int16)occupant; /*0x6b4192*/
   if ( v12 <= g_MissionQueueFrame.localVariables[160] /*0x6b41b1*/
-    || (__int16)occupant - SHIWORD(occupant) >= g_MissionQueueFrame.localVariables[160]
-    || SHIWORD(occupant) - (__int16)occupant >= g_MissionQueueFrame.localVariables[160]
+    || (__int16)occupant - (short)(((occupant) >> 16) & 0xFFFF) >= g_MissionQueueFrame.localVariables[160]
+    || (short)(((occupant) >> 16) & 0xFFFF) - (__int16)occupant >= g_MissionQueueFrame.localVariables[160]
     || v12 > g_MissionQueueFrame.localVariables[161] )
   {
     v13 = this; /*0x6b421f*/
@@ -27335,7 +27335,7 @@ char Gap2Recv_6EF110::DispatchTeamOrders(int a2, int a3) {
     v4 = v5; /*0x6ef2a9*/
   }
   while ( v5 ); /*0x6ef2ab*/
-  LOBYTE(v10) = v18; /*0x6ef2b1*/
+  (v10) = ((v10) & ~0xFF) | ((v18) & 0xFF); /*0x6ef2b1*/
   if ( v18 ) /*0x6ef2b7*/
   {
 LABEL_28:

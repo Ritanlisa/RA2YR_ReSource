@@ -1117,7 +1117,7 @@ LABEL_31:
               v61 = ++v75; /*0x4368a9*/
             }
             while ( v75 < 2 ); /*0x4368b1*/
-            LOBYTE(v48) = v76; /*0x4368b7*/
+            (v48) = ((v48) & ~0xFF) | ((v76) & 0xFF); /*0x4368b7*/
             if ( v76 ) /*0x4368bd*/
               LOBYTE(v48) = TeamClass::Update_0(*(TeamClass **)(v87 + 52), 35, v87, dword_89C4F0, 0, 0); /*0x4368d4*/
           }
@@ -1327,7 +1327,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        LOBYTE(result) = 1; /*0x443442*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1371,7 +1371,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        LOBYTE(result) = 1; /*0x443568*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1413,11 +1413,11 @@ int BuildingClass::HandleFactoryCommand() {
     dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4435e8*/
     result = ++*(unsigned int *)&dword_A802C8; /*0x4435fe*/
     dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x443604*/
-    LOBYTE(result) = 1; /*0x44360a*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x44360a*/
     return result; /*0x443615*/
   }
 LABEL_25:
-  LOBYTE(result) = 1; /*0x4436dd*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4436dd*/
   return result; /*0x443444*/
 
 }
@@ -1703,7 +1703,7 @@ LABEL_71:
                 }
                 v66 = (_AX & 0x4100) != 0; /*0x44650c*/
                 v67 = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this) > 0; /*0x446524*/
-                LOBYTE(v127) = v67; /*0x446529*/
+                (v127) = ((v127) & ~0xFF) | ((v67) & 0xFF); /*0x446529*/
                 if ( v66 ) /*0x44652d*/
                 {
                   v69 = (AnimTypeClass *)&this->Type->q1314; /*0x446535*/
@@ -1731,7 +1731,7 @@ LABEL_71:
                 }
                 v59 = (_AX & 0x4100) != 0; /*0x446493*/
                 v60 = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this) > 0; /*0x4464ab*/
-                BYTE4(v127) = v60; /*0x4464b0*/
+                (v127) = ((v127) & ~(0xFFull << 32)) | (((v60) & 0xFFull) << 32); /*0x4464b0*/
                 if ( v59 ) /*0x4464b4*/
                 {
                   v62 = (AnimTypeClass *)(this->Type + 5020); /*0x4464bc*/
@@ -1746,7 +1746,7 @@ LABEL_71:
                     v62 = (AnimTypeClass *)(v63 + 5036); /*0x4464cd*/
                 }
                 if ( v62 && LOBYTE(v62->vfptr) ) /*0x4464e1*/
-                  BuildingClass::PlayAnim(this, v61, v62, 16, v59, SHIDWORD(v127), 0); /*0x4464f4*/
+                  BuildingClass::PlayAnim(this, v61, v62, 16, v59, (int)(((v127) >> 32) & 0xFFFFFFFFu), 0); /*0x4464f4*/
               }
             }
             owner = this->owner; /*0x44656d*/
@@ -1841,7 +1841,7 @@ LABEL_71:
       }
       v26 = (BYTE1(_EAX) & 0x41) != 0; /*0x44619a*/
       v27 = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this) > 0; /*0x4461b2*/
-      BYTE4(v127) = v27; /*0x4461b7*/
+      (v127) = ((v127) & ~(0xFFull << 32)) | (((v27) & 0xFFull) << 32); /*0x4461b7*/
       if ( v26 ) /*0x4461bb*/
       {
         v29 = (AnimTypeClass *)&this->Type->q1424; /*0x4461c3*/
@@ -1856,7 +1856,7 @@ LABEL_71:
           v29 = (AnimTypeClass *)(v31 + 5172); /*0x4461d4*/
       }
       if ( v29 && LOBYTE(v29->vfptr) ) /*0x4461e4*/
-        BuildingClass::PlayAnim(this, v28, v29, 18, v26, SHIDWORD(v127), 0); /*0x4461f6*/
+        BuildingClass::PlayAnim(this, v28, v29, 18, v26, (int)(((v127) >> 32) & 0xFFFFFFFFu), 0); /*0x4461f6*/
       BuildingClass::GetHealthRatio(this); /*0x4461fd*/
       _EDX = dword_8871E0; /*0x446202*/
       __asm /*0x446208*/
@@ -1866,7 +1866,7 @@ LABEL_71:
       }
       v34 = (_AX & 0x4100) != 0; /*0x446213*/
       v35 = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this) > 0; /*0x44622b*/
-      BYTE4(v127) = v35; /*0x446230*/
+      (v127) = ((v127) & ~(0xFFull << 32)) | (((v35) & 0xFFull) << 32); /*0x446230*/
       if ( v34 ) /*0x446234*/
       {
         v37 = (AnimTypeClass *)&this->Type->q1028; /*0x44623c*/
@@ -1881,7 +1881,7 @@ LABEL_71:
           v37 = (AnimTypeClass *)(v38 + 4152); /*0x44624d*/
       }
       if ( v37 && LOBYTE(v37->vfptr) ) /*0x44625d*/
-        BuildingClass::PlayAnim(this, v36, v37, 3, v34, SHIDWORD(v127), 0); /*0x44626f*/
+        BuildingClass::PlayAnim(this, v36, v37, 3, v34, (int)(((v127) >> 32) & 0xFFFFFFFFu), 0); /*0x44626f*/
       BuildingClass::GetHealthRatio(this); /*0x446276*/
       _EDX = dword_8871E0; /*0x44627b*/
       __asm /*0x446281*/
@@ -1966,8 +1966,8 @@ LABEL_130:
     v85 = this->location[0]; /*0x44686e*/
     v86 = this->location[1]; /*0x446870*/
     v131 = this->location[2]; /*0x446876*/
-    LOWORD(v127) = v85 / 256; /*0x446886*/
-    WORD1(v127) = v86 / 256; /*0x44689e*/
+    (v127) = ((v127) & ~0xFFFF) | ((v85 / 256) & 0xFFFF); /*0x446886*/
+    (v127) = ((v127) & ~(0xFFFF << 16)) | (((v86 / 256) & 0xFFFF) << 16); /*0x44689e*/
     CreateTriggerClassIfFarEnough(12, (unsigned __int8)(v86 >> 31), v127); /*0x4468a8*/
   }
   if ( !(unsigned __int8)House::IsHumanPlayer((House *)this->owner) /*0x4468e1*/
@@ -2015,7 +2015,7 @@ LABEL_130:
       if ( !this->focus ) /*0x4469bc*/
       {
         vfptr = this->vfptr; /*0x4469ef*/
-        LODWORD(v127) = 0; /*0x4469f5*/
+        (v127) = ((v127) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x4469f5*/
         v91 = (__int16 *)(*(int (**)(BuildingClass *, int *))(vfptr + 440))(this, &v128); /*0x446a03*/
         v92 = *LayerClass::Pathfinding_Find( /*0x446a19*/
                  (Type *)&dword_87F7E8,
@@ -2035,10 +2035,10 @@ LABEL_130:
                  (__int16 *)&v127,
                  0,
                  0);
-        LOWORD(v127) = v92 + 2; /*0x446a30*/
-        WORD1(v127) = HIWORD(v92) + 2; /*0x446a35*/
+        (v127) = ((v127) & ~0xFFFF) | ((v92 + 2) & 0xFFFF); /*0x446a30*/
+        (v127) = ((v127) & ~(0xFFFF << 16)) | ((((((v92) >> 16) & 0xFFFF) + 2) & 0xFFFF) << 16); /*0x446a35*/
         v129 = v127; /*0x446a3e*/
-        if ( __PAIR32__(HIWORD(v92) + 2, v92 + 2) != g_TerrainTypeTable ) /*0x446a42*/
+        if ( (((((v92) >> 16) & 0xFFFF) + 2 & 0xFFFFu) << 16 | (v92 + 2 & 0xFFFFu)) != g_TerrainTypeTable ) /*0x446a42*/
           BuildingClass::SetRallyPoint((int)this, (__int16 *)&v129, 0); /*0x446a56*/
       }
     }
@@ -2067,7 +2067,7 @@ LABEL_130:
           LOWORD(v127) = *v94 / 256; /*0x446b38*/
           WORD1(v127) = v94[1] / 256; /*0x446b52*/
           v95 = v127 + dword_89F698; /*0x446b62*/
-          v96 = *(&dword_89F698 + 1) + WORD1(v127); /*0x446b65*/
+          v96 = *(&dword_89F698 + 1) + (((v127) >> 16) & 0xFFFF); /*0x446b65*/
           v97 = (int *)__2_YAPAXI_Z(0x8E8u); /*0x446b68*/
           if ( v97 /*0x446b97*/
             && (v98 = (unsigned int *)UnitClass::Construct(v97, *(unsigned int *)&this->Type->FreeUnit_d, (LPVOID)this->owner),
@@ -2080,19 +2080,19 @@ LABEL_130:
             if ( (*(unsigned __int8 (**)(unsigned int *, int *, int))(v100 + 216))(v98, &v129, 192) ) /*0x446bd2*/
               goto LABEL_173; /*0x446bd2*/
             location = this->location; /*0x446be0*/
-            HIDWORD(v127) = 0; /*0x446bea*/
+            (v127) = ((v127) & 0xFFFFFFFFull) | ((unsigned long long)((0) & 0xFFFFFFFFull) << 32); /*0x446bea*/
             v129 = this->location[0]; /*0x446bfa*/
             v130 = this->location[1]; /*0x446c08*/
             v131 = this->location[2]; /*0x446c13*/
-            LOWORD(v127) = v129 / 256; /*0x446c23*/
+            (v127) = ((v127) & ~0xFFFF) | ((v129 / 256) & 0xFFFF); /*0x446c23*/
             *(unsigned int *)((char *)&v127 + 2) = (unsigned __int16)(v130 / 256); /*0x446c3a*/
             v128 = v127; /*0x446c43*/
             v129 = this->location[0]; /*0x446c49*/
             v130 = this->location[1]; /*0x446c50*/
             v131 = this->location[2]; /*0x446c5b*/
-            LOWORD(v127) = v129 / 256; /*0x446c6b*/
+            (v127) = ((v127) & ~0xFFFF) | ((v129 / 256) & 0xFFFF); /*0x446c6b*/
             v102 = v99[433]; /*0x446c7d*/
-            WORD1(v127) = v130 / 256; /*0x446c86*/
+            (v127) = ((v127) & ~(0xFFFF << 16)) | (((v130 / 256) & 0xFFFF) << 16); /*0x446c86*/
             v120 = *(unsigned int *)(v102 + 1460); /*0x446ca8*/
             TileIndex = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)&v128, v120, 0); /*0x446cb6*/
             v104 = *LayerClass::Pathfinding_Find( /*0x446cd2*/
@@ -2119,25 +2119,25 @@ LABEL_130:
               v105 = *v99; /*0x446cf5*/
               v131 = 0; /*0x446d04*/
               v129 = ((__int16)v104 << 8) + 128; /*0x446d0f*/
-              v130 = (SHIWORD(v104) << 8) + 128; /*0x446d1d*/
+              v130 = ((short)(((v104) >> 16) & 0xFFFF) << 8) + 128; /*0x446d1d*/
               if ( (*(unsigned __int8 (**)(unsigned int *, int *, int))(v105 + 216))(v99, &v129, 160) ) /*0x446d24*/
                 goto LABEL_173; /*0x446d24*/
             }
-            LODWORD(v127) = 0; /*0x446d36*/
+            (v127) = ((v127) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x446d36*/
             v129 = *location; /*0x446d44*/
             v130 = this->location[1]; /*0x446d52*/
             v131 = this->location[2]; /*0x446d5f*/
-            WORD2(v127) = v129 / 256; /*0x446d6f*/
+            (v127) = ((v127) & ~(0xFFFFull << 32)) | (((v129 / 256) & 0xFFFFull) << 32); /*0x446d6f*/
             v106 = this->location[1]; /*0x446d81*/
-            HIWORD(v127) = v130 / 256; /*0x446d87*/
+            (v127) = ((v127) & ~(0xFFFF << 16)) | (((v130 / 256) & 0xFFFF) << 16); /*0x446d87*/
             v130 = v106; /*0x446d90*/
             v107 = this->location[2]; /*0x446d94*/
-            v128 = HIDWORD(v127); /*0x446d97*/
+            v128 = (((v127) >> 32) & 0xFFFFFFFFu); /*0x446d97*/
             v108 = *location; /*0x446d9b*/
             v131 = v107; /*0x446d9d*/
-            WORD2(v127) = v108 / 256; /*0x446dad*/
+            (v127) = ((v127) & ~(0xFFFFull << 32)) | (((v108 / 256) & 0xFFFFull) << 32); /*0x446dad*/
             v109 = v99[433]; /*0x446dbf*/
-            HIWORD(v127) = v130 / 256; /*0x446dc8*/
+            (v127) = ((v127) & ~(0xFFFF << 16)) | (((v130 / 256) & 0xFFFF) << 16); /*0x446dc8*/
             v121 = *(unsigned int *)(v109 + 1460); /*0x446deb*/
             v110 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (__int16 *)&v128, v121, 0); /*0x446df9*/
             v111 = *LayerClass::Pathfinding_Find( /*0x446e15*/
@@ -2164,7 +2164,7 @@ LABEL_130:
             v112 = *v99; /*0x446e38*/
             v131 = 0; /*0x446e47*/
             v129 = ((__int16)v111 << 8) + 128; /*0x446e52*/
-            v130 = (SHIWORD(v111) << 8) + 128; /*0x446e60*/
+            v130 = ((short)(((v111) >> 16) & 0xFFFF) << 8) + 128; /*0x446e60*/
             if ( (*(unsigned __int8 (**)(unsigned int *, int *, int))(v112 + 216))(v99, &v129, 160) ) /*0x446e67*/
             {
 LABEL_173:
@@ -2924,10 +2924,10 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
   v4 = this->u32_34; /*0x4faf07*/
   if ( !v4->u8_1A6 )
   {
-    LOBYTE(v4) = this->q1EC; /*0x4faf18*/
+    (v4) = ((v4) & ~0xFF) | ((this->q1EC) & 0xFF); /*0x4faf18*/
     if ( !(unsigned char)v4 )
     {
-      LOBYTE(v4) = v5; /*0x4faf26*/
+      (v4) = ((v4) & ~0xFF) | ((v5) & 0xFF); /*0x4faf26*/
       if ( v5 )
       {
         LOBYTE(v4) = *(unsigned char *)(*(unsigned int *)(v5 + 40) + 236); /*0x4faf35*/
@@ -3012,7 +3012,7 @@ int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
   int Status; // eax
   char v17; // [esp+Bh] [ebp-9h]
 
-  LOBYTE(v2) = this->u32_7D4; /*0x50b1d7*/
+  (v2) = ((v2) & ~0xFF) | ((this->u32_7D4) & 0xFF); /*0x50b1d7*/
   if ( !(unsigned char)v2 ) /*0x50b1df*/
   {
     v2 = this->q264; /*0x50b1e5*/

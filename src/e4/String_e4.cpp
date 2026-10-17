@@ -144,21 +144,21 @@ int String::NormalizeNewlines()
   {
     while ( 1 ) /*0x5f3368*/
     {
-      v2 = v0[HIDWORD(v1)]; /*0x5f3368*/
+      v2 = v0[(((v1) >> 32) & 0xFFFFFFFFu)]; /*0x5f3368*/
       if ( v2 == 13 ) /*0x5f336d*/
         break; /*0x5f336d*/
       if ( v2 == 10 ) /*0x5f3377*/
       {
-        v0[HIDWORD(v1)] = 2; /*0x5f3379*/
+        v0[(((v1) >> 32) & 0xFFFFFFFFu)] = 2; /*0x5f3379*/
         goto LABEL_6; /*0x5f3379*/
       }
 LABEL_7:
-      LODWORD(v1) = 0; /*0x5f3383*/
-      ++HIDWORD(v1); /*0x5f338a*/
-      if ( HIDWORD(v1) >= strlen(v0) ) /*0x5f3392*/
+      (v1) = ((v1) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x5f3383*/
+      ++(((v1) >> 32) & 0xFFFFFFFFu); /*0x5f338a*/
+      if ( (((v1) >> 32) & 0xFFFFFFFFu) >= strlen(v0) ) /*0x5f3392*/
         return v1; /*0x5f3392*/
     }
-    v0[HIDWORD(v1)] = 1; /*0x5f336f*/
+    v0[(((v1) >> 32) & 0xFFFFFFFFu)] = 1; /*0x5f336f*/
 LABEL_6:
     v0 = (const char *)MEMORY[0xA8EA7C]; /*0x5f337d*/
     goto LABEL_7; /*0x5f337d*/
@@ -786,18 +786,18 @@ bool String::Equals_Alt(const char *a2)
     {
       result = strcmp((const char *)result, a2); /*0x7b4736*/
       if ( result ) /*0x7b4750*/
-        LOBYTE(result) = 0; /*0x7b4767*/
+        (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b4767*/
       else
         return 1; /*0x7b4752*/
     }
     else
     {
-      LOBYTE(result) = 0; /*0x7b476d*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b476d*/
     }
   }
   else
   {
-    LOBYTE(result) = 1; /*0x7b471f*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b471f*/
   }
   return result; /*0x7b4721*/
 
@@ -818,18 +818,18 @@ bool String::Compare(const char **a2, void *a2_1)
     {
       result = strcmp((const char *)result, *a2); /*0x7b47a9*/
       if ( result ) /*0x7b47c3*/
-        LOBYTE(result) = 0; /*0x7b47da*/
+        (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b47da*/
       else
         return 1; /*0x7b47c5*/
     }
     else
     {
-      LOBYTE(result) = 0; /*0x7b47e0*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b47e0*/
     }
   }
   else
   {
-    LOBYTE(result) = 1; /*0x7b4790*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b4790*/
   }
   return result; /*0x7b4792*/
 
@@ -850,16 +850,16 @@ bool String::NotEquals(const char *a2)
     {
       result = strcmp((const char *)result, a2); /*0x7b4816*/
       if ( result ) /*0x7b4837*/
-        LOBYTE(result) = 1; /*0x7b4847*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b4847*/
     }
     else
     {
-      LOBYTE(result) = 1; /*0x7b484d*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b484d*/
     }
   }
   else
   {
-    LOBYTE(result) = 0; /*0x7b47ff*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b47ff*/
   }
   return result; /*0x7b4801*/
 
@@ -1154,11 +1154,11 @@ char String::Erase(int aP1, int a3)
     strcat(v8, (const char *)(a3 + v4 + *(unsigned int *)this->q000)); /*0x7b50c1*/
     __3_YAXPAX_Z(*(void **)this->q000); /*0x7b50cd*/
     *(unsigned int *)this->q000 = (unsigned int)(v8); /*0x7b50d9*/
-    LOBYTE(result) = 1; /*0x7b50db*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b50db*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x7b5058*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b5058*/
   }
   return result; /*0x7b5055*/
 
@@ -1278,7 +1278,7 @@ char String::Assign_Bool(const char *a2, void *a2_1)
     result = strlen(a2) + 1; /*0x7b5a8d*/
     memcpy(*(void **)this->q000, a2, result); /*0x7b5a9c*/
   }
-  LOBYTE(result) = 1; /*0x7b5aa7*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b5aa7*/
   return result; /*0x7b5aa5*/
 
 }

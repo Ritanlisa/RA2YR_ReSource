@@ -38,7 +38,7 @@ void* ProgressTimer::GetValue(void *aP1, void *a2)
   {
     v5 = (__int16)(*(unsigned short *)this->__pad_0 - *&this->u32_4); /*0x4c9406*/
     v6 = (__int16)(*(unsigned short *)this->__pad_0 - *&this->u32_4); /*0x4c940b*/
-    v7 = (int)((HIDWORD(v6) ^ v6) - HIDWORD(v6)) / ProgressTimer_field_0x14; /*0x4c9411*/
+    v7 = (int)(((((v6) >> 32) & 0xFFFFFFFFu) ^ v6) - (((v6) >> 32) & 0xFFFFFFFFu)) / ProgressTimer_field_0x14; /*0x4c9411*/
     v12 = *(void **)this->__pad_0; /*0x4c9415*/
     if ( (__int16)v7 <= 0 ) /*0x4c941c*/
     {

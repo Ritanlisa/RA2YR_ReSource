@@ -1079,7 +1079,7 @@ AbstractClass * * ObjectClass::sub_426ED0(int a2)
     return 0; /*0x426eef*/
   for ( i = &this->ToolTipText[292]; ; i += 6 ) /*0x426ef1*/
   {
-    HIWORD(v6) = 0; /*0x426ef7*/
+    (v6) = ((v6) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x426ef7*/
     if ( *(unsigned __int16 *)i <= a2 ) /*0x426efe*/
     {
       LOWORD(v6) = *(unsigned short *)i; /*0x426ef9*/
@@ -1527,7 +1527,7 @@ void * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
       {
         *(int *)((char *)v15 + (unsigned int)v8) = v6[1]; /*0x42ab2a*/
         v9 = *(__int16 *)(*(unsigned int *)*v6 + 38) - *(__int16 *)(*(unsigned int *)*v5 + 38); /*0x42ab48*/
-        if ( (int)((HIDWORD(v9) ^ v9) - HIDWORD(v9)) > 1 /*0x42ab64*/
+        if ( (int)(((((v9) >> 32) & 0xFFFFFFFFu) ^ v9) - (((v9) >> 32) & 0xFFFFFFFFu)) > 1 /*0x42ab64*/
           || (v10 = *(__int16 *)(*(unsigned int *)*v6 + 36), v11 = *(__int16 *)(*(unsigned int *)*v5 + 36),
                                                        (int)abs32(v10 - v11) > 1) )
         {
@@ -1591,7 +1591,7 @@ int sub_42B080(short * a1, int a2)
       HIWORD(v11) = v10 + v2->q002_; /*0x42b0e5*/
       a1 = v11; /*0x42b0f4*/
       v5 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&a1); /*0x42b0fd*/
-      if ( (v5->u32_140 & 0x100) != 0 && (v6 = *(&v5->u32_11B) - a2, (int)((HIDWORD(v6) ^ v6) - HIDWORD(v6)) > 2) ) /*0x42b11d*/
+      if ( (v5->u32_140 & 0x100) != 0 && (v6 = *(&v5->u32_11B) - a2, (int)(((((v6) >> 32) & 0xFFFFFFFFu) ^ v6) - (((v6) >> 32) & 0xFFFFFFFFu)) > 2) ) /*0x42b11d*/
         v7 = v5->q0E8; /*0x42b11f*/
       else
         v7 = v5->u32_E4; /*0x42b127*/
@@ -1703,7 +1703,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
   if ( v10 + 1 != v9 && v10 + 1 != v8 ) /*0x42b44c*/
   {
     v51 = 0; /*0x42b44e*/
-    LOBYTE(v10) = 0; /*0x42b456*/
+    (v10) = ((v10) & ~0xFF) | ((0) & 0xFF); /*0x42b456*/
   }
   if ( v8 == 8 || v9 == 8 ) /*0x42b466*/
   {
@@ -2199,7 +2199,7 @@ void * ObjectClass::FindPathWithRetry(short * a2, int aP4, int a5, int a6, int a
   LOBYTE(v15) = a4[140]; /*0x42c9e4*/
   *(unsigned int *)v29 = *Pathfinding::CrossBridge(&a8, (int)v30, v15); /*0x42ca01*/
   v16 = v12->u32_140 >> 8; /*0x42ca0b*/
-  LOBYTE(v16) = v16 & 1; /*0x42ca0e*/
+  (v16) = ((v16) & ~0xFF) | ((v16 & 1) & 0xFF); /*0x42ca0e*/
   *(unsigned int *)v28 = *Pathfinding::CrossBridge(&a8, (int)v12, v16); /*0x42ca23*/
   if ( a7 == -1 ) /*0x42ca27*/
     a7 = *(unsigned int *)((*(int (**)(char *))(*(unsigned int *)a4 + 132))(a4) + 1460); /*0x42ca3f*/
@@ -2211,7 +2211,7 @@ void * ObjectClass::FindPathWithRetry(short * a2, int aP4, int a5, int a6, int a
     if ( !v17 ) /*0x42ca71*/
       goto LABEL_18; /*0x42ca71*/
     v19 = (**v17)(v17, &unk_818858, &a8); /*0x42ca80*/
-    LOBYTE(v18) = v19 < 0; /*0x42ca88*/
+    (v18) = ((v18) & ~0xFF) | ((v19 < 0) & 0xFF); /*0x42ca88*/
     v20 = a8 & (v18 - 1); /*0x42ca8c*/
     if ( v19 < 0 && v19 != -2147467262 ) /*0x42ca97*/
       sub_7DC720(v19); /*0x42ca9a*/
@@ -2245,7 +2245,7 @@ LABEL_18:
   }
   v34 = 0; /*0x42cb8f*/
   v23 = -(a6 != -1); /*0x42cb9a*/
-  LOBYTE(v23) = v23 & 0xFC; /*0x42cb9c*/
+  (v23) = ((v23) & ~0xFF) | ((v23 & 0xFC) & 0xFF); /*0x42cb9c*/
   TileIndex = v23 + 5; /*0x42cba1*/
   while ( 1 ) /*0x42cba5*/
   {
@@ -2257,7 +2257,7 @@ LABEL_18:
       break; /*0x42cc19*/
     v24 = abs32(a2[1] - a3[1]); /*0x42cc31*/
     v25 = *a2 - *a3; /*0x42cc38*/
-    v26 = (HIDWORD(v25) ^ v25) - HIDWORD(v25); /*0x42cc3b*/
+    v26 = ((((v25) >> 32) & 0xFFFFFFFFu) ^ v25) - (((v25) >> 32) & 0xFFFFFFFFu); /*0x42cc3b*/
     if ( v26 <= v24 ) /*0x42cc3f*/
       v26 = v24; /*0x42cc41*/
     if ( v26 > 1 ) /*0x42cc46*/
@@ -3307,7 +3307,7 @@ int ObjectClass::sub_426E80(int a2)
   for ( i = &this->ToolTipText[292]; ; i += 6 ) /*0x426ea0*/
   {
     int v5; // ecx
-    HIWORD(v5) = 0; /*0x426ea6*/
+    (v5) = ((v5) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x426ea6*/
     if ( *(unsigned __int16 *)i <= a2 ) /*0x426ead*/
     {
       LOWORD(v5) = *(unsigned short *)i; /*0x426ea8*/
@@ -3341,7 +3341,7 @@ unsigned short ObjectClass::sub_426FD0(int a2)
       for ( i = &this->ToolTipText[292]; ; i += 6 ) /*0x426ff3*/
       {
         int v8; // eax
-        HIWORD(v8) = 0; /*0x426ff9*/
+        (v8) = ((v8) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x426ff9*/
         if ( *(unsigned __int16 *)i <= a2 ) /*0x427000*/
         {
           LOWORD(v8) = *(unsigned short *)i; /*0x426ffb*/
@@ -3956,7 +3956,7 @@ char ObjectClass::sub_42D830(unsigned int * a2)
   void *vtable2 = this->vtable3; // ecx /*0x42d833*/
   if ( this->uniqueId >= (int)vtable2 ) /*0x42d83b*/
   {
-    if ( !BYTE1(this->u32_D) && vtable2 ) /*0x42d846*/
+    if ( !(((this->u32_D) >> 8) & 0xFF) && vtable2 ) /*0x42d846*/
       return 0; /*0x42d846*/
     int abstractFlags; // eax
     abstractFlags = this->abstractFlags; /*0x42d848*/

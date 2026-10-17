@@ -293,7 +293,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   Power::FlagProcess((Power *)a2, v3); /*0x644725*/
   Power::TimerProcess((int)this->q29C); /*0x644733*/
   Checksummer::Add_float((Checksummer *)a2, (int)this->q2A0); /*0x644741*/
-  Power::TimerProcess(LODWORD(this->q2A4)); /*0x64474f*/
+  Power::TimerProcess(((this->q2A4) & 0xFFFFFFFFu)); /*0x64474f*/
   Power::TimerProcess(this->q2A8); /*0x64475d*/
   Checksummer::Add_float((Checksummer *)a2, this->q2AC); /*0x64476b*/
   Checksummer::Add_float((Checksummer *)a2, this->DamageDelay); /*0x644779*/

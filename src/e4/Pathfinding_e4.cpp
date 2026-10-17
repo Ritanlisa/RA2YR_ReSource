@@ -222,7 +222,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   {
     v23 = 0; /*0x5a5541*/
   }
-  LODWORD(v77) = v23; /*0x5a5547*/
+  (v77) = ((v77) & 0xFFFFFFFF00000000ull) | ((v23) & 0xFFFFFFFFull); /*0x5a5547*/
   v24 = (int)a1.field_4 <= 0; /*0x5a554b*/
   v23->u32_14 = (char *)a1.field_4 + 2; /*0x5a5550*/
   if ( !v24 ) /*0x5a5553*/
@@ -241,7 +241,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         v23->q010 = v27 + 1; /*0x5a55b2*/
         *(unsigned int *)(v28 + 4 * v27) = v19->field_0; /*0x5a55b8*/
       }
-      LODWORD(v76) = 0; /*0x5a55bf*/
+      (v76) = ((v76) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x5a55bf*/
       v29 = (float *)&v3[2 * v75]; /*0x5a55c7*/
       do /*0x5a5789*/
       {
@@ -268,8 +268,8 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
                 v36 = *v35 - v33; /*0x5a569f*/
                 v37 = v35[1] - v32; /*0x5a56a1*/
                 *(unsigned int *)&v78[2] = abs32(v36); /*0x5a56b1*/
-                if ( *(int *)&v78[2] <= (int)((HIDWORD(v37) ^ v37) - HIDWORD(v37)) ) /*0x5a56b5*/
-                  *(unsigned int *)&v78[2] = (HIDWORD(v37) ^ v37) - HIDWORD(v37); /*0x5a56b7*/
+                if ( *(int *)&v78[2] <= (int)(((((v37) >> 32) & 0xFFFFFFFFu) ^ v37) - (((v37) >> 32) & 0xFFFFFFFFu)) ) /*0x5a56b5*/
+                  *(unsigned int *)&v78[2] = ((((v37) >> 32) & 0xFFFFFFFFu) ^ v37) - (((v37) >> 32) & 0xFFFFFFFFu); /*0x5a56b7*/
                 v81 = (unsigned int)Random::State((Random *)&stru_ABE890); /*0x5a56c5*/
                 v38 = v72[1]; /*0x5a56d5*/
                 v39 = v72[0]; /*0x5a56e0*/
@@ -313,7 +313,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
             }
           }
         }
-        LODWORD(v76) = v76 + 1; /*0x5a5785*/
+        (v76) = ((v76) & 0xFFFFFFFF00000000ull) | ((v76 + 1) & 0xFFFFFFFFull); /*0x5a5785*/
       }
       while ( (int)v76 < 8 ); /*0x5a5789*/
       ++v74; /*0x5a5794*/

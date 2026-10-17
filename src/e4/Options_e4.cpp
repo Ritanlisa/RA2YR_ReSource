@@ -395,7 +395,7 @@ char Options::Screen_Dialog()
       {
         if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
-        LOBYTE(v2) = 0; /*0x55fcee*/
+        (v2) = ((v2) & ~0xFF) | ((0) & 0xFF); /*0x55fcee*/
         ScreenSaver::Process(v2); /*0x55fcf0*/
       }
       Options::Screen_Save(v1); /*0x55fcff*/
@@ -414,7 +414,7 @@ char Options::Screen_Dialog()
         {
           if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
-          LOBYTE(v5) = 0; /*0x55fd73*/
+          (v5) = ((v5) & ~0xFF) | ((0) & 0xFF); /*0x55fd73*/
           ScreenSaver::Process(v5); /*0x55fd75*/
         }
         Dialog::Destroy(v4); /*0x55fd84*/

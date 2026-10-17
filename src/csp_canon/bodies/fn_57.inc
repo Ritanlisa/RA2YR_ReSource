@@ -129,14 +129,14 @@ char Gap2Recv_57CBE0::Map_Create_57CBE0() {
   int v6; // edi
   char result; // al
 
-  v1 = SLOWORD(this->AbstractClass) + ((int16_t)(((unsigned int)this->AbstractClass - 0x10000) >> 16) << 9); /*0x57cc04*/
+  v1 = (short)((this->AbstractClass) & 0xFFFF) + ((int16_t)(((unsigned int)this->AbstractClass - 0x10000) >> 16) << 9); /*0x57cc04*/
   if ( v1 >= 0x40000 || (v2 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v1)) == 0 ) /*0x57cc14*/
   {
     g_MissionQueueFrame.briefing[139] = (int)this->AbstractClass - 0x10000; /*0x57cc1a*/
     v2 = &g_MissionQueueFrame.briefing[130]; /*0x57cc1f*/
   }
   v3 = v2[17]; /*0x57cc2c*/
-  v4 = SLOWORD(this->AbstractClass) + ((int16_t)(((unsigned int)this->vtable1 + 0x10000) >> 16) << 9); /*0x57cc44*/
+  v4 = (short)((this->AbstractClass) & 0xFFFF) + ((int16_t)(((unsigned int)this->vtable1 + 0x10000) >> 16) << 9); /*0x57cc44*/
   if ( v4 >= 0x40000 || (v5 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v4)) == 0 ) /*0x57cc54*/
   {
     v5 = &g_MissionQueueFrame.briefing[130]; /*0x57cc5a*/

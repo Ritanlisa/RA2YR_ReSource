@@ -857,7 +857,7 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     *v4 = g_OverlayTypeConfig; /*0x6a04f0*/
     this->ambientSoundController[2] = qword_B077FC; /*0x6a04f8*/
     int v5; // eax
-    v5 = HIDWORD(qword_B077FC); /*0x6a04fb*/
+    v5 = (((qword_B077FC) >> 32) & 0xFFFFFFFFu); /*0x6a04fb*/
     HIBYTE(this->customSound_controller[4]) = 0; /*0x6a0500*/
     this->ambientSoundController[3] = v5; /*0x6a0504*/
     v2 = g_OverlayTypeConfig; /*0x6a0507*/

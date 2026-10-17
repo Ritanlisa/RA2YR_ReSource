@@ -216,7 +216,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
     if ( result ) /*0x7245bf*/
     {
       v4->uniqueId = result; /*0x7245c1*/
-      LOBYTE(result) = 0; /*0x7245c7*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7245c7*/
       return result; /*0x7245ca*/
     }
   }
@@ -282,13 +282,13 @@ LABEL_19:
         goto LABEL_19; /*0x7246ed*/
       }
 LABEL_20:
-      LOBYTE(result) = 1; /*0x724713*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x724713*/
       return result; /*0x724719*/
     }
     __3_YAXPAX_Z(v6); /*0x72471d*/
   }
 LABEL_22:
-  LOBYTE(result) = 0; /*0x724725*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x724725*/
   return result; /*0x7245c4*/
 
 }

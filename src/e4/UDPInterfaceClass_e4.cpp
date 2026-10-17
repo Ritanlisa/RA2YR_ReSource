@@ -606,12 +606,12 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7b44ac*/
   {
-    LOBYTE(this->m_C) = 0; /*0x7b44b2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x7b44b2*/
     if ( a3 ) /*0x7b44b8*/
       v4 = a3; /*0x7b44ce*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x7b44ca*/
-    LOBYTE(this->m_C) = 1; /*0x7b44d2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x7b44d2*/
     if ( !v4 ) /*0x7b44d6*/
       return 0; /*0x7b454a*/
     if ( *&this->Initialized ) /*0x7b44d8*/
@@ -621,7 +621,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
         m_8 = a2; /*0x7b44e6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Initialized + 4 * i - 4) ) /*0x7b44ec*/
         ++i; /*0x7b44f1*/
-      if ( BYTE1(this->m_C) ) /*0x7b44fe*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x7b44fe*/
       {
         __3_YAXPAX_Z(*&this->Initialized); /*0x7b4509*/
         *&this->Initialized = 0; /*0x7b4511*/
@@ -908,13 +908,13 @@ int UDPInterfaceClass_Destru::Receive()
         goto LABEL_6; /*0x7b38dc*/
     }
     result = Debug::Log(); /*0x7b38ee*/
-    LOBYTE(result) = 0; /*0x7b38f6*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7b38f6*/
   }
   else
   {
     LABEL_6:
     result = (int)MessageLoop(); /*0x7b38de*/
-    LOBYTE(result) = 1; /*0x7b38e5*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7b38e5*/
   }
   return result; /*0x7b38e3*/
 

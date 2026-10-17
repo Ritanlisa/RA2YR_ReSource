@@ -117,7 +117,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     __asm { fmul ds:dbl_7E2818 }
     *(unsigned short *)v88.__pad_0 = Math::RoundToInt(a3); /*0x5b216b*/
     v85.Movement_field_00 = *(unsigned int *)v88.__pad_0; /*0x5b217e*/
-    LOWORD(v86) = 0x2000; /*0x5b2182*/
+    (v86) = ((v86) & ~0xFFFF) | ((0x2000) & 0xFFFF); /*0x5b2182*/
     if ( Math::Abs16Cmp((Math *)&v85, &v86, a5) ) /*0x5b2189*/
     {
       LOWORD(v85.Movement_field_00) = v86; /*0x5b2197*/
@@ -150,7 +150,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
       v13 = HIDWORD(v89); /*0x5b220c*/
       Math::ArcTan2(v89); /*0x5b2216*/
       __asm { fdivr qword ptr [esi] } /*0x5b221b*/
-      v71 = COERCE_DOUBLE(__PAIR64__(v13, LODWORD(v89))); /*0x5b2222*/
+      v71 = COERCE_DOUBLE((((v13 & 0xFFFFFFFFull)) << 32 | (LODWORD(v89) & 0xFFFFFFFFull))); /*0x5b2222*/
       __asm { fstp qword ptr [esi] } /*0x5b2223*/
       *_ESI = _RT1; /*0x5b2223*/
       Math::ArcTan2(v71); /*0x5b2225*/
@@ -194,7 +194,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     v20 = *(unsigned int *)_ESI; /*0x5b22ab*/
     __asm { fst qword ptr [esi+10h] } /*0x5b22ad*/
     _ESI[2] = _RT1; /*0x5b22ad*/
-    *(unsigned long long *)&v92 = __PAIR64__(_ESI->BuildingTypeClass_4, v20); /*0x5b22b3*/
+    *(unsigned long long *)&v92 = (((_ESI->BuildingTypeClass_4 & 0xFFFFFFFFull)) << 32 | (v20 & 0xFFFFFFFFull)); /*0x5b22b3*/
     __asm { fld [esp+98h+var_30] } /*0x5b22be*/
     v22 = _ESI->u32_C; /*0x5b22c2*/
     v93[0] = *((unsigned int *)_ESI + 2); /*0x5b22c5*/
@@ -205,8 +205,8 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     LOWORD(v25) = Math::RoundToInt(a3); /*0x5b22d8*/
     HIDWORD(v92) = v25; /*0x5b22dd*/
     LOWORD(v26) = Math::RoundToInt(a3); /*0x5b22e1*/
-    v78 = __PAIR64__(v26 + a2->Vector3_field_0x08, HIDWORD(v92) + a2->Vector3_field_0x04); /*0x5b22f9*/
-    v27 = Coord::Subtract((Coord *)&v92, (int)v24 + *(unsigned int *)a2->__pad_0, v78, SHIDWORD(v78)); /*0x5b22ff*/
+    v78 = (((v26 + a2->Vector3_field_0x08 & 0xFFFFFFFFull)) << 32 | (HIDWORD(v92) + a2->Vector3_field_0x04 & 0xFFFFFFFFull)); /*0x5b22f9*/
+    v27 = Coord::Subtract((Coord *)&v92, (int)v24 + *(unsigned int *)a2->__pad_0, v78, (int)(((v78) >> 32) & 0xFFFFFFFFu)); /*0x5b22ff*/
     v28 = v27->q004; /*0x5b2308*/
     v29 = v27->q008; /*0x5b230b*/
     *(unsigned int *)a2->__pad_0 = *v27; /*0x5b230e*/

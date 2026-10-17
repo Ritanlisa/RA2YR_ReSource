@@ -365,9 +365,9 @@ LABEL_9:
         p_vfptr = &this->vfptr; /*0x634145*/
         if ( this ) /*0x634149*/
         {
-          if ( !LOBYTE(this->referenceCount) ) /*0x63414b*/
+          if ( !((this->referenceCount) & 0xFF) ) /*0x63414b*/
           {
-            LOBYTE(this->referenceCount) = 1; /*0x63415a*/
+            (this->referenceCount) = ((this->referenceCount) & ~0xFF) | ((1) & 0xFF); /*0x63415a*/
             VectorClass::Append((DynamicVectorClass *)&stru_AC4B48.__pad_B8[152], &p_vfptr); /*0x63415e*/
           }
         }
@@ -3037,12 +3037,12 @@ bool TeamClass::ValidateMember(int aP1, int *a2, char a4)
     && (result = aP1->bunkerLinkedUnit) == 0 )
   {
     result = *&aP1->locomotorSource; /*0x6ea841*/
-    LOBYTE(result) = result == 0; /*0x6ea84c*/
+    (result) = ((result) & ~0xFF) | ((result == 0) & 0xFF); /*0x6ea84c*/
   }
   else
   {
 LABEL_39:
-    LOBYTE(result) = 0; /*0x6ea859*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ea859*/
   }
   return result; /*0x6ea847*/
 

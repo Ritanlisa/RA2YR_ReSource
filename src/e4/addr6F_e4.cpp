@@ -292,8 +292,8 @@ LABEL_71:
     v42 = v56 == (ObjectClass *)&v57; /*0x6f0e6e*/
     v56->vfptr1 = 0; /*0x6f0e70*/
     v41->vfptr2 = 0; /*0x6f0e73*/
-    LOBYTE(v41->vfptr3) = 1; /*0x6f0e76*/
-    BYTE1(v41->vfptr3) = 0; /*0x6f0e7a*/
+    (v41->vfptr3) = ((v41->vfptr3) & ~0xFF) | ((1) & 0xFF); /*0x6f0e76*/
+    (v41->vfptr3) = ((v41->vfptr3) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0e7a*/
     v41->vfptr = (int)&vt_VectorClass_TeamTypeClass_const; /*0x6f0e7e*/
     if ( !v42 ) /*0x6f0e84*/
     {
@@ -304,7 +304,7 @@ LABEL_71:
       if ( v42 ) /*0x6f0e9b*/
       {
         v41->vfptr1 = 0; /*0x6f0f70*/
-        BYTE1(v41->vfptr3) = 0; /*0x6f0f73*/
+        (v41->vfptr3) = ((v41->vfptr3) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0f73*/
       }
       else
       {
@@ -314,7 +314,7 @@ LABEL_71:
         {
           vfptr2 = v41->vfptr2; /*0x6f0eb8*/
           v46 = 0; /*0x6f0ebb*/
-          BYTE1(v41->vfptr3) = 1; /*0x6f0ebf*/
+          (v41->vfptr3) = ((v41->vfptr3) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x6f0ebf*/
           if ( vfptr2 > 0 ) /*0x6f0ec3*/
           {
             do /*0x6f0edc*/
@@ -378,8 +378,8 @@ LABEL_70:
     v57.Capacity = 0; /*0x6f0f12*/
     v56->vfptr1 = 0; /*0x6f0f16*/
     v47->vfptr2 = 0; /*0x6f0f19*/
-    LOBYTE(v47->vfptr3) = 1; /*0x6f0f1c*/
-    BYTE1(v47->vfptr3) = 0; /*0x6f0f20*/
+    (v47->vfptr3) = ((v47->vfptr3) & ~0xFF) | ((1) & 0xFF); /*0x6f0f1c*/
+    (v47->vfptr3) = ((v47->vfptr3) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0f20*/
     v47->vfptr = (int)&vt_VectorClass_TeamTypeClass_const; /*0x6f0f24*/
     Team_Helper_6F2780(v47, &v57); /*0x6f0f2a*/
     v41->vfptr = (int)&vt_TypeList_TeamTypeClass_const; /*0x6f0f2f*/

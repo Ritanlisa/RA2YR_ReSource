@@ -633,7 +633,7 @@ void AudioMixer::ProcessAudioFrame() {
       AudioMixer_field_0C = this->AudioMixer_field_0C; /*0x408044*/
       if ( (AudioMixer_field_0C & 2) != 0 ) /*0x408049*/
       {
-        IDA_LOBYTE(AudioMixer_field_0C) = AudioMixer_field_0C & 0xFC | 1; /*0x40804d*/
+        (AudioMixer_field_0C) = ((AudioMixer_field_0C) & ~0xFF) | ((AudioMixer_field_0C & 0xFC | 1) & 0xFF); /*0x40804d*/
         this->AudioMixer_field_0C = AudioMixer_field_0C; /*0x40804f*/
       }
       ((AudioChannel*)(AudioChannel *)this->AudioMixer_field_14)->ActivatePlay(); /*0x408055*/
@@ -943,8 +943,8 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2)
 
   this->EventClass_field_0x4 = 0; /*0x40bd0b*/
   this->q008 = (void *)aP1; /*0x40bd0e*/
-  LOBYTE(this->EventClass_field_0xC) = 1; /*0x40bd11*/
-  BYTE1(this->EventClass_field_0xC) = 0; /*0x40bd15*/
+  (this->EventClass_field_0xC) = ((this->EventClass_field_0xC) & ~0xFF) | ((1) & 0xFF); /*0x40bd11*/
+  (this->EventClass_field_0xC) = ((this->EventClass_field_0xC) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x40bd15*/
   this->EventClass_field_0x0 = (int)&vt_VectorClass; /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
@@ -954,7 +954,7 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2)
       return &this->EventClass_field_0x0; /*0x40bd2e*/
     }
     this->EventClass_field_0x4 = (unsigned int)((void *)__2_YAPAXI_Z(4 * aP1)); /*0x40bd3d*/
-    BYTE1(this->EventClass_field_0xC) = 1; /*0x40bd40*/
+    (this->EventClass_field_0xC) = ((this->EventClass_field_0xC) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x40bd40*/
   }
   return &this->EventClass_field_0x0; /*0x40bd2d*/
 

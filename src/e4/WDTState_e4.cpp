@@ -28,7 +28,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   m_8 = a2; /*0x76ba73*/
   if ( a2 ) /*0x76ba7d*/
   {
-    LOBYTE(this->m_C) = 0; /*0x76ba87*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x76ba87*/
     if ( a3 ) /*0x76ba8d*/
     {
       *a3 = a2; /*0x76bad1*/
@@ -72,7 +72,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         v6 = 0; /*0x76bacd*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x76baff*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x76baff*/
     if ( !v6 ) /*0x76bb03*/
       return 0; /*0x76bb86*/
     if ( *&this->q004 ) /*0x76bb05*/

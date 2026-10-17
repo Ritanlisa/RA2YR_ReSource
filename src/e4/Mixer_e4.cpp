@@ -48,7 +48,7 @@ int Mixer::ReleaseChannel(void *a1)
         return result; /*0x4060dc*/
       }
       result = *(unsigned int *)(Mixer_field_00 + 24); /*0x4060dd*/
-      LOBYTE(result) = result | 0x60; /*0x4060e0*/
+      (result) = ((result) & ~0xFF) | ((result | 0x60) & 0xFF); /*0x4060e0*/
       *(unsigned int *)(Mixer_field_00 + 24) = result; /*0x4060e2*/
     }
   }

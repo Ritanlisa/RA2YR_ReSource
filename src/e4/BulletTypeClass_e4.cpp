@@ -854,7 +854,7 @@ LABEL_32:
   }
   if ( v2->SlopeTimer[3] == g_OverlayTypeConfig /*0x69ff1e*/
     && v2->Dest[0] == (unsigned int)qword_B077FC
-    && *(unsigned long long *)&v2->Dest[1] == __PAIR64__(g_OverlayTypeConfig, HIDWORD(qword_B077FC))
+    && *(unsigned long long *)&v2->Dest[1] == (((g_OverlayTypeConfig & 0xFFFFFFFFull)) << 32 | ((((qword_B077FC) >> 32) & 0xFFFFFFFFu) & 0xFFFFFFFFull))
     && *(unsigned long long *)v2->HeadToCoord == qword_B077FC )
   {
     v17 = v2->Owner; /*0x69ff25*/

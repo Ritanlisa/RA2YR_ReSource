@@ -1143,12 +1143,12 @@ int DynamicVectorClass_flat::Destroy_Alt()
 
 
   int result = *&this->Items; // eax /*0x5251c6*/
-  if ( result && BYTE1(this->IsInitialized) ) /*0x5251cd*/
+  if ( result && (((this->IsInitialized) >> 8) & 0xFF) ) /*0x5251cd*/
   {
     __3_YAXPAX_Z(*&this->Items); /*0x5251d3*/
     *&this->Items = 0; /*0x5251db*/
   }
-  BYTE1(this->IsInitialized) = 0; /*0x5251de*/
+  (this->IsInitialized) = ((this->IsInitialized) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5251de*/
   this->Capacity = 0; /*0x5251e1*/
   return result; /*0x5251e4*/
 
@@ -1230,8 +1230,8 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
 
   *&this->Items = 0; /*0x5ac909*/
   *&this->Capacity = a2; /*0x5ac910*/
-  LOBYTE(this->IsInitialized) = 1; /*0x5ac913*/
-  BYTE1(this->IsAllocated) = 0; /*0x5ac917*/
+  (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((1) & 0xFF); /*0x5ac913*/
+  (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5ac917*/
   *(unsigned int *)this->VectorClass = &vt_VectorClass; /*0x5ac91b*/
   if ( a2 ) /*0x5ac921*/
   {
@@ -1242,7 +1242,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
     else
     {
       *&this->Items = __2_YAPAXI_Z(4 * a2); /*0x5ac93c*/
-      BYTE1(this->IsAllocated) = 1; /*0x5ac93f*/
+      (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5ac93f*/
     }
   }
   *(unsigned int *)this->VectorClass = &vt_DynamicVectorClass; /*0x5ac943*/

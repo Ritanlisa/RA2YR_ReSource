@@ -2879,9 +2879,9 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
         v10 = *v9; /*0x6ee482*/
         v11 = v9[1]; /*0x6ee484*/
         v24 = v9[2]; /*0x6ee48f*/
-        LOWORD(v25) = v10 / 256; /*0x6ee4a1*/
+        (v25) = ((v25) & ~0xFFFF) | ((v10 / 256) & 0xFFFF); /*0x6ee4a1*/
         v12 = *(unsigned int *)firstUnit; /*0x6ee4b3*/
-        HIWORD(v25) = v11 / 256; /*0x6ee4b8*/
+        (v25) = ((v25) & ~(0xFFFF << 16)) | (((v11 / 256) & 0xFFFF) << 16); /*0x6ee4b8*/
         v21 = v25; /*0x6ee4c1*/
         v18 = 0; /*0x6ee4c7*/
         v13 = (unsigned int *)(*(int (**)(int, unsigned char *))(v12 + 72))(firstUnit, v23); /*0x6ee4d6*/

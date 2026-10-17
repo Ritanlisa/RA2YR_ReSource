@@ -841,7 +841,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1, void *a2)
   if ( !v3 ) /*0x524f39*/
   {
     this->vtable2 = 0; /*0x524f86*/
-    BYTE1(this->u8_D) = 0; /*0x524f8d*/
+    (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x524f8d*/
     LABEL_8:
     this->uniqueId = aP1->q010; /*0x524f91*/
       this->abstractFlags = aP1->u32_14; /*0x524f9a*/
@@ -853,7 +853,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1, void *a2)
     goto LABEL_8; /*0x524f50*/
   vtable2 = this->vtable3; /*0x524f52*/
   v6 = 0; /*0x524f55*/
-  BYTE1(this->u8_D) = 1; /*0x524f59*/
+  (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x524f59*/
   if ( (int)vtable2 <= 0 ) /*0x524f5d*/
     goto LABEL_8; /*0x524f5d*/
   do /*0x524f71*/

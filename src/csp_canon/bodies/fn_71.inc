@@ -934,8 +934,8 @@ int TerrainClass::ApplyCellModifications() {
       v4 = v3 & 7; /*0x71c968*/
       v5 = IDA_LOWORD(g_DDrawSurfaceManager.scenario[v4 + 82]) + v2; /*0x71c96b*/
       IDA_LOWORD(v4) = IDA_HIWORD(g_DDrawSurfaceManager.scenario[v4 + 82]); /*0x71c97a*/
-      IDA_LOWORD(v12) = v5; /*0x71c982*/
-      IDA_HIWORD(v12) = IDA_HIWORD(v2) + v4; /*0x71c98e*/
+      (v12) = ((v12) & ~0xFFFF) | ((v5) & 0xFFFF); /*0x71c982*/
+      (v12) = ((v12) & ~(0xFFFF << 16)) | ((((((v2) >> 16) & 0xFFFF) + v4) & 0xFFFF) << 16); /*0x71c98e*/
       *(unsigned int *)v13 = v12; /*0x71c99d*/
       v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v13); /*0x71c9a1*/
       ++v3; /*0x71c9ae*/

@@ -184,7 +184,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       if ( v58 >= v44 ) /*0x7bce26*/
       {
         v45 = 2 * this->u32_28 * v44 - Buffer_field_10; /*0x7bce34*/
-        LODWORD(v45) = v45 - HIDWORD(v45); /*0x7bce35*/
+        (v45) = ((v45) & 0xFFFFFFFF00000000ull) | ((v45 - (((v45) >> 32) & 0xFFFFFFFFu)) & 0xFFFFFFFFull); /*0x7bce35*/
         v46 = (unsigned __int16 *)(v28 + Buffer_field_10); /*0x7bce37*/
         v47 = (int)v45 >> 1; /*0x7bce3c*/
         if ( (((unsigned char)v28 + (unsigned char)Buffer_field_10) & 2) != 0 && v47 ) /*0x7bce45*/
@@ -259,21 +259,21 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       {
         *(unsigned short *)v28 = a4; /*0x7bcd6a*/
         v31 = (char *)(v28 + 2); /*0x7bcd6d*/
-        LOBYTE(v57) = --v32; /*0x7bcd71*/
+        (v57) = ((v57) & ~0xFF) | ((--v32) & 0xFF); /*0x7bcd71*/
       }
       v33 = 0; /*0x7bcd77*/
       v34 = v32 >> 1; /*0x7bcd7c*/
       if ( v32 >> 1 ) /*0x7bcd7c*/
       {
         memset32(v31, 65537 * a4, v34); /*0x7bcd93*/
-        LOBYTE(v32) = v57; /*0x7bcd95*/
+        (v32) = ((v32) & ~0xFF) | ((v57) & 0xFF); /*0x7bcd95*/
         v33 = (unsigned __int16 *)&v31[4 * v34]; /*0x7bcd99*/
       }
       if ( (v32 & 1) != 0 && v33 ) /*0x7bcda2*/
         *v33 = a4; /*0x7bcda4*/
       v35 = this->Buffer_field_10; /*0x7bcdaa*/
       v36 = 2 * this->u32_28 * this->u32_2C - v35; /*0x7bcdb5*/
-      LODWORD(v36) = v36 - HIDWORD(v36); /*0x7bcdb6*/
+      (v36) = ((v36) & 0xFFFFFFFF00000000ull) | ((v36 - (((v36) >> 32) & 0xFFFFFFFFu)) & 0xFFFFFFFFull); /*0x7bcdb6*/
       v37 = v35 + this->Buffer_field_18; /*0x7bcdbd*/
       v38 = (int)v36 >> 1; /*0x7bcdbf*/
       if ( (v37 & 2) != 0 && v38 ) /*0x7bcdcc*/
@@ -332,7 +332,7 @@ int Buffer::AllocateCodecFrameBuffers(void *a1)
   if ( v28 != 1212371789 ) /*0x7c1762*/
     return -4; /*0x7c1770*/
   v3 = &this->u32_73C; /*0x7c1775*/
-  v4 = (unsigned __int8 *)(((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1); /*0x7c179e*/
+  v4 = (unsigned __int8 *)(((((v29 << 16) | v29 & 0xFF00) << 8) | (((((v29) >> 16) & 0xFFFF) | v29 & 0xFF0000) >> 8)) + 1); /*0x7c179e*/
   LOBYTE(v4) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c179f*/
   if ( (*((int (__cdecl **)(Buffer *, int, char *, unsigned __int8 *))&this->q040))(this, 5, &this->u32_73C, v4) ) /*0x7c17a6*/
     return -4; /*0x7c17bc*/
@@ -350,7 +350,7 @@ int Buffer::AllocateCodecFrameBuffers(void *a1)
     return -2; /*0x7c1820*/
   if ( v28 != 1413698381 ) /*0x7c1829*/
     return -4; /*0x7c1837*/
-  v8 = (unsigned __int8 *)(((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1); /*0x7c185f*/
+  v8 = (unsigned __int8 *)(((((v29 << 16) | v29 & 0xFF00) << 8) | (((((v29) >> 16) & 0xFFFF) | v29 & 0xFF0000) >> 8)) + 1); /*0x7c185f*/
   LOBYTE(v8) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c1860*/
   if ( (*((int (__cdecl **)(Buffer *, int, unsigned int, unsigned __int8 *))&this->q040))(this, 5, this->u32_744, v8) ) /*0x7c186d*/
     return -4; /*0x7c187a*/

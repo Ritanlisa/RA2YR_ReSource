@@ -353,12 +353,12 @@ char * x64toa_20(unsigned long long a1, char * a2, unsigned int a3, int a4)
     v6 = v5 / a3; /*0x7d47ce*/
     v5 = v6; /*0x7d47db*/
     if ( v11 <= 9 ) /*0x7d47dd*/
-      IDA_LOBYTE(v6) = v11 + 48; /*0x7d47e3*/
+      (v6) = ((v6) & ~0xFF) | ((v11 + 48) & 0xFF); /*0x7d47e3*/
     else
-      IDA_LOBYTE(v6) = v11 + 87; /*0x7d47df*/
+      (v6) = ((v6) & ~0xFF) | ((v11 + 87) & 0xFF); /*0x7d47df*/
     *v4++ = v6; /*0x7d47e5*/
   }
-  while ( IDA_HIDWORD(v6) || (unsigned int)v5 ); /*0x7d47f0*/
+  while ( (((v6) >> 32) & 0xFFFFFFFFu) || (unsigned int)v5 ); /*0x7d47f0*/
   *v4 = 0; /*0x7d47f2*/
   v7 = v4 - 1; /*0x7d47f5*/
   do /*0x7d4808*/
@@ -624,7 +624,7 @@ unsigned long long _aullrem(unsigned long long a1, long long a2)
     while ( v4 ); /*0x7d7879*/
     v8 = IDA_HIDWORD(a2) * (v6 / v5); /*0x7d7883*/
     v9 = (unsigned int)a2 * (uint64_t)(unsigned int)(v6 / v5); /*0x7d7884*/
-    v7 = __CFADD__(v8, IDA_HIDWORD(v9)); /*0x7d7888*/
+    v7 = (((v8) + ((((v9) >> 32) & 0xFFFFFFFFu))) & 0xFFFFFFFFu) < ((v8) & 0xFFFFFFFFu); /*0x7d7888*/
     IDA_HIDWORD(v9) += v8; /*0x7d7888*/
     if ( v7 || v9 > a1 ) /*0x7d7898*/
       v9 -= a2; /*0x7d789e*/

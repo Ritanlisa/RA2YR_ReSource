@@ -70,7 +70,7 @@ int GadgetGrid::RemoveItem(int a2, void *a2_1)
   char v14[4]; // [esp+Ch] [ebp-4h] BYREF
   v3 = *(unsigned int *)(*(int (**)(int, char *))(*&a2->u32_BD0))(a2, v14); /*0x4135ec*/
   __int16 v13; // [esp+Ah] [ebp-6h]
-  v13 = HIWORD(v3); /*0x4135f4*/
+  v13 = (((v3) >> 16) & 0xFFFF); /*0x4135f4*/
   (*(void (**)(int, int))(*(unsigned int *)a2 + 760))(a2, dword_887850); /*0x4135fb*/
   if ( (v3 & 0x8000u) == 0 ) /*0x413604*/
     v3 = (__int16)v3; /*0x41360a*/

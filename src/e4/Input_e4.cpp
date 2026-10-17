@@ -44,7 +44,7 @@ int Input::OffsetToDirection(void *a1)
     return 0; /*0x4810f3*/
   result = Input_field_00 > 128; /*0x481104*/
   if ( v2 > 128 ) /*0x48110f*/
-    LOBYTE(result) = result | 2; /*0x481111*/
+    (result) = ((result) & ~0xFF) | ((result | 2) & 0xFF); /*0x481111*/
   if ( result ) /*0x481115*/
     ++result; /*0x48111e*/
   return result; /*0x4810f2*/

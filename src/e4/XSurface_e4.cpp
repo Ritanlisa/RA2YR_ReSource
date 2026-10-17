@@ -488,7 +488,7 @@ XSurface * * XSurface::FillRectEx(unsigned int *a2, int *a3, int a4)
         v20 = v48; /*0x7bb187*/
         BYTE1(v15) = a4; /*0x7bb189*/
         v21 = v15 << 16; /*0x7bb18f*/
-        LOWORD(v21) = v15; /*0x7bb192*/
+        (v21) = ((v21) & ~0xFFFF) | ((v15) & 0xFFFF); /*0x7bb192*/
         v22 = v48 >> 2; /*0x7bb195*/
         memset32((void *)v18, v21, v48 >> 2); /*0x7bb198*/
         memset((void *)(v18 + 4 * v22), a4, v20 & 3); /*0x7bb19f*/

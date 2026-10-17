@@ -151,12 +151,12 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7ad0dc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x7ad0e6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x7ad0e6*/
     if ( a3 ) /*0x7ad0ec*/
       v4 = a3; /*0x7ad102*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x7ad0fe*/
-    LOBYTE(this->m_C) = 1; /*0x7ad106*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x7ad106*/
     if ( v4 ) /*0x7ad10a*/
     {
       if ( *&this->q004 ) /*0x7ad115*/
@@ -166,7 +166,7 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x7ad123*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x7ad129*/
           ++i; /*0x7ad12e*/
-        if ( BYTE1(this->m_C) ) /*0x7ad13b*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x7ad13b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x7ad146*/
           *&this->q004 = 0; /*0x7ad14e*/
@@ -214,7 +214,7 @@ int WonlineStringDialogControl_12::Read(unsigned int * a2, void *a2_2, void *a3)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x7ad1b0*/
+  if ( !((this->m_C) & 0xFF) ) /*0x7ad1b0*/
     return 0; /*0x7ad1b8*/
   m_8 = this->m_8; /*0x7ad1be*/
   result = 0; /*0x7ad1c1*/
@@ -253,12 +253,12 @@ char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7ad21c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x7ad222*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x7ad222*/
     if ( a3 ) /*0x7ad228*/
       v4 = a3; /*0x7ad23e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x7ad23a*/
-    LOBYTE(this->m_C) = 1; /*0x7ad242*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x7ad242*/
     if ( !v4 ) /*0x7ad246*/
       return 0; /*0x7ad2ba*/
     if ( *&this->q004 ) /*0x7ad248*/
@@ -268,7 +268,7 @@ char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
         m_8 = a2; /*0x7ad256*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x7ad25c*/
         ++i; /*0x7ad261*/
-      if ( BYTE1(this->m_C) ) /*0x7ad26e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x7ad26e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x7ad279*/
         *&this->q004 = 0; /*0x7ad281*/

@@ -267,7 +267,7 @@ LABEL_21:
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
           v31 = (64 - v31) / 3 + 64; /*0x73cb1a*/
         else
-          LOBYTE(v31) = (char)(v31 - 64) / 3 + 64; /*0x73cb01*/
+          (v31) = ((v31) & ~0xFF) | (((char)(v31 - 64) / 3 + 64) & 0xFF); /*0x73cb01*/
         LOBYTE(v32) = 0; /*0x73cb1e*/
         HIBYTE(v32) = v31; /*0x73cb27*/
         LOWORD(v59) = v32; /*0x73cb2e*/

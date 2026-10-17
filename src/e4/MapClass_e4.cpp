@@ -1113,7 +1113,7 @@ LABEL_22:
           continue; /*0x567688*/
         if ( (int)abs32(v23 - v45) > a3 ) /*0x56769e*/
           continue; /*0x56769e*/
-        v42 = (__int16)(HIWORD(v48) - v46); /*0x5676bd*/
+        v42 = (__int16)((((v48) >> 16) & 0xFFFF) - v46); /*0x5676bd*/
         __asm { fild [esp+5Ch+var_38] } /*0x5676c1*/
         v43 = (__int16)(v48 - v45); /*0x5676c5*/
         __asm /*0x5676c9*/
@@ -1145,7 +1145,7 @@ LABEL_22:
         {
           LOWORD(v40) = v47[0] - v49 + *(unsigned short *)v55; /*0x567765*/
           HIWORD(v40) = v47[1] - v50 + v55->u32_2; /*0x56776a*/
-          v30 = (__int16)v40 + (SHIWORD(v40) << 9); /*0x567778*/
+          v30 = (__int16)v40 + ((short)(((v40) >> 16) & 0xFFFF) << 9); /*0x567778*/
           if ( v30 >= 0x40000 || (v31 = *(CellClass **)(dword_87F924 + 4 * v30)) == 0 ) /*0x56778e*/
           {
             v31 = &unk_ABDC50; /*0x567794*/
@@ -1264,7 +1264,7 @@ void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)
   {
     LOWORD(v34) = *aP1 + *v6; /*0x56845b*/
     HIWORD(v34) = aP1[1] + v6[1]; /*0x568463*/
-    v7 = (SHIWORD(v34) << 9) + (__int16)v34; /*0x56846e*/
+    v7 = ((short)(((v34) >> 16) & 0xFFFF) << 9) + (__int16)v34; /*0x56846e*/
     if ( v7 >= 0 /*0x568489*/
       && v7 < MapClass_field_0x140
       && (MapClass_field_0x13C = v4->MapClass_field_0x13C, MapClass_field_0x13C[v7]) )
@@ -1381,7 +1381,7 @@ LABEL_17:
         {
           LOWORD(v32) = *(unsigned short *)(i + v25 + 5668) + *(unsigned int *)aP1; /*0x5686df*/
           HIWORD(v32) = *(unsigned short *)(i + v25 + 5672) + HIWORD(*(unsigned int *)aP1); /*0x5686e4*/
-          v26 = (__int16)v32 + (SHIWORD(v32) << 9); /*0x5686ef*/
+          v26 = (__int16)v32 + ((short)(((v32) >> 16) & 0xFFFF) << 9); /*0x5686ef*/
           if ( v26 >= 0 && v26 < MapClass_field_0x140 ) /*0x5686f9*/
           {
             v27 = this->MapClass_field_0x13C; /*0x5686ff*/
@@ -1405,7 +1405,7 @@ LABEL_17:
         {
           LOWORD(v33) = *(unsigned short *)(i + result + 5732) + *(unsigned int *)aP1; /*0x568776*/
           HIWORD(v33) = *(unsigned short *)(i + result + 5736) + HIWORD(*(unsigned int *)aP1); /*0x56877b*/
-          result = (__int16)v33 + (SHIWORD(v33) << 9); /*0x568786*/
+          result = (__int16)v33 + ((short)(((v33) >> 16) & 0xFFFF) << 9); /*0x568786*/
           if ( result >= 0 && result < MapClass_field_0x140 ) /*0x568790*/
           {
             v29 = this->MapClass_field_0x13C; /*0x568796*/
@@ -1494,7 +1494,7 @@ void MapClass::ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2)
   {
     LOWORD(v32) = *aP1 + *v6; /*0x56888b*/
     HIWORD(v32) = aP1[1] + v6[1]; /*0x568893*/
-    v7 = (SHIWORD(v32) << 9) + (__int16)v32; /*0x56889e*/
+    v7 = ((short)(((v32) >> 16) & 0xFFFF) << 9) + (__int16)v32; /*0x56889e*/
     if ( v7 >= 0 /*0x5688b9*/
       && v7 < MapClass_field_0x140
       && (MapClass_field_0x13C = v4->MapClass_field_0x13C, MapClass_field_0x13C[v7]) )
@@ -1706,7 +1706,7 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
           HIWORD(v21) = *(unsigned short *)(j + 38); /*0x568d01*/
           LOWORD(v21) = k + *&this->__pad_124; /*0x568d09*/
           unsigned int v12; // eax
-          v12 = (__int16)v21 + (SHIWORD(v21) << 9); /*0x568d14*/
+          v12 = (__int16)v21 + ((short)(((v21) >> 16) & 0xFFFF) << 9); /*0x568d14*/
           if ( v12 >= 0x40000 || (v13 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v12)) == 0 ) /*0x568d2a*/
           {
             g_MissionQueueFrame.briefing[139] = v21; /*0x568d30*/
@@ -1723,9 +1723,9 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
         {
           int v22; // [esp+14h] [ebp-4h]
           LOWORD(v22) = *(unsigned short *)(j + 36); /*0x568d7b*/
-          HIWORD(v22) = (unsigned short)this->q128 + m; /*0x568d80*/
+          (v22) = ((v22) & ~(0xFFFF << 16)) | ((((unsigned short)this->q128 + m) & 0xFFFF) << 16); /*0x568d80*/
           unsigned int v15; // eax
-          v15 = (__int16)v22 + (SHIWORD(v22) << 9); /*0x568d8e*/
+          v15 = (__int16)v22 + ((short)(((v22) >> 16) & 0xFFFF) << 9); /*0x568d8e*/
           if ( v15 >= 0x40000 || (v16 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v15)) == 0 ) /*0x568da4*/
           {
             g_MissionQueueFrame.briefing[139] = v22; /*0x568daa*/
@@ -1791,10 +1791,10 @@ BombClass * * MapClass::DecompressCellData(MouseClass * aP1, void *a2)
           v6 = *(unsigned int *)(v5 + 36); /*0x56b44a*/
           Src = v6; /*0x56b451*/
           MapClass_field_0xF4 = this->MapClass_field_0xF4; /*0x56b45a*/
-          Src = SHIWORD(v6) + (__int16)v6; /*0x56b468*/
+          Src = (short)(((v6) >> 16) & 0xFFFF) + (__int16)v6; /*0x56b468*/
           if ( Src > (int)MapClass_field_0xF4 /*0x56b49b*/
-            && (__int16)v6 - SHIWORD(v6) < (int)MapClass_field_0xF4
-            && SHIWORD(v6) - (__int16)v6 < (int)MapClass_field_0xF4
+            && (__int16)v6 - (short)(((v6) >> 16) & 0xFFFF) < (int)MapClass_field_0xF4
+            && (short)(((v6) >> 16) & 0xFFFF) - (__int16)v6 < (int)MapClass_field_0xF4
             && Src <= (int)MapClass_field_0xF4 + 2 * *(unsigned int *)this->__pad_F8 )
           {
             Src = v6; /*0x56b4a8*/
@@ -1990,7 +1990,7 @@ int MapClass::ProcessRegion()
               v12 = p_MapClass_field_0x50->Capacity; /*0x56d7f5*/
               v13 = p_MapClass_field_0x50->Count; /*0x56d7f8*/
               v14 = *(unsigned int *)(v5 + 36); /*0x56d7fb*/
-              LOBYTE(v44) = 1; /*0x56d7ff*/
+              (v44) = ((v44) & ~0xFF) | ((1) & 0xFF); /*0x56d7ff*/
               if ( v13 < v12 /*0x56d82e*/
                 || (*(&p_MapClass_field_0x50->IsAllocated) || !v12)
                 && (v15 = p_MapClass_field_0x50->CapacityIncrement, v15 > 0)
@@ -2044,7 +2044,7 @@ LABEL_36:
           v31 = p_MapClass_field_0x50->Capacity; /*0x56d990*/
           v32 = p_MapClass_field_0x50->Count; /*0x56d993*/
           v33 = v5->u32_24; /*0x56d99a*/
-          LOBYTE(v45) = v39; /*0x56d9a1*/
+          (v45) = ((v45) & ~0xFF) | ((v39) & 0xFF); /*0x56d9a1*/
           if ( v32 < v31 /*0x56d9c2*/
             || (*(&p_MapClass_field_0x50->IsAllocated) || !v31)
             && (v34 = p_MapClass_field_0x50->CapacityIncrement, v34 > 0)
@@ -2908,8 +2908,8 @@ unsigned int * MapClass::FastCellLookup(short * a2, int a3, char a4)
       int v24; // eax
       v24 = (__int16)v7 + v23; /*0x578a77*/
       int v30; // [esp+24h] [ebp+Ch]
-      LOWORD(v30) = v7; /*0x578a79*/
-      HIWORD(v30) = v8; /*0x578a7e*/
+      (v30) = ((v30) & ~0xFFFF) | ((v7) & 0xFFFF); /*0x578a79*/
+      (v30) = ((v30) & ~(0xFFFF << 16)) | (((v8) & 0xFFFF) << 16); /*0x578a7e*/
       if ( v17 || v24 >= 0x40000 || (result = *(unsigned int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v24)) == 0 ) /*0x578a97*/
       {
         g_MissionQueueFrame.briefing[139] = v30; /*0x578a9d*/
@@ -3626,8 +3626,8 @@ unsigned int * MapClass::allocateMapBuffers()
 
   this->__pad_004 = 0; /*0x589bd6*/
   this->q008 = 0; /*0x589bd9*/
-  LOBYTE(this->u32_C) = 1; /*0x589bdc*/
-  BYTE1(this->u32_C) = 0; /*0x589be0*/
+  (this->u32_C) = ((this->u32_C) & ~0xFF) | ((1) & 0xFF); /*0x589bdc*/
+  (this->u32_C) = ((this->u32_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x589be0*/
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x589be3) */
   this->MapClass_field_0x14 = (void *)10; /*0x589be9*/
   this->MapClass_field_0x10 = 0; /*0x589bf0*/
@@ -4068,7 +4068,7 @@ unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
   smudgeTypeIndex = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v34)->smudgeTypeIndex; /*0x6d8329*/
   int v13 = v3->u32_8; // esi /*0x6d833c*/
   __int16 v28; // [esp+22h] [ebp-42h]
-  v28 = HIWORD(smudgeTypeIndex) + 3; /*0x6d8344*/
+  v28 = (((smudgeTypeIndex) >> 16) & 0xFFFF) + 3; /*0x6d8344*/
   __int16 v27; // [esp+20h] [ebp-44h]
   v27 = smudgeTypeIndex - 2; /*0x6d835d*/
   int v14 = 0; // ecx /*0x6d8367*/
@@ -4382,7 +4382,7 @@ int MapClass::GetScrollMode(void *a1)
 {
 
 
-  if ( !LOBYTE(this->u32_119C) ) /*0x4aeb10*/
+  if ( !((this->u32_119C) & 0xFF) ) /*0x4aeb10*/
     return 0; /*0x4aeb10*/
   int result; // eax
   result = (int)this->u32_11A0; /*0x4aeb1a*/

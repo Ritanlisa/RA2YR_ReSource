@@ -508,9 +508,9 @@ ObjectClass * * Sidebar::Render(char a2, void *a2_1, void *a3, void *a4)
   int v17; // [esp+8h] [ebp-1Ch]
   int v18[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( (a2 || LOBYTE(this->field_150C)) && byte_884B8D ) /*0x63fb43*/
+  if ( (a2 || ((this->field_150C) & 0xFF)) && byte_884B8D ) /*0x63fb43*/
   {
-    LOBYTE(this->field_150C) = 0; /*0x63fb49*/
+    (this->field_150C) = ((this->field_150C) & ~0xFF) | ((0) & 0xFF); /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
     if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x63fb5d*/
       v3 = 0; /*0x63fb70*/
@@ -1231,16 +1231,16 @@ LABEL_59:
                   v119[1] = v17; /*0x6a9a68*/
                   v119[2] = 60; /*0x6a9a6f*/
                   v119[3] = 48; /*0x6a9a7a*/
-                  BYTE2(v79) = BYTE2(dword_B0FA1C); /*0x6a9a85*/
+                  (v79) = ((v79) & ~(0xFF << 16)) | ((((((dword_B0FA1C) >> 16) & 0xFF)) & 0xFF) << 16); /*0x6a9a85*/
                   DSurface_field_0x0 = DSurface_Sidebar->DSurface_field_0x0; /*0x6a9a89*/
-                  LOWORD(v79) = dword_B0FA1C; /*0x6a9a8f*/
+                  (v79) = ((v79) & ~0xFFFF) | ((dword_B0FA1C) & 0xFFFF); /*0x6a9a8f*/
                   (*(void (**)(DSurface *, int *, unsigned int *, int))(DSurface_field_0x0 + 84))( /*0x6a9af8*/
                     DSurface_Sidebar,
                     v112,
                     v119,
                     ((unsigned __int8)dword_B0FA1C >> g_BitShift_Green_0 << g_BitShift_Red)
-                  | (BYTE1(dword_B0FA1C) >> g_BitMask_Blue << g_BitMask_Green)
-                  | (BYTE2(dword_B0FA1C) >> g_BitMask_Red << g_BitShift_Blue));
+                  | ((((dword_B0FA1C) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+                  | ((((dword_B0FA1C) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue));
                 }
                 if ( v16 ) /*0x6a9afd*/
                 {
@@ -1295,8 +1295,8 @@ LABEL_59:
                 }
                 v72 = 0; /*0x6a9c13*/
                 v34 = ((unsigned __int8)dword_B0FA1C >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6a9c46*/
-                    | (BYTE1(dword_B0FA1C) >> g_BitMask_Blue << g_BitMask_Green)
-                    | (BYTE2(dword_B0FA1C) >> g_BitMask_Red << g_BitShift_Blue);
+                    | ((((dword_B0FA1C) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+                    | ((((dword_B0FA1C) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
                 if ( v85 ) /*0x6a9c4a*/
                 {
                   v68 = *(unsigned char *)(v85 + 3278); /*0x6a9c5c*/

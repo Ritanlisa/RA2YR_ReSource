@@ -1194,8 +1194,8 @@ _DWORD * CoopCampaignVector::Construct(int aP1, int aP2)
 
   this->CoopCampaignVector_field_0x04 = (unsigned int)(0);
   this->CoopCampaignVector_field_0x08 = (unsigned int)(aP1);
-  LOBYTE(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5a91*/
-  BYTE1(this->CoopCampaignVector_field_0x0C) = 0; /*0x5c5a95*/
+  (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x5c5a91*/
+  (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5c5a95*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
@@ -1205,7 +1205,7 @@ _DWORD * CoopCampaignVector::Construct(int aP1, int aP2)
       return this->__pad_0; /*0x5c5aae*/
     }
     this->CoopCampaignVector_field_0x04 =(unsigned int)__2_YAPAXI_Z(4 * aP1); /*0x5c5abd*/
-    BYTE1(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5ac0*/
+    (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5c5ac0*/
   }
   return this->__pad_0; /*0x5c5aad*/
 
@@ -1358,9 +1358,9 @@ unsigned char DecodeAudioSampleWord(int a1, unsigned short * a2, unsigned short 
     v8 = v7 - a3 - a4; /*0x5c6b93*/
     a3 = 0; /*0x5c6b95*/
     *(unsigned short *)(a1 - 2) = v8; /*0x5c6b97*/
-    result = IDA_BYTE2(v8) & 1; /*0x5c6b9e*/
+    result = (((v8) >> 16) & 0xFF) & 1; /*0x5c6b9e*/
     --v6; /*0x5c6ba0*/
-    a4 = IDA_BYTE2(v8) & 1; /*0x5c6ba1*/
+    a4 = (((v8) >> 16) & 0xFF) & 1; /*0x5c6ba1*/
   }
   while ( v6 ); /*0x5c6ba5*/
   return result; /*0x5c6ba8*/
@@ -1394,7 +1394,7 @@ void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int
       v6 = *a2++; /*0x5c7dcc*/
       v7 = v5 + (uint16_t)*a1 + a3 * v6; /*0x5c7dda*/
       *a1++ = v7; /*0x5c7ddc*/
-      v8 = IDA_HIWORD(v7); /*0x5c7de2*/
+      v8 = (((v7) >> 16) & 0xFFFF); /*0x5c7de2*/
       --v4; /*0x5c7de5*/
       v5 = v8; /*0x5c7de6*/
     }

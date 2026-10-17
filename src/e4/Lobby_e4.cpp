@@ -118,7 +118,7 @@ void Lobby::UpdatePlayerLabels()
   int v37; // [esp+8h] [ebp-Ch]
   __int64 v38; // [esp+Ch] [ebp-8h] BYREF
 
-  HIDWORD(v38) = this; /*0x5eb063*/
+  (v38) = ((v38) & 0xFFFFFFFFull) | ((unsigned long long)((this) & 0xFFFFFFFFull) << 32); /*0x5eb063*/
   if ( dword_A8B23C && !(*((unsigned __int8 (**)(ObjectClass *))dword_A8B23C->vfptr + 16))(dword_A8B23C) /*0x5eb07a*/
     || (v33 = 1, Network::IsMultiplayerActive()) )
   {
@@ -243,8 +243,8 @@ LABEL_26:
     {
       v6 = 1041; /*0x5eb1f7*/
     }
-    v7 = (HWND)HIDWORD(v38); /*0x5eb259*/
-    DlgItem = GetDlgItem((HWND)HIDWORD(v38), v6); /*0x5eb265*/
+    v7 = (HWND)(((v38) >> 32) & 0xFFFFFFFFu); /*0x5eb259*/
+    DlgItem = GetDlgItem((HWND)(((v38) >> 32) & 0xFFFFFFFFu), v6); /*0x5eb265*/
     v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
     v9 = (wchar_t *)MEMORY[0xA8DA90][(unsigned int)v36]; /*0x5eb291*/

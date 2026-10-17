@@ -117,8 +117,8 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
         while ( 1 ) /*0x56a0dd*/
         {
           v9 = *((unsigned int *)this + 79); /*0x56a0dd*/
-          HIWORD(v31) = result; /*0x56a0e3*/
-          LOWORD(v31) = v6; /*0x56a0ed*/
+          (v31) = ((v31) & ~(0xFFFF << 16)) | (((result) & 0xFFFF) << 16); /*0x56a0e3*/
+          (v31) = ((v31) & ~0xFFFF) | ((v6) & 0xFFFF); /*0x56a0ed*/
           if ( *(unsigned int *)(v9 + 4 * ((int16_t)v6 + v8)) ) /*0x56a0f2*/
           {
             v10 = v34 + (int16_t)v6; /*0x56a101*/
@@ -144,12 +144,12 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
               if ( v13 == v4 + 4 ) /*0x56a1a0*/
               {
                 Cell::SetTileType((int16_t *)&v31, v4 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x56a1bd*/
-                v14 = HIWORD(v31) + HIWORD(g_DDrawSurfaceManager.scenario[88]); /*0x56a1d5*/
+                v14 = (((v31) >> 16) & 0xFFFF) + HIWORD(g_DDrawSurfaceManager.scenario[88]); /*0x56a1d5*/
                 LOWORD(v35) = LOWORD(g_DDrawSurfaceManager.scenario[88]) + v31; /*0x56a1da*/
-                HIWORD(v35) = HIWORD(v31) + HIWORD(g_DDrawSurfaceManager.scenario[88]); /*0x56a1e8*/
+                HIWORD(v35) = (((v31) >> 16) & 0xFFFF) + HIWORD(g_DDrawSurfaceManager.scenario[88]); /*0x56a1e8*/
                 v15 = LOWORD(g_DDrawSurfaceManager.scenario[88]) + v31; /*0x56a1ed*/
                 v16 = (int16_t)(LOWORD(g_DDrawSurfaceManager.scenario[88]) + v31) /*0x56a1f1*/
-                    + ((int16_t)(HIWORD(v31) + HIWORD(g_DDrawSurfaceManager.scenario[88])) << 9);
+                    + ((int16_t)((((v31) >> 16) & 0xFFFF) + HIWORD(g_DDrawSurfaceManager.scenario[88])) << 9);
                 if ( v16 >= 0x40000 || (v17 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v16)) == 0 ) /*0x56a208*/
                 {
                   g_MissionQueueFrame.briefing[139] = v35; /*0x56a20a*/
@@ -196,7 +196,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
                 v22 = *CellStruct::Add((CellStruct *)&v31, &v41, &g_DDrawSurfaceManager.scenario[82]); /*0x56a386*/
                 v39 = v22; /*0x56a388*/
                 v38 = v22; /*0x56a38c*/
-                v23 = (int16_t)v22 + (SHIWORD(v22) << 9); /*0x56a39b*/
+                v23 = (int16_t)v22 + ((short)(((v22) >> 16) & 0xFFFF) << 9); /*0x56a39b*/
                 if ( v23 >= 0x40000 || (v24 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v23)) == 0 ) /*0x56a3b1*/
                 {
                   g_MissionQueueFrame.briefing[139] = v22; /*0x56a3b3*/
@@ -205,7 +205,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
                 *((unsigned char *)v24 + 283) += 4; /*0x56a3d0*/
                 v25 = *CellStruct::Add((CellStruct *)&v38, &v42, &g_DDrawSurfaceManager.scenario[84]); /*0x56a3e0*/
                 v39 = v25; /*0x56a3e2*/
-                v26 = (int16_t)v25 + (SHIWORD(v25) << 9); /*0x56a3f1*/
+                v26 = (int16_t)v25 + ((short)(((v25) >> 16) & 0xFFFF) << 9); /*0x56a3f1*/
                 if ( v26 >= 0x40000 || (v27 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v26)) == 0 ) /*0x56a407*/
                 {
                   g_MissionQueueFrame.briefing[139] = v25; /*0x56a409*/
@@ -228,7 +228,7 @@ int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
           if ( v6 >= v29 ) /*0x56a48c*/
             break; /*0x56a48c*/
           v8 = v34; /*0x56a0d5*/
-          LOWORD(result) = v33; /*0x56a0d9*/
+          (result) = ((result) & ~0xFFFF) | ((v33) & 0xFFFF); /*0x56a0d9*/
         }
         result = v33; /*0x56a492*/
       }
@@ -336,7 +336,7 @@ char Gap2Recv_56DB70::InvalidateTileRegionMap(IUnknown * aP1) {
   if ( result == -1 /*0x56dba2*/
     && (MapClass::ProcessRegion((MapClass *)this), result = GetRegionMap(this, aP1, 3, 0), v5 = result, result == -1) )
   {
-    LOBYTE(result) = 0; /*0x56dba6*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x56dba6*/
   }
   else
   {
@@ -368,7 +368,7 @@ char Gap2Recv_56DB70::InvalidateTileRegionMap(IUnknown * aP1) {
       }
       while ( result != -1 ); /*0x56dc0f*/
     }
-    LOBYTE(result) = v10; /*0x56dc12*/
+    (result) = ((result) & ~0xFF) | ((v10) & 0xFF); /*0x56dc12*/
   }
   return result; /*0x56dba4*/
 

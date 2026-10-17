@@ -1154,11 +1154,11 @@ char Movie::GetSectionID(unsigned int *a2)
   {
     result = *((char *)this + 17); /*0x49bc8c*/
     *a2 = result; /*0x49bc93*/
-    LOBYTE(result) = 1; /*0x49bc95*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x49bc95*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x49bc87*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x49bc87*/
   }
   return result; /*0x49bc89*/
 
@@ -1174,11 +1174,11 @@ char MPCooperative::GetMovieScore(CampaignEndScoreClass * aP1)
   {
     result = *((char *)this + 16); /*0x49bcac*/
     *aP1 = result; /*0x49bcb3*/
-    LOBYTE(result) = 1; /*0x49bcb5*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x49bcb5*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x49bca7*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x49bca7*/
   }
   return result; /*0x49bca9*/
 
@@ -1194,11 +1194,11 @@ char Movie::GetState(unsigned int *aP1)
   {
     result = *((char *)this + 14); /*0x49bccc*/
     *aP1 = result; /*0x49bcd3*/
-    LOBYTE(result) = 1; /*0x49bcd5*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x49bcd5*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x49bcc7*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x49bcc7*/
   }
   return result; /*0x49bcc9*/
 
@@ -1212,7 +1212,7 @@ char Array::GetElementAt(unsigned int * a2, int a3)
   int result; // eax
 
   v3 = a3; /*0x49d070*/
-  LOBYTE(result) = 0; /*0x49d079*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x49d079*/
   *a2 = 0; /*0x49d07e*/
   if ( a3 == -1 ) /*0x49d084*/
     v3 = *((char *)this + 14); /*0x49d086*/
@@ -1223,7 +1223,7 @@ char Array::GetElementAt(unsigned int * a2, int a3)
     if ( v3 != -1 ) /*0x49d0a5*/
       *a2 = *(unsigned int *)(*((char *)this + 15) + 4 * v3); /*0x49d0ad*/
     if ( *a2 ) /*0x49d0af*/
-      LOBYTE(result) = 1; /*0x49d0b4*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x49d0b4*/
   }
   return result; /*0x49d0b6*/
 

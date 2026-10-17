@@ -80,11 +80,11 @@ char DynamicVector::AddItem(unsigned int *aP1)
     v5 = *&this->Items; /*0x413aa8*/
     this->Count = result + 1; /*0x413aae*/
     v5[result] = *aP1; /*0x413ab8*/
-    LOBYTE(result) = 1; /*0x413abb*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x413abb*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x413a9f*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x413a9f*/
   }
   return result; /*0x413aa1*/
 
@@ -135,7 +135,7 @@ char DynamicVector::RemoveItem(int aP1, void *a2)
   int result = aP1; // eax /*0x45add3*/
   if ( aP1 >= (int)DynamicVector_field_0x10 ) /*0x45add9*/
   {
-    LOBYTE(result) = 0; /*0x45adfc*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x45adfc*/
   }
   else
   {
@@ -151,7 +151,7 @@ char DynamicVector::RemoveItem(int aP1, void *a2)
       }
       while ( result < (int)this->Count ); /*0x45adf4*/
     }
-    LOBYTE(result) = 1; /*0x45adf7*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x45adf7*/
   }
   return result; /*0x45adf9*/
 
@@ -182,11 +182,11 @@ char DynamicVector::Add_Alt(unsigned int *aP1, void *a2)
     v5 = *&this->Items; /*0x477ef8*/
     this->Count = result + 1; /*0x477efe*/
     v5[result] = *a2; /*0x477f08*/
-    LOBYTE(result) = 1; /*0x477f0b*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x477f0b*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x477eef*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x477eef*/
   }
   return result; /*0x477ef1*/
 
@@ -245,11 +245,11 @@ char DynamicVector::Add_Alt4(unsigned int *aP1, void *a2)
     v5 = *&this->Items; /*0x5253e8*/
     this->Count = result + 1; /*0x5253ee*/
     v5[result] = *a2; /*0x5253f8*/
-    LOBYTE(result) = 1; /*0x5253fb*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5253fb*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x5253df*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5253df*/
   }
   return result; /*0x5253e1*/
 
@@ -311,11 +311,11 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
     v5 = (int)(*&this->Items); /*0x5ad808*/
     this->Count = &result->AbstractClass_1; /*0x5ad80e*/
     *(unsigned int *)(v5 + 4 * result) = (unsigned int)(*aP1); /*0x5ad818*/
-    LOBYTE(result) = 1; /*0x5ad81b*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5ad81b*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x5ad7ff*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x5ad7ff*/
   }
   return result; /*0x5ad801*/
 
@@ -457,11 +457,11 @@ char DynamicVector::Add2(unsigned int *aP1, void *a2, void *a3, void *a4)
     v5 = *&this->Items; /*0x67adb8*/
     this->Count = result + 1; /*0x67adbe*/
     v5[result] = *a2; /*0x67adc8*/
-    LOBYTE(result) = 1; /*0x67adcb*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x67adcb*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x67adaf*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x67adaf*/
   }
   return result; /*0x67adb1*/
 
@@ -616,11 +616,11 @@ char DynamicVector::EnsureCapacity(void *a1)
     __3_YAXPAX_Z((void *)this->Capacity); /*0x7af079*/
     *&this->Items = v3; /*0x7af081*/
     this->Capacity = (int)v4; /*0x7af084*/
-    LOBYTE(result) = 1; /*0x7af087*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7af087*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x7af00d*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7af00d*/
   }
   return result; /*0x7af00f*/
 

@@ -492,7 +492,7 @@ int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
   }
   while ( v31 <= 2 ); /*0x74cc16*/
   VeinholeMonsterClass_field_0x14 = v1[2].VeinholeMonsterClass_field_0x14; /*0x74cc1c*/
-  LOBYTE(v4) = 1; /*0x74cc21*/
+  (v4) = ((v4) & ~0xFF) | ((1) & 0xFF); /*0x74cc21*/
   BYTE1(v1[2].VeinholeMonsterClass_field_0x28) = 1; /*0x74cc25*/
   LOBYTE(v1[2].VeinholeMonsterClass_field_0x1C) = 0; /*0x74cc2b*/
   if ( VeinholeMonsterClass_field_0x14 > 0 ) /*0x74cc2f*/
@@ -670,7 +670,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
           *(unsigned char *)(*((unsigned int *)this + 49) + v9) = 1; /*0x74e31a*/
           v11 = *((unsigned int *)v7 + 80); /*0x74e31e*/
           v12 = v7[286]; /*0x74e324*/
-          BYTE1(v11) |= 0x80u; /*0x74e32a*/
+          (v11) |= ((((0x80u)) & 0xFF) << 8); /*0x74e32a*/
           *((unsigned int *)v7 + 80) = v11; /*0x74e32f*/
           if ( (uint8_t)v12 < 0x30u || (uint8_t)v12 > 0x33u ) /*0x74e339*/
           {
@@ -823,7 +823,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
           ++*((unsigned int *)this + 65); /*0x74e50d*/
         }
         v40 = *((unsigned int *)NeighbourContent + 80); /*0x74e626*/
-        BYTE1(v40) |= 0x80u; /*0x74e62c*/
+        (v40) |= ((((0x80u)) & 0xFF) << 8); /*0x74e62c*/
         *((unsigned int *)NeighbourContent + 80) = v40; /*0x74e631*/
         if ( v27 >= 0 && v27 < Object::ComputeAllocationSize() ) /*0x74e640*/
         {

@@ -35,7 +35,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   if ( a2 ) /*0x5d55ae*/
   {
     v5 = a3; /*0x5d55b4*/
-    LOBYTE(this->m_C) = 0; /*0x5d55b8*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d55b8*/
     if ( a3 ) /*0x5d55bd*/
     {
       v9 = a3; /*0x5d55f3*/
@@ -77,7 +77,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
         v5 = 0; /*0x5d55ec*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x5d5607*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d5607*/
     if ( !v5 ) /*0x5d560b*/
       return 0; /*0x5d5694*/
     if ( *&this->q004 ) /*0x5d5611*/
@@ -98,7 +98,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
         while ( v12 < m_8 ); /*0x5d5642*/
         v3 = a2; /*0x5d5644*/
       }
-      if ( BYTE1(this->m_C) ) /*0x5d564a*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d564a*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x5d5653*/
         *&this->q004 = 0; /*0x5d565b*/
@@ -233,12 +233,12 @@ char MSFont_18::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d519c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d51a6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d51a6*/
     if ( a3 ) /*0x5d51ac*/
       v4 = a3; /*0x5d51c2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d51be*/
-    LOBYTE(this->m_C) = 1; /*0x5d51c6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d51c6*/
     if ( v4 ) /*0x5d51ca*/
     {
       if ( *&this->q004 ) /*0x5d51d5*/
@@ -248,7 +248,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x5d51e3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d51e9*/
           ++i; /*0x5d51ee*/
-        if ( BYTE1(this->m_C) ) /*0x5d51fb*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d51fb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x5d5206*/
           *&this->q004 = 0; /*0x5d520e*/
@@ -332,12 +332,12 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d52dc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5d52e2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5d52e2*/
     if ( a3 ) /*0x5d52e8*/
       v4 = a3; /*0x5d52fe*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5d52fa*/
-    LOBYTE(this->m_C) = 1; /*0x5d5302*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5d5302*/
     if ( !v4 ) /*0x5d5306*/
       return 0; /*0x5d537a*/
     if ( *&this->q004 ) /*0x5d5308*/
@@ -347,7 +347,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
         m_8 = a2; /*0x5d5316*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5d531c*/
         ++i; /*0x5d5321*/
-      if ( BYTE1(this->m_C) ) /*0x5d532e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5d532e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x5d5339*/
         *&this->q004 = 0; /*0x5d5341*/

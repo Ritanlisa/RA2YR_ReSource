@@ -1933,14 +1933,14 @@ double Map_Helper_59B940(MapResourceClass * aP0, short * a1, MapResourceClass * 
     v10 = abs32(((v8 - v9) >> 1) - ((v22 - v7) >> 1)); /*0x59b9b1*/
     v23 = v10; /*0x59b9c0*/
     v11 = ((v8 + v9) >> 1) - ((v7 + v22) >> 1); /*0x59b9c4*/
-    v12 = (HIDWORD(v11) ^ v11) - HIDWORD(v11); /*0x59b9c8*/
+    v12 = ((((v11) >> 32) & 0xFFFFFFFFu) ^ v11) - (((v11) >> 32) & 0xFFFFFFFFu); /*0x59b9c8*/
     v24 = v12; /*0x59b9cc*/
     if ( v10 || v12 ) /*0x59b9d4*/
     {
       v14 = Math::Sqrt((double)(int)(v10 * v10 + v12 * v12)); /*0x59b9fe*/
       v15 = abs32(aP0[1] - a1[1]); /*0x59ba29*/
       v16 = *aP0 - *a1; /*0x59ba2b*/
-      v21 = (HIDWORD(v16) ^ v16) - HIDWORD(v16); /*0x59ba32*/
+      v21 = ((((v16) >> 32) & 0xFFFFFFFFu) ^ v16) - (((v16) >> 32) & 0xFFFFFFFFu); /*0x59ba32*/
       v20 = (double)v23 / v14; /*0x59ba36*/
       v17 = (double)v24 / v14; /*0x59ba3a*/
       if ( v21 <= v15 ) /*0x59ba3e*/

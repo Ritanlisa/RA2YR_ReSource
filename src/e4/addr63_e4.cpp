@@ -2525,7 +2525,7 @@ LABEL_37:
           v24);
         qmemcpy(v23, &v29[20], sizeof(v23)); /*0x63afc2*/
         LOWORD(v24) = *(unsigned short *)&v29[128]; /*0x63afc4*/
-        BYTE2(v24) = v29[130]; /*0x63afc6*/
+        (v24) = ((v24) & ~(0xFF << 16)) | (((v29[130]) & 0xFF) << 16); /*0x63afc6*/
         Network::RecordEvent( /*0x63afc7*/
           *(__int64 *)v23,
           *(int *)&v23[8],
@@ -4693,7 +4693,7 @@ char sub_6394E0(IUnknown * a1, int a2)
       v11);
     qmemcpy(v10, &v12[128], sizeof(v10)); /*0x63958d*/
     LOWORD(v11) = v13; /*0x63958f*/
-    BYTE2(v11) = v14; /*0x639591*/
+    (v11) = ((v11) & ~(0xFF << 16)) | (((v14) & 0xFF) << 16); /*0x639591*/
     LOBYTE(Next) = Network::RecordEvent( /*0x639592*/
                      *(__int64 *)v10,
                      *(int *)&v10[8],
@@ -4746,7 +4746,7 @@ int sub_63A440(int a1, int a2)
   if ( (v2 == 1 || v2 == 11) && (v5 == 11 || v2 == 11 && !v5) ) /*0x63a480*/
     return 0; /*0x63a482*/
   v6 = -(*(unsigned int *)(a1 + 20) != 15); /*0x63a490*/
-  LOBYTE(v6) = v6 & 0xFD; /*0x63a492*/
+  (v6) = ((v6) & ~0xFF) | ((v6 & 0xFD) & 0xFF); /*0x63a492*/
   return v6 + 2; /*0x63a45b*/
 
 }

@@ -139,8 +139,8 @@ int BulletClass::InitDetonationTimer(void* a1, void* a2, int a3, int a4) {
   }
   Math::Sqrt(v10); /*0x4e11d4*/
   v9 = Math::RoundToInt(v5); /*0x4e11dc*/
-  IDA_WORD2(result) = IDA_HIWORD(v9); /*0x4e11dc*/
-  IDA_LOWORD(result) = v9; /*0x4e11dc*/
+  (result) = ((result) & ~(0xFFFFull << 32)) | ((((((v9) >> 16) & 0xFFFF)) & 0xFFFFull) << 32); /*0x4e11dc*/
+  (result) = ((result) & ~0xFFFF) | ((v9) & 0xFFFF); /*0x4e11dc*/
   *(unsigned int *)&this->__pad_1C[8] = result; /*0x4e11e1*/
   return result; /*0x4e11e4*/
 }
@@ -250,7 +250,7 @@ int COMObject::ActivateGlobal() {
     (*(void (**)(int))(*(unsigned int *)dword_8B3E90 + 84))(dword_8B3E90); /*0x4e19ba*/
   }
   v2 = *(unsigned int *)this->Hovered; /*0x4e19bd*/
-  IDA_BYTE1(v2) |= 1u; /*0x4e19c0*/
+  (v2) |= ((((1u)) & 0xFF) << 8); /*0x4e19c0*/
   *(unsigned int *)this->Hovered = v2; /*0x4e19c3*/
   dword_8B3E90 = (int)this; /*0x4e19c6*/
   return v2; /*0x4e19cc*/
@@ -263,7 +263,7 @@ int COMObject::DeactivateGlobal() {
   if ( (ShpButtonClass *)dword_8B3E90 == this ) /*0x4e19d6*/
   {
     v1 = *(unsigned int *)this->Hovered; /*0x4e19d8*/
-    IDA_BYTE1(v1) &= ~1u; /*0x4e19db*/
+    (v1) &= ~(((~(~1u)) & 0xFF) << 8); /*0x4e19db*/
     *(unsigned int *)this->Hovered = v1; /*0x4e19de*/
     dword_8B3E90 = 0; /*0x4e19e1*/
   }

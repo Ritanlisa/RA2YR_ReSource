@@ -197,12 +197,12 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e95ec*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4e95f2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4e95f2*/
     if ( a3 ) /*0x4e95f8*/
       v4 = a3; /*0x4e960e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4e960a*/
-    LOBYTE(this->m_C) = 1; /*0x4e9612*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4e9612*/
     if ( !v4 ) /*0x4e9616*/
       return 0; /*0x4e968a*/
     if ( *&this->q004 ) /*0x4e9618*/
@@ -212,7 +212,7 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
         m_8 = a2; /*0x4e9626*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4e962c*/
         ++i; /*0x4e9631*/
-      if ( BYTE1(this->m_C) ) /*0x4e963e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4e963e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x4e9649*/
         *&this->q004 = 0; /*0x4e9651*/
@@ -292,12 +292,12 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4eb2ac*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4eb2b6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4eb2b6*/
     if ( a3 ) /*0x4eb2bc*/
       v4 = a3; /*0x4eb2d2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4eb2ce*/
-    LOBYTE(this->m_C) = 1; /*0x4eb2d6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4eb2d6*/
     if ( v4 ) /*0x4eb2da*/
     {
       if ( *&this->q004 ) /*0x4eb2e5*/
@@ -307,7 +307,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x4eb2f3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb2f9*/
           ++i; /*0x4eb2fe*/
-        if ( BYTE1(this->m_C) ) /*0x4eb30b*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4eb30b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4eb316*/
           *&this->q004 = 0; /*0x4eb31e*/
@@ -418,12 +418,12 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4eb50c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4eb516*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4eb516*/
     if ( a3 ) /*0x4eb51c*/
       v4 = a3; /*0x4eb532*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4eb52e*/
-    LOBYTE(this->m_C) = 1; /*0x4eb536*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4eb536*/
     if ( v4 ) /*0x4eb53a*/
     {
       if ( *&this->q004 ) /*0x4eb545*/
@@ -433,7 +433,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x4eb553*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb559*/
           ++i; /*0x4eb55e*/
-        if ( BYTE1(this->m_C) ) /*0x4eb56b*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4eb56b*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x4eb576*/
           *&this->q004 = 0; /*0x4eb57e*/
@@ -517,12 +517,12 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4eb64c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4eb652*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4eb652*/
     if ( a3 ) /*0x4eb658*/
       v4 = a3; /*0x4eb66e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4eb66a*/
-    LOBYTE(this->m_C) = 1; /*0x4eb672*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4eb672*/
     if ( !v4 ) /*0x4eb676*/
       return 0; /*0x4eb6ea*/
     if ( *&this->q004 ) /*0x4eb678*/
@@ -532,7 +532,7 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
         m_8 = a2; /*0x4eb686*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb68c*/
         ++i; /*0x4eb691*/
-      if ( BYTE1(this->m_C) ) /*0x4eb69e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4eb69e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x4eb6a9*/
         *&this->q004 = 0; /*0x4eb6b1*/
@@ -585,12 +585,12 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4eb8ac*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4eb8b2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x4eb8b2*/
     if ( a3 ) /*0x4eb8b8*/
       v4 = a3; /*0x4eb8ce*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4eb8ca*/
-    LOBYTE(this->m_C) = 1; /*0x4eb8d2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x4eb8d2*/
     if ( !v4 ) /*0x4eb8d6*/
       return 0; /*0x4eb94a*/
     if ( *&this->q004 ) /*0x4eb8d8*/
@@ -600,7 +600,7 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
         m_8 = a2; /*0x4eb8e6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4eb8ec*/
         ++i; /*0x4eb8f1*/
-      if ( BYTE1(this->m_C) ) /*0x4eb8fe*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x4eb8fe*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x4eb909*/
         *&this->q004 = 0; /*0x4eb911*/

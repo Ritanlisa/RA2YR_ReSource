@@ -608,7 +608,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   v8 = this->u32_64; /*0x4d14ca*/
   v9 = this->HouseClass_6C; /*0x4d14cd*/
   v10 = a2[50]; /*0x4d14d0*/
-  LOBYTE(v23) = 0; /*0x4d14da*/
+  (v23) = ((v23) & ~0xFF) | ((0) & 0xFF); /*0x4d14da*/
   if ( v9 < v8 /*0x4d14fc*/
     || (this->u32_69 || !v8)
     && (v11 = this->q070, v11 > 0)
@@ -719,7 +719,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   {
 LABEL_14:
     v17 = *(unsigned int *)(*(int (**)(FoggedObjectClass *, int *))(v3->vfptr + 96))(v3, &v17); /*0x4d2665*/
-    v12 = 74 * (SHIWORD(v17) - (((__int16)v17 + SHIWORD(v17)) << 9) - (__int16)v17) - v3[1].vfptr + 0x7FFFFFFF; /*0x4d26a1*/
+    v12 = 74 * ((short)(((v17) >> 16) & 0xFFFF) - (((__int16)v17 + (short)(((v17) >> 16) & 0xFFFF)) << 9) - (__int16)v17) - v3[1].vfptr + 0x7FFFFFFF; /*0x4d26a1*/
     if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d26aa*/
     {
 LABEL_22:

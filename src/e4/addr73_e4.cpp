@@ -146,7 +146,7 @@ LABEL_24:
           ++v7; /*0x730d28*/
         }
         while ( v7 < (int)v4 );
-        LOBYTE(v1) = v14; /*0x730d31*/
+        (v1) = ((v1) & ~0xFF) | ((v14) & 0xFF); /*0x730d31*/
         if ( v14 ) /*0x730d37*/
           goto LABEL_47; /*0x730d37*/
       }
@@ -162,7 +162,7 @@ LABEL_24:
         {
           if ( !(unsigned __int8)TechnoClass::IsMission27to30(v6) ) /*0x730bbc*/
             goto LABEL_17; /*0x730bbc*/
-          LOBYTE(v1) = v13; /*0x730bbe*/
+          (v1) = ((v1) & ~0xFF) | ((v13) & 0xFF); /*0x730bbe*/
           v12 = 1; /*0x730bc2*/
           if ( v13 ) /*0x730bc9*/
             goto LABEL_24; /*0x730bc9*/
@@ -177,14 +177,14 @@ LABEL_24:
             {
               if ( Event_Process_746D90(v6) ) /*0x730bfa*/
               {
-                LOBYTE(v1) = v13; /*0x730c03*/
+                (v1) = ((v1) & ~0xFF) | ((v13) & 0xFF); /*0x730c03*/
                 v12 = 1; /*0x730c07*/
                 if ( v13 ) /*0x730c0e*/
                   goto LABEL_24; /*0x730c0e*/
                 goto LABEL_23; /*0x730c0e*/
               }
 LABEL_17:
-              LOBYTE(v1) = v12; /*0x730bcd*/
+              (v1) = ((v1) & ~0xFF) | ((v12) & 0xFF); /*0x730bcd*/
               v13 = 1; /*0x730bd1*/
               if ( v12 ) /*0x730bd8*/
                 goto LABEL_24; /*0x730bd8*/
@@ -809,7 +809,7 @@ char sub_7331B0()
       {
         EventClass_field_0x8 = v3->EventClass_field_0x8; /*0x73321d*/
         if ( *(unsigned int *)v3->Count < (int)EventClass_field_0x8 /*0x733242*/
-          || (BYTE1(v3->EventClass_field_0xC) || !EventClass_field_0x8)
+          || ((((v3->EventClass_field_0xC) >> 8) & 0xFF) || !EventClass_field_0x8)
           && (v7 = *&v3->q014, v7 > 0)
           && (*(unsigned __int8 (**)(EventClass *, int, unsigned int))(v3->EventClass_field_0x0 + 8))(
                v3,
@@ -873,7 +873,7 @@ char sub_7331B0()
                 {
                   v15 = v12->EventClass_field_0x8; /*0x733322*/
                   if ( *(unsigned int *)v12->Count < (int)v15 /*0x73334c*/
-                    || ((LOBYTE(HeightMap) = BYTE1(v12->EventClass_field_0xC), (unsigned char)HeightMap) || !v15)
+                    || (((HeightMap) = ((HeightMap) & ~0xFF) | (((((v12->EventClass_field_0xC) >> 8) & 0xFF)) & 0xFF), (unsigned char)HeightMap) || !v15)
                     && (HeightMap = *&v12->q014, HeightMap > 0)
                     && (LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v12->EventClass_field_0x0
                                                                                              + 8))(
@@ -941,7 +941,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
       else if ( dword_845560 ) /*0x73340c*/
       {
         v4 = -(dword_845560 != 1); /*0x73341b*/
-        LOBYTE(v4) = v4 & 0xFE; /*0x73341d*/
+        (v4) = ((v4) & ~0xFF) | ((v4 & 0xFE) & 0xFF); /*0x73341d*/
         v18 = v4 + 2; /*0x733422*/
       }
       else

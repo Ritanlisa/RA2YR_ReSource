@@ -1230,13 +1230,13 @@ int ClipLine(IUnknown * aP0, int * a1, int * a2)
   v13 = v45 < v47; /*0x7bc3ae*/
   v14 = 0; /*0x7bc3ae*/
   v15 = v45 == v47; /*0x7bc3ae*/
-  BYTE1(result) = v12; /*0x7bc3b2*/
+  (result) = ((result) & ~(0xFF << 8)) | (((v12) & 0xFF) << 8); /*0x7bc3b2*/
   if ( v45 < v47 ) /*0x7bc3b7*/
   {
     v17 = v45 < v6; /*0x7bc3c2*/
     v18 = 0; /*0x7bc3c2*/
     v19 = v45 == v6; /*0x7bc3c2*/
-    BYTE1(result) = v16; /*0x7bc3c4*/
+    (result) = ((result) & ~(0xFF << 8)) | (((v16) & 0xFF) << 8); /*0x7bc3c4*/
     if ( v45 < v6 ) /*0x7bc3c9*/
       goto LABEL_14; /*0x7bc3c9*/
   }
@@ -1256,7 +1256,7 @@ int ClipLine(IUnknown * aP0, int * a1, int * a2)
       *a1 = (int)v38; /*0x7bc557*/
       LOWORD(result) = Math::RoundToInt(v45); /*0x7bc559*/
       a1[1] = result; /*0x7bc55e*/
-      LOBYTE(result) = 1; /*0x7bc561*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7bc561*/
       return result; /*0x7bc569*/
     }
     if ( (v11 & v9) != 0 ) /*0x7bc3dc*/
@@ -1304,13 +1304,13 @@ LABEL_29:
       v23 = v7 < v47; /*0x7bc4ae*/
       v24 = 0; /*0x7bc4ae*/
       v25 = v7 == v47; /*0x7bc4ae*/
-      BYTE1(result) = v22; /*0x7bc4b2*/
+      (result) = ((result) & ~(0xFF << 8)) | (((v22) & 0xFF) << 8); /*0x7bc4b2*/
       if ( v7 < v47 ) /*0x7bc4b7*/
       {
         v26 = v7 < v6; /*0x7bc4c1*/
         v27 = 0; /*0x7bc4c1*/
         v28 = v7 == v6; /*0x7bc4c1*/
-        BYTE1(result) = v22; /*0x7bc4c3*/
+        (result) = ((result) & ~(0xFF << 8)) | (((v22) & 0xFF) << 8); /*0x7bc4c3*/
         if ( v7 < v6 ) /*0x7bc4c8*/
           v9 |= 8u; /*0x7bc4ce*/
       }
@@ -1330,13 +1330,13 @@ LABEL_29:
       v30 = v7 < v47; /*0x7bc504*/
       v31 = 0; /*0x7bc504*/
       v32 = v7 == v47; /*0x7bc504*/
-      BYTE1(result) = v29; /*0x7bc508*/
+      (result) = ((result) & ~(0xFF << 8)) | (((v29) & 0xFF) << 8); /*0x7bc508*/
       if ( v7 < v47 ) /*0x7bc50d*/
       {
         v33 = v7 < v6; /*0x7bc517*/
         v34 = 0; /*0x7bc517*/
         v35 = v7 == v6; /*0x7bc517*/
-        BYTE1(result) = v29; /*0x7bc519*/
+        (result) = ((result) & ~(0xFF << 8)) | (((v29) & 0xFF) << 8); /*0x7bc519*/
         if ( v7 < v6 ) /*0x7bc51e*/
 LABEL_14:
           v11 |= 8u; /*0x7bc3cb*/
@@ -1347,7 +1347,7 @@ LABEL_14:
       }
     }
   }
-  LOBYTE(result) = 0; /*0x7bc574*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7bc574*/
   return result; /*0x7bc563*/
 
 }
@@ -1485,7 +1485,7 @@ int E4Recv_7BEFE0::sub_7BEFE0()
       if ( (this->M340 & 1) != 0 ) /*0x7bf00a*/
       {
         v6 = *&this->u32_6F0; /*0x7bf00c*/
-        LOBYTE(v5) = v5 | 4; /*0x7bf012*/
+        (v5) = ((v5) & ~0xFF) | ((v5 | 4) & 0xFF); /*0x7bf012*/
         *(unsigned int *)(v4 + 12) = v5; /*0x7bf014*/
       }
       else
@@ -1497,7 +1497,7 @@ int E4Recv_7BEFE0::sub_7BEFE0()
                                v6,
                                this->M1908);
       v7 = *(unsigned int *)(v4 + 12); /*0x7bf033*/
-      LOBYTE(v7) = v7 & 0xFD; /*0x7bf039*/
+      (v7) = ((v7) & ~0xFF) | ((v7 & 0xFD) & 0xFF); /*0x7bf039*/
       *(unsigned int *)(v4 + 12) = v7; /*0x7bf03b*/
     }
     if ( (*(unsigned char *)(v2 + 20) & 8) != 0 ) /*0x7bf042*/
@@ -1507,7 +1507,7 @@ int E4Recv_7BEFE0::sub_7BEFE0()
                                *(char **)(v2 + 8),
                                this->M1904);
       v8 = *(unsigned int *)(v2 + 20); /*0x7bf05d*/
-      LOBYTE(v8) = v8 & 0xF7; /*0x7bf063*/
+      (v8) = ((v8) & ~0xFF) | ((v8 & 0xF7) & 0xFF); /*0x7bf063*/
       *(unsigned int *)(v2 + 20) = v8; /*0x7bf065*/
     }
     v3 = *(unsigned int *)(v2 + 20); /*0x7bf068*/
@@ -1516,7 +1516,7 @@ int E4Recv_7BEFE0::sub_7BEFE0()
       if ( (this->M340 & 2) != 0 ) /*0x7bf076*/
       {
         v9 = *&this->u32_6E8; /*0x7bf078*/
-        LOBYTE(v3) = v3 | 0x40; /*0x7bf07e*/
+        (v3) = ((v3) & ~0xFF) | ((v3 | 0x40) & 0xFF); /*0x7bf07e*/
         *(unsigned int *)(v2 + 20) = v3; /*0x7bf080*/
       }
       else
@@ -1525,7 +1525,7 @@ int E4Recv_7BEFE0::sub_7BEFE0()
       }
       AudioCodec::Decode((unsigned __int8 *)(*(unsigned int *)v2 + *(unsigned int *)(v2 + 32)), v9, this->M1912); /*0x7bf097*/
       v3 = *(unsigned int *)(v2 + 20); /*0x7bf09c*/
-      LOBYTE(v3) = v3 & 0xEF; /*0x7bf0a2*/
+      (v3) = ((v3) & ~0xFF) | ((v3 & 0xEF) & 0xFF); /*0x7bf0a2*/
       *(unsigned int *)(v2 + 20) = v3; /*0x7bf0a4*/
     }
   }
@@ -3631,7 +3631,7 @@ int E4Recv_7BF0B0::sub_7BF0B0()
       v4 = this->ironTintTimer[2]; /*0x7bf0df*/
       if ( (v4 & 1) != 0 ) /*0x7bf0e7*/
       {
-        LOBYTE(v4) = v4 & 0xFE; /*0x7bf0e9*/
+        (v4) = ((v4) & ~0xFF) | ((v4 & 0xFE) & 0xFF); /*0x7bf0e9*/
         this->ironTintTimer[2] = v4; /*0x7bf0eb*/
         v5 = (void (__cdecl *)(TechnoClass *, int, char *, int))this->ambientSoundController[3]; /*0x7bf0f1*/
         if ( v5 ) /*0x7bf0f6*/
@@ -3698,7 +3698,7 @@ int E4Recv_7BF190::sub_7BF190()
       v4 = this->ironTintTimer[2]; /*0x7bf1bf*/
       if ( (v4 & 1) != 0 ) /*0x7bf1c7*/
       {
-        LOBYTE(v4) = v4 & 0xFE; /*0x7bf1c9*/
+        (v4) = ((v4) & ~0xFF) | ((v4 & 0xFE) & 0xFF); /*0x7bf1c9*/
         this->ironTintTimer[2] = v4; /*0x7bf1cb*/
         v5 = (void (__cdecl *)(TechnoClass *, int, char *, int))this->ambientSoundController[3]; /*0x7bf1d1*/
         if ( v5 ) /*0x7bf1d6*/

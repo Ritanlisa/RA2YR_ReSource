@@ -356,7 +356,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v14 = 128; /*0x47e94f*/
     inited = Isometric::InitTables(this, &v13); /*0x47e953*/
     v15 = ((__int16)v18 << 8) + 128; /*0x47e962*/
-    v16 = (SHIWORD(v18) << 8) + 128; /*0x47e966*/
+    v16 = ((short)(((v18) >> 16) & 0xFFFF) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
     if ( !Cell::IsPassable(&v15) /*0x47e9cf*/
       && (v19 = this->smudgeTypeIndex,
@@ -364,7 +364,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v14 = 128,
           v8 = Isometric::InitTables(this, &v13),
           v15 = ((__int16)v19 << 8) + 128,
-          v16 = (SHIWORD(v19) << 8) + 128,
+          v16 = ((short)(((v19) >> 16) & 0xFFFF) << 8) + 128,
           v17 = v8,
           !Game::Stub3((int)&v15))
       || dword_A8B238[0] )

@@ -76,7 +76,7 @@ char CellClass::UpdateVariant3(unsigned short *aP0, int aP1)
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56ef77*/
   aP1 = v3; /*0x56ef79*/
   *(unsigned int *)v32 = v3; /*0x56ef7d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56ef8c*/
+  v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x56ef8c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(dword_87F924 + 4 * v4)) != 0 ) /*0x56efa2*/
   {
     v6 = v5; /*0x56efa4*/
@@ -244,7 +244,7 @@ char CellClass::UpdateVariant4(unsigned short *aP0, int aP1)
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f317*/
   aP1 = v3; /*0x56f319*/
   *(unsigned int *)v32 = v3; /*0x56f31d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56f32c*/
+  v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x56f32c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(dword_87F924 + 4 * v4)) != 0 ) /*0x56f342*/
   {
     v6 = v5; /*0x56f344*/
@@ -411,7 +411,7 @@ char CellClass::UpdateTerrain(unsigned short *aP0, int aP1)
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f8d7*/
   aP1 = v3; /*0x56f8d9*/
   *(unsigned int *)v31 = v3; /*0x56f8dd*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56f8ec*/
+  v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x56f8ec*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(dword_87F924 + 4 * v4)) != 0 ) /*0x56f902*/
   {
     v6 = v5; /*0x56f904*/
@@ -580,7 +580,7 @@ char CellClass::UpdateTileVariant2(unsigned short *aP0, int aP1)
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56fca7*/
   aP1 = v3; /*0x56fca9*/
   *(unsigned int *)v31 = v3; /*0x56fcad*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56fcbc*/
+  v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x56fcbc*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(dword_87F924 + 4 * v4)) != 0 ) /*0x56fcd2*/
   {
     v6 = v5; /*0x56fcd4*/
@@ -750,7 +750,7 @@ char CellClass::UpdateVariant7(unsigned short *aP0, int aP1)
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572467*/
   aP1 = v3; /*0x572469*/
   *(unsigned int *)v32 = v3; /*0x57246d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x57247c*/
+  v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x57247c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(dword_87F924 + 4 * v4)) != 0 ) /*0x572492*/
   {
     v6 = v5; /*0x572494*/
@@ -918,7 +918,7 @@ char CellClass::UpdateVariant8(unsigned short *aP0, int aP1)
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572807*/
   aP1 = v3; /*0x572809*/
   *(unsigned int *)v32 = v3; /*0x57280d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x57281c*/
+  v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x57281c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(dword_87F924 + 4 * v4)) != 0 ) /*0x572832*/
   {
     v6 = v5; /*0x572834*/
@@ -1085,7 +1085,7 @@ char CellClass::UpdateVariant5(unsigned short *aP0, int aP1)
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572dc7*/
   aP1 = v3; /*0x572dc9*/
   *(unsigned int *)v31 = v3; /*0x572dcd*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x572ddc*/
+  v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x572ddc*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(dword_87F924 + 4 * v4)) != 0 ) /*0x572df2*/
   {
     v6 = v5; /*0x572df4*/
@@ -1254,7 +1254,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x573197*/
   aP1 = v3; /*0x573199*/
   *(unsigned int *)v31 = v3; /*0x57319d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x5731ac*/
+  v4 = (__int16)v3 + ((short)(((v3) >> 16) & 0xFFFF) << 9); /*0x5731ac*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(dword_87F924 + 4 * v4)) != 0 ) /*0x5731c2*/
   {
     v6 = v5; /*0x5731c4*/

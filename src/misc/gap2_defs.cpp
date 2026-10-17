@@ -430,7 +430,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
       v29 = *(unsigned int *)(*(unsigned int *)v97 + 40); /*0x51526f*/
       *(unsigned int *)v97 = *(unsigned int *)(*(unsigned int *)v97 + 448); /*0x51528d*/
       v102 = ((__int16)v29 << 8) + 128; /*0x515291*/
-      v103 = (SHIWORD(v29) << 8) + 128; /*0x5152a8*/
+      v103 = ((short)(((v29) >> 16) & 0xFFFF) << 8) + 128; /*0x5152a8*/
       v30 = Cell::GetGroundHeight(&v102); /*0x5152ac*/
       *(unsigned int *)(this->m_State + 1392) = v26 + (v30 - GroundHeight) / *(unsigned int *)v97; /*0x5152bd*/
       return 7; /*0x5152c3*/
@@ -736,7 +736,7 @@ LABEL_97:
           v105 = *v58; /*0x515889*/
           v106 = v58[1]; /*0x515890*/
           v59 = this->u32_20 - v58[2]; /*0x51589c*/
-          if ( (int)((HIDWORD(v59) ^ v59) - HIDWORD(v59)) < 2 * *(unsigned int *)&MEMORY[0xA8EB00].?[1500] ) /*0x5158ab*/
+          if ( (int)(((((v59) >> 32) & 0xFFFFFFFFu) ^ v59) - (((v59) >> 32) & 0xFFFFFFFFu)) < 2 * *(unsigned int *)&MEMORY[0xA8EB00].?[1500] ) /*0x5158ab*/
           {
             v108 = *v58; /*0x5158af*/
             v109 = v58[1]; /*0x5158b6*/
@@ -958,7 +958,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
                          0)
                      + 8)
          - this->u32_20;
-      result = (HIDWORD(v8) ^ v8) - HIDWORD(v8); /*0x51656c*/
+      result = ((((v8) >> 32) & 0xFFFFFFFFu) ^ v8) - (((v8) >> 32) & 0xFFFFFFFFu); /*0x51656c*/
       if ( result < 2 * *(unsigned int *)&stru_A8E960.waypoints[558] ) /*0x516573*/
       {
         (*(void (**)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x51657c*/
@@ -986,7 +986,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
                         0)
                     + 8)
         - this->u32_20;
-    result = (HIDWORD(v12) ^ v12) - HIDWORD(v12); /*0x516614*/
+    result = ((((v12) >> 32) & 0xFFFFFFFFu) ^ v12) - (((v12) >> 32) & 0xFFFFFFFFu); /*0x516614*/
     if ( result <= 2 * *(unsigned int *)&stru_A8E960.waypoints[558] ) /*0x51661b*/
       return result; /*0x51661b*/
   }
@@ -1071,7 +1071,7 @@ LABEL_19:
               v65 = *v51; /*0x516af8*/
               v66 = v51[1]; /*0x516aff*/
               v52 = this->u32_20 - v51[2]; /*0x516b0b*/
-              if ( (int)((HIDWORD(v52) ^ v52) - HIDWORD(v52)) < 2 * *(unsigned int *)&stru_A8E960.waypoints[558] ) /*0x516b1a*/
+              if ( (int)(((((v52) >> 32) & 0xFFFFFFFFu) ^ v52) - (((v52) >> 32) & 0xFFFFFFFFu)) < 2 * *(unsigned int *)&stru_A8E960.waypoints[558] ) /*0x516b1a*/
               {
                 v65 = *v51; /*0x516b1e*/
                 v66 = v51[1]; /*0x516b25*/
@@ -1092,7 +1092,7 @@ LABEL_19:
                   v65 = *v53,
                   v66 = v53[1],
                   v54 = v53[2] / *(unsigned int *)&stru_A8E960.waypoints[558] - v39->__pad_EC[47],
-                  (int)((HIDWORD(v54) ^ v54) - HIDWORD(v54)) <= 2) )
+                  (int)(((((v54) >> 32) & 0xFFFFFFFFu) ^ v54) - (((v54) >> 32) & 0xFFFFFFFFu)) <= 2) )
             {
               v61 = 0; /*0x516bb0*/
             }
@@ -1233,7 +1233,7 @@ int* Pathfinding::CheckCliff(unsigned int *a2, int16_t *a3, int a4, int a5) {
     NeighbourContent = (char *)v7; /*0x58388a*/
     v10 = -((v7->flags & 0x800) != 0); /*0x58388e*/
     v11 = (char *)v7; /*0x583890*/
-    LOBYTE(v10) = v10 & 0xFE; /*0x583892*/
+    (v10) = ((v10) & ~0xFF) | ((v10 & 0xFE) & 0xFF); /*0x583892*/
     p_flags = &v7->flags; /*0x583894*/
     v21 = &v7->flags; /*0x58389b*/
     v12 = v10 + 4; /*0x58389f*/
@@ -1276,14 +1276,14 @@ int* Pathfinding::CheckCliff(unsigned int *a2, int16_t *a3, int a4, int a5) {
     v16 = (unsigned short *)(4 * v15 + 9041544); /*0x5839b7*/
     LOWORD(a3) = (unsigned short)a3 + LOWORD(dword_89F688[v15]); /*0x5839cb*/
     HIWORD(a3) += HIWORD(dword_89F688[v15]); /*0x5839d7*/
-    LOWORD(v15) = dword_89F688[v13]; /*0x5839e0*/
+    (v15) = ((v15) & ~0xFFFF) | ((dword_89F688[v13]) & 0xFFFF); /*0x5839e0*/
     v26[2] = a3; /*0x5839e3*/
     v26[3] = v24; /*0x5839ee*/
     LOWORD(a3) = v24 + v15; /*0x5839f2*/
-    HIWORD(a3) = HIWORD(v24) + HIWORD(dword_89F688[v13]); /*0x583a03*/
+    HIWORD(a3) = (((v24) >> 16) & 0xFFFF) + HIWORD(dword_89F688[v13]); /*0x583a03*/
     v26[4] = a3; /*0x583a0c*/
     LOWORD(v15) = *v16; /*0x583a10*/
-    LOWORD(v16) = HIWORD(v24) + v16[1]; /*0x583a1a*/
+    LOWORD(v16) = (((v24) >> 16) & 0xFFFF) + v16[1]; /*0x583a1a*/
     LOWORD(a3) = v24 + v15; /*0x583a1d*/
     HIWORD(a3) = (unsigned short)v16; /*0x583a22*/
     v26[5] = a3; /*0x583a2b*/
@@ -1732,11 +1732,11 @@ int RulesClass::ReadCountryList() {
       result = v15; /*0x66d124*/
       this->ColorAdd[8] = v15; /*0x66d127*/
     }
-    LOBYTE(result) = 1; /*0x66d118*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x66d118*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x66d13b*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x66d13b*/
   }
   return result; /*0x66d117*/
 

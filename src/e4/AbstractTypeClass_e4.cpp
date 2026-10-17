@@ -172,11 +172,11 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
     {
       this->UIName = (unsigned int)(&g_TypeClass_DefaultString); /*0x410b69*/
     }
-    LOBYTE(result) = 1; /*0x410b5c*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x410b5c*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x410b7f*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x410b7f*/
   }
   return result; /*0x410b57*/
 

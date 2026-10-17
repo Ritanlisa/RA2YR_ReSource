@@ -607,7 +607,7 @@ LABEL_34:
     Ticks = Timer::GetTicks(); /*0x79413a*/
     v63 = (unsigned __int16 *)Ticks; /*0x794141*/
     v30 = 360; /*0x79414c*/
-    HIWORD(v31) = HIWORD(v61); /*0x794155*/
+    HIWORD(v31) = (((v61) >> 16) & 0xFFFF); /*0x794155*/
     v90 = 360; /*0x79415b*/
     v65 = 360; /*0x794162*/
     if ( v61 > 0 ) /*0x794166*/
@@ -733,7 +733,7 @@ LABEL_70:
                   (int)&v91,
                   (int)&v69 + 2,
                   0)
-            || HIWORD(v69) != 0xAA04 )
+            || (((v69) >> 16) & 0xFFFF) != 0xAA04 )
           {
             goto LABEL_89; /*0x79445d*/
           }
@@ -2213,7 +2213,7 @@ AbstractClass * * NetworkGame_Init()
   byte_A8B31F = 0; /*0x797292*/
   stru_A8B250.__pad_0[16] = 1; /*0x797297*/
   stru_A8B250.__pad_0[17] = 1; /*0x79729d*/
-  LOBYTE(dword_A8B320) = 1; /*0x7972a3*/
+  (dword_A8B320) = ((dword_A8B320) & ~0xFF) | ((1) & 0xFF); /*0x7972a3*/
   byte_A8B31C = 1; /*0x7972a9*/
   byte_A8B31D = 0; /*0x7972af*/
   stru_A8B250.__pad_0[8] = 1; /*0x7972b4*/
@@ -3506,7 +3506,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
         switch ( (__int16)vfptr ) /*0x79915a*/
         {
           case 1576: /*0x79915a*/
-            if ( HIWORD(vfptr) != 1 ) /*0x7991cb*/
+            if ( (((vfptr) >> 16) & 0xFFFF) != 1 ) /*0x7991cb*/
               return 0; /*0x7991cb*/
             v8 = GetDlgItem((HWND)v4, 1791); /*0x7991e5*/
             SendMessageA(v8, 0x49Du, 0, 1); /*0x7991ef*/
@@ -3551,7 +3551,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             ComPtr::Release((ComPtr *)&v60); /*0x799357*/
             return 0; /*0x799365*/
           case 1577: /*0x79915a*/
-            if ( HIWORD(vfptr) != 1 ) /*0x79936c*/
+            if ( (((vfptr) >> 16) & 0xFFFF) != 1 ) /*0x79936c*/
               return 0; /*0x79936c*/
             unknown_libname_73(&hWnd.m_3[1]); /*0x799376*/
             GetDialogText((HWND)vfptr1, (String *)&hWnd.m_3[1]); /*0x799381*/
@@ -3566,7 +3566,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             DeleteAndZero((ObjectClass *)&hWnd.m_3[1]); /*0x7993c9*/
             return 0; /*0x7993d7*/
           case 1578: /*0x79915a*/
-            if ( HIWORD(vfptr) != 1 ) /*0x7993de*/
+            if ( (((vfptr) >> 16) & 0xFFFF) != 1 ) /*0x7993de*/
               return 0; /*0x7993de*/
             v16 = 0; /*0x7993ea*/
             v17 = SendMessageA((HWND)vfptr1, 0x147u, 0, 0); /*0x7993f4*/
@@ -3592,7 +3592,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             WebBrowser::ShowDialog(g_INI_Key_Battleclans); /*0x799193*/
             return 0; /*0x7991a1*/
           case 1697: /*0x79915a*/
-            if ( HIWORD(vfptr) != 1 ) /*0x799454*/
+            if ( (((vfptr) >> 16) & 0xFFFF) != 1 ) /*0x799454*/
               return 0; /*0x799454*/
             v18 = -2; /*0x79946a*/
             v19 = SendMessageA((HWND)vfptr1, 0x147u, 0, 0); /*0x79946f*/
@@ -3609,7 +3609,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass)
             return 0;
         }
       }
-      if ( HIWORD(vfptr) != 1 ) /*0x7994ce*/
+      if ( (((vfptr) >> 16) & 0xFFFF) != 1 ) /*0x7994ce*/
         return 0; /*0x799b46*/
       v20 = -2; /*0x7994e4*/
       v21 = SendMessageA((HWND)vfptr1, 0x147u, 0, 0); /*0x7994e9*/
@@ -3851,7 +3851,7 @@ LABEL_133:
     }
     String::Assign_Alt((String *)&stru_B73E10.CChatEventSink_field_0x30, *(const char **)&hWnd.m_3[1]); /*0x79abdf*/
     String::Assign_Alt((String *)&g_WebBrowserConfig, *(const char **)v86.__pad_0); /*0x79abee*/
-    LOBYTE(dword_84A238) = 0; /*0x79abf3*/
+    (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x79abf3*/
     LOBYTE(a2.vfptr1) = 1; /*0x79abfa*/
 LABEL_106:
     v57 = String::GetOrEmpty_Alt((String *)&stru_B73E10.CChatEventSink_field_0x30); /*0x79aa4b*/
@@ -3860,7 +3860,7 @@ LABEL_106:
     {
       v58 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x79aa73*/
       SendMessageA(*(HWND *)&v85.ptr_4, 0x4B4u, 0, (LPARAM)v58); /*0x79aa85*/
-      LOBYTE(dword_84A238) = 0; /*0x79aa87*/
+      (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x79aa87*/
     }
     if ( !String::Length((String *)&stru_B73E10.CChatEventSink_field_0x30) /*0x79aaae*/
       || (v59 = String::Length((String *)&g_WebBrowserConfig), hWnd.m_3[1] = 1, v59 != 8) )
@@ -3879,8 +3879,8 @@ LABEL_106:
     v83 = (unsigned __int8)hWnd.m_3[1]; /*0x79ab34*/
     v62 = GetDlgItem((HWND)v3, 1337); /*0x79ab3b*/
     EnableWindow(v62, v83); /*0x79ab3e*/
-    LODWORD(v88) = 0; /*0x79ab44*/
-    BYTE4(v88) = 0; /*0x79ab4c*/
+    (v88) = ((v88) & 0xFFFFFFFF00000000ull) | ((0) & 0xFFFFFFFFull); /*0x79ab44*/
+    (v88) = ((v88) & ~(0xFFull << 32)) | (((0) & 0xFFull) << 32); /*0x79ab4c*/
     ReadRegistryOptionsWOL((ObjectClass *)&v88); /*0x79ab51*/
     if ( !(unsigned __int8)Flag::IsNot2((Flag *)&v88) ) /*0x79ab5a*/
     {
@@ -3999,7 +3999,7 @@ LABEL_123:
           SendMessageA(v48, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x79a84f*/
           DeleteAndZero::Alt2((DeleteAndZero *)&stru_B73E10.CChatEventSink_field_0x30); /*0x79a856*/
           DeleteAndZero::Alt2((DeleteAndZero *)&g_WebBrowserConfig); /*0x79a860*/
-          LOBYTE(dword_84A238) = 1; /*0x79a86b*/
+          (dword_84A238) = ((dword_84A238) & ~0xFF) | ((1) & 0xFF); /*0x79a86b*/
           v49 = GetDlgItem((HWND)v3, 1837); /*0x79a87a*/
           EnableWindow(v49, 0); /*0x79a87f*/
           InvalidateRect(v49, 0, 0); /*0x79a886*/
@@ -4015,9 +4015,9 @@ LABEL_123:
           result = 0; /*0x79a8d9*/
           break; /*0x79a8df*/
         case 1836: /*0x79a594*/
-          if ( HIWORD(vfptr) != 768 || byte_B77EA0 ) /*0x79a5b1*/
+          if ( (((vfptr) >> 16) & 0xFFFF) != 768 || byte_B77EA0 ) /*0x79a5b1*/
             return 0; /*0x79a5b1*/
-          LOBYTE(dword_84A238) = 1; /*0x79a5be*/
+          (dword_84A238) = ((dword_84A238) & ~0xFF) | ((1) & 0xFF); /*0x79a5be*/
           GetDialogText((HWND)vfptr1, (String *)&g_WebBrowserConfig); /*0x79a5c5*/
           unknown_libname_73(&a2.vfptr1); /*0x79a5ce*/
           v38 = GetDlgItem((HWND)v3, 1576); /*0x79a5e3*/
@@ -4084,14 +4084,14 @@ LABEL_123:
           return 0; /*0x79a40b*/
         case 0x628u: /*0x799f90*/
           v9 = Dialog::FindByHandle((Dialog *)0x11D) != 0; /*0x79a025*/
-          if ( HIWORD(vfptr) == 1 ) /*0x79a033*/
+          if ( (vfptr) = ((vfptr) & ~(0xFFFF << 16)) | (((= 1) & 0xFFFF) << 16)) /*0x79a033*/
           {
             if ( !v9 ) /*0x79a257*/
             {
               byte_B77EA0 = 1; /*0x79a262*/
               DeleteAndZero::Alt2((DeleteAndZero *)&stru_B73E10.CChatEventSink_field_0x30); /*0x79a269*/
               DeleteAndZero::Alt2((DeleteAndZero *)&g_WebBrowserConfig); /*0x79a273*/
-              LOBYTE(dword_84A238) = 1; /*0x79a284*/
+              (dword_84A238) = ((dword_84A238) & ~0xFF) | ((1) & 0xFF); /*0x79a284*/
               v19 = GetDlgItem((HWND)v3, 1836); /*0x79a292*/
               v20 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x79a294*/
               SendMessageA(v19, 0x4B4u, 0, (LPARAM)v20); /*0x79a2a8*/
@@ -4113,7 +4113,7 @@ LABEL_123:
                   v23 = GetDlgItem((HWND)v3, 1836); /*0x79a334*/
                   v24 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x79a336*/
                   SendMessageA(v23, 0x4B4u, 0, (LPARAM)v24); /*0x79a344*/
-                  LOBYTE(dword_84A238) = 0; /*0x79a346*/
+                  (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x79a346*/
                   hWnd.__pad_0[0] = 1; /*0x79a34d*/
                 }
               }
@@ -4136,9 +4136,9 @@ LABEL_123:
               return 0; /*0x79a3f2*/
             }
           }
-          else if ( (HIWORD(vfptr) == 5 || HIWORD(vfptr) == 768) /*0x79a06d*/
-                 && (HIWORD(vfptr) != 768 || v9)
-                 && (HIWORD(vfptr) != 5 || !v9)
+          else if ( ((vfptr) = ((vfptr) & ~(0xFFFF << 16)) | (((= 5 || (vfptr) = ((vfptr) & ~(0xFFFF << 16)) | (((= 768) & 0xFFFF) << 16)) & 0xFFFF) << 16)) /*0x79a06d*/
+                 && ((((vfptr) >> 16) & 0xFFFF) != 768 || v9)
+                 && ((((vfptr) >> 16) & 0xFFFF) != 5 || !v9)
                  && !byte_B77EA0 )
           {
             unknown_libname_73(&a2.vfptr1); /*0x79a077*/
@@ -4162,7 +4162,7 @@ LABEL_123:
                     {
                       String::Assign_Alt((String *)&stru_B73E10.CChatEventSink_field_0x30, *(const char **)&hWnd.m_3[1]); /*0x79a10a*/
                       String::Assign_Alt((String *)&g_WebBrowserConfig, *(const char **)hWnd.__pad_0); /*0x79a119*/
-                      LOBYTE(dword_84A238) = 0; /*0x79a11e*/
+                      (dword_84A238) = ((dword_84A238) & ~0xFF) | ((0) & 0xFF); /*0x79a11e*/
                       v12 = 1; /*0x79a125*/
                       goto LABEL_42; /*0x79a125*/
                     }

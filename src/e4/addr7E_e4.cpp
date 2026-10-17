@@ -40,12 +40,12 @@ void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
     {
       v8 = *a1; /*0x7e0040*/
       a1 = (int *)((char *)a1 + 2); /*0x7e0042*/
-      v9 = (unsigned __int8 *)__ROR4__(v8, 8); /*0x7e004f*/
+      v9 = (unsigned __int8 *)_rotr(v8, 8); /*0x7e004f*/
       LOBYTE(v9) = stru_A8E960.waypoints[(unsigned __int16)v8 + 2442]; /*0x7e0052*/
-      BYTE1(v9) = BYTE1(v8); /*0x7e0058*/
-      v10 = __ROR4__(v9, 8); /*0x7e005f*/
+      BYTE1(v9) = (((v8) >> 8) & 0xFF); /*0x7e0058*/
+      v10 = _rotr(v9, 8); /*0x7e005f*/
       BYTE1(v10) = stru_A8E960.waypoints[((v8 & 0xFFFF00u) >> 8) + 2442]; /*0x7e0065*/
-      *v7++ = __ROR4__(v10, 16); /*0x7e006e*/
+      *v7++ = _rotr(v10, 16); /*0x7e006e*/
       --v6; /*0x7e0073*/
     }
     while ( v6 ); /*0x7e0074*/
@@ -90,12 +90,12 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     {
       v8 = *a1; /*0x7e00e0*/
       a1 = (int *)((char *)a1 + 2); /*0x7e00e2*/
-      v9 = __ROR4__(v8, 8); /*0x7e00ef*/
+      v9 = _rotr(v8, 8); /*0x7e00ef*/
       LOBYTE(v9) = MEMORY[0xA8F91C][(unsigned __int16)v8]; /*0x7e00f2*/
-      BYTE1(v9) = BYTE1(v8); /*0x7e00f8*/
-      v10 = __ROR4__(v9, 8); /*0x7e00ff*/
+      (v9) = ((v9) & ~(0xFF << 8)) | ((((((v8) >> 8) & 0xFF)) & 0xFF) << 8); /*0x7e00f8*/
+      v10 = _rotr(v9, 8); /*0x7e00ff*/
       BYTE1(v10) = MEMORY[0xA8F91C][(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
-      v11 = __ROR4__(v10, 16); /*0x7e010b*/
+      v11 = _rotr(v10, 16); /*0x7e010b*/
       *v7 = v11; /*0x7e010e*/
       *v6 = v11; /*0x7e0110*/
       ++v7; /*0x7e0112*/
@@ -145,12 +145,12 @@ void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
   {
     v6 = *a1; /*0x7e0182*/
     a1 = (int *)((char *)a1 + 2); /*0x7e0184*/
-    v7 = (unsigned __int8 *)__ROR4__(v6, 8); /*0x7e0191*/
+    v7 = (unsigned __int8 *)_rotr(v6, 8); /*0x7e0191*/
     LOBYTE(v7) = stru_A8E960.waypoints[(unsigned __int16)v6 + 2442]; /*0x7e0194*/
-    BYTE1(v7) = BYTE1(v6); /*0x7e019a*/
-    v8 = __ROR4__(v7, 8); /*0x7e01a1*/
+    BYTE1(v7) = (((v6) >> 8) & 0xFF); /*0x7e019a*/
+    v8 = _rotr(v7, 8); /*0x7e01a1*/
     BYTE1(v8) = stru_A8E960.waypoints[((v6 & 0xFFFF00u) >> 8) + 2442]; /*0x7e01a7*/
-    *a2++ = __ROR4__(v8, 16); /*0x7e01b0*/
+    *a2++ = _rotr(v8, 16); /*0x7e01b0*/
     --v3; /*0x7e01b5*/
   }
   while ( v3 ); /*0x7e01b6*/

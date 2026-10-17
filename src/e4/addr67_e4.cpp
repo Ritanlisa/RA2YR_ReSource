@@ -303,7 +303,7 @@ int RulesClass::sub_674500()
   INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674515*/
   INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674527*/
   result = INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674539*/
-  LOBYTE(result) = 1; /*0x67453f*/
+  (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x67453f*/
   return result; /*0x67453e*/
 
 }

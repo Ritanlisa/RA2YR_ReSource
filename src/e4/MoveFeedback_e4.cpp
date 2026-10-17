@@ -242,13 +242,13 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40c03c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x40c042*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x40c042*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x40c048*/
       v4 = a3; /*0x40c05e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40c05a*/
-    LOBYTE(this->m_C) = 1; /*0x40c062*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x40c062*/
     if ( !v4 ) /*0x40c066*/
       return 0; /*0x40c0da*/
     if ( *&this->m_Capacity ) /*0x40c068*/
@@ -260,7 +260,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->m_Capacity + 4 * i - 4) ) /*0x40c07c*/
         ++i; /*0x40c081*/
-      if ( BYTE1(this->m_C) ) /*0x40c08e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x40c08e*/
       {
         __3_YAXPAX_Z(*&this->m_Capacity); /*0x40c099*/
         *&this->m_Capacity = 0; /*0x40c0a1*/

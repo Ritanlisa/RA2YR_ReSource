@@ -321,7 +321,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   if ( !aP1 || (*(unsigned char *)dword_A8B230 & 0x20) != 0 || (v8 = aP3) == 0 ) /*0x4892d7*/
   {
     v117 = &vt_VectorClass_DamageGroup; /*0x48a4bb*/
-    if ( Block && BYTE1(v120) ) /*0x48a4cd*/
+    if ( Block && (((v120) >> 8) & 0xFF) ) /*0x48a4cd*/
       __3_YAXPAX_Z(Block); /*0x48a4d0*/
     return 1; /*0x48a4da*/
   }
@@ -338,7 +338,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   v107 = 0; /*0x489361*/
   v109 = v10 <= 0.5; /*0x489372*/
   LODWORD(v136) = ((__int16)v108 << 8) + 128; /*0x489394*/
-  HIDWORD(v136) = (SHIWORD(v108) << 8) + 128; /*0x4893a7*/
+  HIDWORD(v136) = ((short)(((v108) >> 16) & 0xFFFF) << 8) + 128; /*0x4893a7*/
   v137 = 0.0; /*0x4893ae*/
   if ( Cell::GetGroundHeight(&v136) < aP0[2] ) /*0x4893bd*/
   {
@@ -381,7 +381,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
                 v126 = v17->q008; /*0x4894ef*/
                 v102[1] = Coord::Length(&v125); /*0x4894fc*/
                 if ( v121 < v119 /*0x48952a*/
-                  || (BYTE1(v120) || !v119)
+                  || ((((v120) >> 8) & 0xFF) || !v119)
                   && v122 > 0
                   && ((unsigned __int8 (*)(void ***, int, unsigned int))v117[2])(&v117, v122 + v119, 0) )
                 {
@@ -408,7 +408,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   {
     while ( 1 )
     {
-      v21 = HIWORD(v108) + HIWORD(dword_ABD490[v103]); /*0x4895dc*/
+      v21 = (((v108) >> 16) & 0xFFFF) + HIWORD(dword_ABD490[v103]); /*0x4895dc*/
       LOWORD(v131) = v108 + LOWORD(dword_ABD490[v103]); /*0x4895e1*/
       HIWORD(v131) = v21; /*0x4895e6*/
       j = v131; /*0x4895f6*/
@@ -510,7 +510,7 @@ LABEL_67:
           }
         }
         if ( v121 < v119 /*0x48999a*/
-          || (BYTE1(v120) || !v119)
+          || ((((v120) >> 8) & 0xFF) || !v119)
           && v122 > 0
           && ((unsigned __int8 (*)(void ***, int, unsigned int))v117[2])(&v117, v122 + v119, 0) )
         {
@@ -596,7 +596,7 @@ LABEL_82:
     v117 = &vt_VectorClass_DamageGroup; /*0x489b1e*/
     if ( Block ) /*0x489b28*/
     {
-      if ( BYTE1(v120) ) /*0x489b30*/
+      if ( (((v120) >> 8) & 0xFF) ) /*0x489b30*/
         __3_YAXPAX_Z(Block); /*0x489b33*/
     }
     return 2; /*0x489b46*/
@@ -617,19 +617,19 @@ LABEL_82:
       {
         do /*0x489e7e*/
         {
-          v58 = SHIWORD(v108) - 3; /*0x489bc6*/
-          for ( j = v58; v58 <= SHIWORD(v108) + 3; j = v58 ) /*0x489bd5*/
+          v58 = (short)(((v108) >> 16) & 0xFFFF) - 3; /*0x489bc6*/
+          for ( j = v58; v58 <= (short)(((v108) >> 16) & 0xFFFF) + 3; j = v58 ) /*0x489bd5*/
           {
             if ( v110 ) /*0x489be3*/
             {
-              LOWORD(v127) = v57; /*0x489be5*/
-              HIWORD(v127) = v58; /*0x489bec*/
+              (v127) = ((v127) & ~0xFFFF) | ((v57) & 0xFFFF); /*0x489be5*/
+              (v127) = ((v127) & ~(0xFFFF << 16)) | (((v58) & 0xFFFF) << 16); /*0x489bec*/
               v59 = *(unsigned int **)(CellCoord::To_CellObj(&v127) + 232); /*0x489c00*/
             }
             else
             {
-              LOWORD(v131) = v57; /*0x489c0c*/
-              HIWORD(v131) = v58; /*0x489c19*/
+              (v131) = ((v131) & ~0xFFFF) | ((v57) & 0xFFFF); /*0x489c0c*/
+              (v131) = ((v131) & ~(0xFFFF << 16)) | (((v58) & 0xFFFF) << 16); /*0x489c19*/
               v59 = *(unsigned int **)(CellCoord::To_CellObj(&v131) + 228); /*0x489c23*/
             }
             v60 = v59; /*0x489c29*/
@@ -641,7 +641,7 @@ LABEL_82:
                 v61 = (unsigned int *)AbstractClass::IsTechnoType(v60); /*0x489c3e*/
                 if ( v61 ) /*0x489c42*/
                 {
-                  if ( __PAIR32__(v58, v105) == v108 && a2 ) /*0x489c69*/
+                  if ( ((v58 & 0xFFFFu) << 16 | (v105 & 0xFFFFu)) == v108 && a2 ) /*0x489c69*/
                   {
                     v128 = v61[39]; /*0x489c7f*/
                     v129 = v61[40]; /*0x489c86*/
@@ -887,7 +887,7 @@ LABEL_213:
   }
   v96 = v111 == 0; /*0x48a489*/
   v117 = &vt_VectorClass_DamageGroup; /*0x48a491*/
-  if ( Block && BYTE1(v120) ) /*0x48a4a1*/
+  if ( Block && (((v120) >> 8) & 0xFF) ) /*0x48a4a1*/
     __3_YAXPAX_Z(Block); /*0x48a4a4*/
   return v96; /*0x489b40*/
 
@@ -1427,7 +1427,7 @@ LABEL_31:
     {
 LABEL_34:
       v9 = dword_A8D5F8; /*0x48cf87*/
-      LOBYTE(v9) = dword_A8D5F8 & 0xFD; /*0x48cf92*/
+      (v9) = ((v9) & ~0xFF) | ((dword_A8D5F8 & 0xFD) & 0xFF); /*0x48cf92*/
       *(unsigned int *)&dword_A8B238 = 0; /*0x48cf94*/
       dword_A8D5F8 = v9; /*0x48cf9a*/
       (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x48cfa1*/

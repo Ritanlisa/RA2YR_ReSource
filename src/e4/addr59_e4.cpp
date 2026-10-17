@@ -550,7 +550,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     if ( v27 == v20 - 1 ) /*0x594e1b*/
       v29 = m - v26; /*0x594e21*/
     else
-      LOWORD(v29) = Math::RoundToInt((double)v25 / (double)v36 * (double)(int)m + 0.5 - (double)SHIDWORD(m)); /*0x594e3b*/
+      LOWORD(v29) = Math::RoundToInt((double)v25 / (double)v36 * (double)(int)m + 0.5 - (double)(int)(((m) >> 32) & 0xFFFFFFFFu)); /*0x594e3b*/
     v28[8] = v29; /*0x594e40*/
     v26 += v29; /*0x594e43*/
     v20 = *(unsigned int *)v45.__tail_10; /*0x594e45*/
@@ -983,7 +983,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   }
   else
   {
-    HIDWORD(v27) = v26; /*0x59a9c6*/
+    (v27) = ((v27) & 0xFFFFFFFFull) | ((unsigned long long)((v26) & 0xFFFFFFFFull) << 32); /*0x59a9c6*/
     LODWORD(v27) = a4[3] / v6; /*0x59a9ca*/
     v33 = v27; /*0x59a9ce*/
   }
@@ -1070,7 +1070,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
     v18 = *(unsigned int *)(v44.Items + 4 * v17); /*0x59ab85*/
     if ( v18 < v5 ) /*0x59ab8a*/
     {
-      if ( SHIDWORD(v27) <= 0 ) /*0x59ab92*/
+      if ( (int)(((v27) >> 32) & 0xFFFFFFFFu) <= 0 ) /*0x59ab92*/
         v38 += (int)v27 / 2; /*0x59abb8*/
       else
         v37 += v26 / 2; /*0x59aba3*/
@@ -1094,7 +1094,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
           v22[2] = v26 - 4; /*0x59ac28*/
           v22[3] = v27 - 4; /*0x59ac2b*/
         }
-        v37 += HIDWORD(v27); /*0x59ac40*/
+        v37 += (((v27) >> 32) & 0xFFFFFFFFu); /*0x59ac40*/
         v23 = v31 == 1; /*0x59ac4a*/
         v38 += v29; /*0x59ac4b*/
         --v31; /*0x59ac4f*/
@@ -1106,7 +1106,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
     }
     v37 += v32; /*0x59ac7a*/
     v38 += v33; /*0x59ac86*/
-    if ( SHIDWORD(v27) <= 0 ) /*0x59ac8a*/
+    if ( (int)(((v27) >> 32) & 0xFFFFFFFFu) <= 0 ) /*0x59ac8a*/
       v38 = v7[1]; /*0x59ac98*/
     else
       v37 = *v7; /*0x59ac8f*/

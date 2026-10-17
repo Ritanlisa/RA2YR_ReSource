@@ -1216,7 +1216,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     (&v9)->Dtor(); /*0x74fb5c*/
     int v2; // eax
     v2 = this->ambientSoundController[2]; /*0x74fb61*/
-    LOBYTE(v2) = v2 | 8; /*0x74fb64*/
+    (v2) = ((v2) & ~0xFF) | ((v2 | 8) & 0xFF); /*0x74fb64*/
     this->ambientSoundController[2] = v2; /*0x74fb66*/
   }
   int v3; // eax
@@ -1228,7 +1228,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   else
   {
     vtable2_high = 1; /*0x74fb76*/
-    LOBYTE(v3) = v3 | 4; /*0x74fb7b*/
+    (v3) = ((v3) & ~0xFF) | ((v3 | 4) & 0xFF); /*0x74fb7b*/
     HIWORD(this->M10) = 1; /*0x74fb7d*/
     this->ambientSoundController[2] = v3; /*0x74fb81*/
   }

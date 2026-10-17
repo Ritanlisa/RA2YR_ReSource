@@ -1221,7 +1221,7 @@ namespace gamemd {
 unsigned int TeamTypeClass_28::PointerToIndex(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x6f21f0*/
+  if ( ((this->q00C) & 0xFF) ) /*0x6f21f0*/
     return (unsigned int)(a2 - *&this->q004) >> 3; /*0x6f2205*/
   else
     return 0; /*0x6f21f7*/
@@ -1322,7 +1322,7 @@ namespace gamemd {
 unsigned int TeamTypeClass_28::Write(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x6f2490*/
+  if ( ((this->q00C) & 0xFF) ) /*0x6f2490*/
     return (unsigned int)(a2 - *&this->q004) >> 3; /*0x6f24a5*/
   else
     return 0; /*0x6f2497*/

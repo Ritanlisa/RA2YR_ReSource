@@ -158,7 +158,7 @@ int TacticalMap::Redraw()
     0);
   v3 = this->TacticalMap_field_0C; /*0x4f44a5*/
   this->TacticalMap_field_0C = 0; /*0x4f44a8*/
-  LOBYTE(v6) = v3 != 0; /*0x4f44b7*/
+  (v6) = ((v6) & ~0xFF) | ((v3 != 0) & 0xFF); /*0x4f44b7*/
   v7 = v3 == 2; /*0x4f44be*/
   if ( !UI_Helper() ) /*0x4f44c2*/
   {
@@ -881,7 +881,7 @@ LABEL_54:
             v59 = v58[1]; /*0x6d9494*/
             v60 = (int)*v58; /*0x6d9497*/
             v99 = v59; /*0x6d949e*/
-            v61 = (BYTE4(v60) + (int)v60) >> 8; /*0x6d94a9*/
+            v61 = ((((v60) >> 32) & 0xFF) + (int)v60) >> 8; /*0x6d94a9*/
             v62 = ZCoordToScreenY(v57[2]); /*0x6d94ac*/
             v92 = v61; /*0x6d94be*/
             v93 = v99 / 256 - v62; /*0x6d94c9*/
@@ -1110,7 +1110,7 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
         {
           memset((void *)LODWORD(m_TintFactor), 0xFFu, 4 * v17); /*0x7bd098*/
           v16 = (unsigned short *)(LODWORD(v24) + 4 * v17); /*0x7bd09e*/
-          LOBYTE(v14) = v25; /*0x7bd0a1*/
+          (v14) = ((v14) & ~0xFF) | ((v25) & 0xFF); /*0x7bd0a1*/
         }
         if ( (v14 & 1) != 0 && v16 ) /*0x7bd0ab*/
           *v16 = -1; /*0x7bd0ad*/

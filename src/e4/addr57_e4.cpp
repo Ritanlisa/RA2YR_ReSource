@@ -909,7 +909,7 @@ LABEL_20:
     if ( v19 >= 0 && v20 >= 0 && v19 <= 41 && v20 <= 41 ) /*0x57b5b7*/
     {
       v21 = dword_82A89C[v19] - dword_82A89C[v20]; /*0x57b5c9*/
-      v22 = (HIDWORD(v21) ^ v21) - HIDWORD(v21); /*0x57b5cc*/
+      v22 = ((((v21) >> 32) & 0xFFFFFFFFu) ^ v21) - (((v21) >> 32) & 0xFFFFFFFFu); /*0x57b5cc*/
       if ( v22 >= 3 && v22 <= 5 ) /*0x57b5d6*/
       {
         *aP4 = 0; /*0x57b72b*/
@@ -1299,7 +1299,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       dword_ABDC74 = v6; /*0x57ddbb*/
     }
     v46 = *(unsigned int *)aP0 - 0x10000; /*0x57ddcf*/
-    v7 = *aP0 + (SHIWORD(v46) << 9); /*0x57dddd*/
+    v7 = *aP0 + ((short)(((v46) >> 16) & 0xFFFF) << 9); /*0x57dddd*/
     if ( v7 < 0x40000 && (v8 = *(House **)(dword_87F924 + 4 * v7)) != 0 ) /*0x57dded*/
     {
       v51 = v8; /*0x57ddef*/
@@ -1874,7 +1874,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       dword_ABDC74 = v6; /*0x57e80f*/
     }
     v46 = *(unsigned int *)aP0 - 0x10000; /*0x57e823*/
-    v7 = *aP0 + (SHIWORD(v46) << 9); /*0x57e831*/
+    v7 = *aP0 + ((short)(((v46) >> 16) & 0xFFFF) << 9); /*0x57e831*/
     if ( v7 < 0x40000 && (v8 = *(House **)(dword_87F924 + 4 * v7)) != 0 ) /*0x57e841*/
     {
       v51 = v8; /*0x57e843*/
@@ -2541,7 +2541,7 @@ unsigned int * E4Recv_578C50::sub_578C50(unsigned int * v9, int a3)
   __int16 v8; // [esp+12h] [ebp-Eh]
   v8 = v4 + this->M244 - v6; /*0x578cf0*/
   int v9; // [esp+28h] [ebp+8h]
-  LOWORD(v9) = v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2; /*0x578d34*/
+  (v9) = ((v9) & ~0xFFFF) | ((v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2) & 0xFFFF); /*0x578d34*/
   HIWORD(v9) = (v5 - v3) / 2 + v8; /*0x578d3f*/
   *v9 = v9; /*0x578d4b*/
   return v9; /*0x578d48*/

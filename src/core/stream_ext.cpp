@@ -43,7 +43,8 @@ int Buffer::CreateDirectSound()
   int v17; // [esp+2Ch] [ebp-20h]
   unsigned __int16 v18; // [esp+30h] [ebp-1Ch]
   __int16 v19; // [esp+32h] [ebp-1Ah]
-  unsigned __int16 *v20; // [esp+34h] [ebp-18h]
+  unsigned short v20_lo; // [esp+34h] [ebp-18h]
+  unsigned short v20_hi;
   unsigned int v21[2]; // [esp+38h] [ebp-14h] BYREF
   int v22; // [esp+40h] [ebp-Ch]
   int v23; // [esp+44h] [ebp-8h]
@@ -78,7 +79,7 @@ int Buffer::CreateDirectSound()
   v17 = 0; /*0x40a4c9*/
   v19 = 0; /*0x40a4cd*/
   v18 = v10; /*0x40a4d1*/
-  LOWORD(v20) = 0; /*0x40a4da*/
+  v20_lo = 0; /*0x40a4da*/
   v11 = v2[2] * v10; /*0x40a4e7*/
   v16 = v2[2]; /*0x40a4ea*/
   v19 = 8 * v9; /*0x40a4f7*/
@@ -87,7 +88,7 @@ int Buffer::CreateDirectSound()
   v22 = 0; /*0x40a50e*/
   v23 = 0; /*0x40a515*/
   v24 = 0; /*0x40a51e*/
-  LOWORD(v20) = 0; /*0x40a527*/
+  v20_lo = 0; /*0x40a527*/
   v21[0] = 20; /*0x40a52e*/
   v21[1] = 232; /*0x40a53d*/
   v1->u32_6C = ((int)(8 * (3 * v11 / 0x64u) + 1023) / 1024) << 10; /*0x40a55a*/

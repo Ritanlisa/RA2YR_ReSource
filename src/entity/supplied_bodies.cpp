@@ -466,9 +466,9 @@ int AnimClass::resetAnimation()
     return 0; /*0x449551*/
   v3 = *(unsigned int *)(*((unsigned int *)v2 + 949) + 40); /*0x449567*/
   v4 = (unsigned short *)(*(int (**)(AnimClass *, int *))(this->AnimClass_field_0x0 + 440))(this, &v13); /*0x449573*/
-  HIWORD(v10) = HIWORD(v3) + v4[1]; /*0x449596*/
+  HIWORD(v10) = (((v3) >> 16) & 0xFFFF) + v4[1]; /*0x449596*/
   LOWORD(v10) = v3 + *v4 - 1; /*0x4495a1*/
-  v15[1] = (SHIWORD(v10) << 8) + 128; /*0x4495be*/
+  v15[1] = ((short)(((v10) >> 16) & 0xFFFF) << 8) + 128; /*0x4495be*/
   *(unsigned int *)v12 = v10; /*0x4495c2*/
   v15[0] = ((__int16)v10 << 8) + 128; /*0x4495cc*/
   v15[2] = 0; /*0x4495d6*/
@@ -1218,7 +1218,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
   result = *((__int16 *)a1 + 33) - v3; /*0x65bb8f*/
   v23 = result; /*0x65bb91*/
   v6 = result + 2 * v3 + 1; /*0x65bb95*/
-  v28 = __PAIR64__(v4, v6); /*0x65bb9b*/
+  v28 = (((v4 & 0xFFFFFFFFull)) << 32 | (v6 & 0xFFFFFFFFull)); /*0x65bb9b*/
   if ( result < v6 ) /*0x65bb9f*/
   {
     do /*0x65bce9*/
@@ -1260,7 +1260,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
             break; /*0x65bccc*/
           a1 = v22; /*0x65bbbf*/
         }
-        v4 = HIDWORD(v28); /*0x65bcd6*/
+        v4 = (((v28) >> 32) & 0xFFFFFFFFu); /*0x65bcd6*/
         v6 = v28; /*0x65bcd6*/
         a1 = v22; /*0x65bcda*/
       }

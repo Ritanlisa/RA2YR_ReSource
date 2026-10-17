@@ -104,13 +104,13 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
     do /*0x5047c8*/
     {
       v6 = v5->u32_5608; /*0x5047ac*/
-      v7 = *(unsigned int *)(v6 + 8 * HIDWORD(v5)); /*0x5047b2*/
-      v8 = v6 + 8 * HIDWORD(v5); /*0x5047b5*/
+      v7 = *(unsigned int *)(v6 + 8 * (((v5) >> 32) & 0xFFFFFFFFu)); /*0x5047b2*/
+      v8 = v6 + 8 * (((v5) >> 32) & 0xFFFFFFFFu); /*0x5047b5*/
       if ( v7 == a4 ) /*0x5047ba*/
         *(unsigned int *)(v8 + 4) += a3; /*0x5047bc*/
-      ++HIDWORD(v5); /*0x5047c5*/
+      ++(((v5) >> 32) & 0xFFFFFFFFu); /*0x5047c5*/
     }
-    while ( SHIDWORD(v5) < v5->u32_5614 ); /*0x5047c8*/
+    while ( (int)(((v5) >> 32) & 0xFFFFFFFFu) < v5->u32_5614 ); /*0x5047c8*/
   }
   v12 = 0; /*0x5047d0*/
   if ( v5->u32_5614 <= 0 ) /*0x5047d6*/
@@ -120,11 +120,11 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   do /*0x504832*/
   {
     HIDWORD(v5) = *(unsigned int *)v9; /*0x5047e5*/
-    if ( *(unsigned int *)(v9 + 4) > v4 && !*(unsigned char *)(HIDWORD(v5) + 501) ) /*0x5047eb*/
+    if ( *(unsigned int *)(v9 + 4) > v4 && !*(unsigned char *)((((v5) >> 32) & 0xFFFFFFFFu) + 501) ) /*0x5047eb*/
     {
-      if ( !HIDWORD(v5) /*0x50481e*/
-        || HIDWORD(v5) != (unsigned int)v5
-        && (v10 = *(unsigned int *)(HIDWORD(v5) + 48), v10 != v5->ptr_30)
+      if ( !(((v5) >> 32) & 0xFFFFFFFFu) /*0x50481e*/
+        || (((v5) >> 32) & 0xFFFFFFFFu) != (unsigned int)v5
+        && (v10 = *(unsigned int *)((((v5) >> 32) & 0xFFFFFFFFu) + 48), v10 != v5->ptr_30)
         && (v10 == -1 || ((1 << v10) & v5->ptr_5788) == 0) )
       {
         v4 = *(unsigned int *)(v9 + 4); /*0x504820*/
@@ -181,7 +181,7 @@ int globalHelper_005F80(int a1, int * a2, int a3, int a4)
 
   v4 = *(__int16 *)a2 - *(__int16 *)(a1 + 22352); /*0x505f92*/
   v5 = *((__int16 *)a2 + 1) - *(__int16 *)(a1 + 22354); /*0x505f9a*/
-  v6 = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x505fa2*/
+  v6 = ((((v5) >> 32) & 0xFFFFFFFFu) ^ v5) - (((v5) >> 32) & 0xFFFFFFFFu); /*0x505fa2*/
   v7 = abs32(v4); /*0x505fa7*/
   if ( v7 <= v6 ) /*0x505fab*/
     v7 = v6; /*0x505fad*/
@@ -226,7 +226,7 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
     __asm { fmul ds:dbl_7E2818 }
     LOWORD(v15) = Math::RoundToInt(a3); /*0x506055*/
     v10 = 32 * a5 - (unsigned __int8)(((v15 >> 7) + 1) >> 1); /*0x506071*/
-    v9 = (HIDWORD(v10) ^ v10) - HIDWORD(v10); /*0x506074*/
+    v9 = ((((v10) >> 32) & 0xFFFFFFFFu) ^ v10) - (((v10) >> 32) & 0xFFFFFFFFu); /*0x506074*/
     if ( v9 >= 128 ) /*0x50607b*/
       v9 = 255 - v9; /*0x506084*/
   }

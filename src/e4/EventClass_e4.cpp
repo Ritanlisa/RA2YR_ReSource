@@ -360,7 +360,7 @@ int EventClass::Enqueue(unsigned short a2, char a3)
       if ( v5 == 9 ) /*0x54f298*/
       {
         LABEL_19:
-        LOBYTE(result) = 1; /*0x54f2d7*/
+        (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x54f2d7*/
         return result; /*0x54f2dc*/
       }
       v5 |= 0x400u; /*0x54f29a*/
@@ -376,7 +376,7 @@ int EventClass::Enqueue(unsigned short a2, char a3)
     *&this->u32_318 = result; /*0x54f2d1*/
     goto LABEL_19; /*0x54f2d1*/
   }
-  LOBYTE(result) = 0; /*0x54f2e1*/
+  (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x54f2e1*/
   return result; /*0x54f2d7*/
 
 }
@@ -485,12 +485,12 @@ void EventClass::initEvent()
   void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x40b6a6*/
   this->Count = 0; /*0x40b6a9*/
-  if ( v2 && BYTE1(this->q00C) ) /*0x40b6b0*/
+  if ( v2 && (((this->q00C) >> 8) & 0xFF) ) /*0x40b6b0*/
   {
     __3_YAXPAX_Z(v2); /*0x40b6b6*/
     *&this->q004 = 0; /*0x40b6be*/
   }
-  BYTE1(this->q00C) = 0; /*0x40b6c1*/
+  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x40b6c1*/
   this->u32_8 = 0; /*0x40b6c4*/
 
 }
@@ -507,12 +507,12 @@ char EventClass::processEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b74c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x40b756*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x40b756*/
     if ( a3 ) /*0x40b75c*/
       v4 = a3; /*0x40b772*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b76e*/
-    LOBYTE(this->m_C) = 1; /*0x40b776*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x40b776*/
     if ( v4 ) /*0x40b77a*/
     {
       if ( *&this->EventClass_field_0x4 ) /*0x40b785*/
@@ -522,7 +522,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
           m_8 = a2; /*0x40b793*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b799*/
           ++i; /*0x40b79e*/
-        if ( BYTE1(this->m_C) ) /*0x40b7ab*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x40b7ab*/
         {
           __3_YAXPAX_Z(*&this->EventClass_field_0x4); /*0x40b7b6*/
           *&this->EventClass_field_0x4 = 0; /*0x40b7be*/
@@ -559,12 +559,12 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b88c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x40b892*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x40b892*/
     if ( a3 ) /*0x40b898*/
       v4 = a3; /*0x40b8ae*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b8aa*/
-    LOBYTE(this->m_C) = 1; /*0x40b8b2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x40b8b2*/
     if ( !v4 ) /*0x40b8b6*/
       return 0; /*0x40b92a*/
     if ( *&this->EventClass_field_0x4 ) /*0x40b8b8*/
@@ -574,7 +574,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
         m_8 = a2; /*0x40b8c6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b8cc*/
         ++i; /*0x40b8d1*/
-      if ( BYTE1(this->m_C) ) /*0x40b8de*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x40b8de*/
       {
         __3_YAXPAX_Z(*&this->EventClass_field_0x4); /*0x40b8e9*/
         *&this->EventClass_field_0x4 = 0; /*0x40b8f1*/
@@ -607,12 +607,12 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40b9ac*/
   {
-    LOBYTE(this->m_C) = 0; /*0x40b9b6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x40b9b6*/
     if ( a3 ) /*0x40b9bc*/
       v4 = a3; /*0x40b9d2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40b9ce*/
-    LOBYTE(this->m_C) = 1; /*0x40b9d6*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x40b9d6*/
     if ( v4 ) /*0x40b9da*/
     {
       if ( *&this->EventClass_field_0x4 ) /*0x40b9e5*/
@@ -622,7 +622,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
           m_8 = a2; /*0x40b9f3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->EventClass_field_0x4 + 4 * i - 4) ) /*0x40b9f9*/
           ++i; /*0x40b9fe*/
-        if ( BYTE1(this->m_C) ) /*0x40ba0b*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x40ba0b*/
         {
           __3_YAXPAX_Z(*&this->EventClass_field_0x4); /*0x40ba16*/
           *&this->EventClass_field_0x4 = 0; /*0x40ba1e*/
@@ -721,8 +721,8 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2, void *a3)
 
   this->q004 = 0; /*0x40bd0b*/
   this->u32_8 = (void *)aP1; /*0x40bd0e*/
-  LOBYTE(this->q00C) = 1; /*0x40bd11*/
-  BYTE1(this->q00C) = 0; /*0x40bd15*/
+  (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x40bd11*/
+  (this->q00C) = ((this->q00C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x40bd15*/
   this->__pad_000 = (int)&vt_VectorClass; /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
@@ -732,7 +732,7 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2, void *a3)
       return &this->EventClass_field_0x0; /*0x40bd2e*/
     }
     this->EventClass_field_0x4 = __2_YAPAXI_Z(4 * aP1); /*0x40bd3d*/
-    BYTE1(this->EventClass_field_0xC) = 1; /*0x40bd40*/
+    (this->EventClass_field_0xC) = ((this->EventClass_field_0xC) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x40bd40*/
   }
   return &this->EventClass_field_0x0; /*0x40bd2d*/
 
@@ -779,7 +779,7 @@ namespace gamemd {
 unsigned int EventClass::dequeueEvent(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x40c260*/
+  if ( ((this->q00C) & 0xFF) ) /*0x40c260*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x40c275*/
   else
     return 0; /*0x40c267*/
@@ -795,13 +795,13 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40c41c*/
   {
-    LOBYTE(this->q00C) = 0; /*0x40c422*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((0) & 0xFF); /*0x40c422*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x40c428*/
       v4 = a3; /*0x40c43e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40c43a*/
-    LOBYTE(this->q00C) = 1; /*0x40c442*/
+    (this->q00C) = ((this->q00C) & ~0xFF) | ((1) & 0xFF); /*0x40c442*/
     if ( !v4 ) /*0x40c446*/
       return 0; /*0x40c4ba*/
     if ( *&this->q004 ) /*0x40c448*/
@@ -812,7 +812,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40c45c*/
         ++i; /*0x40c461*/
-      if ( BYTE1(this->q00C) ) /*0x40c46e*/
+      if ( (((this->q00C) >> 8) & 0xFF) ) /*0x40c46e*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x40c479*/
         *&this->q004 = 0; /*0x40c481*/

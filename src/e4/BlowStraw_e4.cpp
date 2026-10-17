@@ -125,7 +125,7 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
     }
     else if ( v9 >= 49366 && v9 < 49391 ) /*0x6d096f*/
     {
-      BYTE1(v9) &= 0x3Fu; /*0x6d0977*/
+      (v9) &= ~(((~(0x3Fu)) & 0xFF) << 8); /*0x6d0977*/
       v19 = v9 - 214; /*0x6d097a*/
       if ( v19 >= dword_B0CC20 && v19 <= dword_B0CD28 ) /*0x6d0989*/
         SidebarClearReferences((char *)(v19 - dword_B0CC20 + 1)); /*0x6d0990*/
@@ -133,7 +133,7 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
   }
   else
   {
-    BYTE1(v9) &= ~0x80u; /*0x6d0724*/
+    (v9) &= ~(((~(~0x80u)) & 0xFF) << 8); /*0x6d0724*/
     v10 = v9 - 214; /*0x6d0727*/
     if ( v10 == dword_B0CD24 ) /*0x6d072e*/
     {

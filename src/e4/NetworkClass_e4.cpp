@@ -89,7 +89,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   if ( (unsigned char)result ) /*0x6ffe40*/
   {
     result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
-    LOBYTE(result) = 0; /*0x6ffe4b*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ffe4b*/
   }
   else
   {
@@ -104,7 +104,7 @@ AbstractClass * * NetworkClass::RecordEvent()
       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
       result = ++*(unsigned int *)&dword_A802C8; /*0x6ffea7*/
     }
-    LOBYTE(result) = 1; /*0x6ffeae*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6ffeae*/
   }
   return result; /*0x6ffe4d*/
 

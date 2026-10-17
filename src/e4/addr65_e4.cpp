@@ -830,7 +830,7 @@ char RenderScoreboardSidebar(void * a1, void * a2)
   char v53[12]; // [esp+ACh] [ebp-1Ch] BYREF
   char v54[16]; // [esp+B8h] [ebp-10h] BYREF
 
-  LOBYTE(v2) = byte_884B8D; /*0x653fa0*/
+  (v2) = ((v2) & ~0xFF) | ((byte_884B8D) & 0xFF); /*0x653fa0*/
   if ( byte_884B8D )
   {
     v4 = VtableStub::sub_72F510(); /*0x653fbc*/
@@ -1681,7 +1681,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
     Waypoint_Location = TechnoClass::GetWaypointCoords((TechnoClass *)v3, v47); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/
   v44 = (ScriptActionQueue)v14; /*0x65d9e2*/
-  if ( !v42 && __PAIR32__(*(unsigned __int16 *)&v44.__tail_0[2], v14) != dword_B04C38 ) /*0x65d9f3*/
+  if ( !v42 && ((*(unsigned __int16 *)&v44.__tail_0[2] & 0xFFFFu) << 16 | (v14 & 0xFFFFu)) != dword_B04C38 ) /*0x65d9f3*/
   {
     v15 = v10; /*0x65da07*/
     do /*0x65da1e*/
@@ -1963,7 +1963,7 @@ LABEL_5:
   v49 = v10; /*0x65e13b*/
   v50 = v13; /*0x65e13f*/
   LOBYTE(aP1_4) = 0; /*0x65e143*/
-  if ( __PAIR32__(HIWORD(v51), v10) != dword_B04C38 ) /*0x65e14a*/
+  if ( (((((v51) >> 16) & 0xFFFF) & 0xFFFFu) << 16 | (v10 & 0xFFFFu)) != dword_B04C38 ) /*0x65e14a*/
   {
     while ( 1 ) /*0x65e1d5*/
     {
@@ -1976,7 +1976,7 @@ LABEL_5:
         }
         v15 = v52; /*0x65e185*/
         v16 = *v5; /*0x65e189*/
-        LOWORD(v53) = (unsigned short)v52 << 13; /*0x65e191*/
+        (v53) = ((v53) & ~0xFFFF) | (((unsigned short)v52 << 13) & 0xFFFF); /*0x65e191*/
         if ( (*(int (**)(unsigned int *))(v16 + 44))(v5) == 2 ) /*0x65e19e*/
         {
           LOWORD(v56) = ((v15 << 13) - 24577) & 0xE000; /*0x65e1af*/
@@ -1993,7 +1993,7 @@ LABEL_5:
         v18 = *v5; /*0x65e1e5*/
         v57[2] = 0; /*0x65e1e8*/
         v57[0] = ((__int16)v49 << 8) + 128; /*0x65e1fb*/
-        v57[1] = (SHIWORD(v49) << 8) + 128; /*0x65e209*/
+        v57[1] = ((short)(((v49) >> 16) & 0xFFFF) << 8) + 128; /*0x65e209*/
         (*(void (**)(unsigned int *, unsigned int *))(v18 + 436))(v5, v57); /*0x65e210*/
         v19 = *v5; /*0x65e216*/
         v20 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v49); /*0x65e225*/
@@ -2003,7 +2003,7 @@ LABEL_5:
         (*(void (**)(unsigned int, int, int, unsigned int))(*(unsigned int *)v5[413] + 68))( /*0x65e27b*/
           v5->u32_674,
           ((__int16)v49 << 8) + 128,
-          (SHIWORD(v49) << 8) + 128,
+          ((short)(((v49) >> 16) & 0xFFFF) << 8) + 128,
           0);
         v5->vt_slot_1160(0, 0, 0, 0, 0); /*0x65e28d*/
         v58[0] = v5[39]; /*0x65e29d*/
@@ -2026,7 +2026,7 @@ LABEL_31:
           while ( 1 ) /*0x65e486*/
           {
             v38 = v37 & 7; /*0x65e486*/
-            v39 = HIWORD(v49) + HIWORD(dword_89F688[v38]); /*0x65e499*/
+            v39 = (((v49) >> 16) & 0xFFFF) + HIWORD(dword_89F688[v38]); /*0x65e499*/
             LOWORD(v54) = LOWORD(dword_89F688[v38]) + v49; /*0x65e4a5*/
             HIWORD(v54) = v39; /*0x65e4b1*/
             a2 = v54; /*0x65e4c0*/
@@ -2083,7 +2083,7 @@ LABEL_46:
         (*(void (**)(unsigned int, int, int, unsigned int))(*(unsigned int *)v5[413] + 68))( /*0x65e3f6*/
           v5->u32_674,
           ((__int16)v49 << 8) + 128,
-          (SHIWORD(v49) << 8) + 128,
+          ((short)(((v49) >> 16) & 0xFFFF) << 8) + 128,
           0);
         v32 = (char)a2; /*0x65e3f9*/
         v13 = v50; /*0x65e400*/
@@ -2107,7 +2107,7 @@ LABEL_39:
         v41 = v40 & 7; /*0x65e50f*/
         v42 = HIWORD(dword_89F688[v41]); /*0x65e521*/
         LOWORD(v55) = LOWORD(dword_89F688[v41]) + v49; /*0x65e529*/
-        HIWORD(v55) = HIWORD(v49) + v42; /*0x65e53b*/
+        HIWORD(v55) = (((v49) >> 16) & 0xFFFF) + v42; /*0x65e53b*/
         a2 = v55; /*0x65e544*/
         if ( !LayerClass::CoordinatesLegal(&dword_87F7E8, (__int16 *)&a2) ) /*0x65e550*/
         {
@@ -2212,7 +2212,7 @@ int SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int
       v28[0] = ((__int16)v15 << 8) + 128; /*0x65e756*/
       ++dword_A8E7AC; /*0x65e760*/
       mapCoords = v13->mapCoords; /*0x65e766*/
-      v28[1] = (SHIWORD(v15) << 8) + 128; /*0x65e76c*/
+      v28[1] = ((short)(((v15) >> 16) & 0xFFFF) << 8) + 128; /*0x65e76c*/
       v28[2] = 0; /*0x65e773*/
       v17 = (*(int (**)(CellClass *, unsigned int *, unsigned int))(mapCoords + 216))(v13, v28, 0); /*0x65e77b*/
       --dword_A8E7AC; /*0x65e78f*/
@@ -2351,7 +2351,7 @@ int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6
       v33[0] = ((__int16)v17 << 8) + 128; /*0x65e9ad*/
       ++dword_A8E7AC; /*0x65e9b7*/
       v19 = v14->mapCoords; /*0x65e9bd*/
-      v33[1] = (SHIWORD(v29) << 8) + 128; /*0x65e9c3*/
+      v33[1] = ((short)(((v29) >> 16) & 0xFFFF) << 8) + 128; /*0x65e9c3*/
       v33[2] = 0; /*0x65e9ca*/
       v20 = (*(int (**)(CellClass *, unsigned int *, unsigned int))(v19 + 216))(v14, v33, 0); /*0x65e9ce*/
       --dword_A8E7AC; /*0x65e9e2*/
@@ -3823,7 +3823,7 @@ int globalHelper_05EAB0(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a
       v20[0] = ((__int16)v12 << 8) + 128; /*0x65eba4*/
       ++dword_A8E7AC; /*0x65ebae*/
       v13 = *v10; /*0x65ebb4*/
-      v20[1] = (SHIWORD(v12) << 8) + 128; /*0x65ebba*/
+      v20[1] = ((short)(((v12) >> 16) & 0xFFFF) << 8) + 128; /*0x65ebba*/
       v20[2] = 0; /*0x65ebc1*/
       v14 = (*(int (**)(unsigned int *, unsigned int *, unsigned int))(v13 + 216))(v10, v20, 0); /*0x65ebc9*/
       --dword_A8E7AC; /*0x65ebdd*/

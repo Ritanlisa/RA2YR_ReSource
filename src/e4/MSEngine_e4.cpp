@@ -35,7 +35,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   if ( a2 ) /*0x5acd3d*/
   {
     v5 = a3; /*0x5acd43*/
-    LOBYTE(this->m_C) = 0; /*0x5acd47*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5acd47*/
     if ( a3 ) /*0x5acd4d*/
     {
       v7 = a3; /*0x5acd73*/
@@ -48,7 +48,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
       else
         v7 = 0; /*0x5acd6c*/
     }
-    LOBYTE(this->m_C) = 1; /*0x5acd7b*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5acd7b*/
     if ( v7 ) /*0x5acd7f*/
     {
       if ( *&this->__pad_004 ) /*0x5acd8b*/
@@ -74,7 +74,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
           v5 = a3; /*0x5acdc5*/
           v3 = a2; /*0x5acdc9*/
         }
-        if ( BYTE1(this->m_C) ) /*0x5acdcd*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5acdcd*/
         {
           __3_YAXPAX_Z(*&this->__pad_004); /*0x5acdd8*/
           *&this->__pad_004 = 0; /*0x5acde0*/
@@ -117,7 +117,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   if ( a2 ) /*0x5acedd*/
   {
     v5 = a3; /*0x5acee3*/
-    LOBYTE(this->m_C) = 0; /*0x5acee7*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5acee7*/
     if ( a3 ) /*0x5aceed*/
     {
       v7 = a3; /*0x5acf13*/
@@ -130,7 +130,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       else
         v7 = 0; /*0x5acf0c*/
     }
-    LOBYTE(this->m_C) = 1; /*0x5acf1b*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5acf1b*/
     if ( !v7 ) /*0x5acf1f*/
       return 0; /*0x5acfb4*/
     if ( *&this->__pad_004 ) /*0x5acf25*/
@@ -156,7 +156,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
         v3 = a2; /*0x5acf5f*/
         v5 = a3; /*0x5acf63*/
       }
-      if ( BYTE1(this->m_C) ) /*0x5acf67*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5acf67*/
       {
         __3_YAXPAX_Z(*&this->__pad_004); /*0x5acf72*/
         *&this->__pad_004 = 0; /*0x5acf7a*/
@@ -207,12 +207,12 @@ CampaignClass * MSEngine::Destructor(void *a1)
   DeleteAndZero(&this->m_8); /*0x5ceeb8*/
   void *MSEngine_field_0x4 = this->__pad_004; // eax /*0x5ceebd*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ceec0) */
-  if ( MSEngine_field_0x4 && BYTE1(this->m_C) ) /*0x5ceeca*/
+  if ( MSEngine_field_0x4 && (((this->m_C) >> 8) & 0xFF) ) /*0x5ceeca*/
   {
     __3_YAXPAX_Z(MSEngine_field_0x4); /*0x5ceed0*/
     this->MSEngine_field_0x4 = 0; /*0x5ceed8*/
   }
-  BYTE1(this->m_C) = 0; /*0x5ceedb*/
+  (this->m_C) = ((this->m_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5ceedb*/
   this->MSEngine_field_0x8 = 0; /*0x5ceede*/
 
 }

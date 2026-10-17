@@ -1158,14 +1158,14 @@ int E4Recv_4F3D40::sub_4F3D40()
   String::CopyTruncated((String *)&v8.ptr_4, 4u); /*0x4f3dac*/
   if ( (unsigned __int8)String::Equals_Alt((String *)&v8.ptr_4, aAlt) ) /*0x4f3dba*/
   {
-    BYTE1(v1) |= 4u; /*0x4f3dcb*/
+    (v1) |= ((((4u)) & 0xFF) << 8); /*0x4f3dcb*/
     String::Erase(&v8, 0, 4); /*0x4f3dce*/
   }
   String::Reassign((String *)&v8.ptr_4, (const char **)&v8); /*0x4f3ddc*/
   String::CopyTruncated((String *)&v8.ptr_4, 6u); /*0x4f3de7*/
   if ( (unsigned __int8)String::Equals_Alt((String *)&v8.ptr_4, aShift) ) /*0x4f3df5*/
   {
-    BYTE1(v1) |= 1u; /*0x4f3e06*/
+    (v1) |= ((((1u)) & 0xFF) << 8); /*0x4f3e06*/
     String::Erase(&v8, 0, 6); /*0x4f3e09*/
   }
   v2 = String::Length(&v8); /*0x4f3e12*/

@@ -1899,7 +1899,7 @@ LABEL_2:
     if ( !FileClass::Load(&dword_A8D58C, (const CHAR *)1) ) /*0x52db60*/
     {
       v12 = dword_A8D5F8; /*0x52dc34*/
-      LOBYTE(v12) = dword_A8D5F8 & 0xFD; /*0x52dc39*/
+      (v12) = ((v12) & ~0xFF) | ((dword_A8D5F8 & 0xFD) & 0xFF); /*0x52dc39*/
       dword_A8D5F8 = v12; /*0x52dc3b*/
       goto LABEL_20; /*0x52dc3b*/
     }
@@ -1983,7 +1983,7 @@ LABEL_35:
         if ( FileClass::Load(&dword_A8D58C, (const CHAR *)1) ) /*0x52dd16*/
           goto LABEL_18; /*0x52dd1d*/
         v15 = dword_A8D5F8; /*0x52dd23*/
-        LOBYTE(v15) = dword_A8D5F8 & 0xFD; /*0x52dd28*/
+        (v15) = ((v15) & ~0xFF) | ((dword_A8D5F8 & 0xFD) & 0xFF); /*0x52dd28*/
         dword_A8D5F8 = v15; /*0x52dd2a*/
 LABEL_40:
         v11 = 18; /*0x52dd2f*/
@@ -2050,7 +2050,7 @@ LABEL_40:
       case 8: /*0x52dce1*/
         if ( &stru_8A38E0 ) /*0x52df0c*/
           Menu::Reset(&stru_8A38E0); /*0x52df0e*/
-        LOBYTE(v57) = 0; /*0x52df18*/
+        (v57) = ((v57) & ~0xFF) | ((0) & 0xFF); /*0x52df18*/
         dwNewLong = -1; /*0x52df1f*/
         if ( *(int *)((char *)&stru_A83CD9.fallRate + 3) /*0x52df30*/
           || (Credits::Screen(), *(int *)((char *)&stru_A83CD9.fallRate + 3)) )
@@ -2236,7 +2236,7 @@ LABEL_184:
               goto LABEL_189; /*0x52e961*/
             }
             v45 = dword_A8D5F8; /*0x52e963*/
-            LOBYTE(v45) = dword_A8D5F8 & 0xFE; /*0x52e968*/
+            (v45) = ((v45) & ~0xFF) | ((dword_A8D5F8 & 0xFE) & 0xFF); /*0x52e968*/
             dword_A8D5F8 = v45; /*0x52e96a*/
           }
           v46 = *(unsigned int *)stru_A8E960.nextScenario; /*0x52e96f*/

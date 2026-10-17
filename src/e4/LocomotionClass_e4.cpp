@@ -40,7 +40,7 @@ int LocomotionClass::Initialize()
   this->q040 = g_DDraw_ClipRect; /*0x4af585*/
   this->q044 = qword_8A0794; /*0x4af58e*/
   int v3; // ecx
-  v3 = HIDWORD(qword_8A0794); /*0x4af591*/
+  v3 = (((qword_8A0794) >> 32) & 0xFFFFFFFFu); /*0x4af591*/
   this->__pad_50 = 0; /*0x4af597*/
   this->u32_4C = 0; /*0x4af59a*/
   this->u32_48 = v3; /*0x4af59d*/
@@ -189,9 +189,9 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   a1->LocomotionClass[1] = (int)&vt_JumpjetLocomotionClass; /*0x54acc9*/
   a1->TurnRate = (int)&vt_JumpjetLocomotionClass; /*0x54acd0*/
   int v4; // [esp+Ch] [ebp-4h] BYREF
-  LOWORD(v4) = 0x4000; /*0x54acd7*/
+  (v4) = ((v4) & ~0xFFFF) | ((0x4000) & 0xFFFF); /*0x54acd7*/
   FacingClass::Update(&a1->__pad_50[4], &v4); /*0x54acdc*/
-  LOWORD(v4) = 0x4000; /*0x54ace8*/
+  (v4) = ((v4) & ~0xFFFF) | ((0x4000) & 0xFFFF); /*0x54ace8*/
   FacingClass::Set_SyncLog(&a1->__pad_50[4], &v4); /*0x54aced*/
   return (int)a1->LocomotionClass; /*0x54acf4*/
 

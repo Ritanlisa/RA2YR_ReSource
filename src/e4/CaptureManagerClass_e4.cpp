@@ -106,7 +106,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
   int v29; // [esp+44h] [ebp-8h]
   int v30; // [esp+48h] [ebp-4h]
 
-  LOBYTE(v2) = this->CaptureManagerClass_field_40; /*0x471a59*/
+  (v2) = ((v2) & ~0xFF) | ((this->CaptureManagerClass_field_40) & 0xFF); /*0x471a59*/
   if ( (unsigned char)v2 ) /*0x471a5e*/
   {
     overloadLimit = this->overloadLimit; /*0x471a64*/
@@ -1322,7 +1322,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
   this->vtable2 = 0; /*0x47314b*/
   this->vtable3 = (void *)a2; /*0x47314e*/
   LOBYTE(this->vtable4) = 1; /*0x473151*/
-  BYTE1(this->IsAllocated) = 0; /*0x473155*/
+  (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x473155*/
   this->AbstractClass = &vt_VectorClass; /*0x473158*/
   if ( a2 ) /*0x47315e*/
   {
@@ -1332,7 +1332,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
       return &this->AbstractClass; /*0x47316e*/
     }
     this->vtable2 = __2_YAPAXI_Z(4 * a2); /*0x47317d*/
-    BYTE1(this->IsAllocated) = 1; /*0x473180*/
+    (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x473180*/
   }
   return &this->AbstractClass; /*0x47316d*/
 

@@ -139,12 +139,12 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x53c56c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x53c576*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x53c576*/
     if ( a3 ) /*0x53c57c*/
       v4 = a3; /*0x53c592*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x53c58e*/
-    LOBYTE(this->m_C) = 1; /*0x53c596*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x53c596*/
     if ( v4 ) /*0x53c59a*/
     {
       if ( *&this->q004 ) /*0x53c5a5*/
@@ -154,7 +154,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
           m_8 = a2; /*0x53c5b3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x53c5b9*/
           ++i; /*0x53c5be*/
-        if ( BYTE1(this->m_C) ) /*0x53c5cb*/
+        if ( (((this->m_C) >> 8) & 0xFF) ) /*0x53c5cb*/
         {
           __3_YAXPAX_Z(*&this->q004); /*0x53c5d6*/
           *&this->q004 = 0; /*0x53c5de*/
@@ -202,7 +202,7 @@ int DeleteCommandClass_28::Read(unsigned int * a2, void *a2_2, void *a3)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x53c640*/
+  if ( !((this->m_C) & 0xFF) ) /*0x53c640*/
     return 0; /*0x53c648*/
   m_8 = this->m_8; /*0x53c64e*/
   result = 0; /*0x53c651*/
@@ -241,12 +241,12 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x53c6ac*/
   {
-    LOBYTE(this->m_C) = 0; /*0x53c6b2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x53c6b2*/
     if ( a3 ) /*0x53c6b8*/
       v4 = a3; /*0x53c6ce*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x53c6ca*/
-    LOBYTE(this->m_C) = 1; /*0x53c6d2*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x53c6d2*/
     if ( !v4 ) /*0x53c6d6*/
       return 0; /*0x53c74a*/
     if ( *&this->q004 ) /*0x53c6d8*/
@@ -256,7 +256,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
         m_8 = a2; /*0x53c6e6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x53c6ec*/
         ++i; /*0x53c6f1*/
-      if ( BYTE1(this->m_C) ) /*0x53c6fe*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x53c6fe*/
       {
         __3_YAXPAX_Z(*&this->q004); /*0x53c709*/
         *&this->q004 = 0; /*0x53c711*/

@@ -874,7 +874,7 @@ LABEL_47:
                           _EBP);
         v36 = v35[1]; /*0x73a3d3*/
         v37 = ((__int16)(*v35 / 256) << 8) + 128; /*0x73a3e6*/
-        v11 = (BYTE4(v37) + (int)v37) >> 8; /*0x73a41f*/
+        v11 = ((((v37) >> 32) & 0xFF) + (int)v37) >> 8; /*0x73a41f*/
         if ( (unsigned __int16)(v33 / 256) == (unsigned short)v11 /*0x73a437*/
           && (unsigned __int16)(v34 / 256) == (unsigned __int16)((((__int16)(v36 / 256) << 8) + 128) / 256) )
         {

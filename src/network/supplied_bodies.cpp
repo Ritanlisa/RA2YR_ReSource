@@ -1384,7 +1384,7 @@ LABEL_51:
       case 'g': /*0x5b611a*/
       case 'k': /*0x5b611a*/
         Debug::Log(); /*0x5b637d*/
-        LOBYTE(v13) = dword_A8BB08; /*0x5b6382*/
+        (v13) = ((v13) & ~0xFF) | ((dword_A8BB08) & 0xFF); /*0x5b6382*/
         if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v13, 1) == 1 ) /*0x5b63a5*/
         {
           memset(v52, 0, sizeof(v52)); /*0x5b63b7*/
@@ -2769,7 +2769,7 @@ void NetworkSettings::DlgProc()
         v22 = CharToWideString(unk_A8B380); /*0x5de108*/
         DlgItem = GetDlgItem(hWnd, 1345); /*0x5de10a*/
         SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v22); /*0x5de114*/
-        HIWORD(dword_A8B320) = 0; /*0x5de12a*/
+        (dword_A8B320) = ((dword_A8B320) & ~(0xFFFF << 16)) | (((0) & 0xFFFF) << 16); /*0x5de12a*/
         dword_A8B394 = dword_A8B3B4; /*0x5de131*/
         dword_A8B398 = dword_A8B3B8; /*0x5de137*/
         PtrVector::Destroy((PtrVector *)&stru_A8D804.__pad_3D[539]); /*0x5de13c*/
@@ -2888,7 +2888,7 @@ void NetworkSettings::DlgProc()
         case 0x540u: /*0x5ddc72*/
           ReadChatMessage((wchar_t **)&a3, (HWND)a3.DeleteAndZero_field_0x04); /*0x5dde9c*/
           DeleteAndZero::Alt(&a3); /*0x5ddea5*/
-          if ( HIWORD(v4) == 1281 ) /*0x5ddeb3*/
+          if ( (v4) = ((v4) & ~(0xFFFF << 16)) | (((= 1281) & 0xFFFF) << 16)) /*0x5ddeb3*/
           {
             SendNetworkLobbyChatMessage(hWnd, (int)Math::InitDegToRad, 61680); /*0x5ddeca*/
             return 0; /*0x5dded8*/
@@ -2938,7 +2938,7 @@ void NetworkSettings::DlgProc()
           g_NetworkSetupConfig = v7; /*0x5ddcd4*/
           wcscpy((wchar_t *)&stru_A8D610, *(const wchar_t **)(*(unsigned int *)&stru_A8D804.__pad_3D[543] + 4 * v7)); /*0x5ddce2*/
         }
-        if ( HIWORD(v4) == 1 ) /*0x5ddcf3*/
+        if ( (v4) = ((v4) & ~(0xFFFF << 16)) | (((= 1) & 0xFFFF) << 16)) /*0x5ddcf3*/
         {
           PtrVector::Destroy((PtrVector *)&stru_A8D804.__pad_3D[563]); /*0x5ddcfa*/
           if ( v6 != g_NetworkSetupConfig ) /*0x5ddd05*/
@@ -2946,7 +2946,7 @@ void NetworkSettings::DlgProc()
           GameSetup::DisplayPlayers(v33); /*0x5ddd19*/
           return 0; /*0x5ddd27*/
         }
-        if ( HIWORD(v4) == 2 ) /*0x5ddd2e*/
+        if ( (v4) = ((v4) & ~(0xFFFF << 16)) | (((= 2) & 0xFFFF) << 16)) /*0x5ddd2e*/
         {
           EnableWindow(hWnd, 0); /*0x5ddd3d*/
           v8 = GetDlgItem(hWnd, 1345); /*0x5ddd45*/

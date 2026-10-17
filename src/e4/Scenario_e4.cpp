@@ -199,8 +199,8 @@ int Scenario::ReadTeams()
               {
                 v13 = strtok(0, Delimiter); /*0x44f95e*/
                 v14 = atoi(v13); /*0x44f964*/
-                LOWORD(v66) = v14 % 128; /*0x44f97f*/
-                HIWORD(v66) = v14 / 128; /*0x44f989*/
+                (v66) = ((v66) & ~0xFFFF) | ((v14 % 128) & 0xFFFF); /*0x44f97f*/
+                (v66) = ((v66) & ~(0xFFFF << 16)) | (((v14 / 128) & 0xFFFF) << 16); /*0x44f989*/
                 v12 = v66; /*0x44f98e*/
               }
               else
@@ -285,7 +285,7 @@ int Scenario::ReadTeams()
                   v36 = *(unsigned int *)v29; /*0x44fbd5*/
                   v64 = ((__int16)v59 << 8) + 128; /*0x44fbd7*/
                   v74[0] = v64; /*0x44fbdb*/
-                  v60 = (SHIWORD(v59) << 8) + 128; /*0x44fbe5*/
+                  v60 = ((short)(((v59) >> 16) & 0xFFFF) << 8) + 128; /*0x44fbe5*/
                   v74[1] = v60; /*0x44fbe9*/
                   if ( (*(unsigned __int8 (**)(int, unsigned int *, int))(v36 + 216))(v29, v74, v67) ) /*0x44fbf9*/
                   {
@@ -1010,7 +1010,7 @@ namespace gamemd {
 void Scenario::SetByte96()
 {
 
-  LOBYTE(this->q060) = 0; /*0x642ad0*/
+  (this->q060) = ((this->q060) & ~0xFF) | ((0) & 0xFF); /*0x642ad0*/
 
 }
 }
@@ -1359,7 +1359,7 @@ int Scenario_EndGameFlow()
   AudioQueue::DrainAll(); /*0x685799*/
   EndBufferMixer(&g_MixerState->vfptr, 0x4000); /*0x6857a9*/
   if ( (unsigned int)qword_886FB8 != *(unsigned int *)&stru_A8E960.random[24] /*0x6857ca*/
-    && HIDWORD(qword_886FB8) != *(unsigned int *)&stru_A8E960.random[28] )
+    && (((qword_886FB8) >> 32) & 0xFFFFFFFFu) != *(unsigned int *)&stru_A8E960.random[28] )
   {
     Debug::Log(); /*0x6857d1*/
     ChangeVideoMode(*(unsigned int *)&stru_A8E960.random[24], *(unsigned int *)&stru_A8E960.random[28]); /*0x6857e5*/
@@ -1630,7 +1630,7 @@ int Scenario_EndGame()
   Mission::SetAndCall((MouseClass *)&dword_87F7E8, 0, 0); /*0x685e4f*/
   (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x685e5c*/
   if ( (unsigned int)qword_886FB8 != *(unsigned int *)&stru_A8E960.random[24] /*0x685e7b*/
-    && HIDWORD(qword_886FB8) != *(unsigned int *)&stru_A8E960.random[28] )
+    && (((qword_886FB8) >> 32) & 0xFFFFFFFFu) != *(unsigned int *)&stru_A8E960.random[28] )
   {
     Debug::Log(); /*0x685e82*/
     ChangeVideoMode(*(unsigned int *)&stru_A8E960.random[24], *(unsigned int *)&stru_A8E960.random[28]); /*0x685e96*/

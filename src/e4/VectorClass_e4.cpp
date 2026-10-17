@@ -629,12 +629,12 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5ad01c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x5ad022*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x5ad022*/
     if ( a3 ) /*0x5ad028*/
       v4 = a3; /*0x5ad03e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x5ad03a*/
-    LOBYTE(this->m_C) = 1; /*0x5ad042*/
+    (this->m_C) = ((this->m_C) & ~0xFF) | ((1) & 0xFF); /*0x5ad042*/
     if ( !v4 ) /*0x5ad046*/
       return 0; /*0x5ad0ba*/
     if ( *&this->ptr_4 ) /*0x5ad048*/
@@ -644,7 +644,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
         v5 = a2; /*0x5ad056*/
       for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*&this->ptr_4 + 4 * i - 4) ) /*0x5ad05c*/
         ++i; /*0x5ad061*/
-      if ( BYTE1(this->m_C) ) /*0x5ad06e*/
+      if ( (((this->m_C) >> 8) & 0xFF) ) /*0x5ad06e*/
       {
         __3_YAXPAX_Z(*&this->ptr_4); /*0x5ad079*/
         *&this->ptr_4 = 0; /*0x5ad081*/
@@ -3731,12 +3731,12 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x477c7c*/
   {
-    LOBYTE(this->u32_C) = 0; /*0x477c86*/
+    (this->u32_C) = ((this->u32_C) & ~0xFF) | ((0) & 0xFF); /*0x477c86*/
     if ( a3 ) /*0x477c8c*/
       v4 = a3; /*0x477ca2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x477c9e*/
-    LOBYTE(this->u32_C) = 1; /*0x477ca6*/
+    (this->u32_C) = ((this->u32_C) & ~0xFF) | ((1) & 0xFF); /*0x477ca6*/
     if ( v4 ) /*0x477caa*/
     {
       if ( *&this->u32_4 ) /*0x477cb5*/
@@ -3746,7 +3746,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
           m_8 = a2; /*0x477cc3*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x477cc9*/
           ++i; /*0x477cce*/
-        if ( BYTE1(this->u32_C) ) /*0x477cdb*/
+        if ( (((this->u32_C) >> 8) & 0xFF) ) /*0x477cdb*/
         {
           __3_YAXPAX_Z(*&this->u32_4); /*0x477ce6*/
           *&this->u32_4 = 0; /*0x477cee*/
@@ -3796,7 +3796,7 @@ int  VectorClass_flat::vt04(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->u32_C) ) /*0x477d50*/
+  if ( !((this->u32_C) & 0xFF) ) /*0x477d50*/
     return 0; /*0x477d58*/
   m_8 = this->u32_8; /*0x477d5e*/
   result = 0; /*0x477d61*/
@@ -3816,7 +3816,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int VectorClass_flat::vt05(int a2)
 {
 
-  if ( LOBYTE(this->u32_C) ) /*0x477d90*/
+  if ( ((this->u32_C) & 0xFF) ) /*0x477d90*/
     return (unsigned int)(a2 - *&this->u32_4) >> 2; /*0x477da5*/
   else
     return 0; /*0x477d97*/
@@ -3835,12 +3835,12 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3, void *a3_1)
 
   if ( a2 ) /*0x477e1c*/
   {
-    LOBYTE(this->u32_C) = 0; /*0x477e22*/
+    (this->u32_C) = ((this->u32_C) & ~0xFF) | ((0) & 0xFF); /*0x477e22*/
     if ( a3 ) /*0x477e28*/
       v4 = a3; /*0x477e3e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x477e3a*/
-    LOBYTE(this->u32_C) = 1; /*0x477e42*/
+    (this->u32_C) = ((this->u32_C) & ~0xFF) | ((1) & 0xFF); /*0x477e42*/
     if ( !v4 ) /*0x477e46*/
       return 0; /*0x477eba*/
     if ( *&this->u32_4 ) /*0x477e48*/
@@ -3850,7 +3850,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3, void *a3_1)
         m_8 = a2; /*0x477e56*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x477e5c*/
         ++i; /*0x477e61*/
-      if ( BYTE1(this->u32_C) ) /*0x477e6e*/
+      if ( (((this->u32_C) >> 8) & 0xFF) ) /*0x477e6e*/
       {
         __3_YAXPAX_Z(*&this->u32_4); /*0x477e79*/
         *&this->u32_4 = 0; /*0x477e81*/
@@ -4155,11 +4155,11 @@ char VectorClass_flat::AppendCopy(DynamicVector * aP1)
     Items = this->Items; /*0x4a8018*/
     this->Count = result + 1; /*0x4a801e*/
     *(unsigned int *)(Items + 4 * result) = *aP1; /*0x4a8028*/
-    LOBYTE(result) = 1; /*0x4a802b*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4a802b*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x4a800f*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x4a800f*/
   }
   return result; /*0x4a8011*/
 
@@ -8588,11 +8588,11 @@ char  VectorClass_flat::PushBackCopy()
     Items = this->Items; /*0x630288*/
     this->Count = result + 1; /*0x63028e*/
     *(unsigned int *)(Items + 4 * result) = *a2; /*0x630298*/
-    LOBYTE(result) = 1; /*0x63029b*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x63029b*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x63027f*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x63027f*/
   }
   return result; /*0x630281*/
 
@@ -8673,11 +8673,11 @@ char VectorClass_flat::Append(VectorClass_flat * aP1, void *a2)
     Items = aP1->Items; /*0x63e578*/
     aP1->Count = result + 1; /*0x63e57e*/
     *(unsigned int *)(Items + 4 * result) = *a2; /*0x63e588*/
-    LOBYTE(result) = 1; /*0x63e58b*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x63e58b*/
   }
   else
   {
-    LOBYTE(result) = 0; /*0x63e56f*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x63e56f*/
   }
   return result; /*0x63e571*/
 
@@ -8693,7 +8693,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1, void *a2)
   result = (*(int (**)(DynamicVectorClass *, int))(this->vtable0 + 16))(this, aP1); /*0x63e90c*/
   if ( result == -1 || (Count = this->Count, result >= Count) ) /*0x63e919*/
   {
-    LOBYTE(result) = 0; /*0x63e93b*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x63e93b*/
   }
   else
   {
@@ -8704,7 +8704,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1, void *a2)
     {
       ++result; /*0x63e926*/
     }
-    LOBYTE(result) = 1; /*0x63e935*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x63e935*/
   }
   return result; /*0x63e937*/
 
@@ -9743,7 +9743,7 @@ char VectorClass_flat::RemoveAt(int a2, void *a2_2)
   result = (*(int (**)(DynamicVectorClass *, int))(a2_2->vtable0 + 16))(a2_2, a2_2); /*0x6ce2dc*/
   if ( result == -1 || (Count = a2_2->Count, result >= Count) ) /*0x6ce2e9*/
   {
-    LOBYTE(result) = 0; /*0x6ce30b*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x6ce30b*/
   }
   else
   {
@@ -9754,7 +9754,7 @@ char VectorClass_flat::RemoveAt(int a2, void *a2_2)
     {
       ++result; /*0x6ce2f6*/
     }
-    LOBYTE(result) = 1; /*0x6ce305*/
+    (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6ce305*/
   }
   return result; /*0x6ce307*/
 
@@ -10814,16 +10814,16 @@ char VectorClass_flat::Shrink(void *a1)
       __3_YAXPAX_Z((void *)this->Capacity); /*0x7ae79d*/
       this->Capacity = v8; /*0x7ae7a9*/
       this->Items = (void *)v5; /*0x7ae7ac*/
-      LOBYTE(result) = 1; /*0x7ae7b1*/
+      (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x7ae7b1*/
     }
     else
     {
-      LOBYTE(result) = 0; /*0x7ae760*/
+      (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7ae760*/
     }
   }
   else
   {
-    LOBYTE(result) = 0; /*0x7ae743*/
+    (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x7ae743*/
   }
   return result; /*0x7ae742*/
 
@@ -10878,16 +10878,16 @@ bool VectorClass_Wstring::SetCapacity(const char ** a2)
     {
       v3 = strcmp(v2, *a2); /*0x7b4889*/
       if ( v3 ) /*0x7b48a3*/
-        LOBYTE(v3) = 1; /*0x7b48ba*/
+        (v3) = ((v3) & ~0xFF) | ((1) & 0xFF); /*0x7b48ba*/
     }
     else
     {
-      LOBYTE(v3) = 1; /*0x7b48c0*/
+      (v3) = ((v3) & ~0xFF) | ((1) & 0xFF); /*0x7b48c0*/
     }
   }
   else
   {
-    LOBYTE(v3) = 0; /*0x7b4870*/
+    (v3) = ((v3) & ~0xFF) | ((0) & 0xFF); /*0x7b4870*/
   }
   return v3; /*0x7b4872*/
 

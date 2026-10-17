@@ -39,7 +39,7 @@ int Color::ConvertToRGB(int a2, void *a2_1)
   LOBYTE(v9) = v10[v5]; /*0x51750f*/
   v6 = (v5 > 4 ? -4 : 2) + v5;
   v7 = v6 + (v6 > 4 ? -4 : 2);
-  LOBYTE(v6) = v10[v6]; /*0x51752c*/
+  (v6) = ((v6) & ~0xFF) | ((v10[v6]) & 0xFF); /*0x51752c*/
   HIBYTE(v9) = v10[v7]; /*0x517535*/
   *(unsigned short *)a2 = v9; /*0x517544*/
   a2->field_2 = v6; /*0x51754a*/
