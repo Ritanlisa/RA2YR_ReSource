@@ -14,8 +14,8 @@ void* CellStruct::Add(CellStruct *aP0, unsigned int *aP1, unsigned short *aP2)  
   __int16 v3; // dx
   unsigned short *v5; // [esp+8h] [ebp+8h]
 
-  v3 = ((this->field_0) & 0xFFFF) + *a3; /*0x42d51f*/
-  HIWORD(v5) = (((this->field_0) >> 16) & 0xFFFF) + a3[1]; /*0x42d522*/
+  v3 = this->X + *a3; /*0x42d51f*/
+  HIWORD(v5) = this->Y + a3[1]; /*0x42d522*/
   LOWORD(v5) = v3; /*0x42d52b*/
   *a2 = v5; /*0x42d534*/
   return a2; /*0x42d536*/
@@ -30,7 +30,7 @@ unsigned int * CellStruct::Copy(CellStruct *aP0, void* aP1)  // G57w11: def åŒæ
   void *v3; // edx
   void *v4; // ecx
 
-  v3 = (void *)this->field_0; /*0x437f34*/
+  v3 = *(void **)&this->X; /*0x437f34*/
   v4 = this->field_4; /*0x437f36*/
   *a2 = v3; /*0x437f39*/
   a2[1] = v4; /*0x437f3b*/
@@ -42,7 +42,9 @@ unsigned int * CellStruct::Copy(CellStruct *aP0, void* aP1)  // G57w11: def åŒæ
 namespace gamemd {  // G42.18 ns repair
 BOOL CellStruct::Equals(unsigned short * a2, void *a2_2)
 {
-  return (*((unsigned short *)&(a2_2->field_0))) == *(unsigned int *)(a2_2) && (*(((unsigned short *)&(a2_2->field_0)) + 1)) == a2_2[1]; /*0x50e48b*/
+
+  return this->X == *a2 && this->Y == a2[1]; /*0x50e48b*/
+
 }
 }  // G42.18 ns repair
 // 0x588C60
@@ -50,13 +52,13 @@ namespace gamemd {
 void* CellStruct::Sub(unsigned int *aP1, unsigned short *aP2)
 {
 
-  __int16 v3; // dx
+  signed __int16 X; // dx
   __int16 v4; // cx
   unsigned short *v6; // [esp+8h] [ebp+8h]
 
-  v3 = this->field_0; /*0x588c60*/
-  v4 = (((this->field_0) >> 16) & 0xFFFF) - aP2[1]; /*0x588c6e*/
-  LOWORD(v6) = v3 - *aP2; /*0x588c76*/
+  X = this->X; /*0x588c60*/
+  v4 = this->Y - aP2[1]; /*0x588c6e*/
+  LOWORD(v6) = X - *aP2; /*0x588c76*/
   HIWORD(v6) = v4; /*0x588c7b*/
   *aP1 = v6; /*0x588c84*/
   return aP1; /*0x588c86*/
@@ -68,9 +70,9 @@ namespace gamemd {
 unsigned int * CellStruct::Set(int16_t a2, int16_t a3, void *a3_1)
 {
 
-  LOWORD(this->field_0) = a2; /*0x42d47c*/
-  HIWORD(this->field_0) = a3; /*0x42d47f*/
-  return (unsigned int *)(this); /*0x42d483*/
+  this->X = a2; /*0x42d47c*/
+  this->Y = a3; /*0x42d47f*/
+  return &this->X; /*0x42d483*/
 
 }
 } // namespace gamemd

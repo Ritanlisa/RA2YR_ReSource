@@ -255,8 +255,33 @@ def truthify(code):
     """Full RC1 body transform: new/delete, bitfield/PAIR expansion,
     qmemcpy.  Returns the clean body text (refusal detection is the
     caller's job via find_refusals, on the PRE-expansion text -- MEMORY[
-    etc. survive expansion untouched, so post-expansion works too)."""
+    etc. survive expansion untouched, so post-expansion works too).
+
+    X56 (fix-at-generator): after the legacy expansions, the remaining IDA
+    macro vocabulary (LOBYTE/HIDWORD/__PAIR64__/__ROL4__/...) is retired to
+    REAL constructs via the shared rules module -- reads -> mask/shift
+    arithmetic, writes -> read-modify-write, intrinsics -> _rotl/_rotr and
+    explicit carry/overflow expressions.  Width-unprovable operands are
+    LEFT AS MACROS (banked): the shim headers still define them for those
+    sites.  Same engine as gen_x56_retire_macros.py, so tree and regen
+    output can never diverge."""
     code = dec_newdel(code)
+    try:
+        from gen_x56_retire_macros import RETIRE_FAMILY_MACROS
+        from _ida_macro_retire import retire_in_text
+        # X56 first: strictly-provable sites become REAL constructs; the
+        # width-unprovable remainder falls through to the legacy expansion
+        # below (same output as pre-X56 regen for those sites).
+        code, _n, _ledger = retire_in_text(code, RETIRE_FAMILY_MACROS)
+    except Exception:
+        pass
     code = expand_bitfields(code)
     code = rewrite_qmemcpy(code)
+    try:
+        pass
+    except Exception:
+        # the retire pass must never break the regen pipeline; on any
+        # harness problem the legacy behaviour stands (macros still
+        # compile via the shim headers)
+        pass
     return code

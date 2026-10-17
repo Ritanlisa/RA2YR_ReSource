@@ -49,6 +49,14 @@ CRT = ['dword_B782A0', 'dword_B78BA0', 'dword_B78BA4', 'dword_B78BC0',
        'dword_B78BBC', 'hHeap', 'stru_B782B8']
 
 # G41.27 fixed IDA pseudo-intrinsics (macros -- never emitted as externs)
+# X56 CONTRACT (2026-10-17): these definitions are RETIREMENT-ONLY shims.
+# The strict converter tools/csp_export/gen_x56_retire_macros.py +
+# _ida_macro_retire.py replaces every mechanically-provable use with the real
+# construct (mask/shift arithmetic, _rotl/_rotr, explicit carry/overflow,
+# 64-bit shift-or pairs).  Width-unprovable uses (float-bits, pointer-typed
+# operands, undeclared members) are BANKED and still need these defines to
+# compile.  Retire a definition from this block ONLY at zero remaining uses
+# (census:  \b(?:IDA_)?NAME\s*\(  over src/ excluding #define lines).
 IDA_MACROS = '''
 #define LOBYTE(x) (*((unsigned char *)&(x)))
 #define HIBYTE(x) (*(((unsigned char *)&(x)) + 1))
