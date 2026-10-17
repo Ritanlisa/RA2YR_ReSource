@@ -8,8 +8,17 @@
 namespace gamemd {
 
 struct SortedArray {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int SortedArray_field_0x04;  // 0x4
+    int SortedArray_field_0x08;  // 0x8
+    unsigned int u32_C;  // 0xC
+    int SortedArray_field_0x10;  // 0x10
+    int SortedArray_field_0x14;  // 0x14
+    int SortedArray_field_0x18;  // 0x18
+    int SortedArray_field_0x1C;  // 0x1C
+    int u32_20;  // 0x20
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     ObjectClass * * RemoveByKey(DynamicVector * aP1);
     int Append(DynamicVector * aP1, unsigned int * a2);
@@ -19,18 +28,6 @@ struct SortedArray {
      void * FindValue(int *a2, void *a1 = 0);
     int  Find(int * a2, void *a1 = 0);  // 0x52b170
     void * BinarySearch2(int *a2, void *a1 = 0);
-    unsigned char q0046;  // 0x46 (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char q040;  // X10 supply (member_lookup)
-    unsigned int u32_10;  // X10 supply (member_lookup)
-    int u32_20;  // X10 supply (member_lookup)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-
-
-    int SortedArray_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
-    int SortedArray_field_0x04;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

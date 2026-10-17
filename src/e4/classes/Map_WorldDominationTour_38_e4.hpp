@@ -5,13 +5,13 @@
 
 namespace gamemd {
 struct Map_WorldDominationTour_38 {
-// --- flat members (BEGIN) ---
+    char __pad_0[4];  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int RefCount;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int AddRef(void *a1_1);  // 0x769D60
     unsigned int * Release(void *a1_1);  // 0x76A5A0
     unsigned int * ddtor(void *a1_1);  // 0x76A5B0
-    char __pad_0[4];  // 0x0 (G57W14E1 til supply)
 };
 } // namespace gamemd

@@ -7,17 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct FoggedObjectClass_42 {
-// --- flat members (BEGIN) ---
+    void* vtable2;  // 0x0
     void* Items;  // 0x4
     int Capacity;  // 0x8
-    bool IsInitialized;  // 0xC
-    bool IsAllocated;  // 0xD
+    unsigned int IsInitialized;  // 0xC
     int Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* vtable1;  // 0x0 (no offset truth)
-    void* vtable3;  // 0x0 (no offset truth)
-    void* uniqueId;  // 0x0 (no offset truth)
-    void* vtable2;  // 0x0 (no offset truth)
     int  FindItem(unsigned int * a2);  // 0x4E07B0
     unsigned int *  loc_4E0D30(char a2);  // 0x4E0D30
     void ClearBuffer(void *a1_1);  // 0x4E01F0
@@ -30,8 +26,5 @@ struct FoggedObjectClass_42 {
     VectorClass_flat *  QueryInterface(char a2);  // 0x4E0CE0
     unsigned int  PointerToIndex(int a2);  // 0x4E0220
     unsigned int  Write(int a2);  // 0x4E06E0
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

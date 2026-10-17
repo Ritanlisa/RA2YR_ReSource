@@ -9,19 +9,18 @@ struct AbstractTypeClass;  // fix_fwd_type_supply
 struct TriggerTypeClass;  // fix_fwd_type_supply
 
 struct TagTypeClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    unsigned int vfptr;  // 0x0
+    void * vfptr1;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-int arrayIndex;  // 0x24 [X35-L7 kind=int]
-int persistence;  // 0x28 [X35-L7 kind=int]
+    int arrayIndex;  // 0x24
+    int persistence;  // 0x28
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(void *a1);
     AbstractTypeClass * Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
@@ -38,18 +37,6 @@ int persistence;  // 0x28 [X35-L7 kind=int]
     int PowerDrainUpdate(int * a2);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     void* GetAction(unsigned char *** a2);
-    unsigned int u32_250;  // 0x250 (offset-truth)
-    unsigned int u32_94;  // 0x94 (offset-truth)
-    unsigned int u32_98;  // 0x98 (offset-truth)
-    unsigned int u32_9C;  // 0x9C (offset-truth)
-
-    IUnknown* Name;  // X10 supply (member_lookup)
-    void* q0A0;  // X10 supply (member_lookup)
-    unsigned int Coord_9C;  // [X30:default]
-    unsigned int vfptr;  // [X30:default]
-
-
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

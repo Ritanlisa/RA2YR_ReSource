@@ -6,13 +6,19 @@
 namespace gamemd {
 
 struct WOLobby {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int WOLobby_field_0x04;  // 0x4
+    int WOLobby_field_0x08;  // 0x8
+    int WOLobby_field_0x0C;  // 0xC
+    int WOLobby_field_0x10;  // 0x10
+    int WOLobby_field_0x14;  // 0x14
+    int WOLobby_field_0x18;  // 0x18
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int ChatDlgProc(HWND hDlg, UINT, WPARAM, HWND hWnd);
     int SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd);
     static int  DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4);  // 0x78AC10
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

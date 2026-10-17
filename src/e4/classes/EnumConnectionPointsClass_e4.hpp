@@ -6,11 +6,18 @@
 namespace gamemd {
 
 struct EnumConnectionPointsClass {
+    char __pad_0[4];  // 0x0
+    int __pad_004;  // 0x4
+    int EnumConnectionPointsClass_field_0x08;  // 0x8
+    int EnumConnectionPointsClass_field_0x0C;  // 0xC
+    int EnumConnectionPointsClass_field_0x10;  // 0x10
+    int EnumConnectionPointsClass_field_0x14;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int EnumConnectionPointsClass_field_0x20;  // 0x20
+    int EnumConnectionPointsClass_field_0x24;  // 0x24
+    int EnumConnectionPointsClass_field_0x28;  // 0x28
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
-    int Count;  // 0x16
 // --- flat members (END) ---
     int Skip(int a1);
     int _vt06(unsigned int * a1, unsigned int * a2);
@@ -19,16 +26,6 @@ struct EnumConnectionPointsClass {
     int SetCapacity(int,void *);
     void * Constructor_VectorClass_IConnectionPoint___(int);
     void ClearBuffer(void);
-    int q01C;  // 0x1C
-    unsigned int u32_19;  // 0x19
-    int q018;  // 0x18
-    int __pad_004;  // 0x4 [X30:type_map]
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-    unsigned char __pad_01A;  // 0x1A [X30:canon]
-    unsigned int Capacity;  // [X30:default]
-    unsigned int CapacityIncrement;  // [X30:default]
-    unsigned int Items;  // [X30:default]
-    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 
 } // namespace gamemd

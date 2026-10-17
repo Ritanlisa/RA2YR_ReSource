@@ -9,21 +9,25 @@ namespace gamemd {
 struct DSurface;  // fix_fwd_type_supply
 
 struct BinkMovieHandle {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     char* tempPath;  // 0x4
     DSurface* renderTarget;  // 0x8
-    void* width;  // 0xC [X30:type_map]
+    void* width;  // 0xC
     int height;  // 0x10
     int currentFrame;  // 0x14
     int totalFrames;  // 0x18
     int throttleCounter;  // 0x1C
     bool frameDecoded;  // 0x20
+    unsigned char __pad_021;  // 0x21
+    char __pad_22[2];  // 0x22
     int dataSize;  // 0x24
     unsigned int surfaceFlags;  // 0x28
     bool playing;  // 0x2C
     bool memoryOwned;  // 0x2D
+    unsigned char __pad_02E;  // 0x2E
+    char __pad_2F[1];  // 0x2F
     void* memoryBuffer;  // 0x30
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BOOL COMStub();
     BinkMovieHandle * QueryInterface(char a2);
@@ -39,8 +43,6 @@ struct BinkMovieHandle {
     unsigned int * Close(void *a1, void *a2);
     unsigned int * CopyFrameToSurface();
     unsigned int BlitToTarget(void *a1, void *a2);
-    unsigned char __pad_021;  // 0x21 [X30:canon]
-    unsigned char __pad_02E;  // 0x2E [X30:canon]
 };
 
 } // namespace gamemd

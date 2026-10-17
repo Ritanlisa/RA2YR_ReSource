@@ -6,19 +6,21 @@
 namespace gamemd {
 
 struct TabClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    bool IsAllocated;  // 0xD
+    unsigned int __pad_004;  // 0x4
+    int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    int TabClass_field_0x10;  // 0x10
+    int TabClass_field_0x14;  // 0x14
+    char __pad_18[4];  // 0x18
+    int TabClass_field_0x1C;  // 0x1C
+    char __pad_20[56];  // 0x20
+    int TabClass_field_0x58;  // 0x58
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int DrawPower(void *a1);
     unsigned int * initStripClass();
     int DrawPower(void *a1, void * aGrey);
-
-    int u32_8;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-
-    unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 
 } // namespace gamemd

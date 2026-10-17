@@ -6,12 +6,15 @@
 namespace gamemd {
 
 struct MSPrintAnim {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    void* __pad_004;  // 0x4
+    int MSPrintAnim_field_0x08;  // 0x8
+    int MSPrintAnim_field_0x0C;  // 0xC
+    int MSPrintAnim_field_0x10;  // 0x10
+    int MSPrintAnim_field_0x14;  // 0x14
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     wchar_t GetCharAt(size_t a2);
-    unsigned int *q000;  // 0x0 (offset-truth)
-    void* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

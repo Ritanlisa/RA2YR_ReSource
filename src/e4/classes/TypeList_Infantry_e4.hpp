@@ -8,13 +8,15 @@ namespace gamemd {
 struct TypeList_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct TypeList_Infantry {
-// --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int __pad_0;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void ddtor(void *a1 = 0);  // 0x5128A0
     unsigned int  GetIndex(int a2);  // 0x5128D0
@@ -26,12 +28,5 @@ struct TypeList_Infantry {
     int  GetSize(unsigned int * a2);  // 0x512F70
     DynamicVector *  Constructor_0(char a2);  // 0x5131F0
     DynamicVector *  Constructor_1(char a2);  // 0x5135C0
-    unsigned char m_8[64];  // pad compile-supply (G41.47)
-    unsigned char m_10[64];  // pad compile-supply (G41.47)
-    unsigned char m_1[64];  // pad compile-supply (G41.47)
-    unsigned char __pad_00E;  // 0xE [X30:canon]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

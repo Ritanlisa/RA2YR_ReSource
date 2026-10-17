@@ -6,9 +6,13 @@
 
 namespace gamemd {
 struct RAMFileClass {
+    void* __pad_0;  // 0x0
+    unsigned char __pad_004;  // 0x4
+    char __pad_5[3];  // 0x5
+    AbstractClass* RAMFileClass_field_0x8;  // 0x8
+    unsigned int __pad_00C;  // 0xC
+    unsigned int RAMFileClass_field_0x10;  // 0x10
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    AbstractClass * ptr_8;  // 0x8
 // --- flat members (END) ---
     int nullsub_0_1();  // 0x65C300
     int  nullsub_0_2(int a2);  // 0x65C350
@@ -19,20 +23,5 @@ struct RAMFileClass {
     unsigned char *  WinMain_Helper_65C250(int a2, int Size);  // 0x65C250
     void WinMain_Helper_65C2A0();  // 0x65C2A0
     char * nullsub_0_5();  // 0x65C550
-void* q000;  // 0x0 [X35-L7 kind=void*]
-unsigned int q14;  // 0x14 [X35-L7 kind=unsigned int]
-    unsigned int u32_18;  // 0x18 (offset-truth)
-    unsigned int u32_1C;  // 0x1C (offset-truth)
-    unsigned char u32_1D;  // 0x1D (offset-truth)
-
-    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
-    int q010;  // X10 supply (member_lookup)
-    unsigned int u32_14;  // X10 supply (member_lookup)
-    unsigned char __pad_004;  // 0x4 [X30:canon]
-    AbstractClass* RAMFileClass_field_0x8;  // 0x8 [X30:type_map]
-void* __pad_0;  // 0x0 [X35-L7 kind=void*]
-
-
-    unsigned int RAMFileClass_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

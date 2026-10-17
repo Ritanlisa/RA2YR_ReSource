@@ -7,9 +7,13 @@
 namespace gamemd {
 struct TypeList_flat;  // fix_fwd_type_supply
 struct HouseTypeClass_28 {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1 = 0);  // 0x512990
     int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x5129E0
@@ -18,12 +22,5 @@ struct HouseTypeClass_28 {
     char  Release(int a2, unsigned int * a3);  // 0x513610
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x513710
     unsigned int  Write(int a2);  // 0x5129C0
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q00C;  // X10 supply (member_lookup)
-    int q010;  // X10 supply (member_lookup)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 } // namespace gamemd

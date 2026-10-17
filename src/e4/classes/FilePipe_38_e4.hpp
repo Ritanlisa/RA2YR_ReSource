@@ -7,9 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct FilePipe_38 {
+#pragma pack(push, 1)  // X60: binary-packed layout
+    unsigned char __pad_000;  // 0x0
+    unsigned char * m_1;  // 0x1
+    char __pad_5[3];  // 0x5
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
 // --- flat members (BEGIN) ---
-    void* Items;  // 0x4
-    bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, char * a3);  // 0x478340
     int  Seek(int a2, int a3, void *a3_2 = 0);  // 0x477960
@@ -18,11 +22,6 @@ struct FilePipe_38 {
     int Read(unsigned char * a2, void *a2_2, void *a3 = 0);  // 0x478470
     unsigned int  Write(int a2);  // 0x4784C0
     VectorClass_flat *  QueryInterface(char a2);  // 0x4786D0
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_008;  // X10 supply (csp_canon_members)
+#pragma pack(pop)
 };
 } // namespace gamemd

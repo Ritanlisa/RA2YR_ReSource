@@ -8,8 +8,44 @@ namespace gamemd {
 struct IPXInterfaceClass;  // fix_fwd_type_supply
 struct Game;  // fix_fwd_type_supply
 struct Scenario {
+#pragma pack(push, 1)  // X60: binary-packed layout
+    unsigned int __pad_000;  // 0x0
+    unsigned int Scenario_field_0x4;  // 0x4
+    int Scenario_field_0x8;  // 0x8
+    int q00C;  // 0xC
+    int Scenario_field_0x10;  // 0x10
+    int q014;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int q024;  // 0x24
+    int q028;  // 0x28
+    unsigned int Scenario_field_0x2C;  // 0x2C
+    int Scenario_field_0x30;  // 0x30
+    int q034;  // 0x34
+    int q038;  // 0x38
+    unsigned char q03C[15];  // 0x3C
+    char Scenario_field_0x4B[4];  // 0x4B
+    char __pad_4F[17];  // 0x4F
+    int q060;  // 0x60
+    char __pad_64[20];  // 0x64
+    int q078;  // 0x78
+    char __pad_7C[4];  // 0x7C
+    int q080;  // 0x80
+    char __pad_84[20];  // 0x84
+    int Scenario_field_0x98;  // 0x98
+    char __pad_9C[512];  // 0x9C
+    int Scenario_field_0x29C;  // 0x29C
+    char __pad_2A0[3912];  // 0x2A0
+    int Scenario_field_0x11E8;  // 0x11E8
+    char __pad_11EC[4];  // 0x11EC
+    int Scenario_field_0x11F0;  // 0x11F0
+    char __pad_11F4[698];  // 0x11F4
+    char Scenario_field_0x14AE[4];  // 0x14AE
+    char __pad_14B2[2087];  // 0x14B2
+    char Scenario_field_0x1CD9[4];  // 0x1CD9
+    char __pad_1CDD[1];  // 0x1CDD
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     static int EndGame(void *aP1);
     static int EndGameFlow(void *aP1);
@@ -28,37 +64,6 @@ char LoadWithProgress(void *a1 = 0, void *a2 = 0);
     void * ResetDisplayArrays();  // 0x5C9700
     int  SetDword32(int a2);  // 0x642B10
     int  SetDword30(int a2);  // 0x642DF0
-    char __pad_9C[512];  // 0x9C (ml)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q00C;  // X10 supply (member_lookup)
-    int q010;  // X10 supply (member_lookup)
-    int q014;  // X10 supply (member_lookup)
-    int q018;  // X10 supply (member_lookup)
-    int q01C;  // X10 supply (member_lookup)
-    int q020;  // X10 supply (member_lookup)
-    int q024;  // X10 supply (member_lookup)
-    int q028;  // X10 supply (member_lookup)
-    int q02C;  // X10 supply (member_lookup)
-    int q030;  // X10 supply (member_lookup)
-    int q034;  // X10 supply (member_lookup)
-    int q038;  // X10 supply (member_lookup)
-    unsigned char q03C[15];  /* char[15] */  // X10 supply (member_lookup)
-    void* q040;  // X10 supply (member_lookup)
-    int q060;  // X10 supply (member_lookup)
-    int q078;  // X10 supply (member_lookup)
-    int q080;  // X10 supply (member_lookup)
-    unsigned int u32_16C;  // X10 supply (member_lookup)
-    unsigned int u32_170;  // X10 supply (member_lookup)
-    unsigned int u32_174;  // X10 supply (member_lookup)
-    unsigned int u32_17C;  // X10 supply (member_lookup)
-    unsigned int u32_180;  // X10 supply (member_lookup)
-    char __pad_84[20];  // 0x84 [X30:member_lookup]
-
-
-    unsigned int Scenario_field_0x2C;  // 0x2C [X55 W3 supply (render vocab)]
-    int Scenario_field_0x30;  // 0x30 [X55 W3 supply (render vocab)]
-    int Scenario_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
-    unsigned int Scenario_field_0x4;  // 0x4 [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 } // namespace gamemd

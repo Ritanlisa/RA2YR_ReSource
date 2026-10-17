@@ -17,49 +17,119 @@ struct HouseClass;  // fix_fwd_type_supply
 struct MSShapeAnim;  // fix_fwd_type_supply
 
 struct BulletClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    int BulletClass_field_0x4;  // 0x4
     void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    unsigned int q00C;  // 0xC
+    unsigned char __pad_010;  // 0x10
+    char __pad_11[2];  // 0x11
     bool IsAllocated;  // 0x13
+    char __pad_14[3];  // 0x14
+    bool __pad_017;  // 0x17
+    int BulletClass_field_0x18;  // 0x18
+    char __pad_1C[20];  // 0x1C
     ObjectClass* nextObject;  // 0x30
-    unsigned int alignmentPadding;  // 0x33
-int customSound;  // 0x64 [X35-L7 kind=int]
-int estimatedHealth;  // 0x70 [X35-L7 kind=int]
+    char __pad_34[3];  // 0x34
+    unsigned char __pad_037;  // 0x37
+    char __pad_38[44];  // 0x38
+    int customSound;  // 0x64
+    unsigned char __pad_068;  // 0x68
+    char __pad_69[7];  // 0x69
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
+    char __pad_76[3];  // 0x76
+    unsigned char __pad_079;  // 0x79
+    char __pad_7A[2];  // 0x7A
     unsigned int visibilityFlags;  // 0x7C
+    unsigned char __pad_080;  // 0x80
+    char __pad_81[1];  // 0x81
     bool inOpenToppedTransport;  // 0x82
     bool isSelected;  // 0x83
+    char __pad_84[1];  // 0x84
     unsigned char alignmentPadding85;  // 0x85
+    char __pad_86[3];  // 0x86
+    unsigned char __pad_089;  // 0x89
+    char __pad_8A[3];  // 0x8A
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
     bool isBomb;  // 0x8F
+    char __pad_90[1];  // 0x90
     unsigned char alignmentPadding91;  // 0x91
+    char __pad_92[2];  // 0x92
     unsigned int lastLayer;  // 0x94
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
-    unsigned int Data;  // 0xB8
-    unsigned int Bright;  // 0xE0
-    unsigned int CourseLock;  // 0x105
+    char __pad_9B[3];  // 0x9B
+    unsigned char __pad_09E;  // 0x9E
+    char __pad_9F[13];  // 0x9F
+    void* u32_AC;  // 0xAC
+    int BulletClass_field_0xB0;  // 0xB0
+    char __pad_B4[88];  // 0xB4
+    int BulletClass_field_0x10C;  // 0x10C
+    char __pad_110[4];  // 0x110
     unsigned int InheritedColor;  // 0x114
-unsigned int AnimFrame;  // 0x124 [X35-L7 kind=unsigned int]
-    unsigned int AnimRateCounter;  // 0x125
-unsigned int WeaponType;  // 0x128 [X35-L7 kind=unsigned int]
+    ParticleSystemClass* __pad_118;  // 0x118
+    char __pad_11C[8];  // 0x11C
+    unsigned int AnimFrame;  // 0x124
+    unsigned int WeaponType;  // 0x128
     unsigned int SourceCoords;  // 0x12C
-unsigned int TargetCoords;  // 0x138 [X35-L7 kind=unsigned int]
-unsigned int DamageMultiplier;  // 0x148 [X35-L7 kind=unsigned int]
+    ParticleSystemClass* __pad_130;  // 0x130
+    int q134;  // 0x134
+    unsigned int TargetCoords;  // 0x138
+    ParticleSystemClass* __pad_13C;  // 0x13C
+    int q140;  // 0x140
+    ParticleSystemClass* q144;  // 0x144
+    unsigned int DamageMultiplier;  // 0x148
     CellStruct* NextAnim;  // 0x14C
     unsigned int SpawnNextAnim;  // 0x150
-    BulletTypeClass* Type;  // 0x172
-    unsigned int Owner;  // 0x176
+    ParticleSystemClass* __pad_154;  // 0x154
+    unsigned int q158;  // 0x158
+    char __pad_15C[22];  // 0x15C
+    unsigned char Type;  // 0x172
+    char __pad_173[3];  // 0x173
+    unsigned char Owner;  // 0x176
+    char __pad_177[3];  // 0x177
+    unsigned char __pad_17A;  // 0x17A
+    char __pad_17B[161];  // 0x17B
+    int BulletClass_field_0x21C;  // 0x21C
+    char __pad_220[68];  // 0x220
     unsigned int CourseLockCounter;  // 0x264
     unsigned int Target;  // 0x268
+    unsigned char __pad_26C;  // 0x26C
+    char __pad_26D[27];  // 0x26D
     unsigned int WH;  // 0x288
+    unsigned char __pad_28C;  // 0x28C
+    char __pad_28D[13];  // 0x28D
+    char BulletClass_field_0x29A[4];  // 0x29A
+    char __pad_29E[3];  // 0x29E
+    char BulletClass_field_0x2A1[4];  // 0x2A1
+    char __pad_2A5[7];  // 0x2A5
+    int BulletClass_field_0x2AC;  // 0x2AC
+    char __pad_2B0[12];  // 0x2B0
+    int BulletClass_field_0x2BC;  // 0x2BC
+    char __pad_2C0[16];  // 0x2C0
+    int BulletClass_field_0x2D0;  // 0x2D0
+    char __pad_2D4[4];  // 0x2D4
+    int BulletClass_field_0x2D8;  // 0x2D8
+    int BulletClass_field_0x2DC;  // 0x2DC
+    int BulletClass_field_0x2E0;  // 0x2E0
+    int BulletClass_field_0x2E4;  // 0x2E4
+    int BulletClass_field_0x2E8;  // 0x2E8
+    char __pad_2EC[8];  // 0x2EC
+    int BulletClass_field_0x2F4;  // 0x2F4
+    char __pad_2F8[20];  // 0x2F8
+    int BulletClass_field_0x30C;  // 0x30C
+    char __pad_310[48];  // 0x310
     unsigned int Range;  // 0x340
+    unsigned char __pad_344;  // 0x344
+    char __pad_345[275];  // 0x345
     DynamicVectorClass * ptr_458;  // 0x458
+    unsigned char __pad_45C;  // 0x45C
+    char __pad_45D[195];  // 0x45D
+    int BulletClass_field_0x520;  // 0x520
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * ResetDetonationTimer(BulletClass *pThis);
     BulletClass();
@@ -72,45 +142,6 @@ unsigned int DamageMultiplier;  // 0x148 [X35-L7 kind=unsigned int]
     int PowerDrainProcess(int a1, unsigned int * a2);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     static int16_t LoseTarget(BulletClass *p_this);  // x4:ida@0x468430
-    char __pad_B4[88];  // 0xB4 (ml)
-void* q000;  // 0x0 [X35-L7 kind=void*]
-    unsigned int q00C;  // 0xC (offset-truth)
-    void* u32_AC;  // 0xAC [X30:type_map]
-    unsigned char __pad_010;  // 0x10 [X30:canon]
-bool __pad_017;  // 0x17 [X35-L7 kind=bool]
-    unsigned char __pad_037;  // 0x37 [X30:canon]
-    unsigned char __pad_068;  // 0x68 [X30:canon]
-    unsigned char __pad_079;  // 0x79 [X30:canon]
-    unsigned char __pad_080;  // 0x80 [X30:canon]
-    unsigned char __pad_089;  // 0x89 [X30:canon]
-    unsigned char __pad_09E;  // 0x9E [X30:canon]
-    unsigned char __pad_0BC;  // 0xBC [X30:canon]
-    unsigned char __pad_0E4;  // 0xE4 [X30:canon]
-    unsigned char __pad_109;  // 0x109 [X30:canon]
-    ParticleSystemClass* __pad_118;  // 0x118 [X30:type_map]
-    ParticleSystemClass* __pad_130;  // 0x130 [X30:type_map]
-    ParticleSystemClass* __pad_13C;  // 0x13C [X30:type_map]
-    ParticleSystemClass* __pad_154;  // 0x154 [X30:type_map]
-    unsigned char __pad_17A;  // 0x17A [X30:canon]
-    unsigned char __pad_26C;  // 0x26C [X30:canon]
-    unsigned char __pad_28C;  // 0x28C [X30:canon]
-    unsigned char __pad_344;  // 0x344 [X30:canon]
-    unsigned char __pad_45C;  // 0x45C [X30:canon]
-    unsigned int AbstractClass_10C;  // [X30:default]
-    int BulletClass_field_0x4;  // 0x4 [X30:type_map]
-    unsigned int ParticleSystemClass_110;  // [X30:default]
-    char __pad_C[12];  // 0xC [X30:member_lookup]
-    ParticleSystemClass* q100;  // 0x100 [X30:type_map]
-    unsigned int q104;  // 0x104 [X30:member_lookup]
-    ParticleSystemClass* q108;  // 0x108 [X30:type_map]
-    int q12D;  // 0x12D [X30:type_map]
-    int q134;  // 0x134 [X30:type_map]
-    int q140;  // 0x140 [X30:type_map]
-    ParticleSystemClass* q144;  // 0x144 [X30:type_map]
-unsigned int q158;  // 0x158 [X35-L7 kind=unsigned int]
-    unsigned int q_120;  // [X30:default]
-    unsigned int q_B0;  // [X30:default]
-    void* u16_14E;  // 0x14E [X30:type_map]
 };
 
 } // namespace gamemd

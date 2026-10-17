@@ -5,11 +5,12 @@
 
 namespace gamemd {
 struct CSFClass {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int CSFClass_field_0x04;  // 0x4
+    int CSFClass_field_0x08;  // 0x8
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    unsigned char q000[12];  // 0x0 (canon size filler)
     static int LoadFile(const char *aP1);
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

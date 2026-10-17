@@ -7,8 +7,12 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct HouseClass_24 {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int q004;  // 0x4
+    int HouseClass_24_field_0x8;  // 0x8
+    int q00C;  // 0xC
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x4F28A0
     char  AddRef(int a2);  // 0x4F28E0
@@ -17,10 +21,5 @@ struct HouseClass_24 {
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x4F2A00
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F2B60
     unsigned int  Write(int a2);  // 0x4F2A40
-
-    bool IsInitialized;  // X10 supply (member_lookup)
-    int q004;  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

@@ -6,12 +6,12 @@
 namespace gamemd {
 
 struct ScoreText {
+    int __pad_000;  // 0x0
+    int ScoreText_field_0x04;  // 0x4
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     void Show(void * a2, void *a1 = 0);
     void ShowAlt(const wchar_t **aP1, int a3, void *a1 = 0);
-    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

@@ -7,8 +7,22 @@
 namespace gamemd {
 
 struct WinModemClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned int __pad_004;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    int u32_10;  // 0x10
+    int q014;  // 0x14
+    int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    unsigned int u32_20;  // 0x20
+    unsigned int WinModemClass_field_0x24;  // 0x24
+    int WinModemClass_field_0x28;  // 0x28
+    int WinModemClass_field_0x2C;  // 0x2C
+    int WinModemClass_field_0x30;  // 0x30
+    int WinModemClass_field_0x34;  // 0x34
+    int WinModemClass_field_0x38;  // 0x38
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8);
     WinModemClass * * LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4);
@@ -21,36 +35,6 @@ struct WinModemClass {
     int WriteSerial(LPCVOID lpBuffer, DWORD aP2);
     int ddtor(int a2);
     int SaveToINI(const char * NumberOfBytesWritten, void * aP);
-void* q000;  // 0x0 [X35-L7 kind=void*]
-    unsigned char q0083;  // 0x83 (offset-truth)
-    unsigned char q0146;  // 0x146 (offset-truth)
-    unsigned char q0242;  // 0x242 (offset-truth)
-    unsigned int u32_100;  // 0x100 (offset-truth)
-    unsigned int u32_288;  // 0x288 (offset-truth)
-    unsigned char u32_51;  // 0x51 (offset-truth)
-    unsigned int u32_58;  // 0x58 (offset-truth)
-    unsigned int u32_64;  // 0x64 (offset-truth)
-    unsigned int u32_68;  // 0x68 (offset-truth)
-
-    unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    unsigned char __pad_158;  // X10 supply (member_lookup)
-    int q014;  // X10 supply (member_lookup)
-    unsigned int q040;  // X10 supply (member_lookup)
-    unsigned char q06C;  // X10 supply (member_lookup)
-    int u32_10;  // X10 supply (member_lookup)
-    int u32_18;  // X10 supply (member_lookup)
-    unsigned int u32_1C;  // X10 supply (member_lookup)
-    unsigned int u32_20;  // X10 supply (member_lookup)
-    unsigned int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_50;  // X10 supply (member_lookup)
-    unsigned int u32_54;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-    unsigned int u32_CC;  // X10 supply (member_lookup)
-
-    unsigned int u32_5C;  // X10 supply (member_lookup)
-unsigned int WinModemClass_field_0x24;  // 0x24 [X35-L7 kind=unsigned int]
-    int WinModemClass_field_0x2C;  // 0x2C [X30:type_map]
 };
 
 } // namespace gamemd

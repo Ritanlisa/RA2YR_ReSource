@@ -8,13 +8,15 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_Reestablish {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Destroy(void *a1_1);  // 0x45A0D0
     unsigned int  GetItemIndex(int a2);  // 0x45A100
@@ -29,6 +31,5 @@ struct VectorClass_ptr_Reestablish {
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x45AA10
     VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x45ACE0
     DynamicVector *  Constructor_VectorClass_Reestablish___(char a2);  // 0x45AD30
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

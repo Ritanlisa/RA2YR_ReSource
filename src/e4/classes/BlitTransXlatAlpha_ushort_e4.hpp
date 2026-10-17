@@ -6,9 +6,10 @@
 
 namespace gamemd {
 struct BlitTransXlatAlpha_ushort {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    AbstractClass * ptr_8;  // 0x8
+    unsigned int m_4;  // 0x4
+    AbstractClass* m_8;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493930
     int Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493A60
@@ -30,11 +31,5 @@ struct BlitTransXlatAlpha_ushort {
     int  CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x493C30
     int  CallBlit0_6(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x493C60
     int  CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x493C90
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_4;  // 0x4 (offset-truth)
-    AbstractClass* m_8;  // 0x8 (offset-truth) [X30:type_map]
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned char __pad_004;  // 0x4 [X30:canon]
-    unsigned int Data;  // [X30:default]
 };
 } // namespace gamemd

@@ -9,12 +9,27 @@
 namespace gamemd {
 struct SessionClass;  // fix_fwd_type_supply
 struct Object {
+    char __pad_000[2];  // 0x0
+    char Object_field_0x2[4];  // 0x2
+    char __pad_6[2];  // 0x6
+    int Object_field_0x8;  // 0x8
+    char __pad_C[36];  // 0xC
+    int q030;  // 0x30
+    int Object_field_0x34;  // 0x34
+    char __pad_38[80];  // 0x38
+    int Object_field_0x88;  // 0x88
+    int Object_field_0x8C;  // 0x8C
+    char __pad_90[28];  // 0x90
+    int Object_field_0xAC;  // 0xAC
+    char __pad_B0[52];  // 0xB0
+    int q0E4;  // 0xE4
+    int q0E8;  // 0xE8
+    char __pad_EC[80];  // 0xEC
+    unsigned int Object_field_0x13C;  // 0x13C
+    char __pad_140[348];  // 0x140
+    int Object_field_0x29C;  // 0x29C
 // --- flat members (BEGIN) ---
-    ProgressTimer* ptr_28;  // 0x28 [X30:type_map]
 // --- flat members (END) ---
-    char* attachedTag;  // g57w8: +N 指针算术载体  // 0x0 (no offset truth)
-    char* nextObject;  // g57w8: 同上  // 0x0 (no offset truth)
-    void* parachute;  // 0x0 (no offset truth)
     int FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3);
     int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0
     int IsAlliedWithObjectHouse(int aP1, void *a2 = 0);
@@ -35,25 +50,5 @@ struct Object {
     int  ddtor(unsigned int * a2);  // 0x5FDF10
     int StubReturn176();  // 0x5FDF00
     int StubReturn20();  // 0x5FDF50
-    char __pad_EC[80];  // 0xEC (ml)
-    unsigned int u32_5788;  // 0x5788 (offset-truth)
-
-    unsigned char q004[4];  /* AbstractClass */  // X10 supply (member_lookup)
-    int q008;  // X10 supply (member_lookup)
-    unsigned char q024;  // X10 supply (member_lookup)
-    int q030;  // X10 supply (member_lookup)
-    int q0E4;  // X10 supply (member_lookup)
-    int q0E8;  // X10 supply (member_lookup)
-    int q13C;  // X10 supply (member_lookup)
-    unsigned int u32_F4;  // X10 supply (member_lookup)
-    unsigned int u32_F8;  // X10 supply (member_lookup)
-    int __pad_000;  // 0x0 [X30:type_map]
-    unsigned char __pad_02C;  // 0x2C [X30:canon]
-    int Object_field_0x8;  // 0x8 [X30:member_lookup]
-    int Object_field_0xAC;  // 0xAC [X30:member_lookup]
-    char __pad_C[36];  // 0xC [X30:member_lookup]
-
-
-    unsigned int Object_field_0x13C;  // 0x13C [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

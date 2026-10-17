@@ -6,12 +6,13 @@
 namespace gamemd {
 
 struct WDTObject {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int WDTObject_field_0x04;  // 0x4
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int GetAndClearFlag(void *a1 = 0);
     int GetSize();  // 0x76bfa0
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

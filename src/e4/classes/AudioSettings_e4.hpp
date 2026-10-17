@@ -7,20 +7,18 @@
 namespace gamemd {
 
 struct AudioSettings {
-// --- flat members (BEGIN) ---
     bool m_Flag68;  // 0x0
     bool m_Flag70;  // 0x1
-    unsigned char pad_02;  // 0x2
-int AudioSettings_field_04;  // 0x4 [X35-L7 kind=int]
-int AudioSettings_field_08;  // 0x8 [X35-L7 kind=int]
+    unsigned short pad_02;  // 0x2
+    int AudioSettings_field_04;  // 0x4
+    int AudioSettings_field_08;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int ComputeTransform(AudioSettings *pThis, unsigned int a2);
     static int Check(AudioSettings *pThis, unsigned int a2);
     AbstractClass * * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd);
     void SetFlag68(char a2);
     void SetFlag70(char a2);
-    unsigned int u32_44;  // 0x44 (offset-truth)
-    unsigned char u32_46;  // 0x46 (offset-truth)
 };
 
 } // namespace gamemd

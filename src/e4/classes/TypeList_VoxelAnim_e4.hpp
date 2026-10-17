@@ -9,13 +9,15 @@ struct TypeList_flat;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct TypeList_VoxelAnim {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void ddtor(void *a1 = 0);  // 0x67A410
     unsigned int  GetIndex(int a2);  // 0x67A440
@@ -34,6 +36,5 @@ struct TypeList_VoxelAnim {
     VectorClass_flat * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x67C010
     DynamicVector *  Constructor_0(char a2);  // 0x67C100
     DynamicVector *  Constructor_1(char a2);  // 0x67C1A0
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

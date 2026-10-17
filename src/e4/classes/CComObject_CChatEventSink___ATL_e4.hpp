@@ -7,8 +7,10 @@ namespace gamemd {
 struct Coord;  // fix_fwd_type_supply
 struct CampaignScore;  // fix_fwd_type_supply
 struct CComObject_CChatEventSink___ATL {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[7];  // 0x1
+    int CComObject_CChatEventSink___ATL_field_0x8;  // 0x8
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int DispatchConnectionPairs(void *a1_1);  // 0x7937B0
     Coord * *  DispatchStub_32(int a2, int a3, int a4, int a4_x = 0);  // 0x7A4EC0
@@ -52,6 +54,5 @@ struct CComObject_CChatEventSink___ATL {
     int  DispatchStub_47(int a2, int a3, int a3_x = 0);  // 0x7AC4E0
     int  COMStub_Return0(int a2, int a3, int a4, int a4_x = 0);  // 0x7AB330
     int  StubReturnFalse(int a2, int a3, int a3_x = 0);  // 0x7AB340
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

@@ -11,48 +11,57 @@ struct Coord;  // fix_fwd_type_supply
 struct TeleportLocomotionClass;  // fix_fwd_type_supply
 
 struct JumpjetLocomotionClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* Owner;  // 0x8
     void* LinkedTo;  // 0xC
-    void* Powered;  // 0x10
+    char Powered[1];  // 0x10
     char Dirty;  // 0x11
+    unsigned char __pad_012;  // 0x12
+    char __pad_13[1];  // 0x13
     void* RefCount;  // 0x14
     void* vtable3;  // 0x18
     char Speed[4];  // 0x1C
-    int Climb;  // 0x20 [X30:type_map]
+    int Climb;  // 0x20
     float Crash;  // 0x24
     float Height;  // 0x28
     char Accel[4];  // 0x2C
     float Wobbles;  // 0x30
     float Deviation;  // 0x34
     char NoWobbles[1];  // 0x38
+    unsigned char __pad_039;  // 0x39
+    char __pad_3A[2];  // 0x3A
     bool NoWobbles_d;  // 0x3C
     unsigned char unknown_3D;  // 0x3D
     unsigned char unknown_3E;  // 0x3E
     unsigned char unknown_3F;  // 0x3F
     char DestinationCoords[12];  // 0x40
-    ILocomotion * ptr_48;  // 0x48
     bool IsMoving;  // 0x4C
     unsigned char unknown_4D;  // 0x4D
     unsigned char unknown_4E;  // 0x4E
     unsigned char unknown_4F;  // 0x4F
-    State* CurrentState;  // 0x50 [X30:type_map]
-    void* unknown_6C;  // 0x6C
+    State* CurrentState;  // 0x50
+    unsigned char __pad_054;  // 0x54
+    char __pad_55[23];  // 0x55
+    char unknown_6C[1];  // 0x6C
     unsigned char unknown_6D;  // 0x6D
     unsigned char unknown_6E;  // 0x6E
     unsigned char unknown_6F;  // 0x6F
     int CurrentHeight;  // 0x70
+    int __pad_074;  // 0x74
+    char __pad_78[12];  // 0x78
     unsigned char unknown_84;  // 0x84
     unsigned char unknown_85;  // 0x85
     unsigned char unknown_86;  // 0x86
     unsigned char unknown_87;  // 0x87
     char DestinationReached[1];  // 0x88
+    unsigned char __pad_089;  // 0x89
+    char __pad_8A[7];  // 0x8A
     unsigned char unknown_91;  // 0x91
     unsigned char unknown_92;  // 0x92
     unsigned char unknown_93;  // 0x93
     ILocomotion* Piggybackee;  // 0x94
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Update2(void * a2);
     AbstractClass * * FindClosestOccupiableCell();
@@ -339,24 +348,6 @@ struct JumpjetLocomotionClass {
     void* Update2(void * a1, void * a2);
     JumpjetLocomotionClass * ProcessAttach(int * Block, char a2);
     TeleportLocomotionClass * ConstructLocomotor(ILocomotion ** Block, char a2);
-
-    int32_t TurnRate;  // X10 supply (member_types)
-    unsigned char __pad_054;  // X10 supply (csp_canon_members)
-    ObjectClass* q0E4;  // X10 supply (member_lookup)
-    void* q0F4;  // X10 supply (member_lookup)
-    void* q0FC;  // X10 supply (member_lookup)
-    void* q100;  // X10 supply (member_lookup)
-    unsigned int u32_104;  // X10 supply (member_lookup)
-    unsigned int u32_108;  // X10 supply (member_lookup)
-    int u32_2B4;  // X10 supply (member_lookup)
-    int u32_3;  // X10 supply (member_lookup)
-    int u32_4FC;  // X10 supply (member_lookup)
-    uint8_t u8_50C;  // X10 supply (member_lookup)
-    int u8_53;  // X10 supply (member_lookup)
-    unsigned char __pad_012;  // 0x12 [X30:canon]
-    unsigned char __pad_039;  // 0x39 [X30:canon]
-    int __pad_074;  // 0x74 [X30:type_map]
-    unsigned char __pad_089;  // 0x89 [X30:canon]
 };
 
 } // namespace gamemd

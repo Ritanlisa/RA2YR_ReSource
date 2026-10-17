@@ -20,33 +20,90 @@ struct ObjectTypeClass;  // fix_fwd_type_supply
 struct WeaponTypeClass;  // fix_fwd_type_supply
 
 struct SuperClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
-    bool IsAllocated;  // 0x13
+    unsigned int q00C;  // 0xC
+    unsigned int __pad_010;  // 0x10
+    char __pad_14[3];  // 0x14
+    unsigned char __pad_017;  // 0x17
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
-    unsigned char needsSave;  // 0x32
-    unsigned int alignmentPadding;  // 0x33
-    int CustomChargeTime;  // 0x36
+    unsigned char __pad_020;  // 0x20
+    char __pad_21[3];  // 0x21
+    unsigned int u32_24;  // 0x24
+    unsigned int u32_28;  // 0x28
+    unsigned int u32_2C;  // 0x2C
+    int q030;  // 0x30
+    unsigned int u32_34;  // 0x34
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
     bool BlinkState;  // 0x40
+    char __pad_41[3];  // 0x41
     HouseClass* Owner;  // 0x44
-    void* BlinkTimer;  // 0x48 [X30:type_map]
+    void* BlinkTimer;  // 0x48
+    void* __pad_04C;  // 0x4C
     int SpecialSoundDuration;  // 0x50
     char SpecialSoundLocation[4];  // 0x54
-    char ChronoMapCoords[4];  // 0x62
-    void* Granted;  // 0x6D
-    void* OneTime;  // 0x6E
-    void* IsCharged;  // 0x6F
+    unsigned char __pad_058;  // 0x58
+    char __pad_59[7];  // 0x59
+    int q060;  // 0x60
+    char __pad_64[2];  // 0x64
+    unsigned char __pad_066;  // 0x66
+    char __pad_67[1];  // 0x67
+    unsigned int u32_68;  // 0x68
+    int SuperClass_field_0x6C;  // 0x6C
+    int q070;  // 0x70
+    unsigned int u32_74;  // 0x74
+    unsigned int u32_78;  // 0x78
+    unsigned int u32_7C;  // 0x7C
+    char __pad_80[22];  // 0x80
     bool CanHold;  // 0x96
+    char __pad_97[3];  // 0x97
+    unsigned char __pad_09A;  // 0x9A
+    char __pad_9B[21];  // 0x9B
+    int SuperClass_field_0xB0;  // 0xB0
+    char __pad_B4[16];  // 0xB4
+    int SuperClass_field_0xC4;  // 0xC4
+    char __pad_C8[60];  // 0xC8
     AnimClass* Animation;  // 0x104
     bool AnimationGotInvalid;  // 0x108
+    char __pad_109[3];  // 0x109
+    unsigned char __pad_10C;  // 0x10C
+    char __pad_10D[5];  // 0x10D
     bool IsOnHold;  // 0x112
-    int ReadinessFrame;  // 0x116
+    char __pad_113[3];  // 0x113
+    unsigned char ReadinessFrame;  // 0x116
+    char __pad_117[3];  // 0x117
+    unsigned char __pad_11A;  // 0x11A
+    char __pad_11B[5];  // 0x11B
     int CameoChargeState;  // 0x120
     char ChargeDrainState[4];  // 0x124
+    unsigned char __pad_128;  // 0x128
+    char __pad_129[75];  // 0x129
+    int SuperClass_field_0x174;  // 0x174
+    char __pad_178[132];  // 0x178
+    int SuperClass_field_0x1FC;  // 0x1FC
+    char __pad_200[152];  // 0x200
+    int SuperClass_field_0x298;  // 0x298
+    char __pad_29C[140];  // 0x29C
+    int SuperClass_field_0x328;  // 0x328
+    char __pad_32C[4];  // 0x32C
+    int SuperClass_field_0x330;  // 0x330
+    char __pad_334[20];  // 0x334
+    int SuperClass_field_0x348;  // 0x348
+    int SuperClass_field_0x34C;  // 0x34C
+    char __pad_350[844];  // 0x350
+    int SuperClass_field_0x69C;  // 0x69C
+    char __pad_6A0[1452];  // 0x6A0
+    int SuperClass_field_0xC4C;  // 0xC4C
+    char __pad_C50[24];  // 0xC50
+    int SuperClass_field_0xC68;  // 0xC68
+    char __pad_C6C[812];  // 0xC6C
+    int SuperClass_field_0xF98;  // 0xF98
+    char __pad_F9C[76];  // 0xF9C
+    int SuperClass_field_0xFE8;  // 0xFE8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static wchar_t * SetCurrentFrame(SuperClass *pThis);
     static void AdvanceCountdown(SuperClass *pThis);
@@ -84,34 +141,6 @@ struct SuperClass {
     int Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6);
     int AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshield, void * aEvaIroncurtain, void * aEvaNuclearmiss, void * aEvaPsychicdomi, void * aEvaReinforceme, void * aEvaSpyplanerea);
     wchar_t * NameReadiness(void * aTxtHold);
-    unsigned int q00C;  // 0xC (offset-truth)
-
-    int q030;  // X10 supply (member_lookup)
-    int q060;  // X10 supply (member_lookup)
-    int q070;  // X10 supply (member_lookup)
-    unsigned int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_2C;  // X10 supply (member_lookup)
-    unsigned int u32_34;  // X10 supply (member_lookup)
-    unsigned int u32_38;  // X10 supply (member_lookup)
-    unsigned int u32_3C;  // X10 supply (member_lookup)
-    unsigned int u32_68;  // X10 supply (member_lookup)
-    unsigned int u32_74;  // X10 supply (member_lookup)
-    unsigned int u32_78;  // X10 supply (member_lookup)
-    unsigned int u32_7C;  // X10 supply (member_lookup)
-    unsigned char __pad_010;  // 0x10 [X30:canon]
-    unsigned char __pad_017;  // 0x17 [X30:canon]
-    unsigned char __pad_020;  // 0x20 [X30:canon]
-    unsigned char __pad_03A;  // 0x3A [X30:canon]
-    void* __pad_04C;  // 0x4C [X30:type_map]
-    unsigned char __pad_058;  // 0x58 [X30:canon]
-    unsigned char __pad_066;  // 0x66 [X30:canon]
-    unsigned char __pad_073;  // 0x73 [X30:canon]
-    unsigned char __pad_09A;  // 0x9A [X30:canon]
-    unsigned char __pad_10C;  // 0x10C [X30:canon]
-    unsigned char __pad_11A;  // 0x11A [X30:canon]
-    unsigned char __pad_128;  // 0x128 [X30:canon]
-    unsigned int HouseClass_6C;  // [X30:default]
 };
 
 } // namespace gamemd

@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct Multiplay {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void LogToSYNC_NOMPDEBUG(void *a1 = 0);
 };

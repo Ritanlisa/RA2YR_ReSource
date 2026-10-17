@@ -8,8 +8,13 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct TeamTypeClass_28 {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, int * a3);  // 0x6F22F0
     AbstractClass * *  SetCapacity(int a2, int * a3);  // 0x6F24B0
@@ -23,12 +28,5 @@ struct TeamTypeClass_28 {
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x6F2720
     unsigned int  PointerToIndex(int a2);  // 0x6F21F0
     unsigned int  Write(int a2);  // 0x6F2490
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    int q008;  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
-    int q010;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 } // namespace gamemd

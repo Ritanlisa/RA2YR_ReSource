@@ -6,20 +6,24 @@
 namespace gamemd {
 
 struct MPBattleClass {
-// --- flat members (BEGIN) ---
-    unsigned int MPGameModeClass_field_4;  // 0x4
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    char MPGameModeClass_field_4[1];  // 0x4
+    char __pad_5[3];  // 0x5
     int MPTeams;  // 0x8
     int CSFTitle;  // 0xC
     int CSFTooltip;  // 0x10
     int MPModeIndex;  // 0x14
     int INIFilename;  // 0x18
     int MapFilter;  // 0x1C
-    unsigned int AIAllowed;  // 0x20
+    char AIAllowed[1];  // 0x20
+    char __pad_21[3];  // 0x21
     int INI;  // 0x24
-    unsigned int AlliesAllowed;  // 0x28
-    unsigned int WOLTourney;  // 0x29
-    unsigned int WOLClanTourney;  // 0x2A
-    unsigned int MustAlly;  // 0x2B
+    char AlliesAllowed[1];  // 0x28
+    char WOLTourney[1];  // 0x29
+    char WOLClanTourney[1];  // 0x2A
+    char MustAlly[1];  // 0x2B
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int areTeamChangesAllowed();
     int drawTeamDropdown();
@@ -64,7 +68,6 @@ struct MPBattleClass {
     void validateOwner();
     void validatePlayer();
     void validateStartPosition();
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

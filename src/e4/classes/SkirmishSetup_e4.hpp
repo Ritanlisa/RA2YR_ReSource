@@ -6,9 +6,9 @@
 namespace gamemd {
 
 struct SkirmishSetup {
+    int SkirmishSetup_field_00;  // 0x0
+    int SkirmishSetup_field_04;  // 0x4
 // --- flat members (BEGIN) ---
-int SkirmishSetup_field_00;  // 0x0 [X35-L7 kind=int]
-int SkirmishSetup_field_04;  // 0x4 [X35-L7 kind=int]
 // --- flat members (END) ---
     int DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5);
     int PlayButtonClickAnim();

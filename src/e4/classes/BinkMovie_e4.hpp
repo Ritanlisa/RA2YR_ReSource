@@ -6,13 +6,17 @@
 
 namespace gamemd {
 struct BinkMovie {
+#pragma pack(push, 1)  // X60: binary-packed layout
+    int __pad_0;  // 0x0
+    unsigned int BinkMovie_field_0x4;  // 0x4
+    unsigned int BinkMovie_field_0x8;  // 0x8
+    int BinkMovie_field_0xC;  // 0xC
+    int BinkMovie_field_0x10;  // 0x10
+    int BinkMovie_field_0x14;  // 0x14
+    unsigned long long __pad_18;  // 0x18
+    void* q_20;  // 0x20
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    void* MovieHandle;  // 0x0 (no offset truth)
-    void* currentFrame;  // 0x0 (no offset truth)
-    void* height;  // 0x0 (no offset truth)
-    void* width;  // 0x0 (no offset truth)
     unsigned int * Close(char *FullPath, void *a2 = 0);  // 0x432690
     unsigned int * Open(char *FullPath, int a3, void *a3_1 = 0);  // 0x4326C0
     int Stop(void *a1 = 0, void *a2 = 0);  // 0x432700
@@ -38,36 +42,6 @@ int IsAtEnd(void *a1_1); // def-aligned
     int Play(void *a1_1);
     int RenderFrameToSurface(void *a1_1);
     int InitKeyframeTracking(char * Source, void * aSubtitlemdTxt);
-    void* q_20;  // +0x20 flat supply (CSP-fed) [X30:type_map]
-    unsigned int q_50;  // +0x50 flat supply (CSP-fed)
-    unsigned int u32_104;  // 0x104 (offset-truth)
-    unsigned char u32_105;  // 0x105 (offset-truth)
-    unsigned int u32_24;  // 0x24 (offset-truth)
-    unsigned int u32_2C;  // 0x2C (offset-truth)
-    unsigned char u32_2D;  // 0x2D (offset-truth)
-    unsigned int u32_40;  // 0x40 (offset-truth)
-
-    unsigned int u32_10;  // X10 supply (member_lookup)
-    unsigned int u32_14;  // X10 supply (member_lookup)
-    unsigned int u32_18;  // X10 supply (member_lookup)
-    unsigned int u32_1C;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_30;  // X10 supply (member_lookup)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
-    unsigned int u32_804;  // X10 supply (member_lookup)
-    unsigned int u32_B0;  // X10 supply (member_lookup)
-    unsigned int u32_B4;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-    int __pad_000;  // 0x0 [X30:type_map]
-unsigned int BinkMovie_field_0x4;  // 0x4 [X35-L7 kind=unsigned int]
-unsigned int BinkMovie_field_0x8;  // 0x8 [X35-L7 kind=unsigned int]
-    int BinkMovie_field_0xC;  // 0xC [X30:type_map]
-    int __pad_0;  // 0x0 [X30:type_map]
-
-
-    int BinkMovie_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
-    int __pad_18;  // 0x18 [X55 W3 supply (render vocab)]
-    int BinkMovie_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 } // namespace gamemd

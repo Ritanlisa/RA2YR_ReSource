@@ -19,38 +19,77 @@ struct TechnoTypeClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct MapClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* IsAllocated;  // 0xD
+    unsigned int MapClass_field_0x0;  // 0x0
+    int RadarHashVector_field_0x04;  // 0x4
+    int q008;  // 0x8
+    int RadarHashVector_field_0x0C;  // 0xC
     int q010;  // 0x10
-    bool IsInitialized;  // 0x12
-    int Count;  // 0x16
-    unsigned int CapacityIncrement;  // 0x20
-    unsigned int outBuffer;  // 0x24
-    unsigned int MovementZones;  // 0x34
+    unsigned int MapClass_field_0x14;  // 0x14
+    char __pad_18[16];  // 0x18
+    int MapClass_field_0x28;  // 0x28
+    unsigned int MapClass_field_0x2C;  // 0x2C
+    char __pad_30[24];  // 0x30
+    int MapClass_field_0x48;  // 0x48
+    unsigned int q04C;  // 0x4C
     DynamicVector * ptr_50;  // 0x50
-    IUnknown* somecount_4C;  // 0x68 [X30:type_map]
-    unsigned int ZoneConnections;  // 0x6C
-    unsigned int LevelAndPassability;  // 0x84
-    unsigned int ValidMapCellCount;  // 0x88
-    void* LevelAndPassabilityStruct2pointer_70;  // 0x8C [X30:type_map]
-    unsigned int CellIterator_NextY;  // 0x110
-    unsigned int CellIterator_CurrentY;  // 0x114
-    unsigned int CellIterator_NextCell;  // 0x118
-    unsigned int ZoneIterator_X;  // 0x11C
-    unsigned int ZoneIterator_Y;  // 0x120
-unsigned int q138;  // 0x138 [X35-L7 kind=unsigned int]
-    unsigned int Crates;  // 0x148
-    unsigned int CellStructs1;  // 0x212
-    unsigned int MapRect;  // 0x236
-    unsigned int VisibleRect;  // 0x252
-    unsigned int MapCoordBounds;  // 0x292
-    unsigned int MaxWidth;  // 0x316
-    unsigned int MaxHeight;  // 0x320
+    unsigned int __pad_054;  // 0x54
+    int q058;  // 0x58
+    char __pad_5C[92];  // 0x5C
+    int MapClass_field_0xB8;  // 0xB8
+    unsigned char q0BC[24];  // 0xBC
+    unsigned int u32_D4;  // 0xD4
+    unsigned int u32_D8;  // 0xD8
+    unsigned int u32_DC;  // 0xDC
+    char __pad_E0[12];  // 0xE0
+    int MapClass_field_0xEC;  // 0xEC
+    char __pad_F0[4];  // 0xF0
+    unsigned int MapClass_field_0xF4;  // 0xF4
+    unsigned int __pad_F8;  // 0xF8
+    int q0FC;  // 0xFC
+    int q100;  // 0x100
+    char __pad_104[4];  // 0x104
+    int q108;  // 0x108
+    char u32_10C[28];  // 0x10C
+    int q128;  // 0x128
+    unsigned char u32_12C[4];  // 0x12C
+    int q130;  // 0x130
+    unsigned char q134[8];  // 0x134
+    int MapClass_field_0x13C;  // 0x13C
+    int q140;  // 0x140
+    char __pad_144[83];  // 0x144
+    char MapClass_field_0x197[4];  // 0x197
+    char __pad_19B[166];  // 0x19B
+    char MapClass_field_0x241[4];  // 0x241
+    char __pad_245[79];  // 0x245
+    int MapClass_field_0x294;  // 0x294
+    char __pad_298[108];  // 0x298
+    int q304;  // 0x304
+    IUnknown* q0308;  // 0x308
+    char __pad_30C[1020];  // 0x30C
+    void* u32_708;  // 0x708
+    unsigned char __pad_70C;  // 0x70C
+    char __pad_70D[248];  // 0x70D
+    unsigned char q0805;  // 0x805
+    unsigned char __pad_806;  // 0x806
+    char __pad_807[1397];  // 0x807
+    int MapClass_field_0xD7C;  // 0xD7C
+    char __pad_D80[960];  // 0xD80
+    char __pad_1140[28];  // 0x1140
+    unsigned int u32_115C;  // 0x115C
+    unsigned int u32_1160;  // 0x1160
+    unsigned int u32_1164;  // 0x1164
+    unsigned int __pad_1168;  // 0x1168
+    unsigned int u32_116C;  // 0x116C
+    char __pad_1170[44];  // 0x1170
+    unsigned int u32_119C;  // 0x119C
+    unsigned int u32_11A0;  // 0x11A0
+    char __pad_11A4[180];  // 0x11A4
+    int MapClass_field_0x1258;  // 0x1258
+    char __pad_125C[960];  // 0x125C
+    char __pad_161C[164];  // 0x161C
+    int MapClass_field_0x16C0;  // 0x16C0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* field_0;  // 0x0 (no offset truth)
-    void* field_16C0;  // 0x0 (no offset truth)
-    void* field_4;  // 0x0 (no offset truth)
     int GetTileDataField14();
     static INIClass * * SaveCellTagsToINI(MapClass *pThis, char *a2);
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
@@ -138,138 +177,6 @@ unsigned int q138;  // 0x138 [X35-L7 kind=unsigned int]
     MapClass * Destru_vt04(char * Block, char a2);
     VectorClass_flat * InitCellVe_vt00(unsigned int * Block, char a2);
     int GetTileDataField14(MapResourceClass * aP0);
-    char __pad_30[24];  // 0x30 (ml)
-    char __pad_5C[92];  // 0x5C (ml)
-    unsigned char q0086;  // 0x86 (offset-truth)
-    unsigned int q0088;  // 0x88 (offset-truth)
-    unsigned char q01C6;  // 0x1C6 (offset-truth)
-    IUnknown* q0308;  // 0x308 (offset-truth) [X30:type_map]
-    unsigned char q0585;  // 0x585 (offset-truth)
-    unsigned char q0805;  // 0x805 (offset-truth)
-    unsigned char u32_6F47;  // 0x6F47 (offset-truth)
-
-    unsigned int MaxLevel;  // X10 supply (csp_canon_members)
-    unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    unsigned char __pad_028;  // X10 supply (csp_canon_members)
-    unsigned char __pad_054;  // X10 supply (csp_canon_members)
-    unsigned char __pad_124;  // X10 supply (csp_canon_members)
-    unsigned char __pad_13C;  // X10 supply (csp_canon_members)
-    int q008;  // X10 supply (member_lookup)
-    int q014;  // X10 supply (member_lookup)
-    int q02C;  // X10 supply (member_lookup)
-    unsigned int q03C;  // X10 supply (member_lookup)
-    int q058;  // X10 supply (member_lookup)
-    unsigned int q0A8;  // X10 supply (member_lookup)
-    unsigned int q0B0;  // X10 supply (member_lookup)
-    unsigned int q0B4;  // X10 supply (member_lookup)
-    unsigned char q0BC[24];  /* char[24] */  // X10 supply (member_lookup)
-    int q0FC;  // X10 supply (member_lookup)
-    int q100;  // X10 supply (member_lookup)
-    int q108;  // X10 supply (member_lookup)
-    unsigned int q1158;  // X10 supply (member_lookup)
-    unsigned int q117C;  // X10 supply (member_lookup)
-    unsigned int q11A8;  // X10 supply (member_lookup)
-    unsigned int q11B0;  // X10 supply (member_lookup)
-    unsigned int q11B1;  // X10 supply (member_lookup)
-    unsigned int q11B2;  // X10 supply (member_lookup)
-    unsigned int q11B3;  // X10 supply (member_lookup)
-    unsigned int q11B4;  // X10 supply (member_lookup)
-    int q128;  // X10 supply (member_lookup)
-    int q130;  // X10 supply (member_lookup)
-    unsigned char q134[8];  /* char[8] */  // X10 supply (member_lookup)
-    int q140;  // X10 supply (member_lookup)
-    unsigned char q158;  // X10 supply (member_lookup)
-    unsigned int q2E4;  // X10 supply (member_lookup)
-    unsigned int q2E8;  // X10 supply (member_lookup)
-    ObjectClass* q2F5;  // X10 supply (member_lookup)
-    int q304;  // X10 supply (member_lookup)
-    unsigned int u32_10C;  // X10 supply (member_lookup)
-    unsigned int u32_115C;  // X10 supply (member_lookup)
-    unsigned int u32_1160;  // X10 supply (member_lookup)
-    unsigned int u32_1164;  // X10 supply (member_lookup)
-    unsigned int u32_1169;  // X10 supply (member_lookup)
-    unsigned int u32_116C;  // X10 supply (member_lookup)
-    unsigned int u32_119C;  // X10 supply (member_lookup)
-    unsigned int u32_11A0;  // X10 supply (member_lookup)
-    unsigned char u32_12C[4];  /* char[4] */  // X10 supply (member_lookup)
-    unsigned int u32_5D;  // X10 supply (member_lookup)
-    unsigned int u32_A4;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-    unsigned int u32_D4;  // X10 supply (member_lookup)
-    unsigned int u32_D8;  // X10 supply (member_lookup)
-    unsigned int u32_DC;  // X10 supply (member_lookup)
-    int u32_DE4;  // X10 supply (member_lookup)
-    unsigned int u32_E1;  // X10 supply (member_lookup)
-    unsigned int u32_F4;  // X10 supply (member_lookup)
-
-    unsigned char q0F8[4];  /* char[4] */  // X10 supply (member_lookup)
-    unsigned int u32_2F4;  // 0x2F4
-    unsigned int u32_2F0;  // 0x2F0
-    unsigned int u32_2DC;  // 0x2DC
-    unsigned int u32_2D8;  // 0x2D8
-    unsigned int u32_2D4;  // 0x2D4
-    unsigned int u32_2D0;  // 0x2D0
-    unsigned int u32_2CC;  // 0x2CC
-    unsigned int u32_2C8;  // 0x2C8
-    unsigned int u32_2C4;  // 0x2C4
-    unsigned int u32_2C0;  // 0x2C0
-    unsigned int u32_2BC;  // 0x2BC
-    unsigned int u32_231;  // 0x231
-    unsigned int u32_230;  // 0x230
-    DynamicVector * q080;  // 0x80
-    int q018;  // 0x18  /* char[16] */ [X30:type_map]
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-    unsigned char __pad_01A;  // 0x1A [X30:canon]
-    int __pad_038;  // 0x38 [X30:type_map]
-    IUnknown* __pad_070;  // 0x70 [X30:type_map]
-    unsigned char __pad_090;  // 0x90 [X30:canon]
-    int __pad_14C;  // 0x14C [X30:type_map]
-    unsigned char __pad_216;  // 0x216 [X30:canon]
-    unsigned char __pad_23A;  // 0x23A [X30:canon]
-    unsigned char __pad_256;  // 0x256 [X30:canon]
-    unsigned char __pad_296;  // 0x296 [X30:canon]
-    unsigned char __pad_31A;  // 0x31A [X30:canon]
-    unsigned char __pad_324;  // 0x324 [X30:canon]
-    unsigned int Activated;  // [X30:default]
-    unsigned int AnimationProbability;  // [X30:default]
-    unsigned int AnimationRate;  // [X30:default]
-    unsigned int ArrayIndex;  // [X30:default]
-    unsigned int Foundation;  // [X30:default]
-    unsigned int FoundationData;  // [X30:default]
-    unsigned int GetTileIndexthis;  // [X30:default]
-    int MapClass_field_0x13C;  // 0x13C [X30:type_map]
-    unsigned int RadarColor;  // [X30:default]
-    int RadarHashVector_field_0x04;  // 0x4 [X30:type_map]
-    int RadarHashVector_field_0x0C;  // 0xC [X30:type_map]
-    unsigned int SnowOccupationBits;  // [X30:default]
-    unsigned int SpawnsTiberium;  // [X30:default]
-    unsigned int TemperateOccupationBits;  // [X30:default]
-    unsigned int WaterBound;  // [X30:default]
-void* __pad_0;  // 0x0 [X35-L7 kind=void*]
-    unsigned int q001_;  // [X30:default]
-    unsigned int q002_6;  // [X30:default]
-    int q150;  // 0x150 [X30:type_map]
-unsigned int q154;  // 0x154 [X35-L7 kind=unsigned int]
-    AbstractClass* q2B4;  // 0x2B4 [X30:member_lookup]
-    unsigned char q2EC;  // 0x2EC [X30:member_lookup]
-    bool q305;  // 0x305 [X30:member_lookup]
-    unsigned int q306;  // 0x306 [X30:member_lookup]
-unsigned int u32_145;  // 0x145 [X35-L7 kind=unsigned int]
-    void* u32_708;  // 0x708 [X30:member_lookup]
-    unsigned char u8_2E0;  // 0x2E0 [X30:member_lookup]
-    unsigned char u8_2E1;  // 0x2E1 [X30:member_lookup]
-    unsigned char u8_2E2;  // 0x2E2 [X30:member_lookup]
-    unsigned char u8_2E3;  // 0x2E3 [X30:member_lookup]
-
-
-    unsigned int MapClass_field_0xF4;  // 0xF4 [X55 W3 supply (render vocab)]
-    unsigned int MapClass_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
-    unsigned int __pad_F8;  // 0xF8 [X55 W3 supply (render vocab)]
-    unsigned int MapClass_field_0x2C;  // 0x2C [X55 W3 supply (render vocab)]
-    int MapClass_field_0x28;  // 0x28 [X55 W3 supply (render vocab)]
-    unsigned int q04C;  // 0x4C [X55 W3 supply (render vocab)]
-    unsigned int MapClass_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
-    int __pad_18;  // 0x18 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

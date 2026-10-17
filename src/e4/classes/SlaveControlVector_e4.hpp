@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct SlaveControlVector {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Constructor(int a2, int a3, void *a1 = 0);
 };

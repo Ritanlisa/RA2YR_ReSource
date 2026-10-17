@@ -8,10 +8,10 @@
 namespace gamemd {
 
 struct Selection {
-// --- flat members (BEGIN) ---
     ObjectClass* m_Current;  // 0x0
     bool m_Flag;  // 0x4
-    unsigned char pad_05;  // 0x5
+    char pad_05[3];  // 0x5
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     bool GetFlag(void *a1);
     static bool GetFlag();

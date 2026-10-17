@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UAcceleratorTracker {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int *  Clear(unsigned int * a2, int a3);  // 0x5D5130
     char  AddRef(int a2);  // 0x5D53B0
@@ -21,6 +22,5 @@ struct VectorClass_UAcceleratorTracker {
     int  GetSize(unsigned int * a2);  // 0x5D5530
     unsigned int  GetCapacity(int a2);  // 0x5D5580
     VectorClass_flat *  QueryInterface(char a2);  // 0x5D5780
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

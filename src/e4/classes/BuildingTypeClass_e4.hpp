@@ -25,497 +25,468 @@ struct ParticleSystemTypeClass;  // fix_fwd_type_supply
 struct ParticleTypeClass;  // fix_fwd_type_supply
 
 struct BuildingTypeClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    void * vfptr;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     unsigned int uniqueId;  // 0x10
-    unsigned int alignmentPadding_3;  // 0x11
     void* abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     unsigned int NeedsSaveOrLink;  // 0x20
-    unsigned int BarrelVoxel;  // 0x24
-    unsigned int IsAllocated;  // 0x25
-    int TargetEffectivenessCoefficient;  // 0x28
+    char __pad_24[8];  // 0x24
     int ChargerBarrels_0x12;  // 0x2C
-    bool TargetSpecialThreatCoefficient;  // 0x30
-    int alignmentPadding;  // 0x33
-    unsigned int TargetStrengthCoefficient;  // 0x38
+    char __pad_30[1];  // 0x30
+    char __pad_31[2];  // 0x31
+    unsigned char alignmentPadding;  // 0x33
+    char __pad_34[3];  // 0x34
+    unsigned char __pad_037;  // 0x37
+    char __pad_38[4];  // 0x38
     unsigned char zero_3C;  // 0x3C
-    char UINameLabel;  // 0x3D
-    unsigned int TargetDistanceCoefficient;  // 0x40
-    unsigned int ThreatAvoidanceCoefficient;  // 0x48
-    unsigned int SlowdownDistance;  // 0x50
+    char UINameLabel[32];  // 0x3D
+    unsigned char __pad_05D;  // 0x5D
+    char __pad_5E[2];  // 0x5E
     unsigned int UIName;  // 0x60
-    char Name;  // 0x64
-    int tail_95;  // 0x95
+    char Name[49];  // 0x64
+    char tail_95[3];  // 0x95
+    char __pad_98[1];  // 0x98
+    unsigned char __pad_099;  // 0x99
+    char __pad_9A[1];  // 0x9A
     unsigned char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
     int Strength;  // 0xA0
     SHPStruct* Image;  // 0xA4
     bool ImageAllocated;  // 0xA8
+    char __pad_0A9[3];  // 0xA9
     SHPStruct* AlphaImage;  // 0xAC
     char MainVoxel[4];  // 0xB0
     char TurretVoxel[4];  // 0xB4
+    VoxelStruct* __pad_0B8;  // 0xB8
     char ChargerTurrets[72];  // 0xBC
     char ChargerBarrels[72];  // 0x104
     bool NoSpawnAlt;  // 0x14C
+    unsigned char __pad_14D;  // 0x14D
+    char __pad_14E[155];  // 0x14E
+    char align_1E9[3];  // 0x1E9
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
-    char ImageFile;  // 0x1F8
-    int AlternateArcticArt;  // 0x1F9
-    int ArcticArtInUse;  // 0x1FA
-    char AlphaImageFile_0x19;  // 0x1FB
-    int Theater;  // 0x1FC
-    int Crushable;  // 0x1FD
-    int Bombable;  // 0x1FE
-    int RadarInvisible;  // 0x1FF
-    int Selectable;  // 0x200
-    int LegalTarget;  // 0x201
-    int Insignificant;  // 0x202
-    int Immune;  // 0x203
-    int IsLogic;  // 0x204
-    int AllowCellContent;  // 0x205
-    int Voxel;  // 0x206
-    int NewTheater;  // 0x207
-    int HasRadialIndicator;  // 0x208
-    int IgnoresFirestorm;  // 0x209
-    int UseLineTrail;  // 0x20A
-    int LineTrailColor;  // 0x20C
+    char ImageFile[25];  // 0x1F8
+    bool __pad_211;  // 0x211
     unsigned char ArcticArtInUse_d;  // 0x212
-    char AlphaImageFile;  // 0x213
+    char AlphaImageFile[25];  // 0x213
+    unsigned char __pad_22C;  // 0x22C
+    char Crushable[1];  // 0x22D
+    char Bombable[1];  // 0x22E
+    char RadarInvisible[1];  // 0x22F
+    char Selectable[1];  // 0x230
+    char LegalTarget[1];  // 0x231
     unsigned char Insignificant_d;  // 0x232
+    bool __pad_233;  // 0x233
+    char IsLogic[1];  // 0x234
+    char AllowCellContent[1];  // 0x235
     unsigned char Voxel_d;  // 0x236
+    bool __pad_237;  // 0x237
     unsigned char HasRadialIndicator_d;  // 0x238
+    bool __pad_239;  // 0x239
+    char UseLineTrail[1];  // 0x23A
+    char LineTrailColor[3];  // 0x23B
+    char align_23E[2];  // 0x23E
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches[80];  // 0x244
     int armed;  // 0x294
-    unsigned char hasTurretFlag;  // 0x295
     int weaponCount;  // 0x298
-    char weapon1[4];  // 0x29C
-    unsigned int weapon2;  // 0x2A0
-    void* eliteWeapon1;  // 0x2A4
-    unsigned int eliteWeapon2;  // 0x2A8
-    unsigned int ammo;  // 0x2AC
-    char EliteAbilities[4];  // 0x2AE
-    unsigned int guardRange;  // 0x2B0
-    unsigned int sight;  // 0x2B4
-    unsigned int cost;  // 0x2B8
-    unsigned int strength;  // 0x2BC
+    char weapon1[18];  // 0x29C
+    char EliteAbilities[18];  // 0x2AE
     double armor;  // 0x2C0
-    unsigned int techLevel;  // 0x2C4
     double pipScale;  // 0x2C8
-    unsigned int speed;  // 0x2CC
     double speedType;  // 0x2D0
-    unsigned int threatPosed;  // 0x2D4
     double threatAvoidValue;  // 0x2D8
-    unsigned char cloakable;  // 0x2DC
     double cloakRadius;  // 0x2E0
-    unsigned char trainable;  // 0x2E4
     double buildLimit;  // 0x2E8
-    CellStruct* FoundationData;  // 0x2EC
-    SHPStruct* Buildup;  // 0x2F0
-    bool BuildupLoaded;  // 0x2F4
-    char BuildCat[4];  // 0x2F8
-    unsigned int TechnoTypeClass_field_double_300;  // 0x300
+    int ThreatAvoidanceCoefficient[2];  // 0x2F0
+    int SlowdownDistance;  // 0x2F8
+    unsigned int __pad_2FC;  // 0x2FC
+    unsigned long long TechnoTypeClass_field_double_300;  // 0x300
     double AccelerationFactor;  // 0x308
-    Color * ptr_309;  // 0x309
     int CloakingSpeed;  // 0x310
-    unsigned int DebrisTypes;  // 0x314
-    unsigned int DebrisMaximums;  // 0x318
-    unsigned int Locomotor;  // 0x31C
-    unsigned int VoxelAnimList_FlagByte;  // 0x321
-    unsigned int IntList_A_Items;  // 0x334
-    unsigned int IntList_A_Capacity;  // 0x338
-    unsigned int IntList_A_FlagByte;  // 0x33D
-    unsigned int TechnoTypeClass_field_double_360;  // 0x360
-    unsigned int TechnoTypeClass_field_double_368;  // 0x368
+    int DebrisTypes[7];  // 0x314
+    int DebrisMaximums[7];  // 0x330
+    int Locomotor[4];  // 0x34C
+    int align_35C;  // 0x35C
+    unsigned long long TechnoTypeClass_field_double_360;  // 0x360
+    unsigned long long TechnoTypeClass_field_double_368;  // 0x368
     double Weight;  // 0x370
     double PhysicalSize;  // 0x378
     double Size;  // 0x380
     double SizeLimit;  // 0x388
     bool HoverAttack;  // 0x390
+    char __pad_391[3];  // 0x391
     int VHPScan;  // 0x394
     int TechnoTypeClass_field_int_398;  // 0x398
+    unsigned int __pad_39C;  // 0x39C
     double RollAngle;  // 0x3A0
     double PitchSpeed;  // 0x3A8
     double PitchAngle;  // 0x3B0
     int BuildLimit;  // 0x3B8
     char Category[4];  // 0x3BC
     unsigned int TechnoTypeClass_field_3C0;  // 0x3C0
+    unsigned int __pad_3C4;  // 0x3C4
     double DeployTime;  // 0x3C8
     int FireAngle;  // 0x3D0
     void* PipScale;  // 0x3D4
     bool PipsDrawForAll;  // 0x3D8
+    char __pad_3D9[3];  // 0x3D9
     int LeptonMindControlOffset;  // 0x3DC
     int PixelSelectionBracketDelta;  // 0x3E0
     int PipWrap;  // 0x3E4
-    unsigned int Dock;  // 0x3E8
-    unsigned int DeploysInto;  // 0x3EC
-    unsigned int UndeploysInto;  // 0x3F0
-    unsigned int PowersUnit;  // 0x3F4
-    unsigned int BuildingTypeList_FlagByte;  // 0x3F5
-    unsigned int PoweredUnit;  // 0x3F8
-    unsigned int VoiceSelect;  // 0x3FC
-    unsigned int VoiceSelectEnslaved;  // 0x400
-    char VoiceSelectDeactivated[4];  // 0x404
-    char VoiceMove[4];  // 0x408
-    char VoiceAttack[4];  // 0x40C
-    bool VoiceSpecialAttack;  // 0x410
-    unsigned int VoiceDie;  // 0x414
-    unsigned int VoiceFeedback;  // 0x418
-    unsigned int MoveSound;  // 0x41C
-    unsigned int DieSound;  // 0x420
-    unsigned int IntList_B_FlagByte;  // 0x421
-    unsigned int AuxSound1;  // 0x424
-    unsigned int AuxSound2;  // 0x428
-    unsigned int CreateSound;  // 0x42C
-    unsigned int DamageSound;  // 0x430
-    unsigned int ImpactWaterSound;  // 0x434
-    unsigned int ImpactLandSound;  // 0x438
-    unsigned int CrashingSound;  // 0x43C
-    unsigned int IntList_C_FlagByte;  // 0x43D
-    unsigned int SinkingSound;  // 0x440
-    unsigned int VoiceFalling;  // 0x444
-    unsigned int VoiceCrashing;  // 0x448
-    unsigned int VoiceSinking;  // 0x44C
-    unsigned int VoiceEnter;  // 0x450
-    unsigned int VoiceCapture;  // 0x454
-    unsigned int TurretRotateSound;  // 0x458
-    unsigned int IntList_D_FlagByte;  // 0x459
-    unsigned int EnterTransportSound;  // 0x45C
-    unsigned int LeaveTransportSound;  // 0x460
-    unsigned int DeploySound;  // 0x464
-    unsigned int UndeploySound;  // 0x468
-    unsigned int ChronoInSound;  // 0x46C
-    unsigned int ChronoOutSound;  // 0x470
-    unsigned int VoiceHarvest;  // 0x474
-    unsigned int IntList_E_FlagByte;  // 0x475
-    unsigned int VoicePrimaryWeaponAttack;  // 0x478
-    unsigned int VoicePrimaryEliteWeaponAttack;  // 0x47C
-    unsigned int VoiceSecondaryWeaponAttack;  // 0x480
-    unsigned int VoiceSecondaryEliteWeaponAttack;  // 0x484
-    char VoiceDeploy[4];  // 0x488
-    unsigned int VoiceUndeploy;  // 0x48C
-    unsigned int EnterGrinderSound;  // 0x490
-    unsigned int IntList_F_FlagByte;  // 0x491
-    unsigned int LeaveGrinderSound;  // 0x494
-    unsigned int EnterBioReactorSound;  // 0x498
-    unsigned int LeaveBioReactorSound;  // 0x49C
-    unsigned int ActivateSound;  // 0x4A0
-    unsigned int DeactivateSound;  // 0x4A4
-    unsigned int MindClearedSound;  // 0x4A8
-    unsigned int MovementZone;  // 0x4AC
-    unsigned int IntList_G_FlagByte;  // 0x4AD
-    unsigned int GuardRange;  // 0x4B0
-    unsigned int MinDebris;  // 0x4B4
-    unsigned int MaxDebris;  // 0x4B8
-    unsigned int DebrisAnims;  // 0x4BC
-    unsigned int Passengers;  // 0x4C0
-    unsigned int OpenTopped;  // 0x4C4
-    unsigned int Sight;  // 0x4C8
-    unsigned int IntList_H_FlagByte;  // 0x4C9
-    unsigned int ResourceGatherer;  // 0x4CC
-    unsigned int ResourceDestination;  // 0x4CD
-    unsigned int RevealToAll;  // 0x4CE
-    unsigned int Drainable;  // 0x4CF
-    unsigned int SensorsSight;  // 0x4D0
-    unsigned int DetectDisguiseRange;  // 0x4D4
-    unsigned int BombSight;  // 0x4D8
-    unsigned int LeadershipRating;  // 0x4DC
-    unsigned int NavalTargeting;  // 0x4E0
-    unsigned int LandTargeting;  // 0x4E4
-    unsigned int VoiceFeedback_FlagByte;  // 0x4E5
-    unsigned int BuildTimeMultiplier;  // 0x4E8
-    unsigned int MindControlRingOffset;  // 0x4EC
-    unsigned int Cost;  // 0x4F0
-    unsigned int Soylent;  // 0x4F4
-    unsigned int FlightLevel;  // 0x4F8
-    unsigned int AirstrikeTeam;  // 0x4FC
-    unsigned int EliteAirstrikeTeam;  // 0x500
-    unsigned int AirstrikeTeamType;  // 0x504
-    unsigned int EliteAirstrikeTeamType;  // 0x508
-    unsigned int AirstrikeRechargeTime;  // 0x50C
-    unsigned int EliteAirstrikeRechargeTime;  // 0x510
-    unsigned int TechLevel;  // 0x514
-    unsigned int Prerequisite;  // 0x518
-    unsigned int PrerequisiteOverride;  // 0x51C
-    unsigned int ThreatPosed;  // 0x520
-    unsigned int Points;  // 0x524
-    unsigned int Speed;  // 0x528
-    int SpeedType;  // 0x52C
-    int InitialAmmo;  // 0x530
-    int Ammo;  // 0x534
-    int IFVMode;  // 0x538
-    int AirRangeBonus;  // 0x53C
-    int BerserkFriendly;  // 0x540
-    unsigned int SprayAttack;  // 0x541
-    unsigned int Pushy;  // 0x542
-    unsigned int Natural;  // 0x543
-    int Unnatural;  // 0x544
-    unsigned int CloseRange;  // 0x545
-    int Reload;  // 0x548
-    int EmptyReload;  // 0x54C
-    int ReloadIncrement;  // 0x550
-    int RadialFireSegments;  // 0x554
-    int DeployFireWeapon;  // 0x558
-    int DeployFire;  // 0x55C
-    unsigned int DeployToLand;  // 0x55D
-    unsigned int MobileFire;  // 0x55E
-    unsigned int OpportunityFire;  // 0x55F
-    int DistributedFire;  // 0x560
-    unsigned int DamageReducesReadiness;  // 0x561
-    int ReadinessReductionMultiplier;  // 0x564
-    int UnloadingClass;  // 0x568
-    int AttackFriendlies;  // 0x570
-    unsigned int AttackCursorOnFriendlies;  // 0x571
-    int UndeployDelay;  // 0x574
-    int PreventAttackMove;  // 0x578
-    int OwnerFlags;  // 0x57C
-    int AIBasePlanningSide;  // 0x580
-    int StupidHunt;  // 0x584
-    unsigned int AllowedToStartInMultiplayer;  // 0x585
-    unsigned int CameoFile_0x19;  // 0x586
-    int WalkRate;  // 0x660
-    int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    int Dock[7];  // 0x3E8
+    int DeploysInto;  // 0x404
+    int UndeploysInto;  // 0x408
+    int PowersUnit;  // 0x40C
+    char PoweredUnit[1];  // 0x410
+    char __pad_411[3];  // 0x411
+    int VoiceSelect[7];  // 0x414
+    int VoiceSelectEnslaved[7];  // 0x430
+    int VoiceSelectDeactivated[7];  // 0x44C
+    int VoiceMove[7];  // 0x468
+    int VoiceAttack[7];  // 0x484
+    int VoiceSpecialAttack[7];  // 0x4A0
+    int VoiceDie[7];  // 0x4BC
+    int VoiceFeedback[7];  // 0x4D8
+    int MoveSound[7];  // 0x4F4
+    int DieSound[7];  // 0x510
+    int AuxSound1;  // 0x52C
+    int AuxSound2;  // 0x530
+    int CreateSound;  // 0x534
+    int DamageSound;  // 0x538
+    int ImpactWaterSound;  // 0x53C
+    int ImpactLandSound;  // 0x540
+    int CrashingSound;  // 0x544
+    int SinkingSound;  // 0x548
+    int VoiceFalling;  // 0x54C
+    int VoiceCrashing;  // 0x550
+    int VoiceSinking;  // 0x554
+    int VoiceEnter;  // 0x558
+    int VoiceCapture;  // 0x55C
+    int TurretRotateSound;  // 0x560
+    int EnterTransportSound;  // 0x564
+    int LeaveTransportSound;  // 0x568
+    unsigned int __pad_56C;  // 0x56C
+    int UndeploySound;  // 0x570
+    int ChronoInSound;  // 0x574
+    int ChronoOutSound;  // 0x578
+    int VoiceHarvest;  // 0x57C
+    int VoicePrimaryWeaponAttack;  // 0x580
+    int VoicePrimaryEliteWeaponAttack;  // 0x584
+    int VoiceSecondaryWeaponAttack;  // 0x588
+    int VoiceSecondaryEliteWeaponAttack;  // 0x58C
+    int VoiceDeploy;  // 0x590
+    int VoiceUndeploy;  // 0x594
+    int EnterGrinderSound;  // 0x598
+    int LeaveGrinderSound;  // 0x59C
+    int EnterBioReactorSound;  // 0x5A0
+    int LeaveBioReactorSound;  // 0x5A4
+    int ActivateSound;  // 0x5A8
+    int DeactivateSound;  // 0x5AC
+    int MindClearedSound;  // 0x5B0
+    int MovementZone;  // 0x5B4
+    int GuardRange;  // 0x5B8
+    int MinDebris;  // 0x5BC
+    int MaxDebris;  // 0x5C0
+    int DebrisAnims[7];  // 0x5C4
+    int Passengers;  // 0x5E0
+    char OpenTopped[1];  // 0x5E4
+    char __pad_5E5[3];  // 0x5E5
+    int Sight;  // 0x5E8
+    char ResourceGatherer[1];  // 0x5EC
+    char ResourceDestination[1];  // 0x5ED
+    char RevealToAll[1];  // 0x5EE
+    char Drainable[1];  // 0x5EF
+    int SensorsSight;  // 0x5F0
+    int DetectDisguiseRange;  // 0x5F4
+    int BombSight;  // 0x5F8
+    int LeadershipRating;  // 0x5FC
+    int NavalTargeting;  // 0x600
+    int LandTargeting;  // 0x604
+    int BuildTimeMultiplier;  // 0x608
+    int MindControlRingOffset;  // 0x60C
+    int Cost;  // 0x610
+    int Soylent;  // 0x614
+    int FlightLevel;  // 0x618
+    int AirstrikeTeam;  // 0x61C
+    int EliteAirstrikeTeam;  // 0x620
+    int AirstrikeTeamType;  // 0x624
+    int EliteAirstrikeTeamType;  // 0x628
+    int AirstrikeRechargeTime;  // 0x62C
+    int EliteAirstrikeRechargeTime;  // 0x630
+    int TechLevel;  // 0x634
+    int Prerequisite[7];  // 0x638
+    int PrerequisiteOverride[7];  // 0x654
+    int ThreatPosed;  // 0x670
+    int Points;  // 0x674
+    int Speed;  // 0x678
+    int SpeedType;  // 0x67C
+    int InitialAmmo;  // 0x680
+    int Ammo;  // 0x684
+    int IFVMode;  // 0x688
+    int AirRangeBonus;  // 0x68C
+    char BerserkFriendly[1];  // 0x690
+    char SprayAttack[1];  // 0x691
+    char Pushy[1];  // 0x692
+    char Natural[1];  // 0x693
+    char Unnatural[1];  // 0x694
+    char CloseRange[1];  // 0x695
+    char __pad_696[2];  // 0x696
+    int Reload;  // 0x698
+    int EmptyReload;  // 0x69C
+    int ReloadIncrement;  // 0x6A0
+    int RadialFireSegments;  // 0x6A4
+    int DeployFireWeapon;  // 0x6A8
+    char DeployFire[1];  // 0x6AC
+    char DeployToLand[1];  // 0x6AD
+    char MobileFire[1];  // 0x6AE
+    char OpportunityFire[1];  // 0x6AF
+    char DistributedFire[1];  // 0x6B0
+    char DamageReducesReadiness[1];  // 0x6B1
+    char __pad_6B2[2];  // 0x6B2
+    int ReadinessReductionMultiplier;  // 0x6B4
+    int UnloadingClass;  // 0x6B8
     char DeployingAnim[4];  // 0x6BC
-    char CameoFile;  // 0x6D6
+    unsigned char __pad_6C0;  // 0x6C0
+    char AttackCursorOnFriendlies[1];  // 0x6C1
+    char __pad_6C2[2];  // 0x6C2
+    int UndeployDelay;  // 0x6C4
+    char PreventAttackMove[1];  // 0x6C8
+    char __pad_6C9[3];  // 0x6C9
+    int OwnerFlags;  // 0x6CC
+    int AIBasePlanningSide;  // 0x6D0
+    char StupidHunt[1];  // 0x6D4
+    char AllowedToStartInMultiplayer[1];  // 0x6D5
+    char CameoFile[25];  // 0x6D6
+    char align_6EF[1];  // 0x6EF
     char Cameo[4];  // 0x6F0
     bool CameoAllocated;  // 0x6F4
-    char AltCameoFile_0x19;  // 0x6F5
-    double SpecialThreatValue;  // 0x704
+    char AltCameoFile_0x19[25];  // 0x6F5
+    char align_70E[2];  // 0x70E
     char AltCameo[4];  // 0x710
-    double MyEffectivenessCoefficient;  // 0x712
     bool AltCameoAllocated;  // 0x714
+    char __pad_715[3];  // 0x715
     int RotCount;  // 0x718
     int ROT;  // 0x71C
     int TurretOffset;  // 0x720
     bool CanBeHidden;  // 0x724
+    char __pad_725[3];  // 0x725
     int Points2;  // 0x728
-    unsigned int Explosion;  // 0x72C
-    unsigned int DestroyAnim;  // 0x730
-    unsigned int NaturalParticleSystem;  // 0x734
-    unsigned int NaturalParticleSystemLocation;  // 0x738
-    unsigned int RefinerySmokeParticleSystem;  // 0x744
-    unsigned int DamageParticleSystems;  // 0x748
-    unsigned int DestroyParticleSystems;  // 0x74C
-    unsigned int DamageSmokeOffset;  // 0x750
-    TechnoTypeClass * ptr_758;  // 0x758
-    unsigned int DamSmkOffScrnRel;  // 0x75C
-    unsigned int DestroySmokeOffset;  // 0x760
-    unsigned int RefinerySmokeOffsetOne;  // 0x76C
-    unsigned int RefinerySmokeOffsetTwo;  // 0x778
-    unsigned int RefinerySmokeOffsetThree;  // 0x784
-    unsigned int RefinerySmokeOffsetFour;  // 0x790
-    unsigned int ShadowIndex;  // 0x79C
-    unsigned int Storage;  // 0x7A0
-    unsigned int TurretNotExportedOnGround;  // 0x7A4
-    unsigned int Gunner;  // 0x7A5
-    unsigned int HasTurretTooltips;  // 0x7A6
-    unsigned int TurretCount;  // 0x7A8
-    unsigned int WeaponCount;  // 0x7AC
-    Coord* IsChargeTurret;  // 0x7B0 [X30:type_map]
-    unsigned int TurretWeapon_0x21;  // 0x7B4
-    unsigned int ClearAllWeapons;  // 0x7B8
-    unsigned int TypeImmune;  // 0x7B9
-    unsigned int MoveToShroud;  // 0x7BA
-    unsigned int Trainable;  // 0x7BB
-    bool DamageSparks;  // 0x7BC
-    unsigned int TargetLaser;  // 0x7BD
-    unsigned int ImmuneToVeins;  // 0x7BE
-    unsigned int TiberiumHeal;  // 0x7BF
-    char CloakStop[4];  // 0x7C0
-    unsigned int IsTrain;  // 0x7C1
-    unsigned int IsDropship;  // 0x7C2
-    unsigned int ToProtect;  // 0x7C3
-    unsigned int Disableable;  // 0x7C4
-    unsigned int Unbuildable;  // 0x7C5
-    unsigned int DoubleOwned;  // 0x7C6
-    unsigned int Invisible;  // 0x7C7
-    unsigned int RadarVisible;  // 0x7C8
-    unsigned int HasPrimary;  // 0x7C9
-    unsigned int Sensors;  // 0x7CA
-    unsigned int Nominal;  // 0x7CB
-    char DontScore[4];  // 0x7CC
-    unsigned int DamageSelf;  // 0x7CD
-    unsigned int Turret;  // 0x7CE
-    unsigned int TurretRecoil;  // 0x7CF
-    unsigned int TurretAnimData;  // 0x7D0
-    int TurretWeapon;  // 0x814
-    char Weapon[4];  // 0x898
-    char EliteWeapon[4];  // 0xA94
+    int Explosion[7];  // 0x72C
+    int DestroyAnim[7];  // 0x748
+    unsigned int __pad_764;  // 0x764
+    int NaturalParticleSystemLocation[3];  // 0x768
+    int RefinerySmokeParticleSystem;  // 0x774
+    int DamageParticleSystems[7];  // 0x778
+    char __pad_794[28];  // 0x794
+    int DamageSmokeOffset[3];  // 0x7B0
+    char DamSmkOffScrnRel[1];  // 0x7BC
+    char __pad_7BD[3];  // 0x7BD
+    int DestroySmokeOffset[3];  // 0x7C0
+    int RefinerySmokeOffsetOne[3];  // 0x7CC
+    int RefinerySmokeOffsetTwo[3];  // 0x7D8
+    int RefinerySmokeOffsetThree[3];  // 0x7E4
+    int RefinerySmokeOffsetFour[3];  // 0x7F0
+    int ShadowIndex;  // 0x7FC
+    int Storage;  // 0x800
+    char TurretNotExportedOnGround[1];  // 0x804
+    char Gunner[1];  // 0x805
+    char HasTurretTooltips[1];  // 0x806
+    char __pad_807[1];  // 0x807
+    int TurretCount;  // 0x808
+    int WeaponCount;  // 0x80C
+    char IsChargeTurret[1];  // 0x810
+    char __pad_811[3];  // 0x811
+    int TurretWeapon[33];  // 0x814
+    char Weapon[504];  // 0x898
+    char __pad_A90[4];  // 0xA90
+    char EliteWeapon[504];  // 0xA94
+    char TypeImmune[1];  // 0xC8C
+    char MoveToShroud[1];  // 0xC8D
+    char Trainable[1];  // 0xC8E
+    char DamageSparks[1];  // 0xC8F
+    char TargetLaser[1];  // 0xC90
+    char ImmuneToVeins[1];  // 0xC91
+    char TiberiumHeal[1];  // 0xC92
+    char CloakStop[1];  // 0xC93
+    char IsTrain[1];  // 0xC94
+    char IsDropship[1];  // 0xC95
+    char ToProtect[1];  // 0xC96
+    char Disableable[1];  // 0xC97
+    char Unbuildable[1];  // 0xC98
+    char DoubleOwned[1];  // 0xC99
+    char Invisible[1];  // 0xC9A
+    char RadarVisible[1];  // 0xC9B
+    char HasPrimary[1];  // 0xC9C
+    char Sensors[1];  // 0xC9D
+    char Nominal[1];  // 0xC9E
+    char DontScore[1];  // 0xC9F
+    char DamageSelf[1];  // 0xCA0
+    char Turret[1];  // 0xCA1
+    char TurretRecoil[1];  // 0xCA2
+    char __pad_CA3[1];  // 0xCA3
+    int TurretAnimData[4];  // 0xCA4
     bool TechnoTypeClass_field_bool_CB4;  // 0xCB4
-    char BarrelAnimData[4];  // 0xCB8
+    char __pad_CB5[3];  // 0xCB5
+    int BarrelAnimData[4];  // 0xCB8
     bool TechnoTypeClass_field_bool_CC8;  // 0xCC8
-    unsigned int Repairable;  // 0xCCC
-    unsigned int Crewed;  // 0xCCD
-    bool Naval;  // 0xCCE
-    unsigned int Remapable;  // 0xCCF
-    unsigned int Cloakable;  // 0xCD0
+    char __pad_CC9[2];  // 0xCC9
+    char align_CCB[4];  // 0xCCB
+    char __pad_CCF[2];  // 0xCCF
     bool GapGenerator;  // 0xCD1
     bool GapRadiusInCells;  // 0xCD2
     bool SuperGapRadiusInCells;  // 0xCD3
     int Teleporter;  // 0xCD4
-    unsigned int IsGattling;  // 0xCD5
     int WeaponStages;  // 0xCD8
     int WeaponStage_6;  // 0xCDC
     int EliteStage_6;  // 0xCE0
     unsigned int RateUp;  // 0xCE4
     unsigned int RateDown;  // 0xCE8
     unsigned int SelfHealing;  // 0xCEC
-    unsigned int Explodes;  // 0xCED
     unsigned int DeathWeapon;  // 0xCF0
     unsigned int DeathWeaponDamageModifier;  // 0xCF4
     unsigned int NoAutoFire;  // 0xCF8
-    unsigned int TurretSpins;  // 0xCF9
-    unsigned int TiltCrashJumpjet;  // 0xCFA
-    unsigned int Normalized;  // 0xCFB
     unsigned int ManualReload;  // 0xCFC
-    unsigned int VisibleLoad;  // 0xCFD
-    unsigned int LightningRod;  // 0xCFE
-    unsigned int HunterSeeker;  // 0xCFF
     unsigned int Crusher;  // 0xD00
-    unsigned int OmniCrusher;  // 0xD01
-    unsigned int OmniCrushResistant;  // 0xD02
-    unsigned int TiltsWhenCrushes;  // 0xD03
     unsigned int IsSubterranean;  // 0xD04
-    unsigned int AutoCrush;  // 0xD05
-    unsigned int Bunkerable;  // 0xD06
-    unsigned int CanDisguise;  // 0xD07
     unsigned int PermaDisguise;  // 0xD08
-    unsigned int DetectDisguise;  // 0xD09
-    unsigned int DisguiseWhenStill;  // 0xD0A
-    unsigned int CanApproachTarget;  // 0xD0B
     unsigned int CanRecalcApproachTarget;  // 0xD0C
-    unsigned int ImmuneToPsionics;  // 0xD0D
-    unsigned int ImmuneToPsionicWeapons;  // 0xD0E
-    unsigned int ImmuneToRadiation;  // 0xD0F
     unsigned int Parasiteable;  // 0xD10
-    unsigned int DefaultToGuardArea;  // 0xD11
-    unsigned int Warpable;  // 0xD12
-    unsigned int ImmuneToPoison;  // 0xD13
     unsigned int ReselectIfLimboed;  // 0xD14
-    unsigned int RejoinTeamIfLimboed;  // 0xD15
-    unsigned int Slaved;  // 0xD16
     int Enslaves;  // 0xD18
-    int SlavesNumber;  // 0xD1C
-    int SlaveRegenRate;  // 0xD20
+    int SlaveRegenRate;  // 0xD1C
+    char __pad_D20[4];  // 0xD20
     unsigned int SlaveReloadRate;  // 0xD24
     unsigned int OpenTransportWeapon;  // 0xD28
     unsigned int Spawned;  // 0xD2C
     unsigned int Spawns;  // 0xD30
     unsigned int SpawnsNumber;  // 0xD34
     UnitTypeClass* SpawnRegenRate;  // 0xD38
-    unsigned int SpawnReloadRate;  // 0xD3C
+    char SpawnReloadRate[2];  // 0xD3C
     bool BalloonHover;  // 0xD3E
+    char __pad_D3F[1];  // 0xD3F
     int MissileSpawn;  // 0xD40
-    unsigned int Underwater;  // 0xD41
-    int SuppressionThreshold;  // 0xD44
-    int JumpjetTurnRate;  // 0xD48
-    float JumpjetSpeed;  // 0xD4C
-    float JumpjetClimb;  // 0xD50
-    int JumpjetCrash;  // 0xD54
+    int JumpjetTurnRate;  // 0xD44
+    int JumpjetSpeed;  // 0xD48
+    int JumpjetClimb;  // 0xD4C
+    int JumpjetCrash;  // 0xD50
+    char __pad_D54[4];  // 0xD54
     float JumpjetHeight;  // 0xD58
-    float JumpjetAccel;  // 0xD5C
-    int JumpjetWobbles;  // 0xD60
+    int JumpjetWobbles;  // 0xD5C
+    char __pad_D60[4];  // 0xD60
     int JumpjetNoWobbles;  // 0xD64
-    int JumpjetDeviation;  // 0xD68
-    unsigned int JumpJet;  // 0xD6C
-    unsigned int Crashable;  // 0xD6D
-    unsigned int ConsideredAircraft;  // 0xD6E
-    unsigned int Organic;  // 0xD6F
+    char __pad_D68[8];  // 0xD68
     unsigned int NoShadow;  // 0xD70
-    unsigned int CanPassiveAquire;  // 0xD71
-    unsigned int CanRetaliate;  // 0xD72
-    unsigned int RequiresStolenThirdTech;  // 0xD73
     unsigned int RequiresStolenSovietTech;  // 0xD74
-    unsigned int RequiresStolenAlliedTech;  // 0xD75
-    unsigned int RequiredHouses;  // 0xD78
-    unsigned int ForbiddenHouses;  // 0xD7C
-    int SecretHouses;  // 0xD80
-    char UseBuffer[4];  // 0xD84
-    unsigned int SecondSpawnOffset;  // 0xD88
+    int ForbiddenHouses;  // 0xD78
+    int SecretHouses;  // 0xD7C
+    char __pad_D80[4];  // 0xD80
+    char UseBuffer[12];  // 0xD84
+    unsigned char qD90[4];  // 0xD90
     bool IsSelectableCombatant;  // 0xD94
     bool Accelerates;  // 0xD95
-    UnitTypeClass* DisableVoxelCache;  // 0xD96
-    UnitTypeClass* DisableShadowCache;  // 0xD97
+    unsigned char DisableVoxelCache;  // 0xD96
+    unsigned char DisableShadowCache;  // 0xD97
     unsigned int ZFudgeCliff;  // 0xD98
     char ZFudgeColumn[4];  // 0xD9C
     int ZFudgeTunnel;  // 0xDA0
-    char ZFudgeBridge;  // 0xDA4
-    unsigned int PaletteFile_0x20;  // 0xDA8
-    unsigned int Palette;  // 0xDAC
+    int PaletteFile[8];  // 0xDA4
+    int Palette;  // 0xDC4
+    char __pad_DC8[44];  // 0xDC8
+    int align_DF4;  // 0xDF4
     void* ArrayIndex;  // 0xDF8
-    int HalfDamageSmokeLocation1;  // 0xE0C [X30:type_map]
-    int HalfDamageSmokeLocation2;  // 0xE18 [X30:type_map]
+    SHPStruct* __pad_DFC;  // 0xDFC
+    unsigned int qE00;  // 0xE00
+    unsigned char u32_E04;  // 0xE04
+    char __pad_E05[3];  // 0xE05
+    unsigned int u32_E08;  // 0xE08
+    int HalfDamageSmokeLocation1[3];  // 0xE0C
+    int HalfDamageSmokeLocation2[3];  // 0xE18
+    unsigned int __pad_E24;  // 0xE24
     double GateCloseDelay;  // 0xE28
     int LightVisibility;  // 0xE30
     int LightIntensity;  // 0xE34
     int LightRedTint;  // 0xE38
     int LightGreenTint;  // 0xE3C
     int LightBlueTint;  // 0xE40
-    int PrimaryFirePixelOffset;  // 0xE44 [X30:type_map]
-    int SecondaryFirePixelOffset;  // 0xE4C [X30:type_map]
+    int PrimaryFirePixelOffset[2];  // 0xE44
+    int SecondaryFirePixelOffset[2];  // 0xE4C
     OverlayTypeClass* ToOverlay;  // 0xE54
-    SHPStruct* ToTile;  // 0xE58 [X30:type_map]
+    SHPStruct* ToTile;  // 0xE58
     char BuildupFile_0x10;  // 0xE5C
+    char __pad_E5D[3];  // 0xE5D
+    unsigned char __pad_E60;  // 0xE60
+    char __pad_E61[11];  // 0xE61
     int UnitEnterSound;  // 0xE6C
-    int UnitExitSound;  // 0xE70
-    int WorkingSound;  // 0xE74
-    int NotWorkingSound;  // 0xE78
-    char PowersUpBuilding_0x18;  // 0xE7C
-    UnitTypeClass* FreeUnit;  // 0xE80
-    InfantryTypeClass* SecretInfantry;  // 0xE84
-    UnitTypeClass* SecretUnit;  // 0xE88
+    int WorkingSound;  // 0xE70
+    int NotWorkingSound;  // 0xE74
+    int FreeUnit;  // 0xE78
+    unsigned int PowersUpBuilding_0x18;  // 0xE7C
+    int SecretUnit;  // 0xE80
+    int SecretBuilding;  // 0xE84
+    char __pad_E88[4];  // 0xE88
+    unsigned char __pad_E8C;  // 0xE8C
+    char __pad_E8D[19];  // 0xE8D
     UnitTypeClass* FreeUnit_d;  // 0xEA0
     InfantryTypeClass* SecretInfantry_d;  // 0xEA4
-    SHPStruct* ExitCoord;  // 0xEA8 [X30:type_map]
-    BuildingTypeClass* SecretBuilding;  // 0xEAC
+    char __pad_EA8[8];  // 0xEA8
     int BuildingTypeClass_field_EB0;  // 0xEB0
-    CellStruct* FoundationOutside;  // 0xEB4
+    int Adjacent;  // 0xEB4
     int BuildingTypeClass_field_ED8;  // 0xEB8
-    SHPStruct* DeployFacing;  // 0xEBC [X30:type_map]
-    SHPStruct* ExtraPowerBonus;  // 0xEC8 [X30:type_map]
-    SHPStruct* Height;  // 0xED4 [X30:type_map]
-    SHPStruct* OccupyHeight;  // 0xED8 [X30:type_map]
-    int MidPoint;  // 0xEDC
-    int DoorStages;  // 0xEE0
-    BuildingAnimFrameStruct* BuildingAnimFrame_6;  // 0xEE4 [X30:type_map]
-    BuildingAnimStruct* BuildingAnim_0x15;  // 0xEE8 [X30:type_map]
-    int Upgrades;  // 0xEEC
+    int TargetCoordOffset[3];  // 0xEBC
+    int ExitCoord[3];  // 0xEC8
+    int FoundationOutside;  // 0xED4
+    int unknown___2;  // 0xED8
+    int DeployFacing;  // 0xEDC
+    int PowerBonus;  // 0xEE0
+    int PowerDrain;  // 0xEE4
+    BuildingAnimStruct* BuildingAnim_0x15;  // 0xEE8
+    int ExtraPowerDrain;  // 0xEEC
     SHPStruct* DeployingAnim_d;  // 0xEF0
-    bool DeployingAnimLoaded;  // 0xEF4
+    unsigned int DeployingAnimLoaded;  // 0xEF4
     SHPStruct* UnderDoorAnim;  // 0xEF8
-    bool UnderDoorAnimLoaded;  // 0xEFC
+    unsigned int UnderDoorAnimLoaded;  // 0xEFC
     SHPStruct* Rubble;  // 0xF00
-    bool RubbleLoaded;  // 0xF04
+    int BuildingAnimFrame[6];  // 0xF04
     char BuildingAnim[84];  // 0xF1C
-    int BuildingTypeClass_field_1540;  // 0xF4C
+    unsigned char __pad_F70;  // 0xF70
+    char __pad_F71[575];  // 0xF71
+    VectorClass* q11B0;  // 0x11B0
+    char __pad_11B4[812];  // 0x11B4
     int Upgrades_d;  // 0x14E0
     SHPStruct* DeployingAnim_2;  // 0x14E4
     bool DeployingAnimLoaded_d;  // 0x14E8
+    char __pad_14E9[3];  // 0x14E9
     SHPStruct* UnderDoorAnim_d;  // 0x14EC
     bool UnderDoorAnimLoaded_d;  // 0x14F0
+    char __pad_14F1[3];  // 0x14F1
     SHPStruct* Rubble_d;  // 0x14F4
     bool RubbleLoaded_d;  // 0x14F8
+    char __pad_14F9[3];  // 0x14F9
     SHPStruct* RoofDeployingAnim;  // 0x14FC
     bool RoofDeployingAnimLoaded;  // 0x1500
+    char __pad_1501[3];  // 0x1501
     SHPStruct* UnderRoofDoorAnim;  // 0x1504
     bool UnderRoofDoorAnimLoaded;  // 0x1508
+    char __pad_1509[3];  // 0x1509
     SHPStruct* DoorAnim;  // 0x150C
     SHPStruct* SpecialZOverlay;  // 0x1510
-int SpecialZOverlayZAdjust;  // 0x1514 [X35-L7 kind=int]
+    int SpecialZOverlayZAdjust;  // 0x1514
     SHPStruct* BibShape;  // 0x1518
     bool BibShapeLoaded;  // 0x151C
-int NormalZAdjust;  // 0x1520 [X35-L7 kind=int]
-int AntiAirValue;  // 0x1524 [X35-L7 kind=int]
-int AntiArmorValue;  // 0x1528 [X35-L7 kind=int]
-    SHPStruct* AntiInfantryValue;  // 0x152C [X30:type_map]
-    void* ZShapePointMove;  // 0x1530 [X30:type_map]
+    char __pad_151D[3];  // 0x151D
+    int NormalZAdjust;  // 0x1520
+    int AntiAirValue;  // 0x1524
+    int AntiArmorValue;  // 0x1528
+    SHPStruct* AntiInfantryValue;  // 0x152C
+    void* ZShapePointMove;  // 0x1530
+    SHPStruct* __pad_1534;  // 0x1534
     int BuildingTypeClass_field_1538;  // 0x1538
     int BuildingTypeClass_field_153C;  // 0x153C
     int BuildingTypeClass_field_1540_d;  // 0x1540
@@ -530,12 +501,13 @@ int AntiArmorValue;  // 0x1528 [X35-L7 kind=int]
     bool EligibileForAllyBuilding;  // 0x1550
     bool EligibleForDelayKill;  // 0x1551
     bool NeedsEngineer;  // 0x1552
+    unsigned char __pad_1553;  // 0x1553
     int CaptureEvaEvent;  // 0x1554
-int ProduceCashStartup;  // 0x1558 [X35-L7 kind=int]
-    SHPStruct* ProduceCashAmount;  // 0x155C [X30:type_map]
-int ProduceCashDelay;  // 0x1560 [X35-L7 kind=int]
-int InfantryGainSelfHeal;  // 0x1564 [X35-L7 kind=int]
-int UnitsGainSelfHeal;  // 0x1568 [X35-L7 kind=int]
+    int ProduceCashStartup;  // 0x1558
+    SHPStruct* ProduceCashAmount;  // 0x155C
+    int ProduceCashDelay;  // 0x1560
+    int InfantryGainSelfHeal;  // 0x1564
+    int UnitsGainSelfHeal;  // 0x1568
     int RefinerySmokeFrames;  // 0x156C
     bool Bib;  // 0x1570
     bool Wall;  // 0x1571
@@ -550,14 +522,25 @@ int UnitsGainSelfHeal;  // 0x1568 [X35-L7 kind=int]
     bool ClickRepairable;  // 0x157A
     bool CanBeOccupied;  // 0x157B
     bool CanOccupyFire;  // 0x157C
-int MaxNumberOccupants;  // 0x1580 [X35-L7 kind=int]
+    unsigned char __pad_157D;  // 0x157D
+    char __pad_157E[2];  // 0x157E
+    int MaxNumberOccupants;  // 0x1580
     bool ShowOccupantPips;  // 0x1584
-    void* MuzzleFlash;  // 0x1588 [X30:type_map]
-    int DamageFireOffset;  // 0x15D8 [X30:type_map]
+    char __pad_1585[3];  // 0x1585
+    void* MuzzleFlash;  // 0x1588
+    unsigned char __pad_158C;  // 0x158C
+    char __pad_158D[75];  // 0x158D
+    int DamageFireOffset;  // 0x15D8
+    unsigned char __pad_15DC;  // 0x15DC
+    char __pad_15DD[59];  // 0x15DD
     char QueueingCell[8];  // 0x1618
     int NumberImpassableRows;  // 0x1620
     char RemoveOccupy[4];  // 0x1624
-    void* AddOccupy;  // 0x1664 [X30:type_map]
+    unsigned char __pad_1628;  // 0x1628
+    char __pad_1629[59];  // 0x1629
+    void* AddOccupy;  // 0x1664
+    unsigned char __pad_1668;  // 0x1668
+    char __pad_1669[59];  // 0x1669
     bool Radar;  // 0x16A4
     bool SpySat;  // 0x16A5
     bool ChargeAnim;  // 0x16A6
@@ -600,6 +583,8 @@ int MaxNumberOccupants;  // 0x1580 [X35-L7 kind=int]
     bool Helipad;  // 0x16CB
     bool OrePurifier;  // 0x16CC
     bool FactoryPlant;  // 0x16CD
+    unsigned char __pad_16CE;  // 0x16CE
+    char __pad_16CF[1];  // 0x16CF
     float InfantryCostBonus;  // 0x16D0
     float UnitsCostBonus;  // 0x16D4
     float AircraftCostBonus;  // 0x16D8
@@ -608,12 +593,13 @@ int MaxNumberOccupants;  // 0x1580 [X35-L7 kind=int]
     bool GDIBarracks;  // 0x16E4
     bool NODBarracks;  // 0x16E5
     bool YuriBarracks;  // 0x16E6
+    unsigned char __pad_16E7;  // 0x16E7
     float ChargedAnimTime;  // 0x16E8
     int DelayedFireDelay;  // 0x16EC
     int SuperWeapon;  // 0x16F0
     int SuperWeapon2;  // 0x16F4
     int GateStages;  // 0x16F8
-    void* PowersUpToLevel;  // 0x16FC [X30:type_map]
+    void* PowersUpToLevel;  // 0x16FC
     bool DamagedDoor;  // 0x1700
     bool InvisibleInGame;  // 0x1701
     bool TerrainPalette;  // 0x1702
@@ -623,13 +609,28 @@ int MaxNumberOccupants;  // 0x1580 [X35-L7 kind=int]
     bool IsBaseDefense;  // 0x1706
     unsigned char CloakRadiusInCells;  // 0x1707
     bool ConcentricRadialIndicator;  // 0x1708
-    SHPStruct* PsychicDetectionRadius;  // 0x170C [X30:type_map]
+    unsigned char __pad_1709;  // 0x1709
+    char __pad_170A[2];  // 0x170A
+    SHPStruct* PsychicDetectionRadius;  // 0x170C
     int BarrelStartPitch;  // 0x1710
     char VoxelBarrelFile;  // 0x1714
+    char __pad_1715[3];  // 0x1715
+    unsigned char __pad_1718;  // 0x1718
+    char __pad_1719[15];  // 0x1719
+    int u32_1728;  // 0x1728
+    unsigned int u32_172C;  // 0x172C
     char VoxelBarrelOffsetToPitchPivotPoint[4];  // 0x1730
+    unsigned char __pad_1734;  // 0x1734
+    char __pad_1735[7];  // 0x1735
     char VoxelBarrelOffsetToRotatePivotPoint[4];  // 0x173C
+    unsigned char __pad_1740;  // 0x1740
+    char __pad_1741[7];  // 0x1741
     char VoxelBarrelOffsetToBuildingPivotPoint[4];  // 0x1748
+    unsigned char __pad_174C;  // 0x174C
+    char __pad_174D[7];  // 0x174D
     char VoxelBarrelOffsetToBarrelEnd[4];  // 0x1754
+    unsigned char __pad_1758;  // 0x1758
+    char __pad_1759[7];  // 0x1759
     bool DemandLoad;  // 0x1760
     bool DemandLoadBuildup;  // 0x1761
     bool FreeBuildup;  // 0x1762
@@ -641,14 +642,18 @@ int MaxNumberOccupants;  // 0x1580 [X35-L7 kind=int]
     bool LeaveRubble;  // 0x1768
     bool CrateBeneathIsMoney;  // 0x1769
     char TheaterSpecificID;  // 0x176A
+    char __pad_176B[3];  // 0x176B
+    unsigned char __pad_176E;  // 0x176E
+    char __pad_176F[17];  // 0x176F
     int NumberOfDocks;  // 0x1780
-    char AltCameoFile;  // 0x1781
     unsigned int DockingOffsets;  // 0x1784
     bool PreventsPlacementOverlap;  // 0x1788
-    SHPStruct* ProductionCompletionThreshold;  // 0x178C [X30:type_map]
-    double CostRatePerFrame;  // 0x1790
+    char __pad_1789[3];  // 0x1789
+    SHPStruct* ProductionCompletionThreshold;  // 0x178C
+    char CostRatePerFrame[4];  // 0x1790
+    unsigned int __pad_1794;  // 0x1794
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* Flat_flag;  // 0x0 (no offset truth)
     AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
     AbstractClass * * FindOrCreateAlt();
     AbstractClass * * LoadRepairAnimations();
@@ -692,159 +697,9 @@ int MaxNumberOccupants;  // 0x1580 [X35-L7 kind=int]
     static AbstractClass * * FindOrCreateAlt(INIClass * Source);
     BuildingTypeClass * * ProcessEvent();
     int SaveLoad_Prefix_0();
-
-    int Adjacent;  // X10 supply (member_lookup)
-    unsigned char BuildingAnimFrame[4];  /* BuildingAnimFrameStruct */  // X10 supply (member_lookup)
-    int ExtraPowerDrain;  // X10 supply (member_lookup)
-    unsigned char Factory[4];  /* AbstractType */  // X10 supply (member_lookup)
-    unsigned char Foundation[4];  /* eFoundation */  // X10 supply (member_lookup)
-    int PowerBonus;  // X10 supply (member_lookup)
-    int PowerDrain;  // X10 supply (member_lookup)
-    unsigned char __pad_304;  // X10 supply (csp_canon_members)
-    unsigned char __pad_36C;  // X10 supply (csp_canon_members)
-    unsigned char __pad_374;  // X10 supply (csp_canon_members)
-    unsigned char __pad_37C;  // X10 supply (csp_canon_members)
-    unsigned char __pad_384;  // X10 supply (csp_canon_members)
-    unsigned char __pad_38C;  // X10 supply (csp_canon_members)
-    unsigned char __pad_3A4;  // X10 supply (csp_canon_members)
-    unsigned char __pad_3AC;  // X10 supply (csp_canon_members)
-    unsigned char __pad_3B4;  // X10 supply (csp_canon_members)
-    unsigned char __pad_3CC;  // X10 supply (csp_canon_members)
-    unsigned char __pad_73C;  // X10 supply (csp_canon_members)
-    AbstractClass* q0C0;  // X10 supply (member_lookup)
-    CampaignClass* q0C4;  // X10 supply (member_lookup)
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-    VectorClass* q11B0;  // X10 supply (member_lookup)
 #else
-    void* q11B0;  // X10 supply (member_lookup)  // X27: template-carrier
 #endif  // X27: template-carrier universe fallback
-    ObjectClass* q30C;  // X10 supply (member_lookup)
-    unsigned char q340;  // X10 supply (member_lookup)
-    unsigned char q3952;  // X10 supply (member_lookup)
-    bool q5399;  // X10 supply (member_lookup)
-    BuildingClass* q53C0;  // X10 supply (member_lookup)
-    CellStruct* q53E0;  // X10 supply (member_lookup)
-    SHPStruct* q5400;  // X10 supply (member_lookup)
-    unsigned int q5420;  // X10 supply (member_lookup)
-    unsigned char q5470;  // X10 supply (member_lookup)
-    IUnknown* q5D4;  // X10 supply (member_lookup)
-    unsigned int q648;  // X10 supply (member_lookup)
-    unsigned int qD21;  // X10 supply (member_lookup)
-    unsigned int qD23;  // X10 supply (member_lookup)
-    unsigned int qD25;  // X10 supply (member_lookup)
-    unsigned int qD26;  // X10 supply (member_lookup)
-    unsigned char qD90[4];  /* char[4] */  // X10 supply (member_lookup)
-    unsigned int qDBE;  // X10 supply (member_lookup)
-    bool qDBF;  // X10 supply (member_lookup)
-    int u32_1728;  // X10 supply (member_lookup)
-    unsigned int u32_172C;  // X10 supply (member_lookup)
-    unsigned int u32_1791;  // X10 supply (member_lookup)
-    int u32_D;  // X10 supply (member_lookup)
-    unsigned int u32_D2E;  // X10 supply (member_lookup)
-    unsigned char __pad_037;  // 0x37 [X30:canon]
-    unsigned char __pad_05D;  // 0x5D [X30:canon]
-    unsigned char __pad_099;  // 0x99 [X30:canon]
-    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
-    VoxelStruct* __pad_0B8;  // 0xB8 [X30:type_map]
-    unsigned char __pad_14D;  // 0x14D [X30:canon]
-bool __pad_211;  // 0x211 [X35-L7 kind=bool]
-    unsigned char __pad_22C;  // 0x22C [X30:canon]
-bool __pad_233;  // 0x233 [X35-L7 kind=bool]
-bool __pad_237;  // 0x237 [X35-L7 kind=bool]
-bool __pad_239;  // 0x239 [X35-L7 kind=bool]
-    unsigned char __pad_296;  // 0x296 [X30:canon]
-    unsigned char __pad_2DD;  // 0x2DD [X30:canon]
-    unsigned char __pad_2E5;  // 0x2E5 [X30:canon]
-    unsigned char __pad_2F5;  // 0x2F5 [X30:canon]
-    unsigned char __pad_2FC;  // 0x2FC [X30:canon]
-    unsigned char __pad_320;  // 0x320 [X30:canon]
-    unsigned char __pad_325;  // 0x325 [X30:canon]
-    unsigned char __pad_33C;  // 0x33C [X30:canon]
-    unsigned char __pad_341;  // 0x341 [X30:canon]
-    unsigned char __pad_364;  // 0x364 [X30:canon]
-    unsigned char __pad_39C;  // 0x39C [X30:canon]
-    unsigned char __pad_3C4;  // 0x3C4 [X30:canon]
-    unsigned char __pad_56C;  // 0x56C [X30:canon]
-    unsigned char __pad_58A;  // 0x58A [X30:canon]
-    unsigned char __pad_66C;  // 0x66C [X30:canon]
-    unsigned char __pad_6C0;  // 0x6C0 [X30:canon]
-    unsigned char __pad_6DA;  // 0x6DA [X30:canon]
-    unsigned char __pad_6F9;  // 0x6F9 [X30:canon]
-    unsigned char __pad_708;  // 0x708 [X30:canon]
-    unsigned char __pad_754;  // 0x754 [X30:canon]
-    unsigned char __pad_764;  // 0x764 [X30:canon]
-    unsigned char __pad_770;  // 0x770 [X30:canon]
-    unsigned char __pad_77C;  // 0x77C [X30:canon]
-    unsigned char __pad_788;  // 0x788 [X30:canon]
-    unsigned char __pad_794;  // 0x794 [X30:canon]
-    unsigned char __pad_7D4;  // 0x7D4 [X30:canon]
-    unsigned char __pad_818;  // 0x818 [X30:canon]
-    unsigned char __pad_89C;  // 0x89C [X30:canon]
-    unsigned char __pad_A98;  // 0xA98 [X30:canon]
-    unsigned char __pad_CBC;  // 0xCBC [X30:canon]
-    unsigned char __pad_D8C;  // 0xD8C [X30:canon]
-    unsigned char __pad_DB0;  // 0xDB0 [X30:canon]
-    SHPStruct* __pad_DFC;  // 0xDFC [X30:type_map]
-    unsigned char __pad_E24;  // 0xE24 [X30:canon]
-    unsigned char __pad_E60;  // 0xE60 [X30:canon]
-    unsigned char __pad_E8C;  // 0xE8C [X30:canon]
-    unsigned char __pad_F70;  // 0xF70 [X30:canon]
-    SHPStruct* __pad_1534;  // 0x1534 [X30:type_map]
-    unsigned char __pad_1553;  // 0x1553 [X30:canon]
-    unsigned char __pad_157D;  // 0x157D [X30:canon]
-    unsigned char __pad_158C;  // 0x158C [X30:canon]
-    unsigned char __pad_15DC;  // 0x15DC [X30:canon]
-    unsigned char __pad_1628;  // 0x1628 [X30:canon]
-    unsigned char __pad_1668;  // 0x1668 [X30:canon]
-    unsigned char __pad_16CE;  // 0x16CE [X30:canon]
-    unsigned char __pad_16E7;  // 0x16E7 [X30:canon]
-    unsigned char __pad_1709;  // 0x1709 [X30:canon]
-    unsigned char __pad_1718;  // 0x1718 [X30:canon]
-    unsigned char __pad_1734;  // 0x1734 [X30:canon]
-    unsigned char __pad_1740;  // 0x1740 [X30:canon]
-    unsigned char __pad_174C;  // 0x174C [X30:canon]
-    unsigned char __pad_1758;  // 0x1758 [X30:canon]
-    unsigned char __pad_176E;  // 0x176E [X30:canon]
-    unsigned char __pad_1794;  // 0x1794 [X30:canon]
-    unsigned int TurretVoxel4;  // [X30:default]
-    unsigned int v3;  // [X30:default]
-    unsigned int v4;  // [X30:default]
-    unsigned int v5;  // [X30:default]
-
-
-    unsigned int qE00;  // 0xE00 [X55 W3 supply (render vocab)]
-    unsigned int u32_F08;  // 0xF08 [X55 W3 supply (render vocab)]
-    unsigned int u32_F0C;  // 0xF0C [X55 W3 supply (render vocab)]
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int u32_E04;  // 0xE04 [X55 W3 supply (render vocab)]
-    unsigned int u32_E08;  // 0xE08 [X55 W3 supply (render vocab)]
-    unsigned int qE10;  // 0xE10 [X55 W3 supply (render vocab)]
-    unsigned int u32_E14;  // 0xE14 [X55 W3 supply (render vocab)]
-    unsigned int u32_E1C;  // 0xE1C [X55 W3 supply (render vocab)]
-    unsigned int u32_E20;  // 0xE20 [X55 W3 supply (render vocab)]
-    unsigned int u32_E2C;  // 0xE2C [X55 W3 supply (render vocab)]
-    unsigned int u32_E48;  // 0xE48 [X55 W3 supply (render vocab)]
-    unsigned int qE50;  // 0xE50 [X55 W3 supply (render vocab)]
-    unsigned int qEC0;  // 0xEC0 [X55 W3 supply (render vocab)]
-    unsigned int u32_EC4;  // 0xEC4 [X55 W3 supply (render vocab)]
-    unsigned int u32_ECC;  // 0xECC [X55 W3 supply (render vocab)]
-    unsigned int qED0;  // 0xED0 [X55 W3 supply (render vocab)]
-    unsigned int u32_161C;  // 0x161C [X55 W3 supply (render vocab)]
-    unsigned int qF10;  // 0xF10 [X55 W3 supply (render vocab)]
-    unsigned int u32_F14;  // 0xF14 [X55 W3 supply (render vocab)]
-    unsigned int u32_F18;  // 0xF18 [X55 W3 supply (render vocab)]
-    unsigned int qF20;  // 0xF20 [X55 W3 supply (render vocab)]
-    unsigned int u32_F24;  // 0xF24 [X55 W3 supply (render vocab)]
-    unsigned int u32_F34;  // 0xF34 [X55 W3 supply (render vocab)]
-    unsigned int u32_F38;  // 0xF38 [X55 W3 supply (render vocab)]
-    unsigned int u32_F3C;  // 0xF3C [X55 W3 supply (render vocab)]
-    unsigned int qF40;  // 0xF40 [X55 W3 supply (render vocab)]
-    unsigned int u32_F44;  // 0xF44 [X55 W3 supply (render vocab)]
-    unsigned int u32_F48;  // 0xF48 [X55 W3 supply (render vocab)]
-    unsigned int u32_F5C;  // 0xF5C [X55 W3 supply (render vocab)]
-    unsigned int u32_D35;  // 0xD35 [X55 W3 supply (render vocab)]
-    unsigned int u32_D36;  // 0xD36 [X55 W3 supply (render vocab)]
-    unsigned int u32_D3B;  // 0xD3B [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

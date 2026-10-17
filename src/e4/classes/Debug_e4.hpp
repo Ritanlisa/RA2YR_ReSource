@@ -5,24 +5,17 @@
 
 namespace gamemd {
 struct Debug {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    unsigned char q004;  // 0x4
+    char __pad_5[155];  // 0x5
+    int q0A0;  // 0xA0
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     char ScrollText(const char * aP1);  // 0x5BD0D0
     int AccumFlags(void *a1 = 0);  // 0x6E61F0
     char Printf();  // 0x5BD1F0
     static int Log();  // 0x4068E0 raw int 无参真身（cdecl stub；0 参调用形态 + Debug_e4.cpp:102 定义匹配）
     static void Log_0(void *a1_1 = 0, void *a2_1 = 0);  // 0x4A4AC0
-    unsigned int u32_2710;  // 0x2710 (offset-truth)
-    unsigned int u32_271C;  // 0x271C (offset-truth)
-    unsigned int u32_2720;  // 0x2720 (offset-truth)
-    unsigned int u32_2724;  // 0x2724 (offset-truth)
-    unsigned int u32_2728;  // 0x2728 (offset-truth)
-    unsigned int u32_272C;  // 0x272C (offset-truth)
-    unsigned int u32_2734;  // 0x2734 (offset-truth)
-
-    unsigned char q004;  // X10 supply (member_lookup)
-    int q0A0;  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

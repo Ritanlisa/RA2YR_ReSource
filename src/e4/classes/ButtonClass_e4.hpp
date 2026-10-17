@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct ButtonClass {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char SetState(char a2, void *a1 = 0);
 };

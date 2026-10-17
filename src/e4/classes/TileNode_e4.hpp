@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct TileNode {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Cleanup(void *a1 = 0);
 };

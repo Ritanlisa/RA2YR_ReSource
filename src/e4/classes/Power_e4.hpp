@@ -5,11 +5,12 @@
 
 namespace gamemd {
 struct Power {
+    void* a2;  // 0x0
+    int Power_field_0x4;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    void* Fla_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon Power::Fla is a method)
-    void* a2;  // 0x0 (no offset truth)
     int Update(int * a2, void *a2_2, void *a3_1, void *a4_1);  // 0x43A5D0
     unsigned int * UpdateAll();  // 0x67C6E0
     void*  ComputeHousePowerChecksum(unsigned int * a2, void *a2_2 = 0);  // 0x68B940
@@ -17,15 +18,5 @@ struct Power {
     int FlagProcess(int Power_field_0x8);
     static int TimerProcess(int a1);
     char ChangedHouse(char a2);  // 0x750090
-
-    int q004;  // X10 supply (member_lookup)
-    int q008;  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
-    unsigned char q020;  // X10 supply (member_lookup)
-    unsigned int u32_30;  // X10 supply (member_lookup)
-    int __pad_000;  // 0x0 [X30:type_map]
-
-
-    int Power_field_0x4;  // 0x4 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_CCINIClass {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Clear(int a2);  // 0x538510
     char  AddRef(int a2);  // 0x538520
@@ -21,6 +22,5 @@ struct VectorClass_ptr_CCINIClass {
     int  GetSize(unsigned int * a2);  // 0x538640
     unsigned int  Get(int a2, void *a1 = 0);  // 0x538680
     VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x538A90
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

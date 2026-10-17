@@ -7,11 +7,12 @@ namespace gamemd {
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct AudioController {
-// --- flat members (BEGIN) ---
     unsigned int AudioController_field_00;  // 0x0
     void* AudioController_field_04;  // 0x4
     void* AudioController_field_08;  // 0x8
     void* AudioController_field_0C;  // 0xC
+    int __pad_010;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5);
     void GetVolume();
@@ -22,9 +23,6 @@ struct AudioController {
     unsigned int * Stop(void *a1 = 0, void *a2 = 0);  // 0x405d40
     int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x402040
     static void Init(void * aP0);
-    int u32_5D8;  // 0x5D8
-unsigned int u32_294;  // 0x294 [X35-L7 kind=unsigned int]
-    int __pad_010;  // 0x10 [X30:type_map]
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

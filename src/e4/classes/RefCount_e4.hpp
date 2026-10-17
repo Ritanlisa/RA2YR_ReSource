@@ -8,16 +8,12 @@ namespace gamemd {
 #ifndef GAMEMD_G2_RefCount_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_RefCount_DEF 1
 struct RefCount {
+    int m_RefCount;  // 0x0
+    int RefCount_field_04;  // 0x4
 // --- flat members (BEGIN) ---
-int m_RefCount;  // 0x0 [X35-L7 kind=int]
-    int RefCount_field_04;  // 0x4 [X30:type_map]
 // --- flat members (END) ---
     int32_t Decrement(void *a1 = 0);
     int Increment(int a2);
-    unsigned int u32_8;  // 0x8 (offset-truth)
-    unsigned int u32_C;  // 0xC (offset-truth)
-
-    unsigned char q010;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_RefCount_DEF
 

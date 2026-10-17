@@ -5,13 +5,13 @@
 
 namespace gamemd {
 struct Conflict_WorldDominationTour_26 {
-// --- flat members (BEGIN) ---
+    unsigned int * q000;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int RefCount;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BOOL AddRef(void *a1_1);  // 0x766920
     BOOL Release(void *a1_1);  // 0x766FA0
     BOOL ddtor(void *a1 = 0);  // 0x766FB0
-    unsigned int *q000;  // 0x0 (canon-mt)
 };
 } // namespace gamemd

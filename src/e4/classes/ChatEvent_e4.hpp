@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct ChatEvent {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char ProcessStrings(char *a2, int a3, int a4, int a5);
 };

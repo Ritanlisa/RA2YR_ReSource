@@ -9,9 +9,12 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct MSEngine {
+    char __pad_0[4];  // 0x0
+    void* MSEngine_field_0x4;  // 0x4
+    int MSEngine_field_0x8;  // 0x8
+    unsigned int m_C;  // 0xC
+    unsigned int m_10;  // 0x10
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* IsAllocated;  // 0xD
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, char * a3);  // 0x5ACD30
     AbstractClass * *  SetCapacity(int a2, char * a3);  // 0x5ACED0
@@ -30,39 +33,5 @@ struct MSEngine {
     unsigned int  PointerToIndex(int a2);  // 0x5AC550
     unsigned int  Run(int a2);  // 0x5ACEB0
     void DestroyData(void *a1_1);  // 0x5D5850
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int q0084;  // 0x84 (offset-truth)
-    unsigned int q0108;  // 0x108 (offset-truth)
-unsigned int q18;  // 0x18 [X35-L7 kind=unsigned int]
-    unsigned int u32_1C;  // 0x1C (offset-truth)
-    unsigned int u32_24;  // 0x24 (offset-truth)
-    unsigned char u32_25;  // 0x25 (offset-truth)
-    unsigned char u32_39;  // 0x39 (offset-truth)
-    unsigned int u32_3C;  // 0x3C (offset-truth)
-    unsigned char u32_3D;  // 0x3D (offset-truth)
-    unsigned int u32_44;  // 0x44 (offset-truth)
-    unsigned int u32_48;  // 0x48 (offset-truth)
-    unsigned int u32_4C;  // 0x4C (offset-truth)
-    unsigned char u32_51;  // 0x51 (offset-truth)
-
-    unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    bool q00B;  // X10 supply (member_lookup)
-    bool q00E;  // X10 supply (member_lookup)
-    unsigned char q034;  // X10 supply (member_lookup)
-    unsigned int u32_18;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_2C;  // X10 supply (member_lookup)
-    unsigned int u32_30;  // X10 supply (member_lookup)
-    unsigned int u32_38;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-    void* MSEngine_field_0x4;  // 0x4 [X30:type_map]
-    int MSEngine_field_0x8;  // 0x8 [X30:type_map]
-    char __pad_0[4];  // 0x0 [X30:member_lookup]
-    unsigned int u32_20;  // 0x20 [X30:member_lookup]
-unsigned int u32_40;  // 0x40 [X35-L7 kind=unsigned int]
 };
 } // namespace gamemd

@@ -8,9 +8,12 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct MSFont_18 {
+    unsigned int __pad_0;  // 0x0
+    int q004;  // 0x4
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
+    int m_10;  // 0x10
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     AbstractClass * *  SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0
     void ClearBuffer(void *a1_1);  // 0x5D5080
@@ -29,16 +32,5 @@ struct MSFont_18 {
     unsigned int  PointerToIndex(int a2);  // 0x5D50B0
     unsigned int  PointerToIndex8(int a2);  // 0x5D5110
     unsigned int Draw(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x5D52B0
-    unsigned char *m_1;  // 0x1 (offset-truth)
-int m_10;  // 0x10 [X35-L7 kind=int]
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct Block {
+    int Block_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Block_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     static void * Copy(const void * a2, void *a2_2);
 };

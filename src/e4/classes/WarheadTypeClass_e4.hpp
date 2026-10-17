@@ -15,48 +15,49 @@ struct ParticleSystemTypeClass;  // fix_fwd_type_supply
 struct TypeList_flat;  // fix_fwd_type_supply
 
 struct WarheadTypeClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+#pragma pack(push, 1)  // X60: binary-packed layout
+    void * q0;  // 0x0
     void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
-    unsigned char alignmentPadding_3;  // 0x11
-    char referenceCount[4];  // 0x12
-    bool IsAllocated;  // 0x13
-unsigned int q14;  // 0x14 [X35-L7 kind=unsigned int]
-    int DeformTreshold;  // 0x16
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
+    unsigned int m_10;  // 0x10
+    unsigned int AnimList;  // 0x14
     char InfDeath[4];  // 0x18
     float CellSpread;  // 0x1C
-float q20;  // 0x20 [X35-L7 kind=float]
-    bool CausesDelayKill;  // 0x28
+    float CellInset;  // 0x20
+    IUnknown* __pad_024;  // 0x24
+    int CausesDelayKill;  // 0x28
     int DelayKillFrames;  // 0x2C
     float DelayKillAtMax;  // 0x30
     float CombatLightSize;  // 0x34
-    float PercentAtMax;  // 0x36
     ParticleTypeClass* Particle;  // 0x38
-    bool Wall;  // 0x3C
-    bool WallAbsoluteDestroyer;  // 0x3D
-    bool PenetratesBunker;  // 0x3E
-    bool Wood;  // 0x3F
-    bool Tiberium;  // 0x40
-    unsigned int pad_44;  // 0x44
-    void * UIName;  // 0x60
-    unsigned int Name;  // 0x64
-    unsigned int tail_95;  // 0x95
-int AmbientDamage;  // 0x98 [X35-L7 kind=int]
-    unsigned int pad_99;  // 0x99
-    unsigned int Burst;  // 0x9C
-    unsigned int pad_9D;  // 0x9D
-    int Damage;  // 0xA4
-    unsigned int pad_A5;  // 0xA5
-    void* MinimumRange;  // 0xB8
+    int Wall;  // 0x3C
+    int Tiberium;  // 0x40
+    char pad_44[84];  // 0x44
+    char AmbientDamage;  // 0x98
+    char pad_99[3];  // 0x99
+    char Burst;  // 0x9C
+    char pad_9D[7];  // 0x9D
+    char Damage;  // 0xA4
+    char pad_A5[83];  // 0xA5
+    unsigned int WarheadTypeClass_field_0xF8;  // 0xF8
+    unsigned int __pad_FC;  // 0xFC
+    int WarheadTypeClass_field_0x100;  // 0x100
+    unsigned int u32_104;  // 0x104
+    int WarheadTypeClass_field_0x108;  // 0x108
+    char __pad_10C[4];  // 0x10C
     unsigned char OccupantAnim;  // 0x110
+    char __pad_111[3];  // 0x111
+    int WarheadTypeClass_field_0x114;  // 0x114
     unsigned int OpenToppedAnim;  // 0x118
-    unsigned int pad_124;  // 0x124
+    unsigned char __pad_11C;  // 0x11C
+    char __pad_11D[3];  // 0x11D
+    int WarheadTypeClass_field_0x120;  // 0x120
+    char pad_124[6];  // 0x124
     bool UseSparkParticles;  // 0x12A
-    unsigned int pad_12B;  // 0x12B
+    char pad_12B[2];  // 0x12B
     bool IsRailgun;  // 0x12D
-    unsigned int pad_12E;  // 0x12E
+    char pad_12E[2];  // 0x12E
     bool IsSonic;  // 0x130
     bool Spawner;  // 0x131
     bool LimboLaunch;  // 0x132
@@ -69,51 +70,48 @@ int AmbientDamage;  // 0x98 [X35-L7 kind=int]
     bool SabotageCursor;  // 0x139
     bool MigAttackCursor;  // 0x13A
     bool DisguiseFireOnly;  // 0x13B
-    int DisguiseFakeBlinkTime;  // 0x13C
-    unsigned int pad_13D;  // 0x13D
+    char DisguiseFakeBlinkTime;  // 0x13C
+    char pad_13D[3];  // 0x13D
     bool InfiniteMindControl;  // 0x140
     bool FireWhileMoving;  // 0x141
     bool DrainWeapon;  // 0x142
     bool FireInTransport;  // 0x143
-    unsigned int Suicide;  // 0x144
+    unsigned short Suicide;  // 0x144
     bool Supress;  // 0x146
+    char pad_147;  // 0x147
     bool Charges;  // 0x148
     char WarheadTypeClass_field_bool_149;  // 0x149
     bool DiskLaser;  // 0x14A
-    bool Sonic;  // 0x14B
-    bool Fire;  // 0x14C
-    bool Conventional;  // 0x14D
-    bool Rocker;  // 0x14E
-    bool IonSensitive;  // 0x14F
-    bool Bright;  // 0x150
-    bool CLDisableRed;  // 0x151
-    bool DrawBoltAsLaser;  // 0x152
-    bool CLDisableBlue;  // 0x153
-    bool EMEffect;  // 0x154
-    bool IsRadEruption;  // 0x155
-    bool Poison;  // 0x156
-    bool IvanBomb;  // 0x157
-    bool ElectricAssault;  // 0x158
-    bool Parasite;  // 0x159
-    bool Temporal;  // 0x15A
-    bool IsLocomotor;  // 0x15B
-    void* Locomotor;  // 0x15C [X30:type_map]
-    bool Airstrike;  // 0x16C
-    bool Psychedelic;  // 0x16D
-    bool BombDisarm;  // 0x16E
+    unsigned short Sonic;  // 0x14B
+    unsigned int Conventional;  // 0x14D
+    unsigned int CLDisableRed;  // 0x151
+    char IsRadEruption[4];  // 0x155
+    char Parasite[4];  // 0x159
+    char __pad_15D[3];  // 0x15D
+    unsigned char __pad_160;  // 0x160
+    char __pad_161[11];  // 0x161
+    int Airstrike;  // 0x16C
     int Paralyzes;  // 0x170
-    bool Culling;  // 0x174
-    bool MakesDisguise;  // 0x175
-    bool NukeMaker;  // 0x176
-    bool Radiation;  // 0x177
-    bool PsychicDamage;  // 0x178
-    bool AffectsAllies;  // 0x179
-    bool Bullets;  // 0x17A
-    bool Veinhole;  // 0x17B
-    void *q18C;  // 0x18C
+    int Culling;  // 0x174
+    int PsychicDamage;  // 0x178
+    unsigned int WarheadTypeClass_field_0x17C;  // 0x17C
+    int WarheadTypeClass_field_0x180;  // 0x180
+    int WarheadTypeClass_field_0x184;  // 0x184
+    int WarheadTypeClass_field_0x188;  // 0x188
+    void* DebrisTypes;  // 0x18C
+    unsigned int __pad_190;  // 0x190
     int MaxDebris;  // 0x194
     int MinDebris;  // 0x198
     unsigned int unused_1CC;  // 0x19C
+    unsigned char __pad_1A0;  // 0x1A0
+    char __pad_1A1[11];  // 0x1A1
+    int WarheadTypeClass_field_0x1AC;  // 0x1AC
+    char __pad_1B0[12];  // 0x1B0
+    int WarheadTypeClass_field_0x1BC;  // 0x1BC
+    char __pad_1C0[4];  // 0x1C0
+    int WarheadTypeClass_field_0x1C4;  // 0x1C4
+    int WarheadTypeClass_field_0x1C8;  // 0x1C8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);
     AbstractClass * * parseVerses();
@@ -141,44 +139,7 @@ int AmbientDamage;  // 0x98 [X35-L7 kind=int]
     void * parseModifiers(char a2);
     void GetClassIdentifier();
     void* ProcessPower(int * a2, void *a2_2);
-    void *q0;  // 0x0 (ml)
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-void* q000;  // 0x0 [X35-L7 kind=void*]
-    unsigned int u32_680;  // 0x680 (offset-truth)
-
-    unsigned int AnimList;  // X10 supply (csp_canon_members)
-    float CellInset;  // X10 supply (csp_canon_members)
-    unsigned int u32_104;  // X10 supply (member_lookup)
-    unsigned char __pad_010;  // 0x10 [X30:canon]
-    IUnknown* __pad_024;  // 0x24 [X30:type_map]
-    unsigned char __pad_048;  // 0x48 [X30:canon]
-    unsigned char __pad_068;  // 0x68 [X30:canon]
-    unsigned char __pad_0A1;  // 0xA1 [X30:canon]
-    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
-    unsigned char __pad_0BC;  // 0xBC [X30:canon]
-unsigned int __pad_111;  // 0x111 [X35-L7 kind=unsigned int]
-    unsigned char __pad_11C;  // 0x11C [X30:canon]
-    unsigned char __pad_128;  // 0x128 [X30:canon]
-    unsigned char __pad_160;  // 0x160 [X30:canon]
-    unsigned char __pad_17F;  // 0x17F [X30:canon]
-    void* DebrisTypes;  // 0x18C [X30:type_map]
-unsigned int __pad_190;  // 0x190 [X35-L7 kind=unsigned int]
-    unsigned char __pad_1A0;  // 0x1A0 [X30:canon]
-    unsigned int uniqueId;  // [X30:default]
-
-
-    int WarheadTypeClass_field_0x100;  // 0x100 [X55 W3 supply (render vocab)]
-    unsigned int WarheadTypeClass_field_0xF8;  // 0xF8 [X55 W3 supply (render vocab)]
-    unsigned int __pad_FC;  // 0xFC [X55 W3 supply (render vocab)]
-    unsigned int WarheadTypeClass_field_0x17C;  // 0x17C [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x180;  // 0x180 [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x184;  // 0x184 [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x188;  // 0x188 [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x114;  // 0x114 [X55 W3 supply (render vocab)]
-    int WarheadTypeClass_field_0x120;  // 0x120 [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 
 } // namespace gamemd

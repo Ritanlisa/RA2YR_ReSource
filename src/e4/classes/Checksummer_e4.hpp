@@ -6,11 +6,11 @@
 namespace gamemd {
 
 struct Checksummer {
-// --- flat members (BEGIN) ---
     unsigned int crcValue;  // 0x0
     unsigned int bytePos;  // 0x4
     unsigned int state;  // 0x8
-    unsigned char buffer;  // 0xC
+    int buffer;  // 0xC
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Add_Buffer(uint8_t * state, int a3);
     static int Add_Buffer(void *aP0, unsigned char *aP1, int aP2);

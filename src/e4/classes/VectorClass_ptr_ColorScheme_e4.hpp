@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_ColorScheme {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * SetCapacity_0(CCINIClass * aP1, unsigned char * a2);  // 0x6288F0
     int  Get(int a2, void *a1 = 0);  // 0x627D70
@@ -22,6 +23,5 @@ struct VectorClass_ptr_ColorScheme {
     int  SetCapacity_1(int a2);  // 0x628A70
     unsigned int  GetItemIndex_0(int a2);  // 0x628AD0
     VectorClass_flat *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x628E80
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

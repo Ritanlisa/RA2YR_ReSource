@@ -10,12 +10,32 @@ namespace gamemd {
 struct MouseClass;  // fix_fwd_type_supply
 
 struct WWMouseClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    bool IsAllocated;  // 0xD
-    unsigned int XY1;  // 0x32
-    unsigned int XY2;  // 0x40
+    String* __pad_004;  // 0x4
+    int WWMouseClass_field_0x8;  // 0x8
+    int WWMouseClass_field_0xC;  // 0xC
+    int WWMouseClass_field_0x10;  // 0x10
+    char __pad_14[4];  // 0x14
+    unsigned int q018;  // 0x18
+    int q01C;  // 0x1C
+    int WWMouseClass_field_0x20;  // 0x20
+    int WWMouseClass_field_0x24;  // 0x24
+    char __pad_28[4];  // 0x28
+    unsigned int WWMouseClass_field_0x2C;  // 0x2C
+    int WWMouseClass_field_0x30;  // 0x30
+    int WWMouseClass_field_0x34;  // 0x34
+    int WWMouseClass_field_0x38;  // 0x38
+    unsigned char q03C[8];  // 0x3C
+    unsigned int WWMouseClass_field_0x44;  // 0x44
+    unsigned int q048;  // 0x48
+    unsigned int q04C;  // 0x4C
+    unsigned int q050;  // 0x50
+    unsigned int q054;  // 0x54
+    int WWMouseClass_field_0x58;  // 0x58
+    char __pad_5C[12];  // 0x5C
     unsigned int somecount_4C;  // 0x68
+    MouseClass* __pad_06C;  // 0x6C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int UpdateCursorMovement(void *aP1);
     MouseClass * updateHotspot(char a2);
@@ -29,33 +49,6 @@ struct WWMouseClass {
     unsigned int * updatePosition(unsigned int * a2);
     void releaseMouse();
     void* captureMouse();
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int q048;  // 0x48 (canon-mt)
-
-    unsigned char __pad_044;  // X10 supply (csp_canon_members)
-    unsigned int q018;  // X10 supply (member_lookup)
-    int q01C;  // X10 supply (member_lookup)
-    int q02C;  // X10 supply (member_lookup)
-    unsigned char q03C[8];  /* char[8] */  // X10 supply (member_lookup)
-    unsigned int q04C;  // X10 supply (member_lookup)
-    unsigned int q050;  // X10 supply (member_lookup)
-    unsigned int q054;  // X10 supply (member_lookup)
-    String* __pad_004;  // 0x4 [X30:type_map]
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-    unsigned char __pad_036;  // 0x36 [X30:canon]
-    MouseClass* __pad_06C;  // 0x6C [X30:type_map]
-    unsigned int CapacityIncrement;  // [X30:default]
-    unsigned int HandleClick_ph;  // [X30:default]
-    unsigned int m_MaxX;  // [X30:default]
-    unsigned int m_MaxY;  // [X30:default]
-    unsigned int m_ScrollY;  // [X30:default]
-    unsigned int outBuffer;  // [X30:default]
-    unsigned int q_30;  // [X30:default]
-
-
-    unsigned int WWMouseClass_field_0x44;  // 0x44 [X55 W3 supply (render vocab)]
-    unsigned int WWMouseClass_field_0x2C;  // 0x2C [X55 W3 supply (render vocab)]
-    int __pad_48;  // 0x48 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

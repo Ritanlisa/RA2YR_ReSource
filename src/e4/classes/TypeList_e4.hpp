@@ -8,19 +8,15 @@
 namespace gamemd {
 // TypeList  size=28  (bare-template collapse name; e4 corpus static-form qualified calls)
 struct TypeList {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    void* DynamicVectorClass;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
-    bool IsAllocated;  // 0xD
-    unsigned int tail_E;  // 0xE
     void* Count;  // 0x10
     int CapacityIncrement;  // 0x14
     int unknown_18;  // 0x18
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* DynamicVectorClass;  // 0x0 vfptr (raw member name; TiberiumClass_e4.cpp v24 site 0x721c21)
-    unsigned char __tail_E[2];       // 0xE  (til VectorClass tail char[2]; 布局守卫: 4+4+1+1+2+4+4=20 取代 q004[20])
     static unsigned int * Copy(TypeList *aP1, void *a2);
     static unsigned int *  TechnoTypeConstructor(int a2, int a3);  // 0x478790
     static unsigned int *  CopyConstructor(unsigned int * a2);  // 0x513740

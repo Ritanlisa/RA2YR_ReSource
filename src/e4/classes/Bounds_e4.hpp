@@ -6,13 +6,10 @@
 namespace gamemd {
 
 struct Bounds {
+    int Bounds_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Bounds_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int Subtract(IUnknown * aP1, unsigned int * a2, void *a3, void *a4);
-    unsigned int u32_4;  // 0x4 (offset-truth)
-    unsigned int u32_8;  // 0x8 (offset-truth)
-    unsigned int u32_C;  // 0xC (offset-truth)
 };
 
 } // namespace gamemd

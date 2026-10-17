@@ -6,8 +6,15 @@
 namespace gamemd {
 
 struct Function {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int q004;  // 0x4
+    int Function_field_0x08;  // 0x8
+    int Function_field_0x0C;  // 0xC
+    int Function_field_0x10;  // 0x10
+    int Function_field_0x14;  // 0x14
+    unsigned int Function_field_0x18;  // 0x18
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int Method_424CA0(int a2);
     int Method_4B4D60(void *a1 = 0);
@@ -15,12 +22,6 @@ struct Function {
     int Function_643E80(void * a2);
     int sub_645D00(int a2);
     static int Method_46B260(int p0);  // x4:signals@0x46b260
-
-    int q004;  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
-
-
-    unsigned int Function_field_0x18;  // 0x18 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

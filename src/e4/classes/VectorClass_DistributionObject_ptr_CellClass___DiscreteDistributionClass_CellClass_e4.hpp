@@ -8,13 +8,15 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass {
-// --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int __pad_0;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, int * a3);  // 0x4E0840
     AbstractClass * *  SetCapacity(int a2, int * a3);  // 0x4E0B10
@@ -27,16 +29,15 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
     int Destroy(void *a1_1);  // 0x4E0AB0
     unsigned int  GetItemIndex(int a2);  // 0x4E0AF0
     wchar_t * ddtor(void *a1_1);  // 0x4E0950
-    unsigned char m_8[64];  // pad compile-supply (G41.47)
-    unsigned char m_10[64];  // pad compile-supply (G41.47)
-    unsigned char m_1[64];  // pad compile-supply (G41.47)
-    unsigned char __pad_00E;  // 0xE [X30:canon]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 struct _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass {
+    char __pad_0[1];  // 0x0
+    char m_1[4];  // 0x1
+    char __pad_5[3];  // 0x5
+    int m_8;  // 0x8
+    int m_C;  // 0xC
+    char __tail_10[4];  // 0x10
     void  VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize(unsigned int * a2);  // 0x4E0990
 };
 } // namespace gamemd

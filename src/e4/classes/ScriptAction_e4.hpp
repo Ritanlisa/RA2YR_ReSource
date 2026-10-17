@@ -8,10 +8,37 @@
 namespace gamemd {
 struct CampaignClass;  // fix_fwd_type_supply
 struct ScriptAction {
+    void * __pad_0;  // 0x0
+    int u32_4;  // 0x4
+    int u32_8;  // 0x8
+    unsigned char u32_C[4];  // 0xC
+    int u32_10;  // 0x10
+    int q014;  // 0x14
+    int u32_18;  // 0x18
+    unsigned char u32_1C[8];  // 0x1C
+    int ScriptAction_field_0x24;  // 0x24
+    char __pad_28[4];  // 0x28
+    unsigned char q02C;  // 0x2C
+    char __pad_2D[3];  // 0x2D
+    int q030;  // 0x30
+    unsigned char q034[60];  // 0x34
+    int ScriptAction_field_0x70;  // 0x70
+    int ScriptAction_field_0x74;  // 0x74
+    char __pad_78[9];  // 0x78
+    unsigned char u8_81;  // 0x81
+    char __pad_82[1];  // 0x82
+    unsigned char u8_83;  // 0x83
+    char __pad_84[8];  // 0x84
+    int q08C;  // 0x8C
+    unsigned char q090[4];  // 0x90
+    int q094;  // 0x94
+    int q098;  // 0x98
+    char __pad_9C[12];  // 0x9C
+    int q0A8;  // 0xA8
+    char __pad_AC[4];  // 0xAC
+    int q0B0;  // 0xB0
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    void *__pad_0;  // 0x0 vfptr slot witness (raw *(u32*)this->__pad_0 + 8 vt call)
     void*  InitActionFields(int a2, int a3, char a4, char a5, int a6, char a7, int a8, char a9, int a10, char a11, void *a1 = 0);  // 0x4C6860
     int  CreatePlacementAction(unsigned int * a2, void * a3);  // 0x633FA0
     unsigned int *  GetCoords(unsigned int * a2, void *a1 = 0);  // 0x6343C0
@@ -42,40 +69,5 @@ struct ScriptAction {
     bool SetField10();  // 0x637DB0
     static int ClassifyAction(int *a1, char *a2);  // 0x638CE0
     void *  CopyStructField(void * a2, void * a3);  // 0x6E47C0
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q014;  // X10 supply (member_lookup)
-    unsigned char q02C;  // X10 supply (member_lookup)
-    int q030;  // X10 supply (member_lookup)
-    unsigned char q034[60];  /* char[60] */  // X10 supply (member_lookup)
-    AbstractClass* q04C;  // X10 supply (member_lookup)
-    CampaignClass* q050;  // X10 supply (member_lookup)
-    unsigned char q054;  // X10 supply (member_lookup)
-    ObjectClass* q06D;  // X10 supply (member_lookup)
-    int q08C;  // X10 supply (member_lookup)
-    unsigned char q090[4];  /* char[4] */  // X10 supply (member_lookup)
-    int q094;  // X10 supply (member_lookup)
-    int q098;  // X10 supply (member_lookup)
-    int q0A8;  // X10 supply (member_lookup)
-    int q0B0;  // X10 supply (member_lookup)
-    int u32_10;  // X10 supply (member_lookup)
-    int u32_18;  // X10 supply (member_lookup)
-    unsigned char u32_1C[8];  /* char[8] */  // X10 supply (member_lookup)
-    unsigned int u32_38;  // X10 supply (member_lookup)
-    unsigned int u32_3C;  // X10 supply (member_lookup)
-    int u32_4;  // X10 supply (member_lookup)
-    unsigned int u32_40;  // X10 supply (member_lookup)
-    unsigned int u32_43;  // X10 supply (member_lookup)
-    ObjectClass * u32_44;  // X10 supply (member_lookup)
-    ObjectClass * u32_48;  // X10 supply (member_lookup)
-    int u32_8;  // X10 supply (member_lookup)
-    unsigned char u32_C[4];  /* char[4] */  // X10 supply (member_lookup)
-    int u8_11;  // X10 supply (member_lookup)
-    int u8_1D;  // X10 supply (member_lookup)
-    int u8_81;  // X10 supply (member_lookup)
-    int u8_83;  // X10 supply (member_lookup)
-    int u8_99;  // X10 supply (member_lookup)
-    int u8_D;  // X10 supply (member_lookup)
-    ScriptAction* ScriptAction_1;  // 0x1 [X30:member_lookup]
 };
 } // namespace gamemd

@@ -7,8 +7,8 @@
 namespace gamemd {
 
 struct Weapon {
+    int Weapon_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Weapon_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int * DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4);  // G57w10-S raw 0x0070C690 IUnknown 占位清除
 };

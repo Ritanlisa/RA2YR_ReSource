@@ -5,8 +5,16 @@
 
 namespace gamemd {
 struct Territory_WorldDominationTour_8 {
-// --- flat members (BEGIN) ---
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int Territory_WorldDominationTour_8_field_0x4;  // 0x4
+    int Territory_WorldDominationTour_8_field_0x8;  // 0x8
+    int q00C;  // 0xC
     int Ticks;  // 0x10
+    unsigned char __pad_014;  // 0x14
+    char __pad_15[7];  // 0x15
+    int field_1C;  // 0x1C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  AddRef(char a2);  // 0x7718A0
     signed intRelease();  // 0x771900
@@ -17,10 +25,5 @@ struct Territory_WorldDominationTour_8 {
     unsigned int *  QueryInterface(char a2);  // 0x771A30
     unsigned int * Seek(unsigned int * a1, void *a2_1, void *a3_1);  // 0x771990
     unsigned int * Open(void *a1_1, void *a2_1, void *a3_1);  // 0x7719C0
-
-    int q00C;  // X10 supply (member_lookup)
-    int field_1C;  // 0x1C
-    unsigned char __pad_000;  // 0x0 [X30:canon]
-    unsigned char __pad_014;  // 0x14 [X30:canon]
 };
 } // namespace gamemd

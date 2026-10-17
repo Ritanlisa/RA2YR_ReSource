@@ -15,67 +15,78 @@ struct SomeVoxelCache;  // fix_fwd_type_supply
 struct SmudgeClass;  // fix_fwd_type_supply
 
 struct SmudgeTypeClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    void * vfptr;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    unsigned int alignmentPadding;  // 0x21
-    bool NoSpawnAlt;  // 0x30
+    char __pad_24[1];  // 0x24
+    unsigned char __pad_025;  // 0x25
+    char __pad_26[10];  // 0x26
+    char __pad_30[1];  // 0x30
+    char __pad_31[3];  // 0x31
+    int __pad_034;  // 0x34
+    char __pad_38[4];  // 0x38
     char zero_3C;  // 0x3C
-    unsigned char UINameLabel;  // 0x3D
+    char UINameLabel[32];  // 0x3D
+    unsigned char __pad_05D;  // 0x5D
+    char __pad_5E[2];  // 0x5E
     void * UIName;  // 0x60
-    unsigned char Name;  // 0x64
+    char Name[49];  // 0x64
+    char __pad_095[3];  // 0x95
+    char __pad_98[3];  // 0x98
     char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
     int Strength;  // 0xA0
     void * Image;  // 0xA4
     char ImageAllocated;  // 0xA8
+    char __pad_0A9[3];  // 0xA9
     void * AlphaImage;  // 0xAC
     unsigned int MainVoxel;  // 0xB0
     unsigned int TurretVoxel;  // 0xB4
     unsigned int BarrelVoxel;  // 0xB8
-    unsigned char ChargerTurrets;  // 0xBC
-    unsigned char ChargerBarrels;  // 0x104
+    int ChargerTurrets[18];  // 0xBC
+    int ChargerBarrels[18];  // 0x104
+    unsigned char __pad_14C;  // 0x14C
+    char __pad_14D[156];  // 0x14D
+    char align_1E9[3];  // 0x1E9
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
-    unsigned char ImageFile;  // 0x1F8
-    bool AlternateArcticArt;  // 0x1F9
-    bool ArcticArtInUse;  // 0x1FA
-    char AlphaImageFile_0x19;  // 0x1FB
-    bool Theater;  // 0x1FC
-    bool Crushable;  // 0x1FD
-    bool Bombable;  // 0x1FE
-    bool RadarInvisible;  // 0x1FF
-    bool Immune;  // 0x203
-    bool IsLogic;  // 0x204
-    bool AllowCellContent;  // 0x205
-    bool Voxel;  // 0x206
-    bool NewTheater;  // 0x207
-    bool HasRadialIndicator;  // 0x208
-    bool IgnoresFirestorm;  // 0x209
-    bool UseLineTrail;  // 0x20A
-    char LineTrailColor[4];  // 0x20C
+    char ImageFile[25];  // 0x1F8
+    char __pad_211;  // 0x211
     char ArcticArtInUse_d;  // 0x212
-    unsigned char AlphaImageFile;  // 0x213
+    char AlphaImageFile[25];  // 0x213
+    unsigned char __pad_22C;  // 0x22C
+    char Crushable[1];  // 0x22D
+    char Bombable[1];  // 0x22E
+    unsigned char q_22F;  // 0x22F
     char Selectable;  // 0x230
     char LegalTarget;  // 0x231
     char Insignificant;  // 0x232
+    char __pad_233;  // 0x233
+    char IsLogic[1];  // 0x234
+    char AllowCellContent[1];  // 0x235
     char Voxel_d;  // 0x236
+    char __pad_237;  // 0x237
+    char HasRadialIndicator[1];  // 0x238
+    char IgnoresFirestorm[1];  // 0x239
+    char UseLineTrail[1];  // 0x23A
+    char LineTrailColor[3];  // 0x23B
+    char align_23E[2];  // 0x23E
     int LineTrailColorDecrement;  // 0x240
-    unsigned char VoxelCaches;  // 0x244
+    int VoxelCaches[20];  // 0x244
     int ArrayIndex;  // 0x294
     int Width;  // 0x298
-    bool Height;  // 0x29C
-    bool Burn;  // 0x29D
+    int Height;  // 0x29C
+    bool Crater;  // 0x2A0
+    bool __pad_2A1;  // 0x2A1
     unsigned short tail_2A2;  // 0x2A2
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, int a6, int aP1, int aP0, int aP2, int a1);
     SmudgeClass * GetFlag(int a2);
@@ -90,29 +101,6 @@ struct SmudgeTypeClass {
     int PowerDrainUpdate(int * a2);
     int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     void vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6);
-    unsigned int q_22F;  // +0x22F flat supply (three-ban reform)
-    bool Crater;  // 0x2A0 (ml) [X30:type_map]
-    unsigned char q0E01;  // 0xE01 (offset-truth)
-    unsigned char q0E02;  // 0xE02 (offset-truth)
-    unsigned char q0E03;  // 0xE03 (offset-truth)
-    unsigned char q0E05;  // 0xE05 (offset-truth)
-    unsigned char q10C2;  // 0x10C2 (offset-truth)
-    unsigned char q10C3;  // 0x10C3 (offset-truth)
-    unsigned char __pad_025;  // 0x25 [X30:canon]
-    int __pad_034;  // 0x34 [X30:type_map]
-    unsigned char __pad_05D;  // 0x5D [X30:canon]
-    unsigned char __pad_095;  // 0x95 [X30:canon]
-    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
-    unsigned char __pad_14C;  // 0x14C [X30:canon]
-char __pad_211;  // 0x211 [X35-L7 kind=char]
-    int __pad_22C;  // 0x22C [X30:type_map]
-char __pad_233;  // 0x233 [X35-L7 kind=char]
-char __pad_237;  // 0x237 [X35-L7 kind=char]
-    bool __pad_2A1;  // 0x2A1 [X30:type_map]
-    unsigned int Theater_d;  // [X30:default]
-
-
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

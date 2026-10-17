@@ -7,8 +7,8 @@
 namespace gamemd {
 
 struct Render {
+    int Render_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Render_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     AbstractClass * * DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8);
     static void DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6);

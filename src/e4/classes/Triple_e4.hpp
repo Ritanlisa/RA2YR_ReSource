@@ -6,11 +6,10 @@
 namespace gamemd {
 
 struct Triple {
+    char __tail_0[4];  // 0x0
 // --- flat members (BEGIN) ---
-    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     unsigned int * Set(int aP1, int aP2, int aP3);
-    char __tail_0[4];  // 0x0 (ml)
 };
 
 } // namespace gamemd

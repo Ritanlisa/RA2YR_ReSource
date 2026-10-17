@@ -11,8 +11,10 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct PKPipe;  // fix_fwd_type_supply
 struct PKStrawClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    int __pad_004;  // 0x4
+    int PKStrawClass_field_0x08;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  initGameMode(int a2, int a3, void *a1 = 0);  // 0x437FD0
     int applyGameSettings2(int a2, int a3);  // G42.39 supply
@@ -40,81 +42,80 @@ struct PKStrawClass {
     int parseGameOptions(int a2);  // G42.39 supply
     PKStrawClass * applyGameSettings(unsigned int * Block, char a2);  // G42.39 supply
     int FindPlayerName(int a1);  // G42.39 supply
-    unsigned int m_13C;  // 0x13C (offset-truth)
-unsigned int m_34;  // 0x34 [X35-L7 kind=unsigned int]
-    unsigned int q014;  // 0x14 (offset-truth)
-    int __pad_004;  // 0x4 [X30:type_map]
 };
 struct GameClass {
-// --- flat members (BEGIN) ---
-    unsigned char *q000;  // 0x0
-    unsigned int u32_4;  // 0x4
+#pragma pack(push, 1)  // X60: binary-packed layout
+    unsigned int * __pad_0;  // 0x0
+    unsigned int * GameClass_field_0x4;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int u16_A;  // 0xA
-    unsigned char q00B;  // 0xB
     unsigned int u32_C;  // 0xC
-unsigned int q10;  // 0x10 [X35-L7 kind=unsigned int]
-    Pipe * ptr_14;  // 0x14
+    unsigned int q10;  // 0x10
+    Pipe* m_14;  // 0x14
     unsigned int u32_18;  // 0x18
+    char __pad_1C[4];  // 0x1C
     CampaignClass * ptr_20;  // 0x20
     unsigned int q024;  // 0x24
+    char __pad_28[2];  // 0x28
     unsigned int GameClass_field_0x2A;  // 0x2A
     unsigned char q02E;  // 0x2E
+    char __pad_2F[1];  // 0x2F
+    unsigned char GameClass_30[4];  // 0x30
     unsigned int u32_34;  // 0x34
-    unsigned int u32_38;  // 0x38
-    BufferIOFileClass* q039;  // 0x39
+    char u32_38[1];  // 0x38
+    char GameClass_field_0x39[4];  // 0x39
     unsigned char q03D;  // 0x3D
+    char __pad_3E[2];  // 0x3E
     unsigned int q040;  // 0x40
     unsigned char u8_44;  // 0x44
+    char __pad_45[11];  // 0x45
     CampaignClass * q050;  // 0x50
     unsigned int q054;  // 0x54
+    char __pad_58[8];  // 0x58
     unsigned int q060;  // 0x60
     unsigned int q064;  // 0x64
-Pipe* m_14;  // 0x14 [X35-L7 kind=Pipe*]
     unsigned char q068;  // 0x68
-    unsigned int q06A;  // 0x6A
-    unsigned int q06D;  // 0x6D
+    char __pad_69[1];  // 0x69
+    unsigned char q06A;  // 0x6A
+    char __pad_6B[2];  // 0x6B
+    unsigned char q06D;  // 0x6D
+    char __pad_6E[2];  // 0x6E
     unsigned char q070;  // 0x70
     unsigned char q071;  // 0x71
+    char __pad_72[10];  // 0x72
     unsigned int u32_7C;  // 0x7C
     unsigned int u32_80;  // 0x80
     unsigned int q084;  // 0x84
-    unsigned char GameClass_field_0x39[1];  // 0x39
+    char __pad_88[32];  // 0x88
     unsigned int u32_A8;  // 0xA8
+    char __pad_AC[56];  // 0xAC
     unsigned int u32_E4;  // 0xE4
+    char __pad_E8[8];  // 0xE8
     unsigned int u32_F0;  // 0xF0
+    char __pad_F4[12];  // 0xF4
     unsigned int q100;  // 0x100
     unsigned char q104;  // 0x104
+    char __pad_105[31];  // 0x105
     unsigned int q124;  // 0x124
     unsigned int q128;  // 0x128
+    char __pad_12C[4];  // 0x12C
     unsigned int q130;  // 0x130
     unsigned int q134;  // 0x134
-    unsigned int u32_13C;  // 0x13C
+    char __pad_138[4];  // 0x138
+    unsigned int m_13C;  // 0x13C
     unsigned int u32_140;  // 0x140
+    char __pad_144[12];  // 0x144
     unsigned int q150;  // 0x150
+    char __pad_154[20];  // 0x154
     unsigned int q168;  // 0x168
+    char __pad_16C[16];  // 0x16C
+    unsigned int u32_17C;  // 0x17C
+    char __pad_180[40];  // 0x180
     unsigned int u32_1A8;  // 0x1A8
+    char __pad_1AC[8];  // 0x1AC
     unsigned int u32_1B4;  // 0x1B4
+    char __pad_1B8[72];  // 0x1B8
     void* q200;  // 0x200
-    unsigned int *GameClass_field_0x4;
-    unsigned int *__pad_0;
-    unsigned int *__pad_24;
-    unsigned int *__pad_3D;
-    unsigned int *__pad_8;
-    unsigned int field_14;
-    unsigned int field_3C;
-    unsigned int m_10;
-    unsigned int m_140;
-    unsigned int m_38;
-    unsigned int m_3C;
-    unsigned int m_C;
-    unsigned int q004;
-    unsigned int u32_42;
-    unsigned int DDraw;
-    unsigned int Timer;
-    unsigned int Event;
-    unsigned int Network_ph;  // w18j3: filler renamed (no offset truth; canon GameClass::Network is a method)
-    unsigned char Pipe_field_0x04;  // 0x4
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int *  processFrame(int a2, int a3);  // 0x4381D0
     unsigned int * updateUI(int a2, int a3_2);  // 0x438300
@@ -141,16 +142,6 @@ Pipe* m_14;  // 0x14 [X35-L7 kind=Pipe*]
     int  FindPlayerName(int a1);  // 0x69BC60
     int initPlayerData(const char **a2, void * aStandard_0);
     wchar_t * GetDifficultyString(void * aSttPlayerclose, void * aSttPlayerhuman, void * aSttPlayeropen, void * aSttPlayeropeno);
-
-    unsigned char GameClass_30[4];  /* GameClass */  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_018;  // X10 supply (csp_canon_members)
-    unsigned int u32_3C;  // X10 supply (member_lookup)
-    unsigned int u32_17C;  // 0x17C
-    unsigned char __pad_024;  // 0x24 [X30:canon]
-
-
-    unsigned int m_13C;  // 0x13C [X55 W3 supply (render vocab)]
-    unsigned int m_34;  // 0x34 [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 } // namespace gamemd

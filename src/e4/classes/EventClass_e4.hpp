@@ -9,10 +9,42 @@ struct BuildingTypeClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct EventClass {
+#pragma pack(push, 1)  // X60: binary-packed layout
+    int EventClass_field_0x0;  // 0x0
+    int EventClass_field_0x4;  // 0x4
+    int EventClass_field_0x8;  // 0x8
+    int EventClass_field_0xC;  // 0xC
+    char __pad_10[5];  // 0x10
+    unsigned int u32_15;  // 0x15
+    char __pad_19[11];  // 0x19
+    int EventClass_field_0x24;  // 0x24
+    int q028;  // 0x28
+    unsigned int u32_2C;  // 0x2C
+    int EventClass_field_0x30;  // 0x30
+    char __pad_34[4];  // 0x34
+    int q038;  // 0x38
+    unsigned long long __pad_3C;  // 0x3C
+    int q044;  // 0x44
+    int q048;  // 0x48
+    int u32_4C;  // 0x4C
+    int q050;  // 0x50
+    int q054;  // 0x54
+    char __pad_58[960];  // 0x58
+    char __pad_418[264];  // 0x418
+    int EventClass_field_0x520;  // 0x520
+    int EventClass_field_0x524;  // 0x524
+    int EventClass_field_0x528;  // 0x528
+    char __pad_52C[960];  // 0x52C
+    char __pad_8EC[712];  // 0x8EC
+    int EventClass_field_0xBB4;  // 0xBB4
+    char __pad_BB8[598];  // 0xBB8
+    char EventClass_field_0xE0E[4];  // 0xE0E
+    char __pad_E12[960];  // 0xE12
+    char __pad_11D2[960];  // 0x11D2
+    char __pad_1592[299];  // 0x1592
+    char EventClass_field_0x16BD[4];  // 0x16BD
+    char __pad_16C1[1];  // 0x16C1
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
-    int Count;  // 0x10
-    bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     int serializeEvent(void *a1_1);  // 0x48B390
     int SetData(int a2, int a3, int a4, int a5, int a6);  // 0x48BAD0
@@ -40,40 +72,6 @@ struct EventClass {
     unsigned int  dequeueEvent(int a2);  // 0x40C260
     void getEventCount();  // 0x40C590
     int  GetState(int a1);  // 0x5F3440
-    char __pad_10[5];  // 0x10 (ml)
-    unsigned char q0041;  // 0x41 (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
-    int q028;  // X10 supply (member_lookup)
-    int q038;  // X10 supply (member_lookup)
-    int q044;  // X10 supply (member_lookup)
-    int q048;  // X10 supply (member_lookup)
-    int q050;  // X10 supply (member_lookup)
-    int q054;  // X10 supply (member_lookup)
-    unsigned int u32_13;  // X10 supply (member_lookup)
-    unsigned int u32_15;  // X10 supply (member_lookup)
-    unsigned int u32_2;  // X10 supply (member_lookup)
-    unsigned int u32_2C;  // X10 supply (member_lookup)
-    unsigned int u32_3;  // X10 supply (member_lookup)
-    unsigned int u32_314;  // X10 supply (member_lookup)
-    unsigned int u32_318;  // X10 supply (member_lookup)
-    int u32_4C;  // X10 supply (member_lookup)
-    unsigned int u32_7;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
-    unsigned int u32_B;  // X10 supply (member_lookup)
-    unsigned int u32_F;  // X10 supply (member_lookup)
-    unsigned char q014;  // 0x14
-    unsigned char __pad_016;  // 0x16 [X30:canon]
-    int EventClass_field_0x0;  // 0x0 [X30:type_map]
-    int EventClass_field_0x4;  // 0x4 [X30:type_map]
-    int EventClass_field_0xC;  // 0xC [X30:type_map]
-
-
-    unsigned int m_C;  // 0xC [X55 W3 supply (render vocab)]
-    int m_8;  // 0x8 [X55 W3 supply (render vocab)]
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
-    int EventClass_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 } // namespace gamemd

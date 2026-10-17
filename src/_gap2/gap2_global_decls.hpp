@@ -5104,14 +5104,9 @@ public:  // g57c5 W4 supply slot
     unsigned int M12;  // 0xC [X30:canon]
     };
     struct ObjectPlacement {
+    int __pad_0;  // 0x0
+    int ObjectPlacement_field_0x04;  // 0x4
         static int * CalcPosition(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5, void * aP6);  // 0x481180 (G42.39a static-call supply)
-    
-    unsigned int u32_124;  // X10 supply (member_lookup)
-    unsigned int u32_128;  // X10 supply (member_lookup)
-    unsigned int u32_25;  // X10 supply (member_lookup)
-    int __pad_000;  // 0x0 [X30:type_map]
-    int ObjectPlacement_field_0x04;  // 0x4 [X30:type_map]
-    int __pad_0;  // 0x0 [X30:type_map]
 };
 #ifndef GAMEMD_E4_LinkedList  // G57w8: e4 flat carrier wins where explicitly included (C2011 vs LinkedList_flat_e4.hpp)
 

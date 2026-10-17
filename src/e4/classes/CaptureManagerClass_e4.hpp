@@ -12,34 +12,32 @@ struct ScenarioClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct CaptureManagerClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void * vfptr;  // 0x0
+    void * vfptr1;  // 0x4
+    void * vfptr2;  // 0x8
+    void * vfptr3;  // 0xC
     void* uniqueId;  // 0x10
-    bool IsInitialized;  // 0x12
-    bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     unsigned int controlNodes;  // 0x24
-    int controlNodeCount;  // 0x28 [X30:type_map]
-    HouseClass* controlNodeCapacity;  // 0x2C [X30:type_map]
+    int controlNodeCount;  // 0x28
+    HouseClass* controlNodeCapacity;  // 0x2C
     TechnoClass* owner;  // 0x30
-    unsigned int alignmentPadding;  // 0x33
     HouseClass* originalOwner;  // 0x34
     bool CaptureManagerClass_field_30;  // 0x38
     bool CaptureManagerClass_field_31;  // 0x39
-    unsigned char pad_32;  // 0x3A
+    char pad_32[2];  // 0x3A
+    int __pad_03C;  // 0x3C
     bool CaptureManagerClass_field_40;  // 0x40
     bool CaptureManagerClass_field_41;  // 0x41
-    unsigned char pad_42;  // 0x42
-int overloadLimit;  // 0x44 [X35-L7 kind=int]
-int overloadCount;  // 0x48 [X35-L7 kind=int]
-    int linkCount;  // 0x4C [X30:type_map]
-int CaptureManagerClass_field_2C;  // 0x50 [X35-L7 kind=int]
+    char pad_42[2];  // 0x42
+    int overloadLimit;  // 0x44
+    int overloadCount;  // 0x48
+    int linkCount;  // 0x4C
+    int CaptureManagerClass_field_2C;  // 0x50
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void DecideUnitFate(int aP1, void *a2 = 0);
     char FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0, int a5);
@@ -74,18 +72,6 @@ int CaptureManagerClass_field_2C;  // 0x50 [X35-L7 kind=int]
     CaptureManagerClass * ddtor(unsigned int * Block, char a2);
     VectorClass_flat * Constructor_VectorClass_ControlNode___(unsigned int * Block, char a2);
     DynamicVector * QueryInterface(unsigned int * Block, char a2);
-    unsigned int u32_2C0;  // 0x2C0 (offset-truth)
-    unsigned int u32_2C8;  // 0x2C8 (offset-truth)
-    unsigned int u32_9C;  // 0x9C (offset-truth)
-    unsigned int u32_A4;  // 0xA4 (offset-truth)
-    int __pad_03C;  // 0x3C [X30:type_map]
-
-
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int q0A0;  // 0xA0 [X55 W3 supply (render vocab)]
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

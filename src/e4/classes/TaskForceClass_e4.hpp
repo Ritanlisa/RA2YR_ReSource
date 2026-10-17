@@ -10,21 +10,25 @@ struct INIClass;  // fix_fwd_type_supply
 struct ObjectTypeClass;  // fix_fwd_type_supply
 struct CCINIClass;  // fix_fwd_type_supply
 struct TaskForceClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    unsigned int __pad_0;  // 0x0
+    int TaskForceClass_field_0x4;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
+    unsigned char __pad_010;  // 0x10
+    char __pad_11[2];  // 0x11
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
-    unsigned int alignmentPadding;  // 0x33
-    unsigned int UINameLabel;  // 0x3D
-    void * UIName;  // 0x60
-    unsigned int Name;  // 0x64
-    unsigned int tail_95;  // 0x95
+    unsigned char __pad_020;  // 0x20
+    char __pad_21[3];  // 0x21
+    int q024;  // 0x24
+    char q028[112];  // 0x28
     AbstractClass * ptr_98;  // 0x98
+    int __pad_09C;  // 0x9C
+    unsigned char q0A0[4];  // 0xA0
+    int q0A4;  // 0xA4
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * ParseUnitCountAndType(char *Buffer);  // 0x4C4EF0
     int Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // 0x6E7E80
@@ -39,24 +43,5 @@ struct TaskForceClass {
     int  ddtor(unsigned int * a2);  // 0x6E8710
     int StubReturn33();  // 0x6E87D0
     int StubReturn212();  // 0x6E87E0
-void* q000;  // 0x0 [X35-L7 kind=void*]
-    unsigned int q008;  // 0x8 (offset-truth)
-
-    int q024;  // X10 supply (member_lookup)
-    unsigned char q0A0[4];  /* char[4] */  // X10 supply (member_lookup)
-    int q0A4;  // X10 supply (member_lookup)
-    char q028[112];  // 0x28  /* char[112] */
-    unsigned char __pad_010;  // 0x10 [X30:canon]
-    unsigned char __pad_020;  // 0x20 [X30:canon]
-    unsigned char __pad_037;  // 0x37 [X30:canon]
-    unsigned char __pad_041;  // 0x41 [X30:canon]
-    unsigned char __pad_068;  // 0x68 [X30:canon]
-    int __pad_09C;  // 0x9C [X30:type_map]
-    unsigned int Coord_9C;  // [X30:default]
-    int TaskForceClass_field_0x4;  // 0x4 [X30:type_map]
-    char __pad_A0[4];  // 0xA0 [X30:member_lookup]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

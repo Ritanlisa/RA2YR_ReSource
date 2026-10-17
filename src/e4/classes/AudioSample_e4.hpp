@@ -9,14 +9,17 @@
 namespace gamemd {
 
 struct AudioSample {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int AudioSample_field_0x04;  // 0x4
+    int AudioSample_field_0x08;  // 0x8
+    int AudioSample_field_0x0C;  // 0xC
+    int AudioSample_field_0x10;  // 0x10
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int Destructor(void *a1 = 0);
     int IsBuffering(void *a1 = 0);
     void InitLinkedList(void *a1 = 0);  // 0x408840
-    int AudioSample_field_0x0C;  // 0xC (G57W14E1 til supply)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

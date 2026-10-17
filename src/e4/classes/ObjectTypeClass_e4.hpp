@@ -17,70 +17,57 @@ struct SomeVoxelCache;  // fix_fwd_type_supply
 struct BulletTypeClass;  // fix_fwd_type_supply
 
 struct ObjectTypeClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void * vfptr;  // 0x0
+    void * vfptr1;  // 0x4
+    void * vfptr2;  // 0x8
+    void * vfptr3;  // 0xC
     void* uniqueId;  // 0x10
-    unsigned char alignmentPadding_3;  // 0x11
-    char u32_3;  // 0x3
-    int Strength;  // 0x12
-    bool IsAllocated;  // 0x13
-    bool abstractFlags;  // 0x14
-    SHPStruct* Image;  // 0x16
+    int abstractFlags;  // 0x14
     SHPStruct* nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     char NeedsSaveOrLink[4];  // 0x20
-    VoxelStruct* BarrelVoxel;  // 0x24 [X30:type_map]
+    char __pad_24[4];  // 0x24
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
-    bool NoSpawnAlt;  // 0x30
-    char TurretVoxel[4];  // 0x32
-    void* zero_3C;  // 0x3C
-    unsigned char UINameLabel;  // 0x3D
+    char __pad_30[1];  // 0x30
+    unsigned char u32_31;  // 0x31
+    char __pad_32[4];  // 0x32
+    unsigned char __pad_036;  // 0x36
+    char __pad_37[5];  // 0x37
+    char zero_3C[1];  // 0x3C
+    char UINameLabel[32];  // 0x3D
+    unsigned char __pad_05D;  // 0x5D
+    char __pad_5E[2];  // 0x5E
     void * UIName;  // 0x60
-    unsigned char Name;  // 0x64
-    unsigned int tail_95;  // 0x95
+    char Name[49];  // 0x64
+    char tail_95[3];  // 0x95
+    char u32_98[3];  // 0x98
     unsigned char unused_9B;  // 0x9B
-    void* Armor;  // 0x9C [X30:type_map]
-    void* Strength_d;  // 0xA0 [X30:type_map]
+    void* Armor;  // 0x9C
+    void* Strength_d;  // 0xA0
     SHPStruct* Image_d;  // 0xA4
     bool ImageAllocated;  // 0xA8
+    char __pad_0A9[3];  // 0xA9
     SHPStruct* AlphaImage;  // 0xAC
-    WaveClass* MainVoxel;  // 0xB0 [X30:type_map]
-    void* TurretVoxel_d;  // 0xB4 [X30:type_map]
-    WaveClass* BarrelVoxel_d;  // 0xB8 [X30:type_map]
+    WaveClass* MainVoxel;  // 0xB0
+    void* TurretVoxel_d;  // 0xB4
+    WaveClass* BarrelVoxel_d;  // 0xB8
     char ChargerTurrets[72];  // 0xBC
     char ChargerBarrels[72];  // 0x104
     bool NoSpawnAlt_d;  // 0x14C
-    ConnectionPointClass* NoSpawnAlt_2;  // 0x1E8
+    unsigned char __pad_14D;  // 0x14D
+    char __pad_14E[10];  // 0x14E
+    unsigned int u32_158;  // 0x158
+    char __pad_15C[140];  // 0x15C
+    char NoSpawnAlt_2[1];  // 0x1E8
+    char align_1E9[3];  // 0x1E9
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
-    char ImageFile_0x19;  // 0x1F8
-    bool AlternateArcticArt;  // 0x1F9
-    bool ArcticArtInUse;  // 0x1FA
-    char AlphaImageFile_0x19;  // 0x1FB
-    bool Theater;  // 0x1FC
-    bool Crushable;  // 0x1FD
-    bool Bombable;  // 0x1FE
-    bool RadarInvisible;  // 0x1FF
-    bool Selectable;  // 0x200
-    bool LegalTarget;  // 0x201
-    bool Insignificant;  // 0x202
-    bool Immune;  // 0x203
-    bool IsLogic;  // 0x204
-    bool AllowCellContent;  // 0x205
-    bool Voxel;  // 0x206
-    bool NewTheater;  // 0x207
-    bool HasRadialIndicator;  // 0x208
-    bool IgnoresFirestorm;  // 0x209
-    bool UseLineTrail;  // 0x20A
-    char LineTrailColor[4];  // 0x20C
+    char ImageFile_0x19[25];  // 0x1F8
     bool AlternateArcticArt_d;  // 0x211
     bool ArcticArtInUse_d;  // 0x212
-    char AlphaImageFile;  // 0x213
+    char AlphaImageFile[25];  // 0x213
     bool Theater_d;  // 0x22C
     bool Crushable_d;  // 0x22D
     bool Bombable_d;  // 0x22E
@@ -97,10 +84,11 @@ struct ObjectTypeClass {
     bool IgnoresFirestorm_d;  // 0x239
     bool UseLineTrail_d;  // 0x23A
     char LineTrailColor_d[3];  // 0x23B
-int LineTrailColor_2;  // 0x240 [X35-L7 kind=int]
-    char VoxelCaches_4[80];  // 0x244
+    unsigned short __pad_23E;  // 0x23E
+    int LineTrailColor_2;  // 0x240
+    int VoxelCaches[20];  // 0x244
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* TechnoTypeClass;  // 0x0 (no offset truth)
     AbstractClass * * Load2DArt(void *a1 = 0);
     BOOL loadTypeMember_5717AE0();
     BulletTypeClass * FindOrCreate(ObjectClass * Source);
@@ -153,101 +141,9 @@ int LineTrailColor_2;  // 0x240 [X35-L7 kind=int]
     void UnloadPipsSHP();
     void* LoadFromINI(uint8_t ***aP1, void *a2 = 0);
     ObjectTypeClass * Destru_vt08(void * Block, char a2);
-    SomeVoxelCache* VoxelCaches;  // 0x244 (ml) [X30:type_map]
-    unsigned int q0400;  // 0x400 (offset-truth)
-    unsigned char q0401;  // 0x401 (offset-truth)
-    unsigned char q0402;  // 0x402 (offset-truth)
-    unsigned int q0404;  // 0x404 (offset-truth)
-    unsigned int u32_384;  // 0x384 (offset-truth)
-    unsigned char u32_385;  // 0x385 (offset-truth)
-    unsigned char u32_386;  // 0x386 (offset-truth)
-    unsigned char u32_387;  // 0x387 (offset-truth)
-    unsigned char u32_389;  // 0x389 (offset-truth)
-    unsigned char u32_D41;  // 0xD41 (offset-truth)
-
-    int LineTrailColorDecrement;  // X10 supply (member_lookup)
-    unsigned char __pad_099;  // X10 supply (csp_canon_members)
-    bool q029;  // X10 supply (member_lookup)
-    bool q02B;  // X10 supply (member_lookup)
-    int q056;  // X10 supply (member_lookup)
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-    VectorClass* q07C;  // X10 supply (member_lookup)
 #else
-    void* q07C;  // X10 supply (member_lookup)  // X27: template-carrier
 #endif  // X27: template-carrier universe fallback
-    IUnknown* q0CC;  // X10 supply (member_lookup)
-    SomeVoxelCache* q254;  // X10 supply (member_lookup)
-    unsigned char q264[4];  /* VectorClass */  // X10 supply (member_lookup)
-    SomeVoxelCache* q26C;  // X10 supply (member_lookup)
-    SomeVoxelCache* q270;  // X10 supply (member_lookup)
-    SomeVoxelCache* q280;  // X10 supply (member_lookup)
-    SomeVoxelCache* q290;  // X10 supply (member_lookup)
-    unsigned char q408;  // X10 supply (member_lookup)
-    unsigned int q710;  // X10 supply (member_lookup)
-    unsigned int u32_158;  // X10 supply (member_lookup)
-    unsigned int u32_22B;  // X10 supply (member_lookup)
-    unsigned int u32_23C;  // X10 supply (member_lookup)
-    unsigned int u32_23D;  // X10 supply (member_lookup)
-    unsigned int u32_248;  // X10 supply (member_lookup)
-    unsigned int u32_24C;  // X10 supply (member_lookup)
-    unsigned int u32_250;  // X10 supply (member_lookup)
-    unsigned int u32_258;  // X10 supply (member_lookup)
-    unsigned int u32_25C;  // X10 supply (member_lookup)
-    unsigned int u32_260;  // X10 supply (member_lookup)
-    unsigned int u32_268;  // X10 supply (member_lookup)
-    unsigned int u32_274;  // X10 supply (member_lookup)
-    unsigned int u32_278;  // X10 supply (member_lookup)
-    unsigned int u32_27C;  // X10 supply (member_lookup)
-    unsigned int u32_284;  // X10 supply (member_lookup)
-    unsigned int u32_288;  // X10 supply (member_lookup)
-    unsigned int u32_28C;  // X10 supply (member_lookup)
-    char u32_2D;  // X10 supply (member_lookup)
-    char u32_2E;  // X10 supply (member_lookup)
-    int u32_2F;  // X10 supply (member_lookup)
-    unsigned int u32_31;  // X10 supply (member_lookup)
-    int u32_6F0;  // X10 supply (member_lookup)
-    unsigned int u32_840;  // X10 supply (member_lookup)
-    unsigned int u32_90;  // X10 supply (member_lookup)
-    unsigned int u32_92;  // X10 supply (member_lookup)
-    unsigned int u32_93;  // X10 supply (member_lookup)
-    unsigned int u32_96;  // X10 supply (member_lookup)
-    unsigned int u32_97;  // X10 supply (member_lookup)
-    unsigned char u32_98[4];  /* TypeList */  // X10 supply (member_lookup)
-    unsigned int u32_9A;  // X10 supply (member_lookup)
-    unsigned int u32_9D;  // X10 supply (member_lookup)
-    unsigned int u32_9F;  // X10 supply (member_lookup)
-    unsigned int u32_A1;  // X10 supply (member_lookup)
-    unsigned int u32_A2;  // X10 supply (member_lookup)
-    char u32_C0;  // X10 supply (member_lookup)
-    unsigned int u32_DF0;  // X10 supply (member_lookup)
-    char u8_27;  // X10 supply (member_lookup)
-    char u8_7B;  // X10 supply (member_lookup)
-    char u8_7D;  // X10 supply (member_lookup)
-    char u8_7E;  // X10 supply (member_lookup)
-    char u8_9;  // X10 supply (member_lookup)
-    char u8_91;  // X10 supply (member_lookup)
-    int u8_C8E;  // X10 supply (member_lookup)
-    uint8_t u8_D;  // X10 supply (member_lookup)
-    AbstractClass* u32_E00;  // 0xE00 [X30:type_map]
-    unsigned int u32_D2E;  // 0xD2E
-    unsigned char __pad_036;  // 0x36 [X30:canon]
-    unsigned char __pad_05D;  // 0x5D [X30:canon]
-    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
-    unsigned char __pad_14D;  // 0x14D [X30:canon]
-    unsigned char __pad_23E;  // 0x23E [X30:canon]
-    unsigned int ImageFile;  // [X30:default]
-    unsigned int TurretVoxel4;  // [X30:default]
-    unsigned int uniqueId1;  // [X30:default]
-    unsigned int uniqueId4;  // [X30:default]
-    unsigned int uniqueId8;  // [X30:default]
-
-
-    unsigned int u32_2E8;  // 0x2E8 [X55 W3 supply (render vocab)]
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
-    unsigned int u32_2FC;  // 0x2FC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

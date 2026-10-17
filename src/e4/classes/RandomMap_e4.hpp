@@ -11,15 +11,29 @@ struct MapClass;  // fix_fwd_type_supply
 struct WeaponStruct;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct RandomMap {
+    unsigned short __pad_000;  // 0x0
+    char RandomMap_field_0x2[4];  // 0x2
+    char __pad_6[2];  // 0x6
+    int RandomMap_field_0x8;  // 0x8
+    unsigned int RandomMap_field_0xC;  // 0xC
+    int RandomMap_field_0x10;  // 0x10
+    unsigned int RandomMap_field_0x14;  // 0x14
+    int q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int RandomMap_field_0x24;  // 0x24
+    int u32_28;  // 0x28
+    int u32_2C;  // 0x2C
+    IUnknown* ptr_30;  // 0x30
+    unsigned int __pad_034;  // 0x34
+    int u32_38;  // 0x38
+    int u32_3C;  // 0x3C
+    int u32_40;  // 0x40
+    unsigned char u32_44[4];  // 0x44
+    IUnknown* ptr_48;  // 0x48
+    char __pad_04C[448];  // 0x4C
+    int RandomMap_field_0x20C;  // 0x20C
 // --- flat members (BEGIN) ---
-    void* Items;  // 0x4
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
-    int Count;  // 0x16
-    IUnknown* ptr_30;  // 0x30 [X30:type_map]
-    IUnknown* ptr_48;  // 0x48 [X30:type_map]
-    AbstractClass * ptr_74;  // 0x74
-    CampaignClass * ptr_178;  // 0x178
 // --- flat members (END) ---
     int Check(void *a1_1, void *a2_1, void *a3_1);  // 0x486790
     unsigned int * TerrainTileDataConstructor(int a2, void *a2_1 = 0);  // 0x58BF70
@@ -67,99 +81,20 @@ char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
     unsigned int *  Constructor_0(int a2, int a3, void *a3_2 = 0);  // 0x5ADA40
     unsigned int *  Constructor_1(int a2, int a3);  // 0x5ADAB0
     int GenerateTerrainForAllCells();  // 0x58CF90
-    IUnknown* q04C;  // 0x4C (offset-truth) [X30:type_map]
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_008;  // X10 supply (csp_canon_members)
-    unsigned char __pad_01A;  // X10 supply (csp_canon_members)
-    unsigned char __pad_034;  // X10 supply (csp_canon_members)
-    unsigned char __pad_04C;  // X10 supply (csp_canon_members)
-    unsigned char __pad_17C;  // X10 supply (csp_canon_members)
-    int q00C;  // X10 supply (member_lookup)
-    int q010;  // X10 supply (member_lookup)
-    int q014;  // X10 supply (member_lookup)
-    int q018;  // X10 supply (member_lookup)
-    int q01C;  // X10 supply (member_lookup)
-    int q020;  // X10 supply (member_lookup)
-    void* q050;  // X10 supply (member_lookup)
-    unsigned int q060;  // X10 supply (member_lookup)
-    unsigned int q064;  // X10 supply (member_lookup)
-    unsigned char q180;  // X10 supply (member_lookup)
-    unsigned int q184;  // X10 supply (member_lookup)
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-    DynamicVectorClass* q188;  // X10 supply (member_lookup)
 #else
-    void* q188;  // X10 supply (member_lookup)  // X27: template-carrier
 #endif  // X27: template-carrier universe fallback
-    CampaignClass* q18C;  // X10 supply (member_lookup)
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-    DynamicVectorClass* q1A4;  // X10 supply (member_lookup)
 #else
-    void* q1A4;  // X10 supply (member_lookup)  // X27: template-carrier
 #endif  // X27: template-carrier universe fallback
-    CampaignClass* q1A8;  // X10 supply (member_lookup)
-    unsigned char q1AC;  // X10 supply (member_lookup)
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-    DynamicVectorClass* q1C0;  // X10 supply (member_lookup)
 #else
-    void* q1C0;  // X10 supply (member_lookup)  // X27: template-carrier
 #endif  // X27: template-carrier universe fallback
-    CampaignClass* q1C4;  // X10 supply (member_lookup)
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-    DynamicVectorClass* q1DC;  // X10 supply (member_lookup)
 #else
-    void* q1DC;  // X10 supply (member_lookup)  // X27: template-carrier
 #endif  // X27: template-carrier universe fallback
-    CampaignClass* q1E0;  // X10 supply (member_lookup)
-    unsigned char q1E4;  // X10 supply (member_lookup)
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-    DynamicVectorClass* q1F8;  // X10 supply (member_lookup)
 #else
-    void* q1F8;  // X10 supply (member_lookup)  // X27: template-carrier
 #endif  // X27: template-carrier universe fallback
-    CampaignClass* q1FC;  // X10 supply (member_lookup)
-    unsigned int u32_214;  // X10 supply (member_lookup)
-    unsigned int u32_218;  // X10 supply (member_lookup)
-    unsigned int u32_21C;  // X10 supply (member_lookup)
-    unsigned int u32_221;  // X10 supply (member_lookup)
-    unsigned int u32_230;  // X10 supply (member_lookup)
-    unsigned int u32_234;  // X10 supply (member_lookup)
-    int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_24C;  // X10 supply (member_lookup)
-    unsigned int u32_250;  // X10 supply (member_lookup)
-    unsigned int u32_254;  // X10 supply (member_lookup)
-    unsigned int u32_259;  // X10 supply (member_lookup)
-    unsigned int u32_268;  // X10 supply (member_lookup)
-    unsigned int u32_26C;  // X10 supply (member_lookup)
-    int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_284;  // X10 supply (member_lookup)
-    unsigned int u32_2A0;  // X10 supply (member_lookup)
-    unsigned int u32_2BC;  // X10 supply (member_lookup)
-    int u32_2C;  // X10 supply (member_lookup)
-    unsigned int u32_2C0;  // X10 supply (member_lookup)
-    unsigned int u32_2C4;  // X10 supply (member_lookup)
-    unsigned int u32_2E0;  // X10 supply (member_lookup)
-    unsigned int u32_2FC;  // X10 supply (member_lookup)
-    unsigned int u32_308;  // X10 supply (member_lookup)
-    unsigned int u32_30C;  // X10 supply (member_lookup)
-    unsigned int u32_35;  // X10 supply (member_lookup)
-    int u32_38;  // X10 supply (member_lookup)
-    int u32_3C;  // X10 supply (member_lookup)
-    int u32_40;  // X10 supply (member_lookup)
-    unsigned char u32_44[4];  /* char[4] */  // X10 supply (member_lookup)
-    unsigned int u32_68;  // X10 supply (member_lookup)
-    unsigned int u32_A10;  // X10 supply (member_lookup)
-    int u8_1B1;  // X10 supply (member_lookup)
-    int u8_1E9;  // X10 supply (member_lookup)
-    char u32_11B;  // 0x11B
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-    ObjectClass* __pad_078;  // 0x78 [X30:type_map]
-    int RandomMap_field_0x10;  // 0x10 [X30:type_map]
-    int RandomMap_field_0x8;  // 0x8 [X30:type_map]
-
-
-    int RandomMap_field_0x24;  // 0x24 [X55 W3 supply (render vocab)]
-    unsigned int RandomMap_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
-    unsigned int RandomMap_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

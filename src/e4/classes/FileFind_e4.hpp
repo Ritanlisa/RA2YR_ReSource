@@ -6,12 +6,13 @@
 namespace gamemd {
 
 struct FileFind {
+    void* vtable1;  // 0x0
+    int FileFind_field_0x04;  // 0x4
+    int FileFind_field_0x08;  // 0x8
+    int FileFind_field_0x0C;  // 0xC
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
 static wchar_t * Close(void *a1 = 0, void *a2 = 0);  // [w16g2] static per raw receiver-first
-    void* __pad_000;  // 0x0 [X30:type_map]
-    void* vtable1;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

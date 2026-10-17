@@ -8,15 +8,17 @@ namespace gamemd {
 #ifndef GAMEMD_ANIMFILE_DECLARED  // G42 first-wins (misc_ext.hpp tree twin co-included in misc TUs)
 #define GAMEMD_ANIMFILE_DECLARED
 struct AnimFile {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned int __pad_004;  // 0x4
+    int AnimFile_field_0x08;  // 0x8
+    int AnimFile_field_0x0C;  // 0xC
+    int AnimFile_field_0x10;  // 0x10
+    int AnimFile_field_0x14;  // 0x14
+    int AnimFile_field_0x18;  // 0x18
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AnimFile * QueryInterface(void * Block, char a2);
     char * Stub();
-
-    unsigned char q368;  // X10 supply (member_lookup)
-    unsigned int u32_89;  // X10 supply (member_lookup)
-    unsigned char __pad_004;  // 0x4 [X30:canon]
 };
 #endif  // GAMEMD_ANIMFILE_DECLARED
 

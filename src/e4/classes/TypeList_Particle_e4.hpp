@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct TypeList_Particle {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  GetIndex(int a2);  // 0x459FE0
     char  AddRef(int a2);  // 0x45A180
@@ -20,10 +21,5 @@ struct TypeList_Particle {
     int  GetSize(unsigned int * a2);  // 0x45A2A0
     unsigned int  GetCapacity(int a2);  // 0x45A2E0
     VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x45A9C0
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-unsigned int q000;  // 0x0 [X35-L7 kind=unsigned int]
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

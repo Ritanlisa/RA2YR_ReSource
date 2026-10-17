@@ -7,26 +7,11 @@
 namespace gamemd {
 
 struct Turret {
+    int Turret_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Turret_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     AbstractClass * * LoadVoxelTurretAndBarrel();
     float * GetTransform(signed int a1, float * a2, unsigned int * a3);
-    void *qB8;  // 0xB8 (offset-truth)
-    void *qBC;  // 0xBC (offset-truth)
-    void *qC0;  // 0xC0 (offset-truth)
-    void *qC4;  // 0xC4 (offset-truth)
-    unsigned char u32_CA1;  // 0xCA1 (offset-truth)
-
-    unsigned char Matrix_B87[4];  /* Matrix */  // X10 supply (member_lookup)
-    unsigned char String_BC7[4];  /* String */  // X10 supply (member_lookup)
-    unsigned char WaveClass_B86[4];  /* WaveClass */  // X10 supply (member_lookup)
-    unsigned int u32_B8;  // X10 supply (member_lookup)
-    unsigned int u32_BC;  // X10 supply (member_lookup)
-    unsigned int q0324;  // 0x324
-    AbstractClass* AbstractClass_1F8;  // 0x1F8 [X30:type_map]
-    void* u32_C0;  // 0xC0 [X30:type_map]
-    void* u32_C4;  // 0xC4 [X30:type_map]
 };
 
 } // namespace gamemd

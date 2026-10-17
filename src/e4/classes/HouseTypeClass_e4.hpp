@@ -11,64 +11,29 @@ struct AircraftTypeClass;  // fix_fwd_type_supply
 struct AbstractTypeClass;  // fix_fwd_type_supply
 
 struct HouseTypeClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    void * vfptr;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    int uniqueId;  // 0x10 [X30:type_map]
-    unsigned char alignmentPadding_3;  // 0x11
-    char arrayIndex[4];  // 0x12
-    int abstractFlags;  // 0x14 [X30:type_map]
-    char arrayIndex2[4];  // 0x16
-int nextArrayIndex;  // 0x18 [X35-L7 kind=int]
+    int uniqueId;  // 0x10
+    int abstractFlags;  // 0x14
+    int nextArrayIndex;  // 0x18
     unsigned int referenceCount;  // 0x1C
-    double NeedsSaveOrLink;  // 0x20
-    char id;  // 0x24
-    bool IsAllocated;  // 0x25
-    double groundspeedMult;  // 0x28
-    double airspeedMult;  // 0x30
-    double firepowerMult;  // 0x32
-    double armorMult;  // 0x38
+    int NeedsSaveOrLink;  // 0x20
+    int id[6];  // 0x24
     unsigned char m_zero_3C;  // 0x3C
-    char uiNameLabel;  // 0x3D
-    double rofMult;  // 0x40
-    double costMult;  // 0x48
-    double buildtimeMult;  // 0x50
-    float armorInfantryMult;  // 0x58
-    float armorUnitsMult;  // 0x5C
-    float armorAircraftMult;  // 0x60
-    float armorBuildingsMult;  // 0x64
-    float armorDefensesMult;  // 0x68
-    float costInfantryMult;  // 0x6C
-    float costUnitsMult;  // 0x70
-    float costAircraftMult;  // 0x74
-    float costBuildingsMult;  // 0x78
-    float costDefensesMult;  // 0x7C
-    float currentSpeed_infantry_mult;  // 0x80
-    float currentSpeed_units_mult;  // 0x84
-    float currentSpeed_aircraft_mult;  // 0x88
-    float buildtimeInfantryMult;  // 0x8C
-    float buildtimeUnitsMult;  // 0x90
-    float buildtimeAircraftMult;  // 0x94
-    char parentCountry;  // 0x95
-    float buildtimeBuildingsMult;  // 0x98
-    float buildtimeDefensesMult;  // 0x9C
-    float incomeMult;  // 0xA0
-    InfantryTypeClass** veteranInfantry;  // 0xA4
-    char veteranInfantryCount[4];  // 0xA8
-    UnitTypeClass** veteranUnits;  // 0xAC
-    char veteranUnitsCount[4];  // 0xB0
-    unsigned char m_align_B1;  // 0xB1
-    AircraftTypeClass** veteranAircraft;  // 0xB4
-    int veteranAircraftCount;  // 0xB8 [X30:type_map]
-    char suffix_4;  // 0xBC
-    char prefix;  // 0xBD
-    bool multiplay;  // 0xBE
-    bool multiplayPassive;  // 0xBF
-    bool wallOwner;  // 0xC0
-    bool smartAi;  // 0xC1
-    unsigned char m_padding_1A9_7;  // 0xC2
+    char uiNameLabel[32];  // 0x3D
+    char __pad_5D[3];  // 0x5D
+    int uiName;  // 0x60
+    char name[49];  // 0x64
+    char parentCountry[25];  // 0x95
+    char __pad_AE[2];  // 0xAE
+    char __pad_B0[1];  // 0xB0
+    char m_align_B1[3];  // 0xB1
+    int arrayIndex;  // 0xB4
+    int arrayIndex2;  // 0xB8
+    unsigned int suffix_4;  // 0xBC
+    int colorSchemeIndex;  // 0xC0
     unsigned int m_align_C4;  // 0xC4
     double firepowerMult_d;  // 0xC8
     double groundspeedMult_d;  // 0xD0
@@ -97,23 +62,22 @@ int nextArrayIndex;  // 0x18 [X35-L7 kind=int]
     float buildtimeDefensesMult_d;  // 0x144
     float incomeMult_d;  // 0x148
     InfantryTypeClass** veteranInfantry_d;  // 0x14C
-int veteranInfantryCount_d;  // 0x150 [X35-L7 kind=int]
+    int veteranInfantryCount_d;  // 0x150
     UnitTypeClass** veteranUnits_d;  // 0x154
-int veteranUnitsCount_d;  // 0x158 [X35-L7 kind=int]
+    int veteranUnitsCount_d;  // 0x158
     AircraftTypeClass** veteranAircraft_d;  // 0x15C
-int veteranAircraftCount_d;  // 0x160 [X35-L7 kind=int]
-    char suffix;  // 0x164
+    int veteranAircraftCount_d;  // 0x160
+    int suffix;  // 0x164
     char prefix_d;  // 0x168
     bool multiplay_d;  // 0x169
     bool multiplayPassive_d;  // 0x16A
     bool wallOwner_d;  // 0x16B
     bool smartAi_d;  // 0x16C
-    void* Prefix;  // 0x1A4 [X30:type_map]
-    unsigned int Multiplay;  // 0x1A5
-    void* MultiplayPassive;  // 0x1A6
+    char pad_16D[58];  // 0x16D
     bool WallOwner;  // 0x1A7
-    void* SmartAI;  // 0x1A8 [X30:type_map]
-    unsigned char m_padding_1A9;  // 0x1A9
+    unsigned char SmartAI;  // 0x1A8
+    char m_padding_1A9[7];  // 0x1A9
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * Dtor(void *a1);
     AbstractClass * * ProcessPower(int * a2, void *a2_1 = 0);
@@ -143,18 +107,6 @@ int veteranAircraftCount_d;  // 0x160 [X35-L7 kind=int]
     unsigned int loadBuildLimits();
     void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * a3, unsigned char * a4, unsigned int * a5);
     AbstractClass * LoadFromINI(uint8_t *** aP1, void *a2);
-    char pad_16D[58];  // 0x16D (ml)
-
-    unsigned char __pad_16D;  // X10 supply (csp_canon_members)
-    unsigned int q170;  // X10 supply (member_lookup)
-    AbstractTypeClass * q188;  // X10 supply (member_lookup)
-    AbstractClass* q1A0;  // X10 supply (member_lookup)
-    unsigned int u32_184;  // X10 supply (member_lookup)
-    int u8_175;  // X10 supply (member_lookup)
-    int u8_D;  // X10 supply (member_lookup)
-
-
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

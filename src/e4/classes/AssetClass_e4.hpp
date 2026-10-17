@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct AssetClass {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static char ReleaseAndReload();
 };

@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_rc_ptr_WDTTerritory {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x76B8C0
     unsigned int *  loc_76B6C0(int a3, void *a2 = 0);  // 0x76B6C0
@@ -22,6 +23,5 @@ struct VectorClass_rc_ptr_WDTTerritory {
     int  GetSize(int a2);  // 0x76BA10
     unsigned int  GetCapacity(int a2);  // 0x76BA50
     VectorClass_flat *  QueryInterface(char a2);  // 0x76BBC0
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

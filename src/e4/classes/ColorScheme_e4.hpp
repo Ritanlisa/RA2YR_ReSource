@@ -8,9 +8,8 @@ namespace gamemd {
 struct AbstractTypeClass;  // fix_fwd_type_supply
 
 struct ColorScheme {
+    char data[784];  // 0x0
 // --- flat members (BEGIN) ---
-    unsigned char data;  // 0x0
-    unsigned int ID;  // 0x300
 // --- flat members (END) ---
     int Destructor(void *a1);
 };

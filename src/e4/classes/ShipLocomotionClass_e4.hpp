@@ -8,17 +8,20 @@ namespace gamemd {
 struct ILocomotion;  // fix_fwd_type_supply
 
 struct ShipLocomotionClass {
-// --- flat members (BEGIN) ---
+#pragma pack(push, 1)  // X60: binary-packed layout
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
-    unsigned int Powered;  // 0x10
+    unsigned int Owner;  // 0x8
+    int LinkedTo;  // 0xC
+    char Powered[1];  // 0x10
     bool Dirty;  // 0x11
+    char __pad_12[2];  // 0x12
     int RefCount;  // 0x14
     void* vtable3;  // 0x18
     int CurrentRamp;  // 0x1C
     int PreviousRamp;  // 0x20
     char SlopeTimer[16];  // 0x24
-    int Dest;  // 0x34 [X30:type_map]
+    int Dest[3];  // 0x34
     char HeadToCoord[12];  // 0x40
     int SpeedAccum;  // 0x4C
     double MovementSpeed;  // 0x50
@@ -30,17 +33,17 @@ struct ShipLocomotionClass {
     bool IsDriving;  // 0x63
     bool IsRocking;  // 0x64
     bool UnLocked;  // 0x65
-    ILocomotion * ptr_68;  // 0x68
+    unsigned char __pad_066;  // 0x66
+    char __pad_67[1];  // 0x67
+    ILocomotion* Piggybackee;  // 0x68
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
     ShipLocomotionClass * ProcessMove(ILocomotion ** Block, char a2);
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
-unsigned int Owner;  // 0x8 [X35-L7 kind=unsigned int]
-    ILocomotion* Piggybackee;  // 0x68 (ml) [X30:type_map]
-unsigned int __pad_008;  // 0x8 [X35-L7 kind=unsigned int]
-    unsigned char __pad_066;  // 0x66 [X30:canon]
+#pragma pack(pop)
 };
 
 } // namespace gamemd

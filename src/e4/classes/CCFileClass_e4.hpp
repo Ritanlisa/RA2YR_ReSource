@@ -9,21 +9,21 @@ namespace gamemd {
 #ifndef GAMEMD_G2_CCFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_CCFileClass_DEF 1
 struct CCFileClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    void* __tail_0;  // 0x0
     void* FilePointer;  // 0x4
-int FileSize;  // 0x8 [X35-L7 kind=int]
+    int FileSize;  // 0x8
     void * Handle;  // 0xC
     void * FileName;  // 0x10
-    unsigned int FileTimeDateLo;  // 0x14
-    unsigned int FileTimeDateHi;  // 0x16
+    char FileTimeDateLo[2];  // 0x14
+    char FileTimeDateHi[2];  // 0x16
     char FileNameAllocated;  // 0x18
-    unsigned int tail_19;  // 0x19
+    char tail_19[3];  // 0x19
     char BufferDirty;  // 0x1C
     char BufferReadPending;  // 0x1D
     char BufferWritePending;  // 0x1E
     char FlushOnClose;  // 0x1F
     char CacheReadAhead;  // 0x20
+    char __pad_21[3];  // 0x21
     int BufferOffset;  // 0x24
     int BufferSize;  // 0x28
     int BufferPosition;  // 0x2C
@@ -36,6 +36,7 @@ int FileSize;  // 0x8 [X35-L7 kind=int]
     int TotalBytesWritten;  // 0x48
     unsigned int FileID;  // 0x4C
     unsigned int MixFileIndex;  // 0x50
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AudioController * * Close(void * a1, void *a2 = 0);
     int Destruct(void *a1 = 0);
@@ -53,9 +54,6 @@ static int GetSize(CCFileClass * aP1);
     int  Reopen(char * Source, void * a3);  // 0x47af10
     AudioController * * Close(void * a1);
     static int Cleanup(void *aP1);
-void* __tail_0;  // 0x0 [X35-L7 kind=void*]
-    int q064;  // 0x64 [X30:type_map]
-    int u32_160;  // 0x160 [X30:member_lookup]
 };
 #endif  // GAMEMD_G2_CCFileClass_DEF
 

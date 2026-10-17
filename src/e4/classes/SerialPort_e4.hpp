@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct SerialPort {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Close(void *a1 = 0, void *a2 = 0);
 };

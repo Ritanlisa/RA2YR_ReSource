@@ -7,11 +7,11 @@
 namespace gamemd {
 
 struct Rect {
+    int X;  // 0x0
+    int Y;  // 0x4
+    int Width;  // 0x8
+    Rect* Height;  // 0xC
 // --- flat members (BEGIN) ---
-int X;  // 0x0 [X35-L7 kind=int]
-    int Y;  // 0x4 [X30:type_map]
-    int Width;  // 0x8 [X30:type_map]
-    Rect* Height;  // 0xC [X30:type_map]
 // --- flat members (END) ---
     unsigned int * Construct(unsigned int *aP1, int aP2, int aP3, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     BOOL Inflate(LPRECT lprc, int dx, int dy);

@@ -7,24 +7,10 @@
 namespace gamemd {
 
 struct Carryall {
+    int Carryall_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Carryall_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     FootClass * * MissionStateMachine();
-    unsigned int u32_118;  // 0x118 (offset-truth)
-    unsigned int u32_5A4;  // 0x5A4 (offset-truth)
-    unsigned int u32_5D4;  // 0x5D4 (offset-truth)
-unsigned int u32_674;  // 0x674 [X35-L7 kind=unsigned int]
-    BuildingClass* u32_BC;  // 0xBC (offset-truth) [X30:type_map]
-
-    unsigned char Object_21C5[4];  /* Object */  // X10 supply (member_lookup)
-    unsigned char u32_114[4];  /* CellClass */  // X10 supply (member_lookup)
-    unsigned int u32_293;  // X10 supply (member_lookup)
-    unsigned int u32_500;  // X10 supply (member_lookup)
-    unsigned int u32_6D4;  // X10 supply (member_lookup)
-    unsigned int u32_9C;  // X10 supply (member_lookup)
-    unsigned int u32_A0;  // X10 supply (member_lookup)
-    unsigned int u32_A4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -6,10 +6,10 @@
 namespace gamemd {
 
 struct Font {
-// --- flat members (BEGIN) ---
     void* m_FontData;  // 0x0
-int Font_field_04;  // 0x4 [X35-L7 kind=int]
-int Font_field_08;  // 0x8 [X35-L7 kind=int]
+    int Font_field_04;  // 0x4
+    int Font_field_08;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetGlyphDataForChar(uint16_t aP1);
     int Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9);

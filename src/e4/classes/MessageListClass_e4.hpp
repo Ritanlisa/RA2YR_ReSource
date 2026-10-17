@@ -6,16 +6,16 @@
 namespace gamemd {
 
 struct MessageListClass {
-// --- flat members (BEGIN) ---
-int MessageCount;  // 0x0 [X35-L7 kind=int]
-    int MaxMessageCount;  // 0x4 [X30:type_map]
-    int ScrollOffset;  // 0x8 [X30:type_map]
-    int TextColorIndex;  // 0xC [X30:type_map]
-    int DisplayDuration;  // 0x10 [X30:type_map]
+    int MessageCount;  // 0x0
+    int MaxMessageCount;  // 0x4
+    int ScrollOffset;  // 0x8
+    int TextColorIndex;  // 0xC
+    int DisplayDuration;  // 0x10
     char MessageTimer[12];  // 0x14
     char MessageRect[16];  // 0x20
     bool IsScrolling;  // 0x30
-    unsigned char padding_after_scroll;  // 0x31
+    char padding_after_scroll[3];  // 0x31
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int AddMessage(MessageListClass * aP1, wchar_t *Source, int a3, wchar_t *a4, int a5, int a6, int a7, char a8);
     int clearMessages(int a1, int a2, int a3, int a4, int a5);

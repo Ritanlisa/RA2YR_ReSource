@@ -6,13 +6,12 @@
 namespace gamemd {
 
 struct IRTTITypeInfo {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int QueryInterface(int a1, const void * a2, unsigned int * a3);
     unsigned int * loc_74F6A0(unsigned int *Block, char a2);
     unsigned int GetOffset();
-    unsigned char __pad_C0;  // 0xC0 (offset-truth)
 };
 
 } // namespace gamemd

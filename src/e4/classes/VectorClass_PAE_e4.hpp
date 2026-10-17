@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_PAE {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Count(int a2);  // 0x7B4310
     char  Get(int a2, void *a1 = 0);  // 0x7B4320
@@ -21,6 +22,5 @@ struct VectorClass_PAE {
     int  GetSize(unsigned int * a2);  // 0x7B4440
     unsigned int  GetCapacity(int a2);  // 0x7B4480
     VectorClass_flat *  QueryInterface(char a2);  // 0x7B4580
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

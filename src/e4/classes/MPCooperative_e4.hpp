@@ -15,15 +15,66 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 struct IPXInterfaceClass;  // fix_fwd_type_supply
 struct MPCooperative {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
-    int Count;  // 0x16
+    unsigned int MPCooperative_field_0x0;  // 0x0
+    unsigned int __pad_004;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    unsigned int q018;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    char __pad_20[12];  // 0x20
+    int MPCooperative_field_0x2C;  // 0x2C
+    unsigned int u32_30;  // 0x30
+    char __pad_34[4];  // 0x34
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    int MPCooperative_field_0x40;  // 0x40
+    int q044;  // 0x44
+    int q048;  // 0x48
+    unsigned int u32_4C;  // 0x4C
     MultiplayerGameMode * ptr_50;  // 0x50
+    unsigned int __pad_054;  // 0x54
+    unsigned char q058[4];  // 0x58
+    unsigned int u32_5C;  // 0x5C
+    unsigned int u32_60;  // 0x60
+    unsigned int u32_64;  // 0x64
+    int q068;  // 0x68
+    unsigned int u32_6C;  // 0x6C
+    char __pad_70[24];  // 0x70
+    unsigned int q0088;  // 0x88
+    char __pad_8C[16];  // 0x8C
+    int MPCooperative_field_0x9C;  // 0x9C
+    int MPCooperative_field_0xA0;  // 0xA0
+    int MPCooperative_field_0xA4;  // 0xA4
+    char __pad_A8[16];  // 0xA8
+    int MPCooperative_field_0xB8;  // 0xB8
+    int MPCooperative_field_0xBC;  // 0xBC
+    int MPCooperative_field_0xC0;  // 0xC0
+    int q0C4;  // 0xC4
+    char __pad_C8[220];  // 0xC8
+    int u32_1A4;  // 0x1A4
+    char __pad_1A8[4];  // 0x1A8
+    unsigned int u32_1AC;  // 0x1AC
+    char __pad_1B0[180];  // 0x1B0
+    int q264;  // 0x264
+    char __pad_268[188];  // 0x268
+    unsigned int MPCooperative_field_0x324;  // 0x324
+    unsigned int __pad_328;  // 0x328
+    unsigned char q32C;  // 0x32C
+    char __pad_32D[7];  // 0x32D
+    unsigned char q334;  // 0x334
+    char __pad_335[7];  // 0x335
+    unsigned int MPCooperative_field_0x33C;  // 0x33C
+    int q340;  // 0x340
+    char __pad_344[720];  // 0x344
+    int MPCooperative_field_0x614;  // 0x614
+    char __pad_618[4];  // 0x618
+    int MPCooperative_field_0x61C;  // 0x61C
+    char __pad_620[3012];  // 0x620
+    int MPCooperative_field_0x11E4;  // 0x11E4
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* COMStub;  // 0x0 (no offset truth)
-    void* m_Enabled;  // 0x0 (no offset truth)
     int  processTurn(char * a2, char * a3);  // 0x49B660
     int BuildScoreEntries(int a2, CCINIClass * aP2);  // 0x49BCE0
     int WriteCoopSaveINI();  // 0x49BE40
@@ -95,50 +146,7 @@ unsigned int * ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerG
     int COMStub_Ret2();  // 0x5C42C0
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_17();
     static int validateMove(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, int p11, int p12, int p13, int p14, int p15, int p16, int p17, int p18);  // x4:signals@0x49cc50
-    unsigned int q0088;  // 0x88 (offset-truth)
-    unsigned int q018;  // 0x18 (offset-truth)
     CampaignClass * * MPCooperative___vt07(int a2);  // plateau: def-aligned C2039/C2660
     void MPCooperative_validateMove(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27, int a28, int a29, int a30, int a31, int a32, int a33, int a34, int a35, int a36, int a37, int a38, int a39, int a40, int a41, int a42, int a43, int a44, int a45, int a46, int a47, int a48, int a49, int a50, int a51, int a52, int a53, int a54, int a55, int a56, int a57, int a58, int a59);  // plateau: def-aligned C2039/C2660
-
-    unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    unsigned char __pad_011;  // X10 supply (csp_canon_members)
-    unsigned char __pad_01A;  // X10 supply (csp_canon_members)
-    unsigned char __pad_054;  // X10 supply (csp_canon_members)
-    int q010;  // X10 supply (member_lookup)
-    int q014;  // X10 supply (member_lookup)
-    int q044;  // X10 supply (member_lookup)
-    int q048;  // X10 supply (member_lookup)
-    unsigned char q058[4];  /* AbstractClass */  // X10 supply (member_lookup)
-    int q068;  // X10 supply (member_lookup)
-    int q0C4;  // X10 supply (member_lookup)
-    int q264;  // X10 supply (member_lookup)
-    int q324;  // X10 supply (member_lookup)
-    unsigned char q328[20];  /* char[20] */  // X10 supply (member_lookup)
-    unsigned char q32C;  // X10 supply (member_lookup)
-    unsigned char q334;  // X10 supply (member_lookup)
-    int q33C;  // X10 supply (member_lookup)
-    int q340;  // X10 supply (member_lookup)
-    int u32_1A4;  // X10 supply (member_lookup)
-    unsigned int u32_1AC;  // X10 supply (member_lookup)
-    unsigned int u32_1C;  // X10 supply (member_lookup)
-    unsigned int u32_30;  // X10 supply (member_lookup)
-    unsigned int u32_38;  // X10 supply (member_lookup)
-    unsigned int u32_3C;  // X10 supply (member_lookup)
-    unsigned int u32_40;  // X10 supply (member_lookup)
-    unsigned int u32_4C;  // X10 supply (member_lookup)
-    unsigned int u32_5C;  // X10 supply (member_lookup)
-    unsigned int u32_60;  // X10 supply (member_lookup)
-    unsigned int u32_64;  // X10 supply (member_lookup)
-    unsigned int u32_6C;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-
-
-    unsigned int MPCooperative_field_0x324;  // 0x324 [X55 W3 supply (render vocab)]
-    unsigned int MPCooperative_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned char u8_49;  // 0x49 [X55 W3 supply (render vocab)]
-    unsigned int __pad_328;  // 0x328 [X55 W3 supply (render vocab)]
-    unsigned int MPCooperative_field_0x33C;  // 0x33C [X55 W3 supply (render vocab)]
-    int MPCooperative_field_0x40;  // 0x40 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -7,8 +7,8 @@
 namespace gamemd {
 struct CampaignScore;  // fix_fwd_type_supply
 struct WideString {
+    unsigned char __pad_000;  // 0x0
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     wchar_t * Trim();
     int Hash();
@@ -32,9 +32,5 @@ struct WideString {
     short Reassign(wchar_t * String, void *a2_1);  // 0x7B7600
     char IsASCII(void *a1 = 0);  // 0x7B7D90
     static int Hash(wchar_t * Source);  // def-aligned
-
-    unsigned int u32_8;  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
-    unsigned int AssignFromPtrthis;  // [X30:default]
 };
 } // namespace gamemd

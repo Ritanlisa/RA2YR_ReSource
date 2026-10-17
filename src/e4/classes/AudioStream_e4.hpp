@@ -6,8 +6,79 @@
 namespace gamemd {
 struct MouseClass;  // fix_fwd_type_supply
 struct AudioStream {
+    unsigned int __pad_0;  // 0x0
+    int AudioStream_field_0x4;  // 0x4
+    int AudioStream_field_0x8;  // 0x8
+    unsigned int AudioStream_field_0xC;  // 0xC
+    int u32_10;  // 0x10
+    int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    int q020;  // 0x20
+    int AudioStream_field_0x24;  // 0x24
+    int AudioStream_field_0x28;  // 0x28
+    int u32_2C;  // 0x2C
+    int q030;  // 0x30
+    int u32_34;  // 0x34
+    int q038;  // 0x38
+    int q03C;  // 0x3C
+    int q040;  // 0x40
+    int q044;  // 0x44
+    int q048;  // 0x48
+    int q04C;  // 0x4C
+    int q050;  // 0x50
+    int q054;  // 0x54
+    int q058;  // 0x58
+    char __pad_5C[20];  // 0x5C
+    unsigned int u32_70;  // 0x70
+    unsigned int u32_74;  // 0x74
+    unsigned int u32_78;  // 0x78
+    char __pad_7C[8];  // 0x7C
+    unsigned int u32_84;  // 0x84
+    char __pad_88[8];  // 0x88
+    int q090;  // 0x90
+    char __pad_94[4];  // 0x94
+    int q098;  // 0x98
+    unsigned char u32_9C[12];  // 0x9C
+    unsigned int u32_A8;  // 0xA8
+    unsigned int AudioStream_field_0xAC;  // 0xAC
+    int AudioStream_field_0xB0;  // 0xB0
+    char __pad_B4[8];  // 0xB4
+    int AudioStream_field_0xBC;  // 0xBC
+    unsigned int AudioStream_field_0xC0;  // 0xC0
+    char __pad_C4[16];  // 0xC4
+    int u32_D4;  // 0xD4
+    char __pad_D8[56];  // 0xD8
+    unsigned int u32_110;  // 0x110
+    char __pad_114[4];  // 0x114
+    void* q118;  // 0x118
+    char __pad_11C[44];  // 0x11C
+    unsigned int q148;  // 0x148
+    char __pad_14C[4];  // 0x14C
+    unsigned int u32_150;  // 0x150
+    char __pad_154[12];  // 0x154
+    unsigned char q160;  // 0x160
+    char __pad_161[3];  // 0x161
+    int q164;  // 0x164
+    int q168;  // 0x168
+    char __pad_16C[4];  // 0x16C
+    unsigned int u32_170;  // 0x170
+    unsigned int u32_174;  // 0x174
+    unsigned int u32_178;  // 0x178
+    char __pad_17C[7];  // 0x17C
+    unsigned char u32_183[4];  // 0x183
+    char __pad_187[5];  // 0x187
+    unsigned int u32_18C;  // 0x18C
+    char __pad_190[8];  // 0x190
+    unsigned int u32_198;  // 0x198
+    unsigned int u32_19C;  // 0x19C
+    unsigned int u32_1A0;  // 0x1A0
+    unsigned int u32_1A4;  // 0x1A4
+    char __pad_1A8[24];  // 0x1A8
+    unsigned int u32_1C0;  // 0x1C0
+    char __pad_1C4[28];  // 0x1C4
+    unsigned int AudioStream_field_0x1E0;  // 0x1E0
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int ReleaseSubsystem();  // 0x401910
     int Stop(void *a1 = 0, void *a2 = 0);  // 0x4026B0
@@ -38,81 +109,5 @@ struct AudioStream {
     static int UpdateCountdowners();
     char * Constructor(uint64_t, void * a2, void * aAudioStream, void *a4 = 0);  // 0x407860
     char * Constructor(uint64_t, void * a2, void * aAudioStream);
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char q008[4];  /* DListNode */  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
-    int q020;  // X10 supply (member_lookup)
-    int q024;  // X10 supply (member_lookup)
-    int q028;  // X10 supply (member_lookup)
-    int q030;  // X10 supply (member_lookup)
-    int q038;  // X10 supply (member_lookup)
-    int q03C;  // X10 supply (member_lookup)
-    int q040;  // X10 supply (member_lookup)
-    int q044;  // X10 supply (member_lookup)
-    int q048;  // X10 supply (member_lookup)
-    int q04C;  // X10 supply (member_lookup)
-    int q050;  // X10 supply (member_lookup)
-    int q054;  // X10 supply (member_lookup)
-    int q058;  // X10 supply (member_lookup)
-    int q090;  // X10 supply (member_lookup)
-    int q098;  // X10 supply (member_lookup)
-    void* q118;  // X10 supply (member_lookup)
-    unsigned int q148;  // X10 supply (member_lookup)
-    unsigned char q160;  // X10 supply (member_lookup)
-    int u32_10;  // X10 supply (member_lookup)
-    unsigned int u32_110;  // X10 supply (member_lookup)
-    int u32_14;  // X10 supply (member_lookup)
-    unsigned int u32_150;  // X10 supply (member_lookup)
-    unsigned int u32_170;  // X10 supply (member_lookup)
-    unsigned int u32_174;  // X10 supply (member_lookup)
-    unsigned int u32_178;  // X10 supply (member_lookup)
-    unsigned int u32_18;  // X10 supply (member_lookup)
-    unsigned char u32_183[4];  /* void */  // X10 supply (member_lookup)
-    unsigned int u32_18C;  // X10 supply (member_lookup)
-    unsigned int u32_1A0;  // X10 supply (member_lookup)
-    unsigned int u32_1A4;  // X10 supply (member_lookup)
-    unsigned int u32_1C;  // X10 supply (member_lookup)
-    unsigned int u32_1E0;  // X10 supply (member_lookup)
-    unsigned int u32_1E4;  // X10 supply (member_lookup)
-    int u32_2C;  // X10 supply (member_lookup)
-    int u32_34;  // X10 supply (member_lookup)
-    unsigned int u32_6D0;  // X10 supply (member_lookup)
-    unsigned int u32_6D8;  // X10 supply (member_lookup)
-    unsigned int u32_74;  // X10 supply (member_lookup)
-    unsigned int u32_78;  // X10 supply (member_lookup)
-    unsigned int u32_78C;  // X10 supply (member_lookup)
-    unsigned int u32_790;  // X10 supply (member_lookup)
-    unsigned int u32_794;  // X10 supply (member_lookup)
-    unsigned int u32_79C;  // X10 supply (member_lookup)
-    unsigned int u32_7A8;  // X10 supply (member_lookup)
-    unsigned int u32_7AC;  // X10 supply (member_lookup)
-    unsigned int u32_7B0;  // X10 supply (member_lookup)
-    unsigned int u32_7BC;  // X10 supply (member_lookup)
-    unsigned int u32_84;  // X10 supply (member_lookup)
-    unsigned char u32_9C[12];  /* char[12] */  // X10 supply (member_lookup)
-    unsigned int u32_A4;  // X10 supply (member_lookup)
-    unsigned int u32_A8;  // X10 supply (member_lookup)
-    unsigned int u32_AC;  // X10 supply (member_lookup)
-    int u32_C0;  // X10 supply (member_lookup)
-    int u32_D4;  // X10 supply (member_lookup)
-    unsigned char u8_4;  // X10 supply (member_lookup)
-unsigned int u32_70;  // 0x70 [X35-L7 kind=unsigned int]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int AudioStream_field_0x1E0;  // 0x1E0 [X55 W3 supply (render vocab)]
-    int AudioStream_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
-    unsigned int AudioStream_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
-    int AudioStream_field_0x24;  // 0x24 [X55 W3 supply (render vocab)]
-    int AudioStream_field_0x28;  // 0x28 [X55 W3 supply (render vocab)]
-    unsigned int AudioStream_field_0xAC;  // 0xAC [X55 W3 supply (render vocab)]
-    int q164;  // 0x164 [X55 W3 supply (render vocab)]
-    unsigned int AudioStream_field_0xC0;  // 0xC0 [X55 W3 supply (render vocab)]
-    int AudioStream_field_0x4;  // 0x4 [X55 W3 supply (render vocab)]
-    unsigned int u32_198;  // 0x198 [X55 W3 supply (render vocab)]
-    unsigned int u32_19C;  // 0x19C [X55 W3 supply (render vocab)]
-    int q168;  // 0x168 [X55 W3 supply (render vocab)]
-    unsigned int u32_1C0;  // 0x1C0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

@@ -7,8 +7,31 @@
 
 namespace gamemd {
 struct Audio {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int __pad_10;  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned char q018[28];  // 0x18
+    int q034;  // 0x34
+    int q038;  // 0x38
+    char __pad_3C[76];  // 0x3C
+    unsigned int u32_88;  // 0x88
+    char __pad_8C[28];  // 0x8C
+    unsigned int u32_A8;  // 0xA8
+    char __pad_AC[4];  // 0xAC
+    unsigned int u32_B0;  // 0xB0
+    char __pad_B4[148];  // 0xB4
+    unsigned int u32_148;  // 0x148
+    unsigned int u32_14C;  // 0x14C
+    unsigned int q150;  // 0x150
+    char __pad_154[310];  // 0x154
+    char Audio_field_0x28A[4];  // 0x28A
+    char __pad_28E[1154];  // 0x28E
+    int Audio_field_0x710;  // 0x710
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     static int IsMediumVolume(void *aP1);
     int GetChannelStatus(void *a1_1);  // 0x402720
@@ -41,27 +64,5 @@ struct Audio {
     static int SetVoiceVolume(Audio * aP1, float a2, char a3);
     static int IsLoud(Audio * aP1);
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aControl, void * aLimit, void * aMinvolume, void * aPriority);
-unsigned int __pad_10;  // 0x10 [X35-L7 kind=unsigned int]
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char q018[28];  /* char[28] */  // X10 supply (member_lookup)
-    unsigned char q028;  // X10 supply (member_lookup)
-    int q034;  // X10 supply (member_lookup)
-    int q038;  // X10 supply (member_lookup)
-    unsigned int q150;  // X10 supply (member_lookup)
-    unsigned int u32_14;  // X10 supply (member_lookup)
-    unsigned int u32_148;  // X10 supply (member_lookup)
-    unsigned int u32_14C;  // X10 supply (member_lookup)
-    unsigned int u32_1C;  // X10 supply (member_lookup)
-    unsigned int u32_20;  // X10 supply (member_lookup)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
-    unsigned int u32_88;  // X10 supply (member_lookup)
-    unsigned int u32_A8;  // X10 supply (member_lookup)
-    unsigned int u32_B0;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-
-
-    int __pad_18;  // 0x18 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

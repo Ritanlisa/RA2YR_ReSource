@@ -6,16 +6,15 @@
 namespace gamemd {
 
 struct AddTeamCommand {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    int AddTeamCommand_field_00;  // 0x4 [X30:type_map]
-int AddTeamCommand_field_04;  // 0x8 [X35-L7 kind=int]
+    int AddTeamCommand_field_00;  // 0x4
+    int AddTeamCommand_field_04;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * Construct(void *aP1, int a2);
     char * AddRef();
     wchar_t * Release(void *a1 = 0);
     wchar_t * ddtor(void *a1 = 0);
-    unsigned char *m_1;  // 0x1 (offset-truth)
 };
 
 } // namespace gamemd

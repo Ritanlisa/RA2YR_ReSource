@@ -5,13 +5,13 @@
 
 namespace gamemd {
 struct BSurface {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    int __pad_0;  // 0x0
     void* Width;  // 0x4
     int Height;  // 0x8
-    void* LockCount;  // 0xC [X30:type_map]
+    void* LockCount;  // 0xC
     int BytesPerPixel;  // 0x10
     unsigned char* Buffer;  // 0x14
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Construct(int a2, int a3, int v14, int a5, void *a5_2, void *a6_1, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // 0x410CE0
     bool CreateTripleBuffer(void *a1 = 0);  // 0x7B8C60
@@ -20,29 +20,5 @@ struct BSurface {
     int GetPitch();  // 0x411640
     BSurface *  ScalarDtor(char a2);  // 0x411650
     char Stub(int a1, int a2);
-    unsigned int q_4;  // +0x4 flat supply (P5 provenance)
-    unsigned int q058;  // @0x7b8cd9 (W16G3 raw-usage vocab)
-    unsigned int u32_6C;  // @0x7b8d16 (W16G3 raw-usage vocab)
-unsigned int ptr_24;  // 0x24 [X35-L7 kind=unsigned int]
-    unsigned char q00C6;  // 0xC6 (offset-truth)
-    unsigned int q0188;  // 0x188 (offset-truth)
-    unsigned int q0208;  // 0x208 (offset-truth)
-    unsigned char q044;  // 0x44 (ml)
-    unsigned int q06C;  // 0x6C (offset-truth)
-    unsigned int u32_18;  // 0x18 (offset-truth)
-    unsigned int u32_1C;  // 0x1C (offset-truth)
-    unsigned int u32_24;  // 0x24 (offset-truth)
-    unsigned int u32_288;  // 0x288 (offset-truth)
-    unsigned int u32_4;  // 0x4 (offset-truth)
-
-    unsigned char q110;  // X10 supply (member_lookup)
-    unsigned char q1B0;  // X10 supply (member_lookup)
-    int u32_20;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_2C;  // X10 supply (member_lookup)
-    unsigned int Height8;  // [X30:default]
-
-
-    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

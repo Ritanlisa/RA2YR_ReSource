@@ -6,23 +6,23 @@
 namespace gamemd {
 
 struct WaypointPathClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    unsigned int vfptr;  // 0x0
+    unsigned int vfptr1;  // 0x4
+    unsigned int vfptr2;  // 0x8
+    void * vfptr3;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
-    unsigned char NeedsSaveOrLink;  // 0x20
-    int idxArray;  // 0x24 [X30:type_map]
-    unsigned int alignmentPadding;  // 0x33
-int waypointCount;  // 0x40 [X35-L7 kind=int]
-int waypointCapacity;  // 0x44 [X35-L7 kind=int]
+    int NeedsSaveOrLink;  // 0x20
+    int idxArray;  // 0x24
+    int waypoints[6];  // 0x28
+    int waypointCount;  // 0x40
+    int waypointCapacity;  // 0x44
     unsigned char WaypointClass_field_34;  // 0x48
     unsigned char WaypointClass_field_35;  // 0x49
-    unsigned char pad_36;  // 0x4A
+    char pad_36[2];  // 0x4A
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
     int Construct(unsigned int aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
@@ -34,19 +34,6 @@ int waypointCapacity;  // 0x44 [X35-L7 kind=int]
     int StubReturn64();
     int ddtor(int a1, unsigned int * a2);
     unsigned int * computePath(int a2, unsigned int *a3, void *a3_1 = 0);
-    unsigned int q030;  // 0x30 (canon-mt)
-    int waypoints[6];  // 0x28 (ml)
-
-    unsigned int u32_2C;  // X10 supply (member_lookup)
-    int u8_D;  // X10 supply (member_lookup)
-    unsigned char __pad_028;  // 0x28 [X30:canon]
-    unsigned char __pad_037;  // 0x37 [X30:canon]
-    unsigned int vfptr;  // [X30:default]
-    unsigned int vfptr1;  // [X30:default]
-    unsigned int vfptr2;  // [X30:default]
-
-
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

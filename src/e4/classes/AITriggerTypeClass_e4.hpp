@@ -9,14 +9,23 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct AITriggerTypeClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    bool IsAllocated;  // 0x13
-    unsigned int alignmentPadding;  // 0x33
-    unsigned int UINameLabel;  // 0x3D
+    unsigned int __pad_010;  // 0x10
+    int AITriggerTypeClass_field_0x14;  // 0x14
+    int AITriggerTypeClass_field_0x18;  // 0x18
+    int AITriggerTypeClass_field_0x1C;  // 0x1C
+    int AITriggerTypeClass_field_0x20;  // 0x20
+    int AITriggerTypeClass_field_0x24;  // 0x24
+    unsigned int AITriggerTypeClass_field_0x28;  // 0x28
+    int AITriggerTypeClass_field_0x2C;  // 0x2C
+    int AITriggerTypeClass_field_0x30;  // 0x30
+    int AITriggerTypeClass_field_0x34;  // 0x34
+    int AITriggerTypeClass_field_0x38;  // 0x38
+    int AITriggerTypeClass_field_0x3C;  // 0x3C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AITriggerTypeClass * ddtor(char a2);
     DynamicVector * * OwnerHouseOwns(unsigned int * a2, int a3);
@@ -30,38 +39,6 @@ struct AITriggerTypeClass {
     int RegisterFailure();
     int RegisterSuccess();
     AITriggerTypeClass * ddtor(unsigned int * Block, char a2);
-    unsigned int u32_104;  // 0x104 (offset-truth)
-    unsigned int u32_108;  // 0x108 (offset-truth)
-    unsigned int u32_B8;  // 0xB8 (offset-truth)
-    unsigned int u32_BC;  // 0xBC (offset-truth)
-    void* u32_D8;  // 0xD8 (offset-truth) [X30:type_map]
-    unsigned int u32_E4;  // 0xE4 (offset-truth)
-    unsigned int q0E8;  // 0xE8
-    unsigned int q0C8;  // 0xC8
-    unsigned int q0C4;  // 0xC4
-    unsigned int q0C0;  // 0xC0
-    unsigned char __pad_010;  // 0x10 [X30:canon]
-    unsigned char __pad_017;  // 0x17 [X30:canon]
-    unsigned char __pad_037;  // 0x37 [X30:canon]
-    int AITriggerTypeClass_field_0x18;  // 0x18 [X30:member_lookup]
-    int AITriggerTypeClass_field_0x24;  // 0x24 [X30:type_map]
-unsigned int AITriggerTypeClass_field_0x28;  // 0x28 [X35-L7 kind=unsigned int]
-    unsigned int Coord_9C;  // [X30:default]
-    unsigned int Tactical_E4;  // [X30:default]
-
-
-    unsigned int u32_B0;  // 0xB0 [X55 W3 supply (render vocab)]
-    unsigned int u32_DC;  // 0xDC [X55 W3 supply (render vocab)]
-    unsigned int q0A0;  // 0xA0 [X55 W3 supply (render vocab)]
-    unsigned int q0A8;  // 0xA8 [X55 W3 supply (render vocab)]
-    unsigned int u32_94;  // 0x94 [X55 W3 supply (render vocab)]
-    unsigned int q098;  // 0x98 [X55 W3 supply (render vocab)]
-    unsigned int q0D0;  // 0xD0 [X55 W3 supply (render vocab)]
-    unsigned int q0AC;  // 0xAC [X55 W3 supply (render vocab)]
-    unsigned char u8_D1;  // 0xD1 [X55 W3 supply (render vocab)]
-    unsigned char u8_D2;  // 0xD2 [X55 W3 supply (render vocab)]
-    unsigned char u8_D3;  // 0xD3 [X55 W3 supply (render vocab)]
-    unsigned char u8_D4;  // 0xD4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

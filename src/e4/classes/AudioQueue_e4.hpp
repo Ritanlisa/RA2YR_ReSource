@@ -6,10 +6,14 @@
 namespace gamemd {
 struct AnimClass;  // fix_fwd_type_supply
 struct AudioQueue {
+    AudioQueue* __pad_0;  // 0x0
+    unsigned int q004;  // 0x4
+    unsigned int q008;  // 0x8
+    unsigned int u32_C;  // 0xC
+    char __pad_10[4];  // 0x10
+    unsigned int AudioQueue_field_0x14;  // 0x14
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    void* Socket;  // 0x0 (no offset truth)
     unsigned int * CreateNode();  // 0x402AF0
     int  FindBestChannel(int a1, int a2);  // 0x4035F0
     int FindByData();  // 0x752680
@@ -30,43 +34,5 @@ struct AudioQueue {
     static int ReleaseBuffers();  // 0x408270
     static int DrainAll();  // 0x750FA0
     int StopAllVoices(void *a1 = 0, void *a2 = 0);
-    unsigned int u32_3F054;  // @0x7b2118 (W16G3 raw-usage vocab)
-    unsigned int u32_3F058;  // @0x7b21b9 (W16G3 raw-usage vocab)
-    unsigned int u32_3F060;  // @0x7b20fd (W16G3 raw-usage vocab)
-    unsigned int u32_3F064;  // @0x7b219e (W16G3 raw-usage vocab)
-
-    unsigned char __pad_294;  // X10 supply (member_lookup)
-    unsigned int q008;  // X10 supply (member_lookup)
-    int u32_14;  // X10 supply (member_lookup)
-    unsigned int u32_18;  // X10 supply (member_lookup)
-    unsigned int u32_20;  // X10 supply (member_lookup)
-    unsigned int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_2D;  // X10 supply (member_lookup)
-    unsigned int u32_30;  // X10 supply (member_lookup)
-    unsigned int u32_34;  // X10 supply (member_lookup)
-    unsigned int u32_38;  // X10 supply (member_lookup)
-    unsigned int u32_3AC;  // X10 supply (member_lookup)
-    unsigned int u32_3B4;  // X10 supply (member_lookup)
-    unsigned int u32_3B8;  // X10 supply (member_lookup)
-    unsigned int u32_3BC;  // X10 supply (member_lookup)
-    unsigned int u32_3C;  // X10 supply (member_lookup)
-    unsigned int u32_3C4;  // X10 supply (member_lookup)
-    unsigned int u32_3D0;  // X10 supply (member_lookup)
-    unsigned int u32_3F05C;  // X10 supply (member_lookup)
-    unsigned int u32_3F06C;  // X10 supply (member_lookup)
-    unsigned int u32_3F070;  // X10 supply (member_lookup)
-    unsigned int u32_40;  // X10 supply (member_lookup)
-    unsigned int u32_45;  // X10 supply (member_lookup)
-    unsigned int u32_48;  // X10 supply (member_lookup)
-    unsigned int u32_4C;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-    unsigned int q004;  // 0x4
-    AudioQueue* __pad_000;  // 0x0 [X30:type_map]
-    AudioQueue* AudioQueue_F8;  // 0xF8 [X30:member_lookup]
-    AudioQueue* __pad_0;  // 0x0 [X30:type_map]
-
-
-    unsigned int AudioQueue_field_0x14;  // 0x14 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

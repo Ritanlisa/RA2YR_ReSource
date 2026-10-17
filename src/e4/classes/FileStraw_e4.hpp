@@ -6,12 +6,12 @@
 namespace gamemd {
 
 struct FileStraw {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    AbstractClass* __pad_004;  // 0x4
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Destructor(void *a1 = 0);
     int Open(int a2, char a3, void *a1 = 0);
-    AbstractClass* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

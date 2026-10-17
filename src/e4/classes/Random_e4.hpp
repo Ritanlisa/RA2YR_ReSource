@@ -8,8 +8,12 @@ namespace gamemd {
 #ifndef GAMEMD_G2_Random_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_Random_DEF 1
 struct Random {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int Random_field_0x04;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int __thiscall AdvanceRandomBytes(char a2);
     static int Range(Random * aP1, int a2, int a3);
@@ -17,11 +21,6 @@ struct Random {
     static int State(void *aP0);
     static int Gaussian(void *aP0);
     static int AdvanceRandomBytes(void *aP0);  // G57a1 static-form sync
-    unsigned int u32_24;  // 0x24 (offset-truth)
-
-    int q008;  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
     int AdvanceRandomBytes();  // G57w19k2 C2661 supply
 #endif  // GAMEMD_G2_Random_DEF

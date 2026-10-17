@@ -10,15 +10,14 @@ struct AnimClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct IPXInterfaceClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    unsigned int __pad_0;  // 0x0
     bool Initialized;  // 0x4
+    unsigned char __pad_005;  // 0x5
     unsigned short BoundSocket;  // 0x6
     unsigned int LocalNetwork;  // 0x8
-    unsigned char LocalNode;  // 0xC
-    bool IsAllocated;  // 0xD
-    void* Count;  // 0x10
+    char LocalNode[6];  // 0xC
     unsigned short tail_12;  // 0x12
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * Receive();
     AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);
@@ -45,41 +44,6 @@ struct IPXInterfaceClass {
     void GetQueueSize();
     void StubReturnFalse(int a1, int a2);
     void getSocketCount();
-    unsigned int q_70;  // +0x70 flat supply (P5 provenance)
-    unsigned int q_30;  // +0x30 flat supply (P5 provenance)
-    unsigned int q_40;  // +0x40 flat supply (P5 provenance)
-
-    uint32_t Socket;  // X10 supply (member_types)
-    unsigned char __pad_048;  // X10 supply (member_lookup)
-    unsigned int q020;  // X10 supply (member_lookup)
-    int q034;  // X10 supply (member_lookup)
-    unsigned char q3F078;  // X10 supply (member_lookup)
-    int u32_18;  // X10 supply (member_lookup)
-    unsigned int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_types)
-    unsigned int u32_2D;  // X10 supply (member_types)
-    unsigned int u32_38;  // X10 supply (member_types)
-    unsigned int u32_3C;  // X10 supply (member_types)
-    unsigned int u32_3F050;  // X10 supply (member_lookup)
-    unsigned int u32_3F05C;  // X10 supply (member_lookup)
-    unsigned int u32_3F060;  // X10 supply (member_lookup)
-    unsigned int u32_3F06C;  // X10 supply (member_lookup)
-    int u32_3F070;  // X10 supply (member_lookup)
-    int u32_3F2F8;  // X10 supply (member_lookup)
-    unsigned int u32_3F2FC;  // X10 supply (member_lookup)
-    unsigned int u32_3F300;  // X10 supply (member_lookup)
-    unsigned int u32_3F304;  // X10 supply (member_lookup)
-    int u32_3F306;  // X10 supply (member_lookup)
-    unsigned int u32_3F30C;  // X10 supply (member_lookup)
-    unsigned int u32_45;  // X10 supply (member_types)
-    int u32_4C;  // X10 supply (member_lookup)
-    unsigned char __pad_005;  // 0x5 [X30:canon]
-    unsigned int BoundPort;  // [X30:default]
-    unsigned int Capacity;  // [X30:default]
-    unsigned int IsInitialized;  // [X30:default]
-    unsigned int Items;  // [X30:default]
-unsigned int __pad_0;  // 0x0 [X35-L7 kind=unsigned int]
-    unsigned int q3F074;  // [X30:default]
 };
 
 } // namespace gamemd

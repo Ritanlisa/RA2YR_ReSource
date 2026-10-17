@@ -7,13 +7,15 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
-// --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int __pad_0;  // 0x0
     void* Items;  // 0x4
     unsigned int Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  HashEntryCompare(unsigned char * a2);  // 0x517590
     AbstractClass * *  SetCapacity_0(int a2, char * a3);  // 0x6284A0
@@ -37,12 +39,5 @@ struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     int  Clear(int a2, int a3);  // 0x628860
     char  AddRef(int a2);  // 0x6288A0
     int  GetSize(int a2);  // 0x628D80
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-unsigned int q000;  // 0x0 [X35-L7 kind=unsigned int]
-    unsigned char __pad_00E;  // 0xE [X30:canon]
-unsigned int __pad_0;  // 0x0 [X35-L7 kind=unsigned int]
 };
 } // namespace gamemd

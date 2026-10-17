@@ -9,13 +9,15 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct LogicClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_IsometricTileClass {
-// --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int __pad_0;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_IsometricTileClass___(char a2);  // 0x40CB30
     LogicClass *  Constructor_VectorClass_ObjectClass___(char a2);  // 0x40CC20
@@ -34,11 +36,5 @@ struct VectorClass_ptr_IsometricTileClass {
     void TryFreeAndClear();  // 0x40CC70
     unsigned int  GetPtrOffset(int a2);  // 0x40CCA0
     int FindValue(unsigned int * a2, void *a2_1 = 0);  // 0x40CF00
-    char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
-    unsigned int m_8;  // 0x8 vocab alias (Capacity)
-    unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
-    unsigned int m_10;  // 0x10 vocab alias (Count)
-unsigned int __pad_0;  // 0x0 [X35-L7 kind=unsigned int]
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

@@ -11,70 +11,57 @@ struct BuildingTypeClass;  // fix_fwd_type_supply
 struct WeaponTypeClass;  // fix_fwd_type_supply
 
 struct SuperWeaponTypeClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-int uniqueId;  // 0x10 [X35-L7 kind=int]
-    unsigned char alignmentPadding_3;  // 0x11
-    char ChargingVoice[4];  // 0x12
-    bool IsAllocated;  // 0x13
-int abstractFlags;  // 0x14 [X35-L7 kind=int]
-    char ImpatientVoice[4];  // 0x16
-int nextArrayIndex;  // 0x18 [X35-L7 kind=int]
+    int uniqueId;  // 0x10
+    int abstractFlags;  // 0x14
+    int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     SHPStruct* NeedsSaveOrLink;  // 0x20
-    void* ActionValue;  // 0x24 [X30:type_map]
-int SpecialSound;  // 0x28 [X35-L7 kind=int]
-    char StartSound[4];  // 0x2C
-    BuildingTypeClass* AuxBuilding;  // 0x30
-    SHPStruct* SidebarImage;  // 0x32
+    char __pad_24[16];  // 0x24
     char SidebarImageFile_0x18;  // 0x34
-    unsigned char zero_E4;  // 0x35
-    bool UseChargeDrain;  // 0x36
-    bool IsPowered;  // 0x37
-    bool DisableableFromShell;  // 0x38
+    char __pad_35[4];  // 0x35
+    char __pad_39[3];  // 0x39
     char zero_3C[1];  // 0x3C
-    unsigned char UINameLabel;  // 0x3D
-    bool AIDefendAgainst;  // 0x40
-    bool PreClick;  // 0x41
-    bool PostClick;  // 0x42
-int PreDependent;  // 0x44 [X35-L7 kind=int]
-    bool ShowTimer;  // 0x48
-    bool ManualControl;  // 0x49
-    float Range;  // 0x4C
-int LineMultiplier;  // 0x50 [X35-L7 kind=int]
+    char UINameLabel[32];  // 0x3D
+    unsigned char __pad_05D;  // 0x5D
+    char __pad_5E[2];  // 0x5E
     void * UIName;  // 0x60
-    unsigned char Name;  // 0x64
-    unsigned int tail_95;  // 0x95
-    int ArrayIndex;  // 0x98 [X30:type_map]
+    char Name[49];  // 0x64
+    char tail_95[3];  // 0x95
+    int ArrayIndex;  // 0x98
     WeaponTypeClass* WeaponType;  // 0x9C
-    int RechargeVoice;  // 0xA0 [X30:type_map]
-    int ChargingVoice_d;  // 0xA4 [X30:type_map]
-    int ImpatientVoice_d;  // 0xA8 [X30:type_map]
-    void* SuspendVoice;  // 0xAC [X30:type_map]
-    int RechargeTime;  // 0xB0 [X30:type_map]
+    int RechargeVoice;  // 0xA0
+    int ChargingVoice_d;  // 0xA4
+    int ImpatientVoice_d;  // 0xA8
+    void* SuspendVoice;  // 0xAC
+    int RechargeTime;  // 0xB0
     BuildingTypeClass* Type;  // 0xB4
     SHPStruct* SidebarImage_d;  // 0xB8
-    void* ActionValue_d;  // 0xBC [X30:type_map]
-    int SpecialSound_d;  // 0xC0 [X30:type_map]
-    int StartSound_d;  // 0xC4 [X30:type_map]
+    void* ActionValue_d;  // 0xBC
+    int SpecialSound_d;  // 0xC0
+    int StartSound_d;  // 0xC4
     BuildingTypeClass* AuxBuilding_d;  // 0xC8
-    char SidebarImageFile;  // 0xCC
+    int SidebarImageFile[6];  // 0xCC
     unsigned char zero_E4_d;  // 0xE4
     bool UseChargeDrain_d;  // 0xE5
     bool IsPowered_d;  // 0xE6
     bool DisableableFromShell_d;  // 0xE7
-    int FlashSidebarTabFrames;  // 0xE8 [X30:type_map]
+    int FlashSidebarTabFrames;  // 0xE8
     bool AIDefendAgainst_d;  // 0xEC
     bool PreClick_d;  // 0xED
     bool PostClick_d;  // 0xEE
-    BuildingTypeClass* PreDependent_d;  // 0xF0 [X30:type_map]
+    unsigned char __pad_0EF;  // 0xEF
+    BuildingTypeClass* PreDependent_d;  // 0xF0
     bool ShowTimer_d;  // 0xF4
     bool ManualControl_d;  // 0xF5
+    unsigned char __pad_0F6;  // 0xF6
+    char __pad_F7[1];  // 0xF7
     float Range_d;  // 0xF8
-    void* LineMultiplier_d;  // 0xFC [X30:type_map]
+    void* LineMultiplier_d;  // 0xFC
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * IsAvailable();
     unsigned int * SDDTOR(char a2);
@@ -93,53 +80,6 @@ int LineMultiplier;  // 0x50 [X35-L7 kind=int]
     int loadSWProperties(uint8_t * a2, uint8_t * a3, int a4, void *a4_1 = 0);
     int Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     void* SD_vt25(unsigned char *** aP1);
-    void* q024;  // 0x24 (offset-truth) [X30:type_map]
-    unsigned int q100;  // 0x100 (ml)
-    unsigned int q104;  // 0x104 (ml)
-    ObjectClass* q108;  // 0x108 (ml)
-    unsigned int q10C;  // 0x10C (ml)
-    unsigned char q110;  // 0x110 (ml)
-    bool q114;  // 0x114 (ml)
-unsigned int q118;  // 0x118 [X35-L7 kind=unsigned int]
-    unsigned int q11C;  // 0x11C (ml)
-    unsigned char q120;  // 0x120 (ml)
-    unsigned int q124;  // 0x124 (ml)
-    unsigned int q128;  // 0x128 (ml)
-    unsigned int q12C;  // 0x12C (ml)
-    char q130;  // 0x130 (ml)
-    unsigned int q134;  // 0x134 (ml)
-    unsigned int q138;  // 0x138 (ml)
-    unsigned int q13C;  // 0x13C (ml)
-    unsigned int q140;  // 0x140 (ml)
-    unsigned int q144;  // 0x144 (ml)
-    unsigned int q148;  // 0x148 (ml)
-    unsigned int q14C;  // 0x14C (offset-truth)
-    unsigned int q15C;  // 0x15C (ml)
-unsigned int q160;  // 0x160 [X35-L7 kind=unsigned int]
-unsigned int q168;  // 0x168 [X35-L7 kind=unsigned int]
-    void * q184;  // 0x184 (ml)
-    unsigned int q194;  // 0x194 (ml)
-    unsigned char q198;  // 0x198 (ml)
-    unsigned int q1A0;  // 0x1A0 (offset-truth)
-    unsigned int q1A4;  // 0x1A4 (offset-truth)
-    unsigned int q1A8;  // 0x1A8 (offset-truth)
-    unsigned int u32_158;  // 0x158 (offset-truth)
-    unsigned int u32_178;  // 0x178 (offset-truth)
-    unsigned int u32_17C;  // 0x17C (offset-truth)
-
-    unsigned char DynamicVector_5564[4];  /* DynamicVector */  // X10 supply (member_lookup)
-    VectorClass* qB20;  // X10 supply (member_lookup)
-    VectorClass* qB3C;  // X10 supply (member_lookup)
-    unsigned char __pad_05D;  // 0x5D [X30:canon]
-    unsigned char __pad_0EF;  // 0xEF [X30:canon]
-    unsigned char __pad_0F6;  // 0xF6 [X30:canon]
-    unsigned int AbstractClass_10C;  // [X30:default]
-    AbstractClass* AbstractClass_184;  // 0x184 [X30:member_lookup]
-    unsigned int ParticleSystemClass_110;  // [X30:default]
-    unsigned int WarheadTypeClass_1A8;  // [X30:default]
-
-
-    unsigned int __pad_24;  // 0x24 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

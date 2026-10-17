@@ -15,32 +15,28 @@ struct TagClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct TeamClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    unsigned int vfptr;  // 0x0
+    void * vfptr1;  // 0x4
+    unsigned int vfptr2;  // 0x8
+    void * vfptr3;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    bool IsAllocated;  // 0x19
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     TeamTypeClass* buildingType;  // 0x24
     ScriptClass* currentScript;  // 0x28
     HouseClass* owner;  // 0x2C
     HouseClass* target;  // 0x30
-    unsigned int alignmentPadding;  // 0x33
     CellClass* spawnCell;  // 0x34
-unsigned int unknown38;  // 0x38 [X35-L7 kind=unsigned int]
+    unsigned int unknown38;  // 0x38
     AbstractClass* queuedFocus;  // 0x3C
     AbstractClass* focus;  // 0x40
-int unknown44;  // 0x44 [X35-L7 kind=int]
-    int totalObjects;  // 0x48 [X30:type_map]
-    int totalThreatValue;  // 0x4C [X30:type_map]
-    int creationFrame;  // 0x50 [X30:type_map]
+    int unknown44;  // 0x44
+    int totalObjects;  // 0x48
+    int totalThreatValue;  // 0x4C
+    int creationFrame;  // 0x50
     FootClass* firstUnit;  // 0x54
-    unsigned int ClosestMember;  // 0x56
     char guardAreaTimer[12];  // 0x58
     char suspendTimer[12];  // 0x64
     TagClass* tag;  // 0x70
@@ -64,11 +60,10 @@ int unknown44;  // 0x44 [X35-L7 kind=int]
     bool unknown85;  // 0x85
     bool unknown86;  // 0x86
     bool unknown87;  // 0x87
-    int countObjects;  // 0x88 [X30:type_map]
+    int countObjects[6];  // 0x88
+// --- flat members (BEGIN) ---
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
-    VectorClass * ptr_94;  // 0x94
 #else
-    void* ptr_94;  // 0x94  // X27: template-carrier
 #endif  // X27: template-carrier universe fallback
 // --- flat members (END) ---
     static int SumMemberCounts(void *aP1);
@@ -116,29 +111,6 @@ int unknown44;  // 0x44 [X35-L7 kind=int]
     static int CreateOneOf(TeamClass * aP1, TeamClass *a2);
     AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1);
     void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);
-    unsigned int u32_10C;  // 0x10C (offset-truth)
-    unsigned char u32_68F;  // 0x68F (offset-truth)
-    unsigned int u32_690;  // 0x690 (offset-truth)
-    unsigned char u32_691;  // 0x691 (offset-truth)
-    unsigned int u32_A8;  // 0xA8 (offset-truth)
-    unsigned int u32_B0;  // 0xB0 (offset-truth)
-    unsigned int u32_B4;  // 0xB4 (offset-truth)
-
-    unsigned int u32_114;  // X10 supply (member_lookup)
-    unsigned int u32_118;  // X10 supply (member_lookup)
-    unsigned int u32_13C;  // X10 supply (member_lookup)
-    unsigned int u32_AC;  // X10 supply (member_lookup)
-    unsigned int u32_F4;  // X10 supply (member_lookup)
-    unsigned int AbstractClass_10C;  // [X30:default]
-    CellClass* ParasiteClass_field_34;  // 0x34 [X30:type_map]
-    unsigned int ParticleSystemClass_110;  // [X30:default]
-    unsigned int vfptr;  // [X30:default]
-    unsigned int vfptr2;  // [X30:default]
-
-
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
-    unsigned int q21C;  // 0x21C [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

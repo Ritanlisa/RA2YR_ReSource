@@ -18,15 +18,53 @@ struct BuildingTypeClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 struct MouseClass;  // fix_fwd_type_supply
 struct Tactical {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    char vtable1[2];  // 0x0
+    unsigned char Tactical_field_0x2[4];  // 0x2
+    char __pad_6[2];  // 0x6
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    bool IsAllocated;  // 0x13
-    unsigned int nextArrayIndex;  // 0x18
-    int referenceCount;  // 0x1C
-    unsigned int alignmentPadding;  // 0x33
+    char __pad_10[32];  // 0x10
+    int Tactical_field_0x30;  // 0x30
+    unsigned int q034;  // 0x34
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    char __pad_40[12];  // 0x40
+    unsigned int q04C;  // 0x4C
+    char __pad_50[20];  // 0x50
+    unsigned int u32_64;  // 0x64
+    unsigned int u32_68;  // 0x68
+    char __pad_6C[4];  // 0x6C
+    unsigned char q070;  // 0x70
+    char __pad_71[1];  // 0x71
+    unsigned char u32_72;  // 0x72
+    char __pad_73[1];  // 0x73
+    bool q074;  // 0x74
+    char __pad_75[47];  // 0x75
+    unsigned int q0A4;  // 0xA4
+    int Tactical_field_0xA8;  // 0xA8
+    char __pad_AC[4];  // 0xAC
+    unsigned int u32_B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
+    char __pad_B8[4];  // 0xB8
+    unsigned int u32_BC;  // 0xBC
+    char __pad_C0[32];  // 0xC0
+    unsigned int u32_E0;  // 0xE0
+    char __pad_E4[16];  // 0xE4
+    int q0F4;  // 0xF4
+    int q0F8;  // 0xF8
+    char __pad_FC[9];  // 0xFC
+    bool q105;  // 0x105
+    char __pad_106[21];  // 0x106
+    char Tactical_field_0x11B[4];  // 0x11B
+    char __pad_11F[39];  // 0x11F
+    unsigned char u32_146;  // 0x146
+    char __pad_147[3126];  // 0x147
+    unsigned char u32_D7D;  // 0xD7D
+    char __pad_D7E[38];  // 0xD7E
+    int Tactical_field_0xDA4;  // 0xDA4
+    char __pad_DA8[12];  // 0xDA8
+    int Tactical_field_0xDB4;  // 0xDB4
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void * ConstructTacticalSurface();  // 0x42A6D0
     int CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a3, unsigned int *a4, int *a5, int a6, int a7);  // G57w10-S raw 0x00484050 IUnknown 占位清除
@@ -55,59 +93,5 @@ ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, 
     int StubReturn3608();  // 0x6DC460
     int UpdateUIVisibility(void *a1_1);
     int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);
-    char __pad_10[32];  // 0x10 (ml)
-unsigned int q034;  // 0x34 [X35-L7 kind=unsigned int]
-    unsigned int u32_1178;  // 0x1178 (offset-truth)
-    unsigned char u32_117A;  // 0x117A (offset-truth)
-    unsigned int u32_117C;  // 0x117C (offset-truth)
-    unsigned char u32_146;  // 0x146 (offset-truth)
-
-    unsigned char Tactical_field_0x2[4];  /* char[4] */  // X10 supply (member_lookup)
-    CellClass * ptr_3;  // X10 supply (member_lookup)
-    unsigned char q070;  // X10 supply (member_lookup)
-    bool q074;  // X10 supply (member_lookup)
-    unsigned int q0A4;  // X10 supply (member_lookup)
-    int q0F4;  // X10 supply (member_lookup)
-    int q0F8;  // X10 supply (member_lookup)
-    bool q105;  // X10 supply (member_lookup)
-    unsigned char q1198;  // X10 supply (member_lookup)
-    unsigned int u32_1174;  // X10 supply (member_lookup)
-    unsigned int u32_1176;  // X10 supply (member_lookup)
-    unsigned int u32_1180;  // X10 supply (member_lookup)
-    unsigned int u32_1181;  // X10 supply (member_lookup)
-    unsigned int u32_11AC;  // X10 supply (member_lookup)
-    unsigned int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_2C;  // X10 supply (member_lookup)
-    unsigned int u32_38;  // X10 supply (member_lookup)
-    unsigned int u32_3C;  // X10 supply (member_lookup)
-    unsigned int u32_68;  // X10 supply (member_lookup)
-    unsigned int u32_72;  // X10 supply (member_lookup)
-    unsigned int u32_B0;  // X10 supply (member_lookup)
-    unsigned int u32_B4;  // X10 supply (member_lookup)
-    unsigned int u32_D7D;  // X10 supply (member_lookup)
-    int u32_DE4;  // X10 supply (member_lookup)
-    unsigned int u32_E0;  // X10 supply (member_lookup)
-    unsigned int u32_BC;  // 0xBC
-    unsigned int u32_64;  // 0x64
-    unsigned int q04C;  // 0x4C
-unsigned int __pad_010;  // 0x10 [X35-L7 kind=unsigned int]
-    unsigned char __pad_017;  // 0x17 [X30:canon]
-    unsigned char __pad_020;  // 0x20 [X30:canon]
-    unsigned char __pad_037;  // 0x37 [X30:canon]
-    unsigned int AbstractClass_1;  // [X30:default]
-    unsigned int GetCellDatav32;  // [X30:default]
-    unsigned int GetCellDatav44;  // [X30:default]
-    unsigned int HouseClass_6C;  // [X30:default]
-    char Tactical_field_0x11B[4];  // 0x11B [X30:member_lookup]
-    unsigned int abstractFlags;  // [X30:default]
-    unsigned int dominatorRed;  // [X30:default]
-    unsigned int needsSave;  // [X30:default]
-    int u16_26;  // 0x26 [X30:type_map]
-    unsigned int uniqueId;  // [X30:default]
-
-
-    int __pad_34;  // 0x34 [X55 W3 supply (render vocab)]
-    unsigned int u32_11A8;  // 0x11A8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

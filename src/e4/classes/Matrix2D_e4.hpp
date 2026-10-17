@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct Matrix2D {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Rotate(float aP1, void *a1 = 0);
 };

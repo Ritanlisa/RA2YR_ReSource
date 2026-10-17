@@ -5,12 +5,11 @@
 
 namespace gamemd {
 struct SymbolTable {
+    void* __pad_000;  // 0x0
+    int SymbolTable_field_0x04;  // 0x4
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    unsigned char q000[8];  // 0x0 (canon size filler)
     static char Insert(void *aP1, void *a2);
     static int Rebuild(int** p0);  // x4:signals@0x6234b0
-    void* __pad_000;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

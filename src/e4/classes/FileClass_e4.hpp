@@ -8,8 +8,8 @@ namespace gamemd {
 #ifndef GAMEMD_G2_FileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_FileClass_DEF 1
 struct FileClass {
+    void* __tail_0;  // 0x0
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
 // --- flat members (END) ---
     static int BufferedWriter(FileClass *pThis, char *lpBuffer, DWORD nNumberOfBytesToWrite);
     char Stub(int a1);
@@ -30,16 +30,6 @@ struct FileClass {
     static int Delete(void *a1 = 0);  // 0x65d190
     int CloseHandle(void *a1 = 0);  // 0x65cca0
     int OpenWithCDSearch(char *Source);
-void* __tail_0;  // 0x0 [X35-L7 kind=void*]
-    unsigned int u32_58;  // 0x58 (offset-truth)
-    unsigned int u32_68;  // 0x68 (offset-truth)
-
-    unsigned int u32_14;  // X10 supply (member_lookup)
-    unsigned int u32_18;  // X10 supply (member_lookup)
-    unsigned int FileNameAllocated;  // [X30:default]
-    unsigned int FilePointer;  // [X30:default]
-    unsigned int FileTimeDateLo;  // [X30:default]
-    unsigned int Handle;  // [X30:default]
 };
 #endif  // GAMEMD_G2_FileClass_DEF
 

@@ -5,11 +5,20 @@
 
 namespace gamemd {
 struct NetworkLobby {
+#pragma pack(push, 1)  // X60: binary-packed layout
+    int __pad_0;  // 0x0
+    int NetworkLobby_field_0x4;  // 0x4
+    int NetworkLobby_field_0x8;  // 0x8
+    unsigned char q00C[45];  // 0xC
+    char NetworkLobby_field_0x39[4];  // 0x39
+    char __pad_3D[960];  // 0x3D
+    unsigned int __pad_3FD;  // 0x3FD
+    char __pad_401[683];  // 0x401
+    int NetworkLobby_field_0x6AC;  // 0x6AC
+    int NetworkLobby_field_0x6B0;  // 0x6B0
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     static int UpdatePlayerList();
-    unsigned int MessageHandler_ph;  // w18j3: filler renamed (no offset truth; canon NetworkLobby::MessageHandler is a method)
     static unsigned int MessageHandler(NetworkLobby *p_this);  // x4:ida@0x5e00b0
     int MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int a6);  // 0x5D4210
     int CreateGame();  // 0x5DC350
@@ -30,31 +39,6 @@ struct NetworkLobby {
     char CheckPlayerNames();  // 0x5E9720
     void UpdateLabels(HWND hDlg);  // 0x5EE6A0
     int DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lParam, void * a2);
-    char __pad_3D[960];  // 0x3D (ml)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char q00C[45];  /* char[45] */  // X10 supply (member_lookup)
-    unsigned int q020;  // X10 supply (member_lookup)
-    uint16_t u16_16C;  // X10 supply (member_lookup)
-    int u16_2B8;  // X10 supply (member_lookup)
-    unsigned int u32_14;  // X10 supply (member_lookup)
-    int u32_1480;  // X10 supply (member_lookup)
-    unsigned int u32_1C;  // X10 supply (member_lookup)
-    unsigned int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_2B0;  // X10 supply (member_lookup)
-    unsigned int u32_2B4;  // X10 supply (member_lookup)
-    unsigned int u32_2C4;  // X10 supply (member_lookup)
-    unsigned int u32_2C8;  // X10 supply (member_lookup)
-    unsigned int u32_6B;  // X10 supply (member_lookup)
-    int u32_8;  // X10 supply (member_lookup)
-    int u8_19;  // X10 supply (member_lookup)
-    int u8_1A;  // X10 supply (member_lookup)
-
-
-    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int __pad_3FD;  // 0x3FD [X55 W3 supply (render vocab)]
-    unsigned int __pad_C;  // 0xC [X55 W3 supply (render vocab)]
-    int NetworkLobby_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 } // namespace gamemd

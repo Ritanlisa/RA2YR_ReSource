@@ -23,8 +23,8 @@ struct ScatterCommandClass;  // fix_fwd_type_supply
 struct GuardCommandClass;  // fix_fwd_type_supply
 struct StopCommandClass;  // fix_fwd_type_supply
 struct DeployCommandClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int vt02();
     unsigned int * performAction_148();
@@ -159,65 +159,100 @@ struct DeployCommandClass {
     unsigned int performAction_240(int a2);
     int performAction_242(unsigned int * a2);
     DynamicVector * performAction_244(unsigned int * Block, char a2);
-    unsigned int *q000;  // 0x0 (offset-truth)
 };  // G42.37 class-body supply (defs in CreateTeamCommand_e4.cpp)
 struct CreateTeamCommand {
-// --- flat members (BEGIN) ---
-    void* q004;  // 0x4
+#pragma pack(push, 1)  // X60: binary-packed layout
+    unsigned int * __pad_0;  // 0x0
+    unsigned int CreateTeamCommand_field_0x4;  // 0x4
     int Capacity;  // 0x8
     unsigned int qC;  // 0xC
-    bool IsAllocated;  // 0xD
     void* q010;  // 0x10
-    bool IsInitialized;  // 0x12
     unsigned char q014;  // 0x14
     unsigned char q015;  // 0x15
-    int Count;  // 0x16
+    unsigned char Count;  // 0x16
+    char __pad_17[1];  // 0x17
     bool q018;  // 0x18
+    char __pad_19[1];  // 0x19
+    unsigned char __pad_01A;  // 0x1A
+    char __pad_1B[1];  // 0x1B
     unsigned char q01C;  // 0x1C
+    char __pad_1D[3];  // 0x1D
     unsigned char q020;  // 0x20
+    char __pad_21[3];  // 0x21
     bool q024;  // 0x24
+    char __pad_25[3];  // 0x25
     unsigned char q028;  // 0x28
+    char __pad_29[3];  // 0x29
     unsigned char q02C;  // 0x2C
+    char __pad_2D[3];  // 0x2D
+    unsigned int u32_30;  // 0x30
     int q034;  // 0x34
     unsigned char q038;  // 0x38
+    char __pad_39[3];  // 0x39
     unsigned char q03C;  // 0x3C
+    char __pad_3D[3];  // 0x3D
     unsigned char q040;  // 0x40
+    char __pad_41[1];  // 0x41
+    unsigned char q0042;  // 0x42
+    char __pad_43[1];  // 0x43
     unsigned char q044;  // 0x44
+    char __pad_45[1];  // 0x45
+    unsigned char q0046;  // 0x46
+    char __pad_47[1];  // 0x47
     unsigned int q048;  // 0x48
     unsigned char q04C;  // 0x4C
+    char __pad_4D[3];  // 0x4D
     unsigned char q050;  // 0x50
+    char __pad_51[3];  // 0x51
     bool q054;  // 0x54
+    char __pad_55[3];  // 0x55
     unsigned char q058;  // 0x58
+    char __pad_59[11];  // 0x59
     unsigned char q064;  // 0x64
+    char __pad_65[3];  // 0x65
     unsigned char q068;  // 0x68
+    char __pad_69[23];  // 0x69
     unsigned char q080;  // 0x80
+    char __pad_81[3];  // 0x81
     bool q084;  // 0x84
+    char __pad_85[3];  // 0x85
     unsigned char q088;  // 0x88
+    char __pad_89[103];  // 0x89
     unsigned char q0F0;  // 0xF0
+    char __pad_F1[3];  // 0xF1
     unsigned char q0F4;  // 0xF4
+    char __pad_F5[3];  // 0xF5
     unsigned char q0F8;  // 0xF8
+    char __pad_F9[7];  // 0xF9
     unsigned char q100;  // 0x100
+    char __pad_101[3];  // 0x101
     unsigned char q104;  // 0x104
+    char __pad_105[11];  // 0x105
     unsigned char q110;  // 0x110
+    char __pad_111[3];  // 0x111
     unsigned int q114;  // 0x114
     unsigned char q118;  // 0x118
+    char __pad_119[3];  // 0x119
     unsigned char q11C;  // 0x11C
+    char __pad_11D[3];  // 0x11D
     unsigned char q120;  // 0x120
+    char __pad_121[7];  // 0x121
     unsigned char q128;  // 0x128
+    char __pad_129[3];  // 0x129
     unsigned char q12C;  // 0x12C
+    char __pad_12D[3];  // 0x12D
     int q130;  // 0x130
     unsigned char q134;  // 0x134
+    char __pad_135[3];  // 0x135
     unsigned char q138;  // 0x138
+    char __pad_139[7];  // 0x139
     unsigned char q140;  // 0x140
+    char __pad_141[3];  // 0x141
     unsigned char q144;  // 0x144
-    unsigned int CreateTeamCommand_field_0x4;
-    unsigned int *__pad_0;
-    unsigned int *__pad_14;
-    unsigned int *m_1;
-    unsigned int q0042;
-    unsigned int q0046;
-    unsigned int u32_539C;
-    unsigned int q00C;
+    char __pad_145[168];  // 0x145
+    char CreateTeamCommand_field_0x1ED[4];  // 0x1ED
+    char __pad_1F1[1];  // 0x1F1
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int vt02();  // 0x535CF0
     unsigned int * performAction_148();  // 0x537350
@@ -486,13 +521,6 @@ struct CreateTeamCommand {
     wchar_t * performAction_5(void * aTxtStructureTa_0);
     wchar_t * performAction_8(void * aTxtDefenseTab);
     wchar_t * performAction_27(void * aTxtNextObject);
-
-    unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    unsigned char qA5C;  // X10 supply (member_lookup)
-    unsigned int u32_30;  // X10 supply (member_lookup)
-    unsigned char __pad_00C;  // 0xC [X30:canon]
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-    unsigned char __pad_01A;  // 0x1A [X30:canon]
-    int vtable1;  // 0x0 [X30:type_map]
+#pragma pack(pop)
 };
 } // namespace gamemd

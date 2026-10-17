@@ -7,8 +7,11 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct ConnectionPointClass_9 {
+    char __pad_0[4];  // 0x0
+    int q004;  // 0x4
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, unsigned int * a3);  // 0x4A1280
     int  EnumConnections(int a2);  // 0x4A0F70
@@ -16,12 +19,5 @@ struct ConnectionPointClass_9 {
     int  Advise(unsigned int * a2);  // 0x4A1360
     unsigned int * QueryInterface(char a2);
     unsigned int  Unadvise(int a2);  // 0x4A13A0
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    char __pad_0[4];  // 0x0 [X30:member_lookup]
 };
 } // namespace gamemd

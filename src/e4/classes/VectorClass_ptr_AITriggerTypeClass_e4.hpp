@@ -8,13 +8,15 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_AITriggerTypeClass {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_AITriggerTypeClass___(char a2);  // 0x4EF710
     DynamicVector *  Constructor_VectorClass_TriggerClass___(char a2);  // 0x4EF9E0
@@ -33,6 +35,5 @@ struct VectorClass_ptr_AITriggerTypeClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4E9B50
     char  SetCapacity_1(int a2, unsigned int * a3);  // 0x4EA5A0
     int  FindItemIndex_1(unsigned int * a2);  // 0x4EA8B0
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

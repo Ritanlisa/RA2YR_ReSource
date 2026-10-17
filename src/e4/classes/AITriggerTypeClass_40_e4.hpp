@@ -8,9 +8,12 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct AITriggerTypeClass_40 {
+    unsigned int __pad_0;  // 0x0
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
+    int q010;  // 0x10
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x420370
     wchar_t *  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x4203C0
@@ -24,19 +27,5 @@ struct AITriggerTypeClass_40 {
     DynamicVector *  Constructor_VectorClass_AlphaLightingRemapClass___(char a2);  // 0x420680
     unsigned int  PointerToIndex(int a2);  // 0x4203A0
     unsigned int  Write(int a2);  // 0x420530
-    unsigned int *m_1;  // supplied (C2039)
-    unsigned int *m_10;  // supplied (C2039)
-    unsigned int *m_8;  // supplied (C2039)
-    unsigned int *m_C;  // supplied (C2039)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    int q008;  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
-    int q010;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

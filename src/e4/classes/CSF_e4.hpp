@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct CSF {
+    int CSF_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int CSF_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     wchar_t * GetTeamString();
 };

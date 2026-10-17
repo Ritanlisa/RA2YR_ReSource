@@ -6,18 +6,19 @@
 namespace gamemd {
 
 struct GaugeClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char Enabled;  // 0x15
+    int __pad_004;  // 0x4
+    int GaugeClass_field_0x08;  // 0x8
+    int GaugeClass_field_0x0C;  // 0xC
+    int GaugeClass_field_0x10;  // 0x10
+    int GaugeClass_field_0x14;  // 0x14
+    int GaugeClass_field_0x18;  // 0x18
+    int GaugeClass_field_0x1C;  // 0x1C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     GaugeClass * QueryInterface(unsigned int * Block, char a2);
     int Draw(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     int Stub();
-    unsigned char u32_2D;  // 0x2D (offset-truth)
-
-    unsigned int u32_34;  // X10 supply (member_lookup)
-    int __pad_004;  // 0x4 [X30:type_map]
-    unsigned char __pad_019;  // 0x19 [X30:canon]
 };
 
 } // namespace gamemd

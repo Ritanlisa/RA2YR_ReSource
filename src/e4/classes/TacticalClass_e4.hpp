@@ -10,7 +10,6 @@ class DrawTerrain;  // G42.36 fwd supply
 struct CellClass;  // fix_fwd_type_supply
 
 struct TacticalClass {
-// --- flat members (BEGIN) ---
     int vfptr;  // 0x0
     void* vfptr1;  // 0x4
     void* vfptr2;  // 0x8
@@ -20,10 +19,10 @@ struct TacticalClass {
     void* nextArrayIndex;  // 0x18
     void* referenceCount;  // 0x1C
     void* NeedsSaveOrLink;  // 0x20
-unsigned int field24;  // 0x24 [X35-L7 kind=unsigned int]
+    unsigned int field24;  // 0x24
     unsigned int field28;  // 0x28
     unsigned int TacticalClass_field_2C;  // 0x2C
-unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
+    unsigned int field30;  // 0x30
     unsigned int field34;  // 0x34
     unsigned int field38;  // 0x38
     unsigned int TacticalClass_field_3C;  // 0x3C
@@ -38,6 +37,7 @@ unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     unsigned int field60;  // 0x60
     unsigned int field64;  // 0x64
     unsigned int field68;  // 0x68
+    int vtable28;  // 0x6C
     unsigned int field70;  // 0x70
     unsigned int field74;  // 0x74
     unsigned int field78;  // 0x78
@@ -55,6 +55,8 @@ unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     unsigned int TacticalClass_field_A8;  // 0xA8
     bool TacticalClass_field_AC;  // 0xAC
     bool TacticalClass_field_AD;  // 0xAD
+    unsigned char __pad_0AE;  // 0xAE
+    char __pad_AF[1];  // 0xAF
     char visibleArea[16];  // 0xB0
     double zoomInFactor;  // 0xC0
     unsigned int TacticalClass_field_C8;  // 0xC8
@@ -64,7 +66,7 @@ unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     unsigned int TacticalClass_field_D8;  // 0xD8
     unsigned int TacticalClass_field_DC;  // 0xDC
     unsigned int visibleCellCount;  // 0xE0
-    CellClass* visibleCells;  // 0xE4
+    char visibleCells[3200];  // 0xE4
     unsigned int TacticalClass_field_D64;  // 0xD64
     unsigned int TacticalClass_field_D68;  // 0xD68
     unsigned int TacticalClass_field_D6C;  // 0xD6C
@@ -73,6 +75,8 @@ unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     unsigned int TacticalClass_field_D78;  // 0xD78
     bool TacticalClass_field_D7C;  // 0xD7C
     bool redrawing;  // 0xD7D
+    unsigned char __pad_D7E;  // 0xD7E
+    char __pad_D7F[1];  // 0xD7F
     unsigned int TacticalClass_field_D80;  // 0xD80
     unsigned int TacticalClass_field_D84;  // 0xD84
     unsigned int TacticalClass_field_D88;  // 0xD88
@@ -85,7 +89,9 @@ unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     unsigned int startTime;  // 0xDA4
     unsigned int TacticalClass_field_DA8;  // 0xDA8
     unsigned int TacticalClass_field_DAC;  // 0xDAC
-    float floats;  // 0xDB0
+    int floats[12];  // 0xDB0
+    unsigned char __pad_DE0;  // 0xDE0
+    char __pad_DE1[3];  // 0xDE1
     char TacticalClass_field_DE4[16];  // 0xDE4
     unsigned int TacticalClass_field_DF4;  // 0xDF4
     double TacticalClass_field_DF8;  // 0xDF8
@@ -94,10 +100,10 @@ unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     double TacticalClass_field_E08;  // 0xE08
     unsigned int TacticalClass_field_E10;  // 0xE10
     unsigned int TacticalClass_field_E14;  // 0xE14
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int SetObserverMode(void *aP1, int a2);
     static int SetPosition(void *aP1, void *a2, void *aP3);
-    void* TransformPixel;  // 0x0 (no offset truth)
     static int updateVisibility(TacticalClass *pThis);
     static int UpdateScrollMaxBounds(TacticalClass *pThis, void *a2);
     static int InitScrollBounds(TacticalClass *pThis, unsigned int *a2);
@@ -154,54 +160,6 @@ unsigned int field30;  // 0x30 [X35-L7 kind=unsigned int]
     int DrawTerrain(int *a2, unsigned int *a4);
     static int FillScanlinesTransparent(int p0, int p1, int p2, int p3);  // x4:signals@0x411330
     static int updateScroll(int p0, int p1);  // x4:signals@0x7343e0
-    unsigned int uniqueId4;  // @0x6d7c19 (W16G3 raw-usage vocab)
-    unsigned int uniqueId5;  // @0x6d7ccd (W16G3 raw-usage vocab)
-    unsigned int abstractFlags6;  // @0x6d30a2 (W16G3 raw-usage vocab)
-    unsigned char *__pad_11B4;  // 0x11B4 (offset-truth)
-    unsigned int q11B0;  // 0x11B0 (offset-truth)
-    unsigned int q11D0;  // 0x11D0 (offset-truth)
-    unsigned int q11D4;  // 0x11D4 (offset-truth)
-    unsigned int q11D8;  // 0x11D8 (offset-truth)
-    unsigned int q11DC;  // 0x11DC (offset-truth)
-    unsigned int q11E0;  // 0x11E0 (offset-truth)
-    unsigned int u32_11A8;  // 0x11A8 (offset-truth)
-    unsigned char u32_11B1;  // 0x11B1 (offset-truth)
-    unsigned char u32_11B2;  // 0x11B2 (offset-truth)
-    unsigned char u32_11B3;  // 0x11B3 (offset-truth)
-    unsigned int u32_11B4;  // 0x11B4 (offset-truth)
-    void* u32_11BC;  // 0x11BC (offset-truth) [X30:type_map]
-    unsigned int u32_11C0;  // 0x11C0 (offset-truth)
-    unsigned int u32_11C4;  // 0x11C4 (offset-truth)
-    unsigned int u32_11C8;  // 0x11C8 (offset-truth)
-
-    unsigned int q140;  // X10 supply (member_lookup)
-    unsigned int u32_11B;  // X10 supply (member_lookup)
-    unsigned int u32_11E;  // X10 supply (member_lookup)
-    unsigned int u32_294;  // X10 supply (member_lookup)
-    unsigned int u32_2E1;  // X10 supply (member_lookup)
-    unsigned char __pad_06C;  // 0x6C [X30:canon]
-    unsigned char __pad_0AE;  // 0xAE [X30:canon]
-    unsigned char __pad_D7E;  // 0xD7E [X30:canon]
-    unsigned char __pad_DE0;  // 0xDE0 [X30:canon]
-    unsigned int attached34;  // [X30:default]
-    unsigned int foggedness;  // [X30:default]
-    unsigned int level;  // [X30:default]
-    unsigned int overlayTypeIndex0;  // [X30:default]
-    unsigned int shroudedness;  // [X30:default]
-    unsigned int unknown707;  // [X30:default]
-    int vtable23;  // 0x58 [X30:member_lookup]
-    unsigned int vtable24;  // 0x5C [X30:member_lookup]
-    int vtable28;  // 0x6C [X30:member_lookup]
-    int vtable46;  // 0xB4 [X30:type_map]
-
-
-    unsigned int u32_B4;  // 0xB4 [X55 W3 supply (render vocab)]
-    unsigned int DisplayClass_field_0x11B0;  // 0x11B0 [X55 W3 supply (render vocab)]
-    unsigned int DisplayClass_field_0x11D0;  // 0x11D0 [X55 W3 supply (render vocab)]
-    unsigned int DisplayClass_field_0x11D4;  // 0x11D4 [X55 W3 supply (render vocab)]
-    unsigned int DisplayClass_field_0x11D8;  // 0x11D8 [X55 W3 supply (render vocab)]
-    unsigned int DisplayClass_field_0x11DC;  // 0x11DC [X55 W3 supply (render vocab)]
-    unsigned int DisplayClass_field_0x11E0;  // 0x11E0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

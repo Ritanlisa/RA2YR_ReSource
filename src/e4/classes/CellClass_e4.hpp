@@ -15,41 +15,42 @@ struct RadSiteClass;  // fix_fwd_type_supply
 struct HouseClass;  // fix_fwd_type_supply
 
 struct CellClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    void* RevealFogRect_ph;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     LightConvertClass* lightConvert;  // 0x10
-    int unknown30;  // 0x12
-    bool IsAllocated;  // 0x13
-    void* isoTileTypeIndex;  // 0x14 [X30:type_map]
+    void* isoTileTypeIndex;  // 0x14
     TagClass* attachedTag;  // 0x18
     BuildingTypeClass* rubble;  // 0x1C
     int overlayTypeIndex;  // 0x20
     int smudgeTypeIndex;  // 0x24
-    unsigned int alignmentPadding;  // 0x33
-    ObjectClass* attached3;  // 0x34 [X30:type_map]
-    unsigned int CellClass_field_4C;  // 0x4C
+    int __pad_28;  // 0x28
     unsigned int q02C;  // 0x2C
+    char __pad_30[3];  // 0x30
+    unsigned char alignmentPadding;  // 0x33
+    ObjectClass* attached3;  // 0x34
+    unsigned char __pad_038;  // 0x38
+    char __pad_39[19];  // 0x39
+    unsigned int CellClass_field_4C;  // 0x4C
     int wallOwnerIndex;  // 0x50
     int infantryOwnerIndex;  // 0x54
     int altInfantryOwnerIndex;  // 0x58
     unsigned int CellClass_field_5C;  // 0x5C
     unsigned int unknown60;  // 0x60
     unsigned int unknown64;  // 0x64
-unsigned int unknown68;  // 0x68 [X35-L7 kind=unsigned int]
+    unsigned int unknown68;  // 0x68
     unsigned int CellClass_field_6C;  // 0x6C
     unsigned int unknown70;  // 0x70
-unsigned int unknown74;  // 0x74 [X35-L7 kind=unsigned int]
-unsigned int cloakedByHouses;  // 0x78 [X35-L7 kind=unsigned int]
-    unsigned char sensorsOfHouses;  // 0x7C
-    unsigned char disguiseAsType_sensors_of_houses;  // 0xAC
-    AbstractClass* baseSpacerOfHouses;  // 0xDC [X30:type_map]
+    unsigned int unknown74;  // 0x74
+    unsigned int cloakedByHouses;  // 0x78
+    int sensorsOfHouses[12];  // 0x7C
+    int disguiseAsType_sensors_of_houses[12];  // 0xAC
+    AbstractClass* baseSpacerOfHouses;  // 0xDC
     FootClass* jumpjet;  // 0xE0
     ObjectClass* firstObject;  // 0xE4
     ObjectClass* altObject;  // 0xE8
-    AbstractClass* landType;  // 0xEC [X30:type_map]
+    AbstractClass* landType;  // 0xEC
     double radLevel;  // 0xF0
     RadSiteClass* radSite;  // 0xF8
     unsigned int CellClass_field_FC;  // 0xFC
@@ -62,7 +63,7 @@ unsigned int cloakedByHouses;  // 0x78 [X35-L7 kind=unsigned int]
     unsigned short unknown110;  // 0x110
     unsigned short unknown112;  // 0x112
     unsigned short unknown114;  // 0x114
-short tubeIndex;  // 0x116 [X35-L7 kind=short]
+    short tubeIndex;  // 0x116
     char unknown118[1];  // 0x118
     char unknown119[1];  // 0x119
     char height[1];  // 0x11A
@@ -71,23 +72,22 @@ short tubeIndex;  // 0x116 [X35-L7 kind=short]
     unsigned char CellClass_field_11D;  // 0x11D
     unsigned char powerup;  // 0x11E
     unsigned char CellClass_field_11F;  // 0x11F
-    int shroudedness;  // 0x120 [X30:type_map]
+    char shroudedness[1];  // 0x120
     char foggedness[1];  // 0x121
     unsigned char blockedNeighbours;  // 0x122
     unsigned char align123;  // 0x123
     unsigned int occupationFlags;  // 0x124
     unsigned int altOccupationFlags;  // 0x128
-    int copyFlags;  // 0x12C [X30:type_map]
-    int shroudCounter;  // 0x130 [X30:type_map]
-unsigned int gapsCoveringThisCell;  // 0x134 [X35-L7 kind=unsigned int]
+    int copyFlags;  // 0x12C
+    int shroudCounter;  // 0x130
+    unsigned int gapsCoveringThisCell;  // 0x134
     bool visibilityChanged;  // 0x138
-    unsigned char align139;  // 0x139
+    char align139[3];  // 0x139
     unsigned int CellClass_field_13C;  // 0x13C
-    void* flags;  // 0x140 [X30:type_map]
-    unsigned char padding144;  // 0x144
+    void* flags;  // 0x140
+    int padding144;  // 0x144
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    unsigned int mapCoords[2];  // G42.34 T11: initCellData body 0x588C40 does IDA_LOWORD/HIWORD(this->mapCoords[0]) (CellStruct 2-word truth); scalar form C2109
-    void* RevealFogRect_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon CellClass::RevealFogRect is a method)
     static unsigned int RevealFogRect(int16_t* p0);  // x4:signals@0x6565a0
     char UpdateTerrain(unsigned short *aP0, int aP1);  // G57w10-S raw 0x0056F8B0 IUnknown 占位清除
     char UpdateTileVariant2(unsigned short *aP0, int aP1);  // G57w10-S raw 0x0056FC80 IUnknown 占位清除
@@ -149,14 +149,6 @@ static int * GetCoords(CellClass * aP1, int *a2);
     static int InitRandomOffsets(int p0, int p1);  // x4:signals@0x4814f0
     static int ProcessUpdate(CellClass *p_this);  // x4:ida@0x5a7b40
     static int FindOpenNeighbor(int* p0, int p1, int p2, int p3, int p4, int p5, int p6);  // x4:signals@0x4aa440
-    void* q028;  // 0x28 (canon-mt)
-    unsigned int u32_2F4;  // 0x2F4 (offset-truth)
-
-    unsigned char __pad_038;  // X10 supply (csp_canon_members)
-    unsigned int q002;  // X10 supply (member_lookup)
-    unsigned char u32_568;  // 0x568
-    int __pad_028;  // 0x28 [X30:type_map]
-    int __pad_28;  // 0x28 [X30:type_map]
 };
 
 } // namespace gamemd

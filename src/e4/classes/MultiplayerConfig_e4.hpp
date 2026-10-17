@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct MultiplayerConfig {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void __cdecl Cleanup(void *a1 = 0);
 };

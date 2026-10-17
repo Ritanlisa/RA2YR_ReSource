@@ -6,15 +6,15 @@
 namespace gamemd {
 
 struct Conflict {
-// --- flat members (BEGIN) ---
+    int __pad_000;  // 0x0
     Territory* Attacker;  // 0x4
     Territory* Defender;  // 0x8
-    void* Outcome;  // 0xC [X30:type_map]
+    void* Outcome;  // 0xC
     unsigned int referenceCount;  // 0x10
+    unsigned int __pad_014;  // 0x14
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetOwnerHouse();
-    int __pad_000;  // 0x0 [X30:type_map]
-    unsigned char __pad_014;  // 0x14 [X30:canon]
 };
 
 } // namespace gamemd

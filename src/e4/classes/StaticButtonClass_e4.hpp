@@ -6,19 +6,16 @@
 namespace gamemd {
 
 struct StaticButtonClass {
+    int __pad_0;  // 0x0
+    unsigned int __pad_004;  // 0x4
+    int StaticButtonClass_field_0x08;  // 0x8
+    int StaticButtonClass_field_0x0C;  // 0xC
+    int StaticButtonClass_field_0x10;  // 0x10
+    int StaticButtonClass_field_0x14;  // 0x14
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    char Enabled;  // 0x15
 // --- flat members (END) ---
     StaticButtonClass * QueryInterface(char a2);
     static void Draw(void * aP0, wchar_t * aP1, int aP2);
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned char q00C6;  // 0xC6 (offset-truth)
-
-    unsigned int u32_30;  // X10 supply (member_lookup)
-    unsigned int u32_90;  // 0x90
-    unsigned char __pad_004;  // 0x4 [X30:canon]
-    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

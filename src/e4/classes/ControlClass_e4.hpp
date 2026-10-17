@@ -6,11 +6,12 @@
 
 namespace gamemd {
 struct ControlClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    int __pad_004;  // 0x4
+    int ControlClass_field_0x08;  // 0x8
+    int ControlClass_field_0x0C;  // 0xC
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    unsigned char q000[16];  // 0x0 (canon size filler)
     static unsigned int * Construct(void *aP1, int a2, int a3, int a4, int a5, int a6, int a7, char a8);
-    int __pad_004;  // 0x4 [X30:type_map]
 };
 } // namespace gamemd

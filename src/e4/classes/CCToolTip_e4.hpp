@@ -6,11 +6,15 @@
 namespace gamemd {
 
 struct CCToolTip {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned int __pad_004;  // 0x4
+    int CCToolTip_field_0x08;  // 0x8
+    int CCToolTip_field_0x0C;  // 0xC
+    int CCToolTip_field_0x10;  // 0x10
+    int CCToolTip_field_0x14;  // 0x14
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     CCToolTip * QueryInterface(unsigned int * Block, char a2);
-    unsigned char __pad_004;  // 0x4 [X30:canon]
 };
 
 } // namespace gamemd

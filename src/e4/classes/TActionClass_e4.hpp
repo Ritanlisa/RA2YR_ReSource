@@ -13,41 +13,34 @@ struct AnimClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 
 struct TActionClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    int idxArray;  // 0x24 [X30:type_map]
+    int idxArray;  // 0x24
     void* TActionClass_field_28;  // 0x28
-    AbstractClass* TActionClass_field_2C;  // 0x2C [X30:type_map]
-void* TActionClass_field_30;  // 0x30 [X35-L7 kind=void*]
-    unsigned int alignmentPadding;  // 0x33
-void* TActionClass_field_34;  // 0x34 [X35-L7 kind=void*]
+    AbstractClass* TActionClass_field_2C;  // 0x2C
+    void* TActionClass_field_30;  // 0x30
+    void* TActionClass_field_34;  // 0x34
     void* TActionClass_field_38;  // 0x38
-    AbstractClass* TActionClass_field_3C;  // 0x3C [X30:type_map]
-void* TActionClass_field_40;  // 0x40 [X35-L7 kind=void*]
+    AbstractClass* TActionClass_field_3C;  // 0x3C
+    void* TActionClass_field_40;  // 0x40
     AbstractClass * TActionClass_field_44;  // 0x44
     void* TActionClass_field_48;  // 0x48
-    AbstractClass* TActionClass_field_4C;  // 0x4C [X30:type_map]
+    AbstractClass* TActionClass_field_4C;  // 0x4C
     void* TActionClass_field_50;  // 0x50
-    char Bounds[4];  // 0x52
     unsigned char TActionClass_field_54;  // 0x54
-    unsigned char pad_55;  // 0x55
-    int Waypoint;  // 0x68
+    char pad_55[24];  // 0x55
     unsigned char TActionClass_field_6D;  // 0x6D
-    unsigned char pad_6E;  // 0x6E
-    TagTypeClass* TagType;  // 0x76
-    TriggerTypeClass* TriggerType;  // 0x80
-    unsigned int TechnoID;  // 0x84
-    void* Value;  // 0x90
+    char pad_6E[73];  // 0x6E
+    unsigned char __pad_0B7;  // 0xB7
     void* TActionClass_field_90;  // 0xB8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char ConvertHouseUnits(int a2, int _14, unsigned int *a3, int aP4);  // G57w10-S raw 0x006E0B60 IUnknown 占位清除
     char CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, int aP4);  // G57w10-S raw 0x006E2390 IUnknown 占位清除
@@ -107,28 +100,6 @@ char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4
     int executeSellAction();
     unsigned int * executeHarvestAction(int a2, MouseClass * aP2);
     void executeDetonateAction();
-    unsigned int u32_10C;  // 0x10C (offset-truth)
-    unsigned char u32_1F7;  // 0x1F7 (offset-truth)
-    unsigned int u32_1F8;  // 0x1F8 (offset-truth)
-unsigned int u32_298;  // 0x298 [X35-L7 kind=unsigned int]
-    unsigned int u32_53A0;  // 0x53A0 (offset-truth)
-    unsigned int u32_5494;  // 0x5494 (offset-truth)
-    unsigned int u32_54F0;  // 0x54F0 (offset-truth)
-    unsigned int u32_54F4;  // 0x54F4 (offset-truth)
-    IUnknown* u32_54FC;  // 0x54FC (offset-truth) [X30:type_map]
-
-    unsigned char HouseClass_A20[4];  /* HouseClass */  // X10 supply (member_lookup)
-    void* q348;  // X10 supply (member_lookup)
-    unsigned int u32_114;  // X10 supply (member_lookup)
-    unsigned int u32_118;  // X10 supply (member_lookup)
-    unsigned int u32_11C;  // X10 supply (member_lookup)
-    unsigned int u32_13C;  // X10 supply (member_lookup)
-    unsigned int u32_27D;  // X10 supply (member_lookup)
-    unsigned int u32_F4;  // X10 supply (member_lookup)
-    unsigned int u32_FC;  // X10 supply (member_lookup)
-    unsigned char __pad_0B7;  // 0xB7 [X30:canon]
-    unsigned int AbstractClass_10C;  // [X30:default]
-    unsigned int ParticleSystemClass_110;  // [X30:default]
 };
 
 } // namespace gamemd

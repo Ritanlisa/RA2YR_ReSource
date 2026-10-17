@@ -6,22 +6,20 @@
 namespace gamemd {
 
 struct MSVQAnim {
+    void* __pad_0;  // 0x0
+    int __pad_004;  // 0x4
+    int MSVQAnim_field_0x08;  // 0x8
+    int MSVQAnim_field_0x0C;  // 0xC
+    int MSVQAnim_field_0x10;  // 0x10
+    int MSVQAnim_field_0x14;  // 0x14
+    int MSVQAnim_field_0x18;  // 0x18
+    int MSVQAnim_field_0x1C;  // 0x1C
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
 // --- flat members (END) ---
     MSVQAnim * QueryInterface(char a2);
     int Stub();
     void * GetFrameRect(int * a2);
     unsigned int * ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a);  // 0x5ccc30
-void* q000;  // 0x0 [X35-L7 kind=void*]
-    unsigned int u32_28;  // 0x28 (offset-truth)
-    unsigned char u32_2D;  // 0x2D (offset-truth)
-
-    uint8_t MSVQAnim_field_0x1C;  // X10 supply (member_types)
-
-    int q01C;  // X10 supply (member_lookup)
-    int __pad_004;  // 0x4 [X30:type_map]
-void* __pad_0;  // 0x0 [X35-L7 kind=void*]
 };
 
 } // namespace gamemd

@@ -6,8 +6,16 @@
 namespace gamemd {
 
 struct Lobby {
+    int __pad_000;  // 0x0
+    int Lobby_field_0x04;  // 0x4
+    int Lobby_field_0x08;  // 0x8
+    int Lobby_field_0x0C;  // 0xC
+    int Lobby_field_0x10;  // 0x10
+    int Lobby_field_0x14;  // 0x14
+    int Lobby_field_0x18;  // 0x18
+    int Lobby_field_0x1C;  // 0x1C
+    int Lobby_field_0x20;  // 0x20
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int BuildPlayerList();
     int InvalidatePlayerSlots(HWND hDlg);
@@ -21,7 +29,6 @@ struct Lobby {
     int UpdateReadyIcons();
     int EnableStartButton();
     int SetupAllFactionSlots();
-    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

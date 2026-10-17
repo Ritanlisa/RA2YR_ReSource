@@ -14,9 +14,47 @@ struct CellStruct;  // fix_fwd_type_supply
 #endif // GAMEMD_TREE_UNIVERSE / GAMEMD_E4_MATH_ALIASES (Game fwd)
 struct Coord;  // fix_fwd_type_supply
 struct Game {
-// --- flat members (BEGIN) ---
+    unsigned int __pad_0;  // 0x0
     AbstractClass * ptr_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
+    unsigned char __pad_00C;  // 0xC
+    char __pad_D[19];  // 0xD
+    unsigned int q020;  // 0x20
+    int u32_24;  // 0x24
+    unsigned char q028[16];  // 0x28
+    int q038;  // 0x38
+    int q03C;  // 0x3C
+    int q040;  // 0x40
+    char __pad_44[4];  // 0x44
+    unsigned int u32_48;  // 0x48
+    unsigned int u32_4C;  // 0x4C
+    char __pad_50[4];  // 0x50
+    unsigned int u32_54;  // 0x54
+    unsigned char q058;  // 0x58
+    char __pad_59[3];  // 0x59
+    unsigned int u32_5C;  // 0x5C
+    char __pad_60[98];  // 0x60
+    unsigned char u32_C2;  // 0xC2
+    char __pad_C3[133];  // 0xC3
+    int q148;  // 0x148
+    char __pad_14C[16];  // 0x14C
+    int q15C;  // 0x15C
+    char __pad_160[20];  // 0x160
+    int q174;  // 0x174
+    char __pad_178[4];  // 0x178
+    int q17C;  // 0x17C
+    char __pad_180[258];  // 0x180
+    unsigned char q0282;  // 0x282
+    char __pad_283[125];  // 0x283
+    int q300;  // 0x300
+    char __pad_304[16];  // 0x304
+    int q314;  // 0x314
+    int q318;  // 0x318
+    char __pad_31C[868];  // 0x31C
+    int q680;  // 0x680
+    char __pad_684[116];  // 0x684
+    int Game_field_0x6F8;  // 0x6F8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char LoadSaved();
     void initScenario(void *a1_1);  // 0x430980
@@ -65,49 +103,5 @@ struct Game {
     int SetDword30(int a2);
     Game * * sub_634B20();
     HashTable_flat * * StartModemMultiplayer(ObjectClass *a2, char a3);
-    unsigned char u32_C2;  // 0xC2 (offset-truth)
-
-    unsigned char Mixer_14C0[4];  /* Mixer */  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
-    unsigned int q020;  // X10 supply (member_lookup)
-    unsigned char q028[16];  /* char[16] */  // X10 supply (member_lookup)
-    int q038;  // X10 supply (member_lookup)
-    int q03C;  // X10 supply (member_lookup)
-    int q040;  // X10 supply (member_lookup)
-    unsigned char q058;  // X10 supply (member_lookup)
-    int q148;  // X10 supply (member_lookup)
-    int q15C;  // X10 supply (member_lookup)
-    int q174;  // X10 supply (member_lookup)
-    int q17C;  // X10 supply (member_lookup)
-    int q300;  // X10 supply (member_lookup)
-    int q314;  // X10 supply (member_lookup)
-    int q318;  // X10 supply (member_lookup)
-    int q680;  // X10 supply (member_lookup)
-    unsigned int u32_11E4;  // X10 supply (member_lookup)
-    unsigned int u32_11EC;  // X10 supply (member_lookup)
-    unsigned int u32_120C;  // X10 supply (member_lookup)
-    unsigned int u32_1210;  // X10 supply (member_lookup)
-    unsigned int u32_1214;  // X10 supply (member_lookup)
-    unsigned int u32_1218;  // X10 supply (member_lookup)
-    unsigned int u32_14AC;  // X10 supply (member_lookup)
-    unsigned int u32_14B4;  // X10 supply (member_lookup)
-    unsigned int u32_14FC;  // X10 supply (member_lookup)
-    int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_29;  // X10 supply (member_lookup)
-    unsigned int u32_35;  // X10 supply (member_lookup)
-    unsigned int u32_48;  // X10 supply (member_lookup)
-    unsigned int u32_4C;  // X10 supply (member_lookup)
-    unsigned int u32_5300;  // X10 supply (member_lookup)
-    unsigned int u32_54;  // X10 supply (member_lookup)
-    unsigned int u32_5C;  // X10 supply (member_lookup)
-    unsigned char u8_14BC;  // X10 supply (member_lookup)
-    unsigned char u8_14BD;  // X10 supply (member_lookup)
-    unsigned char u8_14D9;  // X10 supply (member_lookup)
-    unsigned char u8_14DA;  // X10 supply (member_lookup)
-    unsigned int q0282;  // 0x282
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

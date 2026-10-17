@@ -5,11 +5,12 @@
 
 namespace gamemd {
 struct BufferIOFile {
-// --- flat members (BEGIN) ---
+    unsigned int * q000;  // 0x0
+    char __pad_4[80];  // 0x4
     int m_54;  // 0x54
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Constructor(char *Source, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x47A9D0
     int Init(void *a1 = 0, void *a2 = 0);  // 0x47AA30
-    unsigned int *q000;  // 0x0 (canon-mt)
 };
 } // namespace gamemd

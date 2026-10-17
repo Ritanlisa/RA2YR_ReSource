@@ -8,30 +8,28 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct TEventClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    int eventType;  // 0x24 [X30:type_map]
-int TEventClass_field_28;  // 0x28 [X35-L7 kind=int]
-    int TEventClass_field_2C;  // 0x2C [X30:type_map]
-    int TEventClass_field_30;  // 0x30 [X30:type_map]
-    unsigned int alignmentPadding;  // 0x33
-    int TEventClass_field_34;  // 0x34 [X30:type_map]
-    char TEventClass_field_38;  // 0x38
-int TEventClass_field_48;  // 0x48 [X35-L7 kind=int]
+    int eventType;  // 0x24
+    int TEventClass_field_28;  // 0x28
+    int TEventClass_field_2C;  // 0x2C
+    int TEventClass_field_30;  // 0x30
+    int TEventClass_field_34;  // 0x34
+    int TEventClass_field_38[4];  // 0x38
+    int TEventClass_field_48;  // 0x48
     char TEventClass_field_4C[4];  // 0x4C
-int TEventClass_field_50;  // 0x50 [X35-L7 kind=int]
-    int TEventClass_field_54;  // 0x54 [X30:type_map]
-int TEventClass_field_58;  // 0x58 [X35-L7 kind=int]
+    int TEventClass_field_50;  // 0x50
+    int TEventClass_field_54;  // 0x54
+    int TEventClass_field_58;  // 0x58
     char TEventClass_field_5C[4];  // 0x5C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     DynamicVector * Execute(int a2, int a3, int a4, int *a5, int a6, int a7);
     int CheckConditions(int a2, int a3);

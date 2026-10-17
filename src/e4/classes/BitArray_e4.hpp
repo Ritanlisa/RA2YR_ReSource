@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct BitArray {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int TestBit(int a1, int a2);
 };

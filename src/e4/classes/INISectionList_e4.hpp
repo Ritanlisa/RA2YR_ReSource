@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct INISectionList {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 };

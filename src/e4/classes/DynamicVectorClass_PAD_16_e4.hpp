@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVectorClass_PAD_16 {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int Items;  // 0x4
     unsigned int Capacity;  // 0x8
     unsigned char IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Get(int a2, void *a2_2);  // 0x49EA00
     char Add(int a2, void *a2_2, void *a3_1);  // 0x49EB50
@@ -21,8 +22,5 @@ struct DynamicVectorClass_PAD_16 {
     int  GetSize(unsigned int * a2);  // 0x49EC70
     VectorClass_flat *  QueryInterface(char a2);  // 0x49EFF0
     unsigned int  GetCapacity(int a2);  // 0x49ECB0
-    unsigned int m_8;  // pad compile-supply (G41.47)
-    unsigned char m_1[64];  // pad compile-supply (G41.47)
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

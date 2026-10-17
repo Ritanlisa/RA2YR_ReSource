@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct ActionQueue {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * PushEntry(int a2, int a3, int a4, void *a1 = 0);
 };

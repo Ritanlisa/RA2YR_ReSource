@@ -5,33 +5,27 @@
 
 namespace gamemd {
 struct Factory {
-// --- flat members (BEGIN) ---
-    void* q004;  // 0x4
-    void* q008;  // 0x8
-    void* q010;  // 0x10
+    unsigned int __pad_0;  // 0x0
+    unsigned int field_4;  // 0x4
+    unsigned int field_8;  // 0x8
+    char __pad_C[4];  // 0xC
+    unsigned int field_10;  // 0x10
+    char __pad_14[32];  // 0x14
     void* q034;  // 0x34
+    char __pad_38[100];  // 0x38
     void* q09C;  // 0x9C
+    char __pad_A0[144];  // 0xA0
     void* q130;  // 0x130
+    char __pad_134[328];  // 0x134
     void* q27C;  // 0x27C
+    char __pad_280[132];  // 0x280
     void* q304;  // 0x304
+    char __pad_308[668];  // 0x308
     void* q5A4;  // 0x5A4
-    void* q834;  // 0x834
-    void* q1444;  // 0x1444
-    void* q1590;  // 0x1590
-    void* q2100;  // 0x2100
-    void* q5188;  // 0x5188
-    void* q5520;  // 0x5520
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int GetLinkedIndex(int aP1);  // 0x663D60
     int FindExitCellByName(void *a1 = 0);  // 0x523C90
     int IdleHandler();  // 0x731CD0
-
-    unsigned char q000[4];  /* char[4] */  // X10 supply (member_lookup)
-    unsigned int field_10;  // [X30:default]
-    unsigned int field_4;  // [X30:default]
-    unsigned int field_8;  // [X30:default]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

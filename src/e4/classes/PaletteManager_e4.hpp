@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct PaletteManager {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Load(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
 };

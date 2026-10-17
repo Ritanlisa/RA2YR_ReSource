@@ -6,13 +6,11 @@
 namespace gamemd {
 
 struct Window {
+    int Window_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Window_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     static char ClampToScreen(int * a1);
     int IsVisible();
-    unsigned int u32_18;  // 0x18 (offset-truth)
-    unsigned char u32_19;  // 0x19 (offset-truth)
 };
 
 } // namespace gamemd

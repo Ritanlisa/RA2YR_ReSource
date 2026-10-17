@@ -22,21 +22,73 @@ struct ParticleSystemClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
 struct House {
-// --- flat members (BEGIN) ---
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[1];  // 0x1
+    char House_field_0x2[4];  // 0x2
+    char __pad_6[2];  // 0x6
+    int q008;  // 0x8
+    unsigned char u32_C[29];  // 0xC
+    char House_field_0x29[4];  // 0x29
+    char __pad_2D[3];  // 0x2D
+    unsigned int u32_30;  // 0x30
+    unsigned int u32_34;  // 0x34
+    unsigned int u32_38;  // 0x38
+    char __pad_3C[4];  // 0x3C
     AbstractClass * ptr_40;  // 0x40
-#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
     TypeList * ptr_44;  // 0x44
-#else
-    void* ptr_44;  // 0x44  // X27: template-carrier
-#endif  // X27: template-carrier universe fallback
+    unsigned char __pad_048;  // 0x48
+    char __pad_49[3];  // 0x49
+    unsigned int u32_4C;  // 0x4C
+    char __pad_50[28];  // 0x50
+    unsigned int u32_6C;  // 0x6C
+    char __pad_70[8];  // 0x70
+    int q078;  // 0x78
+    char __pad_7C[40];  // 0x7C
+    unsigned int u32_A4;  // 0xA4
+    char __pad_A8[30];  // 0xA8
+    unsigned char u32_C6;  // 0xC6
+    char __pad_C7[1];  // 0xC7
+    unsigned int u32_C8;  // 0xC8
+    char __pad_CC[32];  // 0xCC
+    unsigned int u32_EC;  // 0xEC
+    char __pad_F0[38];  // 0xF0
+    unsigned char u32_116;  // 0x116
+    char __pad_117[3];  // 0x117
+    unsigned char u32_11A;  // 0x11A
+    char u32_11B;  // 0x11B
+    unsigned int u32_11C;  // 0x11C
+    char __pad_120[32];  // 0x120
+    unsigned int u32_140;  // 0x140
+    char __pad_144[168];  // 0x144
+    int House_field_0x1EC;  // 0x1EC
+    char __pad_1F0[48];  // 0x1F0
     AbstractClass * ptr_220;  // 0x220
+    unsigned char __pad_224;  // 0x224
+    char __pad_225[35];  // 0x225
     ProgressTimer * ptr_248;  // 0x248
+    unsigned char __pad_24C;  // 0x24C
+    char __pad_24D[3];  // 0x24D
+    unsigned int u32_250;  // 0x250
+    char __pad_254[68];  // 0x254
+    int House_field_0x298;  // 0x298
+    char __pad_29C[16];  // 0x29C
+    int House_field_0x2AC;  // 0x2AC
+    char __pad_2B0[64];  // 0x2B0
+    unsigned int u32_2F0;  // 0x2F0
+    int u8_2F4;  // 0x2F4
+    char __pad_2F8[56];  // 0x2F8
     ParticleSystemClass * ptr_330;  // 0x330
     ParticleSystemClass * ptr_334;  // 0x334
-    AnimClass * ptr_468;  // 0x468
-    TimerStruct * ptr_480;  // 0x480
+    unsigned char __pad_338;  // 0x338
+    char __pad_339[154];  // 0x339
+    char House_field_0x3D3[4];  // 0x3D3
+    char __pad_3D7[329];  // 0x3D7
+    int House_field_0x520;  // 0x520
+// --- flat members (BEGIN) ---
+#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
+#else
+#endif  // X27: template-carrier universe fallback
 // --- flat members (END) ---
-    unsigned char __pad_2B0[0x1A0];  // G42.33 b4 C2: flat-carrier vocab ([120] fn-ptr 槽覆盖 0x2B0..0x450)
     int AnnounceUpgrade(int aP1);
     unsigned int * GetStartCoords(unsigned int *aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
@@ -47,59 +99,5 @@ struct House {
     int LoadMapFileData(int a2, char a3, void *a3_1 = 0);  // 0x544C20
     void* Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x69E090
     int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
-    unsigned char u32_702;  // 0x702 (offset-truth)
-    unsigned char u32_C6;  // 0xC6 (offset-truth)
-    unsigned int u32_C8;  // 0xC8 (ml)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_24C;  // X10 supply (csp_canon_members)
-    int q008;  // X10 supply (member_lookup)
-    unsigned char q010;  // X10 supply (member_lookup)
-    int q078;  // X10 supply (member_lookup)
-    int q1EC;  // X10 supply (member_lookup)
-    unsigned int u32_116;  // X10 supply (member_lookup)
-    unsigned int u32_11A;  // X10 supply (member_lookup)
-    char u32_11B;  // X10 supply (member_lookup)
-    unsigned int u32_11C;  // X10 supply (member_lookup)
-    unsigned int u32_11D;  // X10 supply (member_lookup)
-    unsigned int u32_11E;  // X10 supply (member_lookup)
-    unsigned int u32_140;  // X10 supply (member_lookup)
-    unsigned int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_250;  // X10 supply (member_lookup)
-    unsigned int u32_26;  // X10 supply (member_lookup)
-    unsigned int u32_2F0;  // X10 supply (member_lookup)
-    unsigned int u32_34;  // X10 supply (member_lookup)
-    unsigned int u32_38;  // X10 supply (member_lookup)
-    unsigned int u32_4C;  // X10 supply (member_lookup)
-    unsigned int u32_5490;  // X10 supply (member_lookup)
-    unsigned int u32_5494;  // X10 supply (member_lookup)
-    unsigned int u32_54D8;  // X10 supply (member_lookup)
-    unsigned int u32_5600;  // X10 supply (member_lookup)
-    unsigned int u32_5608;  // X10 supply (member_lookup)
-    unsigned int u32_5614;  // X10 supply (member_lookup)
-    unsigned int u32_5640;  // X10 supply (member_lookup)
-    unsigned int u32_5648;  // X10 supply (member_lookup)
-    unsigned int u32_577C;  // X10 supply (member_lookup)
-    unsigned int u32_6C;  // X10 supply (member_lookup)
-    unsigned int u32_A4;  // X10 supply (member_lookup)
-    unsigned char u32_C[29];  /* char[29] */  // X10 supply (member_lookup)
-    unsigned int u32_EC;  // X10 supply (member_lookup)
-    int u8_2F4;  // X10 supply (member_lookup)
-    void* q004;  // 0x4
-    unsigned char __pad_048;  // 0x48 [X30:canon]
-    unsigned char __pad_224;  // 0x224 [X30:canon]
-    unsigned char __pad_338;  // 0x338 [X30:canon]
-    unsigned char __pad_46C;  // 0x46C [X30:canon]
-    unsigned char __pad_484;  // 0x484 [X30:canon]
-    int House_field_0x1EC;  // 0x1EC [X30:type_map]
-    char House_field_0x2[4];  // 0x2 [X30:member_lookup]
-    char House_field_0x29[4];  // 0x29 [X30:member_lookup]
-    char __pad_3D7[329];  // 0x3D7 [X30:member_lookup]
-    AbstractClass* __pad_C;  // 0xC [X30:type_map]
-    unsigned int armorMultiplier;  // [X30:default]
-    unsigned int controlGroup;  // [X30:default]
-
-
-    unsigned int u32_30;  // 0x30 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

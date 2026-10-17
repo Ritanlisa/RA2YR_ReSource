@@ -8,13 +8,15 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     VectorClass_flat *  QueryInterface(char a2);  // 0x54A7B0
     DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x54A800
@@ -24,6 +26,5 @@ struct VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass {
     int  GetSize(unsigned int * a2);  // 0x54A5D0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x54A630
     int  FindItemIndex(unsigned int * a2);  // 0x54A6E0
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

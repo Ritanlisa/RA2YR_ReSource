@@ -8,10 +8,10 @@
 namespace gamemd {
 struct ControlClass;  // fix_fwd_type_supply
 struct String {
+    char __pad_0[3];  // 0x0
+    char m_3[4];  // 0x3
+    char __tail_7[1];  // 0x7
 // --- flat members (BEGIN) ---
-    ObjectClass * ptr_4;  // 0x4
-    unsigned int tail_7;  // 0x7
-    ObjectClass * ptr_8;  // 0x8
 // --- flat members (END) ---
     int AssignWideToChar(char *aP1, char *aP2);  // 0x49B760
     char * AllocAndCopy(RandomStruct * aP1, IUnknown * aP2);
@@ -23,7 +23,6 @@ struct String {
     unsigned int Length(void *a1 = 0);  // 0x7B54B0
     AbstractClass * * Replace(char * SubStr, const char * a3);  // 0x7B57A0
     AbstractClass * * Replace(char * SubStr, const char * a3, void *a3_1 = 0);  // G42.33 b7 static-form sync
-    unsigned char __tail_7[8];  // G42.33 b7 alias (flat-carrier vocab)
     AbstractClass * * Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
     AbstractClass * * Tokenize2(int a2, wchar_t * Str, void ** a4);  // 0x7B7A60
     ObjectClass *  FormatDword(char * Buffer);  // 0x777B30
@@ -56,22 +55,5 @@ struct String {
     int Wrapper5to4(CampaignScore * aP0, int a2, int a3, int a4);  // 0x7CCA19
     // dup-decl: bool Equals(void * aP1);  // def-aligned
     // dup-decl: bool Equals(void * aP1);  // def-aligned
-    unsigned char m_3;  // 0x3 (canon-mt)
-    void * ptr_88;  // 0x88 (offset-truth)
-    unsigned int *q000;  // 0x0 (canon-mt)
-
-    unsigned int u32_1C;  // X10 supply (member_lookup)
-    unsigned int u32_6;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-    unsigned char u8_1;  // X10 supply (member_lookup)
-    unsigned int AssignFromPtrthis;  // [X30:default]
-    unsigned int Reassignthis;  // [X30:default]
-unsigned int SessionClass_field_14;  // 0x14 [X35-L7 kind=unsigned int]
-    unsigned int headNode;  // [X30:default]
-    ObjectClass * vtable2;  // 0x4 [X30:member_lookup]
-
-
-    unsigned int u32_4;  // 0x4 [X55 W3 supply (render vocab)]
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

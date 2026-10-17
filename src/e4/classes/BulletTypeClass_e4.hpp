@@ -18,74 +18,71 @@ struct AnimTypeClass;  // fix_fwd_type_supply
 struct BuildingTypeClass;  // fix_fwd_type_supply
 
 struct BulletTypeClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    void* ObjectTypeClass;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     unsigned int uniqueId;  // 0x10
-    unsigned int AG;  // 0x11
-    unsigned int Degenerates;  // 0x12
-    unsigned int Bouncy;  // 0x13
     unsigned int abstractFlags;  // 0x14
-    unsigned char FirersPalette;  // 0x15
     unsigned int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
-    unsigned char NeedsSaveOrLink;  // 0x20
-unsigned int ShrapnelCount;  // 0x24 [X35-L7 kind=unsigned int]
-    bool NoSpawnAlt;  // 0x30
+    int NeedsSaveOrLink;  // 0x20
+    unsigned int ShrapnelCount;  // 0x24
+    unsigned char __pad_028;  // 0x28
+    char __pad_29[7];  // 0x29
+    char __pad_30[1];  // 0x30
+    char __pad_31[3];  // 0x31
+    unsigned char __pad_034;  // 0x34
+    char __pad_35[7];  // 0x35
     unsigned char zero_3C;  // 0x3C
-    unsigned char UINameLabel;  // 0x3D
-    unsigned int Trailer;  // 0x40
-    unsigned int ROT;  // 0x44
-    unsigned int CourseLockDuration;  // 0x48
-    unsigned int SpawnDelay;  // 0x4C
-    unsigned int ScaledSpawnDelay;  // 0x50
-    unsigned int Scalable;  // 0x54
-    unsigned int Arm;  // 0x58
-    unsigned int AnimLow;  // 0x5C
-    unsigned int AnimHigh;  // 0x5D
+    char UINameLabel[32];  // 0x3D
+    unsigned char AnimHigh;  // 0x5D
+    char __pad_5E[2];  // 0x5E
     void * UIName;  // 0x60
-    unsigned char Name;  // 0x64
-    unsigned int tail_95;  // 0x95
+    char Name[49];  // 0x64
+    char tail_95[3];  // 0x95
+    char __pad_98[1];  // 0x98
+    unsigned char __pad_099;  // 0x99
+    char __pad_9A[1];  // 0x9A
     char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int Strength;  // 0xA0
     void * Image;  // 0xA4
     char ImageAllocated;  // 0xA8
+    char __pad_0A9[3];  // 0xA9
     void * AlphaImage;  // 0xAC
     unsigned int MainVoxel;  // 0xB0
     unsigned int TurretVoxel;  // 0xB4
     unsigned int BarrelVoxel;  // 0xB8
-    unsigned char ChargerTurrets;  // 0xBC
-    unsigned char ChargerBarrels;  // 0x104
+    int ChargerTurrets[18];  // 0xBC
+    int ChargerBarrels[18];  // 0x104
+    unsigned char __pad_14C;  // 0x14C
+    char __pad_14D[156];  // 0x14D
+    char align_1E9[3];  // 0x1E9
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
-    char ImageFile;  // 0x1F8
-    bool AlternateArcticArt;  // 0x1F9
-    bool ArcticArtInUse;  // 0x1FA
-    char AlphaImageFile_0x19;  // 0x1FB
-    bool Theater;  // 0x1FC
-    bool Crushable;  // 0x1FD
-    bool Bombable;  // 0x1FE
-    bool RadarInvisible;  // 0x1FF
-    bool Selectable;  // 0x200
-    bool LegalTarget;  // 0x201
-    bool Insignificant;  // 0x202
-    bool Immune;  // 0x203
-    bool IsLogic;  // 0x204
-    bool AllowCellContent;  // 0x205
-    bool Voxel;  // 0x206
-    bool NewTheater;  // 0x207
-    bool HasRadialIndicator;  // 0x208
-    bool IgnoresFirestorm;  // 0x209
-    bool UseLineTrail;  // 0x20A
-    char LineTrailColor[4];  // 0x20C
+    char ImageFile[25];  // 0x1F8
+    char __pad_211;  // 0x211
     unsigned char ArcticArtInUse_d;  // 0x212
-    unsigned char AlphaImageFile;  // 0x213
+    char AlphaImageFile[25];  // 0x213
+    unsigned char __pad_22C;  // 0x22C
+    char Crushable[1];  // 0x22D
+    char Bombable[1];  // 0x22E
+    char RadarInvisible[1];  // 0x22F
+    char Selectable[1];  // 0x230
+    char LegalTarget[1];  // 0x231
     unsigned char Insignificant_d;  // 0x232
+    char __pad_233;  // 0x233
+    char IsLogic[1];  // 0x234
+    char AllowCellContent[1];  // 0x235
     unsigned char Voxel_d;  // 0x236
+    char __pad_237;  // 0x237
+    char HasRadialIndicator[1];  // 0x238
+    char IgnoresFirestorm[1];  // 0x239
+    char UseLineTrail[1];  // 0x23A
+    char LineTrailColor[3];  // 0x23B
+    char align_23E[2];  // 0x23E
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches[80];  // 0x244
     bool Airburst;  // 0x294
@@ -110,33 +107,31 @@ unsigned int ShrapnelCount;  // 0x24 [X35-L7 kind=unsigned int]
     bool Bouncy_d;  // 0x2A7
     bool AnimPalette;  // 0x2A8
     bool FirersPalette_d;  // 0x2A9
-    void* cluster;  // 0x2AC [X30:type_map]
+    unsigned short __pad_2AA;  // 0x2AA
+    void* cluster;  // 0x2AC
     WeaponTypeClass* airburstWeapon;  // 0x2B0
     WeaponTypeClass* shrapnelWeapon;  // 0x2B4
-    void* shrapnelCount;  // 0x2B8 [X30:type_map]
-    void* detonationAltitude;  // 0x2BC [X30:type_map]
+    void* shrapnelCount;  // 0x2B8
+    void* detonationAltitude;  // 0x2BC
     bool Vertical;  // 0x2C0
-    double Elasticity;  // 0x2C4
+    char __pad_2C1[7];  // 0x2C1
     double elasticity;  // 0x2C8
-    int Acceleration;  // 0x2CC
     ColorScheme* Elasticity_d;  // 0x2D0
     AnimTypeClass* Color;  // 0x2D4
-    WeaponTypeClass* Trailer_d;  // 0x2D8 [X30:type_map]
+    WeaponTypeClass* Trailer_d;  // 0x2D8
     int rot;  // 0x2DC
-    void* courseLockDuration;  // 0x2E0 [X30:type_map]
-    void* SpawnDelay_d;  // 0x2E4 [X30:type_map]
-    bool scaledSpawnDelay;  // 0x2E8
-    int Scalable_d;  // 0x2EC
-    unsigned char arm;  // 0x2F0
-    unsigned char AnimHigh_d;  // 0x2F1
-    unsigned char AnimRate;  // 0x2F2
-    bool Flat;  // 0x2F3
+    void* courseLockDuration;  // 0x2E0
+    void* SpawnDelay_d;  // 0x2E4
+    int scaledSpawnDelay;  // 0x2E8
+    unsigned char Scalable_d;  // 0x2EC
+    char __pad_2ED[3];  // 0x2ED
+    int arm;  // 0x2F0
     unsigned char animLow;  // 0x2F4
     unsigned char animHigh;  // 0x2F5
     unsigned char animRate;  // 0x2F6
     bool Flat_d;  // 0x2F7
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* ObjectTypeClass;  // 0x0 (no offset truth)
     static BuildingTypeClass * * ReadArmor();
     BuildingTypeClass * * ReadTrailerAnim();
     BulletTypeClass * ddtor(char a2, int a1, int aP0, int aP1, int aP2, int a3);
@@ -154,26 +149,6 @@ unsigned int ShrapnelCount;  // 0x24 [X35-L7 kind=unsigned int]
     unsigned char * Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     unsigned int * GetROF(unsigned int * a1, int * a2);
     int ProcessPower(int * a2, void *a2_2);
-
-    unsigned char AbstractClass_E58[4];  /* AbstractClass */  // X10 supply (member_lookup)
-    unsigned char __pad_028;  // 0x28 [X30:canon]
-    unsigned char __pad_034;  // 0x34 [X30:canon]
-    unsigned char __pad_099;  // 0x99 [X30:canon]
-    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
-    unsigned char __pad_14C;  // 0x14C [X30:canon]
-char __pad_211;  // 0x211 [X35-L7 kind=char]
-    unsigned char __pad_22C;  // 0x22C [X30:canon]
-char __pad_233;  // 0x233 [X35-L7 kind=char]
-char __pad_237;  // 0x237 [X35-L7 kind=char]
-    unsigned char __pad_2AA;  // 0x2AA [X30:canon]
-    unsigned char __pad_2C1;  // 0x2C1 [X30:canon]
-    unsigned char __pad_2ED;  // 0x2ED [X30:canon]
-    unsigned int AllowCellContent_d;  // [X30:default]
-    unsigned int Immune_d;  // [X30:default]
-    unsigned int IsLogic_d;  // [X30:default]
-    unsigned int LegalTarget_d;  // [X30:default]
-    unsigned int RadarInvisible_d;  // [X30:default]
-    unsigned int Selectable_d;  // [X30:default]
 };
 
 } // namespace gamemd

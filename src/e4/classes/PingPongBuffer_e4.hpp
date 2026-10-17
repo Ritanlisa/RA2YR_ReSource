@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct PingPongBuffer {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int GetWriteOffset();  // x4:empty@0x55af60
 };

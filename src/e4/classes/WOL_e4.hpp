@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct WOL {
+    int WOL_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int WOL_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     void * QueryInterface(char a2);
 };

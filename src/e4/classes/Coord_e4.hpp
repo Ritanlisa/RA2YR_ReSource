@@ -6,9 +6,13 @@
 
 namespace gamemd {
 struct Coord {
+    unsigned short __pad_0;  // 0x0
+    char Coord_field_0x2[4];  // 0x2
+    char __pad_6[2];  // 0x6
+    int Coord_field_0x8;  // 0x8
+    char __pad_C[304];  // 0xC
+    int q13C;  // 0x13C
 // --- flat members (BEGIN) ---
-    Coord * ptr_40;  // 0x40
-    Coord * ptr_44;  // 0x44
 // --- flat members (END) ---
     int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0
     unsigned int * ToCell(unsigned int *aP1);  // G57w10-S raw 0x00413A30 IUnknown 占位清除
@@ -50,32 +54,5 @@ struct Coord {
     int CreateAIPlayer_Potato();
     Coord * * sub_7A2830();
     void * To_Cell(unsigned int *aP1, void *a2 = 0);  // G42.39a static-call supply
-    unsigned int q_2C0;  // +0x2C0 flat supply (CSP-fed)
-    unsigned int u32_1488;  // 0x1488 (offset-truth)
-    unsigned int u32_1490;  // 0x1490 (offset-truth)
-unsigned int u32_1498;  // 0x1498 [X35-L7 kind=unsigned int]
-    unsigned int u32_14A4;  // 0x14A4 (offset-truth)
-    unsigned int u32_14A8;  // 0x14A8 (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char q018;  // X10 supply (member_lookup)
-    int q13C;  // X10 supply (member_lookup)
-    unsigned int u32_140;  // X10 supply (member_lookup)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
-    unsigned int u32_B0;  // X10 supply (member_lookup)
-    unsigned int u32_B4;  // X10 supply (member_lookup)
-    unsigned char __pad_048;  // 0x48 [X30:canon]
-    AbstractClass* __pad_C;  // 0xC [X30:type_map]
-    Coord* q000;  // 0x0 [X30:type_map]
-unsigned int q004;  // 0x4 [X35-L7 kind=unsigned int]
-unsigned int q008;  // 0x8 [X35-L7 kind=unsigned int]
-
-
-    int u32_10;  // 0x10 [X55 W3 supply (render vocab)]
-    int u32_14;  // 0x14 [X55 W3 supply (render vocab)]
-    unsigned int q00C;  // 0xC [X55 W3 supply (render vocab)]
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
-    int Coord_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

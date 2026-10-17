@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_MultiMission {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Get(int a2, void *a1 = 0);  // 0x69C5F0
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x69CD40
@@ -21,6 +22,5 @@ struct VectorClass_ptr_MultiMission {
     int  GetSize(unsigned int * a2);  // 0x69CE60
     unsigned int  GetCapacity(int a2);  // 0x69CEA0
     VectorClass_flat *  QueryInterface(char a2);  // 0x69D590
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

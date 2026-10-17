@@ -7,18 +7,18 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_BuildingTypeClass {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char  Release(int a2, unsigned int * a3);  // 0x4ED8A0
     int  SaveToINI(int a2);  // 0x4E8DD0
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4ED860
     unsigned int Remove(int a2, void *a2_1 = 0);  // 0x4ED980
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F0750
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

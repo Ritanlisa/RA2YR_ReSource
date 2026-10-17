@@ -9,25 +9,27 @@
 namespace gamemd {
 
 struct BombClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-int BombClass_field_28;  // 0x28 [X35-L7 kind=int]
-    void* BombClass_field_2C;  // 0x2C [X30:type_map]
-    unsigned int audioController;  // 0x30
-    unsigned int alignmentPadding;  // 0x33
-int soundIndex;  // 0x44 [X35-L7 kind=int]
-    int BombClass_field_54;  // 0x54 [X30:type_map]
+    unsigned char __pad_024;  // 0x24
+    char __pad_25[3];  // 0x25
+    int BombClass_field_28;  // 0x28
+    void* BombClass_field_2C;  // 0x2C
+    int audioController[5];  // 0x30
+    int soundIndex;  // 0x44
+    unsigned char __pad_048;  // 0x48
+    char __pad_49[11];  // 0x49
+    int BombClass_field_54;  // 0x54
     bool BombClass_field_58;  // 0x58
-    unsigned char pad_59;  // 0x59
+    char pad_59[3];  // 0x59
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BombClass * CopyTo(char a2);
     int InitPool();
@@ -41,11 +43,6 @@ int soundIndex;  // 0x44 [X35-L7 kind=int]
     int AbstractClass();  // 0x4385d0
     BombClass * * sub_56AF40(int a2);
     BombClass * * sub_56B250(int a2);
-    unsigned int q_80;  // +0x80 flat supply (CSP-fed)
-
-    unsigned char __pad_024;  // X10 supply (csp_canon_members)
-    unsigned char __pad_048;  // 0x48 [X30:canon]
-    unsigned int HouseClass_6C;  // [X30:default]
 };
 
 } // namespace gamemd

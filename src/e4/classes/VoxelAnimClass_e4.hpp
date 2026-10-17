@@ -20,46 +20,103 @@ struct HouseClass;  // fix_fwd_type_supply
 struct MSShapeAnim;  // fix_fwd_type_supply
 
 struct VoxelAnimClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    unsigned int VoxelAnimClass_field_0x0;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     unsigned int uniqueId;  // 0x10
-    bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
+    unsigned char __pad_018;  // 0x18
+    char __pad_19[3];  // 0x19
+    int VoxelAnimClass_field_0x1C;  // 0x1C
     unsigned char needsSave;  // 0x20
+    char __pad_21[3];  // 0x21
+    unsigned char __pad_024;  // 0x24
+    char __pad_25[11];  // 0x25
     ObjectClass* nextObject;  // 0x30
-    unsigned int alignmentPadding;  // 0x33
     TagClass* attachedTag;  // 0x34
-int customSound;  // 0x64 [X35-L7 kind=int]
+    unsigned char __pad_038;  // 0x38
+    char __pad_39[43];  // 0x39
+    int customSound;  // 0x64
     bool bombVisible;  // 0x68
+    char __pad_69[3];  // 0x69
     char health[4];  // 0x6C
-int estimatedHealth;  // 0x70 [X35-L7 kind=int]
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
+    char __pad_76[2];  // 0x76
     unsigned int spawnStatus;  // 0x78
     unsigned int visibilityFlags;  // 0x7C
+    unsigned char __pad_080;  // 0x80
+    char __pad_81[1];  // 0x81
     bool inOpenToppedTransport;  // 0x82
     bool isSelected;  // 0x83
     bool hasParachute;  // 0x84
     unsigned char alignmentPadding85;  // 0x85
+    char __pad_86[2];  // 0x86
     AnimClass* parachute;  // 0x88
+    unsigned char __pad_08C;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
     bool isBomb;  // 0x8F
     bool isAliveFlag;  // 0x90
     unsigned char alignmentPadding91;  // 0x91
+    char __pad_92[2];  // 0x92
+    int VoxelAnimClass_field_0x94;  // 0x94
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
     unsigned char alignmentPadding99;  // 0x9A
-    Coord* location;  // 0x9C [X30:type_map]
-    unsigned char alignmentPadding69;  // 0x105
+    char __pad_9B[1];  // 0x9B
+    Coord* location;  // 0x9C
+    unsigned char __pad_0A0;  // 0xA0
+    char __pad_A1[3];  // 0xA1
+    unsigned int q0A4;  // 0xA4
+    char __pad_A8[32];  // 0xA8
+    unsigned int u32_C8;  // 0xC8
+    unsigned int q0CC;  // 0xCC
+    unsigned int q0D0;  // 0xD0
+    char __pad_D4[44];  // 0xD4
+    unsigned int u32_100;  // 0x100
+    unsigned int VoxelAnimClass_field_0x104;  // 0x104
+    int q108;  // 0x108
+    int VoxelAnimClass_field_0x10C;  // 0x10C
+    char __pad_110[4];  // 0x110
+    Mixer* q114;  // 0x114
+    char __pad_118[16];  // 0x118
+    int VoxelAnimClass_field_0x128;  // 0x128
+    char __pad_12C[16];  // 0x12C
+    unsigned int q13C;  // 0x13C
+    unsigned int VoxelAnimClass_field_0x140;  // 0x140
+    char __pad_144[144];  // 0x144
     unsigned int Audio4;  // 0x1D4
-    unsigned int Audio3;  // 0x276
+    unsigned char __pad_1D8;  // 0x1D8
+    char __pad_1D9[157];  // 0x1D9
+    unsigned char Audio3;  // 0x276
+    char __pad_277[3];  // 0x277
+    unsigned char __pad_27A;  // 0x27A
+    char __pad_27B[25];  // 0x27B
+    int VoxelAnimClass_field_0x294;  // 0x294
+    int VoxelAnimClass_field_0x298;  // 0x298
+    char __pad_29C[52];  // 0x29C
+    int VoxelAnimClass_field_0x2D0;  // 0x2D0
+    char __pad_2D4[16];  // 0x2D4
+    int VoxelAnimClass_field_0x2E4;  // 0x2E4
+    char __pad_2E8[36];  // 0x2E8
+    int VoxelAnimClass_field_0x30C;  // 0x30C
+    char __pad_310[16];  // 0x310
     unsigned int Duration;  // 0x320
+    unsigned char __pad_324;  // 0x324
+    char __pad_325[307];  // 0x325
     DynamicVectorClass * ptr_458;  // 0x458
+    unsigned char __pad_45C;  // 0x45C
+    char __pad_45D[515];  // 0x45D
     unsigned int Invisible;  // 0x660
+    unsigned char __pad_664;  // 0x664
+    char __pad_665[1375];  // 0x665
+    int VoxelAnimClass_field_0xBC4;  // 0xBC4
+    char __pad_BC8[8];  // 0xBC8
+    int VoxelAnimClass_field_0xBD0;  // 0xBD0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);
     Coord * * ProcessAnim(int * a2, unsigned int * a3);
@@ -82,39 +139,6 @@ int estimatedHealth;  // 0x70 [X35-L7 kind=int]
     int VoxelAnimClass_Update();
     int Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     VoxelAnimClass * DrawVoxel(void * Block, char a2);
-    char __pad_98[104];  // 0x98 (ml)
-
-    unsigned char __pad_0A0;  // X10 supply (csp_canon_members)
-    unsigned int q0A4;  // X10 supply (member_lookup)
-    int q104;  // X10 supply (member_lookup)
-    int q108;  // X10 supply (member_lookup)
-    unsigned int q13C;  // X10 supply (member_lookup)
-    int q140;  // X10 supply (member_lookup)
-    unsigned int u32_100;  // X10 supply (member_lookup)
-    unsigned int q0D0;  // 0xD0
-    unsigned int q0CC;  // 0xCC
-    unsigned int u32_C8;  // 0xC8
-    unsigned char __pad_018;  // 0x18 [X30:canon]
-    unsigned char __pad_024;  // 0x24 [X30:canon]
-    unsigned char __pad_038;  // 0x38 [X30:canon]
-    unsigned char __pad_080;  // 0x80 [X30:canon]
-    unsigned char __pad_08C;  // 0x8C [X30:canon]
-    unsigned char __pad_095;  // 0x95 [X30:canon]
-    unsigned char __pad_109;  // 0x109 [X30:canon]
-    unsigned char __pad_1D8;  // 0x1D8 [X30:canon]
-    unsigned char __pad_27A;  // 0x27A [X30:canon]
-    unsigned char __pad_324;  // 0x324 [X30:canon]
-    unsigned char __pad_45C;  // 0x45C [X30:canon]
-    unsigned char __pad_664;  // 0x664 [X30:canon]
-    unsigned int AbstractClass_10C;  // [X30:default]
-    unsigned int ParticleSystemClass_110;  // [X30:default]
-    Mixer* q114;  // 0x114 [X30:type_map]
-    unsigned int q_B0;  // [X30:default]
-
-
-    unsigned int VoxelAnimClass_field_0x104;  // 0x104 [X55 W3 supply (render vocab)]
-    unsigned int VoxelAnimClass_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int VoxelAnimClass_field_0x140;  // 0x140 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

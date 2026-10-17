@@ -7,26 +7,20 @@
 namespace gamemd {
 
 struct GameSetup {
-// --- flat members (BEGIN) ---
+    ObjectClass* __pad_000;  // 0x0
+    unsigned int u32_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
+    unsigned int __pad_00C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static void DisplayPlayers(void *aP1);
     AbstractClass * * WriteINI(CCINIClass * aP1, unsigned char * Block);
     int LookupDialogHash();
     static char FormatToString(GameSetup * aP1, uint8_t *Block, char *a3, int a4, int a5, int a6);
     static wchar_t * GetColorTooltip(void *a1 = 0);  // 0x4e42a0
-    unsigned int q0104;  // 0x104 (offset-truth)
-
-    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
-    unsigned char q095;  // X10 supply (member_lookup)
-    unsigned int u32_10;  // X10 supply (member_lookup)
-    unsigned int u32_14;  // X10 supply (member_lookup)
-    unsigned int u32_15;  // X10 supply (member_lookup)
-    unsigned int u32_16;  // X10 supply (member_lookup)
-    unsigned int u32_17;  // X10 supply (member_lookup)
-    unsigned int u32_18;  // X10 supply (member_lookup)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    ObjectClass* __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

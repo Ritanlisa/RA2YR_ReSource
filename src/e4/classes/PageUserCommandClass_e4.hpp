@@ -6,12 +6,11 @@
 namespace gamemd {
 
 struct PageUserCommandClass {
+    void* CommandClass;  // 0x0
+    int PageUserCommandClass_field_00;  // 0x4
+    int PageUserCommandClass_field_04;  // 0x8
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-int PageUserCommandClass_field_00;  // 0x4 [X35-L7 kind=int]
-int PageUserCommandClass_field_04;  // 0x8 [X35-L7 kind=int]
 // --- flat members (END) ---
-    void* CommandClass;  // 0x0 (no offset truth)
     char * AddRef(void *a1);
     char Do(int a1);
 PageUserCommandClass();

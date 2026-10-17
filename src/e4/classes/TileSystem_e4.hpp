@@ -6,12 +6,13 @@
 
 namespace gamemd {
 struct TileSystem {
+    int __pad_000;  // 0x0
+    int TileSystem_field_0x04;  // 0x4
+    int TileSystem_field_0x08;  // 0x8
+    int TileSystem_field_0x0C;  // 0xC
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    unsigned char q000[16];  // 0x0 (canon size filler)
     static unsigned int * Constructor(void *aP1, int a2, int a3);
     static char BuildNodes(void *aP1);
-    int __pad_000;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

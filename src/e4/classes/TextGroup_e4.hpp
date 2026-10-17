@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct TextGroup {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * SetRect(unsigned int *a2, void *a1 = 0, void *a3 = 0);
 };

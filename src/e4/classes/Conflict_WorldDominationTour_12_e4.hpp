@@ -9,8 +9,13 @@ struct rc_ptr;  // G42.32 fwd supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct Conflict_WorldDominationTour_12 {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    unsigned int u32_4;  // 0x4
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
+    int m_10;  // 0x10
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x766C10
     AbstractClass * *  Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
@@ -26,13 +31,5 @@ struct Conflict_WorldDominationTour_12 {
     unsigned int  PointerToIndex(int a2);  // 0x766830
     unsigned int  Write(int a2);  // 0x766DA0
     int Constructor_3(void *a1_1);  // 0x7670D0
-    unsigned char *m_1;  // 0x1 (offset-truth)
-int m_10;  // 0x10 [X35-L7 kind=int]
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
 };
 } // namespace gamemd

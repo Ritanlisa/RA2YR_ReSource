@@ -6,12 +6,12 @@
 namespace gamemd {
 
 struct GraphicMenuItem {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    GraphicMenuItem* __pad_004;  // 0x4
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void Dtor(void *a1);
     static unsigned int * Constructor(void *aP1, void *a2);
-    GraphicMenuItem* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

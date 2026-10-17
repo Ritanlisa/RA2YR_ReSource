@@ -7,12 +7,12 @@
 namespace gamemd {
 
 struct MultiplayerSiege {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-int MultiplayerSiege_field_04;  // 0x4 [X35-L7 kind=int]
-int MultiplayerSiege_field_08;  // 0x8 [X35-L7 kind=int]
+    int32_t MultiplayerSiege_field_00;  // 0x0
+    int MultiplayerSiege_field_04;  // 0x4
+    int MultiplayerSiege_field_08;  // 0x8
     char MultiplayerSiege_field_0C[4];  // 0xC
-int MultiplayerSiege_field_10;  // 0x10 [X35-L7 kind=int]
+    int MultiplayerSiege_field_10;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * ProcessTurn(char a2);
     MultiplayerSiege * QueryInterface(char a2);
@@ -21,11 +21,6 @@ int MultiplayerSiege_field_10;  // 0x10 [X35-L7 kind=int]
     char StubReturnFalse();
     short Read(void *a1, void *a2, void *a3 = 0);
     int Write(void ** a1);
-
-    int32_t MultiplayerSiege_field_00;  // X10 supply (member_types)
-
-
-    unsigned int u32_14;  // 0x14 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

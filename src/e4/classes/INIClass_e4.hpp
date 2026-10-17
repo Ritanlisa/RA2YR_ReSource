@@ -12,26 +12,21 @@ struct VoxelStruct;  // fix_fwd_type_supply
 #ifndef GAMEMD_E4_INIClass  // G42.57w14 twin-guard (shared w/ system/ini_class.hpp; first-include wins)
 #define GAMEMD_E4_INIClass 1
 struct INIClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    INILinkNode* __pad_0;  // 0x0
     char headNode[12];  // 0x4
     char sectionHead[12];  // 0x10
-    int sectionCount;  // 0x1C [X30:type_map]
-    int INIClass_field_2C;  // 0x2C [X30:type_map]
-    int unknown30;  // 0x30 [X30:type_map]
-unsigned int u32_14;  // 0x14 [X35-L7 kind=unsigned int]
-    INILinkNode* u32_10;  // 0x10 [X30:type_map]
-    unsigned int u32_C;  // 0xC
-    INILinkNode* u32_8;  // 0x8 [X30:type_map]
-    INILinkNode* u32_4;  // 0x4 [X30:type_map]
-    int u32_1;  // 0x1
+    int sectionCount;  // 0x1C
+    char q020[12];  // 0x20
+    int INIClass_field_2C;  // 0x2C
+    int unknown30;  // 0x30
     bool needsSave_flag;  // 0x34
-    SortedArray* unknown38;  // 0x38 [X30:type_map]
-    void* INIClass_field_3C;  // 0x3C [X30:type_map]
+    char __pad_035[3];  // 0x35
+    SortedArray* unknown38;  // 0x38
+    void* INIClass_field_3C;  // 0x3C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static char SetIntFormat(char *a1, char **a2, char **a3, int a4, int a5);  // [w14e3] raw 0x527640
     static int ParseValue_Wide(void *aP1, void *a2, void *a3, void *a4, void *a5, unsigned int a6);
-    void* LookupEnum_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon INIClass::LookupEnum is a method)
     static unsigned int LookupEnum(uint8_t* p0, uint8_t* p1, int p2);  // x4:signals@0x474da0
     static int ReadInt(String *a2, String *a3, int a4);
     int ReadCoord(double *a1, double a2, uint8_t *a3, uint8_t *a4, int a5, int aP2, int aP1, int aP3);
@@ -116,20 +111,6 @@ static int WriteToString(INIClass * aP1, int a2);
     unsigned int GetString(uint8_t *a2, uint8_t *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
     int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
     static int ParseValue(unsigned int* p0, uint8_t* p1, uint8_t* p2, unsigned int* p3);  // x4:signals@0x527cc0
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int q020;  // 0x20 (offset-truth)
-unsigned int __pad_020;  // 0x20 [X35-L7 kind=unsigned int]
-    unsigned char __pad_035;  // 0x35 [X30:canon]
-    unsigned int Capacity;  // [X30:default]
-    unsigned int IsAllocated;  // [X30:default]
-    unsigned int IsInitialized;  // [X30:default]
-    unsigned int Items;  // [X30:default]
-    unsigned int ReadIntthis;  // [X30:default]
-    INILinkNode* __pad_0;  // 0x0 [X30:type_map]
-    INILinkNode* __pad_000;  // 0x0 [X30:type_map]
-    unsigned char __pad_094;  // 0x94 [X30:member_lookup]
-    int u8_D;  // 0xD [X30:type_map]
-    unsigned int vfptr;  // [X30:default]
 };
 #endif  // GAMEMD_E4_INIClass
 

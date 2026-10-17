@@ -7,8 +7,11 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct ParticleSystemClass_16 {
+    unsigned int __pad_0;  // 0x0
+    int q004;  // 0x4
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     int  Write(int a2);  // 0x4E87D0
     char  AddRef(int a2);  // 0x4EB260
@@ -17,14 +20,5 @@ struct ParticleSystemClass_16 {
     int  Init(unsigned int * a2, void *a1 = 0, void *a3_1 = 0, void *a4_1 = 0, void *a5_1 = 0, void *a6_1 = 0, void *a7_1 = 0, void *a8_1 = 0);  // 0x4EB380
     VectorClass_flat *  QueryInterface(char a2);  // 0x4EFD50
     unsigned int Read(int a2, void *a2_2, void *a3 = 0);  // 0x4EB3C0
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

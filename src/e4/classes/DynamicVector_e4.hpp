@@ -15,13 +15,24 @@ class Constructor_VectorClass_TEventClass___;  // G42.36 fwd supply
 class Constructor_VectorClass_TagTypeClass___;  // G42.36 fwd supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct DynamicVector {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* Items;  // 0x4
+#pragma pack(push, 1)  // X60: binary-packed layout
+    char __pad_0[1];  // 0x0
+    unsigned int DynamicVector_field_0x1;  // 0x1
+    char __pad_5[3];  // 0x5
+    unsigned int DynamicVector_field_0x8;  // 0x8
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int tail_E;  // 0xE
+    unsigned char tail_E;  // 0xE
+    char __pad_F[1];  // 0xF
+    unsigned int DynamicVector_field_0x10;  // 0x10
     int CapacityIncrement;  // 0x14
+    unsigned char __pad_018;  // 0x18
+    char __pad_19[3];  // 0x19
+    int DynamicVector_field_0x1C;  // 0x1C
+    int q020;  // 0x20
+    char __pad_24[4];  // 0x24
+    int DynamicVector_field_0x28;  // 0x28
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1, void *a2_1);  // 0x5AC430
     char AddItem(unsigned int *aP1);  // 0x413A70
@@ -135,25 +146,6 @@ struct DynamicVector {
     DynamicVector * Constructor_VectorClass_MovieHandle___(unsigned int * Block, char a2);
     wchar_t * ddtor(void *a1_1);  // 0x4EA390
     char Remove(signed int Size, char * a3);
-void* q000;  // 0x0 [X35-L7 kind=void*]
-    unsigned int q00C;  // 0xC (offset-truth)
-int q014;  // 0x14 [X35-L7 kind=int]
-
-    unsigned int DynamicVector_field_0x1;  // X10 supply (member_lookup)
-    int q020;  // 0x20  /* char[8] */ [X30:type_map]
-    int q01C;  // 0x1C
-    String* __pad_008;  // 0x8 [X30:type_map]
-    unsigned char __pad_012;  // 0x12 [X30:canon]
-    unsigned char __pad_018;  // 0x18 [X30:canon]
-    unsigned int Capacity;  // [X30:default]
-    unsigned int ClearAndFree2_ph;  // [X30:default]
-    int DynamicVector_field_0x1C;  // 0x1C [X30:type_map]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int DynamicVector_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
-    unsigned int DynamicVector_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
-    int __pad_20;  // 0x20 [X55 W3 supply (render vocab)]
-    int DynamicVector_field_0x28;  // 0x28 [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 } // namespace gamemd

@@ -10,20 +10,19 @@ namespace gamemd {
 struct ScriptTypeClass;  // fix_fwd_type_supply
 
 struct ScriptClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     ScriptTypeClass* buildingType;  // 0x24
-int field28;  // 0x28 [X35-L7 kind=int]
-    int idxCurrentLine;  // 0x2C [X30:type_map]
+    int field28;  // 0x28
+    int idxCurrentLine;  // 0x2C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * GetNextAction(void *aP1, void *a2);
     int ExecuteTriggers(int a2, char a3);

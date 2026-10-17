@@ -7,8 +7,42 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct Terrain {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[1];  // 0x1
+    char Terrain_field_0x2[4];  // 0x2
+    char __pad_6[14];  // 0x6
+    void* Terrain_field_0x14;  // 0x14
+    int __pad_18;  // 0x18
+    char __pad_1C[8];  // 0x1C
+    int q024;  // 0x24
+    unsigned int __pad_28;  // 0x28
+    char __pad_2C[4];  // 0x2C
+    int q030;  // 0x30
+    int q034;  // 0x34
+    int Terrain_field_0x38;  // 0x38
+    char __pad_3C[4];  // 0x3C
+    int q040;  // 0x40
+    char __pad_44[28];  // 0x44
+    unsigned int Terrain_field_0x60;  // 0x60
+    int Terrain_field_0x64;  // 0x64
+    void* __pad_68;  // 0x68
+    unsigned int u32_6C;  // 0x6C
+    char __pad_70[16];  // 0x70
+    unsigned int u32_80;  // 0x80
+    char __pad_84[112];  // 0x84
+    unsigned int u32_F4;  // 0xF4
+    unsigned int u32_F8;  // 0xF8
+    char __pad_FC[34];  // 0xFC
+    char Terrain_field_0x11E[4];  // 0x11E
+    unsigned char __pad_122;  // 0x122
+    char __pad_123[1];  // 0x123
+    unsigned int u32_124;  // 0x124
+    int Terrain_field_0x128;  // 0x128
+    int Terrain_field_0x12C;  // 0x12C
+    char __pad_130[12];  // 0x130
+    int Terrain_field_0x13C;  // 0x13C
+    int Terrain_field_0x140;  // 0x140
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int GetTileIndex(int a2);  // 0x48B720
     int GetTileType(int aP1);  // 0x48B9E0
@@ -22,32 +56,5 @@ struct Terrain {
     void PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4);  // 0x5A28C0
     unsigned int * ClimbCheck(AbstractClass * aP0, AbstractClass * aP1);  // 0x6D6410
     int LookupByName(void *a1 = 0);  // 0x71DD80
-    unsigned int u32_80;  // 0x80 (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_122;  // X10 supply (member_types)
-    int q024;  // X10 supply (member_lookup)
-    int q030;  // X10 supply (member_lookup)
-    int q034;  // X10 supply (member_lookup)
-    int q040;  // X10 supply (member_lookup)
-    unsigned char q050;  // X10 supply (member_lookup)
-    unsigned int u32_124;  // X10 supply (member_lookup)
-    unsigned int u32_F4;  // X10 supply (member_lookup)
-    unsigned int u32_F8;  // X10 supply (member_lookup)
-    int u32_38;  // 0x38
-    int q038;  // 0x38
-    int Terrain_field_0x13C;  // 0x13C [X30:type_map]
-    void* Terrain_field_0x14;  // 0x14 [X30:type_map]
-    int Terrain_field_0x38;  // 0x38 [X30:type_map]
-unsigned int Terrain_field_0x60;  // 0x60 [X35-L7 kind=unsigned int]
-    int __pad_18;  // 0x18 [X30:type_map]
-    char __pad_44[28];  // 0x44 [X30:member_lookup]
-    void* __pad_68;  // 0x68 [X30:type_map]
-
-
-    unsigned int q04C;  // 0x4C [X55 W3 supply (render vocab)]
-    unsigned int u32_6C;  // 0x6C [X55 W3 supply (render vocab)]
-    unsigned int __pad_28;  // 0x28 [X55 W3 supply (render vocab)]
-    int q054;  // 0x54 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

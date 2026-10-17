@@ -6,34 +6,14 @@
 
 namespace gamemd {
 struct Mouse {
+    char __pad_0[1];  // 0x0
+    char m_1[4];  // 0x1
+    char __pad_5[13];  // 0x5
+    char m_12[4];  // 0x12
+    char __tail_16[6];  // 0x16
     // dup-member: unsigned int GetKeyState;
     // dup-member: unsigned int IsButtonDown;
     // dup-member: unsigned int ReleaseCapture;
-    unsigned int DisplayClass;
-    unsigned int Timer;
-    unsigned int *__pad_5;
-    unsigned int *m_1;
-    unsigned int q048;
-    unsigned int q04C;
-    unsigned int q050;
-    unsigned int q054;
-    unsigned int u32_555A;
-    unsigned int q008;
-    unsigned int u32_48;
-    unsigned int u32_49;
-    unsigned int q0080;
-    unsigned int q0081;
-    unsigned int q555A;
-    unsigned int u32_1174;
-    unsigned int u32_1176;
-    unsigned int u32_1178;
-    unsigned int u32_117A;
-    unsigned int u32_117C;
-    unsigned int u32_4;
-    unsigned int u32_555C;
-    unsigned int u32_5560;
-    unsigned int u32_5568;
-    void* vfptr;  // minimal E2 declaration
     int SetBounds(const void *aP1, void *a2 = 0);  // 0x4A8BF0
     int SetCursor(int aP1, char aP2, void *a3 = 0);  // 0x5BDC80
     HWND ReleaseCapture(void *a1 = 0);  // 0x6938C0
@@ -41,10 +21,5 @@ struct Mouse {
     SHORT GetKeyState(uint8_t vKey);  // 0x53EC90
     static BOOL IsButtonDown(unsigned char a1);  // 0x54F5C0
     static HWND HideWindow();  // 0x5BC400
-
-    unsigned int u32_4C;  // X10 supply (member_lookup)
-    unsigned int u32_50;  // X10 supply (member_lookup)
-    unsigned int u32_54;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

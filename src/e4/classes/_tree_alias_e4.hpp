@@ -13,9 +13,8 @@ namespace gamemd {
 // CellCoord: tree class (misc_ext.hpp) with a virtual To_CellObj; e4 bodies
 // call it static-style with (MapClass_Instance*, coord*) — interim stub.
 struct CellCoord {
-    void* vfptr;
+    unsigned int tail_0;  // 0x0
     void* To_CellObj(int16_t *a3);
-    unsigned int tail_0;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

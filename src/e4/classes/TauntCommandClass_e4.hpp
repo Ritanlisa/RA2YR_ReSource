@@ -6,10 +6,10 @@
 namespace gamemd {
 
 struct TauntCommandClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    int TauntCommandClass_field_00;  // 0x4 [X30:type_map]
-int TauntCommandClass_field_04;  // 0x8 [X35-L7 kind=int]
+    int TauntCommandClass_field_00;  // 0x4
+    int TauntCommandClass_field_04;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static unsigned int * Construct(void *aP1, int a2);
     char * AddRef();

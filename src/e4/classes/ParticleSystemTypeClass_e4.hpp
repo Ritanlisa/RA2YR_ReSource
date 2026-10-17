@@ -15,71 +15,94 @@ struct ParticleSystemClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
 
 struct ParticleSystemTypeClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int SlowdownDistance;  // 0x10
-    unsigned char alignmentPadding_3;  // 0x11
-    int SpawnCount;  // 0x12
-    bool IsAllocated;  // 0x13
     int ParticleSystemTypeClass_field_29C;  // 0x14
     int ParticleSystemTypeClass_field_2A0;  // 0x18
     float Velocity;  // 0x1C
     char TurretVoxel[4];  // 0x20
+    unsigned int __pad_024;  // 0x24
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
-    bool NoSpawnAlt;  // 0x30
+    int NoSpawnAlt;  // 0x30
+    unsigned char __pad_034;  // 0x34
+    char __pad_35[1];  // 0x35
     char BarrelVoxel[4];  // 0x36
-    unsigned int UINameLabel;  // 0x3D
+    unsigned char __pad_03A;  // 0x3A
+    char __pad_3B[2];  // 0x3B
+    unsigned char UINameLabel;  // 0x3D
+    char __pad_3E[3];  // 0x3E
+    unsigned char __pad_041;  // 0x41
+    char __pad_42[30];  // 0x42
     void * UIName;  // 0x60
     unsigned int Name;  // 0x64
-    unsigned int tail_95;  // 0x95
+    unsigned char __pad_068;  // 0x68
+    char __pad_69[44];  // 0x69
+    unsigned char tail_95;  // 0x95
+    char __pad_96[3];  // 0x96
+    unsigned char __pad_099;  // 0x99
+    char __pad_9A[1];  // 0x9A
     unsigned char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
     int Strength;  // 0xA0
+    unsigned char __pad_0A4;  // 0xA4
+    char __pad_A5[7];  // 0xA5
     void * AlphaImage;  // 0xAC
     unsigned int MainVoxel;  // 0xB0
-    int MaxDimension;  // 0x1EC
+    unsigned char __pad_0B4;  // 0xB4
+    char __pad_B5[308];  // 0xB5
+    char align_1E9_3_[4];  // 0x1E9
+    char __pad_1ED[3];  // 0x1ED
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
-    char ImageFile_0x19;  // 0x1F8
-    bool AlternateArcticArt;  // 0x1F9
-    bool ArcticArtInUse;  // 0x1FA
-    char AlphaImageFile_0x19;  // 0x1FB
-    bool Theater;  // 0x1FC
-    bool Crushable;  // 0x1FD
-    bool Bombable;  // 0x1FE
-    bool RadarInvisible;  // 0x1FF
-    bool Selectable;  // 0x200
-    bool LegalTarget;  // 0x201
-    bool Insignificant;  // 0x202
-    bool Immune;  // 0x203
-    bool IsLogic;  // 0x204
-    bool AllowCellContent;  // 0x205
-    bool Voxel;  // 0x206
-    bool NewTheater;  // 0x207
-    bool HasRadialIndicator;  // 0x208
-    bool IgnoresFirestorm;  // 0x209
-    bool UseLineTrail;  // 0x20A
+    unsigned int ImageFile_0x19;  // 0x1F8
+    int Theater;  // 0x1FC
+    int Selectable;  // 0x200
+    int IsLogic;  // 0x204
+    int HasRadialIndicator;  // 0x208
     char LineTrailColor[4];  // 0x20C
-    unsigned int AlphaImageFile;  // 0x213
-    int LineTrailColorDecrement;  // 0x240
+    unsigned char __pad_210;  // 0x210
+    char __pad_211[2];  // 0x211
+    unsigned char AlphaImageFile;  // 0x213
+    char __pad_214[3];  // 0x214
+    unsigned char __pad_217;  // 0x217
+    char __pad_218[38];  // 0x218
+    char align_23E_2_[4];  // 0x23E
+    char __pad_242[2];  // 0x242
     char VoxelCaches_4[4];  // 0x244
+    unsigned char __pad_248;  // 0x248
+    char __pad_249[75];  // 0x249
+    int q294;  // 0x294
+    unsigned char q298[4];  // 0x298
+    int q29C;  // 0x29C
+    int q2A0;  // 0x2A0
+    int q2A4;  // 0x2A4
+    int q2A8;  // 0x2A8
+    int q2AC;  // 0x2AC
     int DamageDelay;  // 0x2B0
-    void* ParticleSystemTypeClass_field_2C0;  // 0x2BC [X30:type_map]
+    unsigned int __pad_2B4;  // 0x2B4
+    int ParticleSystemTypeClass_field_0x2B8;  // 0x2B8
+    void* ParticleSystemTypeClass_field_2C0;  // 0x2BC
     int StartScale;  // 0x2C0
     int ParticleSystemTypeClass_field_2C8;  // 0x2C4
-    bool Beam;  // 0x2C8
-    bool OneFrame;  // 0x2C9
-    bool ParticleSystemTypeClass_field_bool_2D4;  // 0x2D4
-    unsigned char padding_2D5_3;  // 0x2D5
+    int Beam;  // 0x2C8
+    int ParticleSystemTypeClass_field_0x2CC;  // 0x2CC
+    IUnknown* ParticleSystemTypeClass_field_0x2D0;  // 0x2D0
+    int ParticleSystemTypeClass_field_bool_2D4;  // 0x2D4
+    char __pad_2D8[1];  // 0x2D8
+    unsigned char __pad_2D9;  // 0x2D9
+    char __pad_2DA[10];  // 0x2DA
+    int ParticleSystemTypeClass_field_0x2E4;  // 0x2E4
+    IUnknown* ParticleSystemTypeClass_field_0x2E8;  // 0x2E8
+    char __pad_2EC[20];  // 0x2EC
+    int ParticleSystemTypeClass_field_0x300;  // 0x300
+    char __pad_304[4];  // 0x304
+    AnimTypeClass* ParticleSystemTypeClass_field_0x308;  // 0x308
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    IUnknown* ParticleSystemTypeClass_field_0x2D0;  // 0x2D0 (G57W14E1 til supply) [X30:type_map]
-    IUnknown* ParticleSystemTypeClass_field_0x2E8;  // 0x2E8 (G57W14E1 til supply) [X30:type_map]
-    char __pad_304[4];  // 0x304 (G57W14E1 til supply)
-    AnimTypeClass* ParticleSystemTypeClass_field_0x308;  // 0x308 (G57W14E1 til supply) [X30:type_map]
     void ** ddtor(char a2);
     char Stub(int a1, int a2);
     float * ReadXYZFromINI(float * a2, uint8_t * a3, uint8_t * a4, float * a5);
@@ -92,28 +115,6 @@ struct ParticleSystemTypeClass {
     void* GetType(unsigned char *** aP1);
     void* PowerDrainUpdate(int * a2);
     ParticleSystemTypeClass * ddtor(void ** Block, char a2);
-
-    unsigned char __pad_2B4;  // X10 supply (csp_canon_members)
-    int q294;  // X10 supply (member_lookup)
-    unsigned char q298[4];  /* char[4] */  // X10 supply (member_lookup)
-    int q29C;  // X10 supply (member_lookup)
-    int q2A0;  // X10 supply (member_lookup)
-    int q2A4;  // X10 supply (member_lookup)
-    int q2A8;  // X10 supply (member_lookup)
-    int q2AC;  // X10 supply (member_lookup)
-    unsigned char __pad_024;  // 0x24 [X30:canon]
-    unsigned char __pad_034;  // 0x34 [X30:canon]
-    unsigned char __pad_03A;  // 0x3A [X30:canon]
-    unsigned char __pad_041;  // 0x41 [X30:canon]
-    unsigned char __pad_068;  // 0x68 [X30:canon]
-    unsigned char __pad_099;  // 0x99 [X30:canon]
-    unsigned char __pad_0A4;  // 0xA4 [X30:canon]
-    unsigned char __pad_0B4;  // 0xB4 [X30:canon]
-    unsigned char __pad_210;  // 0x210 [X30:canon]
-    unsigned char __pad_217;  // 0x217 [X30:canon]
-    unsigned char __pad_248;  // 0x248 [X30:canon]
-    unsigned char __pad_2CD;  // 0x2CD [X30:canon]
-    unsigned char __pad_2D9;  // 0x2D9 [X30:canon]
 };
 
 } // namespace gamemd

@@ -7,12 +7,13 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UHashObject_uint_SubzoneConn {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned short __pad_00E;  // 0xE
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Clear(int a2, int a3);  // 0x589030
     char  AddRef(int a2);  // 0x58A260
@@ -21,6 +22,5 @@ struct VectorClass_UHashObject_uint_SubzoneConn {
     int  GetSize(unsigned int * a2);  // 0x58AA20
     unsigned int  GetCapacity(int a2);  // 0x58AA60
     VectorClass_flat *  QueryInterface(char a2);  // 0x58AB80
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

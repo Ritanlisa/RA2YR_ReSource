@@ -6,20 +6,20 @@
 namespace gamemd {
 
 struct MovieClass {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int MovieClass_field_0x04;  // 0x4
+    int MovieClass_field_0x08;  // 0x8
+    int MovieClass_field_0x0C;  // 0xC
+    int MovieClass_field_0x10;  // 0x10
+    int q014;  // 0x14
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     unsigned int ComputeTime();
     static int GetHeight(MovieClass * aP1);
     static int GetWidth(MovieClass * aP1);
     int ReadConfig(HWND aP1, int nIDDlgItem);
     static int RenderLoop(char *p_this, int a2, char a3);  // x4:ida@0x759940
-    unsigned int q0080;  // 0x80 (offset-truth)
-    unsigned int u32_148;  // 0x148 (offset-truth)
-unsigned int u32_78;  // 0x78 [X35-L7 kind=unsigned int]
-
-    int q014;  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

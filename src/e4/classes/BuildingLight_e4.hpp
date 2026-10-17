@@ -6,23 +6,11 @@
 namespace gamemd {
 struct Coord;  // fix_fwd_type_supply
 struct BuildingLight {
-// --- flat members (BEGIN) ---
+    char __pad_0[12];  // 0x0
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     void* q014;  // 0x14
-    unsigned int q018;  // 0x18
-    void* q020;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned int q034;  // 0x34
-    void* q050;  // 0x50
-    unsigned int q054;  // 0x54
-    void* q080;  // 0x80
-    unsigned int q084;  // 0x84
-    void* q128;  // 0x128
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    void* q1634;  // 0x1634
-    void* q5684;  // 0x5684
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     Coord * * CalculateShading(__m64 a2);
     int CalcIntensity(double a1);

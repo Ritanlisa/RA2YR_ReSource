@@ -5,25 +5,15 @@
 
 namespace gamemd {
 struct ParticleSystemClass_32_ {
-// --- flat members (BEGIN) ---
+    unsigned int __pad_0;  // 0x0
+    int q004;  // 0x4
     int Capacity;  // 0x8
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
+    unsigned int m_C;  // 0xC
+    unsigned int m_10;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     char  ResizeDataArray(int a2, unsigned int * a3);  // 0x4EB8A0
     int  FindElementByValue(unsigned int * a2);  // 0x4EB950
     unsigned int  GetElementIndex(int a2);  // 0x4E8870
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    int q010;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-
-
-    unsigned int m_10;  // 0x10 [X55 W3 supply (render vocab)]
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

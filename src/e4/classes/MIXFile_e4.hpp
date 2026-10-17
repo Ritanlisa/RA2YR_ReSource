@@ -9,13 +9,12 @@
 namespace gamemd {
 struct MixFileClass;  // fix_fwd_type_supply
 struct MixFile {
+    unsigned char __pad_000;  // 0x0
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     MixFileClass * * LoadAll();  // 0x530460
     AbstractClass * * LoadSide();  // 0x534FA0
     unsigned int *  Load(void * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x627590
     AbstractClass * * LoadSide(void * aUimdIni);
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

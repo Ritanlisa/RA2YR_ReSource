@@ -19,8 +19,46 @@ struct Coord;  // fix_fwd_type_supply
 #endif  // GAMEMD_TREE_UNIVERSE / GAMEMD_E4_MATH_ALIASES (Cell fwd block)
 
 struct Cell {
+#pragma pack(push, 1)  // X60: binary-packed layout
+    unsigned int Cell_field_0x0;  // 0x0
+    int q004;  // 0x4
+    int Cell_field_0x8;  // 0x8
+    int Cell_field_0xC;  // 0xC
+    char __pad_10[8];  // 0x10
+    int Cell_field_0x18;  // 0x18
+    char __pad_1C[8];  // 0x1C
+    unsigned int u32_24;  // 0x24
+    char __pad_28[16];  // 0x28
+    int Cell_field_0x38;  // 0x38
+    char __pad_3C[44];  // 0x3C
+    int Cell_field_0x68;  // 0x68
+    unsigned int Cell_field_0x6C;  // 0x6C
+    unsigned int q070;  // 0x70
+    int u32_74;  // 0x74
+    unsigned int u32_78;  // 0x78
+    char __pad_7C[5];  // 0x7C
+    unsigned char u32_81;  // 0x81
+    char __pad_82[62];  // 0x82
+    unsigned int u32_C0;  // 0xC0
+    char __pad_C4[32];  // 0xC4
+    unsigned int Cell_field_0xE4;  // 0xE4
+    unsigned char q0E8[12];  // 0xE8
+    unsigned int Cell_field_0xF4;  // 0xF4
+    unsigned int Cell_field_0xF8;  // 0xF8
+    char __pad_FC[30];  // 0xFC
+    unsigned char u32_11A;  // 0x11A
+    unsigned int u32_11B;  // 0x11B
+    char __pad_11F[13];  // 0x11F
+    int Cell_field_0x12C;  // 0x12C
+    char __pad_130[12];  // 0x130
+    unsigned int Cell_field_0x13C;  // 0x13C
+    int Cell_field_0x140;  // 0x140
+    char __pad_144[264];  // 0x144
+    int Cell_field_0x24C;  // 0x24C
+    char __pad_250[72];  // 0x250
+    int q298;  // 0x298
+    int q29C;  // 0x29C
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     TechnoClass * * IsOccupied(short * a2, char a3);  // 0x419B00
     int PosToIndex(void *a1 = 0);  // 0x42B1C0
@@ -61,60 +99,6 @@ struct Cell {
     static int GetGroundHeight(unsigned int * a1);
     bool IsPassable(IUnknown * aP0);  // 0x586360
     unsigned int * IsBridge();  // 0x47c520
-    unsigned int q_4C4;  // +0x4C4 flat supply (final pass)
-    unsigned int q03C;  // 0x3C (offset-truth)
-    unsigned int q070;  // 0x70 (offset-truth)
-    unsigned char u32_11B;  // 0x11B (offset-truth)
-    unsigned int u32_140;  // 0x140 (offset-truth)
-    unsigned char u32_41A;  // 0x41A (offset-truth)
-    unsigned int u32_5A4;  // 0x5A4 (offset-truth)
-    void* u32_6C4;  // 0x6C4 (offset-truth) [X30:type_map]
-    unsigned char u32_703;  // 0x703 (offset-truth)
-    unsigned char u32_742;  // 0x742 (offset-truth)
-    unsigned char u32_746;  // 0x746 (offset-truth)
-    unsigned char u32_901;  // 0x901 (offset-truth)
-    unsigned int u32_C0;  // 0xC0 (offset-truth)
-
-    unsigned char Cell_5A41[4];  /* Cell */  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q038;  // X10 supply (member_lookup)
-    int q068;  // X10 supply (member_lookup)
-    int q06C;  // X10 supply (member_lookup)
-    int q0E4;  // X10 supply (member_lookup)
-    unsigned char q0E8[12];  /* char[12] */  // X10 supply (member_lookup)
-    int q0F4;  // X10 supply (member_lookup)
-    int q0F8;  // X10 supply (member_lookup)
-    int q13C;  // X10 supply (member_lookup)
-    int q298;  // X10 supply (member_lookup)
-    int q29C;  // X10 supply (member_lookup)
-    unsigned char q384;  // X10 supply (member_lookup)
-    unsigned int u32_11C;  // X10 supply (member_lookup)
-    int u32_18;  // X10 supply (member_lookup)
-    unsigned int u32_24;  // X10 supply (member_lookup)
-    unsigned int u32_26;  // X10 supply (member_lookup)
-    unsigned int u32_44;  // X10 supply (member_lookup)
-    unsigned int u32_46C;  // X10 supply (member_lookup)
-    unsigned int u32_490;  // X10 supply (member_lookup)
-    unsigned int u32_4A0;  // X10 supply (member_lookup)
-    unsigned int u32_78;  // X10 supply (member_lookup)
-    unsigned int u32_EC;  // X10 supply (member_lookup)
-    unsigned int u32_11A;  // 0x11A
-    int Cell_field_0x38;  // 0x38 [X30:type_map]
-    char __pad_3C[44];  // 0x3C [X30:member_lookup]
-    int q004;  // 0x4 [X30:type_map]
-
-
-    int Cell_field_0x140;  // 0x140 [X55 W3 supply (render vocab)]
-    unsigned int Cell_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int u32_81;  // 0x81 [X55 W3 supply (render vocab)]
-    int u32_74;  // 0x74 [X55 W3 supply (render vocab)]
-    unsigned int q048;  // 0x48 [X55 W3 supply (render vocab)]
-    unsigned int Cell_field_0xF8;  // 0xF8 [X55 W3 supply (render vocab)]
-    unsigned int Cell_field_0xF4;  // 0xF4 [X55 W3 supply (render vocab)]
-    unsigned int Cell_field_0x6C;  // 0x6C [X55 W3 supply (render vocab)]
-    int Cell_field_0x68;  // 0x68 [X55 W3 supply (render vocab)]
-    int Cell_field_0x18;  // 0x18 [X55 W3 supply (render vocab)]
-    unsigned int Cell_field_0x13C;  // 0x13C [X55 W3 supply (render vocab)]
-    unsigned int Cell_field_0xE4;  // 0xE4 [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 } // namespace gamemd

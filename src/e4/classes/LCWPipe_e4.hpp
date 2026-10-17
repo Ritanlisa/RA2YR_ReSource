@@ -6,15 +6,12 @@
 namespace gamemd {
 
 struct LCWPipe {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    int __pad_004;  // 0x4
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Dtor(void *a1 = 0);
     unsigned int *  Constructor(int a2, int a3, void *a1 = 0, void *a4 = 0);  // 0x551ff0
-    unsigned int *q000;  // 0x0 (offset-truth)
-unsigned int u32_14;  // 0x14 [X35-L7 kind=unsigned int]
-unsigned int u32_18;  // 0x18 [X35-L7 kind=unsigned int]
-    int __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

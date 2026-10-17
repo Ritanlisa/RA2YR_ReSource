@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct Targeting {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     static int Readd(unsigned int *a1);
 };

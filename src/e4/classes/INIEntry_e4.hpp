@@ -16,10 +16,10 @@ namespace gamemd {
 struct INIData;  // ini_class.hpp companion fwd (kept for decl compat)
 
 struct INIEntry {
-// --- flat members (BEGIN) ---
-const char* Key;  // 0x0 [X35-L7 kind=const char*]
-const char* Value;  // 0x4 [X35-L7 kind=const char*]
+    const char* Key;  // 0x0
+    const char* Value;  // 0x4
     INIEntry* Next;  // 0x8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  Write3Bytes(uint8_t * Block, char * a3, uint8_t * a4);  // 0x474C20
     int  ReadColor(int a2, uint8_t * a3, uint8_t * a4, uint8_t * a5);  // 0x474C70

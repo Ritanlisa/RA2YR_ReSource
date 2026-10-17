@@ -6,11 +6,11 @@
 namespace gamemd {
 
 struct LCWStraw {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    AbstractClass* __pad_004;  // 0x4
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Dtor(void *a1);
-    AbstractClass* __pad_004;  // 0x4 [X30:type_map]
 };
 
 } // namespace gamemd

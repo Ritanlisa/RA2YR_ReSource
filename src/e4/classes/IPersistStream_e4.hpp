@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct IPersistStream {
+    char __tail_0[4];  // 0x0
 // --- flat members (BEGIN) ---
-    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     char SetField(int a1, void *a2 = 0);
     static int GetMaxSize();
@@ -16,7 +16,6 @@ struct IPersistStream {
     int StubReturn450();
     int StubReturnFalse();
     void Stub(BuildingTypeClass * aP0, int a2);
-    char __tail_0[4];  // 0x0 (ml)
 };
 
 } // namespace gamemd

@@ -8,29 +8,27 @@
 namespace gamemd {
 
 struct SideClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
-int uniqueId;  // 0x10 [X35-L7 kind=int]
-    unsigned char alignmentPadding_3;  // 0x11
-    void* houseTypes;  // 0x12
-    bool IsAllocated;  // 0x13
+    void * vfptr;  // 0x0
+    void * vfptr1;  // 0x4
+    void * vfptr2;  // 0x8
+    void * vfptr3;  // 0xC
+    int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
-    char houseTypesCount[4];  // 0x16
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
-    bool NeedsSaveOrLink;  // 0x20
-    char id;  // 0x24
-    bool needsSave;  // 0x32
+    int NeedsSaveOrLink;  // 0x20
+    int id[6];  // 0x24
     unsigned char m_zero_3C;  // 0x3C
-    char uiNameLabel;  // 0x3D
+    char uiNameLabel[32];  // 0x3D
+    unsigned char __pad_05D;  // 0x5D
+    char __pad_5E[2];  // 0x5E
     unsigned int uiName;  // 0x60
-    char name;  // 0x64
-    unsigned int tail_95;  // 0x95
-int* houseTypes_d;  // 0x98 [X35-L7 kind=int*]
-    void* houseTypesCount_d;  // 0x9C [X30:type_map]
+    char name[49];  // 0x64
+    unsigned char tail_95;  // 0x95
+    char __pad_96[2];  // 0x96
+    int* houseTypes_d;  // 0x98
+    void* houseTypesCount_d;  // 0x9C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int FindByName(void *a1);
     int GetCountry(int * a2);
@@ -43,16 +41,6 @@ int* houseTypes_d;  // 0x98 [X35-L7 kind=int*]
     int Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     void * Init(void ** Block, char a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     wchar_t * GetName(void *a1 = 0);
-    unsigned int u32_A4;  // 0xA4 (offset-truth)
-    unsigned char u32_A5;  // 0xA5 (offset-truth)
-    unsigned int u32_A8;  // 0xA8 (offset-truth)
-    unsigned char __pad_05D;  // 0x5D [X30:canon]
-
-
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

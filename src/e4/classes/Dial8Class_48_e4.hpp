@@ -8,9 +8,12 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct Dial8Class_48 {
+    unsigned int __pad_0;  // 0x0
+    int q004;  // 0x4
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
+    int m_10;  // 0x10
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x4A7D20
     int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x4A7D70
@@ -24,16 +27,5 @@ struct Dial8Class_48 {
     DynamicVector *  Constructor_VectorClass_DiskLaserClass___(char a2);  // 0x4A8080
     unsigned int  PointerToIndex(int a2);  // 0x4A7D50
     unsigned int  Write(int a2);  // 0x4A7EE0
-    unsigned char *m_1;  // 0x1 (offset-truth)
-int m_10;  // 0x10 [X35-L7 kind=int]
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

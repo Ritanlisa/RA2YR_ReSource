@@ -6,9 +6,17 @@
 namespace gamemd {
 
 struct ColorListClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char Enabled;  // 0x15
+    unsigned int __pad_004;  // 0x4
+    int ColorListClass_field_0x08;  // 0x8
+    int ColorListClass_field_0x0C;  // 0xC
+    int ColorListClass_field_0x10;  // 0x10
+    int ColorListClass_field_0x14;  // 0x14
+    int ColorListClass_field_0x18;  // 0x18
+    int ColorListClass_field_0x1C;  // 0x1C
+    int ColorListClass_field_0x20;  // 0x20
+    int ColorListClass_field_0x24;  // 0x24
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     ColorListClass * QueryInterface(char * Block, char a2);
     int Clear(unsigned int a2);
@@ -16,15 +24,6 @@ struct ColorListClass {
     int SetColor();
     void RemoveColor(wchar_t * String2);
     ColorListClass * sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int u32_16C;  // 0x16C (offset-truth)
-    unsigned int u32_170;  // 0x170 (offset-truth)
-    unsigned int u32_38;  // 0x38 (offset-truth)
-    unsigned int u32_44;  // 0x44 (offset-truth)
-
-    unsigned int u32_50;  // X10 supply (member_lookup)
-    unsigned char __pad_004;  // 0x4 [X30:canon]
-    unsigned char __pad_019;  // 0x19 [X30:canon]
 };
 
 } // namespace gamemd

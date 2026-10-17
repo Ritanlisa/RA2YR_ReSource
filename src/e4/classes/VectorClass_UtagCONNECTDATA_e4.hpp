@@ -8,13 +8,15 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UtagCONNECTDATA {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_tagCONNECTDATA_(char a2);  // 0x4A0E10
     int Destroy(void *a1_1);  // 0x4A0EB0
@@ -27,6 +29,5 @@ struct VectorClass_UtagCONNECTDATA {
     char  SetCapacity(int a2, unsigned int * a3);  // 0x4A1140
     int  FindItemIndex(unsigned int * a2);  // 0x4A1200
     VectorClass_flat *  QueryInterface(char a2);  // 0x4A14A0
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

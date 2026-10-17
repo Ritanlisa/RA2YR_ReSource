@@ -6,13 +6,13 @@
 namespace gamemd {
 
 struct BufferIO {
+    int __pad_000;  // 0x0
+    int BufferIO_field_0x04;  // 0x4
+    int BufferIO_field_0x08;  // 0x8
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int Cleanup(int a2, void *a1 = 0);
     int Flush(void *a1 = 0);
-    unsigned int q_180;  // +0x180 flat supply (CSP-fed)
-    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

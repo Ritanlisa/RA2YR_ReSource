@@ -9,11 +9,16 @@ struct MSVQAnim;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct rc_ptr;  // fix_fwd_type_supply
 struct MSFrameAnim {
+    unsigned int __pad_0;  // 0x0
+    unsigned int __pad_004;  // 0x4
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
+    unsigned int m_10;  // 0x10
+    char __pad_14[2];  // 0x14
+    unsigned char Count;  // 0x16
+    char __pad_17[1];  // 0x17
+    int MSFrameAnim_field_0x18;  // 0x18
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
-    int Count;  // 0x16
 // --- flat members (END) ---
     void *  QueryInterface(char a2);  // 0x769BD0
     AbstractClass * *  setFrameRate(int a2, unsigned int * a3);  // 0x769FE0
@@ -31,18 +36,5 @@ struct MSFrameAnim {
     unsigned int  startAnimation(int a2);  // 0x769C80
     unsigned int  pauseAnimation(int a2);  // 0x769D00
     unsigned int * drawFrame(void *a1_1);  // 0x76A7C0
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int *q000;  // 0x0 (offset-truth)
-
-    unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-    unsigned char __pad_01A;  // 0x1A [X30:canon]
-    unsigned int INIClass_10;  // [X30:default]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

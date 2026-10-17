@@ -18,76 +18,88 @@ struct WarheadTypeClass;  // fix_fwd_type_supply
 struct ParticleSystemTypeClass;  // fix_fwd_type_supply
 
 struct VoxelAnimTypeClass {
-// --- flat members (BEGIN) ---
+#pragma pack(push, 1)  // X60: binary-packed layout
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     SHPStruct* uniqueId;  // 0x10
-    unsigned char alignmentPadding_3;  // 0x11
-    int Strength;  // 0x12
-    bool IsAllocated;  // 0x13
-    bool abstractFlags;  // 0x14
-    SHPStruct* Image;  // 0x16
+    int abstractFlags;  // 0x14
     SHPStruct* nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     char NeedsSaveOrLink[4];  // 0x20
-    VoxelStruct* BarrelVoxel;  // 0x24 [X30:type_map]
+    char __pad_24[4];  // 0x24
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
-    bool NoSpawnAlt;  // 0x30
-    char TurretVoxel[4];  // 0x32
+    char __pad_30[1];  // 0x30
+    char __pad_31[1];  // 0x31
+    char __pad_32[4];  // 0x32
+    unsigned char __pad_036;  // 0x36
+    char __pad_37[5];  // 0x37
     unsigned char zero_3C;  // 0x3C
-    unsigned char UINameLabel;  // 0x3D
+    char UINameLabel[32];  // 0x3D
+    unsigned char __pad_05D;  // 0x5D
+    char __pad_5E[2];  // 0x5E
     void * UIName;  // 0x60
-    unsigned char Name;  // 0x64
-    unsigned int tail_95;  // 0x95
+    char Name[49];  // 0x64
+    char tail_95[3];  // 0x95
+    char __pad_98[1];  // 0x98
+    unsigned char __pad_099;  // 0x99
+    char __pad_9A[1];  // 0x9A
     unsigned char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int Strength_d;  // 0xA0
     void * Image_d;  // 0xA4
     char ImageAllocated;  // 0xA8
+    char __pad_0A9[3];  // 0xA9
     void * AlphaImage;  // 0xAC
-    void* MainVoxel;  // 0xB0 [X30:type_map]
+    void* MainVoxel;  // 0xB0
     int TurretVoxel_d;  // 0xB4
-    unsigned char ChargerTurrets;  // 0xBC
-    unsigned char ChargerBarrels;  // 0x104
-    int voxelSlot176;  // 0x176
+    unsigned int __pad_0B8;  // 0xB8
+    int ChargerTurrets[18];  // 0xBC
+    int ChargerBarrels[18];  // 0x104
+    unsigned char __pad_14C;  // 0x14C
+    char __pad_14D[41];  // 0x14D
+    unsigned char voxelSlot176;  // 0x176
+    char __pad_177[3];  // 0x177
+    unsigned char __pad_17A;  // 0x17A
+    char __pad_17B[5];  // 0x17B
     int voxelSlot180;  // 0x180
+    unsigned char __pad_184;  // 0x184
+    char __pad_185[100];  // 0x185
+    char align_1E9[3];  // 0x1E9
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
-    char ImageFile;  // 0x1F8
-    bool AlternateArcticArt;  // 0x1F9
-    bool ArcticArtInUse;  // 0x1FA
-    char AlphaImageFile_0x19;  // 0x1FB
-    bool Theater;  // 0x1FC
-    bool Crushable;  // 0x1FD
-    bool Bombable;  // 0x1FE
-    bool RadarInvisible;  // 0x1FF
-    bool Selectable;  // 0x200
-    bool LegalTarget;  // 0x201
-    bool Insignificant;  // 0x202
-    bool Immune;  // 0x203
-    bool IsLogic;  // 0x204
-    bool AllowCellContent;  // 0x205
-    bool Voxel;  // 0x206
-    bool NewTheater;  // 0x207
-    bool HasRadialIndicator;  // 0x208
-    bool IgnoresFirestorm;  // 0x209
-    bool UseLineTrail;  // 0x20A
-    char LineTrailColor[4];  // 0x20C
+    char ImageFile[25];  // 0x1F8
+    char __pad_211;  // 0x211
     unsigned char ArcticArtInUse_d;  // 0x212
-    unsigned char AlphaImageFile;  // 0x213
+    char AlphaImageFile[25];  // 0x213
+    unsigned char __pad_22C;  // 0x22C
+    char Crushable[1];  // 0x22D
+    char Bombable[1];  // 0x22E
+    char RadarInvisible[1];  // 0x22F
+    char Selectable[1];  // 0x230
+    char LegalTarget[1];  // 0x231
     unsigned char Insignificant_d;  // 0x232
+    unsigned char __pad_233;  // 0x233
+    char IsLogic[1];  // 0x234
+    char AllowCellContent[1];  // 0x235
     unsigned char Voxel_d;  // 0x236
+    char __pad_237;  // 0x237
+    char HasRadialIndicator[1];  // 0x238
+    char IgnoresFirestorm[1];  // 0x239
+    char UseLineTrail[1];  // 0x23A
+    char LineTrailColor[3];  // 0x23B
+    char align_23E[2];  // 0x23E
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches[80];  // 0x244
     bool Normalized;  // 0x294
     bool Translucent;  // 0x295
     bool SourceShared;  // 0x296
-    int ShareBarrelData;  // 0x298 [X30:type_map]
-    void* Duration;  // 0x29C [X30:type_map]
+    unsigned char __pad_297;  // 0x297
+    int32_t VoxelIndex;  // 0x298
+    void* Duration;  // 0x29C
     double Elasticity;  // 0x2A0
     double MinAngularVelocity;  // 0x2A8
     double MaxAngularVelocity;  // 0x2B0
@@ -95,18 +107,21 @@ struct VoxelAnimTypeClass {
     double MaxZVel;  // 0x2C0
     double MaxXYVel;  // 0x2C8
     bool IsMeteor;  // 0x2D0
+    char __pad_2D1[3];  // 0x2D1
     VoxelAnimTypeClass* Spawns;  // 0x2D4
-    void* SpawnCount;  // 0x2D8 [X30:type_map]
-    int StartSound;  // 0x2DC [X30:type_map]
-    void* StopSound;  // 0x2E0 [X30:type_map]
+    void* SpawnCount;  // 0x2D8
+    int StartSound;  // 0x2DC
+    void* StopSound;  // 0x2E0
     AnimTypeClass* BounceAnim;  // 0x2E4
     AnimTypeClass* ExpireAnim;  // 0x2E8
     AnimTypeClass* TrailerAnim;  // 0x2EC
-    void* Damage;  // 0x2F0 [X30:type_map]
-    int DamageRadius;  // 0x2F4 [X30:type_map]
+    void* Damage;  // 0x2F0
+    int DamageRadius;  // 0x2F4
     WarheadTypeClass* Warhead;  // 0x2F8
     ParticleSystemTypeClass* AttachedSystem;  // 0x2FC
     bool IsTiberium;  // 0x300
+    char __pad_301[3];  // 0x301
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     VoxelAnimTypeClass * LoadFromINI(uint8_t *** a2, void *a2_2);
     VoxelAnimTypeClass * ddtor(char a2);
@@ -121,29 +136,7 @@ struct VoxelAnimTypeClass {
     long long GetData(ObjectTypeClass * aP1, int a3);
     VoxelAnimTypeClass * Constructor(char *Source, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     VoxelAnimTypeClass * ddtor(void ** Block, char a2);
-
-    int32_t VoxelIndex;  // X10 supply (member_lookup)
-    unsigned char __pad_036;  // 0x36 [X30:canon]
-    unsigned char __pad_05D;  // 0x5D [X30:canon]
-    unsigned char __pad_099;  // 0x99 [X30:canon]
-    unsigned char __pad_0A9;  // 0xA9 [X30:canon]
-    unsigned char __pad_0B8;  // 0xB8 [X30:canon]
-    unsigned char __pad_14C;  // 0x14C [X30:canon]
-    unsigned char __pad_17A;  // 0x17A [X30:canon]
-    unsigned char __pad_184;  // 0x184 [X30:canon]
-char __pad_211;  // 0x211 [X35-L7 kind=char]
-    unsigned char __pad_22C;  // 0x22C [X30:canon]
-    int __pad_233;  // 0x233 [X30:type_map]
-char __pad_237;  // 0x237 [X35-L7 kind=char]
-    unsigned char __pad_297;  // 0x297 [X30:canon]
-    unsigned char __pad_2D1;  // 0x2D1 [X30:canon]
-    unsigned char __pad_301;  // 0x301 [X30:canon]
-    unsigned int AllowCellContent_d;  // [X30:default]
-    unsigned int Immune_d;  // [X30:default]
-    unsigned int IsLogic_d;  // [X30:default]
-    unsigned int LegalTarget_d;  // [X30:default]
-    unsigned int RadarInvisible_d;  // [X30:default]
-    unsigned int Selectable_d;  // [X30:default]
+#pragma pack(pop)
 };
 
 } // namespace gamemd

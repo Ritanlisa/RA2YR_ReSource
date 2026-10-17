@@ -8,10 +8,22 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct MoveFeedback {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int MoveFeedback_field_0x04;  // 0x4
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
+    unsigned int m_10;  // 0x10
+    int MoveFeedback_field_0x14;  // 0x14
+    int MoveFeedback_field_0x18;  // 0x18
+    int MoveFeedback_field_0x1C;  // 0x1C
+    int MoveFeedback_field_0x20;  // 0x20
+    int MoveFeedback_field_0x24;  // 0x24
+    int MoveFeedback_field_0x28;  // 0x28
+    int MoveFeedback_field_0x2C;  // 0x2C
+    int MoveFeedback_field_0x30;  // 0x30
+    int MoveFeedback_field_0x34;  // 0x34
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
-    int Count;  // 0x16
 // --- flat members (END) ---
     unsigned int  PointerToIndex(int a2);  // 0x40B670
     int  Show(int a2);  // 0x40B6F0
@@ -25,15 +37,6 @@ struct MoveFeedback {
     int ProcessCommand();
     unsigned int GetIndex2(int a2);
     void Destroy(void *a1 = 0);
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_10;  // 0x10 (offset-truth)
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-    unsigned char __pad_01A;  // 0x1A [X30:canon]
-    unsigned int m_Capacity;  // [X30:default]
-    unsigned int m_Items;  // [X30:default]
 };
 
 } // namespace gamemd

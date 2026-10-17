@@ -7,13 +7,15 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_ushort {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Destroy(void *a1_1);  // 0x42D5A0
     unsigned int  GetItemIndex(int a2);  // 0x42D5D0
@@ -27,6 +29,5 @@ struct VectorClass_ushort {
     int  FindItemIndex(unsigned short * a2);  // 0x42DAE0
     VectorClass_ushort * Add(unsigned int * Block, char a2, void *a3_1);  // 0x42DBB0
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x42DC00
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

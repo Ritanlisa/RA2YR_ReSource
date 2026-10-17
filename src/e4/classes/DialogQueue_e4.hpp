@@ -6,12 +6,12 @@
 namespace gamemd {
 
 struct DialogQueue {
+    void* __pad_000;  // 0x0
+    int DialogQueue_field_0x04;  // 0x4
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int PushEntry(void *a1, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     int RemoveEntry(void *a1 = 0);
-    void* __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

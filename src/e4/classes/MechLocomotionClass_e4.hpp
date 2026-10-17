@@ -8,25 +8,25 @@ namespace gamemd {
 struct ILocomotion;  // fix_fwd_type_supply
 
 struct MechLocomotionClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     unsigned int Owner;  // 0x8
     unsigned int LinkedTo;  // 0xC
     unsigned char Powered;  // 0x10
     unsigned char Dirty;  // 0x11
+    unsigned char __pad_012;  // 0x12
+    char __pad_13[1];  // 0x13
     unsigned int RefCount;  // 0x14
     char MovingDestination[12];  // 0x18
     char HeadToCoord[12];  // 0x24
     bool IsMoving;  // 0x30
-    unsigned char tail_31;  // 0x31
-    ILocomotion * ptr_20;  // 0x32
+    char tail_31[3];  // 0x31
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     MechLocomotionClass * ProcessMove(unsigned int * Block, char a2);
     int BeginMove(int * a1, int * a2);
     int StubReturn52();
     int ddtor(int a1, unsigned int * a2);
-    unsigned char __pad_012;  // 0x12 [X30:canon]
 };
 
 } // namespace gamemd

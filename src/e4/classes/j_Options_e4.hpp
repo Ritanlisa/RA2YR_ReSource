@@ -6,11 +6,10 @@
 namespace gamemd {
 
 struct j_Options {
+    unsigned char __pad_000;  // 0x0
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int j_Options_GetValue(const char ** dwNewLong);
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

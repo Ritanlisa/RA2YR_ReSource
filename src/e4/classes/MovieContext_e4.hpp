@@ -6,11 +6,10 @@
 namespace gamemd {
 
 struct MovieContext {
+    char __tail_0[4];  // 0x0
 // --- flat members (BEGIN) ---
-    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     int Cleanup(void *a1 = 0);
-    char __tail_0[4];  // 0x0 (ml)
 };
 
 } // namespace gamemd

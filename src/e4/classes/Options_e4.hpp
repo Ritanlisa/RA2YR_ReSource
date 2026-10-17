@@ -6,8 +6,24 @@
 
 namespace gamemd {
 struct Options {
-// --- flat members (BEGIN) ---
+    unsigned int __pad_0;  // 0x0
+    unsigned int field_4;  // 0x4
+    unsigned int field_8;  // 0x8
+    void * field_C;  // 0xC
+    void * field_10;  // 0x10
+    char __pad_14[28];  // 0x14
+    void * field_30;  // 0x30
+    char __pad_34[4];  // 0x34
     AbstractClass * ptr_38;  // 0x38
+    char __pad_3C[172];  // 0x3C
+    void * field_E8;  // 0xE8
+    void * field_EC;  // 0xEC
+    void * field_F0;  // 0xF0
+    void * field_F4;  // 0xF4
+    void * field_F8;  // 0xF8
+    char __pad_FC[1552];  // 0xFC
+    void * field_70C;  // 0x70C
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int  DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);  // 0x4F11B0
     bool PrepareSaveLoadDlg(const char ** dwNewLong);  // 0x558840
@@ -26,16 +42,5 @@ struct Options {
     HWND InitDialogControls(HWND hDlg);  // 0x4F1720
     int DialogProc(CCINIClass hWnd, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x618D40
     void ClearComboBoxes();  // 0x624460
-    unsigned int *q000;  // 0x0 (canon-mt)
-    unsigned int q004;  // 0x4 (offset-truth)
-
-    unsigned char q008[4];  /* DeleteAndZero */  // X10 supply (member_lookup)
-    void * field_10;  // 0x10
-    void * field_C;  // 0xC
-    unsigned int field_4;  // [X30:default]
-    unsigned int field_8;  // [X30:default]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

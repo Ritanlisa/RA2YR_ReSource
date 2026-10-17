@@ -6,14 +6,18 @@
 namespace gamemd {
 
 struct MSPCXAnim {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+    unsigned int __pad_004;  // 0x4
+    int MSPCXAnim_field_0x08;  // 0x8
+    int MSPCXAnim_field_0x0C;  // 0xC
+    int MSPCXAnim_field_0x10;  // 0x10
+    int MSPCXAnim_field_0x14;  // 0x14
+    int MSPCXAnim_field_0x18;  // 0x18
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     MSPCXAnim * QueryInterface(char a2, int a3);
     int Stub();
     static unsigned int * Construct(void *aP1, void *a2, int a3, void *a4, char a5);
-    unsigned char u32_29;  // 0x29 (offset-truth)
-    unsigned char __pad_004;  // 0x4 [X30:canon]
 };
 
 } // namespace gamemd

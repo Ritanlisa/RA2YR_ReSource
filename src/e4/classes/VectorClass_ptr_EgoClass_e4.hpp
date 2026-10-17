@@ -8,13 +8,15 @@ namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_ptr_EgoClass {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Destroy(void *a1_1);  // 0x4C49A0
     unsigned int  GetItemIndex(int a2);  // 0x4C49D0
@@ -28,6 +30,5 @@ struct VectorClass_ptr_EgoClass {
     int  FindItemIndex(unsigned int * a2);  // 0x4C4C30
     VectorClass_flat *  QueryInterface(char a2);  // 0x4C4C60
     DynamicVector *  Constructor_VectorClass_EgoClass___(char a2);  // 0x4C4CB0
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

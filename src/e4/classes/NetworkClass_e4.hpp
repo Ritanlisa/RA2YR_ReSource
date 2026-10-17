@@ -6,18 +6,14 @@
 namespace gamemd {
 struct AnimClass;  // fix_fwd_type_supply
 struct NetworkClass {
-// --- flat members (BEGIN) ---
+    char __pad_0[4];  // 0x0
     void* q004;  // 0x4
+    char __pad_8[1784];  // 0x8
     void* q700;  // 0x700
-    void* q6034;  // 0x6034
-    unsigned int u32_64D4;  // 0x64D4
-    unsigned int u32_64D8;  // 0x64D8
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int ExecutePlanningModeCmd();  // 0x639FD0
     AbstractClass * * RecordEvent();  // 0x6FFE00
     AnimClass * * UnregisterAsync();  // 0x7B1C50
-
-    unsigned int u32_3F06C;  // X10 supply (member_lookup)
-    unsigned int u32_3F070;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

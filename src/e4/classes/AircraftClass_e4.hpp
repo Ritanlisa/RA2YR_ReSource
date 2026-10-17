@@ -26,36 +26,30 @@ struct LocomotionClass;  // fix_fwd_type_supply
 struct AircraftTypeClass;  // fix_fwd_type_supply
 
 struct AircraftClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    unsigned int vfptr;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     unsigned int uniqueId;  // 0x10
-    void* vfptr_3;  // 0x12
-    bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
-    bool NeedsSaveOrLink;  // 0x20
+    int NeedsSaveOrLink;  // 0x20
     unsigned int objectTypeFlags;  // 0x24
     unsigned int owningHouseIndex;  // 0x28
     char fallRate[4];  // 0x2C
     ObjectClass* nextObject;  // 0x30
-    bool needsSave;  // 0x32
-    unsigned int alignmentPadding;  // 0x33
     TagClass* attachedTag;  // 0x34
-    unsigned int occupant;  // 0x36
     BombClass* attachedBomb;  // 0x38
     char ambientSoundController[20];  // 0x3C
     char customSound_controller[20];  // 0x50
-int customSound;  // 0x64 [X35-L7 kind=int]
+    int customSound;  // 0x64
     bool bombVisible;  // 0x68
-    unsigned char alignmentPadding69;  // 0x69
-    int health;  // 0x6C [X30:type_map]
-    int estimatedHealth;  // 0x70 [X30:type_map]
+    char alignmentPadding69[3];  // 0x69
+    int health;  // 0x6C
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
-    unsigned char alignmentPadding75;  // 0x75
+    char alignmentPadding75[3];  // 0x75
     unsigned int spawnStatus;  // 0x78
     unsigned int visibilityFlags;  // 0x7C
     bool needsRedraw;  // 0x80
@@ -63,14 +57,14 @@ int customSound;  // 0x64 [X35-L7 kind=int]
     bool inOpenToppedTransport;  // 0x82
     bool isSelected;  // 0x83
     bool hasParachute;  // 0x84
-    unsigned char alignmentPadding85;  // 0x85
+    char alignmentPadding85[3];  // 0x85
     AnimClass* parachute;  // 0x88
     bool onBridge;  // 0x8C
     bool isFallingDown;  // 0x8D
     bool wasFallingDown;  // 0x8E
     bool isBomb;  // 0x8F
     bool isAliveFlag;  // 0x90
-    unsigned char alignmentPadding91;  // 0x91
+    char alignmentPadding91[3];  // 0x91
     unsigned int lastLayer;  // 0x94
     bool isInLogic;  // 0x98
     bool isVisible;  // 0x99
@@ -81,89 +75,74 @@ int customSound;  // 0x64 [X35-L7 kind=int]
     void* suspendedMission;  // 0xB0
     char queuedMission[4];  // 0xB4
     bool missionQueued;  // 0xB8
-    unsigned char alignmentPaddingB9;  // 0xB9
-    int missionStatus;  // 0xBC [X30:type_map]
+    char alignmentPaddingB9[3];  // 0xB9
+    int missionStatus;  // 0xBC
     char missionStartTime[4];  // 0xC0
     unsigned int missionData;  // 0xC4
     char missionTimer[12];  // 0xC8
-    unsigned char lastCommands;  // 0xD4
-    unsigned int radioLinks;  // 0xE0
-    unsigned long long flashing;  // 0xE4
-    unsigned long long animation;  // 0xEC
-    unsigned long long passengers;  // 0xF4
-    char radioContact[4];  // 0xF8
-    unsigned int transporter;  // 0xFC
-    unsigned int turretChargeTimer;  // 0x100
-    unsigned int currentTurretNumber;  // 0x104
-    unsigned int secondaryTurretIndex;  // 0x108
-    unsigned int behindAnim;  // 0x10C
-    unsigned int deployAnim;  // 0x110
-    char inAirFlag[1];  // 0x114
+    int lastCommands[3];  // 0xD4
+    int radioLinks[4];  // 0xE0
+    int flashing[2];  // 0xF0
+    char radioContact[28];  // 0xF8
+    int passengers[2];  // 0x114
+    int transporter;  // 0x11C
     int turretChargeTimer_d;  // 0x120
     int currentTurretNumber_d;  // 0x124
     int secondaryTurretIndex_d;  // 0x128
+    unsigned int __pad_12C;  // 0x12C
     int deployAnim_d;  // 0x130
     unsigned char inAirFlag_d;  // 0x134
-    unsigned char alignmentPadding139;  // 0x135
-int radioQueueCount;  // 0x138 [X35-L7 kind=int]
-    unsigned char alignmentPadding139_d;  // 0x139
-    char currentWeaponSlot[4];  // 0x13C
-int currentRank;  // 0x140 [X35-L7 kind=int]
-int gattlingStage;  // 0x144 [X35-L7 kind=int]
-    unsigned int gattlingValue;  // 0x148
-    HouseClass* ammoReloadTimer;  // 0x14C
-    FootClass* initialOwner;  // 0x150 [X30:type_map]
-    unsigned int veterancy;  // 0x154
-    double alignmentPadding154;  // 0x158
-    unsigned long long armorMultiplier;  // 0x15C
+    char alignmentPadding139[3];  // 0x135
+    int radioQueueCount;  // 0x138
+    int currentRank;  // 0x13C
+    int gattlingStage;  // 0x140
+    int gattlingValue;  // 0x144
+    int ammoReloadTimer;  // 0x148
+    int initialOwner;  // 0x14C
+    int veterancy;  // 0x150
+    int alignmentPadding154;  // 0x154
+    int armorMultiplier[2];  // 0x158
     double firepowerMultiplier;  // 0x160
-    unsigned long long firepowerMultiplier_d;  // 0x164
     char idleActionTimer[12];  // 0x168
     char radarFlashTimer[12];  // 0x174
-    unsigned char radarFlashTimer_d;  // 0x178
     char targetingTimer[12];  // 0x180
-    bool targetingTimer_d;  // 0x184
-    unsigned char ironCurtainTimer;  // 0x190
-    unsigned char ironTintTimer;  // 0x19C
+    char __pad_18C[4];  // 0x18C
+    int ironCurtainTimer[3];  // 0x190
+    int ironTintTimer[3];  // 0x19C
     char ironTintStage[4];  // 0x1A8
-    unsigned char airstrikeTimer;  // 0x1AC
+    int airstrikeTimer[3];  // 0x1AC
     char airstrikeTintTimer[12];  // 0x1B8
     unsigned int airstrikeTintStage;  // 0x1C4
     unsigned int forceShielded;  // 0x1C8
     TechnoClass* isDeactivated;  // 0x1CC
-    unsigned char alignmentPadding1BD;  // 0x1CD
-    TechnoClass* drainTarget;  // 0x1D0
-    AnimClass* drainingMe;  // 0x1D4
-    void* isDisguisedFlag;  // 0x1D8
+    int drainingMe;  // 0x1D0
+    int drainAnim;  // 0x1D4
+    char isDisguisedFlag[1];  // 0x1D8
+    char __pad_1D9[3];  // 0x1D9
     unsigned int isDisguisedFlag_d;  // 0x1DC
-    unsigned char alignmentPadding1CE;  // 0x1DD
-    void* infantryBlinkTimer;  // 0x1E0
-    unsigned char infantryBlinkTimer_d;  // 0x1E4
-    char disguiseBlinkTimer[4];  // 0x1EC
+    int infantryBlinkTimer[3];  // 0x1E0
+    int disguiseBlinkTimer[3];  // 0x1EC
     bool isTargetedByChrono;  // 0x1F8
-    unsigned char alignmentPadding1F9;  // 0x1FD
-    unsigned char reloadTimer;  // 0x200
+    char q1F9[3];  // 0x1F9
+    char __pad_1FC[12];  // 0x1FC
     unsigned int currentBurstCount;  // 0x208
-    unsigned int currentBarrelIndex;  // 0x210
-int displayProductionTo;  // 0x214 [X35-L7 kind=int]
+    unsigned int __pad_20C;  // 0x20C
+    int displayProductionTo;  // 0x210
+    int controlGroup;  // 0x214
     AbstractClass* Owner;  // 0x218
-    HouseClass* focus;  // 0x21C
-    unsigned int owner;  // 0x220
-    char cloakState[4];  // 0x224
-    unsigned long long cloakProgress;  // 0x228
-    unsigned int spawnOwner;  // 0x22C
-    unsigned char cloakDelayTimer;  // 0x230
-    unsigned int slaveManager;  // 0x234
-    unsigned int warpFactor;  // 0x23C
-    char isChronosphereImmune[1];  // 0x240
-    unsigned char alignmentPadding251;  // 0x251
+    int owner;  // 0x21C
+    int cloakState;  // 0x220
+    int cloakProgress[7];  // 0x224
+    int cloakDelayTimer[3];  // 0x240
+    int warpFactor;  // 0x24C
+    char isChronosphereImmune[1];  // 0x250
+    char alignmentPadding251[3];  // 0x251
     char lastSightCoords[12];  // 0x254
-    unsigned int ammo;  // 0x258
-    unsigned int unitValue;  // 0x25C
-int lastSightRange;  // 0x260 [X35-L7 kind=int]
-int lastSightHeight;  // 0x264 [X35-L7 kind=int]
-    bool ambientParticles;  // 0x268
+    int lastSightRange;  // 0x260
+    int lastSightHeight;  // 0x264
+    char gapSuperCharged[1];  // 0x268
     bool isGeneratingGap;  // 0x269
+    char q26A[2];  // 0x26A
     char gapRadius[4];  // 0x26C
     bool isBeingWarpedOut;  // 0x270
     bool isWarpingOut;  // 0x271
@@ -172,91 +151,64 @@ int lastSightHeight;  // 0x264 [X35-L7 kind=int]
     TemporalClass* temporalUsing;  // 0x274
     TemporalClass* temporalTargetingMe;  // 0x278
     bool isImmobilized;  // 0x27C
-    unsigned short alignmentPadding27E;  // 0x27E
-    unsigned int waveEffect;  // 0x280
+    char q27D[3];  // 0x27D
+    int owningHouseIndex0;  // 0x280
     int isBeingWarpedOut_d;  // 0x284
-    unsigned char isWarpEffectActive_d;  // 0x286
-    unsigned int temporalUsing_d;  // 0x288
-    unsigned char isImmobilized_d;  // 0x290
-    unsigned char alignmentPadding27D;  // 0x291
+    char temporalUsing_d[12];  // 0x288
     void* airstrike;  // 0x294
-    bool chronoLockRemaining;  // 0x298
-    unsigned int chronoDestCoords;  // 0x29C
+    char isBerserk[1];  // 0x298
+    char q299[3];  // 0x299
+    int isBerserk_duration_left;  // 0x29C
     unsigned int sprayOffsetIndex;  // 0x2A0
     bool isUncrushable;  // 0x2A4
+    char q2A5[3];  // 0x2A5
     FootClass* airstrike_d;  // 0x2A8
-    FootClass* isBerserk;  // 0x2AC
-    unsigned char alignmentPadding29D;  // 0x2AD
-    FootClass* isBerserk_duration_left;  // 0x2B0
-    unsigned char alignmentPadding2A9;  // 0x2B9
-    CaptureManagerClass* rockerLinkedUnit;  // 0x2BC
-    TechnoClass* locomotorTarget;  // 0x2C0
-    bool locomotorSource;  // 0x2C4
-    AnimClass* target;  // 0x2C8
-    HouseClass* lastTarget;  // 0x2CC
-    SpawnManagerClass* captureManager;  // 0x2D0
-    TechnoClass* mindControlledBy;  // 0x2D4
-    unsigned int targetLaserFlags;  // 0x2D6
-    SlaveManagerClass* mindControlledBy_a_unit;  // 0x2D8
-    unsigned char alignmentPadding2C2;  // 0x2D9
-    unsigned int wasAlreadySinking;  // 0x2DA
-    unsigned int isReceivingDamageEffect;  // 0x2DB
-    TechnoClass* mindControlRingAnim;  // 0x2DC
-    unsigned int hasBeenAttacked;  // 0x2DD
-    unsigned int isCloakableFlag;  // 0x2DE
-    unsigned int isPrimaryFactory;  // 0x2DF
-    HouseClass* mindControlledBy_house;  // 0x2E0
-    unsigned int isInPlayfield;  // 0x2E1
-    TechnoClass* spawnManager;  // 0x2E4
-    unsigned int slaveOwner;  // 0x2F0
-    unsigned int originalOwnerHouse;  // 0x2F4
-    unsigned int bunkerLinkedUnit;  // 0x2F8
-    int pitchAngle;  // 0x2FC [X30:type_map]
-    char diskLaserTimer[12];  // 0x300
+    int locomotorTarget;  // 0x2AC
+    int locomotorSource;  // 0x2B0
+    AbstractClass* __pad_2B4;  // 0x2B4
+    int lastTarget;  // 0x2B8
+    int captureManager;  // 0x2BC
+    int mindControlledBy;  // 0x2C0
+    char mindControlledBy_a_unit[1];  // 0x2C4
+    char q2C5[3];  // 0x2C5
+    int mindControlRingAnim;  // 0x2C8
+    int mindControlledBy_house;  // 0x2CC
+    int spawnManager;  // 0x2D0
+    int spawnOwner;  // 0x2D4
+    int slaveManager;  // 0x2D8
+    int slaveOwner;  // 0x2DC
+    int originalOwnerHouse;  // 0x2E0
+    int bunkerLinkedUnit;  // 0x2E4
+    unsigned int __pad_2E8;  // 0x2E8
+    int diskLaserTimer[3];  // 0x2EC
+    int diskLaserChargeState;  // 0x2F8
+    int ammo;  // 0x2FC
+    int unitValue;  // 0x300
     ParticleSystemClass* fireParticles;  // 0x304
     ParticleSystemClass* sparkParticles;  // 0x308
-    ParticleSystemClass* diskLaserChargeState;  // 0x30C
+    int ambientParticles;  // 0x30C
     int ammo_d;  // 0x310
-    unsigned int isBarrelLocked;  // 0x315
-    unsigned int isHumanControlled;  // 0x316
-    unsigned int isDiscoveredByPlayer;  // 0x317
-    unsigned int isSelectedByPlayer;  // 0x319
-    unsigned int isUnderCursor;  // 0x31A
-    unsigned int isCommandLineTarget;  // 0x31B
-    unsigned int isRecruitableByAlly;  // 0x31D
-    unsigned int isRecruitableByEnemy;  // 0x31E
-    unsigned int isRadarTracked;  // 0x31F
+    unsigned int __pad_314;  // 0x314
+    int unk1Particles;  // 0x318
+    char __pad_31C[1];  // 0x31C
+    char __pad_31D[3];  // 0x31D
     int ambientParticles_d;  // 0x320
-    bool isCrashing;  // 0x321
-    bool wasAlreadyCrashing;  // 0x322
-    bool isBeingManipulated;  // 0x323
-    TechnoClass* damageParticles;  // 0x324
-    HouseClass* railgunParticles;  // 0x328
-    bool auxParticles1;  // 0x32C
-    bool isEMPImmune;  // 0x32D
-    bool isRadiationImmune;  // 0x32E
+    int damageParticles_2;  // 0x324
+    int railgunParticles_2;  // 0x328
+    int auxParticles1;  // 0x32C
     TeamClass* auxParticles2;  // 0x330
-    bool firingParticles;  // 0x334
-    bool isAbsorbed;  // 0x335
-    bool isGrindingInProgress;  // 0x336
+    int firingParticles;  // 0x334
     int waveEffect_d;  // 0x338
     unsigned int tiltSidewaysAngle;  // 0x33C
     float tiltForwardsAngle;  // 0x340
     float tiltSidewaysRate;  // 0x344
     float tiltForwardsRate;  // 0x348
     int hijackerInfantryType;  // 0x34C
-    unsigned char storedTiberium;  // 0x350
-    unsigned int currentTargets;  // 0x354
+    int storedTiberium[4];  // 0x350
     int tiberiumCollectionState;  // 0x360
-    unsigned char unloadTimer;  // 0x364
-    unsigned int attackedTargets;  // 0x36C
+    int unloadTimer[3];  // 0x364
     char barrelFacing[24];  // 0x370
-    char currentBurstIndex[4];  // 0x37C
     char primaryFacing[24];  // 0x388
-    char targetLaserOpacity[4];  // 0x38C
-    bool isSinking;  // 0x391
-    bool isSpawned;  // 0x398
-    char turretRecoil[4];  // 0x39C
     char secondaryFacing[24];  // 0x3A0
     char currentBurstIndex_d[4];  // 0x3B8
     char targetLaserTimer[12];  // 0x3BC
@@ -264,24 +216,33 @@ int lastSightHeight;  // 0x264 [X35-L7 kind=int]
     unsigned short unknown_3CA;  // 0x3CA
     bool countedAsOwned;  // 0x3CC
     bool isSinking_d;  // 0x3CD
+    unsigned char __pad_3CE;  // 0x3CE
+    char isReceivingDamageEffect[1];  // 0x3CF
     bool isUseless;  // 0x3D0
+    unsigned char __pad_3D1;  // 0x3D1
+    char isCloakableFlag[1];  // 0x3D2
+    char isPrimaryFactory[1];  // 0x3D3
     bool isALoaner;  // 0x3D4
+    unsigned char __pad_3D5;  // 0x3D5
+    char __pad_3D6[2];  // 0x3D6
     char turretRecoil_d[32];  // 0x3D8
-    bool isTurretLocked;  // 0x3DC
-    bool isDiscoveredByComputer;  // 0x3E0
-    TechnoClass* manipulatedByUnit;  // 0x3EC
-    HouseClass* chronoWarpedByHouse;  // 0x3F0
-    bool isChronoImmuneFlag;  // 0x3F4
     char barrelRecoil[32];  // 0x3F8
     bool isTether;  // 0x418
     bool isAlternativeTether;  // 0x419
     bool isOwnedByCurrentPlayer;  // 0x41A
     bool isDiscoveredByCurrentPlayer;  // 0x41B
     bool isDiscoveredByComputer_d;  // 0x41C
+    unsigned char __pad_41D;  // 0x41D
+    char isUnderCursor[1];  // 0x41E
+    char isCommandLineTarget[1];  // 0x41F
     char sightRangeBonus;  // 0x420
     bool isRecruitableByAlly_d;  // 0x421
+    bool __pad_422;  // 0x422
     bool isRadarTracked_d;  // 0x423
     bool isOnCarryall;  // 0x424
+    bool __pad_425;  // 0x425
+    char wasAlreadyCrashing[1];  // 0x426
+    char isBeingManipulated[1];  // 0x427
     TechnoClass* manipulatedByUnit_d;  // 0x428
     HouseClass* chronoWarpedByHouse_d;  // 0x42C
     bool isChronoImmuneFlag_d;  // 0x430
@@ -291,35 +252,34 @@ int lastSightHeight;  // 0x264 [X35-L7 kind=int]
     TeamClass* previousTeam;  // 0x434
     bool isCountedAsOwned_special;  // 0x438
     bool isAbsorbed_d;  // 0x439
+    unsigned char __pad_43A;  // 0x43A
     unsigned char alignmentPadding43B;  // 0x43B
     unsigned int grindingAnimHandle;  // 0x43C
-    unsigned char currentTargetThreatValues;  // 0x440
-    void * vecInt_Items;  // 0x444
-    int vecInt_Capacity;  // 0x448
-    bool vecInt_IsAllocated;  // 0x44D
-    void * vecAbs_Items;  // 0x45C
-    int vecAbs_Capacity;  // 0x460
-    bool vecAbs_IsAllocated;  // 0x465
-    AnimClass* drainAnim;  // 0x468
-    unsigned int disguiseCreationFrame;  // 0x476
-    char audioController4[4];  // 0x47C
+    int currentTargetThreatValues[6];  // 0x440
+    char __pad_458[24];  // 0x458
+    int attackedTargets[6];  // 0x470
     char turretRotateSoundController[20];  // 0x488
-    bool isAudio4Active;  // 0x490
     unsigned int isTurretRotateSoundPlaying;  // 0x49C
     unsigned int turretIsRotating;  // 0x4A0
     char gattlingSoundController[20];  // 0x4A4
     bool isGattlingSoundPlaying;  // 0x4B8
     unsigned char alignmentPadding4B9;  // 0x4B9
+    unsigned char __pad_4BA;  // 0x4BA
+    char __pad_4BB[1];  // 0x4BB
     unsigned int unknown_4BC;  // 0x4BC
     char unusedGattlingSoundController[20];  // 0x4C0
     bool isUnusedGattlingSoundPlaying;  // 0x4D4
     unsigned char alignmentPadding4D5;  // 0x4D5
+    unsigned char __pad_4D6;  // 0x4D6
+    char __pad_4D7[1];  // 0x4D7
     unsigned int unknown_4D8;  // 0x4D8
     char queuedVoiceSoundController[20];  // 0x4DC
     unsigned int queuedVoiceIndex;  // 0x4F0
     unsigned int unknown_4F4;  // 0x4F4
     bool unknown_bool_4F8;  // 0x4F8
     unsigned char alignmentPadding4F9;  // 0x4F9
+    unsigned char __pad_4FA;  // 0x4FA
+    char __pad_4FB[1];  // 0x4FB
     unsigned int unknown_4FC;  // 0x4FC
     TechnoClass* queueUpToEnter;  // 0x500
     unsigned int empLockRemaining;  // 0x504
@@ -329,71 +289,54 @@ int lastSightHeight;  // 0x264 [X35-L7 kind=int]
     void* planningToken;  // 0x514
     ObjectTypeClass* disguiseAsType;  // 0x518
     HouseClass* disguisedAsHouse;  // 0x51C
-int planningPathIdx;  // 0x520 [X35-L7 kind=int]
-short unknownShort524;  // 0x524 [X35-L7 kind=short]
-short unknownShort526;  // 0x526 [X35-L7 kind=short]
-short unknownShort528;  // 0x528 [X35-L7 kind=short]
+    int planningPathIdx;  // 0x520
+    short unknownShort524;  // 0x524
+    short unknownShort526;  // 0x526
+    short unknownShort528;  // 0x528
     char FootClass_field_short_52A[2];  // 0x52A
     char FootClass_field_52C[4];  // 0x52C
-    char FootClass_field_52E[4];  // 0x52E
-int unknown530;  // 0x530 [X35-L7 kind=int]
-    char controlGroup[4];  // 0x532
-int unknown534;  // 0x534 [X35-L7 kind=int]
-    int unknown538;  // 0x538 [X30:type_map]
+    int unknown530;  // 0x530
+    int unknown534;  // 0x534
+    int unknown538;  // 0x538
     bool FootClass_field_bool_53C;  // 0x53C
-    unsigned char m_padding_53D;  // 0x53D
-int unknown540;  // 0x540 [X35-L7 kind=int]
-    unsigned char audioController7;  // 0x544
+    char m_padding_53D[3];  // 0x53D
+    int unknown540;  // 0x540
+    int audioController7[5];  // 0x544
     char currentMapCoords[4];  // 0x558
-    char FootClass_field_55A[4];  // 0x55A
     char lastMapCoords[4];  // 0x55C
-    char FootClass_field_55E[4];  // 0x55E
     char lastJumpjetMapCoords[4];  // 0x560
-    char FootClass_field_562[4];  // 0x562
     char currentJumpjetMapCoords[4];  // 0x564
-    char FootClass_field_566[4];  // 0x566
     char unknownCoords568[12];  // 0x568
-    char FootClass_field_56C[4];  // 0x56C
-int FootClass_field_570;  // 0x570 [X35-L7 kind=int]
     int unused574;  // 0x574
     char currentSpeed_percentage[8];  // 0x578
-    char FootClass_field_57C[4];  // 0x57C
     char currentSpeed_multiplier[8];  // 0x580
-    float FootClass_field_584;  // 0x584
     unsigned int unknownAbstractArray588;  // 0x588
+    unsigned char __pad_58C;  // 0x58C
+    char __pad_58D[19];  // 0x58D
     char FootClass_field_5A0[4];  // 0x5A0
-    int movementDestination;  // 0x5A4 [X30:type_map]
+    int movementDestination;  // 0x5A4
     char lastDestination[4];  // 0x5A8
     unsigned int FootClass_field_abstract_array_5AC;  // 0x5AC
+    unsigned char __pad_5B0;  // 0x5B0
+    char __pad_5B1[19];  // 0x5B1
     char FootClass_field_int_5C4[4];  // 0x5C4
     char FootClass_field_5C8[4];  // 0x5C8
     char FootClass_field_5CC[4];  // 0x5CC
     bool FootClass_field_5D0;  // 0x5D0
     unsigned char FootClass_field_bool_5D1;  // 0x5D1
     unsigned short m_padding_5D2;  // 0x5D2
-    int team;  // 0x5D4 [X30:type_map]
+    int team;  // 0x5D4
     char nextTeamMember[4];  // 0x5D8
     char FootClass_field_5DC[4];  // 0x5DC
-    void* pathDirections;  // 0x5E0
-    bool gapSuperCharged;  // 0x616
+    int pathDirections[24];  // 0x5E0
     char pathDelayTimer[12];  // 0x640
-    char FootClass_field_644[4];  // 0x644
-    char FootClass_field_648[4];  // 0x648
     char FootClass_field_int_64C[4];  // 0x64C
     char FootClass_field_timer_650[12];  // 0x650
-int FootClass_field_654;  // 0x654 [X35-L7 kind=int]
-    char FootClass_field_658[4];  // 0x658
     char sightTimer[12];  // 0x65C
-    char FootClass_field_660[4];  // 0x660
-    char FootClass_field_664[4];  // 0x664
     char blockagePathTimer[12];  // 0x668
-    char FootClass_field_66C[4];  // 0x66C
-int FootClass_field_670;  // 0x670 [X35-L7 kind=int]
     ILocomotion* locomotor;  // 0x674
-    LocomotionClass* unknownPoint3d678;  // 0x678
-    bool IsDeploying;  // 0x67C
-    char FootClass_field_680[4];  // 0x680
-    void* tubeIndex;  // 0x684
+    int unknownPoint3d678[3];  // 0x678
+    char tubeIndex[1];  // 0x684
     char unknownBool685;  // 0x685
     char waypointIndex;  // 0x686
     char unknownBool687;  // 0x687
@@ -407,12 +350,12 @@ int FootClass_field_670;  // 0x670 [X35-L7 kind=int]
     char shouldEnterAbsorber;  // 0x68F
     char shouldEnterOccupiable;  // 0x690
     char shouldGarrisonStructure;  // 0x691
-int parasiteEatingMe;  // 0x694 [X35-L7 kind=int]
-int unknown698;  // 0x698 [X35-L7 kind=int]
+    unsigned char __pad_692;  // 0x692
+    char __pad_693[1];  // 0x693
+    int parasiteEatingMe;  // 0x694
+    int unknown698;  // 0x698
     char parasiteImUsing[4];  // 0x69C
     char paralysisTimer[12];  // 0x6A0
-    char FootClass_field_6A4[4];  // 0x6A4
-    unsigned int FootClass_bools_6A8;  // 0x6A8
     unsigned char FootClass_field_bool_6AC;  // 0x6AC
     char isAttackedByLocomotor;  // 0x6AD
     char isLetGoByLocomotor;  // 0x6AE
@@ -423,22 +366,18 @@ int unknown698;  // 0x698 [X35-L7 kind=int]
     bool FootClass_field_bool_6B3;  // 0x6B3
     bool FootClass_field_bool_6B4;  // 0x6B4
     bool FootClass_field_bool_6B5;  // 0x6B5
-    void* frozenStill;  // 0x6B6
+    char frozenStill[1];  // 0x6B6
     bool FootClass_field_bool_6B7;  // 0x6B7
     bool FootClass_field_bool_6B8;  // 0x6B8
-    bool m_padding_6B9;  // 0x6B9
-    bool FootClass_field_6BA;  // 0x6BA
-    bool FootClass_field_6BB;  // 0x6BB
-    bool m_unused_6BC;  // 0x6BC
-    bool FootClass_field_6BD;  // 0x6BD
-    bool FootClass_field_6BE;  // 0x6BE
-    bool FootClass_field_6BF;  // 0x6BF
+    char m_padding_6B9[3];  // 0x6B9
+    int m_unused_6BC;  // 0x6BC
     void* vtable5;  // 0x6C0
     AircraftTypeClass* Type;  // 0x6C4
     bool AircraftClass_field_bool_6C8;  // 0x6C8
     bool HasPassengers;  // 0x6C9
     bool IsKamikaze;  // 0x6CA
-    AircraftTypeClass* AircraftClass_field_6CC;  // 0x6CC [X30:type_map]
+    unsigned char __pad_6CB;  // 0x6CB
+    AircraftTypeClass* AircraftClass_field_6CC;  // 0x6CC
     bool AircraftClass_field_bool_6D0;  // 0x6D0
     bool AircraftClass_field_bool_6D1;  // 0x6D1
     bool AircraftClass_field_bool_6D2;  // 0x6D2
@@ -446,8 +385,8 @@ int unknown698;  // 0x698 [X35-L7 kind=int]
     bool AircraftClass_field_bool_6D4;  // 0x6D4
     bool AircraftClass_field_bool_6D5;  // 0x6D5
     unsigned short tail_6D6;  // 0x6D6
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* Destruct_slot;  // 0x0 (no offset truth)
     static int Destruct(AircraftClass *pThis);
     AircraftClass * CheckActionStatus(char a2);
     int GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2);  // G57w10-S raw 0x00417CC0 IUnknown 占位清除
@@ -476,40 +415,6 @@ int unknown698;  // 0x698 [X35-L7 kind=int]
     void* LoadFromStream(unsigned int * a0, FootClass * aP1);
      int Construct(int a2, int a3, IUnknown *ppv, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     AircraftTypeClass * Update(void * a1, void * a2, void *a3, void *a4);
-    unsigned int q_3E0;  // +0x3E0 flat supply (final pass)
-    unsigned char __pad_115;  // 0x115 [X30:canon]
-    unsigned char __pad_12C;  // 0x12C [X30:canon]
-    unsigned char __pad_1F0;  // 0x1F0 [X30:canon]
-    unsigned char __pad_1FC;  // 0x1FC [X30:canon]
-    unsigned char __pad_20C;  // 0x20C [X30:canon]
-    unsigned char __pad_241;  // 0x241 [X30:canon]
-    unsigned char __pad_285;  // 0x285 [X30:canon]
-    unsigned char __pad_287;  // 0x287 [X30:canon]
-    unsigned char __pad_28C;  // 0x28C [X30:canon]
-    AbstractClass* __pad_2B4;  // 0x2B4 [X30:type_map]
-    unsigned char __pad_2E8;  // 0x2E8 [X30:canon]
-    unsigned char __pad_314;  // 0x314 [X30:canon]
-    unsigned char __pad_3CE;  // 0x3CE [X30:canon]
-    unsigned char __pad_3D1;  // 0x3D1 [X30:canon]
-    unsigned char __pad_3D5;  // 0x3D5 [X30:canon]
-    unsigned char __pad_41D;  // 0x41D [X30:canon]
-bool __pad_422;  // 0x422 [X35-L7 kind=bool]
-bool __pad_425;  // 0x425 [X35-L7 kind=bool]
-    unsigned char __pad_43A;  // 0x43A [X30:canon]
-    unsigned char __pad_458;  // 0x458 [X30:canon]
-    unsigned char __pad_464;  // 0x464 [X30:canon]
-    unsigned char __pad_46C;  // 0x46C [X30:canon]
-    unsigned char __pad_47A;  // 0x47A [X30:canon]
-    unsigned char __pad_480;  // 0x480 [X30:canon]
-    unsigned char __pad_4BA;  // 0x4BA [X30:canon]
-    unsigned char __pad_4D6;  // 0x4D6 [X30:canon]
-    unsigned char __pad_4FA;  // 0x4FA [X30:canon]
-    unsigned char __pad_58C;  // 0x58C [X30:canon]
-    unsigned char __pad_5B0;  // 0x5B0 [X30:canon]
-    unsigned char __pad_692;  // 0x692 [X30:canon]
-    unsigned char __pad_6CB;  // 0x6CB [X30:canon]
-    unsigned int AbstractClass_2B4;  // [X30:default]
-    unsigned int vfptr;  // [X30:default]
 };
 
 } // namespace gamemd

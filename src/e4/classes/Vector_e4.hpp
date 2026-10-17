@@ -5,10 +5,15 @@
 
 namespace gamemd {
 struct Vector {
-// --- flat members (BEGIN) ---
+    void* Cl_ph;  // 0x0
+    int Vector_field_0x4;  // 0x4
+    int Vector_field_0x8;  // 0x8
     bool IsInitialized;  // 0xC
+    unsigned char u32_D;  // 0xD
+    char __pad_E[2];  // 0xE
+    unsigned int Vector_field_0x10;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    void* Cl_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon Vector::Cl is a method)
     int Cleanup(void *a1 = 0, void *a2 = 0);  // 0x512D30
     int Destructor(void *a1 = 0);  // 0x513100
     int  MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
@@ -21,27 +26,6 @@ struct Vector {
     BOOL HasCapacity();  // 0x76F0B0
     char Grow();  // 0x7AEEC0
     static double TwoDMagnitudeMath(Vector * aP1);
-    unsigned char *m_1;  // 0x1 (offset-truth)
-unsigned int m_8;  // 0x8 [X35-L7 kind=unsigned int]
-    unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int u32_14;  // 0x14 (offset-truth)
-    unsigned int u32_18;  // 0x18 (offset-truth)
-    unsigned int u32_1C;  // 0x1C (offset-truth)
-    unsigned int u32_24;  // 0x24 (offset-truth)
     void Math_Vector2D_Magnitude();  // plateau: def-aligned C2039/C2660
-
-    unsigned char __pad_010;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    unsigned int u32_20;  // X10 supply (member_lookup)
-    unsigned int u32_28;  // X10 supply (member_lookup)
-    unsigned int u32_2C;  // X10 supply (member_lookup)
-    unsigned int u32_D;  // X10 supply (member_lookup)
-    int __pad_000;  // 0x0 [X30:type_map]
-
-
-    int Vector_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
-    int Vector_field_0x4;  // 0x4 [X55 W3 supply (render vocab)]
-    unsigned int Vector_field_0x10;  // 0x10 [X55 W3 supply (render vocab)]
-    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

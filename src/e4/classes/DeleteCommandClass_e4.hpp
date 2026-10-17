@@ -6,12 +6,11 @@
 namespace gamemd {
 
 struct DeleteCommandClass {
+    void* CommandClass;  // 0x0
+    int DeleteCommandClass_field_00;  // 0x4
+    int DeleteCommandClass_field_04;  // 0x8
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-int DeleteCommandClass_field_00;  // 0x4 [X35-L7 kind=int]
-int DeleteCommandClass_field_04;  // 0x8 [X35-L7 kind=int]
 // --- flat members (END) ---
-    void* CommandClass;  // 0x0 (no offset truth)
     char * AddRef(void *a1);
     static unsigned int * Constructor(void *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     wchar_t * Read(void *a1, void *a2, void *a3 = 0);

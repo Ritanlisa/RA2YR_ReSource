@@ -53,6 +53,8 @@ int Remove(unsigned int * a2);
 // member-form layout; this twin carries the static call forms. No e4 TU
 // includes system/mix_file.hpp (verified), so no gap2 twin conflict.
 struct LinkedList {
+    char __pad_0[4];  // 0x0
+    int Tail[2];  // 0x4
     static int Init(void *aP0);  // 136 corpus sites
     static int Prepend(void *aP0);  // 86
     static void * Pop(void *aP0);  // 38
@@ -68,10 +70,6 @@ struct LinkedList {
     static unsigned int * FindNext(void *aP0);  // 2
     static int PushFront(void *aP0, int aP1);  // 4
     static AbstractClass * * LoadScenarioMixFiles(void *aP0, int aP1, int aP2, int aP3, int aP4);  // 2
-    char __pad_0[4];  // 0x0 (G57W14E1 til supply)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
-    GenericNode* Tail;  // 0x4 [X30:type_map]
-    LinkClass* ptr_8;  // 0x8 [X30:canon]
 };
 
 } // namespace gamemd

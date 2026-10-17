@@ -6,8 +6,19 @@
 namespace gamemd {
 
 struct LoadGame {
+    int __pad_0;  // 0x0
+    int LoadGame_field_0x04;  // 0x4
+    int LoadGame_field_0x08;  // 0x8
+    void* q00C;  // 0xC
+    int q010;  // 0x10
+    int q014;  // 0x14
+    void* q018;  // 0x18
+    int q01C;  // 0x1C
+    int q020;  // 0x20
+    int LoadGame_field_0x24;  // 0x24
+    int LoadGame_field_0x28;  // 0x28
+    int LoadGame_field_0x2C;  // 0x2C
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     static wchar_t * CleanupArray(void *aP1);
     static int ClearAllSlots(int aP1);
@@ -19,19 +30,6 @@ struct LoadGame {
     int RestoreAudioState();
     char Start(void *a1 = 0, void *a2 = 0);
     static int LoadBlock68(LoadGame * aP1, int a2);
-
-    int q010;  // X10 supply (member_lookup)
-    int q020;  // 0x20
-    int q01C;  // 0x1C
-    void* q018;  // 0x18 [X30:type_map]
-    int q014;  // 0x14
-    void* q00C;  // 0xC [X30:type_map]
-    int __pad_000;  // 0x0 [X30:type_map]
-    unsigned int s_IsLoading;  // [X30:default]
-    unsigned int s_LoadVersion;  // [X30:default]
-
-
-    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

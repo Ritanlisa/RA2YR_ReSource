@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct MultiplayerManBattle {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     MultiplayerManBattle * QueryInterface(unsigned int * Block, char a2);
 };

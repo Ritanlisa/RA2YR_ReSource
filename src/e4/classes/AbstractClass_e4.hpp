@@ -18,12 +18,8 @@ struct BlitTransXlat;  // fix_fwd_type_supply
 struct RLEBlitter;  // fix_fwd_type_supply
 #ifndef GAMEMD_TREE_UNIVERSE  // G57w8: tree TUs carry render/display.hpp GScreenClass (C2011 collision; e4 TUs keep this flat copy)
 struct GScreenClass {
+    void* vfptr;  // 0x0
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    ObjectClass * ptr_30;  // 0x30
-    TechnoClass * ptr_24;  // 0x36
-    CellClass * ptr_34;  // 0x52
-    TimerStruct * ptr_5788;  // 0x5788
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);
     unsigned int * checkVisibility(char a2);
@@ -101,8 +97,6 @@ struct GScreenClass {
     static int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);
     int checkTeamObjective();
     FileClass * processAITrigger(unsigned int * Block, char a2);
-    void* vfptr;  // 0x0 (G57W14E1 til supply)
-    unsigned int *q000;  // 0x0 (offset-truth)
 };
 #endif  // G57w8 GScreenClass tree guard
   // G42.37 class-body supply (defs in AbstractClass_e4.cpp)
@@ -111,90 +105,16 @@ struct GScreenClass {
 #define GAMEMD_USING_AbstractClass 1
 #endif
 struct AbstractClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
-    ObjectClass* uniqueId;  // 0x10 [X30:type_map]
-    unsigned int q011;  // 0x11
-    ObjectClass* q010;  // 0x10 [X30:type_map]
-    int u32_3;  // 0x3
-    bool IsAllocated;  // 0x13
+    unsigned int vfptr;  // 0x0
+    unsigned int vfptr1;  // 0x4
+    unsigned int vfptr2;  // 0x8
+    unsigned int vfptr3;  // 0xC
+    ObjectClass* uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
-    unsigned char u8_15;  // 0x15
     unsigned int nextArrayIndex;  // 0x18
-    unsigned char u8_1A;  // 0x1A
     int referenceCount;  // 0x1C
-    unsigned char needsSave;  // 0x20
-    unsigned int alignmentPadding;  // 0x21
-    unsigned int AirstrikeClass_field_50;
-    unsigned int AirstrikeClass_field_54;
-    unsigned int AirstrikeClass_field_58;
-    unsigned int AirstrikeClass_field_5C;
-    unsigned int AlphaShapeClass_field_0x04;
-    unsigned int AlphaShapeClass_field_0x08;
-    unsigned int AlphaShapeClass_field_0x0C;
-    unsigned int AlphaShapeClass_field_0x24;
-    unsigned int AnimClass_field_0x0;
-    unsigned int AnimClass_field_0x1A0;
-    unsigned int AnimClass_field_0x1B4;
-    unsigned int AnimClass_field_0x4;
-    unsigned int AnimClass_field_0x8;
-    unsigned int AnimClass_field_0x9C;
-    unsigned int AnimClass_field_0xA4;
-    unsigned int AnimClass_field_0xC8;
-    unsigned int AnimClass_field_0xCC;
-    unsigned int Dirty;
-    unsigned int LightSource;
-    unsigned int RadLevelTimer;
-    unsigned int RadLightTimer;
-    unsigned int RefCount;
-    unsigned int *__pad_0;
-    unsigned int *__pad_A0;
-    unsigned int *__pad_C;
-    unsigned int buildingType;
-    unsigned int firstTrigger;
-    unsigned int house;
-    unsigned int nextTrigger;
-    unsigned int owner;
-    unsigned int parent_gap;
-    unsigned int q028;
-    unsigned int q034;
-    unsigned int u32_1C;
-    unsigned int u32_24;
-    unsigned int u32_2C;
-    unsigned int vtable0;
-    unsigned int *__pad_28;
-    unsigned int creationFrame;
-    unsigned int TEventClass_field_28;
-    unsigned int TEventClass_field_30;
-    unsigned int TEventClass_field_54;
-    unsigned int SpawnManagerClass_field_58;
-    unsigned int SpawnManagerClass_field_5C;
-    unsigned int spawns;
-    unsigned int *__pad_48;
-    unsigned int spawnVectorCount;
-unsigned int DiskLaserClass_field_0x28;  // 0x28 [X35-L7 kind=unsigned int]
-    void* q090;  // 0x90 [X30:type_map]
-    unsigned int q300;  // 0x300
-    unsigned char __pad_F70[1453];  // 0xF70
-    unsigned char __pad_1714[126];  // 0x1714
-    unsigned int q008;  // 0x8
-    unsigned int q098;  // 0x98
-    unsigned int q0A0;  // 0xA0
-    unsigned int NeedsSaveOrLink;
-
-    unsigned int SuperClass_field_0x2C;  // 0x2C
-    unsigned char __pad_3C[17];  // 0x3C
-    unsigned int SuperClass_field_0x68;  // 0x68
-
-
-    unsigned int QueryInterface;
-    void* Buildup;  // 0x0 (no offset truth)
-    void* BuildupLoaded;  // 0x0 (no offset truth)
-    void* BlitterCore;  // 0x0 (no offset truth)
-    void* RLEBlitterCore;  // 0x0 (no offset truth)
+    unsigned int needsSave;  // 0x20
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
     unsigned int *  checkVisibility(char a2);  // 0x5D7FD0
@@ -416,47 +336,9 @@ int DTOR(); // 0x4101F0
     AbstractClass * * AnnounceExpiredPointer(AbstractClass *a1, int a2, int aP0, int aP1, int aP2);
     int DTOR(void *a1_1);
     int COMStub_Return0_38(void *a1_1);
-    unsigned int q_4B;  // +0x4B flat supply (final pass)
-    unsigned int q_5C1C;  // +0x5C1C flat supply (final pass)
     int  sub_5D9060(int a2);  // 0x5D9060
     BOOL sub_7325C0();
     static int IsTechno(AbstractClass *p_this);  // x4:ida@0x40dd20
-
-    uint16_t u16_A2;  // X10 supply (member_lookup)
-    unsigned int u32_58;  // X10 supply (member_lookup)
-    char u8_C8;  // X10 supply (member_lookup)
-    unsigned int u32_1791;  // 0x1791
-    void* u32_B0;  // 0xB0 [X30:type_map]
-    unsigned int u32_44;  // 0x44
-    void* q040;  // 0x40 [X30:type_map]
-unsigned int u32_38;  // 0x38 [X35-L7 kind=unsigned int]
-    int AbstractClass_1;  // 0x1 [X30:type_map]
-    unsigned int BibShape;  // [X30:default]
-    unsigned int BibShapeLoaded;  // [X30:default]
-    unsigned int DeployingAnimLoaded_d;  // [X30:default]
-    unsigned int DeployingAnim_2;  // [X30:default]
-    unsigned int DockingOffsets;  // [X30:default]
-    unsigned int IsInitialized;  // [X30:default]
-    unsigned int Items;  // [X30:default]
-    unsigned int PreventsPlacementOverlap;  // [X30:default]
-    unsigned int ProductionCompletionThreshold;  // [X30:default]
-    unsigned int RoofDeployingAnim;  // [X30:default]
-    unsigned int RoofDeployingAnimLoaded;  // [X30:default]
-    unsigned int RubbleLoaded_d;  // [X30:default]
-    unsigned int Rubble_d;  // [X30:default]
-    unsigned int UnderDoorAnimLoaded_d;  // [X30:default]
-    unsigned int UnderDoorAnim_d;  // [X30:default]
-    unsigned int UnderRoofDoorAnim;  // [X30:default]
-    unsigned int UnderRoofDoorAnimLoaded;  // [X30:default]
-    unsigned int numberStartingPoints;  // [X30:default]
-    int ptr_2;  // 0x2 [X30:type_map]
-    void* ptr_30;  // 0x30 [X30:type_map]
-unsigned int q024;  // 0x24 [X35-L7 kind=unsigned int]
-    int q02C;  // 0x2C [X30:type_map]
-    unsigned int vfptr;  // [X30:default]
-    unsigned int vfptr1;  // [X30:default]
-    unsigned int vfptr2;  // [X30:default]
-    unsigned int vfptr3;  // [X30:default]
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

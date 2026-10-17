@@ -6,14 +6,31 @@
 
 namespace gamemd {
 struct Timer {
-// --- flat members (BEGIN) ---
+#pragma pack(push, 1)  // X60: binary-packed layout
+    char __pad_0[2];  // 0x0
     unsigned int m_2;  // 0x2
-    AbstractClass * ptr_8;  // 0x8
+    char __pad_6[18];  // 0x6
     int m_18;  // 0x18
+    unsigned int __pad_1C;  // 0x1C
+    unsigned int q020;  // 0x20
+    unsigned int u32_24;  // 0x24
+    unsigned int u32_28;  // 0x28
+    char __pad_2C[8];  // 0x2C
+    unsigned int u32_34;  // 0x34
+    char __pad_38[4];  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_40;  // 0x40
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
+    char __pad_4C[4];  // 0x4C
+    unsigned int q050;  // 0x50
+    char __pad_54[16];  // 0x54
+    unsigned int u32_64;  // 0x64
+    char __pad_68[93];  // 0x68
     unsigned int m_C5;  // 0xC5
-    unsigned int tail_C9;  // 0xC9
+    char tail_C9[3];  // 0xC9
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    unsigned int ReadTSC_ph;  // w18j3: filler renamed (no offset truth; canon Timer::ReadTSC is a method)
     unsigned long long ReadTSC(unsigned int * a1);  // x4:signals@0x7c6064
     void * Start(int aP1, void *a2 = 0);  // 0x46B640
     int  StartDouble(double a2);  // 0x4A5240
@@ -28,28 +45,6 @@ struct Timer {
     static DWORD GetTicks();  // 0x6C8C40 [w16g2] static per raw __thiscall receiver-first
     char  SetFlag(char a2);  // 0x7500B0
     unsigned long  longReadTSC(unsigned int * a1);  // 0x7C6064
-    char __pad_6[18];  // 0x6 (ml)
-    unsigned int *q000;  // 0x0 (canon-mt)
-
-    unsigned int u32_10;  // X10 supply (member_lookup)
-    unsigned int u32_14;  // X10 supply (member_lookup)
-    unsigned int u32_314;  // X10 supply (member_lookup)
-    unsigned int u32_318;  // X10 supply (member_lookup)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-
-
-    unsigned int __pad_1C;  // 0x1C [X55 W3 supply (render vocab)]
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int u32_48;  // 0x48 [X55 W3 supply (render vocab)]
-    unsigned int u32_34;  // 0x34 [X55 W3 supply (render vocab)]
-    unsigned int u32_64;  // 0x64 [X55 W3 supply (render vocab)]
-    unsigned int q050;  // 0x50 [X55 W3 supply (render vocab)]
-    unsigned int u32_40;  // 0x40 [X55 W3 supply (render vocab)]
-    unsigned int u32_44;  // 0x44 [X55 W3 supply (render vocab)]
-    unsigned int u32_28;  // 0x28 [X55 W3 supply (render vocab)]
-    unsigned int q020;  // 0x20 [X55 W3 supply (render vocab)]
-    unsigned int u32_24;  // 0x24 [X55 W3 supply (render vocab)]
-    unsigned int u32_3C;  // 0x3C [X55 W3 supply (render vocab)]
+#pragma pack(pop)
 };
 } // namespace gamemd

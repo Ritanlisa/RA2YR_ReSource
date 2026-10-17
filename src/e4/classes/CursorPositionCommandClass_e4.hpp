@@ -6,12 +6,11 @@
 namespace gamemd {
 
 struct CursorPositionCommandClass {
+    char __tail_0[4];  // 0x0
+    int CursorPositionCommandClass_field_00;  // 0x4
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-int CursorPositionCommandClass_field_00;  // 0x4 [X35-L7 kind=int]
 // --- flat members (END) ---
     unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
-    char __tail_0[4];  // 0x0 (ml)
 };
 
 } // namespace gamemd

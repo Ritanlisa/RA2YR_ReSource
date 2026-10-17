@@ -6,11 +6,11 @@
 namespace gamemd {
 
 struct Viewport {
+    int __pad_000;  // 0x0
+    int Viewport_field_0x04;  // 0x4
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     static int Clear(void *a1 = 0);
-    int __pad_000;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

@@ -6,13 +6,13 @@
 namespace gamemd {
 
 struct _DynamicVectorClass_PAUControlNode {
-    void* vfptr;
+    char __pad_0[1];  // 0x0
+    char m_1[4];  // 0x1
+    char __pad_5[3];  // 0x5
+    int m_8;  // 0x8
+    int m_C;  // 0xC
+    int m_10;  // 0x10
     void CaptureManagerClass__vt_03_();
-
-    unsigned char u32_4[4];  /* void */  // X10 supply (member_lookup)
-    unsigned char u8_D;  // X10 supply (member_lookup)
-    unsigned int m_10;  // 0x10 [X30:default]
-    unsigned int m_8;  // 0x8 [X30:default]
 };
 
 } // namespace gamemd

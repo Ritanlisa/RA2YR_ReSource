@@ -22,8 +22,29 @@ struct AnimClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply
 struct Dialog {
+    unsigned int __pad_0;  // 0x0
+    unsigned int q004;  // 0x4
+    unsigned int Dialog_field_0x8;  // 0x8
+    unsigned int Dialog_field_0xC;  // 0xC
+    char __pad_10[24];  // 0x10
+    int q028;  // 0x28
+    unsigned int __pad_2C;  // 0x2C
+    unsigned int u32_30;  // 0x30
+    int q034;  // 0x34
+    char __pad_38[4];  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int __pad_40;  // 0x40
+    char __pad_44[36];  // 0x44
+    unsigned char q068;  // 0x68
+    char __pad_69[307];  // 0x69
+    int Dialog_field_0x19C;  // 0x19C
+    char __pad_1A0[100];  // 0x1A0
+    int Dialog_field_0x204;  // 0x204
+    char __pad_208[1196];  // 0x208
+    int Dialog_field_0x6B4;  // 0x6B4
+    char __pad_6B8[12];  // 0x6B8
+    int Dialog_field_0x6C4;  // 0x6C4
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     static int TabControlPaint(int a1, int a2, int a3, int a4);
     void DrawBackground();
@@ -81,55 +102,5 @@ struct Dialog {
     char UpdateGameUI();  // 0x77D820
     static HWND CloseAll();  // 0x799D10
     AbstractClass * * MapControlToAction(HWND hWnd, LPARAM, void * a2);
-    char __pad_10[24];  // 0x10 (ml)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned int q004;  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
-    unsigned int q020;  // X10 supply (member_lookup)
-    unsigned int q024;  // X10 supply (member_lookup)
-    int q028;  // X10 supply (member_lookup)
-    int q034;  // X10 supply (member_lookup)
-    unsigned char q068;  // X10 supply (member_lookup)
-    unsigned int u32_14;  // X10 supply (member_lookup)
-    unsigned int u32_1480;  // X10 supply (member_lookup)
-    unsigned int u32_1484;  // X10 supply (member_lookup)
-    unsigned int u32_1488;  // X10 supply (member_lookup)
-    unsigned int u32_148C;  // X10 supply (member_lookup)
-    unsigned int u32_1490;  // X10 supply (member_lookup)
-    unsigned int u32_1494;  // X10 supply (member_lookup)
-    unsigned int u32_1498;  // X10 supply (member_lookup)
-    unsigned int u32_149C;  // X10 supply (member_lookup)
-    unsigned int u32_14A0;  // X10 supply (member_lookup)
-    unsigned int u32_14A4;  // X10 supply (member_lookup)
-    unsigned int u32_14A8;  // X10 supply (member_lookup)
-    unsigned int u32_14AC;  // X10 supply (member_lookup)
-    unsigned int u32_14AD;  // X10 supply (member_lookup)
-    unsigned int u32_14AE;  // X10 supply (member_lookup)
-    unsigned int u32_14AF;  // X10 supply (member_lookup)
-    unsigned int u32_14B0;  // X10 supply (member_lookup)
-    unsigned int u32_14B1;  // X10 supply (member_lookup)
-    unsigned int u32_14B2;  // X10 supply (member_lookup)
-    unsigned int u32_14B3;  // X10 supply (member_lookup)
-    unsigned int u32_14B4;  // X10 supply (member_lookup)
-    unsigned int u32_14B5;  // X10 supply (member_lookup)
-    unsigned int u32_14B6;  // X10 supply (member_lookup)
-    unsigned int u32_14B7;  // X10 supply (member_lookup)
-    unsigned int u32_14B8;  // X10 supply (member_lookup)
-    unsigned int u32_14B9;  // X10 supply (member_lookup)
-    unsigned int u32_14BA;  // X10 supply (member_lookup)
-    unsigned int u32_14BB;  // X10 supply (member_lookup)
-    unsigned int u32_18;  // X10 supply (member_lookup)
-    unsigned int u32_30;  // X10 supply (member_lookup)
-    unsigned int u32_3C;  // X10 supply (member_lookup)
-    unsigned int u32_3F;  // X10 supply (member_lookup)
-    int u32_8;  // X10 supply (member_lookup)
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
-    unsigned int __pad_40;  // 0x40 [X55 W3 supply (render vocab)]
-    unsigned int Dialog_field_0x8;  // 0x8 [X55 W3 supply (render vocab)]
-    unsigned int __pad_2C;  // 0x2C [X55 W3 supply (render vocab)]
-    unsigned int Dialog_field_0xC;  // 0xC [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

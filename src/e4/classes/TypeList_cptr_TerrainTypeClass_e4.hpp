@@ -8,13 +8,15 @@ namespace gamemd {
 struct TypeList_flat;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct TypeList_cptr_TerrainTypeClass {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void GetClassIdentifier();  // 0x67A930
     unsigned int  GetIndex(int a2);  // 0x67A960
@@ -28,6 +30,5 @@ struct TypeList_cptr_TerrainTypeClass {
     char  Remove(int a2, unsigned int * a3);  // 0x67B3D0
     int  GetSize(unsigned int * a2);  // 0x67B4D0
     VectorClass_flat * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x67C150
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

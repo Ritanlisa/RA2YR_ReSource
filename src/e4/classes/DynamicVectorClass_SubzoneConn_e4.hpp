@@ -7,22 +7,19 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_SubzoneConn {
-// --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     unsigned int Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    char IsInitialized[1];  // 0xC
     unsigned char IsAllocated;  // 0xD
+    unsigned char __pad_00E;  // 0xE
+    char __pad_F[1];  // 0xF
     void* Count;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, char * a3);  // 0x589190
     DynamicVector *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x5890B0
     int  GetSize(unsigned int * a2);  // 0x5892D0
     unsigned int Remove(int a2, void *a2_1 = 0);  // 0x588CC0
-    unsigned char __pad_5;  // 0x5 (offset-truth)
-    unsigned char __tail_10;  // 0x10 (offset-truth)
-    unsigned char *m_1;  // 0x1 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-    unsigned char __pad_00E;  // 0xE [X30:canon]
 };
 } // namespace gamemd

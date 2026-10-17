@@ -6,8 +6,25 @@
 namespace gamemd {
 struct ObjectClass;  // fix_fwd_type_supply (G42.33b2: ForEachReverse param)
 struct Array {
+    int __pad_0;  // 0x0
+    int Array_field_0x4;  // 0x4
+    unsigned char q008[8];  // 0x8
+    unsigned int Array_field_0x10;  // 0x10
+    char __pad_14[24];  // 0x14
+    int q02C;  // 0x2C
+    char __pad_30[8];  // 0x30
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_40;  // 0x40
+    unsigned int q0044;  // 0x44
+    char __pad_48[36];  // 0x48
+    unsigned int u32_6C;  // 0x6C
+    char __pad_70[116];  // 0x70
+    int q0E4;  // 0xE4
+    int q0E8;  // 0xE8
+    char __pad_EC[1812];  // 0xEC
+    int q800;  // 0x800
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int GetClamped(int aP1);  // 0x634290
     int FindValue(int aP1, void *a2 = 0);
@@ -25,26 +42,5 @@ struct Array {
     char  GetElementAt(unsigned int * a2, int a3);  // 0x49D070
     void RemoveItemByValue(AbstractClass * aP0, int a2);  // 0x55B880
     int  Contains(int a2, void *a1 = 0);  // 0x65ad50
-    unsigned int q0044;  // 0x44 (offset-truth)
-    unsigned char q0045;  // 0x45 (offset-truth)
-    unsigned char q0046;  // 0x46 (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    unsigned char q008[8];  /* char[8] */  // X10 supply (member_lookup)
-    int q02C;  // X10 supply (member_lookup)
-    int q0E4;  // X10 supply (member_lookup)
-    int q0E8;  // X10 supply (member_lookup)
-    int q800;  // X10 supply (member_lookup)
-    unsigned int u32_10;  // X10 supply (member_lookup)
-    unsigned int u32_38;  // X10 supply (member_lookup)
-    unsigned int u32_3C;  // X10 supply (member_lookup)
-    unsigned int u32_40;  // X10 supply (member_lookup)
-    unsigned int u32_6C;  // X10 supply (member_lookup)
-    unsigned int u32_804;  // X10 supply (member_lookup)
-unsigned int Array_field_0x10;  // 0x10 [X35-L7 kind=unsigned int]
-    int Array_field_0x4;  // 0x4 [X30:type_map]
-    unsigned int For;  // [X30:default]
-    int __pad_0;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd

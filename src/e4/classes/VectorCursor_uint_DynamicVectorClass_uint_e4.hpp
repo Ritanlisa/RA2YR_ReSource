@@ -6,8 +6,11 @@
 
 namespace gamemd {
 struct VectorCursor_uint_DynamicVectorClass_uint {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int q004;  // 0x4
+    unsigned int u32_8;  // 0x8
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     void Remove(void *a1 = 0, void *a2 = 0);  // 0x4F42D0
     void  Count(int a2, int a3);  // 0x4F4BB0
@@ -16,9 +19,5 @@ struct VectorCursor_uint_DynamicVectorClass_uint {
     unsigned int * ddtor(void *a1 = 0);  // 0x4F4000 G42.33 b3 supplied-body sync
     int AddRef();  // G42.33 b3 supplied-body sync
     unsigned int * Release(void *a1 = 0);  // G42.33 b3 supplied-body sync
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -6,15 +6,14 @@
 namespace gamemd {
 
 struct _VectorClass_VCell {
-    void* vfptr;
+    char __pad_0[1];  // 0x0
+    char m_1[4];  // 0x1
+    char __pad_5[3];  // 0x5
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
+    unsigned int __tail_10;  // 0x10
     char AddRef(int a2);
     unsigned int * Seek(unsigned int * a2, int a3, void *a3_2);
-
-    unsigned short u16_4;  // X10 supply (member_lookup)
-    unsigned int __pad_0;  // 0x0 [X30:default]
-    unsigned int __tail_10;  // [X30:default]
-    unsigned int m_8;  // 0x8 [X30:default]
-    unsigned int m_C;  // 0xC [X30:default]
 };
 
 } // namespace gamemd

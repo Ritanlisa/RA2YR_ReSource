@@ -10,19 +10,19 @@ namespace gamemd {
 #ifndef GAMEMD_G2_NetworkGameSetup_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_NetworkGameSetup_DEF 1
 struct NetworkGameSetup {
+    unsigned int __pad_0;  // 0x0
+    int NetworkGameSetup_field_0x04;  // 0x4
+    int q008;  // 0x8
+    int NetworkGameSetup_field_0x0C;  // 0xC
+    int NetworkGameSetup_field_0x10;  // 0x10
+    int NetworkGameSetup_field_0x14;  // 0x14
+    int NetworkGameSetup_field_0x18;  // 0x18
+    int NetworkGameSetup_field_0x1C;  // 0x1C
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int ReadRulesUnknown();
     unsigned int * DeleteComPtr(unsigned int * Block, char a2);
     void SendGameSetupPacket(wchar_t * Source);
-
-    int q008;  // X10 supply (member_lookup)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_G2_NetworkGameSetup_DEF
 

@@ -5,13 +5,16 @@
 
 namespace gamemd {
 struct SuperWeaponClass {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int SuperWeaponClass_field_0x04;  // 0x4
+    int SuperWeaponClass_field_0x08;  // 0x8
+    int SuperWeaponClass_field_0x0C;  // 0xC
+    int SuperWeaponClass_field_0x10;  // 0x10
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    unsigned char q000[20];  // 0x0 (canon size filler)
     static int UpdateAll(void *aP1);
     static int LoadFromSaveStream(SuperWeaponClass *p_this);  // x4:ida@0x539890
     static int FindByName(SuperWeaponClass *p_this);  // x4:ida@0x773030
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 } // namespace gamemd

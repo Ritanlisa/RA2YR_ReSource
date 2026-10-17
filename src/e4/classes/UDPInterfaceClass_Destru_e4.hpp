@@ -10,10 +10,23 @@
 namespace gamemd {
 
 struct UDPInterfaceClass_Destru {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int UDPInterfaceClass_Destru_field_0x04;  // 0x4
+    int UDPInterfaceClass_Destru_field_0x08;  // 0x8
+    int UDPInterfaceClass_Destru_field_0x0C;  // 0xC
+    int UDPInterfaceClass_Destru_field_0x10;  // 0x10
+    int UDPInterfaceClass_Destru_field_0x14;  // 0x14
+    int UDPInterfaceClass_Destru_field_0x18;  // 0x18
+    int UDPInterfaceClass_Destru_field_0x1C;  // 0x1C
+    int UDPInterfaceClass_Destru_field_0x20;  // 0x20
+    int UDPInterfaceClass_Destru_field_0x24;  // 0x24
+    int UDPInterfaceClass_Destru_field_0x28;  // 0x28
+    int UDPInterfaceClass_Destru_field_0x2C;  // 0x2C
+    int UDPInterfaceClass_Destru_field_0x30;  // 0x30
+    int UDPInterfaceClass_Destru_field_0x34;  // 0x34
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
-    void* Socket;  // 0x0 (vtable slot)
     AbstractClass * * Bind(int a2);
     int COMStub();
     int COMStub_Ret2();
@@ -22,25 +35,6 @@ struct UDPInterfaceClass_Destru {
     int Receive();
     short ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8);
     int Reset(unsigned int * a2, short a3);
-
-    unsigned char __pad_3F580;  // X10 supply (member_lookup)
-    unsigned int u32_1F980;  // X10 supply (member_lookup)
-    unsigned int u32_1FAA8;  // X10 supply (member_lookup)
-    unsigned int u32_3F068;  // X10 supply (member_lookup)
-    unsigned int u32_3F070;  // X10 supply (member_lookup)
-    unsigned int u32_3F550;  // X10 supply (member_lookup)
-    unsigned int u32_3F554;  // X10 supply (member_lookup)
-    unsigned char u32_3F5543[4];  /* void */  // X10 supply (member_lookup)
-    unsigned int u32_3F558;  // X10 supply (member_lookup)
-    unsigned int u32_3F55D;  // X10 supply (member_lookup)
-    unsigned int u32_3F560;  // X10 supply (member_lookup)
-    unsigned int u32_3F564;  // X10 supply (member_lookup)
-    unsigned int u32_3F568;  // X10 supply (member_types)
-
-    unsigned int u32_3F06C;  // X10 supply (member_lookup)
-    unsigned int u32_3F330;  // X10 supply (member_lookup)
-    unsigned char __pad_000;  // 0x0 [X30:canon]
-    unsigned int hostent;  // [X30:default]
 };
 
 } // namespace gamemd

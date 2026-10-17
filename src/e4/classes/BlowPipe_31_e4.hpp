@@ -7,9 +7,12 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct BlowPipe_31 {
+    unsigned int __pad_0;  // 0x0
+    int q004;  // 0x4
+    unsigned int m_8;  // 0x8
+    unsigned int m_C;  // 0xC
+    int m_10;  // 0x10
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     void ddtor(void *a1 = 0);  // 0x63DC20
     int  Seek(int a2, void *a2_2 = 0, void *a3_1 = 0);  // 0x63DC70
@@ -18,16 +21,5 @@ struct BlowPipe_31 {
     int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x63E620
     DynamicVector *  QueryInterface(char a2);  // 0x63EDE0
     unsigned int  Write(int a2);  // 0x63DC50
-    unsigned char *m_1;  // 0x1 (offset-truth)
-int m_10;  // 0x10 [X35-L7 kind=int]
-    unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

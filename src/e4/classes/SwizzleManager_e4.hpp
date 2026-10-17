@@ -6,11 +6,12 @@
 namespace gamemd {
 
 struct SwizzleManager {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int SwizzleManager_field_0x04;  // 0x4
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     static int __stdcall SaveLoad(int * a1, int * a2);
-    unsigned char __pad_000;  // 0x0 [X30:canon]
 };
 
 } // namespace gamemd

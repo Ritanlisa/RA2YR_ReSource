@@ -7,8 +7,8 @@
 namespace gamemd {
 
 struct BuildingLightQueue {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     virtual ~BuildingLightQueue();
     virtual int RemoveEntry(void *a1 = 0);  // 0x5FF2D0

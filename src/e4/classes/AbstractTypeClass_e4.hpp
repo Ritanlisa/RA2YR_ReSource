@@ -8,30 +8,30 @@
 namespace gamemd {
 
 struct AbstractTypeClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
+    void* AbstractClass;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     unsigned int uniqueId;  // 0x10
-    unsigned char alignmentPadding_3;  // 0x11
-    char referenceCount[4];  // 0x12
-    char u32_3;  // 0x3
-    bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     char referenceCount_d[4];  // 0x1C
-    bool NeedsSaveOrLink;  // 0x20
+    int NeedsSaveOrLink;  // 0x20
+    unsigned char __pad_024;  // 0x24
+    char __pad_25[13];  // 0x25
     bool needsSave;  // 0x32
+    char __pad_33[3];  // 0x33
+    unsigned char __pad_036;  // 0x36
+    char __pad_37[5];  // 0x37
     unsigned char zero_3C;  // 0x3C
-    void *q60;  // 0x60
-    unsigned char tail_95;  // 0x95
+    char UINameLabel[32];  // 0x3D
+    unsigned char __pad_05D;  // 0x5D
+    char __pad_5E[2];  // 0x5E
+    unsigned int UIName;  // 0x60
+    char Name[49];  // 0x64
+    char tail_95[3];  // 0x95
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    char UINameLabel[32];  // 0x3D char[32] ml g7-til-merge (G57w4)
-    char Name[49];  // 0x64 char[49] ml g7-til-merge (G57w4)
-    void* houseTypes;  // 0x0 (no offset truth)
-    void* AbstractClass;  // 0x0 (no offset truth)
-    void* houseTypesCount;  // 0x0 (no offset truth)
     AbstractTypeClass * ddtor(char a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1);
     BOOL NameEquals(void *a2);
     char WriteINI(char *aP1, void *a2 = 0);
@@ -59,18 +59,6 @@ struct AbstractTypeClass {
     void sub_4065D0(int a1 = 0, int a2 = 0);
     void sub_4065E0(int a1 = 0, int a2 = 0);
     void sub_406640(int a1 = 0, int a2 = 0);
-void* q000;  // 0x0 [X35-L7 kind=void*]
-void* q008;  // 0x8 [X35-L7 kind=void*]
-
-    unsigned int UIName;  // X10 supply (csp_canon_members)
-    unsigned char __pad_024;  // X10 supply (csp_canon_members)
-    unsigned char __pad_036;  // X10 supply (csp_canon_members)
-    bool q019;  // X10 supply (member_lookup)
-    unsigned int u32_94;  // X10 supply (member_lookup)
-    char u8_9;  // X10 supply (member_lookup)
-    unsigned int u32_A0;  // 0xA0
-    unsigned char __pad_05D;  // 0x5D [X30:canon]
-    int vtable46;  // 0xB4 [X30:type_map]
 };
 
 } // namespace gamemd

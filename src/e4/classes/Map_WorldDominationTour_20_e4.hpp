@@ -9,8 +9,12 @@ namespace gamemd {
 struct VectorCursor;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct Map_WorldDominationTour_20 {
+    unsigned char __pad_000;  // 0x0
+    char __pad_1[3];  // 0x1
+    int q004;  // 0x4
+    int q008;  // 0x8
+    int q00C;  // 0xC
 // --- flat members (BEGIN) ---
-    bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x769E30
     void *  Constructor_0(char a2);  // 0x76A610
@@ -21,10 +25,5 @@ struct Map_WorldDominationTour_20 {
     VectorClass_flat *  QueryInterface(char a2);  // 0x76A5C0
     unsigned int *  Seek(unsigned int * a2, int a3, void *a3_2 = 0);  // 0x769CA0
     unsigned int  Write(int a2);  // 0x769FC0
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    int q004;  // X10 supply (member_lookup)
-    int q008;  // X10 supply (member_lookup)
-    int q00C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

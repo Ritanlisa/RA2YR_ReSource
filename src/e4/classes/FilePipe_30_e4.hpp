@@ -8,10 +8,12 @@ namespace gamemd {
 struct TypeList_flat;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 struct FilePipe_30 {
-// --- flat members (BEGIN) ---
+    unsigned int __pad_0;  // 0x0
+    unsigned int u32_4;  // 0x4
     int Capacity;  // 0x8
-    bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
+    unsigned int m_C;  // 0xC
+    int m_10;  // 0x10
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void ddtor(void *a1 = 0);  // 0x4778A0
     TypeList_flat *  QueryInterface(char a2);  // 0x477A70
@@ -29,17 +31,5 @@ struct FilePipe_30 {
     unsigned int  Write(int a2);  // 0x4778D0
     unsigned int  GetCount(int a2);  // 0x4B9C10
     unsigned int  GetCount_0(int a2);  // 0x4B9C70
-    unsigned char *m_1;  // 0x1 (offset-truth)
-int m_10;  // 0x10 [X35-L7 kind=int]
-int m_8;  // 0x8 [X35-L7 kind=int]
-    unsigned int m_C;  // 0xC (offset-truth)
-
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
-    unsigned int u32_4;  // X10 supply (member_lookup)
-    unsigned char __pad_011;  // 0x11 [X30:canon]
-
-
-    unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

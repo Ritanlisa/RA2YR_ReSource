@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct Time {
+    int Time_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Time_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int FormatDate(char * Buffer);
     static int GetElapsedMS();

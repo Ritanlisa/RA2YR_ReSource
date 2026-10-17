@@ -6,15 +6,14 @@
 namespace gamemd {
 
 struct Control {
+    int Control_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Control_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     static unsigned int * CreateControlDialog(void *aP1);
     int CheckControlTypeDialog();
     int DispatchClick(int aP1, void *a2 = 0);
     int RepositionControlsDialog();
     int RepositionControlsDialog(HWND hWnd);
-    unsigned int u32_28;  // 0x28 (offset-truth)
 };
 
 } // namespace gamemd

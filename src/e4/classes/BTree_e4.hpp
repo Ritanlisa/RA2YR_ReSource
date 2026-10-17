@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct BTree {
-// --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void DeleteSubtree(void *a1 = 0);
 };

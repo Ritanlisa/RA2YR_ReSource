@@ -6,17 +6,15 @@
 namespace gamemd {
 struct BuildingTypeClass;  // fix_fwd_type_supply
 struct AudioClass {
-// --- flat members (BEGIN) ---
+#pragma pack(push, 1)  // X60: binary-packed layout
+    char __pad_0[38];  // 0x0
     unsigned int m_26;  // 0x26
+    char __pad_2A[18];  // 0x2A
     int m_3C;  // 0x3C
     unsigned int tail_40;  // 0x40
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     BuildingTypeClass * * ProcessEvent();  // 0x7228B0
-
-    unsigned int u32_98;  // X10 supply (member_lookup)
-    unsigned int u32_F0;  // X10 supply (member_lookup)
-    unsigned int u32_F4;  // X10 supply (member_lookup)
-    unsigned int u32_F8;  // X10 supply (member_lookup)
-    unsigned int u32_FC;  // X10 supply (member_lookup)
+#pragma pack(pop)
 };
 } // namespace gamemd

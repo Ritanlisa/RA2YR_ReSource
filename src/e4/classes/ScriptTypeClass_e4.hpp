@@ -14,26 +14,22 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct TaskForceClass;  // fix_fwd_type_supply
 
 struct ScriptTypeClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-int arrayIndex;  // 0x24 [X35-L7 kind=int]
+    int arrayIndex;  // 0x24
     bool isGlobal;  // 0x28
+    unsigned char __pad_029;  // 0x29
+    char __pad_2A[2];  // 0x2A
     char actionsCount[4];  // 0x2C
     char scriptActions[400];  // 0x30
-    unsigned int alignmentPadding;  // 0x33
-    unsigned int UINameLabel;  // 0x3D
-    void * UIName;  // 0x60
-    unsigned int Name;  // 0x64
-    unsigned int tail_95;  // 0x95
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     ScriptTypeClass * ddtor(char a2, int a1, int a3);
     TaskForceClass * ReadINI(char * a1, int a2, void *a3);
@@ -43,7 +39,6 @@ int arrayIndex;  // 0x24 [X35-L7 kind=int]
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int *  Constructor(char * Source, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x6916b0
-    unsigned char __pad_029;  // 0x29 [X30:canon]
 };
 
 } // namespace gamemd

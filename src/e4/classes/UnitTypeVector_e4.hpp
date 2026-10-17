@@ -7,26 +7,18 @@
 namespace gamemd {
 
 struct UnitTypeVector {
+    char __pad_0[4];  // 0x0
+    int UnitTypeVector_field_0x04;  // 0x4
+    unsigned int __pad_008;  // 0x8
+    int UnitTypeVector_field_0x0C;  // 0xC
+    int UnitTypeVector_field_0x10;  // 0x10
+    int UnitTypeVector_field_0x14;  // 0x14
+    int UnitTypeVector_field_0x18;  // 0x18
 // --- flat members (BEGIN) ---
-    AbstractClass * ptr_4;  // 0x4
 // --- flat members (END) ---
     unsigned int * Construct2(int a2, int a3, void *a3_2);
     unsigned int * ConstructUnitTypeVectorClass(int a2, int a3);
     static unsigned int * Construct(void *aP1, int a2, int a3);
-    unsigned int UnitTypeVector_field_0x10;  // @0x511dee (W16G3 raw-usage vocab)
-    unsigned int UnitTypeVector_field_0x14;  // @0x511df6 (W16G3 raw-usage vocab)
-    unsigned int UnitTypeVector_field_0x18;  // @0x511909 (W16G3 raw-usage vocab)
-
-    uint8_t UnitTypeVector_field_0x0C;  // X10 supply (member_types)
-    unsigned char __pad_000;  // X10 supply (csp_canon_members)
-    unsigned char __pad_008;  // X10 supply (csp_canon_members)
-    int q00C;  // X10 supply (member_lookup)
-    int UnitTypeVector_field_0x04;  // 0x4 [X30:member_lookup]
-    char __pad_0[4];  // 0x0 [X30:member_lookup]
-    unsigned int nextArrayIndex;  // [X30:default]
-
-
-    void * vtable1;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

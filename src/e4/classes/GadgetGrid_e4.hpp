@@ -6,17 +6,12 @@
 namespace gamemd {
 
 struct GadgetGrid {
+    int __pad_0;  // 0x0
+    int GadgetGrid_field_0x04;  // 0x4
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     int InsertItem(int a2);
     int RemoveItem(int a2, void *a2_1 = 0);
-
-    unsigned char __pad_00C;  // X10 supply (member_lookup)
-    unsigned int u32_F0;  // X10 supply (member_lookup)
-    int __pad_000;  // 0x0 [X30:type_map]
-    int GadgetGrid_field_0x04;  // 0x4 [X30:member_lookup]
-    int __pad_0;  // 0x0 [X30:type_map]
 };
 
 } // namespace gamemd

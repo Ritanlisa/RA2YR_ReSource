@@ -8,13 +8,15 @@ namespace gamemd {
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35h: tree TU real class in network/connection.hpp (Cell_e4 G42.34j pattern)
 struct ConnectionClass {
-// --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
-int PlayerIndex;  // 0x4 [X35-L7 kind=int]
+    int __pad_0;  // 0x0
+    int PlayerIndex;  // 0x4
     bool Active;  // 0x8
+    unsigned char __pad_009;  // 0x9
+    char __pad_A[2];  // 0xA
     unsigned int LastPacketTime;  // 0xC
     unsigned int PacketsSent;  // 0x10
     unsigned int PacketsReceived;  // 0x14
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4, void *a5);
     int StubReturnFalse();
@@ -25,16 +27,6 @@ int PlayerIndex;  // 0x4 [X35-L7 kind=int]
     int initQueue(unsigned int a2, void *a2_1 = 0);
     void dtor();
      int queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int u32_18;  // 0x18 (offset-truth)
-    unsigned int u32_1C;  // 0x1C (offset-truth)
-
-    void* q020;  // X10 supply (member_lookup)
-    unsigned char __pad_009;  // 0x9 [X30:canon]
-    unsigned int PhoneNumber;  // [X30:default]
-
-
-    int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_TREE_UNIVERSE
 

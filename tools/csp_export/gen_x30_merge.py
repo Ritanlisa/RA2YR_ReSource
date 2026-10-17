@@ -211,6 +211,36 @@ try:
 except OSError:
     ml = {}
 
+# X60 (2026-10-17): cross-class contamination veto.  A semantic member name
+# that is authority-proven for OTHER classes and not for this one must never
+# be supplied (the CellStruct<-MessageListClass DisplayDuration/MessageTimer/
+# ScrollOffset/TextColorIndex incident).  Index = canon members + til-sync
+# member_lookup entries; offset-decodable supply vocabulary excluded.
+_X60_DECODABLE = re.compile(
+    r'^(?:q[0-9A-Fa-f]{2,6}|u(?:8|16|32|64)_[0-9A-Fa-f]+|ptr_[0-9A-Fa-f]+'
+    r'|__pad_[0-9A-Fa-f]+|field_[0-9A-Fa-f]{1,6}|\w*_field_[0-9A-Fa-f]{2,6}'
+    r'|M\d+|vfptr\d*|vtable\d*|vt_\w+|unknown_?\d*)$')
+_X60_NAME_OWNER = collections.defaultdict(set)
+for _c, _e in canon.items():
+    for _m in (_e.get('members') or {}).values():
+        _nm = (_m or {}).get('name') or ''
+        if _nm and not _X60_DECODABLE.match(_nm):
+            _X60_NAME_OWNER[_nm].add(_c)
+for _c, _e in ml.items():
+    if not isinstance(_e, dict):
+        continue
+    for _v in _e.values():
+        if isinstance(_v, dict) and str(_v.get('src', '')).startswith('til-sync'):
+            _nm = (_v or {}).get('name') or ''
+            if _nm and not _X60_DECODABLE.match(_nm):
+                _X60_NAME_OWNER[_nm].add(_c)
+
+
+def x60_cross_class_veto(cls, nm):
+    """True when `nm` is proven to belong to other classes only."""
+    owners = _X60_NAME_OWNER.get(nm)
+    return bool(owners) and cls not in owners and not _X60_DECODABLE.match(nm)
+
 # --------------------------------------------------------------------------
 # e4-universe type visibility: a retype/supply type T* is only safe when T is
 # declared somewhere in the e4 carrier set; tree-universe templates/enums/
@@ -469,6 +499,8 @@ def supply_list(cls, have_names, fn_key, site_shape_map):
             continue
         if nm in VISIBLE or nm in TREE_SPECIAL:
             continue  # a member must not shadow a type name (C2327)
+        if x60_cross_class_veto(cls, nm):
+            continue  # X60: proven other-class member -> never supply
         if site_shape_map.get((cls, nm)) == 'method':
             continue  # calling the name; a data member cannot help
         off = decode_offset_name(nm)
@@ -507,14 +539,21 @@ def supply_list(cls, have_names, fn_key, site_shape_map):
                     ty_c = 'void*'
                 src = 'member_lookup'
         if ty_c is None:
-            ty_c = 'unsigned int'
-            src = 'default'
+            # X60: the no-evidence `default` fallback is retired.  Supplying a
+            # member with no offset and no authority backing is the corruption
+            # vector (CellStruct<-MessageListClass incident); refuse instead.
+            continue
         ty_c = guard_type(ty_c)
         ms = re.match(r'^([A-Za-z_]\w*)\s*\*+$', ty_c)
         if ms and ms.group(1) in have_names:
             ty_c = 'void*'   # X30 shadow guard (C2327)
         have_names.add(nm)
         out.append((nm, off if off is not None else -1, ty_c, src))
+    # X60: supplies land in ascending offset order (no-offset names last) so
+    # the additive append no longer scrambles the carrier's member order.
+    out.sort(key=lambda t: (0 if (t[1] is not None and t[1] >= 0) else 1,
+                            t[1] if (t[1] is not None and t[1] >= 0) else 0,
+                            t[0]))
     return out
 
 

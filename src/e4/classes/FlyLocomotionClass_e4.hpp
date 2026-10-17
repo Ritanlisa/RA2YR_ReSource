@@ -8,25 +8,33 @@
 namespace gamemd {
 
 struct FlyLocomotionClass {
-// --- flat members (BEGIN) ---
+#pragma pack(push, 1)  // X60: binary-packed layout
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* Owner;  // 0x8
     unsigned int LinkedTo;  // 0xC
+    unsigned char __pad_010;  // 0x10
     unsigned char Dirty;  // 0x11
+    unsigned char __pad_012;  // 0x12
+    char __pad_13[1];  // 0x13
     unsigned int RefCount;  // 0x14
     bool AirportBound;  // 0x18
+    unsigned char __pad_019;  // 0x19
+    char __pad_1A[2];  // 0x1A
     char MovingDestination[12];  // 0x1C
     char XYZ2[12];  // 0x28
-    ObjectClass * ptr_30;  // 0x30
     bool HasMoveOrder;  // 0x34
-    TechnoClass * ptr_24;  // 0x36
-    int FlightLevel;  // 0x38 [X30:type_map]
+    unsigned char __pad_035;  // 0x35
+    unsigned char ptr_24;  // 0x36
+    char __pad_37[1];  // 0x37
+    int FlightLevel;  // 0x38
     double TargetSpeed;  // 0x3C
     double CurrentSpeed;  // 0x44
-    int IsTakingOff;  // 0x4C [X30:type_map]
+    char IsTakingOff[1];  // 0x4C
     bool IsLanding;  // 0x4D
     bool WasLanding;  // 0x4E
+    unsigned char __pad_04F;  // 0x4F
+    char __pad_50[3];  // 0x50
     bool FlyLocomotionClass_field_bool_53;  // 0x53
     unsigned int FlyLocomotionClass_field_54;  // 0x54
     unsigned int FlyLocomotionClass_field_58;  // 0x58
@@ -34,6 +42,7 @@ struct FlyLocomotionClass {
     bool FlyLocomotionClass_field_bool_5D;  // 0x5D
     bool FlyLocomotionClass_field_bool_5E;  // 0x5E
     bool FlyLocomotionClass_field_bool_5F;  // 0x5F
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     FlyLocomotionClass * ProcessMove(char a2);
     int BeginMove(int * a1, int * a2);
@@ -41,11 +50,7 @@ struct FlyLocomotionClass {
     int ddtor(int a1, unsigned int * a2);
     void ILocomotion_AcquireHunterSeekerTarget(int a1);
     int LocomotionClass();  // plateau: def-aligned C2039/C2660
-    unsigned char __pad_010;  // 0x10 [X30:canon]
-    unsigned char __pad_012;  // 0x12 [X30:canon]
-    unsigned char __pad_019;  // 0x19 [X30:canon]
-    unsigned char __pad_035;  // 0x35 [X30:canon]
-    unsigned char __pad_04F;  // 0x4F [X30:canon]
+#pragma pack(pop)
 };
 
 } // namespace gamemd

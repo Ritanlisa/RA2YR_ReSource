@@ -6,8 +6,34 @@
 namespace gamemd {
 struct CreateTeamCommand;  // fix_fwd_type_supply
 struct Sidebar {
+#pragma pack(push, 1)  // X60: binary-packed layout
+    void* __pad_000;  // 0x0
+    int Sidebar_field_0x4;  // 0x4
+    int Sidebar_field_0x8;  // 0x8
+    int Sidebar_field_0xC;  // 0xC
+    int Sidebar_field_0x10;  // 0x10
+    char __pad_14[12];  // 0x14
+    int Sidebar_field_0x20;  // 0x20
+    int Sidebar_field_0x24;  // 0x24
+    char __pad_28[8];  // 0x28
+    int Sidebar_field_0x30;  // 0x30
+    char __pad_34[8];  // 0x34
+    int Sidebar_field_0x3C;  // 0x3C
+    char __pad_40[4];  // 0x40
+    int Sidebar_field_0x44;  // 0x44
+    char __pad_48[16];  // 0x48
+    int Sidebar_field_0x58;  // 0x58
+    char __pad_5C[8];  // 0x5C
+    int Sidebar_field_0x64;  // 0x64
+    char __pad_68[4];  // 0x68
+    int Sidebar_field_0x6C;  // 0x6C
+    char __pad_70[380];  // 0x70
+    unsigned int u32_1EC;  // 0x1EC
+    char __pad_1F0[104];  // 0x1F0
+    int Sidebar_field_0x258;  // 0x258
+    char __pad_25C[2674];  // 0x25C
+    char Sidebar_field_0xCCE[4];  // 0xCCE
 // --- flat members (BEGIN) ---
-
 // --- flat members (END) ---
     AbstractClass * * StartSidebarProduction(HouseClass *a1, int aP2, char aP3, char a5);  // 0x4FA350
 int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);
@@ -19,31 +45,6 @@ int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);
     AbstractClass * * FlushSidebarTooltip(char a2, void *a2_1 = 0);  // 0x6A70E0
     char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, void *a4_2);  // 0x6A6140
     static char UpdateProductionDisplay(int a1, wchar_t a2, char a3);
-    unsigned char __pad_1510;  // 0x1510 (offset-truth)
-    unsigned char __pad_152C;  // 0x152C (offset-truth)
-    unsigned char __pad_1534;  // 0x1534 (offset-truth)
-    unsigned int u32_53AC;  // 0x53AC (offset-truth)
-    unsigned int u32_53B0;  // 0x53B0 (offset-truth)
-    unsigned int u32_53B4;  // 0x53B4 (offset-truth)
-    unsigned int u32_53B8;  // 0x53B8 (offset-truth)
-    unsigned int u32_53BC;  // 0x53BC (offset-truth)
-    unsigned int u32_53CC;  // 0x53CC (offset-truth)
-    unsigned int u32_53D0;  // 0x53D0 (offset-truth)
-    unsigned char u32_53D1;  // 0x53D1 (offset-truth)
-    unsigned char u32_53D2;  // 0x53D2 (offset-truth)
-    unsigned char u32_53D3;  // 0x53D3 (offset-truth)
-    unsigned int u32_53D4;  // 0x53D4 (offset-truth)
-    unsigned int u32_53D8;  // 0x53D8 (offset-truth)
-
-    unsigned int u32_14E7;  // X10 supply (member_lookup)
-    unsigned int u32_151C;  // X10 supply (member_lookup)
-    unsigned int u32_1EC;  // X10 supply (member_lookup)
-    unsigned int u32_53A5;  // X10 supply (member_lookup)
-    unsigned int u32_53A6;  // X10 supply (member_lookup)
-    unsigned int u32_53A8;  // X10 supply (member_lookup)
-    unsigned char u8_F94;  // X10 supply (member_lookup)
-    ObjectClass * field_1530;  // 0x1530
-    unsigned int field_150C;  // 0x150C
-    void* __pad_000;  // 0x0 [X30:type_map]
+#pragma pack(pop)
 };
 } // namespace gamemd

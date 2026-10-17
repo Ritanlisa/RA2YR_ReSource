@@ -6,18 +6,12 @@
 namespace gamemd {
 
 struct DamageArea {
+    int DamageArea_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int DamageArea_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int ApplyScatter();
     int CheckOccupancyEligibility();
     unsigned int * CalcScatterOffset(unsigned int * v11, int16_t * a3);
-    unsigned int u32_100;  // 0x100 (offset-truth)
-    unsigned char u32_51;  // 0x51 (offset-truth)
-    unsigned int u32_5C;  // 0x5C (offset-truth)
-    void* u32_C;  // 0xC (offset-truth) [X30:type_map]
-    unsigned int u32_F4;  // 0xF4 (offset-truth)
-    unsigned int u32_FC;  // 0xFC (offset-truth)
 };
 
 } // namespace gamemd

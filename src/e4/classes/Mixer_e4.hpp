@@ -6,14 +6,11 @@
 namespace gamemd {
 
 struct Mixer {
+    int Mixer_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Mixer_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int ReleaseChannel(void *a1 = 0);
     static int RequestAllBuffers();
-    unsigned int u32_4;  // 0x4 (offset-truth)
-    unsigned int u32_8;  // 0x8 (offset-truth)
-    uint32_t u32_C;  // 0xC [X30:member_lookup]
 };
 
 } // namespace gamemd

@@ -16,31 +16,89 @@ struct Tactical;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct DisplayClass {
-// --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     AbstractClass * ptr_4;  // 0x4
-    bool IsAllocated;  // 0xD
+    unsigned int q008;  // 0x8
+    unsigned int u32_C;  // 0xC
     int Count;  // 0x10
     int CapacityIncrement;  // 0x14
+    unsigned char __pad_018;  // 0x18
+    char __pad_19[11];  // 0x19
     unsigned int outBuffer;  // 0x24
+    unsigned char __pad_028;  // 0x28
+    char __pad_29[7];  // 0x29
+    int DisplayClass_field_0x30;  // 0x30
     unsigned int MovementZones;  // 0x34
+    unsigned char __pad_038;  // 0x38
+    char __pad_39[47];  // 0x39
     unsigned int somecount_4C;  // 0x68
     unsigned int ZoneConnections;  // 0x6C
+    unsigned char __pad_070;  // 0x70
+    char __pad_71[15];  // 0x71
     DynamicVector * ptr_50;  // 0x80
     unsigned int LevelAndPassability;  // 0x84
     unsigned int ValidMapCellCount;  // 0x88
+    unsigned char __pad_08C;  // 0x8C
+    char __pad_8D[71];  // 0x8D
     unsigned int CellStructs1;  // 0xD4
+    unsigned char __pad_0D8;  // 0xD8
+    char __pad_D9[19];  // 0xD9
     unsigned int MapRect;  // 0xEC
+    unsigned char __pad_0F0;  // 0xF0
+    char __pad_F1[11];  // 0xF1
     unsigned int VisibleRect;  // 0xFC
+    unsigned char __pad_100;  // 0x100
+    char __pad_101[15];  // 0x101
     unsigned int CellIterator_NextY;  // 0x110
     unsigned int CellIterator_CurrentY;  // 0x114
     unsigned int CellIterator_NextCell;  // 0x118
     unsigned int ZoneIterator_X;  // 0x11C
     unsigned int ZoneIterator_Y;  // 0x120
+    unsigned char __pad_124;  // 0x124
+    char __pad_125[7];  // 0x125
+    int q12C;  // 0x12C
+    int q130;  // 0x130
+    int q134;  // 0x134
     unsigned int MaxLevel;  // 0x138
     unsigned int MaxWidth;  // 0x13C
+    unsigned int __pad_140;  // 0x140
+    char __pad_144[4];  // 0x144
     unsigned int Crates;  // 0x148
-    unsigned int MapCoordBounds;  // 0x292
+    unsigned char __pad_14C;  // 0x14C
+    char __pad_14D[191];  // 0x14D
+    int DisplayClass_field_0x20C;  // 0x20C
+    char __pad_210[130];  // 0x210
+    unsigned char MapCoordBounds;  // 0x292
+    char __pad_293[3];  // 0x293
+    unsigned char __pad_296;  // 0x296
+    char __pad_297[387];  // 0x297
+    char DisplayClass_field_0x41A[4];  // 0x41A
+    char __pad_41E[960];  // 0x41E
+    char __pad_7DE[1414];  // 0x7DE
+    unsigned int u32_D64;  // 0xD64
+    unsigned int u32_D68;  // 0xD68
+    char __pad_D6C[8];  // 0xD6C
+    int u32_D74;  // 0xD74
+    int u32_D78;  // 0xD78
+    char __pad_D7C[1024];  // 0xD7C
+    unsigned int q117C;  // 0x117C
+    char __pad_1180[20];  // 0x1180
+    int DisplayClass_field_0x1194;  // 0x1194
+    char __pad_1198[4];  // 0x1198
+    unsigned int u32_119C;  // 0x119C
+    unsigned int u32_11A0;  // 0x11A0
+    unsigned char q11A4;  // 0x11A4
+    char __pad_11A5[3];  // 0x11A5
+    int q11A8;  // 0x11A8
+    unsigned char q11AC[4];  // 0x11AC
+    int q11B0;  // 0x11B0
+    char __pad_11B4[28];  // 0x11B4
+    int q11D0;  // 0x11D0
+    int q11D4;  // 0x11D4
+    int q11D8;  // 0x11D8
+    int q11DC;  // 0x11DC
+    int q11E0;  // 0x11E0
+// --- flat members (BEGIN) ---
 // --- flat members (END) ---
     DisplayClass * Read(char * Block, char a2, void *a3 = 0);
     HWND Render(void *a1, void *a2, void *a3 = 0, void *a4 = 0);
@@ -69,47 +127,6 @@ struct DisplayClass {
     unsigned int * updateRenderState(char a2);
     void * Draw(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     void Update(PowerClass * aP1, int a3, void *a3_2, void *a4);
-    char __pad_10[32];  // 0x10 (ml)
-    char __pad_11B4[28];  // 0x11B4 (ml)
-    char __pad_41E[960];  // 0x41E (ml)
-    unsigned int q008;  // 0x8 (offset-truth)
-
-    unsigned char __pad_008;  // X10 supply (csp_canon_members)
-    unsigned char __pad_018;  // X10 supply (csp_canon_members)
-    unsigned char __pad_140;  // X10 supply (csp_canon_members)
-    unsigned int q117C;  // X10 supply (member_lookup)
-    unsigned char q11A4;  // X10 supply (member_lookup)
-    int q11A8;  // X10 supply (member_lookup)
-    unsigned char q11AC[4];  /* char[4] */  // X10 supply (member_lookup)
-    int q11B0;  // X10 supply (member_lookup)
-    unsigned char q11B8;  // X10 supply (member_lookup)
-    unsigned int q11CF;  // X10 supply (member_lookup)
-    int q11D0;  // X10 supply (member_lookup)
-    int q11D4;  // X10 supply (member_lookup)
-    int q11D8;  // X10 supply (member_lookup)
-    int q11DC;  // X10 supply (member_lookup)
-    int q11E0;  // X10 supply (member_lookup)
-    int q12C;  // X10 supply (member_lookup)
-    int q130;  // X10 supply (member_lookup)
-    int q134;  // X10 supply (member_lookup)
-    unsigned int u32_119C;  // X10 supply (member_lookup)
-    unsigned int u32_11A0;  // X10 supply (member_lookup)
-    unsigned int u32_C;  // X10 supply (member_lookup)
-    unsigned int u32_D64;  // X10 supply (member_lookup)
-    unsigned int u32_D68;  // X10 supply (member_lookup)
-    int u32_D74;  // X10 supply (member_lookup)
-    int u32_D78;  // X10 supply (member_lookup)
-    unsigned char __pad_028;  // 0x28 [X30:canon]
-    unsigned char __pad_038;  // 0x38 [X30:canon]
-    unsigned char __pad_070;  // 0x70 [X30:canon]
-    unsigned char __pad_08C;  // 0x8C [X30:canon]
-    unsigned char __pad_0D8;  // 0xD8 [X30:canon]
-    unsigned char __pad_0F0;  // 0xF0 [X30:canon]
-    unsigned char __pad_100;  // 0x100 [X30:canon]
-    unsigned char __pad_124;  // 0x124 [X30:canon]
-    unsigned char __pad_14C;  // 0x14C [X30:canon]
-    unsigned char __pad_296;  // 0x296 [X30:canon]
-    unsigned char q121;  // 0x121 [X30:member_lookup]
 };
 
 } // namespace gamemd

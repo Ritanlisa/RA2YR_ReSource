@@ -6,8 +6,8 @@
 namespace gamemd {
 
 struct Compare {
+    int Compare_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Compare_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     int Field96(const void * a1, const void * a2);
 };

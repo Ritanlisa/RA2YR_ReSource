@@ -6,12 +6,10 @@
 namespace gamemd {
 
 struct Process {
+    int Process_field_00;  // 0x0
 // --- flat members (BEGIN) ---
-int Process_field_00;  // 0x0 [X35-L7 kind=int]
 // --- flat members (END) ---
     bool WaitForExit(DWORD dwMilliseconds, char aP2);
-
-    void* q01C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

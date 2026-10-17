@@ -5,8 +5,12 @@
 
 namespace gamemd {
 struct WebBrowser {
+    int __pad_0;  // 0x0
+    unsigned int __pad_004;  // 0x4
+    unsigned int WebBrowser_field_0x8;  // 0x8
+    unsigned char q00C[4];  // 0xC
+    int WebBrowser_field_0x10;  // 0x10
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
 // --- flat members (END) ---
     int LoadURLFromRegistry(const char * a2);  // 0x773600
     int ShowDialog(void *a1 = 0);  // 0x773E90
@@ -29,14 +33,5 @@ struct WebBrowser {
     int UnlockRegion();  // 0x773BA0
     int COMStub_Return0();  // 0x773B00
     int WebBrowser___vt03();
-    unsigned int *q000;  // 0x0 (offset-truth)
-    unsigned int u32_40C;  // 0x40C (offset-truth)
-bool u32_42;  // 0x42 [X35-L7 kind=bool]
-
-    unsigned char q00C[4];  /* char[4] */  // X10 supply (member_lookup)
-    unsigned int u32_8;  // X10 supply (member_lookup)
-unsigned int __pad_004;  // 0x4 [X35-L7 kind=unsigned int]
-unsigned int WebBrowser_field_0x8;  // 0x8 [X35-L7 kind=unsigned int]
-    int __pad_0;  // 0x0 [X30:type_map]
 };
 } // namespace gamemd
