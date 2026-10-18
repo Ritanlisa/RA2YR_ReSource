@@ -569,7 +569,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
         *(unsigned int *)&v21.m_1[3] = this->M84 + 4); /*0x4f24a9*/
         int v22; // [esp+3Ah] [ebp-14h]
         v22 = 0; /*0x4f24b1*/
-        *(unsigned int *)v21.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f24b5*/
+        *(unsigned int *)v21.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f24b5*/
         if ( Map::CanScroll(&v21) ) /*0x4f24bd*/
         {
           do /*0x4f24f6*/
@@ -584,14 +584,14 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
         }
         if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v21.__pad_0 + 4))(&v21) ) /*0x4f2505*/
           v11 = *(State **)(*(unsigned int *)(*(unsigned int *)&v21.m_1[3] + 4) + 4 * v22); /*0x4f2517*/
-        *(unsigned int *)v21.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f251a*/
+        *(unsigned int *)v21.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f251a*/
       }
       else
       {
         *(unsigned int *)&v19.m_1[3] = this->M84 + 4); /*0x4f241e*/
         int v20; // [esp+2Eh] [ebp-20h]
         v20 = 0; /*0x4f2422*/
-        *(unsigned int *)v19.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f242a*/
+        *(unsigned int *)v19.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f242a*/
         if ( Map::CanScroll(&v19) ) /*0x4f2432*/
         {
           do /*0x4f2467*/
@@ -608,7 +608,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
           v11 = *(State **)(*(unsigned int *)(*(unsigned int *)&v19.m_1[3] + 4) + 4 * v20); /*0x4f2488*/
         else
           v11 = 0; /*0x4f2498*/
-        *(unsigned int *)v19.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f248b*/
+        *(unsigned int *)v19.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f248b*/
       }
       if ( v11 ) /*0x4f2524*/
       {
@@ -628,7 +628,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       *(unsigned int *)&v23.m_1[3] = this->M84 + 4); /*0x4f2559*/
       int v24; // [esp+46h] [ebp-8h]
       v24 = 0; /*0x4f255d*/
-      *(unsigned int *)v23.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2561*/
+      *(unsigned int *)v23.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f2561*/
       if ( Map::CanScroll(&v23) ) /*0x4f2569*/
       {
         do /*0x4f25a2*/
@@ -643,7 +643,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       }
       if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v23.__pad_0 + 4))(&v23) ) /*0x4f25b1*/
         v13 = *(State **)(*(unsigned int *)(*(unsigned int *)&v23.m_1[3] + 4) + 4 * v24); /*0x4f25c3*/
-      *(unsigned int *)v23.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f25c8*/
+      *(unsigned int *)v23.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f25c8*/
       if ( v13 != v4 ) /*0x4f25d0*/
       {
         if ( v4 ) /*0x4f25d4*/
@@ -1577,7 +1577,7 @@ int ObjectClass::sub_4F2280(int a2, int a3)
   int v5; // [esp+8h] [ebp-4h]
   v5 = 0; /*0x4f2286*/
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f228e*/
-  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2296*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f2296*/
   int result; // eax
   for ( result = Map::CanScroll(&v4); /*0x4f22a6*/
   (unsigned char)result;
@@ -1602,7 +1602,7 @@ int ObjectClass::sub_4F26E0(int a2)
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f26e7*/
   int v5; // [esp+Ch] [ebp-4h]
   v5 = 0; /*0x4f26ef*/
-  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f26f7*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f26f7*/
   if ( Map::CanScroll(&v4) ) /*0x4f26ff*/
   {
     do /*0x4f2738*/
@@ -1633,7 +1633,7 @@ int ObjectClass::sub_4F2770(int a2)
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f2777*/
   int v5; // [esp+Ch] [ebp-4h]
   v5 = 0; /*0x4f277f*/
-  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2787*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f2787*/
   if ( Map::CanScroll(&v4) ) /*0x4f278f*/
   {
     do /*0x4f27c8*/

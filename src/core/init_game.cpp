@@ -23,6 +23,12 @@
 #include "system/tactical.hpp"
 #include "render/surface.hpp"
 #include "render/movie.hpp"
+#include "e4/classes/CreateTeamCommand_e4.hpp"  // X66 L2-C command-class supply
+#include "e4/classes/SelectTeamCommand_e4.hpp"  // X66 L2-C command-class supply
+#include "e4/classes/AddTeamCommand_e4.hpp"  // X66 L2-C command-class supply
+#include "e4/classes/CenterTeamCommand_e4.hpp"  // X66 L2-C command-class supply
+#include "e4/classes/TauntCommandClass_e4.hpp"  // X66 L2-C command-class supply
+#include "e4/e4_abs_decls.hpp"  // X66 L2-F visibility supply
 
 namespace gamemd {
 
@@ -504,49 +510,49 @@ int InitCommands()
   unsigned int *v122; // eax
   unsigned int *v123; // esi
   int v124; // eax
-  CreateTeamCommand *v125; // eax
-  CreateTeamCommand *v126; // eax
-  CreateTeamCommand *v127; // eax
-  CreateTeamCommand *v128; // eax
-  CreateTeamCommand *v129; // eax
-  SelectTeamCommand *v130; // eax
-  SelectTeamCommand *v131; // eax
-  SelectTeamCommand *v132; // eax
-  SelectTeamCommand *v133; // eax
-  SelectTeamCommand *v134; // eax
-  SelectTeamCommand *v135; // eax
-  SelectTeamCommand *v136; // eax
-  SelectTeamCommand *v137; // eax
-  SelectTeamCommand *v138; // eax
-  SelectTeamCommand *v139; // eax
-  AddTeamCommand *v140; // eax
-  AddTeamCommand *v141; // eax
-  AddTeamCommand *v142; // eax
-  AddTeamCommand *v143; // eax
-  AddTeamCommand *v144; // eax
-  AddTeamCommand *v145; // eax
-  AddTeamCommand *v146; // eax
-  AddTeamCommand *v147; // eax
-  AddTeamCommand *v148; // eax
-  AddTeamCommand *v149; // eax
-  CenterTeamCommand *v150; // eax
-  CenterTeamCommand *v151; // eax
-  CenterTeamCommand *v152; // eax
-  CenterTeamCommand *v153; // eax
-  CenterTeamCommand *v154; // eax
-  CenterTeamCommand *v155; // eax
-  CenterTeamCommand *v156; // eax
-  CenterTeamCommand *v157; // eax
-  CenterTeamCommand *v158; // eax
-  CenterTeamCommand *v159; // eax
-  TauntCommandClass *v160; // eax
-  TauntCommandClass *v161; // eax
-  TauntCommandClass *v162; // eax
-  TauntCommandClass *v163; // eax
-  TauntCommandClass *v164; // eax
-  TauntCommandClass *v165; // eax
-  TauntCommandClass *v166; // eax
-  TauntCommandClass *v167; // eax
+  gamemd::CreateTeamCommand *v125; // eax
+  gamemd::CreateTeamCommand *v126; // eax
+  gamemd::CreateTeamCommand *v127; // eax
+  gamemd::CreateTeamCommand *v128; // eax
+  gamemd::CreateTeamCommand *v129; // eax
+  gamemd::SelectTeamCommand *v130; // eax
+  gamemd::SelectTeamCommand *v131; // eax
+  gamemd::SelectTeamCommand *v132; // eax
+  gamemd::SelectTeamCommand *v133; // eax
+  gamemd::SelectTeamCommand *v134; // eax
+  gamemd::SelectTeamCommand *v135; // eax
+  gamemd::SelectTeamCommand *v136; // eax
+  gamemd::SelectTeamCommand *v137; // eax
+  gamemd::SelectTeamCommand *v138; // eax
+  gamemd::SelectTeamCommand *v139; // eax
+  gamemd::AddTeamCommand *v140; // eax
+  gamemd::AddTeamCommand *v141; // eax
+  gamemd::AddTeamCommand *v142; // eax
+  gamemd::AddTeamCommand *v143; // eax
+  gamemd::AddTeamCommand *v144; // eax
+  gamemd::AddTeamCommand *v145; // eax
+  gamemd::AddTeamCommand *v146; // eax
+  gamemd::AddTeamCommand *v147; // eax
+  gamemd::AddTeamCommand *v148; // eax
+  gamemd::AddTeamCommand *v149; // eax
+  gamemd::CenterTeamCommand *v150; // eax
+  gamemd::CenterTeamCommand *v151; // eax
+  gamemd::CenterTeamCommand *v152; // eax
+  gamemd::CenterTeamCommand *v153; // eax
+  gamemd::CenterTeamCommand *v154; // eax
+  gamemd::CenterTeamCommand *v155; // eax
+  gamemd::CenterTeamCommand *v156; // eax
+  gamemd::CenterTeamCommand *v157; // eax
+  gamemd::CenterTeamCommand *v158; // eax
+  gamemd::CenterTeamCommand *v159; // eax
+  gamemd::TauntCommandClass *v160; // eax
+  gamemd::TauntCommandClass *v161; // eax
+  gamemd::TauntCommandClass *v162; // eax
+  gamemd::TauntCommandClass *v163; // eax
+  gamemd::TauntCommandClass *v164; // eax
+  gamemd::TauntCommandClass *v165; // eax
+  gamemd::TauntCommandClass *v166; // eax
+  gamemd::TauntCommandClass *v167; // eax
   ScreenCaptureCommandClass *v168; // eax
   PageUserCommandClass *v169; // eax
   CursorPositionCommandClass *v170; // eax
@@ -1448,259 +1454,259 @@ int InitCommands()
     v124 = dword_87F668++; /*0x533364*/
     *((unsigned int *)dword_87F65C + v124) = v123; /*0x533373*/
   }
-  v125 = (CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x533378*/
+  v125 = (gamemd::CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x533378*/
   if ( v125 ) /*0x533382*/
     v177 = (int)CreateTeamCommand::Construct(v125, 6); /*0x53338d*/
   else
     v177 = 0; /*0x533393*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5333a1*/
-  v126 = (CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x5333a8*/
+  v126 = (gamemd::CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x5333a8*/
   if ( v126 ) /*0x5333b2*/
     v177 = (int)CreateTeamCommand::Construct(v126, 7); /*0x5333bd*/
   else
     v177 = 0; /*0x5333c3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5333d1*/
-  v127 = (CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x5333d8*/
+  v127 = (gamemd::CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x5333d8*/
   if ( v127 ) /*0x5333e2*/
     v177 = (int)CreateTeamCommand::Construct(v127, 8); /*0x5333ed*/
   else
     v177 = 0; /*0x5333f3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533401*/
-  v128 = (CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x533408*/
+  v128 = (gamemd::CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x533408*/
   if ( v128 ) /*0x533412*/
     v177 = (int)CreateTeamCommand::Construct(v128, 9); /*0x53341d*/
   else
     v177 = 0; /*0x533423*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533431*/
-  v129 = (CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x533438*/
+  v129 = (gamemd::CreateTeamCommand *)__2_YAPAXI_Z(8u); /*0x533438*/
   if ( v129 ) /*0x533442*/
     v177 = (int)CreateTeamCommand::Construct(v129, 10); /*0x53344d*/
   else
     v177 = 0; /*0x533453*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533461*/
-  v130 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533468*/
+  v130 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533468*/
   if ( v130 ) /*0x533472*/
     v177 = (int)SelectTeamCommand::Construct(v130, 1); /*0x53347d*/
   else
     v177 = 0; /*0x533483*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533491*/
-  v131 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533498*/
+  v131 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533498*/
   if ( v131 ) /*0x5334a2*/
     v177 = (int)SelectTeamCommand::Construct(v131, 2); /*0x5334ad*/
   else
     v177 = 0; /*0x5334b3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5334c1*/
-  v132 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x5334c8*/
+  v132 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x5334c8*/
   if ( v132 ) /*0x5334d2*/
     v177 = (int)SelectTeamCommand::Construct(v132, 3); /*0x5334dd*/
   else
     v177 = 0; /*0x5334e3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5334f1*/
-  v133 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x5334f8*/
+  v133 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x5334f8*/
   if ( v133 ) /*0x533502*/
     v177 = (int)SelectTeamCommand::Construct(v133, 4); /*0x53350d*/
   else
     v177 = 0; /*0x533513*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533521*/
-  v134 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533528*/
+  v134 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533528*/
   if ( v134 ) /*0x533532*/
     v177 = (int)SelectTeamCommand::Construct(v134, 5); /*0x53353d*/
   else
     v177 = 0; /*0x533543*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533551*/
-  v135 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533558*/
+  v135 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533558*/
   if ( v135 ) /*0x533562*/
     v177 = (int)SelectTeamCommand::Construct(v135, 6); /*0x53356d*/
   else
     v177 = 0; /*0x533573*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533581*/
-  v136 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533588*/
+  v136 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533588*/
   if ( v136 ) /*0x533592*/
     v177 = (int)SelectTeamCommand::Construct(v136, 7); /*0x53359d*/
   else
     v177 = 0; /*0x5335a3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5335b1*/
-  v137 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x5335b8*/
+  v137 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x5335b8*/
   if ( v137 ) /*0x5335c2*/
     v177 = (int)SelectTeamCommand::Construct(v137, 8); /*0x5335cd*/
   else
     v177 = 0; /*0x5335d3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5335e1*/
-  v138 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x5335e8*/
+  v138 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x5335e8*/
   if ( v138 ) /*0x5335f2*/
     v177 = (int)SelectTeamCommand::Construct(v138, 9); /*0x5335fd*/
   else
     v177 = 0; /*0x533603*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533611*/
-  v139 = (SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533618*/
+  v139 = (gamemd::SelectTeamCommand *)__2_YAPAXI_Z(8u); /*0x533618*/
   if ( v139 ) /*0x533622*/
     v177 = (int)SelectTeamCommand::Construct(v139, 10); /*0x53362d*/
   else
     v177 = 0; /*0x533633*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533641*/
-  v140 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533648*/
+  v140 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533648*/
   if ( v140 ) /*0x533652*/
     v177 = (int)AddTeamCommand::Construct(v140, 1); /*0x53365d*/
   else
     v177 = 0; /*0x533663*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533671*/
-  v141 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533678*/
+  v141 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533678*/
   if ( v141 ) /*0x533682*/
     v177 = (int)AddTeamCommand::Construct(v141, 2); /*0x53368d*/
   else
     v177 = 0; /*0x533693*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5336a1*/
-  v142 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x5336a8*/
+  v142 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x5336a8*/
   if ( v142 ) /*0x5336b2*/
     v177 = (int)AddTeamCommand::Construct(v142, 3); /*0x5336bd*/
   else
     v177 = 0; /*0x5336c3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5336d1*/
-  v143 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x5336d8*/
+  v143 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x5336d8*/
   if ( v143 ) /*0x5336e2*/
     v177 = (int)AddTeamCommand::Construct(v143, 4); /*0x5336ed*/
   else
     v177 = 0; /*0x5336f3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533701*/
-  v144 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533708*/
+  v144 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533708*/
   if ( v144 ) /*0x533712*/
     v177 = (int)AddTeamCommand::Construct(v144, 5); /*0x53371d*/
   else
     v177 = 0; /*0x533723*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533731*/
-  v145 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533738*/
+  v145 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533738*/
   if ( v145 ) /*0x533742*/
     v177 = (int)AddTeamCommand::Construct(v145, 6); /*0x53374d*/
   else
     v177 = 0; /*0x533753*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533761*/
-  v146 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533768*/
+  v146 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533768*/
   if ( v146 ) /*0x533772*/
     v177 = (int)AddTeamCommand::Construct(v146, 7); /*0x53377d*/
   else
     v177 = 0; /*0x533783*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533791*/
-  v147 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533798*/
+  v147 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x533798*/
   if ( v147 ) /*0x5337a2*/
     v177 = (int)AddTeamCommand::Construct(v147, 8); /*0x5337ad*/
   else
     v177 = 0; /*0x5337b3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5337c1*/
-  v148 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x5337c8*/
+  v148 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x5337c8*/
   if ( v148 ) /*0x5337d2*/
     v177 = (int)AddTeamCommand::Construct(v148, 9); /*0x5337dd*/
   else
     v177 = 0; /*0x5337e3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5337f1*/
-  v149 = (AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x5337f8*/
+  v149 = (gamemd::AddTeamCommand *)__2_YAPAXI_Z(8u); /*0x5337f8*/
   if ( v149 ) /*0x533802*/
     v177 = (int)AddTeamCommand::Construct(v149, 10); /*0x53380d*/
   else
     v177 = 0; /*0x533813*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533821*/
-  v150 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533828*/
+  v150 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533828*/
   if ( v150 ) /*0x533832*/
     v177 = (int)CenterTeamCommand::Construct(v150, 1); /*0x53383d*/
   else
     v177 = 0; /*0x533843*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533851*/
-  v151 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533858*/
+  v151 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533858*/
   if ( v151 ) /*0x533862*/
     v177 = (int)CenterTeamCommand::Construct(v151, 2); /*0x53386d*/
   else
     v177 = 0; /*0x533873*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533881*/
-  v152 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533888*/
+  v152 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533888*/
   if ( v152 ) /*0x533892*/
     v177 = (int)CenterTeamCommand::Construct(v152, 3); /*0x53389d*/
   else
     v177 = 0; /*0x5338a3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5338b1*/
-  v153 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x5338b8*/
+  v153 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x5338b8*/
   if ( v153 ) /*0x5338c2*/
     v177 = (int)CenterTeamCommand::Construct(v153, 4); /*0x5338cd*/
   else
     v177 = 0; /*0x5338d3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5338e1*/
-  v154 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x5338e8*/
+  v154 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x5338e8*/
   if ( v154 ) /*0x5338f2*/
     v177 = (int)CenterTeamCommand::Construct(v154, 5); /*0x5338fd*/
   else
     v177 = 0; /*0x533903*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533911*/
-  v155 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533918*/
+  v155 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533918*/
   if ( v155 ) /*0x533922*/
     v177 = (int)CenterTeamCommand::Construct(v155, 6); /*0x53392d*/
   else
     v177 = 0; /*0x533933*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533941*/
-  v156 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533948*/
+  v156 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533948*/
   if ( v156 ) /*0x533952*/
     v177 = (int)CenterTeamCommand::Construct(v156, 7); /*0x53395d*/
   else
     v177 = 0; /*0x533963*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533971*/
-  v157 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533978*/
+  v157 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x533978*/
   if ( v157 ) /*0x533982*/
     v177 = (int)CenterTeamCommand::Construct(v157, 8); /*0x53398d*/
   else
     v177 = 0; /*0x533993*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5339a1*/
-  v158 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x5339a8*/
+  v158 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x5339a8*/
   if ( v158 ) /*0x5339b2*/
     v177 = (int)CenterTeamCommand::Construct(v158, 9); /*0x5339bd*/
   else
     v177 = 0; /*0x5339c3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x5339d1*/
-  v159 = (CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x5339d8*/
+  v159 = (gamemd::CenterTeamCommand *)__2_YAPAXI_Z(8u); /*0x5339d8*/
   if ( v159 ) /*0x5339e2*/
     v177 = (int)CenterTeamCommand::Construct(v159, 10); /*0x5339ed*/
   else
     v177 = 0; /*0x5339f3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533a01*/
-  v160 = (TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533a08*/
+  v160 = (gamemd::TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533a08*/
   if ( v160 ) /*0x533a12*/
     v177 = (int)TauntCommandClass::Construct(v160, 1); /*0x533a1d*/
   else
     v177 = 0; /*0x533a23*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533a31*/
-  v161 = (TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533a38*/
+  v161 = (gamemd::TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533a38*/
   if ( v161 ) /*0x533a42*/
     v177 = (int)TauntCommandClass::Construct(v161, 2); /*0x533a4d*/
   else
     v177 = 0; /*0x533a53*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533a61*/
-  v162 = (TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533a68*/
+  v162 = (gamemd::TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533a68*/
   if ( v162 ) /*0x533a72*/
     v177 = (int)TauntCommandClass::Construct(v162, 3); /*0x533a7d*/
   else
     v177 = 0; /*0x533a83*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533a91*/
-  v163 = (TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533a98*/
+  v163 = (gamemd::TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533a98*/
   if ( v163 ) /*0x533aa2*/
     v177 = (int)TauntCommandClass::Construct(v163, 4); /*0x533aad*/
   else
     v177 = 0; /*0x533ab3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533ac1*/
-  v164 = (TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533ac8*/
+  v164 = (gamemd::TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533ac8*/
   if ( v164 ) /*0x533ad2*/
     v177 = (int)TauntCommandClass::Construct(v164, 5); /*0x533add*/
   else
     v177 = 0; /*0x533ae3*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533af1*/
-  v165 = (TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533af8*/
+  v165 = (gamemd::TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533af8*/
   if ( v165 ) /*0x533b02*/
     v177 = (int)TauntCommandClass::Construct(v165, 6); /*0x533b0d*/
   else
     v177 = 0; /*0x533b13*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533b21*/
-  v166 = (TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533b28*/
+  v166 = (gamemd::TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533b28*/
   if ( v166 ) /*0x533b32*/
     v177 = (int)TauntCommandClass::Construct(v166, 7); /*0x533b3d*/
   else
     v177 = 0; /*0x533b43*/
   DynamicVector::Add_Alt2(&dword_87F658, &v177); /*0x533b51*/
-  v167 = (TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533b58*/
+  v167 = (gamemd::TauntCommandClass *)__2_YAPAXI_Z(8u); /*0x533b58*/
   if ( v167 ) /*0x533b62*/
     v177 = (int)TauntCommandClass::Construct(v167, 8); /*0x533b6d*/
   else

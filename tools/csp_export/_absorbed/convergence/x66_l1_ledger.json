@@ -1,0 +1,409 @@
+{
+ "applied": [
+  {
+   "file": "src/e4/AbstractClass_e4.cpp",
+   "before": "      v5->vfptr = &vt_BombClass_4; /*0x438ece*/",
+   "after": "      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ece*/"
+  },
+  {
+   "file": "src/e4/AbstractTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_AbstractTypeClass; /*0x4109cd*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_AbstractTypeClass) */  /*0x4109cd*/"
+  },
+  {
+   "file": "src/e4/AbstractTypeClass_e4.cpp",
+   "before": "  aP1->AbstractClass = &vt_AbstractTypeClass; /*0x410c3d*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_AbstractTypeClass) */  /*0x410c3d*/"
+  },
+  {
+   "file": "src/e4/AirstrikeClass_e4.cpp",
+   "before": "  aP1->AbstractClass = &vt_AirstrikeClass; /*0x41dd5d*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_AirstrikeClass) */  /*0x41dd5d*/"
+  },
+  {
+   "file": "src/e4/BombClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_BombClass; /*0x4385e1*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_BombClass) */  /*0x4385e1*/"
+  },
+  {
+   "file": "src/e4/BombClass_e4.cpp",
+   "before": "      aP0->AbstractClass = &vt_BombClass; /*0x438b67*/",
+   "after": "      /* X11: vtable install elided (base-interface slot, RHS vt_BombClass) */  /*0x438b67*/"
+  },
+  {
+   "file": "src/e4/BombClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_BombClass; /*0x4393f7*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_BombClass) */  /*0x4393f7*/"
+  },
+  {
+   "file": "src/e4/BuildingTypeClass_e4.cpp",
+   "before": "  this->vtable2 = &vt_BuildingTypeClass_4; /*0x45e2d3*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2d3*/"
+  },
+  {
+   "file": "src/e4/CampaignClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_CampaignClass; /*0x46cb70*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_CampaignClass) */  /*0x46cb70*/"
+  },
+  {
+   "file": "src/e4/CampaignClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_CampaignClass; /*0x46d096*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_CampaignClass) */  /*0x46d096*/"
+  },
+  {
+   "file": "src/e4/CaptureManagerClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_VectorClass; /*0x473158*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x473158*/"
+  },
+  {
+   "file": "src/e4/FoggedObjectClass_e4.cpp",
+   "before": "  this->vfptr = &vt_FoggedObjectClass_4; /*0x4d0a06*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0a06*/"
+  },
+  {
+   "file": "src/e4/FoggedObjectClass_e4.cpp",
+   "before": "  this->vtable2 = &vt_FoggedObjectClass_4; /*0x4d0fab*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0fab*/"
+  },
+  {
+   "file": "src/e4/FoggedObjectClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d140e*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_FoggedObjectClass) */  /*0x4d140e*/"
+  },
+  {
+   "file": "src/e4/HouseClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_VersionClass; /*0x4e8279*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_VersionClass) */  /*0x4e8279*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_HouseTypeClass; /*0x51167b*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_HouseTypeClass) */  /*0x51167b*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_HouseTypeClass; /*0x512766*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_HouseTypeClass) */  /*0x512766*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_TypeList; /*0x51297b*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TypeList) */  /*0x51297b*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_VectorClass; /*0x51357b*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x51357b*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_DynamicVectorClass; /*0x5135a3*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x5135a3*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_VectorClass; /*0x5137ea*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x5137ea*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_TypeList; /*0x51384a*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TypeList) */  /*0x51384a*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_VectorClass; /*0x51387a*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x51387a*/"
+  },
+  {
+   "file": "src/e4/HouseTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_DynamicVectorClass; /*0x5138da*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x5138da*/"
+  },
+  {
+   "file": "src/e4/LightSourceClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_LightSourceClass; /*0x5547a0*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_LightSourceClass) */  /*0x5547a0*/"
+  },
+  {
+   "file": "src/e4/LightSourceClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_LightSourceClass; /*0x554869*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_LightSourceClass) */  /*0x554869*/"
+  },
+  {
+   "file": "src/e4/LightSourceClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_LightSourceClass; /*0x555156*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_LightSourceClass) */  /*0x555156*/"
+  },
+  {
+   "file": "src/e4/ObjectTypeClass_e4.cpp",
+   "before": "  this->vfptr = &vt_ObjectTypeClass_4; /*0x5f73d9*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_ObjectTypeClass_4) */  /*0x5f73d9*/"
+  },
+  {
+   "file": "src/e4/ParasiteClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_ParasiteClass; /*0x629231*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_ParasiteClass) */  /*0x629231*/"
+  },
+  {
+   "file": "src/e4/RadSiteClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_RadSiteClass; /*0x65b228*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_RadSiteClass) */  /*0x65b228*/"
+  },
+  {
+   "file": "src/e4/RandomMap_e4.cpp",
+   "before": "    v2->vfptr = &vt_DynamicVectorClass_Cell; /*0x58d435*/",
+   "after": "    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Cell) */  /*0x58d435*/"
+  },
+  {
+   "file": "src/e4/RandomMap_e4.cpp",
+   "before": "      v3->vfptr = &vt_DynamicVectorClass_Cell; /*0x58e77f*/",
+   "after": "      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Cell) */  /*0x58e77f*/"
+  },
+  {
+   "file": "src/e4/ScriptTypeClass_e4.cpp",
+   "before": "  a1->AbstractClass = &vt_ScriptTypeClass; /*0x691fa6*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_ScriptTypeClass) */  /*0x691fa6*/"
+  },
+  {
+   "file": "src/e4/SideClass_e4.cpp",
+   "before": "  aP1->AbstractClass = &vt_SideClass; /*0x6a4597*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_SideClass) */  /*0x6a4597*/"
+  },
+  {
+   "file": "src/e4/SideClass_e4.cpp",
+   "before": "      v2->vfptr = &vt_SideClass_4; /*0x6a47e1*/",
+   "after": "      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47e1*/"
+  },
+  {
+   "file": "src/e4/SideClass_e4.cpp",
+   "before": "  Block->AbstractClass = &vt_SideClass; /*0x6a4936*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_SideClass) */  /*0x6a4936*/"
+  },
+  {
+   "file": "src/e4/SlaveManagerClass_e4.cpp",
+   "before": "  this->vfptr1 = &vt_SlaveManagerClass_4; /*0x6af1f8*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SlaveManagerClass_4) */  /*0x6af1f8*/"
+  },
+  {
+   "file": "src/e4/SlaveManagerClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_SlaveManagerClass; /*0x6af39b*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_SlaveManagerClass) */  /*0x6af39b*/"
+  },
+  {
+   "file": "src/e4/SpawnManagerClass_e4.cpp",
+   "before": "  a1->AbstractClass = &vt_SpawnManagerClass; /*0x6b6ee6*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_SpawnManagerClass) */  /*0x6b6ee6*/"
+  },
+  {
+   "file": "src/e4/SpawnManagerClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_VectorClass; /*0x6b83bb*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x6b83bb*/"
+  },
+  {
+   "file": "src/e4/SpawnManagerClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_DynamicVectorClass; /*0x6b83e3*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x6b83e3*/"
+  },
+  {
+   "file": "src/e4/SuperClass_e4.cpp",
+   "before": "  this->vtable2 = &vt_SuperClass_4; /*0x6cb12f*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SuperClass_4) */  /*0x6cb12f*/"
+  },
+  {
+   "file": "src/e4/System_e4.cpp",
+   "before": "        v7->vfptr = &vt_DynamicVectorClass_HSVClass; /*0x626a1a*/",
+   "after": "        /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_HSVClass) */  /*0x626a1a*/"
+  },
+  {
+   "file": "src/e4/TActionClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_TEventClass; /*0x71e6c1*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TEventClass) */  /*0x71e6c1*/"
+  },
+  {
+   "file": "src/e4/TEventClass_e4.cpp",
+   "before": "  Block->AbstractClass = &vt_TEventClass; /*0x71fa86*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TEventClass) */  /*0x71fa86*/"
+  },
+  {
+   "file": "src/e4/TagClass_e4.cpp",
+   "before": "  a1->AbstractClass = &vt_TagClass; /*0x6e4f69*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TagClass) */  /*0x6e4f69*/"
+  },
+  {
+   "file": "src/e4/TeamTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_FactoryClass; /*0x4c991a*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_FactoryClass) */  /*0x4c991a*/"
+  },
+  {
+   "file": "src/e4/TechnoTypeClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_TeamTypeClass; /*0x6f07fd*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TeamTypeClass) */  /*0x6f07fd*/"
+  },
+  {
+   "file": "src/e4/TemporalClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_TemporalClass; /*0x71a467*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TemporalClass) */  /*0x71a467*/"
+  },
+  {
+   "file": "src/e4/TemporalClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_TemporalClass; /*0x71a501*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TemporalClass) */  /*0x71a501*/"
+  },
+  {
+   "file": "src/e4/TemporalClass_e4.cpp",
+   "before": "  aP1->AbstractClass = &vt_TemporalClass; /*0x71b1bd*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TemporalClass) */  /*0x71b1bd*/"
+  },
+  {
+   "file": "src/e4/Terrain_e4.cpp",
+   "before": "    v86.vfptr = &vt_DynamicVectorClass_Cell; /*0x570394*/",
+   "after": "    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Cell) */  /*0x570394*/"
+  },
+  {
+   "file": "src/e4/Terrain_e4.cpp",
+   "before": "            v86.vfptr = &vt_VectorClass_Cell; /*0x570aad*/",
+   "after": "            /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_Cell) */  /*0x570aad*/"
+  },
+  {
+   "file": "src/e4/Terrain_e4.cpp",
+   "before": "    v92.vfptr = &vt_DynamicVectorClass_Cell; /*0x573885*/",
+   "after": "    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Cell) */  /*0x573885*/"
+  },
+  {
+   "file": "src/e4/Terrain_e4.cpp",
+   "before": "          v92.vfptr = &vt_VectorClass_Cell; /*0x573fd0*/",
+   "after": "          /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_Cell) */  /*0x573fd0*/"
+  },
+  {
+   "file": "src/e4/WaveClass_e4.cpp",
+   "before": "      v4->vtable2 = &vt_WaveClass_4; /*0x75f6aa*/",
+   "after": "      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_WaveClass_4) */  /*0x75f6aa*/"
+  },
+  {
+   "file": "src/e4/WaypointPathClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_WaypointPathClass; /*0x76375f*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_WaypointPathClass) */  /*0x76375f*/"
+  },
+  {
+   "file": "src/e4/WaypointPathClass_e4.cpp",
+   "before": "  this->vfptr = &vt_VectorClass_WaypointClass; /*0x76477a*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_WaypointClass) */  /*0x76477a*/"
+  },
+  {
+   "file": "src/e4/WaypointPathClass_e4.cpp",
+   "before": "  this->AbstractClass = &vt_WaypointPathClass; /*0x763e26*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_WaypointPathClass) */  /*0x763e26*/"
+  },
+  {
+   "file": "src/e4/addr4E_e4.cpp",
+   "before": "  this->vfptr = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a1c*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass) */  /*0x4e0a1c*/"
+  },
+  {
+   "file": "src/e4/addr4E_e4.cpp",
+   "before": "  this->vfptr = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass) */  /*0x4e0a8a*/"
+  },
+  {
+   "file": "src/e4/addr59_e4.cpp",
+   "before": "  v15.vfptr = &vt_DynamicVectorClass_WIN32_FIND_DATAA; /*0x595cf4*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_WIN32_FIND_DATAA) */  /*0x595cf4*/"
+  },
+  {
+   "file": "src/e4/addr59_e4.cpp",
+   "before": "  v15.vfptr = &vt_VectorClass_WIN32_FIND_DATAA; /*0x595f89*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_WIN32_FIND_DATAA) */  /*0x595f89*/"
+  },
+  {
+   "file": "src/e4/addr64_e4.cpp",
+   "before": "        this->AbstractClass = &vt_ProgressScreenClass; /*0x642a23*/",
+   "after": "        /* X11: vtable install elided (base-interface slot, RHS vt_ProgressScreenClass) */  /*0x642a23*/"
+  },
+  {
+   "file": "src/e4/addr66_e4.cpp",
+   "before": "  this->AbstractClass = &vt_DynamicVectorClass; /*0x6638f1*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x6638f1*/"
+  },
+  {
+   "file": "src/e4/addr6B_e4.cpp",
+   "before": "    dword_A8B230[377].vfptr2 = &vt_VectorClass; /*0x6beadf*/",
+   "after": "    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass) */  /*0x6beadf*/"
+  },
+  {
+   "file": "src/e4/addr6E_e4.cpp",
+   "before": "  this->AbstractClass = &vt_AbstractClass; /*0x6e803f*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_AbstractClass) */  /*0x6e803f*/"
+  },
+  {
+   "file": "src/e4/addr6E_e4.cpp",
+   "before": "  this->AbstractClass = &vt_TaskForceClass; /*0x6e807e*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_TaskForceClass) */  /*0x6e807e*/"
+  },
+  {
+   "file": "src/e4/addr73_e4.cpp",
+   "before": "      v4->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x7329af*/",
+   "after": "      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x7329af*/"
+  },
+  {
+   "file": "src/e4/addr73_e4.cpp",
+   "before": "      v8->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x732a13*/",
+   "after": "      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x732a13*/"
+  },
+  {
+   "file": "src/e4/addr73_e4.cpp",
+   "before": "    v3->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x7331e6*/",
+   "after": "    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x7331e6*/"
+  },
+  {
+   "file": "src/e4/addr73_e4.cpp",
+   "before": "      v12->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x73329b*/",
+   "after": "      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x73329b*/"
+  },
+  {
+   "file": "src/e4/addr76_e4.cpp",
+   "before": "  v7.vfptr2 = &vt_INIClass; /*0x765231*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_INIClass) */  /*0x765231*/"
+  },
+  {
+   "file": "src/e4/addr7D_e4.cpp",
+   "before": "  this->AbstractClass = &vt_exception; /*0x7d2e78*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_exception) */  /*0x7d2e78*/"
+  },
+  {
+   "file": "src/entity/supplied_bodies.cpp",
+   "before": "      a2->vtable2 = &vt_AnimClass_4; /*0x4252c1*/",
+   "after": "      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AnimClass_4) */  /*0x4252c1*/"
+  },
+  {
+   "file": "src/misc/misc_ext.cpp",
+   "before": "  this->vtable2 = &vt_AlphaShapeClass_4; /*0x420982*/",
+   "after": "  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AlphaShapeClass_4) */  /*0x420982*/"
+  },
+  {
+   "file": "src/system/gap2_defs.cpp",
+   "before": "  this->AbstractClass = &vt_VectorClass; /*0x63da91*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x63da91*/"
+  },
+  {
+   "file": "src/system/gap2_defs.cpp",
+   "before": "    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass_Point2D; /*0x652a5a*/",
+   "after": "    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Point2D) */  /*0x652a5a*/"
+  },
+  {
+   "file": "src/system/gap2_defs.cpp",
+   "before": "    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass_Point2D; /*0x652a5a*/",
+   "after": "    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Point2D) */  /*0x652a5a*/"
+  },
+  {
+   "file": "src/system/gap2_defs.cpp",
+   "before": "  this->AbstractClass = &vt_VectorClass; /*0x63da91*/",
+   "after": "  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x63da91*/"
+  },
+  {
+   "file": "src/system/gap2_defs.cpp",
+   "before": "    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass_Point2D; /*0x652a5a*/",
+   "after": "    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Point2D) */  /*0x652a5a*/"
+  }
+ ]
+}

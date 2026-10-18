@@ -41,7 +41,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
 
 
   AbstractTypeClass::Constructor((int *)this, aP1); /*0x46cb68*/
-  this->AbstractClass = &vt_CampaignClass; /*0x46cb70*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_CampaignClass) */  /*0x46cb70*/
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46cb82) */
@@ -414,7 +414,7 @@ void ** CampaignClass::DTOR(char a2)
 {
 
 
-  this->AbstractClass = &vt_CampaignClass; /*0x46d096*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_CampaignClass) */  /*0x46d096*/
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d09c) */
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d0a3) */
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d0aa) */

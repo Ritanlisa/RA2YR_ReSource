@@ -109,15 +109,15 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
   char *v6; // [esp+10h] [ebp-4h] BYREF
 
   String::Assign((String *)&v6, off_83E188); /*0x770e80*/
-  v5 = a4; /*0x770e85*/
-  INIClass::ReadTokenizedPair((INIClass *)this, a2, a3, a4, 0, &v6); /*0x770e9d*/
+  v5 = aP3; /*0x770e85*/
+  INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, aP3, 0, &v6); /*0x770e9d*/
   DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
-  String::Assign((String *)&a4, g_INI_Key_Lose); /*0x770eb4*/
-  INIClass::ReadTokenizedPair((INIClass *)this, a2, a3, v5, 1, (char **)&a4); /*0x770ec5*/
-  DeleteAndZero((ObjectClass *)&a4); /*0x770ece*/
-  String::Assign((String *)&a4, aDraw); /*0x770edc*/
-  INIClass::ReadTokenizedPair((INIClass *)this, a2, a3, v5, 2, (char **)&a4); /*0x770eed*/
-  DeleteAndZero((ObjectClass *)&a4); /*0x770ef6*/
+  String::Assign((String *)&aP3, g_INI_Key_Lose); /*0x770eb4*/
+  INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, v5, 1, (char **)&aP3); /*0x770ec5*/
+  DeleteAndZero((ObjectClass *)&aP3); /*0x770ece*/
+  String::Assign((String *)&aP3, aDraw); /*0x770edc*/
+  INIClass::ReadTokenizedPair((INIClass *)this, aP2, ObjectClass, v5, 2, (char **)&aP3); /*0x770eed*/
+  DeleteAndZero((ObjectClass *)&aP3); /*0x770ef6*/
 
 }
 }  // G42.18 ns repair
@@ -125,7 +125,7 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
 namespace gamemd {
 void E4Recv_771890::sub_771890()
 {
-  *this = &vt_WorldDominationTourVoicesAnim; /*0x771890*/
+  *this = &vt_WorldDominationTour_Voices_Anim; /*0x771890*/
   VtableStub::sub_5CB6C0(); /*0x771896*/
 }
 }
@@ -3843,7 +3843,7 @@ unsigned int * E4Recv_771850::sub_771850(int a2)
   this->M16 = TimerGetTicks(); /*0x771867*/
   this->u32_18 = 0; /*0x77186e*/
   this->a2 = a2; /*0x771871*/
-  *this = &vt_WorldDominationTourVoicesAnim; /*0x771874*/
+  *this = &vt_WorldDominationTour_Voices_Anim; /*0x771874*/
   return this; /*0x77187c*/
 }
 } // namespace gamemd

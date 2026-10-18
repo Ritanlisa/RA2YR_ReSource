@@ -415,23 +415,23 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
   unsigned int *v8; // eax
   unsigned char v10[12]; // [esp+8h] [ebp-Ch] BYREF
 
-  if ( !a2 ) /*0x526ccd*/
+  if ( !aP2 ) /*0x526ccd*/
     return 0; /*0x526ccd*/
   memset(v10, 0, sizeof(v10)); /*0x526cda*/
   v3 = &this->needsSave_flag; /*0x526d02*/
-  v4 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v10, a2, strlen((const char *)a2)); /*0x526d05*/
-  a2 = v4; /*0x526d07*/
+  v4 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v10, aP2, strlen((const char *)aP2)); /*0x526d05*/
+  aP2 = v4; /*0x526d07*/
   if ( !v3->SortedArray_field_0x04 ) /*0x526d0b*/
     return 0; /*0x526d10*/
-  if ( !(unsigned __int8)SortedArray::CheckCache(v3, &a2) ) /*0x526d19*/
+  if ( !(unsigned __int8)SortedArray::CheckCache(v3, &aP2) ) /*0x526d19*/
   {
-    v5 = SortedArray::BinarySearch(v3, (int *)&a2); /*0x526d29*/
+    v5 = SortedArray::BinarySearch(v3, (int *)&aP2); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
     v3->SortedArray_field_0x10 = v5; /*0x526d32*/
   }
-  a2 = v4; /*0x526d3c*/
-  v6 = *(unsigned int **)SortedArray::FindValue(v3, (int *)&a2); /*0x526d45*/
+  aP2 = v4; /*0x526d3c*/
+  v6 = *(unsigned int **)SortedArray::FindValue(v3, (int *)&aP2); /*0x526d45*/
   if ( v6 ) /*0x526d49*/
   {
     v7 = a3; /*0x526d4b*/

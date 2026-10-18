@@ -266,7 +266,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
         case 0x14u: /*0x5e1cd0*/
           goto LABEL_9;
         case 0x2Bu: /*0x5e1cd0*/
-          Dialog::Resize((char *)a5); /*0x5e1d27*/
+          Dialog::Resize((char *)v20); /*0x5e1d27*/
 LABEL_9:
           result = 1; /*0x5e1d2c*/
           break; /*0x5e1d38*/
@@ -278,8 +278,8 @@ LABEL_9:
     hWnda = GetDlgItem((HWND)this, 1685); /*0x5e1da4*/
     if ( hWnda ) /*0x5e1da8*/
     {
-      v10 = (unsigned __int16)a5; /*0x5e1dbd*/
-      v11 = HIWORD(a5); /*0x5e1dc3*/
+      v10 = (unsigned __int16)v20; /*0x5e1dbd*/
+      v11 = HIWORD(v20); /*0x5e1dc3*/
       GetWindowRect((HWND)this, &Rect); /*0x5e1dc5*/
       StringCSF = &g_TypeClass_DefaultString; /*0x5e1dd9*/
       v44.y = v11 - Rect.top; /*0x5e1dde*/
@@ -304,9 +304,9 @@ LABEL_9:
   }
   if ( hWnd == (HWND)1257 ) /*0x5e1e37*/
   {
-    v35 = a5; /*0x5e21fe*/
-    v36 = (WideString *)(a5 + 8); /*0x5e2204*/
-    WideString::Assign_Alt((WideString *)(a5 + 8), 0); /*0x5e2209*/
+    v35 = v20; /*0x5e21fe*/
+    v36 = (WideString *)(v20 + 8); /*0x5e2204*/
+    WideString::Assign_Alt((WideString *)(v20 + 8), 0); /*0x5e2209*/
     if ( *(unsigned int *)v35 && v35->vtable2 != -1 ) /*0x5e221c*/
     {
       DlgCtrlID = (StartCombo *)GetDlgCtrlID(*(HWND *)v35); /*0x5e2229*/
@@ -374,13 +374,13 @@ LABEL_9:
     }
     return 0; /*0x5e1e4d*/
   }
-  v16 = a4; /*0x5e1f1d*/
-  v17 = (StartCombo *)(unsigned __int16)a4; /*0x5e1f23*/
-  if ( (unsigned __int16)a4 <= 0x540u ) /*0x5e1f2f*/
+  v16 = UINT; /*0x5e1f1d*/
+  v17 = (StartCombo *)(unsigned __int16)UINT; /*0x5e1f23*/
+  if ( (unsigned __int16)UINT <= 0x540u ) /*0x5e1f2f*/
   {
-    if ( (unsigned __int16)a4 == 1344 ) /*0x5e1f35*/
+    if ( (unsigned __int16)UINT == 1344 ) /*0x5e1f35*/
     {
-      ReadChatMessage((wchar_t **)&hWnd, (HWND)a5); /*0x5e1fb8*/
+      ReadChatMessage((wchar_t **)&hWnd, (HWND)v20); /*0x5e1fb8*/
       DeleteAndZero::Alt((DeleteAndZero *)&hWnd); /*0x5e1fc1*/
       if ( HIWORD(v16) == 1281 ) /*0x5e1fcf*/
       {
@@ -389,11 +389,11 @@ LABEL_9:
       }
       return 0; /*0x5e1fcf*/
     }
-    if ( (unsigned __int16)a4 <= 0x514u ) /*0x5e1f3d*/
+    if ( (unsigned __int16)UINT <= 0x514u ) /*0x5e1f3d*/
     {
-      if ( (unsigned __int16)a4 < 0x513u ) /*0x5e1f45*/
+      if ( (unsigned __int16)UINT < 0x513u ) /*0x5e1f45*/
       {
-        if ( (unsigned __int16)a4 == 2 ) /*0x5e1f50*/
+        if ( (unsigned __int16)UINT == 2 ) /*0x5e1f50*/
         {
           if ( !byte_AC0268 ) /*0x5e1f70*/
           {
@@ -402,25 +402,25 @@ LABEL_9:
           }
           return 0; /*0x5e1f70*/
         }
-        if ( (unsigned __int16)a4 != 1296 ) /*0x5e1f57*/
+        if ( (unsigned __int16)UINT != 1296 ) /*0x5e1f57*/
           return 0; /*0x5e1f66*/
       }
       goto LABEL_49; /*0x5e1f57*/
     }
-    if ( (unsigned __int16)a4 < 0x51Eu ) /*0x5e1f92*/
+    if ( (unsigned __int16)UINT < 0x51Eu ) /*0x5e1f92*/
       return 0; /*0x5e1f92*/
-    v18 = (unsigned __int16)a4 <= 0x528u; /*0x5e1f98*/
+    v18 = (unsigned __int16)UINT <= 0x528u; /*0x5e1f98*/
     goto LABEL_36; /*0x5e1f98*/
   }
-  if ( (unsigned __int16)a4 > 0x6ABu ) /*0x5e1ffd*/
+  if ( (unsigned __int16)UINT > 0x6ABu ) /*0x5e1ffd*/
   {
-    if ( (unsigned __int16)a4 < 0x76Du || (unsigned __int16)a4 > 0x774u ) /*0x5e20c9*/
+    if ( (unsigned __int16)UINT < 0x76Du || (unsigned __int16)UINT > 0x774u ) /*0x5e20c9*/
       return 0; /*0x5e20c9*/
     goto LABEL_49; /*0x5e20c9*/
   }
-  if ( (unsigned __int16)a4 < 0x6AAu ) /*0x5e2009*/
+  if ( (unsigned __int16)UINT < 0x6AAu ) /*0x5e2009*/
   {
-    if ( (unsigned __int16)a4 == 1439 ) /*0x5e2015*/
+    if ( (unsigned __int16)UINT == 1439 ) /*0x5e2015*/
     {
       if ( *(unsigned int *)&stru_A8D804.__pad_3D[579] ) /*0x5e2035*/
       {
@@ -437,20 +437,20 @@ LABEL_9:
       }
       return 0; /*0x5e2035*/
     }
-    if ( (unsigned __int16)a4 <= 0x6A0u ) /*0x5e201d*/
+    if ( (unsigned __int16)UINT <= 0x6A0u ) /*0x5e201d*/
       return 0; /*0x5e22ee*/
-    v18 = (unsigned __int16)a4 <= 0x6A8u; /*0x5e2023*/
+    v18 = (unsigned __int16)UINT <= 0x6A8u; /*0x5e2023*/
 LABEL_36:
     if ( !v18 ) /*0x5e1f9e*/
       return 0; /*0x5e1fad*/
   }
 LABEL_49:
-  if ( HIWORD(a4) != 1 ) /*0x5e20d5*/
+  if ( HIWORD(UINT) != 1 ) /*0x5e20d5*/
     return 0; /*0x5e20d5*/
-  v20 = CountryCombo::IDToIndex((CountryCombo *)(unsigned __int16)a4); /*0x5e20e2*/
-  a5 = v20; /*0x5e20e6*/
+  v20 = CountryCombo::IDToIndex((CountryCombo *)(unsigned __int16)UINT); /*0x5e20e2*/
+  v20 = v20; /*0x5e20e6*/
   v21 = StartCombo::IDToIndex(v17); /*0x5e20ef*/
-  a4 = v21; /*0x5e20f3*/
+  UINT = v21; /*0x5e20f3*/
   v22 = Dialog::SideIDToIndex((Dialog *)v17); /*0x5e20fc*/
   v48 = (ObjectClass *)v22; /*0x5e2100*/
   v23 = Dialog::OptionIDToIndex((Dialog *)v17); /*0x5e2104*/
@@ -466,12 +466,12 @@ LABEL_49:
   ResourceID3CSF = (Dialog *)GetResourceID3CSF(v24); /*0x5e2138*/
   ResourceID4CSF = (Dialog *)GetResourceID4CSF(v24); /*0x5e213a*/
   nIDDlgItem = (int)ResourceID4CSF; /*0x5e2143*/
-  if ( v24 == (ObjectClass *)a5 ) /*0x5e2149*/
+  if ( v24 == (ObjectClass *)v20 ) /*0x5e2149*/
   {
     v29 = this; /*0x5e214b*/
     SelectLobbyCountry((HWND)this, ResourceID2CSF); /*0x5e2153*/
   }
-  else if ( v24 == (ObjectClass *)a4 ) /*0x5e215e*/
+  else if ( v24 == (ObjectClass *)UINT ) /*0x5e215e*/
   {
     v29 = this; /*0x5e2160*/
     AssignPlayerColor((HWND)this, ResourceIDCSF); /*0x5e2168*/

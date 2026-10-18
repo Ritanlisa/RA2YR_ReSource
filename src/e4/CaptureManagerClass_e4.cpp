@@ -1323,7 +1323,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
   this->vtable3 = (void *)a2; /*0x47314e*/
   LOBYTE(this->vtable4) = 1; /*0x473151*/
   (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x473155*/
-  this->AbstractClass = &vt_VectorClass; /*0x473158*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x473158*/
   if ( a2 ) /*0x47315e*/
   {
     if ( a3 ) /*0x473166*/

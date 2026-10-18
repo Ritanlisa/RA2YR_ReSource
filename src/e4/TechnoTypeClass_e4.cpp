@@ -178,7 +178,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1, void *a2)
   this->u32_F5 = 1; /*0x6f07eb*/
   this->u32_F6 = 0; /*0x6f07f1*/
   this->q0F7 = 0; /*0x6f07f7*/
-  this->AbstractClass = &vt_TeamTypeClass; /*0x6f07fd*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_TeamTypeClass) */  /*0x6f07fd*/
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0803) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f080a) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0811) */

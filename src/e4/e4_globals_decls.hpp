@@ -15543,119 +15543,6 @@ extern unsigned int unk_B76230;   // data: 0xB76230 (0x7A94FB)
 extern unsigned int dword_8367C8; // data: 0x8367C8 BuildingDebris 记录表基 (0x631D4C)
 extern unsigned int dword_820334; // data: 0x820334 剧场文件名指针表 (0x4B6C78)
 extern unsigned int dword_820324; // data: 0x820324 剧场文件名指针表 (0x4B6D3D)
-extern unsigned char vt_BlitPlainXlat[4];
-extern unsigned char vt_BlitPlainXlatAlpha[4];
-extern unsigned char vt_BlitPlainXlatZRead[4];
-extern unsigned char vt_BlitPlainXlatZReadWrite[4];
-extern unsigned char vt_BlitTransDarken[4];
-extern unsigned char vt_BlitTransDarkenZRead[4];
-extern unsigned char vt_BlitTransDarkenZReadWrite[4];
-extern unsigned char vt_BlitTransLucent25[4];
-extern unsigned char vt_BlitTransLucent25AlphaZRead[4];
-extern unsigned char vt_BlitTransLucent25AlphaZReadWarp[4];
-extern unsigned char vt_BlitTransLucent25ZRead[4];
-extern unsigned char vt_BlitTransLucent25ZReadWarp[4];
-extern unsigned char vt_BlitTransLucent25ZReadWrite[4];
-extern unsigned char vt_BlitTransLucent50[4];
-extern unsigned char vt_BlitTransLucent50Alpha[4];
-extern unsigned char vt_BlitTransLucent50AlphaZRead[4];
-extern unsigned char vt_BlitTransLucent50AlphaZReadWarp[4];
-extern unsigned char vt_BlitTransLucent50AlphaZReadWrite[4];
-extern unsigned char vt_BlitTransLucent50ZRead[4];
-extern unsigned char vt_BlitTransLucent50ZReadWarp[4];
-extern unsigned char vt_BlitTransLucent50ZReadWrite[4];
-extern unsigned char vt_BlitTransLucent75[4];
-extern unsigned char vt_BlitTransLucent75Alpha[4];
-extern unsigned char vt_BlitTransLucent75AlphaZRead[4];
-extern unsigned char vt_BlitTransLucent75AlphaZReadWarp[4];
-extern unsigned char vt_BlitTransLucent75AlphaZReadWrite[4];
-extern unsigned char vt_BlitTransLucent75ZRead[4];
-extern unsigned char vt_BlitTransLucent75ZReadWarp[4];
-extern unsigned char vt_BlitTransLucent75ZReadWrite[4];
-extern unsigned char vt_BlitTransRemapDest[4];
-extern unsigned char vt_BlitTransRemapXlat[4];
-extern unsigned char vt_BlitTransXlat[4];
-extern unsigned char vt_BlitTransXlatAlphaZReadWrite[4];
-extern unsigned char vt_BlitTransXlatMultWriteAlpha[4];
-extern unsigned char vt_BlitTransXlatWriteAlpha[4];
-extern unsigned char vt_BlitTransXlatZRead[4];
-extern unsigned char vt_BlitTransXlatZReadWrite[4];
-extern unsigned char vt_BlitTransZRemapXlat[4];
-extern unsigned char vt_BlitTransZRemapXlatAlpha[4];
-extern unsigned char vt_BlitTransZRemapXlatAlphaZRead[4];
-extern unsigned char vt_BlitTransZRemapXlatAlphaZReadWrite[4];
-extern unsigned char vt_BlitTransZRemapXlatZRead[4];
-extern unsigned char vt_BlitTransZRemapXlatZReadWrite[4];
-extern unsigned char vt_BlitTranslucent50NonzeroAlpha[4];
-extern unsigned char vt_BlitTranslucent50ZeroAlpha[4];
-extern unsigned char vt_BlitTranslucentWriteAlpha[4];
-extern unsigned char vt_DisplayClassTacticalClass[4];
-extern unsigned char vt_DynamicVectorClassTRect[4];
-extern unsigned char vt_INIClassINIEntry[4];
-extern unsigned char vt_INIClassINISection[4];
-extern unsigned char vt_MultiplayerGameModeInitializer[4];
-extern unsigned char vt_MultiplayerGameModeInitializerBase[4];
-extern unsigned char vt_Node[4];
-extern unsigned char vt_OwnerDrawDialogControl[4];
-extern unsigned char vt_RLEBlitTransDarken[4];
-extern unsigned char vt_RLEBlitTransDarkenZRead[4];
-extern unsigned char vt_RLEBlitTransDarkenZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent25[4];
-extern unsigned char vt_RLEBlitTransLucent25Alpha[4];
-extern unsigned char vt_RLEBlitTransLucent25AlphaZRead[4];
-extern unsigned char vt_RLEBlitTransLucent25AlphaZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent25AlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent25ZRead[4];
-extern unsigned char vt_RLEBlitTransLucent25ZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent25ZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent50[4];
-extern unsigned char vt_RLEBlitTransLucent50Alpha[4];
-extern unsigned char vt_RLEBlitTransLucent50AlphaZRead[4];
-extern unsigned char vt_RLEBlitTransLucent50AlphaZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent50AlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent50ZRead[4];
-extern unsigned char vt_RLEBlitTransLucent50ZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent50ZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent75[4];
-extern unsigned char vt_RLEBlitTransLucent75Alpha[4];
-extern unsigned char vt_RLEBlitTransLucent75AlphaZRead[4];
-extern unsigned char vt_RLEBlitTransLucent75AlphaZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent75AlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransLucent75ZRead[4];
-extern unsigned char vt_RLEBlitTransLucent75ZReadWarp[4];
-extern unsigned char vt_RLEBlitTransLucent75ZReadWrite[4];
-extern unsigned char vt_RLEBlitTransRemapDest[4];
-extern unsigned char vt_RLEBlitTransRemapDestZRead[4];
-extern unsigned char vt_RLEBlitTransRemapDestZReadWrite[4];
-extern unsigned char vt_RLEBlitTransRemapXlat[4];
-extern unsigned char vt_RLEBlitTransRemapXlatZRead[4];
-extern unsigned char vt_RLEBlitTransRemapXlatZReadWrite[4];
-extern unsigned char vt_RLEBlitTransXlat[4];
-extern unsigned char vt_RLEBlitTransXlatAlpha[4];
-extern unsigned char vt_RLEBlitTransXlatAlphaZRead[4];
-extern unsigned char vt_RLEBlitTransXlatAlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransXlatZRead[4];
-extern unsigned char vt_RLEBlitTransXlatZReadWrite[4];
-extern unsigned char vt_RLEBlitTransZRemapXlat[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatAlphaZRead[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatAlphaZReadWrite[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatZRead[4];
-extern unsigned char vt_RLEBlitTransZRemapXlatZReadWrite[4];
-extern unsigned char vt_RadarClassRTacticalClass[4];
-extern unsigned char vt_SidebarClassSBGadgetClass[4];
-extern unsigned char vt_SidebarClassStripClassSelectClass[4];
-extern unsigned char vt_VectorCursorGraphicMenuItemDynamicVectorClass[4];
-extern unsigned char vt_VectorCursorTRectVectorClassTRect[4];
-extern unsigned char vt_WorldDominationTourConflict[4];
-extern unsigned char vt_WorldDominationTourFactionSelectDialogControl[4];
-extern unsigned char vt_WorldDominationTourHistory[4];
-extern unsigned char vt_WorldDominationTourMap[4];
-extern unsigned char vt_WorldDominationTourMapSizeGameOption[4];
-extern unsigned char vt_WorldDominationTourState[4];
-extern unsigned char vt_WorldDominationTourVoicesAnim[4];
-extern unsigned char vt_rc_ptrWorldDominationTourValueGameOption[4];
-
-// X55 W1 supply (render vftable refs, addr-authoritative)
 extern unsigned char vt_MultiplayerDebugCommandClass[4];  // data: 0x7EBE14
 extern unsigned char vt_MultiplayerSyncCommandClass[4];  // data: 0x7EBDEC
 extern unsigned char vt_FollowCommandClass[4];  // data: 0x7EBDC4
@@ -15693,8 +15580,6 @@ extern unsigned char vt_SetStructureTabCommandClass[4];  // data: 0x7EB8EC
 extern unsigned char vt_SetDefenseTabCommandClass[4];  // data: 0x7EB8C4
 extern unsigned char vt_SetUnitTabCommandClass[4];  // data: 0x7EB89C
 extern unsigned char vt_SetInfantryTabCommandClass[4];  // data: 0x7EB874
-
-// X55 W2 supply (render ida-labels + string labels; til-typed where IDA has a type)
 extern unsigned char byte_841F43;  // data: 0x841F43 [X55 W2 no-til-type]
 extern unsigned char byte_841F4B;  // data: 0x841F4B [X55 W2 no-til-type]
 extern unsigned char byte_841FF3;  // data: 0x841FF3 [X55 W2 no-til-type]
@@ -15705,55 +15590,95 @@ extern unsigned int dword_AA1030;  // data: 0xAA1030 [X55 W2 no-til-type]
 extern unsigned int dword_AA1034;  // data: 0xAA1034 [X55 W2 no-til-type]
 extern unsigned int dword_AA1038;  // data: 0xAA1038 [X55 W2 no-til-type]
 extern unsigned int dword_AC18C4;  // data: 0xAC18C4 [X55 W2 no-til-type]
-namespace gamemd { struct Factory; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (Factory) -- resolves in both universes
+namespace gamemd { class Factory; }
 extern gamemd::Factory dword_B052D0;  // data: 0xB052D0 [X55 W2 til type]
 extern unsigned int dword_B779D0;  // data: 0xB779D0 [X55 W2 no-til-type]
-namespace gamemd { struct AnimTypeClass; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (AnimTypeClass) -- resolves in both universes
+namespace gamemd { class AnimTypeClass; }
 extern gamemd::AnimTypeClass * off_8399AC;  // data: 0x8399AC [X55 W2 til type]
 extern char off_842070[];  // data: 0x842070 [X55 W2 til type]
 extern unsigned long long qword_886FB8;  // data: 0x886FB8 [X55 W2 no-til-type]
-namespace gamemd { struct VoxClass; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (VoxClass) -- resolves in both universes
+namespace gamemd { class VoxClass; }
 extern gamemd::VoxClass stru_8190C8;  // data: 0x8190C8 [X55 W2 til type]
-namespace gamemd { struct BuildingTypeClass; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (BuildingTypeClass) -- resolves in both universes
+namespace gamemd { class BuildingTypeClass; }
 extern gamemd::BuildingTypeClass stru_842DD4;  // data: 0x842DD4 [X55 W2 til type]
-namespace gamemd { struct CellClass; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (CellClass) -- resolves in both universes
+namespace gamemd { class CellClass; }
 extern gamemd::CellClass stru_87E8B8;  // data: 0x87E8B8 [X55 W2 til type]
-namespace gamemd { struct Timer; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (Timer) -- resolves in both universes
+namespace gamemd { class Timer; }
 extern gamemd::Timer stru_887338;  // data: 0x887338 [X55 W2 til type]
-namespace gamemd { struct ObjectClass; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (ObjectClass) -- resolves in both universes
+namespace gamemd { class ObjectClass; }
 extern gamemd::ObjectClass stru_A83CD9;  // data: 0xA83CD9 [X55 W2 til type]
-namespace gamemd { struct WideString; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (WideString) -- resolves in both universes
+namespace gamemd { class WideString; }
 extern gamemd::WideString stru_A8D610;  // data: 0xA8D610 [X55 W2 til type]
-namespace gamemd { struct NetworkLobby; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (NetworkLobby) -- resolves in both universes
+namespace gamemd { class NetworkLobby; }
 extern gamemd::NetworkLobby stru_A8D804;  // data: 0xA8D804 [X55 W2 til type]
-namespace gamemd { struct ScenarioClass; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (ScenarioClass) -- resolves in both universes
+namespace gamemd { class ScenarioClass; }
 extern gamemd::ScenarioClass stru_A8E960;  // data: 0xA8E960 [X55 W2 til type]
-namespace gamemd { struct Vector4; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (Vector4) -- resolves in both universes
+namespace gamemd { class Vector4; }
 extern gamemd::Vector4 stru_ABDF90;  // data: 0xABDF90 [X55 W2 til type]
-namespace gamemd { struct MapResourceClass; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (MapResourceClass) -- resolves in both universes
+namespace gamemd { class MapResourceClass; }
 extern gamemd::MapResourceClass stru_ABDFD8;  // data: 0xABDFD8 [X55 W2 til type]
 extern gamemd::ObjectClass stru_ABE890;  // data: 0xABE890 [X55 W2 til type]
-namespace gamemd { struct Dialog; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (Dialog) -- resolves in both universes
+namespace gamemd { class Dialog; }
 extern gamemd::Dialog stru_AC1B48;  // data: 0xAC1B48 [X55 W2 til type]
-namespace gamemd { struct SidebarClass; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (SidebarClass) -- resolves in both universes
+namespace gamemd { class SidebarClass; }
 extern gamemd::SidebarClass stru_AC4B48;  // data: 0xAC4B48 [X55 W2 til type]
 extern gamemd::Timer stru_B0EA70;  // data: 0xB0EA70 [X55 W2 til type]
-namespace gamemd { struct DynamicVector; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (DynamicVector) -- resolves in both universes
+namespace gamemd { class DynamicVector; }
 extern gamemd::DynamicVector stru_B0F618;  // data: 0xB0F618 [X55 W2 til type]
 extern gamemd::DynamicVector stru_B0F670;  // data: 0xB0F670 [X55 W2 til type]
 extern gamemd::DynamicVector stru_B0F6C8;  // data: 0xB0F6C8 [X55 W2 til type]
-namespace gamemd { struct AudioQueue; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (AudioQueue) -- resolves in both universes
+namespace gamemd { class AudioQueue; }
 extern gamemd::AudioQueue stru_B1D320;  // data: 0xB1D320 [X55 W2 til type]
-namespace gamemd { struct CChatEventSink; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (CChatEventSink) -- resolves in both universes
+namespace gamemd { class CChatEventSink; }
 extern gamemd::CChatEventSink stru_B73E10;  // data: 0xB73E10 [X55 W2 til type]
 extern gamemd::DynamicVector stru_B765F8;  // data: 0xB765F8 [X55 W2 til type]
-namespace gamemd { struct StringVector; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (StringVector) -- resolves in both universes
+namespace gamemd { class StringVector; }
 extern gamemd::StringVector stru_B76970;  // data: 0xB76970 [X55 W2 til type]
-namespace gamemd { struct DynamicArray; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (DynamicArray) -- resolves in both universes
+namespace gamemd { class DynamicArray; }
 extern gamemd::DynamicArray stru_B76AD0;  // data: 0xB76AD0 [X55 W2 til type]
 extern gamemd::DynamicArray stru_B777A0;  // data: 0xB777A0 [X55 W2 til type]
 extern gamemd::DynamicVector stru_B77820;  // data: 0xB77820 [X55 W2 til type]
-namespace gamemd { struct String; }  // X55 W2 fwd
+
+// X25: fwd decl for qualified extern type (String) -- resolves in both universes
+namespace gamemd { class String; }
 extern gamemd::String stru_B778FC;  // data: 0xB778FC [X55 W2 til type]
 extern unsigned char unk_ABCF60[1];  // data: 0xABCF60 [X55 W2 no-til-type]
 extern char aGrey[];  // [X55 W2 string label]
@@ -15864,3 +15789,35 @@ extern char aStartfiringfra[];  // [X55 W2 string label]
 extern char aSandtile[];  // [X55 W2 string label]
 extern char aTranslucent25s[];  // [X55 W2 string label]
 extern char aMinzvelocity[];  // [X55 W2 string label]
+extern unsigned int dword_AC6658;  // data: 0xAC6658 [X66 L2-D]
+extern unsigned int dword_A8D5FC;  // data: 0xA8D5FC [X66 L2-D]
+extern unsigned int dword_87E294;  // data: 0x87E294 [X66 L2-D]
+extern unsigned int dword_AC18A4;  // data: 0xAC18A4 [X66 L2-D]
+extern unsigned int dword_AC1B00;  // data: 0xAC1B00 [X66 L2-D]
+extern unsigned int dword_AC1B04;  // data: 0xAC1B04 [X66 L2-D]
+extern unsigned int dword_AC1B0C;  // data: 0xAC1B0C [X66 L2-D]
+extern unsigned int dword_AC1B48;  // data: 0xAC1B48 [X66 L2-D]
+extern unsigned int dword_AC1B4C;  // data: 0xAC1B4C [X66 L2-D]
+extern unsigned int dword_AC1B54;  // data: 0xAC1B54 [X66 L2-D]
+extern void* off_827970;  // data: 0x827970 [X66 L2-D]
+extern unsigned char byte_885781;  // data: 0x885781 [X66 L2-D]
+extern unsigned char byte_A8EB96;  // data: 0xA8EB96 [X66 L2-D]
+extern bool byte_B04880;  // data: 0xB04880 [X66 L2-D]
+extern unsigned char byte_841F53;  // data: 0x841F53 [X66 L2-D]
+extern unsigned char byte_841F5B;  // data: 0x841F5B [X66 L2-D]
+extern unsigned char byte_841F63;  // data: 0x841F63 [X66 L2-D]
+extern unsigned char byte_841F6B;  // data: 0x841F6B [X66 L2-D]
+extern unsigned char byte_841F73;  // data: 0x841F73 [X66 L2-D]
+extern unsigned char byte_841F7B;  // data: 0x841F7B [X66 L2-D]
+extern unsigned char byte_841F83;  // data: 0x841F83 [X66 L2-D]
+extern unsigned char byte_841F8B;  // data: 0x841F8B [X66 L2-D]
+extern unsigned char byte_841F93;  // data: 0x841F93 [X66 L2-D]
+extern unsigned char byte_841F9B;  // data: 0x841F9B [X66 L2-D]
+extern unsigned char byte_841FA3;  // data: 0x841FA3 [X66 L2-D]
+extern unsigned char byte_841FAB;  // data: 0x841FAB [X66 L2-D]
+extern unsigned char byte_841FB3;  // data: 0x841FB3 [X66 L2-D]
+extern unsigned char byte_841FBB;  // data: 0x841FBB [X66 L2-D]
+extern unsigned char byte_841FC3;  // data: 0x841FC3 [X66 L2-D]
+extern unsigned char byte_841FCB;  // data: 0x841FCB [X66 L2-D]
+extern unsigned char byte_841FEB;  // data: 0x841FEB [X66 L2-D]
+extern unsigned char byte_842003;  // data: 0x842003 [X66 L2-D]

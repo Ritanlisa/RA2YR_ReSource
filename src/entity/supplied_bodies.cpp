@@ -358,8 +358,8 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
       ObjectClass::Init((ObjectClass *)a2, (int)&a3); /*0x4252a6*/
       __4type_info_AAEAAV0_ABV0__Z(&a2->u32_B4, (int)&a3); /*0x4252b6*/
       *(unsigned int *)a2 = &vt_AnimClass_4; /*0x4252bb*/
-      a2->vtable2 = &vt_AnimClass_4; /*0x4252c1*/
-      a2->vtable3 = &vt_AnimClass_4; /*0x4252c8*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AnimClass_4) */  /*0x4252c1*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AnimClass_4) */  /*0x4252c8*/
       a2->vtable4 = &off_7E3328; /*0x4252cf*/
     }
     AudioController::Init(&a2->AudioController_1A0); /*0x4252dc*/

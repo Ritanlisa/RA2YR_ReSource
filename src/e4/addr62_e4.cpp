@@ -1104,7 +1104,7 @@ int sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LP
     LPARAM dwInitParam[2]; // [esp+14h] [ebp-8h] BYREF
     (*((unsigned short *)&(dwInitParam[0]))) = a1; /*0x62269f*/
     ++g_DialogTrackingList; /*0x6226a4*/
-    dwInitParam[1] = a3; /*0x6226ae*/
+    dwInitParam[1] = LPARAM; /*0x6226ae*/
     HWND v12; // [esp-Ch] [ebp-28h]
     v12 = (HWND)(g_hWnd); /*0x6226b7*/
     const DLGTEMPLATE *v11; // [esp-10h] [ebp-2Ch]
@@ -1292,12 +1292,12 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     if ( a2 > 0x497 ) /*0x622ea0*/
     {
       if ( a2 == 1260 ) /*0x6230be*/
-        EnumChildWindows(hWnd, sub_60AA60, 0); /*0x6230c8*/
+        EnumChildWindows(aP0, sub_60AA60, 0); /*0x6230c8*/
       return 0; /*0x6230c8*/
     }
     if ( a2 == 1175 ) /*0x622ea6*/
     {
-      SendMessageA(hWnd, 0x4A9u, (WPARAM)hWnd, 1); /*0x6230a6*/
+      SendMessageA(aP0, 0x4A9u, (WPARAM)aP0, 1); /*0x6230a6*/
       return 0; /*0x6230b5*/
     }
     if ( a2 != 272 ) /*0x622eb2*/
@@ -1307,63 +1307,63 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       return 0; /*0x622ec6*/
     }
     ++*(unsigned int *)&stru_A8E960.random[536]; /*0x622eed*/
-    if ( *(unsigned int *)a4.__pad_0 ) /*0x622ef3*/
+    if ( *(unsigned int *)aP2.__pad_0 ) /*0x622ef3*/
     {
-      v21 = **(unsigned short **)a4.__pad_0; /*0x622efb*/
+      v21 = **(unsigned short **)aP2.__pad_0; /*0x622efb*/
       DialogClass::RegisterWinClasses(); /*0x622efe*/
       v22 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x622f03*/
-      dword_AC48A8 = (int)hWnd; /*0x622f09*/
-      EnumChildWindows(hWnd, (WNDENUMPROC)Dialog::InitWindow, 1); /*0x622f17*/
-      Dialog::InitWindow(hWnd, (HWND)1); /*0x622f1c*/
-      EnumChildWindows(hWnd, Dialog::SubclassEditControl, 1); /*0x622f29*/
-      EnumChildWindows(hWnd, Dialog::InitializeControls, 0); /*0x622f32*/
-      Dialog::InitializeControls(hWnd, 0); /*0x622f36*/
-      EnumChildWindows(hWnd, (WNDENUMPROC)Dialog::InitWindow, 0); /*0x622f42*/
-      Dialog::InitWindow(hWnd, 0); /*0x622f46*/
-      Dialog::GetField((Dialog *)hWnd); /*0x622f4d*/
-      UI_Helper_60D2C0((int)hWnd, v21); /*0x622f56*/
+      dword_AC48A8 = (int)aP0; /*0x622f09*/
+      EnumChildWindows(aP0, (WNDENUMPROC)Dialog::InitWindow, 1); /*0x622f17*/
+      Dialog::InitWindow(aP0, (HWND)1); /*0x622f1c*/
+      EnumChildWindows(aP0, Dialog::SubclassEditControl, 1); /*0x622f29*/
+      EnumChildWindows(aP0, Dialog::InitializeControls, 0); /*0x622f32*/
+      Dialog::InitializeControls(aP0, 0); /*0x622f36*/
+      EnumChildWindows(aP0, (WNDENUMPROC)Dialog::InitWindow, 0); /*0x622f42*/
+      Dialog::InitWindow(aP0, 0); /*0x622f46*/
+      Dialog::GetField((Dialog *)aP0); /*0x622f4d*/
+      UI_Helper_60D2C0((int)aP0, v21); /*0x622f56*/
       if ( !(unsigned __int8)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x622f60*/
-        Control::CreateControlDialog((Control *)hWnd); /*0x622f6b*/
-      UI_Helper_60CAF0((ObjectClass *)hWnd); /*0x622f72*/
-      UI_Helper_60C930((ObjectClass *)hWnd); /*0x622f79*/
-      UI_Helper_60CCC0((ObjectClass *)hWnd); /*0x622f80*/
-      UI_Helper_60CDB0((ObjectClass *)hWnd); /*0x622f87*/
-      EnumChildWindows(hWnd, GadgetClass::FindByWindow, 0); /*0x622f93*/
-      if ( (unsigned __int8)Control::CheckControlTypeDialog((Control *)hWnd) ) /*0x622f97*/
+        Control::CreateControlDialog((Control *)aP0); /*0x622f6b*/
+      UI_Helper_60CAF0((ObjectClass *)aP0); /*0x622f72*/
+      UI_Helper_60C930((ObjectClass *)aP0); /*0x622f79*/
+      UI_Helper_60CCC0((ObjectClass *)aP0); /*0x622f80*/
+      UI_Helper_60CDB0((ObjectClass *)aP0); /*0x622f87*/
+      EnumChildWindows(aP0, GadgetClass::FindByWindow, 0); /*0x622f93*/
+      if ( (unsigned __int8)Control::CheckControlTypeDialog((Control *)aP0) ) /*0x622f97*/
       {
 LABEL_41:
         hWnda[0] = (HWND)640; /*0x622fa4*/
         hWnda[1] = (HWND)480; /*0x622fb4*/
-        ResizeDialogAndEnum(hWnd, (LPARAM)hWnda); /*0x622fbe*/
+        ResizeDialogAndEnum(aP0, (LPARAM)hWnda); /*0x622fbe*/
 LABEL_48:
-        v22(hWnd, Dialog::HandleTabKey, 0); /*0x623071*/
-        v22(hWnd, Dialog::DispatchEvent, 0); /*0x623081*/
-        Dialog::RestoreParent((Dialog *)hWnd); /*0x623085*/
-        SetFocus(hWnd); /*0x62308b*/
+        v22(aP0, Dialog::HandleTabKey, 0); /*0x623071*/
+        v22(aP0, Dialog::DispatchEvent, 0); /*0x623081*/
+        Dialog::RestoreParent((Dialog *)aP0); /*0x623085*/
+        SetFocus(aP0); /*0x62308b*/
         return 0; /*0x62309a*/
       }
     }
     else
     {
-      InitializeDialogControls(hWnd, 0); /*0x622fcc*/
-      Dialog::GetField((Dialog *)hWnd); /*0x622fd3*/
-      hWnda[0] = hWnd; /*0x622fe7*/
-      *(unsigned int *)a4.__pad_0 = 0; /*0x622feb*/
-      HashTable::Get(&dword_AC1B00, hWnda, &a4); /*0x622fef*/
-      if ( *(unsigned int *)a4.__pad_0 ) /*0x622ffa*/
-        *(unsigned int *)(*(unsigned int *)a4.__pad_0 + 108) = 0; /*0x622ffc*/
+      InitializeDialogControls(aP0, 0); /*0x622fcc*/
+      Dialog::GetField((Dialog *)aP0); /*0x622fd3*/
+      hWnda[0] = aP0; /*0x622fe7*/
+      *(unsigned int *)aP2.__pad_0 = 0; /*0x622feb*/
+      HashTable::Get(&dword_AC1B00, hWnda, &aP2); /*0x622fef*/
+      if ( *(unsigned int *)aP2.__pad_0 ) /*0x622ffa*/
+        *(unsigned int *)(*(unsigned int *)aP2.__pad_0 + 108) = 0; /*0x622ffc*/
       if ( !(unsigned __int8)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x623004*/
-        Control::CreateControlDialog((Control *)hWnd); /*0x62300f*/
-      UI_Helper_60CAF0((ObjectClass *)hWnd); /*0x623016*/
-      UI_Helper_60C930((ObjectClass *)hWnd); /*0x62301d*/
-      UI_Helper_60CCC0((ObjectClass *)hWnd); /*0x623024*/
-      UI_Helper_60CDB0((ObjectClass *)hWnd); /*0x62302b*/
+        Control::CreateControlDialog((Control *)aP0); /*0x62300f*/
+      UI_Helper_60CAF0((ObjectClass *)aP0); /*0x623016*/
+      UI_Helper_60C930((ObjectClass *)aP0); /*0x62301d*/
+      UI_Helper_60CCC0((ObjectClass *)aP0); /*0x623024*/
+      UI_Helper_60CDB0((ObjectClass *)aP0); /*0x62302b*/
       v22 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x623030*/
-      EnumChildWindows(hWnd, GadgetClass::FindByWindow, 0); /*0x62303d*/
-      if ( (unsigned __int8)Control::CheckControlTypeDialog((Control *)hWnd) ) /*0x623041*/
+      EnumChildWindows(aP0, GadgetClass::FindByWindow, 0); /*0x62303d*/
+      if ( (unsigned __int8)Control::CheckControlTypeDialog((Control *)aP0) ) /*0x623041*/
         goto LABEL_41; /*0x623048*/
     }
-    UI_Helper_60C7D0((ObjectClass *)hWnd); /*0x62306c*/
+    UI_Helper_60C7D0((ObjectClass *)aP0); /*0x62306c*/
     goto LABEL_48; /*0x62306c*/
   }
   if ( a2 != 132 ) /*0x622b65*/
@@ -1371,28 +1371,28 @@ LABEL_48:
     switch ( a2 ) /*0x622b7f*/
     {
       case 2u: /*0x622b7f*/
-        DialogQueue::RemoveEntry((DialogQueue *)hWnd); /*0x622b88*/
+        DialogQueue::RemoveEntry((DialogQueue *)aP0); /*0x622b88*/
         --*(unsigned int *)&stru_A8E960.random[536]; /*0x622b9b*/
         SetFocus(g_hWnd); /*0x622ba1*/
         return 0; /*0x622bb0*/
       case 0xFu: /*0x622b7f*/
-        *(unsigned int *)a4.__pad_0 = hWnd; /*0x622bd0*/
+        *(unsigned int *)aP2.__pad_0 = aP0; /*0x622bd0*/
         if ( !dword_AC1B04 ) /*0x622bd6*/
           return 0; /*0x622bd6*/
         result = *(unsigned int *)(*(unsigned int *)dword_AC1B00.__pad_0 /*0x622bf1*/
-                           + 4 * HashTable::ComputeHash((int *)dword_AC1B00.__pad_0, (int)&a4));
+                           + 4 * HashTable::ComputeHash((int *)dword_AC1B00.__pad_0, (int)&aP2));
         if ( !result ) /*0x622bf6*/
           return 0; /*0x622bf6*/
         break; /*0x622bf6*/
       case 0x14u: /*0x622b7f*/
         return 1;
       case 0x2Bu: /*0x622b7f*/
-        Dialog::Resize(*(char **)a4.__pad_0); /*0x622bb7*/
+        Dialog::Resize(*(char **)aP2.__pad_0); /*0x622bb7*/
         return 1; /*0x622bc8*/
       default:
         return 0;
     }
-    while ( *(unsigned int *)result != *(unsigned int *)a4.__pad_0 ) /*0x622c02*/
+    while ( *(unsigned int *)result != *(unsigned int *)aP2.__pad_0 ) /*0x622c02*/
     {
       result = *(unsigned int *)(result + 516); /*0x622c04*/
       if ( !result ) /*0x622c0c*/
@@ -1403,68 +1403,68 @@ LABEL_48:
     {
       if ( *(unsigned char *)(v6 + 188) ) /*0x622c2b*/
       {
-        ValidateRect(hWnd, 0); /*0x622c38*/
+        ValidateRect(aP0, 0); /*0x622c38*/
         return 1; /*0x622c3e*/
       }
       else
       {
-        Dialog::DrawBackground((Dialog *)hWnd); /*0x622c4f*/
-        v24.DeleteAndZero_field_0x04 = (int)hWnd; /*0x622c63*/
-        *(unsigned int *)a4.__pad_0 = 0; /*0x622c67*/
-        HashTable::Get(&dword_AC1B00, &v24.DeleteAndZero_field_0x04, &a4); /*0x622c6f*/
-        v7 = *(unsigned __int8 **)a4.__pad_0; /*0x622c74*/
-        if ( *(unsigned int *)a4.__pad_0 && *(unsigned char *)(*(unsigned int *)a4.__pad_0 + 190) ) /*0x622c7c*/
+        Dialog::DrawBackground((Dialog *)aP0); /*0x622c4f*/
+        v24.DeleteAndZero_field_0x04 = (int)aP0; /*0x622c63*/
+        *(unsigned int *)aP2.__pad_0 = 0; /*0x622c67*/
+        HashTable::Get(&dword_AC1B00, &v24.DeleteAndZero_field_0x04, &aP2); /*0x622c6f*/
+        v7 = *(unsigned __int8 **)aP2.__pad_0; /*0x622c74*/
+        if ( *(unsigned int *)aP2.__pad_0 && *(unsigned char *)(*(unsigned int *)aP2.__pad_0 + 190) ) /*0x622c7c*/
         {
-          DlgItem = GetDlgItem(hWnd, 1818); /*0x622c8c*/
+          DlgItem = GetDlgItem(aP0, 1818); /*0x622c8c*/
           if ( DlgItem ) /*0x622c94*/
             SendMessageA(DlgItem, 0x4E2u, 0, 0); /*0x622ca0*/
-          RenderGadgetClassAnimation(hWnd, 0); /*0x622caa*/
+          RenderGadgetClassAnimation(aP0, 0); /*0x622caa*/
           v7[190] = 0; /*0x622caf*/
         }
-        ValidateRect(hWnd, 0); /*0x622cb9*/
+        ValidateRect(aP0, 0); /*0x622cb9*/
         return 0; /*0x622cbf*/
       }
     }
     return 0; /*0x6230d1*/
   }
-  hWnda[0] = GetDlgItem(hWnd, 1685); /*0x622cd9*/
+  hWnda[0] = GetDlgItem(aP0, 1685); /*0x622cd9*/
   if ( !hWnda[0] ) /*0x622cdd*/
     return 0; /*0x622cdd*/
-  v9 = *(unsigned __int16 *)a4.__pad_0; /*0x622cef*/
-  v10 = *(unsigned __int16 *)&a4.__pad_0[2]; /*0x622cf5*/
-  GetWindowRect(hWnd, &Rect); /*0x622cf8*/
+  v9 = *(unsigned __int16 *)aP2.__pad_0; /*0x622cef*/
+  v10 = *(unsigned __int16 *)&aP2.__pad_0[2]; /*0x622cf5*/
+  GetWindowRect(aP0, &Rect); /*0x622cf8*/
   v11 = v9 - Rect.left; /*0x622d0c*/
   v24.DeleteAndZero_field_0x08 = v10 - Rect.top; /*0x622d12*/
-  unknown_libname_74(&a4); /*0x622d16*/
-  v12 = ChildWindowFromPointEx(hWnd, (POINT)(((v24.DeleteAndZero_field_0x08 & 0xFFFFFFFFull)) << 32 | (v11 & 0xFFFFFFFFull)), 1u); /*0x622d24*/
+  unknown_libname_74(&aP2); /*0x622d16*/
+  v12 = ChildWindowFromPointEx(aP0, (POINT)(((v24.DeleteAndZero_field_0x08 & 0xFFFFFFFFull)) << 32 | (v11 & 0xFFFFFFFFull)), 1u); /*0x622d24*/
   v13 = v12; /*0x622d2a*/
   if ( v12 ) /*0x622d2e*/
   {
     v14 = (unsigned __int16)v9 | ((unsigned __int16)v10 << 16); /*0x622d43*/
     v15 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622d45*/
     v16 = SendMessageA(v12, 0x4E8u, 0, v14); /*0x622d54*/
-    UI_Assign((wchar_t **)&v24.DeleteAndZero_field_0x04, hWnd, (LPARAM)v13, v16); /*0x622d5e*/
+    UI_Assign((wchar_t **)&v24.DeleteAndZero_field_0x04, aP0, (LPARAM)v13, v16); /*0x622d5e*/
     WideString::AssignFromPtr( /*0x622d6c*/
       (WideString *)&v25.DeleteAndZero_field_0x04,
       (const wchar_t **)&v24.DeleteAndZero_field_0x04);
     DeleteAndZero::Alt((DeleteAndZero *)&v24.DeleteAndZero_field_0x04); /*0x622d75*/
-    WideString::Reassign_Alt((WideString *)&a4, (const wchar_t **)&v25.DeleteAndZero_field_0x04); /*0x622d83*/
+    WideString::Reassign_Alt((WideString *)&aP2, (const wchar_t **)&v25.DeleteAndZero_field_0x04); /*0x622d83*/
     DeleteAndZero::Alt((DeleteAndZero *)&v25.DeleteAndZero_field_0x04); /*0x622d8c*/
-    v17 = WideString::GetOrEmpty((WideString *)&a4); /*0x622d9a*/
+    v17 = WideString::GetOrEmpty((WideString *)&aP2); /*0x622d9a*/
     if ( !wcscmp(v17, &g_TypeClass_DefaultString) ) /*0x622da0*/
     {
       unknown_libname_74(&v25); /*0x622db4*/
       v24.DeleteAndZero_field_0x04 = (int)v13; /*0x622dbd*/
       v24.DeleteAndZero_field_0x08 = -1; /*0x622dca*/
-      SendMessageA(hWnd, 0x4E9u, 0, (LPARAM)&v24.DeleteAndZero_field_0x04); /*0x622dd2*/
+      SendMessageA(aP0, 0x4E9u, 0, (LPARAM)&v24.DeleteAndZero_field_0x04); /*0x622dd2*/
       WideString::AssignFromPtr((WideString *)&v25.DeleteAndZero_field_0x08, (const wchar_t **)&v25); /*0x622ddd*/
       DeleteAndZero::Alt(&v25); /*0x622de6*/
-      WideString::Reassign_Alt((WideString *)&a4, (const wchar_t **)&v25.DeleteAndZero_field_0x08); /*0x622df4*/
+      WideString::Reassign_Alt((WideString *)&aP2, (const wchar_t **)&v25.DeleteAndZero_field_0x08); /*0x622df4*/
       DeleteAndZero::Alt((DeleteAndZero *)&v25.DeleteAndZero_field_0x08); /*0x622dfd*/
-      v18 = WideString::GetOrEmpty((WideString *)&a4); /*0x622e0b*/
+      v18 = WideString::GetOrEmpty((WideString *)&aP2); /*0x622e0b*/
       if ( !wcscmp(v18, &g_TypeClass_DefaultString) ) /*0x622e11*/
       {
-        v19 = DlgSkirmishMenuProc(hWnd, v13); /*0x622e21*/
+        v19 = DlgSkirmishMenuProc(aP0, v13); /*0x622e21*/
         if ( v19 ) /*0x622e28*/
         {
           StringCSF = GetStringCSF((wchar_t *)v19, 0, g_Str_File_ownrdraw_cpp, 1957); /*0x622e3d*/
@@ -1474,7 +1474,7 @@ LABEL_48:
         {
           WideString::Assign((WideString *)&v24, &g_TypeClass_DefaultString); /*0x622e49*/
         }
-        WideString::Reassign_Alt((WideString *)&a4, (const wchar_t **)&v24); /*0x622e57*/
+        WideString::Reassign_Alt((WideString *)&aP2, (const wchar_t **)&v24); /*0x622e57*/
         DeleteAndZero::Alt(&v24); /*0x622e60*/
       }
     }
@@ -1483,9 +1483,9 @@ LABEL_48:
   {
     v15 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622e67*/
   }
-  v20 = WideString::GetOrEmpty_Alt((WideString *)&a4); /*0x622e71*/
+  v20 = WideString::GetOrEmpty_Alt((WideString *)&aP2); /*0x622e71*/
   v15(hWnda[0], 0x4B2u, 0, (LPARAM)v20); /*0x622e83*/
-  DeleteAndZero::Alt(&a4); /*0x622e89*/
+  DeleteAndZero::Alt(&aP2); /*0x622e89*/
   return 0; /*0x622ba9*/
 
 }

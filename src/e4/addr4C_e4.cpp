@@ -695,33 +695,33 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 namespace gamemd {
 int DialogFunc(HWND hDlg, UINT, WPARAM, LPARAM)
 {
-  if ( a2 > 0x111 ) /*0x4c83ea*/
+  if ( UINT > 0x111 ) /*0x4c83ea*/
   {
-    if ( a2 == 534 ) /*0x4c84bc*/
-      return (uint8_t)Window::ClampToScreen(a4); /*0x4c84d6*/
+    if ( UINT == 534 ) /*0x4c84bc*/
+      return (uint8_t)Window::ClampToScreen(LPARAM); /*0x4c84d6*/
     return 0; /*0x4c84bc*/
   }
-  if ( a2 == 273 ) /*0x4c83f0*/
+  if ( UINT == 273 ) /*0x4c83f0*/
   {
-    if ( (uint16_t)a3 == 1149 ) /*0x4c847d*/
+    if ( (uint16_t)WPARAM == 1149 ) /*0x4c847d*/
     {
       MessageBoxA(hDlg,(LPCSTR)(aSorryYouCanOnl), aBummer, 0x30u); /*0x4c84ab*/
       return 0; /*0x4c84b4*/
     }
-    if ( (uint16_t)a3 == 1153 ) /*0x4c8482*/
+    if ( (uint16_t)WPARAM == 1153 ) /*0x4c8482*/
     {
       EndDialog(hDlg, 1153); /*0x4c848e*/
       return 0; /*0x4c8497*/
     }
     return 0; /*0x4c8482*/
   }
-  if ( a2 == 16 ) /*0x4c83f5*/
+  if ( UINT == 16 ) /*0x4c83f5*/
   {
     EndDialog(hDlg, 1153); /*0x4c845c*/
     (hDlg)->RemoveObjectArray(); /*0x4c8464*/
     return 0; /*0x4c846c*/
   }
-  if ( a2 != 272 ) /*0x4c83fc*/
+  if ( UINT != 272 ) /*0x4c83fc*/
     return 0; /*0x4c84c1*/
   Debug::Log(aWmInitdialog); /*0x4c8407*/
   SetDlgItemTextA(hDlg, 1156, Buffer); /*0x4c841e*/

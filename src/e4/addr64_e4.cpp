@@ -3837,7 +3837,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
         *&this->q080 = -1; /*0x642a0f*/
         LOBYTE(this->estimatedHealth) = 0; /*0x642a1d*/
         this->visibilityFlags = 0; /*0x642a20*/
-        this->AbstractClass = &vt_ProgressScreenClass; /*0x642a23*/
+        /* X11: vtable install elided (base-interface slot, RHS vt_ProgressScreenClass) */  /*0x642a23*/
         memset(&this->M124, 0, 0x40u); /*0x642a29*/
         return &this->AbstractClass; /*0x642a2d*/
 

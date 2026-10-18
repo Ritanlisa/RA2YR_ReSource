@@ -388,7 +388,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   memset(&v7.nextObject, 0, 13); /*0x765219*/
   v7.ambientSoundController[1] = 0; /*0x765229*/
   v7.ambientSoundController[2] = 0; /*0x76522d*/
-  v7.vfptr2 = &vt_INIClass; /*0x765231*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_INIClass) */  /*0x765231*/
   BufferIOFile::Init((BufferIOFile *)&v7.ambientSoundController[3]); /*0x765239*/
   CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
   if ( !(unsigned __int8)File::IsReady((BufferIOFileClass *)&v7.ambientSoundController[3], 0) ) /*0x765253*/
@@ -458,7 +458,7 @@ int WDT_InitGameOptions()
   v27 = &vt_rc_ptr; /*0x7661b0*/
   ComPtr::Release(&v27); /*0x7661b4*/
   unsigned int v29[2]; // [esp+30h] [ebp-8h] BYREF
-  v29[0] = &vt_rc_ptrWorldDominationTourValueGameOption; /*0x7661bd*/
+  v29[0] = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x7661bd*/
   ComPtr::Release(v29); /*0x7661c5*/
   v26 = 1; /*0x7661ca*/
   char *v3; // ecx
@@ -543,7 +543,7 @@ int WDT_InitGameOptions()
   }
   v27 = &vt_rc_ptr; /*0x7663f8*/
   ComPtr::Release(&v27); /*0x7663fc*/
-  v29[0] = &vt_rc_ptrWorldDominationTourValueGameOption; /*0x766405*/
+  v29[0] = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x766405*/
   ComPtr::Release(v29); /*0x76640d*/
   v26 = 0; /*0x766412*/
   char *v14; // ecx

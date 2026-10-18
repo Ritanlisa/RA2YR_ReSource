@@ -559,8 +559,8 @@ LABEL_11:
     a3 = v3; /*0x4a934d*/
     if ( v4 && HIWORD(v3) == this->u32_1176 ) /*0x4a935f*/
     {
-      *a2 = v3; /*0x4a9367*/
-      return a2; /*0x4a9361*/
+      *aP2 = v3; /*0x4a9367*/
+      return aP2; /*0x4a9361*/
     }
     else
     {
@@ -600,16 +600,16 @@ LABEL_11:
                                   this->u32_11AC,
                                   this->u32_117C,
                                   (__int16 *)&a3);
-      *a2 = v22; /*0x4a94e6*/
-      return a2; /*0x4a94e0*/
+      *aP2 = v22; /*0x4a94e6*/
+      return aP2; /*0x4a94e0*/
     }
   }
   else
   {
     v17 = this->u32_1174; /*0x4a92bf*/
     this->u32_1174 = v3; /*0x4a92c9*/
-    *a2 = v17; /*0x4a92d2*/
-    return a2; /*0x4a92c5*/
+    *aP2 = v17; /*0x4a92d2*/
+    return aP2; /*0x4a92c5*/
   }
 
 }

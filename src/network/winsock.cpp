@@ -7,6 +7,7 @@
 #include "e4/classes/WinsockInterface_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/e4_globals_decls.hpp"  // X66 L2-F visibility supply
 
 #pragma comment(lib, "ws2_32.lib")
 

@@ -96,7 +96,7 @@ int AbstractTypeClass::Dtor(void *a1)
 {
 
 
-  this->AbstractClass = &vt_AbstractTypeClass; /*0x4109cd*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_AbstractTypeClass) */  /*0x4109cd*/
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109d3) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109da) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109e1) */
@@ -188,7 +188,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
 {
 
 
-  aP1->AbstractClass = &vt_AbstractTypeClass; /*0x410c3d*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_AbstractTypeClass) */  /*0x410c3d*/
   /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c43*/
   /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c4a*/
   /* X11: vtable install elided (qmark slot, RHS vt_AbstractTypeClass) */  /*0x410c51*/

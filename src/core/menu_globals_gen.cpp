@@ -1,6 +1,8 @@
 #include <cstdint>
 #include <windows.h>
 #include "core/reverse_marker.hpp"
+#include "e4/e4_globals_decls.hpp"  // X66 L2-F visibility supply
+#include "core/globals_core.hpp"  // X66 L2-F visibility supply
 
 // Windows API name conflicts - prefix with gamemd_
 namespace gamemd {

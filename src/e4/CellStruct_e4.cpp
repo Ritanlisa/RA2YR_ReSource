@@ -14,11 +14,11 @@ void* CellStruct::Add(CellStruct *aP0, unsigned int *aP1, unsigned short *aP2)  
   __int16 v3; // dx
   unsigned short *v5; // [esp+8h] [ebp+8h]
 
-  v3 = this->X + *a3; /*0x42d51f*/
-  HIWORD(v5) = this->Y + a3[1]; /*0x42d522*/
+  v3 = this->X + *aP2; /*0x42d51f*/
+  HIWORD(v5) = this->Y + aP2[1]; /*0x42d522*/
   LOWORD(v5) = v3; /*0x42d52b*/
-  *a2 = v5; /*0x42d534*/
-  return a2; /*0x42d536*/
+  *aP1 = v5; /*0x42d534*/
+  return aP1; /*0x42d536*/
 
 }
 }  // G42.18 ns repair
@@ -32,9 +32,9 @@ unsigned int * CellStruct::Copy(CellStruct *aP0, void* aP1)  // G57w11: def åŒæ
 
   v3 = *(void **)&this->X; /*0x437f34*/
   v4 = this->field_4; /*0x437f36*/
-  *a2 = v3; /*0x437f39*/
-  a2[1] = v4; /*0x437f3b*/
-  return a2; /*0x437f3e*/
+  *aP1 = v3; /*0x437f39*/
+  aP1[1] = v4; /*0x437f3b*/
+  return aP1; /*0x437f3e*/
 
 }
 }  // G42.18 ns repair

@@ -70,10 +70,10 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   this->q070 = 10; /*0x4d09f2*/
   this->HouseClass_6C = 0; /*0x4d09f9*/
   this->u32_74 = 1; /*0x4d0a02*/
-  this->vfptr = &vt_FoggedObjectClass_4; /*0x4d0a06*/
-  this->vfptr1 = &vt_FoggedObjectClass_4; /*0x4d0a0c*/
-  this->vfptr2 = &vt_FoggedObjectClass_4; /*0x4d0a13*/
-  this->vfptr3 = &vt_FoggedObjectClass_4; /*0x4d0a1a*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0a06*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0a0c*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0a13*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0a1a*/
   v5 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
@@ -370,9 +370,9 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   this->HouseClass_6C = 0; /*0x4d0f97*/
   this->u32_74 = a3; /*0x4d0fa2*/
   *(unsigned int *)this = &vt_FoggedObjectClass_4; /*0x4d0fa5*/
-  this->vtable2 = &vt_FoggedObjectClass_4; /*0x4d0fab*/
-  this->vtable3 = &vt_FoggedObjectClass_4; /*0x4d0fb2*/
-  this->vtable4 = &vt_FoggedObjectClass_4; /*0x4d0fb9*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0fab*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0fb2*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0fb9*/
   v8 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(a2->vfptr + 300))(a2, v52); /*0x4d0fc5*/
   this->q040 = *v8; /*0x4d0fd2*/
   this->u32_44 = v8[1]; /*0x4d0fd7*/
@@ -582,7 +582,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   this->q070 = 10; /*0x4d13fc*/
   this->HouseClass_6C = 0; /*0x4d1403*/
   this->u32_74 = 1; /*0x4d140a*/
-  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d140e*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_FoggedObjectClass) */  /*0x4d140e*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1414) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d141b) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1422) */

@@ -3297,7 +3297,7 @@ namespace gamemd {
 std::locale::facet * HouseClass::initAngerStruct(char a2)
 {
 
-  this->AbstractClass = &vt_VersionClass; /*0x4e8279*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_VersionClass) */  /*0x4e8279*/
   if ( (a2 & 1) != 0 ) /*0x4e827f*/
     __3_YAXPAX_Z(this); /*0x4e8282*/
   return (std::locale::facet *)this; /*0x4e828c*/

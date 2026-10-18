@@ -12677,9 +12677,9 @@ int AlphaShapeClass::CTOR(int p0, int p1, int p2)
   this->q024 = p0; /*0x420975*/
   this->u32_3C = 0; /*0x420978*/
   *(unsigned int *)this = &vt_AlphaShapeClass_4; /*0x42097c*/
-  this->vtable2 = &vt_AlphaShapeClass_4; /*0x420982*/
-  this->vtable3 = &vt_AlphaShapeClass_4; /*0x420989*/
-  this->vtable4 = &vt_AlphaShapeClass_4; /*0x420990*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AlphaShapeClass_4) */  /*0x420982*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AlphaShapeClass_4) */  /*0x420989*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AlphaShapeClass_4) */  /*0x420990*/
   v5 = *(__int16 **)((*(int (**)(int))(*(unsigned int *)p0 + 136))(p0) + 172); /*0x42099f*/
   this->u32_38 = v5; /*0x4209ad*/
   v6 = v5[1]; /*0x4209b0*/

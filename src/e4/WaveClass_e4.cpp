@@ -63,8 +63,8 @@ int WaveClass::LoadWaveData(int a2, int a3)
       FrameSnapshot::Init(&v4->u32_1D8); /*0x75f692*/
       WaveClass::Constructor_7632D0(&v4->q_1F0, 0, 0); /*0x75f69f*/
       *(unsigned int *)v4 = &vt_WaveClass_4; /*0x75f6a4*/
-      v4->vtable2 = &vt_WaveClass_4; /*0x75f6aa*/
-      v4->vtable3 = &vt_WaveClass_4; /*0x75f6b1*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_WaveClass_4) */  /*0x75f6aa*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_WaveClass_4) */  /*0x75f6b1*/
       v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
     }
     v4->u32_14C = v4->q_B0 == 3 ? v4 + 384 : v4 + 336;

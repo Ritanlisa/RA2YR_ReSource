@@ -97,9 +97,9 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6,
   this->master = a2; /*0x6af1e2*/
   this->house = a3; /*0x6af1e9*/
   *(unsigned int *)this = &vt_SlaveManagerClass_4; /*0x6af1f2*/
-  this->vfptr1 = &vt_SlaveManagerClass_4; /*0x6af1f8*/
-  this->vfptr2 = &vt_SlaveManagerClass_4; /*0x6af1ff*/
-  this->vtable4 = &vt_SlaveManagerClass_4; /*0x6af206*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SlaveManagerClass_4) */  /*0x6af1f8*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SlaveManagerClass_4) */  /*0x6af1ff*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SlaveManagerClass_4) */  /*0x6af206*/
   this->slaveOwner = a4; /*0x6af20d*/
   this->slaveType = a5; /*0x6af210*/
   this->slaveCount = a6; /*0x6af213*/
@@ -184,7 +184,7 @@ int SlaveManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   *(unsigned int *)this->slaveVectorCount = 0; /*0x6af38c*/
   *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  this->AbstractClass = &vt_SlaveManagerClass; /*0x6af39b*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_SlaveManagerClass) */  /*0x6af39b*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3a1) */
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3a8) */
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3af) */
@@ -453,7 +453,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
                                            v84,
                                            dword_8871E0->ExtraUnitLight / 256,
                                            0,
-                                           p_SlaveManagerClass_field_5C,
+                                           a2,
                                            a3);
           if ( v78.abstractFlags == dword_B0B5B8 )
           {
@@ -485,7 +485,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
             v20 = *(unsigned int *)v9; /*0x6af86a*/
             v78.slaveOwner = *v19; /*0x6af870*/
             a3 = 1; /*0x6af874*/
-            p_SlaveManagerClass_field_5C = (int *)CellCoord::To_CellObj( /*0x6af881*/
+            a2 = (int *)CellCoord::To_CellObj( /*0x6af881*/
                                                     (CellCoord *)&dword_87F7E8,
                                                     (__int16 *)&v78.slaveOwner);
             (*(void (**)(wchar_t *))(v20 + 1152))(v9); /*0x6af884*/
@@ -496,7 +496,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
           {
             v11 = *(unsigned int *)v9; /*0x6af78c*/
             a3 = 1; /*0x6af792*/
-            p_SlaveManagerClass_field_5C = (int *)CellCoord::To_CellObj( /*0x6af79f*/
+            a2 = (int *)CellCoord::To_CellObj( /*0x6af79f*/
                                                     (CellCoord *)&dword_87F7E8,
                                                     (__int16 *)&v78.abstractFlags);
             (*(void (**)(wchar_t *))(v11 + 1152))(v9); /*0x6af7a2*/
@@ -521,7 +521,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
           {
             v22 = (*(int (**)(wchar_t *, int *, int))(*(unsigned int *)v9 + 444))( /*0x6af8f7*/
                     v9,
-                    p_SlaveManagerClass_field_5C,
+                    a2,
                     a3);
             TechnoClass::SetFocus((TechnoClass *)v9, v22); /*0x6af900*/
             v23 = *(unsigned int *)(v4 + 36); /*0x6af905*/
@@ -545,7 +545,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
             }
             v30 = *(unsigned int *)v9; /*0x6af987*/
             a3 = 1; /*0x6af98d*/
-            p_SlaveManagerClass_field_5C = (int *)CellCoord::To_CellObj( /*0x6af99a*/
+            a2 = (int *)CellCoord::To_CellObj( /*0x6af99a*/
                                                     (CellCoord *)&dword_87F7E8,
                                                     (__int16 *)&v78.referenceCount);
             (*(void (**)(wchar_t *))(v30 + 1152))(v9); /*0x6af99d*/
@@ -586,19 +586,19 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
                                     v38,
                                     &v82,
                                     &v78.SlaveManagerClass_field_54);
-              v40 = CellStruct::Add(v39, v73, p_SlaveManagerClass_field_5C); /*0x6afa7d*/
+              v40 = CellStruct::Add(v39, v73, a2); /*0x6afa7d*/
             }
             else
             {
               v40 = (int *)(*(int (**)(unsigned int, int *, int *))(**(unsigned int **)(v4 + 36) + 440))( /*0x6afa8e*/
                              *(unsigned int *)(v4 + 36),
                              &v78.SlaveManagerClass_field_5C,
-                             p_SlaveManagerClass_field_5C);
+                             a2);
             }
             v41 = v9->q5A4; /*0x6afa94*/
             v78.slaveOwner = *v40; /*0x6afaa3*/
             slaveOwner = v78.slaveOwner; /*0x6afa9a*/
-            p_SlaveManagerClass_field_5C = v85; /*0x6afaa9*/
+            a2 = v85; /*0x6afaa9*/
             v43 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)v41 + 72))(v41); /*0x6afaaa*/
             v83[0] = *(unsigned int *)CellStruct::Set((CellStruct *)&v78.slaveCount, *v43 / 256, v43[1] / 256); /*0x6afad9*/
             LOWORD(v78.vfptr2) = LOWORD(v83[0]) - slaveOwner; /*0x6afaef*/
@@ -621,17 +621,17 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
                                   v49,
                                   v78.__pad_48,
                                   &v78.slaveVectorCapacity);
-            v51 = CellStruct::Add(v50, v74, p_SlaveManagerClass_field_5C); /*0x6afb86*/
+            v51 = CellStruct::Add(v50, v74, a2); /*0x6afb86*/
           }
           else
           {
             v51 = (int *)(*(int (**)(unsigned int, char *, int *))(**(unsigned int **)(v4 + 36) + 440))( /*0x6afb97*/
                            *(unsigned int *)(v4 + 36),
                            &v78.creationFrame,
-                           p_SlaveManagerClass_field_5C);
+                           a2);
           }
           v53 = *(unsigned int *)v9; /*0x6afb9f*/
-          p_SlaveManagerClass_field_5C = &v78.SlaveManagerClass_field_5C; /*0x6afba7*/
+          a2 = &v78.SlaveManagerClass_field_5C; /*0x6afba7*/
           v78.vfptr1 = *v51; /*0x6afba8*/
           vfptr1 = v78.vfptr1; /*0x6afb9d*/
           v54 = (unsigned int *)(*(int (**)(wchar_t *))(v53 + 440))(v9); /*0x6afbac*/
@@ -686,7 +686,7 @@ LABEL_48:
           v66 = *(unsigned int *)v9; /*0x6afc93*/
           v78.NeedsSaveOrLink = *v65; /*0x6afc99*/
           a3 = 1; /*0x6afc9d*/
-          p_SlaveManagerClass_field_5C = (int *)CellCoord::To_CellObj( /*0x6afcaa*/
+          a2 = (int *)CellCoord::To_CellObj( /*0x6afcaa*/
                                                   (CellCoord *)&dword_87F7E8,
                                                   (__int16 *)&v78.NeedsSaveOrLink);
           (*(void (**)(wchar_t *))(v66 + 1152))(v9); /*0x6afcad*/

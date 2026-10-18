@@ -1,0 +1,22 @@
+{
+ "ledger": [
+  {
+   "file": "src\\e4\\EventClass_e4.cpp",
+   "line": 313,
+   "before": "int EventClass::deserializeEvent(int a2, unsigned int *aP2)",
+   "after": "int EventClass::deserializeEvent(int a2, unsigned int *aP2)",
+   "fn": "0x542280"
+  },
+  {
+   "file": "src\\e4\\EventClass_e4.cpp",
+   "line": 318,
+   "before": "  result = (*(int (**)(EventClass *, int))&this->__pad_000->nextArrayIndex)(this, a2); /*0x54228c*/",
+   "after": "  result = (*(int (**)(EventClass *, int))&this->__pad_000->nextArrayIndex)(this, a2); /*0x54228c*/",
+   "fn": "0x542280"
+  }
+ ],
+ "stats": {
+  "collision-bank": 17,
+  "renamed-lines": 2
+ }
+}

@@ -68,7 +68,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   {
     v6 = this->AirstrikeClass_field_24; /*0x41d8b9*/
   }
-  v8 = (unsigned int *)(*(int (**)(int *, unsigned int *))(*a3 + 72))(a3, v19); /*0x41d8c9*/
+  v8 = (unsigned int *)(*(int (**)(int *, unsigned int *))(*a2_2 + 72))(a2_2, v19); /*0x41d8c9*/
   LOWORD(v20) = *v8 / 256; /*0x41d8dc*/
   HIWORD(v20) = v8[1] / 256; /*0x41d8f5*/
   *(unsigned int *)v17 = v20; /*0x41d902*/
@@ -90,29 +90,29 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
       v19[2] = v12[2]; /*0x41d961*/
       result = StartAudioControllerAt(*&dword_8871E0->q260, v19, 0); /*0x41d96b*/
     }
-    this->__pad_050 = a3; /*0x41d972*/
-    if ( a3 ) /*0x41d975*/
+    this->__pad_050 = a2_2; /*0x41d972*/
+    if ( a2_2 ) /*0x41d975*/
     {
-      result = (int *)(*(int (**)(int *))(*a3 + 44))(a3); /*0x41d97f*/
+      result = (int *)(*(int (**)(int *))(*a2_2 + 44))(a2_2); /*0x41d97f*/
       if ( result == 6 ) /*0x41d985*/
       {
-        v13 = *a3; /*0x41d98b*/
-        a3[165] = this; /*0x41d994*/
-        (*(void (**)(int *, int))(v13 + 348))(a3, 100000); /*0x41d99a*/
-        *((unsigned char *)a3 + 1784) = *((unsigned char *)&dword_8871E0[1].SmallVisceroid /*0x41d9b8*/
+        v13 = *a2_2; /*0x41d98b*/
+        a2_2[165] = this; /*0x41d994*/
+        (*(void (**)(int *, int))(v13 + 348))(a2_2, 100000); /*0x41d99a*/
+        *((unsigned char *)a2_2 + 1784) = *((unsigned char *)&dword_8871E0[1].SmallVisceroid /*0x41d9b8*/
                                 + 2 * dword_8871E0[1].PoseDir
                                 + dword_8871E0[1].PoseDir);
-        *((unsigned char *)a3 + 1785) = *((unsigned char *)&dword_8871E0[1].SmallVisceroid /*0x41d9d5*/
+        *((unsigned char *)a2_2 + 1785) = *((unsigned char *)&dword_8871E0[1].SmallVisceroid /*0x41d9d5*/
                                 + 2 * dword_8871E0[1].PoseDir
                                 + dword_8871E0[1].PoseDir
                                 + 1);
-        v14 = *a3; /*0x41d9f1*/
-        *((unsigned char *)a3 + 1786) = *((unsigned char *)&dword_8871E0[1].SmallVisceroid /*0x41d9f5*/
+        v14 = *a2_2; /*0x41d9f1*/
+        *((unsigned char *)a2_2 + 1786) = *((unsigned char *)&dword_8871E0[1].SmallVisceroid /*0x41d9f5*/
                                 + 2 * dword_8871E0[1].PoseDir
                                 + dword_8871E0[1].PoseDir
                                 + 2);
-        a3[447] = 1; /*0x41d9fb*/
-        return (int *)(*(int (**)(int *, int))(v14 + 292))(a3, 2); /*0x41da05*/
+        a2_2[447] = 1; /*0x41d9fb*/
+        return (int *)(*(int (**)(int *, int))(v14 + 292))(a2_2, 2); /*0x41da05*/
       }
     }
   }
@@ -253,7 +253,7 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
 {
 
 
-  aP1->AbstractClass = &vt_AirstrikeClass; /*0x41dd5d*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_AirstrikeClass) */  /*0x41dd5d*/
   /* X11: vtable install elided (qmark slot, RHS vt_AirstrikeClass) */  /*0x41dd63*/
   /* X11: vtable install elided (qmark slot, RHS vt_AirstrikeClass) */  /*0x41dd6a*/
   /* X11: vtable install elided (qmark slot, RHS vt_AirstrikeClass) */  /*0x41dd71*/

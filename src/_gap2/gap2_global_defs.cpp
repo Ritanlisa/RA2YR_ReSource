@@ -33815,7 +33815,7 @@ void* Gap2Recv_76F500::ConstructWDTSelection_Create_76F500() {
     ComPtr::Constructor((ComPtr *)(v2 + 8)); /*0x76f527*/
     *v4 = &vt_rc_ptr; /*0x76f52c*/
     v3->u32_10 = 0; /*0x76f532*/
-    *v3 = &vt_WorldDominationTourState; /*0x76f539*/
+    *v3 = &vt_WorldDominationTour_State; /*0x76f539*/
   }
   else
   {
@@ -34011,7 +34011,7 @@ void* Gap2Recv_771800::ConstructWDTSelection_Create_771800() {
   *(unsigned int *)(v2 + 16) = TimerGetTicks(); /*0x771828*/
   v3[6] = 0; /*0x77182b*/
   v3[7] = this; /*0x77182e*/
-  *v3 = &vt_WorldDominationTourVoicesAnim; /*0x771831*/
+  *v3 = &vt_WorldDominationTour_Voices_Anim; /*0x771831*/
   return v3; /*0x771839*/
 }
 }

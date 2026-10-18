@@ -44,7 +44,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
   this->veteranInfantry[0] = (gamemd::InfantryTypeClass*)(&vt_TypeList); /*0x51165d*/
   *&this->prefix = (char)(&vt_TypeList); /*0x511667*/
   *&this->u32_184 = (unsigned int)(&vt_TypeList); /*0x511671*/
-  this->AbstractClass = &vt_HouseTypeClass; /*0x51167b*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_HouseTypeClass) */  /*0x51167b*/
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511681) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511688) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51168f) */
@@ -982,7 +982,7 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
 {
 
 
-  this->AbstractClass = &vt_HouseTypeClass; /*0x512766*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_HouseTypeClass) */  /*0x512766*/
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51276c) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x512773) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51277a) */
@@ -1088,7 +1088,7 @@ unsigned int * HouseTypeClass::readStartUnit()
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x51296e*/
   this->abstractFlags = 10; /*0x512971*/
   this->uniqueId = 0; /*0x512978*/
-  this->AbstractClass = &vt_TypeList; /*0x51297b*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_TypeList) */  /*0x51297b*/
   return &this->AbstractClass; /*0x512981*/
 
 }
@@ -1454,7 +1454,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
   this->vtable3 = (void *)a2; /*0x513570*/
   LOBYTE(this->vtable4) = 1; /*0x513573*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513577*/
-  this->AbstractClass = &vt_VectorClass; /*0x51357b*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x51357b*/
   if ( a2 ) /*0x513581*/
   {
     if ( a3 ) /*0x513589*/
@@ -1467,7 +1467,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
       (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x51359f*/
     }
   }
-  this->AbstractClass = &vt_DynamicVectorClass; /*0x5135a3*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x5135a3*/
   this->abstractFlags = 10; /*0x5135a9*/
   this->uniqueId = 0; /*0x5135b0*/
   return &this->AbstractClass; /*0x5135b9*/
@@ -1582,7 +1582,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * a2)
   this->vtable3 = 0; /*0x5137e0*/
   LOBYTE(this->vtable4) = 1; /*0x5137e3*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5137e7*/
-  this->AbstractClass = &vt_VectorClass; /*0x5137ea*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x5137ea*/
   if ( this != (HouseTypeClass *)a2 ) /*0x5137f0*/
   {
     VectorClass::ClearAndFree4((int)this); /*0x5137f2*/
@@ -1617,7 +1617,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * a2)
   }
   this->uniqueId = a2[4]; /*0x513841*/
   this->abstractFlags = a2[5]; /*0x513847*/
-  this->AbstractClass = &vt_TypeList; /*0x51384a*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_TypeList) */  /*0x51384a*/
   return &this->AbstractClass; /*0x513852*/
 
 }
@@ -1633,7 +1633,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * a2)
   this->vtable3 = 0; /*0x513870*/
   LOBYTE(this->vtable4) = 1; /*0x513873*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513877*/
-  this->AbstractClass = &vt_VectorClass; /*0x51387a*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x51387a*/
   if ( this != (HouseTypeClass *)a2 ) /*0x513880*/
   {
     Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)this); /*0x513882*/
@@ -1668,7 +1668,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * a2)
   }
   this->uniqueId = a2[4]; /*0x5138d1*/
   this->abstractFlags = a2[5]; /*0x5138d7*/
-  this->AbstractClass = &vt_DynamicVectorClass; /*0x5138da*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x5138da*/
   return &this->AbstractClass; /*0x5138e2*/
 
 }

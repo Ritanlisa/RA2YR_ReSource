@@ -33,7 +33,7 @@ int WaypointPathClass::Init(void *a1, void *a2)
   this->waypoints[0] = (int)&vt_DynamicVectorClass; /*0x76374e*/
   this->waypoints[5] = 10; /*0x763755*/
   this->waypoints[4] = 0; /*0x76375c*/
-  this->AbstractClass = &vt_WaypointPathClass; /*0x76375f*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_WaypointPathClass) */  /*0x76375f*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763765) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x76376c) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763773) */
@@ -195,7 +195,7 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
   this->vfptr2 = (void *)a2; /*0x764770*/
   LOBYTE(this->vfptr3) = 1; /*0x764773*/
   BYTE1(this->vfptr3) = 0; /*0x764777*/
-  this->vfptr = &vt_VectorClass_WaypointClass; /*0x76477a*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_WaypointClass) */  /*0x76477a*/
   if ( !a2 ) /*0x764780*/
     return &this->vfptr; /*0x764780*/
   if ( !a3 ) /*0x764788*/
@@ -338,7 +338,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
 {
 
 
-  this->AbstractClass = &vt_WaypointPathClass; /*0x763e26*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_WaypointPathClass) */  /*0x763e26*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e2c) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e33) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e3a) */

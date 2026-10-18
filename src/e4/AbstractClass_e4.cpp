@@ -69,10 +69,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       v5[2].vfptr3 = 0; /*0x438ecb*/
-      v5->vfptr = &vt_BombClass_4; /*0x438ece*/
-      v5->vfptr1 = &vt_BombClass_4; /*0x438ed4*/
-      v5->vfptr2 = &vt_BombClass_4; /*0x438edb*/
-      v5->vfptr3 = &vt_BombClass_4; /*0x438ee2*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ece*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ed4*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438edb*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ee2*/
       v5[1].vfptr1 = 0; /*0x438ee9*/
       v5[1].vfptr2 = 0; /*0x438eec*/
       LOBYTE(v5[2].uniqueId) = 0; /*0x438eef*/
@@ -232,11 +232,11 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
       }
     }
   }
-  if ( (*((int (**)(void **))*v6 + 11))(v6) == 6 && (unsigned char)a3 ) /*0x4fba32*/
+  if ( (*((int (**)(void **))*v6 + 11))(v6) == 6 && (unsigned char)p_vtable0 ) /*0x4fba32*/
   {
     v11 = v7->unitRepairStations; /*0x4fba38*/
-    a3 = v6; /*0x4fba45*/
-    v12 = (*(int (**)(unsigned int *, void ***, int))(v11 + 16))(v7 + 20, &a3, a2); /*0x4fba49*/
+    p_vtable0 = v6; /*0x4fba45*/
+    v12 = (*(int (**)(unsigned int *, void ***, int))(v11 + 16))(v7 + 20, &p_vtable0, a2); /*0x4fba49*/
     if ( v12 != -1 ) /*0x4fba4f*/
       Vector::RemoveAt((Vector *)v7 + 4, v12); /*0x4fba54*/
     v13 = v7->occupiables; /*0x4fba59*/

@@ -710,7 +710,7 @@ void * TEventClass::Fire(void ** Block, char a2)
 {
 
 
-  Block->AbstractClass = &vt_TEventClass; /*0x71fa86*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_TEventClass) */  /*0x71fa86*/
   /* X11: vtable install elided (qmark slot, RHS vt_TEventClass) */  /*0x71fa8c*/
   Block->u32_8 = &vt_TEventClass; /*0x71fa93*/
   /* X11: vtable install elided (qmark slot, RHS vt_TEventClass) */  /*0x71fa9a*/

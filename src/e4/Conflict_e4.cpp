@@ -277,7 +277,7 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor(char a2, void *a2_1, void *a3, void *a4)
 {
 
-  *this = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
+  *this = (Conflict_WorldDominationTour)&vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x766963*/
   ComPtr::Release((ComPtr *)this); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(this); /*0x766976*/

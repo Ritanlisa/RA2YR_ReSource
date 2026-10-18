@@ -58,10 +58,10 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   v13 = *a3; /*0x6d2372*/
   if ( v13 >= dword_B0CE30 || (v8 = a3[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
   {
-    *a2 = dword_B0CE08; /*0x6d2404*/
-    a2[1] = dword_B0CE0C; /*0x6d240c*/
-    a2[2] = dword_B0CE10; /*0x6d2415*/
-    return a2; /*0x6d23f7*/
+    *aP2 = dword_B0CE08; /*0x6d2404*/
+    aP2[1] = dword_B0CE0C; /*0x6d240c*/
+    aP2[2] = dword_B0CE10; /*0x6d2415*/
+    return aP2; /*0x6d23f7*/
   }
   else
   {
@@ -74,10 +74,10 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     v11 = *((unsigned int *)v4 + 2); /*0x6d23c9*/
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/
     v6 = Math::RoundToInt(v10); /*0x6d23d8*/
-    *a2 = v5; /*0x6d23e5*/
-    a2[1] = v6; /*0x6d23e7*/
-    a2[2] = 0; /*0x6d23ec*/
-    return a2; /*0x6d23ea*/
+    *aP2 = v5; /*0x6d23e5*/
+    aP2[1] = v6; /*0x6d23e7*/
+    aP2[2] = 0; /*0x6d23ec*/
+    return aP2; /*0x6d23ea*/
   }
 
 }

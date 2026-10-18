@@ -1044,12 +1044,12 @@ int Terrain::FloodFillConnectivity(uint8_t *a1, int aP2, unsigned int *aP3, void
   int v86; // [esp+40h] [ebp+4h]
   unsigned int v87; // [esp+48h] [ebp+Ch]
 
-  v4 = a2; /*0x56cb94*/
-  v5 = *a2; /*0x56cb9f*/
+  v4 = aP2; /*0x56cb94*/
+  v5 = *aP2; /*0x56cb9f*/
   v74 = v5 == 6; /*0x56cba8*/
-  v6 = a2; /*0x56cbaf*/
-  v7 = a2[1]; /*0x56cbb1*/
-  v8 = a2; /*0x56cbb4*/
+  v6 = aP2; /*0x56cbaf*/
+  v7 = aP2[1]; /*0x56cbb1*/
+  v8 = aP2; /*0x56cbb4*/
   v81 = v5; /*0x56cbb6*/
   do /*0x56cbe7*/
   {
@@ -1101,7 +1101,7 @@ LABEL_12:
             goto LABEL_12; /*0x56cc75*/
         }
       }
-      v4 = a2; /*0x56ccb7*/
+      v4 = aP2; /*0x56ccb7*/
       dword_ABDE8C = v78; /*0x56ccbb*/
     }
   }
@@ -1165,7 +1165,7 @@ LABEL_31:
   v37 = v6 + 4; /*0x56cdec*/
   v82 = 0; /*0x56cdf2*/
   v83 = 0; /*0x56cdf6*/
-  *a4 = ((v8 - a2) >> 2) - 1; /*0x56cdff*/
+  *a4 = ((v8 - aP2) >> 2) - 1; /*0x56cdff*/
   v38 = v8 - 4; /*0x56ce01*/
   v39 = this->u32_F8 + this->u32_F4 + 1; /*0x56ce12*/
   v40 = 4 * v39 + 4; /*0x56ce16*/
@@ -1545,7 +1545,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
     LOBYTE(aP1) = 0; /*0x570386*/
     VectorClass::CellConstructor(&v86, 0, 0); /*0x57038b*/
     v32 = *(unsigned int *)v81; /*0x570390*/
-    v86.vfptr = &vt_DynamicVectorClass_Cell; /*0x570394*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Cell) */  /*0x570394*/
     v88 = 10; /*0x57039c*/
     v87 = 0; /*0x5703a4*/
     while ( 1 ) /*0x5703ba*/
@@ -1699,7 +1699,7 @@ LABEL_137:
 LABEL_139:
             if ( v87 > 0 ) /*0x570a99*/
               LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v86); /*0x570aa4*/
-            v86.vfptr = &vt_VectorClass_Cell; /*0x570aad*/
+            /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_Cell) */  /*0x570aad*/
             if ( v86.Items ) /*0x570ab7*/
             {
               if ( v86.IsAllocated ) /*0x570abf*/
@@ -2031,7 +2031,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
     VectorClass::CellConstructor(&v92, 0, 0); /*0x57386f*/
     v38 = *(unsigned int *)v87; /*0x573874*/
     v39 = *&this->u32_124; /*0x57387f*/
-    v92.vfptr = &vt_DynamicVectorClass_Cell; /*0x573885*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Cell) */  /*0x573885*/
     v94 = 10; /*0x57388f*/
     v93 = 0; /*0x573897*/
     LOBYTE(aP1) = 0; /*0x57389f*/
@@ -2278,7 +2278,7 @@ LABEL_139:
 LABEL_141:
           if ( v93 > 0 ) /*0x573fbc*/
             LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v92); /*0x573fc7*/
-          v92.vfptr = &vt_VectorClass_Cell; /*0x573fd0*/
+          /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_Cell) */  /*0x573fd0*/
           if ( v92.Items ) /*0x573fda*/
           {
             if ( v92.IsAllocated ) /*0x573fe2*/

@@ -11663,7 +11663,7 @@ unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 
   this->M4 = 0; /*0x7d2e70*/
   this->M8 = 0; /*0x7d2e74*/
-  this->AbstractClass = &vt_exception; /*0x7d2e78*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_exception) */  /*0x7d2e78*/
   return &this->AbstractClass; /*0x7d2e7e*/
 
 }

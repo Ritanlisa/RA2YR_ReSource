@@ -53,8 +53,8 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3, void *a3)
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
 
-  v3 = a2; /*0x6a01a0*/
-  if ( *a2 != g_OverlayTypeConfig || a2[1] != (unsigned int)qword_B077FC || (v5 = a2[2], v5 != (((qword_B077FC) >> 32) & 0xFFFFFFFFu)) ) /*0x6a01ce*/
+  v3 = aP3; /*0x6a01a0*/
+  if ( *aP3 != g_OverlayTypeConfig || aP3[1] != (unsigned int)qword_B077FC || (v5 = aP3[2], v5 != (((qword_B077FC) >> 32) & 0xFFFFFFFFu)) ) /*0x6a01ce*/
   {
     LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
     v6 = a3; /*0x6a01d7*/
@@ -91,7 +91,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3, void *a3)
                 (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x6a027f*/
                 LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(*this->u32_C + 244))( /*0x6a028f*/
                                this->u32_C,
-                               a2);
+                               aP3);
                 return v5; /*0x6a029c*/
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
@@ -103,7 +103,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3, void *a3)
                 v20 = v12; /*0x6a02bf*/
                 LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))(v16, &v19); /*0x6a02ca*/
               }
-              v3 = a2; /*0x6a02d0*/
+              v3 = aP3; /*0x6a02d0*/
             }
           }
         }

@@ -531,7 +531,7 @@ int SelectAllOfType()
     if ( v3 ) /*0x7329a4*/
     {
       EventClass::resetEvent(v3, 0, 0); /*0x7329aa*/
-      v4->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x7329af*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x7329af*/
       *&v4->CapacityIncrement = 10; /*0x7329b5*/
       *(unsigned int *)v4->Count = 0; /*0x7329bc*/
     }
@@ -560,7 +560,7 @@ int SelectAllOfType()
     if ( v7 ) /*0x732a08*/
     {
       EventClass::resetEvent(v7, 0, 0); /*0x732a0e*/
-      v8->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x732a13*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x732a13*/
       *&v8->CapacityIncrement = 10; /*0x732a1a*/
       *(unsigned int *)v8->Count = 0; /*0x732a21*/
     }
@@ -793,7 +793,7 @@ char sub_7331B0()
   if ( v2 ) /*0x7331db*/
   {
     EventClass::resetEvent(v2, 0, 0); /*0x7331e1*/
-    v3->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x7331e6*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x7331e6*/
     *&v3->CapacityIncrement = 10; /*0x7331ec*/
     *(unsigned int *)v3->Count = 0; /*0x7331f3*/
   }
@@ -841,7 +841,7 @@ char sub_7331B0()
     if ( v11 ) /*0x733290*/
     {
       EventClass::resetEvent(v11, 0, 0); /*0x733296*/
-      v12->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x73329b*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x73329b*/
       *&v12->CapacityIncrement = 10; /*0x7332a1*/
       *(unsigned int *)v12->Count = 0; /*0x7332a8*/
     }

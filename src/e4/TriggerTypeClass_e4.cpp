@@ -72,17 +72,17 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   int v39; // [esp+20h] [ebp-Ch] BYREF
   int v40; // [esp+24h] [ebp-8h]
 
-  if ( !a3 || this->slaveOwner ) /*0x6fc0c5*/
+  if ( !aP2 || this->slaveOwner ) /*0x6fc0c5*/
     return 5; /*0x6fc0c5*/
   if ( (*(unsigned __int8 (**)(TechnoClass *))(this->vfptr + 472))(this) ) /*0x6fc0d5*/
     return 3; /*0x6fc0eb*/
-  if ( (unsigned char *)this->locomotorTarget == a3 ) /*0x6fc0f4*/
+  if ( (unsigned char *)this->locomotorTarget == aP2 ) /*0x6fc0f4*/
     return 3; /*0x6fc102*/
   if ( (*(unsigned __int8 (**)(TechnoClass *))(this->vfptr + 468))(this) /*0x6fc145*/
     || this->u32_1C8
     || this->isSinking[0]
-    || a3 == (unsigned char *)this->drainTarget
-    || a3 == (unsigned char *)this->transporter )
+    || aP2 == (unsigned char *)this->drainTarget
+    || aP2 == (unsigned char *)this->transporter )
   {
     return 5; /*0x6fc145*/
   }
@@ -91,12 +91,12 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
     temporalUsing = this->temporalUsing; /*0x6fc159*/
     if ( temporalUsing ) /*0x6fc161*/
     {
-      if ( a3 == temporalUsing->__pad_028 ) /*0x6fc166*/
+      if ( aP2 == temporalUsing->__pad_028 ) /*0x6fc166*/
         return 3; /*0x6fc174*/
     }
   }
-  v8 = (a3[20] & 1) != 0 ? (BuildingClass *)a3 : 0;
-  v9 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)a3 + 72))(a3, &v39); /*0x6fc18e*/
+  v8 = (aP2[20] & 1) != 0 ? (BuildingClass *)aP2 : 0;
+  v9 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)aP2 + 72))(aP2, &v39); /*0x6fc18e*/
   v10 = Coord::To_Cell((Coord *)&dword_87F7E8, v9); /*0x6fc19e*/
   if ( this ) /*0x6fc1a0*/
   {
@@ -184,10 +184,10 @@ LABEL_52:
       return 5; /*0x6fc43d*/
     if ( v15[347] )
     {
-      if ( (*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3) == 1 )
+      if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1 )
       {
-        v16 = (*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3); /*0x6fc469*/
-        if ( (unsigned __int8)TechnoClass::HasDeployFlags(v16 == 1 ? (TechnoClass *)a3 : 0) )
+        v16 = (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2); /*0x6fc469*/
+        if ( (unsigned __int8)TechnoClass::HasDeployFlags(v16 == 1 ? (TechnoClass *)aP2 : 0) )
           return 5; /*0x6fc477*/
       }
     }
@@ -195,12 +195,12 @@ LABEL_52:
   v17 = *(unsigned __int8 **)(v12 + 172); /*0x6fc484*/
   if ( v17
     && v17[347]
-    && (a3[20] & 4) != 0
-    && *(unsigned char *)((*(int (**)(unsigned char *))(*(unsigned int *)a3 + 132))(a3) + 3476) )
+    && (aP2[20] & 4) != 0
+    && *(unsigned char *)((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 132))(aP2) + 3476) )
   {
-    if ( !*((a3[20] & 4) != 0 ? (unsigned int *)(a3 + 1652) : (unsigned int *)1652) )
+    if ( !*((aP2[20] & 4) != 0 ? (unsigned int *)(aP2 + 1652) : (unsigned int *)1652) )
       sub_7DC720(-2147467261); /*0x6fc4cf*/
-    v37 = *((a3[20] & 4) != 0 ? (unsigned int *)(a3 + 1652) : (unsigned int *)1652);
+    v37 = *((aP2[20] & 4) != 0 ? (unsigned int *)(aP2 + 1652) : (unsigned int *)1652);
     if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)v37 + 128))(v37) ) /*0x6fc4dd*/
       return 5; /*0x6fc4dd*/
   }
@@ -208,12 +208,12 @@ LABEL_52:
   if ( v18 )
   {
     if ( v18[347]
-      && (*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3) == 1
-      && *(unsigned char *)(*((*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3) == 1
-                    ? (unsigned int *)(a3 + 1732)
+      && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1
+      && *(unsigned char *)(*((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1
+                    ? (unsigned int *)(aP2 + 1732)
                     : (unsigned int *)1732)
                   + 3603)
-      && *((*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3) == 1 ? (unsigned int *)(a3 + 172) : (unsigned int *)172) == 16 )
+      && *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1 ? (unsigned int *)(aP2 + 172) : (unsigned int *)172) == 16 )
     {
       return 5; /*0x6fc546*/
     }
@@ -283,13 +283,13 @@ LABEL_98:
   {
     return 6; /*0x6fc6ff*/
   }
-  if ( (*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)a3 + 84))(a3)
+  if ( (*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)aP2 + 84))(aP2)
     && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 676) )
   {
-    return a3 != (unsigned char *)this->locomotorTarget ? 5 : 3;
+    return aP2 != (unsigned char *)this->locomotorTarget ? 5 : 3;
   }
-  if ( (a3[20] & 4) != 0 /*0x6fc75c*/
-    && (*(int (**)(unsigned char *))(*(unsigned int *)a3 + 120))(a3) != 2
+  if ( (aP2[20] & 4) != 0 /*0x6fc75c*/
+    && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 120))(aP2) != 2
     && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 676) )
   {
     return 5; /*0x6fc75c*/
@@ -304,23 +304,23 @@ LABEL_98:
     {
       v23 = 0; /*0x6fc7b0*/
     }
-    else if ( v23 && (*(int (**)(TechnoClass *, unsigned char *))(this->vfptr + 744))(this, a3) == -1 ) /*0x6fc7ca*/
+    else if ( v23 && (*(int (**)(TechnoClass *, unsigned char *))(this->vfptr + 744))(this, aP2) == -1 ) /*0x6fc7ca*/
     {
       return 5; /*0x6fc7ca*/
     }
-    if ( !(*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)a3 + 80))(a3) || v23 ) /*0x6fc7e3*/
+    if ( !(*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)aP2 + 80))(aP2) || v23 ) /*0x6fc7e3*/
       goto LABEL_139; /*0x6fc7e3*/
   }
   else
   {
-    if ( !(*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)a3 + 84))(a3) /*0x6fc7fc*/
+    if ( !(*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)aP2 + 84))(aP2) /*0x6fc7fc*/
       && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 677) )
     {
       return 5; /*0x6fc812*/
     }
-    if ( (*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3) != 11
-      || *((*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3) == 11 ? (unsigned int *)(a3 + 236) : (unsigned int *)236) == 2
-      || *((*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3) == 11 ? (unsigned int *)(a3 + 236) : (unsigned int *)236) == 6 )
+    if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) != 11
+      || *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 11 ? (unsigned int *)(aP2 + 236) : (unsigned int *)236) == 2
+      || *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 11 ? (unsigned int *)(aP2 + 236) : (unsigned int *)236) == 6 )
     {
       goto LABEL_139; /*0x6fc855*/
     }
@@ -331,18 +331,18 @@ LABEL_139:
   if ( *(unsigned char *)(v12 + 348) ) /*0x6fc87d*/
   {
     locomotorTarget = (unsigned char *)this->locomotorTarget; /*0x6fc887*/
-    v25 = a3; /*0x6fc88d*/
+    v25 = aP2; /*0x6fc88d*/
     if ( locomotorTarget /*0x6fc8ad*/
-      && locomotorTarget != a3
+      && locomotorTarget != aP2
       && this->damageParticles_2
-      && (*(int (**)(unsigned char *))(*(unsigned int *)a3 + 44))(a3) != 6 )
+      && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) != 6 )
     {
       return 3; /*0x6fc8bb*/
     }
   }
   else
   {
-    v25 = a3; /*0x6fc8be*/
+    v25 = aP2; /*0x6fc8be*/
   }
   if ( *(unsigned char *)(v38 + 348) ) /*0x6fc8c2*/
   {
@@ -447,7 +447,7 @@ LABEL_231:
   {
     return 5; /*0x6fcce2*/
   }
-  if ( !a5 || (*(unsigned __int8 (**)(TechnoClass *, unsigned char *, int))(this->vfptr + 936))(this, a3, a4) ) /*0x6fcd04*/
+  if ( !a5 || (*(unsigned __int8 (**)(TechnoClass *, unsigned char *, int))(this->vfptr + 936))(this, aP2, a4) ) /*0x6fcd04*/
     return 0; /*0x6fcd20*/
   return 8; /*0x6fc0df*/
 

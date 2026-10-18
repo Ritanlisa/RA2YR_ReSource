@@ -1679,7 +1679,7 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   this->q018 = *(unsigned int *)(a2 + 24); /*0x6e8028*/
   this->M28 = *(unsigned int *)(a2 + 28); /*0x6e802e*/
   LOBYTE(this->q020) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
-  this->AbstractClass = &vt_AbstractClass; /*0x6e803f*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_AbstractClass) */  /*0x6e803f*/
   this->M4 = (unsigned int)(&vt_AbstractClass); /*0x6e8045*/
   this->M8 = (unsigned int)(&vt_AbstractClass); /*0x6e804c*/
   this->M12 = &vt_AbstractClass; /*0x6e8053*/
@@ -1687,7 +1687,7 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   memcpy((char *)this->ambientSoundController + 1, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   this->customSound_controller[4] = *(unsigned int *)(a2 + 96); /*0x6e8070*/
   memcpy(&this->customSound, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
-  this->AbstractClass = &vt_TaskForceClass; /*0x6e807e*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_TaskForceClass) */  /*0x6e807e*/
   this->M4 = &vt_TaskForceClass; /*0x6e8084*/
   this->M8 = &vt_TaskForceClass; /*0x6e808b*/
   this->M12 = &vt_TaskForceClass; /*0x6e8092*/

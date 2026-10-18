@@ -78,7 +78,7 @@ int TeamTypeClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, v
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  this->AbstractClass = &vt_FactoryClass; /*0x4c991a*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_FactoryClass) */  /*0x4c991a*/
   this->TeamTypeClass_field_70 = &vt_FactoryClass; /*0x4c9920*/
   /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c9926) */
   /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c992d) */

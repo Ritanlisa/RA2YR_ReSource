@@ -1926,7 +1926,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   this->M8 = 0; /*0x6638e7*/
   LOBYTE(this->M12) = 1; /*0x6638ea*/
   BYTE1(this->M13) = 0; /*0x6638ee*/
-  this->AbstractClass = &vt_DynamicVectorClass; /*0x6638f1*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x6638f1*/
   this->M20 = 10; /*0x6638f7*/
   this->M16 = 0; /*0x6638fe*/
   LOBYTE(this->q018) = 0; /*0x663901*/

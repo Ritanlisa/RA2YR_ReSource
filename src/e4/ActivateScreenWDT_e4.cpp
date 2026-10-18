@@ -31,7 +31,7 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
     *v7 = (unsigned int)(&vt_rc_ptr); /*0x76f49f*/
     ComPtr::Set(&v6->u32_8, *(unsigned int *)(a2 + 4)); /*0x76f4ab*/
     v6->u32_10 = 0; /*0x76f4b0*/
-    *(unsigned int *)v6 = &vt_WorldDominationTourState; /*0x76f4b7*/
+    *(unsigned int *)v6 = &vt_WorldDominationTour_State; /*0x76f4b7*/
     v8 = v6->u32_C; /*0x76f4bd*/
     if ( v8 && a3 < *(unsigned int *)(v8 + 36) ) /*0x76f4ce*/
       v6->u32_10 = *(unsigned int *)(*(unsigned int *)(v8 + 68) + 4 * a3); /*0x76f4d6*/

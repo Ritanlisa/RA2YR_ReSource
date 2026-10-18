@@ -611,7 +611,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   int v17; // [esp+2Ch] [ebp-4h]
 
   Map_Cleanup(&v15, 0, 0); /*0x595cef*/
-  v15.vfptr = &vt_DynamicVectorClass_WIN32_FIND_DATAA; /*0x595cf4*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_WIN32_FIND_DATAA) */  /*0x595cf4*/
   v17 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)__2_YAPAXI_Z(0x140u); /*0x595d19*/
@@ -747,7 +747,7 @@ LABEL_38:
     }
     while ( !v12 ); /*0x595f85*/
   }
-  v15.vfptr = &vt_VectorClass_WIN32_FIND_DATAA; /*0x595f89*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_WIN32_FIND_DATAA) */  /*0x595f89*/
   if ( Items ) /*0x595f91*/
   {
     if ( v15.IsAllocated ) /*0x595f99*/

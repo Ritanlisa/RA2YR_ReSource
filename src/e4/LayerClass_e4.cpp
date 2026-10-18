@@ -669,14 +669,14 @@ int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2, void *a3)
   int v9; // esi
 
   v3 = 0; /*0x57846b*/
-  v4 = a2[1]; /*0x57846d*/
-  v5 = *a2; /*0x578472*/
+  v4 = aP2[1]; /*0x57846d*/
+  v5 = *aP2; /*0x578472*/
   if ( a3 ) /*0x578477*/
   {
     v6 = v5 + (v4 << 9); /*0x57847e*/
     if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x578494*/
     {
-      g_MissionQueueFrame.briefing[139] = *(unsigned int *)a2; /*0x578498*/
+      g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP2; /*0x578498*/
       v7 = &g_MissionQueueFrame.briefing[130]; /*0x57849d*/
     }
     v3 = *((char *)v7 + 283); /*0x5784a8*/

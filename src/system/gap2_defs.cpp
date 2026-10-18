@@ -24730,7 +24730,7 @@ void* FactoryClass::RemoveFromArrays(int a1) {
   BYTE1(this->production[2]) = 0; /*0x63da88*/
   this->production[1] = 0; /*0x63da8b*/
   vtable1 = this->Items; /*0x63da8e*/
-  this->AbstractClass = &vt_VectorClass; /*0x63da91*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x63da91*/
   if ( vtable1 && BYTE1(this->u8_D) ) /*0x63da9b*/
   {
     __3_YAXPAX_Z(vtable1); /*0x63daa1*/
@@ -24873,7 +24873,7 @@ void* RadarClass::Construct() {
   do /*0x652a6e*/
   {
     VectorClass::PointConstructor(p_RadarClass_field_0x1278, 0, 0); /*0x652a55*/
-    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass_Point2D; /*0x652a5a*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Point2D) */  /*0x652a5a*/
     p_RadarClass_field_0x1278[1].Items = (void *)10; /*0x652a60*/
     p_RadarClass_field_0x1278[1].vfptr = 0; /*0x652a67*/
     p_RadarClass_field_0x1278 = (VectorClass *)((char *)p_RadarClass_field_0x1278 + 24); /*0x652a6a*/
@@ -29092,7 +29092,7 @@ void* RadarClass::Construct() {
   do /*0x652a6e*/
   {
     VectorClass::PointConstructor(p_RadarClass_field_0x1278, 0, 0); /*0x652a55*/
-    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass_Point2D; /*0x652a5a*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Point2D) */  /*0x652a5a*/
     p_RadarClass_field_0x1278[1].Items = (void *)10; /*0x652a60*/
     p_RadarClass_field_0x1278[1].vfptr = 0; /*0x652a67*/
     p_RadarClass_field_0x1278 = (VectorClass *)((char *)p_RadarClass_field_0x1278 + 24); /*0x652a6a*/
@@ -31488,7 +31488,7 @@ void* FactoryClass::RemoveFromArrays(int a1) {
   BYTE1(this->production[2]) = 0; /*0x63da88*/
   this->production[1] = 0; /*0x63da8b*/
   vtable1 = this->vtable2; /*0x63da8e*/
-  this->AbstractClass = &vt_VectorClass; /*0x63da91*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x63da91*/
   if ( vtable1 && BYTE1(this->IsAllocated) ) /*0x63da9b*/
   {
     __3_YAXPAX_Z(vtable1); /*0x63daa1*/
@@ -31632,7 +31632,7 @@ void* RadarClass::Construct() {
   do /*0x652a6e*/
   {
     VectorClass::PointConstructor(p_RadarClass_field_0x1278, 0, 0); /*0x652a55*/
-    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass_Point2D; /*0x652a5a*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Point2D) */  /*0x652a5a*/
     p_RadarClass_field_0x1278[1].Items = (void *)10; /*0x652a60*/
     p_RadarClass_field_0x1278[1].vfptr = 0; /*0x652a67*/
     p_RadarClass_field_0x1278 = (VectorClass *)((char *)p_RadarClass_field_0x1278 + 24); /*0x652a6a*/

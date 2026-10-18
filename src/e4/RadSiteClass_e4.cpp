@@ -41,7 +41,7 @@ RadSiteClass::RadSiteClass()
   this->IntensityDecrement = 0; /*0x65b21f*/
   this->RadDuration = 0; /*0x65b222*/
   this->RadTimeLeft = 0; /*0x65b225*/
-  this->AbstractClass = &vt_RadSiteClass; /*0x65b228*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_RadSiteClass) */  /*0x65b228*/
   /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b22e) */
   /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b235) */
   /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b23c) */

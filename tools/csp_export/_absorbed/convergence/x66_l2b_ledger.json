@@ -1,0 +1,21 @@
+{
+ "ledger": [],
+ "stats": {
+  "bank-type:CreateTeamCommand": 5,
+  "bank-type:SelectTeamCommand": 10,
+  "bank-type:AddTeamCommand": 10,
+  "bank-type:CenterTeamCommand": 10,
+  "bank-type:TauntCommandClass": 7,
+  "decl-exists": 15,
+  "bank-type:Transform": 3,
+  "bank-type:DeleteAndZero": 12,
+  "bank-type:_VectorClass_VRGBCla": 4,
+  "bank-type:Rect": 1,
+  "bank-type:__int128": 10,
+  "bank-type:WSAData": 4,
+  "bank-type:_QWORD": 2,
+  "bank-type:_DynamicVectorClass_": 15,
+  "bank-type:TechnoClass": 3,
+  "bank-type:Buffer": 4
+ }
+}

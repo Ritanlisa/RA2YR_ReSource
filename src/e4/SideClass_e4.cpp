@@ -139,7 +139,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
   aP1->u32_AC = 10; /*0x6a457c*/
   aP1->u32_A8 = 0; /*0x6a4586*/
   aP1->houseTypes = &vt_TypeList; /*0x6a458c*/
-  aP1->AbstractClass = &vt_SideClass; /*0x6a4597*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_SideClass) */  /*0x6a4597*/
   aP1->u32_98 = &vt_SideClass; /*0x6a459d*/
   aP1->u32_8 = &vt_SideClass; /*0x6a45a3*/
   aP1->q00C = &vt_SideClass; /*0x6a45aa*/
@@ -184,13 +184,13 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   unsigned int *v10; // edx
 
   v2 = this; /*0x6a4782*/
-  v3 = a2; /*0x6a4787*/
-  result = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x6a478d*/
+  v3 = aP1; /*0x6a4787*/
+  result = AbstractClass::SaveLoad_Prefix_0(this, aP1); /*0x6a478d*/
   if ( result >= 0 ) /*0x6a4796*/
   {
     if ( v2 ) /*0x6a47a4*/
     {
-      AbstractTypeClass::Init((int)v2, (int)&a2); /*0x6a47ad*/
+      AbstractTypeClass::Init((int)v2, (int)&aP1); /*0x6a47ad*/
       v2->houseTypesCount = 0; /*0x6a47b2*/
       v2[1].vfptr = 0; /*0x6a47b8*/
       LOBYTE(v2[1].vfptr1) = 1; /*0x6a47be*/
@@ -198,10 +198,10 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       v2[1].vfptr3 = (void *)10; /*0x6a47cb*/
       v2[1].vfptr2 = 0; /*0x6a47d1*/
       v2->houseTypes = &vt_TypeList_int; /*0x6a47d7*/
-      v2->vfptr = &vt_SideClass_4; /*0x6a47e1*/
-      v2->vfptr1 = &vt_SideClass_4; /*0x6a47e7*/
-      v2->vfptr2 = &vt_SideClass_4; /*0x6a47ee*/
-      v2->vfptr3 = &vt_SideClass_4; /*0x6a47f5*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47e1*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47e7*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47ee*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47f5*/
     }
     p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
@@ -214,8 +214,8 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       p_houseTypes[4] = 0; /*0x6a4816*/
       *p_houseTypes = &vt_TypeList_int; /*0x6a4819*/
     }
-    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a2, 4, 0); /*0x6a482a*/
-    for ( i = 0; i < a2; ++i ) /*0x6a4833*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &aP1, 4, 0); /*0x6a482a*/
+    for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
     {
       (*(void (**)(int, SideClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &this, 4, 0); /*0x6a4840*/
       v7 = p_houseTypes[2]; /*0x6a4843*/
@@ -250,7 +250,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
 {
 
 
-  Block->AbstractClass = &vt_SideClass; /*0x6a4936*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_SideClass) */  /*0x6a4936*/
   /* X11: vtable install elided (qmark slot, RHS vt_SideClass) */  /*0x6a493c*/
   Block->u32_8 = &vt_SideClass; /*0x6a4943*/
   /* X11: vtable install elided (qmark slot, RHS vt_SideClass) */  /*0x6a494a*/

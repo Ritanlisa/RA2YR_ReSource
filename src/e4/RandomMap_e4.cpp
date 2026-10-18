@@ -601,7 +601,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   if ( v1 ) /*0x58d428*/
   {
     VectorClass::CellConstructor(v1, 0, 0); /*0x58d430*/
-    v2->vfptr = &vt_DynamicVectorClass_Cell; /*0x58d435*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Cell) */  /*0x58d435*/
     v2[1].Items = (void *)10; /*0x58d43b*/
     v2[1].vfptr = 0; /*0x58d442*/
     v3 = v2; /*0x58d449*/
@@ -711,7 +711,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
     if ( v2 ) /*0x58e774*/
     {
       VectorClass::CellConstructor(v2, 0, 0); /*0x58e77a*/
-      v3->vfptr = &vt_DynamicVectorClass_Cell; /*0x58e77f*/
+      /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_Cell) */  /*0x58e77f*/
       v3[1].Items = (void *)10; /*0x58e785*/
       v3[1].vfptr = 0; /*0x58e78c*/
       v4 = v3; /*0x58e78f*/

@@ -133,7 +133,7 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   a1->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
   a1->SpawnManagerClass_field_5C = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b6ee0*/
   a1->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
-  a1->AbstractClass = &vt_SpawnManagerClass; /*0x6b6ee6*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_SpawnManagerClass) */  /*0x6b6ee6*/
   /* X11: vtable install elided (qmark slot, RHS vt_SpawnManagerClass) */  /*0x6b6eec*/
   /* X11: vtable install elided (qmark slot, RHS vt_SpawnManagerClass) */  /*0x6b6ef3*/
   /* X11: vtable install elided (qmark slot, RHS vt_SpawnManagerClass) */  /*0x6b6efa*/
@@ -377,8 +377,8 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
   int v16; // [esp+28h] [ebp-4h] BYREF
 
   v2 = this; /*0x6b7f12*/
-  v3 = a2; /*0x6b7f18*/
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x6b7f24*/
+  v3 = aP1_4; /*0x6b7f18*/
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(this, aP1_4); /*0x6b7f24*/
   v5 = 0; /*0x6b7f26*/
   if ( Prefix_0 >= 0 ) /*0x6b7f2a*/
   {
@@ -436,7 +436,7 @@ LABEL_20:
             v8[2] = v9; /*0x6b7fdd*/
             v5 = v8; /*0x6b7fe0*/
           }
-          Prefix_0 = (*(int (**)(int, unsigned int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, v5, 24, 0); /*0x6b7ff1*/
+          Prefix_0 = (*(int (**)(int, unsigned int *, int, unsigned int))(*(unsigned int *)aP1_4 + 12))(aP1_4, v5, 24, 0); /*0x6b7ff1*/
           if ( Prefix_0 < 0 ) /*0x6b7ff5*/
             break; /*0x6b7ff5*/
           spawnVectorCapacity = v2->spawnVectorCapacity; /*0x6b7ffb*/
@@ -616,7 +616,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
   this->vfptr2 = (void *)aP1; /*0x6b83b0*/
   LOBYTE(this->vtable4) = 1; /*0x6b83b3*/
   BYTE1(this->IsAllocated) = 0; /*0x6b83b7*/
-  this->AbstractClass = &vt_VectorClass; /*0x6b83bb*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x6b83bb*/
   if ( aP1 ) /*0x6b83c1*/
   {
     if ( aP2 ) /*0x6b83c9*/
@@ -629,7 +629,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
       (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x6b83df*/
     }
   }
-  this->AbstractClass = &vt_DynamicVectorClass; /*0x6b83e3*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_DynamicVectorClass) */  /*0x6b83e3*/
   this->abstractFlags = 10; /*0x6b83e9*/
   this->uniqueId = 0; /*0x6b83f0*/
   return &this->AbstractClass; /*0x6b83f9*/

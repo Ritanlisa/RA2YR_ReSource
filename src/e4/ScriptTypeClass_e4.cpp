@@ -87,7 +87,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
 {
 
 
-  a1->AbstractClass = &vt_ScriptTypeClass; /*0x691fa6*/
+  /* X11: vtable install elided (base-interface slot, RHS vt_ScriptTypeClass) */  /*0x691fa6*/
   /* X11: vtable install elided (qmark slot, RHS vt_ScriptTypeClass) */  /*0x691fac*/
   /* X11: vtable install elided (qmark slot, RHS vt_ScriptTypeClass) */  /*0x691fb3*/
   /* X11: vtable install elided (qmark slot, RHS vt_ScriptTypeClass) */  /*0x691fba*/

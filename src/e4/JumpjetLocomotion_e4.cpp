@@ -51,11 +51,11 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
 
-  v3 = a2; /*0x4b0ad0*/
-  if ( *a2 != g_DDraw_ClipRect || a2[1] != (unsigned int)qword_8A0794 || (v5 = a2[2], v5 != (((qword_8A0794) >> 32) & 0xFFFFFFFFu)) ) /*0x4b0afe*/
+  v3 = aP3; /*0x4b0ad0*/
+  if ( *aP3 != g_DDraw_ClipRect || aP3[1] != (unsigned int)qword_8A0794 || (v5 = aP3[2], v5 != (((qword_8A0794) >> 32) & 0xFFFFFFFFu)) ) /*0x4b0afe*/
   {
     LOBYTE(v5) = this->ptr_60; /*0x4b0b04*/
-    v6 = a3; /*0x4b0b07*/
+    v6 = a3_1; /*0x4b0b07*/
     if ( !(unsigned char)v5 ) /*0x4b0b0d*/
     {
       v5 = this->u32_58; /*0x4b0b13*/
@@ -70,13 +70,13 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
           if ( v5 > -1 ) /*0x4b0b44*/
           {
             v9 = (int *)(v8 + 12 * v5); /*0x4b0b4d*/
-            a3 = v9[2]; /*0x4b0b53*/
+            a3_1 = v9[2]; /*0x4b0b53*/
             if ( this->__pad_5C < v5 ) /*0x4b0b5c*/
             {
               v10 = v9[1]; /*0x4b0b64*/
               v18[0] = *v9; /*0x4b0b67*/
               v18[1] = v10; /*0x4b0b6f*/
-              v5 = (int)JumpjetLocomotion::TransformCoords((JumpjetLocomotion *)this, &v19, v18, &a3); /*0x4b0b80*/
+              v5 = (int)JumpjetLocomotion::TransformCoords((JumpjetLocomotion *)this, &v19, v18, &a3_1); /*0x4b0b80*/
               v11 = *(unsigned int *)v5; /*0x4b0b85*/
               v12 = v5->vtable2; /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
@@ -89,7 +89,7 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
                 (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x4b0baf*/
                 LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(*this->u32_C + 244))( /*0x4b0bbf*/
                                this->u32_C,
-                               a2);
+                               aP3);
                 return v5; /*0x4b0bcc*/
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
@@ -101,7 +101,7 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
                 v20 = v12; /*0x4b0bef*/
                 LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))(v16, &v19); /*0x4b0bfa*/
               }
-              v3 = a2; /*0x4b0c00*/
+              v3 = aP3; /*0x4b0c00*/
             }
           }
         }

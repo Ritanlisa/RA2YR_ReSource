@@ -4422,7 +4422,7 @@ void WinMain_Setup()
   if ( dword_A8B230 ) /*0x6beacc*/
   {
     v19 = (void *)dword_A8B230[377].vfptr3; /*0x6bead2*/
-    dword_A8B230[377].vfptr2 = &vt_VectorClass; /*0x6beadf*/
+    /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass) */  /*0x6beadf*/
     if ( v19 && v18->u32_3519 ) /*0x6beae7*/
     {
       operator delete((v19)); /*0x6beaf0*/

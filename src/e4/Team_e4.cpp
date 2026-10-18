@@ -704,7 +704,7 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x765f8a*/
     *v6 = (unsigned int)(&vt_rc_ptr); /*0x765f8f*/
     ComPtr::Set(&v5->u32_8, *(unsigned int *)(a2 + 4)); /*0x765f9b*/
-    *(unsigned int *)v5 = &vt_WorldDominationTourConflict; /*0x765fa0*/
+    *(unsigned int *)v5 = &vt_WorldDominationTour_Conflict; /*0x765fa0*/
   }
   else
   {
@@ -735,7 +735,7 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x767b2a*/
     *v6 = (unsigned int)(&vt_rc_ptr); /*0x767b2f*/
     ComPtr::Set(&v5->u32_8, *(unsigned int *)(a2 + 4)); /*0x767b3b*/
-    *(unsigned int *)v5 = &vt_WorldDominationTourHistory; /*0x767b40*/
+    *(unsigned int *)v5 = &vt_WorldDominationTour_History; /*0x767b40*/
   }
   else
   {

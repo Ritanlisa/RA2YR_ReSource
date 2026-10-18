@@ -210,9 +210,9 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
 
   v2 = *(unsigned __int8 **)(&this->u32_68); /*0x6cb124*/
   *(unsigned int *)this = &vt_SuperClass_4; /*0x6cb127*/
-  this->vtable2 = &vt_SuperClass_4; /*0x6cb12f*/
-  this->vtable3 = &vt_SuperClass_4; /*0x6cb136*/
-  this->vtable4 = &vt_SuperClass_4; /*0x6cb13d*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SuperClass_4) */  /*0x6cb12f*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SuperClass_4) */  /*0x6cb136*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SuperClass_4) */  /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
     v2[405] = 0; /*0x6cb146*/

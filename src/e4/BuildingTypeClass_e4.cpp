@@ -267,9 +267,9 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->PreventsPlacementOverlap = __2_YAPAXI_Z(0xCu); /*0x45e2ba*/
   this->u32_1791 = 1; /*0x45e2c6*/
   *(unsigned int *)this = &vt_BuildingTypeClass_4; /*0x45e2cd*/
-  this->vtable2 = &vt_BuildingTypeClass_4; /*0x45e2d3*/
-  this->vtable3 = &vt_BuildingTypeClass_4; /*0x45e2d9*/
-  this->vtable4 = &vt_BuildingTypeClass_4; /*0x45e2e1*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2d3*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2d9*/
+  /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2e1*/
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x45e2e8*/
   v4 = dword_A83C78; /*0x45e2ed*/
   if ( dword_A83C78 < dword_A83C70 /*0x45e32b*/
