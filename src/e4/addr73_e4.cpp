@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/DynamicVectorClass_uint_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_730990_e4.hpp"
 #include "e4/classes/E4Recv_730A10_e4.hpp"
@@ -50,6 +51,7 @@
 #include "e4/classes/FootClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/CSFClass_e4.hpp"  // G57w10 D supply
+#include "e4/classes/DynamicVectorClass_uint_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int SelectFactionThemeMusic_Helper_734330(int p0, int p1); }  // x4:signals@0x734330
 namespace gamemd { int SelectFactionThemeMusic_Helper_734390(int* p0); }  // x4:signals@0x734390
@@ -490,12 +492,12 @@ int SelectAllOfType()
 
   int result; // eax
   int v2; // edi
-  EventClass *v3; // eax
-  EventClass *v4; // esi
+  DynamicVectorClass_uint *v3; // eax
+  DynamicVectorClass_uint *v4; // esi
   int v5; // ebp
   DynamicVector *v6; // ebx
   EventClass *v7; // eax
-  EventClass *v8; // ebp
+  DynamicVectorClass_uint *v8; // ebp
   int HeightMap; // ebx
   int i; // esi
   TechnoClass *CoordDataMap; // edi
@@ -524,13 +526,13 @@ int SelectAllOfType()
   v24 = TacticalClass::CollectSelectedIDs(); /*0x732989*/
   if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732996*/
   {
-    v3 = (EventClass *)__2_YAPAXI_Z(0x18u); /*0x732998*/
+    v3 = (DynamicVectorClass_uint *)__2_YAPAXI_Z(0x18u); /*0x732998*/
     v4 = v3; /*0x73299d*/
     if ( v3 ) /*0x7329a4*/
     {
       EventClass::resetEvent(v3, 0, 0); /*0x7329aa*/
-      v4->EventClass_field_0x0 = (int)&vt_DynamicVectorClass_TechnoClass; /*0x7329af*/
-      *&v4->q014 = 10; /*0x7329b5*/
+      v4->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x7329af*/
+      *&v4->CapacityIncrement = 10; /*0x7329b5*/
       *(unsigned int *)v4->Count = 0; /*0x7329bc*/
     }
     else
@@ -553,13 +555,13 @@ int SelectAllOfType()
   }
   else
   {
-    v7 = (EventClass *)__2_YAPAXI_Z(0x18u); /*0x7329fc*/
+    v7 = (DynamicVectorClass_uint *)__2_YAPAXI_Z(0x18u); /*0x7329fc*/
     v8 = v7; /*0x732a01*/
     if ( v7 ) /*0x732a08*/
     {
       EventClass::resetEvent(v7, 0, 0); /*0x732a0e*/
-      v8->EventClass_field_0x0 = (int)&vt_DynamicVectorClass_TechnoClass; /*0x732a13*/
-      *&v8->q014 = 10; /*0x732a1a*/
+      v8->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x732a13*/
+      *&v8->CapacityIncrement = 10; /*0x732a1a*/
       *(unsigned int *)v8->Count = 0; /*0x732a21*/
     }
     else
@@ -589,7 +591,7 @@ LABEL_25:
     {
       while ( 1 ) /*0x732a8c*/
       {
-        v13 = (unsigned char *)*((unsigned int *)v8->EventClass_field_0x4 + v12); /*0x732a8c*/
+        v13 = (unsigned char *)*((unsigned int *)v8->Items + v12); /*0x732a8c*/
         if ( IDTechnoClassMatches(v13, (int)v24) ) /*0x732a91*/
         {
           if ( !v13[131] ) /*0x732a9a*/
@@ -602,7 +604,7 @@ LABEL_25:
         goto LABEL_36; /*0x732abd*/
     }
     if ( v8 ) /*0x732ac1*/
-      (*(void (**)(EventClass *, int))v8->EventClass_field_0x0)(v8, 1); /*0x732aca*/
+      (*(void (**)(EventClass *, int))v8->vtable1)(v8, 1); /*0x732aca*/
     v14 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x732ace*/
     if ( v14 ) /*0x732ad8*/
       v6 = (DynamicVector *)DynamicVector::Constructor_Techno(v14, 0, 0); /*0x732ae5*/
@@ -762,8 +764,8 @@ char sub_7331B0()
 {
 
   int v1; // ebp
-  EventClass *v2; // eax
-  EventClass *v3; // esi
+  DynamicVectorClass_uint *v2; // eax
+  DynamicVectorClass_uint *v3; // esi
   int v4; // ebx
   int v5; // edi
   void *EventClass_field_0x8; // ecx
@@ -771,8 +773,8 @@ char sub_7331B0()
   int v8; // eax
   unsigned int *EventClass_field_0x4; // edx
   int HeightMap; // eax
-  EventClass *v11; // eax
-  EventClass *v12; // esi
+  DynamicVectorClass_uint *v11; // eax
+  DynamicVectorClass_uint *v12; // esi
   int v13; // ebx
   House **v14; // edi
   void *v15; // ecx
@@ -786,13 +788,13 @@ char sub_7331B0()
       1);
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] = 0; /*0x7331c7*/
   }
-  v2 = (EventClass *)__2_YAPAXI_Z(0x18u); /*0x7331cf*/
+  v2 = (DynamicVectorClass_uint *)__2_YAPAXI_Z(0x18u); /*0x7331cf*/
   v3 = v2; /*0x7331d4*/
   if ( v2 ) /*0x7331db*/
   {
     EventClass::resetEvent(v2, 0, 0); /*0x7331e1*/
-    v3->EventClass_field_0x0 = (int)&vt_DynamicVectorClass_TechnoClass; /*0x7331e6*/
-    *&v3->q014 = 10; /*0x7331ec*/
+    v3->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x7331e6*/
+    *&v3->CapacityIncrement = 10; /*0x7331ec*/
     *(unsigned int *)v3->Count = 0; /*0x7331f3*/
   }
   else
@@ -810,14 +812,14 @@ char sub_7331B0()
         EventClass_field_0x8 = v3->EventClass_field_0x8; /*0x73321d*/
         if ( *(unsigned int *)v3->Count < (int)EventClass_field_0x8 /*0x733242*/
           || ((((v3->EventClass_field_0xC) >> 8) & 0xFF) || !EventClass_field_0x8)
-          && (v7 = *&v3->q014, v7 > 0)
-          && (*(unsigned __int8 (**)(EventClass *, int, unsigned int))(v3->EventClass_field_0x0 + 8))(
+          && (v7 = *&v3->CapacityIncrement, v7 > 0)
+          && (*(unsigned __int8 (**)(EventClass *, int, unsigned int))(v3->vtable1 + 8))(
                v3,
                (int)EventClass_field_0x8 + v7,
                0) )
         {
           v8 = *(unsigned int *)v3->Count; /*0x733249*/
-          EventClass_field_0x4 = v3->EventClass_field_0x4; /*0x73324c*/
+          EventClass_field_0x4 = v3->Items; /*0x73324c*/
           *(unsigned int *)v3->Count = v8 + 1; /*0x733252*/
           EventClass_field_0x4[v8] = v5; /*0x733255*/
         }
@@ -832,15 +834,15 @@ char sub_7331B0()
   if ( !HeightMap ) /*0x73326a*/
   {
     if ( v3 ) /*0x733272*/
-      (*(void (**)(EventClass *, int))v3->EventClass_field_0x0)(v3, 1); /*0x73327a*/
+      (*(void (**)(EventClass *, int))v3->vtable1)(v3, 1); /*0x73327a*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] = 0; /*0x73327e*/
-    v11 = (EventClass *)__2_YAPAXI_Z(0x18u); /*0x733284*/
+    v11 = (DynamicVectorClass_uint *)__2_YAPAXI_Z(0x18u); /*0x733284*/
     v12 = v11; /*0x733289*/
     if ( v11 ) /*0x733290*/
     {
       EventClass::resetEvent(v11, 0, 0); /*0x733296*/
-      v12->EventClass_field_0x0 = (int)&vt_DynamicVectorClass_TechnoClass; /*0x73329b*/
-      *&v12->q014 = 10; /*0x7332a1*/
+      v12->vtable1 = &vt_DynamicVectorClass_TechnoClass; /*0x73329b*/
+      *&v12->CapacityIncrement = 10; /*0x7332a1*/
       *(unsigned int *)v12->Count = 0; /*0x7332a8*/
     }
     else
@@ -874,8 +876,8 @@ char sub_7331B0()
                   v15 = v12->EventClass_field_0x8; /*0x733322*/
                   if ( *(unsigned int *)v12->Count < (int)v15 /*0x73334c*/
                     || (((HeightMap) = ((HeightMap) & ~0xFF) | (((((v12->EventClass_field_0xC) >> 8) & 0xFF)) & 0xFF), (unsigned char)HeightMap) || !v15)
-                    && (HeightMap = *&v12->q014, HeightMap > 0)
-                    && (LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v12->EventClass_field_0x0
+                    && (HeightMap = *&v12->CapacityIncrement, HeightMap > 0)
+                    && (LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v12->vtable1
                                                                                              + 8))(
                                               v12,
                                               (int)v15 + HeightMap,
@@ -883,7 +885,7 @@ char sub_7331B0()
                         (unsigned char)HeightMap) )
                   {
                     HeightMap = *(unsigned int *)v12->Count; /*0x73334e*/
-                    v16 = v12->EventClass_field_0x4; /*0x733351*/
+                    v16 = v12->Items; /*0x733351*/
                     *(unsigned int *)v12->Count = HeightMap + 1; /*0x733357*/
                     v16[HeightMap] = v14; /*0x73335a*/
                   }

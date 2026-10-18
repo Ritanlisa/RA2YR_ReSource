@@ -10,7 +10,7 @@ struct AnimClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct IPXInterfaceClass {
-    unsigned int __pad_0;  // 0x0
+    unsigned int Socket;  // 0x0
     bool Initialized;  // 0x4
     unsigned char __pad_005;  // 0x5
     unsigned short BoundSocket;  // 0x6

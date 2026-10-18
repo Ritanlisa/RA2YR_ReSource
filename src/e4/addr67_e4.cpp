@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/TypeList_BuildingType_e4.hpp"
 #include "e4/e4_globals.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"
 #include "e4/classes/GenericList_e4.hpp"
@@ -41,6 +42,7 @@
 #include "e4/classes/Hash_e4.hpp"
 #include "e4/classes/InfantryTypeVector_e4.hpp"
 #include "e4/classes/KeywordClass_e4.hpp"  // G57w10 D supply
+#include "e4/classes/TypeList_BuildingType_e4.hpp"
 
 // 0x679CC0
 namespace gamemd {  // G42.18 ns repair
@@ -84,7 +86,7 @@ int sub_679CC0()
 }  // G42.18 ns repair
 // 0x67B550
 namespace gamemd {
-int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass_flat * aP2, unsigned char * a3, unsigned int * a4)
+int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** edx0, VectorClass_flat * aP2, unsigned char * a3, TypeList_BuildingType * a4)
 {
 
   char *i; // eax
@@ -126,17 +128,17 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     }
     aP0->Items = 0; /*0x67b62d*/
     aP0->Capacity = 0; /*0x67b630*/
-    aP0->IsInitialized[0] = 1; /*0x67b633*/
-    aP0->IsAllocated[0] = 0; /*0x67b637*/
+    aP0->IsInitialized = 1; /*0x67b633*/
+    aP0->IsAllocated = 0; /*0x67b637*/
     aP0->__pad_0 = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x67b63a*/
     VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
     aP0->__pad_0 = (int)&vt_TypeList_BuildingTypeClass_const; /*0x67b645*/
     v17.vfptr = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x67b64b*/
     v9 = v19; /*0x67b657*/
-    aP0[1].__pad_0 = (int)v18; /*0x67b65b*/
+    aP0->Count = v18; /*0x67b65b*/
     Items = (void *)v17.Items; /*0x67b65e*/
     v11 = v17.Items == 0; /*0x67b662*/
-    aP0[1].Items = v9; /*0x67b664*/
+    aP0->CapacityIncrement = v9; /*0x67b664*/
     if ( !v11 && v17.IsAllocated[0] ) /*0x67b671*/
     {
       __3_YAXPAX_Z(Items); /*0x67b678*/
@@ -147,8 +149,8 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
   {
     aP0->Items = 0; /*0x67b699*/
     aP0->Capacity = 0; /*0x67b69c*/
-    aP0->IsInitialized[0] = 1; /*0x67b69f*/
-    aP0->IsAllocated[0] = 0; /*0x67b6a3*/
+    aP0->IsInitialized = 1; /*0x67b69f*/
+    aP0->IsAllocated = 0; /*0x67b6a3*/
     aP0->__pad_0 = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x67b6a6*/
     if ( aP0 != a4 ) /*0x67b6ac*/
     {
@@ -163,7 +165,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
         {
           v15 = aP0->Capacity; /*0x67b6d7*/
           v16 = 0; /*0x67b6da*/
-          aP0->IsAllocated[0] = 1; /*0x67b6de*/
+          aP0->IsAllocated = 1; /*0x67b6de*/
           if ( v15 > 0 ) /*0x67b6e2*/
           {
             do /*0x67b6f6*/
@@ -178,11 +180,11 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
       else
       {
         aP0->Items = 0; /*0x67b6fa*/
-        aP0->IsAllocated[0] = 0; /*0x67b6fd*/
+        aP0->IsAllocated = 0; /*0x67b6fd*/
       }
     }
-    aP0[1].vfptr = a4[1].vfptr; /*0x67b703*/
-    aP0[1].Items = a4[1].Items; /*0x67b709*/
+    aP0->Count = a4->Count; /*0x67b703*/
+    aP0->CapacityIncrement = a4->CapacityIncrement; /*0x67b709*/
     aP0->__pad_0 = (int)&vt_TypeList_BuildingTypeClass_const; /*0x67b70c*/
   }
   return aP0; /*0x67b682*/

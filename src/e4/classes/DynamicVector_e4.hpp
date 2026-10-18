@@ -16,9 +16,8 @@ class Constructor_VectorClass_TagTypeClass___;  // G42.36 fwd supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct DynamicVector {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    char __pad_0[1];  // 0x0
-    unsigned int DynamicVector_field_0x1;  // 0x1
-    char __pad_5[3];  // 0x5
+    unsigned char __pad_0[4];  // 0x0
+    unsigned int *Items;  // 0x4
     unsigned int DynamicVector_field_0x8;  // 0x8
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD

@@ -11,7 +11,7 @@ struct DriveLocomotionClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
-    unsigned int __pad_008;  // 0x8
+    unsigned int Owner;  // 0x8
     int LinkedTo;  // 0xC
     char Powered[1];  // 0x10
     bool Dirty;  // 0x11

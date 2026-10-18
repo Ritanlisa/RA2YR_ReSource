@@ -9,7 +9,7 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct UDPInterfaceClass {
-    void* vtable1;  // 0x0
+    int Socket;  // 0x0
     bool Initialized;  // 0x4
     char __pad_5[1];  // 0x5
     unsigned short BoundPort;  // 0x6
