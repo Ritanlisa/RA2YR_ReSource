@@ -46,7 +46,7 @@ AbstractClass * FootClass::Destruct(void *a1)
 
   int *team; // ecx
   team = (int *)this->team; /*0x4d3597*/
-  this->TechnoClass = &vt_FootClass; /*0x4d359d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_FootClass) */  /*0x4d359d*/
   /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35a5) */
   /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35ac) */
   /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35b3) */
@@ -87,7 +87,7 @@ AbstractClass * FootClass::Destruct(void *a1)
     (*(void (**)(int))(*(unsigned int *)v7 + 8))(this->locomotor[0]); /*0x4d3690*/
   void *v8; // eax
   v8 = *(void **)this->q_5B0; /*0x4d3693*/
-  this->FootClass_field_abstract_array_5AC[0] = (int)&vt_VectorClass; /*0x4d36a0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4d36a0*/
   if ( v8 && this->u32_5B9 ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
@@ -97,7 +97,7 @@ AbstractClass * FootClass::Destruct(void *a1)
   *&this->q5B4 = 0; /*0x4d36c5*/
   void *v9; // eax
   v9 = *(void **)this->__pad_58C; /*0x4d36cb*/
-  this->unknownAbstractArray588[0] = (int)&vt_VectorClass; /*0x4d36d1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4d36d1*/
   if ( v9 && this->u32_595 ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/

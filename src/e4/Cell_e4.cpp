@@ -1102,7 +1102,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     || (int16_t)aP0 - (*((signed short *)(((unsigned char *)&(aP0)) + 2))) >= dword_87F8DC
     || (*((signed short *)(((unsigned char *)&(aP0)) + 2))) - (int16_t)aP0 >= dword_87F8DC
     || (*((signed short *)(((unsigned char *)&(aP0)) + 2))) + (int16_t)aP0 > dword_87F8DC + 2 * dword_87F8E0
-    || !Tactical::GetCellDatav44->q128 )
+    || !Tactical::GetCellData(v44)->q128 )
   {
     return 0; /*0x57a0b0*/
   }

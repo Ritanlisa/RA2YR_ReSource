@@ -1586,7 +1586,7 @@ int BulletClass::Fire(int a1) {
         {
           if ( ObjectClass::DistanceTo(this, this->AbstractClass_10C) < 42 ) /*0x468f79*/
           {
-            v19 = (int *)(*(int (__usercall **)(unsigned int, int *, double))(*this->u32_587) + 88))( /*0x468f88*/
+            v19 = (int *)(*(int (**)(unsigned int, int *, double))(*this->u32_587) + 88))( /*0x468f88*/
                            this->AbstractClass_10C,
                            v34,
                            a2);

@@ -17,7 +17,7 @@
 namespace gamemd {  // G42.18 ns repair
 CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->tail_0 = &vt_CCToolTip; /*0x7784a3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCToolTip) */  /*0x7784a3*/
   ToolTipClass::updateString((ToolTipClass *)Block); /*0x7784a9*/
   if ( (a2 & 1) != 0 ) /*0x7784b3*/
     operator delete((Block)); /*0x7784b6*/

@@ -37,7 +37,7 @@ namespace gamemd {  // G42.18 ns repair
 void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
 
-  *(unsigned int *)aP0 = (unsigned int)(&vt_FoggedObjectClass); /*0x4d1663*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_FoggedObjectClass) */  /*0x4d1663*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1669) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1670) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1677) */
@@ -126,7 +126,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
       0);
   void *v15; // eax
   v15 = (void *)((unsigned int)(aP0->nextArrayIndex));
-  aP0->u32_5C = (unsigned int)(&vt_VectorClass); /*0x4d1855*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x4d1855*/
   if ( v15 && aP0->u32_69 ) /*0x4d1860*/
   {
     operator delete((v15)); /*0x4d1866*/

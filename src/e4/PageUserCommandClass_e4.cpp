@@ -30,7 +30,7 @@ void * PageUserCommandClass::Constructor(void *aP1) { return new (aP1) PageUserC
 }
 PageUserCommandClass::PageUserCommandClass()
 {
-  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_PageUserCommandClass); /*0x537dd2*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_PageUserCommandClass) */  /*0x537dd2*/
   return; /*0x537dd8*/
 }
 }  // G42.18c ns repair

@@ -1082,16 +1082,16 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   v10.vfptr2 = 0; /*0x687cf4*/
   v10.vfptr3 = 0; /*0x687cf8*/
   GenericList::Constructor((GenericList *)&v10.uniqueId); /*0x687cfc*/
-  v10.uniqueId = (int)&vt_List_INIClass_INISection; /*0x687d05*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x687d05*/
   Node::Init((MixFileClass *)&v10.fallRate); /*0x687d0d*/
   v10.ambientSoundController[1] = 0; /*0x687d17*/
   LOBYTE(v10.ambientSoundController[2]) = 0; /*0x687d1d*/
-  v10.vfptr1 = (int)&CCINIClass_Vtable; /*0x687d21*/
+  /* X11: vtable install elided (X67 recv-slot, RHS CCINIClass_Vtable) */  /*0x687d21*/
   if ( stru_A8E960.random[503] ) /*0x687d29*/
   {
     v4 = CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d34*/
     v5 = v4->vt_slot_20(0); /*0x687d3e*/
-    v10.customSound_controller[3] = (int)&vt_CCFileClass; /*0x687d48*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x687d48*/
     v8 = v5; /*0x687d50*/
     v12 = 0; /*0x687d54*/
     Vector::Clear((int)v11); /*0x687d5b*/
@@ -1101,7 +1101,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
     {
       CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d7c*/
       CCINIClass::Load((CCINIClass *)&v10.vfptr1, (int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
-      v10.customSound_controller[3] = (int)&vt_CCFileClass; /*0x687d99*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x687d99*/
       v12 = 0; /*0x687da1*/
       Vector::Clear((int)v11); /*0x687da8*/
       v10.customSound_controller[3] = (int)&off_7E1668; /*0x687db1*/
@@ -2787,7 +2787,7 @@ int E4Recv_68F8A0::sub_68F8A0()
     *(unsigned int *)(v4 + 28) = 0; /*0x68f922*/
     *(unsigned int *)(v4 + 32) = 0; /*0x68f925*/
     *(unsigned char *)(v4 + 36) = 0; /*0x68f928*/
-    *(unsigned int *)v4 = &vt_ScorePrintClass; /*0x68f92b*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_ScorePrintClass) */  /*0x68f92b*/
   }
   else
   {

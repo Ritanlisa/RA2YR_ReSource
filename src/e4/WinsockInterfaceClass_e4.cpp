@@ -38,7 +38,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
     this->u32_3F068 = 0; /*0x7b1ad8*/
   }
   void *v3 = this->u32_3C; // eax /*0x7b1ade*/
-  this->u32_38 = (unsigned int)(&vt_VectorClass); /*0x7b1ae1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x7b1ae1*/
   if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
@@ -47,7 +47,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   this->u32_45 = 0; /*0x7b1afd*/
   this->u32_40 = 0; /*0x7b1b00*/
   void *v4 = this->u32_24; // eax /*0x7b1b03*/
-  this->u32_20 = (unsigned int)(&vt_VectorClass); /*0x7b1b06*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x7b1b06*/
   if ( v4 && this->u32_2D ) /*0x7b1b11*/
   {
     __3_YAXPAX_Z(v4); /*0x7b1b17*/
@@ -56,7 +56,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   this->u32_2D = 0; /*0x7b1b22*/
   this->u32_28 = 0; /*0x7b1b25*/
   void *v5 = this->u32_C; // eax /*0x7b1b28*/
-  this->__pad_008 = (unsigned int)(&vt_VectorClass); /*0x7b1b2b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x7b1b2b*/
   if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {
     __3_YAXPAX_Z(v5); /*0x7b1b3c*/
@@ -101,7 +101,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
 {
 
   char v3 = Block->u8_3F068; // al /*0x7b2786*/
-  Block->Socket = (int)&vt_WinsockInterfaceClass; /*0x7b278c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WinsockInterfaceClass) */  /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {
     NetworkClass::UnregisterAsync(Block); /*0x7b2796*/
@@ -111,7 +111,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
   }
   void *v4; // eax
   v4 = (void *)Block->u32_3C; /*0x7b27ae*/
-  Block->u32_38 = &vt_VectorClass; /*0x7b27b1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x7b27b1*/
   if ( v4 && Block->u8_45 ) /*0x7b27bc*/
   {
     operator delete((void *)(v4)); /*0x7b27c2*/
@@ -121,7 +121,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
   Block->u32_40 = 0; /*0x7b27d0*/
   void *v5; // eax
   v5 = (void *)Block->q024; /*0x7b27d3*/
-  Block->u32_20 = &vt_VectorClass; /*0x7b27d6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x7b27d6*/
   if ( v5 && Block->u8_2D ) /*0x7b27e1*/
   {
     operator delete((void *)(v5)); /*0x7b27e7*/
@@ -131,7 +131,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
   Block->u32_28 = 0; /*0x7b27f5*/
   void *v6; // eax
   v6 = (void *)Block->q00C; /*0x7b27f8*/
-  Block->LocalAddress = (int)&vt_VectorClass; /*0x7b27fb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x7b27fb*/
   if ( v6 && Block->u8_15 ) /*0x7b2806*/
   {
     operator delete((void *)(v6)); /*0x7b280c*/

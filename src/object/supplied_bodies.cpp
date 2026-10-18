@@ -16184,7 +16184,7 @@ int TechnoClass::GetAmmoCount() const
   {
     case 1: /*0x708c4e*/
       ammo = (double)this->ammo; /*0x708c5f*/
-      v3 = (*((int (__usercall **)(TechnoClass *))this->vfptr + 33))(this); /*0x708c63*/
+      v3 = (*((int (**)(TechnoClass *))this->vfptr + 33))(this); /*0x708c63*/
       v4 = (double)(*(int (__thiscall **)(int))(*(unsigned int *)v3 + 116))(v3); /*0x708c74*/
       goto LABEL_7; /*0x708c78*/
     case 2: /*0x708c4e*/
@@ -16194,7 +16194,7 @@ int TechnoClass::GetAmmoCount() const
       goto LABEL_7; /*0x708cf2*/
     case 3: /*0x708c4e*/
       ammo = (double)this->passengers[0]; /*0x708cbe*/
-      v7 = (*((int (__usercall **)(TechnoClass *))this->vfptr + 33))(this); /*0x708cc2*/
+      v7 = (*((int (**)(TechnoClass *))this->vfptr + 33))(this); /*0x708cc2*/
       v4 = (double)(*(int (__thiscall **)(int))(*(unsigned int *)v7 + 116))(v7); /*0x708cd3*/
       goto LABEL_7; /*0x708cd7*/
     case 5: /*0x708c4e*/
@@ -16202,7 +16202,7 @@ int TechnoClass::GetAmmoCount() const
       if ( !captureManager ) /*0x708c82*/
         goto LABEL_10; /*0x708c82*/
       ammo = (double)TechnoClass::processPowerDrain(captureManager); /*0x708c99*/
-      v6 = (*((int (__usercall **)(TechnoClass *))this->vfptr + 33))(this); /*0x708c9d*/
+      v6 = (*((int (**)(TechnoClass *))this->vfptr + 33))(this); /*0x708c9d*/
       v4 = (double)(*(int (__thiscall **)(int))(*(unsigned int *)v6 + 116))(v6); /*0x708cae*/
   LABEL_7:
       v8 = (*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this); /*0x708cf8*/
@@ -17818,7 +17818,7 @@ int TechnoClass::ComputeDamage()
   v20 = (*(int (**)(int *))(*a2 + 44))(a2); /*0x70ce57*/
   if ( (v20 == 6 || v20 == 15 || v20 == 1 || v20 == 2) && a2 ) /*0x70ce74*/
   {
-    v21 = (*(int (__usercall **)@<eax>(int *@<ecx>, TechnoClass *))(*a2 + 740))(a2, this); /*0x70ce7f*/
+    v21 = (*(int (**)(int *, TechnoClass *))(*a2 + 740))(a2, this); /*0x70ce7f*/
     v22 = *(unsigned int **)(*(int (**)(int *, int))(*a2 + 1016))(a2, v21); /*0x70ce90*/
     if ( v22 ) /*0x70ce94*/
     {

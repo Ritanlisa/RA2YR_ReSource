@@ -33,7 +33,7 @@ unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int *Block, char a2)
   
   void *v3; // eax
   v3 = (void *)*(Block + 1); /*0x74f653*/
-  *Block = (unsigned int)(&vt_VectorClass); /*0x74f656*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x74f656*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74f660*/
   {
     RA2_OPDEL(v3); /*0x74f668*/

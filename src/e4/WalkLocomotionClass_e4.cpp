@@ -199,9 +199,9 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x75c69a*/
   {
     a1->Piggybackee = 0; /*0x75c69c*/
-    *(unsigned int *)a1->0 = &vt_WalkLocomotionClass; /*0x75c6a3*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_WalkLocomotionClass) */  /*0x75c6a3*/
     *(unsigned int *)&a1->0[4] = &vt_WalkLocomotionClass; /*0x75c6a9*/
-    *(unsigned int *)a1->__pad_18 = &vt_WalkLocomotionClass; /*0x75c6b0*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_WalkLocomotionClass) */  /*0x75c6b0*/
   }
   (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x75c6c3*/
   if ( !(unsigned char)pStm ) /*0x75c6cc*/
@@ -289,7 +289,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 {
 
 
-  *(unsigned int *)this->LocomotionClass = &vt_WalkLocomotionClass; /*0x75cbe3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_WalkLocomotionClass) */  /*0x75cbe3*/
   /* X11: vtable install elided (implicit via WalkLocomotionClass virtuals 0x75cbe9) */
   /* X11: vtable install elided (implicit via WalkLocomotionClass virtuals 0x75cbf0) */
   ILocomotion *Piggybackee; // eax

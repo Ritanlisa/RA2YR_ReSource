@@ -2698,7 +2698,7 @@ int UnitClass::CalcMoveTarget()
     v17 = this->unknownBool685[0] + 1; /*0x735b3e*/
     this->unknownBool685[0] = v17; /*0x735b44*/
     v18 = v5[v17 + 12]; /*0x735b4c*/
-    (*(void (__usercall **)(UnitClass *@<ecx>, int *, double@<st0>))(vfptr + 436))(this, this->unknownCoords568, v9); /*0x735b58*/
+    (*(void (**)(UnitClass *, int *, double))(vfptr + 436))(this, this->unknownCoords568, v9); /*0x735b58*/
     if ( v18 != -1 ) /*0x735b64*/
     {
       v19 = Coord::Subtract( /*0x735b92*/
@@ -2763,7 +2763,7 @@ int UnitClass::CalcMoveTarget()
     ObjectVector::Construct(&v78, 0, 0); /*0x735e7c*/
     v51 = v78.ObjectVector_field_0x08; /*0x735e81*/
     ObjectVector_field_0x14 = 10; /*0x735e85*/
-    *(unsigned int *)v78.__pad_0 = &vt_DynamicVectorClass_ObjectClass; /*0x735e8c*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_ObjectClass) */  /*0x735e8c*/
     v78.ObjectVector_field_0x14 = 10; /*0x735e94*/
     v78.ObjectVector_field_0x10 = 0; /*0x735e98*/
     while ( 1 ) /*0x735ea2*/
@@ -2795,7 +2795,7 @@ LABEL_26:
           }
         }
         (*(void (**)(UnitClass *, unsigned int, unsigned int))&this->vfptr->audioController7)(this, 0, 0); /*0x735f6a*/
-        *(unsigned int *)v78.__pad_0 = &vt_VectorClass_ObjectClass; /*0x735f74*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x735f74*/
         if ( v78.ObjectVector_field_0x04 && BYTE1(v78.ObjectVector_field_0x0C) ) /*0x735f8a*/
           __3_YAXPAX_Z((void *)v78.ObjectVector_field_0x04); /*0x735f91*/
         return; /*0x735fa0*/

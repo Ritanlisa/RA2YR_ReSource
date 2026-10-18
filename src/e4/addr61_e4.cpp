@@ -488,10 +488,10 @@ switch ( a2 ) /*0x61d75b*/
       ++v11; /*0x61d808*/
       v9[3] = (unsigned int)(0); /*0x61d809*/
       v9[1] = v11; /*0x61d810*/
-      *v9 = (unsigned int)(&XSurface_Vtable); /*0x61d81e*/
+      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x61d81e*/
       v9[4] = (unsigned int)(2); /*0x61d824*/
       ((Buffer*)v9 + 5)->Init(0, 2 * v10 * v11); /*0x61d82b*/
-      *v9 = (unsigned int)(&BSurface_Vtable); /*0x61d830*/
+      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x61d830*/
       v12 = v9; /*0x61d836*/
     }
     else
@@ -589,10 +589,10 @@ int RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
               v11[2] = v21; /*0x61ee3d*/
               v11[1] = v13; /*0x61ee45*/
               v11[3] = 0; /*0x61ee4e*/
-              *v11 = (unsigned int)(&XSurface_Vtable); /*0x61ee55*/
+              /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x61ee55*/
               v11[4] = (unsigned int)(2); /*0x61ee5b*/
               Buffer::Init(v11 + 5, 0, 2 * v13 * v12); /*0x61ee62*/
-              *v11 = (unsigned int)(&BSurface_Vtable); /*0x61ee67*/
+              /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x61ee67*/
               v14 = (unsigned int)(v11); /*0x61ee6d*/
             }
             else

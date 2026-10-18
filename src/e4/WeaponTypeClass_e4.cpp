@@ -106,15 +106,15 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   VectorClass::Construct((VectorClass *)aP1->Report, 0, 0); /*0x771cc5*/
   aP1->Report[5] = 10; /*0x771cca*/
   aP1->Report[4] = 0; /*0x771cd1*/
-  aP1->Report[0] = (int)&vt_TypeList; /*0x771cd4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x771cd4*/
   VectorClass::Construct((VectorClass *)aP1->DownReport, 0, 0); /*0x771ce4*/
   aP1->DownReport[5] = 10; /*0x771ce9*/
   aP1->DownReport[4] = 0; /*0x771cf0*/
-  aP1->DownReport[0] = (int)&vt_TypeList; /*0x771cf3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x771cf3*/
   AnimTypeVector::Constructor((AnimTypeVector *)aP1->Anim, 0, 0); /*0x771d03*/
   aP1->Anim[5] = 10; /*0x771d08*/
   aP1->Anim[4] = 0; /*0x771d0f*/
-  aP1->Anim[0] = (int)&vt_TypeList; /*0x771d12*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x771d12*/
   aP1->OccupantAnim = 0; /*0x771d18*/
   aP1->AssaultAnim = 0; /*0x771d1e*/
   aP1->OpenToppedAnim = 0; /*0x771d24*/
@@ -172,8 +172,8 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   aP1->IsRadEruption = 0; /*0x771e65*/
   aP1->RadLevel = 0; /*0x771e6b*/
   aP1->IsMagBeam = 0; /*0x771e71*/
-  aP1->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771e77*/
-  aP1->q15C = &vt_WeaponTypeClass; /*0x771e7d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WeaponTypeClass) */  /*0x771e77*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WeaponTypeClass) */  /*0x771e7d*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771e83) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771e8a) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x771e91*/
@@ -199,7 +199,7 @@ int WeaponTypeClass::Destructor(void *a1)
 {
 
 
-  a1->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f57*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WeaponTypeClass) */  /*0x771f57*/
   /* X11: vtable install elided (qmark slot, RHS vt_WeaponTypeClass) */  /*0x771f5d*/
   /* X11: vtable install elided (qmark slot, RHS vt_WeaponTypeClass) */  /*0x771f64*/
   /* X11: vtable install elided (qmark slot, RHS vt_WeaponTypeClass) */  /*0x771f6b*/
@@ -223,7 +223,7 @@ int WeaponTypeClass::Destructor(void *a1)
   }
   void *v3; // eax
   v3 = (void *)a1->Anim[1]; /*0x771fce*/
-  a1->Anim[0] = (int)&vt_VectorClass; /*0x771fd4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x771fd4*/
   if ( v3 && BYTE1(a1->Anim[3]) ) /*0x771fe2*/
   {
     __3_YAXPAX_Z(v3); /*0x771feb*/
@@ -233,7 +233,7 @@ int WeaponTypeClass::Destructor(void *a1)
   a1->Anim[2] = 0; /*0x771fff*/
   void *v4; // eax
   v4 = (void *)a1->DownReport[1]; /*0x772005*/
-  a1->DownReport[0] = (int)&vt_VectorClass; /*0x77200b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x77200b*/
   if ( v4 && BYTE1(a1->DownReport[3]) ) /*0x772019*/
   {
     __3_YAXPAX_Z(v4); /*0x772022*/
@@ -243,7 +243,7 @@ int WeaponTypeClass::Destructor(void *a1)
   a1->DownReport[2] = 0; /*0x772036*/
   void *v5; // eax
   v5 = (void *)a1->Report[1]; /*0x77203c*/
-  a1->Report[0] = (int)&vt_VectorClass; /*0x772042*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x772042*/
   if ( v5 && BYTE1(a1->Report[3]) ) /*0x772050*/
   {
     __3_YAXPAX_Z(v5); /*0x772059*/
@@ -373,7 +373,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     if ( Report ) /*0x772d77*/
     {
       ((DynamicVectorClass *)Report)->Construct(0, 0); /*0x772d7f*/
-      *Report = (int)&vt_TypeList; /*0x772d84*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x772d84*/
     }
     v7->vt_entry_68(&a2, 4, 0); /*0x772d97*/
     int j; // ebx
@@ -452,10 +452,10 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
 
   v3 = v2; /*0x7730f3*/
-  v2->vfptr = (int)&vt_WeaponTypeClass_4; /*0x7730f7*/
-  v2->vfptr1 = (int)&vt_WeaponTypeClass_4; /*0x7730fd*/
-  v2->vfptr2 = (int)&vt_WeaponTypeClass_4; /*0x773104*/
-  v2->vfptr3 = (int)&vt_WeaponTypeClass_4; /*0x77310b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WeaponTypeClass_4) */  /*0x7730f7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WeaponTypeClass_4) */  /*0x7730fd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WeaponTypeClass_4) */  /*0x773104*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WeaponTypeClass_4) */  /*0x77310b*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x773112*/
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
@@ -473,7 +473,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
     while ( v4 < g_WeaponTypePool ); /*0x77316c*/
   }
   NeedsSaveOrLink = v3->nextArrayIndex.NeedsSaveOrLink; /*0x77316e*/
-  v3[6].referenceCount = (int)&vt_VectorClass_AnimTypeClass_const; /*0x773174*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x773174*/
   if ( NeedsSaveOrLink && BYTE1(v3[7].vfptr1) ) /*0x773182*/
   {
     __3_YAXPAX_Z(NeedsSaveOrLink); /*0x77318b*/
@@ -482,7 +482,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   BYTE1(v3[7].vfptr1) = 0; /*0x773199*/
   v3[7].vfptr = 0; /*0x77319f*/
   vfptr1 = v3->nextArrayIndex.vfptr1; /*0x7731a5*/
-  v3[6].vfptr = (int)&vt_VectorClass_int; /*0x7731ab*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x7731ab*/
   if ( vfptr1 && BYTE1(v3[6].vfptr3) ) /*0x7731b9*/
   {
     __3_YAXPAX_Z(vfptr1); /*0x7731c2*/
@@ -491,7 +491,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   BYTE1(v3[6].vfptr3) = 0; /*0x7731d0*/
   v3[6].vfptr2 = 0; /*0x7731d6*/
   vfptr3 = v3->abstractFlags.vfptr3; /*0x7731dc*/
-  v3[5].vfptr2 = (int)&vt_VectorClass_int; /*0x7731e2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x7731e2*/
   if ( vfptr3 && BYTE1(v3[5].abstractFlags) ) /*0x7731f0*/
   {
     __3_YAXPAX_Z(vfptr3); /*0x7731f9*/
@@ -586,10 +586,10 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1, void *a2)
 {
 
   AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
-  this->Report[0] = (int)&vt_TypeList; /*0x771f12*/
-  this->DownReport[0] = (int)&vt_TypeList; /*0x771f18*/
-  this->Anim[0] = (int)&vt_TypeList; /*0x771f1e*/
-  this->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f28*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x771f12*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x771f18*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x771f1e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WeaponTypeClass) */  /*0x771f28*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f2e) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f35) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f3c) */

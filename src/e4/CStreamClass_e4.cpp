@@ -105,8 +105,8 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
 
   v4 = v3; /*0x4a3112*/
   CStreamClass_field_0x08 = v3->CStreamClass_field_0x08; /*0x4a3116*/
-  v3->Release_slot = &vt_CStreamClass_2; /*0x4a3119*/
-  v3->CStreamClass_field_0x04 = (int)&vt_CStreamClass_2; /*0x4a3121*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_CStreamClass_2) */  /*0x4a3119*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_CStreamClass_2) */  /*0x4a3121*/
   if ( CStreamClass_field_0x08 ) /*0x4a3128*/
   {
     if ( (((v3->CStreamClass_field_0x10) >> 8) & 0xFF) /*0x4a314b*/
@@ -427,7 +427,7 @@ VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4a4d93*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4a4d96*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4a4d96*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4a4da0*/
   {
     operator delete((v3)); /*0x4a4da8*/

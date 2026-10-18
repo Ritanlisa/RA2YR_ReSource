@@ -228,7 +228,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via BlitTransLucent25Alpha virtuals 0x49a34b) */
   FractalNoise::Dtor(m_8); /*0x49a352*/
   this->m_8 = 0; /*0x49a35b*/
-  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a364*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
     __3_YAXPAX_Z(this); /*0x49a36d*/
   return (gamemd::BlitTransLucent25Alpha_ushort *)(this->vtable1); /*0x49a377*/
@@ -254,10 +254,10 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
 
   void *m_8; // eax
   m_8 = (void *)Block->u32_8; /*0x49a728*/
-  *(unsigned int *)Block->tail_0 = &vt_BlitTransLucent25AlphaZReadWrite; /*0x49a72b*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_BlitTransLucent25AlphaZReadWrite) */  /*0x49a72b*/
   FractalNoise::Dtor(m_8); /*0x49a732*/
   *&Block->u32_8 = 0; /*0x49a73b*/
-  *(unsigned int *)Block->tail_0 = &vt_Blitter; /*0x49a744*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x49a744*/
   if ( (a2 & 1) != 0 ) /*0x49a74a*/
     operator delete((Block)); /*0x49a74d*/
   return Block->tail_0; /*0x49a757*/

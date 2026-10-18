@@ -57,7 +57,7 @@ int GraphicMenuImageItem::QueryInterface(char a2)
   return this; /*0x4f3882*/
 }
 // 0x49ef40
-int StringVector::StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
+int StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
 {
   int result; // eax
   int m_8; // edx

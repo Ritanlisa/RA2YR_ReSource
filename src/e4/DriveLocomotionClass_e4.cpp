@@ -32,7 +32,7 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4af79a*/
   {
     a1->Piggybackee = 0; /*0x4af79c*/
-    *(unsigned int *)a1->0 = &vt_DriveLocomotionClass; /*0x4af7a3*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DriveLocomotionClass) */  /*0x4af7a3*/
     *(unsigned int *)&a1->0[4] = &vt_DriveLocomotionClass; /*0x4af7a9*/
     *(unsigned int *)a1->__pad_18 = &off_7E7E8C; /*0x4af7b0*/
   }
@@ -132,8 +132,8 @@ namespace gamemd {
 DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
 
-  *(unsigned int *)Block->0 = &vt_DriveLocomotionClass; /*0x4b4d03*/
-  *&Block->u32_68 = &vt_DriveLocomotionClass; /*0x4b4d09*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DriveLocomotionClass) */  /*0x4b4d03*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DriveLocomotionClass) */  /*0x4b4d09*/
   *(unsigned int *)Block->u32_18 = &off_7E7E8C; /*0x4b4d10*/
   ILocomotion *Piggybackee; // eax
   Piggybackee = Block->Piggybackee; /*0x4b4d17*/

@@ -51,7 +51,7 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
   this->q008 = a2; /*0x5138fe*/
   (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x513901*/
   (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513905*/
-  this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x513908*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
     if ( a3 ) /*0x513916*/
@@ -75,7 +75,7 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
   this->q008 = a2; /*0x5d89ae*/
   (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x5d89b1*/
   (this->InfantryTypeVector_field_0x0C) = ((this->InfantryTypeVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5d89b5*/
-  this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5d89b8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x5d89b8*/
   if ( a2 ) /*0x5d89be*/
   {
     if ( a3 ) /*0x5d89c6*/

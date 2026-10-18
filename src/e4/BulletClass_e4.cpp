@@ -49,9 +49,9 @@ BulletClass::BulletClass()
   this->__pad_154 = 0; /*0x466419*/
   this->q158 = 0; /*0x46641f*/
   /* X11: vtable install elided (implicit via BulletClass virtuals 0x466425) */
-  this->BulletClass_field_0x4 = &vt_BulletClass; /*0x46642b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_BulletClass) */  /*0x46642b*/
   /* X11: vtable install elided (implicit via BulletClass virtuals 0x466431) */
-  this->q00C = (unsigned int)&vt_BulletClass; /*0x466438*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_BulletClass) */  /*0x466438*/
   AbstractClass::GenerateUniqueID(&this->BulletClass_field_0x4); /*0x46643f*/
   *(unsigned int *)this->q134 = 0; /*0x466444*/
   *&this->TargetCoords = 0; /*0x46644a*/

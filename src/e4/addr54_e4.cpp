@@ -2039,7 +2039,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   unsigned int *v9; // eax
   __int16 v10; // cx
 
-  *(unsigned int *)this = &vt_IPXManagerClass; /*0x5408f7*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_IPXManagerClass) */  /*0x5408f7*/
   if ( dword_887628 ) /*0x540905*/
   {
     (**(void (***)(int, int))dword_887628)(dword_887628, 1); /*0x54090b*/
@@ -2947,7 +2947,7 @@ int sub_54E260()
   g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x54e26d*/
   g_MissionQueueFrame.nextScenario[2] = 0; /*0x54e276*/
   sub_54EBF0((VectorClass *)&g_MissionQueueFrame.nextScenario[3], 0, 0); /*0x54e280*/
-  g_MissionQueueFrame.nextScenario[3] = (int)&vt_DynamicVectorClass; /*0x54e298*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x54e298*/
   g_MissionQueueFrame.nextScenario[8] = 10; /*0x54e2a2*/
   g_MissionQueueFrame.nextScenario[7] = 0; /*0x54e2ac*/
   g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x54e2b6*/
@@ -2970,7 +2970,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   this->M20 = 0; /*0x54e37b*/
   LOBYTE(this->q018) = 1; /*0x54e37e*/
   BYTE1(this->M25) = 0; /*0x54e382*/
-  this->M12 = &vt_DynamicVectorClass; /*0x54e385*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x54e385*/
   this->q020 = (void *)10; /*0x54e38c*/
   this->M28 = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&DataGlobal_A8EB00[644]; /*0x54e39e*/
@@ -3003,7 +3003,7 @@ void E4Recv_54E690::sub_54E690()
   vtable3[3](v5); /*0x54e6b8*/
   (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/
-  *p_vtable3 = &vt_VectorClass; /*0x54e6c9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x54e6c9*/
   if ( v7 && *((unsigned char *)p_vtable3 + 13) ) /*0x54e6d3*/
   {
     __3_YAXPAX_Z(v7); /*0x54e6d9*/

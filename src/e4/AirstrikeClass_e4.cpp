@@ -360,10 +360,10 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v14; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
-  this->vfptr = (int)&vt_AirstrikeClass_4; /*0x41d389*/
-  this->vfptr1 = (int)&vt_AirstrikeClass_4; /*0x41d38f*/
-  this->vfptr2 = (int)&vt_AirstrikeClass_4; /*0x41d396*/
-  this->vfptr3 = (int)&vt_AirstrikeClass_4; /*0x41d39d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AirstrikeClass_4) */  /*0x41d389*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AirstrikeClass_4) */  /*0x41d38f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AirstrikeClass_4) */  /*0x41d396*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AirstrikeClass_4) */  /*0x41d39d*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0

@@ -415,10 +415,10 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
 
   void *m_8; // eax
   m_8 = (void *)Block->u32_8; /*0x49a428*/
-  *(unsigned int *)Block->tail_0 = &vt_BlitTransXlatAlphaZRead; /*0x49a42b*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_BlitTransXlatAlphaZRead) */  /*0x49a42b*/
   FractalNoise::Dtor(m_8); /*0x49a432*/
   *&Block->u32_8 = 0; /*0x49a43b*/
-  *(unsigned int *)Block->tail_0 = &vt_Blitter; /*0x49a444*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
     operator delete((Block)); /*0x49a44d*/
   return Block->tail_0; /*0x49a457*/

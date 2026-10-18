@@ -1840,12 +1840,12 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
   this->M380 = 0; /*0x48879f*/
   this->M384 = 1; /*0x4887a5*/
   this->M385 = 0; /*0x4887ab*/
-  this->M372 = &vt_DynamicVectorClass; /*0x4887b1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x4887b1*/
   this->M392 = 10; /*0x4887bb*/
   this->M388 = 0; /*0x4887c5*/
   this->M400 = 0; /*0x4887cb*/
   this->M396 = 1; /*0x4887d1*/
-  *(unsigned int *)this->__pad_0 = &vt_ColorListClass; /*0x4887d7*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ColorListClass) */  /*0x4887d7*/
   return this->vfptr; /*0x4887df*/
 
 }
@@ -1862,11 +1862,11 @@ int E4Recv_4887F0::sub_4887F0()
 
   v2 = this->M372; /*0x4887f5*/
   v3 = &this->M372; /*0x4887fb*/
-  *(unsigned int *)this->__pad_0 = &vt_ColorListClass; /*0x488803*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ColorListClass) */  /*0x488803*/
   (*(void (**)(char *))(v2 + 12))(&this->M372); /*0x488809*/
   this->M400 = 0; /*0x48880e*/
   v4 = (void *)*((unsigned int *)v3 + 1); /*0x488814*/
-  *(unsigned int *)v3 = &vt_VectorClass_int; /*0x488819*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x488819*/
   if ( v4 && v3[13] ) /*0x488821*/
   {
     __3_YAXPAX_Z(v4); /*0x488827*/

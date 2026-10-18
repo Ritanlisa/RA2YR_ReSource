@@ -73,10 +73,10 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
         *(unsigned int *)(v3 + 12) = 0; /*0x4654a6*/
         *(unsigned int *)(v3 + 4) = v1 + 16; /*0x4654ab*/
         *(unsigned int *)(v3 + 8) = v1 + 16; /*0x4654b6*/
-        *(unsigned int *)v3 = &XSurface_Vtable; /*0x4654b9*/
+        /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4654b9*/
         *(unsigned int *)(v3 + 16) = 1; /*0x4654bf*/
         Buffer::Init((Buffer *)(v3 + 20), 0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
-        *(unsigned int *)v3 = &BSurface_Vtable; /*0x4654cb*/
+        /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4654cb*/
         dword_89DDC0 = (Draw *)v3; /*0x4654d1*/
       }
       else
@@ -179,9 +179,9 @@ unsigned char * BulletTypeClass::Construct(char *aP1, void *a2, void *a3, void *
   this->animHigh = 0; /*0x46bcd4*/
   this->animRate = 0; /*0x46bcda*/
   this->Flat_d = 0; /*0x46bce0*/
-  *(unsigned int *)this->ObjectTypeClass = (unsigned int)(&vt_BulletTypeClass); /*0x46bce6*/
-  *&this->Flat_d = &vt_BulletTypeClass; /*0x46bcec*/
-  *&this->AbstractClass_E58 = &vt_BulletTypeClass; /*0x46bcf2*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46bce6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46bcec*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46bcf2*/
   /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46bcf9) */
   ((int)(&this->AbstractClass_E58))->GenerateUniqueID(); /*0x46bd00*/
   this->IsLogic_d = 1; /*0x46bd05*/
@@ -593,7 +593,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
 {
 
 
-  *(unsigned int *)a1->ObjectTypeClass = &vt_BulletTypeClass; /*0x46c896*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46c896*/
   *(unsigned int *)&a1->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46c89c*/
   *(unsigned int *)&a1->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c8a3*/
   *(unsigned int *)&a1->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c8aa*/

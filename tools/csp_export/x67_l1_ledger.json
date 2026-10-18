@@ -1,0 +1,6150 @@
+{
+ "stats": {
+  "lhs-bank:charset": 254,
+  "lhs-bank:local-value-assign": 385,
+  "lhs-bank:raw-global-slot": 257,
+  "rhs-nonliteral-bank": 29,
+  "lhs-bank:residue-shape": 85,
+  "lhs-bank:paren-lhs": 13
+ },
+ "banked": [
+  [
+   "src\\e4\\AircraftTypeClass_e4.cpp",
+   64,
+   "lhs-charset",
+   "*(unsigned int *)(aP1 + 4) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c906*/"
+  ],
+  [
+   "src\\e4\\AircraftTypeClass_e4.cpp",
+   66,
+   "lhs-charset",
+   "*(unsigned int *)(aP1 + 12) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c913*/"
+  ],
+  [
+   "src\\e4\\AircraftTypeClass_e4.cpp",
+   201,
+   "lhs-charset",
+   "*(unsigned int *)&a1->TechnoTypeClass[4] = &vt_AircraftTypeClass; /*0x41cfec*/"
+  ],
+  [
+   "src\\e4\\AircraftTypeClass_e4.cpp",
+   202,
+   "lhs-charset",
+   "*(unsigned int *)&a1->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41cff3*/"
+  ],
+  [
+   "src\\e4\\AircraftTypeClass_e4.cpp",
+   203,
+   "lhs-charset",
+   "*(unsigned int *)&a1->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41cffa*/"
+  ],
+  [
+   "src\\e4\\ArtConfig_e4.cpp",
+   56,
+   "local-value-assign",
+   "v11[0] = (unsigned int)(&vt_CCFileClass); /*0x76fcdf*/"
+  ],
+  [
+   "src\\e4\\BombClass_e4.cpp",
+   138,
+   "lhs-raw-global-slot",
+   "dword_89C668 = (int)&vt_DynamicVectorClass; /*0x43856d*/"
+  ],
+  [
+   "src\\e4\\BuildingTypeClass_e4.cpp",
+   1368,
+   "rhs-nonliteral",
+   "result = v2->vt_slot_12(&v14, 4, 0); /*0x46515c*/"
+  ],
+  [
+   "src\\e4\\BulletTypeClass_e4.cpp",
+   597,
+   "lhs-charset",
+   "*(unsigned int *)&a1->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46c89c*/"
+  ],
+  [
+   "src\\e4\\BulletTypeClass_e4.cpp",
+   598,
+   "lhs-charset",
+   "*(unsigned int *)&a1->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c8a3*/"
+  ],
+  [
+   "src\\e4\\BulletTypeClass_e4.cpp",
+   599,
+   "lhs-charset",
+   "*(unsigned int *)&a1->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c8aa*/"
+  ],
+  [
+   "src\\e4\\BulletTypeClass_e4.cpp",
+   903,
+   "lhs-charset",
+   "*(unsigned int *)&aP0->vfptr[4] = &vt_BulletTypeClass; /*0x46c6ca*/"
+  ],
+  [
+   "src\\e4\\BulletTypeClass_e4.cpp",
+   904,
+   "lhs-charset",
+   "*(unsigned int *)&aP0->vfptr[8] = &vt_BulletTypeClass; /*0x46c6d1*/"
+  ],
+  [
+   "src\\e4\\BulletTypeClass_e4.cpp",
+   905,
+   "lhs-charset",
+   "*(unsigned int *)&aP0->vfptr[12] = &vt_BulletTypeClass; /*0x46c6d8*/"
+  ],
+  [
+   "src\\e4\\CCINIClass_e4.cpp",
+   159,
+   "local-value-assign",
+   "v10[0] = (int)&vt_FileStraw; /*0x474223*/"
+  ],
+  [
+   "src\\e4\\COMClass_e4.cpp",
+   40,
+   "lhs-charset",
+   "*(unsigned int *)&v5->__pad_0 = &vt_rc_ptr; /*0x767033*/"
+  ],
+  [
+   "src\\e4\\CampaignClass_e4.cpp",
+   109,
+   "lhs-charset",
+   "*(unsigned int *)(v6 + 4) = (unsigned int)(&vt_CampaignClass); /*0x46cecc*/"
+  ],
+  [
+   "src\\e4\\CampaignClass_e4.cpp",
+   110,
+   "lhs-charset",
+   "*(unsigned int *)(v6 + 8) = (unsigned int)(&vt_CampaignClass); /*0x46ced3*/"
+  ],
+  [
+   "src\\e4\\CampaignClass_e4.cpp",
+   111,
+   "lhs-charset",
+   "*(unsigned int *)(v6 + 12) = (unsigned int)(&vt_CampaignClass); /*0x46ceda*/"
+  ],
+  [
+   "src\\e4\\Campaign_e4.cpp",
+   201,
+   "lhs-residue-shape",
+   "*(unsigned int *)(a3_2) = (unsigned int)(&vt_rc_ptr); /*0x7656e7*/"
+  ],
+  [
+   "src\\e4\\CaptureManagerClass_e4.cpp",
+   883,
+   "rhs-nonliteral",
+   "result = v2->vt_entry_68(&v16, 4, 0); /*0x47280f*/"
+  ],
+  [
+   "src\\e4\\Cell_e4.cpp",
+   221,
+   "local-value-assign",
+   "v15 = &vt_DynamicVectorClass; /*0x4816f9*/"
+  ],
+  [
+   "src\\e4\\Cell_e4.cpp",
+   270,
+   "local-value-assign",
+   "v15 = &vt_VectorClass; /*0x4817e9*/"
+  ],
+  [
+   "src\\e4\\Conflict_e4.cpp",
+   269,
+   "lhs-residue-shape",
+   "*(unsigned int *)(a3_2) = (unsigned int)(&vt_rc_ptr); /*0x766867*/"
+  ],
+  [
+   "src\\e4\\ConnectionPointClass_e4.cpp",
+   33,
+   "lhs-charset",
+   "*(unsigned int *)(v3 + 4) = (unsigned int)(&vt_VectorClass); /*0x4a07a5*/"
+  ],
+  [
+   "src\\e4\\ConnectionPointClass_e4.cpp",
+   74,
+   "lhs-charset",
+   "*(unsigned int *)(v3 + 4) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a081e*/"
+  ],
+  [
+   "src\\e4\\CreateTeamCommand_e4.cpp",
+   198,
+   "lhs-charset",
+   "*(unsigned int *)&v5->__pad_0 = &vt_rc_ptr; /*0x538a43*/"
+  ],
+  [
+   "src\\e4\\Credits_e4.cpp",
+   82,
+   "local-value-assign",
+   "v11[0] = (unsigned int)(&vt_CCFileClass); /*0x52cc7c*/"
+  ],
+  [
+   "src\\e4\\Credits_e4.cpp",
+   118,
+   "local-value-assign",
+   "v11[0] = (unsigned int)(&vt_CCFileClass); /*0x52cd3d*/"
+  ],
+  [
+   "src\\e4\\DriveLocomotionClass_e4.cpp",
+   36,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_DriveLocomotionClass; /*0x4af7a9*/"
+  ],
+  [
+   "src\\e4\\EventClass_e4.cpp",
+   746,
+   "lhs-raw-global-slot",
+   "dword_87F658 = (int)&vt_VectorClass; /*0x40be18*/"
+  ],
+  [
+   "src\\e4\\FindWDTTerritoryClass_e4.cpp",
+   25,
+   "local-value-assign",
+   "v5 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Confli"
+  ],
+  [
+   "src\\e4\\FlyLocomotionClass_e4.cpp",
+   207,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_FlyLocomotionClass; /*0x4cfcde*/"
+  ],
+  [
+   "src\\e4\\FootClass_e4.cpp",
+   247,
+   "rhs-nonliteral",
+   "v16 = v6->vt_slot_72(&v28.StreamClass_field_0C); /*0x7101bf*/"
+  ],
+  [
+   "src\\e4\\GameConfig_e4.cpp",
+   123,
+   "local-value-assign",
+   "v7[0] = (unsigned int)(&vt_List); /*0x679dfa*/"
+  ],
+  [
+   "src\\e4\\GameConfig_e4.cpp",
+   133,
+   "local-value-assign",
+   "v6[0] = (void*)(&CCINIClass_Vtable); /*0x679e23*/"
+  ],
+  [
+   "src\\e4\\GameConfig_e4.cpp",
+   139,
+   "local-value-assign",
+   "v12[0] = (unsigned int)(&vt_CCFileClass); /*0x679e60*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   268,
+   "lhs-charset",
+   "*(&this->u32_E) = (int)&vt_DynamicVectorClass_TagClass; /*0x4f54cf*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   385,
+   "lhs-charset",
+   "*(&this->u8_95) = (int)&vt_DynamicVectorClass_SuperClass; /*0x4f57cf*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   581,
+   "lhs-charset",
+   "*(&this->u8_5819) = (int)&vt_DynamicVectorClass_IConnectionPoint; /*0x4f5d68*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   598,
+   "lhs-charset",
+   "*(&this->AbstractClass_1) = (int)&vt_HouseClass; /*0x4f5dd3*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   599,
+   "lhs-charset",
+   "*(&this->q002) = (int)&vt_HouseClass; /*0x4f5dda*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   600,
+   "lhs-charset",
+   "*(&this->u32_3) = (int)&vt_HouseClass; /*0x4f5de1*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   601,
+   "lhs-charset",
+   "*(&this->u32_9) = (int)&vt_HouseClass; /*0x4f5de8*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   602,
+   "lhs-charset",
+   "*(&this->u32_A) = (int)&vt_HouseClass; /*0x4f5def*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   603,
+   "lhs-charset",
+   "*(&this->u32_B) = (int)&vt_HouseClass; /*0x4f5dfb*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   2180,
+   "local-value-assign",
+   "v133 = (int)&vt_VectorClass_BuildingTypeClass; /*0x507555*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   2188,
+   "local-value-assign",
+   "v143 = (int)&vt_VectorClass_BuildingTypeClass; /*0x507591*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   2196,
+   "local-value-assign",
+   "v138 = (int)&vt_VectorClass_BuildingTypeClass; /*0x5075cd*/"
+  ],
+  [
+   "src\\e4\\HouseClass_e4.cpp",
+   2218,
+   "lhs-paren-lhs",
+   "*(v58 - 1) = (int)&vt_VectorClass_Cell; /*0x507649*/"
+  ],
+  [
+   "src\\e4\\HouseTypeClass_e4.cpp",
+   44,
+   "rhs-nonliteral",
+   "this->veteranInfantry[0] = (gamemd::InfantryTypeClass*)(&vt_TypeList); /*0x51165d*/"
+  ],
+  [
+   "src\\e4\\HouseTypeClass_e4.cpp",
+   80,
+   "lhs-charset",
+   "*(unsigned int *)&a1->pad_16D[23] = &vt_VectorClass; /*0x51171a*/"
+  ],
+  [
+   "src\\e4\\HouseTypeClass_e4.cpp",
+   90,
+   "lhs-charset",
+   "*(unsigned int *)&a1->prefix = &vt_VectorClass; /*0x51174f*/"
+  ],
+  [
+   "src\\e4\\HouseTypeClass_e4.cpp",
+   752,
+   "local-value-assign",
+   "v17 = (AircraftTypeVector)&vt_TypeList_AircraftTypeClass_const; /*0x67b94c*/"
+  ],
+  [
+   "src\\e4\\HouseTypeClass_e4.cpp",
+   778,
+   "local-value-assign",
+   "v17 = (AircraftTypeVector)&vt_VectorClass_AircraftTypeClass_const; /*0x67b9eb*/"
+  ],
+  [
+   "src\\e4\\HoverLocomotionClass_e4.cpp",
+   48,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x5170d4*/"
+  ],
+  [
+   "src\\e4\\HoverLocomotionClass_e4.cpp",
+   51,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_HoverLocomotionClass; /*0x5170e6*/"
+  ],
+  [
+   "src\\e4\\INIClass_e4.cpp",
+   337,
+   "local-value-assign",
+   "result[7] = (unsigned int)(&vt_GenericNode); /*0x535ac4*/"
+  ],
+  [
+   "src\\e4\\IsometricTileClass_e4.cpp",
+   22,
+   "rhs-nonliteral",
+   "*this = (gamemd::IsometricTileClass)((IsometricTileClass)&vt_IsometricTileClass); /*0x5437a2*/"
+  ],
+  [
+   "src\\e4\\IsometricTileTypeClass_e4.cpp",
+   84,
+   "lhs-charset",
+   "*((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/"
+  ],
+  [
+   "src\\e4\\JumpjetLocomotionClass_e4.cpp",
+   6349,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x719cc2*/"
+  ],
+  [
+   "src\\e4\\JumpjetLocomotionClass_e4.cpp",
+   6356,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_TeleportLocomotionClass; /*0x719ce5*/"
+  ],
+  [
+   "src\\e4\\LoadAccountInfoWOL_e4.cpp",
+   18,
+   "rhs-nonliteral",
+   "*this = (gamemd::ReferenceCounted)((ReferenceCounted)&vt_ReferenceCounted); /*0x7796a3*/"
+  ],
+  [
+   "src\\e4\\LoadAccountInfoWOL_e4.cpp",
+   33,
+   "rhs-nonliteral",
+   "*this = (gamemd::ReferenceCounted)((ReferenceCounted)&vt_PlayerProfile); /*0x779715*/"
+  ],
+  [
+   "src\\e4\\LoadOptions_e4.cpp",
+   207,
+   "lhs-charset",
+   "*((unsigned int *)a3 + 8) = (unsigned int)(&vt_VectorClass); /*0x55a108*/"
+  ],
+  [
+   "src\\e4\\MPBattleClass_e4.cpp",
+   383,
+   "lhs-raw-global-slot",
+   "dword_ABFC90 = (int)&vt_DynamicVectorClass; /*0x5d4c6d*/"
+  ],
+  [
+   "src\\e4\\MPBattleClass_e4.cpp",
+   397,
+   "lhs-raw-global-slot",
+   "dword_ABFCB8 = (int)&vt_DynamicVectorClass; /*0x5d4ced*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   340,
+   "local-value-assign",
+   "v19[0] = &CCINIClass_Vtable; /*0x49d192*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   345,
+   "local-value-assign",
+   "v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d1bc*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   420,
+   "local-value-assign",
+   "v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d360*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   1103,
+   "local-value-assign",
+   "a3 = &vt_VectorClass; /*0x5c20d3*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   1110,
+   "local-value-assign",
+   "a3 = &vt_VectorClass; /*0x5c2063*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   2514,
+   "local-value-assign",
+   "v29 = &vt_DynamicVectorClass_MPlayerScoreType; /*0x5c4323*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   2618,
+   "local-value-assign",
+   "v29 = &vt_VectorClass_MPlayerScoreType; /*0x5c44b1*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   2676,
+   "local-value-assign",
+   "v21 = &vt_DynamicVectorClass_MPlayerScoreType; /*0x5c4562*/"
+  ],
+  [
+   "src\\e4\\MPCooperative_e4.cpp",
+   2735,
+   "local-value-assign",
+   "v21 = &vt_VectorClass_MPlayerScoreType; /*0x5c4642*/"
+  ],
+  [
+   "src\\e4\\MapClass_e4.cpp",
+   3683,
+   "local-value-assign",
+   "v5[10] = &vt_VectorClass; /*0x594797*/"
+  ],
+  [
+   "src\\e4\\MapClass_e4.cpp",
+   3759,
+   "local-value-assign",
+   "v2[10] = &vt_VectorClass; /*0x5995d5*/"
+  ],
+  [
+   "src\\e4\\Map_e4.cpp",
+   1852,
+   "local-value-assign",
+   "v4[10] = &vt_VectorClass_Cell; /*0x58cf46*/"
+  ],
+  [
+   "src\\e4\\Map_e4.cpp",
+   2052,
+   "rhs-nonliteral",
+   "v3 = stru_B04DA8.vt_slot_16(&v4); /*0x660b2f*/"
+  ],
+  [
+   "src\\e4\\MechLocomotionClass_e4.cpp",
+   35,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_MechLocomotionClass; /*0x5b19be*/"
+  ],
+  [
+   "src\\e4\\Mouse_e4.cpp",
+   189,
+   "local-value-assign",
+   "v20[0] = (int)&BSurface_Vtable; /*0x7b947d*/"
+  ],
+  [
+   "src\\e4\\Object_e4.cpp",
+   1750,
+   "local-value-assign",
+   "aP1[1] = &vt_OverlayClass; /*0x5fd91d*/"
+  ],
+  [
+   "src\\e4\\Object_e4.cpp",
+   1751,
+   "local-value-assign",
+   "aP1[2] = &vt_OverlayClass; /*0x5fd924*/"
+  ],
+  [
+   "src\\e4\\Object_e4.cpp",
+   1752,
+   "local-value-assign",
+   "aP1[3] = &vt_OverlayClass; /*0x5fd92b*/"
+  ],
+  [
+   "src\\e4\\ParticleClass_e4.cpp",
+   219,
+   "local-value-assign",
+   "aP1[1] = &vt_ParticleClass; /*0x62d7ca*/"
+  ],
+  [
+   "src\\e4\\ParticleClass_e4.cpp",
+   220,
+   "local-value-assign",
+   "aP1[2] = &vt_ParticleClass; /*0x62d7d1*/"
+  ],
+  [
+   "src\\e4\\ParticleClass_e4.cpp",
+   221,
+   "local-value-assign",
+   "aP1[3] = &vt_ParticleClass; /*0x62d7d8*/"
+  ],
+  [
+   "src\\e4\\ParticleTypeClass_e4.cpp",
+   291,
+   "local-value-assign",
+   "v44[0] = &vt_TypeList_RGBClass; /*0x644f8a*/"
+  ],
+  [
+   "src\\e4\\PsyDom_e4.cpp",
+   104,
+   "local-value-assign",
+   "v36 = &vt_DynamicVectorClass_TechnoClass; /*0x53b19a*/"
+  ],
+  [
+   "src\\e4\\PsyDom_e4.cpp",
+   173,
+   "local-value-assign",
+   "v36 = &vt_VectorClass_TechnoClass; /*0x53b3ca*/"
+  ],
+  [
+   "src\\e4\\Radar_e4.cpp",
+   882,
+   "local-value-assign",
+   "v109 = (WordVector)&vt_DynamicVectorClass_unsigned_short_7E3844; /*0x5845cd*/"
+  ],
+  [
+   "src\\e4\\Radar_e4.cpp",
+   1118,
+   "local-value-assign",
+   "v109 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x584c93*/"
+  ],
+  [
+   "src\\e4\\Radar_e4.cpp",
+   1309,
+   "local-value-assign",
+   "v109 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x584d94*/"
+  ],
+  [
+   "src\\e4\\RadioClass_e4.cpp",
+   27,
+   "lhs-charset",
+   "(&a1->radioLinks)[0] = (int)&vt_VectorClass; /*0x65a77c*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   3490,
+   "lhs-charset",
+   "*(unsigned int *)&v27.u32_24 = &vt_VectorClass_BuildingTypeClass_const; /*0x598850*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   3514,
+   "lhs-charset",
+   "*(unsigned int *)&v27.u32_24 = &vt_VectorClass_BuildingTypeClass_const; /*0x598918*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   4522,
+   "local-value-assign",
+   "v59[10] = &vt_VectorClass_Cell; /*0x59a480*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   4683,
+   "local-value-assign",
+   "v12[10] = &vt_VectorClass_Cell; /*0x59a844*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   4754,
+   "local-value-assign",
+   "v28 = &vt_DynamicVectorClass_TRect_int; /*0x59ad39*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   4830,
+   "local-value-assign",
+   "v28 = &vt_VectorClass_TRect_int; /*0x59af70*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   5145,
+   "local-value-assign",
+   "v16 = &vt_DynamicVectorClass; /*0x59b759*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   5231,
+   "local-value-assign",
+   "v16 = &vt_VectorClass; /*0x59b916*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   6911,
+   "local-value-assign",
+   "v80 = &vt_DynamicVectorClass_double; /*0x5a2648*/"
+  ],
+  [
+   "src\\e4\\RandomMap_e4.cpp",
+   7025,
+   "local-value-assign",
+   "v80 = &vt_VectorClass_double; /*0x5a284a*/"
+  ],
+  [
+   "src\\e4\\Render_e4.cpp",
+   1985,
+   "local-value-assign",
+   "v11[0] = &vt_CCFileClass; /*0x5c06ea*/"
+  ],
+  [
+   "src\\e4\\Render_e4.cpp",
+   1999,
+   "local-value-assign",
+   "v11[0] = &vt_CCFileClass; /*0x5c0756*/"
+  ],
+  [
+   "src\\e4\\RocketLocomotionClass_e4.cpp",
+   72,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x66342e*/"
+  ],
+  [
+   "src\\e4\\RocketLocomotionClass_e4.cpp",
+   78,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_RocketLocomotionClass; /*0x66344b*/"
+  ],
+  [
+   "src\\e4\\RocketLocomotionClass_e4.cpp",
+   96,
+   "lhs-charset",
+   "*(unsigned int *)&a3->0[4] = &vt_RocketLocomotionClass; /*0x6635c9*/"
+  ],
+  [
+   "src\\e4\\RulesClass_e4.cpp",
+   699,
+   "local-value-assign",
+   "v17 = &vt_TypeList_TerrainTypeClass_const; /*0x67be2c*/"
+  ],
+  [
+   "src\\e4\\RulesClass_e4.cpp",
+   722,
+   "local-value-assign",
+   "v17 = &vt_VectorClass_TerrainTypeClass_const; /*0x67becb*/"
+  ],
+  [
+   "src\\e4\\ScenarioClass_e4.cpp",
+   720,
+   "local-value-assign",
+   "v57 = (unsigned int)&vt_List_INIClass_INISection;"
+  ],
+  [
+   "src\\e4\\ScenarioClass_e4.cpp",
+   725,
+   "local-value-assign",
+   "var158[0] = (uint8_t **)&CCINIClass_Vtable;"
+  ],
+  [
+   "src\\e4\\Scenario_e4.cpp",
+   895,
+   "local-value-assign",
+   "v67 = &vt_DynamicVectorClass_TeamClass; /*0x55b50e*/"
+  ],
+  [
+   "src\\e4\\Scenario_e4.cpp",
+   967,
+   "local-value-assign",
+   "v67 = &vt_VectorClass_TeamClass; /*0x55b6fc*/"
+  ],
+  [
+   "src\\e4\\ScoreScreen_e4.cpp",
+   123,
+   "lhs-charset",
+   "*(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_ScoreAnimClass); /*0x690f5a*/"
+  ],
+  [
+   "src\\e4\\SessionClass_e4.cpp",
+   2111,
+   "local-value-assign",
+   "v66 = &vt_DynamicVectorClass_NodeNameType; /*0x69bd81*/"
+  ],
+  [
+   "src\\e4\\SessionClass_e4.cpp",
+   2117,
+   "local-value-assign",
+   "v66 = &vt_VectorClass_NodeNameType; /*0x69bdac*/"
+  ],
+  [
+   "src\\e4\\SessionClass_e4.cpp",
+   2395,
+   "local-value-assign",
+   "v66 = &vt_VectorClass_NodeNameType; /*0x69c469*/"
+  ],
+  [
+   "src\\e4\\ShipLocomotionClass_e4.cpp",
+   39,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_ShipLocomotionClass; /*0x69eeb9*/"
+  ],
+  [
+   "src\\e4\\SkirmishSetup_e4.cpp",
+   217,
+   "local-value-assign",
+   "v47 = (SkirmishVector)&vt_DynamicVectorClass_MultiMission_const; /*0x5e6a76*/"
+  ],
+  [
+   "src\\e4\\SkirmishSetup_e4.cpp",
+   231,
+   "local-value-assign",
+   "v47 = (SkirmishVector)&vt_VectorClass_MultiMission_const; /*0x5e6adb*/"
+  ],
+  [
+   "src\\e4\\SkirmishSetup_e4.cpp",
+   278,
+   "local-value-assign",
+   "v47 = (SkirmishVector)&vt_DynamicVectorClass_MultiMission_const; /*0x5e6c36*/"
+  ],
+  [
+   "src\\e4\\SkirmishSetup_e4.cpp",
+   295,
+   "local-value-assign",
+   "v47 = (SkirmishVector)&vt_VectorClass_MultiMission_const; /*0x5e6ca2*/"
+  ],
+  [
+   "src\\e4\\SkirmishSetup_e4.cpp",
+   367,
+   "local-value-assign",
+   "v47 = (SkirmishVector)&vt_DynamicVectorClass_MultiMission_const; /*0x5e6efb*/"
+  ],
+  [
+   "src\\e4\\SkirmishSetup_e4.cpp",
+   384,
+   "local-value-assign",
+   "v47 = (SkirmishVector)&vt_VectorClass_MultiMission_const; /*0x5e6f62*/"
+  ],
+  [
+   "src\\e4\\SmallFunc_e4.cpp",
+   106,
+   "lhs-charset",
+   "*(unsigned int *)&DataGlobal_87F7E8 = (unsigned int)(&vt_MouseClass); /*0x40d1b2*/"
+  ],
+  [
+   "src\\e4\\SmallFunc_e4.cpp",
+   107,
+   "lhs-raw-global-slot",
+   "dword_884D00 = (int)&vt_MouseClass; /*0x40d1bc*/"
+  ],
+  [
+   "src\\e4\\SmudgeTypeClass_e4.cpp",
+   61,
+   "lhs-charset",
+   "*((unsigned int *)a2 + 1) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52a1*/"
+  ],
+  [
+   "src\\e4\\SmudgeTypeClass_e4.cpp",
+   63,
+   "lhs-charset",
+   "*((unsigned int *)a2 + 3) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52ae*/"
+  ],
+  [
+   "src\\e4\\SpawnManagerClass_e4.cpp",
+   176,
+   "rhs-nonliteral",
+   "*this = (gamemd::TaskManager)((TaskManager)&vt_SpawnManagerClass); /*0x6b7015*/"
+  ],
+  [
+   "src\\e4\\SuperClass_e4.cpp",
+   153,
+   "lhs-charset",
+   "*(unsigned int *)(aP2 + 4) = (unsigned int)(&vt_SuperClass); /*0x6caffd*/"
+  ],
+  [
+   "src\\e4\\System_e4.cpp",
+   429,
+   "local-value-assign",
+   "g_MultiplayerModeConfig = (int)&vt_DynamicVectorClass; /*0x5d5af1*/"
+  ],
+  [
+   "src\\e4\\TacticalMap_e4.cpp",
+   310,
+   "lhs-charset",
+   "*(unsigned int *)&a1->Tactical_field_0x2[2] = &vt_Tactical; /*0x6d1d5a*/"
+  ],
+  [
+   "src\\e4\\TeamClass_e4.cpp",
+   695,
+   "lhs-charset",
+   "*(unsigned int *)(v4 + 32) = &vt_VectorClass_PlanningBranchClass; /*0x636206*/"
+  ],
+  [
+   "src\\e4\\TeamClass_e4.cpp",
+   1088,
+   "lhs-charset",
+   "*(unsigned int *)(v8 + 32) = &vt_VectorClass_PlanningBranchClass; /*0x636c84*/"
+  ],
+  [
+   "src\\e4\\Team_e4.cpp",
+   634,
+   "local-value-assign",
+   "v9 = &vt_rc_ptr_WDTTerritory; /*0x76ee7d*/"
+  ],
+  [
+   "src\\e4\\Team_e4.cpp",
+   637,
+   "local-value-assign",
+   "v11 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76ee8e*/"
+  ],
+  [
+   "src\\e4\\TerrainTypeClass_e4.cpp",
+   70,
+   "lhs-paren-lhs",
+   "LODWORD(aP4->AnimationProbability) = &vt_DynamicVectorClass; /*0x544811*/"
+  ],
+  [
+   "src\\e4\\Terrain_e4.cpp",
+   602,
+   "local-value-assign",
+   "v99 = &vt_DynamicVectorClass_enum_PassabilityType; /*0x56c542*/"
+  ],
+  [
+   "src\\e4\\Terrain_e4.cpp",
+   952,
+   "local-value-assign",
+   "v99 = &vt_VectorClass_enum_PassabilityType; /*0x56cb5a*/"
+  ],
+  [
+   "src\\e4\\TerritorySelectWDT_e4.cpp",
+   53,
+   "local-value-assign",
+   "v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x766605*/"
+  ],
+  [
+   "src\\e4\\TerritorySelectWDT_e4.cpp",
+   61,
+   "local-value-assign",
+   "v14 = (void **)(&vt_rc_ptr); /*0x76663c*/"
+  ],
+  [
+   "src\\e4\\TerritorySelectWDT_e4.cpp",
+   80,
+   "local-value-assign",
+   "v14 = (void **)(&vt_rc_ptr); /*0x76669a*/"
+  ],
+  [
+   "src\\e4\\TerritorySelectWDT_e4.cpp",
+   93,
+   "local-value-assign",
+   "v14 = (void **)(&vt_rc_ptr); /*0x7666f0*/"
+  ],
+  [
+   "src\\e4\\TerritorySelectWDT_e4.cpp",
+   112,
+   "local-value-assign",
+   "v14 = (void **)(&vt_rc_ptr); /*0x76674f*/"
+  ],
+  [
+   "src\\e4\\TerritorySelectWDT_e4.cpp",
+   117,
+   "local-value-assign",
+   "v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x76677f*/"
+  ],
+  [
+   "src\\e4\\TrajectoryHelper_e4.cpp",
+   181,
+   "rhs-nonliteral",
+   "v17 = (unsigned int *)v11->vt_slot_72(&v46); /*0x4cc489*/"
+  ],
+  [
+   "src\\e4\\TunnelLocomotionClass_e4.cpp",
+   196,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x72a170*/"
+  ],
+  [
+   "src\\e4\\TunnelLocomotionClass_e4.cpp",
+   203,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_TunnelLocomotionClass; /*0x72a18c*/"
+  ],
+  [
+   "src\\e4\\UDPInterfaceClass_e4.cpp",
+   541,
+   "lhs-charset",
+   "*((unsigned int *)a3 + 64852) = (unsigned int)(&vt_VectorClass); /*0x7b422f*/"
+  ],
+  [
+   "src\\e4\\UDPInterfaceClass_e4.cpp",
+   551,
+   "lhs-charset",
+   "*((unsigned int *)a3 + 64718) = (unsigned int)(&vt_VectorClass); /*0x7b4266*/"
+  ],
+  [
+   "src\\e4\\UnholyAlliance_e4.cpp",
+   96,
+   "lhs-charset",
+   "*(unsigned int *)&Block->m_Enabled = &vt_UnholyAlliance; /*0x5cb543*/"
+  ],
+  [
+   "src\\e4\\VectorClass_e4.cpp",
+   10753,
+   "local-value-assign",
+   "v79 = &vt_rc_ptr; /*0x76b68f*/"
+  ],
+  [
+   "src\\e4\\VoxelAnimClass_e4.cpp",
+   863,
+   "local-value-assign",
+   "aP1[1] = (int)&vt_VoxelAnimClass; /*0x74a99d*/"
+  ],
+  [
+   "src\\e4\\VoxelAnimClass_e4.cpp",
+   864,
+   "local-value-assign",
+   "aP1[2] = (int)&vt_VoxelAnimClass; /*0x74a9a4*/"
+  ],
+  [
+   "src\\e4\\VoxelAnimClass_e4.cpp",
+   865,
+   "local-value-assign",
+   "aP1[3] = (int)&vt_VoxelAnimClass; /*0x74a9ab*/"
+  ],
+  [
+   "src\\e4\\VoxelAnimClass_e4.cpp",
+   934,
+   "lhs-charset",
+   "*(unsigned int *)&a1->__pad_C[12] = &vt_WalkLocomotionClass; /*0x75aaec*/"
+  ],
+  [
+   "src\\e4\\VoxelAnimClass_e4.cpp",
+   966,
+   "lhs-charset",
+   "*(unsigned int *)&a1->__pad_144[172] = &vt_VectorClass; /*0x75ec74*/"
+  ],
+  [
+   "src\\e4\\VoxelAnimClass_e4.cpp",
+   969,
+   "lhs-charset",
+   "*(unsigned int *)&a1->__pad_144[172] = &vt_DynamicVectorClass; /*0x75ec90*/"
+  ],
+  [
+   "src\\e4\\WalkLocomotionClass_e4.cpp",
+   203,
+   "lhs-charset",
+   "*(unsigned int *)&a1->0[4] = &vt_WalkLocomotionClass; /*0x75c6a9*/"
+  ],
+  [
+   "src\\e4\\WarheadTypeClass_e4.cpp",
+   367,
+   "lhs-charset",
+   "*(unsigned int *)(aP1 + 260) = (unsigned int)(&vt_TypeList); /*0x75cf0e*/"
+  ],
+  [
+   "src\\e4\\WarheadTypeClass_e4.cpp",
+   427,
+   "lhs-charset",
+   "*(unsigned int *)(aP1 + 396) = &vt_TypeList; /*0x75d08c*/"
+  ],
+  [
+   "src\\e4\\WarheadTypeClass_e4.cpp",
+   434,
+   "lhs-charset",
+   "*(unsigned int *)(aP1 + 424) = &vt_TypeList; /*0x75d0a7*/"
+  ],
+  [
+   "src\\e4\\WarheadTypeClass_e4.cpp",
+   438,
+   "lhs-charset",
+   "*(unsigned int *)(aP1 + 4) = &vt_WarheadTypeClass; /*0x75d0c1*/"
+  ],
+  [
+   "src\\e4\\WarheadTypeClass_e4.cpp",
+   765,
+   "lhs-charset",
+   "*(unsigned int *)&a3->__pad_1A0[8] = &vt_VectorClass; /*0x75e5d1*/"
+  ],
+  [
+   "src\\e4\\WaveClass_e4.cpp",
+   148,
+   "lhs-charset",
+   "*((unsigned int *)aP1 + 124) = (unsigned int)(&vt_VectorClass); /*0x763284*/"
+  ],
+  [
+   "src\\e4\\WaypointPathClass_e4.cpp",
+   126,
+   "rhs-nonliteral",
+   "result = v3->vt_entry_68(&this, 4, 0); /*0x763ccd*/"
+  ],
+  [
+   "src\\e4\\WeaponTypeClass_e4.cpp",
+   363,
+   "lhs-paren-lhs",
+   "v5-((unsigned int *)(>Anim))[0] = (int)&vt_TypeList; /*0x772d30*/"
+  ],
+  [
+   "src\\e4\\WebBrowser_e4.cpp",
+   442,
+   "lhs-charset",
+   "*(unsigned int *)&v2.m_3[1] = &vt_rc_ptr_PlayerProfile; /*0x773e06*/"
+  ],
+  [
+   "src\\e4\\XSurface_e4.cpp",
+   866,
+   "local-value-assign",
+   "a4 = (void **)(&vt_BlitTrans); /*0x7bbc3d*/"
+  ],
+  [
+   "src\\e4\\XSurface_e4.cpp",
+   871,
+   "local-value-assign",
+   "a3 = (void **)(&vt_BlitTrans); /*0x7bbc5c*/"
+  ],
+  [
+   "src\\e4\\XSurface_e4.cpp",
+   877,
+   "local-value-assign",
+   "a2 = (void **)(&vt_BlitPlain); /*0x7bbc90*/"
+  ],
+  [
+   "src\\e4\\XSurface_e4.cpp",
+   882,
+   "local-value-assign",
+   "arg8 = (void **)(&vt_BlitPlain); /*0x7bbcaf*/"
+  ],
+  [
+   "src\\e4\\XSurface_e4.cpp",
+   910,
+   "local-value-assign",
+   "a4 = (void **)(&vt_BlitTrans); /*0x7bbd70*/"
+  ],
+  [
+   "src\\e4\\XSurface_e4.cpp",
+   915,
+   "local-value-assign",
+   "a3 = (void **)(&vt_BlitTrans); /*0x7bbd89*/"
+  ],
+  [
+   "src\\e4\\XSurface_e4.cpp",
+   921,
+   "local-value-assign",
+   "a4 = (void **)(&vt_BlitPlain); /*0x7bbdc9*/"
+  ],
+  [
+   "src\\e4\\XSurface_e4.cpp",
+   926,
+   "local-value-assign",
+   "a3 = (void **)(&vt_BlitPlain); /*0x7bbde2*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   182,
+   "local-value-assign",
+   "v19[0] = (int)&vt_CCFileClass; /*0x401547*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   232,
+   "local-value-assign",
+   "v19[0] = (int)&vt_CCFileClass; /*0x4014ac*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   5871,
+   "local-value-assign",
+   "stru_87F5D8 = (int)&vt_DynamicVectorClass; /*0x40b563*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   5875,
+   "local-value-assign",
+   "stru_87F5F0 = (int)&vt_DynamicVectorClass; /*0x40b587*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   5888,
+   "local-value-assign",
+   "stru_87F5F0 = (int)&vt_VectorClass; /*0x40b5d4*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   5896,
+   "local-value-assign",
+   "stru_87F5D8 = (int)&vt_VectorClass; /*0x40b60a*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   5953,
+   "lhs-raw-global-slot",
+   "dword_87F658 = (int)&vt_DynamicVectorClass; /*0x40bded*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   5968,
+   "lhs-raw-global-slot",
+   "dword_87F698 = (int)&vt_DynamicVectorClass; /*0x40c1cd*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   5979,
+   "lhs-raw-global-slot",
+   "dword_87F698 = (int)&vt_VectorClass; /*0x40c1f8*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6124,
+   "lhs-raw-global-slot",
+   "dword_87F750 = (int)&vt_DynamicVectorClass; /*0x40c7bd*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6135,
+   "lhs-raw-global-slot",
+   "dword_87F750 = (int)&vt_VectorClass; /*0x40c7e8*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6156,
+   "lhs-raw-global-slot",
+   "dword_87F778 = (int)&vt_LogicClass; /*0x40cbac*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6165,
+   "lhs-raw-global-slot",
+   "dword_87F778 = (int)&vt_VectorClass; /*0x40cbc8*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6364,
+   "local-value-assign",
+   "g_MixFileArray = (int)&vt_DynamicVectorClass; /*0x40d35d*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6375,
+   "local-value-assign",
+   "g_MixFileArray = (int)&vt_VectorClass; /*0x40d388*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6394,
+   "local-value-assign",
+   "MixFileClass_Array_Alt = (int)&vt_DynamicVectorClass; /*0x40d3dd*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6405,
+   "local-value-assign",
+   "MixFileClass_Array_Alt = (int)&vt_VectorClass; /*0x40d408*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6424,
+   "local-value-assign",
+   "g_MixFileArray_Maps = (int)&vt_DynamicVectorClass; /*0x40d45d*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6435,
+   "local-value-assign",
+   "g_MixFileArray_Maps = (int)&vt_VectorClass; /*0x40d488*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6454,
+   "local-value-assign",
+   "g_MixFileArray_Movies = (int)&vt_DynamicVectorClass; /*0x40d4dd*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6465,
+   "local-value-assign",
+   "g_MixFileArray_Movies = (int)&vt_VectorClass; /*0x40d508*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6983,
+   "lhs-raw-global-slot",
+   "dword_887190 = (int)&(void*)(void*)&GenericNode_vftable; /*0x40dfd0*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6985,
+   "lhs-raw-global-slot",
+   "dword_88718C = (int)&(void*)(void*)&GenericList_vftable; /*0x40dfe9*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6987,
+   "lhs-raw-global-slot",
+   "dword_88718C = (int)&(void*)(void*)&List_INIClass_INISection___vftable; /*0x40dffd*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   6995,
+   "lhs-raw-global-slot",
+   "dword_887180 = (int)&CCINIClass_Vtable; /*0x40e031*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7016,
+   "lhs-raw-global-slot",
+   "dword_887218 = (int)&(void*)(void*)&GenericNode_vftable; /*0x40e080*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7018,
+   "lhs-raw-global-slot",
+   "dword_887214 = (int)&(void*)(void*)&GenericList_vftable; /*0x40e099*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7020,
+   "lhs-raw-global-slot",
+   "dword_887214 = (int)&(void*)(void*)&List_INIClass_INISection___vftable; /*0x40e0ad*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7028,
+   "lhs-raw-global-slot",
+   "dword_887208 = (int)&CCINIClass_Vtable; /*0x40e0e1*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7049,
+   "lhs-raw-global-slot",
+   "dword_887138 = (int)&(void*)(void*)&GenericNode_vftable; /*0x40e130*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7051,
+   "lhs-raw-global-slot",
+   "dword_887134 = (int)&(void*)(void*)&GenericList_vftable; /*0x40e149*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7053,
+   "lhs-raw-global-slot",
+   "dword_887134 = (int)&(void*)(void*)&List_INIClass_INISection___vftable; /*0x40e15d*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7061,
+   "lhs-raw-global-slot",
+   "dword_887128 = (int)&CCINIClass_Vtable; /*0x40e191*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7082,
+   "lhs-raw-global-slot",
+   "dword_887068 = (int)&vt_GenericNode; /*0x40e1e0*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7084,
+   "lhs-raw-global-slot",
+   "dword_887064 = (int)&vt_GenericList; /*0x40e1f9*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7086,
+   "lhs-raw-global-slot",
+   "dword_887064 = (int)&vt_List; /*0x40e20d*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7094,
+   "lhs-raw-global-slot",
+   "dword_887058 = (int)&CCINIClass_Vtable; /*0x40e241*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7115,
+   "lhs-raw-global-slot",
+   "dword_8870D0 = (int)&(void*)(void*)&GenericNode_vftable; /*0x40e290*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7117,
+   "lhs-raw-global-slot",
+   "dword_8870CC = (int)&(void*)(void*)&GenericList_vftable; /*0x40e2a9*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7119,
+   "lhs-raw-global-slot",
+   "dword_8870CC = (int)&(void*)(void*)&List_INIClass_INISection___vftable; /*0x40e2bd*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7127,
+   "lhs-raw-global-slot",
+   "dword_8870C0 = (int)&CCINIClass_Vtable; /*0x40e2f1*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7314,
+   "lhs-raw-global-slot",
+   "dword_8872B0 = (int)&vt_DynamicVectorClass; /*0x40e78d*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7325,
+   "lhs-raw-global-slot",
+   "dword_8872B0 = (int)&vt_VectorClass; /*0x40e7b8*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7548,
+   "lhs-raw-global-slot",
+   "dword_887388 = (int)&vt_DynamicVectorClass; /*0x40ee5d*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7559,
+   "lhs-raw-global-slot",
+   "dword_887388 = (int)&vt_VectorClass; /*0x40ee88*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7748,
+   "local-value-assign",
+   "WarheadTypeClass_Array = (WarheadTypeClass *)&vt_DynamicVectorClass; /*0x40f4ad*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7759,
+   "local-value-assign",
+   "WarheadTypeClass_Array = (WarheadTypeClass *)&vt_VectorClass; /*0x40f4d8*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7903,
+   "local-value-assign",
+   "WeaponTypeClass_Array = (WeaponTypeClass *)&vt_DynamicVectorClass; /*0x40fb4d*/"
+  ],
+  [
+   "src\\e4\\addr40_e4.cpp",
+   7914,
+   "local-value-assign",
+   "WeaponTypeClass_Array = (WeaponTypeClass *)&vt_VectorClass; /*0x40fb78*/"
+  ],
+  [
+   "src\\e4\\addr41_e4.cpp",
+   1373,
+   "lhs-raw-global-slot",
+   "dword_889E08 = (int)&vt_DynamicVectorClass; /*0x4128bc*/"
+  ],
+  [
+   "src\\e4\\addr41_e4.cpp",
+   1407,
+   "lhs-raw-global-slot",
+   "dword_889E08 = (int)&vt_VectorClass_TechnoClass; /*0x412948*/"
+  ],
+  [
+   "src\\e4\\addr41_e4.cpp",
+   1421,
+   "lhs-paren-lhs",
+   "*(v4 - 1) = &vt_VectorClass_TechnoClass; /*0x412985*/"
+  ],
+  [
+   "src\\e4\\addr41_e4.cpp",
+   1899,
+   "lhs-raw-global-slot",
+   "dword_889FB8 = (int)&vt_DynamicVectorClass; /*0x41d29d*/"
+  ],
+  [
+   "src\\e4\\addr41_e4.cpp",
+   1910,
+   "lhs-raw-global-slot",
+   "dword_889FB8 = (int)&vt_VectorClass; /*0x41d2c8*/"
+  ],
+  [
+   "src\\e4\\addr42_e4.cpp",
+   2316,
+   "local-value-assign",
+   "v22 = (WordVector)&vt_DynamicVectorClass_unsigned_short_7E3844; /*0x42cd1f*/"
+  ],
+  [
+   "src\\e4\\addr42_e4.cpp",
+   2333,
+   "local-value-assign",
+   "v22 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x42cdb9*/"
+  ],
+  [
+   "src\\e4\\addr42_e4.cpp",
+   2373,
+   "local-value-assign",
+   "v22 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x42ce64*/"
+  ],
+  [
+   "src\\e4\\addr42_e4.cpp",
+   2792,
+   "lhs-raw-global-slot",
+   "dword_88A080 = (int)&vt_DynamicVectorClass; /*0x42009d*/"
+  ],
+  [
+   "src\\e4\\addr42_e4.cpp",
+   2805,
+   "lhs-raw-global-slot",
+   "dword_88A080 = (int)&vt_VectorClass; /*0x4200ce*/"
+  ],
+  [
+   "src\\e4\\addr42_e4.cpp",
+   3031,
+   "lhs-raw-global-slot",
+   "dword_88A0F0 = (int)&vt_VectorClass; /*0x420928*/"
+  ],
+  [
+   "src\\e4\\addr43_e4.cpp",
+   1609,
+   "local-value-assign",
+   "v12 = &XSurface_Vtable; /*0x4372e1*/"
+  ],
+  [
+   "src\\e4\\addr43_e4.cpp",
+   1618,
+   "local-value-assign",
+   "v12 = &BSurface_Vtable; /*0x437313*/"
+  ],
+  [
+   "src\\e4\\addr43_e4.cpp",
+   1804,
+   "lhs-raw-global-slot",
+   "dword_89C668 = (int)&vt_VectorClass; /*0x438598*/"
+  ],
+  [
+   "src\\e4\\addr46_e4.cpp",
+   645,
+   "lhs-raw-global-slot",
+   "dword_89DE18 = (int)&vt_VectorClass; /*0x46632e*/"
+  ],
+  [
+   "src\\e4\\addr47_e4.cpp",
+   200,
+   "local-value-assign",
+   "a5 = &vt_VectorClass_int; /*0x4773ef*/"
+  ],
+  [
+   "src\\e4\\addr47_e4.cpp",
+   207,
+   "local-value-assign",
+   "a5 = &vt_VectorClass_int; /*0x47741f*/"
+  ],
+  [
+   "src\\e4\\addr47_e4.cpp",
+   1510,
+   "lhs-raw-global-slot",
+   "dword_89E0F0 = (int)&vt_DynamicVectorClass; /*0x47176d*/"
+  ],
+  [
+   "src\\e4\\addr47_e4.cpp",
+   1521,
+   "lhs-raw-global-slot",
+   "dword_89E0F0 = (int)&vt_VectorClass; /*0x471798*/"
+  ],
+  [
+   "src\\e4\\addr48_e4.cpp",
+   318,
+   "local-value-assign",
+   "v117 = &vt_DynamicVectorClass_4; /*0x4892aa*/"
+  ],
+  [
+   "src\\e4\\addr48_e4.cpp",
+   323,
+   "local-value-assign",
+   "v117 = &vt_VectorClass_DamageGroup; /*0x48a4bb*/"
+  ],
+  [
+   "src\\e4\\addr48_e4.cpp",
+   487,
+   "rhs-nonliteral",
+   "v31 = (unsigned int *)v112->vt_slot_72(&v123); /*0x4897ba*/"
+  ],
+  [
+   "src\\e4\\addr48_e4.cpp",
+   596,
+   "local-value-assign",
+   "v117 = &vt_VectorClass_DamageGroup; /*0x489b1e*/"
+  ],
+  [
+   "src\\e4\\addr48_e4.cpp",
+   889,
+   "local-value-assign",
+   "v117 = &vt_VectorClass_DamageGroup; /*0x48a491*/"
+  ],
+  [
+   "src\\e4\\addr48_e4.cpp",
+   2749,
+   "lhs-raw-global-slot",
+   "dword_89ECF8 = (int)&vt_DynamicVectorClass; /*0x48e6bd*/"
+  ],
+  [
+   "src\\e4\\addr48_e4.cpp",
+   2762,
+   "lhs-raw-global-slot",
+   "dword_89ECF8 = (int)&vt_VectorClass; /*0x48e6ee*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   1931,
+   "local-value-assign",
+   "v24[0] = (unsigned int)&CCINIClass_Vtable; /*0x49c2c4*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   1936,
+   "local-value-assign",
+   "v29[0] = &vt_CCFileClass; /*0x49c563*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   1993,
+   "local-value-assign",
+   "v29[0] = &vt_CCFileClass; /*0x49c515*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   2288,
+   "local-value-assign",
+   "v20[0] = &CCINIClass_Vtable; /*0x49d400*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   2294,
+   "local-value-assign",
+   "v17[0] = &vt_CCFileClass; /*0x49d42a*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   2374,
+   "local-value-assign",
+   "v17[0] = &vt_CCFileClass; /*0x49d64d*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   2568,
+   "lhs-paren-lhs",
+   "*(v7 - 1) = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e80b*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   2577,
+   "lhs-paren-lhs",
+   "*(v7 - 7) = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e82b*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   6262,
+   "lhs-raw-global-slot",
+   "dword_89F524 = (int)&(void*)(void*)&GenericList_vftable; /*0x49b3bd*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   6264,
+   "lhs-raw-global-slot",
+   "dword_89F524 = (int)&(void*)(void*)&List_INIClass_INISection___vftable; /*0x49b3d1*/"
+  ],
+  [
+   "src\\e4\\addr49_e4.cpp",
+   6272,
+   "local-value-assign",
+   "g_DDrawSurfaceManager = (int)&CCINIClass_Vtable; /*0x49b405*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   104,
+   "lhs-charset",
+   "*(unsigned int *)(v3 + 4) = (unsigned int)(&vt_VectorClass); /*0x4a01d5*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   145,
+   "lhs-charset",
+   "*(unsigned int *)(v3 + 4) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0252*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   323,
+   "lhs-charset",
+   "*(unsigned int *)(v3 + 12) = (unsigned int)(&vt_VectorClass); /*0x4a0b6e*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   360,
+   "lhs-charset",
+   "*(unsigned int *)(v3 + 12) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0bd4*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   672,
+   "local-value-assign",
+   "v8[0] = (unsigned int)(&vt_CCFileClass); /*0x4a39df*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   2572,
+   "local-value-assign",
+   "v64[0] = (int)&XSurface_Vtable; /*0x4aeee3*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   2575,
+   "local-value-assign",
+   "v64[0] = (int)&BSurface_Vtable; /*0x4aeefb*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   2922,
+   "lhs-paren-lhs",
+   "for ( *(unsigned int *)this->vfptr = &vt_EnumConnectionPointsClass; /*0x4a0dc4*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   4106,
+   "lhs-raw-global-slot",
+   "dword_8A0208 = (int)&vt_DynamicVectorClass; /*0x4a6c8d*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   4117,
+   "lhs-raw-global-slot",
+   "dword_8A0208 = (int)&vt_VectorClass; /*0x4a6cb8*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   4307,
+   "lhs-paren-lhs",
+   "*(v0 - 2) = &vt_VectorClass_ObjectClass; /*0x4a8648*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   4308,
+   "lhs-paren-lhs",
+   "*(v0 - 2) = &vt_DynamicVectorClass_ObjectClass; /*0x4a864f*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   4336,
+   "lhs-paren-lhs",
+   "*(unsigned int *)(v0 - 4) = &vt_VectorClass; /*0x4a86ab*/"
+  ],
+  [
+   "src\\e4\\addr4A_e4.cpp",
+   4359,
+   "local-value-assign",
+   "stru_8A06F8[0] = (int)&vt_DisplayClassTacticalClass; /*0x4a86fb*/"
+  ],
+  [
+   "src\\e4\\addr4C_e4.cpp",
+   1013,
+   "rhs-nonliteral",
+   "v18 = (int *)v14->vt_slot_168(&v56.ComPtr_field_0x20, *v6); /*0x4cf142*/"
+  ],
+  [
+   "src\\e4\\addr4C_e4.cpp",
+   1385,
+   "lhs-raw-global-slot",
+   "dword_8A0E88 = (int)&vt_DynamicVectorClass; /*0x4c1dad*/"
+  ],
+  [
+   "src\\e4\\addr4C_e4.cpp",
+   1396,
+   "lhs-raw-global-slot",
+   "dword_8A0E88 = (int)&vt_VectorClass; /*0x4c1dd8*/"
+  ],
+  [
+   "src\\e4\\addr4C_e4.cpp",
+   1817,
+   "lhs-raw-global-slot",
+   "dword_8A3770 = (int)&vt_DynamicVectorClass; /*0x4c3c2d*/"
+  ],
+  [
+   "src\\e4\\addr4C_e4.cpp",
+   1828,
+   "lhs-raw-global-slot",
+   "dword_8A3770 = (int)&vt_VectorClass; /*0x4c3c58*/"
+  ],
+  [
+   "src\\e4\\addr4C_e4.cpp",
+   2151,
+   "lhs-raw-global-slot",
+   "dword_8A3870 = (int)&vt_DynamicVectorClass; /*0x4c522d*/"
+  ],
+  [
+   "src\\e4\\addr4C_e4.cpp",
+   2164,
+   "lhs-raw-global-slot",
+   "dword_8A3870 = (int)&vt_VectorClass; /*0x4c525e*/"
+  ],
+  [
+   "src\\e4\\addr4C_e4.cpp",
+   2811,
+   "local-value-assign",
+   "v2[0] = &vt_CCFileClass; /*0x4c9183*/"
+  ],
+  [
+   "src\\e4\\addr4D_e4.cpp",
+   450,
+   "lhs-raw-global-slot",
+   "dword_8B3D10 = (int)&vt_DynamicVectorClass; /*0x4d076d*/"
+  ],
+  [
+   "src\\e4\\addr4D_e4.cpp",
+   463,
+   "lhs-raw-global-slot",
+   "dword_8B3D10 = (int)&vt_VectorClass; /*0x4d079e*/"
+  ],
+  [
+   "src\\e4\\addr4D_e4.cpp",
+   664,
+   "local-value-assign",
+   "FootClass_Array = (int)&vt_VectorClass; /*0x4d31a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   1856,
+   "lhs-raw-global-slot",
+   "dword_A80228 = (int)&vt_DynamicVectorClass; /*0x4e6cfd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   1866,
+   "lhs-raw-global-slot",
+   "dword_A80228 = (int)&vt_VectorClass; /*0x4e6d28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   1884,
+   "lhs-raw-global-slot",
+   "dword_A83CE0 = (int)&vt_DynamicVectorClass; /*0x4e747d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   1894,
+   "lhs-raw-global-slot",
+   "dword_A83CE0 = (int)&vt_VectorClass; /*0x4e74a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   1912,
+   "lhs-raw-global-slot",
+   "dword_A83C80 = (int)&vt_DynamicVectorClass; /*0x4e75fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   1922,
+   "lhs-raw-global-slot",
+   "dword_A83C80 = (int)&vt_VectorClass; /*0x4e7628*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   1960,
+   "lhs-raw-global-slot",
+   "unk_A8EA70 = (unsigned char)(&vt_NullModemClass); /*0x5f1657*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   1983,
+   "lhs-charset",
+   "LABEL_10: unk_A8EA70 = (unsigned char)(&vt_ConnManClass);"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3147,
+   "lhs-raw-global-slot",
+   "dword_A8B200 = (int)&vt_DynamicVectorClass; /*0x4e64fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3158,
+   "lhs-raw-global-slot",
+   "dword_A8B200 = (int)&vt_VectorClass; /*0x4e6528*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3177,
+   "lhs-raw-global-slot",
+   "dword_8B4178 = (int)&vt_DynamicVectorClass; /*0x4e657d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3188,
+   "lhs-raw-global-slot",
+   "dword_8B4178 = (int)&vt_VectorClass; /*0x4e65a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3207,
+   "lhs-raw-global-slot",
+   "dword_A8EAE8 = (int)&vt_DynamicVectorClass; /*0x4e65fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3218,
+   "lhs-raw-global-slot",
+   "dword_A8EAE8 = (int)&vt_VectorClass; /*0x4e6628*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3237,
+   "lhs-raw-global-slot",
+   "dword_8B4190 = (int)&vt_DynamicVectorClass; /*0x4e667d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3248,
+   "lhs-raw-global-slot",
+   "dword_8B4190 = (int)&vt_VectorClass; /*0x4e66a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3267,
+   "lhs-raw-global-slot",
+   "dword_A80208 = (int)&vt_DynamicVectorClass; /*0x4e66fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3278,
+   "lhs-raw-global-slot",
+   "dword_A80208 = (int)&vt_VectorClass; /*0x4e6728*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3297,
+   "lhs-raw-global-slot",
+   "dword_8B4138 = (int)&vt_DynamicVectorClass; /*0x4e677d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3308,
+   "lhs-raw-global-slot",
+   "dword_8B4138 = (int)&vt_VectorClass; /*0x4e67a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3327,
+   "lhs-raw-global-slot",
+   "dword_A8EC38 = (int)&vt_DynamicVectorClass; /*0x4e67fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3338,
+   "lhs-raw-global-slot",
+   "dword_A8EC38 = (int)&vt_VectorClass; /*0x4e6828*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3353,
+   "lhs-raw-global-slot",
+   "dword_A8ED40 = (int)&vt_VectorClass; /*0x4e68a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3372,
+   "lhs-raw-global-slot",
+   "dword_A8EC50 = (int)&vt_DynamicVectorClass; /*0x4e68fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3383,
+   "lhs-raw-global-slot",
+   "dword_A8EC50 = (int)&vt_VectorClass; /*0x4e6928*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3402,
+   "lhs-raw-global-slot",
+   "dword_A83DC8 = (int)&vt_DynamicVectorClass; /*0x4e697d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3413,
+   "lhs-raw-global-slot",
+   "dword_A83DC8 = (int)&vt_VectorClass; /*0x4e69a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3432,
+   "lhs-raw-global-slot",
+   "dword_A8B1E0 = (int)&vt_DynamicVectorClass; /*0x4e69fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3443,
+   "lhs-raw-global-slot",
+   "dword_A8B1E0 = (int)&vt_VectorClass; /*0x4e6a28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3462,
+   "lhs-raw-global-slot",
+   "dword_A8E988 = (int)&vt_DynamicVectorClass; /*0x4e6a7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3473,
+   "lhs-raw-global-slot",
+   "dword_A8E988 = (int)&vt_VectorClass; /*0x4e6aa8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3492,
+   "lhs-raw-global-slot",
+   "dword_A83DE8 = (int)&vt_DynamicVectorClass; /*0x4e6afd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3503,
+   "lhs-raw-global-slot",
+   "dword_A83DE8 = (int)&vt_VectorClass; /*0x4e6b28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3522,
+   "lhs-raw-global-slot",
+   "dword_A8EB40 = (int)&vt_DynamicVectorClass; /*0x4e6b7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3533,
+   "lhs-raw-global-slot",
+   "dword_A8EB40 = (int)&vt_VectorClass; /*0x4e6ba8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3552,
+   "lhs-raw-global-slot",
+   "dword_A8E390 = (int)&vt_DynamicVectorClass; /*0x4e6bfd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3563,
+   "lhs-raw-global-slot",
+   "dword_A8E390 = (int)&vt_VectorClass; /*0x4e6c28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3582,
+   "lhs-raw-global-slot",
+   "dword_8B4108 = (int)&vt_DynamicVectorClass; /*0x4e6c7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3593,
+   "lhs-raw-global-slot",
+   "dword_8B4108 = (int)&vt_VectorClass; /*0x4e6ca8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3612,
+   "lhs-raw-global-slot",
+   "dword_A8E9A8 = (int)&vt_DynamicVectorClass; /*0x4e6d7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3623,
+   "lhs-raw-global-slot",
+   "dword_A8E9A8 = (int)&vt_VectorClass; /*0x4e6da8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3642,
+   "lhs-raw-global-slot",
+   "dword_8B40E8 = (int)&vt_DynamicVectorClass; /*0x4e6dfd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3653,
+   "lhs-raw-global-slot",
+   "dword_8B40E8 = (int)&vt_VectorClass; /*0x4e6e28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3672,
+   "lhs-raw-global-slot",
+   "dword_A83E30 = (int)&vt_DynamicVectorClass; /*0x4e6e7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3683,
+   "lhs-raw-global-slot",
+   "dword_A83E30 = (int)&vt_VectorClass; /*0x4e6ea8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3702,
+   "lhs-raw-global-slot",
+   "dword_A83CF8 = (int)&vt_DynamicVectorClass; /*0x4e6efd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3713,
+   "lhs-raw-global-slot",
+   "dword_A83CF8 = (int)&vt_VectorClass; /*0x4e6f28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3732,
+   "lhs-raw-global-slot",
+   "dword_8B4120 = (int)&vt_DynamicVectorClass; /*0x4e6f7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3743,
+   "lhs-raw-global-slot",
+   "dword_8B4120 = (int)&vt_VectorClass; /*0x4e6fa8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3762,
+   "lhs-raw-global-slot",
+   "dword_A83C98 = (int)&vt_DynamicVectorClass; /*0x4e6ffd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3773,
+   "lhs-raw-global-slot",
+   "dword_A83C98 = (int)&vt_VectorClass; /*0x4e7028*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3792,
+   "lhs-raw-global-slot",
+   "dword_A8E8D0 = (int)&vt_DynamicVectorClass; /*0x4e707d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3803,
+   "lhs-raw-global-slot",
+   "dword_A8E8D0 = (int)&vt_VectorClass; /*0x4e70a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3822,
+   "lhs-raw-global-slot",
+   "dword_A8ECA0 = (int)&vt_DynamicVectorClass; /*0x4e70fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3833,
+   "lhs-raw-global-slot",
+   "dword_A8ECA0 = (int)&vt_VectorClass; /*0x4e7128*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3852,
+   "lhs-raw-global-slot",
+   "dword_8B41C8 = (int)&vt_DynamicVectorClass; /*0x4e717d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3863,
+   "lhs-raw-global-slot",
+   "dword_8B41C8 = (int)&vt_VectorClass; /*0x4e71a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3882,
+   "lhs-raw-global-slot",
+   "dword_A83D80 = (int)&vt_DynamicVectorClass; /*0x4e71fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3893,
+   "lhs-raw-global-slot",
+   "dword_A83D80 = (int)&vt_VectorClass; /*0x4e7228*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3912,
+   "lhs-raw-global-slot",
+   "dword_A8EC18 = (int)&vt_DynamicVectorClass; /*0x4e727d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3923,
+   "lhs-raw-global-slot",
+   "dword_A8EC18 = (int)&vt_VectorClass; /*0x4e72a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3942,
+   "lhs-raw-global-slot",
+   "dword_A8E318 = (int)&vt_DynamicVectorClass; /*0x4e72fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3953,
+   "lhs-raw-global-slot",
+   "dword_A8E318 = (int)&vt_VectorClass; /*0x4e7328*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3972,
+   "lhs-raw-global-slot",
+   "dword_A83C68 = (int)&vt_DynamicVectorClass; /*0x4e737d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   3983,
+   "lhs-raw-global-slot",
+   "dword_A83C68 = (int)&vt_VectorClass; /*0x4e73a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4002,
+   "lhs-raw-global-slot",
+   "dword_A8B218 = (int)&vt_DynamicVectorClass; /*0x4e73fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4013,
+   "lhs-raw-global-slot",
+   "dword_A8B218 = (int)&vt_VectorClass; /*0x4e7428*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4032,
+   "lhs-raw-global-slot",
+   "dword_8B4150 = (int)&vt_DynamicVectorClass; /*0x4e74fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4043,
+   "lhs-raw-global-slot",
+   "dword_8B4150 = (int)&vt_VectorClass; /*0x4e7528*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4062,
+   "lhs-raw-global-slot",
+   "dword_A8E348 = (int)&vt_DynamicVectorClass; /*0x4e757d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4073,
+   "lhs-raw-global-slot",
+   "dword_A8E348 = (int)&vt_VectorClass; /*0x4e75a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4092,
+   "lhs-raw-global-slot",
+   "dword_A8EB28 = (int)&vt_DynamicVectorClass; /*0x4e767d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4103,
+   "lhs-raw-global-slot",
+   "dword_A8EB28 = (int)&vt_VectorClass; /*0x4e76a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4122,
+   "lhs-raw-global-slot",
+   "dword_A8ED28 = (int)&vt_DynamicVectorClass; /*0x4e76fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4133,
+   "lhs-raw-global-slot",
+   "dword_A8ED28 = (int)&vt_VectorClass; /*0x4e7728*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4152,
+   "lhs-raw-global-slot",
+   "dword_A83D98 = (int)&vt_DynamicVectorClass; /*0x4e777d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4163,
+   "lhs-raw-global-slot",
+   "dword_A83D98 = (int)&vt_VectorClass; /*0x4e77a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4182,
+   "lhs-raw-global-slot",
+   "dword_A83D68 = (int)&vt_DynamicVectorClass; /*0x4e77fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4193,
+   "lhs-raw-global-slot",
+   "dword_A83D68 = (int)&vt_VectorClass; /*0x4e7828*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4212,
+   "lhs-raw-global-slot",
+   "dword_A8E330 = (int)&vt_DynamicVectorClass; /*0x4e787d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4223,
+   "lhs-raw-global-slot",
+   "dword_A8E330 = &vt_VectorClass; /*0x4e78a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4242,
+   "lhs-raw-global-slot",
+   "dword_A83CB8 = (int)&vt_DynamicVectorClass; /*0x4e78fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4253,
+   "lhs-raw-global-slot",
+   "dword_A83CB8 = (int)&vt_VectorClass; /*0x4e7928*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4272,
+   "local-value-assign",
+   "stru_A83D50 = (int)&vt_DynamicVectorClass; /*0x4e797d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4283,
+   "local-value-assign",
+   "stru_A83D50 = (int)&vt_VectorClass; /*0x4e79a8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4302,
+   "lhs-raw-global-slot",
+   "dword_A8EC78 = (TechnoClass *)&vt_DynamicVectorClass; /*0x4e79fd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4313,
+   "lhs-raw-global-slot",
+   "dword_A8EC78 = (TechnoClass *)&vt_VectorClass; /*0x4e7a28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4332,
+   "local-value-assign",
+   "stru_A8EB00 = (int)&vt_DynamicVectorClass; /*0x4e7a7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4343,
+   "local-value-assign",
+   "stru_A8EB00 = (int)&vt_VectorClass; /*0x4e7aa8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4362,
+   "lhs-raw-global-slot",
+   "dword_A8E360 = (int)&vt_DynamicVectorClass; /*0x4e7afd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4373,
+   "lhs-raw-global-slot",
+   "dword_A8E360 = (int)&vt_VectorClass; /*0x4e7b28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4392,
+   "lhs-raw-global-slot",
+   "dword_A8E968 = (int)&vt_DynamicVectorClass; /*0x4e7b7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4403,
+   "lhs-raw-global-slot",
+   "dword_A8E968 = (int)&vt_VectorClass; /*0x4e7ba8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4422,
+   "lhs-raw-global-slot",
+   "dword_8B41E0 = (int)&vt_DynamicVectorClass; /*0x4e7bfd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4433,
+   "lhs-raw-global-slot",
+   "dword_8B41E0 = (int)&vt_VectorClass; /*0x4e7c28*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4452,
+   "lhs-raw-global-slot",
+   "dword_A83E00 = (int)&vt_DynamicVectorClass; /*0x4e7c7d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4463,
+   "lhs-raw-global-slot",
+   "dword_A83E00 = (int)&vt_VectorClass; /*0x4e7ca8*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4478,
+   "lhs-raw-global-slot",
+   "dword_A8E8C8.field_0 = (struct IUnknownVtbl *)&vt_TiberianSunClassFactory; /*0x4e7ce0*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4495,
+   "local-value-assign",
+   "stru_A8E7B0[0] = &vt_RandomStraw; /*0x66170d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4511,
+   "lhs-raw-global-slot",
+   "dword_A8ECB8 = (ObjectClass *)&vt_DynamicVectorClass; /*0x4e7d5d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4522,
+   "lhs-raw-global-slot",
+   "dword_A8ECB8 = (ObjectClass *)&vt_VectorClass; /*0x4e7d88*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4546,
+   "lhs-raw-global-slot",
+   "dword_A8ECE0 = (int)&vt_VersionClass; /*0x4e7de0*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4626,
+   "lhs-raw-global-slot",
+   "dword_A83D24 = (int)&vt_VectorClass; /*0x4e7e58*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4695,
+   "lhs-raw-global-slot",
+   "dword_8B41A8 = (int)&vt_DynamicVectorClass; /*0x4e7f4d*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4706,
+   "lhs-raw-global-slot",
+   "dword_8B41A8 = (int)&vt_VectorClass; /*0x4e7f78*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4725,
+   "lhs-raw-global-slot",
+   "dword_8B40C8 = (int)&vt_DynamicVectorClass; /*0x4e7fcd*/"
+  ],
+  [
+   "src\\e4\\addr4E_e4.cpp",
+   4736,
+   "lhs-raw-global-slot",
+   "dword_8B40C8 = (int)&vt_VectorClass; /*0x4e7ff8*/"
+  ],
+  [
+   "src\\e4\\addr4F_e4.cpp",
+   343,
+   "lhs-charset",
+   "*(unsigned int *)(v8 + 88) = &vt_DynamicVectorClass_GraphicMenuItem; /*0x4f1d27*/"
+  ],
+  [
+   "src\\e4\\addr4F_e4.cpp",
+   1298,
+   "local-value-assign",
+   "v11 = &vt_VectorClass_TeamTypeClass_const; /*0x4fa2b4*/"
+  ],
+  [
+   "src\\e4\\addr4F_e4.cpp",
+   2145,
+   "lhs-raw-global-slot",
+   "dword_A8EFC8 = (int)&vt_VectorClass; /*0x4f513e*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   225,
+   "local-value-assign",
+   "a5 = &vt_VectorClass_int; /*0x525562*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   238,
+   "local-value-assign",
+   "a5 = &vt_VectorClass_int; /*0x5255a1*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1163,
+   "local-value-assign",
+   "kk = (int)&vt_CD; /*0x52c3c8*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1164,
+   "lhs-charset",
+   "*(unsigned int *)&v83[60] = &vt_CD; /*0x52c3d1*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1188,
+   "local-value-assign",
+   "kk = (int)&vt_CD; /*0x52c4b9*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1196,
+   "lhs-charset",
+   "*(unsigned int *)&v83[44] = &vt_CD; /*0x52c4de*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1206,
+   "lhs-charset",
+   "*(unsigned int *)&v83[52] = &vt_CD; /*0x52c4fb*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1268,
+   "lhs-charset",
+   "*(unsigned int *)&v83[68] = &vt_CCFileClass; /*0x52c704*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1277,
+   "lhs-charset",
+   "*(unsigned int *)&v83[284] = &CCINIClass_Vtable; /*0x52c75c*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1291,
+   "lhs-charset",
+   "*(unsigned int *)&v83[176] = &vt_CCFileClass; /*0x52c7e3*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1296,
+   "lhs-charset",
+   "*(unsigned int *)&v83[68] = &vt_CCFileClass; /*0x52c80e*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1301,
+   "lhs-charset",
+   "*(unsigned int *)&v83[372] = &CCINIClass_Vtable; /*0x52c83c*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   1306,
+   "lhs-charset",
+   "*(unsigned int *)&v83[176] = &vt_CCFileClass; /*0x52c86c*/"
+  ],
+  [
+   "src\\e4\\addr52_e4.cpp",
+   2339,
+   "local-value-assign",
+   "v59 = (CD)&vt_CD; /*0x52de8d*/"
+  ],
+  [
+   "src\\e4\\addr53_e4.cpp",
+   2726,
+   "local-value-assign",
+   "LightningStorm_CloudsManifesting = (int)&vt_DynamicVectorClass; /*0x53959d*/"
+  ],
+  [
+   "src\\e4\\addr53_e4.cpp",
+   2739,
+   "local-value-assign",
+   "LightningStorm_CloudsManifesting = (int)&vt_VectorClass; /*0x5395ce*/"
+  ],
+  [
+   "src\\e4\\addr53_e4.cpp",
+   2763,
+   "local-value-assign",
+   "LightningStorm_CloudsPresent = (int)&vt_DynamicVectorClass; /*0x53963d*/"
+  ],
+  [
+   "src\\e4\\addr53_e4.cpp",
+   2776,
+   "local-value-assign",
+   "LightningStorm_CloudsPresent = (int)&vt_VectorClass; /*0x53966e*/"
+  ],
+  [
+   "src\\e4\\addr53_e4.cpp",
+   2800,
+   "local-value-assign",
+   "LightningStorm_BoltsPresent = (int)&vt_DynamicVectorClass; /*0x5396dd*/"
+  ],
+  [
+   "src\\e4\\addr53_e4.cpp",
+   2813,
+   "local-value-assign",
+   "LightningStorm_BoltsPresent = (int)&vt_VectorClass; /*0x53970e*/"
+  ],
+  [
+   "src\\e4\\addr53_e4.cpp",
+   3092,
+   "local-value-assign",
+   "stru_AA0118 = (int)&vt_DynamicVectorClass; /*0x53ca8d*/"
+  ],
+  [
+   "src\\e4\\addr53_e4.cpp",
+   3105,
+   "local-value-assign",
+   "stru_AA0118 = (int)&vt_VectorClass; /*0x53cabe*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   454,
+   "local-value-assign",
+   "v75[3] = &vt_List_INIClass_INISection; /*0x5451a0*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   460,
+   "local-value-assign",
+   "v75[0] = &CCINIClass_Vtable; /*0x5451c6*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   963,
+   "local-value-assign",
+   "v171[0] = &vt_CCFileClass; /*0x5466db*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   989,
+   "local-value-assign",
+   "v174[0] = &vt_CCFileClass; /*0x5467f6*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   1010,
+   "local-value-assign",
+   "v165[0] = &vt_CCFileClass; /*0x5468a6*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   1038,
+   "local-value-assign",
+   "v177[0] = &vt_CCFileClass; /*0x54698a*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   1170,
+   "local-value-assign",
+   "v168[0] = &vt_CCFileClass; /*0x546ccb*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   1175,
+   "local-value-assign",
+   "v161[0] = &vt_CCFileClass; /*0x546cfd*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   1180,
+   "local-value-assign",
+   "v149[0] = (int)&vt_CCFileClass; /*0x546d2a*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   1185,
+   "local-value-assign",
+   "v158[0] = (int)&vt_CCFileClass; /*0x546d57*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   2429,
+   "lhs-raw-global-slot",
+   "dword_AA1078 = (int)&vt_DynamicVectorClass; /*0x543e8d*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   2442,
+   "lhs-raw-global-slot",
+   "dword_AA1078 = (int)&vt_VectorClass; /*0x543ebe*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   3343,
+   "lhs-raw-global-slot",
+   "dword_ABC878 = (int)&vt_DynamicVectorClass; /*0x54fddd*/"
+  ],
+  [
+   "src\\e4\\addr54_e4.cpp",
+   3356,
+   "lhs-raw-global-slot",
+   "dword_ABC878 = (int)&vt_VectorClass; /*0x54fe0e*/"
+  ],
+  [
+   "src\\e4\\addr55_e4.cpp",
+   3553,
+   "lhs-raw-global-slot",
+   "dword_ABCA10 = (int)&vt_DynamicVectorClass; /*0x55465d*/"
+  ],
+  [
+   "src\\e4\\addr55_e4.cpp",
+   3564,
+   "lhs-raw-global-slot",
+   "dword_ABCA10 = (int)&vt_VectorClass; /*0x554688*/"
+  ],
+  [
+   "src\\e4\\addr55_e4.cpp",
+   3583,
+   "lhs-raw-global-slot",
+   "dword_ABCA40 = (int)&vt_DynamicVectorClass; /*0x5546dd*/"
+  ],
+  [
+   "src\\e4\\addr55_e4.cpp",
+   3596,
+   "lhs-raw-global-slot",
+   "dword_ABCA40 = (int)&vt_VectorClass; /*0x55470e*/"
+  ],
+  [
+   "src\\e4\\addr55_e4.cpp",
+   3918,
+   "lhs-raw-global-slot",
+   "dword_ABCB78 = (int)&vt_DynamicVectorClass; /*0x5569bd*/"
+  ],
+  [
+   "src\\e4\\addr55_e4.cpp",
+   3929,
+   "lhs-raw-global-slot",
+   "dword_ABCB78 = (int)&vt_VectorClass; /*0x5569e8*/"
+  ],
+  [
+   "src\\e4\\addr58_e4.cpp",
+   1790,
+   "lhs-raw-global-slot",
+   "dword_ABDF90 = (int)&vt_VectorClass; /*0x58bc7e*/"
+  ],
+  [
+   "src\\e4\\addr58_e4.cpp",
+   1920,
+   "local-value-assign",
+   "v2[10] = &vt_VectorClass_Cell; /*0x58c187*/"
+  ],
+  [
+   "src\\e4\\addr59_e4.cpp",
+   276,
+   "local-value-assign",
+   "v32 = &vt_DynamicVectorClass; /*0x59447a*/"
+  ],
+  [
+   "src\\e4\\addr59_e4.cpp",
+   367,
+   "local-value-assign",
+   "v32 = &vt_VectorClass; /*0x5946d2*/"
+  ],
+  [
+   "src\\e4\\addr5B_e4.cpp",
+   121,
+   "lhs-raw-global-slot",
+   "dword_ABEFD8 = (int)&vt_GenericList; /*0x5b3b2b*/"
+  ],
+  [
+   "src\\e4\\addr5B_e4.cpp",
+   142,
+   "lhs-raw-global-slot",
+   "dword_ABEFE8 = (int)&vt_GenericNode; /*0x5b3b7f*/"
+  ],
+  [
+   "src\\e4\\addr5B_e4.cpp",
+   151,
+   "lhs-raw-global-slot",
+   "dword_ABEFDC = (int)&vt_GenericNode; /*0x5b3bc3*/"
+  ],
+  [
+   "src\\e4\\addr5B_e4.cpp",
+   1999,
+   "lhs-raw-global-slot",
+   "dword_ABEFDC = (int)&vt_GenericNode; /*0x5b3ad2*/"
+  ],
+  [
+   "src\\e4\\addr5B_e4.cpp",
+   2000,
+   "lhs-raw-global-slot",
+   "dword_ABEFE8 = (int)&vt_GenericNode; /*0x5b3ad7*/"
+  ],
+  [
+   "src\\e4\\addr5B_e4.cpp",
+   2004,
+   "lhs-raw-global-slot",
+   "dword_ABEFD8 = (int)&vt_List; /*0x5b3af6*/"
+  ],
+  [
+   "src\\e4\\addr5B_e4.cpp",
+   3800,
+   "lhs-raw-global-slot",
+   "dword_ABF390 = (int)&vt_DynamicVectorClass; /*0x5bf7ed*/"
+  ],
+  [
+   "src\\e4\\addr5B_e4.cpp",
+   3811,
+   "lhs-raw-global-slot",
+   "dword_ABF390 = (int)&vt_VectorClass; /*0x5bf818*/"
+  ],
+  [
+   "src\\e4\\addr5C_e4.cpp",
+   4607,
+   "lhs-charset",
+   "*(unsigned int *)&this->m_Enabled = &vt_UnholyAlliance; /*0x5cb3e0*/"
+  ],
+  [
+   "src\\e4\\addr5D_e4.cpp",
+   1027,
+   "lhs-charset",
+   "*(unsigned int *)&v4.ptr_4 = &vt_MultiplayerGameMode_Initializer_MultiplayerBattle; /*0x5d7d45*/"
+  ],
+  [
+   "src\\e4\\addr5D_e4.cpp",
+   1031,
+   "local-value-assign",
+   "v5 = &vt_MultiplayerGameMode_Initializer_MultiplayerManBattle; /*0x5d7d6c*/"
+  ],
+  [
+   "src\\e4\\addr5D_e4.cpp",
+   1035,
+   "local-value-assign",
+   "v6 = &vt_MultiplayerGameMode_Initializer_MultiplayerSiege; /*0x5d7d98*/"
+  ],
+  [
+   "src\\e4\\addr5D_e4.cpp",
+   1039,
+   "local-value-assign",
+   "v7 = &vt_MultiplayerGameMode_Initializer_UnholyAlliance; /*0x5d7dc4*/"
+  ],
+  [
+   "src\\e4\\addr5D_e4.cpp",
+   1043,
+   "local-value-assign",
+   "v8 = &vt_MultiplayerGameMode_Initializer_FreeForAll; /*0x5d7df0*/"
+  ],
+  [
+   "src\\e4\\addr5D_e4.cpp",
+   1047,
+   "local-value-assign",
+   "v9 = &vt_MultiplayerGameMode_Initializer_MPCooperative; /*0x5d7e1c*/"
+  ],
+  [
+   "src\\e4\\addr5D_e4.cpp",
+   2286,
+   "lhs-raw-global-slot",
+   "dword_ABFC90 = (int)&vt_VectorClass; /*0x5d4c98*/"
+  ],
+  [
+   "src\\e4\\addr5D_e4.cpp",
+   2301,
+   "lhs-raw-global-slot",
+   "dword_ABFCB8 = (int)&vt_VectorClass; /*0x5d4d18*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   323,
+   "local-value-assign",
+   "wParam = (WPARAM)&(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3059*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   328,
+   "local-value-assign",
+   "v17[0] =(unsigned int)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3088*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   377,
+   "local-value-assign",
+   "wParam = (WPARAM)&(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e31ca*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   2356,
+   "local-value-assign",
+   "v200[0] = (int)&vt_CCFileClass;"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   2844,
+   "lhs-charset",
+   "*(unsigned int *)&v198[56] = (unsigned int)&vt_DynamicVectorClass_int;"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   2940,
+   "lhs-charset",
+   "*(unsigned int *)&v198[56] = (unsigned int)&vt_VectorClass_int;"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   2948,
+   "lhs-charset",
+   "*(unsigned int *)&v198[56] = (unsigned int)&vt_VectorClass_int;"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   3260,
+   "local-value-assign",
+   "v4[3] = &vt_List; /*0x5e65b9*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   3268,
+   "local-value-assign",
+   "v4[0] = &vt_INIClass; /*0x5e65d9*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   3272,
+   "local-value-assign",
+   "v10[0] = &vt_CCFileClass; /*0x5e65fa*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   3295,
+   "local-value-assign",
+   "v10[0] = &vt_CCFileClass; /*0x5e669c*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   3619,
+   "local-value-assign",
+   "v11[0] = (int)&vt_BufferStraw; /*0x5e7af1*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   3691,
+   "local-value-assign",
+   "v17[0] = &vt_CCFileClass; /*0x5e7c4f*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   3739,
+   "local-value-assign",
+   "v17[0] = &vt_CCFileClass; /*0x5e7e4a*/"
+  ],
+  [
+   "src\\e4\\addr5E_e4.cpp",
+   3746,
+   "local-value-assign",
+   "v17[0] = &vt_CCFileClass; /*0x5e7e87*/"
+  ],
+  [
+   "src\\e4\\addr5F_e4.cpp",
+   547,
+   "local-value-assign",
+   "v7 = &vt_DynamicVectorClass; /*0x5fde28*/"
+  ],
+  [
+   "src\\e4\\addr5F_e4.cpp",
+   579,
+   "local-value-assign",
+   "v7 = &vt_VectorClass; /*0x5fded3*/"
+  ],
+  [
+   "src\\e4\\addr5F_e4.cpp",
+   1409,
+   "lhs-raw-global-slot",
+   "dword_AC1418 = (int)&vt_DynamicVectorClass; /*0x5f700d*/"
+  ],
+  [
+   "src\\e4\\addr5F_e4.cpp",
+   1422,
+   "lhs-raw-global-slot",
+   "dword_AC1418 = (int)&vt_VectorClass; /*0x5f703e*/"
+  ],
+  [
+   "src\\e4\\addr5F_e4.cpp",
+   2107,
+   "lhs-raw-global-slot",
+   "dword_AC1678 = (int)&vt_DynamicVectorClass; /*0x5ff1ed*/"
+  ],
+  [
+   "src\\e4\\addr5F_e4.cpp",
+   2118,
+   "lhs-raw-global-slot",
+   "dword_AC1678 = (int)&vt_VectorClass; /*0x5ff218*/"
+  ],
+  [
+   "src\\e4\\addr62_e4.cpp",
+   3094,
+   "lhs-raw-global-slot",
+   "dword_AC4910 = (int)&vt_DynamicVectorClass; /*0x6291ad*/"
+  ],
+  [
+   "src\\e4\\addr62_e4.cpp",
+   3105,
+   "lhs-raw-global-slot",
+   "dword_AC4910 = (int)&vt_VectorClass; /*0x6291d8*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3644,
+   "lhs-raw-global-slot",
+   "dword_AC4B48 = (int)&vt_DynamicVectorClass; /*0x6335fd*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3657,
+   "lhs-raw-global-slot",
+   "dword_AC4B48 = (int)&vt_VectorClass; /*0x63362e*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3681,
+   "lhs-raw-global-slot",
+   "dword_AC4C98 = (int)&vt_DynamicVectorClass; /*0x63369d*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3694,
+   "lhs-raw-global-slot",
+   "dword_AC4C98 = (int)&vt_VectorClass; /*0x6336ce*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3718,
+   "local-value-assign",
+   "stru_AC4C40 = (int)&(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x63373d*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3731,
+   "local-value-assign",
+   "stru_AC4C40 = (int)&(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x63376e*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3755,
+   "local-value-assign",
+   "stru_AC4B30 = (int)&vt_DynamicVectorClass; /*0x6337dd*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3768,
+   "local-value-assign",
+   "stru_AC4B30 = (int)&vt_VectorClass; /*0x63380e*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3792,
+   "lhs-raw-global-slot",
+   "dword_AC4C18 = (int)&vt_DynamicVectorClass; /*0x63387d*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3805,
+   "lhs-raw-global-slot",
+   "dword_AC4C18 = (int)&vt_VectorClass; /*0x6338ae*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3829,
+   "lhs-raw-global-slot",
+   "dword_AC4C78 = (int)&vt_DynamicVectorClass; /*0x63391d*/"
+  ],
+  [
+   "src\\e4\\addr63_e4.cpp",
+   3842,
+   "lhs-raw-global-slot",
+   "dword_AC4C78 = (int)&vt_VectorClass; /*0x63394e*/"
+  ],
+  [
+   "src\\e4\\addr64_e4.cpp",
+   3001,
+   "local-value-assign",
+   "v77 = &vt_DynamicVectorClass; /*0x64ce33*/"
+  ],
+  [
+   "src\\e4\\addr64_e4.cpp",
+   3080,
+   "local-value-assign",
+   "v100 = &vt_DynamicVectorClass; /*0x64d07c*/"
+  ],
+  [
+   "src\\e4\\addr64_e4.cpp",
+   3087,
+   "local-value-assign",
+   "v94 = &vt_DynamicVectorClass; /*0x64d0a4*/"
+  ],
+  [
+   "src\\e4\\addr64_e4.cpp",
+   3350,
+   "local-value-assign",
+   "v94 = &vt_VectorClass; /*0x64d8e6*/"
+  ],
+  [
+   "src\\e4\\addr64_e4.cpp",
+   3358,
+   "local-value-assign",
+   "v100 = &vt_VectorClass; /*0x64d919*/"
+  ],
+  [
+   "src\\e4\\addr64_e4.cpp",
+   3368,
+   "local-value-assign",
+   "v77 = &vt_VectorClass; /*0x64d963*/"
+  ],
+  [
+   "src\\e4\\addr64_e4.cpp",
+   3809,
+   "lhs-raw-global-slot",
+   "dword_AC4F58[0] = (int)&vt_ProgressScreenClass; /*0x6429a5*/"
+  ],
+  [
+   "src\\e4\\addr65_e4.cpp",
+   1241,
+   "local-value-assign",
+   "RadSiteClass_Array = (int)&vt_DynamicVectorClass; /*0x65b17d*/"
+  ],
+  [
+   "src\\e4\\addr65_e4.cpp",
+   1251,
+   "local-value-assign",
+   "RadSiteClass_Array = (int)&vt_VectorClass; /*0x65b1a8*/"
+  ],
+  [
+   "src\\e4\\addr65_e4.cpp",
+   1518,
+   "local-value-assign",
+   "v10[0] = (unsigned int)(&vt_FileStraw); /*0x65d530*/"
+  ],
+  [
+   "src\\e4\\addr65_e4.cpp",
+   2963,
+   "local-value-assign",
+   "stru_B04A10[0] = (int)&vt_RadarClassRTacticalClass; /*0x65288e*/"
+  ],
+  [
+   "src\\e4\\addr65_e4.cpp",
+   3184,
+   "local-value-assign",
+   "RadBeam_Array = (int)&vt_DynamicVectorClass; /*0x6590ad*/"
+  ],
+  [
+   "src\\e4\\addr65_e4.cpp",
+   3195,
+   "local-value-assign",
+   "RadBeam_Array = (int)&vt_VectorClass; /*0x6590d8*/"
+  ],
+  [
+   "src\\e4\\addr65_e4.cpp",
+   4168,
+   "local-value-assign",
+   "stru_B04DA8 = (int)&vt_VectorClass; /*0x65f9fe*/"
+  ],
+  [
+   "src\\e4\\addr66_e4.cpp",
+   1870,
+   "lhs-raw-global-slot",
+   "unk_B052D0 = (int)&vt_DynamicVectorClass; /*0x66381d*/"
+  ],
+  [
+   "src\\e4\\addr66_e4.cpp",
+   1909,
+   "lhs-raw-global-slot",
+   "unk_B052D0 = (int)&vt_VectorClass; /*0x6638a4*/"
+  ],
+  [
+   "src\\e4\\addr67_e4.cpp",
+   59,
+   "local-value-assign",
+   "v2[0] = (unsigned int)(&vt_List); /*0x679ceb*/"
+  ],
+  [
+   "src\\e4\\addr67_e4.cpp",
+   69,
+   "local-value-assign",
+   "v1[0] = (void*)(&CCINIClass_Vtable); /*0x679d14*/"
+  ],
+  [
+   "src\\e4\\addr67_e4.cpp",
+   75,
+   "local-value-assign",
+   "v7[0] = (unsigned int)(&vt_CCFileClass); /*0x679d51*/"
+  ],
+  [
+   "src\\e4\\addr67_e4.cpp",
+   208,
+   "lhs-charset",
+   "*(unsigned int *)&v17.__pad_0 = (unsigned int)(&vt_TypeList); /*0x67bb6c*/"
+  ],
+  [
+   "src\\e4\\addr67_e4.cpp",
+   237,
+   "lhs-charset",
+   "*(unsigned int *)&v17.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x67bc0b*/"
+  ],
+  [
+   "src\\e4\\addr67_e4.cpp",
+   338,
+   "local-value-assign",
+   "v1[0] = (unsigned int)(&vt_CCFileClass); /*0x679f16*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   1476,
+   "local-value-assign",
+   "v60 = &vt_DynamicVectorClass_TechnoClass; /*0x6886d6*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   1542,
+   "local-value-assign",
+   "v67 = &vt_DynamicVectorClass_UnitTypeClass; /*0x68886b*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   1546,
+   "local-value-assign",
+   "v73 = &vt_DynamicVectorClass_InfantryTypeClass; /*0x688880*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   1791,
+   "local-value-assign",
+   "v73 = &vt_VectorClass_InfantryTypeClass; /*0x688dda*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   1799,
+   "local-value-assign",
+   "v67 = &vt_VectorClass_UnitTypeClass; /*0x688e08*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   1820,
+   "local-value-assign",
+   "v80 = &vt_VectorClass_Cell; /*0x688e75*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   1828,
+   "local-value-assign",
+   "v60 = &vt_VectorClass_TechnoClass; /*0x688ea9*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   2577,
+   "local-value-assign",
+   "stru_B054D0 = (int)&vt_DynamicVectorClass; /*0x68c34d*/"
+  ],
+  [
+   "src\\e4\\addr68_e4.cpp",
+   2588,
+   "local-value-assign",
+   "stru_B054D0 = (int)&vt_VectorClass; /*0x68c378*/"
+  ],
+  [
+   "src\\e4\\addr69_e4.cpp",
+   1132,
+   "local-value-assign",
+   "v18[0] = (int)&vt_CCFileClass; /*0x69541d*/"
+  ],
+  [
+   "src\\e4\\addr69_e4.cpp",
+   1144,
+   "local-value-assign",
+   "v18[0] = (int)&vt_CCFileClass; /*0x6953c3*/"
+  ],
+  [
+   "src\\e4\\addr69_e4.cpp",
+   1155,
+   "local-value-assign",
+   "v14[0] = &vt_List; /*0x695321*/"
+  ],
+  [
+   "src\\e4\\addr69_e4.cpp",
+   1160,
+   "local-value-assign",
+   "v13[0] = &vt_INIClass; /*0x695341*/"
+  ],
+  [
+   "src\\e4\\addr69_e4.cpp",
+   1176,
+   "local-value-assign",
+   "v18[0] = (int)&vt_CCFileClass; /*0x69548b*/"
+  ],
+  [
+   "src\\e4\\addr6A_e4.cpp",
+   1169,
+   "local-value-assign",
+   "stru_B07E58 = (int)&vt_SidebarClassSBGadgetClass; /*0x6a4c2b*/"
+  ],
+  [
+   "src\\e4\\addr6A_e4.cpp",
+   1722,
+   "local-value-assign",
+   "SlaveManagerClass_Array = (int)&vt_DynamicVectorClass; /*0x6af13d*/"
+  ],
+  [
+   "src\\e4\\addr6A_e4.cpp",
+   1733,
+   "local-value-assign",
+   "SlaveManagerClass_Array = (int)&vt_VectorClass; /*0x6af168*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1525,
+   "local-value-assign",
+   "v5[0] = (unsigned int)(&vt_CCFileClass); /*0x6b5505*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1581,
+   "local-value-assign",
+   "v30 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5a02*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1608,
+   "local-value-assign",
+   "v24 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5adc*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1675,
+   "local-value-assign",
+   "v24 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5c3c*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1683,
+   "local-value-assign",
+   "v30 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5c63*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1744,
+   "local-value-assign",
+   "v31 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5cf2*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1771,
+   "local-value-assign",
+   "v25 = &vt_DynamicVectorClass_SmudgeTypeClass_const; /*0x6b5dcc*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1838,
+   "local-value-assign",
+   "v25 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5f2c*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   1847,
+   "local-value-assign",
+   "v31 = &vt_VectorClass_SmudgeTypeClass_const; /*0x6b5f53*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   2383,
+   "lhs-charset",
+   "*(unsigned int *)&v48[56] = &vt_CCFileClass; /*0x6ba0e2*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   2392,
+   "lhs-charset",
+   "*(unsigned int *)&v48[56] = &vt_CCFileClass; /*0x6b9d68*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   4714,
+   "lhs-raw-global-slot",
+   "dword_B0B650 = (int)&vt_DynamicVectorClass; /*0x6b23cd*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   4725,
+   "lhs-raw-global-slot",
+   "dword_B0B650 = (int)&vt_VectorClass; /*0x6b23f8*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   5171,
+   "local-value-assign",
+   "SpawnManagerClass_Array = (int)&vt_DynamicVectorClass; /*0x6b6c2d*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   5182,
+   "local-value-assign",
+   "SpawnManagerClass_Array = (int)&vt_VectorClass; /*0x6b6c58*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   5627,
+   "local-value-assign",
+   "g_AnimationManager = (int)&vt_DynamicVectorClass; /*0x6bb27d*/"
+  ],
+  [
+   "src\\e4\\addr6B_e4.cpp",
+   5638,
+   "local-value-assign",
+   "g_AnimationManager = (int)&vt_VectorClass; /*0x6bb2a8*/"
+  ],
+  [
+   "src\\e4\\addr6C_e4.cpp",
+   3053,
+   "lhs-raw-global-slot",
+   "dword_B0C114 = (int)&vt_DynamicVectorClass; /*0x6cf087*/"
+  ],
+  [
+   "src\\e4\\addr6C_e4.cpp",
+   3057,
+   "lhs-raw-global-slot",
+   "dword_B0C12C = (int)&vt_DynamicVectorClass; /*0x6cf0b4*/"
+  ],
+  [
+   "src\\e4\\addr6C_e4.cpp",
+   3059,
+   "local-value-assign",
+   "SwizzleManagerClass_Instance = (int)&vt_SwizzleManagerClass; /*0x6cf0c8*/"
+  ],
+  [
+   "src\\e4\\addr6D_e4.cpp",
+   381,
+   "lhs-raw-global-slot",
+   "dword_B0CE78 = (int)&vt_VectorClass; /*0x6d1aae*/"
+  ],
+  [
+   "src\\e4\\addr6D_e4.cpp",
+   405,
+   "lhs-raw-global-slot",
+   "dword_B0CDE8 = (int)&vt_DynamicVectorClass; /*0x6d1b2d*/"
+  ],
+  [
+   "src\\e4\\addr6D_e4.cpp",
+   418,
+   "lhs-raw-global-slot",
+   "dword_B0CDE8 = (int)&vt_VectorClass; /*0x6d1b5e*/"
+  ],
+  [
+   "src\\e4\\addr6D_e4.cpp",
+   843,
+   "lhs-raw-global-slot",
+   "dword_B0E658 = (int)&vt_VectorClass; /*0x6dcfc8*/"
+  ],
+  [
+   "src\\e4\\addr6E_e4.cpp",
+   1149,
+   "local-value-assign",
+   "TagClass_Array = (int)&vt_DynamicVectorClass; /*0x6e4d7d*/"
+  ],
+  [
+   "src\\e4\\addr6E_e4.cpp",
+   1160,
+   "local-value-assign",
+   "TagClass_Array = (int)&vt_VectorClass; /*0x6e4da8*/"
+  ],
+  [
+   "src\\e4\\addr6E_e4.cpp",
+   1334,
+   "lhs-raw-global-slot",
+   "dword_B0E780 = (int)&vt_DynamicVectorClass; /*0x6e5afd*/"
+  ],
+  [
+   "src\\e4\\addr6E_e4.cpp",
+   1345,
+   "lhs-raw-global-slot",
+   "dword_B0E780 = (int)&vt_VectorClass; /*0x6e5b28*/"
+  ],
+  [
+   "src\\e4\\addr70_e4.cpp",
+   594,
+   "local-value-assign",
+   "v33 = &vt_DynamicVectorClass_AbstractClass; /*0x7095f2*/"
+  ],
+  [
+   "src\\e4\\addr70_e4.cpp",
+   685,
+   "local-value-assign",
+   "v33 = &vt_VectorClass_AbstractClass; /*0x7097cf*/"
+  ],
+  [
+   "src\\e4\\addr71_e4.cpp",
+   297,
+   "local-value-assign",
+   "v5[0] = (unsigned int)(&vt_CCFileClass); /*0x71dd41*/"
+  ],
+  [
+   "src\\e4\\addr71_e4.cpp",
+   744,
+   "lhs-raw-global-slot",
+   "dword_B0EC60 = (int)&vt_DynamicVectorClass; /*0x71a3ed*/"
+  ],
+  [
+   "src\\e4\\addr71_e4.cpp",
+   755,
+   "lhs-raw-global-slot",
+   "dword_B0EC60 = (int)&vt_VectorClass; /*0x71a418*/"
+  ],
+  [
+   "src\\e4\\addr71_e4.cpp",
+   1222,
+   "lhs-raw-global-slot",
+   "dword_B0F1A0 = (int)&vt_DynamicVectorClass; /*0x71e63d*/"
+  ],
+  [
+   "src\\e4\\addr71_e4.cpp",
+   1233,
+   "lhs-raw-global-slot",
+   "dword_B0F1A0 = (int)&vt_VectorClass; /*0x71e668*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   1643,
+   "lhs-raw-global-slot",
+   "dword_B0F4E8 = (int)&vt_DynamicVectorClass; /*0x72165d*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   1654,
+   "lhs-raw-global-slot",
+   "dword_B0F4E8 = (int)&vt_VectorClass; /*0x721688*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2125,
+   "lhs-raw-global-slot",
+   "dword_B0F720 = (int)&vt_DynamicVectorClass; /*0x7252ed*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2136,
+   "lhs-raw-global-slot",
+   "dword_B0F720 = (int)&vt_VectorClass; /*0x725318*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2155,
+   "lhs-raw-global-slot",
+   "dword_B0F670 = (int)&vt_DynamicVectorClass; /*0x72536d*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2166,
+   "lhs-raw-global-slot",
+   "dword_B0F670 = (int)&vt_VectorClass; /*0x725398*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2185,
+   "lhs-raw-global-slot",
+   "dword_B0F618 = (int)&vt_DynamicVectorClass; /*0x7253ed*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2196,
+   "lhs-raw-global-slot",
+   "dword_B0F618 = (int)&vt_VectorClass; /*0x725418*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2215,
+   "lhs-raw-global-slot",
+   "dword_B0F708 = (int)&vt_DynamicVectorClass; /*0x72546d*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2226,
+   "lhs-raw-global-slot",
+   "dword_B0F708 = (int)&vt_VectorClass; /*0x725498*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2245,
+   "local-value-assign",
+   "stru_B0F5B8 = (int)&(void*)(void*)&DynamicVectorClass_AbstractClass___vftable; /*0x7254ed*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2256,
+   "local-value-assign",
+   "stru_B0F5B8 = (int)&(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x725518*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2275,
+   "lhs-raw-global-slot",
+   "dword_B0F640 = (int)&vt_DynamicVectorClass; /*0x72556d*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2286,
+   "lhs-raw-global-slot",
+   "dword_B0F640 = (int)&vt_VectorClass; /*0x725598*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2305,
+   "lhs-raw-global-slot",
+   "dword_B0F658 = (int)&vt_DynamicVectorClass; /*0x7255ed*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2316,
+   "lhs-raw-global-slot",
+   "dword_B0F658 = (int)&vt_VectorClass; /*0x725618*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2335,
+   "lhs-raw-global-slot",
+   "dword_B0F5F0 = (int)&vt_DynamicVectorClass; /*0x72566d*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2346,
+   "lhs-raw-global-slot",
+   "dword_B0F5F0 = (int)&vt_VectorClass; /*0x725698*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2365,
+   "lhs-raw-global-slot",
+   "dword_B0F5D8 = (int)&vt_DynamicVectorClass; /*0x7256ed*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2376,
+   "lhs-raw-global-slot",
+   "dword_B0F5D8 = (int)&vt_VectorClass; /*0x725718*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2395,
+   "lhs-raw-global-slot",
+   "dword_B0F6C8 = (int)&vt_DynamicVectorClass; /*0x72576d*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2406,
+   "lhs-raw-global-slot",
+   "dword_B0F6C8 = (int)&vt_VectorClass; /*0x725798*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2425,
+   "lhs-raw-global-slot",
+   "dword_B0F6F0 = (int)&vt_DynamicVectorClass; /*0x7257ed*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2436,
+   "lhs-raw-global-slot",
+   "dword_B0F6F0 = (int)&vt_VectorClass; /*0x725818*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2455,
+   "local-value-assign",
+   "stru_B0F698 = (int)&(void*)(void*)&DynamicVectorClass_AbstractClass___vftable; /*0x72586d*/"
+  ],
+  [
+   "src\\e4\\addr72_e4.cpp",
+   2466,
+   "local-value-assign",
+   "stru_B0F698 = (int)&(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x725898*/"
+  ],
+  [
+   "src\\e4\\addr74_e4.cpp",
+   142,
+   "local-value-assign",
+   "v46 = &vt_DynamicVectorClass_int; /*0x743297*/"
+  ],
+  [
+   "src\\e4\\addr74_e4.cpp",
+   295,
+   "local-value-assign",
+   "v46 = &vt_VectorClass_int; /*0x7436b4*/"
+  ],
+  [
+   "src\\e4\\addr74_e4.cpp",
+   2007,
+   "local-value-assign",
+   "stru_B1D290 = (int)&vt_VectorClass; /*0x74c3ce*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2002,
+   "lhs-raw-global-slot",
+   "dword_B45B58 = (int)&vt_DynamicVectorClass; /*0x75919d*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2012,
+   "lhs-raw-global-slot",
+   "dword_B45B58 = (int)&vt_VectorClass; /*0x7591c8*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2372,
+   "lhs-raw-global-slot",
+   "dword_B1D378 = (int)&vt_DynamicVectorClass; /*0x75031d*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2383,
+   "lhs-raw-global-slot",
+   "dword_B1D378 = (int)&vt_VectorClass; /*0x750348*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2789,
+   "lhs-raw-global-slot",
+   "dword_B1D4A0 = (int)&vt_DynamicVectorClass; /*0x75222d*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2800,
+   "lhs-raw-global-slot",
+   "dword_B1D4A0 = (int)&vt_VectorClass; /*0x752258*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2880,
+   "lhs-raw-global-slot",
+   "dword_B2D928 = (int)&XSurface_Vtable; /*0x7539f8*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2883,
+   "lhs-raw-global-slot",
+   "dword_B2D928 = (int)&BSurface_Vtable; /*0x753a16*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2893,
+   "lhs-raw-global-slot",
+   "dword_B2D928 = (int)&Surface_Vtable; /*0x753a3a*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2904,
+   "lhs-raw-global-slot",
+   "dword_B2D7F0 = (int)&XSurface_Vtable; /*0x753a78*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2907,
+   "lhs-raw-global-slot",
+   "dword_B2D7F0 = (int)&BSurface_Vtable; /*0x753a96*/"
+  ],
+  [
+   "src\\e4\\addr75_e4.cpp",
+   2917,
+   "lhs-raw-global-slot",
+   "dword_B2D7F0 = (int)&Surface_Vtable; /*0x753aba*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   327,
+   "local-value-assign",
+   "v8[3] = &vt_List; /*0x765060*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   335,
+   "local-value-assign",
+   "v8[0] = &vt_INIClass; /*0x765080*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   444,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x76613f*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   458,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x7661b0*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   461,
+   "local-value-assign",
+   "v29[0] = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x7661bd*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   476,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x766201*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   490,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x766276*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   492,
+   "local-value-assign",
+   "v29[0] = &vt_rc_ptr; /*0x766283*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   505,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x7662c7*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   519,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x76633c*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   521,
+   "local-value-assign",
+   "v29[0] = &vt_rc_ptr; /*0x766349*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   530,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x766383*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   544,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x7663f8*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   546,
+   "local-value-assign",
+   "v29[0] = &vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x766405*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   559,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x766449*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   573,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x7664be*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   575,
+   "local-value-assign",
+   "v29[0] = &vt_rc_ptr; /*0x7664cb*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   588,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x76650f*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   591,
+   "local-value-assign",
+   "v27 = &vt_rc_ptr; /*0x766533*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   1329,
+   "lhs-raw-global-slot",
+   "dword_B72608 = (int)&vt_DynamicVectorClass; /*0x7635ad*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   1340,
+   "lhs-raw-global-slot",
+   "dword_B72608 = (int)&vt_VectorClass; /*0x7635d8*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   1537,
+   "local-value-assign",
+   "v7 = &vt_List_INIClass_INISection; /*0x764a80*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   1544,
+   "lhs-charset",
+   "*(unsigned int *)&v4.ptr_4 = &vt_INIClass; /*0x764aa6*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   1740,
+   "local-value-assign",
+   "stru_B72760 = (int)&vt_DynamicVectorClassrc_ptr; /*0x76608d*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   1751,
+   "local-value-assign",
+   "stru_B72760 = (int)&vt_VectorClassrc_ptr; /*0x7660b9*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   2502,
+   "local-value-assign",
+   "v7 = &vt_DynamicVectorClassrc_ptr; /*0x76ac43*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   2510,
+   "local-value-assign",
+   "v7 = &vt_VectorClassrc_ptr; /*0x76ac68*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   2815,
+   "local-value-assign",
+   "v7[0] = (int)&vt_rc_ptr; /*0x76d415*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   2822,
+   "local-value-assign",
+   "v7[0] = (int)&vt_rc_ptr; /*0x76d44a*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   2930,
+   "lhs-charset",
+   "*(unsigned int *)&v3.ptr_4 = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76e00d*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   2982,
+   "lhs-charset",
+   "*(unsigned int *)&v4.ptr_4 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76e15a*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   2984,
+   "lhs-charset",
+   "*(unsigned int *)&v4.ptr_4 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76e16b*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   3296,
+   "local-value-assign",
+   "v7[0] = &vt_rc_ptr; /*0x76ffc9*/"
+  ],
+  [
+   "src\\e4\\addr76_e4.cpp",
+   3305,
+   "local-value-assign",
+   "v7[0] = &vt_rc_ptr; /*0x76fffb*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5104,
+   "local-value-assign",
+   "v3[0] = &vt_GenericNode; /*0x779779*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5105,
+   "local-value-assign",
+   "v4[0] = &vt_GenericNode; /*0x77977d*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5113,
+   "local-value-assign",
+   "v2[3] = &vt_List; /*0x7797af*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5118,
+   "local-value-assign",
+   "v2[0] = &vt_INIClass; /*0x7797d5*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5159,
+   "local-value-assign",
+   "v4[0] = &vt_GenericNode; /*0x779883*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5160,
+   "local-value-assign",
+   "v5[0] = &vt_GenericNode; /*0x779887*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5168,
+   "local-value-assign",
+   "v3[3] = &vt_List; /*0x7798b9*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5173,
+   "local-value-assign",
+   "v3[0] = &vt_INIClass; /*0x7798da*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5201,
+   "local-value-assign",
+   "v3[0] = &vt_GenericNode; /*0x779989*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5202,
+   "local-value-assign",
+   "v4[0] = &vt_GenericNode; /*0x77998d*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5210,
+   "local-value-assign",
+   "v2[3] = &vt_List; /*0x7799bf*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5215,
+   "local-value-assign",
+   "v2[0] = &vt_INIClass; /*0x7799e5*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5256,
+   "local-value-assign",
+   "v4[0] = &vt_GenericNode; /*0x779a93*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5257,
+   "local-value-assign",
+   "v5[0] = &vt_GenericNode; /*0x779a97*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5265,
+   "local-value-assign",
+   "v3[3] = &vt_List; /*0x779ac9*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   5270,
+   "local-value-assign",
+   "v3[0] = &vt_INIClass; /*0x779aea*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   6522,
+   "local-value-assign",
+   "stru_B75E48 = (int)&vt_rc_ptr; /*0x77d12f*/"
+  ],
+  [
+   "src\\e4\\addr77_e4.cpp",
+   6531,
+   "local-value-assign",
+   "stru_B75E48 = (int)&vt_rc_ptr; /*0x77d140*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   98,
+   "local-value-assign",
+   "v25[0] = (unsigned int)(&vt_rc_ptr); /*0x780132*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   3424,
+   "local-value-assign",
+   "v18[3] = &vt_List_INIClass_INISection; /*0x788257*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   3429,
+   "local-value-assign",
+   "v18[0] = &vt_INIClass; /*0x78827d*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   3461,
+   "local-value-assign",
+   "v28[0] = &vt_CCFileClass; /*0x78837b*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   4223,
+   "local-value-assign",
+   "v24 = &vt_rc_ptr_PlayerProfile; /*0x78972e*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   4228,
+   "local-value-assign",
+   "v23[0] = (char *)&vt_rc_ptr_PlayerProfile; /*0x78975a*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   4305,
+   "local-value-assign",
+   "v24 = &vt_rc_ptr_PlayerProfile; /*0x78993e*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   4370,
+   "local-value-assign",
+   "v18[0] = (OwnerDrawControl)&vt_WonlineStringDialogControl; /*0x789aa5*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   4376,
+   "local-value-assign",
+   "v18[0] = (OwnerDrawControl)&vt_WonlineStringDialogControl; /*0x789ab7*/"
+  ],
+  [
+   "src\\e4\\addr78_e4.cpp",
+   4385,
+   "local-value-assign",
+   "v18[0] = (OwnerDrawControl)&vt_WonlineStringDialogControl; /*0x789b04*/"
+  ],
+  [
+   "src\\e4\\addr79_e4.cpp",
+   3091,
+   "local-value-assign",
+   "Type = (DWORD)&vt_rc_ptr; /*0x7989d3*/"
+  ],
+  [
+   "src\\e4\\addr79_e4.cpp",
+   3355,
+   "local-value-assign",
+   "v62 = &vt_rc_ptr_PlayerProfile; /*0x799b30*/"
+  ],
+  [
+   "src\\e4\\addr79_e4.cpp",
+   3452,
+   "local-value-assign",
+   "v60 = &vt_rc_ptr_PlayerProfile; /*0x7998b3*/"
+  ],
+  [
+   "src\\e4\\addr79_e4.cpp",
+   3550,
+   "local-value-assign",
+   "v60 = &vt_rc_ptr_PlayerProfile; /*0x79934f*/"
+  ],
+  [
+   "src\\e4\\addr79_e4.cpp",
+   3564,
+   "local-value-assign",
+   "v60 = &vt_rc_ptr_PlayerProfile; /*0x7993b8*/"
+  ],
+  [
+   "src\\e4\\addr79_e4.cpp",
+   3625,
+   "local-value-assign",
+   "v60 = &vt_rc_ptr_PlayerProfile; /*0x799662*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   290,
+   "lhs-charset",
+   "*(unsigned int *)&v31[24] = &vt_rc_ptr_PlayerProfile; /*0x7a082c*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   295,
+   "lhs-charset",
+   "*(unsigned int *)&v31[16] = &vt_rc_ptr_PlayerProfile; /*0x7a0858*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   310,
+   "lhs-charset",
+   "*(unsigned int *)&v31[16] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7a08c4*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   328,
+   "lhs-charset",
+   "*(unsigned int *)&v31[16] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7a091f*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   332,
+   "lhs-charset",
+   "*(unsigned int *)&v31[24] = &vt_rc_ptr_PlayerProfile; /*0x7a093e*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   349,
+   "lhs-charset",
+   "*(unsigned int *)&v31[16] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7a09bb*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   439,
+   "lhs-charset",
+   "*(unsigned int *)&v31[24] = &vt_rc_ptr_PlayerProfile; /*0x7a0cfa*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   1588,
+   "local-value-assign",
+   "v6 = (OwnerDrawControl)&vt_WorldDominationTour_FactionSelectDialogControl; /*0x7af9a5*/"
+  ],
+  [
+   "src\\e4\\addr7A_e4.cpp",
+   1615,
+   "local-value-assign",
+   "v6 = (OwnerDrawControl)&vt_WorldDominationTour_FactionSelectDialogControl; /*0x7afa83*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1113,
+   "local-value-assign",
+   "v7 = &vt_BlitPlain_unsigned_char; /*0x7bc20a*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1118,
+   "local-value-assign",
+   "v7 = &vt_BlitPlain_unsigned_short; /*0x7bc223*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1133,
+   "local-value-assign",
+   "v7 = &vt_BlitTrans_unsigned_char; /*0x7bc26a*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1138,
+   "local-value-assign",
+   "v7 = &vt_BlitTrans_unsigned_short; /*0x7bc283*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1745,
+   "lhs-raw-global-slot",
+   "dword_B77F58 = (int)&vt_rc_ptr; /*0x7b011f*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1754,
+   "lhs-raw-global-slot",
+   "dword_B77F58 = (int)&vt_rc_ptr; /*0x7b0130*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1764,
+   "lhs-raw-global-slot",
+   "dword_B77F70 = (int)&vt_rc_ptr; /*0x7b015f*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1773,
+   "lhs-raw-global-slot",
+   "dword_B77F70 = (int)&vt_rc_ptr; /*0x7b0170*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1783,
+   "local-value-assign",
+   "stru_B77F68 = (int)&vt_rc_ptr; /*0x7b019f*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1792,
+   "local-value-assign",
+   "stru_B77F68 = (int)&vt_rc_ptr; /*0x7b01b0*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1802,
+   "lhs-raw-global-slot",
+   "dword_B77F78 = (int)&vt_rc_ptr; /*0x7b01df*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1811,
+   "lhs-raw-global-slot",
+   "dword_B77F78 = (int)&vt_rc_ptr; /*0x7b01f0*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1850,
+   "local-value-assign",
+   "v6[0] = &vt_rc_ptr; /*0x7b03de*/"
+  ],
+  [
+   "src\\e4\\addr7B_e4.cpp",
+   1859,
+   "local-value-assign",
+   "v6[0] = &vt_rc_ptr; /*0x7b0410*/"
+  ],
+  [
+   "src\\entity\\gap2_defs.cpp",
+   7246,
+   "rhs-nonliteral",
+   "v5 = v4->vt_slot_16(this->Particles, &a1_2); /*0x62febb*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   4899,
+   "local-value-assign",
+   "v35 = (int)&vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4fec6f*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   4922,
+   "local-value-assign",
+   "v35 = (int)&vt_VectorClass_TechnoTypeClass_const; /*0x4fecda*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   6927,
+   "local-value-assign",
+   "v96 = (BoolVector)&vt_DynamicVectorClass_bool; /*0x505528*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   7406,
+   "local-value-assign",
+   "v96 = (BoolVector)&vt_VectorClass_bool; /*0x505f23*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   8042,
+   "local-value-assign",
+   "v22 = &vt_DynamicVectorClass_BuildingTypeClass; /*0x507d9a*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   8127,
+   "local-value-assign",
+   "v22 = &vt_VectorClass_BuildingTypeClass; /*0x507f2a*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   8166,
+   "local-value-assign",
+   "v22 = &vt_DynamicVectorClass_BuildingTypeClass; /*0x507f8a*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   8251,
+   "local-value-assign",
+   "v22 = &vt_VectorClass_BuildingTypeClass; /*0x50811a*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11537,
+   "lhs-charset",
+   "*(&this->nextArrayIndex5) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d49*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11539,
+   "lhs-charset",
+   "*(&this->referenceCount2) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d60*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11541,
+   "lhs-charset",
+   "*(&this->referenceCount9) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d77*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11543,
+   "lhs-charset",
+   "*(&this->NeedsSaveOrLink6) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d8e*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11545,
+   "lhs-charset",
+   "*(&this->conYardsCapacity8) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664da5*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11547,
+   "lhs-charset",
+   "*(&this->q0445) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664dbc*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11549,
+   "lhs-charset",
+   "*(&this->q0482) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664dd3*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11551,
+   "lhs-charset",
+   "*(&this->q544) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664dea*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11553,
+   "lhs-charset",
+   "*(&this->q581) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e01*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11555,
+   "lhs-charset",
+   "*(&this->q588) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e18*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11557,
+   "lhs-charset",
+   "*(&this->q05C5) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e2f*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11559,
+   "lhs-charset",
+   "*(&this->q0602) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e46*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11561,
+   "lhs-charset",
+   "*(&this->q609) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e5d*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11563,
+   "lhs-charset",
+   "*(&this->health1) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e74*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11565,
+   "lhs-charset",
+   "*(&this->health8) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e8b*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11567,
+   "lhs-charset",
+   "*(&this->estimatedHealth5) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664ea2*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11569,
+   "lhs-charset",
+   "*(&this->isInLogic4) = (void *)(void*)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x664eb9*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11571,
+   "lhs-charset",
+   "*(&this->q0A02) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664ed0*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11573,
+   "lhs-charset",
+   "*(&this->q02B5) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664ee7*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11577,
+   "lhs-charset",
+   "*(&this->q0317) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f15*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11579,
+   "lhs-charset",
+   "*(&this->needsSave4) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f2c*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11581,
+   "lhs-charset",
+   "*(&this->pad211) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f43*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11583,
+   "lhs-charset",
+   "*(&this->pad218) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f5a*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11585,
+   "lhs-charset",
+   "*(&this->attachedTag5) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f71*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11589,
+   "lhs-charset",
+   "*(&this->occupant4) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664f9f*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11593,
+   "lhs-charset",
+   "*(&this->attachedBomb2) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fcd*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11595,
+   "lhs-charset",
+   "*(&this->attachedBomb9) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fe4*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11599,
+   "lhs-charset",
+   "*(&this->q03A3) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665012*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11601,
+   "lhs-charset",
+   "*(&this->q3B0) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665029*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11603,
+   "lhs-charset",
+   "*(&this->q3B7) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665040*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11605,
+   "lhs-charset",
+   "*(&this->airspeedMultiplier4) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665057*"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11609,
+   "lhs-charset",
+   "*(&this->q0F48) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665085*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11611,
+   "lhs-charset",
+   "*(&this->armorMultiplier5) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66509c*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11613,
+   "lhs-charset",
+   "*(&this->q0FC2) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650b3*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11615,
+   "lhs-charset",
+   "*(&this->q0FC9) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650ca*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11617,
+   "lhs-charset",
+   "*(&this->rofMultiplier6) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650e1*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11619,
+   "lhs-charset",
+   "*(&this->q1043) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650f8*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11621,
+   "lhs-charset",
+   "*(&this->costMultiplier0) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66510f*/"
+  ],
+  [
+   "src\\house\\gap2_defs.cpp",
+   11623,
+   "lhs-charset",
+   "*(&this->costMultiplier7) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665126*/"
+  ],
+  [
+   "src\\house\\supplied_bodies.cpp",
+   594,
+   "local-value-assign",
+   "v121 = (TeamTypeVector)&vt_TypeList_TeamTypeClass_const; /*0x4f8a86*/"
+  ],
+  [
+   "src\\house\\supplied_bodies.cpp",
+   595,
+   "local-value-assign",
+   "v125[0] = &vt_VectorClass_TeamTypeClass_const; /*0x4f8a8e*/"
+  ],
+  [
+   "src\\house\\supplied_bodies.cpp",
+   608,
+   "local-value-assign",
+   "v121 = (TeamTypeVector)&vt_VectorClass_TeamTypeClass_const; /*0x4f8af1*/"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2041,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2081,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vf"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2128,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2155,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2182,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2209,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2249,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2276,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   2988,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vf"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   3126,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vft"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   3186,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vft"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   3266,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_UnitTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   3293,
+   "lhs-charset",
+   "*(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_UnitTypeClass_const___vftable"
+  ],
+  [
+   "src\\misc\\gap2_defs.cpp",
+   5114,
+   "local-value-assign",
+   "v24 = &vt_VectorClass_int; /*0x672533*/"
+  ],
+  [
+   "src\\misc\\misc_ext.cpp",
+   2600,
+   "rhs-nonliteral",
+   "v3 = stru_AA0118.vt_slot_16(&v46); /*0x53cc16*/"
+  ],
+  [
+   "src\\misc\\misc_ext.cpp",
+   13513,
+   "lhs-charset",
+   "*(unsigned int *)&v26.vtable2 = &vt_CCFileClass; /*0x7690f4*/"
+  ],
+  [
+   "src\\misc\\misc_ext.cpp",
+   14754,
+   "rhs-nonliteral",
+   "v10 = (unsigned short *)v7->vt_slot_440(&v19); /*0x42e893*/"
+  ],
+  [
+   "src\\misc\\subs.cpp",
+   232,
+   "lhs-charset",
+   "//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&FlyLocomotionClass_vf"
+  ],
+  [
+   "src\\misc\\subs.cpp",
+   233,
+   "lhs-charset",
+   "//   *(this + 1) = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&FlyLocomotionClass_vftable;"
+  ],
+  [
+   "src\\misc\\subs.cpp",
+   241,
+   "lhs-charset",
+   "//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&HoverLocomotionClass_"
+  ],
+  [
+   "src\\misc\\subs.cpp",
+   242,
+   "lhs-charset",
+   "//   *(this + 1) = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&HoverLocomotionClass_vftable;"
+  ],
+  [
+   "src\\misc\\subs.cpp",
+   250,
+   "lhs-charset",
+   "//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&MechLocomotionClass_v"
+  ],
+  [
+   "src\\misc\\subs.cpp",
+   251,
+   "lhs-charset",
+   "//   *(this + 1) = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&MechLocomotionClass_vftable;"
+  ],
+  [
+   "src\\misc\\subs.cpp",
+   259,
+   "lhs-charset",
+   "//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&RocketLocomotionClass"
+  ],
+  [
+   "src\\misc\\subs.cpp",
+   260,
+   "lhs-charset",
+   "//   *(this + 1) = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&RocketLocomotionClass_vftable;"
+  ],
+  [
+   "src\\network\\subs.cpp",
+   12,
+   "lhs-charset",
+   "//   *(unsigned int *)this = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&MultiplayerBattle_vftabl"
+  ],
+  [
+   "src\\network\\subs.cpp",
+   20,
+   "lhs-charset",
+   "//   *(unsigned int *)this = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&FreeForAll_vftable;"
+  ],
+  [
+   "src\\network\\subs.cpp",
+   28,
+   "lhs-charset",
+   "//   *(unsigned int *)this = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&MultiplayerManBattle_vft"
+  ],
+  [
+   "src\\network\\subs.cpp",
+   36,
+   "lhs-charset",
+   "//   *(unsigned int *)this = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&Megawealth_vftable;"
+  ],
+  [
+   "src\\network\\subs.cpp",
+   44,
+   "lhs-charset",
+   "//   *(unsigned int *)this = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&MultiplayerSiege_vftable"
+  ],
+  [
+   "src\\network\\subs.cpp",
+   52,
+   "lhs-charset",
+   "//   *(unsigned int *)this = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&UnholyAlliance_vftable;"
+  ],
+  [
+   "src\\object\\gap2_defs.cpp",
+   6370,
+   "rhs-nonliteral",
+   "(*((unsigned char *)&(result))) = _do_always_noconv_codecvt_base_std__MBE_NXZ_18(v2); /*0x6e57d2*/"
+  ],
+  [
+   "src\\object\\gap2_defs.cpp",
+   7417,
+   "rhs-nonliteral",
+   "v35 = v34->vt_slot_16(this->currentTargets, &a2); /*0x707c3b*/"
+  ],
+  [
+   "src\\object\\supplied_bodies.cpp",
+   3748,
+   "local-value-assign",
+   "v31 = &vt_DynamicVectorClass_TechnoClass; /*0x458ad0*/"
+  ],
+  [
+   "src\\object\\supplied_bodies.cpp",
+   3853,
+   "local-value-assign",
+   "v31 = &vt_VectorClass_TechnoClass; /*0x458d82*/"
+  ],
+  [
+   "src\\object\\supplied_bodies.cpp",
+   10379,
+   "local-value-assign",
+   "v15 = &vt_DynamicVectorClass_TechnoClass; /*0x6f4f78*/"
+  ],
+  [
+   "src\\object\\supplied_bodies.cpp",
+   10405,
+   "local-value-assign",
+   "v15 = &vt_VectorClass_TechnoClass; /*0x6f5068*/"
+  ],
+  [
+   "src\\object\\supplied_bodies.cpp",
+   13301,
+   "local-value-assign",
+   "v37 = &vt_DynamicVectorClass_TechnoClass; /*0x6fbb12*/"
+  ],
+  [
+   "src\\object\\supplied_bodies.cpp",
+   13328,
+   "local-value-assign",
+   "v37 = &vt_VectorClass_TechnoClass; /*0x6fbbf0*/"
+  ],
+  [
+   "src\\object\\techno.cpp",
+   1328,
+   "rhs-nonliteral",
+   "v3 = stru_AC4B30.vt_slot_16(&v7); /*0x633d71*/"
+  ],
+  [
+   "src\\render\\supplied_bodies.cpp",
+   3836,
+   "local-value-assign",
+   "v78 = &vt_VectorClass_int; /*0x75dc95*/"
+  ],
+  [
+   "src\\render\\supplied_bodies.cpp",
+   3859,
+   "local-value-assign",
+   "v78 = &vt_TypeList_int; /*0x75dd0f*/"
+  ],
+  [
+   "src\\structure\\building.cpp",
+   9344,
+   "rhs-nonliteral",
+   "v41 = (int *)dword_89DDC0->vt_slot_120(&v24, 0); /*0x4552a3*/"
+  ],
+  [
+   "src\\structure\\infantry.cpp",
+   4283,
+   "rhs-nonliteral",
+   "v12 = *(unsigned int *)slaveManager->vt_slot_440(slaveManager->occupant, &v25); /*0x6b0916*/"
+  ],
+  [
+   "src\\structure\\infantry.cpp",
+   7422,
+   "rhs-nonliteral",
+   "v103 = v98->vt_slot_72(&v154, 1, 1); /*0x51a591*/"
+  ],
+  [
+   "src\\structure\\infantry.cpp",
+   7460,
+   "rhs-nonliteral",
+   "v116 = v98->vt_slot_72(&v154, 1, 1); /*0x51a651*/"
+  ],
+  [
+   "src\\structure\\supplied_bodies.cpp",
+   5238,
+   "local-value-assign",
+   "v67 = &(void*)(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x4422e1*/"
+  ],
+  [
+   "src\\structure\\supplied_bodies.cpp",
+   5262,
+   "local-value-assign",
+   "v67 = &(void*)(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x442377*/"
+  ],
+  [
+   "src\\structure\\supplied_bodies.cpp",
+   5272,
+   "local-value-assign",
+   "v67 = &(void*)(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x4423bb*/"
+  ],
+  [
+   "src\\structure\\supplied_bodies.cpp",
+   5285,
+   "local-value-assign",
+   "v67 = &(void*)(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x44243e*/"
+  ],
+  [
+   "src\\structure\\supplied_bodies.cpp",
+   5468,
+   "local-value-assign",
+   "v67 = &(void*)(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x442481*/"
+  ],
+  [
+   "src\\structure\\supplied_bodies.cpp",
+   5603,
+   "local-value-assign",
+   "v67 = &(void*)(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x442be9*/"
+  ],
+  [
+   "src\\structure\\supplied_bodies.cpp",
+   5609,
+   "local-value-assign",
+   "v67 = &(void*)(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x442913*/"
+  ],
+  [
+   "src\\structure\\supplied_bodies.cpp",
+   10095,
+   "rhs-nonliteral",
+   "(*((unsigned char *)&(v2))) = v3->vt_slot_248(); /*0x453355*/"
+  ],
+  [
+   "src\\system\\game_systems_bodies.cpp",
+   5783,
+   "lhs-charset",
+   "*(unsigned int *)&v80.m_Colors[140] = &CCINIClass_Vtable; /*0x553541*/"
+  ],
+  [
+   "src\\system\\game_systems_bodies.cpp",
+   6153,
+   "lhs-charset",
+   "*(unsigned int *)&v80.m_Colors[228] = &vt_CCFileClass; /*0x5540b4*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   1729,
+   "local-value-assign",
+   "a4 = &vt_VectorClass; /*0x475e97*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   1748,
+   "local-value-assign",
+   "a4 = &vt_VectorClass; /*0x475efd*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   1871,
+   "local-value-assign",
+   "a4 = &vt_VectorClass; /*0x4761aa*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   1890,
+   "local-value-assign",
+   "a4 = &vt_VectorClass; /*0x476210*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   1998,
+   "local-value-assign",
+   "a4 = &vt_VectorClass; /*0x47665a*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   2017,
+   "local-value-assign",
+   "a4 = &vt_VectorClass; /*0x4766bd*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   2156,
+   "local-value-assign",
+   "a4 = &vt_VectorClass; /*0x476993*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   2171,
+   "local-value-assign",
+   "a4 = &vt_VectorClass; /*0x4769f3*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   2248,
+   "local-value-assign",
+   "v26 = &vt_TypeList_RGBClass; /*0x476b75*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   2291,
+   "local-value-assign",
+   "v26 = &vt_VectorClass_RGBClass; /*0x476cc0*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   2300,
+   "local-value-assign",
+   "a4 = &vt_VectorClass_RGBClass; /*0x476cea*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   2319,
+   "local-value-assign",
+   "a4 = &vt_VectorClass_RGBClass; /*0x476d4d*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   6870,
+   "lhs-paren-lhs",
+   "*(unsigned int *)(v22 - 4) = &vt_VectorClass_DynamicVectorClass_char; /*0x49e6bf*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   6879,
+   "lhs-paren-lhs",
+   "*(unsigned int *)(v22 - 28) = &vt_VectorClass_DynamicVectorClass_char; /*0x49e6e2*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   9376,
+   "lhs-charset",
+   "*(unsigned int *)(v21 + 16) = &vt_List_INIClass_INIEntry; /*0x525e2d*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   9742,
+   "local-value-assign",
+   "v4[0] = (int)&vt_FilePipe; /*0x526445*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   10070,
+   "local-value-assign",
+   "v9[0] = (int)&vt_BufferStraw; /*0x526ef0*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   10072,
+   "local-value-assign",
+   "v11[0] = (int)&vt_Base64Straw; /*0x526f08*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   21687,
+   "local-value-assign",
+   "v23 = (CD)&vt_CD; /*0x5b3c5d*/"
+  ],
+  [
+   "src\\system\\gap2_defs.cpp",
+   28928,
+   "rhs-nonliteral",
+   "v4 = stru_AC4B30.vt_slot_16(&v9); /*0x63da00*/"
+  ],
+  [
+   "src\\system\\subs_5.cpp",
+   154,
+   "lhs-charset",
+   "//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)(void*)&MSFrameAnim_vftable;"
+  ],
+  [
+   "src\\system\\subs_5.cpp",
+   403,
+   "rhs-nonliteral",
+   "//   *this = &WorldDominationTour::Voices::Anim_vftable;"
+  ],
+  [
+   "src\\ui\\gap2_defs.cpp",
+   3463,
+   "lhs-paren-lhs",
+   "*((unsigned int *)v18 - 2) = &vt_DynamicVectorClass_Point2D; /*0x656a41*/"
+  ],
+  [
+   "src\\ui\\subs.cpp",
+   15,
+   "rhs-nonliteral",
+   "//   dword_8A06F8[0] = (int)&DisplayClass::TacticalClass_vftable;"
+  ],
+  [
+   "src\\ui\\subs.cpp",
+   36,
+   "rhs-nonliteral",
+   "//   dword_B04A10[0] = (int)&RadarClass::RTacticalClass_vftable;"
+  ],
+  [
+   "src\\ui\\subs.cpp",
+   97,
+   "rhs-nonliteral",
+   "//   dword_B07E58 = (int)&SidebarClass::SBGadgetClass_vftable;"
+  ],
+  [
+   "src\\ui\\supplied_bodies.cpp",
+   2563,
+   "local-value-assign",
+   "v16[0] = &vt_CCFileClass; /*0x5d3045*/"
+  ],
+  [
+   "src\\ui\\supplied_bodies.cpp",
+   2575,
+   "local-value-assign",
+   "v16[0] = &vt_CCFileClass; /*0x5d308c*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   4378,
+   "lhs-charset",
+   "*(unsigned int *)&v23->LocomotionClass[4] = (unsigned int)(void *)(void*)(void*)&DropPodLocomotionClass_vftabl"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   9563,
+   "local-value-assign",
+   "v59 = (WordVector)&vt_DynamicVectorClass_unsigned_short_7E3844; /*0x5840f0*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   9716,
+   "local-value-assign",
+   "v59 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x584522*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   9773,
+   "local-value-assign",
+   "v59 = (WordVector)&vt_VectorClass_unsigned_short_7E3824; /*0x5844f5*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   10471,
+   "local-value-assign",
+   "v10 = (int)&vt_DynamicVectorClass_Cell; /*0x5868cd*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   10509,
+   "local-value-assign",
+   "v10 = (int)&vt_VectorClass_Cell; /*0x58696c*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   12303,
+   "local-value-assign",
+   "v6 = &vt_rc_ptr_WDTTerritory; /*0x59744e*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   12382,
+   "local-value-assign",
+   "v6 = &vt_rc_ptr_WDTTerritory; /*0x5975a0*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   31816,
+   "local-value-assign",
+   "v5 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Confli"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   31857,
+   "local-value-assign",
+   "v5[3] = &vt_List; /*0x765460*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   31862,
+   "local-value-assign",
+   "v5[0] = &vt_INIClass; /*0x765480*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   31992,
+   "local-value-assign",
+   "v16 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x766605*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   31999,
+   "local-value-assign",
+   "v14 = &vt_rc_ptr; /*0x76663c*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   32017,
+   "local-value-assign",
+   "v14 = &vt_rc_ptr; /*0x76669a*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   32029,
+   "local-value-assign",
+   "v14 = &vt_rc_ptr; /*0x7666f0*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   32047,
+   "local-value-assign",
+   "v14 = &vt_rc_ptr; /*0x76674f*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   32052,
+   "local-value-assign",
+   "v16 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76677f*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   32659,
+   "local-value-assign",
+   "v79 = &vt_rc_ptr; /*0x76b68f*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33205,
+   "lhs-charset",
+   "*(unsigned int *)&v28[16] = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76cee7*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33221,
+   "lhs-charset",
+   "*(unsigned int *)&v28[16] = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76cf4d*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33309,
+   "lhs-charset",
+   "*(unsigned int *)&v26.ptr_4 = &vt_rc_ptr; /*0x76d140*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33317,
+   "lhs-charset",
+   "*(unsigned int *)&v26.ptr_4 = &vt_rc_ptr; /*0x76d166*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33599,
+   "local-value-assign",
+   "v8 = &vt_rc_ptr; /*0x76e476*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33607,
+   "local-value-assign",
+   "v8 = &vt_rc_ptr; /*0x76e4a6*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33615,
+   "local-value-assign",
+   "v8 = &vt_rc_ptr; /*0x76e4d3*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33734,
+   "local-value-assign",
+   "v15[0] = &vt_rc_ptr; /*0x76e9a1*/"
+  ],
+  [
+   "src\\_gap2\\gap2_global_defs.cpp",
+   33736,
+   "local-value-assign",
+   "v16[0] = &vt_rc_ptr; /*0x76e9ae*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   314,
+   "lhs-charset",
+   "*(this + 1) = (int)(void *)&vt_AbstractTypeClass; /*0x410829*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   315,
+   "lhs-charset",
+   "*(this + 2) = (int)(void *)&vt_AbstractTypeClass; /*0x410830*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   316,
+   "lhs-charset",
+   "*(this + 3) = (int)(void *)&vt_AbstractTypeClass; /*0x410837*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   415,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_LightSourceClass; /*0x5547b0*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   417,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_LightSourceClass; /*0x5547ba*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   418,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_LightSourceClass; /*0x5547c1*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   482,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_ObjectTypeClass; /*0x5f73df*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   483,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_ObjectTypeClass; /*0x5f73e6*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   484,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_ObjectTypeClass; /*0x5f73ed*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   542,
+   "lhs-charset",
+   "*((_DWORD *)this + 83) = (void *)&vt_TypeList_InfantryTypeClass_const; /*0x51150b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   546,
+   "lhs-charset",
+   "*((_DWORD *)this + 90) = (void *)&vt_TypeList_UnitTypeClass_const; /*0x51152a*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   550,
+   "lhs-charset",
+   "*((_DWORD *)this + 97) = (void *)&vt_TypeList_AircraftTypeClass_const; /*0x51154c*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   554,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_HouseTypeClass; /*0x511578*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   555,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_HouseTypeClass; /*0x51157f*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   556,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_HouseTypeClass; /*0x511586*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   658,
+   "lhs-charset",
+   "*(this + 1) = (int)(void *)&vt_UnitClass; /*0x735440*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   659,
+   "lhs-charset",
+   "*(this + 2) = (int)(void *)&vt_UnitClass; /*0x735446*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   876,
+   "lhs-charset",
+   "*((_DWORD *)this + 124) = (void *)&vt_VectorClass_CellClass; /*0x75e9fe*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   879,
+   "lhs-charset",
+   "*((_DWORD *)this + 124) = (void *)&vt_DynamicVectorClass_CellClass; /*0x75ea25*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   883,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_WaveClass; /*0x75ea45*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   884,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_WaveClass; /*0x75ea4b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1511,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_TriggerClass; /*0x725fd4*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1512,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_TriggerClass; /*0x725fdb*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1513,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_TriggerClass; /*0x725fe2*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1580,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_TriggerClass; /*0x725fd4*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1581,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_TriggerClass; /*0x725fdb*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1582,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_TriggerClass; /*0x725fe2*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1649,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726cd8*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1650,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726cdf*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1651,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726ce6*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1707,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726cd8*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1708,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726cdf*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1709,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TriggerTypeClass; /*0x726ce6*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1766,
+   "lhs-charset",
+   "*(this + 1) = (int)(void *)&vt_AbstractTypeClass; /*0x410829*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1767,
+   "lhs-charset",
+   "*(this + 2) = (int)(void *)&vt_AbstractTypeClass; /*0x410830*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1768,
+   "lhs-charset",
+   "*(this + 3) = (int)(void *)&vt_AbstractTypeClass; /*0x410837*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1837,
+   "lhs-charset",
+   "*(this + 1) = (int)(void *)&vt_AbstractTypeClass; /*0x410829*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1838,
+   "lhs-charset",
+   "*(this + 2) = (int)(void *)&vt_AbstractTypeClass; /*0x410830*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   1839,
+   "lhs-charset",
+   "*(this + 3) = (int)(void *)&vt_AbstractTypeClass; /*0x410837*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5585,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5586,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5587,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5664,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5665,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5666,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5743,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5744,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5745,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5827,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71f8ea*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5828,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71f8f1*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5829,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71f8f8*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5953,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9920*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5954,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9926*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   5955,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c992d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6021,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9920*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6022,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9926*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6023,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c992d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6089,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9920*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6090,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9926*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6091,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c992d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6137,
+   "lhs-charset",
+   "*(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6141,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6142,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6143,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6169,
+   "lhs-charset",
+   "*(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6173,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6174,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6175,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6201,
+   "lhs-charset",
+   "*(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6205,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6206,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6207,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6232,
+   "lhs-charset",
+   "*(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6237,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6238,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6239,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6268,
+   "lhs-charset",
+   "*(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6273,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6274,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6275,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6304,
+   "lhs-charset",
+   "*(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6309,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6310,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6311,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6340,
+   "lhs-charset",
+   "*(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6345,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6346,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6347,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6382,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6383,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a8*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6384,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3af*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6425,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6426,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a8*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6427,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3af*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6468,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6469,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a8*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6470,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3af*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6510,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6eec*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6511,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6ef3*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6512,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6efa*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6554,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6eec*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6555,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6ef3*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6556,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6efa*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6598,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6eec*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6599,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6ef3*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6600,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6efa*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6682,
+   "lhs-charset",
+   "*(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6687,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6688,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6689,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6718,
+   "lhs-charset",
+   "*(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6723,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6724,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6725,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6818,
+   "lhs-charset",
+   "*(this + 1) = (int)(void *)&vt_AbstractTypeClass; /*0x410829*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6819,
+   "lhs-charset",
+   "*(this + 2) = (int)(void *)&vt_AbstractTypeClass; /*0x410830*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   6820,
+   "lhs-charset",
+   "*(this + 3) = (int)(void *)&vt_AbstractTypeClass; /*0x410837*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8409,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8410,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8411,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8502,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9920*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8503,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c9926*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8504,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FactoryClass; /*0x4c992d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8550,
+   "lhs-charset",
+   "*(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8554,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8555,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8556,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8581,
+   "lhs-charset",
+   "*(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8586,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8587,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8588,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8704,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d3463*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8705,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d346a*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8706,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d3471*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8832,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d3463*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8833,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d346a*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8834,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_FootClass; /*0x4d3471*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8879,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8880,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3a8*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8881,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SlaveManagerClass; /*0x6af3af*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8921,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6eec*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8922,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6ef3*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   8923,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_SpawnManagerClass; /*0x6b6efa*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9019,
+   "lhs-charset",
+   "*(_DWORD *)(this + 1644) = (void *)&vt_DynamicVectorClass_InfantryClass; /*0x43b8ca*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9026,
+   "lhs-charset",
+   "*(_DWORD *)(this + 1668) = (void *)&vt_DynamicVectorClass_InfantryClass; /*0x43b8f5*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9069,
+   "lhs-charset",
+   "*(_DWORD *)(this + 4) = &BuildingClass_Vtable2; /*0x43ba00*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9070,
+   "lhs-charset",
+   "*(_DWORD *)(this + 8) = &BuildingClass_Vtable3; /*0x43ba07*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9071,
+   "lhs-charset",
+   "*(_DWORD *)(this + 12) = &BuildingClass_Vtable4; /*0x43ba0e*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9207,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9208,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9209,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9286,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6c7*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9287,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6ce*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9288,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71e6d5*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9352,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa8c*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9353,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa93*/"
+  ],
+  [
+   "src\\_generated\\link_stubs.cpp",
+   9354,
+   "lhs-residue-shape",
+   "((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa9a*/"
+  ]
+ ]
+}

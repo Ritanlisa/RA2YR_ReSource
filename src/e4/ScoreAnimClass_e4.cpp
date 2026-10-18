@@ -41,7 +41,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   char *v4; // eax
 
   v3 = (void *)this->field_C; /*0x6910a6*/
-  this->m_0 = (unsigned int)&vt_ScoreFontClass; /*0x6910a9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ScoreFontClass) */  /*0x6910a9*/
   if ( v3 && this->q010 == 1 ) /*0x6910b7*/
   {
     __3_YAXPAX_Z(v3); /*0x6910ba*/

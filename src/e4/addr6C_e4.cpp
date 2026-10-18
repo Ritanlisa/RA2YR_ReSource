@@ -635,7 +635,7 @@ LABEL_95:
       }
       SaveProfileWOL(v265.vfptr1, (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x6c75b8*/
     }
-    v265.vfptr = (int)&vt_rc_ptr_PlayerProfile; /*0x6c75c1*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x6c75c1*/
     ComPtr::Release((ComPtr *)&v265); /*0x6c75c9*/
   }
   v80 = 0; /*0x6c75d2*/
@@ -723,7 +723,7 @@ LABEL_134:
   v265.attachedTag = -1; /*0x6c77ac*/
   v265.attachedBomb = -1; /*0x6c77b0*/
   memset(v265.ambientSoundController, 0, 9); /*0x6c77b4*/
-  v265.occupant = (int)&vt_RawFileClass; /*0x6c77c7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x6c77c7*/
   FileClass::SetName((BufferIOFileClass *)&v265.occupant, Filename); /*0x6c77cf*/
   FileClass::Open2((RawFileClass *)&v265.occupant, (const CHAR *)1); /*0x6c77da*/
   if ( v265.attachedBomb != -1 && GetFileTime((HANDLE)v265.attachedBomb, 0, 0, (LPFILETIME)&v265.referenceCount) ) /*0x6c77ef*/
@@ -2026,7 +2026,7 @@ void sub_6C6B60()
 namespace gamemd {
 void * E4Recv_6C8840::sub_6C8840(unsigned int * Block, char a2)  // G42.33 b9 hpp void* sync
 {
-  *(unsigned int *)Block = &vt_rc_ptr; /*0x6c8843*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x6c8843*/
   ComPtr::Release((ComPtr *)Block); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
     operator delete((Block)); /*0x6c8856*/

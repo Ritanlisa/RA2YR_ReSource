@@ -22,7 +22,7 @@ int DialogControl::Hide()
 } // namespace gamemd
 // 0x4E1460
 namespace gamemd {
-int DialogControl::DialogControl::Show(void *a1, void *a2)
+int DialogControl::Show(void *a1, void *a2)
 {
   (this->u8_2) = 1; /*0x4e1462*/
   (this->Image) = (void *)(1); /*0x4e1465*/

@@ -66,7 +66,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   this->u32_54 = -1; /*0x4d09dd*/
   this->u32_58 = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d09e7*/
-  this->q5C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d09ec*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_FoggedObjectClass_DrawRecord) */  /*0x4d09ec*/
   this->q070 = 10; /*0x4d09f2*/
   this->HouseClass_6C = 0; /*0x4d09f9*/
   this->u32_74 = 1; /*0x4d0a02*/
@@ -202,14 +202,14 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   this->q050 = v5; /*0x4d0c8c*/
   this->u32_58 = a4; /*0x4d0c8f*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d0c92*/
-  this->q5C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d0c97*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_FoggedObjectClass_DrawRecord) */  /*0x4d0c97*/
   this->q070 = 10; /*0x4d0c9e*/
   this->HouseClass_6C = 0; /*0x4d0ca5*/
   this->u32_74 = 1; /*0x4d0cae*/
-  this->vfptr = (int)&vt_FoggedObjectClass_4; /*0x4d0cb2*/
-  this->vfptr1 = (int)&vt_FoggedObjectClass_4; /*0x4d0cb8*/
-  this->vfptr2 = (int)&vt_FoggedObjectClass_4; /*0x4d0cbf*/
-  this->vfptr3 = (int)&vt_FoggedObjectClass_4; /*0x4d0cc6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0cb2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0cb8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0cbf*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0cc6*/
   v6 = Coord::To_Cell((Coord *)&dword_87F7E8, aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
@@ -365,11 +365,11 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   this->u32_54 = -1; /*0x4d0f73*/
   this->u32_58 = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor(&this->q5C, 0, 0); /*0x4d0f81*/
-  this->q5C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d0f8a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_FoggedObjectClass_DrawRecord) */  /*0x4d0f8a*/
   this->q070 = 10; /*0x4d0f90*/
   this->HouseClass_6C = 0; /*0x4d0f97*/
   this->u32_74 = a3; /*0x4d0fa2*/
-  *(unsigned int *)this = &vt_FoggedObjectClass_4; /*0x4d0fa5*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_FoggedObjectClass_4) */  /*0x4d0fa5*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0fab*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0fb2*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_FoggedObjectClass_4) */  /*0x4d0fb9*/
@@ -578,7 +578,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   this->u32_54 = -1; /*0x4d13e7*/
   this->u32_58 = 0; /*0x4d13ee*/
   FoggedObject::DrawVector_Constructor(&this->u32_5C, 0, 0); /*0x4d13f1*/
-  this->u32_5C = (unsigned int)(&vt_DynamicVectorClass); /*0x4d13f6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x4d13f6*/
   this->q070 = 10; /*0x4d13fc*/
   this->HouseClass_6C = 0; /*0x4d1403*/
   this->u32_74 = 1; /*0x4d140a*/
@@ -699,13 +699,13 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   {
     AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4d253b*/
     FoggedObject::DrawVector_Constructor((FoggedObject *)&v3[1].Cell, 0, 0); /*0x4d2547*/
-    v3[1].Cell = (int)&vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d254c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_FoggedObjectClass_DrawRecord) */  /*0x4d254c*/
     v3[2].uniqueId = 10; /*0x4d2552*/
     v3[2].vfptr3 = 0; /*0x4d2559*/
-    v3->vfptr = (int)&vt_FoggedObjectClass_4; /*0x4d255c*/
-    v3->vfptr1 = (int)&vt_FoggedObjectClass_4; /*0x4d2562*/
-    v3->vfptr2 = (int)&vt_FoggedObjectClass_4; /*0x4d2569*/
-    v3->vfptr3 = (int)&vt_FoggedObjectClass_4; /*0x4d2570*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_FoggedObjectClass_4) */  /*0x4d255c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_FoggedObjectClass_4) */  /*0x4d2562*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_FoggedObjectClass_4) */  /*0x4d2569*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_FoggedObjectClass_4) */  /*0x4d2570*/
   }
   ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->House); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/
@@ -1087,7 +1087,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
 
   void *v3; // eax
   v3 = *(void **)&a3->m_1[3]; /*0x4d2d63*/
-  *(unsigned int *)a3->__pad_0 = &vt_VectorClass; /*0x4d2d66*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4d2d66*/
   if ( v3 && (((unsigned char *)&(a3->m_C))[1]) ) /*0x4d2d70*/
   {
     operator delete((v3)); /*0x4d2d78*/
@@ -1323,7 +1323,7 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, ch
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x4e0ce3*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4e0ce6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4e0ce6*/
   if ( v3 && (((unsigned char *)&(*&Block->__pad_004))[1]) ) /*0x4e0cf0*/
   {
     operator delete((v3)); /*0x4e0cf8*/

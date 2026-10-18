@@ -83,12 +83,12 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   v3 = *((unsigned int *)Block + 93); /*0x488f05*/
   char *v4; // esi
   v4 = (char *)Block + 372; /*0x488f0b*/
-  *(unsigned int *)Block->tail_0 = &vt_ColorListClass; /*0x488f13*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ColorListClass) */  /*0x488f13*/
   (*(void (**)(char *))(v3 + 12))((char *)Block + 372); /*0x488f19*/
   *((unsigned int *)Block + 100) = 0; /*0x488f1e*/
   void *v5; // eax
   v5 = (void *)v4->__pad_004; /*0x488f24*/
-  *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x488f29*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
     operator delete((v5)); /*0x488f37*/

@@ -61,7 +61,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->tail_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x7669f9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr) */  /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     operator delete((Block)); /*0x766a02*/
   return Block->tail_0; /*0x766a0c*/

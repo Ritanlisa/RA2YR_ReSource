@@ -5,6 +5,7 @@
 
 #include <cstring>
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/e4_globals_decls.hpp"
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
 namespace gamemd {
     struct BLQ_B0E840_c {                            // 0xB0E840 宿主词汇 (BuildingTypeClass 槽词表)
@@ -377,7 +378,6 @@ void TagTypeClass::SaveToINIList(CCINIClass* ini)
 
 } // namespace gamemd
 
-#include "e4/e4_globals_decls.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 extern int g_GameObjectCleanup;  // data: 0xB0E730 (e4_globals_decls.hpp:954)
 extern int g_TagClassCount;  // data: 0xB0E724 (e4_globals_decls.hpp:1775)

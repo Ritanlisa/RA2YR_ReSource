@@ -143,7 +143,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
   *(unsigned int *)this->__pad_174 = 0; /*0x48e929*/
   this->ConvertClass_field_0x178 = 0; /*0x48e92f*/
   this->u32_17C = 0; /*0x48e935*/
-  *(unsigned int *)this->__pad_0 = &vt_ConvertClass; /*0x48e93b*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ConvertClass) */  /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *&this->q16C = 1; /*0x48e943*/
   if ( *&this->__pad_004 == 1 ) /*0x48e94f*/

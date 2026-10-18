@@ -34,7 +34,7 @@
 namespace gamemd {  // G42.18 ns repair
 void E4Recv_46D350::sub_46D350()
 {
-  this->m_0 = (int)&vt_CampaignScoreClass; /*0x46d350*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_CampaignScoreClass) */  /*0x46d350*/
 }  // G42.18 ns repair
 } // namespace gamemd
 

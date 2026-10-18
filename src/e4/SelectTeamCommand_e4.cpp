@@ -13,7 +13,7 @@ unsigned int * SelectTeamCommand::Construct(int a2, void *a2_2, void *a3, void *
 {
 
   a2_2->SelectTeamCommand_field_00 = a2_2; /*0x535fc6*/
-  *(unsigned int *)a2_2->CommandClass = &vt_SelectTeamCommandClass; /*0x535fc9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_SelectTeamCommandClass) */  /*0x535fc9*/
   return a2_2->CommandClass; /*0x535fcf*/
 
 }

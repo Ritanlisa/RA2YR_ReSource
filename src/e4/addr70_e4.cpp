@@ -596,7 +596,7 @@ LABEL_8:
     v37 = 0; /*0x7095fe*/
     VectorClass::Construct(&v30, 0, 0); /*0x709602*/
     v11 = v3->__pad_480; /*0x709607*/
-    v30.vfptr = (int)&vt_DynamicVectorClass_int; /*0x70960d*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_int) */  /*0x70960d*/
     v32 = 10; /*0x709617*/
     v31 = 0; /*0x70961b*/
     if ( v11 > 0 ) /*0x70961f*/
@@ -674,7 +674,7 @@ LABEL_8:
       }
       v3->AssignTarget_SyncLog(); /*0x70975d*/
     }
-    v30.vfptr = (int)&vt_VectorClass_int; /*0x7097a0*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x7097a0*/
     if ( v30.Items && v30.IsAllocated[0] ) /*0x7097b0*/
     {
       __3_YAXPAX_Z((void *)v30.Items); /*0x7097b3*/

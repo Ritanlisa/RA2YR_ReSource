@@ -4354,7 +4354,7 @@ int * RandomStraw::QueryInterface(char a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x661c7e) — binary-proven install, was 0 */
   this->m_allocated = 0; /*0x661c84*/
   this->Delegate_field_10 = 0; /*0x661c87*/
-  memsetthis->q010, 0, 0x100u); /*0x661c8a*/
+  memset(this->q010, 0, 0x100u); /*0x661c8a*/
   Straw::Dtor((Straw *)this); /*0x661c8e*/
   if ( (a2 & 1) != 0 ) /*0x661c98*/
     operator delete((this)); /*0x661c9b*/
@@ -4664,8 +4664,8 @@ unsigned int * COMClass::getInterface(char a2) {
 // 0x767880
 namespace gamemd {
 void ** COMClass::coUninitialize(char a2) {
-  DeleteAndZerothis->q010); /*0x767886*/
-  DeleteAndZerothis->q014); /*0x76788e*/
+  DeleteAndZero(this->q010); /*0x767886*/
+  DeleteAndZero(this->q014); /*0x76788e*/
   *(unsigned int *)this->__pad_000 = 0; /*0x767895*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x76789b*/
   if ( (a2 & 1) != 0 ) /*0x7678a5*/

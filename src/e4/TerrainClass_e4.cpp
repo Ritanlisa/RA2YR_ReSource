@@ -520,7 +520,7 @@ LABEL_153:
       g_TacticalClass_Instance[49] = v80[1]; /*0x6deed9*/
       stru_A8E960.random[552] = 1; /*0x6deee5*/
       Timer::PumpMessages((Timer *)dword_87F770); /*0x6deeec*/
-      (*(void (__usercall **)(MouseClass *@<ecx>, double@<st0>))(dword_887640->HandleClick_ph + 12))( /*0x6deef9*/
+      (*(void (**)(MouseClass *, double))(dword_887640->HandleClick_ph + 12))( /*0x6deef9*/
         dword_887640,
         result);
       Mouse::ReleaseCapture((ScrollClass *)&dword_87F7E8); /*0x6def01*/

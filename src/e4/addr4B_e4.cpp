@@ -741,14 +741,14 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->M60 = *(EditClass *)(a2 + 60); /*0x4b540e*/
   this->u32_40 = *(EditClass *)(a2 + 64); /*0x4b5414*/
   this->u32_44 = *(EditClass *)(a2 + 68); /*0x4b541a*/
-  *this = (EditClass)&vt_EditClass; /*0x4b541d*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_EditClass) */  /*0x4b541d*/
   this->u32_48 = *(unsigned char *)(a2 + 72); /*0x4b5429*/
   this->M76 = *(EditClass *)(a2 + 76); /*0x4b5432*/
   ControlClass::CtorFromData(&this->u32_14, a2 + 80); /*0x4b5435*/
   this->M124 = *(unsigned char *)(a2 + 124); /*0x4b5443*/
   this->M125 = *(unsigned char *)(a2 + 125); /*0x4b5449*/
   this->M80 = *(EditClass *)(a2 + 128); /*0x4b544f*/
-  this->u32_50 = &vt_ToggleClass; /*0x4b5452*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ToggleClass) */  /*0x4b5452*/
   this->u32_84 = *(unsigned char *)(a2 + 132); /*0x4b545c*/
   this->M136 = *(EditClass *)(a2 + 136); /*0x4b5462*/
   this->M140 = *(EditClass *)(a2 + 140); /*0x4b5468*/
@@ -761,10 +761,10 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->M165 = *(unsigned char *)(a2 + 165); /*0x4b5492*/
   this->M168 = *(EditClass *)(a2 + 168); /*0x4b5498*/
   this->M172 = *(unsigned char *)(a2 + 172); /*0x4b54a4*/
-  this->u32_50 = &vt_ShapeButtonClass; /*0x4b54a9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ShapeButtonClass) */  /*0x4b54a9*/
   sub_557380((int)&this->M176, a2 + 176); /*0x4b54af*/
   int v3 = this->M176; // eax /*0x4b54b4*/
-  *this = (EditClass)&vt_DropListClass; /*0x4b54b9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DropListClass) */  /*0x4b54b9*/
   (*(void (**)(EditClass *, EditClass *))(v3 + 132))(&this->M176, this); /*0x4b54bf*/
   (*(void (**)(EditClass *, EditClass *))(this->u32_50 + 132))(&this->u32_14, this); /*0x4b54ca*/
   return (int)this; /*0x4b54d3*/

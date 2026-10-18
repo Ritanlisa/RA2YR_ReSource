@@ -761,7 +761,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   this->abstractFlags = 0; /*0x74bc07*/
   LOBYTE(this->nextArrayIndex) = 1; /*0x74bc0a*/
   BYTE1(this->nextArrayIndex) = 0; /*0x74bc0e*/
-  this->vfptr3 = (int)&vt_VectorClass_unsigned_char_7F65F4; /*0x74bc11*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_unsigned_char_7F65F4) */  /*0x74bc11*/
   this->vfptr2 = -1; /*0x74bc17*/
   LOBYTE(this->vfptr1) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
   this->vfptr2 = *(unsigned int *)(a2 + 8); /*0x74bc27*/
@@ -1430,10 +1430,10 @@ int sub_7473E0()
       *(unsigned int *)(v1 + 4) = 256; /*0x747409*/
       *(unsigned int *)(v1 + 8) = 256; /*0x74740c*/
       *(unsigned int *)(v1 + 12) = 0; /*0x74740f*/
-      *(unsigned int *)v1 = &XSurface_Vtable; /*0x747416*/
+      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x747416*/
       *(unsigned int *)(v1 + 16) = 1; /*0x74741c*/
       Buffer::Init((Buffer *)(v1 + 20), 0, 0x10000); /*0x747423*/
-      *(unsigned int *)v1 = &BSurface_Vtable; /*0x747428*/
+      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x747428*/
       v2 = v1; /*0x74742e*/
     }
     else
@@ -1817,7 +1817,7 @@ char * E4Recv_74BBA0::sub_74BBA0(int a2, int a3)
   *((unsigned int *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
   v4[13] = 0; /*0x74bbca*/
-  *(unsigned int *)v4 = &vt_VectorClass_unsigned_char_7F65F4; /*0x74bbcd*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_unsigned_char_7F65F4) */  /*0x74bbcd*/
   (*(void (**)(char *, unsigned int, int))(*(unsigned int *)v4 + 8))(v4, (unsigned int)(a2 + 7) >> 3, a3); /*0x74bbda*/
   return this; /*0x74bbdf*/
 
@@ -2042,7 +2042,7 @@ VectorClass_flat * _e4::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
   v3 = (void *)*(Block + 1); /*0x74f653*/
-  *Block = &vt_VectorClass; /*0x74f656*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x74f656*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74f660*/
   {
     operator delete((v3)); /*0x74f668*/

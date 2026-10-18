@@ -5366,7 +5366,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       this->BOMBCURS_SHP = v101; /*0x672be7*/
       this->IvanIconFlickerRate = v4; /*0x672bee*/
       this->DeathWeapon = v5; /*0x672bf1*/
-      v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x672bf4*/
+      /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672bf4*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672bfc*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildpower, &g_INI_DefaultBuffer, String, 128) ) /*0x672c1d*/
       {
@@ -5390,7 +5390,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->CHRONOSK_SHP, &v98.CellSpread); /*0x672cc8*/
       this->V3Rocket[3] = (int)v101; /*0x672cd5*/
-      v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x672cd8*/
+      /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672cd8*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672ce0*/
       if ( INIClass::GetString( /*0x672d02*/
              (INIClass *)v103,
@@ -5420,7 +5420,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       }
       DynamicVector::Copy(&this->DynamicVector_9A4, &v98.CellSpread); /*0x672dad*/
       this->V3Rocket[10] = (int)v101; /*0x672dba*/
-      v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x672dbd*/
+      /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672dbd*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672dc5*/
       if ( INIClass::GetString( /*0x672de7*/
              (INIClass *)v103,
@@ -5449,7 +5449,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         TypeList::BuildingTypeCopy((TypeList *)&v98.CellSpread, &this->V3Rocket[11]); /*0x672e80*/
       }
       DynamicVector::Copy(&this->SurvivorRate, &v98.CellSpread); /*0x672e92*/
-      v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x672e9b*/
+      /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672e9b*/
       this->DMisl[4] = (int)v101; /*0x672ea3*/
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672eaa*/
       if ( INIClass::GetString((INIClass *)v103, (uint8_t *)aAi, aBuildtech, &g_INI_DefaultBuffer, String, 128) ) /*0x672ecb*/
@@ -5464,7 +5464,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x672f10*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x672f31*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x672f3a*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x672f3a*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x672f42*/
       }
       else
@@ -5487,7 +5487,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x672fe5*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673006*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67300f*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67300f*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x673017*/
       }
       else
@@ -5516,7 +5516,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x6730ba*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x6730db*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x6730e4*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6730e4*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x6730ec*/
       }
       else
@@ -5545,7 +5545,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x67318e*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x6731af*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x6731b8*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6731b8*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x6731c0*/
       }
       else
@@ -5574,7 +5574,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x673263*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673284*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67328d*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67328d*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x673295*/
       }
       else
@@ -5587,7 +5587,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98); /*0x6732d1*/
       IntList = v93; /*0x6732e2*/
       DynamicVectorClass::Copy((DynamicVectorClass *)v93, this->AttackInterval); /*0x6732e6*/
-      *IntList = (unsigned int)(void *)(void*)(void*)&TypeList_int_vftable; /*0x6732f8*/
+      /* X11: vtable install elided (X67 star-deref, RHS TypeList_int_vftable) */  /*0x6732f8*/
       IntList = (void ***)INIClass::ReadIntList( /*0x673310*/
                             (INIClass *)v103,
                             (int)&v98,
@@ -5617,7 +5617,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x673395*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x6733b6*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x6733bf*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6733bf*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x6733c7*/
       }
       else
@@ -5646,7 +5646,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x67346a*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x67348b*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x673494*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673494*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x67349c*/
       }
       else
@@ -5669,7 +5669,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x67353f*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673560*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x673569*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673569*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x673571*/
       }
       else
@@ -5692,7 +5692,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x673613*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673634*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67363d*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x67363d*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x673645*/
       }
       else
@@ -5715,7 +5715,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x6736e8*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x673709*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x673712*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x673712*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x67371a*/
       }
       else
@@ -5744,7 +5744,7 @@ int RulesClass::ReadMultiplayerDefaults() {
             DynamicVector::Add_Alt3((DynamicVector *)&v98.CellSpread, &IntList); /*0x6737bd*/
         }
         TypeList::BuildingTypeCopy((TypeList *)&v98, &v98.CellSpread); /*0x6737de*/
-        v98.CellSpread = (AbstractClass *)(void *)(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x6737e7*/
+        /* X11: vtable install elided (X67 recv-slot, RHS VectorClass_BuildingTypeClass_const___vftable) */  /*0x6737e7*/
         DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v98.CellSpread); /*0x6737ef*/
       }
       else

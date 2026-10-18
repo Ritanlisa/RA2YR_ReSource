@@ -17,7 +17,7 @@
 namespace gamemd {  // G42.18 ns repair
 void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->tail_0 = &vt_MSFrameAnim; /*0x769bd3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_MSFrameAnim) */  /*0x769bd3*/
   VtableStub::sub_5CB6C0(Block); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     operator delete((Block)); /*0x769be6*/
@@ -54,7 +54,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76a05b*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_Territory) */  /*0x76a05b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76a061*/
           --v9; /*0x76a064*/
         }
@@ -249,7 +249,7 @@ unsigned int MSFrameAnim::pauseAnimation(int a2)
 namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->tail_0 = &vt_rc_ptr; /*0x769d93*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x769d93*/
   ComPtr::Release((ComPtr *)Block); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     operator delete((Block)); /*0x769da6*/
@@ -350,7 +350,7 @@ DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x76a683*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClassrc_ptr; /*0x76a686*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassrc_ptr) */  /*0x76a686*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
@@ -370,7 +370,7 @@ DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x76a723*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x76a726*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x76a726*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x76a730*/
   {
     operator delete((v3)); /*0x76a738*/
@@ -389,7 +389,7 @@ namespace gamemd {
 unsigned int * MSFrameAnim::drawFrame(void *a1_1)
 {
   ComPtr::Constructor((ComPtr *)a1_1); /*0x76a7c3*/
-  *(unsigned int *)a1_1->__pad_0 = &vt_rc_ptr; /*0x76a7c8*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x76a7c8*/
   return a1_1->__pad_0; /*0x76a7d0*/
 }
 } // namespace gamemd

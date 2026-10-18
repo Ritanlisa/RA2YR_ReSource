@@ -643,8 +643,8 @@ int sub_513C00()
 namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
-  *(unsigned int *)this->0 = &vt_HoverLocomotionClass; /*0x513d00*/
-  *&this->M4 = (unsigned int)(&vt_HoverLocomotionClass); /*0x513d06*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_HoverLocomotionClass) */  /*0x513d00*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_HoverLocomotionClass) */  /*0x513d06*/
   this->LocomotionClass::Construct(); /*0x513d0d*/
 }
 } // namespace gamemd

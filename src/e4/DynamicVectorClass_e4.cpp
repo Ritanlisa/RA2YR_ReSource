@@ -643,7 +643,7 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(unsigned int * Block, cha
 {
 
   void *v3 = *&Block->u32_8; // eax /*0x42db13*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42db16*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x42db16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x42db20*/
   {
     operator delete((v3)); /*0x42db28*/
@@ -664,7 +664,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, cha
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x42db63*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42db66*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x42db66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x42db70*/
   {
     __3_YAXPAX_Z(v3); /*0x42db78*/
@@ -693,7 +693,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   this->Capacity = 0; /*0x4779f0*/
   this->IsInitialized[0] = 1; /*0x4779f3*/
   this->IsAllocated[0] = 0; /*0x4779f7*/
-  this->vfptr = (int)&vt_VectorClass_int; /*0x4779fa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4779fa*/
   if ( this != (DynamicVectorClass *)a2 ) /*0x477a00*/
   {
     VectorClass::Destroy((int)this); /*0x477a02*/
@@ -727,7 +727,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   }
   this->Count = a2[4]; /*0x477a51*/
   this->CapacityIncrement = a2[5]; /*0x477a57*/
-  this->vfptr = (int)&vt_DynamicVectorClass_int; /*0x477a5a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_int) */  /*0x477a5a*/
   return &this->vfptr; /*0x477a62*/
 
 }
@@ -1060,7 +1060,7 @@ DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void 
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x49ee13*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x49ee16*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x49ee16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x49ee20*/
   {
     __3_YAXPAX_Z(v3); /*0x49ee28*/
@@ -1081,7 +1081,7 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Bloc
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x49eff3*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClassDynamicVectorClass; /*0x49eff6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassDynamicVectorClass) */  /*0x49eff6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x49f000*/
   {
     operator delete((v3)); /*0x49f008*/
@@ -1101,7 +1101,7 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 {
 
   void *v3 = *&Block->u32_8; // eax /*0x49f043*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClassDynamicVectorClass; /*0x49f046*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassDynamicVectorClass) */  /*0x49f046*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x49f050*/
   {
     operator delete((v3)); /*0x49f058*/
@@ -1232,7 +1232,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
   *&this->Capacity = a2; /*0x5ac910*/
   (this->IsInitialized) = ((this->IsInitialized) & ~0xFF) | ((1) & 0xFF); /*0x5ac913*/
   (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5ac917*/
-  *(unsigned int *)this->VectorClass = &vt_VectorClass; /*0x5ac91b*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5ac91b*/
   if ( a2 ) /*0x5ac921*/
   {
     if ( a3 ) /*0x5ac929*/
@@ -1245,7 +1245,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
       (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5ac93f*/
     }
   }
-  *(unsigned int *)this->VectorClass = &vt_DynamicVectorClass; /*0x5ac943*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x5ac943*/
   this->CapacityIncrement = 10; /*0x5ac949*/
   this->Count = 0; /*0x5ac950*/
   return this->VectorClass; /*0x5ac959*/
@@ -1476,7 +1476,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x628643*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x628646*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x628646*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x628650*/
   {
     operator delete((v3)); /*0x628658*/
@@ -1501,7 +1501,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x6287b3*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6287b6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6287b6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6287c0*/
   {
     __3_YAXPAX_Z(v3); /*0x6287c8*/

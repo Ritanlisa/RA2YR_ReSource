@@ -379,10 +379,10 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
           0);
   v18.Pipe_field_0x04 = 0; /*0x4ad956*/
   v18.Pipe_field_0x08 = 0; /*0x4ad95a*/
-  *(unsigned int *)v18.__pad_0 = &vt_Pipe; /*0x4ad95e*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_Pipe) */  /*0x4ad95e*/
   Buffer::Init((Buffer *)&v18.Pipe_field_0x0C, v10, v9); /*0x4ad966*/
   v19 = 0; /*0x4ad96f*/
-  *(unsigned int *)v18.__pad_0 = &vt_BufferPipe; /*0x4ad979*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_BufferPipe) */  /*0x4ad979*/
   v11 = MapClass::DecompressCellData((MapClass *)&dword_87F7E8, (int)&v18); /*0x4ad990*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack, 0); /*0x4ad992*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack2, 0); /*0x4ad9a0*/
@@ -546,7 +546,7 @@ ObjectClass * * MapClass::LoadFileData()
     while ( v5 < *&this->q2E8 * *&this->q2E4 ); /*0x5470cb*/
   }
   TerrainClass::InitTheatre((TerrainClass *)this); /*0x5470cf*/
-  *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x5470d8*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x5470d8*/
   v14 = 0; /*0x5470e0*/
   Vector::Clear((int)v13); /*0x5470e8*/
   *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x5470f1*/
@@ -619,7 +619,7 @@ void* MapClass::Destruct(void *a1)
   while ( v12 ); /*0x565361*/
   void *v5; // eax
   v5 = (void *)this->u32_1160; /*0x565363*/
-  this->u32_115C = &vt_VectorClass; /*0x565370*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x565370*/
   if ( v5 && this->u32_1169 ) /*0x565378*/
   {
     __3_YAXPAX_Z(v5); /*0x565381*/
@@ -629,7 +629,7 @@ void* MapClass::Destruct(void *a1)
   this->u32_1164 = 0; /*0x565395*/
   void *v6; // eax
   v6 = (void *)this->__pad_13C; /*0x56539b*/
-  this->MaxLevel = &vt_VectorClass; /*0x5653a1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x5653a1*/
   if ( v6 && this->u32_145 ) /*0x5653af*/
   {
     __3_YAXPAX_Z(v6); /*0x5653b8*/
@@ -639,7 +639,7 @@ void* MapClass::Destruct(void *a1)
   this->q140 = 0; /*0x5653cc*/
   void *v7; // eax
   v7 = (void *)this->u32_D8; /*0x5653d2*/
-  this->u32_D4 = &vt_VectorClass; /*0x5653d8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x5653d8*/
   if ( v7 && this->u32_E1 ) /*0x5653e2*/
   {
     __3_YAXPAX_Z(v7); /*0x5653eb*/
@@ -654,7 +654,7 @@ void* MapClass::Destruct(void *a1)
     void *v10; // ecx
     v10 = (void *)*((unsigned int *)v8 - 5); /*0x565410*/
     v8 -= 24; /*0x565413*/
-    *(unsigned int *)v8 = (unsigned int)(&vt_VectorClass); /*0x565418*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x565418*/
     if ( v10 && v8->u8_D ) /*0x565420*/
     {
       SubzoneConnectionVector::Destruct(v10, 3); /*0x56542b*/
@@ -667,7 +667,7 @@ void* MapClass::Destruct(void *a1)
   while ( v9 ); /*0x56543a*/
   void *v11; // eax
   v11 = (void *)this->__pad_054; /*0x56543c*/
-  this->ptr_50 = &vt_VectorClass; /*0x565442*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x565442*/
   if ( v11 && this->u32_5D ) /*0x56544c*/
   {
     __3_YAXPAX_Z(v11); /*0x565452*/
@@ -738,7 +738,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
       do /*0x5658ae*/
       {
         HashVector_UInt::Construct(v7, 0, 0); /*0x565891*/
-        *v7 = (HashVector_UInt)&vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int; /*0x565896*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_HashObject_unsigned_int_unsigned_int) */  /*0x565896*/
         v7[5] = (HashVector_UInt)10; /*0x56589c*/
         v7[4] = 0; /*0x5658a3*/
         v7 += 6; /*0x5658aa*/
@@ -799,7 +799,7 @@ LABEL_14:
         do /*0x56597f*/
         {
           SubzoneHashVector::Construct(v18, 0, 0); /*0x565962*/
-          *v18 = (SubzoneHashVector)&vt_DynamicVectorClass_HashObject_unsigned_int_SubzoneConnectionStruct; /*0x565967*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_HashObject_unsigned_int_SubzoneConnectionStruct) */  /*0x565967*/
           v18[5] = (SubzoneHashVector)10; /*0x56596d*/
           v18[4] = 0; /*0x565974*/
           v18 += 6; /*0x56597b*/
@@ -908,7 +908,7 @@ int MapClass::InitCellVector()
     *((unsigned int *)v2 + 2) = 0; /*0x565ab4*/
     v2[12] = 1; /*0x565abb*/
     v2[13] = 0; /*0x565abf*/
-    *(unsigned int *)v2 = &vt_VectorClass_CellClass; /*0x565ac3*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CellClass) */  /*0x565ac3*/
   }
   (*(void (**)(char *, unsigned int, unsigned int))(*(unsigned int *)v2 + 8))(v2, *&this->q154, 0); /*0x565ad4*/
   for ( result = 0; result < *&this->q154; *((unsigned int *)this->MapClass_field_0x13C + result - 1) = 0 ) /*0x565ae1*/
@@ -2486,7 +2486,7 @@ LABEL_34:
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574f85*/
     v40 = *(__int16 **)v63; /*0x574f8a*/
     occupationFlags = v2->occupationFlags; /*0x574f8e*/
-    v69.vfptr = (int)&vt_DynamicVectorClass_Cell; /*0x574f99*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_Cell) */  /*0x574f99*/
     v71 = 10; /*0x574fa1*/
     v70 = 0; /*0x574fa9*/
     if ( v63[0] >= occupationFlags ) /*0x574fb1*/
@@ -2587,7 +2587,7 @@ LABEL_79:
       while ( (__int16)a2 >= occupationFlags ); /*0x574fbd*/
     }
     Terrain::ConnectivityGraph((Terrain *)v2); /*0x5751e6*/
-    v69.vfptr = (int)&vt_VectorClass_Cell; /*0x5751f1*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_Cell) */  /*0x5751f1*/
     if ( v69.Items ) /*0x5751fb*/
     {
       if ( v69.IsAllocated[0] ) /*0x575203*/
@@ -4608,7 +4608,7 @@ VectorClass_flat * MapClass::InitCellVe_vt00(unsigned int * Block, char a2)
 
   void *v3; // eax
   v3 = (void *)*(Block + 1); /*0x589063*/
-  *Block = &vt_VectorClass; /*0x589066*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x589066*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x589070*/
   {
     operator delete((void *)(v3)); /*0x589078*/

@@ -68,7 +68,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
-      *v9 = &vt_DynamicVectorClass_Cell; /*0x5a01a0*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_Cell) */  /*0x5a01a0*/
       v9->u32_14 = 10; /*0x5a01a6*/
       v9->q010 = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/
@@ -179,7 +179,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   AnimTypeVector::Constructor(&this->Power_d, 0, 0); /*0x721725*/
   this->Image = (OverlayTypeClass *)10; /*0x72172a*/
   this->Debris[0] = 0; /*0x721731*/
-  this->GrowthPercentage[1] = (int)&vt_TypeList; /*0x721734*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x721734*/
   this->NumImages = 0; /*0x72173a*/
   *(unsigned int *)this->Tactical_E4 = 0; /*0x721740*/
   *&this->q0E8 = 0; /*0x721746*/
@@ -198,7 +198,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   v3 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x721794*/
   this->GrowthTimer[2] = 0; /*0x72179a*/
   this->GrowthTimer[0] = v3; /*0x7217a0*/
-  this->ObjectClass = &vt_TiberiumClass; /*0x7217a6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TiberiumClass) */  /*0x7217a6*/
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217ac) */
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217b3) */
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217ba) */
@@ -300,7 +300,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
-    *(unsigned int *)v25.__pad_0 = &vt_TypeList_AnimTypeClass_const; /*0x721b7b*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_AnimTypeClass_const) */  /*0x721b7b*/
     for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Delimiter); i; i = strtok(0, Delimiter) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
@@ -310,7 +310,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
         DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
-    *(unsigned int *)v25.__pad_0 = &vt_VectorClass_AnimTypeClass_const; /*0x721bd6*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
   else
@@ -324,7 +324,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   Items = (void *)v24.Items; /*0x721c17*/
   *(unsigned int *)(v5 + 216) = CapacityIncrement; /*0x721c1b*/
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
-  v24.DynamicVectorClass = (int)&vt_VectorClass_AnimTypeClass_const; /*0x721c21*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x721c21*/
   if ( Items && v24.IsAllocated[0] ) /*0x721c34*/
     __3_YAXPAX_Z(Items); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
@@ -431,10 +431,10 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x721f9b*/
       (&v2->u32_E8)->AnimTypeConstructor(0, 0); /*0x721fa4*/
-      v2->GrowthPercentage[1] = (int)&vt_TypeList; /*0x721fb0*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x721fb0*/
       Timer::Start((Timer *)v2->SpreadTimer, 0); /*0x721fb6*/
       Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/
-      v2->ObjectClass = &vt_TiberiumClass; /*0x721fc7*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_TiberiumClass) */  /*0x721fc7*/
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fcd) */
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fd4) */
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fdb) */

@@ -109,7 +109,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
-    v17.vfptr = (int)&vt_TypeList_BuildingTypeClass_const; /*0x67b5ac*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_BuildingTypeClass_const) */  /*0x67b5ac*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
@@ -130,10 +130,10 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     aP0->Capacity = 0; /*0x67b630*/
     aP0->IsInitialized = 1; /*0x67b633*/
     aP0->IsAllocated = 0; /*0x67b637*/
-    aP0->__pad_0 = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x67b63a*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x67b63a*/
     VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
-    aP0->__pad_0 = (int)&vt_TypeList_BuildingTypeClass_const; /*0x67b645*/
-    v17.vfptr = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x67b64b*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_BuildingTypeClass_const) */  /*0x67b645*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x67b64b*/
     v9 = v19; /*0x67b657*/
     aP0->Count = v18; /*0x67b65b*/
     Items = (void *)v17.Items; /*0x67b65e*/
@@ -151,7 +151,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     aP0->Capacity = 0; /*0x67b69c*/
     aP0->IsInitialized = 1; /*0x67b69f*/
     aP0->IsAllocated = 0; /*0x67b6a3*/
-    aP0->__pad_0 = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x67b6a6*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x67b6a6*/
     if ( aP0 != a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
@@ -185,7 +185,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
     }
     aP0->Count = a4->Count; /*0x67b703*/
     aP0->CapacityIncrement = a4->CapacityIncrement; /*0x67b709*/
-    aP0->__pad_0 = (int)&vt_TypeList_BuildingTypeClass_const; /*0x67b70c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_BuildingTypeClass_const) */  /*0x67b70c*/
   }
   return aP0; /*0x67b682*/
 
@@ -231,9 +231,9 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     aP0->u32_8 = 0; /*0x67bbf0*/
     aP0->u32_C = 1; /*0x67bbf3*/
     aP0->u8_D = 0; /*0x67bbf7*/
-    *(unsigned int *)aP0 = (unsigned int)(&vt_VectorClass); /*0x67bbfa*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x67bbfa*/
     HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
-    *(unsigned int *)aP0 = (unsigned int)(&vt_TypeList); /*0x67bc05*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x67bc05*/
     *(unsigned int *)&v17.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x67bc0b*/
     int InfantryTypeVector_field_0x14 = v17.q014; // ecx /*0x67bc17*/
     aP0->sectionHead = v17.q010; /*0x67bc1b*/
@@ -254,7 +254,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     aP0->u32_8 = 0; /*0x67bc5c*/
     aP0->u32_C = 1; /*0x67bc5f*/
     aP0->u8_D = 0; /*0x67bc63*/
-    *(unsigned int *)aP0 = (unsigned int)(&vt_VectorClass); /*0x67bc66*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x67bc66*/
     if ( (unsigned int *)aP0 != a4 ) /*0x67bc6c*/
     {
       ((_VectorClass_PBVInfantryTypeClass *)aP0)->Cleanup(); /*0x67bc70*/
@@ -289,7 +289,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     }
     aP0->sectionHead = a4[4]; /*0x67bcc3*/
     aP0->u32_14 = a4[5]; /*0x67bcc9*/
-    *(unsigned int *)aP0 = (unsigned int)(&vt_TypeList); /*0x67bccc*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x67bccc*/
   }
   return aP0; /*0x67bc42*/
 }

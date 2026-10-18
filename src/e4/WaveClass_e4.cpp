@@ -62,7 +62,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
       v4->AbstractClass_1A8 = 0; /*0x75f68c*/
       FrameSnapshot::Init(&v4->u32_1D8); /*0x75f692*/
       WaveClass::Constructor_7632D0(&v4->q_1F0, 0, 0); /*0x75f69f*/
-      *(unsigned int *)v4 = &vt_WaveClass_4; /*0x75f6a4*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_WaveClass_4) */  /*0x75f6a4*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_WaveClass_4) */  /*0x75f6aa*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_WaveClass_4) */  /*0x75f6b1*/
       v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
@@ -126,7 +126,7 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   void *v4; // eax
   WaveClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  aP1->ObjectClass = &vt_WaveClass; /*0x763206*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_WaveClass) */  /*0x763206*/
   /* X11: vtable install elided (qmark slot, RHS vt_WaveClass) */  /*0x76320c*/
   /* X11: vtable install elided (qmark slot, RHS vt_WaveClass) */  /*0x763213*/
   aP1->? = &off_7F6BC8; /*0x76321a*/

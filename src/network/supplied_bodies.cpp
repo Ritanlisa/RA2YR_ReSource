@@ -505,7 +505,7 @@ int IPXManagerClass::ProcessQueue() {
 
 // 0x542EC0
 namespace gamemd {
-int IPXManagerClass::IPXManagerClass::Flush(char a2)  // g57b5 W4: raw 真值补参 (a2)
+int IPXManagerClass::Flush(char a2)  // g57b5 W4: raw 真值补参 (a2)
 {
   int v3; // edi
   IPXManagerClass *v4; // ebx
@@ -1185,7 +1185,7 @@ void ModemGame::UpdatePlayerNameAndColor()
   LRESULT v7; // eax
   int result; // eax
   HWND v9; // esi
-  int (__usercall *v10)(char, char); // ebx
+  int (*v10)(char, char); // ebx
   HWND v11; // [esp-8h] [ebp-B8h]
   wchar_t lParam[80]; // [esp+10h] [ebp-A0h] BYREF
 
@@ -1214,7 +1214,7 @@ void ModemGame::UpdatePlayerNameAndColor()
     if ( a3 >= 8 ) /*0x5b5b87*/
       v10 = Math::InitDegToRad; /*0x5b5b97*/
     else
-      v10 = (int (__usercall *)(char, char))dword_8316A8[a3]; /*0x5b5b8e*/
+      v10 = (int (*)(char, char))dword_8316A8[a3]; /*0x5b5b8e*/
     return SendMessageA(v9, 0x498u, 0, (LPARAM)v10); /*0x5b5ba6*/
   }
   return result; /*0x5b5ba8*/
@@ -1246,7 +1246,7 @@ void ModemGame::ProcessPacket()
   char *v19; // ebp
   int v20; // esi
   HWND DlgItem; // edi
-  int (__usercall *v22)@<eax>(char@<cf>, char@<zf>); // esi
+  int (*v22)(char, char); // esi
   int v23; // esi
   int v24; // esi
   int *v25; // [esp-14h] [ebp-434h]
@@ -1456,7 +1456,7 @@ LABEL_35:
             if ( v20 >= 8 ) /*0x5b66b4*/
               v22 = Math::InitDegToRad; /*0x5b66bf*/
             else
-              v22 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))lParam[v20]; /*0x5b66b6*/
+              v22 = (int (*)(char, char))lParam[v20]; /*0x5b66b6*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, (const wchar_t *const)v19, &v45[1]); /*0x5b66d8*/
             DrawDialogText((LPARAM)v22, Buffer, DlgItem); /*0x5b66ea*/
           }
@@ -1549,7 +1549,7 @@ void ModemGame::ReceiveMapPreview()
     v13 = 0; /*0x5b74cc*/
     Buffer::Init(&v14, (int)(v4 + 4), FileSize); /*0x5b74de*/
     v14.Buffer_field_0C = 0; /*0x5b74ee*/
-    *(unsigned int *)v12.__pad_0 = &vt_BufferStraw; /*0x5b74f2*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_BufferStraw) */  /*0x5b74f2*/
     LZOStraw::Constructor((LZOStraw *)v15, 1, 0x2000); /*0x5b74fa*/
     Delegate::Set(v15, (int)&v12); /*0x5b7508*/
     v6 = (char *)__2_YAPAXI_Z(2 * v5); /*0x5b7519*/
@@ -2074,7 +2074,7 @@ void ModemGuest::ProcessPacket()
   int v17; // esi
   const wchar_t *v18; // ebx
   HWND DlgItem; // edi
-  int (__usercall *v20)@<eax>(char@<cf>, char@<zf>); // esi
+  int (*v20)(char, char); // esi
   int v21; // esi
   int *v22; // eax
   char v23; // al
@@ -2230,7 +2230,7 @@ LABEL_48:
               if ( v17 >= 8 ) /*0x5ba491*/
                 v20 = Math::InitDegToRad; /*0x5ba49c*/
               else
-                v20 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))lParam[v17]; /*0x5ba493*/
+                v20 = (int (*)(char, char))lParam[v17]; /*0x5ba493*/
               swprintf(Buffer, (const size_t)g_Str_Trace___s_, v18, &v42[1]); /*0x5ba4b5*/
               DrawDialogText((LPARAM)v20, Buffer, DlgItem); /*0x5ba4c7*/
             }
@@ -2688,7 +2688,7 @@ void MultiplayerModeVector2::Destruct()
 namespace gamemd {
 void MultiplayerTeam::Constructor()
 {
-  WideString::AssignFromPtrthis->__pad_004, a2); /*0x5d8c5b*/
+  WideString::AssignFromPtr(this->__pad_004, a2); /*0x5d8c5b*/
   *(unsigned int *)this->vtable1 = 0; /*0x5d8c64*/
   this->u32_8 = a3; /*0x5d8c6a*/
   return (wchar_t **)this; /*0x5d8c6f*/

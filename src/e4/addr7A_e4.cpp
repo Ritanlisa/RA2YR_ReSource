@@ -1588,7 +1588,7 @@ AbstractClass * * sub_7AF970(int a2)
   v6 = (OwnerDrawControl)&vt_WorldDominationTour_FactionSelectDialogControl; /*0x7af9a5*/
   CCFileClass::Construct(&v12, aWdtfsbsmPcx); /*0x7af9ad*/
   v8 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7af9cb*/
-  *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x7af9cf*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x7af9cf*/
   v14 = 0; /*0x7af9d3*/
   Vector::Clear((int)v13); /*0x7af9da*/
   *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x7af9e3*/
@@ -1597,7 +1597,7 @@ AbstractClass * * sub_7AF970(int a2)
   {
     CCFileClass::Construct(&v12, aWdtfsasmPcx); /*0x7af9ff*/
     v3 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7afa0c*/
-    *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x7afa18*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x7afa18*/
     v9 = (void (***)(unsigned int, int))v3; /*0x7afa1c*/
     v14 = 0; /*0x7afa20*/
     Vector::Clear((int)v13); /*0x7afa27*/
@@ -1675,7 +1675,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   *(unsigned int *)v19.owningHouseIndex = 0; /*0x7afc65*/
   v7 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, g_Str_File_WDT_MIX); /*0x7afc69*/
   v8 = v7->vt_slot_20(0); /*0x7afc82*/
-  v23.ComPtr_field_0x08 = (int)&vt_CCFileClass; /*0x7afc84*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x7afc84*/
   v25 = 0; /*0x7afc88*/
   Vector::Clear((int)v24); /*0x7afc8f*/
   v23.ComPtr_field_0x08 = (int)&off_7E1668; /*0x7afc98*/
@@ -1690,7 +1690,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   }
   v10 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, aWdtvoxMix); /*0x7afcdb*/
   v11 = v10->vt_slot_20(0); /*0x7afcef*/
-  v23.ComPtr_field_0x08 = (int)&vt_CCFileClass; /*0x7afcf1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x7afcf1*/
   v25 = 0; /*0x7afcf5*/
   Vector::Clear((int)v24); /*0x7afcfc*/
   v23.ComPtr_field_0x08 = (int)&off_7E1668; /*0x7afd05*/
@@ -1705,7 +1705,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   }
   v13 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, aLocalMix_1); /*0x7afd48*/
   v14 = v13->vt_slot_20(0); /*0x7afd5c*/
-  v23.ComPtr_field_0x08 = (int)&vt_CCFileClass; /*0x7afd5e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x7afd5e*/
   v25 = 0; /*0x7afd62*/
   Vector::Clear((int)v24); /*0x7afd69*/
   v23.ComPtr_field_0x08 = (int)&off_7E1668; /*0x7afd72*/
@@ -1753,11 +1753,11 @@ int StartWDTCampaign(char a1, char a2, int a3)
         if ( FetchWOLData(v18) ) /*0x7afeef*/
         {
         ComPtr::Constructor((ComPtr *)&v19.u32_8); /*0x7aff00*/
-        v19.u32_8 = (int)&vt_rc_ptr; /*0x7aff0f*/
+        /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x7aff0f*/
         ComPtr::Set((ComPtr *)&v19.u32_8, DataGlobal_B77F6C); /*0x7aff13*/
         if ( !v20 ) /*0x7aff1e*/
         {
-          v19.u32_8 = (int)&vt_rc_ptr; /*0x7b0030*/
+          /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x7b0030*/
           ComPtr::Release((ComPtr *)&v19.u32_8); /*0x7b0034*/
           return 0; /*0x7b0045*/
         }
@@ -1765,11 +1765,11 @@ int StartWDTCampaign(char a1, char a2, int a3)
         if ( Team_Start_764FA0(v20) ) /*0x7aff34*/
         {
           ComPtr::Constructor(&v23); /*0x7aff41*/
-          *(unsigned int *)v23.__pad_000 = &vt_rc_ptr; /*0x7aff50*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7aff50*/
           ComPtr::Set(&v23, DataGlobal_B77F7C); /*0x7aff54*/
           if ( v23.q004 && !Team_Start_764FA0((ObjectClass *)v23.q004) ) /*0x7aff61*/
             Team_Start_76ECD0((int)&v23, dword_B77F98); /*0x7aff74*/
-          *(unsigned int *)v23.__pad_000 = &vt_rc_ptr; /*0x7aff7d*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7aff7d*/
           ComPtr::Release(&v23); /*0x7aff81*/
         }
         dword_A8B3AC = dword_B77F94 == 3; /*0x7aff9a*/
@@ -1783,7 +1783,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
         {
           v16 = 1; /*0x7affc4*/
         }
-        v19.u32_8 = (int)&vt_rc_ptr; /*0x7affcd*/
+        /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x7affcd*/
         ComPtr::Release((ComPtr *)&v19.u32_8); /*0x7affd1*/
         LABEL_25:
         if ( !v16 ) /*0x7afe43*/

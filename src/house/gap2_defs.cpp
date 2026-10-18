@@ -1125,8 +1125,8 @@ void HouseClass::processTargetSelection() {
   }
   this->u32_194 = 0; /*0x4f2250*/
   this->grindersCount = 0; /*0x4f2253*/
-  DeleteAndZerothis->Float4_19D); /*0x4f2256*/
-  DeleteAndZerothis->Float4_19D); /*0x4f225e*/
+  DeleteAndZero(this->Float4_19D); /*0x4f2256*/
+  DeleteAndZero(this->Float4_19D); /*0x4f225e*/
   MSEngine::Destruct(&this->vtable2); /*0x4f2266*/
 }
 }
@@ -1859,7 +1859,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       return 0; /*0x4f7895*/
     DynamicVectorClass::Copy(&v68, &a1->u32_654); /*0x4f78a6*/
     v6 = 0; /*0x4f78b4*/
-    v68.vfptr = (int)&vt_TypeList_int; /*0x4f78b6*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x4f78b6*/
     if ( v68.Count > 0 ) /*0x4f78bc*/
     {
       while ( DynamicVector::GetOrGrow((DynamicVector *)v4->ownedInfantryTypes2, *(unsigned int *)(v68.Items + 4 * v6)) <= 0 ) /*0x4f78d5*/
@@ -1870,7 +1870,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
           goto LABEL_7; /*0x4f78e0*/
         }
       }
-      v68.vfptr = (int)&vt_VectorClass_int; /*0x4f7913*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7913*/
       VectorClass::Destroy((int)&v68); /*0x4f791b*/
       goto LABEL_135; /*0x4f7920*/
     }
@@ -1884,7 +1884,7 @@ LABEL_7:
           goto LABEL_15; /*0x4f790b*/
       }
       Items = (void *)v68.Items; /*0x4f7925*/
-      v68.vfptr = (int)&vt_VectorClass_int; /*0x4f7929*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7929*/
       if ( !v68.Items || !v68.IsAllocated[0] ) /*0x4f793f*/
         goto LABEL_135; /*0x4f793f*/
       goto LABEL_134; /*0x4f793f*/
@@ -1893,13 +1893,13 @@ LABEL_15:
     if ( v5->u32_634 == -1 ) /*0x4f7951*/
     {
       v9 = (void *)v68.Items; /*0x4f7953*/
-      v68.vfptr = (int)&vt_VectorClass_int; /*0x4f7957*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7957*/
       v10 = v68.Items == 0; /*0x4f795f*/
       goto LABEL_125; /*0x4f7961*/
     }
     DynamicVectorClass::Copy(&v67, &v5->u32_638); /*0x4f7971*/
     v11 = v5->u8_D9D; /*0x4f7976*/
-    v67.vfptr = (int)&vt_TypeList_int; /*0x4f797c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x4f797c*/
     v12 = *&v4->TechLevel; /*0x4f7980*/
     if ( v11 && !v4->side0TechInfiltrated[0] ) /*0x4f798a*/
       goto LABEL_19; /*0x4f798a*/
@@ -1938,7 +1938,7 @@ LABEL_15:
 LABEL_47:
         if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(v4->supersCount + 4 * v16) + 40) + 231) ) /*0x4f7b01*/
         {
-          v67.vfptr = (int)&vt_VectorClass_int; /*0x4f7b16*/
+          /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7b16*/
           if ( v67.Items && v67.IsAllocated[0] ) /*0x4f7b22*/
           {
             __3_YAXPAX_Z((void *)v67.Items); /*0x4f7b25*/
@@ -1967,7 +1967,7 @@ LABEL_47:
     {
 LABEL_19:
       v13 = (void *)v67.Items; /*0x4f7994*/
-      v67.vfptr = (int)&vt_VectorClass_int; /*0x4f799d*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f799d*/
 LABEL_20:
       if ( v13 && v67.IsAllocated[0] ) /*0x4f79b1*/
       {
@@ -1979,7 +1979,7 @@ LABEL_124:
       v9 = (void *)v68.Items; /*0x4f7f20*/
       v67.IsAllocated[0] = 0; /*0x4f7f24*/
       v67.Capacity = 0; /*0x4f7f29*/
-      v68.vfptr = (int)&vt_VectorClass_int; /*0x4f7f2d*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7f2d*/
       v10 = v68.Items == 0; /*0x4f7f31*/
       goto LABEL_125; /*0x4f7f31*/
     }
@@ -1988,7 +1988,7 @@ LABEL_124:
       v21 = v21 || v4->playerControl[0]; /*0x4f7b90*/
     if ( !v21 ) /*0x4f7b94*/
     {
-      v67.vfptr = (int)&vt_VectorClass_int; /*0x4f7ba1*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7ba1*/
       if ( v67.Items && v67.IsAllocated[0] ) /*0x4f7bad*/
       {
         __3_YAXPAX_Z((void *)v67.Items); /*0x4f7bb0*/
@@ -1996,7 +1996,7 @@ LABEL_124:
       }
       v67.IsAllocated[0] = 0; /*0x4f7bc0*/
       v67.Capacity = 0; /*0x4f7bc7*/
-      v68.vfptr = (int)&vt_VectorClass_int; /*0x4f7bcb*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7bcb*/
       if ( v68.Items && v68.IsAllocated[0] ) /*0x4f7bd7*/
         __3_YAXPAX_Z((void *)v68.Items); /*0x4f7bda*/
       return 1; /*0x4f7bda*/
@@ -2035,7 +2035,7 @@ LABEL_95:
             if ( !v29 ) /*0x4f7ddb*/
             {
               v13 = (void *)v67.Items; /*0x4f7e99*/
-              v67.vfptr = (int)&vt_VectorClass_int; /*0x4f7ea2*/
+              /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7ea2*/
               goto LABEL_20; /*0x4f7ea6*/
             }
             goto LABEL_114; /*0x4f7ddb*/
@@ -2107,7 +2107,7 @@ LABEL_95:
             while ( v24 < *&dword_8871E0->q368 ); /*0x4f7c5a*/
 LABEL_116:
             v13 = (void *)v67.Items; /*0x4f7e85*/
-            v67.vfptr = (int)&vt_VectorClass_int; /*0x4f7e8e*/
+            /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7e8e*/
             goto LABEL_20; /*0x4f7e94*/
           default:
             v32 = (unsigned __int8 *)*((unsigned int *)dword_A83C6C + v23); /*0x4f7deb*/
@@ -2117,7 +2117,7 @@ LABEL_116:
               if ( v33 < 0 ) /*0x4f7dfc*/
               {
 LABEL_118:
-                v67.vfptr = (int)&vt_VectorClass_int; /*0x4f7eab*/
+                /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7eab*/
                 if ( v67.Items && v67.IsAllocated[0] ) /*0x4f7ec6*/
                 {
                   __3_YAXPAX_Z((void *)v67.Items); /*0x4f7ed1*/
@@ -2125,7 +2125,7 @@ LABEL_118:
                   v67.Items = 0; /*0x4f7edd*/
                   v67.IsAllocated[0] = 0; /*0x4f7ee5*/
                   v67.Capacity = 0; /*0x4f7eea*/
-                  v68.vfptr = (int)&vt_VectorClass_int; /*0x4f7ef2*/
+                  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7ef2*/
                   v10 = v68.Items == 0; /*0x4f7ef6*/
                   goto LABEL_125; /*0x4f7ef8*/
                 }
@@ -2133,7 +2133,7 @@ LABEL_51:
                 v9 = (void *)v68.Items; /*0x4f7b35*/
                 v67.IsAllocated[0] = 0; /*0x4f7b39*/
                 v67.Capacity = 0; /*0x4f7b3e*/
-                v68.vfptr = (int)&vt_VectorClass_int; /*0x4f7b46*/
+                /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7b46*/
                 v10 = v68.Items == 0; /*0x4f7b4a*/
 LABEL_125:
                 if ( !v10 ) /*0x4f7f33*/
@@ -2172,7 +2172,7 @@ LABEL_125:
                          *(unsigned int *)(v67.Items + 4 * v69)) )
             {
               v13 = (void *)v67.Items; /*0x4f7efa*/
-              v67.vfptr = (int)&vt_VectorClass_int; /*0x4f7f05*/
+              /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7f05*/
               if ( v67.Items && v67.IsAllocated[0] ) /*0x4f7f11*/
                 goto LABEL_123; /*0x4f7f11*/
               goto LABEL_124; /*0x4f7f11*/
@@ -2187,7 +2187,7 @@ LABEL_114:
       }
     }
 LABEL_129:
-    v67.vfptr = (int)&vt_VectorClass_int; /*0x4f7f52*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7f52*/
     if ( v67.Items && v67.IsAllocated[0] ) /*0x4f7f69*/
     {
       __3_YAXPAX_Z((void *)v67.Items); /*0x4f7f6c*/
@@ -2196,7 +2196,7 @@ LABEL_129:
     Items = (void *)v68.Items; /*0x4f7f78*/
     v67.IsAllocated[0] = 0; /*0x4f7f7c*/
     v67.Capacity = 0; /*0x4f7f83*/
-    v68.vfptr = (int)&vt_VectorClass_int; /*0x4f7f87*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x4f7f87*/
     if ( v68.Items && v68.IsAllocated[0] ) /*0x4f7f93*/
 LABEL_134:
       __3_YAXPAX_Z(Items); /*0x4f7f95*/
@@ -4697,7 +4697,7 @@ LABEL_55:
     VectorClass::BuildingTypeConstructor(&v85, 0, 0); /*0x4fe7af*/
     v59 = 10; /*0x4fe7b7*/
     v60 = this->bunkersCount - 1; /*0x4fe7bc*/
-    v85.vfptr = (int)&vt_DynamicVectorClass_BuildingTypeClass_const; /*0x4fe7bd*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingTypeClass_const) */  /*0x4fe7bd*/
     v87 = 10; /*0x4fe7c5*/
     v86 = 0; /*0x4fe7c9*/
     if ( v60 < 0 ) /*0x4fe7d1*/
@@ -4710,7 +4710,7 @@ LABEL_71:
         V3EliteWarhead = dword_8871E0->CMislEliteWarhead; /*0x4fe84f*/
       else
         V3EliteWarhead = dword_8871E0->DMislEliteWarhead; /*0x4fe85d*/
-      v85.vfptr = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x4fe86b*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x4fe86b*/
       if ( v85.Items && v85.IsAllocated[0] ) /*0x4fe87b*/
       {
         __3_YAXPAX_Z((void *)v85.Items); /*0x4fe87e*/
@@ -5047,7 +5047,7 @@ int HouseClass::AIInfantryProduction() {
         {
           TechnoTypeVector::Constructor(&v23, 0, 0); /*0x4fef89*/
           v6 = 0; /*0x4fef92*/
-          *(unsigned int *)v23.__pad_0 = &vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4fef97*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_TechnoTypeClass_const) */  /*0x4fef97*/
           v27 = 10; /*0x4fef9f*/
           v26 = 0; /*0x4fefa7*/
           HouseClass::UpdateProductionQueue(v4, (int)&v23); /*0x4fefab*/
@@ -5069,7 +5069,7 @@ int HouseClass::AIInfantryProduction() {
             }
             while ( v6 < v26 ); /*0x4feffa*/
           }
-          *(unsigned int *)v23.__pad_0 = &vt_VectorClass_TechnoTypeClass_const; /*0x4ff000*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TechnoTypeClass_const) */  /*0x4ff000*/
           if ( v23.TechnoTypeVector_field_0x04 && v25 ) /*0x4ff012*/
           {
             __3_YAXPAX_Z((void *)v23.TechnoTypeVector_field_0x04); /*0x4ff015*/
@@ -5197,7 +5197,7 @@ int HouseClass::AIAircraftProduction() {
         {
           TechnoTypeVector::Constructor(&v23, 0, 0); /*0x4ff2b9*/
           v6 = 0; /*0x4ff2c2*/
-          *(unsigned int *)v23.__pad_0 = &vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4ff2c7*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_TechnoTypeClass_const) */  /*0x4ff2c7*/
           v27 = 10; /*0x4ff2cf*/
           v26 = 0; /*0x4ff2d7*/
           HouseClass::UpdateProductionQueue(v4, (int)&v23); /*0x4ff2db*/
@@ -5219,7 +5219,7 @@ int HouseClass::AIAircraftProduction() {
             }
             while ( v6 < v26 ); /*0x4ff32a*/
           }
-          *(unsigned int *)v23.__pad_0 = &vt_VectorClass_TechnoTypeClass_const; /*0x4ff330*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TechnoTypeClass_const) */  /*0x4ff330*/
           if ( v23.TechnoTypeVector_field_0x04 && v25 ) /*0x4ff342*/
           {
             __3_YAXPAX_Z((void *)v23.TechnoTypeVector_field_0x04); /*0x4ff345*/
@@ -6920,7 +6920,7 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
   (*(void (**)(int *))(v3 + 12))(&this->base[7]); /*0x5054dc*/
   v4 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->relatedTagsCapacity + 152)); /*0x5054f6*/
   VectorClass::BuildingTypeConstructor(&v93, 0, 0); /*0x5054fe*/
-  v93.vfptr = (int)&vt_DynamicVectorClass_BuildingTypeClass_const; /*0x50550e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingTypeClass_const) */  /*0x50550e*/
   v95 = 10; /*0x505516*/
   v94 = 0; /*0x50551a*/
   BoolVector::Construct(&v96, 0, 0); /*0x50551e*/
@@ -7001,7 +7001,7 @@ LABEL_17:
   v16 = v94; /*0x5056d8*/
   v91 = v94; /*0x5056e4*/
   VectorClass::BuildingTypeConstructor(&v85, 0, 0); /*0x5056e8*/
-  v85.vfptr = (int)&vt_DynamicVectorClass_BuildingTypeClass_const; /*0x5056fb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingTypeClass_const) */  /*0x5056fb*/
   v87 = 10; /*0x505704*/
   v86 = 0; /*0x50570c*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray(this, (int)&dword_8871E0->IonCannonWarhead); /*0x505719*/
@@ -7204,7 +7204,7 @@ LABEL_109:
   VectorClass::BuildingTypeConstructor((VectorClass *)&v88, 0, 0); /*0x505b29*/
   m_8 = v88.m_8; /*0x505b36*/
   v53 = (unsigned int *)v85.Items; /*0x505b3a*/
-  *(unsigned int *)v88.__pad_0 = &vt_DynamicVectorClass_BuildingTypeClass_const; /*0x505b40*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_BuildingTypeClass_const) */  /*0x505b40*/
   v89 = 10; /*0x505b48*/
   v88.m_10 = 0; /*0x505b50*/
   if ( v88.m_8 > 0 ) /*0x505b58*/
@@ -7387,7 +7387,7 @@ LABEL_145:
     v74->vtable3 = (unsigned int)v73; /*0x505ea7*/
     v74->vtable4 = 0; /*0x505eaa*/
   }
-  *(unsigned int *)v88.__pad_0 = &vt_VectorClass_BuildingTypeClass_const; /*0x505ec2*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x505ec2*/
   if ( *(unsigned int *)&v88.m_1[3] && BYTE1(v88.m_C) ) /*0x505edb*/
   {
     __3_YAXPAX_Z(*(void **)&v88.m_1[3]); /*0x505ede*/
@@ -7395,7 +7395,7 @@ LABEL_145:
   }
   BYTE1(v88.m_C) = 0; /*0x505eee*/
   v88.m_8 = 0; /*0x505ef5*/
-  v85.vfptr = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x505ef9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x505ef9*/
   if ( v85.Items && v85.IsAllocated[0] ) /*0x505f05*/
   {
     __3_YAXPAX_Z((void *)v85.Items); /*0x505f08*/
@@ -7411,7 +7411,7 @@ LABEL_145:
   }
   result = v93.Items; /*0x505f42*/
   v98 = 0; /*0x505f46*/
-  v93.vfptr = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x505f4c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x505f4c*/
   BYTE1(v99) = 0; /*0x505f53*/
   if ( v93.Items ) /*0x505f59*/
   {
@@ -7591,7 +7591,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
   {
     VectorClass::CellConstructor((VectorClass *)&v75, 0, 0); /*0x506243*/
     v18 = LOWORD(this->damageDelayTimer[1]) == 0; /*0x506248*/
-    *(unsigned int *)v75.__pad_0 = &vt_DynamicVectorClass_Cell; /*0x506255*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_Cell) */  /*0x506255*/
     v76 = 10; /*0x50625d*/
     *(unsigned int *)v75.__tail_10 = 0; /*0x506265*/
     v69 = &this->teamDelayTimer; /*0x506269*/
@@ -7732,7 +7732,7 @@ LABEL_88:
           v72 = 0; /*0x506adb*/
           LOBYTE(v73) = 0; /*0x506adf*/
           v74 = 0; /*0x506ae4*/
-          *(unsigned int *)v75.__pad_0 = &vt_VectorClass_Cell; /*0x506ae8*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x506ae8*/
           if ( *(unsigned int *)&v75.u16_4 && BYTE1(v75.m_C) ) /*0x506af8*/
             __3_YAXPAX_Z(*(void **)&v75.u16_4); /*0x506afb*/
           return v58; /*0x506afb*/
@@ -7910,7 +7910,7 @@ LABEL_72:
       v72 = 0; /*0x506b34*/
       LOBYTE(v73) = 0; /*0x506b38*/
       v74 = 0; /*0x506b3c*/
-      *(unsigned int *)v75.__pad_0 = &vt_VectorClass_Cell; /*0x506b40*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x506b40*/
       if ( *(unsigned int *)&v75.u16_4 && BYTE1(v75.m_C) ) /*0x506b50*/
       {
         __3_YAXPAX_Z(*(void **)&v75.u16_4); /*0x506b53*/
@@ -7929,7 +7929,7 @@ LABEL_72:
       {
         baseCenter = this->baseCenter; /*0x50629d*/
       }
-      *(unsigned int *)v75.__pad_0 = &vt_VectorClass_Cell; /*0x5062aa*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x5062aa*/
       *a2 = baseCenter; /*0x5062b2*/
       Buffer::Cleanup(&v75); /*0x5062b4*/
       return a2; /*0x5062b9*/
@@ -8085,7 +8085,7 @@ int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
   a1->vtable3 = 0; /*0x507ea9*/
   a1->vtable4 = 1; /*0x507eac*/
   a1->u32_D = 0; /*0x507eb0*/
-  *(unsigned int *)a1 = &vt_VectorClass_BuildingTypeClass; /*0x507eb3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_BuildingTypeClass) */  /*0x507eb3*/
   if ( (void ***)a1 != &v22 ) /*0x507eb9*/
   {
     VectorClass::Cleanup4(a1); /*0x507ebd*/
@@ -8123,7 +8123,7 @@ int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
   v19 = Block; /*0x507f1b*/
   v14 = Block == 0; /*0x507f1f*/
   a1->abstractFlags = v18; /*0x507f21*/
-  *(unsigned int *)a1 = &vt_DynamicVectorClass_BuildingTypeClass; /*0x507f24*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_BuildingTypeClass) */  /*0x507f24*/
   v22 = &vt_VectorClass_BuildingTypeClass; /*0x507f2a*/
   if ( !v14 && (((v25) >> 8) & 0xFF) ) /*0x507f3a*/
     __3_YAXPAX_Z(v19); /*0x507f3d*/
@@ -8209,7 +8209,7 @@ int HouseClass::CollectAircraftBuildCandidates(int a1, int a2) {
   *(unsigned int *)(a1 + 8) = 0; /*0x508099*/
   *(unsigned char *)(a1 + 12) = 1; /*0x50809c*/
   *(unsigned char *)(a1 + 13) = 0; /*0x5080a0*/
-  *(unsigned int *)a1 = &vt_VectorClass_BuildingTypeClass; /*0x5080a3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_BuildingTypeClass) */  /*0x5080a3*/
   if ( (void ***)a1 != &v22 ) /*0x5080a9*/
   {
     VectorClass::Cleanup4(a1); /*0x5080ad*/
@@ -8247,7 +8247,7 @@ int HouseClass::CollectAircraftBuildCandidates(int a1, int a2) {
   v19 = Block; /*0x50810b*/
   v14 = Block == 0; /*0x50810f*/
   *(unsigned int *)(a1 + 20) = v18; /*0x508111*/
-  *(unsigned int *)a1 = &vt_DynamicVectorClass_BuildingTypeClass; /*0x508114*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_BuildingTypeClass) */  /*0x508114*/
   v22 = &vt_VectorClass_BuildingTypeClass; /*0x50811a*/
   if ( !v14 && (((v25) >> 8) & 0xFF) ) /*0x50812a*/
     __3_YAXPAX_Z(v19); /*0x50812d*/
@@ -8447,7 +8447,7 @@ void HouseClass::FindAutoBuildLocation() {
   this->HouseClass_field_timer_A[2] = v3; /*0x508308*/
   this->HouseClass_field_timer_B[0] = v4; /*0x50830b*/
   BaseNodeClass::Vector_Constructor(&v96, 0, 0); /*0x50830e*/
-  v96.buildingTypeIndex = (int)&vt_DynamicVectorClass_BaseNodeClass; /*0x50831b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BaseNodeClass) */  /*0x50831b*/
   v98 = 10; /*0x508323*/
   v97 = 0; /*0x50832b*/
   BaseNodeClass::Vector_Constructor(&v92, 0, 0); /*0x508333*/
@@ -8462,7 +8462,7 @@ void HouseClass::FindAutoBuildLocation() {
   HIWORD(v81) = v2 + 1; /*0x50836e*/
   (v3) = ((v3) & ~0xFFFF) | ((v1 + v3) & 0xFFFF); /*0x508377*/
   v116[2] = v81; /*0x508379*/
-  v92.buildingTypeIndex = (int)&vt_DynamicVectorClass_BaseNodeClass; /*0x508388*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BaseNodeClass) */  /*0x508388*/
   LOWORD(v81) = v3 - 1; /*0x508390*/
   v116[3] = v81; /*0x508399*/
   LOWORD(v81) = v3; /*0x5083a0*/
@@ -8766,7 +8766,7 @@ LABEL_58:
   v74 = HouseClass_field_timer_A; /*0x508ba2*/
   v75 = v109; /*0x508ba9*/
   v76 = *HouseClass_field_timer_A; /*0x508bb5*/
-  v92.buildingTypeIndex = (int)&vt_VectorClass_BaseNodeClass; /*0x508bb7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BaseNodeClass) */  /*0x508bb7*/
   *v109 = v76; /*0x508bbb*/
   v75[1] = v74[1]; /*0x508bc0*/
   v77 = v74[2]; /*0x508bc3*/
@@ -8778,7 +8778,7 @@ LABEL_58:
     __3_YAXPAX_Z((void *)v92.mapCoords); /*0x508be0*/
     v92.mapCoords = 0; /*0x508be8*/
   }
-  v96.buildingTypeIndex = (int)&vt_VectorClass_BaseNodeClass; /*0x508bf4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BaseNodeClass) */  /*0x508bf4*/
   BYTE1(v92.attempts) = 0; /*0x508bfb*/
   *(unsigned int *)v92.placed = 0; /*0x508c02*/
   if ( v96.mapCoords && BYTE1(v96.attempts) ) /*0x508c13*/
@@ -9780,7 +9780,7 @@ int HouseClass::AIBuildBase() {
     this->uiNameString[3] = v91; /*0x50a654*/
   }
   StringCSF = GetStringCSF(g_Str_TXT_COMPUTER, 0, g_Str_File_House_CPP, 13744); /*0x50a666*/
-  wcscpythis->u32_160CE, StringCSF); /*0x50a673*/
+  wcscpy(this->u32_160CE, StringCSF); /*0x50a673*/
   v4 = *(unsigned int *)&g_TeamTypeCapacity - 1; /*0x50a680*/
   if ( *(unsigned int *)&g_TeamTypeCapacity - 1 >= 0 ) /*0x50a685*/
   {
@@ -11532,7 +11532,7 @@ void* HouseClass::InitTypeVectors(int a1) {
 
   v3 = &this->repairStationsCapacity; /*0x664d26*/
   DynamicVector::Constructor_VoxelAnim(0, 0); /*0x664d2d*/
-  *v3 = (void *)(void*)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x664d32*/
+  /* X11: vtable install elided (X67 star-deref, RHS TypeList_VoxelAnimTypeClass_const___vftable) */  /*0x664d32*/
   DynamicVectorClass::AnimTypeConstructor(&this->q104, 0, 0); /*0x664d44*/
   *(&this->nextArrayIndex5) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d49*/
   DynamicVectorClass::AnimTypeConstructor(&this->buildDelay, 0, 0); /*0x664d5b*/
@@ -11572,7 +11572,7 @@ void* HouseClass::InitTypeVectors(int a1) {
   this->DynamicVectorClass_1B3.Construct(0, 0); /*0x664ee2*/
   *(&this->q02B5) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664ee7*/
   this->DynamicVectorClass_1CD.Construct(0, 0); /*0x664ef9*/
-  this->ptr_734 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664efe*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x664efe*/
   this->SmudgeTypeVector_1F1.Construct(0, 0); /*0x664f10*/
   *(&this->q0317) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f15*/
   this->isLoser.Construct(0, 0); /*0x664f27*/
@@ -11584,17 +11584,17 @@ void* HouseClass::InitTypeVectors(int a1) {
   this->SmudgeTypeVector_20D.Construct(0, 0); /*0x664f6c*/
   *(&this->attachedTag5) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f71*/
   this->q214.BuildingTypeConstructor(0, 0); /*0x664f83*/
-  this->q850 = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664f88*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664f88*/
   this->q220.BuildingTypeConstructor(0, 0); /*0x664f9a*/
   *(&this->occupant4) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664f9f*/
   this->DynamicVectorClass_22B.BuildingTypeConstructor(0, 0); /*0x664fb1*/
-  this->u32_8AC = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fb6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664fb6*/
   this->q232.BuildingTypeConstructor(0, 0); /*0x664fc8*/
   *(&this->attachedBomb2) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fcd*/
   this->DynamicVectorClass_239.BuildingTypeConstructor(0, 0); /*0x664fdf*/
   *(&this->attachedBomb9) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fe4*/
   this->visionary.BuildingTypeConstructor(0, 0); /*0x664ff6*/
-  this->q900 = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664ffb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664ffb*/
   this->unknownBool247.BuildingTypeConstructor(0, 0); /*0x66500d*/
   *(&this->q03A3) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665012*/
   this->DynamicVectorClass_24E.BuildingTypeConstructor(0, 0); /*0x665024*/
@@ -11604,7 +11604,7 @@ void* HouseClass::InitTypeVectors(int a1) {
   DynamicVectorClass::BuildingTypeConstructor(&this->ptr_970, 0, 0); /*0x665052*/
   *(&this->airspeedMultiplier4) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665057*/
   this->DynamicVectorClass_263.BuildingTypeConstructor(0, 0); /*0x665069*/
-  this->u32_98C = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66506e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x66506e*/
   this->DynamicVectorClass_26A.Construct(0, 0); /*0x665080*/
   *(&this->q0F48) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665085*/
   DynamicVectorClass::BuildingTypeConstructor(&this->u32_9C4, 0, 0); /*0x665097*/
@@ -11622,105 +11622,105 @@ void* HouseClass::InitTypeVectors(int a1) {
   DynamicVectorClass::BuildingTypeConstructor(&this->u32_A6C, 0, 0); /*0x665121*/
   *(&this->costMultiplier7) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665126*/
   this->DynamicVectorClass_2A2.BuildingTypeConstructor(0, 0); /*0x665138*/
-  this->u32_A88 = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66513d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x66513d*/
   this->DynamicVectorClass_2A9.BuildingTypeConstructor(0, 0); /*0x66514f*/
-  this->u32_AA4 = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665154*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x665154*/
   this->DynamicVectorClass_2B0.BuildingTypeConstructor(0, 0); /*0x665166*/
-  this->u32_AC0 = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66516b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x66516b*/
   this->DynamicVectorClass_2B7.BuildingTypeConstructor(0, 0); /*0x66517d*/
-  this->u32_ADC = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665182*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x665182*/
   this->UnitTypeVector_2C8.Construct(0, 0); /*0x665194*/
-  this->u32_B20 = (void *)(void*)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x665199*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_UnitTypeClass_const___vftable) */  /*0x665199*/
   this->UnitTypeVector_2CF.Construct(0, 0); /*0x6651ab*/
-  this->u32_B3C = (void *)(void*)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x6651b0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_UnitTypeClass_const___vftable) */  /*0x6651b0*/
   HouseTypeClass::readDefaultAlly(0, 0); /*0x6651c2*/
-  this->u32_B58 = (void *)(void*)(void*)&TypeList_AircraftTypeClass_const___vftable; /*0x6651c7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_AircraftTypeClass_const___vftable) */  /*0x6651c7*/
   this->DynamicVectorClass_2DD.AnimTypeConstructor(0, 0); /*0x6651d9*/
-  this->u32_B74 = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x6651de*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x6651de*/
   this->DynamicVectorClass_2E4.AnimTypeConstructor(0, 0); /*0x6651f0*/
-  this->u32_B90 = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x6651f5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x6651f5*/
   this->ownedBuildings.AnimTypeConstructor(0, 0); /*0x665207*/
-  this->u32_BC0 = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x66520c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x66520c*/
   this->InfantryTypeVector_301.Construct(0, 0); /*0x66521e*/
-  this->u32_C04 = (void *)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x665223*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_InfantryTypeClass_const___vftable) */  /*0x665223*/
   this->DynamicVectorClass_308.Construct(0, 0); /*0x665235*/
-  this->u32_C20 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x66523a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x66523a*/
   this->InfantryTypeVector_30F.Construct(0, 0); /*0x66524c*/
-  this->u32_C3C = (void *)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x665251*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_InfantryTypeClass_const___vftable) */  /*0x665251*/
   this->DynamicVectorClass_316.Construct(0, 0); /*0x665263*/
-  this->u32_C58 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665268*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665268*/
   this->InfantryTypeVector_31D.Construct(0, 0); /*0x66527a*/
-  this->u32_C74 = (void *)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x66527f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_InfantryTypeClass_const___vftable) */  /*0x66527f*/
   this->DynamicVectorClass_324.Construct(0, 0); /*0x665291*/
-  this->u32_C90 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665296*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665296*/
   this->InfantryTypeVector_32B.Construct(0, 0); /*0x6652a8*/
-  this->u32_CAC = (void *)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x6652ad*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_InfantryTypeClass_const___vftable) */  /*0x6652ad*/
   this->DynamicVectorClass_332.Construct(0, 0); /*0x6652bf*/
-  this->u32_CC8 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6652c4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6652c4*/
   this->InfantryTypeVector_339.Construct(0, 0); /*0x6652d6*/
-  this->u32_CE4 = (void *)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x6652db*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_InfantryTypeClass_const___vftable) */  /*0x6652db*/
   this->InfantryTypeVector_340.Construct(0, 0); /*0x6652ed*/
-  this->u32_D00 = (void *)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x6652f2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_InfantryTypeClass_const___vftable) */  /*0x6652f2*/
   this->UnitTypeVector_347.Construct(0, 0); /*0x665304*/
-  this->u32_D1C = (void *)(void*)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x665309*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_UnitTypeClass_const___vftable) */  /*0x665309*/
   this->DynamicVectorClass_34E.BuildingTypeConstructor(0, 0); /*0x66531b*/
-  this->u32_D38 = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665320*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x665320*/
   this->DynamicVectorClass_360.Construct(0, 0); /*0x665332*/
-  this->u32_D80 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665337*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665337*/
   this->DynamicVectorClass_367.Construct(0, 0); /*0x665349*/
-  this->u32_D9C = (void *)(void*)(void*)&TypeList_int_vftable; /*0x66534e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x66534e*/
   this->DynamicVectorClass_36E.Construct(0, 0); /*0x665360*/
-  this->u32_DB8 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665365*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665365*/
   this->DynamicVectorClass_375.Construct(0, 0); /*0x665377*/
-  this->u32_DD4 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x66537c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x66537c*/
   this->DynamicVectorClass_384.Construct(0, 0); /*0x66538e*/
-  this->u32_E10 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665393*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665393*/
   this->DynamicVectorClass_38B.Construct(0, 0); /*0x6653a5*/
-  this->u32_E2C = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6653aa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6653aa*/
   this->DynamicVectorClass_393.Construct(0, 0); /*0x6653bc*/
-  this->u32_E4C = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6653c1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6653c1*/
   this->DynamicVectorClass_39A.Construct(0, 0); /*0x6653d3*/
-  this->u32_E68 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6653d8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6653d8*/
   this->DynamicVectorClass_3A1.Construct(0, 0); /*0x6653ea*/
-  this->u32_E84 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6653ef*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6653ef*/
   this->DynamicVectorClass_3A8.Construct(0, 0); /*0x665401*/
-  this->u32_EA0 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665406*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665406*/
   this->DynamicVectorClass_3B1.Construct(0, 0); /*0x665418*/
-  this->u32_EC4 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x66541d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x66541d*/
   this->DynamicVectorClass_3BA.Construct(0, 0); /*0x66542f*/
-  this->u32_EE8 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665434*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665434*/
   this->DynamicVectorClass_3C1.Construct(0, 0); /*0x665446*/
-  this->u32_F04 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x66544b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x66544b*/
   this->DynamicVectorClass_3C8.Construct(0, 0); /*0x66545d*/
-  this->u32_F20 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665462*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665462*/
   TerrainTypeVector::Construct(0, 0); /*0x665474*/
-  this->u32_FF8 = (void *)(void*)(void*)&TypeList_TerrainTypeClass_const___vftable; /*0x665479*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_TerrainTypeClass_const___vftable) */  /*0x665479*/
   this->DynamicVectorClass_456.Construct(0, 0); /*0x66548b*/
-  this->ptr_1158 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665490*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665490*/
   this->DynamicVectorClass_45D.Construct(0, 0); /*0x6654a2*/
-  this->ptr_1174 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6654a7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6654a7*/
   this->DynamicVectorClass_465.Construct(0, 0); /*0x6654b9*/
-  this->ptr_1194 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6654be*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6654be*/
   this->DynamicVectorClass_46C.Construct(0, 0); /*0x6654d0*/
-  this->u32_11B0 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6654d5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6654d5*/
   this->DynamicVectorClass_473.Construct(0, 0); /*0x6654e7*/
-  this->u32_11CC = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6654ec*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6654ec*/
   this->DynamicVectorClass_47A.Construct(0, 0); /*0x6654fe*/
-  this->u32_11E8 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665503*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665503*/
   this->DynamicVectorClass_481.Construct(0, 0); /*0x665515*/
-  this->ptr_1204 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x66551a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x66551a*/
   this->DynamicVectorClass_488.Construct(0, 0); /*0x66552c*/
-  this->ptr_1220 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665531*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665531*/
   this->DynamicVectorClass_48F.Construct(0, 0); /*0x665543*/
-  this->u32_123C = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665548*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665548*/
   this->DynamicVectorClass_496.Construct(0, 0); /*0x66555a*/
-  this->ptr_1258 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x66555f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x66555f*/
   this->DynamicVectorClass_49D.Construct(0, 0); /*0x665571*/
-  this->ptr_1274 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665576*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x665576*/
   this->DynamicVectorClass_4A4.Construct(0, 0); /*0x665588*/
-  this->ptr_1290 = (void *)(void*)(void*)&TypeList_int_vftable; /*0x66558d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x66558d*/
   this->DynamicVectorClass_4AB.Construct(0, 0); /*0x66559f*/
-  this->u32_12AC = (void *)(void*)(void*)&TypeList_int_vftable; /*0x6655aa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x6655aa*/
   this->TypeList_4B2.Construct(); /*0x6655b0*/
   this->TypeList_4B9.Construct(); /*0x6655bb*/
   this->TypeList_4C1.Construct(); /*0x6655c6*/
@@ -11982,7 +11982,7 @@ void* HouseClass::SetOwnerName(void* a1, int a2) {
 
   if ( a1 ) /*0x6d4db9*/
   {
-    result = wcscpythis->arrayIndex, a1); /*0x6d4ddc*/
+    result = wcscpy(this->arrayIndex, a1); /*0x6d4ddc*/
     this->psychicDetectionBuildings[0] = a2; /*0x6d4de8*/
   }
   else

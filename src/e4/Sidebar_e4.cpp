@@ -442,7 +442,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     *&this->u32_94 = -1; /*0x6364ca*/
     this->u8_99 = 0; /*0x6364d0*/
     Sidebar_field_0x8 = (void *)this->Sidebar_field_0x8; /*0x6364d7*/
-    *p_Sidebar_field_0x4 = (int)&vt_VectorClass_PlanningNodeClass; /*0x6364de*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_PlanningNodeClass) */  /*0x6364de*/
     if ( Sidebar_field_0x8 ) /*0x6364e4*/
     {
       if ( BYTE1(this->Sidebar_field_0x10) ) /*0x6364e6*/

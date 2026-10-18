@@ -49,7 +49,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
   char *v3; // eax
   unsigned int v4; // edi
   HWND DlgItem; // esi
-  int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
+  int (*v6)(char, char); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
   __int16 v9; // [esp+10Ch] [ebp-204h]
@@ -74,7 +74,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
       if ( v4 >= 8 ) /*0x5baa2b*/
         v6 = Math::InitDegToRad; /*0x5baa3b*/
       else
-        v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))lParam[v4]; /*0x5baa32*/
+        v6 = (int (*)(char, char))lParam[v4]; /*0x5baa32*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5baa54*/
       DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5baa66*/
     }

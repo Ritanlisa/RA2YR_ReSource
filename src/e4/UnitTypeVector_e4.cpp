@@ -16,7 +16,7 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
   this->__pad_008 = a2; /*0x51394e*/
   (this->UnitTypeVector_field_0x0C) = ((this->UnitTypeVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x513951*/
   (this->UnitTypeVector_field_0x0C) = ((this->UnitTypeVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513955*/
-  this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x513958*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
     if ( a3 ) /*0x513966*/
@@ -39,7 +39,7 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3, void *a3_2)
   a3_2->UnitTypeVector_field_0x08 = a3_2; /*0x5d895e*/
   (*((unsigned char *)&(a3_2->UnitTypeVector_field_0x0C))) = 1; /*0x5d8961*/
   (((unsigned char *)&(a3_2->UnitTypeVector_field_0x0C))[1]) = 0; /*0x5d8965*/
-  *(unsigned int *)a3_2->__pad_0 = &vt_VectorClass; /*0x5d8968*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5d8968*/
   if ( a3_2 ) /*0x5d896e*/
   {
     if ( a3_2 ) /*0x5d8976*/

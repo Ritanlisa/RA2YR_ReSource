@@ -1410,7 +1410,7 @@ LABEL_11:
     g_MixerChannel_SFX = &g_Audio_Enabled->q068; /*0x406c4c*/
     v3 = CCFileClass::Construct(&v14, aAudiomdMix); /*0x406c51*/
     v4 = v3->vt_slot_20(0); /*0x406c65*/
-    *(unsigned int *)v14.__tail_0 = &vt_CCFileClass; /*0x406c67*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x406c67*/
     v16 = 0; /*0x406c6f*/
     Vector::Clear((int)v15); /*0x406c76*/
     *(unsigned int *)v14.__tail_0 = &off_7E1668; /*0x406c7f*/
@@ -2928,7 +2928,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
   unsigned int v8; // edx
   unsigned int *v9; // ecx
 
-  this->vtable = (int)&vt_GenericList; /*0x40e3e6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x40e3e6*/
   while ( 1 ) /*0x40e3ec*/
   {
     v3 = (unsigned int *)this->M8; /*0x40e3ec*/
@@ -2948,7 +2948,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
       v3[1] = 0; /*0x40e41d*/
     }
   }
-  this->M16 = &vt_GenericNode; /*0x40e427*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x40e427*/
   if ( this != (GenericList *)-16 ) /*0x40e42d*/
   {
     v6 = this->M20; /*0x40e42f*/
@@ -2964,7 +2964,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
       }
     }
   }
-  this->M4 = &vt_GenericNode; /*0x40e454*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x40e454*/
   if ( this != (GenericList *)-4 ) /*0x40e45a*/
   {
     v8 = this->M8; /*0x40e45c*/
@@ -2999,7 +2999,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
   unsigned int v8; // edx
   unsigned int *v9; // ecx
 
-  this->vtable = (int)&vt_GenericList; /*0x40e4c6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x40e4c6*/
   while ( 1 ) /*0x40e4cc*/
   {
     v3 = (unsigned int *)this->M8; /*0x40e4cc*/
@@ -3019,7 +3019,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
       v3[1] = 0; /*0x40e4fd*/
     }
   }
-  this->M16 = &vt_GenericNode; /*0x40e507*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x40e507*/
   if ( this != (GenericList *)-16 ) /*0x40e50d*/
   {
     v6 = this->M20; /*0x40e50f*/
@@ -3035,7 +3035,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
       }
     }
   }
-  this->M4 = &vt_GenericNode; /*0x40e534*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x40e534*/
   if ( this != (GenericList *)-4 ) /*0x40e53a*/
   {
     v8 = this->M8; /*0x40e53c*/
@@ -4001,9 +4001,9 @@ void SetAudioSource(AudioMixer * aP0, unsigned int * a1, int a3)
 namespace gamemd {
 int E4Recv_4062C0::sub_4062C0(unsigned int a2, int a3)
 {
-  SetRateMixerSamplethis->u32_B8, 0x4000, a2, a3); /*0x4062da*/
-  SetRateMixerSamplethis->u32_E8, 0x4000, a2, a3); /*0x4062ec*/
-  return SetRateMixerSamplethis->ptr_108, 0x4000, a2, a3); /*0x406303*/
+  SetRateMixerSample(this->u32_B8, 0x4000, a2, a3); /*0x4062da*/
+  SetRateMixerSample(this->u32_E8, 0x4000, a2, a3); /*0x4062ec*/
+  return SetRateMixerSample(this->ptr_108, 0x4000, a2, a3); /*0x406303*/
 }
 } // namespace gamemd
 
@@ -7145,7 +7145,7 @@ GenericNode * GenericNode::sub_40E390(GenericNode ** Block, char a2)
   int Previous; // ecx
   unsigned int *v4; // eax
 
-  *(unsigned int *)this->__pad_0 = &vt_GenericNode; /*0x40e397*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x40e397*/
   if ( this ) /*0x40e39d*/
   {
     Previous = this->Previous; /*0x40e39f*/

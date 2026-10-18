@@ -259,10 +259,10 @@ void* BuildingLightClass::CTOR(int a1) {
   v4[1].nextObject = 0; /*0x43589d*/
   v4[1].attachedTag = 0; /*0x4358a3*/
   v4[1].attachedBomb = (int)this; /*0x4358a9*/
-  v4->vfptr = (int)&vt_BuildingLightClass_4; /*0x4358af*/
-  v4->vfptr1 = (int)&vt_BuildingLightClass_4; /*0x4358b5*/
-  v4->vfptr2 = (int)&vt_BuildingLightClass_4; /*0x4358bc*/
-  v4->vfptr3 = (int)&vt_BuildingLightClass_4; /*0x4358c3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_BuildingLightClass_4) */  /*0x4358af*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_BuildingLightClass_4) */  /*0x4358b5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_BuildingLightClass_4) */  /*0x4358bc*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_BuildingLightClass_4) */  /*0x4358c3*/
   if ( dword_8B41A0 < dword_8B4198 /*0x435900*/
     || (byte_8B419D || !dword_8B4198)
     && dword_8B41A4 > 0
@@ -4817,9 +4817,9 @@ int UnitClass::Construct() {
   this->Deploying = 0; /*0x735428*/
   this->Undeploying = 0; /*0x73542e*/
   this->NonPassengerCount = 0; /*0x735434*/
-  *this = (int)&vt_UnitClass; /*0x73543a*/
-  this->NonPassengerCount = (int)&vt_UnitClass; /*0x735440*/
-  this->vtable3 = (int)&vt_UnitClass; /*0x735446*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_UnitClass) */  /*0x73543a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_UnitClass) */  /*0x735440*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_UnitClass) */  /*0x735446*/
   this->vtable4 = (int)&off_7F5C44; /*0x73544d*/
   AbstractClass::GenerateUniqueID(&this->AbstractClass_1); /*0x735454*/
   if ( dword_8B4118 < dword_8B4110 /*0x73548f*/

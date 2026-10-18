@@ -276,7 +276,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 }  // G42.18 ns repair
 // 0x558840
 namespace gamemd {
-bool Options::Options::PrepareSaveLoadDlg(const char ** dwNewLong)
+bool Options::PrepareSaveLoadDlg(const char ** dwNewLong)
 {
   dwNewLong->field_4 = (void *)3; /*0x558840*/
   dwNewLong->field_C = 0; /*0x558847*/

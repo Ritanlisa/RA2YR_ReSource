@@ -113,11 +113,11 @@ namespace gamemd {
 int AudioMixer::Init(void *a1, void *a2)
 {
   SetupSampleAudioMixer(&this->AudioMixer_field_00, 0x4000); /*0x40100a*/
-  SetupSampleAudioMixerthis->q028, 100); /*0x401019*/
+  SetupSampleAudioMixer(this->q028, 100); /*0x401019*/
   SetupSampleAudioMixerthis->AudioMixer_field_14,(gamemd::ObjectClass *)(0x2000)); /*0x401028*/
-  SetRateMixerSamplethis->q028, 10, 0x3E8u, 0); /*0x40103b*/
+  SetRateMixerSample(this->q028, 10, 0x3E8u, 0); /*0x40103b*/
   SetRateMixerSample(0x4000, 0x3E8u, 0); /*0x40104e*/
-  SetRateMixerSamplethis->AudioMixer_field_14, 0x4000, 0x3E8u, 0); /*0x401061*/
+  SetRateMixerSample(this->AudioMixer_field_14, 0x4000, 0x3E8u, 0); /*0x401061*/
   return EndBufferMixer(&this->AudioMixer_field_00, 0x4000); /*0x40106d*/
 }
 } // namespace gamemd

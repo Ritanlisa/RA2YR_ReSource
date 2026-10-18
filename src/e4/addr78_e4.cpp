@@ -2694,7 +2694,7 @@ int WOL_LoginFlow()
         if ( v8 == -1 ) /*0x78724d*/
 LABEL_29:
           v8 = dword_B76468; /*0x78724f*/
-        v41.Flag_field_0x08 = (int)&vt_rc_ptr_PlayerProfile; /*0x787255*/
+        /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x787255*/
       }
       else
       {
@@ -2731,7 +2731,7 @@ LABEL_40:
             v8 = dword_B76468; /*0x787283*/
           }
         }
-        v41.Flag_field_0x08 = (int)&vt_rc_ptr_PlayerProfile; /*0x7872f4*/
+        /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x7872f4*/
       }
       ComPtr::Release((ComPtr *)&v41.Flag_field_0x08); /*0x7872fc*/
       if ( v8 != -1 ) /*0x787304*/
@@ -2826,12 +2826,12 @@ LABEL_98:
   LOBYTE(v41.Flag_field_0x04) = 0; /*0x7874ca*/
   ReadRegistryOptionsWOL((ObjectClass *)&v41); /*0x7874cf*/
   ComPtr::Constructor((ComPtr *)&v41.Flag_field_0x08); /*0x7874d8*/
-  v41.Flag_field_0x08 = (int)&vt_rc_ptr_PlayerProfile; /*0x7874e6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x7874e6*/
   if ( (unsigned __int8)Flag::IsNot2(&v41) ) /*0x7874ea*/
   {
     PlayerProfile = LoadPlayerProfile((ObjectClass *)&v39, (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x7874fc*/
     ComPtr::Set((ComPtr *)&v41.Flag_field_0x08, PlayerProfile->vfptr1); /*0x787509*/
-    *(unsigned int *)v39.owningHouseIndex = &vt_rc_ptr_PlayerProfile; /*0x787512*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_PlayerProfile) */  /*0x787512*/
     ComPtr::Release((ComPtr *)&v39); /*0x787516*/
   }
   else
@@ -2887,7 +2887,7 @@ LABEL_78:
       if ( v28 >= 1 ) /*0x7875f0*/
         goto LABEL_87; /*0x7875f0*/
 LABEL_96:
-      v41.Flag_field_0x08 = (int)&vt_rc_ptr_PlayerProfile; /*0x7876f1*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x7876f1*/
       ComPtr::Release((ComPtr *)&v41.Flag_field_0x08); /*0x7876fd*/
       goto LABEL_97; /*0x7876fd*/
     }
@@ -2923,7 +2923,7 @@ LABEL_87:
     *(unsigned int *)v39.owningHouseIndex = &off_7F7624; /*0x7876bd*/
     OwnerDrawControl::InitVtable((OwnerDrawControl *)&v39); /*0x7876c1*/
   }
-  v41.Flag_field_0x08 = (int)&vt_rc_ptr_PlayerProfile; /*0x7876ca*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x7876ca*/
   ComPtr::Release((ComPtr *)&v41.Flag_field_0x08); /*0x7876d2*/
   v43.Flag_field_0x08 = (int)&off_7F7624; /*0x7876db*/
   OwnerDrawControl::InitVtable((OwnerDrawControl *)&v43.Flag_field_0x08); /*0x7876df*/
@@ -4460,7 +4460,7 @@ char CreateGameWOL(int a2)
   LOWORD(v45.ComPtr_field_0x10) = 0; /*0x789bb4*/
   BYTE2(v45.ComPtr_field_0x10) = v43.tail_7; /*0x789bbe*/
   HIBYTE(v45.ComPtr_field_0x10) = v3; /*0x789bc2*/
-  *(unsigned int *)v45.__pad_0 = &vt_CreateGameDialogControl; /*0x789bc6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CreateGameDialogControl) */  /*0x789bc6*/
   byte_B77DEC = 0; /*0x789bce*/
   if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x789bde*/
   {
@@ -4471,7 +4471,7 @@ char CreateGameWOL(int a2)
     Screen::Capture(1, 0, v3, 1); /*0x789bf0*/
     if ( RunDialog(0xC3u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLLogin::DlgProc, (LPARAM)&v45) == 2 ) /*0x789c0c*/
     {
-      *(unsigned int *)v45.__pad_0 = &vt_WonlineStringDialogControl; /*0x789c12*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_WonlineStringDialogControl) */  /*0x789c12*/
       DeleteAndZero((ObjectClass *)&v45.ComPtr_field_0x0C); /*0x789c1a*/
       ConnectAndLoginWOL_Connect((SimpleWonlineDialogControl *)&v45); /*0x789c23*/
       DeleteAndZero((ObjectClass *)&v43); /*0x789c2c*/
@@ -4570,14 +4570,14 @@ LABEL_22:
   LOBYTE(v47.Flag_field_0x04) = 0; /*0x789f2c*/
   ReadRegistryOptionsWOL((ObjectClass *)&v47); /*0x789f31*/
   ComPtr::Constructor(&v45); /*0x789f3a*/
-  *(unsigned int *)v45.__pad_0 = &vt_rc_ptr_PlayerProfile; /*0x789f48*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_PlayerProfile) */  /*0x789f48*/
   if ( (unsigned __int8)Flag::IsNot2(&v47) ) /*0x789f4c*/
   {
     PlayerProfile = LoadPlayerProfile( /*0x789f5e*/
                       (ObjectClass *)&v45.ComPtr_field_0x20,
                       (const char **)&stru_B73E10.CChatEventSink_field_0x30);
     ComPtr::Set(&v45, PlayerProfile->vfptr1); /*0x789f6b*/
-    v45.ComPtr_field_0x20 = (int)&vt_rc_ptr_PlayerProfile; /*0x789f74*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x789f74*/
     ComPtr::Release((ComPtr *)&v45.ComPtr_field_0x20); /*0x789f78*/
   }
   else
@@ -4658,10 +4658,10 @@ LABEL_22:
 LABEL_50:
     SetFocus(DlgItem); /*0x78a136*/
 LABEL_72:
-    v44.DeleteAndZero_field_0x04 = (int)&vt_rc_ptr_PlayerProfile; /*0x78a29d*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x78a29d*/
     ComPtr::Release((ComPtr *)&v44.DeleteAndZero_field_0x04); /*0x78a2a5*/
     DeleteAndZero::Alt(&v44); /*0x78a2ae*/
-    *(unsigned int *)v45.__pad_0 = &vt_WonlineStringDialogControl; /*0x78a2b7*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_WonlineStringDialogControl) */  /*0x78a2b7*/
     DeleteAndZero((ObjectClass *)&v45.ComPtr_field_0x0C); /*0x78a2bf*/
     *(unsigned int *)v45.__pad_0 = &off_7F7624; /*0x78a2c8*/
     OwnerDrawControl::InitVtable((OwnerDrawControl *)&v45); /*0x78a2d0*/
@@ -4748,10 +4748,10 @@ LABEL_71:
       ShowWindow(v41, 0); /*0x78a40b*/
   }
   DeleteAndZero::Alt(&v46); /*0x78a411*/
-  v44.DeleteAndZero_field_0x04 = (int)&vt_rc_ptr_PlayerProfile; /*0x78a41a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x78a41a*/
   ComPtr::Release((ComPtr *)&v44.DeleteAndZero_field_0x04); /*0x78a422*/
   DeleteAndZero::Alt(&v44); /*0x78a42b*/
-  *(unsigned int *)v45.__pad_0 = &vt_WonlineStringDialogControl; /*0x78a434*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_WonlineStringDialogControl) */  /*0x78a434*/
   DeleteAndZero((ObjectClass *)&v45.ComPtr_field_0x0C); /*0x78a43c*/
   *(unsigned int *)v45.__pad_0 = &off_7F7624; /*0x78a445*/
   OwnerDrawControl::InitVtable((OwnerDrawControl *)&v45); /*0x78a44d*/

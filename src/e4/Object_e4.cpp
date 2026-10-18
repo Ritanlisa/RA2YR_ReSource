@@ -440,11 +440,11 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3, void *a4)  // G42.41k: d
 
   ((ObjectClass *)this)->ctor(); /*0x5fc386*/
   int v5 = aP1; // eax /*0x5fc38b*/
-  *(unsigned int *)this->attachedTag = (unsigned int)(&vt_OverlayClass); /*0x5fc38f*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_OverlayClass) */  /*0x5fc38f*/
   this->Object_field_0xAC = v5; /*0x5fc395*/
-  this->Object_field_0x8 = (int)&vt_OverlayClass; /*0x5fc39f*/
-  *&this->q004 = &vt_OverlayClass; /*0x5fc3a6*/
-  *(unsigned int *)this->__pad_C = &vt_OverlayClass; /*0x5fc3ac*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_OverlayClass) */  /*0x5fc39f*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_OverlayClass) */  /*0x5fc3a6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_OverlayClass) */  /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID(&this->Object_field_0x2[2]); /*0x5fc3b3*/
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
@@ -674,9 +674,9 @@ void * Object::DrawObject(void ** Block, char a2)
 {
 
 
-  Block->ObjectClass = &vt_OverlayClass; /*0x5fdf76*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_OverlayClass) */  /*0x5fdf76*/
   /* X11: vtable install elided (qmark slot, RHS vt_OverlayClass) */  /*0x5fdf7c*/
-  Block->u32_8 = &vt_OverlayClass; /*0x5fdf83*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_OverlayClass) */  /*0x5fdf83*/
   /* X11: vtable install elided (qmark slot, RHS vt_OverlayClass) */  /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
@@ -1746,7 +1746,7 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x5fd909*/
     {
       ((ObjectClass *)aP1)->Init((int)&aP1a); /*0x5fd912*/
-      *aP1 = &vt_OverlayClass; /*0x5fd917*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_OverlayClass) */  /*0x5fd917*/
       aP1[1] = &vt_OverlayClass; /*0x5fd91d*/
       aP1[2] = &vt_OverlayClass; /*0x5fd924*/
       aP1[3] = &vt_OverlayClass; /*0x5fd92b*/

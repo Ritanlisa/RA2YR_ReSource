@@ -326,7 +326,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
       v13 = 0; /*0x72aed2*/
     *a3 = v13; /*0x72aedb*/
   }
-  *(unsigned int *)v17.__tail_0 = &vt_CCFileClass; /*0x72aee1*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x72aee1*/
   v19 = 0; /*0x72aee9*/
   Vector::Clear((int)v18); /*0x72aef1*/
   *(unsigned int *)v17.__tail_0 = &off_7E1668; /*0x72aefa*/
@@ -1487,7 +1487,7 @@ unsigned int ObjectClass::sub_720960()
   this->referenceCount = 0; /*0x720982*/
   (this->NeedsSaveOrLink) = 1; /*0x720985*/
   (this->alignmentPadding) = 0; /*0x720989*/
-  this->abstractFlags = (int)&vt_DynamicVectorClass; /*0x72098c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x72098c*/
   this->owningHouseIndex = 10; /*0x720993*/
   this->occupant = 0; /*0x72099a*/
   this->fallRate = 0; /*0x72099d*/

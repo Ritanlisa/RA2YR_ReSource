@@ -700,11 +700,11 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
   {
     v6 = (unsigned int *)(v4 + 8); /*0x765f78*/
     *(unsigned int *)(v4 + 4) = 0; /*0x765f7d*/
-    *(unsigned int *)v4 = (unsigned int)(&vt_ReferenceCounted); /*0x765f84*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_ReferenceCounted) */  /*0x765f84*/
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x765f8a*/
-    *v6 = (unsigned int)(&vt_rc_ptr); /*0x765f8f*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x765f8f*/
     ComPtr::Set(&v5->u32_8, *(unsigned int *)(a2 + 4)); /*0x765f9b*/
-    *(unsigned int *)v5 = &vt_WorldDominationTour_Conflict; /*0x765fa0*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_Conflict) */  /*0x765fa0*/
   }
   else
   {
@@ -731,11 +731,11 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
   {
     v6 = (unsigned int *)(v4 + 8); /*0x767b18*/
     *(unsigned int *)(v4 + 4) = 0; /*0x767b1d*/
-    *(unsigned int *)v4 = (unsigned int)(&vt_ReferenceCounted); /*0x767b24*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_ReferenceCounted) */  /*0x767b24*/
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x767b2a*/
-    *v6 = (unsigned int)(&vt_rc_ptr); /*0x767b2f*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x767b2f*/
     ComPtr::Set(&v5->u32_8, *(unsigned int *)(a2 + 4)); /*0x767b3b*/
-    *(unsigned int *)v5 = &vt_WorldDominationTour_History; /*0x767b40*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_History) */  /*0x767b40*/
   }
   else
   {

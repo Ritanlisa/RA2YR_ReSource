@@ -371,7 +371,7 @@ unsigned int * sub_731EB0(unsigned char (__fastcall *)(int, int), int a2)
     v2[2] = 0; /*0x731ed1*/
     *((unsigned char *)v2 + 12) = 1; /*0x731ed4*/
     *((unsigned char *)v2 + 13) = 0; /*0x731ed8*/
-    *v2 = &vt_DynamicVectorClass_TechnoClass; /*0x731edb*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x731edb*/
     v2[5] = 10; /*0x731ee1*/
     v2[4] = 0; /*0x731ee8*/
     v3 = v2; /*0x731eeb*/
@@ -430,7 +430,7 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *)(int, int)
     v2[2] = 0; /*0x731f91*/
     *((unsigned char *)v2 + 12) = 1; /*0x731f94*/
     *((unsigned char *)v2 + 13) = 0; /*0x731f98*/
-    *v2 = &vt_DynamicVectorClass_TechnoClass; /*0x731f9b*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x731f9b*/
     v2[5] = 10; /*0x731fa1*/
     v2[4] = 0; /*0x731fa8*/
     v3 = v2; /*0x731fab*/
@@ -678,7 +678,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     if ( HeightMap ) /*0x73301c*/
     {
       (*((unsigned char *)&(HeightMap))) = (uint8_t)EventClass::resetEvent((int *)HeightMap, 0, 0); /*0x733022*/
-      *v4 = (int)(&vt_DynamicVectorClass); /*0x733027*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x733027*/
       v4->u32_14 = 10; /*0x73302d*/
       v4->q010 = 0; /*0x733034*/
     }
@@ -722,7 +722,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     if ( v10 ) /*0x7330b1*/
     {
       EventClass::resetEvent(v10, 0, 0); /*0x7330b9*/
-      *v4 = (int)(&vt_DynamicVectorClass); /*0x7330be*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x7330be*/
       v4->u32_14 = 10; /*0x7330c4*/
       v4->q010 = 0; /*0x7330cb*/
     }
@@ -1372,7 +1372,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     *(unsigned int *)(v2 + 8) = 0; /*0x733cef*/
     *(unsigned char *)(v2 + 12) = 1; /*0x733cf2*/
     *(unsigned char *)(v2 + 13) = 0; /*0x733cf6*/
-    *(unsigned int *)v2 = &vt_DynamicVectorClass_char_const; /*0x733cf9*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_char_const) */  /*0x733cf9*/
     *(unsigned int *)(v2 + 20) = 10; /*0x733cff*/
     *(unsigned int *)(v2 + 16) = 0; /*0x733d06*/
     v3 = v2; /*0x733d09*/
@@ -1502,7 +1502,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
     VectorClass::Construct(v9, 0, 0); /*0x733e99*/
     v10->q010 = 0; /*0x733e9e*/
     v11 = v10; /*0x733ea1*/
-    *v10 = &vt_DynamicVectorClass; /*0x733ea3*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x733ea3*/
     v10->u32_14 = 10; /*0x733ea9*/
     v36 = v10; /*0x733eb0*/
   }

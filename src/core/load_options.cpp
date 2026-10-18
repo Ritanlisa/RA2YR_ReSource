@@ -552,6 +552,7 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
 
 #include "core/load_options.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "core/globals_core.hpp"  // X67 L2-R4 visibility supply
 // [w18j2] C2065 function supply (raw-evidenced)
 
 

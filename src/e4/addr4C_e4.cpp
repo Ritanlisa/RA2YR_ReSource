@@ -1064,7 +1064,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       goto LABEL_32; /*0x4cf1dd*/
     if ( !(*(int (**)(unsigned int))(**(unsigned int **)v56.__pad_0 + 24))(*(unsigned int *)v56.__pad_0) ) /*0x4cf1e2*/
       goto LABEL_32; /*0x4cf1e2*/
-    v30 = (int *)(*(int (__usercall **)@<eax>(int@<ecx>, int *, double@<st0>))(*(unsigned int *)*v6 + 72))( /*0x4cf1f2*/
+    v30 = (int *)(*(int (**)(int, int *, double))(*(unsigned int *)*v6 + 72))( /*0x4cf1f2*/
                    *v6,
                    &v56.ComPtr_field_0x20,
                    v22);
@@ -1147,7 +1147,7 @@ LABEL_52:
   ComPtr_field_0x10 = v56.ComPtr_field_0x10; /*0x4cf3d0*/
   if ( !*(unsigned char *)(v56.ComPtr_field_0x10 + 92) || ComPtr_field_0x04 >= 768 ) /*0x4cf3e1*/
   {
-    v41 = (unsigned __int8 *)(*(int (__usercall **)@<eax>(int@<ecx>, double@<st0>))(*(unsigned int *)*v6 + 132))(*v6, v22); /*0x4cf402*/
+    v41 = (unsigned __int8 *)(*(int (**)(int, double))(*(unsigned int *)*v6 + 132))(*v6, v22); /*0x4cf402*/
     v42 = *v6; /*0x4cf410*/
     if ( v41[3221] ) /*0x4cf408*/
     {
@@ -1469,7 +1469,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   aP4 = aP4; /*0x4c2ff6*/
   (((unsigned char *)&(aP4))[1]) = (((unsigned char *)&(aP4))[1]) & 0xFE; /*0x4c2ff8*/
   this->M44 = (unsigned int)(aP4); /*0x4c2ffc*/
-  *this = (EditClass)&vt_EditClass; /*0x4c3004*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_EditClass) */  /*0x4c3004*/
   this->M48 = a10; /*0x4c300a*/
   this->M52 = (unsigned int)(aP2); /*0x4c300d*/
   this->M56 = a4 - 1; /*0x4c3010*/
@@ -3523,8 +3523,8 @@ int sub_4CC980()
 namespace gamemd {
 void E4Recv_4CCA70::sub_4CCA70()
 {
-  *(unsigned int *)this->0 = &vt_FlyLocomotionClass; /*0x4cca70*/
-  *&this->M4 = &vt_FlyLocomotionClass; /*0x4cca76*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_FlyLocomotionClass) */  /*0x4cca70*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_FlyLocomotionClass) */  /*0x4cca76*/
   LocomotionClass::Construct(); /*0x4cca7d*/
 }
 } // namespace gamemd

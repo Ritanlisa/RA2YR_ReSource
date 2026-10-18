@@ -1348,7 +1348,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   this->M12 = 0; /*0x6616e1*/
   this->M16 = 0; /*0x6616e4*/
-  *(unsigned int *)this->__pad_0 = &vt_RandomStraw; /*0x6616f1*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_RandomStraw) */  /*0x6616f1*/
   memset(&this->ptr_14, 0, 0x100u); /*0x6616f7*/
   return this->vfptr; /*0x6616fb*/
 
@@ -1659,8 +1659,8 @@ int sub_661EA0()
 namespace gamemd {
 void E4Recv_661F30::sub_661F30()
 {
-  *(unsigned int *)this->0 = &vt_RocketLocomotionClass; /*0x661f30*/
-  *&this->u32_14 = &vt_RocketLocomotionClass; /*0x661f36*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x661f30*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x661f36*/
   LocomotionClass::Construct(); /*0x661f3d*/
 }
 } // namespace gamemd

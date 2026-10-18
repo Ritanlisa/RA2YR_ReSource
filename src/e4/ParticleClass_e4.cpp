@@ -215,7 +215,7 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x62d7b6*/
     {
       ((ObjectClass *)aP1)->Init((int)&aP1a); /*0x62d7bf*/
-      *aP1 = &vt_ParticleClass; /*0x62d7c4*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_ParticleClass) */  /*0x62d7c4*/
       aP1[1] = &vt_ParticleClass; /*0x62d7ca*/
       aP1[2] = &vt_ParticleClass; /*0x62d7d1*/
       aP1[3] = &vt_ParticleClass; /*0x62d7d8*/

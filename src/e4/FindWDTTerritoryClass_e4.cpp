@@ -36,7 +36,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   v4 = v7; /*0x7653ea*/
   a2[1] = v6; /*0x7653ef*/
   a2[2] = v4; /*0x7653f2*/
-  *a2 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x7653f5*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict) */  /*0x7653f5*/
   return a2; /*0x7653ee*/
 
 }

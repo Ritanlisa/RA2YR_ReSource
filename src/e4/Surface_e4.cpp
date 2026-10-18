@@ -298,7 +298,7 @@ int sub_626C60()
     if ( v2 ) /*0x626c98*/
     {
       StringVector::Construct(v2, 0, 0); /*0x626ca0*/
-      *v3 = &vt_DynamicVectorClass_char; /*0x626caa*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_char) */  /*0x626caa*/
       v3->u32_14 = 10; /*0x626cb0*/
       v3->q010 = 0; /*0x626cb3*/
     }
@@ -312,7 +312,7 @@ int sub_626C60()
     if ( v4 ) /*0x626cd4*/
     {
       VectorClass::ConstructHSV(v4, 0, 0); /*0x626cdc*/
-      *v5 = &vt_DynamicVectorClass_HSVClass; /*0x626ce1*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_HSVClass) */  /*0x626ce1*/
       v5->u32_14 = 10; /*0x626ce7*/
       v5->q010 = 0; /*0x626cea*/
     }
@@ -414,7 +414,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
       0,
       1);
     (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x641e74*/
-    *(unsigned int *)v9.__tail_0 = &vt_CCFileClass; /*0x641e7a*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x641e7a*/
     v11 = 0; /*0x641e82*/
     Vector::Clear((int)v10); /*0x641e8a*/
     *(unsigned int *)v9.__tail_0 = &off_7E1668; /*0x641e93*/
@@ -424,7 +424,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
   else
   {
 LABEL_11:
-    *(unsigned int *)v9.__tail_0 = &vt_CCFileClass; /*0x641eaf*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x641eaf*/
     v11 = 0; /*0x641eb7*/
     Vector::Clear((int)v10); /*0x641ebf*/
     *(unsigned int *)v9.__tail_0 = &off_7E1668; /*0x641ec8*/
@@ -1174,11 +1174,11 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   v41 = (__int16 *)a1->vtable3; /*0x7074a2*/
   Surface::Construct(&v37, v9, v8); /*0x7074a6*/
   v38 = 0; /*0x7074b8*/
-  *(unsigned int *)v37.__pad_0 = &XSurface_Vtable; /*0x7074c0*/
+  /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7074c0*/
   v39 = 1; /*0x7074c8*/
   Buffer::Init((Buffer *)v40, (int)v41, v8 * v9); /*0x7074d0*/
   v11 = *(unsigned int *)this->__pad_0; /*0x7074d9*/
-  *(unsigned int *)v37.__pad_0 = &BSurface_Vtable; /*0x7074dd*/
+  /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x7074dd*/
   v12 = aP4 & 0xFFFFFFEF; /*0x7074e5*/
   if ( (*(int (**)(Surface *))(v11 + 44))(this) == 1 && this->u32_6D3 ) /*0x7074f0*/
     v13 = (LightConvertClass *)dword_B1D140; /*0x7074fa*/

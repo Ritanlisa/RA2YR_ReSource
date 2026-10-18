@@ -196,7 +196,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
     *(unsigned char *)(v2 + 24) = 0; /*0x4ba80b*/
     *(unsigned char *)(v2 + 25) = 0; /*0x4ba80e*/
     *(unsigned int *)(v2 + 28) = 0; /*0x4ba811*/
-    *(unsigned int *)v2 = &DSurface_Vtable; /*0x4ba814*/
+    /* X11: vtable install elided (X67 star-deref, RHS DSurface_Vtable) */  /*0x4ba814*/
     v4 = (void *)__2_YAPAXI_Z(0x6Cu); /*0x4ba822*/
     v3[8] = v4; /*0x4ba82b*/
     v5 = v3; /*0x4ba82e*/

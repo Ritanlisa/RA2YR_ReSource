@@ -57,9 +57,9 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   a2->u32_29C = 1; /*0x6b5287*/
   *(a2 + 672) = 0; /*0x6b528d*/
   *(a2 + 673) = 0; /*0x6b5294*/
-  *(unsigned int *)a2 = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b529b*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_SmudgeTypeClass) */  /*0x6b529b*/
   *((unsigned int *)a2 + 1) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52a1*/
-  a2->VtableStub_8 = &vt_SmudgeTypeClass; /*0x6b52a7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_SmudgeTypeClass) */  /*0x6b52a7*/
   *((unsigned int *)a2 + 3) = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b52ae*/
   ((int)(a2 + 4))->GenerateUniqueID(); /*0x6b52b5*/
   a2->u16_22F = 1; /*0x6b52ba*/

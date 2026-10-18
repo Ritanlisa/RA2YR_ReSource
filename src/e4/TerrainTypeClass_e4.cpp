@@ -91,9 +91,9 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   aP4->q305 = 1; /*0x5448b5*/
   aP4->q306 = 0; /*0x5448bc*/
   aP4->q0308 = 0; /*0x5448c2*/
-  aP4->ObjectTypeClass = &vt_IsometricTileTypeClass; /*0x5448c8*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_IsometricTileTypeClass) */  /*0x5448c8*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448cf) */
-  aP4->q008 = (int)(&vt_IsometricTileTypeClass); /*0x5448d6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_IsometricTileTypeClass) */  /*0x5448d6*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448dd) */
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
@@ -171,7 +171,7 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   aP1->IsAnimated = 0; /*0x71dae5*/
   aP1->IsVeinhole = 0; /*0x71daeb*/
   aP1->FoundationData = 0; /*0x71daf1*/
-  aP1->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71daf7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TerrainTypeClass) */  /*0x71daf7*/
   /* X11: vtable install elided (qmark slot, RHS vt_TerrainTypeClass) */  /*0x71dafd*/
   /* X11: vtable install elided (qmark slot, RHS vt_TerrainTypeClass) */  /*0x71db03*/
   /* X11: vtable install elided (qmark slot, RHS vt_TerrainTypeClass) */  /*0x71db0a*/

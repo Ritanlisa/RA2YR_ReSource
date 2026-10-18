@@ -61,7 +61,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x7658bd*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_Conflict) */  /*0x7658bd*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x7658c3*/
         --v9; /*0x7658c6*/
       }
@@ -86,7 +86,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x76588d*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_Conflict) */  /*0x76588d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x765893*/
         --v7; /*0x765896*/
       }
@@ -209,7 +209,7 @@ namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2, void *a2_1, void *a3, void *a4)
 {
 
-  *this = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765713*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x765713*/
   ComPtr::Release((ComPtr *)this); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
     __3_YAXPAX_Z(this); /*0x765726*/
@@ -223,7 +223,7 @@ namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 {
 
-  *this = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765743*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x765743*/
   ComPtr::Release((ComPtr *)this); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
     __3_YAXPAX_Z(this); /*0x765756*/
@@ -236,7 +236,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 namespace gamemd {
 VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->tail_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x765779*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr) */  /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
     operator delete((Block)); /*0x765782*/
   return Block->tail_0; /*0x76578c*/
@@ -326,7 +326,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x765b63*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClassrc_ptr; /*0x765b66*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassrc_ptr) */  /*0x765b66*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/

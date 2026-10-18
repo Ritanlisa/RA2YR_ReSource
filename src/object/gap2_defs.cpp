@@ -9325,7 +9325,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
     v7 += 14; /*0x73cf16*/
     v41 = v7; /*0x73cf19*/
   }
-  v9 = (int *)(*((int (__usercall **)(TechnoClass *, TechnoClass **, double))v4->vfptr + 110))( /*0x73cf26*/
+  v9 = (int *)(*((int (**)(TechnoClass *, TechnoClass **, double))v4->vfptr + 110))( /*0x73cf26*/
                 v4,
                 &this,
                 a2);

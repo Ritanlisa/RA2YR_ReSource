@@ -44,7 +44,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c97*/
       {
         ComPtr::Constructor(v6); /*0x766c88*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x766c8d*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_GameOption) */  /*0x766c8d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c93*/
         --v9; /*0x766c96*/
       }
@@ -69,7 +69,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c67*/
       {
         ComPtr::Constructor(v6); /*0x766c58*/
-        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x766c5d*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_GameOption) */  /*0x766c5d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c63*/
         --v7; /*0x766c66*/
       }
@@ -134,7 +134,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
         do /*0x766e45*/
         {
           ComPtr::Constructor(v8); /*0x766e36*/
-          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x766e3b*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_GameOption) */  /*0x766e3b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x766e41*/
           --v9; /*0x766e44*/
         }
@@ -277,7 +277,7 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor(char a2, void *a2_1, void *a3, void *a4)
 {
 
-  *this = (Conflict_WorldDominationTour)&vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char; /*0x766963*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char) */  /*0x766963*/
   ComPtr::Release((ComPtr *)this); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(this); /*0x766976*/
@@ -291,7 +291,7 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 {
 
-  *this = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x766993*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x766993*/
   ComPtr::Release((ComPtr *)this); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(this); /*0x7669a6*/
@@ -403,7 +403,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x766fc3*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClassrc_ptr; /*0x766fc6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassrc_ptr) */  /*0x766fc6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x766fd0*/
   {
     (**v3)(v3, 3); /*0x766fdf*/
@@ -424,7 +424,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x767083*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClassrc_ptr; /*0x767086*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassrc_ptr) */  /*0x767086*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x767090*/
   {
     (**v3)(v3, 3); /*0x76709f*/
@@ -443,7 +443,7 @@ namespace gamemd {
 int Conflict_WorldDominationTour_12::Constructor_3(void *a1_1)
 {
   ComPtr::Constructor((ComPtr *)a1_1); /*0x7670d3*/
-  *a1_1 = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x7670d8*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7670d8*/
   return (int)(a1_1); /*0x7670e0*/
 }
 } // namespace gamemd

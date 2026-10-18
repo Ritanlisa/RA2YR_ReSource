@@ -227,7 +227,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     fstp [esp+0C8h+var_88]
   }
   ObjectVector::Construct(&v43, 0, 0); /*0x70c777*/
-  *(unsigned int *)v43.__pad_0 = &vt_DynamicVectorClass_ObjectClass; /*0x70c77c*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_ObjectClass) */  /*0x70c77c*/
   v43.ObjectVector_field_0x14 = 10; /*0x70c784*/
   v43.ObjectVector_field_0x10 = 0; /*0x70c78c*/
   v42 = 0; /*0x70c790*/
@@ -476,7 +476,7 @@ LABEL_55:
         }
       }
       v36 = v56; /*0x70cc45*/
-      *(unsigned int *)v43.__pad_0 = &vt_VectorClass_ObjectClass; /*0x70cc4b*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x70cc4b*/
       *a1 = v55; /*0x70cc53*/
       v37 = v57; /*0x70cc55*/
       a1[1] = v36; /*0x70cc59*/
@@ -500,7 +500,7 @@ LABEL_55:
     }
   }
   v30 = v50; /*0x70cb37*/
-  *(unsigned int *)v43.__pad_0 = &vt_VectorClass_ObjectClass; /*0x70cb3d*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x70cb3d*/
   *a1 = v49; /*0x70cb45*/
   v31 = v51; /*0x70cb47*/
   a1[1] = v30; /*0x70cb4b*/

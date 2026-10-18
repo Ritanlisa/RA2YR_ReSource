@@ -675,7 +675,7 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
     {
       FootClass::PostLoadInit((FootClass *)v2, (int)&a0); /*0x41b4dc*/
       /* X11: vtable install elided (implicit via AircraftClass virtuals 0x41b4e1) */
-      *p_vtable1 = &vt_AircraftClass; /*0x41b4e7*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_AircraftClass) */  /*0x41b4e7*/
       /* X11: vtable install elided (implicit via AircraftClass virtuals 0x41b4ed) */
       /* X11: vtable install elided (implicit via AircraftClass virtuals 0x41b4f4) */
       /* X11: vtable install elided (implicit via AircraftClass virtuals 0x41b4fb) */

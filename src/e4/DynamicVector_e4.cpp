@@ -425,7 +425,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
       this->IsAllocated = 1; /*0x67acaf*/
     }
   }
-  *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClass; /*0x67acb3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x67acb3*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x67acb9*/
   this->Count = 0; /*0x67acc0*/
   return (unsigned int *)(this->__pad_0); /*0x67acc9*/
@@ -579,7 +579,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3, void *a3_1)
       this->IsAllocated = 1; /*0x73430f*/
     }
   }
-  *(unsigned int *)this->ClearAndFree2_ph = &vt_DynamicVectorClass; /*0x734313*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x734313*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x734319*/
   this->Count = 0; /*0x734320*/
   return this->vtable1; /*0x734329*/

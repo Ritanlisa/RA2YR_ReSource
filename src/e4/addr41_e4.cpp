@@ -1359,7 +1359,7 @@ int sub_412870()
   do /*0x41289c*/
   {
     EventClass::resetEvent(v0, 0, 0); /*0x412883*/
-    *v0 = (unsigned int)(&vt_DynamicVectorClass); /*0x412888*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x412888*/
     v0[5] = 10; /*0x41288e*/
     v0[4] = 0; /*0x412895*/
     v0 += 6; /*0x412898*/

@@ -189,7 +189,7 @@ int Delegate::ProcessBitmapAndDispatch()
     else
     {
       pad_14 = this->Delegate_field_14; /*0x42df54*/
-      v5 = EncodeBitmapRGBthis->m_straw, v3, this->Delegate_field_14, 4); /*0x42df5d*/
+      v5 = EncodeBitmapRGB(this->m_straw, v3, this->Delegate_field_14, 4); /*0x42df5d*/
     }
     v2 = ((Pipe *)this)->Dispatch((int)pad_14, v5); /*0x42df7b*/
     this->field_10 = 0; /*0x42df7d*/
@@ -256,7 +256,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int Previous; // ecx
   unsigned int *v4; // eax
 
-  *(unsigned int *)this->m_items = &vt_GenericNode; /*0x52ae27*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     Previous = this->Previous; /*0x52ae2f*/

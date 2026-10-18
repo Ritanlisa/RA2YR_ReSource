@@ -42,7 +42,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   this->controlNodeCount = 0; /*0x4717e6*/
   this->controlNodeCapacity = 0; /*0x4717e9*/
   this->CaptureManagerClass_field_31 = 0; /*0x4717ec*/
-  this->controlNodes = (unsigned int)(&vt_DynamicVectorClass); /*0x4717ef*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x4717ef*/
   this->CaptureManagerClass_field_30 = 10; /*0x4717f6*/
   this->originalOwner = 0; /*0x4717fd*/
   this->overloadCount = a2; /*0x471800*/
@@ -826,13 +826,13 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
     {
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x47274b*/
       CaptureManagerClass::Constructor_473140(&v3->controlNodes, 0, 0); /*0x472757*/
-      v3->controlNodes = (int)&vt_DynamicVectorClass_ControlNode; /*0x47275c*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_ControlNode) */  /*0x47275c*/
       *(unsigned int *)v3->CaptureManagerClass_field_30 = 10; /*0x472762*/
       v3->originalOwner = 0; /*0x472769*/
-      v3->vfptr = (int)&vt_CaptureManagerClass_4; /*0x47276c*/
-      v3->vfptr1 = (int)&vt_CaptureManagerClass_4; /*0x472773*/
-      v3->vfptr2 = (int)&vt_CaptureManagerClass_4; /*0x47277a*/
-      v3->vfptr3 = (int)&vt_CaptureManagerClass_4; /*0x472781*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_CaptureManagerClass_4) */  /*0x47276c*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_CaptureManagerClass_4) */  /*0x472773*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_CaptureManagerClass_4) */  /*0x47277a*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_CaptureManagerClass_4) */  /*0x472781*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->overloadCount); /*0x472791*/
     v6 = *v2; /*0x472796*/
@@ -1069,7 +1069,7 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   }
   void *controlNodeCount; // eax
   controlNodeCount = (void *)Block->controlNodeCount; /*0x472a28*/
-  Block->controlNodes[0] = (int)&vt_VectorClass; /*0x472a2b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x472a2b*/
   if ( controlNodeCount && (Block->u8_101) ) /*0x472a36*/
   {
     operator delete((controlNodeCount)); /*0x472a3e*/
@@ -1280,7 +1280,7 @@ VectorClass_flat * CaptureManagerClass::Constructor_VectorClass_ControlNode___(u
 {
 
   void *v3 = *&Block->u32_100; // eax /*0x473003*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x473006*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x473006*/
   if ( v3 && (Block->u32_D) ) /*0x473010*/
   {
     operator delete((v3)); /*0x473018*/
@@ -1300,7 +1300,7 @@ DynamicVector * CaptureManagerClass::QueryInterface(unsigned int * Block, char a
 {
 
   void *v3 = *&Block->u32_100; // eax /*0x473053*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x473056*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x473056*/
   if ( v3 && (Block->u32_D) ) /*0x473060*/
   {
     operator delete((v3)); /*0x473068*/

@@ -1939,7 +1939,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
   ShpButtonClass *v3; // eax
   unsigned __int8 *v4; // eax
 
-  *(unsigned int *)this->__pad_0 = &vt_GadgetClass; /*0x4e1a65*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GadgetClass) */  /*0x4e1a65*/
   v3 = (ShpButtonClass *)dword_8B3E90; /*0x4e1a6b*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e1a72*/
   {
@@ -2474,7 +2474,7 @@ wchar_t ** ListBox::Constructor() {
     v1 = 1; /*0x5c1054*/
     v4 = FormatWideString((wchar_t **)&v6, (const wchar_t *)this); /*0x5c1059*/
     MultiplayerTeam::Constructor(v3, (const wchar_t **)v4, (wchar_t *)this); /*0x5c1062*/
-    *(unsigned int *)v3->__pad_0 = &vt_MultiplayerBattleTeam; /*0x5c1067*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_MultiplayerBattleTeam) */  /*0x5c1067*/
   }
   else
   {
@@ -3122,7 +3122,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   int v33; // [esp-10h] [ebp-30h]
 
   ListClass::Constructor((int)this, a2, a3, a4, a5, a6); /*0x6b1b44*/
-  *(unsigned int *)this->__pad_0 = &vt_SliderClass; /*0x6b1b51*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_SliderClass) */  /*0x6b1b51*/
   this->u32_44 = a7 != 0; /*0x6b1b5c*/
   this->u32_3C = 0; /*0x6b1b5f*/
   this->u32_40 = 0; /*0x6b1b62*/
@@ -3462,7 +3462,7 @@ int ToolTipClass::initString() {
     v5 = StringCSF; /*0x724b06*/
     if ( StringCSF && wcslen(StringCSF) ) /*0x724b0d*/
     {
-      wcsncpythis->q028, v5, 0x100u); /*0x724b23*/
+      wcsncpy(this->q028, v5, 0x100u); /*0x724b23*/
       ToolTipClass_field_0x10 = this->Duration; /*0x724b28*/
       this->q01C = this->DisplayTimer; /*0x724b36*/
       this->q018 = ToolTipClass_field_0x10; /*0x724b39*/

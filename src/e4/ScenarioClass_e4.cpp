@@ -334,7 +334,7 @@ int ScenarioClass::AssignStartPositions(char a1)
       }
     }
   }
-  *(unsigned int *)v5 = (unsigned int)(&vt_VectorClass); /*0x5d6c45*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5d6c45*/
   char v7; // [esp+11h] [ebp-Bh]
   if ( Block && v7 ) /*0x5d6c58*/
     operator delete((Block)); /*0x5d6c5b*/
@@ -419,10 +419,10 @@ LABEL_21:
   v19.headNode[0] = 0; /*0x683c18*/
   v19.headNode[1] = 0; /*0x683c1c*/
   GenericList::Constructor((GenericList *)&v19.headNode[2]); /*0x683c20*/
-  v19.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x683c29*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x683c29*/
   memset(&v19.needsSave_flag, 0, 13); /*0x683c32*/
   memset(&v19.unknown38, 0, 9); /*0x683c42*/
-  *(unsigned int *)v19.__pad_0 = &CCINIClass_Vtable; /*0x683c4e*/
+  /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x683c4e*/
   CCFileClass::Construct(&v20, v4); /*0x683c56*/
   if ( CCINIClass::Load(&v19, (int)&v20, 1, 0) ) /*0x683c67*/
   {
@@ -434,7 +434,7 @@ LABEL_21:
       Movie::PlayWrapper(Bool, (int)v4, v9, 1, 1, 1); /*0x683cbd*/
     }
   }
-  *(unsigned int *)v20.__tail_0 = &vt_CCFileClass; /*0x683cc9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x683cc9*/
   v22 = 0; /*0x683cd1*/
   Vector::Clear((int)v21); /*0x683cd8*/
   *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x683ce1*/
@@ -590,11 +590,11 @@ int ScenarioClass_Construct(void * a2)
     v11.headNode[0] = 0; /*0x68676b*/
     v11.headNode[1] = 0; /*0x68676f*/
     GenericList::Constructor((GenericList *)&v11.headNode[2]); /*0x686773*/
-    v11.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x68677c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x68677c*/
     Node::Init((MixFileClass *)&v11.needsSave_flag); /*0x686784*/
     v11.INIClass_field_3C = 0; /*0x68678d*/
     v11.ownsFile[0] = 0; /*0x686792*/
-    *(unsigned int *)v11.__pad_0 = &CCINIClass_Vtable; /*0x686797*/
+    /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x686797*/
     CCFileClass::Construct(&v12, Source); /*0x68679f*/
     Debug::Log(); /*0x6867aa*/
     if ( CCINIClass::Load(&v11, (int)&v12, 1, 0) ) /*0x6867be*/
@@ -608,7 +608,7 @@ int ScenarioClass_Construct(void * a2)
       v9 = v6 & 3; /*0x68683c*/
       qmemcpy(v7, v8, v9); /*0x68683f*/
       Map = ScenarioClass::LoadMap(0, (INIClass *)&v11, a2, (ObjectClass *)&v7[v9]); /*0x686851*/
-      *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x686853*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x686853*/
       v14 = 0; /*0x68685b*/
       Vector::Clear((int)v13); /*0x686862*/
       *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x68686b*/
@@ -619,7 +619,7 @@ int ScenarioClass_Construct(void * a2)
     else
     {
       Debug::Log(); /*0x6867cc*/
-      *(unsigned int *)v12.__tail_0 = &vt_CCFileClass; /*0x6867db*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x6867db*/
       v14 = 0; /*0x6867e3*/
       Vector::Clear((int)v13); /*0x6867ea*/
       *(unsigned int *)v12.__tail_0 = &off_7E1668; /*0x6867f3*/
@@ -975,7 +975,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
     if ( !v51 )
       break;
     v51 = 0;
-    *aP1->vtable1.q000 = (unsigned int)&vt_CCFileClass;
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */
     v69 = (ObjectClass *)(0);
     ((Vector *)((int)v65))->Clear((int)((Vector *)((int)v65)));
     *aP1->vtable1.q000 = (unsigned int)&off_7E1668;
@@ -1043,7 +1043,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
     if ( !MixFile::LoadSide( (void *)(v39)) )
     {
       LABEL_124:
-      *aP1->vtable1.q000 = (unsigned int)&vt_CCFileClass;
+      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */
       --*(unsigned int *)&g_NetworkPlayerBuffer[4464];
       v69 = (ObjectClass *)(0);
       ((Vector *)((int)v65))->Clear((int)((Vector *)((int)v65)));
@@ -1194,7 +1194,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
     SmallFunc_5866C0(&DataGlobal_87F7E8);
   Map_Load_660B00();
   ((FogOfWar *)((int **)&DataGlobal_87F7E8))->Render();
-  *aP1->vtable1.q000 = (unsigned int)&vt_CCFileClass;
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */
   v69 = (ObjectClass *)(0);
   ((Vector *)((int)v65))->Clear((int)((Vector *)((int)v65)));
   *aP1->vtable1.q000 = (unsigned int)&off_7E1668;
@@ -1490,7 +1490,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   *(unsigned int *)&v78.m_1[3] = 0; /*0x68a2da*/
   v78.m_8 = 0; /*0x68a2dd*/
   LOWORD(v78.m_C) = 1; /*0x68a2e0*/
-  *(unsigned int *)v78.__pad_0 = &vt_VectorClass_TechnoTypeClass; /*0x68a2e7*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TechnoTypeClass) */  /*0x68a2e7*/
   if ( &v78 != (_VectorClass_PAVTechnoTypeClass *)(_ESI + 13524) ) /*0x68a2ed*/
   {
     TypeList_TechnoType::ddtor(&v78); /*0x68a2f1*/
@@ -1561,7 +1561,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v19 = *(unsigned int *)&TechnoTypeList[1].m_1[3]; /*0x68a3f8*/
   v20 = Block; /*0x68a3fb*/
   *(unsigned int *)(_ESI + 13548) = v19; /*0x68a3ff*/
-  *(unsigned int *)Destination = &vt_VectorClass_TechnoTypeClass; /*0x68a404*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TechnoTypeClass) */  /*0x68a404*/
   if ( v20 && v86 ) /*0x68a414*/
     __3_YAXPAX_Z(v20); /*0x68a417*/
   v21 = &_ESI->ambientCurrent; /*0x68a422*/
@@ -1570,7 +1570,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   *(unsigned int *)&v78.m_1[3] = 0; /*0x68a432*/
   v78.m_8 = 0; /*0x68a435*/
   LOWORD(v78.m_C) = 1; /*0x68a438*/
-  *(unsigned int *)v78.__pad_0 = &vt_VectorClass_int; /*0x68a43f*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x68a43f*/
   if ( &v78 != (_VectorClass_PAVTechnoTypeClass *)(_ESI + 13552) ) /*0x68a445*/
   {
     VectorClass::Destroy((int)&v78); /*0x68a447*/
@@ -1607,7 +1607,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   }
   *(unsigned int *)v22->__tail_10 = *(unsigned int *)(_ESI + 13568); /*0x68a4b2*/
   *v22->u32_4.__pad_0 = *(unsigned int *)(_ESI + 13572); /*0x68a4b8*/
-  *(unsigned int *)v22->__pad_0 = &vt_TypeList_int; /*0x68a4bb*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x68a4bb*/
   IntList = (_VectorClass_PAVTechnoTypeClass *)INIClass::ReadIntList( /*0x68a4cd*/
                                                  (INIClass *)a3,
                                                  (int)Destination,
@@ -1658,7 +1658,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v34 = *(unsigned int *)&IntList[1].m_1[3]; /*0x68a54a*/
   v35 = Block; /*0x68a54d*/
   *(unsigned int *)(_ESI + 13576) = v34; /*0x68a551*/
-  *(unsigned int *)Destination = &vt_VectorClass_int; /*0x68a556*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x68a556*/
   if ( v35 && v86 ) /*0x68a566*/
     __3_YAXPAX_Z(v35); /*0x68a569*/
   *(unsigned char *)(_ESI + 13478) = INIClass::ReadBool_Overwrite( /*0x68a589*/
@@ -2300,7 +2300,7 @@ int ScenarioClass_ClearFlag_0()
 namespace gamemd {
 MSAnim * ScenarioClass::checkWinningConditions(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->tail_0 = &vt_MSAnim; /*0x5ceb69*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_MSAnim) */  /*0x5ceb69*/
   if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
     operator delete((Block)); /*0x5ceb72*/
   return Block->tail_0; /*0x5ceb7c*/

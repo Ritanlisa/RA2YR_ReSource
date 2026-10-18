@@ -22,7 +22,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   
   char v3; // al
   v3 = *((unsigned char *)Block + 137); /*0x4272a6*/
-  *(unsigned int *)Block->Return_field_00 = &vt_AnimFile; /*0x4272ac*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_AnimFile) */  /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
     (*(void (**)(unsigned int))(**((unsigned int **)Block + 33) + 52))(*((unsigned int *)Block + 33)); /*0x4272be*/
@@ -41,7 +41,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
     *((unsigned int *)Block + 900) = 0; /*0x4272f6*/
   }
   *((unsigned char *)Block + 136) = 0; /*0x427300*/
-  *(unsigned int *)Block->Return_field_00 = &vt_Animate; /*0x427308*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_Animate) */  /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
     operator delete((Block)); /*0x427311*/
   return (gamemd::AnimFile *)(Block); /*0x42731b*/

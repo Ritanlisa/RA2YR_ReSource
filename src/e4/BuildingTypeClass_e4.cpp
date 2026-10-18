@@ -263,10 +263,10 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->ProductionCompletionThreshold = 1; /*0x45e298*/
   this->CostRatePerFrame = 1; /*0x45e29e*/
   this->u32_1791 = 0; /*0x45e2a5*/
-  this->DockingOffsets = &vt_VectorClass_TPoint3D_int; /*0x45e2ab*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TPoint3D_int) */  /*0x45e2ab*/
   this->PreventsPlacementOverlap = __2_YAPAXI_Z(0xCu); /*0x45e2ba*/
   this->u32_1791 = 1; /*0x45e2c6*/
-  *(unsigned int *)this = &vt_BuildingTypeClass_4; /*0x45e2cd*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_BuildingTypeClass_4) */  /*0x45e2cd*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2d3*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2d9*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2e1*/
@@ -419,8 +419,8 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
   *&this->ProductionCompletionThreshold = 0; /*0x45e53b*/
   this->CostRatePerFrame = 1; /*0x45e541*/
   this->u32_1791 = 0; /*0x45e548*/
-  *&this->DockingOffsets = (unsigned int)(&vt_VectorClassTPoint3D); /*0x45e54e*/
-  this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassTPoint3D) */  /*0x45e54e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_BuildingTypeClass) */  /*0x45e558*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e55e) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e565) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e56c) */
@@ -436,7 +436,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
 
   char BuildupLoaded; // al
   BuildupLoaded = (char)(a1->BuildupLoaded); /*0x45e587*/
-  a1->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e58d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_BuildingTypeClass) */  /*0x45e58d*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e595) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e59c) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e5a3) */
@@ -497,7 +497,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     while ( v3 < dword_A83C78 ); /*0x45e705*/
   }
   void *v4 = *&a1->PreventsPlacementOverlap; // eax /*0x45e707*/
-  *&a1->DockingOffsets = &vt_VectorClassTPoint3D; /*0x45e70d*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClassTPoint3D) */  /*0x45e70d*/
   if ( v4 && a1->u32_1791 ) /*0x45e71b*/
   {
     __3_YAXPAX_Z(v4); /*0x45e724*/
@@ -607,12 +607,12 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
       if ( v8 ) /*0x45eb6c*/
       {
         *(unsigned int *)(v8 + 12) = 0; /*0x45eb72*/
-        *(unsigned int *)v8 = &XSurface_Vtable; /*0x45eb78*/
+        /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x45eb78*/
         *(unsigned int *)(v8 + 4) = v9 + 16; /*0x45eb80*/
         *(unsigned int *)(v8 + 8) = v9 + 16; /*0x45eb8b*/
         *(unsigned int *)(v8 + 16) = 1; /*0x45eb8e*/
         Buffer::Init((Buffer *)(v8 + 20), 0, (v9 + 16) * (v9 + 16)); /*0x45eb95*/
-        *(unsigned int *)v8 = &BSurface_Vtable; /*0x45eb9a*/
+        /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x45eb9a*/
         dword_89DDC0 = (Draw *)v8; /*0x45eba0*/
       }
       else
@@ -1017,7 +1017,7 @@ void BuildingTypeClass::LoadVoxel()
           Info = VoxelSection::GetInfo((VoxelSection *)this->BarrelVoxel[0], 0, 0); /*0x45fc12*/
           Matrix::Scale((Matrix *)this->ChargerTurrets[0], *(float *)(Info + 12)); /*0x45fc21*/
         }
-        *(unsigned int *)v22.__tail_0 = &vt_CCFileClass; /*0x45fc2a*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         Vector::Clear((int)v23); /*0x45fc36*/
         *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x45fc3f*/
@@ -1035,7 +1035,7 @@ void BuildingTypeClass::LoadVoxel()
         *v12 = 76; /*0x45fc7f*/
         v12[1] = 0; /*0x45fc82*/
       }
-      *(unsigned int *)v25.__tail_0 = &vt_CCFileClass; /*0x45fc8c*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
       Vector::Clear((int)v26); /*0x45fc9b*/
       *(unsigned int *)v25.__tail_0 = &off_7E1668; /*0x45fca4*/
@@ -1083,13 +1083,13 @@ void BuildingTypeClass::LoadVoxel()
           Matrix::Scale((Matrix *)this->ChargerTurrets[2], *(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
-      *(unsigned int *)v22.__tail_0 = &vt_CCFileClass; /*0x45fdf3*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
       Vector::Clear((int)v23); /*0x45fdff*/
       *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x45fe08*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fe0c*/
     }
-    *(unsigned int *)v28.__tail_0 = &vt_CCFileClass; /*0x45fe18*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
     Vector::Clear((int)v29); /*0x45fe2a*/
     *(unsigned int *)v28.__tail_0 = &off_7E1668; /*0x45fe36*/
@@ -1375,7 +1375,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
         *(unsigned int *)&v1[1].Weapon[252] = 0; /*0x465174*/
         v1[1].Weapon[256] = 1; /*0x465177*/
         v1[1].Weapon[257] = 0; /*0x46517b*/
-        *(unsigned int *)v4 = &vt_VectorClass_TPoint3D_int; /*0x46517e*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_TPoint3D_int) */  /*0x46517e*/
       }
       (*(void (**)(char *, int, unsigned int))(*(unsigned int *)v4 + 8))(v4, v14, 0); /*0x46518c*/
       v5 = 0; /*0x46518f*/
@@ -1469,7 +1469,7 @@ BuildingTypeClass * * BuildingTypeClass::FindOrCreate(char *Source)
 } // namespace gamemd
 // 0x465AF0
 namespace gamemd {
-int BuildingTypeClass::BuildingTypeClass::IsPowered()
+int BuildingTypeClass::IsPowered()
 {
 
 
@@ -1701,7 +1701,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   BuildingTypeClass::loadBuildingProperty_b_5478850(&aP1->q2B8, 0, 0); /*0x644c37*/
   aP1->abstractFlags = 10; /*0x644c3c*/
   aP1->uniqueId = 0; /*0x644c43*/
-  *&aP1->uniqueId = &vt_TypeList; /*0x644c46*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList) */  /*0x644c46*/
   aP1->u32_2D4 = 0; /*0x644c4c*/
   LOBYTE(aP1->q2D8) = 0; /*0x644c66*/
   BYTE1(aP1->?[0]) = 0; /*0x644c6c*/
@@ -1726,7 +1726,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   HIBYTE(aP1->?[1]) = 0; /*0x644ce2*/
   aP1->q310 = -1; /*0x644ce8*/
   aP1->q314 = -1; /*0x644cee*/
-  aP1->TechnoTypeClass = &vt_ParticleTypeClass; /*0x644cf4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x644cf4*/
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644cfa) */
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644d01) */
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644d08) */
@@ -2408,7 +2408,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
   this->vtable3 = (void *)a2; /*0x478860*/
   LOBYTE(this->vtable4) = 1; /*0x478863*/
   (this->u32_D) = ((this->u32_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x478867*/
-  this->TechnoTypeClass = &vt_VectorClass; /*0x47886a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x47886a*/
   if ( !a2 ) /*0x478870*/
     return &this->TechnoTypeClass; /*0x4788d0*/
   if ( !a3 ) /*0x478878*/

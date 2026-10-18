@@ -129,7 +129,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
       v14 = &g_TypeClass_DefaultString; /*0x5d42a3*/
     *&this->u16_2B8 = a5; /*0x5d42b1*/
     memset(&this->q00C[28], 0, 0x144u); /*0x5d42c2*/
-    wcscpythis->u32_28, v14); /*0x5d42c5*/
+    wcscpy(this->u32_28, v14); /*0x5d42c5*/
     *&this->u16_16C = 0; /*0x5d42cb*/
     v15 = wcslen(v14); /*0x5d42d4*/
     *&this->u32_2B4 = v15; /*0x5d42db*/

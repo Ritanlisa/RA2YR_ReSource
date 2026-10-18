@@ -15,7 +15,7 @@ int RawFileClass::Dtor(void *a1)
 
   FileClass v3; // edi
 
-  this->FileClass = (FileClass)&vt_RawFileClass; /*0x65ca03*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_RawFileClass) */  /*0x65ca03*/
   int result; // eax
   result = RawFileClass::Write(this); /*0x65ca09*/
   if ( (unsigned char)result ) /*0x65ca11*/
@@ -47,7 +47,7 @@ int RawFileClass::Dtor(void *a1)
       this->CacheReadAhead[0] = 0; /*0x65ca5b*/
     }
   }
-  this->FileClass = (FileClass)&vt_FileClass; /*0x65ca5f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_FileClass) */  /*0x65ca5f*/
   return result; /*0x65ca65*/
 
 }

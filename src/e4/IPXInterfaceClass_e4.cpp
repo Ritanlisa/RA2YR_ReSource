@@ -42,7 +42,7 @@ int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a
 {
 
   IPXInterfaceClass::bindSocket((char *)a1); /*0x7b0d93*/
-  a1->Socket = (int)&vt_IPXInterfaceClass; /*0x7b0da4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_IPXInterfaceClass) */  /*0x7b0da4*/
   *((unsigned int *)a1 + 64703) = -1; /*0x7b0dad*/
   *((unsigned int *)a1 + 64704) = -1; /*0x7b0db3*/
   *((unsigned short *)a1 + 129410) = -1; /*0x7b0db8*/
@@ -309,14 +309,14 @@ void * IPXInterfaceClass::bindSocket(void *a1)
   a1->u32_10 = 0; /*0x7b19d5*/
   a1->u8_14 = 1; /*0x7b19d8*/
   a1->u32_54 = 0; /*0x7b19db*/
-  a1->__pad_008 = &vt_DynamicVectorClass; /*0x7b19de*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x7b19de*/
   a1->u32_1C = 10; /*0x7b19e1*/
   a1->q018 = 0; /*0x7b19e4*/
   a1->u32_24 = 0; /*0x7b19e7*/
   a1->u32_28 = 0; /*0x7b19ea*/
   a1->q02C = 1; /*0x7b19ed*/
   a1->u32_2D = 0; /*0x7b19f0*/
-  a1->u32_20 = &vt_DynamicVectorClass; /*0x7b19f3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x7b19f3*/
   a1->u32_34 = 10; /*0x7b19f6*/
   a1->u32_30 = 0; /*0x7b19f9*/
   a1->u32_4C = 10; /*0x7b19fc*/
@@ -324,11 +324,11 @@ void * IPXInterfaceClass::bindSocket(void *a1)
   a1->u32_40 = 0; /*0x7b1a05*/
   a1->q044 = 1; /*0x7b1a08*/
   a1->u32_45 = 0; /*0x7b1a0b*/
-  a1->u32_38 = &vt_DynamicVectorClass; /*0x7b1a0e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x7b1a0e*/
   a1->u32_48 = 0; /*0x7b1a11*/
   a1->u32_3F06C = -1; /*0x7b1a14*/
   a1->u32_3F070 = -1; /*0x7b1a1a*/
-  *(unsigned int *)a1 = (unsigned int)(&vt_WinsockInterfaceClass); /*0x7b1a20*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_WinsockInterfaceClass) */  /*0x7b1a20*/
   a1->u32_FC1A0 = 0; /*0x7b1a26*/
   unsigned char *v2 = &a1->u32_66; // eax /*0x7b1a2c*/
   int v3 = 128; // edx /*0x7b1a2f*/

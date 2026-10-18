@@ -987,7 +987,7 @@ unsigned int * Tactical_42::loc_6E4B00(unsigned int * Block, char a2)
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x6e4ab3*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6e4ab6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6e4ab6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6e4ac0*/
   {
     __3_YAXPAX_Z(v3); /*0x6e4ac8*/
@@ -1672,25 +1672,25 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
 
 
   unsigned int *result = &this->AbstractClass; // eax /*0x6e8004*/
-  this->M8 = (unsigned int)(&vt_INoticeSink); /*0x6e8008*/
-  this->M12 = (unsigned int)(&vt_INoticeSource); /*0x6e800f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_INoticeSink) */  /*0x6e8008*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_INoticeSource) */  /*0x6e800f*/
   this->M16 = *(unsigned int *)(a2 + 16); /*0x6e801c*/
   LOBYTE(this->M20) = *(unsigned char *)(a2 + 20); /*0x6e8022*/
   this->q018 = *(unsigned int *)(a2 + 24); /*0x6e8028*/
   this->M28 = *(unsigned int *)(a2 + 28); /*0x6e802e*/
   LOBYTE(this->q020) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
   /* X11: vtable install elided (base-interface slot, RHS vt_AbstractClass) */  /*0x6e803f*/
-  this->M4 = (unsigned int)(&vt_AbstractClass); /*0x6e8045*/
-  this->M8 = (unsigned int)(&vt_AbstractClass); /*0x6e804c*/
-  this->M12 = &vt_AbstractClass; /*0x6e8053*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractClass) */  /*0x6e8045*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractClass) */  /*0x6e804c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractClass) */  /*0x6e8053*/
   memcpy(&this->occupant, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
   memcpy((char *)this->ambientSoundController + 1, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   this->customSound_controller[4] = *(unsigned int *)(a2 + 96); /*0x6e8070*/
   memcpy(&this->customSound, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
   /* X11: vtable install elided (base-interface slot, RHS vt_TaskForceClass) */  /*0x6e807e*/
-  this->M4 = &vt_TaskForceClass; /*0x6e8084*/
-  this->M8 = &vt_TaskForceClass; /*0x6e808b*/
-  this->M12 = &vt_TaskForceClass; /*0x6e8092*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TaskForceClass) */  /*0x6e8084*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TaskForceClass) */  /*0x6e808b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_TaskForceClass) */  /*0x6e8092*/
   int *v3; // ecx
   v3 = &this->location[2]; /*0x6e809f*/
   result->q098 = *(unsigned int *)(a2 + 152); /*0x6e80a5*/

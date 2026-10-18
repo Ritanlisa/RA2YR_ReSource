@@ -40,7 +40,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->CurrentPitch = 0.0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
-  *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_RocketLocomotionClass); /*0x661f19*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x661f19*/
   /* X11: vtable install elided (implicit via RocketLocomotionClass virtuals 0x661f1f) */
   return (int)this->LocomotionClass; /*0x661f28*/
 
@@ -68,13 +68,13 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x663426*/
     {
-      *(unsigned int *)a1->0 = &vt_LocomotionClass; /*0x663428*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_LocomotionClass) */  /*0x663428*/
       *(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x66342e*/
       int v3; // ecx
       v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x663435*/
       a1->TrailerTimer[2] = 0; /*0x66343b*/
       a1->TrailerTimer[0] = v3; /*0x663442*/
-      *(unsigned int *)a1->0 = &vt_RocketLocomotionClass; /*0x663445*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x663445*/
       *(unsigned int *)&a1->0[4] = &vt_RocketLocomotionClass; /*0x66344b*/
     }
   }
@@ -92,7 +92,7 @@ int RocketLocomotionClass::StubReturn96()
 namespace gamemd {  // G42.18c ns repair
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
 {
-  *(unsigned int *)a3->0 = &vt_RocketLocomotionClass; /*0x6635c3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x6635c3*/
   *(unsigned int *)&a3->0[4] = &vt_RocketLocomotionClass; /*0x6635c9*/
   ((LocomotionClass *)((LocomotionClass *)a3))->Construct(); /*0x6635d0*/
   if ( (a3 & 1) != 0 ) /*0x6635da*/
@@ -337,7 +337,7 @@ unsigned int * RocketLocomotionClass_17::RocketLocomotionClass_17::Constructor(u
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x664a73*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x664a76*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x664a76*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x664a80*/
   {
     __3_YAXPAX_Z(v3); /*0x664a88*/
@@ -358,7 +358,7 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x664ac3*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x664ac6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x664ac6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x664ad0*/
   {
     operator delete((v3)); /*0x664ad8*/

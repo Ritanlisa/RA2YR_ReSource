@@ -306,7 +306,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   this->ColorList = RGBColorList[4]; /*0x644fbd*/
   this->ParticleTypeClass_field_0x2CC = RGBColorList[5]; /*0x644fc6*/
   *(unsigned int *)this->__pad_2D0 = RGBColorList[6]; /*0x644fd3*/
-  *(unsigned int *)v52.__pad_0 = &vt_VectorClass_RGBClass; /*0x644fd9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_RGBClass) */  /*0x644fd9*/
   FilePipe_38::ddtor(&v52); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (bool *)aP1,
@@ -657,11 +657,11 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)v3, (int)&a2); /*0x645689*/
       ParticleTypeClass::Constructor(&v3->ParticleTypeClass_2B8, 0, 0); /*0x645698*/
-      v3->ParticleTypeClass_2B8 = (VectorClass *)&vt_TypeList_RGBClass; /*0x64569d*/
-      v3->ArrayIndex = &vt_ParticleTypeClass_4; /*0x6456a3*/
-      v3->ParticleTypeClass_field_28C = &vt_ParticleTypeClass_4; /*0x6456a9*/
-      v3->BehavesLike = &vt_ParticleTypeClass_4; /*0x6456b0*/
-      v3->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass_4; /*0x6456b7*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_RGBClass) */  /*0x64569d*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456a3*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456a9*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456b0*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass_4) */  /*0x6456b7*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->__pad_2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
@@ -734,10 +734,10 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
 {
 
 
-  a3->ArrayIndex = &vt_ParticleTypeClass; /*0x645956*/
-  a3->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x64595c*/
-  a3->BehavesLike = &vt_ParticleTypeClass; /*0x645963*/
-  a3->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x64596a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x645956*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x64595c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x645963*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleTypeClass) */  /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&a3->ArrayIndex, 1); /*0x645971*/
   ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
   v7 = a3; /*0x645986*/
@@ -774,7 +774,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   }
   CampaignClass *ParticleTypeClass_field_0x2BC; // eax
   ParticleTypeClass_field_0x2BC = a3->ParticleTypeClass_field_0x2BC; /*0x645a08*/
-  a3->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_VectorClass; /*0x645a0e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x645a0e*/
   if ( ParticleTypeClass_field_0x2BC && a3->__pad_2C0[5] ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(ParticleTypeClass_field_0x2BC); /*0x645a27*/
@@ -799,7 +799,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
   a3_2->BehavesLike = a3_2; /*0x645a80*/
   (*((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))) = 1; /*0x645a83*/
   (((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))[1]) = 0; /*0x645a87*/
-  a3_2->ArrayIndex = &vt_VectorClass; /*0x645a8a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x645a8a*/
   if ( a3_2 ) /*0x645a90*/
   {
     if ( a3_2 ) /*0x645a98*/
@@ -850,7 +850,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
       (((unsigned char *)&(a3_2->ParticleTypeClass_field_0xC))[1]) = 1; /*0x645ae8*/
     }
   }
-  a3_2->ArrayIndex = &vt_DynamicVectorClass; /*0x645aec*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x645aec*/
   a3_2->Damage = 10; /*0x645af2*/
   a3_2->ParticleTypeClass_field_0x10 = 0; /*0x645af9*/
   return &a3_2->ArrayIndex; /*0x645afe*/

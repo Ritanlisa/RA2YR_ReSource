@@ -31,10 +31,10 @@ int AbstractTypeClass::Constructor(char *aP1, void *a2, void *a3, void *a4)
   this->__pad_024 = 0; /*0x410817*/
   this->UINameLabel = 0; /*0x41081a*/
   this->Name = 0; /*0x41081e*/
-  *this = (int)&vt_AbstractTypeClass; /*0x410822*/
-  this->zero_3C = (int)&vt_AbstractTypeClass; /*0x410829*/
-  this->UINameLabel[0x20] = (int)&vt_AbstractTypeClass; /*0x410830*/
-  this->u32_3 = (int)&vt_AbstractTypeClass; /*0x410837*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractTypeClass) */  /*0x410829*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractTypeClass) */  /*0x410830*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AbstractTypeClass) */  /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1, 0x18u); /*0x410895*/

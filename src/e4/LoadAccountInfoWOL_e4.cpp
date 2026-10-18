@@ -29,7 +29,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1, ObjectClass * aP2, void
   this->u32_34 = (unsigned int)(aP11); /*0x7796f9*/
   this->M56 = (unsigned int)(aP12); /*0x779700*/
   WideString::AssignFromPtr(&this->u32_3C, aP14); /*0x779703*/
-  WideString::AssignFromPtrthis->M40, aP13); /*0x779710*/
+  WideString::AssignFromPtr(this->M40, aP13); /*0x779710*/
   *this = (gamemd::ReferenceCounted)((ReferenceCounted)&vt_PlayerProfile); /*0x779715*/
   return this; /*0x77971d*/
 }  // G42.18 ns repair

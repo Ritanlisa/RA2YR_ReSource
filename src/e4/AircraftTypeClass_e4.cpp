@@ -60,9 +60,9 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   aP1->u8_E0C = 0; /*0x41c8ee*/
   aP1->u8_E0D = 0; /*0x41c8f4*/
   aP1->u8_E0E = 0; /*0x41c8fa*/
-  *(unsigned int *)aP1 = (unsigned int)(&vt_AircraftTypeClass); /*0x41c900*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_AircraftTypeClass) */  /*0x41c900*/
   *(unsigned int *)(aP1 + 4) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c906*/
-  aP1->VtableStub_8 = &vt_AircraftTypeClass; /*0x41c90c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AircraftTypeClass) */  /*0x41c90c*/
   *(unsigned int *)(aP1 + 12) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c913*/
   (aP1 + 4)->GenerateUniqueID(); /*0x41c91a*/
   v3 = dword_A8B228; /*0x41c91f*/
@@ -197,7 +197,7 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
 {
 
 
-  *(unsigned int *)a1->TechnoTypeClass = &vt_AircraftTypeClass; /*0x41cfe6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_AircraftTypeClass) */  /*0x41cfe6*/
   *(unsigned int *)&a1->TechnoTypeClass[4] = &vt_AircraftTypeClass; /*0x41cfec*/
   *(unsigned int *)&a1->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41cff3*/
   *(unsigned int *)&a1->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41cffa*/
@@ -307,9 +307,9 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x41ce36*/
     {
       TechnoTypeClass::Construct((int)aP0, (int)&aP1); /*0x41ce3f*/
-      *(unsigned int *)aP0->TechnoTypeClass = (unsigned int)(&vt_AircraftTypeClass); /*0x41ce44*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_AircraftTypeClass) */  /*0x41ce44*/
       /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce4a) */
-      *&aP0->u32_D2E = &vt_AircraftTypeClass; /*0x41ce51*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_AircraftTypeClass) */  /*0x41ce51*/
       /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce58) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_E00); /*0x41ce6b*/

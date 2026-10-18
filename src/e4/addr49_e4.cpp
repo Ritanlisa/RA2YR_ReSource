@@ -2593,10 +2593,10 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
   }
   else
   {
-    DeleteAndZerothis->spawnStatus); /*0x49e86d*/
-    DeleteAndZerothis->customSound); /*0x49e875*/
+    DeleteAndZero(this->spawnStatus); /*0x49e86d*/
+    DeleteAndZero(this->customSound); /*0x49e875*/
     fallRate = (void *)this->fallRate; /*0x49e87a*/
-    this->owningHouseIndex = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e886*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_DynamicVectorClass_char) */  /*0x49e886*/
     if ( fallRate && BYTE1(this->attachedTag) ) /*0x49e88b*/
     {
       __3_YAXPAX_Z(fallRate); /*0x49e891*/
@@ -2605,7 +2605,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
     BYTE1(this->attachedTag) = 0; /*0x49e89c*/
     this->nextObject = 0; /*0x49e89f*/
     abstractFlags = (void *)this->abstractFlags; /*0x49e8a2*/
-    this->uniqueId = (int)&vt_VectorClass_DynamicVectorClass_char; /*0x49e8a5*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_DynamicVectorClass_char) */  /*0x49e8a5*/
     if ( abstractFlags && BYTE1(this->referenceCount) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(abstractFlags); /*0x49e8b2*/
@@ -6308,10 +6308,10 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   result->vtable3 = 0; /*0x49da6f*/
   p_uniqueId->vtable2 = 0; /*0x49da72*/
   p_uniqueId->vtable3 = 0; /*0x49da75*/
-  *p_uniqueId = (int)&vt_GenericNode; /*0x49da78*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x49da78*/
   p_referenceCount->vtable2 = 0; /*0x49da7e*/
   p_referenceCount->vtable3 = 0; /*0x49da81*/
-  *p_referenceCount = (int)&vt_GenericNode; /*0x49da84*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x49da84*/
   /* X11: vtable install elided (implicit via GenericList virtuals 0x49da8d) */
   if ( p_referenceCount ) /*0x49da94*/
   {
@@ -6343,7 +6343,7 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   result->attachedBomb = 0; /*0x49dae0*/
   result->ambientSoundController = 0; /*0x49dae4*/
   result->q040 = 0; /*0x49dae7*/
-  *result = &CCINIClass_Vtable; /*0x49daea*/
+  /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x49daea*/
   result->q060 = 0; /*0x49daf0*/
   return result; /*0x49dad3*/
 

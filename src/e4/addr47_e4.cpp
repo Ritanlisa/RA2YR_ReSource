@@ -91,7 +91,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
-    *(unsigned int *)v21.__pad_0 = &vt_TypeList_int; /*0x47712a*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x47712a*/
     for ( i = (BuildingTypeClass *)strtok(v21.__pad_20, Delimiter); i; i = (BuildingTypeClass *)strtok(0, Delimiter) ) /*0x477144*/
     {
       if ( !LOBYTE(i->vfptr) ) /*0x47714a*/
@@ -194,8 +194,8 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
-    a1->vfptr = (int)&vt_TypeList_int; /*0x4773d9*/
-    *(unsigned int *)v21.__pad_0 = &vt_VectorClass_int; /*0x4773df*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x4773d9*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
     a5 = &vt_VectorClass_int; /*0x4773ef*/
     VectorClass::Destroy((int)&a5); /*0x4773f6*/
@@ -1345,7 +1345,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
 namespace gamemd {
 void E4Recv_470C30::sub_470C30()
 {
-  this->m_0 = (int)&vt_CampaignEndScoreClass; /*0x470c30*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_CampaignEndScoreClass) */  /*0x470c30*/
 }
 } // namespace gamemd
 
@@ -1809,7 +1809,7 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
   this->u32_16 = 0; /*0x473767*/
   this->q018 = 0; /*0x47376d*/
   this->M28 = -1; /*0x473770*/
-  *this = (CarryoverClass)&vt_CarryoverClass; /*0x473777*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CarryoverClass) */  /*0x473777*/
   if ( v3 ) /*0x47377d*/
   {
     int v4; // eax
@@ -2017,7 +2017,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v9 = -1732584194; /*0x4745a5*/
   v10 = 271733878; /*0x4745ad*/
   v11 = -1009589776; /*0x4745b5*/
-  *(unsigned int *)v6.__pad_0 = &vt_SHAPipe; /*0x4745bd*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_SHAPipe) */  /*0x4745bd*/
   INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
   SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
@@ -2064,7 +2064,7 @@ int E4Recv_476E20::sub_476E20()
   v7 = 271733878; /*0x476e5c*/
   int v8; // [esp+38h] [ebp-4Ch]
   v8 = -1009589776; /*0x476e64*/
-  *(unsigned int *)v3.state = &vt_SHAPipe; /*0x476e6c*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_SHAPipe) */  /*0x476e6c*/
   INIClass::WriteToString((INIClass *)this, (int)&v3); /*0x476e74*/
   SHA1::ComputeThunk(&v3, (char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/

@@ -129,7 +129,7 @@ int WebBrowser::ShowDialog(void *a1)
       *(unsigned int *)(v4 + 8) = 0; /*0x773f7d*/
       *(unsigned char *)(v4 + 1036) = 0; /*0x773f84*/
       *(unsigned int *)(v4 + 1040) = 0; /*0x773f8b*/
-      *(unsigned int *)v4 = &vt_WebBrowser; /*0x773f95*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_WebBrowser) */  /*0x773f95*/
       Debug::Log(); /*0x773f9b*/
       v6[260] = (unsigned int)v3; /*0x773fa3*/
       Debug::Log(); /*0x773fae*/

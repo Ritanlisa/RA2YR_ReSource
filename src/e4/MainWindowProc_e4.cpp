@@ -122,7 +122,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
   v3[13] = 0; /*0x724037*/
-  *(unsigned int *)v3 = &vt_DynamicVectorClass_ToolTip_const; /*0x72403a*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_ToolTip_const) */  /*0x72403a*/
   *((unsigned int *)v3 + 5) = 10; /*0x724040*/
   *((unsigned int *)v3 + 4) = 0; /*0x724047*/
   this->M588 = 0; /*0x72404a*/
@@ -131,7 +131,7 @@ char * E4Recv_724000::sub_724000(int a2)
   this->M600 = 0; /*0x72405c*/
   this->M604 = 0; /*0x724062*/
   v4 = *(unsigned int *)v3; /*0x724068*/
-  *(unsigned int *)this = &vt_ToolTipManager; /*0x72406a*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ToolTipManager) */  /*0x72406a*/
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
   __3_YAXPAX_Z(this->M588); /*0x72407a*/
   this->M588 = 0; /*0x724082*/

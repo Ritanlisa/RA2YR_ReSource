@@ -593,7 +593,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   ObjectVector::Construct(&v101, 0, 0); /*0x6b3003*/
   v8 = (unsigned __int16 *)v5; /*0x6b3008*/
   v9 = v6; /*0x6b300b*/
-  *(unsigned int *)v101.__pad_0 = &vt_DynamicVectorClass_ObjectClass; /*0x6b3010*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_ObjectClass) */  /*0x6b3010*/
   v101.ObjectVector_field_0x14 = 10; /*0x6b3018*/
   v101.ObjectVector_field_0x10 = 0; /*0x6b3023*/
   v100 = (unsigned __int16 *)v5; /*0x6b3027*/
@@ -990,7 +990,7 @@ LABEL_110:
     }
     while ( v61 <= v62 ); /*0x6b3811*/
   }
-  *(unsigned int *)v101.__pad_0 = &vt_VectorClass_ObjectClass; /*0x6b381b*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x6b381b*/
   if ( v101.ObjectVector_field_0x04 && BYTE1(v101.ObjectVector_field_0x0C) ) /*0x6b382d*/
     __3_YAXPAX_Z((void *)v101.ObjectVector_field_0x04); /*0x6b3830*/
   return 1; /*0x6b3838*/
@@ -2269,10 +2269,10 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
         *(unsigned int *)(v21 + 4) = v19; /*0x6b9e51*/
         *(unsigned int *)(v21 + 8) = v20; /*0x6b9e54*/
         *(unsigned int *)(v21 + 12) = 0; /*0x6b9e57*/
-        *(unsigned int *)v21 = &XSurface_Vtable; /*0x6b9e5e*/
+        /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x6b9e5e*/
         *(unsigned int *)(v21 + 16) = 2; /*0x6b9e65*/
         Buffer::Init((Buffer *)(v21 + 20), 0, 2 * v20 * v19); /*0x6b9e6c*/
-        *v10 = (unsigned int)&BSurface_Vtable; /*0x6b9e71*/
+        /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x6b9e71*/
       }
       else
       {
@@ -4431,7 +4431,7 @@ void WinMain_Setup()
     v18->u32_3519 = 0; /*0x6beafe*/
     v18->ionGreen = 0; /*0x6beb04*/
     v20 = v18->ambientTarget; /*0x6beb0a*/
-    v18->ambientCurrent = &vt_VectorClass; /*0x6beb10*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6beb10*/
     if ( v20 && v18->u32_34FD ) /*0x6beb1a*/
     {
       operator delete((v20)); /*0x6beb23*/
@@ -4440,7 +4440,7 @@ void WinMain_Setup()
     v18->u32_34FD = 0; /*0x6beb31*/
     v18->red = 0; /*0x6beb37*/
     v21 = v18->allowableUnitsCount; /*0x6beb3d*/
-    v18->allowableUnits = &vt_VectorClass; /*0x6beb43*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6beb43*/
     if ( v21 && v18->u32_34E1 ) /*0x6beb51*/
     {
       operator delete((v21)); /*0x6beb5a*/

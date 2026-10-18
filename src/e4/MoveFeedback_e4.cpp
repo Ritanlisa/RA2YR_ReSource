@@ -54,7 +54,7 @@ int MoveFeedback::ProcessCommand()
     if ( result ) /*0x732809*/
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
-      *(unsigned int *)v3 = &vt_DynamicVectorClass_TechnoClass; /*0x732814*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x732814*/
       v3->CapacityIncrement = 10; /*0x73281a*/
       v3->Count = 0; /*0x732821*/
     }
@@ -98,7 +98,7 @@ int MoveFeedback::ProcessCommand()
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *(unsigned int *)v3 = &vt_DynamicVectorClass_TechnoClass; /*0x7328a8*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_TechnoClass) */  /*0x7328a8*/
       v3->CapacityIncrement = 10; /*0x7328ae*/
       v3->Count = 0; /*0x7328b5*/
     }
@@ -194,7 +194,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, in
 
   void *v3; // eax
   v3 = *(void **)&a1->m_1[3]; /*0x40bcb3*/
-  *(unsigned int *)a1->__pad_0 = &vt_VectorClass; /*0x40bcb6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40bcb6*/
   if ( v3 && BYTE1(a1->m_C) ) /*0x40bcc0*/
   {
     __3_YAXPAX_Z(v3); /*0x40bcc8*/
@@ -307,7 +307,7 @@ unsigned int * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, cha
 
 
   void *v3 = *&Block->__pad_004; // eax /*0x40c163*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40c166*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x40c166*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40c170*/
   {
     __3_YAXPAX_Z(v3); /*0x40c178*/

@@ -223,10 +223,10 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_A2 = 0; /*0x5f723d*/
   this->u32_28C = 0; /*0x5f7243*/
   this->Image_d = 0; /*0x5f7249*/
-  *this = (int)&vt_ObjectTypeClass; /*0x5f7251*/
-  this->zero_3C = (void*)(&vt_ObjectTypeClass); /*0x5f7258*/
-  this->UINameLabel[0x20] = (int)&vt_ObjectTypeClass; /*0x5f725f*/
-  this->u32_3 = (int)&vt_ObjectTypeClass; /*0x5f7266*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ObjectTypeClass) */  /*0x5f7251*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ObjectTypeClass) */  /*0x5f7258*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ObjectTypeClass) */  /*0x5f725f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ObjectTypeClass) */  /*0x5f7266*/
   if ( &this->u8_9 != &this->u8_7E ) /*0x5f726d*/
     memcpy(&this->u8_7E, &this->u8_9, 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
@@ -990,7 +990,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 } // namespace gamemd
 // 0x712170
 namespace gamemd {
-int ObjectTypeClass::LoadExtras(CCINIClass * aP0, void * _38C, unsigned char *** a2)  // G57w11: def 同步 hpp（__userpurge st0 伪影，raw 调用侧传 ini 指针）
+int ObjectTypeClass::LoadExtras(CCINIClass * aP0, void * _38C, unsigned char *** a2)  // G57w11: def 同步 hpp（st0 伪影，raw 调用侧传 ini 指针）
 {
 
   int v3; // ecx
@@ -2026,7 +2026,7 @@ namespace gamemd {
 unsigned int * ObjectTypeClass::CheckFlag(int aP1)
 {
 
-  this->AbstractTypeClass = &vt_DynamicVectorClass; /*0x717bf2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x717bf2*/
   return &this->AbstractTypeClass; /*0x717bf8*/
 
 }

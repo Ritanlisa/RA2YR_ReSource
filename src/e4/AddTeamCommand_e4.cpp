@@ -14,7 +14,7 @@ unsigned int * AddTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4,
 {
 
   a2_2->AddTeamCommand_field_00 = a2_2; /*0x5360b6*/
-  *(unsigned int *)a2_2->CommandClass = &vt_AddTeamCommandClass; /*0x5360b9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_AddTeamCommandClass) */  /*0x5360b9*/
   return a2_2->CommandClass; /*0x5360bf*/
 
 }

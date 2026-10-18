@@ -25,7 +25,7 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x5c5943*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5c5946*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5c5946*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x5c5950*/
   {
     operator delete((v3)); /*0x5c5958*/
@@ -47,7 +47,7 @@ unsigned int * CoopCampaignVector::Construct(int aP1, int aP2, void *a3, void *a
   this->q008 = aP1; /*0x5c5a8e*/
   (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~0xFF) | ((1) & 0xFF); /*0x5c5a91*/
   (this->CoopCampaignVector_field_0x0C) = ((this->CoopCampaignVector_field_0x0C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5c5a95*/
-  this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5c5a98*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/

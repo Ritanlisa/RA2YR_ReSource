@@ -973,7 +973,7 @@ namespace gamemd {
 XSurface * XSurface::ScalarDtor(char a2)
 {
 
-  *(unsigned int *)this->Surface = &Surface_Vtable; /*0x4115a9*/
+  /* X11: vtable install elided (X67 star-deref, RHS Surface_Vtable) */  /*0x4115a9*/
   if ( (a2 & 1) != 0 ) /*0x4115af*/
     __3_YAXPAX_Z(this); /*0x4115b2*/
   return (gamemd::XSurface *)((std::locale::facet *)this); /*0x4115bc*/

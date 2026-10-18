@@ -3572,10 +3572,10 @@ namespace gamemd {
     v23->controlNodeCapacity = 0; /*0x4718a2*/
     v23->owner = ((v23->owner) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x4718a5*/
     v23->owner = ((v23->owner) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x4718a8*/
-    v23->controlNodes[0] = (int)(void *)(void*)(void*)&DynamicVectorClass_ControlNode___vftable; /*0x4718ab*/
+    /* X11: vtable install elided (X67 recv-slot, RHS DynamicVectorClass_ControlNode___vftable) */  /*0x4718ab*/
     *(unsigned int *)&v23->CaptureManagerClass_field_30 = 10; /*0x4718b2*/
     v23->originalOwner = 0; /*0x4718b9*/
-    v23->AbstractClass = (unsigned int)(void *)(void*)(void*)&CaptureManagerClass_vftable; /*0x4718bc*/
+    /* X11: vtable install elided (X67 recv-slot, RHS CaptureManagerClass_vftable) */  /*0x4718bc*/
     /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4718c2) */
     /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4718c9) */
     /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4718d0) */
@@ -4374,9 +4374,9 @@ namespace gamemd {
     v23->DestinationCoords[1] = dword_8A0824; /*0x4b5ace*/
     v23->DestinationCoords[2] = dword_8A0828; /*0x4b5ad7*/
     v23->Piggybackee = 0; /*0x4b5ada*/
-    *(unsigned int *)v23->LocomotionClass = (unsigned int)(void *)(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b5add*/
+    /* X11: vtable install elided (X67 star-deref, RHS DropPodLocomotionClass_vftable) */  /*0x4b5add*/
     *(unsigned int *)&v23->LocomotionClass[4] = (unsigned int)(void *)(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b5ae3*/
-    *(unsigned int *)v23->q018 = (unsigned int)(void *)(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b5aea*/
+    /* X11: vtable install elided (X67 star-deref, RHS DropPodLocomotionClass_vftable) */  /*0x4b5aea*/
     return (int)v23->LocomotionClass; /*0x4b5af3*/
   }
 } // namespace gamemd
@@ -4387,14 +4387,14 @@ namespace gamemd {
 
     AbstractClass::Constructor((AbstractClass *)v23); /*0x4c5373*/
     v2 = dword_8A3838; /*0x4c5378*/
-    *(unsigned int *)v23->q000 = (unsigned int)(void *)(void*)(void*)&EMPulseClass_vftable; /*0x4c537d*/
+    /* X11: vtable install elided (X67 star-deref, RHS EMPulseClass_vftable) */  /*0x4c537d*/
     *((unsigned int *)v23 + 9) = v2; /*0x4c5383*/
     *((unsigned int *)v23 + 10) = 0; /*0x4c5388*/
     *((unsigned int *)v23 + 11) = 0; /*0x4c538b*/
     *((unsigned int *)v23 + 12) = 0; /*0x4c538e*/
-    v23->EMPulseClass_field_0x04 = (int)(void *)(void*)(void*)&EMPulseClass_vftable; /*0x4c5391*/
-    v23->EMPulseClass_field_0x08 = (int)(void *)(void*)(void*)&EMPulseClass_vftable; /*0x4c5398*/
-    v23->EMPulseClass_field_0x0C = (int)(void *)(void*)(void*)&EMPulseClass_vftable; /*0x4c539f*/
+    /* X11: vtable install elided (X67 recv-slot, RHS EMPulseClass_vftable) */  /*0x4c5391*/
+    /* X11: vtable install elided (X67 recv-slot, RHS EMPulseClass_vftable) */  /*0x4c5398*/
+    /* X11: vtable install elided (X67 recv-slot, RHS EMPulseClass_vftable) */  /*0x4c539f*/
     return (int)v23->q000; /*0x4c53a8*/
   }
 } // namespace gamemd
@@ -7219,7 +7219,7 @@ if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)(v2 + 4) + 16))(v2 + 4) ) /*
         && *(unsigned char *)(v6[433] + 3603)
         && !*(unsigned char *)(v3->vtable4 + 1709) )
       {
-        if ( *(unsigned char *)((*(int (__usercall **)@<eax>(unsigned int *@<ecx>, double@<st0>))(*v6 + 132))(v6, result) + 1709) ) /*0x54bde8*/
+        if ( *(unsigned char *)((*(int (**)(unsigned int *, double))(*v6 + 132))(v6, result) + 1709) ) /*0x54bde8*/
         {
           if ( !*((unsigned char *)v6 + 308) ) /*0x54bdf2*/
           {
@@ -7243,7 +7243,7 @@ if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)(v2 + 4) + 16))(v2 + 4) ) /*
       }
       else
       {
-        if ( *(unsigned char *)((*(int (__usercall **)@<eax>(unsigned int@<ecx>, double@<st0>))(**&v3->vtable4 + 132))( /*0x54be6d*/
+        if ( *(unsigned char *)((*(int (**)(unsigned int, double))(**&v3->vtable4 + 132))( /*0x54be6d*/
                           v3->vtable4,
                           result)
           + 3434) )
@@ -7569,7 +7569,7 @@ void Gap2Recv_569760::DestroyCliffMap(int a2, int a3, IUnknown * aP3) {
   VectorClass::CellConstructor((VectorClass *)&v81, 0, 0); /*0x5697c5*/
   v7 = g_TerrainSoundTable2; /*0x5697ce*/
   v8 = g_TerrainSoundConfig; /*0x5697d4*/
-  *(unsigned int *)v81.__pad_0 = &vt_DynamicVectorClass_Cell; /*0x5697dd*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_Cell) */  /*0x5697dd*/
   v82 = 10; /*0x5697e5*/
   *(unsigned int *)v81.__tail_10 = 0; /*0x5697f4*/
   for ( i = 1; i < 30; ++i ) /*0x5697fc*/
@@ -7762,7 +7762,7 @@ LABEL_44:
   }
   if ( i == 30 ) /*0x569d93*/
   {
-    *(unsigned int *)v81.__pad_0 = &vt_VectorClass_Cell; /*0x569d99*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x569d99*/
     Buffer::Cleanup(&v81); /*0x569da1*/
   }
   else
@@ -7873,7 +7873,7 @@ LABEL_44:
       Terrain::ConnectivityGraph((Terrain *)this); /*0x56a032*/
     if ( *(unsigned int *)v81.__tail_10 ) /*0x56a03d*/
       LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v81); /*0x56a048*/
-    *(unsigned int *)v81.__pad_0 = &vt_VectorClass_Cell; /*0x56a051*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x56a051*/
     if ( *(unsigned int *)&v81.u16_4 ) /*0x56a05b*/
     {
       if ( BYTE1(v81.m_C) ) /*0x56a063*/
@@ -10253,13 +10253,13 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
 
   v37 = (LayerClass *)this; /*0x585941*/
   VectorClass::CellConstructor((VectorClass *)&v41, 0, 0); /*0x585945*/
-  *(unsigned int *)v41.__pad_0 = &vt_DynamicVectorClass_Cell; /*0x585958*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_Cell) */  /*0x585958*/
   v42 = 10; /*0x58595c*/
   *(unsigned int *)v41.__tail_10 = 0; /*0x585960*/
   Buffer::Cleanup(&v41); /*0x585964*/
   v42 = 100; /*0x58596f*/
   VectorClass::CellConstructor((VectorClass *)&v39, 0, 0); /*0x585977*/
-  *(unsigned int *)v39.__pad_0 = &vt_DynamicVectorClass_Cell; /*0x585980*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_Cell) */  /*0x585980*/
   v40 = 10; /*0x585984*/
   *(unsigned int *)v39.__tail_10 = 0; /*0x585988*/
   Buffer::Cleanup(&v39); /*0x58598c*/
@@ -10415,9 +10415,9 @@ void Gap2Recv_585930::FloodFillConnectedCells(MapClass * aP1, int a3) {
     }
     ++v28; /*0x585cc7*/
   }
-  *(unsigned int *)v39.__pad_0 = &vt_VectorClass_Cell; /*0x585cd9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x585cd9*/
   Buffer::Cleanup(&v39); /*0x585cdd*/
-  *(unsigned int *)v41.__pad_0 = &vt_VectorClass_Cell; /*0x585ce6*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x585ce6*/
   Buffer::Cleanup(&v41); /*0x585cea*/
 
 }
@@ -12085,7 +12085,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   v26[2] = dword_87F8EC - 8; /*0x5948ac*/
   v26[3] = dword_87F8F0 - 8; /*0x5948b0*/
   VectorClass::CellConstructor(&v27, 0, 0); /*0x5948b4*/
-  v27.vfptr = (int)&vt_DynamicVectorClass_Cell; /*0x5948b9*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_Cell) */  /*0x5948b9*/
   v29 = 10; /*0x5948c1*/
   v28 = 0; /*0x5948c9*/
   do /*0x5948f1*/
@@ -12161,13 +12161,13 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
       (**(void (***)(int, int))this->vfptr)(this->vfptr, 1); /*0x594b21*/
     Items = (void *)v27.Items; /*0x594b23*/
     this->vfptr = (int)v9; /*0x594b27*/
-    v27.vfptr = (int)&vt_VectorClass_Cell; /*0x594b2b*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_Cell) */  /*0x594b2b*/
     if ( Items && v27.IsAllocated[0] ) /*0x594b3b*/
       __3_YAXPAX_Z(Items); /*0x594b3e*/
   }
   else
   {
-    v27.vfptr = (int)&vt_VectorClass_Cell; /*0x594a29*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_Cell) */  /*0x594a29*/
     if ( v27.Items ) /*0x594a33*/
     {
       if ( v27.IsAllocated[0] ) /*0x594a3f*/
@@ -12305,7 +12305,7 @@ void* Gap2Recv_597430::Team_Start_597430() {
   {
     WDTTerritoryClass = FindWDTTerritoryClass(v8, *(int *)dword_A8B240); /*0x59746b*/
     ComPtr::Set((ComPtr *)&v6, WDTTerritoryClass->u32_4); /*0x597478*/
-    *(unsigned int *)v8 = &vt_rc_ptr_WDTTerritory; /*0x597481*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WDTTerritory) */  /*0x597481*/
     ComPtr::Release((ComPtr *)v8); /*0x597485*/
   }
   v3 = v7; /*0x59748a*/
@@ -13332,7 +13332,7 @@ void Gap2Recv_5A82E0::ScatterMapSeedBuildings(void* a2) {
   StringVector::Construct(&v36, 0, 0); /*0x5a8368*/
   StringVector_field_0x08 = v36.StringVector_field_0x08; /*0x5a836d*/
   StringVector_field_0x14 = 10; /*0x5a8371*/
-  *(unsigned int *)v36.__pad_0 = &vt_DynamicVectorClass_char; /*0x5a8376*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_char) */  /*0x5a8376*/
   v36.StringVector_field_0x14 = 10; /*0x5a837e*/
   v36.StringVector_field_0x10 = 0; /*0x5a8382*/
   v8 = off_82B1B0; /*0x5a8386*/
@@ -13475,7 +13475,7 @@ LABEL_47:
     }
     while ( v34 < (int)v12 ); /*0x5a86e5*/
   }
-  *(unsigned int *)v36.__pad_0 = &vt_VectorClass_char; /*0x5a86f4*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_char) */  /*0x5a86f4*/
   if ( v36.StringVector_field_0x04 ) /*0x5a86fd*/
   {
     if ( BYTE1(v36.StringVector_field_0x0C) ) /*0x5a8705*/
@@ -13788,7 +13788,7 @@ int Gap2Recv_5B6CD0::Surface_Lock() {
 namespace gamemd { 
 void Gap2Recv_5B6EB0::UI_Setup(void* Format, unsigned int a3, int a4) {
   HWND DlgItem; // edi
-  int (__usercall *v5)(char, char); // esi
+  int (*v5)(char, char); // esi
   wchar_t Buffer[256]; // [esp+8h] [ebp-200h] BYREF
 
   if ( a4 ) /*0x5b6ec1*/
@@ -13799,7 +13799,7 @@ void Gap2Recv_5B6EB0::UI_Setup(void* Format, unsigned int a3, int a4) {
       if ( a3 >= 8 ) /*0x5b6ee1*/
         v5 = Math::InitDegToRad; /*0x5b6ef1*/
       else
-        v5 = (int (__usercall *)(char, char))dword_8316A8[a3]; /*0x5b6ee8*/
+        v5 = (int (*)(char, char))dword_8316A8[a3]; /*0x5b6ee8*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5b6f0a*/
       DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5b6f19*/
     }
@@ -13825,7 +13825,7 @@ int ObjectClass::ReadMPMapsINI(char* Source) {
   GenericNode::Constructor((GenericNode *)v4.sectionHead); /*0x5c132d*/
   GenericNode::Constructor((GenericNode *)&v4.sectionCount); /*0x5c1336*/
   LinkedList::Prepend((LinkedList *)v4.sectionHead, (int)&v4.sectionCount); /*0x5c134c*/
-  v4.headNode[2] = (int)&vt_List; /*0x5c1355*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_List) */  /*0x5c1355*/
   memset(&v4.needsSave_flag, 0, 13); /*0x5c1363*/
   v4.unknown38 = 0; /*0x5c1373*/
   v4.INIClass_field_3C = 0; /*0x5c1377*/
@@ -14253,14 +14253,14 @@ this->M48 = 0; /*0x5cee09*/
 this->q034 = 0; /*0x5cee0c*/
 this->M56 = 1; /*0x5cee0f*/
 this->M57 = 0; /*0x5cee13*/
-this->M44 = &vt_DynamicVectorClass; /*0x5cee16*/
+/* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x5cee16*/
 this->M64 = 10; /*0x5cee1c*/
 this->M60 = 0; /*0x5cee1f*/
 this->u32_48 = 0; /*0x5cee22*/
 this->M76 = 0; /*0x5cee25*/
 this->M20 = 1; /*0x5cee28*/
 this->M81 = 0; /*0x5cee2c*/
-this->q044 = &vt_DynamicVectorClass; /*0x5cee2f*/
+/* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x5cee2f*/
 this->M88 = 10; /*0x5cee36*/
 this->q054 = 0; /*0x5cee39*/
 (*(void (**)(DynamicVector *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5cee3e*/
@@ -15231,7 +15231,7 @@ if ( *(int *)&((unsigned int *)&stru_A8EB00)[408] > 1 ) /*0x5fd2f3*/
     OverlayClass::updateOverlayState((OverlayClass *)&v27.Buffer_field_10, 640, 400); /*0x5fd30b*/
     v27.Buffer_field_20 = 2; /*0x5fd314*/
     Buffer::Init((Buffer *)&v27.Buffer_field_24, 0, 512000); /*0x5fd323*/
-    v27.Buffer_field_10 = (int)&BSurface_Vtable; /*0x5fd32c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS BSurface_Vtable) */  /*0x5fd32c*/
     XSurface::Fill((XSurface *)&v27.Buffer_field_10, 0); /*0x5fd336*/
     Buffer_field_14 = v27.Buffer_field_14; /*0x5fd33f*/
     Buffer_field_18 = v27.Buffer_field_18; /*0x5fd347*/
@@ -18845,10 +18845,10 @@ void* Gap2Recv_6547C0::GenerateImageThumbnail(RadarClass * aP1, RadarClass * aP2
       v21[2] = v69; /*0x654954*/
       v21[1] = v18; /*0x65495f*/
       v21[3] = 0; /*0x654962*/
-      *v21 = (unsigned int)&XSurface_Vtable; /*0x654969*/
+      /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x654969*/
       v21[4] = 2; /*0x65496f*/
       Buffer::Init((Buffer *)(v21 + 5), 0, 2 * v18 * v69); /*0x654976*/
-      *v21 = (unsigned int)&BSurface_Vtable; /*0x65497b*/
+      /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x65497b*/
     }
     else
     {
@@ -19538,7 +19538,7 @@ void* Gap2Recv_65A1B0::Render_Render_65A1B0(BuildingTypeClass * aP1) {
 namespace gamemd { 
 void* Gap2Recv_65A7E0::Helper_65A7E0(TechnoClass * aP1) {
   ObjectClass::Init((ObjectClass *)this, aP1); /*0x65a7e8*/
-  this->radioLinks[0] = (int)&vt_VectorClass; /*0x65a7ed*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x65a7ed*/
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7f7) */
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7fd) */
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a804) */
@@ -20699,10 +20699,10 @@ int RulesClass::ResetRules() {
     GenericNode::Constructor((MixFileClass *)v19.sectionHead); /*0x668a86*/
     GenericNode::Constructor((MixFileClass *)&v19.sectionCount); /*0x668a8f*/
     LinkedList::Prepend((LinkedList *)v19.sectionHead, (int)&v19.sectionCount); /*0x668aa5*/
-    v19.headNode[2] = (int)&vt_List_INIClass_INISection; /*0x668ab6*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_List_INIClass_INISection) */  /*0x668ab6*/
     memset(&v19.needsSave_flag, 0, 13); /*0x668abe*/
     memset(&v19.unknown38, 0, 9); /*0x668acf*/
-    *(unsigned int *)v19.__pad_0 = &CCINIClass_Vtable; /*0x668adc*/
+    /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x668adc*/
     if ( CCINIClass::Load(&v19, (int)&v20, 1, 0) > 1 ) /*0x668aec*/
     {
       HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x668af2*/
@@ -20739,7 +20739,7 @@ int RulesClass::ResetRules() {
     RulesClass::Addition(v17); /*0x668baa*/
   }
 LABEL_99:
-  *(unsigned int *)v20.__tail_0 = &vt_CCFileClass; /*0x668baf*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x668baf*/
   v22 = 0; /*0x668bbe*/
   Vector::Clear((int)v21); /*0x668bc5*/
   *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x668bce*/
@@ -22161,14 +22161,14 @@ int Gap2Recv_681080::Map_Save_681080(int a2) {
 namespace gamemd { 
 void* Gap2Recv_6810A0::Map_Save_6810A0(void* Source) {
   this->M262 = 0; /*0x6810a4*/
-  return wcsncpythis->vtable3, Source, 0x7Fu); /*0x6810bc*/
+  return wcsncpy(this->vtable3, Source, 0x7Fu); /*0x6810bc*/
 }
 }
 // 0x6810D0
 namespace gamemd { 
 void* Gap2Recv_6810D0::Map_Save_6810D0(void* Source) {
   this->M390 = 0; /*0x6810d4*/
-  return wcsncpythis->hasParachute, Source, 0x3Fu); /*0x6810ef*/
+  return wcsncpy(this->hasParachute, Source, 0x3Fu); /*0x6810ef*/
 }
 }
 // 0x681110
@@ -22838,7 +22838,7 @@ LABEL_27:
                 *((unsigned char *)v25 + 36) = 0; /*0x68fef0*/
                 v25[6] = v23; /*0x68fef7*/
                 v25[10] = v35; /*0x68fefa*/
-                *v25 = &vt_ScorePrintClass; /*0x68fefd*/
+                /* X11: vtable install elided (X67 star-deref, RHS vt_ScorePrintClass) */  /*0x68fefd*/
                 v26 = (unsigned int)v25; /*0x68ff03*/
               }
               else
@@ -23042,7 +23042,7 @@ int Gap2Recv_692290::SmallFunc_692290() {
   this->M21850 = 0; /*0x6922b8*/
   this->M21849 = 1; /*0x6922be*/
   /* X11: vtable install elided (implicit via ScrollClass virtuals 0x6922c5) */
-  this->u32_5518 = &vt_ScrollClass; /*0x6922cb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ScrollClass) */  /*0x6922cb*/
   return this; /*0x6922d7*/
 }
 }
@@ -23392,7 +23392,7 @@ char Gap2Recv_695BC0::ApplyModemConfigSettings() {
       (*(this->abstractFlags + (sizeof(this->abstractFlags) - 1))) = 0; /*0x695df9*/
       v22 = strchr((const char *)&this->vfptr2, 45); /*0x695dfd*/
       if ( v22 ) /*0x695e07*/
-        strcpythis->lineTrailer, v22 + 1); /*0x695e24*/
+        strcpy(this->lineTrailer, v22 + 1); /*0x695e24*/
     }
   }
   vtable0 = (HWND)this->vfptr; /*0x695e3b*/
@@ -23590,7 +23590,7 @@ int Gap2Recv_6967B0::DlgProcLoadGame_Load() {
     SendMessageA(v4, 0x4B5u, 0x40u, (LPARAM)&this->vfptr2); /*0x696809*/
     (*(this->customSound + (sizeof(this->ambientSoundController[2]) - 1))) = 0; /*0x69680d*/
     String::Trim(&this->vtable3); /*0x696811*/
-    _struprthis->vtable3); /*0x696817*/
+    _strupr(this->vtable3); /*0x696817*/
     if ( !_strcmpithis->vtable3, a3f8) ) /*0x69682c*/
     {
   LABEL_17:
@@ -25158,7 +25158,7 @@ int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
   if ( !v8 ) /*0x6c9fe8*/
     return 0; /*0x6c9fe8*/
   Render_Parse_6CABA0(0, 0); /*0x6c9ff4*/
-  *v8 = &vt_DynamicVectorClass; /*0x6c9ff9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x6c9ff9*/
   v8->u32_14 = 10; /*0x6c9fff*/
   v8->q010 = 0; /*0x6ca006*/
   while ( 1 ) /*0x6ca0e2*/
@@ -25296,7 +25296,7 @@ void Gap2Recv_6CF1D0::SmallFunc_6CF1D0() {
   /* X11: vtable install elided (implicit via SwizzleManagerClass virtuals 0x6cf1d4) */
   SwizzleManagerClass::ConvertNodes((int)this); /*0x6cf1da*/
   SwizzleManagerClass_field_0x20 = (void *)this->M32; /*0x6cf1df*/
-  this->M28 = (int)&vt_VectorClass; /*0x6cf1e6*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6cf1e6*/
   if ( SwizzleManagerClass_field_0x20 && this->M41 ) /*0x6cf1ef*/
   {
     operator delete((void *)(SwizzleManagerClass_field_0x20)); /*0x6cf1f5*/
@@ -25305,7 +25305,7 @@ void Gap2Recv_6CF1D0::SmallFunc_6CF1D0() {
   this->M41 = 0; /*0x6cf200*/
   this->q024 = 0; /*0x6cf203*/
   SwizzleManagerClass_field_0x08 = (void *)this->M8; /*0x6cf206*/
-  this->M4 = (int)&vt_VectorClass; /*0x6cf209*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6cf209*/
   if ( SwizzleManagerClass_field_0x08 && (this->M17) ) /*0x6cf214*/
   {
     operator delete((void *)(SwizzleManagerClass_field_0x08)); /*0x6cf21a*/
@@ -29382,7 +29382,7 @@ int Gap2Recv_729580::FindUnitPlacementTarget() {
     v28 = *((unsigned int *)vtable3 + 41); /*0x729612*/
     v9 = *(unsigned int *)vtable3; /*0x729616*/
     v10 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27); /*0x72961d*/
-    if ( (*(int (__usercall **)(void *, CellClass *, int, int, unsigned int, int, double))(v9 + 428))( /*0x72965b*/
+    if ( (*(int (**)(void *, CellClass *, int, int, unsigned int, int, double))(v9 + 428))( /*0x72965b*/
            this->vfptr3,
            v10,
            -1,
@@ -31827,7 +31827,7 @@ void* Gap2Recv_765380::FindWDTTerritoryClass_Find(void* a2, int a3) {
   v4 = v7; /*0x7653ea*/
   a2[1] = v6; /*0x7653ef*/
   a2[2] = v4; /*0x7653f2*/
-  *a2 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x7653f5*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict) */  /*0x7653f5*/
   return a2; /*0x7653ee*/
 
 }
@@ -31915,7 +31915,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
         do /*0x765d29*/
         {
           ComPtr::Constructor(v9); /*0x765d1a*/
-          *(unsigned int *)v9->__pad_000 = &vt_rc_ptr; /*0x765d1f*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x765d1f*/
           v9 = (ComPtr *)((char *)v9 + 8); /*0x765d25*/
           --v3; /*0x765d28*/
         }
@@ -31940,7 +31940,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
     do /*0x765ce5*/
     {
       ComPtr::Constructor(v5); /*0x765cd6*/
-      *(unsigned int *)v5->__pad_000 = &vt_rc_ptr; /*0x765cdb*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x765cdb*/
       v5 = (ComPtr *)((char *)v5 + 8); /*0x765ce1*/
       --v3; /*0x765ce4*/
     }
@@ -32155,7 +32155,7 @@ namespace gamemd {
 void* Gap2Recv_768000::ConstructWDTSelection_Create_767FB0_Create(int a2, int a3, ReferenceCounted * aP3) {
   this->M12 = a3; /*0x768013*/
   this->M4 = 0; /*0x76801e*/
-  *this = (ReferenceCounted)&vt_ReferenceCounted; /*0x768021*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ReferenceCounted) */  /*0x768021*/
   this->M8 = a2; /*0x768027*/
   this->aP3 = aP3; /*0x76802a*/
   this->M20 = 0; /*0x76802d*/
@@ -32165,7 +32165,7 @@ void* Gap2Recv_768000::ConstructWDTSelection_Create_767FB0_Create(int a2, int a3
   this->M24 = 0; /*0x768039*/
   String::Assign(&this->M20, &g_INI_DefaultBuffer); /*0x76803c*/
   ConstructWDTSelection_Create_767FB0_Create_Create(&this->ObjectClass_B, 0, 0); /*0x768048*/
-  this->M44 = &vt_DynamicVectorClassrc_ptr; /*0x768052*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClassrc_ptr) */  /*0x768052*/
   this->q040 = 10; /*0x768058*/
   this->M60 = 0; /*0x76805b*/
   this->AbstractClass_44 = 0; /*0x76805e*/
@@ -32180,10 +32180,10 @@ void* Gap2Recv_768000::ConstructWDTSelection_Create_767FB0_Create(int a2, int a3
   this->M196 = 0; /*0x76807c*/
   this->M200 = 1; /*0x768082*/
   this->M201 = 0; /*0x768089*/
-  this->M188 = &vt_DynamicVectorClass; /*0x76808f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x76808f*/
   this->M208 = 10; /*0x768099*/
   this->pad21 = 0; /*0x76809f*/
-  *this = (ReferenceCounted)&vt_WorldDominationTourMap; /*0x7680a5*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTourMap) */  /*0x7680a5*/
   return this; /*0x7680ad*/
 }
 }
@@ -32268,7 +32268,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
         do /*0x76a879*/
         {
           ComPtr::Constructor(v9); /*0x76a86a*/
-          *(unsigned int *)v9->__pad_000 = &vt_rc_ptr; /*0x76a86f*/
+          /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x76a86f*/
           v9 = (ComPtr *)((char *)v9 + 8); /*0x76a875*/
           --v3; /*0x76a878*/
         }
@@ -32293,7 +32293,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
     do /*0x76a835*/
     {
       ComPtr::Constructor(v5); /*0x76a826*/
-      *(unsigned int *)v5->__pad_000 = &vt_rc_ptr; /*0x76a82b*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x76a82b*/
       v5 = (ComPtr *)((char *)v5 + 8); /*0x76a831*/
       --v3; /*0x76a834*/
     }
@@ -32691,7 +32691,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
   this->M4 = 0; /*0x76bf08*/
   /* X11: vtable install elided (implicit via ReferenceCounted virtuals 0x76bf11) */
   ComPtr::Constructor(&this->u32_8); /*0x76bf17*/
-  *v3 = &vt_rc_ptr; /*0x76bf20*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x76bf20*/
   ComPtr::Set(v3, a2->vtable2); /*0x76bf2c*/
   v4 = a2->vtable2; /*0x76bf31*/
   if ( v4 ) /*0x76bf3d*/
@@ -32699,7 +32699,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
   else
     v5 = aWdtDefaultshor; /*0x76bf48*/
   StringCSF = GetStringCSF(v5, 0, aDRa2mdpostWdtp, 20); /*0x76bf4d*/
-  WideString::Assignthis->u32_4, StringCSF); /*0x76bf56*/
+  WideString::Assign(this->u32_4, StringCSF); /*0x76bf56*/
   v7 = a2->vtable2; /*0x76bf5b*/
   if ( v7 ) /*0x76bf67*/
     v8 = v7->vtable4; /*0x76bf69*/
@@ -32748,10 +32748,10 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
 
   MSEngine::Construct((MSEngine *)this); /*0x76c29c*/
   ComPtr::Constructor(&this->ptr_48); /*0x76c2a6*/
-  this->ptr_48 = &vt_rc_ptr; /*0x76c2b2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76c2b2*/
   ComPtr::Set(&this->ptr_48, *(unsigned int *)(arg0 + 4)); /*0x76c2be*/
   ComPtr::Constructor(&this->ptr_50); /*0x76c2c8*/
-  this->ptr_50 = &vt_rc_ptr; /*0x76c2cd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76c2cd*/
   this->ObjectClass_58.ProcessPacket(*(unsigned int *)(*(unsigned int *)(arg0 + 4) + 68)); /*0x76c2dd*/
   this->q444 = 0; /*0x76c2e7*/
   this->q448 = -1; /*0x76c2ed*/
@@ -32764,7 +32764,7 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   ConstructWDTSelection_Create_767FB0(&this->u32_458, _76BFC0, arg4, v20); /*0x76c334*/
   this->q460 = -1; /*0x76c339*/
   ComPtr::Constructor(&this->ComPtr_464); /*0x76c347*/
-  this->ComPtr_464 = &vt_rc_ptr; /*0x76c34c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76c34c*/
   this->u32_46C = 0; /*0x76c355*/
   this->ptr_470 = 0; /*0x76c35b*/
   this->ptr_474 = 0; /*0x76c361*/
@@ -32780,7 +32780,7 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   ConstructWDTSelection_Create_76F500(&this->u32_488); /*0x76c3a1*/
   String::Assign(&this->String_490, 0); /*0x76c3ad*/
   ConstructWDTSelection_Create_76F210(&this->VectorClass_494, 0, 0); /*0x76c3bc*/
-  this->VectorClass_494 = &vt_DynamicVectorClass; /*0x76c3c1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x76c3c1*/
   this->AudioBuffer_14 = 10; /*0x76c3c8*/
   this->u32_10 = 0; /*0x76c3cf*/
   /* X11: vtable install elided (implicit via WorldDominationTourSelection virtuals 0x76c3d2) */
@@ -32795,11 +32795,11 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   v21.referenceCount = 0; /*0x76c46d*/
   v21.NeedsSaveOrLink = 0; /*0x76c471*/
   GenericList::Constructor((GenericList *)&v21.occupant); /*0x76c475*/
-  v21.occupant = (int)&vt_List; /*0x76c484*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_List) */  /*0x76c484*/
   memset(&v21.ambientSoundController[1], 0, 13); /*0x76c48c*/
   v21.customSound_controller[0] = 0; /*0x76c49c*/
   v21.customSound_controller[1] = 0; /*0x76c4a0*/
-  v21.nextArrayIndex = (int)&vt_INIClass; /*0x76c4a4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_INIClass) */  /*0x76c4a4*/
   FileStraw::Open((FileStraw *)&v21.nextArrayIndex, (int)&v21.customSound_controller[2], 0); /*0x76c4ac*/
   String::Assign((String *)&v21, aVoiceovers); /*0x76c4ba*/
   ConstructWDTSelection_Create_76C970(this, &v21.nextArrayIndex, (int)&v21); /*0x76c4cb*/
@@ -32851,7 +32851,7 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   DeleteAndZero::Alt((DeleteAndZero *)&v21.uniqueId); /*0x76c680*/
   DeleteAndZero((ObjectClass *)&v21.vfptr2); /*0x76c689*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v21.nextArrayIndex); /*0x76c692*/
-  v21.customSound_controller[2] = (int)&vt_CCFileClass; /*0x76c69e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x76c69e*/
   v23 = 0; /*0x76c6a6*/
   Vector::Clear((int)v22); /*0x76c6ad*/
   v21.customSound_controller[2] = (int)&off_7E1668; /*0x76c6b6*/
@@ -32906,7 +32906,7 @@ void Gap2Recv_76C6E0::SelectionInitializeWOL() {
   }
   *(unsigned int *)&v13.m_1[3] = &this->ptr_4942; /*0x76c82a*/
   v14 = 0; /*0x76c82e*/
-  *(unsigned int *)v13.__pad_0 = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76c836*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorCursorMSSfxEntryDynamicVectorClass) */  /*0x76c836*/
   if ( Vector::HasCapacity(&v13) ) /*0x76c83e*/
   {
     do /*0x76c87d*/
@@ -32942,19 +32942,19 @@ void Gap2Recv_76C6E0::SelectionInitializeWOL() {
   if ( v11 ) /*0x76c8d0*/
     (**v11)(v11, 1); /*0x76c8d6*/
   Property::Set((Property *)g_FogOfWarState, this->u32_4AC); /*0x76c8e6*/
-  this->ptr_494 = &vt_VectorClass; /*0x76c8ed*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x76c8ed*/
   VectorClass_ptr_MSSfxEntry::Remove(&this->ptr_494); /*0x76c8f3*/
   DeleteAndZero(&this->ObjectClass_490); /*0x76c8fe*/
-  this->u32_488 = &vt_rc_ptr; /*0x76c909*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76c909*/
   ComPtr::Release(&this->u32_488); /*0x76c90f*/
-  this->q464 = &vt_rc_ptr; /*0x76c916*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76c916*/
   ComPtr::Release(&this->q464); /*0x76c91d*/
-  this->u32_458 = &vt_rc_ptr; /*0x76c928*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76c928*/
   ComPtr::Release(&this->u32_458); /*0x76c92e*/
   System_Init_770430(&this->ObjectClass_58); /*0x76c936*/
-  this->q050 = &vt_rc_ptr; /*0x76c93e*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76c93e*/
   ComPtr::Release(&this->q050); /*0x76c944*/
-  this->u32_48 = &vt_rc_ptr; /*0x76c94c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76c94c*/
   ComPtr::Release(&this->u32_48); /*0x76c952*/
   return MSEngine::Destruct((MSEngine *)this); /*0x76c95e*/
 }
@@ -33257,7 +33257,7 @@ void* Gap2Recv_76CDA0::ShowWDTTerritorySelection(void* a2) {
             this->currentTargets[2] = -1; /*0x76d040*/
             MSFrameAnim::drawFrame((MSFrameAnim *)v28); /*0x76d04a*/
             TerritorySelectWDT(this, (int)v28); /*0x76d056*/
-            *(unsigned int *)v28 = &vt_rc_ptr; /*0x76d05f*/
+            /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x76d05f*/
             ComPtr::Release((ComPtr *)v28); /*0x76d067*/
           }
         }
@@ -33380,7 +33380,7 @@ bool Gap2Recv_76DAD0::TerritorySelectWDT(ObjectClass * aP1) {
       WideString::Assign((WideString *)&aP1, StringCSF); /*0x76db96*/
       ScoreText::Show((ScoreText *)this, (const wchar_t **)&aP1); /*0x76dba2*/
       DeleteAndZero::Alt((DeleteAndZero *)&aP1); /*0x76dbab*/
-      TerritorySelectWDT_Deletethis->spawnStatus, 1, 0, 30); /*0x76dbb9*/
+      TerritorySelectWDT_Delete(this->spawnStatus, 1, 0, 30); /*0x76dbb9*/
       return v5; /*0x76dbc7*/
     }
     v5 = 0; /*0x76dbce*/
@@ -33436,7 +33436,7 @@ bool Gap2Recv_76DAD0::TerritorySelectWDT(ObjectClass * aP1) {
       v19 = this->ambientSoundController[4] + 24; /*0x76dd25*/
       v32 = 0; /*0x76dd28*/
       v31.u32_8 = v19; /*0x76dd30*/
-      v31.q004 = (int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76dd34*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr) */  /*0x76dd34*/
       if ( Campaign_WorldDominationTour_24::AddRef((_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour *)&v31.q004) ) /*0x76dd3c*/
       {
         do /*0x76dd7b*/
@@ -33505,7 +33505,7 @@ void Gap2Recv_76E180::ShowWDTTerritorySelection_Show() {
     {
       v6 = 0; /*0x76e1c8*/
       v5.u32_8 = (int)&this->turretRotateSoundController[3]; /*0x76e1d0*/
-      v5.q004 = (int)&vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76e1d8*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorCursorMSSfxEntryDynamicVectorClass) */  /*0x76e1d8*/
       if ( Vector::HasCapacity((_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *)&v5.q004) ) /*0x76e1e0*/
       {
         do /*0x76e219*/
@@ -33575,7 +33575,7 @@ char* Gap2Recv_76E2F0::Team_Start_76E2F0(int a2) {
   v11 = (char)v12[0]; /*0x76e3f1*/
   v9 = ActivateScreenWDT((int)v12, (int)v6); /*0x76e3ff*/
   Trigger::ProcessMapEvents(this, v6, v9, 1, v11); /*0x76e407*/
-  *(unsigned int *)v12 = &vt_rc_ptr; /*0x76e410*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x76e410*/
   ComPtr::Release((ComPtr *)v12); /*0x76e418*/
   return sub_765000(this->deployAnim, v4); /*0x76e426*/
 }
@@ -33668,7 +33668,7 @@ void* Gap2Recv_76E750::Team_Start_76E750(ScoreScreen * aP1) {
       }
     }
   }
-  v9.q004 = (int)&vt_rc_ptr; /*0x76e88c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr) */  /*0x76e88c*/
   return ComPtr::Release((ComPtr *)&v9.q004); /*0x76e899*/
 }
 }
@@ -33811,11 +33811,11 @@ void* Gap2Recv_76F500::ConstructWDTSelection_Create_76F500() {
   {
     v4 = (unsigned int *)(v2 + 8); /*0x76f515*/
     *(unsigned int *)(v2 + 4) = 0; /*0x76f51a*/
-    *(unsigned int *)v2 = &vt_ReferenceCounted; /*0x76f521*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_ReferenceCounted) */  /*0x76f521*/
     ComPtr::Constructor((ComPtr *)(v2 + 8)); /*0x76f527*/
-    *v4 = &vt_rc_ptr; /*0x76f52c*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x76f52c*/
     v3->u32_10 = 0; /*0x76f532*/
-    *v3 = &vt_WorldDominationTour_State; /*0x76f539*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_State) */  /*0x76f539*/
   }
   else
   {
@@ -33878,7 +33878,7 @@ void Gap2Recv_770430::System_Init_770430() {
   if ( v2 ) /*0x77047d*/
     AudioSample::Destructor(v2); /*0x77047f*/
   v3 = (int *)this->targetLaserTimer[2]; /*0x770484*/
-  this->targetLaserTimer[1] = (int)&vt_VectorClass; /*0x77048a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x77048a*/
   if ( v3 && this->isSinking[0] ) /*0x770498*/
   {
     v4 = v3 - 1; /*0x7704a7*/
@@ -33894,7 +33894,7 @@ void Gap2Recv_770430::System_Init_770430() {
   {
     v7 = (void *)*(v5 - 5); /*0x7704df*/
     v5 -= 6; /*0x7704e2*/
-    *v5 = (int)&vt_VectorClass; /*0x7704e7*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x7704e7*/
     if ( v7 && *((unsigned char *)v5 + 13) ) /*0x7704ef*/
     {
       operator delete((void *)(v7)); /*0x7704f5*/
@@ -34011,7 +34011,7 @@ void* Gap2Recv_771800::ConstructWDTSelection_Create_771800() {
   *(unsigned int *)(v2 + 16) = TimerGetTicks(); /*0x771828*/
   v3[6] = 0; /*0x77182b*/
   v3[7] = this; /*0x77182e*/
-  *v3 = &vt_WorldDominationTour_Voices_Anim; /*0x771831*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_WorldDominationTour_Voices_Anim) */  /*0x771831*/
   return v3; /*0x771839*/
 }
 }
@@ -34073,13 +34073,13 @@ void* Gap2Recv_778710::LoadAccountInfoWOL() {
     v11.NeedsSaveOrLink = 0; /*0x7787a5*/
     GenericNode::Constructor((GenericNode *)&v11.owningHouseIndex); /*0x7787a9*/
     GenericNode::Constructor((GenericNode *)&v11.attachedTag); /*0x7787b2*/
-    v11.occupant = (int)&vt_GenericList; /*0x7787c0*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x7787c0*/
     LinkedList::Prepend((LinkedList *)&v11.owningHouseIndex, (int)&v11.attachedTag); /*0x7787c8*/
-    v11.occupant = (int)&vt_List; /*0x7787d1*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_List) */  /*0x7787d1*/
     memset(&v11.ambientSoundController[1], 0, 13); /*0x7787df*/
     v11.customSound_controller[0] = 0; /*0x7787ef*/
     v11.customSound_controller[1] = 0; /*0x7787f3*/
-    v11.nextArrayIndex = (int)&vt_INIClass; /*0x7787f7*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_INIClass) */  /*0x7787f7*/
     FileStraw::Open((FileStraw *)&v11.nextArrayIndex, (int)&v11.customSound_controller[2], 0); /*0x7787ff*/
     CCFileClass::Close((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x778808*/
     v4 = (uint8_t *)String::GetOrEmpty_Alt((String *)&stru_B73590); /*0x778812*/
@@ -34148,7 +34148,7 @@ void* Gap2Recv_778710::LoadAccountInfoWOL() {
     AccountInfoWOL_Load = 0; /*0x7789c0*/
   abstractFlags = (ComPtr *)v11.abstractFlags; /*0x7789c2*/
   ComPtr::Constructor((ComPtr *)v11.abstractFlags); /*0x7789c8*/
-  *(unsigned int *)abstractFlags->__pad_000 = &vt_rc_ptr; /*0x7789cf*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7789cf*/
   ComPtr::Set(abstractFlags, (int)AccountInfoWOL_Load); /*0x7789d6*/
   v11.customSound_controller[2] = (int)&off_7E1668; /*0x7789df*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x7789e7*/
@@ -34164,7 +34164,7 @@ namespace gamemd {
 void* ReferenceCounted::LoadAccountInfoWOL_Load( ReferenceCounted * aP1, ObjectClass * aP2, ReferenceCounted * aP3, ReferenceCounted * aP4, int a6, ObjectClass * aP6, ReferenceCounted * aP7, ReferenceCounted * aP8, ReferenceCounted * aP9, ReferenceCounted * aP10, ReferenceCounted * aP11, ReferenceCounted * aP12, ReferenceCounted * aP13, ReferenceCounted * aP14) {
   this->vtable2 = 0; /*0x779695*/
   this->vtable3 = 0; /*0x779698*/
-  *this = (ReferenceCounted)&vt_ReferenceCounted; /*0x7796a3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ReferenceCounted) */  /*0x7796a3*/
   String::AssignFromPtr(&this->String_3, aP1); /*0x7796a9*/
   this->uniqueId = aP2; /*0x7796ba*/
   this->nextArrayIndex = aP4; /*0x7796c1*/
@@ -34177,9 +34177,9 @@ void* ReferenceCounted::LoadAccountInfoWOL_Load( ReferenceCounted * aP1, ObjectC
   this->fallRate = aP9; /*0x7796f2*/
   this->attachedTag = aP11; /*0x7796f9*/
   this->attachedBomb = aP12; /*0x779700*/
-  WideString::AssignFromPtrthis->u32_3C, aP14); /*0x779703*/
-  WideString::AssignFromPtrthis->u32_40, aP13); /*0x779710*/
-  *this = (ReferenceCounted)&vt_PlayerProfile; /*0x779715*/
+  WideString::AssignFromPtr(this->u32_3C, aP14); /*0x779703*/
+  WideString::AssignFromPtr(this->u32_40, aP13); /*0x779710*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_PlayerProfile) */  /*0x779715*/
   return this; /*0x77971d*/
 }
 }
@@ -34194,8 +34194,8 @@ char* Gap2Recv_779B50::ReadAutoLoginWOL() {
   BufferIOFile::Constructor(&v6, g_Str_File_wolinfoMD_ini); /*0x779b63*/
   if ( (uint8_t)File::IsReady((BufferIOFileClass *)&v6, 0) ) /*0x779b6f*/
   {
-    v5.sectionHead[0] = (int)&vt_GenericNode; /*0x779b8e*/
-    v5.sectionCount = (int)&vt_GenericNode; /*0x779b92*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x779b8e*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x779b92*/
     v5.headNode[0] = 0; /*0x779b9a*/
     v5.headNode[1] = 0; /*0x779b9f*/
     v5.sectionHead[1] = 0; /*0x779ba3*/
@@ -34203,7 +34203,7 @@ char* Gap2Recv_779B50::ReadAutoLoginWOL() {
     *(unsigned int *)v5.__pad_020 = 0; /*0x779bab*/
     *(unsigned int *)&v5.unknown30 = 0; /*0x779baf*/
     LinkedList::Prepend((LinkedList *)v5.sectionHead, (int)&v5.sectionCount); /*0x779bbb*/
-    v5.headNode[2] = (int)&vt_List; /*0x779bc4*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_List) */  /*0x779bc4*/
     memset(&v5.needsSave_flag, 0, 13); /*0x779bd2*/
     v5.unknown38 = 0; /*0x779be2*/
     v5.INIClass_field_3C = 0; /*0x779be6*/
@@ -34243,8 +34243,8 @@ int Gap2Recv_779C90::ReadSettingsWOL() {
     CCFileClass::Close((BufferIOFileClass *)&v5); /*0x779cc5*/
     CCFileClass::Reopen((CDFileClass *)&v5, g_Str_File_wolinfoMD_ini, (CHAR *)1); /*0x779cd5*/
   }
-  v4.sectionHead[0] = (int)&vt_GenericNode; /*0x779ce3*/
-  v4.sectionCount = (int)&vt_GenericNode; /*0x779ce7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x779ce3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x779ce7*/
   v4.headNode[0] = 0; /*0x779cef*/
   v4.headNode[1] = 0; /*0x779cf4*/
   v4.sectionHead[1] = 0; /*0x779cf8*/
@@ -34252,7 +34252,7 @@ int Gap2Recv_779C90::ReadSettingsWOL() {
   *(unsigned int *)v4.needsSave = 0; /*0x779d00*/
   *(unsigned int *)&v4.unknown30 = 0; /*0x779d04*/
   LinkedList::Prepend((LinkedList *)v4.sectionHead, (int)&v4.sectionCount); /*0x779d10*/
-  v4.headNode[2] = (int)&vt_List; /*0x779d19*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_List) */  /*0x779d19*/
   memset(&v4.needsSave_flag, 0, 13); /*0x779d22*/
   v4.unknown38 = 0; /*0x779d32*/
   v4.INIClass_field_3C = 0; /*0x779d36*/
@@ -34283,8 +34283,8 @@ char* Gap2Recv_779DD0::LoadConfigWOL() {
   BufferIOFile::Constructor(&v6, g_Str_File_wolinfoMD_ini); /*0x779de3*/
   if ( (uint8_t)File::IsReady((BufferIOFileClass *)&v6, 0) ) /*0x779def*/
   {
-    v5.sectionHead[0] = (int)&vt_GenericNode; /*0x779e0e*/
-    v5.sectionCount = (int)&vt_GenericNode; /*0x779e12*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x779e0e*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x779e12*/
     v5.headNode[0] = 0; /*0x779e1a*/
     v5.headNode[1] = 0; /*0x779e1f*/
     v5.sectionHead[1] = 0; /*0x779e23*/
@@ -34292,7 +34292,7 @@ char* Gap2Recv_779DD0::LoadConfigWOL() {
     *(unsigned int *)v5.__pad_020 = 0; /*0x779e2b*/
     *(unsigned int *)&v5.unknown30 = 0; /*0x779e2f*/
     LinkedList::Prepend((LinkedList *)v5.sectionHead, (int)&v5.sectionCount); /*0x779e3b*/
-    v5.headNode[2] = (int)&vt_List; /*0x779e44*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_List) */  /*0x779e44*/
     memset(&v5.needsSave_flag, 0, 13); /*0x779e52*/
     v5.unknown38 = 0; /*0x779e62*/
     v5.INIClass_field_3C = 0; /*0x779e66*/

@@ -178,7 +178,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_1)
   v15 = -1732584194; /*0x4742ad*/
   v16 = 271733878; /*0x4742b5*/
   v17 = -1009589776; /*0x4742bd*/
-  *(unsigned int *)v12.state = &vt_SHAPipe; /*0x4742c5*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_SHAPipe) */  /*0x4742c5*/
   INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
   SHA1::ComputeThunk(&v12, this->__pad_041); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
@@ -208,11 +208,11 @@ CCINIClass::CCINIClass()
   result->__pad_008 = 0; /*0x535b3f*/
   sectionHead->Prev = 0; /*0x535b42*/
   sectionHead->Next = 0; /*0x535b45*/
-  *sectionHead = (int)&vt_GenericNode; /*0x535b48*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x535b48*/
   p_sectionCount[1] = 0; /*0x535b4e*/
   p_sectionCount[2] = 0; /*0x535b51*/
-  *p_sectionCount = (int)&vt_GenericNode; /*0x535b54*/
-  result->u32_C = &vt_GenericList; /*0x535b5d*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x535b54*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericList) */  /*0x535b5d*/
   if ( p_sectionCount ) /*0x535b64*/
   {
     int v4; // ebx
@@ -237,7 +237,7 @@ CCINIClass::CCINIClass()
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = (unsigned int)(p_sectionCount); /*0x535b96*/
   sectionHead->Prev = (int)p_sectionCount; /*0x535b99*/
-  result->u32_C = &vt_List; /*0x535b9c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_List) */  /*0x535b9c*/
   result->needsSave_flag = 0; /*0x535ba4*/
   result->INIClass_field_2C = 0; /*0x535ba7*/
   result->unknown30 = 0; /*0x535baa*/
@@ -245,7 +245,7 @@ CCINIClass::CCINIClass()
   result->unknown38 = 0; /*0x535bb0*/
   result->INIClass_field_3C = 0; /*0x535bb4*/
   result->ownsFile = 0; /*0x535bb7*/
-  *result = (unsigned int)(&CCINIClass_Vtable); /*0x535bba*/
+  /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x535bba*/
   return result; /*0x535ba3*/
 
 }

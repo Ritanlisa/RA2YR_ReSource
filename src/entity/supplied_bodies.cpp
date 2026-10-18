@@ -357,7 +357,7 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
     {
       ObjectClass::Init((ObjectClass *)a2, (int)&a3); /*0x4252a6*/
       __4type_info_AAEAAV0_ABV0__Z(&a2->u32_B4, (int)&a3); /*0x4252b6*/
-      *(unsigned int *)a2 = &vt_AnimClass_4; /*0x4252bb*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_AnimClass_4) */  /*0x4252bb*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AnimClass_4) */  /*0x4252c1*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AnimClass_4) */  /*0x4252c8*/
       a2->vtable4 = &off_7E3328; /*0x4252cf*/
@@ -693,9 +693,9 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   this->q19C = 1; /*0x422009*/
   this->SuperClass_19D = 0; /*0x422010*/
   this->q19E = 0; /*0x422016*/
-  this->AnimClass_field_0x0 = (int)&vt_AnimClass_4; /*0x42201c*/
-  this->AnimClass_field_0x4 = (int)&vt_AnimClass_4; /*0x422022*/
-  this->AnimClass_field_0x8 = (int)&vt_AnimClass_4; /*0x422028*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AnimClass_4) */  /*0x42201c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AnimClass_4) */  /*0x422022*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AnimClass_4) */  /*0x422028*/
   *(unsigned int *)this->__pad_C = &off_7E3328; /*0x422030*/
   this->PaletteName = 0; /*0x422037*/
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x42203d*/
@@ -1275,7 +1275,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
 
 // 0x65BD00
 namespace gamemd {
-int RadSiteClass::RadSiteClass::DecreaseRadiation()
+int RadSiteClass::DecreaseRadiation()
 {
   int v1; // esi
   int v2; // edx

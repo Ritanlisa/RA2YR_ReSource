@@ -184,7 +184,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     VectorClass::Construct(&v22, 0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
     v23 = 0; /*0x525488*/
-    v22.vfptr = (int)&vt_TypeList_int; /*0x52548c*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x52548c*/
     for ( i = (ObjectClass *)strtok(String, Delimiter); i; i = (ObjectClass *)strtok(0, Delimiter) ) /*0x52549e*/
     {
       if ( !LOBYTE(i->vfptr) ) /*0x5254a0*/
@@ -207,13 +207,13 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
       }
     }
     IntVector::Copy((IntVector *)a1, &v22); /*0x525514*/
-    *(unsigned int *)a1 = &vt_TypeList_int; /*0x52551e*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x52551e*/
     v16 = v24; /*0x525528*/
     a1->q010 = v23; /*0x52552c*/
     Items = (void *)v22.Items; /*0x52552f*/
     v18 = v22.Items == 0; /*0x525533*/
     a1->u32_14 = v16; /*0x525535*/
-    v22.vfptr = (int)&vt_VectorClass_int; /*0x525538*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x525538*/
     if ( !v18 && v22.IsAllocated[0] ) /*0x525542*/
     {
       __3_YAXPAX_Z(Items); /*0x525545*/
@@ -232,9 +232,9 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     a1->Capacity = 0; /*0x52558a*/
     a1->IsInitialized = 1; /*0x52558d*/
     a1->IsAllocated = 0; /*0x525591*/
-    *(unsigned int *)a1 = &vt_VectorClass_int; /*0x525594*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x525594*/
     TypeList::Copy((TypeList *)a1, &a5); /*0x525596*/
-    *(unsigned int *)a1 = &vt_TypeList_int; /*0x52559b*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x52559b*/
     a5 = &vt_VectorClass_int; /*0x5255a1*/
     v20 = a10; /*0x5255af*/
     a1->q010 = a9; /*0x5255b6*/
@@ -1453,7 +1453,7 @@ void InitRules()
   struct _WIN32_FIND_DATAA FindFileData; // [esp+1DCh] [ebp-140h] BYREF
 
   RulesClass::InitINIChain((RulesClass *)&dwInitParam, 0, 0); /*0x52cd82*/
-  *(unsigned int *)dwInitParam.__pad_0 = &vt_DynamicVectorClass_CCINIClass; /*0x52cd8e*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_CCINIClass) */  /*0x52cd8e*/
   v18 = 10; /*0x52cd9c*/
   *(unsigned int *)dwInitParam.__tail_10 = 0; /*0x52cda4*/
   v16 = 0; /*0x52cda8*/
@@ -1474,7 +1474,7 @@ void InitRules()
     {
       INIClass::INIClass(v3); /*0x52ce03*/
       v4->ownsFile = 0; /*0x52ce08*/
-      *(unsigned int *)v4->__pad_0 = &CCINIClass_Vtable; /*0x52ce0b*/
+      /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x52ce0b*/
     }
     else
     {
@@ -1517,7 +1517,7 @@ LABEL_15:
       ++*(unsigned int *)dwInitParam.__tail_10; /*0x52ce9b*/
     }
 LABEL_24:
-    *(unsigned int *)v19.__pad_0 = &vt_CCFileClass; /*0x52cee4*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52cee4*/
     v21 = 0; /*0x52cef3*/
     Vector::Clear((int)v20); /*0x52cefa*/
     *(unsigned int *)v19.__pad_0 = &off_7E1668; /*0x52cf03*/
@@ -1535,7 +1535,7 @@ LABEL_27:
     {
       INIClass::INIClass(v7); /*0x52cf58*/
       v8->ownsFile = 0; /*0x52cf5d*/
-      *(unsigned int *)v8->__pad_0 = &CCINIClass_Vtable; /*0x52cf60*/
+      /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x52cf60*/
     }
     else
     {
@@ -1562,7 +1562,7 @@ LABEL_36:
       v9 = *(unsigned int *)dwInitParam.__tail_10; /*0x52cfa9*/
       goto LABEL_36; /*0x52cfa9*/
     }
-    *(unsigned int *)v19.__pad_0 = &vt_CCFileClass; /*0x52cfe1*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52cfe1*/
     v21 = 0; /*0x52cfe5*/
     Vector::Clear((int)v20); /*0x52cfec*/
     *(unsigned int *)v19.__pad_0 = &off_7E1668; /*0x52cffa*/
@@ -1570,7 +1570,7 @@ LABEL_36:
   }
   if ( *(int *)dwInitParam.__tail_10 <= 0 ) /*0x52d013*/
   {
-    *(unsigned int *)dwInitParam.__pad_0 = &vt_VectorClass_CCINIClass; /*0x52d019*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CCINIClass) */  /*0x52d019*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d021*/
     return 0; /*0x52d032*/
   }
@@ -1578,12 +1578,12 @@ LABEL_36:
   if ( !CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[228], (int)&v22, 0, 0) ) /*0x52d053*/
   {
     Debug::Log(); /*0x52d061*/
-    *(unsigned int *)v22.__tail_0 = &vt_CCFileClass; /*0x52d070*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d070*/
     v24 = 0; /*0x52d077*/
     Vector::Clear((int)v23); /*0x52d07e*/
     *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d08a*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d091*/
-    *(unsigned int *)dwInitParam.__pad_0 = &vt_VectorClass_CCINIClass; /*0x52d09a*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CCINIClass) */  /*0x52d09a*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d0a2*/
     return 0; /*0x52d0b3*/
   }
@@ -1627,21 +1627,21 @@ LABEL_36:
   {
     INIClass::INIClass((INIClass *)&v19); /*0x52d24f*/
     v19.ownsFile = 0; /*0x52d25b*/
-    *(unsigned int *)v19.__pad_0 = &CCINIClass_Vtable; /*0x52d267*/
+    /* X11: vtable install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x52d267*/
     if ( CCINIClass::Load(&v19, (int)&v25, 1, 0) > 1 ) /*0x52d277*/
     {
       HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d281*/
-      *(unsigned int *)v25.__tail_0 = &vt_CCFileClass; /*0x52d28d*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d28d*/
       v27 = 0; /*0x52d294*/
       Vector::Clear((int)v26); /*0x52d29b*/
       *(unsigned int *)v25.__tail_0 = &off_7E1668; /*0x52d2a7*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d2ae*/
-      *(unsigned int *)v22.__tail_0 = &vt_CCFileClass; /*0x52d2ba*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d2ba*/
       v24 = 0; /*0x52d2c1*/
       Vector::Clear((int)v23); /*0x52d2c8*/
       *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d2d4*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d2db*/
-      *(unsigned int *)dwInitParam.__pad_0 = &vt_VectorClass_CCINIClass; /*0x52d2e4*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CCINIClass) */  /*0x52d2e4*/
       if ( *(unsigned int *)&dwInitParam.m_1[3] ) /*0x52d2ee*/
       {
         if ( BYTE1(dwInitParam.m_C) ) /*0x52d2f4*/
@@ -1670,22 +1670,22 @@ LABEL_36:
   }
   CCFileClass::Construct(&v28, aAimdIni); /*0x52d363*/
   CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[140], (int)&v28, 1, 0); /*0x52d378*/
-  *(unsigned int *)v28.__tail_0 = &vt_CCFileClass; /*0x52d384*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d384*/
   v29[3] = 0; /*0x52d38b*/
   Vector::Clear((int)v29); /*0x52d392*/
   *(unsigned int *)v28.__tail_0 = &off_7E1668; /*0x52d39e*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v28); /*0x52d3a5*/
-  *(unsigned int *)v25.__tail_0 = &vt_CCFileClass; /*0x52d3b1*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d3b1*/
   v27 = 0; /*0x52d3b8*/
   Vector::Clear((int)v26); /*0x52d3bf*/
   *(unsigned int *)v25.__tail_0 = &off_7E1668; /*0x52d3cb*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v25); /*0x52d3d2*/
-  *(unsigned int *)v22.__tail_0 = &vt_CCFileClass; /*0x52d3de*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x52d3de*/
   v24 = 0; /*0x52d3e5*/
   Vector::Clear((int)v23); /*0x52d3ec*/
   *(unsigned int *)v22.__tail_0 = &off_7E1668; /*0x52d3f8*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d3ff*/
-  *(unsigned int *)dwInitParam.__pad_0 = &vt_VectorClass_CCINIClass; /*0x52d408*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_CCINIClass) */  /*0x52d408*/
   if ( *(unsigned int *)&dwInitParam.m_1[3] && BYTE1(dwInitParam.m_C) ) /*0x52d418*/
     __3_YAXPAX_Z(*(void **)&dwInitParam.m_1[3]); /*0x52d41b*/
   return 1; /*0x52d028*/
@@ -3312,7 +3312,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   void *v7; // [esp-8h] [ebp-10h]
 
   v2 = (void *)this->u32_C; /*0x52aaf4*/
-  *(unsigned int *)this = &vt_INIClass_INIEntry; /*0x52aaf7*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_INIClass_INIEntry) */  /*0x52aaf7*/
   free(v2); /*0x52aafe*/
   v7 = (void *)this->ptr_10; /*0x52ab08*/
   this->u32_C = 0; /*0x52ab09*/
@@ -3332,7 +3332,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   }
   free(this->u32_18); /*0x52ab47*/
   this->u32_18 = 0; /*0x52ab51*/
-  *(unsigned int *)this = &vt_GenericNode; /*0x52ab54*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x52ab54*/
   if ( this ) /*0x52ab5a*/
   {
     v5 = this->u32_4; /*0x52ab5c*/

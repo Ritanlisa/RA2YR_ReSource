@@ -74,8 +74,8 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source, void *a2, voi
   this->Warhead = 0; /*0x74ae59*/
   this->AttachedSystem = 0; /*0x74ae5f*/
   this->IsTiberium = 0; /*0x74ae65*/
-  this->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ae6b*/
-  this->IsTiberium = &vt_VoxelAnimTypeClass; /*0x74ae71*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VoxelAnimTypeClass) */  /*0x74ae6b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VoxelAnimTypeClass) */  /*0x74ae71*/
   /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
   /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae7e) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x74ae85*/
@@ -422,7 +422,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     else
       FileVXL = 0; /*0x74b5d5*/
     v4->MainVoxel = FileVXL; /*0x74b5db*/
-    Destination.Header[0] = (int)&vt_CCFileClass; /*0x74b5e1*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x74b5e1*/
     Destination.MaxFDelta = 0; /*0x74b5e9*/
     Vector::Clear((int)&Destination.MinDelay); /*0x74b5f1*/
     Destination.Header[0] = (int)&off_7E1668; /*0x74b5fa*/
@@ -475,9 +475,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
 {
 
 
-  Block->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ba36*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VoxelAnimTypeClass) */  /*0x74ba36*/
   /* X11: vtable install elided (qmark slot, RHS vt_VoxelAnimTypeClass) */  /*0x74ba3c*/
-  Block->u32_8 = &vt_VoxelAnimTypeClass; /*0x74ba43*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VoxelAnimTypeClass) */  /*0x74ba43*/
   /* X11: vtable install elided (qmark slot, RHS vt_VoxelAnimTypeClass) */  /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x74ba51*/
   VoxelAnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF

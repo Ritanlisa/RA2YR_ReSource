@@ -27,10 +27,10 @@ namespace gamemd {
 EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
 {
   
-  *(unsigned int *)a3->__pad_0 = &vt_EMPulseClass; /*0x4c5ac4*/
-  a3->EMPulseClass_field_0x04 = (int)&vt_EMPulseClass; /*0x4c5aca*/
-  a3->EMPulseClass_field_0x08 = (int)&vt_EMPulseClass; /*0x4c5ad1*/
-  a3->EMPulseClass_field_0x0C = (int)&vt_EMPulseClass; /*0x4c5ad8*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_EMPulseClass) */  /*0x4c5ac4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_EMPulseClass) */  /*0x4c5aca*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_EMPulseClass) */  /*0x4c5ad1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_EMPulseClass) */  /*0x4c5ad8*/
   if ( byte_A8E9A0 ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
   AbstractClass::AnnounceExpiredPointer((void **)a3, 1); /*0x4c5af1*/

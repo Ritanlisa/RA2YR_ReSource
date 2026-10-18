@@ -269,47 +269,47 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->abstractFlags = 10; /*0x4f54d5*/
   this->uniqueId = 0; /*0x4f54d8*/
   VectorClass::BuildingConstructor(&this->abstractFlags, 0, 0); /*0x4f54e2*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f54e7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f54e7*/
   this->abstractFlags = 10; /*0x4f54ed*/
   this->uniqueId = 0; /*0x4f54f0*/
   VectorClass::BuildingConstructor(&this->q01A, 0, 0); /*0x4f54fa*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f54ff*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f54ff*/
   this->abstractFlags = 10; /*0x4f5505*/
   this->uniqueId = 0; /*0x4f5508*/
   VectorClass::BuildingConstructor(&this->NeedsSaveOrLink, 0, 0); /*0x4f5515*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f551a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f551a*/
   this->abstractFlags = 10; /*0x4f5520*/
   this->uniqueId = 0; /*0x4f5523*/
   VectorClass::BuildingConstructor(&this->u32_26, 0, 0); /*0x4f5530*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f5535*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f5535*/
   this->abstractFlags = 10; /*0x4f553b*/
   this->uniqueId = 0; /*0x4f553e*/
   VectorClass::BuildingConstructor(&this->vtable7, 0, 0); /*0x4f554b*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f5550*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f5550*/
   this->abstractFlags = 10; /*0x4f5556*/
   this->uniqueId = 0; /*0x4f5559*/
   VectorClass::BuildingConstructor(&this->q032, 0, 0); /*0x4f5566*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f556b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f556b*/
   this->abstractFlags = 10; /*0x4f5571*/
   this->uniqueId = 0; /*0x4f5574*/
   VectorClass::BuildingConstructor(&this->conYards, 0, 0); /*0x4f5581*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f5586*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f5586*/
   this->abstractFlags = 10; /*0x4f558c*/
   this->uniqueId = 0; /*0x4f558f*/
   VectorClass::BuildingConstructor(&this->q03E, 0, 0); /*0x4f559c*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f55a1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f55a1*/
   this->abstractFlags = 10; /*0x4f55a7*/
   this->uniqueId = 0; /*0x4f55aa*/
   VectorClass::BuildingConstructor(&this->buildings, 0, 0); /*0x4f55b7*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f55bc*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f55bc*/
   this->abstractFlags = 10; /*0x4f55c2*/
   this->uniqueId = 0; /*0x4f55c5*/
   VectorClass::BuildingConstructor(&this->u32_4A, 0, 0); /*0x4f55d2*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f55d7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f55d7*/
   this->abstractFlags = 10; /*0x4f55dd*/
   this->uniqueId = 0; /*0x4f55e0*/
   VectorClass::BuildingConstructor(&this->unitRepairStations, 0, 0); /*0x4f55ed*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_BuildingClass; /*0x4f55f2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f55f2*/
   this->abstractFlags = 10; /*0x4f55f8*/
   this->uniqueId = 0; /*0x4f55fb*/
   this->u32_158 = 0; /*0x4f55fe*/
@@ -318,7 +318,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->techInfiltrationFlags = 0; /*0x4f5617*/
   this->productionInfiltrationFlags = 0; /*0x4f5620*/
   StartingTechnoVector::Construct(&this->__pad_16C, 0, 0); /*0x4f5626*/
-  this->uniqueId = (int)&vt_DynamicVectorClass_HouseClass_StartingTechnoStruct; /*0x4f562b*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_HouseClass_StartingTechnoStruct) */  /*0x4f562b*/
   this->abstractFlags = 10; /*0x4f5631*/
   this->uniqueId = 0; /*0x4f5634*/
   this->u32_184 = dword_A8B230[43].vfptr1; /*0x4f5648*/
@@ -505,11 +505,11 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->attackDelayB = 0; /*0x4f5b4c*/
   this->enemyHouseIndex = -1; /*0x4f5b59*/
   AngerVector::Construct(&this->angerNodes, 0, 0); /*0x4f5b5f*/
-  this->angerNodes = (int)&vt_DynamicVectorClass_AngerStruct; /*0x4f5b6c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_AngerStruct) */  /*0x4f5b6c*/
   this->scoutNodesCapacity = 10; /*0x4f5b76*/
   this->scoutNodesCount = 0; /*0x4f5b7c*/
   ScoutVector::Construct(&this->unkTimer3, 0, 0); /*0x4f5b82*/
-  this->unkTimer3 = (int)&vt_DynamicVectorClass_ScoutStruct; /*0x4f5b87*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_ScoutStruct) */  /*0x4f5b87*/
   this->u32_5630 = 10; /*0x4f5b91*/
   this->u32_562C = 0; /*0x4f5b97*/
   this->producingBuildingTypeIndex = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f5ba2*/
@@ -594,7 +594,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   *(&this->u32_582B) = 0; /*0x4f5dba*/
   *(&this->u32_582C) = 0; /*0x4f5dc0*/
   *(&this->u32_582D) = 0; /*0x4f5dc6*/
-  *this = (int)&vt_HouseClass; /*0x4f5dcc*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_HouseClass) */  /*0x4f5dcc*/
   *(&this->AbstractClass_1) = (int)&vt_HouseClass; /*0x4f5dd3*/
   *(&this->q002) = (int)&vt_HouseClass; /*0x4f5dda*/
   *(&this->u32_3) = (int)&vt_HouseClass; /*0x4f5de1*/
@@ -1759,7 +1759,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
   VectorClass::BuildingTypeConstructor(&v126, 0, 0); /*0x5072ae*/
   v42 = _EBP->bunkersCount; /*0x5072b3*/
   v43 = 0; /*0x5072b6*/
-  v126.vfptr = (int)&vt_DynamicVectorClass_BuildingTypeClass_const; /*0x5072ba*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingTypeClass_const) */  /*0x5072ba*/
   v128 = 10; /*0x5072c2*/
   v127 = 0; /*0x5072cd*/
   if ( v42 > 0 ) /*0x5072d8*/
@@ -1916,7 +1916,7 @@ LABEL_43:
   else
   {
     DistributionVector_BuildingType::Construct((DistributionVector_BuildingType *)&v129, 0, 0); /*0x507684*/
-    *(unsigned int *)v129.__pad_0 = &vt_DynamicVectorClass_9; /*0x507690*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_9) */  /*0x507690*/
     v130 = 10; /*0x50769b*/
     v129.m_10 = 0; /*0x5076a6*/
     v131 = 0; /*0x5076ad*/
@@ -1982,7 +1982,7 @@ LABEL_87:
       v69 = *(char **)&v129.m_1[3]; /*0x50778c*/
       v55 = 0.0; /*0x507793*/
     }
-    *(unsigned int *)v129.__pad_0 = &vt_VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass; /*0x507797*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass) */  /*0x507797*/
     if ( v69 && BYTE1(v129.m_C) ) /*0x5077ad*/
     {
       HouseClass::updatePowerState(v69, 3); /*0x5077b5*/
@@ -2011,7 +2011,7 @@ LABEL_87:
     (v116) = ((v116) & ~0xFF) | ((0) & 0xFF); /*0x507826*/
     v117 = 0; /*0x50782b*/
     VectorClass::CellConstructor(&v119, 0, 0); /*0x50782f*/
-    v119.vfptr = (int)&vt_DynamicVectorClass_Cell; /*0x507838*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_Cell) */  /*0x507838*/
     v121 = 10; /*0x507842*/
     v120 = 0; /*0x50784a*/
     if ( v119.Items && v119.IsAllocated[0] ) /*0x507856*/
@@ -2082,7 +2082,7 @@ LABEL_107:
       for ( v82[4] = v86; v84 < v82[4]; *(unsigned int *)(v82[1] + 4 * v84 - 4) = *(unsigned int *)(v82[1] + 4 * v84) ) /*0x5079ba*/
         ++v84; /*0x5079bf*/
     }
-    v119.vfptr = (int)&vt_VectorClass_Cell; /*0x5079d2*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_Cell) */  /*0x5079d2*/
     if ( v119.Items && v119.IsAllocated[0] ) /*0x5079e4*/
     {
       __3_YAXPAX_Z((void *)v119.Items); /*0x5079e7*/
@@ -2201,7 +2201,7 @@ LABEL_56:
   }
   (v141) = ((v141) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5075f5*/
   v140 = 0; /*0x5075ff*/
-  v126.vfptr = (int)&vt_VectorClass_BuildingTypeClass_const; /*0x507606*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x507606*/
   if ( v126.Items && v126.IsAllocated[0] ) /*0x507616*/
   {
     __3_YAXPAX_Z((void *)v126.Items); /*0x507619*/
@@ -2866,12 +2866,12 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
     return 1; /*0x5d7492*/
   v28 = *a1; /*0x5d710d*/
   UnitTypeVector::Construct2((UnitTypeVector *)&v30.q018, 0, 0); /*0x5d7111*/
-  v30.q018 = (int)&vt_DynamicVectorClass; /*0x5d711c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x5d711c*/
   v34 = 10; /*0x5d7124*/
   v33 = 0; /*0x5d712c*/
   InfantryTypeVector::ConstructFromData(&v30, 0, 0); /*0x5d7130*/
   InfantryTypeVector_field_0x14 = 10; /*0x5d7139*/
-  *(unsigned int *)v30.__pad_000 = &vt_DynamicVectorClass; /*0x5d713e*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x5d713e*/
   v30.q014 = 10; /*0x5d7146*/
   v4 = aP0->attachedTag; /*0x5d714a*/
   v30.q010 = 0; /*0x5d714d*/
@@ -3008,7 +3008,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
         v16 = v33; /*0x5d732b*/
       }
     }
-    *(unsigned int *)v30.__pad_000 = &vt_VectorClass; /*0x5d7446*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5d7446*/
     if ( v30.u32_4 && (((unsigned char *)&(v30.q00C))[1]) ) /*0x5d7456*/
     {
       operator delete(((void *)v30.u32_4)); /*0x5d7459*/
@@ -3016,12 +3016,12 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
     }
     (((unsigned char *)&(v30.q00C))[1]) = 0; /*0x5d7469*/
     v30.q008 = 0; /*0x5d7470*/
-    v30.q018 = (int)&vt_VectorClass; /*0x5d7474*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x5d7474*/
     if ( v30.q01C && v32 ) /*0x5d7484*/
       operator delete(((void *)v30.q01C)); /*0x5d7487*/
     return 1; /*0x5d7487*/
   }
-    *(unsigned int *)v30.__pad_000 = &vt_VectorClass; /*0x5d72bf*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5d72bf*/
     if ( v30.u32_4 && (((unsigned char *)&(v30.q00C))[1]) ) /*0x5d72d1*/
   {
     operator delete(((void *)v30.u32_4)); /*0x5d72d4*/
@@ -3029,7 +3029,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
   }
     (((unsigned char *)&(v30.q00C))[1]) = 0; /*0x5d72e4*/
     v30.q008 = 0; /*0x5d72eb*/
-    v30.q018 = (int)&vt_VectorClass; /*0x5d72ef*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x5d72ef*/
     if ( v30.q01C ) /*0x5d72f7*/
   {
     if ( v32 ) /*0x5d72ff*/
@@ -3177,7 +3177,7 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
     }
     while ( v11 < stru_A80220.nextArrayIndex ); /*0x5eeb7e*/
   }
-  *(unsigned int *)v18 = &vt_VectorClass; /*0x5eeb8b*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x5eeb8b*/
   if ( Block ) /*0x5eeb94*/
   {
     if ( v20 ) /*0x5eeb9c*/
@@ -3483,7 +3483,7 @@ namespace gamemd {
 VectorClass_flat * HouseClass_24::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3 = *&Block->__pad_004; // eax /*0x4f2b63*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f2b66*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x4f2b66*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4f2b70*/
   {
     operator delete((v3)); /*0x4f2b78*/

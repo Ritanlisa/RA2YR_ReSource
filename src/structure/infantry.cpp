@@ -795,7 +795,7 @@ char __stdcall HoverLocomotionClass::DeployAnimation()
         v14 = v1->vtable4; /*0x514468*/
         v1->u32_48 = 0; /*0x51446b*/
         v1->u32_4C = 1072693248; /*0x514472*/
-        (*(void (__usercall **)(int@<ecx>, unsigned int, int, double@<st0>))(*(unsigned int *)v14 + 1348))(v14, 0, 1072693248, v6); /*0x514482*/
+        (*(void (**)(int, unsigned int, int, double))(*(unsigned int *)v14 + 1348))(v14, 0, 1072693248, v6); /*0x514482*/
         MovementAI::StepFootClass((MovementAI *)((char *)this - 4), 0); /*0x51448c*/
         if ( v13 ) /*0x514493*/
           MovementAI::MainFootClass((MovementAI *)((char *)this - 4), 1); /*0x514499*/
@@ -2217,7 +2217,7 @@ int InfantryClass::CalcMoveTarget()
     v16 = this->unknownBool685[0] + 1; /*0x51b499*/
     this->unknownBool685[0] = v16; /*0x51b49f*/
     v72 = v6[v16 + 12]; /*0x51b4ae*/
-    (*(void (__usercall **)(InfantryClass *@<ecx>, int *))(v15 + 436))(this, this->unknownCoords568); /*0x51b4b7*/
+    (*(void (**)(InfantryClass *, int *))(v15 + 436))(this, this->unknownCoords568); /*0x51b4b7*/
     if ( v72 != -1 ) /*0x51b4c3*/
     {
       v17 = v6[this->unknownBool685[0] + 12]; /*0x51b4d3*/
@@ -2287,7 +2287,7 @@ int InfantryClass::CalcMoveTarget()
   {
     ObjectVector::Construct(&v86, 0, 0); /*0x51b7ee*/
     ObjectVector_field_0x14 = 10; /*0x51b7f3*/
-    *(unsigned int *)v86.__pad_0 = &vt_DynamicVectorClass_ObjectClass; /*0x51b7fa*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_ObjectClass) */  /*0x51b7fa*/
     v86.ObjectVector_field_0x14 = 10; /*0x51b802*/
     v86.ObjectVector_field_0x10 = 0; /*0x51b809*/
     if ( ObjectPlacement_field_0x04 ) /*0x51b810*/
@@ -2338,7 +2338,7 @@ LABEL_26:
     }
     (*(void (**)(InfantryClass *, unsigned int, unsigned int))&this->vfptr->audioController7)(this, 0, 0); /*0x51b8fc*/
     result = v86.ObjectVector_field_0x04; /*0x51b902*/
-    *(unsigned int *)v86.__pad_0 = &vt_VectorClass_ObjectClass; /*0x51b906*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x51b906*/
     if ( v86.ObjectVector_field_0x04 && BYTE1(v86.ObjectVector_field_0x0C) ) /*0x51b91f*/
       __3_YAXPAX_Z((void *)v86.ObjectVector_field_0x04); /*0x51b926*/
   }
@@ -2354,7 +2354,7 @@ LABEL_26:
     v56 = Cell::GetGroundHeight(v75); /*0x51b98a*/
     v57 = this->vfptr; /*0x51b98f*/
     v76 = v56; /*0x51b991*/
-    (*(void (__usercall **)(InfantryClass *@<ecx>, int *))(v57 + 436))(this, v75); /*0x51b99c*/
+    (*(void (**)(InfantryClass *, int *))(v57 + 436))(this, v75); /*0x51b99c*/
     locomotor = this->locomotor; /*0x51b9a2*/
     v84 = *(unsigned int *)&stru_A8E960.waypoints[626]; /*0x51b9bc*/
     v85 = *(unsigned int *)&stru_A8E960.waypoints[630]; /*0x51b9c0*/
@@ -4544,7 +4544,7 @@ BuildingTypeClass * * InfantryClass::SelectAutoTarget(unsigned int flags, int64_
     v6 = *(unsigned int *)(v4->owner + 21728); /*0x51e174*/
     if ( v6 ) /*0x51e17c*/
     {
-      v7 = (unsigned int *)(*(int (__usercall **)(int, unsigned char *, double))(*(unsigned int *)v6 + 72))(v6, v19, a2); /*0x51e18e*/
+      v7 = (unsigned int *)(*(int (**)(int, unsigned char *, double))(*(unsigned int *)v6 + 72))(v6, v19, a2); /*0x51e18e*/
       v8 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(v4->turretChargeTimer)(v4, v20); /*0x51e197*/
       v17 = v8[1] - v7[1]; /*0x51e1b5*/
       v18 = v8[2] - v7[2]; /*0x51e1bf*/
@@ -4585,7 +4585,7 @@ BuildingTypeClass * * InfantryClass::SelectAutoTarget(unsigned int flags, int64_
   LABEL_21:
   if ( ((unsigned int)v11 & 0x1B978) == 0 ) /*0x51e2cd*/
   {
-    if ( *(unsigned int *)(*(int (__usercall **)(int, unsigned int, double))(*(unsigned int *)v4 + 1016))(v4, 0, a2) ) /*0x51e2db*/
+    if ( *(unsigned int *)(*(int (**)(int, unsigned int, double))(*(unsigned int *)v4 + 1016))(v4, 0, a2) ) /*0x51e2db*/
     {
       v15 = (Building **)v4->SelectVocOrSfx(0); /*0x51e2e6*/
       v11 = (InfantryClass *)(Building::GetRenderType(*v15) | (unsigned int)v11); /*0x51e2f3*/

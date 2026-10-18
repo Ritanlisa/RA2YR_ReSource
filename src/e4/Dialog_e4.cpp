@@ -2290,10 +2290,10 @@ LABEL_7:
           *(unsigned int *)(v7 + 4) = Rect.right; /*0x621f6c*/
           *(unsigned int *)(v7 + 8) = v9; /*0x621f74*/
           *(unsigned int *)(v7 + 12) = 0; /*0x621f7c*/
-          *(unsigned int *)v7 = &XSurface_Vtable; /*0x621f7f*/
+          /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x621f7f*/
           *(unsigned int *)(v7 + 16) = 2; /*0x621f85*/
           Buffer::Init((Buffer *)(v7 + 20), 0, 2 * v9 * v8); /*0x621f8c*/
-          *(unsigned int *)v7 = &BSurface_Vtable; /*0x621f91*/
+          /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x621f91*/
         }
         else
         {

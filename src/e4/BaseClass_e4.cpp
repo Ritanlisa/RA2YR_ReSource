@@ -48,12 +48,12 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
     if ( this ) /*0x42ee53*/
     {
       BaseNodeClass::Vector_Constructor(&this->baseNodeCount, 0, 0); /*0x42ee5e*/
-      this->baseNodeCount = (int)&vt_DynamicVectorClass_BaseNodeClass; /*0x42ee6a*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BaseNodeClass) */  /*0x42ee6a*/
       this->cells24Capacity = 10; /*0x42ee70*/
       this->cells24Count = 0; /*0x42ee77*/
       DynamicVector::Constructor_Cell(&this->cells38Count, 0, 0); /*0x42ee7e*/
       DynamicVector::Constructor_Cell(&this->q08C, 0, 0); /*0x42ee8a*/
-      this->baseNodes = (int)&vt_BaseClass; /*0x42ee8f*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_BaseClass) */  /*0x42ee8f*/
     }
     v3 = *(unsigned int *)v2; /*0x42ee96*/
     a2 = 0; /*0x42eea2*/

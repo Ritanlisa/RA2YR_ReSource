@@ -1121,7 +1121,7 @@ LABEL_32:
             while ( v28 < dword_ABDFA0 ); /*0x58ee5c*/
           }
           v29 = v27->u32_2C; /*0x58ee5e*/
-          v27->q028 = &vt_VectorClass_Cell; /*0x58ee61*/
+          /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_Cell) */  /*0x58ee61*/
           if ( v29 ) /*0x58ee66*/
           {
             if ( v27->u8_35 ) /*0x58ee68*/

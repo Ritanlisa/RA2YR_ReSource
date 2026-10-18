@@ -127,7 +127,7 @@ LABEL_14:
         goto LABEL_14; /*0x7a3f97*/
     }
   }
-  v22[0].vfptr.vfptr1 = (int)&vt_rc_ptr_PlayerProfile; /*0x7a3fd1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x7a3fd1*/
   ComPtr::Release((ComPtr *)&v22[0].vfptr.vfptr1); /*0x7a3fdd*/
 LABEL_16:
   if ( lParam ) /*0x7a3fed*/
@@ -362,9 +362,9 @@ unsigned int * ComStreamClass::seekToPosition()
   unsigned int *v3; // eax
   v3 = (unsigned int *)(Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90)); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3->u32_4); /*0x7b0257*/
-  *(unsigned int *)v5 = (unsigned int)(&vt_rc_ptr); /*0x7b0260*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7b0260*/
   ComPtr::Release((ComPtr *)v5); /*0x7b0268*/
-  *(unsigned int *)v6 = (unsigned int)(&vt_rc_ptr); /*0x7b0271*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7b0271*/
   return (unsigned int *)(ComPtr::Release((ComPtr *)v6)); /*0x7b027e*/
 
 }
@@ -383,9 +383,9 @@ unsigned int * ComStreamClass::getStreamSize()
   unsigned int *v3; // eax
   v3 = (unsigned int *)(Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90)); /*0x7b02c9*/
   ComPtr::Set((ComPtr *)&DataGlobal_B77F78, v3->u32_4); /*0x7b02d7*/
-  *(unsigned int *)v5 = (unsigned int)(&vt_rc_ptr); /*0x7b02e0*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7b02e0*/
   ComPtr::Release((ComPtr *)v5); /*0x7b02e8*/
-  *(unsigned int *)v6 = (unsigned int)(&vt_rc_ptr); /*0x7b02f1*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr) */  /*0x7b02f1*/
   return (unsigned int *)(ComPtr::Release((ComPtr *)v6)); /*0x7b02fe*/
 
 }

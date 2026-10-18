@@ -61,10 +61,10 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
 {
 
 
-  *(unsigned int *)aP0->__pad_0 = &vt_AlphaShapeClass; /*0x42173d*/
-  aP0->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
-  aP0->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
-  aP0->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_AlphaShapeClass) */  /*0x42173d*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AlphaShapeClass) */  /*0x421743*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AlphaShapeClass) */  /*0x42174a*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_AlphaShapeClass) */  /*0x421751*/
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::AlphaShapeClass *)(aP0); /*0x42175f*/
   int v3; // eax

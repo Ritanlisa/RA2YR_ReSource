@@ -697,7 +697,7 @@ int AbstractClass::initVtableBase()
 
 // 0x4101F0
 namespace gamemd {
-int AbstractClass::AbstractClass::DTOR(void *a1_1)
+int AbstractClass::DTOR(void *a1_1)
 {
 
   /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101f0) */
@@ -1244,7 +1244,7 @@ int AbstractClass::compareType(int a1)
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
-  *(unsigned int *)this->BlitterCore = (unsigned int)(&vt_Blitter); /*0x499cc9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     operator delete((this)); /*0x499cd2*/
   return (gamemd::Blitter *)((std::locale::facet *)this); /*0x499cdc*/
@@ -1288,7 +1288,7 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
-  *(unsigned int *)this->RLEBlitterCore = &vt_RLEBlitter; /*0x499da9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_RLEBlitter) */  /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     operator delete((this)); /*0x499db2*/
   return (std::locale::facet *)this; /*0x499dbc*/
@@ -1860,7 +1860,7 @@ void AbstractClass::resetTeamState()
 namespace gamemd {
 FileClass * AbstractClass::processAITrigger(unsigned int * Block, char a2)
 {
-  *Block = (FileClass)&vt_FileClass; /*0x65c619*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_FileClass) */  /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
     operator delete((Block)); /*0x65c622*/
   return Block; /*0x65c62c*/

@@ -35,7 +35,7 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x69eeaa*/
   {
     a1->Piggybackee = 0; /*0x69eeac*/
-    *(unsigned int *)a1->0 = &vt_ShipLocomotionClass; /*0x69eeb3*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_ShipLocomotionClass) */  /*0x69eeb3*/
     *(unsigned int *)&a1->0[4] = &vt_ShipLocomotionClass; /*0x69eeb9*/
     *(unsigned int *)a1->__pad_18 = &off_7F2D68; /*0x69eec0*/
   }
@@ -133,8 +133,8 @@ namespace gamemd {
 ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
 
-  *(unsigned int *)Block->0 = &vt_ShipLocomotionClass; /*0x6a42b3*/
-  *&Block->u32_68 = &vt_ShipLocomotionClass; /*0x6a42b9*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ShipLocomotionClass) */  /*0x6a42b3*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_ShipLocomotionClass) */  /*0x6a42b9*/
   *(unsigned int *)Block->u32_18 = &off_7F2D68; /*0x6a42c0*/
   ILocomotion *Piggybackee; // eax
   Piggybackee = Block->Piggybackee; /*0x6a42c7*/

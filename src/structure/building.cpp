@@ -384,14 +384,14 @@ int BuildingClass::Construct(int a2, int a3)
   this->FiringOccupantIndex = 0; /*0x43b8b7*/
   this->Audio7 = 1; /*0x43b8bd*/
   this->q679 = 0; /*0x43b8c4*/
-  this->Overpowerers = &vt_DynamicVectorClass_InfantryClass; /*0x43b8ca*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_InfantryClass) */  /*0x43b8ca*/
   this->q680 = 10; /*0x43b8d0*/
   this->q67C = 0; /*0x43b8d6*/
   this->locomotorSource = 0; /*0x43b8dc*/
   this->Audio8 = 0; /*0x43b8e2*/
   this->q690 = 1; /*0x43b8e8*/
   this->u32_691 = 0; /*0x43b8ef*/
-  this->Occupants_d = &vt_DynamicVectorClass_InfantryClass; /*0x43b8f5*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_InfantryClass) */  /*0x43b8f5*/
   this->q698 = 10; /*0x43b8fb*/
   this->q694 = 0; /*0x43b901*/
   this->FiringOccupantIndex_d = 0; /*0x43b907*/
@@ -433,10 +433,10 @@ int BuildingClass::Construct(int a2, int a3)
   this->PrismStage = 0; /*0x43b9e8*/
   this->DelayBeforeFiring = 0; /*0x43b9ee*/
   this->BunkerState = 0; /*0x43b9f4*/
-  *(unsigned int *)this = &BuildingClass_Vtable; /*0x43b9fa*/
-  this->vtable2 = &BuildingClass_Vtable2; /*0x43ba00*/
-  this->vtable3 = &BuildingClass_Vtable3; /*0x43ba07*/
-  this->vtable4 = &BuildingClass_Vtable4; /*0x43ba0e*/
+  /* X11: vtable install elided (X67 star-deref, RHS BuildingClass_Vtable) */  /*0x43b9fa*/
+  /* X11: vtable install elided (X67 recv-slot, RHS BuildingClass_Vtable2) */  /*0x43ba00*/
+  /* X11: vtable install elided (X67 recv-slot, RHS BuildingClass_Vtable3) */  /*0x43ba07*/
+  /* X11: vtable install elided (X67 recv-slot, RHS BuildingClass_Vtable4) */  /*0x43ba0e*/
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x43ba15*/
   this->Upgrades = 0; /*0x43ba22*/
   LOBYTE(v6) = 0; /*0x43ba28*/
@@ -589,10 +589,10 @@ int BuildingClass::Dtor()
   int Vtable3; // [esp+18h] [ebp-4h] BYREF
 
   p_Audio8_2 = &this->Audio8_2; /*0x43bcf7*/
-  this->vfptr = (int)&BuildingClass_Vtable; /*0x43bcfd*/
-  this->vfptr1 = (int)&BuildingClass_Vtable2; /*0x43bd05*/
-  this->vfptr2 = (int)&BuildingClass_Vtable3; /*0x43bd0c*/
-  this->vfptr3 = (int)&BuildingClass_Vtable4; /*0x43bd13*/
+  /* X11: vtable install elided (X67 recv-slot, RHS BuildingClass_Vtable) */  /*0x43bcfd*/
+  /* X11: vtable install elided (X67 recv-slot, RHS BuildingClass_Vtable2) */  /*0x43bd05*/
+  /* X11: vtable install elided (X67 recv-slot, RHS BuildingClass_Vtable3) */  /*0x43bd0c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS BuildingClass_Vtable4) */  /*0x43bd13*/
   Mixer::ReleaseChannel(&this->__pad_6B4); /*0x43bd1a*/
   Mixer::ReleaseChannel((Mixer *)this->WasOnline); /*0x43bd27*/
   AudioFileClass::Release((AudioFileClass *)p_Audio8_2); /*0x43bd2e*/
@@ -718,7 +718,7 @@ int BuildingClass::Dtor()
   (*(void (**)(int *))(this->Audio7[3] + 12))(&this->Audio7[3]); /*0x43c05f*/
   (*(void (**)(int *, int, unsigned int))(this->Audio7[3] + 8))(&this->Audio7[3], v26, 0); /*0x43c069*/
   v27 = (void *)this->Audio7[4]; /*0x43c06c*/
-  this->Audio7[3] = (int)&vt_VectorClass_InfantryClass; /*0x43c073*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_InfantryClass) */  /*0x43c073*/
   if ( v27 && BYTE1(this->Audio8[1]) ) /*0x43c07b*/
   {
     __3_YAXPAX_Z(v27); /*0x43c083*/
@@ -727,7 +727,7 @@ int BuildingClass::Dtor()
   BYTE1(this->Audio8[1]) = 0; /*0x43c08e*/
   this->Audio8[0] = 0; /*0x43c092*/
   Occupants = (void *)this->Occupants; /*0x43c095*/
-  this->Overpowerers = (int)&vt_VectorClass_InfantryClass; /*0x43c098*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_InfantryClass) */  /*0x43c098*/
   if ( Occupants && BYTE1(this->Audio7[0]) ) /*0x43c0a3*/
   {
     __3_YAXPAX_Z(Occupants); /*0x43c0ab*/

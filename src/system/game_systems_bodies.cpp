@@ -1406,10 +1406,10 @@ LABEL_27:
               *(unsigned int *)(v24 + 4) = Rect.right; /*0x60d929*/
               *(unsigned int *)(v24 + 8) = v26; /*0x60d931*/
               *(unsigned int *)(v24 + 12) = 0; /*0x60d939*/
-              *(unsigned int *)v24 = &XSurface_Vtable; /*0x60d93c*/
+              /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x60d93c*/
               *(unsigned int *)(v24 + 16) = 2; /*0x60d942*/
               Buffer::Init((Buffer *)(v24 + 20), 0, 2 * v26 * v25); /*0x60d949*/
-              *(unsigned int *)v24 = &BSurface_Vtable; /*0x60d94e*/
+              /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x60d94e*/
             }
             else
             {
@@ -3655,7 +3655,7 @@ void LoadScreen::RenderLoop()
     v5 = CCFileClass::GetSize(&v382); /*0x4b6ca9*/
     CCFileClass::Read(&v382, v4, v5); /*0x4b6cb7*/
     v380[v2] = (int)v4; /*0x4b6cc3*/
-    *(unsigned int *)v382.__tail_0 = &vt_CCFileClass; /*0x4b6cca*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x4b6cca*/
     v384 = 0; /*0x4b6cd1*/
     Vector::Clear((int)v383); /*0x4b6cdc*/
     *(unsigned int *)v382.__tail_0 = &off_7E1668; /*0x4b6ce8*/
@@ -3681,10 +3681,10 @@ void LoadScreen::RenderLoop()
     Surface::Construct((Surface *)v9, v11, v10); /*0x4b6db5*/
     v249 = SubFile; /*0x4b6dc5*/
     v9->u32_C = 0; /*0x4b6dc9*/
-    *(unsigned int *)v9 = &XSurface_Vtable; /*0x4b6dd0*/
+    /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4b6dd0*/
     v9->u32_10 = 1; /*0x4b6dd6*/
     Buffer::Init(&v9->q014, v249, v10 * v11); /*0x4b6ddd*/
-    *(unsigned int *)v9 = &BSurface_Vtable; /*0x4b6de2*/
+    /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4b6de2*/
     v304 = (int *)v9; /*0x4b6de8*/
   }
   else
@@ -3774,7 +3774,7 @@ void LoadScreen::RenderLoop()
   TypeList::TechnoTypeConstructor(&v311, 0, 0); /*0x4b702f*/
   v33 = *(int *)((char *)&stru_A83CD9.abstractFlags + 3) + dword_A8E358; /*0x4b7048*/
   v34 = 0; /*0x4b704b*/
-  v311.vfptr = (int)&vt_DynamicVectorClass_TechnoTypeClass; /*0x4b704f*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_TechnoTypeClass) */  /*0x4b704f*/
   v311.CapacityIncrement = 10; /*0x4b7057*/
   v311.Count = 0; /*0x4b7062*/
   if ( dword_A83CA8 <= 0 ) /*0x4b706d*/
@@ -3980,7 +3980,7 @@ LABEL_56:
   v354 = 0; /*0x4b74f8*/
   v263 = 0; /*0x4b74ff*/
   LoadScreen::InitVtable(&v321, 0, 0); /*0x4b7504*/
-  *(unsigned int *)v321.Render_ph = &vt_DynamicVectorClass_6; /*0x4b750e*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_6) */  /*0x4b750e*/
   v321.LoadScreen_field_0x14 = 10; /*0x4b7519*/
   v321.LoadScreen_field_0x10 = 0; /*0x4b7520*/
   Time = timeGetTime(); /*0x4b7534*/
@@ -3992,7 +3992,7 @@ LABEL_56:
   v325 = 5; /*0x4b7569*/
   v332 = 0; /*0x4b7574*/
   LoadScreen::Constructor((LoadScreen *)&v311.unknown_18, 0, 0); /*0x4b757b*/
-  v311.unknown_18 = (int)&vt_DynamicVectorClass_5; /*0x4b7587*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_5) */  /*0x4b7587*/
   v316 = 10; /*0x4b7594*/
   kk = 0; /*0x4b759b*/
   v295 = 0; /*0x4b75a2*/
@@ -4000,7 +4000,7 @@ LABEL_56:
   v319 = -1; /*0x4b75ae*/
   v309 = 0; /*0x4b75b5*/
   TypeList::TechnoTypeConstructor(&v323, 0, 0); /*0x4b75b9*/
-  v323.vfptr = (int)&vt_DynamicVectorClass_TechnoTypeClass; /*0x4b75c4*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_TechnoTypeClass) */  /*0x4b75c4*/
   v323.CapacityIncrement = 10; /*0x4b75cf*/
   v323.Count = 0; /*0x4b75d6*/
   v333 = (int)*dword_87E8A4; /*0x4b75df*/
@@ -4165,10 +4165,10 @@ LABEL_119:
             v285 = MixFileClass::GetSubFile((MixFileClass *)v86, 0); /*0x4b79e7*/
             Surface::Construct((Surface *)v87, v88, v279); /*0x4b79ef*/
             *(unsigned int *)(v87 + 12) = 0; /*0x4b79f7*/
-            *(unsigned int *)v87 = &XSurface_Vtable; /*0x4b7a09*/
+            /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4b7a09*/
             *(unsigned int *)(v87 + 16) = 1; /*0x4b7a0f*/
             Buffer::Init((Buffer *)(v87 + 20), v285, v279 * v88); /*0x4b7a16*/
-            *(unsigned int *)v87 = &BSurface_Vtable; /*0x4b7a1b*/
+            /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4b7a1b*/
             v77 = v300; /*0x4b7a21*/
             v280 = v87; /*0x4b7a25*/
           }
@@ -4486,11 +4486,11 @@ LABEL_216:
               v129 = MixFileClass::GetSubFile((MixFileClass *)v126, 0); /*0x4b810d*/
               *(unsigned int *)(v127 + 8) = v128; /*0x4b8112*/
               *(unsigned int *)(v127 + 12) = 0; /*0x4b8115*/
-              *(unsigned int *)v127 = &XSurface_Vtable; /*0x4b8120*/
+              /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4b8120*/
               *(unsigned int *)(v127 + 4) = v287; /*0x4b8129*/
               *(unsigned int *)(v127 + 16) = 1; /*0x4b8131*/
               Buffer::Init((Buffer *)(v127 + 20), v129, v287 * v128); /*0x4b8138*/
-              *(unsigned int *)v127 = &BSurface_Vtable; /*0x4b813d*/
+              /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4b813d*/
               v298 = v127; /*0x4b8143*/
             }
             else
@@ -4511,11 +4511,11 @@ LABEL_216:
               v133 = MixFileClass::GetSubFile((MixFileClass *)v130, 0); /*0x4b818c*/
               *(unsigned int *)(v131 + 4) = v132; /*0x4b8191*/
               *(unsigned int *)(v131 + 12) = 0; /*0x4b8194*/
-              *(unsigned int *)v131 = &XSurface_Vtable; /*0x4b819f*/
+              /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4b819f*/
               *(unsigned int *)(v131 + 8) = v288; /*0x4b81a8*/
               *(unsigned int *)(v131 + 16) = 1; /*0x4b81b0*/
               Buffer::Init((Buffer *)(v131 + 20), v133, v288 * v132); /*0x4b81b7*/
-              *(unsigned int *)v131 = &BSurface_Vtable; /*0x4b81bc*/
+              /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4b81bc*/
               v302 = v131; /*0x4b81c2*/
             }
             else
@@ -4581,11 +4581,11 @@ LABEL_216:
           v145 = MixFileClass::GetSubFile((MixFileClass *)v142, 0); /*0x4b82fb*/
           *(unsigned int *)(v143 + 4) = v144; /*0x4b8300*/
           *(unsigned int *)(v143 + 12) = 0; /*0x4b8303*/
-          *(unsigned int *)v143 = &XSurface_Vtable; /*0x4b830e*/
+          /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4b830e*/
           *(unsigned int *)(v143 + 8) = v289; /*0x4b8317*/
           *(unsigned int *)(v143 + 16) = 1; /*0x4b831f*/
           Buffer::Init((Buffer *)(v143 + 20), v145, v289 * v144); /*0x4b8326*/
-          *(unsigned int *)v143 = &BSurface_Vtable; /*0x4b832b*/
+          /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4b832b*/
           v299 = v143; /*0x4b8331*/
         }
         else
@@ -5335,7 +5335,7 @@ LABEL_397:
   else
     g_ZBufferDescriptor = 0; /*0x4b9558*/
   (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x4b9566*/
-  v323.vfptr = (int)&vt_VectorClass_TechnoTypeClass; /*0x4b9577*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TechnoTypeClass) */  /*0x4b9577*/
   if ( v323.Items && v323.IsAllocated[0] ) /*0x4b9589*/
   {
     __3_YAXPAX_Z((void *)v323.Items); /*0x4b958c*/
@@ -5343,7 +5343,7 @@ LABEL_397:
   }
   v323.IsAllocated[0] = 0; /*0x4b95a2*/
   v323.Capacity = 0; /*0x4b95ac*/
-  v311.unknown_18 = (int)&vt_VectorClass_CrossDissolveEffect; /*0x4b95b3*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_CrossDissolveEffect) */  /*0x4b95b3*/
   if ( v312 && (((v314) >> 8) & 0xFF) ) /*0x4b95c9*/
   {
     __3_YAXPAX_Z(v312); /*0x4b95cc*/
@@ -5359,7 +5359,7 @@ LABEL_397:
   }
   BYTE1(v321.LoadScreen_field_0x0C) = 0; /*0x4b961f*/
   v321.LoadScreen_field_0x08 = 0; /*0x4b9629*/
-  v311.vfptr = (int)&vt_VectorClass_TechnoTypeClass; /*0x4b9630*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TechnoTypeClass) */  /*0x4b9630*/
   if ( v311.Items && v311.IsAllocated[0] ) /*0x4b963c*/
   {
     __3_YAXPAX_Z((void *)v311.Items); /*0x4b963f*/
@@ -5367,7 +5367,7 @@ LABEL_397:
   }
   v311.IsAllocated[0] = 0; /*0x4b9652*/
   v311.Capacity = 0; /*0x4b9657*/
-  *(unsigned int *)v385.__tail_0 = &vt_CCFileClass; /*0x4b965b*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x4b965b*/
   v387 = 0; /*0x4b9666*/
   Vector::Clear((int)v386); /*0x4b966d*/
   *(unsigned int *)v385.__tail_0 = &off_7E1668; /*0x4b9679*/
@@ -5684,10 +5684,10 @@ void LoadingScreen::Render()
     v5 = g_DisplayWidth; /*0x552d9a*/
     Surface::Construct((Surface *)result, (int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x552da4*/
     v3->u32_C = 0; /*0x552db4*/
-    *(unsigned int *)v3 = &XSurface_Vtable; /*0x552dbb*/
+    /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x552dbb*/
     v3->u32_10 = 2; /*0x552dc1*/
     result = (const wchar_t *)Buffer::Init((Buffer *)(v3 + 10), 0, 2 * v4 * (unsigned int)v5); /*0x552dc8*/
-    *(unsigned int *)v3 = &BSurface_Vtable; /*0x552dcd*/
+    /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x552dcd*/
   }
   else
   {
@@ -6745,7 +6745,7 @@ LABEL_70:
               FileClass::SetFileName(&v59, Buffer); /*0x5592d7*/
             }
             while ( (unsigned __int8)CCFileClass::Open(&v59, 0) == 1 ); /*0x5592e9*/
-            *(unsigned int *)v59.__tail_0 = &vt_CCFileClass; /*0x5592f2*/
+            /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x5592f2*/
             v61 = 0; /*0x5592fa*/
             Vector::Clear((int)v60); /*0x559305*/
             *(unsigned int *)v59.__tail_0 = &off_7E1668; /*0x55930e*/

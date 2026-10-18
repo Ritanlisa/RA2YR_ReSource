@@ -167,7 +167,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
   VectorClass::CellConstructor((VectorClass *)&v81, 0, 0); /*0x568ea5*/
   v7 = g_TerrainSoundTable2; /*0x568eae*/
   v8 = g_TerrainSoundConfig; /*0x568eb4*/
-  *(unsigned int *)v81.__pad_0 = &vt_DynamicVectorClass_Cell; /*0x568ebd*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_Cell) */  /*0x568ebd*/
   v82 = 10; /*0x568ec5*/
   *(unsigned int *)v81.__tail_10 = 0; /*0x568ed4*/
   for ( i = 1; i < 30; ++i ) /*0x568edc*/
@@ -360,7 +360,7 @@ LABEL_44:
   }
   if ( i == 30 ) /*0x569473*/
   {
-    *(unsigned int *)v81.__pad_0 = &vt_VectorClass_Cell; /*0x569479*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x569479*/
     Buffer::Cleanup(&v81); /*0x569481*/
   }
   else
@@ -471,7 +471,7 @@ LABEL_44:
       Terrain::ConnectivityGraph(this); /*0x56970c*/
     if ( *(int *)v81.__tail_10 > 0 ) /*0x569717*/
       LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v81); /*0x569722*/
-    *(unsigned int *)v81.__pad_0 = &vt_VectorClass_Cell; /*0x56972b*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_Cell) */  /*0x56972b*/
     if ( *(unsigned int *)&v81.u16_4 ) /*0x569735*/
     {
       if ( BYTE1(v81.m_C) ) /*0x56973d*/

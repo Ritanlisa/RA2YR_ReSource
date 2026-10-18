@@ -36,7 +36,7 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
   else
     v7 = 0; /*0x767fdd*/
   ComPtr::Constructor((ComPtr *)this); /*0x767fe1*/
-  *(unsigned int *)this = &vt_rc_ptr_WorldDominationTour_Map; /*0x767fe8*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_rc_ptr_WorldDominationTour_Map) */  /*0x767fe8*/
   ComPtr::Set((ComPtr *)this, (int)v7); /*0x767fef*/
   return this; /*0x767ff6*/
 

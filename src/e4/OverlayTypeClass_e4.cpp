@@ -83,8 +83,8 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->q2B6 = 0; /*0x5fe2de*/
   this->q2B7 = 0; /*0x5fe2e4*/
   this->ParticleTypeClass_2B8 = 0; /*0x5fe2ea*/
-  this->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5fe2f1*/
-  this->ParticleTypeClass_2B8 = &vt_OverlayTypeClass; /*0x5fe2f7*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_OverlayTypeClass) */  /*0x5fe2f1*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_OverlayTypeClass) */  /*0x5fe2f7*/
   /* X11: vtable install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
   /* X11: vtable install elided (implicit via OverlayTypeClass virtuals 0x5fe304) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
@@ -278,7 +278,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x5feb13*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x5feb1c*/
-      a1->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5feb21*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_OverlayTypeClass) */  /*0x5feb21*/
       /* X11: vtable install elided (qmark slot, RHS vt_OverlayTypeClass) */  /*0x5feb27*/
       /* X11: vtable install elided (qmark slot, RHS vt_OverlayTypeClass) */  /*0x5feb2e*/
       /* X11: vtable install elided (qmark slot, RHS vt_OverlayTypeClass) */  /*0x5feb35*/
@@ -336,7 +336,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
-    *(unsigned int *)v4.__tail_0 = &vt_CCFileClass; /*0x5feec4*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
     *(unsigned int *)v4.__tail_0 = &off_7E1668; /*0x5feedd*/
@@ -388,8 +388,8 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
   this->u32_30A = 0; /*0x644189*/
   this->u32_30B = 0; /*0x644190*/
   this->u32_30C = 0; /*0x644196*/
-  this->ObjectTypeClass = &vt_ParticleSystemTypeClass; /*0x64419c*/
-  this->u32_30C = (unsigned int)(&vt_ParticleSystemTypeClass); /*0x6441a2*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemTypeClass) */  /*0x64419c*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemTypeClass) */  /*0x6441a2*/
   /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
   /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441af) */
   AbstractClass::GenerateUniqueID(&this->LandType); /*0x6441b6*/
@@ -654,7 +654,7 @@ namespace gamemd {
 int v3; // eax
 OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-this->ObjectTypeClass = &vt_OverlayTypeClass;
+/* X11: vtable install elided (X67 recv-slot, RHS vt_OverlayTypeClass) */
 /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
 /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
 /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */

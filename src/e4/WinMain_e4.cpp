@@ -234,10 +234,10 @@ int WinMain::Constructor_VectorClass_Wstring_()
     v3 = *(unsigned int *)(this->u32_694 + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
-      v3->u32_1A4 = &vt_VectorClass; /*0x69a215*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x69a215*/
       VectorClass_Wstring::ddtor(&v3->u32_1A4); /*0x69a21b*/
       void *v4 = v3->u32_18C; // eax /*0x69a220*/
-      v3->u32_188 = &vt_VectorClass; /*0x69a226*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x69a226*/
       if ( v4 && v3->q195 ) /*0x69a234*/
       {
         operator delete((v4)); /*0x69a23d*/
@@ -348,7 +348,7 @@ char sub_5D7E50()
       g_MultiplayerMode |= 1u; /*0x5d7e7b*/
       DataGlobal_ABFDA8 = 0; /*0x5d7e81*/
       (*((unsigned short *)&(DataGlobal_ABFDAC))) = 1; /*0x5d7e87*/
-      *(unsigned int *)g_MultiplayerModeConfig = (unsigned int)(&vt_DynamicVectorClass); /*0x5d7e94*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x5d7e94*/
       DataGlobal_ABFDB4 = 10; /*0x5d7e9a*/
       g_MultiplayerGameList = 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
@@ -361,7 +361,7 @@ char sub_5D7E50()
       g_MultiplayerMode |= 1u; /*0x5d7ecf*/
       DataGlobal_ABFDA8 = 0; /*0x5d7ed5*/
       (*((unsigned short *)&(DataGlobal_ABFDAC))) = 1; /*0x5d7edb*/
-      *(unsigned int *)g_MultiplayerModeConfig = (unsigned int)(&vt_DynamicVectorClass); /*0x5d7ee8*/
+      /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x5d7ee8*/
       DataGlobal_ABFDB4 = 10; /*0x5d7eee*/
       g_MultiplayerGameList = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/

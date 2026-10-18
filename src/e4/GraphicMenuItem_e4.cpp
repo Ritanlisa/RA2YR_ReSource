@@ -15,7 +15,7 @@ void GraphicMenuItem::Dtor(void *a1)
   
   ObjectClass *v1; // esi
   v1 = (ObjectClass *)*((unsigned int *)a1 + 3); /*0x4f3a71*/
-  *(unsigned int *)a1->__pad_0 = &vt_GraphicMenuItem; /*0x4f3a76*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GraphicMenuItem) */  /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {
     j_DeleteAndZero(v1); /*0x4f3a80*/

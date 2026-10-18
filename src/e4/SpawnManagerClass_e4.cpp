@@ -27,7 +27,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
 
   ((AbstractClass *)this)->Constructor(); /*0x6b6c99*/
   (0)->Constructor(0); /*0x6b6ca7*/
-  this->spawns = (unsigned int)(&vt_DynamicVectorClass); /*0x6b6cb0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x6b6cb0*/
   this->spawnVectorCapacity = 10; /*0x6b6cb6*/
   this->spawnVectorCount = 0; /*0x6b6cbd*/
   wchar_t *v7; // eax
@@ -126,7 +126,7 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 
   ((AbstractClass *)a1)->Constructor(); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)a1->spawns, 0, 0); /*0x6b6eb6*/
-  a1->spawns[0] = (int)&vt_DynamicVectorClass; /*0x6b6ebb*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x6b6ebb*/
   *(unsigned int *)&a1->__pad_48[4] = 10; /*0x6b6ec1*/
   *(unsigned int *)a1->__pad_48 = 0; /*0x6b6ec8*/
   *(unsigned int *)&a1->__pad_48[8] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6b6ed4*/
@@ -204,7 +204,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   }
   void *v5; // eax
   v5 = (void *)this->spawnVectorCount; /*0x6b70bd*/
-  this->spawns = (unsigned int)(&vt_VectorClass); /*0x6b70c0*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x6b70c0*/
   if ( v5 && this->u32_45 ) /*0x6b70ca*/
   {
     __3_YAXPAX_Z(v5); /*0x6b70d2*/
@@ -389,10 +389,10 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       *&v2->creationFrame = *(unsigned int *)&stru_A8E960.random[528]; /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       Timer::Start(&v2->SpawnManagerClass_field_5C, 0); /*0x6b7f5a*/
-      v2->vfptr = (int)&vt_SpawnManagerClass_4; /*0x6b7f5f*/
-      v2->vfptr1 = (int)&vt_SpawnManagerClass_4; /*0x6b7f65*/
-      v2->vfptr2 = (int)&vt_SpawnManagerClass_4; /*0x6b7f6c*/
-      v2->vfptr3 = (int)&vt_SpawnManagerClass_4; /*0x6b7f73*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_SpawnManagerClass_4) */  /*0x6b7f5f*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_SpawnManagerClass_4) */  /*0x6b7f65*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_SpawnManagerClass_4) */  /*0x6b7f6c*/
+      /* X11: vtable install elided (X67 recv-slot, RHS vt_SpawnManagerClass_4) */  /*0x6b7f73*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/
     if ( Prefix_0 >= 0 ) /*0x6b7f8c*/
@@ -401,7 +401,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       if ( v2 != (SpawnManagerClass *)-56 ) /*0x6b7f97*/
       {
         SpawnControlVector::Constructor(&v2->spawns, 0, 0); /*0x6b7f9d*/
-        *p_spawns = (int)&vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b7fa2*/
+        /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_SpawnManagerClass_SpawnControl) */  /*0x6b7fa2*/
         *&v2->spawnVectorCapacity = 10; /*0x6b7fa8*/
         *(unsigned int *)v2->__pad_48 = 0; /*0x6b7faf*/
       }
@@ -710,7 +710,7 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char 
 {
 
   void *v3 = *&Block->__pad_004; // eax /*0x6b8793*/
-  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6b8796*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x6b8796*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x6b87a0*/
   {
     operator delete((v3)); /*0x6b87a8*/

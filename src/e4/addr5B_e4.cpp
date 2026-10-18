@@ -257,7 +257,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
       SHPFile = ((CCFileClass *)&v14.buffer)->ReadEntireFile(); /*0x5b420a*/
     }
     v9[3] = (unsigned int)(SHPFile); /*0x5b422a*/
-    v14.buffer = (int)&vt_CCFileClass; /*0x5b4231*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x5b4231*/
     v16 = 0; /*0x5b4239*/
     Vector::Clear((int)v15); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
@@ -266,7 +266,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
   }
   else
   {
-    v14.buffer = (int)&vt_CCFileClass; /*0x5b4169*/
+    /* X11: vtable install elided (X67 recv-slot, RHS vt_CCFileClass) */  /*0x5b4169*/
     v16 = 0; /*0x5b4171*/
     Vector::Clear((int)v15); /*0x5b4178*/
     v14.buffer = (int)&off_7E1668; /*0x5b4181*/
@@ -709,10 +709,10 @@ LABEL_15:
     v6 = (void *)__2_YAPAXI_Z(4 * Buffer); /*0x5bb435*/
     v15.Pipe_field_0x04 = 0; /*0x5bb437*/
     v15.Pipe_field_0x08 = 0; /*0x5bb448*/
-    *(unsigned int *)v15.__pad_0 = &vt_Pipe; /*0x5bb44c*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_Pipe) */  /*0x5bb44c*/
     Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
-    *(unsigned int *)v15.__pad_0 = &vt_BufferPipe; /*0x5bb467*/
+    /* X11: vtable install elided (X67 star-deref, RHS vt_BufferPipe) */  /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v18.BufferOffset, 0, 0x2000); /*0x5bb46f*/
     Pipe::SetDelegate((Pipe *)&v18.BufferOffset, (int)&v15); /*0x5bb47d*/
     v7 = Compression::Read(&v18.BufferOffset, v5, Buffer); /*0x5bb499*/
@@ -1298,7 +1298,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   unsigned int v40; // [esp-Ch] [ebp-BCh]
   int v41; // [esp+10h] [ebp-A0h]
   int Width; // [esp+10h] [ebp-A0h]
-  char (__usercall *v43)(ObjectClass *, int, int); // [esp+14h] [ebp-9Ch]
+  char (*v43)(ObjectClass *, int, int); // [esp+14h] [ebp-9Ch]
   int v44; // [esp+14h] [ebp-9Ch]
   bool v45; // [esp+1Bh] [ebp-95h]
   int v46; // [esp+1Ch] [ebp-94h] BYREF
@@ -2048,7 +2048,7 @@ void MixFileClass::sub_5B3F50()
   unsigned int *v7; // eax
 
   CountFiles = (void *)this->CountFiles; /*0x5b3f56*/
-  *(unsigned int *)this->__pad_0 = &vt_MixFileClass; /*0x5b3f59*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_MixFileClass) */  /*0x5b3f59*/
   if ( CountFiles ) /*0x5b3f61*/
     free(CountFiles); /*0x5b3f64*/
   if ( this->MixFileClass_field_24 && BYTE2(this->FileSize) ) /*0x5b3f73*/
@@ -2078,7 +2078,7 @@ void MixFileClass::sub_5B3F50()
       }
     }
   }
-  *(unsigned int *)this->__pad_0 = &vt_GenericNode; /*0x5b3fc0*/
+  /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x5b3fc0*/
   if ( this ) /*0x5b3fc6*/
   {
     v6 = this->Previous; /*0x5b3fc8*/
@@ -2297,7 +2297,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   char *v4; // eax
   unsigned int v5; // edi
   HWND v6; // esi
-  int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
+  int (*v7)(char, char); // edi
   HWND vtable0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
@@ -2340,7 +2340,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
             if ( v5 >= 8 ) /*0x5b5904*/
               v7 = Math::InitDegToRad; /*0x5b5914*/
             else
-              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))::lParam[v5]; /*0x5b590b*/
+              v7 = (int (*)(char, char))::lParam[v5]; /*0x5b590b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b5934*/
             return DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b5946*/
           }
@@ -2412,7 +2412,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
   char *v3; // eax
   unsigned int v4; // edi
   HWND DlgItem; // esi
-  int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
+  int (*v6)(char, char); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
   __int16 v9; // [esp+10Ch] [ebp-204h]
@@ -2437,7 +2437,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
       if ( v4 >= 8 ) /*0x5b6e5b*/
         v6 = Math::InitDegToRad; /*0x5b6e6b*/
       else
-        v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))lParam[v4]; /*0x5b6e62*/
+        v6 = (int (*)(char, char))lParam[v4]; /*0x5b6e62*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5b6e84*/
       DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5b6e96*/
     }
@@ -2655,7 +2655,7 @@ HWND E4Recv_5B9250::sub_5B9250()
   char *v4; // eax
   unsigned int v5; // edi
   HWND v6; // esi
-  int (__usercall *v7)@<eax>(char@<cf>, char@<zf>); // edi
+  int (*v7)(char, char); // edi
   HWND vtable0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
@@ -2699,7 +2699,7 @@ HWND E4Recv_5B9250::sub_5B9250()
             if ( v5 >= 8 ) /*0x5b9394*/
               v7 = Math::InitDegToRad; /*0x5b93a4*/
             else
-              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))::lParam[v5]; /*0x5b939b*/
+              v7 = (int (*)(char, char))::lParam[v5]; /*0x5b939b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b93c4*/
             return DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b93d6*/
           }
@@ -2800,7 +2800,7 @@ char E4Recv_5B94C0::sub_5B94C0(char a2)
 namespace gamemd {
 void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 {
-  int (__usercall *v5)(char, char); // esi
+  int (*v5)(char, char); // esi
   wchar_t Buffer[256]; // [esp+8h] [ebp-200h] BYREF
 
   if ( a4 ) /*0x5baa91*/
@@ -2812,7 +2812,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
       if ( a3 >= 8 ) /*0x5baab1*/
         v5 = Math::InitDegToRad; /*0x5baac1*/
       else
-        v5 = (int (__usercall *)(char, char))dword_8316A8[a3]; /*0x5baab8*/
+        v5 = (int (*)(char, char))dword_8316A8[a3]; /*0x5baab8*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5baada*/
       DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5baae9*/
     }
@@ -3454,7 +3454,7 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
   this->M21856 = 0; /*0x5bda56*/
   this->M21860 = 0; /*0x5bda5c*/
   this->M21864 = 0; /*0x5bda62*/
-  this->M21784 = &vt_MouseClass; /*0x5bda68*/
+  /* X11: vtable install elided (X67 recv-slot, RHS vt_MouseClass) */  /*0x5bda68*/
   return this; /*0x5bda74*/
 
 }
