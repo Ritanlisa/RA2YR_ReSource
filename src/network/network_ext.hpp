@@ -177,14 +177,25 @@ public:
 class IPXGlobalConnClass
 {
 public:
+    virtual unsigned int* vt_slot_0(char);  // X72: slot 0 (0x540670) unresolved name — placeholder = QueryInterface (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_1();  // X72: slot 1 (0x53F4E0) unresolved name — placeholder
+    virtual int vt_slot_2(const void*, int, int, char);  // X72: slot 2 (0x540610) unresolved name — placeholder = Release (non-virtual sibling in this header; not promoted)
     virtual ~IPXGlobalConnClass() = default;  // 0x540630
-
+    virtual int vt_slot_4(void*, int*);  // X72: slot 4 (0x540650) unresolved name — placeholder = Connect (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_5();  // X72: slot 5 (0x48C3B0) unresolved name — placeholder
+    virtual void vt_slot_6();  // X72: slot 6 (0x5402D0) unresolved name — placeholder = Send (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_7();  // X72: slot 7 (0x48C3E0) unresolved name — placeholder
+    virtual void vt_slot_8();  // X72: slot 8 (0x5400D0) unresolved name — placeholder = CheckStatus (non-virtual sibling in this header; not promoted)
+    virtual void GetAddress(); // 0x540050
+    virtual void vt_slot_10();  // X72: slot 10 (0x5403F0) unresolved name — placeholder = SetAddress (non-virtual sibling in this header; not promoted)
     virtual void Flush(const void *a2, unsigned int a3, unsigned int a4, int a5, short a6, int a7); // 0x53FBD0
 virtual int GetQueueSize(unsigned short *,int,int *,int);  // 0x53FCB0
     virtual void ConnectToHost(); // 0x53FF10
+    virtual void vt_slot_14();  // X72: slot 14 (0x53FFA0) unresolved name — placeholder
 virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
-    virtual void GetAddress(); // 0x540050
-    // +9 more virtual methods
+    virtual int vt_slot_16(int, int16_t);  // X72: slot 16 (0x540340) unresolved name — placeholder = SendPacket (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_17(int);  // X72: slot 17 (0x540110) unresolved name — placeholder = ReceivePacket (non-virtual sibling in this header; not promoted)
+
 
     uint8_t IPXGlobalConnClass_field_0x04[4];
     uint8_t IPXGlobalConnClass_field_0x08[4];

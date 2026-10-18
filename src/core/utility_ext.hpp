@@ -1391,14 +1391,15 @@ public:
 class EnumConnectionPointsClass
 {
 public:
-    virtual ~EnumConnectionPointsClass() = default;  // 0x4A0A50
-
     virtual int QueryInterface(const void *a2, unsigned int *a3);  // 0x4A0920 G42.33 b3 体签名
     virtual LONG AddRef();  // 0x4A0990 G42.33 b3 体签名
     virtual LONG Release();  // 0x4A09B0 G42.33 b3 体签名
-    virtual int ddtor(unsigned int a2, int a3, unsigned int *a4);  // 0x4A0A50 G42.33 b3 体签名
+    virtual ~EnumConnectionPointsClass() = default;  // 0x4A0A50
     virtual int Next(int a2);  // 0x4A0AF0 G42.33 b3 体签名
-    // +6 more virtual methods
+    virtual void vt_slot_5();  // X72: slot 5 (0x4A0B10) unresolved name — placeholder = Skip (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_6();  // X72: slot 6 (0x4A0B20) unresolved name — placeholder
+    virtual int ddtor(unsigned int a2, int a3, unsigned int *a4);  // 0x4A0A50 G42.33 b3 体签名  // X72 residual: RVA not a distinct binary slot
+
 
     unsigned int EnumConnectionPointsClass_field_0x04;  // G42.33 b3
     unsigned int EnumConnectionPointsClass_field_0x08;  // G42.33 b3
@@ -1445,14 +1446,15 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 class EnumConnectionsClass
 {
 public:
-    virtual ~EnumConnectionsClass() = default;  // 0x4A00B0
-
     virtual int QueryInterface(const void *a2, unsigned int *a3);  // 0x49FF80 G42.33 b3 体签名
     virtual LONG AddRef();  // 0x49FFF0 G42.33 b3 体签名 (LONG 返回)
     virtual LONG Release();  // 0x4A0010 G42.33 b3 体签名
-    virtual int ddtor(unsigned int a2, int a3, unsigned int *a4);  // 0x4A00B0 G42.33 b3 体签名
+    virtual ~EnumConnectionsClass() = default;  // 0x4A00B0
     virtual int Next(int a2);  // 0x4A0160 G42.33 b3 体签名
-    // +1 more virtual methods
+    virtual void vt_slot_5();  // X72: slot 5 (0x4A0180) unresolved name — placeholder = Skip (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_6();  // X72: slot 6 (0x4A0190) unresolved name — placeholder
+    virtual int ddtor(unsigned int a2, int a3, unsigned int *a4);  // 0x4A00B0 G42.33 b3 体签名  // X72 residual: RVA not a distinct binary slot
+
 
     unsigned int EnumConnectionsClass_field_0x04;  // G42.33 b3: 标量形 (体表 uint/ptr 用法)
     unsigned int EnumConnectionsClass_field_0x08;  // G42.33 b3

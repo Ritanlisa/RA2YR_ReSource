@@ -2549,14 +2549,16 @@ public:
 class ConnectionPointClass
 {
 public:
-    virtual ~ConnectionPointClass() = default;  // 0x4A05D0
-
     virtual int __stdcall QueryInterface(int p0, const void* p1, int* p2);  // 0x4A04B0 (x13:signals; virt=slot)
     virtual LONG __stdcall AddRef();  // 0x4A0520 (x13:signals; virt=slot)
     virtual LONG __stdcall Release();  // 0x4A0540 (x13:signals; virt=slot)
-    virtual int __stdcall ddtor(int* p0, int* p1);  // 0x4A05D0 (x13:signals; virt=slot)
+    virtual ~ConnectionPointClass() = default;  // 0x4A05D0
     virtual int __stdcall Advise(int p0, int p1);  // 0x4A0610 (x13:signals; virt=slot)
-    // +4 more virtual methods
+    virtual void vt_slot_5();  // X72: slot 5 (0x4A0630) unresolved name — placeholder = Unadvise (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_6();  // X72: slot 6 (0x4A0700) unresolved name — placeholder = EnumConnections (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_7();  // X72: slot 7 (0x4A0760) unresolved name — placeholder
+    virtual int __stdcall ddtor(int* p0, int* p1);  // 0x4A05D0 (x13:signals; virt=slot)  // X72 residual: RVA not a distinct binary slot
+
 
     uint8_t ConnectionPointClass_field_0x04[4];
     uint8_t ConnectionPointClass_field_0x08[4];
@@ -3569,14 +3571,14 @@ public:
 class MSFont
 {
 public:
-    virtual ~MSFont() = default;  // 0x5D3330
-
-    virtual void Constructor_MSFont(); // 0x5D2E30
-    virtual int Release(int16_t* p0);  // 0x5D3170 (x13:signals; virt=slot)
+    virtual void vt_slot_0();  // X72: slot 0 (0x5D3450) unresolved name — placeholder = QueryInterface (non-virtual sibling in this header; not promoted)
     virtual int __stdcall AddRef(uint8_t p0);  // 0x5D31D0 (x13:signals; virt=slot)
+    virtual int Release(int16_t* p0);  // 0x5D3170 (x13:signals; virt=slot)
+    virtual ~MSFont() = default;  // 0x5D3330
     virtual void Create(int* p0, uint8_t p1, int p2, int p3, int p4, int p5);  // 0x5D3250 (x13:signals; virt=slot)
-    virtual __int16 ddtor(int p0, uint16_t* p1, int p2, int p3, int p4);  // 0x5D3330 (x13:signals; virt=slot)
-    // +1 more virtual methods
+    virtual void Constructor_MSFont(); // 0x5D2E30  // X72 residual: RVA not a distinct binary slot
+    virtual __int16 ddtor(int p0, uint16_t* p1, int p2, int p3, int p4);  // 0x5D3330 (x13:signals; virt=slot)  // X72 residual: RVA not a distinct binary slot
+
 
     uint8_t MSFont_field_0x04[4];
     uint8_t MSFont_field_0x08[4];
@@ -6496,13 +6498,17 @@ int sub_7DC720(int a2);  // 0x7DC720 (真身 ThrowErrorCOM(a2,0,0) 硬抛 _com_e
 class WinModemClass
 {
 public:
-    virtual ~WinModemClass() = default;  // 0x7754A0
-    unsigned int * Construct(); // 0x774120 (G42 sig-sync: def)
+    virtual void* vt_slot_0(char);  // X72: slot 0 (0x775610) unresolved name — placeholder = QueryInterface (non-virtual sibling in this header; not promoted)
     virtual int AddRef(const char *a2, DWORD a3, BYTE a4, BYTE a5, char a6);  // 0x774410 (x13:signals; virt=slot)
     virtual int Release(int p0);  // 0x7748A0 (x13:signals; virt=slot)
     virtual int __fastcall GetClassIdentifier();  // 0x7748B0 (x13:signals; virt=slot)
     virtual void Init(char p0);  // 0x774900 (x13:signals; virt=slot)
-    // +10 more virtual methods
+    virtual void vt_slot_5();  // X72: slot 5 (0x774CD0) unresolved name — placeholder = LoadTypeData (non-virtual sibling in this header; not promoted)
+    virtual void vt_slot_6();  // X72: slot 6 (0x774F50) unresolved name — placeholder = SaveToINI (non-virtual sibling in this header; not promoted)
+    virtual int vt_slot_7(const char*, uint8_t, char*, int, int, int, int);  // X72: slot 7 (0x775110) unresolved name — placeholder = Dial (non-virtual sibling in this header; not promoted)
+    virtual ~WinModemClass() = default;  // 0x7754A0
+    virtual void vt_slot_9();  // X72: slot 9 (0x7754B0) unresolved name — placeholder = HangUp (non-virtual sibling in this header; not promoted)
+    unsigned int * Construct(); // 0x774120 (G42 sig-sync: def)
 
     uint8_t WinModemClass_field_0x04[4];
     uint8_t WinModemClass_field_0x08[4];
