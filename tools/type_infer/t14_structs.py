@@ -38,8 +38,35 @@ from ida_apply_t14 import call  # noqa: E402
 CLASS_LAYOUTS = os.path.join(PROJ, "tools", "class_layouts.json")
 MEMBER_TYPES = os.path.join(PROJ, "anchors", "member_types.json")
 STRUCT_CLASSES = os.path.join(PROJ, ".omo", "t14_struct_classes.json")
+VTABLE_AUTHORITY = os.path.join(PROJ, "anchors", "vtable_authority.json")
+X60_TIL = os.path.join(PROJ, ".omo", "evidence", "optimization", "x60",
+                       "x60_til.json")
 
 _PRIM_BY_SIZE = {1: "char", 4: "int"}
+
+
+def _vptr_classes():
+    """X73: classes whose binary proves a vptr at offset 0 (Q1: binary is the
+    only trusted source). vtable_authority primary table + ctor-install proof
+    = the class is polymorphic; til layouts imported pre-vptr-knowledge model
+    offset 0 as pad/gap — the til itself is wrong for these classes."""
+    try:
+        auth = json.load(open(VTABLE_AUTHORITY, encoding="utf-8"))
+    except OSError:
+        return set()
+    return {c for c, a in (auth.get("classes") or {}).items() if a.get("primary")}
+
+
+_TIL_CACHE = {}
+
+
+def _x60_til():
+    if "d" not in _TIL_CACHE:
+        try:
+            _TIL_CACHE["d"] = json.load(open(X60_TIL, encoding="utf-8"))
+        except OSError:
+            _TIL_CACHE["d"] = {}
+    return _TIL_CACHE["d"]
 
 
 def _layout_members(cls, layouts, member_types):
@@ -75,7 +102,7 @@ def _layout_members(cls, layouts, member_types):
 
 
 def build_decl(cls, layouts, member_types, class_db=None, struct_ns=None,
-               alias_out=None):
+               alias_out=None, vptr_classes=None):
     """全链扁平化 C 声明。返回 (decl, expected_size) 或 (None, 原因)。
 
     链断类（父不在 layouts, 如 COM 的 IEnumConnections）回退:
@@ -100,6 +127,18 @@ def build_decl(cls, layouts, member_types, class_db=None, struct_ns=None,
         # 回退: class_db members（member_types/layouts 合并产物）
         rec = (class_db or {}).get(cls) or {}
         mem = rec.get("members") or {}
+        src = "class_db"
+        if not mem:
+            # X73 回退 2: x60 live-til dump（IDB 现存布局的权威快照）——
+            # layouts 缺类时以此重建（成员 off/name/size 原样）
+            til = _x60_til()
+            te = til.get(cls)
+            if te and te.get("members"):
+                mem = {str(m["off"]): {"name": m.get("name") or "",
+                                       "size": m.get("size") or 4,
+                                       "type": ""}
+                       for m in te["members"]}
+                src = "x60_til"
         if not mem:
             return None, "chain-broken-no-members"
         members = []
@@ -110,11 +149,35 @@ def build_decl(cls, layouts, member_types, class_db=None, struct_ns=None,
                             m.get("type") or ""))
         members.sort(key=lambda x: x[0])
         total = rec.get("size") or layouts.get(cls, {}).get("size")
+        if src == "x60_til":
+            total = (_x60_til().get(cls) or {}).get("size") or total
         if not total:
             # 无声明尺寸: 成员末尾对齐 4 推
             end = max(o + (s if isinstance(s, int) and s > 0 else 4)
                       for o, _, s, _ in members)
             total = (end + 3) & ~3
+    # X73 Fix1: 二进制证明 vptr@0 的类（vtable_authority primary + ctor-install
+    # proof），til 导入模型把 [0,4) 留成 pad/gap —— til 本身错了。填入显式
+    # vfptr（t14 minimal-struct 先例: 多态对象偏移 0 可证为 vptr, 不发明其余）。
+    # 仅当 [0,4) 只被 pad/占位名成员占据（pad0-consistent）时替换；尺寸不变
+    # （pad 本就计入）。有语义名或跨界占位（如 __pad_0[3]+m_3 跨 [3,7)）→ 跳过
+    # （成员再推导工作包，不做半修）。
+    if vptr_classes and cls in vptr_classes:
+        _PH = re.compile(r"^(?:m_\d+|__pad_[0-9A-Fa-fXx]+|q[0-9A-Fa-f]{1,6}"
+                         r"|u8_[0-9A-Fa-f]+|u16_[0-9A-Fa-f]+|u32_[0-9A-Fa-f]+"
+                         r"|ptr_[0-9A-Fa-f]+|field_[0-9A-Fa-f]+|unknown_?\d*)$")
+        occ = [m for m in members if m[0] < 4]
+        replaceable = (
+            len(occ) == 1 and occ[0][0] == 0 and occ[0][2] == 4
+            and bool(_PH.match(occ[0][1] or ""))
+            and not [m for m in members if m is not occ[0] and m[0] < 4])
+        if occ and not replaceable:
+            pass  # 语义名@0 或跨界占位: 不做半修（recorded, 不静默替换）
+        elif not occ and total and total >= 4:
+            members = [(0, "vfptr", 4, "void*")] + members
+        elif replaceable:
+            members = [(0, "vfptr", 4, "void*")] + [
+                m for m in members if m is not occ[0]]
     lines, cursor, used_names = [], 0, set()
 
     def uniq(n):
@@ -190,14 +253,15 @@ def main():
     alias = json.load(open(alias_path, encoding="utf-8"))         if os.path.exists(alias_path) else {}
     classes = classes + [c for c in alias if c not in set(classes)]
     if args.only:
-        classes = [args.only]
+        classes = [c.strip() for c in args.only.split(",") if c.strip()]
 
     decls = {}
     skipped = {}
     struct_ns = set(classes) if args.resolve else None
+    vptr_classes = _vptr_classes()
     for c in classes:
         decl, info = build_decl(c, layouts, member_types, class_db,
-                                 struct_ns, alias)
+                                 struct_ns, alias, vptr_classes=vptr_classes)
         if decl is None:
             skipped[c] = info
         else:
