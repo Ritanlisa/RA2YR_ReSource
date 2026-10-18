@@ -67,14 +67,14 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   __int16 v15; // ax
   __int16 v16; // ax
 
-  v2 = this->u32_108 + (__int16)(1000 * LOWORD(dword_A8B230[378].vfptr1)) / 100; /*0x4846ab*/
+  v2 = this->u32_108 + (__int16)(1000 * LOWORD(dword_A8B230[378].ptr_4)) / 100; /*0x4846ab*/
   this->u32_10A = v2; /*0x4846b2*/
   this->u32_10E = v2; /*0x4846b9*/
   if ( (unsigned __int8)LightningStorm::IsActive() ) /*0x4846c0*/
   {
     v3 = this->u32_11B; /*0x4846cf*/
-    this->u32_10A += v3 * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].vfptr3); /*0x4846ec*/
-    v4 = (v3 + 4) * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].vfptr3); /*0x484703*/
+    this->u32_10A += v3 * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].ptr_C); /*0x4846ec*/
+    v4 = (v3 + 4) * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].ptr_C); /*0x484703*/
   }
   else if ( (unsigned __int8)PsyDom::IsActive() ) /*0x48470f*/
   {
@@ -93,8 +93,8 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
     }
     else
     {
-      this->u32_10A += v7 * LOWORD(dword_A8B230[380].vfptr1) - LOWORD(dword_A8B230[380].vfptr); /*0x484787*/
-      v4 = (v7 + 4) * LOWORD(dword_A8B230[380].vfptr1) - LOWORD(dword_A8B230[380].vfptr); /*0x48479e*/
+      this->u32_10A += v7 * LOWORD(dword_A8B230[380].ptr_4) - LOWORD(dword_A8B230[380].ptr_0); /*0x484787*/
+      v4 = (v7 + 4) * LOWORD(dword_A8B230[380].ptr_4) - LOWORD(dword_A8B230[380].ptr_0); /*0x48479e*/
     }
   }
   v8 = this->u32_214; /*0x4847da*/
@@ -164,7 +164,7 @@ int TacticalMap::Redraw()
   {
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 0); /*0x4f44df*/
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 1); /*0x4f44f4*/
-    (*((void (**)(GScreenClass *, bool))this->vfptr + 16))(this, v7); /*0x4f4502*/
+    (*((void (**)(GScreenClass *, bool))this->ptr_0 + 16))(this, v7); /*0x4f4502*/
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 2); /*0x4f4515*/
   }
   if ( byte_B0B519 && !stru_A8E960.random[503] ) /*0x4f452b*/
@@ -190,7 +190,7 @@ int TacticalMap::Redraw()
     dword_887640,
     DSurface_Composite,
     0);
-  result = (*((int (**)(GScreenClass *))this->vfptr + 17))(this); /*0x4f459a*/
+  result = (*((int (**)(GScreenClass *))this->ptr_0 + 17))(this); /*0x4f459a*/
   g_DSurface_Hidden_2 = v1; /*0x4f459d*/
   return result; /*0x4f45a3*/
 
@@ -203,10 +203,10 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1, void *a2)
   *aP1 = a2 * *aP1; /*0x5aea16*/
   aP1->uniqueId = (unsigned int)(a2)* aP1->uniqueId; /*0x5aea1f*/
   aP1->NeedsSaveOrLink = (unsigned int)(a2)* aP1->NeedsSaveOrLink; /*0x5aea29*/
-  aP1->vfptr1 = (unsigned int)(a2)* aP1->vfptr1; /*0x5aea33*/
+  aP1->ptr_4 = (unsigned int)(a2)* aP1->ptr_4; /*0x5aea33*/
   aP1->abstractFlags = (unsigned int)(a2)* aP1->abstractFlags; /*0x5aea3d*/
   aP1->objectTypeFlags = (unsigned int)(a2)* aP1->objectTypeFlags; /*0x5aea47*/
-  aP1->vfptr2 = (unsigned int)(a2)* aP1->vfptr2; /*0x5aea51*/
+  aP1->ptr_8 = (unsigned int)(a2)* aP1->ptr_8; /*0x5aea51*/
   aP1->nextArrayIndex = (unsigned int)(a2)* aP1->nextArrayIndex; /*0x5aea5b*/
   aP1->owningHouseIndex = (unsigned int)(a2)* aP1->owningHouseIndex; /*0x5aea65*/
 }
@@ -710,7 +710,7 @@ int TacticalMap::RenderAllObjects(int a2)
           if ( v20 >= v15 + v96 ) /*0x6d8fac*/
             goto LABEL_54; /*0x6d8fac*/
           (*(void (**)(int *, char *, unsigned int))(*v18 + 76))(v18, v110, 0); /*0x6d8fc0*/
-          if ( (dword_A8B230->vfptr & 0x1000) != 0 ) /*0x6d8fce*/
+          if ( (dword_A8B230->ptr_0 & 0x1000) != 0 ) /*0x6d8fce*/
           {
             if ( (unsigned __int8)Game::Stub3((int)&v89) ) /*0x6d8fda*/
               goto LABEL_54; /*0x6d8fe1*/
@@ -874,7 +874,7 @@ LABEL_54:
           v54 = *(BuildingClass **)(*(unsigned int *)&stru_A8E960.altNextScenario[224] + 4 * v53); /*0x6d944a*/
           if ( v54->isOnMap[0] && v54->isVisible[0] ) /*0x6d9458*/
           {
-            v55 = (int *)(*(int (**)(BuildingClass *, unsigned char *))(v54->vfptr + 172))(v54, v105); /*0x6d9472*/
+            v55 = (int *)(*(int (**)(BuildingClass *, unsigned char *))(v54->ptr_0 + 172))(v54, v105); /*0x6d9472*/
             v56 = g_TacticalClass_Instance; /*0x6d9478*/
             v57 = v55; /*0x6d947e*/
             v58 = IsoCoord::ToPixel(&v83, *v55, v55[1]); /*0x6d948b*/
@@ -931,7 +931,7 @@ LABEL_54:
                 || ((*(void (**)(unsigned __int8 *, unsigned char *, unsigned int))(*(unsigned int *)v67 + 76))(v67, v105, 0),
                     !g_hWnd)
                 || stru_A8E960.random[503]
-                || (dword_A8B230->vfptr & 0x1000) == 0
+                || (dword_A8B230->ptr_0 & 0x1000) == 0
                 || (v97 = *(IsoCoord *)(v67 + 156), v98 = *((unsigned int *)v67 + 41),
                                                     !(unsigned __int8)Game::Stub3((int)&v97)) )
               {

@@ -401,7 +401,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
   unsigned int v20; // eax
   int v21; // eax
   int PlayerCountMap; // edi
-  int vfptr2; // ecx
+  int ptr_8; // ecx
   HWND DlgItem; // eax
   Dialog *DlgCtrlID; // edi
   GameSetup *ComboBoxSelectedRaw; // eax
@@ -472,13 +472,13 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           RefreshLobbyPlayerSlots(0xFFFFFFFF); /*0x5decd5*/
           GameSetup::DisplayPlayers(v33); /*0x5decdc*/
           if ( dword_A8B23C /*0x5decef*/
-            && !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 188))(dword_A8B23C) )
+            && !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 188))(dword_A8B23C) )
           {
             g_MPCooperativeState = (ObjectClass *)-1; /*0x5decfb*/
             g_MenuStateFlags = 0; /*0x5ded05*/
             Dialog::RefreshDialogsGame(0); /*0x5ded0b*/
             *(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[591] + 107) = 0; /*0x5ded15*/
-            v21 = (*(int (**)(ObjectClass *))(dword_A8B23C->vfptr + 40))(dword_A8B23C); /*0x5ded20*/
+            v21 = (*(int (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 40))(dword_A8B23C); /*0x5ded20*/
             SessionClass::SetPlayerOption(*(int **)&stru_A8D804.__pad_3D[591], v21); /*0x5ded2a*/
             SessionClass::SetPlayerColor(*(int **)&stru_A8D804.__pad_3D[591], -2); /*0x5ded37*/
             SessionClass::SetOption(*(int **)&stru_A8D804.__pad_3D[591], -2); /*0x5ded44*/
@@ -489,7 +489,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           SetupMultiplayerLobbyScreen((MultiplayerLobby *)hDlg, (void *)-1, *(int *)&stru_A8B250.__pad_0[4]); /*0x5ded73*/
           if ( !g_MPCooperativeState /*0x5ded8c*/
             && dword_A8B23C
-            && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 188))(dword_A8B23C) )
+            && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 188))(dword_A8B23C) )
           {
             SessionClass::SetPlayerOption(*(int **)&stru_A8D804.__pad_3D[591], -3); /*0x5ded9e*/
             *(unsigned int *)(*(unsigned int *)&stru_A8D804.__pad_3D[591] + 107) = -1; /*0x5deda8*/
@@ -500,12 +500,12 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           Session::StartGame((Session *)hDlg); /*0x5dedcc*/
           PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
-            || !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C)
-            || (vfptr2 = dword_A8B230[127].vfptr2, vfptr2 > PlayerCountMap) )
+            || !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C)
+            || (ptr_8 = dword_A8B230[127].ptr_8, ptr_8 > PlayerCountMap) )
           {
-            vfptr2 = PlayerCountMap; /*0x5dee00*/
+            ptr_8 = PlayerCountMap; /*0x5dee00*/
           }
-          ResetLobbyFactionTable(vfptr2); /*0x5dee02*/
+          ResetLobbyFactionTable(ptr_8); /*0x5dee02*/
           Lobby::InvalidateFactionCombos((Lobby *)hDlg); /*0x5dee09*/
           SkirmishDialogProc(hDlg, 1175, nIDDlgItem, (HWND)lParam); /*0x5dee16*/
           NetworkLobby::UpdatePlayerList(); /*0x5dee1b*/
@@ -665,12 +665,12 @@ LABEL_48:
     v12 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5de90b*/
     if ( dword_A8B23C ) /*0x5de913*/
     {
-      if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 64))(dword_A8B23C) ) /*0x5de917*/
+      if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 64))(dword_A8B23C) ) /*0x5de917*/
       {
         v11 = dword_A8B23C; /*0x5de91e*/
         v35 = 0; /*0x5de924*/
 LABEL_58:
-        if ( !v11 || (v34 = 0, (*(unsigned __int8 (**)(ObjectClass *))(v11->vfptr + 188))(v11)) ) /*0x5de93b*/
+        if ( !v11 || (v34 = 0, (*(unsigned __int8 (**)(ObjectClass *))(v11->ptr_0 + 188))(v11)) ) /*0x5de93b*/
           v34 = 1; /*0x5de94a*/
         Dialog::IdleProcess((Dialog *)v31, (ObjectClass *)hDlg); /*0x5de951*/
         ShowWindow(hDlg, 0); /*0x5de95f*/
@@ -697,8 +697,8 @@ LABEL_58:
         Session::StartGame((Session *)hDlg); /*0x5de9fd*/
         v13 = (void *)ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dea13*/
         if ( !dword_A8B23C /*0x5dea2f*/
-          || !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C)
-          || (v14 = (void *)dword_A8B230[127].vfptr2, (int)v14 > (int)v13) )
+          || !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C)
+          || (v14 = (void *)dword_A8B230[127].ptr_8, (int)v14 > (int)v13) )
         {
           v14 = v13; /*0x5dea31*/
         }
@@ -711,7 +711,7 @@ LABEL_58:
         v15 = dword_A8B23C; /*0x5dea5a*/
         if ( dword_A8B23C ) /*0x5dea62*/
         {
-          if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 64))(dword_A8B23C) ) /*0x5dea66*/
+          if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 64))(dword_A8B23C) ) /*0x5dea66*/
           {
             v15 = dword_A8B23C; /*0x5dea6d*/
             v16 = 0; /*0x5dea73*/
@@ -721,7 +721,7 @@ LABEL_58:
         }
         v16 = 1; /*0x5dea7d*/
 LABEL_75:
-        if ( !v15 || (v17 = (*(int (**)(ObjectClass *))(v15->vfptr + 188))(v15)) != 0 ) /*0x5dea8d*/
+        if ( !v15 || (v17 = (*(int (**)(ObjectClass *))(v15->ptr_0 + 188))(v15)) != 0 ) /*0x5dea8d*/
           v17 = 1; /*0x5dea8f*/
         if ( v34 && !v17 ) /*0x5dea9b*/
           MultiplayerLobby::FillSlots((MultiplayerLobby *)hDlg); /*0x5dea9f*/

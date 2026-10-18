@@ -38,7 +38,7 @@ int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   int Prefix; // eax
-  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->vfptr, a1, aP2); /*0x420e4f*/
+  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->ptr_0, a1, aP2); /*0x420e4f*/
   return Prefix >= 0 ? 0 : Prefix;
 }
 } // namespace gamemd

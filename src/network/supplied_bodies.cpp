@@ -466,7 +466,7 @@ int IPXManagerClass::ProcessQueue() {
     v5 = (int *)&unk_A8B5B4; /*0x542536*/
     do /*0x54260c*/
     {
-      v6 = (Object *)*((unsigned int *)stru_A80220.vfptr3 + *(unsigned int *)(v4->Socket + 100)); /*0x542546*/
+      v6 = (Object *)*((unsigned int *)stru_A80220.ptr_C + *(unsigned int *)(v4->Socket + 100)); /*0x542546*/
       if ( v6 && v6 != MEMORY[0xA83D4C] ) /*0x542557*/
       {
         if ( !*((unsigned char *)v5 - 64) ) /*0x54255d*/
@@ -1753,7 +1753,7 @@ void ModemHost::InitDialog()
     *(unsigned int *)&g_Rules_MultiEngineer = v3; /*0x5b8377*/
     SWAllowed = *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5305); /*0x5b8389*/
     v4 = *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5306); /*0x5b838f*/
-    *(unsigned int *)&g_Rules_EngineerCount = stru_A8EB00.vfptr[24]; /*0x5b8395*/
+    *(unsigned int *)&g_Rules_EngineerCount = stru_A8EB00.ptr_0[24]; /*0x5b8395*/
     g_Rules_ShortGame = v4; /*0x5b839b*/
     MultiEngineer = 0; /*0x5b83a0*/
   }
@@ -1868,7 +1868,7 @@ void ModemHost::InitDialog()
   if ( v34 ) /*0x5b876c*/
   {
     SendMessageA(v34, 0x406u, 1u, 393216); /*0x5b877b*/
-    SendMessageA(v35, 0x405u, 1u, 6 - stru_A8EB00.vfptr[24]); /*0x5b8793*/
+    SendMessageA(v35, 0x405u, 1u, 6 - stru_A8EB00.ptr_0[24]); /*0x5b8793*/
   }
   Debug::Log(); /*0x5b87a1*/
   v36 = v5(*v2, 1363); /*0x5b87b4*/
@@ -2320,12 +2320,12 @@ void ModemHost::StartGame()
   Debug::Log(); /*0x5bac97*/
   if ( a2 == 1 ) /*0x5baca2*/
     return 0; /*0x5bacb0*/
-  dword_A8B230[130].vfptr3 = *(void **)&g_GameRulesOptions; /*0x5bacc5*/
+  dword_A8B230[130].ptr_C = *(void **)&g_GameRulesOptions; /*0x5bacc5*/
   strcpy( /*0x5bacfc*/
     (char *)&dword_A8B230[130].abstractFlags,
     (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions) + 88));
-  dword_A8B230[43].vfptr1 = (void *)1; /*0x5bad10*/
-  dword_A8B230[43].vfptr = (void *)1; /*0x5bad1c*/
+  dword_A8B230[43].ptr_4 = (void *)1; /*0x5bad10*/
+  dword_A8B230[43].ptr_0 = (void *)1; /*0x5bad1c*/
   dword_A8B54C = 0; /*0x5bad22*/
   v3 = operator new(0x85u); /*0x5bad28*/
   v3 = v3; /*0x5bad2d*/
@@ -2387,7 +2387,7 @@ void ModemHost::StartGame()
     *(int *)((char *)&v32[38] + 2) = v12; /*0x5baeb8*/
   }
   v13 = 5; /*0x5baec5*/
-  stru_A8EB00.vfptr[24] = *(unsigned int *)&g_Rules_EngineerCount; /*0x5baeca*/
+  stru_A8EB00.ptr_0[24] = *(unsigned int *)&g_Rules_EngineerCount; /*0x5baeca*/
   dword_A8B554 = 5; /*0x5baed8*/
   dword_A8DB9C = 0; /*0x5baedd*/
   dword_A8B56C = 0; /*0x5baee3*/
@@ -2461,7 +2461,7 @@ void ModemHost::StartGame()
         Dialog::Destroy(v16); /*0x5bb1ae*/
       EventClass::CheckFlag((EventClass *)&unk_A8EA70); /*0x5bb1b8*/
       (((unsigned char *)&(DataGlobal_A8D60C))[2]) = 0; /*0x5bb1c9*/
-      dword_A8B230[130].vfptr3 = *(void **)&g_GameRulesOptions; /*0x5bb1d0*/
+      dword_A8B230[130].ptr_C = *(void **)&g_GameRulesOptions; /*0x5bb1d0*/
       dword_A8B54C = dword_A8DA84; /*0x5bb1f0*/
       v25 = dword_A8E960[0]; /*0x5bb1f5*/
       (((unsigned char *)&(v25))[1]) = (((unsigned char *)&(dword_A8E960[0]))[1]) & 0x77; /*0x5bb1fc*/
@@ -2470,9 +2470,9 @@ void ModemHost::StartGame()
       *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] = 0; /*0x5bb20c*/
       dword_A8B24C = 2; /*0x5bb212*/
       dword_A8E960[0] = v26; /*0x5bb21c*/
-      vtable0 = dword_A8B230[0].vfptr; /*0x5bb222*/
-      (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].vfptr >> 8) & 0xFB; /*0x5bb229*/
-      dword_A8B230[0].vfptr = vtable0; /*0x5bb22c*/
+      vtable0 = dword_A8B230[0].ptr_0; /*0x5bb222*/
+      (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].ptr_0 >> 8) & 0xFB; /*0x5bb229*/
+      dword_A8B230[0].ptr_0 = vtable0; /*0x5bb22c*/
       byte_A8B31C = 1; /*0x5bb22e*/
       nullsub_37(v29); /*0x5bb235*/
       Debug::Log(); /*0x5bb23f*/
@@ -3122,7 +3122,7 @@ void MultiplayerLobby::FillSlots()
     PlayerCountMap = ReadPlayerCountMap(*(int *)&g_GameRulesOptions); /*0x5ec155*/
     if ( dword_A8B23C ) /*0x5ec159*/
     {
-      v10 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vfptr + 38))(dword_A8B23C); /*0x5ec15d*/
+      v10 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->ptr_0 + 38))(dword_A8B23C); /*0x5ec15d*/
       if ( v10 != -1 && v10 < PlayerCountMap ) /*0x5ec16a*/
         PlayerCountMap = v10; /*0x5ec16c*/
     }

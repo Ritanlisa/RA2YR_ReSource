@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_5BAA80 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     void sub_5BAA80(wchar_t * Format, unsigned int a3, int a4);  // 0x5BAA80
     // --- W16G3 supply (BEGIN) ---
     unsigned int AbstractClass;  // @0x5baaa1 (W16G3 raw-usage vocab)

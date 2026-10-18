@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_5C80A0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int  ComputeModularInverse(unsigned short * a2, int a3);  // 0x5C80A0
 };
 } // namespace gamemd

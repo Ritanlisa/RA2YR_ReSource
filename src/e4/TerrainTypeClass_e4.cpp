@@ -359,7 +359,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
     operator delete((void *)(Image)); /*0x71e38a*/
     a3->Image = 0; /*0x71e392*/
   }
-  AbstractClass::AnnounceExpiredPointer(&a3->vfptr, 1); /*0x71e3a0*/
+  AbstractClass::AnnounceExpiredPointer(&a3->ptr_0, 1); /*0x71e3a0*/
   TerrainTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = a3; /*0x71e3b5*/
   int v4; // eax
@@ -376,7 +376,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
   ObjectTypeClass::Destruct((int)a3); /*0x71e3f0*/
   if ( (a3 & 1) != 0 ) /*0x71e3fa*/
     operator delete((void *)(a3)); /*0x71e3fd*/
-  return &a3->vfptr; /*0x71e407*/
+  return &a3->ptr_0; /*0x71e407*/
 }
 // 0x53FFA0
 int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * v10, unsigned int * a5, unsigned short * a6, unsigned int * a7)
@@ -442,10 +442,10 @@ unsigned int *   TerrainTypeClass::GetWidth(int * a2, void *a2_1)
   v3 = (void *)v7; /*0x71e0fa*/
   if ( v7 < GroundHeight ) /*0x71e100*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x71e111*/
-  this->vfptr = v5; /*0x71e11e*/
-  this->vfptr1 = v6; /*0x71e124*/
-  this->vfptr2 = v3; /*0x71e128*/
-  return &this->vfptr; /*0x71e12b*/
+  this->ptr_0 = v5; /*0x71e11e*/
+  this->ptr_4 = v6; /*0x71e124*/
+  this->ptr_8 = v3; /*0x71e128*/
+  return &this->ptr_0; /*0x71e12b*/
 }
 // 0x71E140
 int TerrainTypeClass::PowerDrainUpdate(int * a2)

@@ -5,10 +5,10 @@
 
 namespace gamemd {
 struct E4Recv_492ED0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int  sub_492ED0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x492ED0
     // --- W16G3 supply (BEGIN) ---
-    char __pad_0[4];  // 0x0 vfptr carrier (W16G3 raw-usage vocab)
+    char __pad_0[4];  // 0x0 ptr_0 carrier (W16G3 raw-usage vocab)
     // --- W16G3 supply (END) ---
 
 };

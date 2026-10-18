@@ -6,12 +6,12 @@
 namespace gamemd {
 struct E4Recv_636F00 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
     int  sub_636F00(int a2, int a3);  // 0x636F00
 
 
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * ptr_8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

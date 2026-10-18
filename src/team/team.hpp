@@ -184,8 +184,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_D8;  // X10 supply (member_lookup)
 
 
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_C;  // 0xC [X55 W3 supply (render vocab)]
     unsigned int q21C;  // 0x21C [X55 W3 supply (render vocab)]
 };
 

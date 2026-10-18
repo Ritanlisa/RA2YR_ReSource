@@ -7,7 +7,7 @@
 
 namespace gamemd {
 struct E4Recv_6CE570 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int sub_6CE570();  // 0x6CE570 G42.33 b12 truth int index
 };
 } // namespace gamemd

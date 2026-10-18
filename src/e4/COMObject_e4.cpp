@@ -43,7 +43,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
   if ( memcmp(a2, &IID_IUnknown, 0x10u) && memcmp(a2, &unk_7EA6E8, 0x10u) ) /*0x4f427a*/
     return -2147467262; /*0x4f427f*/
   *a3 = a1; /*0x4f428c*/
-  (*(void (__stdcall **)(GScreenClass *))(a1->vfptr[0] + 4))(a1); /*0x4f4291*/
+  (*(void (__stdcall **)(GScreenClass *))(a1->ptr_0[0] + 4))(a1); /*0x4f4291*/
   return 0; /*0x4f424a*/
 }
 } // namespace gamemd
@@ -51,7 +51,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 namespace gamemd {
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
-  return *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
+  return *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] == (*(int (**)(GScreenClass *))(aP0->ptr_0[0] + 24))(aP0); /*0x4f4408*/
 }
 } // namespace gamemd
 // 0x55AB40

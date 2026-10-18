@@ -57,10 +57,10 @@ void * ScriptClass::Construct(int a2) {
     this->field28 = 0; /*0x6913cc*/
     this->buildingType = (ScriptTypeClass *)a2; /*0x6913d3*/
     this->idxCurrentLine = -1; /*0x6913d6*/
-    *(void **)(char *)this = 0; /*0x6913dd vfptr0*/
-    *(void **)((char *)this + 4) = 0; /*0x6913e3 vfptr1*/
-    *(void **)((char *)this + 8) = 0; /*0x6913ea vfptr2*/
-    *(void **)((char *)this + 12) = 0; /*0x6913f1 vfptr3*/
+    *(void **)(char *)this = 0; /*0x6913dd ptr_0*/
+    *(void **)((char *)this + 4) = 0; /*0x6913e3 ptr_4*/
+    *(void **)((char *)this + 8) = 0; /*0x6913ea ptr_8*/
+    *(void **)((char *)this + 12) = 0; /*0x6913f1 ptr_C*/
     if ( dword_8872C0 < dword_8872B8 /*0x69142f*/
       || (byte_8872BD || !dword_8872B8)
       && dword_8872C4 > 0

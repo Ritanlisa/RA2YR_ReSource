@@ -7,7 +7,7 @@ namespace gamemd {
 struct TechnoTypeClass;  // fix_fwd_type_supply
 struct E4Recv_404BB0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M488;  // 0x1E8
     unsigned int M616;  // 0x268
     unsigned int M620;  // 0x26C

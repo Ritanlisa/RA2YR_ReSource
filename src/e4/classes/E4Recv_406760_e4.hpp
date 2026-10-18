@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_406760 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     void * sub_406760();
 
     void * sub_406760(void (*a1)(char *));  // G42.39 overload supply

@@ -890,7 +890,7 @@ char RenderScoreboardSidebar(void * a1, void * a2)
       v38 = v1; /*0x654161*/
       do /*0x654308*/
       {
-        v43 = *(&dword_A8022C->vfptr + v2); /*0x65416d*/
+        v43 = *(&dword_A8022C->ptr_0 + v2); /*0x65416d*/
         v16 = v43; /*0x654168*/
         if ( v43 && *(unsigned char *)(*(unsigned int *)(v43 + 52) + 421) ) /*0x65417a*/
         {
@@ -1010,9 +1010,9 @@ int ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
   for ( i = dword_A80238; v2 < i; ++v2 ) /*0x658661*/
   {
     int v4; // edi
-    v4 = *(&dword_A8022C->vfptr.vfptr + v2); /*0x658668*/
+    v4 = *(&dword_A8022C->ptr_0.ptr_0 + v2); /*0x658668*/
     if ( v4 /*0x658683*/
-      && ((uint8_t)((House *)(dword_A8022C->vtable1.vfptr + v2)))->IsHumanPlayer()
+      && ((uint8_t)((House *)(dword_A8022C->vtable1.ptr_0 + v2)))->IsHumanPlayer()
        || !*(unsigned char *)(v4->u32_34 + 422)) )
     {
       ((TabClass *)(v3))->DrawPower(hDlg); /*0x658692*/
@@ -1047,7 +1047,7 @@ int sub_6586D0(ObjectClass *a1)
     ((Dialog *)(Dialog))->Destroy(); /*0x658733*/
   }
   (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x658740*/
-  ((unsigned int *)&stru_A8EB00)[440] = (((unsigned char *)&(((unsigned int *)(dword_A8B230))[381].vfptr3))[2]); /*0x658758*/
+  ((unsigned int *)&stru_A8EB00)[440] = (((unsigned char *)&(((unsigned int *)(dword_A8B230))[381].ptr_C))[2]); /*0x658758*/
   return MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x658763*/
 }
 }
@@ -1467,7 +1467,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
     v20 = ~v11; /*0x65c96c*/
     if ( v9 + 1 > v9 ) /*0x65c970*/
     {
-      vtable0 = this->vfptr; /*0x65c976*/
+      vtable0 = this->ptr_0; /*0x65c976*/
       while ( 1 ) /*0x65c980*/
       {
         pN = (unsigned int)this->ptr_4; /*0x65c980*/
@@ -1719,22 +1719,22 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
         v25 = v22; /*0x65da8d*/
         v22 = (unsigned int *)v22[12]; /*0x65da91*/
         *v24 = 0; /*0x65da93*/
-        v26 = (*(int (**)(TechnoClass *))(v16->vfptr + 44))(v16); /*0x65da9b*/
+        v26 = (*(int (**)(TechnoClass *))(v16->ptr_0 + 44))(v16); /*0x65da9b*/
         if ( v26 <= 0 ) /*0x65daa0*/
           goto LABEL_39; /*0x65daa0*/
         if ( v26 <= 2 ) /*0x65daa5*/
         {
           CellClass::AddObject((CellClass *)v16->passengers, v25); /*0x65dadd*/
           v25->vt_slot_284(); /*0x65dae6*/
-          (*(void (**)(TechnoClass *, int, unsigned int))(v16->vfptr + 488))(v16, 16, 0); /*0x65daf4*/
+          (*(void (**)(TechnoClass *, int, unsigned int))(v16->ptr_0 + 488))(v16, 16, 0); /*0x65daf4*/
           ++v23; /*0x65dafa*/
           goto LABEL_41; /*0x65dafb*/
         }
         if ( v26 == 6 ) /*0x65daaa*/
         {
-          if ( (*(int (**)(TechnoClass *, unsigned int *, ScriptActionQueue))(v16->vfptr + 256))(v16, v25, v46) == 2 ) /*0x65dabf*/
+          if ( (*(int (**)(TechnoClass *, unsigned int *, ScriptActionQueue))(v16->ptr_0 + 256))(v16, v25, v46) == 2 ) /*0x65dabf*/
           {
-            (*(void (**)(TechnoClass *, int))(v16->vfptr + 628))(v16, 3); /*0x65dacd*/
+            (*(void (**)(TechnoClass *, int))(v16->ptr_0 + 628))(v16, 3); /*0x65dacd*/
             ++v23; /*0x65dad3*/
           }
           else if ( v25 ) /*0x65dac3*/
@@ -2464,7 +2464,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
     if ( v8 < 50 ) /*0x65ecaf*/
     {
       v7[2].defaultCoords[2 * v8 + 1] = 5; /*0x65ecb1*/
-      *((unsigned int *)&v7[3].vfptr + 2 * v8) = 0; /*0x65ecb8*/
+      *((unsigned int *)&v7[3].ptr_0 + 2 * v8) = 0; /*0x65ecb8*/
       ++v7[2].defaultCoords[0]; /*0x65ecbf*/
     }
   }

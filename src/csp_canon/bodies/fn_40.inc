@@ -30,7 +30,7 @@ int AudioMixer_EndFrame(int * a1, unsigned int * a2)
 
 // ==== BACKFILL 0x00401170  ObjectClass::ClearFlags2  cls=ObjectClass  sig=csp  renamed_refs=0  residual=- ====
 int ObjectClass::ClearFlags2() {
-    *(unsigned int *)(char *)this = *(unsigned int *)(char *)this & ~2u; /*0x401179 vfptr+0 真值*/
+    *(unsigned int *)(char *)this = *(unsigned int *)(char *)this & ~2u; /*0x401179 ptr_0+0 真值*/
     *(unsigned int *)((char *)this + 80) &= ~2u; /*0x401180 +0x50 真值*/
     *(unsigned int *)((char *)this + 40) &= ~2u; /*0x401188 +0x28 真值*/
     return -3; /*0x40118b*/

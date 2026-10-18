@@ -774,7 +774,7 @@ HWND Options::InitDialogControls(HWND hDlg)
       if ( result ) /*0x4f17a4*/
       {
         SendMessageA((HWND)result, 0x406u, 1u, 393216); /*0x4f17b7*/
-        return SendMessageA(v6, 0x405u, 1u, 6 - stru_A8EB00.vfptr[24]); /*0x4f17cf*/
+        return SendMessageA(v6, 0x405u, 1u, 6 - stru_A8EB00.ptr_0[24]); /*0x4f17cf*/
       }
     }
   }

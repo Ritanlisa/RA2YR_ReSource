@@ -67,8 +67,22 @@ for path in g60.FILES:
             if mp:
                 pack_p = int(mp.group(1))
                 break
-        prev_end = 0
-        max_align = 1
+        # X75 instrument model correction: a polymorphic carrier gets the
+        # compiler vptr implicitly at offset 0 (the X73 carrier model).  When
+        # the first annotated member starts at 0x4, the 4-byte implicit vptr
+        # accounts for [0,4).  Structs whose first member is annotated at 0
+        # keep the old model (backward compatible).
+        body_lines = lines[st['open'] + 1:st['close']]
+        polymorphic = any(re.search(r'\bvirtual\b', ln) and
+                          not ln.strip().startswith('//') for ln in body_lines)
+        first_off = None
+        for ln in body_lines:
+            mf = MEMBER_RE.match(ln)
+            if mf:
+                first_off = int(mf.group(2), 16)
+                break
+        prev_end = 4 if (polymorphic and first_off in (4, None)) else 0
+        max_align = 4 if polymorphic else 1
         ok_contig = True
         ok_align = True
         for ln in lines[st['open'] + 1:st['close']]:

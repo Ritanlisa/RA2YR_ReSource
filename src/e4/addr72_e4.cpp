@@ -69,7 +69,7 @@ void * sub_7221B0()
   int v8; // [esp+8h] [ebp-8h]
 
   result = (void *)(dword_A8B230);
-  if ( (((unsigned char *)&(((unsigned int *)(dword_A8B230))[374].vfptr3))[2]) ) /*0x7221b8*/
+  if ( (((unsigned char *)&(((unsigned int *)(dword_A8B230))[374].ptr_C))[2]) ) /*0x7221b8*/
   {
     result = (void *)g_BuildingLoadQueue_Array.BarrelAnimData[0]; /*0x7221c3*/
     for ( i = 0; i < g_BuildingLoadQueue_Array.BarrelAnimData[0]; ++i ) /*0x7221cc*/
@@ -117,12 +117,12 @@ void * sub_722C40()
   int v11; // [esp+8h] [ebp-8h]
 
   result = dword_A8B230; /*0x722c40*/
-  if ( BYTE2(dword_A8B230[374].vfptr3) ) /*0x722c48*/
+  if ( BYTE2(dword_A8B230[374].ptr_C) ) /*0x722c48*/
   {
     result = (void *)dword_B0F4F8; /*0x722c57*/
     for ( i = 0; i < dword_B0F4F8; ++i ) /*0x722c60*/
     {
-      v3 = (ObjectClass *)*(&dword_B0F4EC->vfptr + i); /*0x722c73*/
+      v3 = (ObjectClass *)*(&dword_B0F4EC->ptr_0 + i); /*0x722c73*/
       estimatedHealth = v3[1].estimatedHealth; /*0x722c76*/
       spawnStatus = v3[1].spawnStatus; /*0x722c7c*/
       if ( estimatedHealth != -1 ) /*0x722c85*/
@@ -135,14 +135,14 @@ void * sub_722C40()
       {
 LABEL_7:
         RebuildBuildingOccupancy(v3); /*0x722c99*/
-        if ( (dword_A8B230->vfptr & 0x40) != 0 ) /*0x722ca7*/
+        if ( (dword_A8B230->ptr_0 & 0x40) != 0 ) /*0x722ca7*/
           v6 = 0.3; /*0x722ca9*/
         else
           v6 = 1.0; /*0x722cb1*/
         v7 = dword_B0F4EC; /*0x722cb7*/
         v8 = *(unsigned int *)&stru_A8E960.random[528]; /*0x722cbd*/
         LOWORD(v9) = Math::RoundToInt(v6); /*0x722cce*/
-        v10 = (unsigned int *)(*(&v7->vfptr + i) + 284); /*0x722cd6*/
+        v10 = (unsigned int *)(*(&v7->ptr_0 + i) + 284); /*0x722cd6*/
         *v10 = v8; /*0x722cde*/
         v10->u32_4 = v11; /*0x722ce0*/
         v10->u32_8 = v9; /*0x722ce3*/
@@ -1468,7 +1468,7 @@ unsigned int ObjectClass::sub_720440()
   (this->vtable1) = 0; /*0x72046d*/
   (this->u32_100) = 0; /*0x72046f*/
   (this->q_200) = 0; /*0x720475*/
-  return &this->vfptr; /*0x72047c*/
+  return &this->ptr_0; /*0x72047c*/
 }
 } // namespace gamemd
 
@@ -1476,10 +1476,10 @@ unsigned int ObjectClass::sub_720440()
 namespace gamemd {
 unsigned int ObjectClass::sub_720960()
 {
-  this->vfptr = (void *)-1; /*0x720965*/
-  this->vfptr1 = (void *)-1; /*0x720967*/
-  this->vfptr2 = (void *)-1; /*0x72096a*/
-  this->vfptr3 = (void *)255; /*0x72096f*/
+  this->ptr_0 = (void *)-1; /*0x720965*/
+  this->ptr_4 = (void *)-1; /*0x720967*/
+  this->ptr_8 = (void *)-1; /*0x72096a*/
+  this->ptr_C = (void *)255; /*0x72096f*/
   (this->uniqueId) = 0; /*0x720976*/
   (this->q011) = 0; /*0x720979*/
   (this->IsInitialized) = 0; /*0x72097c*/
@@ -1491,7 +1491,7 @@ unsigned int ObjectClass::sub_720960()
   this->owningHouseIndex = 10; /*0x720993*/
   this->occupant = 0; /*0x72099a*/
   this->fallRate = 0; /*0x72099d*/
-  return &this->vfptr; /*0x7209a0*/
+  return &this->ptr_0; /*0x7209a0*/
 }
 } // namespace gamemd
 
@@ -2616,7 +2616,7 @@ namespace gamemd {
 unsigned int ObjectClass::sub_7266C0(char a2)
 {
   this->ambientSoundController[1] |= 1 << a2; /*0x7266cd*/
-  return &this->vfptr; /*0x7266d0*/
+  return &this->ptr_0; /*0x7266d0*/
 }
 } // namespace gamemd
 

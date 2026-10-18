@@ -380,7 +380,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5, void *a3, void *a4
   if ( this->SuperClass_19D ) /*0x422fec*/
     return; /*0x422fec*/
   AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x422ffa*/
-  if ( *(unsigned int *)&AnimClass_field_0xC8[2].__pad_C[72] > MEMORY[0xA8EB00].vfptr[30] /*0x42301e*/
+  if ( *(unsigned int *)&AnimClass_field_0xC8[2].__pad_C[72] > MEMORY[0xA8EB00].ptr_0[30] /*0x42301e*/
     || this->q199 && AnimClass_field_0xC8[2].__pad_C[232] )
   {
     return; /*0x42301e*/
@@ -399,7 +399,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5, void *a3, void *a4
     else
       AnimClass_field_0x190 |= 4u; /*0x42307a*/
   }
-  if ( *(unsigned int *)&v21[2].__pad_C[76] <= MEMORY[0xA8EB00].vfptr[30] ) /*0x42308b*/
+  if ( *(unsigned int *)&v21[2].__pad_C[76] <= MEMORY[0xA8EB00].ptr_0[30] ) /*0x42308b*/
   {
     if ( !v21[2].__pad_C[222] ) /*0x423095*/
     {

@@ -485,7 +485,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
   }
   else
   {
-    v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))&this->vfptr->q048)(this, &v18); /*0x424d1a*/
+    v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))&this->ptr_0->q048)(this, &v18); /*0x424d1a*/
     StartAudioControllerAt(*(unsigned int *)(this->missionTimer[0] + 760), v2, &this->u32_2F8); /*0x424d2b*/
   }
   AudioController::Stop(&this->AudioController_1B4); /*0x424d43*/
@@ -497,12 +497,12 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
     LOBYTE(v3) = *(unsigned char *)(this->missionTimer[0] + 855); /*0x424d73*/
     if ( (unsigned char)v3 ) /*0x424d7b*/
     {
-      v4 = (unsigned int *)(*(int (**)(TechnoClass *, char *))&this->vfptr->q048)(this, v21); /*0x424d8a*/
+      v4 = (unsigned int *)(*(int (**)(TechnoClass *, char *))&this->ptr_0->q048)(this, v21); /*0x424d8a*/
       v5 = Coord::To_Cell((Coord *)&dword_87F7E8, v4); /*0x424d98*/
       v3 = BuildingClass::FindByCellHash((BuildingClass *)v5); /*0x424d9c*/
       if ( v3 != -1 ) /*0x424da4*/
       {
-        v6 = (unsigned int *)*(&dword_B0F4EC->vfptr + v3); /*0x424db3*/
+        v6 = (unsigned int *)*(&dword_B0F4EC->ptr_0 + v3); /*0x424db3*/
         CellClass::ReduceTiberium(&v5->mapCoords, (unsigned __int8)v5->powerup[0] + 1); /*0x424dc0*/
         if ( (int)v6[53] > 0 && !((int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 3) ) /*0x424def*/
         {
@@ -686,7 +686,7 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
   int v17; // edx
   int v18; // eax
   int v19; // eax
-  int vfptr; // edx
+  int ptr_0; // edx
   signed int v21; // ebx
   int *v22; // eax
   int v23; // eax
@@ -782,10 +782,10 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
     if ( (int)Coord::Length((Coord *)&v54) > 18 ) /*0x42573d*/
     {
       v54 = *location; /*0x4258f3*/
-      vfptr = this->vfptr; /*0x4258f7*/
+      ptr_0 = this->ptr_0; /*0x4258f7*/
       v55 = this->location[1]; /*0x4258fc*/
       v21 = this->location[2]; /*0x425904*/
-      v22 = (int *)(*(int (**)(TechnoClass *, int *))(vfptr + 72))(this, &v54); /*0x42590a*/
+      v22 = (int *)(*(int (**)(TechnoClass *, int *))(ptr_0 + 72))(this, &v54); /*0x42590a*/
       v23 = *(unsigned int *)Cell::GetHeight((Cell *)&v49, v22, &this->animation[4]); /*0x425917*/
       v54 = *location; /*0x42591d*/
       v55 = this->location[1]; /*0x425924*/
@@ -805,7 +805,7 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
         GroundHeight = Map_MaxHeight + Cell::GetGroundHeight(&v51); /*0x4259e5*/
       else
         GroundHeight = Cell::GetGroundHeight(&v51); /*0x4259cf*/
-      v27 = this->vfptr; /*0x4259eb*/
+      v27 = this->ptr_0; /*0x4259eb*/
       v53 = GroundHeight; /*0x4259ed*/
       (*(void (**)(TechnoClass *, unsigned __int16 **))(v27 + 436))(this, &v51); /*0x4259f8*/
     }
@@ -820,7 +820,7 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
       v53 = v9->vtable3; /*0x425773*/
       v11 = (Coord::To_Cell((Coord *)&dword_87F7E8, &this->animation[4])->landType == 2 /*0x4257ab*/
           || Coord::To_Cell((Coord *)&dword_87F7E8, &this->animation[4])->landType == 6)
-         && (*(int (**)(TechnoClass *))&this->vfptr->forceShielded)(this) <= Map_CellHeight;
+         && (*(int (**)(TechnoClass *))&this->ptr_0->forceShielded)(this) <= Map_CellHeight;
       if ( v10 == Map_InvalidCoord_X && v52 == Map_InvalidCoord_Y && v53 == Map_InvalidCoord_Z /*0x4257ec*/
         || (v12 = this->passengers[0], v12 >= 7)
         || v11 )
@@ -849,7 +849,7 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
         v14 = Map_MaxHeight + Cell::GetGroundHeight(&v49); /*0x42585d*/
       else
         v14 = Cell::GetGroundHeight(&v49); /*0x425847*/
-      v15 = this->vfptr; /*0x425863*/
+      v15 = this->ptr_0; /*0x425863*/
       v50 = v14; /*0x425865*/
       (*(void (**)(TechnoClass *, double *))(v15 + 436))(this, &v49); /*0x425870*/
       v16 = v52; /*0x42587a*/
@@ -906,7 +906,7 @@ LABEL_41:
       || this->animation[5] != Map_InvalidCoord_Y
       || this->animation[6] != Map_InvalidCoord_Z )
     {
-      v43 = (int *)(*(int (**)(TechnoClass *, int *))&this->vfptr->q048)(this, &v54); /*0x425c40*/
+      v43 = (int *)(*(int (**)(TechnoClass *, int *))&this->ptr_0->q048)(this, &v54); /*0x425c40*/
       v44 = *v43; /*0x425c45*/
       LODWORD(v48) = *v4; /*0x425c47*/
       LODWORD(v49) = v44; /*0x425c4b*/
@@ -921,9 +921,9 @@ LABEL_41:
     return v19; /*0x425cda*/
   }
 LABEL_47:
-  v19 = *(__int16 *)((*(int (**)(TechnoClass *))&this->vfptr->health)(this) + 6) / 2 - 1; /*0x425cdb*/
+  v19 = *(__int16 *)((*(int (**)(TechnoClass *))&this->ptr_0->health)(this) + 6) / 2 - 1; /*0x425cdb*/
   if ( this->currentMission >= v19 ) /*0x425cf4*/
-    LOBYTE(v19) = (*(bool (**)(TechnoClass *))&this->vfptr->animation_d)(this); /*0x425cfa*/
+    LOBYTE(v19) = (*(bool (**)(TechnoClass *))&this->ptr_0->animation_d)(this); /*0x425cfa*/
   return v19; /*0x4258bb*/
 
 }
@@ -954,7 +954,7 @@ int sub_4261D0()
       v5 = BuildingClass::FindByCellHash((BuildingClass *)v4); /*0x42622b*/
       if ( v5 != -1 ) /*0x426233*/
       {
-        v6 = *(&dword_B0F4EC->vfptr + v5); /*0x42623b*/
+        v6 = *(&dword_B0F4EC->ptr_0 + v5); /*0x42623b*/
         if ( v6 ) /*0x426240*/
           v3[53] = *(unsigned int *)(*((unsigned int *)dword_B054D4 + *(unsigned int *)(v6 + 192)) + 780); /*0x426256*/
       }
@@ -989,10 +989,10 @@ AbstractClass * * sub_4267F0(int a2)
       *(unsigned int *)this->hasParachute,
       this->onBridge,
       128);
-    memset(&this->vfptr1, 0, 0x80u); /*0x426847*/
+    memset(&this->ptr_4, 0, 0x80u); /*0x426847*/
     (*(void (**)(unsigned int, int *, int))(**(unsigned int **)this->hasParachute + 36))( /*0x426857*/
       *(unsigned int *)this->hasParachute,
-      &this->vfptr1,
+      &this->ptr_4,
       128);
     (*(void (**)(unsigned int, unsigned int, int))(**(unsigned int **)this->hasParachute + 40))( /*0x426866*/
       *(unsigned int *)this->hasParachute,
@@ -1023,7 +1023,7 @@ AbstractClass * * sub_4267F0(int a2)
       &this->ToolTipText[292]);
     if ( !sub_426990((ObjectClass *)this) ) /*0x4268ed*/
     {
-      (*(void (**)(UnitClass *))&this->vfptr->vtable3)(this); /*0x4268fb*/
+      (*(void (**)(UnitClass *))&this->ptr_0->vtable3)(this); /*0x4268fb*/
       return 0; /*0x426903*/
     }
     v8 = __2_YAPAXI_Z(0x20u); /*0x42690b*/
@@ -1405,12 +1405,12 @@ AbstractClass * * ObjectClass::sub_42A900()
   *&this->bombVisible = 0; /*0x42a93f*/
   if ( uniqueId ) /*0x42a944*/
     __3_YAXPAX_Z(uniqueId); /*0x42a947*/
-  vtable3 = this->vfptr3; /*0x42a94f*/
+  vtable3 = this->ptr_C; /*0x42a94f*/
   this->uniqueId = 0; /*0x42a952*/
   if ( vtable3 ) /*0x42a957*/
     __3_YAXPAX_Z(vtable3); /*0x42a95a*/
   nextArrayIndex = (void *)this->nextArrayIndex; /*0x42a962*/
-  this->vfptr3 = 0; /*0x42a965*/
+  this->ptr_C = 0; /*0x42a965*/
   if ( nextArrayIndex ) /*0x42a96a*/
   {
     __3_YAXPAX_Z(nextArrayIndex); /*0x42a96d*/
@@ -3792,7 +3792,7 @@ int sub_429500()
     return -2147467261; /*0x429509*/
   int uniqueId; // edi
   uniqueId = dword_A8B230[43].uniqueId; /*0x429519*/
-  if ( dword_A8B230[43].vfptr2 != -1 ) /*0x42952e*/
+  if ( dword_A8B230[43].ptr_8 != -1 ) /*0x42952e*/
   {
     int *pVal; // esi
     pVal = &dword_A8B230[43].ptr_2; /*0x42951f*/
@@ -4165,7 +4165,7 @@ bool ObjectClass::sub_42E990(unsigned int * a2)
   v5 = 0; /*0x42e9b1*/
   for ( i = 0; ; i += 4 ) /*0x42e9b3*/
   {
-    v6 = (char *)this->vfptr2 + (unsigned int)v5; /*0x42e9c0*/
+    v6 = (char *)this->ptr_8 + (unsigned int)v5; /*0x42e9c0*/
     if ( *(unsigned int *)(a2[328] + 3576) == *(unsigned int *)v6 ) /*0x42e9ca*/
     {
       v7 = (unsigned short *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 440))(a2, v9); /*0x42e9d6*/
@@ -4177,7 +4177,7 @@ bool ObjectClass::sub_42E990(unsigned int * a2)
     if ( v4 >= this->abstractFlags ) /*0x42ea00*/
       return 0; /*0x42ea00*/
   }
-  return (char *)this->vfptr2 + 16 * v4 != 0; /*0x42ea13*/
+  return (char *)this->ptr_8 + 16 * v4 != 0; /*0x42ea13*/
 
 }
 } // namespace gamemd
@@ -4201,7 +4201,7 @@ int ObjectClass::sub_42EA30(unsigned int * a2)
     return 0; /*0x42eab7*/
   while ( 1 ) /*0x42ea62*/
   {
-    v5 = (char *)this->vfptr2 + v4; /*0x42ea62*/
+    v5 = (char *)this->ptr_8 + v4; /*0x42ea62*/
     if ( *(unsigned int *)(a2[328] + 3576) == *(unsigned int *)v5 ) /*0x42ea6a*/
     {
       v6 = (unsigned short *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 440))(a2, v8); /*0x42ea75*/
@@ -4212,7 +4212,7 @@ int ObjectClass::sub_42EA30(unsigned int * a2)
     if ( ++v9 >= this->abstractFlags ) /*0x42ea9f*/
       return 0; /*0x42ea9f*/
   }
-  return (int)this->vfptr2 + 16 * v9; /*0x42eaaa*/
+  return (int)this->ptr_8 + 16 * v9; /*0x42eaaa*/
 
 }
 } // namespace gamemd

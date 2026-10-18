@@ -447,8 +447,8 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   AbstractClass *v3; // esi
   int v4; // eax
   void *NeedsSaveOrLink; // eax
-  void *vfptr1; // eax
-  void *vfptr3; // eax
+  void *ptr_4; // eax
+  void *ptr_C; // eax
   AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
 
   v3 = v2; /*0x7730f3*/
@@ -474,28 +474,28 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   }
   NeedsSaveOrLink = v3->nextArrayIndex.NeedsSaveOrLink; /*0x77316e*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x773174*/
-  if ( NeedsSaveOrLink && BYTE1(v3[7].vfptr1) ) /*0x773182*/
+  if ( NeedsSaveOrLink && BYTE1(v3[7].ptr_4) ) /*0x773182*/
   {
     __3_YAXPAX_Z(NeedsSaveOrLink); /*0x77318b*/
     v3[6].NeedsSaveOrLink = 0; /*0x773193*/
   }
-  BYTE1(v3[7].vfptr1) = 0; /*0x773199*/
-  v3[7].vfptr = 0; /*0x77319f*/
-  vfptr1 = v3->nextArrayIndex.vfptr1; /*0x7731a5*/
+  BYTE1(v3[7].ptr_4) = 0; /*0x773199*/
+  v3[7].ptr_0 = 0; /*0x77319f*/
+  ptr_4 = v3->nextArrayIndex.ptr_4; /*0x7731a5*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x7731ab*/
-  if ( vfptr1 && BYTE1(v3[6].vfptr3) ) /*0x7731b9*/
+  if ( ptr_4 && BYTE1(v3[6].ptr_C) ) /*0x7731b9*/
   {
-    __3_YAXPAX_Z(vfptr1); /*0x7731c2*/
-    v3[6].vfptr1 = 0; /*0x7731ca*/
+    __3_YAXPAX_Z(ptr_4); /*0x7731c2*/
+    v3[6].ptr_4 = 0; /*0x7731ca*/
   }
-  BYTE1(v3[6].vfptr3) = 0; /*0x7731d0*/
-  v3[6].vfptr2 = 0; /*0x7731d6*/
-  vfptr3 = v3->abstractFlags.vfptr3; /*0x7731dc*/
+  BYTE1(v3[6].ptr_C) = 0; /*0x7731d0*/
+  v3[6].ptr_8 = 0; /*0x7731d6*/
+  ptr_C = v3->abstractFlags.ptr_C; /*0x7731dc*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_int) */  /*0x7731e2*/
-  if ( vfptr3 && BYTE1(v3[5].abstractFlags) ) /*0x7731f0*/
+  if ( ptr_C && BYTE1(v3[5].abstractFlags) ) /*0x7731f0*/
   {
-    __3_YAXPAX_Z(vfptr3); /*0x7731f9*/
-    v3[5].vfptr3 = 0; /*0x773201*/
+    __3_YAXPAX_Z(ptr_C); /*0x7731f9*/
+    v3[5].ptr_C = 0; /*0x773201*/
   }
   BYTE1(v3[5].abstractFlags) = 0; /*0x773209*/
   v3[5].uniqueId = 0; /*0x77320f*/

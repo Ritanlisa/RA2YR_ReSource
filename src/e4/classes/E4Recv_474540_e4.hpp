@@ -9,7 +9,7 @@ namespace gamemd {
 struct CCINIClass;  // fix_fwd_type_supply
 struct E4Recv_474540 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M64;  // 0x40
 // --- flat members (END) ---
     unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)

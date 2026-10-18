@@ -108,7 +108,7 @@ int HouseClass::createStartingUnits(int a2)
   {
     result = 3 * a2; /*0x431421*/
     v4 = 0; /*0x431424*/
-    v5 = &this->vfptr + 3 * a2; /*0x431426*/
+    v5 = &this->ptr_0 + 3 * a2; /*0x431426*/
     do /*0x43143f*/
     {
       if ( *v5 ) /*0x43142a*/
@@ -395,8 +395,8 @@ LABEL_38:
       {
         if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x4f86c0*/
           && dword_A8B23C
-          && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C)
-          && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 8))(dword_A8B23C) )
+          && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C)
+          && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 8))(dword_A8B23C) )
         {
           v20 = v3->currentPlayer; /*0x4f86ce*/
           if ( !*(unsigned int *)&dword_A8B238 ) /*0x4f86d4*/
@@ -499,7 +499,7 @@ LABEL_89:
   if ( *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48) == v3->relatedTagsCount
     && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4)
     && dword_A8B23C
-    && !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C) )
+    && !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C) )
   {
     if ( (stru_A8E960.waypoints[170] & 1) == 0 ) /*0x4f8873*/
     {
@@ -931,11 +931,11 @@ LABEL_234:
       v103 = *(unsigned int *)&v3[32].__pad_140[272]; /*0x4f91a4*/
       v104 = v103 == -1 && *(unsigned int *)&v3[32].__pad_140[276] == -1 && *(unsigned int *)&v3[32].__pad_140[280] == -1; /*0x4f91c1*/
       if ( v103 != -1 /*0x4f91e2*/
-        && !(*(int (**)(unsigned int, int, int, int, Object *))(**(unsigned int **)(*(int *)((char *)&stru_A83CD9.vfptr2
+        && !(*(int (**)(unsigned int, int, int, int, Object *))(**(unsigned int **)(*(int *)((char *)&stru_A83CD9.ptr_8
                                                                                           + 3)
                                                                                  + 4 * v103)
                                                                    + 148))(
-              *(unsigned int *)(*(int *)((char *)&stru_A83CD9.vfptr2 + 3) + 4 * v103),
+              *(unsigned int *)(*(int *)((char *)&stru_A83CD9.ptr_8 + 3) + 4 * v103),
               1,
               1,
               1,

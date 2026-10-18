@@ -7,7 +7,7 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct DynamicVectorClass_PAD_16 {
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int Items;  // 0x4
     unsigned int Capacity;  // 0x8
     unsigned char IsInitialized;  // 0xC

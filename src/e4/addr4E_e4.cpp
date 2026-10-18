@@ -157,7 +157,7 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass) */  /*0x4e0a8a*/
   this->u32_14 = 10; /*0x4e0a90*/
   this->q010 = 0; /*0x4e0a97*/
-  return &this->vfptr; /*0x4e0aa0*/
+  return &this->ptr_0; /*0x4e0aa0*/
 
 }
 } // namespace gamemd
@@ -496,7 +496,7 @@ void * sub_4E3690(HWND hDlg, int a2)
   if ( v8 < -3 || v8 > 9 ) /*0x4e3795*/
   {
     if ( dword_A8B23C ) /*0x4e379f*/
-      v8 = (*(int (**)(ObjectClass *))(dword_A8B23C->vfptr + 40))(dword_A8B23C); /*0x4e37a3*/
+      v8 = (*(int (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 40))(dword_A8B23C); /*0x4e37a3*/
     else
       v8 = -2; /*0x4e37a8*/
   }
@@ -662,7 +662,7 @@ LABEL_23:
   if ( v13 < -3 || v13 > 9 ) /*0x4e3f34*/
   {
     if ( dword_A8B23C ) /*0x4e3f3e*/
-      v13 = (*(int (**)(ObjectClass *))(dword_A8B23C->vfptr + 40))(dword_A8B23C); /*0x4e3f42*/
+      v13 = (*(int (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 40))(dword_A8B23C); /*0x4e3f42*/
     else
       v13 = -2; /*0x4e3f47*/
   }
@@ -780,7 +780,7 @@ LABEL_6:
   if ( v12 < -3 || v12 > 9 ) /*0x4e412f*/
   {
     if ( dword_A8B23C ) /*0x4e4139*/
-      v12 = (*(int (**)(ObjectClass *))(dword_A8B23C->vfptr + 40))(dword_A8B23C); /*0x4e413d*/
+      v12 = (*(int (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 40))(dword_A8B23C); /*0x4e413d*/
     else
       v12 = -2; /*0x4e4142*/
   }
@@ -2451,7 +2451,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   this->M60 = 0; /*0x4e2ac7*/
   this->u32_40 = 0; /*0x4e2ace*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_TriColorGaugeClass) */  /*0x4e2ad5*/
-  return (int)this->vfptr; /*0x4e2add*/
+  return (int)this->ptr_0; /*0x4e2add*/
 
 }
 } // namespace gamemd

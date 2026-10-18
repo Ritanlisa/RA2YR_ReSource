@@ -182,7 +182,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
         v25 = (AnimTypeClass *)(a1->Type + 68 * v24 + 3932); /*0x451649*/
       else
         v25 = (AnimTypeClass *)(a1->Type + 68 * v24 + 3916); /*0x45165d*/
-      if ( v25 && LOBYTE(v25->vfptr) ) /*0x451668*/
+      if ( v25 && LOBYTE(v25->ptr_0) ) /*0x451668*/
         BuildingClass::PlayAnim(a1, v23, v25, v24, v23, 0, 0); /*0x451676*/
       return 1; /*0x45167e*/
     }
@@ -274,12 +274,12 @@ int sub_452D40()
 {
 
   int result; // eax
-  result = stru_A8EB00.vfptr[20]; /*0x452d40*/
+  result = stru_A8EB00.ptr_0[20]; /*0x452d40*/
   int i; // edi
-  for ( i = 0; i < stru_A8EB00.vfptr[20]; ++i ) /*0x452d4a*/
+  for ( i = 0; i < stru_A8EB00.ptr_0[20]; ++i ) /*0x452d4a*/
   {
     BuildingClass *v3; // esi
-    v3 = *(BuildingClass **)(stru_A8EB00.vfptr[17] + 4 * i); /*0x452d52*/
+    v3 = *(BuildingClass **)(stru_A8EB00.ptr_0[17] + 4 * i); /*0x452d52*/
     if ( v3 && v3->Type->LaserFencePost && !dword_A8E7AC && v3->isAliveFlag && !v3->inLimbo ) /*0x452d7c*/
     {
       BuildingClass::DemolishBridge(v3); /*0x452d8a*/
@@ -288,7 +288,7 @@ int sub_452D40()
       BuildingClass::DemolishBridge(v3); /*0x452da5*/
       BuildingClass::RepairPlacement(v3, 1); /*0x452dae*/
     }
-    result = stru_A8EB00.vfptr[20]; /*0x452db3*/
+    result = stru_A8EB00.ptr_0[20]; /*0x452db3*/
   }
   return result; /*0x452dbe*/
 }
@@ -999,7 +999,7 @@ int E4Recv_4517D0::sub_4517D0()
 
   int *v2; // eax
   unsigned int v16[3]; // [esp+20h] [ebp-18h] BYREF
-  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(this->vfptr + 172))(this, v16); /*0x4517e2*/
+  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(this->ptr_0 + 172))(this, v16); /*0x4517e2*/
   int v3 = 0; // edi /*0x4517ea*/
   int v13; // [esp+14h] [ebp-24h]
   v13 = *v2; /*0x4517ec*/
@@ -1106,7 +1106,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   int v14; // [esp+24h] [ebp-8h]
   int v15; // [esp+28h] [ebp-4h]
 
-  v4 = (int *)(*(int (**)(TechnoClass *, int *))(this->vfptr + 72))(this, &v13); /*0x4528b2*/
+  v4 = (int *)(*(int (**)(TechnoClass *, int *))(this->ptr_0 + 72))(this, &v13); /*0x4528b2*/
   v5 = *v4; /*0x4528b5*/
   v6 = v4[1]; /*0x4528bb*/
   v7 = v4[2]; /*0x4528c0*/
@@ -1232,7 +1232,7 @@ char E4Recv_457A10::sub_457A10()
   int16_t v5[2]; // [esp+10h] [ebp-4h] BYREF
 
   int v2; // edi
-  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))(this->vfptr + 440))(this, v5); /*0x457a2d*/
+  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))(this->ptr_0 + 440))(this, v5); /*0x457a2d*/
   unsigned short *i; // esi
   for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(*this->u32_524) + 144))( /*0x457a42*/
                        this->gattlingValue,

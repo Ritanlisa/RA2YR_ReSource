@@ -53,7 +53,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
     ComPtr::Release((ComPtr *)Block); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       operator delete((Block)); /*0x76706b*/
-    return Block->vfptr; /*0x767073*/
+    return Block->ptr_0; /*0x767073*/
   }
 }  // G42.18 ns repair
 } // namespace gamemd

@@ -617,7 +617,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
             v43 = (unsigned __int8 *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v92); /*0x74a38a*/
             if ( (unsigned __int8)IsCoordValidMap((int)v43, 0) ) /*0x74a390*/
             {
-              v44 = (CellClass *)*(&dword_B0F4EC->vfptr + FindBuildingByTiberiumType(127)); /*0x74a3b2*/
+              v44 = (CellClass *)*(&dword_B0F4EC->ptr_0 + FindBuildingByTiberiumType(127)); /*0x74a3b2*/
               if ( v43[284] ) /*0x74a3b8*/
               {
                 v94 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x74a3ca*/
@@ -716,7 +716,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           v55 = Coord::To_Cell((Coord *)&dword_87F7E8, v54); /*0x74a5eb*/
           if ( (unsigned __int8)IsCoordValidMap((int)v55, 0) ) /*0x74a5f0*/
           {
-            v56 = (CellClass *)*(&dword_B0F4EC->vfptr + FindBuildingByTiberiumType(127)); /*0x74a612*/
+            v56 = (CellClass *)*(&dword_B0F4EC->ptr_0 + FindBuildingByTiberiumType(127)); /*0x74a612*/
             if ( v55->slopeIndex[0] ) /*0x74a618*/
             {
               v57 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x74a627*/

@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_70F1D0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M300;  // 0x12C
 // --- flat members (END) ---
     char  DrawBuildingRangeIndicator(int * a2, int a3);  // 0x70F1D0

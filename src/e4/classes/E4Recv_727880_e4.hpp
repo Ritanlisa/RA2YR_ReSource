@@ -7,7 +7,7 @@
 namespace gamemd {
 struct TriggerTypeClass;  // fix_fwd_type_supply
 struct E4Recv_727880 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     TriggerTypeClass * ReadAudioEventINI();  // 0x727880
 };
 } // namespace gamemd

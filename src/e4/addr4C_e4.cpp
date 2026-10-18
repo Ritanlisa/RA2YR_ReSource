@@ -1220,7 +1220,7 @@ LABEL_60:
       a5 = *(unsigned int *)(v53 + 4); /*0x4cf592*/
       a6 = *(unsigned int *)(v53 + 8); /*0x4cf599*/
       if ( (unsigned __int8)Cell::IsPassable(&a4) /*0x4cf5dd*/
-        || (dword_A8B230->vfptr & 0x1000) != 0
+        || (dword_A8B230->ptr_0 & 0x1000) != 0
         && (v54 = *v6 + 156,
             a4 = *(int *)v54,
             a5 = *(unsigned int *)(v54 + 4),
@@ -1706,7 +1706,7 @@ unsigned char * sub_4C37D0(int a1, unsigned char * a2, int a3, unsigned char a4)
 namespace gamemd {
 int E4Recv_4C38D0::sub_4C38D0()
 {
-  return ((unsigned int)&this->vfptr + 1) << 8; /*0x4c38d6*/
+  return ((unsigned int)&this->ptr_0 + 1) << 8; /*0x4c38d6*/
 }
 } // namespace gamemd
 

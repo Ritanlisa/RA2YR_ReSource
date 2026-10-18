@@ -159,7 +159,7 @@ LABEL_24:
       v6 = (TechnoClass *)*((unsigned int *)MEMORY[0xA8ECBC] + v5); /*0x730b95*/
       if ( v6 ) /*0x730b9a*/
       {
-        if ( (*(int (**)(unsigned int))(v6->vfptr + 44))(*((unsigned int *)MEMORY[0xA8ECBC] + v5)) == 15 /*0x730baa*/
+        if ( (*(int (**)(unsigned int))(v6->ptr_0 + 44))(*((unsigned int *)MEMORY[0xA8ECBC] + v5)) == 15 /*0x730baa*/
           && TechnoClass::GetTypeFlag(v6) )
         {
           if ( !(unsigned __int8)TechnoClass::IsMission27to30(v6) ) /*0x730bbc*/
@@ -171,7 +171,7 @@ LABEL_24:
         }
         else
         {
-          v1 = (*(int (**)(TechnoClass *))(v6->vfptr + 44))(v6); /*0x730be0*/
+          v1 = (*(int (**)(TechnoClass *))(v6->ptr_0 + 44))(v6); /*0x730be0*/
           if ( v1 == 1 ) /*0x730be6*/
           {
             LOBYTE(v1) = *(unsigned char *)(v6[1].ironTintTimer[2] + 3603); /*0x730bee*/
@@ -1388,7 +1388,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     return (unsigned int *)v3; /*0x733dfa*/
   while ( 1 ) /*0x733d2e*/
   {
-    v5 = *(unsigned int *)(v1->vfptr1 + 4 * v4); /*0x733d2e*/
+    v5 = *(unsigned int *)(v1->ptr_4 + 4 * v4); /*0x733d2e*/
     v6 = (char *)(*(int (**)(int))(*(unsigned int *)v5 + 136))(v5); /*0x733d33*/
     v7 = *(unsigned int *)(v3 + 16); /*0x733d39*/
     v8 = v6 + 36; /*0x733d3e*/
@@ -2083,9 +2083,9 @@ char sub_7321D0(int a1, unsigned char (__fastcall *)(unsigned int, int), int a3)
 namespace gamemd {
 BOOL AbstractClass::sub_7325C0()
 {
-  return (*((int (**)(ObjectClass *))this->vfptr + 11))(this) != 6 /*0x7325f4*/
-  && *(unsigned char *)((*((int (**)(ObjectClass *))this->vfptr + 33))(this) + 3516)
-  && (*((uint8_t (**)(ObjectClass *))this->vfptr + 79))(this);
+  return (*((int (**)(ObjectClass *))this->ptr_0 + 11))(this) != 6 /*0x7325f4*/
+  && *(unsigned char *)((*((int (**)(ObjectClass *))this->ptr_0 + 33))(this) + 3516)
+  && (*((uint8_t (**)(ObjectClass *))this->ptr_0 + 79))(this);
 }
 } // namespace gamemd
 
@@ -2100,10 +2100,10 @@ char IDTechnoClassMatches(ObjectClass * a1, int a2)
   if ( v3 <= 0 ) /*0x732c3f*/
     return 0; /*0x732c8a*/
   while ( !(uint8_t)(a1)->StepCleanup(*(void **)(*(unsigned int *)(a2 + 4) + 4 * v4)) /*0x732c83*/
-       || !(*((uint8_t (**)(ObjectClass *))a1->vfptr + 79))(a1)
+       || !(*((uint8_t (**)(ObjectClass *))a1->ptr_0 + 79))(a1)
        && (!a1
-        || (*((int (**)(ObjectClass *))a1->vfptr + 11))(a1) != 6
-        || !*(unsigned int *)((*((int (**)(ObjectClass *))a1->vfptr + 33))(a1) + 1032)) )
+        || (*((int (**)(ObjectClass *))a1->ptr_0 + 11))(a1) != 6
+        || !*(unsigned int *)((*((int (**)(ObjectClass *))a1->ptr_0 + 33))(a1) + 1032)) )
   {
     if ( ++v4 >= v3 ) /*0x732c88*/
       return 0; /*0x732c88*/

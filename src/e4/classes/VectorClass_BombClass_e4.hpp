@@ -7,7 +7,7 @@
 namespace gamemd {
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_BombClass {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     VectorClass_flat *  QueryInterface(char a2);  // 0x40BC60
 };
 } // namespace gamemd

@@ -726,7 +726,7 @@ AbstractClass * * Skirmish::SetupGame(int hWnd, void *a2)
   int v30; // eax
   int v31; // ecx
   int PlayerCountMap; // edi
-  int vfptr2; // ecx
+  int ptr_8; // ecx
   int j; // edi
   int v35; // eax
   HWND (*v36)(HWND, int); // edi
@@ -919,7 +919,7 @@ LABEL_44:
     v18 = v56; /*0x6aeaa6*/
     v55 += 3; /*0x6aeab8*/
   }
-  while ( (int)&v56->vfptr + 1 < 8 );
+  while ( (int)&v56->ptr_0 + 1 < 8 );
   if ( dword_A8B3C4 <= 0 || (v26 = MultiplayerGameMode::ListGet(), v27 = dword_A8B3C4, dword_A8B3C4 > v26) ) /*0x6aeadb*/
   {
     v27 = *(unsigned int *)(MultiplayerGameMode::GetFirst() + 40); /*0x6aeae2*/
@@ -960,12 +960,12 @@ LABEL_44:
   }
   dword_A8B23C = (ObjectClass *)v28; /*0x6aebdd*/
   PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x6aebee*/
-  if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C) /*0x6aec07*/
-    || (vfptr2 = dword_A8B230[127].vfptr2, vfptr2 > PlayerCountMap) )
+  if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C) /*0x6aec07*/
+    || (ptr_8 = dword_A8B230[127].ptr_8, ptr_8 > PlayerCountMap) )
   {
-    vfptr2 = PlayerCountMap; /*0x6aec09*/
+    ptr_8 = PlayerCountMap; /*0x6aec09*/
   }
-  ResetLobbyFactionTable(vfptr2); /*0x6aec0b*/
+  ResetLobbyFactionTable(ptr_8); /*0x6aec0b*/
   Lobby::InvalidateFactionCombos((Lobby *)this); /*0x6aec12*/
   Lobby::InvalidatePlayerSlots((Lobby *)this); /*0x6aec19*/
   if ( this && dword_A8B23C ) /*0x6aec29*/
@@ -1140,7 +1140,7 @@ int Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
       SetupSkirmishSpawnLocationEntry(hDlg, nIDDlgItema); /*0x6ae056*/
       result = v17; /*0x6ae05b*/
     }
-    while ( (int)&v5->vfptr + 1 < v17 );
+    while ( (int)&v5->ptr_0 + 1 < v17 );
   }
   return result; /*0x6ae06d*/
 

@@ -177,24 +177,24 @@ public:
 class IPXGlobalConnClass
 {
 public:
-    virtual unsigned int* vt_slot_0(char);  // X72: slot 0 (0x540670) unresolved name — placeholder = QueryInterface (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_1();  // X72: slot 1 (0x53F4E0) unresolved name — placeholder
-    virtual int vt_slot_2(const void*, int, int, char);  // X72: slot 2 (0x540610) unresolved name — placeholder = Release (non-virtual sibling in this header; not promoted)
+    virtual void* QueryInterface(int a1);  // X75: slot 0 (0x540670) = IPXGlobalConnClass::QueryInterface (sibling promoted)
+    virtual int ZeroInitAndSetup_0();  // X75: slot 1 (0x53F4E0) = Struct::ZeroInitAndSetup_0
+    virtual int Release(int a1, int a2, int a3, int a4);  // X75: slot 2 (0x540610) = IPXGlobalConnClass::Release (sibling promoted)
     virtual ~IPXGlobalConnClass() = default;  // 0x540630
-    virtual int vt_slot_4(void*, int*);  // X72: slot 4 (0x540650) unresolved name — placeholder = Connect (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_5();  // X72: slot 5 (0x48C3B0) unresolved name — placeholder
-    virtual void vt_slot_6();  // X72: slot 6 (0x5402D0) unresolved name — placeholder = Send (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_7();  // X72: slot 7 (0x48C3E0) unresolved name — placeholder
-    virtual void vt_slot_8();  // X72: slot 8 (0x5400D0) unresolved name — placeholder = CheckStatus (non-virtual sibling in this header; not promoted)
+    virtual int Connect(int a1, int a2);  // X75: slot 4 (0x540650) = IPXGlobalConnClass::Connect (sibling promoted)
+    virtual BOOL IsValid();  // X75: slot 5 (0x48C3B0) = COMObject::IsValid
+    virtual int Send();  // X75: slot 6 (0x5402D0) = IPXGlobalConnClass::Send (sibling promoted)
+    virtual void serviceSendQueue();  // X75: slot 7 (0x48C3E0) = ConnectionClass::serviceSendQueue
+    virtual int CheckStatus();  // X75: slot 8 (0x5400D0) = IPXGlobalConnClass::CheckStatus (sibling promoted)
     virtual void GetAddress(); // 0x540050
-    virtual void vt_slot_10();  // X72: slot 10 (0x5403F0) unresolved name — placeholder = SetAddress (non-virtual sibling in this header; not promoted)
+    virtual int SetAddress(int a1, int a2, int a3, int a4, int a5, int a6);  // X75: slot 10 (0x5403F0) = IPXGlobalConnClass::SetAddress (sibling promoted)
     virtual void Flush(const void *a2, unsigned int a3, unsigned int a4, int a5, short a6, int a7); // 0x53FBD0
 virtual int GetQueueSize(unsigned short *,int,int *,int);  // 0x53FCB0
     virtual void ConnectToHost(); // 0x53FF10
-    virtual void vt_slot_14();  // X72: slot 14 (0x53FFA0) unresolved name — placeholder
+    virtual int GetTileData(int p0, void* p1, int* p2, int* p3, uint16_t* p4, int* p5);  // X75: slot 14 (0x53FFA0) = IPXGlobalConnClass::GetTileData
 virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
-    virtual int vt_slot_16(int, int16_t);  // X72: slot 16 (0x540340) unresolved name — placeholder = SendPacket (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_17(int);  // X72: slot 17 (0x540110) unresolved name — placeholder = ReceivePacket (non-virtual sibling in this header; not promoted)
+    virtual int SendPacket(int a1, int a2);  // X75: slot 16 (0x540340) = IPXGlobalConnClass::SendPacket (sibling promoted)
+    virtual void ReceivePacket(int a1);  // X75: slot 17 (0x540110) = IPXGlobalConnClass::ReceivePacket (sibling promoted)
 
 
     uint8_t IPXGlobalConnClass_field_0x04[4];
@@ -212,14 +212,6 @@ virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
     uint8_t IPXGlobalConnClass_field_0x34[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int CheckStatus();  // 0x5400d0 -- IPXGlobalConnClass::CheckStatus
-    void ReceivePacket(int a1);  // 0x540110 -- IPXGlobalConnClass::ReceivePacket
-    int Send();  // 0x5402d0 -- IPXGlobalConnClass::Send
-    int SendPacket(int a1, int a2);  // 0x540340 -- IPXGlobalConnClass::SendPacket
-    int SetAddress(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x5403f0 -- IPXGlobalConnClass::SetAddress
-    int Release(int a1, int a2, int a3, int a4);  // 0x540610 -- IPXGlobalConnClass::Release
-    int Connect(int a1, int a2);  // 0x540650 -- IPXGlobalConnClass::Connect
-    void* QueryInterface(int a1);  // 0x540670 -- IPXGlobalConnClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
 
     unsigned char __pad_02E;  // X10 supply (csp_canon_members)
@@ -468,7 +460,7 @@ public:
     virtual void Destructor(); // 0x5D8C80
 
     uint8_t MultiplayerTeam_field_0x04[4];
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (site 0x5C1067)
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view (site 0x5C1067)
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
     uint32_t u32_8;  // X10 supply (member_lookup)

@@ -178,7 +178,7 @@ void ParasiteClass::DeploySquad()
   int v29; // eax
   unsigned char *v30; // edi
   int v31; // eax
-  int vfptr; // ecx
+  int ptr_0; // ecx
   int v33; // eax
   unsigned int *v34; // edx
   int v35; // ecx
@@ -224,7 +224,7 @@ void ParasiteClass::DeploySquad()
     *v11 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6298a4*/
     v11[1] = v59; /*0x6298aa*/
     v11[2] = v10; /*0x6298ad*/
-    switch ( _ESI[1].vfptr1 ) /*0x6298bc*/
+    switch ( _ESI[1].ptr_4 ) /*0x6298bc*/
     {
       case 0: /*0x6298bc*/
         *(unsigned int *)(*(unsigned int *)_ESI->__pad_28 + 808) = 0; /*0x6298c6*/
@@ -240,11 +240,11 @@ void ParasiteClass::DeploySquad()
               v15 = AnimClass::ctor(v14, v13, &v55, 0, 1, (void *)0x600, 0, 0); /*0x629913*/
               if ( v15 ) /*0x62991a*/
               {
-                _ESI[1].vfptr = (int)v15; /*0x62991c*/
+                _ESI[1].ptr_0 = (int)v15; /*0x62991c*/
                 if ( stru_B0F5B8.Count < stru_B0F5B8.Capacity /*0x629953*/
                   || (stru_B0F5B8.IsAllocated[0] || !stru_B0F5B8.Capacity)
                   && stru_B0F5B8.CapacityIncrement > 0
-                  && (*(unsigned __int8 (**)(DynamicVectorClass *, int, unsigned int))(stru_B0F5B8.vfptr + 8))(
+                  && (*(unsigned __int8 (**)(DynamicVectorClass *, int, unsigned int))(stru_B0F5B8.ptr_0 + 8))(
                        &stru_B0F5B8,
                        stru_B0F5B8.CapacityIncrement + stru_B0F5B8.Capacity,
                        0) )
@@ -256,18 +256,18 @@ void ParasiteClass::DeploySquad()
             }
           }
         }
-        _ESI[1].vfptr1 = 1; /*0x629974*/
-        _ESI[1].vfptr3 = 0; /*0x62997b*/
-        _ESI[1].vfptr2 = 0; /*0x62997e*/
+        _ESI[1].ptr_4 = 1; /*0x629974*/
+        _ESI[1].ptr_C = 0; /*0x62997b*/
+        _ESI[1].ptr_8 = 0; /*0x62997e*/
         BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629981*/
         goto LABEL_47; /*0x629986*/
       case 1: /*0x6298bc*/
         if ( BuildingClass::AnimController((BuildingClass *)_ESI) ) /*0x62998d*/
         {
           v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
-          _ESI[1].vfptr3 = 0; /*0x6299b7*/
-          _ESI[1].vfptr1 = 3 - (v17 != 0); /*0x6299ba*/
-          _ESI[1].vfptr2 = 0; /*0x6299bd*/
+          _ESI[1].ptr_C = 0; /*0x6299b7*/
+          _ESI[1].ptr_4 = 3 - (v17 != 0); /*0x6299ba*/
+          _ESI[1].ptr_8 = 0; /*0x6299bd*/
           BuildingClass::AnimController((BuildingClass *)_ESI); /*0x6299c0*/
           FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x6299e1*/
         }
@@ -279,9 +279,9 @@ void ParasiteClass::DeploySquad()
 LABEL_20:
         if ( BuildingClass::AnimController((BuildingClass *)_ESI) ) /*0x6299fd*/
         {
-          _ESI[1].vfptr1 = 4; /*0x629a08*/
-          _ESI[1].vfptr3 = 0; /*0x629a0f*/
-          _ESI[1].vfptr2 = 0; /*0x629a12*/
+          _ESI[1].ptr_4 = 4; /*0x629a08*/
+          _ESI[1].ptr_C = 0; /*0x629a0f*/
+          _ESI[1].ptr_8 = 0; /*0x629a12*/
           BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629a15*/
         }
         __asm /*0x629a1a*/
@@ -386,19 +386,19 @@ LABEL_20:
           v30->u8_3CD = 1; /*0x629c69*/
           (*(void (**)(unsigned char *, int))(v31 + 952))(v30, _ESI->creationFrame); /*0x629c76*/
           (*(void (**)(unsigned char *))(*(unsigned int *)v30 + 928))(v30); /*0x629c80*/
-          vfptr = _ESI[1].vfptr; /*0x629c86*/
-          _ESI[1].vfptr2 = 0; /*0x629c89*/
-          _ESI[1].vfptr3 = 0; /*0x629c8e*/
-          _ESI[1].vfptr1 = 0; /*0x629c91*/
-          if ( vfptr ) /*0x629c94*/
+          ptr_0 = _ESI[1].ptr_0; /*0x629c86*/
+          _ESI[1].ptr_8 = 0; /*0x629c89*/
+          _ESI[1].ptr_C = 0; /*0x629c8e*/
+          _ESI[1].ptr_4 = 0; /*0x629c91*/
+          if ( ptr_0 ) /*0x629c94*/
           {
-            (*(void (**)(int))(*(unsigned int *)vfptr + 248))(vfptr); /*0x629c98*/
-            _ESI[1].vfptr = 0; /*0x629c9e*/
+            (*(void (**)(int))(*(unsigned int *)ptr_0 + 248))(ptr_0); /*0x629c98*/
+            _ESI[1].ptr_0 = 0; /*0x629c9e*/
           }
           if ( LOBYTE(_ESI[1].uniqueId) ) /*0x629ca1*/
           {
             v48[0] = _ESI; /*0x629cb8*/
-            v33 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.vfptr + 16))(&stru_B0F5B8, v48); /*0x629cbc*/
+            v33 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, v48); /*0x629cbc*/
             if ( v33 != -1 && v33 < stru_B0F5B8.Count ) /*0x629ccc*/
             {
               --stru_B0F5B8.Count; /*0x629cd1*/
@@ -432,27 +432,27 @@ LABEL_20:
           if ( *(unsigned int *)_ESI->__pad_28 ) /*0x629d41*/
           {
             v36 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x629d58*/
-            _ESI[1].vfptr3 = 0; /*0x629d66*/
-            _ESI[1].vfptr1 = 3 - (v36 != 0); /*0x629d69*/
-            _ESI[1].vfptr2 = 0; /*0x629d6c*/
+            _ESI[1].ptr_C = 0; /*0x629d66*/
+            _ESI[1].ptr_4 = 3 - (v36 != 0); /*0x629d69*/
+            _ESI[1].ptr_8 = 0; /*0x629d6c*/
             BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629d6f*/
             FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x629d90*/
           }
           else
           {
-            v40 = _ESI[1].vfptr; /*0x629df3*/
-            _ESI[1].vfptr2 = 0; /*0x629df6*/
-            _ESI[1].vfptr3 = 0; /*0x629dfb*/
-            _ESI[1].vfptr1 = 0; /*0x629dfe*/
+            v40 = _ESI[1].ptr_0; /*0x629df3*/
+            _ESI[1].ptr_8 = 0; /*0x629df6*/
+            _ESI[1].ptr_C = 0; /*0x629dfb*/
+            _ESI[1].ptr_4 = 0; /*0x629dfe*/
             if ( v40 ) /*0x629e01*/
             {
               (*(void (**)(int))(*(unsigned int *)v40 + 248))(v40); /*0x629e05*/
-              _ESI[1].vfptr = 0; /*0x629e0b*/
+              _ESI[1].ptr_0 = 0; /*0x629e0b*/
             }
             if ( LOBYTE(_ESI[1].uniqueId) ) /*0x629e0e*/
             {
               v48[1] = _ESI; /*0x629e25*/
-              v41 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.vfptr + 16))( /*0x629e29*/
+              v41 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.ptr_0 + 16))( /*0x629e29*/
                       &stru_B0F5B8,
                       &v48[1]);
               if ( v41 != -1 && v41 < stru_B0F5B8.Count ) /*0x629e39*/
@@ -469,7 +469,7 @@ LABEL_20:
             }
           }
 LABEL_47:
-          v37 = _ESI->vtable2.vfptr; /*0x629d97*/
+          v37 = _ESI->vtable2.ptr_0; /*0x629d97*/
           if ( v37 ) /*0x629d9c*/
           {
             if ( _ESI->creationFrame ) /*0x629d9e*/
@@ -846,7 +846,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
     operator delete((Block)); /*0x62b056*/
-  return &Block->vfptr; /*0x62b060*/
+  return &Block->ptr_0; /*0x62b060*/
 }
 } // namespace ra2
 

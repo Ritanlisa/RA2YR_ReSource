@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_6C1850 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int CreateTClassFactory_TActionClass(const void *a2, unsigned int *a3);
 };
 } // namespace gamemd

@@ -250,10 +250,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   p_owningHouseIndex = &v28.owningHouseIndex; /*0x76d88b*/
   v27 = 0; /*0x76d897*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim) */  /*0x76d89b*/
-  v28.vfptr2 = (int)&v28.uniqueId; /*0x76d89f*/
-  v28.vfptr3 = 0; /*0x76d8a3*/
+  v28.ptr_8 = (int)&v28.uniqueId; /*0x76d89f*/
+  v28.ptr_C = 0; /*0x76d8a3*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim) */  /*0x76d8a7*/
-  if ( CampaignProperties_WorldDominationTour_22::AddRef((_VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim *)&v28.vfptr1) ) /*0x76d8ab*/
+  if ( CampaignProperties_WorldDominationTour_22::AddRef((_VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim *)&v28.ptr_4) ) /*0x76d8ab*/
   {
     do /*0x76da41*/
     {
@@ -296,10 +296,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         }
         (*(void (**)(int *))(v25.VectorCursor_field_0x18 + 8))(&v25.VectorCursor_field_0x18); /*0x76da15*/
       }
-      PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(*(unsigned int *)(v28.vfptr2 + 4) + 4 * v28.vfptr3)); /*0x76da29*/
-      (*(void (**)(int *))(v28.vfptr1 + 8))(&v28.vfptr1); /*0x76da36*/
+      PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(*(unsigned int *)(v28.ptr_8 + 4) + 4 * v28.ptr_C)); /*0x76da29*/
+      (*(void (**)(int *))(v28.ptr_4 + 8))(&v28.ptr_4); /*0x76da36*/
     }
-    while ( (*(unsigned __int8 (**)(int *))(v28.vfptr1 + 4))(&v28.vfptr1) ); /*0x76da41*/
+    while ( (*(unsigned __int8 (**)(int *))(v28.ptr_4 + 4))(&v28.ptr_4) ); /*0x76da41*/
   }
   ComPtr::Set(&this->ComPtr_488, a3->FilePointer); /*0x76da5d*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim) */  /*0x76da66*/

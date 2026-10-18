@@ -6,7 +6,7 @@
 namespace gamemd {
 struct BlitTransLucent75;  // fix_fwd_type_supply
 struct E4Recv_499F80 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     BlitTransLucent75 *  ___Gfacet_locale_std__UAEPAXI_Z_27(char a2);  // 0x499F80
 };
 } // namespace gamemd

@@ -181,7 +181,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x5bf03b*/
           if ( a7 ) /*0x5bf045*/
           {
-            (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x5bf050*/
+            (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x5bf050*/
             Frame::Present((int)g_DSurface_Hidden, 0, v10, v9, 0, (int)v17, v20, v21); /*0x5bf05c*/
           }
           if ( !byte_ABF35C ) /*0x5bf067*/
@@ -213,7 +213,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           __3_YAXPAX_Z(v13); /*0x5bf11f*/
           if ( a5 == 1 ) /*0x5bf130*/
           {
-            (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x5bf13b*/
+            (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x5bf13b*/
             Frame::Present((int)g_DSurface_Hidden, 0, v10, v9, 0, v19, v20, v21); /*0x5bf147*/
           }
           (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x5bf154*/
@@ -234,7 +234,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x5bedbd*/
       if ( a7 ) /*0x5bedc7*/
       {
-        (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x5bedd2*/
+        (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x5bedd2*/
         Frame::Present((int)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
       }
       BinkMovie::Close(&v23, Str); /*0x5bedec*/
@@ -266,7 +266,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       }
       if ( a5 == 1 ) /*0x5beeb1*/
       {
-        (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x5beebc*/
+        (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x5beebc*/
         Frame::Present((int)g_DSurface_Hidden, 0, a2, a3, 0, v18, v20, v21); /*0x5beec8*/
       }
       Timer::PumpMessages((Timer *)dword_87F770); /*0x5beed3*/

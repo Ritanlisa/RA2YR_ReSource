@@ -50,7 +50,7 @@ DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, in
   int v22; // ebp
   int v23; // edi
   int v24; // esi
-  int vfptr3; // edx
+  int ptr_C; // edx
   int abstractFlags; // eax
   int v27; // edx
   int v28; // eax
@@ -104,15 +104,15 @@ LABEL_44:
       (v18) = ((v18) & ~0xFF) | ((1) & 0xFF); /*0x71ec5a*/
       return v18; /*0x71ec60*/
     case 14: /*0x71e964*/
-      if ( dword_A8B230[127].vfptr3 == -1 ) /*0x71ebf6*/
+      if ( dword_A8B230[127].ptr_C == -1 ) /*0x71ebf6*/
         goto LABEL_139; /*0x71ebf6*/
-      vfptr3 = dword_A8B230[127].vfptr3; /*0x71ebfc*/
+      ptr_C = dword_A8B230[127].ptr_C; /*0x71ebfc*/
       abstractFlags = dword_A8B230[127].abstractFlags; /*0x71ec02*/
-      if ( vfptr3 == -1 ) /*0x71ec0b*/
+      if ( ptr_C == -1 ) /*0x71ec0b*/
         goto LABEL_39; /*0x71ec0b*/
-      if ( *(unsigned int *)&stru_A8E960.random[528] - vfptr3 >= abstractFlags ) /*0x71ec17*/
+      if ( *(unsigned int *)&stru_A8E960.random[528] - ptr_C >= abstractFlags ) /*0x71ec17*/
         goto LABEL_153; /*0x71ec17*/
-      abstractFlags -= *(unsigned int *)&stru_A8E960.random[528] - vfptr3; /*0x71ec1d*/
+      abstractFlags -= *(unsigned int *)&stru_A8E960.random[528] - ptr_C; /*0x71ec1d*/
 LABEL_39:
       if ( abstractFlags ) /*0x71ec21*/
         goto LABEL_139; /*0x71ec21*/
@@ -135,9 +135,9 @@ LABEL_39:
       LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71ebe0*/
       return v18; /*0x71ebe6*/
     case 45: /*0x71e964*/
-      return dword_A8B230[378].vfptr1 <= this->TEventClass_field_34; /*0x71eb03*/
+      return dword_A8B230[378].ptr_4 <= this->TEventClass_field_34; /*0x71eb03*/
     case 46: /*0x71e964*/
-      LOBYTE(v18) = dword_A8B230[378].vfptr1 >= this->TEventClass_field_34; /*0x71eb1f*/
+      LOBYTE(v18) = dword_A8B230[378].ptr_4 >= this->TEventClass_field_34; /*0x71eb1f*/
       return v18; /*0x71eb25*/
     case 47: /*0x71e964*/
       LOBYTE(v18) = this->TEventClass_field_34 <= *(unsigned int *)&stru_A8E960.random[528] / 15; /*0x71eb49*/

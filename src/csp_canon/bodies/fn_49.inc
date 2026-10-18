@@ -1297,7 +1297,7 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
     *(void **)((char *)this + 8) = (void *)a2; /*0x49f09e +8 cap*/
     *(unsigned char *)((char *)this + 12) = 1; /*0x49f0a1 +C init*/
     *(unsigned char *)((char *)this + 13) = 0; /*0x49f0a5 +D isAlloc*/
-    *(void **)(char *)this = 0; /*0x49f0a8 vfptr(VectorClass)*/
+    *(void **)(char *)this = 0; /*0x49f0a8 ptr_0(VectorClass)*/
     if ( a2 ) /*0x49f0ae*/
     {
       if ( a3 ) /*0x49f0b6*/

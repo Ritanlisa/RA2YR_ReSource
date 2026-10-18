@@ -73,7 +73,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2, void *a3)
   *(unsigned int *)optval = 1; /*0x7b0e44*/
   int optlen; // [esp+10h] [ebp-30h] BYREF
   optlen = 4; /*0x7b0e4e*/
-  if ( stru_887598.onBridge && stru_887598.vfptr == 4 && !stru_887598.vfptr1 ) /*0x7b0e63*/
+  if ( stru_887598.onBridge && stru_887598.ptr_0 == 4 && !stru_887598.ptr_4 ) /*0x7b0e63*/
   {
     Debug::Log(); /*0x7b0eae*/
   }

@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_795650 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     char WOL_QueryNATPort();  // 0x795650
 };
 } // namespace gamemd

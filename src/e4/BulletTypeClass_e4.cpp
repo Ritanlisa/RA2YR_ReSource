@@ -784,7 +784,7 @@ int BulletTypeClass::ProcessImpact(int a1)
           }
           else
           {
-            (*(void (**)(FootClass *, unsigned int, int))(v21->vfptr + 1152))(v21, 0, 1); /*0x6a0102*/
+            (*(void (**)(FootClass *, unsigned int, int))(v21->ptr_0 + 1152))(v21, 0, 1); /*0x6a0102*/
           }
           goto LABEL_32; /*0x6a0108*/
         }
@@ -801,7 +801,7 @@ int BulletTypeClass::ProcessImpact(int a1)
       if ( !*&v11->q598 ) /*0x69fde7*/
       {
 LABEL_20:
-        (*(void (**)(FootClass *, unsigned int, int))(v11->vfptr + 1152))(v11, 0, 1); /*0x69fd65*/
+        (*(void (**)(FootClass *, unsigned int, int))(v11->ptr_0 + 1152))(v11, 0, 1); /*0x69fd65*/
         return 0; /*0x69fd79*/
       }
     }
@@ -882,9 +882,9 @@ unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
   if ( v7 <= GroundHeight ) /*0x46c520*/
     v3 = Cell::GetGroundHeight(&v5) + 1; /*0x46c533*/
   *(unsigned int *)a1->ptr_0 = v5; /*0x46c53f*/
-  *(unsigned int *)&a1->vfptr[4] = v6; /*0x46c545*/
-  *(unsigned int *)&a1->vfptr[8] = v3; /*0x46c549*/
-  return a1->vfptr; /*0x46c54c*/
+  *(unsigned int *)&a1->ptr_0[4] = v6; /*0x46c545*/
+  *(unsigned int *)&a1->ptr_0[8] = v3; /*0x46c549*/
+  return a1->ptr_0; /*0x46c54c*/
 }
 } // namespace gamemd
 // 0x46C6A0
@@ -904,8 +904,8 @@ int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
       /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c6d1*/
       /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c6d8*/
     }
-    VoxelAnimType::LoadAnim(aP0->vfptr); /*0x46c6e1*/
-    ObjectTypeClass::Load2DArt(aP0->vfptr); /*0x46c6e8*/
+    VoxelAnimType::LoadAnim(aP0->ptr_0); /*0x46c6e1*/
+    ObjectTypeClass::Load2DArt(aP0->ptr_0); /*0x46c6e8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 182); /*0x46c6f9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 172); /*0x46c70a*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 173); /*0x46c71b*/

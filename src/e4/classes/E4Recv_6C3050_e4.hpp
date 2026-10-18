@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_6C3050 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int CreateTClassFactory_OverlayTypeClass(const void *a2, unsigned int *a3);
 };
 } // namespace gamemd

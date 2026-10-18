@@ -175,7 +175,7 @@ protected:
     // === FUNCS-MOVE (END) ===
 
 
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

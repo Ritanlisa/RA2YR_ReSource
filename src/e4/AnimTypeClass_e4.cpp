@@ -569,7 +569,7 @@ int AnimTypeClass::GetDamage()
       *(unsigned int *)v10.__tail_0 = &off_7E1668; /*0x428d7f*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
     }
-    (*((void (**)(AnimTypeClass *, int))this->vfptr + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
+    (*((void (**)(AnimTypeClass *, int))this->ptr_0 + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = this->Image; /*0x428da2*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x428dac*/
     v9 = 0; /*0x428db4*/

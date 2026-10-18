@@ -32,7 +32,7 @@ namespace gamemd {  // G42.18 ns repair
 int InfantryClass::ScanTarget(int * a1)
 {
 
-  int vfptr; // edi
+  int ptr_0; // edi
   __int16 *PlacementCellsAlt; // eax
   void *v4; // eax
   int v5; // edx
@@ -56,15 +56,15 @@ int InfantryClass::ScanTarget(int * a1)
   if ( *(unsigned char *)(this->vt_slot_132(this) + 912) /*0x4d4dde*/
     && !this->vt_slot_456(this) )
   {
-    vfptr = this->vfptr; /*0x4d4de8*/
+    ptr_0 = this->ptr_0; /*0x4d4de8*/
     PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt((char *)this, &v17, (int)this); /*0x4d4df4*/
     v4 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, PlacementCellsAlt); /*0x4d4dff*/
-    (*(void (**)(FootClass *, void *, int))(vfptr + 1152))(this, v4, 1); /*0x4d4e07*/
+    (*(void (**)(FootClass *, void *, int))(ptr_0 + 1152))(this, v4, 1); /*0x4d4e07*/
   }
   if ( this->FootClass_field_bool_68E[0] ) /*0x4d4e0d*/
   {
     v17 = (unsigned __int16 *)this->location[0]; /*0x4d4e21*/
-    v5 = this->vfptr; /*0x4d4e25*/
+    v5 = this->ptr_0; /*0x4d4e25*/
     v18 = this->location[1]; /*0x4d4e2a*/
     v19 = this->location[2]; /*0x4d4e36*/
     v6 = (*(int (**)(FootClass *, int, unsigned __int16 **, unsigned int))(v5 + 964))(this, 1, &v17, 0); /*0x4d4e3e*/
@@ -84,7 +84,7 @@ int InfantryClass::ScanTarget(int * a1)
   if ( !this->target
     || (!this
      || this->vt_slot_44(this) != 15
-     || !*(unsigned char *)((this->vt_slot_44(this) == 15 ? &this->AbstractClass_1 : (FootClass *)1728)->vfptr
+     || !*(unsigned char *)((this->vt_slot_44(this) == 15 ? &this->AbstractClass_1 : (FootClass *)1728)->ptr_0
                   + 1685))
     && (!*(unsigned int *)this->vt_slot_1016(this, 0)
      || *(int *)(*(unsigned int *)this->vt_slot_1016(this, 0) + 180) > 512) )
@@ -128,16 +128,16 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
   int v14; // [esp+Ch] [ebp-10h] BYREF
   unsigned int v15[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  if ( *(unsigned char *)((*((int (**)(FootClass *))a1->vfptr + 33))(a1) + 1748) /*0x4d5392*/
+  if ( *(unsigned char *)((*((int (**)(FootClass *))a1->ptr_0 + 33))(a1) + 1748) /*0x4d5392*/
     || (v15[0] = a1->location[0],
-        v2 = a1->vfptr,
+        v2 = a1->ptr_0,
         v15[1] = a1->location[1],
         v15[2] = a1->location[2],
         !(*((uint8_t (**)(FootClass *, unsigned int *, unsigned int))v2 + 231))(a1, v15, 0)) )
   {
     if ( (uint8_t)((House *)((House *)a1->owner))->IsCurrentPlayer() || *(unsigned int *)&dword_A8B238 ) /*0x4d5504*/
     {
-      (*((void (**)(FootClass *))a1->vfptr + 286))(a1); /*0x4d557c*/
+      (*((void (**)(FootClass *))a1->ptr_0 + 286))(a1); /*0x4d557c*/
     }
     else
     {
@@ -148,48 +148,48 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         slaveManager = (FactoryClass *)a1->slaveManager; /*0x4d553d*/
         if ( slaveManager ) /*0x4d5545*/
           (slaveManager)->ResetProductionTimers(); /*0x4d5547*/
-        vtable0 = (void (**)(FootClass *, void *, int))a1->vfptr; /*0x4d554c*/
+        vtable0 = (void (**)(FootClass *, void *, int))a1->ptr_0; /*0x4d554c*/
         v9 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v13); /*0x4d555a*/
         vtable0[288](a1, v9, 1); /*0x4d5562*/
-        (*((void (**)(FootClass *, int, int))a1->vfptr + 122))(a1, 2, 1); /*0x4d5570*/
+        (*((void (**)(FootClass *, int, int))a1->ptr_0 + 122))(a1, 2, 1); /*0x4d5570*/
       }
     }
     goto LABEL_25; /*0x4d5576*/
   }
-  v3 = (*((int (**)(FootClass *))a1->vfptr + 11))(a1); /*0x4d53a4*/
+  v3 = (*((int (**)(FootClass *))a1->ptr_0 + 11))(a1); /*0x4d53a4*/
   v4 = v3 == 15 ? (int *)a1 : 0;
   if ( !v4 ) /*0x4d53b4*/
   {
-    (*((void (**)(FootClass *, unsigned int))a1->vfptr + 335))(a1, 0); /*0x4d54e3*/
+    (*((void (**)(FootClass *, unsigned int))a1->ptr_0 + 335))(a1, 0); /*0x4d54e3*/
     goto LABEL_25; /*0x4d54e9*/
   }
-  v5 = (v3 == 15 ? a1 + 1 : (FootClass *)1728)->vfptr;
+  v5 = (v3 == 15 ? a1 + 1 : (FootClass *)1728)->ptr_0;
   if ( v5[3779] && !v5[3778] && !(uint8_t)TechnoTypeClass::HasVoiceResponse(v4, 14) ) /*0x4d53df*/
   {
     LABEL_14:
-    (*((void (**)(FootClass *, AbstractClass *, int))a1->vfptr + 288))(a1, a1->target, 1); /*0x4d547c*/
-    (*((void (**)(FootClass *, int, unsigned int))a1->vfptr + 122))(a1, 8, 0); /*0x4d5497*/
-    if ( !(*((uint8_t (**)(FootClass *))a1->vfptr + 128))(a1) ) /*0x4d54a9*/
+    (*((void (**)(FootClass *, AbstractClass *, int))a1->ptr_0 + 288))(a1, a1->target, 1); /*0x4d547c*/
+    (*((void (**)(FootClass *, int, unsigned int))a1->ptr_0 + 122))(a1, 8, 0); /*0x4d5497*/
+    if ( !(*((uint8_t (**)(FootClass *))a1->ptr_0 + 128))(a1) ) /*0x4d54a9*/
       goto LABEL_25; /*0x4d54a9*/
     goto LABEL_12; /*0x4d54a9*/
   }
   if ( !*(unsigned char *)(v4[432] + 3778) && !(uint8_t)TechnoTypeClass::HasVoiceResponse(v4, 14) /*0x4d5428*/
     || (target = a1->target) == 0
-    || (*((int (**)(AbstractClass *))target->vfptr + 11))(target) != 6 )
+    || (*((int (**)(AbstractClass *))target->ptr_0 + 11))(target) != 6 )
   {
     if ( !*(unsigned char *)(v4[432] + 3782) ) /*0x4d547a*/
     {
-      (*((void (**)(FootClass *, unsigned int, int))a1->vfptr + 288))(a1, 0, 1); /*0x4d54c6*/
-      (*((void (**)(FootClass *, unsigned int))a1->vfptr + 335))(a1, 0); /*0x4d54d2*/
+      (*((void (**)(FootClass *, unsigned int, int))a1->ptr_0 + 288))(a1, 0, 1); /*0x4d54c6*/
+      (*((void (**)(FootClass *, unsigned int))a1->ptr_0 + 335))(a1, 0); /*0x4d54d2*/
       goto LABEL_25; /*0x4d54d8*/
     }
     goto LABEL_14; /*0x4d547a*/
   }
-  (*((void (**)(FootClass *, AbstractClass *, int))a1->vfptr + 288))(a1, a1->target, 1); /*0x4d5437*/
-  (*((void (**)(FootClass *, int, unsigned int))a1->vfptr + 122))(a1, 17, 0); /*0x4d5445*/
-  if ( (*((uint8_t (**)(FootClass *))a1->vfptr + 128))(a1) ) /*0x4d544f*/
+  (*((void (**)(FootClass *, AbstractClass *, int))a1->ptr_0 + 288))(a1, a1->target, 1); /*0x4d5437*/
+  (*((void (**)(FootClass *, int, unsigned int))a1->ptr_0 + 122))(a1, 17, 0); /*0x4d5445*/
+  if ( (*((uint8_t (**)(FootClass *))a1->ptr_0 + 128))(a1) ) /*0x4d544f*/
     LABEL_12:
-  (*((void (**)(FootClass *))a1->vfptr + 123))(a1); /*0x4d545d*/
+  (*((void (**)(FootClass *))a1->ptr_0 + 123))(a1); /*0x4d545d*/
   LABEL_25:
   MissionControl = MissionClass::GetMissionControl((MissionClass *)a1); /*0x4d5582*/
   (*((unsigned short *)&(v11))) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d5592*/

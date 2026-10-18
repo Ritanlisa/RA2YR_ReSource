@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_798F50 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     unsigned int *  MainLobbyDlgProcWOL_Read(HWND hWnd);  // 0x798F50
 };
 } // namespace gamemd

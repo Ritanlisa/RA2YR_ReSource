@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_5422C0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M168;  // 0xA8
 // --- flat members (END) ---
     unsigned int _GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ();  // 0x5422C0

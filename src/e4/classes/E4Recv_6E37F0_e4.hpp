@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_6E37F0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M144;  // 0x90
 // --- flat members (END) ---
     unsigned int customSound_controller[5];  // G57w16 G1: til truth (AudioController 20B)

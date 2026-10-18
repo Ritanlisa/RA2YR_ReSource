@@ -465,6 +465,11 @@ def build_members(cc):
             t = size_type(m['size'])
         t = cpptype(t, size_type(m['size']))
         n = nm or ''
+        # X75: the vptr is compiler-generated -- never render vptr vocabulary
+        # into the source.  These come from data-side sup-plies; map them to the
+        # X70 offset-named pointer convention (ptr_<byte-offset>).
+        n = {'vfptr': 'ptr_0', 'vfptr0': 'ptr_0', 'vfptr1': 'ptr_4',
+             'vfptr2': 'ptr_8', 'vfptr3': 'ptr_C'}.get(n, n)
         if n and not PLACEHOLDER_RE.match(n):
             n = ident(n, '')
         else:
@@ -705,7 +710,7 @@ if minimal_defs:
     lines.append('// minimal vfptr-holder definitions for referenced-but-undefined bases')
     lines.append('// (mechanical, t14 minimal-struct precedent)')
     for _n in minimal_defs:
-        lines.append('class %s { public: void* vfptr; };' % _n)
+        lines.append('class %s { public: void* ptr_0; };' % _n)  # X75: vptr slot, compiler-owned name-free
     lines.append('')
 lines.append('namespace gamemd {')
 lines.append('')

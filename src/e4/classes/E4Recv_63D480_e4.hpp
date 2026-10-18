@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_63D480 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int  DrawActionLineSegment(int a2, int a3);  // 0x63D480
 };
 } // namespace gamemd

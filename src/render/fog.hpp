@@ -55,10 +55,10 @@ protected:
     // === SYMBOL-ANCHOR (END) ===
 
 
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_8;  // 0x8 [X55 W3 supply (render vocab)]
+    void * ptr_C;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 } // namespace gamemd

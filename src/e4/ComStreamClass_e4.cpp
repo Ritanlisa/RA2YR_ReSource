@@ -25,7 +25,7 @@
 // csp_canon/classes.hpp rc_ptr is a GLOBAL-scope twin (::rc_ptr), no collision.
 #ifndef GAMEMD_E4_TU_rc_ptr
 #define GAMEMD_E4_TU_rc_ptr 1
-namespace gamemd { struct rc_ptr { void* vfptr; }; }  // minimal E2 carrier (4B)
+namespace gamemd { struct rc_ptr { void* ptr_0; }; }  // minimal E2 carrier (4B)
 #endif
 
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -62,15 +62,15 @@ int ComStreamClass::Write(int a2, uint8_t *a3, const char *lParam, const char *l
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
   String::Assign((String *)v22, lParama); /*0x7a3dd3*/
-  LoadPlayerProfile((ObjectClass *)&v22[0].vfptr.vfptr1, (const char **)v22); /*0x7a3de0*/
+  LoadPlayerProfile((ObjectClass *)&v22[0].ptr_0.ptr_4, (const char **)v22); /*0x7a3de0*/
   DeleteAndZero(v22); /*0x7a3de9*/
-  v22[0].vfptr.vfptr = 0; /*0x7a3df2*/
-  v22[0].vfptr.uniqueId = 0; /*0x7a3df6*/
-  LOBYTE(v22[0].vfptr.abstractFlags) = 0; /*0x7a3dfa*/
-  ReadRegistryOptionsWOL((ObjectClass *)&v22[0].vfptr.uniqueId); /*0x7a3dfe*/
-  if ( (unsigned __int8)Flag::IsNot2((Flag *)&v22[0].vfptr.uniqueId) ) /*0x7a3e07*/
+  v22[0].ptr_0.ptr_0 = 0; /*0x7a3df2*/
+  v22[0].ptr_0.uniqueId = 0; /*0x7a3df6*/
+  LOBYTE(v22[0].ptr_0.abstractFlags) = 0; /*0x7a3dfa*/
+  ReadRegistryOptionsWOL((ObjectClass *)&v22[0].ptr_0.uniqueId); /*0x7a3dfe*/
+  if ( (unsigned __int8)Flag::IsNot2((Flag *)&v22[0].ptr_0.uniqueId) ) /*0x7a3e07*/
   {
-    v22[0].vfptr.vfptr = FindChannelWOL(lParama, (int)v23, 1u, *(unsigned int *)(v22[0].vfptr.vfptr2 + 16)); /*0x7a3e2d*/
+    v22[0].ptr_0.ptr_0 = FindChannelWOL(lParama, (int)v23, 1u, *(unsigned int *)(v22[0].ptr_0.ptr_8 + 16)); /*0x7a3e2d*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x7a3e31*/
   }
   v21 = 1; /*0x7a3e3b*/
@@ -87,9 +87,9 @@ int ComStreamClass::Write(int a2, uint8_t *a3, const char *lParam, const char *l
     }
     else
     {
-      v22[0].vfptr.vfptr3 = SendMessageA(DlgItem, 0x4BCu, 0, (LPARAM)lParama); /*0x7a3eb5*/
-      SendMessageA(DlgItem, 0x151u, v22[0].vfptr.vfptr3, v22[0].vfptr.vfptr); /*0x7a3ec1*/
-      SendMessageA(DlgItem, 0x14Eu, v22[0].vfptr.vfptr3, 0); /*0x7a3ed0*/
+      v22[0].ptr_0.ptr_C = SendMessageA(DlgItem, 0x4BCu, 0, (LPARAM)lParama); /*0x7a3eb5*/
+      SendMessageA(DlgItem, 0x151u, v22[0].ptr_0.ptr_C, v22[0].ptr_0.ptr_0); /*0x7a3ec1*/
+      SendMessageA(DlgItem, 0x14Eu, v22[0].ptr_0.ptr_C, 0); /*0x7a3ed0*/
     }
     if ( v21 ) /*0x7a3ed8*/
     {
@@ -112,7 +112,7 @@ LABEL_14:
         v15 = GetDlgItem(v5, 1771); /*0x7a3f99*/
         v10(v15, 1); /*0x7a3fa4*/
         String::Assign((String *)v22, lParama); /*0x7a3fb2*/
-        FillPersonaInfoWOL(v22[0].vfptr.vfptr2, v5, (char **)v22, (wchar_t **)1); /*0x7a3fc3*/
+        FillPersonaInfoWOL(v22[0].ptr_0.ptr_8, v5, (char **)v22, (wchar_t **)1); /*0x7a3fc3*/
         DeleteAndZero(v22); /*0x7a3fcc*/
       }
     }
@@ -128,12 +128,12 @@ LABEL_14:
     }
   }
   /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x7a3fd1*/
-  ComPtr::Release((ComPtr *)&v22[0].vfptr.vfptr1); /*0x7a3fdd*/
+  ComPtr::Release((ComPtr *)&v22[0].ptr_0.ptr_4); /*0x7a3fdd*/
 LABEL_16:
   if ( lParam ) /*0x7a3fed*/
   {
-    BulkCharToWide(&v22[0].vfptr.nextArrayIndex, (unsigned __int8 *)lParam, -1); /*0x7a3ff5*/
-    ShowDialogConfirm((wchar_t *)&v22[0].vfptr.nextArrayIndex, 0, (unsigned __int8 (*)(void))GameLoop::Thunk, 0); /*0x7a4007*/
+    BulkCharToWide(&v22[0].ptr_0.nextArrayIndex, (unsigned __int8 *)lParam, -1); /*0x7a3ff5*/
+    ShowDialogConfirm((wchar_t *)&v22[0].ptr_0.nextArrayIndex, 0, (unsigned __int8 (*)(void))GameLoop::Thunk, 0); /*0x7a4007*/
   }
   else
   {

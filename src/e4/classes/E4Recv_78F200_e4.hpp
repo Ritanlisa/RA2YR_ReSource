@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_78F200 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     wchar_t * BuildWOLPlayerTooltip();  // 0x78F200
 };
 } // namespace gamemd

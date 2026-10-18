@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct LWCViewClass {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int RenderCells();  // 0x6DB620
 };
 } // namespace gamemd

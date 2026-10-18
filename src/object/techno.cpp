@@ -314,11 +314,11 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
   BulletClass *result; // eax
   void *vtable0; // [esp+0h] [ebp-4h]
 
-  result = (BulletClass *)this->vfptr; /*0x70ece1*/
-  vtable0 = this->vfptr; /*0x70ece5*/
-  if ( this->vfptr ) /*0x70ece5*/
+  result = (BulletClass *)this->ptr_0; /*0x70ece1*/
+  vtable0 = this->ptr_0; /*0x70ece5*/
+  if ( this->ptr_0 ) /*0x70ece5*/
   {
-    result = (BulletClass *)this->vfptr1; /*0x70eceb*/
+    result = (BulletClass *)this->ptr_4; /*0x70eceb*/
     this->nextArrayIndex = 1; /*0x70ecf5*/
     this->referenceCount = (int)result; /*0x70ecf8*/
     if ( (int)result < 1 ) /*0x70ecfb*/
@@ -433,27 +433,27 @@ void TechnoClass::Uncloak(bool play_sound)
   bool v10; // bl
   unsigned int *v11; // [esp+1Ch] [ebp+4h]
 
-  v2 = (HouseClass *)(*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this); /*0x6f333b*/
+  v2 = (HouseClass *)(*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this); /*0x6f333b*/
   if ( (uint8_t)HouseClass::HasPower(v2)
-    && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3285) )
+    && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 3285) )
   {
     return this->currentWeaponSlot != -1 ? this->currentWeaponSlot : 0;
   }
-  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vfptr + 256))(this) ) /*0x6f337d*/
+  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->ptr_0 + 256))(this) ) /*0x6f337d*/
     return 0; /*0x6f337d*/
-  v4 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, int))this->vfptr + 254))(this, 1); /*0x6f3397*/
+  v4 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, int))this->ptr_0 + 254))(this, 1); /*0x6f3397*/
   if ( !v4 ) /*0x6f339f*/
     return 0; /*0x6f339f*/
-  v5 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned int))this->vfptr + 254))(this, 0); /*0x6f33b1*/
+  v5 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned int))this->ptr_0 + 254))(this, 0); /*0x6f33b1*/
   if ( !v5 || *(unsigned char *)(v4 + 310) || !v11 ) /*0x6f33d3*/
     return 0; /*0x6f33d3*/
   if ( this->inOpenToppedTransport /*0x6f33f4*/
-    && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3408) != -1 )
+    && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 3408) != -1 )
   {
-    return *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3408); /*0x6f340d*/
+    return *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 3408); /*0x6f340d*/
   }
   v6 = (v11[5] & 1) != 0 ? (unsigned char *)v11 : 0;
-  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3285) )
+  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 3285) )
   {
     if ( *(unsigned char *)(*(unsigned int *)(v4 + 172) + 364) )
     {
@@ -485,9 +485,9 @@ void TechnoClass::Uncloak(bool play_sound)
       {
         return 1; /*0x6f35a5*/
       }
-      if ( *(unsigned char *)(v4 + 336) && (*((int (__thiscall **)(TechnoClass *))this->vfptr + 97))(this) == 16 ) /*0x6f35c3*/
+      if ( *(unsigned char *)(v4 + 336) && (*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 97))(this) == 16 ) /*0x6f35c3*/
         return 1; /*0x6f35d1*/
-      if ( (*((int (__thiscall **)(TechnoClass *))this->vfptr + 11))(this) == 6 && this->u32_661 ) /*0x6f35e0*/
+      if ( (*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 11))(this) == 6 && this->u32_661 ) /*0x6f35e0*/
         return 1; /*0x6f35f6*/
       if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 /*0x6f362f*/
         && (uint8_t)Object::IsAlliedWithObjectSimpleHouse((Object *)this->owner, v11)
@@ -496,13 +496,13 @@ void TechnoClass::Uncloak(bool play_sound)
       {
         return 1; /*0x6f3645*/
       }
-      if ( (*((int (__thiscall **)(TechnoClass *))this->vfptr + 11))(this) == 2 && this->Tactical_6CA ) /*0x6f3658*/
+      if ( (*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 11))(this) == 2 && this->Tactical_6CA ) /*0x6f3658*/
         return 1; /*0x6f366e*/
       if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 11 /*0x6f36ca*/
         && (v11[59] != 2 && (*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 80))(v11)
-         || (v11[80] & 0x100) != 0 && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3278))
+         || (v11[80] & 0x100) != 0 && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 3278))
         && !(*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 84))(v11)
-        && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 1540) == 2 )
+        && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 1540) == 2 )
       {
         return 1; /*0x6f36d8*/
       }
@@ -521,13 +521,13 @@ void TechnoClass::Uncloak(bool play_sound)
           v10 = 0; /*0x6f378d*/
         if ( !v6[140] && v10 ) /*0x6f379b*/
         {
-          result = (*((int (__thiscall **)(TechnoClass *, unsigned int *))this->vfptr + 186))(this, v11); /*0x6f37a2*/
+          result = (*((int (__thiscall **)(TechnoClass *, unsigned int *))this->ptr_0 + 186))(this, v11); /*0x6f37a2*/
           if ( result != -1 ) /*0x6f37ab*/
             return result; /*0x6f37ab*/
           return 0; /*0x6f37ab*/
         }
         if ( !(*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) /*0x6f37d6*/
-          && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 1540) == 2 )
+          && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 1540) == 2 )
         {
           return 1; /*0x6f37e4*/
         }
@@ -1200,7 +1200,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   int v6; // esi
   bool v7; // zf
 
-  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3277) ) /*0x707d2b*/
+  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->ptr_0 + 33))(this) + 3277) ) /*0x707d2b*/
     return 0; /*0x707d38*/
   owner = this->owner; /*0x707d39*/
   sideIndex = (int)(owner->sideIndex); /*0x707d40*/
@@ -1228,7 +1228,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return v5->u32_F6C; /*0x707dc5*/
-  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vfptr + 171))(this) /*0x707db2*/
+  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->ptr_0 + 171))(this) /*0x707db2*/
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
     return (ra2::game::InfantryTypeClass *)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948)); /*0x707dc4*/
@@ -1242,7 +1242,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
-  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vfptr + 171))(this) /*0x707db2*/
+  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->ptr_0 + 171))(this) /*0x707db2*/
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
     return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948); /*0x707dc4*/
@@ -1357,14 +1357,14 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
   }
   (this->u32_2D) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
-  vtable1 = this->vfptr1; /*0x633e20*/
+  vtable1 = this->ptr_4; /*0x633e20*/
   /* X11: vtable install elided (implicit via class virtuals 0x633e23) — binary-proven install, was 0 */
   if ( vtable1 && (this->u32_D) ) /*0x633e2d*/
   {
     operator delete((void *)(vtable1)); /*0x633e33*/
-    this->vfptr1 = 0; /*0x633e3b*/
+    this->ptr_4 = 0; /*0x633e3b*/
   }
   (this->u32_D) = 0; /*0x633e3e*/
-  this->vfptr2 = 0; /*0x633e41*/
+  this->ptr_8 = 0; /*0x633e41*/
 }
 } // namespace ra2

@@ -119,7 +119,7 @@ void Lobby::UpdatePlayerLabels()
   __int64 v38; // [esp+Ch] [ebp-8h] BYREF
 
   (v38) = ((v38) & 0xFFFFFFFFull) | ((unsigned long long)((this) & 0xFFFFFFFFull) << 32); /*0x5eb063*/
-  if ( dword_A8B23C && !(*((unsigned __int8 (**)(ObjectClass *))dword_A8B23C->vfptr + 16))(dword_A8B23C) /*0x5eb07a*/
+  if ( dword_A8B23C && !(*((unsigned __int8 (**)(ObjectClass *))dword_A8B23C->ptr_0 + 16))(dword_A8B23C) /*0x5eb07a*/
     || (v33 = 1, Network::IsMultiplayerActive()) )
   {
     v33 = 0; /*0x5eb088*/
@@ -180,7 +180,7 @@ LABEL_26:
         PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb165*/
         if ( dword_A8B23C ) /*0x5eb169*/
         {
-          v4 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 38))(dword_A8B23C); /*0x5eb16d*/
+          v4 = (*((int (**)(ObjectClass *))dword_A8B23C->ptr_0 + 38))(dword_A8B23C); /*0x5eb16d*/
           if ( v4 != -1 && v4 < PlayerCountMap ) /*0x5eb17a*/
             PlayerCountMap = v4; /*0x5eb17c*/
         }
@@ -206,7 +206,7 @@ LABEL_26:
         }
       }
       if ( v36 == g_MPCooperativeState && dword_A8B23C ) /*0x5eb1e9*/
-        (*((void (**)(ObjectClass *))dword_A8B23C->vfptr + 47))(dword_A8B23C); /*0x5eb1ed*/
+        (*((void (**)(ObjectClass *))dword_A8B23C->ptr_0 + 47))(dword_A8B23C); /*0x5eb1ed*/
     }
     if ( v36 )
     {
@@ -323,7 +323,7 @@ LABEL_79:
             v17 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb46c*/
             if ( dword_A8B23C ) /*0x5eb470*/
             {
-              v18 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 38))(dword_A8B23C); /*0x5eb474*/
+              v18 = (*((int (**)(ObjectClass *))dword_A8B23C->ptr_0 + 38))(dword_A8B23C); /*0x5eb474*/
               if ( v18 != -1 && v18 < v17 ) /*0x5eb481*/
                 v17 = v18; /*0x5eb483*/
             }
@@ -381,9 +381,9 @@ LABEL_111:
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
     DeleteAndZero::Alt((DeleteAndZero *)&v38); /*0x5eb638*/
-    v36 = (ObjectClass *)v16->vfptr + 1); /*0x5eb641*/
+    v36 = (ObjectClass *)v16->ptr_0 + 1); /*0x5eb641*/
   }
-  while ( (int)&v16->vfptr + 1 < 8 );
+  while ( (int)&v16->ptr_0 + 1 < 8 );
 
 }
 } // namespace gamemd
@@ -533,17 +533,17 @@ int Lobby::BuildPlayerList()
     unknown_libname_73(&v7); /*0x77dbc9*/
     if ( (unsigned __int8)IsKnownPointer((ObjectClass *)v2) ) /*0x77dbd0*/
     {
-      WideString::Assign((wchar_t **)&v7.vfptr1, v2); /*0x77dbde*/
-      v3 = ToWideStringCharAlt((char **)&v7.vfptr2, (const wchar_t **)&v7.vfptr1); /*0x77dbeb*/
+      WideString::Assign((wchar_t **)&v7.ptr_4, v2); /*0x77dbde*/
+      v3 = ToWideStringCharAlt((char **)&v7.ptr_8, (const wchar_t **)&v7.ptr_4); /*0x77dbeb*/
       String::Reassign((String *)&v7, (const char **)v3); /*0x77dbf5*/
-      DeleteAndZero((ObjectClass *)&v7.vfptr2); /*0x77dbfe*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v7.vfptr1); /*0x77dc07*/
+      DeleteAndZero((ObjectClass *)&v7.ptr_8); /*0x77dbfe*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v7.ptr_4); /*0x77dc07*/
     }
     else
     {
-      PlayerTypeString = (const char **)GetPlayerTypeString((String *)&v7.vfptr3, v2); /*0x77dc14*/
+      PlayerTypeString = (const char **)GetPlayerTypeString((String *)&v7.ptr_C, v2); /*0x77dc14*/
       String::Reassign((String *)&v7, PlayerTypeString); /*0x77dc1e*/
-      DeleteAndZero((ObjectClass *)&v7.vfptr3); /*0x77dc27*/
+      DeleteAndZero((ObjectClass *)&v7.ptr_C); /*0x77dc27*/
     }
     v5 = String::GetOrEmpty((String *)&v7); /*0x77dc35*/
     strncat((char *)&v7.uniqueId, v5, 0x100u); /*0x77dc40*/

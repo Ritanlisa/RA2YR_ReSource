@@ -115,12 +115,12 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
   dwNewLong = -1; /*0x561195*/
   Debug::Log(); /*0x56119d*/
   (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x5611ad*/
-  (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x5611ba*/
+  (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x5611ba*/
   Frame::Present((int)g_DSurface_Hidden, a3, yBottom, a4, 0, v13, v15, v17); /*0x5611c7*/
   result = ChangeVideoMode(v6, yBottom); /*0x5611d0*/
   if ( result ) /*0x5611d7*/
   {
-    (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x5611ea*/
+    (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x5611ea*/
     Frame::Present((int)g_DSurface_Hidden, a3, yBottom, a4, 0, v14, v16, v18); /*0x5611f7*/
     (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x561204*/
     Screen::Capture(1, 0, a3, yBottom); /*0x56120b*/
@@ -365,7 +365,7 @@ Game * * E4Recv_634B20::sub_634B20()
       v14 = uniqueId; /*0x634b8a*/
       for ( i = 0; v5 < uniqueId; i = v5 ) /*0x634b94*/
       {
-        v6 = (unsigned int *)*((unsigned int *)this->vfptr1 + v5); /*0x634b99*/
+        v6 = (unsigned int *)*((unsigned int *)this->ptr_4 + v5); /*0x634b99*/
         if ( v6[2] == v2 ) /*0x634b9f*/
         {
           v7 = *v6; /*0x634ba1*/
@@ -390,7 +390,7 @@ Game * * E4Recv_634B20::sub_634B20()
     v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
     {
-      v10 = (unsigned char *)*((unsigned int *)this->vfptr1 + v9); /*0x634c5b*/
+      v10 = (unsigned char *)*((unsigned int *)this->ptr_4 + v9); /*0x634c5b*/
       if ( v10[12] ) /*0x634c5e*/
       {
         v11 = *(unsigned int *)v10; /*0x634c65*/

@@ -233,7 +233,7 @@ int ScriptAction::ClassifyAction(int *a1, char *a2)
   v3 = *a2; /*0x638ce8*/
   if ( *a2 == 9 || v3 == 6 || v3 == 7 ) /*0x638cf8*/
     return 0; /*0x638d01*/
-  if ( Team_Load(&a1->vfptr, a2[12], *(unsigned int *)(a2 + 14), a2[18]) ) /*0x638d1a*/
+  if ( Team_Load(&a1->ptr_0, a2[12], *(unsigned int *)(a2 + 14), a2[18]) ) /*0x638d1a*/
     return 0; /*0x638d2a*/
   Type = (int *)BuildingClass::GetType(a1); /*0x638d2d*/
   if ( !Type ) /*0x638d34*/
@@ -1660,7 +1660,7 @@ int ScriptAction::ExecuteMissionCmd()
   unsigned int *v19; // [esp+A4h] [ebp+Ch]
   unsigned int *v20; // [esp+A8h] [ebp+10h]
 
-  v2 = Render_Draw_731BF0() && (*(unsigned __int8 (**)(TechnoClass *))(this->vfptr + 1216))(this); /*0x6ffc03*/
+  v2 = Render_Draw_731BF0() && (*(unsigned __int8 (**)(TechnoClass *))(this->ptr_0 + 1216))(this); /*0x6ffc03*/
   v3 = v17; /*0x6ffc09*/
   if ( (v17 == 2 || v17 == 1) && v2 ) /*0x6ffc1c*/
     v3 = 29; /*0x6ffc1e*/
@@ -1723,30 +1723,30 @@ int ScriptAction::ExecuteMissionCmd()
       switch ( v3 ) /*0x6ffcd4*/
       {
         case 10: /*0x6ffcd4*/
-          (*(void (**)(TechnoClass *))(this->vfptr + 860))(this); /*0x6ffcda*/
+          (*(void (**)(TechnoClass *))(this->ptr_0 + 860))(this); /*0x6ffcda*/
           break;
         case 1: /*0x6ffcd4*/
-          (*(void (**)(TechnoClass *, unsigned int *))(this->vfptr + 880))(this, v18); /*0x6ffcef*/
+          (*(void (**)(TechnoClass *, unsigned int *))(this->ptr_0 + 880))(this, v18); /*0x6ffcef*/
           break;
         case 2: /*0x6ffcd4*/
         case 29: /*0x6ffcd4*/
-          (*(void (**)(TechnoClass *))(this->vfptr + 872))(this); /*0x6ffd9f*/
+          (*(void (**)(TechnoClass *))(this->ptr_0 + 872))(this); /*0x6ffd9f*/
           break;
         case 7: /*0x6ffcd4*/
-          (*(void (**)(TechnoClass *))(this->vfptr + 856))(this); /*0x6ffd15*/
+          (*(void (**)(TechnoClass *))(this->ptr_0 + 856))(this); /*0x6ffd15*/
           break;
         case 8: /*0x6ffcd4*/
-          (*(void (**)(TechnoClass *))(this->vfptr + 868))(this); /*0x6ffd29*/
+          (*(void (**)(TechnoClass *))(this->ptr_0 + 868))(this); /*0x6ffd29*/
           break;
         case 16: /*0x6ffcd4*/
-          (*(void (**)(TechnoClass *))(this->vfptr + 876))(this); /*0x6ffd3a*/
+          (*(void (**)(TechnoClass *))(this->ptr_0 + 876))(this); /*0x6ffd3a*/
           break;
         default:
-          if ( *(int *)((*(int (**)(TechnoClass *))(this->vfptr + 132))(this) + 1200) > 0 ) /*0x6ffd59*/
+          if ( *(int *)((*(int (**)(TechnoClass *))(this->ptr_0 + 132))(this) + 1200) > 0 ) /*0x6ffd59*/
           {
             v6 = Random::State(&Randomizer_Global); /*0x6ffd65*/
-            v7 = (*(int (**)(TechnoClass *))(this->vfptr + 132))(this); /*0x6ffd6b*/
-            v11[0] = this->vfptr; /*0x6ffd7b*/
+            v7 = (*(int (**)(TechnoClass *))(this->ptr_0 + 132))(this); /*0x6ffd6b*/
+            v11[0] = this->ptr_0; /*0x6ffd7b*/
             (*(void (**)(TechnoClass *, unsigned int))(v11[0] + 852))( /*0x6ffd93*/
               this,
               *(unsigned int *)(*(unsigned int *)(v7 + 1188) + 4 * (v6 % *(unsigned int *)(v7 + 1200))));

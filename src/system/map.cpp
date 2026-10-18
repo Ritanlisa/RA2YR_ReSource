@@ -564,7 +564,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   v55 = v18 - v52[1] - 2; /*0x5679d3*/
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x5679eb*/
     || !dword_A8B23C
-    || (v56 = 1, (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C)) )
+    || (v56 = 1, (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C)) )
   {
     v56 = 0; /*0x5679f7*/
   }

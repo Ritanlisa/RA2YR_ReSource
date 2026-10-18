@@ -5,5 +5,5 @@ namespace gamemd {
   // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct Set { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct Set { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd

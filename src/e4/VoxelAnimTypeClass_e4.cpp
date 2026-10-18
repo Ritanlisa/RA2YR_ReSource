@@ -227,7 +227,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v22 = (unsigned int *)(globalHelper_04BB20((char *)&Destination, (int)&stru_A8EB00.vfptr[10])); /*0x74b219*/
+    v22 = (unsigned int *)(globalHelper_04BB20((char *)&Destination, (int)&stru_A8EB00.ptr_0[10])); /*0x74b219*/
   }
   else
   {

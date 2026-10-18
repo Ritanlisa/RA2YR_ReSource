@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct BrainClass {
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void sub_43A600();  // 0x43A600

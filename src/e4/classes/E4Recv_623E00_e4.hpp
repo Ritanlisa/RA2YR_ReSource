@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_623E00 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int  Memory_Pop(HWND hWnd);  // 0x623E00
 };
 } // namespace gamemd

@@ -131,7 +131,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
   int v8; // eax
   int v9; // edi
   int v10; // edx
-  int vfptr; // ebx
+  int ptr_0; // ebx
   int v12; // eax
   int v13; // eax
   int v14; // ecx
@@ -162,13 +162,13 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
   if ( !this->targetLaserTimer[0] ) /*0x77150d*/
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
-  vfptr = this->vfptr; /*0x77152b*/
+  ptr_0 = this->ptr_0; /*0x77152b*/
   DeleteAndZero::Alt2(&v17); /*0x77153b*/
   v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {
     v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
-    if ( Map_Remove_770CE0(vfptr, *(unsigned int *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
+    if ( Map_Remove_770CE0(ptr_0, *(unsigned int *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
       if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77157c*/
       {

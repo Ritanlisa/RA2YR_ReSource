@@ -7,7 +7,7 @@ namespace gamemd {
 struct Game;  // fix_fwd_type_supply
 struct E4Recv_634B20 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M16;  // 0x10
     unsigned int M36;  // 0x24
@@ -21,6 +21,6 @@ struct E4Recv_634B20 {
     unsigned int occupant;  // [X30:default]
 
 
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

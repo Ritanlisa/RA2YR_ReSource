@@ -189,7 +189,7 @@ char E4Recv_6D1570::sub_6D1570()
 {
 
   char result; // al
-  result = (*(int (**)(ObjectClass *, GadgetClass *))(this->vfptr + 48))(this, &stru_B0CC40); /*0x6d157a*/
+  result = (*(int (**)(ObjectClass *, GadgetClass *))(this->ptr_0 + 48))(this, &stru_B0CC40); /*0x6d157a*/
   if ( &stru_B0CC40 ) /*0x6d1584*/
   {
     int v2[6]; // [esp+4h] [ebp-1Ch] BYREF

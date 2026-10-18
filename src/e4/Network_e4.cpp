@@ -131,7 +131,7 @@ LABEL_5:
         if ( (*(&v9->q00C) & 1) != 0 /*0x4312a6*/
           && (unsigned __int8)HouseClass::IsAllied(*(HouseClass **)((char *)&stru_A83CD9.estimatedHealth + 3), result)
           && (unsigned __int8)HouseClass::IsAlliedWith(dword_A8022C->vtable1 + v9->u32_110))
-          && !*(unsigned char *)(*(&dword_A8022C->vfptr + v9->u32_110) + 501) )
+          && !*(unsigned char *)(*(&dword_A8022C->ptr_0 + v9->u32_110) + 501) )
         {
           v10 = (int *)(*(int (**)(int, int *))(*(unsigned int *)dword_880A04 + 120))(dword_880A04, v15); /*0x4312bf*/
           BuildingPlacement::RenderBuildingPlacementShadow( /*0x4312e6*/
@@ -320,11 +320,11 @@ LABEL_5:
           if ( (unsigned char)result ) /*0x431671*/
           {
             result = HouseClass::IsAlliedWith( /*0x431688*/
-                       *((#375 **)stru_A80220.vfptr3 + *(unsigned int *)(v10 + 272)),
+                       *((#375 **)stru_A80220.ptr_C + *(unsigned int *)(v10 + 272)),
                        (#375 *)MEMORY[0xA83D4C]);
             if ( (unsigned char)result ) /*0x43168f*/
             {
-              result = *((unsigned int *)stru_A80220.vfptr3 + *(unsigned int *)(v10 + 272)); /*0x43169d*/
+              result = *((unsigned int *)stru_A80220.ptr_C + *(unsigned int *)(v10 + 272)); /*0x43169d*/
               if ( !result->u8_1F5 ) /*0x4316a0*/
               {
                 v16 = *(unsigned int *)(v10 + 4); /*0x4316b4*/
@@ -2852,7 +2852,7 @@ int Network::processQueue()
   if ( stru_A80220.nextArrayIndex > 0 ) /*0x5e2baa*/
   {
     Network **vtable3; // esi
-    vtable3 = (Network **)stru_A80220.vfptr3; /*0x5e2bae*/
+    vtable3 = (Network **)stru_A80220.ptr_C; /*0x5e2bae*/
     int nextArrayIndex; // edi
     nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5e2bb5*/
     do /*0x5e2bda*/
@@ -2889,7 +2889,7 @@ int Network::CountDisconnectedHouses()
     return 0; /*0x5e2cc5*/
   do /*0x5e2cb3*/
   {
-    v3 = *((unsigned int *)stru_A80220.vfptr3 + v2); /*0x5e2c0a*/
+    v3 = *((unsigned int *)stru_A80220.ptr_C + v2); /*0x5e2c0a*/
     if ( v3 && !*(unsigned char *)(v3 + 501) && !*(unsigned char *)(*(unsigned int *)(v3 + 52) + 422) && (Network *)v3 != this ) /*0x5e2c34*/
     {
       v4 = 0; /*0x5e2c36*/
@@ -2900,13 +2900,13 @@ int Network::CountDisconnectedHouses()
       {
         if ( v5 != v9 ) /*0x5e2c42*/
         {
-          v6 = *((unsigned int *)stru_A80220.vfptr3 + v5); /*0x5e2c4a*/
+          v6 = *((unsigned int *)stru_A80220.ptr_C + v5); /*0x5e2c4a*/
           if ( v6 ) /*0x5e2c4f*/
           {
             if ( !v6->defeated /*0x5e2c7d*/
               && !*(unsigned char *)(v6->relatedTagsCapacity + 422)
               && (Network *)v6 != this
-              && (uint8_t)HouseClass::IsAlliedWith((void *)v3, *((void **)stru_A80220.vfptr3 + v5))
+              && (uint8_t)HouseClass::IsAlliedWith((void *)v3, *((void **)stru_A80220.ptr_C + v5))
               && (uint8_t)HouseClass::IsAlliedWith((void *)v6, (void *)v3) )
             {
               if ( v5 > v9 && !v4 ) /*0x5e2c8e*/
@@ -3019,7 +3019,7 @@ AbstractClass * * Network_ModemConnectionDialog()
   if ( !Dialog ) /*0x5ef50c*/
     return 0; /*0x5efed7*/
   SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5ef51a*/
-  v3 = (*(int (**)(ObjectClass *))(g_DSurface_Hidden->vfptr + 128))(g_DSurface_Hidden); /*0x5ef528*/
+  v3 = (*(int (**)(ObjectClass *))(g_DSurface_Hidden->ptr_0 + 128))(g_DSurface_Hidden); /*0x5ef528*/
   UI_Connect(Dialog, -1, (v3 - 400) / 2 + 147); /*0x5ef542*/
   Dialog::Show((Dialog *)Dialog); /*0x5ef549*/
   if ( !*(unsigned int *)&stru_A8D804.__pad_3D[639] /*0x5ef571*/
@@ -3722,7 +3722,7 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
   char *v23; // edi
   HouseClass *v24; // eax
   int v25; // ecx
-  int vfptr; // esi
+  int ptr_0; // esi
   int v27; // eax
   int v28; // esi
   int v29; // ebx
@@ -3815,7 +3815,7 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
   v11 = dword_A83ED4; /*0x64c4dc*/
   while ( 1 ) /*0x64c4ec*/
   {
-    v12 = *(&dword_A8022C->vfptr + v46); /*0x64c4ec*/
+    v12 = *(&dword_A8022C->ptr_0 + v46); /*0x64c4ec*/
     v47 = v12; /*0x64c4f1*/
     if ( v12 ) /*0x64c4f5*/
     {
@@ -3937,10 +3937,10 @@ LABEL_96:
     v25 = 0; /*0x64c7cc*/
     while ( 1 ) /*0x64c7d3*/
     {
-      vfptr = v24->vfptr; /*0x64c7d3*/
-      if ( v24->vfptr ) /*0x64c7d3*/
+      ptr_0 = v24->ptr_0; /*0x64c7d3*/
+      if ( v24->ptr_0 ) /*0x64c7d3*/
       {
-        if ( vfptr->u32_30 == v52 ) /*0x64c7dc*/
+        if ( ptr_0->u32_30 == v52 ) /*0x64c7dc*/
           break; /*0x64c7dc*/
       }
       ++v25; /*0x64c7de*/
@@ -3948,15 +3948,15 @@ LABEL_96:
       if ( v25 >= v51 ) /*0x64c7e3*/
         goto LABEL_57; /*0x64c7e3*/
     }
-    vfptr->q248 = 1; /*0x64c7e7*/
+    ptr_0->q248 = 1; /*0x64c7e7*/
 LABEL_57:
-    if ( Network::CountDisconnectedHouses((Network *)vfptr) == 1 ) /*0x64c7f8*/
+    if ( Network::CountDisconnectedHouses((Network *)ptr_0) == 1 ) /*0x64c7f8*/
     {
       if ( *(unsigned int *)&dword_A8B238 != 4 || stru_A8E960.waypoints[2414] ) /*0x64c809*/
       {
 LABEL_66:
-        if ( !Network::processQueue((Network *)vfptr) ) /*0x64c852*/
-          Network::SendOffer((Network *)vfptr); /*0x64c85d*/
+        if ( !Network::processQueue((Network *)ptr_0) ) /*0x64c852*/
+          Network::SendOffer((Network *)ptr_0); /*0x64c85d*/
         goto LABEL_68; /*0x64c85d*/
       }
       byte_A8B8C1 = 1; /*0x64c80b*/
@@ -3966,7 +3966,7 @@ LABEL_66:
     if ( *(unsigned int *)&dword_A8B238 == 4 /*0x64c83a*/
       && !stru_A8E960.waypoints[2414]
       && *(int *)((char *)&stru_A83CD9.estimatedHealth + 3)
-      && *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) == vfptr )
+      && *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) == ptr_0 )
     {
       Debug::Log(); /*0x64c841*/
       ProcessGameResults(0, v52); /*0x64c84b*/
@@ -4708,7 +4708,7 @@ AbstractClass * * sub_53F540()
   v1 = *(unsigned short *)&DataGlobal_AA0568; /*0x53f54d*/
   (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 80))( /*0x53f556*/
     *(unsigned int *)&stru_887598.isAliveFlag,
-    stru_A8EB00.vfptr[45]);
+    stru_A8EB00.ptr_0[45]);
   dword_AA05A8 = (*(uint8_t (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 60))( /*0x53f570*/
                    *(unsigned int *)&stru_887598.isAliveFlag,
                    v1);

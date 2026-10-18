@@ -780,7 +780,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
       v9 = TypeClass::FindByName(v8); /*0x41b1a3*/
       if ( v9 != -1 ) /*0x41b1a8*/
       {
-        v10 = (IUnknown *)*(&dword_A8022C->vfptr + v7); /*0x41b1b9*/
+        v10 = (IUnknown *)*(&dword_A8022C->ptr_0 + v7); /*0x41b1b9*/
         v11 = __2_YAPAXI_Z(0x6D8u); /*0x41b1bc*/
         if ( v11 ) /*0x41b1c6*/
         {

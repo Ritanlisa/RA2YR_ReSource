@@ -775,7 +775,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
   int v25; // edx
   int v26; // eax
   int v27; // ecx
-  int vfptr1; // edx
+  int ptr_4; // edx
   bool v29; // zf
   unsigned __int16 *v30; // edx
   int v31; // eax
@@ -926,10 +926,10 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
         break; /*0x488c80*/
       case 3u: /*0x488a3d*/
         v27 = *(unsigned int *)(*((unsigned int *)dword_B054D4 + v10) + 788); /*0x488c91*/
-        vfptr1 = dword_87F6C4->vfptr1; /*0x488c9c*/
+        ptr_4 = dword_87F6C4->ptr_4; /*0x488c9c*/
         if ( (this->u32_2C & 6) != 0 ) /*0x488c9f*/
         {
-          v29 = vfptr1 == 1; /*0x488ca5*/
+          v29 = ptr_4 == 1; /*0x488ca5*/
           v30 = (unsigned __int16 *)dword_87F6C4->radarFlashTimer[0]; /*0x488ca8*/
           if ( v29 ) /*0x488cae*/
             v31 = *((unsigned __int8 *)v30 + v27); /*0x488cb2*/
@@ -967,7 +967,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
         }
         else
         {
-          v29 = vfptr1 == 1; /*0x488d6d*/
+          v29 = ptr_4 == 1; /*0x488d6d*/
           v37 = (unsigned __int16 *)dword_87F6C4->radarFlashTimer[0]; /*0x488d70*/
           if ( v29 ) /*0x488d76*/
             v38 = *((unsigned __int8 *)v37 + v27); /*0x488d7a*/
@@ -3845,7 +3845,7 @@ void Voxel_Section::Draw()
       {
         v61 = 0; /*0x75dcc8*/
         for ( HIBYTE(v81) = 1; v61 < v80; ++v61 ) /*0x75dcd0*/
-          v79[v61] = *((unsigned int *)&_ESI->WarheadTypeClass_field_0x1AC->vfptr + v61); /*0x75dcde*/
+          v79[v61] = *((unsigned int *)&_ESI->WarheadTypeClass_field_0x1AC->ptr_0 + v61); /*0x75dcde*/
       }
     }
     else

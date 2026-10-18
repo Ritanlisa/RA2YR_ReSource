@@ -602,7 +602,7 @@ int BuildingTypeClass_LoadSHPs(int a1)
   {
     while ( 1 ) /*0x5fe642*/
     {
-      v4 = *((unsigned int *)&dword_A83D84->vfptr + v2); /*0x5fe642*/
+      v4 = *((unsigned int *)&dword_A83D84->ptr_0 + v2); /*0x5fe642*/
       v5 = *(unsigned char *)(v4 + 556); /*0x5fe64d*/
       if ( *(unsigned char *)(v4 + 687) ) /*0x5fe645*/
       {
@@ -1028,7 +1028,7 @@ unsigned int ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
 {
   this->ambientSoundController[2] = a2; /*0x5f15cc*/
   this->ambientSoundController[3] = a3; /*0x5f15d3*/
-  this->vfptr2 = (void *)a4; /*0x5f15da*/
+  this->ptr_8 = (void *)a4; /*0x5f15da*/
   (this->onBridge) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/
@@ -1036,9 +1036,9 @@ unsigned int ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
   this->ambientSoundController[1] = -1; /*0x5f15f7*/
   this->attachedBomb = 0; /*0x5f15fa*/
   this->customSound_controller[0] = 0; /*0x5f15fd*/
-  this->vfptr1 = 0; /*0x5f1600*/
+  this->ptr_4 = 0; /*0x5f1600*/
   this->uniqueId = 500; /*0x5f1603*/
-  this->vfptr3 = 0; /*0x5f160a*/
+  this->ptr_C = 0; /*0x5f160a*/
   this->nextArrayIndex = -1; /*0x5f160d*/
   this->referenceCount = 0; /*0x5f1610*/
   this->NeedsSaveOrLink = 0; /*0x5f1613*/
@@ -1052,7 +1052,7 @@ unsigned int ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
   this->customSound_controller[4] = -1; /*0x5f1634*/
   this->customSound = 1200; /*0x5f1637*/
   this->attachedTag = 0; /*0x5f163e*/
-  return &this->vfptr; /*0x5f1641*/
+  return &this->ptr_0; /*0x5f1641*/
 }
 } // namespace gamemd
 

@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_6C43D0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int CreateTClassFactory_RocketLocomotionClass(const void *a3, unsigned int *a2);
 };
 } // namespace gamemd

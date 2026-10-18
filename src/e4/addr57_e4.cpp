@@ -1571,7 +1571,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   v2 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)aP0) + 17); /*0x57e2bc*/
   if ( v2 >= 74 && v2 <= 101 ) /*0x57e2cb*/
   {
-    v3 = SLOWORD(aP0->vfptr) + (SHIWORD(aP0->vfptr) << 9); /*0x57e2e6*/
+    v3 = SLOWORD(aP0->ptr_0) + (SHIWORD(aP0->ptr_0) << 9); /*0x57e2e6*/
     if ( v3 < 0x40000 && (v4 = *(House **)(dword_87F924 + 4 * v3)) != 0 ) /*0x57e2f6*/
     {
       v5 = v4; /*0x57e2f8*/
@@ -1579,10 +1579,10 @@ void* CreateCliffStraightMap(IUnknown * aP0)
     else
     {
       v5 = (House *)&unk_ABDC50; /*0x57e2fe*/
-      dword_ABDC74 = aP0->vfptr; /*0x57e300*/
+      dword_ABDC74 = aP0->ptr_0; /*0x57e300*/
     }
-    v6 = LOWORD(aP0->vfptr) - 1; /*0x57e30c*/
-    HIWORD(v50) = HIWORD(aP0->vfptr); /*0x57e30e*/
+    v6 = LOWORD(aP0->ptr_0) - 1; /*0x57e30c*/
+    HIWORD(v50) = HIWORD(aP0->ptr_0); /*0x57e30e*/
     LOWORD(v50) = v6; /*0x57e316*/
     v53 = v5; /*0x57e31b*/
     v7 = v6 + (SHIWORD(v50) << 9); /*0x57e325*/
@@ -1595,8 +1595,8 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v52 = (House *)&unk_ABDC50; /*0x57e341*/
       dword_ABDC74 = (int)v50; /*0x57e345*/
     }
-    v9 = LOWORD(aP0->vfptr) + 1; /*0x57e351*/
-    HIWORD(v50) = HIWORD(aP0->vfptr); /*0x57e353*/
+    v9 = LOWORD(aP0->ptr_0) + 1; /*0x57e351*/
+    HIWORD(v50) = HIWORD(aP0->ptr_0); /*0x57e353*/
     LOWORD(v50) = v9; /*0x57e35b*/
     v10 = v9 + (SHIWORD(v50) << 9); /*0x57e366*/
     if ( v10 < 0x40000 && (v11 = *(House **)(dword_87F924 + 4 * v10)) != 0 ) /*0x57e376*/
@@ -1763,8 +1763,8 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       {
         LOBYTE(v55) = 1; /*0x57e6e4*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)aP0); /*0x57e6e8*/
-        v40 = LOWORD(aP0->vfptr) + 1; /*0x57e6f4*/
-        HIWORD(right) = HIWORD(aP0->vfptr); /*0x57e6f6*/
+        v40 = LOWORD(aP0->ptr_0) + 1; /*0x57e6f4*/
+        HIWORD(right) = HIWORD(aP0->ptr_0); /*0x57e6f6*/
         LOWORD(right) = v40; /*0x57e6fb*/
         v51[0] = right; /*0x57e708*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57e712*/
@@ -2146,7 +2146,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
   v2 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)aP0) + 17); /*0x57ed1c*/
   if ( v2 >= 205 && v2 <= 232 ) /*0x57ed2f*/
   {
-    v3 = SLOWORD(aP0->vfptr) + (SHIWORD(aP0->vfptr) << 9); /*0x57ed4a*/
+    v3 = SLOWORD(aP0->ptr_0) + (SHIWORD(aP0->ptr_0) << 9); /*0x57ed4a*/
     if ( v3 < 0x40000 && (v4 = *(House **)(dword_87F924 + 4 * v3)) != 0 ) /*0x57ed5a*/
     {
       v5 = v4; /*0x57ed5c*/
@@ -2154,10 +2154,10 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
     else
     {
       v5 = (House *)&unk_ABDC50; /*0x57ed62*/
-      dword_ABDC74 = aP0->vfptr; /*0x57ed64*/
+      dword_ABDC74 = aP0->ptr_0; /*0x57ed64*/
     }
-    v6 = LOWORD(aP0->vfptr) - 1; /*0x57ed70*/
-    HIWORD(v50) = HIWORD(aP0->vfptr); /*0x57ed72*/
+    v6 = LOWORD(aP0->ptr_0) - 1; /*0x57ed70*/
+    HIWORD(v50) = HIWORD(aP0->ptr_0); /*0x57ed72*/
     LOWORD(v50) = v6; /*0x57ed7a*/
     v53 = v5; /*0x57ed7f*/
     v7 = v6 + (SHIWORD(v50) << 9); /*0x57ed89*/
@@ -2170,8 +2170,8 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v52 = (House *)&unk_ABDC50; /*0x57eda5*/
       dword_ABDC74 = (int)v50; /*0x57eda9*/
     }
-    v9 = LOWORD(aP0->vfptr) + 1; /*0x57edb5*/
-    HIWORD(v50) = HIWORD(aP0->vfptr); /*0x57edb7*/
+    v9 = LOWORD(aP0->ptr_0) + 1; /*0x57edb5*/
+    HIWORD(v50) = HIWORD(aP0->ptr_0); /*0x57edb7*/
     LOWORD(v50) = v9; /*0x57edbf*/
     v10 = v9 + (SHIWORD(v50) << 9); /*0x57edca*/
     if ( v10 < 0x40000 && (v11 = *(House **)(dword_87F924 + 4 * v10)) != 0 ) /*0x57edda*/
@@ -2338,8 +2338,8 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       {
         LOBYTE(v55) = 1; /*0x57f151*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)aP0); /*0x57f155*/
-        v40 = LOWORD(aP0->vfptr) + 1; /*0x57f161*/
-        HIWORD(right) = HIWORD(aP0->vfptr); /*0x57f163*/
+        v40 = LOWORD(aP0->ptr_0) + 1; /*0x57f161*/
+        HIWORD(right) = HIWORD(aP0->ptr_0); /*0x57f163*/
         LOWORD(right) = v40; /*0x57f168*/
         v51[0] = right; /*0x57f175*/
         BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)v51); /*0x57f17f*/

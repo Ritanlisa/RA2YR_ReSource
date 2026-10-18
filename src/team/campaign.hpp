@@ -90,7 +90,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* vtable1;  // X10 supply (csp_canon_members)
 
 
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
     unsigned int u32_3828;  // 0x3828 [X55 W3 supply (render vocab)]
     unsigned int u32_2028;  // 0x2028 [X55 W3 supply (render vocab)]
     unsigned int u32_3028;  // 0x3028 [X55 W3 supply (render vocab)]

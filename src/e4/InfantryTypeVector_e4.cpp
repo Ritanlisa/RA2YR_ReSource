@@ -25,7 +25,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1, void *a2, void *a3)
       return 0; /*0x512f36*/
     int InfantryTypeVector_field_0x14 = aP1->abstractFlags; // eax /*0x512f38*/
     if ( InfantryTypeVector_field_0x14 <= 0 /*0x512f48*/
-      || !(*(unsigned __int8 (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)aP1->vfptr + 8))(
+      || !(*(unsigned __int8 (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)aP1->ptr_0 + 8))(
             aP1,
             InfantryTypeVector_field_0x08 + InfantryTypeVector_field_0x14,
             0) )

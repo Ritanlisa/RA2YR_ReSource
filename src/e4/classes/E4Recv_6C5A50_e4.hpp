@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_6C5A50 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int CreateTClassFactory_ParticleSystemTypeClass(void * a2, void * a3);
 };
 } // namespace gamemd

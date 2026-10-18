@@ -3124,8 +3124,8 @@ void ObjectClass::sub_401580(void ** Block)
   v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)Block + 68); /*0x401593*/
   if ( v3 ) /*0x40159b*/
     (**v3)(v3, 1); /*0x4015a1*/
-  if ( Block->vfptr ) /*0x4015a3*/
-    operator delete((void *)(Block->vfptr)); /*0x4015aa*/
+  if ( Block->ptr_0 ) /*0x4015a3*/
+    operator delete((void *)(Block->ptr_0)); /*0x4015aa*/
   operator delete((Block)); /*0x4015b3*/
 }
 } // namespace gamemd
@@ -7188,7 +7188,7 @@ ObjectClass *  ObjectClass::sub_40E4A0(void ** Block, char a2)
   HashTable::DestroyHashTableINIClass((INIClass *)Block); /*0x40e4a3*/
   if ( (a2 & 1) != 0 ) /*0x40e4ad*/
     operator delete((Block)); /*0x40e4b0*/
-  return &Block->vfptr; /*0x40e4ba*/
+  return &Block->ptr_0; /*0x40e4ba*/
 }
 } // namespace gamemd
 

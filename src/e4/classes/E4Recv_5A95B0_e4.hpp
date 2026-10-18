@@ -9,7 +9,7 @@ namespace gamemd {
 struct CCINIClass;  // fix_fwd_type_supply
 struct E4Recv_5A95B0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M60;  // 0x3C
 // --- flat members (END) ---
     CCINIClass * PlaceRandomAIBuildings();  // 0x5A95B0

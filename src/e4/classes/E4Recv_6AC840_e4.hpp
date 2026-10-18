@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_6AC840 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M4556;  // 0x11CC
     unsigned int M4557;  // 0x11CD
     unsigned int M4558;  // 0x11CE

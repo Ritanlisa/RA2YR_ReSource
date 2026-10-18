@@ -621,7 +621,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
     if ( j < v15.Capacity /*0x595d5f*/
       || (v15.IsAllocated || !v15.Capacity)
       && v17 > 0
-      && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v15.vfptr + 2))(&v15, v17 + v15.Capacity, 0) )
+      && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v15.ptr_0 + 2))(&v15, v17 + v15.Capacity, 0) )
     {
       v3 = j++; /*0x595d6a*/
       *((unsigned int *)v15.Items + v3) = i; /*0x595d75*/
@@ -633,7 +633,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
       if ( j < v15.Capacity /*0x595dc2*/
         || (v15.IsAllocated || !v15.Capacity)
         && v17 > 0
-        && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v15.vfptr + 2))(&v15, v17 + v15.Capacity, 0) )
+        && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v15.ptr_0 + 2))(&v15, v17 + v15.Capacity, 0) )
       {
         v4 = j++; /*0x595dcd*/
         *((unsigned int *)v15.Items + v4) = i; /*0x595dd8*/
@@ -1007,7 +1007,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       if ( v45 < v44.Capacity /*0x59aa69*/
         || (v44.IsAllocated[0] || !v44.Capacity)
         && v46 > 0
-        && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v44.vfptr + 8))(&v44, v46 + v44.Capacity, 0) )
+        && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v44.ptr_0 + 8))(&v44, v46 + v44.Capacity, 0) )
       {
         v12 = v45++; /*0x59aa74*/
         *(unsigned int *)(v44.Items + 4 * v12) = v5; /*0x59aa7f*/
@@ -1015,7 +1015,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       if ( i < v41.Capacity /*0x59aaaf*/
         || (v41.IsAllocated[0] || !v41.Capacity)
         && v43 > 0
-        && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v41.vfptr + 8))(&v41, v43 + v41.Capacity, 0) )
+        && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v41.ptr_0 + 8))(&v41, v43 + v41.Capacity, 0) )
       {
         v13 = i++; /*0x59aaba*/
         *(unsigned int *)(v41.Items + 4 * v13) = v10; /*0x59aac5*/
@@ -1248,7 +1248,7 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
             if ( (int16_t)v6 - v7 < v5 && v7 - (int16_t)v6 < v5 && v8 <= g_MissionQueueFrame.localVariables[161] ) /*0x594356*/
             {
               if ( g_MissionQueueFrame.localVariables[163] ) /*0x594360*/
-                *(unsigned int *)(80 * ((int16_t)v6 + g_MapCellWidth * v7) + g_MissionQueueFrame.localVariables[163] + 56) = v12->vfptr2; /*0x59437a*/
+                *(unsigned int *)(80 * ((int16_t)v6 + g_MapCellWidth * v7) + g_MissionQueueFrame.localVariables[163] + 56) = v12->ptr_8; /*0x59437a*/
               v9 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v11); /*0x594388*/
               v9->u32_11B = v12->uniqueId; /*0x594394*/
               v5 = g_MissionQueueFrame.localVariables[160]; /*0x59439a*/

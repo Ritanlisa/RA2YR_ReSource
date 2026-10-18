@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct Iostream_init {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     Iostream_init();  // 0x420120
     Iostream_init * __0Iostream_init_QAE_XZ_6();
     Iostream_init * __0Iostream_init_QAE_XZ_9();

@@ -6,7 +6,7 @@
 namespace gamemd {
 struct Winsock {
     unsigned int Debug;
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     char VerifyCRC(int a1);  // 0x7B2050
 };
 } // namespace gamemd

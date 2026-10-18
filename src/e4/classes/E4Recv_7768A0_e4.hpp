@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_7768A0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     BOOL  System_Read_7768A0(HWND hWndMain);  // 0x7768A0
 };
 } // namespace gamemd

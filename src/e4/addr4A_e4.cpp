@@ -1587,7 +1587,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   int abstractFlags; // eax
   void *vtable3; // ecx
 
-  LOBYTE(this->vfptr) = 0; /*0x4a6855*/
+  LOBYTE(this->ptr_0) = 0; /*0x4a6855*/
   this->ptr_1 = 0; /*0x4a6857*/
   this->ptr_2 = 0; /*0x4a685a*/
   this->ptr_3 = 0; /*0x4a685d*/
@@ -1601,31 +1601,31 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( !v6 ) /*0x4a687c*/
     goto LABEL_12; /*0x4a687c*/
   *v6 = 40; /*0x4a6882*/
-  *((unsigned int *)this->vfptr1 + 1) = a3; /*0x4a688d*/
-  *((unsigned int *)this->vfptr1 + 2) = -a4; /*0x4a6893*/
-  *((unsigned short *)this->vfptr1 + 6) = 1; /*0x4a689d*/
-  *((unsigned short *)this->vfptr1 + 7) = 8; /*0x4a68a6*/
-  *((unsigned int *)this->vfptr1 + 4) = 0; /*0x4a68af*/
-  *((unsigned int *)this->vfptr1 + 5) = 0; /*0x4a68b5*/
-  *((unsigned int *)this->vfptr1 + 6) = 0; /*0x4a68bb*/
-  *((unsigned int *)this->vfptr1 + 7) = 0; /*0x4a68c6*/
-  *((unsigned int *)this->vfptr1 + 8) = 256; /*0x4a68cc*/
-  *((unsigned int *)this->vfptr1 + 9) = 256; /*0x4a68d2*/
-  for ( i = 0; i < 256; *((unsigned char *)this->vfptr1 + 4 * i + 39) = 0 ) /*0x4a68d5*/
+  *((unsigned int *)this->ptr_4 + 1) = a3; /*0x4a688d*/
+  *((unsigned int *)this->ptr_4 + 2) = -a4; /*0x4a6893*/
+  *((unsigned short *)this->ptr_4 + 6) = 1; /*0x4a689d*/
+  *((unsigned short *)this->ptr_4 + 7) = 8; /*0x4a68a6*/
+  *((unsigned int *)this->ptr_4 + 4) = 0; /*0x4a68af*/
+  *((unsigned int *)this->ptr_4 + 5) = 0; /*0x4a68b5*/
+  *((unsigned int *)this->ptr_4 + 6) = 0; /*0x4a68bb*/
+  *((unsigned int *)this->ptr_4 + 7) = 0; /*0x4a68c6*/
+  *((unsigned int *)this->ptr_4 + 8) = 256; /*0x4a68cc*/
+  *((unsigned int *)this->ptr_4 + 9) = 256; /*0x4a68d2*/
+  for ( i = 0; i < 256; *((unsigned char *)this->ptr_4 + 4 * i + 39) = 0 ) /*0x4a68d5*/
   {
     v8 = (unsigned char *)(a5 + 2 * (i % 256) + i % 256); /*0x4a68ef*/
     ++i; /*0x4a68f1*/
-    *((unsigned char *)this->vfptr1 + 4 * i + 36) = v8[2]; /*0x4a68fa*/
-    *((unsigned char *)this->vfptr1 + 4 * i + 37) = v8[1]; /*0x4a6904*/
-    *((unsigned char *)this->vfptr1 + 4 * i + 38) = *v8; /*0x4a690d*/
+    *((unsigned char *)this->ptr_4 + 4 * i + 36) = v8[2]; /*0x4a68fa*/
+    *((unsigned char *)this->ptr_4 + 4 * i + 37) = v8[1]; /*0x4a6904*/
+    *((unsigned char *)this->ptr_4 + 4 * i + 38) = *v8; /*0x4a690d*/
   }
   pVal = &this->M12; /*0x4a6929*/
   DC = GetDC(hWnd); /*0x4a692e*/
   this->ptr_2 = CreateDIBSection(DC, (const BITMAPINFO *)this->ptr_1, 0, &this->ptr_3, 0, 0); /*0x4a693f*/
   ReleaseDC(hWnd, DC); /*0x4a6942*/
-  if ( !this->vfptr2 ) /*0x4a6948*/
+  if ( !this->ptr_8 ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
-  vtable1 = this->vfptr1; /*0x4a6951*/
+  vtable1 = this->ptr_4; /*0x4a6951*/
   this->uniqueId = vtable1->vtable2; /*0x4a6957*/
   uniqueId = this->uniqueId; /*0x4a6962*/
   this->abstractFlags = abs32(vtable1[2]); /*0x4a6965*/
@@ -1647,7 +1647,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( v15 ) /*0x4a69a6*/
   {
     abstractFlags = this->abstractFlags; /*0x4a69a8*/
-    vtable3 = this->vfptr3; /*0x4a69ab*/
+    vtable3 = this->ptr_C; /*0x4a69ab*/
     *((unsigned int *)v15 + 2) = abstractFlags; /*0x4a69ae*/
     *((unsigned int *)v15 + 1) = v14; /*0x4a69b9*/
     *((unsigned int *)v15 + 3) = 0; /*0x4a69bc*/
@@ -1663,7 +1663,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   this->NeedsSaveOrLink = v15; /*0x4a69dd*/
   if ( !v15 ) /*0x4a69e0*/
 LABEL_12:
-    LOBYTE(this->vfptr) = 1; /*0x4a69e2*/
+    LOBYTE(this->ptr_0) = 1; /*0x4a69e2*/
   return (char *)this; /*0x4a69e7*/
 
 }
@@ -1948,7 +1948,7 @@ char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
               if ( *(unsigned int *)(v17 + 48) == a2 && *(unsigned char *)(v15[328] + 5455) ) /*0x4a8fec*/
                 v25 = 1; /*0x4a8ff5*/
               if ( (unsigned char)MEMORY[0xA8B264] /*0x4a900e*/
-                && (unsigned __int8)HouseClass::IsAlliedWith((#375 *)v17, *(#375 **)&dword_A8022C->vfptr[4 * a2]) )
+                && (unsigned __int8)HouseClass::IsAlliedWith((#375 *)v17, *(#375 **)&dword_A8022C->ptr_0[4 * a2]) )
               {
                 if ( *(unsigned char *)(v16[328] + 5456) ) /*0x4a901d*/
                   v25 = 1; /*0x4a9027*/
@@ -2253,8 +2253,8 @@ ScenarioClass * * sub_4AC4F0()
   }
   LOWORD(v10) = v11 / 256; /*0x4ac5d3*/
   HIWORD(v10) = v7 / 256; /*0x4ac5e6*/
-  *(int *)((char *)&dword_A8B230[374].vfptr + 2) = (int)v10; /*0x4ac5f4*/
-  *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = *(int *)((char *)&dword_A8B230[374].vfptr + 2); /*0x4ac605*/
+  *(int *)((char *)&dword_A8B230[374].ptr_0 + 2) = (int)v10; /*0x4ac5f4*/
+  *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = *(int *)((char *)&dword_A8B230[374].ptr_0 + 2); /*0x4ac605*/
   *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2); /*0x4ac616*/
   *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = *(int *)((char *)&dword_A8B230[373].referenceCount + 2); /*0x4ac627*/
   result = dword_A8B230; /*0x4ac62d*/
@@ -2800,7 +2800,7 @@ void E4Recv_4A0450::sub_4A0450()
 
 
   int v2 = 0; // edi /*0x4a0457*/
-  for ( *(unsigned int *)this->vfptr = &vt_EnumConnectionsClass; v2 < this->M20; ++v2 ) /*0x4a0464*/
+  for ( *(unsigned int *)this->ptr_0 = &vt_EnumConnectionsClass; v2 < this->M20; ++v2 ) /*0x4a0464*/
   {
     int v6; // [esp-4h] [ebp-10h]
     v6 = *(unsigned int *)(this->M8 + 8 * v2); /*0x4a046c*/
@@ -2919,7 +2919,7 @@ void E4Recv_4A0DB0::sub_4A0DB0()
 
 
   int v2 = 0; // edi /*0x4a0db7*/
-  for ( *(unsigned int *)this->vfptr = &vt_EnumConnectionPointsClass; /*0x4a0dc4*/
+  for ( *(unsigned int *)this->ptr_0 = &vt_EnumConnectionPointsClass; /*0x4a0dc4*/
   v2 < this->M28;
   ++v2 )
   {
@@ -3303,7 +3303,7 @@ namespace gamemd {
 unsigned int * E4Recv_4A3630::sub_4A3630()
 {
   this->M98304 = 0; /*0x4a3632*/
-  return &this->vfptr; /*0x4a363c*/
+  return &this->ptr_0; /*0x4a363c*/
 }
 } // namespace gamemd
 
@@ -4608,7 +4608,7 @@ int E4Recv_4AFB00::sub_4AFB00(int a2)
     this->M32 = result; /*0x4afb0e*/
     this->M28 = a2; /*0x4afb11*/
     unsigned int *v3; // ecx
-    v3 = this->vfptr + 9); /*0x4afb19*/
+    v3 = this->ptr_0 + 9); /*0x4afb19*/
     *v3 = dword_A8ED84; /*0x4afb22*/
     int v4; // [esp+4h] [ebp-Ch]
     v3[1] = v4; /*0x4afb2a*/

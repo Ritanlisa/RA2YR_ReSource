@@ -187,7 +187,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x52548c*/
     for ( i = (ObjectClass *)strtok(String, Delimiter); i; i = (ObjectClass *)strtok(0, Delimiter) ) /*0x52549e*/
     {
-      if ( !LOBYTE(i->vfptr) ) /*0x5254a0*/
+      if ( !LOBYTE(i->ptr_0) ) /*0x5254a0*/
         break; /*0x5254a2*/
       _751520 = (ObjectClass *)System_Get_751520(i); /*0x5254a6*/
       if ( _751520 ) /*0x5254ad*/
@@ -196,7 +196,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
         if ( v23 < v22.Capacity /*0x5254e2*/
           || (v22.IsAllocated[0] || !v22.Capacity)
           && v24 > 0
-          && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v22.vfptr + 8))(
+          && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v22.ptr_0 + 8))(
                &v22,
                v24 + v22.Capacity,
                0) )
@@ -1177,7 +1177,7 @@ LABEL_68:
         v57 = &dword_A8E8E8; /*0x52c41f*/
         while ( 1 ) /*0x52c438*/
         {
-          sprintf(Buffer[0].__tail_0, "%c:\\", v57->vfptr + 65); /*0x52c438*/
+          sprintf(Buffer[0].__tail_0, "%c:\\", v57->ptr_0 + 65); /*0x52c438*/
           strcat(Source, Buffer[0].__tail_0); /*0x52c46a*/
           ++v3; /*0x52c476*/
           v57 = (ObjectClass *)((char *)v57 + 4); /*0x52c477*/
@@ -1773,7 +1773,7 @@ void MenuSelect()
   int v2; // eax
   int *p_vfptr3; // edx
   int *v4; // eax
-  int vfptr3; // ecx
+  int ptr_C; // ecx
   int abstractFlags; // edx
   int v7; // edx
   int j; // edi
@@ -1836,7 +1836,7 @@ void MenuSelect()
   v2 = StringList::Find((StringList *)((char *)&stru_A83CD9.attachedTag + 3), g_INI_Key_INTRO); /*0x52d9b4*/
   ThemeClass::Play((ThemeClass *)((char *)&stru_A83CD9.attachedTag + 3), v2); /*0x52d9bf*/
 LABEL_2:
-  p_vfptr3 = &dword_A8B230[127].vfptr3; /*0x52d9c9*/
+  p_vfptr3 = &dword_A8B230[127].ptr_C; /*0x52d9c9*/
   stru_A8E960.nextScenario[64] = 1; /*0x52d9d7*/
   *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) = 0; /*0x52d9de*/
   dword_8B41F8 = 0; /*0x52d9e4*/
@@ -1846,26 +1846,26 @@ LABEL_2:
   dword_A802CC = 0; /*0x52d9fc*/
   dword_A802D0 = 0; /*0x52da02*/
   *(unsigned int *)&stru_A8E960.random[528] = 0; /*0x52da08*/
-  dword_A8B230[127].vfptr3 = 0; /*0x52da0e*/
+  dword_A8B230[127].ptr_C = 0; /*0x52da0e*/
   v55 = 0; /*0x52da16*/
   p_vfptr3->Items = v60; /*0x52da1b*/
   v54 = 1; /*0x52da1e*/
   p_vfptr3->Capacity = 0; /*0x52da23*/
-  v4 = &dword_A8B230[127].vfptr3; /*0x52da2c*/
-  vfptr3 = dword_A8B230[127].vfptr3; /*0x52da32*/
-  if ( vfptr3 != -1 ) /*0x52da3a*/
+  v4 = &dword_A8B230[127].ptr_C; /*0x52da2c*/
+  ptr_C = dword_A8B230[127].ptr_C; /*0x52da32*/
+  if ( ptr_C != -1 ) /*0x52da3a*/
   {
     abstractFlags = dword_A8B230[127].abstractFlags; /*0x52da42*/
-    if ( *(unsigned int *)&stru_A8E960.random[528] - vfptr3 >= abstractFlags ) /*0x52da49*/
+    if ( *(unsigned int *)&stru_A8E960.random[528] - ptr_C >= abstractFlags ) /*0x52da49*/
       v7 = 0; /*0x52da4f*/
     else
-      v7 = abstractFlags - (*(unsigned int *)&stru_A8E960.random[528] - vfptr3); /*0x52da4b*/
+      v7 = abstractFlags - (*(unsigned int *)&stru_A8E960.random[528] - ptr_C); /*0x52da4b*/
     dword_A8B230[127].abstractFlags = v7; /*0x52da51*/
     *v4 = -1; /*0x52da54*/
   }
   j = 1; /*0x52da5c*/
-  dword_A8B230[43].vfptr1 = 1; /*0x52da67*/
-  dword_A8B230[43].vfptr = 1; /*0x52da72*/
+  dword_A8B230[43].ptr_4 = 1; /*0x52da67*/
+  dword_A8B230[43].ptr_0 = 1; /*0x52da72*/
   LOBYTE(stru_A83CD9.estimatedHealth) = 0; /*0x52da78*/
   stru_A8E960.random[348] = 0; /*0x52da7f*/
   byte_8B41C0 = 0; /*0x52da86*/
@@ -1914,7 +1914,7 @@ LABEL_18:
       4);
     (*(void (**)(CCFileClass *, int *, int))(*(unsigned int *)dword_A8D58C.__tail_0 + 36))( /*0x52dba9*/
       &dword_A8D58C,
-      &dword_A8B230[130].vfptr3,
+      &dword_A8B230[130].ptr_C,
       4);
     (*(void (**)(CCFileClass *, int *, int))(*(unsigned int *)dword_A8D58C.__tail_0 + 36))( /*0x52dbc7*/
       &dword_A8D58C,
@@ -2119,28 +2119,28 @@ LABEL_40:
         switch ( *(unsigned int *)&stru_A8E960.altNextScenario[256] ) /*0x52e536*/
         {
           case 0: /*0x52e536*/
-            dword_A8B230[43].vfptr1 = 2; /*0x52e53d*/
-            dword_A8B230[43].vfptr = 0; /*0x52e54d*/
+            dword_A8B230[43].ptr_4 = 2; /*0x52e53d*/
+            dword_A8B230[43].ptr_0 = 0; /*0x52e54d*/
             *(unsigned int *)&dword_A8B238 = 0; /*0x52e553*/
             break; /*0x52e559*/
           case 1: /*0x52e536*/
-            dword_A8B230[43].vfptr1 = 2; /*0x52e55e*/
-            dword_A8B230[43].vfptr = 1; /*0x52e56d*/
+            dword_A8B230[43].ptr_4 = 2; /*0x52e55e*/
+            dword_A8B230[43].ptr_0 = 1; /*0x52e56d*/
             *(unsigned int *)&dword_A8B238 = 0; /*0x52e577*/
             break; /*0x52e57d*/
           case 2: /*0x52e536*/
-            dword_A8B230[43].vfptr1 = 1; /*0x52e587*/
-            dword_A8B230[43].vfptr = 1; /*0x52e593*/
+            dword_A8B230[43].ptr_4 = 1; /*0x52e587*/
+            dword_A8B230[43].ptr_0 = 1; /*0x52e593*/
             *(unsigned int *)&dword_A8B238 = 0; /*0x52e599*/
             break; /*0x52e59f*/
           case 3: /*0x52e536*/
-            dword_A8B230[43].vfptr1 = 0; /*0x52e5a1*/
-            dword_A8B230[43].vfptr = 1; /*0x52e5ac*/
+            dword_A8B230[43].ptr_4 = 0; /*0x52e5a1*/
+            dword_A8B230[43].ptr_0 = 1; /*0x52e5ac*/
             *(unsigned int *)&dword_A8B238 = 0; /*0x52e5b6*/
             break; /*0x52e5bc*/
           case 4: /*0x52e536*/
-            dword_A8B230[43].vfptr1 = 0; /*0x52e5be*/
-            dword_A8B230[43].vfptr = 2; /*0x52e5ca*/
+            dword_A8B230[43].ptr_4 = 0; /*0x52e5be*/
+            dword_A8B230[43].ptr_0 = 2; /*0x52e5ca*/
             goto LABEL_143; /*0x52e5ca*/
           default:
 LABEL_143:
@@ -2159,7 +2159,7 @@ LABEL_147:
         {
           if ( !g_Is16BitMode ) /*0x52e666*/
             FadePalette(&word_884E80, 15, (void (*)(void))Event::Dispatch); /*0x52e677*/
-          (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x52e685*/
+          (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x52e685*/
           Frame::Present((int)g_DSurface_Hidden, 0, -1, j, 0, (int)v50, v52, v53); /*0x52e691*/
         }
         (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x52e69e*/
@@ -2212,7 +2212,7 @@ LABEL_184:
                 4);
               (*(void (**)(CCFileClass *, int *, int))(*(unsigned int *)dword_A8D58C.__tail_0 + 48))( /*0x52e8f4*/
                 &dword_A8D58C,
-                &dword_A8B230[130].vfptr3,
+                &dword_A8B230[130].ptr_C,
                 4);
               (*(void (**)(CCFileClass *, int *, int))(*(unsigned int *)dword_A8D58C.__tail_0 + 48))( /*0x52e912*/
                 &dword_A8D58C,
@@ -2274,7 +2274,7 @@ LABEL_189:
           (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x52eaa9*/
           if ( !g_Is16BitMode ) /*0x52eab3*/
             FadePalette(&word_884E80, 15, (void (*)(void))Event::Dispatch); /*0x52eac4*/
-          (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x52ead2*/
+          (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x52ead2*/
           Frame::Present((int)g_DSurface_Hidden, 0, -1, j, 0, (int)v50, v52, v53); /*0x52eade*/
           (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x52eaeb*/
           g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x52eafb*/
@@ -3533,7 +3533,7 @@ INT_PTR ReadModConfigINI(HWND hDlg, UINT, WPARAM, int * a4)
     }
     else if ( UINT == 534 ) /*0x52d51d*/
     {
-      return (unsigned __int8)Window::ClampToScreen(&a4->vfptr); /*0x52d546*/
+      return (unsigned __int8)Window::ClampToScreen(&a4->ptr_0); /*0x52d546*/
     }
     return 0; /*0x52d51d*/
   }
@@ -3556,7 +3556,7 @@ INT_PTR ReadModConfigINI(HWND hDlg, UINT, WPARAM, int * a4)
   for ( i = 0; i < a4->uniqueId; ++i ) /*0x52d4b9*/
   {
     INIClass::GetString( /*0x52d4da*/
-      *(INIClass **)(a4->vfptr1 + 4 * i),
+      *(INIClass **)(a4->ptr_4 + 4 * i),
       g_INI_Key_General,
       (unsigned __int8 *)g_INI_Key_Name,
       &g_INI_DefaultBuffer,

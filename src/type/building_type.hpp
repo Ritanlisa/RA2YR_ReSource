@@ -386,7 +386,7 @@ public:  // g57c5 W4b supply slot
     unsigned int qE00;  // 0xE00 [X55 W3 supply (render vocab)]
     unsigned int u32_F08;  // 0xF08 [X55 W3 supply (render vocab)]
     unsigned int u32_F0C;  // 0xF0C [X55 W3 supply (render vocab)]
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
     unsigned int u32_E04;  // 0xE04 [X55 W3 supply (render vocab)]
     unsigned int u32_E08;  // 0xE08 [X55 W3 supply (render vocab)]
     unsigned int qE10;  // 0xE10 [X55 W3 supply (render vocab)]

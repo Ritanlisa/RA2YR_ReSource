@@ -62,12 +62,12 @@ bool Weapon_Update(void * a1, void * a2)
   int v16[4]; // [esp+18h] [ebp-10h] BYREF
 
   v3 = v2; /*0x659ca5*/
-  if ( !((v2->vfptr2) & 0xFF) ) /*0x659ca7*/
+  if ( !((v2->ptr_8) & 0xFF) ) /*0x659ca7*/
   {
-    (v2->vfptr2) = ((v2->vfptr2) & ~0xFF) | ((1) & 0xFF); /*0x659cae*/
+    (v2->ptr_8) = ((v2->ptr_8) & ~0xFF) | ((1) & 0xFF); /*0x659cae*/
     Weapon_Update_Update(v2); /*0x659cb2*/
   }
-  if ( (((v3->vfptr2) >> 8) & 0xFF) ) /*0x659cb7*/
+  if ( (((v3->ptr_8) >> 8) & 0xFF) ) /*0x659cb7*/
   {
     Weapon_Update_Update_659EE0(v3); /*0x659cc4*/
     v4 = *(unsigned int *)v3->onBridge; /*0x659cc9*/
@@ -91,8 +91,8 @@ bool Weapon_Update(void * a1, void * a2)
         v16[3] = dword_886FAC; /*0x659d9c*/
         if ( (unsigned __int8)ClipLine(v15, v14, v16) ) /*0x659da0*/
         {
-          v7 = v3->vfptr3 - ZCoordToScreenY(v3->location[2]) - 2; /*0x659db9*/
-          v8 = ZCoordToScreenY(v3[1].vfptr1); /*0x659dbc*/
+          v7 = v3->ptr_C - ZCoordToScreenY(v3->location[2]) - 2; /*0x659db9*/
+          v8 = ZCoordToScreenY(v3[1].ptr_4); /*0x659dbc*/
           (*(void (**)(AudioStream *, CellStruct *, int *, int *, unsigned int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 52))( /*0x659de7*/
             g_DSurface_Hidden_2,
             &DSurface_ViewBounds,

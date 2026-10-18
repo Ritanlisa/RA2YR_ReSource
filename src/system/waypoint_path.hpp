@@ -65,6 +65,6 @@ public:
     uint8_t     pad_36[2];          // +0x36..+0x37
 
 
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    void * ptr_C;  // 0xC [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

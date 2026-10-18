@@ -1597,7 +1597,7 @@ int WaitForMultiplayerLoadSync(void)
     if ( (_AX & 0x100) == 0 )
     {
       __asm { fstp st } /*0x6845ed*/
-      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].vfptr) != 0 ? 200 : 100);
+      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
       return 1; /*0x684605*/
     }
     __asm /*0x68446b*/
@@ -1624,7 +1624,7 @@ int WaitForMultiplayerLoadSync(void)
 LABEL_18:
       Ticks = Timer::GetTicks(); /*0x6844d3*/
       v18 = 60; /*0x6844f1*/
-      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].vfptr) != 0 ? 200 : 100);
+      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
     }
   }
   for ( i = 1; i < MEMORY[0xA8DA84]; ++i ) /*0x68453f*/
@@ -1643,7 +1643,7 @@ LABEL_18:
       Debug::Log(); /*0x68457c*/
       v12 = *(unsigned int *)(MEMORY[0xA8DA78][i] + 111); /*0x684591*/
       HandleNetworkPlayerDisconnect(v12, 1); /*0x684596*/
-      if ( SessionClass::IsValidHouse((int)&dword_A8B238, *((#375 **)stru_A80220.vfptr3 + v12)) ) /*0x6845aa*/
+      if ( SessionClass::IsValidHouse((int)&dword_A8B238, *((#375 **)stru_A80220.ptr_C + v12)) ) /*0x6845aa*/
       {
         dword_A8E2AC = -1; /*0x6845bf*/
         memset(word_A8E258, 0, 0x28u); /*0x6845c9*/

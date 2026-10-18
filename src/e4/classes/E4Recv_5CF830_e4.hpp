@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_5CF830 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
 // --- flat members (END) ---
     int  Network_Load(char a2);  // 0x5CF830
 };

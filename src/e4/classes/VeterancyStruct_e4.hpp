@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct VeterancyStruct {
-    void* vfptr;
+    void* ptr_0;
     BOOL IsElite();
     BOOL IsVeteran();
     void Accumulate(int a1, int a2);

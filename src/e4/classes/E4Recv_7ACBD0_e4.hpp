@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_7ACBD0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     void __Release__NonReentrantLock_details_Concurrency__QAEXXZ_1();  // 0x7ACBD0
 };
 } // namespace gamemd

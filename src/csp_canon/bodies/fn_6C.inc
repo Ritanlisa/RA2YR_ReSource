@@ -2831,9 +2831,9 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   this->M8 = a2; /*0x6cf900 G42.33 b12: hpp M8@8 (Capacity)*/
   this->M12 = 1; /*0x6cf903 G42.33 b12: hpp M12@0xC (IsInitialized)*/
   this->M13 = 0; /*0x6cf907 G42.33 b12: hpp M13@0xD (IsAllocated)*/
-  this->vfptr = (unsigned int)&vt_VectorClass; /*0x6cf90a G42.33 b12: hpp vfptr@0*/
+  this->ptr_0 = (unsigned int)&vt_VectorClass; /*0x6cf90a G42.33 b12: hpp ptr_0@0*/
   if ( !a2 ) /*0x6cf910*/
-    return &this->vfptr; /*0x6cf910*/
+    return &this->ptr_0; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/
   {
     v7 = (unsigned int *)__2_YAPAXI_Z(8 * a2); /*0x6cf942*/
@@ -2853,7 +2853,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
         while ( v9 ); /*0x6cf961*/
         this->M4 = (unsigned int)v7; /*0x6cf963*/
         this->M13 = 1; /*0x6cf966*/
-        return &this->vfptr; /*0x6cf96f*/
+        return &this->ptr_0; /*0x6cf96f*/
       }
     }
     else
@@ -2862,7 +2862,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     }
     this->M4 = (unsigned int)v7; /*0x6cf974*/
     this->M13 = 1; /*0x6cf977*/
-    return &this->vfptr; /*0x6cf97b*/
+    return &this->ptr_0; /*0x6cf97b*/
   }
   v4 = a3; /*0x6cf91d*/
   if ( a2 - 1 >= 0 ) /*0x6cf921*/
@@ -2878,7 +2878,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     while ( v5 ); /*0x6cf92d*/
   }
   this->M4 = (unsigned int)a3; /*0x6cf92f*/
-  return &this->vfptr; /*0x6cf934*/
+  return &this->ptr_0; /*0x6cf934*/
 
 }
 

@@ -284,8 +284,8 @@ void* COMObject::ScalarDtor(int a2) {
 // 0x4F42B0
 namespace gamemd { 
 int COMObject::DtorSequence(int a1) {
-  (*(void (**)(GScreenClass *))(this->vfptr[0] + 28))(this); /*0x4f42b5*/
-  return (*(int (**)(GScreenClass *))(this->vfptr[0] + 32))(this); /*0x4f42bf*/
+  (*(void (**)(GScreenClass *))(this->ptr_0[0] + 28))(this); /*0x4f42b5*/
+  return (*(int (**)(GScreenClass *))(this->ptr_0[0] + 32))(this); /*0x4f42bf*/
 }
 }
 // 0x5233A0

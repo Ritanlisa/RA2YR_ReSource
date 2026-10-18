@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct MainMenu {
-    void* vfptr;
+    void* ptr_0;
     int DlgProc(HWND hWnd, int a2, int a3, int a4);
 };
 

@@ -262,7 +262,7 @@ int FactoryClass::StartProduction(char a2)
     this->u32_E = 0; /*0x4c9e80*/
     this->u32_B = v2; /*0x4c9e83*/
     result = (int)v4; /*0x4c9e85*/
-    this->vfptr3 = (int)v4; /*0x4c9e89*/
+    this->ptr_C = (int)v4; /*0x4c9e89*/
     (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x4c9e8c*/
     this->u8_D = 0; /*0x4c9e8e*/
   }
@@ -553,7 +553,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca77c) */
   /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca783) */
   /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca78a) */
-  AbstractClass::AnnounceExpiredPointer(&Block->vfptr, 1); /*0x4ca791*/
+  AbstractClass::AnnounceExpiredPointer(&Block->ptr_0, 1); /*0x4ca791*/
   v7 = Block; /*0x4ca7a6*/
   v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&DataGlobal_A83E30 + 16))( /*0x4ca7aa*/
          &DataGlobal_A83E30,
@@ -598,7 +598,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   ((AbstractClass *)Block)->DTOR(); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
     operator delete((Block)); /*0x4ca877*/
-  return &Block->vfptr; /*0x4ca881*/
+  return &Block->ptr_0; /*0x4ca881*/
 }
 }
 // 0x635060

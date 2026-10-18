@@ -119,7 +119,7 @@ int ReadINIClassBuildingTypeList(TypeList_BuildingType * aP0, unsigned char *** 
         && ((int)v18 < v17.Capacity
          || (v17.IsAllocated[0] || !v17.Capacity)
          && v19 > 0
-         && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v17.vfptr + 8))(&v17, v19 + v17.Capacity, 0)) )
+         && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v17.ptr_0 + 8))(&v17, v19 + v17.Capacity, 0)) )
       {
         v8 = v18; /*0x67b606*/
         v18 = (char *)v18 + 1; /*0x67b609*/

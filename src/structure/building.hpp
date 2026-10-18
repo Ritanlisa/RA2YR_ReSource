@@ -815,12 +815,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* vtable3;  // X10 supply (csp_canon_members)
 
 
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
     unsigned int __pad_6B4;  // 0x6B4 [X55 W3 supply (render vocab)]
     unsigned int q_610;  // 0x610 [X55 W3 supply (render vocab)]
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_8;  // 0x8 [X55 W3 supply (render vocab)]
+    void * ptr_C;  // 0xC [X55 W3 supply (render vocab)]
 };
 
 // External globals

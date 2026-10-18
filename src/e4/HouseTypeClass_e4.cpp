@@ -61,7 +61,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116ad) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116b4) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116bb) */
-  AbstractClass::AnnounceExpiredPointer(&a1->vfptr, 1); /*0x5116c2*/
+  AbstractClass::AnnounceExpiredPointer(&a1->ptr_0, 1); /*0x5116c2*/
   HouseTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
   v7 = (gamemd::HouseTypeClass *)(a1); /*0x5116d7*/
   int v2; // eax
@@ -224,7 +224,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   INIClass::GetString((INIClass *)v4, (unsigned __int8 *)(_EBX + 36), aPrefix, Source, v81, 2); /*0x51196b*/
   _EBX->Prefix = v81[0]; /*0x511974*/
   INIClass::ReadDouble_Overwrite( /*0x511990*/
-    &v4->vfptr,
+    &v4->ptr_0,
     (unsigned __int8 *)(_EBX + 36),
     aFirepower,
     _EBX->firepowerMult_d);
@@ -233,7 +233,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   __asm { fstp qword ptr [ebx+0C8h] } /*0x5119a1*/
   _EBX->firepowerMult_d = _RT1; /*0x5119a1*/
   INIClass::ReadDouble_Overwrite( /*0x5119b1*/
-    &v4->vfptr,
+    &v4->ptr_0,
     (unsigned __int8 *)(_EBX + 36),
     aGroundspeed,
     COERCE_DOUBLE((((v6 & 0xFFFFFFFFull)) << 32 | (v7 & 0xFFFFFFFFull))));
@@ -242,20 +242,20 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   __asm { fstp qword ptr [ebx+0D0h] } /*0x5119c2*/
   _EBX->groundspeedMult_d = _RT1; /*0x5119c2*/
   INIClass::ReadDouble_Overwrite( /*0x5119d2*/
-    &v4->vfptr,
+    &v4->ptr_0,
     (unsigned __int8 *)(_EBX + 36),
     aAirspeed,
     COERCE_DOUBLE((((v9 & 0xFFFFFFFFull)) << 32 | (v10 & 0xFFFFFFFFull))));
   v12 = _EBX->armorMult_d; /*0x5119dd*/
   __asm { fstp qword ptr [ebx+0D8h] } /*0x5119e3*/
   _EBX->airspeedMult_d = _RT1; /*0x5119e3*/
-  INIClass::ReadDouble_Overwrite(&v4->vfptr, (unsigned __int8 *)(_EBX + 36), g_INI_Key_Armor, v12); /*0x5119f3*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), g_INI_Key_Armor, v12); /*0x5119f3*/
   v14 = _EBX->q0EC; /*0x5119f8*/
   v15 = _EBX->rofMult_d; /*0x5119fe*/
   __asm { fstp qword ptr [ebx+0E0h] } /*0x511a04*/
   _EBX->armorMult_d = _RT1; /*0x511a04*/
   INIClass::ReadDouble_Overwrite( /*0x511a14*/
-    &v4->vfptr,
+    &v4->ptr_0,
     (unsigned __int8 *)(_EBX + 36),
     &off_825478,
     COERCE_DOUBLE((((v14 & 0xFFFFFFFFull)) << 32 | (v15 & 0xFFFFFFFFull))));
@@ -264,29 +264,29 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   __asm { fstp qword ptr [ebx+0E8h] } /*0x511a25*/
   _EBX->rofMult_d = _RT1; /*0x511a25*/
   INIClass::ReadDouble_Overwrite( /*0x511a35*/
-    &v4->vfptr,
+    &v4->ptr_0,
     (unsigned __int8 *)(_EBX + 36),
     g_INI_Key_Cost,
     COERCE_DOUBLE((((v17 & 0xFFFFFFFFull)) << 32 | (v18 & 0xFFFFFFFFull))));
   v20 = _EBX->buildtimeMult_d; /*0x511a40*/
   __asm { fstp qword ptr [ebx+0F0h] } /*0x511a46*/
   _EBX->costMult_d = _RT1; /*0x511a46*/
-  INIClass::ReadDouble_Overwrite(&v4->vfptr, (unsigned __int8 *)(_EBX + 36), aBuildtime, v20); /*0x511a56*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aBuildtime, v20); /*0x511a56*/
   v22 = _EBX->Multiplay; /*0x511a5b*/
   __asm { fstp qword ptr [ebx+0F8h] } /*0x511a61*/
   _EBX->buildtimeMult_d = _RT1; /*0x511a61*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite(&v4->vfptr, (unsigned __int8 *)(_EBX + 36), aMultiplay, v22); /*0x511a70*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aMultiplay, v22); /*0x511a70*/
   v79 = _EBX->MultiplayPassive; /*0x511a7d*/
   _EBX->Multiplay = Bool_Overwrite; /*0x511a84*/
   _EBX->MultiplayPassive = INIClass::ReadBool_Overwrite( /*0x511a8f*/
-                             &v4->vfptr,
+                             &v4->ptr_0,
                              (unsigned __int8 *)(_EBX + 36),
                              aMultiplaypassi,
                              v79);
-  v25 = INIClass::ReadBool_Overwrite(&v4->vfptr, (unsigned __int8 *)(_EBX + 36), aWallowner, _EBX->WallOwner); /*0x511aa4*/
+  v25 = INIClass::ReadBool_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aWallowner, _EBX->WallOwner); /*0x511aa4*/
   v26 = _EBX->SmartAI; /*0x511aa9*/
   _EBX->WallOwner = v25; /*0x511aaf*/
-  v27 = INIClass::ReadBool_Overwrite(&v4->vfptr, (unsigned __int8 *)(_EBX + 36), aSmartai, v26); /*0x511abe*/
+  v27 = INIClass::ReadBool_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aSmartai, v26); /*0x511abe*/
   __asm { fld dword ptr [ebx+100h] } /*0x511ac3*/
   _EBX->SmartAI = v27; /*0x511ace*/
   __asm { fstp [esp+0F8h+var_F8]; double } /*0x511ad4*/
@@ -917,7 +917,7 @@ int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
   }
   if ( !*a3 ) /*0x512621*/
     return -2147467262; /*0x512626*/
-  (*((void (__stdcall **)(HouseTypeClass *))a1->vfptr + 1))(a1); /*0x512632*/
+  (*((void (__stdcall **)(HouseTypeClass *))a1->ptr_0 + 1))(a1); /*0x512632*/
   return 0; /*0x5125ae*/
 }
 } // namespace gamemd
@@ -1153,7 +1153,7 @@ TypeList_flat * HouseTypeClass_36::QueryInterface(unsigned int * Block, char a2)
   *((unsigned int *)Block + 2) = 0; /*0x512a71*/
   if ( (a2 & 1) != 0 ) /*0x512a78*/
     operator delete((Block)); /*0x512a7b*/
-  return &Block->vfptr; /*0x512a85*/
+  return &Block->ptr_0; /*0x512a85*/
 }
 } // namespace gamemd
 
@@ -1174,7 +1174,7 @@ TypeList_flat * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
   *((unsigned int *)Block + 2) = 0; /*0x512ac1*/
   if ( (a2 & 1) != 0 ) /*0x512ac8*/
     operator delete((Block)); /*0x512acb*/
-  return &Block->vfptr; /*0x512ad5*/
+  return &Block->ptr_0; /*0x512ad5*/
 }
 } // namespace gamemd
 

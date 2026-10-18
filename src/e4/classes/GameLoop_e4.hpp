@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct GameLoop {
     unsigned int Game;
-    void* vfptr;
+    void* ptr_0;
     int Thunk();
 };
 

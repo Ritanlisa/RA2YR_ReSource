@@ -188,7 +188,7 @@ int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void 
           v17);
   if ( v11 == 4 ) /*0x4165f6*/
   {
-    (*(void (**)(AircraftClass *, unsigned int))(aP0->vfptr.vfptr.vfptr.vfptr.vfptr.vfptr.vfptr + 952))(aP0, 0); /*0x416613*/
+    (*(void (**)(AircraftClass *, unsigned int))(aP0->ptr_0.ptr_0.ptr_0.ptr_0.ptr_0.ptr_0.ptr_0 + 952))(aP0, 0); /*0x416613*/
     if ( *(int *)(aP0->Type + 1852) > 0 ) /*0x416627*/
     {
       AnimClass *v13; // ebx
@@ -202,17 +202,17 @@ int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void 
                        % *(unsigned int *)(aP0->Type + 1852)));
         int *v15; // eax
         unsigned char v18[8]; // [esp+Ch] [ebp-8h] BYREF
-        v15 = (int *)(*(int (**)(AircraftClass *, unsigned char *))(aP0->vfptr.vfptr.vfptr.vfptr.vfptr.vfptr.vfptr /*0x41667b*/
+        v15 = (int *)(*(int (**)(AircraftClass *, unsigned char *))(aP0->ptr_0.ptr_0.ptr_0.ptr_0.ptr_0.ptr_0.ptr_0 /*0x41667b*/
                        + 164))(
                        aP0,
                        v18);
         AnimClass::ctor(v13, v14, v15, 0, 1, (void *)0x600, 0, 0); /*0x416685*/
       }
     }
-    if ( !(*(uint8_t (**)(AircraftClass *, int))(aP0->vfptr.vfptr.vfptr.vfptr.vfptr.vfptr.vfptr + 988))( /*0x416694*/
+    if ( !(*(uint8_t (**)(AircraftClass *, int))(aP0->ptr_0.ptr_0.ptr_0.ptr_0.ptr_0.ptr_0.ptr_0 + 988))( /*0x416694*/
             aP0,
             a5) )
-    (*(void (**)(AircraftClass *))(aP0->vfptr.vfptr.vfptr.vfptr.vfptr.vfptr.vfptr + 248))(aP0); /*0x4166a3*/
+    (*(void (**)(AircraftClass *))(aP0->ptr_0.ptr_0.ptr_0.ptr_0.ptr_0.ptr_0.ptr_0 + 248))(aP0); /*0x4166a3*/
   }
   else if ( v11 == 5 ) /*0x4165f9*/
   {
@@ -247,9 +247,9 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
     return result; /*0x417cdd*/
-  if ( result == 26 && aP1->Type[1].vfptr[317] ) /*0x417cf4*/
+  if ( result == 26 && aP1->Type[1].ptr_0[317] ) /*0x417cf4*/
     v7 = 0; /*0x417cfe*/
-  if ( aP1->Type[1].vfptr[300] && (uint8_t)((House *)((House *)aP1->owner))->IsHumanPlayer() ) /*0x417d16*/
+  if ( aP1->Type[1].ptr_0[300] && (uint8_t)((House *)((House *)aP1->owner))->IsHumanPlayer() ) /*0x417d16*/
   {
     if ( v7 != 7 && v7 ) /*0x417d26*/
       goto LABEL_18; /*0x417d26*/
@@ -273,7 +273,7 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
     v9 = (unsigned int *)(*(int (**)(int *, char *))(*v4 + 72))(v4, v18); /*0x417d89*/
     (*((unsigned short *)&(a3_2))) = *v9 / 256; /*0x417d9e*/
     (*(((unsigned short *)&(a3_2)) + 1)) = v9[1] / 256; /*0x417db7*/
-    vtable0 = (int (**)(AircraftClass *, int **, unsigned int, int *))aP1->vfptr; /*0x417dc0*/
+    vtable0 = (int (**)(AircraftClass *, int **, unsigned int, int *))aP1->ptr_0; /*0x417dc0*/
     a3_2 = a3_2; /*0x417dc4*/
     v7 = vtable0[28](aP1, &a3_2, 0, v3); /*0x417dcb*/
   }
@@ -286,7 +286,7 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
     v7 = 0; /*0x417df4*/
     goto LABEL_24; /*0x417df4*/
   }
-  if ( v7 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))aP1->vfptr + 254))(aP1, 0) ) /*0x417def*/
+  if ( v7 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))aP1->ptr_0 + 254))(aP1, 0) ) /*0x417def*/
     goto LABEL_23; /*0x417df2*/
   LABEL_24:
   if ( (uint8_t)((House *)((House *)aP1->owner))->IsHumanPlayer() ) /*0x417dfc*/
@@ -310,7 +310,7 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
         }
         if ( !(uint8_t)((Array *)v4)->ContainsValue((int)aP1) /*0x417e76*/
           || v4[70]
-          || (v7 = 3, (*((int (**)(AircraftClass *, int, int *))aP1->vfptr + 158))(aP1, 15, v4) != 1) )
+          || (v7 = 3, (*((int (**)(AircraftClass *, int, int *))aP1->ptr_0 + 158))(aP1, 15, v4) != 1) )
         {
           LABEL_36:
           v7 = 31; /*0x417e78*/
@@ -318,7 +318,7 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
       }
     }
   }
-  if ( aP1->Type[1].vfptr[300] && v7 == 17 ) /*0x417e90*/
+  if ( aP1->Type[1].ptr_0[300] && v7 == 17 ) /*0x417e90*/
   {
     a3_2 = *(int **)(*(int (**)(int *, int **))(*v4 + 440))(v4, &a3_2); /*0x417eaa*/
     if ( a3_2 != (int *)g_AircraftStatusFlag ) /*0x417eae*/
@@ -644,26 +644,26 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
   int vtable2; // eax
 
   v2 = a0; /*0x41b432*/
-  p_vtable1 = &a0->vfptr1; /*0x41b43a*/
-  a0 = (AircraftClass *)(*((int (__stdcall **)(void **))a0->vfptr1 + 4))(&a0->vfptr1); /*0x41b44b*/
+  p_vtable1 = &a0->ptr_4; /*0x41b43a*/
+  a0 = (AircraftClass *)(*((int (__stdcall **)(void **))a0->ptr_4 + 4))(&a0->ptr_4); /*0x41b44b*/
   v4 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, (int *)&a0); /*0x41b44f*/
   if ( v4 ) /*0x41b456*/
   {
-    v5 = (signed int)(v4 - (unsigned int)g_BuildingLoadQueue_Array.vfptr) >> 3; /*0x41b45e*/
+    v5 = (signed int)(v4 - (unsigned int)g_BuildingLoadQueue_Array.ptr_0) >> 3; /*0x41b45e*/
     if ( v5 != -1 ) /*0x41b464*/
     {
       v6 = v5 + 1; /*0x41b466*/
-      for ( i = (char *)g_BuildingLoadQueue_Array.vfptr1; /*0x41b470*/
-      v6 < (int)g_BuildingLoadQueue_Array.vfptr1;
-      i = (char *)g_BuildingLoadQueue_Array.vfptr1 )
+      for ( i = (char *)g_BuildingLoadQueue_Array.ptr_4; /*0x41b470*/
+      v6 < (int)g_BuildingLoadQueue_Array.ptr_4;
+      i = (char *)g_BuildingLoadQueue_Array.ptr_4 )
       {
-        v8 = (char *)g_BuildingLoadQueue_Array.vfptr + 8 * v6++; /*0x41b478*/
+        v8 = (char *)g_BuildingLoadQueue_Array.ptr_0 + 8 * v6++; /*0x41b478*/
         *(v8 - 2) = *v8; /*0x41b47e*/
         *(v8 - 1) = v8[1]; /*0x41b484*/
       }
-      g_BuildingLoadQueue_Array.vfptr1 = i - 1; /*0x41b499*/
-      *((unsigned int *)g_BuildingLoadQueue_Array.vfptr + 2 * (int)g_BuildingLoadQueue_Array.vfptr1) = 0; /*0x41b49e*/
-      *((unsigned int *)g_BuildingLoadQueue_Array.vfptr + 2 * (int)g_BuildingLoadQueue_Array.vfptr1 + 1) = 0; /*0x41b4ae*/
+      g_BuildingLoadQueue_Array.ptr_4 = i - 1; /*0x41b499*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.ptr_0 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4) = 0; /*0x41b49e*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.ptr_0 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4 + 1) = 0; /*0x41b4ae*/
       g_BuildingLoadQueue_Array.uniqueId = 0; /*0x41b4b2*/
     }
   }
@@ -691,18 +691,18 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
     }
     (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 8))(v10); /*0x41b52e*/
     v12 = (*((int (__stdcall **)(void **))*p_vtable1 + 4))(p_vtable1); /*0x41b53d*/
-    vtable2 = (int)g_BuildingLoadQueue_Array.vfptr2; /*0x41b53f*/
-    if ( (int)g_BuildingLoadQueue_Array.vfptr1 + 1 <= (int)g_BuildingLoadQueue_Array.vfptr2 ) /*0x41b548*/
+    vtable2 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x41b53f*/
+    if ( (int)g_BuildingLoadQueue_Array.ptr_4 + 1 <= (int)g_BuildingLoadQueue_Array.ptr_8 ) /*0x41b548*/
       goto LABEL_18; /*0x41b548*/
-    if ( !g_BuildingLoadQueue_Array.vfptr2 ) /*0x41b54c*/
+    if ( !g_BuildingLoadQueue_Array.ptr_8 ) /*0x41b54c*/
       vtable2 = 10; /*0x41b54e*/
     if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x41b559*/
     {
       LABEL_18:
-      *((unsigned int *)g_BuildingLoadQueue_Array.vfptr + 2 * (int)g_BuildingLoadQueue_Array.vfptr1) = v12; /*0x41b56d*/
-      *((unsigned int *)g_BuildingLoadQueue_Array.vfptr + 2 * (int)g_BuildingLoadQueue_Array.vfptr1 + 1) = v2; /*0x41b57b*/
-      (*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) = 0; /*0x41b585*/
-      ++g_BuildingLoadQueue_Array.vfptr1; /*0x41b58c*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.ptr_0 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4) = v12; /*0x41b56d*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.ptr_0 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4 + 1) = v2; /*0x41b57b*/
+      (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 0; /*0x41b585*/
+      ++g_BuildingLoadQueue_Array.ptr_4; /*0x41b58c*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->Type); /*0x41b59d*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->AircraftClass_field_6CC); /*0x41b5ae*/

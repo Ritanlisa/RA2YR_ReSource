@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_6EF700 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M128;  // 0x80
 // --- flat members (END) ---
     void  DeployTeamMembersAtStart(int a2, char a3);  // 0x6EF700

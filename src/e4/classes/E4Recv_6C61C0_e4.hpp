@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_6C61C0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int sub_6C61C0();  // 0x6C61C0
 };
 } // namespace gamemd

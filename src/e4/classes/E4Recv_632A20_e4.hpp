@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_632A20 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     void * sub_632A20(void * a2, const void * a3);  // 0x632A20
 };
 } // namespace gamemd

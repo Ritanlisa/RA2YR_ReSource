@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_691590 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M44;  // 0x2C
 // --- flat members (END) ---
     char Map_SetLandType();  // 0x691590

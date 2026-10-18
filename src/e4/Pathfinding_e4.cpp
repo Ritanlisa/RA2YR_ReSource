@@ -53,7 +53,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
   bool v25; // cc
   int Capacity; // eax
   int v27; // ecx
-  int vfptr; // eax
+  int ptr_0; // eax
   int Items; // edx
   float *v30; // ebp
   int v31; // edx
@@ -216,7 +216,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
     VectorClass::CellConstructor(v23, 0, 0); /*0x5a5526*/
     /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_Cell) */  /*0x5a552b*/
     v24[1].Items = 10; /*0x5a5531*/
-    v24[1].vfptr = 0; /*0x5a5538*/
+    v24[1].ptr_0 = 0; /*0x5a5538*/
   }
   else
   {
@@ -231,15 +231,15 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
     {
       *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &v20->X) + 14) = dword_ABC2B0; /*0x5a557c*/
       Capacity = v24->Capacity; /*0x5a557f*/
-      if ( v24[1].vfptr < Capacity /*0x5a55a2*/
+      if ( v24[1].ptr_0 < Capacity /*0x5a55a2*/
         || (v24->IsAllocated[0] || !Capacity)
         && (v27 = v24[1].Items, v27 > 0)
-        && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v24->vfptr + 8))(v24, Capacity + v27, 0) )
+        && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v24->ptr_0 + 8))(v24, Capacity + v27, 0) )
       {
-        vfptr = v24[1].vfptr; /*0x5a55a9*/
+        ptr_0 = v24[1].ptr_0; /*0x5a55a9*/
         Items = v24->Items; /*0x5a55ac*/
-        v24[1].vfptr = vfptr + 1; /*0x5a55b2*/
-        *(unsigned int *)(Items + 4 * vfptr) = *(unsigned int *)&v20->X; /*0x5a55b8*/
+        v24[1].ptr_0 = ptr_0 + 1; /*0x5a55b2*/
+        *(unsigned int *)(Items + 4 * ptr_0) = *(unsigned int *)&v20->X; /*0x5a55b8*/
       }
       LODWORD(v77) = 0; /*0x5a55bf*/
       v30 = (float *)&v4[2 * v76]; /*0x5a55c7*/
@@ -351,12 +351,12 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
   v52 = v51[2]; /*0x5a5821*/
   v53 = v51[3]; /*0x5a5827*/
   if ( v75 <= 100 /*0x5a5853*/
-    || (v54 = (CellStruct *)v24[1].vfptr, a2 = v52 * v53, a1 = v54, (double)(int)v54 * 1.6 <= (double)(v52 * v53)) )
+    || (v54 = (CellStruct *)v24[1].ptr_0, a2 = v52 * v53, a1 = v54, (double)(int)v54 * 1.6 <= (double)(v52 * v53)) )
   {
-    for ( j = v24[1].vfptr - 1; j >= 0; v72[14] = 0xFFFF ) /*0x5a5aa3*/
+    for ( j = v24[1].ptr_0 - 1; j >= 0; v72[14] = 0xFFFF ) /*0x5a5aa3*/
       v72 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)(v24->Items + 4 * j--)); /*0x5a5ab6*/
     if ( v24 ) /*0x5a5ac3*/
-      (*(void (**)(VectorClass *, int))v24->vfptr)(v24, 1); /*0x5a5acb*/
+      (*(void (**)(VectorClass *, int))v24->ptr_0)(v24, 1); /*0x5a5acb*/
     return 0; /*0x5a5ad0*/
   }
   else
@@ -381,13 +381,13 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
             && v58 <= dword_ABED08
             && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &v79[2]) + 14) != dword_ABC2B0 )
           {
-            v59 = v24[1].vfptr; /*0x5a58df*/
+            v59 = v24[1].ptr_0; /*0x5a58df*/
             if ( v55 < v59 ) /*0x5a58e4*/
             {
               v60 = v59 - 1; /*0x5a58e6*/
               v61 = v55; /*0x5a58e9*/
-              for ( v24[1].vfptr = v60; /*0x5a58f0*/
-                    v61 < v24[1].vfptr;
+              for ( v24[1].ptr_0 = v60; /*0x5a58f0*/
+                    v61 < v24[1].ptr_0;
                     *(unsigned int *)(v24->Items + 4 * v61 - 4) = *(unsigned int *)(v24->Items + 4 * v61) )
               {
                 ++v61; /*0x5a58f5*/
@@ -402,19 +402,19 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
         v56 = 0; /*0x5a5866*/
       }
     }
-    for ( k = 0; k < v24[1].vfptr; HIBYTE(dword_ABED10[v63 + 34]) = 1 ) /*0x5a5926*/
+    for ( k = 0; k < v24[1].ptr_0; HIBYTE(dword_ABED10[v63 + 34]) = 1 ) /*0x5a5926*/
     {
       v63 = 40 * (*(__int16 *)(v24->Items + 4 * k) + g_MapCellWidth * *(__int16 *)(v24->Items + 4 * k + 2)); /*0x5a5948*/
       ++k; /*0x5a594b*/
     }
-    v64 = v24[1].vfptr; /*0x5a5958*/
+    v64 = v24[1].ptr_0; /*0x5a5958*/
     if ( v64 / 3 > 0 ) /*0x5a596b*/
     {
       *(unsigned int *)&v79[2] = v64 / 3; /*0x5a5971*/
       do /*0x5a5a8d*/
       {
-        v65 = v24[1].vfptr - 1; /*0x5a597c*/
-        v82 = (unsigned int)v24[1].vfptr; /*0x5a5980*/
+        v65 = v24[1].ptr_0 - 1; /*0x5a597c*/
+        v82 = (unsigned int)v24[1].ptr_0; /*0x5a5980*/
         *(double *)v80 = (double)v82; /*0x5a5988*/
         do /*0x5a59b3*/
         {
@@ -456,7 +456,7 @@ LABEL_98:
       }
       while ( *(unsigned int *)&v79[2] ); /*0x5a5a8d*/
     }
-    return &v24->vfptr; /*0x5a5a93*/
+    return &v24->ptr_0; /*0x5a5a93*/
   }
 
 }

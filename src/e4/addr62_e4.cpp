@@ -1588,7 +1588,7 @@ LABEL_15:
     v14->ptr_2 = i[1]; /*0x62380f*/
     wcscpy(v14->vtable3, (const wchar_t *)i[2]); /*0x62381a*/
   }
-  return &this->vfptr; /*0x623828*/
+  return &this->ptr_0; /*0x623828*/
 
 }
 }
@@ -2135,7 +2135,7 @@ namespace gamemd {
 unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
 {
 
-  int vfptr3; // esi
+  int ptr_C; // esi
   unsigned int *v4; // ebp
   signed int v5; // esi
   int v6; // ebx
@@ -2153,9 +2153,9 @@ unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
   char String[256]; // [esp+14h] [ebp-100h] BYREF
 
   String::CopyUpper(String, aP1); /*0x627a2c*/
-  vfptr3 = this->vfptr3; /*0x627a31*/
-  v4 = (unsigned int *)(*(unsigned int *)vfptr3 /*0x627a48*/
-                      + 24 * ((*(int (**)(char *))(vfptr3 + 4))(String) % *(unsigned int *)(vfptr3 + 8)));
+  ptr_C = this->ptr_C; /*0x627a31*/
+  v4 = (unsigned int *)(*(unsigned int *)ptr_C /*0x627a48*/
+                      + 24 * ((*(int (**)(char *))(ptr_C + 4))(String) % *(unsigned int *)(ptr_C + 8)));
   v5 = v4[4] - 1; /*0x627a4b*/
   if ( v5 < 0 ) /*0x627a4c*/
   {
@@ -2271,19 +2271,19 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemClass_4) */  /*0x62e077*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemClass_4) */  /*0x62e07d*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_ParticleSystemClass_4) */  /*0x62e084*/
-  v2->vfptr3 = (int)&off_7EFB70; /*0x62e08b*/
+  v2->ptr_C = (int)&off_7EFB70; /*0x62e08b*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x62e092*/
   ObjectClass::Undeploy((ObjectClass *)v3); /*0x62e099*/
   while ( v3[5].nextArrayIndex ) /*0x62e09e*/
   {
-    v4 = *v3->abstractFlags.vfptr3; /*0x62e0b5*/
+    v4 = *v3->abstractFlags.ptr_C; /*0x62e0b5*/
     if ( v4 ) /*0x62e0b9*/
       (*(void (**)(int, int))(*(unsigned int *)v4 + 32))(v4, 1); /*0x62e0bf*/
-    v15 = *v3->abstractFlags.vfptr3; /*0x62e0d4*/
+    v15 = *v3->abstractFlags.ptr_C; /*0x62e0d4*/
     v5 = (*(int (**)(int *, AbstractClass **, int))(stru_B0F670.DynamicVector_field_0x28 + 16))( /*0x62e0dd*/
            &stru_B0F670.DynamicVector_field_0x28,
            &v15,
-           vfptr3);
+           ptr_C);
     if ( v5 != -1 && v5 < dword_B0F6A8 && v5 < --dword_B0F6A8 ) /*0x62e0f8*/
     {
       do /*0x62e110*/
@@ -2293,8 +2293,8 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
       }
       while ( v5 < dword_B0F6A8 ); /*0x62e110*/
     }
-    vfptr3 = v3[5].vfptr3; /*0x62e124*/
-    v6 = (*(int (**)(int *))(v3[5].vfptr2 + 16))(&v3[5].vfptr2); /*0x62e127*/
+    ptr_C = v3[5].ptr_C; /*0x62e124*/
+    v6 = (*(int (**)(int *))(v3[5].ptr_8 + 16))(&v3[5].ptr_8); /*0x62e127*/
     if ( v6 != -1 ) /*0x62e12d*/
     {
       nextArrayIndex = v3[5].nextArrayIndex; /*0x62e12f*/
@@ -2303,7 +2303,7 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
         v8 = nextArrayIndex - 1; /*0x62e136*/
         for ( v3[5].nextArrayIndex = v8; /*0x62e13c*/
               v6 < v3[5].nextArrayIndex;
-              *(unsigned int *)(v3[5].vfptr3 + 4 * v6 - 4) = *(unsigned int *)(v3[5].vfptr3 + 4 * v6) )
+              *(unsigned int *)(v3[5].ptr_C + 4 * v6 - 4) = *(unsigned int *)(v3[5].ptr_C + 4 * v6) )
         {
           ++v6; /*0x62e141*/
         }
@@ -2350,12 +2350,12 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
       ++v11; /*0x62e22c*/
     }
   }
-  v12 = v3->abstractFlags.vfptr3; /*0x62e23e*/
+  v12 = v3->abstractFlags.ptr_C; /*0x62e23e*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_ParticleClass) */  /*0x62e244*/
   if ( v12 && BYTE1(v3[5].abstractFlags) ) /*0x62e252*/
   {
     __3_YAXPAX_Z(v12); /*0x62e25b*/
-    v3[5].vfptr3 = 0; /*0x62e263*/
+    v3[5].ptr_C = 0; /*0x62e263*/
   }
   BYTE1(v3[5].abstractFlags) = 0; /*0x62e26b*/
   v3[5].uniqueId = 0; /*0x62e271*/
@@ -2603,7 +2603,7 @@ namespace gamemd {
 unsigned int * E4Recv_624080::sub_624080()
 {
   /* X11: vtable install elided (implicit via OwnerDrawDialogControl virtuals 0x624082) */
-  return &this->vfptr; /*0x624088*/
+  return &this->ptr_0; /*0x624088*/
 }
 } // namespace gamemd
 
@@ -2851,7 +2851,7 @@ namespace gamemd {
 int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
 {
 
-  int vfptr3; // esi
+  int ptr_C; // esi
   unsigned int *v4; // ebp
   signed int v5; // esi
   int i; // ebx
@@ -2859,9 +2859,9 @@ int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
   char String[256]; // [esp+10h] [ebp-100h] BYREF
 
   String::CopyUpper(String, aP1); /*0x627505*/
-  vfptr3 = this->vfptr3; /*0x62750a*/
-  v4 = (unsigned int *)(*(unsigned int *)vfptr3 /*0x627521*/
-                      + 24 * ((*(int (**)(char *))(vfptr3 + 4))(String) % *(unsigned int *)(vfptr3 + 8)));
+  ptr_C = this->ptr_C; /*0x62750a*/
+  v4 = (unsigned int *)(*(unsigned int *)ptr_C /*0x627521*/
+                      + 24 * ((*(int (**)(char *))(ptr_C + 4))(String) % *(unsigned int *)(ptr_C + 8)));
   v5 = v4[4] - 1; /*0x627524*/
   if ( v5 < 0 ) /*0x627525*/
     return 0; /*0x627525*/

@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct BlowStraw_29_ {
-    void* vfptr;
+    void* ptr_0;
     int Stub();
 };
 

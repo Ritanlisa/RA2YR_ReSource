@@ -155,7 +155,7 @@ int Network_SendTimestamp(int a1, int a2, int a3, int a4)
   float v11; // [esp+Ch] [ebp-8h]
 
   v4 = a1; /*0x489184*/
-  if ( !a1 || (dword_A8B230->vfptr & 0x20) != 0 || !a2 ) /*0x4891a5*/
+  if ( !a1 || (dword_A8B230->ptr_0 & 0x20) != 0 || !a2 ) /*0x4891a5*/
     return 0; /*0x489263*/
   if ( (int)a1 < 0 )
     return a4 >= 8 ? 0 : (unsigned int)a1;
@@ -1296,7 +1296,7 @@ LABEL_17:
   }
 LABEL_43:
   UpdateWindow(g_hWnd); /*0x48cc37*/
-  if ( BYTE2(dword_A8B230[381].vfptr3) ) /*0x48cc4b*/
+  if ( BYTE2(dword_A8B230[381].ptr_C) ) /*0x48cc4b*/
     (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x48cc5d*/
   (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 24))(dword_887640); /*0x48cc68*/
   WTFMode::Init(&dword_A8B238); /*0x48cc70*/
@@ -1372,7 +1372,7 @@ char MainGame()
     }
     if ( *(unsigned int *)&stru_887338.__pad_1C[20] ) /*0x48ce54*/
       Tooltip::Enable(*(Tooltip **)&stru_887338.__pad_1C[20], stru_A8E960.random[12]); /*0x48ce5d*/
-    v6 = BYTE2(dword_A8B230[381].vfptr3); /*0x48ce67*/
+    v6 = BYTE2(dword_A8B230[381].ptr_C); /*0x48ce67*/
     *(unsigned int *)&stru_A8E960.random[556] = 0; /*0x48ce6d*/
     stru_A8E960.random[552] = v6; /*0x48ce73*/
     g_GameLoopActive = 1; /*0x48ce7e*/
@@ -1503,7 +1503,7 @@ CellStruct * * sub_48E0B0()
       fprintf(v2, "Average FPS: %d\n", v3);
       fprintf(v2, "Max MaxAhead: %d\n", dword_A8B568);
       fprintf(v2, "Latency setting: %d\n", MEMORY[0xA8DB9C]);
-      fprintf(v2, "Game speed setting: %d\n", MEMORY[0xA8EB00].vfptr[24]);
+      fprintf(v2, "Game speed setting: %d\n", MEMORY[0xA8EB00].ptr_0[24]);
       if ( *(unsigned int *)&stru_887598.isAliveFlag )
       {
         for ( i = 0;
@@ -1558,12 +1558,12 @@ char E4Recv_483710::sub_483710()
   double *v3; // eax
   int v4; // eax
 
-  if ( !BYTE2(dword_A8B230[374].vfptr3) ) /*0x483718*/
+  if ( !BYTE2(dword_A8B230[374].ptr_C) ) /*0x483718*/
     return 0; /*0x483718*/
   BuildingByTiberiumType = FindBuildingByTiberiumType(this->ambientSoundController[2]); /*0x483725*/
   if ( BuildingByTiberiumType == -1 ) /*0x48372d*/
     return 0; /*0x48372d*/
-  v3 = (double *)*(&dword_B0F4EC->vfptr + BuildingByTiberiumType); /*0x483735*/
+  v3 = (double *)*(&dword_B0F4EC->ptr_0 + BuildingByTiberiumType); /*0x483735*/
   if ( this->M284 || *((unsigned __int8 *)this + 286) >= *((unsigned int *)v3 + 57) - 1 || v3[22] < 0.00001 ) /*0x483766*/
     return 0; /*0x48377c*/
   v4 = FindBuildingByTiberiumType(this->ambientSoundController[2]); /*0x48376b*/
@@ -1846,7 +1846,7 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
   this->M400 = 0; /*0x4887cb*/
   this->M396 = 1; /*0x4887d1*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_ColorListClass) */  /*0x4887d7*/
-  return this->vfptr; /*0x4887df*/
+  return this->ptr_0; /*0x4887df*/
 
 }
 } // namespace gamemd

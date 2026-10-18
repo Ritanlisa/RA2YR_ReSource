@@ -338,10 +338,10 @@ public:  // g57c5 W4 supply slot
     int u8_42;  // X10 supply (member_lookup)
     int u8_5559;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
-    int vfptr;  // X10 supply (csp_canon_members)
-    void* vfptr1;  // X10 supply (csp_canon_members)
-    void* vfptr2;  // X10 supply (csp_canon_members)
-    void* vfptr3;  // X10 supply (csp_canon_members)
+    int ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 
 
     unsigned int DisplayClass_field_0x11B0;  // 0x11B0 [X55 W3 supply (render vocab)]

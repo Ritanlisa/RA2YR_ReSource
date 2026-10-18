@@ -9,7 +9,7 @@ struct ObjectClass;  // fix_fwd_type_supply
 #endif // GAMEMD_TREE_UNIVERSE
 
 struct HotkeyOptions {
-    void* vfptr;
+    void* ptr_0;
     ObjectClass * * DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4);
 };
 

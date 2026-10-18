@@ -7,7 +7,7 @@ namespace gamemd {
 struct Color;  // fix_fwd_type_supply
 struct E4Recv_52A2F0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
@@ -15,7 +15,7 @@ struct E4Recv_52A2F0 {
     Color * *  sub_52A2F0(float * a2, float Source, char ** a4, float * a5);  // 0x52A2F0
 
 
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_8;  // 0x8 [X55 W3 supply (render vocab)]
 };
 } // namespace gamemd

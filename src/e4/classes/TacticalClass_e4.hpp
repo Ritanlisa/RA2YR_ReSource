@@ -10,10 +10,10 @@ class DrawTerrain;  // G42.36 fwd supply
 struct CellClass;  // fix_fwd_type_supply
 
 struct TacticalClass {
-    int vfptr;  // 0x0
-    void* vfptr1;  // 0x4
-    void* vfptr2;  // 0x8
-    void* vfptr3;  // 0xC
+    int ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     void* uniqueId;  // 0x10
     void* abstractFlags;  // 0x14
     void* nextArrayIndex;  // 0x18

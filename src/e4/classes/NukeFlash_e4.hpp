@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct NukeFlash {
-    void* vfptr;
+    void* ptr_0;
     static BOOL IsActive();
     static BOOL ProcessEffect();
 };

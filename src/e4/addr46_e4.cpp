@@ -152,7 +152,7 @@ char sub_46D8B0()
     v1 = 1; /*0x46d909*/
   if ( dword_A8B23C ) /*0x46d913*/
   {
-    if ( (*((unsigned __int8 (**)(ObjectClass *, unsigned int))dword_A8B23C->vfptr + 7))( /*0x46d918*/
+    if ( (*((unsigned __int8 (**)(ObjectClass *, unsigned int))dword_A8B23C->ptr_0 + 7))( /*0x46d918*/
            dword_A8B23C,
            *(unsigned int *)&stru_A8D600.__pad_64[7]) )
     {
@@ -160,11 +160,11 @@ char sub_46D8B0()
     }
     else if ( dword_A8B23C ) /*0x46d92f*/
     {
-      vtable0 = (unsigned __int8 (**)(ObjectClass *, int))dword_A8B23C->vfptr; /*0x46d938*/
+      vtable0 = (unsigned __int8 (**)(ObjectClass *, int))dword_A8B23C->ptr_0; /*0x46d938*/
       PlayerSide = SessionClass::GetPlayerSide((int *)MEMORY[0xA8DA90][v2]); /*0x46d93a*/
       if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
-        v8 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 10))(dword_A8B23C); /*0x46d958*/
+        v8 = (*((int (**)(ObjectClass *))dword_A8B23C->ptr_0 + 10))(dword_A8B23C); /*0x46d958*/
         SessionClass::SetPlayerOption((int *)MEMORY[0xA8DA90][v2], v8); /*0x46d960*/
       }
     }
@@ -216,10 +216,10 @@ void sub_46DA70()
   for ( i = 0; v2 < nextArrayIndex; i = v2 ) /*0x46da8d*/
   {
     int v3; // edi
-    v3 = *((unsigned int *)stru_A80220.vfptr3 + v2); /*0x46da9a*/
+    v3 = *((unsigned int *)stru_A80220.ptr_C + v2); /*0x46da9a*/
     if ( v3 /*0x46dab7*/
       && *(unsigned char *)(v3->u32_34 + 422) != 1
-      && (uint8_t)((House *)(*((House **)stru_A80220.vfptr3 + v2)))->IsCurrentPlayer() )
+      && (uint8_t)((House *)(*((House **)stru_A80220.ptr_C + v2)))->IsCurrentPlayer() )
     {
       size_t v4; // ebp
       v4 = dword_A8D580++; /*0x46dacf*/

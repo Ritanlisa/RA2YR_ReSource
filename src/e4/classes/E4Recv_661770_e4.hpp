@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_661770 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
     SHA1  TickRNG(char a2);  // 0x661770

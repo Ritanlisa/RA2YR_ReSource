@@ -882,82 +882,82 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
                             aAmbientdamage,
                             v4->AmbientDamage);
   v4->IsSonic_d = INIClass::ReadBool_Overwrite( /*0x7720e0*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aIssonic,
                            v4->IsSonic_d);
   v4->Spawner_d = INIClass::ReadBool_Overwrite( /*0x7720fa*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aSpawner,
                            v4->Spawner_d);
   v4->LimboLaunch_d = INIClass::ReadBool_Overwrite( /*0x772114*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aLimbolaunch,
                            v4->LimboLaunch_d);
   v4->DecloakToFire_d = INIClass::ReadBool_Overwrite( /*0x77212e*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aDecloaktofire,
                            v4->DecloakToFire_d);
   v4->CellRangefinding_d = INIClass::ReadBool_Overwrite( /*0x772148*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aCellrangefindi,
                            v4->CellRangefinding_d);
   v4->__pad_135 = INIClass::ReadBool_Overwrite( /*0x772162*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aFireonce,
                            v4->__pad_135);
   v4->NeverUse_d = INIClass::ReadBool_Overwrite( /*0x77217c*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aNeveruse,
                            v4->NeverUse_d);
   v4->RevealOnFire_d = INIClass::ReadBool_Overwrite( /*0x772196*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aRevealonfire,
                            v4->RevealOnFire_d);
   v4->__pad_138 = INIClass::ReadBool_Overwrite( /*0x7721b0*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aTerrainfire,
                            v4->__pad_138);
   v4->q139 = INIClass::ReadBool_Overwrite( /*0x7721ca*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aSabotagecursor,
                            v4->q139);
   v4->q13A = INIClass::ReadBool_Overwrite( /*0x7721e4*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aMigattackcurso,
                            v4->q13A);
   v4->q13B = INIClass::ReadBool_Overwrite( /*0x7721fe*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aDisguisefireon,
                            v4->q13B);
   v4->InfiniteMindControl_d = INIClass::ReadBool_Overwrite( /*0x772218*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aInfinitemindco,
                            v4->InfiniteMindControl_d);
   v4->FireWhileMoving_d = INIClass::ReadBool_Overwrite( /*0x772232*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aFirewhilemovin,
                            v4->FireWhileMoving_d);
   v4->__pad_142 = INIClass::ReadBool_Overwrite( /*0x77224c*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aDrainweapon,
                            v4->__pad_142);
   v4->q143 = INIClass::ReadBool_Overwrite( /*0x772266*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aFireintranspor,
                            v4->q143);
@@ -967,12 +967,12 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
                             aDisguisefakebl,
                             v4->q13C);
   v4->Suicide_d = INIClass::ReadBool_Overwrite( /*0x77229a*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            (unsigned __int8 *)&stru_842DD4.VoxelCaches[14],
                            v4->Suicide_d);
   v4->Supress_d = INIClass::ReadBool_Overwrite( /*0x7722b4*/
-                           &this->vfptr,
+                           &this->ptr_0,
                            (unsigned __int8 *)(v4 + 36),
                            aSupress,
                            v4->Supress_d);
@@ -1135,43 +1135,43 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   }
   v25 = v4->Camera_d; /*0x772604*/
   v4->OpenToppedAnim_d = v24; /*0x77260a*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aCamera, v25); /*0x772619*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aCamera, v25); /*0x772619*/
   LOBYTE(v65) = *(unsigned char *)(v4 + 329); /*0x772626*/
   v64 = aIslaser; /*0x772627*/
   v63 = (char *)(v4 + 36); /*0x77262c*/
   *(unsigned char *)(v4 + 327) = Bool_Overwrite; /*0x77262d*/
-  *(unsigned char *)(v4 + 329) = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)v63, v64, v65); /*0x772638*/
-  v27 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aDisklaser, *(unsigned char *)(v4 + 330)); /*0x77264d*/
+  *(unsigned char *)(v4 + 329) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x772638*/
+  v27 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aDisklaser, *(unsigned char *)(v4 + 330)); /*0x77264d*/
   v28 = *(unsigned char *)(v4 + 331); /*0x772652*/
   *(unsigned char *)(v4 + 330) = v27; /*0x772658*/
-  v29 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aIsline, v28); /*0x772667*/
+  v29 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aIsline, v28); /*0x772667*/
   LOBYTE(v65) = *(unsigned char *)(v4 + 333); /*0x772674*/
   v64 = aIshousecolor; /*0x772675*/
   v63 = (char *)(v4 + 36); /*0x77267a*/
   *(unsigned char *)(v4 + 331) = v29; /*0x77267b*/
-  *(unsigned char *)(v4 + 333) = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)v63, v64, v65); /*0x772686*/
-  v30 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aCharges, *(unsigned char *)(v4 + 328)); /*0x77269b*/
+  *(unsigned char *)(v4 + 333) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x772686*/
+  v30 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aCharges, *(unsigned char *)(v4 + 328)); /*0x77269b*/
   v31 = *(unsigned char *)(v4 + 325); /*0x7726a0*/
   *(unsigned char *)(v4 + 328) = v30; /*0x7726a6*/
-  v32 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aTurboboost, v31); /*0x7726b5*/
+  v32 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aTurboboost, v31); /*0x7726b5*/
   LOBYTE(v65) = *(unsigned char *)(v4 + 297); /*0x7726c2*/
   v64 = aUsefireparticl; /*0x7726c3*/
   v63 = (char *)(v4 + 36); /*0x7726c8*/
   *(unsigned char *)(v4 + 325) = v32; /*0x7726c9*/
-  *(unsigned char *)(v4 + 297) = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)v63, v64, v65); /*0x7726d4*/
-  v33 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aUsesparkpartic, *(unsigned char *)(v4 + 298)); /*0x7726e9*/
+  *(unsigned char *)(v4 + 297) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x7726d4*/
+  v33 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aUsesparkpartic, *(unsigned char *)(v4 + 298)); /*0x7726e9*/
   v34 = *(unsigned char *)(v4 + 299); /*0x7726ee*/
   *(unsigned char *)(v4 + 298) = v33; /*0x7726f4*/
-  v35 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aOmnifire, v34); /*0x772703*/
+  v35 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aOmnifire, v34); /*0x772703*/
   LOBYTE(v65) = *(unsigned char *)(v4 + 300); /*0x772710*/
   v64 = aDistributedwea; /*0x772711*/
   v63 = (char *)(v4 + 36); /*0x772716*/
   *(unsigned char *)(v4 + 299) = v35; /*0x772717*/
-  *(unsigned char *)(v4 + 300) = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)v63, v64, v65); /*0x772722*/
-  v36 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aIsrailgun, *(unsigned char *)(v4 + 301)); /*0x772737*/
+  *(unsigned char *)(v4 + 300) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x772722*/
+  v36 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aIsrailgun, *(unsigned char *)(v4 + 301)); /*0x772737*/
   v37 = *(unsigned char *)(v4 + 302); /*0x77273c*/
   *(unsigned char *)(v4 + 301) = v36; /*0x772742*/
-  v38 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aLobber, v37); /*0x772751*/
+  v38 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aLobber, v37); /*0x772751*/
   v65 = v4 + 288; /*0x772760*/
   v64 = aLaserinnercolo; /*0x772761*/
   v63 = (char *)(v4 + 36); /*0x772766*/
@@ -1208,31 +1208,31 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)v63, v64, v65); /*0x7727de*/
   v44 = *(unsigned char *)(v4 + 332); /*0x7727e3*/
   *(unsigned char *)(v4 + 334) = Int_Overwrite; /*0x7727e9*/
-  v45 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aIsbiglaser, v44); /*0x7727f8*/
+  v45 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aIsbiglaser, v44); /*0x7727f8*/
   LOBYTE(v65) = *(unsigned char *)(v4 + 303); /*0x772805*/
   v64 = aBright; /*0x772806*/
   v63 = (char *)(v4 + 36); /*0x77280b*/
   *(unsigned char *)(v4 + 332) = v45; /*0x77280c*/
-  *(unsigned char *)(v4 + 303) = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)v63, v64, v65); /*0x772817*/
-  v46 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aIonsensitive, *(unsigned char *)(v4 + 335)); /*0x77282c*/
+  *(unsigned char *)(v4 + 303) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x772817*/
+  v46 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aIonsensitive, *(unsigned char *)(v4 + 335)); /*0x77282c*/
   v47 = *(unsigned char *)(v4 + 336); /*0x772831*/
   *(unsigned char *)(v4 + 335) = v46; /*0x772837*/
-  v48 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aAreafire, v47); /*0x772846*/
+  v48 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aAreafire, v47); /*0x772846*/
   LOBYTE(v65) = *(unsigned char *)(v4 + 337); /*0x772853*/
   v64 = aIselectricbolt; /*0x772854*/
   v63 = (char *)(v4 + 36); /*0x772859*/
   *(unsigned char *)(v4 + 336) = v48; /*0x77285a*/
-  *(unsigned char *)(v4 + 337) = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)v63, v64, v65); /*0x772865*/
-  v49 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aDrawboltaslase, *(unsigned char *)(v4 + 338)); /*0x77287a*/
+  *(unsigned char *)(v4 + 337) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x772865*/
+  v49 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aDrawboltaslase, *(unsigned char *)(v4 + 338)); /*0x77287a*/
   v50 = *(unsigned char *)(v4 + 339); /*0x77287f*/
   *(unsigned char *)(v4 + 338) = v49; /*0x772885*/
-  v51 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aIsalternatecol, v50); /*0x772894*/
+  v51 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aIsalternatecol, v50); /*0x772894*/
   LOBYTE(v65) = *(unsigned char *)(v4 + 340); /*0x7728a1*/
   v64 = aIsradbeam; /*0x7728a2*/
   v63 = (char *)(v4 + 36); /*0x7728a7*/
   *(unsigned char *)(v4 + 339) = v51; /*0x7728a8*/
-  *(unsigned char *)(v4 + 340) = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)v63, v64, v65); /*0x7728b3*/
-  v52 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aIsraderuption, *(unsigned char *)(v4 + 341)); /*0x7728c8*/
+  *(unsigned char *)(v4 + 340) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x7728b3*/
+  v52 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aIsraderuption, *(unsigned char *)(v4 + 341)); /*0x7728c8*/
   v53 = *(unsigned int *)(v4 + 344); /*0x7728cd*/
   *(unsigned char *)(v4 + 341) = v52; /*0x7728d3*/
   v54 = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(v4 + 36), aRadlevel, v53); /*0x7728e2*/
@@ -1240,7 +1240,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
   v64 = aIsmagbeam; /*0x7728f0*/
   v63 = (char *)(v4 + 36); /*0x7728f5*/
   *(unsigned int *)(v4 + 344) = v54; /*0x7728f6*/
-  *(unsigned char *)(v4 + 348) = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)v63, v64, v65); /*0x772901*/
+  *(unsigned char *)(v4 + 348) = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)v63, v64, v65); /*0x772901*/
   Source[0] = 0; /*0x77291b*/
   INIClass::GetString((INIClass *)this, (unsigned __int8 *)(v4 + 36), aAttachedpartic, Source, Source, 20); /*0x772920*/
   v55 = WarheadTypeClass::applyDamage(Source); /*0x772929*/

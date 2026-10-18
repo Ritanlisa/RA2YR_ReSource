@@ -5025,8 +5025,8 @@ int strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
   unsigned __int8 *v15; // [esp+14h] [ebp-4h]
 
   v13 = 0; /*0x7c9ddb*/
-  vtable0 = (unsigned __int8)this->vfptr; /*0x7c9de4*/
-  for ( i = (unsigned __int8 *)&this->vfptr + 1;
+  vtable0 = (unsigned __int8)this->ptr_0; /*0x7c9de4*/
+  for ( i = (unsigned __int8 *)&this->ptr_0 + 1;
         (int)cbMultiByte <= 1 ? *((unsigned char *)off_87C590 + 2 * vtable0) & 8 : _isctype(vtable0, 8);
         ++i )
   {
@@ -8655,7 +8655,7 @@ char * _forcdecpt(char * a1)  // G42.33 b17 truth char*
   int v2; // eax
 
   ObjectClass *v1 = a1; // esi /*0x7ceb29*/
-  if ( tolower((*((signed char *)&(a1->vfptr)))) != 101 ) /*0x7ceb3a*/
+  if ( tolower((*((signed char *)&(a1->ptr_0)))) != 101 ) /*0x7ceb3a*/
   {
     do /*0x7ceb66*/
     {
@@ -8668,7 +8668,7 @@ char * _forcdecpt(char * a1)  // G42.33 b17 truth char*
     while ( v2 ); /*0x7ceb66*/
   }
   char result; // al
-  result = (char)v1->vfptr; /*0x7ceb6e*/
+  result = (char)v1->ptr_0; /*0x7ceb6e*/
   (v1->vtable1) = SrcCh[0]; /*0x7ceb70*/
   char *v4 = &v1->vtable1 + 1; // esi /*0x7ceb72*/
   do /*0x7ceb7e*/
@@ -9096,7 +9096,7 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
 
   uniqueId = this->uniqueId; /*0x7cf7f6*/
   v3 = (int *)(a2 - 4); /*0x7cf801*/
-  v4 = (a2 - this->vfptr3) >> 15; /*0x7cf805*/
+  v4 = (a2 - this->ptr_C) >> 15; /*0x7cf805*/
   v5 = *(unsigned int *)(a2 - 4) - 1; /*0x7cf813*/
   v27 = *(unsigned int *)(a2 - 8); /*0x7cf814*/
   v24 = v5; /*0x7cf81e*/
@@ -9117,7 +9117,7 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
         *(unsigned int *)(uniqueId + 4 * v4 + 196) &= v11; /*0x7cf881*/
         v9 = (*v10)-- == 1; /*0x7cf888*/
         if ( v9 ) /*0x7cf88a*/
-          this->vfptr1 &= v11; /*0x7cf88f*/
+          this->ptr_4 &= v11; /*0x7cf88f*/
       }
       else
       {
@@ -9126,7 +9126,7 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
         *(unsigned int *)(uniqueId + 4 * v4 + 68) &= v8; /*0x7cf85f*/
         v9 = (*v7)-- == 1; /*0x7cf863*/
         if ( v9 ) /*0x7cf865*/
-          this->vfptr &= v8; /*0x7cf86a*/
+          this->ptr_0 &= v8; /*0x7cf86a*/
       }
     }
     *(unsigned int *)(*(int *)((char *)v3 + v5 + 8) + 4) = *(int *)((char *)v3 + v5 + 4); /*0x7cf89a*/
@@ -9165,7 +9165,7 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
           *(unsigned int *)(uniqueId + 4 * v4 + 196) &= v19; /*0x7cf93f*/
           v9 = (*v18)-- == 1; /*0x7cf946*/
           if ( v9 ) /*0x7cf948*/
-            this->vfptr1 &= v19; /*0x7cf94d*/
+            this->ptr_4 &= v19; /*0x7cf94d*/
         }
         else
         {
@@ -9174,7 +9174,7 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
           *(unsigned int *)(uniqueId + 4 * v4 + 68) &= v17; /*0x7cf91d*/
           v9 = (*v16)-- == 1; /*0x7cf921*/
           if ( v9 ) /*0x7cf923*/
-            this->vfptr &= v17; /*0x7cf928*/
+            this->ptr_0 &= v17; /*0x7cf928*/
         }
       }
       *(unsigned int *)(v26[2] + 4) = v26[1]; /*0x7cf959*/
@@ -9196,13 +9196,13 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
       if ( v14 >= 0x20 ) /*0x7cf9b0*/
       {
         if ( !v28 ) /*0x7cf9db*/
-          this->vfptr1 |= 0x80000000 >> (v14 - 32); /*0x7cf9ea*/
+          this->ptr_4 |= 0x80000000 >> (v14 - 32); /*0x7cf9ea*/
         *(unsigned int *)(uniqueId + 4 * v4 + 196) |= 0x80000000 >> (v14 - 32); /*0x7cf9fe*/
       }
       else
       {
         if ( !v28 ) /*0x7cf9b6*/
-          this->vfptr |= 0x80000000 >> v14; /*0x7cf9c4*/
+          this->ptr_0 |= 0x80000000 >> v14; /*0x7cf9c4*/
         *(unsigned int *)(uniqueId + 4 * v4 + 68) |= 0x80000000 >> v14; /*0x7cf9d3*/
       }
       v5 = v24; /*0x7cfa00*/
@@ -9231,7 +9231,7 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
       VirtualFree(v22[3], 0, 0x8000u); /*0x7cfa9a*/
       HeapFree(hHeap, 0, dword_B78B90->uniqueId); /*0x7cfaac*/
       memcpy(dword_B78B90, &dword_B78B90->abstractFlags, (size_t)lp + 20 * dword_B78B94 - (unsigned int)dword_B78B90 - 20); /*0x7cfad6*/
-      result = &this->vfptr; /*0x7cfadb*/
+      result = &this->ptr_0; /*0x7cfadb*/
       --dword_B78B94; /*0x7cfae1*/
       if ( this > dword_B78B90 ) /*0x7cfaed*/
         result = (unsigned int *)((char *)this - 20); /*0x7cfaef*/
@@ -9240,7 +9240,7 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
     else
     {
 LABEL_46:
-      result = &this->vfptr; /*0x7cfb00*/
+      result = &this->ptr_0; /*0x7cfb00*/
     }
     dword_B78B90 = result; /*0x7cfb03*/
     dword_B78B88 = v4; /*0x7cfb08*/
@@ -9427,7 +9427,7 @@ unsigned int * __sbh_alloc_block(unsigned int aP0)  // G42.33 b18: truth size_t
     if ( v4 ) /*0x7cfd16*/
     {
       i = (char *)thisa; /*0x7cfd18*/
-      thisa->vfptr1 &= v27; /*0x7cfd1e*/
+      thisa->ptr_4 &= v27; /*0x7cfd1e*/
       goto LABEL_47; /*0x7cfd21*/
     }
   }
@@ -9441,7 +9441,7 @@ unsigned int * __sbh_alloc_block(unsigned int aP0)  // G42.33 b18: truth size_t
     if ( v4 ) /*0x7cfce9*/
     {
       i = (char *)thisa; /*0x7cfceb*/
-      thisa->vfptr &= v26; /*0x7cfcf1*/
+      thisa->ptr_0 &= v26; /*0x7cfcf1*/
       goto LABEL_47; /*0x7cfcf3*/
     }
   }
@@ -12476,7 +12476,7 @@ namespace gamemd {
 unsigned int * E4Recv_7C8B2D::sub_7C8B2D(int a2)
 {
   /* X11: vtable install elided (implicit via off_7F9594 virtuals 0x7c8b2f) */
-  return &this->vfptr; /*0x7c8b35*/
+  return &this->ptr_0; /*0x7c8b35*/
 }
 } // namespace gamemd
 
@@ -13347,7 +13347,7 @@ int __RTtypeid(unsigned int * a1)
     JUMPOUT(0x7CAACB); /*0x7caacb*/
   ms_exc.registration.TryLevel = 0; /*0x7caa4d*/
   v1 = *(const void ***)(*a1 - 4); /*0x7caa53*/
-  v3[6].vfptr = v1; /*0x7caa56*/
+  v3[6].ptr_0 = v1; /*0x7caa56*/
   if ( IsBadReadPtr(v1[3], 8u) ) /*0x7caa5e*/
   {
     __0__non_rtti_object_QAE_PBD_Z(v3, "Bad read pointer - no RTTI data!"); /*0x7caa86*/
@@ -14333,7 +14333,7 @@ void _store_str(unsigned char * a1, unsigned int * a2, unsigned int * a3)
     {
       if ( !(a1->vtable1) ) /*0x7ccf30*/
         break; /*0x7ccf34*/
-      *(unsigned char *)(*a2)++ = a1->vfptr; /*0x7ccf38*/
+      *(unsigned char *)(*a2)++ = a1->ptr_0; /*0x7ccf38*/
       a1 = &a1->AbstractClass_1; /*0x7ccf3c*/
     }
     while ( (*a3)-- != 1 ); /*0x7ccf3f*/

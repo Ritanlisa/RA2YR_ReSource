@@ -40,11 +40,11 @@ int sub_6863E0(void * a1, void * a2)
 {
 
   this->MouseClass::LoadCursors(); /*0x6863e3*/
-  if ( *(unsigned int *)&g_CreditsScreenBounds != stru_A8EB00.vfptr[35] /*0x686404*/
-    && *(unsigned int *)&g_CreditsScreenConfig != stru_A8EB00.vfptr[36] )
+  if ( *(unsigned int *)&g_CreditsScreenBounds != stru_A8EB00.ptr_0[35] /*0x686404*/
+    && *(unsigned int *)&g_CreditsScreenConfig != stru_A8EB00.ptr_0[36] )
   {
     Debug::Log(); /*0x68640b*/
-    ChangeVideoMode(stru_A8EB00.vfptr[35], stru_A8EB00.vfptr[36]); /*0x68641f*/
+    ChangeVideoMode(stru_A8EB00.ptr_0[35], stru_A8EB00.ptr_0[36]); /*0x68641f*/
   }
   ((unsigned int *)&stru_A8EB00)[376] = 0; /*0x68642a*/
   byte_A8E378 = 0; /*0x686433*/
@@ -52,7 +52,7 @@ int sub_6863E0(void * a1, void * a2)
     (*(Tooltip **)&g_TacticalRender)->Enable(0); /*0x68643e*/
   void **pList; // esi
   pList = &((unsigned int *)(dword_A8B230))[43].ptr_2; /*0x686450*/
-  if ( ((unsigned int *)(dword_A8B230))[43].vfptr2 != (void *)-1 ) /*0x686459*/
+  if ( ((unsigned int *)(dword_A8B230))[43].ptr_8 != (void *)-1 ) /*0x686459*/
   {
     int Ticks; // eax
     Ticks = TimerGetTicks(); /*0x68645e*/
@@ -93,7 +93,7 @@ int sub_6863E0(void * a1, void * a2)
   }
   (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x686536*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x68654a*/
-    (*(Tooltip **)&g_TacticalRender)->Enable(stru_A8EB00.vfptr[32]); /*0x686553*/
+    (*(Tooltip **)&g_TacticalRender)->Enable(stru_A8EB00.ptr_0[32]); /*0x686553*/
   return ((TacticalMap *)((GScreenClass *)&DataGlobal_87F7E8))->Redraw(); /*0x686562*/
 }
 }  // G42.18 ns repair
@@ -106,7 +106,7 @@ AbstractClass * sub_686570(ObjectClass *a1)
   pList = &dword_A8B230[43].ptr_2; /*0x686579*/
   ((unsigned int *)&stru_A8EB00)[376] = 0; /*0x68657f*/
   byte_A8E378 = 0; /*0x686585*/
-  if ( dword_A8B230[43].vfptr2 != (void *)-1 ) /*0x68658e*/
+  if ( dword_A8B230[43].ptr_8 != (void *)-1 ) /*0x68658e*/
   {
     int Ticks; // eax
     Ticks = TimerGetTicks(); /*0x686593*/
@@ -117,7 +117,7 @@ AbstractClass * sub_686570(ObjectClass *a1)
     *pList = (void *)-1; /*0x68659f*/
     pList[2] = &v3[v4]; /*0x6865a7*/
   }
-  dword_A8B230[130].vfptr3 = (void *)1; /*0x6865b0*/
+  dword_A8B230[130].ptr_C = (void *)1; /*0x6865b0*/
   AsyncIO *v9; // [esp+0h] [ebp-8h]
   (v9)->Shutdown(); /*0x6865ba*/
   (*(Timer **)&g_BinkMoviePlayer)->PumpMessages(); /*0x6865c5*/
@@ -152,13 +152,13 @@ AbstractClass * sub_686570(ObjectClass *a1)
   AudioQueue::DrainAll(); /*0x68669d*/
   EndBufferMixer((int *)g_MixerState, 0x4000); /*0x6866ad*/
   char result = g_CreditsScreenBounds; // al /*0x6866b2*/
-  if ( *(unsigned int *)&g_CreditsScreenBounds != stru_A8EB00.vfptr[35] ) /*0x6866c0*/
+  if ( *(unsigned int *)&g_CreditsScreenBounds != stru_A8EB00.ptr_0[35] ) /*0x6866c0*/
   {
-    result = stru_A8EB00.vfptr[36]; /*0x6866c8*/
-    if ( *(unsigned int *)&g_CreditsScreenConfig != stru_A8EB00.vfptr[36] ) /*0x6866cf*/
+    result = stru_A8EB00.ptr_0[36]; /*0x6866c8*/
+    if ( *(unsigned int *)&g_CreditsScreenConfig != stru_A8EB00.ptr_0[36] ) /*0x6866cf*/
     {
       Debug::Log(); /*0x6866d6*/
-      result = ChangeVideoMode(stru_A8EB00.vfptr[35], stru_A8EB00.vfptr[36]); /*0x6866ea*/
+      result = ChangeVideoMode(stru_A8EB00.ptr_0[35], stru_A8EB00.ptr_0[36]); /*0x6866ea*/
     }
   }
   byte_A8E9A0 = 0; /*0x6866ef*/

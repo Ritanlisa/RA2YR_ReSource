@@ -124,10 +124,10 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int * a2) {
     v3 =(char **)(unsigned int *)((char **)((char *)this + 52)); /*0x4f37b2*/
     v4 = (unsigned int *)(((CCFileClass*)&v7)->Construct2(v3)); /*0x4f37ba*/
     v5 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x4f37cc*/
-    *(unsigned int *)(char *)&v7 = 0; /*0x4f37ce CCFileClass vfptr 安装 (cache 伪迹还原)*/
+    *(unsigned int *)(char *)&v7 = 0; /*0x4f37ce CCFileClass ptr_0 安装 (cache 伪迹还原)*/
     v9 = 0; /*0x4f37d6*/
     ((Vector*)(int)v8)->Clear(); /*0x4f37de*/
-    *(unsigned int *)(char *)&v7 = (unsigned int)&off_7E1668; /*0x4f37e7 vfptr 安装*/
+    *(unsigned int *)(char *)&v7 = (unsigned int)&off_7E1668; /*0x4f37e7 ptr_0 安装*/
     result = (unsigned int *)((BufferIOFileClass*)(BufferIOFileClass *)&v7)->Dtor(); /*0x4f37ef*/
     if ( v5 ) /*0x4f37f6*/
     {
@@ -192,8 +192,8 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Add(void *a1_1, void *a2_1
 
 // ==== BACKFILL 0x004F42B0  COMObject::DtorSequence  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====
 int COMObject::DtorSequence(int a1) {
-  (*(void (**)(GScreenClass *))(this->vfptr[0] + 28))(this); /*0x4f42b5*/
-  return (*(int (**)(GScreenClass *))(this->vfptr[0] + 32))(this); /*0x4f42bf*/
+  (*(void (**)(GScreenClass *))(this->ptr_0[0] + 28))(this); /*0x4f42b5*/
+  return (*(int (**)(GScreenClass *))(this->ptr_0[0] + 32))(this); /*0x4f42bf*/
 }
 
 // ==== BACKFILL 0x004F42E0  VectorCursor_uint_DynamicVectorClass_uint____13::Get  cls=GScreenClass  sig=csp  renamed_refs=0  residual=- ====

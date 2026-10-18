@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_626120 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     unsigned char  Render_Helper(uint8_t a2, int a3);  // 0x626120
 };
 } // namespace gamemd

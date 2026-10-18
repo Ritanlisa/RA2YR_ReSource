@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_76FEB0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M40;  // 0x28
 // --- flat members (END) ---
     void  TerritorySelectWDT_Process(int a2, int * a3);  // 0x76FEB0

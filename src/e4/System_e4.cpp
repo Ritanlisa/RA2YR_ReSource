@@ -183,7 +183,7 @@ int sub_6269A0()
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626a15*/
         /* X11: vtable install elided (legacy slot spelling slot, RHS vt_DynamicVectorClass_HSVClass) */  /*0x626a1a*/
         v7[1].Items = (void *)10; /*0x626a20*/
-        v7[1].vfptr = 0; /*0x626a27*/
+        v7[1].ptr_0 = 0; /*0x626a27*/
       }
       else
       {
@@ -274,7 +274,7 @@ char sub_626AB0(const char * a1, int a2)
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
         /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_HSVClass) */  /*0x626b38*/
         v7[1].Items = 10; /*0x626b3e*/
-        v7[1].vfptr = 0; /*0x626b41*/
+        v7[1].ptr_0 = 0; /*0x626b41*/
       }
       else
       {

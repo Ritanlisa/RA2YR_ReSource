@@ -4294,7 +4294,7 @@ int unknown_libname_26()
 namespace gamemd {
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
-  return (int)this->vfptr; /*0x600662*/
+  return (int)this->ptr_0; /*0x600662*/
 }
 } // namespace gamemd
 

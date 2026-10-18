@@ -7,7 +7,7 @@
 
 namespace gamemd {
 struct E4Recv_727190 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     ObjectClass * sub_727190();  // 0x727190
 };
 } // namespace gamemd

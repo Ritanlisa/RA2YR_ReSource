@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct CopyProtection {
     unsigned int Debug;
-    void* vfptr;
+    void* ptr_0;
     bool CheckLauncher();
     static char CheckProtectedData();
     char NotifyLauncher();

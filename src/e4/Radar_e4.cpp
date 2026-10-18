@@ -1261,7 +1261,7 @@ LABEL_72:
             v38 = *(unsigned int *)&v2->__pad_64[24 * i + 56]; /*0x5849a5*/
             *(unsigned int *)&v2->__pad_64[24 * i + 56] = v38 + 1; /*0x5849ae*/
             v39 = (Radar *)(*(unsigned int *)&v2->__pad_64[24 * i + 44] + 36 * v38); /*0x5849b8*/
-            Radar::CopyDataArray(v39, &v122.vfptr); /*0x5849be*/
+            Radar::CopyDataArray(v39, &v122.ptr_0); /*0x5849be*/
             (v39->Radar_field_0x18) = ((v39->Radar_field_0x18) & ~0xFFFF) | ((v125) & 0xFFFF); /*0x5849cb*/
             v39->Radar_field_0x1C = v126; /*0x5849d6*/
             v39->Radar_field_0x20 = v127; /*0x5849e0*/
@@ -2129,7 +2129,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       && !Game::Stub3((int)v31)
       && *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 17) != -1 )
     {
-      if ( *(unsigned char *)(*(unsigned int *)&dword_A83D84->vfptr[4 * *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 17)] /*0x692abc*/
+      if ( *(unsigned char *)(*(unsigned int *)&dword_A83D84->ptr_0[4 * *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 17)] /*0x692abc*/
       + 680) )
       {
         if ( *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v14) + 20) != -1 ) /*0x692ad4*/

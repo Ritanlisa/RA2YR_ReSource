@@ -627,7 +627,7 @@ LABEL_8:
             if ( v31 < v30.Capacity /*0x7096e4*/
               || (v30.IsAllocated[0] || !v30.Capacity)
               && v32 > 0
-              && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v30.vfptr + 8))(
+              && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v30.ptr_0 + 8))(
                    &v30,
                    v32 + v30.Capacity,
                    0) )
@@ -948,7 +948,7 @@ int E4Recv_7011A0::sub_7011A0()
   double v1; // st7
   int result; // eax
   int LaserTargetColor; // edx
-  int vfptr; // eax
+  int ptr_0; // eax
   unsigned int *v6; // eax
   char *v7; // esi
   int v8; // esi
@@ -959,15 +959,15 @@ int E4Recv_7011A0::sub_7011A0()
   int v13; // [esp+20h] [ebp-10h]
   unsigned char v14[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  if ( (*(unsigned __int8 (**)(ObjectClass *))(this->vfptr + 84))(this) ) /*0x7011a9*/
+  if ( (*(unsigned __int8 (**)(ObjectClass *))(this->ptr_0 + 84))(this) ) /*0x7011a9*/
     return 0; /*0x7011b1*/
   if ( !dword_8871E0->ColorAdd[9] ) /*0x7011bd*/
     return 0; /*0x7011c8*/
   LaserTargetColor = dword_8871E0->LaserTargetColor; /*0x7011d5*/
-  vfptr = this->vfptr; /*0x7011db*/
+  ptr_0 = this->ptr_0; /*0x7011db*/
   v12 = dword_8871E0->ColorAdd[11]; /*0x7011dd*/
   v13 = LaserTargetColor; /*0x7011e5*/
-  v6 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *))(vfptr + 72))(this, v14); /*0x7011ec*/
+  v6 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *))(ptr_0 + 72))(this, v14); /*0x7011ec*/
   LOWORD(v10) = *v6 / 256; /*0x7011ff*/
   HIWORD(v10) = v6[1] / 256; /*0x701218*/
   *(unsigned int *)v11 = v10; /*0x701225*/
@@ -1008,9 +1008,9 @@ int E4Recv_70F740::sub_70F740(int a2)
   int v4; // [esp+4h] [ebp-8h]
 
   v2 = &this->u32_180; /*0x70f74c*/
-  v2->vfptr = *(void **)&MEMORY[0xA8EB00].?[416]; /*0x70f752*/
-  v2->vfptr1 = (void *)v4; /*0x70f758*/
-  v2->vfptr2 = (void *)a2; /*0x70f75b*/
+  v2->ptr_0 = *(void **)&MEMORY[0xA8EB00].?[416]; /*0x70f752*/
+  v2->ptr_4 = (void *)v4; /*0x70f758*/
+  v2->ptr_8 = (void *)a2; /*0x70f75b*/
   return v4; /*0x70f75e*/
 
 }

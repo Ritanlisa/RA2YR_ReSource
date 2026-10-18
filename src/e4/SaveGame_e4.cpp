@@ -628,7 +628,7 @@ int SaveGame::WriteObject(int a1, int a2)
   int v2; // ebx
   v2 = StreamClass::ResetPosition((LocomotionClass *)a1, a2); /*0x513cc8*/
   int v3; // eax
-  v3 = (*((int (**)(FootClass *))a1->Owner->vfptr + 33))(a1->Owner); /*0x513ccc*/
+  v3 = (*((int (**)(FootClass *))a1->Owner->ptr_0 + 33))(a1->Owner); /*0x513ccc*/
   FrameSnapshot::InitMax(v5, 2 * *(unsigned int *)(v3 + 1820)); /*0x513cdf*/
   memcpy(&a1->HeadToCoord[2], v5, 0x18u); /*0x513cf2*/
   return v2; /*0x513cf4*/

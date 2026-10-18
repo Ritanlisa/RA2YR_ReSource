@@ -46,14 +46,14 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !memcmp((const void *)(iid), &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
   {
     if ( thisa ) /*0x4102d6*/
-      p_vtable1 = &thisa->vfptr1; /*0x4102d8*/
+      p_vtable1 = &thisa->ptr_4; /*0x4102d8*/
     else
       p_vtable1 = 0; /*0x4102dd*/
     *ppv = p_vtable1; /*0x4102df*/
   }
   if ( !*ppv ) /*0x4102e1*/
     return -2147467262; /*0x4102e6*/
-  (*((void (__stdcall **)(AbstractClass *))thisa->vfptr + 1))(thisa); /*0x4102f2*/
+  (*((void (__stdcall **)(AbstractClass *))thisa->ptr_0 + 1))(thisa); /*0x4102f2*/
   return 0; /*0x41026e*/
 }
 // IDA: 0x410300 -- q000[0][1] (COMStub_AddRef)

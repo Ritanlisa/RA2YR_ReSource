@@ -383,7 +383,7 @@ AbstractClass * * sub_7318F0()
           result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)&((unsigned int *)&stru_A8EB00)[216] + 56))(**(unsigned int **)&((unsigned int *)&stru_A8EB00)[216]); /*0x73194f*/
           if ( *(unsigned int *)&dword_A8B238 ) /*0x73195a*/
           {
-            if ( ((int)dword_A8B230[0].vfptr & 0x400) == 0 /*0x731981*/
+            if ( ((int)dword_A8B230[0].ptr_0 & 0x400) == 0 /*0x731981*/
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5301)
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5307) )
             {
@@ -895,7 +895,7 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
   int v8; // edx
 
   if ( dword_A8B23C
-    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vfptr + 16))(dword_A8B23C)
+    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->ptr_0 + 16))(dword_A8B23C)
     && !Network::IsMultiplayerActive() )
   {
     if ( *(unsigned int *)&dword_A8B238 == 4 )

@@ -591,7 +591,7 @@ protected:
     int32_t                     q13C;      // raw 0x4f52cd
     int32_t                     q150;      // raw 0x4f52ec
     int32_t                     q154;      // raw 0x4f52e9
-    int32_t                     q16C;      // ml:364 (raw 0x4f52fe vfptr 槽)
+    int32_t                     q16C;      // ml:364 (raw 0x4f52fe ptr_0 槽)
     int32_t                     q17C;      // ml:380 (raw 0x4f5308)
     int32_t                     q180;      // ml:384 (raw 0x4f5305)
     int32_t                     q280;      // raw 0x4f532d
@@ -624,7 +624,7 @@ protected:
     int32_t                     u32_1C4;   // raw 0x4f6fae
     int32_t                     u32_1C8;   // raw 0x4f6fc2
     int32_t                     u32_1CC;   // raw 0x4f6fcb
-    void*                       vtable4;   // raw 0x4f715d (vfptr 安装序列)
+    void*                       vtable4;   // raw 0x4f715d (ptr_0 安装序列)
     void*                       vtable5;   // raw 0x4f7164
     void*                       vtable6;   // raw 0x4f716b
     void*                       vtable7;   // raw 0x4f7172

@@ -304,8 +304,8 @@ int CampaignClass::GetValue(unsigned int *result) {
 // 0x49F090
 namespace gamemd {
 unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
-  this->vfptr1 = 0; /*0x49f09b*/
-  this->vfptr2 = (void *)a2; /*0x49f09e*/
+  this->ptr_4 = 0; /*0x49f09b*/
+  this->ptr_8 = (void *)a2; /*0x49f09e*/
   (this->vtable4) = 1; /*0x49f0a1*/
   (this->q00D) = 0; /*0x49f0a5*/
   /* X11: vtable install elided (implicit via class virtuals 0x49f0a8) — binary-proven install, was 0 */
@@ -313,13 +313,13 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
   {
     if ( a3 ) /*0x49f0b6*/
     {
-      this->vfptr1 = (void *)a3; /*0x49f0b8*/
-      return &this->vfptr; /*0x49f0be*/
+      this->ptr_4 = (void *)a3; /*0x49f0b8*/
+      return &this->ptr_0; /*0x49f0be*/
     }
-    this->vfptr1 = operator new(4 * a2); /*0x49f0cd*/
+    this->ptr_4 = operator new(4 * a2); /*0x49f0cd*/
     (this->q00D) = 1; /*0x49f0d0*/
   }
-  return &this->vfptr; /*0x49f0bd*/
+  return &this->ptr_0; /*0x49f0bd*/
 }
 } // namespace gamemd
 
@@ -358,9 +358,9 @@ char TriggerClass::ValidateTeamTriggerConditions(int a2) {
           return 0; /*0x509684*/
         while ( 1 ) /*0x50968c*/
         {
-          v7 = (TriggerClass **)*((unsigned int *)FootClass_Array.vfptr1 + v6); /*0x50968c*/
+          v7 = (TriggerClass **)*((unsigned int *)FootClass_Array.ptr_4 + v6); /*0x50968c*/
           if ( v7[135] == this /*0x5096ab*/
-            && v5 == ((int (__thiscall *)(unsigned int))(*v7)[1].timer[2])(*((unsigned int *)FootClass_Array.vfptr1 + v6))
+            && v5 == ((int (__thiscall *)(unsigned int))(*v7)[1].timer[2])(*((unsigned int *)FootClass_Array.ptr_4 + v6))
             && TriggerClass::EvaluateObjectForTrigger(a2, (int)v7, (int)this) )
           {
             break; /*0x5096ab*/
@@ -428,7 +428,7 @@ int CampaignClass::DeleteAndZero(const char **a2) {
   {
     String::AssignFromPtr((String *)&v7, v2); /*0x5cf785*/
     String::ToLower((String *)&v7); /*0x5cf78e*/
-    String::AssignFromPtr((String *)&a2, (const char **)(*((unsigned int *)this->vfptr1 + v4) + 4)); /*0x5cf7a1*/
+    String::AssignFromPtr((String *)&a2, (const char **)(*((unsigned int *)this->ptr_4 + v4) + 4)); /*0x5cf7a1*/
     String::ToLower((String *)&a2); /*0x5cf7aa*/
     if ( (unsigned __int8)String::Compare((String *)&v7, (const char **)&a2) ) /*0x5cf7b8*/
       break; /*0x5cf7b8*/
@@ -437,7 +437,7 @@ int CampaignClass::DeleteAndZero(const char **a2) {
     if ( ++v4 >= this->uniqueId ) /*0x5cf7d9*/
       return 0; /*0x5cf7d9*/
   }
-  v6 = *((unsigned int *)this->vfptr1 + v4); /*0x5cf7eb*/
+  v6 = *((unsigned int *)this->ptr_4 + v4); /*0x5cf7eb*/
   DeleteAndZero((ObjectClass *)&a2); /*0x5cf7ee*/
   DeleteAndZero((ObjectClass *)&v7); /*0x5cf7f7*/
   return v6; /*0x5cf7db*/
@@ -535,7 +535,7 @@ void * ScriptClass::Construct(int a2) {
     this->field28 = 0; /*0x6913cc*/
     this->buildingType = (ScriptTypeClass *)a2; /*0x6913d3*/
     this->idxCurrentLine = -1; /*0x6913d6*/
-    *(void **)(char *)this = 0; /*0x6913dd vfptr0*/
+    *(void **)(char *)this = 0; /*0x6913dd ptr_0*/
     *&this->vtable2 = 0; /*0x6913e3 pN*/
     *&this->vtable3 = 0; /*0x6913ea pN*/
     *&this->vtable4 = 0; /*0x6913f1 pN*/
@@ -691,7 +691,7 @@ int TeamClass::SumMemberCounts() {
     v3 = (TeamClass *)this->Coord_9C); /*0x6e816d*/
     do /*0x6e817b*/
     {
-      vtable0 = v3->vfptr; /*0x6e8173*/
+      vtable0 = v3->ptr_0; /*0x6e8173*/
       v3 = (TeamClass *)((char *)v3 + 8); /*0x6e8175*/
       result += (int)vtable0; /*0x6e8178*/
       --v1; /*0x6e817a*/
@@ -808,7 +808,7 @@ int TeamClass::Create(int a1, int a2) {
   }
   for ( i = this->firstUnit; i; i = this->firstUnit ) /*0x6ecfef*/
   {
-    TeamClass::LiberateMember_Start(&this->vfptr, i, 0xFFFFFFFF, 0); /*0x6ecff8*/
+    TeamClass::LiberateMember_Start(&this->ptr_0, i, 0xFFFFFFFF, 0); /*0x6ecff8*/
     LOBYTE(v4) = TeamClass::AddMember(v5, i, 0); /*0x6ed002*/
   }
   if ( this ) /*0x6ed010*/
@@ -846,11 +846,11 @@ int TeamClass::AssignAttackTarget(int a2, int a3) {
           if ( dword_A8E7AC || ((*((unsigned char *)&(health))) = i->inLimbo, !(unsigned char)health) ) /*0x6edbb3*/
           {
             if ( i->isTeamLeader /*0x6edbcd*/
-              || (health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->vfptr + 11))(i), health == 2) )
+              || (health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->ptr_0 + 11))(i), health == 2) )
             {
               target = i->target; /*0x6edbd3*/
               if ( target && target != v6->u32_2B4 ) /*0x6edbe3*/
-                (*((void (__thiscall **)(FootClass *, unsigned int))i->vfptr + 242))(i, 0); /*0x6edbeb*/
+                (*((void (__thiscall **)(FootClass *, unsigned int))i->ptr_0 + 242))(i, 0); /*0x6edbeb*/
               health = v6->u32_2B4; /*0x6edbf1*/
               if ( health ) /*0x6edbf9*/
               {
@@ -859,14 +859,14 @@ int TeamClass::AssignAttackTarget(int a2, int a3) {
                 (*((unsigned char *)&(health))) = (*(int (__stdcall **)(int))(*(unsigned int *)i->locomotor[0] + 16))(i->locomotor[0]); /*0x6edc18*/
                 if ( !(unsigned char)health ) /*0x6edc1d*/
                 {
-                  (*((unsigned char *)&(health))) = (*((int (__thiscall **)(FootClass *))i->vfptr + 171))(i); /*0x6edc23*/
+                  (*((unsigned char *)&(health))) = (*((int (__thiscall **)(FootClass *))i->ptr_0 + 171))(i); /*0x6edc23*/
                   if ( (unsigned char)health ) /*0x6edc2b*/
                   {
-                    health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->vfptr + 97))(i); /*0x6edc31*/
+                    health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->ptr_0 + 97))(i); /*0x6edc31*/
                     if ( health == 5 ) /*0x6edc3a*/
                     {
-                      (*((void (__thiscall **)(FootClass *, int, unsigned int))i->vfptr + 122))(i, 1, 0); /*0x6edc44*/
-                      (*((unsigned char *)&(health))) = (*((int (__thiscall **)(FootClass *, unsigned int))i->vfptr + 242))(i, v6[173]); /*0x6edc55*/
+                      (*((void (__thiscall **)(FootClass *, int, unsigned int))i->ptr_0 + 122))(i, 1, 0); /*0x6edc44*/
+                      (*((unsigned char *)&(health))) = (*((int (__thiscall **)(FootClass *, unsigned int))i->ptr_0 + 242))(i, v6[173]); /*0x6edc55*/
                     }
                   }
                 }
@@ -887,7 +887,7 @@ void * TeamClass::ProcessEvent(int a2) {
   TeamClass::Destructor(this); /*0x6f0453*/
   if ( (a2 & 1) != 0 ) /*0x6f045d*/
     operator delete((this)); /*0x6f0460*/
-  return &this->vfptr; /*0x6f046a*/
+  return &this->ptr_0; /*0x6f046a*/
 }
 } // namespace gamemd
 
@@ -1180,8 +1180,8 @@ void * ScriptTypeClass::SetField(void *Buffer) {
     sscanf(Buffer, "%d,%d", &Buffer, &v5); /*0x723cbc*/
     result = Buffer; /*0x723cc1*/
     v4 = v5; /*0x723cc5*/
-    this->vfptr = Buffer; /*0x723ccc*/
-    this->vfptr1 = v4; /*0x723cce*/
+    this->ptr_0 = Buffer; /*0x723ccc*/
+    this->ptr_4 = v4; /*0x723cce*/
   }
   return result; /*0x723cd1*/
 }
@@ -1192,7 +1192,7 @@ namespace gamemd {
 int ScriptTypeClass::FormatToString(void *Buffer) {
   if ( !Buffer ) /*0x723ce7*/
     return 0; /*0x723d0e*/
-  sprintf(Buffer, "%d,%d", this->vfptr, this->vfptr1); /*0x723cf6*/
+  sprintf(Buffer, "%d,%d", this->ptr_0, this->ptr_4); /*0x723cf6*/
   return strlen(Buffer); /*0x723d08*/
 }
 } // namespace gamemd
@@ -1334,7 +1334,7 @@ void * TriggerTypeClass::Construct(void *Source) {
     v5 = (*(unsigned int *)FootClass_Array.unknown_short_3C8)++; /*0x726ddd*/
     *(unsigned int *)(FootClass_Array.targetLaserTimer[0] + 4 * v5) = this; /*0x726dec*/
   }
-  return &this->vfptr; /*0x726df1*/
+  return &this->ptr_0; /*0x726df1*/
 }
 } // namespace gamemd
 
@@ -1436,12 +1436,12 @@ int TriggerTypeClass::GetAction(int a2, int a3) {
   if ( NextTrigger && NextTrigger == (TriggerTypeClass *)a2 ) /*0x7270a4*/
     this->NextTrigger = NextTrigger->NextTrigger; /*0x7270ac*/
   for ( i = this->FirstAction; i; i = (TActionClass *)i->TActionClass_field_28 ) /*0x7270bb*/
-    (*((void (__thiscall **)(TActionClass *, int, int))i->vfptr + 10))(i, a2, 1); /*0x7270c4*/
+    (*((void (__thiscall **)(TActionClass *, int, int))i->ptr_0 + 10))(i, a2, 1); /*0x7270c4*/
   FirstAction = this->FirstAction; /*0x7270ce*/
   if ( FirstAction == (TActionClass *)a2 ) /*0x7270d6*/
     this->FirstAction = (TActionClass *)FirstAction->TActionClass_field_28; /*0x7270db*/
   for ( j = this->FirstEvent; j; j = (TEventClass *)j->TEventClass_field_28 ) /*0x7270e9*/
-    (*((void (__thiscall **)(TEventClass *, int, int))j->vfptr + 10))(j, a2, 1); /*0x7270f2*/
+    (*((void (__thiscall **)(TEventClass *, int, int))j->ptr_0 + 10))(j, a2, 1); /*0x7270f2*/
   result = (int)this->FirstEvent; /*0x7270fc*/
   if ( result == a2 ) /*0x727105*/
   {
@@ -1542,12 +1542,12 @@ int TriggerTypeClass::PowerDrainUpdate(void *a2) {
   int v9; // eax
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x727b39*/
-  v3 = (*((int (__stdcall **)(void **))this->House->vfptr1 + 4))(&this->House->vfptr1); /*0x727b4a*/
+  v3 = (*((int (__stdcall **)(void **))this->House->ptr_4 + 4))(&this->House->ptr_4); /*0x727b4a*/
   Power::TimerProcess(v3); /*0x727b50*/
   NextTrigger = this->NextTrigger; /*0x727b55*/
   if ( NextTrigger ) /*0x727b5d*/
   {
-    v5 = (*((int (__stdcall **)(void **))NextTrigger->vfptr1 + 4))(&NextTrigger->vfptr1); /*0x727b66*/
+    v5 = (*((int (__stdcall **)(void **))NextTrigger->ptr_4 + 4))(&NextTrigger->ptr_4); /*0x727b66*/
     Power::TimerProcess(v5); /*0x727b6c*/
   }
   result = (int)this->FirstEvent; /*0x727b71*/
@@ -1559,7 +1559,7 @@ int TriggerTypeClass::PowerDrainUpdate(void *a2) {
   FirstAction = this->FirstAction; /*0x727b8d*/
   if ( FirstAction ) /*0x727b95*/
   {
-    v9 = (*((int (__stdcall **)(void **))FirstAction->vfptr1 + 4))(&FirstAction->vfptr1); /*0x727b9e*/
+    v9 = (*((int (__stdcall **)(void **))FirstAction->ptr_4 + 4))(&FirstAction->ptr_4); /*0x727b9e*/
     return Power::TimerProcess(v9); /*0x727ba4*/
   }
   return result; /*0x727ba9*/
@@ -1582,7 +1582,7 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
   bool v7; // dl
   TriggerClass *v8; // edi
   char result; // al
-  int vfptr; // eax
+  int ptr_0; // eax
   int referenceCount; // eax
   int v12; // eax
   int v13; // eax
@@ -1645,17 +1645,17 @@ LABEL_28:
       goto LABEL_36; /*0x41e840*/
     goto LABEL_34; /*0x41e840*/
   }
-  vfptr = dword_A8B230[43].vfptr; /*0x41e7f4*/
-  if ( !vfptr ) /*0x41e7fc*/
+  ptr_0 = dword_A8B230[43].ptr_0; /*0x41e7f4*/
+  if ( !ptr_0 ) /*0x41e7fc*/
   {
 LABEL_34:
     if ( this->u32_D2 ) /*0x41e842*/
       goto LABEL_36; /*0x41e84a*/
     return 0; /*0x41e852*/
   }
-  if ( vfptr != 1 ) /*0x41e800*/
+  if ( ptr_0 != 1 ) /*0x41e800*/
   {
-    if ( vfptr != 2 ) /*0x41e805*/
+    if ( ptr_0 != 2 ) /*0x41e805*/
       goto LABEL_36; /*0x41e805*/
     goto LABEL_28; /*0x41e805*/
   }
@@ -2185,8 +2185,8 @@ LABEL_80:
 // 0x49ECD0
 namespace gamemd {
 void * CampaignClass::Constructor(int a2, int a3) {
-  this->vfptr1 = 0; /*0x49ecd9*/
-  this->vfptr2 = (void *)a2; /*0x49ece0*/
+  this->ptr_4 = 0; /*0x49ecd9*/
+  this->ptr_8 = (void *)a2; /*0x49ece0*/
   (this->vtable4) = 1; /*0x49ece3*/
   (this->q00D) = 0; /*0x49ece7*/
   /* X11: vtable install elided (implicit via class virtuals 0x49eceb) — binary-proven install, was 0 */
@@ -2194,20 +2194,20 @@ void * CampaignClass::Constructor(int a2, int a3) {
   {
     if ( a3 ) /*0x49ecf9*/
     {
-      this->vfptr1 = (void *)a3; /*0x49ecfb*/
+      this->ptr_4 = (void *)a3; /*0x49ecfb*/
     }
     else
     {
-      this->vfptr1 = operator new(4 * a2); /*0x49ed0c*/
+      this->ptr_4 = operator new(4 * a2); /*0x49ed0c*/
       (this->q00D) = 1; /*0x49ed0f*/
     }
   }
   /* X11: vtable install elided (implicit via class virtuals 0x49ed13) — binary-proven install, was 0 */
   this->abstractFlags = 10; /*0x49ed19*/
   this->uniqueId = 0; /*0x49ed20*/
-  return &this->vfptr; /*0x49ed29*/
+  return &this->ptr_0; /*0x49ed29*/
 }
-    *(void **)(char *)this = 0; /*0x49ed13 vfptr(DynamicVectorClass)*/
+    *(void **)(char *)this = 0; /*0x49ed13 ptr_0(DynamicVectorClass)*/
     *(unsigned int *)&this->abstractFlags = 10; /*0x49ed19 +14 growth*/
     *(unsigned int *)&this->uniqueId = 0; /*0x49ed20 +10 count*/
     return this; /*0x49ed29*/
@@ -2298,7 +2298,7 @@ void * ScriptTypeClass::Constructor(void *Source) {
     }
   }
   this->scriptActions[26] = v5; /*0x691763*/
-  return &this->vfptr; /*0x69176b*/
+  return &this->ptr_0; /*0x69176b*/
 }
 } // namespace gamemd
 
@@ -2370,11 +2370,11 @@ void * ScriptClass::ProcessEvent(int a2) {
   int v3; // eax
   ScriptClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->vfptr = 0; /*0x691ee6*/
+  this->ptr_0 = 0; /*0x691ee6*/
   /* X11: vtable install elided (implicit via class virtuals 0x691eec) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x691ef3) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x691efa) — binary-proven install, was 0 */
-  AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x691f01*/
+  AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x691f01*/
   v5 = this; /*0x691f16*/
   v3 = (*(int (__thiscall **)(int *, ScriptClass **))(dword_8872B0 + 16))(&dword_8872B0, &v5); /*0x691f1a*/
   if ( v3 != -1 && v3 < dword_8872C0 && v3 < --dword_8872C0 ) /*0x691f35*/
@@ -2389,7 +2389,7 @@ void * ScriptClass::ProcessEvent(int a2) {
   AbstractClass::DTOR((AbstractClass *)this); /*0x691f51*/
   if ( (a2 & 1) != 0 ) /*0x691f5b*/
     operator delete((this)); /*0x691f5e*/
-  return &this->vfptr; /*0x691f68*/
+  return &this->ptr_0; /*0x691f68*/
 }
 } // namespace gamemd
 
@@ -2494,7 +2494,7 @@ void * TActionClass::Destructor(char a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x6e466c) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x6e4673) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x6e467a) — binary-proven install, was 0 */
-  AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x6e4681*/
+  AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x6e4681*/
   v7 = this; /*0x6e4696*/
   v3 = (*(int (__thiscall **)(int *, TActionClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e469a*/
          &g_BuildingLoadQueue_Array.LightVisibility,
@@ -2539,7 +2539,7 @@ void * TActionClass::Destructor(char a2) {
   AbstractClass::DTOR((AbstractClass *)this); /*0x6e4767*/
   if ( (a2 & 1) != 0 ) /*0x6e4771*/
     operator delete((this)); /*0x6e4774*/
-  return &this->vfptr; /*0x6e477e*/
+  return &this->ptr_0; /*0x6e477e*/
 }
 } // namespace gamemd
 
@@ -2657,11 +2657,11 @@ int TeamClass::AssignMemberToCoordinator(int a2, int a3) {
     TeamClass::SelectMember((int)this, (int)CellFromArray); /*0x6ece84*/
   }
   queuedFocus = this->queuedFocus; /*0x6ece89*/
-  if ( queuedFocus && (*((int (__thiscall **)(AbstractClass *))queuedFocus->vfptr + 11))(queuedFocus) == 11 )
+  if ( queuedFocus && (*((int (__thiscall **)(AbstractClass *))queuedFocus->ptr_0 + 11))(queuedFocus) == 11 )
   {
     v6 = this->queuedFocus; /*0x6ece9b*/
     if ( v6 )
-      v7 = (*((int (__thiscall **)(AbstractClass *))v6->vfptr + 11))(this->queuedFocus) == 11 ? (Object *)v6 : 0;
+      v7 = (*((int (__thiscall **)(AbstractClass *))v6->ptr_0 + 11))(this->queuedFocus) == 11 ? (Object *)v6 : 0;
     else
       v7 = 0; /*0x6ecea2*/
     v10[0] = 0; /*0x6ecec1*/
@@ -2797,13 +2797,13 @@ int TeamClass::SelectAreaAttackTarget(int a2, int a3) {
       v5 = 0; /*0x6ee336*/
       v6 = firstUnit->owner->enemyHouseIndex; /*0x6ee354*/
       if ( v6 != -1 ) /*0x6ee35d*/
-        v5 = (void *)*((unsigned int *)stru_A80220.vfptr3 + v6); /*0x6ee365*/
+        v5 = (void *)*((unsigned int *)stru_A80220.ptr_C + v6); /*0x6ee365*/
       v7 = DamageMapClassArea( /*0x6ee376*/
              *((unsigned int *)dword_A83C6C + (uint16_t)a2->vtable2),
              v5,
              firstUnit,
              (uint16_t)(*(a2->vtable2 + 1)),
-             (*(((unsigned char *)&(this->buildingType[2].vfptr3)) + (sizeof(this->buildingType[2].vfptr3) - 1))));
+             (*(((unsigned char *)&(this->buildingType[2].ptr_C)) + (sizeof(this->buildingType[2].ptr_C) - 1))));
       if ( v7 ) /*0x6ee37e*/
         TeamClass::SelectMember((int)this, (int)v7); /*0x6ee383*/
     }
@@ -2865,7 +2865,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
       v5 = 0; /*0x6ee420*/
       v6 = *(unsigned int *)(firstUnit->owner + 22016); /*0x6ee43b*/
       if ( v6 != -1 ) /*0x6ee444*/
-        v5 = (#375 *)*(&dword_A8022C->vfptr + v6); /*0x6ee44c*/
+        v5 = (#375 *)*(&dword_A8022C->ptr_0 + v6); /*0x6ee44c*/
       v7 = DamageMapClassArea( /*0x6ee462*/
              *((unsigned int *)dword_A83C6C + (unsigned __int16)a2->vtable2),
              v5,
@@ -3274,7 +3274,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     {
       enemyHouseIndex = i[135]->enemyHouseIndex; /*0x6efa8f*/
       if ( enemyHouseIndex != -1 ) /*0x6efa98*/
-        v7 = (HouseClass *)*(&dword_A8022C->vfptr + enemyHouseIndex); /*0x6efaa0*/
+        v7 = (HouseClass *)*(&dword_A8022C->ptr_0 + enemyHouseIndex); /*0x6efaa0*/
     }
     StartCoords = HouseClass::GetStartCoords(i[135], &v28); /*0x6efaae*/
     v10 = *StartCoords; /*0x6efab3*/
@@ -3594,7 +3594,7 @@ int TriggerClass::Construct(int a2) {
   if ( this->buildingType ) /*0x7260e0*/
   {
     if ( (BuildingClass::ProcessUpgradeEffects((BuildingClass *)this), v7 = *&this->u8_9E, !v7[159]) /*0x726121*/
-      || (vtable0 = dword_A8B230[43].vfptr) == 0 && !v7[156]
+      || (vtable0 = dword_A8B230[43].ptr_0) == 0 && !v7[156]
       || vtable0 == 1 && !v7[157]
       || vtable0 == 2 && !v7[158] )
     {
@@ -3642,7 +3642,7 @@ void * TriggerClass::CheckCondition(int a2) {
   int v4; // eax
   int v5; // eax
 
-  this->vfptr = 0; /*0x726956*/
+  this->ptr_0 = 0; /*0x726956*/
   /* X11: vtable install elided (implicit via class virtuals 0x72695c) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x726963) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x72696a) — binary-proven install, was 0 */
@@ -3690,7 +3690,7 @@ void * TriggerClass::CheckCondition(int a2) {
   AbstractClass::DTOR((AbstractClass *)this); /*0x726a53*/
   if ( (a2 & 1) != 0 ) /*0x726a5d*/
     operator delete((this)); /*0x726a60*/
-  return &this->vfptr; /*0x726a6a*/
+  return &this->ptr_0; /*0x726a6a*/
 }
 }
 // 0x727240

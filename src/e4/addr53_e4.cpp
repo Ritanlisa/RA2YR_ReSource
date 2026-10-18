@@ -1463,7 +1463,7 @@ AnimClass * * PsyDom::Update(void *a1, void *a2, void *a3, void *a4)
     }
       break; /*0x53b03e*/
     case 5: /*0x53af50*/
-      if ( dword_A8B230[378].vfptr2 == dword_A8B230[378].vfptr1 ) /*0x53b052*/
+      if ( dword_A8B230[378].ptr_8 == dword_A8B230[378].ptr_4 ) /*0x53b052*/
       PsyDom_Status = 0; /*0x53b054*/
       break; /*0x53b054*/
     default:
@@ -1510,7 +1510,7 @@ void sub_53B460(int a1, Scenario * a2)
     AudioController::Init(&stru_A9F9B8); /*0x53b512*/
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 644), 0x2000, 1.0, (int)&stru_A9F9B8); /*0x53b531*/
     SetVocClassEnabled(0); /*0x53b538*/
-    byte_A9FAD1 = (((unsigned char *)&(dword_A8B230[381].vfptr3))[2]); /*0x53b549*/
+    byte_A9FAD1 = (((unsigned char *)&(dword_A8B230[381].ptr_C))[2]); /*0x53b549*/
     Scenario::ClearScreen(a2); /*0x53b54f*/
     Map_Process_753570(); /*0x53b554*/
   }

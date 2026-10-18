@@ -838,7 +838,7 @@ public:
     unsigned char m_1[4];  // 0x1
     unsigned int m_C;  // 0xC
     int m_8;  // 0x8
-    unsigned int *__pad_0;  // G42.35 C8 体词汇 (0x58a426 vfptr 槽)
+    unsigned int *__pad_0;  // G42.35 C8 体词汇 (0x58a426 ptr_0 槽)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int AddRef(int a1);  // 0x589300
     int Release(int a1, void* a2);  // 0x589550
@@ -1262,7 +1262,7 @@ public:
     uint8_t COMObject_field_0x4C[4];
     uint8_t COMObject_field_0x50[4];
     void* Hovered;  // 0x0 (no offset truth)
-    void* vfptr;  // 0x0 (no offset truth)
+    void* ptr_0;  // 0x0 (no offset truth)
     void* Image;  // 0x0 (no offset truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ActivateThunk(int a1, int a2, int a3);  // 0x4E1530
@@ -1396,8 +1396,8 @@ public:
     virtual LONG Release();  // 0x4A09B0 G42.33 b3 体签名
     virtual ~EnumConnectionPointsClass() = default;  // 0x4A0A50
     virtual int Next(int a2);  // 0x4A0AF0 G42.33 b3 体签名
-    virtual void vt_slot_5();  // X72: slot 5 (0x4A0B10) unresolved name — placeholder = Skip (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_6();  // X72: slot 6 (0x4A0B20) unresolved name — placeholder
+    virtual int Skip(int a1);  // X75: slot 5 (0x4A0B10) = EnumConnectionPointsClass::Skip (sibling promoted)
+    virtual void sub_4A0B20();  // X75: slot 6 (0x4A0B20) = EnumConnectionPointsClass::_vt06
     virtual int ddtor(unsigned int a2, int a3, unsigned int *a4);  // 0x4A0A50 G42.33 b3 体签名  // X72 residual: RVA not a distinct binary slot
 
 
@@ -1420,7 +1420,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
-    int Skip(int a1);  // 0x4a0b10
     // === FUNCS-MOVE (END) ===
     unsigned int *__pad_0;  // supplied (C2039)
     unsigned int *m_1;  // supplied (C2039)
@@ -1451,8 +1450,8 @@ public:
     virtual LONG Release();  // 0x4A0010 G42.33 b3 体签名
     virtual ~EnumConnectionsClass() = default;  // 0x4A00B0
     virtual int Next(int a2);  // 0x4A0160 G42.33 b3 体签名
-    virtual void vt_slot_5();  // X72: slot 5 (0x4A0180) unresolved name — placeholder = Skip (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_6();  // X72: slot 6 (0x4A0190) unresolved name — placeholder
+    virtual int Skip(int a1);  // X75: slot 5 (0x4A0180) = EnumConnectionsClass::Skip (sibling promoted)
+    virtual void sub_4A0190();  // X75: slot 6 (0x4A0190) = EnumConnectionsClass::_vt06
     virtual int ddtor(unsigned int a2, int a3, unsigned int *a4);  // 0x4A00B0 G42.33 b3 体签名  // X72 residual: RVA not a distinct binary slot
 
 
@@ -1463,7 +1462,6 @@ public:
     unsigned int EnumConnectionsClass_field_0x14;  // G42.33 b3
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
-    int Skip(int a1);  // 0x4a0180
     // === FUNCS-MOVE (END) ===
 
     unsigned int u32_1C;  // G42.39 data supply
@@ -1591,7 +1589,7 @@ public:
     uint8_t GraphicMenuAnimItem_field_0x0C[4];
     uint8_t GraphicMenuAnimItem_field_0x10[4];
     uint8_t GraphicMenuAnimItem_field_0x14[4];
-    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f30e6 vfptr 槽)
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f30e6 ptr_0 槽)
 
     unsigned int u32_18;  // G42.39 data supply
 
@@ -1657,7 +1655,7 @@ public:
     virtual int Destructor(); // 0x4F3A70
 
     uint8_t GraphicMenuItem_field_0x04[4];
-    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3a65 vfptr 槽)
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3a65 ptr_0 槽)
 
     unsigned int u32_9;  // G42.39 data supply
 
@@ -1684,7 +1682,7 @@ public:
     virtual void ***QueryInterface(char a2); // 0x4F3B20 G42.35 C6 体签名
 
     uint8_t GraphicMenuItem_Destru_field_0x04[4];
-    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3b27 vfptr 槽)
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3b27 ptr_0 槽)
 
     unsigned int u32_C;  // G42.39 data supply
 };
@@ -1703,7 +1701,7 @@ public:
     virtual unsigned int *QueryInterface(char a2); // 0x4F3F60 G42.35 C6 体签名
 
     uint8_t GraphicMenuShortcutItem_field_0x04[4];
-    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3f63 vfptr 槽)
+    unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3f63 ptr_0 槽)
 
     unsigned int u32_9;  // G42.39 data supply
 
@@ -1912,7 +1910,7 @@ public:
     unsigned char __pad_11B4[0x11D0 - 0x11B4];
     void (__thiscall **DisplayClass_field_0x0)(void *, unsigned int, int);  // G42.33 b4 C3: vt 槽词汇
     unsigned int DisplayClass_field_0x11D0;
-    unsigned char *__pad_0;  // 0x0 G42.34 C5: vfptr 槽词汇 (CheckHumanPlayer 体)
+    unsigned char *__pad_0;  // 0x0 G42.34 C5: ptr_0 槽词汇 (CheckHumanPlayer 体)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool HasPlayers();  // 0x6ABAC0
     int ProcessOccupancyUpdate(void* a1);  // 0x6D9FF0

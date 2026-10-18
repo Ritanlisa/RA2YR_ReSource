@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct _e4 {
-    void* vfptr;
+    void* ptr_0;
     unsigned int u32_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC

@@ -647,7 +647,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   VectorClass_ptr_ConvertClass::MarkDirty(&stru_B07E58); /*0x6abda2*/
   v2 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdb2*/
   v23 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdbc*/
-  if ( LOBYTE(MEMORY[0xA8EB00].vfptr[31]) ) /*0x6abdbd*/
+  if ( LOBYTE(MEMORY[0xA8EB00].ptr_0[31]) ) /*0x6abdbd*/
     Rect_Point::Set(&stru_B07E58, DSurface_ViewBounds.field_0 + *(unsigned int *)DSurface_ViewBounds.__pad_8, v23); /*0x6abdce*/
   else
     Rect_Point::Set(&stru_B07E58, 0, v23); /*0x6abdd7*/

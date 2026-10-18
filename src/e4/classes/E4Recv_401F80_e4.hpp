@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_401F80 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
     int _EnterCriticalRegionHelper_ContextBase_details_Concurrency__UAEHXZ();  // 0x401F80

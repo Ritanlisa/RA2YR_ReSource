@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_5A2F50 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M68;  // 0x44
 // --- flat members (END) ---
     void Map_SmoothTerrain();  // 0x5A2F50

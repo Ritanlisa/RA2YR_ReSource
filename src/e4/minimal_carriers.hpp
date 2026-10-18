@@ -12,7 +12,7 @@ class UpdateMovement;  // G42.36 fwd supply
 class BeginMove;  // G42.36 fwd supply
 class ObjectClass;  // G42.36 fwd supply
 class Load;  // G42.36 fwd supply
-struct BinkMo { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct BinkMo { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_TU_rc_ptr_base  // G57c6: addr6C_e4.cpp defines its own TU-local twin
@@ -20,11 +20,11 @@ struct rc_ptr_base;  // G57c2 dedup: fwd only -- other def lives in classes.hpp;
 #endif  // GAMEMD_E4_TU_rc_ptr_base
 } // namespace gamemd
 namespace gamemd {
-struct ObjectType { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct ObjectType { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 struct SHPStruct;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct As { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct As { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct Selection_WorldDominationTour;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
@@ -35,7 +35,7 @@ struct AudioCodec;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; 
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_DSurface  // G57c2 dedup: full flat carrier DSurface_e4.hpp wins (include order verified carrier-first)
 #define GAMEMD_E4_FLAT_DSurface 1  // G57w8: twin-guard dedup, define restored
-struct DSurface { void* vfptr; 
+struct DSurface { void* ptr_0; 
 
     unsigned int DSurface_field_0x0;  // 0x0 [X55 W3 supply (render vocab)]
     int u32_1;  // 0x1 [X55 W3 supply (render vocab)]
@@ -81,7 +81,7 @@ namespace gamemd {
 struct SquadClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct OwnerDraw { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct OwnerDraw { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 // G57a1 dedup: gamemd::CountryCombo is defined in core/utility_ext.hpp (transitively included first via e4_globals.hpp -> _tree_full_e4.hpp in every consumer TU); minimal twin removed.
@@ -143,7 +143,7 @@ struct Map_WorldDominationTour;  // G57c2 dedup: fwd only -- other def lives in 
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_MIXFile  // G57c2 dedup: full flat carrier MIXFile_e4.hpp wins (include order verified carrier-first)
 #define GAMEMD_E4_FLAT_MIXFile 1  // G57w8: twin-guard dedup, define restored
-struct MIXFile { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct MIXFile { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_MIXFile
 } // namespace gamemd
 namespace gamemd {
@@ -151,7 +151,7 @@ namespace gamemd {
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_TechnoTypeClass  // G57a1: TechnoTypeClass_e4.hpp (full flat carrier) wins
-struct TechnoTypeClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct TechnoTypeClass { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_TechnoTypeClass
 } // namespace gamemd
 namespace gamemd {
@@ -194,7 +194,7 @@ struct GlobalArray;  // G57c2 dedup: fwd only -- other def lives in classes.hpp;
 struct KeywordClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct Check { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct Check { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 struct MapPreview;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 struct MultiMissionVector;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 struct SkirmishVector;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
@@ -238,7 +238,7 @@ struct BinkMovieClass;  // G57c2 dedup: fwd only -- other def lives in classes.h
 namespace gamemd {
 #if !defined(GAMEMD_E4_FLAT_CCINIClass) && !defined(GAMEMD_E4_GAP2_AUDIO_EXT)  // G57c2 + G57c9: flat carrier wins; audio-chain leak TUs (addr40: AudioList_e4 -> audio_ext -> audio.hpp -> system file family) get the gap2 rich def instead
 #ifndef GAMEMD_E4_FLAT_CCINIClass  // G57c2 dedup: full flat carrier CCINIClass_e4.hpp wins (include order verified carrier-first)
-struct CCINIClass { void* vfptr; 
+struct CCINIClass { void* ptr_0; 
 
     unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
     unsigned int u32_C8;  // 0xC8 [X55 W3 supply (render vocab)]
@@ -260,7 +260,7 @@ struct CCINIClass { void* vfptr;
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_BombClass  // G57c2 dedup: full flat carrier BombClass_e4.hpp wins (include order verified carrier-first)
 #define GAMEMD_E4_FLAT_BombClass 1  // G57w8: twin-guard dedup, define restored
-struct BombClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct BombClass { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_BombClass
 } // namespace gamemd
 namespace gamemd {
@@ -277,7 +277,7 @@ struct CarryoverClass;  // G57c2 dedup: fwd only -- other def lives in classes.h
 } // namespace gamemd
 namespace gamemd {
 struct CoordBounds;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
-struct Next { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct Next { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct VectorClass_TagClass {  // G57w17h4: til VectorClass (ordinal 1500) layout, ?$VectorClass@PAVTagClass@@
@@ -294,8 +294,8 @@ namespace gamemd {
   // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct Bootstrap { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
-struct Copy { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct Bootstrap { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
+struct Copy { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 #if !defined(GAMEMD_E4_GAP2_MISC_EXT)  // G57c6: misc_ext leak TUs (addr63/addr7A) use the gap2 def
 struct IntVector;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_GAP2_MISC_EXT (IntVector)
@@ -310,11 +310,11 @@ namespace gamemd {
 struct MapData;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct Add { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct Add { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 #ifndef GAMEMD_E4_FLAT_MouseClass  // G57c2 dedup: full flat carrier MouseClass_e4.hpp wins (include order verified carrier-first)
 #define GAMEMD_E4_FLAT_MouseClass 1  // G57w8: twin-guard dedup, define restored
 struct MouseClass {
-void* vfptr;
+void* ptr_0;
     unsigned int q030;  // 0x30 (W16G3 raw vtable-slot vocab, Scenario/Dialog/addr48 sites)
     unsigned int q040;  // 0x40 (W16G3 raw vtable-slot vocab)
     unsigned int q_40;  // 0x40 alt-site (W16G3 raw vtable-slot vocab)
@@ -342,7 +342,7 @@ struct TileSystem;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; 
 struct j_Options;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct Compress { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct Compress { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 struct Compression;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 struct CoordinateTables;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 struct LZOPipe;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
@@ -362,7 +362,7 @@ struct OverlayClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp
 struct PlanningNodeClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 #if !defined(GAMEMD_E4_FLAT_RawFileClass) && !defined(GAMEMD_E4_GAP2_AUDIO_EXT)  // G57c2 + G57c9: flat carrier wins; audio-chain leak TUs (addr40: AudioList_e4 -> audio_ext -> audio.hpp -> system file family) get the gap2 rich def instead
 #ifndef GAMEMD_E4_FLAT_RawFileClass  // G57c2 dedup: full flat carrier RawFileClass_e4.hpp wins (include order verified carrier-first)
-struct RawFileClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct RawFileClass { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_RawFileClass
 #endif  // GAMEMD_E4_FLAT_RawFileClass
 } // namespace gamemd
@@ -373,7 +373,7 @@ struct ScriptActionQueue;  // G57c2 dedup: fwd only -- other def lives in classe
 #endif  // GAMEMD_E4_GAP2_MISC_EXT (ScriptActionQueue)
 } // namespace gamemd
 namespace gamemd {
-struct IPersistStreamVtbl { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct IPersistStreamVtbl { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct LineTrail;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
@@ -385,7 +385,7 @@ namespace gamemd {
 struct ToggleClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct WOL_ProcessPingRequests { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct WOL_ProcessPingRequests { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct InputManager;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)

@@ -283,10 +283,10 @@ public:
     uint8_t DeleteAndZero_field_0x08[4];
 
 
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
     unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
+    void * ptr_8;  // 0x8 [X55 W3 supply (render vocab)]
+    void * ptr_C;  // 0xC [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 class ScreenCapture

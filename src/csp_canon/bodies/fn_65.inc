@@ -1469,7 +1469,7 @@ int ComPtr::Set(int a2) {
 
 // ==== BACKFILL 0x0065D660  ReferenceCounted::Constructor  cls=ReferenceCounted  sig=csp  renamed_refs=0  residual=- ====
 void ReferenceCounted::Constructor() {
-    *(void **)(char *)this = 0; /*0x65d660 vfptr 安装 (cache: *this = &vftable)*/
+    *(void **)(char *)this = 0; /*0x65d660 ptr_0 安装 (cache: *this = &vftable)*/
 }
 
 // ==== BACKFILL 0x0065D690  VtableStub::RetZero_eax_35  cls=ReferenceCounted  sig=csp  renamed_refs=0  residual=- ====

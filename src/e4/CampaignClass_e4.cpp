@@ -180,7 +180,7 @@ AbstractClass * * CampaignClass::SaveProgress()
 
   if ( !this->scenario[68] ) /*0x49c5ac*/
     return 0; /*0x49c5ac*/
-  if ( !LOBYTE(this->vfptr) ) /*0x49c5b7*/
+  if ( !LOBYTE(this->ptr_0) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
   p_referenceCount = &this->referenceCount; /*0x49c5c4*/
   if ( !((this->referenceCount) & 0xFF) ) /*0x49c5c1*/
@@ -205,7 +205,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   CCFileClass::Reset(&v33); /*0x49c67b*/
   v5 = 0; /*0x49c683*/
   v6 = (char *)this; /*0x49c687*/
-  if ( LOBYTE(this->vfptr) )
+  if ( LOBYTE(this->ptr_0) )
   {
     do
     {

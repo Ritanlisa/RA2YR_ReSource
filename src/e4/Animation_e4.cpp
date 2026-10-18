@@ -121,7 +121,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations(void *a1)
           }
           if ( v13 ) /*0x454af1*/
           {
-            if ( LOBYTE(v13->vfptr) ) /*0x454af3*/
+            if ( LOBYTE(v13->ptr_0) ) /*0x454af3*/
               BuildingClass::PlayAnim((BuildingClass *)this, (int)_EDX, v13, v8, v12, 0, 0); /*0x454b01*/
           }
         }
@@ -198,7 +198,7 @@ LABEL_52:
         v25 = 0; /*0x454c8b*/
         v26 = (AnimTypeClass *)(this->u32_520 + 5208); /*0x454c8d*/
       }
-      if ( v26 && LOBYTE(v26->vfptr) ) /*0x454c96*/
+      if ( v26 && LOBYTE(v26->ptr_0) ) /*0x454c96*/
         BuildingClass::PlayAnim((BuildingClass *)this, (int)dword_8871E0, v26, 19, v25, 0, 0); /*0x454ca5*/
       v27 = 0; /*0x454caa*/
       for ( j = 0; j < 1428; j += 68 ) /*0x454cac*/

@@ -9,7 +9,7 @@ namespace gamemd {
 struct E4Recv_633A80 {
     unsigned int AbstractClass;
     unsigned int vtable0;
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     ObjectClass * ReadPointerFromECX_2();  // 0x633A80
 };
 } // namespace gamemd

@@ -523,7 +523,7 @@ unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass
   a0->ptr_0 = (void *)*aP1; /*0x5fea3d*/
   a0->ptr_1 = aP1->vtable2; /*0x5fea42*/
   a0->ptr_2 = aP1->vtable3; /*0x5fea49*/
-  return &a0->vfptr; /*0x5fea45*/
+  return &a0->ptr_0; /*0x5fea45*/
 }
 }  // G42.18c ns repair
 // 0x5FEA50
@@ -593,7 +593,7 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int PixelData; // ecx
   unsigned __int16 v11; // [esp+4h] [ebp-4h]
 
-  v4 = (MixFileClass *)(*(int (**)(OverlayTypeClass *))(this->vfptr + 156))(this); /*0x5fed06*/
+  v4 = (MixFileClass *)(*(int (**)(OverlayTypeClass *))(this->ptr_0 + 156))(this); /*0x5fed06*/
   if ( v4 /*0x5fed28*/
     || (DamageLevels = this->DamageLevels) != 0
     && (v4 = (MixFileClass *)(*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
@@ -658,7 +658,7 @@ OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
 /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
 /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
-AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5fef51*/
+AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x5fef51*/
 v5 = this; /*0x5fef66*/
 v3 = (*((int (**)(void **, OverlayTypeClass **))DataGlobal_A83D80 + 4))( /*0x5fef6a*/
          &DataGlobal_A83D80,

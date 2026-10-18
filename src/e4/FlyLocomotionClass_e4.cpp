@@ -93,7 +93,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
     v4 = *(unsigned int *)(*(unsigned int *)&stru_A8E960.random[264] + 4 * i); /*0x4cff17*/
     if ( thisa ) /*0x4cff20*/
     {
-      if ( *(unsigned int *)(v4 + 540) != *(&dword_A8022C->vfptr + *(unsigned int *)(*(unsigned int *)(this->Owner + 540) + 22016)) ) /*0x4cff5e*/
+      if ( *(unsigned int *)(v4 + 540) != *(&dword_A8022C->ptr_0 + *(unsigned int *)(*(unsigned int *)(this->Owner + 540) + 22016)) ) /*0x4cff5e*/
         continue; /*0x4cff5e*/
     }
     else if ( (unsigned __int8)HouseClass::IsAlliedWith(*(HouseClass **)(this->Owner + 540)) ) /*0x4cff32*/
@@ -105,7 +105,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       && *(unsigned char *)(v4 + 144)
       && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 3226)
       && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 561)
-      && ((dword_A8B230->vfptr & 0x800) == 0
+      && ((dword_A8B230->ptr_0 & 0x800) == 0
        || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 1
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {

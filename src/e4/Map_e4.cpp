@@ -126,7 +126,7 @@ AbstractClass * * sub_539760()
   }
   byte_A9FA25 = 0; /*0x539847*/
   dword_A9FA20 = 0; /*0x53984d*/
-  dword_A8B230[378].vfptr2 = dword_A8B230[378].vfptr; /*0x539859*/
+  dword_A8B230[378].ptr_8 = dword_A8B230[378].ptr_0; /*0x539859*/
   if ( g_ChronoEffectState ) /*0x539867*/
     (**(void (__thiscall ***)(int, int))g_ChronoEffectState)(g_ChronoEffectState, 1); /*0x53986d*/
   ChronoScreenEffect_Duration = 0; /*0x539875*/
@@ -435,7 +435,7 @@ LABEL_14:
             goto LABEL_15; /*0x68c109*/
           v3 = v16; /*0x68c0b8*/
         }
-        if ( (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v14.vfptr + 8))(&v14, v3 + Capacity, 0) ) /*0x68c0df*/
+        if ( (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v14.ptr_0 + 8))(&v14, v3 + Capacity, 0) ) /*0x68c0df*/
         {
 LABEL_12:
           v6 = v15++; /*0x68c0e6*/
@@ -545,7 +545,7 @@ char sub_55CF10()
         }
         if ( !dword_A8B23C ) /*0x55cfb2*/
           return (Ticks)->SendUnreachable(); /*0x55cfb2*/
-        result = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vfptr + 2))(dword_A8B23C); /*0x55cfb6*/
+        result = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->ptr_0 + 2))(dword_A8B23C); /*0x55cfb6*/
         if ( !result ) /*0x55cfbb*/
           return (Ticks)->SendUnreachable(); /*0x55cfbd*/
       }
@@ -569,7 +569,7 @@ int sub_5C98A0()
   for ( i = 0; result < nextArrayIndex; i = result ) /*0x5c98ba*/
   {
     int v3; // edi
-    v3 = *((unsigned int *)stru_A80220.vfptr3 + result); /*0x5c98ca*/
+    v3 = *((unsigned int *)stru_A80220.ptr_C + result); /*0x5c98ca*/
     if ( v3 && *(unsigned char *)(*(unsigned int *)(v3 + 52) + 422) != 1 && v3 != HouseClass_Observer ) /*0x5c98eb*/
     {
       size_t v4; // ebp

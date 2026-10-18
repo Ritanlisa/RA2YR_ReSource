@@ -2332,11 +2332,11 @@ HWND E4Recv_6966D0::sub_6966D0()
   bool v2; // bl
   v2 = this->lastLayer == 0; /*0x6966ec*/
   HWND DlgItem; // eax
-  DlgItem = GetDlgItem((HWND)this->vfptr, 1628); /*0x6966ef*/
+  DlgItem = GetDlgItem((HWND)this->ptr_0, 1628); /*0x6966ef*/
   if ( DlgItem ) /*0x6966f9*/
     SendMessageA(DlgItem, 0xF1u, v2, 0); /*0x69670c*/
   int result; // eax
-  result = (int)GetDlgItem((HWND)this->vfptr, 1627); /*0x696716*/
+  result = (int)GetDlgItem((HWND)this->ptr_0, 1627); /*0x696716*/
   if ( result ) /*0x69671a*/
     return SendMessageA((HWND)result, 0xF1u, !v2, 0); /*0x69672c*/
   return result; /*0x69672e*/
@@ -2814,7 +2814,7 @@ int E4Recv_69F210::sub_69F210(int a2)
     this->M32 = result; /*0x69f21e*/
     this->M28 = a2; /*0x69f221*/
     unsigned int *v3; // ecx
-    v3 = this->vfptr + 9); /*0x69f229*/
+    v3 = this->ptr_0 + 9); /*0x69f229*/
     *v3 = dword_A8ED84; /*0x69f232*/
     int v4; // [esp+4h] [ebp-Ch]
     v3[1] = v4; /*0x69f23a*/

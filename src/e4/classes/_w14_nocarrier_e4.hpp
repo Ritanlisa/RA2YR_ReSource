@@ -678,7 +678,7 @@ public:
     AbstractClass * q304;  // 0x304
     char q308[4];  /* unsigned int */  // 0x308
     // --- W16G3 supply (BEGIN) ---
-    void* vfptr;  // 0x0 (W16G3: addr5A v7->vfptr/v7[1].vfptr raw usages)
+    void* ptr_0;  // 0x0 (W16G3: addr5A v7->ptr_0/v7[1].ptr_0 raw usages)
     // --- W16G3 supply (END) ---
 
 };

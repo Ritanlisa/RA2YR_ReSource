@@ -230,7 +230,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
                 goto LABEL_16; /*0x583bb6*/
               v6 = v19; /*0x583b6b*/
             }
-            if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v18.vfptr + 2))( /*0x583b94*/
+            if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v18.ptr_0 + 2))( /*0x583b94*/
                    &v18,
                    v20 + Capacity,
                    0) )
@@ -938,7 +938,7 @@ ScenarioClass * * ComputeMapCameraBounds()
           *(int *)v19->numberStartingPoints + v20 * 4) = v23; /*0x58ba80*/
           ++v18; /*0x58ba89*/
           ++v22; /*0x58ba8a*/
-          *(int *)((char *)&dword_A8B230->vfptr1 + v20 * 4) = v24; /*0x58ba8d*/
+          *(int *)((char *)&dword_A8B230->ptr_4 + v20 * 4) = v24; /*0x58ba8d*/
           v20 += 2; /*0x58ba9b*/
           *(unsigned int *)((char *)dword_A8B230 + v22 * 4 - 4) = dword_ABE304[v22 - 1137]; /*0x58ba9e*/
           v19 = dword_A8B230; /*0x58baa2*/
@@ -946,9 +946,9 @@ ScenarioClass * * ComputeMapCameraBounds()
             break; /*0x58baae*/
         }
       }
-      v19[122].vfptr1 = dword_ABDFD4; /*0x58bab5*/
-      dword_A8B230[122].vfptr2 = dword_ABDFD0; /*0x58bac7*/
-      dword_A8B230[122].vfptr3 = dword_ABEC90; /*0x58bad8*/
+      v19[122].ptr_4 = dword_ABDFD4; /*0x58bab5*/
+      dword_A8B230[122].ptr_8 = dword_ABDFD0; /*0x58bac7*/
+      dword_A8B230[122].ptr_C = dword_ABEC90; /*0x58bad8*/
       result = (void *)dword_ABECD0; /*0x58bae4*/
       dword_A8B230[122].uniqueId = dword_ABECD0; /*0x58bae9*/
     }
@@ -2048,7 +2048,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
       *aP1 = 0; /*0x58c57e*/
       return aP1; /*0x58c584*/
     }
-    if ( (void *)*((unsigned int *)v2 + 14) == this->vfptr2 && (*v2 || v2[1]) ) /*0x58c53a*/
+    if ( (void *)*((unsigned int *)v2 + 14) == this->ptr_8 && (*v2 || v2[1]) ) /*0x58c53a*/
     {
       if ( *((unsigned char *)v2 + 68) ) /*0x58c541*/
       {

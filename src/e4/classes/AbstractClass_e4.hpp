@@ -18,7 +18,7 @@ struct BlitTransXlat;  // fix_fwd_type_supply
 struct RLEBlitter;  // fix_fwd_type_supply
 #ifndef GAMEMD_TREE_UNIVERSE  // G57w8: tree TUs carry render/display.hpp GScreenClass (C2011 collision; e4 TUs keep this flat copy)
 struct GScreenClass {
-    void* vfptr;  // 0x0
+    void* ptr_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);
@@ -105,10 +105,10 @@ struct GScreenClass {
 #define GAMEMD_USING_AbstractClass 1
 #endif
 struct AbstractClass {
-    unsigned int vfptr;  // 0x0
-    unsigned int vfptr1;  // 0x4
-    unsigned int vfptr2;  // 0x8
-    unsigned int vfptr3;  // 0xC
+    unsigned int ptr_0;  // 0x0
+    unsigned int ptr_4;  // 0x4
+    unsigned int ptr_8;  // 0x8
+    unsigned int ptr_C;  // 0xC
     ObjectClass* uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

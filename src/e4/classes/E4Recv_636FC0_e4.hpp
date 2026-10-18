@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_636FC0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M144;  // 0x90
 // --- flat members (END) ---
     unsigned int _GetMaskId_irtualProcessor_details_Concurrency__QBEIXZ();  // 0x636FC0

@@ -285,7 +285,7 @@ struct DialogControl_OwnerDraw {
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct DynamicVectorClass {
-    void* vfptr;  // 0x0
+    void* ptr_0;  // 0x0
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC
@@ -309,7 +309,7 @@ struct FractalNoise {
 #endif  // GAMEMD_TREE_UNIVERSE (FractalNoise)
 
 struct Gap2Recv_402F60 {
-    void* vfptr;
+    void* ptr_0;
     unsigned int u32_28;  // 0x28
     unsigned int q040;  // 0x40
     unsigned int u32_5C;  // 0x5C
@@ -494,10 +494,10 @@ struct MSShapeAnim {
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
-    void* vfptr;  // 0x0
-    unsigned int vfptr1;  // 0x4
-    unsigned int vfptr2;  // 0x8
-    unsigned int vfptr3;  // 0xC
+    void* ptr_0;  // 0x0
+    unsigned int ptr_4;  // 0x4
+    unsigned int ptr_8;  // 0x8
+    unsigned int ptr_C;  // 0xC
     ObjectClass* uniqueId;  // 0x10
     void* abstractFlags;  // 0x14
     ObjectClass* nextArrayIndex;  // 0x18
@@ -752,7 +752,7 @@ struct State {
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct VectorClass {
-    void* vfptr;  // 0x0
+    void* ptr_0;  // 0x0
     void* Items;  // 0x4
     AbstractClass* Capacity;  // 0x8
     char IsInitialized[1];  // 0xC
@@ -802,7 +802,7 @@ struct WorldDominationTour {
 #ifndef GAMEMD_E4_OWNS_UNDERSCORE  // G42.36: struct _ dedup pair (first include wins)
 #define GAMEMD_TREE_OWNS_UNDERSCORE 1
 struct _ {
-    void* vfptr;
+    void* ptr_0;
     unsigned int u32_C;  // 0xC
     unsigned char q084;  // 0x84
     unsigned char q774;  // 0x774

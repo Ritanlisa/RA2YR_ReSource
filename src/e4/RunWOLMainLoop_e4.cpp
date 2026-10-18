@@ -48,10 +48,10 @@ Coord * * sub_77E110()
   if ( ppv ) /*0x77e117*/
   {
     (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 124))(ppv, *(unsigned int *)g_WOL_BuddyList.__pad_C); /*0x77e123*/
-    (*(void (**)(LPVOID, int, void *))(*(unsigned int *)ppv + 104))(ppv, dword_B779F0, stru_B7622C.vfptr2); /*0x77e13c*/
+    (*(void (**)(LPVOID, int, void *))(*(unsigned int *)ppv + 104))(ppv, dword_B779F0, stru_B7622C.ptr_8); /*0x77e13c*/
   }
   Dialog::RefreshDialogsGame(0); /*0x77e141*/
-  if ( stru_B76900.vfptr3 ) /*0x77e153*/
+  if ( stru_B76900.ptr_C ) /*0x77e153*/
   {
     if ( !Theme::IsPlaying((Theme *)&MEMORY[0xA83D10]) ) /*0x77e15a*/
       goto LABEL_5; /*0x77e15a*/
@@ -105,7 +105,7 @@ int sub_785EA0()
       while ( v3 ) /*0x785edb*/
       {
         v4 = v3; /*0x785edd*/
-        v3 = (ObjectClass *)v3->vfptr2; /*0x785edf*/
+        v3 = (ObjectClass *)v3->ptr_8; /*0x785edf*/
         DeleteAndZero(v4); /*0x785ee8*/
         __3_YAXPAX_Z(v4); /*0x785eee*/
       }

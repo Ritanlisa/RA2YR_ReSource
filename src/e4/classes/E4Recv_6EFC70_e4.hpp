@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_6EFC70 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M84;  // 0x54
 // --- flat members (END) ---
     AbstractClass * * ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3);  // 0x6EFC70

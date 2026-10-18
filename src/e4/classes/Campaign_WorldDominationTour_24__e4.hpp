@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct Campaign_WorldDominationTour_24_ {
-    void* vfptr;
+    void* ptr_0;
     unsigned int* ddtor(void *a1);
 };
 

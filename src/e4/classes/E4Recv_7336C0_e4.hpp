@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_7336C0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int  DrawUnitExperiencePopup(char a1);  // 0x7336C0
 };
 } // namespace gamemd

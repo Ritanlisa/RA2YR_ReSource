@@ -200,9 +200,9 @@ signed int BuildingLightClass::UpdateOscillation()
   int v30; // [esp+2Ch] [ebp-8h]
   int v31; // [esp+30h] [ebp-4h]
 
-  v26 = (*(int (**)(void *))(*(unsigned int *)this->vfptr3 + 456))(this->vfptr3); /*0x513d3a*/
+  v26 = (*(int (**)(void *))(*(unsigned int *)this->ptr_C + 456))(this->ptr_C); /*0x513d3a*/
   v28 = v26; /*0x513d3e*/
-  vtable3 = this->vfptr3; /*0x513d42*/
+  vtable3 = this->ptr_C; /*0x513d42*/
   if ( vtable3[376] != -1 ) /*0x513d4c*/
   {
     v3 = vtable3 + 39; /*0x513d52*/
@@ -210,7 +210,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v30 = v3[1]; /*0x513d65*/
     v31 = v3[2]; /*0x513d71*/
     GroundHeight = Cell::GetGroundHeight(&v29); /*0x513d7a*/
-    v5 = this->vfptr3; /*0x513d7c*/
+    v5 = this->ptr_C; /*0x513d7c*/
     v6 = v5 + 39; /*0x513d8b*/
     v7 = v5[376] & 7; /*0x513d8d*/
     v8 = *v6; /*0x513d90*/
@@ -227,7 +227,7 @@ signed int BuildingLightClass::UpdateOscillation()
   v13 = (double)v26 + *&this->q0A0; /*0x513de4*/
   LOWORD(v14) = Math::RoundToInt(v13); /*0x513de7*/
   v27 = v14; /*0x513dec*/
-  v15 = (*(int (**)(char *))(*((unsigned int *)this->vfptr3 + 1) + 16))((char *)this->vfptr3 + 4); /*0x513df9*/
+  v15 = (*(int (**)(char *))(*((unsigned int *)this->ptr_C + 1) + 16))((char *)this->ptr_C + 4); /*0x513df9*/
   if ( (v15 & 1) != 0 ) /*0x513dfe*/
     v16 = 1.0; /*0x513e00*/
   else
@@ -243,11 +243,11 @@ signed int BuildingLightClass::UpdateOscillation()
     this->customSound = 0; /*0x513e6b*/
     v20 = 0; /*0x513e6e*/
   }
-  v21 = this->vfptr3; /*0x513e70*/
+  v21 = this->ptr_C; /*0x513e70*/
   v22 = v21[116]; /*0x513e74*/
   v21[116] = 0; /*0x513e77*/
-  (*(void (**)(void *, int))(*(unsigned int *)this->vfptr3 + 460))(this->vfptr3, v20); /*0x513e7f*/
-  result = (signed int)this->vfptr3; /*0x513e85*/
+  (*(void (**)(void *, int))(*(unsigned int *)this->ptr_C + 460))(this->ptr_C, v20); /*0x513e7f*/
+  result = (signed int)this->ptr_C; /*0x513e85*/
   *(unsigned char *)(result + 116) = v22; /*0x513e8c*/
   v24 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513e8f*/
   if ( v28 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484) ) /*0x513e9b*/

@@ -1181,11 +1181,11 @@ int TacticalClass::CheckUnitOverlap(int a2, int a3, AbstractClass * aP3, int a5)
   v8 = 0; /*0x6d9b8a*/
   v20 = a3 + a5 + v6; /*0x6d9b8c*/
   v16 = 0; /*0x6d9b98*/
-  if ( stru_A8EB00.vfptr[20] <= 0 ) /*0x6d9b9c*/
+  if ( stru_A8EB00.ptr_0[20] <= 0 ) /*0x6d9b9c*/
     return 0; /*0x6d9cc6*/
   while ( 1 ) /*0x6d9ba8*/
   {
-    v9 = *(unsigned char **)(stru_A8EB00.vfptr[17] + 4 * v8); /*0x6d9ba8*/
+    v9 = *(unsigned char **)(stru_A8EB00.ptr_0[17] + 4 * v8); /*0x6d9ba8*/
     if ( !v9[144] || !v9[128] || !v9[116] ) /*0x6d9bc7*/
       goto LABEL_10; /*0x6d9bcc*/
     v10 = (unsigned int *)(*(int (**)(unsigned char *, unsigned char *))(*(unsigned int *)v9 + 172))(v9, v21); /*0x6d9bd9*/
@@ -1199,7 +1199,7 @@ int TacticalClass::CheckUnitOverlap(int a2, int a3, AbstractClass * aP3, int a5)
     v8 = v16; /*0x6d9ca6*/
     LABEL_10:
     v16 = ++v8; /*0x6d9cb3*/
-    if ( v8 >= stru_A8EB00.vfptr[20] ) /*0x6d9cb7*/
+    if ( v8 >= stru_A8EB00.ptr_0[20] ) /*0x6d9cb7*/
       return 0; /*0x6d9cb7*/
   }
 }
@@ -1329,7 +1329,7 @@ void* TacticalClass::DrawPlacementCircles()
   float v16; // ebx
   AbstractClass *v17; // ecx
   __int16 v18; // si
-  int vfptr; // eax
+  int ptr_0; // eax
   unsigned int *v20; // eax
   double v21; // st6
   __int16 v22; // ax
@@ -1384,7 +1384,7 @@ void* TacticalClass::DrawPlacementCircles()
   {
     v4 = (TechnoClass *)dword_88098C; /*0x6dbe81*/
     v51 = dword_88098C; /*0x6dbe89*/
-    if ( dword_88098C && (*(int (**)(AbstractClass *))(dword_88098C->vfptr + 44))(dword_88098C) == 6 ) /*0x6dbe9d*/
+    if ( dword_88098C && (*(int (**)(AbstractClass *))(dword_88098C->ptr_0 + 44))(dword_88098C) == 6 ) /*0x6dbe9d*/
     {
       if ( BuildingClass::GetPowerFrame(v4) > 0 ) /*0x6dbeac*/
       {
@@ -1435,14 +1435,14 @@ void* TacticalClass::DrawPlacementCircles()
             v17 = *(AbstractClass **)(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 108) + 4 * v13); /*0x6dbfdc*/
             if ( v17 ) /*0x6dbfe1*/
             {
-              if ( LOBYTE(v17[4].vfptr) ) /*0x6dbfe7*/
+              if ( LOBYTE(v17[4].ptr_0) ) /*0x6dbfe7*/
               {
                 if ( v17 != v51 && v17[36].uniqueId == v51[36].uniqueId ) /*0x6dc00f*/
                 {
                   v18 = dword_88095C; /*0x6dc015*/
-                  vfptr = v17->vfptr; /*0x6dc01b*/
+                  ptr_0 = v17->ptr_0; /*0x6dc01b*/
                   v55 = *(unsigned int *)&dword_88095C; /*0x6dc021*/
-                  v20 = (unsigned int *)(*(int (**)(AbstractClass *, int *))(vfptr + 72))(v17, v57); /*0x6dc026*/
+                  v20 = (unsigned int *)(*(int (**)(AbstractClass *, int *))(ptr_0 + 72))(v17, v57); /*0x6dc026*/
                   v54[0] = *v20 / 256; /*0x6dc03c*/
                   v54[1] = v20[1] / 256; /*0x6dc050*/
                   LODWORD(v52) = (__int16)((((v55) >> 16) & 0xFFFF) - v54[1]); /*0x6dc06b*/
@@ -1466,10 +1466,10 @@ void* TacticalClass::DrawPlacementCircles()
           do /*0x6dc1a1*/
           {
             v24 = *(AbstractClass **)(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 108) + 4 * v23); /*0x6dc0c8*/
-            if ( v24 && LOBYTE(v24[4].vfptr) && v24 != v51 && v24[36].uniqueId == v51[36].uniqueId ) /*0x6dc0fb*/
+            if ( v24 && LOBYTE(v24[4].ptr_0) && v24 != v51 && v24[36].uniqueId == v51[36].uniqueId ) /*0x6dc0fb*/
             {
               v25 = dword_88095C; /*0x6dc101*/
-              v26 = v24->vfptr; /*0x6dc107*/
+              v26 = v24->ptr_0; /*0x6dc107*/
               v55 = *(unsigned int *)&dword_88095C; /*0x6dc10d*/
               v27 = (unsigned int *)(*(int (**)(AbstractClass *, int *))(v26 + 72))(v24, v57); /*0x6dc114*/
               v54[0] = *v27 / 256; /*0x6dc12a*/
@@ -1479,7 +1479,7 @@ void* TacticalClass::DrawPlacementCircles()
               LODWORD(v52) = (__int16)(v25 - v54[0]); /*0x6dc161*/
               Math::Sqrt((double)SLODWORD(v52) * (double)SLODWORD(v52) + v28 * v28); /*0x6dc17a*/
               if ( (__int16)Math::RoundToInt(v11) == v14 ) /*0x6dc18c*/
-                (*(void (**)(AbstractClass *, unsigned int))(v24->vfptr + 304))(v24, 0); /*0x6dc194*/
+                (*(void (**)(AbstractClass *, unsigned int))(v24->ptr_0 + 304))(v24, 0); /*0x6dc194*/
             }
             ++v23; /*0x6dc19e*/
           }
@@ -1526,7 +1526,7 @@ void* TacticalClass::DrawPlacementCircles()
     }
     dword_842954 = v35; /*0x6dc286*/
 LABEL_44:
-    v37 = (unsigned __int16 *)(*(&dword_A8022C->vfptr /*0x6dc28c*/
+    v37 = (unsigned __int16 *)(*(&dword_A8022C->ptr_0 /*0x6dc28c*/
                                + *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48))
                              + 22265);
     LOWORD(v50.Color_field_00) = *v37; /*0x6dc2a7*/
@@ -1595,10 +1595,10 @@ unsigned int * TacticalClass::CollectSelectedIDs()
   int uniqueId; // edx
   const char *v6; // edi
   int v7; // ebp
-  int vfptr2; // ecx
+  int ptr_8; // ecx
   int abstractFlags; // eax
   int v10; // eax
-  int vfptr1; // edx
+  int ptr_4; // edx
   const char *v12; // ebp
   int v13; // edi
   int v14; // ecx
@@ -1649,19 +1649,19 @@ unsigned int * TacticalClass::CollectSelectedIDs()
     if ( uniqueId <= 0 ) /*0x732d87*/
     {
 LABEL_12:
-      vfptr2 = v2->vfptr2; /*0x732de8*/
-      if ( uniqueId < vfptr2 /*0x732e0a*/
-        || (BYTE1(v2->vfptr3) || !vfptr2)
+      ptr_8 = v2->ptr_8; /*0x732de8*/
+      if ( uniqueId < ptr_8 /*0x732e0a*/
+        || (BYTE1(v2->ptr_C) || !ptr_8)
         && (abstractFlags = v2->abstractFlags, abstractFlags > 0)
-        && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->vfptr + 8))(
+        && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->ptr_0 + 8))(
              v2,
-             vfptr2 + abstractFlags,
+             ptr_8 + abstractFlags,
              0) )
       {
         v10 = v2->uniqueId; /*0x732e11*/
-        vfptr1 = v2->vfptr1; /*0x732e14*/
+        ptr_4 = v2->ptr_4; /*0x732e14*/
         v2->uniqueId = v10 + 1; /*0x732e1a*/
-        *(unsigned int *)(vfptr1 + 4 * v10) = v6; /*0x732e1d*/
+        *(unsigned int *)(ptr_4 + 4 * v10) = v6; /*0x732e1d*/
       }
       if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)v3 + 132))(v3) + 1028) ) /*0x732e2a*/
       {
@@ -1670,21 +1670,21 @@ LABEL_12:
         if ( v2->uniqueId <= 0 ) /*0x732e52*/
         {
 LABEL_26:
-          v14 = v2->vfptr2; /*0x732eae*/
+          v14 = v2->ptr_8; /*0x732eae*/
           if ( v2->uniqueId < v14 /*0x732ed3*/
-            || (BYTE1(v2->vfptr3) || !v14)
+            || (BYTE1(v2->ptr_C) || !v14)
             && (v15 = v2->abstractFlags, v15 > 0)
-            && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->vfptr + 8))(v2, v14 + v15, 0) )
+            && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->ptr_0 + 8))(v2, v14 + v15, 0) )
           {
             v16 = v2->uniqueId; /*0x732eda*/
-            v17 = v2->vfptr1; /*0x732edd*/
+            v17 = v2->ptr_4; /*0x732edd*/
             v2->uniqueId = v16 + 1; /*0x732ee3*/
             *(unsigned int *)(v17 + 4 * v16) = v12; /*0x732ee6*/
           }
         }
         else
         {
-          v28 = (const char **)v2->vfptr1; /*0x732e57*/
+          v28 = (const char **)v2->ptr_4; /*0x732e57*/
           while ( strcmp(v12, *v28) ) /*0x732e8e*/
           {
             ++v13; /*0x732e97*/
@@ -1707,7 +1707,7 @@ LABEL_25:
         v19 = 0; /*0x732f1d*/
         if ( v2->uniqueId <= 0 ) /*0x732f21*/
           goto LABEL_40; /*0x732f21*/
-        v29 = (const char **)v2->vfptr1; /*0x732f26*/
+        v29 = (const char **)v2->ptr_4; /*0x732f26*/
         while ( strcmp(v18, *v29) ) /*0x732f5d*/
         {
           ++v19; /*0x732f66*/
@@ -1718,14 +1718,14 @@ LABEL_25:
         if ( v19 == -1 ) /*0x732f77*/
         {
 LABEL_40:
-          v20 = v2->vfptr2; /*0x732f79*/
+          v20 = v2->ptr_8; /*0x732f79*/
           if ( v2->uniqueId < v20 /*0x732f9e*/
-            || (BYTE1(v2->vfptr3) || !v20)
+            || (BYTE1(v2->ptr_C) || !v20)
             && (v21 = v2->abstractFlags, v21 > 0)
-            && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->vfptr + 8))(v2, v20 + v21, 0) )
+            && (*(unsigned __int8 (**)(TacticalClass *, int, unsigned int))(v2->ptr_0 + 8))(v2, v20 + v21, 0) )
           {
             v22 = v2->uniqueId; /*0x732fa5*/
-            v23 = v2->vfptr1; /*0x732fa8*/
+            v23 = v2->ptr_4; /*0x732fa8*/
             v2->uniqueId = v22 + 1; /*0x732fae*/
             *(unsigned int *)(v23 + 4 * v22) = v18; /*0x732fb1*/
           }
@@ -1734,7 +1734,7 @@ LABEL_40:
     }
     else
     {
-      v27 = (const char **)v2->vfptr1; /*0x732d8c*/
+      v27 = (const char **)v2->ptr_4; /*0x732d8c*/
       while ( strcmp(v6, *v27) ) /*0x732dc3*/
       {
         ++v7; /*0x732dc9*/

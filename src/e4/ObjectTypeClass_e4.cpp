@@ -315,7 +315,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_ObjectTypeClass_4) */  /*0x5f73df*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_ObjectTypeClass_4) */  /*0x5f73e6*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_ObjectTypeClass_4) */  /*0x5f73ed*/
-  return &this->vfptr; /*0x5f73f6*/
+  return &this->ptr_0; /*0x5f73f6*/
 
 }
 } // namespace gamemd
@@ -1532,9 +1532,9 @@ unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 
   int v1 = 2 * dword_889F58; // esi /*0x41cbfc*/
   *(unsigned int *)a1->ptr_0 = 256; /*0x41cc07*/
-  *(unsigned int *)&a1->vfptr[4] = 256; /*0x41cc09*/
-  *(unsigned int *)&a1->vfptr[8] = v1; /*0x41cc0c*/
-  return a1->vfptr; /*0x41cc0f*/
+  *(unsigned int *)&a1->ptr_0[4] = 256; /*0x41cc09*/
+  *(unsigned int *)&a1->ptr_0[8] = v1; /*0x41cc0c*/
+  return a1->ptr_0; /*0x41cc0f*/
 }
 } // namespace gamemd
 // 0x41CF80
@@ -1544,7 +1544,7 @@ unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
   a0->ptr_0 = (void *)*aP1; /*0x41cf8d*/
   a0->ptr_1 = aP1->vtable2; /*0x41cf92*/
   a0->ptr_2 = aP1->vtable3; /*0x41cf99*/
-  return &a0->vfptr; /*0x41cf95*/
+  return &a0->ptr_0; /*0x41cf95*/
 }
 } // namespace gamemd
 // 0x474690
@@ -1786,14 +1786,14 @@ namespace gamemd {
 void ObjectTypeClass::ReleaseWaveAndString(void *a1)
 {
 
-  void *vtable0 = a1->vfptr; // edi /*0x5f61a4*/
-  if ( a1->vfptr ) /*0x5f61a4*/
+  void *vtable0 = a1->ptr_0; // edi /*0x5f61a4*/
+  if ( a1->ptr_0 ) /*0x5f61a4*/
   {
-    WaveClass::Destroy((WaveClass *)a1->vfptr); /*0x5f61ac*/
+    WaveClass::Destroy((WaveClass *)a1->ptr_0); /*0x5f61ac*/
     operator delete((vtable0)); /*0x5f61b2*/
   }
   String *vtable1; // edi
-  vtable1 = (String *)a1->vfptr1; /*0x5f61ba*/
+  vtable1 = (String *)a1->ptr_4; /*0x5f61ba*/
   a1->ptr_0 = 0; /*0x5f61bd*/
   if ( vtable1 ) /*0x5f61c5*/
   {
@@ -1810,7 +1810,7 @@ unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
   a1->ptr_0 = (void *)10; /*0x5f75cd*/
   a1->ptr_1 = (void *)10; /*0x5f75d3*/
   a1->ptr_2 = (void *)10; /*0x5f75d6*/
-  return &a1->vfptr; /*0x5f75d9*/
+  return &a1->ptr_0; /*0x5f75d9*/
 }
 } // namespace gamemd
 // 0x5F8080
@@ -1938,7 +1938,7 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A30(int a2)
 {
 
-  this->vfptr = (void *)a2; /*0x717a34*/
+  this->ptr_0 = (void *)a2; /*0x717a34*/
   return a2; /*0x717a36*/
 
 }

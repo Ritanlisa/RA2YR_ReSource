@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_7531A0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int EVA_LoadINI();  // 0x7531A0
 };
 } // namespace gamemd

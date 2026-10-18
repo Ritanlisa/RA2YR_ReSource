@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_587C50 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     char MapCheck_Diagnostic();  // 0x587C50
 };
 } // namespace gamemd

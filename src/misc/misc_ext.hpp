@@ -2554,9 +2554,9 @@ public:
     virtual LONG __stdcall Release();  // 0x4A0540 (x13:signals; virt=slot)
     virtual ~ConnectionPointClass() = default;  // 0x4A05D0
     virtual int __stdcall Advise(int p0, int p1);  // 0x4A0610 (x13:signals; virt=slot)
-    virtual void vt_slot_5();  // X72: slot 5 (0x4A0630) unresolved name — placeholder = Unadvise (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_6();  // X72: slot 6 (0x4A0700) unresolved name — placeholder = EnumConnections (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_7();  // X72: slot 7 (0x4A0760) unresolved name — placeholder
+    virtual int Unadvise(int a1, int a2, int a3);  // X75: slot 5 (0x4A0630) = ConnectionPointClass::Unadvise (sibling promoted)
+    virtual int EnumConnections(int a1, int a2);  // X75: slot 6 (0x4A0700) = ConnectionPointClass::EnumConnections (sibling promoted)
+    virtual int GetConnectionInterface(int* p0, int p1);  // X75: slot 7 (0x4A0760) = ConnectionPointClass::GetConnectionInterface
     virtual int __stdcall ddtor(int* p0, int* p1);  // 0x4A05D0 (x13:signals; virt=slot)  // X72 residual: RVA not a distinct binary slot
 
 
@@ -2570,8 +2570,6 @@ public:
     uint8_t ConnectionPointClass_field_0x20[4];
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
-    int Unadvise(int a1, int a2, int a3);  // 0x4a0630
-    int EnumConnections(int a1, int a2);  // 0x4a0700
     // === FUNCS-MOVE (END) ===
 };
 // 1 methods in IDA
@@ -3571,7 +3569,7 @@ public:
 class MSFont
 {
 public:
-    virtual void vt_slot_0();  // X72: slot 0 (0x5D3450) unresolved name — placeholder = QueryInterface (non-virtual sibling in this header; not promoted)
+    virtual void* QueryInterface(int a1);  // X75: slot 0 (0x5D3450) = MSFont::QueryInterface (sibling promoted)
     virtual int __stdcall AddRef(uint8_t p0);  // 0x5D31D0 (x13:signals; virt=slot)
     virtual int Release(int16_t* p0);  // 0x5D3170 (x13:signals; virt=slot)
     virtual ~MSFont() = default;  // 0x5D3330
@@ -3587,7 +3585,6 @@ public:
     uint8_t MSFont_field_0x14[4];
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    void* QueryInterface(int a1);  // 0x5d3450 -- MSFont::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
 
     int q008;  // X10 supply (member_lookup)
@@ -6498,16 +6495,16 @@ int sub_7DC720(int a2);  // 0x7DC720 (真身 ThrowErrorCOM(a2,0,0) 硬抛 _com_e
 class WinModemClass
 {
 public:
-    virtual void* vt_slot_0(char);  // X72: slot 0 (0x775610) unresolved name — placeholder = QueryInterface (non-virtual sibling in this header; not promoted)
+    virtual void* QueryInterface(int a1);  // X75: slot 0 (0x775610) = WinModemClass::QueryInterface (sibling promoted)
     virtual int AddRef(const char *a2, DWORD a3, BYTE a4, BYTE a5, char a6);  // 0x774410 (x13:signals; virt=slot)
     virtual int Release(int p0);  // 0x7748A0 (x13:signals; virt=slot)
     virtual int __fastcall GetClassIdentifier();  // 0x7748B0 (x13:signals; virt=slot)
     virtual void Init(char p0);  // 0x774900 (x13:signals; virt=slot)
-    virtual void vt_slot_5();  // X72: slot 5 (0x774CD0) unresolved name — placeholder = LoadTypeData (non-virtual sibling in this header; not promoted)
-    virtual void vt_slot_6();  // X72: slot 6 (0x774F50) unresolved name — placeholder = SaveToINI (non-virtual sibling in this header; not promoted)
-    virtual int vt_slot_7(const char*, uint8_t, char*, int, int, int, int);  // X72: slot 7 (0x775110) unresolved name — placeholder = Dial (non-virtual sibling in this header; not promoted)
+    virtual int LoadTypeData(int a1, int a2, int a3, int a4);  // X75: slot 5 (0x774CD0) = WinModemClass::LoadTypeData (sibling promoted)
+    virtual int SaveToINI();  // X75: slot 6 (0x774F50) = WinModemClass::SaveToINI (sibling promoted)
+    virtual int Dial(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // X75: slot 7 (0x775110) = WinModemClass::Dial (sibling promoted)
     virtual ~WinModemClass() = default;  // 0x7754A0
-    virtual void vt_slot_9();  // X72: slot 9 (0x7754B0) unresolved name — placeholder = HangUp (non-virtual sibling in this header; not promoted)
+    virtual int HangUp(int a1);  // X75: slot 9 (0x7754B0) = WinModemClass::HangUp (sibling promoted)
     unsigned int * Construct(); // 0x774120 (G42 sig-sync: def)
 
     uint8_t WinModemClass_field_0x04[4];
@@ -6529,12 +6526,7 @@ public:
     bool ReadSerial();  // 0x774980 -- WinModemClass::ReadSerial
     int ReadBytes(int a1, int a2);  // 0x774b30 -- WinModemClass::ReadBytes
     int WriteSerial(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite);  // 0x774c70 -- WinModemClass::WriteSerial
-    int LoadTypeData(int a1, int a2, int a3, int a4);  // 0x774cd0 -- WinModemClass::LoadTypeData
-    int SaveToINI();  // 0x774f50 -- WinModemClass::SaveToINI
-    int Dial(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x775110 -- WinModemClass::Dial
-    int HangUp(int a1);  // 0x7754b0 -- WinModemClass::HangUp
     int LogCommErrors(int a1, int a2, int a3, int a4);  // 0x7754d0 -- WinModemClass::LogCommErrors
-    void* QueryInterface(int a1);  // 0x775610 -- WinModemClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
 
     unsigned int u32_17;  // G42.39 data supply

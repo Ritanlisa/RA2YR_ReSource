@@ -35,7 +35,7 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
   {
     if ( g_DSurface_Hidden ) /*0x6bb905*/
     {
-      (*(void (**)(ObjectClass *, int))g_DSurface_Hidden->vfptr)(g_DSurface_Hidden, 1); /*0x6bb90b*/
+      (*(void (**)(ObjectClass *, int))g_DSurface_Hidden->ptr_0)(g_DSurface_Hidden, 1); /*0x6bb90b*/
       g_DSurface_Hidden = 0; /*0x6bb90d*/
     }
     if ( DSurface_Alternate ) /*0x6bb91b*/

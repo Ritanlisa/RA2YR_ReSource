@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_79C8D0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     void QueueWOLAuthRequest();  // 0x79C8D0
 };
 } // namespace gamemd

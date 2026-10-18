@@ -7,7 +7,7 @@ namespace gamemd {
 struct MSAnim;  // fix_fwd_type_supply
 struct E4Recv_4F3460 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M16;  // 0x10
     unsigned int M44;  // 0x2C
     unsigned int M48;  // 0x30

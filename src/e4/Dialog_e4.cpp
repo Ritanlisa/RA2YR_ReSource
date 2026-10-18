@@ -3026,7 +3026,7 @@ int Dialog::FindByHandle(void *a1)
     if ( --v1 < 0 ) /*0x77595b*/
       return 0; /*0x77595b*/
   }
-  return *((unsigned int *)&stru_B72D28.vfptr + 2 * v1); /*0x77595f*/
+  return *((unsigned int *)&stru_B72D28.ptr_0 + 2 * v1); /*0x77595f*/
 }
 }
 // 0x775B10

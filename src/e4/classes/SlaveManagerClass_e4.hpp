@@ -7,9 +7,9 @@
 namespace gamemd {
 
 struct SlaveManagerClass {
-    unsigned int vfptr;  // 0x0
-    void * vfptr1;  // 0x4
-    void * vfptr2;  // 0x8
+    unsigned int ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14

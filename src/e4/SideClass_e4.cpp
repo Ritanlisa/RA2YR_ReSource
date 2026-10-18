@@ -192,11 +192,11 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
     {
       AbstractTypeClass::Init((int)v2, (int)&aP1); /*0x6a47ad*/
       v2->houseTypesCount = 0; /*0x6a47b2*/
-      v2[1].vfptr = 0; /*0x6a47b8*/
-      LOBYTE(v2[1].vfptr1) = 1; /*0x6a47be*/
-      BYTE1(v2[1].vfptr1) = 0; /*0x6a47c5*/
-      v2[1].vfptr3 = (void *)10; /*0x6a47cb*/
-      v2[1].vfptr2 = 0; /*0x6a47d1*/
+      v2[1].ptr_0 = 0; /*0x6a47b8*/
+      LOBYTE(v2[1].ptr_4) = 1; /*0x6a47be*/
+      BYTE1(v2[1].ptr_4) = 0; /*0x6a47c5*/
+      v2[1].ptr_C = (void *)10; /*0x6a47cb*/
+      v2[1].ptr_8 = 0; /*0x6a47d1*/
       /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_int) */  /*0x6a47d7*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47e1*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_SideClass_4) */  /*0x6a47e7*/

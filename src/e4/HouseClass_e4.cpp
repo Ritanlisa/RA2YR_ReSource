@@ -322,7 +322,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_HouseClass_StartingTechnoStruct) */  /*0x4f562b*/
   this->abstractFlags = 10; /*0x4f5631*/
   this->uniqueId = 0; /*0x4f5634*/
-  this->u32_184 = dword_A8B230[43].vfptr1; /*0x4f5648*/
+  this->u32_184 = dword_A8B230[43].ptr_4; /*0x4f5648*/
   this->u32_188 = 0; /*0x4f564e*/
   this->u32_18C = 1072693248; /*0x4f5654*/
   this->q190 = 0; /*0x4f565a*/
@@ -683,7 +683,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
       Destination[4] = 0; /*0x4f602e*/
       do /*0x4f6196*/
       {
-        v17 = *(&dword_A8022C->vfptr + v62); /*0x4f603b*/
+        v17 = *(&dword_A8022C->ptr_0 + v62); /*0x4f603b*/
         v18 = *(unsigned int *)(v17 + 22028); /*0x4f603e*/
         v19 = *(unsigned int *)(v17 + 22036); /*0x4f6044*/
         v20 = v17 + 22020; /*0x4f604a*/
@@ -698,7 +698,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
           v23[2 * v22] = (unsigned int)this; /*0x4f607f*/
           v23[2 * v22 + 1] = 0; /*0x4f6084*/
         }
-        v24 = *(&dword_A8022C->vfptr + v62); /*0x4f6097*/
+        v24 = *(&dword_A8022C->ptr_0 + v62); /*0x4f6097*/
         v25 = *(&this->u32_1583); /*0x4f609a*/
         if ( *(&this->u8_1585) < v25 /*0x4f60bc*/
           || (this->u32_5611 || !v25)
@@ -711,7 +711,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
           v28[2 * v27] = v24; /*0x4f60cf*/
           v28[2 * v27 + 1] = 0; /*0x4f60d4*/
         }
-        v29 = *(&dword_A8022C->vfptr + v62); /*0x4f60e1*/
+        v29 = *(&dword_A8022C->ptr_0 + v62); /*0x4f60e1*/
         v30 = *(unsigned int *)(v29 + 22052); /*0x4f60e4*/
         v31 = *(unsigned int *)(v29 + 22060); /*0x4f60ea*/
         v32 = v29 + 22044; /*0x4f60f0*/
@@ -727,7 +727,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
           v35[2 * v34] = (unsigned int)this; /*0x4f6129*/
           v35[2 * v34 + 1] = v36; /*0x4f612c*/
         }
-        v37 = *(&dword_A8022C->vfptr + v62); /*0x4f6145*/
+        v37 = *(&dword_A8022C->ptr_0 + v62); /*0x4f6145*/
         v38 = *(&this->u32_1589); /*0x4f6148*/
         if ( *(&this->u32_158B) < v38 /*0x4f6167*/
           || (this->u32_5629 || !v38)
@@ -749,13 +749,13 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   if ( dword_A80238 < dword_A80230 /*0x4f61d0*/
     || (byte_A80235 || !dword_A80230)
     && dword_A8023C > 0
-    && (*(unsigned __int8 (**)(HouseClass *, int, unsigned int))(dword_A80228.vfptr + 8))(
+    && (*(unsigned __int8 (**)(HouseClass *, int, unsigned int))(dword_A80228.ptr_0 + 8))(
          &dword_A80228,
          dword_A80230 + dword_A8023C,
          0) )
   {
     v43 = dword_A80238++; /*0x4f61dd*/
-    *(&dword_A8022C->vfptr + v43) = (int)this; /*0x4f61ec*/
+    *(&dword_A8022C->ptr_0 + v43) = (int)this; /*0x4f61ec*/
   }
   v63 = 0; /*0x4f61fc*/
   memset(&this->u8_15F9, 0, 0x10810u); /*0x4f6200*/
@@ -1169,16 +1169,16 @@ int HouseClass::CanDetect()
   result = *(unsigned int *)&g_RulesClass_Instance; /*0x501640*/
   v2 = *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5301); /*0x50164d*/
   if ( dword_A8B23C /*0x501662*/
-    && (result = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vfptr + 1))(dword_A8B23C), (unsigned char)result)
+    && (result = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->ptr_0 + 1))(dword_A8B23C), (unsigned char)result)
     || v2 )
   {
     result = (int)dword_A8B230; /*0x501668*/
-    if ( !(*((unsigned char *)&(dword_A8B230[127].vfptr1))) ) /*0x50166d*/
+    if ( !(*((unsigned char *)&(dword_A8B230[127].ptr_4))) ) /*0x50166d*/
     {
       nextArrayIndex = stru_A80220.nextArrayIndex; /*0x50167b*/
       for ( i = 0; i < nextArrayIndex; ++i ) /*0x501685*/
       {
-        v5 = *((unsigned int *)stru_A80220.vfptr3 + i); /*0x501695*/
+        v5 = *((unsigned int *)stru_A80220.ptr_C + i); /*0x501695*/
         if ( v5 ) /*0x50169a*/
         {
           (*((unsigned char *)&(result))) = *(unsigned char *)(v5 + 501); /*0x5016a0*/
@@ -1194,7 +1194,7 @@ int HouseClass::CanDetect()
               nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5016db*/
               for ( j = 0; j < stru_A80220.nextArrayIndex; ++j ) /*0x5016e5*/
               {
-                result = *((unsigned int *)stru_A80220.vfptr3 + j); /*0x5016ec*/
+                result = *((unsigned int *)stru_A80220.ptr_C + j); /*0x5016ec*/
                 if ( result && !result->MaximumBaseDefenseValue ) /*0x5016f3*/
                 {
                   v7 = result->DeactivateSound; /*0x501705*/
@@ -1716,10 +1716,10 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
         *(float *)&v110 = COERCE_FLOAT((*(int (**)(int))(*(unsigned int *)v23 + 732))(v23)); /*0x5071a2*/
         if ( v30 + LODWORD(v109) + v110 > 0 ) /*0x5071ac*/
         {
-          v31 = LODWORD(v109) + *(&v119.vfptr + v29); /*0x5071bf*/
+          v31 = LODWORD(v109) + *(&v119.ptr_0 + v29); /*0x5071bf*/
           v32 = (int)*(&Base + v29); /*0x5071c1*/
           *(unsigned int *)&v129.__pad_0[4 * v29] += v30; /*0x5071c5*/
-          *(&v119.vfptr + v29) = v31; /*0x5071cc*/
+          *(&v119.ptr_0 + v29) = v31; /*0x5071cc*/
           v33 = Block; /*0x5071d8*/
           *(&Base + v29) = (void *)(v110 + v32); /*0x5071de*/
           MapClass::CalcVisibleCellRange(v23, v30, (int)v33, &_EBP->q5754); /*0x5071ec*/
@@ -1737,7 +1737,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
   p_DynamicVector_field_0x10 = &v149.Count; /*0x50723c*/
   do /*0x50727b*/
   {
-    v37 = (char *)*(&Base + v35) + *(&v119.vfptr + v35) + *(unsigned int *)&v129.__pad_0[4 * v35]; /*0x507254*/
+    v37 = (char *)*(&Base + v35) + *(&v119.ptr_0 + v35) + *(unsigned int *)&v129.__pad_0[4 * v35]; /*0x507254*/
     v38 = (int)v37 < v106; /*0x50725a*/
     v148[v35] = v37; /*0x50725c*/
     if ( v38 && (!v8 || *p_DynamicVector_field_0x10 > 0) ) /*0x50726c*/
@@ -1749,7 +1749,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
     p_DynamicVector_field_0x10 += 6; /*0x507275*/
   }
   while ( v35 < 4 ); /*0x50727b*/
-  v39 = *(&v119.vfptr + v34); /*0x50727d*/
+  v39 = *(&v119.ptr_0 + v34); /*0x50727d*/
   v40 = *(unsigned int *)&v129.__pad_0[4 * v34]; /*0x507281*/
   v124 = v34; /*0x507288*/
   v41 = *((float *)&Base + v34); /*0x50728c*/
@@ -1776,7 +1776,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
           goto LABEL_34; /*0x50730d*/
         if ( !v126.IsAllocated[0] && Capacity || v128 <= 0 ) /*0x507324*/
           goto LABEL_36; /*0x507324*/
-        if ( (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v126.vfptr + 8))(&v126, v128 + Capacity, 0) ) /*0x507333*/
+        if ( (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v126.ptr_0 + 8))(&v126, v128 + Capacity, 0) ) /*0x507333*/
         {
 LABEL_34:
           v47 = v127++; /*0x507345*/
@@ -2062,7 +2062,7 @@ LABEL_107:
       if ( v120 < v119.Capacity /*0x50796c*/
         || (v119.IsAllocated[0] || !v119.Capacity)
         && v121 > 0
-        && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v119.vfptr + 8))(
+        && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v119.ptr_0 + 8))(
              &v119,
              v121 + v119.Capacity,
              0) )
@@ -2411,7 +2411,7 @@ LABEL_30:
       return result; /*0x508f4f*/
     }
 LABEL_6:
-    if ( LOBYTE(dword_A8B230[374].vfptr3) ) /*0x508e3c*/
+    if ( LOBYTE(dword_A8B230[374].ptr_C) ) /*0x508e3c*/
       goto LABEL_29; /*0x508e3c*/
     powerOutput = this->powerOutput; /*0x508e4a*/
     powerDrain = this->powerDrain; /*0x508e50*/
@@ -2989,7 +2989,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
           v27 = (*(int (__thiscall **)(int))(*(unsigned int *)v22 + 172))(v22); /*0x5d73e5*/
           v26 = a1; /*0x5d73eb*/
           *a1 -= v27; /*0x5d73f3*/
-          if ( ((int)dword_A8B230[0].vfptr & 0x200) != 0 ) /*0x5d7400*/
+          if ( ((int)dword_A8B230[0].ptr_0 & 0x200) != 0 ) /*0x5d7400*/
             Timer::SetFlag((Timer *)(v24 + 84), 1); /*0x5d740a*/
           if ( (uint8_t)((House *)((House *)aP0))->IsCurrentPlayer() ) /*0x5d7411*/
             v24->vt_slot_496(5); /*0x5d7420*/
@@ -3055,7 +3055,7 @@ int HouseClass::InitAlliances()
   nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5d74a1*/
   if ( stru_A80220.nextArrayIndex <= 0 ) /*0x5d74a9*/
     return 1; /*0x5d754a*/
-  vtable3 = stru_A80220.vfptr3; /*0x5d74af*/
+  vtable3 = stru_A80220.ptr_C; /*0x5d74af*/
   v3 = 1; /*0x5d74b8*/
   v4 = 0; /*0x5d74bd*/
   v9 = 1; /*0x5d74bf*/
@@ -3074,7 +3074,7 @@ int HouseClass::InitAlliances()
           {
             HouseClass::HandleAlliance(v5, (int)v7, 0); /*0x5d7510*/
             HouseClass::HandleAlliance(v7, (int)v5, 0); /*0x5d751a*/
-            vtable3 = stru_A80220.vfptr3; /*0x5d751f*/
+            vtable3 = stru_A80220.ptr_C; /*0x5d751f*/
           }
           nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5d7524*/
           ++v3; /*0x5d752a*/
@@ -3125,7 +3125,7 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
   nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5eea06*/
   for ( i = 0; i < stru_A80220.nextArrayIndex; ++i ) /*0x5eea11*/
   {
-    v5 = (HouseClass *)*((unsigned int *)stru_A80220.vfptr3 + i); /*0x5eea1f*/
+    v5 = (HouseClass *)*((unsigned int *)stru_A80220.ptr_C + i); /*0x5eea1f*/
     if ( !*(unsigned char *)(v5->relatedTagsCapacity + 422) && v5->currentPlayer ) /*0x5eea33*/
     {
       v6 = 0; /*0x5eea47*/
@@ -3164,7 +3164,7 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
   {
     do /*0x5eeb7e*/
     {
-      v12 = (HouseClass *)*((unsigned int *)stru_A80220.vfptr3 + v11); /*0x5eeafb*/
+      v12 = (HouseClass *)*((unsigned int *)stru_A80220.ptr_C + v11); /*0x5eeafb*/
       if ( !*(unsigned char *)(v12->relatedTagsCapacity + 422) && !v12->currentPlayer ) /*0x5eeb0b*/
       {
         Debug::Log(); /*0x5eeb1f*/
@@ -3541,7 +3541,7 @@ int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int *
     *a2 = aP0; /*0x4f68ed*/
   if ( !*a2 ) /*0x4f68ef*/
     return -2147467262; /*0x4f68f4*/
-  (*((void (__stdcall **)(HouseClass *))aP0->vfptr + 1))(aP0); /*0x4f68ff*/
+  (*((void (__stdcall **)(HouseClass *))aP0->ptr_0 + 1))(aP0); /*0x4f68ff*/
   return 0; /*0x4f683d*/
 }
 } // namespace gamemd
@@ -3633,7 +3633,7 @@ char HouseClass::UpdateAllSilos(int a2, int a3)
 namespace gamemd {
 int HouseClass::MakeAlly(int a2, char a3)
 {
-  return HouseClass::HandleAlliance(*((unsigned int *)stru_A80220.vfptr3 + a2), a3); /*0x4f9b67*/
+  return HouseClass::HandleAlliance(*((unsigned int *)stru_A80220.ptr_C + a2), a3); /*0x4f9b67*/
 }
 } // namespace gamemd
 
@@ -3714,7 +3714,7 @@ char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
   v3 = aP1; /*0x4fbf63*/
   if ( !(unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, aP1) ) /*0x4fbf6f*/
     return 0; /*0x4fc055*/
-  HouseClass::IsCellOccupied(&this->vfptr, this->ourFlagCoords, a3); /*0x4fbf8b*/
+  HouseClass::IsCellOccupied(&this->ptr_0, this->ourFlagCoords, a3); /*0x4fbf8b*/
   relatedTagsCapacity = this->relatedTagsCapacity; /*0x4fbf92*/
   aP1 = *(__int16 **)v3; /*0x4fbf95*/
   v10 = *(unsigned int *)(relatedTagsCapacity + 184); /*0x4fbfa3*/

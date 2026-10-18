@@ -1172,7 +1172,7 @@ unsigned int HashTable_flat::CleanupAndResize()
     while ( v3 ) /*0x7ace77*/
     {
       v4 = v3; /*0x7ace79*/
-      v3 = (ObjectClass *)v3->vfptr2; /*0x7ace7b*/
+      v3 = (ObjectClass *)v3->ptr_8; /*0x7ace7b*/
       DeleteAndZero(v4); /*0x7ace84*/
       __3_YAXPAX_Z(v4); /*0x7ace8a*/
     }
@@ -1648,12 +1648,12 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
       while ( !(unsigned __int8)String::Compare((String *)v22, aP1) ) /*0x7ae361*/
       {
         v8 = (unsigned int *)v22; /*0x7ae363*/
-        v22 = (ObjectClass *)v22->vfptr2; /*0x7ae365*/
+        v22 = (ObjectClass *)v22->ptr_8; /*0x7ae365*/
         if ( !v22 ) /*0x7ae36a*/
           goto LABEL_23; /*0x7ae36a*/
       }
-      *aP2 = v22->vfptr1; /*0x7ae375*/
-      v8[2] = v22->vfptr2; /*0x7ae37a*/
+      *aP2 = v22->ptr_4; /*0x7ae375*/
+      v8[2] = v22->ptr_8; /*0x7ae37a*/
       --this->HashTable_field_0x04; /*0x7ae383*/
       DeleteAndZero(v22); /*0x7ae38a*/
       __3_YAXPAX_Z(v22); /*0x7ae390*/

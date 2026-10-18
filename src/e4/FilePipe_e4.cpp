@@ -175,7 +175,7 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
   *((unsigned int *)Block + 2) = 0; /*0x477aa1*/
   if ( (a2 & 1) != 0 ) /*0x477aa8*/
     operator delete((Block)); /*0x477aab*/
-  return &Block->vfptr; /*0x477ab5*/
+  return &Block->ptr_0; /*0x477ab5*/
 }
 } // namespace gamemd
 

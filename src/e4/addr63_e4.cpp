@@ -636,7 +636,7 @@ AbstractClass * * E4Recv_631300::sub_631300()
 {
 
   int result; // eax
-  result = (int)GetDlgItem((HWND)this->vfptr, 1504); /*0x631314*/
+  result = (int)GetDlgItem((HWND)this->ptr_0, 1504); /*0x631314*/
   HWND v3; // esi
   v3 = (HWND)result; /*0x631316*/
   if ( result ) /*0x63131a*/
@@ -649,7 +649,7 @@ AbstractClass * * E4Recv_631300::sub_631300()
       if ( result > -1 ) /*0x631346*/
       {
         HWND DlgItem; // esi
-        DlgItem = GetDlgItem((HWND)this->vfptr, 1509); /*0x631358*/
+        DlgItem = GetDlgItem((HWND)this->ptr_0, 1509); /*0x631358*/
         SendMessageA(DlgItem, 0x4B4u, 0, *((unsigned int *)dword_A8DB38 + dword_A8DABC) + 154); /*0x631371*/
         return (int)SetFocus(DlgItem); /*0x631374*/
       }
@@ -790,7 +790,7 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 namespace gamemd {
 int sub_633AB0(ObjectClass *a1)
 {
-  return (char)a1->vfptr3; /*0x633ab3*/
+  return (char)a1->ptr_C; /*0x633ab3*/
 }
 }
 // 0x633BC0
@@ -1008,8 +1008,8 @@ int E4Recv_636F00::sub_636F00(int a2, int a3)
   void **v10; // eax
   unsigned char *v11; // esi
 
-  vtable2 = this->vfptr2; /*0x636f00*/
-  vtable0 = this->vfptr; /*0x636f08*/
+  vtable2 = this->ptr_8; /*0x636f00*/
+  vtable0 = this->ptr_0; /*0x636f08*/
   v5 = vtable2[a3]; /*0x636f0b*/
   v6 = 0; /*0x636f0e*/
   v7 = *(unsigned int *)(v5 + 16); /*0x636f11*/
@@ -1078,7 +1078,7 @@ char ExecutePlanningQueue()
   SuperWeaponClass *v29; // [esp-Ch] [ebp-90h]
   ObjectClass *v30; // [esp+4h] [ebp-80h]
   int v31; // [esp+4h] [ebp-80h]
-  BuildingClass *vfptr; // [esp+8h] [ebp-7Ch]
+  BuildingClass *ptr_0; // [esp+8h] [ebp-7Ch]
   int v33; // [esp+Ch] [ebp-78h] BYREF
   int v34; // [esp+10h] [ebp-74h]
   unsigned char v35[108]; // [esp+14h] [ebp-70h] BYREF
@@ -1099,13 +1099,13 @@ char ExecutePlanningQueue()
   {
     v4 = *(TeamClass **)(*(unsigned int *)&stru_AC4B48.__pad_B8[124] + 4 * v2); /*0x6372b4*/
     v5 = v4->abstractFlags - 1; /*0x6372bd*/
-    vfptr = (BuildingClass *)v4->vfptr; /*0x6372be*/
+    ptr_0 = (BuildingClass *)v4->ptr_0; /*0x6372be*/
     if ( v5 < 0 ) /*0x6372c2*/
       goto LABEL_36; /*0x6372c2*/
     do /*0x6373d0*/
     {
-      v6 = *(Array **)(v4->vfptr2 + 4 * v5); /*0x6372cb*/
-      Value = Array::FindValue(v6, v4->vfptr); /*0x6372d4*/
+      v6 = *(Array **)(v4->ptr_8 + 4 * v5); /*0x6372cb*/
+      Value = Array::FindValue(v6, v4->ptr_0); /*0x6372d4*/
       if ( Value == -1 ) /*0x6372dc*/
         v8 = 0; /*0x6372de*/
       else
@@ -1148,9 +1148,9 @@ LABEL_22:
         v14 = 0; /*0x637362*/
         goto LABEL_23; /*0x637362*/
       }
-      v14 = *(unsigned int *)(v4->vfptr2 + 4 * v12); /*0x63735d*/
+      v14 = *(unsigned int *)(v4->ptr_8 + 4 * v12); /*0x63735d*/
 LABEL_23:
-      Type = BuildingClass::GetType(vfptr); /*0x637364*/
+      Type = BuildingClass::GetType(ptr_0); /*0x637364*/
       v33 = v14; /*0x637374*/
       v16 = (*(int (**)(int, int *))(Type->vtable2 + 16))(Type + 4, &v33); /*0x63737e*/
       if ( v16 == -1 ) /*0x637384*/
@@ -1432,7 +1432,7 @@ LABEL_13:
   v35 = v13; /*0x6381ff*/
   if ( v13 && Array::FindValue((Array *)v13, (int)v38) != -1 ) /*0x638210*/
     return 1; /*0x638210*/
-  v15 = ScriptAction::ClassifyAction(&v38->vfptr, v2); /*0x63821a*/
+  v15 = ScriptAction::ClassifyAction(&v38->ptr_0, v2); /*0x63821a*/
   if ( v15 != -1 ) /*0x638222*/
   {
     if ( !v34 ) /*0x63822e*/
@@ -1573,7 +1573,7 @@ LABEL_47:
       v29[1].IsInitialized[0] = 0; /*0x6384b6*/
       ExecuteActionPlanManager_Helper_63E1D0(v29 + 2, *(int *)&v33[104], *(int *)&v33[108]); /*0x6384ba*/
       ExecuteActionPlanManager_Helper((ObjectClass *)&v29[3].Capacity); /*0x6384c2*/
-      v29[11].vfptr = -1; /*0x6384ca*/
+      v29[11].ptr_0 = -1; /*0x6384ca*/
       v29[11].Items = -1; /*0x6384d0*/
       v35 = (ScriptAction *)v29; /*0x6384d6*/
     }
@@ -2064,7 +2064,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   int v27; // ecx
   signed int i; // edi
   unsigned char *v29; // ecx
-  int vfptr; // [esp-4h] [ebp-A4h]
+  int ptr_0; // [esp-4h] [ebp-A4h]
   ScriptAction *v32; // [esp+10h] [ebp-90h] BYREF
   ScriptAction *v33; // [esp+14h] [ebp-8Ch]
   int v34; // [esp+18h] [ebp-88h] BYREF
@@ -2110,9 +2110,9 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
         {
           do /*0x639952*/
           {
-            vfptr = v8->vfptr; /*0x639902*/
-            v32 = *(ScriptAction **)(v8->vfptr2 + 4 * (unsigned int)v33); /*0x639903*/
-            v18 = (unsigned char *)ScriptAction::FindItemByValue(v32, vfptr)[1]; /*0x63990c*/
+            ptr_0 = v8->ptr_0; /*0x639902*/
+            v32 = *(ScriptAction **)(v8->ptr_8 + 4 * (unsigned int)v33); /*0x639903*/
+            v18 = (unsigned char *)ScriptAction::FindItemByValue(v32, ptr_0)[1]; /*0x63990c*/
             qmemcpy(v39, v18, sizeof(v39)); /*0x639918*/
             v18 += 108; /*0x639918*/
             v40 = *(unsigned short *)v18; /*0x63991a*/
@@ -2144,7 +2144,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
       if ( v10 >= abstractFlags ) /*0x63989d*/
         v13 = v10 + 0 % v34; /*0x6398a8*/
       if ( v13 >= 0 && v13 < abstractFlags ) /*0x6398b0*/
-        v14 = *(ScriptAction **)(v8->vfptr2 + 4 * v13); /*0x6398b5*/
+        v14 = *(ScriptAction **)(v8->ptr_8 + 4 * v13); /*0x6398b5*/
       else
 LABEL_10:
         v14 = 0; /*0x6398ba*/
@@ -2684,11 +2684,11 @@ int RenderScriptActionHighlight()
   ScriptAction *v1; // edi
   v1 = *(ScriptAction **)&g_ScriptPool; /*0x63b31c*/
   int result; // eax
-  result = (*((unsigned char *)&(stru_A80220.vfptr))) >> g_BitShift_Green_0 << g_BitShift_Red; /*0x63b34b*/
+  result = (*((unsigned char *)&(stru_A80220.ptr_0))) >> g_BitShift_Green_0 << g_BitShift_Red; /*0x63b34b*/
   int v3; // esi
   v3 = result /*0x63b34d*/
-  | ((((unsigned char *)&(stru_A80220.vfptr))[1]) >> g_BitMask_Blue << g_BitMask_Green)
-  | ((((unsigned char *)&(stru_A80220.vfptr))[2]) >> g_BitMask_Red << g_BitShift_Blue);
+  | ((((unsigned char *)&(stru_A80220.ptr_0))[1]) >> g_BitMask_Blue << g_BitMask_Green)
+  | ((((unsigned char *)&(stru_A80220.ptr_0))[2]) >> g_BitMask_Red << g_BitShift_Blue);
   if ( *(unsigned int *)&g_ScriptPool ) /*0x63b351*/
   {
     int *Viewport; // eax
@@ -2812,7 +2812,7 @@ int HouseClass::sub_63CF10()
   v2 = *&v1->u32_30; /*0x63cf1a*/
   if ( (unsigned __int8)House::IsHumanPlayer(v1) && *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x63cf2d*/
     v2 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48); /*0x63cf2f*/
-  v3 = *(&dword_A8022C->vfptr + v2) + 22265; /*0x63cf41*/
+  v3 = *(&dword_A8022C->ptr_0 + v2) + 22265; /*0x63cf41*/
   LOWORD(v5.Color_field_00) = *(unsigned short *)v3; /*0x63cf4a*/
   BYTE2(v5.Color_field_00) = *(unsigned char *)(v3 + 2); /*0x63cf56*/
   Color::Lerp(&v5, 0x50u, (unsigned __int8 *)&stru_A83CD9); /*0x63cf5a*/
@@ -2836,7 +2836,7 @@ int HouseClass::sub_63CFC0()
   v2 = *&v1->u32_30; /*0x63cfca*/
   if ( (unsigned __int8)House::IsHumanPlayer(v1) && *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x63cfdd*/
     v2 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48); /*0x63cfdf*/
-  v3 = *(&dword_A8022C->vfptr + v2) + 22265; /*0x63cff1*/
+  v3 = *(&dword_A8022C->ptr_0 + v2) + 22265; /*0x63cff1*/
   LOWORD(v5.Color_field_00) = *(unsigned short *)v3; /*0x63cffa*/
   BYTE2(v5.Color_field_00) = *(unsigned char *)(v3 + 2); /*0x63d006*/
   Color::Lerp(&v5, 0x64u, (unsigned __int8 *)&stru_A80220); /*0x63d00a*/
@@ -3168,7 +3168,7 @@ int ParticleSystemClass__vt_06_(int * a1, int * a2, int a3)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix(&a1->vfptr.vfptr.vfptr, a2, a3); /*0x6300a2*/
+  result = AbstractClass::SaveLoad_Prefix(&a1->ptr_0.ptr_0.ptr_0, a2, a3); /*0x6300a2*/
   if ( result >= 0 ) /*0x6300a9*/
   {
     int v4 = *a2; // edx /*0x6300b1*/
@@ -4482,7 +4482,7 @@ int * E4Recv_635E90::sub_635E90(int * a2)
 namespace gamemd {
 ObjectClass * E4Recv_636110::ReadPointerFromECX2()
 {
-  return (int)this->vfptr; /*0x636112*/
+  return (int)this->ptr_0; /*0x636112*/
 }
 } // namespace gamemd
 
@@ -4791,8 +4791,8 @@ int ColorLerpAndPack(short * a1, unsigned char * a2, int aP1)
   Color v5; // [esp+0h] [ebp-8h] BYREF
 
   int16_t vtable0; // ax
-  vtable0 = (int16_t)a1->vfptr; /*0x63d073*/
-  (((unsigned char *)&(v5.Color_field_00))[2]) = (((unsigned char *)&(a1->vfptr))[2]); /*0x63d07e*/
+  vtable0 = (int16_t)a1->ptr_0; /*0x63d073*/
+  (((unsigned char *)&(v5.Color_field_00))[2]) = (((unsigned char *)&(a1->ptr_0))[2]); /*0x63d07e*/
   (*((unsigned short *)&(v5.Color_field_00))) = vtable0; /*0x63d087*/
   Color::Lerp(&v5, aP1, a2); /*0x63d08c*/
   return ((*((unsigned char *)&(v5.Color_field_00))) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x63d0e2*/
@@ -4852,10 +4852,10 @@ int E4Recv_63D2D0::sub_63D2D0()
   unsigned __int8 ***i; // edx
   unsigned __int8 *v5; // [esp+10h] [ebp-Ch]
 
-  v5 = **(unsigned __int8 ***)this->vfptr1; /*0x63d31a*/
-  result = (BYTE2(stru_A83CD9.vfptr) >> g_BitMask_Red << g_BitShift_Blue) /*0x63d354*/
-         | (BYTE1(stru_A83CD9.vfptr) >> g_BitMask_Blue << g_BitMask_Green)
-         | (LOBYTE(stru_A83CD9.vfptr) >> g_BitShift_Green_0 << g_BitShift_Red);
+  v5 = **(unsigned __int8 ***)this->ptr_4; /*0x63d31a*/
+  result = (BYTE2(stru_A83CD9.ptr_0) >> g_BitMask_Red << g_BitShift_Blue) /*0x63d354*/
+         | (BYTE1(stru_A83CD9.ptr_0) >> g_BitMask_Blue << g_BitMask_Green)
+         | (LOBYTE(stru_A83CD9.ptr_0) >> g_BitShift_Green_0 << g_BitShift_Red);
   if ( v5 ) /*0x63d358*/
   {
     if ( *(unsigned int *)&stru_AC4B48.__pad_9C[12] ) /*0x63d3a7*/
@@ -4870,16 +4870,16 @@ int E4Recv_63D2D0::sub_63D2D0()
             return result; /*0x63d3c6*/
         }
         if ( v3 != -1 ) /*0x63d3d3*/
-          return (BYTE2(stru_A80220.vfptr) >> g_BitMask_Red << g_BitShift_Blue) /*0x63d3d5*/
-               | (BYTE1(stru_A80220.vfptr) >> g_BitMask_Blue << g_BitMask_Green)
-               | (LOBYTE(stru_A80220.vfptr) >> g_BitShift_Green_0 << g_BitShift_Red);
+          return (BYTE2(stru_A80220.ptr_0) >> g_BitMask_Red << g_BitShift_Blue) /*0x63d3d5*/
+               | (BYTE1(stru_A80220.ptr_0) >> g_BitMask_Blue << g_BitMask_Green)
+               | (LOBYTE(stru_A80220.ptr_0) >> g_BitShift_Green_0 << g_BitShift_Red);
       }
     }
     else if ( v5[131] ) /*0x63d3e3*/
     {
-      return (BYTE2(stru_A80220.vfptr) >> g_BitMask_Red << g_BitShift_Blue) /*0x63d3ed*/
-           | (BYTE1(stru_A80220.vfptr) >> g_BitMask_Blue << g_BitMask_Green)
-           | (LOBYTE(stru_A80220.vfptr) >> g_BitShift_Green_0 << g_BitShift_Red);
+      return (BYTE2(stru_A80220.ptr_0) >> g_BitMask_Red << g_BitShift_Blue) /*0x63d3ed*/
+           | (BYTE1(stru_A80220.ptr_0) >> g_BitMask_Blue << g_BitMask_Green)
+           | (LOBYTE(stru_A80220.ptr_0) >> g_BitShift_Green_0 << g_BitShift_Red);
     }
   }
   return result; /*0x63d3c8*/

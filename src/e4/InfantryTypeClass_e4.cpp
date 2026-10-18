@@ -380,7 +380,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                                             (unsigned __int8 ***)this,
                                             inited,
                                             (unsigned __int8 *)aVoicecomment,
-                                            (void **)v44.vfptr,
+                                            (void **)v44.ptr_0,
                                             (void *)v44.Items,
                                             v44.Capacity,
                                             *(__int16 *)v44.IsInitialized,
@@ -391,7 +391,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v11 = INIClassIntList; /*0x5241bd*/
   *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
-  *(unsigned int *)(v4 + 3744) = v11[1].vfptr; /*0x5241d4*/
+  *(unsigned int *)(v4 + 3744) = v11[1].ptr_0; /*0x5241d4*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_int) */  /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
@@ -459,7 +459,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_AnimTypeClass_const) */  /*0x52439c*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5243a4*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5243b8*/
-                     &this->vfptr,
+                     &this->ptr_0,
                      (unsigned __int8 *)(v4 + 36),
                      aCyborg,
                      v4->Cyborg_2);
@@ -468,7 +468,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v44.Count = v4 + 36; /*0x5243cb*/
   v4->Cyborg_2 = Bool_Overwrite; /*0x5243cc*/
   v4->NotHuman_2 = INIClass::ReadBool_Overwrite( /*0x5243d7*/
-                            &this->vfptr,
+                            &this->ptr_0,
                             (unsigned __int8 *)v44.Count,
                             (unsigned __int8 *)v44.CapacityIncrement,
                             v45);
@@ -509,27 +509,27 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v44.Count = v4 + 36; /*0x52446e*/
   v4->u32_EA8 = v20; /*0x52446f*/
   v4->Fearless_d = INIClass::ReadBool_Overwrite( /*0x52447a*/
-                            &this->vfptr,
+                            &this->ptr_0,
                             (unsigned __int8 *)v44.Count,
                             (unsigned __int8 *)v44.CapacityIncrement,
                             v45);
-  v21 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aFraidycat, v4->Fraidycat_2); /*0x52448f*/
+  v21 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aFraidycat, v4->Fraidycat_2); /*0x52448f*/
   v22 = v4->Infiltrate_2; /*0x524494*/
   v4->Fraidycat_2 = v21; /*0x52449a*/
-  v23 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aInfiltrate, v22); /*0x5244a9*/
+  v23 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aInfiltrate, v22); /*0x5244a9*/
   LOBYTE(v45) = v4->Ivan_2; /*0x5244b6*/
   v44.CapacityIncrement = (int)aIvan; /*0x5244b7*/
   v44.Count = v4 + 36; /*0x5244bc*/
   v4->Infiltrate_2 = v23; /*0x5244bd*/
   v4->Ivan_2 = INIClass::ReadBool_Overwrite( /*0x5244c8*/
-                            &this->vfptr,
+                            &this->ptr_0,
                             (unsigned __int8 *)v44.Count,
                             (unsigned __int8 *)v44.CapacityIncrement,
                             v45);
-  v24 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aOccupier, v4->Occupier_d); /*0x5244dd*/
+  v24 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aOccupier, v4->Occupier_d); /*0x5244dd*/
   v25 = v4->Assaulter_2; /*0x5244e2*/
   v4->Occupier_d = v24; /*0x5244e8*/
-  v26 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aAssaulter, v25); /*0x5244f7*/
+  v26 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aAssaulter, v25); /*0x5244f7*/
   v45 = v4->DetectionDistance; /*0x524504*/
   v44.CapacityIncrement = (int)aDetectiondista; /*0x524505*/
   v44.Count = v4 + 36; /*0x52450a*/
@@ -546,57 +546,57 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                     v4->HarvestRate);
   v28 = v4->C4_2; /*0x524530*/
   v4->HarvestRate = Int_Overwrite; /*0x524536*/
-  v29 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aC4, v28); /*0x524545*/
+  v29 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aC4, v28); /*0x524545*/
   LOBYTE(v45) = v4->__pad_EC1; /*0x524552*/
   v44.CapacityIncrement = (int)&g_INI_Key_Civilian; /*0x524553*/
   v44.Count = v4 + 36; /*0x524558*/
   v4->C4_2 = v29; /*0x524559*/
   v4->__pad_EC1 = INIClass::ReadBool_Overwrite( /*0x524564*/
-                            &this->vfptr,
+                            &this->ptr_0,
                             (unsigned __int8 *)v44.Count,
                             (unsigned __int8 *)v44.CapacityIncrement,
                             v45);
-  v30 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aEngineer, v4->Engineer_2); /*0x524579*/
+  v30 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aEngineer, v4->Engineer_2); /*0x524579*/
   v31 = v4->TiberiumProof_d; /*0x52457e*/
   v4->Engineer_2 = v30; /*0x524584*/
-  v32 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aTiberiumproof, v31); /*0x524593*/
+  v32 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aTiberiumproof, v31); /*0x524593*/
   LOBYTE(v45) = v4->Agent_2; /*0x5245a0*/
   v44.CapacityIncrement = (int)aAgent; /*0x5245a1*/
   v44.Count = v4 + 36; /*0x5245a6*/
   v4->TiberiumProof_d = v32; /*0x5245a7*/
   v4->Agent_2 = INIClass::ReadBool_Overwrite( /*0x5245b2*/
-                            &this->vfptr,
+                            &this->ptr_0,
                             (unsigned __int8 *)v44.Count,
                             (unsigned __int8 *)v44.CapacityIncrement,
                             v45);
-  v33 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aThief, v4->Thief_2); /*0x5245c7*/
+  v33 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aThief, v4->Thief_2); /*0x5245c7*/
   v34 = v4->VehicleThief_2; /*0x5245cc*/
   v4->Thief_2 = v33; /*0x5245d2*/
-  v35 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aVehiclethief, v34); /*0x5245e1*/
+  v35 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aVehiclethief, v34); /*0x5245e1*/
   LOBYTE(v45) = v4->Doggie_2; /*0x5245ee*/
   v44.CapacityIncrement = (int)aDoggie; /*0x5245ef*/
   v44.Count = v4 + 36; /*0x5245f4*/
   v4->VehicleThief_2 = v35; /*0x5245f5*/
   v4->Doggie_2 = INIClass::ReadBool_Overwrite( /*0x524600*/
-                            &this->vfptr,
+                            &this->ptr_0,
                             (unsigned __int8 *)v44.Count,
                             (unsigned __int8 *)v44.CapacityIncrement,
                             v45);
-  v36 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aDeployer, v4->Deployer_d); /*0x524615*/
+  v36 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aDeployer, v4->Deployer_d); /*0x524615*/
   v37 = v4->__pad_EC9; /*0x52461a*/
   v4->Deployer_d = v36; /*0x524620*/
-  v38 = INIClass::ReadBool_Overwrite(&this->vfptr, (unsigned __int8 *)(v4 + 36), aDeployedcrusha, v37); /*0x52462f*/
+  v38 = INIClass::ReadBool_Overwrite(&this->ptr_0, (unsigned __int8 *)(v4 + 36), aDeployedcrusha, v37); /*0x52462f*/
   LOBYTE(v45) = v4->u32_ECA; /*0x52463c*/
   v44.CapacityIncrement = (int)aUseownname; /*0x52463d*/
   v44.Count = v4 + 36; /*0x524642*/
   *(unsigned char *)(v4 + 3785) = v38; /*0x524643*/
   v4->u32_ECA = INIClass::ReadBool_Overwrite( /*0x52464e*/
-                            &this->vfptr,
+                            &this->ptr_0,
                             (unsigned __int8 *)v44.Count,
                             (unsigned __int8 *)v44.CapacityIncrement,
                             v45);
   *(unsigned char *)(v4 + 3787) = INIClass::ReadBool_Overwrite( /*0x524668*/
-                            &this->vfptr,
+                            &this->ptr_0,
                             (unsigned __int8 *)(v4 + 36),
                             aJumpjetturn,
                             v4->u32_ECB);
@@ -776,7 +776,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x524d7c) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x524d83) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x524d8a) */
-  AbstractClass::AnnounceExpiredPointer(&Block->vfptr, 1); /*0x524d91*/
+  AbstractClass::AnnounceExpiredPointer(&Block->ptr_0, 1); /*0x524d91*/
   v8 = Block; /*0x524da6*/
   v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/
   if ( v3 != -1 && v3 < dword_A8E358 && v3 < --dword_A8E358 ) /*0x524dc5*/
@@ -932,7 +932,7 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
   a1->ptr_0 = (void *)85; /*0x524777*/
   a1->ptr_1 = (void *)85; /*0x524779*/
   a1->ptr_2 = v1; /*0x52477c*/
-  return &a1->vfptr; /*0x52477f*/
+  return &a1->ptr_0; /*0x52477f*/
 }
 }  // G42.18c ns repair
 // 0x524790
@@ -967,10 +967,10 @@ unsigned int * InfantryTypeClass::ClampToGroundHeight(unsigned int * a1, int * a
   v3 = (int)v7; /*0x5247fa*/
   if ( (int)v7 < GroundHeight ) /*0x524800*/
     v3 = Cell::GetGroundHeight(&v5); /*0x524811*/
-  this->vfptr = v5; /*0x52481e*/
-  this->vfptr1 = v6; /*0x524824*/
-  this->vfptr2 = v3; /*0x524828*/
-  return &this->vfptr; /*0x52482b*/
+  this->ptr_0 = v5; /*0x52481e*/
+  this->ptr_4 = v6; /*0x524824*/
+  this->ptr_8 = v3; /*0x524828*/
+  return &this->ptr_0; /*0x52482b*/
 
 }
 }  // G42.18c ns repair

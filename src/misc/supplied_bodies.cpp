@@ -1932,7 +1932,7 @@ void AudioOptionsClass::ApplySettings() {
     v2 = 1.0; /*0x5fb175*/
   this->u32_38 = v2; /*0x5fb17b*/
   LOWORD(v3) = Math::RoundToInt(v2 * 16384.0); /*0x5fb184*/
-  EndBufferMixer(&g_MixerChannel_Score->vfptr, (int)v3); /*0x5fb191*/
+  EndBufferMixer(&g_MixerChannel_Score->ptr_0, (int)v3); /*0x5fb191*/
   Debug::Log(); /*0x5fb1a4*/
   v4 = this->u32_3C; /*0x5fb1a9*/
   if ( v4 >= 1.0 ) /*0x5fb1ba*/
@@ -1941,14 +1941,14 @@ void AudioOptionsClass::ApplySettings() {
   LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fb1cd*/
   ThemeClass::GetField(v5); /*0x5fb1d4*/
   LOWORD(v6) = Math::RoundToInt(this->u32_3C * 16384.0); /*0x5fb1e2*/
-  EndBufferMixer(&g_MixerChannel_Voice->vfptr, (int)v6); /*0x5fb1ef*/
+  EndBufferMixer(&g_MixerChannel_Voice->ptr_0, (int)v6); /*0x5fb1ef*/
   Debug::Log(); /*0x5fb202*/
   v7 = this->u32_40; /*0x5fb207*/
   if ( v7 >= 1.0 ) /*0x5fb218*/
     v7 = 1.0; /*0x5fb21c*/
   this->u32_40 = v7; /*0x5fb222*/
   LOWORD(v8) = Math::RoundToInt(v7 * 16384.0); /*0x5fb22b*/
-  EndBufferMixer(&g_MixerChannel_Theme->vfptr, (int)v8); /*0x5fb238*/
+  EndBufferMixer(&g_MixerChannel_Theme->ptr_0, (int)v8); /*0x5fb238*/
   LOWORD(v9) = Math::RoundToInt(this->u32_40 * 255.0); /*0x5fb246*/
   TechnoTypeClass::CheckFlag((TechnoTypeClass *)((char *)&stru_A83CD9.attachedTag + 3), (int)v9); /*0x5fb251*/
   Debug::Log(); /*0x5fb264*/
@@ -2006,8 +2006,8 @@ void * BuildingLoadQueue::GetNext() {
   BuildingLoadQueue_field_0x04 = this->m_Count; /*0x6e6e26*/
   if ( BuildingLoadQueue_field_0x04 == 52 ) /*0x6e6e2b*/
   {
-    vtable1 = g_BuildingLoadQueue_Array.vfptr1; /*0x6e6e31*/
-    if ( g_BuildingLoadQueue_Array.vfptr1 ) /*0x6e6e39*/
+    vtable1 = g_BuildingLoadQueue_Array.ptr_4; /*0x6e6e31*/
+    if ( g_BuildingLoadQueue_Array.ptr_4 ) /*0x6e6e39*/
     {
       uniqueId = g_BuildingLoadQueue_Array.uniqueId; /*0x6e6e3b*/
       if ( g_BuildingLoadQueue_Array.uniqueId /*0x6e6e4c*/
@@ -2015,21 +2015,21 @@ void * BuildingLoadQueue::GetNext() {
       {
         goto LABEL_10; /*0x6e6e4c*/
       }
-      if ( g_BuildingLoadQueue_Array.vfptr1 ) /*0x6e6e50*/
+      if ( g_BuildingLoadQueue_Array.ptr_4 ) /*0x6e6e50*/
       {
-        if ( !(*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) ) /*0x6e6e59*/
+        if ( !(*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) ) /*0x6e6e59*/
         {
           qsort( /*0x6e6e6a*/
-            g_BuildingLoadQueue_Array.vfptr,
-            (size_t)g_BuildingLoadQueue_Array.vfptr1,
+            g_BuildingLoadQueue_Array.ptr_0,
+            (size_t)g_BuildingLoadQueue_Array.ptr_4,
             8u,
             (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-          vtable1 = g_BuildingLoadQueue_Array.vfptr1; /*0x6e6e6f*/
+          vtable1 = g_BuildingLoadQueue_Array.ptr_4; /*0x6e6e6f*/
           g_BuildingLoadQueue_Array.uniqueId = 0; /*0x6e6e78*/
-          (*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) = 1; /*0x6e6e82*/
+          (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 1; /*0x6e6e82*/
         }
         *(unsigned int *)v8 = *(unsigned int *)this->m_Queue; /*0x6e6e96*/
-        uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.vfptr, (int)vtable1, (int *)v8); /*0x6e6e9a*/
+        uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.ptr_0, (int)vtable1, (int *)v8); /*0x6e6e9a*/
         if ( uniqueId ) /*0x6e6ea1*/
         {
           g_BuildingLoadQueue_Array.uniqueId = uniqueId; /*0x6e6ea3*/
@@ -2064,25 +2064,25 @@ void * BuildingLoadQueue::Find() {
 
   if ( (this->m_Count) != 52 ) /*0x6e6f27*/
     return 0; /*0x6e6fe0*/
-  vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1; /*0x6e6f2d*/
-  if ( !g_BuildingLoadQueue_Array.vfptr1 ) /*0x6e6f37*/
+  vtable1 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6f2d*/
+  if ( !g_BuildingLoadQueue_Array.ptr_4 ) /*0x6e6f37*/
     return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f37*/
   uniqueId = g_BuildingLoadQueue_Array.uniqueId; /*0x6e6f39*/
   if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == *(unsigned int *)this->m_Queue ) /*0x6e6f49*/
     return AbstractClass::IsTechnoType(uniqueId->u32_4); /*0x6e6fdf*/
-  if ( !(*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) ) /*0x6e6f56*/
+  if ( !(*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) ) /*0x6e6f56*/
   {
     qsort( /*0x6e6f67*/
-      g_BuildingLoadQueue_Array.vfptr,
-      (size_t)g_BuildingLoadQueue_Array.vfptr1,
+      g_BuildingLoadQueue_Array.ptr_0,
+      (size_t)g_BuildingLoadQueue_Array.ptr_4,
       8u,
       (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-    vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1; /*0x6e6f6c*/
+    vtable1 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6f6c*/
     g_BuildingLoadQueue_Array.uniqueId = 0; /*0x6e6f75*/
-    (*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) = 1; /*0x6e6f7f*/
+    (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 1; /*0x6e6f7f*/
   }
   v4 = *(unsigned int *)this->m_Queue; /*0x6e6f86*/
-  vtable0 = g_BuildingLoadQueue_Array.vfptr; /*0x6e6f88*/
+  vtable0 = g_BuildingLoadQueue_Array.ptr_0; /*0x6e6f88*/
   if ( vtable1 <= 0 ) /*0x6e6f90*/
     return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f90*/
   while ( 1 ) /*0x6e6f99*/
@@ -2122,8 +2122,8 @@ int BuildingLoadQueue::FindObject() {
 
   if ( (this->m_Count) != 52 ) /*0x6e6ff7*/
     return 0; /*0x6e70b8*/
-  vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1; /*0x6e6ffd*/
-  if ( !g_BuildingLoadQueue_Array.vfptr1 ) /*0x6e7007*/
+  vtable1 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6ffd*/
+  if ( !g_BuildingLoadQueue_Array.ptr_4 ) /*0x6e7007*/
     goto LABEL_13; /*0x6e7007*/
   uniqueId = g_BuildingLoadQueue_Array.uniqueId; /*0x6e7009*/
   if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == *(unsigned int *)this->m_Queue ) /*0x6e7019*/
@@ -2132,19 +2132,19 @@ int BuildingLoadQueue::FindObject() {
     v7 = &uniqueId->u32_4; /*0x6e70b3*/
     return (int)__RTDynamicCast(*v7, 0,0,0, 0); /*0x6e70b6*/
   }
-  if ( !(*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) ) /*0x6e7026*/
+  if ( !(*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) ) /*0x6e7026*/
   {
     qsort( /*0x6e7037*/
-      g_BuildingLoadQueue_Array.vfptr,
-      (size_t)g_BuildingLoadQueue_Array.vfptr1,
+      g_BuildingLoadQueue_Array.ptr_0,
+      (size_t)g_BuildingLoadQueue_Array.ptr_4,
       8u,
       (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-    vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1; /*0x6e703c*/
+    vtable1 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e703c*/
     g_BuildingLoadQueue_Array.uniqueId = 0; /*0x6e7045*/
-    (*((unsigned char *)&(g_BuildingLoadQueue_Array.vfptr3))) = 1; /*0x6e704f*/
+    (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 1; /*0x6e704f*/
   }
   v4 = *(unsigned int *)this->m_Queue; /*0x6e7056*/
-  vtable0 = g_BuildingLoadQueue_Array.vfptr; /*0x6e7058*/
+  vtable0 = g_BuildingLoadQueue_Array.ptr_0; /*0x6e7058*/
   if ( vtable1 <= 0 ) /*0x6e7060*/
     goto LABEL_13; /*0x6e7060*/
   while ( 1 ) /*0x6e7069*/

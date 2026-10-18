@@ -858,18 +858,18 @@ void* Tactical_Radar_Render(void * a1, void * a2, void * a3, void * a4, void * a
             Coord::Subtract((Coord *)&v74, ((__int16)v60 << 8) + 128, v41, 0); /*0x640ed4*/
             IsoCoord::ToScreenOffset(v74, v41, &v76, &v68); /*0x640eef*/
             v39 = (char *)dword_A8B230; /*0x640f32*/
-            v42 = *(int *)((char *)&dword_A8B230->vfptr + v40); /*0x640f3a*/
+            v42 = *(int *)((char *)&dword_A8B230->ptr_0 + v40); /*0x640f3a*/
             if ( v42 != -1 ) /*0x640f40*/
             {
               v43 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] /*0x640f66*/
-                                          + 4 * *(unsigned int *)(*((unsigned int *)stru_A80220.vfptr3 + v42) + 90196))
+                                          + 4 * *(unsigned int *)(*((unsigned int *)stru_A80220.ptr_C + v42) + 90196))
                               + 780);
               v60 = v43; /*0x640f6c*/
               if ( FileSHP ) /*0x640f70*/
               {
                 if ( v43 ) /*0x640f78*/
                 {
-                  v69[0] = v72 * (1000000 * (v76 / 60 - v67) / (int)dword_A8B230[122].vfptr3) / 1000000 + v70 - 3; /*0x640fd6*/
+                  v69[0] = v72 * (1000000 * (v76 / 60 - v67) / (int)dword_A8B230[122].ptr_C) / 1000000 + v70 - 3; /*0x640fd6*/
                   v44 = *(unsigned int *)v34; /*0x641015*/
                   v69[1] = v73 * (1000000 * (v68 / 30 - v61) / dword_A8B230[122].uniqueId) / 1000000 + v71 - 2; /*0x641025*/
                   v45 = (int *)(*(int (**)(char *, unsigned char *))(v44 + 120))(v34, v79); /*0x641029*/
@@ -1005,8 +1005,8 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
     v22 = aP5; /*0x69249b*/
     *aP5 = v21; /*0x69249f*/
     *v8 = 0; /*0x6924a1*/
-    result = dword_A8B230->vfptr; /*0x6924aa*/
-    if ( (dword_A8B230->vfptr & 0x1000) != 0 ) /*0x6924af*/
+    result = dword_A8B230->ptr_0; /*0x6924aa*/
+    if ( (dword_A8B230->ptr_0 & 0x1000) != 0 ) /*0x6924af*/
     {
       v23 = Coord::To_Cell((Coord *)&dword_87F7E8, &v34); /*0x6924bb*/
       result = (int)Cell::IsBridge((Cell *)v23); /*0x6924c2*/
@@ -1922,7 +1922,7 @@ char Tactical::SelectObject(int a2, void *a2_2)
 {
 
   int result; // eax
-  result = (*(int (**)(GScreenClass *, int))(a2_2->vfptr[0] + 44))(a2_2, a2_2); /*0x4f4458*/
+  result = (*(int (**)(GScreenClass *, int))(a2_2->ptr_0[0] + 44))(a2_2, a2_2); /*0x4f4458*/
   if ( (unsigned char)result ) /*0x4f445d*/
   {
     result = (*(int (**)(int))(*&a2_2->q090))(a2_2); /*0x4f4467*/

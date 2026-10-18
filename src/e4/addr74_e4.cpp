@@ -160,13 +160,13 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
       {
         v8 = strtok(0, Delimiter); /*0x743325*/
         Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)v8); /*0x74333a*/
-        v10 = (void *)*(&dword_A8022C->vfptr + v7); /*0x74333f*/
+        v10 = (void *)*(&dword_A8022C->ptr_0 + v7); /*0x74333f*/
         if ( Index != -1 ) /*0x743342*/
         {
           v11 = (int *)__2_YAPAXI_Z(0x8E8u); /*0x74334d*/
           if ( v11 ) /*0x743357*/
           {
-            v12 = UnitClass::Construct(v11, *(unsigned int *)(*(int *)((char *)&stru_A83CD9.vfptr2 + 3) + 4 * Index), v10); /*0x74336f*/
+            v12 = UnitClass::Construct(v11, *(unsigned int *)(*(int *)((char *)&stru_A83CD9.ptr_8 + 3) + 4 * Index), v10); /*0x74336f*/
             if ( v12 ) /*0x743373*/
             {
               v13 = strtok(0, Delimiter); /*0x74337f*/
@@ -756,14 +756,14 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  p_vfptr3 = &this->vfptr3; /*0x74bbff*/
+  p_vfptr3 = &this->ptr_C; /*0x74bbff*/
   this->uniqueId = 0; /*0x74bc04*/
   this->abstractFlags = 0; /*0x74bc07*/
   LOBYTE(this->nextArrayIndex) = 1; /*0x74bc0a*/
   BYTE1(this->nextArrayIndex) = 0; /*0x74bc0e*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_unsigned_char_7F65F4) */  /*0x74bc11*/
   this->ptr_8 = -1; /*0x74bc17*/
-  LOBYTE(this->vfptr1) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
+  LOBYTE(this->ptr_4) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
   this->ptr_8 = *(unsigned int *)(a2 + 8); /*0x74bc27*/
   if ( &this->ptr_C == (int *)(a2 + 12) ) /*0x74bc2a*/
     goto LABEL_8; /*0x74bc2a*/
@@ -2063,7 +2063,7 @@ unsigned int ObjectClass::sub_74F730()
 
   int v2; // edx
   v2 = this->ambientSoundController[2]; /*0x74f734*/
-  this->vfptr1 = 0; /*0x74f737*/
+  this->ptr_4 = 0; /*0x74f737*/
   (this->vtable3) = 0; /*0x74f73d*/
   (*&this->vtable3->AbstractClass_1) = 0; /*0x74f741*/
   this->ambientSoundController[0] = 0; /*0x74f745*/
@@ -2072,7 +2072,7 @@ unsigned int ObjectClass::sub_74F730()
   /* X11: vtable install elided (implicit via VersionClass virtuals 0x74f74e) */
   (this->q02A) = 0; /*0x74f754*/
   (this->vtable4) = 0; /*0x74f757*/
-  return &this->vfptr; /*0x74f75a*/
+  return &this->ptr_0; /*0x74f75a*/
 }
 } // namespace gamemd
 

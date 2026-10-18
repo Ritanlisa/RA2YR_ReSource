@@ -1317,11 +1317,11 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
   int v14; // [esp+3Ch] [ebp+8h] BYREF
 
   v1 = v13; /*0x465016*/
-  if ( v13[1].Weapon[210] && v13[1].vfptr2 ) /*0x465025*/
+  if ( v13[1].Weapon[210] && v13[1].ptr_8 ) /*0x465025*/
   {
-    __3_YAXPAX_Z(v13->vtable2.vfptr2); /*0x465030*/
-    v1[1].vfptr2 = 0; /*0x465038*/
-    LOBYTE(v1[1].vfptr3) = 0; /*0x46503e*/
+    __3_YAXPAX_Z(v13->vtable2.ptr_8); /*0x465030*/
+    v1[1].ptr_8 = 0; /*0x465038*/
+    LOBYTE(v1[1].ptr_C) = 0; /*0x46503e*/
   }
   if ( v1[1].CanBeHidden[0] && v1[1].TurretOffset ) /*0x46504c*/
   {
@@ -1387,7 +1387,7 @@ LABEL_32:
         v9 = v1[1].ChargerTurrets[15]; /*0x4651fb*/
         v1[1].UIName = 0; /*0x465210*/
         v9 *= 120; /*0x465219*/
-        v1[1].vfptr1 = (int)&dword_89C900 + v9; /*0x465228*/
+        v1[1].ptr_4 = (int)&dword_89C900 + v9; /*0x465228*/
         v1[1].ChargerTurrets[8] = (int)&dword_89D368 + v9; /*0x46522e*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1[1].UINameLabel[31]); /*0x465234*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v1->vtable2.ImageAllocated); /*0x465245*/
@@ -1395,8 +1395,8 @@ LABEL_32:
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].MainVoxel); /*0x465267*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].TurretVoxel); /*0x465278*/
         BuildingTypeClass::LoadVoxel((BuildingTypeClass *)v1); /*0x46527f*/
-        v1[1].vfptr2 = 0; /*0x465284*/
-        LOBYTE(v1[1].vfptr3) = 0; /*0x46528a*/
+        v1[1].ptr_8 = 0; /*0x465284*/
+        LOBYTE(v1[1].ptr_C) = 0; /*0x46528a*/
         v1[1].TurretOffset = 0; /*0x465290*/
         v1[1].CanBeHidden[0] = 0; /*0x465296*/
         *(unsigned int *)&v1[1].CameoFile[22] = 0; /*0x46529c*/
@@ -1610,7 +1610,7 @@ LABEL_15:
                                + g_MissionQueueFrame.localVariables[163]
                                + 56)
                    : -1;
-            if ( (void *)result != this->vfptr2 && result != v12 ) /*0x59413b*/
+            if ( (void *)result != this->ptr_8 && result != v12 ) /*0x59413b*/
               break; /*0x59413b*/
             v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&aP1); /*0x594147*/
             result = Cell::IsEmpty(v14); /*0x59414e*/

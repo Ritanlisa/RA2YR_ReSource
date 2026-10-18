@@ -605,7 +605,7 @@ public:
     uint8_t ComboBoxOwnerDraw_field_0x10[4];
     uint8_t ComboBoxOwnerDraw_field_0x14[4];
     uint8_t ComboBoxOwnerDraw_field_0x18[4];
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void SetCapacity();  // 0x6258E0
     int GrowBuffer();  // 0x625990
@@ -806,7 +806,7 @@ public:
 
     virtual void WndProc(); // 0x614B30
     virtual char GrowBuffer(wchar_t a2, size_t a3); // 0x7B72F0 (G42.35 def truth)
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view
 
     uint8_t EditControl_field_0x04[4];
 
@@ -901,7 +901,7 @@ public:
     uint8_t InputManager_field_0x08[4];
     uint8_t InputManager_field_0x0C[4];
     uint8_t InputManager_field_0x10[4];
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (sites 0x4E1620/0x4E1626)
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view (sites 0x4E1620/0x4E1626)
 
     unsigned int u32_314;  // G42.39 data supply
 
@@ -968,7 +968,7 @@ public:
     int MultiplayerGameMode_field_0x10;
     int MultiplayerGameMode_field_0x14;
     int MultiplayerGameMode_field_0x18;
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (site 0x5D657F)
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view (site 0x5D657F)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Clear();  // 0x623840
     static int Clear(void *aP0);  // 0x623840 G42.35 static-form sync (ui/supplied sites 0x5D2Exx family)
@@ -1012,7 +1012,7 @@ public:
     uint8_t ListClass_field_0x14[4];
     uint8_t ListClass_field_0x18[4];
     uint8_t ListClass_field_0x1C[4];
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (sites 0x557609/0x55764F)
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view (sites 0x557609/0x55764F)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Destru_vt43(int a1);  // 0x557800
     void* Destru_vt50(int a1, int a2, int a3, int a4, int a5);  // 0x557D20
@@ -1114,7 +1114,7 @@ public:
     static int * Constructor(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, int aP6);  // 0x6B1B20 G42.35 static-form sync (ui/supplied site 0x5572C3)
     virtual int Destructor(); // 0x6B1D00 (G42.35 def truth)
     virtual int GetValue(int a2); // 0x6B1D40 (G42.35 def truth)
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (site 0x55819A)
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view (site 0x55819A)
     // +8 more virtual methods
 
     uint8_t SliderClass_field_0x04[4];

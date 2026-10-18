@@ -129,7 +129,7 @@ namespace gamemd {
     unsigned int q128;  // 0x128 [X55 W3 supply (render vocab)]
     unsigned int q104;  // 0x104 [X55 W3 supply (render vocab)]
     unsigned int u32_15C;  // 0x15C [X55 W3 supply (render vocab)]
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
     struct Gap2Recv_4048B0 {
         int PrefetchAudioSamples();  // G42.39 def-derived
@@ -235,7 +235,7 @@ public:  // g57c5 W4 supply slot
         void * FindSpiralMoveTarget(ra2::game::ObjectClass * aP1);  // G42.39 def-derived
     
     unsigned int M1728;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_41AF80 {
     };
@@ -733,7 +733,7 @@ public:  // g57c5 W4 supply slot
         char ReadRegistryOptionsWOL();  // G42.39 def-derived
     
     unsigned char u8_C;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_5176C0 {
@@ -829,7 +829,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M208;  // X10 supply (csp_canon_members)
     unsigned int M212;  // X10 supply (csp_canon_members)
     unsigned int M216;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_5402B0 {
     int u32_C4;  // G42.39a supply
@@ -906,7 +906,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* Map_Get(int a2);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M752;  // 0x2F0 [X30:canon]
 };
     struct Gap2Recv_549E50 {
@@ -939,7 +939,7 @@ public:  // g57c5 W4 supply slot
     int uniqueId;  // G42.39a supply
         int Render_Render_556B70();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -948,7 +948,7 @@ public:  // g57c5 W4 supply slot
     int uniqueId;  // G42.39a supply
         void* Render_Render_556C00();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M12;  // 0xC [X30:canon]
     unsigned int M48;  // 0x30 [X30:canon]
 };
@@ -960,7 +960,7 @@ public:  // g57c5 W4 supply slot
         int CheckNetworkSync(int a2, int a3);  // G42.39 def-derived
     
     unsigned int M4;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_569760 {
         void DestroyCliffMap(int a2, int a3, IUnknown * aP3);  // G42.39 def-derived
@@ -1049,7 +1049,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         int Map_Create();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M2;  // 0x2 [X30:canon]
 };
     struct Gap2Recv_57B990 {
@@ -1065,7 +1065,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         int Map_Create_57CAB0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M2;  // 0x2 [X30:canon]
 };
     struct Gap2Recv_57CBE0 {
@@ -1173,7 +1173,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass;  // G42.39a supply
         int PlaceRandomWaypoints(int a2);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M32;  // 0x20 [X30:canon]
     unsigned int M44;  // 0x2C [X30:canon]
     unsigned int M56;  // 0x38 [X30:canon]
@@ -1236,7 +1236,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         void* Object_Helper_5A99B0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -1258,7 +1258,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* Map_Cleanup(int a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -1288,7 +1288,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass;  // G42.39a supply
         unsigned int TerritoryUpdateDisplayWOL(int a2);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M28;  // 0x1C [X30:canon]
     unsigned int M40;  // 0x40 [X30:canon]
 };
@@ -1329,7 +1329,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M8;  // X10 supply (csp_canon_members)
     unsigned int q018;  // X10 supply (member_lookup)
     unsigned int q034;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M32;  // 0x20 [X30:canon]
     unsigned int M36;  // 0x36 [X30:canon]
     unsigned int M40;  // 0x40 [X30:canon]
@@ -1364,7 +1364,7 @@ public:  // g57c5 W4 supply slot
     unsigned int q044;  // X10 supply (member_lookup)
     unsigned int q054;  // X10 supply (member_lookup)
     unsigned int u32_48;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M52;  // 0x52 [X30:canon]
     unsigned int M68;  // 0x68 [X30:canon]
     unsigned int M72;  // 0x72 [X30:canon]
@@ -1396,7 +1396,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         void SmallFunc_5D9360();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
 };
     struct Gap2Recv_5DB600 {
@@ -1448,7 +1448,7 @@ public:  // g57c5 W4 supply slot
         void String_Process();  // G42.39 def-derived
     
     unsigned int M20;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
     unsigned int M24;  // 0x24 [X30:canon]
@@ -1459,7 +1459,7 @@ public:  // g57c5 W4 supply slot
         void Map_Helper_5EF010();  // G42.39 def-derived
     
     unsigned int M20;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
     unsigned int M24;  // 0x24 [X30:canon]
@@ -1612,7 +1612,7 @@ public:  // g57c5 W4 supply slot
         void UpdateBuildingParticleSystem();  // G42.39 def-derived
     
     unsigned char VectorClass_2C8[4];  /* VectorClass */  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M144;  // 0x90 [X30:canon]
     unsigned int M156;  // 0x9C [X30:canon]
     unsigned int M160;  // 0xA0 [X30:canon]
@@ -1651,14 +1651,14 @@ public:  // g57c5 W4 supply slot
         char UI_Get_630EA0();  // G42.39 def-derived
     
     unsigned int M8;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_631380 {
     int AbstractClass_v;  // G42.39a supply
         void* UI_Pop();  // G42.39 def-derived
     
     unsigned char u8_30;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
 };
     struct Gap2Recv_631500 {
@@ -1666,12 +1666,12 @@ public:  // g57c5 W4 supply slot
         void UI_Pop_631500();  // G42.39 def-derived
     
     unsigned int M8;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_6316E0 {
         bool UI_Pop_631500_Pop(int a2);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M16;  // 0x10 [X30:canon]
     unsigned int M32;  // 0x20 [X30:canon]
 };
@@ -1679,14 +1679,14 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         void Network_Set();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
 };
     struct Gap2Recv_631B20 {
     int AbstractClass_v;  // G42.39a supply
         int UI_Pop_631500_Pop_Pop();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
 };
     struct Gap2Recv_632000 {
@@ -1705,7 +1705,7 @@ public:  // g57c5 W4 supply slot
         void* ExecuteActionPlanManager_Helper();  // G42.39 def-derived
     
     unsigned int M116;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M112;  // 0x70 [X30:canon]
 };
     struct Gap2Recv_6342E0 {
@@ -1808,7 +1808,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         bool HandlePlanningModeClick_Handle(void* a2);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -1823,7 +1823,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -1842,7 +1842,7 @@ public:  // g57c5 W4 supply slot
         void* ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3);  // G42.39 def-derived
     
     unsigned int M20;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -1853,7 +1853,7 @@ public:  // g57c5 W4 supply slot
     int vtable1;  // G42.39a supply
         char Team_Destroy(int aP1);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M16;  // 0x10 [X30:canon]
 };
@@ -1865,7 +1865,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* Object_Set(int a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -1877,7 +1877,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass;  // G42.39a supply
         char LoadMapPreviewImage(void* a2);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_643720 {
     int NeedsSaveOrLink;  // G42.39a supply
@@ -1904,7 +1904,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         int Network_Process_652540();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_652560 {
@@ -2103,7 +2103,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         void* Render_Render_65A1B0(BuildingTypeClass * aP1);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
 };
@@ -2112,7 +2112,7 @@ public:  // g57c5 W4 supply slot
     int vtable1;  // G42.39a supply
         void* Helper_65A7E0(TechnoClass * aP1);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -2130,7 +2130,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M16;  // X10 supply (csp_canon_members)
     unsigned int M4;  // X10 supply (csp_canon_members)
     unsigned int M8;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M20;  // 0x14 [X30:canon]
     unsigned int M28;  // 0x1C [X30:canon]
     unsigned int M29;  // 0x1D [X30:canon]
@@ -2145,14 +2145,14 @@ public:  // g57c5 W4 supply slot
     
     unsigned int M29;  // X10 supply (csp_canon_members)
     unsigned int M8;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M28;  // 0x1C [X30:canon]
 };
     struct Gap2Recv_65C6D0 {
     int AbstractClass_v;  // G42.39a supply
         void* SeedInitRNG(int aP1);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
 };
@@ -2181,7 +2181,7 @@ public:  // g57c5 W4 supply slot
     
     unsigned int q018;  // X10 supply (member_lookup)
     unsigned char u8_17;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -2211,7 +2211,7 @@ public:  // g57c5 W4 supply slot
     
     unsigned char u8_8;  // X10 supply (member_lookup)
     unsigned char u8_9;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M12;  // 0xC [X30:canon]
     unsigned int M16;  // 0x10 [X30:canon]
     unsigned int M20;  // 0x14 [X30:canon]
@@ -2624,7 +2624,7 @@ public:  // g57c5 W4 supply slot
         void* System_Load_67BFA0(void* a2);  // G42.39 def-derived
     
     unsigned char u8_E;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M13;  // 0xD [X30:canon]
@@ -2722,7 +2722,7 @@ public:  // g57c5 W4 supply slot
         char DynamicVector_PushBack(void* aP1);  // G42.39 def-derived
     
     unsigned int M13;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M16;  // 0x10 [X30:canon]
@@ -2802,7 +2802,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M21844;  // X10 supply (csp_canon_members)
     unsigned int M21848;  // X10 supply (csp_canon_members)
     unsigned int M4559;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_695BC0 {
     int AbstractClass_v;  // G42.39a supply
@@ -2818,7 +2818,7 @@ public:  // g57c5 W4 supply slot
     
     unsigned int M184;  // X10 supply (csp_canon_members)
     unsigned int M70;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     void* ptr_8;  // 0x8 [X30:canon]
     unsigned int M23;  // 0x17 [X30:canon]
     unsigned int M136;  // 0x88 [X30:canon]
@@ -2840,7 +2840,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M248;  // X10 supply (csp_canon_members)
     char u8_3F;  // X10 supply (member_lookup)
     char u8_B8;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M136;  // 0x88 [X30:canon]
 };
     struct Gap2Recv_6967B0 {
@@ -2849,7 +2849,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass;  // G42.39a supply
         int DlgProcLoadGame_Load();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M11;  // 0xB [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
     unsigned int M71;  // 0x47 [X30:canon]
@@ -2860,7 +2860,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass;  // G42.39a supply
         int DlgProcLoadGame_Load_696C40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M152;  // 0x98 [X30:canon]
 };
     struct Gap2Recv_697F10 {
@@ -2871,7 +2871,7 @@ public:  // g57c5 W4 supply slot
     
     unsigned int M21;  // X10 supply (csp_canon_members)
     unsigned int q016;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -2955,7 +2955,7 @@ public:  // g57c5 W4 supply slot
         int ParseAndApplyAlliances();  // G42.39 def-derived
     
     unsigned int M1672;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_69BBF0 {
         void Network_Disconnect_69BBF0(int a2);  // G42.39 def-derived
@@ -2968,7 +2968,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* ParseAndApplyAlliances_Parse(int a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -3014,7 +3014,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* System_Init_6AC8D0(int a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -3060,7 +3060,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         int Render_Load_6BAFA0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
     unsigned int M20;  // 0x14 [X30:canon]
@@ -3074,462 +3074,462 @@ public:  // g57c5 W4 supply slot
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6BFD40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6BFEC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6BFEC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C0040 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C0040();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C01C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C01C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C0340 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C0340();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C04C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C04C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C0640 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C0640();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C07C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C07C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C0940 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C0940();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C0C40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C0C40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C0DC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C0DC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C0F40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C0F40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C10C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C10C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C1240 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C1240();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C13C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C13C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C1540 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C1540();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C16C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C16C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C1840 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C1840();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C19C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C19C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C1B40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C1B40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C1CC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C1CC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C1E40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C1E40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C1FC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C1FC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C2140 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C2140();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C22C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C22C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C2440 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C2440();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C25C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C25C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C2740 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C2740();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C28C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C28C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C2A40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C2A40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C2BC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C2BC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C2D40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C2D40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C2EC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C2EC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C3040 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C3040();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C31C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C31C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C3340 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C3340();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C34C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C34C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C3640 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C3640();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C37C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C37C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C3940 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C3940();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C3AC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C3AC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C3C40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C3C40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C3DC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C3DC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C3F40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C3F40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C40C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C40C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C4240 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C4240();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C43C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C43C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C4540 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C4540();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C46C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C46C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C4840 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C4840();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C49C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C49C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C4B40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C4B40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C4CC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C4CC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C4E40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C4E40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C4FC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C4FC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C5140 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C5140();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C52C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C52C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C5440 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C5440();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C55C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C55C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C5740 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C5740();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C58C0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C58C0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C5A40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C5A40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C5BC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C5BC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C5D40 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C5D40();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C5EC0 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C5EC0();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C6040 {
     int vtable1;  // G42.39a supply
         void* WinMain_Helper_6C6040();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6C61C0 {
@@ -3544,7 +3544,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         char Audio_Read_6C8870();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
 };
@@ -3552,7 +3552,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         void* Render_Parse();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -3575,7 +3575,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* Render_Parse_6CABA0(int a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -3714,14 +3714,14 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         int System_Read_6E7330();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6E7C20 {
     int AbstractClass_v;  // G42.39a supply
         void* Network_Process_6E7C20();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
 };
     struct Gap2Recv_6EA0D0 {
@@ -3799,7 +3799,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* Team_Helper_6F2230(int a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -3812,7 +3812,7 @@ public:  // g57c5 W4 supply slot
         char Team_Helper_6F25E0(void* a2);  // G42.39 def-derived
     
     unsigned int M13;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M16;  // 0x10 [X30:canon]
@@ -3823,7 +3823,7 @@ public:  // g57c5 W4 supply slot
         void* Team_Helper_6F2780(void* aP1);  // G42.39 def-derived
     
     unsigned int M13;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
 };
@@ -3835,7 +3835,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* Team_Helper_6F27F0(int a2, void* a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -3907,7 +3907,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M416;  // X10 supply (csp_canon_members)
     unsigned int M420;  // X10 supply (csp_canon_members)
     unsigned char Timeout_18C[4];  /* Timeout */  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_70F1D0 {
     int u32_12C;  // G42.39a supply
@@ -3915,7 +3915,7 @@ public:  // g57c5 W4 supply slot
         char DrawBuildingRangeIndicator(TechnoClass * aP1, int a3);  // G42.39 def-derived
     
     unsigned int M300;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_710750 {
         char Object_Helper_710750(int a2);  // G42.39 def-derived
@@ -4025,7 +4025,7 @@ public:  // g57c5 W4 supply slot
         void* SelectFactionThemeMusic_Helper_734330(void * aP1, void * aP2);  // G42.39 def-derived
     
     unsigned int M20;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -4037,7 +4037,7 @@ public:  // g57c5 W4 supply slot
         char SelectFactionThemeMusic_Helper_734390(void* a2);  // G42.39 def-derived
     
     unsigned int M13;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M16;  // 0x10 [X30:canon]
@@ -4061,7 +4061,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M1652;  // X10 supply (csp_canon_members)
     unsigned int M1677;  // X10 supply (csp_canon_members)
     unsigned int M1732;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M248;  // 0xF8 [X30:canon]
     unsigned int M256;  // 0x100 [X30:canon]
     unsigned int M264;  // 0x108 [X30:canon]
@@ -4081,7 +4081,7 @@ public:  // g57c5 W4 supply slot
     unsigned int M1652;  // X10 supply (csp_canon_members)
     unsigned int M1732;  // X10 supply (csp_canon_members)
     unsigned int M1748;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M248;  // 0xF8 [X30:canon]
     unsigned int M256;  // 0x100 [X30:canon]
     unsigned int M264;  // 0x108 [X30:canon]
@@ -4158,13 +4158,13 @@ public:  // g57c5 W4 supply slot
     int AbstractClass;  // G42.39a supply
         char LoadVeinholeMonsters();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
 };
     struct Gap2Recv_74F620 {
     int AbstractClass_v;  // G42.39a supply
         void DestroyVeinholeMonster_Destroy();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M8;  // 0x8 [X30:canon]
 };
     struct Gap2Recv_74F6F0 {
@@ -4191,7 +4191,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
         int GenerateLightRemapTable(void* a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M16;  // 0x10 [X30:canon]
@@ -4295,7 +4295,7 @@ public:  // g57c5 W4 supply slot
         void* Team_Create_765C90(int a2, void* a3);  // G42.39 def-derived
     
     unsigned int M13;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -4329,7 +4329,7 @@ public:  // g57c5 W4 supply slot
         char System_Init_766EE0(int aP1);  // G42.39 def-derived
     
     unsigned int M13;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M16;  // 0x10 [X30:canon]
@@ -4413,7 +4413,7 @@ public:  // g57c5 W4 supply slot
     struct Gap2Recv_769C20 {
         void* Map_Load_769C20(ObjectClass * aP1);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
 };
@@ -4422,7 +4422,7 @@ public:  // g57c5 W4 supply slot
         void* ConstructWDTSelection_Create_767FB0_Create_Create(HashTable * aP1, HashTable * aP2);  // G42.39 def-derived
     
     unsigned int M13;  // X10 supply (csp_canon_members)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -4450,7 +4450,7 @@ public:  // g57c5 W4 supply slot
     unsigned int q029;  // X10 supply (member_lookup)
     unsigned int q031;  // X10 supply (member_lookup)
     unsigned int q035;  // X10 supply (member_lookup)
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -4648,7 +4648,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* ShowWDTTerritorySelection(void* a2);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M76;  // 0x4C [X30:canon]
     unsigned int M1100;  // 0x44C [X30:canon]
     unsigned int M1108;  // 0x454 [X30:canon]
@@ -4667,7 +4667,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         bool TerritorySelectWDT(ObjectClass * aP1);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     AbstractClass* ptr_8;  // 0x8 [X30:canon]
     unsigned int M76;  // 0x4C [X30:canon]
     AudioController* ptr_50;  // 0x50 [X30:canon]
@@ -4684,7 +4684,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void ShowWDTTerritorySelection_Show();  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M1116;  // 0x45C [X30:canon]
     ObjectClass* ptr_494;  // 0x494 [X30:canon]
 };
@@ -4754,7 +4754,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void* ConstructWDTSelection_Create_76F210(int a2, int a3);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M4;  // 0x4 [X30:canon]
     unsigned int M8;  // 0x8 [X30:canon]
     unsigned int M12;  // 0xC [X30:canon]
@@ -4806,7 +4806,7 @@ public:  // g57c5 W4 supply slot
     int vtable0;  // G42.39a supply
         void TerritorySelectWDT_Delete(int a2, char a3, int a4);  // G42.39 def-derived
     
-    unsigned int vfptr;  // X10 supply (csp_canon_members)
+    unsigned int ptr_0;  // X10 supply (csp_canon_members)
     unsigned int M940;  // 0x3AC [X30:canon]
     unsigned int M944;  // 0x3B0 [X30:canon]
     unsigned int M948;  // 0x3B4 [X30:canon]

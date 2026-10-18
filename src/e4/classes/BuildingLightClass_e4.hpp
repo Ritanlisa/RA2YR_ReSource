@@ -14,7 +14,7 @@ struct BuildingLightClass {
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
-    void * vfptr3;  // 0xC
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18

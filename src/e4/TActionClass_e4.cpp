@@ -1327,9 +1327,9 @@ char TActionClass::executeFollowAction(int a2, int a3, int a4, int aP4)
   ((MapClass *)&DataGlobal_87F7E8)->BuildSubzones(); /*0x6e224d*/
   ((FogOfWar *)&DataGlobal_87F7E8)->Render(); /*0x6e2257*/
   int j; // esi
-  for ( j = stru_A8EB00.vfptr[20] - 1; j >= 0; --j ) /*0x6e2267*/
-    (*(void (**)(unsigned int, int))(**(unsigned int **)(stru_A8EB00.vfptr[17] + 4 * j) + 1184))( /*0x6e2275*/
-      *(unsigned int *)(stru_A8EB00.vfptr[17] + 4 * j),
+  for ( j = stru_A8EB00.ptr_0[20] - 1; j >= 0; --j ) /*0x6e2267*/
+    (*(void (**)(unsigned int, int))(**(unsigned int **)(stru_A8EB00.ptr_0[17] + 4 * j) + 1184))( /*0x6e2275*/
+      *(unsigned int *)(stru_A8EB00.ptr_0[17] + 4 * j),
       1);
   return 1; /*0x6e2281*/
 }
@@ -1387,7 +1387,7 @@ char TActionClass::executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4)
     if ( idxArray == this->TActionClass_field_50 ) /*0x6e2b17*/
     {
       void *vtable0; // edx
-      vtable0 = dword_A8B230[43].vfptr; /*0x6e2b1f*/
+      vtable0 = dword_A8B230[43].ptr_0; /*0x6e2b1f*/
       if ( (vtable0 || idxArray[156]) /*0x6e2b47*/
         && (vtable0 != 1 || idxArray[157])
         && (vtable0 != 2 || idxArray[158]) )
@@ -1411,7 +1411,7 @@ char TActionClass::executeSelfDestructAction(int a2, int a3, int a4, IUnknown * 
     10 * dword_A8B230[378].uniqueId,
     10 * dword_A8B230[378].abstractFlags,
     0);
-  dword_A8B230[378].vfptr3 = *&this->Value; /*0x6e2ea1*/
+  dword_A8B230[378].ptr_C = *&this->Value; /*0x6e2ea1*/
   return 1; /*0x6e2ea0*/
 }
 } // namespace gamemd
@@ -1421,7 +1421,7 @@ namespace gamemd {
 char TActionClass::executeExplodeAction(int a2, int a3, int a4, IUnknown * aP4)
 {
   UpdateSurfaceAnimations( /*0x6e2edd*/
-    10 * (int)dword_A8B230[378].vfptr3,
+    10 * (int)dword_A8B230[378].ptr_C,
     10 * *&this->HouseClass_A20,
     10 * dword_A8B230[378].abstractFlags,
     0);
@@ -1435,7 +1435,7 @@ namespace gamemd {
 char TActionClass::executeChronoshiftAction(int a2, int a3, int a4, IUnknown * aP4)
 {
   UpdateSurfaceAnimations( /*0x6e2f2d*/
-    10 * (int)dword_A8B230[378].vfptr3,
+    10 * (int)dword_A8B230[378].ptr_C,
     10 * dword_A8B230[378].uniqueId,
     10 * *&this->HouseClass_A20,
     0);

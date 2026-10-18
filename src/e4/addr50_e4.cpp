@@ -50,7 +50,7 @@ int E4Recv_501750::sub_501750(int a2)
     result = result; /*0x5017a2*/
     if ( !dword_A8E7AC && v5 != result ) /*0x5017ae*/
     {
-      (*(void (__stdcall **)(ObjectClass *, void *, int *))this->vfptr)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
+      (*(void (__stdcall **)(ObjectClass *, void *, int *))this->ptr_0)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
       (*(void (__stdcall **)(int, int *))(*(unsigned int *)v9 + 12))(v9, &v8); /*0x5017cf*/
       if ( (*(int (__stdcall **)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))(v8, 1, &v6, 0) >= 0 ) /*0x5017e7*/
       {

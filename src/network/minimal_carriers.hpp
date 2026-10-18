@@ -2,5 +2,5 @@
 #pragma once
 
 namespace gamemd {
-struct ConnManClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct ConnManClass { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd

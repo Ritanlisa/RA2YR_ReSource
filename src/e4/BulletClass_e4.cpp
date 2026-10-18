@@ -146,7 +146,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
 namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((int *)aP0->vfptr, a1, aP2); /*0x46afc4*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0->ptr_0, a1, aP2); /*0x46afc4*/
 }
 } // namespace gamemd
 

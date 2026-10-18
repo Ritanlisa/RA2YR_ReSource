@@ -263,7 +263,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
   BuildingClass *v5; // esi
   int i; // edi
   int v7; // eax
-  int vfptr; // ebp
+  int ptr_0; // ebp
   int v9; // edi
   int v10; // eax
   unsigned int *v11; // eax
@@ -303,11 +303,11 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       for ( i = a1->ptr_34 - 1; i >= 0; --i ) /*0x471d8b*/
         CaptureManagerClass::FreeUnit(**(CaptureManagerClass ***)(a1->u32_28 + 4 * i), a1, a2, v29, v30, v31); /*0x471d98*/
     }
-    v7 = (*(int (**)(BuildingClass *))(v5->vfptr + 60))(v5); /*0x471da4*/
-    vfptr = v5->vfptr; /*0x471daa*/
+    v7 = (*(int (**)(BuildingClass *))(v5->ptr_0 + 60))(v5); /*0x471da4*/
+    ptr_0 = v5->ptr_0; /*0x471daa*/
     v9 = v7; /*0x471dac*/
     v10 = (*(int (**)(unsigned int, int))(**(unsigned int **)(a1 + 72) + 60))(*(unsigned int *)(a1 + 72), 1); /*0x471db2*/
-    result = (*(int (**)(BuildingClass *, int))(vfptr + 980))(v5, v10); /*0x471db8*/
+    result = (*(int (**)(BuildingClass *, int))(ptr_0 + 980))(v5, v10); /*0x471db8*/
     if ( result )
     {
       v11 = (unsigned int *)__2_YAPAXI_Z(0x14u); /*0x471dce*/
@@ -339,8 +339,8 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       v18[1] = v33; /*0x471e52*/
       v18[2] = v19; /*0x471e57*/
       if ( !v5
-        || (*(int (**)(BuildingClass *))(v5->vfptr + 44))(v5) != 1
-        || !*(unsigned char *)(*((*(int (**)(BuildingClass *))(v5->vfptr + 44))(v5) == 1
+        || (*(int (**)(BuildingClass *))(v5->ptr_0 + 44))(v5) != 1
+        || !*(unsigned char *)(*((*(int (**)(BuildingClass *))(v5->ptr_0 + 44))(v5) == 1
                        ? (unsigned int *)&v5->__pad_6B8[12]
                        : (unsigned int *)1732)
                      + 3603)
@@ -348,7 +348,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       {
         currentMission = v5->currentMission; /*0x471e91*/
         if ( currentMission != 19 && currentMission != 18 ) /*0x471e9f*/
-          (*(void (**)(BuildingClass *))(v5->vfptr + 976))(v5); /*0x471ea5*/
+          (*(void (**)(BuildingClass *))(v5->ptr_0 + 976))(v5); /*0x471ea5*/
       }
       CaptureManagerClass::DecideUnitFate((CaptureManagerClass *)a1, (int)v5); /*0x471eae*/
       if ( (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6 ) /*0x471ec1*/
@@ -359,9 +359,9 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       else
       {
         v21 = 0; /*0x471eea*/
-        v22 = *(unsigned int *)((*(int (**)(BuildingClass *))(v5->vfptr + 132))(v5) + 1548); /*0x471ef2*/
+        v22 = *(unsigned int *)((*(int (**)(BuildingClass *))(v5->ptr_0 + 132))(v5) + 1548); /*0x471ef2*/
       }
-      v23 = (int *)(*(int (**)(BuildingClass *, int *))(v5->vfptr + 72))(v5, v35); /*0x471ee1*/
+      v23 = (int *)(*(int (**)(BuildingClass *, int *))(v5->ptr_0 + 72))(v5, v35); /*0x471ee1*/
       v24 = *v23; /*0x471f04*/
       v25 = v23[1]; /*0x471f06*/
       v26 = v22 + v23[2]; /*0x471f11*/
@@ -398,7 +398,7 @@ char CaptureManagerClass::FreeUnit(int a2, int a3, unsigned int *a1, int aP1, un
   int i; // ebx
   CaptureManagerClass **v10; // ebp
   int v11; // ecx
-  int vfptr; // edx
+  int ptr_0; // edx
   int v13; // eax
   int controlNodeCount; // ecx
   int originalOwner; // eax
@@ -422,7 +422,7 @@ char CaptureManagerClass::FreeUnit(int a2, int a3, unsigned int *a1, int aP1, un
         (*(void (**)(int))(*(unsigned int *)v11 + 248))(v11); /*0x472034*/
         this->u32_2C8 = 0; /*0x47203a*/
       }
-      if ( *(unsigned int *)((*(int (**)(CaptureManagerClass *, int, int))(this->vfptr + 132))(this, a3, a2) + 1456) == -1 ) /*0x472059*/
+      if ( *(unsigned int *)((*(int (**)(CaptureManagerClass *, int, int))(this->ptr_0 + 132))(this, a3, a2) + 1456) == -1 ) /*0x472059*/
       {
         if ( *&dword_8871E0->q264 != -1 ) /*0x4720a3*/
         {
@@ -434,16 +434,16 @@ char CaptureManagerClass::FreeUnit(int a2, int a3, unsigned int *a1, int aP1, un
       else
       {
         v20[0] = this->Coord_9C; /*0x472069*/
-        vfptr = this->vfptr; /*0x47206d*/
+        ptr_0 = this->ptr_0; /*0x47206d*/
         v20[1] = this->q0A0; /*0x472072*/
         v20[2] = this->u32_A4; /*0x472079*/
-        v13 = (*(int (**)(CaptureManagerClass *))(vfptr + 132))(this); /*0x47207f*/
+        v13 = (*(int (**)(CaptureManagerClass *))(ptr_0 + 132))(this); /*0x47207f*/
         StartAudioControllerAt(*(unsigned int *)(v13 + 1456), v20, 0); /*0x47208d*/
         v10 = (CaptureManagerClass **)a5; /*0x472092*/
       }
       a2 = 1; /*0x4720d5*/
       a3 = (int)v10[1]; /*0x4720d7*/
-      (*(void (**)(CaptureManagerClass *))(this->vfptr + 980))(this); /*0x4720da*/
+      (*(void (**)(CaptureManagerClass *))(this->ptr_0 + 980))(this); /*0x4720da*/
       CaptureManagerClass::DecideUnitFate(v7, (int)this); /*0x4720e3*/
       this->u32_2C0 = 0; /*0x4720e8*/
       controlNodeCount = v7->controlNodeCount; /*0x4720f2*/
@@ -963,7 +963,7 @@ int CaptureManagerClass::Capture(unsigned int * a2)
   if ( m_10 <= 0 ) /*0x472d78*/
     return -1; /*0x472d8f*/
   unsigned int *i; // ecx
-  for ( i = *&this->vfptr1; *i != *a2; ++i ) /*0x472d7e*/
+  for ( i = *&this->ptr_4; *i != *a2; ++i ) /*0x472d7e*/
   {
     if ( ++result >= m_10 ) /*0x472d8d*/
       return -1; /*0x472d8d*/
@@ -1080,7 +1080,7 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   ((AbstractClass *)Block)->DTOR(); /*0x472a5a*/
   if ( (a2 & 1) != 0 ) /*0x472a64*/
     operator delete((Block)); /*0x472a67*/
-  return &Block->vfptr; /*0x472a71*/
+  return &Block->ptr_0; /*0x472a71*/
 }
 } // namespace gamemd
 
@@ -1090,7 +1090,7 @@ unsigned int CaptureManagerClass::LoadTypeData(int a2)
 {
 
   if ( LOBYTE(this->vtable4) ) /*0x472ab0*/
-    return (unsigned int)(a2 - *&this->vfptr1) >> 2; /*0x472ac5*/
+    return (unsigned int)(a2 - *&this->ptr_4) >> 2; /*0x472ac5*/
   else
     return 0; /*0x472ab7*/
 
@@ -1111,7 +1111,7 @@ char CaptureManagerClass::AddRef(int a2)
     if ( m_8 <= 0 ) /*0x472b53*/
       return 1; /*0x472b73*/
     unsigned int *v4; // eax
-    v4 = (unsigned int *)(*&this->vfptr1); /*0x472b55*/
+    v4 = (unsigned int *)(*&this->ptr_4); /*0x472b55*/
     int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x472b5b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x472b64*/
@@ -1144,22 +1144,22 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->vtable4) = 1; /*0x472bb6*/
     if ( v4 ) /*0x472bba*/
     {
-      if ( *&this->vfptr1 ) /*0x472bc5*/
+      if ( *&this->ptr_4 ) /*0x472bc5*/
       {
         int m_8 = this->vtable3; // ecx /*0x472bcc*/
         if ( a2 < m_8 ) /*0x472bd1*/
           m_8 = a2; /*0x472bd3*/
         int i; // eax
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vfptr1 + 4 * i - 4) ) /*0x472bd9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->ptr_4 + 4 * i - 4) ) /*0x472bd9*/
           ++i; /*0x472bde*/
         if ( BYTE1(this->vtable4) ) /*0x472beb*/
         {
-          __3_YAXPAX_Z(*&this->vfptr1); /*0x472bf6*/
-          *&this->vfptr1 = 0; /*0x472bfe*/
+          __3_YAXPAX_Z(*&this->ptr_4); /*0x472bf6*/
+          *&this->ptr_4 = 0; /*0x472bfe*/
         }
       }
-      *&this->vfptr1 = v4; /*0x472c07*/
-      this->vfptr2 = a2; /*0x472c0f*/
+      *&this->ptr_4 = v4; /*0x472c07*/
+      this->ptr_8 = a2; /*0x472c0f*/
       BYTE1(this->vtable4) = a3 == 0; /*0x472c12*/
       return 1; /*0x472c18*/
     }
@@ -1170,7 +1170,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUControlNode *))(*(unsigned int *)this->vfptr + 12))(this); /*0x472c22*/
+    (*(void (**)(_VectorClass_PAUControlNode *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x472c22*/
     return 1; /*0x472c28*/
   }
 

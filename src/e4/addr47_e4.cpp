@@ -94,7 +94,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
     /* X11: vtable install elided (X67 star-deref, RHS vt_TypeList_int) */  /*0x47712a*/
     for ( i = (BuildingTypeClass *)strtok(v21.__pad_20, Delimiter); i; i = (BuildingTypeClass *)strtok(0, Delimiter) ) /*0x477144*/
     {
-      if ( !LOBYTE(i->vfptr) ) /*0x47714a*/
+      if ( !LOBYTE(i->ptr_0) ) /*0x47714a*/
         break; /*0x47714d*/
       v13 = 0; /*0x477159*/
       if ( !_strcmpi(i, aPower) ) /*0x47715b*/
@@ -2008,7 +2008,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
 
   if ( !a3 ) /*0x474552*/
     return INIClass::WriteToString((INIClass *)this, aP1); /*0x47455c*/
-  INIClass::ClearSection(&this->vfptr, (int)g_INI_Key_Digest, 0); /*0x474575*/
+  INIClass::ClearSection(&this->ptr_0, (int)g_INI_Key_Digest, 0); /*0x474575*/
   memset(&v6.SHA1_field_0x04, 0, 9); /*0x47457e*/
   v12 = 0; /*0x47458d*/
   v13 = 0; /*0x474591*/
@@ -2028,7 +2028,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
     (int)&this->ambientSoundController[1] + 1,
     20);
   v5 = INIClass::WriteToString((INIClass *)this, aP1); /*0x47460a*/
-  INIClass::ClearSection(&this->vfptr, (int)g_INI_Key_Digest, 0); /*0x47460c*/
+  INIClass::ClearSection(&this->ptr_0, (int)g_INI_Key_Digest, 0); /*0x47460c*/
   return v5; /*0x474561*/
 
 }
@@ -2461,7 +2461,7 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
   char *v3; // eax
   v3 = ((String *)((String *)a2))->GetOrEmpty_Alt(); /*0x47aa16*/
   FileClass::OpenWithCDSearch(v3); /*0x47aa1e*/
-  return this->vfptr; /*0x47aa25*/
+  return this->ptr_0; /*0x47aa25*/
 }
 } // namespace gamemd
 

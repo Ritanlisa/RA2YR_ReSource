@@ -8,7 +8,7 @@ namespace gamemd {
 struct BlowStraw;  // fix_fwd_type_supply
 struct E4Recv_6616B0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
     unsigned int M12;  // 0xC

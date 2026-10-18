@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct ChronoScreenEffect {
-    void* vfptr;
+    void* ptr_0;
     int DecrementCounter(void *a1, void *a2);
 };
 

@@ -836,7 +836,7 @@ void TechnoTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5,
     {
       if ( !byte_A8EB0D && dword_A8EB08 /*0x711ab1*/
         || dword_A8EB14 <= 0
-        || !(*(uint8_t (**)(TechnoTypeClass *, int, unsigned int))(stru_A8EB00.vfptr + 8))(
+        || !(*(uint8_t (**)(TechnoTypeClass *, int, unsigned int))(stru_A8EB00.ptr_0 + 8))(
               &stru_A8EB00,
               dword_A8EB14 + dword_A8EB08,
               0) )
@@ -890,7 +890,7 @@ int TechnoTypeClass::DTOR(void *a1)
     DynamicVector::RemoveItem((DynamicVector *)&dword_B0F670, v3); /*0x711b74*/
   v17 = a1; /*0x711b89*/
   int v4; // eax
-  v4 = (*(int (**)(TechnoTypeClass *, void **))(stru_A8EB00.vfptr + 16))(&stru_A8EB00, &v17); /*0x711b8d*/
+  v4 = (*(int (**)(TechnoTypeClass *, void **))(stru_A8EB00.ptr_0 + 16))(&stru_A8EB00, &v17); /*0x711b8d*/
   if ( v4 != -1 ) /*0x711b93*/
     TechnoTypeClass::RemoveItem(&stru_A8EB00, v4); /*0x711b9b*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x711ba7*/
@@ -1604,7 +1604,7 @@ char TechnoTypeClass::RemoveItem(int a2, void *a2_2)
     do /*0x717dd4*/
     {
       ++v3; /*0x717dc7*/
-      *(unsigned int *)(a2_2->vfptr1 + 4 * v3 - 4) = *(unsigned int *)(a2_2->vfptr1 + 4 * v3); /*0x717dcb*/
+      *(unsigned int *)(a2_2->ptr_4 + 4 * v3 - 4) = *(unsigned int *)(a2_2->ptr_4 + 4 * v3); /*0x717dcb*/
     }
     while ( v3 < a2_2->uniqueId ); /*0x717dd4*/
   }

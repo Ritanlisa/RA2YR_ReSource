@@ -286,7 +286,7 @@ bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool u
     CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
     result = v13; /*0x4a9d99*/
   }
-  if ( ((int)v5->__pad_140 & 2) != 0 && v7 && ((int)dword_A8B230[0].vfptr & 0x1000) != 0 ) /*0x4a9db5*/
+  if ( ((int)v5->__pad_140 & 2) != 0 && v7 && ((int)dword_A8B230[0].ptr_0 & 0x1000) != 0 ) /*0x4a9db5*/
   {
     CellClass::UpdateZone((CellClass *)v5); /*0x4a9db9*/
     return v13; /*0x4a9dbe*/

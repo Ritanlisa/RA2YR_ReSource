@@ -807,7 +807,7 @@ LABEL_21:
           v15 = v14; /*0x75134b*/
           if ( v14 ) /*0x751352*/
           {
-            v14->vfptr = 0; /*0x751354*/
+            v14->ptr_0 = 0; /*0x751354*/
             if ( g_VocPlayState < dword_B1D380 /*0x75138f*/
               || (byte_B1D385 || !dword_B1D380)
               && dword_B1D38C > 0
@@ -819,7 +819,7 @@ LABEL_21:
               v16 = g_VocPlayState++; /*0x75139c*/
               *((unsigned int *)g_VocAudioConfig + v16) = v15; /*0x7513ab*/
             }
-            v15->vfptr = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
+            v15->ptr_0 = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
           }
           else
           {
@@ -2249,35 +2249,35 @@ AbstractClass * * sub_6C6D00()
   unsigned int v7; // ecx
 
   v1 = 0; /*0x6c6d08*/
-  if ( g_SidebarButtonState.vfptr ) /*0x6c6d0c*/
+  if ( g_SidebarButtonState.ptr_0 ) /*0x6c6d0c*/
   {
-    if ( (int)g_SidebarButtonState.vfptr <= 0 ) /*0x6c6d12*/
-      v1 = (char *)g_SidebarButtonState.vfptr - 1; /*0x6c6d14*/
+    if ( (int)g_SidebarButtonState.ptr_0 <= 0 ) /*0x6c6d12*/
+      v1 = (char *)g_SidebarButtonState.ptr_0 - 1; /*0x6c6d14*/
     memcpy( /*0x6c6d45*/
-      (char *)g_SidebarButtonState.vfptr2 + 32776 * (unsigned int)v1,
-      (char *)g_SidebarButtonState.vfptr2 + 32776 * (unsigned int)(v1 + 1),
-      32776 * (int)g_SidebarButtonState.vfptr - 32776 * (unsigned int)(v1 + 1));
-    if ( 3 * (int)--g_SidebarButtonState.vfptr <= (int)g_SidebarButtonState.vfptr1 ) /*0x6c6d63*/
+      (char *)g_SidebarButtonState.ptr_8 + 32776 * (unsigned int)v1,
+      (char *)g_SidebarButtonState.ptr_8 + 32776 * (unsigned int)(v1 + 1),
+      32776 * (int)g_SidebarButtonState.ptr_0 - 32776 * (unsigned int)(v1 + 1));
+    if ( 3 * (int)--g_SidebarButtonState.ptr_0 <= (int)g_SidebarButtonState.ptr_4 ) /*0x6c6d63*/
     {
-      v2 = (int)g_SidebarButtonState.vfptr1 / 2; /*0x6c6d6c*/
-      if ( (int)g_SidebarButtonState.vfptr1 / 2 < 10 ) /*0x6c6d71*/
+      v2 = (int)g_SidebarButtonState.ptr_4 / 2; /*0x6c6d6c*/
+      if ( (int)g_SidebarButtonState.ptr_4 / 2 < 10 ) /*0x6c6d71*/
         v2 = 10; /*0x6c6d73*/
-      if ( v2 < (int)g_SidebarButtonState.vfptr1 ) /*0x6c6d7a*/
+      if ( v2 < (int)g_SidebarButtonState.ptr_4 ) /*0x6c6d7a*/
       {
         v3 = (char *)__2_YAPAXI_Z(32776 * v2); /*0x6c6d88*/
-        vtable2 = (char *)g_SidebarButtonState.vfptr2; /*0x6c6d8d*/
+        vtable2 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6d8d*/
         v5 = v3; /*0x6c6d98*/
-        if ( g_SidebarButtonState.vfptr2 ) /*0x6c6d9a*/
+        if ( g_SidebarButtonState.ptr_8 ) /*0x6c6d9a*/
         {
-          v6 = 8 * LOBYTE(g_SidebarButtonState.vfptr); /*0x6c6dae*/
-          v7 = (unsigned int)(32776 * (int)g_SidebarButtonState.vfptr) >> 2; /*0x6c6db0*/
-          qmemcpy(v3, g_SidebarButtonState.vfptr2, 4 * v7); /*0x6c6db3*/
+          v6 = 8 * LOBYTE(g_SidebarButtonState.ptr_0); /*0x6c6dae*/
+          v7 = (unsigned int)(32776 * (int)g_SidebarButtonState.ptr_0) >> 2; /*0x6c6db0*/
+          qmemcpy(v3, g_SidebarButtonState.ptr_8, 4 * v7); /*0x6c6db3*/
           qmemcpy(&v3[4 * v7], &vtable2[4 * v7], v6 & 3); /*0x6c6dba*/
-          vtable2 = (char *)g_SidebarButtonState.vfptr2; /*0x6c6dbc*/
+          vtable2 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6dbc*/
         }
         __3_YAXPAX_Z(vtable2); /*0x6c6dc4*/
-        g_SidebarButtonState.vfptr2 = v5; /*0x6c6dcc*/
-        g_SidebarButtonState.vfptr1 = (void *)v2; /*0x6c6dd2*/
+        g_SidebarButtonState.ptr_8 = v5; /*0x6c6dcc*/
+        g_SidebarButtonState.ptr_4 = (void *)v2; /*0x6c6dd2*/
       }
     }
   }
@@ -2295,18 +2295,18 @@ AbstractClass * * sub_6C6DE0()
   char *v5; // edi
   unsigned char v6[32776]; // [esp+14h] [ebp-8008h] BYREF
 
-  vtable0 = (int)g_SidebarButtonState.vfptr; /*0x6c6dea*/
+  vtable0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6dea*/
   *(unsigned int *)v6 = 0; /*0x6c6df8*/
   *(unsigned int *)&v6[4] = 0; /*0x6c6dfc*/
-  if ( g_SidebarButtonState.vfptr ) /*0x6c6e00*/
+  if ( g_SidebarButtonState.ptr_0 ) /*0x6c6e00*/
   {
-    if ( (int)g_SidebarButtonState.vfptr > 0 ) /*0x6c6e06*/
+    if ( (int)g_SidebarButtonState.ptr_0 > 0 ) /*0x6c6e06*/
     {
-      Audio_Read_6C6B00((ObjectClass *)v6, (unsigned int *)g_SidebarButtonState.vfptr2); /*0x6c6e12*/
-      vtable0 = (int)g_SidebarButtonState.vfptr; /*0x6c6e17*/
+      Audio_Read_6C6B00((ObjectClass *)v6, (unsigned int *)g_SidebarButtonState.ptr_8); /*0x6c6e12*/
+      vtable0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6e17*/
     }
     LABEL_4:
-    vtable2 = (char *)g_SidebarButtonState.vfptr2; /*0x6c6e1d*/
+    vtable2 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6e1d*/
     while ( *(int *)&v6[4] < 1 || *(int *)v6 > 10 ) /*0x6c6e31*/
     {
       v3 = 0; /*0x6c6e37*/
@@ -2315,22 +2315,22 @@ AbstractClass * * sub_6C6DE0()
       if ( vtable0 <= 0 ) /*0x6c6e41*/
         v3 = vtable0 - 1; /*0x6c6e43*/
       memcpy(&vtable2[32776 * v3], &vtable2[32776 * v3 + 32776], 32776 * vtable0 - 32776 * (v3 + 1)); /*0x6c6e6e*/
-      vtable0 = (int)g_SidebarButtonState.vfptr - 1; /*0x6c6e81*/
-      g_SidebarButtonState.vfptr = (void *)vtable0; /*0x6c6e82*/
-      if ( 3 * vtable0 <= (int)g_SidebarButtonState.vfptr1 ) /*0x6c6e8d*/
+      vtable0 = (int)g_SidebarButtonState.ptr_0 - 1; /*0x6c6e81*/
+      g_SidebarButtonState.ptr_0 = (void *)vtable0; /*0x6c6e82*/
+      if ( 3 * vtable0 <= (int)g_SidebarButtonState.ptr_4 ) /*0x6c6e8d*/
       {
         Audio_Read_6C8870(&g_SidebarButtonState); /*0x6c6e94*/
-        vtable0 = (int)g_SidebarButtonState.vfptr; /*0x6c6e99*/
+        vtable0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6e99*/
       }
       if ( !vtable0 ) /*0x6c6ea1*/
         return; /*0x6c6ea1*/
       if ( vtable0 <= 0 ) /*0x6c6ea7*/
         goto LABEL_4; /*0x6c6ea7*/
-      vtable2 = (char *)g_SidebarButtonState.vfptr2; /*0x6c6ead*/
-      *(unsigned int *)v6 = *(unsigned int *)g_SidebarButtonState.vfptr2; /*0x6c6eb5*/
-      *(unsigned int *)&v6[4] = *((unsigned int *)g_SidebarButtonState.vfptr2 + 1); /*0x6c6ec2*/
+      vtable2 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6ead*/
+      *(unsigned int *)v6 = *(unsigned int *)g_SidebarButtonState.ptr_8; /*0x6c6eb5*/
+      *(unsigned int *)&v6[4] = *((unsigned int *)g_SidebarButtonState.ptr_8 + 1); /*0x6c6ec2*/
       if ( *(int *)&v6[4] <= 0x8000 ) /*0x6c6ec6*/
-        memcpy(&v6[8], (char *)g_SidebarButtonState.vfptr2 + 8, *(unsigned int *)&v6[4]); /*0x6c6edd*/
+        memcpy(&v6[8], (char *)g_SidebarButtonState.ptr_8 + 8, *(unsigned int *)&v6[4]); /*0x6c6edd*/
       else
         *(unsigned int *)&v6[4] = 0; /*0x6c6ec8*/
     }
@@ -2344,11 +2344,11 @@ AbstractClass * * sub_6C6DE0()
         *(unsigned int *)&v6[4]);
       v4 = 0; /*0x6c6f17*/
       ++*(unsigned int *)v6; /*0x6c6f1b*/
-      if ( g_SidebarButtonState.vfptr ) /*0x6c6f1f*/
+      if ( g_SidebarButtonState.ptr_0 ) /*0x6c6f1f*/
       {
-        if ( (int)g_SidebarButtonState.vfptr <= 0 ) /*0x6c6f21*/
-          v4 = (char *)g_SidebarButtonState.vfptr - 1; /*0x6c6f23*/
-        v5 = (char *)g_SidebarButtonState.vfptr2 + 32776 * (unsigned int)v4; /*0x6c6f32*/
+        if ( (int)g_SidebarButtonState.ptr_0 <= 0 ) /*0x6c6f21*/
+          v4 = (char *)g_SidebarButtonState.ptr_0 - 1; /*0x6c6f23*/
+        v5 = (char *)g_SidebarButtonState.ptr_8 + 32776 * (unsigned int)v4; /*0x6c6f32*/
         if ( v5 ) /*0x6c6f37*/
           memcpy(v5, v6, 0x8008u); /*0x6c6f42*/
       }

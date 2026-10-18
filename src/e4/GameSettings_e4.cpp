@@ -224,7 +224,7 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
   *(float *)&_ESI[56] = _ET1; /*0x5fa9e2*/
   __asm { fmul ds:flt_7EF38C } /*0x5fa9e5*/
   LOWORD(v13) = Math::RoundToInt(v1); /*0x5fa9eb*/
-  EndBufferMixer(&g_MixerChannel_Score->vfptr, (int)v13); /*0x5fa9f8*/
+  EndBufferMixer(&g_MixerChannel_Score->ptr_0, (int)v13); /*0x5fa9f8*/
   __asm { fld dword ptr [esi+38h] } /*0x5fa9fd*/
   __asm { fstp [esp+1A8h+var_1A8] }
   Debug::Log(); /*0x5faa0b*/
@@ -255,7 +255,7 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
     fmul ds:flt_7EF38C
   }
   LOWORD(v17) = Math::RoundToInt(v1); /*0x5faa60*/
-  EndBufferMixer(&g_MixerChannel_Voice->vfptr, (int)v17); /*0x5faa6d*/
+  EndBufferMixer(&g_MixerChannel_Voice->ptr_0, (int)v17); /*0x5faa6d*/
   __asm { fld dword ptr [esi+3Ch] } /*0x5faa72*/
   __asm { fstp [esp+1A8h+var_1A8] }
   Debug::Log(); /*0x5faa80*/
@@ -279,7 +279,7 @@ int GameSettings::Read(void *a1, void *a2, void *a3)
   *(float *)&_ESI[64] = _ET1; /*0x5faab7*/
   __asm { fmul ds:flt_7EF38C } /*0x5faaba*/
   LOWORD(v20) = Math::RoundToInt(v1); /*0x5faac0*/
-  EndBufferMixer(&g_MixerChannel_Theme->vfptr, (int)v20); /*0x5faacd*/
+  EndBufferMixer(&g_MixerChannel_Theme->ptr_0, (int)v20); /*0x5faacd*/
   __asm /*0x5faad2*/
   {
     fld dword ptr [esi+40h]

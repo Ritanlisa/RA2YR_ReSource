@@ -275,7 +275,7 @@ int TagClass::Unlink(void *a1)
   this->u32_3C = 0; /*0x71ae34*/
   this->u32_38 = 0; /*0x71ae37*/
   if ( buildingType ) /*0x71ae3a*/
-    return (*((int (**)(TagTypeClass *, unsigned int, int))buildingType->vfptr + 289))(buildingType, 0, 1); /*0x71ae41*/
+    return (*((int (**)(TagTypeClass *, unsigned int, int))buildingType->ptr_0 + 289))(buildingType, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
 }
 }
@@ -337,12 +337,12 @@ int TagClass::ProcessTag(int * a2)
   int v5; // eax
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x6e56e9*/
-  v3 = (*((int (**)(void **))this->buildingType->vfptr1 + 4))(&this->buildingType->vfptr1); /*0x6e56f7*/
+  v3 = (*((int (**)(void **))this->buildingType->ptr_4 + 4))(&this->buildingType->ptr_4); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
-    v5 = (*((int (**)(void **))firstTrigger->vfptr1 + 4))(&firstTrigger->vfptr1); /*0x6e5710*/
+    v5 = (*((int (**)(void **))firstTrigger->ptr_4 + 4))(&firstTrigger->ptr_4); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/

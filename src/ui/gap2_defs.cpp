@@ -956,7 +956,7 @@ int TauntCommandClass::Do(int a1) {
         v18 = dword_A80238; /*0x53644b*/
         for ( i = 0; v7 < v18; i = v7 ) /*0x536453*/
         {
-          v8 = (wchar_t *)*(&dword_A8022C->vfptr + v7); /*0x536460*/
+          v8 = (wchar_t *)*(&dword_A8022C->ptr_0 + v7); /*0x536460*/
           if ( v8 ) /*0x536465*/
           {
             if ( *(unsigned char *)(v8->u32_34 + 421) ) /*0x53646e*/
@@ -2926,13 +2926,13 @@ int SidebarClass::ResetProductionState() {
     *(unsigned int *)(v6 + 140) = -1; /*0x637bc0*/
     if ( !v2 ) /*0x637bca*/
       goto LABEL_32; /*0x637bca*/
-    v15 = (*((int (**)(BuildingClass *))v2->vfptr + 97))(v2); /*0x637bd6*/
+    v15 = (*((int (**)(BuildingClass *))v2->ptr_0 + 97))(v2); /*0x637bd6*/
     if ( v15 == 5 ) /*0x637bdb*/
     {
       v16 = 1; /*0x637bdd*/
       goto LABEL_33; /*0x637bdf*/
     }
-    if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(&v29, &v2->target->vfptr), /*0x637c0f*/
+    if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(&v29, &v2->target->ptr_0), /*0x637c0f*/
            v28 = *(unsigned int *)WaypointCoords,
            v18 = WaypointCoords[4],
            v15 == 1)
@@ -2960,7 +2960,7 @@ LABEL_33:
             v21 = *(unsigned int *)(v19 + 140); /*0x637c47*/
             if ( (v21 == -1 || v21 > 0) && !*(unsigned char *)(v20 + 28) ) /*0x637c56*/
             {
-              (*((void (**)(BuildingClass *, int, int))v2->vfptr + 122))(v2, 28, 1); /*0x637c65*/
+              (*((void (**)(BuildingClass *, int, int))v2->ptr_0 + 122))(v2, 28, 1); /*0x637c65*/
               qmemcpy( /*0x637c87*/
                 v29.ScriptAction_field_0x8,
                 (const void *)FactoryClass::CompleteCurrentItem(v20, (int)v29.__pad_78),
@@ -3521,8 +3521,8 @@ LABEL_26:
               {
                 v14 = p_RadarClass_field_0x1224[4]; /*0x656a02*/
                 v15 = p_RadarClass_field_0x1224[1]; /*0x656a05*/
-                p_RadarClass_field_0x1224[4] = (VectorClass *)((char *)&v14->vfptr + 1); /*0x656a0b*/
-                *((unsigned int *)&v15->vfptr + (unsigned int)v14) = v19; /*0x656a12*/
+                p_RadarClass_field_0x1224[4] = (VectorClass *)((char *)&v14->ptr_0 + 1); /*0x656a0b*/
+                *((unsigned int *)&v15->ptr_0 + (unsigned int)v14) = v19; /*0x656a12*/
               }
               if ( ++v11 >= a1 ) /*0x656a1c*/
                 goto LABEL_26; /*0x656a1c*/
@@ -3549,8 +3549,8 @@ LABEL_26:
             v8 = *&this->q126C; /*0x656954*/
             RadarClass_field_0x1260 = this->RadarClass_field_0x1260; /*0x656957*/
             *&this->q126C = v8 + 1; /*0x65695d*/
-            *((unsigned int *)&RadarClass_field_0x1260->vfptr + 2 * v8) = v22[0]; /*0x656964*/
-            *((unsigned int *)&RadarClass_field_0x1260->vfptr1 + 2 * v8) = v22[1]; /*0x65696b*/
+            *((unsigned int *)&RadarClass_field_0x1260->ptr_0 + 2 * v8) = v22[0]; /*0x656964*/
+            *((unsigned int *)&RadarClass_field_0x1260->ptr_4 + 2 * v8) = v22[1]; /*0x65696b*/
           }
           if ( ++v19 >= a1 ) /*0x65697e*/
             goto LABEL_14; /*0x65697e*/
@@ -3949,7 +3949,7 @@ void* TabClass::initTabData() {
 namespace gamemd { 
 int SidebarClass::Init() {
 
-  int vfptr; // eax
+  int ptr_0; // eax
   int v3; // ebp
   ShpButtonClass *v4; // esi
   int v5; // eax
@@ -3983,7 +3983,7 @@ int SidebarClass::Init() {
   SidebarClass::CreateScrollButtons(v30); /*0x6a5315*/
   SidebarClass::InitPositions(v31); /*0x6a531c*/
   SidebarClass::CalcBounds(0); /*0x6a5326*/
-  LOBYTE(vfptr) = stru_A8E960.random[503]; /*0x6a532b*/
+  LOBYTE(ptr_0) = stru_A8E960.random[503]; /*0x6a532b*/
   if ( !stru_A8E960.random[503] ) /*0x6a5332*/
   {
     dword_B0B3B0 = dword_B0B4E0; /*0x6a534b*/
@@ -4071,26 +4071,26 @@ int SidebarClass::Init() {
       (*(void (**)(SidebarClass *, int))(this->SidebarClass_field_0x0 + 216))(this, 1); /*0x6a556c*/
     }
     this->u32_5510 = 0; /*0x6a5574*/
-    (vfptr) = ((vfptr) & ~0xFF) | ((dword_A8B238) & 0xFF); /*0x6a557a*/
+    (ptr_0) = ((ptr_0) & ~0xFF) | ((dword_A8B238) & 0xFF); /*0x6a557a*/
     if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x6a5587*/
     {
       v13 = 0; /*0x6a5595*/
       if ( dword_A80238 <= 0 ) /*0x6a5599*/
       {
 LABEL_17:
-        vfptr = 0; /*0x6a55d9*/
+        ptr_0 = 0; /*0x6a55d9*/
       }
       else
       {
         v14 = dword_A8022C; /*0x6a559b*/
         while ( 1 ) /*0x6a55a5*/
         {
-          vfptr = v14->vfptr; /*0x6a55a5*/
-          if ( v14->vfptr ) /*0x6a55a5*/
+          ptr_0 = v14->ptr_0; /*0x6a55a5*/
+          if ( v14->ptr_0 ) /*0x6a55a5*/
           {
-            if ( *(unsigned char *)(*(unsigned int *)(vfptr + 52) + 422) != 1 /*0x6a55bf*/
-              && vfptr != HouseClass_Observer
-              && *(unsigned char *)(vfptr + 492) )
+            if ( *(unsigned char *)(*(unsigned int *)(ptr_0 + 52) + 422) != 1 /*0x6a55bf*/
+              && ptr_0 != HouseClass_Observer
+              && *(unsigned char *)(ptr_0 + 492) )
             {
               break; /*0x6a55bf*/
             }
@@ -4101,7 +4101,7 @@ LABEL_17:
             goto LABEL_17; /*0x6a55d5*/
         }
       }
-      this->u32_53AC = vfptr; /*0x6a55db*/
+      this->u32_53AC = ptr_0; /*0x6a55db*/
       for ( i = 0; i < 8; i = this->u32_5510 ) /*0x6a55e1*/
       {
         v16 = *((unsigned int *)this + i + 5355); /*0x6a55e7*/
@@ -4176,11 +4176,11 @@ LABEL_17:
           v28 = dword_A8022C; /*0x6a57d2*/
           do /*0x6a5814*/
           {
-            vfptr = v28->vfptr; /*0x6a57dc*/
-            if ( v28->vfptr /*0x6a57f6*/
-              && *(unsigned char *)(*(unsigned int *)(vfptr + 52) + 422) != 1
-              && vfptr != HouseClass_Observer
-              && *(unsigned char *)(vfptr + 492) )
+            ptr_0 = v28->ptr_0; /*0x6a57dc*/
+            if ( v28->ptr_0 /*0x6a57f6*/
+              && *(unsigned char *)(*(unsigned int *)(ptr_0 + 52) + 422) != 1
+              && ptr_0 != HouseClass_Observer
+              && *(unsigned char *)(ptr_0 + 492) )
             {
               if ( v32 == v26 ) /*0x6a5805*/
                 goto LABEL_44; /*0x6a5805*/
@@ -4191,14 +4191,14 @@ LABEL_17:
           }
           while ( v27 < dword_A80238 ); /*0x6a5814*/
         }
-        vfptr = 0; /*0x6a5818*/
+        ptr_0 = 0; /*0x6a5818*/
 LABEL_44:
-        *((unsigned int *)this + v26 + 5355) = vfptr; /*0x6a581a*/
+        *((unsigned int *)this + v26 + 5355) = ptr_0; /*0x6a581a*/
       }
     }
     this->u32_550C = 0; /*0x6a5831*/
   }
-  return vfptr; /*0x6a5839*/
+  return ptr_0; /*0x6a5839*/
 
 }
 }
@@ -5808,10 +5808,10 @@ LABEL_120:
                       LOWORD(v52) = Math::RoundToInt((double)v76 * *(double *)dword_8871E0->WallBuildSpeedCoefficient); /*0x6ab8d5*/
                       v50 = v52; /*0x6ab8da*/
                     }
-                    if ( v50 <= (int)&v69->vfptr3 + 3 ) /*0x6ab8e5*/
-                      v50 = (int)&v69->vfptr3 + 3; /*0x6ab8e7*/
+                    if ( v50 <= (int)&v69->ptr_C + 3 ) /*0x6ab8e5*/
+                      v50 = (int)&v69->ptr_C + 3; /*0x6ab8e7*/
                     v53 = v50 / 54; /*0x6ab8f8*/
-                    if ( 54 * (v50 / 54) < (int)&v69->vfptr3 + 3 ) /*0x6ab904*/
+                    if ( 54 * (v50 / 54) < (int)&v69->ptr_C + 3 ) /*0x6ab904*/
                       ++v53; /*0x6ab906*/
                     if ( v53 >= 1 ) /*0x6ab90a*/
                     {
@@ -7309,10 +7309,10 @@ void* SidebarClass::calcSidebarRect() {
 
   result = (int *)this; /*0x72ada4*/
   v2 = 0; /*0x72ada7*/
-  if ( !(*((unsigned char *)&(stru_A8EB00.vfptr[31]))) && !((unsigned int *)&stru_A8EB00)[391] ) /*0x72adb7*/
+  if ( !(*((unsigned char *)&(stru_A8EB00.ptr_0[31]))) && !((unsigned int *)&stru_A8EB00)[391] ) /*0x72adb7*/
     v2 = 168; /*0x72adb9*/
-  v3 = stru_A8EB00.vfptr[33] - 168; /*0x72adc0*/
-  v4 = stru_A8EB00.vfptr[34] - 32; /*0x72adc6*/
+  v3 = stru_A8EB00.ptr_0[33] - 168; /*0x72adc0*/
+  v4 = stru_A8EB00.ptr_0[34] - 32; /*0x72adc6*/
   *result = v2; /*0x72adc9*/
   result->__pad_004 = 0; /*0x72adcb*/
   result->u32_8 = v3; /*0x72adcf*/
@@ -7944,7 +7944,7 @@ int WWMouseClass::DrawCursorBuffered(void* a1, int a2) {
         {
           if ( a2 ) /*0x7b9108*/
           {
-            if ( (*((unsigned char *)&(stru_A8EB00.vfptr[31]))) ) /*0x7b910c*/
+            if ( (*((unsigned char *)&(stru_A8EB00.ptr_0[31]))) ) /*0x7b910c*/
               result = -*(unsigned int *)g_Map_VisibleRectOffset; /*0x7b9113*/
             WWMouseClass_field_0x6C = this->ZoneConnections; /*0x7b9115*/
             v28 = result; /*0x7b9118*/
@@ -7952,7 +7952,7 @@ int WWMouseClass::DrawCursorBuffered(void* a1, int a2) {
           }
           else
           {
-            if ( !(*((unsigned char *)&(stru_A8EB00.vfptr[31]))) ) /*0x7b9123*/
+            if ( !(*((unsigned char *)&(stru_A8EB00.ptr_0[31]))) ) /*0x7b9123*/
             {
               v8 = (*(int (__thiscall **)(int *))(*a1 + 124))(a1) - *(unsigned int *)&g_CreditsScreenBounds; /*0x7b913d*/
               if ( -(*((int (__thiscall **)(DSurface *))DSurface_Sidebar + 31))(DSurface_Sidebar) <= v8 ) /*0x7b9146*/

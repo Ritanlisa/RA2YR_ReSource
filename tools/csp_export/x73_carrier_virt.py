@@ -53,6 +53,24 @@ def sig_name(rva):
     return ""
 
 
+PH_NAME_RE = re.compile(
+    r"(_vt\d+$|vt_entry_|vt_placeholder|^loc_|^sub_|^nullsub|^unknown|^j_)")
+
+
+def resolve_slot_name(rva):
+    """X75: a vtable slot is named by its FUNCTION, never by `vt_slot_N`.
+
+    Authority chain: signals name at the slot RVA -> last component; a
+    placeholder-shaped authority name falls back to the project convention
+    `sub_<HEXRVA>` (AGENTS.md: unnamed functions are sub_<address>).
+    """
+    nm = sig_name(rva)
+    last = nm.split("::")[-1] if nm else ""
+    if not last or PH_NAME_RE.search(last):
+        return "sub_%s" % rva[2:].upper()
+    return last
+
+
 def locate(lines, cls):
     for i, l in enumerate(lines):
         m = CLS_RE.match(l)
@@ -95,6 +113,7 @@ def build_class_plan(cls, lines, start, end):
     vblock = []
     consumed = set()
     unmatched_named = 0
+    used_names = set()
     for s in slots:
         n = s["slot"]
         rva = norm(s["func"])
@@ -118,15 +137,24 @@ def build_class_plan(cls, lines, start, end):
                 ret = {"_DWORD": "unsigned int", "_WORD": "unsigned short",
                        "_BYTE": "unsigned char", "_QWORD": "unsigned long long",
                        "BOOL": "BOOL", "int": "int", "char": "char",
-                       "void": "void"}.get(str(sig.get("ret")), "void*")
+                       "void": "void", "unknown": "void"}.get(str(sig.get("ret")), "void*")
                 ps = sig.get("params") or []
                 pmap = lambda p: {"_DWORD": "unsigned int", "_WORD": "unsigned short",
                                   "_BYTE": "unsigned char", "int": "int",
                                   "char": "char"}.get(str(p), "void*")
                 params = ", ".join(pmap(p) for p in ps)
-            vblock.append(("    virtual %s vt_slot_%d(%s);  // X73: slot %d (%s) unresolved%s"
-                           % (ret, n, params, n, rva,
-                              (" name=" + nm[:48]) if nm else ""), "placeholder"))
+            # X75: name the virtual FUNCTION (authority or sub_<RVA>); duplicate
+            # target names within one class get a slot suffix (same slot target
+            # cannot be declared twice with one signature).
+            name = resolve_slot_name(rva)
+            while name in used_names:
+                name = "%s_S%d" % (resolve_slot_name(rva), n)
+                if name not in used_names:
+                    break
+            used_names.add(name)
+            vblock.append(("    virtual %s %s(%s);  // X75: slot %d (%s) = %s"
+                           % (ret, name, params, n, rva,
+                              (nm[:60] if nm else "sub_%s" % rva[2:].upper())), "named-virtual"))
     leftover_methods = [i for idxs in meths.values() for i in idxs if i not in consumed]
     return {
         "vt1": vt1[0], "vblock": vblock, "consumed": consumed,

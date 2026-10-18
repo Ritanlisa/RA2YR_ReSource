@@ -89,8 +89,8 @@ unsigned int * Power::UpdateAll()
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x67c718*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C9C + i) + 52))(*((unsigned int *)dword_A83C9C + i), &v53); /*0x67c72a*/
   for ( j = 0; j < stru_A80220.nextArrayIndex; ++j ) /*0x67c740*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)stru_A80220.vfptr3 + j) + 52))( /*0x67c752*/
-      *((unsigned int *)stru_A80220.vfptr3 + j),
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)stru_A80220.ptr_C + j) + 52))( /*0x67c752*/
+      *((unsigned int *)stru_A80220.ptr_C + j),
       &v53);
   for ( k = 0; k < MEMORY[0xA83CF0]; ++k ) /*0x67c768*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)MEMORY[0xA83CE4] + k) + 52))( /*0x67c77a*/
@@ -110,9 +110,9 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C6C + jj) + 52))( /*0x67c81a*/
       *((unsigned int *)dword_A83C6C + jj),
       &v53);
-  for ( kk = 0; kk < MEMORY[0xA8EB00].vfptr[20]; ++kk ) /*0x67c830*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(MEMORY[0xA8EB00].vfptr[17] + 4 * kk) + 52))( /*0x67c842*/
-      *(unsigned int *)(MEMORY[0xA8EB00].vfptr[17] + 4 * kk),
+  for ( kk = 0; kk < MEMORY[0xA8EB00].ptr_0[20]; ++kk ) /*0x67c830*/
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(MEMORY[0xA8EB00].ptr_0[17] + 4 * kk) + 52))( /*0x67c842*/
+      *(unsigned int *)(MEMORY[0xA8EB00].ptr_0[17] + 4 * kk),
       &v53);
   for ( mm = 0; mm < dword_A8B228; ++mm ) /*0x67c858*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8B21C + mm) + 52))( /*0x67c86a*/
@@ -143,8 +143,8 @@ unsigned int * Power::UpdateAll()
       *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8EB00].?[192] + 4 * i5),
       &v53);
   for ( i6 = 0; i6 < (int)FootClass_Array.waveEffect; ++i6 ) /*0x67c970*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)&FootClass_Array.auxParticles1->vfptr + i6) + 52))( /*0x67c982*/
-      *((unsigned int *)&FootClass_Array.auxParticles1->vfptr + i6),
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)&FootClass_Array.auxParticles1->ptr_0 + i6) + 52))( /*0x67c982*/
+      *((unsigned int *)&FootClass_Array.auxParticles1->ptr_0 + i6),
       &v53);
   for ( i7 = 0; i7 < *(int *)&FootClass_Array.isTether; ++i7 ) /*0x67c998*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(FootClass_Array.barrelRecoil[5] + 4 * i7) + 52))( /*0x67c9aa*/
@@ -182,9 +182,9 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&MEMORY[0xA83D50].__pad_C8[28] + 4 * i15) + 52))( /*0x67caea*/
       *(unsigned int *)(*(unsigned int *)&MEMORY[0xA83D50].__pad_C8[28] + 4 * i15),
       &v53);
-  for ( i16 = 0; i16 < MEMORY[0xA8EB00].vfptr[14]; ++i16 ) /*0x67cb00*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(MEMORY[0xA8EB00].vfptr[11] + 4 * i16) + 52))( /*0x67cb12*/
-      *(unsigned int *)(MEMORY[0xA8EB00].vfptr[11] + 4 * i16),
+  for ( i16 = 0; i16 < MEMORY[0xA8EB00].ptr_0[14]; ++i16 ) /*0x67cb00*/
+    (*(void (**)(unsigned int, int *))(**(unsigned int **)(MEMORY[0xA8EB00].ptr_0[11] + 4 * i16) + 52))( /*0x67cb12*/
+      *(unsigned int *)(MEMORY[0xA8EB00].ptr_0[11] + 4 * i16),
       &v53);
   for ( i17 = 0; i17 < *(int *)&DataGlobal_887398; ++i17 ) /*0x67cb28*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&DataGlobal_88738C + 4 * i17) + 52))( /*0x67cb3a*/

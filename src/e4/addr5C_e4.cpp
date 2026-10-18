@@ -3973,7 +3973,7 @@ unsigned int E4Recv_5C8470::sub_5C8470()
             + 1) >> 16)
             + (((uint16_t)~*((unsigned short *)this - 1) * (unsigned int)(*((unsigned short *)&(g_MissionQueueFrame.localVariables[780])))) >> 1)
             + 1) >> 14)
-            + 2 * (*((unsigned short *)&(g_MissionQueueFrame.localVariables[780]))) * (uint16_t)~(*((unsigned short *)&(this->vfptr)))) >> (*((signed char *)&(g_MissionQueueFrame.localVariables[912])));
+            + 2 * (*((unsigned short *)&(g_MissionQueueFrame.localVariables[780]))) * (uint16_t)~(*((unsigned short *)&(this->ptr_0)))) >> (*((signed char *)&(g_MissionQueueFrame.localVariables[912])));
   if ( result >= 0xFFFF ) /*0x5c84f7*/
     return 0xFFFF; /*0x5c84f9*/
   return result; /*0x5c84ea*/
@@ -4529,11 +4529,11 @@ DWORD E4Recv_5CAF70::sub_5CAF70()
   if ( QueryPerformanceFrequency(&Frequency) ) /*0x5caf7b*/
   {
     result = Frequency.LowPart; /*0x5caf89*/
-    this->vfptr = (void *)Frequency.HighPart; /*0x5caf8d*/
+    this->ptr_0 = (void *)Frequency.HighPart; /*0x5caf8d*/
   }
   else
   {
-    this->vfptr = 0; /*0x5caf94*/
+    this->ptr_0 = 0; /*0x5caf94*/
     return 0; /*0x5caf9a*/
   }
   return result; /*0x5caf8f*/
@@ -4676,7 +4676,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
     }
     this->M76 = (this->M40 - v17 - v16) / 2; /*0x5cd676*/
   }
-  return (int)this->vfptr; /*0x5cd67b*/
+  return (int)this->ptr_0; /*0x5cd67b*/
 
 }
 } // namespace gamemd

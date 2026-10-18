@@ -90,7 +90,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cad) */
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cb4) */
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cbb) */
-  AbstractClass::AnnounceExpiredPointer(&a1->vfptr, 1); /*0x6e5cc2*/
+  AbstractClass::AnnounceExpiredPointer(&a1->ptr_0, 1); /*0x6e5cc2*/
   unsigned int *v2; // ecx
   v2 = (unsigned int *)a1->q0A0; /*0x6e5cc7*/
   a1->q0A0 = 0; /*0x6e5ccd*/

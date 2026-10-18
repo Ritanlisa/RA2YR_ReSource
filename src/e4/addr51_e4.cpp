@@ -48,12 +48,12 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   char v4; // al
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
   uint8_t vtable0; // bl
-  vtable0 = (uint8_t)this->vfptr; /*0x5173ba*/
+  vtable0 = (uint8_t)this->ptr_0; /*0x5173ba*/
   (this->M1) = v4; /*0x5173bc*/
   unsigned int result; // eax
   result = a2 * (*a3 - vtable0) / 256; /*0x5173db*/
   (*((unsigned char *)&(result))) = vtable0 + result; /*0x5173de*/
-  (this->vfptr) = result; /*0x5173e1*/
+  (this->ptr_0) = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 }
 }
@@ -63,9 +63,9 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 {
 
   int v2; // esi
-  v2 = (this->vfptr) - *a2; /*0x517400*/
+  v2 = (this->ptr_0) - *a2; /*0x517400*/
   if ( v2 < 0 ) /*0x517402*/
-    v2 = *a2 - (this->vfptr); /*0x517404*/
+    v2 = *a2 - (this->ptr_0); /*0x517404*/
   int v3; // edx
   v3 = (this->M1) - a2[1]; /*0x517410*/
   if ( v3 < 0 ) /*0x517412*/
@@ -126,10 +126,10 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
     if ( !v6->inLimbo[0] ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
-      if ( (*(int (**)(BuildingClass *, int, int))(v6->vfptr + 388))(v6, a2, a3) == -1 ) /*0x51ff71*/
+      if ( (*(int (**)(BuildingClass *, int, int))(v6->ptr_0 + 388))(v6, a2, a3) == -1 ) /*0x51ff71*/
         queuedMission = (char *)v6->queuedMission; /*0x51ff79*/
       else
-        queuedMission = (char *)(*(int (**)(BuildingClass *))(v6->vfptr + 388))(v6); /*0x51ff89*/
+        queuedMission = (char *)(*(int (**)(BuildingClass *))(v6->ptr_0 + 388))(v6); /*0x51ff89*/
       v7 = *ProgressTimer::GetValue((ProgressTimer *)v6->primaryFacing, &v37); /*0x51ff9d*/
       owner = v6->owner; /*0x51ffab*/
       v9 = (const char *)(*&v6->q6C0 + 36); /*0x51ffb3*/
@@ -145,13 +145,13 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
       Field = FootClass::GetField(&v6->veterancy); /*0x52000b*/
       v20 = FromNameIndex((int)queuedMission); /*0x52001b*/
       v12 = Input::OffsetToDirection(&v34); /*0x52001c*/
-      v13 = (__int16 *)(*(int (**)(BuildingClass *, char *, int, char *, unsigned int))(v6->vfptr + 440))( /*0x52002b*/
+      v13 = (__int16 *)(*(int (**)(BuildingClass *, char *, int, char *, unsigned int))(v6->ptr_0 + 440))( /*0x52002b*/
                          v6,
                          Buffer,
                          v12,
                          v20,
                          (unsigned __int8)(((v7 >> 7) + 1) >> 1));
-      v15 = *(__int16 *)(*(int (**)(BuildingClass *, char *, unsigned int))(v6->vfptr + 440))(v6, Buffer, v13[1]); /*0x520048*/
+      v15 = *(__int16 *)(*(int (**)(BuildingClass *, char *, unsigned int))(v6->ptr_0 + 440))(v6, Buffer, v13[1]); /*0x520048*/
       BuildingClass::GetHealthRatio(v6); /*0x52004b*/
       v4 = v4 * 256.0; /*0x520050*/
       LOWORD(v14) = Math::RoundToInt(v4); /*0x520056*/

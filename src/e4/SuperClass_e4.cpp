@@ -67,8 +67,8 @@ void * SuperClass::LaunchPsychicDominator(int a2)
     v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
     dword_A8B230[130].vtable0 = *(void **)&DataGlobal_A8EB00[644]; /*0x53af1b*/
-    v7->vfptr = v9->ptr_2; /*0x53af21*/
-    v7->vfptr1 = (void *)1; /*0x53af24*/
+    v7->ptr_0 = v9->ptr_2; /*0x53af21*/
+    v7->ptr_4 = (void *)1; /*0x53af24*/
     return (RulesClass *)ScenarioClass::UpdateLighting(); /*0x53af27*/
   }
   return result; /*0x53af2d*/
@@ -218,14 +218,14 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     v2[405] = 0; /*0x6cb146*/
     this->u32_68 = 0; /*0x6cb14d*/
     v9 = this; /*0x6cb164*/
-    v3 = (*(int (**)(DynamicVectorClass *, int *))(stru_B0F5B8.vfptr + 16))(&stru_B0F5B8, &v9); /*0x6cb168*/
+    v3 = (*(int (**)(DynamicVectorClass *, int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
       DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v3); /*0x6cb176*/
   }
   if ( this->HouseClass_6C ) /*0x6cb17b*/
   {
     v9 = this; /*0x6cb192*/
-    v4 = (*(int (**)(DynamicVectorClass *, int *))(stru_B0F5B8.vfptr + 16))(&stru_B0F5B8, &v9); /*0x6cb196*/
+    v4 = (*(int (**)(DynamicVectorClass *, int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
       DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v4); /*0x6cb1a4*/
     this->HouseClass_6C = 0; /*0x6cb1a9*/
@@ -483,14 +483,14 @@ char SuperClass::StopPreclickAnim(int aP1)
     v3[405] = 0; /*0x6cb840*/
     this->u32_68 = 0; /*0x6cb846*/
     v8[0] = this; /*0x6cb859*/
-    v4 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.vfptr + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
+    v4 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
       DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v4); /*0x6cb86b*/
   }
   if ( this->HouseClass_6C ) /*0x6cb870*/
   {
     v8[0] = this; /*0x6cb885*/
-    v5 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.vfptr + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
+    v5 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v5); /*0x6cb897*/
     this->HouseClass_6C = 0; /*0x6cb89c*/

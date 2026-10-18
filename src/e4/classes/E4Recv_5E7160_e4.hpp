@@ -6,7 +6,7 @@
 namespace gamemd {
 struct SkirmishDialog;  // fix_fwd_type_supply
 struct E4Recv_5E7160 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     SkirmishDialog * * HandleMultiplayerMapSelection();  // 0x5E7160
     unsigned int q_5B;  // +0x5B flat supply (three-ban reform)
     unsigned int q_5F;  // +0x5F flat supply (three-ban reform)

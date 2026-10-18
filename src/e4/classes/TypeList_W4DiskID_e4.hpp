@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct TypeList_W4DiskID {
-    void* vfptr;
+    void* ptr_0;
     TypeList_flat * QueryInterface(unsigned int * Block, char a2);
     VectorClass_flat * validateGame(unsigned int * Block, char a2);
     char AddRef(int a2);

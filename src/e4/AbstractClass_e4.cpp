@@ -68,16 +68,16 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     if ( v4 ) /*0x438ebb*/
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
-      v5[2].vfptr3 = 0; /*0x438ecb*/
+      v5[2].ptr_C = 0; /*0x438ecb*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ece*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ed4*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438edb*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BombClass_4) */  /*0x438ee2*/
-      v5[1].vfptr1 = 0; /*0x438ee9*/
-      v5[1].vfptr2 = 0; /*0x438eec*/
+      v5[1].ptr_4 = 0; /*0x438ee9*/
+      v5[1].ptr_8 = 0; /*0x438eec*/
       LOBYTE(v5[2].uniqueId) = 0; /*0x438eef*/
       AudioController::Init((AudioController *)&v5[1].nextArrayIndex); /*0x438ef2*/
-      v5[2].vfptr2 = *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438f03*/
+      v5[2].ptr_8 = *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438f03*/
       if ( dword_89C678 < dword_89C670 /*0x438f37*/
         || (byte_89C675 || !dword_89C670)
         && dword_89C67C > 0
@@ -94,25 +94,25 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       v5 = 0; /*0x438f58*/
     }
-    v5[1].vfptr1 = (void *)(*(int (**)(void *))(*(unsigned int *)aP1 + 60))(aP1); /*0x438f62*/
-    v5[1].vfptr = aP1; /*0x438f69*/
-    v5[1].vfptr2 = aP2; /*0x438f6c*/
+    v5[1].ptr_4 = (void *)(*(int (**)(void *))(*(unsigned int *)aP1 + 60))(aP1); /*0x438f62*/
+    v5[1].ptr_0 = aP1; /*0x438f69*/
+    v5[1].ptr_8 = aP2; /*0x438f6c*/
     v5[1].uniqueId = *(unsigned int *)&MEMORY[0xA8EB00].?[416]; /*0x438f75*/
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048); /*0x438f87*/
-    v5[1].vfptr3 = 0; /*0x438f89*/
+    v5[1].ptr_C = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
     aP2[14] = v5; /*0x438f8f*/
-    vtable2 = this->vfptr2; /*0x438f92*/
+    vtable2 = this->ptr_8; /*0x438f92*/
     if ( this->uniqueId < (int)vtable2 /*0x438fb4*/
-      || (BYTE1(this->vfptr3) || !vtable2)
+      || (BYTE1(this->ptr_C) || !vtable2)
       && (abstractFlags = this->abstractFlags, abstractFlags > 0)
-      && (*((unsigned __int8 (**)(AbstractClass *, int, unsigned int))this->vfptr + 2))(
+      && (*((unsigned __int8 (**)(AbstractClass *, int, unsigned int))this->ptr_0 + 2))(
            this,
            (int)vtable2 + abstractFlags,
            0) )
     {
       uniqueId = this->uniqueId; /*0x438fbb*/
-      vtable1 = this->vfptr1; /*0x438fbe*/
+      vtable1 = this->ptr_4; /*0x438fbe*/
       this->uniqueId = uniqueId + 1; /*0x438fc4*/
       vtable1[uniqueId] = v5; /*0x438fc7*/
     }
@@ -415,7 +415,7 @@ unsigned int * AbstractClass::checkVisibility(char a2)
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d7fd9) */
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     operator delete((this)); /*0x5d7fe2*/
-  return &this->vfptr; /*0x5d7fec*/
+  return &this->ptr_0; /*0x5d7fec*/
 }
 }
 // 0x5D8030
@@ -425,7 +425,7 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8039) */
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     operator delete((this)); /*0x5d8042*/
-  return &this->vfptr; /*0x5d804c*/
+  return &this->ptr_0; /*0x5d804c*/
 }
 }
 // 0x5D8050
@@ -435,7 +435,7 @@ unsigned int * AbstractClass::processFogReveal(char a2)
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8059) */
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     operator delete((this)); /*0x5d8062*/
-  return &this->vfptr; /*0x5d806c*/
+  return &this->ptr_0; /*0x5d806c*/
 }
 }
 // 0x5D8070
@@ -445,7 +445,7 @@ unsigned int * AbstractClass::checkShroudState(char a2)
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8079) */
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     operator delete((this)); /*0x5d8082*/
-  return &this->vfptr; /*0x5d808c*/
+  return &this->ptr_0; /*0x5d808c*/
 }
 }
 // 0x5D8090
@@ -455,7 +455,7 @@ unsigned int * AbstractClass::updateShroudMap(char a2)
   /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8099) */
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     operator delete((this)); /*0x5d80a2*/
-  return &this->vfptr; /*0x5d80ac*/
+  return &this->ptr_0; /*0x5d80ac*/
 }
 }
 // 0x70D4A0
@@ -529,7 +529,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
   int ii; // ebx
   int i1; // ebx
 
-  v4 = (*((int (**)(AbstractClass *))a1->vfptr + 11))(a1); /*0x7258de*/
+  v4 = (*((int (**)(AbstractClass *))a1->ptr_0 + 11))(a1); /*0x7258de*/
   v5 = 0; /*0x7258e9*/
   if ( *(AbstractClass **)&g_RadarBlipPool == a1 ) /*0x7258e7*/
     *(unsigned int *)&g_RadarBlipPool = 0; /*0x7258eb*/
@@ -596,7 +596,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
     return; /*0x7259d9*/
   }
   if ( __RTDynamicCast( /*0x725a5a*/
-         &a1->vfptr,
+         &a1->ptr_0,
          0,0,0,
          0) )
   {
@@ -713,7 +713,7 @@ int AbstractClass::DTOR(void *a1_1)
 namespace gamemd {
 int AbstractClass::GetVtable3(AbstractClass * aP0)
 {
-  return (int)aP0->vfptr3; /*0x410227*/
+  return (int)aP0->ptr_C; /*0x410227*/
 }
 } // namespace gamemd
 
@@ -1210,10 +1210,10 @@ int AbstractClass_queryInterface(AbstractClass *aP0, unsigned int * a2, int * a3
   void *GroundHeight; // eax
   GroundHeight = (void *)Cell::GetGroundHeight(&v6); /*0x464a96*/
   void *v3; // esi
-  aP0->vfptr = v3; /*0x464aa5*/
-  aP0->vfptr1 = v7; /*0x464aab*/
-  aP0->vfptr2 = GroundHeight; /*0x464aaf*/
-  return &aP0->vfptr; /*0x464a9f*/
+  aP0->ptr_0 = v3; /*0x464aa5*/
+  aP0->ptr_4 = v7; /*0x464aab*/
+  aP0->ptr_8 = GroundHeight; /*0x464aaf*/
+  return &aP0->ptr_0; /*0x464a9f*/
 }
 }
 // 0x465910
@@ -1349,7 +1349,7 @@ unsigned int AbstractClass::queueMission(int a2)
 namespace gamemd {
 GScreenClass * AbstractClass::getHouseHandle(char a2)
 {
-  this->vfptr[0] = (int)&off_7EA6FC; /*0x4f4c09*/
+  this->ptr_0[0] = (int)&off_7EA6FC; /*0x4f4c09*/
   if ( (a2 & 1) != 0 ) /*0x4f4c0f*/
     operator delete((this)); /*0x4f4c12*/
   return (std::locale::facet *)this; /*0x4f4c1c*/
@@ -1492,7 +1492,7 @@ MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
   ((ObjectClass *)Block)->Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     operator delete((Block)); /*0x5b3a8b*/
-  return &Block->vfptr; /*0x5b3a95*/
+  return &Block->ptr_0; /*0x5b3a95*/
 }
 } // namespace gamemd
 

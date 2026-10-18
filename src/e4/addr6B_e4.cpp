@@ -2703,7 +2703,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
   BSurface *v197; // eax
   MouseClass *v198; // eax
   MouseClass *v199; // eax
-  int vfptr; // ecx
+  int ptr_0; // ecx
   int v201; // eax
   wchar_t *v202; // eax
   wchar_t *v203; // [esp-4h] [ebp-E40h]
@@ -3612,7 +3612,7 @@ LABEL_56:
   RegisterActiveObject(&dword_87F7E8, &rguid, 1u, &dwRegister); /*0x6bd945*/
   if ( *(unsigned int *)&stru_A8E960.random[16] == -1 || *(unsigned int *)&stru_A8E960.random[20] == -1 ) /*0x6bd958*/
   {
-    v189 = byte_887625 && stru_887598.vfptr < 5; /*0x6bd96c*/
+    v189 = byte_887625 && stru_887598.ptr_0 < 5; /*0x6bd96c*/
     if ( v189 || sub_4A4130(v209) > 0x200000 ) /*0x6bd983*/
     {
       *(unsigned int *)&stru_A8E960.random[16] = 800; /*0x6bd99c*/
@@ -3796,14 +3796,14 @@ LABEL_345:
   dword_A8E954 = 0; /*0x6bdf31*/
   if ( dword_A8E950 ) /*0x6bdf3d*/
   {
-    vfptr = dword_A8E8E8.vfptr; /*0x6bdf3f*/
+    ptr_0 = dword_A8E8E8.ptr_0; /*0x6bdf3f*/
     dword_A8E954 = 1; /*0x6bdf4a*/
   }
   else
   {
-    vfptr = -1; /*0x6bdf52*/
+    ptr_0 = -1; /*0x6bdf52*/
   }
-  CD::SetCurrentInstance((CD *)vfptr); /*0x6bdf5a*/
+  CD::SetCurrentInstance((CD *)ptr_0); /*0x6bdf5a*/
   Performance::Profile(v211); /*0x6bdf5f*/
   *(unsigned int *)stru_A8E960.nextScenario = *(unsigned int *)stru_A8E960.nextScenario & 0xFFFFFFFB /*0x6bdf89*/
                                       | (4
@@ -3813,8 +3813,8 @@ LABEL_345:
                                             (unsigned __int8 *)aPlay_0,
                                             1)
                                         & 1));
-  v232.vfptr = 0; /*0x6bdf8e*/
-  LOBYTE(v232.vfptr1) = 0; /*0x6bdf94*/
+  v232.ptr_0 = 0; /*0x6bdf8e*/
+  LOBYTE(v232.ptr_4) = 0; /*0x6bdf94*/
   ReadRegistryOptionsWOL((ObjectClass *)&v232); /*0x6bdfa1*/
   if ( !InfantryClass::SetField6(&v232) /*0x6bdfca*/
     && !WinMain_Helper((ObjectClass *)&v232)
@@ -3847,7 +3847,7 @@ LABEL_345:
     SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)TopLevelExceptionFilter); /*0x6be084*/
   }
   (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 12))(dword_887640); /*0x6be099*/
-  (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x6be0a5*/
+  (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x6be0a5*/
   Frame::Present((int)g_DSurface_Hidden, 0, (int)&NumberOfBytesWritten, 1, 0, v213, v221, v223); /*0x6be0b1*/
   *(unsigned int *)&stru_A8E960.random[612] = 1; /*0x6be0b6*/
   ThemeManager::Cleanup((ThemeManager *)&stru_A83CD9.attachedTag + 3); /*0x6be0c1*/
@@ -4421,7 +4421,7 @@ void WinMain_Setup()
   v18 = dword_A8B230; /*0x6beac3*/
   if ( dword_A8B230 ) /*0x6beacc*/
   {
-    v19 = (void *)dword_A8B230[377].vfptr3; /*0x6bead2*/
+    v19 = (void *)dword_A8B230[377].ptr_C; /*0x6bead2*/
     /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass) */  /*0x6beadf*/
     if ( v19 && v18->u32_3519 ) /*0x6beae7*/
     {
@@ -4449,7 +4449,7 @@ void WinMain_Setup()
     v18->u32_34E1 = 0; /*0x6beb69*/
     v18->allowableUnitMaximums = 0; /*0x6beb6f*/
     operator delete((v18)); /*0x6beb75*/
-    dword_A8B230[0].vfptr = 0; /*0x6beb7d [X36-A8B230 same-bytes: mov dword_A8B230,ebx]*/
+    dword_A8B230[0].ptr_0 = 0; /*0x6beb7d [X36-A8B230 same-bytes: mov dword_A8B230,ebx]*/
   }
   for ( j = 0; j < dword_B0BC98; ++j ) /*0x6beb8c*/
     CoRevokeClassObject(*((unsigned int *)dword_B0BC8C + j)); /*0x6beb9e*/

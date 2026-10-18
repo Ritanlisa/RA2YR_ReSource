@@ -6,7 +6,7 @@
 unsigned int * E4Recv_6107E0::sub_6107E0()
 {
 
-  this->vfptr = 0; /*0x6107e4 flat member @0x0 (was this->AbstractClass, G31 vocab)*/
+  this->ptr_0 = 0; /*0x6107e4 flat member @0x0 (was this->AbstractClass, G31 vocab)*/
   ((unsigned int *)this)[0] = 0; /*0x6107e6*/
   ((unsigned int *)this)[0] = 0; /*0x6107e9*/
   ((unsigned int *)this)[0] = 0; /*0x6107ec*/

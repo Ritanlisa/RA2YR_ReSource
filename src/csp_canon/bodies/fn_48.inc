@@ -429,7 +429,7 @@ int CheckListClass::SetFocus(int a1) {
 
 // ==== BACKFILL 0x004886E0  CheckListClass::QueryInterface  cls=CheckListClass  sig=csp  renamed_refs=0  residual=- ====
 void* CheckListClass::QueryInterface(int a2) {
-  return nullptr;  /* G42.33b2 restub: Array/List arity + __pad_0 vfptr store */
+  return nullptr;  /* G42.33b2 restub: Array/List arity + __pad_0 ptr_0 store */
 }
 
 // ==== BACKFILL 0x00488760  sub_488760  cls=ColorListClass  sig=csp  renamed_refs=0  residual=- ====

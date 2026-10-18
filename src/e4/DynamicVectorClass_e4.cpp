@@ -75,7 +75,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5251b2*/
+    (*(void (**)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x5251b2*/
     return (gamemd::AbstractClass **)(1); /*0x5251b8*/
   }
 
@@ -192,7 +192,7 @@ namespace gamemd {
 int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
 {
 
-  return this->vfptr != *a2 || this->m_1 != a2[1] || this->__pad_0[2] != a2[2]; /*0x5175bd*/
+  return this->ptr_0 != *a2 || this->m_1 != a2[1] || this->__pad_0[2] != a2[2]; /*0x5175bd*/
 
 }
 }
@@ -728,7 +728,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   this->Count = a2[4]; /*0x477a51*/
   this->CapacityIncrement = a2[5]; /*0x477a57*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_int) */  /*0x477a5a*/
-  return &this->vfptr; /*0x477a62*/
+  return &this->ptr_0; /*0x477a62*/
 
 }
 }  // G42.18c ns repair
@@ -756,7 +756,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x477df3) */
   this->CapacityIncrement = 10; /*0x477df9*/
   this->Count = 0; /*0x477e00*/
-  return (unsigned int *)(this->vfptr); /*0x477e09*/
+  return (unsigned int *)(this->ptr_0); /*0x477e09*/
 }
 }  // G42.18c ns repair
 // 0x49E950
@@ -1024,7 +1024,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->vfptr + 12))(this); /*0x49edbe*/
+    (*(void (**)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x49edbe*/
   }
   int v7 = this->Capacity; // eax /*0x49edc1*/
   if ( v7 < this->Count ) /*0x49edc9*/
@@ -1195,7 +1195,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x525293) */
   this->CapacityIncrement = 10; /*0x525299*/
   this->Count = 0; /*0x5252a0*/
-  return this->vfptr; /*0x5252a9*/
+  return this->ptr_0; /*0x5252a9*/
 }
 }  // G42.18c ns repair
 // 0x5252B0
@@ -1325,7 +1325,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUNodeNameType *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5c559e*/
+    (*(void (**)(_DynamicVectorClass_PAUNodeNameType *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x5c559e*/
   }
   int v7 = this->Capacity; // eax /*0x5c55a1*/
   if ( v7 < this->Count ) /*0x5c55a9*/

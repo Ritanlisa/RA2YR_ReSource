@@ -100,7 +100,7 @@ extern char *aFullfnt3Pal;               // data: "fullfnt3.pal" 串 (G42.35)
 extern unsigned int g_BitShift_Green_0;  // data: 0x8A0DD4 (canon globals 同形, G42.35)
 extern void *g_DSurface_Primary;         // data: 0x887308 (e4_globals 同形, G42.35)
 struct stru_B054D0_host { unsigned int m_1[8]; };  // G42.35: .m_1[N] 成员词汇宿主 (ida_globals 侧为 uchar)
-struct dword_887640_host { unsigned int *MouseClass_field_0x0; };  // G42.35: vfptr 词汇宿主
+struct dword_887640_host { unsigned int *MouseClass_field_0x0; };  // G42.35: ptr_0 词汇宿主
 struct g_DialogPool_host { unsigned char q208[256]; };  // G42.35: .q208[N] 下标宿主
 extern g_DialogPool_host g_DialogPool;  // data: 全局 (G42.35)
 struct g_BuildingLoadQueue_Array_host { unsigned char qF70[2048]; };  // G42.35: .qF70[N] 下标宿主 (0xB0E840)
@@ -2023,7 +2023,7 @@ int InputManager_ProcessEvents::Vtable(unsigned int *a2, unsigned int *a3, unsig
       *a2 = (uint16_t)EventQueue::Read(*(EventQueue **)&g_BinkMoviePlayer); /*0x4f43bc*/
   }
   v10[0] = *a3; /*0x4f43c5*/
-  v8 = this->vfptr[0]; /*0x4f43c9*/
+  v8 = this->ptr_0[0]; /*0x4f43c9*/
   v10[1] = *a4; /*0x4f43d5*/
   return v8->Count(this, v6, v10); /*0x4f43dc*/
 }

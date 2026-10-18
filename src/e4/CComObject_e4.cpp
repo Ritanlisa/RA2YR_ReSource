@@ -1153,7 +1153,7 @@ LABEL_22:
     if ( byte_B77E40 ) /*0x7a94f4*/
     {
       v23 = *(unsigned int *)ppv; /*0x7a9500*/
-      v24 = WideString::GetOrEmpty((wchar_t **)&stru_B7622C.vfptr1); /*0x7a9502*/
+      v24 = WideString::GetOrEmpty((wchar_t **)&stru_B7622C.ptr_4); /*0x7a9502*/
       (*(void (**)(LPVOID, const char *, wchar_t *))(v23 + 236))(ppv, a3, v24); /*0x7a9510*/
     }
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a952d*/
@@ -1226,14 +1226,14 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
     return 0; /*0x7a9600*/
   if ( (((unsigned char *)&(DataGlobal_B77DC0))[1]) ) /*0x7a9614*/
   {
-    swprintf((wchar_t *const)&v18[0].vfptr1, (const size_t)g_Str_Trace___hs_, (const wchar_t *const)(a3 + 36), String); /*0x7a9625*/
+    swprintf((wchar_t *const)&v18[0].ptr_4, (const size_t)g_Str_Trace___hs_, (const wchar_t *const)(a3 + 36), String); /*0x7a9625*/
     Type = BuildingAnim::GetType(); /*0x7a9638*/
     (*((unsigned short *)&(v10))) = Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 5312) * 900.0); /*0x7a9648*/
     MessageListClass::AddMessage( /*0x7a965f*/
       (MessageListClass *)&g_GameNetworkObject,
       0,
       0,
-      (wchar_t *)&v18[0].vfptr1,
+      (wchar_t *)&v18[0].ptr_4,
       Type,
       22,
       v10,
@@ -1280,7 +1280,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
   if ( byte_B77E40 ) /*0x7a97a3*/
   {
     v16 = *(unsigned int *)ppv; /*0x7a97ab*/
-    v17 = ((WideString *)((wchar_t **)&stru_B7622C.vfptr1))->GetOrEmpty(); /*0x7a97b2*/
+    v17 = ((WideString *)((wchar_t **)&stru_B7622C.ptr_4))->GetOrEmpty(); /*0x7a97b2*/
     (*(void (__stdcall **)(LPVOID, int, wchar_t *))(v16 + 236))(ppv, v5, v17); /*0x7a97c0*/
   }
   PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1708), 0x2000, 1.0, 0); /*0x7a97dd*/
@@ -1468,7 +1468,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void 
               v13 = 108 * (*((unsigned char *)&(g_WOL_UserList.owningHouseIndex))); /*0x7ab580*/
               v14 = (unsigned int)(108 * g_WOL_UserList.owningHouseIndex) >> 2; /*0x7ab582*/
               memcpy(v10, g_WOL_UserList.nextObject, 4 * v14); /*0x7ab585*/
-              memcpy(&v10->vfptr + v14, &nextObject->vfptr + v14, v13 & 3); /*0x7ab58c*/
+              memcpy(&v10->ptr_0 + v14, &nextObject->ptr_0 + v14, v13 & 3); /*0x7ab58c*/
               nextObject = g_WOL_UserList.nextObject; /*0x7ab58e*/
             }
             operator delete((nextObject)); /*0x7ab595*/
@@ -1683,7 +1683,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
             PlayerProfile = LoadPlayerProfile( /*0x7aba38*/
                               (ObjectClass *)&v14.ComPtr_field_0x20,
                               (const char **)&g_WindowManager.__pad_EC[684]);
-            ComPtr::Set(&v14, (int)PlayerProfile->vfptr1); /*0x7aba45*/
+            ComPtr::Set(&v14, (int)PlayerProfile->ptr_4); /*0x7aba45*/
             /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_PlayerProfile) */  /*0x7aba4e*/
             ComPtr::Release((ComPtr *)&v14.ComPtr_field_0x20); /*0x7aba52*/
           }

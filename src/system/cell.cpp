@@ -537,22 +537,22 @@ void CellClass::SetWallOwner(int a1, int a5, int a6)
     result = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * result); /*0x47d227*/
     if ( result->u8_2A8 ) /*0x47d22a*/
     {
-      result = stru_A8EB00.vfptr[20]; /*0x47d234*/
+      result = stru_A8EB00.ptr_0[20]; /*0x47d234*/
       v2 = -1; /*0x47d23b*/
       v3 = 0; /*0x47d23e*/
-      for ( i = 0x7FFFFFFF; v3 < stru_A8EB00.vfptr[20]; ++v3 ) /*0x47d248*/
+      for ( i = 0x7FFFFFFF; v3 < stru_A8EB00.ptr_0[20]; ++v3 ) /*0x47d248*/
       {
-        v5 = *(ObjectClass **)(stru_A8EB00.vfptr[17] + 4 * v3); /*0x47d251*/
+        v5 = *(ObjectClass **)(stru_A8EB00.ptr_0[17] + 4 * v3); /*0x47d251*/
         if ( v5->isAliveFlag && v5->isOnMap && *(unsigned char *)(*(unsigned int *)(v5[3].nextArrayIndex + 52) + 423) ) /*0x47d26e*/
         {
           v6 = ObjectClass::DistanceTo(v5, a1); /*0x47d27b*/
           if ( v6 < i ) /*0x47d282*/
           {
             i = v6; /*0x47d284*/
-            v2 = (*((int (__thiscall **)(ObjectClass *))v5->vfptr + 14))(v5); /*0x47d28d*/
+            v2 = (*((int (__thiscall **)(ObjectClass *))v5->ptr_0 + 14))(v5); /*0x47d28d*/
           }
         }
-        result = stru_A8EB00.vfptr[20]; /*0x47d28f*/
+        result = stru_A8EB00.ptr_0[20]; /*0x47d28f*/
         a1 = v7; /*0x47d294*/
       }
       *(unsigned int *)(a1 + 80) = v2; /*0x47d29e*/
@@ -803,7 +803,7 @@ void CellClass::ReduceTiberium(int v23)
       v23 = v23; /*0x480c33*/
       if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, (int16_t *)&v23) ) /*0x480c37*/
       {
-        if ( !*((unsigned char *)&v17->radSite->vfptr + Cell::PosToIndex((Cell *)&v23)) ) /*0x480c4f*/
+        if ( !*((unsigned char *)&v17->radSite->ptr_0 + Cell::PosToIndex((Cell *)&v23)) ) /*0x480c4f*/
           BuildingClass::AddOccupancy(v17->mapCoords, (int16_t *)&v23); /*0x480c5c*/
       }
     }

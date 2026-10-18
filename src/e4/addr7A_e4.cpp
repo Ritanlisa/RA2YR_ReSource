@@ -128,26 +128,26 @@ int CollectWOLConnectionTokens(void *a1)
         String::Assign(&v15, &v17[36]); /*0x7a04e6*/
         String::GetOrEmpty(&v15); /*0x7a04ef*/
         Debug::Log(); /*0x7a04fa*/
-        vtable3 = (int)dword_B76AC4.vfptr3; /*0x7a04ff*/
-        v6 = (int)dword_B76AC4.vfptr3; /*0x7a0507*/
-        v14 = dword_B76AC4.vfptr3; /*0x7a050b*/
+        vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a04ff*/
+        v6 = (int)dword_B76AC4.ptr_C; /*0x7a0507*/
+        v14 = dword_B76AC4.ptr_C; /*0x7a050b*/
         uniqueId = dword_B76AC4.uniqueId; /*0x7a0515*/
-        if ( (int)dword_B76AC4.vfptr3 >= dword_B76AC4.uniqueId ) /*0x7a051d*/
+        if ( (int)dword_B76AC4.ptr_C >= dword_B76AC4.uniqueId ) /*0x7a051d*/
         {
-          uniqueId = 2 * (int)dword_B76AC4.vfptr3; /*0x7a0527*/
-          if ( 2 * (int)dword_B76AC4.vfptr3 < 10 ) /*0x7a052d*/
+          uniqueId = 2 * (int)dword_B76AC4.ptr_C; /*0x7a0527*/
+          if ( 2 * (int)dword_B76AC4.ptr_C < 10 ) /*0x7a052d*/
             uniqueId = 10; /*0x7a052f*/
           v8 = (void *)__2_YAPAXI_Z(4 * uniqueId); /*0x7a0543*/
           memset(v8, 0, 4 * ((unsigned int)(4 * uniqueId) >> 2)); /*0x7a0551*/
           abstractFlags = (void *)dword_B76AC4.abstractFlags; /*0x7a055a*/
           if ( dword_B76AC4.abstractFlags ) /*0x7a0561*/
           {
-            qmemcpy(v8, (const void *)dword_B76AC4.abstractFlags, 4 * (int)dword_B76AC4.vfptr3); /*0x7a056d*/
+            qmemcpy(v8, (const void *)dword_B76AC4.abstractFlags, 4 * (int)dword_B76AC4.ptr_C); /*0x7a056d*/
             abstractFlags = (void *)dword_B76AC4.abstractFlags; /*0x7a056f*/
             v6 = (int)v14; /*0x7a0574*/
           }
           __3_YAXPAX_Z(abstractFlags); /*0x7a0579*/
-          vtable3 = (int)dword_B76AC4.vfptr3; /*0x7a057e*/
+          vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a057e*/
           dword_B76AC4.abstractFlags = (int)v8; /*0x7a0586*/
           dword_B76AC4.uniqueId = uniqueId; /*0x7a058c*/
         }
@@ -161,12 +161,12 @@ int CollectWOLConnectionTokens(void *a1)
           v12 = (void *)dword_B76AC4.abstractFlags; /*0x7a05c9*/
           if ( dword_B76AC4.abstractFlags ) /*0x7a05d0*/
           {
-            qmemcpy(v11, (const void *)dword_B76AC4.abstractFlags, 4 * (int)dword_B76AC4.vfptr3); /*0x7a05dc*/
+            qmemcpy(v11, (const void *)dword_B76AC4.abstractFlags, 4 * (int)dword_B76AC4.ptr_C); /*0x7a05dc*/
             v12 = (void *)dword_B76AC4.abstractFlags; /*0x7a05de*/
             v6 = (int)v14; /*0x7a05e3*/
           }
           __3_YAXPAX_Z(v12); /*0x7a05e8*/
-          vtable3 = (int)dword_B76AC4.vfptr3; /*0x7a05ed*/
+          vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a05ed*/
           dword_B76AC4.abstractFlags = (int)v11; /*0x7a05f5*/
           dword_B76AC4.uniqueId = v10; /*0x7a05fb*/
         }
@@ -176,15 +176,15 @@ int CollectWOLConnectionTokens(void *a1)
             (void *)(dword_B76AC4.abstractFlags + 4 * v6 + 4),
             (const void *)(dword_B76AC4.abstractFlags + 4 * v6),
             4 * (vtable3 + 0x3FFFFFFF * v6));
-          vtable3 = (int)dword_B76AC4.vfptr3; /*0x7a0625*/
+          vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a0625*/
         }
         v13 = (String *)(dword_B76AC4.abstractFlags + 4 * v6); /*0x7a0633*/
         if ( v13 ) /*0x7a0638*/
         {
           String::AssignFromPtr(v13, (const char **)&v15); /*0x7a063f*/
-          vtable3 = (int)dword_B76AC4.vfptr3; /*0x7a0644*/
+          vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a0644*/
         }
-        dword_B76AC4.vfptr3 = (void *)(vtable3 + 1); /*0x7a064e*/
+        dword_B76AC4.ptr_C = (void *)(vtable3 + 1); /*0x7a064e*/
         DeleteAndZero((ObjectClass *)&v15); /*0x7a0653*/
         v3 = v16; /*0x7a0658*/
         v2 = *(unsigned int *)&v15.m_3[1]; /*0x7a065c*/
@@ -291,7 +291,7 @@ LABEL_17:
   if ( (unsigned __int8)Flag::IsNot2((Flag *)&v31[36]) ) /*0x7a0830*/
   {
     PlayerProfile = LoadPlayerProfile((ObjectClass *)&v31[16], (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x7a0842*/
-    ComPtr::Set((ComPtr *)&v31[24], PlayerProfile->vfptr1); /*0x7a084f*/
+    ComPtr::Set((ComPtr *)&v31[24], PlayerProfile->ptr_4); /*0x7a084f*/
     *(unsigned int *)&v31[16] = &vt_rc_ptr_PlayerProfile; /*0x7a0858*/
     ComPtr::Release((ComPtr *)&v31[16]); /*0x7a085c*/
   }
@@ -495,8 +495,8 @@ Coord * * WOL_ProcessPingRequests()
   if ( !g_NetworkLobbyState ) /*0x7a1080*/
   {
     Debug::Log(); /*0x7a1098*/
-    result = (char)dword_B76AC4.vfptr3; /*0x7a109d*/
-    if ( dword_B76AC4.vfptr3 ) /*0x7a10a7*/
+    result = (char)dword_B76AC4.ptr_C; /*0x7a109d*/
+    if ( dword_B76AC4.ptr_C ) /*0x7a10a7*/
     {
       S_addr = v15[6].S_un.S_addr; /*0x7a10ad*/
       while ( 1 ) /*0x7a10b1*/
@@ -507,7 +507,7 @@ Coord * * WOL_ProcessPingRequests()
         if ( v12 ) /*0x7a10c4*/
           return result; /*0x7a10c4*/
         unknown_libname_73(&v13); /*0x7a10ce*/
-        if ( (int)dword_B76AC4.vfptr3 > 0 ) /*0x7a10da*/
+        if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a10da*/
           String::Reassign(&v13, (const char **)dword_B76AC4.abstractFlags); /*0x7a10e7*/
         String::GetOrEmpty(&v13); /*0x7a10f0*/
         Debug::Log(); /*0x7a10fb*/
@@ -541,21 +541,21 @@ LABEL_15:
         DeleteAndZero((ObjectClass *)&v13.vtable2); /*0x7a1163*/
         if ( v6 == -1 ) /*0x7a116b*/
         {
-          if ( (int)dword_B76AC4.vfptr3 > 0 ) /*0x7a127f*/
+          if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a127f*/
           {
             String::Reassign(&v13, (const char **)dword_B76AC4.abstractFlags); /*0x7a128c*/
             v11 = 0; /*0x7a1296*/
-            if ( dword_B76AC4.vfptr3 ) /*0x7a129a*/
+            if ( dword_B76AC4.ptr_C ) /*0x7a129a*/
             {
-              if ( (int)dword_B76AC4.vfptr3 <= 0 ) /*0x7a129c*/
-                v11 = (char *)dword_B76AC4.vfptr3 - 1; /*0x7a129e*/
+              if ( (int)dword_B76AC4.ptr_C <= 0 ) /*0x7a129c*/
+                v11 = (char *)dword_B76AC4.ptr_C - 1; /*0x7a129e*/
               DeleteAndZero((ObjectClass *)(dword_B76AC4.abstractFlags + 4 * (unsigned int)v11)); /*0x7a12a9*/
               memcpy( /*0x7a12d2*/
                 (void *)(dword_B76AC4.abstractFlags + 4 * (unsigned int)v11),
                 (const void *)(dword_B76AC4.abstractFlags + 4 * (unsigned int)(v11 + 1)),
-                4 * ((int)dword_B76AC4.vfptr3 + 0x3FFFFFFF * (unsigned int)(v11 + 1)));
-              if ( 3 * (int)--dword_B76AC4.vfptr3 <= dword_B76AC4.uniqueId ) /*0x7a12ef*/
-                VectorClass::Shrink((VectorClass *)&dword_B76AC4.vfptr3); /*0x7a12f6*/
+                4 * ((int)dword_B76AC4.ptr_C + 0x3FFFFFFF * (unsigned int)(v11 + 1)));
+              if ( 3 * (int)--dword_B76AC4.ptr_C <= dword_B76AC4.uniqueId ) /*0x7a12ef*/
+                VectorClass::Shrink((VectorClass *)&dword_B76AC4.ptr_C); /*0x7a12f6*/
             }
           }
           goto LABEL_36; /*0x7a12f6*/
@@ -578,10 +578,10 @@ LABEL_15:
             (StringVector *)&stru_B76900.estimatedHealth,
             (const char **)&v13,
             stru_B76900.estimatedHealth);
-          if ( (int)dword_B76AC4.vfptr3 > 0 ) /*0x7a1204*/
+          if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a1204*/
           {
             String::Reassign(&v13, (const char **)dword_B76AC4.abstractFlags); /*0x7a1210*/
-            DynamicArray::Remove((DynamicArray *)&dword_B76AC4.vfptr3, 0); /*0x7a121c*/
+            DynamicArray::Remove((DynamicArray *)&dword_B76AC4.ptr_C, 0); /*0x7a121c*/
           }
 LABEL_36:
           String::GetOrEmpty(&v13); /*0x7a12fb*/
@@ -591,14 +591,14 @@ LABEL_36:
         v12 = 1; /*0x7a1235*/
 LABEL_37:
         DeleteAndZero((ObjectClass *)&v13); /*0x7a1312*/
-        result = (char)dword_B76AC4.vfptr3; /*0x7a131b*/
-        if ( !dword_B76AC4.vfptr3 ) /*0x7a1322*/
+        result = (char)dword_B76AC4.ptr_C; /*0x7a131b*/
+        if ( !dword_B76AC4.ptr_C ) /*0x7a1322*/
           return result; /*0x7a1322*/
       }
-      if ( (int)dword_B76AC4.vfptr3 > 0 ) /*0x7a1246*/
+      if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a1246*/
       {
         String::Reassign(&v13, (const char **)dword_B76AC4.abstractFlags); /*0x7a1253*/
-        DynamicArray::Remove((DynamicArray *)&dword_B76AC4.vfptr3, 0); /*0x7a125f*/
+        DynamicArray::Remove((DynamicArray *)&dword_B76AC4.ptr_C, 0); /*0x7a125f*/
       }
       goto LABEL_36; /*0x7a125f*/
     }
@@ -1472,16 +1472,16 @@ int WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
     {
       if ( a2 == 514 ) /*0x7af82f*/
       {
-        if ( WindowLongA->vfptr3 ) /*0x7af8c6*/
-          (*(void (**)(ObjectClass *, HWND, int))(WindowLongA->vfptr + 4))(WindowLongA, hWnd, 1); /*0x7af8d4*/
+        if ( WindowLongA->ptr_C ) /*0x7af8c6*/
+          (*(void (**)(ObjectClass *, HWND, int))(WindowLongA->ptr_0 + 4))(WindowLongA, hWnd, 1); /*0x7af8d4*/
       }
       else if ( a2 == 1257 && *v4 == hWnd ) /*0x7af84d*/
       {
-        if ( WindowLongA->vfptr3 == 2 ) /*0x7af859*/
+        if ( WindowLongA->ptr_C == 2 ) /*0x7af859*/
         {
           StringCSF = GetStringCSF(aWdtFactionsele_1, 0, g_Str_File_WorldDom_cpp, 176); /*0x7af895*/
         }
-        else if ( WindowLongA->vfptr3 == 3 ) /*0x7af85c*/
+        else if ( WindowLongA->ptr_C == 3 ) /*0x7af85c*/
         {
           StringCSF = GetStringCSF((wchar_t *)aWdtFactionsele_0, 0, g_Str_File_WorldDom_cpp, 179); /*0x7af882*/
         }
@@ -1551,7 +1551,7 @@ LABEL_14:
       }
       if ( *(unsigned short *)a3.__pad_0 == 1670 ) /*0x7af80d*/
       {
-        (*(void (**)(ObjectClass *, HWND, int))(WindowLongA->vfptr + 4))(WindowLongA, hWnd, -1); /*0x7af81a*/
+        (*(void (**)(ObjectClass *, HWND, int))(WindowLongA->ptr_0 + 4))(WindowLongA, hWnd, -1); /*0x7af81a*/
         return 0; /*0x7af826*/
       }
     }
@@ -1664,9 +1664,9 @@ int StartWDTCampaign(char a1, char a2, int a3)
       DeleteAndZero::Alt(&v19); /*0x7afbf5*/
       return 0; /*0x7afc06*/
     }
-    stru_A8EB00.vfptr[33] = 640; /*0x7afc32*/
-    stru_A8EB00.vfptr[34] = 480; /*0x7afc38*/
-    ScenarioClass::SaveGameOptions((ScenarioClass *)&stru_A8EB00.vfptr[24]); /*0x7afc42*/
+    stru_A8EB00.ptr_0[33] = 640; /*0x7afc32*/
+    stru_A8EB00.ptr_0[34] = 480; /*0x7afc38*/
+    ScenarioClass::SaveGameOptions((ScenarioClass *)&stru_A8EB00.ptr_0[24]); /*0x7afc42*/
     DeleteAndZero::Alt(&v19); /*0x7afc4b*/
   }
   v6 = 0; /*0x7afc52*/

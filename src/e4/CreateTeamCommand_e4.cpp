@@ -111,7 +111,7 @@ unsigned int * CreateTeamCommand::performAction_158()
 {
 
   int v1; // eax
-  v1 = ((*((signed short *)&(((unsigned int *)(dword_A8B230))[374].vfptr))) << 8) + 128; /*0x537558*/
+  v1 = ((*((signed short *)&(((unsigned int *)(dword_A8B230))[374].ptr_0))) << 8) + 128; /*0x537558*/
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   v4[0] = ((*((signed short *)(((unsigned char *)&(((unsigned int *)(dword_A8B230))[373].NeedsSaveOrLink)) + 2))) << 8) + 128; /*0x53755d*/
   v4[1] = v1; /*0x537566*/
@@ -211,7 +211,7 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
     ComPtr::Release((ComPtr *)Block); /*0x538a70*/
     if ( (a2 & 1) != 0 ) /*0x538a78*/
       operator delete((Block)); /*0x538a7b*/
-    return Block->vfptr; /*0x538a83*/
+    return Block->ptr_0; /*0x538a83*/
   }
 }
 }
@@ -2021,7 +2021,7 @@ void * CreateTeamCommand::performAction_182()
   int v2; // edx
   v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537985*/
   void *result = dword_A8B230; // eax /*0x537987*/
-  *(int *)((char *)&dword_A8B230[374].vfptr + 2) = v2; /*0x53798c*/
+  *(int *)((char *)&dword_A8B230[374].ptr_0 + 2) = v2; /*0x53798c*/
   return result; /*0x537992*/
 }
 } // namespace gamemd

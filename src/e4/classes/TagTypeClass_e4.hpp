@@ -9,8 +9,8 @@ struct AbstractTypeClass;  // fix_fwd_type_supply
 struct TriggerTypeClass;  // fix_fwd_type_supply
 
 struct TagTypeClass {
-    unsigned int vfptr;  // 0x0
-    void * vfptr1;  // 0x4
+    unsigned int ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10

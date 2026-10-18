@@ -752,7 +752,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
   HRESULT v2; // esi
   LPVOID ppv; // [esp+Ch] [ebp-4h] BYREF
 
-  this->vfptr = 0; /*0x437f68*/
+  this->ptr_0 = 0; /*0x437f68*/
   v2 = CoCreateInstance(&stru_7E9500, 0, 7u, &riid, &ppv); /*0x437f74*/
   if ( v2 < 0 ) /*0x437f78*/
     goto LABEL_5; /*0x437f78*/
@@ -766,7 +766,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
     if ( v2 != -2147467262 ) /*0x437fb0*/
       sub_7DC720(v2); /*0x437fb3*/
   }
-  return (unsigned int *)(&this->vfptr); /*0x437fba*/
+  return (unsigned int *)(&this->ptr_0); /*0x437fba*/
 }
 }
 // 0x43A600
@@ -837,7 +837,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   this->u32_C = 0; /*0x43aafe*/
   if ( (a2 & 1) != 0 ) /*0x43ab05*/
     operator delete((this)); /*0x43ab08*/
-  return &this->vfptr; /*0x43ab12*/
+  return &this->ptr_0; /*0x43ab12*/
 }
 }
 // 0x430010
@@ -1560,7 +1560,7 @@ double E4Recv_436DA0::sub_436DA0()
   v3 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(*this->u32_C) + 72))(this->M228, v7); /*0x436dbc*/
   unsigned int *v4; // eax
   unsigned char v8[12]; // [esp+38h] [ebp-Ch] BYREF
-  v4 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->vfptr + 18))(this, v8); /*0x436dc3*/
+  v4 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->ptr_0 + 18))(this, v8); /*0x436dc3*/
   int v5; // [esp+24h] [ebp-20h]
   v5 = v4[1] - v3[1]; /*0x436de0*/
   int v6; // [esp+28h] [ebp-1Ch]
@@ -2358,7 +2358,7 @@ int E4Recv_43EE50::sub_43EE50()
   int result; // eax
   int v5; // [esp+8h] [ebp-4h] BYREF
 
-  if ( !(*(unsigned __int8 (**)(TechnoClass *))(this->vfptr + 1020))(this) || !this->M1408 ) /*0x43ee63*/
+  if ( !(*(unsigned __int8 (**)(TechnoClass *))(this->ptr_0 + 1020))(this) || !this->M1408 ) /*0x43ee63*/
     return 0; /*0x43eea7*/
   Value = ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v5); /*0x43ee76*/
   v3 = (unsigned int *)this->M1408; /*0x43ee7d*/

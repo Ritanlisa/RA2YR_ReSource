@@ -7,7 +7,7 @@
 namespace gamemd {
 struct Selection_WorldDominationTour;  // fix_fwd_type_supply
 struct E4Recv_7AF3D0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     Selection_WorldDominationTour * GetRegionStringWOL();  // 0x7AF3D0
 };
 } // namespace gamemd

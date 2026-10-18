@@ -104,12 +104,12 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   }
   LOWORD(v5) = *(&dword_A8E2B2 + v7); /*0x5411be*/
   v10 = (unsigned int *)(MEMORY[0xA8DA78][v7] + 40); /*0x5411c6*/
-  vtable1 = (char)this->vfptr1; /*0x5411c9*/
+  vtable1 = (char)this->ptr_4; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
   v15[1] = v10[1]; /*0x5411d9*/
   v15[2] = v10[2]; /*0x5411e2*/
-  if ( !vtable1 || !BYTE1(this->vfptr1) ) /*0x5411e8*/
+  if ( !vtable1 || !BYTE1(this->ptr_4) ) /*0x5411e8*/
     return 0; /*0x5411af*/
   if ( a4 && (&v14 == (int *)-16 || Network::IsBroadcastAddr((Network *)v15)) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
@@ -1633,7 +1633,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
   int v29; // [esp+28h] [ebp+10h]
 
   memset(*a3, 0, a5 * a4); /*0x549859*/
-  v6 = (unsigned int *)(*((int (**)(ObjectClass *))this->vfptr + 39))(this); /*0x549866*/
+  v6 = (unsigned int *)(*((int (**)(ObjectClass *))this->ptr_0 + 39))(this); /*0x549866*/
   v7 = v6; /*0x54986c*/
   if ( v6 ) /*0x549870*/
   {
@@ -1641,7 +1641,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
     v8 = v6[v27 + 4]; /*0x549887*/
     if ( !v8 ) /*0x54988d*/
       return 0; /*0x54988d*/
-    v9 = (unsigned int *)(*((int (**)(ObjectClass *))this->vfptr + 39))(this); /*0x549897*/
+    v9 = (unsigned int *)(*((int (**)(ObjectClass *))this->ptr_0 + 39))(this); /*0x549897*/
     v10 = v9; /*0x54989d*/
     if ( v9 ) /*0x5498a1*/
     {
@@ -2609,7 +2609,7 @@ int E4Recv_54A990::sub_54A990()
 
   ObjectClass *v1 = this; // edi /*0x54a994*/
   int v2 = 0; // ebp /*0x54a996*/
-  if ( !(*((unsigned char *)&(this->vfptr))) ) /*0x54a998*/
+  if ( !(*((unsigned char *)&(this->ptr_0))) ) /*0x54a998*/
   {
     do /*0x54a9a4*/
     {
@@ -2637,7 +2637,7 @@ int E4Recv_54A9E0::sub_54A9E0()
 
   ObjectClass *v1 = this; // edi /*0x54a9e4*/
   int v2 = 0; // ebp /*0x54a9e6*/
-  if ( (*((unsigned char *)&(this->vfptr))) == 0xFF ) /*0x54a9eb*/
+  if ( (*((unsigned char *)&(this->ptr_0))) == 0xFF ) /*0x54a9eb*/
   {
     do /*0x54a9f4*/
     {

@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_681090 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int ReadPointerFromECX3();  // 0x681090
 };
 } // namespace gamemd

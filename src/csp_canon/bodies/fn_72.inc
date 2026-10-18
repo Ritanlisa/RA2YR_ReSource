@@ -528,10 +528,10 @@ void * TriggerTypeClass::Construct(void *Source) {
     this->nextTrigger = 0; /*0x726cc0*/
     this->firstEvent = 0; /*0x726cc6*/
     this->firstAction = 0; /*0x726ccc*/
-    *(void **)(char *)this = 0; /*0x726cd2 vfptr0*/
-    *(void **)((char *)this + 4) = 0; /*0x726cd8 vfptr1*/
-    *(void **)((char *)this + 8) = 0; /*0x726cdf vfptr2*/
-    *(void **)((char *)this + 12) = 0; /*0x726ce6 vfptr3*/
+    *(void **)(char *)this = 0; /*0x726cd2 ptr_0*/
+    *(void **)((char *)this + 4) = 0; /*0x726cd8 ptr_4*/
+    *(void **)((char *)this + 8) = 0; /*0x726cdf ptr_8*/
+    *(void **)((char *)this + 12) = 0; /*0x726ce6 ptr_C*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
       || (IDA_BYTE1(g_BuildingLoadQueue_Array.align_E24) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
@@ -580,10 +580,10 @@ int TriggerClass::ProcessEvents() {
     int v8; // eax
     AbstractClass *v10; // [esp+10h] [ebp-4h] BYREF
 
-    *(void **)(char *)this = 0; /*0x726e06 vfptr0*/
-    *(void **)((char *)this + 4) = 0; /*0x726e0c vfptr1*/
-    *(void **)((char *)this + 8) = 0; /*0x726e13 vfptr2*/
-    *(void **)((char *)this + 12) = 0; /*0x726e1a vfptr3*/
+    *(void **)(char *)this = 0; /*0x726e06 ptr_0*/
+    *(void **)((char *)this + 4) = 0; /*0x726e0c ptr_4*/
+    *(void **)((char *)this + 8) = 0; /*0x726e13 ptr_8*/
+    *(void **)((char *)this + 12) = 0; /*0x726e1a ptr_C*/
     ((AbstractClass *)this)->AnnounceExpiredPointer(1, 0); /*0x726e21*/
     v10 = this; /*0x726e36*/
     v2 = (*(int (__thiscall **)(int *, AbstractClass **))((int *)&FootClass_Array + 16))((int *)&FootClass_Array, &v10); /*0x726e3a*/

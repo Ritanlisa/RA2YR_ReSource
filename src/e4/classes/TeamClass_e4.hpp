@@ -15,10 +15,10 @@ struct TagClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct TeamClass {
-    unsigned int vfptr;  // 0x0
-    void * vfptr1;  // 0x4
-    unsigned int vfptr2;  // 0x8
-    void * vfptr3;  // 0xC
+    unsigned int ptr_0;  // 0x0
+    void * ptr_4;  // 0x4
+    unsigned int ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18

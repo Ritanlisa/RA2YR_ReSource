@@ -568,7 +568,7 @@ LABEL_20:
           goto LABEL_20; /*0x5fda70*/
       }
     }
-    v15 = *(&dword_B0F4EC->vfptr + FindBuildingByTiberiumType(v13)); /*0x5fda8b*/
+    v15 = *(&dword_B0F4EC->ptr_0 + FindBuildingByTiberiumType(v13)); /*0x5fda8b*/
     v16 = (unsigned int *)*((unsigned int *)dword_B054D4 + *(unsigned int *)(v15 + 192)); /*0x5fda93*/
     v17 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 4 * *(unsigned int *)(*(unsigned int *)(v15 + 224) + 660)); /*0x5fdaa8*/
     v18 = (*(int (**)(int))(*(unsigned int *)v17 + 156))(v17); /*0x5fdaad*/

@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_77E300 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int FillBuddyListExWOL();  // 0x77E300
 };
 } // namespace gamemd

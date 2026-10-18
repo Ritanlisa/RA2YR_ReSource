@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_6812C0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M1008;  // 0x3F0
 // --- flat members (END) ---
     int  Map_Save_6812C0(int a2);  // 0x6812C0

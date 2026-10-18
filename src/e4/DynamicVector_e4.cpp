@@ -96,16 +96,16 @@ namespace gamemd {
 unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2, void *a3_1)
 {
 
-  *&aP1->vfptr1 = 0; /*0x42f67a*/
-  aP1->vfptr2 = aP2; /*0x42f681*/
-  aP1->vfptr3 = (void *)(1); /*0x42f684*/
+  *&aP1->ptr_4 = 0; /*0x42f67a*/
+  aP1->ptr_8 = aP2; /*0x42f681*/
+  aP1->ptr_C = (void *)(1); /*0x42f684*/
   aP1->u32_D = 0; /*0x42f688*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x42f68c) */
   if ( aP2 ) /*0x42f692*/
   {
     if ( a3_1 ) /*0x42f69a*/
     {
-      *&aP1->vfptr1 = a3_1; /*0x42f69d*/
+      *&aP1->ptr_4 = a3_1; /*0x42f69d*/
     }
     else
     {
@@ -113,14 +113,14 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
       v4 = operator new(4 * aP2); /*0x42f6ae*/
       if ( !v4 ) /*0x42f6b8*/
         v4 = 0; /*0x42f6c1*/
-      *&aP1->vfptr1 = (void *)(v4); /*0x42f6c3*/
+      *&aP1->ptr_4 = (void *)(v4); /*0x42f6c3*/
       aP1->u32_D = 1; /*0x42f6c6*/
     }
   }
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x42f6ca) */
   *(unsigned int *)aP1->abstractFlags = 10; /*0x42f6d0*/
   aP1->uniqueId = 0; /*0x42f6d7*/
-  return (unsigned int *)(aP1->vfptr); /*0x42f6e0*/
+  return (unsigned int *)(aP1->ptr_0); /*0x42f6e0*/
 }
 } // namespace gamemd
 

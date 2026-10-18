@@ -270,7 +270,7 @@ int Multiplayer::ShowProgress(int a2)
   if ( !stru_A8E960.random[503] ) /*0x69aea1*/
   {
     v14 = a2; /*0x69aeb4*/
-    if ( BYTE1(dword_A8B230[375].vfptr) ) /*0x69aeb8*/
+    if ( BYTE1(dword_A8B230[375].ptr_0) ) /*0x69aeb8*/
       v14 = a2 / 2; /*0x69aec7*/
     __asm { fild dword ptr [esp+1E4h+var_1D0] } /*0x69aecb*/
     __asm { fstp [esp+1E8h+var_1D0] }

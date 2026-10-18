@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_5C60D0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     BOOL ShowConfirmDialog(unsigned short * lParam);  // 0x5C60D0
 };
 } // namespace gamemd

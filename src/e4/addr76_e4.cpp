@@ -102,7 +102,7 @@ namespace gamemd { int ConstructorWDTFlagOption_Create(int p0, void* p1, int p2,
 // [w16g4] type supply: _VectorClass_V_TRect_H (raw 0x769550 v51 offset evidence 0x0/0x4/0x8/0xC, VectorClass<TRect> flat)
 namespace gamemd {
 struct _VectorClass_V_TRect_H {
-  unsigned char q000[4];   // 0x0 vfptr slot (raw: *(unsigned int*)v51.q000 = (void*)&VectorClass_TRect_int_vftable)
+  unsigned char q000[4];   // 0x0 ptr_0 slot (raw: *(unsigned int*)v51.q000 = (void*)&VectorClass_TRect_int_vftable)
   unsigned char m_1[4];       // 0x4 (raw: *(unsigned int*)&v51.m_1[3] = ...)
   unsigned int m_8;           // 0x8 (raw: v51.m_8 = 30)
   unsigned char m_C[4];       // 0xC (raw: (*((unsigned short *)&(v51.m_C))) = 1)
@@ -133,7 +133,7 @@ unsigned int * unknown_libname_36(ObjectClass *self)
   self->ptr_0 = 0; /*0x7636f4*/
   self->ptr_1 = 0; /*0x7636f6*/
   self->ptr_2 = 0; /*0x7636f9*/
-  return &self->vfptr; /*0x7636fc*/
+  return &self->ptr_0; /*0x7636fc*/
 }
 }  // G42.18 ns repair
 // 0x764B90
@@ -145,7 +145,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   Conflict *v5; // ecx
   int OwnerHouse; // eax
   int v7; // ecx
-  unsigned int vfptr; // ebp
+  unsigned int ptr_0; // ebp
   int *p_vfptr3; // ebp
   int v10; // eax
   int v11; // eax
@@ -188,41 +188,41 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     OwnerHouse = Conflict::GetOwnerHouse(v5); /*0x764c3a*/
     ActivateScreenWDT((int)&v24.referenceCount, OwnerHouse); /*0x764c47*/
     v7 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 32); /*0x764c58*/
-    vfptr = v7 - 1; /*0x764c5a*/
-    v24.vfptr = v7 - 1; /*0x764c5d*/
+    ptr_0 = v7 - 1; /*0x764c5a*/
+    v24.ptr_0 = v7 - 1; /*0x764c5d*/
     if ( v7 ) /*0x764c61*/
     {
       do /*0x764d8a*/
       {
-        if ( WDTClass::GetCellType((WDTClass *)v24.NeedsSaveOrLink, vfptr) == 1 ) /*0x764c74*/
+        if ( WDTClass::GetCellType((WDTClass *)v24.NeedsSaveOrLink, ptr_0) == 1 ) /*0x764c74*/
         {
-          if ( vfptr >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 60) ) /*0x764c89*/
+          if ( ptr_0 >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 60) ) /*0x764c89*/
           {
-            ComPtr::Constructor((ComPtr *)&v24.vfptr3); /*0x764c97*/
+            ComPtr::Constructor((ComPtr *)&v24.ptr_C); /*0x764c97*/
             v10 = v25; /*0x764c9c*/
             /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_WDTTerritory) */  /*0x764ca3*/
             (v10) = ((v10) & ~0xFF) | ((v25 | 1) & 0xFF); /*0x764cab*/
-            p_vfptr3 = &v24.vfptr3; /*0x764cad*/
+            p_vfptr3 = &v24.ptr_C; /*0x764cad*/
             v25 = v10; /*0x764cb1*/
           }
           else
           {
-            p_vfptr3 = (int *)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 48) + 8 * vfptr); /*0x764c8e*/
+            p_vfptr3 = (int *)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 48) + 8 * ptr_0); /*0x764c8e*/
           }
-          ComPtr::Constructor((ComPtr *)&v24.vfptr1); /*0x764cbc*/
+          ComPtr::Constructor((ComPtr *)&v24.ptr_4); /*0x764cbc*/
           /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_WDTTerritory) */  /*0x764cc1*/
-          ComPtr::Set((ComPtr *)&v24.vfptr1, p_vfptr3[1]); /*0x764cd1*/
+          ComPtr::Set((ComPtr *)&v24.ptr_4, p_vfptr3[1]); /*0x764cd1*/
           if ( (v25 & 1) != 0 ) /*0x764cde*/
           {
             v11 = v25; /*0x764ce0*/
             (v11) = ((v11) & ~0xFF) | ((v25 & 0xFE) & 0xFF); /*0x764ceb*/
             /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_WDTTerritory) */  /*0x764ced*/
             v25 = v11; /*0x764cf5*/
-            ComPtr::Release((ComPtr *)&v24.vfptr3); /*0x764cfc*/
+            ComPtr::Release((ComPtr *)&v24.ptr_C); /*0x764cfc*/
           }
-          if ( v24.vfptr2 ) /*0x764d07*/
+          if ( v24.ptr_8 ) /*0x764d07*/
           {
-            Team_Create_765F60((ComPtr *)&v24.abstractFlags, (int)&v24.vfptr1); /*0x764d11*/
+            Team_Create_765F60((ComPtr *)&v24.abstractFlags, (int)&v24.ptr_4); /*0x764d11*/
             v12 = this->M32; /*0x764d16*/
             if ( this->u32_28 < v12 /*0x764d3b*/
               || (this->M37 || !v12)
@@ -241,11 +241,11 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
             ComPtr::Release((ComPtr *)&v24.abstractFlags); /*0x764d67*/
           }
           /* X11: vtable install elided (X67 recv-slot, RHS vt_rc_ptr_WDTTerritory) */  /*0x764d70*/
-          ComPtr::Release((ComPtr *)&v24.vfptr1); /*0x764d78*/
-          vfptr = v24.vfptr; /*0x764d7d*/
+          ComPtr::Release((ComPtr *)&v24.ptr_4); /*0x764d78*/
+          ptr_0 = v24.ptr_0; /*0x764d7d*/
         }
-        v15 = vfptr--; /*0x764d81*/
-        v24.vfptr = vfptr; /*0x764d86*/
+        v15 = ptr_0--; /*0x764d81*/
+        v24.ptr_0 = ptr_0; /*0x764d86*/
       }
       while ( v15 ); /*0x764d8a*/
     }
@@ -276,9 +276,9 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       do
       {
         RegionStringWOL = GetRegionStringWOL((ObjectClass *)v16); /*0x764e6a*/
-        v19 = String::Assign((String *)&v24.vfptr1, g_INI_Key_LastDay); /*0x764e79*/
+        v19 = String::Assign((String *)&v24.ptr_4, g_INI_Key_LastDay); /*0x764e79*/
         String::Concat((String *)v19, (char **)&v24, RegionStringWOL); /*0x764e80*/
-        DeleteAndZero((ObjectClass *)&v24.vfptr1); /*0x764e89*/
+        DeleteAndZero((ObjectClass *)&v24.ptr_4); /*0x764e89*/
         v20 = INIClass::ReadInt((bool *)&v24.occupant, &this->M24, (String *)&v24, 0); /*0x764e9d*/
         *(unsigned int *)v18 = v20 < 0 ? 0 : v20;
         DeleteAndZero(&v24); /*0x764eb3*/
@@ -379,7 +379,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   char **RegionStringWOL; // [esp-4h] [ebp-108h]
   ObjectClass v7; // [esp+Ch] [ebp-F8h] BYREF
 
-  v7.vfptr3 = 0; /*0x7651e1*/
+  v7.ptr_C = 0; /*0x7651e1*/
   v7.uniqueId = 0; /*0x7651e5*/
   GenericNode::Constructor((GenericNode *)&v7.nextArrayIndex); /*0x7651e9*/
   GenericNode::Constructor((GenericNode *)&v7.occupant); /*0x7651f2*/
@@ -397,29 +397,29 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
     CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765269*/
     CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765279*/
   }
-  FileStraw::Open((FileStraw *)&v7.vfptr2, (int)&v7.ambientSoundController[3], 0); /*0x765288*/
+  FileStraw::Open((FileStraw *)&v7.ptr_8, (int)&v7.ambientSoundController[3], 0); /*0x765288*/
   CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765291*/
   v7.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x7652a2*/
   String::Assign((String *)&v7, g_INI_Key_CampaignID); /*0x7652b0*/
   v2 = &this->ptr_48; /*0x7652ba*/
-  INIClass::SetIntFormat((char *)&v7.vfptr2, (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
+  INIClass::SetIntFormat((char *)&v7.ptr_8, (char **)&this->ambientSoundController[3], (char **)&v7, 0, 0); /*0x7652c4*/
   DeleteAndZero(&v7); /*0x7652cd*/
   for ( i = 0; i < 4; ++i ) /*0x7652d2*/
   {
     RegionStringWOL = GetRegionStringWOL((ObjectClass *)i); /*0x7652db*/
-    v4 = String::Assign((String *)&v7.vfptr1, g_INI_Key_LastDay); /*0x7652ea*/
+    v4 = String::Assign((String *)&v7.ptr_4, g_INI_Key_LastDay); /*0x7652ea*/
     String::Concat((String *)v4, (char **)&v7, RegionStringWOL); /*0x7652f1*/
-    DeleteAndZero((ObjectClass *)&v7.vfptr1); /*0x7652fa*/
-    INIClass::SetIntFormat((char *)&v7.vfptr2, v2, (char **)&v7, 0, 0); /*0x76530b*/
+    DeleteAndZero((ObjectClass *)&v7.ptr_4); /*0x7652fa*/
+    INIClass::SetIntFormat((char *)&v7.ptr_8, v2, (char **)&v7, 0, 0); /*0x76530b*/
     DeleteAndZero(&v7); /*0x765314*/
   }
   BufferIOFile::Init((BufferIOFile *)&v7.location[1]); /*0x765326*/
   CCFileClass::Reopen((CDFileClass *)&v7.location[1], g_Str_File_WDTHist_ini, (CHAR *)2); /*0x765339*/
-  INIClass::SaveToPipe((INIClass *)&v7.vfptr2, (int)&v7.location[1]); /*0x76534a*/
+  INIClass::SaveToPipe((INIClass *)&v7.ptr_8, (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.location[1]); /*0x765361*/
-  return HashTable::DestroyHashTableINIClass((INIClass *)&v7.vfptr2); /*0x76536f*/
+  return HashTable::DestroyHashTableINIClass((INIClass *)&v7.ptr_8); /*0x76536f*/
 
 }
 }
@@ -629,10 +629,10 @@ void E4Recv_767EC0::sub_767EC0()
 namespace gamemd {
 unsigned int * unknown_libname_37(ObjectClass *a1)
 {
-  a1->vfptr = 0; /*0x769484*/
-  a1->vfptr1 = 0; /*0x769486*/
-  a1->vfptr2 = 0; /*0x769489*/
-  return &a1->vfptr; /*0x76948c*/
+  a1->ptr_0 = 0; /*0x769484*/
+  a1->ptr_4 = 0; /*0x769486*/
+  a1->ptr_8 = 0; /*0x769489*/
+  return &a1->ptr_0; /*0x76948c*/
 }
 }
 // 0x769550
@@ -640,7 +640,7 @@ namespace gamemd {
 int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
 {
 
-  unsigned int *vfptr; // ebp
+  unsigned int *ptr_0; // ebp
   int *v4; // eax
   int *v5; // esi
   int *v6; // eax
@@ -707,10 +707,10 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   FileStraw::Open((FileStraw *)&v55.ambientSoundController[1], (int)v55.needsRedraw, 0); /*0x7695ce*/
   CCFileClass::Close((CCFileClass *)v55.needsRedraw); /*0x7695da*/
   sub_47AA00((CDFileClass *)&v56, a2); /*0x7695e7*/
-  vfptr = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
-  v55.vfptr = (int)vfptr; /*0x769600*/
-  v55.uniqueId = (*(int (**)(unsigned int *))(*vfptr + 128))(vfptr); /*0x76960d*/
-  v55.nextArrayIndex = (*(int (**)(unsigned int *))(*vfptr + 124))(vfptr); /*0x76961e*/
+  ptr_0 = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
+  v55.ptr_0 = (int)ptr_0; /*0x769600*/
+  v55.uniqueId = (*(int (**)(unsigned int *))(*ptr_0 + 128))(ptr_0); /*0x76960d*/
+  v55.nextArrayIndex = (*(int (**)(unsigned int *))(*ptr_0 + 124))(ptr_0); /*0x76961e*/
   *(unsigned int *)&v51.m_1[3] = 0; /*0x769627*/
   v51.m_8 = 30; /*0x76962b*/
   LOWORD(v51.m_C) = 1; /*0x76962f*/
@@ -734,22 +734,22 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   else
     v7 = 0; /*0x7696a5*/
   Block = v7; /*0x7696ab*/
-  v55.vfptr2 = (int)&v51; /*0x7696af*/
+  v55.ptr_8 = (int)&v51; /*0x7696af*/
   (v54) = ((v54) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x7696b7*/
-  v55.vfptr3 = 0; /*0x7696bc*/
+  v55.ptr_C = 0; /*0x7696bc*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorCursor_TRect_int_VectorClass_TRect_int) */  /*0x7696c0*/
-  if ( Map_WorldDominationTour_38::AddRef((_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H *)&v55.vfptr1) ) /*0x7696c8*/
+  if ( Map_WorldDominationTour_38::AddRef((_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H *)&v55.ptr_4) ) /*0x7696c8*/
   {
     do /*0x769700*/
     {
-      v8 = (unsigned int *)(16 * v55.vfptr3 + *(unsigned int *)(v55.vfptr2 + 4)); /*0x7696e4*/
+      v8 = (unsigned int *)(16 * v55.ptr_C + *(unsigned int *)(v55.ptr_8 + 4)); /*0x7696e4*/
       *v8 = 0; /*0x7696e6*/
       v8[1] = 0; /*0x7696e8*/
       v8[2] = 0; /*0x7696eb*/
       v8[3] = 0; /*0x7696ee*/
-      (*(void (**)(int *))(v55.vfptr1 + 8))(&v55.vfptr1); /*0x7696f5*/
+      (*(void (**)(int *))(v55.ptr_4 + 8))(&v55.ptr_4); /*0x7696f5*/
     }
-    while ( (*(unsigned __int8 (**)(int *))(v55.vfptr1 + 4))(&v55.vfptr1) ); /*0x769700*/
+    while ( (*(unsigned __int8 (**)(int *))(v55.ptr_4 + 4))(&v55.ptr_4) ); /*0x769700*/
   }
   v9 = 0; /*0x76970b*/
   v50 = 0; /*0x76970f*/
@@ -767,7 +767,7 @@ LABEL_67:
     }
     while ( 1 ) /*0x769736*/
     {
-      abstractFlags = (*(int (**)(unsigned int *, int *))(*vfptr + 40))(vfptr, &v49); /*0x769736*/
+      abstractFlags = (*(int (**)(unsigned int *, int *))(*ptr_0 + 40))(ptr_0, &v49); /*0x769736*/
       v55.abstractFlags = abstractFlags; /*0x76973b*/
       if ( abstractFlags <= 0x1D ) /*0x76973f*/
       {
@@ -938,7 +938,7 @@ LABEL_67:
       v9 = v50; /*0x769a06*/
       v30 = v49; /*0x769a0a*/
 LABEL_66:
-      vfptr = (unsigned int *)v55.vfptr; /*0x769a0e*/
+      ptr_0 = (unsigned int *)v55.ptr_0; /*0x769a0e*/
       v49 = v30 + 1; /*0x769a19*/
       if ( v30 + 1 >= v55.nextArrayIndex ) /*0x769a1d*/
         goto LABEL_67; /*0x769a1d*/
@@ -946,9 +946,9 @@ LABEL_66:
   }
 LABEL_68:
   _769D70 = Map_Load_769D70(&v55.referenceCount, (int)&v51); /*0x769a34*/
-  Map_Load_769C20((ObjectClass *)&v55.vfptr1, (int)_769D70); /*0x769a46*/
+  Map_Load_769C20((ObjectClass *)&v55.ptr_4, (int)_769D70); /*0x769a46*/
   v41 = 0; /*0x769a4f*/
-  if ( (*(unsigned __int8 (**)(int *))(v55.vfptr1 + 4))(&v55.vfptr1) ) /*0x769a55*/
+  if ( (*(unsigned __int8 (**)(int *))(v55.ptr_4 + 4))(&v55.ptr_4) ) /*0x769a55*/
   {
     v42 = 0; /*0x769a60*/
     do /*0x769b22*/
@@ -966,13 +966,13 @@ LABEL_68:
       INIClass::GetInt((char *)&v55.ambientSoundController[1], (char **)&v55, v47, &v55.fallRate); /*0x769ae2*/
       DeleteAndZero((ObjectClass *)&v55.nextArrayIndex); /*0x769aeb*/
       DeleteAndZero((ObjectClass *)&v55.abstractFlags); /*0x769af4*/
-      (*(void (**)(int *))(v55.vfptr1 + 8))(&v55.vfptr1); /*0x769b01*/
+      (*(void (**)(int *))(v55.ptr_4 + 8))(&v55.ptr_4); /*0x769b01*/
       ++v41; /*0x769b08*/
       v42 += 12; /*0x769b09*/
       DeleteAndZero((ObjectClass *)&v55.uniqueId); /*0x769b0c*/
       DeleteAndZero(&v55); /*0x769b15*/
     }
-    while ( (*(unsigned __int8 (**)(int *))(v55.vfptr1 + 4))(&v55.vfptr1) ); /*0x769b22*/
+    while ( (*(unsigned __int8 (**)(int *))(v55.ptr_4 + 4))(&v55.ptr_4) ); /*0x769b22*/
   }
   CCFileClass::Reopen((CDFileClass *)v55.needsRedraw, aWdtmapmdIni_0, (CHAR *)2); /*0x769b3b*/
   INIClass::SaveToPipe((INIClass *)&v55.ambientSoundController[1], (int)v55.needsRedraw); /*0x769b4c*/
@@ -1005,15 +1005,15 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
 
   v2 = a2; /*0x76b7b1*/
   if ( this == (ObjectClass *)a2 ) /*0x76b7bc*/
-    return &this->vfptr; /*0x76b7bc*/
-  (*((void (**)(ObjectClass *))this->vfptr + 3))(this); /*0x76b7c4*/
+    return &this->ptr_0; /*0x76b7bc*/
+  (*((void (**)(ObjectClass *))this->ptr_0 + 3))(this); /*0x76b7c4*/
   v4 = a2[2]; /*0x76b7c7*/
   this->ptr_2 = (void *)v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
   {
     this->ptr_1 = 0; /*0x76b855*/
-    BYTE1(this->vfptr3) = 0; /*0x76b85c*/
-    return &this->vfptr; /*0x76b860*/
+    BYTE1(this->ptr_C) = 0; /*0x76b85c*/
+    return &this->ptr_0; /*0x76b860*/
   }
   v5 = (int *)__2_YAPAXI_Z(8 * v4 + 4); /*0x76b7dd*/
   if ( v5 ) /*0x76b7e7*/
@@ -1041,19 +1041,19 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   }
   this->ptr_1 = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
-    return &this->vfptr; /*0x76b81c*/
-  vtable2 = this->vfptr2; /*0x76b81e*/
+    return &this->ptr_0; /*0x76b81c*/
+  vtable2 = this->ptr_8; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
-  BYTE1(this->vfptr3) = 1; /*0x76b825*/
+  BYTE1(this->ptr_C) = 1; /*0x76b825*/
   if ( (int)vtable2 <= 0 ) /*0x76b829*/
-    return &this->vfptr; /*0x76b829*/
+    return &this->ptr_0; /*0x76b829*/
   do /*0x76b84a*/
   {
-    ComPtr::Set((ComPtr *)((char *)this->vfptr1 + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
+    ComPtr::Set((ComPtr *)((char *)this->ptr_4 + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
     ++v10; /*0x76b847*/
   }
-  while ( v10 < (int)this->vfptr2 ); /*0x76b84a*/
-  return &this->vfptr; /*0x76b84e*/
+  while ( v10 < (int)this->ptr_8 ); /*0x76b84a*/
+  return &this->ptr_0; /*0x76b84e*/
 
 }
 }
@@ -1912,7 +1912,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   wchar_t *StringCSF; // [esp-8h] [ebp-10h]
   void *v14; // [esp+4h] [ebp-4h] BYREF
 
-  v5 = (*((int (**)(ObjectClass *, int))this->vfptr + 5))(this, a3); /*0x76732d*/
+  v5 = (*((int (**)(ObjectClass *, int))this->ptr_0 + 5))(this, a3); /*0x76732d*/
   v6 = FromStringInt((char **)&v14, v5); /*0x767336*/
   ConcatStringAlloc((char **)&a3, (const char **)&this->uniqueId, v6); /*0x767343*/
   DeleteAndZero((ObjectClass *)&v14); /*0x76734c*/

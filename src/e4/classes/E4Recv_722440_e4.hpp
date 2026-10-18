@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_722440 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int PropagateCellOccupancy();  // 0x722440
 };
 } // namespace gamemd

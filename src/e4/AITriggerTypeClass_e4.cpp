@@ -54,12 +54,12 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   v11 = 0; /*0x41eca5*/
   if ( dword_A80238 <= 0 ) /*0x41ecaa*/
     return v11; /*0x41ecaa*/
-  while ( *(unsigned int *)(*(unsigned int *)(*(&dword_A8022C->vfptr + v4) + 52) + 188) != HouseTypeClass::Find(&g_INI_Key_Civilian) ) /*0x41eccc*/
+  while ( *(unsigned int *)(*(unsigned int *)(*(&dword_A8022C->ptr_0 + v4) + 52) + 188) != HouseTypeClass::Find(&g_INI_Key_Civilian) ) /*0x41eccc*/
   {
     if ( ++v4 >= dword_A80238 ) /*0x41ecd6*/
       return 0; /*0x41ece2*/
   }
-  v6 = (DynamicVector *)*(&dword_A8022C->vfptr + v4); /*0x41ece5*/
+  v6 = (DynamicVector *)*(&dword_A8022C->ptr_0 + v4); /*0x41ece5*/
   if ( !v6 ) /*0x41ecea*/
     return v11; /*0x41ee23*/
   AITriggerTypeClass_field_0x18 = v3[3].AITriggerTypeClass_field_0x18; /*0x41ecf0*/
@@ -426,7 +426,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)v46); /*0x41f79c*/
   if ( Index != -1 ) /*0x41f7a4*/
   {
-    v13 = *(unsigned int **)((char *)&stru_A83CD9.vfptr2 + 3); /*0x41f7a6*/
+    v13 = *(unsigned int **)((char *)&stru_A83CD9.ptr_8 + 3); /*0x41f7a6*/
 LABEL_25:
     v10 = v13[Index]; /*0x41f7db*/
     goto LABEL_26; /*0x41f7db*/

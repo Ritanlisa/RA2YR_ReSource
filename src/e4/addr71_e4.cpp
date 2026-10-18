@@ -57,7 +57,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   int v10; // ecx
   unsigned int *v11; // ecx
   unsigned int *v12; // eax
-  int *vfptr3; // ecx
+  int *ptr_C; // ecx
   int v14; // edi
   void *v15; // eax
   Cell *v16; // eax
@@ -72,9 +72,9 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   {
     if ( (*(unsigned __int8 (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
     {
-      *(unsigned int *)v23 = *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 160); /*0x7187e7*/
-      (*(void (**)(int, __int16 *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)this->vfptr3 + 364))( /*0x718804*/
-        this->vfptr3,
+      *(unsigned int *)v23 = *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C) + 160); /*0x7187e7*/
+      (*(void (**)(int, __int16 *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)this->ptr_C + 364))( /*0x718804*/
+        this->ptr_C,
         v23,
         0,
         *&dword_8871E0->u32_FA8,
@@ -85,47 +85,47 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     }
   }
   v22 = 0; /*0x718814*/
-  if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 3278) /*0x71885d*/
+  if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C) + 3278) /*0x71885d*/
     && ((Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->flags & 0x100) != 0
      || Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->landType == 1) )
   {
     v22 = 1; /*0x71885f*/
   }
   v6 = 0; /*0x718867*/
-  if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 1660) == 3 ) /*0x718878*/
+  if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C) + 1660) == 3 ) /*0x718878*/
   {
     v6 = 1; /*0x71887d*/
-    if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 1040) ) /*0x718887*/
+    if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C) + 1040) ) /*0x718887*/
     {
-      v7 = (*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3); /*0x718896*/
-      v6 = HouseClass::GainedPoweredCenter(*(HouseClass **)(this->vfptr3 + 540), v7); /*0x7188af*/
+      v7 = (*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C); /*0x718896*/
+      v6 = HouseClass::GainedPoweredCenter(*(HouseClass **)(this->ptr_C + 540), v7); /*0x7188af*/
     }
   }
   v23[0] = a2 / 256; /*0x7188c1*/
   v23[1] = a3 / 256; /*0x7188da*/
   if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23) + 59) != 2 /*0x718962*/
     || v6
-    || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3) + 3278)
-    || (*(int (**)(int))(*(unsigned int *)this->vfptr3 + 44))(this->vfptr3) == 15
+    || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C) + 3278)
+    || (*(int (**)(int))(*(unsigned int *)this->ptr_C + 44))(this->ptr_C) == 15
     || (Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->flags & 0x100) != 0
     || Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->landType == 1 )
   {
-    vfptr3 = (int *)this->vfptr3; /*0x718a01*/
+    ptr_C = (int *)this->ptr_C; /*0x718a01*/
     v23[0] = a2 / 256; /*0x718a14*/
     v23[1] = a3 / 256; /*0x718a2f*/
-    v14 = *vfptr3; /*0x718a3c*/
+    v14 = *ptr_C; /*0x718a3c*/
     v15 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718a46*/
-    if ( (*(int (**)(int, void *, int, int, unsigned int, int))(v14 + 428))(this->vfptr3, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
+    if ( (*(int (**)(int, void *, int, int, unsigned int, int))(v14 + 428))(this->ptr_C, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       v23[0] = a2 / 256; /*0x718a80*/
       v23[1] = a3 / 256; /*0x718a95*/
       v16 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718aa2*/
       if ( !(unsigned __int8)Cell::IsGroundTypeRange(v16) /*0x718abd*/
-        || (*(int (**)(int))(*(unsigned int *)this->vfptr3 + 44))(this->vfptr3) == 15 )
+        || (*(int (**)(int))(*(unsigned int *)this->ptr_C + 44))(this->ptr_C) == 15 )
       {
-        v19 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)this->vfptr3 + 132))(this->vfptr3); /*0x718b23*/
-        v20 = this->vfptr3; /*0x718b2f*/
+        v19 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)this->ptr_C + 132))(this->ptr_C); /*0x718b23*/
+        v20 = this->ptr_C; /*0x718b2f*/
         *(unsigned int *)v23 = v19[40]; /*0x718b32*/
         LOBYTE(v12) = (*(char (**)(int, __int16 *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v20 + 364))( /*0x718b53*/
                         v20,
@@ -139,17 +139,17 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
       }
       else
       {
-        *(unsigned char *)(this->vfptr3 + 973) = 1; /*0x718ac2*/
-        (*(void (**)(int))(*(unsigned int *)this->vfptr3 + 928))(this->vfptr3); /*0x718ace*/
-        v12 = (unsigned int *)this->vfptr3; /*0x718ad4*/
+        *(unsigned char *)(this->ptr_C + 973) = 1; /*0x718ac2*/
+        (*(void (**)(int))(*(unsigned int *)this->ptr_C + 928))(this->ptr_C); /*0x718ace*/
+        v12 = (unsigned int *)this->ptr_C; /*0x718ad4*/
         v17 = v12->poweredUnitCenters; /*0x718ad7*/
         if ( v17 ) /*0x718adf*/
         {
           TechnoClass::MutateAll(v17, v12->q428, v12->q42C); /*0x718aef*/
-          v18 = *(unsigned int *)(this->vfptr3 + 728); /*0x718af7*/
+          v18 = *(unsigned int *)(this->ptr_C + 728); /*0x718af7*/
           if ( v18 ) /*0x718aff*/
             (*(void (**)(int, int))(*(unsigned int *)v18 + 32))(v18, 1); /*0x718b05*/
-          v12 = (unsigned int *)this->vfptr3; /*0x718b08*/
+          v12 = (unsigned int *)this->ptr_C; /*0x718b08*/
           v12->poweredUnitCenters = 0; /*0x718b0e*/
         }
       }
@@ -157,19 +157,19 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   }
   else
   {
-    *(unsigned char *)(this->vfptr3 + 973) = 1; /*0x71896b*/
-    (*(void (**)(int))(*(unsigned int *)this->vfptr3 + 928))(this->vfptr3); /*0x718977*/
-    v8 = (unsigned int *)this->vfptr3; /*0x71897d*/
+    *(unsigned char *)(this->ptr_C + 973) = 1; /*0x71896b*/
+    (*(void (**)(int))(*(unsigned int *)this->ptr_C + 928))(this->ptr_C); /*0x718977*/
+    v8 = (unsigned int *)this->ptr_C; /*0x71897d*/
     v9 = (TechnoClass *)v8[182]; /*0x718980*/
     if ( v9 ) /*0x718988*/
     {
       TechnoClass::MutateAll(v9, v8[266], v8[267]); /*0x718998*/
-      v10 = *(unsigned int *)(this->vfptr3 + 728); /*0x7189a0*/
+      v10 = *(unsigned int *)(this->ptr_C + 728); /*0x7189a0*/
       if ( v10 ) /*0x7189a8*/
         (*(void (**)(int, int))(*(unsigned int *)v10 + 32))(v10, 1); /*0x7189ae*/
-      *(unsigned int *)(this->vfptr3 + 728) = 0; /*0x7189b4*/
+      *(unsigned int *)(this->ptr_C + 728) = 0; /*0x7189b4*/
     }
-    v11 = (unsigned int *)this->vfptr3; /*0x7189be*/
+    v11 = (unsigned int *)this->ptr_C; /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
       LOBYTE(v12) = (*(char (**)(unsigned int *, unsigned int))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
@@ -456,7 +456,7 @@ void ObjectClass::nullsub_86()
 namespace gamemd {
 int E4Recv_717A40::ReadPointerFromECX4()
 {
-  return (int)this->vfptr; /*0x717a42*/
+  return (int)this->ptr_0; /*0x717a42*/
 }
 } // namespace gamemd
 

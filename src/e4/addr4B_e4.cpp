@@ -210,7 +210,7 @@ char JumpjetLocomotionClass_Process(int a1)
           }
           else
           {
-            (*(void (**)(FootClass *, unsigned int, int))(v27->vfptr + 1152))(v27, 0, 1); /*0x4b0a39*/
+            (*(void (**)(FootClass *, unsigned int, int))(v27->ptr_0 + 1152))(v27, 0, 1); /*0x4b0a39*/
           }
           goto LABEL_39; /*0x4b0a3f*/
         }
@@ -227,7 +227,7 @@ char JumpjetLocomotionClass_Process(int a1)
       if ( !*&v17->q598 ) /*0x4b073d*/
       {
 LABEL_27:
-        (*(void (**)(FootClass *, unsigned int, int))(v17->vfptr + 1152))(v17, 0, 1); /*0x4b06be*/
+        (*(void (**)(FootClass *, unsigned int, int))(v17->ptr_0 + 1152))(v17, 0, 1); /*0x4b06be*/
         return 0; /*0x4b06d2*/
       }
     }
@@ -417,7 +417,7 @@ int E4Recv_4B6BF0::sub_4B6BF0()
 {
 
   void *vtable1; // edx
-  vtable1 = dword_A8B230[376].vfptr1; /*0x4b6bf9*/
+  vtable1 = dword_A8B230[376].ptr_4; /*0x4b6bf9*/
   if ( !vtable1 ) /*0x4b6c01*/
     return -1; /*0x4b6c01*/
   int result = 0; // eax /*0x4b6c03*/
@@ -451,11 +451,11 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   int v7; // edi
   v7 = (*(int (**)(int *))(v6 + 128))(a1); /*0x4b98d2*/
   int v8; // edi
-  v8 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 32))(g_DSurface_Hidden) - v7) / 2; /*0x4b98e7*/
+  v8 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 32))(g_DSurface_Hidden) - v7) / 2; /*0x4b98e7*/
   int v9; // ebx
   v9 = (*(int (**)(int *))(*a1 + 124))(a1); /*0x4b98f2*/
   int v10; // eax
-  v10 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 31))(g_DSurface_Hidden); /*0x4b98f6*/
+  v10 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 31))(g_DSurface_Hidden); /*0x4b98f6*/
   v44.q004 = 300; /*0x4b9903*/
   int v40; // [esp+18h] [ebp-14Ch] BYREF
   v40 = (v10 - v9) / 2; /*0x4b9909*/
@@ -487,7 +487,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     if ( a4 ) /*0x4b99c4*/
     {
       const wchar_t *v15; // eax
-      v15 = (const wchar_t *)(*((int (**)(TechnoClass *))a3->vfptr + 43))(a3); /*0x4b99ca*/
+      v15 = (const wchar_t *)(*((int (**)(TechnoClass *))a3->ptr_0 + 43))(a3); /*0x4b99ca*/
       swprintf(v48, (const size_t)&stru_820320.VoxelCaches[17], v15); /*0x4b99db*/
     }
     else
@@ -515,7 +515,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     v39 = v41 + 300; /*0x4b9a97*/
     v38 = v40 + 450; /*0x4b9aa8*/
     unsigned int *v19; // eax
-    v19 = (unsigned int *)(*((int (**)(ObjectClass *, Rect *, int *, int, unsigned int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9ab3*/
+    v19 = (unsigned int *)(*((int (**)(ObjectClass *, Rect *, int *, int, unsigned int))g_DSurface_Hidden->ptr_0 + 30))( /*0x4b9ab3*/
                       g_DSurface_Hidden,
                       &v47,
                       &v38,
@@ -529,7 +529,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     int v43; // [esp+24h] [ebp-140h] BYREF
     v41 = v43 + 450; /*0x4b9af8*/
     unsigned int *v20; // eax
-    v20 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9b03*/
+    v20 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->ptr_0 + 30))( /*0x4b9b03*/
                       g_DSurface_Hidden,
                       &v47.Height,
                       &v41,
@@ -545,7 +545,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     v41 = v43 + 330; /*0x4b9b30*/
     v40 = v42 + 450; /*0x4b9b48*/
     unsigned int *v21; // eax
-    v21 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9b53*/
+    v21 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->ptr_0 + 30))( /*0x4b9b53*/
                       g_DSurface_Hidden,
                       &v47.Width,
                       &v40,
@@ -561,7 +561,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     v40 = v42 + 345; /*0x4b9b87*/
     v39 = v41 + 450; /*0x4b9b98*/
     unsigned int *v22; // eax
-    v22 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9ba3*/
+    v22 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->ptr_0 + 30))( /*0x4b9ba3*/
                       g_DSurface_Hidden,
                       &v47.Y,
                       &v39,

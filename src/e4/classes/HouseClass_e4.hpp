@@ -37,7 +37,7 @@ struct VectorCursor;  // fix_fwd_type_supply
 #ifndef GAMEMD_G2_HouseClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_HouseClass_DEF 1
 struct HouseClass {
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC

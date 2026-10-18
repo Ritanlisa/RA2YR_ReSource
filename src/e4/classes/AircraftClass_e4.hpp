@@ -26,7 +26,7 @@ struct LocomotionClass;  // fix_fwd_type_supply
 struct AircraftTypeClass;  // fix_fwd_type_supply
 
 struct AircraftClass {
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC

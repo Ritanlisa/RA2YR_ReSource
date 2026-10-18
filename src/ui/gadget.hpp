@@ -78,7 +78,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     static int Dtor(void *aP0);  // 0x4E1390 G42.35 static-form sync (ui/supplied sites 0x48E663)
     static int Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, char aP6);  // 0x4E12F0 G42.35 static-form sync (truth char a7)
     unsigned int Hovered;  // G42.35: supplied-bodies vocab (e4 flat member)
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view
     // === SYMBOL-ANCHOR (END) ===
 
     unsigned char q030;  // X10 supply (member_lookup)
@@ -148,7 +148,7 @@ public:
     void OnMouseLeave() override;
 
     ShpImage* Image = nullptr;
-    unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
+    unsigned int *__pad_0;  // G42.35: supplied-bodies ptr_0 view
     // unmatched: no callgraph reference and no git history record
     const uint8_t (*Palette)[4] = nullptr;
     bool Hovered = false;

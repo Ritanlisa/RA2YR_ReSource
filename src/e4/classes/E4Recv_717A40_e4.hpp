@@ -7,7 +7,7 @@ namespace gamemd {
 struct E4Recv_717A40 {
     unsigned int AbstractClass;
     unsigned int vtable0;
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int ReadPointerFromECX4();  // 0x717A40
 };
 } // namespace gamemd

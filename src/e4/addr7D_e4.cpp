@@ -9633,7 +9633,7 @@ unsigned int * _com_error::sub_7DCE0E(int a2)
   /* X11: vtable install elided (implicit via _com_error virtuals 0x7dce27) */
   if ( v3 ) /*0x7dce2d*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v3 + 4))(v3); /*0x7dce32*/
-  return &this->vfptr; /*0x7dce37*/
+  return &this->ptr_0; /*0x7dce37*/
 }
 }
 // 0x7DCE3B
@@ -9844,9 +9844,9 @@ void output(char * a1, int a2)
   int v56; // [esp+250h] [ebp-4h]
   ObjectClass *thisa; // [esp+25Ch] [ebp+8h]
 
-  vtable0 = (char)this->vfptr; /*0x7dd514*/
+  vtable0 = (char)this->ptr_0; /*0x7dd514*/
   v3 = 0; /*0x7dd516*/
-  thisa = (ObjectClass *)((char *)&this->vfptr + 1); /*0x7dd518*/
+  thisa = (ObjectClass *)((char *)&this->ptr_0 + 1); /*0x7dd518*/
   v54 = 0; /*0x7dd51b*/
   v52 = 0; /*0x7dd520*/
   if ( vtable0 ) /*0x7dd523*/
@@ -9929,7 +9929,7 @@ void output(char * a1, int a2)
           switch ( vtable0 ) /*0x7dd661*/
           {
             case 'I': /*0x7dd661*/
-              if ( LOBYTE(thisa->vfptr) == 54 && BYTE1(thisa->vfptr) == 52 ) /*0x7dd69c*/
+              if ( LOBYTE(thisa->ptr_0) == 54 && BYTE1(thisa->ptr_0) == 52 ) /*0x7dd69c*/
               {
                 (v56) |= ((((0x80u)) & 0xFF) << 8); /*0x7dd6a0*/
                 thisa = (ObjectClass *)((char *)thisa + 2); /*0x7dd6a4*/
@@ -13380,9 +13380,9 @@ int _getbuf(MouseClass * aP0)
     aP0->nextArrayIndex = 2; /*0x7d7743*/
   }
   int result; // eax
-  result = (int)aP0->vfptr2; /*0x7d774a*/
+  result = (int)aP0->ptr_8; /*0x7d774a*/
   aP0->ptr_1 = 0; /*0x7d774d*/
-  aP0->vfptr = (void *)result; /*0x7d7751*/
+  aP0->ptr_0 = (void *)result; /*0x7d7751*/
   return result; /*0x7d7753*/
 }
 } // namespace gamemd
@@ -15123,7 +15123,7 @@ ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(unsigned int * Block, char a2)
   sub_7DCE3B(Block); /*0x7dcdf5*/
   if ( (a2 & 1) != 0 ) /*0x7dcdff*/
     operator delete((void *)(Block)); /*0x7dce02*/
-  return &Block->vfptr; /*0x7dce0a*/
+  return &Block->ptr_0; /*0x7dce0a*/
 }
 } // namespace gamemd
 

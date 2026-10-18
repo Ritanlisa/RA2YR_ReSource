@@ -12,7 +12,7 @@ bool E4Recv_6B8AF0::sub_6B8AF0(unsigned int * a2)
 {
   
   int v2; // eax
-  v2 = (int)this->vfptr ^ *a2; /*0x6b8af8*/
+  v2 = (int)this->ptr_0 ^ *a2; /*0x6b8af8*/
   return !(unsigned char)v2 && (v2 & 0x7FF00) == 0; /*0x6b8b07*/
 }  // G42.18 ns repair
 } // namespace gamemd

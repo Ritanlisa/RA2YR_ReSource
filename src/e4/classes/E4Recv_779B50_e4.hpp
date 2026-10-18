@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_779B50 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     char ** WOL_ReadAutoLogin();  // 0x779B50
 };
 } // namespace gamemd

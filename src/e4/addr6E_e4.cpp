@@ -280,10 +280,10 @@ int E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
   int v7; // ecx
   char result; // al
 
-  v5 = stru_A8EB00.vfptr[4] - 1; /*0x6e37fa*/
-  if ( stru_A8EB00.vfptr[4] - 1 >= 0 ) /*0x6e3803*/
+  v5 = stru_A8EB00.ptr_0[4] - 1; /*0x6e37fa*/
+  if ( stru_A8EB00.ptr_0[4] - 1 >= 0 ) /*0x6e3803*/
   {
-    v6 = stru_A8EB00.vfptr[1] + 4 * v5; /*0x6e380b*/
+    v6 = stru_A8EB00.ptr_0[1] + 4 * v5; /*0x6e380b*/
     while ( strcmp((const char *)(*(unsigned int *)v6 + 36), (const char *)&this->customSound_controller[1]) ) /*0x6e3845*/
     {
       --v5; /*0x6e3847*/
@@ -295,7 +295,7 @@ int E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
   }
   LABEL_7:
   v7 = stru_A80220.nextArrayIndex - 1; /*0x6e3861*/
-  for ( result = 1; v7 >= 0; *(unsigned char *)(*((unsigned int *)stru_A80220.vfptr3 + v7 + 1) + 508) = 1 ) /*0x6e3870*/
+  for ( result = 1; v7 >= 0; *(unsigned char *)(*((unsigned int *)stru_A80220.ptr_C + v7 + 1) + 508) = 1 ) /*0x6e3870*/
     --v7; /*0x6e3878*/
   return result; /*0x6e3867*/
 }
@@ -594,9 +594,9 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   v20 = (int)this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = *v3->vtable2.missionQueued ) /*0x6efc85*/
   {
-    v6 = *(unsigned int *)((*(int (**)(TechnoClass *))(v3->vfptr + 132))(v3) + 1532); /*0x6efc91*/
+    v6 = *(unsigned int *)((*(int (**)(TechnoClass *))(v3->ptr_0 + 132))(v3) + 1532); /*0x6efc91*/
     if ( (unsigned __int8)TechnoClass::IsDeployed(v3) /*0x6efcba*/
-      && (BYTE1(v3[1].idleActionTimer[0]) || (*(int (**)(TechnoClass *))(v3->vfptr + 44))(v3) == 2)
+      && (BYTE1(v3[1].idleActionTimer[0]) || (*(int (**)(TechnoClass *))(v3->ptr_0 + 44))(v3) == 2)
       && v6 > v4 )
     {
       i = v3; /*0x6efcbc*/

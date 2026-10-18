@@ -2008,7 +2008,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
   if ( MEMORY[0xA83D4C] == (Object *)HouseClass_Observer ) /*0x4a261b*/
   {
     uniqueId = dword_A8B230[43].uniqueId; /*0x4a262a*/
-    if ( dword_A8B230[43].vfptr2 != (void *)-1 ) /*0x4a2639*/
+    if ( dword_A8B230[43].ptr_8 != (void *)-1 ) /*0x4a2639*/
     {
       pList = &dword_A8B230[43].ptr_2; /*0x4a2630*/
       uniqueId += Timer::GetTicks() - (unsigned int)*pList; /*0x4a2645*/
@@ -2029,10 +2029,10 @@ LABEL_26:
   v7 = (CountdownTimer)(*(int (**)(char *))(*(unsigned int *)&MEMORY[0xA83D4C]->__pad_C[24] + 24))(&MEMORY[0xA83D4C]->__pad_C[24]); /*0x4a2684*/
   *this = v7; /*0x4a2689*/
   *this = *(int *)&v7 <= 0 ? 0 : v7;
-  if ( dword_A8B230[127].vfptr3 != (void *)-1 ) /*0x4a26a7*/
+  if ( dword_A8B230[127].ptr_C != (void *)-1 ) /*0x4a26a7*/
     goto LABEL_12; /*0x4a26a7*/
   abstractFlags = dword_A8B230[127].abstractFlags; /*0x4a26a9*/
-  vtable3 = dword_A8B230[127].vfptr3; /*0x4a26af*/
+  vtable3 = dword_A8B230[127].ptr_C; /*0x4a26af*/
   if ( vtable3 != (void *)-1 ) /*0x4a26b8*/
   {
     if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - (int)vtable3 >= abstractFlags ) /*0x4a26c4*/
@@ -4294,7 +4294,7 @@ namespace gamemd {
 unsigned int * ComPtr::Constructor() {
   this->q004 = 0; /*0x65d432*/
   *(unsigned int *)this->__pad_000 = 0; /*0x65d439*/
-  return this->vfptr; /*0x65d43f*/
+  return this->ptr_0; /*0x65d43f*/
 }
 } // namespace gamemd
 

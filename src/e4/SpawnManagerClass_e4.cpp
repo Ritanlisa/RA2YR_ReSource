@@ -612,8 +612,8 @@ namespace gamemd {
 unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
 {
 
-  this->vfptr1 = 0; /*0x6b83a9*/
-  this->vfptr2 = (void *)aP1; /*0x6b83b0*/
+  this->ptr_4 = 0; /*0x6b83a9*/
+  this->ptr_8 = (void *)aP1; /*0x6b83b0*/
   LOBYTE(this->vtable4) = 1; /*0x6b83b3*/
   BYTE1(this->IsAllocated) = 0; /*0x6b83b7*/
   /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x6b83bb*/
@@ -621,11 +621,11 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
   {
     if ( aP2 ) /*0x6b83c9*/
     {
-      this->vfptr1 = (void *)aP2; /*0x6b83cb*/
+      this->ptr_4 = (void *)aP2; /*0x6b83cb*/
     }
     else
     {
-      this->vfptr1 = __2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
+      this->ptr_4 = __2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
       (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x6b83df*/
     }
   }

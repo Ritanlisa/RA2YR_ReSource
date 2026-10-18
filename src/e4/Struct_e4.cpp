@@ -137,5 +137,5 @@ unsigned int * Struct::InitTriple256(unsigned int * a1)
   a1->ptr_0 = (void *)256; /*0x5f75f7*/
   a1->ptr_1 = (void *)256; /*0x5f75f9*/
   a1->ptr_2 = v1; /*0x5f75fc*/
-  return &a1->vfptr; /*0x5f75ff*/
+  return &a1->ptr_0; /*0x5f75ff*/
 }

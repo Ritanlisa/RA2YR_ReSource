@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_79C040 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     void  ShowUserProfileWOL(HWND hDlg);  // 0x79C040
 };
 } // namespace gamemd

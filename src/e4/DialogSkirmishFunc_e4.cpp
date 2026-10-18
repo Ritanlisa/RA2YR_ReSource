@@ -98,7 +98,7 @@ void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a
   ObjectClass *v66; // eax
   Skirmish *v67; // eax
   int PlayerCountMap; // edi
-  int vfptr2; // ecx
+  int ptr_8; // ecx
   WideString *v70; // eax
   Skirmish *v71; // esi
   ObjectClass *v72; // eax
@@ -203,12 +203,12 @@ LABEL_151:
           else
           {
             PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x6ada32*/
-            if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C) /*0x6ada4b*/
-              || (vfptr2 = dword_A8B230[127].vfptr2, vfptr2 > PlayerCountMap) )
+            if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C) /*0x6ada4b*/
+              || (ptr_8 = dword_A8B230[127].ptr_8, ptr_8 > PlayerCountMap) )
             {
-              vfptr2 = PlayerCountMap; /*0x6ada4d*/
+              ptr_8 = PlayerCountMap; /*0x6ada4d*/
             }
-            ResetLobbyFactionTable(vfptr2); /*0x6ada4f*/
+            ResetLobbyFactionTable(ptr_8); /*0x6ada4f*/
             Lobby::InvalidateFactionCombos((Lobby *)hWnd); /*0x6ada56*/
             Lobby::InvalidatePlayerSlots((Lobby *)hWnd); /*0x6ada5d*/
             Skirmish_Setup_6ADDF0((HWND)hWnd, v61, *(int *)&stru_A8B250.__pad_0[4]); /*0x6ada6d*/
@@ -379,7 +379,7 @@ LABEL_151:
             }
             v25 = dword_A8B23C; /*0x6ad2ba*/
             unknown_libname_74(&v83); /*0x6ad2c4*/
-            if ( !(*(unsigned __int8 (**)(ObjectClass *, DeleteAndZero *))(v25->vfptr + 20))(v25, &v83) ) /*0x6ad2d2*/
+            if ( !(*(unsigned __int8 (**)(ObjectClass *, DeleteAndZero *))(v25->ptr_0 + 20))(v25, &v83) ) /*0x6ad2d2*/
             {
               if ( v83.DeleteAndZero_field_0x04 == 1559 ) /*0x6ad2e1*/
               {
@@ -406,7 +406,7 @@ LABEL_151:
             v30 = 0; /*0x6ad3bf*/
             do
             {
-              v31 = (ObjectClass *)v30->vfptr + 1); /*0x6ad3c3*/
+              v31 = (ObjectClass *)v30->ptr_0 + 1); /*0x6ad3c3*/
               if ( v30 )
               {
                 if ( v30 == 1 )
@@ -534,7 +534,7 @@ LABEL_151:
               *((unsigned int *)Formatb + 1) = ComboBoxSelectedRaw; /*0x6ad5e8*/
               Formatb += 6; /*0x6ad5f4*/
             }
-            while ( (int)&v36->vfptr + 1 < 8 );
+            while ( (int)&v36->ptr_0 + 1 < 8 );
             v44 = GetComboBoxSelectedRaw((HWND)hWnd, 1698, -1); /*0x6ad615*/
             v45 = SetComboBoxSelection((HWND)hWnd, 1699, -1); /*0x6ad625*/
             v46 = GetComboBoxSelectedRaw2((HWND)hWnd, 1901, -1); /*0x6ad631*/

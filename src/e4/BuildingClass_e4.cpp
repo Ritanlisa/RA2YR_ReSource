@@ -83,25 +83,25 @@ void* BuildingClass::LoadFromStream()
   int v34; // [esp+64h] [ebp+8h] BYREF
 
   v1 = v33; /*0x453e25*/
-  p_vfptr1 = &v33->vfptr1; /*0x453e2c*/
-  v33 = (BuildingClass *)(*(int (**)(int *))(v33->vfptr1 + 16))(&v33->vfptr1); /*0x453e3d*/
+  p_vfptr1 = &v33->ptr_4; /*0x453e2c*/
+  v33 = (BuildingClass *)(*(int (**)(int *))(v33->ptr_4 + 16))(&v33->ptr_4); /*0x453e3d*/
   v3 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, (int *)&v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
   {
-    v5 = (v3 - g_BuildingLoadQueue_Array.vfptr) >> 3; /*0x453e52*/
+    v5 = (v3 - g_BuildingLoadQueue_Array.ptr_0) >> 3; /*0x453e52*/
     if ( v5 != -1 ) /*0x453e58*/
     {
       v6 = v5 + 1; /*0x453e5a*/
       for ( i = NumOfElements; v6 < (int)NumOfElements; i = NumOfElements ) /*0x453e64*/
       {
-        v8 = (unsigned int *)(g_BuildingLoadQueue_Array.vfptr + 8 * v6++); /*0x453e6c*/
+        v8 = (unsigned int *)(g_BuildingLoadQueue_Array.ptr_0 + 8 * v6++); /*0x453e6c*/
         *(v8 - 2) = *v8; /*0x453e72*/
         *(v8 - 1) = v8[1]; /*0x453e78*/
       }
       NumOfElements = i - 1; /*0x453e8d*/
-      *(unsigned int *)(g_BuildingLoadQueue_Array.vfptr + 8 * NumOfElements) = 0; /*0x453e92*/
-      *(unsigned int *)(g_BuildingLoadQueue_Array.vfptr + 8 * NumOfElements + 4) = 0; /*0x453ea3*/
+      *(unsigned int *)(g_BuildingLoadQueue_Array.ptr_0 + 8 * NumOfElements) = 0; /*0x453e92*/
+      *(unsigned int *)(g_BuildingLoadQueue_Array.ptr_0 + 8 * NumOfElements + 4) = 0; /*0x453ea3*/
       dword_B0E850 = 0; /*0x453ea7*/
     }
   }
@@ -121,8 +121,8 @@ void* BuildingClass::LoadFromStream()
     if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, v12) ) /*0x453efb*/
     {
 LABEL_13:
-      *(unsigned int *)(g_BuildingLoadQueue_Array.vfptr + 8 * NumOfElements) = v11; /*0x453f0f*/
-      *(unsigned int *)(g_BuildingLoadQueue_Array.vfptr + 8 * NumOfElements + 4) = v1; /*0x453f1e*/
+      *(unsigned int *)(g_BuildingLoadQueue_Array.ptr_0 + 8 * NumOfElements) = v11; /*0x453f0f*/
+      *(unsigned int *)(g_BuildingLoadQueue_Array.ptr_0 + 8 * NumOfElements + 4) = v1; /*0x453f1e*/
       byte_B0E84C = 0; /*0x453f28*/
       ++NumOfElements; /*0x453f2f*/
     }
@@ -302,7 +302,7 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
   do
   {
     v4 = *(BuildingClass **)(*(unsigned int *)(this->owner + 228) + 4 * v3); /*0x4dfcf3*/
-    v5 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(v4->vfptr + 72))(v4, v16); /*0x4dfcff*/
+    v5 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(v4->ptr_0 + 72))(v4, v16); /*0x4dfcff*/
     v6 = (unsigned int *)this->vt_slot_72(this, v17); /*0x4dfd08*/
     v14 = v6[1] - v5[1]; /*0x4dfd28*/
     v15 = v6[2] - v5[2]; /*0x4dfd2c*/
@@ -311,7 +311,7 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
     v8 = v7; /*0x4dfd62*/
     if ( (int)v7 < v12 )
     {
-      v9 = this ? ((*(int (**)(FootClass *))&this->vfptr->fallRate)(this) == 15 ? (unsigned int)this : 0) : 0;
+      v9 = this ? ((*(int (**)(FootClass *))&this->ptr_0->fallRate)(this) == 15 ? (unsigned int)this : 0) : 0;
       if ( (unsigned __int8)BuildingClass::CanRepair(v4, v9) ) /*0x4dfd89*/
       {
         v12 = (int)v8; /*0x4dfd92*/
@@ -327,8 +327,8 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
     this->shouldEnterOccupiable[0] = 1; /*0x4dfdc0*/
     if ( (BuildingClass *)movementDestination != v13 || this->currentMission != 8 ) /*0x4dfdd2*/
     {
-      (*(void (**)(FootClass *, BuildingClass *, int))&this->vfptr->q480)(this, v13, 1); /*0x4dfddb*/
-      (*(void (**)(FootClass *, int, int))&this->vfptr->q1E8)(this, 8, 1); /*0x4dfde9*/
+      (*(void (**)(FootClass *, BuildingClass *, int))&this->ptr_0->q480)(this, v13, 1); /*0x4dfddb*/
+      (*(void (**)(FootClass *, int, int))&this->ptr_0->q1E8)(this, 8, 1); /*0x4dfde9*/
     }
     return 1; /*0x4dfdf0*/
   }
@@ -377,7 +377,7 @@ int BuildingClass::FindClosestForRepair2(int a1)
       v6 = 0; /*0x4dfe3b*/
     if ( (unsigned __int8)BuildingClass::CanRepair(v5, (int)v6) ) /*0x4dfe54*/
     {
-      v7 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(v5->vfptr + 72))(v5, v16); /*0x4dfe6b*/
+      v7 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(v5->ptr_0 + 72))(v5, v16); /*0x4dfe6b*/
       v8 = (unsigned int *)this->vt_slot_72(this, v17); /*0x4dfe74*/
       v14 = v8[1] - v7[1]; /*0x4dfe92*/
       v15 = v8[2] - v7[2]; /*0x4dfe9c*/
@@ -398,8 +398,8 @@ int BuildingClass::FindClosestForRepair2(int a1)
     this->shouldGarrisonStructure[0] = 1; /*0x4dff06*/
     if ( (BuildingClass *)movementDestination != v13 || this->currentMission != 8 ) /*0x4dff18*/
     {
-      (*(void (**)(FootClass *, BuildingClass *, int))&this->vfptr->q480)(this, v13, 1); /*0x4dff21*/
-      (*(void (**)(FootClass *, int, int))&this->vfptr->q1E8)(this, 8, 1); /*0x4dff2f*/
+      (*(void (**)(FootClass *, BuildingClass *, int))&this->ptr_0->q480)(this, v13, 1); /*0x4dff21*/
+      (*(void (**)(FootClass *, int, int))&this->ptr_0->q1E8)(this, 8, 1); /*0x4dff2f*/
     }
     return 1; /*0x4dff36*/
   }
@@ -977,7 +977,7 @@ LABEL_61:
   if ( (*(int (**)(int))(*(unsigned int *)_EBP + 388))(_EBP) != 7
     || !Building
     || Building == (AbstractClass **)_EBP
-    || (v54 = (unsigned short *)((int (*)(AbstractClass **, int *))(*Building)[12].vfptr2)(
+    || (v54 = (unsigned short *)((int (*)(AbstractClass **, int *))(*Building)[12].ptr_8)(
                          Building,
                          &v110.ComPtr_field_0x08),
         v55 = (unsigned short *)(*(int (**)(int, int *))(*(unsigned int *)_EBP + 440))(_EBP, &v110.ComPtr_field_0x04),

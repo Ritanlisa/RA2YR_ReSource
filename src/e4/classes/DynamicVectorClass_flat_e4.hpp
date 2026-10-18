@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct DynamicVectorClass_flat {
     unsigned int q010;
-    void* vfptr;
+    void* ptr_0;
     void* q000;  // 0x0
     void* Items;  // 0x4
     int Capacity;  // 0x8

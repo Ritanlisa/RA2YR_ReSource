@@ -90,7 +90,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   bool v42; // zf
   int v43; // eax
   int v44; // eax
-  int vfptr2; // ecx
+  int ptr_8; // ecx
   int v46; // eax
   ObjectClass *v47; // ecx
   void *v48; // eax
@@ -114,7 +114,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_TeamTypeClass_const) */  /*0x6f0ad4*/
   v55 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
-    v55 = (unsigned int *)*(&dword_A8022C->vfptr + v5); /*0x6f0aee*/
+    v55 = (unsigned int *)*(&dword_A8022C->ptr_0 + v5); /*0x6f0aee*/
   if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 100) <= *(unsigned int *)(a2 + 22108) /*0x6f0b12*/
     && *(unsigned char *)(a2 + 498) )
   {
@@ -246,7 +246,7 @@ LABEL_35:
           goto LABEL_49; /*0x6f0d38*/
         if ( (v57.IsAllocated[0] || !v57.Capacity) && v59 > 0 ) /*0x6f0d4c*/
         {
-          if ( !(*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v57.vfptr + 8))( /*0x6f0d60*/
+          if ( !(*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v57.ptr_0 + 8))( /*0x6f0d60*/
                   &v57,
                   v59 + v57.Capacity,
                   0) )
@@ -267,7 +267,7 @@ LABEL_51:
         && (v58 < Capacity
          || (v57.IsAllocated[0] || !Capacity)
          && v59 > 0
-         && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v57.vfptr + 8))(&v57, v59 + Capacity, 0)) )
+         && (*(unsigned __int8 (**)(VectorClass *, int, unsigned int))(v57.ptr_0 + 8))(&v57, v59 + Capacity, 0)) )
       {
         v31 = v58++; /*0x6f0db4*/
         *(unsigned int *)(v57.Items + 4 * v31) = v30; /*0x6f0dbf*/
@@ -290,39 +290,39 @@ LABEL_71:
     }
     v41 = v56; /*0x6f0e64*/
     v42 = v56 == (ObjectClass *)&v57; /*0x6f0e6e*/
-    v56->vfptr1 = 0; /*0x6f0e70*/
-    v41->vfptr2 = 0; /*0x6f0e73*/
-    (v41->vfptr3) = ((v41->vfptr3) & ~0xFF) | ((1) & 0xFF); /*0x6f0e76*/
-    (v41->vfptr3) = ((v41->vfptr3) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0e7a*/
+    v56->ptr_4 = 0; /*0x6f0e70*/
+    v41->ptr_8 = 0; /*0x6f0e73*/
+    (v41->ptr_C) = ((v41->ptr_C) & ~0xFF) | ((1) & 0xFF); /*0x6f0e76*/
+    (v41->ptr_C) = ((v41->ptr_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0e7a*/
     /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TeamTypeClass_const) */  /*0x6f0e7e*/
     if ( !v42 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3((int)v41); /*0x6f0e8c*/
       v43 = v57.Capacity; /*0x6f0e92*/
       v42 = v57.Capacity == 0; /*0x6f0e96*/
-      v41->vfptr2 = v57.Capacity; /*0x6f0e98*/
+      v41->ptr_8 = v57.Capacity; /*0x6f0e98*/
       if ( v42 ) /*0x6f0e9b*/
       {
-        v41->vfptr1 = 0; /*0x6f0f70*/
-        (v41->vfptr3) = ((v41->vfptr3) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0f73*/
+        v41->ptr_4 = 0; /*0x6f0f70*/
+        (v41->ptr_C) = ((v41->ptr_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0f73*/
       }
       else
       {
         v44 = __2_YAPAXI_Z(4 * v43); /*0x6f0ea5*/
-        v41->vfptr1 = v44; /*0x6f0eaf*/
+        v41->ptr_4 = v44; /*0x6f0eaf*/
         if ( v44 ) /*0x6f0eb2*/
         {
-          vfptr2 = v41->vfptr2; /*0x6f0eb8*/
+          ptr_8 = v41->ptr_8; /*0x6f0eb8*/
           v46 = 0; /*0x6f0ebb*/
-          (v41->vfptr3) = ((v41->vfptr3) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x6f0ebf*/
-          if ( vfptr2 > 0 ) /*0x6f0ec3*/
+          (v41->ptr_C) = ((v41->ptr_C) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x6f0ebf*/
+          if ( ptr_8 > 0 ) /*0x6f0ec3*/
           {
             do /*0x6f0edc*/
             {
-              *(unsigned int *)(v41->vfptr1 + 4 * v46) = *(unsigned int *)(v57.Items + 4 * v46); /*0x6f0ed3*/
+              *(unsigned int *)(v41->ptr_4 + 4 * v46) = *(unsigned int *)(v57.Items + 4 * v46); /*0x6f0ed3*/
               ++v46; /*0x6f0ed9*/
             }
-            while ( v46 < v41->vfptr2 ); /*0x6f0edc*/
+            while ( v46 < v41->ptr_8 ); /*0x6f0edc*/
           }
         }
       }
@@ -376,10 +376,10 @@ LABEL_70:
     v47 = v56; /*0x6f0f0b*/
     v57.IsAllocated[0] = 0; /*0x6f0f0d*/
     v57.Capacity = 0; /*0x6f0f12*/
-    v56->vfptr1 = 0; /*0x6f0f16*/
-    v47->vfptr2 = 0; /*0x6f0f19*/
-    (v47->vfptr3) = ((v47->vfptr3) & ~0xFF) | ((1) & 0xFF); /*0x6f0f1c*/
-    (v47->vfptr3) = ((v47->vfptr3) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0f20*/
+    v56->ptr_4 = 0; /*0x6f0f16*/
+    v47->ptr_8 = 0; /*0x6f0f19*/
+    (v47->ptr_C) = ((v47->ptr_C) & ~0xFF) | ((1) & 0xFF); /*0x6f0f1c*/
+    (v47->ptr_C) = ((v47->ptr_C) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x6f0f20*/
     /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_TeamTypeClass_const) */  /*0x6f0f24*/
     Team_Helper_6F2780(v47, &v57); /*0x6f0f2a*/
     /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList_TeamTypeClass_const) */  /*0x6f0f2f*/
@@ -420,7 +420,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, a6); /*0x6f898d*/
   if ( a10 != -1 ) /*0x6f8992*/
   {
-    v12 = (*(int (**)(TechnoClass *))(a1->vfptr + 132))(a1); /*0x6f899a*/
+    v12 = (*(int (**)(TechnoClass *))(a1->ptr_0 + 132))(a1); /*0x6f899a*/
     if ( MapClass::GetTileIndex((MapClass *)&dword_87F7E8, a6, *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/
       return 0; /*0x6f89bc*/
   }
@@ -472,11 +472,11 @@ LABEL_33:
       goto LABEL_34; /*0x6f8b43*/
   }
   if ( ((unsigned __int8)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v14) || v25) /*0x6f8ac7*/
-    && !*(unsigned char *)((*(int (**)(TechnoClass *))(a1->vfptr + 132))(a1) + 1728)
+    && !*(unsigned char *)((*(int (**)(TechnoClass *))(a1->ptr_0 + 132))(a1) + 1728)
     && !a1->isBerserk[0]
     && (!v25 || !v17 || !(unsigned __int8)Object::IsAlliedWithObjectHouse(v17, v14)) )
   {
-    if ( (*(int (**)(TechnoClass *))(a1->vfptr + 44))(a1) != 15 ) /*0x6f8ada*/
+    if ( (*(int (**)(TechnoClass *))(a1->ptr_0 + 44))(a1) != 15 ) /*0x6f8ada*/
       goto LABEL_33; /*0x6f8ada*/
     if ( !LOBYTE(a1[1].airstrikeTintTimer[0]) ) /*0x6f8adc*/
     {
@@ -510,12 +510,12 @@ LABEL_34:
     || TechnoClass::GetValue(a1, -1) < 0
     || !(unsigned __int8)House::IsCurrentPlayer((House *)a1->owner)
     && a1
-    && (*(int (**)(TechnoClass *))(a1->vfptr + 44))(a1) == 15
-    && *(unsigned char *)(*((*(int (**)(TechnoClass *))(a1->vfptr + 44))(a1) == 15
+    && (*(int (**)(TechnoClass *))(a1->ptr_0 + 44))(a1) == 15
+    && *(unsigned char *)(*((*(int (**)(TechnoClass *))(a1->ptr_0 + 44))(a1) == 15
                   ? &a1[1].ironTintTimer[1]
                   : (int *)1728)
                 + 3779)
-    || *(unsigned char *)((*(int (**)(TechnoClass *))(a1->vfptr + 132))(a1) + 1728)
+    || *(unsigned char *)((*(int (**)(TechnoClass *))(a1->ptr_0 + 132))(a1) + 1728)
     || a1->isBerserk[0]
     || v25 )
   {

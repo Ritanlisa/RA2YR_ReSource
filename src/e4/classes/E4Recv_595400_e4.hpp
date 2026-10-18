@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_595400 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     char PlaceNeutralBuilding();  // 0x595400
 };
 } // namespace gamemd

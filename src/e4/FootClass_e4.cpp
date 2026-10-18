@@ -119,9 +119,9 @@ void FootClass::Destroyed(int a2)
   unsigned char v4[4]; // [esp+4h] [ebp-4h] BYREF
 
   if ( (unsigned __int8)House::IsHumanPlayer((House *)this->owner) /*0x4d98dd*/
-    && !*(unsigned char *)((*((int (**)(FootClass *))this->vfptr + 33))(this) + 3412) )
+    && !*(unsigned char *)((*((int (**)(FootClass *))this->ptr_0 + 33))(this) + 3412) )
   {
-    v3 = ((__int64 (*)(FootClass *, unsigned char *))*((unsigned int *)this->vfptr + 110))(this, v4); /*0x4d98f0*/
+    v3 = ((__int64 (*)(FootClass *, unsigned char *))*((unsigned int *)this->ptr_0 + 110))(this, v4); /*0x4d98f0*/
     if ( (unsigned __int8)CreateTriggerClassIfFarEnough(7, (int)(((v3) >> 32) & 0xFFFFFFFFu), *(unsigned int *)v3) ) /*0x4d98fe*/
       VoxClass::FindAndPlay((VoxClass *)&stru_822420.ImageFile[8], -1); /*0x4d9911*/
   }

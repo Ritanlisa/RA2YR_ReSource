@@ -247,7 +247,7 @@ int TeamTypeClass::DestroyAllInstances()
   for ( i = 0; i < (int)FootClass_Array.waveEffect; ++i ) /*0x6f0a7d*/
   {
     TeamTypeClass **v4; // ecx
-    v4 = (TeamTypeClass **)*((unsigned int *)&FootClass_Array.auxParticles1->vfptr + i); /*0x6f0a84*/
+    v4 = (TeamTypeClass **)*((unsigned int *)&FootClass_Array.auxParticles1->ptr_0 + i); /*0x6f0a84*/
     if ( this == v4[9] ) /*0x6f0a8a*/
     {
       if ( v4 ) /*0x6f0a8e*/
@@ -1151,7 +1151,7 @@ int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
   for ( i = 0; i < (int)FootClass_Array.waveEffect; ++i ) /*0x6f1f3d*/
   {
     int v5; // ecx
-    v5 = *((unsigned int *)&FootClass_Array.auxParticles1->vfptr + i); /*0x6f1f49*/
+    v5 = *((unsigned int *)&FootClass_Array.auxParticles1->ptr_0 + i); /*0x6f1f49*/
     if ( *(TeamTypeClass **)(v5 + 36) == this ) /*0x6f1f4f*/
       TeamTypeClass::Check((TeamTypeClass *)v5, aP1); /*0x6f1f52*/
     result = (int)FootClass_Array.waveEffect; /*0x6f1f57*/
@@ -1172,8 +1172,8 @@ int TeamTypeClass::FindFirstInstance()
   ParticleSystemClass *i; // esi
   for ( i = FootClass_Array.auxParticles1; ; i = &i->vtable2 ) /*0x6f1f7e*/
   {
-    result = (int)i->vfptr; /*0x6f1f84*/
-    if ( *((TeamTypeClass **)i->vfptr + 9) == this ) /*0x6f1f89*/
+    result = (int)i->ptr_0; /*0x6f1f84*/
+    if ( *((TeamTypeClass **)i->ptr_0 + 9) == this ) /*0x6f1f89*/
       break; /*0x6f1f89*/
     if ( ++v1 >= (int)FootClass_Array.waveEffect ) /*0x6f1f91*/
       return 0; /*0x6f1f91*/

@@ -8,7 +8,7 @@ namespace gamemd {
 struct ColorListClass;  // fix_fwd_type_supply
 struct E4Recv_488760 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M372;  // 0x174
     unsigned int M376;  // 0x178
     unsigned int M380;  // 0x17C

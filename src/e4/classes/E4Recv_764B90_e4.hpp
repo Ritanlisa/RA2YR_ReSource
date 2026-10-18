@@ -7,7 +7,7 @@ namespace gamemd {
 struct HashTable_flat;  // fix_fwd_type_supply
 struct E4Recv_764B90 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M28;  // 0x1C
     unsigned int M32;  // 0x20

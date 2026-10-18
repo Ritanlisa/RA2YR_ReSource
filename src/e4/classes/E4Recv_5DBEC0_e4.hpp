@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_5DBEC0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int SendMultiplayerStartSignal_Start();  // 0x5DBEC0
 };
 } // namespace gamemd

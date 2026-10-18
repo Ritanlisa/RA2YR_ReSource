@@ -35,7 +35,7 @@ unsigned int * RadioClass::Release(void *a1)
   (&a1->lastCommands)[0] = 0; /*0x65a7c4*/
   a1->lastCommands[1] = 0; /*0x65a7ca*/
   a1->lastCommands[2] = 0; /*0x65a7d2*/
-  return &a1->vfptr; /*0x65a7d8*/
+  return &a1->ptr_0; /*0x65a7d8*/
 }  // G42.18 ns repair
 } // namespace ra2
 

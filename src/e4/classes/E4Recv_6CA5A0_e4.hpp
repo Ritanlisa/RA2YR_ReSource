@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_6CA5A0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     static unsigned int sub_6CA5A0(wchar_t * Source);
 };
 } // namespace gamemd

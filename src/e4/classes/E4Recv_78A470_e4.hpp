@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_78A470 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int  HandleOnlineWOL(void * String1);  // 0x78A470
 };
 } // namespace gamemd

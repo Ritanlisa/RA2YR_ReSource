@@ -89,7 +89,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
     }
       if ( ((((unsigned char *)&(_EAX))[1]) & 0x41) == 0 ) /*0x728c84*/
       {
-      *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))a1->Owner->vfptr + 110))( /*0x728c9e*/
+      *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))a1->Owner->ptr_0 + 110))( /*0x728c9e*/
                                       a1->Owner,
                                       v13);
       v11[0] = 0; /*0x728cc4*/
@@ -142,7 +142,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
       }
       if ( (((unsigned int)(unsigned short)(v8)) | ((unsigned int)(unsigned short)(this_2) << 16)) == *(unsigned int *)&DataGlobal_B0F8F0 ) /*0x728d4f*/
       {
-        (*((void (__stdcall **)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))a1->Owner->vfptr + 91))( /*0x728d7c*/
+        (*((void (__stdcall **)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))a1->Owner->ptr_0 + 91))( /*0x728d7c*/
             &a1->Owner->health,
             0,
             *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),

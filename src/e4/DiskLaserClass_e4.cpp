@@ -86,7 +86,7 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
 namespace gamemd {  // G42.18c ns repair
 int DiskLaserClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((int *)aP0->vfptr, a1, aP2); /*0x4a7c24*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0->ptr_0, a1, aP2); /*0x4a7c24*/
 }
 }  // G42.18c ns repair
 // 0x4A7C30

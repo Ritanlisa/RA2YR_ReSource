@@ -14646,7 +14646,7 @@ extern void* vt_WorldDominationTour_Selection;  // data: 0x7f72b4
 extern void* vt_WWMouseClass;  // data: 0x7F7B2C
 extern void* vt_XSurface;  // data: 0x7E2104
 extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30
-struct CellAttachedStub { void* vfptr; void Delete(int); };  // 0x47BB60/0x47BB8C receiver stub (G22 CellClass::DTOR)
+struct CellAttachedStub { void* ptr_0; void Delete(int); };  // 0x47BB60/0x47BB8C receiver stub (G22 CellClass::DTOR)
 struct MapSizeOptStub;  // 0x767800 arg chain stub (G22)
 extern int DataGlobal_AFA284;  // data: 0xafa284
 extern int DataGlobal_AFA28C;  // data: 0xafa28c

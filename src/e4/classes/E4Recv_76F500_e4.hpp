@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_76F500 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     void* ConstructWDTSelection_Create_76F500();  // 0x76F500
 };
 } // namespace gamemd

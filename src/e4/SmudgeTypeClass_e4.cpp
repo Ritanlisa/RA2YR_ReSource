@@ -119,7 +119,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   int v13; // [esp+8h] [ebp-8h] BYREF
   int v14; // [esp+Ch] [ebp-4h]
 
-  v7 = (*((int (**)(SmudgeTypeClass *))this->vfptr + 39))(this); /*0x6b55ff*/
+  v7 = (*((int (**)(SmudgeTypeClass *))this->ptr_0 + 39))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
     v8 = a2[1]; /*0x6b5614*/
@@ -202,7 +202,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
     operator delete((Image)); /*0x6b618a*/
     a3->Image = 0; /*0x6b6192*/
   }
-  AbstractClass::AnnounceExpiredPointer(&a3->vfptr, 1); /*0x6b61a0*/
+  AbstractClass::AnnounceExpiredPointer(&a3->ptr_0, 1); /*0x6b61a0*/
   SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::SmudgeTypeClass *)(a3); /*0x6b61b5*/
   int v4; // eax
@@ -222,7 +222,7 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   ObjectTypeClass::Destruct((int)a3); /*0x6b61f0*/
   if ( (a3 & 1) != 0 ) /*0x6b61fa*/
     operator delete((void *)(a3)); /*0x6b61fd*/
-  return &a3->vfptr; /*0x6b6207*/
+  return &a3->ptr_0; /*0x6b6207*/
 }
 }  // G42.18c ns repair
 // 0x6B5550

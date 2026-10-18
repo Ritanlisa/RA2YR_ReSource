@@ -1041,7 +1041,7 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
             v19 = v26; /*0x5bcf2e*/
             if ( v26 > v5 ) /*0x5bcf34*/
             {
-              v20 = &this->vfptr + (unsigned int)&v16[v17 + v26]; /*0x5bcf3a*/
+              v20 = &this->ptr_0 + (unsigned int)&v16[v17 + v26]; /*0x5bcf3a*/
               do /*0x5bcf50*/
               {
                 --v20; /*0x5bcf41*/
@@ -1053,7 +1053,7 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
               v17 = 500 - (unsigned int)this; /*0x5bcf52*/
             }
             v16[v5] = 32; /*0x5bcf5a*/
-            v18->vfptr = 0; /*0x5bcf5e*/
+            v18->ptr_0 = 0; /*0x5bcf5e*/
             v18 = &v18->customSound; /*0x5bcf64*/
             v16 += 25; /*0x5bcf67*/
             --v24; /*0x5bcf6b*/
@@ -1210,7 +1210,7 @@ AbstractClass * * sub_5BF950(int a2, int a3)
   result = TestBitArray(15); /*0x5bf958*/
   if ( !result ) /*0x5bf95f*/
   {
-    (*((void (__thiscall **)(ObjectClass *, int, unsigned int, int, unsigned int, int, int, int))g_DSurface_Hidden->vfptr + 2))( /*0x5bf983*/
+    (*((void (__thiscall **)(ObjectClass *, int, unsigned int, int, unsigned int, int, int, int))g_DSurface_Hidden->ptr_0 + 2))( /*0x5bf983*/
       g_DSurface_Hidden,
       g_MissionQueueFrame.localVariables[604] + 36,
       *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8),
@@ -1238,13 +1238,13 @@ AbstractClass * * sub_5BF950(int a2, int a3)
         int v13; // [esp+30h] [ebp-38h]
         v13 = v6[3]; /*0x5bf9cc*/
         unsigned int v14[4]; // [esp+34h] [ebp-34h] BYREF
-        v14[0] = ((*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->vfptr + 31))(g_DSurface_Hidden) - v12) / 2; /*0x5bf9e6*/
+        v14[0] = ((*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 31))(g_DSurface_Hidden) - v12) / 2; /*0x5bf9e6*/
         int v7; // eax
-        v7 = (*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->vfptr + 32))(g_DSurface_Hidden); /*0x5bf9ec*/
+        v7 = (*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 32))(g_DSurface_Hidden); /*0x5bf9ec*/
         v14[2] = v12; /*0x5bf9fc*/
         v14[1] = v7 - v13; /*0x5bfa04*/
         v14[3] = v13; /*0x5bfa15*/
-        (*((void (__thiscall **)(ObjectClass *, unsigned int *, int, unsigned int *, int, int))g_DSurface_Hidden->vfptr + 2))( /*0x5bfa21*/
+        (*((void (__thiscall **)(ObjectClass *, unsigned int *, int, unsigned int *, int, int))g_DSurface_Hidden->ptr_0 + 2))( /*0x5bfa21*/
           g_DSurface_Hidden,
           v14,
           v5,
@@ -2313,7 +2313,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   wchar_t lParam[256]; // [esp+110h] [ebp-400h] BYREF
   wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
 
-  result = (int)GetDlgItem((HWND)this->vfptr, 1344); /*0x5b57ea*/
+  result = (int)GetDlgItem((HWND)this->ptr_0, 1344); /*0x5b57ea*/
   v3 = (HWND)result; /*0x5b57ec*/
   if ( result ) /*0x5b57f0*/
   {
@@ -2338,7 +2338,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
           Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b58d9*/
           v4 = CharToWideString(unk_A8B380); /*0x5b58e3*/
           v5 = dword_A8B394; /*0x5b58ea*/
-          vtable0 = (HWND)this->vfptr; /*0x5b58f5*/
+          vtable0 = (HWND)this->ptr_0; /*0x5b58f5*/
           Format = (wchar_t *)v4; /*0x5b58f6*/
           result = (int)GetDlgItem(vtable0, 1343); /*0x5b58fa*/
           v6 = (HWND)result; /*0x5b58fc*/
@@ -2438,7 +2438,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
     v3 = CharToWideString(unk_A8B380); /*0x5b6e35*/
     v4 = dword_A8B394; /*0x5b6e3d*/
     Format = (wchar_t *)v3; /*0x5b6e49*/
-    DlgItem = GetDlgItem((HWND)this->vfptr, 1343); /*0x5b6e53*/
+    DlgItem = GetDlgItem((HWND)this->ptr_0, 1343); /*0x5b6e53*/
     if ( DlgItem ) /*0x5b6e57*/
     {
       if ( v4 >= 8 ) /*0x5b6e5b*/
@@ -2672,7 +2672,7 @@ HWND E4Recv_5B9250::sub_5B9250()
   wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
 
   memset(lParam, 0, sizeof(lParam)); /*0x5b9270*/
-  result = (int)GetDlgItem((HWND)this->vfptr, 1344); /*0x5b927a*/
+  result = (int)GetDlgItem((HWND)this->ptr_0, 1344); /*0x5b927a*/
   v3 = (HWND)result; /*0x5b927c*/
   if ( result ) /*0x5b9280*/
   {
@@ -2697,7 +2697,7 @@ HWND E4Recv_5B9250::sub_5B9250()
           Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b9369*/
           v4 = CharToWideString(unk_A8B380); /*0x5b9373*/
           v5 = dword_A8B394; /*0x5b937a*/
-          vtable0 = (HWND)this->vfptr; /*0x5b9385*/
+          vtable0 = (HWND)this->ptr_0; /*0x5b9385*/
           Format = (wchar_t *)v4; /*0x5b9386*/
           result = (int)GetDlgItem(vtable0, 1343); /*0x5b938a*/
           v6 = (HWND)result; /*0x5b938c*/
@@ -2813,7 +2813,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
   if ( a4 ) /*0x5baa91*/
   {
     HWND DlgItem; // edi
-    DlgItem = GetDlgItem((HWND)this->vfptr, 1343); /*0x5baaa1*/
+    DlgItem = GetDlgItem((HWND)this->ptr_0, 1343); /*0x5baaa1*/
     if ( DlgItem ) /*0x5baaa5*/
     {
       if ( a3 >= 8 ) /*0x5baab1*/
@@ -3652,7 +3652,7 @@ int E4Recv_5BF360::sub_5BF360()
              (wchar_t *)this->abstractFlags,
              0,
              16454,
-             (int)this->vfptr1,
+             (int)this->ptr_4,
              0);
   int result; // eax
   return result; /*0x5bf383*/

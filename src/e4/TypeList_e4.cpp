@@ -133,7 +133,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x45a262*/
+    (*(void (**)(_VectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x45a262*/
     return 1; /*0x45a268*/
   }
 
@@ -408,7 +408,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x4780a2*/
+    (*(void (**)(_VectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x4780a2*/
     return 1; /*0x4780a8*/
   }
 
@@ -1413,7 +1413,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x67abd2*/
+    (*(void (**)(_VectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x67abd2*/
     return 1; /*0x67abd8*/
   }
 
@@ -1493,7 +1493,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x67ad5e*/
+    (*(void (**)(_DynamicVectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x67ad5e*/
   }
   int v7 = this->Capacity; // eax /*0x67ad61*/
   if ( v7 < this->Count ) /*0x67ad69*/
@@ -1687,7 +1687,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x67b2d2*/
+    (*(void (**)(_VectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x67b2d2*/
     return 1; /*0x67b2d8*/
   }
 
@@ -1783,7 +1783,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x67b45e*/
+    (*(void (**)(_DynamicVectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x67b45e*/
   }
   int v7 = this->Capacity; // eax /*0x67b461*/
   if ( v7 < this->Count ) /*0x67b469*/

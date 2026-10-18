@@ -114,7 +114,7 @@ public:
     bool IsAllocated = false;
 
 
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 template <typename T>
@@ -216,7 +216,7 @@ public:
     bool operator==(const VectorClass<T>& other) const override;
 
 
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 #include "vector.inl"

@@ -86,7 +86,7 @@ char FootClass::TeamClass_CheckCohesion(double a2)
   unsigned char v13[12]; // [esp+30h] [ebp-Ch] BYREF
 
   v3 = v2; /*0x4d9e74*/
-  v4 = (*(int (**)(ObjectClass *, double))(v2->vfptr + 44))(v2, a2); /*0x4d9e78*/
+  v4 = (*(int (**)(ObjectClass *, double))(v2->ptr_0 + 44))(v2, a2); /*0x4d9e78*/
   if ( v4 > 0 /*0x4d9f52*/
     && v4 <= 2
     && (unsigned __int8)Team::AllMembersValid((Team *)v3)
@@ -94,7 +94,7 @@ char FootClass::TeamClass_CheckCohesion(double a2)
     && *(unsigned char *)(*(unsigned int *)(Array::Get((Array *)v3, 0) + 1312) + 5801)
     && (v6 = Array::Get((Array *)v3, 0),
         v7 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v6 + 72))(v6, v12),
-        v8 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *))(v3->vfptr + 72))(v3, v13),
+        v8 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *))(v3->ptr_0 + 72))(v3, v13),
         v11 = v8[2] - v7[2],
         Math::Sqrt(
           (double)(*v8 - *v7) * (double)(*v8 - *v7)
@@ -305,7 +305,7 @@ AbstractClass * * TeamClass::DestroyAllMembers(unsigned int *p_vtable0, int aP1,
 
   int v3; // eax
   int uniqueId; // edx
-  int vfptr1; // edi
+  int ptr_4; // edi
   unsigned int ***v6; // ecx
   int v7; // ebp
   int v8; // eax
@@ -323,8 +323,8 @@ AbstractClass * * TeamClass::DestroyAllMembers(unsigned int *p_vtable0, int aP1,
   uniqueId = this->uniqueId; /*0x6340ba*/
   if ( uniqueId <= 0 ) /*0x6340c0*/
     goto LABEL_7; /*0x6340c0*/
-  vfptr1 = this->vfptr1; /*0x6340c2*/
-  v6 = (unsigned int ***)vfptr1; /*0x6340c9*/
+  ptr_4 = this->ptr_4; /*0x6340c2*/
+  v6 = (unsigned int ***)ptr_4; /*0x6340c9*/
   while ( **v6 != p_vfptr ) /*0x6340d0*/
   {
     ++v3; /*0x6340d2*/
@@ -339,7 +339,7 @@ AbstractClass * * TeamClass::DestroyAllMembers(unsigned int *p_vtable0, int aP1,
 LABEL_7:
     v7 = 0; /*0x6340e7*/
   else
-    v7 = *(unsigned int *)(vfptr1 + 4 * v3); /*0x6340eb*/
+    v7 = *(unsigned int *)(ptr_4 + 4 * v3); /*0x6340eb*/
 LABEL_9:
   Block = (void *)v7; /*0x6340f0*/
   if ( v7 ) /*0x6340f6*/
@@ -362,7 +362,7 @@ LABEL_9:
       v10[28] = v11; /*0x63413e*/
       if ( !v11 ) /*0x634141*/
       {
-        p_vfptr = &this->vfptr; /*0x634145*/
+        p_vfptr = &this->ptr_0; /*0x634145*/
         if ( this ) /*0x634149*/
         {
           if ( !((this->referenceCount) & 0xFF) ) /*0x63414b*/
@@ -375,7 +375,7 @@ LABEL_9:
     }
     *(unsigned int *)(v7 + 8) = -1; /*0x634163*/
     __3_YAXPAX_Z(*((void **)Block + 1)); /*0x634172*/
-    v12 = (*(int (**)(TeamClass *, void **))&this->vfptr->q010)(this, &Block); /*0x634183*/
+    v12 = (*(int (**)(TeamClass *, void **))&this->ptr_0->q010)(this, &Block); /*0x634183*/
     if ( v12 != -1 ) /*0x634189*/
     {
       v13 = this->uniqueId; /*0x63418b*/
@@ -384,7 +384,7 @@ LABEL_9:
         v14 = v13 - 1; /*0x634192*/
         for ( this->uniqueId = v14; /*0x634198*/
               v12 < this->uniqueId;
-              *(unsigned int *)(this->vfptr1 + 4 * v12 - 4) = *(unsigned int *)(this->vfptr1 + 4 * v12) )
+              *(unsigned int *)(this->ptr_4 + 4 * v12 - 4) = *(unsigned int *)(this->ptr_4 + 4 * v12) )
         {
           ++v12; /*0x63419d*/
         }
@@ -394,7 +394,7 @@ LABEL_9:
     if ( !this->uniqueId && this ) /*0x6341c6*/
     {
       FactoryClass::ClearObjects((FactoryClass *)this); /*0x6341ce*/
-      p_vfptr = &this->vfptr; /*0x6341e3*/
+      p_vfptr = &this->ptr_0; /*0x6341e3*/
       v15 = (*(int (**)(char *, unsigned int **))(*(unsigned int *)&stru_AC4B48.__pad_B8[152] + 16))( /*0x6341e7*/
               &stru_AC4B48.__pad_B8[152],
               &p_vfptr);
@@ -410,18 +410,18 @@ LABEL_9:
         *(unsigned int *)&stru_AC4B48.__pad_9C[12] = 0; /*0x634242*/
       /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_PlanningBranchClass) */  /*0x63424b*/
       VectorClass::Cleanup2((int)&this->NeedsSaveOrLink); /*0x634251*/
-      v16 = (void *)this->vfptr1; /*0x634256*/
+      v16 = (void *)this->ptr_4; /*0x634256*/
       /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_PlanningMemberClass) */  /*0x634259*/
       if ( v16 ) /*0x634261*/
       {
-        if ( BYTE1(this->vfptr3) ) /*0x634263*/
+        if ( BYTE1(this->ptr_C) ) /*0x634263*/
         {
           __3_YAXPAX_Z(v16); /*0x634269*/
-          this->vfptr1 = 0; /*0x634271*/
+          this->ptr_4 = 0; /*0x634271*/
         }
       }
-      BYTE1(this->vfptr3) = 0; /*0x634275*/
-      this->vfptr2 = 0; /*0x634278*/
+      BYTE1(this->ptr_C) = 0; /*0x634275*/
+      this->ptr_8 = 0; /*0x634278*/
       __3_YAXPAX_Z(this); /*0x63427b*/
     }
   }
@@ -470,7 +470,7 @@ int TeamClass::FindByMemberType(int a2)
     {
       do /*0x635abd*/
       {
-        v7 = *(BuildingClass ***)(this->vfptr1 + 4 * v6); /*0x635a79*/
+        v7 = *(BuildingClass ***)(this->ptr_4 + 4 * v6); /*0x635a79*/
         if ( v7[2] == (BuildingClass *)a2 ) /*0x635a83*/
         {
           v5 = *v7; /*0x635a85*/
@@ -488,7 +488,7 @@ int TeamClass::FindByMemberType(int a2)
             {
               v13 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48); /*0x635ae2*/
             }
-            v14 = *(&dword_A8022C->vfptr + v13) + 22265; /*0x635af4*/
+            v14 = *(&dword_A8022C->ptr_0 + v13) + 22265; /*0x635af4*/
             LOWORD(v22[0].Color_field_00) = *(unsigned short *)v14; /*0x635afd*/
             BYTE2(v22[0].Color_field_00) = *(unsigned char *)(v14 + 2); /*0x635b09*/
             Color::Lerp(v22, 0x50u, (unsigned __int8 *)&stru_A83CD9); /*0x635b0d*/
@@ -511,7 +511,7 @@ int TeamClass::FindByMemberType(int a2)
         if ( *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x635b7a*/
           v18 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48); /*0x635b7c*/
       }
-      v19 = *(&dword_A8022C->vfptr + v18) + 22265; /*0x635b8f*/
+      v19 = *(&dword_A8022C->ptr_0 + v18) + 22265; /*0x635b8f*/
       LOWORD(v22[0].Color_field_00) = *(unsigned short *)v19; /*0x635b97*/
       BYTE2(v22[0].Color_field_00) = *(unsigned char *)(v19 + 2); /*0x635ba3*/
       Color::Lerp(v22, 0x64u, (unsigned __int8 *)&stru_A80220); /*0x635ba7*/
@@ -561,7 +561,7 @@ int TeamClass::GetMember(void *a1, void *a2)
     {
       do /*0x635c56*/
       {
-        v6 = *(BuildingClass ***)(this->vfptr1 + 4 * v5); /*0x635c36*/
+        v6 = *(BuildingClass ***)(this->ptr_4 + 4 * v5); /*0x635c36*/
         if ( *((unsigned char *)v6 + 12) ) /*0x635c39*/
         {
           v4 = *v6; /*0x635c40*/
@@ -574,7 +574,7 @@ int TeamClass::GetMember(void *a1, void *a2)
             {
               v8 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48); /*0x635c88*/
             }
-            v9 = *(&dword_A8022C->vfptr + v8) + 22265; /*0x635c9b*/
+            v9 = *(&dword_A8022C->ptr_0 + v8) + 22265; /*0x635c9b*/
             LOWORD(v15.Color_field_00) = *(unsigned short *)v9; /*0x635ca4*/
             BYTE2(v15.Color_field_00) = *(unsigned char *)(v9 + 2); /*0x635cac*/
             Color::Lerp(&v15, 0x50u, (unsigned __int8 *)&stru_A83CD9); /*0x635cb4*/
@@ -596,7 +596,7 @@ int TeamClass::GetMember(void *a1, void *a2)
         if ( *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x635d10*/
           v13 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48); /*0x635d12*/
       }
-      v14 = *(&dword_A8022C->vfptr + v13) + 22265; /*0x635d24*/
+      v14 = *(&dword_A8022C->ptr_0 + v13) + 22265; /*0x635d24*/
       LOWORD(v15.Color_field_00) = *(unsigned short *)v14; /*0x635d2d*/
       BYTE2(v15.Color_field_00) = *(unsigned char *)(v14 + 2); /*0x635d39*/
       Color::Lerp(&v15, 0x64u, (unsigned __int8 *)&stru_A80220); /*0x635d3d*/
@@ -652,16 +652,16 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   bool v15; // [esp+Bh] [ebp-Dh]
   void *Block; // [esp+Ch] [ebp-Ch] BYREF
   int i; // [esp+10h] [ebp-8h]
-  int vfptr; // [esp+14h] [ebp-4h] BYREF
+  int ptr_0; // [esp+14h] [ebp-4h] BYREF
 
   abstractFlags = this->abstractFlags; /*0x636127*/
   v15 = abstractFlags == 0; /*0x63612c*/
   v3 = 0; /*0x636131*/
-  vfptr = abstractFlags; /*0x636133*/
-  for ( i = 0; i < vfptr; ++i ) /*0x63613d*/
+  ptr_0 = abstractFlags; /*0x636133*/
+  for ( i = 0; i < ptr_0; ++i ) /*0x63613d*/
   {
-    v4 = *(unsigned int *)(this->vfptr2 + 4 * v3); /*0x636148*/
-    Value = Array::FindValue((Array *)v4, this->vfptr); /*0x636150*/
+    v4 = *(unsigned int *)(this->ptr_8 + 4 * v3); /*0x636148*/
+    Value = Array::FindValue((Array *)v4, this->ptr_0); /*0x636150*/
     if ( Value == -1 ) /*0x636158*/
       v6 = 0; /*0x63615a*/
     else
@@ -703,8 +703,8 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   }
   if ( !v15 ) /*0x636244*/
   {
-    vfptr = this->vfptr; /*0x63624c*/
-    v11 = *(unsigned int *)(vfptr + 540); /*0x636250*/
+    ptr_0 = this->ptr_0; /*0x63624c*/
+    v11 = *(unsigned int *)(ptr_0 + 540); /*0x636250*/
     v12 = *(unsigned int *)(v11 + 48); /*0x636256*/
     if ( (unsigned __int8)House::IsHumanPlayer((House *)v11) && *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x636269*/
       v12 = *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48); /*0x63626b*/
@@ -713,7 +713,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
                                                     & ((*(&stru_AC4B48.SidebarClass_field_0x3C + v12) - 1 < 0) - 1);
     v13 = (*(int (**)(char *, int *))(*(unsigned int *)&stru_AC4B48.__pad_B8[64] + 16))( /*0x6362a1*/
             &stru_AC4B48.__pad_B8[64],
-            &vfptr);
+            &ptr_0);
     if ( v13 != -1 && v13 < *(int *)&stru_AC4B48.__pad_B8[80] ) /*0x6362b3*/
     {
       --*(unsigned int *)&stru_AC4B48.__pad_B8[80]; /*0x6362b8*/
@@ -726,7 +726,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       }
     }
   }
-  result = (*(int (**)(int *))(this->vfptr1 + 12))(&this->vfptr1); /*0x6362e3*/
+  result = (*(int (**)(int *))(this->ptr_4 + 12))(&this->ptr_4); /*0x6362e3*/
   this->countObjects[1] = -1; /*0x6362e6*/
   this->countObjects[2] = -1; /*0x6362ec*/
   this->countObjects[3] = -1; /*0x6362f2*/
@@ -743,8 +743,8 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
 
   TeamClass *v4; // esi
   int result; // eax
-  int vfptr2; // edx
-  int vfptr; // esi
+  int ptr_8; // edx
+  int ptr_0; // esi
   int v8; // ebp
   int v9; // eax
   int v10; // ecx
@@ -780,15 +780,15 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
     {
       while ( 1 ) /*0x6367fa*/
       {
-        vfptr2 = v4->vfptr2; /*0x6367fa*/
-        vfptr = v4->vfptr; /*0x636801*/
-        v8 = *(unsigned int *)(vfptr2 + 4 * v27); /*0x636803*/
+        ptr_8 = v4->ptr_8; /*0x6367fa*/
+        ptr_0 = v4->ptr_0; /*0x636801*/
+        v8 = *(unsigned int *)(ptr_8 + 4 * v27); /*0x636803*/
         v9 = 0; /*0x636806*/
         v10 = *(unsigned int *)(v8 + 16); /*0x636808*/
         if ( v10 <= 0 ) /*0x63680d*/
           goto LABEL_11; /*0x63680d*/
         v11 = *(unsigned int ***)(v8 + 4); /*0x636812*/
-        while ( **v11 != vfptr ) /*0x636818*/
+        while ( **v11 != ptr_0 ) /*0x636818*/
         {
           ++v9; /*0x63681a*/
           ++v11; /*0x63681b*/
@@ -914,13 +914,13 @@ TeamClass * * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
     {
       while ( 1 ) /*0x6369d1*/
       {
-        v6 = *(unsigned int *)(v3->vfptr2 + 4 * v25); /*0x6369d1*/
+        v6 = *(unsigned int *)(v3->ptr_8 + 4 * v25); /*0x6369d1*/
         v7 = 0; /*0x6369d4*/
         v8 = *(unsigned int *)(v6 + 16); /*0x6369d6*/
         if ( v8 <= 0 ) /*0x6369db*/
           goto LABEL_11; /*0x6369db*/
         v9 = *(unsigned int ***)(v6 + 4); /*0x6369e0*/
-        while ( **v9 != v3->vfptr ) /*0x6369e6*/
+        while ( **v9 != v3->ptr_0 ) /*0x6369e6*/
         {
           ++v7; /*0x6369e8*/
           ++v9; /*0x6369e9*/
@@ -1054,8 +1054,8 @@ LABEL_4:
       this->countObjects[3] = v4 - 1; /*0x636b7c*/
     }
   }
-  v8 = *(unsigned int *)(this->vfptr2 + 4 * v3); /*0x636bc6*/
-  Value = Array::FindValue((Array *)v8, this->vfptr); /*0x636bce*/
+  v8 = *(unsigned int *)(this->ptr_8 + 4 * v3); /*0x636bc6*/
+  Value = Array::FindValue((Array *)v8, this->ptr_0); /*0x636bce*/
   if ( Value != -1 ) /*0x636bd6*/
     v5 = *(unsigned int *)(*(unsigned int *)(v8 + 4) + 4 * Value); /*0x636bdb*/
   Block = (void *)v5; /*0x636be0*/
@@ -1099,7 +1099,7 @@ LABEL_4:
     result = v3; /*0x636cb1*/
     for ( this->abstractFlags = v15; /*0x636cb8*/
           result < this->abstractFlags;
-          *(unsigned int *)(this->vfptr2 + 4 * result - 4) = *(unsigned int *)(this->vfptr2 + 4 * result) )
+          *(unsigned int *)(this->ptr_8 + 4 * result - 4) = *(unsigned int *)(this->ptr_8 + 4 * result) )
     {
       ++result; /*0x636cbd*/
     }
@@ -1223,7 +1223,7 @@ int TeamClass::Update_0(TeamClass *aP0, int aP1, int aP2, int aP3, char aP4, int
     }
     if ( v13 ) /*0x6e54e9*/
     {
-      AbstractClass::AnnounceExpiredPointer(&aP0->vfptr, 1); /*0x6e54ef*/
+      AbstractClass::AnnounceExpiredPointer(&aP0->ptr_0, 1); /*0x6e54ef*/
       result = *(unsigned int *)&DataGlobal_B0F6A0; /*0x6e54f4*/
       if ( *(int *)&DataGlobal_B0F6A8 < *(int *)&DataGlobal_B0F6A0 /*0x6e552f*/
         || (DataGlobal_B0F6A5 || !*(unsigned int *)&DataGlobal_B0F6A0)
@@ -1267,7 +1267,7 @@ void TeamClass::Destructor(void * a2)
   /* X11: vtable install elided (X67 recv-slot, RHS vt_TeamClass_4) */  /*0x6e8de7*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_TeamClass_4) */  /*0x6e8ded*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_TeamClass_4) */  /*0x6e8df4*/
-  for ( this->vfptr3 = (int)&vt_TeamClass_4; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
+  for ( this->ptr_C = (int)&vt_TeamClass_4; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
   {
     v3 = (AITriggerTypeClass *)*((unsigned int *)dword_A8B204 + v2); /*0x6e8e10*/
     if ( v3[3].AITriggerTypeClass_field_0x1C == this->buildingType ) /*0x6e8e1e*/
@@ -1291,7 +1291,7 @@ void TeamClass::Destructor(void * a2)
   if ( stru_A8E960.nextScenario[64] && this->buildingType ) /*0x6e8e67*/
   {
     for ( i = this->firstUnit; i; i = this->firstUnit ) /*0x6e8e73*/
-      TeamClass::LiberateMember_Start(&this->vfptr, i, 0xFFFFFFFF, 0); /*0x6e8e7c*/
+      TeamClass::LiberateMember_Start(&this->ptr_0, i, 0xFFFFFFFF, 0); /*0x6e8e7c*/
     --*(unsigned int *)&this->buildingType->u32_DC; /*0x6e8e92*/
     tag = (TagClass *)this->tag; /*0x6e8e98*/
     if ( tag ) /*0x6e8e9d*/
@@ -2621,11 +2621,11 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
       do /*0x6ec853*/
       {
         int v7; // ebp
-        v7 = *(unsigned int *)((*((int (**)(FootClass *))firstUnit->vfptr + 33))(firstUnit) + 1532); /*0x6ec7ff*/
+        v7 = *(unsigned int *)((*((int (**)(FootClass *))firstUnit->ptr_0 + 33))(firstUnit) + 1532); /*0x6ec7ff*/
         if ( firstUnit->isAliveFlag /*0x6ec845*/
           && firstUnit->health
           && (dword_A8E7AC || !firstUnit->inLimbo)
-          && (firstUnit->isTeamLeader || (*((int (**)(FootClass *))firstUnit->vfptr + 11))(firstUnit) == 2)
+          && (firstUnit->isTeamLeader || (*((int (**)(FootClass *))firstUnit->ptr_0 + 11))(firstUnit) == 2)
           && v7 > v5 )
         {
           v6 = firstUnit; /*0x6ec847*/
@@ -2651,12 +2651,12 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
                              Waypoint_Location,
                              1)) )
     {
-      void *vtable0 = v6->vfptr; // ebx /*0x6ec8dc*/
+      void *vtable0 = v6->ptr_0; // ebx /*0x6ec8dc*/
       void *v12; // eax
       v12 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP2); /*0x6ec8f0*/
       if ( (*((int (**)(FootClass *, void *, int, int, unsigned int, unsigned int))vtable0 + 107))(v6, v12, -1, -1, 0, 0) ) /*0x6ec8f8*/
       {
-        v13 = (int (**)(FootClass *))v6->vfptr; /*0x6ec916*/
+        v13 = (int (**)(FootClass *))v6->ptr_0; /*0x6ec916*/
         aP1 = 0; /*0x6ec91e*/
         v14 = v13[33](v6); /*0x6ec928*/
         aP2 = *LayerClass::Pathfinding_Find( /*0x6ec94b*/
@@ -2703,7 +2703,7 @@ int TeamClass::CountActiveTeamsForType(ObjectClass * aP1)
     WaveClass *waveEffect; // edi
     waveEffect = FootClass_Array.waveEffect; /*0x5095ea*/
     void **v4; // esi
-    v4 = &FootClass_Array.auxParticles1->vfptr + (int)FootClass_Array.waveEffect[-1].Cells + 3; /*0x5095ed*/
+    v4 = &FootClass_Array.auxParticles1->ptr_0 + (int)FootClass_Array.waveEffect[-1].Cells + 3; /*0x5095ed*/
     do /*0x509605*/
     {
       TeamClass **v5; // edx
@@ -3094,7 +3094,7 @@ char TeamClass::WakeUpAllMembers()
   result = TeamClass::SelectMember((int)this, 0); /*0x6ec3a5*/
   for ( i = this->firstUnit; i; i = i->nextTeamMember ) /*0x6ec3af*/
   {
-    result = (*((int (**)(FootClass *, unsigned int))i->vfptr + 242))(i, 0); /*0x6ec3b7*/
+    result = (*((int (**)(FootClass *, unsigned int))i->ptr_0 + 242))(i, 0); /*0x6ec3b7*/
     i->unknownBool688 = 1; /*0x6ec3bd*/
   }
   return result; /*0x6ec3ce*/

@@ -110,8 +110,8 @@ int ObjectClass::Destroy()
     (attachedBomb)->CleanupAudioAndRefs(); /*0x5f65fa*/
   if ( this && (this->abstractFlags & 1) != 0 ) /*0x5f6607*/
     ((TechnoClass *)this)->CleanupAll(0); /*0x5f660d*/
-  AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5f6616*/
-  (*((void (__thiscall **)(ObjectClass *))this->vfptr + 53))(this); /*0x5f661f*/
+  AbstractClass::AnnounceExpiredPointer(&this->ptr_0, 1); /*0x5f6616*/
+  (*((void (__thiscall **)(ObjectClass *))this->ptr_0 + 53))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
   result = *(unsigned int *)&DataGlobal_B0F6A0; /*0x5f662c*/
   if ( *(int *)&DataGlobal_B0F6A8 < *(int *)&DataGlobal_B0F6A0 /*0x5f6666*/

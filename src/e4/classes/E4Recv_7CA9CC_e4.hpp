@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_7CA9CC {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     exception * sub_7CA9CC(struct exception * a1);  // 0x7CA9CC
 };
 } // namespace gamemd

@@ -1447,8 +1447,8 @@ int E4Recv_5A6BA0::sub_5A6BA0()
   int16_t v10[2]; // [esp+10h] [ebp-8h] BYREF
   int v11; // [esp+14h] [ebp-4h]
 
-  vtable0_high = (*((signed short *)(this->vfptr + 2))); /*0x5a6ba3*/
-  vtable0_low = (this->vfptr); /*0x5a6ba7*/
+  vtable0_high = (*((signed short *)(this->ptr_0 + 2))); /*0x5a6ba3*/
+  vtable0_low = (this->ptr_0); /*0x5a6ba7*/
   v3 = vtable0_low + 7; /*0x5a6bae*/
   v4 = vtable0_low - 7; /*0x5a6bb1*/
   v5 = vtable0_high - 7; /*0x5a6bb6*/
@@ -5014,10 +5014,10 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
   DWORD result; // eax
   result = TimerGetTicks(); /*0x5ae54a*/
   v3 = (ObjectClass *)((char *)v3 + 204); /*0x5ae557*/
-  v3->vfptr = (void *)result; /*0x5ae55d*/
+  v3->ptr_0 = (void *)result; /*0x5ae55d*/
   void *v5; // [esp+8h] [ebp-8h]
   v3->v5 = v5; /*0x5ae55f*/
-  v3->vfptr2 = aP2; /*0x5ae562*/
+  v3->ptr_8 = aP2; /*0x5ae562*/
   return result; /*0x5ae565*/
 }
 } // namespace gamemd
@@ -5182,17 +5182,17 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     fmul st, st(5)
   }
   void *vtable1; // [esp+0h] [ebp-1Ch]
-  vtable1 = _ESI->vfptr1; /*0x5aed95*/
+  vtable1 = _ESI->ptr_4; /*0x5aed95*/
   int result = _ESI->occupant; // eax /*0x5aed99*/
   int v13; // [esp+4h] [ebp-18h]
   v13 = result; /*0x5aed9c*/
   void *vtable2; // [esp+8h] [ebp-14h]
-  vtable2 = _ESI->vfptr2; /*0x5aeda0*/
+  vtable2 = _ESI->ptr_8; /*0x5aeda0*/
   __asm { faddp st(1), st } /*0x5aeda4*/
   int owningHouseIndex; // [esp+Ch] [ebp-10h]
   owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
   void *vtable3; // [esp+10h] [ebp-Ch]
-  vtable3 = _ESI->vfptr3; /*0x5aedb0*/
+  vtable3 = _ESI->ptr_C; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
   *&_ESI->ptr_0 = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/

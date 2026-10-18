@@ -14828,7 +14828,7 @@ extern void* vt_XSurface;  // data: 0x7E2104
 extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30
 
 
-struct CellAttachedStub { void* vfptr; void Delete(int); };  // 0x47BB60/0x47BB8C receiver stub (G22 CellClass::DTOR)
+struct CellAttachedStub { void* ptr_0; void Delete(int); };  // 0x47BB60/0x47BB8C receiver stub (G22 CellClass::DTOR)
 
 struct MapSizeOptStub;  // 0x767800 arg chain stub (G22)
 

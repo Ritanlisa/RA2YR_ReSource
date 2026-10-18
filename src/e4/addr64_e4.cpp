@@ -139,9 +139,9 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
   vtable0 = this->ptr_0; /*0x645d6f*/
-  vtable1 = this->vfptr1; /*0x645d76*/
-  vtable2 = this->vfptr2; /*0x645d7d*/
-  vtable3 = this->vfptr3; /*0x645d88*/
+  vtable1 = this->ptr_4; /*0x645d76*/
+  vtable2 = this->ptr_8; /*0x645d7d*/
+  vtable3 = this->ptr_C; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply(v30->__pad_000.__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
   v5 = *&this->M12; /*0x645da3*/
@@ -913,7 +913,7 @@ LABEL_27:
     Debug::Log(); /*0x648b22*/
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x648b32*/
       Network::Disconnect((Network *)&stru_A8E960.nextScenario[96]); /*0x648b39*/
-    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].vfptr) != 0 ? 200 : 100);
+    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, BYTE1(dword_A8B230[375].ptr_0) != 0 ? 200 : 100);
     v105 = Timer::GetTicks(); /*0x648b76*/
     v107 = 180; /*0x648b7d*/
     *(unsigned int *)&v101.q020 = v105; /*0x648b84*/
@@ -3449,10 +3449,10 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
           HouseClass *v16 = dword_A8022C; // edx /*0x64dcbd*/
           do /*0x64dce2*/
           {
-            int vfptr; // ecx
-            vfptr = v16->vfptr; /*0x64dcc3*/
+            int ptr_0; // ecx
+            ptr_0 = v16->ptr_0; /*0x64dcc3*/
             v16 = &v16->vtable2; /*0x64dcc7*/
-            v1 = *(uint8_t *)(vfptr + 577) + (v1 >> 31) + 2 * v1; /*0x64dcda*/
+            v1 = *(uint8_t *)(ptr_0 + 577) + (v1 >> 31) + 2 * v1; /*0x64dcda*/
             --v15; /*0x64dcdc*/
             *(unsigned int *)dword_AC51FC = v1; /*0x64dcdd*/
           }

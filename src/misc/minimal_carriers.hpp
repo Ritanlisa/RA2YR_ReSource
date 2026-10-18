@@ -2,7 +2,7 @@
 #pragma once
 
 namespace gamemd {
-struct AnimTypeClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct AnimTypeClass { void* ptr_0; };  // minimal E2 (size-fix pending til evidence)
 #ifndef GAMEMD_MC_VECTORCLASS_SKIP
 #endif  // GAMEMD_MC_VECTORCLASS_SKIP
 } // namespace gamemd

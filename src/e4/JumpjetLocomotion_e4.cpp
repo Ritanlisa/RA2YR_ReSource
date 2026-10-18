@@ -1233,9 +1233,9 @@ LABEL_50:
         : (v50 = 0),
           *(unsigned char *)(*(unsigned int *)(v50 + 1728) + 3787)
        && *&this->q050 == 2
-       && (v51 = *(ObjectClass **)this->__pad_C, v51[4].vfptr1)) )
+       && (v51 = *(ObjectClass **)this->__pad_C, v51[4].ptr_4)) )
     {
-      v53 = ObjectClass::CalcTargetFacing(v51, (int *)&v61, v51[4].vfptr1); /*0x54d675*/
+      v53 = ObjectClass::CalcTargetFacing(v51, (int *)&v61, v51[4].ptr_4); /*0x54d675*/
       FacingClass::Set_SyncLog(&this->q054, v53); /*0x54d679*/
     }
     else

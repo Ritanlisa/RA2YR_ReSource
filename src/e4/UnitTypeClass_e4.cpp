@@ -430,7 +430,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
     int v30; // eax
     v30 = *(unsigned int *)&v4[1].NoCrew; /*0x747a03*/
     v4[1].SecretProduction = (TechnoTypeClass *)v29; /*0x747a09*/
-    *v4->vfptr1.ColorAdd = v30 + v29; /*0x747a11*/
+    *v4->ptr_4.ColorAdd = v30 + v29; /*0x747a11*/
   }
   *(unsigned int *)&v4[1].IsBeingRepaired = INIClass::ReadInt_Overwrite( /*0x747a2e*/
                                         (bool *)&DataGlobal_887180,
@@ -453,18 +453,18 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
           aStartfiringfra,
           StorageFilledSlots);
   int parent_gap; // [esp-Ch] [ebp-154h]
-  parent_gap = (int)v4[1].SecretProduction->vfptr; /*0x747a73*/
+  parent_gap = (int)v4[1].SecretProduction->ptr_0; /*0x747a73*/
   v4[1].StorageFilledSlots = v33; /*0x747a7a*/
   v4[1].SecretProduction = (TechnoTypeClass *)INIClass::ReadInt_Overwrite( /*0x747a85*/
                                                 (bool *)&DataGlobal_887180,
                                                 (uint8_t *)&v4->isTargetedByChrono,
                                                 aStartdeathfram,
                                                 parent_gap);
-  *v4->vfptr1.ColorAdd = INIClass::ReadInt_Overwrite( /*0x747aa8*/
+  *v4->ptr_4.ColorAdd = INIClass::ReadInt_Overwrite( /*0x747aa8*/
                                 (bool *)&DataGlobal_887180,
                                 (uint8_t *)&v4->isTargetedByChrono,
                                 aMaxdeathcounte,
-                                *v4->vfptr1.ColorAdd);
+                                *v4->ptr_4.ColorAdd);
   int v82; // [esp+Ch] [ebp-13Ch]
   v82 = 0; /*0x747aae*/
   int *BuildingClass_field_short_700; // [esp+8h] [ebp-140h]
@@ -602,7 +602,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
   if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x74b97c*/
     return 0; /*0x74b9df*/
   v2 = 0; /*0x74b98d*/
-  if ( stru_A8EB00.vfptr[14] <= 0 ) /*0x74b991*/
+  if ( stru_A8EB00.ptr_0[14] <= 0 ) /*0x74b991*/
   {
     LABEL_6:
     v3 = (VoxelAnimTypeClass *)operator new(0x308u); /*0x74b9b6*/
@@ -610,12 +610,12 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
       return VoxelAnimTypeClass::Constructor(v3, Source); /*0x74b9d1*/
     return 0; /*0x74b9c5*/
   }
-  while ( _strcmpi((char *)(*(unsigned int *)(stru_A8EB00.vfptr[11] + 4 * v2) + 36), Source) ) /*0x74b9aa*/
+  while ( _strcmpi((char *)(*(unsigned int *)(stru_A8EB00.ptr_0[11] + 4 * v2) + 36), Source) ) /*0x74b9aa*/
   {
-    if ( ++v2 >= stru_A8EB00.vfptr[14] ) /*0x74b9b4*/
+    if ( ++v2 >= stru_A8EB00.ptr_0[14] ) /*0x74b9b4*/
       goto LABEL_6; /*0x74b9b4*/
   }
-  return *(unsigned int **)(stru_A8EB00.vfptr[11] + 4 * v2); /*0x74b9cf*/
+  return *(unsigned int **)(stru_A8EB00.ptr_0[11] + 4 * v2); /*0x74b9cf*/
 }
 }  // G42.18c ns repair
 // 0x747590
@@ -667,9 +667,9 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
   v3 = (int)v7; /*0x747eda*/
   if ( (int)v7 < GroundHeight ) /*0x747ee0*/
     v3 = Cell::GetGroundHeight(&v5); /*0x747ef1*/
-  this->vfptr = v5; /*0x747efe*/
-  this->vfptr1 = v6; /*0x747f04*/
-  this->vfptr2 = v3; /*0x747f08*/
+  this->ptr_0 = v5; /*0x747efe*/
+  this->ptr_4 = v6; /*0x747f04*/
+  this->ptr_8 = v3; /*0x747f08*/
   return (unsigned int *)this; /*0x747f0b*/
 
 }

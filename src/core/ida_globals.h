@@ -5444,12 +5444,12 @@ extern unsigned int dword_A8B22C;
 // [X36-A8B230] binary-verified 36B elem struct (IDA til AbstractClass,
 // stride two-point solve L338; offsets confirmed by 9 independent
 // disp-36*idx solves 2026-10-16). Union vocab: bodies spell the head slots
-// both vfptr/vfptr1-3 (til) and vtable0-3 (corpus).
+// both ptr_0/ptr_4-3 (til) and vtable0-3 (corpus).
 struct AbstractElem {
-    union { unsigned int vfptr; unsigned int vtable0; };  // 0x0
-    union { unsigned int vfptr1; unsigned int vtable1; };  // 0x4
-    union { unsigned int vfptr2; unsigned int vtable2; };  // 0x8
-    union { unsigned int vfptr3; unsigned int vtable3; };  // 0xC
+    union { unsigned int ptr_0; unsigned int vtable0; };  // 0x0
+    union { unsigned int ptr_4; unsigned int vtable1; };  // 0x4
+    union { unsigned int ptr_8; unsigned int vtable2; };  // 0x8
+    union { unsigned int ptr_C; unsigned int vtable3; };  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

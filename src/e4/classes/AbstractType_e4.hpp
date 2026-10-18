@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct AbstractType_e4 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     char * FindName();  // 0x40DCB0
 };
 } // namespace gamemd

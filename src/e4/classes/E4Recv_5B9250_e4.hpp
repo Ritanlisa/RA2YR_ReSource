@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_5B9250 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     HWND sub_5B9250();  // 0x5B9250
     // --- W16G3 supply (BEGIN) ---
     unsigned int AbstractClass;  // HWND-cast vocab @0x5b927a (W16G3 raw-usage vocab)

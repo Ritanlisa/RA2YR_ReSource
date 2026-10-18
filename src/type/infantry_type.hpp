@@ -140,11 +140,11 @@ public:
     unsigned int u32_E88;  // X10 supply (member_lookup)
 
 
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
 
 // G22 E1: InfantryTypes registry (0xA8E348; ctor register / dtor compaction).
-// Shim struct: binary embed layout (vfptr/Items/Cap/Flags/Count/CapInc); the
+// Shim struct: binary embed layout (ptr_0/Items/Cap/Flags/Count/CapInc); the
 // registry's dynamic type is fixed, so the direct FindItemIndex call targets
 // the same slot-16 implementation the virtual dispatch would reach.
 struct InfantryTypesVector_Shim

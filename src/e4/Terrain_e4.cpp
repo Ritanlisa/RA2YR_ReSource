@@ -36,10 +36,10 @@ namespace gamemd {
 int InvalidateTileRegionMap(int16_t* p0);  // x4:signals@0x56db70
 } // namespace gamemd
 // [w14e3] _VectorClass_VCell supply: flat carrier (raw decl "_VectorClass_VCell vNN;" e.g. Terrain::PlaceCliffs 0x568E40;
-// usage: *(unsigned int*)v.q000 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
+// usage: *(unsigned int*)v.q000 = ptr_0 -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
 namespace gamemd {
 struct _VectorClass_VCell {
-  char q000[1];        // 0x0 (vfptr carrier, dword-wide via cast; W16G3 raw vocab)
+  char q000[1];        // 0x0 (ptr_0 carrier, dword-wide via cast; W16G3 raw vocab)
   char m_1[7];            // 0x1..0x7 (raw usage &x.m_1[3] = Items @0x4)
   int m_8;                // 0x8 Capacity
   char m_C[2];            // 0xC..0xD IsInitialized/IsAllocated
@@ -1662,7 +1662,7 @@ LABEL_109:
               goto LABEL_127; /*0x570993*/
             if ( (v86.IsAllocated || !Capacity) && v88 > 0 ) /*0x5709a7*/
             {
-              if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v86.vfptr + 2))( /*0x5709b6*/
+              if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v86.ptr_0 + 2))( /*0x5709b6*/
                      &v86,
                      v88 + Capacity,
                      0) )
@@ -1757,7 +1757,7 @@ LABEL_90:
         goto LABEL_96; /*0x5706b7*/
       if ( !v86.IsAllocated && v49 || v88 <= 0 ) /*0x5706cb*/
         goto LABEL_98; /*0x5706cb*/
-      if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v86.vfptr + 2))(&v86, v88 + v49, 0) ) /*0x5706da*/
+      if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v86.ptr_0 + 2))(&v86, v88 + v49, 0) ) /*0x5706da*/
       {
 LABEL_96:
         v52 = v87++; /*0x5706e9*/
@@ -2140,7 +2140,7 @@ LABEL_92:
             {
               if ( (v92.IsAllocated || !Capacity) && v94 > 0 ) /*0x573bec*/
               {
-                if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v92.vfptr + 2))( /*0x573bfb*/
+                if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v92.ptr_0 + 2))( /*0x573bfb*/
                        &v92,
                        v94 + Capacity,
                        0) )
@@ -2245,7 +2245,7 @@ LABEL_123:
         goto LABEL_129; /*0x573eb6*/
       if ( !v92.IsAllocated && v76 || v94 <= 0 ) /*0x573eca*/
         goto LABEL_131; /*0x573eca*/
-      if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v92.vfptr + 2))(&v92, v94 + v76, 0) ) /*0x573ed9*/
+      if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v92.ptr_0 + 2))(&v92, v94 + v76, 0) ) /*0x573ed9*/
       {
 LABEL_129:
         v79 = v93++; /*0x573ee8*/

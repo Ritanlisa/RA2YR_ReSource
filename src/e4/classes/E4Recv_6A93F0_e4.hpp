@@ -7,7 +7,7 @@ namespace gamemd {
 struct BombClass;  // fix_fwd_type_supply
 struct E4Recv_6A93F0 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M28;  // 0x1C
     unsigned int M56;  // 0x38
 // --- flat members (END) ---

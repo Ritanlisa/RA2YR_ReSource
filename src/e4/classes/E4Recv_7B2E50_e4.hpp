@@ -7,7 +7,7 @@ namespace gamemd {
 struct CampaignClass;  // fix_fwd_type_supply
 struct E4Recv_7B2E50 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M258872;  // 0x3F338
     unsigned int M258876;  // 0x3F33C
     unsigned int M258880;  // 0x3F340

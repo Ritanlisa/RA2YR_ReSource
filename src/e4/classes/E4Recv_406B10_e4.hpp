@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_406B10 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int InitializeAudioSubsystem();  // 0x406B10
 };
 } // namespace gamemd

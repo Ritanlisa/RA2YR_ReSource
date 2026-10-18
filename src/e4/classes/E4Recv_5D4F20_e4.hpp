@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_5D4F20 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     AbstractClass * * sub_5D4F20();  // 0x5D4F20
 };
 } // namespace gamemd

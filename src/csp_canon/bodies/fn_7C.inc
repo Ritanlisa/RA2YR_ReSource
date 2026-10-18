@@ -1756,7 +1756,7 @@ char * E4Recv_7C8B29::sub_7C8B29()
 unsigned int * E4Recv_7C8B2D::sub_7C8B2D(int a2)
 {
 
-  *(unsigned int *)this = (unsigned int)&off_7F9594; /*0x7c8b2f G42.33 b23: vfptr install (hpp minimal vfptr)*/
+  *(unsigned int *)this = (unsigned int)&off_7F9594; /*0x7c8b2f G42.33 b23: ptr_0 install (hpp minimal ptr_0)*/
   return (unsigned int *)(void *)this; /*0x7c8b35 G42.33 b23*/
 
 }
@@ -2518,7 +2518,7 @@ exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
 
   __0exception_QAE_ABV0__Z((exception *)this, a1); /*0x7ca9d3*/
-  *(unsigned int *)this = (unsigned int)&vt_bad_typeid; /*0x7ca9d8 G42.33 b24: vfptr install (hpp minimal vfptr)*/
+  *(unsigned int *)this = (unsigned int)&vt_bad_typeid; /*0x7ca9d8 G42.33 b24: ptr_0 install (hpp minimal ptr_0)*/
   return (exception *)this; /*0x7ca9e0*/
 
 }

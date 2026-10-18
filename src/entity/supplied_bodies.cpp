@@ -514,7 +514,7 @@ int AnimClass::resetAnimation()
   if ( !missionStatus ) /*0x449a60*/
   {
     BuildingClass::StartProduction(body, 0); /*0x449b36*/
-    (*((void (__thiscall **)(BuildingClass *, int))body->vfptr + 157))(body, 11); /*0x449b41*/
+    (*((void (__thiscall **)(BuildingClass *, int))body->ptr_0 + 157))(body, 11); /*0x449b41*/
     UnitExitSound = body->Type->UnitExitSound; /*0x449b4d*/
     if ( UnitExitSound != -1 /*0x449b67*/
       || (UnitExitSound = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1736), UnitExitSound != -1) )
@@ -537,11 +537,11 @@ int AnimClass::resetAnimation()
   StartAudioController(v8, (int **)&body->WasOnline); /*0x449a9a*/
   if ( !body->BuildingClass_field_bool_6DD ) /*0x449a9f*/
     return 1; /*0x449ba9*/
-  (*((void (__thiscall **)(BuildingClass *, int))body->vfptr + 157))(body, 12); /*0x449ab3*/
-  (*((void (__thiscall **)(BuildingClass *, int))body->vfptr + 157))(body, 3); /*0x449abf*/
+  (*((void (__thiscall **)(BuildingClass *, int))body->ptr_0 + 157))(body, 12); /*0x449ab3*/
+  (*((void (__thiscall **)(BuildingClass *, int))body->ptr_0 + 157))(body, 3); /*0x449abf*/
   BuildingClass::StartProduction(body, 1); /*0x449ac9*/
-  (*((void (__thiscall **)(BuildingClass *, unsigned int))body->vfptr + 311))(body, 0); /*0x449ad4*/
-  (*((void (__thiscall **)(BuildingClass *, int, unsigned int))body->vfptr + 122))(body, 5, 0); /*0x449ae2*/
+  (*((void (__thiscall **)(BuildingClass *, unsigned int))body->ptr_0 + 311))(body, 0); /*0x449ad4*/
+  (*((void (__thiscall **)(BuildingClass *, int, unsigned int))body->ptr_0 + 122))(body, 5, 0); /*0x449ae2*/
   Type = body->Type; /*0x449ae8*/
   if ( !Type->LaserFence ) /*0x449aee*/
   {
@@ -628,7 +628,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   float v63; // [esp+18h] [ebp-48h] BYREF
   float v64; // [esp+1Ch] [ebp-44h]
   float v65; // [esp+20h] [ebp-40h]
-  int vfptr; // [esp+24h] [ebp-3Ch] BYREF
+  int ptr_0; // [esp+24h] [ebp-3Ch] BYREF
   int v67; // [esp+28h] [ebp-38h]
   int v68; // [esp+2Ch] [ebp-34h]
   float v69; // [esp+30h] [ebp-30h] BYREF
@@ -802,13 +802,13 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
           v72.ptr_0 = (void *)(*v35 + *Coords); /*0x422468*/
           v36 = Coords[1] + v35[1]; /*0x422472*/
           v37 = Coords[2] + v35[2]; /*0x422475*/
-          vfptr = (int)v72.ptr_0; /*0x42247c*/
+          ptr_0 = (int)v72.ptr_0; /*0x42247c*/
           v67 = v36; /*0x422480*/
         }
         else
         {
           v38 = (int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x42248d*/
-          vfptr = *v38; /*0x422494*/
+          ptr_0 = *v38; /*0x422494*/
           v67 = v38->vtable2; /*0x42249b*/
           v37 = v38->vtable3; /*0x42249f*/
         }
@@ -816,7 +816,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         v68 = v37; /*0x4224ae*/
         AnimClass::InitRotation( /*0x4224d4*/
           &this->q128,
-          &vfptr,
+          &ptr_0,
           v39[196],
           v39[197],
           1610612736,
@@ -847,7 +847,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
           v44 = v45[2]; /*0x422534*/
         }
         v67 = v43; /*0x422537*/
-        vfptr = v42; /*0x422544*/
+        ptr_0 = v42; /*0x422544*/
         v68 = v44 + 10; /*0x42254e*/
         v46 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x422557*/
         v60 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x42256f*/
@@ -865,7 +865,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         v70 = v50; /*0x42262f*/
         AnimClass::InitRotation( /*0x422648*/
           &this->q128,
-          &vfptr,
+          &ptr_0,
           *(unsigned int *)(v48 + 784),
           *(unsigned int *)(v48 + 788),
           1610612736,

@@ -7,7 +7,7 @@
 namespace gamemd {
 struct AbstractTypeClass;  // fix_fwd_type_supply
 struct E4Recv_6E5FE0 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     AbstractTypeClass * SaveTriggerTagsToINI();  // 0x6E5FE0
 };
 } // namespace gamemd

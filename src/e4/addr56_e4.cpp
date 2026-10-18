@@ -115,7 +115,7 @@ LABEL_19:
     {
       Debug::Log(); /*0x560e39*/
       if ( g_DSurface_Hidden ) /*0x560e49*/
-        (*(void (**)(ObjectClass *, int))g_DSurface_Hidden->vfptr)(g_DSurface_Hidden, 1); /*0x560e4f*/
+        (*(void (**)(ObjectClass *, int))g_DSurface_Hidden->ptr_0)(g_DSurface_Hidden, 1); /*0x560e4f*/
       g_DSurface_Hidden = 0; /*0x560e51*/
     }
     if ( DSurface_Tile ) /*0x560e5d*/

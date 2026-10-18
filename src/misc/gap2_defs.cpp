@@ -499,7 +499,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
   *(unsigned short *)&v97[2] = this->q028 / 256; /*0x515540*/
   *(unsigned int *)v95 = *(unsigned int *)v97; /*0x515549*/
   v44 = (ObjectClass *)this->m_State; /*0x51554d*/
-  vtable0 = (int (**)(int, void *, int, int, unsigned int, int))v44->vfptr; /*0x515550*/
+  vtable0 = (int (**)(int, void *, int, int, unsigned int, int))v44->ptr_0; /*0x515550*/
   LandHeight = ObjectClass::GetLandHeight(v44); /*0x51555b*/
   v91 = *(unsigned int *)v96; /*0x515560*/
   v46 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v95); /*0x515567*/
@@ -906,7 +906,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
   unsigned int *v34; // eax
   int v35; // edx
   ObjectClass *v36; // ebx
-  int vfptr; // ebp
+  int ptr_0; // ebp
   void *v38; // eax
   Object *v39; // ebx
   int *v40; // edx
@@ -1022,11 +1022,11 @@ LABEL_19:
     if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (__int16 *)&a2, 1) ) /*0x516974*/
     {
       v36 = (ObjectClass *)this->m_State; /*0x516981*/
-      vfptr = v36->vfptr; /*0x51698a*/
+      ptr_0 = v36->ptr_0; /*0x51698a*/
       LandHeight = ObjectClass::GetLandHeight(v36); /*0x516994*/
       v55 = *(unsigned int *)(this->m_State + 1504); /*0x5169a4*/
       v38 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&a2); /*0x5169a6*/
-      if ( (*(int (**)(ObjectClass *, void *, int, int, unsigned int, int))(vfptr + 428))( /*0x5169b7*/
+      if ( (*(int (**)(ObjectClass *, void *, int, int, unsigned int, int))(ptr_0 + 428))( /*0x5169b7*/
              v36,
              v38,
              v55,
@@ -8134,7 +8134,7 @@ bool RulesClass::IsTypeBuildable(int a1) {
       return result; /*0x7211a6*/
     }
   }
-  if ( *(unsigned int *)&dword_A8B238 || (int)dword_A8B230[130].vfptr3 >= result->Strength ) /*0x7211c7*/
+  if ( *(unsigned int *)&dword_A8B238 || (int)dword_A8B230[130].ptr_C >= result->Strength ) /*0x7211c7*/
   LABEL_16:
     (*((unsigned char *)&(result))) = 1; /*0x7211ce*/
   else

@@ -85,7 +85,7 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
   int v7; // eax
   unsigned int v8[4]; // [esp+4h] [ebp-10h] BYREF
 
-  vtable2 = Block->vfptr2; /*0x550086*/
+  vtable2 = Block->ptr_8; /*0x550086*/
   uniqueId = Block->uniqueId; /*0x550089*/
   if ( vtable2 == (void *)-1 ) /*0x55008f*/
   {
@@ -103,12 +103,12 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
   abstractFlags = Block->abstractFlags; /*0x5500a3*/
   if ( abstractFlags ) /*0x5500a8*/
   {
-    v5 = (char *)Block->vfptr + Block->nextArrayIndex; /*0x5500af*/
+    v5 = (char *)Block->ptr_0 + Block->nextArrayIndex; /*0x5500af*/
     (Block->__pad_004) = 1; /*0x5500b1*/
-    Block->vfptr = v5; /*0x5500b5*/
+    Block->ptr_0 = v5; /*0x5500b5*/
     v6 = (void *)v8[2]; /*0x5500bd*/
-    Block->vfptr2 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x5500c1*/
-    Block->vfptr3 = v6; /*0x5500c4*/
+    Block->ptr_8 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x5500c1*/
+    Block->ptr_C = v6; /*0x5500c4*/
     Block->uniqueId = abstractFlags; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
   }
@@ -117,7 +117,7 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
   LABEL_8:
   if ( (Block->u32_50) ) /*0x5500d0*/
     (Block->u8_52) = (Block->u8_52) == 0; /*0x5500df*/
-  if ( (int)Block->vfptr >= Block->ambientSoundController[4] && Block ) /*0x5500ed*/
+  if ( (int)Block->ptr_0 >= Block->ambientSoundController[4] && Block ) /*0x5500ed*/
   {
     v8[0] = (unsigned int)(Block); /*0x5500fe*/
     v7 = g_MissionQueueFrame.vt_slot_16(/*0x550102*/
@@ -1443,10 +1443,10 @@ LABEL_8:
   if ( !NeedsSaveOrLink ) /*0x55b777*/
     goto LABEL_7; /*0x55b777*/
 LABEL_9:
-  if ( ((int)dword_A8B230->vfptr & 0x1000) != 0 && v1->FogRate != 0.0 ) /*0x55b7ca*/
+  if ( ((int)dword_A8B230->ptr_0 & 0x1000) != 0 && v1->FogRate != 0.0 ) /*0x55b7ca*/
   {
-    vtable0 = dword_A8B230[129].vfptr; /*0x55b7cc*/
-    vtable2 = (char *)dword_A8B230[129].vfptr2; /*0x55b7d2*/
+    vtable0 = dword_A8B230[129].ptr_0; /*0x55b7cc*/
+    vtable2 = (char *)dword_A8B230[129].ptr_8; /*0x55b7d2*/
     v10 = dword_A8B230 + 129; /*0x55b7d8*/
     if ( vtable0 != (unsigned char *)-1 ) /*0x55b7e1*/
     {
@@ -1454,9 +1454,9 @@ LABEL_9:
       {
 LABEL_15:
         LOWORD(v11) = Math::RoundToInt(*(double *)(v1 + 5704) * 900.0); /*0x55b7f1*/
-        v10->vfptr = v3; /*0x55b806*/
-        v10->vfptr1 = v15; /*0x55b808*/
-        v10->vfptr2 = v11; /*0x55b810*/
+        v10->ptr_0 = v3; /*0x55b806*/
+        v10->ptr_4 = v15; /*0x55b808*/
+        v10->ptr_8 = v11; /*0x55b810*/
         MapClass::ProcessFogTransition((MapClass *)&DataGlobal_87F7E8); /*0x55b813*/
         goto LABEL_16; /*0x55b813*/
       }
@@ -1470,7 +1470,7 @@ LABEL_16:
   result = this->uniqueId; /*0x55b818*/
   for ( i = 0; i < result; ++i ) /*0x55b81f*/
   {
-    v14 = *((unsigned int *)this->vfptr1 + i); /*0x55b824*/
+    v14 = *((unsigned int *)this->ptr_4 + i); /*0x55b824*/
     if ( v14 && (*(unsigned char *)(v14 + 20) & 4) != 0 && *(unsigned int *)(v14 + 1652) && !*(unsigned char *)(v14 + 973) ) /*0x55b844*/
     {
       if ( !*(unsigned int *)(v14 + 1652) ) /*0x55b84e*/
@@ -2082,7 +2082,7 @@ AbstractClass * * Game_Frame_Check()
         v3 = *(unsigned int *)&dword_A8B238; /*0x55d0cb*/
         if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x55d0dd*/
         {
-          (*(void (__stdcall **)(int))(dword_A8B23C->vfptr + 160))(v2); /*0x55d0e2*/
+          (*(void (__stdcall **)(int))(dword_A8B23C->ptr_0 + 160))(v2); /*0x55d0e2*/
           (*((unsigned char *)&(v2))) = byte_A83D49; /*0x55d0e8*/
           v3 = *(unsigned int *)&dword_A8B238; /*0x55d0ed*/
         }
@@ -2440,7 +2440,7 @@ LABEL_61:
 LABEL_62:
   if ( *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x55d7ce*/
     goto LABEL_72; /*0x55d7ce*/
-  if ( LOBYTE(dword_A8B230[44].vfptr) ) /*0x55d7da*/
+  if ( LOBYTE(dword_A8B230[44].ptr_0) ) /*0x55d7da*/
   {
     referenceCount = dword_A8B230[43].referenceCount; /*0x55d7ea*/
     if ( dword_A8B230[43].abstractFlags != -1 ) /*0x55d7f9*/
@@ -2450,7 +2450,7 @@ LABEL_62:
       if ( v20 >= referenceCount ) /*0x55d807*/
       {
 LABEL_69:
-        LOBYTE(dword_A8B230[44].vfptr) = 0; /*0x55d80f*/
+        LOBYTE(dword_A8B230[44].ptr_0) = 0; /*0x55d80f*/
         ScenarioClass::ProcessIntroTimer((ScenarioClass *)v43); /*0x55d81c*/
         goto LABEL_70; /*0x55d81c*/
       }
@@ -2592,7 +2592,7 @@ LABEL_72:
     if ( v37 ) /*0x55dc32*/
       *v37 = 0; /*0x55dc34*/
     strcat(&v50.u32_38, aSav); /*0x55dc5c*/
-    swprintf(Buffer, (const size_t)aS, (const wchar_t *const)&dword_A8B230[141].vfptr1 + 1); /*0x55dc7d*/
+    swprintf(Buffer, (const size_t)aS, (const wchar_t *const)&dword_A8B230[141].ptr_4 + 1); /*0x55dc7d*/
     SaveScenarioClassGame_AdjustMPSaveFileName(&v50.u32_38, Buffer, 0); /*0x55dc92*/
   }
   Scenario::Update((Scenario *)&g_LogicClass); /*0x55dc9e*/
@@ -2629,7 +2629,7 @@ LABEL_128:
   {
     if ( dword_A8B23C ) /*0x55ddc1*/
     {
-      if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C) ) /*0x55ddc5*/
+      if ( !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C) ) /*0x55ddc5*/
       {
         v40 = *(unsigned int *)((dword_87F8DC << 11) + dword_87F924 + 10268); /*0x55dde1*/
         if ( v40 ) /*0x55dde5*/

@@ -7,7 +7,7 @@ namespace gamemd {
 struct CDFileClass;  // fix_fwd_type_supply
 struct E4Recv_47AA00 {
 // --- flat members (BEGIN) ---
-    unsigned int vfptr;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int M84;  // 0x54
 // --- flat members (END) ---
     void* BufferIOFileClass;  // 0x0 (base-subobject vocab, no offset truth)

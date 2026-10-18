@@ -174,7 +174,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
       && v15
       && a1->u32_11B <= v9->u32_11B
       && (!LOBYTE(dword_8871E0->ForceShieldColor)
-       || (v16 = (HouseClass *)*(&dword_A8022C->vfptr + v11->u32_50)) == 0
+       || (v16 = (HouseClass *)*(&dword_A8022C->ptr_0 + v11->u32_50)) == 0
        || !(unsigned __int8)HouseClass::IsAlliedWith(v16)) )
     {
 LABEL_16:
@@ -229,7 +229,7 @@ LABEL_22:
             {
               if ( !LOBYTE(dword_8871E0->ForceShieldColor) ) /*0x4cc627*/
                 return v43; /*0x4cc627*/
-              v40 = (HouseClass *)*(&dword_A8022C->vfptr + v34[20]); /*0x4cc639*/
+              v40 = (HouseClass *)*(&dword_A8022C->ptr_0 + v34[20]); /*0x4cc639*/
               if ( !v40 || !(unsigned __int8)HouseClass::IsAlliedWith(v40) ) /*0x4cc645*/
                 return v43; /*0x4cc64c*/
             }

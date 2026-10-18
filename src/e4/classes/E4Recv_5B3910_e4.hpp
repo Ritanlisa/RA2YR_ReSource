@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_5B3910 {
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
     int LookupWaypointName();  // 0x5B3910
 };
 } // namespace gamemd

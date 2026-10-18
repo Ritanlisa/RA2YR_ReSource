@@ -302,7 +302,7 @@ int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0->vfptr, a1, aP2); /*0x6e868f*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0->ptr_0, a1, aP2); /*0x6e868f*/
   if ( result >= 0 ) /*0x6e8696*/
     return 0; /*0x6e8698*/
   return result; /*0x6e869a*/

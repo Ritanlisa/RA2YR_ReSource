@@ -658,20 +658,20 @@ int Game::MakeScreenshot(int a1)
         v10 = Point; /*0x537c3e*/
         v12 = Rect.bottom + 1; /*0x537c4c*/
         v11 = Rect.right + 1; /*0x537c56*/
-        v2 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 31))(g_DSurface_Hidden); /*0x537c5c*/
+        v2 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 31))(g_DSurface_Hidden); /*0x537c5c*/
         if ( v11 >= v2 ) /*0x537c63*/
-          v11 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 31))(g_DSurface_Hidden); /*0x537c70*/
-        v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 32))(g_DSurface_Hidden); /*0x537c7c*/
+          v11 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 31))(g_DSurface_Hidden); /*0x537c70*/
+        v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 32))(g_DSurface_Hidden); /*0x537c7c*/
         if ( v12 >= v3 ) /*0x537c86*/
-          v12 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 32))(g_DSurface_Hidden); /*0x537c96*/
+          v12 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 32))(g_DSurface_Hidden); /*0x537c96*/
         (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x537ca4*/
-        v4 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 31))(g_DSurface_Hidden); /*0x537cb8*/
-        v5 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 32))(g_DSurface_Hidden); /*0x537cbc*/
+        v4 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 31))(g_DSurface_Hidden); /*0x537cb8*/
+        v5 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->ptr_0 + 32))(g_DSurface_Hidden); /*0x537cbc*/
         v15[0] = 0; /*0x537cd8*/
         v15[1] = 0; /*0x537cdd*/
         v15[2] = v4; /*0x537ce1*/
         v15[3] = v5; /*0x537ce5*/
-        (*((void (**)(ObjectClass *, unsigned int *, DSurface *, struct tagPOINT *, unsigned int, int))g_DSurface_Hidden->vfptr /*0x537cf0*/
+        (*((void (**)(ObjectClass *, unsigned int *, DSurface *, struct tagPOINT *, unsigned int, int))g_DSurface_Hidden->ptr_0 /*0x537cf0*/
          + 2))(
           g_DSurface_Hidden,
           v15,
@@ -809,7 +809,7 @@ LABEL_31:
     Dialog::Destroy(v13); /*0x5b72ca*/
   EventClass::CheckFlag((EventClass *)&stru_A8E960.altNextScenario[12]); /*0x5b72d4*/
   byte_A8D60E = 0; /*0x5b72e4*/
-  dword_A8B230[130].vfptr3 = *(unsigned int *)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
+  dword_A8B230[130].ptr_C = *(unsigned int *)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
   dword_A8B54C = *(unsigned int *)&stru_A8D804.__pad_3D[579]; /*0x5b730b*/
   v17 = *(unsigned int *)stru_A8E960.nextScenario; /*0x5b7311*/
   BYTE1(v17) = stru_A8E960.nextScenario[1] & 0x77; /*0x5b7319*/
@@ -900,7 +900,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                  | (16
                                   * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 380)
                                    & 1));
-  Stream::WriteBlock(&MEMORY[0xA8EA70].vfptr, (int)v11, 250, 1); /*0x5ba91d*/
+  Stream::WriteBlock(&MEMORY[0xA8EA70].ptr_0, (int)v11, 250, 1); /*0x5ba91d*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */  /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
   Vector::Clear((int)v14); /*0x5ba93f*/

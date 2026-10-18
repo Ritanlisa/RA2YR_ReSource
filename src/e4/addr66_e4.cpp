@@ -1314,7 +1314,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
 namespace gamemd {
 int E4Recv_660AE0::sub_660AE0()
 {
-  return dword_7F09A0[4 * (int)this->vfptr]; /*0x660aeb*/
+  return dword_7F09A0[4 * (int)this->ptr_0]; /*0x660aeb*/
 }
 } // namespace gamemd
 
@@ -1322,7 +1322,7 @@ int E4Recv_660AE0::sub_660AE0()
 namespace gamemd {
 int E4Recv_660AF0::sub_660AF0()
 {
-  return dword_7F0998[4 * (int)this->vfptr]; /*0x660afb*/
+  return dword_7F0998[4 * (int)this->ptr_0]; /*0x660afb*/
 }
 } // namespace gamemd
 
@@ -1350,7 +1350,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   this->M16 = 0; /*0x6616e4*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_RandomStraw) */  /*0x6616f1*/
   memset(&this->ptr_14, 0, 0x100u); /*0x6616f7*/
-  return this->vfptr; /*0x6616fb*/
+  return this->ptr_0; /*0x6616fb*/
 
 }
 } // namespace gamemd

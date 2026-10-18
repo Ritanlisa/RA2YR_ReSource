@@ -7,10 +7,33 @@
 namespace gamemd {
 
 struct AirstrikeClass {
-    void * vfptr;  // 0x0
-    void * vfptr1;  // 0x4
-    void * vfptr2;  // 0x8
-    void * vfptr3;  // 0xC
+    virtual int QueryInterface();  // X75: slot 0 (0x410260) = QueryInterface
+    virtual int COMStub_AddRef();  // X75: slot 1 (0x410300) = COMStub_AddRef
+    virtual int COMStub_Release();  // X75: slot 2 (0x410310) = COMStub_Release
+    virtual int ddtor(int, int*);  // X75: slot 3 (0x41d7a0) = ddtor
+    virtual int IsClean();  // X75: slot 4 (0x410450) = IsClean
+    virtual int Write(int*, int);  // X75: slot 5 (0x41d6f0) = Write
+    virtual int Seek(int*, int*, int);  // X75: slot 6 (0x41d780) = Seek
+    virtual int GetSizeMax();  // X75: slot 7 (0x4103e0) = GetSizeMax
+    virtual unsigned int * CopyTo(char);  // X75: slot 8 (0x41dd50) = CopyTo
+    virtual int StubReturnFalse();  // X75: slot 9 (0x410470) = StubReturnFalse
+    virtual int COMStub_Return0_10();  // X75: slot 10 (0x410480) = COMStub_Return0_10
+    virtual int StubReturn71();  // X75: slot 11 (0x41dd40) = StubReturn71
+    virtual int StubReturn96();  // X75: slot 12 (0x41dd30) = StubReturn96
+    virtual int Stat(int);  // X75: slot 13 (0x41d6e0) = Stat
+    virtual int computeDistanceSquared();  // X75: slot 14 (0x410490) = computeDistanceSquared
+    virtual int COMStub_Return0_15();  // X75: slot 15 (0x4104a0) = COMStub_Return0_15
+    virtual int COMStub_Return0_16();  // X75: slot 16 (0x4104b0) = COMStub_Return0_16
+    virtual int computeDistance();  // X75: slot 17 (0x410440) = computeDistance
+    virtual int GetInvalidCoord();  // X75: slot 18 (0x4104c0) = GetInvalidCoord
+    virtual int GetCoordsEx();  // X75: slot 19 (0x4104f0) = GetCoordsEx
+    virtual int COMStub_Return0_20();  // X75: slot 20 (0x410520) = COMStub_Return0_20
+    virtual int COMStub_Return0_21();  // X75: slot 21 (0x410530) = COMStub_Return0_21
+    virtual int GetCoords();  // X75: slot 22 (0x410540) = GetCoords
+    virtual void StubReturnFalse_S23();  // X75: slot 23 (0x41dc50) = StubReturnFalse_S23
+    void * ptr_4;  // 0x4
+    void * ptr_8;  // 0x8
+    void * ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

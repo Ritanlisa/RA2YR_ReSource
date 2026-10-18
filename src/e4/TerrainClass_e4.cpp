@@ -326,37 +326,37 @@ LABEL_158:
       }
       return result; /*0x6df126*/
     case 0x17:
-      if ( dword_A8B230[127].vfptr3 == -1 ) /*0x6de428*/
+      if ( dword_A8B230[127].ptr_C == -1 ) /*0x6de428*/
       {
-        dword_A8B230[127].vfptr3 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6de438*/
+        dword_A8B230[127].ptr_C = *(unsigned int *)&stru_A8E960.random[528]; /*0x6de438*/
         ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de443*/
       }
       return result; /*0x6de454*/
     case 0x18:
-      p_vfptr3 = &dword_A8B230[127].vfptr3; /*0x6de463*/
-      if ( dword_A8B230[127].vfptr3 != -1 ) /*0x6de46c*/
+      p_vfptr3 = &dword_A8B230[127].ptr_C; /*0x6de463*/
+      if ( dword_A8B230[127].ptr_C != -1 ) /*0x6de46c*/
       {
-        p_vfptr3[2] = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].vfptr3); /*0x6de47e*/
+        p_vfptr3[2] = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].ptr_C); /*0x6de47e*/
         *p_vfptr3 = -1; /*0x6de481*/
         ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de48c*/
       }
       return result; /*0x6de49d*/
     case 0x19:
-      Speed = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].vfptr3); /*0x6de4ab*/
+      Speed = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].ptr_C); /*0x6de4ab*/
       Timer::Start((Timer *)&v120.__pad_C[4], 15 * *(unsigned int *)(a1 + 144) + Speed); /*0x6de4c5*/
-      v55 = &dword_A8B230[127].vfptr3; /*0x6de4d3*/
-      dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.__pad_C[4]; /*0x6de4d8*/
+      v55 = &dword_A8B230[127].ptr_C; /*0x6de4d3*/
+      dword_A8B230[127].ptr_C = *(unsigned int *)&v120.__pad_C[4]; /*0x6de4d8*/
       v55[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de4de*/
       v55[2] = *(unsigned int *)&v120.q018; /*0x6de4e5*/
       ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de4ed*/
       return result; /*0x6de4fe*/
     case 0x1A:
-      if ( Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].vfptr3) > 15 * *(unsigned int *)(a1 + 144) ) /*0x6de520*/
+      if ( Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].ptr_C) > 15 * *(unsigned int *)(a1 + 144) ) /*0x6de520*/
       {
-        v57 = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].vfptr3); /*0x6de571*/
+        v57 = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].ptr_C); /*0x6de571*/
         Timer::Start((Timer *)&v120, v57 - 15 * *(unsigned int *)(a1 + 144)); /*0x6de58b*/
-        v58 = &dword_A8B230[127].vfptr3; /*0x6de59a*/
-        dword_A8B230[127].vfptr3 = *(unsigned int *)v120.__pad_0; /*0x6de5a0*/
+        v58 = &dword_A8B230[127].ptr_C; /*0x6de59a*/
+        dword_A8B230[127].ptr_C = *(unsigned int *)v120.__pad_0; /*0x6de5a0*/
         v58[1] = *(unsigned int *)&v120.Coord_field_0x2[2]; /*0x6de5a6*/
         v58[2] = v120.Coord_field_0x8; /*0x6de5ad*/
         ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de5b5*/
@@ -364,8 +364,8 @@ LABEL_158:
       else
       {
         Timer::Start((Timer *)&v120.__pad_C[4], 0); /*0x6de527*/
-        v56 = &dword_A8B230[127].vfptr3; /*0x6de536*/
-        dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.__pad_C[4]; /*0x6de53c*/
+        v56 = &dword_A8B230[127].ptr_C; /*0x6de536*/
+        dword_A8B230[127].ptr_C = *(unsigned int *)&v120.__pad_C[4]; /*0x6de53c*/
         v56[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de542*/
         v56[2] = *(unsigned int *)&v120.q018; /*0x6de54e*/
         ObjectClass::PreDraw((ObjectClass *)&dword_87F7E8); /*0x6de551*/
@@ -373,14 +373,14 @@ LABEL_158:
       return result; /*0x6de562*/
     case 0x1B:
       Timer::Start((Timer *)&v120.__pad_C[4], 15 * *(unsigned int *)(a1 + 144)); /*0x6de5da*/
-      v59 = &dword_A8B230[127].vfptr3; /*0x6de5e9*/
-      dword_A8B230[127].vfptr3 = *(unsigned int *)&v120.__pad_C[4]; /*0x6de5ef*/
+      v59 = &dword_A8B230[127].ptr_C; /*0x6de5e9*/
+      dword_A8B230[127].ptr_C = *(unsigned int *)&v120.__pad_C[4]; /*0x6de5ef*/
       v59[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de5f5*/
       v59[2] = *(unsigned int *)&v120.q018; /*0x6de5fc*/
       v60 = dword_A8B230; /*0x6de5ff*/
-      if ( dword_A8B230[127].vfptr3 == -1 ) /*0x6de60b*/
+      if ( dword_A8B230[127].ptr_C == -1 ) /*0x6de60b*/
       {
-        dword_A8B230[127].vfptr3 = *(unsigned int *)&stru_A8E960.random[528]; /*0x6de613*/
+        dword_A8B230[127].ptr_C = *(unsigned int *)&stru_A8E960.random[528]; /*0x6de613*/
         v60 = dword_A8B230; /*0x6de619*/
       }
       v60[127].nextArrayIndex = (int)&g_TypeClass_DefaultString; /*0x6de627*/
@@ -452,7 +452,7 @@ LABEL_153:
       v46 = (int *)v45; /*0x6de14c*/
       if ( v45 ) /*0x6de150*/
       {
-        HouseClass::HandleAlliance(&a5->vfptr, v45, 0); /*0x6de16c*/
+        HouseClass::HandleAlliance(&a5->ptr_0, v45, 0); /*0x6de16c*/
         HouseClass::HandleAlliance(v46, (int)a5, 0); /*0x6de175*/
       }
       return result; /*0x6de186*/
@@ -532,7 +532,7 @@ LABEL_153:
       g_TacticalClass_Instance[48] = 0; /*0x6def3a*/
       g_TacticalClass_Instance[49] = (IPersistStream)1072693248; /*0x6def46*/
       Timer::PumpMessages((Timer *)dword_87F770); /*0x6def56*/
-      stru_A8E960.random[552] = BYTE2(dword_A8B230[381].vfptr3); /*0x6def6d*/
+      stru_A8E960.random[552] = BYTE2(dword_A8B230[381].ptr_C); /*0x6def6d*/
       (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x6def74*/
       MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 0); /*0x6def7d*/
       TacticalMap::Redraw((GScreenClass *)&dword_87F7E8); /*0x6def87*/
@@ -732,9 +732,9 @@ LABEL_60:
       *&dword_8871E0->AmbientChangeStep = *(float *)(a1 + 144); /*0x6df27f*/
       return result; /*0x6df28f*/
     case 0x49:
-      dword_A8B230[378].vfptr = *(unsigned int *)(a1 + 144); /*0x6df29e*/
+      dword_A8B230[378].ptr_0 = *(unsigned int *)(a1 + 144); /*0x6df29e*/
       if ( !(unsigned __int8)LightningStorm::IsActive() ) /*0x6df2a4*/
-        dword_A8B230[378].vfptr2 = dword_A8B230[378].vfptr; /*0x6df2bc*/
+        dword_A8B230[378].ptr_8 = dword_A8B230[378].ptr_0; /*0x6df2bc*/
       return result; /*0x6df2ce*/
     case 0x4A:
       v95 = ObjectClass::FindOwner(a7, *(void **)(a1 + 144)); /*0x6df2e2*/
@@ -821,10 +821,10 @@ LABEL_60:
       }
       return result; /*0x6ddd66*/
     case 0x55:
-      HIBYTE(dword_A8B230[374].vfptr3) = *(unsigned char *)(a1 + 144); /*0x6ddb9f*/
+      HIBYTE(dword_A8B230[374].ptr_C) = *(unsigned char *)(a1 + 144); /*0x6ddb9f*/
       return result; /*0x6ddbb1*/
     case 0x56:
-      BYTE2(dword_A8B230[374].vfptr3) = a1->q090; /*0x6ddbc2*/
+      BYTE2(dword_A8B230[374].ptr_C) = a1->q090; /*0x6ddbc2*/
       return result; /*0x6ddbd2*/
     case 0x57:
       LOBYTE(dword_A8B230[374].uniqueId) = a1->q090; /*0x6ddbe1*/
@@ -907,7 +907,7 @@ LABEL_60:
       SuperWeaponClass::CreateChemLauncher((SuperWeaponClass *)a1, (int)a5, v9, (int)a7, (int)a8); /*0x6ddae7*/
       return result; /*0x6ddaf6*/
     case 0x61:
-      BYTE1(dword_A8B230[374].vfptr3) = BYTE1(dword_A8B230[374].vfptr3) == 0; /*0x6dd8fe*/
+      BYTE1(dword_A8B230[374].ptr_C) = BYTE1(dword_A8B230[374].ptr_C) == 0; /*0x6dd8fe*/
       return result; /*0x6dd910*/
     case 0x62:
       Array::ForEach((int *)&v120.__pad_0AC, 4, 100, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x6de7b6*/
@@ -1019,7 +1019,7 @@ LABEL_60:
       }
       *(unsigned int *)(*(unsigned int *)v106 + 1588) = *(unsigned int *)(a1 + 144); /*0x6df638*/
 LABEL_279:
-      for ( i2 = dword_A80238 - 1; i2 >= 0; *(unsigned char *)(*(&dword_A8022C->vfptr1 + i2) + 508) = 1 ) /*0x6df649*/
+      for ( i2 = dword_A80238 - 1; i2 >= 0; *(unsigned char *)(*(&dword_A8022C->ptr_4 + i2) + 508) = 1 ) /*0x6df649*/
         --i2; /*0x6df655*/
       return result; /*0x6df661*/
     case 0x6B:

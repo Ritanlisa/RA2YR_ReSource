@@ -975,19 +975,19 @@ int GameResult::CalcScore()
     v7 = (void *)this->u32_38; /*0x4c62a9*/
     if ( (int)v7 <= 0 ) /*0x4c62ae*/
     {
-      LOWORD(dword_A8B230[381].vfptr3) = this->u32_40; /*0x4c62fc*/
+      LOWORD(dword_A8B230[381].ptr_C) = this->u32_40; /*0x4c62fc*/
       return result; /*0x4c6307*/
     }
-    p_vfptr3 = &dword_A8B230[127].vfptr3; /*0x4c62b6*/
-    dword_A8B230[127].vfptr3 = *(unsigned int *)&stru_A8E960.random[528]; /*0x4c62bb*/
+    p_vfptr3 = &dword_A8B230[127].ptr_C; /*0x4c62b6*/
+    dword_A8B230[127].ptr_C = *(unsigned int *)&stru_A8E960.random[528]; /*0x4c62bb*/
     p_vfptr3[1] = HIDWORD(nextArrayIndex); /*0x4c62c1*/
     p_vfptr3[2] = (int)v7; /*0x4c62c4*/
     result = dword_A8B230; /*0x4c62c7*/
-    if ( dword_A8B230[127].vfptr3 == -1 ) /*0x4c62d3*/
+    if ( dword_A8B230[127].ptr_C == -1 ) /*0x4c62d3*/
     {
-      dword_A8B230[127].vfptr3 = *(unsigned int *)&stru_A8E960.random[528]; /*0x4c62db*/
+      dword_A8B230[127].ptr_C = *(unsigned int *)&stru_A8E960.random[528]; /*0x4c62db*/
       result = dword_A8B230; /*0x4c62e1*/
-      LOWORD(dword_A8B230[381].vfptr3) = this->u32_40; /*0x4c62eb*/
+      LOWORD(dword_A8B230[381].ptr_C) = this->u32_40; /*0x4c62eb*/
       return result; /*0x4c62f6*/
     }
   }
@@ -2620,7 +2620,7 @@ void GameSetup_DisplayPlayers()
         v8 = v51; /*0x5db463*/
       }
       if ( dword_A8B23C ) /*0x5db46f*/
-        (*((void (**)(ObjectClass *, HWND))dword_A8B23C->vfptr + 30))(dword_A8B23C, v6); /*0x5db474*/
+        (*((void (**)(ObjectClass *, HWND))dword_A8B23C->ptr_0 + 30))(dword_A8B23C, v6); /*0x5db474*/
     }
     else
     {
@@ -3076,8 +3076,8 @@ void LoadSaveDialog::FillList()
     swprintf((wchar_t *const)v6, (const size_t)StringCSF, v35); /*0x559763*/
     if ( *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x559772*/
     {
-      *(unsigned int *)(v6 + 288) = dword_A8B230[130].vfptr3; /*0x55977f*/
-      *(unsigned int *)(v6 + 292) = dword_A8B230[202].vfptr3; /*0x559791*/
+      *(unsigned int *)(v6 + 288) = dword_A8B230[130].ptr_C; /*0x55977f*/
+      *(unsigned int *)(v6 + 292) = dword_A8B230[202].ptr_C; /*0x559791*/
       *(unsigned int *)(v6 + 424) = dword_A8B230[375].uniqueId; /*0x5597a3*/
       wcscpy( /*0x5597bc*/
         (wchar_t *)(v6 + 296),
@@ -3332,7 +3332,7 @@ void LoadScreen::RenderLoop()
   int v70; // ebp
   unsigned int *v71; // edi
   int v72; // eax
-  int vfptr1; // ebx
+  int ptr_4; // ebx
   int v74; // esi
   signed int v75; // esi
   int v76; // ecx
@@ -3693,9 +3693,9 @@ void LoadScreen::RenderLoop()
   }
   v12 = v7->vtable2; /*0x4b6dfc*/
   v13 = v7->ptr_2; /*0x4b6e02*/
-  v272 = ((*(int (**)(void))(g_DSurface_Hidden->vfptr + 128))() - v12) / 2; /*0x4b6e1b*/
+  v272 = ((*(int (**)(void))(g_DSurface_Hidden->ptr_0 + 128))() - v12) / 2; /*0x4b6e1b*/
   v14 = v388; /*0x4b6e24*/
-  v15 = (*(int (**)(ObjectClass *))(g_DSurface_Hidden->vfptr + 124))(g_DSurface_Hidden) - v13; /*0x4b6e2b*/
+  v15 = (*(int (**)(ObjectClass *))(g_DSurface_Hidden->ptr_0 + 124))(g_DSurface_Hidden) - v13; /*0x4b6e2b*/
   v16 = 256; /*0x4b6e2e*/
   v305 = v15 / 2; /*0x4b6e35*/
   do /*0x4b6e44*/
@@ -3770,7 +3770,7 @@ void LoadScreen::RenderLoop()
   SHPFrame = (int *)BuildingClass::GetSHPFrame(v23, 0); /*0x4b6ff7*/
   v327 = BuildingClass::GetSHPFrame(v32, 64); /*0x4b7007*/
   v330 = BuildingClass::GetSHPFrame(v25, 64); /*0x4b7019*/
-  (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->vfptr + 24))(g_DSurface_Hidden, 0); /*0x4b7024*/
+  (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x4b7024*/
   TypeList::TechnoTypeConstructor(&v311, 0, 0); /*0x4b702f*/
   v33 = *(int *)((char *)&stru_A83CD9.abstractFlags + 3) + dword_A8E358; /*0x4b7048*/
   v34 = 0; /*0x4b704b*/
@@ -3796,7 +3796,7 @@ LABEL_25:
   v36 = 1 << v34; /*0x4b7091*/
   v37 = dword_A8B230; /*0x4b7093*/
   v317 = v36; /*0x4b7099*/
-  if ( dword_A8B230[376].vfptr1 > 0 ) /*0x4b70a8*/
+  if ( dword_A8B230[376].ptr_4 > 0 ) /*0x4b70a8*/
   {
     v38 = 0; /*0x4b70ae*/
     Capacity = v311.Capacity; /*0x4b70b8*/
@@ -3810,7 +3810,7 @@ LABEL_25:
           goto LABEL_35; /*0x4b70e7*/
         if ( !v311.IsAllocated[0] && Capacity || v311.CapacityIncrement <= 0 ) /*0x4b70fe*/
           goto LABEL_37; /*0x4b70fe*/
-        if ( (*(unsigned __int8 (**)(TypeList *, int, unsigned int))(v311.vfptr + 8))( /*0x4b710d*/
+        if ( (*(unsigned __int8 (**)(TypeList *, int, unsigned int))(v311.ptr_0 + 8))( /*0x4b710d*/
                &v311,
                v311.CapacityIncrement + Capacity,
                0) )
@@ -3823,14 +3823,14 @@ LABEL_35:
         Capacity = v311.Capacity; /*0x4b7132*/
       }
 LABEL_37:
-      if ( ++v38 >= v37[376].vfptr1 ) /*0x4b713f*/
+      if ( ++v38 >= v37[376].ptr_4 ) /*0x4b713f*/
         goto LABEL_56; /*0x4b713f*/
     }
   }
   for ( k = 0; k < v33; ++k ) /*0x4b714a*/
   {
     if ( k >= dword_A8E358 ) /*0x4b7157*/
-      v44 = *(unsigned int **)(*(int *)((char *)&stru_A83CD9.vfptr2 + 3) + 4 * (k - dword_A8E358)); /*0x4b716e*/
+      v44 = *(unsigned int **)(*(int *)((char *)&stru_A83CD9.ptr_8 + 3) + 4 * (k - dword_A8E358)); /*0x4b716e*/
     else
       v44 = (unsigned int *)*((unsigned int *)dword_A8E34C + k); /*0x4b715f*/
     if ( v44[397] <= *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 468) /*0x4b71f9*/
@@ -3841,7 +3841,7 @@ LABEL_37:
       && (v311.Count < v311.Capacity
        || (v311.IsAllocated[0] || !v311.Capacity)
        && v311.CapacityIncrement > 0
-       && (*(unsigned __int8 (**)(TypeList *, int, unsigned int))(v311.vfptr + 8))(
+       && (*(unsigned __int8 (**)(TypeList *, int, unsigned int))(v311.ptr_0 + 8))(
             &v311,
             v311.CapacityIncrement + v311.Capacity,
             0)) )
@@ -4017,8 +4017,8 @@ LABEL_56:
   v67 = (BSurface *)__2_YAPAXI_Z(0x30u); /*0x4b7636*/
   if ( v67 ) /*0x4b763d*/
   {
-    v68 = (*(int (**)(ObjectClass *))(g_DSurface_Hidden->vfptr + 128))(g_DSurface_Hidden); /*0x4b7653*/
-    v69 = (*(int (**)(ObjectClass *))(g_DSurface_Hidden->vfptr + 124))(g_DSurface_Hidden); /*0x4b7659*/
+    v68 = (*(int (**)(ObjectClass *))(g_DSurface_Hidden->ptr_0 + 128))(g_DSurface_Hidden); /*0x4b7653*/
+    v69 = (*(int (**)(ObjectClass *))(g_DSurface_Hidden->ptr_0 + 124))(g_DSurface_Hidden); /*0x4b7659*/
     dword_87E8A4 = (StreamObj *)BSurface::Construct(v67, 0, 0, v69, v68); /*0x4b7673*/
   }
   else
@@ -4059,13 +4059,13 @@ LABEL_56:
         v72 = -1; /*0x4b7779*/
         if ( v70 + v284 < v311.Count ) /*0x4b7784*/
         {
-          vfptr1 = dword_A8B230[376].vfptr1; /*0x4b7786*/
-          if ( vfptr1 && (v72 = 0, vfptr1 > 0) ) /*0x4b7794*/
+          ptr_4 = dword_A8B230[376].ptr_4; /*0x4b7786*/
+          if ( ptr_4 && (v72 = 0, ptr_4 > 0) ) /*0x4b7794*/
           {
             while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v72) != *(unsigned int *)(v311.Items + v265) /*0x4b77b7*/
                  || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v72) == -1 )
             {
-              if ( ++v72 >= vfptr1 ) /*0x4b77bc*/
+              if ( ++v72 >= ptr_4 ) /*0x4b77bc*/
               {
                 v70 = v256; /*0x4b77be*/
                 goto LABEL_100; /*0x4b77be*/
@@ -4081,7 +4081,7 @@ LABEL_100:
         }
         if ( v70 >= 8 /*0x4b77e3*/
           || v72 == -1
-          || *(unsigned int *)(dword_A8B230[377].vfptr3 + 4 * v72) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v72) )
+          || *(unsigned int *)(dword_A8B230[377].ptr_C + 4 * v72) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v72) )
         {
           StreamClass::WriteBytes( /*0x4b7853*/
             (StreamClass *)dword_87E8A4,
@@ -4128,7 +4128,7 @@ LABEL_108:
       if ( v76 >= 0 && v76 < v311.Count ) /*0x4b78fb*/
       {
         v77 = *(unsigned int *)(v311.Items + 4 * (v75 + v284) - 4); /*0x4b790b*/
-        v78 = dword_A8B230[376].vfptr1; /*0x4b790f*/
+        v78 = dword_A8B230[376].ptr_4; /*0x4b790f*/
         v300 = v77; /*0x4b7917*/
         if ( v78 && (v79 = 0, v78 > 0) ) /*0x4b7921*/
         {
@@ -4149,7 +4149,7 @@ LABEL_119:
         v81 = (*(int (**)(int))(*(unsigned int *)v77 + 172))(v77); /*0x4b794e*/
         if ( v318 - v81 >= 0 /*0x4b7981*/
           && (v80 == -1
-           || *(unsigned int *)(dword_A8B230[377].vfptr3 + 4 * v80) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v80)) )
+           || *(unsigned int *)(dword_A8B230[377].ptr_C + 4 * v80) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v80)) )
         {
           v82 = *(unsigned int *)Block[v309 + 10]; /*0x4b799b*/
           v83 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v77 + 152))(v77, 0, 0); /*0x4b799d*/
@@ -4227,11 +4227,11 @@ LABEL_119:
             *((unsigned int *)v312 + v97) = v89; /*0x4b7b74*/
           }
           if ( v266 != -1 ) /*0x4b7b7e*/
-            ++*(unsigned int *)(dword_A8B230[377].vfptr3 + 4 * v266); /*0x4b7b93*/
+            ++*(unsigned int *)(dword_A8B230[377].ptr_C + 4 * v266); /*0x4b7b93*/
           if ( v323.Count < v323.Capacity /*0x4b7bd4*/
             || (v323.IsAllocated[0] || !v323.Capacity)
             && v323.CapacityIncrement > 0
-            && (*(unsigned __int8 (**)(TypeList *, int, unsigned int))(v323.vfptr + 8))(
+            && (*(unsigned __int8 (**)(TypeList *, int, unsigned int))(v323.ptr_0 + 8))(
                  &v323,
                  v323.CapacityIncrement + v323.Capacity,
                  0) )
@@ -4268,7 +4268,7 @@ LABEL_152:
               v103 = 0; /*0x4b7c9e*/
             }
             if ( v266 != -1 /*0x4b7cbe*/
-              && *(unsigned int *)(dword_A8B230[377].vfptr3 + 4 * v266) >= *(unsigned int *)(dword_A8B230[376].abstractFlags
+              && *(unsigned int *)(dword_A8B230[377].ptr_C + 4 * v266) >= *(unsigned int *)(dword_A8B230[376].abstractFlags
                                                                                + 4 * v266) )
             {
               v295 = 1; /*0x4b7cc0*/
@@ -4326,7 +4326,7 @@ LABEL_171:
         (*(void (**)(unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)*v107 + 136))(*v107, v110, 0, 0); /*0x4b7dc2*/
         if ( v108 >= v311.Count ) /*0x4b7dcf*/
           goto LABEL_182; /*0x4b7dcf*/
-        v111 = dword_A8B230[376].vfptr1; /*0x4b7dd7*/
+        v111 = dword_A8B230[376].ptr_4; /*0x4b7dd7*/
         if ( !v111 ) /*0x4b7ddf*/
           goto LABEL_182; /*0x4b7ddf*/
         v112 = 0; /*0x4b7de1*/
@@ -4339,7 +4339,7 @@ LABEL_171:
             goto LABEL_182; /*0x4b7e0c*/
         }
         if ( v112 == -1 /*0x4b7eca*/
-          || *(unsigned int *)(dword_A8B230[377].vfptr3 + 4 * v112) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v112) )
+          || *(unsigned int *)(dword_A8B230[377].ptr_C + 4 * v112) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v112) )
         {
 LABEL_182:
           StreamClass::WriteBytes( /*0x4b7e0e*/
@@ -4390,7 +4390,7 @@ LABEL_182:
       if ( v75 - 11 < v323.Count ) /*0x4b7f1a*/
       {
         v115 = dword_A8B230; /*0x4b7f20*/
-        v116 = dword_A8B230[376].vfptr1; /*0x4b7f26*/
+        v116 = dword_A8B230[376].ptr_4; /*0x4b7f26*/
         if ( v116 ) /*0x4b7f2e*/
         {
           v117 = 0; /*0x4b7f34*/
@@ -4405,7 +4405,7 @@ LABEL_182:
             }
             if ( v117 != -1 ) /*0x4b7f6c*/
             {
-              if ( *(unsigned int *)(dword_A8B230[377].vfptr3 + 4 * v117) >= *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b7f86*/
+              if ( *(unsigned int *)(dword_A8B230[377].ptr_C + 4 * v117) >= *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b7f86*/
                                                                                  + 4 * v117) )
               {
                 v119 = 0; /*0x4b7f93*/
@@ -4449,7 +4449,7 @@ LABEL_182:
                 }
               }
 LABEL_215:
-              --*(unsigned int *)(v115[377].vfptr3 + 4 * v117); /*0x4b8058*/
+              --*(unsigned int *)(v115[377].ptr_C + 4 * v117); /*0x4b8058*/
             }
           }
         }
@@ -4710,7 +4710,7 @@ LABEL_252:
             v351[0] = 0; /*0x4b85d6*/
             v351[1] = 0; /*0x4b85dd*/
             v374[2] = v160; /*0x4b85e4*/
-            BlitterDrawSHP(&g_DSurface_Hidden->vfptr, (int)v278, v304, v374, v351, v376, 0, SHPFrame, 0, 0, 1000, 0, 0); /*0x4b85eb*/
+            BlitterDrawSHP(&g_DSurface_Hidden->ptr_0, (int)v278, v304, v374, v351, v376, 0, SHPFrame, 0, 0, 1000, 0, 0); /*0x4b85eb*/
             *(unsigned int *)((char *)v341 + n) = -1; /*0x4b85f0*/
           }
           v154 = timeGetTime; /*0x4b8671*/
@@ -4842,7 +4842,7 @@ LABEL_252:
               v344[0] = 0; /*0x4b895d*/
               v344[1] = 0; /*0x4b8964*/
               BlitterDrawSHP( /*0x4b8984*/
-                &g_DSurface_Hidden->vfptr,
+                &g_DSurface_Hidden->ptr_0,
                 (int)v278,
                 v178,
                 (unsigned int *)v173,
@@ -4868,7 +4868,7 @@ LABEL_252:
             v358[0] = 0; /*0x4b89cb*/
             v358[1] = 0; /*0x4b89d2*/
             BlitterDrawSHP( /*0x4b89f5*/
-              &g_DSurface_Hidden->vfptr,
+              &g_DSurface_Hidden->ptr_0,
               v326[0],
               v179,
               (unsigned int *)(v173 + 16),
@@ -5054,7 +5054,7 @@ LABEL_344:
           v347[1] = 0; /*0x4b8dfe*/
           v373[0] = 284; /*0x4b8e05*/
           v373[1] = 151; /*0x4b8e10*/
-          BlitterDrawSHP(&g_DSurface_Hidden->vfptr, (int)v278, v304, v373, v347, v371, 0, SHPFrame, 0, 0, 1000, 0, 0); /*0x4b8e1b*/
+          BlitterDrawSHP(&g_DSurface_Hidden->ptr_0, (int)v278, v304, v373, v347, v371, 0, SHPFrame, 0, 0, 1000, 0, 0); /*0x4b8e1b*/
           v364 = Timer::GetTicks(); /*0x4b8e2c*/
           v323.unknown_18 = v364; /*0x4b8e33*/
           v366 = 60; /*0x4b8e46*/
@@ -5128,7 +5128,7 @@ LABEL_344:
       }
     }
     v212 = dword_A8B230; /*0x4b90c1*/
-    v213 = dword_A8B230[376].vfptr1; /*0x4b90c7*/
+    v213 = dword_A8B230[376].ptr_4; /*0x4b90c7*/
     if ( !v213 ) /*0x4b90cf*/
       goto LABEL_364; /*0x4b90cf*/
     v214 = 0; /*0x4b90d1*/
@@ -5144,7 +5144,7 @@ LABEL_344:
 LABEL_364:
       LOBYTE(v326[1]) = 1; /*0x4b90f3*/
     else
-      LOBYTE(v326[1]) = *(unsigned int *)(dword_A8B230[377].vfptr3 + 4 * v214) < *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b914a*/
+      LOBYTE(v326[1]) = *(unsigned int *)(dword_A8B230[377].ptr_C + 4 * v214) < *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b914a*/
                                                                                      + 4 * v214);
     if ( v207 == v340 && !v295 ) /*0x4b910a*/
     {
@@ -5178,7 +5178,7 @@ LABEL_364:
         v369[3] = 48; /*0x4b9220*/
         v369[0] = v197 + 68 * (v211 % 2) + 491; /*0x4b9237*/
         v369[1] = v272 + 50 * (v211 / 2) + 25; /*0x4b9253*/
-        (*(void (**)(ObjectClass *, int *, int))(g_DSurface_Hidden->vfptr + 88))( /*0x4b9264*/
+        (*(void (**)(ObjectClass *, int *, int))(g_DSurface_Hidden->ptr_0 + 88))( /*0x4b9264*/
           g_DSurface_Hidden,
           v369,
           (v217 >> g_BitShift_Green_0 << g_BitShift_Red) | v216);
@@ -5205,7 +5205,7 @@ LABEL_396:
       if ( v262 >= v323.Count ) /*0x4b9379*/
         goto LABEL_397; /*0x4b9379*/
     }
-    v223 = v212[376].vfptr1; /*0x4b92d9*/
+    v223 = v212[376].ptr_4; /*0x4b92d9*/
     if ( v223 ) /*0x4b92e1*/
     {
       v225 = 0; /*0x4b92e8*/
@@ -5221,14 +5221,14 @@ LABEL_396:
           }
         }
         v224 = v225; /*0x4b9314*/
-        if ( v225 == -1 || *(unsigned int *)(v212[377].vfptr3 + 4 * v225) < *(unsigned int *)(v212[376].abstractFlags + 4 * v225) ) /*0x4b932b*/
+        if ( v225 == -1 || *(unsigned int *)(v212[377].ptr_C + 4 * v225) < *(unsigned int *)(v212[376].abstractFlags + 4 * v225) ) /*0x4b932b*/
         {
 LABEL_393:
           *(unsigned int *)(v221 + 4 * v222 + 20) = v219; /*0x4b932d*/
           ++*(unsigned int *)(v221 + 16); /*0x4b9335*/
           *(unsigned int *)(v221 + 40) += (*(int (**)(int))(*(unsigned int *)v219 + 172))(v219); /*0x4b9348*/
           if ( v224 != -1 ) /*0x4b934b*/
-            ++*(unsigned int *)(dword_A8B230[377].vfptr3 + 4 * v224); /*0x4b935f*/
+            ++*(unsigned int *)(dword_A8B230[377].ptr_C + 4 * v224); /*0x4b935f*/
         }
         v212 = dword_A8B230; /*0x4b9361*/
         goto LABEL_396; /*0x4b9361*/
@@ -5239,7 +5239,7 @@ LABEL_393:
   }
 LABEL_397:
   if ( v278 ) /*0x4b9385*/
-    (*(void (**)(BuildingClass *, int))v278->vfptr)(v278, 1); /*0x4b938b*/
+    (*(void (**)(BuildingClass *, int))v278->ptr_0)(v278, 1); /*0x4b938b*/
   if ( v326[0] ) /*0x4b9396*/
     (**(void (***)(int, int))v326[0])(v326[0], 1); /*0x4b939c*/
   if ( SubFile ) /*0x4b93a7*/
@@ -5613,7 +5613,7 @@ void LoadingScreen::Render()
   int v17; // edx
   Color *LoadScreenAnim; // esi
   size_t LoadingScreen_field_0x3C; // eax
-  int vfptr1; // ecx
+  int ptr_4; // ecx
   unsigned __int16 *v21; // eax
   int v22; // esi
   int v23; // edx
@@ -5699,9 +5699,9 @@ void LoadingScreen::Render()
     *(unsigned int *)&v80.m_Colors[76] = 0; /*0x552df3*/
     *(unsigned int *)&v80.m_Colors[80] = 0; /*0x552df9*/
     *(unsigned long long *)&v80.m_Colors[84] = *(unsigned long long *)&g_DisplayWidth; /*0x552e3f*/
-    *(unsigned int *)&v80.m_Colors[28] = (LOBYTE(stru_A83CD9.vfptr) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x552e4f*/
-                                 | (BYTE1(stru_A83CD9.vfptr) >> g_BitMask_Blue << g_BitMask_Green)
-                                 | (BYTE2(stru_A83CD9.vfptr) >> g_BitMask_Red << g_BitShift_Blue);
+    *(unsigned int *)&v80.m_Colors[28] = (LOBYTE(stru_A83CD9.ptr_0) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x552e4f*/
+                                 | (BYTE1(stru_A83CD9.ptr_0) >> g_BitMask_Blue << g_BitMask_Green)
+                                 | (BYTE2(stru_A83CD9.ptr_0) >> g_BitMask_Red << g_BitShift_Blue);
     (*(void (**)(wchar_t *, char *, char *, unsigned int))(*(unsigned int *)v3 + 16))( /*0x552e62*/
       v3,
       &v80.m_Colors[76],
@@ -5712,7 +5712,7 @@ void LoadingScreen::Render()
       PlayerSide = SessionClass::GetPlayerSide(**(int ***)&stru_A8D804.__pad_3D[567]); /*0x553319*/
       *(unsigned int *)&v80.m_Colors[32] = PlayerSide; /*0x55331d*/
       if ( dword_A8B23C /*0x553363*/
-        && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 8))(dword_A8B23C)
+        && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 8))(dword_A8B23C)
         && (*(unsigned int *)v80.m_Colors = 0,
             CampaignClass::FindMission((int)&g_DDrawSurfaceManager, byte_A8B8E0, &v80),
             String::Length((String *)(*(unsigned int *)v80.m_Colors + 72)))
@@ -5788,7 +5788,7 @@ void LoadingScreen::Render()
         v33 = (Surface *)unknown_libname_27(v32); /*0x55357d*/
       else
         v33 = 0; /*0x553581*/
-      if ( BYTE1(dword_A8B230[375].vfptr) ) /*0x553588*/
+      if ( BYTE1(dword_A8B230[375].ptr_0) ) /*0x553588*/
         Surface::LoadToSurfaceSHP(v33, ExistingFileName); /*0x553599*/
       else
         PreviewClass::ReadPreview((PreviewClass *)v33, byte_A8B8E0); /*0x5535a7*/
@@ -6009,15 +6009,15 @@ void LoadingScreen::Render()
         v77 = (Char *)g_FogOfWarState; /*0x553c6c*/
         v53 = Palette::SixBitTo16Bit( /*0x553ca6*/
                 &v80,
-                (unsigned __int8)((unsigned __int16)((LOBYTE(stru_A83CD9.vfptr) >> g_BitShift_Green_0 << g_BitShift_Red)
-                                                   | (BYTE1(stru_A83CD9.vfptr) >> g_BitMask_Blue << g_BitMask_Green)
-                                                   | (BYTE2(stru_A83CD9.vfptr) >> g_BitMask_Red << g_BitShift_Blue)) >> g_BitShift_Red) << g_BitShift_Green_0,
-                (unsigned __int8)((unsigned __int16)((LOBYTE(stru_A83CD9.vfptr) >> g_BitShift_Green_0 << g_BitShift_Red)
-                                                   | (BYTE1(stru_A83CD9.vfptr) >> g_BitMask_Blue << g_BitMask_Green)
-                                                   | (BYTE2(stru_A83CD9.vfptr) >> g_BitMask_Red << g_BitShift_Blue)) >> g_BitMask_Green) << g_BitMask_Blue,
-                (unsigned __int8)((unsigned __int16)((LOBYTE(stru_A83CD9.vfptr) >> g_BitShift_Green_0 << g_BitShift_Red)
-                                                   | (BYTE1(stru_A83CD9.vfptr) >> g_BitMask_Blue << g_BitMask_Green)
-                                                   | (BYTE2(stru_A83CD9.vfptr) >> g_BitMask_Red << g_BitShift_Blue)) >> g_BitShift_Blue) << g_BitMask_Red);
+                (unsigned __int8)((unsigned __int16)((LOBYTE(stru_A83CD9.ptr_0) >> g_BitShift_Green_0 << g_BitShift_Red)
+                                                   | (BYTE1(stru_A83CD9.ptr_0) >> g_BitMask_Blue << g_BitMask_Green)
+                                                   | (BYTE2(stru_A83CD9.ptr_0) >> g_BitMask_Red << g_BitShift_Blue)) >> g_BitShift_Red) << g_BitShift_Green_0,
+                (unsigned __int8)((unsigned __int16)((LOBYTE(stru_A83CD9.ptr_0) >> g_BitShift_Green_0 << g_BitShift_Red)
+                                                   | (BYTE1(stru_A83CD9.ptr_0) >> g_BitMask_Blue << g_BitMask_Green)
+                                                   | (BYTE2(stru_A83CD9.ptr_0) >> g_BitMask_Red << g_BitShift_Blue)) >> g_BitMask_Green) << g_BitMask_Blue,
+                (unsigned __int8)((unsigned __int16)((LOBYTE(stru_A83CD9.ptr_0) >> g_BitShift_Green_0 << g_BitShift_Red)
+                                                   | (BYTE1(stru_A83CD9.ptr_0) >> g_BitMask_Blue << g_BitMask_Green)
+                                                   | (BYTE2(stru_A83CD9.ptr_0) >> g_BitMask_Red << g_BitShift_Blue)) >> g_BitShift_Blue) << g_BitMask_Red);
         *(unsigned short *)&v80.m_Colors[4] = *(unsigned short *)v53; /*0x553cb0*/
         v80.m_Colors[6] = v53[2]; /*0x553cbc*/
         PrintFontLayout( /*0x553d01*/
@@ -6072,7 +6072,7 @@ void LoadingScreen::Render()
         {
           v54 = GetStringCSF(aLoadbriefUsa, 0, g_Str_File_LdPrgMgr_cpp, 298); /*0x553d24*/
         }
-        if ( dword_A8B23C && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 8))(dword_A8B23C) ) /*0x553e64*/
+        if ( dword_A8B23C && (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 8))(dword_A8B23C) ) /*0x553e64*/
         {
           if ( g_DisplayWidth == 640 ) /*0x553e78*/
           {
@@ -6161,21 +6161,21 @@ void LoadingScreen::Render()
       result = (const wchar_t *)dword_A8B230; /*0x552e77*/
       p_uniqueId = (char *)&dword_A8B230[387].uniqueId; /*0x552e7c*/
       if ( !v80.m_Colors[27] ) /*0x552e82*/
-        p_uniqueId = (char *)&dword_A8B230[389].vfptr2; /*0x552e84*/
+        p_uniqueId = (char *)&dword_A8B230[389].ptr_8; /*0x552e84*/
       if ( *p_uniqueId ) /*0x552e8a*/
       {
         LoadingScreen::ReleaseAnimObjects((char *)&dword_A8B230[391]); /*0x552e99*/
         this->LoadingScreen_field_0x3C = 0; /*0x552e9e*/
-        if ( LOBYTE(dword_A8B230[385].vfptr2) ) /*0x552ea7*/
+        if ( LOBYTE(dword_A8B230[385].ptr_8) ) /*0x552ea7*/
           this->LoadingScreen_field_0x3C = (int)GetStringCSF( /*0x552ec8*/
-                                                  (wchar_t *)&dword_A8B230[385].vfptr2,
+                                                  (wchar_t *)&dword_A8B230[385].ptr_8,
                                                   0,
                                                   g_Str_File_LdPrgMgr_cpp,
                                                   663);
         this->q040 = 0; /*0x552ecb*/
-        if ( HIBYTE(dword_A8B230[386].vfptr) ) /*0x552ed9*/
+        if ( HIBYTE(dword_A8B230[386].ptr_0) ) /*0x552ed9*/
           this->q040 = GetStringCSF( /*0x552ef4*/
-                                     (wchar_t *)((char *)&dword_A8B230[386].vfptr + 3),
+                                     (wchar_t *)((char *)&dword_A8B230[386].ptr_0 + 3),
                                      0,
                                      g_Str_File_LdPrgMgr_cpp,
                                      667);
@@ -6282,15 +6282,15 @@ void LoadingScreen::Render()
         {
           if ( v80.m_Colors[27] ) /*0x5530b5*/
           {
-            *(unsigned int *)&v80.m_Colors[4] = this->LoadingScreen_field_0x1C + dword_A8B230[387].vfptr; /*0x5530c2*/
-            vfptr1 = dword_A8B230[387].vfptr1; /*0x5530c6*/
+            *(unsigned int *)&v80.m_Colors[4] = this->LoadingScreen_field_0x1C + dword_A8B230[387].ptr_0; /*0x5530c2*/
+            ptr_4 = dword_A8B230[387].ptr_4; /*0x5530c6*/
           }
           else
           {
-            *(unsigned int *)&v80.m_Colors[4] = this->LoadingScreen_field_0x1C + dword_A8B230[387].vfptr2; /*0x5530d9*/
-            vfptr1 = dword_A8B230[387].vfptr3; /*0x5530dd*/
+            *(unsigned int *)&v80.m_Colors[4] = this->LoadingScreen_field_0x1C + dword_A8B230[387].ptr_8; /*0x5530d9*/
+            ptr_4 = dword_A8B230[387].ptr_C; /*0x5530dd*/
           }
-          *(unsigned int *)&v80.m_Colors[8] = this->LoadingScreen_field_0x20 + vfptr1; /*0x5530f1*/
+          *(unsigned int *)&v80.m_Colors[8] = this->LoadingScreen_field_0x20 + ptr_4; /*0x5530f1*/
           wcscpy((wchar_t *)&v80.m_Colors[592], result); /*0x5530f5*/
           v21 = (unsigned __int16 *)Color::ConvertToRGB(LoadScreenAnim + 194, (int)&v80); /*0x553108*/
           v72 = *v21; /*0x553115*/

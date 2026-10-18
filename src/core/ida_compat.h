@@ -55,10 +55,10 @@ struct IdaRegVar {
 
 
     unsigned int __pad_28;  // 0x28 [X55 W3 supply (render vocab)]
-    void * vfptr1;  // 0x4 [X55 W3 supply (render vocab)]
-    void * vfptr3;  // 0xC [X55 W3 supply (render vocab)]
-    void * vfptr2;  // 0x8 [X55 W3 supply (render vocab)]
-    void * vfptr;  // 0x0 [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_C;  // 0xC [X55 W3 supply (render vocab)]
+    void * ptr_8;  // 0x8 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]
     unsigned int q298;  // 0x298 [X55 W3 supply (render vocab)]
     unsigned int ParticleSystemTypeClass_field_0x29C;  // 0x29C [X55 W3 supply (render vocab)]
     unsigned int q2A4;  // 0x2A4 [X55 W3 supply (render vocab)]

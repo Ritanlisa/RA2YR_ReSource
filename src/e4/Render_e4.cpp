@@ -1915,7 +1915,7 @@ void sub_556D40()
     ObjectClass *v2; // esi
     v2 = *(ObjectClass **)(g_MissionQueueFrame.random[220] + 4 * i); /*0x556d59*/
     Render_Render_556B70(v2); /*0x556d5e*/
-    if ( v2->vfptr1 || *(&v2->referenceCount + 4 * (int)v2->vfptr3) ) /*0x556d70*/
+    if ( v2->ptr_4 || *(&v2->referenceCount + 4 * (int)v2->ptr_C) ) /*0x556d70*/
     {
       Render_Render_556C00(v2); /*0x556dd2*/
     }

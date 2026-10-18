@@ -12,7 +12,7 @@ void E4Recv_7AE830::sub_7AE830()
 {
 
   unsigned int pN; // esi
-  unsigned int **vfptr; // ebp
+  unsigned int **ptr_0; // ebp
   int pN; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -27,7 +27,7 @@ void E4Recv_7AE830::sub_7AE830()
   pN = this->ptr_8; /*0x7ae835*/
   if ( pN > this->nextObject && LOBYTE(this->abstractFlags) != 1 ) /*0x7ae847*/
   {
-    vfptr = (unsigned int **)this->ptr_0; /*0x7ae850*/
+    ptr_0 = (unsigned int **)this->ptr_0; /*0x7ae850*/
     pN = this->ptr_C; /*0x7ae853*/
     v13 = this->ptr_0; /*0x7ae856*/
     this->ptr_8 = pN >> 1; /*0x7ae85c*/
@@ -38,7 +38,7 @@ void E4Recv_7AE830::sub_7AE830()
     memset(v5, 0, v6); /*0x7ae880*/
     if ( (int)pN > 0 ) /*0x7ae88b*/
     {
-      v7 = vfptr; /*0x7ae88d*/
+      v7 = ptr_0; /*0x7ae88d*/
       v8 = pN; /*0x7ae88f*/
       do /*0x7ae8c3*/
       {
@@ -60,9 +60,9 @@ void E4Recv_7AE830::sub_7AE830()
         --v8; /*0x7ae8c2*/
       }
       while ( v8 ); /*0x7ae8c3*/
-      vfptr = (unsigned int **)v13; /*0x7ae8c5*/
+      ptr_0 = (unsigned int **)v13; /*0x7ae8c5*/
     }
-    __3_YAXPAX_Z(vfptr); /*0x7ae8ca*/
+    __3_YAXPAX_Z(ptr_0); /*0x7ae8ca*/
   }
 
 }

@@ -61,7 +61,7 @@ int WaypointPathClass::Construct(unsigned int aP1, void *a2, void *a3, void *a4,
   AbstractClass::Constructor(); /*0x763813*/
   this->idxArray = -1; /*0x76381e*/
   this->u32_2C = 0; /*0x763825*/
-  this->vfptr3 = 0; /*0x763828*/
+  this->ptr_C = 0; /*0x763828*/
   this->WaypointClass_field_34 = 1; /*0x76382b*/
   this->WaypointClass_field_35 = 0; /*0x76382f*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x763832*/
@@ -98,12 +98,12 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
   WaypointPathClass *p_vfptr1; // esi
   int v6; // ebp
   unsigned int v7; // eax
-  int vfptr2; // ecx
+  int ptr_8; // ecx
   int abstractFlags; // eax
   int uniqueId; // eax
   int v11; // ecx
   int v12; // edx
-  int vfptr1; // eax
+  int ptr_4; // eax
   unsigned int *v14; // ecx
   int v15; // [esp+28h] [ebp-Ch] BYREF
   int v16; // [esp+2Ch] [ebp-8h]
@@ -126,7 +126,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
     result = v3->vt_entry_68(&this, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
-      p_vfptr1 = (WaypointPathClass *)&v2[1].vfptr1; /*0x763cd8*/
+      p_vfptr1 = (WaypointPathClass *)&v2[1].ptr_4; /*0x763cd8*/
       if ( p_vfptr1 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(p_vfptr1, 0, 0); /*0x763ce3*/
@@ -150,21 +150,21 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
           result = (*(int (**)(unsigned int *, int *, int, unsigned int))(v7 + 12))(v3, &v15, 12, 0); /*0x763d19*/
           if ( result < 0 ) /*0x763d1e*/
             break; /*0x763d1e*/
-          vfptr2 = p_vfptr1->vfptr2; /*0x763d20*/
-          if ( p_vfptr1->uniqueId < vfptr2 /*0x763d42*/
-            || (BYTE1(p_vfptr1->vfptr3) || !vfptr2)
+          ptr_8 = p_vfptr1->ptr_8; /*0x763d20*/
+          if ( p_vfptr1->uniqueId < ptr_8 /*0x763d42*/
+            || (BYTE1(p_vfptr1->ptr_C) || !ptr_8)
             && (abstractFlags = p_vfptr1->abstractFlags, abstractFlags > 0)
-            && (*(unsigned __int8 (**)(WaypointPathClass *, int, unsigned int))(p_vfptr1->vfptr + 8))(
+            && (*(unsigned __int8 (**)(WaypointPathClass *, int, unsigned int))(p_vfptr1->ptr_0 + 8))(
                  p_vfptr1,
-                 vfptr2 + abstractFlags,
+                 ptr_8 + abstractFlags,
                  0) )
           {
             uniqueId = p_vfptr1->uniqueId; /*0x763d49*/
             v11 = uniqueId + 1; /*0x763d4c*/
             v12 = 3 * uniqueId; /*0x763d4f*/
-            vfptr1 = p_vfptr1->vfptr1; /*0x763d52*/
+            ptr_4 = p_vfptr1->ptr_4; /*0x763d52*/
             p_vfptr1->uniqueId = v11; /*0x763d55*/
-            v14 = (unsigned int *)(vfptr1 + 4 * v12); /*0x763d58*/
+            v14 = (unsigned int *)(ptr_4 + 4 * v12); /*0x763d58*/
             *v14 = v15; /*0x763d5f*/
             v14[1] = v16; /*0x763d65*/
             v14[2] = v17; /*0x763d6c*/
@@ -191,13 +191,13 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
   unsigned int *v9; // eax
   int v10; // ecx
 
-  this->vfptr1 = 0; /*0x76476d*/
-  this->vfptr2 = (void *)a2; /*0x764770*/
-  LOBYTE(this->vfptr3) = 1; /*0x764773*/
-  BYTE1(this->vfptr3) = 0; /*0x764777*/
+  this->ptr_4 = 0; /*0x76476d*/
+  this->ptr_8 = (void *)a2; /*0x764770*/
+  LOBYTE(this->ptr_C) = 1; /*0x764773*/
+  BYTE1(this->ptr_C) = 0; /*0x764777*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_VectorClass_WaypointClass) */  /*0x76477a*/
   if ( !a2 ) /*0x764780*/
-    return &this->vfptr; /*0x764780*/
+    return &this->ptr_0; /*0x764780*/
   if ( !a3 ) /*0x764788*/
   {
     v7 = (int *)__2_YAPAXI_Z(12 * a2 + 4); /*0x7647bd*/
@@ -218,18 +218,18 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
           --v10; /*0x7647e3*/
         }
         while ( v10 ); /*0x7647e4*/
-        this->vfptr1 = v8; /*0x7647e6*/
-        BYTE1(this->vfptr3) = 1; /*0x7647e9*/
-        return &this->vfptr; /*0x7647f2*/
+        this->ptr_4 = v8; /*0x7647e6*/
+        BYTE1(this->ptr_C) = 1; /*0x7647e9*/
+        return &this->ptr_0; /*0x7647f2*/
       }
     }
     else
     {
       v8 = 0; /*0x7647f5*/
     }
-    this->vfptr1 = v8; /*0x7647f7*/
-    BYTE1(this->vfptr3) = 1; /*0x7647fa*/
-    return &this->vfptr; /*0x7647fe*/
+    this->ptr_4 = v8; /*0x7647f7*/
+    BYTE1(this->ptr_C) = 1; /*0x7647fa*/
+    return &this->ptr_0; /*0x7647fe*/
   }
   *a3 = a2; /*0x764790*/
   v4 = a3 + 1; /*0x764794*/
@@ -246,8 +246,8 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3
     }
     while ( v5 ); /*0x7647a5*/
   }
-  this->vfptr1 = a3 + 1; /*0x7647a7*/
-  return &this->vfptr; /*0x7647ac*/
+  this->ptr_4 = a3 + 1; /*0x7647a7*/
+  return &this->ptr_0; /*0x7647ac*/
 
 }
 }

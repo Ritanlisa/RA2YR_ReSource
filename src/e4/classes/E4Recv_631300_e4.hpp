@@ -8,6 +8,6 @@ struct E4Recv_631300 {
     unsigned int sub_631300;
     unsigned int AbstractClass;
     unsigned int vtable0;
-    void* vfptr;  // minimal E2 declaration
+    void* ptr_0;  // minimal E2 declaration
 };
 } // namespace gamemd

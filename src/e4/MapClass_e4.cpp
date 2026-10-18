@@ -1082,7 +1082,7 @@ LABEL_22:
   }
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x5675f1*/
     || !dword_A8B23C
-    || (v56 = 1, (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C)) )
+    || (v56 = 1, (*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C)) )
   {
     v56 = 0; /*0x5675fd*/
   }
@@ -2694,7 +2694,7 @@ void * MapClass::ClearShroud(HouseClass * aP1)
 
   result = (void *)aP1; /*0x577f30*/
   if ( aP1 ) /*0x577f3a*/
-    *(unsigned char *)(*(&dword_A8022C->vfptr + aP1->relatedTagsCount) + 577) = 1; /*0x577f48*/
+    *(unsigned char *)(*(&dword_A8022C->ptr_0 + aP1->relatedTagsCount) + 577) = 1; /*0x577f48*/
   if ( aP1 == *(int *)((char *)&stru_A83CD9.estimatedHealth + 3) ) /*0x577f55*/
   {
     if ( aP1 ) /*0x577f63*/
@@ -2708,7 +2708,7 @@ void * MapClass::ClearShroud(HouseClass * aP1)
 LABEL_8:
   v4 = (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x577f94*/
     && dword_A8B23C
-    && !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->vfptr + 4))(dword_A8B23C);
+    && !(*(unsigned __int8 (**)(ObjectClass *))(dword_A8B23C->ptr_0 + 4))(dword_A8B23C);
   result = *(void **)((char *)&stru_A83CD9.estimatedHealth + 3); /*0x577f9a*/
   if ( !*(unsigned char *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 576) ) /*0x577f9f*/
   {
@@ -3809,7 +3809,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
     {
       int j; // esi
       unsigned char *v10; // eax
-      for ( j = (int)v6[1].vfptr - 1; j >= 0; v10[283] = v4->q30C ) /*0x5a0499*/
+      for ( j = (int)v6[1].ptr_0 - 1; j >= 0; v10[283] = v4->q30C ) /*0x5a0499*/
       {
         int v9; // ecx
         v9 = *((unsigned int *)v6->Items + j); /*0x5a04a6*/
@@ -3832,16 +3832,16 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
           VectorClass::CellConstructor(v11, 0, 0); /*0x5a051b*/
           /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5a0520) */
           v12[1].Items = (void *)10; /*0x5a0526*/
-          v12[1].vfptr = 0; /*0x5a052d*/
+          v12[1].ptr_0 = 0; /*0x5a052d*/
           v13 = v12; /*0x5a0530*/
         }
         else
         {
           v13 = 0; /*0x5a0534*/
         }
-        v13[1].Items = v6[1].vfptr; /*0x5a0539*/
+        v13[1].Items = v6[1].ptr_0; /*0x5a0539*/
         int v14; // eax
-        v14 = (int)v6[1].vfptr - 1; /*0x5a053f*/
+        v14 = (int)v6[1].ptr_0 - 1; /*0x5a053f*/
         v35 = v14; /*0x5a0540*/
         if ( v14 >= 0 ) /*0x5a0544*/
         {
@@ -3880,19 +3880,19 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
                     int Capacity; // ecx
                     Capacity = v13->Capacity; /*0x5a05e9*/
                     int v24; // eax
-                    if ( (int)v13[1].vfptr < Capacity /*0x5a060e*/
+                    if ( (int)v13[1].ptr_0 < Capacity /*0x5a060e*/
                       || (v13->IsAllocated || !Capacity)
                       && (v24 = (int)v13[1].Items, v24 > 0)
-                      && (*((uint8_t (**)(VectorClass *, int, unsigned int))v13->vfptr + 2))(
+                      && (*((uint8_t (**)(VectorClass *, int, unsigned int))v13->ptr_0 + 2))(
                            v13,
                            Capacity + v24,
                            0) )
                     {
                       void *vtable0; // eax
-                      vtable0 = v13[1].vfptr; /*0x5a0615*/
+                      vtable0 = v13[1].ptr_0; /*0x5a0615*/
                       unsigned int *Items; // edx
                       Items = v13->Items; /*0x5a0618*/
-                      v13[1].vfptr = (char *)vtable0 + 1; /*0x5a061e*/
+                      v13[1].ptr_0 = (char *)vtable0 + 1; /*0x5a061e*/
                       Items[(unsigned int)vtable0] = v33; /*0x5a0625*/
                     }
                     *(unsigned int *)(v22 + 60) = v30 + 1; /*0x5a0628*/
@@ -3908,7 +3908,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
           while ( v35 >= 0 ); /*0x5a0650*/
         }
         if ( v6 ) /*0x5a065a*/
-          (*(void (**)(VectorClass *, int))v6->vfptr)(v6, 1); /*0x5a0663*/
+          (*(void (**)(VectorClass *, int))v6->ptr_0)(v6, 1); /*0x5a0663*/
         v29 = v13; /*0x5a0665*/
         v6 = v13; /*0x5a0669*/
         v4 = v36; /*0x5a066b*/
@@ -3919,7 +3919,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
     v5 = a3; /*0x5a0684*/
   }
   if ( v6 ) /*0x5a0688*/
-    (*(void (**)(VectorClass *, int))v6->vfptr)(v6, 1); /*0x5a0691*/
+    (*(void (**)(VectorClass *, int))v6->ptr_0)(v6, 1); /*0x5a0691*/
   if ( v5 > 1 ) /*0x5a0696*/
   {
     LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x5a069d*/
@@ -4400,8 +4400,8 @@ int MapClass::MarkForRedraw(int a2, void *a2_2)
   int result = a2_2; // eax /*0x4f4300*/
   if ( a2_2 ) /*0x4f4306*/
   {
-    if ( a2_2->vfptr[3] != 2 ) /*0x4f430c*/
-      a2_2->vfptr[3] = a2_2; /*0x4f430e*/
+    if ( a2_2->ptr_0[3] != 2 ) /*0x4f430c*/
+      a2_2->ptr_0[3] = a2_2; /*0x4f430e*/
     MapClass::IncrementRedrawCounter((MapClass *)&DataGlobal_87F7E8); /*0x4f4316*/
   }
   return result; /*0x4f431b*/
