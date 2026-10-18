@@ -174,7 +174,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
       if ( v6->vtable3 ) /*0x69e3f7*/
       {
         free(*((void **)v6 + 2)); /*0x69e3ff*/
-        v6->vtable3 = 0; /*0x69e407*/
+        v6->ptr_3 = 0; /*0x69e407*/
       }
     }
     __3_YAXPAX_Z(v6); /*0x69e40b*/

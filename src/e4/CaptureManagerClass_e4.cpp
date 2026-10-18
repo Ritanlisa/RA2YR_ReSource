@@ -1184,10 +1184,10 @@ void CaptureManagerClass::Destroy(void *a1)
   if ( *(unsigned int *)&a1->m_1[3] && (((unsigned char *)&(a1->m_C))[1]) ) /*0x472c3d*/
   {
     operator delete((*(void **)&a1->vtable2)); /*0x472c43*/
-    *(unsigned int *)&a1->vtable2 = 0; /*0x472c4b*/
+    *(unsigned int *)&a1->ptr_2 = 0; /*0x472c4b*/
   }
   (((unsigned char *)&(a1->vtable4))[1]) = 0; /*0x472c4e*/
-  *(unsigned int *)&a1->vtable3 = 0; /*0x472c51*/
+  *(unsigned int *)&a1->ptr_3 = 0; /*0x472c51*/
 }
 } // namespace gamemd
 

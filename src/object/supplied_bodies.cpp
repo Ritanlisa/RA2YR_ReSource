@@ -254,7 +254,7 @@ int CreateInstanceCOM(void *a1, void *a2, int a3, unsigned int a4);  // e4 è¯­æ–
 // 0x401170
 namespace ra2::game {
 int ObjectClass::ClearFlags2() {
-  this->vfptr = (void *)((int)this->vfptr & ~2u); /*0x401179*/
+  this->ptr_0 = (void *)((int)this->ptr_0 & ~2u); /*0x401179*/
   this->customSound_controller[0] &= ~2u; /*0x401180*/
   this->owningHouseIndex &= ~2u; /*0x401188*/
   return -3; /*0x40118b*/
@@ -3292,8 +3292,8 @@ int TechnoClass::GetTurretScreenPos()
     v9 = v7[1]; /*0x453ad4*/
     v10 = v7[2]; /*0x453ad7*/
     *v26 = v4 + v8; /*0x453ae0*/
-    v26->vtable2 = v5 + v9; /*0x453ae2*/
-    v26->vtable3 = v10; /*0x453ae5*/
+    v26->ptr_2 = v5 + v9; /*0x453ae2*/
+    v26->ptr_3 = v10; /*0x453ae5*/
     return (int)v26; /*0x453af0*/
   }
   v12 = this->Type; /*0x453af3*/
@@ -3309,8 +3309,8 @@ int TechnoClass::GetTurretScreenPos()
   {
     v14 = BuildingClass::CalcBarrelFlashPosition((BuildingClass *)this, v25, v27, 0); /*0x453b51*/
     *v26 = *v14; /*0x453b5c*/
-    v26->vtable2 = v14[1]; /*0x453b61*/
-    v26->vtable3 = v14[2]; /*0x453b69*/
+    v26->ptr_2 = v14[1]; /*0x453b61*/
+    v26->ptr_3 = v14[2]; /*0x453b69*/
     return (int)v26; /*0x453b53*/
   }
   else
@@ -3331,8 +3331,8 @@ int TechnoClass::GetTurretScreenPos()
       v18 += v21->vtable2; /*0x453bcc*/
     }
     *v26 = v16; /*0x453bd4*/
-    v26->vtable2 = v18; /*0x453bd6*/
-    v26->vtable3 = v19; /*0x453bd9*/
+    v26->ptr_2 = v18; /*0x453bd6*/
+    v26->ptr_3 = v19; /*0x453bd9*/
     return (int)v26; /*0x453bce*/
   }
 }

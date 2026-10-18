@@ -831,7 +831,7 @@ LABEL_13:
         qmemcpy(v17, v30, 0x6Cu); /*0x6368ab*/
         *((unsigned short *)v17 + 54) = v31; /*0x6368ad*/
         v17[110] = v32; /*0x6368af*/
-        v16->vtable2 = v17; /*0x6368b0*/
+        v16->ptr_2 = v17; /*0x6368b0*/
         v18 = *(unsigned int *)(v8 + 8); /*0x6368b3*/
         if ( *(unsigned int *)(v8 + 16) < v18 /*0x6368d7*/
           || (*(unsigned char *)(v8 + 13) || !v18)
@@ -949,9 +949,9 @@ LABEL_13:
         if ( v13 ) /*0x636a3d*/
         {
           *v13 = 0; /*0x636a3f*/
-          v13->vtable2 = 0; /*0x636a41*/
-          v13->vtable4 = 0; /*0x636a44*/
-          v13->vtable3 = -1; /*0x636a47*/
+          v13->ptr_2 = 0; /*0x636a41*/
+          v13->ptr_4 = 0; /*0x636a44*/
+          v13->ptr_3 = -1; /*0x636a47*/
           v14 = v13; /*0x636a4e*/
         }
         *v14 = (unsigned int)a2; /*0x636a59*/
@@ -963,7 +963,7 @@ LABEL_13:
         qmemcpy(v15, v29, 0x6Cu); /*0x636a79*/
         *((unsigned short *)v15 + 54) = v30; /*0x636a7b*/
         v15[110] = v31; /*0x636a7d*/
-        v14->vtable2 = (unsigned int)v15; /*0x636a7e*/
+        v14->ptr_2 = (unsigned int)v15; /*0x636a7e*/
         v16 = *(unsigned int *)(v6 + 8); /*0x636a81*/
         if ( *(unsigned int *)(v6 + 16) < v16 /*0x636aa5*/
           || (*(unsigned char *)(v6 + 13) || !v16)
@@ -2074,7 +2074,7 @@ void* TeamClass::AttackCoordinator()
   Object *v8; // esi
   int (**vtable0)(FootClass *, AbstractClass *, int); // esi
   int v10; // eax
-  unsigned int *p_vtable0; // eax
+  unsigned int *pVal; // eax
   FootClass *v12; // esi
   char v13; // bl
   int v14; // eax
@@ -2137,18 +2137,18 @@ void* TeamClass::AttackCoordinator()
     if ( vtable0[240](v4, v1->focus, v10) == 5 ) /*0x6eb5d0*/
       v1->unknown81 = 1; /*0x6eb5d2*/
   }
-  p_vtable0 = &v1->focus->vtable0; /*0x6eb5d9*/
-  if ( !p_vtable0 /*0x6eb605*/
-    || (p_vtable0 = SessionClass::GetEntry((SessionClass *)v1->currentScript, v21),
+  pVal = &v1->focus->vtable0; /*0x6eb5d9*/
+  if ( !pVal /*0x6eb605*/
+    || (pVal = SessionClass::GetEntry((SessionClass *)v1->currentScript, v21),
         v12 = v1->firstUnit,
         v13 = 0,
-        v19 = *p_vtable0,
-        v20 = p_vtable0->vtable2,
+        v19 = *pVal,
+        v20 = pVal->ptr_2,
         !v12) )
   {
     LABEL_72:
     v1->stepCompleted = 1; /*0x6eb85b*/
-    return (char)p_vtable0; /*0x6eb85b*/
+    return (char)pVal; /*0x6eb85b*/
   }
   do /*0x6eb851*/
   {
@@ -2200,11 +2200,11 @@ void* TeamClass::AttackCoordinator()
       target = v12->?; /*0x6eb7eb*/
       if ( target != v1->focus && !target ) /*0x6eb7fa*/
         (*((void (**)(FootClass *, AbstractClass *))v12->TechnoClass + 242))(v12, v1->focus); /*0x6eb801*/
-      p_vtable0 = (unsigned int *)(*((int (**)(FootClass *))v12->TechnoClass + 11))(v12); /*0x6eb80b*/
-      if ( p_vtable0 != 2 /*0x6eb82c*/
-        || (p_vtable0 = (unsigned int *)(*((int (**)(FootClass *, unsigned int))v12->TechnoClass + 254))(v12, 0),
-            !*p_vtable0)
-        || (p_vtable0 = (unsigned int *)v12->?, (int)p_vtable0 > 0) )
+      pVal = (unsigned int *)(*((int (**)(FootClass *))v12->TechnoClass + 11))(v12); /*0x6eb80b*/
+      if ( pVal != 2 /*0x6eb82c*/
+        || (pVal = (unsigned int *)(*((int (**)(FootClass *, unsigned int))v12->TechnoClass + 254))(v12, 0),
+            !*pVal)
+        || (pVal = (unsigned int *)v12->?, (int)pVal > 0) )
       {
         LABEL_69:
         v13 = 1; /*0x6eb847*/
@@ -2213,11 +2213,11 @@ void* TeamClass::AttackCoordinator()
     else
     {
       LABEL_67:
-      p_vtable0 = &v1->buildingType->AbstractClass; /*0x6eb830*/
-      if ( p_vtable0->u32_B0 ) /*0x6eb833*/
+      pVal = &v1->buildingType->AbstractClass; /*0x6eb830*/
+      if ( pVal->u32_B0 ) /*0x6eb833*/
       {
-        LOBYTE(p_vtable0) = v12->?; /*0x6eb83d*/
-        if ( (unsigned char)p_vtable0 ) /*0x6eb845*/
+        LOBYTE(pVal) = v12->?; /*0x6eb83d*/
+        if ( (unsigned char)pVal ) /*0x6eb845*/
           goto LABEL_69; /*0x6eb845*/
       }
     }
@@ -2226,7 +2226,7 @@ void* TeamClass::AttackCoordinator()
   while ( v12 ); /*0x6eb851*/
   if ( !v13 ) /*0x6eb859*/
     goto LABEL_72; /*0x6eb859*/
-  return (char)p_vtable0; /*0x6eb862*/
+  return (char)pVal; /*0x6eb862*/
 
 }
 }

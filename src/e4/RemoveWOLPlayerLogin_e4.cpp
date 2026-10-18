@@ -11,9 +11,9 @@ namespace gamemd {  // G42.18 ns repair
 void E4Recv_7AE830::sub_7AE830()
 {
 
-  unsigned int vfptr2; // esi
+  unsigned int pN; // esi
   unsigned int **vfptr; // ebp
-  int vfptr3; // edi
+  int pN; // edi
   void *v5; // edi
   unsigned int v6; // edx
   unsigned int **v7; // edi
@@ -24,22 +24,22 @@ void E4Recv_7AE830::sub_7AE830()
   unsigned int *v12; // eax
   int v13; // [esp+8h] [ebp-4h]
 
-  vfptr2 = this->vfptr2; /*0x7ae835*/
-  if ( vfptr2 > this->nextObject && LOBYTE(this->abstractFlags) != 1 ) /*0x7ae847*/
+  pN = this->ptr_8; /*0x7ae835*/
+  if ( pN > this->nextObject && LOBYTE(this->abstractFlags) != 1 ) /*0x7ae847*/
   {
-    vfptr = (unsigned int **)this->vfptr; /*0x7ae850*/
-    vfptr3 = this->vfptr3; /*0x7ae853*/
-    v13 = this->vfptr; /*0x7ae856*/
-    this->vfptr2 = vfptr2 >> 1; /*0x7ae85c*/
-    this->vfptr3 = vfptr3 - 1; /*0x7ae864*/
-    v5 = (void *)__2_YAPAXI_Z(4 * (vfptr2 >> 1)); /*0x7ae86f*/
-    v6 = 4 * this->vfptr2; /*0x7ae874*/
-    this->vfptr = (int)v5; /*0x7ae87b*/
+    vfptr = (unsigned int **)this->ptr_0; /*0x7ae850*/
+    pN = this->ptr_C; /*0x7ae853*/
+    v13 = this->ptr_0; /*0x7ae856*/
+    this->ptr_8 = pN >> 1; /*0x7ae85c*/
+    this->ptr_C = pN - 1; /*0x7ae864*/
+    v5 = (void *)__2_YAPAXI_Z(4 * (pN >> 1)); /*0x7ae86f*/
+    v6 = 4 * this->ptr_8; /*0x7ae874*/
+    this->ptr_0 = (int)v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
-    if ( (int)vfptr2 > 0 ) /*0x7ae88b*/
+    if ( (int)pN > 0 ) /*0x7ae88b*/
     {
       v7 = vfptr; /*0x7ae88d*/
-      v8 = vfptr2; /*0x7ae88f*/
+      v8 = pN; /*0x7ae88f*/
       do /*0x7ae8c3*/
       {
         v9 = *v7; /*0x7ae891*/
@@ -47,9 +47,9 @@ void E4Recv_7AE830::sub_7AE830()
         {
           do /*0x7ae8bd*/
           {
-            v10 = ((int (*)(unsigned int *))this->nextArrayIndex)(v9) & ((1 << this->vfptr3) - 1); /*0x7ae8a7*/
-            v11 = *(unsigned int *)(this->vfptr + 4 * v10); /*0x7ae8ab*/
-            *(unsigned int *)(this->vfptr + 4 * v10) = v9; /*0x7ae8b1*/
+            v10 = ((int (*)(unsigned int *))this->nextArrayIndex)(v9) & ((1 << this->ptr_C) - 1); /*0x7ae8a7*/
+            v11 = *(unsigned int *)(this->ptr_0 + 4 * v10); /*0x7ae8ab*/
+            *(unsigned int *)(this->ptr_0 + 4 * v10) = v9; /*0x7ae8b1*/
             v12 = (unsigned int *)v9[2]; /*0x7ae8b3*/
             v9[2] = v11; /*0x7ae8b6*/
             v9 = v12; /*0x7ae8b9*/

@@ -1365,11 +1365,11 @@ void Movement::UpdateLocomotion(int16_t *a2) {
   if ( v5 != 0.0 ) /*0x5b2ae2*/
   {
     *this = *this / Math::ArcTan2(v5); /*0x5b2af7*/
-    this->vtable2 = this->vtable2 / Math::ArcTan2(v5); /*0x5b2b04*/
+    this->ptr_2 = this->ptr_2 / Math::ArcTan2(v5); /*0x5b2b04*/
   }
   *this = Math::ArcTan2((double)(*a2 - 0x3FFF) * -0.00009587672516830327) * *this; /*0x5b2b2e*/
-  this->vtable2 = Math::ArcTan2((double)(*a2 - 0x3FFF) * -0.00009587672516830327) * this->vtable2; /*0x5b2b51*/
-  this->vtable3 = Math::SinCos((double)(*a2 - 0x3FFF) * -0.00009587672516830327) * v6; /*0x5b2b7b*/
+  this->ptr_2 = Math::ArcTan2((double)(*a2 - 0x3FFF) * -0.00009587672516830327) * this->ptr_2; /*0x5b2b51*/
+  this->ptr_3 = Math::SinCos((double)(*a2 - 0x3FFF) * -0.00009587672516830327) * v6; /*0x5b2b7b*/
 }
 }
 // 0x668BF0

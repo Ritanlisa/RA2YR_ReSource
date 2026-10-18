@@ -137,7 +137,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v31[4]; // [esp+58h] [ebp-20h] BYREF
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
-  vtable0 = this->vfptr; /*0x645d6f*/
+  vtable0 = this->ptr_0; /*0x645d6f*/
   vtable1 = this->vfptr1; /*0x645d76*/
   vtable2 = this->vfptr2; /*0x645d7d*/
   vtable3 = this->vfptr3; /*0x645d88*/
@@ -154,7 +154,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   v28 = *((unsigned int *)v4 + 3); /*0x645dc5*/
   *(float *)&v19 = -v8; /*0x645dcb*/
   *(float *)&v18 = -*&this->M4; /*0x645dd4*/
-  *(float *)&v17 = -*&this->vfptr; /*0x645de0*/
+  *(float *)&v17 = -*&this->ptr_0; /*0x645de0*/
   v9 = (float *)Int4::Set(v30, v17, v18, v19, v20); /*0x645de3*/
   v29[0] = *v9; /*0x645dea*/
   v29[1] = v9->q004; /*0x645df1*/
@@ -169,7 +169,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   vtable3 = v12; /*0x645e3b*/
   if ( !(v14 | v15) ) /*0x645e97*/
   {
-    *&this->vfptr = -*&this->vfptr; /*0x645ea2*/
+    *&this->ptr_0 = -*&this->ptr_0; /*0x645ea2*/
     *&this->M4 = -*&this->M4; /*0x645ea9*/
     *&this->M8 = -*&this->M8; /*0x645eb1*/
     *&this->M12 = -*&this->M12; /*0x645eb9*/

@@ -288,17 +288,17 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
     int v7; // edi
     v7 = v3[3]; /*0x69e80e*/
     *a1 = v4; /*0x69e818*/
-    a1->vtable2 = v5; /*0x69e81a*/
-    a1->vtable3 = v6; /*0x69e81d*/
-    a1->vtable4 = v7; /*0x69e820*/
+    a1->ptr_2 = v5; /*0x69e81a*/
+    a1->ptr_3 = v6; /*0x69e81d*/
+    a1->ptr_4 = v7; /*0x69e820*/
     return a1; /*0x69e812*/
   }
   else
   {
     *a1 = dword_B077A0; /*0x69e835*/
-    a1->vtable2 = dword_B077A4; /*0x69e83d*/
-    a1->vtable3 = dword_B077A8; /*0x69e846*/
-    a1->vtable4 = dword_B077AC; /*0x69e84f*/
+    a1->ptr_2 = dword_B077A4; /*0x69e83d*/
+    a1->ptr_3 = dword_B077A8; /*0x69e846*/
+    a1->ptr_4 = dword_B077AC; /*0x69e84f*/
     return a1; /*0x69e829*/
   }
 

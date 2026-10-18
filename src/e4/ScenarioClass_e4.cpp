@@ -488,7 +488,7 @@ int ScenarioClass::CleanupTemporary()
 {
 
   AsyncIO *v1; // ecx
-  void **p_vtable2; // esi
+  void **pList; // esi
   int Ticks; // eax
   char *v4; // ecx
   int v5; // eax
@@ -502,15 +502,15 @@ int ScenarioClass::CleanupTemporary()
       Timer::GetTicks(); /*0x683f04*/
     Debug::Log(); /*0x683f13*/
     v1 = (AsyncIO *)dword_A8B230; /*0x683f18*/
-    p_vtable2 = &dword_A8B230[43].vfptr2; /*0x683f27*/
+    pList = &dword_A8B230[43].ptr_2; /*0x683f27*/
     if ( dword_A8B230[43].vfptr2 != (void *)-1 ) /*0x683f31*/
     {
       Ticks = Timer::GetTicks(); /*0x683f36*/
-      v4 = (char *)p_vtable2[2]; /*0x683f3d*/
-      v5 = Ticks - (unsigned int)*p_vtable2; /*0x683f40*/
-      *p_vtable2 = (void *)-1; /*0x683f42*/
+      v4 = (char *)pList[2]; /*0x683f3d*/
+      v5 = Ticks - (unsigned int)*pList; /*0x683f40*/
+      *pList = (void *)-1; /*0x683f42*/
       v1 = (AsyncIO *)&v4[v5]; /*0x683f48*/
-      p_vtable2[2] = v1; /*0x683f4a*/
+      pList[2] = v1; /*0x683f4a*/
     }
   }
   LOBYTE(v1) = 1; /*0x683f4d*/

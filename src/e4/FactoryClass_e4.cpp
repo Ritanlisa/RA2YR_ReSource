@@ -611,7 +611,7 @@ int FactoryClass::FinishProduction(int a2)
 
   if ( a2->vtable4 ) /*0x63506c*/
   {
-    a2->vtable4 = 0; /*0x635073*/
+    a2->ptr_4 = 0; /*0x635073*/
     v3 = *(&this->uniqueId2) - 1; /*0x63507d*/
     *(&this->uniqueId2) = v3; /*0x63507e*/
     if ( !v3 ) /*0x635084*/
@@ -650,7 +650,7 @@ int FactoryClass::FinishProduction(int a2)
       }
     }
   }
-  a2->vtable3 = -1; /*0x63510e*/
+  a2->ptr_3 = -1; /*0x63510e*/
   return result; /*0x635111*/
 }
 }

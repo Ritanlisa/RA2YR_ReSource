@@ -84,7 +84,7 @@ void MixFileClass::CleanupCache()
       if ( v4->vtable3 ) /*0x69e2e1*/
       {
         free(*((void **)v4 + 2)); /*0x69e2e9*/
-        v4->vtable3 = 0; /*0x69e2f1*/
+        v4->ptr_3 = 0; /*0x69e2f1*/
       }
     }
     __3_YAXPAX_Z(v4); /*0x69e2f5*/
@@ -121,7 +121,7 @@ void MixFileClass::DestroyCache()
             v2 = (MixFileClass *)v0->vtable4; /*0x69e1a1*/
             if ( v2 ) /*0x69e1a6*/
               MixFileClass::CacheNode_Dtor(v2, 1); /*0x69e1aa*/
-            v0->vtable4 = 0; /*0x69e1af*/
+            v0->ptr_4 = 0; /*0x69e1af*/
             v0->uniqueId = 0; /*0x69e1b2*/
           }
           v3 = (unsigned int *)v0->nextArrayIndex; /*0x69e1b5*/
@@ -135,7 +135,7 @@ void MixFileClass::DestroyCache()
           if ( v0->vtable3 ) /*0x69e1d9*/
           {
             free(*((void **)v0 + 2)); /*0x69e1e1*/
-            v0->vtable3 = 0; /*0x69e1e9*/
+            v0->ptr_3 = 0; /*0x69e1e9*/
           }
         }
         __3_YAXPAX_Z(v0); /*0x69e1ed*/

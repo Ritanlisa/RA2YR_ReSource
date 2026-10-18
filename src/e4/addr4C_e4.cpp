@@ -513,8 +513,8 @@ void sub_4C2830()
       {
         v8 = Block; /*0x4c28a6*/
         *(unsigned int *)Block = v5; /*0x4c28aa*/
-        v8->vtable2 = v6; /*0x4c28ac*/
-        v8->vtable3 = v7; /*0x4c28af*/
+        v8->ptr_2 = v6; /*0x4c28ac*/
+        v8->ptr_3 = v7; /*0x4c28af*/
       }
       v2 = (int *)Block; /*0x4c28b2*/
     }
@@ -857,12 +857,12 @@ AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Destination, char * Source, i
   v4 = (char *)operator new(1u); /*0x4cb5a0*/
   unsigned int vtable1_high; // edx
   vtable1_high = (*(Destination->u32_6 + 1)); /*0x4cb5b1*/
-  Destination->vfptr2 = v4; /*0x4cb5b3*/
+  Destination->ptr_2 = v4; /*0x4cb5b3*/
   memcpy(v4, &a3, 4 * (vtable1_high >> 2)); /*0x4cb5b9*/
   char *v6; // edi
   v6 = &v4[4 * (vtable1_high >> 2)]; /*0x4cb5b9*/
   memcpy(v6, &a3 + 4 * (vtable1_high >> 2), vtable1_high & 3); /*0x4cb5c5*/
-  Destination->vfptr3 = 0; /*0x4cb5c8*/
+  Destination->ptr_3 = 0; /*0x4cb5c8*/
   return (char *)Destination; /*0x4cb5c7*/
 }
 }
@@ -878,12 +878,12 @@ void * E4Recv_4CB640::sub_4CB640(char * Destination, RandomStruct * aP1, int a3)
   v4 = (char *)operator new(2u); /*0x4cb660*/
   unsigned int vtable1_high; // edx
   vtable1_high = (*(Destination->vtable2 + 1)); /*0x4cb671*/
-  Destination->vfptr2 = v4; /*0x4cb673*/
+  Destination->ptr_2 = v4; /*0x4cb673*/
   memcpy(v4, &a3, 4 * (vtable1_high >> 2)); /*0x4cb679*/
   char *v6; // edi
   v6 = &v4[4 * (vtable1_high >> 2)]; /*0x4cb679*/
   memcpy(v6, &a3 + 4 * (vtable1_high >> 2), vtable1_high & 3); /*0x4cb685*/
-  Destination->vfptr3 = 0; /*0x4cb688*/
+  Destination->ptr_3 = 0; /*0x4cb688*/
   return (char *)Destination; /*0x4cb687*/
 }
 }
@@ -899,12 +899,12 @@ void * E4Recv_4CB6A0::sub_4CB6A0(char * Destination, RandomStruct * aP1, int a3)
   v4 = (char *)operator new(2u); /*0x4cb6c0*/
   unsigned int vtable1_high; // edx
   vtable1_high = (*(Destination->vtable2 + 1)); /*0x4cb6d1*/
-  Destination->vfptr2 = v4; /*0x4cb6d3*/
+  Destination->ptr_2 = v4; /*0x4cb6d3*/
   memcpy(v4, &a3, 4 * (vtable1_high >> 2)); /*0x4cb6d9*/
   char *v6; // edi
   v6 = &v4[4 * (vtable1_high >> 2)]; /*0x4cb6d9*/
   memcpy(v6, &a3 + 4 * (vtable1_high >> 2), vtable1_high & 3); /*0x4cb6e5*/
-  Destination->vfptr3 = 0; /*0x4cb6e8*/
+  Destination->ptr_3 = 0; /*0x4cb6e8*/
   return (char *)Destination; /*0x4cb6e7*/
 }
 }

@@ -386,7 +386,7 @@ LABEL_44:
       Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v78, &v75); /*0x569522*/
       v47 = v76; /*0x56952b*/
       *v45 = v75; /*0x56952f*/
-      v45->vtable2 = v47; /*0x569532*/
+      v45->ptr_2 = v47; /*0x569532*/
     }
     if ( i > 0 ) /*0x569537*/
     {
@@ -463,9 +463,9 @@ LABEL_44:
       v62 = v76; /*0x5696d0*/
       if ( v59 >= v76 ) /*0x5696d6*/
         v61 = v76; /*0x5696d8*/
-      v45->vtable2 = v61 - 64; /*0x5696e2*/
-      v45->vtable3 = abs32(v57 - v58) + 128; /*0x5696ec*/
-      v45->vtable4 = abs32(v59 - v62) + 128; /*0x5696fd*/
+      v45->ptr_2 = v61 - 64; /*0x5696e2*/
+      v45->ptr_3 = abs32(v57 - v58) + 128; /*0x5696ec*/
+      v45->ptr_4 = abs32(v59 - v62) + 128; /*0x5696fd*/
     }
     if ( v63 ) /*0x569706*/
       Terrain::ConnectivityGraph(this); /*0x56970c*/
@@ -2899,7 +2899,7 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
       v17 = Block; /*0x5a2a1f*/
       v58 = 1; /*0x5a2a25*/
       *(unsigned int *)Block = *(unsigned int *)a2; /*0x5a2a2f*/
-      v17->vtable2 = 0; /*0x5a2a31*/
+      v17->ptr_2 = 0; /*0x5a2a31*/
       *(unsigned int *)&dword_ABED10[40 * *a2 + 30 + 40 * g_MapCellWidth * a2[1]] = a4; /*0x5a2a56*/
       v18 = *(unsigned int *)v9 + 1; /*0x5a2a5f*/
       v64 = v17->vtable2; /*0x5a2a62*/

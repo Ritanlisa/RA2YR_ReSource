@@ -536,9 +536,9 @@ void * ScriptClass::Construct(int a2) {
     this->buildingType = (ScriptTypeClass *)a2; /*0x6913d3*/
     this->idxCurrentLine = -1; /*0x6913d6*/
     *(void **)(char *)this = 0; /*0x6913dd vfptr0*/
-    *&this->vtable2 = 0; /*0x6913e3 vfptr1*/
-    *&this->vtable3 = 0; /*0x6913ea vfptr2*/
-    *&this->vtable4 = 0; /*0x6913f1 vfptr3*/
+    *&this->vtable2 = 0; /*0x6913e3 pN*/
+    *&this->vtable3 = 0; /*0x6913ea pN*/
+    *&this->vtable4 = 0; /*0x6913f1 pN*/
     if ( dword_8872C0 < dword_8872B8 /*0x69142f*/
       || (byte_8872BD || !dword_8872B8)
       && dword_8872C4 > 0
@@ -1986,9 +1986,9 @@ int CampaignClass::LoadFromINI() {
             v19 = __2_YAPAXI_Z(0x18u); /*0x49df01*/
             if ( !v19 ) /*0x49df0a*/
               goto LABEL_77; /*0x49df0a*/
-            v19->vtable2 = 0; /*0x49df10*/
-            v19->vtable3 = 0; /*0x49df13*/
-            v19->vtable4 = 1; /*0x49df16*/
+            v19->ptr_2 = 0; /*0x49df10*/
+            v19->ptr_3 = 0; /*0x49df13*/
+            v19->ptr_4 = 1; /*0x49df16*/
             v19->q00D = 0; /*0x49df1a*/
             /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass_char) */  /*0x49df1d*/
             v19->abstractFlags = 10; /*0x49df23*/

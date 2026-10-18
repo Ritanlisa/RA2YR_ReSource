@@ -745,8 +745,8 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
     v5 = a2; /*0x62ac4a*/
 LABEL_39:
     *v5 = v4; /*0x62af27*/
-    v5->vtable2 = dword_AC494C; /*0x62af31*/
-    v5->vtable3 = dword_AC4950; /*0x62af3c*/
+    v5->ptr_2 = dword_AC494C; /*0x62af31*/
+    v5->ptr_3 = dword_AC4950; /*0x62af3c*/
     return result; /*0x62af3c*/
   }
   if ( !ParasiteClass::CanExistOnVictimCell((ParasiteClass *)this) ) /*0x62ac5a*/
@@ -827,8 +827,8 @@ LABEL_34:
     if ( v27 != dword_AC4948 || v28 != dword_AC494C || v29 != dword_AC4950 ) /*0x62af07*/
     {
       *a2 = v27; /*0x62af0f*/
-      a2->vtable2 = v24; /*0x62af11*/
-      a2->vtable3 = v25; /*0x62af14*/
+      a2->ptr_2 = v24; /*0x62af11*/
+      a2->ptr_3 = v25; /*0x62af14*/
       return a2; /*0x62af1e*/
     }
     result = a2; /*0x62af21*/
@@ -860,8 +860,8 @@ LABEL_34:
   else
     *(unsigned char *)(*&this->q024 + 140) = 0; /*0x62acef*/
   *a2 = v27; /*0x62ad03*/
-  a2->vtable2 = v28; /*0x62ad0a*/
-  a2->vtable3 = v29; /*0x62ad11*/
+  a2->ptr_2 = v28; /*0x62ad0a*/
+  a2->ptr_3 = v29; /*0x62ad11*/
   return a2; /*0x62ad00*/
 
 }

@@ -2471,7 +2471,7 @@ int MPCooperative::UpdateMovieScore()
   unsigned int v7; // eax
   int v8; // ebx
   int uniqueId; // ebp
-  void **p_vtable2; // esi
+  void **pList; // esi
   int v11; // esi
   void **v12; // esi
   MultiplayerGameMode *MPCooperative_field_0x50; // ecx
@@ -2547,8 +2547,8 @@ int MPCooperative::UpdateMovieScore()
     uniqueId = dword_A8B230[43].uniqueId; /*0x5c43c9*/
     if ( dword_A8B230[43].vfptr2 != (void *)-1 ) /*0x5c43d8*/
     {
-      p_vtable2 = &dword_A8B230[43].vfptr2; /*0x5c43cf*/
-      uniqueId += Timer::GetTicks() - (unsigned int)*p_vtable2; /*0x5c43e4*/
+      pList = &dword_A8B230[43].ptr_2; /*0x5c43cf*/
+      uniqueId += Timer::GetTicks() - (unsigned int)*pList; /*0x5c43e4*/
     }
     v11 = *(unsigned int *)this->MPCooperative_field_0x50; /*0x5c43f0*/
     v23 = *(wchar_t **)(v25 + 4); /*0x5c43f2*/

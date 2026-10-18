@@ -1511,13 +1511,13 @@ int INIClass::GetCoord(int a1, void* a2, void* a3, void* a4) {
     (*(((unsigned char *)&(v8)) + (sizeof(v8) - 1))) = v10; /*0x474bdc*/
     v9 = v9; /*0x474be5*/
     *(unsigned short *)a1 = v8; /*0x474bee*/
-    a1->vtable3 = v9; /*0x474bf3*/
+    a1->ptr_3 = v9; /*0x474bf3*/
     return a1; /*0x474bd5*/
   }
   else
   {
     *(unsigned short *)a1 = *(unsigned short *)a4; /*0x474c0c*/
-    a1->vtable3 = a4[2]; /*0x474c13*/
+    a1->ptr_3 = a4[2]; /*0x474c13*/
     return a1; /*0x474bff*/
   }
 }
@@ -1551,13 +1551,13 @@ int INIEntry::ReadColor(int a1, void* a2, void* a3, void* a4) {
     (((unsigned char *)&(v8))[1]) = v10; /*0x474d0a*/
     v9 = v9; /*0x474d13*/
     *(unsigned short *)a1 = v8; /*0x474d1c*/
-    a1->vtable3 = v9; /*0x474d21*/
+    a1->ptr_3 = v9; /*0x474d21*/
     return a1; /*0x474d03*/
   }
   else
   {
     *(unsigned short *)a1 = *(unsigned short *)a4; /*0x474d3a*/
-    a1->vtable3 = a4[2]; /*0x474d41*/
+    a1->ptr_3 = a4[2]; /*0x474d41*/
     return a1; /*0x474d2d*/
   }
 }
@@ -2304,9 +2304,9 @@ int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, i
   else
   {
     v16 = a1; /*0x476cfe*/
-    a1->vtable2 = 0; /*0x476d16*/
-    a1->vtable3 = 0; /*0x476d19*/
-    a1->vtable4 = 1; /*0x476d1c*/
+    a1->ptr_2 = 0; /*0x476d16*/
+    a1->ptr_3 = 0; /*0x476d19*/
+    a1->ptr_4 = 1; /*0x476d1c*/
     a1->u32_D = 0; /*0x476d20*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_RGBClass) */  /*0x476d23*/
     ParticleTypeClass::EnsureCapacity((ParticleTypeClass *)a1, &a4); /*0x476d25*/
@@ -2358,18 +2358,18 @@ int INIEntry::ReadAbilities(int a1, void* a2, void* a3, int a4) {
       }
     }
     *(unsigned int *)a1 = v9; /*0x4776d8*/
-    a1->vtable2 = v10; /*0x4776de*/
-    a1->vtable3 = v11; /*0x4776e5*/
-    a1->vtable4 = v12; /*0x4776ec*/
+    a1->ptr_2 = v10; /*0x4776de*/
+    a1->ptr_3 = v11; /*0x4776e5*/
+    a1->ptr_4 = v12; /*0x4776ec*/
     a1->uniqueId = v5; /*0x4776ef*/
     return a1; /*0x4776cb*/
   }
   else
   {
     *(unsigned int *)a1 = *(unsigned int *)a4; /*0x47770f*/
-    a1->vtable2 = *(unsigned int *)(a4 + 4); /*0x477714*/
-    a1->vtable3 = *(unsigned int *)(a4 + 8); /*0x47771a*/
-    a1->vtable4 = *(unsigned int *)(a4 + 12); /*0x477720*/
+    a1->ptr_2 = *(unsigned int *)(a4 + 4); /*0x477714*/
+    a1->ptr_3 = *(unsigned int *)(a4 + 8); /*0x47771a*/
+    a1->ptr_4 = *(unsigned int *)(a4 + 12); /*0x477720*/
     a1->uniqueId = *(unsigned short *)(a4 + 16); /*0x477728*/
     return a1; /*0x477704*/
   }
@@ -4593,7 +4593,7 @@ int Crate::FindPlacement(int a1, int a2) {
   unsigned int v60[4]; // [esp+84h] [ebp-10h] BYREF
 
   v4 = (CellClass *)*(&dword_B0F4EC->vfptr + a1); /*0x4871af*/
-  v57->vtable1 = &v4->mapCoords; /*0x4871b2*/
+  v57->ptr_1 = &v4->mapCoords; /*0x4871b2*/
   if ( a2 >= v4->firstObject ) /*0x4871bc*/
     return 0; /*0x4871bc*/
   if ( (unsigned __int8)IsCoordValidMap(this, (int)v4) ) /*0x4871c3*/
@@ -8792,20 +8792,20 @@ void* ScenarioClass::SetEvent(int a1, int a2, int a3, int a4, int a5, int a6) {
   Debug::Log(); /*0x4c679c*/
   if ( a1 < 0 ) /*0x4c67aa*/
   {
-    this->vtable3 = -1; /*0x4c67e2*/
+    this->ptr_3 = -1; /*0x4c67e2*/
     *this = 0; /*0x4c67e6*/
     this->dword_A8ED84 = dword_A8ED84; /*0x4c67ee*/
     return this; /*0x4c67f1*/
   }
   else
   {
-    this->vtable3 = a1; /*0x4c67b0*/
+    this->ptr_3 = a1; /*0x4c67b0*/
     *this = a2; /*0x4c67ba*/
     this->a3 = a3; /*0x4c67bc*/
     this->a4 = a4; /*0x4c67c2*/
     this->a5 = a5; /*0x4c67cc*/
     *(&this->vtable26) = a6; /*0x4c67d1*/
-    this->vtable4 = dword_A8ED84; /*0x4c67da*/
+    this->ptr_4 = dword_A8ED84; /*0x4c67da*/
     return this; /*0x4c67cf*/
   }
 }
@@ -9530,7 +9530,7 @@ LABEL_101:
                 *(unsigned int *)(*(unsigned int *)v24 + 8 * v24->vtable2 + 4) = v36; /*0x52618a*/
                 v55 = v24->vtable2 + 1; /*0x526191*/
                 *(unsigned char *)(v24 + 12) = 0; /*0x526192*/
-                v24->vtable2 = v55; /*0x526196*/
+                v24->ptr_2 = v55; /*0x526196*/
               }
               else
               {
@@ -12511,7 +12511,7 @@ int INIClass::mergeSection(int a2) {
   __3_YAXPAX_Z(*(void **)this); /*0x52b5cb*/
   v7 = a2 + this->vtable3; /*0x52b5d6*/
   *(unsigned int *)this = v3; /*0x52b5d8*/
-  this->vtable3 = v7; /*0x52b5da*/
+  this->ptr_3 = v7; /*0x52b5da*/
   this->uniqueId = 0; /*0x52b5dd*/
   return 1; /*0x52b5e4*/
 
@@ -14718,10 +14718,10 @@ LABEL_33:
       v29 = v34; /*0x570e50*/
     }
     *v27 = v30; /*0x570e67*/
-    v27->vtable2 = v31; /*0x570e6a*/
+    v27->ptr_2 = v31; /*0x570e6a*/
     v20 = v49; /*0x570e6d*/
-    v27->vtable3 = v28; /*0x570e71*/
-    v27->vtable4 = v29; /*0x570e74*/
+    v27->ptr_3 = v28; /*0x570e71*/
+    v27->ptr_4 = v29; /*0x570e74*/
   }
   v35 = 0; /*0x570e7a*/
   result = v52; /*0x570e86*/
@@ -16713,10 +16713,10 @@ LABEL_33:
       v29 = v34; /*0x576570*/
     }
     *v27 = v30; /*0x576587*/
-    v27->vtable2 = v31; /*0x57658a*/
+    v27->ptr_2 = v31; /*0x57658a*/
     v20 = v49; /*0x57658d*/
-    v27->vtable3 = v28; /*0x576591*/
-    v27->vtable4 = v29; /*0x576594*/
+    v27->ptr_3 = v28; /*0x576591*/
+    v27->ptr_4 = v29; /*0x576594*/
   }
   v35 = 0; /*0x57659a*/
   result = v52; /*0x5765a6*/
@@ -21232,9 +21232,9 @@ void* RadarClass::drawRadarTerrain(int a1, int a2) {
   int v10; // ecx
 
   v4 = 0; /*0x58adb9*/
-  this->vtable2 = 0; /*0x58adbd*/
-  this->vtable3 = (void *)a1; /*0x58adc0*/
-  this->vtable4 = 1; /*0x58adc3*/
+  this->ptr_2 = 0; /*0x58adbd*/
+  this->ptr_3 = (void *)a1; /*0x58adc0*/
+  this->ptr_4 = 1; /*0x58adc3*/
   this->IsAllocated = 0; /*0x58adc7*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x58adca) */
   if ( !a1 ) /*0x58add0*/
@@ -31038,7 +31038,7 @@ void* FileSystem::writeFile(int a1, void* a2) {
           --v3; /*0x628f58*/
         }
         while ( v3 ); /*0x628f59*/
-        this->vtable2 = v7; /*0x628f5b*/
+        this->ptr_2 = v7; /*0x628f5b*/
         this->queuedCount = 1; /*0x628f5e*/
         return this; /*0x628f68*/
       }
@@ -35689,7 +35689,7 @@ void* MixFileClass::LoadSubFile() {
           if ( v6->vtable3 ) /*0x69e680*/
           {
             free(*((void **)v6 + 2)); /*0x69e688*/
-            v6->vtable3 = 0; /*0x69e690*/
+            v6->ptr_3 = 0; /*0x69e690*/
           }
         }
         __3_YAXPAX_Z(v6); /*0x69e698*/
@@ -36866,16 +36866,16 @@ int ScenarioClass::Create(int a1, int a2, int a3, int a4) {
 namespace gamemd { 
 int ScenarioClass::PrepareTextDisplay(int a1, int a2, int a3, int a4) {
   int v5; // eax
-  void **p_vtable3; // ecx
+  void **pList; // ecx
   AbstractClass *v7; // eax
   void *v9; // [esp+4h] [ebp-28h]
   char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
 
   v5 = this->nextScenario[36]; /*0x6e1530*/
-  p_vtable3 = &dword_A8B230[127].vfptr3; /*0x6e1542*/
+  pList = &dword_A8B230[127].ptr_3; /*0x6e1542*/
   dword_A8B230[127].vfptr3 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6e154e*/
-  p_vtable3[1] = v9; /*0x6e1557*/
-  p_vtable3[2] = (void *)(15 * v5); /*0x6e155a*/
+  pList[1] = v9; /*0x6e1557*/
+  pList[2] = (void *)(15 * v5); /*0x6e155a*/
   v7 = dword_A8B230; /*0x6e155d*/
   if ( dword_A8B230[127].vfptr3 == (void *)-1 ) /*0x6e1569*/
   {

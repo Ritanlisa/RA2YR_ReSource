@@ -929,9 +929,9 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
   void *v1; // esi
 
   v1 = (void *)(2 * *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1768]); /*0x52476c*/
-  a1->vfptr = (void *)85; /*0x524777*/
-  a1->vfptr1 = (void *)85; /*0x524779*/
-  a1->vfptr2 = v1; /*0x52477c*/
+  a1->ptr_0 = (void *)85; /*0x524777*/
+  a1->ptr_1 = (void *)85; /*0x524779*/
+  a1->ptr_2 = v1; /*0x52477c*/
   return &a1->vfptr; /*0x52477f*/
 }
 }  // G42.18c ns repair

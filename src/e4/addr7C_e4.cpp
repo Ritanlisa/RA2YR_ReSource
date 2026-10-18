@@ -9645,7 +9645,7 @@ void * __sbh_resize_block(unsigned int * a0, unsigned int aP1, unsigned int aP2)
       v25->ptr_4 = *(unsigned int *)(v33 + 4); /*0x7d023a*/
       v25->ptr_8 = v33; /*0x7d023d*/
       *(unsigned int *)(v33 + 4) = v25; /*0x7d0240*/
-      v25->ptr_4->vtable3 = v25; /*0x7d0246*/
+      v25->ptr_4->ptr_3 = v25; /*0x7d0246*/
       if ( v25->ptr_4 == v25->ptr_8 ) /*0x7d024f*/
       {
         v41 = *(unsigned char *)(v26 + v3 + 4); /*0x7d0258*/

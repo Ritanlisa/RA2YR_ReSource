@@ -1920,8 +1920,8 @@ int BuildingClass::RenderExitPosition()
     v7 = v5[1]; /*0x4538a5*/
     v8 = v5[2]; /*0x4538a8*/
     *cell = v3 + v6; /*0x4538b1*/
-    cell->vtable2 = v4 + v7; /*0x4538b3*/
-    cell->vtable3 = v8; /*0x4538b6*/
+    cell->ptr_2 = v4 + v7; /*0x4538b3*/
+    cell->ptr_3 = v8; /*0x4538b6*/
     return (int)cell; /*0x4538b9*/
   }
   else
@@ -1933,8 +1933,8 @@ int BuildingClass::RenderExitPosition()
       {
         v24 = BuildingClass::CalcBarrelFlashPosition(this, v35, v37, 1); /*0x4539be*/
         *cell = *v24; /*0x4539c8*/
-        cell->vtable2 = v24[1]; /*0x4539cd*/
-        cell->vtable3 = v24[2]; /*0x4539d3*/
+        cell->ptr_2 = v24[1]; /*0x4539cd*/
+        cell->ptr_3 = v24[2]; /*0x4539d3*/
         return (int)cell; /*0x4539c0*/
       }
       else
@@ -1954,8 +1954,8 @@ int BuildingClass::RenderExitPosition()
           v28 += v31->vtable2; /*0x453a4c*/
         }
         *cell = v26; /*0x453a54*/
-        cell->vtable2 = v28; /*0x453a58*/
-        cell->vtable3 = v29; /*0x453a5b*/
+        cell->ptr_2 = v28; /*0x453a58*/
+        cell->ptr_3 = v29; /*0x453a5b*/
         return (int)cell; /*0x453a4e*/
       }
     }
@@ -1972,7 +1972,7 @@ int BuildingClass::RenderExitPosition()
         v16 = v14->vtable2; /*0x453937*/
         v17 = v14->vtable3; /*0x45393a*/
         *cell = v12 + v15; /*0x453943*/
-        cell->vtable2 = v13 + v16; /*0x453945*/
+        cell->ptr_2 = v13 + v16; /*0x453945*/
       }
       else
       {
@@ -1984,9 +1984,9 @@ int BuildingClass::RenderExitPosition()
         v23 = v21[1]; /*0x453981*/
         v17 = v21[2]; /*0x453984*/
         *cell = v22 + v19; /*0x45398d*/
-        cell->vtable2 = v20 + v23; /*0x45398f*/
+        cell->ptr_2 = v20 + v23; /*0x45398f*/
       }
-      cell->vtable3 = v17; /*0x453948*/
+      cell->ptr_3 = v17; /*0x453948*/
       return (int)cell; /*0x45394b*/
     }
   }

@@ -358,9 +358,9 @@ int * CellClass::GetScreenRect(int *a2) {
   if ( v9 == 0xFFFF ) /*0x480027*/
   {
     *a2 = v15; /*0x48002f*/
-    a2->vtable2 = v8; /*0x480031*/
-    a2->vtable3 = 60; /*0x480037*/
-    a2->vtable4 = 30; /*0x48003a*/
+    a2->ptr_2 = v8; /*0x480031*/
+    a2->ptr_3 = 60; /*0x480037*/
+    a2->ptr_4 = 30; /*0x48003a*/
     return a2; /*0x480041*/
   }
   if ( v9 < 0 || v9 >= *(int *)&((unsigned int *)&stru_A8EB00)[340] )
@@ -374,9 +374,9 @@ int * CellClass::GetScreenRect(int *a2) {
     if ( !v12 ) /*0x480073*/
     {
       *a2 = v17; /*0x480082*/
-      a2->vtable2 = v18; /*0x480089*/
-      a2->vtable3 = v19; /*0x480090*/
-      a2->vtable4 = v20; /*0x480097*/
+      a2->ptr_2 = v18; /*0x480089*/
+      a2->ptr_3 = v19; /*0x480090*/
+      a2->ptr_4 = v20; /*0x480097*/
       return a2; /*0x48009d*/
     }
     if ( height >= *v12 * v12[1] - 1 ) /*0x4800a9*/
@@ -390,9 +390,9 @@ int * CellClass::GetScreenRect(int *a2) {
     }
   }
   *a2 = v6; /*0x4800f3*/
-  a2->vtable2 = v8; /*0x4800f5*/
-  a2->vtable3 = 60; /*0x4800fb*/
-  a2->vtable4 = v7; /*0x4800fe*/
+  a2->ptr_2 = v8; /*0x4800f5*/
+  a2->ptr_3 = 60; /*0x4800fb*/
+  a2->ptr_4 = v7; /*0x4800fe*/
   return a2; /*0x480034*/
 }
 } // namespace gamemd
@@ -621,7 +621,7 @@ unsigned int * TacticalClass::PixelToCellCheck(int *a2) {
   v6[0] = *a2; /*0x65376d*/
   v6[1] = v2; /*0x653781*/
   v3 = TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v7, v6); /*0x653785*/
-  if ( *v3 == dword_B04900 && v3->vtable2 == dword_B04904 && v3->vtable3 == dword_B04908 ) /*0x6537ad*/
+  if ( *v3 == dword_B04900 && v3->ptr_2 == dword_B04904 && v3->ptr_3 == dword_B04908 ) /*0x6537ad*/
   {
     this->vfptr = (void *)dword_B048C0; /*0x653803*/
     return &this->vfptr; /*0x6537f9*/
@@ -653,8 +653,8 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
   if ( *a3 >= dword_B0CE30 || (v3 = a3[1], v3 >= dword_B0CE34 + dword_B0CE2C) ) /*0x6d22ab*/
   {
     *a2 = dword_B0CE08; /*0x6d2345*/
-    a2->vtable2 = dword_B0CE0C; /*0x6d234d*/
-    a2->vtable3 = dword_B0CE10; /*0x6d2356*/
+    a2->ptr_2 = dword_B0CE0C; /*0x6d234d*/
+    a2->ptr_3 = dword_B0CE10; /*0x6d2356*/
     return a2; /*0x6d2337*/
   }
   else
@@ -673,8 +673,8 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
     v7 = v6; /*0x6d2316*/
     LOWORD(v8) = Math::RoundToInt(v12); /*0x6d2318*/
     *a2 = v7; /*0x6d2325*/
-    a2->vtable2 = v8; /*0x6d2327*/
-    a2->vtable3 = 0; /*0x6d232c*/
+    a2->ptr_2 = v8; /*0x6d2327*/
+    a2->ptr_3 = 0; /*0x6d232c*/
     return a2; /*0x6d232a*/
   }
 

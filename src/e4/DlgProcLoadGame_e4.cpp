@@ -26,22 +26,22 @@ HWND E4Recv_696AE0::sub_696AE0()
   {
     if ( result ) /*0x696b15*/
     {
-      char *p_vtable2; // esi
-      p_vtable2 = (char *)&this->?; /*0x696b21*/
-      SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)p_vtable2); /*0x696b30*/
+      char *pVal; // esi
+      pVal = (char *)&this->?; /*0x696b21*/
+      SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)pVal); /*0x696b30*/
       SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x696b3f*/
-      (p_vtable2)->Trim(); /*0x696b43*/
+      (pVal)->Trim(); /*0x696b43*/
       result = 0; /*0x696b4d*/
-      if ( strlen(p_vtable2) ) /*0x696b4f*/
+      if ( strlen(pVal) ) /*0x696b4f*/
       {
-        _strupr(p_vtable2); /*0x696b5b*/
+        _strupr(pVal); /*0x696b5b*/
         LRESULT v6; // edi
-        v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)p_vtable2); /*0x696b6e*/
+        v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)pVal); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
           char *v8; // [esp+10h] [ebp-8h]
           v8 = (char *)__2_YAPAXI_Z(0x29u); /*0x696b8c*/
-          strcpy(v8, p_vtable2); /*0x696ba2*/
+          strcpy(v8, pVal); /*0x696ba2*/
           result = SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
           v6 = result; /*0x696bb3*/
           if ( result == -1 ) /*0x696bb8*/

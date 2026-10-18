@@ -1915,7 +1915,7 @@ int ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, i
   v5 = a5; /*0x5c8508*/
   v6 = 4 * a5; /*0x5c8516*/
   memset(a0, 0, 4 * ((unsigned int)(4 * a5) >> 2)); /*0x5c8529*/
-  a0->vfptr = 1; /*0x5c853d*/
+  a0->ptr_0 = 1; /*0x5c853d*/
   if ( !*(unsigned int *)a2 ) /*0x5c8543*/
   {
     v7 = &a2[v6 - 4]; /*0x5c854c*/

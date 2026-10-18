@@ -919,7 +919,7 @@ void * Network::CopyAddress(unsigned int *a2, int a3)
   char *result = &this->q004; // eax /*0x53eda4*/
   *(unsigned int *)a3 = this->q004; /*0x53edaa*/
   LOWORD(result) = this->q008; /*0x53edad*/
-  a3->vtable2 = (unsigned short)result; /*0x53edb1*/
+  a3->ptr_2 = (unsigned short)result; /*0x53edb1*/
   *a2 = this->__pad_000; /*0x53edbb*/
   return result; /*0x53edac*/
 

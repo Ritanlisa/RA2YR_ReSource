@@ -7358,7 +7358,7 @@ LABEL_145:
       v77[4] = v80 + 1; /*0x505e97*/
       v74 = (unsigned int *)(v77[1] + 16 * v80); /*0x505ea0*/
       *v74 = v75; /*0x505ea2*/
-      v74->vtable2 = 0; /*0x505ea4*/
+      v74->ptr_2 = 0; /*0x505ea4*/
     }
     else
     {
@@ -7382,10 +7382,10 @@ LABEL_145:
       v69[4] = v72 + 1; /*0x505e21*/
       v74 = (unsigned int *)(v69[1] + 16 * v72); /*0x505e2a*/
       *v74 = v68; /*0x505e2c*/
-      v74->vtable2 = 0; /*0x505e2e*/
+      v74->ptr_2 = 0; /*0x505e2e*/
     }
-    v74->vtable3 = (unsigned int)v73; /*0x505ea7*/
-    v74->vtable4 = 0; /*0x505eaa*/
+    v74->ptr_3 = (unsigned int)v73; /*0x505ea7*/
+    v74->ptr_4 = 0; /*0x505eaa*/
   }
   /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_BuildingTypeClass_const) */  /*0x505ec2*/
   if ( *(unsigned int *)&v88.m_1[3] && BYTE1(v88.m_C) ) /*0x505edb*/
@@ -8081,9 +8081,9 @@ int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
       v9 = v21; /*0x507e00*/
     }
   }
-  a1->vtable2 = 0; /*0x507ea6*/
-  a1->vtable3 = 0; /*0x507ea9*/
-  a1->vtable4 = 1; /*0x507eac*/
+  a1->ptr_2 = 0; /*0x507ea6*/
+  a1->ptr_3 = 0; /*0x507ea9*/
+  a1->ptr_4 = 1; /*0x507eac*/
   a1->u32_D = 0; /*0x507eb0*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_BuildingTypeClass) */  /*0x507eb3*/
   if ( (void ***)a1 != &v22 ) /*0x507eb9*/
@@ -8091,16 +8091,16 @@ int HouseClass::CollectInfantryBuildCandidates(int a1, int a2) {
     VectorClass::Cleanup4(a1); /*0x507ebd*/
     v13 = v24; /*0x507ec3*/
     v14 = v24 == 0; /*0x507ec7*/
-    a1->vtable3 = v24; /*0x507ec9*/
+    a1->ptr_3 = v24; /*0x507ec9*/
     if ( v14 ) /*0x507ecc*/
     {
-      a1->vtable2 = 0; /*0x507f05*/
+      a1->ptr_2 = 0; /*0x507f05*/
       a1->u32_D = 0; /*0x507f0c*/
     }
     else
     {
       v15 = __2_YAPAXI_Z(4 * v13); /*0x507ed2*/
-      a1->vtable2 = v15; /*0x507eda*/
+      a1->ptr_2 = v15; /*0x507eda*/
       if ( v15 ) /*0x507edf*/
       {
         v16 = a1->vtable3; /*0x507ee1*/
@@ -8569,9 +8569,9 @@ LABEL_36:
                   v29 = (unsigned int *)(v92.mapCoords + 16 * v28); /*0x50876e*/
                   v30 = v121; /*0x508770*/
                   *v29 = v27; /*0x508777*/
-                  v29->vtable2 = v24; /*0x508779*/
-                  v29->vtable3 = v30; /*0x50877c*/
-                  v29->vtable4 = 0; /*0x50877f*/
+                  v29->ptr_2 = v24; /*0x508779*/
+                  v29->ptr_3 = v30; /*0x50877c*/
+                  v29->ptr_4 = 0; /*0x50877f*/
                 }
                 v25 += 3; /*0x508786*/
                 v31 = v95 & 7; /*0x508789*/
@@ -8600,9 +8600,9 @@ LABEL_36:
                   v37 = (unsigned int *)(v96.mapCoords + 16 * v36); /*0x508834*/
                   v38 = v122; /*0x508836*/
                   *v37 = v35; /*0x50883d*/
-                  v37->vtable2 = v24; /*0x50883f*/
-                  v37->vtable3 = v38; /*0x508842*/
-                  v37->vtable4 = 0; /*0x508845*/
+                  v37->ptr_2 = v24; /*0x50883f*/
+                  v37->ptr_3 = v38; /*0x508842*/
+                  v37->ptr_4 = 0; /*0x508845*/
                 }
                 ++v25; /*0x50884c*/
                 v39 = v95 & 7; /*0x50884d*/

@@ -643,9 +643,9 @@ unsigned int *  UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 
   void *v1; // esi
   v1 = (void *)(2 * dword_B1D138); /*0x7475dc*/
-  a1->vfptr = (void *)256; /*0x7475e7*/
-  a1->vfptr1 = (void *)256; /*0x7475e9*/
-  a1->vfptr2 = v1; /*0x7475ec*/
+  a1->ptr_0 = (void *)256; /*0x7475e7*/
+  a1->ptr_1 = (void *)256; /*0x7475e9*/
+  a1->ptr_2 = v1; /*0x7475ec*/
   return (unsigned int *)a1; /*0x7475ef*/
 }
 }  // G42.18c ns repair

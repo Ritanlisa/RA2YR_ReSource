@@ -5916,7 +5916,7 @@ if ( !result ) /*0x51764b*/
     {
       v3 = *(void **)Data; /*0x51767d*/
       (this->u8_C) = 1; /*0x517681*/
-      this->vfptr = v3; /*0x517685*/
+      this->ptr_0 = v3; /*0x517685*/
     }
     result = RegCloseKey(phkResult); /*0x51768d*/
 }
@@ -6548,7 +6548,7 @@ int v17; // esi
 int v18; // eax
 unsigned int *v19; // eax
 char *v20; // ebp
-int *vtable2; // esi
+int *pVal; // esi
 unsigned int v22; // kr0C_4
 Checksummer *v23; // eax
 int *v24; // esi
@@ -6657,16 +6657,16 @@ if ( v35 > 0 ) /*0x52736f*/
         if ( (uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, &v40) ) /*0x527503*/
       {
         v40 = v29; /*0x527513*/
-        vtable2 = *(int **)SortedArray::FindValue(&this->SortedArray_5A4, &v40); /*0x52751c*/
-        if ( vtable2 ) /*0x527520*/
+        pVal = *(int **)SortedArray::FindValue(&this->SortedArray_5A4, &v40); /*0x52751c*/
+        if ( pVal ) /*0x527520*/
         {
-          this->vfptr2 = vtable2; /*0x527526*/
-          this->vfptr1 = v6; /*0x527529*/
+          this->ptr_2 = pVal; /*0x527526*/
+          this->ptr_1 = v6; /*0x527529*/
           goto LABEL_33; /*0x52752c*/
         }
       }
-        this->vfptr1 = 0; /*0x527537*/
-        this->vfptr2 = 0; /*0x52753a*/
+        this->ptr_1 = 0; /*0x527537*/
+        this->ptr_2 = 0; /*0x52753a*/
       LABEL_38:
       if ( Source ) /*0x5274c3*/
       {
@@ -6693,14 +6693,14 @@ if ( v35 > 0 ) /*0x52736f*/
       }
         return a2; /*0x5275a5*/
     }
-    vtable2 = (int *)this->vfptr2; /*0x527463*/
+    pVal = (int *)this->vfptr2; /*0x527463*/
     LABEL_33:
-    if ( vtable2 ) /*0x527468*/
+    if ( pVal ) /*0x527468*/
     {
       v22 = strlen(v20) + 1; /*0x527471*/
       v23 = (Checksummer *)KeyValuePair::Init(v42, 0); /*0x52747d*/
       v36 = Checksummer::Add_Buffer(v23, (uint8_t *)v20, v22 - 1); /*0x527489*/
-      v24 = vtable2 + 11; /*0x52748d*/
+      v24 = pVal + 11; /*0x52748d*/
       if ( (uint8_t)SortedArray::Find(v24, &v36) ) /*0x527497*/
       {
         v25 = *(unsigned int *)SortedArray::BinarySearch2((int)v24, &v36); /*0x5274ac*/
@@ -7365,9 +7365,9 @@ int Gap2Recv_556B70::Render_Render_556B70() {
     if ( v3 != *v6 || v4 != v6[1] || v5 != v6[2] ) /*0x556b9c*/
     {
       v7 = (char *)this->vfptr3 - 1; /*0x556ba1*/
-      this->vfptr3 = v7; /*0x556ba2*/
+      this->ptr_3 = v7; /*0x556ba2*/
       if ( (int)v7 < 0 ) /*0x556ba5*/
-        this->vfptr3 = (void *)31; /*0x556ba7*/
+        this->ptr_3 = (void *)31; /*0x556ba7*/
       v8 = &this->vfptr + 4 * ((int)this->vfptr3 + 1); /*0x556bb7*/
       v8[3] = (void *)255; /*0x556bb9*/
       *v8 = v3; /*0x556bc0*/
@@ -7462,9 +7462,9 @@ void Gap2Recv_55AF50::Map_Init() {
 namespace gamemd { 
 int Gap2Recv_55F690::CheckNetworkSync(int a2, int a3) {
 
-  this->vfptr = (void *)(a3 & 0xFFFFFF); /*0x55f69f*/
+  this->ptr_0 = (void *)(a3 & 0xFFFFFF); /*0x55f69f*/
   LOBYTE(this->vfptr1) = HIBYTE(a3); /*0x55f6a5*/
-  *(unsigned int *)a2 = this->vfptr; /*0x55f6ac*/
+  *(unsigned int *)a2 = this->ptr_0; /*0x55f6ac*/
   *(unsigned char *)(a2 + 4) = this->vfptr1; /*0x55f6b2*/
   return a2; /*0x55f6b1*/
 
@@ -7788,7 +7788,7 @@ LABEL_44:
       Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v78, &v75); /*0x569e42*/
       v47 = v76; /*0x569e4b*/
       *v45 = v75; /*0x569e4f*/
-      v45->vtable2 = v47; /*0x569e52*/
+      v45->ptr_2 = v47; /*0x569e52*/
     }
     if ( i > 0 ) /*0x569e57*/
     {
@@ -7865,9 +7865,9 @@ LABEL_44:
       v62 = v76; /*0x569ff6*/
       if ( v59 >= v76 ) /*0x569ffc*/
         v61 = v76; /*0x569ffe*/
-      v45->vtable2 = v61 - 64; /*0x56a008*/
-      v45->vtable3 = abs32(v57 - v58) + 128; /*0x56a012*/
-      v45->vtable4 = abs32(v59 - v62) + 128; /*0x56a023*/
+      v45->ptr_2 = v61 - 64; /*0x56a008*/
+      v45->ptr_3 = abs32(v57 - v58) + 128; /*0x56a012*/
+      v45->ptr_4 = abs32(v59 - v62) + 128; /*0x56a023*/
     }
     if ( v63 ) /*0x56a02c*/
       Terrain::ConnectivityGraph((Terrain *)this); /*0x56a032*/
@@ -12157,10 +12157,10 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
           ++v18; /*0x594b00*/
       }
     }
-    if ( this->vfptr ) /*0x594b17*/
-      (**(void (***)(int, int))this->vfptr)(this->vfptr, 1); /*0x594b21*/
+    if ( this->ptr_0 ) /*0x594b17*/
+      (**(void (***)(int, int))this->ptr_0)(this->ptr_0, 1); /*0x594b21*/
     Items = (void *)v27.Items; /*0x594b23*/
-    this->vfptr = (int)v9; /*0x594b27*/
+    this->ptr_0 = (int)v9; /*0x594b27*/
     /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_Cell) */  /*0x594b2b*/
     if ( Items && v27.IsAllocated[0] ) /*0x594b3b*/
       __3_YAXPAX_Z(Items); /*0x594b3e*/
@@ -13675,12 +13675,12 @@ LABEL_47:
 // 0x5A99B0
 namespace gamemd { 
 void* Gap2Recv_5A99B0::Object_Helper_5A99B0() {
-  this->vfptr = (void *)0xFFFF; /*0x5a99d1*/
-  this->vfptr1 = 0; /*0x5a99d7*/
-  this->vfptr2 = (void *)0xFFFF; /*0x5a99da*/
-  this->vfptr3 = 0; /*0x5a99e1*/
+  this->ptr_0 = (void *)0xFFFF; /*0x5a99d1*/
+  this->ptr_1 = 0; /*0x5a99d7*/
+  this->ptr_2 = (void *)0xFFFF; /*0x5a99da*/
+  this->ptr_3 = 0; /*0x5a99e1*/
   this->uniqueId = -1; /*0x5a99e4*/
-  return &this->vfptr; /*0x5a99ec*/
+  return &this->ptr_0; /*0x5a99ec*/
 }
 }
 // 0x5AD930
@@ -13707,7 +13707,7 @@ char Gap2Recv_5AD930::Map_Helper_5AD930(int a2) {
   __3_YAXPAX_Z(*(void **)this); /*0x5ad98b*/
   v7 = a2 + this->vtable3; /*0x5ad996*/
   *(unsigned int *)this = v3; /*0x5ad998*/
-  this->vtable3 = v7; /*0x5ad99a*/
+  this->ptr_3 = v7; /*0x5ad99a*/
   this->uniqueId = 0; /*0x5ad99d*/
   return 1; /*0x5ad9a4*/
 
@@ -15084,9 +15084,9 @@ return (uint8_t)String::Equals_Alt((String *)this, off_831704) /*0x5ee17e*/
 }
 // 0x5EEF60
 void Gap2Recv_5EEF60::String_Process() {
-unsigned int vtable2; // esi
+unsigned int pN; // esi
 int *vtable0; // ebp
-char *vtable3; // edi
+char *pVal; // edi
 void *v5; // edi
 unsigned int v6; // edx
 int *v7; // edi
@@ -15097,22 +15097,22 @@ int v11; // ecx
 int v12; // eax
 int *v13; // [esp+8h] [ebp-4h]
 
-vtable2 = (unsigned int)this->vfptr2; /*0x5eef65*/
-if ( (ObjectClass *)vtable2 > this->nextObject && (this->M20) != 1 ) /*0x5eef77*/
+pN = (unsigned int)this->vfptr2; /*0x5eef65*/
+if ( (ObjectClass *)pN > this->nextObject && (this->M20) != 1 ) /*0x5eef77*/
 {
-    vtable0 = (int *)this->vfptr; /*0x5eef80*/
-    vtable3 = (char *)this->vfptr3; /*0x5eef83*/
-    v13 = (int *)this->vfptr; /*0x5eef86*/
-    this->vfptr2 = (void *)(vtable2 >> 1); /*0x5eef8c*/
-    this->vfptr3 = vtable3 - 1; /*0x5eef94*/
-    v5 = (void *)operator new(4 * (vtable2 >> 1)); /*0x5eef9f*/
+    vtable0 = (int *)this->ptr_0; /*0x5eef80*/
+    pVal = (char *)this->vfptr3; /*0x5eef83*/
+    v13 = (int *)this->ptr_0; /*0x5eef86*/
+    this->ptr_2 = (void *)(pN >> 1); /*0x5eef8c*/
+    this->ptr_3 = pVal - 1; /*0x5eef94*/
+    v5 = (void *)operator new(4 * (pN >> 1)); /*0x5eef9f*/
     v6 = 4 * (int)this->vfptr2; /*0x5eefa4*/
-    this->vfptr = v5; /*0x5eefab*/
+    this->ptr_0 = v5; /*0x5eefab*/
     memset(v5, 0, v6); /*0x5eefb0*/
-    if ( (int)vtable2 > 0 ) /*0x5eefbb*/
+    if ( (int)pN > 0 ) /*0x5eefbb*/
     {
       v7 = vtable0; /*0x5eefbd*/
-      v8 = vtable2; /*0x5eefbf*/
+      v8 = pN; /*0x5eefbf*/
       do /*0x5eeff3*/
       {
         v9 = *v7; /*0x5eefc1*/
@@ -15121,8 +15121,8 @@ if ( (ObjectClass *)vtable2 > this->nextObject && (this->M20) != 1 ) /*0x5eef77*
           do /*0x5eefed*/
           {
             v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << (int)this->vfptr3) - 1); /*0x5eefd7*/
-            v11 = *((unsigned int *)this->vfptr + v10); /*0x5eefdb*/
-            *((unsigned int *)this->vfptr + v10) = v9; /*0x5eefe1*/
+            v11 = *((unsigned int *)this->ptr_0 + v10); /*0x5eefdb*/
+            *((unsigned int *)this->ptr_0 + v10) = v9; /*0x5eefe1*/
             v12 = *(unsigned int *)(v9 + 8); /*0x5eefe3*/
             *(unsigned int *)(v9 + 8) = v11; /*0x5eefe6*/
             v9 = v12; /*0x5eefe9*/
@@ -15140,7 +15140,7 @@ if ( (ObjectClass *)vtable2 > this->nextObject && (this->M20) != 1 ) /*0x5eef77*
 }
 // 0x5EF010
 void Gap2Recv_5EF010::Map_Helper_5EF010() {
-int vtable2; // esi
+int pN; // esi
 unsigned int *vtable0; // ebp
 char *v4; // edi
 void *v5; // edi
@@ -15155,20 +15155,20 @@ unsigned int *v13; // [esp+4h] [ebp-4h]
 
 if ( (this->M20) != 1 ) /*0x5ef018*/
 {
-    vtable2 = (int)this->vfptr2; /*0x5ef020*/
-    vtable0 = this->vfptr; /*0x5ef023*/
+    pN = (int)this->vfptr2; /*0x5ef020*/
+    vtable0 = this->ptr_0; /*0x5ef023*/
     v4 = (char *)this->vfptr3 + 1; /*0x5ef02c*/
-    this->vfptr2 = (void *)(2 * vtable2); /*0x5ef02d*/
+    this->ptr_2 = (void *)(2 * pN); /*0x5ef02d*/
     v13 = vtable0; /*0x5ef030*/
-    this->vfptr3 = v4; /*0x5ef038*/
-    v5 = (void *)operator new(8 * vtable2); /*0x5ef043*/
+    this->ptr_3 = v4; /*0x5ef038*/
+    v5 = (void *)operator new(8 * pN); /*0x5ef043*/
     v6 = 4 * (int)this->vfptr2; /*0x5ef048*/
-    this->vfptr = v5; /*0x5ef04f*/
+    this->ptr_0 = v5; /*0x5ef04f*/
     memset(v5, 0, v6); /*0x5ef054*/
-    if ( vtable2 > 0 ) /*0x5ef05f*/
+    if ( pN > 0 ) /*0x5ef05f*/
     {
       v7 = vtable0; /*0x5ef061*/
-      v8 = vtable2; /*0x5ef063*/
+      v8 = pN; /*0x5ef063*/
       do /*0x5ef097*/
       {
         v9 = *v7; /*0x5ef065*/
@@ -15177,8 +15177,8 @@ if ( (this->M20) != 1 ) /*0x5ef018*/
           do /*0x5ef091*/
           {
             v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << (int)this->vfptr3) - 1); /*0x5ef07b*/
-            v11 = *((unsigned int *)this->vfptr + v10); /*0x5ef07f*/
-            *((unsigned int *)this->vfptr + v10) = v9; /*0x5ef085*/
+            v11 = *((unsigned int *)this->ptr_0 + v10); /*0x5ef07f*/
+            *((unsigned int *)this->ptr_0 + v10) = v9; /*0x5ef085*/
             v12 = *(unsigned int *)(v9 + 8); /*0x5ef087*/
             *(unsigned int *)(v9 + 8) = v11; /*0x5ef08a*/
             v9 = v12; /*0x5ef08d*/
@@ -17259,11 +17259,11 @@ bool Gap2Recv_6316E0::UI_Pop_631500_Pop(int a2) {
   if ( !a2 ) /*0x6316ea*/
     return 0; /*0x6316ed*/
   Dialog = (HWND)CreateDialog(0xEFu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))NetworkSettingsDlgProc, 0); /*0x6316ff*/
-  dwNewLong->vfptr = (int)Dialog; /*0x631706*/
+  dwNewLong->ptr_0 = (int)Dialog; /*0x631706*/
   if ( Dialog ) /*0x631708*/
   {
-    dwNewLong->vfptr2 = a2; /*0x63170e*/
-    dwNewLong->vfptr1 = -1; /*0x631711*/
+    dwNewLong->ptr_2 = a2; /*0x63170e*/
+    dwNewLong->ptr_1 = -1; /*0x631711*/
     SetWindowLongA(Dialog, 8, (LONG)dwNewLong); /*0x631718*/
     UI_Pop_631500_Pop_Pop(dwNewLong); /*0x631720*/
     Dialog::Show((Dialog *)dwNewLong->vfptr); /*0x631727*/
@@ -17276,7 +17276,7 @@ bool Gap2Recv_6316E0::UI_Pop_631500_Pop(int a2) {
     }
     Dialog::Destroy((Dialog *)dwNewLong->vfptr); /*0x63174c*/
   }
-  return dwNewLong->vfptr1 == 1; /*0x6316ec*/
+  return dwNewLong->ptr_1 == 1; /*0x6316ec*/
 
 }
 }
@@ -17318,7 +17318,7 @@ void Gap2Recv_6319C0::Network_Set() {
   }
   else
   {
-    *(unsigned int *)this->vfptr2 = 0; /*0x631ac3*/
+    *(unsigned int *)this->ptr_2 = 0; /*0x631ac3*/
     *((unsigned int *)this->vfptr2 + 1) = -1; /*0x631acc*/
     *((unsigned int *)this->vfptr2 + 2) = -1; /*0x631ad2*/
     *((unsigned int *)this->vfptr2 + 3) = 0; /*0x631ad8*/
@@ -18179,10 +18179,10 @@ char Gap2Recv_641B00::LoadMapPreviewImage(void* a2) {
   INIClass *v24; // [esp+80h] [ebp+4h]
 
   INIClass::ResetSection((INIClass *)a2); /*0x641b0f*/
-  if ( this->vfptr ) /*0x641b14*/
+  if ( this->ptr_0 ) /*0x641b14*/
   {
-    (**(void (***)(void *, int))this->vfptr)(this->vfptr, 1); /*0x641b20*/
-    this->vfptr = 0; /*0x641b22*/
+    (**(void (***)(void *, int))this->ptr_0)(this->ptr_0, 1); /*0x641b20*/
+    this->ptr_0 = 0; /*0x641b22*/
   }
   v3 = INIClass::ParseValue( /*0x641b3c*/
          (INIClass *)a2,
@@ -18601,15 +18601,15 @@ int Gap2Recv_64A7B0::RenderPlayerLatencyBars() {
 // 0x652540
 namespace gamemd { 
 int Gap2Recv_652540::Network_Process_652540() {
-  char *vtable0; // eax
+  char *pVal; // eax
 
-  vtable0 = (char *)this->vfptr; /*0x652540*/
-  if ( this->vfptr ) /*0x652540*/
+  pVal = (char *)this->ptr_0; /*0x652540*/
+  if ( this->ptr_0 ) /*0x652540*/
   {
-    this->vfptr1 = (void *)(((uint8_t)this->vfptr1 + 1) & 0x7F); /*0x65254e*/
-    this->vfptr = vtable0 - 1; /*0x652551*/
+    this->ptr_1 = (void *)(((uint8_t)this->ptr_1 + 1) & 0x7F); /*0x65254e*/
+    this->ptr_0 = pVal - 1; /*0x652551*/
   }
-  return (int)this->vfptr; /*0x652555*/
+  return (int)this->ptr_0; /*0x652555*/
 }
 }
 // 0x652560
@@ -18661,7 +18661,7 @@ char Gap2Recv_6525A0::Network_Process_6525A0(int a2) {
   __3_YAXPAX_Z(*(void **)this); /*0x6525fb*/
   v7 = a2 + this->vtable3; /*0x652606*/
   *(unsigned int *)this = v3; /*0x652608*/
-  this->vtable3 = v7; /*0x65260a*/
+  this->ptr_3 = v7; /*0x65260a*/
   this->uniqueId = 0; /*0x65260d*/
   return 1; /*0x652614*/
 
@@ -19527,9 +19527,9 @@ namespace gamemd {
 void* Gap2Recv_65A1B0::Render_Render_65A1B0(BuildingTypeClass * aP1) {
   if ( aP1 ) /*0x65a1b7*/
   {
-    this->vfptr = (void *)((int)this->vfptr / aP1); /*0x65a1be*/
-    this->vfptr1 = (void *)((int)this->vfptr1 / aP1); /*0x65a1c6*/
-    this->vfptr2 = (void *)((int)this->vfptr2 / aP1); /*0x65a1cf*/
+    this->ptr_0 = (void *)((int)this->ptr_0 / aP1); /*0x65a1be*/
+    this->ptr_1 = (void *)((int)this->ptr_1 / aP1); /*0x65a1c6*/
+    this->ptr_2 = (void *)((int)this->ptr_2 / aP1); /*0x65a1cf*/
   }
   return (int *)this; /*0x65a1d4*/
 }
@@ -19597,8 +19597,8 @@ void* Gap2Recv_65C6D0::SeedInitRNG(int aP1) {
   char *v13; // [esp+20h] [ebp-4h]
 
   v2 = 0; /*0x65c6d3*/
-  this->vfptr1 = 0; /*0x65c6da*/
-  this->vfptr2 = 103; /*0x65c6dd*/
+  this->ptr_1 = 0; /*0x65c6da*/
+  this->ptr_2 = 103; /*0x65c6dd*/
   p_vfptr3 = &this->vfptr3; /*0x65c6ea*/
   v11 = 250; /*0x65c6ee*/
   while ( 1 ) /*0x65c6fc*/
@@ -19846,7 +19846,7 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
   unsigned int v28[4]; // [esp+Ch] [ebp-10h] BYREF
   void *v23; // [esp+20h] [ebp+4h]
 
-  this->vfptr = (void *)a2; /*0x65fb8c*/
+  this->ptr_0 = (void *)a2; /*0x65fb8c*/
   this->uniqueId = 1061752795; /*0x65fb8e*/
   v4 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 132); /*0x65fb9b*/
   this->nextArrayIndex = 0; /*0x65fba1*/
@@ -19865,7 +19865,7 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
   _6550C0 = Team_Load_6550C0((ObjectClass *)&DataGlobal_87F7E8, v28, (int16_t *)&aP2); /*0x65fbff*/
   v9 = *_6550C0; /*0x65fc04*/
   v10 = (void *)(_6550C0[1] - v7); /*0x65fc0b*/
-  this->vfptr1 = (void *)(v9 - v6); /*0x65fc0d*/
+  this->ptr_1 = (void *)(v9 - v6); /*0x65fc0d*/
   this->v10 = v10; /*0x65fc10*/
   vtable1 = this->vfptr1; /*0x65fc13*/
   v12 = v10; /*0x65fc1c*/
@@ -19921,7 +19921,7 @@ void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, IUnknown * aP2) {
     v20 = g_TriggerEventState++; /*0x65fcdb*/
     *(unsigned int *)(g_TriggerPool + 4 * v20) = this; /*0x65fcea*/
   }
-  return &this->vfptr; /*0x65fcef*/
+  return &this->ptr_0; /*0x65fcef*/
 }
 }
 // 0x65FE00
@@ -20418,13 +20418,13 @@ void* Gap2Recv_660BB0::UI_Create_734120_Create() {
   result = (int *)this; /*0x660bb0*/
   if ( dword_B04D88 == -1 ) /*0x660bbb*/
   {
-    this->vfptr = (void *)dword_B04D68; /*0x660bc3*/
+    this->ptr_0 = (void *)dword_B04D68; /*0x660bc3*/
   }
   else
   {
     v2 = (void *)dword_B04D48[dword_B04D88]; /*0x660bc6*/
     dword_B04DD8 = dword_B04D88; /*0x660bcd*/
-    this->vfptr = v2; /*0x660bd3*/
+    this->ptr_0 = v2; /*0x660bd3*/
   }
   return result; /*0x660bc5*/
 }
@@ -20440,7 +20440,7 @@ void* Gap2Recv_660BE0::UI_Create_734120_Create_660BE0() {
   result = (int *)this; /*0x660bea*/
   if ( dword_B04D88 == -1 )
   {
-    this->vfptr = (void *)dword_B04D68; /*0x660bf5*/
+    this->ptr_0 = (void *)dword_B04D68; /*0x660bf5*/
   }
   else
   {
@@ -20488,7 +20488,7 @@ void* Gap2Recv_661770::SHA1TickRNG(Straw * aP1) {
     *v4 ^= 1 << (vtable3 & 7); /*0x6617a3*/
   }
   result = (char *)this->vfptr3 + 1; /*0x6617a9*/
-  this->vfptr3 = result; /*0x6617ab*/
+  this->ptr_3 = result; /*0x6617ab*/
   if ( result == 2048 ) /*0x6617b3*/
   {
     p_abstractFlags = &this->abstractFlags; /*0x6617bc*/
@@ -22114,15 +22114,15 @@ void* Gap2Recv_67BFA0::System_Load_67BFA0(void* a2) {
     return &this->vfptr; /*0x67bfaa*/
   (*((void (**)(ObjectClass *))this->vfptr + 3))(this); /*0x67bfae*/
   v3 = (void *)a2[2]; /*0x67bfb1*/
-  this->vfptr2 = v3; /*0x67bfb6*/
+  this->ptr_2 = v3; /*0x67bfb6*/
   if ( !v3 ) /*0x67bfb9*/
   {
-    this->vfptr1 = 0; /*0x67bffa*/
+    this->ptr_1 = 0; /*0x67bffa*/
     (this->u8_E) = 0; /*0x67c001*/
     return &this->vfptr; /*0x67c005*/
   }
   v4 = operator new(4 * (unsigned int)v3); /*0x67bfc3*/
-  this->vfptr1 = v4; /*0x67bfcb*/
+  this->ptr_1 = v4; /*0x67bfcb*/
   if ( !v4 ) /*0x67bfd0*/
     return &this->vfptr; /*0x67bfd0*/
   vtable2 = this->vfptr2; /*0x67bfd2*/
@@ -22143,7 +22143,7 @@ void* Gap2Recv_67BFA0::System_Load_67BFA0(void* a2) {
 namespace gamemd { 
 int Gap2Recv_681060::Map_Save(int a2) {
 
-  this->vfptr1 = (void *)a2; /*0x681064*/
+  this->ptr_1 = (void *)a2; /*0x681064*/
   return a2; /*0x681067*/
 
 }
@@ -22152,7 +22152,7 @@ int Gap2Recv_681060::Map_Save(int a2) {
 namespace gamemd { 
 int Gap2Recv_681080::Map_Save_681080(int a2) {
 
-  this->vfptr = (void *)a2; /*0x681084*/
+  this->ptr_0 = (void *)a2; /*0x681084*/
   return a2; /*0x681086*/
 
 }
@@ -23706,18 +23706,18 @@ int Gap2Recv_697F10::ReadGameSettingsINI(CCINIClass * aP1, int a1, unsigned int 
   First = MultiplayerGameMode::GetFirst(); /*0x697f24*/
   uint8_t *v8; // ebp
   v8 = (uint8_t *)a1; /*0x697f2c*/
-  this->vfptr = (void *)INIClass::ReadInt_Overwrite( /*0x697f48*/
+  this->ptr_0 = (void *)INIClass::ReadInt_Overwrite( /*0x697f48*/
                           (bool *)v5->__pad_000,
                           (uint8_t *)a1,
                           (uint8_t *)g_INI_Key_GameMode,
                           *(unsigned int *)(First + 40));
-  this->vfptr1 = (void *)INIClass::ReadInt_Overwrite((bool *)v5->__pad_000, v8, (uint8_t *)aScenindex, 0); /*0x697f4f*/
-  this->vfptr2 = (void *)INIClass::ReadInt_Overwrite( /*0x697f6b*/
+  this->ptr_1 = (void *)INIClass::ReadInt_Overwrite((bool *)v5->__pad_000, v8, (uint8_t *)aScenindex, 0); /*0x697f4f*/
+  this->ptr_2 = (void *)INIClass::ReadInt_Overwrite( /*0x697f6b*/
                            (bool *)v5->__pad_000,
                            v8,
                            (uint8_t *)g_INI_Key_GameSpeed,
                            *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5280));
-  this->vfptr3 = (void *)INIClass::ReadInt_Overwrite( /*0x697f88*/
+  this->ptr_3 = (void *)INIClass::ReadInt_Overwrite( /*0x697f88*/
                            (bool *)v5->__pad_000,
                            v8,
                            (uint8_t *)g_INI_Key_Credits,
@@ -23859,7 +23859,7 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
   VectorClass v33; // [esp+30h] [ebp-18h] BYREF
 
   bool v1; // zf
-  v1 = this->vfptr == 4; /*0x69b176*/
+  v1 = this->ptr_0 == 4; /*0x69b176*/
   this->M1672 = 0; /*0x69b17d*/
   if ( v1 ) /*0x69b184*/
   {
@@ -24090,7 +24090,7 @@ int ObjectClass::LoadSHPFile(int lpBuffer, char* Source) {
   v3 = _strdup(Source); /*0x69e44f*/
   lpBuffer->v3 = v3; /*0x69e45d*/
   (lpBuffer->u32_10) = 0; /*0x69e461*/
-  lpBuffer->vfptr3 = 0; /*0x69e464*/
+  lpBuffer->ptr_3 = 0; /*0x69e464*/
   (*(lpBuffer->u8_2 + 1)) = 0; /*0x69e467*/
   (lpBuffer->u32_4) = 0; /*0x69e46b*/
   (*(lpBuffer->u16_6 + 1)) = 0; /*0x69e46f*/
@@ -24390,24 +24390,24 @@ void Gap2Recv_6BAFA0::Render_Load_6BAFA0() {
 
   if ( (this->abstractFlags) != 1 ) /*0x6bafa8*/
   {
-    int vtable2; // esi
-    vtable2 = (int)this->vfptr2; /*0x6bafb0*/
+    int pN; // esi
+    pN = (int)this->vfptr2; /*0x6bafb0*/
     unsigned int *vtable0 = this->v5; // ebp /*0x6bafb3*/
     char *v4; // edi
     v4 = (char *)this->v4 + 1; /*0x6bafbc*/
-    this->vfptr2 = (void *)(2 * vtable2); /*0x6bafbd*/
+    this->ptr_2 = (void *)(2 * pN); /*0x6bafbd*/
     vtable0 = vtable0; /*0x6bafc0*/
     this->v4 = v4; /*0x6bafc8*/
     void *v5; // edi
-    v5 = (void *)operator new(8 * vtable2); /*0x6bafd3*/
+    v5 = (void *)operator new(8 * pN); /*0x6bafd3*/
     unsigned int v6; // edx
     v6 = 4 * (int)this->vfptr2; /*0x6bafd8*/
     this->v5 = v5; /*0x6bafdf*/
     memset(v5, 0, v6); /*0x6bafe4*/
-    if ( vtable2 > 0 ) /*0x6bafef*/
+    if ( pN > 0 ) /*0x6bafef*/
     {
       int *v7 = vtable0; // edi /*0x6baff1*/
-      int v8 = vtable2; // ebp /*0x6baff3*/
+      int v8 = pN; // ebp /*0x6baff3*/
       do /*0x6bb02d*/
       {
         int v9 = *v7; // esi /*0x6baff5*/
@@ -24498,7 +24498,7 @@ int Gap2Recv_6BB990::TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4
 // 0x6BFD40
 namespace gamemd { 
 void* Gap2Recv_6BFD40::WinMain_Helper_6BFD40() {
-  this->vfptr1 = 0; /*0x6bfd42*/
+  this->ptr_1 = 0; /*0x6bfd42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6bfd49) */
   return &this->vfptr; /*0x6bfd4f*/
 }
@@ -24506,7 +24506,7 @@ void* Gap2Recv_6BFD40::WinMain_Helper_6BFD40() {
 // 0x6BFEC0
 namespace gamemd { 
 void* Gap2Recv_6BFEC0::WinMain_Helper_6BFEC0() {
-  this->vfptr1 = 0; /*0x6bfec2*/
+  this->ptr_1 = 0; /*0x6bfec2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6bfec9) */
   return &this->vfptr; /*0x6bfecf*/
 }
@@ -24514,7 +24514,7 @@ void* Gap2Recv_6BFEC0::WinMain_Helper_6BFEC0() {
 // 0x6C0040
 namespace gamemd { 
 void* Gap2Recv_6C0040::WinMain_Helper_6C0040() {
-  this->vfptr1 = 0; /*0x6c0042*/
+  this->ptr_1 = 0; /*0x6c0042*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0049) */
   return &this->vfptr; /*0x6c004f*/
 }
@@ -24522,7 +24522,7 @@ void* Gap2Recv_6C0040::WinMain_Helper_6C0040() {
 // 0x6C01C0
 namespace gamemd { 
 void* Gap2Recv_6C01C0::WinMain_Helper_6C01C0() {
-  this->vfptr1 = 0; /*0x6c01c2*/
+  this->ptr_1 = 0; /*0x6c01c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c01c9) */
   return &this->vfptr; /*0x6c01cf*/
 }
@@ -24530,7 +24530,7 @@ void* Gap2Recv_6C01C0::WinMain_Helper_6C01C0() {
 // 0x6C0340
 namespace gamemd { 
 void* Gap2Recv_6C0340::WinMain_Helper_6C0340() {
-  this->vfptr1 = 0; /*0x6c0342*/
+  this->ptr_1 = 0; /*0x6c0342*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0349) */
   return &this->vfptr; /*0x6c034f*/
 }
@@ -24538,7 +24538,7 @@ void* Gap2Recv_6C0340::WinMain_Helper_6C0340() {
 // 0x6C04C0
 namespace gamemd { 
 void* Gap2Recv_6C04C0::WinMain_Helper_6C04C0() {
-  this->vfptr1 = 0; /*0x6c04c2*/
+  this->ptr_1 = 0; /*0x6c04c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c04c9) */
   return &this->vfptr; /*0x6c04cf*/
 }
@@ -24546,7 +24546,7 @@ void* Gap2Recv_6C04C0::WinMain_Helper_6C04C0() {
 // 0x6C0640
 namespace gamemd { 
 void* Gap2Recv_6C0640::WinMain_Helper_6C0640() {
-  this->vfptr1 = 0; /*0x6c0642*/
+  this->ptr_1 = 0; /*0x6c0642*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0649) */
   return &this->vfptr; /*0x6c064f*/
 }
@@ -24554,7 +24554,7 @@ void* Gap2Recv_6C0640::WinMain_Helper_6C0640() {
 // 0x6C07C0
 namespace gamemd { 
 void* Gap2Recv_6C07C0::WinMain_Helper_6C07C0() {
-  this->vfptr1 = 0; /*0x6c07c2*/
+  this->ptr_1 = 0; /*0x6c07c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c07c9) */
   return &this->vfptr; /*0x6c07cf*/
 }
@@ -24562,7 +24562,7 @@ void* Gap2Recv_6C07C0::WinMain_Helper_6C07C0() {
 // 0x6C0940
 namespace gamemd { 
 void* Gap2Recv_6C0940::WinMain_Helper_6C0940() {
-  this->vfptr1 = 0; /*0x6c0942*/
+  this->ptr_1 = 0; /*0x6c0942*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0949) */
   return &this->vfptr; /*0x6c094f*/
 }
@@ -24570,7 +24570,7 @@ void* Gap2Recv_6C0940::WinMain_Helper_6C0940() {
 // 0x6C0C40
 namespace gamemd { 
 void* Gap2Recv_6C0C40::WinMain_Helper_6C0C40() {
-  this->vfptr1 = 0; /*0x6c0c42*/
+  this->ptr_1 = 0; /*0x6c0c42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0c49) */
   return &this->vfptr; /*0x6c0c4f*/
 }
@@ -24578,7 +24578,7 @@ void* Gap2Recv_6C0C40::WinMain_Helper_6C0C40() {
 // 0x6C0DC0
 namespace gamemd { 
 void* Gap2Recv_6C0DC0::WinMain_Helper_6C0DC0() {
-  this->vfptr1 = 0; /*0x6c0dc2*/
+  this->ptr_1 = 0; /*0x6c0dc2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0dc9) */
   return &this->vfptr; /*0x6c0dcf*/
 }
@@ -24586,7 +24586,7 @@ void* Gap2Recv_6C0DC0::WinMain_Helper_6C0DC0() {
 // 0x6C0F40
 namespace gamemd { 
 void* Gap2Recv_6C0F40::WinMain_Helper_6C0F40() {
-  this->vfptr1 = 0; /*0x6c0f42*/
+  this->ptr_1 = 0; /*0x6c0f42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0f49) */
   return &this->vfptr; /*0x6c0f4f*/
 }
@@ -24594,7 +24594,7 @@ void* Gap2Recv_6C0F40::WinMain_Helper_6C0F40() {
 // 0x6C10C0
 namespace gamemd { 
 void* Gap2Recv_6C10C0::WinMain_Helper_6C10C0() {
-  this->vfptr1 = 0; /*0x6c10c2*/
+  this->ptr_1 = 0; /*0x6c10c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c10c9) */
   return &this->vfptr; /*0x6c10cf*/
 }
@@ -24602,7 +24602,7 @@ void* Gap2Recv_6C10C0::WinMain_Helper_6C10C0() {
 // 0x6C1240
 namespace gamemd { 
 void* Gap2Recv_6C1240::WinMain_Helper_6C1240() {
-  this->vfptr1 = 0; /*0x6c1242*/
+  this->ptr_1 = 0; /*0x6c1242*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1249) */
   return &this->vfptr; /*0x6c124f*/
 }
@@ -24610,7 +24610,7 @@ void* Gap2Recv_6C1240::WinMain_Helper_6C1240() {
 // 0x6C13C0
 namespace gamemd { 
 void* Gap2Recv_6C13C0::WinMain_Helper_6C13C0() {
-  this->vfptr1 = 0; /*0x6c13c2*/
+  this->ptr_1 = 0; /*0x6c13c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c13c9) */
   return &this->vfptr; /*0x6c13cf*/
 }
@@ -24618,7 +24618,7 @@ void* Gap2Recv_6C13C0::WinMain_Helper_6C13C0() {
 // 0x6C1540
 namespace gamemd { 
 void* Gap2Recv_6C1540::WinMain_Helper_6C1540() {
-  this->vfptr1 = 0; /*0x6c1542*/
+  this->ptr_1 = 0; /*0x6c1542*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1549) */
   return &this->vfptr; /*0x6c154f*/
 }
@@ -24626,7 +24626,7 @@ void* Gap2Recv_6C1540::WinMain_Helper_6C1540() {
 // 0x6C16C0
 namespace gamemd { 
 void* Gap2Recv_6C16C0::WinMain_Helper_6C16C0() {
-  this->vfptr1 = 0; /*0x6c16c2*/
+  this->ptr_1 = 0; /*0x6c16c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c16c9) */
   return &this->vfptr; /*0x6c16cf*/
 }
@@ -24634,7 +24634,7 @@ void* Gap2Recv_6C16C0::WinMain_Helper_6C16C0() {
 // 0x6C1840
 namespace gamemd { 
 void* Gap2Recv_6C1840::WinMain_Helper_6C1840() {
-  this->vfptr1 = 0; /*0x6c1842*/
+  this->ptr_1 = 0; /*0x6c1842*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1849) */
   return &this->vfptr; /*0x6c184f*/
 }
@@ -24642,7 +24642,7 @@ void* Gap2Recv_6C1840::WinMain_Helper_6C1840() {
 // 0x6C19C0
 namespace gamemd { 
 void* Gap2Recv_6C19C0::WinMain_Helper_6C19C0() {
-  this->vfptr1 = 0; /*0x6c19c2*/
+  this->ptr_1 = 0; /*0x6c19c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c19c9) */
   return &this->vfptr; /*0x6c19cf*/
 }
@@ -24650,7 +24650,7 @@ void* Gap2Recv_6C19C0::WinMain_Helper_6C19C0() {
 // 0x6C1B40
 namespace gamemd { 
 void* Gap2Recv_6C1B40::WinMain_Helper_6C1B40() {
-  this->vfptr1 = 0; /*0x6c1b42*/
+  this->ptr_1 = 0; /*0x6c1b42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1b49) */
   return &this->vfptr; /*0x6c1b4f*/
 }
@@ -24658,7 +24658,7 @@ void* Gap2Recv_6C1B40::WinMain_Helper_6C1B40() {
 // 0x6C1CC0
 namespace gamemd { 
 void* Gap2Recv_6C1CC0::WinMain_Helper_6C1CC0() {
-  this->vfptr1 = 0; /*0x6c1cc2*/
+  this->ptr_1 = 0; /*0x6c1cc2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1cc9) */
   return &this->vfptr; /*0x6c1ccf*/
 }
@@ -24666,7 +24666,7 @@ void* Gap2Recv_6C1CC0::WinMain_Helper_6C1CC0() {
 // 0x6C1E40
 namespace gamemd { 
 void* Gap2Recv_6C1E40::WinMain_Helper_6C1E40() {
-  this->vfptr1 = 0; /*0x6c1e42*/
+  this->ptr_1 = 0; /*0x6c1e42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1e49) */
   return &this->vfptr; /*0x6c1e4f*/
 }
@@ -24674,7 +24674,7 @@ void* Gap2Recv_6C1E40::WinMain_Helper_6C1E40() {
 // 0x6C1FC0
 namespace gamemd { 
 void* Gap2Recv_6C1FC0::WinMain_Helper_6C1FC0() {
-  this->vfptr1 = 0; /*0x6c1fc2*/
+  this->ptr_1 = 0; /*0x6c1fc2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1fc9) */
   return &this->vfptr; /*0x6c1fcf*/
 }
@@ -24682,7 +24682,7 @@ void* Gap2Recv_6C1FC0::WinMain_Helper_6C1FC0() {
 // 0x6C2140
 namespace gamemd { 
 void* Gap2Recv_6C2140::WinMain_Helper_6C2140() {
-  this->vfptr1 = 0; /*0x6c2142*/
+  this->ptr_1 = 0; /*0x6c2142*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2149) */
   return &this->vfptr; /*0x6c214f*/
 }
@@ -24690,7 +24690,7 @@ void* Gap2Recv_6C2140::WinMain_Helper_6C2140() {
 // 0x6C22C0
 namespace gamemd { 
 void* Gap2Recv_6C22C0::WinMain_Helper_6C22C0() {
-  this->vfptr1 = 0; /*0x6c22c2*/
+  this->ptr_1 = 0; /*0x6c22c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c22c9) */
   return &this->vfptr; /*0x6c22cf*/
 }
@@ -24698,7 +24698,7 @@ void* Gap2Recv_6C22C0::WinMain_Helper_6C22C0() {
 // 0x6C2440
 namespace gamemd { 
 void* Gap2Recv_6C2440::WinMain_Helper_6C2440() {
-  this->vfptr1 = 0; /*0x6c2442*/
+  this->ptr_1 = 0; /*0x6c2442*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2449) */
   return &this->vfptr; /*0x6c244f*/
 }
@@ -24706,7 +24706,7 @@ void* Gap2Recv_6C2440::WinMain_Helper_6C2440() {
 // 0x6C25C0
 namespace gamemd { 
 void* Gap2Recv_6C25C0::WinMain_Helper_6C25C0() {
-  this->vfptr1 = 0; /*0x6c25c2*/
+  this->ptr_1 = 0; /*0x6c25c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c25c9) */
   return &this->vfptr; /*0x6c25cf*/
 }
@@ -24714,7 +24714,7 @@ void* Gap2Recv_6C25C0::WinMain_Helper_6C25C0() {
 // 0x6C2740
 namespace gamemd { 
 void* Gap2Recv_6C2740::WinMain_Helper_6C2740() {
-  this->vfptr1 = 0; /*0x6c2742*/
+  this->ptr_1 = 0; /*0x6c2742*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2749) */
   return &this->vfptr; /*0x6c274f*/
 }
@@ -24722,7 +24722,7 @@ void* Gap2Recv_6C2740::WinMain_Helper_6C2740() {
 // 0x6C28C0
 namespace gamemd { 
 void* Gap2Recv_6C28C0::WinMain_Helper_6C28C0() {
-  this->vfptr1 = 0; /*0x6c28c2*/
+  this->ptr_1 = 0; /*0x6c28c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c28c9) */
   return &this->vfptr; /*0x6c28cf*/
 }
@@ -24730,7 +24730,7 @@ void* Gap2Recv_6C28C0::WinMain_Helper_6C28C0() {
 // 0x6C2A40
 namespace gamemd { 
 void* Gap2Recv_6C2A40::WinMain_Helper_6C2A40() {
-  this->vfptr1 = 0; /*0x6c2a42*/
+  this->ptr_1 = 0; /*0x6c2a42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2a49) */
   return &this->vfptr; /*0x6c2a4f*/
 }
@@ -24738,7 +24738,7 @@ void* Gap2Recv_6C2A40::WinMain_Helper_6C2A40() {
 // 0x6C2BC0
 namespace gamemd { 
 void* Gap2Recv_6C2BC0::WinMain_Helper_6C2BC0() {
-  this->vfptr1 = 0; /*0x6c2bc2*/
+  this->ptr_1 = 0; /*0x6c2bc2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2bc9) */
   return &this->vfptr; /*0x6c2bcf*/
 }
@@ -24746,7 +24746,7 @@ void* Gap2Recv_6C2BC0::WinMain_Helper_6C2BC0() {
 // 0x6C2D40
 namespace gamemd { 
 void* Gap2Recv_6C2D40::WinMain_Helper_6C2D40() {
-  this->vfptr1 = 0; /*0x6c2d42*/
+  this->ptr_1 = 0; /*0x6c2d42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2d49) */
   return &this->vfptr; /*0x6c2d4f*/
 }
@@ -24754,7 +24754,7 @@ void* Gap2Recv_6C2D40::WinMain_Helper_6C2D40() {
 // 0x6C2EC0
 namespace gamemd { 
 void* Gap2Recv_6C2EC0::WinMain_Helper_6C2EC0() {
-  this->vfptr1 = 0; /*0x6c2ec2*/
+  this->ptr_1 = 0; /*0x6c2ec2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2ec9) */
   return &this->vfptr; /*0x6c2ecf*/
 }
@@ -24762,7 +24762,7 @@ void* Gap2Recv_6C2EC0::WinMain_Helper_6C2EC0() {
 // 0x6C3040
 namespace gamemd { 
 void* Gap2Recv_6C3040::WinMain_Helper_6C3040() {
-  this->vfptr1 = 0; /*0x6c3042*/
+  this->ptr_1 = 0; /*0x6c3042*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3049) */
   return &this->vfptr; /*0x6c304f*/
 }
@@ -24770,7 +24770,7 @@ void* Gap2Recv_6C3040::WinMain_Helper_6C3040() {
 // 0x6C31C0
 namespace gamemd { 
 void* Gap2Recv_6C31C0::WinMain_Helper_6C31C0() {
-  this->vfptr1 = 0; /*0x6c31c2*/
+  this->ptr_1 = 0; /*0x6c31c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c31c9) */
   return &this->vfptr; /*0x6c31cf*/
 }
@@ -24778,7 +24778,7 @@ void* Gap2Recv_6C31C0::WinMain_Helper_6C31C0() {
 // 0x6C3340
 namespace gamemd { 
 void* Gap2Recv_6C3340::WinMain_Helper_6C3340() {
-  this->vfptr1 = 0; /*0x6c3342*/
+  this->ptr_1 = 0; /*0x6c3342*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3349) */
   return &this->vfptr; /*0x6c334f*/
 }
@@ -24786,7 +24786,7 @@ void* Gap2Recv_6C3340::WinMain_Helper_6C3340() {
 // 0x6C34C0
 namespace gamemd { 
 void* Gap2Recv_6C34C0::WinMain_Helper_6C34C0() {
-  this->vfptr1 = 0; /*0x6c34c2*/
+  this->ptr_1 = 0; /*0x6c34c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c34c9) */
   return &this->vfptr; /*0x6c34cf*/
 }
@@ -24794,7 +24794,7 @@ void* Gap2Recv_6C34C0::WinMain_Helper_6C34C0() {
 // 0x6C3640
 namespace gamemd { 
 void* Gap2Recv_6C3640::WinMain_Helper_6C3640() {
-  this->vfptr1 = 0; /*0x6c3642*/
+  this->ptr_1 = 0; /*0x6c3642*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3649) */
   return &this->vfptr; /*0x6c364f*/
 }
@@ -24802,7 +24802,7 @@ void* Gap2Recv_6C3640::WinMain_Helper_6C3640() {
 // 0x6C37C0
 namespace gamemd { 
 void* Gap2Recv_6C37C0::WinMain_Helper_6C37C0() {
-  this->vfptr1 = 0; /*0x6c37c2*/
+  this->ptr_1 = 0; /*0x6c37c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c37c9) */
   return &this->vfptr; /*0x6c37cf*/
 }
@@ -24810,7 +24810,7 @@ void* Gap2Recv_6C37C0::WinMain_Helper_6C37C0() {
 // 0x6C3940
 namespace gamemd { 
 void* Gap2Recv_6C3940::WinMain_Helper_6C3940() {
-  this->vfptr1 = 0; /*0x6c3942*/
+  this->ptr_1 = 0; /*0x6c3942*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3949) */
   return &this->vfptr; /*0x6c394f*/
 }
@@ -24818,7 +24818,7 @@ void* Gap2Recv_6C3940::WinMain_Helper_6C3940() {
 // 0x6C3AC0
 namespace gamemd { 
 void* Gap2Recv_6C3AC0::WinMain_Helper_6C3AC0() {
-  this->vfptr1 = 0; /*0x6c3ac2*/
+  this->ptr_1 = 0; /*0x6c3ac2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3ac9) */
   return &this->vfptr; /*0x6c3acf*/
 }
@@ -24826,7 +24826,7 @@ void* Gap2Recv_6C3AC0::WinMain_Helper_6C3AC0() {
 // 0x6C3C40
 namespace gamemd { 
 void* Gap2Recv_6C3C40::WinMain_Helper_6C3C40() {
-  this->vfptr1 = 0; /*0x6c3c42*/
+  this->ptr_1 = 0; /*0x6c3c42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3c49) */
   return &this->vfptr; /*0x6c3c4f*/
 }
@@ -24834,7 +24834,7 @@ void* Gap2Recv_6C3C40::WinMain_Helper_6C3C40() {
 // 0x6C3DC0
 namespace gamemd { 
 void* Gap2Recv_6C3DC0::WinMain_Helper_6C3DC0() {
-  this->vfptr1 = 0; /*0x6c3dc2*/
+  this->ptr_1 = 0; /*0x6c3dc2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3dc9) */
   return &this->vfptr; /*0x6c3dcf*/
 }
@@ -24842,7 +24842,7 @@ void* Gap2Recv_6C3DC0::WinMain_Helper_6C3DC0() {
 // 0x6C3F40
 namespace gamemd { 
 void* Gap2Recv_6C3F40::WinMain_Helper_6C3F40() {
-  this->vfptr1 = 0; /*0x6c3f42*/
+  this->ptr_1 = 0; /*0x6c3f42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3f49) */
   return &this->vfptr; /*0x6c3f4f*/
 }
@@ -24850,7 +24850,7 @@ void* Gap2Recv_6C3F40::WinMain_Helper_6C3F40() {
 // 0x6C40C0
 namespace gamemd { 
 void* Gap2Recv_6C40C0::WinMain_Helper_6C40C0() {
-  this->vfptr1 = 0; /*0x6c40c2*/
+  this->ptr_1 = 0; /*0x6c40c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c40c9) */
   return &this->vfptr; /*0x6c40cf*/
 }
@@ -24858,7 +24858,7 @@ void* Gap2Recv_6C40C0::WinMain_Helper_6C40C0() {
 // 0x6C4240
 namespace gamemd { 
 void* Gap2Recv_6C4240::WinMain_Helper_6C4240() {
-  this->vfptr1 = 0; /*0x6c4242*/
+  this->ptr_1 = 0; /*0x6c4242*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4249) */
   return &this->vfptr; /*0x6c424f*/
 }
@@ -24866,7 +24866,7 @@ void* Gap2Recv_6C4240::WinMain_Helper_6C4240() {
 // 0x6C43C0
 namespace gamemd { 
 void* Gap2Recv_6C43C0::WinMain_Helper_6C43C0() {
-  this->vfptr1 = 0; /*0x6c43c2*/
+  this->ptr_1 = 0; /*0x6c43c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c43c9) */
   return &this->vfptr; /*0x6c43cf*/
 }
@@ -24874,7 +24874,7 @@ void* Gap2Recv_6C43C0::WinMain_Helper_6C43C0() {
 // 0x6C4540
 namespace gamemd { 
 void* Gap2Recv_6C4540::WinMain_Helper_6C4540() {
-  this->vfptr1 = 0; /*0x6c4542*/
+  this->ptr_1 = 0; /*0x6c4542*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4549) */
   return &this->vfptr; /*0x6c454f*/
 }
@@ -24882,7 +24882,7 @@ void* Gap2Recv_6C4540::WinMain_Helper_6C4540() {
 // 0x6C46C0
 namespace gamemd { 
 void* Gap2Recv_6C46C0::WinMain_Helper_6C46C0() {
-  this->vfptr1 = 0; /*0x6c46c2*/
+  this->ptr_1 = 0; /*0x6c46c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c46c9) */
   return &this->vfptr; /*0x6c46cf*/
 }
@@ -24890,7 +24890,7 @@ void* Gap2Recv_6C46C0::WinMain_Helper_6C46C0() {
 // 0x6C4840
 namespace gamemd { 
 void* Gap2Recv_6C4840::WinMain_Helper_6C4840() {
-  this->vfptr1 = 0; /*0x6c4842*/
+  this->ptr_1 = 0; /*0x6c4842*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4849) */
   return &this->vfptr; /*0x6c484f*/
 }
@@ -24898,7 +24898,7 @@ void* Gap2Recv_6C4840::WinMain_Helper_6C4840() {
 // 0x6C49C0
 namespace gamemd { 
 void* Gap2Recv_6C49C0::WinMain_Helper_6C49C0() {
-  this->vfptr1 = 0; /*0x6c49c2*/
+  this->ptr_1 = 0; /*0x6c49c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c49c9) */
   return &this->vfptr; /*0x6c49cf*/
 }
@@ -24906,7 +24906,7 @@ void* Gap2Recv_6C49C0::WinMain_Helper_6C49C0() {
 // 0x6C4B40
 namespace gamemd { 
 void* Gap2Recv_6C4B40::WinMain_Helper_6C4B40() {
-  this->vfptr1 = 0; /*0x6c4b42*/
+  this->ptr_1 = 0; /*0x6c4b42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4b49) */
   return &this->vfptr; /*0x6c4b4f*/
 }
@@ -24914,7 +24914,7 @@ void* Gap2Recv_6C4B40::WinMain_Helper_6C4B40() {
 // 0x6C4CC0
 namespace gamemd { 
 void* Gap2Recv_6C4CC0::WinMain_Helper_6C4CC0() {
-  this->vfptr1 = 0; /*0x6c4cc2*/
+  this->ptr_1 = 0; /*0x6c4cc2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4cc9) */
   return &this->vfptr; /*0x6c4ccf*/
 }
@@ -24922,7 +24922,7 @@ void* Gap2Recv_6C4CC0::WinMain_Helper_6C4CC0() {
 // 0x6C4E40
 namespace gamemd { 
 void* Gap2Recv_6C4E40::WinMain_Helper_6C4E40() {
-  this->vfptr1 = 0; /*0x6c4e42*/
+  this->ptr_1 = 0; /*0x6c4e42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4e49) */
   return &this->vfptr; /*0x6c4e4f*/
 }
@@ -24930,7 +24930,7 @@ void* Gap2Recv_6C4E40::WinMain_Helper_6C4E40() {
 // 0x6C4FC0
 namespace gamemd { 
 void* Gap2Recv_6C4FC0::WinMain_Helper_6C4FC0() {
-  this->vfptr1 = 0; /*0x6c4fc2*/
+  this->ptr_1 = 0; /*0x6c4fc2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4fc9) */
   return &this->vfptr; /*0x6c4fcf*/
 }
@@ -24938,7 +24938,7 @@ void* Gap2Recv_6C4FC0::WinMain_Helper_6C4FC0() {
 // 0x6C5140
 namespace gamemd { 
 void* Gap2Recv_6C5140::WinMain_Helper_6C5140() {
-  this->vfptr1 = 0; /*0x6c5142*/
+  this->ptr_1 = 0; /*0x6c5142*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5149) */
   return &this->vfptr; /*0x6c514f*/
 }
@@ -24946,7 +24946,7 @@ void* Gap2Recv_6C5140::WinMain_Helper_6C5140() {
 // 0x6C52C0
 namespace gamemd { 
 void* Gap2Recv_6C52C0::WinMain_Helper_6C52C0() {
-  this->vfptr1 = 0; /*0x6c52c2*/
+  this->ptr_1 = 0; /*0x6c52c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c52c9) */
   return &this->vfptr; /*0x6c52cf*/
 }
@@ -24954,7 +24954,7 @@ void* Gap2Recv_6C52C0::WinMain_Helper_6C52C0() {
 // 0x6C5440
 namespace gamemd { 
 void* Gap2Recv_6C5440::WinMain_Helper_6C5440() {
-  this->vfptr1 = 0; /*0x6c5442*/
+  this->ptr_1 = 0; /*0x6c5442*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5449) */
   return &this->vfptr; /*0x6c544f*/
 }
@@ -24962,7 +24962,7 @@ void* Gap2Recv_6C5440::WinMain_Helper_6C5440() {
 // 0x6C55C0
 namespace gamemd { 
 void* Gap2Recv_6C55C0::WinMain_Helper_6C55C0() {
-  this->vfptr1 = 0; /*0x6c55c2*/
+  this->ptr_1 = 0; /*0x6c55c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c55c9) */
   return &this->vfptr; /*0x6c55cf*/
 }
@@ -24970,7 +24970,7 @@ void* Gap2Recv_6C55C0::WinMain_Helper_6C55C0() {
 // 0x6C5740
 namespace gamemd { 
 void* Gap2Recv_6C5740::WinMain_Helper_6C5740() {
-  this->vfptr1 = 0; /*0x6c5742*/
+  this->ptr_1 = 0; /*0x6c5742*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5749) */
   return &this->vfptr; /*0x6c574f*/
 }
@@ -24978,7 +24978,7 @@ void* Gap2Recv_6C5740::WinMain_Helper_6C5740() {
 // 0x6C58C0
 namespace gamemd { 
 void* Gap2Recv_6C58C0::WinMain_Helper_6C58C0() {
-  this->vfptr1 = 0; /*0x6c58c2*/
+  this->ptr_1 = 0; /*0x6c58c2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c58c9) */
   return &this->vfptr; /*0x6c58cf*/
 }
@@ -24986,7 +24986,7 @@ void* Gap2Recv_6C58C0::WinMain_Helper_6C58C0() {
 // 0x6C5A40
 namespace gamemd { 
 void* Gap2Recv_6C5A40::WinMain_Helper_6C5A40() {
-  this->vfptr1 = 0; /*0x6c5a42*/
+  this->ptr_1 = 0; /*0x6c5a42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5a49) */
   return &this->vfptr; /*0x6c5a4f*/
 }
@@ -24994,7 +24994,7 @@ void* Gap2Recv_6C5A40::WinMain_Helper_6C5A40() {
 // 0x6C5BC0
 namespace gamemd { 
 void* Gap2Recv_6C5BC0::WinMain_Helper_6C5BC0() {
-  this->vfptr1 = 0; /*0x6c5bc2*/
+  this->ptr_1 = 0; /*0x6c5bc2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5bc9) */
   return &this->vfptr; /*0x6c5bcf*/
 }
@@ -25002,7 +25002,7 @@ void* Gap2Recv_6C5BC0::WinMain_Helper_6C5BC0() {
 // 0x6C5D40
 namespace gamemd { 
 void* Gap2Recv_6C5D40::WinMain_Helper_6C5D40() {
-  this->vfptr1 = 0; /*0x6c5d42*/
+  this->ptr_1 = 0; /*0x6c5d42*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5d49) */
   return &this->vfptr; /*0x6c5d4f*/
 }
@@ -25010,7 +25010,7 @@ void* Gap2Recv_6C5D40::WinMain_Helper_6C5D40() {
 // 0x6C5EC0
 namespace gamemd { 
 void* Gap2Recv_6C5EC0::WinMain_Helper_6C5EC0() {
-  this->vfptr1 = 0; /*0x6c5ec2*/
+  this->ptr_1 = 0; /*0x6c5ec2*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5ec9) */
   return &this->vfptr; /*0x6c5ecf*/
 }
@@ -25018,7 +25018,7 @@ void* Gap2Recv_6C5EC0::WinMain_Helper_6C5EC0() {
 // 0x6C6040
 namespace gamemd { 
 void* Gap2Recv_6C6040::WinMain_Helper_6C6040() {
-  this->vfptr1 = 0; /*0x6c6042*/
+  this->ptr_1 = 0; /*0x6c6042*/
   /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c6049) */
   return &this->vfptr; /*0x6c604f*/
 }
@@ -25041,13 +25041,13 @@ void* Gap2Recv_6C6B00::Audio_Read_6C6B00(AbstractClass * aP1) {
   signed int v3; // ecx
 
   result = &this->vfptr; /*0x6c6b04*/
-  this->vfptr = (void *)*aP1; /*0x6c6b08*/
+  this->ptr_0 = (void *)*aP1; /*0x6c6b08*/
   v3 = aP1[1]; /*0x6c6b0a*/
-  result->vtable2 = v3; /*0x6c6b13*/
+  result->ptr_2 = v3; /*0x6c6b13*/
   if ( v3 <= 0x8000 ) /*0x6c6b16*/
     memcpy(result + 2, aP1 + 2, v3); /*0x6c6b2f*/
   else
-    result->vtable2 = 0; /*0x6c6b18*/
+    result->ptr_2 = 0; /*0x6c6b18*/
   return result; /*0x6c6b1f*/
 }
 }
@@ -25076,21 +25076,21 @@ char Gap2Recv_6C8870::Audio_Read_6C8870() {
   if ( vtable2 ) /*0x6c88c2*/
     memcpy(v6, vtable2, 32776 * (int)this->vfptr); /*0x6c88d9*/
   operator delete((void *)(this->vfptr2)); /*0x6c88e7*/
-  this->vfptr2 = v8; /*0x6c88f3*/
-  this->vfptr1 = (void *)v5; /*0x6c88f6*/
+  this->ptr_2 = v8; /*0x6c88f3*/
+  this->ptr_1 = (void *)v5; /*0x6c88f6*/
   return 1; /*0x6c8882*/
 }
 }
 // 0x6C9900
 namespace gamemd { 
 void* Gap2Recv_6C9900::Render_Parse() {
-  this->vfptr = 0; /*0x6c9902*/
-  this->vfptr1 = (void *)1200; /*0x6c9908*/
-  this->vfptr2 = (void *)0xFFFFFF; /*0x6c990f*/
-  this->vfptr3 = (void *)15; /*0x6c9916*/
+  this->ptr_0 = 0; /*0x6c9902*/
+  this->ptr_1 = (void *)1200; /*0x6c9908*/
+  this->ptr_2 = (void *)0xFFFFFF; /*0x6c990f*/
+  this->ptr_3 = (void *)15; /*0x6c9916*/
   this->uniqueId = 2; /*0x6c991d*/
   this->abstractFlags = 0; /*0x6c9924*/
-  return &this->vfptr; /*0x6c992b*/
+  return &this->ptr_0; /*0x6c992b*/
 }
 }
 // 0x6C9F10
@@ -26563,7 +26563,7 @@ char Gap2Recv_6E0490::PlayWaypointEffect(int a2, int a3, int a4, IUnknown * aP4)
 // 0x6E14A0
 namespace gamemd { 
 char Gap2Recv_6E14A0::ProcessDataObjectClass(int a2, int a3, int a4, int a5) {
-  void **p_vtable3; // eax
+  void **pList; // eax
   int abstractFlags; // edx
   void *vtable3; // esi
   int v8; // edi
@@ -26573,7 +26573,7 @@ char Gap2Recv_6E14A0::ProcessDataObjectClass(int a2, int a3, int a4, int a5) {
   int v12; // ecx
   void *v14; // [esp+10h] [ebp-8h]
 
-  p_vtable3 = &dword_A8B230[127].vfptr3; /*0x6e14a8*/
+  pList = &dword_A8B230[127].ptr_3; /*0x6e14a8*/
   abstractFlags = dword_A8B230[127].abstractFlags; /*0x6e14b4*/
   vtable3 = dword_A8B230[127].vfptr3; /*0x6e14b8*/
   if ( vtable3 != (void *)-1 ) /*0x6e14be*/
@@ -26586,9 +26586,9 @@ char Gap2Recv_6E14A0::ProcessDataObjectClass(int a2, int a3, int a4, int a5) {
   v8 = 15 * *&this->isAliveFlag; /*0x6e14d7*/
   if ( abstractFlags > v8 ) /*0x6e14dc*/
   {
-    v11 = *p_vtable3; /*0x6e14e8*/
+    v11 = *pList; /*0x6e14e8*/
     v12 = dword_A8B230[127].abstractFlags; /*0x6e14ea*/
-    if ( *p_vtable3 != (void *)-1 ) /*0x6e14f0*/
+    if ( *pList != (void *)-1 ) /*0x6e14f0*/
     {
       if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (int)v11 >= v12 ) /*0x6e14f8*/
         v12 = 0; /*0x6e14fe*/
@@ -26597,16 +26597,16 @@ char Gap2Recv_6E14A0::ProcessDataObjectClass(int a2, int a3, int a4, int a5) {
     }
     v9 = v14; /*0x6e1500*/
     v10 = v12 - v8; /*0x6e1504*/
-    *p_vtable3 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6e1506*/
+    *pList = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6e1506*/
   }
   else
   {
     v9 = v14; /*0x6e14de*/
     v10 = 0; /*0x6e14e2*/
-    *p_vtable3 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6e14e4*/
+    *pList = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6e14e4*/
   }
-  p_vtable3[1] = v9; /*0x6e1508*/
-  p_vtable3[2] = (void *)v10; /*0x6e150b*/
+  pList[1] = v9; /*0x6e1508*/
+  pList[2] = (void *)v10; /*0x6e150b*/
   ObjectClass::PreDraw((ObjectClass *)&DataGlobal_87F7E8); /*0x6e1513*/
   return 1; /*0x6e1518*/
 }
@@ -27682,15 +27682,15 @@ void* Gap2Recv_6F2780::Team_Helper_6F2780(void* aP1) {
     return &this->vfptr; /*0x6f278a*/
   (*((void (**)(ObjectClass *))this->vfptr + 3))(this); /*0x6f278e*/
   v3 = (void *)aP1[2]; /*0x6f2791*/
-  this->vfptr2 = v3; /*0x6f2796*/
+  this->ptr_2 = v3; /*0x6f2796*/
   if ( !v3 ) /*0x6f2799*/
   {
-    this->vfptr1 = 0; /*0x6f27da*/
+    this->ptr_1 = 0; /*0x6f27da*/
     (this->M13) = 0; /*0x6f27e1*/
     return &this->vfptr; /*0x6f27e5*/
   }
   v4 = (void *)operator new(4 * (unsigned int)v3); /*0x6f27a3*/
-  this->vfptr1 = v4; /*0x6f27ab*/
+  this->ptr_1 = v4; /*0x6f27ab*/
   if ( !v4 ) /*0x6f27b0*/
     return &this->vfptr; /*0x6f27b0*/
   vtable2 = this->vfptr2; /*0x6f27b2*/
@@ -28888,7 +28888,7 @@ void Gap2Recv_722440::PropagateCellOccupancy() {
         v26 = v25[2]; /*0x72267a*/
         v27 = 1; /*0x72267d*/
         v28 = v26->vtable2; /*0x722685*/
-        v26->vtable2 = *(unsigned int *)(v26 + 4 * *v25); /*0x722688*/
+        v26->ptr_2 = *(unsigned int *)(v26 + 4 * *v25); /*0x722688*/
         v38 = v28; /*0x722690*/
         *(unsigned int *)(v25[2] + 4 * *v25) = 0; /*0x722694*/
         v29 = *v25 - 1; /*0x72269e*/
@@ -29085,7 +29085,7 @@ void Gap2Recv_722F00::RebuildBuildingOccupancy() {
         v21 = v20[2]; /*0x723157*/
         v22 = 1; /*0x72315a*/
         v23 = v21->vtable2; /*0x723162*/
-        v21->vtable2 = *(unsigned int *)(v21 + 4 * *v20); /*0x723165*/
+        v21->ptr_2 = *(unsigned int *)(v21 + 4 * *v20); /*0x723165*/
         v23 = v23; /*0x72316d*/
         *(unsigned int *)(v20[2] + 4 * *v20) = 0; /*0x723171*/
         v24 = *v20 - 1; /*0x72317b*/
@@ -30470,7 +30470,7 @@ void VeinholeMonsterClass::UpdateVeinholeMonster() {
           v32 = v31[2]; /*0x74daf6*/
           v33 = 1; /*0x74daf9*/
           v34 = v32->vtable2; /*0x74db01*/
-          v32->vtable2 = *(unsigned int *)(v32 + 4 * *v31); /*0x74db04*/
+          v32->ptr_2 = *(unsigned int *)(v32 + 4 * *v31); /*0x74db04*/
           v35 = *v31; /*0x74db07*/
           v36 = v31[2]; /*0x74db09*/
           v50 = v34; /*0x74db0c*/
@@ -31004,9 +31004,9 @@ namespace gamemd {
 char Gap2Recv_750060::Team_Create_750060(char a2) {
   char result = a2; // al /*0x750060*/
   if ( a2 ) /*0x750066*/
-    this->vfptr = (void *)-1098907648; /*0x750068*/
+    this->ptr_0 = (void *)-1098907648; /*0x750068*/
   else
-    this->vfptr = 0; /*0x750071*/
+    this->ptr_0 = 0; /*0x750071*/
   return result; /*0x75006e*/
 }
 }
@@ -31553,13 +31553,13 @@ int Gap2Recv_758B70::GenerateLightRemapTable(void* a2, int a3) {
 
   if ( a2 && a3 ) /*0x758b89*/
   {
-    this->vfptr2 = (void *)a3; /*0x758b8b*/
+    this->ptr_2 = (void *)a3; /*0x758b8b*/
     v26 = a2; /*0x758b8e*/
   }
   else
   {
     v4 = (float *)&unk_B45A90; /*0x758b94*/
-    this->vfptr2 = (void *)32; /*0x758b99*/
+    this->ptr_2 = (void *)32; /*0x758b99*/
     v26 = (float *)&unk_B45A90; /*0x758ba0*/
     v33 = 0; /*0x758ba4*/
     do /*0x758bd2*/
@@ -31895,8 +31895,8 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
   ComPtr *v9; // edi
 
   v3 = a2; /*0x765c93*/
-  this->vfptr1 = 0; /*0x765c9c*/
-  this->vfptr2 = (void *)a2; /*0x765ca3*/
+  this->ptr_1 = 0; /*0x765c9c*/
+  this->ptr_2 = (void *)a2; /*0x765ca3*/
   (this->vtable4) = 1; /*0x765ca6*/
   (this->M13) = 0; /*0x765caa*/
   /* X11: vtable install elided (implicit via VectorClassrc_ptr virtuals 0x765cae) */
@@ -31920,7 +31920,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
           --v3; /*0x765d28*/
         }
         while ( v3 ); /*0x765d29*/
-        this->vfptr1 = v8; /*0x765d2c*/
+        this->ptr_1 = v8; /*0x765d2c*/
         (this->M13) = 1; /*0x765d2f*/
         return &this->vfptr; /*0x765d38*/
       }
@@ -31929,7 +31929,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
     {
       v8 = 0; /*0x765d3b*/
     }
-    this->vfptr1 = v8; /*0x765d3d*/
+    this->ptr_1 = v8; /*0x765d3d*/
     (this->M13) = 1; /*0x765d40*/
     return &this->vfptr; /*0x765d45*/
   }
@@ -31946,7 +31946,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
     }
     while ( v3 ); /*0x765ce5*/
   }
-  this->vfptr1 = a3 + 1; /*0x765ce8*/
+  this->ptr_1 = a3 + 1; /*0x765ce8*/
   return &this->vfptr; /*0x765ce7*/
 }
 }
@@ -32233,8 +32233,8 @@ void* Gap2Recv_7694C0::Map_Load_7694C0(int * a2) {
 // 0x769C20
 namespace gamemd { 
 void* Gap2Recv_769C20::Map_Load_769C20(ObjectClass * aP1) {
-  this->vfptr1 = aP1->vtable2; /*0x769c29*/
-  this->vfptr2 = aP1->vtable3; /*0x769c2f*/
+  this->ptr_1 = aP1->vtable2; /*0x769c29*/
+  this->ptr_2 = aP1->vtable3; /*0x769c2f*/
   return &this->vfptr; /*0x769c32*/
 }
 }
@@ -32248,8 +32248,8 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
   ComPtr *v9; // edi
 
   v3 = aP1; /*0x76a7e3*/
-  this->vfptr1 = 0; /*0x76a7ec*/
-  this->vfptr2 = (void *)aP1; /*0x76a7f3*/
+  this->ptr_1 = 0; /*0x76a7ec*/
+  this->ptr_2 = (void *)aP1; /*0x76a7f3*/
   (this->vtable4) = 1; /*0x76a7f6*/
   (this->M13) = 0; /*0x76a7fa*/
   /* X11: vtable install elided (implicit via VectorClassrc_ptr virtuals 0x76a7fe) */
@@ -32273,7 +32273,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
           --v3; /*0x76a878*/
         }
         while ( v3 ); /*0x76a879*/
-        this->vfptr1 = v8; /*0x76a87c*/
+        this->ptr_1 = v8; /*0x76a87c*/
         (this->M13) = 1; /*0x76a87f*/
         return &this->vfptr; /*0x76a888*/
       }
@@ -32282,7 +32282,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
     {
       v8 = 0; /*0x76a88b*/
     }
-    this->vfptr1 = v8; /*0x76a88d*/
+    this->ptr_1 = v8; /*0x76a88d*/
     (this->M13) = 1; /*0x76a890*/
     return &this->vfptr; /*0x76a895*/
   }
@@ -32299,16 +32299,16 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
     }
     while ( v3 ); /*0x76a835*/
   }
-  this->vfptr1 = aP2 + 1; /*0x76a838*/
+  this->ptr_1 = aP2 + 1; /*0x76a838*/
   return &this->vfptr; /*0x76a837*/
 }
 }
 // 0x76AAF0
 namespace gamemd { 
 void* Gap2Recv_76AAF0::ParseWDTTerritories_Parse() {
-  this->vfptr1 = 0; /*0x76aaf7*/
+  this->ptr_1 = 0; /*0x76aaf7*/
   /* X11: vtable install elided (implicit via off_7F7220 virtuals 0x76aafa) */
-  this->vfptr2 = 0; /*0x76ab00*/
+  this->ptr_2 = 0; /*0x76ab00*/
   (this->M14) = 10; /*0x76ab03*/
   (*(this->vtable4 + (sizeof(this->vfptr3) - 1))) = 10; /*0x76ab06*/
   (this->uniqueId) = 10000; /*0x76ab09*/
@@ -34162,8 +34162,8 @@ void* Gap2Recv_778710::LoadAccountInfoWOL() {
 // 0x779690
 namespace gamemd { 
 void* ReferenceCounted::LoadAccountInfoWOL_Load( ReferenceCounted * aP1, ObjectClass * aP2, ReferenceCounted * aP3, ReferenceCounted * aP4, int a6, ObjectClass * aP6, ReferenceCounted * aP7, ReferenceCounted * aP8, ReferenceCounted * aP9, ReferenceCounted * aP10, ReferenceCounted * aP11, ReferenceCounted * aP12, ReferenceCounted * aP13, ReferenceCounted * aP14) {
-  this->vtable2 = 0; /*0x779695*/
-  this->vtable3 = 0; /*0x779698*/
+  this->ptr_2 = 0; /*0x779695*/
+  this->ptr_3 = 0; /*0x779698*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_ReferenceCounted) */  /*0x7796a3*/
   String::AssignFromPtr(&this->String_3, aP1); /*0x7796a9*/
   this->uniqueId = aP2; /*0x7796ba*/

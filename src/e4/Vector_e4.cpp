@@ -202,7 +202,7 @@ void Vector::ReallocDynamic(int a2, void *a2_1)
   __3_YAXPAX_Z(*(void **)this); /*0x4d2e9b*/
   v7 = a2 + this->vtable3; /*0x4d2ea6*/
   *(unsigned int *)this = v3; /*0x4d2ea8*/
-  this->vtable3 = v7; /*0x4d2eaa*/
+  this->ptr_3 = v7; /*0x4d2eaa*/
   this->uniqueId = 0; /*0x4d2ead*/
   return 1; /*0x4d2eb4*/
 

@@ -908,12 +908,12 @@ int HouseTypeClass::QueryInterface(int a1, const void * a2, unsigned int * a3)
     *a3 = a1; /*0x5125fe*/
   if ( !memcmp(a2, &IID_IRTTITypeInfo, 0x10u) ) /*0x51260e*/
   {
-    void **p_vtable1; // ecx
+    void **pList; // ecx
     if ( a1 ) /*0x512616*/
-      p_vtable1 = &a1->vfptr1; /*0x512618*/
+      pList = &a1->ptr_1; /*0x512618*/
     else
-      p_vtable1 = 0; /*0x51261d*/
-    *a3 = p_vtable1; /*0x51261f*/
+      pList = 0; /*0x51261d*/
+    *a3 = pList; /*0x51261f*/
   }
   if ( !*a3 ) /*0x512621*/
     return -2147467262; /*0x512626*/

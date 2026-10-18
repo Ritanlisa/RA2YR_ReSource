@@ -1801,7 +1801,7 @@ unsigned int * globalHelper_0FDCC0(IUnknown * aP0, int a2)
   if ( a2 == 126 ) /*0x5fdd0b*/
     --v4; /*0x5fdd0d*/
   *result = 0; /*0x5fdd0e*/
-  result->vtable2 = v4; /*0x5fdd12*/
+  result->ptr_2 = v4; /*0x5fdd12*/
   return result; /*0x5fdd10*/
 }
 } // namespace gamemd

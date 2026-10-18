@@ -363,8 +363,8 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int *a2, char a3)
         if ( result ) /*0x4ac7dc*/
         {
           *result = this->u32_11C0; /*0x4ac7ea*/
-          result->vfptr1 = this->u32_11C4; /*0x4ac7ef*/
-          result->vfptr2 = this->u32_11C8; /*0x4ac7f5*/
+          result->ptr_1 = this->u32_11C4; /*0x4ac7ef*/
+          result->ptr_2 = this->u32_11C8; /*0x4ac7f5*/
           this->u32_11BC = 0; /*0x4ac7f8*/
           return (*(unsigned int *(**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4ac80a*/
         }

@@ -666,7 +666,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   *v8 = 0; /*0x5a469f*/
   var50 = 1; /*0x5a46a5*/
   *v6 = *(unsigned int *)(a2 + 36); /*0x5a46b0*/
-  v6->vtable2 = 0; /*0x5a46b2*/
+  v6->ptr_2 = 0; /*0x5a46b2*/
   HIBYTE(dword_ABED10[40 * (__int16)*(unsigned int *)(a2 + 36) /*0x5a46dc*/
                     + 35
                     + 40 * g_MapCellWidth * (__int16)HIWORD(*(unsigned int *)(a2 + 36))]) = 1;
@@ -3071,7 +3071,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[268] = v8; /*0x5a9d82*/
   *v8 = 0; /*0x5a9d87*/
-  v8->vtable2 = 0; /*0x5a9d8b*/
+  v8->ptr_2 = 0; /*0x5a9d8b*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[268] + 8) = v121; /*0x5a9d9a*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[268] + 12) = 3; /*0x5a9dad*/
   v119 = 0; /*0x5a9db5*/
@@ -3090,7 +3090,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[280] = v10; /*0x5a9df5*/
   *v10 = v119; /*0x5a9dfa*/
-  v10->vtable2 = 0; /*0x5a9dfe*/
+  v10->ptr_2 = 0; /*0x5a9dfe*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[280] + 8) = 1; /*0x5a9e0d*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[280] + 12) = 5; /*0x5a9e20*/
   v119 = 0; /*0x5a9e28*/
@@ -3109,7 +3109,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[292] = v12; /*0x5a9e68*/
   *v12 = v119; /*0x5a9e6d*/
-  v12->vtable2 = 0; /*0x5a9e71*/
+  v12->ptr_2 = 0; /*0x5a9e71*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[292] + 8) = 0; /*0x5a9e80*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[292] + 12) = 6; /*0x5a9e93*/
   v119 = 1; /*0x5a9e9b*/
@@ -3128,7 +3128,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[304] = v14; /*0x5a9edb*/
   *v14 = v119; /*0x5a9ee0*/
-  v14->vtable2 = 0; /*0x5a9ee4*/
+  v14->ptr_2 = 0; /*0x5a9ee4*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[304] + 8) = 65537; /*0x5a9ef3*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[304] + 12) = 7; /*0x5a9f06*/
   v119 = 1; /*0x5a9f0e*/
@@ -3147,7 +3147,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[316] = v16; /*0x5a9f4e*/
   *v16 = v119; /*0x5a9f53*/
-  v16->vtable2 = 1; /*0x5a9f5a*/
+  v16->ptr_2 = 1; /*0x5a9f5a*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[316] + 8) = 65537; /*0x5a9f69*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[316] + 12) = 2; /*0x5a9f7c*/
   v119 = 1; /*0x5a9f84*/
@@ -3166,7 +3166,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[328] = v18; /*0x5a9fc4*/
   *v18 = v119; /*0x5a9fc9*/
-  v18->vtable2 = 1; /*0x5a9fd0*/
+  v18->ptr_2 = 1; /*0x5a9fd0*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[328] + 8) = 65537; /*0x5a9fdf*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[328] + 12) = 3; /*0x5a9ff2*/
   v119 = 1; /*0x5a9ffa*/
@@ -3185,7 +3185,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[340] = v20; /*0x5aa03a*/
   *v20 = v119; /*0x5aa03f*/
-  v20->vtable2 = 1; /*0x5aa046*/
+  v20->ptr_2 = 1; /*0x5aa046*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[340] + 8) = 0x10000; /*0x5aa055*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[340] + 12) = 4; /*0x5aa068*/
   v119 = 1; /*0x5aa070*/
@@ -3204,7 +3204,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[352] = v22; /*0x5aa0b0*/
   *v22 = v119; /*0x5aa0b5*/
-  v22->vtable2 = 1; /*0x5aa0bc*/
+  v22->ptr_2 = 1; /*0x5aa0bc*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[352] + 8) = 0; /*0x5aa0cb*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[352] + 12) = 6; /*0x5aa0de*/
   v119 = 2; /*0x5aa0e6*/
@@ -3223,7 +3223,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[364] = v24; /*0x5aa126*/
   *v24 = v119; /*0x5aa12b*/
-  v24->vtable2 = 1; /*0x5aa132*/
+  v24->ptr_2 = 1; /*0x5aa132*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[364] + 8) = 65537; /*0x5aa141*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[364] + 12) = 7; /*0x5aa154*/
   v119 = 2; /*0x5aa15c*/
@@ -3242,7 +3242,7 @@ unsigned int * InitializePathData()
   }
   *(unsigned int *)&g_MissionQueueFrame.globalVariables[376] = v26; /*0x5aa19c*/
   *v26 = v119; /*0x5aa1a1*/
-  v26->vtable2 = 1; /*0x5aa1a8*/
+  v26->ptr_2 = 1; /*0x5aa1a8*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[376] + 8) = 0; /*0x5aa1b7*/
   *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.globalVariables[376] + 12) = 0; /*0x5aa1c7*/
   v119 = 1; /*0x5aa1cf*/
@@ -4467,10 +4467,10 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
       fstp st
     }
   }
-  *&_ESI->vfptr = (void *)1065353216; /*0x5af638*/
-  _ESI->vfptr1 = 0; /*0x5af63a*/
-  _ESI->vfptr2 = 0; /*0x5af63d*/
-  _ESI->vfptr3 = 0; /*0x5af640*/
+  *&_ESI->ptr_0 = (void *)1065353216; /*0x5af638*/
+  _ESI->ptr_1 = 0; /*0x5af63a*/
+  _ESI->ptr_2 = 0; /*0x5af63d*/
+  _ESI->ptr_3 = 0; /*0x5af640*/
   _ESI->uniqueId = 0; /*0x5af643*/
   _ESI->abstractFlags = 1065353216; /*0x5af646*/
   _ESI->nextArrayIndex = 0; /*0x5af649*/
@@ -4754,7 +4754,7 @@ ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 {
 
   this->AbstractClass = (void *)*a2;
-  this->vfptr = aP2; /*0x5a992e*/
+  this->ptr_0 = aP2; /*0x5a992e*/
   return this; /*0x5a9931*/
 
 }
@@ -5194,7 +5194,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
   void *vtable3; // [esp+10h] [ebp-Ch]
   vtable3 = _ESI->vfptr3; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
-  *&_ESI->vfptr = _ET1; /*0x5aedb4*/
+  *&_ESI->ptr_0 = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/
   {
     fld [esp+38h+var_18]
@@ -5399,8 +5399,8 @@ void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
 
   double v3 = this->vtable2; // st7 /*0x5af000*/
   double v4 = this->vtable3; // st6 /*0x5af003*/
-  this->vtable2 = v4 * aP1 + v3 * aP2; /*0x5af014*/
-  this->vtable3 = v4 * aP2 - v3 * aP1; /*0x5af023*/
+  this->ptr_2 = v4 * aP1 + v3 * aP2; /*0x5af014*/
+  this->ptr_3 = v4 * aP2 - v3 * aP1; /*0x5af023*/
   double v5 = this->abstractFlags; // st7 /*0x5af026*/
   double v6 = this->nextArrayIndex; // st6 /*0x5af029*/
   this->abstractFlags = v6 * aP1 + v5 * aP2; /*0x5af03a*/
@@ -5421,7 +5421,7 @@ void E4Recv_5AF120::sub_5AF120(float a2, float a3)
   double v3 = *this; // st7 /*0x5af120*/
   double v4 = this->vtable3; // st6 /*0x5af122*/
   *this = v3 * a3 - v4 * a2; /*0x5af133*/
-  this->vtable3 = v3 * a2 + v4 * a3; /*0x5af143*/
+  this->ptr_3 = v3 * a2 + v4 * a3; /*0x5af143*/
   double v5 = this->uniqueId; // st7 /*0x5af146*/
   double v6 = this->nextArrayIndex; // st6 /*0x5af149*/
   this->uniqueId = v5 * a3 - v6 * a2; /*0x5af15a*/

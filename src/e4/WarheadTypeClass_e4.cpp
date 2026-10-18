@@ -192,7 +192,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       if ( v9 ) /*0x52ac70*/
       {
         v9[1] = v8; /*0x52ac72*/
-        *(unsigned int *)&this->__pad_024->vtable3 = this->CausesDelayKill; /*0x52ac7b*/
+        *(unsigned int *)&this->__pad_024->ptr_3 = this->CausesDelayKill; /*0x52ac7b*/
         this->CausesDelayKill = 0; /*0x52ac7e*/
         this->__pad_024 = 0; /*0x52ac81*/
       }

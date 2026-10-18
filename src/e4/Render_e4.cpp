@@ -431,7 +431,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
   v2 = (unsigned int)dword_A8ED84 + 1; /*0x652240*/
   if ( dword_A8B24C == 2 ) /*0x652246*/
     v2 = dword_A8B554 * (((unsigned int)dword_A8ED84 + dword_A8B554) / dword_A8B554); /*0x652255*/
-  this->vtable4 = v2; /*0x652258*/
+  this->ptr_4 = v2; /*0x652258*/
   if ( dword_8B41F8 >= 0x4000 ) /*0x652265*/
   {
     result = dword_A8B238[0]; /*0x6522b7*/

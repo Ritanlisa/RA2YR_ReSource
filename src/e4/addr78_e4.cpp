@@ -980,7 +980,7 @@ void GameListRenderWOL(CampaignScore * a1)
             qmemcpy(v58, (const void *)(v2 + dword_B76AC4.occupant), sizeof(v58)); /*0x781684*/
           v14 = v58[10]; /*0x781686*/
           *v6 = v13; /*0x78168d*/
-          v6->vtable2 = v14; /*0x78168f*/
+          v6->ptr_2 = v14; /*0x78168f*/
           ++v13; /*0x781692*/
           v2 += 268; /*0x781693*/
           v6 += 2; /*0x781699*/
@@ -1006,7 +1006,7 @@ void GameListRenderWOL(CampaignScore * a1)
         qmemcpy(v58, (const void *)(v2 + dword_B76AC4.occupant), sizeof(v58)); /*0x7815de*/
       v9 = v58[10]; /*0x7815e0*/
       *v6 = v8; /*0x7815e7*/
-      v6->vtable2 = v9; /*0x7815e9*/
+      v6->ptr_2 = v9; /*0x7815e9*/
       ++v8; /*0x7815ec*/
       v2 += 268; /*0x7815ed*/
       v6 += 2; /*0x7815f3*/

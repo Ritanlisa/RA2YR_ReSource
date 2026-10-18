@@ -65,7 +65,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
       /* X11: vtable install elided (X67 star-deref, RHS vt_WaveClass_4) */  /*0x75f6a4*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_WaveClass_4) */  /*0x75f6aa*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_WaveClass_4) */  /*0x75f6b1*/
-      v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
+      v4->ptr_4 = &off_7F6BC8; /*0x75f6b8*/
     }
     v4->u32_14C = v4->q_B0 == 3 ? v4 + 384 : v4 + 336;
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x75f6ee*/

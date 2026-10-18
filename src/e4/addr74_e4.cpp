@@ -762,10 +762,10 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   LOBYTE(this->nextArrayIndex) = 1; /*0x74bc0a*/
   BYTE1(this->nextArrayIndex) = 0; /*0x74bc0e*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass_unsigned_char_7F65F4) */  /*0x74bc11*/
-  this->vfptr2 = -1; /*0x74bc17*/
+  this->ptr_8 = -1; /*0x74bc17*/
   LOBYTE(this->vfptr1) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
-  this->vfptr2 = *(unsigned int *)(a2 + 8); /*0x74bc27*/
-  if ( &this->vfptr3 == (int *)(a2 + 12) ) /*0x74bc2a*/
+  this->ptr_8 = *(unsigned int *)(a2 + 8); /*0x74bc27*/
+  if ( &this->ptr_C == (int *)(a2 + 12) ) /*0x74bc2a*/
     goto LABEL_8; /*0x74bc2a*/
   (*(void (**)(int *))(*p_vfptr3 + 12))(p_vfptr3); /*0x74bc30*/
   v4 = *(void **)(a2 + 20); /*0x74bc33*/
@@ -775,8 +775,8 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     p_vfptr3[1] = 0; /*0x74bc7f*/
     *((unsigned char *)p_vfptr3 + 13) = 0; /*0x74bc82*/
 LABEL_8:
-    this->vfptr = *(unsigned int *)a2; /*0x74bc85*/
-    return &this->vfptr; /*0x74bc8d*/
+    this->ptr_0 = *(unsigned int *)a2; /*0x74bc85*/
+    return &this->ptr_0; /*0x74bc8d*/
   }
   v5 = (void *)__2_YAPAXI_Z((size_t)v4); /*0x74bc3e*/
   p_vfptr3[1] = (int)v5; /*0x74bc48*/
@@ -793,8 +793,8 @@ LABEL_8:
     ++v7; /*0x74bc69*/
   }
   while ( v7 < p_vfptr3[2] ); /*0x74bc6c*/
-  this->vfptr = *(unsigned int *)a2; /*0x74bc74*/
-  return &this->vfptr; /*0x74bc78*/
+  this->ptr_0 = *(unsigned int *)a2; /*0x74bc74*/
+  return &this->ptr_0; /*0x74bc78*/
 
 }
 }
@@ -1192,7 +1192,7 @@ namespace gamemd {
 AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
 {
 
-  unsigned __int16 vtable2_high; // bp
+  unsigned __int16 pN_high; // bp
   unsigned __int16 v6; // ax
   RawFileClass v9; // [esp+10h] [ebp-24h] BYREF
 
@@ -1223,11 +1223,11 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   v3 = this->ambientSoundController[2]; /*0x74fb69*/
   if ( (v3 & 4) != 0 ) /*0x74fb6e*/
   {
-    vtable2_high = HIWORD(this->M10); /*0x74fb70*/
+    pN_high = HIWORD(this->M10); /*0x74fb70*/
   }
   else
   {
-    vtable2_high = 1; /*0x74fb76*/
+    pN_high = 1; /*0x74fb76*/
     (v3) = ((v3) & ~0xFF) | ((v3 | 4) & 0xFF); /*0x74fb7b*/
     HIWORD(this->M10) = 1; /*0x74fb7d*/
     this->ambientSoundController[2] = v3; /*0x74fb81*/
@@ -1265,10 +1265,10 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     v6 = 1; /*0x74fc49*/
     *(unsigned int *)&DataGlobal_A8EC40 |= 2u; /*0x74fc4e*/
   }
-  char *p_vtable3; // esi
-  p_vtable3 = (char *)&this->?; /*0x74fc60*/
-  sprintf(p_vtable3, "%d.%3.3d", v6, vtable2_high); /*0x74fc6a*/
-  return p_vtable3; /*0x74fc74*/
+  char *pVal; // esi
+  pVal = (char *)&this->?; /*0x74fc60*/
+  sprintf(pVal, "%d.%3.3d", v6, pN_high); /*0x74fc6a*/
+  return pVal; /*0x74fc74*/
 
 }
 }

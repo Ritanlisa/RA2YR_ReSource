@@ -1331,7 +1331,7 @@ void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
     (v7) |= ((((0x20u)) & 0xFF) << 8); /*0x557d44*/
     v9 = *(unsigned int *)(*((unsigned int *)dword_B054D4 + Type) + 796); /*0x557d52*/
     v10 = (unsigned __int16 *)dword_87F6C4->radarFlashTimer[0]; /*0x557d5b*/
-    if ( dword_87F6C4->vfptr1 == 1 ) /*0x557d61*/
+    if ( dword_87F6C4->ptr_1 == 1 ) /*0x557d61*/
       v11 = *((unsigned __int8 *)v10 + v9); /*0x557d65*/
     else
       v11 = v10[v9]; /*0x557d6c*/

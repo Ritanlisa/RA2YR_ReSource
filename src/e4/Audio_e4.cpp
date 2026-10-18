@@ -1436,7 +1436,7 @@ int sub_7BE830(int a1, int a2)
         v19 = v7; /*0x7be874*/
         do /*0x7be89e*/
         {
-          if ( v8->vtable2 == a2 ) /*0x7be881*/
+          if ( v8->ptr_2 == a2 ) /*0x7be881*/
             (*(void (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 72))(a1, v4, *(v8 - 1), *v8); /*0x7be88c*/
           v8 += 3; /*0x7be896*/
           --v19; /*0x7be89a*/
@@ -1476,7 +1476,7 @@ int sub_7BE830(int a1, int a2)
         v22 = v15; /*0x7be8f0*/
         do /*0x7be91a*/
         {
-          if ( v16->vtable2 == a2 ) /*0x7be8fd*/
+          if ( v16->ptr_2 == a2 ) /*0x7be8fd*/
             (*(void (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 72))(a1, v12, *(v16 - 1), *v16); /*0x7be908*/
           v16 += 3; /*0x7be912*/
           --v22; /*0x7be916*/
@@ -1900,7 +1900,7 @@ BuildingTypeClass * * Audio_Process_7C3270(int a1, int a2, unsigned int a3, Obje
   if ( a2 ) /*0x7c33f7*/
   {
     a1->WarheadTypeClass_1A8 = a2; /*0x7c33f9*/
-    a1->vtable3 = a2; /*0x7c33ff*/
+    a1->ptr_3 = a2; /*0x7c33ff*/
   }
   v16 = a1->BerserkFriendly; /*0x7c3402*/
   (*((unsigned char *)&(v16))) = v16 | 0x10; /*0x7c3409*/

@@ -3794,9 +3794,9 @@ int sub_429500()
   uniqueId = dword_A8B230[43].uniqueId; /*0x429519*/
   if ( dword_A8B230[43].vfptr2 != -1 ) /*0x42952e*/
   {
-    int *p_vtable2; // esi
-    p_vtable2 = &dword_A8B230[43].vfptr2; /*0x42951f*/
-    uniqueId += TimerGetTicks() - *p_vtable2; /*0x42953a*/
+    int *pVal; // esi
+    pVal = &dword_A8B230[43].ptr_2; /*0x42951f*/
+    uniqueId += TimerGetTicks() - *pVal; /*0x42953a*/
   }
   *v5 = uniqueId; /*0x42953c*/
   return 0; /*0x42950e*/

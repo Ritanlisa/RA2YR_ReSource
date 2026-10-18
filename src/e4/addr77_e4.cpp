@@ -3818,8 +3818,8 @@ DWORD E4Recv_7717A0::sub_7717A0()
   v3 = &this->secondaryFacing[3]; /*0x7717d5*/
   *v3 = result; /*0x7717db*/
   int v4; // [esp+8h] [ebp-8h]
-  v3->vtable2 = v4; /*0x7717dd*/
-  v3->vtable3 = 0; /*0x7717e0*/
+  v3->ptr_2 = v4; /*0x7717dd*/
+  v3->ptr_3 = 0; /*0x7717e0*/
   return result; /*0x7717e3*/
 
 }

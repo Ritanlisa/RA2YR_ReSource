@@ -64,7 +64,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
           do /*0x5d55e6*/
           {
             *v7 = 0; /*0x5d55dd*/
-            v7->vtable2 = 0; /*0x5d55df*/
+            v7->ptr_2 = 0; /*0x5d55df*/
             v7 += 2; /*0x5d55e2*/
             --v8; /*0x5d55e5*/
           }

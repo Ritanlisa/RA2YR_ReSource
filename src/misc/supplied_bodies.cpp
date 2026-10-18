@@ -504,7 +504,7 @@ void AudioSample::InitLinkedList() {
   {
     *(v13 - 3) = v6; /*0x4088e5*/
     *v13 = -1001; /*0x4088e8*/
-    v13->vtable2 = *v13; /*0x4088f0*/
+    v13->ptr_2 = *v13; /*0x4088f0*/
     *(v13 - 1) = 0; /*0x4088f6*/
     AudioSample::SetField((AudioSample *)(v13 - 13)); /*0x4088fd*/
     v13 += 16; /*0x408902*/
@@ -2454,7 +2454,7 @@ unsigned int * ControlClass::Constructor(int a2) {
     this->Width = a2->Width; /*0x4e1357*/
     this->X = a2->Height; /*0x4e135d*/
     this->Visible = a2->Visible; /*0x4e1363*/
-    this->vtable3 = a2->ID; /*0x4e1369*/
+    this->ptr_3 = a2->ID; /*0x4e1369*/
     this->IsOutOfMap = a2->q01C; /*0x4e136f*/
     this->u32_1D = a2->q01D; /*0x4e1375*/
     this->u32_1E = a2->q01E; /*0x4e137b*/

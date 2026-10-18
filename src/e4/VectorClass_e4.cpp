@@ -1386,8 +1386,8 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
       do /*0x6b450b*/
       {
         *v5 = 0; /*0x6b44ff*/
-        v5->vtable2 = 0; /*0x6b4501*/
-        v5->vtable3 = 0; /*0x6b4504*/
+        v5->ptr_2 = 0; /*0x6b4501*/
+        v5->ptr_3 = 0; /*0x6b4504*/
         v5 += 3; /*0x6b4507*/
         --v9; /*0x6b450a*/
       }
@@ -1410,8 +1410,8 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
       do /*0x6b44eb*/
       {
         *v6 = 0; /*0x6b44df*/
-        v6->vtable2 = 0; /*0x6b44e1*/
-        v6->vtable3 = 0; /*0x6b44e4*/
+        v6->ptr_2 = 0; /*0x6b44e1*/
+        v6->ptr_3 = 0; /*0x6b44e4*/
         v6 += 3; /*0x6b44e7*/
         --v7; /*0x6b44ea*/
       }
@@ -1490,8 +1490,8 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
       do /*0x6b46bb*/
       {
         *v5 = 0; /*0x6b46af*/
-        v5->vtable2 = 0; /*0x6b46b1*/
-        v5->vtable3 = 0; /*0x6b46b4*/
+        v5->ptr_2 = 0; /*0x6b46b1*/
+        v5->ptr_3 = 0; /*0x6b46b4*/
         v5 += 3; /*0x6b46b7*/
         --v9; /*0x6b46ba*/
       }
@@ -1510,8 +1510,8 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
       do /*0x6b469b*/
       {
         *v6 = 0; /*0x6b468f*/
-        v6->vtable2 = 0; /*0x6b4691*/
-        v6->vtable3 = 0; /*0x6b4694*/
+        v6->ptr_2 = 0; /*0x6b4691*/
+        v6->ptr_3 = 0; /*0x6b4694*/
         v6 += 3; /*0x6b4697*/
         --v7; /*0x6b469a*/
       }
@@ -1659,7 +1659,7 @@ char VectorClass_flat::Release(int a2, char * a3)
           do /*0x40b1c6*/
           {
             *(unsigned int *)v7 = 0; /*0x40b1bd*/
-            v7->vtable2 = 0; /*0x40b1bf*/
+            v7->ptr_2 = 0; /*0x40b1bf*/
             v7 += 8; /*0x40b1c2*/
             --v8; /*0x40b1c5*/
           }
@@ -7842,7 +7842,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
         do /*0x58ace1*/
         {
           *(unsigned int *)v8 = 0; /*0x58acd8*/
-          v8->vtable2 = 0; /*0x58acda*/
+          v8->ptr_2 = 0; /*0x58acda*/
           v8 += 8; /*0x58acdd*/
           --v9; /*0x58ace0*/
         }

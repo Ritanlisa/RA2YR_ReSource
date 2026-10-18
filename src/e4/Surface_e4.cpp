@@ -633,9 +633,9 @@ int Surface::RenderRadar()
   v29 = &this->u32_1248; /*0x65553f*/
   v30 = v38; /*0x655545*/
   *v29 = v36; /*0x655549*/
-  v29->vtable2 = v28; /*0x65554b*/
-  v29->vtable3 = v2; /*0x65554e*/
-  v29->vtable4 = v30; /*0x655551*/
+  v29->ptr_2 = v28; /*0x65554b*/
+  v29->ptr_3 = v2; /*0x65554e*/
+  v29->ptr_4 = v30; /*0x655551*/
   return result; /*0x655554*/
 
 }

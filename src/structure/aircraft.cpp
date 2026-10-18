@@ -1678,7 +1678,7 @@ int AircraftClass::LoadFromStream()
   unsigned int *v14; // eax
   AircraftClass *v16; // [esp+10h] [ebp-4h] BYREF
 
-  p_vtable1 = (AbstractClass *)&disasm->vfptr1; /*0x414087*/
+  p_vtable1 = (AbstractClass *)&disasm->ptr_1; /*0x414087*/
   /* X11: vtable install elided (implicit via class virtuals 0x41408a) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x414090) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x414097) — binary-proven install, was 0 */

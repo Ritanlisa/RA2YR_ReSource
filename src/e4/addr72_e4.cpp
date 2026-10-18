@@ -810,9 +810,9 @@ int * * MouseClass_SetupResources(int a1, int a2)
   if ( v19 ) /*0x72ee0e*/
   {
     *v19 = v18; /*0x72ee10*/
-    v19->vtable2 = v15; /*0x72ee12*/
-    v19->vtable3 = v16; /*0x72ee15*/
-    v19->vtable4 = v17; /*0x72ee18*/
+    v19->ptr_2 = v15; /*0x72ee12*/
+    v19->ptr_3 = v16; /*0x72ee15*/
+    v19->ptr_4 = v17; /*0x72ee18*/
     dword_B0FC10 = (unsigned int)(v19); /*0x72ee1b*/
   }
   else

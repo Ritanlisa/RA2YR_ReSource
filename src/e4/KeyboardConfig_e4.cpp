@@ -132,7 +132,7 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *v3)
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable3)); /*0x538ba0*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->ptr_C)); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
   for ( i = 0; i < this->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
@@ -142,9 +142,9 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *v3)
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x538bdb*/
-  v7 = a2 + this->vtable3; /*0x538be6*/
+  v7 = a2 + this->ptr_C; /*0x538be6*/
   *(unsigned int *)this = v3; /*0x538be8*/
-  this->vtable3 = v7; /*0x538bea*/
+  this->ptr_C = v7; /*0x538bea*/
   this->uniqueId = 0; /*0x538bed*/
   return 1; /*0x538bf4*/
 

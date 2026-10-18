@@ -186,7 +186,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   v81 = v10; /*0x439b51*/
   v11 = this->Accel; /*0x439b58*/
   v85[1] = *((unsigned int *)v74 + 1); /*0x439b5b*/
-  v5->vtable3 = v8; /*0x439b5f*/
+  v5->ptr_3 = v8; /*0x439b5f*/
   v82 = v11; /*0x439b62*/
   if ( v3 > 0.0 ) /*0x439b71*/
   {
@@ -310,8 +310,8 @@ LABEL_35:
   v30 = *(float *)&v27[2]; /*0x439e6c*/
   v31 = v72[0]; /*0x439e6f*/
   v73 = v30; /*0x439e79*/
-  v5->vtable2 = -*(float *)&v72[1]; /*0x439e7f*/
-  v5->vtable3 = v30; /*0x439e82*/
+  v5->ptr_2 = -*(float *)&v72[1]; /*0x439e7f*/
+  v5->ptr_3 = v30; /*0x439e82*/
   *(Triple *)v5 = v31; /*0x439e87*/
   v69 = -*(float *)Function::sub_645D00(v29, 0); /*0x439e92*/
   *(float *)Function::sub_645D00(v29, 0) = v69; /*0x439ea5*/
@@ -344,8 +344,8 @@ LABEL_35:
     v42 = v81; /*0x439fd2*/
     *(unsigned int *)v5 = v41; /*0x439fd6*/
     v43 = v82; /*0x439fd8*/
-    v5->vtable2 = v42; /*0x439fdc*/
-    v5->vtable3 = v43; /*0x439fe4*/
+    v5->ptr_2 = v42; /*0x439fdc*/
+    v5->ptr_3 = v43; /*0x439fe4*/
     v44 = Coord::To_Cell((Coord *)&dword_87F7E8, &v83); /*0x439ff1*/
     v45 = JumpjetLocomotionClass::AdjustClimbFacing((JumpjetLocomotionClass *)v44, &v84); /*0x439ff8*/
     if ( v45 != -1 ) /*0x43a000*/
@@ -354,11 +354,11 @@ LABEL_35:
       v46 = TransformMatrix3x4Point((float *)v86, v87, (float *)v5); /*0x43a02c*/
       *(float *)v5 = *v46; /*0x43a035*/
       *((float *)v5 + 1) = v46[1]; /*0x43a03a*/
-      v5->vtable3 = v46[2]; /*0x43a040*/
+      v5->ptr_3 = v46[2]; /*0x43a040*/
       v47 = *v74; /*0x43a047*/
       *(float *)v5 = v47 * *(float *)v5; /*0x43a04d*/
       *((float *)v5 + 1) = v47 * *((float *)v5 + 1); /*0x43a054*/
-      v5->vtable3 = v47 * v5->vtable3; /*0x43a05a*/
+      v5->ptr_3 = v47 * v5->ptr_3; /*0x43a05a*/
     }
   }
   v2 = v74; /*0x43a05d*/
@@ -1137,14 +1137,14 @@ Coord * * JumpjetLocomotionClass::UpdateFootLocomotion(int a1, int a2, int a3, i
                 if ( (*((int (**)(FootClass *))(*p_Owner)->vfptr + 114))(*p_Owner) <= v10 && !v4->IsTakingOff /*0x4ccdb9*/
                   || v4->IsLanding )
                 {
-                  *&v4->vtable3 = dword_8B3C78; /*0x4ccde8*/
+                  *&v4->ptr_3 = dword_8B3C78; /*0x4ccde8*/
                   v4->MovingDestination[0] = dword_8B3C7C; /*0x4ccdf1*/
                   v4->MovingDestination[1] = dword_8B3C80; /*0x4ccdf9*/
                 }
                 else
                 {
                   location = (*p_Owner)->location; /*0x4ccdc2*/
-                  *&v4->vtable3 = *location; /*0x4ccdc9*/
+                  *&v4->ptr_3 = *location; /*0x4ccdc9*/
                   v4->MovingDestination[0] = location[1]; /*0x4ccdd2*/
                   v4->MovingDestination[1] = location[2]; /*0x4ccdd8*/
                   LocomotionClass::CheckBridgeBlock((LocomotionClass *)&v4[-1].IsElevating); /*0x4ccddb*/
@@ -1156,7 +1156,7 @@ Coord * * JumpjetLocomotionClass::UpdateFootLocomotion(int a1, int a2, int a3, i
               }
               else
               {
-                *&v4->vtable3 = v5; /*0x4cce1c*/
+                *&v4->ptr_3 = v5; /*0x4cce1c*/
                 v4->MovingDestination[0] = v8; /*0x4cce1f*/
                 v4->MovingDestination[1] = v9; /*0x4cce22*/
                 v14 = *p_Owner; /*0x4cce25*/

@@ -1683,10 +1683,10 @@ int ObjectClass::GetScreenCoords() {
     v8 = v8; /*0x455d1a*/
     v13 = v13; /*0x455d1e*/
     *v14 = v7; /*0x455d22*/
-    v14->vtable2 = v8; /*0x455d24*/
-    v14->vtable3 = v12; /*0x455d27*/
+    v14->ptr_2 = v8; /*0x455d24*/
+    v14->ptr_3 = v12; /*0x455d27*/
     v10 = v13; /*0x455d2a*/
-    v14->vtable4 = v13; /*0x455d2c*/
+    v14->ptr_4 = v13; /*0x455d2c*/
     v9 = v12; /*0x455d2f*/
   }
   *v7 = v7; /*0x455d39*/
@@ -3149,7 +3149,7 @@ int AbstractClass::evaluateTarget(int a1, void* a2) {
           do /*0x50f3e6*/
           {
             *(unsigned int *)v7 = 0; /*0x50f3dd*/
-            v7->vtable2 = 0; /*0x50f3df*/
+            v7->ptr_2 = 0; /*0x50f3df*/
             v7 += 8; /*0x50f3e2*/
             --a1; /*0x50f3e5*/
           }
@@ -4058,7 +4058,7 @@ void* AbstractClass::getWeaponSpeed(int a1) {
       if ( nextArrayIndex ) /*0x5b473b*/
       {
         *(unsigned int *)(nextArrayIndex + 4) = abstractFlags; /*0x5b473d*/
-        *(unsigned int *)&this->abstractFlags->vtable3 = this->nextArrayIndex; /*0x5b4746*/
+        *(unsigned int *)&this->abstractFlags->ptr_3 = this->nextArrayIndex; /*0x5b4746*/
         this->nextArrayIndex = 0; /*0x5b4749*/
         this->abstractFlags = 0; /*0x5b474c*/
       }
@@ -5274,9 +5274,9 @@ int ObjectClass::GetCoords() {
   CoordStruct *out; // [esp+8h] [ebp+4h]
 
   location = this->location; /*0x5f65a4*/
-  out->vfptr = (void *)*location; /*0x5f65af*/
-  out[1].vfptr = location->Y; /*0x5f65b4*/
-  out[2].vfptr = location->Z; /*0x5f65bb*/
+  out->ptr_0 = (void *)*location; /*0x5f65af*/
+  out[1].ptr_0 = location->Y; /*0x5f65b4*/
+  out[2].ptr_0 = location->Z; /*0x5f65bb*/
   return (int)out; /*0x5f65b7*/
 }
 }
@@ -6263,14 +6263,14 @@ void* ObjectClass::ComputeDelta(void* a1) {
 // 0x6e1440
 namespace ra2 { namespace game { 
 int ObjectClass::Render(int a1, int a2, int a3, int a4) {
-  void **p_vtable3; // edx
+  void **pList; // edx
   void *vtable3; // edi
   int abstractFlags; // eax
   int v8; // esi
   int v9; // eax
   void *v11; // [esp+10h] [ebp-8h]
 
-  p_vtable3 = &dword_A8B230[127].vfptr3; /*0x6e144f*/
+  pList = &dword_A8B230[127].ptr_3; /*0x6e144f*/
   vtable3 = dword_A8B230[127].vfptr3; /*0x6e1457*/
   abstractFlags = dword_A8B230[127].abstractFlags; /*0x6e1459*/
   if ( vtable3 != (void *)-1 ) /*0x6e145f*/
@@ -6285,9 +6285,9 @@ int ObjectClass::Render(int a1, int a2, int a3, int a4) {
   v8 = abstractFlags; /*0x6e146b*/
   LABEL_5:
   v9 = *&this->isAliveFlag; /*0x6e146d*/
-  *p_vtable3 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6e1473*/
-  p_vtable3[1] = v11; /*0x6e1481*/
-  p_vtable3[2] = (void *)(v8 + 12 * v9 + 3 * v9); /*0x6e1489*/
+  *pList = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6e1473*/
+  pList[1] = v11; /*0x6e1481*/
+  pList[2] = (void *)(v8 + 12 * v9 + 3 * v9); /*0x6e1489*/
   ObjectClass::PreDraw((ObjectClass *)&DataGlobal_87F7E8); /*0x6e148c*/
   return 1; /*0x6e1491*/
 }
@@ -9746,10 +9746,10 @@ void IRTTITypeInfo::ClearBuffer() {
   if ( v2 && this->attachedTag ) /*0x74f370*/
   {
     operator delete((void *)(v2)); /*0x74f376*/
-    this->vtable2 = 0; /*0x74f37e*/
+    this->ptr_2 = 0; /*0x74f37e*/
   }
   this->attachedTag = 0; /*0x74f381*/
-  this->vtable3 = 0; /*0x74f384*/
+  this->ptr_3 = 0; /*0x74f384*/
 }
 }
 }

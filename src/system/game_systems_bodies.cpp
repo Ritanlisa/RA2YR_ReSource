@@ -1840,7 +1840,7 @@ LABEL_183:
                           v108 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v107); /*0x60ea2f*/
                           *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v107) = v106; /*0x60ea32*/
                           v109 = v106->vtable3; /*0x60ea35*/
-                          v106->vtable3 = v108; /*0x60ea38*/
+                          v106->ptr_3 = v108; /*0x60ea38*/
                           v106 = v109; /*0x60ea3d*/
                         }
                         while ( v109 ); /*0x60ea3f*/
@@ -1867,7 +1867,7 @@ LABEL_183:
                   if ( !v110 ) /*0x60ea63*/
                     goto LABEL_206; /*0x60ea63*/
                 }
-                v98->vtable3 = v110->vtable3; /*0x60ea6b*/
+                v98->ptr_3 = v110->ptr_3; /*0x60ea6b*/
                 --*(unsigned int *)&stru_AC1B48.__pad_0[4]; /*0x60ea75*/
                 __3_YAXPAX_Z(v110); /*0x60ea7b*/
               }
@@ -1898,7 +1898,7 @@ LABEL_206:
                         v116 = *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v115); /*0x60eb27*/
                         *(unsigned int *)(*(unsigned int *)stru_AC1B48.__pad_0 + 4 * v115) = v114; /*0x60eb2a*/
                         v117 = v114->vtable3; /*0x60eb2d*/
-                        v114->vtable3 = v116; /*0x60eb30*/
+                        v114->ptr_3 = v116; /*0x60eb30*/
                         v114 = v117; /*0x60eb35*/
                       }
                       while ( v117 ); /*0x60eb37*/
@@ -2120,7 +2120,7 @@ LABEL_259:
                       v156 = *(unsigned int *)(*(unsigned int *)g_DialogPool.__pad_0 + 4 * v155); /*0x60f037*/
                       *(unsigned int *)(*(unsigned int *)g_DialogPool.__pad_0 + 4 * v155) = v154; /*0x60f03a*/
                       v157 = v154->vtable3; /*0x60f03d*/
-                      v154->vtable3 = v156; /*0x60f040*/
+                      v154->ptr_3 = v156; /*0x60f040*/
                       v154 = v157; /*0x60f045*/
                     }
                     while ( v157 ); /*0x60f047*/
@@ -2144,7 +2144,7 @@ LABEL_259:
                   if ( !v158 ) /*0x60f073*/
                     goto LABEL_280; /*0x60f073*/
                 }
-                v146->vtable3 = v158->vtable3; /*0x60f07b*/
+                v146->ptr_3 = v158->ptr_3; /*0x60f07b*/
                 --dword_AC18C4; /*0x60f085*/
                 __3_YAXPAX_Z(v158); /*0x60f08b*/
               }
@@ -2176,7 +2176,7 @@ LABEL_280:
                       v165 = *(unsigned int *)(*(unsigned int *)g_DialogPool.__pad_0 + 4 * v164); /*0x60f131*/
                       *(unsigned int *)(*(unsigned int *)g_DialogPool.__pad_0 + 4 * v164) = v163; /*0x60f134*/
                       v166 = v163->vtable3; /*0x60f137*/
-                      v163->vtable3 = v165; /*0x60f13a*/
+                      v163->ptr_3 = v165; /*0x60f13a*/
                       v163 = v166; /*0x60f13f*/
                     }
                     while ( v166 ); /*0x60f141*/

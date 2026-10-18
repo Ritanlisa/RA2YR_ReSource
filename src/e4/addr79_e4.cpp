@@ -4584,7 +4584,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
           if ( !v12 ) /*0x79cdc9*/
             goto LABEL_32; /*0x79cdc9*/
         }
-        v8->vtable3 = v12->vtable3; /*0x79cdd0*/
+        v8->ptr_3 = v12->ptr_3; /*0x79cdd0*/
         --stru_B76900.lastLayer; /*0x79cddc*/
         DeleteAndZero((ObjectClass *)v12); /*0x79cde6*/
         operator delete(((void *)v12)); /*0x79cdec*/

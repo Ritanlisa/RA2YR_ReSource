@@ -256,7 +256,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
 
   unsigned __int8 *v4; // ebp
   unsigned __int8 *v6; // edx
-  int vfptr2; // esi
+  int pN; // esi
   unsigned __int8 *v8; // eax
   int v9; // ecx
   HashTable *v10; // esi
@@ -279,16 +279,16 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
     v6 = a3; /*0x528235*/
     if ( a3 ) /*0x52823b*/
     {
-      if ( a2 == (unsigned __int8 *)this->vfptr1 ) /*0x528248*/
+      if ( a2 == (unsigned __int8 *)this->ptr_4 ) /*0x528248*/
       {
-        vfptr2 = this->vfptr2; /*0x52824e*/
+        pN = this->ptr_8; /*0x52824e*/
 LABEL_5:
-        if ( vfptr2 ) /*0x528253*/
+        if ( pN ) /*0x528253*/
         {
           memset(v23, 0, sizeof(v23)); /*0x528259*/
           v8 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v23, v6, strlen((const char *)v6)); /*0x528277*/
-          v9 = vfptr2->u32_30; /*0x52827c*/
-          v10 = (HashTable *)(vfptr2 + 44); /*0x52827f*/
+          v9 = pN->u32_30; /*0x52827c*/
+          v10 = (HashTable *)(pN + 44); /*0x52827f*/
           a3 = v8; /*0x528284*/
           if ( v9 ) /*0x528288*/
           {
@@ -350,18 +350,18 @@ LABEL_29:
           v19 = (int *)(this->attachedBomb + 4); /*0x528354*/
         else
           v19 = (int *)&unk_B7882C; /*0x528359*/
-        vfptr2 = *v19; /*0x52835e*/
-        if ( vfptr2 ) /*0x528362*/
+        pN = *v19; /*0x52835e*/
+        if ( pN ) /*0x528362*/
         {
           v6 = a3; /*0x528364*/
-          this->vfptr2 = vfptr2; /*0x528368*/
-          this->vfptr1 = (int)v4; /*0x52836b*/
+          this->ptr_8 = pN; /*0x528368*/
+          this->ptr_4 = (int)v4; /*0x52836b*/
           goto LABEL_5; /*0x528370*/
         }
       }
 LABEL_27:
-      this->vfptr1 = 0; /*0x528375*/
-      this->vfptr2 = 0; /*0x52837c*/
+      this->ptr_4 = 0; /*0x528375*/
+      this->ptr_8 = 0; /*0x52837c*/
       return a4; /*0x528388*/
     }
   }
@@ -376,7 +376,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
 
   char **v6; // edi
   char *v7; // ebp
-  int vfptr2; // ebx
+  int pN; // ebx
   unsigned int v9; // kr04_4
   Checksummer *v10; // eax
   int *v11; // ebx
@@ -403,9 +403,9 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   Source = &g_INI_DefaultBuffer; /*0x529e98*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x529eb0*/
     goto LABEL_18; /*0x529eb0*/
-  if ( v7 == (char *)this->vfptr1 ) /*0x529ebc*/
+  if ( v7 == (char *)this->ptr_4 ) /*0x529ebc*/
   {
-    vfptr2 = this->vfptr2; /*0x529ec2*/
+    pN = this->ptr_8; /*0x529ec2*/
   }
   else
   {
@@ -414,22 +414,22 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
     v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x529fca*/
     v23 = v19; /*0x529fcf*/
     if ( !(unsigned __int8)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x529ff0*/
-      || (v24 = v19, (vfptr2 = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
+      || (v24 = v19, (pN = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
     {
-      this->vfptr1 = 0; /*0x52a006*/
-      this->vfptr2 = 0; /*0x52a009*/
+      this->ptr_4 = 0; /*0x52a006*/
+      this->ptr_8 = 0; /*0x52a009*/
       goto LABEL_11; /*0x52a00c*/
     }
     v6 = a4; /*0x529ff2*/
-    this->vfptr2 = vfptr2; /*0x529ff9*/
-    this->vfptr1 = (int)v7; /*0x529ffc*/
+    this->ptr_8 = pN; /*0x529ff9*/
+    this->ptr_4 = (int)v7; /*0x529ffc*/
   }
-  if ( vfptr2 ) /*0x529ec7*/
+  if ( pN ) /*0x529ec7*/
   {
     v9 = strlen((const char *)v6) + 1; /*0x529ece*/
     v21 = (unsigned __int8 *)a4; /*0x529edb*/
     v10 = (Checksummer *)KeyValuePair::Init(v27, 0); /*0x529ee2*/
-    v11 = (int *)(vfptr2 + 44); /*0x529ef5*/
+    v11 = (int *)(pN + 44); /*0x529ef5*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x529efb*/
     if ( (unsigned __int8)SortedArray::Find(v11, (int *)&a4) ) /*0x529f02*/
     {
@@ -471,7 +471,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
 
   unsigned __int8 *v6; // ebx
   float v7; // edx
-  int vfptr2; // esi
+  int pN; // esi
   unsigned int v9; // kr04_4
   Checksummer *v10; // eax
   int *v11; // esi
@@ -495,9 +495,9 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   v7 = a4; /*0x52a13b*/
   if ( a4 == 0.0 ) /*0x52a141*/
     goto LABEL_18; /*0x52a141*/
-  if ( a3 == (unsigned __int8 *)this->vfptr1 ) /*0x52a14a*/
+  if ( a3 == (unsigned __int8 *)this->ptr_4 ) /*0x52a14a*/
   {
-    vfptr2 = this->vfptr2; /*0x52a150*/
+    pN = this->ptr_8; /*0x52a150*/
   }
   else
   {
@@ -505,23 +505,23 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
     *(float *)&v16 = COERCE_FLOAT(Checksummer::Add_Buffer(&v21, a3, strlen((const char *)a3))); /*0x52a280*/
     a3 = v16; /*0x52a285*/
     if ( !(unsigned __int8)HashTable::BinarySearch(&this->owningHouseIndex, (int *)&a3) /*0x52a2a6*/
-      || (v20 = (int)v16, (vfptr2 = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v20)) == 0) )
+      || (v20 = (int)v16, (pN = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v20)) == 0) )
     {
-      this->vfptr1 = 0; /*0x52a2b9*/
-      this->vfptr2 = 0; /*0x52a2bc*/
+      this->ptr_4 = 0; /*0x52a2b9*/
+      this->ptr_8 = 0; /*0x52a2bc*/
       goto LABEL_11; /*0x52a2bf*/
     }
     v7 = a4; /*0x52a2a8*/
-    this->vfptr2 = vfptr2; /*0x52a2ac*/
-    this->vfptr1 = (int)v6; /*0x52a2af*/
+    this->ptr_8 = pN; /*0x52a2ac*/
+    this->ptr_4 = (int)v6; /*0x52a2af*/
   }
-  if ( vfptr2 ) /*0x52a155*/
+  if ( pN ) /*0x52a155*/
   {
     v9 = strlen((const char *)LODWORD(v7)) + 1; /*0x52a15e*/
     v18 = (unsigned __int8 *)LODWORD(v7); /*0x52a164*/
     v10 = (Checksummer *)KeyValuePair::Init((KeyValuePair *)&v21.buffer, 0); /*0x52a16a*/
     a4 = COERCE_FLOAT(Checksummer::Add_Buffer(v10, v18, v9 - 1)); /*0x52a176*/
-    v11 = &vfptr2->u32_2C; /*0x52a17a*/
+    v11 = &pN->u32_2C; /*0x52a17a*/
     if ( (unsigned __int8)SortedArray::Find(v11, (int *)&a4) ) /*0x52a184*/
     {
       v12 = *(char ***)SortedArray::BinarySearch2((int)v11, (int *)&a4); /*0x52a199*/
@@ -568,7 +568,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
 
   char **v6; // edi
   char *v7; // ebp
-  int vfptr2; // ebx
+  int pN; // ebx
   unsigned int v9; // kr04_4
   Checksummer *v10; // eax
   int *v11; // ebx
@@ -597,9 +597,9 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   Source = COERCE_FLOAT(&g_INI_DefaultBuffer); /*0x52a318*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x52a330*/
     goto LABEL_18; /*0x52a330*/
-  if ( v7 == (char *)this->vfptr1 ) /*0x52a33c*/
+  if ( v7 == (char *)this->ptr_4 ) /*0x52a33c*/
   {
-    vfptr2 = this->vfptr2; /*0x52a342*/
+    pN = this->ptr_8; /*0x52a342*/
   }
   else
   {
@@ -608,22 +608,22 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
     v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x52a462*/
     v23 = v19; /*0x52a467*/
     if ( !(unsigned __int8)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x52a488*/
-      || (v24 = v19, (vfptr2 = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
+      || (v24 = v19, (pN = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
     {
-      this->vfptr1 = 0; /*0x52a49e*/
-      this->vfptr2 = 0; /*0x52a4a1*/
+      this->ptr_4 = 0; /*0x52a49e*/
+      this->ptr_8 = 0; /*0x52a4a1*/
       goto LABEL_11; /*0x52a4a4*/
     }
     v6 = a4; /*0x52a48a*/
-    this->vfptr2 = vfptr2; /*0x52a491*/
-    this->vfptr1 = (int)v7; /*0x52a494*/
+    this->ptr_8 = pN; /*0x52a491*/
+    this->ptr_4 = (int)v7; /*0x52a494*/
   }
-  if ( vfptr2 ) /*0x52a347*/
+  if ( pN ) /*0x52a347*/
   {
     v9 = strlen((const char *)v6) + 1; /*0x52a34e*/
     v21 = (unsigned __int8 *)a4; /*0x52a35b*/
     v10 = (Checksummer *)KeyValuePair::Init(v29, 0); /*0x52a362*/
-    v11 = (int *)(vfptr2 + 44); /*0x52a375*/
+    v11 = (int *)(pN + 44); /*0x52a375*/
     a4 = (char **)Checksummer::Add_Buffer(v10, v21, v9 - 1); /*0x52a37b*/
     if ( (unsigned __int8)SortedArray::Find(v11, (int *)&a4) ) /*0x52a382*/
     {

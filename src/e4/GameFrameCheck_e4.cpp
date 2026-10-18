@@ -50,18 +50,18 @@ int sub_6863E0(void * a1, void * a2)
   byte_A8E378 = 0; /*0x686433*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x68643a*/
     (*(Tooltip **)&g_TacticalRender)->Enable(0); /*0x68643e*/
-  void **p_vtable2; // esi
-  p_vtable2 = &((unsigned int *)(dword_A8B230))[43].vfptr2; /*0x686450*/
+  void **pList; // esi
+  pList = &((unsigned int *)(dword_A8B230))[43].ptr_2; /*0x686450*/
   if ( ((unsigned int *)(dword_A8B230))[43].vfptr2 != (void *)-1 ) /*0x686459*/
   {
     int Ticks; // eax
     Ticks = TimerGetTicks(); /*0x68645e*/
     char *v4; // ecx
-    v4 = (char *)p_vtable2[2]; /*0x686465*/
+    v4 = (char *)pList[2]; /*0x686465*/
     int v5; // eax
-    v5 = Ticks - (unsigned int)*p_vtable2; /*0x686468*/
-    *p_vtable2 = (void *)-1; /*0x68646a*/
-    p_vtable2[2] = &v4[v5]; /*0x686472*/
+    v5 = Ticks - (unsigned int)*pList; /*0x686468*/
+    *pList = (void *)-1; /*0x68646a*/
+    pList[2] = &v4[v5]; /*0x686472*/
   }
   (a1)->Shutdown(); /*0x686475*/
   TimerGetTicks(); /*0x68647e*/
@@ -102,8 +102,8 @@ namespace gamemd {
 AbstractClass * sub_686570(ObjectClass *a1)
 {
 
-  void **p_vtable2; // esi
-  p_vtable2 = &dword_A8B230[43].vfptr2; /*0x686579*/
+  void **pList; // esi
+  pList = &dword_A8B230[43].ptr_2; /*0x686579*/
   ((unsigned int *)&stru_A8EB00)[376] = 0; /*0x68657f*/
   byte_A8E378 = 0; /*0x686585*/
   if ( dword_A8B230[43].vfptr2 != (void *)-1 ) /*0x68658e*/
@@ -111,11 +111,11 @@ AbstractClass * sub_686570(ObjectClass *a1)
     int Ticks; // eax
     Ticks = TimerGetTicks(); /*0x686593*/
     char *v3; // ecx
-    v3 = (char *)p_vtable2[2]; /*0x68659a*/
+    v3 = (char *)pList[2]; /*0x68659a*/
     int v4; // eax
-    v4 = Ticks - (unsigned int)*p_vtable2; /*0x68659d*/
-    *p_vtable2 = (void *)-1; /*0x68659f*/
-    p_vtable2[2] = &v3[v4]; /*0x6865a7*/
+    v4 = Ticks - (unsigned int)*pList; /*0x68659d*/
+    *pList = (void *)-1; /*0x68659f*/
+    pList[2] = &v3[v4]; /*0x6865a7*/
   }
   dword_A8B230[130].vfptr3 = (void *)1; /*0x6865b0*/
   AsyncIO *v9; // [esp+0h] [ebp-8h]

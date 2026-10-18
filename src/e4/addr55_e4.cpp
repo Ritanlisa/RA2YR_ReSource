@@ -1385,10 +1385,10 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
 {
 
   char *p_referenceCount = a2_1; // eax /*0x558810*/
-  aP1->vtable2 = 2; /*0x558814*/
+  aP1->ptr_8 = 2; /*0x558814*/
   if ( !a2_1 ) /*0x55881d*/
     p_referenceCount = (char *)&dword_A8B230[137].referenceCount; /*0x558824*/
-  aP1->vtable4 = p_referenceCount; /*0x558829*/
+  aP1->ptr_10 = p_referenceCount; /*0x558829*/
   return ((SaveLoadDialog *)aP1)->DlgProc(); /*0x558831*/
 }
 }

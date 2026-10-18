@@ -301,7 +301,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
   else
     v6 = 0; /*0x633fea*/
   qmemcpy(v6, a3, 0x6Fu); /*0x633ff8*/
-  v5->vtable2 = v6; /*0x633ffd*/
+  v5->ptr_2 = v6; /*0x633ffd*/
   ScriptAction_field_0x8 = this->ScriptAction_field_0x8; /*0x634000*/
   if ( this->ScriptAction_field_0x10 < ScriptAction_field_0x8 /*0x634024*/
     || (this->u8_D || !ScriptAction_field_0x8)
@@ -388,7 +388,7 @@ BOOL ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
   ScenarioClassActionCoords = GetScenarioClassActionCoords( /*0x634560*/
                                 v6,
                                 *(unsigned char **)(*(unsigned int *)this->u32_4 + 4));
-  return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords->vtable2 == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
+  return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords->ptr_2 == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
 }
 } // namespace gamemd
 

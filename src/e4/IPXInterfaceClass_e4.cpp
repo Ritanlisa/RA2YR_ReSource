@@ -104,7 +104,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2, void *a3)
     v6 = *(unsigned int *)&aP1[4]; /*0x7b0f19*/
     int16_t v7; // dx
     v7 = *(unsigned short *)&aP1[12]; /*0x7b0f1d*/
-    aP2->vtable3 = *(unsigned int *)&aP1[4]; /*0x7b0f23*/
+    aP2->ptr_3 = *(unsigned int *)&aP1[4]; /*0x7b0f23*/
     this->u32_3F2FC = v6; /*0x7b0f26*/
     aP2->nextArrayIndex = *(unsigned int *)&aP1[8]; /*0x7b0f33*/
     aP2->owningHouseIndex = v7; /*0x7b0f35*/

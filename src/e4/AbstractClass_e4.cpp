@@ -232,11 +232,11 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
       }
     }
   }
-  if ( (*((int (**)(void **))*v6 + 11))(v6) == 6 && (unsigned char)p_vtable0 ) /*0x4fba32*/
+  if ( (*((int (**)(void **))*v6 + 11))(v6) == 6 && (unsigned char)pN ) /*0x4fba32*/
   {
     v11 = v7->unitRepairStations; /*0x4fba38*/
-    p_vtable0 = v6; /*0x4fba45*/
-    v12 = (*(int (**)(unsigned int *, void ***, int))(v11 + 16))(v7 + 20, &p_vtable0, a2); /*0x4fba49*/
+    pN = v6; /*0x4fba45*/
+    v12 = (*(int (**)(unsigned int *, void ***, int))(v11 + 16))(v7 + 20, &pN, a2); /*0x4fba49*/
     if ( v12 != -1 ) /*0x4fba4f*/
       Vector::RemoveAt((Vector *)v7 + 4, v12); /*0x4fba54*/
     v13 = v7->occupiables; /*0x4fba59*/
@@ -726,11 +726,11 @@ int AbstractClass::GenerateUniqueID(int a1)
   if ( dword_A8B230 ) /*0x410238*/
   {
     result = AbstractClass::updateAITimer(dword_A8B230); /*0x410246*/
-    a1->vfptr3 = (void *)result; /*0x41024f*/
+    a1->ptr_3 = (void *)result; /*0x41024f*/
   }
   else
   {
-    a1->vfptr3 = 0; /*0x410240*/
+    a1->ptr_3 = 0; /*0x410240*/
     return 0; /*0x41023e*/
   }
   return result; /*0x410243*/

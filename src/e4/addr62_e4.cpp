@@ -1579,13 +1579,13 @@ LABEL_15:
     v14 = __2_YAPAXI_Z(2 * v13 + 18); /*0x6237e9*/
     if ( v14 ) /*0x6237f3*/
     {
-      v14->vtable3 = v14 + 16; /*0x6237f8*/
+      v14->ptr_3 = v14 + 16; /*0x6237f8*/
       *(unsigned int *)v14 = this->attachedTag; /*0x6237fe*/
-      v14->vtable2 = 0; /*0x623800*/
+      v14->ptr_2 = 0; /*0x623800*/
       this->attachedTag = (TagClass *)v14; /*0x623803*/
     }
-    v14->vtable4 = i[3]; /*0x623809*/
-    v14->vtable2 = i[1]; /*0x62380f*/
+    v14->ptr_4 = i[3]; /*0x623809*/
+    v14->ptr_2 = i[1]; /*0x62380f*/
     wcscpy(v14->vtable3, (const wchar_t *)i[2]); /*0x62381a*/
   }
   return &this->vfptr; /*0x623828*/

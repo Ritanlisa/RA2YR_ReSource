@@ -2373,7 +2373,7 @@ LABEL_31:
     v45 = v5->vtable3; /*0x6ba0a2*/
     v46 = *(unsigned int *)(v5 + 4) + 1; /*0x6ba0a5*/
     *(unsigned long long *)&v48[4] = (unsigned int)v46; /*0x6ba0aa*/
-    v5->vtable2 = v46; /*0x6ba0ae*/
+    v5->ptr_2 = v46; /*0x6ba0ae*/
     v47 = (double)*(__int64 *)&v48[4]; /*0x6ba0b1*/
     *(unsigned int *)&v48[4] = v45; /*0x6ba0b5*/
     *(unsigned int *)&v48[8] = 0; /*0x6ba0b9*/

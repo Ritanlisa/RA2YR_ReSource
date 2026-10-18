@@ -132,7 +132,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
           do /*0x5891d6*/
           {
             *v7 = 0; /*0x5891cd*/
-            v7->vtable2 = 0; /*0x5891cf*/
+            v7->ptr_2 = 0; /*0x5891cf*/
             v7 += 2; /*0x5891d2*/
             --v8; /*0x5891d5*/
           }

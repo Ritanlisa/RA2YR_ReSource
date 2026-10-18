@@ -202,7 +202,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 {
 
 
-  AbstractClass *p_vtable1 = &a1->vtable2; // edi /*0x517d9a*/
+  AbstractClass *pVal = &a1->ptr_2; // edi /*0x517d9a*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_InfantryClass) */  /*0x517d9d*/
   /* X11: vtable install elided (implicit via InfantryClass virtuals 0x517da3) */
   /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x517daa) */
@@ -259,7 +259,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     }
   }
   int Vtable3; // eax
-  Vtable3 = AbstractClass::GetVtable3(p_vtable1); /*0x517ec3*/
+  Vtable3 = AbstractClass::GetVtable3(pVal); /*0x517ec3*/
   void *vtable1; // edx
   vtable1 = g_BuildingLoadQueue_Array.?; /*0x517ec8*/
   int v10 = Vtable3; // edi /*0x517ece*/

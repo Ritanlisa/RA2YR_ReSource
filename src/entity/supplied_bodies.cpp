@@ -360,7 +360,7 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
       /* X11: vtable install elided (X67 star-deref, RHS vt_AnimClass_4) */  /*0x4252bb*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AnimClass_4) */  /*0x4252c1*/
       /* X11: vtable install elided (legacy slot spelling slot, RHS vt_AnimClass_4) */  /*0x4252c8*/
-      a2->vtable4 = &off_7E3328; /*0x4252cf*/
+      a2->ptr_4 = &off_7E3328; /*0x4252cf*/
     }
     AudioController::Init(&a2->AudioController_1A0); /*0x4252dc*/
     AudioController::Init(&a2->AudioController_1B4); /*0x4252e7*/
@@ -799,10 +799,10 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
           v35 = (unsigned int *)(*(int (**)(int, CoordStruct *))(*(unsigned int *)this->AnimClass_field_0xCC + 72))( /*0x42245d*/
                             this->AnimClass_field_0xCC,
                             &v75);
-          v72.vfptr = (void *)(*v35 + *Coords); /*0x422468*/
+          v72.ptr_0 = (void *)(*v35 + *Coords); /*0x422468*/
           v36 = Coords[1] + v35[1]; /*0x422472*/
           v37 = Coords[2] + v35[2]; /*0x422475*/
-          vfptr = (int)v72.vfptr; /*0x42247c*/
+          vfptr = (int)v72.ptr_0; /*0x42247c*/
           v67 = v36; /*0x422480*/
         }
         else

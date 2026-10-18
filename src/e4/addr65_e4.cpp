@@ -1174,7 +1174,7 @@ LABEL_22:
         && *(unsigned int **)((*(unsigned char *)(v18 + 20) & 1) != 0 ? v18 + 0x510 : 1296) == v16 )
       {
         *(unsigned int *)((*(unsigned char *)(v18 + 20) & 1) != 0 ? v18 + 0x510 : 1296) = 0;
-        Block->vtable2 = 0; /*0x659380*/
+        Block->ptr_2 = 0; /*0x659380*/
       }
       v19 = (*(int (**)(int *, void **))(RadBeam_Array + 16))(&RadBeam_Array, &Block); /*0x659393*/
       if ( v19 != -1 && v19 < dword_B04A70 && v19 < --dword_B04A70 ) /*0x6593ae*/
@@ -1421,7 +1421,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
   int v10; // ecx
   int v11; // esi
   int v12; // ecx
-  unsigned int vtable1; // ecx
+  unsigned int pN; // ecx
   unsigned int v14; // edi
   int v15; // esi
   unsigned int v16; // ebx
@@ -1469,20 +1469,20 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
       vtable0 = this->vfptr; /*0x65c976*/
       while ( 1 ) /*0x65c980*/
       {
-        vtable1 = (unsigned int)this->vfptr1; /*0x65c980*/
+        pN = (unsigned int)this->ptr_4; /*0x65c980*/
         v14 = (unsigned int)vtable0; /*0x65c983*/
         v15 = 0; /*0x65c987*/
-        this->vfptr1 = &vtable1->AbstractClass_1; /*0x65c98c*/
+        this->ptr_4 = &pN->AbstractClass_1; /*0x65c98c*/
         do /*0x65c9d5*/
         {
-          v16 = vtable1; /*0x65c995*/
-          v17 = vtable1 ^ dword_839644[v15++]; /*0x65c997*/
+          v16 = pN; /*0x65c995*/
+          v17 = pN ^ dword_839644[v15++]; /*0x65c997*/
           v18 = v14 /*0x65c9cc*/
               ^ ((unsigned __int16)v17 * (v17 >> 16)
                + (dword_839690[v15]
                 ^ ((((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) << 16)
                  | (((unsigned __int16)v17 * (unsigned __int16)v17 + ~((v17 >> 16) * (v17 >> 16))) >> 16))));
-          vtable1 = v18; /*0x65c9d1*/
+          pN = v18; /*0x65c9d1*/
           v14 = v16; /*0x65c9d3*/
         }
         while ( v15 < 4 ); /*0x65c9d5*/

@@ -130,9 +130,9 @@ int System_Init_766F70(int p0);  // x4:signals@0x766f70
 namespace gamemd {  // G42.18 ns repair
 unsigned int * unknown_libname_36(ObjectClass *self)
 {
-  self->vfptr = 0; /*0x7636f4*/
-  self->vfptr1 = 0; /*0x7636f6*/
-  self->vfptr2 = 0; /*0x7636f9*/
+  self->ptr_0 = 0; /*0x7636f4*/
+  self->ptr_1 = 0; /*0x7636f6*/
+  self->ptr_2 = 0; /*0x7636f9*/
   return &self->vfptr; /*0x7636fc*/
 }
 }  // G42.18 ns repair
@@ -1008,10 +1008,10 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
     return &this->vfptr; /*0x76b7bc*/
   (*((void (**)(ObjectClass *))this->vfptr + 3))(this); /*0x76b7c4*/
   v4 = a2[2]; /*0x76b7c7*/
-  this->vfptr2 = (void *)v4; /*0x76b7cc*/
+  this->ptr_2 = (void *)v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
   {
-    this->vfptr1 = 0; /*0x76b855*/
+    this->ptr_1 = 0; /*0x76b855*/
     BYTE1(this->vfptr3) = 0; /*0x76b85c*/
     return &this->vfptr; /*0x76b860*/
   }
@@ -1039,7 +1039,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   {
     v8 = 0; /*0x76b815*/
   }
-  this->vfptr1 = v8; /*0x76b819*/
+  this->ptr_1 = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return &this->vfptr; /*0x76b81c*/
   vtable2 = this->vfptr2; /*0x76b81e*/
@@ -1354,8 +1354,8 @@ unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
 {
 
   this->AbstractClass = (void *)*a2; /*0x76370b*/
-  this->vtable2 = (void *)a2[1]; /*0x763710*/
-  this->vtable3 = (void *)a2[2]; /*0x763717*/
+  this->ptr_2 = (void *)a2[1]; /*0x763710*/
+  this->ptr_3 = (void *)a2[2]; /*0x763717*/
   return &this->AbstractClass; /*0x763713*/
 
 }
@@ -2296,13 +2296,13 @@ unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
 
 
   unsigned int *result = &this->AbstractClass; // eax /*0x769490*/
-  char *vtable1; // edx
-  vtable1 = (char *)this->vtable2; /*0x76949d*/
+  char *pVal; // edx
+  pVal = (char *)this->vtable2; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
   char *v4; // ecx
   v4 = (char *)this->M8 + 1; /*0x7694aa*/
-  result->vtable2 = &vtable1[a2[1]]; /*0x7694ab*/
-  result->vtable3 = v4; /*0x7694ae*/
+  result->ptr_2 = &pVal[a2[1]]; /*0x7694ab*/
+  result->ptr_3 = v4; /*0x7694ae*/
   return result; /*0x7694b1*/
 
 }

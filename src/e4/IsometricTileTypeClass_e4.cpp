@@ -178,10 +178,10 @@ void IsometricTileTypeClass::ClearBuffer(void *a1)
   if ( v2 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x54a1a0*/
   {
     operator delete((v2)); /*0x54a1a6*/
-    *(unsigned int *)&a1->vtable2 = 0; /*0x54a1ae*/
+    *(unsigned int *)&a1->ptr_2 = 0; /*0x54a1ae*/
   }
   (((unsigned char *)&(a1->vtable4))[1]) = 0; /*0x54a1b1*/
-  *(unsigned int *)&a1->vtable3 = 0; /*0x54a1b4*/
+  *(unsigned int *)&a1->ptr_3 = 0; /*0x54a1b4*/
 }
 } // namespace gamemd
 // 0x54A1C0

@@ -1577,7 +1577,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   unsigned int *v6; // eax
   int i; // eax
   unsigned char *v8; // ecx
-  int *p_vtable3; // ebp
+  int *pVal; // ebp
   HDC DC; // edi
   unsigned int *vtable1; // ecx
   int uniqueId; // edx
@@ -1588,16 +1588,16 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   void *vtable3; // ecx
 
   LOBYTE(this->vfptr) = 0; /*0x4a6855*/
-  this->vfptr1 = 0; /*0x4a6857*/
-  this->vfptr2 = 0; /*0x4a685a*/
-  this->vfptr3 = 0; /*0x4a685d*/
+  this->ptr_1 = 0; /*0x4a6857*/
+  this->ptr_2 = 0; /*0x4a685a*/
+  this->ptr_3 = 0; /*0x4a685d*/
   this->uniqueId = a3; /*0x4a6860*/
   this->abstractFlags = a4; /*0x4a6863*/
   this->nextArrayIndex = 0; /*0x4a6866*/
   this->referenceCount = 0; /*0x4a6869*/
   this->NeedsSaveOrLink = 0; /*0x4a686c*/
   v6 = (unsigned int *)__2_YAPAXI_Z(0x42Cu); /*0x4a686f*/
-  this->vfptr1 = v6; /*0x4a6879*/
+  this->ptr_1 = v6; /*0x4a6879*/
   if ( !v6 ) /*0x4a687c*/
     goto LABEL_12; /*0x4a687c*/
   *v6 = 40; /*0x4a6882*/
@@ -1619,9 +1619,9 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
     *((unsigned char *)this->vfptr1 + 4 * i + 37) = v8[1]; /*0x4a6904*/
     *((unsigned char *)this->vfptr1 + 4 * i + 38) = *v8; /*0x4a690d*/
   }
-  p_vtable3 = &this->M12; /*0x4a6929*/
+  pVal = &this->M12; /*0x4a6929*/
   DC = GetDC(hWnd); /*0x4a692e*/
-  this->vfptr2 = CreateDIBSection(DC, (const BITMAPINFO *)this->vfptr1, 0, &this->vfptr3, 0, 0); /*0x4a693f*/
+  this->ptr_2 = CreateDIBSection(DC, (const BITMAPINFO *)this->ptr_1, 0, &this->ptr_3, 0, 0); /*0x4a693f*/
   ReleaseDC(hWnd, DC); /*0x4a6942*/
   if ( !this->vfptr2 ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
@@ -1634,11 +1634,11 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   this->referenceCount = v13; /*0x4a696d*/
   if ( (int)vtable1[2] <= 0 ) /*0x4a6975*/
   {
-    this->nextArrayIndex = *p_vtable3; /*0x4a698b*/
+    this->nextArrayIndex = *pVal; /*0x4a698b*/
   }
   else
   {
-    this->nextArrayIndex = *p_vtable3 + uniqueId * (this->abstractFlags - 1); /*0x4a6981*/
+    this->nextArrayIndex = *pVal + uniqueId * (this->abstractFlags - 1); /*0x4a6981*/
     v13 = -v13; /*0x4a6984*/
   }
   this->referenceCount = v13; /*0x4a698e*/

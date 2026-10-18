@@ -891,7 +891,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
       case 2u: /*0x488a3d*/
         v19 = *(unsigned int *)(*((unsigned int *)dword_B054D4 + v10) + 788); /*0x488ba8*/
         v20 = (unsigned __int16 *)dword_87F6C4->radarFlashTimer[0]; /*0x488bb9*/
-        if ( dword_87F6C4->vfptr1 == 1 ) /*0x488bbf*/
+        if ( dword_87F6C4->ptr_1 == 1 ) /*0x488bbf*/
           v21 = *((unsigned __int8 *)v20 + v19); /*0x488bc3*/
         else
           v21 = v20[v19]; /*0x488bca*/
@@ -1005,7 +1005,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
         break; /*0x488d6a*/
       case 4u: /*0x488a3d*/
         v44 = *(unsigned int *)(*((unsigned int *)dword_B054D4 + *(unsigned int *)(this->u32_178 + 4 * a2)) + 788); /*0x488e4e*/
-        if ( dword_87F6C4->vfptr1 == 1 ) /*0x488e5a*/
+        if ( dword_87F6C4->ptr_1 == 1 ) /*0x488e5a*/
           v45 = *(unsigned __int8 *)(dword_87F6C4->radarFlashTimer[0] + v44); /*0x488e67*/
         else
           v45 = *(unsigned __int16 *)(dword_87F6C4->radarFlashTimer[0] + 2 * v44); /*0x488e73*/
@@ -3986,9 +3986,9 @@ void Voxel_Section::Constructor()
   int v5; // ecx
   int v6; // eax
 
-  this->vtable2 = 0; /*0x75e6bd*/
-  this->vtable3 = 0; /*0x75e6c0*/
-  this->vtable4 = 1; /*0x75e6c3*/
+  this->ptr_2 = 0; /*0x75e6bd*/
+  this->ptr_3 = 0; /*0x75e6c0*/
+  this->ptr_4 = 1; /*0x75e6c3*/
   this->CombatLightSize = 0; /*0x75e6c7*/
   /* X11: vtable install elided (implicit via class virtuals 0x75e6ca) — binary-proven install, was 0 */
   if ( this != (Voxel_Section *)a2 ) /*0x75e6d0*/
@@ -3999,7 +3999,7 @@ void Voxel_Section::Constructor()
     if ( v3 ) /*0x75e6e0*/
     {
       v4 = operator new(4 * v3); /*0x75e6e6*/
-      this->vtable2 = v4; /*0x75e6f0*/
+      this->ptr_2 = v4; /*0x75e6f0*/
       if ( v4 ) /*0x75e6f3*/
       {
         v5 = this->Capacity; /*0x75e6f5*/
@@ -4018,7 +4018,7 @@ void Voxel_Section::Constructor()
     }
     else
     {
-      this->vtable2 = 0; /*0x75e718*/
+      this->ptr_2 = 0; /*0x75e718*/
       this->IsAllocated = 0; /*0x75e71b*/
     }
   }

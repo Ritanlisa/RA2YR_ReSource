@@ -361,7 +361,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     fchs
     fstp qword ptr [esi+8]
   }
-  _ESI->vtable3 = _RT1; /*0x5b25bd*/
+  _ESI->ptr_3 = _RT1; /*0x5b25bd*/
   Math::Hypotenuse2D((int *)_ESI); /*0x5b25c0*/
   __asm { fstp [esp+0A0h+var_A0]; double } /*0x5b25ce*/
   Math::CalcAngle(_ESI->uniqueId, v82); /*0x5b25d3*/

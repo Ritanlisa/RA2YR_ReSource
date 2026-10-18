@@ -1283,8 +1283,8 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     }
   }
   if ( *Voxel_field_0x28 == g_AsyncMovieState /*0x75c5e7*/
-    && Voxel_field_0x28->vtable2 == g_MovieFrameState1
-    && Voxel_field_0x28->vtable3 == g_MovieFrameState2 )
+    && Voxel_field_0x28->ptr_2 == g_MovieFrameState1
+    && Voxel_field_0x28->ptr_3 == g_MovieFrameState2 )
   {
     v30 = (int *)this->Voxel_field_0xC; /*0x75c602*/
     v35 = v30[39]; /*0x75c611*/

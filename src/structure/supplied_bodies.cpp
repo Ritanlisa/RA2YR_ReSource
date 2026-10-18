@@ -14234,8 +14234,8 @@ namespace gamemd {
         v6 = 0; /*0x4a1813*/
       else
         v6 = &vtable2[-(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (unsigned int)vtable0)]; /*0x4a180f*/
-      this->vfptr2 = v6; /*0x4a1815*/
-      this->vfptr = (void *)-1; /*0x4a1818*/
+      this->ptr_2 = v6; /*0x4a1815*/
+      this->ptr_0 = (void *)-1; /*0x4a1818*/
     }
   }
   v12 = *(unsigned int *)bug; /*0x4a1828*/
@@ -14250,11 +14250,11 @@ namespace gamemd {
   v8 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a189f*/
   (*((unsigned short *)&(v9))) = Math::RoundToInt((v14 - v13) * ((double)(int)v15 * 4.656612877414201e-10) + v13); /*0x4a18b5*/
   v10 = (void *)(*(((unsigned int *)&(v14)) + 1)); /*0x4a18ba*/
-  this->vfptr = v8; /*0x4a18c0*/
-  this->vfptr1 = v10; /*0x4a18c2*/
-  this->vfptr2 = v9; /*0x4a18c5*/
-  if ( this->vfptr == (void *)-1 ) /*0x4a18cd*/
-    this->vfptr = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a18d4*/
+  this->ptr_0 = v8; /*0x4a18c0*/
+  this->ptr_1 = v10; /*0x4a18c2*/
+  this->ptr_2 = v9; /*0x4a18c5*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x4a18cd*/
+    this->ptr_0 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a18d4*/
   return 1; /*0x4a18d6*/
 }
   v12 = *(unsigned int *)bug; /*0x4a1828*/
@@ -14269,11 +14269,11 @@ namespace gamemd {
   v8 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a189f*/
   (*((unsigned short *)&(v9))) = Math::RoundToInt((v14 - v13) * ((double)(int)v15 * 4.656612877414201e-10) + v13); /*0x4a18b5*/
   v10 = (void *)(unsigned int)((v14) >> 32); /*0x4a18ba*/
-  this->vfptr = v8; /*0x4a18c0*/
-  this->vfptr1 = v10; /*0x4a18c2*/
-  this->vfptr2 = v9; /*0x4a18c5*/
-  if ( this->vfptr == (void *)-1 ) /*0x4a18cd*/
-    this->vfptr = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a18d4*/
+  this->ptr_0 = v8; /*0x4a18c0*/
+  this->ptr_1 = v10; /*0x4a18c2*/
+  this->ptr_2 = v9; /*0x4a18c5*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x4a18cd*/
+    this->ptr_0 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a18d4*/
   return 1; /*0x4a18d6*/
 }
 // 0x4A18F0

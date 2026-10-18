@@ -5437,7 +5437,7 @@ LABEL_27:
     *v13 = 0; /*0x59bed2*/
     v83 = 1; /*0x59bed8*/
     *v30 = *(unsigned int *)v80; /*0x59bee0*/
-    v30->vtable2 = 0; /*0x59bee2*/
+    v30->ptr_2 = 0; /*0x59bee2*/
     *(unsigned int *)&dword_ABED10[40 * v80[0] + 30 + 40 * g_MapCellWidth * v80[1]] = this->u32_308; /*0x59bf0d*/
     v31 = *(unsigned int *)v13 + 1; /*0x59bf16*/
     LODWORD(v92) = v30->vtable2; /*0x59bf19*/

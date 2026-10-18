@@ -119,9 +119,9 @@ CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const
   CoordStruct *out; // [esp+14h] [ebp+4h]
 
   v1 = (gamemd::CoordStruct *)((int *)out->vt_slot_72(v3));
-  out->vfptr = (void *)*v1; /*0x410558*/
-  out[1].vfptr = (void *)v1[1]; /*0x41055d*/
-  out[2].vfptr = (void *)v1[2]; /*0x410564*/
+  out->ptr_0 = (void *)*v1; /*0x410558*/
+  out[1].ptr_0 = (void *)v1[1]; /*0x41055d*/
+  out[2].ptr_0 = (void *)v1[2]; /*0x410564*/
   return (gamemd::CoordStruct *)((int)out); /*0x410560*/
 }
 // src-model helper kept for the existing callers (techno.cpp): the pointer

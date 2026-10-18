@@ -739,7 +739,7 @@ int Vector2::NormalizeNonZero() {
     if ( v8 == 0.0 ) /*0x41c47d*/
     {
       *this = 0; /*0x41c47f*/
-      this->vtable2 = 1079574528; /*0x41c485*/
+      this->ptr_2 = 1079574528; /*0x41c485*/
     }
   }
   return result; /*0x41c48c*/
@@ -1993,7 +1993,7 @@ namespace gamemd {
 char CountdownTimer::UpdateDisplay(char a2) {
 
   int uniqueId; // edi
-  void **p_vtable2; // ebx
+  void **pList; // ebx
   int v5; // eax
   int abstractFlags; // eax
   CountdownTimer v7; // eax
@@ -2010,8 +2010,8 @@ char CountdownTimer::UpdateDisplay(char a2) {
     uniqueId = dword_A8B230[43].uniqueId; /*0x4a262a*/
     if ( dword_A8B230[43].vfptr2 != (void *)-1 ) /*0x4a2639*/
     {
-      p_vtable2 = &dword_A8B230[43].vfptr2; /*0x4a2630*/
-      uniqueId += Timer::GetTicks() - (unsigned int)*p_vtable2; /*0x4a2645*/
+      pList = &dword_A8B230[43].ptr_2; /*0x4a2630*/
+      uniqueId += Timer::GetTicks() - (unsigned int)*pList; /*0x4a2645*/
     }
     v5 = this->u32_4; /*0x4a265b*/
     *this = (CountdownTimer)(uniqueId / 60); /*0x4a2660*/
@@ -4647,7 +4647,7 @@ unsigned int * COMClass::getInterface(char a2) {
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v3 = *(void (__thiscall ****)(unsigned int, int))&this->Items; /*0x765c23*/
-  *(unsigned int *)this->vtable1 = 0; /*0x765c26*/
+  *(unsigned int *)this->ptr_1 = 0; /*0x765c26*/
   if ( v3 && (this->IsAllocated) ) /*0x765c30*/
   {
     (**v3)(v3, 3); /*0x765c3f*/

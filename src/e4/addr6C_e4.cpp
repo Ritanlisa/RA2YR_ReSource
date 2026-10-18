@@ -1548,7 +1548,7 @@ namespace gamemd {
 int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
 {
 
-  wchar_t *p_vtable1; // ebp
+  wchar_t *pVal; // ebp
   int v4; // esi
   wchar_t *v5; // edi
   void *vtable0; // ebx
@@ -1564,16 +1564,16 @@ int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
 
   v15 = this; /*0x6ca1f5*/
   mbstowcs(Dest, Source, 0x20u); /*0x6ca1f9*/
-  p_vtable1 = (wchar_t *)&this->?; /*0x6ca201*/
+  pVal = (wchar_t *)&this->?; /*0x6ca201*/
   while ( 1 ) /*0x6ca27e*/
   {
     while ( 1 ) /*0x6ca208*/
     {
       v13 = 0; /*0x6ca208*/
       v4 = 0; /*0x6ca20d*/
-      v5 = p_vtable1; /*0x6ca20f*/
+      v5 = pVal; /*0x6ca20f*/
       vtable0 = v15->AbstractClass; /*0x6ca211*/
-      *p_vtable1 = 0; /*0x6ca213*/
+      *pVal = 0; /*0x6ca213*/
       while ( (*(int (**)(void *, wchar_t *, int))(*(unsigned int *)vtable0 + 8))(vtable0, &v14, 2) == 2 ) /*0x6ca22a*/
       {
         if ( v14 != 10 ) /*0x6ca235*/
@@ -1592,9 +1592,9 @@ int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
       v13 = 1; /*0x6ca24e*/
       LABEL_10:
       v7 = v15; /*0x6ca253*/
-      p_vtable1[v4] = 0; /*0x6ca257*/
+      pVal[v4] = 0; /*0x6ca257*/
       ++v7[11].location[1]; /*0x6ca260*/
-      v8 = WideString::Trim(p_vtable1); /*0x6ca26b*/
+      v8 = WideString::Trim(pVal); /*0x6ca26b*/
       if ( wcslen(v8) ) /*0x6ca26e*/
       {
         if ( *v8 != 59 ) /*0x6ca27e*/
@@ -2097,19 +2097,19 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
 {
 
 
-  unsigned short *vtable2 = this->M8; // edi /*0x6c8b19*/
-  if ( &vtable2->u32_6 > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
+  unsigned short *pVal = this->M8; // edi /*0x6c8b19*/
+  if ( &pVal->u32_6 > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
     return 0; /*0x6c8b28*/
   unsigned short *v12; // [esp+10h] [ebp-10h]
   v12 = this->?; /*0x6c8b2c*/
-  this->M8 = vtable2 + 6; /*0x6c8b30*/
-  if ( !vtable2 ) /*0x6c8b33*/
+  this->M8 = pVal + 6; /*0x6c8b30*/
+  if ( !pVal ) /*0x6c8b33*/
     return 0; /*0x6c8b35*/
-  *vtable2 = a4; /*0x6c8b4f*/
-  vtable2[1] = a5; /*0x6c8b52*/
-  vtable2->ptr_4 = *(unsigned short *)(a3 + 8); /*0x6c8b5a*/
-  vtable2->u32_6 = *(unsigned short *)(a3 + 12); /*0x6c8b66*/
-  vtable2->vtable3 = this->M8; /*0x6c8b70*/
+  *pVal = a4; /*0x6c8b4f*/
+  pVal[1] = a5; /*0x6c8b52*/
+  pVal->ptr_4 = *(unsigned short *)(a3 + 8); /*0x6c8b5a*/
+  pVal->u32_6 = *(unsigned short *)(a3 + 12); /*0x6c8b66*/
+  pVal->ptr_3 = this->M8; /*0x6c8b70*/
   unsigned int *v8; // eax
   int v13; // [esp+18h] [ebp-8h] BYREF
   v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
@@ -2138,11 +2138,11 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
         break; /*0x6c8c0a*/
       v9 = a2; /*0x6c8c0c*/
     }
-    vtable2 = v12; /*0x6c8c25*/
+    pVal = v12; /*0x6c8c25*/
     v9 = a2; /*0x6c8c29*/
   }
   (*(void (**)(int))(*(unsigned int *)v9 + 96))(v9); /*0x6c8c31*/
-  return (int)vtable2; /*0x6c8b37*/
+  return (int)pVal; /*0x6c8b37*/
 
 }
 } // namespace gamemd
@@ -3089,7 +3089,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
         do /*0x6cf961*/
         {
           *v8 = 0; /*0x6cf958*/
-          v8->vtable2 = 0; /*0x6cf95a*/
+          v8->ptr_2 = 0; /*0x6cf95a*/
           v8 += 2; /*0x6cf95d*/
           --v9; /*0x6cf960*/
         }
@@ -3114,7 +3114,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     do /*0x6cf92d*/
     {
       *v4 = 0; /*0x6cf924*/
-      v4->vtable2 = 0; /*0x6cf926*/
+      v4->ptr_2 = 0; /*0x6cf926*/
       v4 += 2; /*0x6cf929*/
       --v5; /*0x6cf92c*/
     }

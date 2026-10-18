@@ -13367,21 +13367,21 @@ int _getbuf(MouseClass * aP0)
   ++dword_B781C0; /*0x7d7710*/
   void *v1; // eax
   v1 = malloc(0x1000u); /*0x7d771b*/
-  aP0->vfptr2 = v1; /*0x7d7727*/
+  aP0->ptr_2 = v1; /*0x7d7727*/
   if ( v1 ) /*0x7d772a*/
   {
-    aP0->vfptr3 = (void *)((int)aP0->vfptr3 | 8); /*0x7d772c*/
+    aP0->ptr_3 = (void *)((int)aP0->ptr_3 | 8); /*0x7d772c*/
     aP0->nextArrayIndex = 4096; /*0x7d7730*/
   }
   else
   {
-    aP0->vfptr3 = (void *)((int)aP0->vfptr3 | 4); /*0x7d7739*/
-    aP0->vfptr2 = &aP0->abstractFlags; /*0x7d7740*/
+    aP0->ptr_3 = (void *)((int)aP0->ptr_3 | 4); /*0x7d7739*/
+    aP0->ptr_2 = &aP0->abstractFlags; /*0x7d7740*/
     aP0->nextArrayIndex = 2; /*0x7d7743*/
   }
   int result; // eax
   result = (int)aP0->vfptr2; /*0x7d774a*/
-  aP0->vfptr1 = 0; /*0x7d774d*/
+  aP0->ptr_1 = 0; /*0x7d774d*/
   aP0->vfptr = (void *)result; /*0x7d7751*/
   return result; /*0x7d7753*/
 }

@@ -155,7 +155,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   (*(void (**)(unsigned int, int))(**((unsigned int **)v3 + 67) + 28))(*((unsigned int *)v3 + 67), 1); /*0x40130f*/
   if ( CCFileClass::Read(v19, Buffer, 12) != 12 ) /*0x401325*/
     goto LABEL_30; /*0x401325*/
-  v3->vtable2 = v18; /*0x40132f*/
+  v3->ptr_2 = v18; /*0x40132f*/
   if ( v18 <= 0 ) /*0x401338*/
     goto LABEL_17; /*0x401338*/
   v8 = __2_YAPAXI_Z(36 * v18); /*0x401346*/
@@ -1892,8 +1892,8 @@ int E4Recv_408970::sub_408970()
 
   ObjectClass *v1; // edx
   char *v2; // ebx
-  void **vtable1; // esi
-  void **p_vtable1; // edi
+  void **pList; // esi
+  void **pList; // edi
   unsigned int *v5; // eax
   int v6; // edx
   unsigned int *v7; // esi
@@ -1907,35 +1907,35 @@ int E4Recv_408970::sub_408970()
 
   v1 = this; /*0x408973*/
   v2 = 0; /*0x408977*/
-  vtable1 = (void **)this->M4; /*0x408979*/
-  p_vtable1 = &this->M4; /*0x40897c*/
-  if ( vtable1 != &this->M4 ) /*0x408985*/
+  pList = (void **)this->M4; /*0x408979*/
+  pList = &this->M4; /*0x40897c*/
+  if ( pList != &this->M4 ) /*0x408985*/
   {
     do /*0x4089ce*/
     {
-      LinkedList::Init((LinkedList *)vtable1); /*0x40898e*/
-      v5 = vtable1[12]; /*0x408993*/
-      vtable1[12] = 0; /*0x408996*/
+      LinkedList::Init((LinkedList *)pList); /*0x40898e*/
+      v5 = pList[12]; /*0x408993*/
+      pList[12] = 0; /*0x408996*/
       v6 = v5[5]; /*0x40899b*/
       --*v5; /*0x40899f*/
-      v5[5] = v6 - (unsigned int)vtable1[7]; /*0x4089a6*/
+      v5[5] = v6 - (unsigned int)pList[7]; /*0x4089a6*/
       v5[4] &= ~2u; /*0x4089ae*/
-      if ( vtable1[4] ) /*0x4089b1*/
-        __3_YAXPAX_Z(vtable1[4]); /*0x4089b9*/
-      __3_YAXPAX_Z(vtable1); /*0x4089c2*/
-      vtable1 = (void **)*p_vtable1; /*0x4089c7*/
+      if ( pList[4] ) /*0x4089b1*/
+        __3_YAXPAX_Z(pList[4]); /*0x4089b9*/
+      __3_YAXPAX_Z(pList); /*0x4089c2*/
+      pList = (void **)*pList; /*0x4089c7*/
     }
-    while ( *p_vtable1 != p_vtable1 ); /*0x4089ce*/
+    while ( *pList != pList ); /*0x4089ce*/
     v1 = this; /*0x4089d0*/
   }
-  v7 = *p_vtable1; /*0x4089d4*/
-  if ( *p_vtable1 == p_vtable1 ) /*0x4089d8*/
+  v7 = *pList; /*0x4089d4*/
+  if ( *pList == pList ) /*0x4089d8*/
   {
     v7 = 0; /*0x4089da*/
   }
   else if ( v7 ) /*0x4089e0*/
   {
-    v8 = (void **)*p_vtable1; /*0x4089e2*/
+    v8 = (void **)*pList; /*0x4089e2*/
     do /*0x408a05*/
     {
       v9 = v8 + 9; /*0x4089e4*/
@@ -1952,7 +1952,7 @@ int E4Recv_408970::sub_408970()
       v8 = (void **)*v8; /*0x408a00*/
       ++v2; /*0x408a02*/
     }
-    while ( v8 != p_vtable1 ); /*0x408a05*/
+    while ( v8 != pList ); /*0x408a05*/
     v1 = this; /*0x408a07*/
   }
   v11 = &v1->ambientSoundController[4]; /*0x408a0d*/
@@ -3321,7 +3321,7 @@ void * ObjectClass::sub_402440(int a1, int a2)
 
   v2 = v2; /*0x402441*/
   v4 = v2->u32_D4; /*0x402443*/
-  v2->vtable4 = v1; /*0x402449*/
+  v2->ptr_4 = v1; /*0x402449*/
   (*(void (**)(void))(v4 + 40))(); /*0x40244c*/
   if ( (v2->q0A4 & 5) != 0 ) /*0x402456*/
     v2->u32_D4->IsClean(); /*0x402460*/
@@ -4587,7 +4587,7 @@ namespace gamemd {
 int SetRateMixerSample(unsigned int * a0, int a2, unsigned int a3, ObjectClass * aP3)
 {
   a0->uniqueId = a3; /*0x4071ae*/
-  a0->vtable4 = (a2 << 16) / a3; /*0x4071b2*/
+  a0->ptr_4 = (a2 << 16) / a3; /*0x4071b2*/
   a0->abstractFlags = aP3; /*0x4071b9*/
   return aP3; /*0x4071b1*/
 }

@@ -225,7 +225,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
   if ( result ) /*0x7245db*/
   {
     *(unsigned int *)result = *(unsigned int *)v2; /*0x7245e6*/
-    result->vtable2 = *(unsigned int *)(v2 + 4); /*0x7245ee*/
+    result->ptr_2 = *(unsigned int *)(v2 + 4); /*0x7245ee*/
     *(unsigned int *)(result + 8) = *(unsigned int *)(v2 + 8); /*0x7245f3*/
     *(unsigned int *)(result + 12) = *(unsigned int *)(v2 + 12); /*0x7245f9*/
     *(unsigned int *)(result + 16) = *(unsigned int *)(v2 + 16); /*0x7245ff*/
@@ -248,8 +248,8 @@ LABEL_19:
         *(unsigned int *)(*v4 + 8 * v4[1]) = *v6; /*0x7246f4*/
         *(unsigned int *)(*v4 + 8 * v4[1] + 4) = v6; /*0x724704*/
         result = v4[1] + 1; /*0x72470b*/
-        v4->vtable4 = 0; /*0x72470c*/
-        v4->vtable2 = result; /*0x724710*/
+        v4->ptr_4 = 0; /*0x72470c*/
+        v4->ptr_2 = result; /*0x724710*/
         goto LABEL_20; /*0x724710*/
       }
       if ( result ) /*0x72466c*/
@@ -277,7 +277,7 @@ LABEL_19:
         __3_YAXPAX_Z((void *)*v4); /*0x7246d7*/
         v15 = a2 + v4->vtable3; /*0x7246e6*/
         *v4 = v12; /*0x7246e8*/
-        v4->vtable3 = v15; /*0x7246ea*/
+        v4->ptr_3 = v15; /*0x7246ea*/
         v4->uniqueId = 0; /*0x7246ed*/
         goto LABEL_19; /*0x7246ed*/
       }

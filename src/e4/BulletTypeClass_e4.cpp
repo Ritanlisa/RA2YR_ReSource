@@ -881,7 +881,7 @@ unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
   int v3 = v7; // ecx /*0x46c51a*/
   if ( v7 <= GroundHeight ) /*0x46c520*/
     v3 = Cell::GetGroundHeight(&v5) + 1; /*0x46c533*/
-  *(unsigned int *)a1->vfptr = v5; /*0x46c53f*/
+  *(unsigned int *)a1->ptr_0 = v5; /*0x46c53f*/
   *(unsigned int *)&a1->vfptr[4] = v6; /*0x46c545*/
   *(unsigned int *)&a1->vfptr[8] = v3; /*0x46c549*/
   return a1->vfptr; /*0x46c54c*/

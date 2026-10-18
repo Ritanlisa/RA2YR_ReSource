@@ -622,7 +622,7 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
   char *JumpjetLocomotion_field_0x44; // ecx
   JumpjetLocomotion_field_0x44 = (char *)this->JumpjetLocomotion_field_0x44; /*0x4b47e5*/
   *aP1 = (unsigned int)(&JumpjetLocomotion_field_0x40[v6]); /*0x4b47f2*/
-  aP1->vtable2 = &JumpjetLocomotion_field_0x44[v7]; /*0x4b47f5*/
+  aP1->ptr_2 = &JumpjetLocomotion_field_0x44[v7]; /*0x4b47f5*/
   return aP1; /*0x4b47f0*/
 
 }

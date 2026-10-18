@@ -5166,7 +5166,7 @@ int TiberiumClass::Grow(void* a1) {
   *v9 = 0; /*0x59cd99*/
   (*((unsigned int *)&(v90))) = 1; /*0x59cd9f*/
   *v41 = *(unsigned int *)v85; /*0x59cda7*/
-  v41->vtable2 = 0; /*0x59cda9*/
+  v41->ptr_2 = 0; /*0x59cda9*/
   *(unsigned int *)(80 * (v85[0] + g_MapCellWidth * v85[1]) + g_MissionQueueFrame.localVariables[163] + 60) = this->u32_308; /*0x59cdd4*/
   v42 = *&v9->__pad_004; /*0x59cddd*/
   (*((unsigned int *)&(v94))) = v41->vtable2; /*0x59cde0*/

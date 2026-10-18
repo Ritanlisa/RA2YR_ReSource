@@ -1458,7 +1458,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
     Status = DDraw_GetStatus(); /*0x5bfe8c*/
     Render_Load_759F20(*(ObjectClass **)v15, Status); /*0x5bfe94*/
   }
-  v15->vtable3 = a2; /*0x5bfe99*/
+  v15->ptr_3 = a2; /*0x5bfe99*/
   v40 = (*(int (__thiscall **)(int *))(*a2 + 128))(a2); /*0x5bfeac*/
   v37 = (*(int (__thiscall **)(int *))(*a2 + 116))(a2); /*0x5bfeb6*/
   v38 = (*(int (__thiscall **)(int *))(*a2 + 112))(a2); /*0x5bfeb8*/

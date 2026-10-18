@@ -286,7 +286,7 @@ LABEL_71:
       qmemcpy(v13 + 32, this + 32271, v27 - 4); /*0x7b3fab*/
       if ( !(*(unsigned __int8 (**)(UDPInterfaceClass *, unsigned char *))(this->Socket + 88))(this, v13) ) /*0x7b3fb9*/
       {
-        v13->vtable2 = *(unsigned int *)&netshort.sa_data[2]; /*0x7b3fc4*/
+        v13->ptr_2 = *(unsigned int *)&netshort.sa_data[2]; /*0x7b3fc4*/
         ntohs(*(u_short *)netshort.sa_data); /*0x7b3fd4*/
         Debug::Log(); /*0x7b4000*/
         if ( !byte_B78124 ) /*0x7b400f*/
@@ -302,20 +302,20 @@ LABEL_60:
         return 0; /*0x7b3eb8*/
       }
       *(unsigned int *)v13 = 0; /*0x7b4041*/
-      v13->vtable2 = 0; /*0x7b4043*/
-      v13->vtable3 = 0; /*0x7b4046*/
-      v13->vtable4 = 0; /*0x7b4049*/
+      v13->ptr_2 = 0; /*0x7b4043*/
+      v13->ptr_3 = 0; /*0x7b4046*/
+      v13->ptr_4 = 0; /*0x7b4049*/
       v32 = htonl(0x7F000001u); /*0x7b404c*/
       if ( *(unsigned int *)&netshort.sa_data[2] == v32 ) /*0x7b4055*/
       {
         v13->u8_1A = 0; /*0x7b4057*/
         *(NetworkID *)v13 = *(NetworkID *)&stru_A8D804.__pad_3D[879]; /*0x7b4065*/
-        v13->vtable3 = *(unsigned int *)&stru_A8D804.__pad_3D[887]; /*0x7b4075*/
+        v13->ptr_3 = *(unsigned int *)&stru_A8D804.__pad_3D[887]; /*0x7b4075*/
       }
       else
       {
         v13->u8_1A = ntohs(*(u_short *)netshort.sa_data); /*0x7b4084*/
-        v13->vtable2 = *(unsigned int *)&netshort.sa_data[2]; /*0x7b408c*/
+        v13->ptr_2 = *(unsigned int *)&netshort.sa_data[2]; /*0x7b408c*/
       }
       v33 = this->q010; /*0x7b408f*/
       v34 = this->q018; /*0x7b4092*/
@@ -391,7 +391,7 @@ LABEL_25:
     if ( !v14 ) /*0x7b3c62*/
       v14 = hostshort; /*0x7b3c64*/
     *(unsigned short *)netshort.sa_data = htons(v14); /*0x7b3c75*/
-    if ( v13->vtable2 == *(unsigned int *)&stru_A8D804.__pad_3D[883] /*0x7b3c9a*/
+    if ( v13->ptr_2 == *(unsigned int *)&stru_A8D804.__pad_3D[883] /*0x7b3c9a*/
       && (!*(unsigned int *)&stru_A8D804.__pad_3D[579]
        || (unsigned __int8)GUID::Compare(&stru_A8D804.__pad_3D[879], **(unsigned int **)&stru_A8D804.__pad_3D[567] + 40)) )
     {

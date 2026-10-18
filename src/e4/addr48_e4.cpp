@@ -1680,7 +1680,7 @@ namespace gamemd {
 int E4Recv_486D90::sub_486D90(char a2)
 {
 
-  unsigned int *p_vtable0; // eax
+  unsigned int *pVal; // eax
 
   int v3 = 1 << a2; // ebx /*0x486da4*/
   if ( (this->M220 & (1 << a2)) == 0 ) /*0x486da8*/
@@ -1699,13 +1699,13 @@ int E4Recv_486D90::sub_486D90(char a2)
       LOWORD(v11) = LOWORD(g_DDrawSurfaceManager.scenario[v9 + 82]) + v10[0]; /*0x486dee*/
       HIWORD(v11) = v10[1] + HIWORD(g_DDrawSurfaceManager.scenario[v9 + 82]); /*0x486df3*/
       *(unsigned int *)v10 = v11; /*0x486e02*/
-      p_vtable0 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v10); /*0x486e06*/
+      pVal = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v10); /*0x486e06*/
     }
     else
     {
-      p_vtable0 = &this->AbstractClass; /*0x486dbe*/
+      pVal = &this->AbstractClass; /*0x486dbe*/
     }
-    if ( (v3 & p_vtable0->u32_DC) != 0 ) /*0x486e11*/
+    if ( (v3 & pVal->u32_DC) != 0 ) /*0x486e11*/
       v6 |= 1 << v5; /*0x486e1c*/
     v7 = (unsigned int)++v5 < 8; /*0x486e1f*/
   }
