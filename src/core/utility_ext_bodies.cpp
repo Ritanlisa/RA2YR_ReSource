@@ -76,3 +76,4 @@ int StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
   }
   return result; /*0x49ef4a*/
 }
+} // namespace gamemd

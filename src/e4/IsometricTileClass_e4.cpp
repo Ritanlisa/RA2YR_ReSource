@@ -43,3 +43,4 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
   }
   return this; /*0x543876*/
 }
+} // namespace gamemd

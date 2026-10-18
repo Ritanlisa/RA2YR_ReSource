@@ -56,3 +56,4 @@ float * Audio3D::Audio3D::ComputeRotation(float *a2, unsigned int a3)  // g57b5 
   memcpy(a2, v9, 0x30u); /*0x55a8b4*/
   return a2; /*0x55a8b6*/
 }
+} // namespace gamemd

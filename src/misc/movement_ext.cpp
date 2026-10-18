@@ -22,3 +22,4 @@ void MoveFeedback::ClearBuffer()
   (this->IsAllocated) = 0; /*0x40b661*/
   this->m_8 = 0; /*0x40b664*/
 }
+} // namespace gamemd

@@ -1367,3 +1367,4 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
   (this->u32_D) = 0; /*0x633e3e*/
   this->vfptr2 = 0; /*0x633e41*/
 }
+} // namespace ra2

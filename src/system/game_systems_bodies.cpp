@@ -7680,3 +7680,4 @@ LABEL_24:
   return v2; /*0x55e072*/
 
 }
+} // namespace gamemd

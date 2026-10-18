@@ -139,3 +139,4 @@ LABEL_8:
   return -2147221504; /*0x40a482*/
 
 }
+} // namespace gamemd

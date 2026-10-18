@@ -638,7 +638,6 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
   }
   return 1; /*0x534438*/
 }
-}
 // 0x5349C0
 namespace gamemd {
 void TheaterClass_LoadMIX(int a1)
@@ -1500,7 +1499,7 @@ void sub_53B460(int a1, Scenario * a2)
       v5 = 0; /*0x53b4be*/
     }
     g_ChronoEffectState = (int)v5; /*0x53b4c8*/
-    (*(void (**)(char *, AudioStream *, unsigned int, int))(v5->vtable2)(v5, DSurface_Composite, 0, 1); /*0x53b4d4*/
+    (*(void (**)(char *, AudioStream *, unsigned int, int))(v5->vtable2))(v5, DSurface_Composite, 0, 1); /*0x53b4d4*/
     flt_A9FAA0 = 0.0; /*0x53b4d7*/
     flt_A9FAA4 = 0.0; /*0x53b4e1*/
     ChronoScreenEffect_Duration = a1; /*0x53b4eb*/

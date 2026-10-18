@@ -185,3 +185,5 @@ int Conflict::GetOwnerHouse()
 }
 }
 }
+} // namespace wdt
+} // namespace gamemd

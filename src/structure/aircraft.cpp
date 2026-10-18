@@ -1874,3 +1874,4 @@ int AircraftClass::CheckStateFlag2()
 bool AircraftClass::StubReturnFalse2() { return false; 
   return 0; /*0x41be72*/
 }
+} // namespace gamemd

@@ -872,3 +872,4 @@ int CellClass::IsTunnelEntrance()
   v1 = (*(this->tubeIndex + 1)); /*0x484ab0*/
   return v1 >= 0 && v1 < FootClass_Array.primaryFacing[0] && this->radioLinks[3] == 10; /*0x484ad7*/
 }
+} // namespace gamemd

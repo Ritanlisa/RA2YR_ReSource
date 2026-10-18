@@ -246,3 +246,5 @@ void History::Clear()
 } // namespace gamemd
 } // namespace wdt
 } // namespace gamemd
+} // namespace gamemd
+} // namespace wdt

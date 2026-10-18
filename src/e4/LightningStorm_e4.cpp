@@ -70,7 +70,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
         if ( !LightningStorm_Owner /*0x539fc5*/
           || !(unsigned __int8)HouseClass::IsAlliedWith(
                                  LightningStorm_Owner,
-                                 *(#375 **)&dword_A8022C->AbstractClass[4 * v8]) )
+                                 *(HouseClass **)&dword_A8022C->AbstractClass[4 * v8]) )
         {
           int v9; // ecx
           v9 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v8]; /*0x539fd3*/

@@ -82,3 +82,4 @@ bool * FactoryClass::AbandonProduction()
   return 1; /*0x4ca108*/
 
 }
+} // namespace gamemd

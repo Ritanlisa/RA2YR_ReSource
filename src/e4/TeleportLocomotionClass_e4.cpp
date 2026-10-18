@@ -43,3 +43,4 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   return (int)this->LocomotionClass; /*0x718074*/
   
 }
+} // namespace gamemd

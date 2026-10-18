@@ -310,3 +310,5 @@ void AudioController::Stop()
   result->AudioController_field_08 = 0; /*0x405e71*/
   return result; /*0x405e74*/
 }
+} // namespace ra2
+} // namespace game

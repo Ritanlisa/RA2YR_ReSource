@@ -100,10 +100,10 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           v10 = 0; /*0x657e9b*/
         }
         if ( v10 < v33 /*0x657ec1*/
-          && (v11 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v10], (hDlga = (#375 *)v11) != 0)
+          && (v11 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v10], (hDlga = (HouseClass *)v11) != 0)
           && *(unsigned char *)(*(unsigned int *)(v11 + 52) + 421) )
         {
-          if ( !BYTE1(dword_8871E0[1].InfantryBrute) || (#375 *)HouseClass_Observer == dword_A83D4C || dword_A8B244 == 2 ) /*0x657ef9*/
+          if ( !BYTE1(dword_8871E0[1].InfantryBrute) || (HouseClass *)HouseClass_Observer == dword_A83D4C || dword_A8B244 == 2 ) /*0x657ef9*/
           {
             ShowWindow(v9, 0); /*0x657f73*/
           }

@@ -20,6 +20,7 @@ namespace mix {
 void SetSoundWarning(int p0);  // x4:signals@0x4790b0
 }
 // ---- g57c5 W5 end ----
+namespace gamemd
 {
 
 // ============================================================
@@ -543,3 +544,4 @@ char MixFileClass::Bootstrap()
   SetSoundWarning(v17); /*0x530445*/
   return 1; /*0x5302e4*/
 }
+} // namespace gamemd

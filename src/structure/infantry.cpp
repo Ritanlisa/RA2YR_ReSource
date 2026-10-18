@@ -4490,6 +4490,7 @@ LABEL_159:
           break; /*0x51c78b*/
         }
       }
+    }
     if ( !((unsigned int *)this)[0] && !v40 && flt_89EA40[9 * *(unsigned int *)(a2 + 236) + ((unsigned int *)this->Type)[0]] == 0.0 ) /*0x51c7ce*/
       return 7; /*0x51c7dc*/
     if ( !v19 && v41 ) /*0x51c7e9*/
@@ -4502,10 +4503,12 @@ LABEL_159:
         if ( (v42 & 0x1C) == 0x1C && v19 < 2 )
           return v22 != 3 ? 2 : 6;
         goto LABEL_159; /*0x51c824*/
+      }
       if ( TechnoClass::GetValue((TechnoClass *)this, -1) <= 0 ) /*0x51c84c*/
         return 7; /*0x51c84c*/
       if ( v19 < 5 ) /*0x51c851*/
         return 5; /*0x51c861*/
+    }
     v38 = v42; /*0x51c864*/
   LABEL_159:
     if ( v19 ) /*0x51c86a*/

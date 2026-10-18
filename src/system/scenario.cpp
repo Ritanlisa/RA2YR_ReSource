@@ -265,3 +265,4 @@ int ScenarioClass::UpdateLighting()
              1);
   }
 }
+} // namespace gamemd

@@ -1,0 +1,240 @@
+{
+ "append": {},
+ "w5_orphan": {},
+ "addr53": null,
+ "paren": [],
+ "skipped": [
+  [
+   "src/core/checksummer.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/core/game_loop.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/core/globals.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/core/hash_table.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/core/load_options.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/core/stream_ext.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/core/utility_ext_bodies.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/e4/IsometricTileClass_e4.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/e4/TeleportLocomotionClass_e4.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/entity/rad_site.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/misc/audio.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/misc/audio_ext.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/misc/locomotion_bodies.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/misc/misc_ext.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/misc/movement_ext.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/network/connection.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/network/winsock.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/object/abstract.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/object/foot.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/object/gap2_defs.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/object/object.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/object/techno.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/render/display.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/render/render_ext.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/render/surface.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/structure/aircraft.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/structure/building_bodies.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/structure/unit.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/cc_file.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/cell.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/convert_class.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/factory.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/game_systems_bodies.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/map.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/mix_file.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/scenario.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/system/tactical.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/team/tag.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/team/trigger.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/type/bullet_type.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/ui/command_ext_bodies.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/ui/dialog_win32.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/ui/gadget.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/ui/sidebar.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/wdt/gap2_defs.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/wdt/wdt.cpp",
+   "stack=0 under=[]"
+  ],
+  [
+   "src/e4/addr53_e4.cpp",
+   "overclose site drifted: '// 0x5349C0\\r'"
+  ],
+  [
+   "src/e4/AircraftClass_e4.cpp:372",
+   "pattern x0 != x1: '(#375 **)'"
+  ],
+  [
+   "src/e4/AircraftClass_e4.cpp:372",
+   "pattern x0 != x1: '(#375 *)'"
+  ],
+  [
+   "src/e4/AircraftClass_e4.cpp:372",
+   "pattern x0 != x1: 'this->?'"
+  ],
+  [
+   "src/e4/Diplomacy_e4.cpp:103",
+   "pattern x0 != x1: '(#375 *)'"
+  ],
+  [
+   "src/e4/Diplomacy_e4.cpp:106",
+   "pattern x0 != x1: '(#375 *)'"
+  ],
+  [
+   "src/e4/LightningStorm_e4.cpp:73",
+   "pattern x0 != x1: '(#375 **)'"
+  ],
+  [
+   "src/e4/SuperWeaponTypeClass_e4.cpp:598",
+   "pattern x0 != x1: '(#375 **)'"
+  ],
+  [
+   "src/e4/SuperWeaponTypeClass_e4.cpp:598",
+   "pattern x0 != x1: '(#375 *)'"
+  ],
+  [
+   "src/e4/TabClass_e4.cpp:76",
+   "pattern x0 != x1: '(#375 *)'"
+  ],
+  [
+   "src/e4/TabClass_e4.cpp:100",
+   "pattern x0 != x1: '(#375 *)'"
+  ],
+  [
+   "src/e4/addr53_e4.cpp:1503",
+   "pattern x0 != x1: ')(v5->vtable2)(v5, DSurface_Composite, 0, 1);'"
+  ]
+ ]
+}

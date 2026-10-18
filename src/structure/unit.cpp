@@ -10884,3 +10884,4 @@ void UnitClass::DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint3
 void UnitClass::DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {
 
 } // namespace gamemd
+} // namespace gamemd

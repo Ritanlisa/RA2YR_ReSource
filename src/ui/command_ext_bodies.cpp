@@ -49,3 +49,4 @@ void CursorAnim::Load() {}
   SidebarClass *v1; // ecx
 
   return (int)ObjectClass::GetTooltipText(v1, (int)this); /*0x6d180a*/
+} // namespace gamemd

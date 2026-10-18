@@ -27,6 +27,7 @@ void UI_Add_6AC430();  // g57c5 W5 vocab (csp)
 } // namespace gamemd
 // ---- g57c5 W5 end ----
 
+namespace gamemd
 {
 
 SidebarClass* SidebarClass::Instance = nullptr;
@@ -323,4 +324,5 @@ void ObjectClass_ToggleSidebarDisplay(void* obj, bool show)
     (void)obj;
     (void)show;
 
+} // namespace gamemd
 } // namespace gamemd

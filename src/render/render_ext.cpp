@@ -43,3 +43,4 @@ void BlitPlainXlatAlpha_ushort::Release() {
   return this->AddRef(/*0x493dba*/
            this, a2, a3, a4, a5, a6, a7, a8, 0);
 }
+} // namespace gamemd

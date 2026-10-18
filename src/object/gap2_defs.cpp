@@ -9984,3 +9984,5 @@ void* AbstractClass::fireSuperWeapon(void* a1, int a2) { return nullptr; } } } {
   return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 48 errs): wrong-universe gap2 body; truth func_0x763f60.json */
 }
 
+} // namespace game
+} // namespace ra2

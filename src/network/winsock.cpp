@@ -457,3 +457,4 @@ bool UDPInterfaceClass::SetBroadcast(bool enable)
 
 } // namespace gamemd
 }  // L-fix: close namespace tail 1
+} // namespace gamemd

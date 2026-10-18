@@ -397,3 +397,4 @@ void TriggerTypeClass::calculateChecksum(void* checksum) const {
 
 } // namespace gamemd
 }  // L-fix: close namespace tail 1
+} // namespace gamemd

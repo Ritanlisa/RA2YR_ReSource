@@ -106,3 +106,4 @@ int CCFileClass::Reset()
   (*((unsigned char *)&(result))) = CCFileClass::Close(this); /*0x473cfc*/
   return result; /*0x473d01*/
 }
+} // namespace gamemd

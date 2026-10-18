@@ -14,3 +14,4 @@ void RadSiteClass::SetBaseCell(CellStruct* cell) {
   this->BaseCell[0] = *cell; /*0x65b4c6*/
   return cell; /*0x65b4c9*/
 }
+} // namespace gamemd

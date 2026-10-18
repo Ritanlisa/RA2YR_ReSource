@@ -361,3 +361,4 @@ uint32_t CRC32::Compute(uint8_t *a1, int a2, int a3)
   }
   return ~v5; /*0x4a1fe3*/
 }
+} // namespace gamemd

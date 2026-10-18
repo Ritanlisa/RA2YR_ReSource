@@ -293,3 +293,4 @@ bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool u
   }
   return result; /*0x4a9dc2*/
 }
+} // namespace gamemd

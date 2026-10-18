@@ -153,3 +153,4 @@ LABEL_55:
   return result; /*0x50b1c6*/
 
 }
+} // namespace gamemd

@@ -665,3 +665,5 @@ bool FootClass::CanEnterCell(uint32_t a) { return false;
   return !v12 || !v13; /*0x709450*/
 
 }
+} // namespace ra2
+} // namespace game

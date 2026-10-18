@@ -595,7 +595,7 @@ int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
   if ( a3
     && (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6
     && (v4 = (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3),
-        (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(v4 == 6 ? a3 + 0x21C : 540), (#375 *)dword_A83D4C)) )
+        (unsigned __int8)HouseClass::IsAlliedWith(*(HouseClass **)(v4 == 6 ? a3 + 0x21C : 540), (HouseClass *)dword_A83D4C)) )
   {
     return this->ActionValue[0]; /*0x6cefd3*/
   }

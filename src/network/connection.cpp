@@ -16,6 +16,7 @@ namespace gamemd {
 void Network_Helper();  // g57c5 W5 vocab (csp)
 } // namespace gamemd
 // ---- g57c5 W5 end ----
+namespace gamemd
 {
 
 // ============================================================================
@@ -482,3 +483,4 @@ int32_t IPXManagerClass::GetConnectionCount() { return 0;
   else
     return 0; /*0x54234c*/
 }
+} // namespace gamemd

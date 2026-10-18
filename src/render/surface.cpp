@@ -365,3 +365,4 @@ bool DSurface::BlitPart(
          v8);
   return DSurface_field_0x0[3](this, v9); /*0x4bb0c2*/
 }
+} // namespace gamemd

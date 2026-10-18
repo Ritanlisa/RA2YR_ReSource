@@ -2923,3 +2923,4 @@ int TacticalClass::ProcessMouseClick(int x, int y)
   }
   return 0; /*0x653ed5*/
 }
+} // namespace gamemd

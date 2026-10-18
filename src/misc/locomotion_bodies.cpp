@@ -148,3 +148,4 @@ bool LocomotionClass::Process()
   this->u32_18 = (unsigned int)(&off_7F2D68); /*0x69ecdf*/
   return (int)this->ILocomotion; /*0x69ece8*/
 }
+} // namespace gamemd

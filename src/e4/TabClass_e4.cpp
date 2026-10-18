@@ -73,7 +73,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
   if ( other && *(unsigned char *)(*((unsigned int *)other + 13) + 421) ) /*0x65836c*/
   {
     wcscpy(lParam, (const wchar_t *)other + 45077); /*0x658386*/
-    if ( other == (#375 *)HouseClass_Observer ) /*0x658395*/
+    if ( other == (HouseClass *)HouseClass_Observer ) /*0x658395*/
     {
       BuildingAnimByName = (Color *)FindBuildingAnimByName(g_INI_Key_LightGrey, 1); /*0x6583a1*/
     }
@@ -97,7 +97,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     v10 = (BuildingType **)*((unsigned int *)other + 13); /*0x658466*/
     hWnd = v9; /*0x658469*/
     Default = (HWND)BuildingType::FindDefault(v10[45]); /*0x658473*/
-    if ( other == (#375 *)HouseClass_Observer ) /*0x65847e*/
+    if ( other == (HouseClass *)HouseClass_Observer ) /*0x65847e*/
       Default = (HWND)BuildingType::FindDefault((BuildingType *)0xFFFFFFFD); /*0x658485*/
     CacheDialogInvalidate(hWnd, Default); /*0x658490*/
     if ( *(&dword_83923C + (unsigned int)v29) != -1 ) /*0x65849f*/
