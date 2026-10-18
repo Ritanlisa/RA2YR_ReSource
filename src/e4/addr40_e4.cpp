@@ -97,6 +97,8 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/List_INISection_e4.hpp"  // X74 typed-global merge
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_402EF0(int p0); }  // x4:signals@0x402ef0
 namespace gamemd { int sub_401B00(int p0); }  // x4:signals@0x401b00
@@ -6143,17 +6145,23 @@ void sub_40C7E0()
 }
 } // namespace gamemd
 
+namespace gamemd {
+
+LogicClass_flat g_LogicClass;  // X74: object storage for 0x87F778 cluster
+
+} // namespace gamemd
+
 // 0x40CB80
 namespace gamemd {
 int sub_40CB80()
 {
-  dword_87F77C = 0; /*0x40cb87*/
-  dword_87F780 = 0; /*0x40cb8c*/
-  byte_87F784 = 1; /*0x40cb91*/
-  byte_87F785 = 0; /*0x40cb98*/
-  dword_87F78C = 10; /*0x40cb9d*/
-  dword_87F788 = 0; /*0x40cba7*/
-  dword_87F778 = (int)&vt_LogicClass; /*0x40cbac*/
+  g_LogicClass.Items = 0; /*0x40cb87*/
+  g_LogicClass.Capacity = 0; /*0x40cb8c*/
+  g_LogicClass.IsInit = 1; /*0x40cb91*/
+  g_LogicClass.IsAlloc = 0; /*0x40cb98*/
+  g_LogicClass.GrowStep = 10; /*0x40cb9d*/
+  g_LogicClass.Count = 0; /*0x40cba7*/
+  g_LogicClass.vtable1 = (int)&vt_LogicClass; /*0x40cbac*/
   return atexit(sub_40CBC0); /*0x40cbbc*/
 }
 } // namespace gamemd
@@ -6162,14 +6170,14 @@ int sub_40CB80()
 namespace gamemd {
 void sub_40CBC0()
 {
-  dword_87F778 = (int)&vt_VectorClass; /*0x40cbc8*/
-  if ( dword_87F77C && byte_87F785 ) /*0x40cbdc*/
+  g_LogicClass.vtable1 = (int)&vt_VectorClass; /*0x40cbc8*/
+  if ( g_LogicClass.Items && g_LogicClass.IsAlloc ) /*0x40cbdc*/
   {
-    operator delete((void *)(dword_87F77C)); /*0x40cbdf*/
-    dword_87F77C = 0; /*0x40cbe7*/
+    operator delete((void *)(g_LogicClass.Items)); /*0x40cbdf*/
+    g_LogicClass.Items = 0; /*0x40cbe7*/
   }
-  byte_87F785 = 0; /*0x40cbed*/
-  dword_87F780 = 0; /*0x40cbf3*/
+  g_LogicClass.IsAlloc = 0; /*0x40cbed*/
+  g_LogicClass.Capacity = 0; /*0x40cbf3*/
 }
 } // namespace gamemd
 
@@ -7071,26 +7079,32 @@ int unknown_libname_7()
 }
 } // namespace gamemd
 
+namespace gamemd {
+
+List_INISection g_IniSectionList;  // X74: object storage for 0x887064 cluster
+
+} // namespace gamemd
+
 // 0x40E1C0
 namespace gamemd {
 int sub_40E1C0()
 {
   dword_88705C = 0; /*0x40e1c8*/
   dword_887060 = 0; /*0x40e1ce*/
-  dword_88706C = 0; /*0x40e1d4*/
-  dword_887070 = 0; /*0x40e1da*/
-  dword_887068 = (int)&vt_GenericNode; /*0x40e1e0*/
-  GenericNode::Constructor(unk_887074); /*0x40e1ea*/
-  dword_887064 = (int)&vt_GenericList; /*0x40e1f9*/
-  LinkedList::Prepend(&dword_887068, (int)unk_887074); /*0x40e203*/
-  dword_887064 = (int)&vt_List; /*0x40e20d*/
-  dword_887080 = 0; /*0x40e217*/
-  dword_887084 = 0; /*0x40e21d*/
-  dword_887088 = 0; /*0x40e223*/
-  byte_88708C = 0; /*0x40e229*/
-  dword_887090 = 0; /*0x40e22f*/
-  dword_887094 = 0; /*0x40e235*/
-  byte_887098 = 0; /*0x40e23b*/
+  g_IniSectionList.First.Previous = 0; /*0x40e1d4*/
+  g_IniSectionList.First_t8 = 0; /*0x40e1da*/
+  g_IniSectionList.First.__pad_0 = (int)&vt_GenericNode; /*0x40e1e0*/
+  GenericNode::Constructor(&g_IniSectionList.Last); /*0x40e1ea*/
+  g_IniSectionList.vtable1 = &vt_GenericList; /*0x40e1f9*/
+  LinkedList::Prepend(&g_IniSectionList.First, (int)&g_IniSectionList.Last); /*0x40e203*/
+  g_IniSectionList.vtable1 = &vt_List_INISection; /*0x40e20d*/
+  g_IniSectionList.u32_1C = 0; /*0x40e217*/
+  g_IniSectionList.u32_20 = 0; /*0x40e21d*/
+  g_IniSectionList.u32_24 = 0; /*0x40e223*/
+  g_IniSectionList.u8_28 = 0; /*0x40e229*/
+  g_IniSectionList.u32_2C = 0; /*0x40e22f*/
+  g_IniSectionList.u32_30 = 0; /*0x40e235*/
+  g_IniSectionList.u8_34 = 0; /*0x40e23b*/
   dword_887058 = (int)&CCINIClass_Vtable; /*0x40e241*/
   return atexit(unknown_libname_8); /*0x40e253*/
 }

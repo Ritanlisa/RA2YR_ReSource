@@ -47,6 +47,7 @@
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/_VectorClass_PAVParticleClass_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/TiberianSunClassFactory_e4.hpp"  // X74 typed-global (pUnk)
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_4E6070(int p0); }  // x4:signals@0x4e6070
 // [w16g4] C3861 supply (raw call-form evidence)
@@ -4471,11 +4472,13 @@ void sub_4E7CA0()
 }
 } // namespace gamemd
 
+gamemd::TiberianSunClassFactory pUnk;  // X74: object storage for 0xA8E8C8 (compiler dynamic-init installs vptr)
+
 // 0x4E7CE0
 namespace gamemd {
 void sub_4E7CE0()
 {
-  dword_A8E8C8.field_0 = (struct IUnknownVtbl *)&vt_TiberianSunClassFactory; /*0x4e7ce0*/
+  /* X74: vtable install = compiler dynamic-init of typed global pUnk */  /*0x4e7ce0*/
 }
 } // namespace gamemd
 

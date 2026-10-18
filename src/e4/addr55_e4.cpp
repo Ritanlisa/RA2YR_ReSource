@@ -61,6 +61,7 @@
 #include "e4/classes/NetworkEventQueueClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Theme_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_5581A0(int a2); }  // w18j2 raw 0x005581A0
 // [w18j2] C2065 function supply (raw-evidenced)
@@ -2594,7 +2595,7 @@ LABEL_72:
     swprintf(Buffer, (const size_t)aS, (const wchar_t *const)&dword_A8B230[141].vfptr1 + 1); /*0x55dc7d*/
     SaveScenarioClassGame_AdjustMPSaveFileName(&v50.u32_38, Buffer, 0); /*0x55dc92*/
   }
-  Scenario::Update((Scenario *)&dword_87F778); /*0x55dc9e*/
+  Scenario::Update((Scenario *)&g_LogicClass); /*0x55dc9e*/
   *(unsigned int *)&v50.u32_10 = dword_82A030; /*0x55dcb5*/
   if ( (unsigned __int8)Mouse::IsButtonDown(stru_A8E960.random[148]) /*0x55dcce*/
     || (unsigned __int8)Mouse::IsButtonDown(stru_A8E960.random[152]) )

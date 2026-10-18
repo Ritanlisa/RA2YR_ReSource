@@ -220,6 +220,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ObjectPlacement_e4.hpp"  // w18j2 C3861 ObjectPlacement:: supply
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int CalcPosition(int p0, int p1, int p2); }  // x4:signals@0x412a40
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -374,7 +375,7 @@ int Trigger_AllocateLog(int a1)
       v5 += 92; /*0x650c3f*/
     }
     while ( v4 < 8 ); /*0x650c45*/
-    v10 = dword_87F788; /*0x650c5c*/
+    v10 = g_LogicClass.Count; /*0x650c5c*/
     v11 = MEMORY[0xA8EB50] + dword_A8E3A0 + dword_A83DF8 + dword_8B4118; /*0x650c6c*/
     v12 = dword_8A0370; /*0x650c6e*/
     do /*0x650c7f*/
@@ -714,9 +715,9 @@ int Trigger_AllocateLog(int a1)
     v70 = 0; /*0x6515c7*/
     v71 = 0; /*0x6515c9*/
     v83[204] = v15; /*0x6515cb*/
-    for ( result = dword_87F788; v71 < dword_87F788; ++v71 ) /*0x6515d8*/
+    for ( result = g_LogicClass.Count; v71 < g_LogicClass.Count; ++v71 ) /*0x6515d8*/
     {
-      v72 = (unsigned int *)*((unsigned int *)dword_87F77C + v71); /*0x6515e3*/
+      v72 = (unsigned int *)*((unsigned int *)g_LogicClass.Items + v71); /*0x6515e3*/
       if ( (*(int (**)(unsigned int *))(*v72 + 44))(v72) != 4 /*0x6515ff*/
         || (*(int (**)(unsigned int *))(v72[1] + 16))(v72 + 1) != -2 )
       {
@@ -748,7 +749,7 @@ int Trigger_AllocateLog(int a1)
         v15 += 40; /*0x6516c5*/
         ++v70; /*0x6516c8*/
       }
-      result = dword_87F788; /*0x6516c9*/
+      result = g_LogicClass.Count; /*0x6516c9*/
     }
     v83[203] = v70; /*0x6516dd*/
   }

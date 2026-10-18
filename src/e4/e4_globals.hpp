@@ -2164,7 +2164,8 @@ extern int PsyDom_Owner;  // data: 0xA9FAC8
 extern int PsyDom_Status;  // data: 0xA9FAC0
 extern int psz;  // data: 0x8186E8
 extern int punk;  // data: 0x89A29C
-extern int pUnk;  // data: 0xA8E8C8
+namespace gamemd { struct TiberianSunClassFactory; }  // X74 typed-global fwd
+extern gamemd::TiberianSunClassFactory pUnk;  // data: 0xA8E8C8 (X74 typed-global)
 extern int RadBeam_Array;  // data: 0xB04A60
 extern int RadSiteClass_Array;  // data: 0xB04BD0
 extern int Randomizer_Global;  // data: 0x886B88
@@ -11784,6 +11785,7 @@ extern unsigned char vt_GadgetClass[4];  // data: 0x7E92BC
 extern unsigned char vt_GaugeClass[4];  // data: 0x7E9384
 extern unsigned char vt_GenericList[4];  // data: 0x7E1B04
 extern unsigned char vt_GenericNode[4];  // data: 0x7E1B0C
+extern unsigned char vt_List_INISection[4];  // data: 0x7E1AFC (X74 de-collapse of vt_List)
 extern unsigned char vt_GraphicMenu[4];  // data: 0x7EA5FC
 extern unsigned char vt_GraphicMenuAnimItem[4];  // data: 0x7EA658
 extern unsigned char vt_GraphicMenuImageItem[4];  // data: 0x7EA674

@@ -23,6 +23,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/CellClass_e4.hpp"      // g57w20m4: CellClass 完整形 (landType@0xEC/flags@0x140; 站 0x53cc7c/0x53cd7b)
 #include "e4/classes/Random_e4.hpp"         // static State/Range/Gaussian (G57a1) x18+ 站
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 #define GAMEMD_MC_VECTORCLASS_SKIP 1  // g57w20m1: misc TU 有模板前置(C2990), minimal VectorClass 跳过; AnimTypeClass minimal 保留
 #include "misc/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "core/ida_vtables.h"  // gC_vftable3
@@ -20879,10 +20880,10 @@ LABEL_121:
                 *(unsigned int *)&v122.q074 = v81; /*0x482bfd*/
                 StartAudioControllerAt(*&dword_8871E0->q718, &v122.q070, 0); /*0x482c13*/
               }
-              result = dword_87F788; /*0x482c18*/
-              for ( i = 0; i < dword_87F788; ++i ) /*0x482c21*/
+              result = g_LogicClass.Count; /*0x482c18*/
+              for ( i = 0; i < g_LogicClass.Count; ++i ) /*0x482c21*/
               {
-                v83 = (unsigned int *)*((unsigned int *)dword_87F77C + i); /*0x482c2d*/
+                v83 = (unsigned int *)*((unsigned int *)g_LogicClass.Items + i); /*0x482c2d*/
                 if ( v83 /*0x482c52*/
                   && (*(unsigned char *)(p0 + 20) & 1) != 0
                   && p0->q21C == (*(int (**)(unsigned int *))(*v83 + 60))(v83) )
@@ -20900,7 +20901,7 @@ LABEL_121:
                     1,
                     0);
                 }
-                result = dword_87F788; /*0x482c92*/
+                result = g_LogicClass.Count; /*0x482c92*/
               }
               goto LABEL_221; /*0x482c9a*/
             case 3: /*0x481de0*/

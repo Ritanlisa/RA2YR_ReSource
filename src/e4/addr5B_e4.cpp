@@ -94,6 +94,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/LZOPipe_e4.hpp"  // G57w10 D supply
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/List_MixFileClass_e4.hpp"  // X74 typed-global merge
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int sub_5BF360(int p0); }  // x4:signals@0x5bf360
 // [w18j2] C3861 supply (raw-evidenced)
@@ -103,6 +104,12 @@ namespace gamemd { int Render_Load_759830(int p0); }  // x4:signals@0x759830
 namespace gamemd { int Render_Render_759880(int p0, int p1, int p2); }  // x4:signals@0x759880
 namespace gamemd { int Render_Render_759850(int p0, int p1); }  // x4:signals@0x759850
 namespace gamemd { int sub_5CAF70(int p0); }  // x4:signals@0x5caf70
+
+namespace gamemd {
+
+List_MixFileClass g_MixFileList;  // X74: object storage for 0xABEFD8 cluster
+
+} // namespace gamemd
 
 // 0x5B3B10
 namespace gamemd {  // G42.18 ns repair
@@ -118,17 +125,17 @@ void sub_5B3B10()
   if ( (byte_ABF008 & 1) == 0 ) /*0x5b3b1b*/
   {
     byte_ABF008 |= 1u; /*0x5b3b25*/
-    dword_ABEFD8 = (int)&vt_GenericList; /*0x5b3b2b*/
+    g_MixFileList.vtable1 = &vt_GenericList; /*0x5b3b2b*/
 LABEL_3:
-    v0 = dword_ABEFE0; /*0x5b3b37*/
-    while ( dword_ABEFE0 && *(unsigned int *)(dword_ABEFE0 + 4) && *(unsigned int *)(dword_ABEFE0 + 8) && dword_ABEFE0 ) /*0x5b3b4d*/
+    v0 = g_MixFileList.First_Previous; /*0x5b3b37*/
+    while ( g_MixFileList.First_Previous && *(unsigned int *)(g_MixFileList.First_Previous + 4) && *(unsigned int *)(g_MixFileList.First_Previous + 8) && g_MixFileList.First_Previous ) /*0x5b3b4d*/
     {
-      v1 = *(unsigned int *)(dword_ABEFE0 + 4); /*0x5b3b4f*/
-      v2 = dword_ABEFE0 + 4; /*0x5b3b52*/
+      v1 = *(unsigned int *)(g_MixFileList.First_Previous + 4); /*0x5b3b4f*/
+      v2 = g_MixFileList.First_Previous + 4; /*0x5b3b52*/
       if ( v1 ) /*0x5b3b57*/
       {
-        v3 = *(unsigned int **)(dword_ABEFE0 + 8); /*0x5b3b59*/
-        v4 = (unsigned int *)(dword_ABEFE0 + 8); /*0x5b3b5c*/
+        v3 = *(unsigned int **)(g_MixFileList.First_Previous + 8); /*0x5b3b59*/
+        v4 = (unsigned int *)(g_MixFileList.First_Previous + 8); /*0x5b3b5c*/
         if ( v3 ) /*0x5b3b61*/
         {
           v3[1] = v1; /*0x5b3b63*/
@@ -139,22 +146,22 @@ LABEL_3:
         }
       }
     }
-    dword_ABEFE8 = (int)&vt_GenericNode; /*0x5b3b7f*/
-    if ( &dword_ABEFE8 && dword_ABEFEC && dword_ABEFF0 ) /*0x5b3b98*/
+    g_MixFileList.Last_vfptr = (int)&vt_GenericNode; /*0x5b3b7f*/
+    if ( &g_MixFileList.Last_vfptr && g_MixFileList.Last_Previous && g_MixFileList.Last_t18 ) /*0x5b3b98*/
     {
-      *(unsigned int *)(dword_ABEFF0 + 4) = dword_ABEFEC; /*0x5b3b9a*/
-      *(unsigned int *)(dword_ABEFEC + 8) = dword_ABEFF0; /*0x5b3ba9*/
-      v0 = dword_ABEFE0; /*0x5b3bac*/
-      dword_ABEFF0 = 0; /*0x5b3bb2*/
-      dword_ABEFEC = 0; /*0x5b3bb8*/
+      *(unsigned int *)(g_MixFileList.Last_t18 + 4) = g_MixFileList.Last_Previous; /*0x5b3b9a*/
+      *(unsigned int *)(g_MixFileList.Last_Previous + 8) = g_MixFileList.Last_t18; /*0x5b3ba9*/
+      v0 = g_MixFileList.First_Previous; /*0x5b3bac*/
+      g_MixFileList.Last_t18 = 0; /*0x5b3bb2*/
+      g_MixFileList.Last_Previous = 0; /*0x5b3bb8*/
     }
-    dword_ABEFDC = (int)&vt_GenericNode; /*0x5b3bc3*/
-    if ( &dword_ABEFDC && v0 && dword_ABEFE4 ) /*0x5b3bda*/
+    g_MixFileList.First_vfptr = (int)&vt_GenericNode; /*0x5b3bc3*/
+    if ( &g_MixFileList.First_vfptr && v0 && g_MixFileList.First_tC ) /*0x5b3bda*/
     {
-      *(unsigned int *)(dword_ABEFE4 + 4) = v0; /*0x5b3bdc*/
-      *(unsigned int *)(dword_ABEFE0 + 8) = dword_ABEFE4; /*0x5b3beb*/
-      dword_ABEFE4 = 0; /*0x5b3bee*/
-      dword_ABEFE0 = 0; /*0x5b3bf4*/
+      *(unsigned int *)(g_MixFileList.First_tC + 4) = v0; /*0x5b3bdc*/
+      *(unsigned int *)(g_MixFileList.First_Previous + 8) = g_MixFileList.First_tC; /*0x5b3beb*/
+      g_MixFileList.First_tC = 0; /*0x5b3bee*/
+      g_MixFileList.First_Previous = 0; /*0x5b3bf4*/
     }
   }
 
@@ -296,7 +303,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
   _strupr(String); /*0x5b4470*/
   memset(v14, 0, sizeof(v14)); /*0x5b4490*/
   v5 = Checksummer::Add_Buffer(v14, (unsigned __int8 *)String, strlen(String)); /*0x5b449c*/
-  v6 = (unsigned int *)dword_ABEFE0; /*0x5b44a1*/
+  v6 = (unsigned int *)g_MixFileList.First_Previous; /*0x5b44a1*/
 LABEL_3:
   while ( 2 ) /*0x5b44c0*/
   {
@@ -1995,13 +2002,13 @@ int sub_5B3AA0()
 namespace gamemd {
 int sub_5B3AC0()
 {
-  dword_ABEFE4 = 0; /*0x5b3acc*/
-  dword_ABEFDC = (int)&vt_GenericNode; /*0x5b3ad2*/
-  dword_ABEFE8 = (int)&vt_GenericNode; /*0x5b3ad7*/
-  dword_ABEFEC = 0; /*0x5b3adc*/
-  dword_ABEFF0 = (int)&dword_ABEFDC; /*0x5b3ae2*/
-  dword_ABEFE0 = (int)&dword_ABEFE8; /*0x5b3aec*/
-  dword_ABEFD8 = (int)&vt_List; /*0x5b3af6*/
+  g_MixFileList.First_tC = 0; /*0x5b3acc*/
+  g_MixFileList.First_vfptr = (int)&vt_GenericNode; /*0x5b3ad2*/
+  g_MixFileList.Last_vfptr = (int)&vt_GenericNode; /*0x5b3ad7*/
+  g_MixFileList.Last_Previous = 0; /*0x5b3adc*/
+  g_MixFileList.Last_t18 = (int)&g_MixFileList.First; /*0x5b3ae2*/
+  g_MixFileList.First_Previous = (int)&g_MixFileList.Last; /*0x5b3aec*/
+  g_MixFileList.vtable1 = &vt_List_MixFileClass; /*0x5b3af6*/
   return atexit(sub_5B3B10); /*0x5b3b06*/
 }
 } // namespace gamemd

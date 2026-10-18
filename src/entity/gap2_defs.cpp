@@ -36,6 +36,7 @@ using ra2::game::AbstractClass;
 #include "e4/e4_globals_decls.hpp"
 // g57b5 W1b: e4 Vector3 include removed (C2011 vs utility_ext.hpp:1861 provider-in-TU)
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 #include "misc/misc_ext.hpp"
 #include "system/map.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
@@ -9139,7 +9140,7 @@ int WaveClass::UpdateWavePosition() {
   this->Destroy2(1); /*0x75f99a*/
   this->UpdateProductionDisplay(0); /*0x75f9a6*/
   RemoveTarget((int)this); /*0x75f9b2*/
-  VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x75f9bd*/
+  VectorClass::RemoveItem((DynamicVectorClass *)&g_LogicClass, (int)this); /*0x75f9bd*/
   this->COMStub_Return0_71(); /*0x75f9c6*/
   this->inLimbo[0] = 1; /*0x75f9cc*/
   this->needsRedraw[0] = 0; /*0x75f9d3*/

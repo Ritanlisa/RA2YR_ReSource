@@ -65,6 +65,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/MSVQAnim_e4.hpp"
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4); }  // x4:ida@0x4f11b0
 // [w18j2] C3861 supply (raw-evidenced)
@@ -3493,10 +3494,10 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
         }
         while ( (int)v18 < (int)&dword_8A03E8 ); /*0x64dd92*/
         int k; // ebp
-        for ( k = 0; k < dword_87F788; ++k ) /*0x64dda1*/
+        for ( k = 0; k < g_LogicClass.Count; ++k ) /*0x64dda1*/
         {
           unsigned int *v27; // esi
-          v27 = (unsigned int *)*((unsigned int *)dword_87F77C + k); /*0x64ddad*/
+          v27 = (unsigned int *)*((unsigned int *)g_LogicClass.Items + k); /*0x64ddad*/
           if ( (*(int (**)(unsigned int *))(*v27 + 44))(v27) != 4 /*0x64ddc9*/
       || (*(int (__stdcall **)(unsigned int *))(v27[1] + 16))(v27 + 1) != -2 )
           {

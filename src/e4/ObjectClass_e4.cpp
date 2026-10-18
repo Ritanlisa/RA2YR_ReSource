@@ -46,6 +46,7 @@
 #include "e4/classes/AlphaShapeClass_e4.hpp"  // w18j2 C3861 AlphaShapeClass:: supply
 #include "e4/classes/MapClass_e4.hpp"  // w18j2 C3861 MapClass:: supply
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int CTOR(int p0, int p1, int p2); }  // x4:signals@0x420960
 namespace gamemd { int GetScrollMode(MapClass *p_this); }  // x4:ida@0x4aeb10
@@ -1087,7 +1088,7 @@ ObjectClass * * ObjectClass::Dtor()
     this->lineTrailer = 0; /*0x5f3d5b*/
   }
   if ( this->isInLogic[0] ) /*0x5f3d65*/
-    VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x5f3d75*/
+    VectorClass::RemoveItem((DynamicVectorClass *)&g_LogicClass, (int)this); /*0x5f3d75*/
   return AbstractClass::DTOR(this); /*0x5f3d81*/
 
 }
@@ -1340,7 +1341,7 @@ AbstractClass * * ObjectClass::Undeploy()
        || *(unsigned int *)&dword_A8B238 == 5
        || (*(int (**)(int *))&this->vfptr1->uniqueId)(&this->vfptr1) != -2) )
     {
-      VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x5f4dd3*/
+      VectorClass::RemoveItem((DynamicVectorClass *)&g_LogicClass, (int)this); /*0x5f4dd3*/
     }
     if ( (*(int (**)(ObjectClass *))&this->vfptr->parachute)(this) ) /*0x5f4ddc*/
     {

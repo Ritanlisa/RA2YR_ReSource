@@ -29,6 +29,7 @@ using ra2::game::ObjectClass;
 #include "misc/misc_ext.hpp"// 0x517CC0
 #include "e4/classes/Game_e4.hpp"  // w16g4 C3861 Game:: supply
 #include "e4/classes/Math_e4.hpp"  // w16g4 C3861 Math:: supply
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 #include "system/map.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
@@ -1239,7 +1240,7 @@ namespace gamemd {
 int BuildingLightClass::SD_vt53() {
   if ( !(uint8_t)ObjectClass::Undeploy((ObjectClass *)this) ) /*0x437033*/
     return 0; /*0x43704b*/
-  VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x437042*/
+  VectorClass::RemoveItem((DynamicVectorClass *)&g_LogicClass, (int)this); /*0x437042*/
   return 1; /*0x437049*/
 }
 }

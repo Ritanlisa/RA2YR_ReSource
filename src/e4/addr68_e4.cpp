@@ -107,6 +107,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/MiniMap_e4.hpp"  // G57w10 D supply
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_226(); }  // w18j2 raw 0x006832B0
 // [w18j2] C3861 supply (raw-evidenced)
@@ -1026,7 +1027,7 @@ LABEL_16:
   Debug::Log(); /*0x685566*/
   MouseClass::HandleClick((MouseClass *)&dword_87F7E8); /*0x685573*/
   Debug::Log(); /*0x68557d*/
-  (*(void (**)(VectorClass *))(dword_87F778.vfptr + 12))(&dword_87F778); /*0x685590*/
+  (*(void (**)(LogicClass_flat *))(g_LogicClass.vtable1 + 12))(&g_LogicClass); /*0x685590*/
   Debug::Log(); /*0x685598*/
   *(unsigned int *)&stru_A8E960.random[340] = 0; /*0x6855a7*/
   if ( *(unsigned int *)&stru_A8E960.random[328] && stru_A8E960.random[337] ) /*0x6855b5*/

@@ -9,6 +9,7 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TiberianSunClassFactory_e4.hpp"  // X74 re-attribution
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
@@ -3200,7 +3201,7 @@ int HouseClass::SetPrimaryFactory(int a2)
 }
 // 0x429210
 namespace gamemd {
-int HouseClass::QueryInterface_Helper(const void * a2, unsigned int * a3)
+int TiberianSunClassFactory::QueryInterface_Helper(const void * a2, unsigned int * a3)
 {
   const void **v4; // [esp+14h] [ebp+Ch]
 
@@ -3216,7 +3217,7 @@ int HouseClass::QueryInterface_Helper(const void * a2, unsigned int * a3)
 
 // 0x429270
 namespace gamemd {
-int HouseClass::QueryInterface_Dispatch(int a2, const IID * a3, void ** a4)
+int TiberianSunClassFactory::QueryInterface_Dispatch(int a2, const IID * a3, void ** a4)
 {
   unsigned int *v4; // eax
   int v6; // ebx
@@ -3270,7 +3271,7 @@ int HouseClass::FailedToPlaceNode(int a1)
 
 // 0x4E8240
 namespace gamemd {
-int HouseClass::vt_placeholder_00()
+int TiberianSunClassFactory::vt_placeholder_00()
 {
   return 1; /*0x4e8245*/
 }
@@ -3278,7 +3279,7 @@ int HouseClass::vt_placeholder_00()
 
 // 0x4E8250
 namespace gamemd {
-int HouseClass::vt_placeholder_01()
+int TiberianSunClassFactory::vt_placeholder_01()
 {
   return 1; /*0x4e8255*/
 }
@@ -3286,7 +3287,7 @@ int HouseClass::vt_placeholder_01()
 
 // 0x4E8260
 namespace gamemd {
-int HouseClass::vt_placeholder_02()
+int TiberianSunClassFactory::vt_placeholder_02()
 {
   return 0; /*0x4e8262*/
 }

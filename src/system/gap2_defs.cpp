@@ -31,6 +31,7 @@
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/List_MixFileClass_e4.hpp"  // X74 typed-global merge (0x5b3de2)
 #include "core/ida_vtables.h"  // gC_vftable3
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
@@ -21732,7 +21733,7 @@ void* MixFileClass::FromFile(char *a1, int a2) {
     (*(void (**)(PKStraw *, int, int))(*(unsigned int *)v4->__pad_0 + 8))(v4, v9, 12 * this->FileStartOffset); /*0x5b3dc8*/
     v10 = BufferIOFileClass::Seek(&v24, 0, 1u); /*0x5b3dd2*/
     *(unsigned int *)this->__pad_1C = v24.Handle + v10; /*0x5b3ddf*/
-    v11 = (GenericNode **)dword_ABEFF0; /*0x5b3de2*/
+    v11 = (GenericNode **)g_MixFileList.First_Previous; /*0x5b3de2*/
     MixFileClass::LinkIntoPool(this); /*0x5b3de8*/
     v12 = v11[1]; /*0x5b3ded*/
     *(unsigned int *)this->Blowfish = v11; /*0x5b3df0*/

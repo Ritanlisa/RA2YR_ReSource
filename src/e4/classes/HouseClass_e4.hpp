@@ -467,17 +467,12 @@ struct HouseClass {
     int MakeAlly(int a2, char a3);
     int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);
     static int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
-    int QueryInterface_Dispatch(int a2 = 0, const IID * a3 = 0, void ** a4 = 0);
-    int QueryInterface_Helper(const void * a2 = 0, unsigned int * a3 = 0);
     int RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4);
     static int RevealShroudForAllies(char a1, int a2);
     int SetPrimaryFactory(int a2);
     int UpdatePower(double a2);
     int sub_5092F0(int a2);
     int vt_04_(int * a2);
-    int vt_placeholder_00();
-    int vt_placeholder_01();
-    int vt_placeholder_02();
     std::locale::facet * initAngerStruct(char a2);
     unsigned int * SDDTORAllAndTriggers();
     unsigned int * vt_placeholder_09();

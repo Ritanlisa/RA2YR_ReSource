@@ -357,7 +357,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d1) */
   /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d8) */
   if ( (uint8_t)((ObjectClass *)(this))->Undeploy() ) /*0x4370df*/
-    ((VectorClass *)((DynamicVectorClass *)&dword_87F778))->RemoveItem((int)this); /*0x4370ee*/
+    ((VectorClass *)((DynamicVectorClass *)&g_LogicClass))->RemoveItem((int)this); /*0x4370ee*/
   v5 = (gamemd::BuildingLightClass *)(this); /*0x437103*/
   v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))((int *)&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/

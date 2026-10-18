@@ -22,6 +22,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
 
 // 0x436BE0
 namespace gamemd {  // G42.18 ns repair
@@ -141,7 +142,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d1) */
   /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d8) */
   if ( (unsigned __int8)(a1)->Undeploy() ) /*0x4370df*/
-    ((DynamicVectorClass *)&dword_87F778)->RemoveItem((int)a1); /*0x4370ee*/
+    ((DynamicVectorClass *)&g_LogicClass)->RemoveItem((int)a1); /*0x4370ee*/
   BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::BuildingLightClass *)(a1); /*0x437103*/
   int v3; // eax
