@@ -200,7 +200,7 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   {
     a1->Piggybackee = 0; /*0x75c69c*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_WalkLocomotionClass) */  /*0x75c6a3*/
-    *(unsigned int *)&a1->0[4] = &vt_WalkLocomotionClass; /*0x75c6a9*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS vt_WalkLocomotionClass) */  /*0x75c6a9*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_WalkLocomotionClass) */  /*0x75c6b0*/
   }
   (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x75c6c3*/

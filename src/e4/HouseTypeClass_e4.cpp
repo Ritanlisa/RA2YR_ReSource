@@ -77,7 +77,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   }
   void *v3; // eax
   v3 = *(void **)&a1->pad_16D[27]; /*0x511710*/
-  *(unsigned int *)&a1->pad_16D[23] = &vt_VectorClass; /*0x51171a*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_VectorClass) */  /*0x51171a*/
   if ( v3 && a1->pad_16D[36] ) /*0x511726*/
   {
     operator delete((v3)); /*0x51172f*/
@@ -87,7 +87,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   *(unsigned int *)&a1->pad_16D[31] = 0; /*0x511743*/
   void *v4; // eax
   v4 = *(void **)&a1->smartAi; /*0x511749*/
-  *(unsigned int *)&a1->prefix = &vt_VectorClass; /*0x51174f*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_VectorClass) */  /*0x51174f*/
   if ( v4 && a1->pad_16D[8] ) /*0x51175d*/
   {
     operator delete((v4)); /*0x511766*/

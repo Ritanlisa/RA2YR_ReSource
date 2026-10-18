@@ -424,10 +424,10 @@ bool InfantryClass::CanDeployAtCell(int16_t *a2, int16_t *a3)
   unsigned __int8 *v11; // ecx
   int v12; // eax
 
-  (*(void (**)(InfantryClass *))&this->vfptr->forceShielded)(this); /*0x5221d8*/
+  this->vt_slot_456(this); /*0x5221d8*/
   if ( HouseClass::IonSensitivesShouldBeOffline() ) /*0x5221e4*/
     return 0; /*0x5221f3*/
-  if ( (*(int (**)(InfantryClass *))&this->vfptr->forceShielded)(this) > 0 ) /*0x522202*/
+  if ( this->vt_slot_456(this) > 0 ) /*0x522202*/
     return 1; /*0x522202*/
   if ( (unsigned __int8)House::IsCurrentPlayer((House *)this->owner) ) /*0x52220e*/
   {
@@ -1333,9 +1333,9 @@ bool InfantryClass::CanAttackTarget(HouseClass* other)
   HouseClass *other; // [esp+24h] [ebp+4h]
 
   result = 0; /*0x5228a0*/
-  if ( (*(unsigned __int8 (**)(InfantryClass *))&this->vfptr->missionData)(this) ) /*0x5227fa*/
+  if ( this->vt_slot_196(this) ) /*0x5227fa*/
   {
-    v2 = (unsigned int *)(*(int (**)(InfantryClass *, unsigned char *))&this->vfptr->q048)(this, v8); /*0x522811*/
+    v2 = (unsigned int *)this->vt_slot_72(this, v8); /*0x522811*/
     LOWORD(v6) = *v2 / 256; /*0x522824*/
     HIWORD(v6) = v2[1] / 256; /*0x52283c*/
     *(unsigned int *)v7 = v6; /*0x522845*/
@@ -1498,7 +1498,7 @@ int InfantryClass::ProcessIdleAction()
   int v17; // [esp+24h] [ebp-8h]
   int v18; // [esp+28h] [ebp-4h]
 
-  result = (*(int (**)(InfantryClass *))&this->vfptr->audioLoopIndex3)(this); /*0x51cdb9*/
+  result = this->vt_slot_1140(this); /*0x51cdb9*/
   if ( (unsigned char)result ) /*0x51cdc1*/
   {
     v14 = *&dword_8871E0->BridgeStrength * 1800.0; /*0x51cdeb*/
@@ -1524,7 +1524,7 @@ int InfantryClass::ProcessIdleAction()
         case 1: /*0x51ced9*/
         case 2: /*0x51ced9*/
         case 7: /*0x51ced9*/
-          result = (*(int (**)(InfantryClass *, int, unsigned int, unsigned int))&this->vfptr->FootClass_field_558)(this, 10, 0, 0); /*0x51cf4c*/
+          result = this->vt_slot_1368(this, 10, 0, 0); /*0x51cf4c*/
           if ( this->isSelected[0] ) /*0x51cf52*/
             goto LABEL_22; /*0x51cf52*/
           result = House::IsHumanPlayer((House *)this->owner); /*0x51cf66*/
@@ -1546,7 +1546,7 @@ int InfantryClass::ProcessIdleAction()
         case 3: /*0x51ced9*/
         case 4: /*0x51ced9*/
         case 5: /*0x51ced9*/
-          result = (*(int (**)(InfantryClass *, int, unsigned int, unsigned int))&this->vfptr->FootClass_field_558)(this, 9, 0, 0); /*0x51ceea*/
+          result = this->vt_slot_1368(this, 9, 0, 0); /*0x51ceea*/
           (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x51cef2*/
           break; /*0x51cef8*/
         case 6: /*0x51ced9*/
@@ -1699,7 +1699,7 @@ int InfantryClass::GetIdleTimer()
   SequenceAnim = this->SequenceAnim; /*0x521328*/
   if ( SequenceAnim != 27 && SequenceAnim != 28 && SequenceAnim != 29 && SequenceAnim != 30 ) /*0x521340*/
   {
-    v16 = (House *)(*(int (**)(InfantryClass *))&this->vfptr->ambientSoundController)(this); /*0x5214fb*/
+    v16 = (House *)this->vt_slot_60(this); /*0x5214fb*/
     if ( !(unsigned __int8)House::IsCurrentPlayer(v16) ) /*0x521500*/
     {
       Type = this->Type; /*0x52150d*/
@@ -1713,7 +1713,7 @@ int InfantryClass::GetIdleTimer()
              + *(unsigned int *)(*&dword_8871E0->qE30 + 4 * *(unsigned int *)&this->owner->u32_184) < *(int *)&stru_A8E960.random[528] )
           {
             if ( !this->focus /*0x5215f3*/
-              || (v18 = (unsigned int *)(*(int (**)(InfantryClass *, unsigned char *))&this->vfptr->q048)(this, v27),
+              || (v18 = (unsigned int *)this->vt_slot_72(this, v27),
                   v19 = *v18 / 256,
                   v20 = v18[1] / 256,
                   v21 = (int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->focus + 72))(this->focus, v28),
@@ -1738,7 +1738,7 @@ int InfantryClass::GetIdleTimer()
                 }
                 else
                 {
-                  (*(void (**)(InfantryClass *, int, unsigned int, unsigned int))&this->vfptr->FootClass_field_558)(this, 27, 0, 0); /*0x52163b*/
+                  this->vt_slot_1368(this, 27, 0, 0); /*0x52163b*/
                   return *(unsigned int *)(*(unsigned int *)(this->Type + 3644) + 976); /*0x521650*/
                 }
               }
@@ -1752,32 +1752,32 @@ int InfantryClass::GetIdleTimer()
   v3 = this->Type; /*0x521346*/
   if ( v3->UndeployDelay > -1 ) /*0x521353*/
   {
-    (*(void (**)(InfantryClass *, int, unsigned int, unsigned int))&this->vfptr->FootClass_field_558)(this, 31, 0, 0); /*0x52135f*/
+    this->vt_slot_1368(this, 31, 0, 0); /*0x52135f*/
     return *(unsigned int *)(*(unsigned int *)(this->Type + 3644) + 1120); /*0x52137d*/
   }
   if ( !v3->DeployFire ) /*0x521386*/
     return -1; /*0x521386*/
   if ( v3->qD37 ) /*0x52138c*/
   {
-    v5 = (__int16 *)(*(int (**)(InfantryClass *, unsigned char *))&this->vfptr->airstrikeTintTimer)(this, v26); /*0x5213a3*/
+    v5 = (__int16 *)this->vt_slot_440(this, v26); /*0x5213a3*/
     v6 = (Concurrency::details::SchedulerBase *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v5); /*0x5213af*/
     NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ = (CellClass *)_GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ(v6); /*0x5213c1*/
-    v8 = *(unsigned int *)(*(unsigned int *)(*(int (**)(InfantryClass *, int))&this->vfptr->barrelRecoil)(this, 1) + 344); /*0x5213cb*/
+    v8 = *(unsigned int *)(*(unsigned int *)this->vt_slot_1016(this, 1) + 344); /*0x5213cb*/
     if ( !NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ /*0x5213ee*/
       || CellClass::GetOccupiedRatio(NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ) < v8 / 3 )
     {
       vfptr = this->vfptr; /*0x5213f4*/
-      v10 = (__int16 *)(*(int (**)(InfantryClass *, unsigned char *))&this->vfptr->airstrikeTintTimer)(this, v26); /*0x5213fd*/
+      v10 = (__int16 *)this->vt_slot_440(this, v26); /*0x5213fd*/
       v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v10); /*0x521409*/
       (*(void (**)(InfantryClass *, void *))(vfptr + 968))(this, v11); /*0x521411*/
-      if ( !(*(int (**)(InfantryClass *, int, int, int))&this->vfptr->q3C0)(this, this->target, 1, 1) ) /*0x521426*/
+      if ( !this->vt_slot_960(this, this->target, 1, 1) ) /*0x521426*/
       {
-        (*(void (**)(InfantryClass *, int, int))&this->vfptr->countedAsOwned)(this, this->target, 1); /*0x52143d*/
-        (*(void (**)(InfantryClass *, unsigned int))&this->vfptr->unknown_short_3C8)(this, 0); /*0x521449*/
-        (*(void (**)(InfantryClass *, int, unsigned int, unsigned int))&this->vfptr->FootClass_field_558)(this, 29, 0, 0); /*0x521459*/
+        this->vt_slot_972(this, this->target, 1); /*0x52143d*/
+        this->vt_slot_968(this, 0); /*0x521449*/
+        this->vt_slot_1368(this, 29, 0, 0); /*0x521459*/
         return *(unsigned int *)(*(unsigned int *)(this->Type + 3644) + 1048); /*0x521477*/
       }
-      (*(void (**)(InfantryClass *, unsigned int))&this->vfptr->unknown_short_3C8)(this, 0); /*0x52147e*/
+      this->vt_slot_968(this, 0); /*0x52147e*/
     }
     v12 = MissionClass::GetMissionControl((MissionClass *)this); /*0x521486*/
     LOWORD(v13) = Math::RoundToInt(*((double *)v12 + 2) * 900.0); /*0x521494*/
@@ -1785,7 +1785,7 @@ int InfantryClass::GetIdleTimer()
   }
   else
   {
-    (*(void (**)(InfantryClass *))&this->vfptr->manipulatedByUnit_d)(this); /*0x5214bd*/
+    this->vt_slot_1064(this); /*0x5214bd*/
     v14 = MissionClass::GetMissionControl((MissionClass *)this); /*0x5214c5*/
     LOWORD(v15) = Math::RoundToInt(*((double *)v14 + 2) * 900.0); /*0x5214d3*/
     return (int)v15 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x5214ee*/
@@ -2155,7 +2155,7 @@ int InfantryClass::CalcMoveTarget()
 
   if ( *(unsigned int *)(*((unsigned int *)dword_8B413C + this->tubeIndex[0]) + 4 * this->unknownBool685[0] + 48) != -1 ) /*0x51b383*/
   {
-    v3 = (Vector3 *)(*(int (**)(InfantryClass *))&this->vfptr->q048)(this); /*0x51b392*/
+    v3 = (Vector3 *)this->vt_slot_72(this); /*0x51b392*/
     unknownCoords568 = this->unknownCoords568; /*0x51b395*/
     v5 = Vector3::Subtract(v3, &v79, this->unknownCoords568); /*0x51b3a3*/
     Coord::Length((Coord *)v5); /*0x51b3aa*/
@@ -2336,7 +2336,7 @@ LABEL_26:
         }
       }
     }
-    (*(void (**)(InfantryClass *, unsigned int, unsigned int))&this->vfptr->audioController7)(this, 0, 0); /*0x51b8fc*/
+    this->vt_slot_1348(this, 0, 0); /*0x51b8fc*/
     result = v86.ObjectVector_field_0x04; /*0x51b902*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x51b906*/
     if ( v86.ObjectVector_field_0x04 && BYTE1(v86.ObjectVector_field_0x0C) ) /*0x51b91f*/
@@ -2368,7 +2368,7 @@ LABEL_26:
     if ( !this->locomotor ) /*0x51b9f7*/
       sub_7DC720(-2147467261); /*0x51ba08*/
     (*(void (**)(int))(*(unsigned int *)this->locomotor + 172))(this->locomotor); /*0x51ba16*/
-    (*(void (**)(InfantryClass *, int))&this->vfptr->currentTurretNumber)(this, 1); /*0x51ba22*/
+    this->vt_slot_292(this, 1); /*0x51ba22*/
     v59 = *location; /*0x51ba2b*/
     v60 = this->location[2]; /*0x51ba2d*/
     v84 = this->location[1]; /*0x51ba30*/
@@ -2386,7 +2386,7 @@ LABEL_26:
     }
     else
     {
-      (*(void (**)(InfantryClass *, unsigned int, int))&this->vfptr->audioController7)(this, 0, 1072693248); /*0x51ba81*/
+      this->vt_slot_1348(this, 0, 1072693248); /*0x51ba81*/
     }
     v63 = this->vfptr; /*0x51ba87*/
     this->tubeIndex[0] = -1; /*0x51ba8d*/
@@ -2712,7 +2712,7 @@ int InfantryClass::FindNearbyCell()
     team = (TechnoClass *)this->team; /*0x418e3f*/
     if ( !team || !(unsigned __int8)TechnoClass::IsWaypointHidden(team) ) /*0x418e49*/
     {
-      if ( !(*(unsigned __int8 (**)(InfantryClass *, int))&this->vfptr->q550)(this, a2) /*0x418eab*/
+      if ( !this->vt_slot_1360(this, a2) /*0x418eab*/
         || (v6 = (unsigned int *)(*(int (**)(int, double *, unsigned int))(*(unsigned int *)a2 + 76))(a2, &v26, 0),
             LOWORD(v19) = *v6 / 256,
             HIWORD(v19) = v6[1] / 256,
@@ -3952,7 +3952,7 @@ int InfantryClass::EvaluateTarget()
   }
   if ( a4 - *(char *)(a2 + 283) > 4 ) /*0x51c0c2*/
     return 0; /*0x51c0cd*/
-  result = (*(int (**)(InfantryClass *, int, int, int *, bool *, int))&this->vfptr->animation)( /*0x51c0e6*/
+  result = this->vt_slot_248( /*0x51c0e6*/
              this,
              a2,
              a3,
@@ -3985,9 +3985,9 @@ int InfantryClass::EvaluateTarget()
         return 7; /*0x51c1b8*/
       if ( *(unsigned char *)(v20 + 680) && *(unsigned __int8 *)(a2 + 286) >> 4 != *(unsigned int *)(v20 + 672) ) /*0x51c1dc*/
       {
-        if ( !(*(unsigned __int8 (**)(InfantryClass *))&this->vfptr->unloadTimer)(this) ) /*0x51c1e3*/
+        if ( !this->vt_slot_684(this) ) /*0x51c1e3*/
           return 7; /*0x51c1e3*/
-        v21 = (InfantryClass **)(*(int (**)(InfantryClass *, unsigned int))&this->vfptr->barrelRecoil)(this, 0); /*0x51c1f8*/
+        v21 = (InfantryClass **)this->vt_slot_1016(this, 0); /*0x51c1f8*/
         if ( !InfantryClass::startPanic(*v21) ) /*0x51c200*/
           return 7; /*0x51c207*/
         v19 = 5 - ((unsigned __int8)HouseClass::IsAllied((HouseClass *)this->owner, *(unsigned int *)(a2 + 80)) != 0); /*0x51c223*/
@@ -4028,14 +4028,14 @@ int InfantryClass::EvaluateTarget()
           else
           {
             if ( !(*(unsigned __int8 (**)(InfantryClass *))(v23->vfptr + 468))(v23) /*0x51c36f*/
-              && ((*(int (**)(InfantryClass *))&this->vfptr->targetingTimer_d)(this) == 7
-               || (*(int (**)(InfantryClass *))&this->vfptr->targetingTimer_d)(this) == 8
-               || (*(int (**)(InfantryClass *))&this->vfptr->targetingTimer_d)(this) == 9
-               || (*(int (**)(InfantryClass *))&this->vfptr->targetingTimer_d)(this) == 17
+              && (this->vt_slot_388(this) == 7
+               || this->vt_slot_388(this) == 8
+               || this->vt_slot_388(this) == 9
+               || this->vt_slot_388(this) == 17
                && *(unsigned char *)&this->Type->C4_2
-               || ((*(int (**)(InfantryClass *))&this->vfptr->targetingTimer_d)(this) == 11
-                || (*(int (**)(InfantryClass *))&this->vfptr->targetingTimer_d)(this) == 25
-                || (*(int (**)(InfantryClass *))&this->vfptr->targetingTimer_d)(this) == 5)
+               || (this->vt_slot_388(this) == 11
+                || this->vt_slot_388(this) == 25
+                || this->vt_slot_388(this) == 5)
                && *(unsigned char *)&this->Type->Engineer_2) )
             {
               if ( v23 == (InfantryClass *)this->movementDestination /*0x51c3c8*/

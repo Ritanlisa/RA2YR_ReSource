@@ -120,7 +120,7 @@ unsigned int * ScoreScreen::Constructor(int aP1, int a3, int a4, void *a4_1)
   this->ScoreScreen_field_0x0C = Timer::GetTicks(); /*0x690f4d*/
   this->q014 = 0; /*0x690f50*/
   this->u32_18 = a4; /*0x690f57*/
-  *(unsigned int *)&this->__pad_0 = (unsigned int)(&vt_ScoreAnimClass); /*0x690f5a*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_ScoreAnimClass) */  /*0x690f5a*/
   return this->__pad_0; /*0x690f62*/
 
 }

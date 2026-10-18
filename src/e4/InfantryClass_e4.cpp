@@ -53,8 +53,8 @@ int InfantryClass::ScanTarget(int * a1)
   unsigned char v20[12]; // [esp+54h] [ebp-18h] BYREF
   unsigned char v21[12]; // [esp+60h] [ebp-Ch] BYREF
 
-  if ( *(unsigned char *)((*(int (**)(FootClass *))&this->vfptr->hasParachute)(this) + 912) /*0x4d4dde*/
-    && !(*(int (**)(FootClass *))&this->vfptr->forceShielded)(this) )
+  if ( *(unsigned char *)(this->vt_slot_132(this) + 912) /*0x4d4dde*/
+    && !this->vt_slot_456(this) )
   {
     vfptr = this->vfptr; /*0x4d4de8*/
     PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt((char *)this, &v17, (int)this); /*0x4d4df4*/
@@ -70,31 +70,31 @@ int InfantryClass::ScanTarget(int * a1)
     v6 = (*(int (**)(FootClass *, int, unsigned __int16 **, unsigned int))(v5 + 964))(this, 1, &v17, 0); /*0x4d4e3e*/
     if ( v6 ) /*0x4d4e46*/
     {
-      (*(void (**)(FootClass *, int))&this->vfptr->unknown_short_3C8)(this, v6); /*0x4d4e4d*/
+      this->vt_slot_968(this, v6); /*0x4d4e4d*/
       this->FootClass_field_bool_68E[0] = 0; /*0x4d4e53*/
     }
   }
   if ( this->target ) /*0x4d4e5a*/
-    (*(void (**)(FootClass *, unsigned int))&this->vfptr->FootClass_field_53C)(this, 0); /*0x4d4e6a*/
+    this->vt_slot_1340(this, 0); /*0x4d4e6a*/
   else
-    (*(void (**)(FootClass *, unsigned int, int))&this->vfptr->q484)(this, 0, 1); /*0x4d4e7a*/
+    this->vt_slot_1156(this, 0, 1); /*0x4d4e7a*/
   v7 = *((double *)MissionClass::GetMissionControl((MissionClass *)this) + 2) * 900.0; /*0x4d4e8a*/
   LOWORD(v8) = Math::RoundToInt(v7); /*0x4d4e90*/
   v9 = (int)v8 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d4eb3*/
   if ( !this->target
     || (!this
-     || (*(int (**)(FootClass *))&this->vfptr->fallRate)(this) != 15
-     || !*(unsigned char *)(((*(int (**)(FootClass *))&this->vfptr->fallRate)(this) == 15 ? &this->AbstractClass_1 : (FootClass *)1728)->vfptr
+     || this->vt_slot_44(this) != 15
+     || !*(unsigned char *)((this->vt_slot_44(this) == 15 ? &this->AbstractClass_1 : (FootClass *)1728)->vfptr
                   + 1685))
-    && (!*(unsigned int *)(*(int (**)(FootClass *, unsigned int))&this->vfptr->barrelRecoil)(this, 0)
-     || *(int *)(*(unsigned int *)(*(int (**)(FootClass *, unsigned int))&this->vfptr->barrelRecoil)(this, 0) + 180) > 512) )
+    && (!*(unsigned int *)this->vt_slot_1016(this, 0)
+     || *(int *)(*(unsigned int *)this->vt_slot_1016(this, 0) + 180) > 512) )
   {
     return v9; /*0x4d4f1c*/
   }
   v10 = (int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->target + 72))(this->target, v20); /*0x4d4f30*/
   v11 = *v10; /*0x4d4f33*/
   v12 = v10[1]; /*0x4d4f35*/
-  v13 = (int *)(*(int (**)(FootClass *, unsigned char *))&this->vfptr->q048)(this, v21); /*0x4d4f41*/
+  v13 = (int *)this->vt_slot_72(this, v21); /*0x4d4f41*/
   v14 = *v13; /*0x4d4f44*/
   v18 = v13[1] - v12; /*0x4d4f4d*/
   v17 = (unsigned __int16 *)(v14 - v11); /*0x4d4f51*/

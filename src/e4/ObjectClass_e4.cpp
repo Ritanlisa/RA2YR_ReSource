@@ -127,10 +127,10 @@ int ObjectClass::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)
 
   if ( this->isBerserk[0] ) /*0x4d7d58*/
     return 0; /*0x4d7d64*/
-  if ( this->rockerLinkedUnit && !*(unsigned char *)((*(int (**)(TechnoClass *))&this->vfptr->hasParachute)(this) + 1682) ) /*0x4d7d81*/
+  if ( this->rockerLinkedUnit && !*(unsigned char *)(this->vt_slot_132(this) + 1682) ) /*0x4d7d81*/
     return 0; /*0x4d7d8d*/
   v7 = aP2; /*0x4d7d9a*/
-  referenceCount = (*(int (**)(TechnoClass *, __int16 *, unsigned int, void **))&this->vfptr->estimatedHealth)( /*0x4d7db1*/
+  referenceCount = this->vt_slot_112( /*0x4d7db1*/
                      this,
                      aP2,
                      0,
@@ -206,7 +206,7 @@ LABEL_52:
       result = 1; /*0x4d8237*/
       break; /*0x4d8239*/
     case 3: /*0x4d7de0*/
-      if ( !(*(unsigned __int8 (**)(TechnoClass *))&this->vfptr->locationY)(this) ) /*0x4d8155*/
+      if ( !this->vt_slot_160(this) ) /*0x4d8155*/
         return 0; /*0x4d8155*/
       v27 = this->vfptr; /*0x4d815b*/
       v28 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d8165*/
@@ -224,7 +224,7 @@ LABEL_52:
       }
       else
       {
-        (*(void (**)(TechnoClass *, int, int, unsigned int, unsigned int))&this->vfptr->turretFacing)(this, 1, v22, 0, 0); /*0x4d80d8*/
+        this->vt_slot_888(this, 1, v22, 0, 0); /*0x4d80d8*/
         return 1; /*0x4d80e0*/
       }
     case 6: /*0x4d7de0*/
@@ -233,7 +233,7 @@ LABEL_52:
       (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v14 + 888))(this, 10, 0, v15, 0); /*0x4d7ea4*/
       return 1; /*0x4d7eb2*/
     case 9: /*0x4d7de0*/
-      if ( !(*(unsigned __int8 (**)(TechnoClass *))&this->vfptr->locationY)(this) ) /*0x4d811c*/
+      if ( !this->vt_slot_160(this) ) /*0x4d811c*/
         return 0; /*0x4d811c*/
       v25 = this->vfptr; /*0x4d8122*/
       v26 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d812c*/
@@ -245,9 +245,9 @@ LABEL_52:
       (*(void (**)(TechnoClass *, int, unsigned int, void *, unsigned int))(v29 + 888))(this, 17, 0, v30, 0); /*0x4d8198*/
       return 1; /*0x4d81a6*/
     case 26: /*0x4d7de0*/
-      if ( !(*(unsigned __int8 (**)(TechnoClass *))&this->vfptr->location)(this) /*0x4d7e59*/
-        && !(*(unsigned __int8 (**)(TechnoClass *))&this->vfptr->auxParticles2)(this)
-        || !(*(unsigned __int8 (**)(TechnoClass *))&this->vfptr->locationY)(this) )
+      if ( !this->vt_slot_160(this) /*0x4d7e59*/
+        && !this->vt_slot_816(this)
+        || !this->vt_slot_160(this) )
       {
         return 0; /*0x4d7e61*/
       }
@@ -273,7 +273,7 @@ LABEL_52:
       v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v40); /*0x4d8225*/
       goto LABEL_51; /*0x4d8225*/
     case 51: /*0x4d7de0*/
-      if ( !(*(unsigned __int8 (**)(TechnoClass *))&this->vfptr->locationY)(this) ) /*0x4d7df3*/
+      if ( !this->vt_slot_160(this) ) /*0x4d7df3*/
         return 0; /*0x4d7df3*/
       PlacementCell = (void ***)ObjectClass::FindPlacementCell((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
       v10 = this->vfptr; /*0x4d7e06*/
@@ -908,7 +908,7 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
     v10 = MultiplyMatrix3x4(v42, v23, (float *)v37.m_Data); /*0x514270*/
     goto LABEL_16; /*0x514270*/
   }
-  if ( (*(unsigned __int8 (**)(TechnoClass *))&this->vfptr->q060)(this) ) /*0x513f88*/
+  if ( this->vt_slot_96(this) ) /*0x513f88*/
   {
     v10 = Turret::GetTransform((LocomotionClass *)this, (float *)&v38[0].Transform_field_00, a3); /*0x51408d*/
 LABEL_16:
@@ -1328,9 +1328,9 @@ AbstractClass * * ObjectClass::Undeploy()
   }
   else
   {
-    (*(void (**)(ObjectClass *))&this->vfptr->initialOwner)(this); /*0x5f4d55*/
-    (*(void (**)(ObjectClass *, int))&this->vfptr->q0DC)(this, 1); /*0x5f4d61*/
-    (*(void (**)(ObjectClass *, unsigned int))&this->vfptr->currentTurretNumber_d)(this, 0); /*0x5f4d6d*/
+    this->vt_slot_336(this); /*0x5f4d55*/
+    this->vt_slot_220(this, 1); /*0x5f4d61*/
+    this->vt_slot_292(this, 0); /*0x5f4d6d*/
     RemoveTarget((int)this); /*0x5f4d79*/
     AudioController::Stop((AudioController *)this->ambientSoundController); /*0x5f4d81*/
     AudioFile::Stop((AudioFile *)this->customSound_controller); /*0x5f4d89*/
@@ -1446,8 +1446,8 @@ AbstractClass * * ObjectClass::Deploy()
     v23 = v7[1]; /*0x5f4f94*/
     v24 = v7[2]; /*0x5f4f9b*/
   }
-  (*(void (**)(ObjectClass *, int *))&this->vfptr->AudioController_1B4)(this, &v22); /*0x5f4fa8*/
-  result = (*(int (**)(ObjectClass *, int))&this->vfptr->currentTurretNumber_d)(this, 1); /*0x5f4fb4*/
+  this->vt_slot_436(this, &v22); /*0x5f4fa8*/
+  result = this->vt_slot_292(this, 1); /*0x5f4fb4*/
   if ( !(unsigned char)result ) /*0x5f4fbc*/
   {
     this->inLimbo[0] = 1; /*0x5f521c*/
@@ -1457,7 +1457,7 @@ LABEL_41:
   }
   if ( this->isAliveFlag[0] )
   {
-    if ( (*(int (**)(ObjectClass *))&this->vfptr->spawnStatus)(this) != -1 ) /*0x5f4fda*/
+    if ( this->vt_slot_120(this) != -1 ) /*0x5f4fda*/
       Targeting::Readd(this); /*0x5f4fe2*/
     if ( v6 ) /*0x5f4fe9*/
     {
@@ -1472,7 +1472,7 @@ LABEL_41:
       }
       if ( *(unsigned int *)(v6 + 172) ) /*0x5f5045*/
       {
-        v8 = (unsigned int *)(*(int (**)(ObjectClass *, char *))&this->vfptr->q048)(this, v26); /*0x5f505c*/
+        v8 = (unsigned int *)this->vt_slot_72(this, v26); /*0x5f505c*/
         v25[0] = *v8; /*0x5f5061*/
         v25[1] = v8[1]; /*0x5f5073*/
         v25[2] = v8[2]; /*0x5f507f*/

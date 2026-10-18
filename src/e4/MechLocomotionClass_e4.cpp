@@ -32,7 +32,7 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
     if ( a1 ) /*0x5b19b6*/
     {
       /* X11: vtable install elided (X67 star-deref, RHS vt_MechLocomotionClass) */  /*0x5b19b8*/
-      *(unsigned int *)&a1->0[4] = &vt_MechLocomotionClass; /*0x5b19be*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS vt_MechLocomotionClass) */  /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/

@@ -150,7 +150,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   aP2->q070 = 0; /*0x6cafed*/
   aP2->q074 = -100; /*0x6caff0*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_SuperClass) */  /*0x6caff7*/
-  *(unsigned int *)(aP2 + 4) = (unsigned int)(&vt_SuperClass); /*0x6caffd*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_SuperClass) */  /*0x6caffd*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_SuperClass) */  /*0x6cb003*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_SuperClass) */  /*0x6cb00a*/
   (aP2 + 4)->GenerateUniqueID(); /*0x6cb011*/

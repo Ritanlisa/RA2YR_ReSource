@@ -11534,93 +11534,93 @@ void* HouseClass::InitTypeVectors(int a1) {
   DynamicVector::Constructor_VoxelAnim(0, 0); /*0x664d2d*/
   /* X11: vtable install elided (X67 star-deref, RHS TypeList_VoxelAnimTypeClass_const___vftable) */  /*0x664d32*/
   DynamicVectorClass::AnimTypeConstructor(&this->q104, 0, 0); /*0x664d44*/
-  *(&this->nextArrayIndex5) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d49*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x664d49*/
   DynamicVectorClass::AnimTypeConstructor(&this->buildDelay, 0, 0); /*0x664d5b*/
-  *(&this->referenceCount2) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d60*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x664d60*/
   DynamicVectorClass::AnimTypeConstructor(&this->__pad_13C, 0, 0); /*0x664d72*/
-  *(&this->referenceCount9) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d77*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x664d77*/
   DynamicVectorClass::AnimTypeConstructor(&this->u32_158, 0, 0); /*0x664d89*/
-  *(&this->NeedsSaveOrLink6) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d8e*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x664d8e*/
   DynamicVectorClass::AnimTypeConstructor(&this->q2A0, 0, 0); /*0x664da0*/
-  *(&this->conYardsCapacity8) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664da5*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x664da5*/
   DynamicVectorClass::AnimTypeConstructor(&this->side2TechInfiltrated, 0, 0); /*0x664db7*/
-  *(&this->q0445) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664dbc*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x664dbc*/
   this->DynamicVectorClass_B6.AnimTypeConstructor(0, 0); /*0x664dce*/
-  *(&this->q0482) = (void *)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664dd3*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_AnimTypeClass_const___vftable) */  /*0x664dd3*/
   this->DynamicVectorClass_D6.Construct(0, 0); /*0x664de5*/
-  *(&this->q544) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664dea*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664dea*/
   this->DynamicVectorClass_DD.Construct(0, 0); /*0x664dfc*/
-  *(&this->q581) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e01*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664e01*/
   this->Tactical_E4.Construct(0, 0); /*0x664e13*/
-  *(&this->q588) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e18*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664e18*/
   this->q0EB.Construct(0, 0); /*0x664e2a*/
-  *(&this->q05C5) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e2f*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664e2f*/
   this->q0F2.Construct(0, 0); /*0x664e41*/
-  *(&this->q0602) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e46*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664e46*/
   this->q0F9.Construct(0, 0); /*0x664e58*/
-  *(&this->q609) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e5d*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664e5d*/
   this->q10F.Construct(0, 0); /*0x664e6f*/
-  *(&this->health1) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e74*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664e74*/
   this->q116.Construct(0, 0); /*0x664e86*/
-  *(&this->health8) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664e8b*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664e8b*/
   this->DynamicVectorClass_11D.Construct(0, 0); /*0x664e9d*/
-  *(&this->estimatedHealth5) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664ea2*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664ea2*/
   DynamicVector::Constructor_VoxelAnim(0, 0); /*0x664eb4*/
-  *(&this->isInLogic4) = (void *)(void*)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x664eb9*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_VoxelAnimTypeClass_const___vftable) */  /*0x664eb9*/
   this->q192.Construct(0, 0); /*0x664ecb*/
-  *(&this->q0A02) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664ed0*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664ed0*/
   this->DynamicVectorClass_1B3.Construct(0, 0); /*0x664ee2*/
-  *(&this->q02B5) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x664ee7*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x664ee7*/
   this->DynamicVectorClass_1CD.Construct(0, 0); /*0x664ef9*/
   /* X11: vtable install elided (X67 recv-slot, RHS TypeList_int_vftable) */  /*0x664efe*/
   this->SmudgeTypeVector_1F1.Construct(0, 0); /*0x664f10*/
-  *(&this->q0317) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f15*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_SmudgeTypeClass_const___vftable) */  /*0x664f15*/
   this->isLoser.Construct(0, 0); /*0x664f27*/
-  *(&this->needsSave4) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f2c*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_SmudgeTypeClass_const___vftable) */  /*0x664f2c*/
   this->SmudgeTypeVector_1FF.Construct(0, 0); /*0x664f3e*/
-  *(&this->pad211) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f43*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_SmudgeTypeClass_const___vftable) */  /*0x664f43*/
   this->q206.Construct(0, 0); /*0x664f55*/
-  *(&this->pad218) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f5a*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_SmudgeTypeClass_const___vftable) */  /*0x664f5a*/
   this->SmudgeTypeVector_20D.Construct(0, 0); /*0x664f6c*/
-  *(&this->attachedTag5) = (void *)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f71*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_SmudgeTypeClass_const___vftable) */  /*0x664f71*/
   this->q214.BuildingTypeConstructor(0, 0); /*0x664f83*/
   /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664f88*/
   this->q220.BuildingTypeConstructor(0, 0); /*0x664f9a*/
-  *(&this->occupant4) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664f9f*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664f9f*/
   this->DynamicVectorClass_22B.BuildingTypeConstructor(0, 0); /*0x664fb1*/
   /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664fb6*/
   this->q232.BuildingTypeConstructor(0, 0); /*0x664fc8*/
-  *(&this->attachedBomb2) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fcd*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664fcd*/
   this->DynamicVectorClass_239.BuildingTypeConstructor(0, 0); /*0x664fdf*/
-  *(&this->attachedBomb9) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fe4*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664fe4*/
   this->visionary.BuildingTypeConstructor(0, 0); /*0x664ff6*/
   /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x664ffb*/
   this->unknownBool247.BuildingTypeConstructor(0, 0); /*0x66500d*/
-  *(&this->q03A3) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665012*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x665012*/
   this->DynamicVectorClass_24E.BuildingTypeConstructor(0, 0); /*0x665024*/
-  *(&this->q3B0) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665029*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x665029*/
   this->DynamicVectorClass_255.BuildingTypeConstructor(0, 0); /*0x66503b*/
-  *(&this->q3B7) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665040*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x665040*/
   DynamicVectorClass::BuildingTypeConstructor(&this->ptr_970, 0, 0); /*0x665052*/
-  *(&this->airspeedMultiplier4) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665057*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x665057*/
   this->DynamicVectorClass_263.BuildingTypeConstructor(0, 0); /*0x665069*/
   /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x66506e*/
   this->DynamicVectorClass_26A.Construct(0, 0); /*0x665080*/
-  *(&this->q0F48) = (void *)(void*)(void*)&TypeList_int_vftable; /*0x665085*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_int_vftable) */  /*0x665085*/
   DynamicVectorClass::BuildingTypeConstructor(&this->u32_9C4, 0, 0); /*0x665097*/
-  *(&this->armorMultiplier5) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66509c*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x66509c*/
   this->DynamicVectorClass_278.BuildingTypeConstructor(0, 0); /*0x6650ae*/
-  *(&this->q0FC2) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650b3*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x6650b3*/
   this->DynamicVectorClass_27F.BuildingTypeConstructor(0, 0); /*0x6650c5*/
-  *(&this->q0FC9) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650ca*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x6650ca*/
   this->DynamicVectorClass_286.BuildingTypeConstructor(0, 0); /*0x6650dc*/
-  *(&this->rofMultiplier6) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650e1*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x6650e1*/
   this->DynamicVectorClass_28D.BuildingTypeConstructor(0, 0); /*0x6650f3*/
-  *(&this->q1043) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650f8*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x6650f8*/
   this->DynamicVectorClass_294.BuildingTypeConstructor(0, 0); /*0x66510a*/
-  *(&this->costMultiplier0) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66510f*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x66510f*/
   DynamicVectorClass::BuildingTypeConstructor(&this->u32_A6C, 0, 0); /*0x665121*/
-  *(&this->costMultiplier7) = (void *)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665126*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x665126*/
   this->DynamicVectorClass_2A2.BuildingTypeConstructor(0, 0); /*0x665138*/
   /* X11: vtable install elided (X67 recv-slot, RHS TypeList_BuildingTypeClass_const___vftable) */  /*0x66513d*/
   this->DynamicVectorClass_2A9.BuildingTypeConstructor(0, 0); /*0x66514f*/
@@ -12346,9 +12346,9 @@ int HouseClass::CalcProductionSpeed() {
   char v19; // [esp+Ch] [ebp-4h]
   float v20; // [esp+Ch] [ebp-4h]
 
-  v2 = (*(int (**)(HouseClass *))&this->vfptr->occupiablesCapacity)(this); /*0x6f47a9*/
+  v2 = this->vt_slot_136(this); /*0x6f47a9*/
   v16 = (*(int (**)(int))(*(unsigned int *)v2 + 136))(v2); /*0x6f47b9*/
-  v3 = (unsigned int *)(*(int (**)(HouseClass *))&this->vfptr->occupiablesCount)(this); /*0x6f47c1*/
+  v3 = (unsigned int *)this->vt_slot_132(this); /*0x6f47c1*/
   v4 = HouseClass::GetBuildingDamageMultiplier((HouseClass *)this->planningPaths[3], v3) * (double)v16; /*0x6f47d3*/
   Math::RoundToInt(v4); /*0x6f47d7*/
   (*(void (**)(HouseClass *))&this->vfptr->occupiablesCount)(this); /*0x6f47e4*/
@@ -12368,13 +12368,13 @@ int HouseClass::CalcProductionSpeed() {
   v9 = v6; /*0x6f488b*/
   v17 = v6; /*0x6f4891*/
   v19 = 0; /*0x6f4897*/
-  if ( (*(int (__fastcall **)(HouseClass *, unsigned __int16 *))&this->vfptr->vtable7)(this, v7) == 1 ) /*0x6f48a2*/
+  if ( this->vt_slot_44(this, v7) == 1 ) /*0x6f48a2*/
   {
-    v10 = (unsigned __int8 *)(*(int (**)(HouseClass *))&this->vfptr->occupiablesCount)(this); /*0x6f48a8*/
+    v10 = (unsigned __int8 *)this->vt_slot_132(this); /*0x6f48a8*/
     if ( v10 ) /*0x6f48b0*/
       v19 = v10[3278]; /*0x6f48b8*/
   }
-  v11 = (*(int (**)(HouseClass *))&this->vfptr->vtable7)(this); /*0x6f48c5*/
+  v11 = this->vt_slot_44(this); /*0x6f48c5*/
   FactoryCount = HouseClass::GetFactoryCount((HouseClass *)this->planningPaths[3], v11, v19); /*0x6f48d4*/
   v20 = *&dword_8871E0->u32_57C; /*0x6f48e1*/
   if ( v20 > 0.0 && FactoryCount - 1 > 0 ) /*0x6f48fb*/
@@ -12389,7 +12389,7 @@ int HouseClass::CalcProductionSpeed() {
     }
     while ( v13 ); /*0x6f4914*/
   }
-  if ( (*(int (**)(HouseClass *))&this->vfptr->vtable7)(this) != 6 /*0x6f4929*/
+  if ( this->vt_slot_44(this) != 6 /*0x6f4929*/
     || !*(unsigned char *)(*&this->u32_FD2E8 + 5489) )
   {
     return (int)v9; /*0x6f494e*/

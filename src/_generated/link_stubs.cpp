@@ -311,9 +311,9 @@ void gamemd::AbstractTypeClass::AbstractTypeClass(gamemd::AbstractTypeClass::noi
   *((_BYTE *)this + 61) = 0; /*0x41081a*/
   *((_BYTE *)this + 100) = 0; /*0x41081e*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  *(this + 1) = (int)(void *)&vt_AbstractTypeClass; /*0x410829*/
-  *(this + 2) = (int)(void *)&vt_AbstractTypeClass; /*0x410830*/
-  *(this + 3) = (int)(void *)&vt_AbstractTypeClass; /*0x410837*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410829*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410830*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410837*/
   if ( Source ) /*0x41083e*/
   {
     strncpy(Destination, Source, 0x18u); /*0x410895*/
@@ -539,15 +539,15 @@ void gamemd::SuperWeaponTypeClass::SuperWeaponTypeClass(gamemd::AbstractTypeClas
   InfantryTypeVector::Construct2((InfantryTypeVector *)((char *)this + 332), 0, 0); /*0x5114fc*/
   *((_DWORD *)this + 88) = 10; /*0x511501*/
   *((_DWORD *)this + 87) = 0; /*0x511508*/
-  *((_DWORD *)this + 83) = (void *)&vt_TypeList_InfantryTypeClass_const; /*0x51150b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList_InfantryTypeClass_const) */  /*0x51150b*/
   UnitTypeVector::ConstructUnitTypeVectorClass((UnitTypeVector *)((char *)this + 360), 0, 0); /*0x51151b*/
   *((_DWORD *)this + 95) = 10; /*0x511520*/
   *((_DWORD *)this + 94) = 0; /*0x511527*/
-  *((_DWORD *)this + 90) = (void *)&vt_TypeList_UnitTypeClass_const; /*0x51152a*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList_UnitTypeClass_const) */  /*0x51152a*/
   AircraftTypeVector::Constructor((AircraftTypeVector *)this + 97, 0, 0); /*0x51153a*/
   *((_DWORD *)this + 102) = 10; /*0x511542*/
   *((_DWORD *)this + 101) = 0; /*0x511549*/
-  *((_DWORD *)this + 97) = (void *)&vt_TypeList_AircraftTypeClass_const; /*0x51154c*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList_AircraftTypeClass_const) */  /*0x51154c*/
   *((_DWORD *)this + 105) = 16777281; /*0x511552*/
   *((_BYTE *)this + 424) = 0; /*0x51156c*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_HouseTypeClass) */  /*0x511572*/
@@ -655,8 +655,8 @@ void gamemd::UnitClass::UnitClass()
   *((_BYTE *)this + 1762) = 0; /*0x73542e*/
   *(this + 441) = 0; /*0x735434*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_UnitClass) */  /*0x73543a*/
-  *(this + 1) = (int)(void *)&vt_UnitClass; /*0x735440*/
-  *(this + 2) = (int)(void *)&vt_UnitClass; /*0x735446*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_UnitClass) */  /*0x735440*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_UnitClass) */  /*0x735446*/
   *(this + 3) = (int)&off_7F5C44; /*0x73544d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 1)); /*0x735454*/
   if ( ((unsigned int *)&FootClass_Array)[2] < ((unsigned int *)&FootClass_Array)[0] /*0x73548f*/
@@ -873,10 +873,10 @@ void gamemd::WaveClass::WaveClass(ra2::game::TechnoClass* a0, gamemd::WaveType, 
   *((_DWORD *)this + 126) = 5; /*0x75e9e7*/
   *((_BYTE *)this + 508) = 1; /*0x75e9f1*/
   *((_BYTE *)this + 509) = 0; /*0x75e9f8*/
-  *((_DWORD *)this + 124) = (void *)&vt_VectorClass_CellClass; /*0x75e9fe*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_VectorClass_CellClass) */  /*0x75e9fe*/
   *((_DWORD *)this + 125) = __2_YAPAXI_Z(0x14u); /*0x75ea18*/
   *((_BYTE *)this + 509) = 1; /*0x75ea1e*/
-  *((_DWORD *)this + 124) = (void *)&vt_DynamicVectorClass_CellClass; /*0x75ea25*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_CellClass) */  /*0x75ea25*/
   *((_DWORD *)this + 129) = 10; /*0x75ea2f*/
   *((_DWORD *)this + 128) = 0; /*0x75ea39*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_WaveClass) */  /*0x75ea3f*/
@@ -1508,9 +1508,9 @@ bool gamemd::TriggerClass::FireActions(ra2::game::ObjectClass* a0, gamemd::Vecto
   *(_DWORD *)(this + 64) = 0; /*0x725fc7*/
   *(_BYTE *)(this + 68) = 1; /*0x725fca*/
   /* X11: vtable install elided (implicit via TriggerClass virtuals 0x725fce) */
-  *(_DWORD *)(this + 4) = (void *)&vt_TriggerClass; /*0x725fd4*/
-  *(_DWORD *)(this + 8) = (void *)&vt_TriggerClass; /*0x725fdb*/
-  *(_DWORD *)(this + 12) = (void *)&vt_TriggerClass; /*0x725fe2*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fd4*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fdb*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fe2*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x72601b*/
       || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
       && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -1577,9 +1577,9 @@ bool gamemd::TriggerClass::RegisterEvent(int a0, ra2::game::ObjectClass* a1, boo
   *(_DWORD *)(this + 64) = 0; /*0x725fc7*/
   *(_BYTE *)(this + 68) = 1; /*0x725fca*/
   /* X11: vtable install elided (implicit via TriggerClass virtuals 0x725fce) */
-  *(_DWORD *)(this + 4) = (void *)&vt_TriggerClass; /*0x725fd4*/
-  *(_DWORD *)(this + 8) = (void *)&vt_TriggerClass; /*0x725fdb*/
-  *(_DWORD *)(this + 12) = (void *)&vt_TriggerClass; /*0x725fe2*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fd4*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fdb*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TriggerClass) */  /*0x725fe2*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x72601b*/
       || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
       && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -1763,9 +1763,9 @@ bool gamemd::AbstractTypeClass::LoadFromINI(gamemd::CCINIClass* a0)
   *((_BYTE *)this + 61) = 0; /*0x41081a*/
   *((_BYTE *)this + 100) = 0; /*0x41081e*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  *(this + 1) = (int)(void *)&vt_AbstractTypeClass; /*0x410829*/
-  *(this + 2) = (int)(void *)&vt_AbstractTypeClass; /*0x410830*/
-  *(this + 3) = (int)(void *)&vt_AbstractTypeClass; /*0x410837*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410829*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410830*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410837*/
   if ( Source ) /*0x41083e*/
   {
     strncpy(Destination, Source, 0x18u); /*0x410895*/
@@ -1834,9 +1834,9 @@ bool gamemd::AbstractTypeClass::SaveToINI(gamemd::CCINIClass* a0)
   *((_BYTE *)this + 61) = 0; /*0x41081a*/
   *((_BYTE *)this + 100) = 0; /*0x41081e*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  *(this + 1) = (int)(void *)&vt_AbstractTypeClass; /*0x410829*/
-  *(this + 2) = (int)(void *)&vt_AbstractTypeClass; /*0x410830*/
-  *(this + 3) = (int)(void *)&vt_AbstractTypeClass; /*0x410837*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410829*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410830*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410837*/
   if ( Source ) /*0x41083e*/
   {
     strncpy(Destination, Source, 0x18u); /*0x410895*/
@@ -6134,13 +6134,13 @@ long gamemd::WaypointPathClass::GetClassID(GUID* a0)
   *(_DWORD *)(this + 48) = 0; /*0x763828*/
   *(_BYTE *)(this + 52) = 1; /*0x76382b*/
   *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  *(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763832*/
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
-  *(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/
-  *(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/
-  *(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x76384b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763852*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763859*/
   if ( a2 < 0xC /*0x76389a*/
       && (dword_B72618 < dword_B72610
        || (byte_B72615 || !dword_B72610)
@@ -6166,13 +6166,13 @@ long gamemd::WaypointPathClass::Load(struct IStream* a0)
   *(_DWORD *)(this + 48) = 0; /*0x763828*/
   *(_BYTE *)(this + 52) = 1; /*0x76382b*/
   *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  *(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763832*/
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
-  *(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/
-  *(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/
-  *(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x76384b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763852*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763859*/
   if ( a2 < 0xC /*0x76389a*/
       && (dword_B72618 < dword_B72610
        || (byte_B72615 || !dword_B72610)
@@ -6198,13 +6198,13 @@ long gamemd::WaypointPathClass::Save(struct IStream* a0, int a1)
   *(_DWORD *)(this + 48) = 0; /*0x763828*/
   *(_BYTE *)(this + 52) = 1; /*0x76382b*/
   *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  *(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763832*/
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
-  *(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/
-  *(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/
-  *(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x76384b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763852*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763859*/
   if ( a2 < 0xC /*0x76389a*/
       && (dword_B72618 < dword_B72610
        || (byte_B72615 || !dword_B72610)
@@ -6229,14 +6229,14 @@ long ra2::game::CaptureManagerClass::GetClassID(GUID* a0)
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  *(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
-  *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
-  *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6265,14 +6265,14 @@ long ra2::game::CaptureManagerClass::Load(struct IStream* a0)
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  *(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
-  *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
-  *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6301,14 +6301,14 @@ long ra2::game::CaptureManagerClass::QueryInterface(const GUID& a0, void** a1)
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  *(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
-  *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
-  *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6337,14 +6337,14 @@ long ra2::game::CaptureManagerClass::Save(struct IStream* a0, int a1)
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  *(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
-  *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
-  *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6679,14 +6679,14 @@ unsigned long ra2::game::CaptureManagerClass::AddRef()
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  *(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
-  *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
-  *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6715,14 +6715,14 @@ unsigned long ra2::game::CaptureManagerClass::Release()
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  *(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
-  *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
-  *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -6815,9 +6815,9 @@ void gamemd::AbstractTypeClass::LoadTheaterSpecificArt(gamemd::TheaterType)
   *((_BYTE *)this + 61) = 0; /*0x41081a*/
   *((_BYTE *)this + 100) = 0; /*0x41081e*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_AbstractTypeClass) */  /*0x410822*/
-  *(this + 1) = (int)(void *)&vt_AbstractTypeClass; /*0x410829*/
-  *(this + 2) = (int)(void *)&vt_AbstractTypeClass; /*0x410830*/
-  *(this + 3) = (int)(void *)&vt_AbstractTypeClass; /*0x410837*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410829*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410830*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AbstractTypeClass) */  /*0x410837*/
   if ( Source ) /*0x41083e*/
   {
     strncpy(Destination, Source, 0x18u); /*0x410895*/
@@ -8547,13 +8547,13 @@ void gamemd::WaypointPathClass::pointerExpired(class ra2::game::AbstractClass* a
   *(_DWORD *)(this + 48) = 0; /*0x763828*/
   *(_BYTE *)(this + 52) = 1; /*0x76382b*/
   *(_BYTE *)(this + 53) = 0; /*0x76382f*/
-  *(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_WaypointClass) */  /*0x763832*/
   *(_DWORD *)(this + 60) = 10; /*0x763839*/
   *(_DWORD *)(this + 56) = 0; /*0x763840*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
-  *(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/
-  *(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/
-  *(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x76384b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763852*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WaypointPathClass) */  /*0x763859*/
   if ( a2 < 0xC /*0x76389a*/
       && (dword_B72618 < dword_B72610
        || (byte_B72615 || !dword_B72610)
@@ -8578,14 +8578,14 @@ void ra2::game::CaptureManagerClass::pointerExpired(class ra2::game::AbstractCla
   *(_DWORD *)(this + 40) = 0; /*0x4717e6*/
   *(_DWORD *)(this + 44) = 0; /*0x4717e9*/
   *(_BYTE *)(this + 49) = 0; /*0x4717ec*/
-  *(_DWORD *)(this + 36) = (void *)&vt_DynamicVectorClass_ControlNode; /*0x4717ef*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_ControlNode) */  /*0x4717ef*/
   *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
   *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
   *(_DWORD *)(this + 72) = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
-  *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
-  *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
-  *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47180d*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x471814*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_CaptureManagerClass) */  /*0x47181b*/
   *(_DWORD *)(this + 60) = a3; /*0x471822*/
   *(_BYTE *)(this + 64) = a4; /*0x471825*/
   *(_BYTE *)(this + 65) = 0; /*0x471828*/
@@ -9016,14 +9016,14 @@ void gamemd::BuildingClass::CreateDestructionCrater()
   *(_DWORD *)(this + 1652) = 0; /*0x43b8b7*/
   *(_BYTE *)(this + 1656) = 1; /*0x43b8bd*/
   *(_BYTE *)(this + 1657) = 0; /*0x43b8c4*/
-  *(_DWORD *)(this + 1644) = (void *)&vt_DynamicVectorClass_InfantryClass; /*0x43b8ca*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_InfantryClass) */  /*0x43b8ca*/
   *(_DWORD *)(this + 1664) = 10; /*0x43b8d0*/
   *(_DWORD *)(this + 1660) = 0; /*0x43b8d6*/
   *(_DWORD *)(this + 1672) = 0; /*0x43b8dc*/
   *(_DWORD *)(this + 1676) = 0; /*0x43b8e2*/
   *(_BYTE *)(this + 1680) = 1; /*0x43b8e8*/
   *(_BYTE *)(this + 1681) = 0; /*0x43b8ef*/
-  *(_DWORD *)(this + 1668) = (void *)&vt_DynamicVectorClass_InfantryClass; /*0x43b8f5*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_DynamicVectorClass_InfantryClass) */  /*0x43b8f5*/
   *(_DWORD *)(this + 1688) = 10; /*0x43b8fb*/
   *(_DWORD *)(this + 1684) = 0; /*0x43b901*/
   *(_DWORD *)(this + 1692) = 0; /*0x43b907*/
@@ -9066,9 +9066,9 @@ void gamemd::BuildingClass::CreateDestructionCrater()
   *(_DWORD *)(this + 1812) = 0; /*0x43b9ee*/
   *(_DWORD *)(this + 1816) = 0; /*0x43b9f4*/
   /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b9fa) */
-  *(_DWORD *)(this + 4) = &BuildingClass_Vtable2; /*0x43ba00*/
-  *(_DWORD *)(this + 8) = &BuildingClass_Vtable3; /*0x43ba07*/
-  *(_DWORD *)(this + 12) = &BuildingClass_Vtable4; /*0x43ba0e*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS BuildingClass_Vtable2) */  /*0x43ba00*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS BuildingClass_Vtable3) */  /*0x43ba07*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS BuildingClass_Vtable4) */  /*0x43ba0e*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 4)); /*0x43ba15*/
   *(_DWORD *)(this + 1516) = 0; /*0x43ba22*/
   LOBYTE(v6) = 0; /*0x43ba28*/

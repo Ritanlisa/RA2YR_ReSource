@@ -364,7 +364,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   AnimTypeVector::Constructor(&aP1->q104, 0, 0); /*0x75cefe*/
   *(unsigned int *)(aP1 + 276) = 0; /*0x75cf08*/
   *&aP1->q118 = 10; /*0x75cf0b*/
-  *(unsigned int *)(aP1 + 260) = (unsigned int)(&vt_TypeList); /*0x75cf0e*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList) */  /*0x75cf0e*/
   aP1->q120 = 0; /*0x75cf14*/
   aP1->q124 = 0; /*0x75cf1a*/
   aP1->q128 = 0; /*0x75cf25*/
@@ -424,18 +424,18 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   *(unsigned char *)(aP1 + 409) = 0; /*0x75d083*/
   *(unsigned int *)(aP1 + 416) = 10; /*0x75d086*/
   *(unsigned int *)(aP1 + 412) = 0; /*0x75d089*/
-  *(unsigned int *)(aP1 + 396) = &vt_TypeList; /*0x75d08c*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList) */  /*0x75d08c*/
   *(unsigned char *)(aP1 + 436) = 1; /*0x75d092*/
   *(unsigned int *)(aP1 + 428) = 0; /*0x75d098*/
   *(unsigned int *)(aP1 + 432) = 0; /*0x75d09b*/
   *(unsigned char *)(aP1 + 437) = 0; /*0x75d09e*/
   *(unsigned int *)(aP1 + 444) = 10; /*0x75d0a1*/
   *(unsigned int *)(aP1 + 440) = 0; /*0x75d0a4*/
-  *(unsigned int *)(aP1 + 424) = &vt_TypeList; /*0x75d0a7*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_TypeList) */  /*0x75d0a7*/
   aP1->u32_1C4 = 0; /*0x75d0ae*/
   aP1->u32_1C8 = 0; /*0x75d0b4*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_WarheadTypeClass) */  /*0x75d0ba*/
-  *(unsigned int *)(aP1 + 4) = &vt_WarheadTypeClass; /*0x75d0c1*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_WarheadTypeClass) */  /*0x75d0c1*/
   /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0c7) */
   /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0ce) */
   (aP1 + 4)->GenerateUniqueID(); /*0x75d0d5*/
@@ -762,7 +762,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
   }
   CampaignClass *WarheadTypeClass_field_0x1AC; // eax
   WarheadTypeClass_field_0x1AC = a3->WarheadTypeClass_field_0x1AC; /*0x75e5c8*/
-  *(unsigned int *)&a3->__pad_1A0[8] = &vt_VectorClass; /*0x75e5d1*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_VectorClass) */  /*0x75e5d1*/
   if ( WarheadTypeClass_field_0x1AC && a3->__pad_1B0[5] ) /*0x75e5df*/
   {
     __3_YAXPAX_Z(WarheadTypeClass_field_0x1AC); /*0x75e5e8*/

@@ -478,7 +478,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
   char v21[12]; // [esp+18h] [ebp-18h] BYREF
   char v22[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  (*(void (**)(TechnoClass *, int))&this->vfptr->currentTurretNumber_d)(this, 2); /*0x424ceb*/
+  this->vt_slot_292(this, 2); /*0x424ceb*/
   if ( LOBYTE(this->ironCurtainTimer[2]) || *(unsigned int *)(this->missionTimer[0] + 760) == -1 ) /*0x424d08*/
   {
     AudioController::Stop(&this->AudioController_1A0); /*0x424d38*/
@@ -509,7 +509,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
           v7 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x424e04*/
           if ( v7 ) /*0x424e0b*/
           {
-            v8 = (int *)(*(int (**)(TechnoClass *, char *))&this->vfptr->q048)(this, v22); /*0x424e16*/
+            v8 = (int *)this->vt_slot_72(this, v22); /*0x424e16*/
             v9 = *v8; /*0x424e19*/
             v10 = v8[1]; /*0x424e1b*/
             v11 = v8[2]; /*0x424e1e*/

@@ -594,9 +594,9 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
 
 
   /* X11: vtable install elided (X67 star-deref, RHS vt_BulletTypeClass) */  /*0x46c896*/
-  *(unsigned int *)&a1->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46c89c*/
-  *(unsigned int *)&a1->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c8a3*/
-  *(unsigned int *)&a1->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c8aa*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c89c*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c8a3*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x46c8b1*/
   BulletTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::BulletTypeClass *)(a1); /*0x46c8c6*/
@@ -900,9 +900,9 @@ int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x46c6bf*/
       /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46c6c4) */
-      *(unsigned int *)&aP0->vfptr[4] = &vt_BulletTypeClass; /*0x46c6ca*/
-      *(unsigned int *)&aP0->vfptr[8] = &vt_BulletTypeClass; /*0x46c6d1*/
-      *(unsigned int *)&aP0->vfptr[12] = &vt_BulletTypeClass; /*0x46c6d8*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c6ca*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c6d1*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS vt_BulletTypeClass) */  /*0x46c6d8*/
     }
     VoxelAnimType::LoadAnim(aP0->vfptr); /*0x46c6e1*/
     ObjectTypeClass::Load2DArt(aP0->vfptr); /*0x46c6e8*/

@@ -307,7 +307,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   *(unsigned int *)&a1->__pad_DA8[4] = 0; /*0x6d1d3b*/
   *(unsigned int *)&a1->__pad_DA8[8] = 0; /*0x6d1d4e*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_Tactical) */  /*0x6d1d54*/
-  *(unsigned int *)&a1->Tactical_field_0x2[2] = &vt_Tactical; /*0x6d1d5a*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_Tactical) */  /*0x6d1d5a*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_Tactical) */  /*0x6d1d61*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_Tactical) */  /*0x6d1d68*/
   memset(&a1->__pad_AC[56], 0, 0xC80u); /*0x6d1d6f*/

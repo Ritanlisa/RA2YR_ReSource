@@ -6346,14 +6346,14 @@ HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
   if ( a1 ) /*0x719cba*/
   {
     /* X11: vtable install elided (X67 star-deref, RHS vt_LocomotionClass) */  /*0x719cbc*/
-    *(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x719cc2*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS vt_LocomotionClass) */  /*0x719cc2*/
     int v4; // eax
     v4 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x719cc9*/
     a1->Timer[2] = 0; /*0x719cce*/
     a1->Timer[0] = v4; /*0x719cd5*/
     a1->Piggybackee = 0; /*0x719cd8*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_TeleportLocomotionClass) */  /*0x719cdf*/
-    *(unsigned int *)&a1->0[4] = &vt_TeleportLocomotionClass; /*0x719ce5*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS vt_TeleportLocomotionClass) */  /*0x719ce5*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_TeleportLocomotionClass) */  /*0x719cec*/
   }
   (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x719cff*/

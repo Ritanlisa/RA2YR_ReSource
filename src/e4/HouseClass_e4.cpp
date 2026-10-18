@@ -265,7 +265,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->relatedTagsCount = -1; /*0x4f54b8*/
   this->relatedTagsCapacity = a2; /*0x4f54c2*/
   TagClassVector::Construct(&this->conYards, 0, 0); /*0x4f54c5*/
-  *(&this->u32_E) = (int)&vt_DynamicVectorClass_TagClass; /*0x4f54cf*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_DynamicVectorClass_TagClass) */  /*0x4f54cf*/
   this->abstractFlags = 10; /*0x4f54d5*/
   this->uniqueId = 0; /*0x4f54d8*/
   VectorClass::BuildingConstructor(&this->abstractFlags, 0, 0); /*0x4f54e2*/
@@ -382,7 +382,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   this->iqLevel2 = this->iqLevel2; /*0x4f57bb*/
   this->aiMode = 0; /*0x4f57c4*/
   SuperClassVector::Construct(&this->supers, 0, 0); /*0x4f57ca*/
-  *(&this->u8_95) = (int)&vt_DynamicVectorClass_SuperClass; /*0x4f57cf*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_DynamicVectorClass_SuperClass) */  /*0x4f57cf*/
   this->abstractFlags = 10; /*0x4f57d5*/
   this->uniqueId = 0; /*0x4f57d8*/
   this->lastBuiltVehicleType = -1; /*0x4f57de*/
@@ -578,7 +578,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   *(&this->u8_5815) = 0; /*0x4f5d54*/
   *(&this->u8_5818) = 0; /*0x4f5d5d*/
   ConnectionPointVector::Construct(&this->waypointPathCount, 0, 0); /*0x4f5d63*/
-  *(&this->u8_5819) = (int)&vt_DynamicVectorClass_IConnectionPoint; /*0x4f5d68*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_DynamicVectorClass_IConnectionPoint) */  /*0x4f5d68*/
   *(&this->u8_581E) = 10; /*0x4f5d6e*/
   *(&this->u8_581D) = 0; /*0x4f5d71*/
   *(&this->u32_581F) = 0; /*0x4f5d74*/
@@ -595,12 +595,12 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   *(&this->u32_582C) = 0; /*0x4f5dc0*/
   *(&this->u32_582D) = 0; /*0x4f5dc6*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_HouseClass) */  /*0x4f5dcc*/
-  *(&this->AbstractClass_1) = (int)&vt_HouseClass; /*0x4f5dd3*/
-  *(&this->q002) = (int)&vt_HouseClass; /*0x4f5dda*/
-  *(&this->u32_3) = (int)&vt_HouseClass; /*0x4f5de1*/
-  *(&this->u32_9) = (int)&vt_HouseClass; /*0x4f5de8*/
-  *(&this->u32_A) = (int)&vt_HouseClass; /*0x4f5def*/
-  *(&this->u32_B) = (int)&vt_HouseClass; /*0x4f5dfb*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_HouseClass) */  /*0x4f5dd3*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_HouseClass) */  /*0x4f5dda*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_HouseClass) */  /*0x4f5de1*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_HouseClass) */  /*0x4f5de8*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_HouseClass) */  /*0x4f5def*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_HouseClass) */  /*0x4f5dfb*/
   if ( &g_INI_DefaultBuffer ) /*0x4f5e04*/
   {
     strncpy(Destination, &g_INI_DefaultBuffer, 0x1Fu); /*0x4f5e18*/
@@ -3690,7 +3690,7 @@ unsigned int * HouseClass::SDDTORAllAndTriggers()
     while ( v6 < *(int *)&stru_A8E960.altNextScenario[148] ); /*0x4fb99b*/
   }
   if ( this ) /*0x4fb99f*/
-    return (*(unsigned int *(**)(HouseClass *, int))&this->vfptr->NeedsSaveOrLink)(this, 1); /*0x4fb9a7*/
+    return this->vt_slot_32(this, 1); /*0x4fb9a7*/
   return result; /*0x4fb9aa*/
 
 }

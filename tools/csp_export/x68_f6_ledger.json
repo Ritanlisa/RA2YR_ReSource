@@ -1,0 +1,22 @@
+[
+ {
+  "file": "src\\structure\\supplied_bodies.cpp",
+  "line": 1198,
+  "slot": 114,
+  "vtname": "vt_slot_456",
+  "semantic": "",
+  "claimed": null,
+  "before": "      if ( !(*(int (**)(AircraftClass *))&this->vfptr->currentTurretNumber_d)(this)",
+  "after": "      if ( !this->vt_slot_456(this)"
+ },
+ {
+  "file": "src\\structure\\supplied_bodies.cpp",
+  "line": 1215,
+  "slot": 114,
+  "vtname": "vt_slot_456",
+  "semantic": "",
+  "claimed": null,
+  "before": "             || (*(int (**)(AircraftClass *))&this->vfptr->currentTurretNumber_d)(this) <= 0 )",
+  "after": "             || this->vt_slot_456(this) <= 0 )"
+ }
+]

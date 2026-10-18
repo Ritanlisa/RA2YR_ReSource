@@ -2463,7 +2463,7 @@ char ObjectClass::sub_736C10()
   unsigned __int8 *v2; // eax
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  if ( (*(int (**)(TechnoClass *))&this->vfptr->targetingTimer_d)(this) != 5 ) /*0x736c21*/
+  if ( this->vt_slot_388(this) != 5 ) /*0x736c21*/
     return 0; /*0x736c21*/
   v4[0] = this->location[0]; /*0x736c2f*/
   v4[1] = this->location[1]; /*0x736c3b*/
@@ -2473,8 +2473,8 @@ char ObjectClass::sub_736C10()
   v2 = (unsigned __int8 *)this->u32_5D4; /*0x736c5e*/
   if ( v2 ) /*0x736c66*/
     v2[130] = 1; /*0x736c68*/
-  (*(void (**)(TechnoClass *))&this->vfptr->secondaryFacing)(this); /*0x736c73*/
-  (*(void (**)(TechnoClass *))&this->vfptr->animation_d)(this); /*0x736c7d*/
+  this->vt_slot_928(this); /*0x736c73*/
+  this->vt_slot_248(this); /*0x736c7d*/
   return 1; /*0x736c85*/
 
 }

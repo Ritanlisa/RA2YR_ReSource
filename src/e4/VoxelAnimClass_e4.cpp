@@ -931,7 +931,7 @@ int VoxelAnimClass::Reset(void *a1, void *a2)
   *(unsigned int *)&a1->__pad_20[24] = 0; /*0x75aadc*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_WalkLocomotionClass) */  /*0x75aadf*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_WalkLocomotionClass) */  /*0x75aae5*/
-  *(unsigned int *)&a1->__pad_C[12] = &vt_WalkLocomotionClass; /*0x75aaec*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_WalkLocomotionClass) */  /*0x75aaec*/
   return (int)a1; /*0x75aaf5*/
 
 }
@@ -963,10 +963,10 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   *(unsigned int *)&a1->__pad_144[180] = 5; /*0x75ec5d*/
   a1->__pad_144[184] = 1; /*0x75ec67*/
   a1->__pad_144[185] = 0; /*0x75ec6e*/
-  *(unsigned int *)&a1->__pad_144[172] = &vt_VectorClass; /*0x75ec74*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_VectorClass) */  /*0x75ec74*/
   *(unsigned int *)&a1->__pad_144[176] = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
   a1->__pad_144[185] = 1; /*0x75ec89*/
-  *(unsigned int *)&a1->__pad_144[172] = &vt_DynamicVectorClass; /*0x75ec90*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_DynamicVectorClass) */  /*0x75ec90*/
   *(unsigned int *)&a1->__pad_144[192] = 10; /*0x75ec9a*/
   *(unsigned int *)&a1->__pad_144[188] = 0; /*0x75eca4*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_WaveClass) */  /*0x75ecaa*/

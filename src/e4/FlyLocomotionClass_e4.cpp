@@ -204,7 +204,7 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
     if ( a1 ) /*0x4cfcd6*/
     {
       /* X11: vtable install elided (X67 star-deref, RHS vt_FlyLocomotionClass) */  /*0x4cfcd8*/
-      *(unsigned int *)&a1->0[4] = &vt_FlyLocomotionClass; /*0x4cfcde*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS vt_FlyLocomotionClass) */  /*0x4cfcde*/
     }
   }
   return result; /*0x4cfce5*/

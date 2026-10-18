@@ -266,7 +266,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
 
   int v3 = *&a3_2->u32_4 + 8 * a3_2; // edi /*0x76685d*/
   ComPtr::Constructor((ComPtr *)a3_2); /*0x766862*/
-  *(unsigned int *)(a3_2) = (unsigned int)(&vt_rc_ptr); /*0x766867*/
+  /* X11: vtable install elided (X68 star-paren-named, RHS vt_rc_ptr) */  /*0x766867*/
   ComPtr::Set((ComPtr *)a3_2, v3->u32_4); /*0x766873*/
   return a3_2; /*0x76687a*/
 }

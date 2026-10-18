@@ -1321,7 +1321,7 @@ int BuildingClass::HandleFactoryCommand() {
       result = (int)v24; /*0x443424*/
       if ( v24 ) /*0x44342d*/
       {
-        result = (*(int (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))&this->vfptr->turretFacing)( /*0x44343c*/
+        result = this->vt_slot_888( /*0x44343c*/
                    this,
                    1,
                    v24,
@@ -1337,7 +1337,7 @@ int BuildingClass::HandleFactoryCommand() {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v19, this); /*0x443472*/
         v15 = *(unsigned int *)WaypointCoords; /*0x443483*/
         v17 = WaypointCoords[4]; /*0x443487*/
-        v4 = (*(int (**)(BuildingClass *))&this->vfptr->attachedBomb)(this); /*0x44348c*/
+        v4 = this->vt_slot_56(this); /*0x44348c*/
         v5 = EventClass::Add(v22, v4, 0x11u, v15, v17); /*0x443494*/
         if ( *(int *)&dword_A802C8 < 128 ) /*0x4434a3*/
         {
@@ -1348,7 +1348,7 @@ int BuildingClass::HandleFactoryCommand() {
         }
       }
       if ( *(unsigned char *)&this->Type->GapGenerator ) /*0x4434ff*/
-        (*(void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))&this->vfptr->turretFacing)( /*0x443514*/
+        this->vt_slot_888( /*0x443514*/
           this,
           16,
           v24,
@@ -1356,16 +1356,16 @@ int BuildingClass::HandleFactoryCommand() {
           0);
       Type = this->Type; /*0x44351a*/
       if ( *(unsigned char *)(Type + 5806) || Type->InfantryAbsorb ) /*0x44352a*/
-        (*(void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))&this->vfptr->turretFacing)( /*0x44353f*/
+        this->vt_slot_888( /*0x44353f*/
           this,
           16,
           v24,
           0,
           0);
-      result = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this); /*0x443549*/
+      result = this->vt_slot_1032(this); /*0x443549*/
       if ( result > 0 ) /*0x443551*/
       {
-        result = (*(int (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))&this->vfptr->turretFacing)( /*0x443562*/
+        result = this->vt_slot_888( /*0x443562*/
                    this,
                    16,
                    v24,
@@ -1401,7 +1401,7 @@ int BuildingClass::HandleFactoryCommand() {
       v10 = ScriptAction::GetWaypointCoords((ScriptAction *)&v20, this); /*0x443661*/
       v13 = *(unsigned int *)v10; /*0x443672*/
       v14 = v10->vtable2; /*0x443676*/
-      v11 = (*(int (**)(BuildingClass *))&this->vfptr->attachedBomb)(this); /*0x44367b*/
+      v11 = this->vt_slot_56(this); /*0x44367b*/
       result = (int)ScenarioClass::SetEvent(v22, v11, 30, v13, v14, v16, v18); /*0x443683*/
       break;
     default:
@@ -1702,7 +1702,7 @@ LABEL_71:
                   fnstsw ax
                 }
                 v66 = (_AX & 0x4100) != 0; /*0x44650c*/
-                v67 = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this) > 0; /*0x446524*/
+                v67 = this->vt_slot_1032(this) > 0; /*0x446524*/
                 (v127) = ((v127) & ~0xFF) | ((v67) & 0xFF); /*0x446529*/
                 if ( v66 ) /*0x44652d*/
                 {
@@ -1730,7 +1730,7 @@ LABEL_71:
                   fnstsw ax
                 }
                 v59 = (_AX & 0x4100) != 0; /*0x446493*/
-                v60 = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this) > 0; /*0x4464ab*/
+                v60 = this->vt_slot_1032(this) > 0; /*0x4464ab*/
                 (v127) = ((v127) & ~(0xFFull << 32)) | (((v60) & 0xFFull) << 32); /*0x4464b0*/
                 if ( v59 ) /*0x4464b4*/
                 {
@@ -1752,7 +1752,7 @@ LABEL_71:
             owner = this->owner; /*0x44656d*/
           }
         }
-        if ( (*(unsigned __int8 (**)(BuildingClass *))&this->vfptr->u32_3FC)(this) ) /*0x446585*/
+        if ( this->vt_slot_1020(this) ) /*0x446585*/
         {
           v72 = this->Type; /*0x446593*/
           if ( !*(unsigned char *)(v72 + 5829) ) /*0x446599*/
@@ -1780,7 +1780,7 @@ LABEL_71:
                 this->SuperWeaponToken = SuperWeaponToken; /*0x44665a*/
               }
             }
-            if ( (*(unsigned __int8 (**)(BuildingClass *))&this->vfptr->u32_3FC)(this) ) /*0x446685*/
+            if ( this->vt_slot_1020(this) ) /*0x446685*/
             {
               if ( this->Anims[9] ) /*0x44668f*/
               {
@@ -1809,7 +1809,7 @@ LABEL_71:
               v124 = v81[910]; /*0x446729*/
               v123 = v81[909]; /*0x44672a*/
               v122 = v81[908]; /*0x44672e*/
-              v82 = (int *)(*(int (**)(BuildingClass *, int *))&this->vfptr->q048)(this, &v129); /*0x446736*/
+              v82 = (int *)this->vt_slot_72(this, &v129); /*0x446736*/
               v83 = LightSourceClass::Construct(v80, *v82, v82[1], v82[2], v122, v123, v124, v125, v126); /*0x446750*/
             }
             else
@@ -1823,9 +1823,9 @@ LABEL_71:
         if ( *(unsigned char *)&this->Type->LaserFencePost ) /*0x446772*/
           BuildingClass::RepairPlacement(this, 0); /*0x446780*/
         if ( *(unsigned char *)&this->Type->SensorArray ) /*0x44678b*/
-          (*(void (**)(BuildingClass *, int))&this->vfptr->unknown_4F4)(this, g_TerrainTypeTable); /*0x4467a1*/
+          this->vt_slot_1268(this, g_TerrainTypeTable); /*0x4467a1*/
         if ( *(unsigned char *)&this->Type->qD31 ) /*0x4467ad*/
-          (*(void (**)(BuildingClass *, int))&this->vfptr->unknown_4FC)(this, g_TerrainTypeTable); /*0x4467c3*/
+          this->vt_slot_1276(this, g_TerrainTypeTable); /*0x4467c3*/
         this->BuildingClass_field_bool_6DD[0] = 1; /*0x4467c9*/
         goto LABEL_130; /*0x4467c9*/
       }
@@ -1840,7 +1840,7 @@ LABEL_71:
         fnstsw ax
       }
       v26 = (BYTE1(_EAX) & 0x41) != 0; /*0x44619a*/
-      v27 = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this) > 0; /*0x4461b2*/
+      v27 = this->vt_slot_1032(this) > 0; /*0x4461b2*/
       (v127) = ((v127) & ~(0xFFull << 32)) | (((v27) & 0xFFull) << 32); /*0x4461b7*/
       if ( v26 ) /*0x4461bb*/
       {
@@ -1865,7 +1865,7 @@ LABEL_71:
         fnstsw ax
       }
       v34 = (_AX & 0x4100) != 0; /*0x446213*/
-      v35 = (*(int (**)(BuildingClass *))&this->vfptr->q408)(this) > 0; /*0x44622b*/
+      v35 = this->vt_slot_1032(this) > 0; /*0x44622b*/
       (v127) = ((v127) & ~(0xFFull << 32)) | (((v35) & 0xFFull) << 32); /*0x446230*/
       if ( v34 ) /*0x446234*/
       {
@@ -1950,7 +1950,7 @@ LABEL_130:
   {
     if ( !v133 ) /*0x446814*/
     {
-      (*(void (**)(BuildingClass *, unsigned int, unsigned int, int, unsigned int, unsigned int))&this->vfptr->turretRotateSoundController)( /*0x446829*/
+      this->vt_slot_1160( /*0x446829*/
         this,
         0,
         0,
@@ -2048,8 +2048,8 @@ LABEL_130:
   this->ActuallyPlacedOnMap[0] = 1; /*0x446a6e*/
   *(unsigned char *)(v93 + 22392) = 1; /*0x446a77*/
   *(unsigned char *)&this->owner->u32_5779 = 1; /*0x446a84*/
-  if ( *(unsigned char *)((*(int (**)(BuildingClass *))&this->vfptr->hasParachute)(this) + 3281) ) /*0x446a94*/
-    (*(void (**)(BuildingClass *))&this->vfptr->u32_414)(this); /*0x446aa3*/
+  if ( *(unsigned char *)(this->vt_slot_132(this) + 3281) ) /*0x446a94*/
+    this->vt_slot_1044(this); /*0x446aa3*/
   result = *(unsigned int *)&this->Type->FreeUnit_d; /*0x446aaf*/
   if ( result ) /*0x446ab7*/
   {
@@ -2063,7 +2063,7 @@ LABEL_130:
           || !this->unitValue
           || (result = (*(int (**)(int))(*(unsigned int *)this->Type + 172))(this->Type), this->unitValue > result) )
         {
-          v94 = (unsigned int *)(*(int (**)(BuildingClass *, int *))&this->vfptr->q048)(this, &v129); /*0x446b20*/
+          v94 = (unsigned int *)this->vt_slot_72(this, &v129); /*0x446b20*/
           LOWORD(v127) = *v94 / 256; /*0x446b38*/
           WORD1(v127) = v94[1] / 256; /*0x446b52*/
           v95 = v127 + dword_89F698; /*0x446b62*/
@@ -2211,13 +2211,13 @@ LABEL_172:
             (*(void (**)(int, unsigned int))(*(unsigned int *)result + 460))(result, 0); /*0x446f5d*/
             v117 = *(unsigned int *)v116; /*0x446f63*/
             Field9 = AbstractClass::GetField9(); /*0x446f67*/
-            v119 = (*(int (**)(BuildingClass *, int *, int))&this->vfptr->q048)(this, &v129, Field9); /*0x446f77*/
+            v119 = this->vt_slot_72(this, &v129, Field9); /*0x446f77*/
             result = (*(int (**)(int, int))(v117 + 216))(v116, v119); /*0x446f7d*/
             if ( (unsigned char)result ) /*0x446f85*/
             {
               (*(void (**)(int, int, unsigned int))(*(unsigned int *)v116 + 488))(v116, 5, 0); /*0x446f8f*/
               (*(void (**)(int, int, BuildingClass *))(*(unsigned int *)v116 + 632))(v116, 2, this); /*0x446f9c*/
-              result = (*(int (**)(BuildingClass *, int, int))&this->vfptr->temporalTargetingMe)(this, 24, v116); /*0x446faa*/
+              result = this->vt_slot_632(this, 24, v116); /*0x446faa*/
             }
           }
         }
@@ -2729,7 +2729,7 @@ int InfantryClass::ProcessExitQueue() {
       v3 = *(unsigned int *)movementDestination; /*0x4da057*/
       if ( *(unsigned int *)movementDestination ) /*0x4da057*/
       {
-        (*(void (**)(InfantryClass *, unsigned int, int))&this->vfptr->__pad_480)(this, v3, 1); /*0x4da062*/
+        this->vt_slot_1152(this, v3, 1); /*0x4da062*/
         v4 = *&this->q5BC; /*0x4da068*/
         if ( v4 > 0 ) /*0x4da076*/
         {

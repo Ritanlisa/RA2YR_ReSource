@@ -303,7 +303,7 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
   {
     v4 = *(BuildingClass **)(*(unsigned int *)(this->owner + 228) + 4 * v3); /*0x4dfcf3*/
     v5 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(v4->vfptr + 72))(v4, v16); /*0x4dfcff*/
-    v6 = (unsigned int *)(*(int (**)(FootClass *, char *))&this->vfptr->q048)(this, v17); /*0x4dfd08*/
+    v6 = (unsigned int *)this->vt_slot_72(this, v17); /*0x4dfd08*/
     v14 = v6[1] - v5[1]; /*0x4dfd28*/
     v15 = v6[2] - v5[2]; /*0x4dfd2c*/
     Math::Sqrt((double)(*v6 - *v5) * (double)(*v6 - *v5) + (double)v14 * (double)v14 + (double)v15 * (double)v15); /*0x4dfd55*/
@@ -372,13 +372,13 @@ int BuildingClass::FindClosestForRepair2(int a1)
   {
     v5 = *(BuildingClass **)(*(unsigned int *)&stru_A8E960.altNextScenario[224] + 4 * v2); /*0x4dfe36*/
     if ( this )
-      v6 = (*(int (**)(FootClass *))&this->vfptr->fallRate)(this) == 15 ? this : 0;
+      v6 = this->vt_slot_44(this) == 15 ? this : 0;
     else
       v6 = 0; /*0x4dfe3b*/
     if ( (unsigned __int8)BuildingClass::CanRepair(v5, (int)v6) ) /*0x4dfe54*/
     {
       v7 = (unsigned int *)(*(int (**)(BuildingClass *, char *))(v5->vfptr + 72))(v5, v16); /*0x4dfe6b*/
-      v8 = (unsigned int *)(*(int (**)(FootClass *, char *))&this->vfptr->q048)(this, v17); /*0x4dfe74*/
+      v8 = (unsigned int *)this->vt_slot_72(this, v17); /*0x4dfe74*/
       v14 = v8[1] - v7[1]; /*0x4dfe92*/
       v15 = v8[2] - v7[2]; /*0x4dfe9c*/
       Math::Sqrt((double)(*v8 - *v7) * (double)(*v8 - *v7) + (double)v15 * (double)v15 + (double)v14 * (double)v14); /*0x4dfec1*/

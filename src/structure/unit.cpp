@@ -170,7 +170,7 @@ UnitClass::UnitClass() noexcept
           else
           {
             v25 = (*(int (**)(int))(*(unsigned int *)this->Type + 188))(this->Type); /*0x41540d*/
-            this->missionStatus = v25 != (*(int (**)(AircraftClass *))&this->vfptr->u32_1C8)(this) ? 4 : 1;
+            this->missionStatus = v25 != this->vt_slot_456(this) ? 4 : 1;
           }
         }
         else
@@ -187,7 +187,7 @@ UnitClass::UnitClass() noexcept
                 0);
         if ( v10 ) /*0x4152d5*/
         {
-          (*(void (**)(AircraftClass *, int, int))&this->vfptr->q480)(this, v10, 1); /*0x4152de*/
+          this->vt_slot_1152(this, v10, 1); /*0x4152de*/
         }
         else
         {
@@ -220,31 +220,31 @@ UnitClass::UnitClass() noexcept
         {
           if ( *(unsigned char *)&this->Type->Carryall_d ) /*0x4154dd*/
           {
-            (*(void (**)(AircraftClass *, unsigned int))&this->vfptr->q124)(this, 0); /*0x4154ed*/
+            this->vt_slot_292(this, 0); /*0x4154ed*/
             FootClass::MissionMoveCarryallLand((FootClass *)this); /*0x4154f5*/
-            (*(void (**)(AircraftClass *, int))&this->vfptr->q124)(this, 1); /*0x415500*/
+            this->vt_slot_292(this, 1); /*0x415500*/
           }
           else
           {
             v26 = LinkedList::Pop((LinkedList *)this->passengers); /*0x41551a*/
-            v27 = (unsigned short *)(*(int (**)(AircraftClass *, unsigned char *, AircraftClass *))&this->vfptr->u32_1B8)( /*0x415522*/
+            v27 = (unsigned short *)this->vt_slot_440( /*0x415522*/
                              this,
                              v33,
                              this);
             MapClass::ApplyOverlayReveal((MapClass *)&dword_87F7E8, v27, v29); /*0x41552e*/
-            if ( (*(int (**)(AircraftClass *, int))&this->vfptr->q100)(this, v26) ) /*0x41553e*/
+            if ( this->vt_slot_256(this, v26) ) /*0x41553e*/
               v26->u8_424 = 0; /*0x415548*/
-            v28 = (unsigned short *)(*(int (**)(AircraftClass *, unsigned char *))&this->vfptr->u32_1B8)(this, v34); /*0x415559*/
+            v28 = (unsigned short *)this->vt_slot_440(this, v34); /*0x415559*/
             MapClass::FillRevealBuffer((MapClass *)&dword_87F7E8, v28, this); /*0x415565*/
             if ( !*(unsigned char *)(v26 + 1060) && v26->u32_5D4 ) /*0x415574*/
               TeamClass::AddMember((int *)this->team, v26, 0); /*0x415587*/
             if ( !this->passengers[1] ) /*0x41558c*/
-              (*(void (**)(AircraftClass *, unsigned int, int))&this->vfptr->u32_484)(this, 0, 1); /*0x4155a2*/
+              this->vt_slot_1156(this, 0, 1); /*0x4155a2*/
           }
         }
         else
         {
-          (*(void (**)(AircraftClass *, unsigned int, int))&this->vfptr->u32_484)(this, 0, 1); /*0x4155b5*/
+          this->vt_slot_1156(this, 0, 1); /*0x4155b5*/
         }
       }
       goto LABEL_9; /*0x415506*/
@@ -1376,7 +1376,7 @@ int UnitClass::SimpleDeployerUndeploy()
         }
         this->deployAnim = (int)v9; /*0x739de3*/
         BuildingClass::AimTurret((BuildingClass *)v9, this); /*0x739de9*/
-        *(unsigned int *)&this->deployAnim->AnimClass_field_0xD4 = (*(int (**)(UnitClass *))&this->vfptr->infantryBlinkTimer_d)(this); /*0x739dfe*/
+        *(unsigned int *)&this->deployAnim->AnimClass_field_0xD4 = this->vt_slot_484(this); /*0x739dfe*/
       }
       deployAnim = this->deployAnim; /*0x739e04*/
       this->animation[0] = *(unsigned int *)(deployAnim->AnimClass_field_0xC8 + 692); /*0x739e16*/
@@ -1392,9 +1392,9 @@ int UnitClass::SimpleDeployerUndeploy()
     {
       this->Deployed[0] = 0; /*0x739e4f*/
     }
-    if ( (*(unsigned __int8 (**)(UnitClass *))&this->vfptr->missionData)(this) ) /*0x739e5a*/
-      (*(void (**)(UnitClass *))&this->vfptr->q470)(this); /*0x739e68*/
-    v2 = (*(int (**)(UnitClass *))&this->vfptr->hasParachute)(this); /*0x739e72*/
+    if ( this->vt_slot_196(this) ) /*0x739e5a*/
+      this->vt_slot_1136(this); /*0x739e68*/
+    v2 = this->vt_slot_132(this); /*0x739e72*/
     if ( *(unsigned int *)(v2 + 1392) != -1 ) /*0x739e7f*/
     {
       v17 = this->location[0]; /*0x739e8f*/
@@ -2630,7 +2630,7 @@ int UnitClass::CalcMoveTarget()
 
   if ( *(unsigned int *)(*((unsigned int *)dword_8B413C + this->tubeIndex[0]) + 4 * this->unknownBool685[0] + 48) != -1 ) /*0x735a20*/
   {
-    v2 = (Vector3 *)(*(int (**)(UnitClass *))&this->vfptr->u32_48)(this); /*0x735a2f*/
+    v2 = (Vector3 *)this->vt_slot_72(this); /*0x735a2f*/
     unknownCoords568 = this->unknownCoords568; /*0x735a32*/
     v4 = Vector3::Subtract(v2, &ObjectVector_field_0x08, this->unknownCoords568); /*0x735a40*/
     Coord::Length((Coord *)v4); /*0x735a47*/
@@ -2794,7 +2794,7 @@ LABEL_26:
             }
           }
         }
-        (*(void (**)(UnitClass *, unsigned int, unsigned int))&this->vfptr->audioController7)(this, 0, 0); /*0x735f6a*/
+        this->vt_slot_1348(this, 0, 0); /*0x735f6a*/
         /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass_ObjectClass) */  /*0x735f74*/
         if ( v78.ObjectVector_field_0x04 && BYTE1(v78.ObjectVector_field_0x0C) ) /*0x735f8a*/
           __3_YAXPAX_Z((void *)v78.ObjectVector_field_0x04); /*0x735f91*/
@@ -2819,7 +2819,7 @@ LABEL_24:
   v81 = v57; /*0x735fbe*/
   v80 = (SWORD1(v73[0]) << 8) + 128; /*0x735fdb*/
   v79 = (SLOWORD(v73[0]) << 8) + 128; /*0x735fe3*/
-  (*(void (**)(UnitClass *, int *))&this->vfptr->AudioController_1B4)(this, &v79); /*0x735fec*/
+  this->vt_slot_436(this, &v79); /*0x735fec*/
   v58 = this->vfptr; /*0x735ff2*/
   this->tubeIndex[0] = -1; /*0x735ff8*/
   (*(void (**)(UnitClass *, int))(v58 + 292))(this, 1); /*0x735fff*/
@@ -2832,7 +2832,7 @@ LABEL_24:
   v60 = this->vfptr; /*0x736032*/
   this->FootClass_field_bool_68B[0] = 1; /*0x736038*/
   (*(void (**)(UnitClass *, int))(v60 + 396))(this, 2); /*0x73603f*/
-  (*(void (**)(UnitClass *, unsigned int, int))&this->vfptr->audioController7)(this, 0, 1072693248); /*0x73604f*/
+  this->vt_slot_1348(this, 0, 1072693248); /*0x73604f*/
   v61 = this->location[1]; /*0x736057*/
   v62 = this->location[2]; /*0x73605a*/
   *(unsigned int *)v78.__pad_0 = this->location[0]; /*0x73605d*/

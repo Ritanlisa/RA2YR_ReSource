@@ -33,7 +33,7 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   {
     a1->Piggybackee = 0; /*0x4af79c*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_DriveLocomotionClass) */  /*0x4af7a3*/
-    *(unsigned int *)&a1->0[4] = &vt_DriveLocomotionClass; /*0x4af7a9*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS vt_DriveLocomotionClass) */  /*0x4af7a9*/
     *(unsigned int *)a1->__pad_18 = &off_7E7E8C; /*0x4af7b0*/
   }
   (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4af7c3*/

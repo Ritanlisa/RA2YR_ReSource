@@ -812,7 +812,7 @@ int TeamClass::Create(int a1, int a2) {
     LOBYTE(v4) = TeamClass::AddMember(v5, i, 0); /*0x6ed002*/
   }
   if ( this ) /*0x6ed010*/
-    LOBYTE(v4) = (*(char (**)(TeamClass *, int))&this->vfptr->q020)(this, 1); /*0x6ed018*/
+    LOBYTE(v4) = this->vt_slot_32(this, 1); /*0x6ed018*/
   return v4; /*0x6ed01b*/
 
 }

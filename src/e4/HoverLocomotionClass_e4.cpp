@@ -45,10 +45,10 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
     /* X11: vtable install elided (X67 star-deref, RHS vt_LocomotionClass) */  /*0x5170ce*/
-    *(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x5170d4*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS vt_LocomotionClass) */  /*0x5170d4*/
     FrameSnapshot::Init((FrameSnapshot *)a1->LocomotionFacing); /*0x5170db*/
     /* X11: vtable install elided (X67 star-deref, RHS vt_HoverLocomotionClass) */  /*0x5170e0*/
-    *(unsigned int *)&a1->0[4] = &vt_HoverLocomotionClass; /*0x5170e6*/
+    /* X11: vtable install elided (X68 star-amp-named, RHS vt_HoverLocomotionClass) */  /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 }

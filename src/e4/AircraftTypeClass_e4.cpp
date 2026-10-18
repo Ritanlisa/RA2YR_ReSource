@@ -61,9 +61,9 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   aP1->u8_E0D = 0; /*0x41c8f4*/
   aP1->u8_E0E = 0; /*0x41c8fa*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_AircraftTypeClass) */  /*0x41c900*/
-  *(unsigned int *)(aP1 + 4) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c906*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AircraftTypeClass) */  /*0x41c906*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_AircraftTypeClass) */  /*0x41c90c*/
-  *(unsigned int *)(aP1 + 12) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c913*/
+  /* X11: vtable install elided (X68 star-arith-named, RHS vt_AircraftTypeClass) */  /*0x41c913*/
   (aP1 + 4)->GenerateUniqueID(); /*0x41c91a*/
   v3 = dword_A8B228; /*0x41c91f*/
   if ( dword_A8B228 < dword_A8B220 /*0x41c95d*/
@@ -198,9 +198,9 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
 
 
   /* X11: vtable install elided (X67 star-deref, RHS vt_AircraftTypeClass) */  /*0x41cfe6*/
-  *(unsigned int *)&a1->TechnoTypeClass[4] = &vt_AircraftTypeClass; /*0x41cfec*/
-  *(unsigned int *)&a1->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41cff3*/
-  *(unsigned int *)&a1->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41cffa*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_AircraftTypeClass) */  /*0x41cfec*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_AircraftTypeClass) */  /*0x41cff3*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_AircraftTypeClass) */  /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x41d001*/
   AircraftTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AircraftTypeClass *)(a1); /*0x41d016*/

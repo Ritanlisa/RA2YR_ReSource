@@ -4604,7 +4604,7 @@ int sub_5CB360()
 namespace gamemd {
 void E4Recv_5CB3E0::sub_5CB3E0()
 {
-  *(unsigned int *)&this->m_Enabled = &vt_UnholyAlliance; /*0x5cb3e0*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_UnholyAlliance) */  /*0x5cb3e0*/
   MultiplayerGameMode::Dtor(); /*0x5cb3e6*/
 }
 } // namespace gamemd

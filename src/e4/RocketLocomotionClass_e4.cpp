@@ -69,13 +69,13 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
     if ( a1 ) /*0x663426*/
     {
       /* X11: vtable install elided (X67 star-deref, RHS vt_LocomotionClass) */  /*0x663428*/
-      *(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x66342e*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS vt_LocomotionClass) */  /*0x66342e*/
       int v3; // ecx
       v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x663435*/
       a1->TrailerTimer[2] = 0; /*0x66343b*/
       a1->TrailerTimer[0] = v3; /*0x663442*/
       /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x663445*/
-      *(unsigned int *)&a1->0[4] = &vt_RocketLocomotionClass; /*0x66344b*/
+      /* X11: vtable install elided (X68 star-amp-named, RHS vt_RocketLocomotionClass) */  /*0x66344b*/
     }
   }
   return result; /*0x663452*/
@@ -93,7 +93,7 @@ namespace gamemd {  // G42.18c ns repair
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
 {
   /* X11: vtable install elided (X67 star-deref, RHS vt_RocketLocomotionClass) */  /*0x6635c3*/
-  *(unsigned int *)&a3->0[4] = &vt_RocketLocomotionClass; /*0x6635c9*/
+  /* X11: vtable install elided (X68 star-amp-named, RHS vt_RocketLocomotionClass) */  /*0x6635c9*/
   ((LocomotionClass *)((LocomotionClass *)a3))->Construct(); /*0x6635d0*/
   if ( (a3 & 1) != 0 ) /*0x6635da*/
     operator delete((void *)(a3)); /*0x6635dd*/

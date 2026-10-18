@@ -1368,7 +1368,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
   unsigned __int16 *v61; // [esp+78h] [ebp+8h]
   int v62; // [esp+7Ch] [ebp+Ch] BYREF
 
-  v2 = (int *)(*(int (**)(BuildingClass *, int *))&this->vfptr->airstrikeTintTimer)(this, &v50); /*0x44efc2*/
+  v2 = (int *)this->vt_slot_440(this, &v50); /*0x44efc2*/
   Type = this->Type; /*0x44efc8*/
   v4 = *v2; /*0x44efce*/
   v5 = v54; /*0x44efd0*/
@@ -1425,7 +1425,7 @@ LABEL_12:
   v13 = this->Type; /*0x44f13b*/
   if ( *(unsigned char *)(v13 + 3278) && v13->WeaponsFactory ) /*0x44f14f*/
   {
-    v14 = (unsigned int *)(*(int (**)(BuildingClass *, int *, int *))&this->vfptr->lineTrailer)(this, v52, v5); /*0x44f167*/
+    v14 = (unsigned int *)this->vt_slot_168(this, v52, v5); /*0x44f167*/
     v58 = *v14 / 256; /*0x44f17d*/
     v48[1] = v14[1] / 256; /*0x44f1a3*/
     ++v48[1]; /*0x44f1a8*/
@@ -2279,7 +2279,7 @@ int BuildingClass::UpdateConstruction()
             0);
           return 0; /*0x444f16*/
         }
-        v118 = (unsigned int *)(*(int (**)(BuildingClass *, char *))&this->vfptr->q048)(this, v243); /*0x444e00*/
+        v118 = (unsigned int *)this->vt_slot_72(this, v243); /*0x444e00*/
         v199 = 160; /*0x444e05*/
         LOWORD(v208) = *v118 / 256; /*0x444e18*/
         v119 = v118[1]; /*0x444e1d*/
@@ -2336,7 +2336,7 @@ int BuildingClass::UpdateConstruction()
           }
           v204 = ((short)(((v199) >> 16) & 0xFFFF) << 8) + 128; /*0x444a6e*/
           *(unsigned int *)v203 = ((__int16)v199 << 8) + 128; /*0x444a72*/
-          v96 = (int *)(*(int (**)(BuildingClass *, char *))&this->vfptr->q048)(this, v242); /*0x444a82*/
+          v96 = (int *)this->vt_slot_72(this, v242); /*0x444a82*/
           v211 = *v96; /*0x444a8e*/
           Math::CalcAngle((double)v96[1] - (double)*(int *)v203, (double)*(int *)v202 - (double)v211); /*0x444aa7*/
           LOWORD(v211) = Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427); /*0x444ac0*/
@@ -2443,8 +2443,8 @@ int BuildingClass::UpdateConstruction()
                 BuildingClass::AddToProductionQueue((int)v244, (int)v117); /*0x444dac*/
               }
             }
-            if ( (*(int (**)(BuildingClass *, int, char *))&this->vfptr->temporalTargetingMe)(this, 2, v244) == 1 ) /*0x444dcc*/
-              (*(void (**)(BuildingClass *, int, char *))&this->vfptr->temporalTargetingMe)(this, 9, v244); /*0x444dd9*/
+            if ( this->vt_slot_632(this, 2, v244) == 1 ) /*0x444dcc*/
+              this->vt_slot_632(this, 9, v244); /*0x444dd9*/
             goto LABEL_99; /*0x444ddf*/
           }
         }
@@ -2572,7 +2572,7 @@ int BuildingClass::UpdateConstruction()
       if ( !v29->Naval ) /*0x44416f*/
       {
         TechnoClass::SetFocus((TechnoClass *)v244, this->focus); /*0x44449b*/
-        if ( (*(int (**)(BuildingClass *))&this->vfptr->targetingTimer_d)(this) == 16 ) /*0x4444ad*/
+        if ( this->vt_slot_388(this) == 16 ) /*0x4444ad*/
         {
           v55 = 0; /*0x4444b9*/
           v209 = *(unsigned int *)&this->owner->bunkersCount; /*0x4444c0*/
@@ -2608,24 +2608,24 @@ int BuildingClass::UpdateConstruction()
         v200 = 64; /*0x44456b*/
         ++dword_A8E7AC; /*0x444575*/
         v59 = *(unsigned int *)v244; /*0x44457d*/
-        v60 = (*(int (**)(BuildingClass *, char *, unsigned int, int))&this->vfptr->queuedMission)(this, v237, 0, 64); /*0x444583*/
+        v60 = this->vt_slot_180(this, v237, 0, 64); /*0x444583*/
         if ( (*(unsigned __int8 (**)(char *, int))(v59 + 216))(v244, v60) ) /*0x44458c*/
         {
           (*(void (**)(char *, unsigned int))(*(unsigned int *)v244 + 292))(v244, 0); /*0x44459f*/
           v61 = *(unsigned int *)v244; /*0x4445a7*/
-          v62 = (*(int (**)(BuildingClass *, char *, unsigned int))&this->vfptr->queuedMission)(this, v238, 0); /*0x4445b4*/
+          v62 = this->vt_slot_180(this, v238, 0); /*0x4445b4*/
           (*(void (**)(char *, int))(v61 + 436))(v244, v62); /*0x4445bd*/
           (*(void (**)(char *, int))(*(unsigned int *)v244 + 292))(v244, 1); /*0x4445c9*/
-          (*(void (**)(BuildingClass *, int, char *))&this->vfptr->temporalTargetingMe)(this, 2, v244); /*0x4445d6*/
-          (*(void (**)(BuildingClass *, int, char *))&this->vfptr->temporalTargetingMe)(this, 24, v244); /*0x4445e3*/
-          (*(void (**)(BuildingClass *, int, unsigned int))&this->vfptr->q1E8)(this, 16, 0); /*0x4445f0*/
+          this->vt_slot_632(this, 2, v244); /*0x4445d6*/
+          this->vt_slot_632(this, 24, v244); /*0x4445e3*/
+          this->vt_slot_488(this, 16, 0); /*0x4445f0*/
           goto LABEL_99; /*0x4445f6*/
         }
         goto LABEL_146; /*0x444594*/
       }
       if ( !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x444177*/
-        (*(void (**)(BuildingClass *, int, unsigned int))&this->vfptr->q1E8)(this, 16, 0); /*0x444187*/
-      v30 = (unsigned int *)(*(int (**)(BuildingClass *, int *))&this->vfptr->q048)(this, &v213); /*0x444196*/
+        this->vt_slot_488(this, 16, 0); /*0x444187*/
+      v30 = (unsigned int *)this->vt_slot_72(this, &v213); /*0x444196*/
       v203[0] = *v30 / 256; /*0x4441a9*/
       focus = this->focus; /*0x4441b2*/
       v203[1] = v30[1] / 256; /*0x4441c3*/
@@ -2635,7 +2635,7 @@ int BuildingClass::UpdateConstruction()
         v32 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)focus + 72))(focus, &v212); /*0x4441df*/
         v33 = *v32 / 256; /*0x44420b*/
         v34 = v32[1] / 256; /*0x44420e*/
-        v35 = (__int16 *)(*(int (**)(BuildingClass *, unsigned int *))&this->vfptr->airstrikeTintTimer)(this, v230); /*0x444211*/
+        v35 = (__int16 *)this->vt_slot_440(this, v230); /*0x444211*/
         v36 = *v35; /*0x444220*/
         v204 = (__int16)v33; /*0x444223*/
         v37 = v35[1]; /*0x44422e*/
@@ -2749,17 +2749,17 @@ LABEL_99:
         {
           v19 = v4->vfptr; /*0x443fe5*/
           v20 = AbstractClass::GetField9(); /*0x443fea*/
-          v21 = (*(int (**)(BuildingClass *, unsigned char *, ObjectClass *, int))&this->vfptr->lineTrailer)( /*0x443ffd*/
+          v21 = this->vt_slot_168( /*0x443ffd*/
                   this,
                   v239,
                   v4,
                   v20);
           if ( (*(unsigned __int8 (**)(ObjectClass *, int))(v19 + 216))(v4, v21) ) /*0x444006*/
           {
-            (*(void (**)(BuildingClass *, int, ObjectClass *))&this->vfptr->temporalTargetingMe)(this, 2, v4); /*0x44401b*/
-            (*(void (**)(BuildingClass *, int, ObjectClass *))&this->vfptr->temporalTargetingMe)(this, 24, v4); /*0x444028*/
+            this->vt_slot_632(this, 2, v4); /*0x44401b*/
+            this->vt_slot_632(this, 24, v4); /*0x444028*/
             v22 = v4->vfptr; /*0x444030*/
-            v23 = (*(int (**)(BuildingClass *, int *, ObjectClass *))&this->vfptr->lineTrailer)(this, v240, v4); /*0x44403e*/
+            v23 = this->vt_slot_168(this, v240, v4); /*0x44403e*/
             (*(void (**)(ObjectClass *, int))(v22 + 436))(v4, v23); /*0x444047*/
             v4[10].abstractFlags = (int)this; /*0x44404d*/
             v24 = this->focus; /*0x444053*/

@@ -1195,7 +1195,7 @@ int UnitClass::Mission_Harvest()
   switch ( this->missionStatus )
   {
     case 0:
-      if ( !(*(int (**)(AircraftClass *))&this->vfptr->currentTurretNumber_d)(this)
+      if ( !this->vt_slot_456(this)
         && *&this->pitchAngle == 0.0
         && ((movementDestination = this->movementDestination) == 0
          || (v3 = this->location[0],
@@ -1212,11 +1212,11 @@ int UnitClass::Mission_Harvest()
       }
       else if ( this->movementDestination
              || !*(unsigned char *)&this->Type->IsDropship
-             || (*(int (**)(AircraftClass *))&this->vfptr->currentTurretNumber_d)(this) <= 0 )
+             || this->vt_slot_456(this) <= 0 )
       {
         if ( this->movementDestination )
         {
-          if ( (*(unsigned __int8 (**)(AircraftClass *, int))&this->vfptr->q550)(
+          if ( this->vt_slot_1360(
                  this,
                  this->movementDestination) )
           {
@@ -1249,7 +1249,7 @@ int UnitClass::Mission_Harvest()
           else
           {
             v25 = (*(int (**)(int))(*(unsigned int *)this->Type + 188))(this->Type); /*0x41540d*/
-            this->missionStatus = v25 != (*(int (**)(AircraftClass *))&this->vfptr->currentTurretNumber_d)(this) ? 4 : 1;
+            this->missionStatus = v25 != this->vt_slot_1152(this) ? 4 : 1;
           }
         }
         else
@@ -1259,14 +1259,14 @@ int UnitClass::Mission_Harvest()
       }
       else
       {
-        v10 = (*(int (**)(AircraftClass *, int, unsigned int, unsigned int))&this->vfptr->FootClass_field_528)( /*0x4152cd*/
+        v10 = this->vt_slot_1320( /*0x4152cd*/
                 this,
                 this->Type + 1000,
                 0,
                 0);
         if ( v10 ) /*0x4152d5*/
         {
-          (*(void (**)(AircraftClass *, int, int))&this->vfptr->q480)(this, v10, 1); /*0x4152de*/
+          this->vt_slot_1152(this, v10, 1); /*0x4152de*/
         }
         else
         {
@@ -1281,7 +1281,7 @@ int UnitClass::Mission_Harvest()
         sub_7DC720(-2147467261); /*0x415439*/
       if ( !(*(unsigned __int8 (**)(int))(*(unsigned int *)this->locomotor + 16))(this->locomotor) ) /*0x415447*/
         this->missionStatus = 2; /*0x41544e*/
-      if ( !(*(unsigned __int8 (**)(AircraftClass *, int))&this->vfptr->q550)( /*0x415463*/
+      if ( !this->vt_slot_1360( /*0x415463*/
               this,
               this->movementDestination) )
         this->missionStatus = 0; /*0x415471*/
@@ -1299,31 +1299,31 @@ int UnitClass::Mission_Harvest()
         {
           if ( *(unsigned char *)&this->Type->__pad_DFC ) /*0x4154dd*/
           {
-            (*(void (**)(AircraftClass *, unsigned int))&this->vfptr->currentTurretNumber)(this, 0); /*0x4154ed*/
+            this->vt_slot_292(this, 0); /*0x4154ed*/
             FootClass::MissionMoveCarryallLand((FootClass *)this); /*0x4154f5*/
-            (*(void (**)(AircraftClass *, int))&this->vfptr->currentTurretNumber)(this, 1); /*0x415500*/
+            this->vt_slot_292(this, 1); /*0x415500*/
           }
           else
           {
             v26 = LinkedList::Pop((LinkedList *)this->passengers); /*0x41551a*/
-            v27 = (unsigned short *)(*(int (**)(AircraftClass *, unsigned char *, AircraftClass *))&this->vfptr->airstrikeTintTimer)( /*0x415522*/
+            v27 = (unsigned short *)this->vt_slot_440( /*0x415522*/
                              this,
                              v33,
                              this);
             MapClass::ApplyOverlayReveal((MapClass *)&dword_87F7E8, v27, v29); /*0x41552e*/
-            if ( (*(int (**)(AircraftClass *, int))&this->vfptr->radioCommand)(this, v26) ) /*0x41553e*/
+            if ( this->vt_slot_256(this, v26) ) /*0x41553e*/
               v26->u8_424 = 0; /*0x415548*/
-            v28 = (unsigned short *)(*(int (**)(AircraftClass *, unsigned char *))&this->vfptr->airstrikeTintTimer)(this, v34); /*0x415559*/
+            v28 = (unsigned short *)this->vt_slot_440(this, v34); /*0x415559*/
             MapClass::FillRevealBuffer((MapClass *)&dword_87F7E8, v28, this); /*0x415565*/
             if ( !*(unsigned char *)(v26 + 1060) && v26->u32_5D4 ) /*0x415574*/
               TeamClass::AddMember((int *)this->team, v26, 0); /*0x415587*/
             if ( !this->passengers[1] ) /*0x41558c*/
-              (*(void (**)(AircraftClass *, unsigned int, int))&this->vfptr->q484)(this, 0, 1); /*0x4155a2*/
+              this->vt_slot_1156(this, 0, 1); /*0x4155a2*/
           }
         }
         else
         {
-          (*(void (**)(AircraftClass *, unsigned int, int))&this->vfptr->q484)(this, 0, 1); /*0x4155b5*/
+          this->vt_slot_1156(this, 0, 1); /*0x4155b5*/
         }
       }
       goto LABEL_9; /*0x415506*/
@@ -18295,7 +18295,7 @@ int UnitClass::ProcessResourceHarvesting()
     return 1; /*0x73d49d*/
   if ( !*(unsigned char *)&this->Type->Harvester_2 ) /*0x73d4a4*/
     goto LABEL_13; /*0x73d4a4*/
-  (*(void (**)(UnitClass *))&this->vfptr->AbstractClass_2B4)(this); /*0x73d4b6*/
+  this->vt_slot_692(this); /*0x73d4b6*/
   __asm /*0x73d4bc*/
   {
     fcomp ds:dbl_7E1718
