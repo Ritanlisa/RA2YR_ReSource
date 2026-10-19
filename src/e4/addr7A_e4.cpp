@@ -508,7 +508,7 @@ Coord * * WOL_ProcessPingRequests()
           return result; /*0x7a10c4*/
         unknown_libname_73(&v13); /*0x7a10ce*/
         if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a10da*/
-          String::Reassign(&v13, (const char **)dword_B76AC4.abstractFlags); /*0x7a10e7*/
+          (&v13)->Reassign((const char **)dword_B76AC4.abstractFlags); /*0x7a10e7*/
         String::GetOrEmpty(&v13); /*0x7a10f0*/
         Debug::Log(); /*0x7a10fb*/
         v3 = String::GetOrEmpty(&v13); /*0x7a1107*/
@@ -543,7 +543,7 @@ LABEL_15:
         {
           if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a127f*/
           {
-            String::Reassign(&v13, (const char **)dword_B76AC4.abstractFlags); /*0x7a128c*/
+            (&v13)->Reassign((const char **)dword_B76AC4.abstractFlags); /*0x7a128c*/
             v11 = 0; /*0x7a1296*/
             if ( dword_B76AC4.ptr_C ) /*0x7a129a*/
             {
@@ -580,7 +580,7 @@ LABEL_15:
             stru_B76900.estimatedHealth);
           if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a1204*/
           {
-            String::Reassign(&v13, (const char **)dword_B76AC4.abstractFlags); /*0x7a1210*/
+            (&v13)->Reassign((const char **)dword_B76AC4.abstractFlags); /*0x7a1210*/
             DynamicArray::Remove((DynamicArray *)&dword_B76AC4.ptr_C, 0); /*0x7a121c*/
           }
 LABEL_36:
@@ -597,7 +597,7 @@ LABEL_37:
       }
       if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a1246*/
       {
-        String::Reassign(&v13, (const char **)dword_B76AC4.abstractFlags); /*0x7a1253*/
+        (&v13)->Reassign((const char **)dword_B76AC4.abstractFlags); /*0x7a1253*/
         DynamicArray::Remove((DynamicArray *)&dword_B76AC4.ptr_C, 0); /*0x7a125f*/
       }
       goto LABEL_36; /*0x7a125f*/

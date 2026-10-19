@@ -463,7 +463,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         v11 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8343*/
         if ( v11 ) /*0x5f834d*/
-          v12 = File::LoadFileVXL(v11, (int)&v51, 0); /*0x5f8357*/
+          v12 = (v11)->LoadFileVXL((int)&v51, 0); /*0x5f8357*/
         else
           v12 = 0; /*0x5f835e*/
         this->u32_B8 = v12; /*0x5f8362*/
@@ -471,7 +471,7 @@ int VoxelAnimType::LoadAnim(void *a1)
           v50 = 1; /*0x5f836e*/
         sprintf(Filename, off_832AE0, this + 504); /*0x5f8381*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f839d*/
-        CCFileClass::Construct(&v54, Buffer); /*0x5f83b4*/
+        (&v54)->Construct(Buffer); /*0x5f83b4*/
         v13 = (void *)this->u32_BC; /*0x5f83b9*/
         if ( v13 ) /*0x5f83c1*/
         {
@@ -480,7 +480,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         v14 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f83d5*/
         if ( v14 ) /*0x5f83df*/
-          v15 = File::LoadFileHVA(v14, (int)&v54); /*0x5f83eb*/
+          v15 = (v14)->LoadFileHVA((int)&v54); /*0x5f83eb*/
         else
           v15 = 0; /*0x5f83f2*/
         this->u32_BC = v15; /*0x5f83f6*/
@@ -509,8 +509,8 @@ int VoxelAnimType::LoadAnim(void *a1)
     {
       sprintf(Filename, "%sWO", this + 504); /*0x5f84a0*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f84bc*/
-      CCFileClass::Construct(&v51, Buffer); /*0x5f84d0*/
-      if ( (unsigned __int8)CCFileClass::Open(&v51, 0) ) /*0x5f84da*/
+      (&v51)->Construct(Buffer); /*0x5f84d0*/
+      if ( (unsigned __int8)(&v51)->Open(0) ) /*0x5f84da*/
       {
         v17 = (void *)this->u32_B8; /*0x5f84e7*/
         if ( v17 ) /*0x5f84ef*/
@@ -520,7 +520,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         v18 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8503*/
         if ( v18 ) /*0x5f850d*/
-          v19 = File::LoadFileVXL(v18, (int)&v51, 0); /*0x5f8517*/
+          v19 = (v18)->LoadFileVXL((int)&v51, 0); /*0x5f8517*/
         else
           v19 = 0; /*0x5f851e*/
         this->u32_B8 = v19; /*0x5f8522*/
@@ -528,7 +528,7 @@ int VoxelAnimType::LoadAnim(void *a1)
           v50 = 1; /*0x5f852e*/
         sprintf(Filename, "%sWO", this + 504); /*0x5f8541*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f855d*/
-        CCFileClass::Construct(&v54, Buffer); /*0x5f8574*/
+        (&v54)->Construct(Buffer); /*0x5f8574*/
         v20 = (void *)this->u32_BC; /*0x5f8579*/
         if ( v20 ) /*0x5f8581*/
         {

@@ -429,7 +429,7 @@ struct InfantryTypeClass {
     bool Assaulter_2;  // 0xEB5
     unsigned char __pad_EB6;  // 0xEB6
     char __pad_EB7[1];  // 0xEB7
-    void* HarvestRate;  // 0xEB8
+    int HarvestRate;  // 0xEB8
     bool Fearless_d;  // 0xEBC
     bool __pad_EBD;  // 0xEBD
     bool Infiltrate_2;  // 0xEBE

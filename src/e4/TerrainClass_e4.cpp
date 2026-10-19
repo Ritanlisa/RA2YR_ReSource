@@ -406,7 +406,7 @@ LABEL_158:
           v49 = *(unsigned int *)(*(unsigned int *)a5->repairStationsCount + 156); /*0x6de235*/
           v50 = *(unsigned int *)(*(unsigned int *)a5->repairStationsCount + 160); /*0x6de237*/
           *(unsigned int *)&v120.q018 = *(unsigned int *)(*(unsigned int *)a5->repairStationsCount + 164); /*0x6de23d*/
-          v51 = *(HouseClass **)CellStruct::Set((CellStruct *)v120.__pad_C, v49 / 256, v50 / 256); /*0x6de266*/
+          v51 = *(HouseClass **)((CellStruct *)v120.__pad_C)->Set(v49 / 256, v50 / 256); /*0x6de266*/
           HouseClass::SetMapSeed(a5, (int)v51); /*0x6de26b*/
           a5->damageDelayTimer[1] = (int)v51; /*0x6de270*/
         }

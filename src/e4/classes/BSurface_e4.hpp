@@ -8,7 +8,7 @@ struct BSurface {
     int __pad_0;  // 0x0
     void* Width;  // 0x4
     int Height;  // 0x8
-    void* LockCount;  // 0xC
+    int LockCount;  // 0xC
     int BytesPerPixel;  // 0x10
     unsigned char* Buffer;  // 0x14
 // --- flat members (BEGIN) ---

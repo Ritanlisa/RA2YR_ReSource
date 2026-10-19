@@ -1864,7 +1864,7 @@ int TacticalClass::StubReturnFalse10()
 
 // 0x653F70
 namespace gamemd {
-int TacticalClass::SetPositionThunk(MouseClass * aP0)
+int TacticalClass::SetPositionThunk(RadarClass * aP0)
 {
   return Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, (int *)aP0); /*0x653f80*/
 }

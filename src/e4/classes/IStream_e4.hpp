@@ -10,7 +10,7 @@ struct IStream {
     void* IStream_field_00;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    int Read(void * pstm, ULONG cb, void *a3 = 0);
+    int Read(void * pstm, void * cb, void *a3 = 0);
 };
 
 

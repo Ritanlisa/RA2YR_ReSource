@@ -599,7 +599,7 @@ struct BuildingTypeClass {
     int SuperWeapon;  // 0x16F0
     int SuperWeapon2;  // 0x16F4
     int GateStages;  // 0x16F8
-    void* PowersUpToLevel;  // 0x16FC
+    int PowersUpToLevel;  // 0x16FC
     bool DamagedDoor;  // 0x1700
     bool InvisibleInGame;  // 0x1701
     bool TerrainPalette;  // 0x1702
@@ -649,7 +649,7 @@ struct BuildingTypeClass {
     unsigned int DockingOffsets;  // 0x1784
     bool PreventsPlacementOverlap;  // 0x1788
     char __pad_1789[3];  // 0x1789
-    SHPStruct* ProductionCompletionThreshold;  // 0x178C
+    int ProductionCompletionThreshold;  // 0x178C
     char CostRatePerFrame[4];  // 0x1790
     unsigned int __pad_1794;  // 0x1794
 // --- flat members (BEGIN) ---

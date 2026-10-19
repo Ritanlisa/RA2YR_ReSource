@@ -26,7 +26,7 @@ int DialogClass::GetFlag(void *a1)
 }  // G42.18 ns repair
 // 0x775BC0
 namespace gamemd {
-int DialogClass::Reposition(int hWnd, int a2)
+int DialogClass::Reposition(HWND hWnd, int a2)
 {
   LONG bottom; // ebx
   struct tagRECT Rect; // [esp+10h] [ebp-A0h] BYREF

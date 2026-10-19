@@ -120,7 +120,7 @@ struct AnimTypeClass {
     int YSortAdjust;  // 0x340
     int YDrawOffset;  // 0x344
     int ZAdjust;  // 0x348
-    void* MakeInfantry;  // 0x34C
+    int MakeInfantry;  // 0x34C
     int RunningFrames;  // 0x350
     bool IsFlamingGuy;  // 0x354
     bool IsVeins;  // 0x355

@@ -10,7 +10,7 @@ struct GadgetClass {
     int __pad_0;  // 0x0
     int X;  // 0x4
     int Y;  // 0x8
-    GadgetClass* Width;  // 0xC
+    int Width;  // 0xC
     int Height;  // 0x10
     bool Visible;  // 0x14
     bool Enabled;  // 0x15
