@@ -37,6 +37,7 @@
 #include "e4/classes/COMObject_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {  // G42.18 ns repair

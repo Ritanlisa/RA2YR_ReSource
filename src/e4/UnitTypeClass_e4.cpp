@@ -24,6 +24,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char aAltimage;  // data: 0x845c94 truth(IDA G42.57w9)
 extern unsigned char aBrainblastturr;  // data: 0x845b38 truth(IDA G42.57w9)

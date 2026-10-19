@@ -66,16 +66,6 @@
 #include "e4/classes/Coord2D_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AudioCodec_e4.hpp"  // w16g4 C3861 AudioCodec:: supply
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { unsigned int * sub_765380(char *unsigned int *a2, int a3); }  // w18j2 raw 0x00765380
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { unsigned int * sub_765380(char *unsigned int *a2, int a3); }  // w18j2 raw 0x00765380
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { unsigned int * sub_765380(char *unsigned int *a2, int a3); }  // w18j2 raw 0x00765380
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { unsigned int * sub_765380(char *unsigned int *a2, int a3); }  // w18j2 raw 0x00765380
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { unsigned int * sub_765380(char *unsigned int *a2, int a3); }  // w18j2 raw 0x00765380
 
 // 0x7B0310
 namespace gamemd {  // G42.18 ns repair

@@ -926,7 +926,7 @@ void GameListRenderWOL(CampaignScore * a1)
   wchar_t Buffer[80]; // [esp+178h] [ebp-124h] BYREF
   char Destination[132]; // [esp+218h] [ebp-84h] BYREF
 
-  v1 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x78148d*/
+v1 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x78148d*/
   v2 = 0; /*0x781492*/
   v57 = v1; /*0x781494*/
   if ( !v1 ) /*0x78149a*/

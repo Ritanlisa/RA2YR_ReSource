@@ -125,6 +125,7 @@
 #include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/PlanManager_e4.hpp"  // G57w10 D supply
 #include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int CalcFill(); }  // x4:empty@0x63f850
 namespace gamemd { int ComputeFill(int* p0, int* p1, int* p2); }  // x4:signals@0x63f960

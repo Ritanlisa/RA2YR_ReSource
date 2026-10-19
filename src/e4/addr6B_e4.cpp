@@ -53,6 +53,7 @@
 #include "e4/classes/UnitClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries

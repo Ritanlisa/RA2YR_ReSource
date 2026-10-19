@@ -4,6 +4,7 @@
 #include "core/vector.hpp"
 
 #include <cstring>
+#include "e4/classes/BuildingClass_e4.hpp"
 
 namespace gamemd
 {

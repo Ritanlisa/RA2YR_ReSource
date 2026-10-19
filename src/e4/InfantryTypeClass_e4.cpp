@@ -644,7 +644,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
 } // namespace gamemd
 // 0x524960
 namespace gamemd {
-ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, InfantryTypeClass *aP0, void * a2, void * a3)
+ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, InfantryTypeClass *aP0_dup, void * a2, void * a3)
 {
 
   aP0 = aP0; /*0x524964*/

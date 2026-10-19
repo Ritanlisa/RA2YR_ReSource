@@ -44,6 +44,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/DriveLocomotionClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_4B6AB0(int p0, int p1); }  // x4:signals@0x4b6ab0
 // [w16g4] C3861 supply (raw call-form evidence)

@@ -32,6 +32,9 @@
 #include "e4/classes/NetworkClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
 
 // 0x688380
 namespace gamemd {  // G42.18 ns repair

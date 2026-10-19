@@ -928,7 +928,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
       }
       if ( v5->AbstractClass_1 == 51 && !UI_Setup_7930A0() ) /*0x5e3d68*/
       {
-        v7 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e3d85*/
+v7 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e3d85*/
         DlgItem = GetDlgItem(v7, 1823); /*0x5e3d8d*/
         v9 = DlgItem; /*0x5e3d8f*/
         if ( DlgItem ) /*0x5e3d93*/
@@ -1009,8 +1009,8 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
             *(unsigned short *)&v196.ptr_2 = v198[v27]; /*0x5e4082*/
             *(int *)((char *)&dword_A8B230[126].ptr_4 + v27 * 2) = *(unsigned int *)v196.__pad_0; /*0x5e408b*/
           }
-          v31 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e409f*/
-          if ( v31 || (v31 = (HWND)Dialog::FindByHandle((Dialog *)0xBD)) != 0 ) /*0x5e40b4*/
+v31 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e409f*/
+if ( v31 || (v31 = (HWND)Dialog::FindByHandle((Dialog *)0xBD)) != 0 ) /*0x5e40b4*/
             InvalidateRect(v31, 0, 0); /*0x5e40bb*/
         }
       }
@@ -1019,8 +1019,8 @@ LABEL_102:
       free(ptr_4); /*0x5e4373*/
       return 0; /*0x5e4373*/
     case 'O':
-      v32 = (Lobby *)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e40dd*/
-      if ( v32 || (v32 = (Lobby *)Dialog::FindByHandle((Dialog *)0xBD)) != 0 )
+v32 = (Lobby *)Dialog::FindByHandle((Dialog *)0xC9); /*0x5e40dd*/
+if ( v32 || (v32 = (Lobby *)Dialog::FindByHandle((Dialog *)0xBD)) != 0 )
       {
         v33 = v5->AbstractClass_1; /*0x5e40f7*/
         v34 = g_MPCooperativeState; /*0x5e40fa*/

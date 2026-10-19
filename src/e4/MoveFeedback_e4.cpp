@@ -20,6 +20,7 @@
 #include "e4/classes/Movement_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x7327D0
 namespace gamemd {  // G42.18 ns repair

@@ -10,6 +10,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/AudioConfig_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x7E0000
 namespace gamemd {  // G42.18 ns repair

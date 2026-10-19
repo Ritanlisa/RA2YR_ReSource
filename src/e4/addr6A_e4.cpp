@@ -57,6 +57,7 @@
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/LinkClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 

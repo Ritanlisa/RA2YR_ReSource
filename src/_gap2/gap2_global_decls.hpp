@@ -3845,7 +3845,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
     int cloakState;  // G42.39a supply
     int ptr_0;  // G42.39a supply
-    int ptr_0;  // G42.39a supply
+    int ptr_C;  // G42.39a supply
     int AbstractClass;  // G42.39a supply
         int SpreadRadiationAreaEffect(InfantryClass * aP1);  // G42.39 def-derived
     };

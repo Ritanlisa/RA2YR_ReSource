@@ -15,6 +15,8 @@
 #include "system/globals_system.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 namespace gamemd
 {

@@ -49,6 +49,7 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w14e3] Matrix3D supply: verbatim struct from src/core/math.hpp (gamemd), cpp-local carrier
 namespace gamemd {
 struct Matrix3D

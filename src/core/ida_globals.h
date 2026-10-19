@@ -5446,10 +5446,10 @@ extern unsigned int dword_A8B22C;
 // disp-36*idx solves 2026-10-16). Union vocab: bodies spell the head slots
 // both ptr_0/ptr_4-3 (til) and ptr_0-3 (corpus).
 struct AbstractElem {
-    union { unsigned int ptr_0; unsigned int ptr_0; };  // 0x0
-    union { unsigned int ptr_4; unsigned int ptr_0; };  // 0x4
-    union { unsigned int ptr_8; unsigned int ptr_4; };  // 0x8
-    union { unsigned int ptr_C; unsigned int ptr_8; };  // 0xC
+    unsigned int ptr_0;  // 0x0
+    unsigned int ptr_4;  // 0x4
+    unsigned int ptr_8;  // 0x8
+    unsigned int ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

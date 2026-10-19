@@ -83,6 +83,7 @@
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GenericNode_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int MainWindowProc_Helper_724000(int p0); }  // x4:signals@0x724000
 namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650

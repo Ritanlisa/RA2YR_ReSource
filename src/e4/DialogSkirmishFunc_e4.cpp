@@ -25,6 +25,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int SetupSkirmishSpawnLocationEntry(HWND hDlg, int nIDDlgItem);  // x4:ida@0x6adc20

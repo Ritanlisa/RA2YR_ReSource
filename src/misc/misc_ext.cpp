@@ -117,7 +117,7 @@ struct Host_87F5F0_c { unsigned char __pad_head[0x58]; unsigned char __pad_58[0x
 // til AbstractClass 元素 (IDA live 2026-10-08: ptr_0-3/uniqueId/abstractFlags/nextArrayIndex/referenceCount/NeedsSaveOrLink)
 struct stru_A8B230_elem {
     unsigned int ptr_0;          // 0x0
-    unsigned int ptr_0;          // 0x4
+    unsigned int ptr_1;          // 0x4
     unsigned int ptr_4;          // 0x8
     unsigned int ptr_8;          // 0xC
     unsigned int uniqueId;         // 0x10

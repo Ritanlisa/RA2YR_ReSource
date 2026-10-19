@@ -155,7 +155,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       DDraw::HandleSuspend((DDraw *)this); /*0x76d5df*/
       while ( EventQueue::Process((EventQueue *)dword_87F770) ) /*0x76d5ea*/
       {
-        if ( EventQueue::Read((EventQueue *)dword_87F770) == 27 ) /*0x76d603*/
+        if ( ((EventQueue *)dword_87F770)->Read() == 27 ) /*0x76d603*/
           this->u32_444 = 1; /*0x76d605*/
       }
       v14 = !this->u32_444 || a5; /*0x76d635*/
@@ -260,7 +260,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       DDraw::HandleSuspend((DDraw *)this); /*0x76d8c0*/
       while ( EventQueue::Process((EventQueue *)dword_87F770) ) /*0x76d8cb*/
       {
-        if ( EventQueue::Read((EventQueue *)dword_87F770) == 27 ) /*0x76d8e4*/
+        if ( ((EventQueue *)dword_87F770)->Read() == 27 ) /*0x76d8e4*/
           this->u32_444 = 1; /*0x76d8e6*/
       }
       if ( (*(unsigned __int8 (**)(int *))(v25.VectorCursor_field_0x18 + 4))(&v25.VectorCursor_field_0x18) ) /*0x76d905*/

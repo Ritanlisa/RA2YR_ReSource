@@ -38,6 +38,7 @@
 #include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/GadgetClass_e4.hpp"  // w18j2 C3861 GadgetClass:: supply
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/DynamicArray_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4); }  // x4:ida@0x4f11b0
 // [w18j2] C3861 supply (raw-evidenced)
@@ -602,10 +603,10 @@ LABEL_16:
   {
     if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7a7cd9*/
     {
-      v11 = (HWND)Dialog::FindByHandle((Dialog *)0x117); /*0x7a7ce0*/
+v11 = (HWND)Dialog::FindByHandle((Dialog *)0x117); /*0x7a7ce0*/
       CloseDialog(v11, 0); /*0x7a7ce9*/
     }
-    v12 = (HWND)Dialog::FindByHandle((Dialog *)0xCF); /*0x7a7cf3*/
+v12 = (HWND)Dialog::FindByHandle((Dialog *)0xCF); /*0x7a7cf3*/
     CloseDialog(v12, 0); /*0x7a7cfc*/
     dword_B779D4 = a5; /*0x7a7d14*/
     *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x7a7d1e*/

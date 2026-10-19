@@ -130,7 +130,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
         queuedMission = (char *)v6->queuedMission; /*0x51ff79*/
       else
         queuedMission = (char *)(*(int (**)(BuildingClass *))(v6->ptr_0 + 388))(v6); /*0x51ff89*/
-      v7 = *ProgressTimer::GetValue((ProgressTimer *)v6->primaryFacing, &v37); /*0x51ff9d*/
+v7 = *ProgressTimer::GetValue((ProgressTimer *)v6->primaryFacing, &v37); /*0x51ff9d*/
       owner = v6->owner; /*0x51ffab*/
       v9 = (const char *)(*&v6->q6C0 + 36); /*0x51ffb3*/
       v34.Input_field_00 = v6->location[0]; /*0x51ffb6*/

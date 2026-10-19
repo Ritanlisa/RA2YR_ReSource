@@ -66,6 +66,7 @@
 #include "e4/classes/ScrollClass_e4.hpp"
 #include "e4/classes/Tooltip_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/NetworkLobby_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int ReadWaypoints(int p0); }  // x4:signals@0x68bdc0
 namespace gamemd { int LoadFromINI(uint8_t*** p0); }  // x4:signals@0x410a60
@@ -136,7 +137,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
 }  // G42.18 ns repair
 // 0x5CC330
 namespace gamemd {
-CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, ScenarioClass *aP0, void * a1, void * a2, void * a3, void * a4)
+CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, ScenarioClass *aP0_dup, void * a1, void * a2, void * a3, void * a4)
 {
 
   int v4; // ecx

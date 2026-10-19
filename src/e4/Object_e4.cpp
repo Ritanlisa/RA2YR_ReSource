@@ -44,6 +44,7 @@
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPlacement_e4.hpp"  // G57w10 D supply
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_167(); }  // w18j2 raw 0x0056C500
 

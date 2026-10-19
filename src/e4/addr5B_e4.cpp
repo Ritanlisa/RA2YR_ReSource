@@ -95,6 +95,7 @@
 #include "e4/classes/LZOPipe_e4.hpp"  // G57w10 D supply
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/List_MixFileClass_e4.hpp"  // X74 typed-global merge
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int sub_5BF360(int p0); }  // x4:signals@0x5bf360
 // [w18j2] C3861 supply (raw-evidenced)

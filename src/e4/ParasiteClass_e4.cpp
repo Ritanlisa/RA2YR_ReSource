@@ -39,6 +39,7 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x629210
 namespace gamemd {  // G42.18 ns repair

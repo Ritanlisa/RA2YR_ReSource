@@ -71,7 +71,7 @@ int Factory::GetLinkedIndex(int aP1)
 }  // G42.18 ns repair
 // 0x718B70
 namespace gamemd {
-void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
+void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0_dup, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
 
   unsigned int *v6; // ecx

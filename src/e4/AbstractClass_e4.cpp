@@ -41,6 +41,7 @@
 #include "e4/classes/MPBattleClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/MissionClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w14e3] fwd decl: nullsub_3 def at addr41_e4.cpp (void nullsub_3(AbstractClass * aP0)); raw 0x7259aa
 namespace gamemd { void nullsub_3(int aP0); }
 
@@ -208,19 +209,19 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
   void ***result; // eax
   int v44; // ecx
 
-  v6 = (void **)this; /*0x4fb9b2*/
+  v6 = (void **)a1; /*0x4fb9b2*/
   v7 = v5; /*0x4fb9b7*/
-  if ( (AbstractClass *)v5[5432] == this ) /*0x4fb9c1*/
+  if ( (AbstractClass *)v5[5432] == a1 ) /*0x4fb9c1*/
     v5[5432] = 0; /*0x4fb9c3*/
-  this = (AbstractClass *)__RTDynamicCast( /*0x4fb9e1*/
+  a1 = (AbstractClass *)__RTDynamicCast( /*0x4fb9e1*/
                             v6,
                             0,
                             &AbstractClass `RTTI Type Descriptor',
                             &TagClass `RTTI Type Descriptor',
                             0);
-  if ( this ) /*0x4fb9e5*/
+  if ( a1 ) /*0x4fb9e5*/
   {
-    v8 = (*(int (**)(unsigned int *, AbstractClass **))(v7[14] + 16))(v7 + 14, &this); /*0x4fb9f4*/
+    v8 = (*(int (**)(unsigned int *, AbstractClass **))(v7[14] + 16))(v7 + 14, &a1); /*0x4fb9f4*/
     if ( v8 != -1 ) /*0x4fb9fa*/
     {
       v9 = v7[18]; /*0x4fb9fc*/

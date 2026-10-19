@@ -10,6 +10,10 @@
 #include "e4/classes/Object_e4.hpp"  // w16g4 C3861 Object:: supply
 #include "e4/classes/Dialog_e4.hpp"  // w16g4 C3861 Dialog:: supply
 #include "e4/classes/GadgetClass_e4.hpp"  // w16g4 C3861 GadgetClass:: supply
+#include "e4/classes/GameClass_e4.hpp"
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Hash_Compute(unsigned int *a1, int a2); }  // w18j2 raw 0x0064DE80
 // [w18j2] C3861 supply (raw-evidenced)
@@ -260,7 +264,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
             Skirmish::RenderPreview(g_UIControlState, (HWND)this); /*0x5e1d51*/
           if ( (unsigned __int8)LoadScreen::IsActive((LoadScreen *)&stru_AC4B48.__pad_2F4[284]) ) /*0x5e1d5b*/
             LoadScreen::Render((int)&stru_AC4B48.__pad_2F4[284], v6, a2, NAN); /*0x5e1d71*/
-          Dialog::StopBink((Dialog *)this); /*0x5e1d78*/
+Dialog::StopBink((Dialog *)this); /*0x5e1d78*/
           ValidateRect((HWND)this, 0); /*0x5e1d80*/
           return 0; /*0x5e1d8f*/
         case 0x14u: /*0x5e1cd0*/

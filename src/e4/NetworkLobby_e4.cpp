@@ -59,6 +59,8 @@
 #include "e4/classes/GDlg_e4.hpp"  // G57w10 D supply
 #include "e4/classes/StartCombo_e4.hpp"  // G57w10 D supply
 #include "e4/classes/MapPreview_e4.hpp"  // G57w10 D supply
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int ExchangeMultiplayerGameInfo();  // x4:empty@0x5e7920
@@ -571,7 +573,7 @@ LABEL_132:
           Skirmish::RenderPreview(g_UIControlState, hDlg); /*0x5de644*/
         if ( (unsigned __int8)LoadScreen::IsActive((LoadScreen *)&stru_AC4B48.__pad_2F4[284]) ) /*0x5de64e*/
           LoadScreen::Render((int)&stru_AC4B48.__pad_2F4[284], lParam, nIDDlgItem, NAN); /*0x5de664*/
-        Dialog::StopBink((Dialog *)hDlg); /*0x5de66b*/
+Dialog::StopBink((Dialog *)hDlg); /*0x5de66b*/
         ValidateRect(hDlg, 0); /*0x5de673*/
         result = 0; /*0x5de67c*/
         break; /*0x5de685*/

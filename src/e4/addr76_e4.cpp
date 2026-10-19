@@ -258,7 +258,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   {
     v24.owningHouseIndex = 0; /*0x764dc7*/
     v24.fallRate = 0; /*0x764dcb*/
-    GenericList::Constructor((GenericList *)&v24.nextObject); /*0x764dcf*/
+    ((GenericList *)&v24.nextObject)->Constructor(); /*0x764dcf*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1AFC) */  /*0x764dde*/
     memset(&v24.ambientSoundController[4], 0, 13); /*0x764de6*/
     v24.customSound_controller[3] = 0; /*0x764df7*/

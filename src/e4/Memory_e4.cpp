@@ -14,6 +14,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/MissionClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x53EC40
 namespace gamemd {  // G42.18 ns repair

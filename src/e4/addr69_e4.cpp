@@ -95,6 +95,8 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/DiskSpace_e4.hpp"  // w18j2 C3861 DiskSpace:: supply
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int CheckAvailable(); }  // x4:empty@0x48dd50
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -119,13 +121,13 @@ AbstractClass * * E4Recv_690400::sub_690400()
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
   char *ptr_0; // eax
   ptr_0 = (char *)this->AbstractClass; /*0x690429*/
-  char *ptr_0; // esi
-  ptr_0 = (char *)this->M4; /*0x69042f*/
+  char *ptr_0b; // esi
+  ptr_0b = (char *)this->M4; /*0x69042f*/
   unsigned int v5[4]; // [esp+8h] [ebp-30h] BYREF
-  v5[0] = (unsigned int)(ptr_0); /*0x690432*/
+  v5[0] = (unsigned int)(ptr_0b); /*0x690432*/
   unsigned int v6[4]; // [esp+18h] [ebp-20h] BYREF
-  v6[0] = (unsigned int)(&ptr_0[Rect.left]); /*0x69043d*/
-  v5[1] = (unsigned int)(ptr_0); /*0x690441*/
+  v6[0] = (unsigned int)(&ptr_0b[Rect.left]); /*0x69043d*/
+  v5[1] = (unsigned int)(ptr_0b); /*0x690441*/
   v6[3] = 400; /*0x69044d*/
   v5[3] = 400; /*0x690451*/
   v6[1] = (unsigned int)(&ptr_0[Rect.top]); /*0x69045b*/
@@ -822,7 +824,7 @@ LABEL_20:
   strcpy(v59, Source); /*0x694a2b*/
   *(unsigned int *)&v58[158] = Size; /*0x694a42*/
   Stream::WriteBlock((int *)&stru_A8E960.altNextScenario[12], (int)v58, 250, 1); /*0x694a4f*/
-  while ( Count::GetCountQueue((Count *)&stru_A8E960.altNextScenario[12]) > 0 ) /*0x694a60*/
+  while ( ((Count *)&stru_A8E960.altNextScenario[12])->GetCountQueue() > 0 ) /*0x694a60*/
   {
     v16 = 3600; /*0x694a66*/
     if ( Ticks != -1 ) /*0x694a6d*/
@@ -957,7 +959,7 @@ LABEL_70:
       Event::Dispatch(); /*0x694fc0*/
       if ( v27 >= v26 ) /*0x694fcc*/
       {
-        if ( !Count::GetCountQueue((Count *)&stru_A8E960.altNextScenario[12]) ) /*0x6950e3*/
+        if ( !((Count *)&stru_A8E960.altNextScenario[12])->GetCountQueue() ) /*0x6950e3*/
         {
           v47 = 1; /*0x69514d*/
           if ( a4 ) /*0x695154*/

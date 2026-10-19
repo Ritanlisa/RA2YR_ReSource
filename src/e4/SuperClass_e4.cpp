@@ -280,7 +280,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
       ++v8; /*0x6cb2bf*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6cb2d3*/
+  ((AbstractClass *)this)->DTOR(); /*0x6cb2d3*/
 
 }
 }

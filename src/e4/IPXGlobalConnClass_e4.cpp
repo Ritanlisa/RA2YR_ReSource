@@ -29,6 +29,7 @@
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/PacketQueue_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/NetworkLobby_e4.hpp"
 
 // 0x540110
 namespace gamemd {  // G42.18 ns repair

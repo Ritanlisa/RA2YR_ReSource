@@ -108,6 +108,7 @@
 #include "e4/classes/MiniMap_e4.hpp"  // G57w10 D supply
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
+#include "e4/classes/NetworkLobby_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_226(); }  // w18j2 raw 0x006832B0
 // [w18j2] C3861 supply (raw-evidenced)

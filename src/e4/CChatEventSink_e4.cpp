@@ -16,6 +16,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/DynamicArray_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int GameListRenderWOL(ObjectClass *p_this);  // x4:ida@0x781480
@@ -374,7 +375,7 @@ LABEL_88:
     }
     else
     {
-      v27 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x116); /*0x7aaf27*/
+v27 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x116); /*0x7aaf27*/
       if ( v27 ) /*0x7aaf2e*/
         FillBuddyListWOL(v27); /*0x7aaf32*/
       if ( *(unsigned int *)&v33[8] ) /*0x7aaf3d*/
@@ -384,7 +385,7 @@ LABEL_88:
       else
       {
         PopulateWOLLobbyListBox(v32); /*0x7aaf3f*/
-        v28 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x7aaf49*/
+v28 = (HWND)Dialog::FindByHandle((Dialog *)0x113); /*0x7aaf49*/
         v29 = v28; /*0x7aaf4e*/
         if ( v28 ) /*0x7aaf52*/
         {

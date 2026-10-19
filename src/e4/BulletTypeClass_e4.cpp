@@ -30,6 +30,7 @@
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // [w20m5] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp fn_54.c 0x544CE0
 namespace gamemd {

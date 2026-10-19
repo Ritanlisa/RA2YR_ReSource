@@ -49,6 +49,7 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int PropagateCellOccupancy(ObjectClass *p_this);  // x4:ida@0x722440

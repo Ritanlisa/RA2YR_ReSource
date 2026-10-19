@@ -15,6 +15,8 @@
 #include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
 #include "e4/classes/ConnectionPointClass_e4.hpp"
 #include "e4/classes/PacketQueue_e4.hpp"
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x48B750
 namespace gamemd {  // G42.18 ns repair

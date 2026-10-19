@@ -47,6 +47,7 @@
 #include "e4/classes/MapClass_e4.hpp"  // w18j2 C3861 MapClass:: supply
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int CTOR(int p0, int p1, int p2); }  // x4:signals@0x420960
 namespace gamemd { int GetScrollMode(MapClass *p_this); }  // x4:ida@0x4aeb10

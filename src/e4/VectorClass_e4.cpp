@@ -170,6 +170,7 @@
 #include "e4/classes/COMClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int nullsub_138(void *p_this); }  // x4:ida@0x4e0c30
 namespace VectorClass { int CleanupTyped(int p_this); }  // x4:ida@0x4a1330

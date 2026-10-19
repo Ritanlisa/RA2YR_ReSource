@@ -32,6 +32,7 @@
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x4717D0
 namespace gamemd {  // G42.18 ns repair

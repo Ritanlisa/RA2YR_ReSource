@@ -51,6 +51,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GDlg_e4.hpp"  // G57w10 D supply
 #include "e4/classes/StartCombo_e4.hpp"  // G57w10 D supply
+#include "e4/classes/NetworkLobby_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int HideSkirmishSpawnLocations(HWND hDlg, int a2);  // x4:ida@0x6ae080
@@ -128,7 +129,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
     ResourceIDCSF = GetResourceIDCSF(*(ObjectClass **)&stru_A8D804.__pad_3D[587]); /*0x46f90e*/
     v4 = *(SessionClass **)&stru_A8D804.__pad_3D[4 * (unsigned int)v1 + 591]; /*0x46f913*/
     v5 = ResourceIDCSF; /*0x46f91a*/
-    if ( (unsigned __int8)Player::IsObserver((Player *)v4) ) /*0x46f91e*/
+    if ( (unsigned __int8)((Player *)v4)->IsObserver() ) /*0x46f91e*/
     {
       PlayerColor = *(unsigned int *)&stru_A8B250.__pad_0[4 * (unsigned int)v1 + 108]; /*0x46f927*/
     }
@@ -163,7 +164,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
       v9 = GetResourceIDCSF(v7); /*0x46f98a*/
       v10 = (SessionClass *)v8[2549]; /*0x46f98f*/
       v11 = v9; /*0x46f995*/
-      if ( (unsigned __int8)Player::IsObserver((Player *)v10) ) /*0x46f999*/
+      if ( (unsigned __int8)((Player *)v10)->IsObserver() ) /*0x46f999*/
       {
         v12 = *v8; /*0x46f9a2*/
       }

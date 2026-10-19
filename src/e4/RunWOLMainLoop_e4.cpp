@@ -33,6 +33,7 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/CChatEventSink_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4); }  // w18j2 raw 0x007988C0
 namespace gamemd { int Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4); }  // w18j2 raw 0x007983E0
@@ -153,10 +154,10 @@ int sub_785EA0()
           break; /*0x78600e*/
       }
     }
-    v12 = (HWND)Dialog::FindByHandle((Dialog *)0x11E); /*0x78601c*/
+v12 = (HWND)Dialog::FindByHandle((Dialog *)0x11E); /*0x78601c*/
     if ( v12 ) /*0x786023*/
       CloseDialog(v12, 0); /*0x786029*/
-    v13 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x786033*/
+v13 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x786033*/
     if ( v13 ) /*0x78603a*/
     {
       g_WOL_ChannelList &= ~0x20u; /*0x786045*/

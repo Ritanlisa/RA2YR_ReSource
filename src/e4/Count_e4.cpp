@@ -64,7 +64,7 @@ int Count::SetupAllCountriesLobby()
       v6 = -2; /*0x46f71c*/
       if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x46f730*/
         v6 = (*((int (**)(ObjectClass *))dword_A8B23C->ptr_0 + 10))(dword_A8B23C); /*0x46f737*/
-      if ( (unsigned __int8)Player::IsObserver((Player *)v5) ) /*0x46f73b*/
+      if ( (unsigned __int8)((Player *)v5)->IsObserver() ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
       }
@@ -92,7 +92,7 @@ int Count::SetupAllCountriesLobby()
         && !(*((unsigned __int8 (**)(ObjectClass *, int))dword_A8B23C->ptr_0 + 7))(dword_A8B23C, PlayerSide) )
       {
         PlayerSide = v6; /*0x46f79e*/
-        if ( (unsigned __int8)Player::IsObserver((Player *)v5) ) /*0x46f7a0*/
+        if ( (unsigned __int8)((Player *)v5)->IsObserver() ) /*0x46f7a0*/
         {
           *(v8 - 2557) = (int *)v6; /*0x46f7ad*/
         }

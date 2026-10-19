@@ -51,6 +51,9 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/CChatEventSink_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { unsigned int * sub_7B0490(unsigned int *this); }  // w18j2 raw 0x007B0490
 namespace gamemd { char * sub_765410(char *a2); }  // w18j2 raw 0x00765410
@@ -238,7 +241,7 @@ char WOL_RequestMatch(void * a1)
   unsigned char v31[276]; // [esp+10h] [ebp-114h] BYREF
 
   DeleteAndZero::Alt2((DeleteAndZero *)&dword_B76AC4); /*0x7a069f*/
-  v1 = (HWND)Dialog::FindByHandle((Dialog *)0x11F); /*0x7a06a9*/
+v1 = (HWND)Dialog::FindByHandle((Dialog *)0x11F); /*0x7a06a9*/
   if ( v1 ) /*0x7a06b2*/
     CloseDialog(v1, 0); /*0x7a06b8*/
   g_NetworkLobbyState = 0; /*0x7a06bd*/

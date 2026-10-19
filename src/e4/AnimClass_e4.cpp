@@ -43,6 +43,7 @@
 #include "e4/classes/WaveClass_e4.hpp"
 #include "e4/classes/BSurface_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {  // G42.18 ns repair
@@ -278,7 +279,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5, void *a3, void *a4
 
   if ( byte_8A0DF0 /*0x422ccb*/
     && g_ZBufferDescriptor
-    && (unsigned __int8)ObjectClass::StepCleanup((ObjectClass *)this, &g_INI_Key_Civilian.pad_16D[31]) )
+    && (unsigned __int8)((ObjectClass *)this)->StepCleanup(&g_INI_Key_Civilian.pad_16D[31]) )
   {
     AnimClass_field_0xB4 = this->AnimClass_field_0xB4; /*0x422cd8*/
     AnimClass_field_0xC0 = this->AnimClass_field_0xC0; /*0x422ce4*/

@@ -25,6 +25,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aIngamemusic[12];  // data: 0x833070 truth(IDA G42.57w9)
 extern char aIsscorerepeat[14];  // data: 0x83308c truth(IDA G42.57w9)

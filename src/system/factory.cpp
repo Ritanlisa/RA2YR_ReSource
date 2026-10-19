@@ -15,6 +15,7 @@ namespace gamemd
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 namespace gamemd {
 

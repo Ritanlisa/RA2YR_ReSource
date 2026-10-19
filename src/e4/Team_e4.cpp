@@ -71,6 +71,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Game_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int ConstructWDTSelection(int p0, int p1);  // x4:signals@0x76c290

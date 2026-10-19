@@ -47,6 +47,8 @@
 #include "e4/classes/StringVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Config_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/OwnerDrawControl_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/CChatEventSink_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { void WOL_FillPersonaInfo(int HWND hDlg, char **a3, wchar_t **a4); }  // w18j2 raw 0x0077A9F0
 // [w18j2] C3861 supply (raw-evidenced)
@@ -759,7 +761,7 @@ LABEL_70:
                 (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, v92); /*0x794565*/
                 if ( v62 >= 0 && v62 < *(int *)&stru_A8D804.__pad_3D[579] ) /*0x794576*/
                 {
-                  v46 = (HWND)Dialog::FindByHandle((Dialog *)0x130); /*0x79457d*/
+v46 = (HWND)Dialog::FindByHandle((Dialog *)0x130); /*0x79457d*/
                   v47 = v46; /*0x794582*/
                   if ( v46 ) /*0x794586*/
                   {

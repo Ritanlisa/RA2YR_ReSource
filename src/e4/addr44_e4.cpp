@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x44F6E0
 namespace gamemd {  // G42.18 ns repair

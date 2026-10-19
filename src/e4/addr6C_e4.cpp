@@ -74,6 +74,9 @@ namespace gamemd { struct Performance { static int MeasureTicks(void *aP0); }; }
 #include "e4/classes/SwizzleManagerClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Init_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/CChatEventSink_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // G42.33 b9 TU-local minimal carriers (fwd-only in _fwd_e4.hpp)
 namespace gamemd { struct StringList { int Find(int aP0); }; }  // minimal E2 (0x6c9361 receiver)
 namespace gamemd { struct WideChar { static unsigned int ToLong(int aP0, int aP1, int aP2); }; }  // minimal E2 static-form

@@ -259,7 +259,7 @@ VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2)
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
   v5 = (VocClass *)AudioSource::Get(a2); /*0x750d5e*/
-  v6 = VocClass::Check((VocClass *)a2); /*0x750d60*/
+  v6 = ((VocClass *)a2)->Check(); /*0x750d60*/
   v7 = (AudioPool *)v6; /*0x750d65*/
   if ( !v6 ) /*0x750d69*/
     goto LABEL_15; /*0x750d69*/

@@ -18,6 +18,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Sidebar_e4.hpp"
 #include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5e Math single-source (minimal twin removed)
+#include "e4/classes/ScenarioClass_e4.hpp"
 namespace gamemd {
 }
 

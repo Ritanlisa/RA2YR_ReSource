@@ -31,6 +31,7 @@
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x6FC0B0
 namespace gamemd {  // G42.18 ns repair

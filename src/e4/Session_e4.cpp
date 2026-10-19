@@ -125,9 +125,9 @@ int Session::PrepareGame(HWND hWnd)
       if ( !v9 ) /*0x5e77ae*/
         return result; /*0x5e7812*/
       v10 = ((int *)&unk_A8EA70)->WriteBlock((int)Str, 250, 1); /*0x5e77cf*/
-      for ( result = Count::GetCountQueue((Count *)&unk_A8EA70); /*0x5e77d8*/
+      for ( result = ((Count *)&unk_A8EA70)->GetCountQueue(); /*0x5e77d8*/
         result > 0;
-        result = Count::GetCountQueue((Count *)&unk_A8EA70) )
+        result = ((Count *)&unk_A8EA70)->GetCountQueue() )
       {
         result = v17; /*0x5e77da*/
         v11 = 1800; /*0x5e77de*/

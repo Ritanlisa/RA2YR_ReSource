@@ -21,6 +21,7 @@
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoTypeClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int ProcessDeployAction(ObjectClass *p_this); }  // x4:ida@0x6afd60
 

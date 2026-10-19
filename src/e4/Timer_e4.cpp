@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/TimerClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x46B640
 namespace gamemd {  // G42.18 ns repair

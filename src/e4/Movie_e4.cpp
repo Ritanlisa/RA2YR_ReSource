@@ -34,6 +34,7 @@
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x49CAF0
 namespace gamemd {  // G42.18 ns repair

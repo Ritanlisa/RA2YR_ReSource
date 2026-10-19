@@ -15,6 +15,8 @@
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Time_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x6516F0
 namespace gamemd {  // G42.18 ns repair

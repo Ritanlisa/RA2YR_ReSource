@@ -59,6 +59,7 @@
 #include "e4/classes/ConvertClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_e4_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
 int LookupWaypointName(ObjectClass *p_this);  // x4:ida@0x5b3910

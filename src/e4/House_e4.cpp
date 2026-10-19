@@ -38,6 +38,7 @@
 #include "e4/classes/FileTree_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/LoadingScreen_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CommandClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x47D2B0
 namespace gamemd {  // G42.18 ns repair

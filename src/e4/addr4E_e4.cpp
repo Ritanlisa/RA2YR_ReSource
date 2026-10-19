@@ -48,6 +48,7 @@
 #include "e4/classes/_VectorClass_PAVParticleClass_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/TiberianSunClassFactory_e4.hpp"  // X74 typed-global (pUnk)
+#include "e4/classes/NetworkLobby_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_4E6070(int p0); }  // x4:signals@0x4e6070
 // [w16g4] C3861 supply (raw call-form evidence)

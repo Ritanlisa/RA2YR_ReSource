@@ -66,6 +66,8 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/MSVQAnim_e4.hpp"
 #include "e4/classes/LogicClass_flat_e4.hpp"  // X74 typed-global (LogicClass cluster)
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4); }  // x4:ida@0x4f11b0
 // [w18j2] C3861 supply (raw-evidenced)
@@ -126,7 +128,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   int v19; // [esp+8h] [ebp-70h]
   int v20; // [esp+Ch] [ebp-6Ch]
   void *ptr_0; // [esp+18h] [ebp-60h] BYREF
-  void *ptr_0; // [esp+1Ch] [ebp-5Ch]
+  void *ptr_0b; // [esp+1Ch] [ebp-5Ch]
   void *ptr_4; // [esp+20h] [ebp-58h]
   void *ptr_8; // [esp+24h] [ebp-54h]
   int v25; // [esp+28h] [ebp-50h]
@@ -139,7 +141,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
   ptr_0 = this->ptr_0; /*0x645d6f*/
-  ptr_0 = this->ptr_4; /*0x645d76*/
+  ptr_0b = this->ptr_4; /*0x645d76*/
   ptr_4 = this->ptr_8; /*0x645d7d*/
   ptr_8 = this->ptr_C; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
@@ -164,7 +166,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   v10 = sub_6460C0(v31, a2); /*0x645e09*/
   v11 = QuaternionMathMultiply(v32, v29, v10); /*0x645e17*/
   ptr_0 = *(void **)v11; /*0x645e1e*/
-  ptr_0 = (void *)*((unsigned int *)v11 + 1); /*0x645e25*/
+  ptr_0b = (void *)*((unsigned int *)v11 + 1); /*0x645e25*/
   v12 = (void *)*((unsigned int *)v11 + 3); /*0x645e30*/
   ptr_4 = (void *)*((unsigned int *)v11 + 2); /*0x645e33*/
   ptr_8 = v12; /*0x645e3b*/
@@ -339,7 +341,7 @@ AbstractClass * * ProcessNetworkEvents()
     v8[0] = 0; /*0x64727a*/
     if ( EventQueue::Process((EventQueue *)dword_87F770) ) /*0x64727f*/
     {
-      if ( EventQueue::Read((EventQueue *)dword_87F770) == 27 || (dword_A8D5F8 & 4) != 0 ) /*0x6472a5*/
+      if ( ((EventQueue *)dword_87F770)->Read() == 27 || (dword_A8D5F8 & 4) != 0 ) /*0x6472a5*/
       {
         stru_A8E960.nextScenario[64] = 0; /*0x6472aa*/
         return; /*0x6472b5*/

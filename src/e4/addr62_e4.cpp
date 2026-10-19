@@ -66,6 +66,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"  // w18j2 C3861 MessageListClass:: supply
 #include "e4/classes/VtableStub_e4.hpp"  // w18j2 C3861 VtableStub:: supply
+#include "e4/classes/ScenarioClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { BOOL RepositionDialogControls(HWND hWnd, HWND a2); }  // w18j2 raw 0x0060C0C0
 // [w18j2] C3861 supply (raw-evidenced)
