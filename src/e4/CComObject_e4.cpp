@@ -1744,7 +1744,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a
   {
     while ( !(unsigned __int8)String::Compare(v3, (const char **)v15) ) /*0x7abb76*/
     {
-      v3 = *v3->vtable2.__pad_0; /*0x7abb78*/
+      v3 = *v3->ptr_4.__pad_0; /*0x7abb78*/
       if ( !v3 ) /*0x7abb7d*/
         goto LABEL_19; /*0x7abb7d*/
     }
@@ -1777,11 +1777,11 @@ LABEL_18:
             while ( !(unsigned __int8)String::Compare((String *)v9, (const char **)v15) ) /*0x7abc40*/
             {
               v5 = (String *)v9; /*0x7abc42*/
-              v9 = v9->vtable3; /*0x7abc44*/
+              v9 = v9->ptr_8; /*0x7abc44*/
               if ( !v9 ) /*0x7abc49*/
                 goto LABEL_17; /*0x7abc49*/
             }
-            *v5->ptr_4.__pad_0 = v9->vtable3; /*0x7abc50*/
+            *v5->ptr_4.__pad_0 = v9->ptr_8; /*0x7abc50*/
             --dword_B76534; /*0x7abc5c*/
             ScalarDtor::DeleteAndZero((ScalarDtor *)v9, 1); /*0x7abc68*/
           }
@@ -1857,7 +1857,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a
           goto LABEL_21; /*0x7abd9d*/
         while ( !(unsigned __int8)String::Compare(v5, (const char **)&a2) ) /*0x7abdb1*/
         {
-          v5 = *v5->vtable2.__pad_0; /*0x7abdb3*/
+          v5 = *v5->ptr_4.__pad_0; /*0x7abdb3*/
           if ( !v5 ) /*0x7abdb8*/
             goto LABEL_21; /*0x7abdb8*/
         }
@@ -1888,11 +1888,11 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a
             while ( !(unsigned __int8)String::Compare((String *)v11, (const char **)&a2) ) /*0x7abe7b*/
             {
               v7 = (String *)v11; /*0x7abe7d*/
-              v11 = v11->vtable3; /*0x7abe7f*/
+              v11 = v11->ptr_8; /*0x7abe7f*/
               if ( !v11 ) /*0x7abe84*/
                 goto LABEL_19; /*0x7abe84*/
             }
-            *v7->ptr_4.__pad_0 = v11->vtable3; /*0x7abe8b*/
+            *v7->ptr_4.__pad_0 = v11->ptr_8; /*0x7abe8b*/
             --stru_B76680.HashMap_field_0x04; /*0x7abe97*/
             ScalarDtor::DeleteAndZero((ScalarDtor *)v11, 1); /*0x7abea3*/
           }
@@ -1966,7 +1966,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a
   {
     while ( !(unsigned __int8)String::Compare(v4, (const char **)&a3) ) /*0x7ac03d*/
     {
-      v4 = *v4->vtable2.__pad_0; /*0x7ac03f*/
+      v4 = *v4->ptr_4.__pad_0; /*0x7ac03f*/
       if ( !v4 ) /*0x7ac044*/
         goto LABEL_20; /*0x7ac044*/
     }
@@ -1997,11 +1997,11 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a
             while ( !(unsigned __int8)String::Compare((String *)v9, (const char **)&a3) ) /*0x7ac107*/
             {
               v6 = (String *)v9; /*0x7ac109*/
-              v9 = v9->vtable3; /*0x7ac10b*/
+              v9 = v9->ptr_8; /*0x7ac10b*/
               if ( !v9 ) /*0x7ac110*/
                 goto LABEL_18; /*0x7ac110*/
             }
-            *v6->ptr_4.__pad_0 = v9->vtable3; /*0x7ac117*/
+            *v6->ptr_4.__pad_0 = v9->ptr_8; /*0x7ac117*/
             --stru_B76680.HashMap_field_0x04; /*0x7ac123*/
             ScalarDtor::DeleteAndZero((ScalarDtor *)v9, 1); /*0x7ac12f*/
           }

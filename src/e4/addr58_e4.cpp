@@ -771,7 +771,7 @@ int  unknown::Read(unsigned short * a2, void *a2_2, void *a3)
   if ( m_10 <= 0 ) /*0x5896aa*/
     return -1; /*0x5896e1*/
   unsigned short *i; // ecx
-  for ( i = *(unsigned short **)&a2_2->m_1[3]; *i != *(unsigned int *)(a2_2) || i[1] != a2_2[1] || i->vtable2 != a2_2[2] || i[3] != a2_2[3]; i += 8 ) /*0x5896b0*/
+  for ( i = *(unsigned short **)&a2_2->m_1[3]; *i != *(unsigned int *)(a2_2) || i[1] != a2_2[1] || i->ptr_4 != a2_2[2] || i[3] != a2_2[3]; i += 8 ) /*0x5896b0*/
   {
     if ( ++result >= m_10 ) /*0x5896df*/
       return -1; /*0x5896df*/

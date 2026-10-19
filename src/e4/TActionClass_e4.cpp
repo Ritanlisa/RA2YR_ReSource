@@ -1386,11 +1386,11 @@ char TActionClass::executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4)
     idxArray = (unsigned char *)v7->idxArray; /*0x6e2b12*/
     if ( idxArray == this->TActionClass_field_50 ) /*0x6e2b17*/
     {
-      void *vtable0; // edx
-      vtable0 = dword_A8B230[43].ptr_0; /*0x6e2b1f*/
-      if ( (vtable0 || idxArray[156]) /*0x6e2b47*/
-        && (vtable0 != 1 || idxArray[157])
-        && (vtable0 != 2 || idxArray[158]) )
+      void *ptr_0; // edx
+      ptr_0 = dword_A8B230[43].ptr_0; /*0x6e2b1f*/
+      if ( (ptr_0 || idxArray[156]) /*0x6e2b47*/
+        && (ptr_0 != 1 || idxArray[157])
+        && (ptr_0 != 2 || idxArray[158]) )
       {
         (v7)->executeAirstrikeAction(); /*0x6e2b51*/
       }

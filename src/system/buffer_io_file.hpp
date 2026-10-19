@@ -64,7 +64,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_25;  // X10 supply (member_lookup)
     unsigned int u32_29;  // X10 supply (member_lookup)
     unsigned int u32_5C;  // X10 supply (member_types)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_BufferIOFileClass_DEF
 

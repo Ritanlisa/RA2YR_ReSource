@@ -56,7 +56,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
   int v6; // eax
   BombClass *v7; // edi
   bool v8; // zf
-  int (**vtable0)(ObjectClass *, int); // eax
+  int (**ptr_0)(ObjectClass *, int); // eax
   TagClass *attachedTag; // [esp+24h] [ebp+4h]
   size_t v11; // [esp+28h] [ebp+8h]
 
@@ -114,10 +114,10 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
     if ( v6 > (int)this->attachedTag ) /*0x431ca3*/
       attachedTag = (gamemd::TagClass *)(this->attachedTag); /*0x431ca5*/
     v8 = (*((unsigned __int8 (**)(ObjectClass *))this->AbstractClass + 6))(this) == 0; /*0x431cb0*/
-    vtable0 = (int (**)(ObjectClass *, int))this->AbstractClass; /*0x431cb2*/
+    ptr_0 = (int (**)(ObjectClass *, int))this->AbstractClass; /*0x431cb2*/
     if ( v8 ) /*0x431cb6*/
     {
-      if ( vtable0[7](this, 1) ) /*0x431d02*/
+      if ( ptr_0[7](this, 1) ) /*0x431d02*/
       {
         this->customSound_controller[0] = ((RawFileClass *)this)->Seek(0, 1u); /*0x431d13*/
         v11 = 1; /*0x431d16*/
@@ -125,7 +125,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
     }
     else
     {
-      v7 = vtable0->owningHouseIndex(this, 0); /*0x431cbe*/
+      v7 = ptr_0->owningHouseIndex(this, 0); /*0x431cbe*/
       if ( this->u32_C == -1 ) /*0x431cc5*/
         this->customSound_controller[0] = (int)v7; /*0x431cd6*/
       else
@@ -583,7 +583,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v41 = CellStruct::Copy((CellStruct *)&v58, v53); /*0x437afd*/
   v21 = (Coord2D *)CellStruct::Copy(a1, &v55); /*0x437b02*/
   v22 = Coord2D::Add(v21, v54, v41); /*0x437b09*/
-  v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))(aP0, *v22, v22->vtable2); /*0x437b28*/
+  v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))(aP0, *v22, v22->ptr_4); /*0x437b28*/
   if ( !v68 ) /*0x437b2f*/
     return 0; /*0x437b3a*/
   if ( g_ZBufferDescriptor ) /*0x437b45*/
@@ -622,8 +622,8 @@ LABEL_7:
           + (unsigned __int16)(LOWORD(g_ZBufferDescriptor->Stream_field_04)
                              + LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
                              - LOWORD(a1->field_4)
-                             - aP2->vtable4
-                             - aP2->vtable2
+                             - aP2->ptr_C
+                             - aP2->ptr_4
                              + 1);
       v27 = a12; /*0x437c69*/
       if ( a12 ) /*0x437c72*/
@@ -1206,26 +1206,26 @@ unsigned char * E4Recv_434700::sub_434700()
 
   unsigned char *result; // eax
   result = malloc(*((unsigned int *)this->M8 + 1) * *((unsigned int *)this->M8 + 2) + 2); /*0x434713*/
-  unsigned int *vtable1 = this->M4; // edx /*0x434718*/
+  unsigned int *ptr_0 = this->M4; // edx /*0x434718*/
   this->M8 = result; /*0x434720*/
-  if ( vtable1 ) /*0x434723*/
+  if ( ptr_0 ) /*0x434723*/
   {
     int v4; // ecx
-    v4 = *(unsigned __int16 *)(vtable1[6] + 176); /*0x43472a*/
+    v4 = *(unsigned __int16 *)(ptr_0[6] + 176); /*0x43472a*/
     if ( (unsigned short)v4 ) /*0x434733*/
     {
       unsigned char *v5; // ecx
-      v5 = (unsigned char *)(vtable1[7] + (v4 - 1) * vtable1[5]); /*0x43473e*/
+      v5 = (unsigned char *)(ptr_0[7] + (v4 - 1) * ptr_0[5]); /*0x43473e*/
       if ( v5 ) /*0x434741*/
       {
         unsigned char *v6 = v5 + 1; // edi /*0x434745*/
         *result = *v5; /*0x434748*/
         unsigned int *v7 = this->M4; // edx /*0x43474a*/
         unsigned int v8 = 0; // ebp /*0x434750*/
-        for ( result = (char *)this->M8 + 1; v8 < v7->vtable3; ++v8 ) /*0x434752*/
+        for ( result = (char *)this->M8 + 1; v8 < v7->ptr_8; ++v8 ) /*0x434752*/
         {
           unsigned int v9 = 0; // ecx /*0x43475e*/
-          if ( v7->vtable2 ) /*0x43475b*/
+          if ( v7->ptr_4 ) /*0x43475b*/
           {
             do /*0x434774*/
             {
@@ -2135,7 +2135,7 @@ int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
     }
     while ( v4 < abstractFlags ); /*0x43a6dd*/
   }
-  (*((void (**)(void **))this->vtable4 + 3))(&this->vtable4); /*0x43a6e5*/
+  (*((void (**)(void **))this->ptr_C + 3))(&this->ptr_C); /*0x43a6e5*/
   this->M28 = a2; /*0x43a6f0*/
   this->NeedsSaveOrLink = (void *)a3; /*0x43a6f3*/
   return a2; /*0x43a6f6*/

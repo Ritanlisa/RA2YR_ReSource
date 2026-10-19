@@ -11,7 +11,7 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct PKPipe;  // fix_fwd_type_supply
 struct PKStrawClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int __pad_004;  // 0x4
     int PKStrawClass_field_0x08;  // 0x8
 // --- flat members (BEGIN) ---

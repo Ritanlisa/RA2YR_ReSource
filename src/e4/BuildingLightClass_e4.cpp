@@ -52,7 +52,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
     v19 = &unk_98967F; /*0x436c2d*/
     unsigned int *v22; // [esp+30h] [ebp-38h]
     v22 = 0; /*0x436c3b*/
-    nextArrayIndex = FollowingObject->vtable4.?; /*0x436c3f*/
+    nextArrayIndex = FollowingObject->ptr_C.?; /*0x436c3f*/
     int v17; // [esp+1Ch] [ebp-4Ch]
     v17 = -1; /*0x436c43*/
     do /*0x436d74*/
@@ -82,9 +82,9 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
               location = (int *)(v4->FollowingObject); /*0x436cce*/
               int v11; // edi
               v11 = (int)(v4->FollowingObject); /*0x436cd0*/
-              int v12 = location->vtable2; // ebx /*0x436cd2*/
+              int v12 = location->ptr_4; // ebx /*0x436cd2*/
               int v29; // [esp+58h] [ebp-10h]
-              v29 = location->vtable3; /*0x436cdf*/
+              v29 = location->ptr_8; /*0x436cdf*/
               unsigned int *v13; // eax
               char v30[12]; // [esp+5Ch] [ebp-Ch] BYREF
               v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(v9 + 72))(v8, v30); /*0x436ce3*/
@@ -169,7 +169,7 @@ namespace gamemd {
 signed int BuildingLightClass::UpdateOscillation()
 {
 
-  unsigned int *vtable3; // eax
+  unsigned int *ptr_8; // eax
   int *v3; // eax
   int GroundHeight; // edi
   unsigned int *v5; // eax
@@ -202,10 +202,10 @@ signed int BuildingLightClass::UpdateOscillation()
 
   v26 = (*(int (**)(void *))(*(unsigned int *)this->ptr_C + 456))(this->ptr_C); /*0x513d3a*/
   v28 = v26; /*0x513d3e*/
-  vtable3 = this->ptr_C; /*0x513d42*/
-  if ( vtable3[376] != -1 ) /*0x513d4c*/
+  ptr_8 = this->ptr_C; /*0x513d42*/
+  if ( ptr_8[376] != -1 ) /*0x513d4c*/
   {
-    v3 = vtable3 + 39; /*0x513d52*/
+    v3 = ptr_8 + 39; /*0x513d52*/
     v29 = *v3; /*0x513d59*/
     v30 = v3[1]; /*0x513d65*/
     v31 = v3[2]; /*0x513d71*/
@@ -252,7 +252,7 @@ signed int BuildingLightClass::UpdateOscillation()
   v24 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513e8f*/
   if ( v28 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1484) ) /*0x513e9b*/
   {
-    if ( (unsigned __int8)StreamClass::GetDirty(&this->vtable2) ) /*0x513ea1*/
+    if ( (unsigned __int8)StreamClass::GetDirty(&this->ptr_4) ) /*0x513ea1*/
       *&this->q0A0 = ((double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x513ec8*/
                                                                     + 1484)
                                                    + (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]

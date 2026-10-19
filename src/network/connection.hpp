@@ -63,7 +63,7 @@ public:
     unsigned int *__pad_0; // 0x0  gB member supply
     void dtor();  // gB sig supply @cache
 
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 
 // CSP: IPXConnClass matched via T1+T3
@@ -89,7 +89,7 @@ virtual unsigned int * QueryInterface(char,int,int,int);  // 0x53F850
 
     unsigned int u32_4C;  // X10 supply (member_lookup)
     unsigned int u32_64;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 
 // CSP: IPXManagerClass matched via T1
@@ -140,7 +140,7 @@ void Flush(char a2);  // 0x00542ec0 g57w12-r raw-sync (def-form)
     unsigned int u32_68;  // X10 supply (member_lookup)
     unsigned int u32_6C;  // X10 supply (member_lookup)
     unsigned int u32_A0;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
     unsigned int u32_4C;  // X10 supply (member_lookup)
 };
@@ -208,7 +208,7 @@ public:
     unsigned int u32_38;  // X10 supply (member_lookup)
     unsigned int u32_4C;  // X10 supply (member_lookup)
     unsigned int u32_60;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
     BlowStraw* q050;  // X10 supply (member_lookup)
 };

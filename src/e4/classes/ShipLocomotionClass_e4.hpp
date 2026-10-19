@@ -9,15 +9,15 @@ struct ILocomotion;  // fix_fwd_type_supply
 
 struct ShipLocomotionClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
     unsigned int Owner;  // 0x8
     int LinkedTo;  // 0xC
     char Powered[1];  // 0x10
     bool Dirty;  // 0x11
     char __pad_12[2];  // 0x12
     int RefCount;  // 0x14
-    void* vtable3;  // 0x18
+    void* ptr_8;  // 0x18
     int CurrentRamp;  // 0x1C
     int PreviousRamp;  // 0x20
     char SlopeTimer[16];  // 0x24

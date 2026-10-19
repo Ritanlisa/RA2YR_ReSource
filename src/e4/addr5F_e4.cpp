@@ -1062,24 +1062,24 @@ int E4Recv_5F1F20::sub_5F1F20()
 {
 
   int v2; // esi
-  int *vtable1; // ecx
+  int *ptr_0; // ecx
   int TileIndex; // eax
 
   v2 = 0; /*0x5f1f27*/
-  vtable1 = (int *)this->attachedBomb->?; /*0x5f1f2c*/
-  if ( vtable1[10] <= 0 ) /*0x5f1f34*/
+  ptr_0 = (int *)this->attachedBomb->?; /*0x5f1f2c*/
+  if ( ptr_0[10] <= 0 ) /*0x5f1f34*/
     return 0; /*0x5f1f5b*/
   while ( 1 ) /*0x5f1f37*/
   {
-    TileIndex = ((Terrain *)vtable1)->GetTileIndex(v2); /*0x5f1f37*/
+    TileIndex = ((Terrain *)ptr_0)->GetTileIndex(v2); /*0x5f1f37*/
     if ( TileIndex ) /*0x5f1f3e*/
     {
       if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) && (*(unsigned char *)TileIndex & 2) == 0 ) /*0x5f1f4d*/
         break; /*0x5f1f4d*/
     }
     ++v2; /*0x5f1f52*/
-    vtable1 = (int *)this->attachedBomb->?; /*0x5f1f53*/
-    if ( v2 >= vtable1[10] ) /*0x5f1f59*/
+    ptr_0 = (int *)this->attachedBomb->?; /*0x5f1f53*/
+    if ( v2 >= ptr_0[10] ) /*0x5f1f59*/
       return 0; /*0x5f1f59*/
   }
   return *(unsigned int *)(TileIndex + 20); /*0x5f1f5b*/

@@ -238,7 +238,7 @@ namespace gamemd {
 int ConvertClass::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  return (*(int (**)(_BlitPlainXlat_E *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->vtable1 /*0x49145a*/
+  return (*(int (**)(_BlitPlainXlat_E *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->ptr_0 /*0x49145a*/
            + 4))(
            this,
            a2,

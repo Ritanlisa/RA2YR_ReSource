@@ -206,7 +206,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   int v5 = 0; // ebp /*0x642f08*/
   int v6 = 0; // edi /*0x642f0e*/
   int v16; // [esp+1Ch] [ebp-28h]
-  v16 = FoundationSize->vtable3; /*0x642f1a*/
+  v16 = FoundationSize->ptr_8; /*0x642f1a*/
   int v15; // [esp+10h] [ebp-34h]
   v15 = FoundationSize[3] + 6; /*0x642f24*/
   if ( a4 ) /*0x642f2e*/

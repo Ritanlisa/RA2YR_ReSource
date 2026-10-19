@@ -35,12 +35,12 @@ namespace gamemd {  // G42.18 ns repair
 void ParticleTypeClass::GetClassIdentifier()
 {
 
-  void *v2 = *&this->vtable2; // eax /*0x477906*/
+  void *v2 = *&this->ptr_4; // eax /*0x477906*/
   *&this->uniqueId = 0; /*0x477909*/
   if ( v2 && (this->IsAllocated) ) /*0x477910*/
   {
     operator delete((v2)); /*0x477916*/
-    *&this->vtable2 = 0; /*0x47791e*/
+    *&this->ptr_4 = 0; /*0x47791e*/
   }
   (this->IsAllocated) = 0; /*0x477921*/
   *&this->m_8 = 0; /*0x477924*/
@@ -115,7 +115,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     (this->ParticleTypeClass_field_0xC) = ((this->ParticleTypeClass_field_0xC) & ~0xFF) | ((1) & 0xFF); /*0x47855c*/
     if ( !v5 ) /*0x478560*/
       return 0; /*0x4785e2*/
-    if ( *&this->vtable2 ) /*0x478562*/
+    if ( *&this->ptr_4 ) /*0x478562*/
     {
       m_8 = this->m_8; /*0x478567*/
       if ( a2 < m_8 ) /*0x47856c*/
@@ -125,7 +125,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         v12 = 0; /*0x478574*/
         do /*0x478590*/
         {
-          v13 = *&this->vtable2 + v12; /*0x47857b*/
+          v13 = *&this->ptr_4 + v12; /*0x47857b*/
           v14 = &v5[v12]; /*0x47857d*/
           v12 += 3; /*0x478580*/
           --m_8; /*0x478583*/
@@ -137,11 +137,11 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       }
       if ( (((this->ParticleTypeClass_field_0xC) >> 8) & 0xFF) ) /*0x478598*/
       {
-        __3_YAXPAX_Z(*&this->vtable2); /*0x4785a1*/
-        *&this->vtable2 = 0; /*0x4785a9*/
+        __3_YAXPAX_Z(*&this->ptr_4); /*0x4785a1*/
+        *&this->ptr_4 = 0; /*0x4785a9*/
       }
     }
-    *&this->vtable2 = v5; /*0x4785b4*/
+    *&this->ptr_4 = v5; /*0x4785b4*/
     this->m_8 = (int)v3; /*0x4785ba*/
     BYTE1(this->ParticleTypeClass_field_0xC) = a3 == 0; /*0x4785bd*/
   }
@@ -174,7 +174,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
   if ( this == (ParticleTypeClass *)a2 ) /*0x4788ec*/
     return &this->ArrayIndex; /*0x4788ec*/
   (*((void (**)(ParticleTypeClass *))this->ArrayIndex + 3))(this); /*0x4788f4*/
-  v3 = a2->vtable3; /*0x4788f7*/
+  v3 = a2->ptr_8; /*0x4788f7*/
   this->BehavesLike = (void *)v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/
   {
@@ -860,8 +860,8 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
 namespace gamemd {
 unsigned int ParticleTypeClass::LoadTypeData(int a2)
 {
-  if ( (this->vtable4) ) /*0x477930*/
-    return (a2 - *&this->vtable2) / 3u; /*0x47794e*/
+  if ( (this->ptr_C) ) /*0x477930*/
+    return (a2 - *&this->ptr_4) / 3u; /*0x47794e*/
   else
     return 0; /*0x477937*/
 }
@@ -872,15 +872,15 @@ namespace gamemd {
 TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1)
 {
 
-  void *v3 = this->vtable2; // eax /*0x477ac3*/
+  void *v3 = this->ptr_4; // eax /*0x477ac3*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x477ac6) */
   if ( v3 && this->ParticleTypeClass_field_2BC ) /*0x477ad0*/
   {
     operator delete((v3)); /*0x477ad8*/
-    this->vtable2 = 0; /*0x477ae0*/
+    this->ptr_4 = 0; /*0x477ae0*/
   }
   this->ParticleTypeClass_field_2BC = 0; /*0x477aeb*/
-  this->vtable3 = 0; /*0x477af1*/
+  this->ptr_8 = 0; /*0x477af1*/
   if ( (a2 & 1) != 0 ) /*0x477af8*/
     operator delete((this)); /*0x477afb*/
   return this; /*0x477b05*/
@@ -897,7 +897,7 @@ int ParticleTypeClass::Init(unsigned char * a2, void *a2_1)
   if ( m_10 <= 0 ) /*0x4785fa*/
     return -1; /*0x478621*/
   unsigned char *i; // ecx
-  for ( i = *&this->vtable2; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x478600*/
+  for ( i = *&this->ptr_4; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x478600*/
   {
     if ( ++result >= m_10 ) /*0x47861f*/
       return -1; /*0x47861f*/

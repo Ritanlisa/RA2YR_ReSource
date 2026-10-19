@@ -9,7 +9,7 @@ namespace gamemd {
 struct VectorCursor;  // fix_fwd_type_supply
 
 struct GraphicMenuAnimItem {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
     int GraphicMenuAnimItem_field_0x08;  // 0x8
     int GraphicMenuAnimItem_field_0x0C;  // 0xC

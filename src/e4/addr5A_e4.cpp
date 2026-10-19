@@ -671,7 +671,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
                     + 35
                     + 40 * g_MapCellWidth * (__int16)HIWORD(*(unsigned int *)(a2 + 36))]) = 1;
   v13 = *(unsigned int *)v8 + 1; /*0x5a46e6*/
-  v53 = v6->vtable2; /*0x5a46e9*/
+  v53 = v6->ptr_4; /*0x5a46e9*/
   v14 = v13 >> 1; /*0x5a46f0*/
   if ( v13 < *(unsigned int *)&v8[1] ) /*0x5a46f4*/
   {
@@ -5181,18 +5181,18 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     fld st(2)
     fmul st, st(5)
   }
-  void *vtable1; // [esp+0h] [ebp-1Ch]
-  vtable1 = _ESI->ptr_4; /*0x5aed95*/
+  void *ptr_0; // [esp+0h] [ebp-1Ch]
+  ptr_0 = _ESI->ptr_4; /*0x5aed95*/
   int result = _ESI->occupant; // eax /*0x5aed99*/
   int v13; // [esp+4h] [ebp-18h]
   v13 = result; /*0x5aed9c*/
-  void *vtable2; // [esp+8h] [ebp-14h]
-  vtable2 = _ESI->ptr_8; /*0x5aeda0*/
+  void *ptr_4; // [esp+8h] [ebp-14h]
+  ptr_4 = _ESI->ptr_8; /*0x5aeda0*/
   __asm { faddp st(1), st } /*0x5aeda4*/
   int owningHouseIndex; // [esp+Ch] [ebp-10h]
   owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
-  void *vtable3; // [esp+10h] [ebp-Ch]
-  vtable3 = _ESI->ptr_C; /*0x5aedb0*/
+  void *ptr_8; // [esp+10h] [ebp-Ch]
+  ptr_8 = _ESI->ptr_C; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
   *&_ESI->ptr_0 = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/
@@ -5288,8 +5288,8 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aee6f*/
   Math::ArcTan2(v19); /*0x5aee75*/
   __asm { fld [esp+40h+arg_0] } /*0x5aee7f*/
-  void *vtable1; // [esp+Ch] [ebp-18h]
-  vtable1 = this->q050; /*0x5aee83*/
+  void *ptr_0; // [esp+Ch] [ebp-18h]
+  ptr_0 = this->q050; /*0x5aee83*/
   __asm { fchs } /*0x5aee8a*/
   int uniqueId; // [esp+0h] [ebp-24h]
   uniqueId = this->q050; /*0x5aee8c*/
@@ -5299,9 +5299,9 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     fmul st, st(1)
   }
   void *vtable0; // [esp+4h] [ebp-20h]
-  vtable0 = this->AbstractClass; /*0x5aee99*/
-  void *vtable2; // [esp+14h] [ebp-10h]
-  vtable2 = this->q050; /*0x5aee9d*/
+  ptr_0 = this->AbstractClass; /*0x5aee99*/
+  void *ptr_4; // [esp+14h] [ebp-10h]
+  ptr_4 = this->q050; /*0x5aee9d*/
   __asm { fld [esp+40h+var_20] } /*0x5aeea1*/
   __asm { fmul st, st(3) }
   int abstractFlags; // [esp+8h] [ebp-1Ch]
@@ -5397,8 +5397,8 @@ namespace gamemd {
 void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
 {
 
-  double v3 = this->vtable2; // st7 /*0x5af000*/
-  double v4 = this->vtable3; // st6 /*0x5af003*/
+  double v3 = this->ptr_4; // st7 /*0x5af000*/
+  double v4 = this->ptr_8; // st6 /*0x5af003*/
   this->ptr_2 = v4 * aP1 + v3 * aP2; /*0x5af014*/
   this->ptr_3 = v4 * aP2 - v3 * aP1; /*0x5af023*/
   double v5 = this->abstractFlags; // st7 /*0x5af026*/
@@ -5407,9 +5407,9 @@ void E4Recv_5AF000::sub_5AF000(ObjectClass * aP1, ObjectClass * aP2)
   this->nextArrayIndex = v6 * aP2 - v5 * aP1; /*0x5af049*/
   double v7 = this->objectTypeFlags; // st7 /*0x5af04c*/
   double v8; // st6
-  v8 = *(&this->vtable20); /*0x5af04f*/
+  v8 = *(&this->ptr_20); /*0x5af04f*/
   this->objectTypeFlags = v8 * aP1 + v7 * aP2; /*0x5af060*/
-  *(&this->vtable20) = v8 * aP2 - v7 * aP1; /*0x5af06f*/
+  *(&this->ptr_20) = v8 * aP2 - v7 * aP1; /*0x5af06f*/
 }
 } // namespace gamemd
 
@@ -5419,7 +5419,7 @@ void E4Recv_5AF120::sub_5AF120(float a2, float a3)
 {
 
   double v3 = *this; // st7 /*0x5af120*/
-  double v4 = this->vtable3; // st6 /*0x5af122*/
+  double v4 = this->ptr_8; // st6 /*0x5af122*/
   *this = v3 * a3 - v4 * a2; /*0x5af133*/
   this->ptr_3 = v3 * a2 + v4 * a3; /*0x5af143*/
   double v5 = this->uniqueId; // st7 /*0x5af146*/
@@ -5428,9 +5428,9 @@ void E4Recv_5AF120::sub_5AF120(float a2, float a3)
   this->nextArrayIndex = v5 * a2 + v6 * a3; /*0x5af16b*/
   double v7 = this->NeedsSaveOrLink; // st7 /*0x5af16e*/
   double v8; // st6
-  v8 = *(&this->vtable20); /*0x5af171*/
+  v8 = *(&this->ptr_20); /*0x5af171*/
   this->NeedsSaveOrLink = v7 * a3 - v8 * a2; /*0x5af182*/
-  *(&this->vtable20) = v7 * a2 + v8 * a3; /*0x5af193*/
+  *(&this->ptr_20) = v7 * a2 + v8 * a3; /*0x5af193*/
 }
 } // namespace gamemd
 

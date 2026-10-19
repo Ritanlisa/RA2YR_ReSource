@@ -223,7 +223,7 @@ int CellClass::Draw(int a1, int a2, void * a3) const
     {
       BYTE1(v5) |= 0x80u; /*0x48e5b8*/
       *a2 = v5; /*0x48e5be*/
-      if ( (a1 & 0x40) != 0 && (*&this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
+      if ( (a1 & 0x40) != 0 && (*&this->ptr_8 & 0x10) != 0 ) /*0x48e5c6*/
       {
         BYTE1(v5) |= 0x40u; /*0x48e5c8*/
         *a2 = v5; /*0x48e5cb*/
@@ -726,7 +726,7 @@ void CellClass::ReduceTiberium(int v23)
 
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)this, (int *)v31); /*0x480a97*/
   StartCoords = House::GetStartCoords((House *)this, v32); /*0x480a9c*/
-  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x480ab1*/
+  if ( StartCoords->ptr_8 <= 0 || StartCoords->ptr_C <= 0 ) /*0x480ab1*/
   {
     v12 = *PlacementRect; /*0x480b44*/
     v13 = PlacementRect->u32_4; /*0x480b46*/
@@ -739,17 +739,17 @@ void CellClass::ReduceTiberium(int v23)
     if ( v22 <= 0 || (v25 = PlacementRect->q00C, v25 <= 0) ) /*0x480acb*/
     {
       v12 = *StartCoords; /*0x480b37*/
-      v13 = StartCoords->vtable2; /*0x480b39*/
-      v14 = StartCoords->vtable3; /*0x480b3c*/
-      v9 = StartCoords->vtable4; /*0x480b3f*/
+      v13 = StartCoords->ptr_4; /*0x480b39*/
+      v14 = StartCoords->ptr_8; /*0x480b3c*/
+      v9 = StartCoords->ptr_C; /*0x480b3f*/
     }
     else
     {
       v5 = *StartCoords; /*0x480acd*/
       v6 = *PlacementRect; /*0x480acf*/
-      v7 = StartCoords->vtable3; /*0x480ad1*/
-      v8 = StartCoords->vtable2; /*0x480ad4*/
-      v9 = StartCoords->vtable4; /*0x480ad7*/
+      v7 = StartCoords->ptr_8; /*0x480ad1*/
+      v8 = StartCoords->ptr_4; /*0x480ad4*/
+      v9 = StartCoords->ptr_C; /*0x480ad7*/
       v28 = v7; /*0x480adc*/
       if ( v5 > *PlacementRect ) /*0x480ae0*/
       {
@@ -779,17 +779,17 @@ void CellClass::ReduceTiberium(int v23)
   v27 = v13 - (unsigned int)DSurface_ViewBounds.field_4; /*0x480b5f*/
   v14 = v14; /*0x480b66*/
   v9 = v9; /*0x480b6a*/
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(&this->vtable27)); /*0x480b6e*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(&this->ptr_27)); /*0x480b6e*/
   v16 = v23; /*0x480b73*/
   if ( v23 <= 0 || BuildingByTiberiumType == -1 ) /*0x480b82*/
     return 0; /*0x480ca3*/
   v17 = *(CellClass **)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * BuildingByTiberiumType); /*0x480b8e*/
   if ( this->powerup == 11 ) /*0x480b99*/
-    CellClass::RegisterForRedraw(v17, (int16_t *)&this->vtable28); /*0x480ba1*/
+    CellClass::RegisterForRedraw(v17, (int16_t *)&this->ptr_28); /*0x480ba1*/
   if ( this->AbstractClass_1) + 1 <= v16 ) /*0x480bb9*/
   {
     v16 = this->powerup); /*0x480bc8*/
-    *(&this->vtable27) = -1; /*0x480bce*/
+    *(&this->ptr_27) = -1; /*0x480bce*/
     this->powerup = 0; /*0x480bd5*/
     House::AnnounceUpgrade((int)this, -1); /*0x480bdc*/
     v18 = &this->smudgeTypeIndex; /*0x480be1*/

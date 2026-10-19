@@ -101,8 +101,8 @@ protected:
 
 class SuperClass : public AbstractClass
 {
-    unsigned int vtable26;  // G57w8 raw-vocab (0x6CE320 &this->vtable26 首槽)
-    unsigned int *vtable2;  // G57w8 raw-vocab (0x6CE33B this->vtable2 数组槽)
+    unsigned int ptr_26;  // G57w8 raw-vocab (0x6CE320 &this->vtable26 首槽)
+    unsigned int *ptr_4;  // G57w8 raw-vocab (0x6CE33B this->vtable2 数组槽)
 public:
     static constexpr AbstractType AbsID = AbstractType::Super;
     static DynamicVectorClass<SuperClass*>* Array; // data: 0x87F670
@@ -200,8 +200,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 public:  // g57c5 W4 supply slot
     void * q090;  // 0x90 g57c5 W4 supply (ml SuperClass@0x90)
 
-    void* vtable1;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
 };
 
 class LightningStorm

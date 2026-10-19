@@ -9,10 +9,10 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct AITriggerTypeClass {
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
     int AITriggerTypeClass_field_0x14;  // 0x14
     int AITriggerTypeClass_field_0x18;  // 0x18

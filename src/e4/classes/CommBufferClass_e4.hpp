@@ -7,7 +7,7 @@
 namespace gamemd {
 struct CampaignClass;  // fix_fwd_type_supply
 struct CommBufferClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     unsigned char __pad_004;  // 0x4
     char __pad_5[3];  // 0x5
     int CommBufferClass_field_0x8;  // 0x8

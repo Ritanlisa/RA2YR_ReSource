@@ -25,7 +25,7 @@ struct Color;  // fix_fwd_type_supply
 struct AnimClass {
     void* AnimClass_field_0x0;  // 0x0
     int AnimClass_field_0x4;  // 0x4
-    void* vtable3;  // 0x8
+    void* ptr_8;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned int __pad_010;  // 0x10
     int AnimClass_field_0x14;  // 0x14

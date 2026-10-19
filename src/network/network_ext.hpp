@@ -220,7 +220,7 @@ virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
     unsigned int u32_CC;  // X10 supply (member_lookup)
     unsigned int u32_D4;  // X10 supply (member_lookup)
     unsigned int u32_D8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
     unsigned int u32_D0;  // X10 supply (member_lookup)
 };
@@ -445,7 +445,7 @@ public:
 
     uint8_t MultiplayerSiegeDefenderTeam_field_0x04[4];
 
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 // CSP: MultiplayerTeam matched via T1
@@ -464,7 +464,7 @@ public:
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
     uint32_t u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class MultiplayerTeamVector

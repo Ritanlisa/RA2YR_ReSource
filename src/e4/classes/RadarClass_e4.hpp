@@ -17,7 +17,7 @@ struct GadgetClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct RadarClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
     int q008;  // 0x8
     unsigned int u32_C;  // 0xC

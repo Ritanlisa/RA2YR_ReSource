@@ -923,7 +923,7 @@ LABEL_16:
   v36[2] = v7[2]; /*0x513fb2*/
   v8 = (unsigned __int8)Coord::To_Cell((Coord *)&dword_87F7E8, v36)->slopeIndex[0]; /*0x513fc8*/
   qmemcpy(&v37, CopyAudioData((char *)v38, v8), sizeof(v37)); /*0x513fe4*/
-  v25 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue(&this->vtable3, &v33) >> 10) + 1) >> 1) /*0x514016*/
+  v25 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue(&this->ptr_8, &v33) >> 10) + 1) >> 1) /*0x514016*/
                      & 0x1F)
                     - 8)
       * -0.1963495408493621;
@@ -933,7 +933,7 @@ LABEL_16:
     if ( *a3 != -1 ) /*0x51402e*/
     {
       *a3 = 32 * (v8 + (*a3 << 6)); /*0x51403c*/
-      *a3 |= ((unsigned int)((*ProgressTimer::GetValue(&this->vtable3, &v33) >> 10) + 1) >> 1) /*0x51405c*/
+      *a3 |= ((unsigned int)((*ProgressTimer::GetValue(&this->ptr_8, &v33) >> 10) + 1) >> 1) /*0x51405c*/
            & 0x1F;
     }
   }
@@ -970,9 +970,9 @@ void * ObjectClass::checkLimbo()
   *this = 0x80; /*0x556a29*/
   this->AbstractClass_1 = 0x80; /*0x556a2b*/
   this->ptr_2 = 0x80; /*0x556a2e*/
-  this->vtable2 = 0; /*0x556a31*/
-  this->vtable3 = 16; /*0x556a34*/
-  this->vtable4 = 0; /*0x556a3b*/
+  this->ptr_4 = 0; /*0x556a31*/
+  this->ptr_8 = 16; /*0x556a34*/
+  this->ptr_C = 0; /*0x556a3b*/
   v2 = &this->referenceCount; /*0x556a3e*/
   v3 = 32; /*0x556a41*/
   do /*0x556a6a*/
@@ -1585,14 +1585,14 @@ int ObjectClass::UpdateProductionDisplay()
     {
       if ( !this->needsRedraw[0] && this->isOnMap[0] ) /*0x5f5879*/
       {
-        result = (*(int (**)(TechnoClass *))(this->vtable0 + 308))(this); /*0x5f5886*/
+        result = (*(int (**)(TechnoClass *))(this->ptr_0 + 308))(this); /*0x5f5886*/
         (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5f588d*/
         return result; /*0x5f5890*/
       }
     }
     else
     {
-      if ( (*(int (**)(TechnoClass *))(this->vtable0 + 44))(this) != 6 /*0x5f58b2*/
+      if ( (*(int (**)(TechnoClass *))(this->ptr_0 + 44))(this) != 6 /*0x5f58b2*/
         || (result = this->field_520, !result->u32_E58)
         || v3 )
       {
@@ -1602,15 +1602,15 @@ int ObjectClass::UpdateProductionDisplay()
         {
           (*(void (**)(int))(*(unsigned int *)result + 704))(result); /*0x5f58c5*/
           (*(void (**)(int))(*(unsigned int *)v4 + 56))(v4); /*0x5f58cf*/
-          result = (*(int (**)(TechnoClass *, int *))(this->vtable0 + 440))(this, &v6); /*0x5f58db*/
+          result = (*(int (**)(TechnoClass *, int *))(this->ptr_0 + 440))(this, &v6); /*0x5f58db*/
         }
       }
       if ( (v3 == 1 || v3 == 3) && !this->isOnMap[0] ) /*0x5f58ec*/
       {
-        int vtable0; // edx
-        vtable0 = this->vtable0; /*0x5f58f3*/
+        int ptr_0; // edx
+        ptr_0 = this->ptr_0; /*0x5f58f3*/
         this->isOnMap[0] = 1; /*0x5f58f7*/
-        result = (*(int (**)(TechnoClass *))(vtable0 + 308))(this); /*0x5f58fb*/
+        result = (*(int (**)(TechnoClass *))(ptr_0 + 308))(this); /*0x5f58fb*/
         (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x5f5902*/
         return result; /*0x5f5905*/
       }
@@ -1639,7 +1639,7 @@ int ObjectClass::GetBoundingSize()
   v2 = (*((int (**)(ObjectClass *, unsigned char *))this->AbstractClass + 43))(this, v4); /*0x5f6be8*/
   unsigned char v5[12]; // [esp+14h] [ebp-Ch] BYREF
   return *(unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->AbstractClass + 43))(this, v5) /*0x5f6bfe*/
-  + v2->vtable2;
+  + v2->ptr_4;
 
 }
 } // namespace ra2
@@ -1649,17 +1649,17 @@ namespace gamemd {
 int ObjectClass::resetObjectState(SidebarClass * aP1)
 {
 
-  void (**vtable0)(GadgetClass *); // eax
+  void (**ptr_0)(GadgetClass *); // eax
 
-  vtable0 = (void (**)(GadgetClass *))this->AbstractClass; /*0x652e5e*/
+  ptr_0 = (void (**)(GadgetClass *))this->AbstractClass; /*0x652e5e*/
   if ( aP1 ) /*0x652e60*/
   {
-    vtable0[12](&stru_B04978); /*0x652e62*/
+    ptr_0[12](&stru_B04978); /*0x652e62*/
     return (*((int (**)(ObjectClass *, GadgetClass *))this->AbstractClass + 12))(this, &stru_B04910); /*0x652e6e*/
   }
   else
   {
-    vtable0[13](&stru_B04978); /*0x652e75*/
+    ptr_0[13](&stru_B04978); /*0x652e75*/
     return (*((int (**)(ObjectClass *, GadgetClass *))this->AbstractClass + 13))(this, &stru_B04910); /*0x652e81*/
   }
 
@@ -2318,7 +2318,7 @@ int ObjectClass::updateMissionState(int a2)
   int result = a2; // eax /*0x556b57*/
   if ( !stru_A8EB00.ObjectTypeClass[30] ) /*0x556b5b*/
     result = 2 * a2; /*0x556b5d*/
-  this->vtable3 = (void *)result; /*0x556b5f*/
+  this->ptr_8 = (void *)result; /*0x556b5f*/
   return result; /*0x556b62*/
 
 }
@@ -2443,7 +2443,7 @@ char ObjectClass::Release()
 namespace gamemd {
 int ObjectClass::GetMember01()
 {
-  return this->vtable2; /*0x6241d3*/
+  return this->ptr_4; /*0x6241d3*/
 }
 } // namespace gamemd
 
@@ -2523,7 +2523,7 @@ unsigned int * ObjectClass::clearTarget(char a2)
   GadgetClass::Dtor((GadgetClass *)this); /*0x72a673*/
   if ( (a2 & 1) != 0 ) /*0x72a67d*/
     __3_YAXPAX_Z(this); /*0x72a680*/
-  return this->vtable1; /*0x72a68a*/
+  return this->ptr_0; /*0x72a68a*/
 
 }
 } // namespace gamemd

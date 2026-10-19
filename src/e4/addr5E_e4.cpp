@@ -1871,7 +1871,7 @@ LABEL_430:
     if ( !v163 ) /*0x5e586d*/
     {
 LABEL_463:
-      v200.vtable1 = 0; /*0x5e5b39*/
+      v200.ptr_0 = 0; /*0x5e5b39*/
       v179 = &stru_A8B250.__pad_0[140]; /*0x5e5b41*/
       do /*0x5e5b9d*/
       {
@@ -2580,13 +2580,13 @@ if ( !v162 )
     v197 = (ObjectClass *)&stru_830620[4604];
     v193 = (CCINIClass *)(0);
     *((unsigned int *)v182 - 8) = atol(v183);
-    char * v184 = strtok(v193->vtable1, v197);
+    char * v184 = strtok(v193->ptr_0, v197);
     if ( !v184 )
       break;
     v197 = (ObjectClass *)&stru_830620[4604];
     v193 = (CCINIClass *)(0);
     *(unsigned int *)v182 = atol(v184);
-    char * v185 = strtok(v193->vtable1, v197);
+    char * v185 = strtok(v193->ptr_0, v197);
     if ( !v185 )
       break;
     *((unsigned int *)v182 + 8) = atol(v185);
@@ -2598,7 +2598,7 @@ if ( !v162 )
     v197 = (ObjectClass *)&stru_830620[4604];
     v193 = (CCINIClass *)(0);
     *((unsigned int *)v182 + 16) = atol(v186);
-    char * v187 = strtok(v193->vtable1, v197);
+    char * v187 = strtok(v193->ptr_0, v197);
     if ( !v187 )
       break;
     *((unsigned int *)v182 + 24) = atol(v187);
@@ -4740,7 +4740,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
   char v7; // bl
   int v8; // eax
   int v9; // edi
-  int vtable1; // esi
+  int ptr_0; // esi
   int v11; // eax
   int ResourceID2CSF; // esi
   HWND DlgItem; // eax
@@ -4811,14 +4811,14 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
     dword_AC11CC = 0; /*0x5ec47a*/
   }
   v9 = v23 - dword_831700; /*0x5ec493*/
-  vtable1 = 0; /*0x5ec495*/
+  ptr_0 = 0; /*0x5ec495*/
   v24.ptr_4 = 0; /*0x5ec499*/
   if ( !g_MPCooperativeState ) /*0x5ec49d*/
   {
     if ( v7 ) /*0x5ec4a1*/
     {
   LABEL_40:
-      vtable1 = 1; /*0x5ec4f1*/
+      ptr_0 = 1; /*0x5ec4f1*/
     v24.ptr_4 = (void *)1; /*0x5ec4fd*/
     if ( !dword_AC11CC && v9 + v23 < 7 ) /*0x5ec50d*/
       ++v9; /*0x5ec50f*/
@@ -4863,18 +4863,18 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
     ResourceIDCSF = GetResourceIDCSF(0); /*0x5ec560*/
     FillListBox((HWND)hDlg, ResourceIDCSF); /*0x5ec566*/
     SetupSkirmishSpawnLocations((HWND)hDlg, ResourceIDCSF, 8); /*0x5ec571*/
-    vtable1 = (int)v24.ptr_4; /*0x5ec576*/
+    ptr_0 = (int)v24.ptr_4; /*0x5ec576*/
   }
     if ( v9 <= 0 )
   {
     if ( v9 >= 0 )
     {
-      if ( vtable1 + v23 >= 7 ) /*0x5ec6b9*/
+      if ( ptr_0 + v23 >= 7 ) /*0x5ec6b9*/
         SetupMultiplayerLobbyScreen_Setup((HWND)hDlg, 7, 1); /*0x5ec6c4*/
     }
     else
     {
-      v15 = vtable1 + v23; /*0x5ec5a3*/
+      v15 = ptr_0 + v23; /*0x5ec5a3*/
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5ec5a6*/
       {
         if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5ec5b1*/
@@ -4886,7 +4886,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
       {
         v16 = 8; /*0x5ec5c8*/
       }
-      v17 = (ObjectClass *)(vtable1 + v23); /*0x5ec5d0*/
+      v17 = (ObjectClass *)(ptr_0 + v23); /*0x5ec5d0*/
       if ( v15 < 8 )
       {
         do
@@ -4945,7 +4945,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
       else
         RetVtableStubZero_eax_27(); /*0x5ec69b*/
       CheckGameSettingsChanged(1, 0); /*0x5ec690*/
-      vtable1 = (int)v24.ptr_4; /*0x5ec695*/
+      ptr_0 = (int)v24.ptr_4; /*0x5ec695*/
     }
   }
     else
@@ -4996,19 +4996,19 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
       }
       else
       {
-        dword_AC11CC = vtable1; /*0x5ec867*/
+        dword_AC11CC = ptr_0; /*0x5ec867*/
         dword_831700 = v23; /*0x5ec86f*/
       }
     }
     else
     {
-      dword_AC11CC = vtable1; /*0x5ec84b*/
+      dword_AC11CC = ptr_0; /*0x5ec84b*/
       dword_831700 = v23; /*0x5ec853*/
     }
   }
     else
   {
-    dword_AC11CC = vtable1; /*0x5ec830*/
+    dword_AC11CC = ptr_0; /*0x5ec830*/
     dword_831700 = v23; /*0x5ec838*/
   }
 }

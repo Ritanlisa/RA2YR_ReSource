@@ -153,7 +153,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
   /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471c5) */
   /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471cb) */
   /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471d2) */
-  this->vtable2.GenerateUniqueID(); /*0x7471d9*/
+  this->ptr_4.GenerateUniqueID(); /*0x7471d9*/
   this->RotCount = 32; /*0x7471de*/
   v3 = dword_A83CF0; /*0x7471e8*/
   if ( dword_A83CF0 < dword_A83CE8 /*0x747226*/
@@ -468,7 +468,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   int v82; // [esp+Ch] [ebp-13Ch]
   v82 = 0; /*0x747aae*/
   int *BuildingClass_field_short_700; // [esp+8h] [ebp-140h]
-  BuildingClass_field_short_700 = v4->vtable2.BuildingClass_field_short_700; /*0x747ab6*/
+  BuildingClass_field_short_700 = v4->ptr_4.BuildingClass_field_short_700; /*0x747ab6*/
   do /*0x747b01*/
   {
     sprintf((char *const)Buffer, "FiringSyncFrame%d", v82); /*0x747ac9*/

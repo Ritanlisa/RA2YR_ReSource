@@ -28,7 +28,7 @@ int AlphaShapeClass::SD_vt13(int a2)
   this->AbstractClass::ProcessPower(); /*0x420da9*/
   Power::TimerProcess(this->u32_28); /*0x420db4*/
   Power::TimerProcess(this->u32_2C); /*0x420dbf*/
-  Power::TimerProcess((int)(this->vtable4)); /*0x420dca*/
+  Power::TimerProcess((int)(this->ptr_C)); /*0x420dca*/
   return Power::TimerProcess(this->u32_34); /*0x420dda*/
 }  // G42.18 ns repair
 } // namespace gamemd

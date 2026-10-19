@@ -546,7 +546,7 @@ short WideString::Erase(int a2, int a3_2)
     return 0; /*0x7b6dc1*/
   wchar_t *v8; // ebp
   v8 = (wchar_t *)operator new(2 * (v4 + 0x7FFFFFFF * v6) + 2); /*0x7b6de0*/
-  *(unsigned short *)(*&a3_2->vtable3 * v5) = 0; /*0x7b6de2*/
+  *(unsigned short *)(*&a3_2->ptr_8 * v5) = 0; /*0x7b6de2*/
   int v9; // esi
   v9 = 2 * (v6 + v5); /*0x7b6dec*/
   *(unsigned short *)(v9 + *(unsigned int *)a3_2 - 2) = 0; /*0x7b6dee*/

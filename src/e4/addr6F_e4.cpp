@@ -881,7 +881,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   int *v5; // edx
   unsigned int v26[3]; // [esp+28h] [ebp-Ch] BYREF
   v5 = (int *)(((Coord *)(v26))->Subtract((3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
-  int v6 = a1->vtable2; // ebx /*0x6f5f47*/
+  int v6 = a1->ptr_4; // ebx /*0x6f5f47*/
   int v7; // eax
   v7 = (int)((int *)(*v5)); /*0x6f5f4a*/
   int v8; // ecx
@@ -897,7 +897,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   int v22; // [esp+18h] [ebp-1Ch]
   v22 = v9; /*0x6f5f5f*/
   int *v12; // eax
-  v12 = (int *)(((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1->vtable3) / 4)); /*0x6f5fa0*/
+  v12 = (int *)(((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1->ptr_8) / 4)); /*0x6f5fa0*/
   int v13 = v12->u32_4; // ecx /*0x6f5fa9*/
   int v14; // edx
   v14 = (int *)(v12->u32_8); /*0x6f5fac*/
@@ -905,7 +905,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   v23 = *v12; /*0x6f5faf*/
   int v24; // [esp+20h] [ebp-14h]
   v24 = v13; /*0x6f5fb3*/
-  int v15 = a1->vtable3; // eax /*0x6f5fb7*/
+  int v15 = a1->ptr_8; // eax /*0x6f5fb7*/
   int v25; // [esp+24h] [ebp-10h] BYREF
   v25 = v14; /*0x6f5fca*/
   struct IPersistStreamVtbl *lpVtbl; // edx

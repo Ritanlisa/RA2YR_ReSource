@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct ConnectionPointClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     void* __pad_004;  // 0x4
     int ConnectionPointClass_field_0x08;  // 0x8
     int ConnectionPointClass_field_0x0C;  // 0xC

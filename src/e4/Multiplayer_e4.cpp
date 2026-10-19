@@ -75,7 +75,7 @@ void * Multiplayer::FindStartPositions(void *a1)
   v27 = 10; /*0x6883ad*/
   v26 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
-  v6 = (void **)((char *)&dword_A8B230[44].vtable0 + 2); /*0x6883b7*/
+  v6 = (void **)((char *)&dword_A8B230[44].ptr_0 + 2); /*0x6883b7*/
   do /*0x6883e9*/
   {
     if ( v5 < 0 ) /*0x6883c6*/
@@ -115,14 +115,14 @@ void * Multiplayer::FindStartPositions(void *a1)
   }
   for ( i = 0; (int)i < v10; ++i ) /*0x688435*/
   {
-    if ( i > 0x2BD || *(void **)((char *)&v3[44].vtable0 + 4 * i + 2) == (void *)dword_B05458 ) /*0x68845d*/
+    if ( i > 0x2BD || *(void **)((char *)&v3[44].ptr_0 + 4 * i + 2) == (void *)dword_B05458 ) /*0x68845d*/
       continue; /*0x68845d*/
-    v12 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x688478*/
+    v12 = *(int *)((char *)&v3[44].ptr_0 + 4 * i + 2); /*0x688478*/
     if ( v26 < v25.Capacity ) /*0x688481*/
       goto LABEL_22; /*0x688481*/
     if ( !v25.IsAllocated && v25.Capacity || v4 <= 0 ) /*0x688491*/
       goto LABEL_24; /*0x688491*/
-    if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(&v25, v4 + v25.Capacity, 0) ) /*0x6884a0*/
+    if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v25.ptr_0 + 2))(&v25, v4 + v25.Capacity, 0) ) /*0x6884a0*/
     {
       LABEL_22:
       v13 = v26++; /*0x6884ab*/
@@ -130,7 +130,7 @@ void * Multiplayer::FindStartPositions(void *a1)
     }
     v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6884b9*/
     LABEL_24:
-    v23 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x6884bf*/
+    v23 = *(int *)((char *)&v3[44].ptr_0 + 4 * i + 2); /*0x6884bf*/
     Debug::Log(); /*0x6884d9*/
     v4 = v27; /*0x6884de*/
     v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6884e2*/
@@ -175,7 +175,7 @@ void * Multiplayer::FindStartPositions(void *a1)
           if ( v26 < v25.Capacity /*0x688603*/
             || (v25.IsAllocated || !v25.Capacity)
             && v27 > 0
-            && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(
+            && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v25.ptr_0 + 2))(
                  &v25,
                  v27 + v25.Capacity,
                  0) )

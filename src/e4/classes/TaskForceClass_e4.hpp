@@ -12,8 +12,8 @@ struct CCINIClass;  // fix_fwd_type_supply
 struct TaskForceClass {
     unsigned int __pad_0;  // 0x0
     int TaskForceClass_field_0x4;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     unsigned char __pad_010;  // 0x10
     char __pad_11[2];  // 0x11
     bool IsAllocated;  // 0x13

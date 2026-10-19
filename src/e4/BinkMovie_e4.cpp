@@ -199,7 +199,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
     a2_1->q_20 = v14; /*0x4328c0*/
     v16 = 0; /*0x4328c3*/
     v17 = *v15; /*0x4328c5*/
-    v18 = v15->vtable2; /*0x4328c7*/
+    v18 = v15->ptr_4; /*0x4328c7*/
     v19 = a2_1->u32_C; /*0x4328ca*/
     v30 = v18; /*0x4328cd*/
     if ( !v19 ) /*0x4328d3*/
@@ -1068,8 +1068,8 @@ AbstractClass * * BinkMovie::ProcessKeyframe(unsigned int *aP1)
     Property::Set( /*0x6c9dba*/
       (Property *)g_FogOfWarState,
       ((int)(unsigned __int8)aP1[2] >> g_BitMask_Red << g_BitShift_Blue)
-    | ((unsigned __int8)BYTE2(aP1->vtable3) >> g_BitShift_Green_0 << g_BitShift_Red)
-    | ((unsigned __int8)BYTE1(aP1->vtable3) >> g_BitMask_Blue << g_BitMask_Green));
+    | ((unsigned __int8)BYTE2(aP1->ptr_8) >> g_BitShift_Green_0 << g_BitShift_Red)
+    | ((unsigned __int8)BYTE1(aP1->ptr_8) >> g_BitMask_Blue << g_BitMask_Green));
     v6 = (*(int (**)(int))(*(unsigned int *)this->u32_10 + 124))(this->u32_10); /*0x6c9dca*/
     v16 = (*(int (**)(int))(*(unsigned int *)this->u32_10 + 128))(this->u32_10); /*0x6c9dd6*/
     v20[3] = v16; /*0x6c9ddc*/

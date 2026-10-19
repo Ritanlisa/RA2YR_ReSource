@@ -294,7 +294,7 @@ int Dialog_Close(HWND a1, int a2)
     result = (int)((gamemd::ObjectClass *)(0));
     if ( g_DialogTrackingList <= 0 ) /*0x77580a*/
       goto LABEL_11; /*0x77580a*/
-    for ( i = &stru_B72D28; i->ptr_0 != a1; i = &i->vtable3 ) /*0x77580c*/
+    for ( i = &stru_B72D28; i->ptr_0 != a1; i = &i->ptr_8 ) /*0x77580c*/
     {
       if ( ++result >= g_DialogTrackingList ) /*0x77581b*/
       {
@@ -382,7 +382,7 @@ void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void), int a3, char a4,
     while ( (HWND)v8->ptr_0[0] != hWnd ) /*0x775a3e*/
     {
       ++v7; /*0x775a40*/
-      v8 = &v8->vtable3; /*0x775a41*/
+      v8 = &v8->ptr_8; /*0x775a41*/
       if ( v7 >= g_DialogTrackingList ) /*0x775a46*/
         goto LABEL_23; /*0x775a46*/
     }
@@ -2113,7 +2113,7 @@ void sub_77C220()
     while ( v2 ) /*0x77c239*/
     {
       v3 = v2; /*0x77c23b*/
-      v2 = v2->vtable3; /*0x77c23d*/
+      v2 = v2->ptr_8; /*0x77c23d*/
       DeleteAndZero((ObjectClass *)v3); /*0x77c246*/
       __3_YAXPAX_Z(v3); /*0x77c24c*/
     }
@@ -2195,7 +2195,7 @@ void sub_77C450()
     while ( v2 ) /*0x77c469*/
     {
       v3 = v2; /*0x77c46b*/
-      v2 = v2->vtable3; /*0x77c46d*/
+      v2 = v2->ptr_8; /*0x77c46d*/
       DeleteAndZero((ObjectClass *)v3); /*0x77c476*/
       __3_YAXPAX_Z(v3); /*0x77c47c*/
     }
@@ -2277,7 +2277,7 @@ void sub_77CB00()
     while ( v2 ) /*0x77cb19*/
     {
       v3 = v2; /*0x77cb1b*/
-      v2 = v2->vtable3; /*0x77cb1d*/
+      v2 = v2->ptr_8; /*0x77cb1d*/
       DeleteAndZero((ObjectClass *)v3); /*0x77cb26*/
       __3_YAXPAX_Z(v3); /*0x77cb2c*/
     }
@@ -3467,7 +3467,7 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
 {
 
   void **v4; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   void **v6; // esi
   int v7; // eax
   int v9; // eax
@@ -3479,7 +3479,7 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   v4 = a4; /*0x770976*/
-  vtable0 = this->ptr_0; /*0x77097f*/
+  ptr_0 = this->ptr_0; /*0x77097f*/
   v6 = &this->ptr_8 + 37 * a2 + 12 * a3; /*0x770990*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770996*/
   v7 = (int)v6[4]; /*0x77099b*/
@@ -3490,7 +3490,7 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   else
     v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x7709bd*/
   v10 = *((unsigned int *)v6[1] + v9); /*0x7709ca*/
-  if ( vtable0 == 3 ) /*0x7709cd*/
+  if ( ptr_0 == 3 ) /*0x7709cd*/
   {
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x7709d3*/
     v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11); /*0x7709e2*/
@@ -3517,7 +3517,7 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
 {
 
   void **v4; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   void **v6; // esi
   int v7; // eax
   int v9; // eax
@@ -3529,7 +3529,7 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   v4 = a4; /*0x770a56*/
-  vtable0 = this->ptr_0; /*0x770a5f*/
+  ptr_0 = this->ptr_0; /*0x770a5f*/
   v6 = &this->NeedsSaveOrLink + 37 * a2 + 12 * a3; /*0x770a70*/
   DeleteAndZero::Alt2((DeleteAndZero *)a4); /*0x770a76*/
   v7 = (int)v6[4]; /*0x770a7b*/
@@ -3540,7 +3540,7 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   else
     v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x770a9d*/
   v10 = *((unsigned int *)v6[1] + v9); /*0x770aaa*/
-  if ( vtable0 == 3 ) /*0x770aad*/
+  if ( ptr_0 == 3 ) /*0x770aad*/
   {
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x770ab3*/
     v12 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v11); /*0x770ac2*/
@@ -3567,7 +3567,7 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
 {
 
   void **v3; // ebx
-  void *vtable0; // edi
+  void *ptr_0; // edi
   char *v5; // esi
   int v6; // eax
   int v8; // eax
@@ -3580,7 +3580,7 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   void *v15; // [esp+10h] [ebp-4h] BYREF
 
   v3 = a3; /*0x770b38*/
-  vtable0 = this->ptr_0; /*0x770b41*/
+  ptr_0 = this->ptr_0; /*0x770b41*/
   v5 = (char *)this + 24 * a2 + 892; /*0x770b43*/
   DeleteAndZero::Alt2((DeleteAndZero *)a3); /*0x770b4c*/
   v6 = *((unsigned int *)v5 + 4); /*0x770b51*/
@@ -3591,7 +3591,7 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   else
     v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x770b75*/
   v9 = *(unsigned int *)(*((unsigned int *)v5 + 1) + 4 * v8); /*0x770b82*/
-  if ( vtable0 == 3 ) /*0x770b85*/
+  if ( ptr_0 == 3 ) /*0x770b85*/
   {
     v10 = FormatStringInt((char **)&a3, v9, 2); /*0x770b8b*/
     v11 = ProcessStringAndCopy((char **)&a2, g_Str_WWD_Soviet, v10); /*0x770b9a*/
@@ -4198,8 +4198,8 @@ char AnimClass::sub_773590(int a2, int a3)
 
   this->u32_410 = a2; /*0x77359e*/
   Debug::Log(); /*0x7735a4*/
-  unsigned int *v4 = &this->vtable3; // esi /*0x7735ac*/
-  if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, &this->vtable3) >= 0 ) /*0x7735c6*/
+  unsigned int *v4 = &this->ptr_8; // esi /*0x7735ac*/
+  if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, &this->ptr_8) >= 0 ) /*0x7735c6*/
   {
     Debug::Log(); /*0x7735cd*/
     (*(void (__stdcall **)(unsigned int, unsigned int *))(*(unsigned int *)this->u32_16)(*v4, this); /*0x7735db*/

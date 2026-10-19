@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct TauntCommandClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int TauntCommandClass_field_00;  // 0x4
     int TauntCommandClass_field_04;  // 0x8
 // --- flat members (BEGIN) ---

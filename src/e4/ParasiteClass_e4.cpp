@@ -469,7 +469,7 @@ LABEL_20:
             }
           }
 LABEL_47:
-          v37 = _ESI->vtable2.ptr_0; /*0x629d97*/
+          v37 = _ESI->ptr_4.ptr_0; /*0x629d97*/
           if ( v37 ) /*0x629d9c*/
           {
             if ( _ESI->creationFrame ) /*0x629d9e*/
@@ -1153,8 +1153,8 @@ LABEL_50:
   v42 = this->u32_AC; /*0x62c316*/
   v43 = *(unsigned int *)(v42 + 736) /*0x62c33f*/
       - *((unsigned __int16 *)&this->u32_94)
-      + (*(int (**)(char *))(this->vtable2 + 16))(&this->vtable2);
-  if ( !(v43 % (*(char *)(v42 + 779) + ((*(int (**)(char *))(this->vtable2 + 16))(&this->HouseClass_6C) & 1))) ) /*0x62c355*/
+      + (*(int (**)(char *))(this->ptr_4 + 16))(&this->ptr_4);
+  if ( !(v43 % (*(char *)(v42 + 779) + ((*(int (**)(char *))(this->ptr_4 + 16))(&this->HouseClass_6C) & 1))) ) /*0x62c355*/
     ++this->HouseClass_6C; /*0x62c35b*/
   result = this->HouseClass_6C; /*0x62c361*/
   if ( result == *(unsigned char *)(v42 + 777) ) /*0x62c36f*/

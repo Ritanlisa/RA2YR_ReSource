@@ -428,12 +428,12 @@ LABEL_28:
     return 0; /*0x5e6e20*/
   }
   v29 = a5; /*0x5e6e44*/
-  v30 = &a5->vtable3; /*0x5e6e51*/
+  v30 = &a5->ptr_8; /*0x5e6e51*/
   DlgCtrlID = GetDlgCtrlID(*(HWND *)a5); /*0x5e6e58*/
   WideString::Assign_Alt(v30, 0); /*0x5e6e5a*/
   if ( DlgCtrlID == 1771 ) /*0x5e6e65*/
   {
-    v32 = v29->vtable2; /*0x5e6e67*/
+    v32 = v29->ptr_4; /*0x5e6e67*/
     if ( v32 != -1 ) /*0x5e6e6d*/
     {
       v33 = (WideString *)SendDlgItemMessageA((HWND)this, 1771, 0x199u, v32, 0); /*0x5e6e7d*/

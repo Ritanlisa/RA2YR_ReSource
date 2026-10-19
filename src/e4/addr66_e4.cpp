@@ -1988,14 +1988,14 @@ char E4Recv_663CD0::sub_663CD0(unsigned char * a2)
   int v7 = 0; // eax /*0x663d16*/
   if ( uniqueId > 0 ) /*0x663d1a*/
   {
-    unsigned int *vtable1 = this->M4; // esi /*0x663d1c*/
+    unsigned int *ptr_0 = this->M4; // esi /*0x663d1c*/
     unsigned int *i; // edx
-    for ( i = vtable1; v10 != *(unsigned int *)(*i + 33); ++i ) /*0x663d23*/
+    for ( i = ptr_0; v10 != *(unsigned int *)(*i + 33); ++i ) /*0x663d23*/
     {
       if ( ++v7 >= uniqueId ) /*0x663d32*/
         return 0; /*0x663d3d*/
     }
-    return *(unsigned char *)(vtable1[v7] + 40); /*0x663d43*/
+    return *(unsigned char *)(ptr_0[v7] + 40); /*0x663d43*/
   }
   return v5; /*0x663cdf*/
 

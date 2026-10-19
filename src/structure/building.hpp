@@ -588,7 +588,7 @@ int CanAcceptType(int,int);  // 0x452670
 
 protected:
     BuildingClass() noexcept;
-    void* vtable1;  // 0x0
+    void* ptr_0_2;  // 0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ctor(int a1);  // 0x43B680
     int HandleFactoryCommand();  // 0x443410
@@ -680,7 +680,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_710;  // 0x710 (canon-mt)
     unsigned char u8_6F9;  // 0x6F9 (canon-mt)
     unsigned char u8_6FA;  // 0x6FA (canon-mt)
-    void* vtable4;  // 0xC (canon-mt)
+    void* ptr_12;  // 0xC (canon-mt)
 
     unsigned char Audio7_d[1];  /* AudioController */  // X10 supply (csp_canon_members)
     unsigned int BuildingClass_field_5FC;  // X10 supply (csp_canon_members)
@@ -811,8 +811,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned char u8_FE;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
     unsigned int visibilityFlags;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
+    void* ptr_4_2;  // X10 supply (csp_canon_members)
+    void* ptr_8_2;  // X10 supply (csp_canon_members)
 
 
     void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]

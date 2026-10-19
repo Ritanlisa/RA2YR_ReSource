@@ -16,9 +16,9 @@ struct HouseClass;  // fix_fwd_type_supply
 
 struct CellClass {
     void* RevealFogRect_ph;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     LightConvertClass* lightConvert;  // 0x10
     void* isoTileTypeIndex;  // 0x14
     TagClass* attachedTag;  // 0x18

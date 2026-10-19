@@ -93,9 +93,9 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     int *v14; // eax
     v14 = (int *)(ClipRectIntersection((RectangleStruct *)(v48), &DSurface_ViewBounds, &v39, 0, 0)); /*0x704acc*/
     v43 = *v14; /*0x704ad4*/
-    v44 = v14->vtable2; /*0x704adb*/
-    v45 = v14->vtable3; /*0x704ae2*/
-    v46 = v14->vtable4; /*0x704aef*/
+    v44 = v14->ptr_4; /*0x704adb*/
+    v45 = v14->ptr_8; /*0x704ae2*/
+    v46 = v14->ptr_C; /*0x704aef*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v43, v11); /*0x704afa*/
     int v15; // esi
     if ( *(unsigned int *)(dword_87F6C4 + 4) == 1 ) /*0x704b05*/
@@ -115,9 +115,9 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     int *v18; // eax
     v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704b80*/
     v39 = *v18; /*0x704b88*/
-    v40 = v18->vtable2; /*0x704b8f*/
-    v41 = v18->vtable3; /*0x704b9c*/
-    v42 = v18->vtable4; /*0x704ba3*/
+    v40 = v18->ptr_4; /*0x704b8f*/
+    v41 = v18->ptr_8; /*0x704b9c*/
+    v42 = v18->ptr_C; /*0x704ba3*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v15); /*0x704bae*/
     v9 = dword_886FA4; /*0x704bb1*/
   }
@@ -156,9 +156,9 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   int *v23; // eax
   v23 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704ce3*/
   v39 = *v23; /*0x704ceb*/
-  v40 = v23->vtable2; /*0x704cf2*/
-  v41 = v23->vtable3; /*0x704cf9*/
-  v42 = v23->vtable4; /*0x704d06*/
+  v40 = v23->ptr_4; /*0x704cf2*/
+  v41 = v23->ptr_8; /*0x704cf9*/
+  v42 = v23->ptr_C; /*0x704d06*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704d11*/
   v35 = -2; /*0x704d1d*/
   v36 = -2; /*0x704d21*/
@@ -173,9 +173,9 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   int *v26; // eax
   v26 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704d74*/
   v39 = *v26; /*0x704d7c*/
-  v40 = v26->vtable2; /*0x704d83*/
-  v41 = v26->vtable3; /*0x704d90*/
-  v42 = v26->vtable4; /*0x704d97*/
+  v40 = v26->ptr_4; /*0x704d83*/
+  v41 = v26->ptr_8; /*0x704d90*/
+  v42 = v26->ptr_C; /*0x704d97*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704da2*/
   if ( a8 ) /*0x704dae*/
   {
@@ -252,11 +252,11 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   int v30; // [esp+38h] [ebp-68h] BYREF
   v30 = *v9; /*0x704f61*/
   int v31; // [esp+3Ch] [ebp-64h]
-  v31 = v9->vtable2; /*0x704f68*/
+  v31 = v9->ptr_4; /*0x704f68*/
   int v32; // [esp+40h] [ebp-60h]
-  v32 = v9->vtable3; /*0x704f6f*/
+  v32 = v9->ptr_8; /*0x704f6f*/
   int v33; // [esp+44h] [ebp-5Ch]
-  v33 = v9->vtable4; /*0x704f7c*/
+  v33 = v9->ptr_C; /*0x704f7c*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
   v28 = v21 - 2; /*0x704fad*/
@@ -269,9 +269,9 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   int *v11; // eax
   v11 = (int *)(ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0)); /*0x704fe6*/
   v34 = *v11; /*0x704fee*/
-  v35 = v11->vtable2; /*0x704ff5*/
-  v36 = v11->vtable3; /*0x704ffc*/
-  v37 = v11->vtable4; /*0x705009*/
+  v35 = v11->ptr_4; /*0x704ff5*/
+  v36 = v11->ptr_8; /*0x704ffc*/
+  v37 = v11->ptr_C; /*0x705009*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v34, v7); /*0x705014*/
   int v44[4]; // [esp+70h] [ebp-30h] BYREF
   v44[0] = (int)(DSurface_ViewBounds); /*0x705028*/

@@ -15,7 +15,7 @@ struct BuildingTypeClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct PowerClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     char __pad_4[9];  // 0x4
     bool IsAllocated;  // 0xD
     char __pad_E[2];  // 0xE

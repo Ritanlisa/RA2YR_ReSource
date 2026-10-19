@@ -171,7 +171,7 @@ public:
 
 protected:
     InfantryClass() noexcept;
-    void* vtable1;  // 0x0
+    void* ptr_0_2;  // 0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetType();  // 0x484F20
     int ProcessExitQueue();  // 0x4DA030
@@ -248,9 +248,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     char unknownBool685;  // X10 supply (csp_canon_members)
     bool unknownBool68D;  // X10 supply (csp_canon_members)
     void* veterancy;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 
 
     void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]

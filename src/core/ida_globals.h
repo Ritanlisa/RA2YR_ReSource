@@ -5447,9 +5447,9 @@ extern unsigned int dword_A8B22C;
 // both ptr_0/ptr_4-3 (til) and vtable0-3 (corpus).
 struct AbstractElem {
     union { unsigned int ptr_0; unsigned int vtable0; };  // 0x0
-    union { unsigned int ptr_4; unsigned int vtable1; };  // 0x4
-    union { unsigned int ptr_8; unsigned int vtable2; };  // 0x8
-    union { unsigned int ptr_C; unsigned int vtable3; };  // 0xC
+    union { unsigned int ptr_4; unsigned int ptr_0; };  // 0x4
+    union { unsigned int ptr_8; unsigned int ptr_4; };  // 0x8
+    union { unsigned int ptr_C; unsigned int ptr_8; };  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

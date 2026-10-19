@@ -521,8 +521,8 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1)
 {
   a0->ptr_0 = (void *)*aP1; /*0x5fea3d*/
-  a0->ptr_1 = aP1->vtable2; /*0x5fea42*/
-  a0->ptr_2 = aP1->vtable3; /*0x5fea49*/
+  a0->ptr_1 = aP1->ptr_4; /*0x5fea42*/
+  a0->ptr_2 = aP1->ptr_8; /*0x5fea49*/
   return &a0->ptr_0; /*0x5fea45*/
 }
 }  // G42.18c ns repair

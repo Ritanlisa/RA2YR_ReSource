@@ -70,7 +70,7 @@ LABEL_9:
 namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4)
 {
-  return AbstractClass::SaveLoad_Prefix((int *)this->vtable1, a2, a3); /*0x74eef4*/
+  return AbstractClass::SaveLoad_Prefix((int *)this->ptr_0, a2, a3); /*0x74eef4*/
 }
 }  // G42.18c ns repair
 // 0x74EF00

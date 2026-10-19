@@ -246,7 +246,7 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
   RawFileClass::Dtor(this); /*0x432648*/
   if ( (a2 & 1) != 0 ) /*0x432652*/
     operator delete((this)); /*0x432655*/
-  return this->vtable1; /*0x43265f*/
+  return this->ptr_0; /*0x43265f*/
 }
 } // namespace gamemd
 
@@ -292,7 +292,7 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
   (this->u8_1D) = 0; /*0x477f57*/
   /* X11: vtable install elided (implicit via class virtuals 0x477f5a) — binary-proven install, was 0 */
   if ( this == (INIClass *)a2 ) /*0x477f60*/
-    return this->vtable1; /*0x477f60*/
+    return this->ptr_0; /*0x477f60*/
   TypeList_TechnoType::ddtor((_VectorClass_PAVTechnoTypeClass *)this); /*0x477f62*/
   v3 = a2->q008; /*0x477f68*/
   this->headNode[1] = v3; /*0x477f6d*/
@@ -300,24 +300,24 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
   {
     this->headNode[0] = 0; /*0x477fae*/
     (this->u8_1D) = 0; /*0x477fb1*/
-    return this->vtable1; /*0x477fb4*/
+    return this->ptr_0; /*0x477fb4*/
   }
   v4 = operator new(4 * v3); /*0x477f76*/
   this->headNode[0] = v4; /*0x477f80*/
   if ( !v4 ) /*0x477f83*/
-    return this->vtable1; /*0x477f83*/
+    return this->ptr_0; /*0x477f83*/
   v5 = this->headNode[1]; /*0x477f85*/
   v6 = 0; /*0x477f88*/
   (this->u8_1D) = 1; /*0x477f8c*/
   if ( v5 <= 0 ) /*0x477f90*/
-    return this->vtable1; /*0x477f90*/
+    return this->ptr_0; /*0x477f90*/
   do /*0x477fa4*/
   {
     *(unsigned int *)(this->headNode[0] + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x477f9b*/
     ++v6; /*0x477fa1*/
   }
   while ( v6 < this->headNode[1] ); /*0x477fa4*/
-  return this->vtable1; /*0x477fa8*/
+  return this->ptr_0; /*0x477fa8*/
 }
 } // namespace gamemd
 
@@ -457,7 +457,7 @@ unsigned int * INIClass::findSection(int a2, int a3, int a4, int a5, int a6, int
   this->sectionCount = a7; /*0x52af31*/
   *&this->unknown30 = a6; /*0x52af38*/
   /* X11: vtable install elided (implicit via class virtuals 0x52af3b) — binary-proven install, was 0 */
-  return this->vtable1; /*0x52af41*/
+  return this->ptr_0; /*0x52af41*/
 }
 } // namespace gamemd
 
@@ -709,7 +709,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
     (this->u8_1D) = 0; /*0x478238*/
     /* X11: vtable install elided (implicit via VectorClass_RGBClass virtuals 0x47823b) */
     if ( this == (INIClass *)a2 ) /*0x478241*/
-      return this->vtable1; /*0x478241*/
+      return this->ptr_0; /*0x478241*/
     FilePipe_38::ddtor((int)this); /*0x478247*/
     v3 = a2->q008; /*0x47824d*/
     this->headNode[1] = v3; /*0x478252*/
@@ -717,7 +717,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
     {
       this->headNode[0] = 0; /*0x4782c6*/
       (this->u8_1D) = 0; /*0x4782c9*/
-      return this->vtable1; /*0x4782cc*/
+      return this->ptr_0; /*0x4782cc*/
     }
     v4 = operator new(3 * v3); /*0x47825b*/
     if ( v4 ) /*0x478265*/
@@ -743,12 +743,12 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
     }
     this->headNode[0] = v4; /*0x478286*/
     if ( !v4 ) /*0x478289*/
-      return this->vtable1; /*0x478289*/
+      return this->ptr_0; /*0x478289*/
     v7 = this->headNode[1]; /*0x47828b*/
     v8 = 0; /*0x47828e*/
     (this->u8_1D) = 1; /*0x478292*/
     if ( v7 <= 0 ) /*0x478296*/
-      return this->vtable1; /*0x478296*/
+      return this->ptr_0; /*0x478296*/
     v9 = 0; /*0x478298*/
     do /*0x4782bb*/
     {
@@ -760,7 +760,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
       *(unsigned char *)(v11 + 2) = *(unsigned char *)(v10 + 2); /*0x4782b3*/
     }
     while ( v8 < this->headNode[1] ); /*0x4782bb*/
-    return this->vtable1; /*0x4782bf*/
+    return this->ptr_0; /*0x4782bf*/
 }
 } // namespace gamemd
 

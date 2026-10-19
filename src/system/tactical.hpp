@@ -229,7 +229,7 @@ protected:
     void* lastJumpjetMapCoords;  // 0x0 (no offset truth)
     unsigned char m_1[4];  // 0x1
     void* team;  // 0x0 (no offset truth)
-    void* vtable1;  // 0x0 (no offset truth)
+    void* ptr_0;  // 0x0 (no offset truth)
     void* RadarClass_field_0x0;  // 0x0 (no offset truth)  G42.34 T11: PixelToCellCheck body 0x653760 (RadarClass-dialect this) stores/returns &this->RadarClass_field_0x0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FillScanlinesTransparent(int a1, int a2, int a3, int a4);  // 0x411330

@@ -11,8 +11,8 @@ struct Coord;  // fix_fwd_type_supply
 struct TeleportLocomotionClass;  // fix_fwd_type_supply
 
 struct JumpjetLocomotionClass {
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
     void* Owner;  // 0x8
     void* LinkedTo;  // 0xC
     char Powered[1];  // 0x10
@@ -20,7 +20,7 @@ struct JumpjetLocomotionClass {
     unsigned char __pad_012;  // 0x12
     char __pad_13[1];  // 0x13
     void* RefCount;  // 0x14
-    void* vtable3;  // 0x18
+    void* ptr_8;  // 0x18
     char Speed[4];  // 0x1C
     int Climb;  // 0x20
     float Crash;  // 0x24

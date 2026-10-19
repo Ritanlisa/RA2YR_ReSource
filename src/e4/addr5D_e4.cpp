@@ -2130,8 +2130,8 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
   int v6; // eax
   if ( String && (v6 = wcslen(String)) != 0 ) /*0x5d30df*/
   {
-    char *vtable2; // ebp
-    vtable2 = (char *)this->M8; /*0x5d30e2*/
+    char *ptr_4; // ebp
+    ptr_4 = (char *)this->M8; /*0x5d30e2*/
     while ( 1 ) /*0x5d30e9*/
     {
       for ( LOWORD(v6) = *v3; *v3; LOWORD(v6) = *v3 ) /*0x5d30e9*/
@@ -2148,16 +2148,16 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
       {
         v6 = (int)this->M8; /*0x5d311c*/
         ++v3; /*0x5d311f*/
-        vtable2 += v6; /*0x5d3122*/
+        ptr_4 += v6; /*0x5d3122*/
       }
       if ( !*v3 ) /*0x5d3124*/
         break; /*0x5d3124*/
       v4 = 0; /*0x5d30e7*/
     }
-    char *vtable1; // edi
-    vtable1 = (char *)this->M4; /*0x5d312a*/
-    a3[3] = vtable2; /*0x5d3137*/
-    a3[2] = &vtable1[v10]; /*0x5d313a*/
+    char *ptr_0; // edi
+    ptr_0 = (char *)this->M4; /*0x5d312a*/
+    a3[3] = ptr_4; /*0x5d3137*/
+    a3[2] = &ptr_0[v10]; /*0x5d313a*/
     *a3 = 0; /*0x5d3140*/
     a3[1] = 0; /*0x5d3146*/
     return a3; /*0x5d3133*/

@@ -101,7 +101,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_5C;  // X10 supply (member_lookup)
     unsigned int u32_68;  // X10 supply (member_lookup)
     unsigned int u32_6C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_CCFileClass_DEF
 

@@ -604,7 +604,7 @@ LABEL_25:
         goto LABEL_36; /*0x732abd*/
     }
     if ( v8 ) /*0x732ac1*/
-      (*(void (**)(EventClass *, int))v8->vtable1)(v8, 1); /*0x732aca*/
+      (*(void (**)(EventClass *, int))v8->ptr_0)(v8, 1); /*0x732aca*/
     v14 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x732ace*/
     if ( v14 ) /*0x732ad8*/
       v6 = (DynamicVector *)DynamicVector::Constructor_Techno(v14, 0, 0); /*0x732ae5*/
@@ -813,7 +813,7 @@ char sub_7331B0()
         if ( *(unsigned int *)v3->Count < (int)EventClass_field_0x8 /*0x733242*/
           || ((((v3->EventClass_field_0xC) >> 8) & 0xFF) || !EventClass_field_0x8)
           && (v7 = *&v3->CapacityIncrement, v7 > 0)
-          && (*(unsigned __int8 (**)(EventClass *, int, unsigned int))(v3->vtable1 + 8))(
+          && (*(unsigned __int8 (**)(EventClass *, int, unsigned int))(v3->ptr_0 + 8))(
                v3,
                (int)EventClass_field_0x8 + v7,
                0) )
@@ -834,7 +834,7 @@ char sub_7331B0()
   if ( !HeightMap ) /*0x73326a*/
   {
     if ( v3 ) /*0x733272*/
-      (*(void (**)(EventClass *, int))v3->vtable1)(v3, 1); /*0x73327a*/
+      (*(void (**)(EventClass *, int))v3->ptr_0)(v3, 1); /*0x73327a*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] = 0; /*0x73327e*/
     v11 = (DynamicVectorClass_uint *)__2_YAPAXI_Z(0x18u); /*0x733284*/
     v12 = v11; /*0x733289*/
@@ -877,7 +877,7 @@ char sub_7331B0()
                   if ( *(unsigned int *)v12->Count < (int)v15 /*0x73334c*/
                     || (((HeightMap) = ((HeightMap) & ~0xFF) | (((((v12->EventClass_field_0xC) >> 8) & 0xFF)) & 0xFF), (unsigned char)HeightMap) || !v15)
                     && (HeightMap = *&v12->CapacityIncrement, HeightMap > 0)
-                    && (LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v12->vtable1
+                    && (LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v12->ptr_0
                                                                                              + 8))(
                                               v12,
                                               (int)v15 + HeightMap,
@@ -1198,7 +1198,7 @@ int DrawUnitExperiencePopup(char a1)
     }
     LABEL_42:
     if ( v11 ) /*0x7338a9*/
-      (**(void (***)(DynamicVector *, int))v11->vtable1)(v11, 1); /*0x7338b1*/
+      (**(void (***)(DynamicVector *, int))v11->ptr_0)(v11, 1); /*0x7338b1*/
     FillUnitTooltipUI(Destination, StringCSF); /*0x7338b9*/
     v16 = 3; /*0x7338c4*/
     if ( dword_A83D4C ) /*0x7338ce*/
@@ -1277,7 +1277,7 @@ int SelectUnitsByTheme(char a1)
     {
       do /*0x733aed*/
       {
-        v6 = *(unsigned int *)(v5->vtable2 + 4 * v2); /*0x733a89*/
+        v6 = *(unsigned int *)(v5->ptr_4 + 4 * v2); /*0x733a89*/
         v7 = (const char *)((*(int (**)(int))(*(unsigned int *)v6 + 136))(v6) + 36); /*0x733a9a*/
         if ( Block && !strcmp(v7, Block) && (*(unsigned __int8 (**)(int))(*(unsigned int *)v6 + 316))(v6) ) /*0x733ad2*/
           (*(void (**)(int))(*(unsigned int *)v6 + 332))(v6); /*0x733ae0*/
@@ -1486,7 +1486,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   {
     do /*0x733e81*/
     {
-      v8 = *(unsigned int *)(v4->vtable2 + 4 * v5); /*0x733e52*/
+      v8 = *(unsigned int *)(v4->ptr_4 + 4 * v5); /*0x733e52*/
       v40 = (*(int (**)(int))(*(unsigned int *)v8 + 136))(v8) + 36; /*0x733e64*/
       if ( SelectFactionThemeMusic_Helper(v6, v40) == -1 ) /*0x733e70*/
         SelectFactionThemeMusic_Helper_734390(&v40); /*0x733e79*/
@@ -1537,7 +1537,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   {
     while ( 1 ) /*0x733f2f*/
     {
-      v17 = *(unsigned int **)(v4->vtable2 + 4 * v39); /*0x733f2f*/
+      v17 = *(unsigned int **)(v4->ptr_4 + 4 * v39); /*0x733f2f*/
       v18 = (const char *)((*(int (**)(unsigned int *))(*v17 + 136))(v17) + 36); /*0x733f43*/
       v19 = 0; /*0x733f46*/
       v43 = v37->Items; /*0x733f4d*/

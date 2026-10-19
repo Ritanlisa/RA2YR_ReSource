@@ -188,7 +188,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     v5 = aP1; /*0x75f346*/
     v16 = v2; /*0x75f34a*/
     LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
-    HIWORD(aP1) = v5->vtable2 / 256; /*0x75f372*/
+    HIWORD(aP1) = v5->ptr_4 / 256; /*0x75f372*/
     v6 = (char *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&aP1); /*0x75f391*/
     v7 = (unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
     v8 = (unsigned int *)*v7; /*0x75f39b*/

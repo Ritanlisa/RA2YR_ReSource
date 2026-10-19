@@ -67,7 +67,7 @@ void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int
   this->q008 = 0; /*0x4a0e91*/
   if ( (a2 & 1) != 0 ) /*0x4a0e98*/
     operator delete((this)); /*0x4a0e9b*/
-  return this->vtable1; /*0x4a0ea5*/
+  return this->ptr_0; /*0x4a0ea5*/
 }
 }
 // 0x4A0F20
@@ -132,7 +132,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x4a144e*/
+    (*(void (**)(_DynamicVectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x4a144e*/
   }
   v7 = this->q008; /*0x4a1451*/
   if ( v7 < this->q010 ) /*0x4a1459*/
@@ -182,13 +182,13 @@ int COMObject::FindInList(int a2) {
   v2 = this; /*0x4e1926*/
   if ( !a2 || !this ) /*0x4e192e*/
     return 0; /*0x4e1948*/
-  while ( (*(int (**)(GadgetClass *))(*(unsigned int *)v2->vtable1 + 68))(v2) != a2 ) /*0x4e1939*/
+  while ( (*(int (**)(GadgetClass *))(*(unsigned int *)v2->ptr_0 + 68))(v2) != a2 ) /*0x4e1939*/
   {
-    v2 = (GadgetClass *)(*(int (**)(GadgetClass *))(*(unsigned int *)v2->vtable1 + 4))(v2); /*0x4e1942*/
+    v2 = (GadgetClass *)(*(int (**)(GadgetClass *))(*(unsigned int *)v2->ptr_0 + 4))(v2); /*0x4e1942*/
     if ( !v2 ) /*0x4e1946*/
       return 0; /*0x4e1946*/
   }
-  return (int)v2->vtable1; /*0x4e1948*/
+  return (int)v2->ptr_0; /*0x4e1948*/
 }
 }
 // 0x4E1970
@@ -1047,7 +1047,7 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
   DeleteAndZero v13; // [esp+8h] [ebp-90h] BYREF
   DeleteAndZero v14[11]; // [esp+14h] [ebp-84h] BYREF
 
-  v5 = ((int (__thiscall *)(unsigned int))this->q010)(a2->vtable2); /*0x766ab0*/
+  v5 = ((int (__thiscall *)(unsigned int))this->q010)(a2->ptr_4); /*0x766ab0*/
   FromStringInt((char **)&Format, v5); /*0x766ab9*/
   v6 = String::GetOrEmpty_Alt(&this->q014); /*0x766acb*/
   StringCSF = GetStringCSF((char *)v6, 0, aDRa2mdpostWdtg, 161); /*0x766ad4*/
@@ -1057,15 +1057,15 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
   swprintf((wchar_t *const)&v14[0].DeleteAndZero_field_0x04, (const size_t)v8, v11); /*0x766af7*/
   if ( WideString::Length(a3) ) /*0x766b08*/
   {
-    WideString::Assign((wchar_t **)&v13.vtable2, (wchar_t *)L", "); /*0x766b1a*/
-    v9 = ConcatWString((wchar_t **)v14, a3, (const wchar_t **)&v13.vtable2); /*0x766b34*/
+    WideString::Assign((wchar_t **)&v13.ptr_4, (wchar_t *)L", "); /*0x766b1a*/
+    v9 = ConcatWString((wchar_t **)v14, a3, (const wchar_t **)&v13.ptr_4); /*0x766b34*/
     WideString::AssignConcat( /*0x766b3b*/
       (const wchar_t **)v9,
-      (wchar_t **)&v13.vtable3,
+      (wchar_t **)&v13.ptr_8,
       (wchar_t *)&v14[0].DeleteAndZero_field_0x04);
-    DeleteAndZero::Alt((DeleteAndZero *)&v13.vtable3); /*0x766b44*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v13.ptr_8); /*0x766b44*/
     DeleteAndZero::Alt(v14); /*0x766b4d*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v13.vtable2); /*0x766b56*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v13.ptr_4); /*0x766b56*/
   }
   WideString::Assign(a1, (wchar_t *)&v14[0].DeleteAndZero_field_0x04); /*0x766b69*/
   DeleteAndZero::Alt(&v13); /*0x766b72*/

@@ -64,9 +64,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool q0ED;  // X10 supply (member_lookup)
     int32_t queuedMission;  // X10 supply (csp_canon_members)
     int32_t suspendedMission;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 
     unsigned int u32_E8;  // X10 supply (member_lookup)
 };

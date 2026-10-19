@@ -548,10 +548,10 @@ public:  // g57c5 W4b supply slot
     unsigned int u32_D8;  // X10 supply (member_lookup)
     int u32_DC;  // X10 supply (member_lookup)
     unsigned int u32_E0;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 
 
     unsigned int u32_94;  // 0x94 [X55 W3 supply (render vocab)]
@@ -578,7 +578,7 @@ public:
     uint8_t AnimFile_field_0x14[4];
     uint8_t AnimFile_field_0x18[4];
     public:  // g57w20m1 supply slot
-    void* vtable1;  // 0x0 (ml 真值 AnimFile@0x0; AddRef 0x426763 读) g57w20m1
+    void* ptr_0;  // 0x0 (ml 真值 AnimFile@0x0; AddRef 0x426763 读) g57w20m1
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x4272a0 -- AnimFile::QueryInterface
@@ -832,10 +832,10 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 
     bool IsAllocated;  // X10 supply (csp_canon_members)
-    void* vtable1;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: ExplosionClass matched via T1
@@ -890,7 +890,7 @@ public:
     int q00C;  // X10 supply (member_lookup)
 
 
-    void * vtable1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x4 [X55 W3 supply (render vocab)]
 };
 // 4 methods in IDA
 class FilePipe
@@ -1090,9 +1090,9 @@ public:
     unsigned int u32_2B4;  // X10 supply (member_lookup)
     unsigned int u32_2BC;  // X10 supply (member_lookup)
     unsigned int u32_2F4;  // X10 supply (member_lookup)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 
     int u32_298;  // 0x298 [X55 W3 supply (render vocab)]
     unsigned int u32_29C;  // 0x29C [X55 W3 supply (render vocab)]
@@ -1896,8 +1896,8 @@ public:
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned int u32_34;  // X10 supply (member_lookup)
     unsigned int u32_3C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 
     int q024;  // X10 supply (member_lookup)
     unsigned int u32_38;  // X10 supply (member_lookup)
@@ -2137,7 +2137,7 @@ public:
     unsigned int u32_18;  // X10 supply (member_lookup)
     unsigned int u32_1C;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class BlowStraw
@@ -2262,7 +2262,7 @@ public:
 
     int q008;  // X10 supply (member_lookup)
     unsigned int u32_260;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 13 methods in IDA
 // CSP: CChatEventSink matched via T1
@@ -2694,7 +2694,7 @@ public:
     unsigned int u32_B4;  // X10 supply (member_lookup)
     unsigned int u32_B8;  // X10 supply (member_lookup)
     unsigned int u32_BC;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 11 methods in IDA
 // CSP: DiskLaserClass matched via T1
@@ -2738,7 +2738,7 @@ public:
     unsigned int u32_34;  // X10 supply (member_lookup)
     unsigned int u32_38;  // X10 supply (member_lookup)
     unsigned int u32_3C;  // X10 supply (member_lookup)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class DiskSpace
@@ -3242,7 +3242,7 @@ public:
     unsigned int u32_24;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 class LCWPipe_Destru
@@ -3280,7 +3280,7 @@ public:
     unsigned int u32_20;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class LCWStraw_Destru
@@ -3311,7 +3311,7 @@ public:
     unsigned int u32_24;  // X10 supply (member_lookup)
     int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 class LZOPipe_Destru
@@ -3349,7 +3349,7 @@ public:
     unsigned int u32_1C;  // X10 supply (member_lookup)
     unsigned int u32_20;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class LZOStraw_Destru
@@ -3523,7 +3523,7 @@ public:
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned int u32_30;  // X10 supply (member_lookup)
     unsigned int u32_31;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 // CSP: MSChoiceClass matched via T1
@@ -3591,7 +3591,7 @@ public:
     int q014;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)
     int u8_1C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 7 methods in IDA
 // CSP: MSOverlayAnim matched via T1
@@ -3675,7 +3675,7 @@ public:
     unsigned int u32_24;  // X10 supply (member_lookup)
     unsigned int u32_28;  // X10 supply (member_lookup)
     unsigned int u32_29;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 6 methods in IDA
 // CSP: MSPrintAnim matched via T1
@@ -3753,7 +3753,7 @@ public:
     unsigned int u32_30;  // X10 supply (member_lookup)
     unsigned int u32_3C;  // X10 supply (member_lookup)
     bool u32_F0;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 8 methods in IDA
 // CSP: MSVQAnim matched via T1
@@ -3794,7 +3794,7 @@ public:
     unsigned int u32_28;  // X10 supply (member_lookup)
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned int u32_2D;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 class Megawealth
@@ -4173,7 +4173,7 @@ public:
     unsigned int u32_30;  // X10 supply (member_lookup)
     unsigned int u32_38;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 // CSP: PacketQueue matched via T1
@@ -4244,7 +4244,7 @@ public:
     uint8_t Pipe_field_0x08[4];
     uint8_t Pipe_field_0x0C[4];
 
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
     int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]
 };
@@ -4592,7 +4592,7 @@ public:
     unsigned int u32_55;  // X10 supply (member_lookup)
     unsigned int u32_58;  // X10 supply (member_lookup)
     unsigned int u32_5C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class ShapeButtonClass_Destru
@@ -4830,7 +4830,7 @@ public:
 
     uint8_t Straw_field_0x04[4];
 
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif // GAMEMD_E4_Straw
 // 3 methods in IDA
@@ -6200,7 +6200,7 @@ public:
 
     int q00C;  // X10 supply (member_lookup)
 
-    void * vtable1;  // 0x4 [X55 W3 supply (render vocab)]
+    void * ptr_0;  // 0x4 [X55 W3 supply (render vocab)]
 };
 // 1 methods in IDA
 // CSP: VQAClass matched via T1
@@ -6291,10 +6291,10 @@ public:
     unsigned int u32_F4;  // X10 supply (member_lookup)
     unsigned int u32_F8;  // X10 supply (member_lookup)
     unsigned int u32_FC;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class VersionInfo
@@ -6551,7 +6551,7 @@ public:
     unsigned int u32_58;  // X10 supply (member_lookup)
     unsigned int u32_5C;  // X10 supply (member_lookup)
     unsigned int u32_60;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
     int q014;  // X10 supply (member_lookup)

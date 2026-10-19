@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct MapSeedClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int MapSeedClass_field_0x04;  // 0x4
     unsigned int m_8;  // 0x8
     unsigned int MapSeedClass_field_0x0C;  // 0xC

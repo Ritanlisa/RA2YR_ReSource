@@ -7,7 +7,7 @@
 namespace gamemd {
 
 struct Base64Straw {
-    char vtable1[3];  // 0x0
+    char ptr_0[3];  // 0x0
     char m_3[4];  // 0x3
     char tail_7[5];  // 0x7
 // --- flat members (BEGIN) ---

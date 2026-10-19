@@ -6,7 +6,7 @@
 
 namespace gamemd {
 struct ToggleClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

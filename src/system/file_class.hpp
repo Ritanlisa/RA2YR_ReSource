@@ -129,7 +129,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned char q054;  // X10 supply (member_lookup)
     unsigned int u32_2A;  // X10 supply (member_lookup)
     unsigned char u8_27;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_FileClass_DEF
 
@@ -197,7 +197,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned char q058;  // X10 supply (member_lookup)
     unsigned char q064;  // X10 supply (member_lookup)
     unsigned int u32_68;  // X10 supply (member_types)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_RawFileClass_DEF
 

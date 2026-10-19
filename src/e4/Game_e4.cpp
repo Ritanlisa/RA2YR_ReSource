@@ -370,7 +370,7 @@ AbstractClass * * Game::DestroyAllObjects()
     if ( !byte_B0E84C ) /*0x534484*/
     {
       qsort( /*0x534494*/
-        (void *)g_BuildingLoadQueue_Array.vtable0,
+        (void *)g_BuildingLoadQueue_Array.ptr_0,
         i,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
@@ -378,7 +378,7 @@ AbstractClass * * Game::DestroyAllObjects()
       byte_B0E84C = 1; /*0x5344a2*/
     }
     int v1; // ecx
-    v1 = *(unsigned int *)(g_BuildingLoadQueue_Array.vtable0 + 4); /*0x5344af*/
+    v1 = *(unsigned int *)(g_BuildingLoadQueue_Array.ptr_0 + 4); /*0x5344af*/
     if ( v1 ) /*0x5344b4*/
       (*(void (**)(int, int))(*(unsigned int *)v1 + 32))(v1, 1); /*0x5344ba*/
   }

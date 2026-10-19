@@ -67,7 +67,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int q1538;  // X10 supply (member_lookup)
     unsigned int u32_153C;  // X10 supply (member_lookup)
     unsigned int u32_1540;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

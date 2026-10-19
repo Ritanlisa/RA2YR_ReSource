@@ -501,7 +501,7 @@ void* DropListClass::QueryInterface(int a2) {
   DropListClass::Constructor(this); /*0x4b560e*/
   if ( (a2 & 1) != 0 ) /*0x4b5618*/
     operator delete((this)); /*0x4b561b*/
-  return this->vtable1; /*0x4b5625*/
+  return this->ptr_0; /*0x4b5625*/
 }
 }
 // 0x4C30B0
@@ -1127,7 +1127,7 @@ void* CheckListClass::toggleItem(int a2) {
   this->Capacity = 0; /*0x5571f1*/
   if ( (a2 & 1) != 0 ) /*0x5571f8*/
     operator delete((this)); /*0x5571fb*/
-  return this->vtable1; /*0x557205*/
+  return this->ptr_0; /*0x557205*/
 }
 }
 // 0x557570
@@ -1171,7 +1171,7 @@ int ListClass::Destru_vt43(int a1) {
   a1 = a1; /*0x557800*/
   if ( a1 ) /*0x557809*/
   {
-    v4 = *(unsigned int *)this->vtable1; /*0x557816*/
+    v4 = *(unsigned int *)this->ptr_0; /*0x557816*/
     v5 = this->u32_34->Draw(&this->u32_34, &a1); /*0x557819*/
     return v4->RemoveItem_0(this, v5); /*0x55781f*/
   }
@@ -1261,7 +1261,7 @@ int GadgetClass::InitControls() {
 
   if ( this->Enabled ) /*0x557be3*/
     return 0; /*0x557ca7*/
-  v2 = *(unsigned int *)this->vtable1; /*0x557bee*/
+  v2 = *(unsigned int *)this->ptr_0; /*0x557bee*/
   this->Enabled = 1; /*0x557bf3*/
   (*(void (**)(void))(v2 + 72))(); /*0x557bf7*/
   v3 = this->q058; /*0x557c03*/
@@ -1455,7 +1455,7 @@ void* ListClass::Destru_vt00(int a2) {
   GadgetClass::Dtor((ShpButtonClass *)this); /*0x5580f7*/
   if ( (a2 & 1) != 0 ) /*0x558101*/
     operator delete((this)); /*0x558104*/
-  return this->vtable1; /*0x55810e*/
+  return this->ptr_0; /*0x55810e*/
 }
 }
 // 0x558130
@@ -1474,7 +1474,7 @@ void* CheckListClass::drawList(int a2) {
   this->Capacity = 0; /*0x558161*/
   if ( (a2 & 1) != 0 ) /*0x558168*/
     operator delete((this)); /*0x55816b*/
-  return this->vtable1; /*0x558175*/
+  return this->ptr_0; /*0x558175*/
 }
 }
 // 0x5581E0
@@ -1569,7 +1569,7 @@ int CheckListClass::getItemCount(void* a1) {
 // 0x5BDAA0
 namespace gamemd { 
 int MouseClass::GetPosition() {
-  return (*((int (__thiscall **)(MouseClass *, unsigned int, unsigned int))this->vtable1 + 19))( /*0x5bdaae*/
+  return (*((int (__thiscall **)(MouseClass *, unsigned int, unsigned int))this->ptr_0 + 19))( /*0x5bdaae*/
            this,
            this->u32_5564,
            0);
@@ -2431,7 +2431,7 @@ void* MouseClass::loadCursor(int a2, int a3) {
   /* X11: vtable install elided (implicit via class virtuals 0x5bea8a) — binary-proven install, was 0 */
   this->CapacityIncrement = 10; /*0x5bea90*/
   this->q_10 = 0; /*0x5bea97*/
-  return &this->vtable1; /*0x5beaa0*/
+  return &this->ptr_0; /*0x5beaa0*/
 }
 }
 // 0x5D3A60
@@ -3005,7 +3005,7 @@ int SidebarClass::addToList(void* a1) {
       return 0; /*0x63e896*/
     SidebarClass_field_0x14 = this->CapacityIncrement; /*0x63e898*/
     if ( (int)SidebarClass_field_0x14 <= 0 /*0x63e8a8*/
-      || !(*((uint8_t (__thiscall **)(SidebarClass *, int, unsigned int))this->vtable1 + 2))(
+      || !(*((uint8_t (__thiscall **)(SidebarClass *, int, unsigned int))this->ptr_0 + 2))(
             this,
             (int)SidebarClass_field_0x14 + (unsigned int)SidebarClass_field_0x8,
             0) )
@@ -3126,8 +3126,8 @@ void PowerClass::updatePowerBarAnimation() {
       goto LABEL_8; /*0x63fef5*/
   }
   LABEL_9:
-  if ( (*(int (__stdcall **)(char *))(*&dword_A83D4C->vtable5 + 36))(&dword_A83D4C->vtable5) == this->u32_153C /*0x63ff76*/
-    && (*(int (__stdcall **)(char *))(*&dword_A83D4C->vtable5 + 32))(&dword_A83D4C->vtable5) == this->u32_1540
+  if ( (*(int (__stdcall **)(char *))(*&dword_A83D4C->ptr_5 + 36))(&dword_A83D4C->ptr_5) == this->u32_153C /*0x63ff76*/
+    && (*(int (__stdcall **)(char *))(*&dword_A83D4C->ptr_5 + 32))(&dword_A83D4C->ptr_5) == this->u32_1540
     && !(*((unsigned char *)&(this->field_1538))) )
   {
     goto LABEL_66; /*0x63ff76*/
@@ -3135,8 +3135,8 @@ void PowerClass::updatePowerBarAnimation() {
   (this->q008) = 1; /*0x63ff7c*/
   byte_884B8E = 1; /*0x63ff89*/
   MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x63ff8f*/
-  if ( (*(int (__stdcall **)(char *))(*&dword_A83D4C->vtable5 + 36))(&dword_A83D4C->vtable5) != this->u32_153C /*0x63ffc2*/
-    || (*(int (__stdcall **)(char *))(*&dword_A83D4C->vtable5 + 32))(&dword_A83D4C->vtable5) != this->u32_1540 )
+  if ( (*(int (__stdcall **)(char *))(*&dword_A83D4C->ptr_5 + 36))(&dword_A83D4C->ptr_5) != this->u32_153C /*0x63ffc2*/
+    || (*(int (__stdcall **)(char *))(*&dword_A83D4C->ptr_5 + 32))(&dword_A83D4C->ptr_5) != this->u32_1540 )
   {
     (this->q008) = 1; /*0x63ffc8*/
     *&this->q151C = 10; /*0x63ffce*/
@@ -3144,8 +3144,8 @@ void PowerClass::updatePowerBarAnimation() {
     *&this->q1514 = v45; /*0x63ffee*/
     *&this->q1518 = 3; /*0x63fff1*/
   }
-  this->u32_153C = (*(int (__stdcall **)(char *))(*&dword_A83D4C->vtable5 + 36))(&dword_A83D4C->vtable5); /*0x640004*/
-  this->u32_1540 = (*(int (__stdcall **)(char *))(*&dword_A83D4C->vtable5 + 32))(&dword_A83D4C->vtable5); /*0x640018*/
+  this->u32_153C = (*(int (__stdcall **)(char *))(*&dword_A83D4C->ptr_5 + 36))(&dword_A83D4C->ptr_5); /*0x640004*/
+  this->u32_1540 = (*(int (__stdcall **)(char *))(*&dword_A83D4C->ptr_5 + 32))(&dword_A83D4C->ptr_5); /*0x640018*/
   PowerBar::ComputeFill(&v43, &v44, &v40); /*0x64002f*/
   v7 = this->v36; /*0x64003a*/
   if ( this->field_1520 != -1 ) /*0x640043*/
@@ -3384,7 +3384,7 @@ void* PowerClass::Initialize(int a2) {
   RadarClass::Destruct((RadarClass *)this); /*0x6404b3*/
   if ( (a2 & 1) != 0 ) /*0x6404bd*/
     operator delete((this)); /*0x6404c0*/
-  return this->vtable1; /*0x6404ca*/
+  return this->ptr_0; /*0x6404ca*/
 }
 }
 // 0x6568A0
@@ -3737,7 +3737,7 @@ void* FontClass::InitMetrics(void* a1, int a2, int a3, int a4, int a5, int a6) {
   while ( v8 ); /*0x68c72d*/
   dword_B054E0->u32_304 = _strdup(a1); /*0x68c744*/
   *((unsigned short *)dword_B054E0 + 388) = *(unsigned short *)a2; /*0x68c752*/
-  *(dword_B054E0 + 778) = a2->vtable3; /*0x68c75d*/
+  *(dword_B054E0 + 778) = a2->ptr_8; /*0x68c75d*/
   *((unsigned int *)dword_B054E0 + 195) = 0; /*0x68c778*/
   *((unsigned int *)dword_B054E0 + 196) = a5; /*0x68c77e*/
   *((unsigned int *)dword_B054E0 + 197) = 16; /*0x68c784*/
@@ -4159,8 +4159,8 @@ LABEL_17:
           {
             *((unsigned int *)this + this->u32_5510 + 5395) = ProductionData->referenceCount; /*0x6a5754*/
             *((unsigned int *)this + this->u32_5510 + 5403) = ProductionData->uniqueId; /*0x6a5764*/
-            *((unsigned int *)this + this->u32_5510 + 5411) = ProductionData->vtable3; /*0x6a5774*/
-            *((unsigned int *)this + this->u32_5510 + 5419) = ProductionData->vtable4; /*0x6a5784*/
+            *((unsigned int *)this + this->u32_5510 + 5411) = ProductionData->ptr_8; /*0x6a5774*/
+            *((unsigned int *)this + this->u32_5510 + 5419) = ProductionData->ptr_C; /*0x6a5784*/
             *((unsigned int *)this + this->u32_5510 + 5427) = ProductionData->needsSave; /*0x6a5794*/
             *((unsigned int *)this + this->u32_5510 + 5435) = ProductionData->ptr_30; /*0x6a57a4*/
             __3_YAXPAX_Z(ProductionData); /*0x6a57ab*/
@@ -6029,7 +6029,7 @@ namespace gamemd {
 void* SidebarClass::initButtons() {
   void *v2; // edx
 
-  this->vtable1 = 0; /*0x6ac874*/
+  this->ptr_0 = 0; /*0x6ac874*/
   (this->__pad_004) = 0; /*0x6ac876*/
   v2 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6ac879*/
   *&this->Count = 0; /*0x6ac87f*/
@@ -6163,7 +6163,7 @@ namespace gamemd {
 int SliderClass::OnTrack(int a1) {
   int v2; // eax
 
-  v2 = *(unsigned int *)this->vtable1; /*0x6b2007*/
+  v2 = *(unsigned int *)this->ptr_0; /*0x6b2007*/
   if ( a1 ) /*0x6b2009*/
     return (*(int (__stdcall **)(int))(v2 + 140))(this->u32_34 - this->u32_48); /*0x6b2014*/
   else
@@ -6177,7 +6177,7 @@ int SliderClass::OnRelease(int a1) {
   int v3; // eax
 
   v2 = this->u32_34; /*0x6b2044*/
-  v3 = *(unsigned int *)this->vtable1; /*0x6b2049*/
+  v3 = *(unsigned int *)this->ptr_0; /*0x6b2049*/
   if ( a1 ) /*0x6b204b*/
     return (*(int (__stdcall **)(int))(v3 + 140))(v2 - 1); /*0x6b204f*/
   else
@@ -6600,7 +6600,7 @@ void* TabClass::Constructor() {
   LABEL_65:
   v35 = v35; /*0x6d022a*/
   TabClass::processTabInput(this != 0 ? &this->u32_5518 : 0);
-  return &this->vtable1; /*0x6d0248*/
+  return &this->ptr_0; /*0x6d0248*/
 }
 }
 // 0x6D02B0
@@ -7020,14 +7020,14 @@ int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
     {
       if ( !v6 ) /*0x723f12*/
       {
-        v7 = *(unsigned int *)this->vtable1; /*0x723f14*/
+        v7 = *(unsigned int *)this->ptr_0; /*0x723f14*/
         this->u32_2C = 1; /*0x723f18*/
         v7->MarkDirty(this); /*0x723f1c*/
       }
     }
     else if ( v6 ) /*0x723f23*/
     {
-      v8 = *(unsigned int *)this->vtable1; /*0x723f25*/
+      v8 = *(unsigned int *)this->ptr_0; /*0x723f25*/
       this->u32_2C = 0; /*0x723f29*/
       v8->MarkDirty(this); /*0x723f2d*/
     }
@@ -7035,7 +7035,7 @@ int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
   this->TrackCurrent(a1); /*0x723f35*/
   if ( (a1 & 0x11) != 0 ) /*0x723f3b*/
   {
-    v9 = *(unsigned int *)this->vtable1; /*0x723f3d*/
+    v9 = *(unsigned int *)this->ptr_0; /*0x723f3d*/
     this->u32_2C = 1; /*0x723f42*/
     v9->MarkDirty(this); /*0x723f46*/
     CellClass::Draw((ControlClass *)this, a1 & 0xFFFFFFEE, a2, 0); /*0x723f56*/
@@ -7054,7 +7054,7 @@ int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
       v11 = this->q030; /*0x723f81*/
       if ( v11 == 1 ) /*0x723f87*/
       {
-        v12 = *(unsigned int *)this->vtable1; /*0x723f8c*/
+        v12 = *(unsigned int *)this->ptr_0; /*0x723f8c*/
         this->u32_2D = this->u32_2D == 0; /*0x723f95*/
         this->u32_2C = 0; /*0x723f98*/
         v12->MarkDirty(this); /*0x723f9c*/
@@ -7063,7 +7063,7 @@ int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
       if ( v11 == 2 && !this->u32_2D ) /*0x723fa6*/
         this->u32_2D = 1; /*0x723fad*/
     }
-    v13 = *(unsigned int *)this->vtable1; /*0x723fb1*/
+    v13 = *(unsigned int *)this->ptr_0; /*0x723fb1*/
     this->u32_2C = 0; /*0x723fb5*/
     v13->MarkDirty(this); /*0x723fb9*/
   }
@@ -7277,7 +7277,7 @@ void* ToolTipClass::compareString(int a2) {
   this->Capacity = 0; /*0x724f21*/
   if ( (a2 & 1) != 0 ) /*0x724f28*/
     operator delete((this)); /*0x724f2b*/
-  return this->vtable1; /*0x724f35*/
+  return this->ptr_0; /*0x724f35*/
 }
 }
 // 0x72A440

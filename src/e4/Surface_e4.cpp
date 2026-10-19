@@ -523,9 +523,9 @@ int Surface::RenderRadar()
       v39 = v5; /*0x65531e*/
       v9 = (int *)(ClipRectIntersection(v50, &v39, v47, 0, 0)); /*0x655322*/
       v39 = *v9; /*0x65532b*/
-      v40 = v9->vtable2; /*0x655332*/
-      v41 = v9->vtable3; /*0x655339*/
-      v10 = v9->vtable4; /*0x65533d*/
+      v40 = v9->ptr_4; /*0x655332*/
+      v41 = v9->ptr_8; /*0x655339*/
+      v10 = v9->ptr_C; /*0x65533d*/
       v42 = v10; /*0x655342*/
       if ( v41 > 0 && v10 > 0 ) /*0x65534e*/
       {
@@ -1170,8 +1170,8 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   int *v43; // [esp+70h] [ebp+10h]
 
   v8 = a1->u32_6; /*0x70748e*/
-  v9 = a1->vtable2; /*0x707492*/
-  v41 = (__int16 *)a1->vtable3; /*0x7074a2*/
+  v9 = a1->ptr_4; /*0x707492*/
+  v41 = (__int16 *)a1->ptr_8; /*0x7074a2*/
   Surface::Construct(&v37, v9, v8); /*0x7074a6*/
   v38 = 0; /*0x7074b8*/
   /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x7074c0*/
@@ -1257,7 +1257,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v29 = 0; /*0x7076b1*/
     v23 = aP2[1]; /*0x7076bb*/
     v36[0] = *aP2 + v22; /*0x7076be*/
-    v24 = a1->vtable2; /*0x7076c8*/
+    v24 = a1->ptr_4; /*0x7076c8*/
     v36[1] = v23 + a1[1]; /*0x7076ce*/
     v36[2] = v24; /*0x7076d2*/
     v25 = *(unsigned int *)this->__pad_0; /*0x7076e3*/
@@ -1652,8 +1652,8 @@ int Surface::PixelToIndex(unsigned int * a2)
   int v3; // eax
   int v4; // ecx
 
-  v3 = *a2 - *(&this->vtable27); /*0x769342*/
-  v4 = a2[1] - *(&this->vtable28); /*0x769347*/
+  v3 = *a2 - *(&this->ptr_27); /*0x769342*/
+  v4 = a2[1] - *(&this->ptr_28); /*0x769347*/
   v3 = v3; /*0x769349*/
   v4 = v4; /*0x76934f*/
   if ( v3 < 0 /*0x76937a*/
@@ -2175,7 +2175,7 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
       v5 = (char *)&unk_89FC95; /*0x4a47b6*/
       do /*0x4a47e5*/
       {
-        v6 = (unsigned __int8)v4->vtable1; /*0x4a47bf*/
+        v6 = (unsigned __int8)v4->ptr_0; /*0x4a47bf*/
         v9 = v4->__pad_0[1]; /*0x4a47c5*/
         v7 = &v4->__pad_0[2]; /*0x4a47c9*/
         v5 += 4; /*0x4a47cc*/
@@ -2216,7 +2216,7 @@ unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, v
   aP1->Width = aP2; /*0x4aec6a*/
   aP1->Height = a3; /*0x4aec6d*/
   /* X11: vtable install elided (implicit via Surface virtuals 0x4aec70) */
-  return aP1->vtable1; /*0x4aec76*/
+  return aP1->ptr_0; /*0x4aec76*/
 
 }
 }  // G42.18c ns repair

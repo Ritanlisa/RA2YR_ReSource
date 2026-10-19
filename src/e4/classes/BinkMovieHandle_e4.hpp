@@ -9,7 +9,7 @@ namespace gamemd {
 struct DSurface;  // fix_fwd_type_supply
 
 struct BinkMovieHandle {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     char* tempPath;  // 0x4
     DSurface* renderTarget;  // 0x8
     void* width;  // 0xC

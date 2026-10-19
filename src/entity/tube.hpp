@@ -64,7 +64,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void * nextObject;  // X10 supply (csp_canon_members)
     int occupant;  // X10 supply (csp_canon_members)
     int owningHouseIndex;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

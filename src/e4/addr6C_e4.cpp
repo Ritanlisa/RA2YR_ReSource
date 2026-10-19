@@ -1551,7 +1551,7 @@ int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
   wchar_t *pVal; // ebp
   int v4; // esi
   wchar_t *v5; // edi
-  void *vtable0; // ebx
+  void *ptr_0; // ebx
   ObjectClass *v7; // eax
   wchar_t *v8; // esi
   size_t v9; // eax
@@ -1572,9 +1572,9 @@ int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
       v13 = 0; /*0x6ca208*/
       v4 = 0; /*0x6ca20d*/
       v5 = pVal; /*0x6ca20f*/
-      vtable0 = v15->AbstractClass; /*0x6ca211*/
+      ptr_0 = v15->AbstractClass; /*0x6ca211*/
       *pVal = 0; /*0x6ca213*/
-      while ( (*(int (**)(void *, wchar_t *, int))(*(unsigned int *)vtable0 + 8))(vtable0, &v14, 2) == 2 ) /*0x6ca22a*/
+      while ( (*(int (**)(void *, wchar_t *, int))(*(unsigned int *)ptr_0 + 8))(ptr_0, &v14, 2) == 2 ) /*0x6ca22a*/
       {
         if ( v14 != 10 ) /*0x6ca235*/
         {
@@ -2040,21 +2040,21 @@ char E4Recv_6C8900::sub_6C8900()
 {
 
 
-  void *vtable0 = this->AbstractClass; // eax /*0x6c8904*/
+  void *ptr_0 = this->AbstractClass; // eax /*0x6c8904*/
   if ( (int)this->AbstractClass < (int)this->M4 ) /*0x6c890b*/
     return 0; /*0x6c890d*/
   int v4; // ebp
-  v4 = 2 * (unsigned int)vtable0; /*0x6c8913*/
-  if ( 2 * (int)vtable0 < 10 ) /*0x6c891b*/
+  v4 = 2 * (unsigned int)ptr_0; /*0x6c8913*/
+  if ( 2 * (int)ptr_0 < 10 ) /*0x6c891b*/
     v4 = 10; /*0x6c891d*/
   void *v5; // edx
   v5 = __2_YAPAXI_Z(32776 * v4); /*0x6c8932*/
   memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2)); /*0x6c893d*/
   void *v7; // [esp+4h] [ebp-4h]
   v7 = v5; /*0x6c8947*/
-  void *vtable2 = this->M8; // esi /*0x6c894d*/
-  if ( vtable2 ) /*0x6c8952*/
-    memcpy(v5, vtable2, 32776 * (int)this->AbstractClass); /*0x6c8967*/
+  void *ptr_4 = this->M8; // esi /*0x6c894d*/
+  if ( ptr_4 ) /*0x6c8952*/
+    memcpy(v5, ptr_4, 32776 * (int)this->AbstractClass); /*0x6c8967*/
   __3_YAXPAX_Z(this->M8); /*0x6c8974*/
   this->M4 = (void *)v4; /*0x6c8980*/
   this->M8 = v7; /*0x6c8983*/
@@ -2468,8 +2468,8 @@ unsigned int * E4Recv_6C96E0::sub_6C96E0(unsigned int * a2, int a3)
   v6 = (char *)((char *)&v9 - (char *)v3); /*0x6c9707*/
   do /*0x6c9716*/
   {
-    v7 = *(float *)v3->vtable1 + v5) + *&v3->vtable1; /*0x6c970c*/
-    v3 = &v3->vtable2; /*0x6c970e*/
+    v7 = *(float *)v3->ptr_0 + v5) + *&v3->ptr_0; /*0x6c970c*/
+    v3 = &v3->ptr_4; /*0x6c970e*/
     --v4; /*0x6c9711*/
     *(float *)((char *)v3 + (unsigned int)v6 - 4) = v7; /*0x6c9712*/
   }
@@ -3075,7 +3075,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   this->IsAllocated = 0; /*0x6cf907*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x6cf90a) */
   if ( !a2 ) /*0x6cf910*/
-    return &this->vtable0; /*0x6cf910*/
+    return &this->ptr_0; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/
   {
     unsigned int *v7; // eax
@@ -3096,7 +3096,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
         while ( v9 ); /*0x6cf961*/
         this->Items = v7; /*0x6cf963*/
         this->IsAllocated = 1; /*0x6cf966*/
-        return &this->vtable0; /*0x6cf96f*/
+        return &this->ptr_0; /*0x6cf96f*/
       }
     }
     else
@@ -3105,7 +3105,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     }
     this->Items = v7; /*0x6cf974*/
     this->IsAllocated = 1; /*0x6cf977*/
-    return &this->vtable0; /*0x6cf97b*/
+    return &this->ptr_0; /*0x6cf97b*/
   }
   unsigned int *v4 = a3; // eax /*0x6cf91d*/
   if ( a2 - 1 >= 0 ) /*0x6cf921*/
@@ -3121,7 +3121,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     while ( v5 ); /*0x6cf92d*/
   }
   this->Items = a3; /*0x6cf92f*/
-  return &this->vtable0; /*0x6cf934*/
+  return &this->ptr_0; /*0x6cf934*/
 
 }
 } // namespace gamemd

@@ -86,7 +86,7 @@ namespace gamemd {
 int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  return (*(int (**)(_RLEBlitTransZRemapXlatAlpha_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->vtable1 + 4))( /*0x497b77*/
+  return (*(int (**)(_RLEBlitTransZRemapXlatAlpha_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->ptr_0 + 4))( /*0x497b77*/
            this,
            a2,
            a3,
@@ -106,7 +106,7 @@ namespace gamemd {
 int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  return (*(int (**)(_RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->vtable1 + 4))( /*0x4978b7*/
+  return (*(int (**)(_RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->ptr_0 + 4))( /*0x4978b7*/
            this,
            a2,
            a3,

@@ -427,7 +427,7 @@ public:
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent25AlphaZReadWarp_ushort
@@ -449,7 +449,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 14 methods in IDA
 class BlitTransLucent25AlphaZReadWrite_ushort
@@ -507,7 +507,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     int q008;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 10 methods in IDA
 class BlitTransLucent25Alpha_ushort
@@ -559,7 +559,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     int q008;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent50AlphaZReadWrite_ushort
@@ -581,7 +581,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent50AlphaZRead_ushort
@@ -602,7 +602,7 @@ public:
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent50Alpha_ushort
@@ -624,7 +624,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     int q008;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZReadWarp_ushort
@@ -646,7 +646,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     int q008;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZReadWrite_ushort
@@ -668,7 +668,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     int q008;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZRead_ushort
@@ -690,7 +690,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent75Alpha_ushort
@@ -712,7 +712,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     int q008;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransXlatAlphaZReadWrite_ushort
@@ -733,7 +733,7 @@ public:
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 25 methods in IDA
 class BlitTransXlatAlphaZRead_ushort
@@ -824,7 +824,7 @@ public:
     unsigned int m_C;  // G42.35 til-name member sync
 
     int q00C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransZRemapXlatAlpha_ushort
@@ -846,7 +846,7 @@ public:
     unsigned int m_C;  // G42.35 til-name member sync
 
     int q00C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class BlitterList
@@ -1179,7 +1179,7 @@ public:
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransLucent50AlphaZReadWarp_ushort
@@ -1240,7 +1240,7 @@ public:
     unsigned int m_8;  // G42.35 til-name member sync
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransLucent75AlphaZReadWarp_ushort
@@ -1300,7 +1300,7 @@ public:
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransXlatAlphaZReadWrite_ushort
@@ -1332,7 +1332,7 @@ public:
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransXlatAlpha_ushort
@@ -1350,7 +1350,7 @@ public:
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransZRemapXlatAlphaZReadWrite_ushort

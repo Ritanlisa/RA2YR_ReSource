@@ -152,8 +152,8 @@ int Cell::CanPlaceBuilding(unsigned int * a2)
   Coords = CellClass::GetCoords((gamemd::CellClass *)(a2), (int *)v16); /*0x43b542*/
   v10 = Math::Sqrt( /*0x43b58b*/
           (double)(v6 - *Coords) * (double)(v6 - *Coords)
-  + (double)(v7 - Coords->vtable2) * (double)(v7 - Coords->vtable2)
-  + (double)(v8 - Coords->vtable3) * (double)(v8 - Coords->vtable3));
+  + (double)(v7 - Coords->ptr_4) * (double)(v7 - Coords->ptr_4)
+  + (double)(v8 - Coords->ptr_8) * (double)(v8 - Coords->ptr_8));
   if ( (int)Math::RoundToInt(v10) > *(unsigned int *)(v4[328] + 5900) << 8 ) /*0x43b5a9*/
   {
     v2 = v12; /*0x43b5ab*/
@@ -200,7 +200,7 @@ void Cell::ApplyDamage(int aP1, int a3, int a4, char aP4)
         if ( (unsigned __int8)Audio::IsLoud(v7 + 84) ) /*0x4816b2*/
           break; /*0x4816b2*/
       }
-      Cell_field_0xE4 = Cell_field_0xE4->vtable2.vtable3; /*0x4816bb*/
+      Cell_field_0xE4 = Cell_field_0xE4->ptr_4.ptr_8; /*0x4816bb*/
       if ( !Cell_field_0xE4 ) /*0x4816c0*/
         goto LABEL_11; /*0x4816c0*/
     }

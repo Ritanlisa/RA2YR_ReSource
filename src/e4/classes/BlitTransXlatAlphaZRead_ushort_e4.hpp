@@ -7,7 +7,7 @@
 namespace gamemd {
 
 struct BlitTransXlatAlphaZRead_ushort {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     unsigned int m_4;  // 0x4
     AbstractClass* m_8;  // 0x8
     unsigned int __pad_00C;  // 0xC

@@ -209,8 +209,8 @@ int TagClass::Destroy()
 // 0x6e55c0
 int TagClass::AddTrigger(TriggerClass* a2)
 {
-  a2->nextTrigger = (int)(*(&this->vtable20));
-  *(&this->vtable20) = a2; /*0x6e55ca*/
+  a2->nextTrigger = (int)(*(&this->ptr_20));
+  *(&this->ptr_20) = a2; /*0x6e55ca*/
   return (int)(a2); /*0x6e55cd*/
 }
 bool TagClass::RemoveTrigger(TriggerClass* trigger)

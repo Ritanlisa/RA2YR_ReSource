@@ -15,7 +15,7 @@ namespace gamemd {  // G42.18 ns repair
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  return (*(int (**)(_RLEBlitTransXlat_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->vtable1 + 4))( /*0x496167*/
+  return (*(int (**)(_RLEBlitTransXlat_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->ptr_0 + 4))( /*0x496167*/
            this,
            a2,
            a3,
@@ -183,7 +183,7 @@ namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  return (*(int (**)(_RLEBlitTransZRemapXlat_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->vtable1 + 4))( /*0x496247*/
+  return (*(int (**)(_RLEBlitTransZRemapXlat_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->ptr_0 + 4))( /*0x496247*/
            this,
            a2,
            a3,
@@ -203,7 +203,7 @@ namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  return (*(int (**)(_RLEBlitTransDarken_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->vtable1 + 4))( /*0x496307*/
+  return (*(int (**)(_RLEBlitTransDarken_G *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this->ptr_0 + 4))( /*0x496307*/
            this,
            a2,
            a3,
@@ -231,7 +231,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   /* X11: vtable install elided (X67 star-deref, RHS vt_Blitter) */  /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
     __3_YAXPAX_Z(this); /*0x49a36d*/
-  return (gamemd::BlitTransLucent25Alpha_ushort *)(this->vtable1); /*0x49a377*/
+  return (gamemd::BlitTransLucent25Alpha_ushort *)(this->ptr_0); /*0x49a377*/
 
 }
 } // namespace gamemd

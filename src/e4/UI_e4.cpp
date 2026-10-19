@@ -708,8 +708,8 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
         v7 = a3; /*0x62184a*/
         do /*0x6219b1*/
         {
-          v8 = *v4 + (v28 + v4->vtable2) * ((*(int (**)(int))(*(unsigned int *)v5 + 116))(v5) / 2); /*0x62186b*/
-          v9 = v4->vtable4 / 4; /*0x621876*/
+          v8 = *v4 + (v28 + v4->ptr_4) * ((*(int (**)(int))(*(unsigned int *)v5 + 116))(v5) / 2); /*0x62186b*/
+          v9 = v4->ptr_C / 4; /*0x621876*/
           if ( v28 == 3 * v9 ) /*0x621880*/
             v19 = 1; /*0x621882*/
           if ( v28 == v9 ) /*0x62188e*/
@@ -725,7 +725,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
             {
               if ( v19 ) /*0x6218be*/
               {
-                v12 = v11 / v4->vtable3; /*0x6218c5*/
+                v12 = v11 / v4->ptr_8; /*0x6218c5*/
                 v13 = *v10; /*0x6218d8*/
                 v25 = v7; /*0x6218e7*/
                 g_GameScreenFlags = v12; /*0x6218fc*/
@@ -761,7 +761,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
           }
           ++v28; /*0x6219ad*/
         }
-        while ( v28 < v4->vtable4 ); /*0x6219b1*/
+        while ( v28 < v4->ptr_C ); /*0x6219b1*/
       }
       (*(void (**)(int))(*(unsigned int *)v5 + 96))(v5); /*0x6219bd*/
     }
@@ -1223,7 +1223,7 @@ unsigned int * E4Recv_642E00::UI_Render(unsigned int *a1, unsigned int *a2)
   unsigned int v5[4]; // [esp+10h] [ebp-10h] BYREF
 
   FoundationSize = Building::GetFoundationSize(v5, 0); /*0x642e0d*/
-  v3 = FoundationSize->vtable4; /*0x642e2b*/
+  v3 = FoundationSize->ptr_C; /*0x642e2b*/
   *a1 = FoundationSize[2] + 6; /*0x642e2e*/
   *a2 = v3 + 6; /*0x642e37*/
   return a2; /*0x642e39*/

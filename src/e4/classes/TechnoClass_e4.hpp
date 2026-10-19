@@ -25,9 +25,9 @@ struct Coord;  // fix_fwd_type_supply
 #ifndef GAMEMD_TREE_UNIVERSE
 struct TechnoClass {
     unsigned int ptr_0;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     void* uniqueId;  // 0x10
     void* abstractFlags;  // 0x14
     void* nextArrayIndex;  // 0x18

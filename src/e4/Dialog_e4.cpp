@@ -1258,7 +1258,7 @@ LABEL_5:
     else
       v8 = 0; /*0x60f843*/
     *(unsigned int *)v8 = a1; /*0x60f854*/
-    DialogClass::CopyTemplateStruct(&v8->vtable2, v13); /*0x60f856*/
+    DialogClass::CopyTemplateStruct(&v8->ptr_4, v13); /*0x60f856*/
     v8->q204 = 0; /*0x60f862*/
     v9 = dword_AC1B18(&a1) & ((1 << dword_AC1B0C) - 1); /*0x60f882*/
     v10 = *(unsigned int *)(*(unsigned int *)dword_AC1B00.__pad_0 + 4 * v9); /*0x60f884*/

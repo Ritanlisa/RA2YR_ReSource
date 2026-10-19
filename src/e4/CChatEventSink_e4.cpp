@@ -237,7 +237,7 @@ LABEL_51:
             {
               while ( !(unsigned __int8)String::Compare((String *)v20, (const char **)v33) ) /*0x7aac57*/
               {
-                v20 = v20->vtable3; /*0x7aac5d*/
+                v20 = v20->ptr_8; /*0x7aac5d*/
                 if ( !v20 ) /*0x7aac62*/
                   goto LABEL_66; /*0x7aac62*/
               }

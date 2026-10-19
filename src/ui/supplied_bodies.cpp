@@ -191,7 +191,7 @@ extern stru_A8B250_host stru_A8B250;  // data: 0xA8B250
 // G42.35: .ObjectTypeClass[N] 下标站点宿主 (e4_globals 裸 uint 与 cache 成员词汇不兼容)
 struct stru_A8EB00_host { unsigned int ObjectTypeClass[64]; };
 // G42.35: dword_A8B230[127].vtable2 下标站点宿主
-struct dword_A8B230_host { void *vtable1; void *vtable2; };
+struct dword_A8B230_host { void *ptr_0; void *ptr_4; };
 // G42.35: 体表缺席全局 (ida_globals 名 dword_887598/dword_87F5F0; stru_ 成员词汇承载)
 struct stru_887598_host { void *lineTrailer; };
 extern stru_887598_host stru_887598;  // data: 0x887598
@@ -1604,7 +1604,7 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
   this->u32_28 = 0; /*0x48e54c*/
   this->u32_24 = a2; /*0x48e553*/
   /* X11: vtable install elided (implicit via class virtuals 0x48e556) — binary-proven install, was 0 */
-  return this->vtable1; /*0x48e55e*/
+  return this->ptr_0; /*0x48e55e*/
 }
 } // namespace gamemd
 
@@ -1615,7 +1615,7 @@ unsigned int * ControlClass::CtorFromData(ControlClass * a2) {
   this->u32_24 = a2->ID; /*0x48e581*/
   this->u32_28 = a2->q028; /*0x48e587*/
   /* X11: vtable install elided (implicit via class virtuals 0x48e58a) — binary-proven install, was 0 */
-  return this->vtable1; /*0x48e592*/
+  return this->ptr_0; /*0x48e592*/
 }
 } // namespace gamemd
 
@@ -1625,7 +1625,7 @@ unsigned int * ControlClass::QueryInterface(char a2) {
   GadgetClass::Dtor((GadgetClass *)this); /*0x48e663*/
   if ( (a2 & 1) != 0 ) /*0x48e66d*/
     operator delete((this)); /*0x48e670*/
-  return this->vtable1; /*0x48e67a*/
+  return this->ptr_0; /*0x48e67a*/
 }
 } // namespace gamemd
 
@@ -1716,7 +1716,7 @@ unsigned int * ControlClass::Constructor(int a2) {
   this->u32_1E = a2->q01E; /*0x4e137b*/
   this->u32_20 = a2->q020; /*0x4e1381*/
   /* X11: vtable install elided (implicit via class virtuals 0x4e1384) — binary-proven install, was 0 */
-  return this->vtable1; /*0x4e138a*/
+  return this->ptr_0; /*0x4e138a*/
 }
 } // namespace gamemd
 
@@ -2374,7 +2374,7 @@ int ListClass::AddItem(int a2) {
     if ( this->u32_44 < v3 /*0x5576d5*/
       || (this->u32_41 || !v3)
       && (v4 = this->u32_48, v4 > 0)
-      && (*(unsigned __int8 (**)(char *, int, unsigned int))&this->u32_34->vtable3)(
+      && (*(unsigned __int8 (**)(char *, int, unsigned int))&this->u32_34->ptr_8)(
            &this->u32_34,
            v3 + v4,
            0) )
@@ -2410,7 +2410,7 @@ unsigned int * SliderClass::QueryInterface(char a2) {
   SliderClass::Destructor(this); /*0x558183*/
   if ( (a2 & 1) != 0 ) /*0x55818d*/
     operator delete((this)); /*0x558190*/
-  return this->vtable1; /*0x55819a*/
+  return this->ptr_0; /*0x55819a*/
 }
 } // namespace gamemd
 
@@ -2423,7 +2423,7 @@ int List::FindByValue() {
   v1 = 0; /*0x5943e8*/
   if ( g_MissionQueueFrame.briefing[342] <= 0 ) /*0x5943ed*/
     return 0; /*0x594406*/
-  for ( i = g_MissionQueueFrame.briefing[339]; *(List **)(i->vtable3 != this; i += 4 ) /*0x5943f5*/
+  for ( i = g_MissionQueueFrame.briefing[339]; *(List **)(i->ptr_8 != this; i += 4 ) /*0x5943f5*/
   {
     if ( ++v1 >= g_MissionQueueFrame.briefing[342] ) /*0x594404*/
       return 0; /*0x594404*/
@@ -2569,7 +2569,7 @@ LABEL_15:
     }
     v15 = this->__pad_014; /*0x5d3072*/
     this->q004 = v15->ptr_2; /*0x5d3079*/
-    this->u32_8 = v15->vtable2; /*0x5d3080*/
+    this->u32_8 = v15->ptr_4; /*0x5d3080*/
   }
   Audio::IsSoundEnabled(); /*0x5d3083*/
   v16[0] = &vt_CCFileClass; /*0x5d308c*/
@@ -2749,7 +2749,7 @@ int ListBox::AddEntries() {
 // 0x600670
 namespace gamemd {
 int ComboBoxOwnerDraw::GetWidthHeight() {
-  return *(unsigned int *)this->vtable1 * this->q004; /*0x600676*/
+  return *(unsigned int *)this->ptr_0 * this->q004; /*0x600676*/
 }
 } // namespace gamemd
 

@@ -392,7 +392,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   unsigned int *v15; // ebx
   int Capacity; // eax
   int Items; // ecx
-  void *vtable0; // eax
+  void *ptr_0; // eax
   unsigned int *v19; // edx
   int v20; // edx
   int v21; // eax
@@ -543,20 +543,20 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     {
       v15 = (unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v48); /*0x595155*/
       Capacity = v8->Capacity; /*0x595158*/
-      if ( (int)v8[1].vtable0 < Capacity ) /*0x59515d*/
+      if ( (int)v8[1].ptr_0 < Capacity ) /*0x59515d*/
         goto LABEL_36; /*0x59515d*/
       if ( !v8->IsAllocated && Capacity ) /*0x595168*/
         goto LABEL_38; /*0x595168*/
       Items = (int)v8[1].Items; /*0x59516a*/
       if ( Items <= 0 ) /*0x59516f*/
         goto LABEL_38; /*0x59516f*/
-      if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v8->vtable0 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
+      if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v8->ptr_0 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
       {
         LABEL_36:
-        vtable0 = v8[1].vtable0; /*0x595181*/
+        ptr_0 = v8[1].ptr_0; /*0x595181*/
         v19 = v8->Items; /*0x595184*/
-        v8[1].ptr_0 = &vtable0->AbstractClass_1; /*0x59518a*/
-        v19[(unsigned int)vtable0] = *v15; /*0x59518f*/
+        v8[1].ptr_0 = &ptr_0->AbstractClass_1; /*0x59518a*/
+        v19[(unsigned int)ptr_0] = *v15; /*0x59518f*/
       }
       v10 = g_MissionQueueFrame.localVariables[163]; /*0x595192*/
       LABEL_38:
@@ -568,7 +568,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   if ( !v5->q010 )
   {
     LABEL_39:
-    v20 = (int)v8[1].vtable0; /*0x59519b*/
+    v20 = (int)v8[1].ptr_0; /*0x59519b*/
     if ( v20 < v40 )
     {
       while ( 1 )
@@ -619,7 +619,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
                   __asm { fstp st } /*0x595329*/
                 v10 = g_MissionQueueFrame.localVariables[163]; /*0x59532f*/
                 ++v27; /*0x595335*/
-                v20 = (int)v39[1].vtable0; /*0x595336*/
+                v20 = (int)v39[1].ptr_0; /*0x595336*/
               }
               while ( v27 < v20 );
             }
@@ -643,24 +643,24 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
         }
         v31 = v8->Capacity; /*0x59538f*/
         v57 = (unsigned int *)(*(unsigned int *)(v5 + 4) + 4 * v47); /*0x595392*/
-        if ( (int)v8[1].vtable0 < v31 ) /*0x59539b*/
+        if ( (int)v8[1].ptr_0 < v31 ) /*0x59539b*/
           goto LABEL_72; /*0x59539b*/
         if ( !v8->IsAllocated && v31 ) /*0x5953a6*/
           goto LABEL_74; /*0x5953a6*/
         v32 = (int)v8[1].Items; /*0x5953a8*/
         if ( v32 <= 0 ) /*0x5953ad*/
           goto LABEL_74; /*0x5953ad*/
-        if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v8->vtable0 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
+        if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v8->ptr_0 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
         {
           LABEL_72:
-          v33 = v8[1].vtable0; /*0x5953bf*/
+          v33 = v8[1].ptr_0; /*0x5953bf*/
           v34 = v8->Items; /*0x5953c2*/
           v8[1].ptr_0 = &v33->AbstractClass_1; /*0x5953c8*/
           v34[(unsigned int)v33] = *v57; /*0x5953d1*/
         }
         v10 = g_MissionQueueFrame.localVariables[163]; /*0x5953d4*/
         LABEL_74:
-        v20 = (int)v8[1].vtable0; /*0x5953da*/
+        v20 = (int)v8[1].ptr_0; /*0x5953da*/
         if ( v20 >= v40 ) /*0x5953e3*/
           return &v8->q010; /*0x5953e3*/
       }
@@ -669,12 +669,12 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   }
   v21 = v8->Capacity; /*0x5951e1*/
   v22 = v5->__pad_004; /*0x5951e7*/
-  if ( (int)v8[1].vtable0 < v21 /*0x595211*/
+  if ( (int)v8[1].ptr_0 < v21 /*0x595211*/
     || (v8->IsAllocated || !v21)
     && (v23 = (int)v8[1].Items, v23 > 0)
-    && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v8->vtable0 + 2))(v8, v21 + v23, 0) )
+    && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v8->ptr_0 + 2))(v8, v21 + v23, 0) )
   {
-    v24 = v8[1].vtable0; /*0x59521c*/
+    v24 = v8[1].ptr_0; /*0x59521c*/
     v25 = v8->Items; /*0x59521f*/
     v8[1].ptr_0 = &v24->AbstractClass_1; /*0x595225*/
     v25[(unsigned int)v24] = *v22; /*0x59522a*/

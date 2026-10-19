@@ -995,7 +995,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   v37 = *(unsigned int *)&DataGlobal_87F8EC / 2; /*0x50dcd9*/
   v38 = 1; /*0x50dce3*/
   v18 = HexCoord::Convert((HexCoord *)&DataGlobal_87F7E8, v39, &v37); /*0x50dceb*/
-  v19 = v18->vtable2; /*0x50dcfd*/
+  v19 = v18->ptr_4; /*0x50dcfd*/
   v37 = smudgeTypeIndex_low - *v18; /*0x50dd00*/
   v38 = smudgeTypeIndex_high - v19; /*0x50dd06*/
   __asm /*0x50dd0a*/
@@ -1017,7 +1017,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   v37 = *(unsigned int *)&DataGlobal_87F8EC; /*0x50dd3e*/
   v38 = *(unsigned int *)&DataGlobal_87F8F0; /*0x50dd51*/
   v22 = HexCoord::Convert((HexCoord *)&DataGlobal_87F7E8, v39, &v37); /*0x50dd55*/
-  v23 = v22->vtable2; /*0x50dd61*/
+  v23 = v22->ptr_4; /*0x50dd61*/
   v37 = smudgeTypeIndex_low - *v22; /*0x50dd6c*/
   v38 = smudgeTypeIndex_high - v23; /*0x50dd70*/
   __asm /*0x50dd74*/
@@ -1039,7 +1039,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   v37 = *(unsigned int *)&DataGlobal_87F8EC / 2; /*0x50dda6*/
   v38 = 2 * *(unsigned int *)&DataGlobal_87F8F0; /*0x50ddc2*/
   v26 = HexCoord::Convert((HexCoord *)&DataGlobal_87F7E8, v39, &v37); /*0x50ddc6*/
-  v27 = v26->vtable2; /*0x50ddd2*/
+  v27 = v26->ptr_4; /*0x50ddd2*/
   v37 = smudgeTypeIndex_low - *v26; /*0x50dddd*/
   v38 = smudgeTypeIndex_high - v27; /*0x50dde1*/
   __asm /*0x50dde5*/
@@ -1061,7 +1061,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   v38 = *(unsigned int *)&DataGlobal_87F8F0; /*0x50de1d*/
   v37 = 0; /*0x50de28*/
   v29 = HexCoord::Convert((HexCoord *)&DataGlobal_87F7E8, v39, &v37); /*0x50de30*/
-  v30 = v29->vtable2; /*0x50de3e*/
+  v30 = v29->ptr_4; /*0x50de3e*/
   v37 = smudgeTypeIndex_low - *v29; /*0x50de41*/
   v38 = smudgeTypeIndex_high - v30; /*0x50de47*/
   __asm /*0x50de4b*/

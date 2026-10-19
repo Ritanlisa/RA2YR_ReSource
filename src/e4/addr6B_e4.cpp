@@ -2323,13 +2323,13 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     v50[0] = v10; /*0x6b9f80*/
     String::Assign((String *)v48, Source); /*0x6b9f87*/
     String::ToLower((String *)v48); /*0x6b9f90*/
-    v37 = v5->vtable2; /*0x6b9f95*/
+    v37 = v5->ptr_4; /*0x6b9f95*/
     v38 = 0; /*0x6b9f98*/
     *(unsigned int *)&v48[164] = 0; /*0x6b9f9c*/
     if ( v37 ) /*0x6b9fa3*/
     {
       v39 = *(void **)(*(unsigned int *)v5 /*0x6b9fbf*/
-                     + 4 * ((*(int (**)(unsigned char *))(v5 + 24))(v48) & ((1 << v5->vtable4) - 1)));
+                     + 4 * ((*(int (**)(unsigned char *))(v5 + 24))(v48) & ((1 << v5->ptr_C) - 1)));
       if ( v39 ) /*0x6b9fc4*/
       {
         while ( !(unsigned __int8)String::Compare((String *)v39, (const char **)v48) ) /*0x6b9fd4*/
@@ -2365,12 +2365,12 @@ LABEL_31:
     String::Reassign(v42, (const char **)v48); /*0x6ba059*/
     qmemcpy(&v42->ptr_4, v50, 0x304u); /*0x6ba06d*/
     *v42->u32_184.__pad_0 = 0; /*0x6ba075*/
-    v43 = (*(int (**)(unsigned char *))(v5 + 24))(v48) & ((1 << v5->vtable4) - 1); /*0x6ba08b*/
+    v43 = (*(int (**)(unsigned char *))(v5 + 24))(v48) & ((1 << v5->ptr_C) - 1); /*0x6ba08b*/
     v44 = *(unsigned int *)(*(unsigned int *)v5 + 4 * v43); /*0x6ba08d*/
     *(unsigned int *)(*(unsigned int *)v5 + 4 * v43) = v42; /*0x6ba095*/
     if ( v44 ) /*0x6ba097*/
       *v42->u32_184.__pad_0 = v44; /*0x6ba099*/
-    v45 = v5->vtable3; /*0x6ba0a2*/
+    v45 = v5->ptr_8; /*0x6ba0a2*/
     v46 = *(unsigned int *)(v5 + 4) + 1; /*0x6ba0a5*/
     *(unsigned long long *)&v48[4] = (unsigned int)v46; /*0x6ba0aa*/
     v5->ptr_2 = v46; /*0x6ba0ae*/

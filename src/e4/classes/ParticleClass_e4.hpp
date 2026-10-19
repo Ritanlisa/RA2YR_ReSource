@@ -19,11 +19,11 @@ struct HouseClass;  // fix_fwd_type_supply
 struct MSShapeAnim;  // fix_fwd_type_supply
 
 struct ParticleClass {
-    char vtable1[2];  // 0x0
+    char ptr_0[2];  // 0x0
     char ParticleClass_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     unsigned int __pad_010;  // 0x10
     int ParticleClass_field_0x14;  // 0x14
     char __pad_18[4];  // 0x18
@@ -75,7 +75,7 @@ struct ParticleClass {
     unsigned int u32_B4;  // 0xB4
     int q0B8;  // 0xB8
     int ParticleClass_field_0xBC;  // 0xBC
-    IUnknown* vtable49;  // 0xC0
+    IUnknown* ptr_C0;  // 0xC0
     int ParticleClass_field_0xC4;  // 0xC4
     int ParticleClass_field_0xC8;  // 0xC8
     int ParticleClass_field_0xCC;  // 0xCC

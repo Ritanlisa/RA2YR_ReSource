@@ -1000,7 +1000,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   unsigned int *v6; // ebx
   ComPtr *v7; // edi
   void *v8; // eax
-  void *vtable2; // eax
+  void *ptr_4; // eax
   int v10; // edi
 
   v2 = a2; /*0x76b7b1*/
@@ -1042,10 +1042,10 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   this->ptr_1 = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return &this->ptr_0; /*0x76b81c*/
-  vtable2 = this->ptr_8; /*0x76b81e*/
+  ptr_4 = this->ptr_8; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
   BYTE1(this->ptr_C) = 1; /*0x76b825*/
-  if ( (int)vtable2 <= 0 ) /*0x76b829*/
+  if ( (int)ptr_4 <= 0 ) /*0x76b829*/
     return &this->ptr_0; /*0x76b829*/
   do /*0x76b84a*/
   {
@@ -2297,7 +2297,7 @@ unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
 
   unsigned int *result = &this->AbstractClass; // eax /*0x769490*/
   char *pVal; // edx
-  pVal = (char *)this->vtable2; /*0x76949d*/
+  pVal = (char *)this->ptr_4; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
   char *v4; // ecx
   v4 = (char *)this->M8 + 1; /*0x7694aa*/
@@ -2511,7 +2511,7 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   if ( !v5 && v11 ) /*0x76ac76*/
     (**v4)(v4, 3); /*0x76ac7c*/
   this->AbstractClass_44 = 0; /*0x76ac7e*/
-  return this->vtable1; /*0x76ac83*/
+  return this->ptr_0; /*0x76ac83*/
 
 }
 } // namespace gamemd
@@ -3323,7 +3323,7 @@ unsigned int* VectorCursor::ddtor(void *a1)
 {
 
   --this->u32_8; /*0x76f192*/
-  return this->vtable1; /*0x76f195*/
+  return this->ptr_0; /*0x76f195*/
 
 }
 }  // G42.18c ns repair
@@ -3333,7 +3333,7 @@ int32_t Count::ddtor()  // G57w17h4 ret-align with Count_e4.hpp carrier decl (ra
 {
 
   --this->u32_8; /*0x76f172*/
-  return this->vtable1; /*0x76f175*/
+  return this->ptr_0; /*0x76f175*/
 
 }
 }  // G42.18c ns repair
@@ -3343,7 +3343,7 @@ unsigned int* Conflict_WorldDominationTour_26::ddtor(void *a1)
 {
 
   --this->RefCount; /*0x766fb2*/
-  return this->vtable1; /*0x766fb5*/
+  return this->ptr_0; /*0x766fb5*/
 
 }
 }  // G42.18c ns repair

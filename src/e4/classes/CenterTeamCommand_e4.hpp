@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct CenterTeamCommand {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int CenterTeamCommand_field_00;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

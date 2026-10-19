@@ -250,7 +250,7 @@ CampaignClass * MSEngine::Construct(void *a1, void *a2, void *a3, void *a4, void
   v3[2](p_MSEngine_field_0x8, 20, 0); /*0x5d1b0a*/
   (*(void (**)(char *))(this->u32_18 + 12))(&this->u32_18); /*0x5d1b11*/
   (*(void (**)(char *))(this->u32_30 + 12))(&this->u32_30); /*0x5d1b18*/
-  return this->vtable1; /*0x5d1b1b*/
+  return this->ptr_0; /*0x5d1b1b*/
 
 }
 }
@@ -486,7 +486,7 @@ int MSEngine::FindItem(unsigned int * a2)
   if ( m_10 <= 0 ) /*0x5acfcb*/
     return -1; /*0x5ad000*/
   unsigned int *i; // ecx
-  for ( i = *&this->MSEngine_field_0x4; *i != *a2 || i->vtable2 != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
+  for ( i = *&this->MSEngine_field_0x4; *i != *a2 || i->ptr_4 != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
   {
     if ( ++result >= m_10 ) /*0x5acffe*/
       return -1; /*0x5acffe*/

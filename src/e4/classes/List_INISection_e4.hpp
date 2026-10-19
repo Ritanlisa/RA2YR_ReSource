@@ -13,7 +13,7 @@
 namespace gamemd {
 
 struct List_INISection {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     GenericNode First;  // 0x4 (sentinel A; binary 12B: +8 tail below)
     unsigned int First_t8;  // 0xC
     GenericNode Last;  // 0x10 (sentinel B; +8 tail below)

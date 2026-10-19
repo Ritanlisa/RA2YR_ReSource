@@ -383,7 +383,7 @@ int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * v10, unsigned 
 {
 
   unsigned int *v7; // ecx
-  v7 = (unsigned int *)this->vtable2; /*0x53ffa0*/
+  v7 = (unsigned int *)this->ptr_4; /*0x53ffa0*/
   if ( v7->q038 < a2 ) /*0x53ffaa*/
     return 0; /*0x53ffaa*/
   int TileType; // eax

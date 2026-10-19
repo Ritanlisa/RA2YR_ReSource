@@ -1170,7 +1170,7 @@ int TeamTypeClass::FindFirstInstance()
   if ( (int)FootClass_Array.waveEffect <= 0 ) /*0x6f1f7c*/
     return 0; /*0x6f1f93*/
   ParticleSystemClass *i; // esi
-  for ( i = FootClass_Array.auxParticles1; ; i = &i->vtable2 ) /*0x6f1f7e*/
+  for ( i = FootClass_Array.auxParticles1; ; i = &i->ptr_4 ) /*0x6f1f7e*/
   {
     result = (int)i->ptr_0; /*0x6f1f84*/
     if ( *((TeamTypeClass **)i->ptr_0 + 9) == this ) /*0x6f1f89*/
@@ -1341,7 +1341,7 @@ int TeamTypeClass_28::FindItem(unsigned int * a2)
   if ( m_10 <= 0 ) /*0x6f264b*/
     return -1; /*0x6f266c*/
   unsigned int *i; // ecx
-  for ( i = *&this->q004; *i != *a2 || i->vtable2 != a2[1]; i += 2 ) /*0x6f2651*/
+  for ( i = *&this->q004; *i != *a2 || i->ptr_4 != a2[1]; i += 2 ) /*0x6f2651*/
   {
     if ( ++result >= m_10 ) /*0x6f266a*/
       return -1; /*0x6f266a*/

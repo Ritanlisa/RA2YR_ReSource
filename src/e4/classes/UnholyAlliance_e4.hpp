@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct UnholyAlliance {
-    unsigned char vtable1;  // 0x0
+    unsigned char ptr_0;  // 0x0
     char _pad_01[3];  // 0x1
     int UnholyAlliance_field_04;  // 0x4
 // --- flat members (BEGIN) ---

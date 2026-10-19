@@ -66,7 +66,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
     AbstractClass *v7; // edx
     v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
-    dword_A8B230[130].vtable0 = *(void **)&DataGlobal_A8EB00[644]; /*0x53af1b*/
+    dword_A8B230[130].ptr_0 = *(void **)&DataGlobal_A8EB00[644]; /*0x53af1b*/
     v7->ptr_0 = v9->ptr_2; /*0x53af21*/
     v7->ptr_4 = (void *)1; /*0x53af24*/
     return (RulesClass *)ScenarioClass::UpdateLighting(); /*0x53af27*/
@@ -737,9 +737,9 @@ int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshi
     v5 = v4 - Math::RoundToInt((double)v4); /*0x6cc0b4*/
     if ( !v5 ) /*0x6cc0b6*/
       this->IsCharged = 1; /*0x6cc0b8*/
-    if ( this->vtable4 == -1 ) /*0x6cc0c0*/
-      this->vtable4 = dword_A8ED84; /*0x6cc0c8*/
-    this->vtable4 = dword_A8ED84; /*0x6cc0d4*/
+    if ( this->ptr_C == -1 ) /*0x6cc0c0*/
+      this->ptr_C = dword_A8ED84; /*0x6cc0c8*/
+    this->ptr_C = dword_A8ED84; /*0x6cc0d4*/
     int v7; // [esp+Ch] [ebp-8h]
     this->u32_34 = v7; /*0x6cc0db*/
     this->u32_38 = v5; /*0x6cc0de*/
@@ -1155,7 +1155,7 @@ char SuperClass::SetOnHold(char aP1)
   {
     if ( aP1 || (result = this->u32_28, result->u8_F5) ) /*0x6cb4f9*/
     {
-      int v3 = this->vtable4; // esi /*0x6cb51c*/
+      int v3 = this->ptr_C; // esi /*0x6cb51c*/
       if ( v3 != -1 ) /*0x6cb522*/
       {
         int v4 = this->u32_38; // eax /*0x6cb524*/
@@ -1164,12 +1164,12 @@ char SuperClass::SetOnHold(char aP1)
         else
           result = v4 - ((unsigned int)dword_A8ED84 - v3); /*0x6cb538*/
         this->u32_38 = result; /*0x6cb53e*/
-        this->vtable4 = -1; /*0x6cb541*/
+        this->ptr_C = -1; /*0x6cb541*/
       }
     }
-    else if ( this->vtable4 == -1 ) /*0x6cb507*/
+    else if ( this->ptr_C == -1 ) /*0x6cb507*/
     {
-      this->vtable4 = dword_A8ED84; /*0x6cb510*/
+      this->ptr_C = dword_A8ED84; /*0x6cb510*/
       this->referenceCount = 0; /*0x6cb513*/
       (*((unsigned char *)&(result))) = 1; /*0x6cb516*/
       return result; /*0x6cb519*/

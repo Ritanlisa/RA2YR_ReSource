@@ -6,7 +6,7 @@
 
 namespace gamemd {
 struct LZOPipe {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int __pad_004;  // 0x4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

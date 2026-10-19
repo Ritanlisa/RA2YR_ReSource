@@ -120,7 +120,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
   unsigned char *v5; // eax
   AbstractClass *target; // ecx
   FactoryClass *slaveManager; // ecx
-  void (**vtable0)(FootClass *, void *, int); // edi
+  void (**ptr_0)(FootClass *, void *, int); // edi
   void *v9; // eax
   char *MissionControl; // eax
   int v11; // eax
@@ -148,9 +148,9 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         slaveManager = (FactoryClass *)a1->slaveManager; /*0x4d553d*/
         if ( slaveManager ) /*0x4d5545*/
           (slaveManager)->ResetProductionTimers(); /*0x4d5547*/
-        vtable0 = (void (**)(FootClass *, void *, int))a1->ptr_0; /*0x4d554c*/
+        ptr_0 = (void (**)(FootClass *, void *, int))a1->ptr_0; /*0x4d554c*/
         v9 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v13); /*0x4d555a*/
-        vtable0[288](a1, v9, 1); /*0x4d5562*/
+        ptr_0[288](a1, v9, 1); /*0x4d5562*/
         (*((void (**)(FootClass *, int, int))a1->ptr_0 + 122))(a1, 2, 1); /*0x4d5570*/
       }
     }
@@ -260,8 +260,8 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   }
   int Vtable3; // eax
   Vtable3 = AbstractClass::GetVtable3(pVal); /*0x517ec3*/
-  void *vtable1; // edx
-  vtable1 = g_BuildingLoadQueue_Array.?; /*0x517ec8*/
+  void *ptr_0; // edx
+  ptr_0 = g_BuildingLoadQueue_Array.?; /*0x517ec8*/
   int v10 = Vtable3; // edi /*0x517ece*/
   if ( g_BuildingLoadQueue_Array.? ) /*0x517ed2*/
   {
@@ -272,13 +272,13 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         (size_t)g_BuildingLoadQueue_Array.?,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (void *)(dword_B0E844); /*0x517ef3*/
+      ptr_0 = (void *)(dword_B0E844); /*0x517ef3*/
       dword_B0E850 = 0; /*0x517efc*/
       (byte_B0E84C) = ((byte_B0E84C) & ~0xFF) | ((1) & 0xFF); /*0x517f02*/
     }
     v17[0] = v10; /*0x517f0d*/
     int v11; // eax
-    v11 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, v17); /*0x517f18*/
+    v11 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)ptr_0, v17); /*0x517f18*/
     if ( v11 ) /*0x517f1f*/
     {
       signed int v12; // eax

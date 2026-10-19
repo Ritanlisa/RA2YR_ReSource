@@ -10,7 +10,7 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct ParticleSystemClass {
     unsigned int ptr_0;  // 0x0
-    void* vtable2;  // 0x4
+    void* ptr_4;  // 0x4
     unsigned int m_8;  // 0x8
     unsigned int m_C;  // 0xC
     AbstractClass* uniqueId;  // 0x10

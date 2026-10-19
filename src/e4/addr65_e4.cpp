@@ -1169,7 +1169,7 @@ LABEL_22:
         *(unsigned int *)Block = 0; /*0x659333*/
         v16 = Block; /*0x659335*/
       }
-      v18 = v16->vtable2; /*0x659339*/
+      v18 = v16->ptr_4; /*0x659339*/
       if ( v18
         && (*(unsigned char *)(v18 + 20) & 1) != 0
         && *(unsigned int **)((*(unsigned char *)(v18 + 20) & 1) != 0 ? v18 + 0x510 : 1296) == v16 )
@@ -1431,7 +1431,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
   ObjectClass *v19; // [esp+4h] [ebp-Ch]
   int v20; // [esp+8h] [ebp-8h]
   int v21; // [esp+Ch] [ebp-4h]
-  void *vtable0; // [esp+14h] [ebp+4h]
+  void *ptr_0; // [esp+14h] [ebp+4h]
   int v23; // [esp+18h] [ebp+8h]
 
   result = aP1; /*0x65c913*/
@@ -1467,11 +1467,11 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
     v20 = ~v11; /*0x65c96c*/
     if ( v9 + 1 > v9 ) /*0x65c970*/
     {
-      vtable0 = this->ptr_0; /*0x65c976*/
+      ptr_0 = this->ptr_0; /*0x65c976*/
       while ( 1 ) /*0x65c980*/
       {
         pN = (unsigned int)this->ptr_4; /*0x65c980*/
-        v14 = (unsigned int)vtable0; /*0x65c983*/
+        v14 = (unsigned int)ptr_0; /*0x65c983*/
         v15 = 0; /*0x65c987*/
         this->ptr_4 = &pN->AbstractClass_1; /*0x65c98c*/
         do /*0x65c9d5*/
@@ -2583,8 +2583,8 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         v22 = ObjectPlacement::CalcPosition(v16, (int *)&v49[132], v21, 0, 0, 0); /*0x65efa6*/
       }
       v14 = *v22; /*0x65efbc*/
-      v15 = v22->vtable2; /*0x65efbe*/
-      *(unsigned int *)&v49[84] = v22->vtable3; /*0x65efc9*/
+      v15 = v22->ptr_4; /*0x65efbe*/
+      *(unsigned int *)&v49[84] = v22->ptr_8; /*0x65efc9*/
       ++*(unsigned int *)v49; /*0x65efcd*/
     }
     *(unsigned int *)&v49[12] = v14; /*0x65efe0*/
@@ -2650,7 +2650,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         *(unsigned int *)&v49[4] = v29; /*0x65f135*/
         if ( v29 ) /*0x65f139*/
         {
-          (*(void (__stdcall **)(int))(v29->vtable2)(v29); /*0x65f13e*/
+          (*(void (__stdcall **)(int))(v29->ptr_4)(v29); /*0x65f13e*/
           v33 = *(unsigned int *)&v49[4]; /*0x65f141*/
           v29 = *(unsigned int *)v49; /*0x65f145*/
         }
@@ -2663,12 +2663,12 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
       }
       if ( v29 ) /*0x65f15d*/
       {
-        (*(void (__stdcall **)(int))(v29->vtable3)(v29); /*0x65f162*/
+        (*(void (__stdcall **)(int))(v29->ptr_8)(v29); /*0x65f162*/
         v33 = *(unsigned int *)&v49[4]; /*0x65f165*/
       }
       if ( v33 ) /*0x65f16b*/
       {
-        (*(void (__stdcall **)(int, unsigned int))(v33->vtable4)(v33, *v24); /*0x65f174*/
+        (*(void (__stdcall **)(int, unsigned int))(v33->ptr_C)(v33, *v24); /*0x65f174*/
         v35 = *v24; /*0x65f177*/
         if ( *v24 != *(unsigned int *)&v49[8] ) /*0x65f180*/
         {

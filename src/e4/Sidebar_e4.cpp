@@ -1712,7 +1712,7 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, v
   }
   v6 = 997 * v5; /*0x6a61bb*/
   v7 = 0; /*0x6a61be*/
-  v8 = &aP1->vtable2 * v6 + 5444; /*0x6a61c0*/
+  v8 = &aP1->ptr_4_2 * v6 + 5444; /*0x6a61c0*/
   v9 = *((unsigned int *)aP1 + v6 + 1382); /*0x6a61c7*/
   if ( v9 <= 0 ) /*0x6a61d0*/
     return 0; /*0x6a61e6*/

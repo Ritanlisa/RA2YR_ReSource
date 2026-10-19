@@ -5,6 +5,8 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/CaptureManagerClass_e4.hpp"
+#include "e4/classes/_DynamicVectorClass_PAUControlNode_e4.hpp"  // X78 seed fix
+#include "e4/classes/_VectorClass_PAUControlNode_e4.hpp"  // X78 seed fix
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/Carryall_e4.hpp"
@@ -953,17 +955,17 @@ int CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 
 // 0x472D70
 namespace gamemd {
-int CaptureManagerClass::Capture(unsigned int * a2)
+int _DynamicVectorClass_PAUControlNode::Capture(unsigned int * a2)
 {
 
 
   int m_10; // edx
-  m_10 = (int)(this->uniqueId); /*0x472d70*/
+  m_10 = this->Count; /*0x472d70*/
   int result = 0; // eax /*0x472d73*/
   if ( m_10 <= 0 ) /*0x472d78*/
     return -1; /*0x472d8f*/
   unsigned int *i; // ecx
-  for ( i = *&this->ptr_4; *i != *a2; ++i ) /*0x472d7e*/
+  for ( i = *&this->Items; *i != *a2; ++i ) /*0x472d7e*/
   {
     if ( ++result >= m_10 ) /*0x472d8d*/
       return -1; /*0x472d8d*/
@@ -1086,11 +1088,11 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
 
 // 0x472AB0
 namespace gamemd {
-unsigned int CaptureManagerClass::LoadTypeData(int a2)
+unsigned int _DynamicVectorClass_PAUControlNode::LoadTypeData(int a2)
 {
 
-  if ( ((this->vtable4) & 0xFF) ) /*0x472ab0*/
-    return (unsigned int)(a2 - *&this->ptr_4) >> 2; /*0x472ac5*/
+  if ( this->IsInitialized ) /*0x472ab0*/
+    return (unsigned int)(a2 - *&this->Items) >> 2; /*0x472ac5*/
   else
     return 0; /*0x472ab7*/
 
@@ -1099,19 +1101,19 @@ unsigned int CaptureManagerClass::LoadTypeData(int a2)
 
 // 0x472B40
 namespace gamemd {
-char CaptureManagerClass::AddRef(int a2)
+char _VectorClass_PAUControlNode::AddRef(int a2)
 {
 
 
   int m_8; // esi
-  m_8 = (int)(this->vtable3); /*0x472b42*/
+  m_8 = this->Capacity; /*0x472b42*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x472b4d*/
   {
     int v3 = 0; // edx /*0x472b4f*/
     if ( m_8 <= 0 ) /*0x472b53*/
       return 1; /*0x472b73*/
     unsigned int *v4; // eax
-    v4 = (unsigned int *)(*&this->ptr_4); /*0x472b55*/
+    v4 = (unsigned int *)(*&this->Items); /*0x472b55*/
     int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x472b5b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x472b64*/
@@ -1129,38 +1131,38 @@ char CaptureManagerClass::AddRef(int a2)
 
 // 0x472B80
 namespace gamemd {
-char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
+char _VectorClass_PAUControlNode::SetCapacity(int a2, unsigned int * a3)
 {
 
 
   if ( a2 ) /*0x472b8c*/
   {
-    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((0) & 0xFF); /*0x472b96*/
+    this->IsInitialized = 0; /*0x472b96*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x472b9c*/
       v4 = a3; /*0x472bb2*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x472bae*/
-    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x472bb6*/
+    this->IsInitialized = 1; /*0x472bb6*/
     if ( v4 ) /*0x472bba*/
     {
-      if ( *&this->ptr_4 ) /*0x472bc5*/
+      if ( *&this->Items ) /*0x472bc5*/
       {
-        int m_8 = this->vtable3; // ecx /*0x472bcc*/
+        int m_8 = this->Capacity; // ecx /*0x472bcc*/
         if ( a2 < m_8 ) /*0x472bd1*/
           m_8 = a2; /*0x472bd3*/
         int i; // eax
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->ptr_4 + 4 * i - 4) ) /*0x472bd9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x472bd9*/
           ++i; /*0x472bde*/
-        if ( (((this->vtable4) >> 8) & 0xFF) ) /*0x472beb*/
+        if ( this->IsAllocated ) /*0x472beb*/
         {
-          __3_YAXPAX_Z(*&this->ptr_4); /*0x472bf6*/
-          *&this->ptr_4 = 0; /*0x472bfe*/
+          __3_YAXPAX_Z(*&this->Items); /*0x472bf6*/
+          *&this->Items = 0; /*0x472bfe*/
         }
       }
-      *&this->ptr_4 = v4; /*0x472c07*/
-      this->ptr_8 = a2; /*0x472c0f*/
-      (this->vtable4) = ((this->vtable4) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x472c12*/
+      *&this->Items = v4; /*0x472c07*/
+      this->Capacity = a2; /*0x472c0f*/
+      this->IsAllocated = a3 == 0; /*0x472c12*/
       return 1; /*0x472c18*/
     }
     else
@@ -1179,32 +1181,32 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
 
 // 0x472C30
 namespace gamemd {
-void CaptureManagerClass::Destroy(void *a1)
+void _VectorClass_PAUControlNode::Destroy()
 {
-  if ( *(unsigned int *)&a1->m_1[3] && (((unsigned char *)&(a1->m_C))[1]) ) /*0x472c3d*/
+  if ( *&this->Items && this->IsAllocated ) /*0x472c3d*/
   {
-    operator delete((*(void **)&a1->vtable2)); /*0x472c43*/
-    *(unsigned int *)&a1->ptr_2 = 0; /*0x472c4b*/
+    operator delete((*&this->Items)); /*0x472c43*/
+    *&this->Items = 0; /*0x472c4b*/
   }
-  (((unsigned char *)&(a1->vtable4))[1]) = 0; /*0x472c4e*/
-  *(unsigned int *)&a1->ptr_3 = 0; /*0x472c51*/
+  this->IsAllocated = 0; /*0x472c4e*/
+  this->Capacity = 0; /*0x472c51*/
 }
 } // namespace gamemd
 
 // 0x472C60
 namespace gamemd {
-int CaptureManagerClass::IndexOf(unsigned int * a2)
+int _VectorClass_PAUControlNode::IndexOf(unsigned int * a2)
 {
 
 
-  if ( !((this->vtable4) & 0xFF) ) /*0x472c60*/
+  if ( !this->IsInitialized ) /*0x472c60*/
     return 0; /*0x472c68*/
-  int m_8 = this->vtable3; // edx /*0x472c6e*/
+  int m_8 = this->Capacity; // edx /*0x472c6e*/
   int result = 0; // eax /*0x472c71*/
   if ( m_8 <= 0 ) /*0x472c75*/
     return -1; /*0x472c8c*/
   unsigned int *i; // ecx
-  for ( i = *&this->vtable2; *i != *a2; ++i ) /*0x472c7b*/
+  for ( i = *&this->Items; *i != *a2; ++i ) /*0x472c7b*/
   {
     if ( ++result >= m_8 ) /*0x472c8a*/
       return -1; /*0x472c8a*/
@@ -1216,11 +1218,11 @@ int CaptureManagerClass::IndexOf(unsigned int * a2)
 
 // 0x472CA0
 namespace gamemd {
-unsigned int CaptureManagerClass::PointerToIndex(int a2)
+unsigned int _VectorClass_PAUControlNode::PointerToIndex(int a2)
 {
 
-  if ( ((this->vtable4) & 0xFF) ) /*0x472ca0*/
-    return (unsigned int)(a2 - *&this->vtable2) >> 2; /*0x472cb5*/
+  if ( this->IsInitialized ) /*0x472ca0*/
+    return (unsigned int)(a2 - *&this->Items) >> 2; /*0x472cb5*/
   else
     return 0; /*0x472ca7*/
 
@@ -1229,46 +1231,46 @@ unsigned int CaptureManagerClass::PointerToIndex(int a2)
 
 // 0x472CC0
 namespace gamemd {
-char CaptureManagerClass::Release(int a2, unsigned int * a3)
+char _DynamicVectorClass_PAUControlNode::Release(int a2, unsigned int * a3)
 {
 
 
   if ( a2 ) /*0x472ccc*/
   {
-    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((0) & 0xFF); /*0x472cd2*/
+    this->IsInitialized = 0; /*0x472cd2*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x472cd8*/
       v4 = a3; /*0x472cee*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x472cea*/
-    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x472cf2*/
+    this->IsInitialized = 1; /*0x472cf2*/
     if ( !v4 ) /*0x472cf6*/
       return 0; /*0x472d6a*/
-    if ( *&this->vtable2 ) /*0x472cf8*/
+    if ( *&this->Items ) /*0x472cf8*/
     {
-      int m_8 = this->vtable3; // ecx /*0x472cff*/
+      int m_8 = this->Capacity; // ecx /*0x472cff*/
       if ( a2 < m_8 ) /*0x472d04*/
         m_8 = a2; /*0x472d06*/
       int i; // eax
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x472d0c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x472d0c*/
         ++i; /*0x472d11*/
-      if ( (((this->vtable4) >> 8) & 0xFF) ) /*0x472d1e*/
+      if ( this->IsAllocated ) /*0x472d1e*/
       {
-        __3_YAXPAX_Z(*&this->vtable2); /*0x472d29*/
-        *&this->vtable2 = 0; /*0x472d31*/
+        __3_YAXPAX_Z(*&this->Items); /*0x472d29*/
+        *&this->Items = 0; /*0x472d31*/
       }
     }
-    *&this->vtable2 = v4; /*0x472d3a*/
-    this->vtable3 = a2; /*0x472d42*/
-    (this->vtable4) = ((this->vtable4) & ~(0xFF << 8)) | (((a3 == 0) & 0xFF) << 8); /*0x472d45*/
+    *&this->Items = v4; /*0x472d3a*/
+    this->Capacity = a2; /*0x472d42*/
+    this->IsAllocated = a3 == 0; /*0x472d45*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUControlNode *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x472d4e*/
+    (*(void (**)(_DynamicVectorClass_PAUControlNode *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x472d4e*/
   }
-  int v7 = this->vtable3; // eax /*0x472d51*/
-  if ( v7 < this->uniqueId ) /*0x472d59*/
-    this->uniqueId = v7; /*0x472d5b*/
+  int v7 = this->Capacity; // eax /*0x472d51*/
+  if ( v7 < this->Count ) /*0x472d59*/
+    this->Count = v7; /*0x472d5b*/
   return 1; /*0x472d5e*/
 
 }
@@ -1276,65 +1278,65 @@ char CaptureManagerClass::Release(int a2, unsigned int * a3)
 
 // 0x473000
 namespace gamemd {
-VectorClass_flat * CaptureManagerClass::Constructor_VectorClass_ControlNode___(unsigned int * Block, char a2)
+unsigned int * _VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___(char a2)
 {
 
-  void *v3 = *&Block->u32_100; // eax /*0x473003*/
+  void *v3 = *&this->Items; // eax /*0x473003*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x473006*/
-  if ( v3 && (Block->u32_D) ) /*0x473010*/
+  if ( v3 && this->IsAllocated ) /*0x473010*/
   {
     operator delete((v3)); /*0x473018*/
-    *&Block->u32_100 = 0; /*0x473020*/
+    *&this->Items = 0; /*0x473020*/
   }
-  (Block->u8_101) = 0; /*0x47302b*/
-  *&Block->u32_100 = 0; /*0x473031*/
+  this->IsAllocated = 0; /*0x47302b*/
+  this->Capacity = 0; /*0x473031*/
   if ( (a2 & 1) != 0 ) /*0x473038*/
-    operator delete((Block)); /*0x47303b*/
-  return Block->tail_0; /*0x473045*/
+    operator delete((this)); /*0x47303b*/
+  return (unsigned int *)this; /*0x473045*/
 }
 } // namespace gamemd
 
 // 0x473050
 namespace gamemd {
-DynamicVector * CaptureManagerClass::QueryInterface(unsigned int * Block, char a2)
+DynamicVector * _DynamicVectorClass_PAUControlNode::QueryInterface(char a2)
 {
 
-  void *v3 = *&Block->u32_100; // eax /*0x473053*/
+  void *v3 = *&this->Items; // eax /*0x473053*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x473056*/
-  if ( v3 && (Block->u32_D) ) /*0x473060*/
+  if ( v3 && this->IsAllocated ) /*0x473060*/
   {
     operator delete((v3)); /*0x473068*/
-    *&Block->u32_100 = 0; /*0x473070*/
+    *&this->Items = 0; /*0x473070*/
   }
-  (Block->u8_101) = 0; /*0x47307b*/
-  *&Block->u32_100 = 0; /*0x473081*/
+  this->IsAllocated = 0; /*0x47307b*/
+  this->Count = 0; /*0x473081*/
   if ( (a2 & 1) != 0 ) /*0x473088*/
-    operator delete((Block)); /*0x47308b*/
-  return Block->tail_0; /*0x473095*/
+    operator delete((this)); /*0x47308b*/
+  return (DynamicVector *)this; /*0x473095*/
 }
 } // namespace gamemd
 
 // 0x473140
 namespace gamemd {
-unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
+unsigned int * _VectorClass_PAUControlNode::Constructor_473140(int a2, int a3)
 {
 
-  this->vtable2 = 0; /*0x47314b*/
-  this->vtable3 = (void *)a2; /*0x47314e*/
-  (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x473151*/
-  (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x473155*/
+  this->Items = 0; /*0x47314b*/
+  this->Capacity = a2; /*0x47314e*/
+  this->IsInitialized = 1; /*0x473151*/
+  this->IsAllocated = 0; /*0x473155*/
   /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x473158*/
   if ( a2 ) /*0x47315e*/
   {
     if ( a3 ) /*0x473166*/
     {
-      this->vtable2 = (void *)a3; /*0x473168*/
-      return &this->AbstractClass; /*0x47316e*/
+      this->Items = (void *)a3; /*0x473168*/
+      return &this->ptr_0; /*0x47316e*/
     }
-    this->vtable2 = __2_YAPAXI_Z(4 * a2); /*0x47317d*/
-    (this->IsAllocated) = ((this->IsAllocated) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x473180*/
+    this->Items = __2_YAPAXI_Z(4 * a2); /*0x47317d*/
+    this->IsAllocated = 1; /*0x473180*/
   }
-  return &this->AbstractClass; /*0x47316d*/
+  return &this->ptr_0; /*0x47316d*/
 
 }
 } // namespace gamemd

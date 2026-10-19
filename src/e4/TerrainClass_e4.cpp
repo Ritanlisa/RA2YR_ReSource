@@ -1207,7 +1207,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   if ( !(unsigned __int8)ObjectClass::Deploy((ObjectClass *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
   v4 = *v3 / 256; /*0x71d03e*/
-  v5 = v3->vtable2 / 256; /*0x71d041*/
+  v5 = v3->ptr_4 / 256; /*0x71d041*/
   for ( i = 0; i < 8; ++i ) /*0x71d044*/
   {
     v7 = i & 7; /*0x71d048*/

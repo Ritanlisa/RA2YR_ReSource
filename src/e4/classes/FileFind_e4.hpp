@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct FileFind {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int FileFind_field_0x04;  // 0x4
     int FileFind_field_0x08;  // 0x8
     int FileFind_field_0x0C;  // 0xC

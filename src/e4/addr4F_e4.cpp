@@ -245,7 +245,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         {
           if ( *(unsigned char *)(*(unsigned int *)v10->ptr_0 + 492) && !*(unsigned char *)(*(unsigned int *)v10->ptr_0 + 501) ) /*0x4f19af*/
             ++v8; /*0x4f19b8*/
-          v10 = &v10->vtable2; /*0x4f19b9*/
+          v10 = &v10->ptr_4; /*0x4f19b9*/
           --v11; /*0x4f19bc*/
         }
         while ( v11 ); /*0x4f19bd*/
@@ -761,9 +761,9 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       v27 = Rect[3]; /*0x4f2e50*/
       DeleteAndZero(&a4); /*0x4f2e54*/
       v24 += *ptr_0; /*0x4f2e65*/
-      v25 += ptr_0->vtable2; /*0x4f2e77*/
+      v25 += ptr_0->ptr_4; /*0x4f2e77*/
       v16 = (unsigned __int8 *)String::GetOrEmpty_Alt(Source); /*0x4f2e7b*/
-      v21.vtable1 = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
+      v21.ptr_0 = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
       String::Assign((String *)&a4, g_INI_Key_Rate); /*0x4f2e95*/
       Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (String *)&a4, 5); /*0x4f2ead*/
       DeleteAndZero(&a4); /*0x4f2eaf*/
@@ -778,7 +778,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
                (char **)&v19,
                (char **)&v19.ptr_4,
                Int,
-               v21.vtable1);
+               v21.ptr_0);
       DeleteAndZero((ObjectClass *)&v19.ptr_4); /*0x4f2ef3*/
       DeleteAndZero((ObjectClass *)&v19); /*0x4f2efc*/
       return v8; /*0x4f2f01*/
@@ -860,7 +860,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * a
   v29 = Rect[3]; /*0x4f3239*/
   DeleteAndZero(&a4); /*0x4f323d*/
   v26 += *ptr_0; /*0x4f324e*/
-  v27 += ptr_0->vtable2; /*0x4f325b*/
+  v27 += ptr_0->ptr_4; /*0x4f325b*/
   unknown_libname_73(&v21); /*0x4f325f*/
   unknown_libname_73(&v20); /*0x4f3268*/
   unknown_libname_73(&v19); /*0x4f3271*/
@@ -1085,14 +1085,14 @@ namespace gamemd {
 int E4Recv_4F3AB0::sub_4F3AB0(int a2)
 {
 
-  int (**vtable0)(int); // edx
+  int (**ptr_0)(int); // edx
 
   int result = a2; // eax /*0x4f3ab0*/
   if ( (unsigned char)a2 != BYTE1(this->M9) ) /*0x4f3ab9*/
   {
-    vtable0 = (int (**)(int))this->AbstractClass; /*0x4f3abb*/
+    ptr_0 = (int (**)(int))this->AbstractClass; /*0x4f3abb*/
     BYTE1(this->M9) = a2; /*0x4f3abe*/
-    return vtable0[5](a2); /*0x4f3ac1*/
+    return ptr_0[5](a2); /*0x4f3ac1*/
   }
   return result; /*0x4f3ac4*/
 
@@ -1808,7 +1808,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
       v6 = sub_4F3D40((ObjectClass *)&a2); /*0x4f3cb3*/
       if ( v6 ) /*0x4f3cb7*/
       {
-        int v7 = p_uniqueId->vtable3; // ecx /*0x4f3cb9*/
+        int v7 = p_uniqueId->ptr_8; // ecx /*0x4f3cb9*/
         int v8; // eax
         if ( p_uniqueId->uniqueId < v7 /*0x4f3cdb*/
           || (p_uniqueId->u32_D || !v7)
@@ -1816,7 +1816,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
           && p_uniqueId->COMStub_Release(v7 + v8, 0) )
         {
           int v9 = p_uniqueId->uniqueId; // eax /*0x4f3ce2*/
-          int v10 = p_uniqueId->vtable2; // edx /*0x4f3ce5*/
+          int v10 = p_uniqueId->ptr_4; // edx /*0x4f3ce5*/
           p_uniqueId->uniqueId = v9 + 1; /*0x4f3ceb*/
           *(unsigned int *)(v10 + 4 * v9) = v6; /*0x4f3cee*/
         }

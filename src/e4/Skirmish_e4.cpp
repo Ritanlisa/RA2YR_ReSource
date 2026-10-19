@@ -435,12 +435,12 @@ int Skirmish::RenderPreview(HWND aP1, void *a2)
       {
         v18 = v32 /*0x640944*/
         + v34
-        * ((signed int)(1000 * (*(&v15[122].nextArrayIndex + 2 * v17) - (unsigned int)v15[122].vtable1))
-            / (int)v15[122].vtable3)
+        * ((signed int)(1000 * (*(&v15[122].nextArrayIndex + 2 * v17) - (unsigned int)v15[122].ptr_0))
+            / (int)v15[122].ptr_8)
         / 1000;
         v19 = v33 /*0x64097a*/
         + v35
-        * ((signed int)(1000 * (*(&v15[122].referenceCount + 2 * v17) - (unsigned int)v15[122].vtable2))
+        * ((signed int)(1000 * (*(&v15[122].referenceCount + 2 * v17) - (unsigned int)v15[122].ptr_4))
             / v15[122].uniqueId)
         / 1000;
         v20 = v19; /*0x64097e*/

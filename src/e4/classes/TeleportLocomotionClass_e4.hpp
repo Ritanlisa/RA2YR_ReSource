@@ -20,7 +20,7 @@ struct TeleportLocomotionClass {
     unsigned char __pad_012;  // 0x12
     char __pad_13[1];  // 0x13
     unsigned int RefCount;  // 0x14
-    void* vtable3;  // 0x18
+    void* ptr_8;  // 0x18
     char MovingDestination[12];  // 0x1C
     char LastCoords[12];  // 0x28
     bool Moving;  // 0x34

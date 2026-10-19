@@ -1162,7 +1162,7 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
   if ( *(unsigned char *)(v12[1].ironTintTimer[2] + 3606) ) /*0x73b1b0*/
   {
     if ( TechnoClass::CheckTargetCell(v12) && !TechnoClass::ScanNeighborCells(v12) /*0x73b1fb*/
-      || (v16 = (unsigned int *)Array::Get((Array *)v12, 0), *v12->vtable2.hasParachute)
+      || (v16 = (unsigned int *)Array::Get((Array *)v12, 0), *v12->ptr_4.hasParachute)
       && v16
       && (*(int (**)(unsigned int *))(*v16 + 44))(v16) == 6
       && *(unsigned char *)(v16[328] + 5821) )

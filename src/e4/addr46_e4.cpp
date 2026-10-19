@@ -129,7 +129,7 @@ char sub_46D8B0()
   int v2; // edi
   const wchar_t **v3; // esi
   char *v4; // eax
-  unsigned __int8 (**vtable0)(ObjectClass *, int); // esi
+  unsigned __int8 (**ptr_0)(ObjectClass *, int); // esi
   int PlayerSide; // eax
   int v8; // [esp-4h] [ebp-10h]
 
@@ -160,9 +160,9 @@ char sub_46D8B0()
     }
     else if ( dword_A8B23C ) /*0x46d92f*/
     {
-      vtable0 = (unsigned __int8 (**)(ObjectClass *, int))dword_A8B23C->ptr_0; /*0x46d938*/
+      ptr_0 = (unsigned __int8 (**)(ObjectClass *, int))dword_A8B23C->ptr_0; /*0x46d938*/
       PlayerSide = SessionClass::GetPlayerSide((int *)MEMORY[0xA8DA90][v2]); /*0x46d93a*/
-      if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
+      if ( !ptr_0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
         v8 = (*((int (**)(ObjectClass *))dword_A8B23C->ptr_0 + 10))(dword_A8B23C); /*0x46d958*/
         SessionClass::SetPlayerOption((int *)MEMORY[0xA8DA90][v2], v8); /*0x46d960*/

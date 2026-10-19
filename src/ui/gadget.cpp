@@ -512,7 +512,7 @@ static TextLabelResult RenderTextLabel(TextLabelResult* out, int surfaceObj,
     int yTop  = bounds[1] + yPos;
 
     // Text::Layout — compute text layout
-    TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds->vtable3);
+    TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds->ptr_8);
 
     // Apply alignment flags
     if (flags & 0x100) { // center horizontally

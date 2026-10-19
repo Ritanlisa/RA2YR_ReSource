@@ -58,7 +58,7 @@ int Session::RemoveTeam(int (***aP1)(unsigned int, int))
         if ( result < (int)v4 ) /*0x5d1db4*/
         {
           v5 = (char *)v4 - 1; /*0x5d1db6*/
-          for ( v3[4] = v5; result < (int)v3[4]; *(v3->vtable2 + result - 1) = *(v3->vtable2 + result) ) /*0x5d1dbc*/
+          for ( v3[4] = v5; result < (int)v3[4]; *(v3->ptr_4 + result - 1) = *(v3->ptr_4 + result) ) /*0x5d1dbc*/
             ++result; /*0x5d1dc1*/
         }
       }

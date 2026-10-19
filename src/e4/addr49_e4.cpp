@@ -1747,7 +1747,7 @@ int FillScoreScreenStats(IUnknown * Destination, char a2)
   result = 0; /*0x49b7e9*/
   if ( dword_A80238 <= 0 ) /*0x49b7f0*/
     return result; /*0x49b7f0*/
-  for ( i = dword_A8022C; ; i = &i->vtable2 ) /*0x49b7f6*/
+  for ( i = dword_A8022C; ; i = &i->ptr_4 ) /*0x49b7f6*/
   {
     v6 = *(unsigned int *)i->ptr_0; /*0x49b7fc*/
     if ( !*(unsigned int *)i->ptr_0 || *(unsigned char *)(*(unsigned int *)(v6 + 52) + 422) == 1 || !*(unsigned char *)(v6 + 492) ) /*0x49b810*/
@@ -2420,7 +2420,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
     {
       int v5 = v23; // esi /*0x49d723*/
       int v6 = 0; // edi /*0x49d727*/
-      while ( _strcmpi((const void *)(v5 + v24->vtable4), *(const void **)(this->M60 + 4 * v4)) ) /*0x49d748*/
+      while ( _strcmpi((const void *)(v5 + v24->ptr_C), *(const void **)(this->M60 + 4 * v4)) ) /*0x49d748*/
       {
         ++v6; /*0x49d74a*/
         v5 += 260; /*0x49d74b*/
@@ -6315,10 +6315,10 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   /* X11: vtable install elided (implicit via GenericList virtuals 0x49da8d) */
   if ( p_referenceCount ) /*0x49da94*/
   {
-    int v4 = p_referenceCount->vtable2; // ebx /*0x49da96*/
+    int v4 = p_referenceCount->ptr_4; // ebx /*0x49da96*/
     if ( v4 ) /*0x49da9b*/
     {
-      int v5 = p_referenceCount->vtable3; // edi /*0x49da9d*/
+      int v5 = p_referenceCount->ptr_8; // edi /*0x49da9d*/
       if ( v5 ) /*0x49daa2*/
       {
         v5->ptr_4 = v4; /*0x49daa4*/
@@ -6328,10 +6328,10 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
       }
     }
   }
-  int v6 = p_uniqueId->vtable2; // edi /*0x49dab6*/
+  int v6 = p_uniqueId->ptr_4; // edi /*0x49dab6*/
   p_referenceCount->ptr_3 = (int)p_uniqueId; /*0x49dab9*/
   p_referenceCount->ptr_2 = v6; /*0x49dabc*/
-  int v7 = p_uniqueId->vtable2; // edi /*0x49dabf*/
+  int v7 = p_uniqueId->ptr_4; // edi /*0x49dabf*/
   if ( v7 ) /*0x49dac4*/
     v7->ptr_3 = p_referenceCount; /*0x49dac6*/
   p_uniqueId->ptr_2 = (int)p_referenceCount; /*0x49dac9*/

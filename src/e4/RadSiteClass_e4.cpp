@@ -100,7 +100,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b423) */
       /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b42a) */
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->vtable4); /*0x65b43a*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->ptr_C); /*0x65b43a*/
   }
   return Prefix_0; /*0x65b441*/
 }

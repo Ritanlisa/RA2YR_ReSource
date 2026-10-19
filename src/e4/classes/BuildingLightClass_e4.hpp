@@ -11,9 +11,9 @@ namespace gamemd {
 #ifndef GAMEMD_CORE_OWNS_BUILDINGLIGHT
 struct BuildingLightClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
     void * ptr_C;  // 0xC
     int uniqueId;  // 0x10
     int abstractFlags;  // 0x14

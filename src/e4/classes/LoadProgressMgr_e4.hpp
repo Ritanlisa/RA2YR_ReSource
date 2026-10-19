@@ -5,7 +5,7 @@
 
 namespace gamemd {
 struct LoadProgressMgr {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     CampaignClass* __pad_004;  // 0x4
     int LoadProgressMgr_field_0x08;  // 0x8
 // --- flat members (BEGIN) ---

@@ -96,7 +96,7 @@ public:
 // === CarryoverClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class CarryoverClass {
 public:
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     void  method(unsigned int * a2);  // 0x473750
     void  QueryInterface(char a2);  // 0x473920
 };

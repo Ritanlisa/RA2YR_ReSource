@@ -318,7 +318,7 @@ protected:
     int LoadFromStream();  // 0x4af800
     // === FUNCS-MOVE (END) ===
 
-    void* vtable3;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
 
 
     unsigned int q044;  // 0x44 [X55 W3 supply (render vocab)]
@@ -452,7 +452,7 @@ protected:
     int LoadFromStream();  // 0x75c700
     // === FUNCS-MOVE (END) ===
 
-    void* vtable3;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
 };
 static_assert(sizeof(WalkLocomotionClass) == 0x3C, "WalkLocomotionClass size");
 
@@ -962,7 +962,7 @@ protected:
     int BeginMove();  // 0x69ee90
     // === FUNCS-MOVE (END) ===
 
-    void* vtable3;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
 };
 static_assert(sizeof(ShipLocomotionClass) == 0x70, "ShipLocomotionClass size");
 

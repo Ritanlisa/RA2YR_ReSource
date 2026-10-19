@@ -346,8 +346,8 @@ unsigned int * ScriptAction::GetCoords(unsigned int *a2)
                                 v7,
                                 *(unsigned char **)(*(unsigned int *)this->u32_4 + 4));
   int v3 = *ScenarioClassActionCoords; // ecx /*0x6343d6*/
-  int v4 = ScenarioClassActionCoords->vtable2; // edx /*0x6343d8*/
-  int v5 = ScenarioClassActionCoords->vtable3; // esi /*0x6343db*/
+  int v4 = ScenarioClassActionCoords->ptr_4; // edx /*0x6343d8*/
+  int v5 = ScenarioClassActionCoords->ptr_8; // esi /*0x6343db*/
   *a2 = v3; /*0x6343e4*/
   a2->u32_4 = v4; /*0x6343e6*/
   a2->u32_8 = v5; /*0x6343e9*/
@@ -367,8 +367,8 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int *a2)
                                 *(unsigned char **)(*(unsigned int *)this->u32_4 + 4));
   unsigned int v6[3]; // [esp+Ch] [ebp-Ch] BYREF
   v6[0] = *ScenarioClassActionCoords; /*0x634416*/
-  v6[1] = ScenarioClassActionCoords->vtable2; /*0x63441d*/
-  v6[2] = ScenarioClassActionCoords->vtable3; /*0x634434*/
+  v6[1] = ScenarioClassActionCoords->ptr_4; /*0x63441d*/
+  v6[2] = ScenarioClassActionCoords->ptr_8; /*0x634434*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v6, v5); /*0x634438*/
   char *v3; // edx
   v3 = (char *)DSurface_ViewBounds.field_4 + v5[1]; /*0x634452*/
@@ -1150,10 +1150,10 @@ int ScriptAction::DrawPlacementMarker()
   int v8[2]; // [esp+8h] [ebp-44h] BYREF
   unsigned int v9[3]; // [esp+10h] [ebp-3Ch] BYREF
   unsigned int v11[4]; // [esp+2Ch] [ebp-20h] BYREF
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(unsigned char **)(v5->vtable2); /*0x63ce7e*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(unsigned char **)(v5->ptr_4); /*0x63ce7e*/
   v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
-  v9[1] = ScenarioClassActionCoords->vtable2; /*0x63ce8c*/
-  v9[2] = ScenarioClassActionCoords->vtable3; /*0x63cea3*/
+  v9[1] = ScenarioClassActionCoords->ptr_4; /*0x63ce8c*/
+  v9[2] = ScenarioClassActionCoords->ptr_8; /*0x63cea3*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v9, v8); /*0x63cea7*/
   v8[0] += DSurface_ViewBounds.field_0; /*0x63cec7*/
   v11[0] = v8[0] - 4 + 1; /*0x63cedb*/
@@ -1757,7 +1757,7 @@ int ScriptAction::ExecuteMissionCmd()
     ScriptAction::GetWaypointCoords((ScriptAction *)v11, v19); /*0x6ffdb1*/
     ScriptAction::GetWaypointCoords((ScriptAction *)v12, v18); /*0x6ffdbb*/
     v8 = ScriptAction::GetWaypointCoords((ScriptAction *)v13, this); /*0x6ffdce*/
-    Object_Init(v3, (int)v12, *(unsigned int *)v8, v8->vtable2, (int)v11); /*0x6ffde6*/
+    Object_Init(v3, (int)v12, *(unsigned int *)v8, v8->ptr_4, (int)v11); /*0x6ffde6*/
     (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x6ffdee*/
   }
   return result; /*0x6ffcb0*/
@@ -1792,8 +1792,8 @@ int ObjectClass::Cleanup() {
     v2 = this->u32_AC; /*0x402226*/
     v3 = &this->q0D8; /*0x40222c*/
     AudioMixer::Init(&this->objectTypeFlags); /*0x402234*/
-    EndFrameAudioMixer(v3, &this->vtable1); /*0x402240*/
-    ObjectClass::ClearFlags2(&this->vtable1); /*0x402247*/
+    EndFrameAudioMixer(v3, &this->ptr_0); /*0x402240*/
+    ObjectClass::ClearFlags2(&this->ptr_0); /*0x402247*/
     v4 = *&this->isAliveFlag; /*0x40224c*/
     if ( v4 ) /*0x402254*/
     {

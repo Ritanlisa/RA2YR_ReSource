@@ -411,22 +411,22 @@ int Scenario::CopyLocalScenarioData()
     i += 41; /*0x4c618d*/
     ++v2; /*0x4c6190*/
   }
-  this->q034 = (void *)(*(int (**)(char *))(*&dword_A83D4C->vtable5 + 24))(&dword_A83D4C->vtable5); /*0x4c61b1*/
-  void *vtable3; // edx
-  vtable3 = dword_A8B230[127].vtable3; /*0x4c61ba*/
+  this->q034 = (void *)(*(int (**)(char *))(*&dword_A83D4C->ptr_5 + 24))(&dword_A83D4C->ptr_5); /*0x4c61b1*/
+  void *ptr_8; // edx
+  ptr_8 = dword_A8B230[127].ptr_8; /*0x4c61ba*/
   char *abstractFlags; // eax
   abstractFlags = dword_A8B230->u8_7F.abstractFlags; /*0x4c61c0*/
-  if ( vtable3 != (void *)-1 ) /*0x4c61c9*/
+  if ( ptr_8 != (void *)-1 ) /*0x4c61c9*/
   {
-    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - (int)vtable3 >= (int)abstractFlags ) /*0x4c61d5*/
+    if ( *(unsigned int *)&DataGlobal_A8EB00[644] - (int)ptr_8 >= (int)abstractFlags ) /*0x4c61d5*/
       abstractFlags = 0; /*0x4c61db*/
     else
-      abstractFlags -= *(unsigned int *)&DataGlobal_A8EB00[644] - (unsigned int)vtable3; /*0x4c61d7*/
+      abstractFlags -= *(unsigned int *)&DataGlobal_A8EB00[644] - (unsigned int)ptr_8; /*0x4c61d7*/
   }
   this->q038 = (int)(abstractFlags); /*0x4c61dd*/
   int result = *&dword_A83D4C->u32_184; // eax /*0x4c61e6*/
   *(unsigned int *)this->q03C = result; /*0x4c61ec*/
-  *&this->q040 = dword_A8B230[381].vtable3; /*0x4c61fc*/
+  *&this->q040 = dword_A8B230[381].ptr_8; /*0x4c61fc*/
   return result; /*0x4c6200*/
 
 }
@@ -1127,7 +1127,7 @@ char Scenario::LoadWithProgress(void *a1, void *a2_x)
     }
     v25 = *(unsigned int *)&dword_A8B238 != 0; /*0x684819*/
     v9 = Scenario::ComputeDialogPos(Instance, v30); /*0x68481e*/
-    TextRenderer::MeasureBuilding((int *)&stru_AC4B48.__pad_2F4[284], *v9, v9->vtable2, (int)v3, v25, v25); /*0x68482f*/
+    TextRenderer::MeasureBuilding((int *)&stru_AC4B48.__pad_2F4[284], *v9, v9->ptr_4, (int)v3, v25, v25); /*0x68482f*/
     v10 = Map_Load(); /*0x684836*/
     Scenario::SetDword30((Scenario *)&stru_AC4B48.__pad_2F4[284], v10); /*0x684841*/
     if ( dword_887628 ) /*0x68484d*/

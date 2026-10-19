@@ -285,7 +285,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f5535*/
   this->abstractFlags = 10; /*0x4f553b*/
   this->uniqueId = 0; /*0x4f553e*/
-  VectorClass::BuildingConstructor(&this->vtable7, 0, 0); /*0x4f554b*/
+  VectorClass::BuildingConstructor(&this->ptr_2C, 0, 0); /*0x4f554b*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass_BuildingClass) */  /*0x4f5550*/
   this->abstractFlags = 10; /*0x4f5556*/
   this->uniqueId = 0; /*0x4f5559*/
@@ -532,7 +532,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   do /*0x4f5c20*/
   {
     HouseClass::initDropshipData(v6); /*0x4f5c0f*/
-    v6 = &v6->vtable7; /*0x4f5c18*/
+    v6 = &v6->ptr_2C; /*0x4f5c18*/
     --v61; /*0x4f5c1c*/
   }
   while ( v61 ); /*0x4f5c20*/
@@ -673,7 +673,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
     v16 = stru_B0F720.DynamicVector_field_0x10++; /*0x4f5ff2*/
     *(unsigned int *)(*(unsigned int *)&stru_B0F720.DynamicVector_field_0x1[3] + 4 * v16) = this; /*0x4f6001*/
   }
-  *(&this->vtable4) = dword_A80238; /*0x4f6010*/
+  *(&this->ptr_C) = dword_A80238; /*0x4f6010*/
   if ( a2 ) /*0x4f6013*/
   {
     v62 = 0; /*0x4f601e*/
@@ -806,7 +806,7 @@ int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void
     wcscpy(&this->ObjectClass_1602A, *(const wchar_t **)(a2 + 96)); /*0x4f630a*/
   }
   memset(&this->u8_15F9, 0, 0x10810u); /*0x4f6324*/
-  *(&this->q076) |= 1 << *(&this->vtable4); /*0x4f633d*/
+  *(&this->q076) |= 1 << *(&this->ptr_C); /*0x4f633d*/
   v68 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 450, 1800); /*0x4f635a*/
   (v51) = ((v51) & ~0xFFFF) | ((Math::RoundToInt((double)v68 * *&dword_8871E0->u32_10A8)) & 0xFFFF); /*0x4f6368*/
   *(&this->u8_157C) = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f6373*/
@@ -920,7 +920,7 @@ int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
     (*((unsigned char *)&(result))) = 0; /*0x4fbf50*/
     return result; /*0x4fbf50*/
   }
-  if ( (*(int (__thiscall **)(int))(aP1->vtable7)(aP1) == 1 ) /*0x4fbe60*/
+  if ( (*(int (__thiscall **)(int))(aP1->ptr_7)(aP1) == 1 ) /*0x4fbe60*/
   {
     v4 = HouseClass::ClearPrimaryFactory((unsigned int *)aP1); /*0x4fbe69*/
     if ( !v4 || this->ourFlagCoords != aP1 ) /*0x4fbe79*/
@@ -1428,7 +1428,7 @@ int HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * a
             if ( ++v7 >= result ) /*0x505455*/
               goto LABEL_24; /*0x505455*/
         }
-        v10 = aP1->vtable2; /*0x505440*/
+        v10 = aP1->ptr_4; /*0x505440*/
         while ( *v10 != v8 ) /*0x505445*/
         {
           ++v9; /*0x505447*/
@@ -1443,7 +1443,7 @@ int HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * a
         if ( aP2 <= 0 ) /*0x5053a0*/
           goto LABEL_24; /*0x5053a0*/
         v5 = *((unsigned int *)dword_A83C6C + result); /*0x5053ac*/
-        result = aP1->vtable2; /*0x5053af*/
+        result = aP1->ptr_4; /*0x5053af*/
         while ( *(unsigned int *)result != v5 ) /*0x5053b4*/
         {
           ++v4; /*0x5053ba*/
@@ -3044,7 +3044,7 @@ namespace gamemd {
 int HouseClass::InitAlliances()
 {
   int nextArrayIndex; // edx
-  unsigned int *vtable3; // eax
+  unsigned int *ptr_8; // eax
   int v3; // edi
   int v4; // ebp
   int *v5; // ebx
@@ -3055,13 +3055,13 @@ int HouseClass::InitAlliances()
   nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5d74a1*/
   if ( stru_A80220.nextArrayIndex <= 0 ) /*0x5d74a9*/
     return 1; /*0x5d754a*/
-  vtable3 = stru_A80220.ptr_C; /*0x5d74af*/
+  ptr_8 = stru_A80220.ptr_C; /*0x5d74af*/
   v3 = 1; /*0x5d74b8*/
   v4 = 0; /*0x5d74bd*/
   v9 = 1; /*0x5d74bf*/
   do /*0x5d7540*/
   {
-    v5 = (int *)vtable3[v4]; /*0x5d74c3*/
+    v5 = (int *)ptr_8[v4]; /*0x5d74c3*/
     if ( !*(unsigned char *)(v5[13] + 422) ) /*0x5d74c9*/
     {
       v6 = v5[22551]; /*0x5d74d4*/
@@ -3069,12 +3069,12 @@ int HouseClass::InitAlliances()
       {
         do /*0x5d752d*/
         {
-          v7 = (int *)vtable3[v3]; /*0x5d74e8*/
-          if ( !*(unsigned char *)(v7[13] + 422) && *(unsigned int *)(vtable3[v4] + 90204) == v7[22551] ) /*0x5d7509*/
+          v7 = (int *)ptr_8[v3]; /*0x5d74e8*/
+          if ( !*(unsigned char *)(v7[13] + 422) && *(unsigned int *)(ptr_8[v4] + 90204) == v7[22551] ) /*0x5d7509*/
           {
             HouseClass::HandleAlliance(v5, (int)v7, 0); /*0x5d7510*/
             HouseClass::HandleAlliance(v7, (int)v5, 0); /*0x5d751a*/
-            vtable3 = stru_A80220.ptr_C; /*0x5d751f*/
+            ptr_8 = stru_A80220.ptr_C; /*0x5d751f*/
           }
           nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5d7524*/
           ++v3; /*0x5d752a*/
@@ -3402,7 +3402,7 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVGraphicMenuItem *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x4f29c2*/
+    (*(void (**)(_VectorClass_PAVGraphicMenuItem *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x4f29c2*/
     return 1; /*0x4f29c8*/
   }
 
@@ -3465,7 +3465,7 @@ unsigned int HouseClass_24::Write(int a2)
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_09()
 {
-  ++this->vtable3; /*0x4f2b42*/
+  ++this->ptr_8; /*0x4f2b42*/
   return this; /*0x4f2b45*/
 }
 } // namespace gamemd
@@ -3474,7 +3474,7 @@ unsigned int * HouseClass::vt_placeholder_09()
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_10()
 {
-  --this->vtable3; /*0x4f2b52*/
+  --this->ptr_8; /*0x4f2b52*/
   return this; /*0x4f2b55*/
 }
 } // namespace gamemd

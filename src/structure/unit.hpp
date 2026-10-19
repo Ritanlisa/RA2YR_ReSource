@@ -29,7 +29,7 @@ struct IdleOrderEntry {
     int32_t    param;      // +C — parameter
     int32_t    field_30;   // +10 — copied from ObjectClass::nextObject (+0x30)
     void* needsSave;  // 0x20 (canon-mt)
-    void* vtable4;  // 0xC (canon-mt)
+    void* ptr_C;  // 0xC (canon-mt)
 };
 
 // Thin array-view wrapper to access idle-order entries without raw pointer
@@ -252,10 +252,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     char unknownBool685;  // X10 supply (csp_canon_members)
     char unknownBool687;  // X10 supply (csp_canon_members)
     unsigned int voiceHandle;  // X10 supply (csp_canon_members)
-    void* vtable1;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
     void* waveEffect;  // X10 supply (csp_canon_members)
 
 

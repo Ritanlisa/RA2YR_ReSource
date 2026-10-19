@@ -3084,15 +3084,15 @@ char E4Recv_520260::sub_520260()
       *(unsigned char *)(v2 + 130) = 1; /*0x52027a*/
     if ( this->M1492 )
       return 0; /*0x520281*/
-    if ( (*(int (**)(TechnoClass *))(this->vtable0 + 388))(this) != 5 )
+    if ( (*(int (**)(TechnoClass *))(this->ptr_0 + 388))(this) != 5 )
       return 0; /*0x520298*/
     v4[0] = this->location[0];
     v4[1] = this->location[1];
     v4[2] = this->location[2];
     if ( (uint8_t)((Tactical *)&dword_87F7E8)->IsCellVisible( (IUnknown *)(v4)) ) /*0x5202c2*/
       return 0; /*0x5202e6*/
-    (*(void (**)(TechnoClass *))(this->vtable0 + 928))(this);
-    (*(void (**)(TechnoClass *))(this->vtable0 + 248))(this);
+    (*(void (**)(TechnoClass *))(this->ptr_0 + 928))(this);
+    (*(void (**)(TechnoClass *))(this->ptr_0 + 248))(this);
     return 1; /*0x5202e1*/
 
 }

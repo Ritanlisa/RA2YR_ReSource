@@ -89,7 +89,7 @@ char SuperClass::RemoveFromPointerArray(int a2) {
     do /*0x6ce344*/
     {
       ++v3; /*0x6ce337*/
-      *((unsigned int *)this->vtable2 + v3 - 1) = *((unsigned int *)this->vtable2 + v3); /*0x6ce33b*/
+      *((unsigned int *)this->ptr_4 + v3 - 1) = *((unsigned int *)this->ptr_4 + v3); /*0x6ce33b*/
     }
     while ( v3 < (int)this->uniqueId ); /*0x6ce344*/
   }
@@ -1197,7 +1197,7 @@ int DriveLocomotionClass::QueryInterface(const void *a2, int *a3) {
     if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x4af74b*/
     {
       if ( this ) /*0x4af752*/
-        pad_18 = this->vtable3; /*0x4af754*/
+        pad_18 = this->ptr_8; /*0x4af754*/
       else
         pad_18 = 0; /*0x4af759*/
       *a3 = (int)pad_18; /*0x4af75b*/
@@ -1975,7 +1975,7 @@ int ShipLocomotionClass::QueryInterface(const void *a2, int *a3) {
     if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x69ee5b*/
     {
       if ( this ) /*0x69ee62*/
-        pad_18 = this->vtable3; /*0x69ee64*/
+        pad_18 = this->ptr_8; /*0x69ee64*/
       else
         pad_18 = 0; /*0x69ee69*/
       *a3 = (int)pad_18; /*0x69ee6b*/
@@ -1997,7 +1997,7 @@ int ShipLocomotionClass::QueryInterface(const void *a2, int *a3) {
 namespace gamemd {
 void * BuildingLoadQueue::GetNext() {
   char BuildingLoadQueue_field_0x04; // al
-  void *vtable1; // edx
+  void *ptr_0; // edx
   int uniqueId; // eax
   void ***v5; // eax
   int v7; // ecx
@@ -2006,7 +2006,7 @@ void * BuildingLoadQueue::GetNext() {
   BuildingLoadQueue_field_0x04 = this->m_Count; /*0x6e6e26*/
   if ( BuildingLoadQueue_field_0x04 == 52 ) /*0x6e6e2b*/
   {
-    vtable1 = g_BuildingLoadQueue_Array.ptr_4; /*0x6e6e31*/
+    ptr_0 = g_BuildingLoadQueue_Array.ptr_4; /*0x6e6e31*/
     if ( g_BuildingLoadQueue_Array.ptr_4 ) /*0x6e6e39*/
     {
       uniqueId = g_BuildingLoadQueue_Array.uniqueId; /*0x6e6e3b*/
@@ -2024,12 +2024,12 @@ void * BuildingLoadQueue::GetNext() {
             (size_t)g_BuildingLoadQueue_Array.ptr_4,
             8u,
             (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-          vtable1 = g_BuildingLoadQueue_Array.ptr_4; /*0x6e6e6f*/
+          ptr_0 = g_BuildingLoadQueue_Array.ptr_4; /*0x6e6e6f*/
           g_BuildingLoadQueue_Array.uniqueId = 0; /*0x6e6e78*/
           (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 1; /*0x6e6e82*/
         }
         *(unsigned int *)v8 = *(unsigned int *)this->m_Queue; /*0x6e6e96*/
-        uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.ptr_0, (int)vtable1, (int *)v8); /*0x6e6e9a*/
+        uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.ptr_0, (int)ptr_0, (int *)v8); /*0x6e6e9a*/
         if ( uniqueId ) /*0x6e6ea1*/
         {
           g_BuildingLoadQueue_Array.uniqueId = uniqueId; /*0x6e6ea3*/
@@ -2056,15 +2056,15 @@ void * BuildingLoadQueue::GetNext() {
 // 0x6E6F20
 namespace gamemd {
 void * BuildingLoadQueue::Find() {
-  int vtable1; // ecx
+  int ptr_0; // ecx
   int uniqueId; // edx
   int v4; // ebx
-  unsigned int *vtable0; // edi
+  unsigned int *ptr_0; // edi
   int v6; // esi
 
   if ( (this->m_Count) != 52 ) /*0x6e6f27*/
     return 0; /*0x6e6fe0*/
-  vtable1 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6f2d*/
+  ptr_0 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6f2d*/
   if ( !g_BuildingLoadQueue_Array.ptr_4 ) /*0x6e6f37*/
     return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f37*/
   uniqueId = g_BuildingLoadQueue_Array.uniqueId; /*0x6e6f39*/
@@ -2077,34 +2077,34 @@ void * BuildingLoadQueue::Find() {
       (size_t)g_BuildingLoadQueue_Array.ptr_4,
       8u,
       (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-    vtable1 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6f6c*/
+    ptr_0 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6f6c*/
     g_BuildingLoadQueue_Array.uniqueId = 0; /*0x6e6f75*/
     (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 1; /*0x6e6f7f*/
   }
   v4 = *(unsigned int *)this->m_Queue; /*0x6e6f86*/
-  vtable0 = g_BuildingLoadQueue_Array.ptr_0; /*0x6e6f88*/
-  if ( vtable1 <= 0 ) /*0x6e6f90*/
+  ptr_0 = g_BuildingLoadQueue_Array.ptr_0; /*0x6e6f88*/
+  if ( ptr_0 <= 0 ) /*0x6e6f90*/
     return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f90*/
   while ( 1 ) /*0x6e6f99*/
   {
-    v6 = vtable0[2 * (vtable1 / 2)]; /*0x6e6f99*/
-    uniqueId = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e6f9c*/
+    v6 = ptr_0[2 * (ptr_0 / 2)]; /*0x6e6f99*/
+    uniqueId = (int)&ptr_0[2 * (ptr_0 / 2)]; /*0x6e6f9c*/
     if ( v6 <= v4 ) /*0x6e6fa1*/
       break; /*0x6e6fa1*/
-    vtable1 /= 2; /*0x6e6fa3*/
+    ptr_0 /= 2; /*0x6e6fa3*/
   LABEL_12:
-    if ( vtable1 <= 0 ) /*0x6e6fb5*/
+    if ( ptr_0 <= 0 ) /*0x6e6fb5*/
       return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6fb5*/
   }
   if ( v6 != v4 ) /*0x6e6fa7*/
   {
-    vtable0 = &uniqueId->u32_8; /*0x6e6fa9*/
-    vtable1 += -1 - vtable1 / 2; /*0x6e6fb1*/
+    ptr_0 = &uniqueId->u32_8; /*0x6e6fa9*/
+    ptr_0 += -1 - ptr_0 / 2; /*0x6e6fb1*/
     goto LABEL_12; /*0x6e6fb1*/
   }
   if ( uniqueId ) /*0x6e6fc9*/
   {
-    g_BuildingLoadQueue_Array.uniqueId = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e6fcb*/
+    g_BuildingLoadQueue_Array.uniqueId = (int)&ptr_0[2 * (ptr_0 / 2)]; /*0x6e6fcb*/
     return AbstractClass::IsTechnoType(*(AbstractClass **)(uniqueId + 4)); /*0x6e6fcb*/
   }
   return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6fc5*/
@@ -2113,16 +2113,16 @@ void * BuildingLoadQueue::Find() {
 // 0x6E6FF0
 namespace gamemd {
 int BuildingLoadQueue::FindObject() {
-  int vtable1; // ecx
+  int ptr_0; // ecx
   int uniqueId; // edx
   int v4; // ebx
-  unsigned int *vtable0; // edi
+  unsigned int *ptr_0; // edi
   int v6; // esi
   void ***v7; // eax
 
   if ( (this->m_Count) != 52 ) /*0x6e6ff7*/
     return 0; /*0x6e70b8*/
-  vtable1 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6ffd*/
+  ptr_0 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e6ffd*/
   if ( !g_BuildingLoadQueue_Array.ptr_4 ) /*0x6e7007*/
     goto LABEL_13; /*0x6e7007*/
   uniqueId = g_BuildingLoadQueue_Array.uniqueId; /*0x6e7009*/
@@ -2139,34 +2139,34 @@ int BuildingLoadQueue::FindObject() {
       (size_t)g_BuildingLoadQueue_Array.ptr_4,
       8u,
       (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-    vtable1 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e703c*/
+    ptr_0 = (int)g_BuildingLoadQueue_Array.ptr_4; /*0x6e703c*/
     g_BuildingLoadQueue_Array.uniqueId = 0; /*0x6e7045*/
     (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 1; /*0x6e704f*/
   }
   v4 = *(unsigned int *)this->m_Queue; /*0x6e7056*/
-  vtable0 = g_BuildingLoadQueue_Array.ptr_0; /*0x6e7058*/
-  if ( vtable1 <= 0 ) /*0x6e7060*/
+  ptr_0 = g_BuildingLoadQueue_Array.ptr_0; /*0x6e7058*/
+  if ( ptr_0 <= 0 ) /*0x6e7060*/
     goto LABEL_13; /*0x6e7060*/
   while ( 1 ) /*0x6e7069*/
   {
-    v6 = vtable0[2 * (vtable1 / 2)]; /*0x6e7069*/
-    uniqueId = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e706c*/
+    v6 = ptr_0[2 * (ptr_0 / 2)]; /*0x6e7069*/
+    uniqueId = (int)&ptr_0[2 * (ptr_0 / 2)]; /*0x6e706c*/
     if ( v6 <= v4 ) /*0x6e7071*/
       break; /*0x6e7071*/
-    vtable1 /= 2; /*0x6e7073*/
+    ptr_0 /= 2; /*0x6e7073*/
   LABEL_12:
-    if ( vtable1 <= 0 ) /*0x6e7085*/
+    if ( ptr_0 <= 0 ) /*0x6e7085*/
       goto LABEL_13; /*0x6e7085*/
   }
   if ( v6 != v4 ) /*0x6e7077*/
   {
-    vtable0 = &uniqueId->u32_8; /*0x6e7079*/
-    vtable1 += -1 - vtable1 / 2; /*0x6e7081*/
+    ptr_0 = &uniqueId->u32_8; /*0x6e7079*/
+    ptr_0 += -1 - ptr_0 / 2; /*0x6e7081*/
     goto LABEL_12; /*0x6e7081*/
   }
   if ( uniqueId ) /*0x6e70ab*/
   {
-    g_BuildingLoadQueue_Array.uniqueId = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e70ad*/
+    g_BuildingLoadQueue_Array.uniqueId = (int)&ptr_0[2 * (ptr_0 / 2)]; /*0x6e70ad*/
     goto LABEL_17; /*0x6e70ad*/
   }
   LABEL_13:
@@ -2409,7 +2409,7 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
     this->u32_28 = 0; /*0x48e54c*/
     this->u32_24 = a2; /*0x48e553*/
     /* X11: vtable install elided (implicit via ControlClass virtuals 0x48e556) */
-    return this->vtable1; /*0x48e55e*/
+    return this->ptr_0; /*0x48e55e*/
 }
 } // namespace ra2::gamemd::ra2::gamemd::ra2::gamemd::ra2::gamemd
 
@@ -2419,7 +2419,7 @@ unsigned int * ControlClass::QueryInterface(char a2) {
     GadgetClass::Dtor((GadgetClass *)this); /*0x48e663*/
     if ( (a2 & 1) != 0 ) /*0x48e66d*/
       operator delete((void *)(this)); /*0x48e670*/
-    return this->vtable1; /*0x48e67a*/
+    return this->ptr_0; /*0x48e67a*/
 }
 } // namespace ra2::gamemd::ra2::gamemd::ra2::gamemd::ra2::gamemd
 
@@ -2460,7 +2460,7 @@ unsigned int * ControlClass::Constructor(int a2) {
     this->u32_1E = a2->q01E; /*0x4e137b*/
     this->DestinationCoords = a2->q020; /*0x4e1381*/
     /* X11: vtable install elided (implicit via GadgetClass virtuals 0x4e1384) */
-    return this->vtable1; /*0x4e138a*/
+    return this->ptr_0; /*0x4e138a*/
 }
 } // namespace ra2::gamemd::ra2::gamemd::ra2::gamemd::ra2::gamemd
 
@@ -2580,7 +2580,7 @@ unsigned int * SliderClass::QueryInterface(char a2) {
     SliderClass::Destructor(this); /*0x558183*/
     if ( (a2 & 1) != 0 ) /*0x55818d*/
       operator delete((void *)(this)); /*0x558190*/
-    return this->vtable1; /*0x55819a*/
+    return this->ptr_0; /*0x55819a*/
 }
 } // namespace ra2::gamemd::ra2::gamemd::ra2::gamemd::ra2::gamemd
 
@@ -2784,7 +2784,7 @@ int WalkLocomotionClass::QueryInterface(const void *a2, int *a3) {
       if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x75c81b*/
       {
         if ( this ) /*0x75c822*/
-          pad_18 = this->vtable3; /*0x75c824*/
+          pad_18 = this->ptr_8; /*0x75c824*/
         else
           pad_18 = 0; /*0x75c829*/
         *a3 = (int)pad_18; /*0x75c82b*/

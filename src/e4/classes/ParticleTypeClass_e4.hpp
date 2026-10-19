@@ -16,8 +16,8 @@ struct Color;  // fix_fwd_type_supply
 struct TypeList_flat;  // fix_fwd_type_supply
 
 struct ParticleTypeClass {
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
     void* m_8;  // 0x8
     unsigned int ParticleTypeClass_field_0xC;  // 0xC
     unsigned int m_10;  // 0x10

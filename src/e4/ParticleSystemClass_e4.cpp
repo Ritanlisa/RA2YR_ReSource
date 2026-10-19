@@ -72,12 +72,12 @@ namespace gamemd {
 void ParticleSystemClass::GetClassIdentifier()
 {
 
-  void *v2 = *&this->vtable2; // eax /*0x4e8476*/
+  void *v2 = *&this->ptr_4; // eax /*0x4e8476*/
   *&this->uniqueId = 0; /*0x4e8479*/
   if ( v2 && (this->IsAllocated) ) /*0x4e8480*/
   {
     operator delete((v2)); /*0x4e8486*/
-    *&this->vtable2 = 0; /*0x4e848e*/
+    *&this->ptr_4 = 0; /*0x4e848e*/
   }
   (this->IsAllocated) = 0; /*0x4e8491*/
   *&this->m_8 = 0; /*0x4e8494*/
@@ -88,8 +88,8 @@ void ParticleSystemClass::GetClassIdentifier()
 namespace gamemd {
 unsigned int ParticleSystemClass::LoadTypeData(int a2)
 {
-  if ( (this->vtable4) ) /*0x4e84a0*/
-    return (unsigned int)(a2 - *&this->vtable2) >> 2; /*0x4e84b5*/
+  if ( (this->ptr_C) ) /*0x4e84a0*/
+    return (unsigned int)(a2 - *&this->ptr_4) >> 2; /*0x4e84b5*/
   else
     return 0; /*0x4e84a7*/
 }
@@ -99,7 +99,7 @@ unsigned int ParticleSystemClass::LoadTypeData(int a2)
 namespace gamemd {
 int ParticleSystemClass::SaveToINI(int a2)
 {
-  return *(unsigned int *)(*&this->vtable2 + 4 * a2); /*0x4e84ca*/
+  return *(unsigned int *)(*&this->ptr_4 + 4 * a2); /*0x4e84ca*/
 }
 } // namespace gamemd
 
@@ -108,12 +108,12 @@ namespace gamemd {
 void ParticleSystemClass::initParticleArray()
 {
 
-  void *v2 = *&this->vtable2; // eax /*0x4e8786*/
+  void *v2 = *&this->ptr_4; // eax /*0x4e8786*/
   *&this->uniqueId = 0; /*0x4e8789*/
   if ( v2 && (this->IsAllocated) ) /*0x4e8790*/
   {
     operator delete((v2)); /*0x4e8796*/
-    *&this->vtable2 = 0; /*0x4e879e*/
+    *&this->ptr_4 = 0; /*0x4e879e*/
   }
   (this->IsAllocated) = 0; /*0x4e87a1*/
   *&this->m_8 = 0; /*0x4e87a4*/

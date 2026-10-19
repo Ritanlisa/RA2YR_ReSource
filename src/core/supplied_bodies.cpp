@@ -174,7 +174,7 @@ struct Checksummer {
     static int Add_Buffer(void *aP0, uint8_t *aP1, int aP2);  // 0x4A1D50 call-form sync
 };
 } // namespace gamemd
-struct dword_A8B230_elem { void *vtable0; void *vtable2; void *vtable3; unsigned int NeedsSaveOrLink; unsigned int referenceCount; unsigned int uniqueId; unsigned int abstractFlags; };  // G42.33 b4 C2: q000 槽 void* 形
+struct dword_A8B230_elem { void *ptr_0; void *ptr_4; void *ptr_8; unsigned int NeedsSaveOrLink; unsigned int referenceCount; unsigned int uniqueId; unsigned int abstractFlags; };  // G42.33 b4 C2: q000 槽 void* 形
 #define dword_A8B230_arr ((dword_A8B230_elem *)&dword_A8B230)
 extern unsigned int dword_A8B230;  // data: 0xA8B230
 extern int IsHumanPlayer(void *a1);  // 本地原型
@@ -731,7 +731,7 @@ int Vector2::NormalizeNonZero() {
   (*((unsigned short *)&(result))) = v1; /*0x41c468*/
   if ( v2 == 0.0 ) /*0x41c46d*/
   {
-    v8 = this->vtable3; /*0x41c46f*/
+    v8 = this->ptr_8; /*0x41c46f*/
     v9 = v8 < 0.0; /*0x41c472*/
     v10 = 0; /*0x41c472*/
     v11 = v8 == 0.0; /*0x41c472*/
@@ -1738,7 +1738,7 @@ unsigned int * StringVector::QueryInterface(char a2) {
   this->Capacity = 0; /*0x49efd1*/
   if ( (a2 & 1) != 0 ) /*0x49efd8*/
     operator delete((this)); /*0x49efdb*/
-  return this->vtable1; /*0x49efe5*/
+  return this->ptr_0; /*0x49efe5*/
 }
 } // namespace gamemd
 
@@ -1754,7 +1754,7 @@ int EnumConnectionsClass::QueryInterface(const void *a2, unsigned int *a3) {
     *a3 = this; /*0x49ffca*/
   if ( !*a3 ) /*0x49ffcc*/
     return -2147467262; /*0x49ffdd*/
-  (*(void (__stdcall **)(EnumConnectionsClass *))(*(unsigned int *)this->vtable1 + 4))(this); /*0x49ffd4*/
+  (*(void (__stdcall **)(EnumConnectionsClass *))(*(unsigned int *)this->ptr_0 + 4))(this); /*0x49ffd4*/
   return 0; /*0x49ff8e*/
 }
 } // namespace gamemd
@@ -1871,7 +1871,7 @@ int EnumConnectionPointsClass::QueryInterface(const void *a2, unsigned int *a3) 
   *a3 = v4; /*0x4a0967*/
   if ( !v4 ) /*0x4a096d*/
     return -2147467262; /*0x4a097d*/
-  (*(void (__stdcall **)(EnumConnectionPointsClass *))(*(unsigned int *)this->vtable1 + 4))(this); /*0x4a0972*/
+  (*(void (__stdcall **)(EnumConnectionPointsClass *))(*(unsigned int *)this->ptr_0 + 4))(this); /*0x4a0972*/
   return 0; /*0x4a092a*/
 }
 } // namespace gamemd
@@ -1997,7 +1997,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
   int v5; // eax
   int abstractFlags; // eax
   CountdownTimer v7; // eax
-  void *vtable3; // ecx
+  void *ptr_8; // ecx
   int v9; // edx
   CountdownTimer v10; // ecx
   int v11; // eax
@@ -2032,12 +2032,12 @@ LABEL_26:
   if ( dword_A8B230[127].ptr_C != (void *)-1 ) /*0x4a26a7*/
     goto LABEL_12; /*0x4a26a7*/
   abstractFlags = dword_A8B230[127].abstractFlags; /*0x4a26a9*/
-  vtable3 = dword_A8B230[127].ptr_C; /*0x4a26af*/
-  if ( vtable3 != (void *)-1 ) /*0x4a26b8*/
+  ptr_8 = dword_A8B230[127].ptr_C; /*0x4a26af*/
+  if ( ptr_8 != (void *)-1 ) /*0x4a26b8*/
   {
-    if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - (int)vtable3 >= abstractFlags ) /*0x4a26c4*/
+    if ( *(unsigned int *)&MEMORY[0xA8EB00].?[416] - (int)ptr_8 >= abstractFlags ) /*0x4a26c4*/
       goto LABEL_13; /*0x4a26c4*/
-    abstractFlags -= *(unsigned int *)&MEMORY[0xA8EB00].?[416] - (unsigned int)vtable3; /*0x4a26c6*/
+    abstractFlags -= *(unsigned int *)&MEMORY[0xA8EB00].?[416] - (unsigned int)ptr_8; /*0x4a26c6*/
   }
   if ( abstractFlags ) /*0x4a26ca*/
   {
@@ -2954,7 +2954,7 @@ unsigned int * GraphicMenuItem::Constructor(int a2) {
   this->u32_9 = 1; /*0x4f3a5e*/
   this->u32_C = 0; /*0x4f3a62*/
   /* X11: vtable install elided (implicit via class virtuals 0x4f3a65) — binary-proven install, was 0 */
-  return this->vtable1; /*0x4f3a6b*/
+  return this->ptr_0; /*0x4f3a6b*/
 }
 } // namespace gamemd
 
@@ -3033,7 +3033,7 @@ unsigned int * GraphicMenuShortcutItem::QueryInterface(char a2) {
   GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f3f9b*/
   if ( (a2 & 1) != 0 ) /*0x4f3fa5*/
     operator delete((this)); /*0x4f3fa8*/
-  return this->vtable1; /*0x4f3fb2*/
+  return this->ptr_0; /*0x4f3fb2*/
 }
 } // namespace gamemd
 
@@ -3048,7 +3048,7 @@ BOOL VectorCursor_uint_DynamicVectorClass_uint::AddRef() {
 namespace gamemd {
 unsigned int * VectorCursor_uint_DynamicVectorClass_uint::Release() {
   ++this->u32_8; /*0x4f3ff2*/
-  return this->vtable1; /*0x4f3ff5*/
+  return this->ptr_0; /*0x4f3ff5*/
 }
 } // namespace gamemd
 
@@ -3438,7 +3438,7 @@ unsigned int * unknown::QueryInterface(char a2) {
   this->Capacity = 0; /*0x58a451*/
   if ( (a2 & 1) != 0 ) /*0x58a458*/
     operator delete((this)); /*0x58a45b*/
-  return this->vtable1; /*0x58a465*/
+  return this->ptr_0; /*0x58a465*/
 }
 } // namespace gamemd
 
@@ -3740,12 +3740,12 @@ unsigned int * StringVector::Construct(int a2, int a3, void *a1, void *a4, void 
     if ( a3 ) /*0x5ad716*/
     {
       this->Items = a3; /*0x5ad718*/
-      return this->vtable1; /*0x5ad71e*/
+      return this->ptr_0; /*0x5ad71e*/
     }
     this->Items = operator new(4 * a2); /*0x5ad72d*/
     (this->IsAllocated) = 1; /*0x5ad730*/
   }
-  return this->vtable1; /*0x5ad71d*/
+  return this->ptr_0; /*0x5ad71d*/
 }
 } // namespace gamemd
 
@@ -4272,7 +4272,7 @@ int RandomStraw::AdvanceState() {
   uint16_t v6; // dx
 
   result = this->__pad_004; /*0x65c8b0*/
-  v2 = *(unsigned int *)this->vtable1; /*0x65c8ba*/
+  v2 = *(unsigned int *)this->ptr_0; /*0x65c8ba*/
   this->__pad_004 = result + 1; /*0x65c8bc*/
   v3 = 0; /*0x65c8bf*/
   do /*0x65c907*/
@@ -4358,7 +4358,7 @@ int * RandomStraw::QueryInterface(char a2) {
   Straw::Dtor((Straw *)this); /*0x661c8e*/
   if ( (a2 & 1) != 0 ) /*0x661c98*/
     operator delete((this)); /*0x661c9b*/
-  return (int *)this->vtable1; /*0x661ca5*/
+  return (int *)this->ptr_0; /*0x661ca5*/
 }
 } // namespace gamemd
 
@@ -4657,7 +4657,7 @@ unsigned int * COMClass::getInterface(char a2) {
   this->Capacity = 0; /*0x765c52*/
   if ( (a2 & 1) != 0 ) /*0x765c59*/
     operator delete((this)); /*0x765c5c*/
-  return this->vtable1; /*0x765c66*/
+  return this->ptr_0; /*0x765c66*/
 }
 } // namespace gamemd
 
@@ -4680,7 +4680,7 @@ unsigned int * VectorCursor::Construct(int a2, int a3) {
   this->__pad_004 = a2; /*0x76f0ca*/
   this->u32_8 = a3; /*0x76f0cd*/
   /* X11: vtable install elided (implicit via class virtuals 0x76f0d0) — binary-proven install, was 0 */
-  return this->vtable1; /*0x76f0d6*/
+  return this->ptr_0; /*0x76f0d6*/
 }
 } // namespace gamemd
 
@@ -4690,7 +4690,7 @@ unsigned int * VectorCursor::drawCursor(char a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x76f149) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x76f14f*/
     operator delete((this)); /*0x76f152*/
-  return this->vtable1; /*0x76f15c*/
+  return this->ptr_0; /*0x76f15c*/
 }
 } // namespace gamemd
 
@@ -4848,7 +4848,7 @@ namespace gamemd::ra2::gamemd::gamemd {
 int Vector3::Magnitude() {
     return Math::Sqrt( /*0x41c3e9*/
              *(double *)this * *(double *)this
-           + this->vtable3 * this->vtable3
+           + this->ptr_8 * this->ptr_8
            + this->uniqueId * this->uniqueId);
 }
 } // namespace gamemd::ra2::gamemd::gamemd

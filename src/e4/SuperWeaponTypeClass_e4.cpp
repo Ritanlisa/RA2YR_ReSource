@@ -101,7 +101,7 @@ LABEL_5:
   }
   else
   {
-    v7 = p_ThirdSurvivorDivisor->vtable2; /*0x4f65a5*/
+    v7 = p_ThirdSurvivorDivisor->ptr_4; /*0x4f65a5*/
     v8 = v7; /*0x4f65a8*/
     while ( (v5 & *(unsigned int *)(*(unsigned int *)v8 + 1740)) == 0 ) /*0x4f65b3*/
     {
@@ -764,7 +764,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce66d) */
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce673) */
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce67a) */
-  this->vtable2.GenerateUniqueID(); /*0x6ce681*/
+  this->ptr_4.GenerateUniqueID(); /*0x6ce681*/
   this->ArrayIndex = dword_A8E340; /*0x6ce68c*/
   if ( dword_A8E340 < dword_A8E338 /*0x6ce6c4*/
     || (byte_A8E33D || !dword_A8E338)
@@ -779,7 +779,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
     *((unsigned int *)dword_A8E334 + v3) = this; /*0x6ce6e0*/
   }
   if ( &this->ActionValue != &this->LineMultiplier4 ) /*0x6ce6e8*/
-    memcpy(&this->Type, (const void *)(&this->vtable46), 0x19u); /*0x6ce6ef*/
+    memcpy(&this->Type, (const void *)(&this->ptr_46), 0x19u); /*0x6ce6ef*/
   return this; /*0x6ce6f2*/
 }
 } // namespace gamemd

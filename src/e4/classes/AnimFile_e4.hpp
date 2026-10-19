@@ -8,7 +8,7 @@ namespace gamemd {
 #ifndef GAMEMD_ANIMFILE_DECLARED  // G42 first-wins (misc_ext.hpp tree twin co-included in misc TUs)
 #define GAMEMD_ANIMFILE_DECLARED
 struct AnimFile {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
     int AnimFile_field_0x08;  // 0x8
     int AnimFile_field_0x0C;  // 0xC

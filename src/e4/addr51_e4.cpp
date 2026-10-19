@@ -47,12 +47,12 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   (this->M2) += a2 * (a3[2] - (this->M2)) / 256; /*0x517397*/
   char v4; // al
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
-  uint8_t vtable0; // bl
-  vtable0 = (uint8_t)this->ptr_0; /*0x5173ba*/
+  uint8_t ptr_0; // bl
+  ptr_0 = (uint8_t)this->ptr_0; /*0x5173ba*/
   (this->M1) = v4; /*0x5173bc*/
   unsigned int result; // eax
-  result = a2 * (*a3 - vtable0) / 256; /*0x5173db*/
-  (*((unsigned char *)&(result))) = vtable0 + result; /*0x5173de*/
+  result = a2 * (*a3 - ptr_0) / 256; /*0x5173db*/
+  (*((unsigned char *)&(result))) = ptr_0 + result; /*0x5173de*/
   (this->ptr_0) = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 }
@@ -668,11 +668,11 @@ int E4Recv_517110::sub_517110()
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  void *vtable3; // ecx
-  vtable3 = (void *)(this->M12); /*0x51717f*/
+  void *ptr_8; // ecx
+  ptr_8 = (void *)(this->M12); /*0x51717f*/
   this->ambientSoundController[3] = 0; /*0x517182*/
   this->ambientSoundController[4] = 1072693248; /*0x517189*/
-  (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
+  (*(void (**)(void *, unsigned int, int))(*(unsigned int *)ptr_8 + 1348))(ptr_8, 0, 1072693248); /*0x517199*/
   int result; // eax
   result = ((MovementAI *)this)->StepFootClass(0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/

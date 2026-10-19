@@ -78,10 +78,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int PowerDrainUpdate(int a1);  // 0x6914E0
     void* ProcessEvent(int a1);  // 0x691EE0
     // --- gap2 auto-generated stub declarations (END) ---
-    void* vtable4;  // 0xC (ml truth)  gB vtable supply
+    void* ptr_C;  // 0xC (ml truth)  gB vtable supply
 
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
 };
 
 // --- ScriptTypeClass ---
@@ -136,7 +136,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadTypeData(int a1, int a2);  // 0x691d90
     int ReadINI(int a1, int a2);  // 0x6e8340
     // === FUNCS-MOVE (END) ===
-    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
+    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
 
     unsigned char ScriptTypeClass_2D80[4];  /* ScriptTypeClass */  // X10 supply (member_lookup)
 };

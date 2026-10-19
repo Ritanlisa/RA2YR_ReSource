@@ -524,7 +524,7 @@ LABEL_6:
   {
     while ( !(unsigned __int8)String::Compare(v10, (const char **)&v23) ) /*0x780bf5*/
     {
-      v10 = *v10->vtable2.__pad_0; /*0x780bfb*/
+      v10 = *v10->ptr_4.__pad_0; /*0x780bfb*/
       if ( !v10 ) /*0x780c00*/
         goto LABEL_27; /*0x780c00*/
     }
@@ -538,13 +538,13 @@ LABEL_6:
         {
           while ( !(unsigned __int8)String::Compare(v16, (const char **)&v23) ) /*0x780d00*/
           {
-            v16 = *v16->vtable2.__pad_0; /*0x780d02*/
+            v16 = *v16->ptr_4.__pad_0; /*0x780d02*/
             if ( !v16 ) /*0x780d07*/
               goto LABEL_27; /*0x780d07*/
           }
           if ( v16 != (String *)-4 )
           {
-            v17 = *&v16->vtable2; /*0x780d16*/
+            v17 = *&v16->ptr_4; /*0x780d16*/
             if ( v17 )
             {
               v18 = FormatLocaleStringWOL((wchar_t **)&v25, v17); /*0x780d22*/
@@ -1557,7 +1557,7 @@ int InsertBuddyList(const char *a1, char a2)
                     if ( !v12 ) /*0x78256f*/
                       goto LABEL_45; /*0x78256f*/
                   }
-                  v13 = &v12->vtable2; /*0x782577*/
+                  v13 = &v12->ptr_4; /*0x782577*/
                   if ( v13 ) /*0x78257c*/
                     qmemcpy(&v47[16].m_3[1], v13, 0x6Cu); /*0x78258a*/
                   v7 = *v47->u32_50.__pad_0; /*0x78258c*/
@@ -1599,7 +1599,7 @@ LABEL_45:
                   if ( !v18 ) /*0x782649*/
                     goto LABEL_66; /*0x782649*/
                 }
-                v19 = &v18->vtable2; /*0x782651*/
+                v19 = &v18->ptr_4; /*0x782651*/
                 if ( v19 ) /*0x782656*/
                   qmemcpy(&v47[16].m_3[1], v19, 0x6Cu); /*0x782664*/
                 v7 = *v47->u32_50.__pad_0; /*0x782666*/
@@ -1647,7 +1647,7 @@ LABEL_69:
                     if ( !v23 ) /*0x782740*/
                       goto LABEL_85; /*0x782740*/
                   }
-                  v24 = &v23->vtable2; /*0x782748*/
+                  v24 = &v23->ptr_4; /*0x782748*/
                   if ( v24 ) /*0x78274d*/
                     qmemcpy(&v47[16].m_3[1], v24, 0x6Cu); /*0x78275b*/
                   v7 = *v47->u32_50.__pad_0; /*0x78275d*/
@@ -1684,7 +1684,7 @@ LABEL_85:
               if ( !v27 ) /*0x7827ed*/
                 goto LABEL_99; /*0x7827ed*/
             }
-            v28 = &v27->vtable2; /*0x7827f5*/
+            v28 = &v27->ptr_4; /*0x7827f5*/
             if ( v28 ) /*0x7827fa*/
               qmemcpy(&v47[16].m_3[1], v28, 0x6Cu); /*0x782808*/
             v26 = *v47->u32_50.__pad_0; /*0x78280a*/
@@ -1730,7 +1730,7 @@ LABEL_99:
                     if ( !v32 ) /*0x7828d4*/
                       goto LABEL_119; /*0x7828d4*/
                   }
-                  v33 = &v32->vtable2; /*0x7828dc*/
+                  v33 = &v32->ptr_4; /*0x7828dc*/
                   if ( v33 ) /*0x7828e1*/
                     qmemcpy(&v47[16].m_3[1], v33, 0x6Cu); /*0x7828ef*/
                   v26 = *v47->u32_50.__pad_0; /*0x7828f1*/
@@ -1774,7 +1774,7 @@ LABEL_119:
                   if ( !v37 ) /*0x7829c2*/
                     goto LABEL_140; /*0x7829c2*/
                 }
-                v38 = &v37->vtable2; /*0x7829ca*/
+                v38 = &v37->ptr_4; /*0x7829ca*/
                 if ( v38 ) /*0x7829cf*/
                   qmemcpy(&v47[16].m_3[1], v38, 0x6Cu); /*0x7829dd*/
                 v26 = *v47->u32_50.__pad_0; /*0x7829df*/
@@ -1823,7 +1823,7 @@ LABEL_143:
                     if ( !v41 ) /*0x782ab8*/
                       goto LABEL_159; /*0x782ab8*/
                   }
-                  v42 = &v41->vtable2; /*0x782ac0*/
+                  v42 = &v41->ptr_4; /*0x782ac0*/
                   if ( v42 ) /*0x782ac5*/
                     qmemcpy(&v47[16].m_3[1], v42, 0x6Cu); /*0x782ad3*/
                   v26 = *v47->u32_50.__pad_0; /*0x782ad5*/
@@ -5899,7 +5899,7 @@ int E4Recv_786E70::sub_786E70()
 
   if ( !String::Length((String *)this) ) /*0x786e75*/
     return -1; /*0x786e75*/
-  void *vtable0 = g_WOL_UserList.ptr_0; // ecx /*0x786e7e*/
+  void *ptr_0 = g_WOL_UserList.ptr_0; // ecx /*0x786e7e*/
   int v3 = 1; // edi /*0x786e84*/
   if ( (int)g_WOL_UserList.ptr_0 <= 1 ) /*0x786e8b*/
     return -1; /*0x786ed8*/
@@ -5907,7 +5907,7 @@ int E4Recv_786E70::sub_786E70()
   for ( i = 248; ; i += 248 ) /*0x786e8d*/
   {
     char *v5 = 0; // eax /*0x786e92*/
-    if ( i >= 0 && v3 < (int)vtable0 ) /*0x786e9a*/
+    if ( i >= 0 && v3 < (int)ptr_0 ) /*0x786e9a*/
       v5 = (char *)g_WOL_UserList.ptr_8 + i; /*0x786ea1*/
     char *v6; // eax
     v6 = strchr(v5 + 24, 58); /*0x786ea9*/
@@ -5916,7 +5916,7 @@ int E4Recv_786E70::sub_786E70()
       if ( *v6 && (uint8_t)((String *)((String *)this))->Equals_Alt(v6 + 1) ) /*0x786ebe*/
         break; /*0x786ebe*/
     }
-    vtable0 = g_WOL_UserList.ptr_0; /*0x786ec7*/
+    ptr_0 = g_WOL_UserList.ptr_0; /*0x786ec7*/
     if ( ++v3 >= (int)g_WOL_UserList.ptr_0 ) /*0x786ed6*/
       return -1; /*0x786ed6*/
   }

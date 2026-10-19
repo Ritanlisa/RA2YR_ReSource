@@ -100,10 +100,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_F8;  // X10 supply (member_lookup)
     unsigned char u8_AE;  // X10 supply (member_lookup)
     unsigned char u8_D9;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

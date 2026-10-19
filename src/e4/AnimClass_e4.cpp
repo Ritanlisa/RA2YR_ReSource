@@ -1311,7 +1311,7 @@ BuildingTypeClass * * AnimClass::drawFrame(void *a1)
   BuildingTypeClass *v91; // eax
   BuildingTypeClass *v92; // eax
   char CloakRadius; // cl
-  void (**vtable0)(BuildingClass *, int); // edx
+  void (**ptr_0)(BuildingClass *, int); // edx
   TechnoClass *v95; // edi
   BuildingTypeClass *v96; // eax
   char v97; // cl
@@ -1436,12 +1436,12 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   GroundHeight = Cell::GetGroundHeight(&v14); /*0x729922*/
   if ( v16 >= GroundHeight ) /*0x72992a*/
   {
-    (*(void (**)(unsigned int, unsigned int, unsigned int))(*v3->vtable4 + 288))(v3->vtable4, 0, 0); /*0x729a43*/
-    v11 = (int *)(*(int (**)(unsigned int))(*v3->vtable4 + 132))(v3->vtable4); /*0x729a4e*/
+    (*(void (**)(unsigned int, unsigned int, unsigned int))(*v3->ptr_C + 288))(v3->ptr_C, 0, 0); /*0x729a43*/
+    v11 = (int *)(*(int (**)(unsigned int))(*v3->ptr_C + 132))(v3->ptr_C); /*0x729a4e*/
     (v12) = ((v12) & ~0xFFFF) | ((Math::RoundToInt(64.0 / (double)v11[455])) & 0xFFFF); /*0x729a60*/
     v3->owningHouseIndex = *(unsigned int *)&stru_A8E960.random[528]; /*0x729a72*/
     *(unsigned int *)(v3 + 44) = v18; /*0x729a78*/
-    v13 = v3->vtable4; /*0x729a7b*/
+    v13 = v3->ptr_C; /*0x729a7b*/
     *(unsigned int *)(v3 + 48) = v12; /*0x729a7e*/
     *(unsigned int *)(v3 + 52) = v12; /*0x729a81*/
     result = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v13 + 1348))(v13, 0, 0); /*0x729a86*/
@@ -1449,21 +1449,21 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   }
   else
   {
-    v6 = (*(int (**)(unsigned int, int))(*v3->vtable4 + 456))(v3->vtable4, a2); /*0x72993f*/
-    v14 = (*(int (**)(unsigned int))(*v3->vtable4 + 1336))(v3->vtable4); /*0x72994f*/
+    v6 = (*(int (**)(unsigned int, int))(*v3->ptr_C + 456))(v3->ptr_C, a2); /*0x72993f*/
+    v14 = (*(int (**)(unsigned int))(*v3->ptr_C + 1336))(v3->ptr_C); /*0x72994f*/
     (v7) = ((v7) & ~0xFFFF) | ((Math::RoundToInt((double)v14 * *(double *)dword_8871E0->TunnelSpeed)) & 0xFFFF); /*0x72995a*/
     if ( v7 <= 5 ) /*0x729962*/
       v7 = 5; /*0x729964*/
     v17 += v7; /*0x729971*/
     if ( v17 > GroundHeight ) /*0x729975*/
       v17 = GroundHeight; /*0x729977*/
-    result = (*(int (**)(unsigned int, int *))(*v3->vtable4 + 436))(v3->vtable4, &v15); /*0x729985*/
+    result = (*(int (**)(unsigned int, int *))(*v3->ptr_C + 436))(v3->ptr_C, &v15); /*0x729985*/
     if ( v6 <= -50 ) /*0x72998f*/
     {
-      result = (*(int (**)(unsigned int))(*v3->vtable4 + 456))(v3->vtable4); /*0x72999a*/
+      result = (*(int (**)(unsigned int))(*v3->ptr_C + 456))(v3->ptr_C); /*0x72999a*/
       if ( result > -50 ) /*0x7299a3*/
       {
-        v9 = (int *)(v3->vtable4 + 156); /*0x7299ae*/
+        v9 = (int *)(v3->ptr_C + 156); /*0x7299ae*/
         v17 = *v9; /*0x7299b5*/
         v18 = v9[1]; /*0x7299c2*/
         v19 = v9[2]; /*0x7299cd*/
@@ -1471,7 +1471,7 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
         result = __2_YAPAXI_Z(0x1C8u); /*0x7299e1*/
         if ( result ) /*0x7299eb*/
         {
-          v10 = (int *)(v3->vtable4 + 156); /*0x7299f6*/
+          v10 = (int *)(v3->ptr_C + 156); /*0x7299f6*/
           v17 = *v10; /*0x729a09*/
           v18 = v10[1]; /*0x729a10*/
           v19 = v10[2]; /*0x729a1c*/
@@ -1512,7 +1512,7 @@ int AnimClass::ProcessFrame()
   if ( v4 >= 0 ) /*0x76107b*/
     return ObjectClass::DetectCloaked((UnitClass *)this); /*0x76108f*/
   else
-    return (*(int (**)(AnimClass *))&this->vtable1->q0F8)(this); /*0x761081*/
+    return (*(int (**)(AnimClass *))&this->ptr_0->q0F8)(this); /*0x761081*/
 
 }
 } // namespace gamemd
@@ -1543,7 +1543,7 @@ char AnimClass::ProcessAreaEffect(AnimClass * a1)
   v1 = ((Input *)a1)->OffsetToDirection(); /*0x426314*/
   CellClass *v2; // esi
   v2 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a1); /*0x426321*/
-  if ( Cell::GetGroundHeight((unsigned int *)(a1)) + Map_MaxHeight > (int)a1->vtable3 ) /*0x426335*/
+  if ( Cell::GetGroundHeight((unsigned int *)(a1)) + Map_MaxHeight > (int)a1->ptr_8 ) /*0x426335*/
   {
     result = ~(1 << v1) & (*((unsigned char *)&(v2->occupationFlags))); /*0x426370*/
     (*((unsigned char *)&(v2->occupationFlags))) = result; /*0x426372*/

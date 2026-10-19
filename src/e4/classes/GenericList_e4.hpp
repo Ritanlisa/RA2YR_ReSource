@@ -8,7 +8,7 @@ namespace gamemd {
 #ifndef GAMEMD_G2_GenericList_DEF  // G42.57w14 twin-guard (shared w/ system/ini_class.hpp; first-include wins)
 #define GAMEMD_G2_GenericList_DEF 1
 struct GenericList {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0);

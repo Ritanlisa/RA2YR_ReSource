@@ -284,7 +284,7 @@ void HouseClass::Update_TogglePower(double a2)
 
   v3 = v2; /*0x4f8446*/
   v4 = *(unsigned int *)&v2[1].Object_field_0x2[2]; /*0x4f844b*/
-  v5 = *v3->vtable2.__pad_C; /*0x4f8451*/
+  v5 = *v3->ptr_4.__pad_C; /*0x4f8451*/
   if ( v4 != -1 ) /*0x4f8460*/
   {
     if ( *(unsigned int *)&stru_A8E960.random[528] - v4 >= v5 ) /*0x4f8468*/
@@ -296,7 +296,7 @@ void HouseClass::Update_TogglePower(double a2)
     v6 = v119; /*0x4f8471*/
     *(unsigned int *)&v3[1].Object_field_0x2[2] = *(unsigned int *)&stru_A8E960.random[528]; /*0x4f8477*/
     v3[1].Object_field_0x8 = v6; /*0x4f847d*/
-    *v3->vtable2.__pad_C = 0; /*0x4f8483*/
+    *v3->ptr_4.__pad_C = 0; /*0x4f8483*/
     v3[33].__pad_B0[40] = 1; /*0x4f8489*/
   }
 LABEL_6:
@@ -360,7 +360,7 @@ LABEL_11:
   if ( !v3->isWinner ) /*0x4f85cb*/
     goto LABEL_65; /*0x4f85cb*/
   v16 = *&v3->savourTimer; /*0x4f85d1*/
-  v17 = *v3->vtable2.__pad_0; /*0x4f85d7*/
+  v17 = *v3->ptr_4.__pad_0; /*0x4f85d7*/
   if ( v16 != -1 ) /*0x4f85e0*/
   {
     if ( *(unsigned int *)&stru_A8E960.random[528] - v16 >= v17 ) /*0x4f85eb*/
@@ -427,7 +427,7 @@ LABEL_65:
   if ( !v3->isLoser ) /*0x4f8706*/
     goto LABEL_83; /*0x4f8706*/
   v21 = *&v3->savourTimer; /*0x4f870c*/
-  v22 = *v3->vtable2.__pad_0; /*0x4f8712*/
+  v22 = *v3->ptr_4.__pad_0; /*0x4f8712*/
   if ( v21 != -1 ) /*0x4f871b*/
   {
     if ( *(unsigned int *)&stru_A8E960.random[528] - v21 >= v22 ) /*0x4f8726*/
@@ -476,7 +476,7 @@ LABEL_83:
   if ( !v3->isGameOver ) /*0x4f87ca*/
     goto LABEL_89; /*0x4f87ca*/
   v25 = *&v3->savourTimer; /*0x4f87cc*/
-  v26 = *v3->vtable2.__pad_0; /*0x4f87d2*/
+  v26 = *v3->ptr_4.__pad_0; /*0x4f87d2*/
   if ( v25 == -1 ) /*0x4f87db*/
   {
 LABEL_87:
@@ -624,7 +624,7 @@ LABEL_136:
         if ( *(unsigned int *)&stru_A8E960.random[528] - v45 >= Object_field_0x13C ) /*0x4f8b5d*/
         {
 LABEL_145:
-          if ( (*(int (**)(char *))(*&v3->vtable5 + 24))(&v3->vtable5) < 100 /*0x4f8b94*/
+          if ( (*(int (**)(char *))(*&v3->ptr_5 + 24))(&v3->ptr_5) < 100 /*0x4f8b94*/
             && *(unsigned int *)&v3[31].__pad_140[220]
              + *(unsigned int *)&v3[31].__pad_140[224]
              + *(unsigned int *)&v3[31].__pad_140[228]

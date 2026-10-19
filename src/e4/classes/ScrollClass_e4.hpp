@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct ScrollClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int m_ScrollY;  // 0x4
     int m_MaxX;  // 0x8
     char m_MaxY[4];  // 0xC

@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct AddTeamCommand {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int AddTeamCommand_field_00;  // 0x4
     int AddTeamCommand_field_04;  // 0x8
 // --- flat members (BEGIN) ---

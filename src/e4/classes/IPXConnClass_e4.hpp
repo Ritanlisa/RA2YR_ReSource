@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct IPXConnClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int PlayerIndex;  // 0x4
     char Active;  // 0x8
     unsigned char __pad_009;  // 0x9

@@ -803,16 +803,16 @@ namespace gamemd {
 unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
 {
 
-  void *vtable2; // edx
+  void *ptr_4; // edx
   size_t v4; // eax
   int v5; // eax
   int abstractFlags; // ecx
   int v7; // eax
 
-  vtable2 = (void *)(this->M8); /*0x74bca6*/
-  if ( vtable2 != (void *)-1 ) /*0x74bcac*/
+  ptr_4 = (void *)(this->M8); /*0x74bca6*/
+  if ( ptr_4 != (void *)-1 ) /*0x74bcac*/
   {
-    SetBitfieldBit(this->M16, (int)vtable2, LOBYTE(this->M16)); /*0x74bcb7*/
+    SetBitfieldBit(this->M16, (int)ptr_4, LOBYTE(this->M16)); /*0x74bcb7*/
     this->M8 = (unsigned int)((void *)-1); /*0x74bcbc*/
   }
   LOBYTE(this->M4) = *(unsigned char *)(a2 + 4); /*0x74bcd0*/
@@ -855,35 +855,35 @@ namespace gamemd {
 int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 {
 
-  void (**vtable3)(void **); // edx
+  void (**ptr_8)(void **); // edx
   unsigned int v12; // [esp+10h] [ebp+4h]
 
-  void *vtable2; // edx
-  vtable2 = (void *)(this->M8); /*0x74bdc8*/
-  if ( vtable2 != (void *)-1 ) /*0x74bdcd*/
+  void *ptr_4; // edx
+  ptr_4 = (void *)(this->M8); /*0x74bdc8*/
+  if ( ptr_4 != (void *)-1 ) /*0x74bdcd*/
   {
-    SetBitfieldBit(this->M16, (int)vtable2, LOBYTE(this->M16)); /*0x74bdd8*/
+    SetBitfieldBit(this->M16, (int)ptr_4, LOBYTE(this->M16)); /*0x74bdd8*/
     this->M8 = (unsigned int)((void *)-1); /*0x74bddd*/
   }
   if ( a2 ) /*0x74bde6*/
   {
-    char *vtable0; // edi
-    vtable0 = (char *)this->AbstractClass; /*0x74bdeb*/
+    char *ptr_0; // edi
+    ptr_0 = (char *)this->AbstractClass; /*0x74bdeb*/
     unsigned __int8 v6; // al
     v6 = (*((int (**)(void **, unsigned int, unsigned int))this->M8 + 2))(&this->M8, (a2 + 7) >> 3, 0); /*0x74bdf9*/
     this->AbstractClass = (void *)a2; /*0x74be01*/
     v12 = v6; /*0x74be03*/
-    if ( v6 && (unsigned int)vtable0 < a2 ) /*0x74be0b*/
+    if ( v6 && (unsigned int)ptr_0 < a2 ) /*0x74be0b*/
     {
       do /*0x74be53*/
       {
         char *v7; // edx
         v7 = (char *)this->M8; /*0x74be0e*/
-        if ( v7 != vtable0 ) /*0x74be13*/
+        if ( v7 != ptr_0 ) /*0x74be13*/
         {
           int v8; // ebp
-          v8 = (int)vtable0; /*0x74be17*/
-          if ( vtable0 >= this->AbstractClass ) /*0x74be1b*/
+          v8 = (int)ptr_0; /*0x74be17*/
+          if ( ptr_0 >= this->AbstractClass ) /*0x74be1b*/
             v8 = -1; /*0x74be1d*/
           if ( (char *)v8 != v7 ) /*0x74be22*/
           {
@@ -894,10 +894,10 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
             this->M8 = (unsigned int)((void *)v8); /*0x74be49*/
           }
         }
-        ++vtable0; /*0x74be4c*/
+        ++ptr_0; /*0x74be4c*/
         LOBYTE(this->M4) = 0; /*0x74be4d*/
       }
-      while ( (unsigned int)vtable0 < a2 ); /*0x74be53*/
+      while ( (unsigned int)ptr_0 < a2 ); /*0x74be53*/
     }
     return v12; /*0x74be56*/
   }
@@ -910,9 +910,9 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
       SetBitfieldBit(this->M16, (int)v10, LOBYTE(this->M16)); /*0x74be70*/
       this->M8 = (unsigned int)((void *)-1); /*0x74be75*/
     }
-    vtable3 = (void (**)(void **))this->M12; /*0x74be78*/
+    ptr_8 = (void (**)(void **))this->M12; /*0x74be78*/
     this->AbstractClass = 0; /*0x74be7e*/
-    vtable3[3](&this->M12); /*0x74be84*/
+    ptr_8[3](&this->M12); /*0x74be84*/
     return 1; /*0x74be89*/
   }
 
@@ -1833,11 +1833,11 @@ void E4Recv_74BF40::sub_74BF40(unsigned int a2)
   unsigned int v3 = a2; // edi /*0x74bf44*/
   if ( (void *)a2 >= this->AbstractClass ) /*0x74bf4a*/
     v3 = -1; /*0x74bf4c*/
-  void *vtable2 = this->M8; // edx /*0x74bf4f*/
-  if ( (void *)v3 != vtable2 ) /*0x74bf54*/
+  void *ptr_4 = this->M8; // edx /*0x74bf4f*/
+  if ( (void *)v3 != ptr_4 ) /*0x74bf54*/
   {
-    if ( vtable2 != (void *)-1 ) /*0x74bf59*/
-      SetBitfieldBit(this->M16, (int)vtable2, LOBYTE(this->M16)); /*0x74bf64*/
+    if ( ptr_4 != (void *)-1 ) /*0x74bf59*/
+      SetBitfieldBit(this->M16, (int)ptr_4, LOBYTE(this->M16)); /*0x74bf64*/
     if ( v3 != -1 ) /*0x74bf6c*/
       LOBYTE(this->M4) = BitArray::TestBit(this->M4, v3); /*0x74bf78*/
     this->M8 = (void *)v3; /*0x74bf7b*/
@@ -2064,14 +2064,14 @@ unsigned int ObjectClass::sub_74F730()
   int v2; // edx
   v2 = this->ambientSoundController[2]; /*0x74f734*/
   this->ptr_4 = 0; /*0x74f737*/
-  (this->vtable3) = 0; /*0x74f73d*/
-  (*&this->vtable3->AbstractClass_1) = 0; /*0x74f741*/
+  (this->ptr_8) = 0; /*0x74f73d*/
+  (*&this->ptr_8->AbstractClass_1) = 0; /*0x74f741*/
   this->ambientSoundController[0] = 0; /*0x74f745*/
   this->ambientSoundController[1] = 0; /*0x74f748*/
   this->ambientSoundController[2] = v2 & 0xFFFFFFF0; /*0x74f74b*/
   /* X11: vtable install elided (implicit via VersionClass virtuals 0x74f74e) */
   (this->q02A) = 0; /*0x74f754*/
-  (this->vtable4) = 0; /*0x74f757*/
+  (this->ptr_C) = 0; /*0x74f757*/
   return &this->ptr_0; /*0x74f75a*/
 }
 } // namespace gamemd

@@ -243,8 +243,8 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2
       v22 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v74); /*0x718e1e*/
       v23 = ObjectPlacement::CalcPosition((ObjectPlacement *)v22, &v80, &v74, v62, v67[0], 0); /*0x718e25*/
       *v8 = *v23; /*0x718e32*/
-      v7[11] = v23->vtable2; /*0x718e3b*/
-      v7[12] = v23->vtable3; /*0x718e41*/
+      v7[11] = v23->ptr_4; /*0x718e3b*/
+      v7[12] = v23->ptr_8; /*0x718e41*/
       (v68) = ((v68) & ~0xFFFF) | ((*v8 / 256) & 0xFFFF); /*0x718e52*/
       v24 = (int *)v7[3]; /*0x718e63*/
       HIWORD(v68) = v7[11] / 256; /*0x718e69*/

@@ -1265,9 +1265,9 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     v26 = ObjectPlacement::CalcPosition((ObjectPlacement *)v25, &v35, v38, v39, v33, 0); /*0x75c541*/
     Voxel_field_0x28 = this->Voxel_field_0x28; /*0x75c548*/
     this->u32_28 = *v26; /*0x75c54d*/
-    this->u32_2C = v26->vtable2; /*0x75c552*/
+    this->u32_2C = v26->ptr_4; /*0x75c552*/
     v31 = this->Voxel_field_0xC; /*0x75c55b*/
-    *(unsigned int *)this->__pad_30 = v26->vtable3; /*0x75c562*/
+    *(unsigned int *)this->__pad_30 = v26->ptr_8; /*0x75c562*/
     v27 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, this->Voxel_field_0x28); /*0x75c565*/
     if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v27, v31) ) /*0x75c56c*/
     {
@@ -2372,7 +2372,7 @@ int Voxel::SectionProject(int * a2, int a3)
   }
   v60 = *(float *)a3; /*0x7619eb*/
   __asm { fild [esp+0C8h+var_A4] } /*0x7619f2*/
-  v6 = a2->vtable3; /*0x7619f6*/
+  v6 = a2->ptr_8; /*0x7619f6*/
   v62 = a2[1]; /*0x7619f9*/
   v63 = v6; /*0x7619fd*/
   __asm /*0x761a01*/

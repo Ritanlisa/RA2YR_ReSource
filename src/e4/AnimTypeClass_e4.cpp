@@ -64,7 +64,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
   /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e407) */
   /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e40e) */
   /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e415) */
-  memset(&this->vtable4, 0, 0x20u); /*0x41e41c*/
+  memset(&this->ptr_C, 0, 0x20u); /*0x41e41c*/
   if ( dword_A8B210 < dword_A8B208 /*0x41e452*/
     || (byte_A8B20D || !dword_A8B208)
     && dword_A8B214 > 0
@@ -173,7 +173,7 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
   /* X11: vtable install elided (X67 recv-slot, RHS vt_AnimTypeClass) */  /*0x427737*/
   /* X11: vtable install elided (implicit via AnimTypeClass virtuals 0x42773d) */
   /* X11: vtable install elided (implicit via AnimTypeClass virtuals 0x427744) */
-  AbstractClass::GenerateUniqueID(&this->vtable4); /*0x42774b*/
+  AbstractClass::GenerateUniqueID(&this->ptr_C); /*0x42774b*/
   this->IsLogic_d = 1; /*0x427750*/
   this->RadarInvisible_d = 1; /*0x427757*/
   this->Selectable_d = 0; /*0x42775e*/
@@ -241,9 +241,9 @@ void* AnimTypeClass::GetWarhead(int a2)
     }
     else
     {
-      if ( this->vtable4 && this->vtable4 ) /*0x427b85*/
+      if ( this->ptr_C && this->ptr_C ) /*0x427b85*/
       {
-        __3_YAXPAX_Z(this->vtable4); /*0x427b90*/
+        __3_YAXPAX_Z(this->ptr_C); /*0x427b90*/
         this->ImageAllocated = 0; /*0x427b98*/
       }
       char v4 = this->ImageFile; // cl /*0x427b9f*/
@@ -667,14 +667,14 @@ char AnimTypeClass::GetLoopCount(int a2)
     }
     else
     {
-      if ( this->vtable4 && this->vtable4 ) /*0x427ac4*/
+      if ( this->ptr_C && this->ptr_C ) /*0x427ac4*/
       {
-        __3_YAXPAX_Z(this->vtable4); /*0x427acf*/
+        __3_YAXPAX_Z(this->ptr_C); /*0x427acf*/
         this->ImageAllocated = 0; /*0x427ad7*/
       }
       this->Image = 0; /*0x427af6*/
       char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
-      _makepath(Buffer, 0, 0, (const char *)this->vtable4, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
+      _makepath(Buffer, 0, 0, (const char *)this->ptr_C, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
       v2 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427b15*/
       this->Image = v2; /*0x427b1a*/
     }

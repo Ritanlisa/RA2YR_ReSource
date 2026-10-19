@@ -90,8 +90,8 @@ void * Tactical::ConstructTacticalSurface()
   this->AbstractClass_1 = 0; /*0x42a6e2*/
   this->Tactical_field_0x2 = 0; /*0x42a6e5*/
   this->ptr_3 = 1; /*0x42a6e8*/
-  this->vtable2 = 1065353216; /*0x42a6eb*/
-  this->vtable3 = 1; /*0x42a6f2*/
+  this->ptr_4 = 1065353216; /*0x42a6eb*/
+  this->ptr_8 = 1; /*0x42a6f2*/
   this->nextArrayIndex = 0; /*0x42a6f5*/
   this->referenceCount = 0; /*0x42a6f8*/
   this->needsSave = 0; /*0x42a6fb*/
@@ -195,7 +195,7 @@ void * Tactical::ConstructTacticalSurface()
     v17[393216] = 0; /*0x42a828*/
   else
     v17 = 0; /*0x42a830*/
-  this->vtable4 = v17; /*0x42a832*/
+  this->ptr_C = v17; /*0x42a832*/
   v17[393216] = 0; /*0x42a835*/
   v18 = 0; /*0x42a83e*/
   *(unsigned int *)(this->uniqueId + 0x100000) = 0; /*0x42a840*/
@@ -351,8 +351,8 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
     return (gamemd::ScenarioClass **)(HIDWORD(a8_2)); /*0x48465c*/
   }
   v10 = a4; /*0x4841b5*/
-  *a4 = 1000 * (int)dword_A8B230[378].vtable1 / 100; /*0x4841de*/
-  *a8_2 = 1000 * (int)dword_A8B230[378].vtable3 / 100; /*0x48420d*/
+  *a4 = 1000 * (int)dword_A8B230[378].ptr_0 / 100; /*0x4841de*/
+  *a8_2 = 1000 * (int)dword_A8B230[378].ptr_8 / 100; /*0x48420d*/
   *(unsigned int *)a8_2 = 1000 * dword_A8B230[378].uniqueId / 100; /*0x48423c*/
   v11 = 0; /*0x48426b*/
   *(unsigned int *)HIDWORD(a8_2) = 1000 * dword_A8B230[378].abstractFlags / 100; /*0x48426d*/
@@ -422,7 +422,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   {
     if ( (unsigned __int8)PsyDom::IsActive() ) /*0x4844c4*/
     {
-      *v10 += v9->Tactical_field_0x11B * (int)dword_A8B230[380].vtable1 - dword_A8B230[380].referenceCount; /*0x4844ec*/
+      *v10 += v9->Tactical_field_0x11B * (int)dword_A8B230[380].ptr_0 - dword_A8B230[380].referenceCount; /*0x4844ec*/
       referenceCount = dword_A8B230[380].referenceCount; /*0x4844fa*/
       v24 = (int)dword_A8B230[380].NeedsSaveOrLink * (v9->Tactical_field_0x11B + 4); /*0x484503*/
     }
@@ -430,9 +430,9 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
     {
       if ( NukeFlash::IsActive() ) /*0x48450f*/
       {
-        *v10 += v9->Tactical_field_0x11B * (int)dword_A8B230[380].vtable1 - (unsigned int)dword_A8B230[380].vtable0; /*0x484537*/
-        v22 = (int)dword_A8B230[380].vtable1 * (v9->Tactical_field_0x11B + 4) /*0x484559*/
-        - (unsigned int)dword_A8B230[380].vtable0
+        *v10 += v9->Tactical_field_0x11B * (int)dword_A8B230[380].ptr_0 - (unsigned int)dword_A8B230[380].ptr_0; /*0x484537*/
+        v22 = (int)dword_A8B230[380].ptr_0 * (v9->Tactical_field_0x11B + 4) /*0x484559*/
+        - (unsigned int)dword_A8B230[380].ptr_0
         + *a6;
         goto LABEL_21; /*0x48455b*/
       }
@@ -443,8 +443,8 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
     v22 = v24 - referenceCount + *a6; /*0x48459e*/
     goto LABEL_21; /*0x48459e*/
   }
-  *v10 += v9->Tactical_field_0x11B * dword_A8B230[379].uniqueId - (unsigned int)dword_A8B230[379].vtable3; /*0x48449b*/
-  v22 = dword_A8B230[379].uniqueId * (v9->Tactical_field_0x11B + 4) - (unsigned int)dword_A8B230[379].vtable3 + *a6; /*0x4844bd*/
+  *v10 += v9->Tactical_field_0x11B * dword_A8B230[379].uniqueId - (unsigned int)dword_A8B230[379].ptr_8; /*0x48449b*/
+  v22 = dword_A8B230[379].uniqueId * (v9->Tactical_field_0x11B + 4) - (unsigned int)dword_A8B230[379].ptr_8 + *a6; /*0x4844bd*/
   LABEL_21:
   *a6 = v22; /*0x4845a0*/
   v25 = *v10; /*0x4845a2*/
@@ -640,7 +640,7 @@ namespace gamemd {
 void * Tactical::GetCellData(void *a1)
 {
   return (char *)(g_MissionQueueFrame.localVariables[163] /*0x58c2be*/
-  + 80 * (*(int16_t *)this->vtable1 + g_MapCellWidth * *(int16_t *)this->Tactical_field_0x2));
+  + 80 * (*(int16_t *)this->ptr_0 + g_MapCellWidth * *(int16_t *)this->Tactical_field_0x2));
 }
 }
 // 0x640A40
@@ -986,8 +986,8 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
   v15 = aP2; /*0x6923e3*/
   v16 = aP2; /*0x6923e9*/
   *aP2 = *v14; /*0x6923eb*/
-  v16->u32_4 = v14->vtable2; /*0x6923f0*/
-  v16->u32_8 = v14->vtable3; /*0x6923f6*/
+  v16->u32_4 = v14->ptr_4; /*0x6923f0*/
+  v16->u32_8 = v14->ptr_8; /*0x6923f6*/
   result = (int)g_TacticalClass_Instance; /*0x6923f9*/
   if ( g_TacticalClass_Instance && (result = Tactical::IsCellVisible((Tactical *)&dword_87F7E8, v15), (unsigned char)result) ) /*0x692413*/
   {
@@ -1569,8 +1569,8 @@ int Tactical::AddCellToDrawList(int aP1, void *a2)
       int v14[3]; // [esp+Ch] [ebp-Ch] BYREF
       Coords = CellClass::GetCoords((unsigned int *)aP1, v14); /*0x6da819*/
       int v5 = *Coords; // ecx /*0x6da81e*/
-      int v6 = Coords->vtable2; // esi /*0x6da820*/
-      int v7 = Coords->vtable3; // edx /*0x6da823*/
+      int v6 = Coords->ptr_4; // esi /*0x6da820*/
+      int v7 = Coords->ptr_8; // edx /*0x6da823*/
       int v8 = aP1->q12C; // eax /*0x6da826*/
       v14[2] = v7; /*0x6da82e*/
       if ( (v8 & 8) != 0 && (v8 & 0x10) != 0 ) /*0x6da836*/
@@ -1654,8 +1654,8 @@ void* Tactical::DrawTacticalConnectorLines()
         Coords = CellClass::GetCoords(v2, v63); /*0x6db2e7*/
         unsigned int v52[3]; // [esp+8Ch] [ebp-88h] BYREF
         v52[0] = *Coords; /*0x6db2ee*/
-        v52[1] = Coords->vtable2; /*0x6db2fa*/
-        v52[2] = Coords->vtable3; /*0x6db30b*/
+        v52[1] = Coords->ptr_4; /*0x6db2fa*/
+        v52[2] = Coords->ptr_8; /*0x6db30b*/
         int *v7; // eax
         int v60; // [esp+ECh] [ebp-28h] BYREF
         v7 = Coord::To_ScreenRaw(&v60, v52); /*0x6db30f*/
@@ -1714,8 +1714,8 @@ void* Tactical::DrawTacticalConnectorLines()
         int *v17; // eax
         v17 = CellClass::GetCoords(v2, v57); /*0x6db40e*/
         v48 = *v17; /*0x6db415*/
-        v49 = v17->vtable2; /*0x6db41c*/
-        v50 = v17->vtable3; /*0x6db432*/
+        v49 = v17->ptr_4; /*0x6db41c*/
+        v50 = v17->ptr_8; /*0x6db432*/
         int *v18; // eax
         int v61; // [esp+F4h] [ebp-20h] BYREF
         v18 = Coord::To_ScreenRaw(&v61, &v48); /*0x6db436*/
@@ -2034,7 +2034,7 @@ int Tactical::UpdateMapView(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
   int result; // eax
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x6dbe0f*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0->ptr_0, a1, aP2); /*0x6dbe0f*/
   if ( result >= 0 ) /*0x6dbe16*/
     return 0; /*0x6dbe18*/
   return result; /*0x6dbe1a*/

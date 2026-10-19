@@ -294,7 +294,7 @@ int MapClass::ToggleZoom(int a2)
     {
       if ( v4 && !((char *)&g_VisibilitySystem)->isCellAccessible((int)dword_A83D4C->relatedTagsCount) ) /*0x4ac9ad*/
         v4 = 0; /*0x4ac9b6*/
-      void *MapClass_field_0x0 = this->vtable1; // edx /*0x4ac9b8*/
+      void *MapClass_field_0x0 = this->ptr_0; // edx /*0x4ac9b8*/
       this->q11B1 = 0; /*0x4ac9c0*/
       this->q11B2 = 0; /*0x4ac9c7*/
       this->q11B3 = 0; /*0x4ac9ce*/
@@ -307,7 +307,7 @@ int MapClass::ToggleZoom(int a2)
       }
       else
       {
-        v6 = (int (**)(MapClass *))this->vtable1; /*0x4ac9f4*/
+        v6 = (int (**)(MapClass *))this->ptr_0; /*0x4ac9f4*/
         this->q11B4 = 0; /*0x4ac9f8*/
         return v6[20](this); /*0x4ac9ff*/
       }
@@ -3888,12 +3888,12 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
                            Capacity + v24,
                            0) )
                     {
-                      void *vtable0; // eax
-                      vtable0 = v13[1].ptr_0; /*0x5a0615*/
+                      void *ptr_0; // eax
+                      ptr_0 = v13[1].ptr_0; /*0x5a0615*/
                       unsigned int *Items; // edx
                       Items = v13->Items; /*0x5a0618*/
-                      v13[1].ptr_0 = (char *)vtable0 + 1; /*0x5a061e*/
-                      Items[(unsigned int)vtable0] = v33; /*0x5a0625*/
+                      v13[1].ptr_0 = (char *)ptr_0 + 1; /*0x5a061e*/
+                      Items[(unsigned int)ptr_0] = v33; /*0x5a0625*/
                     }
                     *(unsigned int *)(v22 + 60) = v30 + 1; /*0x5a0628*/
                     v15 = g_MissionQueueFrame.localVariables[160]; /*0x5a062b*/
@@ -4300,7 +4300,7 @@ int MapClass::ProcessVisibilityFlags()
     }
   }
   HouseClass::RevealShroudForAllies(0, 0); /*0x4acb9c*/
-  return (*((int (**)(MapClass *, int))this->vtable1 + 14))(this, 1); /*0x4acbaa*/
+  return (*((int (**)(MapClass *, int))this->ptr_0 + 14))(this, 1); /*0x4acbaa*/
 
 }
 // 0x4ACBC0

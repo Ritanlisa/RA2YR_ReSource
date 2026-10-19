@@ -132,7 +132,7 @@ int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
 
   aP0->Owner = (int)((FootClass *)a2); /*0x55a718*/
-  *&aP0->vtable2 = (void *)(a2); /*0x55a71b*/
+  *&aP0->ptr_4 = (void *)(a2); /*0x55a71b*/
   return 0; /*0x55a720*/
 
 }

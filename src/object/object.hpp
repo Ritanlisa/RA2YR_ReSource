@@ -661,8 +661,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int QueueTechnoVoiceLine( TechnoClass * aP1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, TechnoClass * aP5, TechnoClass * aP6, TechnoClass * aP7, TechnoClass * aP8, TechnoClass * aP9, TechnoClass * aP10, TechnoClass * aP11);  // G42.39 supply
 
     void* RenderTechnoOverlaySHP( TechnoClass * aP1, int a3, TechnoClass * aP3, int a5, TechnoClass * aP5, TechnoClass * aP6, int a8, char a9, TechnoClass * aP9, TechnoClass * aP10, int a12);  // G42.39 supply
-    void* vtable1;  // 0x0 (ml truth)  gB vtable supply
-    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
+    void* ptr_0;  // 0x0 (ml truth)  gB vtable supply
+    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
 public:  // g57c5 W6 owner supply
     unsigned int u32_61;  // 0x61 g57c5 W6 (ml ObjectClass@0x61 own)
 public:  // g57c5 W6 owner supply
@@ -717,7 +717,7 @@ public:  // g57c5 W6 owner supply
     int u8_11E;  // X10 supply (member_lookup)
     int u8_CD;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
 
     unsigned int u32_100;  // X10 supply (member_lookup)
 };

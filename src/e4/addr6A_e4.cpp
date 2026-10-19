@@ -870,11 +870,11 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     v6 = aP1[2]; /*0x6a053d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x6a0540*/
     this->ambientSoundController[3] = v6; /*0x6a0544*/
-    void *vtable3; // [esp-4h] [ebp-10h]
-    vtable3 = this->M12; /*0x6a054a*/
+    void *ptr_8; // [esp-4h] [ebp-10h]
+    ptr_8 = this->M12; /*0x6a054a*/
     CellClass *v7; // eax
     v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x6a0551*/
-    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)this->? + 129) ) /*0x6a0564*/
+    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_8) && !*((unsigned char *)this->? + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo((int)this, aP1, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/

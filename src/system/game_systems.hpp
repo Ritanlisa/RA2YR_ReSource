@@ -539,7 +539,7 @@ public:
     unsigned int u32_38;  // X10 supply (member_lookup)
     unsigned int u32_8;  // X10 supply (member_lookup)
     unsigned int u32_C;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class SaveLoad

@@ -315,22 +315,22 @@ namespace gamemd {
 int E4Recv_4B69E0::sub_4B69E0(int a2)
 {
 
-  void *vtable1; // edx
+  void *ptr_0; // edx
   int v3; // esi
   int v4; // eax
 
   if ( this->M16 >= 5 ) /*0x4b69f1*/
     return 0; /*0x4b69f1*/
-  vtable1 = dword_A8B230[376].vtable1; /*0x4b6a01*/
-  if ( vtable1 ) /*0x4b6a09*/
+  ptr_0 = dword_A8B230[376].ptr_0; /*0x4b6a01*/
+  if ( ptr_0 ) /*0x4b6a09*/
   {
     v4 = 0; /*0x4b6a10*/
-    if ( (int)vtable1 > 0 ) /*0x4b6a14*/
+    if ( (int)ptr_0 > 0 ) /*0x4b6a14*/
     {
       while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v4) != a2 /*0x4b6a2c*/
            || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v4) == -1 )
       {
-        if ( ++v4 >= (int)vtable1 ) /*0x4b6a31*/
+        if ( ++v4 >= (int)ptr_0 ) /*0x4b6a31*/
         {
           v3 = -1; /*0x4b6a33*/
           goto LABEL_11; /*0x4b6a36*/
@@ -338,7 +338,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
       }
       v3 = v4; /*0x4b6a3b*/
       if ( v4 == -1 /*0x4b6a53*/
-        || *(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v4) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v4) )
+        || *(dword_A8B230[41].NeedsSaveOrLink.ptr_8 + v4) < *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v4) )
       {
         goto LABEL_11; /*0x4b6a53*/
       }
@@ -350,7 +350,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
   *(&this->? + this->?++) = a2; /*0x4b6a55*/
   this->owningHouseIndex += (*(int (**)(int))(*(unsigned int *)a2 + 172))(a2); /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
-    ++*(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v3); /*0x4b6a8b*/
+    ++*(dword_A8B230[41].NeedsSaveOrLink.ptr_8 + v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
 
 }
@@ -361,7 +361,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
 {
 
   int uniqueId; // eax
-  void *vtable1; // edx
+  void *ptr_0; // edx
   int v5; // eax
   int v6; // ecx
   int v7; // eax
@@ -372,20 +372,20 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
   uniqueId = this->M16; /*0x4b6ab4*/
   if ( uniqueId <= 0 || a2 < 0 || a2 >= uniqueId ) /*0x4b6acd*/
     return 0; /*0x4b6b72*/
-  vtable1 = dword_A8B230[376].vtable1; /*0x4b6adb*/
-  if ( vtable1 ) /*0x4b6ae3*/
+  ptr_0 = dword_A8B230[376].ptr_0; /*0x4b6adb*/
+  if ( ptr_0 ) /*0x4b6ae3*/
   {
     v5 = 0; /*0x4b6ae5*/
-    if ( (int)vtable1 > 0 ) /*0x4b6ae9*/
+    if ( (int)ptr_0 > 0 ) /*0x4b6ae9*/
     {
       while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v5) != *(&this->? + a2) /*0x4b6b05*/
            || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v5) == -1 )
       {
-        if ( ++v5 >= (int)dword_A8B230[376].vtable1 ) /*0x4b6b10*/
+        if ( ++v5 >= (int)dword_A8B230[376].ptr_0 ) /*0x4b6b10*/
           goto LABEL_12; /*0x4b6b10*/
       }
       if ( v5 != -1 ) /*0x4b6b17*/
-        --*(dword_A8B230[41].NeedsSaveOrLink.vtable3 + v5); /*0x4b6b22*/
+        --*(dword_A8B230[41].NeedsSaveOrLink.ptr_8 + v5); /*0x4b6b22*/
     }
   }
   LABEL_12:
@@ -416,17 +416,17 @@ namespace gamemd {
 int E4Recv_4B6BF0::sub_4B6BF0()
 {
 
-  void *vtable1; // edx
-  vtable1 = dword_A8B230[376].ptr_4; /*0x4b6bf9*/
-  if ( !vtable1 ) /*0x4b6c01*/
+  void *ptr_0; // edx
+  ptr_0 = dword_A8B230[376].ptr_4; /*0x4b6bf9*/
+  if ( !ptr_0 ) /*0x4b6c01*/
     return -1; /*0x4b6c01*/
   int result = 0; // eax /*0x4b6c03*/
-  if ( (int)vtable1 <= 0 ) /*0x4b6c07*/
+  if ( (int)ptr_0 <= 0 ) /*0x4b6c07*/
     return -1; /*0x4b6c25*/
   while ( *(ObjectClass **)(dword_A8B230[375].referenceCount + 4 * result) != this /*0x4b6c1e*/
        || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * result) == -1 )
   {
-    if ( ++result >= (int)vtable1 ) /*0x4b6c23*/
+    if ( ++result >= (int)ptr_0 ) /*0x4b6c23*/
       return -1; /*0x4b6c23*/
   }
   return result; /*0x4b6c28*/
@@ -662,11 +662,11 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, unsigned int *aP1, int a4, int 
     v6 = aP1[2]; /*0x4b0e6d*/
     HIBYTE(aP1->customSound_controller[4]) = 1; /*0x4b0e70*/
     aP1->ambientSoundController[3] = v6; /*0x4b0e74*/
-    void *vtable3; // [esp-4h] [ebp-10h]
-    vtable3 = aP1->?; /*0x4b0e7a*/
+    void *ptr_8; // [esp-4h] [ebp-10h]
+    ptr_8 = aP1->?; /*0x4b0e7a*/
     CellClass *v7; // eax
     v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x4b0e81*/
-    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)aP1->? + 129) ) /*0x4b0e94*/
+    if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)ptr_8) && !*((unsigned char *)aP1->? + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo((int)aP1, aP1, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
@@ -842,10 +842,10 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
   this->M4 = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return &this->AbstractClass; /*0x4b5860*/
-  void *vtable2 = this->M8; // ecx /*0x4b5862*/
+  void *ptr_4 = this->M8; // ecx /*0x4b5862*/
   int v6 = 0; // eax /*0x4b5865*/
   BYTE1(this->M13) = 1; /*0x4b5869*/
-  if ( (int)vtable2 <= 0 ) /*0x4b586d*/
+  if ( (int)ptr_4 <= 0 ) /*0x4b586d*/
     return &this->AbstractClass; /*0x4b586d*/
   do /*0x4b5881*/
   {

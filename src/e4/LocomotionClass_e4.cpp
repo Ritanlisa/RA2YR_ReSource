@@ -36,7 +36,7 @@ int LocomotionClass::Initialize()
   this->u32_24 = v2; /*0x4af55c*/
   this->ptr_30 = 0; /*0x4af55f*/
   this->u32_34 = g_DDraw_ClipRect; /*0x4af568*/
-  *((unsigned long long *)&this->vtable2) = qword_8A0794; /*0x4af570*/
+  *((unsigned long long *)&this->ptr_4) = qword_8A0794; /*0x4af570*/
   this->q040 = g_DDraw_ClipRect; /*0x4af585*/
   this->q044 = qword_8A0794; /*0x4af58e*/
   int v3; // ecx
@@ -89,22 +89,22 @@ int LocomotionClass::CheckBridgeBlock()
 {
 
 
-  int vtable1; // eax
+  int ptr_0; // eax
   if ( (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 97))(this->LinkedTo) == 7 /*0x4cfa8e*/
-    || ((vtable1) = ((vtable1) & ~0xFF) | ((BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass)) & 0xFF), !(unsigned char)vtable1) )
+    || ((ptr_0) = ((ptr_0) & ~0xFF) | ((BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass)) & 0xFF), !(unsigned char)ptr_0) )
   {
-    vtable1 = (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
+    ptr_0 = (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
     FootClass *LinkedTo; // edi
     Cell *v4; // eax
     unsigned int *v5; // eax
-    if ( vtable1 == 2 /*0x4cfacc*/
-      && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].?, vtable1->u8_E0D)
+    if ( ptr_0 == 2 /*0x4cfacc*/
+      && (LinkedTo = this->LinkedTo, ptr_0 = (int)LinkedTo[1].?, ptr_0->u8_E0D)
       && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
           v5 = Cell::IsBridge(v4),
-          LOBYTE(vtable1) = Array::Contains((Array *)this->LinkedTo, (int)v5),
-          !(unsigned char)vtable1) )
+          LOBYTE(ptr_0) = Array::Contains((Array *)this->LinkedTo, (int)v5),
+          !(unsigned char)ptr_0) )
     {
-      LOBYTE(vtable1) = (*((char (**)(FootClass *, unsigned int, int))LinkedTo->TechnoClass + 289))(LinkedTo, 0, 1); /*0x4cfad6*/
+      LOBYTE(ptr_0) = (*((char (**)(FootClass *, unsigned int, int))LinkedTo->TechnoClass + 289))(LinkedTo, 0, 1); /*0x4cfad6*/
     }
     else
     {
@@ -114,7 +114,7 @@ int LocomotionClass::CheckBridgeBlock()
       this->u32_38 = 0; /*0x4cfaeb*/
     }
   }
-  return vtable1; /*0x4cfadc*/
+  return ptr_0; /*0x4cfadc*/
 
 }
 } // namespace gamemd

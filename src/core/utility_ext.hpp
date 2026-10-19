@@ -1435,7 +1435,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int q014;  // X10 supply (member_lookup)
     int q01C;  // X10 supply (member_lookup)
     unsigned int u32_19;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_EnumConnectionPointsClass
 
@@ -1471,7 +1471,7 @@ public:
     int q00C;  // X10 supply (member_lookup)
     int q014;  // X10 supply (member_lookup)
     int u32_11;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_EnumConnectionsClass
 
@@ -1599,7 +1599,7 @@ public:
     int q014;  // X10 supply (member_lookup)
     unsigned int u32_24;  // X10 supply (member_lookup)
     int u8_9;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_GraphicMenuAnimItem
 
@@ -1639,7 +1639,7 @@ virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
     unsigned int u32_2C;  // X10 supply (member_lookup)
     unsigned int u32_30;  // X10 supply (member_lookup)
     int u8_9;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif
 // 2 methods in IDA
@@ -1664,7 +1664,7 @@ public:
     unsigned int u32_C;  // G42.39 data supply
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_GraphicMenuItem
 
@@ -1709,7 +1709,7 @@ public:
     unsigned int u32_14;  // X10 supply (member_lookup)
     unsigned int u32_18;  // X10 supply (member_lookup)
     unsigned int u32_1D;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif
 // 3 methods in IDA
@@ -2059,7 +2059,7 @@ public:
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
     unsigned char q010;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif
 // 1 methods in IDA
@@ -2468,7 +2468,7 @@ public:
     uint8_t VectorCursor_field_0x18[4];
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
     unsigned int u32_8;  // X10 supply (member_lookup)
 };

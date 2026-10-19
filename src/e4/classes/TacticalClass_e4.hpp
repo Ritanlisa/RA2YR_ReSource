@@ -37,7 +37,7 @@ struct TacticalClass {
     unsigned int field60;  // 0x60
     unsigned int field64;  // 0x64
     unsigned int field68;  // 0x68
-    int vtable28;  // 0x6C
+    int u32_6C;  // 0x6C
     unsigned int field70;  // 0x70
     unsigned int field74;  // 0x74
     unsigned int field78;  // 0x78

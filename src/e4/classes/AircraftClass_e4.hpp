@@ -27,9 +27,9 @@ struct AircraftTypeClass;  // fix_fwd_type_supply
 
 struct AircraftClass {
     unsigned int ptr_0;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
@@ -371,7 +371,7 @@ struct AircraftClass {
     bool FootClass_field_bool_6B8;  // 0x6B8
     char m_padding_6B9[3];  // 0x6B9
     int m_unused_6BC;  // 0x6BC
-    void* vtable5;  // 0x6C0
+    void* ptr_6C0;  // 0x6C0
     AircraftTypeClass* Type;  // 0x6C4
     bool AircraftClass_field_bool_6C8;  // 0x6C8
     bool HasPassengers;  // 0x6C9

@@ -1027,7 +1027,7 @@ LABEL_16:
   Debug::Log(); /*0x685566*/
   MouseClass::HandleClick((MouseClass *)&dword_87F7E8); /*0x685573*/
   Debug::Log(); /*0x68557d*/
-  (*(void (**)(LogicClass_flat *))(g_LogicClass.vtable1 + 12))(&g_LogicClass); /*0x685590*/
+  (*(void (**)(LogicClass_flat *))(g_LogicClass.ptr_0 + 12))(&g_LogicClass); /*0x685590*/
   Debug::Log(); /*0x685598*/
   *(unsigned int *)&stru_A8E960.random[340] = 0; /*0x6855a7*/
   if ( *(unsigned int *)&stru_A8E960.random[328] && stru_A8E960.random[337] ) /*0x6855b5*/
@@ -2767,7 +2767,7 @@ int E4Recv_68F8A0::sub_68F8A0()
 
 
   int v2; // eax
-  v2 = (*(int (**)(char *))(*&dword_A83D4C->vtable5 + 24))(&dword_A83D4C->vtable5); /*0x68f8b3*/
+  v2 = (*(int (**)(char *))(*&dword_A83D4C->ptr_5 + 24))(&dword_A83D4C->ptr_5); /*0x68f8b3*/
   char Buffer[20]; // [esp+14h] [ebp-14h] BYREF
   sprintf(Buffer, "%d", v2); /*0x68f8c1*/
   unsigned int v3; // kr04_4
@@ -2776,14 +2776,14 @@ int E4Recv_68F8A0::sub_68F8A0()
   v4 = __2_YAPAXI_Z(0x2Cu); /*0x68f8e8*/
   if ( v4 ) /*0x68f8ef*/
   {
-    void *vtable3 = this->M12; // ebx /*0x68f8f8*/
+    void *ptr_8 = this->M12; // ebx /*0x68f8f8*/
     char *v6; // eax
     v6 = (char *)this->M4 + 214; /*0x68f8fd*/
     *(unsigned int *)(v4 + 4) = (char *)this->AbstractClass + 590 - 12 * (v3 - 1); /*0x68f902*/
     *(unsigned int *)(v4 + 8) = v6; /*0x68f908*/
     *(unsigned int *)(v4 + 12) = Timer::GetTicks(); /*0x68f910*/
     *(unsigned int *)(v4 + 20) = 0; /*0x68f915*/
-    *(unsigned int *)(v4 + 40) = vtable3; /*0x68f91c*/
+    *(unsigned int *)(v4 + 40) = ptr_8; /*0x68f91c*/
     *(unsigned int *)(v4 + 24) = Buffer; /*0x68f91f*/
     *(unsigned int *)(v4 + 28) = 0; /*0x68f922*/
     *(unsigned int *)(v4 + 32) = 0; /*0x68f925*/
@@ -2839,10 +2839,10 @@ unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t Buffe
     v8 = a6; /*0x68fb2d*/
   wchar_t Buffer[64]; // [esp+14h] [ebp-80h] BYREF
   swprintf(Buffer, BufferCount, v8); /*0x68fb3d*/
-  unsigned int *vtable3 = this->M12; // ecx /*0x68fb42*/
+  unsigned int *ptr_8 = this->M12; // ecx /*0x68fb42*/
   int v11; // esi
-  v11 = a8 - vtable3[2]; /*0x68fb5d*/
-  (*(void (**)(unsigned int *, int, wchar_t *, int, int, int))(*vtable3 + 12))(vtable3, a3, Buffer, a7, v11, 2); /*0x68fb6e*/
+  v11 = a8 - ptr_8[2]; /*0x68fb5d*/
+  (*(void (**)(unsigned int *, int, wchar_t *, int, int, int))(*ptr_8 + 12))(ptr_8, a3, Buffer, a7, v11, 2); /*0x68fb6e*/
   unsigned int *v12 = this->M12; // ecx /*0x68fb71*/
   int v13; // edi
   v13 = v12[2]; /*0x68fb7b*/

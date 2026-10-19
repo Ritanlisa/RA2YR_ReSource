@@ -15,10 +15,10 @@ struct ParticleSystemClass;  // fix_fwd_type_supply
 struct Color;  // fix_fwd_type_supply
 
 struct ParticleSystemTypeClass {
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     int SlowdownDistance;  // 0x10
     int ParticleSystemTypeClass_field_29C;  // 0x14
     int ParticleSystemTypeClass_field_2A0;  // 0x18

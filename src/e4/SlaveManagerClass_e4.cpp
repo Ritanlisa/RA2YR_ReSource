@@ -856,7 +856,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6b11d6) */
       /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6b11dd) */
     }
-    Prefix_0 = (*(int (__stdcall **)(int, int *, int, unsigned int))(v2->vtable4)(v2, &v16, 4, 0); /*0x6b11f2*/
+    Prefix_0 = (*(int (__stdcall **)(int, int *, int, unsigned int))(v2->ptr_C)(v2, &v16, 4, 0); /*0x6b11f2*/
     if ( Prefix_0 >= 0 ) /*0x6b11f6*/
     {
       slaves = a1->slaves; /*0x6b11fc*/
@@ -963,14 +963,14 @@ long long SlaveManagerClass::Calc2DDistance()
 namespace gamemd {
 wchar_t * SlaveManagerClass::CreateSlave(wchar_t ** a2)
 {
-  int (**vtable0)(HouseClass *, int); // edi
+  int (**ptr_0)(HouseClass *, int); // edi
   int v4; // eax
   wchar_t *result; // eax
   wchar_t *v6; // [esp+Ch] [ebp-8h]
 
-  vtable0 = (int (**)(HouseClass *, int))this->house->ptr_0; /*0x6af65f*/
+  ptr_0 = (int (**)(HouseClass *, int))this->house->ptr_0; /*0x6af65f*/
   v4 = (*((int (**)(TechnoClass *))this->master->ptr_0 + 15))(this->master); /*0x6af661*/
-  result = (wchar_t *)vtable0[35](this->house, v4); /*0x6af668*/
+  result = (wchar_t *)ptr_0[35](this->house, v4); /*0x6af668*/
   *a2 = result; /*0x6af674*/
   if ( result ) /*0x6af676*/
   {

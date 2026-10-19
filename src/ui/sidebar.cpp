@@ -107,7 +107,7 @@ bool SidebarClass::AddCameo(int AbstractType, int a3)
   if ( v8 > 0 ) /*0x6a63e3*/
   {
     result = (int)&this->CapacityIncrement * v24 + 5532; /*0x6a63e5*/
-    while ( result->vtable2 != a2 || *(unsigned int *)result != a3 ) /*0x6a63ef*/
+    while ( result->ptr_4 != a2 || *(unsigned int *)result != a3 ) /*0x6a63ef*/
     {
       ++v9; /*0x6a63f5*/
       result += 52; /*0x6a63f6*/
@@ -148,7 +148,7 @@ bool SidebarClass::AddCameo(int AbstractType, int a3)
     DialogControl::Hide((GadgetClass *)(&stru_B07C48 + 8 * v24)); /*0x6a6485*/
   if ( v24 == this->u32_539C ) /*0x6a6490*/
     Tactical::UpdateUIVisibility((Tactical *)this); /*0x6a6494*/
-  (*((void (__thiscall **)(SidebarClass *, int))this->vtable1 + 54))(this, 1); /*0x6a649f*/
+  (*((void (__thiscall **)(SidebarClass *, int))this->ptr_0 + 54))(this, 1); /*0x6a649f*/
   if ( v23 == -1 ) /*0x6a64aa*/
   {
     v14 = &this->u32_1598; /*0x6a64b0*/
@@ -195,7 +195,7 @@ bool SidebarClass::AddCameo(int AbstractType, int a3)
       this->u32_53A7 = 1; /*0x6a65cf*/
     }
   }
-  SidebarClass_field_0x0 = (int (__thiscall **)(SidebarClass *, unsigned int))this->vtable1; /*0x6a65d6*/
+  SidebarClass_field_0x0 = (int (__thiscall **)(SidebarClass *, unsigned int))this->ptr_0; /*0x6a65d6*/
   this->u32_53A6 = 1; /*0x6a65dc*/
   result = SidebarClass_field_0x0[14](this, 0); /*0x6a65e3*/
   if ( v13 == this->u32_539C ) /*0x6a65ec*/

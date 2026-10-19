@@ -79,12 +79,12 @@ int CampaignClass::LoadFromINIList(void *a1)
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(this->vtable1, (unsigned __int8 *)&DataGlobal_81AF8C[588]); /*0x46ce1c*/
+  result = INIClass::GetKeyCount(this->ptr_0, (unsigned __int8 *)&DataGlobal_81AF8C[588]); /*0x46ce1c*/
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x46ce48*/
-                                         this->vtable1,
+                                         this->ptr_0,
                                          (unsigned __int8 *)&DataGlobal_81AF8C[588],
                                          v3);
     (this)->GetString((unsigned __int8 *)&DataGlobal_81AF8C[588], StringByIndex, &g_INI_DefaultBuffer, Source, 32); /*0x46ce55*/

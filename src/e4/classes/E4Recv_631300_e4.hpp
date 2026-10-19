@@ -7,7 +7,7 @@ namespace gamemd {
 struct E4Recv_631300 {
     unsigned int sub_631300;
     unsigned int AbstractClass;
-    unsigned int vtable0;
+    unsigned int u32_0;
     void* ptr_0;  // minimal E2 declaration
 };
 } // namespace gamemd

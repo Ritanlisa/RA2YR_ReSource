@@ -7,8 +7,8 @@
 namespace gamemd {
 
 struct LocomotionClass {
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
     unsigned int Owner;  // 0x8
     FootClass* LinkedTo;  // 0xC
     char Powered[1];  // 0x10

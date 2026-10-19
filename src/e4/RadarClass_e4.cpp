@@ -376,7 +376,7 @@ unsigned int * RadarClass::initRadarSurface()
   this->q008 = 0; /*0x4f4227*/
   *(unsigned int *)this->u32_C = 2; /*0x4f422a*/
   /* X11: vtable install elided (implicit via off_7EA6FC virtuals 0x4f4231) */
-  return &this->vtable1; /*0x4f4237*/
+  return &this->ptr_0; /*0x4f4237*/
 
 }
 } // namespace gamemd

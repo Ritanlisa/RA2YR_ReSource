@@ -23,7 +23,7 @@ struct ScatterCommandClass;  // fix_fwd_type_supply
 struct GuardCommandClass;  // fix_fwd_type_supply
 struct StopCommandClass;  // fix_fwd_type_supply
 struct DeployCommandClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int vt02();

@@ -32,7 +32,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
     v4 = g_Str__none_; /*0x5b37a0*/
   else
     v4 = off_816CAC[(int)this->ObjectClass]; /*0x5b37a7*/
-  LOBYTE(this->vtable2) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
+  LOBYTE(this->ptr_4) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                       a2,
                       (unsigned __int8 *)v4,
                       (unsigned __int8 *)&g_INI_Key_Neutral,
@@ -72,7 +72,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
     v8 = g_Str__none_; /*0x5b3844*/
   else
     v8 = off_816CAC[(int)this->ObjectClass]; /*0x5b384b*/
-  LOBYTE(this->vtable3) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
+  LOBYTE(this->ptr_8) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                       a2,
                       (unsigned __int8 *)v8,
                       (unsigned __int8 *)&DataGlobal_82BA00[2188],
@@ -97,14 +97,14 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
     (unsigned __int8 *)v10,
     (unsigned __int8 *)g_INI_Key_Rate,
     *(double *)&this->?);
-  void *vtable0 = this->ObjectClass; // eax /*0x5b38b9*/
+  void *ptr_0 = this->ObjectClass; // eax /*0x5b38b9*/
   __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
   *&this->uniqueId = _RT1; /*0x5b38bb*/
   char *v13; // eax
-  if ( vtable0 == (void *)-1 ) /*0x5b38c1*/
+  if ( ptr_0 == (void *)-1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
   else
-    v13 = off_816CAC[(unsigned int)vtable0]; /*0x5b38ca*/
+    v13 = off_816CAC[(unsigned int)ptr_0]; /*0x5b38ca*/
   INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)v13, (unsigned __int8 *)&aAarate, 0.0); /*0x5b38dd*/
   __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
   *&this->AARate = _RT1; /*0x5b38e2*/

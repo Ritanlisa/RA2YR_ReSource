@@ -91,7 +91,7 @@ int CollectWOLConnectionTokens(void *a1)
   int v2; // ebx
   int v3; // ebp
   char *v4; // eax
-  int vtable3; // eax
+  int ptr_8; // eax
   int v6; // esi
   int uniqueId; // ebx
   void *v8; // ebp
@@ -128,7 +128,7 @@ int CollectWOLConnectionTokens(void *a1)
         String::Assign(&v15, &v17[36]); /*0x7a04e6*/
         String::GetOrEmpty(&v15); /*0x7a04ef*/
         Debug::Log(); /*0x7a04fa*/
-        vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a04ff*/
+        ptr_8 = (int)dword_B76AC4.ptr_C; /*0x7a04ff*/
         v6 = (int)dword_B76AC4.ptr_C; /*0x7a0507*/
         v14 = dword_B76AC4.ptr_C; /*0x7a050b*/
         uniqueId = dword_B76AC4.uniqueId; /*0x7a0515*/
@@ -147,14 +147,14 @@ int CollectWOLConnectionTokens(void *a1)
             v6 = (int)v14; /*0x7a0574*/
           }
           __3_YAXPAX_Z(abstractFlags); /*0x7a0579*/
-          vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a057e*/
+          ptr_8 = (int)dword_B76AC4.ptr_C; /*0x7a057e*/
           dword_B76AC4.abstractFlags = (int)v8; /*0x7a0586*/
           dword_B76AC4.uniqueId = uniqueId; /*0x7a058c*/
         }
-        if ( vtable3 >= uniqueId ) /*0x7a0594*/
+        if ( ptr_8 >= uniqueId ) /*0x7a0594*/
         {
-          v10 = 2 * vtable3; /*0x7a0596*/
-          if ( 2 * vtable3 < 10 ) /*0x7a059c*/
+          v10 = 2 * ptr_8; /*0x7a0596*/
+          if ( 2 * ptr_8 < 10 ) /*0x7a059c*/
             v10 = 10; /*0x7a059e*/
           v11 = (void *)__2_YAPAXI_Z(4 * v10); /*0x7a05b2*/
           memset(v11, 0, 4 * ((unsigned int)(4 * v10) >> 2)); /*0x7a05c0*/
@@ -166,25 +166,25 @@ int CollectWOLConnectionTokens(void *a1)
             v6 = (int)v14; /*0x7a05e3*/
           }
           __3_YAXPAX_Z(v12); /*0x7a05e8*/
-          vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a05ed*/
+          ptr_8 = (int)dword_B76AC4.ptr_C; /*0x7a05ed*/
           dword_B76AC4.abstractFlags = (int)v11; /*0x7a05f5*/
           dword_B76AC4.uniqueId = v10; /*0x7a05fb*/
         }
-        if ( v6 < vtable3 ) /*0x7a0603*/
+        if ( v6 < ptr_8 ) /*0x7a0603*/
         {
           memcpy( /*0x7a0620*/
             (void *)(dword_B76AC4.abstractFlags + 4 * v6 + 4),
             (const void *)(dword_B76AC4.abstractFlags + 4 * v6),
-            4 * (vtable3 + 0x3FFFFFFF * v6));
-          vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a0625*/
+            4 * (ptr_8 + 0x3FFFFFFF * v6));
+          ptr_8 = (int)dword_B76AC4.ptr_C; /*0x7a0625*/
         }
         v13 = (String *)(dword_B76AC4.abstractFlags + 4 * v6); /*0x7a0633*/
         if ( v13 ) /*0x7a0638*/
         {
           String::AssignFromPtr(v13, (const char **)&v15); /*0x7a063f*/
-          vtable3 = (int)dword_B76AC4.ptr_C; /*0x7a0644*/
+          ptr_8 = (int)dword_B76AC4.ptr_C; /*0x7a0644*/
         }
-        dword_B76AC4.ptr_C = (void *)(vtable3 + 1); /*0x7a064e*/
+        dword_B76AC4.ptr_C = (void *)(ptr_8 + 1); /*0x7a064e*/
         DeleteAndZero((ObjectClass *)&v15); /*0x7a0653*/
         v3 = v16; /*0x7a0658*/
         v2 = *(unsigned int *)&v15.m_3[1]; /*0x7a065c*/
@@ -372,7 +372,7 @@ LABEL_35:
   {
     while ( !(unsigned __int8)String::Compare(v15, (const char **)&v31[12]) ) /*0x7a0ad6*/
     {
-      v15 = *v15->vtable2.__pad_0; /*0x7a0ad8*/
+      v15 = *v15->ptr_4.__pad_0; /*0x7a0ad8*/
       if ( !v15 ) /*0x7a0add*/
         goto LABEL_50; /*0x7a0add*/
     }
@@ -385,12 +385,12 @@ LABEL_35:
       {
         while ( !(unsigned __int8)String::Compare(v17, (const char **)&v31[12]) ) /*0x7a0b23*/
         {
-          v17 = *v17->vtable2.__pad_0; /*0x7a0b25*/
+          v17 = *v17->ptr_4.__pad_0; /*0x7a0b25*/
           if ( !v17 ) /*0x7a0b2a*/
             goto LABEL_49; /*0x7a0b2a*/
         }
         if ( v17 != (String *)-4 ) /*0x7a0b37*/
-          v16 = *&v17->vtable2; /*0x7a0b39*/
+          v16 = *&v17->ptr_4; /*0x7a0b39*/
       }
     }
 LABEL_49:
@@ -512,7 +512,7 @@ Coord * * WOL_ProcessPingRequests()
         String::GetOrEmpty(&v13); /*0x7a10f0*/
         Debug::Log(); /*0x7a10fb*/
         v3 = String::GetOrEmpty(&v13); /*0x7a1107*/
-        String::Assign((String *)&v13.vtable2, v3); /*0x7a1111*/
+        String::Assign((String *)&v13.ptr_4, v3); /*0x7a1111*/
         owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a1116*/
         v5 = 0; /*0x7a111b*/
         v6 = 0; /*0x7a111d*/
@@ -528,7 +528,7 @@ LABEL_15:
           {
             if ( v7 >= 0 && v6 < owningHouseIndex ) /*0x7a112b*/
               v5 = (char *)g_WOL_UserList.nextObject + v7; /*0x7a1132*/
-            v8 = String::GetOrEmpty_Alt((String *)&v13.vtable2); /*0x7a113d*/
+            v8 = String::GetOrEmpty_Alt((String *)&v13.ptr_4); /*0x7a113d*/
             if ( !_strcmpi(v8, v5 + 36) ) /*0x7a1143*/
               break; /*0x7a1143*/
             owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a114f*/
@@ -538,7 +538,7 @@ LABEL_15:
               goto LABEL_15; /*0x7a115a*/
           }
         }
-        DeleteAndZero((ObjectClass *)&v13.vtable2); /*0x7a1163*/
+        DeleteAndZero((ObjectClass *)&v13.ptr_4); /*0x7a1163*/
         if ( v6 == -1 ) /*0x7a116b*/
         {
           if ( (int)dword_B76AC4.ptr_C > 0 ) /*0x7a127f*/
@@ -723,11 +723,11 @@ LABEL_27:
           v17 = FromStringInt((char **)&v23.ptr_4, v20); /*0x7a1565*/
           v9 = String::Assign(&v23, Delimiter); /*0x7a1570*/
           v10 = String::Concat(&v19, &v24, v9); /*0x7a157f*/
-          v11 = String::Concat((String *)v10, (char **)&v25.vtable2, v17); /*0x7a1586*/
+          v11 = String::Concat((String *)v10, (char **)&v25.ptr_4, v17); /*0x7a1586*/
           v12 = String::Concat((String *)v11, (char **)&v22.ptr_4, v18); /*0x7a158d*/
           String::Append2((String *)&v19.ptr_4, v12); /*0x7a1597*/
           DeleteAndZero((ObjectClass *)&v22.ptr_4); /*0x7a15a0*/
-          DeleteAndZero((ObjectClass *)&v25.vtable2); /*0x7a15a9*/
+          DeleteAndZero((ObjectClass *)&v25.ptr_4); /*0x7a15a9*/
           DeleteAndZero((ObjectClass *)&v24); /*0x7a15b2*/
           DeleteAndZero((ObjectClass *)&v23); /*0x7a15bb*/
           DeleteAndZero((ObjectClass *)&v23.ptr_4); /*0x7a15c4*/
@@ -1326,7 +1326,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
   v5 = a3; /*0x7a4c41*/
   do /*0x7a4c49*/
   {
-    v5 = v5->vtable4; /*0x7a4c43*/
+    v5 = v5->ptr_C; /*0x7a4c43*/
     ++v3; /*0x7a4c46*/
   }
   while ( v5 ); /*0x7a4c49*/
@@ -1379,7 +1379,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       SendMessageA(v13, 0x4B2u, 0, (LPARAM)v14); /*0x7a4dcf*/
       if ( MessageDialogLoopAlt(v12, (uint8_t (*)(void))GameLoop::Thunk, 0, 1, 1) == 2 ) /*0x7a4dea*/
         break; /*0x7a4dea*/
-      v4 = v4->vtable4; /*0x7a4dec*/
+      v4 = v4->ptr_C; /*0x7a4dec*/
       v20[0] = (unsigned int)&off_7F7624; /*0x7a4df3*/
       OwnerDrawControl::InitVtable(v20); /*0x7a4dfb*/
       DeleteAndZero::Alt(&v18); /*0x7a4e04*/

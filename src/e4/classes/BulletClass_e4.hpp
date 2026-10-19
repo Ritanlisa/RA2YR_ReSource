@@ -17,9 +17,9 @@ struct HouseClass;  // fix_fwd_type_supply
 struct MSShapeAnim;  // fix_fwd_type_supply
 
 struct BulletClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int BulletClass_field_0x4;  // 0x4
-    void* vtable3;  // 0x8
+    void* ptr_8;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned char __pad_010;  // 0x10
     char __pad_11[2];  // 0x11

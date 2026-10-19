@@ -190,7 +190,7 @@ int sub_594190(int * a1, int a2)
               else
               {
                 v12 = (char *)dword_ABDF94; /*0x59424f*/
-                while ( *(unsigned int *)(v12->vtable3 != v9 ) /*0x59425a*/
+                while ( *(unsigned int *)(v12->ptr_8 != v9 ) /*0x59425a*/
                 {
                   ++v11; /*0x59425c*/
                   v12 += 4; /*0x59425d*/

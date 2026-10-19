@@ -206,7 +206,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     v55 = 0; /*0x651abc*/
     if ( (int)v56 > 0 ) /*0x651ac4*/
     {
-      v54 = &v4->vtable4; /*0x651acd*/
+      v54 = &v4->ptr_C; /*0x651acd*/
       do /*0x651b6b*/
       {
         if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651ad9*/
@@ -248,7 +248,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     v58 += 104 * v24; /*0x651b92*/
     if ( (int)v56 > 0 ) /*0x651b96*/
     {
-      v54 = &v4->vtable4; /*0x651b9f*/
+      v54 = &v4->ptr_C; /*0x651b9f*/
       do /*0x651c50*/
       {
         if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651bab*/
@@ -275,7 +275,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
                   *(unsigned int *)(v26 - 56),
                   (const char *)(v26 - 24),
                   *(unsigned int *)(v26 - 28),
-                  v26->vtable2,
+                  v26->ptr_4,
                   v26->u32_6,
                   *(unsigned int *)v26);
               v26 += 104; /*0x651c2e*/

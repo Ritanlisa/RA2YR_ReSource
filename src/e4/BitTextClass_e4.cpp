@@ -41,8 +41,8 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   *(unsigned int *)(a2 + 4) = (unsigned int)(Font); /*0x4338da*/
   if ( Font ) /*0x4338dd*/
   {
-    *(unsigned int *)(a2 + 24) = Font->vtable2; /*0x4338e2*/
-    *(unsigned int *)(a2 + 28) = Font->vtable4; /*0x4338ea*/
+    *(unsigned int *)(a2 + 24) = Font->ptr_4; /*0x4338e2*/
+    *(unsigned int *)(a2 + 28) = Font->ptr_C; /*0x4338ea*/
     sub_434700((ObjectClass *)a2); /*0x4338ed*/
   }
   else

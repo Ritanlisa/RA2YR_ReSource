@@ -1356,7 +1356,7 @@ int BuildingClass::FindInPointerArray(unsigned int * a2)
   result = 0; /*0x45a613*/
   if ( v2 <= 0 ) /*0x45a618*/
     return -1; /*0x45a62f*/
-  for ( i = (unsigned int *)this->vtable2; *i != *a2; ++i ) /*0x45a61e*/
+  for ( i = (unsigned int *)this->ptr_4; *i != *a2; ++i ) /*0x45a61e*/
   {
     if ( ++result >= v2 ) /*0x45a62d*/
       return -1; /*0x45a62d*/

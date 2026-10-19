@@ -72,11 +72,11 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       v5->u32_63 = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)this->HeadToCoord = v8; /*0x6a03d0*/
-      v11 = v5->vtable4; /*0x6a03dd*/
+      v11 = v5->ptr_C; /*0x6a03dd*/
       v9 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12); /*0x6a03e4*/
-      if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(v5->vtable4 + 129) ) /*0x6a03f7*/
+      if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(v5->ptr_C + 129) ) /*0x6a03f7*/
       {
-        LOBYTE(v4) = *(unsigned char *)(v5->vtable4 + 144); /*0x6a043d*/
+        LOBYTE(v4) = *(unsigned char *)(v5->ptr_C + 144); /*0x6a043d*/
         if ( (unsigned char)v4 ) /*0x6a0445*/
         {
           LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/

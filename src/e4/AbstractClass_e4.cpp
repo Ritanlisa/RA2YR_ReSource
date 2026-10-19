@@ -55,10 +55,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   AbstractClass *v5; // esi
   int v6; // eax
   int v7; // ecx
-  void *vtable2; // eax
+  void *ptr_4; // eax
   int abstractFlags; // ecx
   int uniqueId; // eax
-  unsigned int *vtable1; // edx
+  unsigned int *ptr_0; // edx
   unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   if ( aP1 && (*(int (**)(void *))(*(unsigned int *)aP1 + 44))(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
@@ -102,19 +102,19 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     v5[1].ptr_C = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
     aP2[14] = v5; /*0x438f8f*/
-    vtable2 = this->ptr_8; /*0x438f92*/
-    if ( this->uniqueId < (int)vtable2 /*0x438fb4*/
-      || (BYTE1(this->ptr_C) || !vtable2)
+    ptr_4 = this->ptr_8; /*0x438f92*/
+    if ( this->uniqueId < (int)ptr_4 /*0x438fb4*/
+      || (BYTE1(this->ptr_C) || !ptr_4)
       && (abstractFlags = this->abstractFlags, abstractFlags > 0)
       && (*((unsigned __int8 (**)(AbstractClass *, int, unsigned int))this->ptr_0 + 2))(
            this,
-           (int)vtable2 + abstractFlags,
+           (int)ptr_4 + abstractFlags,
            0) )
     {
       uniqueId = this->uniqueId; /*0x438fbb*/
-      vtable1 = this->ptr_4; /*0x438fbe*/
+      ptr_0 = this->ptr_4; /*0x438fbe*/
       this->uniqueId = uniqueId + 1; /*0x438fc4*/
-      vtable1[uniqueId] = v5; /*0x438fc7*/
+      ptr_0[uniqueId] = v5; /*0x438fc7*/
     }
     this->ptr_30 = 1; /*0x438fca*/
     if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 528) != -1 ) /*0x438fde*/
@@ -781,7 +781,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
   int v4; // ebx
   int v5; // ebp
   int v6; // eax
-  result = (*(int (__stdcall **)(int, int *, int, unsigned int))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x41039e*/
+  result = (*(int (__stdcall **)(int, int *, int, unsigned int))(aP1->ptr_C)(aP1, &aP1, 4, 0); /*0x41039e*/
   if ( result >= 0 ) /*0x4103a3*/
   {
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, aP1, (int)aP0); /*0x4103b7*/
@@ -1368,7 +1368,7 @@ int AbstractClass::computeMovementCost()
 namespace gamemd {
 int AbstractClass::checkPassability()
 {
-  return this->vtable4; /*0x50e373*/
+  return this->ptr_C; /*0x50e373*/
 }
 } // namespace gamemd
 

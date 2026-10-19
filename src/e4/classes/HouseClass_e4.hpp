@@ -38,17 +38,17 @@ struct VectorCursor;  // fix_fwd_type_supply
 #define GAMEMD_G2_HouseClass_DEF 1
 struct HouseClass {
     unsigned int ptr_0;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     void* uniqueId;  // 0x10
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     void* referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    void* vtable5;  // 0x24
-    void* vtable6;  // 0x28
-    void* vtable7;  // 0x2C
+    void* ptr_24;  // 0x24
+    void* ptr_28;  // 0x28
+    void* ptr_2C;  // 0x2C
     int relatedTagsCount;  // 0x30
     int relatedTagsCapacity;  // 0x34
     BuildingClass** conYards;  // 0x38

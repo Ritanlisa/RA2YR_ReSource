@@ -11,7 +11,7 @@ struct HouseClass;  // fix_fwd_type_supply
 #ifndef GAMEMD_G2_BaseClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_BaseClass_DEF 1
 struct BaseClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int baseNodeCount;  // 0x4
     int baseNodeCapacity;  // 0x8
     char percentBuilt[4];  // 0xC

@@ -458,11 +458,11 @@ int DSurface::RestoreIfLost(void *a1)
     DSurface_field_0xC = this->LockCount; /*0x4bb049*/
     if ( (int)DSurface_field_0xC > 0 ) /*0x4bb04e*/
     {
-      DSurface_field_0x0 = this->vtable1; /*0x4bb050*/
+      DSurface_field_0x0 = this->ptr_0; /*0x4bb050*/
       this->LockCount = 0; /*0x4bb058*/
       (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb05b*/
       ++this->LockCount; /*0x4bb064*/
-      (*((void (**)(DSurface *))this->vtable1 + 24))(this); /*0x4bb069*/
+      (*((void (**)(DSurface *))this->ptr_0 + 24))(this); /*0x4bb069*/
       this->LockCount = DSurface_field_0xC; /*0x4bb06c*/
     }
   }
@@ -545,7 +545,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     || (*(unsigned __int8 (**)(unsigned int *))(*a3 + 108))(a3) == 1
     || (unsigned char)a7 == 1
     || (v11 = (*(int (**)(unsigned int *))(*a3 + 112))(a3),
-        v12 = (*((int (**)(DSurface *))this->vtable1 + 28))(this) == v11,
+        v12 = (*((int (**)(DSurface *))this->ptr_0 + 28))(this) == v11,
         v10 = (void **)a3,
         !v12) )
   {
@@ -577,11 +577,11 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     DSurface_field_0xC = this->LockCount; /*0x4bb250*/
     if ( (int)DSurface_field_0xC > 0 ) /*0x4bb254*/
     {
-      DSurface_field_0x0 = this->vtable1; /*0x4bb256*/
+      DSurface_field_0x0 = this->ptr_0; /*0x4bb256*/
       this->LockCount = 0; /*0x4bb25d*/
       (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb264*/
       ++this->LockCount; /*0x4bb26d*/
-      (*((void (**)(DSurface *))this->vtable1 + 24))(this); /*0x4bb273*/
+      (*((void (**)(DSurface *))this->ptr_0 + 24))(this); /*0x4bb273*/
       this->LockCount = DSurface_field_0xC; /*0x4bb27a*/
     }
   }
@@ -654,7 +654,7 @@ LABEL_53:
   v61 = Y; /*0x4bb40c*/
   v60 = X; /*0x4bb414*/
   v62 = Width; /*0x4bb418*/
-  v33 = (int (**)(DSurface *, int *))v48->vtable1; /*0x4bb41c*/
+  v33 = (int (**)(DSurface *, int *))v48->ptr_0; /*0x4bb41c*/
   v63 = v28; /*0x4bb426*/
   v34 = (int *)v33[30](v48, v68); /*0x4bb439*/
   (&v43)->Set(0, 0, 0, 0); /*0x4bb43b*/
@@ -762,7 +762,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
   if ( this->DSurface_field_0x1C && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
   {
     if ( !LOBYTE(stru_820320.Start) /*0x4bb675*/
-      || (*((unsigned __int8 (**)(DSurface *))this->vtable1 + 27))(this)
+      || (*((unsigned __int8 (**)(DSurface *))this->ptr_0 + 27))(this)
       || (*(int (**)(int, int))(*(unsigned int *)this->DSurface_field_0x1C + 52))(
            this->DSurface_field_0x1C,
            1) )
@@ -780,21 +780,21 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
               DSurface_field_0xC = this->LockCount; /*0x4bb6cc*/
               if ( (int)DSurface_field_0xC > 0 ) /*0x4bb6d1*/
               {
-          DSurface_field_0x0 = this->vtable1; /*0x4bb6d3*/
+          DSurface_field_0x0 = this->ptr_0; /*0x4bb6d3*/
           this->LockCount = 0; /*0x4bb6db*/
           (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb6de*/
           ++this->LockCount; /*0x4bb6e7*/
-          (*((void (**)(DSurface *))this->vtable1 + 24))(this); /*0x4bb6ec*/
+          (*((void (**)(DSurface *))this->ptr_0 + 24))(this); /*0x4bb6ec*/
           this->LockCount = DSurface_field_0xC; /*0x4bb6ef*/
             }
               LABEL_15:
-        v8 = (int *)(*((int (**)(DSurface *, char *))this->vtable1 + 30))(this, v32); /*0x4bb6f2*/
+        v8 = (int *)(*((int (**)(DSurface *, char *))this->ptr_0 + 30))(this, v32); /*0x4bb6f2*/
                 v9 = ClipRectIntersection(v31, (int *)a2, v8, 0, 0); /*0x4bb710*/
                 v30[0] = *v9; /*0x4bb719*/
-                v30[1] = v9->vtable2; /*0x4bb722*/
-                v30[2] = v9->vtable3; /*0x4bb729*/
+                v30[1] = v9->ptr_4; /*0x4bb722*/
+                v30[2] = v9->ptr_8; /*0x4bb729*/
                 v10 = *(unsigned int *)a3; /*0x4bb72d*/
-                v11 = v9->vtable4; /*0x4bb72f*/
+                v11 = v9->ptr_C; /*0x4bb72f*/
                 v12 = *(unsigned int *)a2; /*0x4bb732*/
                 v13 = a2->u32_4; /*0x4bb734*/
                 v30[3] = v11; /*0x4bb737*/
@@ -809,11 +809,11 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
                 v18 = ClipRectIntersection(v31, &v25, v30, 0, 0); /*0x4bb76b*/
                 v19 = *v18; /*0x4bb76d*/
                 v25 = *v18; /*0x4bb76f*/
-                v20 = v18->vtable2; /*0x4bb773*/
+                v20 = v18->ptr_4; /*0x4bb773*/
                 v26 = v20; /*0x4bb776*/
-                v21 = v18->vtable3; /*0x4bb77a*/
+                v21 = v18->ptr_8; /*0x4bb77a*/
                 v27 = v21; /*0x4bb77d*/
-                v22 = v18->vtable4; /*0x4bb781*/
+                v22 = v18->ptr_C; /*0x4bb781*/
                 v28 = v22; /*0x4bb786*/
                 if ( v21 > 0 && v22 > 0 ) /*0x4bb792*/
               {
@@ -4171,7 +4171,7 @@ ObjectClass * *  DSurface::RenderToSurface(int *aP1)
     this->Width = 0; /*0x5d1f38*/
     v13 = (int *)aP1->GetThreatLevel(v25); /*0x5d1f44*/
     Surface::CopyRect((XSurface *)this, v13); /*0x5d1f4a*/
-    (*(void (**)(DSurface *, int *))&this->vtable1->u32_4)(this, aP1); /*0x5d1f54*/
+    (*(void (**)(DSurface *, int *))&this->ptr_0->u32_4)(this, aP1); /*0x5d1f54*/
   }
   result = this->q028; /*0x5d1f57*/
   for ( j = 0; j < result; ++j ) /*0x5d1f5e*/
@@ -4681,9 +4681,9 @@ int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
   unsigned char v11[28]; // [esp+Ch] [ebp-20h] BYREF
   unsigned char v12[4]; // [esp+28h] [ebp-4h] BYREF
 
-  DSurface_field_0x0 = (int (**)(DSurface *, int))this->vtable1; /*0x4bb098*/
+  DSurface_field_0x0 = (int (**)(DSurface *, int))this->ptr_0; /*0x4bb098*/
   v8 = (*(int (**)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*((int (**)(DSurface *, unsigned char *, int, int, int))this->vtable1 + 30))( /*0x4bb0b9*/
+  v9 = (*((int (**)(DSurface *, unsigned char *, int, int, int))this->ptr_0 + 30))( /*0x4bb0b9*/
          this,
          v12,
          a5,

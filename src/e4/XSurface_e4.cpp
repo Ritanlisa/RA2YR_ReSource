@@ -233,11 +233,11 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (*a5)(
   int v35; // [esp+38h] [ebp-10h] BYREF
   v35 = *v7; /*0x7babb6*/
   int v36; // [esp+3Ch] [ebp-Ch]
-  v36 = v7->vtable2; /*0x7babbd*/
+  v36 = v7->ptr_4; /*0x7babbd*/
   int v37; // [esp+40h] [ebp-8h]
-  v37 = v7->vtable3; /*0x7babc4*/
+  v37 = v7->ptr_8; /*0x7babc4*/
   int v38; // [esp+44h] [ebp-4h]
-  v38 = v7->vtable4; /*0x7babcf*/
+  v38 = v7->ptr_C; /*0x7babcf*/
   int v8; // ecx
   v8 = v36 + a3[1]; /*0x7babda*/
   int v29; // [esp+18h] [ebp-30h] BYREF

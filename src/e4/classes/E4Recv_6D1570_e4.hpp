@@ -8,7 +8,7 @@ struct E4Recv_6D1570 {
 // --- flat members (BEGIN) ---
     unsigned int ptr_0;  // 0x0
 // --- flat members (END) ---
-    void* vtable1;  // 0x0 (no offset truth)
+    void* ptr_0_2;  // 0x0 (no offset truth)
     char sub_6D1570();  // 0x6D1570
 };
 } // namespace gamemd

@@ -8,7 +8,7 @@ struct E4Recv_7011A0 {
 // --- flat members (BEGIN) ---
     unsigned int ptr_0;  // 0x0
 // --- flat members (END) ---
-    void* vtable1;  // 0x0 (no offset truth)
+    void* ptr_0_2;  // 0x0 (no offset truth)
     int sub_7011A0();  // 0x7011A0
 };
 } // namespace gamemd

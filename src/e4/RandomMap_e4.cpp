@@ -451,7 +451,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
       int i; // esi
       for ( i = v5->uniqueId - 1; i >= 0; --i ) /*0x58d214*/
       {
-        result = v5->vtable2; /*0x58d216*/
+        result = v5->ptr_4; /*0x58d216*/
         int v9; // ecx
         v9 = *(unsigned int *)(result + 4 * i); /*0x58d221*/
         if ( g_MissionQueueFrame.localVariables[163] ) /*0x58d228*/
@@ -514,20 +514,20 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
                     int Capacity; // ecx
                     Capacity = v12->Capacity; /*0x58d336*/
                     int v21; // eax
-                    if ( (int)v12[1].vtable0 < Capacity /*0x58d35b*/
+                    if ( (int)v12[1].ptr_0 < Capacity /*0x58d35b*/
                       || (v12->IsAllocated || !Capacity)
                       && (v21 = (int)v12[1].Items, v21 > 0)
-                      && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v12->vtable0 + 2))(
+                      && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v12->ptr_0 + 2))(
                            v12,
                            Capacity + v21,
                            0) )
                     {
-                      void *vtable0; // eax
-                      vtable0 = v12[1].vtable0; /*0x58d362*/
+                      void *ptr_0; // eax
+                      ptr_0 = v12[1].ptr_0; /*0x58d362*/
                       unsigned int *Items; // edx
                       Items = v12->Items; /*0x58d365*/
-                      v12[1].ptr_0 = &vtable0->AbstractClass_1; /*0x58d36b*/
-                      Items[(unsigned int)vtable0] = v28; /*0x58d372*/
+                      v12[1].ptr_0 = &ptr_0->AbstractClass_1; /*0x58d36b*/
+                      Items[(unsigned int)ptr_0] = v28; /*0x58d372*/
                     }
                     *(unsigned int *)(v19 + 60) = v26 + 1; /*0x58d375*/
                     v13 = g_MissionQueueFrame.localVariables[160]; /*0x58d378*/
@@ -590,7 +590,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   int Capacity; // eax
   int v11; // ebp
   int v12; // ecx
-  void *vtable0; // eax
+  void *ptr_0; // eax
   unsigned int *Items; // edx
   char v16; // [esp+Fh] [ebp-Dh]
   VectorClass *v17; // [esp+10h] [ebp-Ch]
@@ -655,10 +655,10 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
           && (v12 = (int)v3[1].Items, v12 > 0)
           && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v3->ptr_0 + 2))(v3, Capacity + v12, 0) )
         {
-          vtable0 = v3[1].ptr_0; /*0x58d564*/
+          ptr_0 = v3[1].ptr_0; /*0x58d564*/
           Items = v3->Items; /*0x58d567*/
-          v3[1].ptr_0 = (char *)vtable0 + 1; /*0x58d56d*/
-          Items[(unsigned int)vtable0] = v11; /*0x58d570*/
+          v3[1].ptr_0 = (char *)ptr_0 + 1; /*0x58d56d*/
+          Items[(unsigned int)ptr_0] = v11; /*0x58d570*/
         }
       }
     }
@@ -691,7 +691,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
   Cell *v16; // eax
   int Capacity; // ecx
   int v18; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   unsigned int *Items; // edx
   RandomMap *v21; // edi
   int v22; // edx
@@ -763,10 +763,10 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
                        Capacity + v18,
                        0) )
                 {
-                  vtable0 = v4[1].ptr_0; /*0x58e8df*/
+                  ptr_0 = v4[1].ptr_0; /*0x58e8df*/
                   Items = v4->Items; /*0x58e8e2*/
-                  v4[1].ptr_0 = &vtable0->CellStruct_1; /*0x58e8e8*/
-                  Items[(unsigned int)vtable0] = *(unsigned int *)v24; /*0x58e8ef*/
+                  v4[1].ptr_0 = &ptr_0->CellStruct_1; /*0x58e8e8*/
+                  Items[(unsigned int)ptr_0] = *(unsigned int *)v24; /*0x58e8ef*/
                 }
                 v21 = v26; /*0x58e8f2*/
                 *(unsigned int *)(v13 + 56) = v26->RandomMap_field_0x8; /*0x58e903*/
@@ -5440,7 +5440,7 @@ LABEL_27:
     v30->ptr_2 = 0; /*0x59bee2*/
     *(unsigned int *)&dword_ABED10[40 * v80[0] + 30 + 40 * g_MapCellWidth * v80[1]] = this->u32_308; /*0x59bf0d*/
     v31 = *(unsigned int *)v13 + 1; /*0x59bf16*/
-    LODWORD(v92) = v30->vtable2; /*0x59bf19*/
+    LODWORD(v92) = v30->ptr_4; /*0x59bf19*/
     v32 = v31 >> 1; /*0x59bf20*/
     if ( v31 < *(unsigned int *)&v13[1] ) /*0x59bf24*/
     {
@@ -5864,7 +5864,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
   int v16; // eax
   int Capacity; // ecx
   int Items; // eax
-  void *vtable0; // eax
+  void *ptr_0; // eax
   unsigned int *v20; // edx
   bool v21; // zf
   VectorClass *v23; // [esp+Ch] [ebp-10h]
@@ -5878,7 +5878,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
     VectorClass::CellConstructor(v3, 0, 0); /*0x5a071e*/
     /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5a0723) */
     v4[1].Items = (void *)10; /*0x5a0729*/
-    v4[1].vtable0 = 0; /*0x5a0730*/
+    v4[1].ptr_0 = 0; /*0x5a0730*/
   }
   else
   {
@@ -5888,7 +5888,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
   v4[1].Items = (void *)(*&this->q180 * *&this->q184); /*0x5a0748*/
   v5 = g_MapCellWidth; /*0x5a074b*/
   if ( g_MapCellWidth * g_MapCellWidth <= 0 ) /*0x5a0758*/
-    return &v4->vtable0; /*0x5a08c1*/
+    return &v4->ptr_0; /*0x5a08c1*/
   v6 = g_MissionQueueFrame.localVariables[163]; /*0x5a075f*/
   v24 = 0; /*0x5a0765*/
   v25 = g_MapCellWidth * g_MapCellWidth; /*0x5a0769*/
@@ -5937,23 +5937,23 @@ unsigned int * RandomMap::CellListAlloc(int a2)
     }
     v4 = v23; /*0x5a0855*/
     Capacity = v23->Capacity; /*0x5a0859*/
-    if ( (int)v23[1].vtable0 < Capacity ) /*0x5a0861*/
+    if ( (int)v23[1].ptr_0 < Capacity ) /*0x5a0861*/
       goto LABEL_31; /*0x5a0861*/
     if ( v23->IsAllocated || !Capacity ) /*0x5a086c*/
     {
       Items = (int)v23[1].Items; /*0x5a086e*/
       if ( Items > 0 ) /*0x5a0873*/
       {
-        if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v23->vtable0 + 2))( /*0x5a087e*/
+        if ( (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v23->ptr_0 + 2))( /*0x5a087e*/
                v23,
                Capacity + Items,
                0) )
         {
           LABEL_31:
-          vtable0 = v23[1].vtable0; /*0x5a0885*/
+          ptr_0 = v23[1].ptr_0; /*0x5a0885*/
           v20 = v23->Items; /*0x5a0888*/
-          v23[1].vtable0 = (char *)vtable0 + 1; /*0x5a088e*/
-          v20[(unsigned int)vtable0] = v7; /*0x5a0891*/
+          v23[1].ptr_0 = (char *)ptr_0 + 1; /*0x5a088e*/
+          v20[(unsigned int)ptr_0] = v7; /*0x5a0891*/
         }
         v6 = g_MissionQueueFrame.localVariables[163]; /*0x5a0894*/
       }
@@ -5967,7 +5967,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
       v5 = g_MapCellWidth; /*0x5a076f*/
       continue; /*0x5a076f*/
     }
-    return &v4->vtable0; /*0x5a08b5*/
+    return &v4->ptr_0; /*0x5a08b5*/
   }
 
 }

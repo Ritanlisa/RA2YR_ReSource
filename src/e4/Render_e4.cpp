@@ -542,9 +542,9 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     int *v13; // eax
     v13 = (int *)(ClipRectIntersection(v54, &DSurface_ViewBounds, &v39, 0, 0)); /*0x705428*/
     v35 = *v13; /*0x705430*/
-    v36 = v13->vtable2; /*0x705437*/
-    v37 = v13->vtable3; /*0x70543e*/
-    v38 = v13->vtable4; /*0x70544b*/
+    v36 = v13->ptr_4; /*0x705437*/
+    v37 = v13->ptr_8; /*0x70543e*/
+    v38 = v13->ptr_C; /*0x70544b*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v35, v8); /*0x705456*/
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
@@ -559,9 +559,9 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     int *v16; // eax
     v16 = (int *)(ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0)); /*0x7054bf*/
     v39 = *v16; /*0x7054c6*/
-    v40 = v16->vtable2; /*0x7054cd*/
-    v41 = v16->vtable3; /*0x7054d4*/
-    v42 = v16->vtable4; /*0x7054e1*/
+    v40 = v16->ptr_4; /*0x7054cd*/
+    v41 = v16->ptr_8; /*0x7054d4*/
+    v42 = v16->ptr_C; /*0x7054e1*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7054ed*/
   }
   int v51[4]; // [esp+8Ch] [ebp-38h] BYREF
@@ -593,9 +593,9 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   int *v19; // eax
   v19 = (int *)(ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0)); /*0x7055cc*/
   v39 = *v19; /*0x7055d4*/
-  v40 = v19->vtable2; /*0x7055db*/
-  v41 = v19->vtable3; /*0x7055e2*/
-  v42 = v19->vtable4; /*0x7055ef*/
+  v40 = v19->ptr_4; /*0x7055db*/
+  v41 = v19->ptr_8; /*0x7055e2*/
+  v42 = v19->ptr_C; /*0x7055ef*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7055fa*/
   v28 = v34 - 2; /*0x705611*/
   v27 = v33 - 2; /*0x70561f*/
@@ -608,9 +608,9 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   int *v21; // eax
   v21 = (int *)(ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0)); /*0x705658*/
   v39 = *v21; /*0x705660*/
-  v40 = v21->vtable2; /*0x705667*/
-  v41 = v21->vtable3; /*0x70566e*/
-  v42 = v21->vtable4; /*0x70567b*/
+  v40 = v21->ptr_4; /*0x705667*/
+  v41 = v21->ptr_8; /*0x70566e*/
+  v42 = v21->ptr_C; /*0x70567b*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v8); /*0x705686*/
   int v45; // [esp+74h] [ebp-50h] BYREF
   v45 = a1; /*0x70569e*/
@@ -1733,7 +1733,7 @@ AbstractClass * * sub_63B0A0()
   {
     int v3; // edi
     v3 = *((unsigned int *)DataGlobal_AC4B34 + v2); /*0x63b0e9*/
-    if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(**v3->vtable2 + 540), (void *)dword_A83D4C) ) /*0x63b100*/
+    if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(**v3->ptr_4 + 540), (void *)dword_A83D4C) ) /*0x63b100*/
       RenderScenarioActionLines((ObjectClass *)v3); /*0x63b10b*/
   }
   int v4; // ebp

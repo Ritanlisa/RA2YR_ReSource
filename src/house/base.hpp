@@ -83,7 +83,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
     bool IsAllocated;  // X10 supply (csp_canon_members)
     unsigned char q08C[6];  /* VectorClass */  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_BaseClass_DEF
 

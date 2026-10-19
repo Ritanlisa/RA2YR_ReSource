@@ -200,7 +200,7 @@ char WalkLocomotion::ProcessCollision(char a2, void *a2_2)
   ObjectClass *v68; // eax
   ObjectClass *v69; // esi
   ObjectClass *nextObject; // ebx
-  void *vtable0; // edx
+  void *ptr_0; // edx
   int v72; // edx
   unsigned char *v73; // ecx
   int v74; // eax

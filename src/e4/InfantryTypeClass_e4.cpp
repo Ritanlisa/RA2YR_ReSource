@@ -129,7 +129,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1, void *a2, void *a3
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237ee) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237f4) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237fb) */
-  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x523802*/
+  AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x523802*/
   v3 = dword_A8E358; /*0x523807*/
   if ( dword_A8E358 < dword_A8E350 /*0x523845*/
     || (byte_A8E355 || !dword_A8E350)
@@ -249,9 +249,9 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13); /*0x523bb9*/
       v9 = ObjectPlacement::CalcPosition((ObjectPlacement *)v8, v15, v13, 0, 0, 0); /*0x523bc0*/
       v14[0] = *v9; /*0x523bcf*/
-      v10 = v9->vtable2; /*0x523bd5*/
+      v10 = v9->ptr_4; /*0x523bd5*/
       v14[1] = v10; /*0x523bd9*/
-      v11 = v9->vtable3; /*0x523bdd*/
+      v11 = v9->ptr_8; /*0x523bdd*/
       v14[2] = v11; /*0x523be0*/
       if ( v14[0] != *(unsigned int *)&MEMORY[0xA8EB00].?[1692] /*0x523bf4*/
         || v10 != *(unsigned int *)&MEMORY[0xA8EB00].?[1696]
@@ -675,12 +675,12 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
     int k; // ebx
     int m; // ebx
     int v13; // eax
-    (*(void (__stdcall **)(int, InfantryTypeClass **, int, unsigned int, int))(aP0->vtable4)(aP0, &aP0, 4, 0, v4); /*0x5249de*/
+    (*(void (__stdcall **)(int, InfantryTypeClass **, int, unsigned int, int))(aP0->ptr_C)(aP0, &aP0, 4, 0, v4); /*0x5249de*/
     if ( aP0 > 0 ) /*0x5249e7*/
     {
       do /*0x524a09*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->vtable4)(aP0, &a2, 4, 0); /*0x5249f5*/
+        (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->ptr_C)(aP0, &a2, 4, 0); /*0x5249f5*/
         DynamicVector::Add_Alt((DynamicVector *)aP0->VoiceComment, &a2); /*0x5249ff*/
         ++v6; /*0x524a04*/
       }
@@ -691,10 +691,10 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
       ((DynamicVectorClass *)aP0->DeadBodies)->AnimTypeConstructor(0, 0); /*0x524a1b*/
       /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x524a20*/
     }
-    (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->vtable4)(aP0, &aP0, 4, 0); /*0x524a33*/
+    (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->ptr_C)(aP0, &aP0, 4, 0); /*0x524a33*/
     for ( i = 0; i < aP0; ++i ) /*0x524a3e*/
     {
-      (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->vtable4)(aP0, &a2, 4, 0); /*0x524a4c*/
+      (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->ptr_C)(aP0, &a2, 4, 0); /*0x524a4c*/
       DynamicVector::Add_Alt4((DynamicVector *)aP0->DeadBodies, &a2); /*0x524a56*/
     }
     for ( j = 0; j < aP0->DeadBodies[4]; ++j ) /*0x524a6c*/
@@ -704,17 +704,17 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, Infan
       ((DynamicVectorClass *)aP0->DeathAnims)->AnimTypeConstructor(0, 0); /*0x524a9d*/
       /* X11: vtable install elided (X67 recv-slot, RHS vt_TypeList) */  /*0x524aa2*/
     }
-    (*(void (__stdcall **)(int, int *, int))(aP0->vtable4)(aP0, &aP0, 4); /*0x524ab5*/
+    (*(void (__stdcall **)(int, int *, int))(aP0->ptr_C)(aP0, &aP0, 4); /*0x524ab5*/
     for ( k = 0; k < (int)aP0; ++k ) /*0x524ac0*/
     {
-      (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->vtable4)(aP0, &aP0, 4, 0); /*0x524ace*/
+      (*(void (__stdcall **)(int, int *, int, unsigned int))(aP0->ptr_C)(aP0, &aP0, 4, 0); /*0x524ace*/
       DynamicVector::Add_Alt4((DynamicVector *)aP0->DeathAnims, &aP0); /*0x524ad8*/
     }
     for ( m = 0; m < aP0->DeathAnims[4]; ++m ) /*0x524aef*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0->DeathAnims[1] + 4 * m)); /*0x524b00*/
     v13 = operator new(0x5E8u); /*0x524b15*/
     aP0->Sequence[0] = v13; /*0x524b1d*/
-    (*(void (__stdcall **)(int, int, int, unsigned int))(aP0->vtable4)(aP0, v13, 1512, 0); /*0x524b2e*/
+    (*(void (__stdcall **)(int, int, int, unsigned int))(aP0->ptr_C)(aP0, v13, 1512, 0); /*0x524b2e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0->OccupyWeapon); /*0x524b3d*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0->EliteOccupyWeapon); /*0x524b4e*/
   }
@@ -830,17 +830,17 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1, void *a2)
 
   void *v3; // eax
   void *v4; // eax
-  void *vtable2; // ecx
+  void *ptr_4; // ecx
   int v6; // eax
 
   if ( this == (InfantryTypeClass *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
   (*((void (**)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this); /*0x524f2e*/
   v3 = aP1->Capacity; /*0x524f31*/
-  this->vtable3 = v3; /*0x524f36*/
+  this->ptr_8 = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
   {
-    this->vtable2 = 0; /*0x524f86*/
+    this->ptr_4 = 0; /*0x524f86*/
     (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x524f8d*/
     LABEL_8:
     this->uniqueId = aP1->q010; /*0x524f91*/
@@ -848,20 +848,20 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1, void *a2)
       return &this->TechnoTypeClass; /*0x524f9d*/
   }
   v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x524f43*/
-  this->vtable2 = v4; /*0x524f4b*/
+  this->ptr_4 = v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/
-  vtable2 = this->vtable3; /*0x524f52*/
+  ptr_4 = this->ptr_8; /*0x524f52*/
   v6 = 0; /*0x524f55*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x524f59*/
-  if ( (int)vtable2 <= 0 ) /*0x524f5d*/
+  if ( (int)ptr_4 <= 0 ) /*0x524f5d*/
     goto LABEL_8; /*0x524f5d*/
   do /*0x524f71*/
   {
-    *((unsigned int *)this->vtable3 + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x524f68*/
+    *((unsigned int *)this->ptr_8 + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x524f68*/
     ++v6; /*0x524f6e*/
   }
-  while ( v6 < (int)this->vtable3 ); /*0x524f71*/
+  while ( v6 < (int)this->ptr_8 ); /*0x524f71*/
   this->uniqueId = aP1->q010; /*0x524f76*/
   this->abstractFlags = aP1->u32_14; /*0x524f7c*/
   return &this->TechnoTypeClass; /*0x524f81*/

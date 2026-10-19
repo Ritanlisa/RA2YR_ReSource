@@ -1024,8 +1024,8 @@ int E4Recv_4517D0::sub_4517D0()
              v17,
              (int *)(this->M1312 + v3 + 3964));
       int v8 = v13 + *v7; // ecx /*0x45183a*/
-      int v9 = v7->vtable2; // edx /*0x45183c*/
-      int v10 = v7->vtable3; // eax /*0x45183f*/
+      int v9 = v7->ptr_4; // edx /*0x45183c*/
+      int v10 = v7->ptr_8; // eax /*0x45183f*/
       v16[1] = v14 + v9; /*0x45184a*/
       int v11 = *v6; // edx /*0x45184e*/
       v16[2] = v4 + v10; /*0x451850*/

@@ -42,7 +42,7 @@ unsigned int * Copy(DynamicVector * aP1, void *a2);
 int Destroy(void *a1);
     void* VectorClass;  // 0x0 (no offset truth)
 int Destroy_Alt();
-    void* vtable1;  // 0x0 (no offset truth)
+    void* ptr_0_2;  // 0x0 (no offset truth)
     int BuildIndexTable();
     AbstractClass * RenderFrame(void *a1 = 0);
     int Projection_Setup();

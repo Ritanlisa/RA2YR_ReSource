@@ -18,10 +18,10 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1, void *a2, void *a3)
 
 
   int InfantryTypeVector_field_0x08; // ecx
-  InfantryTypeVector_field_0x08 = (int)(aP1->vtable3); /*0x512f23*/
+  InfantryTypeVector_field_0x08 = (int)(aP1->ptr_8); /*0x512f23*/
   if ( aP1->uniqueId >= InfantryTypeVector_field_0x08 ) /*0x512f2b*/
   {
-    if ( !BYTE1(aP1->vtable4) && InfantryTypeVector_field_0x08 ) /*0x512f36*/
+    if ( !BYTE1(aP1->ptr_C) && InfantryTypeVector_field_0x08 ) /*0x512f36*/
       return 0; /*0x512f36*/
     int InfantryTypeVector_field_0x14 = aP1->abstractFlags; // eax /*0x512f38*/
     if ( InfantryTypeVector_field_0x14 <= 0 /*0x512f48*/
@@ -35,7 +35,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1, void *a2, void *a3)
   }
   int InfantryTypeVector_field_0x10 = aP1->uniqueId; // eax /*0x512f55*/
   int InfantryTypeVector_field_0x04; // edx
-  InfantryTypeVector_field_0x04 = (int)(aP1->vtable2); /*0x512f58*/
+  InfantryTypeVector_field_0x04 = (int)(aP1->ptr_4); /*0x512f58*/
   aP1->uniqueId = InfantryTypeVector_field_0x10 + 1; /*0x512f5e*/
   *(unsigned int *)(InfantryTypeVector_field_0x04 + 4 * InfantryTypeVector_field_0x10) = (unsigned int)(*a2); /*0x512f68*/
   return 1; /*0x512f51*/

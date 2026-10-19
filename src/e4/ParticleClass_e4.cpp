@@ -45,7 +45,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
       int v31; // [esp+30h] [ebp-4h]
       if ( byte_A8ED6B /*0x62cf58*/
         || !g_hWnd
-        || ((int)dword_A8B230[0].vtable0 & 0x1000) == 0
+        || ((int)dword_A8B230[0].ptr_0 & 0x1000) == 0
         || (v29 = *&this->Coord_9C,
             v30 = *&this->u32_A0,
             v31 = *&this->u32_A4,
@@ -128,16 +128,16 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         else
         {
           int v6; // eax
-          v6 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->vtable1 + 464))(this); /*0x62cf87*/
+          v6 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->ptr_0 + 464))(this); /*0x62cf87*/
           int v7; // ebx
           v7 = -15 - ZCoordToScreenY(v6); /*0x62cf9d*/
           int v8; // ebp
-          v8 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->vtable1 + 108))(this); /*0x62cfa2*/
+          v8 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->ptr_0 + 108))(this); /*0x62cfa2*/
           if ( v8 ) /*0x62cfa6*/
           {
             int v9 = 10240; // esi /*0x62cfb0*/
             unsigned int v10; // eax
-            v10 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->vtable1 + 488))(this); /*0x62cfb5*/
+            v10 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->ptr_0 + 488))(this); /*0x62cfb5*/
             if ( stru_A8EB00.ObjectTypeClass[30] == 2 ) /*0x62cfc2*/
             {
               char v11 = this->Translucency; // cl /*0x62cfc4*/

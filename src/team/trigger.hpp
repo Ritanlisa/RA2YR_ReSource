@@ -159,9 +159,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_DC;  // X10 supply (member_lookup)
     unsigned int u32_E0;  // X10 supply (member_lookup)
     bool u8_9E;  // X10 supply (member_lookup)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_4_2;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 
 
     void * ptr_4;  // 0x4 [X55 W3 supply (render vocab)]
@@ -269,8 +269,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_D4; // 0xD4  gB member supply
     unsigned int u32_D8; // 0xD8  gB member supply
     unsigned int u32_DC; // 0xDC  gB member supply
-    void* vtable4;  // 0xC (ml truth)  gB vtable supply
-    void* vtable46;  // 0x0 (no offset truth)  gB vtable supply
+    void* ptr_C;  // 0xC (ml truth)  gB vtable supply
+    void* ptr_46;  // 0x0 (no offset truth)  gB vtable supply
 
     bool Difficulty;  // X10 supply (csp_canon_members)
     bool Enabled;  // X10 supply (csp_canon_members)

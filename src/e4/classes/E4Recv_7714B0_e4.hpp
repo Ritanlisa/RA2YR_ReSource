@@ -29,6 +29,6 @@ struct E4Recv_7714B0 {
     unsigned int secondaryFacing;  // [X30:default]
     unsigned int targetLaserTimer;  // [X30:default]
     unsigned int unknown_short_3C8;  // [X30:default]
-    TechnoClass* vtable0;  // 0x0 [X30:fn-atom]
+    TechnoClass* ptr_0_2;  // 0x0 [X30:fn-atom]
 };
 } // namespace gamemd

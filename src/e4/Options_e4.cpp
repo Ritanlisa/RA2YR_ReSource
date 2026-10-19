@@ -630,7 +630,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   v4 = 0; /*0x625600*/
   *(unsigned int *)this->__pad_0 = *aP1; /*0x625602*/
   v5 = &this->field_8; /*0x625607*/
-  this->field_4 = aP1->vtable2; /*0x62560a*/
+  this->field_4 = aP1->ptr_4; /*0x62560a*/
   this->field_8 = 0; /*0x625615*/
   this->field_C = 0; /*0x625617*/
   this->field_10 = 0; /*0x62561a*/
@@ -657,7 +657,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     v3 = (int *)this; /*0x62566b*/
   }
   *v5 = 0; /*0x62566f*/
-  v9 = v2->vtable3; /*0x625675*/
+  v9 = v2->ptr_8; /*0x625675*/
   v10 = 0; /*0x625678*/
   if ( v9 > 0 ) /*0x62567c*/
   {

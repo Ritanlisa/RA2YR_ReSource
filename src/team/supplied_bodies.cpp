@@ -90,7 +90,7 @@ extern stru_87F5F0_host stru_87F5F0;        // data: 0x87F5F0
 // Scenario 单例 @ 0xA8B230 旧 til 数组形态 (ida_globals 已有裸 extern uint,
 // 以别名数组宿主承载 [N].member 站点)
 struct dword_A8B230_elem {
-    unsigned int vtable0;                    // +0x00 (idx*4 站点)
+    unsigned int ptr_0;                    // +0x00 (idx*4 站点)
     unsigned int NeedsSaveOrLink;
     unsigned int referenceCount;
     unsigned int uniqueId;
@@ -294,7 +294,7 @@ int CampaignClass::GetValue(unsigned int *result) {
 
   if ( !this->nextArrayIndex ) /*0x49e4f3*/
     CampaignClass::LoadFromINI((int)this); /*0x49e4fa*/
-  result = *(&this->vtable33); /*0x49e503*/
+  result = *(&this->ptr_33); /*0x49e503*/
   *result = result; /*0x49e506*/
   (*((unsigned char *)&(result))) = this->nextArrayIndex; /*0x49e508*/
   return result; /*0x49e50b*/
@@ -306,7 +306,7 @@ namespace gamemd {
 unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
   this->ptr_4 = 0; /*0x49f09b*/
   this->ptr_8 = (void *)a2; /*0x49f09e*/
-  (this->vtable4) = 1; /*0x49f0a1*/
+  (this->ptr_C) = 1; /*0x49f0a1*/
   (this->q00D) = 0; /*0x49f0a5*/
   /* X11: vtable install elided (implicit via class virtuals 0x49f0a8) — binary-proven install, was 0 */
   if ( a2 ) /*0x49f0ae*/
@@ -448,7 +448,7 @@ int CampaignClass::DeleteAndZero(const char **a2) {
 namespace gamemd {
 int CampaignClass::Check(int a2) {
     if ( *(int *)this->q01A) > a2 ) /*0x5cf81e +10 count*/
-      return *((unsigned int *)(*&this->vtable2) + a2); /*0x5cf828 +4 items*/
+      return *((unsigned int *)(*&this->ptr_4) + a2); /*0x5cf828 +4 items*/
     else
       return 0; /*0x5cf820*/
 }
@@ -536,9 +536,9 @@ void * ScriptClass::Construct(int a2) {
     this->buildingType = (ScriptTypeClass *)a2; /*0x6913d3*/
     this->idxCurrentLine = -1; /*0x6913d6*/
     *(void **)(char *)this = 0; /*0x6913dd ptr_0*/
-    *&this->vtable2 = 0; /*0x6913e3 pN*/
-    *&this->vtable3 = 0; /*0x6913ea pN*/
-    *&this->vtable4 = 0; /*0x6913f1 pN*/
+    *&this->ptr_4 = 0; /*0x6913e3 pN*/
+    *&this->ptr_8 = 0; /*0x6913ea pN*/
+    *&this->ptr_C = 0; /*0x6913f1 pN*/
     if ( dword_8872C0 < dword_8872B8 /*0x69142f*/
       || (byte_8872BD || !dword_8872B8)
       && dword_8872C4 > 0
@@ -588,7 +588,7 @@ int ScriptTypeClass::GetParameter(void *a2) {
       INIClass::SetString(a2, &this->arrayIndex, Buffer, Source); /*0x691855*/
     }
     ++v3; /*0x69186c*/
-    v4 = &v4->vtable3; /*0x69186d*/
+    v4 = &v4->ptr_8; /*0x69186d*/
   }
   while ( v3 < 50 ); /*0x691873*/
   return 1; /*0x691877*/
@@ -682,7 +682,7 @@ int TeamClass::SumMemberCounts() {
   int v1; // edx
   int result; // eax
   TeamClass *v3; // ecx
-  void *vtable0; // esi
+  void *ptr_0; // esi
 
   v1 = this->countObjects[5]; /*0x6e8160*/
   result = 0; /*0x6e8166*/
@@ -691,9 +691,9 @@ int TeamClass::SumMemberCounts() {
     v3 = (TeamClass *)this->Coord_9C); /*0x6e816d*/
     do /*0x6e817b*/
     {
-      vtable0 = v3->ptr_0; /*0x6e8173*/
+      ptr_0 = v3->ptr_0; /*0x6e8173*/
       v3 = (TeamClass *)((char *)v3 + 8); /*0x6e8175*/
-      result += (int)vtable0; /*0x6e8178*/
+      result += (int)ptr_0; /*0x6e8178*/
       --v1; /*0x6e817a*/
     }
     while ( v1 ); /*0x6e817b*/
@@ -1251,12 +1251,12 @@ int TriggerClass::FireTrigger(void *a2) {
   int v8; // eax
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x726799*/
-  v3 = (*(int (**)(int))(*(unsigned int *)(this->buildingType + 4) + 16))&this->buildingType->vtable2; /*0x7267a7*/
+  v3 = (*(int (**)(int))(*(unsigned int *)(this->buildingType + 4) + 16))&this->buildingType->ptr_4; /*0x7267a7*/
   Power::TimerProcess(v3); /*0x7267ad*/
   nextTrigger = this->nextTrigger; /*0x7267b2*/
   if ( nextTrigger ) /*0x7267b7*/
   {
-    v5 = (*(int (**)(int))(nextTrigger->vtable2 + 16))(nextTrigger + 4); /*0x7267c0*/
+    v5 = (*(int (**)(int))(nextTrigger->ptr_4 + 16))(nextTrigger + 4); /*0x7267c0*/
     nextTrigger = Power::TimerProcess(v5); /*0x7267c6*/
   }
   LOBYTE(nextTrigger) = this->destroyed[0]; /*0x7267cb*/
@@ -1553,7 +1553,7 @@ int TriggerTypeClass::PowerDrainUpdate(void *a2) {
   result = (int)this->FirstEvent; /*0x727b71*/
   if ( result ) /*0x727b79*/
   {
-    v7 = (*(int (__stdcall **)(int))(result->vtable2 + 16))(result + 4); /*0x727b82*/
+    v7 = (*(int (__stdcall **)(int))(result->ptr_4 + 16))(result + 4); /*0x727b82*/
     result = Power::TimerProcess(v7); /*0x727b88*/
   }
   FirstAction = this->FirstAction; /*0x727b8d*/
@@ -2187,7 +2187,7 @@ namespace gamemd {
 void * CampaignClass::Constructor(int a2, int a3) {
   this->ptr_4 = 0; /*0x49ecd9*/
   this->ptr_8 = (void *)a2; /*0x49ece0*/
-  (this->vtable4) = 1; /*0x49ece3*/
+  (this->ptr_C) = 1; /*0x49ece3*/
   (this->q00D) = 0; /*0x49ece7*/
   /* X11: vtable install elided (implicit via class virtuals 0x49eceb) — binary-proven install, was 0 */
   if ( a2 ) /*0x49ecf1*/
@@ -2216,7 +2216,7 @@ void * CampaignClass::Constructor(int a2, int a3) {
 // 0x5D2E00
 namespace gamemd {
 void * CampaignClass::Constructor_1(int a2) {
-  (this->vtable4) = 0; /*0x5d2e05*/
+  (this->ptr_C) = 0; /*0x5d2e05*/
   (this->q00D) = 0; /*0x5d2e08*/
   (this->q00E) = 0; /*0x5d2e0b*/
   /* X11: vtable install elided (implicit via class virtuals 0x5d2e13) — binary-proven install, was 0 */
@@ -2556,7 +2556,7 @@ int TeamClass::SelectWaypointTarget(int a2, int a3) {
 
   if ( a3 ) /*0x6ec9ad*/
   {
-    CellFromArray = ScenarioClass::GetCellFromArray((ScenarioClass *)dword_A8B230, a2->vtable2); /*0x6ec9bd*/
+    CellFromArray = ScenarioClass::GetCellFromArray((ScenarioClass *)dword_A8B230, a2->ptr_4); /*0x6ec9bd*/
     v5 = (int)CellFromArray; /*0x6ec9c2*/
     if ( CellFromArray ) /*0x6ec9c6*/
     {
@@ -2606,7 +2606,7 @@ int TeamClass::SelectAttackTarget(int a2, int a3) {
 
   if ( a3 ) /*0x6eca7d*/
   {
-    CellFromArray = (Object *)ScenarioClass::GetCellFromArray((ScenarioClass *)dword_A8B230, a2->vtable2); /*0x6eca8d*/
+    CellFromArray = (Object *)ScenarioClass::GetCellFromArray((ScenarioClass *)dword_A8B230, a2->ptr_4); /*0x6eca8d*/
     v5 = CellFromArray; /*0x6eca92*/
     if ( !CellFromArray /*0x6ecadc*/
       || CellFromArray->vt_slot_44() != 11
@@ -2653,7 +2653,7 @@ int TeamClass::AssignMemberToCoordinator(int a2, int a3) {
 
   if ( a3 ) /*0x6ece6c*/
   {
-    CellFromArray = ScenarioClass::GetCellFromArray((ScenarioClass *)dword_A8B230, a2->vtable2); /*0x6ece7c*/
+    CellFromArray = ScenarioClass::GetCellFromArray((ScenarioClass *)dword_A8B230, a2->ptr_4); /*0x6ece7c*/
     TeamClass::SelectMember((int)this, (int)CellFromArray); /*0x6ece84*/
   }
   queuedFocus = this->queuedFocus; /*0x6ece89*/
@@ -2799,10 +2799,10 @@ int TeamClass::SelectAreaAttackTarget(int a2, int a3) {
       if ( v6 != -1 ) /*0x6ee35d*/
         v5 = (void *)*((unsigned int *)stru_A80220.ptr_C + v6); /*0x6ee365*/
       v7 = DamageMapClassArea( /*0x6ee376*/
-             *((unsigned int *)dword_A83C6C + (uint16_t)a2->vtable2),
+             *((unsigned int *)dword_A83C6C + (uint16_t)a2->ptr_4),
              v5,
              firstUnit,
-             (uint16_t)(*(a2->vtable2 + 1)),
+             (uint16_t)(*(a2->ptr_4 + 1)),
              (*(((unsigned char *)&(this->buildingType[2].ptr_C)) + (sizeof(this->buildingType[2].ptr_C) - 1))));
       if ( v7 ) /*0x6ee37e*/
         TeamClass::SelectMember((int)this, (int)v7); /*0x6ee383*/
@@ -2867,10 +2867,10 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
       if ( v6 != -1 ) /*0x6ee444*/
         v5 = (#375 *)*(&dword_A8022C->ptr_0 + v6); /*0x6ee44c*/
       v7 = DamageMapClassArea( /*0x6ee462*/
-             *((unsigned int *)dword_A83C6C + (unsigned __int16)a2->vtable2),
+             *((unsigned int *)dword_A83C6C + (unsigned __int16)a2->ptr_4),
              v5,
              firstUnit,
-             (unsigned __int16)HIWORD(a2->vtable2),
+             (unsigned __int16)HIWORD(a2->ptr_4),
              *(unsigned char *)&this->buildingType->u32_F7);
       if ( v7 ) /*0x6ee466*/
       {
@@ -3286,7 +3286,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     {
       v15 = HouseClass::GetStartCoords(v7, &v28); /*0x6efaf7*/
       v16 = v15[1] - v31; /*0x6efb0f*/
-      v17 = v15->vtable3; /*0x6efb11*/
+      v17 = v15->ptr_8; /*0x6efb11*/
       LODWORD(v28) = *v15 - v10; /*0x6efb14*/
       __asm { fild [esp+58h+var_20] } /*0x6efb18*/
       LODWORD(v25) = -v16; /*0x6efb1e*/
@@ -3542,13 +3542,13 @@ int TriggerClass::Construct(int a2) {
   int v5; // eax
   int v6; // eax
   unsigned char *v7; // eax
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x725fa4*/
   this->a2 = a2; /*0x725faf*/
   this->nextTrigger = 0; /*0x725fb2*/
   this->house = 0; /*0x725fb5*/
-  this->vtable4 = 0; /*0x725fb8*/
+  this->ptr_C = 0; /*0x725fb8*/
   v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x725fbb*/
   this->q03C = 0; /*0x725fc1*/
   this->timer = v3; /*0x725fc4*/
@@ -3594,9 +3594,9 @@ int TriggerClass::Construct(int a2) {
   if ( this->buildingType ) /*0x7260e0*/
   {
     if ( (BuildingClass::ProcessUpgradeEffects((BuildingClass *)this), v7 = *&this->u8_9E, !v7[159]) /*0x726121*/
-      || (vtable0 = dword_A8B230[43].ptr_0) == 0 && !v7[156]
-      || vtable0 == 1 && !v7[157]
-      || vtable0 == 2 && !v7[158] )
+      || (ptr_0 = dword_A8B230[43].ptr_0) == 0 && !v7[156]
+      || ptr_0 == 1 && !v7[157]
+      || ptr_0 == 2 && !v7[158] )
     {
       this->enabled = 0; /*0x726129*/
     }
@@ -3861,8 +3861,8 @@ LABEL_15:
 // 0x5CF810
 namespace gamemd {
 int CampaignClass::Check(uint16_t a2) {
-    if ( this->vtable1 > a2 ) /*0x5cf81e*/
-      return *((unsigned int *)this->vtable1 + a2); /*0x5cf828*/
+    if ( this->ptr_0_2 > a2 ) /*0x5cf81e*/
+      return *((unsigned int *)this->ptr_0_2 + a2); /*0x5cf828*/
     else
       return 0; /*0x5cf820*/
 }

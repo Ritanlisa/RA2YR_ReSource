@@ -91,8 +91,8 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x488110*/
   int uniqueId = this->M16; // ecx /*0x488116*/
   int abstractFlags = this->M20; // edx /*0x488119*/
-  void *vtable3; // [esp+8h] [ebp-10h] BYREF
-  vtable3 = (void *)(this->M20); /*0x48811c*/
+  void *ptr_8; // [esp+8h] [ebp-10h] BYREF
+  ptr_8 = (void *)(this->M20); /*0x48811c*/
   int nextArrayIndex = this->q018; // eax /*0x488120*/
   int v16; // [esp+Ch] [ebp-Ch]
   v16 = uniqueId; /*0x488123*/
@@ -100,14 +100,14 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   v17 = abstractFlags; /*0x488127*/
   int v18; // [esp+14h] [ebp-4h]
   v18 = nextArrayIndex; /*0x488133*/
-  DrawBuildingTilesSHP((int *)&vtable3, 0, 0); /*0x488137*/
+  DrawBuildingTilesSHP((int *)&ptr_8, 0, 0); /*0x488137*/
   int v6; // eax
   if ( *(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x488145*/
     v6 = *(unsigned __int8 *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + 13); /*0x48814f*/
   else
     v6 = *(unsigned __int16 *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + 26); /*0x48815c*/
   int v7 = this->M16 + 1; // edx /*0x488167*/
-  vtable3 = (char *)this->M16 + 1; /*0x488168*/
+  ptr_8 = (char *)this->M16 + 1; /*0x488168*/
   int v8 = this->M20; // ecx /*0x48816c*/
   v16 = v7; /*0x48816f*/
   int v9 = this->q018 - 1; // edx /*0x488177*/
@@ -115,7 +115,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   v18 = v9; /*0x488183*/
   (*(void (**)(AudioStream *, void **, int))(*(unsigned int *)g_DSurface_Hidden_2 + 20))( /*0x48818e*/
     g_DSurface_Hidden_2,
-    &vtable3,
+    &ptr_8,
     v6);
   if ( BYTE1(this->fallRate) ) /*0x488191*/
   {
@@ -125,7 +125,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
     else
       v10 = *(unsigned __int16 *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + 8); /*0x4881b8*/
     int v11 = this->M16 + 1; // edx /*0x4881c3*/
-    vtable3 = (char *)this->M16 + 1; /*0x4881c4*/
+    ptr_8 = (char *)this->M16 + 1; /*0x4881c4*/
     int v12 = this->M20; // ecx /*0x4881c8*/
     v16 = v11; /*0x4881cb*/
     int v13 = this->q018 - 1; // edx /*0x4881d3*/
@@ -133,7 +133,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
     v18 = v13; /*0x4881df*/
     (*(void (**)(AudioStream *, void **, int))(*(unsigned int *)g_DSurface_Hidden_2 + 20))( /*0x4881ea*/
       g_DSurface_Hidden_2,
-      &vtable3,
+      &ptr_8,
       v10);
   }
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4881f5*/
@@ -2118,12 +2118,12 @@ unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
     if ( a3 ) /*0x48b096*/
     {
       this->Items = (void *)a3; /*0x48b098*/
-      return &this->vtable0; /*0x48b09e*/
+      return &this->ptr_0; /*0x48b09e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x48b0ad*/
     this->IsAllocated = 1; /*0x48b0b0*/
   }
-  return &this->vtable0; /*0x48b09d*/
+  return &this->ptr_0; /*0x48b09d*/
 
 }
 } // namespace gamemd

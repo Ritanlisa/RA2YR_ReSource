@@ -78,7 +78,7 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
               v18[1] = v10; /*0x4b0b6f*/
               v5 = (int)JumpjetLocomotion::TransformCoords((JumpjetLocomotion *)this, &v19, v18, &a3_1); /*0x4b0b80*/
               v11 = *(unsigned int *)v5; /*0x4b0b85*/
-              v12 = v5->vtable2; /*0x4b0b89*/
+              v12 = v5->ptr_4; /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
               {
                 v13 = (*(int (**)(unsigned int))(*this->u32_C + 464))(this->u32_C); /*0x4b0b93*/
@@ -201,7 +201,7 @@ AbstractClass * JumpjetLocomotion::ProcessCollision(char a2, void *a2_2)
   ObjectClass *v71; // eax
   ObjectClass *v72; // esi
   ObjectClass *nextObject; // ebx
-  void *vtable0; // edx
+  void *ptr_0; // edx
   int v75; // edx
   unsigned char *v76; // ecx
   int v77; // eax

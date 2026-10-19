@@ -155,7 +155,7 @@ bool IPXConnClass::closeConnection(int a2, int a1, int a3, int a4, int a5, int a
 // 0x53f5d0
 bool IPXConnClass::send(int a2, int a3, int a4, int a5, int a6, int a7)
 {
-  return (*(bool (__stdcall **)(int, int, char *, unsigned int, int, unsigned int))(*(unsigned int *)this->vtable1 + 40))( /*0x53f5ec*/
+  return (*(bool (__stdcall **)(int, int, char *, unsigned int, int, unsigned int))(*(unsigned int *)this->ptr_0 + 40))( /*0x53f5ec*/
            a2,
            a3,
            &this->u32_4C,

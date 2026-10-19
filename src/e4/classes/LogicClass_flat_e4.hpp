@@ -10,7 +10,7 @@
 namespace gamemd {
 
 struct LogicClass_flat {
-    unsigned int vtable1;  // 0x0
+    unsigned int ptr_0;  // 0x0
     unsigned int Items;  // 0x4
     unsigned int Capacity;  // 0x8
     unsigned char IsInit;  // 0xC

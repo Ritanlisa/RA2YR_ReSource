@@ -454,11 +454,11 @@ LABEL_44:
       Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v78, &v75); /*0x5696b1*/
       v57 = *v45; /*0x5696b6*/
       v58 = v75; /*0x5696b9*/
-      v59 = v45->vtable2; /*0x5696bd*/
+      v59 = v45->ptr_4; /*0x5696bd*/
       v60 = *v45; /*0x5696c2*/
       if ( *v45 >= v75 ) /*0x5696c4*/
         v60 = v75; /*0x5696c6*/
-      v61 = v45->vtable2; /*0x5696cb*/
+      v61 = v45->ptr_4; /*0x5696cb*/
       *v45 = v60 - 64; /*0x5696cd*/
       v62 = v76; /*0x5696d0*/
       if ( v59 >= v76 ) /*0x5696d6*/
@@ -2902,7 +2902,7 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
       v17->ptr_2 = 0; /*0x5a2a31*/
       *(unsigned int *)&dword_ABED10[40 * *a2 + 30 + 40 * g_MapCellWidth * a2[1]] = a4; /*0x5a2a56*/
       v18 = *(unsigned int *)v9 + 1; /*0x5a2a5f*/
-      v64 = v17->vtable2; /*0x5a2a62*/
+      v64 = v17->ptr_4; /*0x5a2a62*/
       v19 = v18 >> 1; /*0x5a2a69*/
       if ( v18 < *(unsigned int *)&v9[1] ) /*0x5a2a6d*/
       {

@@ -17,7 +17,7 @@ struct TypeList_flat;  // fix_fwd_type_supply
 struct WarheadTypeClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
     void * q0;  // 0x0
-    void* vtable2;  // 0x4
+    void* ptr_4;  // 0x4
     unsigned int m_8;  // 0x8
     unsigned int m_C;  // 0xC
     unsigned int m_10;  // 0x10

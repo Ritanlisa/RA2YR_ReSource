@@ -75,7 +75,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
   v21 = v8; /*0x7587a7*/
   if ( v9 > 0 ) /*0x7587ab*/
   {
-    float *v11 = &v5->vtable2; // esi /*0x7587b1*/
+    float *v11 = &v5->ptr_4; // esi /*0x7587b1*/
     do /*0x758856*/
     {
       double v12; // st7

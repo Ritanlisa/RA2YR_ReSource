@@ -447,15 +447,15 @@ LABEL_11:
     if ( this->q048 <= 0 || this->q04C <= 0 ) /*0x4d11bc*/
     {
       v32 = *v22; /*0x4d1266*/
-      v33 = v22->vtable2; /*0x4d1268*/
-      v34 = v22->vtable3; /*0x4d126b*/
+      v33 = v22->ptr_4; /*0x4d1268*/
+      v34 = v22->ptr_8; /*0x4d126b*/
     }
     else
     {
-      v58 = v22->vtable3; /*0x4d11c7*/
+      v58 = v22->ptr_8; /*0x4d11c7*/
       if ( v58 > 0 ) /*0x4d11cb*/
       {
-        v48 = v22->vtable4; /*0x4d11d6*/
+        v48 = v22->ptr_C; /*0x4d11d6*/
         if ( v48 > 0 ) /*0x4d11da*/
         {
           v24 = *v23; /*0x4d11dc*/
@@ -470,7 +470,7 @@ LABEL_11:
             v24 = *v22; /*0x4d11f9*/
             v50 = v28; /*0x4d11fb*/
           }
-          v29 = v22->vtable2; /*0x4d11ff*/
+          v29 = v22->ptr_4; /*0x4d11ff*/
           v47 = v29; /*0x4d1204*/
           if ( v25 > v29 ) /*0x4d1208*/
           {
@@ -494,7 +494,7 @@ LABEL_11:
       v33 = this->u32_44; /*0x4d125e*/
       v34 = this->q048; /*0x4d1261*/
     }
-    v31 = v22->vtable4; /*0x4d126e*/
+    v31 = v22->ptr_C; /*0x4d126e*/
 LABEL_41:
     LOBYTE(v53) = 0; /*0x4d1271*/
     this->q040 = v32; /*0x4d1279*/
@@ -895,9 +895,9 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
     LOBYTE(this->m_C) = 1; /*0x4d2c33*/
     if ( !v5 ) /*0x4d2c37*/
       return 0; /*0x4d2cc7*/
-    if ( *&this->vtable2 ) /*0x4d2c3d*/
+    if ( *&this->ptr_4 ) /*0x4d2c3d*/
     {
-      v11 = *&this->vtable3; /*0x4d2c42*/
+      v11 = *&this->ptr_8; /*0x4d2c42*/
       if ( a2 < v11 ) /*0x4d2c47*/
         v11 = a2; /*0x4d2c49*/
       if ( v11 > 0 ) /*0x4d2c4d*/
@@ -905,7 +905,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
         v12 = 0; /*0x4d2c4f*/
         do /*0x4d2c75*/
         {
-          v13 = (unsigned int *)(*&this->vtable2 + v12); /*0x4d2c56*/
+          v13 = (unsigned int *)(*&this->ptr_4 + v12); /*0x4d2c56*/
           v14 = &v5[v12]; /*0x4d2c58*/
           v12 += 16; /*0x4d2c5b*/
           --v11; /*0x4d2c5e*/
@@ -919,19 +919,19 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
       }
       if ( BYTE1(this->m_C) ) /*0x4d2c7d*/
       {
-        __3_YAXPAX_Z(*&this->vtable2); /*0x4d2c86*/
-        *&this->vtable2 = 0; /*0x4d2c8e*/
+        __3_YAXPAX_Z(*&this->ptr_4); /*0x4d2c86*/
+        *&this->ptr_4 = 0; /*0x4d2c8e*/
       }
     }
-    *&this->vtable2 = v5; /*0x4d2c99*/
-    *&this->vtable3 = v3; /*0x4d2c9f*/
+    *&this->ptr_4 = v5; /*0x4d2c99*/
+    *&this->ptr_8 = v3; /*0x4d2c9f*/
     BYTE1(this->m_C) = a3 == 0; /*0x4d2ca2*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4d2cab*/
   }
-  v15 = *&this->vtable3; /*0x4d2cae*/
+  v15 = *&this->ptr_8; /*0x4d2cae*/
   if ( v15 < *(unsigned int *)this->Count ) /*0x4d2cb6*/
     *(unsigned int *)this->Count = v15; /*0x4d2cb8*/
   return 1; /*0x4d2cbb*/
@@ -949,7 +949,7 @@ int FoggedObjectClass::Read(unsigned int * a2, void *a2_2, void *a3)
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
   unsigned int *i; // ecx
-  for ( i = *(unsigned int **)&a2_2->vtable2; *i != *a2_2 || i->vtable2 != a2_2[1]; i += 4 ) /*0x4d2ce1*/
+  for ( i = *(unsigned int **)&a2_2->ptr_4; *i != *a2_2 || i->ptr_4 != a2_2[1]; i += 4 ) /*0x4d2ce1*/
   {
     if ( ++result >= v2 ) /*0x4d2cfa*/
       return -1; /*0x4d2cfa*/
@@ -969,7 +969,7 @@ int FoggedObjectClass_42::FindItem(unsigned int * a2)
   if ( uniqueId <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/
   unsigned int *i; // ecx
-  for ( i = (unsigned int *)this->vtable1; *i != *a2; ++i ) /*0x4e07be*/
+  for ( i = (unsigned int *)this->ptr_0; *i != *a2; ++i ) /*0x4e07be*/
   {
     if ( ++result >= uniqueId ) /*0x4e07cd*/
       return -1; /*0x4e07cd*/
@@ -1054,7 +1054,7 @@ char FoggedObjectClass::AddRef(int a2)
 {
 
 
-  int m_8 = this->vtable3; // edi /*0x4d29bb*/
+  int m_8 = this->ptr_8; // edi /*0x4d29bb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4d29c0*/
   {
     int v3 = 0; // esi /*0x4d29c2*/
@@ -1062,7 +1062,7 @@ char FoggedObjectClass::AddRef(int a2)
       return 1; /*0x4d29f6*/
     int v4; // edx
     v4 = *(unsigned int *)(a2 + 4); /*0x4d29c8*/
-    unsigned int *v5 = *&this->vtable2; // eax /*0x4d29cb*/
+    unsigned int *v5 = *&this->ptr_4; // eax /*0x4d29cb*/
     unsigned int *v6; // ecx
     v6 = (unsigned int *)(v4 + 4); /*0x4d29ce*/
     int v7; // edx
@@ -1105,12 +1105,12 @@ namespace gamemd {
 void FoggedObjectClass_42::ClearBuffer(void *a1_1)
 {
 
-  void *vtable1; // eax
-  vtable1 = (void *)a1_1->ptr_0.ptr_4; /*0x4e01f6*/
+  void *ptr_0; // eax
+  ptr_0 = (void *)a1_1->ptr_0.ptr_4; /*0x4e01f6*/
   a1_1->ptr_0.uniqueId = 0; /*0x4e01f9*/
-  if ( vtable1 && (((unsigned char *)&(a1_1->ptr_0.ptr_C))[1]) ) /*0x4e0200*/
+  if ( ptr_0 && (((unsigned char *)&(a1_1->ptr_0.ptr_C))[1]) ) /*0x4e0200*/
   {
-    operator delete((vtable1)); /*0x4e0206*/
+    operator delete((ptr_0)); /*0x4e0206*/
     a1_1->ptr_0.ptr_4 = 0; /*0x4e020e*/
   }
   (((unsigned char *)&(a1_1->ptr_0.ptr_C))[1]) = 0; /*0x4e0211*/
@@ -1123,8 +1123,8 @@ namespace gamemd {
 unsigned int FoggedObjectClass_42::PointerToIndex(int a2)
 {
 
-  if ( LOBYTE(this->vtable3) ) /*0x4e0220*/
-    return (unsigned int)(a2 - this->vtable1) >> 2; /*0x4e0235*/
+  if ( LOBYTE(this->ptr_8) ) /*0x4e0220*/
+    return (unsigned int)(a2 - this->ptr_0) >> 2; /*0x4e0235*/
   else
     return 0; /*0x4e0227*/
 
@@ -1277,39 +1277,39 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e070c*/
   {
-    LOBYTE(this->vtable3) = 0; /*0x4e0712*/
+    LOBYTE(this->ptr_8) = 0; /*0x4e0712*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x4e0718*/
       v4 = a3; /*0x4e072e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4e072a*/
-    LOBYTE(this->vtable3) = 1; /*0x4e0732*/
+    LOBYTE(this->ptr_8) = 1; /*0x4e0732*/
     if ( !v4 ) /*0x4e0736*/
       return 0; /*0x4e07aa*/
-    if ( this->vtable1 ) /*0x4e0738*/
+    if ( this->ptr_0 ) /*0x4e0738*/
     {
-      int vtable2; // ecx
-      vtable2 = this->vtable2; /*0x4e073f*/
-      if ( a2 < vtable2 ) /*0x4e0744*/
-        vtable2 = a2; /*0x4e0746*/
+      int ptr_4; // ecx
+      ptr_4 = this->ptr_4; /*0x4e073f*/
+      if ( a2 < ptr_4 ) /*0x4e0744*/
+        ptr_4 = a2; /*0x4e0746*/
       int i; // eax
-      for ( i = 0; i < vtable2; v4[i - 1] = *(unsigned int *)(this->vtable1 + 4 * i - 4) ) /*0x4e074c*/
+      for ( i = 0; i < ptr_4; v4[i - 1] = *(unsigned int *)(this->ptr_0 + 4 * i - 4) ) /*0x4e074c*/
         ++i; /*0x4e0751*/
-      if ( BYTE1(this->vtable3) ) /*0x4e075e*/
+      if ( BYTE1(this->ptr_8) ) /*0x4e075e*/
       {
-        __3_YAXPAX_Z(this->vtable1); /*0x4e0769*/
-        this->vtable1 = 0; /*0x4e0771*/
+        __3_YAXPAX_Z(this->ptr_0); /*0x4e0769*/
+        this->ptr_0 = 0; /*0x4e0771*/
       }
     }
-    this->vtable1 = (int)v4; /*0x4e077a*/
-    this->vtable2 = a2; /*0x4e0782*/
-    BYTE1(this->vtable3) = a3 == 0; /*0x4e0785*/
+    this->ptr_0 = (int)v4; /*0x4e077a*/
+    this->ptr_4 = a2; /*0x4e0782*/
+    BYTE1(this->ptr_8) = a3 == 0; /*0x4e0785*/
   }
   else
   {
-    (*(void (**)(FoggedObjectClass *))(this->vtable0 + 12))(this); /*0x4e078e*/
+    (*(void (**)(FoggedObjectClass *))(this->ptr_0 + 12))(this); /*0x4e078e*/
   }
-  int v7 = this->vtable2; // eax /*0x4e0791*/
+  int v7 = this->ptr_4; // eax /*0x4e0791*/
   if ( v7 < this->uniqueId ) /*0x4e0799*/
     this->uniqueId = v7; /*0x4e079b*/
   return 1; /*0x4e079e*/

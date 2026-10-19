@@ -270,7 +270,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2d3*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2d9*/
   /* X11: vtable install elided (legacy slot spelling slot, RHS vt_BuildingTypeClass_4) */  /*0x45e2e1*/
-  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x45e2e8*/
+  AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x45e2e8*/
   v4 = dword_A83C78; /*0x45e2ed*/
   if ( dword_A83C78 < dword_A83C70 /*0x45e32b*/
     || (byte_A83C75 || !dword_A83C70)
@@ -1319,13 +1319,13 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
   v1 = v13; /*0x465016*/
   if ( v13[1].Weapon[210] && v13[1].ptr_8 ) /*0x465025*/
   {
-    __3_YAXPAX_Z(v13->vtable2.ptr_8); /*0x465030*/
+    __3_YAXPAX_Z(v13->ptr_4.ptr_8); /*0x465030*/
     v1[1].ptr_8 = 0; /*0x465038*/
     LOBYTE(v1[1].ptr_C) = 0; /*0x46503e*/
   }
   if ( v1[1].CanBeHidden[0] && v1[1].TurretOffset ) /*0x46504c*/
   {
-    __3_YAXPAX_Z(v1->vtable2.TurretOffset); /*0x465057*/
+    __3_YAXPAX_Z(v1->ptr_4.TurretOffset); /*0x465057*/
     v1[1].TurretOffset = 0; /*0x46505f*/
     v1[1].CanBeHidden[0] = 0; /*0x465065*/
   }
@@ -1335,10 +1335,10 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
     *(unsigned int *)&v1[1].CameoFile[22] = 0; /*0x465086*/
     LOBYTE(v1[1].Cameo) = 0; /*0x46508c*/
   }
-  if ( v1[1].AltCameoFile[3] && *v1->vtable2.CameoAllocated ) /*0x46509a*/
+  if ( v1[1].AltCameoFile[3] && *v1->ptr_4.CameoAllocated ) /*0x46509a*/
   {
-    __3_YAXPAX_Z(*v1->vtable2.CameoAllocated); /*0x4650a5*/
-    *v1->vtable2.CameoAllocated = 0; /*0x4650ad*/
+    __3_YAXPAX_Z(*v1->ptr_4.CameoAllocated); /*0x4650a5*/
+    *v1->ptr_4.CameoAllocated = 0; /*0x4650ad*/
     v1[1].AltCameoFile[3] = 0; /*0x4650b3*/
   }
   if ( v1[1].AltCameoFile[11] && *(unsigned int *)&v1[1].AltCameoFile[7] ) /*0x4650c1*/
@@ -1390,7 +1390,7 @@ LABEL_32:
         v1[1].ptr_4 = (int)&dword_89C900 + v9; /*0x465228*/
         v1[1].ChargerTurrets[8] = (int)&dword_89D368 + v9; /*0x46522e*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1[1].UINameLabel[31]); /*0x465234*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v1->vtable2.ImageAllocated); /*0x465245*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v1->ptr_4.ImageAllocated); /*0x465245*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].AlphaImage); /*0x465256*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].MainVoxel); /*0x465267*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v1[1].TurretVoxel); /*0x465278*/
@@ -1401,7 +1401,7 @@ LABEL_32:
         v1[1].CanBeHidden[0] = 0; /*0x465296*/
         *(unsigned int *)&v1[1].CameoFile[22] = 0; /*0x46529c*/
         LOBYTE(v1[1].Cameo) = 0; /*0x4652a2*/
-        *v1->vtable2.CameoAllocated = 0; /*0x4652a8*/
+        *v1->ptr_4.CameoAllocated = 0; /*0x4652a8*/
         v1[1].AltCameoFile[3] = 0; /*0x4652ae*/
         *(unsigned int *)&v1[1].AltCameoFile[7] = 0; /*0x4652b4*/
         v1[1].AltCameoFile[11] = 0; /*0x4652ba*/
@@ -1424,8 +1424,8 @@ LABEL_32:
           result = (*(int (**)(unsigned int *, int *, int, unsigned int))(v6 + 12))(v2, &v10, 12, 0); /*0x4651b2*/
           if ( result < 0 ) /*0x4651b7*/
             break; /*0x4651b7*/
-          v7 = (int *)v13->vtable1 + *(unsigned int *)&v1[1].Weapon[248]); /*0x4651cb*/
-          p_vfptr3 = &v13->vtable4; /*0x4651cd*/
+          v7 = (int *)v13->ptr_0 + *(unsigned int *)&v1[1].Weapon[248]); /*0x4651cb*/
+          p_vfptr3 = &v13->ptr_C; /*0x4651cd*/
           ++v5; /*0x4651d0*/
           *v7 = v10; /*0x4651d1*/
           v13 = p_vfptr3; /*0x4651d7*/
@@ -1563,28 +1563,28 @@ int BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
   result = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, (__int16 *)&aP1, 1); /*0x59403a*/
   if ( (unsigned char)result )
   {
-    v6 = v3->vtable2; /*0x594052*/
+    v6 = v3->ptr_4; /*0x594052*/
     LOWORD(aP1) = *((unsigned int *)v3 + 2) + *(unsigned int *)v3 - 1; /*0x59405a*/
     HIWORD(aP1) = v6; /*0x594065*/
     result = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, (__int16 *)&aP1, 1); /*0x59406a*/
     if ( (unsigned char)result )
     {
-      v7 = v3->vtable2; /*0x59407a*/
-      v8 = v3->vtable4; /*0x59407d*/
+      v7 = v3->ptr_4; /*0x59407a*/
+      v8 = v3->ptr_C; /*0x59407d*/
       LOWORD(aP1) = *v3; /*0x594080*/
       HIWORD(aP1) = v7 + v8 - 1; /*0x594095*/
       result = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, (__int16 *)&aP1, 1); /*0x59409a*/
       if ( (unsigned char)result )
       {
-        v9 = v3->vtable2; /*0x5940b2*/
-        v10 = v3->vtable4; /*0x5940b5*/
+        v9 = v3->ptr_4; /*0x5940b2*/
+        v10 = v3->ptr_C; /*0x5940b5*/
         LOWORD(aP1) = *((unsigned int *)v3 + 2) + *(unsigned int *)v3 - 1; /*0x5940b8*/
         HIWORD(aP1) = v9 + v10 - 1; /*0x5940cb*/
         result = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, (__int16 *)&aP1, 1); /*0x5940d0*/
         if ( (unsigned char)result )
         {
-          v11 = v3->vtable2; /*0x5940dd*/
-          if ( v11 >= v3->vtable4 + v11 ) /*0x5940e9*/
+          v11 = v3->ptr_4; /*0x5940dd*/
+          if ( v11 >= v3->ptr_C + v11 ) /*0x5940e9*/
           {
 LABEL_16:
             (result) = ((result) & ~0xFF) | ((1) & 0xFF); /*0x594170*/
@@ -1594,11 +1594,11 @@ LABEL_16:
           while ( 1 ) /*0x5940f3*/
           {
             v13 = *(unsigned int *)v3; /*0x5940f3*/
-            result = *(unsigned int *)v3 + v3->vtable3; /*0x5940f8*/
+            result = *(unsigned int *)v3 + v3->ptr_8; /*0x5940f8*/
             if ( *(unsigned int *)v3 < result ) /*0x5940fc*/
               break; /*0x5940fc*/
 LABEL_15:
-            if ( ++v11 >= v3->vtable4 + v3->vtable2 ) /*0x59416e*/
+            if ( ++v11 >= v3->ptr_C + v3->ptr_4 ) /*0x59416e*/
               goto LABEL_16; /*0x59416e*/
           }
           while ( 1 )
@@ -1617,7 +1617,7 @@ LABEL_15:
             if ( !(unsigned char)result ) /*0x594155*/
               break; /*0x594155*/
             ++v13; /*0x59415c*/
-            result = *(unsigned int *)v3 + v3->vtable3; /*0x59415d*/
+            result = *(unsigned int *)v3 + v3->ptr_8; /*0x59415d*/
             if ( v13 >= result ) /*0x594161*/
               goto LABEL_15; /*0x594161*/
           }
@@ -2012,7 +2012,7 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2, double a3,
     int v17[3]; // [esp+18h] [ebp-14h] BYREF
     v8 = (int *)World::ToScreen(v17, v18, a2); /*0x7178fb*/
     int v9 = *v8; // ecx /*0x717900*/
-    int v10 = v8->vtable2; // edi /*0x717905*/
+    int v10 = v8->ptr_4; // edi /*0x717905*/
     v17[0] = 10 * v5->ClearAllWeapons; /*0x71791b*/
     __asm { fild [esp+2Ch+var_14] } /*0x717921*/
     void *v11; // ebp
@@ -2123,19 +2123,19 @@ char BuildingTypeClass::Enqueue(int a2, void *a2_2)
 
   if ( a2 < 0 ) /*0x41c50c*/
     return 0; /*0x41c50c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable3)); /*0x41c520*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->ptr_8)); /*0x41c520*/
   if ( !v3 ) /*0x41c527*/
     return 0; /*0x41c580*/
-  for ( i = 0; i < this->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x41c535*/
+  for ( i = 0; i < this->ptr_4; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x41c535*/
   {
     v5 = 8 * i; /*0x41c539*/
     v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x41c542*/
     *(unsigned int *)&v3[v5] = *v6; /*0x41c547*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x41c55b*/
-  v7 = a2 + this->vtable3; /*0x41c566*/
+  v7 = a2 + this->ptr_8; /*0x41c566*/
   *(unsigned int *)this = v3; /*0x41c568*/
-  this->vtable3 = v7; /*0x41c56a*/
+  this->ptr_8 = v7; /*0x41c56a*/
   this->uniqueId = 0; /*0x41c56d*/
   return 1; /*0x41c574*/
 
@@ -2148,38 +2148,38 @@ size_t BuildingTypeClass::Dequeue(int *aP1, void *a2)
 
 
   int result; // eax
-  result = (int)this->vtable2; /*0x41c593*/
+  result = (int)this->ptr_4; /*0x41c593*/
   if ( result ) /*0x41c598*/
   {
-    if ( !LOBYTE(this->vtable4) ) /*0x41c59e*/
+    if ( !LOBYTE(this->ptr_C) ) /*0x41c59e*/
     {
       qsort(this->TechnoTypeClass, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction); /*0x41c5b0*/
       this->uniqueId = 0; /*0x41c5b8*/
-      LOBYTE(this->vtable4) = 1; /*0x41c5bf*/
+      LOBYTE(this->ptr_C) = 1; /*0x41c5bf*/
     }
-    char *vtable0; // edi
-    vtable0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
+    char *ptr_0; // edi
+    ptr_0 = (char *)this->TechnoTypeClass; /*0x41c5c9*/
     int v5 = *aP1; // ebx /*0x41c5cb*/
-    int vtable1; // ecx
-    vtable1 = (int)this->vtable2; /*0x41c5cd*/
-    if ( vtable1 <= 0 ) /*0x41c5d2*/
+    int ptr_0; // ecx
+    ptr_0 = (int)this->ptr_4; /*0x41c5cd*/
+    if ( ptr_0 <= 0 ) /*0x41c5d2*/
       return 0; /*0x41c5fe*/
     while ( 1 ) /*0x41c5db*/
     {
       int v7; // esi
-      v7 = *(unsigned int *)&vtable0[8 * (vtable1 / 2)]; /*0x41c5db*/
+      v7 = *(unsigned int *)&ptr_0[8 * (ptr_0 / 2)]; /*0x41c5db*/
       if ( v7 <= v5 ) /*0x41c5e3*/
       {
         if ( v7 == v5 ) /*0x41c5e9*/
-          return (int)&vtable0[8 * (vtable1 / 2)]; /*0x41c603*/
-        vtable0 += 8 * (vtable1 / 2) + 8; /*0x41c5eb*/
-        vtable1 += -1 - vtable1 / 2; /*0x41c5f3*/
+          return (int)&ptr_0[8 * (ptr_0 / 2)]; /*0x41c603*/
+        ptr_0 += 8 * (ptr_0 / 2) + 8; /*0x41c5eb*/
+        ptr_0 += -1 - ptr_0 / 2; /*0x41c5f3*/
       }
       else
       {
-        vtable1 /= 2; /*0x41c5e5*/
+        ptr_0 /= 2; /*0x41c5e5*/
       }
-      if ( vtable1 <= 0 ) /*0x41c5f7*/
+      if ( ptr_0 <= 0 ) /*0x41c5f7*/
         return 0; /*0x41c5f7*/
     }
   }
@@ -2404,9 +2404,9 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
 
 
   void *v4 = 0; // ebx /*0x478859*/
-  this->vtable2 = 0; /*0x47885d*/
-  this->vtable3 = (void *)a2; /*0x478860*/
-  LOBYTE(this->vtable4) = 1; /*0x478863*/
+  this->ptr_4 = 0; /*0x47885d*/
+  this->ptr_8 = (void *)a2; /*0x478860*/
+  LOBYTE(this->ptr_C) = 1; /*0x478863*/
   (this->u32_D) = ((this->u32_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x478867*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_VectorClass) */  /*0x47886a*/
   if ( !a2 ) /*0x478870*/
@@ -2433,7 +2433,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
       }
       v4 = (void *)v8; /*0x4788c7*/
     }
-    this->vtable2 = v4; /*0x4788c9*/
+    this->ptr_4 = v4; /*0x4788c9*/
     (this->u32_D) = ((this->u32_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x4788cc*/
     return &this->TechnoTypeClass; /*0x4788cc*/
   }
@@ -2452,7 +2452,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
     }
     while ( v6 ); /*0x478891*/
   }
-  this->vtable2 = (void *)a3; /*0x478893*/
+  this->ptr_4 = (void *)a3; /*0x478893*/
   return &this->TechnoTypeClass; /*0x478898*/
 
 }

@@ -10,7 +10,7 @@
 namespace gamemd {
 
 struct List_MixFileClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     unsigned int First_vfptr;  // 0x4 (sentinel A vptr slot)
     unsigned int First_Previous;  // 0x8
     unsigned int First_tC;  // 0xC

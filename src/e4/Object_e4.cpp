@@ -784,8 +784,8 @@ LABEL_39:
     v19 = ObjectPlacement::CalcPosition(NeighbourContent, v31, v18, 0, 0, 0); /*0x62ade9*/
     v27 = *v19; /*0x62adf0*/
     v20 = *&this->q024; /*0x62adf4*/
-    v28 = v19->vtable2; /*0x62adfa*/
-    v29 = v19->vtable3; /*0x62ae03*/
+    v28 = v19->ptr_4; /*0x62adfa*/
+    v29 = v19->ptr_8; /*0x62ae03*/
     if ( v20 && (*(int (**)(int))(*(unsigned int *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
     {
       v21 = Coord::To_Cell((Coord *)&dword_87F7E8, &v27); /*0x62ae1d*/

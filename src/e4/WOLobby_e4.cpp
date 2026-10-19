@@ -217,7 +217,7 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
   int v129; // eax
   int v130; // eax
   int PlayerCountMap; // esi
-  void *vtable2; // ecx
+  void *ptr_4; // ecx
   HWND v133; // eax
   int v134; // edi
   int v135; // ebp
@@ -317,7 +317,7 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT, WPARAM, HWND hWnd)
   int v59; // ebp
   int ComboBoxSelectedRaw2; // esi
   char *v61; // eax
-  void **vtable1; // ebx
+  void **ptr_0; // ebx
   gamemd::Dialog *DlgCtrlID; // ebp
   GameSetup *ComboBoxSelectedRaw; // eax
   wchar_t *ColorTooltip; // eax
@@ -339,7 +339,7 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT, WPARAM, HWND hWnd)
   LPARAM v82; // eax
   unsigned int *First; // edi
   int v84; // edi
-  void *vtable2; // ebx
+  void *ptr_4; // ebx
   int PlayerCountMap; // ecx
   DeleteAndZero v87; // [esp-4h] [ebp-168h]
   wchar_t *StringCSF; // [esp-4h] [ebp-168h]

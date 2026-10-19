@@ -77,7 +77,7 @@ extern unsigned char byte_A8EDDC;  // data: 0xa8eddc truth(IDA G42.57w9)
 namespace gamemd {  // G42.18 ns repair
 void ObjectClass::sub_550080(ObjectClass ** Block)
 {
-  void *vtable2; // edx
+  void *ptr_4; // edx
   int uniqueId; // eax
   int abstractFlags; // eax
   char *v5; // edx
@@ -85,18 +85,18 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
   int v7; // eax
   unsigned int v8[4]; // [esp+4h] [ebp-10h] BYREF
 
-  vtable2 = Block->ptr_8; /*0x550086*/
+  ptr_4 = Block->ptr_8; /*0x550086*/
   uniqueId = Block->uniqueId; /*0x550089*/
-  if ( vtable2 == (void *)-1 ) /*0x55008f*/
+  if ( ptr_4 == (void *)-1 ) /*0x55008f*/
   {
     LABEL_4:
     if ( uniqueId ) /*0x5500a1*/
       goto LABEL_7; /*0x5500a1*/
     goto LABEL_5; /*0x5500a1*/
   }
-  if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (int)vtable2 < uniqueId ) /*0x55009b*/
+  if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (int)ptr_4 < uniqueId ) /*0x55009b*/
   {
-    uniqueId -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (unsigned int)vtable2; /*0x55009d*/
+    uniqueId -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (unsigned int)ptr_4; /*0x55009d*/
     goto LABEL_4; /*0x55009d*/
   }
   LABEL_5:
@@ -1404,8 +1404,8 @@ int E4Recv_55B720::sub_55B720()
   int *p_nextArrayIndex; // esi
   char *NeedsSaveOrLink; // eax
   int v7; // eax
-  unsigned char *vtable0; // edx
-  char *vtable2; // eax
+  unsigned char *ptr_0; // edx
+  char *ptr_4; // eax
   AbstractClass *v10; // esi
   void *v11; // eax
   int result; // eax
@@ -1445,12 +1445,12 @@ LABEL_8:
 LABEL_9:
   if ( ((int)dword_A8B230->ptr_0 & 0x1000) != 0 && v1->FogRate != 0.0 ) /*0x55b7ca*/
   {
-    vtable0 = dword_A8B230[129].ptr_0; /*0x55b7cc*/
-    vtable2 = (char *)dword_A8B230[129].ptr_8; /*0x55b7d2*/
+    ptr_0 = dword_A8B230[129].ptr_0; /*0x55b7cc*/
+    ptr_4 = (char *)dword_A8B230[129].ptr_8; /*0x55b7d2*/
     v10 = dword_A8B230 + 129; /*0x55b7d8*/
-    if ( vtable0 != (unsigned char *)-1 ) /*0x55b7e1*/
+    if ( ptr_0 != (unsigned char *)-1 ) /*0x55b7e1*/
     {
-      if ( (unsigned char *)v3 - vtable0 >= (int)vtable2 ) /*0x55b7e9*/
+      if ( (unsigned char *)v3 - ptr_0 >= (int)ptr_4 ) /*0x55b7e9*/
       {
 LABEL_15:
         LOWORD(v11) = Math::RoundToInt(*(double *)(v1 + 5704) * 900.0); /*0x55b7f1*/
@@ -1460,9 +1460,9 @@ LABEL_15:
         MapClass::ProcessFogTransition((MapClass *)&DataGlobal_87F7E8); /*0x55b813*/
         goto LABEL_16; /*0x55b813*/
       }
-      vtable2 -= (unsigned char *)v3 - vtable0; /*0x55b7eb*/
+      ptr_4 -= (unsigned char *)v3 - ptr_0; /*0x55b7eb*/
     }
-    if ( vtable2 ) /*0x55b7ef*/
+    if ( ptr_4 ) /*0x55b7ef*/
       goto LABEL_16; /*0x55b7ef*/
     goto LABEL_15; /*0x55b7ef*/
   }
@@ -2497,7 +2497,7 @@ LABEL_72:
     {
       v22 = RequestMapSnapshot((ObjectClass *)g_TacticalClass_Instance, &v50.u32_30); /*0x55d92b*/
       Time = *v22; /*0x55d936*/
-      *(unsigned int *)v50.__pad_0 = v22->vtable2; /*0x55d945*/
+      *(unsigned int *)v50.__pad_0 = v22->ptr_4; /*0x55d945*/
       FileClass::Write(&dword_A8D58C, &Time, 8u); /*0x55d949*/
       *(unsigned int *)&v50.ptr_8 = *(unsigned int *)&stru_A8E960.random[340]; /*0x55d960*/
       FileClass::Write(&dword_A8D58C, &v50.ptr_8, 4u); /*0x55d964*/
@@ -4325,11 +4325,11 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
   CCFileClass::Construct3((int)&v6); /*0x5595fb*/
   do /*0x559633*/
   {
-    const char *vtable2; // [esp-4h] [ebp-78h]
-    vtable2 = (const char *)this->M8; /*0x559607*/
+    const char *ptr_4; // [esp-4h] [ebp-78h]
+    ptr_4 = (const char *)this->M8; /*0x559607*/
     int v3; // eax
     v3 = rand(); /*0x559608*/
-    sprintf(Buffer, "SAVE%04lX.%3s", v3, vtable2); /*0x559614*/
+    sprintf(Buffer, "SAVE%04lX.%3s", v3, ptr_4); /*0x559614*/
     FileClass::SetFileName(&v6, Buffer); /*0x559621*/
   }
   while ( (unsigned __int8)CCFileClass::Open(&v6, 0) == 1 ); /*0x559633*/

@@ -10,7 +10,7 @@ namespace gamemd {
 struct MouseClass;  // fix_fwd_type_supply
 
 struct WWMouseClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     String* __pad_004;  // 0x4
     int WWMouseClass_field_0x8;  // 0x8
     int WWMouseClass_field_0xC;  // 0xC

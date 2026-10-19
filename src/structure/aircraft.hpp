@@ -173,7 +173,7 @@ protected:
     AircraftClass() noexcept;
     void* SelectVocOrSfx;  // 0x0 (no offset truth)
     void* ReadINI_3;  // 0x0 (no offset truth)
-    unsigned int vtable5;  // 0x1728
+    unsigned int ptr_6C0;  // 0x1728
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Construct(int a1, void* a2);  // 0x413D20
     // --- gap2 auto-generated stub declarations (END) ---
@@ -189,9 +189,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int isTether;  // +0x418 (ml flat supply)
     int waypointIndex;  // +0x686 (ml flat supply)
     unsigned int FootClass_field_680; // 0x680  gB member supply
-    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
-    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
-    void* vtable4;  // 0xC (ml truth)  gB vtable supply
+    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
+    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
+    void* ptr_C;  // 0xC (ml truth)  gB vtable supply
 
     void* airstrike;  // X10 supply (csp_canon_members)
     unsigned char ambientSoundController[20];  /* AudioController */  // X10 supply (csp_canon_members)
@@ -215,7 +215,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned char passengers[8];  /* unsigned long long */  // X10 supply (csp_canon_members)
     AnimClass* target;  // X10 supply (csp_canon_members)
     unsigned int uniqueId;  // X10 supply (csp_canon_members)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

@@ -312,10 +312,10 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
 // [&this->vtable1/4/0x10/0x18/0x1C] (32B sub-object; float@0x10 = v0/max(v4,1) ramp)
 {
   BulletClass *result; // eax
-  void *vtable0; // [esp+0h] [ebp-4h]
+  void *ptr_0; // [esp+0h] [ebp-4h]
 
   result = (BulletClass *)this->ptr_0; /*0x70ece1*/
-  vtable0 = this->ptr_0; /*0x70ece5*/
+  ptr_0 = this->ptr_0; /*0x70ece5*/
   if ( this->ptr_0 ) /*0x70ece5*/
   {
     result = (BulletClass *)this->ptr_4; /*0x70eceb*/
@@ -323,7 +323,7 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
     this->referenceCount = (int)result; /*0x70ecf8*/
     if ( (int)result < 1 ) /*0x70ecfb*/
       this->referenceCount = 1; /*0x70ecfd*/
-    *&this->uniqueId = (double)(int)vtable0 / (double)this->referenceCount; /*0x70ed07*/
+    *&this->uniqueId = (double)(int)ptr_0 / (double)this->referenceCount; /*0x70ed07*/
   }
   return result; /*0x70ed0b*/
 }
@@ -1315,7 +1315,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
   int v3; // eax
   int v4; // eax
   void *occupant; // eax
-  void *vtable1; // eax
+  void *ptr_0; // eax
   TechnoClass *v7; // [esp+Ch] [ebp-4h] BYREF
 
   FactoryClass::ClearObjects((FactoryClass *)this); /*0x633d35*/
@@ -1357,11 +1357,11 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
   }
   (this->u32_2D) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
-  vtable1 = this->ptr_4; /*0x633e20*/
+  ptr_0 = this->ptr_4; /*0x633e20*/
   /* X11: vtable install elided (implicit via class virtuals 0x633e23) — binary-proven install, was 0 */
-  if ( vtable1 && (this->u32_D) ) /*0x633e2d*/
+  if ( ptr_0 && (this->u32_D) ) /*0x633e2d*/
   {
-    operator delete((void *)(vtable1)); /*0x633e33*/
+    operator delete((void *)(ptr_0)); /*0x633e33*/
     this->ptr_4 = 0; /*0x633e3b*/
   }
   (this->u32_D) = 0; /*0x633e3e*/

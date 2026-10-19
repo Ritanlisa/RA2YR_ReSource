@@ -135,7 +135,7 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *v3)
   v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->ptr_C)); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
-  for ( i = 0; i < this->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
+  for ( i = 0; i < this->ptr_4; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
   {
     v5 = 8 * i; /*0x538bb9*/
     v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x538bc2*/

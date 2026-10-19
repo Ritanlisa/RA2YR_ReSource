@@ -59,7 +59,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
         {
-          v7 = &v6->vtable2; /*0x658b48*/
+          v7 = &v6->ptr_4; /*0x658b48*/
           v8 = a2; /*0x658b4b*/
           do /*0x658b58*/
           {
@@ -165,7 +165,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
       {
         if ( aP2 - 1 >= 0 ) /*0x658e3f*/
         {
-          unsigned int *v7 = &v6->vtable2; // ecx /*0x658e41*/
+          unsigned int *v7 = &v6->ptr_4; // ecx /*0x658e41*/
           int v8; // edx
           v8 = (int)(aP2); /*0x658e44*/
           do /*0x658e51*/
@@ -249,7 +249,7 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
   if ( m_10 <= 0 ) /*0x658c2b*/
     return -1; /*0x658c56*/
   unsigned int *i; // ecx
-  for ( i = *&this->q004; *i != *a2 || i->vtable2 != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
+  for ( i = *&this->q004; *i != *a2 || i->ptr_4 != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
   {
     if ( ++result >= m_10 ) /*0x658c54*/
       return -1; /*0x658c54*/

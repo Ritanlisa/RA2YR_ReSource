@@ -334,7 +334,7 @@ int LinkedList_flat::RemoveNode()
   this->m_Prev = 0; /*0x556761*/
   this->m_Next = 0; /*0x556764*/
   if ( v2 != this ) /*0x556767*/
-    return (int)v2->vtable1; /*0x55677e*/
+    return (int)v2->ptr_0; /*0x55677e*/
   if ( v3 == this ) /*0x55676b*/
     return 0; /*0x55676f*/
   return (*(int (**)(LinkClass *))(*(unsigned int *)v3->__pad_0 + 24))(v3); /*0x55676d*/

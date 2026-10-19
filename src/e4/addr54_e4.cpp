@@ -85,7 +85,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   int v7; // eax
   unsigned int *i; // edx
   unsigned int *v10; // ecx
-  char vtable1; // al
+  char ptr_0; // al
   int v12; // edi
   int v13; // edi
   int v14; // [esp+0h] [ebp-1Ch] BYREF
@@ -104,12 +104,12 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   }
   (v5) = ((v5) & ~0xFFFF) | ((*(&dword_A8E2B2 + v7)) & 0xFFFF); /*0x5411be*/
   v10 = (unsigned int *)(MEMORY[0xA8DA78][v7] + 40); /*0x5411c6*/
-  vtable1 = (char)this->ptr_4; /*0x5411c9*/
+  ptr_0 = (char)this->ptr_4; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
   v15[1] = v10[1]; /*0x5411d9*/
   v15[2] = v10[2]; /*0x5411e2*/
-  if ( !vtable1 || !BYTE1(this->ptr_4) ) /*0x5411e8*/
+  if ( !ptr_0 || !BYTE1(this->ptr_4) ) /*0x5411e8*/
     return 0; /*0x5411af*/
   if ( a4 && (&v14 == (int *)-16 || Network::IsBroadcastAddr((Network *)v15)) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
@@ -1100,7 +1100,7 @@ LABEL_207:
           v46 = 0; /*0x546b48*/
           *(unsigned int *)(v3 + 740) = *v43; /*0x546b4a*/
           *(unsigned int *)(v3 + 744) = v43[4]; /*0x546b53*/
-          if ( *(&v43->vtable2) * *(unsigned int *)v43 > 0 ) /*0x546b61*/
+          if ( *(&v43->ptr_4) * *(unsigned int *)v43 > 0 ) /*0x546b61*/
           {
             v47 = &v43->uniqueId; /*0x546b63*/
             do /*0x546b80*/
@@ -1111,7 +1111,7 @@ LABEL_207:
               ++v46; /*0x546b76*/
               ++v47; /*0x546b7b*/
             }
-            while ( v46 < *(&v43->vtable2) * *(unsigned int *)v43 ); /*0x546b80*/
+            while ( v46 < *(&v43->ptr_4) * *(unsigned int *)v43 ); /*0x546b80*/
           }
           TerrainClass::InitTheatre(v3); /*0x546b84*/
 LABEL_217:
@@ -1767,7 +1767,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   _ESI = v2; /*0x54ba35*/
   int v4; // edi
   v4 = (*(int (**)(unsigned int))(**(unsigned int **)(v2 + 12) + 456))(*(unsigned int *)(v2 + 12)); /*0x54ba43*/
-  int v5 = _ESI->vtable4; // eax /*0x54ba45*/
+  int v5 = _ESI->ptr_C; // eax /*0x54ba45*/
   if ( !v5->q08C ) /*0x54ba48*/
   {
     int *v6 = &v5->Coord_9C; // eax /*0x54ba52*/
@@ -1779,16 +1779,16 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   }
   int v7; // eax
   int v33; // [esp+28h] [ebp-10h] BYREF
-  v7 = *(unsigned int *)(*(int (**)(unsigned int, int *))(*_ESI->vtable4 + 440))(_ESI->vtable4, &v33); /*0x54baa0*/
-  int v8 = _ESI->vtable4; // ecx /*0x54baa2*/
+  v7 = *(unsigned int *)(*(int (**)(unsigned int, int *))(*_ESI->ptr_C + 440))(_ESI->ptr_C, &v33); /*0x54baa0*/
+  int v8 = _ESI->ptr_C; // ecx /*0x54baa2*/
   __int16 v31[2]; // [esp+20h] [ebp-18h] BYREF
   *(unsigned int *)v31 = v7; /*0x54baa5*/
   if ( (unsigned short)v7 != v8->q560 || v31[1] != v8->q562 ) /*0x54babe*/
     ((char *)&g_CellClassManager)->ToGridIndex(v8, v8->q560, v7); /*0x54bace*/
   if ( v4 < _ESI->needsRedraw ) /*0x54bade*/
   {
-    if ( (*(int (**)(unsigned int))(*_ESI->vtable4 + 44))(_ESI->vtable4) == 1 /*0x54bba2*/
-      && *(unsigned char *)((*(int (**)(unsigned int))(*_ESI->vtable4 + 132))(_ESI->vtable4) + 3434) )
+    if ( (*(int (**)(unsigned int))(*_ESI->ptr_C + 44))(_ESI->ptr_C) == 1 /*0x54bba2*/
+      && *(unsigned char *)((*(int (**)(unsigned int))(*_ESI->ptr_C + 132))(_ESI->ptr_C) + 3434) )
     {
       v17 = *(unsigned int *)(_ESI + 128) / 2; /*0x54bbb5*/
     }
@@ -1800,7 +1800,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     {
       __asm { fild dword ptr [esi+20h] } /*0x54bbd0*/
       int *v18; // ecx
-      v18 = (int *)(_ESI->vtable4 + 156); /*0x54bbd6*/
+      v18 = (int *)(_ESI->ptr_C + 156); /*0x54bbd6*/
       __asm { fstp qword ptr [esi+78h] } /*0x54bbdc*/
       _ESI->spawnStatus = _RT1; /*0x54bbdc*/
       v34 = *v18; /*0x54bbe1*/
@@ -1830,7 +1830,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       v32 = v33; /*0x54bc50*/
       FacingClass::Update(&_ESI->u32_54, &v32); /*0x54bc54*/
       int Member; // eax
-      Member = Team::GetMember(_ESI->vtable4, 0); /*0x54bc5e*/
+      Member = Team::GetMember(_ESI->ptr_C, 0); /*0x54bc5e*/
       int v22 = Member; // edi /*0x54bc63*/
       if ( Member ) /*0x54bc67*/
       {
@@ -1838,55 +1838,55 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
         {
           unsigned char *v23 = v22->u32_520; // eax /*0x54bc75*/
           if ( v23[5821] || v23[5860] || v23[5861] || v23[5862] ) /*0x54bc99*/
-            (**(void (***)(int, int, unsigned int))(_ESI->vtable4 + 8))( /*0x54bcb3*/
-              _ESI->vtable4 + 8,
+            (**(void (***)(int, int, unsigned int))(_ESI->ptr_C + 8))( /*0x54bcb3*/
+              _ESI->ptr_C + 8,
               4475,
               0);
         }
       }
       if ( *(unsigned int *)v31 == ((*(unsigned int *)(_ESI + 68) / 256 & 0xFFFFu) << 16 | (*(unsigned int *)(_ESI + 64) / 256 & 0xFFFFu)) /*0x54bcee*/
-        && !*(unsigned char *)((*(int (**)(unsigned int))(*_ESI->vtable4 + 132))(_ESI->vtable4) + 3434) )
+        && !*(unsigned char *)((*(int (**)(unsigned int))(*_ESI->ptr_C + 132))(_ESI->ptr_C) + 3434) )
       {
         int v24; // eax
-        v24 = (*(int (**)(unsigned int))(*_ESI->vtable4 + 456))(_ESI->vtable4); /*0x54bcfd*/
-        unsigned char *v25 = _ESI->vtable4; // ecx /*0x54bd03*/
+        v24 = (*(int (**)(unsigned int))(*_ESI->ptr_C + 456))(_ESI->ptr_C); /*0x54bcfd*/
+        unsigned char *v25 = _ESI->ptr_C; // ecx /*0x54bd03*/
         _ESI->needsRedraw = v24; /*0x54bd06*/
         char v26; // bl
         v26 = v25[116]; /*0x54bd10*/
         (*(void (**)(unsigned char *, unsigned int))(*&v25->u32_490))(v25, 0); /*0x54bd13*/
-        int v27 = _ESI->vtable4; // eax /*0x54bd19*/
+        int v27 = _ESI->ptr_C; // eax /*0x54bd19*/
         _ESI->customSound_controller = 3; /*0x54bd1c*/
         v27->unknown74 = v26; /*0x54bd23*/
       }
     }
   }
-  else if ( (unsigned __int8)ObjectClass::HasLinkedObject(_ESI->vtable4) ) /*0x54baea*/
+  else if ( (unsigned __int8)ObjectClass::HasLinkedObject(_ESI->ptr_C) ) /*0x54baea*/
   {
     unsigned int v9; // edi
     v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54bb08*/
     Cell *v10; // eax
     v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v31); /*0x54bb14*/
-    int v11 = *_ESI->vtable4; // ebx /*0x54bb1f*/
+    int v11 = *_ESI->ptr_C; // ebx /*0x54bb1f*/
     void *NeighbourContent; // eax
     NeighbourContent = Cell::GetNeighbourContent(v10, v9); /*0x54bb23*/
-    (*(void (**)(unsigned int, void *, int))(v11 + 1152))(_ESI->vtable4, NeighbourContent, 1); /*0x54bb2c*/
-    unsigned char *v13 = _ESI->vtable4; // ecx /*0x54bb32*/
+    (*(void (**)(unsigned int, void *, int))(v11 + 1152))(_ESI->ptr_C, NeighbourContent, 1); /*0x54bb2c*/
+    unsigned char *v13 = _ESI->ptr_C; // ecx /*0x54bb32*/
     LOBYTE(v11) = v13[116]; /*0x54bb39*/
     (*(void (**)(unsigned char *, unsigned int))(*&v13->u32_490))(v13, 0); /*0x54bb3c*/
-    *(unsigned char *)(_ESI->vtable4 + 116) = v11; /*0x54bb46*/
+    *(unsigned char *)(_ESI->ptr_C + 116) = v11; /*0x54bb46*/
     _ESI->customSound_controller = 3; /*0x54bb49*/
   }
   else
   {
     CellClass *v14; // eax
-    v14 = (CellClass *)(*(int (**)(unsigned int))(*_ESI->vtable4 + 444))(_ESI->vtable4); /*0x54bb5c*/
+    v14 = (CellClass *)(*(int (**)(unsigned int))(*_ESI->ptr_C + 444))(_ESI->ptr_C); /*0x54bb5c*/
     int v30; // [esp+14h] [ebp-24h]
     CellClass::AttachObject(v14, v30); /*0x54bb64*/
-    unsigned char *v15 = _ESI->vtable4; // ecx /*0x54bb69*/
+    unsigned char *v15 = _ESI->ptr_C; // ecx /*0x54bb69*/
     char v16; // bl
     v16 = v15[116]; /*0x54bb70*/
     (*(void (**)(unsigned char *, unsigned int))(*&v15->u32_490))(v15, 0); /*0x54bb73*/
-    *(unsigned char *)(_ESI->vtable4 + 116) = v16; /*0x54bb7d*/
+    *(unsigned char *)(_ESI->ptr_C + 116) = v16; /*0x54bb7d*/
     _ESI->customSound_controller = 2; /*0x54bb80*/
   }
   return result; /*0x54bb45*/
@@ -2622,7 +2622,7 @@ int E4Recv_54A990::sub_54A990()
   int i; // esi
   for ( i = 0; i < 8; ++i ) /*0x54a9a6*/
   {
-    if ( ((uint8_t)(1 << (i % 8)) & v1->vtable1 + i / 8)) != 0 ) /*0x54a9c9*/
+    if ( ((uint8_t)(1 << (i % 8)) & v1->ptr_0 + i / 8)) != 0 ) /*0x54a9c9*/
       break; /*0x54a9c9*/
   }
   return i + 8 * v2; /*0x54a9d4*/
@@ -2650,7 +2650,7 @@ int E4Recv_54A9E0::sub_54A9E0()
   int i; // esi
   for ( i = 0; i < 8; ++i ) /*0x54a9f6*/
   {
-    if ( ((uint8_t)(1 << (i % 8)) & v1->vtable1 + i / 8)) == 0 ) /*0x54aa19*/
+    if ( ((uint8_t)(1 << (i % 8)) & v1->ptr_0 + i / 8)) == 0 ) /*0x54aa19*/
       break; /*0x54aa19*/
   }
   return i + 8 * v2; /*0x54aa24*/
@@ -2987,7 +2987,7 @@ namespace gamemd {
 void E4Recv_54E690::sub_54E690()
 {
 
-  void (**vtable3)(void **); // edx
+  void (**ptr_8)(void **); // edx
   void **p_vtable3; // esi
   void **v5; // ecx
   int abstractFlags; // edi
@@ -2996,11 +2996,11 @@ void E4Recv_54E690::sub_54E690()
   int i; // esi
   for ( i = this->q050 - 1; i >= 0; --i ) /*0x54e699*/
     __3_YAXPAX_Z(*(void **)(this->q050 + 4 * i)); /*0x54e6a2*/
-  vtable3 = (void (**)(void **))this->M12; /*0x54e6ad*/
+  ptr_8 = (void (**)(void **))this->M12; /*0x54e6ad*/
   p_vtable3 = &this->M12; /*0x54e6b0*/
   v5 = &this->q050; /*0x54e6b3*/
   abstractFlags = this->?; /*0x54e6b5*/
-  vtable3[3](v5); /*0x54e6b8*/
+  ptr_8[3](v5); /*0x54e6b8*/
   (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/
   /* X11: vtable install elided (X67 star-deref, RHS vt_VectorClass) */  /*0x54e6c9*/
@@ -3030,12 +3030,12 @@ unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
     if ( a3 ) /*0x54ec16*/
     {
       this->Items = (void *)a3; /*0x54ec18*/
-      return &this->vtable0; /*0x54ec1e*/
+      return &this->ptr_0; /*0x54ec1e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x54ec2d*/
     this->IsAllocated = 1; /*0x54ec30*/
   }
-  return &this->vtable0; /*0x54ec1d*/
+  return &this->ptr_0; /*0x54ec1d*/
 
 }
 } // namespace gamemd

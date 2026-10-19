@@ -87,7 +87,7 @@ void UDPInterfaceClass::CheckStatus(short a2)
         do /*0x7b33b7*/
         {
           ++v4; /*0x7b339e*/
-          *v9 = v9->vtable2; /*0x7b339f*/
+          *v9 = v9->ptr_4; /*0x7b339f*/
           *v8 = v8[1]; /*0x7b33a5*/
           ++v9; /*0x7b33ae*/
           ++v8; /*0x7b33b1*/
@@ -374,7 +374,7 @@ LABEL_25:
     v13 = (unsigned char *)*this->u32_24; /*0x7b3bfa*/
   }
   v45 = v13; /*0x7b3bff*/
-  *(unsigned int *)&netshort.sa_data[2] = v13->vtable2; /*0x7b3c03*/
+  *(unsigned int *)&netshort.sa_data[2] = v13->ptr_4; /*0x7b3c03*/
   *(unsigned short *)netshort.sa_data = htons(v13->u8_1A); /*0x7b3c11*/
   netshort.sa_family = 2; /*0x7b3c1c*/
   if ( v39 ) /*0x7b3c23*/

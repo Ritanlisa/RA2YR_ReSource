@@ -110,7 +110,7 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
     --v5; /*0x6e7f37*/
   }
   while ( v5 ); /*0x6e7f38*/
-  return (int)(this->vtable1); /*0x6e7f3c*/
+  return (int)(this->ptr_0); /*0x6e7f3c*/
 
 }
 }
@@ -232,16 +232,16 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   this->Coord_9C = 0; /*0x6e844f*/
   do /*0x6e84cb*/
   {
-    sprintf(v8.vtable3, "%d", v3); /*0x6e8460*/
-    if ( (/*0x6e8486*/ (INIClass *)aP1)->GetString((unsigned __int8 *)&this->q024, (unsigned __int8 *)v8.vtable3, &g_INI_DefaultBuffer, v8.q028, 128) > 0 )
+    sprintf(v8.ptr_8, "%d", v3); /*0x6e8460*/
+    if ( (/*0x6e8486*/ (INIClass *)aP1)->GetString((unsigned __int8 *)&this->q024, (unsigned __int8 *)v8.ptr_8, &g_INI_DefaultBuffer, v8.q028, 128) > 0 )
     {
       unsigned int *v4; // eax
       v4 = (&v8)->ParseUnitCountAndType(v8.q028); /*0x6e8491*/
       int v5 = this->Coord_9C; // ecx /*0x6e8496*/
       *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
-      *(&this->vtable3 * v5 + 42) = v4->vtable2; /*0x6e84a8*/
+      *(&this->ptr_8 * v5 + 42) = v4->ptr_4; /*0x6e84a8*/
       int v6 = this->Coord_9C; // eax /*0x6e84af*/
-      if ( *(&this->vtable3 * v6 + 42) ) /*0x6e84b5*/
+      if ( *(&this->ptr_8 * v6 + 42) ) /*0x6e84b5*/
         this->Coord_9C = v6 + 1; /*0x6e84c1*/
     }
     ++v3; /*0x6e84c7*/

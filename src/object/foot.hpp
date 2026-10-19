@@ -360,9 +360,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int q021; // 0x21  gB member supply
     unsigned int q0A0; // 0xA0  gB member supply
     unsigned int q0A4; // 0xA4  gB member supply
-    void* vtable1;  // 0x0 (ml truth)  gB vtable supply
-    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
-    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
+    void* ptr_0;  // 0x0 (ml truth)  gB vtable supply
+    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
+    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
 public:  // g57c5 W4 supply slot
     ILocomotion* Locomotor;  // 0x674 g57c5 W4 supply (ml FootClass@0x674)
 
@@ -456,7 +456,7 @@ public:  // g57c5 W4 supply slot
     int vecAbs_Capacity;  // X10 supply (csp_canon_members)
     unsigned int veterancy;  // X10 supply (csp_canon_members)
     unsigned int visibilityFlags;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
     bool wasAlreadyCrashing;  // X10 supply (csp_canon_members)
     unsigned int wasAlreadySinking;  // X10 supply (csp_canon_members)
     bool wasFallingDown;  // X10 supply (csp_canon_members)

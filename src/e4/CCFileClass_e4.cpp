@@ -171,7 +171,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
         v11[6] = v6->nextArrayIndex; /*0x69e3ea*/
       else
         dword_B077B0 = (void *)v6->nextArrayIndex; /*0x69e3f2*/
-      if ( v6->vtable3 ) /*0x69e3f7*/
+      if ( v6->ptr_8 ) /*0x69e3f7*/
       {
         free(*((void **)v6 + 2)); /*0x69e3ff*/
         v6->ptr_3 = 0; /*0x69e407*/

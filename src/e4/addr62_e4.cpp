@@ -1586,7 +1586,7 @@ LABEL_15:
     }
     v14->ptr_4 = i[3]; /*0x623809*/
     v14->ptr_2 = i[1]; /*0x62380f*/
-    wcscpy(v14->vtable3, (const wchar_t *)i[2]); /*0x62381a*/
+    wcscpy(v14->ptr_8, (const wchar_t *)i[2]); /*0x62381a*/
   }
   return &this->ptr_0; /*0x623828*/
 
@@ -2057,7 +2057,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
 
   int v3; // edx
   unsigned int *v4; // ecx
-  int (**vtable3)(char *); // esi
+  int (**ptr_8)(char *); // esi
   int v6; // eax
   int v7; // edi
   int v8; // esi
@@ -2088,10 +2088,10 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
     v18 = 0; /*0x62791f*/
   }
   String::CopyUpper(String, a2); /*0x62792c*/
-  vtable3 = (int (**)(char *))this->M12; /*0x627931*/
-  v6 = vtable3[1](String); /*0x627938*/
-  v7 = *((unsigned int *)*vtable3 + 6 * (v6 % (int)vtable3[2]) + 4); /*0x627944*/
-  v8 = (int)*vtable3 + 24 * (v6 % (int)vtable3[2]); /*0x627948*/
+  ptr_8 = (int (**)(char *))this->M12; /*0x627931*/
+  v6 = ptr_8[1](String); /*0x627938*/
+  v7 = *((unsigned int *)*ptr_8 + 6 * (v6 % (int)ptr_8[2]) + 4); /*0x627944*/
+  v8 = (int)*ptr_8 + 24 * (v6 % (int)ptr_8[2]); /*0x627948*/
   v9 = v7 - 1; /*0x62794b*/
   if ( v9 < 0 ) /*0x62794c*/
   {
@@ -2942,7 +2942,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x628b8f) */
   this->M20 = 10; /*0x628b95*/
   this->M16 = 0; /*0x628b9c*/
-  return &this->vtable0; /*0x628ba5*/
+  return &this->ptr_0; /*0x628ba5*/
 
 }
 } // namespace gamemd

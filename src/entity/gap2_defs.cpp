@@ -504,7 +504,7 @@ int AnimClass::ProcessCraterFormation() {
     {
       if ( *(unsigned int *)&AnimClass_field_0xC8[2].__pad_C[112] != -1 ) /*0x4255f5*/
       {
-        v4 = (unsigned int *)(*((int (__thiscall **)(AnimClass *, unsigned char *))this->vtable1 + 18))(this, v6); /*0x425607*/
+        v4 = (unsigned int *)(*((int (__thiscall **)(AnimClass *, unsigned char *))this->ptr_0 + 18))(this, v6); /*0x425607*/
         StartAudioControllerAt( /*0x425618*/
           *&this->u32_CA.__pad_C[112],
           v4,
@@ -542,13 +542,13 @@ int AnimClass::UpdateDamageRadius(void* a1) {
   if ( Map_MaxHeight + Cell::GetGroundHeight(a1) <= a1[2] && (v4->flags[0] & 0x100) != 0 ) /*0x4262b3*/
   {
     (*((unsigned char *)&(v4->altOccupationFlags))) |= 1 << v3; /*0x4262c3*/
-    result = (*((int (__thiscall **)(AnimClass *))this->vtable1 + 14))(this); /*0x4262cd*/
+    result = (*((int (__thiscall **)(AnimClass *))this->ptr_0 + 14))(this); /*0x4262cd*/
     v4->altInfantryOwnerIndex = result; /*0x4262d0*/
   }
   else
   {
     (*((unsigned char *)&(v4->occupationFlags))) |= 1 << v3; /*0x4262e8*/
-    result = (*((int (__thiscall **)(AnimClass *))this->vtable1 + 14))(this); /*0x4262f2*/
+    result = (*((int (__thiscall **)(AnimClass *))this->ptr_0 + 14))(this); /*0x4262f2*/
     v4->infantryOwnerIndex = result; /*0x4262f5*/
   }
   return result; /*0x4262d3*/
@@ -585,10 +585,10 @@ void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, 
   int v33; // [esp+70h] [ebp+8h]
   unsigned int *v34; // [esp+88h] [ebp+20h]
 
-  this->vtable1 = (void *)a2; /*0x4397f7*/
-  this->vtable2 = (void *)a3; /*0x4397fd*/
-  this->vtable3 = (void *)a4; /*0x439804*/
-  *(unsigned int *)this->vtable4 = a5; /*0x43980e*/
+  this->ptr_0 = (void *)a2; /*0x4397f7*/
+  this->ptr_4 = (void *)a3; /*0x4397fd*/
+  this->ptr_8 = (void *)a4; /*0x439804*/
+  *(unsigned int *)this->ptr_C = a5; /*0x43980e*/
   _EAX = a1; /*0x439811*/
   *&this->uniqueId = a6; /*0x439815*/
   this->abstractFlags = (WinModemClass *)a7; /*0x439818*/
@@ -1095,9 +1095,9 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
   if ( !(uint8_t)ObjectClass::Deploy(v4) ) /*0x468684*/
     return 0; /*0x468b7f*/
   memcpy(&_EBX->q0E8, a1, 0x18u); /*0x4686a0*/
-  _EBX->q134 = *(unsigned int *)this->vtable1; /*0x4686b1*/
-  *(unsigned int *)(_EBX + 312) = this->vtable2; /*0x4686b6*/
-  *(unsigned int *)(_EBX + 316) = this->vtable3; /*0x4686bc*/
+  _EBX->q134 = *(unsigned int *)this->ptr_0; /*0x4686b1*/
+  *(unsigned int *)(_EBX + 312) = this->ptr_4; /*0x4686b6*/
+  *(unsigned int *)(_EBX + 316) = this->ptr_8; /*0x4686bc*/
   (*((unsigned short *)&(v46))) = *(unsigned int *)(_EBX + 308) / 256; /*0x4686cd*/
   (*(((unsigned short *)&(v46)) + 1)) = *(unsigned int *)(_EBX + 312) / 256; /*0x4686e6*/
   _EBX->NextAnim = v46; /*0x4686ef*/
@@ -1117,10 +1117,10 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
   v10 = _EBX->u32_AC; /*0x46872e*/
   if ( *(unsigned char *)(v10 + 675) && *(unsigned char *)(v10 + 670) ) /*0x468741*/
   {
-    v47 = *(unsigned int *)this->vtable1 - v7; /*0x468755*/
+    v47 = *(unsigned int *)this->ptr_0 - v7; /*0x468755*/
     __asm { fild dword ptr [esp+58h+var_44+4] } /*0x46875c*/
-    v48 = v8 - (unsigned int)this->vtable2; /*0x468762*/
-    BulletClass_field_0x8 = (char *)this->vtable3; /*0x468766*/
+    v48 = v8 - (unsigned int)this->ptr_4; /*0x468762*/
+    BulletClass_field_0x8 = (char *)this->ptr_8; /*0x468766*/
     __asm /*0x468769*/
     {
       fstp [esp+58h+var_24+4]
@@ -1203,7 +1203,7 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
       v19 = v18->u32_21C; /*0x4688c7*/
     else
       v19 = 0; /*0x4688cf*/
-    FirstFirestorm = MapClass::FindFirstFirestorm((int *)&v55, (int *)this->vtable1, &v58, (int)v19); /*0x4688e2*/
+    FirstFirestorm = MapClass::FindFirstFirestorm((int *)&v55, (int *)this->ptr_0, &v58, (int)v19); /*0x4688e2*/
     v56[1] = *FirstFirestorm; /*0x4688f1*/
     v21 = FirstFirestorm[1]; /*0x4688f5*/
     v56[2] = v21; /*0x4688f8*/
@@ -1433,7 +1433,7 @@ bool BulletClass::CheckBulletCollision(void* a1) {
     v8 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &this->NextAnim); /*0x468c36*/
     BulletClass_field_0xB0 = this->q_B0; /*0x468c3b*/
     if ( BulletClass_field_0xB0 ) /*0x468c43*/
-      BulletClass_field_0xB0 = BulletClass_field_0xB0->vtable3.referenceCount; /*0x468c45*/
+      BulletClass_field_0xB0 = BulletClass_field_0xB0->ptr_8.referenceCount; /*0x468c45*/
     if ( TrajectoryHelper::GetObstacle( /*0x468c6d*/
            v6,
            v7,
@@ -1636,8 +1636,8 @@ int BulletClass::Fire(int a1) {
         ++v23; /*0x46906e*/
         v27 = *v25; /*0x46906f*/
         v26 = this->u32_AC; /*0x469073*/
-        v28 = v25->vtable2; /*0x46907c*/
-        v29 = v25->vtable3; /*0x469083*/
+        v28 = v25->ptr_4; /*0x46907c*/
+        v29 = v25->ptr_8; /*0x469083*/
       }
       while ( v23 < *(unsigned int *)(v26 + 684) ); /*0x46908f*/
     }
@@ -1815,8 +1815,8 @@ void* BulletClass::CheckActionStatus(int a2) {
 namespace gamemd { 
 void* BulletClass::AddVector3(void* a1) {
   *this = *a1 + *this; /*0x46b96a*/
-  this->vtable2 = a1[1] + this->vtable2; /*0x46b972*/
-  this->vtable3 = a1[2] + this->vtable3; /*0x46b97b*/
+  this->ptr_4 = a1[1] + this->ptr_4; /*0x46b972*/
+  this->ptr_8 = a1[2] + this->ptr_8; /*0x46b97b*/
   return this; /*0x46b97e*/
 }
 }
@@ -1830,15 +1830,15 @@ int TerrainClass::SetFieldF8(int a1) {
 // 0x4E1100
 namespace gamemd { 
 void* BulletClass::ResetDetonationTimer() {
-  *(unsigned int *)this->vtable1 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4e1108*/
-  this->vtable3 = 0; /*0x4e110c*/
-  *(unsigned int *)this->vtable4 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4e1115*/
+  *(unsigned int *)this->ptr_0 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4e1108*/
+  this->ptr_8 = 0; /*0x4e110c*/
+  *(unsigned int *)this->ptr_C = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4e1115*/
   *&this->abstractFlags = 0; /*0x4e1118*/
   this->nextArrayIndex = 0; /*0x4e111b*/
   *(unsigned int *)this->referenceCount = 0; /*0x4e111e*/
   *&this->needsSave = 0; /*0x4e1121*/
   *&this->objectTypeFlags = 0; /*0x4e1124*/
-  return this->vtable1; /*0x4e1127*/
+  return this->ptr_0; /*0x4e1127*/
 }
 }
 // 0x4E1130
@@ -1857,10 +1857,10 @@ int BulletClass::InitDetonationTimer(void* a1, void* a2, int a3, int a4) {
   v7 = (void *)a4; /*0x4e113a*/
   if ( a4 <= a3 ) /*0x4e1141*/
     v7 = (void *)a3; /*0x4e1143*/
-  *(unsigned int *)this->vtable1 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4e114f*/
-  this->vtable2 = v12; /*0x4e1155*/
-  this->vtable3 = v7; /*0x4e1158*/
-  *(unsigned int *)this->vtable4 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4e1163*/
+  *(unsigned int *)this->ptr_0 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4e114f*/
+  this->ptr_4 = v12; /*0x4e1155*/
+  this->ptr_8 = v7; /*0x4e1158*/
+  *(unsigned int *)this->ptr_C = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4e1163*/
   *&this->uniqueId = v12; /*0x4e116a*/
   *&this->abstractFlags = a3; /*0x4e1171*/
   this->nextArrayIndex = (void *)*a2; /*0x4e117b*/
@@ -1908,7 +1908,7 @@ int BulletClass::CheckProximityDetonation(void* a1) {
   int v11; // [esp+10h] [ebp-8h]
   int v12; // [esp+14h] [ebp-4h]
 
-  v4 = *(unsigned int *)this->vtable4; /*0x4e11f6*/
+  v4 = *(unsigned int *)this->ptr_C; /*0x4e11f6*/
   v5 = *&this->abstractFlags; /*0x4e11f9*/
   if ( v4 == -1 ) /*0x4e11ff*/
   {
@@ -2135,7 +2135,7 @@ void* ParticleSystemClass::QueryInterface(int a2) {
   this->Capacity = 0; /*0x4ef881*/
   if ( (a2 & 1) != 0 ) /*0x4ef888*/
     operator delete((void *)(this)); /*0x4ef88b*/
-  return this->vtable1; /*0x4ef895*/
+  return this->ptr_0; /*0x4ef895*/
 }
 }
 // 0x4EFDA0
@@ -2154,7 +2154,7 @@ void* ParticleSystemClass::finalizeParticles(int a2) {
   this->Capacity = 0; /*0x4efdd1*/
   if ( (a2 & 1) != 0 ) /*0x4efdd8*/
     operator delete((void *)(this)); /*0x4efddb*/
-  return this->vtable1; /*0x4efde5*/
+  return this->ptr_0; /*0x4efde5*/
 }
 // 0x547CF0
 
@@ -5170,7 +5170,7 @@ int TiberiumClass::Grow(void* a1) {
   v41->ptr_2 = 0; /*0x59cda9*/
   *(unsigned int *)(80 * (v85[0] + g_MapCellWidth * v85[1]) + g_MissionQueueFrame.localVariables[163] + 60) = this->u32_308; /*0x59cdd4*/
   v42 = *&v9->__pad_004; /*0x59cddd*/
-  (*((unsigned int *)&(v94))) = v41->vtable2; /*0x59cde0*/
+  (*((unsigned int *)&(v94))) = v41->ptr_4; /*0x59cde0*/
   v43 = v42 >> 1; /*0x59cde7*/
   if ( v42 < *(unsigned int *)&v9[1] ) /*0x59cdeb*/
   {
@@ -5435,10 +5435,10 @@ int TiberiumClass::Grow(void* a1) {
   operator delete((void *)(Block)); /*0x59d2b5*/
   if ( inited ) /*0x59d2c3*/
   {
-    this->vtable3.SpreadPercentage[0] += v86; /*0x59d2d5*/
+    this->ptr_8.SpreadPercentage[0] += v86; /*0x59d2d5*/
     return 1; /*0x59d2e3*/
   }
-  v79 = this->vtable3.SpreadPercentage[1]; /*0x59d3b6*/
+  v79 = this->ptr_8.SpreadPercentage[1]; /*0x59d3b6*/
   LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x59d3c1*/
   for ( k = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x59d3d4*/
         k;
@@ -5452,7 +5452,7 @@ int TiberiumClass::Grow(void* a1) {
       *(unsigned char *)(v81 + 75) = 0; /*0x59d404*/
       *(unsigned int *)(k + 56) = 0; /*0x59d408*/
       *(unsigned char *)(k + 282) = 0; /*0x59d40b*/
-      *(unsigned char *)(k + 283) = this->vtable3.Growth; /*0x59d418*/
+      *(unsigned char *)(k + 283) = this->ptr_8.Growth; /*0x59d418*/
     }
   }
   return 0; /*0x59cc78*/
@@ -5704,7 +5704,7 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   *(unsigned int *)(_ESI + 4) = 0; /*0x62b76d*/
   /* X11: vtable install elided (implicit via class virtuals 0x62b773) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x62b77a) — binary-proven install, was 0 */
-  AbstractClass::GenerateUniqueID(&_ESI->vtable2); /*0x62b781*/
+  AbstractClass::GenerateUniqueID(&_ESI->ptr_4); /*0x62b781*/
   if ( *(int *)&DataGlobal_A83DD8 < *(int *)DataGlobal_A83DD0 /*0x62b7b9*/
     || (DataGlobal_A83DD5 || !*(unsigned int *)DataGlobal_A83DD0)
     && *(int *)&DataGlobal_A83DDC > 0
@@ -5942,7 +5942,7 @@ void ParticleClass::UpdateParticlePhysics() {
   v7 = *&this->q_120; /*0x62c472*/
   v18 = v6; /*0x62c478*/
   (*((unsigned short *)&(v8))) = Math::RoundToInt(v7); /*0x62c47c*/
-  v9 = *(unsigned int *)this->vtable1; /*0x62c481*/
+  v9 = *(unsigned int *)this->ptr_0; /*0x62c481*/
   v19 = v8; /*0x62c483*/
   v9->SetPosition(this, &v17); /*0x62c48e*/
   v13 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x62c4ac*/
@@ -6024,10 +6024,10 @@ void ParticleClass::UpdateAnimationDrift() {
   {
     v10 = *((unsigned int *)this->u32_AC + 184) /*0x62c664*/
         - *(uint16_t *)this->q128
-        + (*(int (__stdcall **)(char *))&this->vtable2->uniqueId)(&this->vtable2);
+        + (*(int (__stdcall **)(char *))&this->ptr_4->uniqueId)(&this->ptr_4);
     if ( !(v10 /*0x62c67e*/
          % (*((char *)ParticleClass_field_0xAC + 779)
-          + ((*(int (__stdcall **)(char *))&this->vtable2->uniqueId)(&this->vtable2)
+          + ((*(int (__stdcall **)(char *))&this->ptr_4->uniqueId)(&this->ptr_4)
            & 1))) )
       ++this->StartStateAI; /*0x62c684*/
     if ( this->StartStateAI == *((unsigned char *)ParticleClass_field_0xAC + 777) && *((unsigned char *)ParticleClass_field_0xAC + 776) ) /*0x62c69a*/
@@ -6046,7 +6046,7 @@ int ParticleClass::Dispatch() {
   switch ( result ) /*0x62ce54*/
   {
     case 0: /*0x62ce54*/
-      (*((unsigned char *)&(result))) = ParasiteClass::Update(this->vtable1); /*0x62ce5d*/
+      (*((unsigned char *)&(result))) = ParasiteClass::Update(this->ptr_0); /*0x62ce5d*/
       break; /*0x62ce62*/
     case 1: /*0x62ce54*/
       ParticleClass::UpdateAnimationDrift(this); /*0x62ce66*/
@@ -6304,7 +6304,7 @@ int ParticleSystemClass::Constructor(int a2, int *a3, int a4, void *a5, unsigned
   v15 = *(&this->abstractFlags6); /*0x62de6d*/
   if ( v15 ) /*0x62de75*/
   {
-    v16 = *(&this->vtable49); /*0x62de7f*/
+    v16 = *(&this->ptr_49); /*0x62de7f*/
     v17 = *(&this->uniqueId0); /*0x62de81*/
     v18 = *(&this->uniqueId1); /*0x62de84*/
     v19 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(v15->turretChargeTimer_d)(v15, v24); /*0x62de8c*/
@@ -7398,7 +7398,7 @@ namespace gamemd {
 void* ParticleSystemClass::resetSystemState(int a1, int a2) {
   this->ptr_4 = 0; /*0x6302ab*/
   this->ptr_8 = (void *)a1; /*0x6302ae*/
-  (this->vtable4) = 1; /*0x6302b1*/
+  (this->ptr_C) = 1; /*0x6302b1*/
   (this->u8_CD) = 0; /*0x6302b5*/
   /* X11: vtable install elided (implicit via class virtuals 0x6302b8) — binary-proven install, was 0 */
   if ( a1 ) /*0x6302be*/
@@ -7589,14 +7589,14 @@ int BulletClass::ComputeImpactTrajectory(int a1) {
   v7 = v6; /*0x66219e*/
   if ( v6 > (int)_ESI->NeedsSaveOrLink ) /*0x6621a5*/
   {
-    v8 = (unsigned int *)_ESI->vtable4->GetCellCoords(); /*0x6621be*/
+    v8 = (unsigned int *)_ESI->ptr_C->GetCellCoords(); /*0x6621be*/
     if ( !v8 /*0x6621f1*/
       || (v8[80] & 0x100) == 0
       || (NeedsSaveOrLink = _ESI->NeedsSaveOrLink,
           *(void **)((*(int (__thiscall **)(unsigned int *, unsigned int *))(*v8 + 72))(v8, v17) + 8) != NeedsSaveOrLink)
       || v7 > (int)NeedsSaveOrLink + dword_B04E6C )
     {
-      if ( _ESI->vtable4->GetZAboveGround() > 0 ) /*0x662212*/
+      if ( _ESI->ptr_C->GetZAboveGround() > 0 ) /*0x662212*/
         return 0; /*0x662228*/
     }
   }
@@ -7610,7 +7610,7 @@ int TerrainClass::CleanupMembers() {
   AbstractClass *v2; // edi
   int v3; // eax
   int Vtable3; // eax
-  void *vtable1; // edx
+  void *ptr_0; // edx
   int v6; // edi
   int v7; // eax
   signed int v8; // eax
@@ -7619,7 +7619,7 @@ int TerrainClass::CleanupMembers() {
   unsigned int *v11; // eax
   int v13[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v2 = &this->vtable2; /*0x71b7b9*/
+  v2 = &this->ptr_4; /*0x71b7b9*/
   /* X11: vtable install elided (implicit via class virtuals 0x71b7bc) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x71b7c2) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x71b7c9) — binary-proven install, was 0 */
@@ -7642,7 +7642,7 @@ int TerrainClass::CleanupMembers() {
     TerrainClass::ApplyCellModifications((TerrainClass *)this); /*0x71b840*/
   }
   Vtable3 = AbstractClass::GetVtable3(v2); /*0x71b846*/
-  vtable1 = g_BuildingLoadQueue_Array.ptr_4; /*0x71b84b*/
+  ptr_0 = g_BuildingLoadQueue_Array.ptr_4; /*0x71b84b*/
   v6 = Vtable3; /*0x71b851*/
   if ( g_BuildingLoadQueue_Array.ptr_4 ) /*0x71b855*/
   {
@@ -7653,12 +7653,12 @@ int TerrainClass::CleanupMembers() {
         (size_t)g_BuildingLoadQueue_Array.ptr_4,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = g_BuildingLoadQueue_Array.ptr_4; /*0x71b877*/
+      ptr_0 = g_BuildingLoadQueue_Array.ptr_4; /*0x71b877*/
       g_BuildingLoadQueue_Array.uniqueId = 0; /*0x71b880*/
       (*((unsigned char *)&(g_BuildingLoadQueue_Array.ptr_C))) = 1; /*0x71b88a*/
     }
     v13[0] = v6; /*0x71b895*/
-    v7 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.ptr_0, (int)vtable1, v13); /*0x71b8a0*/
+    v7 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.ptr_0, (int)ptr_0, v13); /*0x71b8a0*/
     if ( v7 ) /*0x71b8a7*/
     {
       v8 = (signed int)(v7 - (unsigned int)g_BuildingLoadQueue_Array.ptr_0) >> 3; /*0x71b8af*/
@@ -7782,7 +7782,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
   int v5; // eax
   TerrainTypeClass *v6; // eax
   int v7; // eax
-  int vtable2; // ebp
+  int ptr_4; // ebp
   unsigned int *v9; // edi
   int i; // eax
   unsigned int *v11; // ecx
@@ -7810,7 +7810,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
   /* X11: vtable install elided (implicit via off_7F5200 virtuals 0x71bc05) */
   /* X11: vtable install elided (implicit via class virtuals 0x71bc0b) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x71bc12) — binary-proven install, was 0 */
-  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x71bc19*/
+  AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x71bc19*/
   this->health = *(unsigned int *)(*&this->u32_C8 + 160); /*0x71bc2e*/
   if ( *(unsigned int *)a2 != g_BuildingLoadQueue_Array.VoiceSpecialAttack[4] ) /*0x71bc3b*/
   {
@@ -7837,20 +7837,20 @@ void* TerrainClass::Construct(void* a1, void* a2) {
     v7 = dword_A8E998++; /*0x71bce4*/
     *((unsigned int *)dword_A8E98C + v7) = this; /*0x71bcf3*/
   }
-  Vtable3 = (int16_t *)AbstractClass::GetVtable3(&this->vtable2); /*0x71bd02*/
+  Vtable3 = (int16_t *)AbstractClass::GetVtable3(&this->ptr_4); /*0x71bd02*/
   if ( (int)g_BuildingLoadQueue_Array.ptr_4 + 1 <= (int)g_BuildingLoadQueue_Array.ptr_8 ) /*0x71bd0e*/
     goto LABEL_18; /*0x71bd0e*/
   if ( g_BuildingLoadQueue_Array.ptr_8 ) /*0x71bd16*/
   {
-    vtable2 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x71bd1f*/
+    ptr_4 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x71bd1f*/
     if ( (int)g_BuildingLoadQueue_Array.ptr_8 < 0 ) /*0x71bd23*/
       return &this->ptr_0; /*0x71bd23*/
   }
   else
   {
-    vtable2 = 10; /*0x71bd18*/
+    ptr_4 = 10; /*0x71bd18*/
   }
-  v9 = (unsigned int *)operator new(8 * ((int)g_BuildingLoadQueue_Array.ptr_8 + vtable2)); /*0x71bd38*/
+  v9 = (unsigned int *)operator new(8 * ((int)g_BuildingLoadQueue_Array.ptr_8 + ptr_4)); /*0x71bd38*/
   if ( v9 ) /*0x71bd3f*/
   {
     for ( i = 0; i < (int)g_BuildingLoadQueue_Array.ptr_4; v9[2 * i - 1] = v11[1] ) /*0x71bd58*/
@@ -7860,7 +7860,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
     }
     operator delete((void *)(g_BuildingLoadQueue_Array.ptr_0)); /*0x71bd82*/
     g_BuildingLoadQueue_Array.ptr_0 = v9; /*0x71bd91*/
-    g_BuildingLoadQueue_Array.ptr_8 = (char *)g_BuildingLoadQueue_Array.ptr_8 + vtable2; /*0x71bd97*/
+    g_BuildingLoadQueue_Array.ptr_8 = (char *)g_BuildingLoadQueue_Array.ptr_8 + ptr_4; /*0x71bd97*/
     g_BuildingLoadQueue_Array.uniqueId = 0; /*0x71bd9c*/
   LABEL_18:
     *((unsigned int *)g_BuildingLoadQueue_Array.ptr_0 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4) = Vtable3; /*0x71bda2*/
@@ -7958,7 +7958,7 @@ void* TerrainClass::SetOccupyBit_PassableTerrain(void* a1) {
 namespace gamemd { 
 void TerrainClass::Draw(void* a1, void* a2) {
   int *v4; // eax
-  int (__thiscall **vtable0)(TerrainClass *); // edx
+  int (__thiscall **ptr_0)(TerrainClass *); // edx
   int *v6; // ebp
   unsigned int v7; // ebx
   int v8; // edx
@@ -7977,10 +7977,10 @@ void TerrainClass::Draw(void* a1, void* a2) {
 
   *(unsigned int *)v17 = *(unsigned int *)(*((int (__thiscall **)(TerrainClass *, int **))this->ptr_0 + 110))(this, &v18); /*0x71c1d4*/
   v4 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v17); /*0x71c1d8*/
-  vtable0 = (int (__thiscall **)(TerrainClass *))this->ptr_0; /*0x71c1dd*/
+  ptr_0 = (int (__thiscall **)(TerrainClass *))this->ptr_0; /*0x71c1dd*/
   v6 = v4; /*0x71c1df*/
   v18 = v4; /*0x71c1e3*/
-  v16 = vtable0[27](this); /*0x71c1ec*/
+  v16 = ptr_0[27](this); /*0x71c1ec*/
   if ( v16 ) /*0x71c1f0*/
   {
     if ( *(unsigned char *)(*&this->u32_C8 + 691) ) /*0x71c1fe*/
@@ -8048,7 +8048,7 @@ void TerrainClass::ProcessDestructionAnim(void* a1, void* a2) {
   int v5; // ebp
   uint8_t v6; // al
   int v7; // edx
-  int (__thiscall **vtable0)(TerrainClass *); // eax
+  int (__thiscall **ptr_0)(TerrainClass *); // eax
   int v9; // eax
   int v10; // edi
   int v11; // edx
@@ -8068,10 +8068,10 @@ void TerrainClass::ProcessDestructionAnim(void* a1, void* a2) {
     if ( v6 ) /*0x71c3b0*/
       v13 = v6 + this->Animation[0]; /*0x71c3bf*/
     v7 = a1[1]; /*0x71c3c9*/
-    vtable0 = (int (__thiscall **)(TerrainClass *))this->ptr_0; /*0x71c3cc*/
+    ptr_0 = (int (__thiscall **)(TerrainClass *))this->ptr_0; /*0x71c3cc*/
     v15 = *a1; /*0x71c3ce*/
     v16 = v7; /*0x71c3d4*/
-    v9 = vtable0[116](this); /*0x71c3d8*/
+    v9 = ptr_0[116](this); /*0x71c3d8*/
     v10 = -ZCoordToScreenY(v9); /*0x71c3ea*/
     if ( !v4->ptr_34 ) /*0x71c3e7*/
       TacticalClass::SetView(v4, 0, 0x10000, 0, 1000, 1000, 1000); /*0x71c40a*/
@@ -8412,9 +8412,9 @@ int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
   this->needsRedraw = 0; /*0x71ccad*/
   v5 = ClipRectIntersection(v20, a1, &DSurface_ViewBounds.field_0, 0, 0); /*0x71ccb4*/
   *a1 = *v5; /*0x71ccbd*/
-  a1[1] = v5->vtable2; /*0x71ccc2*/
-  a1[2] = v5->vtable3; /*0x71ccc8*/
-  a1[3] = v5->vtable4; /*0x71ccce*/
+  a1[1] = v5->ptr_4; /*0x71ccc2*/
+  a1[2] = v5->ptr_8; /*0x71ccc8*/
+  a1[3] = v5->ptr_C; /*0x71ccce*/
   v6 = DSurface_ViewBounds.field_0; /*0x71ccd3*/
   v7 = (char *)DSurface_ViewBounds.field_4; /*0x71ccd9*/
   v8 = (unsigned int *)(*((int (__thiscall **)(TerrainClass *, unsigned int *))this->ptr_0 + 75))(this, v20); /*0x71cce6*/
@@ -8506,9 +8506,9 @@ void* TerrainClass::Export(void* a1) {
   {
     FoundationSize = Building::GetFoundationSize(&v20, 0); /*0x71d1d4*/
     v5 = *FoundationSize; /*0x71d1d9*/
-    v24 = FoundationSize->vtable2; /*0x71d1de*/
-    v6 = FoundationSize->vtable3; /*0x71d1e4*/
-    v7 = FoundationSize->vtable4; /*0x71d1e7*/
+    v24 = FoundationSize->ptr_4; /*0x71d1de*/
+    v6 = FoundationSize->ptr_8; /*0x71d1e4*/
+    v7 = FoundationSize->ptr_C; /*0x71d1e7*/
     v8 = HasC4[3]; /*0x71d1ea*/
     v7 = v7; /*0x71d1ee*/
     v9 = Building::GetFoundationSize(v26, v8 / 2); /*0x71d1fd*/
@@ -8752,7 +8752,7 @@ void* TubeClass::Construct(void* a1, int a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x728003) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x728009) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x728010) — binary-proven install, was 0 */
-  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x728017*/
+  AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x728017*/
   memset(&this->nextObject, 0xFFu, 0x190u); /*0x728027*/
   if ( FootClass_Array.primaryFacing[0] < FootClass_Array.barrelFacing[4] /*0x72805f*/
     || ((((unsigned char *)&(FootClass_Array.barrelFacing[5]))[1]) || !FootClass_Array.barrelFacing[4])
@@ -8899,9 +8899,9 @@ void AnimClass::ProcessSequence() {
   if ( (double)(v2 - v4) / (double)*(int *)this->attachedTag == 1.0 ) /*0x7293b8*/
   {
   LABEL_7:
-    this->vtable4->vt_slot_1348(/*0x7293ca*/
-      *(unsigned int *)this->vtable4, 0, 1072693248);
-    v5 = *(int **)this->vtable4; /*0x7293d0*/
+    this->ptr_C->vt_slot_1348(/*0x7293ca*/
+      *(unsigned int *)this->ptr_C, 0, 1072693248);
+    v5 = *(int **)this->ptr_C; /*0x7293d0*/
     *(unsigned int *)this->nextArrayIndex = 3; /*0x7293d3*/
     v5 += 39; /*0x7293da*/
     v8 = *v5; /*0x7293e4*/
@@ -8911,7 +8911,7 @@ void AnimClass::ProcessSequence() {
     v6 = (AnimClass *)operator new(0x1C8u); /*0x72940f*/
     if ( v6 ) /*0x729419*/
     {
-      v7 = (int *)(*(unsigned int *)this->vtable4 + 156); /*0x729420*/
+      v7 = (int *)(*(unsigned int *)this->ptr_C + 156); /*0x729420*/
       v8 = *v7; /*0x729433*/
       v9 = v7[1]; /*0x72943a*/
       v10 = v7[2]; /*0x729446*/
@@ -8925,7 +8925,7 @@ void AnimClass::ProcessSequence() {
         0,
         0);
     }
-    this->vtable4->Destroy2(*(unsigned int *)this->vtable4, 0); /*0x729465*/
+    this->ptr_C->Destroy2(*(unsigned int *)this->ptr_C, 0); /*0x729465*/
   }
 }
 }
@@ -8998,7 +8998,7 @@ void* WaveClass::Constructor(void* a1, void* a2, void* a3, void* a4, void* a5) {
   Math::Sqrt((double)((*a1 - *a2) * (*a1 - *a2) + v8 * v8)); /*0x75ea7e*/
   if ( v6 >= 240.0 ) /*0x75ea91*/
   {
-    AbstractClass::GenerateUniqueID(&this->vtable2); /*0x75eaa4*/
+    AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x75eaa4*/
     if ( *(int *)&((unsigned int *)&stru_A8EB00)[100] < *(int *)&((unsigned int *)&stru_A8EB00)[92] /*0x75eadd*/
       || (((unsigned int *)&stru_A8EB00)[97] || !*(unsigned int *)&((unsigned int *)&stru_A8EB00)[92])
       && *(int *)&((unsigned int *)&stru_A8EB00)[104] > 0
@@ -9098,7 +9098,7 @@ int WaveClass::UpdateWave(int a1, int a2) {
 // 0x75F8B0
 namespace gamemd {
 int WaveClass::DrawWave(void* a1, int a2) {
-  int (__thiscall **vtable0)(WaveClass *, CellClass *, int, int, unsigned int, int); // ebp
+  int (__thiscall **ptr_0)(WaveClass *, CellClass *, int, int, unsigned int, int); // ebp
   CellClass *v5; // eax
   void (__thiscall **v6)(WaveClass *, unsigned int *); // edx
   int v8; // [esp-10h] [ebp-18h]
@@ -9111,10 +9111,10 @@ int WaveClass::DrawWave(void* a1, int a2) {
     return 0; /*0x75f8cf*/
   if ( !dword_A8E7AC ) /*0x75f8e5*/
   {
-    vtable0 = (int (__thiscall **)(WaveClass *, CellClass *, int, int, unsigned int, int))this->ptr_0; /*0x75f8eb*/
+    ptr_0 = (int (__thiscall **)(WaveClass *, CellClass *, int, int, unsigned int, int))this->ptr_0; /*0x75f8eb*/
     v8 = a1[2]; /*0x75f8f1*/
     v5 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a1); /*0x75f8fa*/
-    if ( vtable0[107](this, v5, -1, v8, 0, 1) ) /*0x75f902*/
+    if ( ptr_0[107](this, v5, -1, v8, 0, 1) ) /*0x75f902*/
       return 0; /*0x75f902*/
   }
   v6 = (void (__thiscall **)(WaveClass *, unsigned int *))this->ptr_0; /*0x75f90d*/

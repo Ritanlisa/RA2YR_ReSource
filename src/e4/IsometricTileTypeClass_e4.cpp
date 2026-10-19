@@ -173,14 +173,14 @@ void IsometricTileTypeClass::ClearBuffer(void *a1)
 {
 
   void *v2; // eax
-  v2 = *(void **)&a1->vtable2; /*0x54a196*/
+  v2 = *(void **)&a1->ptr_4; /*0x54a196*/
   *(unsigned int *)&a1->q010 = 0; /*0x54a199*/
   if ( v2 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x54a1a0*/
   {
     operator delete((v2)); /*0x54a1a6*/
     *(unsigned int *)&a1->ptr_2 = 0; /*0x54a1ae*/
   }
-  (((unsigned char *)&(a1->vtable4))[1]) = 0; /*0x54a1b1*/
+  (((unsigned char *)&(a1->ptr_C))[1]) = 0; /*0x54a1b1*/
   *(unsigned int *)&a1->ptr_3 = 0; /*0x54a1b4*/
 }
 } // namespace gamemd
@@ -188,7 +188,7 @@ void IsometricTileTypeClass::ClearBuffer(void *a1)
 namespace gamemd {
 unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
 {
-  if ( (this->vtable4) ) /*0x54a1c0*/
+  if ( (this->ptr_C) ) /*0x54a1c0*/
     return (unsigned int)(a2 - *&this->IsometricTileTypeClass_field_0x04) >> 2; /*0x54a1d5*/
   else
     return 0; /*0x54a1c7*/
@@ -202,25 +202,25 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x54a3dc*/
   {
-    LOBYTE(this->vtable4) = 0; /*0x54a3e2*/
+    LOBYTE(this->ptr_C) = 0; /*0x54a3e2*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x54a3e8*/
       v4 = a3; /*0x54a3fe*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x54a3fa*/
-    LOBYTE(this->vtable4) = 1; /*0x54a402*/
+    LOBYTE(this->ptr_C) = 1; /*0x54a402*/
     if ( !v4 ) /*0x54a406*/
       return 0; /*0x54a47a*/
     if ( *&this->IsometricTileTypeClass_field_0x04 ) /*0x54a408*/
     {
       int m_8; // ecx
-      m_8 = (int)(this->vtable3); /*0x54a40f*/
+      m_8 = (int)(this->ptr_8); /*0x54a40f*/
       if ( a2 < m_8 ) /*0x54a414*/
         m_8 = a2; /*0x54a416*/
       int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->IsometricTileTypeClass_field_0x04 + 4 * i - 4) ) /*0x54a41c*/
         ++i; /*0x54a421*/
-      if ( BYTE1(this->vtable4) ) /*0x54a42e*/
+      if ( BYTE1(this->ptr_C) ) /*0x54a42e*/
       {
         __3_YAXPAX_Z(*&this->IsometricTileTypeClass_field_0x04); /*0x54a439*/
         *&this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a441*/
@@ -228,14 +228,14 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
     }
     *&this->IsometricTileTypeClass_field_0x04 = v4; /*0x54a44a*/
     this->m_8 = (void *)(a2); /*0x54a452*/
-    BYTE1(this->vtable4) = a3 == 0; /*0x54a455*/
+    BYTE1(this->ptr_C) = a3 == 0; /*0x54a455*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x54a45e*/
+    (*(void (**)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x54a45e*/
   }
   int v7; // eax
-  v7 = (int)(this->vtable3); /*0x54a461*/
+  v7 = (int)(this->ptr_8); /*0x54a461*/
   if ( v7 < this->uniqueId ) /*0x54a469*/
     this->uniqueId = v7; /*0x54a46b*/
   return 1; /*0x54a46e*/
@@ -288,8 +288,8 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 
   this->IsometricTileTypeClass_field_0x04 = 0; /*0x54a85b*/
   this->m_8 = (void *)(a2); /*0x54a85e*/
-  LOBYTE(this->vtable4) = 1; /*0x54a861*/
-  BYTE1(this->vtable4) = 0; /*0x54a865*/
+  LOBYTE(this->ptr_C) = 1; /*0x54a861*/
+  BYTE1(this->ptr_C) = 0; /*0x54a865*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x54a868) */
   if ( a2 ) /*0x54a86e*/
   {

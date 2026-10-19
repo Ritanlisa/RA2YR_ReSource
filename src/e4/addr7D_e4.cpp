@@ -95,12 +95,12 @@ int __sbh_heap_check()
     v3 = v2->uniqueId; /*0x7d03dd*/
     if ( !IsBadWritePtr(v3, 0x41C4u) ) /*0x7d03e6*/
     {
-      v4 = v2->vtable4; /*0x7d03f4*/
+      v4 = v2->ptr_C; /*0x7d03f4*/
       v26 = 0; /*0x7d03f7*/
       lp = v4; /*0x7d03fa*/
       v27 = v3 + 81; /*0x7d0403*/
       v5 = v3 + 49; /*0x7d0409*/
-      v32 = v2->vtable3; /*0x7d040f*/
+      v32 = v2->ptr_8; /*0x7d040f*/
       v31 = 0; /*0x7d0412*/
       v25 = 0; /*0x7d0415*/
       v22 = v5; /*0x7d0418*/
@@ -235,7 +235,7 @@ int __sbh_heap_check()
         v22 = ++v5; /*0x7d064a*/
       }
       while ( v25 < 32 ); /*0x7d064d*/
-      if ( v26 != *v2 || v31 != v2->vtable2 ) /*0x7d0660*/
+      if ( v26 != *v2 || v31 != v2->ptr_4 ) /*0x7d0660*/
         return -17; /*0x7d06b9*/
       v2 += 5; /*0x7d0662*/
       ++v29; /*0x7d0665*/
@@ -9789,7 +9789,7 @@ namespace gamemd {
 void output(char * a1, int a2)
 {
 
-  char vtable0; // bl
+  char ptr_0; // bl
   int v3; // edi
   int v4; // ecx
   int v5; // eax
@@ -9844,22 +9844,22 @@ void output(char * a1, int a2)
   int v56; // [esp+250h] [ebp-4h]
   ObjectClass *thisa; // [esp+25Ch] [ebp+8h]
 
-  vtable0 = (char)this->ptr_0; /*0x7dd514*/
+  ptr_0 = (char)this->ptr_0; /*0x7dd514*/
   v3 = 0; /*0x7dd516*/
   thisa = (ObjectClass *)((char *)&this->ptr_0 + 1); /*0x7dd518*/
   v54 = 0; /*0x7dd51b*/
   v52 = 0; /*0x7dd520*/
-  if ( vtable0 ) /*0x7dd523*/
+  if ( ptr_0 ) /*0x7dd523*/
   {
     v4 = v53; /*0x7dd529*/
     while ( 1 ) /*0x7dd542*/
     {
       if ( v52 < 0 ) /*0x7dd545*/
         return v52; /*0x7dd545*/
-      if ( vtable0 < 32 || vtable0 > 120 ) /*0x7dd553*/
+      if ( ptr_0 < 32 || ptr_0 > 120 ) /*0x7dd553*/
         v5 = 0; /*0x7dd563*/
       else
-        v5 = byte_7F97CC[vtable0] & 0xF; /*0x7dd55e*/
+        v5 = byte_7F97CC[ptr_0] & 0xF; /*0x7dd55e*/
       v45 = byte_7F97EC[8 * v5 + v3] >> 4; /*0x7dd573*/
       switch ( v45 ) /*0x7dd57c*/
       {
@@ -9875,7 +9875,7 @@ void output(char * a1, int a2)
           v48 = 0; /*0x7dd596*/
           goto LABEL_171; /*0x7dd599*/
         case 2: /*0x7dd57c*/
-          switch ( vtable0 ) /*0x7dd5a4*/
+          switch ( ptr_0 ) /*0x7dd5a4*/
           {
             case ' ': /*0x7dd5a4*/
               v56 |= 2u; /*0x7dd5e1*/
@@ -9895,7 +9895,7 @@ void output(char * a1, int a2)
           }
           goto LABEL_171; /*0x7dd5c1*/
         case 3: /*0x7dd57c*/
-          if ( vtable0 == 42 ) /*0x7dd5ed*/
+          if ( ptr_0 == 42 ) /*0x7dd5ed*/
           {
             int_arg_1 = get_int_arg_1(&a2); /*0x7dd5f3*/
             v49 = int_arg_1; /*0x7dd5fb*/
@@ -9906,7 +9906,7 @@ void output(char * a1, int a2)
           }
           else
           {
-            v7 = vtable0 + 10 * v49 - 48; /*0x7dd61b*/
+            v7 = ptr_0 + 10 * v49 - 48; /*0x7dd61b*/
           }
           v49 = v7; /*0x7dd60a*/
           goto LABEL_171; /*0x7dd60d*/
@@ -9914,7 +9914,7 @@ void output(char * a1, int a2)
           v53 = 0; /*0x7dd621*/
           goto LABEL_171; /*0x7dd624*/
         case 5: /*0x7dd57c*/
-          if ( vtable0 == 42 ) /*0x7dd62c*/
+          if ( ptr_0 == 42 ) /*0x7dd62c*/
           {
             v53 = get_int_arg_1(&a2); /*0x7dd63a*/
             if ( v53 < 0 ) /*0x7dd63d*/
@@ -9922,11 +9922,11 @@ void output(char * a1, int a2)
           }
           else
           {
-            v53 = vtable0 + 10 * v4 - 48; /*0x7dd656*/
+            v53 = ptr_0 + 10 * v4 - 48; /*0x7dd656*/
           }
           goto LABEL_171; /*0x7dd647*/
         case 6: /*0x7dd57c*/
-          switch ( vtable0 ) /*0x7dd661*/
+          switch ( ptr_0 ) /*0x7dd661*/
           {
             case 'I': /*0x7dd661*/
               if ( LOBYTE(thisa->ptr_0) == 54 && BYTE1(thisa->ptr_0) == 52 ) /*0x7dd69c*/
@@ -9939,14 +9939,14 @@ void output(char * a1, int a2)
                 v45 = 0; /*0x7dd6ac*/
 $NORMAL_STATE$1533: /*0x7dd6af*/
                 v48 = 0; /*0x7dd6af*/
-                if ( *((char *)off_87C590 + 2 * (unsigned __int8)vtable0 + 1) < 0 ) /*0x7dd6c0*/
+                if ( *((char *)off_87C590 + 2 * (unsigned __int8)ptr_0 + 1) < 0 ) /*0x7dd6c0*/
                 {
-                  write_char_1(vtable0, &v52); /*0x7dd6ca*/
+                  write_char_1(ptr_0, &v52); /*0x7dd6ca*/
                   v8 = (char *)thisa; /*0x7dd6cf*/
                   thisa = &thisa->AbstractClass_1; /*0x7dd6d2*/
-                  vtable0 = *v8; /*0x7dd6d6*/
+                  ptr_0 = *v8; /*0x7dd6d6*/
                 }
-                write_char_1(vtable0, &v52); /*0x7dd6e1*/
+                write_char_1(ptr_0, &v52); /*0x7dd6e1*/
               }
               break;
             case 'h': /*0x7dd661*/
@@ -9961,9 +9961,9 @@ $NORMAL_STATE$1533: /*0x7dd6af*/
           }
           goto LABEL_171; /*0x7dd679*/
         case 7: /*0x7dd57c*/
-          if ( vtable0 > 103 ) /*0x7dd6f3*/
+          if ( ptr_0 > 103 ) /*0x7dd6f3*/
           {
-            switch ( vtable0 ) /*0x7dd916*/
+            switch ( ptr_0 ) /*0x7dd916*/
             {
               case 'i': /*0x7dd916*/
                 goto LABEL_114; /*0x7dd916*/
@@ -9981,7 +9981,7 @@ $NORMAL_STATE$1533: /*0x7dd6af*/
                   (v56) |= ((((2u)) & 0xFF) << 8); /*0x7dd9bd*/
                 break;
               default:
-                switch ( vtable0 ) /*0x7dd92d*/
+                switch ( ptr_0 ) /*0x7dd92d*/
                 {
                   case 'p': /*0x7dd92d*/
                     v53 = 8; /*0x7dd980*/
@@ -10077,11 +10077,11 @@ LABEL_126:
             }
             goto LABEL_148; /*0x7ddb03*/
           }
-          if ( vtable0 >= 101 ) /*0x7dd6fc*/
+          if ( ptr_0 >= 101 ) /*0x7dd6fc*/
             goto LABEL_65; /*0x7dd6fc*/
-          if ( vtable0 > 88 ) /*0x7dd705*/
+          if ( ptr_0 > 88 ) /*0x7dd705*/
           {
-            if ( vtable0 == 90 ) /*0x7dd7f8*/
+            if ( ptr_0 == 90 ) /*0x7dd7f8*/
             {
               v15 = (__int16 *)get_int_arg_1(&a2); /*0x7dd830*/
               if ( v15 && (v16 = (char *)v15->u32_4) != 0 ) /*0x7dd83f*/
@@ -10105,9 +10105,9 @@ LABEL_126:
               }
               goto LABEL_147; /*0x7dd867*/
             }
-            if ( vtable0 == 99 ) /*0x7dd7fd*/
+            if ( ptr_0 == 99 ) /*0x7dd7fd*/
               goto LABEL_69; /*0x7dd7fd*/
-            if ( vtable0 != 100 ) /*0x7dd800*/
+            if ( ptr_0 != 100 ) /*0x7dd800*/
               goto LABEL_148; /*0x7dd800*/
 LABEL_114:
             v56 |= 0x40u; /*0x7dd9ed*/
@@ -10115,7 +10115,7 @@ LABEL_115:
             v54 = 10; /*0x7dd9f1*/
             goto LABEL_116; /*0x7dd9f1*/
           }
-          switch ( vtable0 ) /*0x7dd70b*/
+          switch ( ptr_0 ) /*0x7dd70b*/
           {
             case 'X': /*0x7dd70b*/
               goto LABEL_105; /*0x7dd70b*/
@@ -10140,13 +10140,13 @@ LABEL_69:
             case 'E': /*0x7dd70b*/
             case 'G': /*0x7dd70b*/
               v44 = 1; /*0x7dd78e*/
-              vtable0 += 32; /*0x7dd795*/
+              ptr_0 += 32; /*0x7dd795*/
 LABEL_65:
               v56 |= 0x40u; /*0x7dd798*/
               p_MbCh = &MbCh; /*0x7dd7a4*/
               if ( v4 >= 0 ) /*0x7dd7a7*/
               {
-                if ( !v4 && vtable0 == 103 ) /*0x7dd87f*/
+                if ( !v4 && ptr_0 == 103 ) /*0x7dd87f*/
                   v53 = 1; /*0x7dd881*/
               }
               else
@@ -10255,7 +10255,7 @@ LABEL_157:
 LABEL_171:
           v36 = (char *)thisa; /*0x7ddbfa*/
           thisa = &thisa->AbstractClass_1; /*0x7ddbfd*/
-          vtable0 = *v36; /*0x7ddc00*/
+          ptr_0 = *v36; /*0x7ddc00*/
           if ( !*v36 ) /*0x7ddc00*/
             return v52; /*0x7ddc04*/
           v3 = v45; /*0x7dd535*/

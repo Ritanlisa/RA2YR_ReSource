@@ -269,9 +269,9 @@ struct AudioChannel {
 struct CampaignScore {
     unsigned char * __pad_0;  // 0x0
     int __pad_004;  // 0x4
-    void * vtable2;  // 0x8
+    void * ptr_4;  // 0x8
     int CampaignScore_field_0x0C;  // 0xC
-    void * vtable4;  // 0x10
+    void * ptr_C;  // 0x10
     int CampaignScore_field_0x14;  // 0x14
     int CampaignScore_field_0x18;  // 0x18
     int CampaignScore_field_0x1C;  // 0x1C
@@ -469,7 +469,7 @@ struct Locomotor {
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct MSAnim {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int __pad_004;  // 0x4
     int MSAnim_field_0x08;  // 0x8
     static int Reset(void *aP1, int a2);

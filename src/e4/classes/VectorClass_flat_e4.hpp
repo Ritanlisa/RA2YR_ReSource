@@ -253,8 +253,8 @@ void ClearAndFree4();
     unsigned int radioLinks;  // [X30:default]
     unsigned int relatedTagsCount;  // [X30:default]
     unsigned int unknown54;  // [X30:default]
-    unsigned int vtable0;  // 0x0 [X30:default]
-    unsigned int vtable1;  // 0x0 [X30:default]
-    unsigned int vtable4;  // 0xC [X30:member_lookup]
+    unsigned int ptr_0;  // 0x0 [X30:default]
+    unsigned int ptr_0;  // 0x0 [X30:default]
+    unsigned int ptr_C;  // 0xC [X30:member_lookup]
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

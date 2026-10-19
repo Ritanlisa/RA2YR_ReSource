@@ -154,9 +154,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_B0;  // X10 supply (member_lookup)
     int u8_D;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_4_2;  // X10 supply (csp_canon_members)
+    void* ptr_8_2;  // X10 supply (csp_canon_members)
+    void* ptr_12;  // X10 supply (csp_canon_members)
 
     void* q044;  // X10 supply (member_lookup)
     unsigned int q05C;  // X10 supply (member_lookup)

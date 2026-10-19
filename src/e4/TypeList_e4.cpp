@@ -2004,12 +2004,12 @@ namespace gamemd {
 char TypeList::TypeList_PushBack_free(unsigned int * a2)
 {
 
-  int Capacity = this->vtable1; // ecx /*0x717cd3*/
-  if ( this->vtable1 >= Capacity ) /*0x717cdb*/
+  int Capacity = this->ptr_0; // ecx /*0x717cd3*/
+  if ( this->ptr_0 >= Capacity ) /*0x717cdb*/
   {
     if ( !this->vtable1 && Capacity ) /*0x717ce6*/
       return 0; /*0x717ce6*/
-    int CapacityIncrement = this->vtable1; // eax /*0x717ce8*/
+    int CapacityIncrement = this->ptr_0; // eax /*0x717ce8*/
     if ( CapacityIncrement <= 0 /*0x717cf8*/
       || !(*((uint8_t (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))(
             this,
@@ -2019,9 +2019,9 @@ char TypeList::TypeList_PushBack_free(unsigned int * a2)
       return 0; /*0x717cff*/
     }
   }
-  int Count = this->vtable1; // eax /*0x717d05*/
-  unsigned int *Items = this->vtable1; // edx /*0x717d08*/
-  this->vtable1 = Count + 1; /*0x717d0e*/
+  int Count = this->ptr_0; // eax /*0x717d05*/
+  unsigned int *Items = this->ptr_0; // edx /*0x717d08*/
+  this->ptr_0 = Count + 1; /*0x717d0e*/
   Items[Count] = *a2; /*0x717d18*/
   return 1; /*0x717d01*/
 }

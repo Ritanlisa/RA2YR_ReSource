@@ -172,7 +172,7 @@ int ParticleClass::AdjustHeight()
     if ( !result ) /*0x62d603*/
     {
       v5 = this->Tactical_E4; /*0x62d609*/
-      v13[0] = *(&this->vtable49); /*0x62d623*/
+      v13[0] = *(&this->ptr_C0); /*0x62d623*/
       v6 = *(&this->q0100); /*0x62d627*/
       v13[2] = *(&this->q0101); /*0x62d630*/
       v7 = *(&this->q0101); /*0x62d636*/

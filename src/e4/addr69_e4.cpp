@@ -118,17 +118,17 @@ AbstractClass * * E4Recv_690400::sub_690400()
   GetClientRect(g_hWnd, &Rect); /*0x690412*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
   char *vtable0; // eax
-  vtable0 = (char *)this->AbstractClass; /*0x690429*/
-  char *vtable1; // esi
-  vtable1 = (char *)this->M4; /*0x69042f*/
+  ptr_0 = (char *)this->AbstractClass; /*0x690429*/
+  char *ptr_0; // esi
+  ptr_0 = (char *)this->M4; /*0x69042f*/
   unsigned int v5[4]; // [esp+8h] [ebp-30h] BYREF
-  v5[0] = (unsigned int)(vtable0); /*0x690432*/
+  v5[0] = (unsigned int)(ptr_0); /*0x690432*/
   unsigned int v6[4]; // [esp+18h] [ebp-20h] BYREF
-  v6[0] = (unsigned int)(&vtable0[Rect.left]); /*0x69043d*/
-  v5[1] = (unsigned int)(vtable1); /*0x690441*/
+  v6[0] = (unsigned int)(&ptr_0[Rect.left]); /*0x69043d*/
+  v5[1] = (unsigned int)(ptr_0); /*0x690441*/
   v6[3] = 400; /*0x69044d*/
   v5[3] = 400; /*0x690451*/
-  v6[1] = (unsigned int)(&vtable1[Rect.top]); /*0x69045b*/
+  v6[1] = (unsigned int)(&ptr_0[Rect.top]); /*0x69045b*/
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
   if ( stru_887598.lineTrailer ) /*0x69046f*/
@@ -2857,9 +2857,9 @@ BOOL E4Recv_69F5E0::sub_69F5E0()
   BOOL result = 0; // eax /*0x69f65f*/
   if ( v2 == 1.0 ) /*0x69f630*/
   {
-    float *vtable3; // ecx
-    vtable3 = (float *)this->M12; /*0x69f632*/
-    if ( fabs(vtable3[202]) < 0.005 && fabs(vtable3[203]) < 0.005 ) /*0x69f65d*/
+    float *ptr_8; // ecx
+    ptr_8 = (float *)this->M12; /*0x69f632*/
+    if ( fabs(ptr_8[202]) < 0.005 && fabs(ptr_8[203]) < 0.005 ) /*0x69f65d*/
       return 1; /*0x69f630*/
   }
   return result; /*0x69f664*/

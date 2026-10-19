@@ -125,8 +125,8 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
       }
     }
     v2[122].ptr_0 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bbda*/
-    dword_A8B230[122].vtable2 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bbed*/
-    dword_A8B230[122].vtable3 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bbfe*/
+    dword_A8B230[122].ptr_4 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bbed*/
+    dword_A8B230[122].ptr_8 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bbfe*/
     result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bc0a*/
     dword_A8B230[122].uniqueId = g_MissionQueueFrame.localVariables[147]; /*0x58bc0f*/
   }
@@ -544,7 +544,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
     {
       if ( !byte_B054CC ) /*0x6841b6*/
       {
-        if ( BYTE2(dword_A8B230[381].vtable3) == 1 ) /*0x6841bf*/
+        if ( BYTE2(dword_A8B230[381].ptr_8) == 1 ) /*0x6841bf*/
         {
           while ( (*(int (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) ) /*0x6841c9*/
             (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x6841d8*/
@@ -978,7 +978,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
     /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */
     v69 = (ObjectClass *)(0);
     ((Vector *)((int)v65))->Clear((int)((Vector *)((int)v65)));
-    *aP1->vtable1.q000 = (unsigned int)&off_7E1668;
+    *aP1->ptr_0.q000 = (unsigned int)&off_7E1668;
     ((BufferIOFileClass *)(aP1))->Dtor();
     HashTable_flat::DestroyHashTableINIClass((void **)var158);
   }
@@ -1014,7 +1014,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
   for ( k = 0; (int)k < (int)v35; k = &k->u32_1 )
   {
     v37 = (INIClass *)INIClass::GetStringByIndex( (CCINIClass *)(v33), (CCINIClass *)&stru_830620[53764], (void *)(k));
-    eax102 = atoi(v37->vtable1);
+    eax102 = atoi(v37->ptr_0);
     ((INIClass*)((uint8_t ***)v33))->GetString((INIClass *)&stru_830620[53764], (uint8_t *)v37, 0, (INIClass *)((char *)&v56[83] + 40 * eax102 + eax102), 40);
   }
   Event::Dispatch();
@@ -1047,7 +1047,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
       --*(unsigned int *)&g_NetworkPlayerBuffer[4464];
       v69 = (ObjectClass *)(0);
       ((Vector *)((int)v65))->Clear((int)((Vector *)((int)v65)));
-      *aP1->vtable1.q000 = (unsigned int)&off_7E1668;
+      *aP1->ptr_0.q000 = (unsigned int)&off_7E1668;
       ((BufferIOFileClass *)(aP1))->Dtor();
       HashTable_flat::DestroyHashTableINIClass((void **)var158);
       return 0;
@@ -1197,7 +1197,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
   /* X11: vtable install elided (X67 star-deref, RHS vt_CCFileClass) */
   v69 = (ObjectClass *)(0);
   ((Vector *)((int)v65))->Clear((int)((Vector *)((int)v65)));
-  *aP1->vtable1.q000 = (unsigned int)&off_7E1668;
+  *aP1->ptr_0.q000 = (unsigned int)&off_7E1668;
   ((BufferIOFileClass *)(aP1))->Dtor();
   HashTable_flat::DestroyHashTableINIClass((void **)var158);
   return 1;
@@ -2355,10 +2355,10 @@ namespace gamemd {
 char ScenarioClass::ClearFlag()
 {
 
-  void *vtable0; // ecx
-  vtable0 = dword_A8B230[0].ptr_0; /*0x5d6795*/
-  (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].ptr_0 >> 8) & 0xFB; /*0x5d6797*/
-  dword_A8B230[0].ptr_0 = vtable0; /*0x5d679a*/
+  void *ptr_0; // ecx
+  ptr_0 = dword_A8B230[0].ptr_0; /*0x5d6795*/
+  (((unsigned char *)&(ptr_0))[1]) = ((uint16_t)dword_A8B230[0].ptr_0 >> 8) & 0xFB; /*0x5d6797*/
+  dword_A8B230[0].ptr_0 = ptr_0; /*0x5d679a*/
   return 1; /*0x5d679e*/
 }
 } // namespace gamemd

@@ -9,8 +9,8 @@ namespace gamemd {
 
 struct FlyLocomotionClass {
 #pragma pack(push, 1)  // X60: binary-packed layout
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
     void* Owner;  // 0x8
     unsigned int LinkedTo;  // 0xC
     unsigned char __pad_010;  // 0x10

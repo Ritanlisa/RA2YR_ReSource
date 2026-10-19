@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct EnumConnectionsClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     float __pad_004;  // 0x4
     int EnumConnectionsClass_field_0x08;  // 0x8
     int EnumConnectionsClass_field_0x0C;  // 0xC

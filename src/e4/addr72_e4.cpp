@@ -1465,7 +1465,7 @@ unsigned int ObjectClass::sub_720440()
   (this->u8_28A) = 0; /*0x720457*/
   (this->q28C) = 0; /*0x72045d*/
   this->chronoDestCoords[1] = -1; /*0x720463*/
-  (this->vtable1) = 0; /*0x72046d*/
+  (this->ptr_0) = 0; /*0x72046d*/
   (this->u32_100) = 0; /*0x72046f*/
   (this->q_200) = 0; /*0x720475*/
   return &this->ptr_0; /*0x72047c*/
@@ -3126,25 +3126,25 @@ namespace gamemd {
 int E4Recv_7294E0::sub_7294E0()
 {
 
-  unsigned int *vtable3; // ecx
+  unsigned int *ptr_8; // ecx
   int v3; // eax
   int result; // eax
   int v5; // [esp+4h] [ebp-10h]
   unsigned int v6[2]; // [esp+8h] [ebp-Ch] BYREF
   int v7; // [esp+10h] [ebp-4h]
 
-  vtable3 = this->M12; /*0x7294e6*/
-  v6[0] = vtable3[39]; /*0x7294f5*/
-  v6[1] = vtable3[40]; /*0x7294fc*/
-  v7 = vtable3[41]; /*0x729508*/
+  ptr_8 = this->M12; /*0x7294e6*/
+  v6[0] = ptr_8[39]; /*0x7294f5*/
+  v6[1] = ptr_8[40]; /*0x7294fc*/
+  v7 = ptr_8[41]; /*0x729508*/
   if ( v7 <= -256 ) /*0x72950c*/
   {
-    result = (*(int (**)(unsigned int *, unsigned int))(*vtable3 + 292))(vtable3, 0); /*0x729569*/
+    result = (*(int (**)(unsigned int *, unsigned int))(*ptr_8 + 292))(ptr_8, 0); /*0x729569*/
     this->q018 = 4; /*0x72956f*/
   }
   else
   {
-    v5 = (*(int (**)(unsigned int *))(*vtable3 + 1336))(vtable3); /*0x72951c*/
+    v5 = (*(int (**)(unsigned int *))(*ptr_8 + 1336))(ptr_8); /*0x72951c*/
     (v3) = ((v3) & ~0xFFFF) | ((Math::RoundToInt((double)v5 * *(double *)(*(unsigned int *)&g_RulesClass_Instance + 32))) & 0xFFFF); /*0x729527*/
     if ( v3 <= 5 ) /*0x72952f*/
       v3 = 5; /*0x729531*/

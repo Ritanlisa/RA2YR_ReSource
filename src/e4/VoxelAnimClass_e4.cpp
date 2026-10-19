@@ -215,7 +215,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   float v40[12]; // [esp+50h] [ebp-60h] BYREF
   float v41[12]; // [esp+80h] [ebp-30h] BYREF
 
-  if ( ((int)dword_A8B230[0].vtable0 & 0x1000) == 0 /*0x749bb6*/
+  if ( ((int)dword_A8B230[0].ptr_0 & 0x1000) == 0 /*0x749bb6*/
     || (v27 = *&this->location,
         v28 = *&this->__pad_0A0,
         v29 = *&this->q0A4,
@@ -320,7 +320,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
         }
         v27 = v31 + v36; /*0x749e8b*/
         v25 = v15; /*0x749e97*/
-        VoxelAnimClass_field_0x0 = (int (**)(VoxelAnimClass *))this->vtable1; /*0x749e98*/
+        VoxelAnimClass_field_0x0 = (int (**)(VoxelAnimClass *))this->ptr_0; /*0x749e98*/
         v28 = v30 + v37; /*0x749ea0*/
         v18 = VoxelAnimClass_field_0x0[116](this); /*0x749ea4*/
         v24 = -2 - ZCoordToScreenY(v18); /*0x749eb8*/
@@ -1066,7 +1066,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
 
   unsigned int *v5; // eax
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
-  v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->vtable1 + 18))(this, v7); /*0x749b2f*/
+  v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->ptr_0 + 18))(this, v7); /*0x749b2f*/
   if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
     this->needsRedraw = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect((ObjectClass *)this); /*0x749b60*/

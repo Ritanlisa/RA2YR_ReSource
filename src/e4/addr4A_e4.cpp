@@ -1579,13 +1579,13 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   unsigned char *v8; // ecx
   int *pVal; // ebp
   HDC DC; // edi
-  unsigned int *vtable1; // ecx
+  unsigned int *ptr_0; // ecx
   int uniqueId; // edx
   int v13; // eax
   unsigned int v14; // ebp
   char *v15; // edi
   int abstractFlags; // eax
-  void *vtable3; // ecx
+  void *ptr_8; // ecx
 
   LOBYTE(this->ptr_0) = 0; /*0x4a6855*/
   this->ptr_1 = 0; /*0x4a6857*/
@@ -1625,14 +1625,14 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   ReleaseDC(hWnd, DC); /*0x4a6942*/
   if ( !this->ptr_8 ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
-  vtable1 = this->ptr_4; /*0x4a6951*/
-  this->uniqueId = vtable1->vtable2; /*0x4a6957*/
+  ptr_0 = this->ptr_4; /*0x4a6951*/
+  this->uniqueId = ptr_0->ptr_4; /*0x4a6957*/
   uniqueId = this->uniqueId; /*0x4a6962*/
-  this->abstractFlags = abs32(vtable1[2]); /*0x4a6965*/
+  this->abstractFlags = abs32(ptr_0[2]); /*0x4a6965*/
   v13 = uniqueId + 3; /*0x4a6968*/
   (v13) = ((v13) & ~0xFF) | (((uniqueId + 3) & 0xFC) & 0xFF); /*0x4a696b*/
   this->referenceCount = v13; /*0x4a696d*/
-  if ( (int)vtable1[2] <= 0 ) /*0x4a6975*/
+  if ( (int)ptr_0[2] <= 0 ) /*0x4a6975*/
   {
     this->nextArrayIndex = *pVal; /*0x4a698b*/
   }
@@ -1647,13 +1647,13 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( v15 ) /*0x4a69a6*/
   {
     abstractFlags = this->abstractFlags; /*0x4a69a8*/
-    vtable3 = this->ptr_C; /*0x4a69ab*/
+    ptr_8 = this->ptr_C; /*0x4a69ab*/
     *((unsigned int *)v15 + 2) = abstractFlags; /*0x4a69ae*/
     *((unsigned int *)v15 + 1) = v14; /*0x4a69b9*/
     *((unsigned int *)v15 + 3) = 0; /*0x4a69bc*/
     /* X11: vtable install elided (X67 star-deref, RHS XSurface_Vtable) */  /*0x4a69bf*/
     *((unsigned int *)v15 + 4) = 1; /*0x4a69c5*/
-    Buffer::Init((Buffer *)(v15 + 20), (int)vtable3, v14 * abstractFlags); /*0x4a69cc*/
+    Buffer::Init((Buffer *)(v15 + 20), (int)ptr_8, v14 * abstractFlags); /*0x4a69cc*/
     /* X11: vtable install elided (X67 star-deref, RHS BSurface_Vtable) */  /*0x4a69d1*/
   }
   else
@@ -2547,10 +2547,10 @@ namespace gamemd {
       v63 = a6[3]; /*0x4aee12*/
       v21 = ClipRectIntersection(&v50, a6, v66, 0, 0); /*0x4aee1f*/
       v60 = *v21; /*0x4aee23*/
-      v61 = v21->vtable2; /*0x4aee2a*/
-      result = v21->vtable3; /*0x4aee2e*/
+      v61 = v21->ptr_4; /*0x4aee2a*/
+      result = v21->ptr_8; /*0x4aee2e*/
       v62 = result; /*0x4aee31*/
-      v22 = v21->vtable4; /*0x4aee35*/
+      v22 = v21->ptr_C; /*0x4aee35*/
       v63 = v22; /*0x4aee3a*/
       if ( result > 0 && v22 > 0 ) /*0x4aee46*/
       {
@@ -2635,9 +2635,9 @@ namespace gamemd {
         v53 = v49; /*0x4af0cb*/
         v30 = ClipRectIntersection(&v46, &v42, &v50, 0, 0); /*0x4af0d4*/
         v42 = *v30; /*0x4af0d8*/
-        v43 = v30->vtable2; /*0x4af0df*/
-        v44 = v30->vtable3; /*0x4af0e6*/
-        v31 = v30->vtable4; /*0x4af0ea*/
+        v43 = v30->ptr_4; /*0x4af0df*/
+        v44 = v30->ptr_8; /*0x4af0e6*/
+        v31 = v30->ptr_C; /*0x4af0ea*/
         v45 = v31; /*0x4af0ef*/
         if ( v44 > 0 && v31 > 0 ) /*0x4af0fb*/
         {
@@ -3651,12 +3651,12 @@ unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
     if ( a3 ) /*0x4a4e56*/
     {
       this->Items = (void *)a3; /*0x4a4e58*/
-      return &this->vtable0; /*0x4a4e5e*/
+      return &this->ptr_0; /*0x4a4e5e*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x4a4e6d*/
     this->IsAllocated = 1; /*0x4a4e70*/
   }
-  return &this->vtable0; /*0x4a4e5d*/
+  return &this->ptr_0; /*0x4a4e5d*/
 
 }
 } // namespace gamemd
@@ -4651,9 +4651,9 @@ BOOL E4Recv_4AFED0::sub_4AFED0()
   BOOL result = 0; // eax /*0x4aff4f*/
   if ( v2 == 1.0 ) /*0x4aff20*/
   {
-    float *vtable3; // ecx
-    vtable3 = (float *)this->M12; /*0x4aff22*/
-    if ( fabs(vtable3[202]) < 0.005 && fabs(vtable3[203]) < 0.005 ) /*0x4aff4d*/
+    float *ptr_8; // ecx
+    ptr_8 = (float *)this->M12; /*0x4aff22*/
+    if ( fabs(ptr_8[202]) < 0.005 && fabs(ptr_8[203]) < 0.005 ) /*0x4aff4d*/
       return 1; /*0x4aff20*/
   }
   return result; /*0x4aff54*/

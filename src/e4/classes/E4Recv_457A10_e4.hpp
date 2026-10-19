@@ -9,7 +9,7 @@ struct E4Recv_457A10 {
     unsigned int ptr_0;  // 0x0
     unsigned int M1312;  // 0x520
 // --- flat members (END) ---
-    void* vtable1;  // 0x0 (no offset truth)
+    void* ptr_0_2;  // 0x0 (no offset truth)
     char sub_457A10();  // 0x457A10
     unsigned int u32_520;  // 0x520 (offset-truth)
 

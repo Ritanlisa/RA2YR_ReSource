@@ -182,7 +182,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   int v79; // ecx
   int v80; // eax
   ObjectClass *firstObject; // edi
-  unsigned char *vtable3; // edi
+  unsigned char *ptr_8; // edi
   int v83; // ecx
   int v84; // edx
   void *v85; // ebx

@@ -1959,7 +1959,7 @@ AbstractClass * * Network::SetupRematch()
   *(unsigned int *)&g_Rules_EngineerCount = this->q0C0; /*0x5c497b*/
   LoadScenarioClassByIndex(*(int *)&g_GameRulesOptions); /*0x5c4981*/
   dword_A8EB60 = *(AudioOptionsClass *)&g_Rules_EngineerCount; /*0x5c4997*/
-  dword_A8B230[130].vtable3 = *(unsigned int *)&g_GameRulesOptions; /*0x5c499c*/
+  dword_A8B230[130].ptr_8 = *(unsigned int *)&g_GameRulesOptions; /*0x5c499c*/
   switch ( *(unsigned int *)&g_Rules_EngineerCount ) /*0x5c49b0*/
   {
     case 0: /*0x5c49b0*/
@@ -2851,16 +2851,16 @@ int Network::processQueue()
   int result = 0; // eax /*0x5e2ba6*/
   if ( stru_A80220.nextArrayIndex > 0 ) /*0x5e2baa*/
   {
-    Network **vtable3; // esi
-    vtable3 = (Network **)stru_A80220.ptr_C; /*0x5e2bae*/
+    Network **ptr_8; // esi
+    ptr_8 = (Network **)stru_A80220.ptr_C; /*0x5e2bae*/
     int nextArrayIndex; // edi
     nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5e2bb5*/
     do /*0x5e2bda*/
     {
-      Network *v4 = *vtable3; // edx /*0x5e2bb7*/
-      if ( *vtable3 && v4->__pad_1AA[66] && !v4->Network_field_0x1F5[0] && v4 != this ) /*0x5e2bd3*/
+      Network *v4 = *ptr_8; // edx /*0x5e2bb7*/
+      if ( *ptr_8 && v4->__pad_1AA[66] && !v4->Network_field_0x1F5[0] && v4 != this ) /*0x5e2bd3*/
         ++result; /*0x5e2bd5*/
-      ++vtable3; /*0x5e2bd6*/
+      ++ptr_8; /*0x5e2bd6*/
       --nextArrayIndex; /*0x5e2bd9*/
     }
     while ( nextArrayIndex ); /*0x5e2bda*/
@@ -3628,7 +3628,7 @@ AbstractClass * * Network::QueueProcessingLoop(void *a1)
   int v40; // eax
   int v41; // esi
   char q030; // al
-  int vtable0; // edx
+  int ptr_0; // edx
   char *v44; // edi
   int v45; // eax
   char *v46; // edi

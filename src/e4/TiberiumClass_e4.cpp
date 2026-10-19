@@ -269,14 +269,14 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
                     v5->Spread);
   v20 = v5->u32_A0; /*0x721a9d*/
   v5->Spread = Int_Overwrite; /*0x721aa6*/
-  INIClass::ReadDouble_Overwrite(&this->vtable1, (unsigned __int8 *)(v5 + 36), aSpreadpercenta, v20); /*0x721aac*/
+  INIClass::ReadDouble_Overwrite(&this->ptr_0, (unsigned __int8 *)(v5 + 36), aSpreadpercenta, v20); /*0x721aac*/
   v7 = v5->Growth_d; /*0x721ab1*/
   __asm { fstp qword ptr [esi+0A0h] } /*0x721ab9*/
   v5->u32_A0 = _RT1; /*0x721ab9*/
   v9 = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(v5 + 36), aGrowth, v7); /*0x721ac6*/
   v21 = v5->Spread_d; /*0x721ad8*/
   v5->Growth_d = v9; /*0x721ae1*/
-  INIClass::ReadDouble_Overwrite(&this->vtable1, (unsigned __int8 *)(v5 + 36), aGrowthpercenta, v21); /*0x721ae7*/
+  INIClass::ReadDouble_Overwrite(&this->ptr_0, (unsigned __int8 *)(v5 + 36), aGrowthpercenta, v21); /*0x721ae7*/
   v10 = v5->GrowthPercentage; /*0x721aec*/
   __asm { fstp qword ptr [esi+0B0h] } /*0x721af4*/
   v5->Spread_d = _RT1; /*0x721af4*/

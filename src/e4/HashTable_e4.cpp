@@ -910,7 +910,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         if ( !v24 ) /*0x6bade6*/
           goto LABEL_24; /*0x6bade6*/
       }
-      qmemcpy(a2, &v24->vtable2, 0x304u); /*0x6badfa*/
+      qmemcpy(a2, &v24->ptr_4, 0x304u); /*0x6badfa*/
       v36->q308 = v24->q308; /*0x6bae02*/
       --this->HashTable_field_0x04; /*0x6bae0e*/
       DeleteAndZero((ObjectClass *)v24); /*0x6bae15*/
@@ -1258,7 +1258,7 @@ unsigned int HashTable_flat::Rebuild()
     while ( customSound ) /*0x7acf87*/
     {
       v4 = customSound; /*0x7acf89*/
-      customSound = customSound->vtable2.customSound; /*0x7acf8b*/
+      customSound = customSound->ptr_4.customSound; /*0x7acf8b*/
       DeleteAndZero(v4); /*0x7acf97*/
       __3_YAXPAX_Z(v4); /*0x7acf9d*/
     }
@@ -1480,7 +1480,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         if ( !v24 ) /*0x7ade67*/
           goto LABEL_24; /*0x7ade67*/
       }
-      qmemcpy(a2, &v24->vtable2, 0x6Cu); /*0x7ade7b*/
+      qmemcpy(a2, &v24->ptr_4, 0x6Cu); /*0x7ade7b*/
       v36->estimatedHealth = v24->estimatedHealth; /*0x7ade80*/
       --this->HashTable_field_0x04; /*0x7ade89*/
       DeleteAndZero((ObjectClass *)v24); /*0x7ade90*/
@@ -1892,7 +1892,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         if ( !v24 ) /*0x7aeaf6*/
           goto LABEL_24; /*0x7aeaf6*/
       }
-      qmemcpy(a3, &v24->vtable2, 0x10Cu); /*0x7aeb0a*/
+      qmemcpy(a3, &v24->ptr_4, 0x10Cu); /*0x7aeb0a*/
       v36->ParticleSystemClass_110 = v24->ParticleSystemClass_110; /*0x7aeb12*/
       --this->HashTable_field_0x04; /*0x7aeb1e*/
       DeleteAndZero((ObjectClass *)v24); /*0x7aeb25*/

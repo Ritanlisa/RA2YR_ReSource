@@ -126,9 +126,9 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   int v19; // [esp+8h] [ebp-70h]
   int v20; // [esp+Ch] [ebp-6Ch]
   void *vtable0; // [esp+18h] [ebp-60h] BYREF
-  void *vtable1; // [esp+1Ch] [ebp-5Ch]
-  void *vtable2; // [esp+20h] [ebp-58h]
-  void *vtable3; // [esp+24h] [ebp-54h]
+  void *ptr_0; // [esp+1Ch] [ebp-5Ch]
+  void *ptr_4; // [esp+20h] [ebp-58h]
+  void *ptr_8; // [esp+24h] [ebp-54h]
   int v25; // [esp+28h] [ebp-50h]
   int v26; // [esp+2Ch] [ebp-4Ch]
   int v27; // [esp+30h] [ebp-48h]
@@ -138,12 +138,12 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v31[4]; // [esp+58h] [ebp-20h] BYREF
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
-  vtable0 = this->ptr_0; /*0x645d6f*/
-  vtable1 = this->ptr_4; /*0x645d76*/
-  vtable2 = this->ptr_8; /*0x645d7d*/
-  vtable3 = this->ptr_C; /*0x645d88*/
+  ptr_0 = this->ptr_0; /*0x645d6f*/
+  ptr_0 = this->ptr_4; /*0x645d76*/
+  ptr_4 = this->ptr_8; /*0x645d7d*/
+  ptr_8 = this->ptr_C; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
-  v4 = QuaternionMathMultiply(v30->__pad_000.__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
+  v4 = QuaternionMathMultiply(v30->__pad_000.__pad_0, (float *)&ptr_0, v3); /*0x645d9c*/
   v5 = *&this->M12; /*0x645da3*/
   v6 = *((unsigned int *)v4 + 1); /*0x645da6*/
   v25 = *(unsigned int *)v4; /*0x645da9*/
@@ -163,11 +163,11 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   v29[3] = v9->u32_C; /*0x645e03*/
   v10 = sub_6460C0(v31, a2); /*0x645e09*/
   v11 = QuaternionMathMultiply(v32, v29, v10); /*0x645e17*/
-  vtable0 = *(void **)v11; /*0x645e1e*/
-  vtable1 = (void *)*((unsigned int *)v11 + 1); /*0x645e25*/
+  ptr_0 = *(void **)v11; /*0x645e1e*/
+  ptr_0 = (void *)*((unsigned int *)v11 + 1); /*0x645e25*/
   v12 = (void *)*((unsigned int *)v11 + 3); /*0x645e30*/
-  vtable2 = (void *)*((unsigned int *)v11 + 2); /*0x645e33*/
-  vtable3 = v12; /*0x645e3b*/
+  ptr_4 = (void *)*((unsigned int *)v11 + 2); /*0x645e33*/
+  ptr_8 = v12; /*0x645e3b*/
   if ( !(v14 | v15) ) /*0x645e97*/
   {
     *&this->ptr_0 = -*&this->ptr_0; /*0x645ea2*/
@@ -3451,7 +3451,7 @@ if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
           {
             int ptr_0; // ecx
             ptr_0 = v16->ptr_0; /*0x64dcc3*/
-            v16 = &v16->vtable2; /*0x64dcc7*/
+            v16 = &v16->ptr_4; /*0x64dcc7*/
             v1 = *(uint8_t *)(ptr_0 + 577) + (v1 >> 31) + 2 * v1; /*0x64dcda*/
             --v15; /*0x64dcdc*/
             *(unsigned int *)dword_AC51FC = v1; /*0x64dcdd*/

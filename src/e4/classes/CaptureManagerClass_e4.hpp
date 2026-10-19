@@ -43,35 +43,22 @@ struct CaptureManagerClass {
     char FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0, int a5);
     CaptureManagerClass(int a2, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
-    DynamicVector * QueryInterface(char a2);
     ScenarioClass * * HandleOverload();
     TechnoClass * * LoadFromStream(int a1, int * a2);
-    VectorClass_flat * Constructor_VectorClass_ControlNode___(char a2);
     char AddMember(TechnoClass * aP1, void *a2, void *a3);
-    char AddRef(int a2);
-    char Release(int a2, unsigned int * a3);
-    char SetCapacity(int a2, unsigned int * a3);
     bool CanCapture(unsigned int *a2, void *a2_1 = 0);
     int CannotControlAnyMore();
-    int Capture(unsigned int * a2);
     int DrawLinks(int a1, ...);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetOriginalOwner(int a2);
     int GetTypeIdentifier();
-    int IndexOf(unsigned int * a2);
     int IsOverloading(bool * a2);
     int NeedsToDrawLinks();
     int PowerDrainUpdate(int a2);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
-    unsigned int * Constructor_473140(int a2, int a3);
-    unsigned int LoadTypeData(int a2);
-    unsigned int PointerToIndex(int a2);
-    int Destroy(void *a1);
     void* CaptureUnit(int a1, int a2, int a3, int aP1, int aP0);
     CaptureManagerClass * ddtor(unsigned int * Block, char a2);
-    VectorClass_flat * Constructor_VectorClass_ControlNode___(unsigned int * Block, char a2);
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

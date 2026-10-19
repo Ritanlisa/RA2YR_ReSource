@@ -449,7 +449,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
   int v22; // [esp+48h] [ebp+4h]
 
   LOBYTE(v3) = aP1; /*0x6ed7e3*/
-  v4 = aP1->vtable2; /*0x6ed7e9*/
+  v4 = aP1->ptr_4; /*0x6ed7e9*/
   for ( i = *&this->ptr_54; i; i = (int *)i[374] )
   {
     LOBYTE(v3) = *((unsigned char *)i + 144); /*0x6ed801*/

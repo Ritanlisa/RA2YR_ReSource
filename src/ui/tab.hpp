@@ -65,7 +65,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_5544;  // X10 supply (member_lookup)
     unsigned int u32_5545;  // X10 supply (member_lookup)
     unsigned int u32_5546;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
     int u32_8;  // X10 supply (member_lookup)
 };

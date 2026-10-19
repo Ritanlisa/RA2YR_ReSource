@@ -125,7 +125,7 @@ void sub_5B3B10()
   if ( (byte_ABF008 & 1) == 0 ) /*0x5b3b1b*/
   {
     byte_ABF008 |= 1u; /*0x5b3b25*/
-    g_MixFileList.vtable1 = &vt_GenericList; /*0x5b3b2b*/
+    g_MixFileList.ptr_0 = &vt_GenericList; /*0x5b3b2b*/
 LABEL_3:
     v0 = g_MixFileList.First_Previous; /*0x5b3b37*/
     while ( g_MixFileList.First_Previous && *(unsigned int *)(g_MixFileList.First_Previous + 4) && *(unsigned int *)(g_MixFileList.First_Previous + 8) && g_MixFileList.First_Previous ) /*0x5b3b4d*/
@@ -521,7 +521,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   int v5; // edx
   int v6; // eax
   int v7; // edx
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   bool v9; // al
   int v10; // edi
   int v11; // esi
@@ -586,9 +586,9 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   v7 = aP0->wasFallingDown >> 7; /*0x5b6b19*/
   dword_A8E960[0] = v6; /*0x5b6b1c*/
   MultiEngineer = v7 & 1; /*0x5b6b29*/
-  vtable0 = dword_A8B230[0].vtable0; /*0x5b6b2f*/
-  (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].vtable0 >> 8) & 0xFB; /*0x5b6b31*/
-  dword_A8B230[0].vtable0 = vtable0; /*0x5b6b34*/
+  ptr_0 = dword_A8B230[0].ptr_0; /*0x5b6b2f*/
+  (((unsigned char *)&(ptr_0))[1]) = ((uint16_t)dword_A8B230[0].ptr_0 >> 8) & 0xFB; /*0x5b6b31*/
+  dword_A8B230[0].ptr_0 = ptr_0; /*0x5b6b34*/
   byte_A8B31C = 1; /*0x5b6b3b*/
   nullsub_37(v13); /*0x5b6b42*/
   if ( _strcmpi(byte_A8B8E0, &aP0->q0A3) /*0x5b6ba4*/
@@ -1407,9 +1407,9 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v26 = (*(int (__thiscall **)(int *))(*a2 + 124))(a2); /*0x5bfd3d*/
   v27 = ClipRectIntersection(&v46, &a3, v52, 0, 0); /*0x5bfd3f*/
   v15->objectTypeFlags = *v27; /*0x5bfd46*/
-  v15->owningHouseIndex = v27->vtable2; /*0x5bfd4c*/
-  v15->fallRate = v27->vtable3; /*0x5bfd54*/
-  v28 = v27->vtable4; /*0x5bfd59*/
+  v15->owningHouseIndex = v27->ptr_4; /*0x5bfd4c*/
+  v15->fallRate = v27->ptr_8; /*0x5bfd54*/
+  v28 = v27->ptr_C; /*0x5bfd59*/
   v47 = 0; /*0x5bfd5c*/
   v15->nextObject = v28; /*0x5bfd64*/
   v48 = v26; /*0x5bfd69*/
@@ -2008,7 +2008,7 @@ int sub_5B3AC0()
   g_MixFileList.Last_Previous = 0; /*0x5b3adc*/
   g_MixFileList.Last_t18 = (int)&g_MixFileList.First; /*0x5b3ae2*/
   g_MixFileList.First_Previous = (int)&g_MixFileList.Last; /*0x5b3aec*/
-  g_MixFileList.vtable1 = &vt_List_MixFileClass; /*0x5b3af6*/
+  g_MixFileList.ptr_0 = &vt_List_MixFileClass; /*0x5b3af6*/
   return atexit(sub_5B3B10); /*0x5b3b06*/
 }
 } // namespace gamemd
@@ -2305,7 +2305,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   unsigned int v5; // edi
   HWND v6; // esi
   int (*v7)(char, char); // edi
-  HWND vtable0; // [esp-8h] [ebp-518h]
+  HWND ptr_0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
   int v11[62]; // [esp+14h] [ebp-4FCh] BYREF
@@ -2338,9 +2338,9 @@ HWND E4Recv_5B57D0::sub_5B57D0()
           Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b58d9*/
           v4 = CharToWideString(unk_A8B380); /*0x5b58e3*/
           v5 = dword_A8B394; /*0x5b58ea*/
-          vtable0 = (HWND)this->ptr_0; /*0x5b58f5*/
+          ptr_0 = (HWND)this->ptr_0; /*0x5b58f5*/
           Format = (wchar_t *)v4; /*0x5b58f6*/
-          result = (int)GetDlgItem(vtable0, 1343); /*0x5b58fa*/
+          result = (int)GetDlgItem(ptr_0, 1343); /*0x5b58fa*/
           v6 = (HWND)result; /*0x5b58fc*/
           if ( result ) /*0x5b5900*/
           {
@@ -2663,7 +2663,7 @@ HWND E4Recv_5B9250::sub_5B9250()
   unsigned int v5; // edi
   HWND v6; // esi
   int (*v7)(char, char); // edi
-  HWND vtable0; // [esp-8h] [ebp-518h]
+  HWND ptr_0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
   int v11[62]; // [esp+14h] [ebp-4FCh] BYREF
@@ -2697,9 +2697,9 @@ HWND E4Recv_5B9250::sub_5B9250()
           Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b9369*/
           v4 = CharToWideString(unk_A8B380); /*0x5b9373*/
           v5 = dword_A8B394; /*0x5b937a*/
-          vtable0 = (HWND)this->ptr_0; /*0x5b9385*/
+          ptr_0 = (HWND)this->ptr_0; /*0x5b9385*/
           Format = (wchar_t *)v4; /*0x5b9386*/
-          result = (int)GetDlgItem(vtable0, 1343); /*0x5b938a*/
+          result = (int)GetDlgItem(ptr_0, 1343); /*0x5b938a*/
           v6 = (HWND)result; /*0x5b938c*/
           if ( result ) /*0x5b9390*/
           {
@@ -3626,7 +3626,7 @@ int E4Recv_5BECC0::sub_5BECC0()
       {
         char v7 = *v6; // bl /*0x5bece7*/
         v6 += 256; /*0x5bece9*/
-        v3->vtable1 + v5++) = v7; /*0x5becee*/
+        v3->ptr_0 + v5++) = v7; /*0x5becee*/
       }
       while ( v5 < 256 ); /*0x5becf8*/
       result = 256 - (unsigned int)this; /*0x5becfa*/

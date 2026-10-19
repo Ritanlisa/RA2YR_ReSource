@@ -17,6 +17,6 @@ struct E4Recv_7AECD0 {
     unsigned int IsAllocated;  // [X30:default]
     unsigned int IsInitialized;  // [X30:default]
     unsigned int Items;  // [X30:default]
-    unsigned int vtable0;  // 0x0 [X30:default]
+    unsigned int u32_0;  // 0x0 [X30:default]
 };
 } // namespace gamemd

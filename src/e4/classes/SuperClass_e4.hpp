@@ -20,9 +20,9 @@ struct ObjectTypeClass;  // fix_fwd_type_supply
 struct WeaponTypeClass;  // fix_fwd_type_supply
 
 struct SuperClass {
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned int __pad_010;  // 0x10
     char __pad_14[3];  // 0x14

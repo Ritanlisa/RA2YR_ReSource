@@ -70,40 +70,40 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x52530c*/
   {
-    LOBYTE(this->vtable4) = 0; /*0x525312*/
+    LOBYTE(this->ptr_C) = 0; /*0x525312*/
     unsigned int *v4; // edi
     if ( a3 ) /*0x525318*/
       v4 = a3; /*0x52532e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x52532a*/
-    LOBYTE(this->vtable4) = 1; /*0x525332*/
+    LOBYTE(this->ptr_C) = 1; /*0x525332*/
     if ( !v4 ) /*0x525336*/
       return 0; /*0x5253aa*/
-    if ( *&this->vtable2 ) /*0x525338*/
+    if ( *&this->ptr_4 ) /*0x525338*/
     {
       int m_8; // ecx
-      m_8 = (int)(this->vtable3); /*0x52533f*/
+      m_8 = (int)(this->ptr_8); /*0x52533f*/
       if ( a2 < m_8 ) /*0x525344*/
         m_8 = a2; /*0x525346*/
       int i; // eax
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x52534c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->ptr_4 + 4 * i - 4) ) /*0x52534c*/
         ++i; /*0x525351*/
-      if ( BYTE1(this->vtable4) ) /*0x52535e*/
+      if ( BYTE1(this->ptr_C) ) /*0x52535e*/
       {
-        __3_YAXPAX_Z(*&this->vtable2); /*0x525369*/
-        *&this->vtable2 = 0; /*0x525371*/
+        __3_YAXPAX_Z(*&this->ptr_4); /*0x525369*/
+        *&this->ptr_4 = 0; /*0x525371*/
       }
     }
-    *&this->vtable2 = v4; /*0x52537a*/
+    *&this->ptr_4 = v4; /*0x52537a*/
     this->m_8 = (void *)(a2); /*0x525382*/
-    BYTE1(this->vtable4) = a3 == 0; /*0x525385*/
+    BYTE1(this->ptr_C) = a3 == 0; /*0x525385*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->q0 + 12))(this); /*0x52538e*/
   }
   int v7; // eax
-  v7 = (int)(this->vtable3); /*0x525391*/
+  v7 = (int)(this->ptr_8); /*0x525391*/
   if ( v7 < this->uniqueId ) /*0x525399*/
     this->uniqueId = v7; /*0x52539b*/
   return (gamemd::AbstractClass **)(1); /*0x52539e*/
@@ -218,17 +218,17 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   /* X11: vtable install elided (X67 star-deref, RHS vt_GenericNode) */  /*0x52acb3*/
   if ( this ) /*0x52acb9*/
   {
-    v13 = this->vtable2; /*0x52acbb*/
+    v13 = this->ptr_4; /*0x52acbb*/
     if ( v13 ) /*0x52acc0*/
     {
       result = (char *)this->m_8; /*0x52acc2*/
       if ( result ) /*0x52acc7*/
       {
         *((unsigned int *)result + 1) = v13; /*0x52acc9*/
-        result = (char *)this->vtable2; /*0x52accc*/
-        *((unsigned int *)result + 2) = this->vtable3; /*0x52acd2*/
+        result = (char *)this->ptr_4; /*0x52accc*/
+        *((unsigned int *)result + 2) = this->ptr_8; /*0x52acd2*/
         this->m_8 = 0; /*0x52acd5*/
-        this->vtable2 = 0; /*0x52acd8*/
+        this->ptr_4 = 0; /*0x52acd8*/
       }
     }
   }
@@ -557,7 +557,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
   int *DebrisTypes; // ebp
   DebrisTypes = a1->DebrisTypes; /*0x75e0ce*/
   (*(void (**)(int *))(a1->DebrisTypes[0] + 12))(a1->DebrisTypes); /*0x75e0d6*/
-  (*(void (**)(char *))(*&v2->vtable2 + 12))(&v2->WarheadTypeClass_1A8); /*0x75e0e7*/
+  (*(void (**)(char *))(*&v2->ptr_4 + 12))(&v2->WarheadTypeClass_1A8); /*0x75e0e7*/
   int v4 = a2; // esi /*0x75e0ea*/
   int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(v2, a2); /*0x75e0f0*/
@@ -615,7 +615,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
       ObjectPtr::RegisterForTracking( /*0x75e28b*/
         (int)&SwizzleManagerClass_Instance,
         (int *)(v2->q190 + 4 * n));
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->vtable2); /*0x75e2a7*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->ptr_4); /*0x75e2a7*/
     return 0; /*0x75e2ac*/
   }
   return result; /*0x75e2ae*/
@@ -1281,23 +1281,23 @@ namespace gamemd {  // G42.18c ns repair
 void WarheadTypeClass::GetClassIdentifier()
 {
 
-  void *v2 = *&this->vtable2; // eax /*0x524ed6*/
+  void *v2 = *&this->ptr_4; // eax /*0x524ed6*/
   *&this->uniqueId = 0; /*0x524ed9*/
   if ( v2 && (this->IsAllocated) ) /*0x524ee0*/
   {
     operator delete((v2)); /*0x524ee6*/
-    *&this->vtable2 = 0; /*0x524eee*/
+    *&this->ptr_4 = 0; /*0x524eee*/
   }
   (this->IsAllocated) = 0; /*0x524ef1*/
-  *&this->vtable3 = 0; /*0x524ef4*/
+  *&this->ptr_8 = 0; /*0x524ef4*/
 }
 }  // G42.18c ns repair
 // 0x524F00
 namespace gamemd {  // G42.18c ns repair
 unsigned int WarheadTypeClass::LoadTypeData(int a2)
 {
-  if ( (this->vtable4) ) /*0x524f00*/
-    return (unsigned int)(a2 - *&this->vtable2) >> 2; /*0x524f15*/
+  if ( (this->ptr_C) ) /*0x524f00*/
+    return (unsigned int)(a2 - *&this->ptr_4) >> 2; /*0x524f15*/
   else
     return 0; /*0x524f07*/
 }
@@ -1306,7 +1306,7 @@ unsigned int WarheadTypeClass::LoadTypeData(int a2)
 namespace gamemd {  // G42.18c ns repair
 int WarheadTypeClass::SaveToINI(int a2)
 {
-  return *(unsigned int *)(*&this->vtable2 + 4 * a2); /*0x524fba*/
+  return *(unsigned int *)(*&this->ptr_4 + 4 * a2); /*0x524fba*/
 }
 }  // G42.18c ns repair
 // 0x524FC0
@@ -1334,13 +1334,13 @@ namespace gamemd {  // G42.18c ns repair
 char WarheadTypeClass::AddRef(int a2)
 {
 
-  int m_8 = *&this->vtable3; // esi /*0x5250d2*/
+  int m_8 = *&this->ptr_8; // esi /*0x5250d2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x5250dd*/
   {
     int v3 = 0; // edx /*0x5250df*/
     if ( m_8 <= 0 ) /*0x5250e3*/
       return 1; /*0x525103*/
-    unsigned int *v4 = *&this->vtable2; // eax /*0x5250e5*/
+    unsigned int *v4 = *&this->ptr_4; // eax /*0x5250e5*/
     int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5250eb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5250f4*/
@@ -1364,7 +1364,7 @@ int WarheadTypeClass::Init(unsigned int * a2, void *a2_2, void *a3, void *a4, vo
   if ( m_10 <= 0 ) /*0x525408*/
     return -1; /*0x52541f*/
   unsigned int *i; // ecx
-  for ( i = *&this->vtable2; *i != *a2; ++i ) /*0x52540e*/
+  for ( i = *&this->ptr_4; *i != *a2; ++i ) /*0x52540e*/
   {
     if ( ++result >= m_10 ) /*0x52541d*/
       return -1; /*0x52541d*/
@@ -1379,7 +1379,7 @@ void * WarheadTypeClass::parseModifiers(char a2)
 
   int v5; // edi
 
-  void *WarheadTypeClass_field_0xC = this->vtable4; // eax /*0x52ad54*/
+  void *WarheadTypeClass_field_0xC = this->ptr_C; // eax /*0x52ad54*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_INIClassINIEntry) */  /*0x52ad57*/
   free(WarheadTypeClass_field_0xC); /*0x52ad5e*/
   void *WarheadTypeClass_field_0x10; // [esp-8h] [ebp-10h]
@@ -1405,16 +1405,16 @@ void * WarheadTypeClass::parseModifiers(char a2)
   /* X11: vtable install elided (X67 recv-slot, RHS vt_GenericNode) */  /*0x52adb4*/
   if ( this ) /*0x52adba*/
   {
-    void *WarheadTypeClass_field_0x4 = this->vtable2; // ecx /*0x52adbc*/
+    void *WarheadTypeClass_field_0x4 = this->ptr_4; // ecx /*0x52adbc*/
     if ( WarheadTypeClass_field_0x4 ) /*0x52adc1*/
     {
-      unsigned int *WarheadTypeClass_field_0x8 = this->vtable3; // eax /*0x52adc3*/
+      unsigned int *WarheadTypeClass_field_0x8 = this->ptr_8; // eax /*0x52adc3*/
       if ( WarheadTypeClass_field_0x8 ) /*0x52adc8*/
       {
         WarheadTypeClass_field_0x8->ptr_4 = WarheadTypeClass_field_0x4; /*0x52adca*/
-        *((unsigned int *)this->vtable2 + 2) = this->vtable3; /*0x52add3*/
-        this->vtable3 = 0; /*0x52add6*/
-        this->vtable2 = 0; /*0x52add9*/
+        *((unsigned int *)this->ptr_4 + 2) = this->ptr_8; /*0x52add3*/
+        this->ptr_8 = 0; /*0x52add6*/
+        this->ptr_4 = 0; /*0x52add9*/
       }
     }
   }

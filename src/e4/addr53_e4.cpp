@@ -526,13 +526,13 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
       v10 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x53412b*/
     Debug::Log("HiddenSurface (%dx%d) %s\n", a1->Height, a1->LockCount, v10); /*0x53413e*/
   }
-  if ( aP1->vtable3 > 0 && aP1->vtable4 > 0 ) /*0x53414e*/
+  if ( aP1->ptr_8 > 0 && aP1->ptr_C > 0 ) /*0x53414e*/
   {
     char *v11; // eax
     v11 = (char *)operator new(0x24u); /*0x534152*/
     char *v12; // eax
     if ( v11 ) /*0x53415c*/
-      v12 = (char *)((DSurface*)v11)->Construct(aP1->vtable3, aP1->vtable4, v7, 1); /*0x534172*/
+      v12 = (char *)((DSurface*)v11)->Construct(aP1->ptr_8, aP1->ptr_C, v7, 1); /*0x534172*/
     else
       v12 = (char *)(0); /*0x534179*/
     DSurface_Composite = (int)v12; /*0x53417b*/
@@ -541,15 +541,15 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
     v13 = (const char *)(g_INI_Key_VRAM); /*0x534190*/
     if ( !*(unsigned char *)(DSurface_Composite + 25) ) /*0x53418d*/
       v13 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x534199*/
-    Debug::Log("CompositeSurface (%dx%d) %s ENABLE_3D\n", aP1->vtable3, aP1->vtable4, v13); /*0x5341ac*/
+    Debug::Log("CompositeSurface (%dx%d) %s ENABLE_3D\n", aP1->ptr_8, aP1->ptr_C, v13); /*0x5341ac*/
   }
-  if ( aP2->vtable3 > 0 && aP2->vtable4 > 0 ) /*0x5341c4*/
+  if ( aP2->ptr_8 > 0 && aP2->ptr_C > 0 ) /*0x5341c4*/
   {
     char *v14; // eax
     v14 = (char *)operator new(0x24u); /*0x5341c8*/
     char *v15; // eax
     if ( v14 ) /*0x5341d2*/
-      v15 = (char *)((DSurface*)v14)->Construct(aP2->vtable3, aP2->vtable4, v7, 1); /*0x5341e8*/
+      v15 = (char *)((DSurface*)v14)->Construct(aP2->ptr_8, aP2->ptr_C, v7, 1); /*0x5341e8*/
     else
       v15 = (char *)(0); /*0x5341ef*/
     DSurface_Tile = (int)v15; /*0x5341f1*/
@@ -558,7 +558,7 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
     v16 = (const char *)(g_INI_Key_VRAM); /*0x534207*/
     if ( !*(unsigned char *)(DSurface_Tile + 25) ) /*0x534204*/
       v16 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x534210*/
-    Debug::Log("TileSurface (%dx%d) %s ENABLE_3D\n", aP2->vtable3, aP2->vtable4, v16); /*0x534223*/
+    Debug::Log("TileSurface (%dx%d) %s ENABLE_3D\n", aP2->ptr_8, aP2->ptr_C, v16); /*0x534223*/
   }
   if ( DSurface_Composite && DSurface_Tile && *(unsigned char *)(DSurface_Composite + 25) != *(unsigned char *)(DSurface_Tile + 25) ) /*0x53424c*/
   {
@@ -570,13 +570,13 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
     char *v17; // eax
     v17 = (char *)operator new(0x24u); /*0x53427a*/
     if ( v17 ) /*0x534286*/
-      DSurface_Composite = (int)((DSurface*)v17)->Construct(aP1->vtable3, aP1->vtable4, 1, 1); /*0x53429b*/
+      DSurface_Composite = (int)((DSurface*)v17)->Construct(aP1->ptr_8, aP1->ptr_C, 1, 1); /*0x53429b*/
     else
       DSurface_Composite = 0; /*0x5342a2*/
     char *v18; // eax
     v18 = (char *)operator new(0x24u); /*0x5342aa*/
     if ( v18 ) /*0x5342b4*/
-      DSurface_Tile = (int)((DSurface*)v18)->Construct(aP2->vtable3, aP2->vtable4, 1, 1); /*0x5342c9*/
+      DSurface_Tile = (int)((DSurface*)v18)->Construct(aP2->ptr_8, aP2->ptr_C, 1, 1); /*0x5342c9*/
     else
       DSurface_Tile = 0; /*0x5342d0*/
   }
@@ -1499,7 +1499,7 @@ void sub_53B460(int a1, Scenario * a2)
       v5 = 0; /*0x53b4be*/
     }
     g_ChronoEffectState = (int)v5; /*0x53b4c8*/
-    (*(void (**)(char *, AudioStream *, unsigned int, int))(v5->vtable2))(v5, DSurface_Composite, 0, 1); /*0x53b4d4*/
+    (*(void (**)(char *, AudioStream *, unsigned int, int))(v5->ptr_4))(v5, DSurface_Composite, 0, 1); /*0x53b4d4*/
     flt_A9FAA0 = 0.0; /*0x53b4d7*/
     flt_A9FAA4 = 0.0; /*0x53b4e1*/
     ChronoScreenEffect_Duration = a1; /*0x53b4eb*/

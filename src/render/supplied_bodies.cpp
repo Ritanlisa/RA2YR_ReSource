@@ -1054,7 +1054,7 @@ unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a224) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a22a*/
     operator delete((this)); /*0x49a22d*/
-  return this->vtable1; /*0x49a237*/
+  return this->ptr_0; /*0x49a237*/
 }
 } // namespace gamemd
 
@@ -1071,7 +1071,7 @@ unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a2a4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a2aa*/
     operator delete((this)); /*0x49a2ad*/
-  return this->vtable1; /*0x49a2b7*/
+  return this->ptr_0; /*0x49a2b7*/
 }
 } // namespace gamemd
 
@@ -1082,13 +1082,13 @@ unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->q008; /*0x49a2c8*/
-  *(unsigned int *)this->vtable1 = 0; /*0x49a2cb*/
+  *(unsigned int *)this->ptr_0 = 0; /*0x49a2cb*/
   FractalNoise::Dtor(m_8); /*0x49a2d2*/
   this->q008 = 0; /*0x49a2db*/
   /* X11: vtable install elided (implicit via class virtuals 0x49a2e4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a2ea*/
     operator delete((this)); /*0x49a2ed*/
-  return this->vtable1; /*0x49a2f7*/
+  return this->ptr_0; /*0x49a2f7*/
 }
 } // namespace gamemd
 
@@ -1105,7 +1105,7 @@ unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a324) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a32a*/
     operator delete((this)); /*0x49a32d*/
-  return this->vtable1; /*0x49a337*/
+  return this->ptr_0; /*0x49a337*/
 }
 } // namespace gamemd
 
@@ -1122,7 +1122,7 @@ unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a484) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a48a*/
     operator delete((this)); /*0x49a48d*/
-  return this->vtable1; /*0x49a497*/
+  return this->ptr_0; /*0x49a497*/
 }
 } // namespace gamemd
 
@@ -1139,7 +1139,7 @@ unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a4c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a4ca*/
     operator delete((this)); /*0x49a4cd*/
-  return this->vtable1; /*0x49a4d7*/
+  return this->ptr_0; /*0x49a4d7*/
 }
 } // namespace gamemd
 
@@ -1156,7 +1156,7 @@ unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a504) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a50a*/
     operator delete((this)); /*0x49a50d*/
-  return this->vtable1; /*0x49a517*/
+  return this->ptr_0; /*0x49a517*/
 }
 } // namespace gamemd
 
@@ -1173,7 +1173,7 @@ unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a544) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a54a*/
     operator delete((this)); /*0x49a54d*/
-  return this->vtable1; /*0x49a557*/
+  return this->ptr_0; /*0x49a557*/
 }
 } // namespace gamemd
 
@@ -1190,7 +1190,7 @@ unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a584) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a58a*/
     operator delete((this)); /*0x49a58d*/
-  return this->vtable1; /*0x49a597*/
+  return this->ptr_0; /*0x49a597*/
 }
 } // namespace gamemd
 
@@ -1207,7 +1207,7 @@ unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a5c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a5ca*/
     operator delete((this)); /*0x49a5cd*/
-  return this->vtable1; /*0x49a5d7*/
+  return this->ptr_0; /*0x49a5d7*/
 }
 } // namespace gamemd
 
@@ -1224,7 +1224,7 @@ unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a604) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a60a*/
     operator delete((this)); /*0x49a60d*/
-  return this->vtable1; /*0x49a617*/
+  return this->ptr_0; /*0x49a617*/
 }
 } // namespace gamemd
 
@@ -1241,7 +1241,7 @@ unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a644) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a64a*/
     operator delete((this)); /*0x49a64d*/
-  return this->vtable1; /*0x49a657*/
+  return this->ptr_0; /*0x49a657*/
 }
 } // namespace gamemd
 
@@ -1258,7 +1258,7 @@ unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a6c4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a6ca*/
     operator delete((this)); /*0x49a6cd*/
-  return this->vtable1; /*0x49a6d7*/
+  return this->ptr_0; /*0x49a6d7*/
 }
 } // namespace gamemd
 
@@ -1275,7 +1275,7 @@ unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49a704) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49a70a*/
     operator delete((this)); /*0x49a70d*/
-  return this->vtable1; /*0x49a717*/
+  return this->ptr_0; /*0x49a717*/
 }
 } // namespace gamemd
 
@@ -1292,7 +1292,7 @@ unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49aa24) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aa2a*/
     operator delete((this)); /*0x49aa2d*/
-  return this->vtable1; /*0x49aa37*/
+  return this->ptr_0; /*0x49aa37*/
 }
 } // namespace gamemd
 
@@ -1309,7 +1309,7 @@ unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49aaa4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aaaa*/
     operator delete((this)); /*0x49aaad*/
-  return this->vtable1; /*0x49aab7*/
+  return this->ptr_0; /*0x49aab7*/
 }
 } // namespace gamemd
 
@@ -1326,7 +1326,7 @@ unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49aae4) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49aaea*/
     operator delete((this)); /*0x49aaed*/
-  return this->vtable1; /*0x49aaf7*/
+  return this->ptr_0; /*0x49aaf7*/
 }
 } // namespace gamemd
 
@@ -1343,7 +1343,7 @@ unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49ab24) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49ab2a*/
     operator delete((this)); /*0x49ab2d*/
-  return this->vtable1; /*0x49ab37*/
+  return this->ptr_0; /*0x49ab37*/
 }
 } // namespace gamemd
 
@@ -1360,7 +1360,7 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x49ab64) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x49ab6a*/
     operator delete((this)); /*0x49ab6d*/
-  return this->vtable1; /*0x49ab77*/
+  return this->ptr_0; /*0x49ab77*/
 }
 } // namespace gamemd
 
@@ -1383,7 +1383,7 @@ unsigned short * FrameSnapshot::Init()
   this->u32_10 = 0; /*0x4c91d1*/
   this->Height = v2; /*0x4c91d4*/
   this->u32_14 = 0; /*0x4c91d7*/
-  return this->vtable1; /*0x4c91db*/
+  return this->ptr_0; /*0x4c91db*/
 }
 } // namespace gamemd
 
@@ -3191,7 +3191,7 @@ unsigned int * VoxClass_Vector::findItem(char a2)
   this->Capacity = 0; /*0x753991*/
   if ( (a2 & 1) != 0 ) /*0x753998*/
     operator delete((this)); /*0x75399b*/
-  return this->vtable1; /*0x7539a5*/
+  return this->ptr_0; /*0x7539a5*/
 }
 } // namespace gamemd
 
@@ -4009,7 +4009,7 @@ void Voxel_Section::Constructor()
         {
           do /*0x75e714*/
           {
-            *(unsigned int *)(this->vtable2 + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x75e70b*/
+            *(unsigned int *)(this->ptr_4 + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x75e70b*/
             ++v6; /*0x75e711*/
           }
           while ( v6 < this->Capacity ); /*0x75e714*/
@@ -4025,7 +4025,7 @@ void Voxel_Section::Constructor()
   this->Items = a2[4]; /*0x75e721*/
   this->AnimList = a2[5]; /*0x75e727*/
   /* X11: vtable install elided (implicit via class virtuals 0x75e72a) — binary-proven install, was 0 */
-  return this->vtable1; /*0x75e732*/
+  return this->ptr_0; /*0x75e732*/
 }
 } // namespace gamemd
 
@@ -4228,20 +4228,20 @@ void XSurface::XSurface_DrawLineEx_raw(int a2, unsigned int *a3, unsigned int *a
 // 0x6E7A80
 namespace gamemd::ra2::gamemd {
 int BuildingLoadQueue::FindBuilding() {
-    int vtable1; // ecx
+    int ptr_0; // ecx
     int uniqueId; // edx
     int v4; // ebx
-    unsigned int *vtable0; // edi
+    unsigned int *ptr_0; // edi
     int v6; // esi
     void ***v7; // eax
 
     if ( (this->Width) != 52 ) /*0x6e7a87*/
       return 0; /*0x6e7b48*/
-    vtable1 = (int)((char *)&g_BuildingLoadQueue_Array); /*0x6e7a8d*/
+    ptr_0 = (int)((char *)&g_BuildingLoadQueue_Array); /*0x6e7a8d*/
     if ( !((char *)&g_BuildingLoadQueue_Array) ) /*0x6e7a97*/
       goto LABEL_13; /*0x6e7a97*/
     uniqueId = ((char *)&g_BuildingLoadQueue_Array); /*0x6e7a99*/
-    if ( ((char *)&g_BuildingLoadQueue_Array) && *(unsigned int *)((char *)&g_BuildingLoadQueue_Array) == *(unsigned int *)this->vtable1 ) /*0x6e7aa9*/
+    if ( ((char *)&g_BuildingLoadQueue_Array) && *(unsigned int *)((char *)&g_BuildingLoadQueue_Array) == *(unsigned int *)this->ptr_0 ) /*0x6e7aa9*/
     {
   LABEL_17:
       v7 = &uniqueId->u32_4; /*0x6e7b43*/
@@ -4254,34 +4254,34 @@ int BuildingLoadQueue::FindBuilding() {
         (size_t)((char *)&g_BuildingLoadQueue_Array),
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = (int)((char *)&g_BuildingLoadQueue_Array); /*0x6e7acc*/
+      ptr_0 = (int)((char *)&g_BuildingLoadQueue_Array); /*0x6e7acc*/
       ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x6e7ad5*/
       (*((unsigned char *)&(((char *)&g_BuildingLoadQueue_Array)))) = 1; /*0x6e7adf*/
     }
-    v4 = *(unsigned int *)this->vtable1; /*0x6e7ae6*/
-    vtable0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x6e7ae8*/
-    if ( vtable1 <= 0 ) /*0x6e7af0*/
+    v4 = *(unsigned int *)this->ptr_0; /*0x6e7ae6*/
+    ptr_0 = g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x6e7ae8*/
+    if ( ptr_0 <= 0 ) /*0x6e7af0*/
       goto LABEL_13; /*0x6e7af0*/
     while ( 1 ) /*0x6e7af9*/
     {
-      v6 = vtable0[2 * (vtable1 / 2)]; /*0x6e7af9*/
-      uniqueId = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e7afc*/
+      v6 = ptr_0[2 * (ptr_0 / 2)]; /*0x6e7af9*/
+      uniqueId = (int)&ptr_0[2 * (ptr_0 / 2)]; /*0x6e7afc*/
       if ( v6 <= v4 ) /*0x6e7b01*/
         break; /*0x6e7b01*/
-      vtable1 /= 2; /*0x6e7b03*/
+      ptr_0 /= 2; /*0x6e7b03*/
   LABEL_12:
-      if ( vtable1 <= 0 ) /*0x6e7b15*/
+      if ( ptr_0 <= 0 ) /*0x6e7b15*/
         goto LABEL_13; /*0x6e7b15*/
     }
     if ( v6 != v4 ) /*0x6e7b07*/
     {
-      vtable0 = &uniqueId->u32_8; /*0x6e7b09*/
-      vtable1 += -1 - vtable1 / 2; /*0x6e7b11*/
+      ptr_0 = &uniqueId->u32_8; /*0x6e7b09*/
+      ptr_0 += -1 - ptr_0 / 2; /*0x6e7b11*/
       goto LABEL_12; /*0x6e7b11*/
     }
     if ( uniqueId ) /*0x6e7b3b*/
     {
-      ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = (int)&vtable0[2 * (vtable1 / 2)]; /*0x6e7b3d*/
+      ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = (int)&ptr_0[2 * (ptr_0 / 2)]; /*0x6e7b3d*/
       goto LABEL_17; /*0x6e7b3d*/
     }
   LABEL_13:

@@ -580,9 +580,9 @@ protected:
     void* aircraftAltOwner4;  // 0x0 (no offset truth)
     void* psychicDetectionBuildings6;  // 0x0 (no offset truth)
     void* relatedTagsCapacity5;  // 0x0 (no offset truth)
-    void* vtable1;  // 0x0
-    void* vtable34;  // 0x0 (no offset truth)
-    void* vtable41;  // 0x0 (no offset truth)
+    void* ptr_0;  // 0x0
+    void* ptr_34;  // 0x0 (no offset truth)
+    void* ptr_41;  // 0x0 (no offset truth)
     // ---- g57w11 r4 词表 (raw fn_4F 0x4F5190 Constructor 体引用; ml 偏移对应; G42.39 data supply 同型) ----
     int32_t                     q184;      // ml:388 (raw 0x4f6ed4 SetCombatPower u32_184 词汇)
     int32_t                     q0F4;      // raw 0x4f5279 (count 槽)
@@ -612,7 +612,7 @@ protected:
     int32_t                     u32_22500; // raw 0x4f53ad
     int32_t                     u32_22580; // raw 0x4f53b8
     // g57w11 r4 item2d 词表 (raw fn_4F 0x4F6EC0 SetCombatPower 体引用)
-    void*                       vtable23;  // raw 0x4f6ef1 (ml:8C vtable6 族; 载体词表)
+    void*                       ptr_23;  // raw 0x4f6ef1 (ml:8C vtable6 族; 载体词表)
     double                      u32_188;   // raw 0x4f6f11 (double 乘积承接; ml 392)
     double                      u32_190;   // raw 0x4f6f2b (double 乘积承接)
     // g57w11 r4 item2e 词表续 (raw 0x4F6EC0 SetCombatPower 尾段 + 0x4F7140 Destruct 体引用)
@@ -624,10 +624,10 @@ protected:
     int32_t                     u32_1C4;   // raw 0x4f6fae
     int32_t                     u32_1C8;   // raw 0x4f6fc2
     int32_t                     u32_1CC;   // raw 0x4f6fcb
-    void*                       vtable4;   // raw 0x4f715d (ptr_0 安装序列)
-    void*                       vtable5;   // raw 0x4f7164
-    void*                       vtable6;   // raw 0x4f716b
-    void*                       vtable7;   // raw 0x4f7172
+    void*                       ptr_C;   // raw 0x4f715d (ptr_0 安装序列)
+    void*                       ptr_24;   // raw 0x4f7164
+    void*                       ptr_28;   // raw 0x4f716b
+    void*                       ptr_2C;   // raw 0x4f7172
     void*                       startingUnits8;  // raw 0x4f7180 (vector 基址)
     int32_t                     q230;      // raw 体引用
     int32_t                     q114;      // raw 体引用
@@ -1009,8 +1009,8 @@ void Update_TogglePower(double);  // 0x4F8440
     unsigned char u8_5A09;  // X10 supply (member_lookup)
     unsigned char u8_7BADA;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable3;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_8;  // X10 supply (csp_canon_members)
 
     unsigned int q03E;  // X10 supply (member_lookup)
     unsigned int u32_3D;  // X10 supply (member_lookup)

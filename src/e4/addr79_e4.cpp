@@ -4362,11 +4362,11 @@ bool WOL_FindBuddy()
     result = ((String *)((const char **)v1))->Compare(&g_WOL_LoginObject); /*0x79bcdc*/
     if ( result ) /*0x79bce3*/
       break; /*0x79bce3*/
-    v1 = v1->vtable3; /*0x79bce5*/
+    v1 = v1->ptr_8; /*0x79bce5*/
     if ( !v1 ) /*0x79bcea*/
       return result; /*0x79bcea*/
   }
-  v2 = &v1->vtable2; /*0x79bcfb*/
+  v2 = &v1->ptr_4; /*0x79bcfb*/
   if ( !v2 ) /*0x79bd00*/
     return 0; /*0x79bd00*/
   v3 = *v2; /*0x79bd02*/
@@ -4451,14 +4451,14 @@ int E4Recv_79BF50::sub_79BF50(HWND hDlg)
       goto LABEL_10; /*0x79bfd9*/
     while ( !(uint8_t)((String *)((String *)v4))->Compare((const char **)&g_WOL_LoginObject) ) /*0x79bfe9*/
     {
-      v4 = v4->vtable3; /*0x79bfeb*/
+      v4 = v4->ptr_8; /*0x79bfeb*/
       if ( !v4 ) /*0x79bff0*/
       {
         v9 = 0; /*0x79bff2*/
         goto LABEL_12; /*0x79bff7*/
       }
     }
-    if ( v4 != -4 && v4->vtable2 > 2u ) /*0x79c008*/
+    if ( v4 != -4 && v4->ptr_4 > 2u ) /*0x79c008*/
       v9 = 1; /*0x79c016*/
     else
       LABEL_10:
@@ -4477,7 +4477,7 @@ int E4Recv_79BF50::sub_79BF50(HWND hDlg)
 namespace gamemd {
 AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
 {
-  const char **vtable1; // ebp
+  const char **ptr_0; // ebp
   int v2; // esi
   int v3; // ebx
   void *v4; // eax
@@ -4491,7 +4491,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
   char *v13; // eax
   ObjectClass v14; // [esp+8h] [ebp-188h] BYREF
 
-  vtable1 = a1; /*0x79cbad*/
+  ptr_0 = a1; /*0x79cbad*/
   v2 = 0; /*0x79cbaf*/
   v14.ptr_4 = a1; /*0x79cbb1*/
   if ( *(int *)g_WindowManager > 0 ) /*0x79cbb7*/
@@ -4501,7 +4501,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
       unknown_libname_73(&v14.ptr_C); /*0x79cbc1*/
       if ( v2 >= 0 && v2 < *(int *)g_WindowManager ) /*0x79cbd0*/
         ((String *)((String *)&v14.ptr_C))->Reassign((const char **)(*&g_WOL_LoginQueue->uniqueId * v2)); /*0x79cbdf*/
-      if ( (uint8_t)((String *)((String *)&v14.ptr_C))->Compare(vtable1) ) /*0x79cbe9*/
+      if ( (uint8_t)((String *)((String *)&v14.ptr_C))->Compare(ptr_0) ) /*0x79cbe9*/
         break; /*0x79cbe9*/
       DeleteAndZero((ObjectClass *)&v14.ptr_C); /*0x79cbf6*/
       if ( ++v2 >= *(int *)g_WindowManager ) /*0x79cc03*/
@@ -4536,12 +4536,12 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
           }
           operator delete((v5)); /*0x79ccc0*/
           *(unsigned int *)g_WOL_LoginQueue = v4; /*0x79ccc5*/
-          vtable1 = (const char **)v14.ptr_4; /*0x79cccb*/
+          ptr_0 = (const char **)v14.ptr_4; /*0x79cccb*/
           DataGlobal_B73AAC = (void *)v3; /*0x79ccd2*/
         }
       }
     }
-    String::AssignFromPtr((String *)&v14, vtable1); /*0x79ccdd*/
+    String::AssignFromPtr((String *)&v14, ptr_0); /*0x79ccdd*/
     HashTable::FindWOLHashTableEntry( /*0x79ccf4*/
       (HashTable *)&stru_B765EC.referenceCount,
       (const char **)&v14,
@@ -4560,7 +4560,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
                             (const char **)&v14) )
     {
       v9 = *(unsigned int **)(*(unsigned int *)&stru_B76900.isAliveFlag + 4 * v7); /*0x79cd6a*/
-      v10 = v9->vtable3; /*0x79cd6f*/
+      v10 = v9->ptr_8; /*0x79cd6f*/
       if ( v9 ) /*0x79cd72*/
       {
         DeleteAndZero(*(ObjectClass **)(*(unsigned int *)&stru_B76900.isAliveFlag + 4 * v7)); /*0x79cd76*/
@@ -4574,13 +4574,13 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
     }
     else
     {
-      v12 = v8->vtable3; /*0x79cdab*/
+      v12 = v8->ptr_8; /*0x79cdab*/
       if ( v12 ) /*0x79cdb0*/
       {
         while ( !(uint8_t)((String *)((String *)v12))->Compare((const char **)&v14) ) /*0x79cdc0*/
         {
           v8 = v12; /*0x79cdc2*/
-          v12 = v12->vtable3; /*0x79cdc4*/
+          v12 = v12->ptr_8; /*0x79cdc4*/
           if ( !v12 ) /*0x79cdc9*/
             goto LABEL_32; /*0x79cdc9*/
         }
@@ -4596,7 +4596,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
     RemoveWOLPlayerLogin_Remove((ObjectClass *)&stru_B76900.isAliveFlag); /*0x79ce0a*/
     LABEL_34:
     memset(&v14.uniqueId, 0, 0x6Cu); /*0x79ce0f*/
-    v13 = ((String *)((String *)vtable1))->GetOrEmpty_Alt(); /*0x79ce20*/
+    v13 = ((String *)((String *)ptr_0))->GetOrEmpty_Alt(); /*0x79ce20*/
     strncpy((char *)&v14.attachedTag, v13, 9u); /*0x79ce2b*/
     (*(void (__stdcall **)(LPVOID, int *))(*(unsigned int *)ppv + 228))(ppv, &v14.uniqueId); /*0x79ce40*/
     DeleteAndZero(&v14); /*0x79ce4a*/
@@ -4962,7 +4962,7 @@ AbstractClass * * CleanupWOLSession()
     while ( customSound ) /*0x79d5c7*/
     {
       v10 = customSound; /*0x79d5c9*/
-      customSound = customSound->vtable2.customSound; /*0x79d5cb*/
+      customSound = customSound->ptr_4.customSound; /*0x79d5cb*/
       DeleteAndZero(v10); /*0x79d5d7*/
       __3_YAXPAX_Z(v10); /*0x79d5dd*/
     }
@@ -5480,15 +5480,15 @@ AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR
           switch ( (__int16)uIDEvent ) /*0x79ed73*/
           {
             case 1794: /*0x79ed73*/
-              SimpleDialogControl::Constructor((SimpleDialogControl *)&v39.vtable2); /*0x79edc9*/
-              *(unsigned int *)&v39.vtable2 = &off_7F7624; /*0x79ede2*/
+              SimpleDialogControl::Constructor((SimpleDialogControl *)&v39.ptr_4); /*0x79edc9*/
+              *(unsigned int *)&v39.ptr_4 = &off_7F7624; /*0x79ede2*/
               RunDialog( /*0x79ede6*/
                 0x115u,
                 (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))GameSetupDlgProcWOL,
-                (LPARAM)&v39.vtable2);
+                (LPARAM)&v39.ptr_4);
               FillBuddyListWOL((ObjectClass *)hWnd); /*0x79eded*/
-              *(unsigned int *)&v39.vtable2 = &off_7F7624; /*0x79edf6*/
-              OwnerDrawControl::InitVtable((OwnerDrawControl *)&v39.vtable2); /*0x79edfa*/
+              *(unsigned int *)&v39.ptr_4 = &off_7F7624; /*0x79edf6*/
+              OwnerDrawControl::InitVtable((OwnerDrawControl *)&v39.ptr_4); /*0x79edfa*/
               return 0; /*0x79ee08*/
             case 1795: /*0x79ed73*/
               DlgItem = GetDlgItem(hWnd, 1673); /*0x79ee1f*/
@@ -5635,11 +5635,11 @@ LABEL_116:
                 {
                   while ( !(unsigned __int8)String::Compare((String *)v19, (const char **)&unk_B76E24) ) /*0x79ebdb*/
                   {
-                    v19 = v19->vtable3; /*0x79ebdd*/
+                    v19 = v19->ptr_8; /*0x79ebdd*/
                     if ( !v19 ) /*0x79ebe2*/
                       return 0; /*0x79ebed*/
                   }
-                  v20 = &v19->vtable2; /*0x79ebf8*/
+                  v20 = &v19->ptr_4; /*0x79ebf8*/
                   if ( v20 ) /*0x79ebfd*/
                   {
                     if ( *v20 > 2u ) /*0x79ec07*/
@@ -5678,27 +5678,27 @@ LABEL_116:
             goto LABEL_88; /*0x79ecf2*/
           while ( !(unsigned __int8)String::Compare((String *)v25, (const char **)&unk_B76E24) ) /*0x79ed02*/
           {
-            v25 = v25->vtable3; /*0x79ed04*/
+            v25 = v25->ptr_8; /*0x79ed04*/
             if ( !v25 ) /*0x79ed09*/
             {
-              v39.vtable1 = 0; /*0x79ed0b*/
+              v39.ptr_0 = 0; /*0x79ed0b*/
               goto LABEL_90; /*0x79ed10*/
             }
           }
-          v26 = &v25->vtable2; /*0x79ed16*/
+          v26 = &v25->ptr_4; /*0x79ed16*/
           if ( v26 && *v26 > 2u ) /*0x79ed21*/
-            v39.vtable1 = 1; /*0x79ed2f*/
+            v39.ptr_0 = 1; /*0x79ed2f*/
           else
 LABEL_88:
-            v39.vtable1 = 0; /*0x79ed28*/
+            v39.ptr_0 = 0; /*0x79ed28*/
         }
         else
         {
-          v39.vtable1 = 0; /*0x79ecbe*/
+          v39.ptr_0 = 0; /*0x79ecbe*/
         }
 LABEL_90:
         v27 = GetDlgItem(hWnd, 1474); /*0x79ed34*/
-        EnableWindow(v27, (unsigned __int8)v39.vtable1); /*0x79ed48*/
+        EnableWindow(v27, (unsigned __int8)v39.ptr_0); /*0x79ed48*/
         ShowUserProfileWOL((ObjectClass *)hWnd); /*0x79ed4c*/
         return 0; /*0x79ed54*/
       case 0x113u: /*0x79e612*/
@@ -5951,7 +5951,7 @@ LABEL_6:
     while ( customSound ) /*0x79f2aa*/
     {
       v11 = customSound; /*0x79f2ac*/
-      customSound = customSound->vtable2.customSound; /*0x79f2ae*/
+      customSound = customSound->ptr_4.customSound; /*0x79f2ae*/
       DeleteAndZero(v11); /*0x79f2ba*/
       __3_YAXPAX_Z(v11); /*0x79f2c0*/
     }

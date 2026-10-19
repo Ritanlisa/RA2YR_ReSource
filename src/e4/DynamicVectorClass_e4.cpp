@@ -513,7 +513,7 @@ char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_I *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x42d6e2*/
+    (*(void (**)(_VectorClass_I *))(*(unsigned int *)this->ptr_0 + 12))(this); /*0x42d6e2*/
     return 1; /*0x42d6e8*/
   }
 

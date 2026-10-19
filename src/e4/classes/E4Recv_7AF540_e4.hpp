@@ -13,7 +13,7 @@ struct E4Recv_7AF540 {
     unsigned int M28;  // 0x1C
     unsigned int M24;  // 0x24
 // --- flat members (END) ---
-    void* vtable1;  // 0x0 (no offset truth)
+    void* ptr_0_2;  // 0x0 (no offset truth)
     int  sub_7AF540(HWND hWnd, int * a3);  // 0x7AF540
 };
 } // namespace gamemd

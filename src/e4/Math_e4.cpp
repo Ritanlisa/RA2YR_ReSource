@@ -220,7 +220,7 @@ int Math::DistSq2D(unsigned int *aP1)
   v4 = v2[1]; /*0x5f6576*/
   int v7; // [esp+Ch] [ebp-4h]
   v7 = v2[2]; /*0x5f657c*/
-  return (v3 - *aP1) * (v3 - *aP1) + (v4 - aP1->vtable2) * (v4 - aP1->vtable2); /*0x5f658b*/
+  return (v3 - *aP1) * (v3 - *aP1) + (v4 - aP1->ptr_4) * (v4 - aP1->ptr_4); /*0x5f658b*/
 
 }
 }

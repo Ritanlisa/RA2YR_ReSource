@@ -859,15 +859,15 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   v21[2] = Viewport[2]; /*0x635582*/
   int v4; // edx
   v4 = Viewport[3]; /*0x635586*/
-  void *vtable1; // eax
-  vtable1 = (void *)(this->M4); /*0x635589*/
+  void *ptr_0; // eax
+  ptr_0 = (void *)(this->M4); /*0x635589*/
   v21[3] = v4; /*0x63558c*/
   unsigned int *ScenarioClassActionCoords; // eax
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*&vtable1->uniqueId)); /*0x635599*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*&ptr_0->uniqueId)); /*0x635599*/
   unsigned int v15[3]; // [esp+18h] [ebp-4Ch] BYREF
   v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
-  v15[1] = ScenarioClassActionCoords->vtable2; /*0x6355a7*/
-  v15[2] = ScenarioClassActionCoords->vtable3; /*0x6355b2*/
+  v15[1] = ScenarioClassActionCoords->ptr_4; /*0x6355a7*/
+  v15[2] = ScenarioClassActionCoords->ptr_8; /*0x6355b2*/
   int *v7; // eax
   int v14; // [esp+10h] [ebp-54h] BYREF
   v7 = (int *)(ToCoordPixel(&v14, v15)); /*0x6355ba*/
@@ -998,8 +998,8 @@ namespace gamemd {
 int E4Recv_636F00::sub_636F00(int a2, int a3)
 {
 
-  unsigned int *vtable2; // eax
-  void *vtable0; // ecx
+  unsigned int *ptr_4; // eax
+  void *ptr_0; // ecx
   int v5; // esi
   int v6; // eax
   int v7; // edx
@@ -1008,16 +1008,16 @@ int E4Recv_636F00::sub_636F00(int a2, int a3)
   void **v10; // eax
   unsigned char *v11; // esi
 
-  vtable2 = this->ptr_8; /*0x636f00*/
-  vtable0 = this->ptr_0; /*0x636f08*/
-  v5 = vtable2[a3]; /*0x636f0b*/
+  ptr_4 = this->ptr_8; /*0x636f00*/
+  ptr_0 = this->ptr_0; /*0x636f08*/
+  v5 = ptr_4[a3]; /*0x636f0b*/
   v6 = 0; /*0x636f0e*/
   v7 = *(unsigned int *)(v5 + 16); /*0x636f11*/
   if ( v7 <= 0 ) /*0x636f16*/
     goto LABEL_7; /*0x636f16*/
   v8 = *(void ****)(v5 + 4); /*0x636f18*/
   v9 = v8; /*0x636f1b*/
-  while ( **v9 != vtable0 ) /*0x636f21*/
+  while ( **v9 != ptr_0 ) /*0x636f21*/
   {
     ++v6; /*0x636f23*/
     ++v9; /*0x636f24*/
@@ -1152,7 +1152,7 @@ LABEL_22:
 LABEL_23:
       Type = BuildingClass::GetType(ptr_0); /*0x637364*/
       v33 = v14; /*0x637374*/
-      v16 = (*(int (**)(int, int *))(Type->vtable2 + 16))(Type + 4, &v33); /*0x63737e*/
+      v16 = (*(int (**)(int, int *))(Type->ptr_4 + 16))(Type + 4, &v33); /*0x63737e*/
       if ( v16 == -1 ) /*0x637384*/
       {
         v17 = 0; /*0x637386*/
@@ -1769,7 +1769,7 @@ AbstractClass * * sub_638E60()
     {
       *(unsigned int *)&DataGlobal_AC4C3C = 0; /*0x638f2c*/
       if ( v4 /*0x638f66*/
-        && (*(Object **)(**v4->vtable2 + 540) != dword_A83D4C
+        && (*(Object **)(**v4->ptr_4 + 540) != dword_A83D4C
          || *(unsigned int *)&g_ScriptState && *(unsigned int *)&g_ScriptState != v4
          || BuildingClass::CheckBuildability((BuildingClass *)v4) != -1) )
       {
@@ -2520,7 +2520,7 @@ LABEL_37:
           *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48),
           42,
           *(unsigned int *)v20,
-          v20->vtable2,
+          v20->ptr_4,
           *(int *)&v23[104],
           v24);
         qmemcpy(v23, &v29[20], sizeof(v23)); /*0x63afc2*/
@@ -2590,7 +2590,7 @@ AbstractClass * * sub_63B150()
   {
     int v3; // edi
     v3 = *((unsigned int *)DataGlobal_AC4B34 + i); /*0x63b168*/
-    if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(**v3->vtable2 + 540), (void *)dword_A83D4C) ) /*0x63b17f*/
+    if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(**v3->ptr_4 + 540), (void *)dword_A83D4C) ) /*0x63b17f*/
       RenderScenarioActionLines2((ObjectClass *)v3); /*0x63b18a*/
   }
   int j; // ebx
@@ -3475,7 +3475,7 @@ int ObjectClass::sub_632D60(int a2)
   if ( !a2 ) /*0x632d6a*/
   {
     result = (*((int (**)(ObjectClass *))this->AbstractClass + 1))(this); /*0x632d6e*/
-    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((0) & 0xFF); /*0x632d71*/
+    (this->ptr_C) = ((this->ptr_C) & ~0xFF) | ((0) & 0xFF); /*0x632d71*/
   }
   this->attachedBomb = (BombClass *)a2; /*0x632d77*/
   if ( a2 ) /*0x632d7a*/
@@ -3483,7 +3483,7 @@ int ObjectClass::sub_632D60(int a2)
     TagClass *attachedTag; // ecx
     attachedTag = this->attachedTag; /*0x632d7c*/
     result = 1; /*0x632d7f*/
-    (this->vtable4) = ((this->vtable4) & ~0xFF) | ((1) & 0xFF); /*0x632d86*/
+    (this->ptr_C) = ((this->ptr_C) & ~0xFF) | ((1) & 0xFF); /*0x632d86*/
     if ( attachedTag == 1 ) /*0x632d89*/
     {
       result = ((*(unsigned int *)(a2 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(a2 + 512) - 1) / 8) + 1); /*0x632da7*/
@@ -4108,8 +4108,8 @@ BOOL E4Recv_634470::sub_634470(int a2, int a3)
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x634481*/
   unsigned int v12[3]; // [esp+10h] [ebp-28h] BYREF
   v12[0] = *ScenarioClassActionCoords; /*0x634488*/
-  v12[1] = ScenarioClassActionCoords->vtable2; /*0x63448f*/
-  v12[2] = ScenarioClassActionCoords->vtable3; /*0x63449a*/
+  v12[1] = ScenarioClassActionCoords->ptr_4; /*0x63448f*/
+  v12[2] = ScenarioClassActionCoords->ptr_8; /*0x63449a*/
   int *v4; // eax
   int v11; // [esp+8h] [ebp-30h] BYREF
   v4 = ToCoordPixel(&v11, v12); /*0x6344a2*/
@@ -4427,8 +4427,8 @@ unsigned int * E4Recv_635DF0::sub_635DF0(unsigned int * a2)
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x635e02*/
   unsigned int v6[3]; // [esp+14h] [ebp-1Ch] BYREF
   v6[0] = *ScenarioClassActionCoords; /*0x635e09*/
-  v6[1] = ScenarioClassActionCoords->vtable2; /*0x635e10*/
-  v6[2] = ScenarioClassActionCoords->vtable3; /*0x635e27*/
+  v6[1] = ScenarioClassActionCoords->ptr_4; /*0x635e10*/
+  v6[2] = ScenarioClassActionCoords->ptr_8; /*0x635e27*/
   int v5[2]; // [esp+Ch] [ebp-24h] BYREF
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v6, v5); /*0x635e2b*/
   v5[0] += DSurface_ViewBounds.field_0; /*0x635e48*/
@@ -4454,8 +4454,8 @@ int * E4Recv_635E90::sub_635E90(int * a2)
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x635ea2*/
   unsigned int v11[3]; // [esp+14h] [ebp-28h] BYREF
   v11[0] = *ScenarioClassActionCoords; /*0x635ea9*/
-  v11[1] = ScenarioClassActionCoords->vtable2; /*0x635eb0*/
-  v11[2] = ScenarioClassActionCoords->vtable3; /*0x635ebb*/
+  v11[1] = ScenarioClassActionCoords->ptr_4; /*0x635eb0*/
+  v11[2] = ScenarioClassActionCoords->ptr_8; /*0x635ebb*/
   int *v3; // eax
   int v10; // [esp+Ch] [ebp-30h] BYREF
   v3 = ToCoordPixel(&v10, v11); /*0x635ec3*/
@@ -4688,7 +4688,7 @@ char sub_6394E0(IUnknown * a1, int a2)
       *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48),
       42,
       *(unsigned int *)v8,
-      v8->vtable2,
+      v8->ptr_4,
       *(int *)&v10[104],
       v11);
     qmemcpy(v10, &v12[128], sizeof(v10)); /*0x63958d*/
@@ -4790,10 +4790,10 @@ int ColorLerpAndPack(short * a1, unsigned char * a2, int aP1)
 {
   Color v5; // [esp+0h] [ebp-8h] BYREF
 
-  int16_t vtable0; // ax
-  vtable0 = (int16_t)a1->ptr_0; /*0x63d073*/
+  int16_t ptr_0; // ax
+  ptr_0 = (int16_t)a1->ptr_0; /*0x63d073*/
   (((unsigned char *)&(v5.Color_field_00))[2]) = (((unsigned char *)&(a1->ptr_0))[2]); /*0x63d07e*/
-  (*((unsigned short *)&(v5.Color_field_00))) = vtable0; /*0x63d087*/
+  (*((unsigned short *)&(v5.Color_field_00))) = ptr_0; /*0x63d087*/
   Color::Lerp(&v5, aP1, a2); /*0x63d08c*/
   return ((*((unsigned char *)&(v5.Color_field_00))) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x63d0e2*/
   | ((((unsigned char *)&(v5.Color_field_00))[1]) >> g_BitMask_Blue << g_BitMask_Green)

@@ -10,7 +10,7 @@ struct ConvertClass;  // fix_fwd_type_supply
 struct MapClass;  // fix_fwd_type_supply
 
 struct LightConvertClass {
-    char vtable1[1];  // 0x0
+    char ptr_0[1];  // 0x0
     char field_1[4];  // 0x1
     char __pad_5[387];  // 0x5
     int field_188;  // 0x188

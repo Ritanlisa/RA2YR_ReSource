@@ -92,7 +92,7 @@ int FactoryClass::UpdateProduction()
         }
         if ( balance >= this->balance ) /*0x4c9bd1*/
           balance = this->balance; /*0x4c9bd3*/
-        if ( balance <= (*(int (**)(int))(*(unsigned int *)(this->owner + 36) + 24))&this->owner->vtable5 ) /*0x4c9be3*/
+        if ( balance <= (*(int (**)(int))(*(unsigned int *)(this->owner + 36) + 24))&this->owner->ptr_5 ) /*0x4c9be3*/
         {
           HouseClass::ProcessPowerDrain((int *)this->owner, balance); /*0x4c9bf5*/
           v8 = this->balance; /*0x4c9bfa*/
@@ -609,7 +609,7 @@ int FactoryClass::FinishProduction(int a2)
   int result; // eax
   int v5; // ecx
 
-  if ( a2->vtable4 ) /*0x63506c*/
+  if ( a2->ptr_C ) /*0x63506c*/
   {
     a2->ptr_4 = 0; /*0x635073*/
     v3 = *(&this->uniqueId2) - 1; /*0x63507d*/
@@ -617,7 +617,7 @@ int FactoryClass::FinishProduction(int a2)
     if ( !v3 ) /*0x635084*/
       *(&this->uniqueId4) = -1; /*0x635086*/
   }
-  result = a2->vtable3; /*0x63508c*/
+  result = a2->ptr_8; /*0x63508c*/
   if ( result != -1 ) /*0x635091*/
   {
     result = *(unsigned int *)(this->production + 4 * result); /*0x635096*/

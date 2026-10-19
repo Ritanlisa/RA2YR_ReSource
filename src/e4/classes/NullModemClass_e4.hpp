@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct NullModemClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     int PlayerIndex;  // 0x4
     char Active[1];  // 0x8
     char __pad_9[3];  // 0x9

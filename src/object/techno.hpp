@@ -1271,9 +1271,9 @@ public:  // g57c5 W6 owner supply
     unsigned char u8_B5;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
     unsigned int visibilityFlags;  // X10 supply (csp_canon_members)
-    void* vtable1;  // X10 supply (csp_canon_members)
-    void* vtable2;  // X10 supply (csp_canon_members)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
+    void* ptr_4;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
     float warpFactor_d;  // X10 supply (csp_canon_members)
 };
 

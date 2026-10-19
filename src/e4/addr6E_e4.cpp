@@ -79,7 +79,7 @@ namespace gamemd {  // G42.18 ns repair
 int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 {
 
-  HIBYTE(dword_A8B230[374].vtable3) = this->isAliveFlag; /*0x6e025c*/
+  HIBYTE(dword_A8B230[374].ptr_8) = this->isAliveFlag; /*0x6e025c*/
   return 1; /*0x6e0264*/
 
 }
@@ -89,7 +89,7 @@ namespace gamemd {
 int E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 {
 
-  BYTE2(dword_A8B230[374].vtable3) = this->isAliveFlag; /*0x6e027c*/
+  BYTE2(dword_A8B230[374].ptr_8) = this->isAliveFlag; /*0x6e027c*/
   return 1; /*0x6e0284*/
 
 }
@@ -592,7 +592,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   v3 = (TechnoClass *)this->customSound_controller[1]; /*0x6efc76*/
   v4 = -1; /*0x6efc79*/
   v20 = (int)this; /*0x6efc7f*/
-  for ( i = v3; v3; v3 = *v3->vtable2.missionQueued ) /*0x6efc85*/
+  for ( i = v3; v3; v3 = *v3->ptr_4.missionQueued ) /*0x6efc85*/
   {
     v6 = *(unsigned int *)((*(int (**)(TechnoClass *))(v3->ptr_0 + 132))(v3) + 1532); /*0x6efc91*/
     if ( (unsigned __int8)TechnoClass::IsDeployed(v3) /*0x6efcba*/

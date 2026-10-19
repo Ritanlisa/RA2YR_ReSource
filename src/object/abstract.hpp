@@ -351,9 +351,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void AnnounceExpiredPointer(int a1, int a2);  // 0x7258d0
     void* RemoveObjectFromHouse(int a1, int a2, int a3, int a4, int a5);  // 0x4fb9b0
     // === FUNCS-MOVE (END) ===
-    void* vtable1;  // 0x0 (ml truth)  gB vtable supply
-    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
-    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
+    void* ptr_0;  // 0x0 (ml truth)  gB vtable supply
+    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
+    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
     int GetType();  // gB sig supply @cache
 
     unsigned char AbstractClass_10C[4];  /* AbstractClass */  // X10 supply (member_lookup)
@@ -394,7 +394,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_F04;  // X10 supply (member_lookup)
     unsigned int u32_F08;  // X10 supply (member_lookup)
     unsigned int u32_F0C;  // X10 supply (member_lookup)
-    void* vtable4;  // X10 supply (csp_canon_members)
+    void* ptr_C;  // X10 supply (csp_canon_members)
 };
 
 } // namespace game

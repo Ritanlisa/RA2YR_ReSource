@@ -111,7 +111,7 @@ int AircraftClass::Construct(int a1, void* a2) {
   const IID *v7; // ebx
   int v8; // eax
   int v9; // eax
-  int vtable2; // ebp
+  int ptr_4; // ebp
   unsigned int *v11; // edi
   int i; // eax
   unsigned int *v13; // edx
@@ -134,7 +134,7 @@ int AircraftClass::Construct(int a1, void* a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x413d94) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x413d9b) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x413da2) — binary-proven install, was 0 */
-  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x413dac*/
+  AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x413dac*/
   v5 = this->Type; /*0x413db1*/
   if ( v5 ) /*0x413db9*/
   {
@@ -166,20 +166,20 @@ int AircraftClass::Construct(int a1, void* a2) {
     v9 = dword_A8E3A0++; /*0x413e76*/
     *((unsigned int *)dword_A8E394 + v9) = this; /*0x413e85*/
   }
-  a2 = (IUnknown *)AbstractClass::GetVtable3(&this->vtable2); /*0x413e94*/
+  a2 = (IUnknown *)AbstractClass::GetVtable3(&this->ptr_4); /*0x413e94*/
   if ( (int)g_BuildingLoadQueue_Array.ptr_4 + 1 <= (int)g_BuildingLoadQueue_Array.ptr_8 ) /*0x413ea0*/
     goto LABEL_25; /*0x413ea0*/
   if ( g_BuildingLoadQueue_Array.ptr_8 ) /*0x413ea8*/
   {
-    vtable2 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x413eb1*/
+    ptr_4 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x413eb1*/
     if ( (int)g_BuildingLoadQueue_Array.ptr_8 < 0 ) /*0x413eb5*/
       return this; /*0x413eb5*/
   }
   else
   {
-    vtable2 = 10; /*0x413eaa*/
+    ptr_4 = 10; /*0x413eaa*/
   }
-  v11 = (unsigned int *)operator new(8 * ((int)g_BuildingLoadQueue_Array.ptr_8 + vtable2)); /*0x413ecb*/
+  v11 = (unsigned int *)operator new(8 * ((int)g_BuildingLoadQueue_Array.ptr_8 + ptr_4)); /*0x413ecb*/
   if ( v11 ) /*0x413ed2*/
   {
     for ( i = 0; i < (int)g_BuildingLoadQueue_Array.ptr_4; v11[2 * i - 1] = v13[1] ) /*0x413ee7*/
@@ -189,7 +189,7 @@ int AircraftClass::Construct(int a1, void* a2) {
     }
     operator delete((void *)(g_BuildingLoadQueue_Array.v11)); /*0x413f10*/
     g_BuildingLoadQueue_Array.v11 = v11; /*0x413f1f*/
-    g_BuildingLoadQueue_Array.ptr_8 = (char *)g_BuildingLoadQueue_Array.ptr_8 + vtable2; /*0x413f25*/
+    g_BuildingLoadQueue_Array.ptr_8 = (char *)g_BuildingLoadQueue_Array.ptr_8 + ptr_4; /*0x413f25*/
     g_BuildingLoadQueue_Array.uniqueId = 0; /*0x413f2a*/
   LABEL_25:
     *((unsigned int *)g_BuildingLoadQueue_Array.v11 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4) = a2; /*0x413f34*/
@@ -1228,7 +1228,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   FollowingObject = this->FollowingObject; /*0x437004*/
   if ( FollowingObject ) /*0x43700c*/
   {
-    v7 = (*(int (**)(int))(FollowingObject->vtable2 + 16))(FollowingObject + 4); /*0x437015*/
+    v7 = (*(int (**)(int))(FollowingObject->ptr_4 + 16))(FollowingObject + 4); /*0x437015*/
     return Power::TimerProcess(v7); /*0x43701b*/
   }
   return result; /*0x437020*/
@@ -1383,7 +1383,7 @@ int BuildingClass::HandleFactoryCommand() {
                       *(unsigned int *)(*(unsigned int *)(this->attachedBomb + 40) + 48),
                       0xAu,
                       *(unsigned int *)v7,
-                      v7->vtable2);
+                      v7->ptr_4);
       break;
     case 1: /*0x443422*/
       v8 = *(unsigned int *)&this->Type->BuildingTypeClass_field_ED8; /*0x443627*/
@@ -1398,10 +1398,10 @@ int BuildingClass::HandleFactoryCommand() {
       }
       v9 = ScriptAction::GetWaypointCoords((ScriptAction *)v19, v24); /*0x443648*/
       v16 = *(unsigned int *)v9; /*0x443658*/
-      v18 = v9->vtable2; /*0x44365e*/
+      v18 = v9->ptr_4; /*0x44365e*/
       v10 = ScriptAction::GetWaypointCoords((ScriptAction *)&v20, this); /*0x443661*/
       v13 = *(unsigned int *)v10; /*0x443672*/
-      v14 = v10->vtable2; /*0x443676*/
+      v14 = v10->ptr_4; /*0x443676*/
       v11 = this->vt_slot_56(this); /*0x44367b*/
       result = (int)ScenarioClass::SetEvent(v22, v11, 30, v13, v14, v16, v18); /*0x443683*/
       break;
@@ -2270,7 +2270,7 @@ int BuildingClass::PushScriptAction() {
 // 0x45A020
 namespace gamemd { 
 int BuildingClass::updateFactoryProduction(int a2) {
-  if ( this->vtable4 ) /*0x45a020*/
+  if ( this->ptr_C ) /*0x45a020*/
     return (unsigned int)(a2 - this->Items) >> 2; /*0x45a035*/
   else
     return 0; /*0x45a027*/
@@ -2423,7 +2423,7 @@ int BuildingClass::CheckAdjacentCells() {
           if ( result->attackedTargets > 4u && !this->attackedTargets ) /*0x48551f*/
           {
             v8 = result->deployAnim; /*0x485529*/
-            if ( v8 == -1 || !*(unsigned char *)(*&v4->vtable1 + 686) ) /*0x485534*/
+            if ( v8 == -1 || !*(unsigned char *)(*&v4->ptr_0 + 686) ) /*0x485534*/
               break; /*0x485534*/
           }
           v9 = result->animation; /*0x48553d*/
@@ -2438,7 +2438,7 @@ int BuildingClass::CheckAdjacentCells() {
           result = result->deployAnim; /*0x485557*/
           if ( result != -1 ) /*0x48555d*/
           {
-            result = *&v4->vtable1; /*0x48555f*/
+            result = *&v4->ptr_0; /*0x48555f*/
             if ( !result->u32_2AE ) /*0x485562*/
               break; /*0x485562*/
           }
@@ -3092,7 +3092,7 @@ int InfantryClass::Construct(int a1, void* a2) {
   unsigned int *v7; // edi
   const IID *v8; // ebp
   int v9; // eax
-  int vtable2; // ebp
+  int ptr_4; // ebp
   unsigned int *v11; // edi
   int i; // eax
   unsigned int *v13; // edx
@@ -3118,7 +3118,7 @@ int InfantryClass::Construct(int a1, void* a2) {
   /* X11: vtable install elided (implicit via class virtuals 0x517ad2) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via class virtuals 0x517ad8) — binary-proven install, was 0 */
   /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x517adf) */
-  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x517ae6*/
+  AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x517ae6*/
   if ( *(int *)&g_BuildingClass_Count < *(int *)&DataGlobal_A83DF0 /*0x517b1e*/
     || (DataGlobal_A83DF5 || !*(unsigned int *)&DataGlobal_A83DF0)
     && *(int *)&DataGlobal_A83DFC > 0
@@ -3150,21 +3150,21 @@ int InfantryClass::Construct(int a1, void* a2) {
     (*(void (__stdcall **)(unsigned int, int))(*(unsigned int *)this->FootClass_field_680)(*v7, this); /*0x517bba*/
   }
   BuildingTypeClass::GetPowerOutput(&this->uniqueId, 127); /*0x517bc5*/
-  Vtable3 = AbstractClass::GetVtable3(&this->vtable2); /*0x517bd3*/
+  Vtable3 = AbstractClass::GetVtable3(&this->ptr_4); /*0x517bd3*/
   if ( (int)g_BuildingLoadQueue_Array.ptr_4 + 1 <= (int)g_BuildingLoadQueue_Array.ptr_8 ) /*0x517be6*/
     goto LABEL_25; /*0x517be6*/
   if ( g_BuildingLoadQueue_Array.ptr_8 ) /*0x517bee*/
   {
-    vtable2 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x517bf7*/
+    ptr_4 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x517bf7*/
     if ( (int)g_BuildingLoadQueue_Array.ptr_8 < 0 ) /*0x517bfb*/
       return this; /*0x517bfb*/
   }
   else
   {
-    vtable2 = 10; /*0x517bf0*/
+    ptr_4 = 10; /*0x517bf0*/
   }
-  a2 = (IUnknown *)((char *)g_BuildingLoadQueue_Array.ptr_8 + vtable2); /*0x517c03*/
-  v11 = (unsigned int *)operator new(8 * ((int)g_BuildingLoadQueue_Array.ptr_8 + vtable2)); /*0x517c14*/
+  a2 = (IUnknown *)((char *)g_BuildingLoadQueue_Array.ptr_8 + ptr_4); /*0x517c03*/
+  v11 = (unsigned int *)operator new(8 * ((int)g_BuildingLoadQueue_Array.ptr_8 + ptr_4)); /*0x517c14*/
   if ( v11 ) /*0x517c1b*/
   {
     a2 = (IUnknown *)((char *)a2 - 1); /*0x517c2c*/
@@ -3175,7 +3175,7 @@ int InfantryClass::Construct(int a1, void* a2) {
     }
     operator delete((void *)(g_BuildingLoadQueue_Array.v11)); /*0x517c5d*/
     g_BuildingLoadQueue_Array.v11 = v11; /*0x517c6c*/
-    g_BuildingLoadQueue_Array.ptr_8 = (char *)g_BuildingLoadQueue_Array.ptr_8 + vtable2; /*0x517c72*/
+    g_BuildingLoadQueue_Array.ptr_8 = (char *)g_BuildingLoadQueue_Array.ptr_8 + ptr_4; /*0x517c72*/
     g_BuildingLoadQueue_Array.uniqueId = 0; /*0x517c77*/
   LABEL_25:
     *((unsigned int *)g_BuildingLoadQueue_Array.v11 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4) = Vtable3; /*0x517c7d*/
@@ -3258,14 +3258,14 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
     int v81; // [esp+36h] [ebp-B0h] BYREF
     int v82; // [esp+3Ah] [ebp-ACh]
     int v83; // [esp+3Eh] [ebp-A8h]
-    int vtable0; // [esp+42h] [ebp-A4h]
+    int ptr_0; // [esp+42h] [ebp-A4h]
     int v85; // [esp+46h] [ebp-A0h] BYREF
     int v86; // [esp+4Ah] [ebp-9Ch]
     int v87; // [esp+4Eh] [ebp-98h]
     int q010; // [esp+52h] [ebp-94h] BYREF
     int q014; // [esp+56h] [ebp-90h]
     int q018; // [esp+5Ah] [ebp-8Ch]
-    int16_t vtable0[2]; // [esp+5Eh] [ebp-88h] BYREF
+    int16_t ptr_0[2]; // [esp+5Eh] [ebp-88h] BYREF
     int v92[3]; // [esp+62h] [ebp-84h] BYREF
     unsigned int v93[3]; // [esp+6Eh] [ebp-78h] BYREF
     int v94[3]; // [esp+7Ah] [ebp-6Ch] BYREF
@@ -3282,8 +3282,8 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
     v9 = v9; /*0x517fb7*/
     if ( v9->Crawling ) /*0x517fc1*/
     {
-      vtable0 = this->vtable1; /*0x517fcf*/
-      if ( vtable0 > 0 && !(unsigned char)a6 ) /*0x517fd7*/
+      ptr_0 = this->ptr_0; /*0x517fcf*/
+      if ( ptr_0 > 0 && !(unsigned char)a6 ) /*0x517fd7*/
       {
         __asm /*0x517fd9*/
         {
@@ -3291,13 +3291,13 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
           fmul qword ptr [ebp+0F8h]
         }
         (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFF); /*0x517fe3*/
-        this->vtable1 = v12; /*0x517feb*/
+        this->ptr_0 = v12; /*0x517feb*/
         if ( v12 < 1 ) /*0x517fed*/
-          this->vtable1 = 1; /*0x517fef*/
+          this->ptr_0 = 1; /*0x517fef*/
       }
     }
     if ( a4 && *(unsigned int *)(a4 + 288) == 9 && (*(int (__thiscall **)(int))(*&v9->isAliveFlag)(v9) > 0 ) /*0x51800e*/
-      this->vtable1 = 0; /*0x518010*/
+      this->ptr_0 = 0; /*0x518010*/
     result = FootClass::ProcessDeploy( /*0x518042*/
                (FootClass *)v9,
                (int)this,
@@ -3567,10 +3567,10 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
                     v95[2] = v9->locationZ; /*0x5188cf*/
                     v48->ProcessAreaEffect(v9, v95); /*0x5188d3*/
                     v49 = (unsigned int *)(*(int (__thiscall **)(int, int *))(v9->q048)(v9, v101); /*0x5188e5*/
-                    vtable0 = ((vtable0) & 0xFFFF0000u) | ((unsigned int)(*v49 / 256) & 0xFFFFu); /*0x5188f8*/
-                    vtable0 = ((vtable0) & 0xFFFFu) | (((unsigned int)(v49[1] / 256) & 0xFFFFu) << 16); /*0x518910*/
-                    *(unsigned int *)vtable0 = vtable0; /*0x518919*/
-                    v50 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, vtable0); /*0x518928*/
+                    ptr_0 = ((ptr_0) & 0xFFFF0000u) | ((unsigned int)(*v49 / 256) & 0xFFFFu); /*0x5188f8*/
+                    ptr_0 = ((ptr_0) & 0xFFFFu) | (((unsigned int)(v49[1] / 256) & 0xFFFFu) << 16); /*0x518910*/
+                    *(unsigned int *)ptr_0 = ptr_0; /*0x518919*/
+                    v50 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, ptr_0); /*0x518928*/
                     v77 = 0; /*0x51892a*/
                     for ( i = v50->u32_E4; i; i = (unsigned int *)i[12] ) /*0x518937*/
                     {
@@ -3999,16 +3999,16 @@ int InfantryClass::Update() {
 // 0x523370
 namespace gamemd { 
 void* InfantryClass::checkBridgeClearance(int a2) {
-  void *vtable0; // edi
+  void *ptr_0; // edi
 
-  vtable0 = this->ptr_0; /*0x523378*/
+  ptr_0 = this->ptr_0; /*0x523378*/
   if ( this->ptr_0 != (void *)a2 ) /*0x52337c*/
   {
     this->ptr_0 = (void *)a2; /*0x523380*/
     if ( a2 ) /*0x523382*/
       (*(void (__stdcall **)(int))(*(unsigned int *)a2 + 4))(a2); /*0x523387*/
-    if ( vtable0 ) /*0x52338c*/
-      (*(void (__stdcall **)(void *))(*(unsigned int *)vtable0 + 8))(vtable0); /*0x523391*/
+    if ( ptr_0 ) /*0x52338c*/
+      (*(void (__stdcall **)(void *))(*(unsigned int *)ptr_0 + 8))(ptr_0); /*0x523391*/
   }
   return (int *)this; /*0x523396*/
 }
@@ -4350,7 +4350,7 @@ void BuildingClass::processBaseExpansion(float a2) {
 // 0x5AEAF0
 namespace gamemd { 
 void BuildingClass::updateFoundation(float a2) {
-  this->vtable2 = a2 * this->vtable2; /*0x5aeaf7*/
+  this->ptr_4 = a2 * this->ptr_4; /*0x5aeaf7*/
   this->abstractFlags = a2 * this->abstractFlags; /*0x5aeb01*/
   this->objectTypeFlags = a2 * this->objectTypeFlags; /*0x5aeb0b*/
 }
@@ -4358,9 +4358,9 @@ void BuildingClass::updateFoundation(float a2) {
 // 0x5AEB20
 namespace gamemd { 
 void BuildingClass::recalcAdjacency(float a2) {
-  this->vtable3 = a2 * this->vtable3; /*0x5aeb27*/
+  this->ptr_8 = a2 * this->ptr_8; /*0x5aeb27*/
   this->nextArrayIndex = a2 * this->nextArrayIndex; /*0x5aeb31*/
-  *(&this->vtable20) = a2 * *(&this->vtable20); /*0x5aeb3b*/
+  *(&this->ptr_20) = a2 * *(&this->ptr_20); /*0x5aeb3b*/
 }
 }
 // 0x63D540
@@ -4368,7 +4368,7 @@ namespace gamemd {
 int BuildingClass::updateAnimationState() {
   int v1; // eax
 
-  v1 = *(&this->vtable22); /*0x63d540*/
+  v1 = *(&this->ptr_22); /*0x63d540*/
   if ( v1 == 11 ) /*0x63d547*/
     return Memory::Alloc76(); /*0x63d549*/
   if ( v1 == 29 ) /*0x63d551*/
@@ -4821,7 +4821,7 @@ int UnitClass::Construct() {
   /* X11: vtable install elided (X67 star-deref, RHS vt_UnitClass) */  /*0x73543a*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_UnitClass) */  /*0x735440*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_UnitClass) */  /*0x735446*/
-  this->vtable4 = (int)&off_7F5C44; /*0x73544d*/
+  this->ptr_C = (int)&off_7F5C44; /*0x73544d*/
   AbstractClass::GenerateUniqueID(&this->AbstractClass_1); /*0x735454*/
   if ( dword_8B4118 < dword_8B4110 /*0x73548f*/
     || (byte_8B4115 || !dword_8B4110)
@@ -4863,7 +4863,7 @@ int UnitClass::Construct() {
       (*(void (**)(LPVOID))(*(unsigned int *)v9 + 8))(v9); /*0x73553f*/
     if ( !this->Locomotor ) /*0x735542*/
       sub_7DC720(-2147467261); /*0x735551*/
-    (*(void (**)(unsigned int, int *))(*(unsigned int *)this->vtable4 + 12))(this->vtable4, this); /*0x735560*/
+    (*(void (**)(unsigned int, int *))(*(unsigned int *)this->ptr_C + 12))(this->ptr_C, this); /*0x735560*/
   }
   v10 = this->Type; /*0x735566*/
   if ( v10 ) /*0x73556e*/
@@ -4881,8 +4881,8 @@ int UnitClass::Construct() {
     this->estimatedHealth = v13; /*0x7355c3*/
   }
   this->reloadTimer = *(unsigned int *)&stru_A8E960.random[528]; /*0x7355d3*/
-  this->vtable2 = v29; /*0x7355d9*/
-  this->vtable3 = 0; /*0x7355dc*/
+  this->ptr_4 = v29; /*0x7355d9*/
+  this->ptr_8 = 0; /*0x7355dc*/
   v14 = (BuildingClass *)this->owner; /*0x7355df*/
   if ( v14 ) /*0x7355e7*/
     BuildingClass::PowerUpdate(v14, this); /*0x7355ea*/

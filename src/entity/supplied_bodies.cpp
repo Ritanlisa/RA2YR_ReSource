@@ -207,8 +207,8 @@ int * AnimClass::UpdateZAdjust(int * a2)
     v4 = (unsigned int *)this->AnimClass_field_0xCC->UpdateZAdjust(/*0x422c0a*/
                      this->AnimClass_field_0xCC, &v12);
     v5 = *Coords + *v4; /*0x422c14*/
-    v6 = Coords->vtable2; /*0x422c16*/
-    v7 = Coords->vtable3; /*0x422c19*/
+    v6 = Coords->ptr_4; /*0x422c16*/
+    v7 = Coords->ptr_8; /*0x422c19*/
     v8 = v4[1] + v6; /*0x422c1c*/
     v9 = v4[2]; /*0x422c1e*/
     *a2 = v5; /*0x422c29*/
@@ -220,8 +220,8 @@ int * AnimClass::UpdateZAdjust(int * a2)
   {
     v11 = (int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x422c45*/
     *a2 = *v11; /*0x422c50*/
-    a2[1] = v11->vtable2; /*0x422c55*/
-    a2[2] = v11->vtable3; /*0x422c5c*/
+    a2[1] = v11->ptr_4; /*0x422c55*/
+    a2[2] = v11->ptr_8; /*0x422c5c*/
     return a2; /*0x422c47*/
   }
 }
@@ -282,7 +282,7 @@ int AnimClass::UpdateProjectileTrajectory()
   AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x423948*/
   v24 = v4; /*0x42394e*/
   if ( *(unsigned char *)(AnimClass_field_0xC8 + 854) ) /*0x423952*/
-    v3->fallRate = v3->fallRate + v3->vtable3; /*0x423962*/
+    v3->fallRate = v3->fallRate + v3->ptr_8; /*0x423962*/
   if ( v4 == 1 ) /*0x423968*/
   {
     if ( *(unsigned int *)(this->AnimClass_field_0xC8 + 768) ) /*0x423987*/
@@ -698,7 +698,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   /* X11: vtable install elided (X67 recv-slot, RHS vt_AnimClass_4) */  /*0x422028*/
   *(unsigned int *)this->__pad_C = &off_7E3328; /*0x422030*/
   this->PaletteName = 0; /*0x422037*/
-  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x42203d*/
+  AbstractClass::GenerateUniqueID(&this->ptr_4); /*0x42203d*/
   AudioController::Init(&this->AudioController_1A0); /*0x422048*/
   AudioController::Init(&this->AudioController_1B4); /*0x422053*/
   if ( *(int *)&stru_A8E960.nextScenario[88] < *(int *)&stru_A8E960.nextScenario[80] /*0x42208b*/
@@ -809,8 +809,8 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         {
           v38 = (int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x42248d*/
           ptr_0 = *v38; /*0x422494*/
-          v67 = v38->vtable2; /*0x42249b*/
-          v37 = v38->vtable3; /*0x42249f*/
+          v67 = v38->ptr_4; /*0x42249b*/
+          v37 = v38->ptr_8; /*0x42249f*/
         }
         v39 = (unsigned int *)this->AnimClass_field_0xC8; /*0x4224a2*/
         v68 = v37; /*0x4224ae*/
@@ -962,7 +962,7 @@ int AnimClass::ClearTargetReferences(int a2, int a3)
     RemoveTarget((int)this); /*0x42517a*/
     this->AnimClass_field_0xCC->ResetPointerIfMatch(/*0x425188*/
       this->AnimClass_field_0xCC, this);
-    AnimClass_field_0x0 = (int (__thiscall **)(AnimClass *, unsigned int))this->vtable1; /*0x42518b*/
+    AnimClass_field_0x0 = (int (__thiscall **)(AnimClass *, unsigned int))this->ptr_0; /*0x42518b*/
     this->AnimClass_field_0xCC = 0; /*0x425190*/
     this->q19B = 1; /*0x425196*/
     result = AnimClass_field_0x0[73](this, 0); /*0x42519d*/
@@ -971,13 +971,13 @@ int AnimClass::ClearTargetReferences(int a2, int a3)
     this->AnimClass_field_0xC8 = 0; /*0x4251ab*/
   if ( this->AnimClass_field_0x17C == (AbstractClass *)a2 ) /*0x4251b7*/
   {
-    v6 = (int (__thiscall **)(AnimClass *))this->vtable1; /*0x4251b9*/
+    v6 = (int (__thiscall **)(AnimClass *))this->ptr_0; /*0x4251b9*/
     this->AnimClass_field_0x17C = 0; /*0x4251bd*/
     result = v6[62](this); /*0x4251c3*/
   }
   if ( this->q_180 == a2 ) /*0x4251cf*/
   {
-    v7 = (int (__thiscall **)(AnimClass *))this->vtable1; /*0x4251d1*/
+    v7 = (int (__thiscall **)(AnimClass *))this->ptr_0; /*0x4251d1*/
     this->AnimClass_field_0x17C = 0; /*0x4251d5*/
     return v7[62](this); /*0x4251db*/
   }

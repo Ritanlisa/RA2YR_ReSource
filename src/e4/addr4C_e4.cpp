@@ -673,12 +673,12 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 
   TextRenderer::GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth((int)this->AbstractClass, 0); /*0x4c3de5*/
-  void *vtable2; // edx
-  vtable2 = (void *)(this->M8); /*0x4c3def*/
+  void *ptr_4; // edx
+  ptr_4 = (void *)(this->M8); /*0x4c3def*/
   unsigned int v5[4]; // [esp+4h] [ebp-10h] BYREF
   v5[2] = g_DisplayWidth; /*0x4c3df8*/
   v5[0] = 0; /*0x4c3e09*/
-  v5[1] = (unsigned int)(vtable2); /*0x4c3e12*/
+  v5[1] = (unsigned int)(ptr_4); /*0x4c3e12*/
   v5[3] = 18; /*0x4c3e16*/
   return (*(int (**)(AudioStream *, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x4c3e28*/
   + 8))(
@@ -739,7 +739,7 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
 {
 
   __int16 abstractFlags; // bx
-  void *vtable2; // esi
+  void *ptr_4; // esi
   int uniqueId; // eax
   int v6; // esi
   __int64 v7; // rax
@@ -747,23 +747,23 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
   int v9; // edx
   void *v10; // ecx
   __int16 v11; // cx
-  void *vtable0; // ecx
+  void *ptr_0; // ecx
   void *v14; // [esp+Ch] [ebp-4h]
 
   abstractFlags = this->M20; /*0x4c95d2*/
   if ( abstractFlags <= 0 ) /*0x4c95db*/
     goto LABEL_14; /*0x4c95db*/
-  vtable2 = (void *)(this->M8); /*0x4c95dd*/
+  ptr_4 = (void *)(this->M8); /*0x4c95dd*/
   uniqueId = this->M16; /*0x4c95e0*/
-  if ( vtable2 != (void *)-1 ) /*0x4c95ec*/
+  if ( ptr_4 != (void *)-1 ) /*0x4c95ec*/
   {
-    if ( *(unsigned int *)&TeamTypeClass_Array - (int)vtable2 >= uniqueId ) /*0x4c95f4*/
+    if ( *(unsigned int *)&TeamTypeClass_Array - (int)ptr_4 >= uniqueId ) /*0x4c95f4*/
     {
       LABEL_14:
-      vtable0 = this->AbstractClass; /*0x4c964f*/
+      ptr_0 = this->AbstractClass; /*0x4c964f*/
       goto LABEL_15; /*0x4c964f*/
     }
-    uniqueId -= *(unsigned int *)&TeamTypeClass_Array - (unsigned int)vtable2; /*0x4c95f6*/
+    uniqueId -= *(unsigned int *)&TeamTypeClass_Array - (unsigned int)ptr_4; /*0x4c95f6*/
   }
   if ( !uniqueId ) /*0x4c95fa*/
     goto LABEL_14; /*0x4c95fa*/
@@ -788,9 +788,9 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
     LABEL_11:
     LOWORD(v14) = (unsigned short)v14 - v11 * (v6 / (__int16)v8); /*0x4c9635*/
   }
-  LOWORD(vtable0) = (unsigned short)v14; /*0x4c9645*/
+  LOWORD(ptr_0) = (unsigned short)v14; /*0x4c9645*/
   LABEL_15:
-  LOWORD(a3) = *a3 - (unsigned short)vtable0; /*0x4c9651*/
+  LOWORD(a3) = *a3 - (unsigned short)ptr_0; /*0x4c9651*/
   *a2 = (unsigned int)(a3); /*0x4c966b*/
   return a2; /*0x4c9655*/
 
@@ -872,12 +872,12 @@ void * E4Recv_4CB640::sub_4CB640(char * Destination, RandomStruct * aP1, int a3)
 {
 
   strncpy((char *)Destination, aP1, 4u); /*0x4cb64d*/
-  (Destination->vtable2) = 3; /*0x4cb654*/
-  (*(Destination->vtable2 + 1)) = 2; /*0x4cb65a*/
+  (Destination->ptr_4) = 3; /*0x4cb654*/
+  (*(Destination->ptr_4 + 1)) = 2; /*0x4cb65a*/
   char *v4; // eax
   v4 = (char *)operator new(2u); /*0x4cb660*/
   unsigned int vtable1_high; // edx
-  vtable1_high = (*(Destination->vtable2 + 1)); /*0x4cb671*/
+  vtable1_high = (*(Destination->ptr_4 + 1)); /*0x4cb671*/
   Destination->ptr_2 = v4; /*0x4cb673*/
   memcpy(v4, &a3, 4 * (vtable1_high >> 2)); /*0x4cb679*/
   char *v6; // edi
@@ -893,12 +893,12 @@ void * E4Recv_4CB6A0::sub_4CB6A0(char * Destination, RandomStruct * aP1, int a3)
 {
 
   strncpy((char *)Destination, aP1, 4u); /*0x4cb6ad*/
-  (Destination->vtable2) = 4; /*0x4cb6b4*/
-  (*(Destination->vtable2 + 1)) = 2; /*0x4cb6ba*/
+  (Destination->ptr_4) = 4; /*0x4cb6b4*/
+  (*(Destination->ptr_4 + 1)) = 2; /*0x4cb6ba*/
   char *v4; // eax
   v4 = (char *)operator new(2u); /*0x4cb6c0*/
   unsigned int vtable1_high; // edx
-  vtable1_high = (*(Destination->vtable2 + 1)); /*0x4cb6d1*/
+  vtable1_high = (*(Destination->ptr_4 + 1)); /*0x4cb6d1*/
   Destination->ptr_2 = v4; /*0x4cb6d3*/
   memcpy(v4, &a3, 4 * (vtable1_high >> 2)); /*0x4cb6d9*/
   char *v6; // edi
@@ -1989,11 +1989,11 @@ int E4Recv_4C4FC0::sub_4C4FC0(int a2)
 
   int result; // eax
   result = Power::TimerProcess((int)this->AbstractClass); /*0x4c4fcd*/
-  void *vtable1 = this->M4; // ecx /*0x4c4fd2*/
-  if ( vtable1 ) /*0x4c4fd7*/
+  void *ptr_0 = this->M4; // ecx /*0x4c4fd2*/
+  if ( ptr_0 ) /*0x4c4fd7*/
   {
     int v5; // eax
-    v5 = (*(int (**)(void *))(*(unsigned int *)vtable1 + 44))(vtable1); /*0x4c4fdb*/
+    v5 = (*(int (**)(void *))(*(unsigned int *)ptr_0 + 44))(ptr_0); /*0x4c4fdb*/
     Power::TimerProcess(v5); /*0x4c4fe1*/
     int v6; // eax
     v6 = (*(int (**)(char *))(*((unsigned int *)this->? + 1) + 16))((char *)this->? + 4); /*0x4c4ff0*/
@@ -2518,25 +2518,25 @@ char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int
   Debug::Log(); /*0x4c68e8*/
   if ( a2 < 0 ) /*0x4c68f6*/
   {
-    this->vtable3 = -1; /*0x4c6952*/
+    this->ptr_8 = -1; /*0x4c6952*/
     *this = 0; /*0x4c6956*/
-    this->vtable4 = dword_A8ED84; /*0x4c6961*/
+    this->ptr_C = dword_A8ED84; /*0x4c6961*/
     return this; /*0x4c695f*/
   }
   else
   {
-    this->vtable3 = a2; /*0x4c6900*/
+    this->ptr_8 = a2; /*0x4c6900*/
     *this = 5; /*0x4c6906*/
     this->u32_7 = a3; /*0x4c6909*/
-    *(&this->vtable21) = aP3; /*0x4c690e*/
-    *(&this->vtable22) = aP4; /*0x4c6919*/
+    *(&this->ptr_21) = aP3; /*0x4c690e*/
+    *(&this->ptr_22) = aP4; /*0x4c6919*/
     this->u32_D = a6; /*0x4c6920*/
-    *(&this->vtable27) = a7; /*0x4c6926*/
+    *(&this->ptr_27) = a7; /*0x4c6926*/
     this->IsInitialized = a8; /*0x4c6930*/
     this->u32_1B = a11; /*0x4c6937*/
-    *(&this->vtable32) = a9; /*0x4c693a*/
+    *(&this->ptr_32) = a9; /*0x4c693a*/
     this->__pad_017 = a10; /*0x4c6941*/
-    this->vtable4 = dword_A8ED84; /*0x4c6949*/
+    this->ptr_C = dword_A8ED84; /*0x4c6949*/
     return this; /*0x4c694c*/
   }
 }

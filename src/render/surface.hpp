@@ -454,7 +454,7 @@ public:  // g57c5 W4b supply slot
 public:  // g57c5 W4b supply slot
     void* DSurface_field_0xC;  // 0xC g57c5 W4b (self-desc vocab, ml slot witness)
 
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
 
     int u32_1;  // 0x1 [X55 W3 supply (render vocab)]

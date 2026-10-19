@@ -6,7 +6,7 @@
 namespace gamemd {
 
 struct TabClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     unsigned int __pad_004;  // 0x4
     int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC

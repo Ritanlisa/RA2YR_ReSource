@@ -23,7 +23,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1, void *a2_1)
 
   if ( aP1 == (DynamicVector *)a2_1 ) /*0x5ac43a*/
     goto LABEL_8; /*0x5ac43a*/
-  (*(void (**)(DynamicVector *))(*(unsigned int *)aP1->vtable1 + 12))(aP1); /*0x5ac43e*/
+  (*(void (**)(DynamicVector *))(*(unsigned int *)aP1->ptr_0 + 12))(aP1); /*0x5ac43e*/
   v3 = a2_1[2]; /*0x5ac441*/
   aP1->Capacity = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/
@@ -33,7 +33,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1, void *a2_1)
     LABEL_8:
     aP1->Count = (void *)a2_1[4]; /*0x5ac4a1*/
     *(unsigned int *)aP1->CapacityIncrement = a2_1[5]; /*0x5ac4aa*/
-    return aP1->vtable1; /*0x5ac4ad*/
+    return aP1->ptr_0; /*0x5ac4ad*/
   }
   v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x5ac453*/
   *&aP1->Items = v4; /*0x5ac45b*/
@@ -52,7 +52,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1, void *a2_1)
   while ( v6 < aP1->Capacity ); /*0x5ac481*/
   aP1->Count = (void *)a2_1[4]; /*0x5ac486*/
   *(unsigned int *)aP1->CapacityIncrement = a2_1[5]; /*0x5ac48c*/
-  return aP1->vtable1; /*0x5ac491*/
+  return aP1->ptr_0; /*0x5ac491*/
 
 }
 }  // G42.18 ns repair
@@ -369,7 +369,7 @@ int DynamicVector::Read(TechnoTypeClass * aP1, void *a2_1, void *a3)
   {
     (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2_1 + 16))( /*0x67a558*/
       a2_1,
-      *&aP1->vtable2 + 4 * i,
+      *&aP1->ptr_4 + 4 * i,
       4,
       0);
     result = (int)DynamicVector_field_0x10; /*0x67a55b*/
@@ -582,7 +582,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3, void *a3_1)
   /* X11: vtable install elided (X67 star-deref, RHS vt_DynamicVectorClass) */  /*0x734313*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x734319*/
   this->Count = 0; /*0x734320*/
-  return this->vtable1; /*0x734329*/
+  return this->ptr_0; /*0x734329*/
 
 }
 } // namespace gamemd
@@ -594,8 +594,8 @@ char DynamicVector::EnsureCapacity(void *a1)
 
 
   int result; // eax
-  result = *(unsigned int *)this->vtable1; /*0x7af004*/
-  if ( *(unsigned int *)this->vtable1 >= *&this->Items ) /*0x7af00b*/
+  result = *(unsigned int *)this->ptr_0; /*0x7af004*/
+  if ( *(unsigned int *)this->ptr_0 >= *&this->Items ) /*0x7af00b*/
   {
     int v3 = 2 * result; // esi /*0x7af014*/
     int v5; // [esp+4h] [ebp-4h]
@@ -610,7 +610,7 @@ char DynamicVector::EnsureCapacity(void *a1)
     memset(v4, 0, 4 * ((unsigned int)(4 * v3) >> 2)); /*0x7af04a*/
     if ( this->Capacity ) /*0x7af053*/
     {
-      memcpy(v4, (const void *)this->Capacity, 4 * *(unsigned int *)this->vtable1); /*0x7af068*/
+      memcpy(v4, (const void *)this->Capacity, 4 * *(unsigned int *)this->ptr_0); /*0x7af068*/
       v3 = v5; /*0x7af071*/
     }
     __3_YAXPAX_Z((void *)this->Capacity); /*0x7af079*/

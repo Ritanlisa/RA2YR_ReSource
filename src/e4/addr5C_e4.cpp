@@ -2980,11 +2980,11 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
   int v5; // eax
   int fallRate; // edi
   int v7; // eax
-  char *vtable1; // ebx
+  char *ptr_0; // ebx
   char *v10; // ebp
   int i; // edi
   int v12; // edx
-  void *vtable2; // ecx
+  void *ptr_4; // ecx
   int v14; // eax
   unsigned int v15; // ecx
   char *NeedsSaveOrLink; // [esp+Ch] [ebp-20h]
@@ -3010,7 +3010,7 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
     return 0; /*0x5ce296*/
   }
   LABEL_5:
-  if ( LOBYTE(this->vtable4) != 1 ) /*0x5ce0f6*/
+  if ( LOBYTE(this->ptr_C) != 1 ) /*0x5ce0f6*/
     goto LABEL_24; /*0x5ce0f6*/
   fallRate = this->fallRate; /*0x5ce0fc*/
   this->uniqueId = Timer::GetTicks(); /*0x5ce108*/
@@ -3030,9 +3030,9 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
       &this->customSound_controller[1],
       0,
       1);
-  vtable1 = (char *)this->vtable2; /*0x5ce179*/
+  ptr_0 = (char *)this->ptr_4; /*0x5ce179*/
   if ( BYTE1(this->ambientSoundController[3]) ) /*0x5ce176*/
-    vtable1 += this->ambientSoundController[4]; /*0x5ce180*/
+    ptr_0 += this->ambientSoundController[4]; /*0x5ce180*/
   NeedsSaveOrLink = (char *)this->NeedsSaveOrLink; /*0x5ce18b*/
   v10 = NeedsSaveOrLink + 1; /*0x5ce18c*/
   for ( i = WideString::GetChar((const wchar_t **)&this->NeedsSaveOrLink, (size_t)NeedsSaveOrLink); /*0x5ce198*/
@@ -3045,20 +3045,20 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
       this->attachedTag,
       a2,
       i,
-      vtable1,
+      ptr_0,
       this->customSound_controller[0],
       this->occupant,
       0);
-    vtable1 += (*((int (**)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
+    ptr_0 += (*((int (**)(TagClass *, int))this->attachedTag->AbstractClass + 1))(this->attachedTag, i); /*0x5ce1c1*/
     v17 = (size_t)v10++; /*0x5ce1c5*/
   }
   v12 = this->ambientSoundController[1]; /*0x5ce1e0*/
-  vtable2 = this->attachedTag->?; /*0x5ce1e3*/
+  ptr_4 = this->attachedTag->?; /*0x5ce1e3*/
   v19 = this->customSound_controller[0]; /*0x5ce1e6*/
   *a3 = this->attachedBomb; /*0x5ce1ee*/
   a3[1] = v19; /*0x5ce1f4*/
   a3[2] = v12; /*0x5ce1f7*/
-  a3[3] = vtable2; /*0x5ce1fa*/
+  a3[3] = ptr_4; /*0x5ce1fa*/
   if ( this->occupant == 2 ) /*0x5ce203*/
   {
     this->customSound_controller[1] = 0; /*0x5ce20b*/
@@ -4719,7 +4719,7 @@ namespace gamemd {
 int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
 {
 
-  int (**vtable0)(TagClass *, int); // ebp
+  int (**ptr_0)(TagClass *, int); // ebp
   int Char; // eax
   int i; // [esp+Ch] [ebp-4h]
 
@@ -4729,9 +4729,9 @@ int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
   {
     if ( (unsigned __int16)WideString::GetChar(a2, v4) == 10 ) /*0x5ce35c*/
       break; /*0x5ce35c*/
-    vtable0 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
+    ptr_0 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
     Char = WideString::GetChar(a2, v4); /*0x5ce366*/
-    v3 = vtable0[1](this->attachedTag, Char) + i; /*0x5ce378*/
+    v3 = ptr_0[1](this->attachedTag, Char) + i; /*0x5ce378*/
     ++v4; /*0x5ce37a*/
   }
   return v3; /*0x5ce38d*/
@@ -4749,7 +4749,7 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
   int v12; // eax
   int Char; // [esp-Ch] [ebp-4Ch]
   void *v14; // [esp+18h] [ebp-28h]
-  void (**vtable0)(TagClass *, int, int, void *, void *, int, int); // [esp+18h] [ebp-28h]
+  void (**ptr_0)(TagClass *, int, int, void *, void *, int, int); // [esp+18h] [ebp-28h]
   unsigned int i; // [esp+1Ch] [ebp-24h]
   unsigned int v17[4]; // [esp+30h] [ebp-10h] BYREF
   int *v18; // [esp+48h] [ebp+8h]
@@ -4762,34 +4762,34 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
     && v6 > 0 )
   {
     result = (int)this->q020; /*0x5ce3e7*/
-    int *vtable2; // ebp
-    vtable2 = (int *)this->M8; /*0x5ce3ea*/
-    char *vtable1; // ebx
-    vtable1 = (char *)this->M4; /*0x5ce3ed*/
+    int *ptr_4; // ebp
+    ptr_4 = (int *)this->M8; /*0x5ce3ea*/
+    char *ptr_0; // ebx
+    ptr_0 = (char *)this->M4; /*0x5ce3ed*/
     size_t v9 = 0; // edi /*0x5ce3f0*/
-    v18 = vtable2; /*0x5ce3f4*/
+    v18 = ptr_4; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
       if ( (unsigned __int16)WideString::GetChar((const wchar_t **)&this->?, v9) == 10 ) /*0x5ce40f*/
       {
-        vtable1 = (char *)this->M4; /*0x5ce414*/
-        vtable2 = (int *)((char *)vtable2 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
+        ptr_0 = (char *)this->M4; /*0x5ce414*/
+        ptr_4 = (int *)((char *)ptr_4 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
         v14 = this->attachedTag->?; /*0x5ce420*/
-        v18 = vtable2; /*0x5ce426*/
+        v18 = ptr_4; /*0x5ce426*/
         result = (*(int (**)(int))(*(unsigned int *)a2 + 128))(a2); /*0x5ce42a*/
-        if ( (int)v14 + (int)vtable2 >= result ) /*0x5ce438*/
+        if ( (int)v14 + (int)ptr_4 >= result ) /*0x5ce438*/
           return result; /*0x5ce438*/
       }
       else
       {
-        vtable0 = (void (**)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
+        ptr_0 = (void (**)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
         Char = WideString::GetChar((const wchar_t **)&this->M52, v9); /*0x5ce45b*/
-        vtable0[4](this->attachedTag, a2, Char, vtable1, vtable2, 2, 1); /*0x5ce461*/
+        ptr_0[4](this->attachedTag, a2, Char, ptr_0, ptr_4, 2, 1); /*0x5ce461*/
         v10 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce46b*/
         v11 = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce46d*/
         v12 = v10[1](this->attachedTag, v11); /*0x5ce476*/
-        vtable2 = v18; /*0x5ce479*/
-        vtable1 += v12; /*0x5ce47d*/
+        ptr_4 = v18; /*0x5ce479*/
+        ptr_0 += v12; /*0x5ce47d*/
       }
       result = i; /*0x5ce47f*/
     }

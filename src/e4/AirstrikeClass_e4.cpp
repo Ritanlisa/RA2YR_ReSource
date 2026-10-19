@@ -206,14 +206,14 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
 {
 
   int result; // eax
-  result = *(&this->vtable33); /*0x41dc80*/
+  result = *(&this->ptr_33); /*0x41dc80*/
   int v3 = 0; // edi /*0x41dc8c*/
   if ( result == (int)(aP1) ) /*0x41dc90*/
   {
-    *(&this->vtable33) = aP1->u32_5D8; /*0x41dc98*/
+    *(&this->ptr_33) = aP1->u32_5D8; /*0x41dc98*/
     aP1->u32_5D8 = 0; /*0x41dc9b*/
-    result = *(&this->vtable22) - 1; /*0x41dca4*/
-    *(&this->vtable22) = result; /*0x41dca5*/
+    result = *(&this->ptr_22) - 1; /*0x41dca4*/
+    *(&this->ptr_22) = result; /*0x41dca5*/
     aP1->u32_294 = 0; /*0x41dca8*/
   }
   else if ( result ) /*0x41dcb2*/
@@ -225,7 +225,7 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
         result->u32_5D8 = aP1->u32_5D8; /*0x41dcc4*/
         aP1->u32_5D8 = 0; /*0x41dcca*/
         result = 0; /*0x41dcd3*/
-        --*(&this->vtable22); /*0x41dcd6*/
+        --*(&this->ptr_22); /*0x41dcd6*/
         aP1->u32_294 = 0; /*0x41dcd9*/
       }
       else
@@ -236,11 +236,11 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
     }
     while ( v3 <= 100 && result ); /*0x41dceb*/
   }
-  if ( *(&this->vtable22) <= 0 ) /*0x41dcf0*/
+  if ( *(&this->ptr_22) <= 0 ) /*0x41dcf0*/
   {
     dword_A8ED84 = dword_A8ED84; /*0x41dcf2*/
     this->AirstrikeClass_field_3C = 0; /*0x41dcf8*/
-    *(&this->vtable26) = (int)dword_A8ED84; /*0x41dcfb*/
+    *(&this->ptr_26) = (int)dword_A8ED84; /*0x41dcfb*/
     this->AirstrikeClass_field_3D = 0; /*0x41dcfe*/
   }
   return result; /*0x41dd01*/

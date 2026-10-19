@@ -241,7 +241,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       v10 = this->u32_4; /*0x72464f*/
       this->u32_10 = v9 + 1; /*0x724655*/
       *(unsigned int *)(v10 + 4 * v9) = v6; /*0x724658*/
-      result = v4->vtable3; /*0x72465e*/
+      result = v4->ptr_8; /*0x72465e*/
       if ( v4[1] + 1 <= result ) /*0x724664*/
       {
 LABEL_19:
@@ -254,7 +254,7 @@ LABEL_19:
       }
       if ( result ) /*0x72466c*/
       {
-        a2 = v4->vtable3; /*0x72467c*/
+        a2 = v4->ptr_8; /*0x72467c*/
         if ( result < 0 ) /*0x724680*/
           goto LABEL_20; /*0x724680*/
       }
@@ -268,14 +268,14 @@ LABEL_19:
       if ( result ) /*0x7246a1*/
       {
         Array::ForEach((int *)result, 8, v11, (int (*)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
-        for ( i = 0; i < v4->vtable2; *(unsigned int *)(v12 + 8 * i - 4) = *(unsigned int *)&v14[8 * i - 4] ) /*0x7246b8*/
+        for ( i = 0; i < v4->ptr_4; *(unsigned int *)(v12 + 8 * i - 4) = *(unsigned int *)&v14[8 * i - 4] ) /*0x7246b8*/
         {
           v14 = (char *)*v4; /*0x7246ba*/
           ++i; /*0x7246bc*/
           *(unsigned int *)(v12 + 8 * i - 8) = *(unsigned int *)(*v4 + 8 * i - 8); /*0x7246c1*/
         }
         __3_YAXPAX_Z((void *)*v4); /*0x7246d7*/
-        v15 = a2 + v4->vtable3; /*0x7246e6*/
+        v15 = a2 + v4->ptr_8; /*0x7246e6*/
         *v4 = v12; /*0x7246e8*/
         v4->ptr_3 = v15; /*0x7246ea*/
         v4->uniqueId = 0; /*0x7246ed*/

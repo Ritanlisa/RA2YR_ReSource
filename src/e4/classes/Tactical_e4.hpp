@@ -18,11 +18,11 @@ struct BuildingTypeClass;  // fix_fwd_type_supply
 struct ScenarioClass;  // fix_fwd_type_supply
 struct MouseClass;  // fix_fwd_type_supply
 struct Tactical {
-    char vtable1[2];  // 0x0
+    char ptr_0[2];  // 0x0
     unsigned char Tactical_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     char __pad_10[32];  // 0x10
     int Tactical_field_0x30;  // 0x30
     unsigned int q034;  // 0x34

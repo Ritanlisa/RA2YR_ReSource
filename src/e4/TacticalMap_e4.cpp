@@ -392,9 +392,9 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           unsigned int v36[4]; // [esp+60h] [ebp-10h] BYREF
           v10 = (int *)(ClipRectIntersection(v36, v34, &v30, 0, 0)); /*0x6d2c40*/
           v30 = *v10; /*0x6d2c49*/
-          v31 = v10->vtable2; /*0x6d2c50*/
-          v32 = v10->vtable3; /*0x6d2c57*/
-          v33 = v10->vtable4; /*0x6d2c64*/
+          v31 = v10->ptr_4; /*0x6d2c50*/
+          v32 = v10->ptr_8; /*0x6d2c57*/
+          v33 = v10->ptr_C; /*0x6d2c64*/
           int *v11; // ecx
           v11 = (int *)((char *)g_CraterPool + v7); /*0x6d2c68*/
           *v11 = v30; /*0x6d2c6b*/
@@ -444,7 +444,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
       int *Coords; // eax
       Coords = CellClass::GetCoords(*v18, &v30); /*0x6d2d34*/
       v25 = *Coords; /*0x6d2d3b*/
-      v26 = Coords->vtable2; /*0x6d2d47*/
+      v26 = Coords->ptr_4; /*0x6d2d47*/
       int v27; // [esp+1Ch] [ebp-54h]
       v27 = 0; /*0x6d2d59*/
       int *v20; // eax

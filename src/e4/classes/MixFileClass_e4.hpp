@@ -9,7 +9,7 @@ class Bootstrap;  // G42.36 fwd supply
 struct MixHeaderData;  // fix_fwd_type_supply
 
 struct MixFileClass {
-    void* vtable1;  // 0x0
+    void* ptr_0;  // 0x0
     void* Previous;  // 0x4
     bool Blowfish;  // 0x8
     bool Encryption;  // 0x9

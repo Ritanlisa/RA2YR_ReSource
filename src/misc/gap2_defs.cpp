@@ -255,7 +255,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
   CellClass *v42; // eax
   int v43; // ecx
   ObjectClass *v44; // ecx
-  int (**vtable0)(int, void *, int, int, unsigned int, int); // edi
+  int (**ptr_0)(int, void *, int, int, unsigned int, int); // edi
   void *v46; // eax
   CellClass *v47; // eax
   int v48; // ecx
@@ -499,11 +499,11 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
   *(unsigned short *)&v97[2] = this->q028 / 256; /*0x515540*/
   *(unsigned int *)v95 = *(unsigned int *)v97; /*0x515549*/
   v44 = (ObjectClass *)this->m_State; /*0x51554d*/
-  vtable0 = (int (**)(int, void *, int, int, unsigned int, int))v44->ptr_0; /*0x515550*/
+  ptr_0 = (int (**)(int, void *, int, int, unsigned int, int))v44->ptr_0; /*0x515550*/
   LandHeight = ObjectClass::GetLandHeight(v44); /*0x51555b*/
   v91 = *(unsigned int *)v96; /*0x515560*/
   v46 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v95); /*0x515567*/
-  *(unsigned int *)v96 = vtable0[107](this->m_State, v46, v91, LandHeight, 0, 1); /*0x515579*/
+  *(unsigned int *)v96 = ptr_0[107](this->m_State, v46, v91, LandHeight, 0, 1); /*0x515579*/
   switch ( *(unsigned int *)v96 ) /*0x515583*/
   {
     case 0: /*0x515583*/
@@ -1357,11 +1357,11 @@ void Movement::UpdateLocomotion(int16_t *a2) {
   double v5; // [esp+18h] [ebp-10h]
   double v6; // [esp+20h] [ebp-8h]
 
-  v3 = Math::Sqrt(*this * *this + this->vtable2 * this->vtable2); /*0x5b2a57*/
-  v4 = Math::CalcAngle(this->vtable3, v3); /*0x5b2a72*/
+  v3 = Math::Sqrt(*this * *this + this->ptr_4 * this->ptr_4); /*0x5b2a57*/
+  v4 = Math::CalcAngle(this->ptr_8, v3); /*0x5b2a72*/
   v5 = (double)((int16_t)Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427) - 0x3FFF) /*0x5b2aa2*/
      * -0.00009587672516830327;
-  v6 = Math::Sqrt(this->vtable3 * this->vtable3 + *this * *this + this->vtable2 * this->vtable2); /*0x5b2acc*/
+  v6 = Math::Sqrt(this->ptr_8 * this->ptr_8 + *this * *this + this->ptr_4 * this->ptr_4); /*0x5b2acc*/
   if ( v5 != 0.0 ) /*0x5b2ae2*/
   {
     *this = *this / Math::ArcTan2(v5); /*0x5b2af7*/
@@ -2648,7 +2648,7 @@ int RulesClass::LoadFromINI() {
       q01C->abstractFlags = BuildingTypeClassPrerequisites->CapacityIncrement; /*0x66e7b0*/
       q01C->nextArrayIndex = *BuildingTypeClassPrerequisites->FLH.VectorClass; /*0x66e7b6*/
       /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66e7bf) */
-      if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66e7cf*/
+      if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66e7cf*/
         delete[] (*(void **)&v332.Items); /*0x66e7d2*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_374); /*0x66e7e8*/
       v91 = LoadBuildingTypeClassPrerequisites( /*0x66e825*/
@@ -2670,7 +2670,7 @@ int RulesClass::LoadFromINI() {
       v92->abstractFlags = v91->CapacityIncrement; /*0x66e844*/
       v92->nextArrayIndex = *v91->FLH.VectorClass; /*0x66e84a*/
       /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66e853) */
-      if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66e863*/
+      if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66e863*/
         delete[] (*(void **)&v332.Items); /*0x66e866*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_390); /*0x66e87c*/
       v93 = LoadBuildingTypeClassPrerequisites( /*0x66e8b8*/
@@ -2692,7 +2692,7 @@ int RulesClass::LoadFromINI() {
       v94->abstractFlags = v93->CapacityIncrement; /*0x66e8d7*/
       v94->nextArrayIndex = *v93->FLH.VectorClass; /*0x66e8dd*/
       /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66e8e6) */
-      if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66e8f6*/
+      if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66e8f6*/
         delete[] (*(void **)&v332.Items); /*0x66e8f9*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3AC); /*0x66e90f*/
       v95 = LoadBuildingTypeClassPrerequisites( /*0x66e94c*/
@@ -2714,7 +2714,7 @@ int RulesClass::LoadFromINI() {
       v96->abstractFlags = v95->CapacityIncrement; /*0x66e96b*/
       v96->nextArrayIndex = *v95->FLH.VectorClass; /*0x66e971*/
       /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66e97a) */
-      if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66e98a*/
+      if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66e98a*/
         delete[] (*(void **)&v332.Items); /*0x66e98d*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3C8); /*0x66e9a3*/
       v97 = LoadBuildingTypeClassPrerequisites( /*0x66e9df*/
@@ -2736,7 +2736,7 @@ int RulesClass::LoadFromINI() {
       v98->abstractFlags = v97->CapacityIncrement; /*0x66e9fe*/
       v98->nextArrayIndex = *v97->FLH.VectorClass; /*0x66ea04*/
       /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66ea0d) */
-      if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66ea1d*/
+      if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66ea1d*/
         delete[] (*(void **)&v332.Items); /*0x66ea20*/
       IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3E4); /*0x66ea36*/
       v99 = LoadBuildingTypeClassPrerequisites( /*0x66ea73*/
@@ -2758,7 +2758,7 @@ int RulesClass::LoadFromINI() {
       v100->abstractFlags = v99->CapacityIncrement; /*0x66ea92*/
       v100->nextArrayIndex = *v99->FLH.VectorClass; /*0x66ea98*/
       /* X11: vtable install elided (implicit via VectorClass_int virtuals 0x66eaa1) */
-      if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66eab1*/
+      if ( *(unsigned int *)&v332.Items && v332.ptr_C[1] ) /*0x66eab1*/
         delete[] (*(void **)&v332.Items); /*0x66eab4*/
       v101 = *&_ESI->u32_550; /*0x66eac2*/
       v331[1] = *&_ESI->u32_554; /*0x66eace*/
@@ -3439,7 +3439,7 @@ int RulesClass::LoadFromINI() {
                          (int)&v332,
                          g_INI_Key_General,
                          aTeamdelays,
-                         (void **)v329.vtable0,
+                         (void **)v329.ptr_0,
                          v329.Items,
                          v329.Capacity,
                          *(int16_t *)&v329.IsInitialized,
@@ -3454,7 +3454,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAihatedelays,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3490,7 +3490,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aFillearliestte,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3505,7 +3505,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aMinimumaidefen,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3520,7 +3520,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aMaximumaidefen,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3535,7 +3535,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aTotalaiteamcap,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3580,7 +3580,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAlliedbasedefe,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3595,7 +3595,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aSovietbasedefe,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3610,7 +3610,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aThirdbasedefen,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3625,7 +3625,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAipickwalldefe,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3680,7 +3680,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aDisableddisgui,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3695,7 +3695,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiautodeployfr,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3756,7 +3756,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAisuperdefense,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3782,7 +3782,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAicapturenorma,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3797,7 +3797,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAicapturewound,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3812,7 +3812,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAicapturelowpo,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3827,7 +3827,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAicapturelowmo,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3852,7 +3852,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aMultiplayeraic,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3867,7 +3867,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAivirtualpurif,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3882,7 +3882,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAislaveminernu,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3897,7 +3897,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aHarvestersperr,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3912,7 +3912,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiextrarefiner,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3935,7 +3935,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAmerparadropnu,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3958,7 +3958,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAllyparadropnu,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -3981,7 +3981,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aSovparadropnum,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4004,7 +4004,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aYuriparadropnu,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4027,7 +4027,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannoncon,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4042,7 +4042,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonwar,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4057,7 +4057,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonpow,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4072,7 +4072,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannontec,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4087,7 +4087,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannoneng,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4102,7 +4102,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonthi,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4117,7 +4117,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonhar,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4132,7 +4132,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonmcv,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4147,7 +4147,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonapc,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4162,7 +4162,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonbas,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4177,7 +4177,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonplu,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4192,7 +4192,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannonhel,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4207,7 +4207,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aAiioncannontem,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4813,7 +4813,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aRadareventsupp,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4828,7 +4828,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aRadareventvisi,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -4843,7 +4843,7 @@ int RulesClass::LoadFromINI() {
                       (int)&v332,
                       g_INI_Key_General,
                       aRadareventdura,
-                      (void **)v329.vtable0,
+                      (void **)v329.ptr_0,
                       v329.Items,
                       v329.Capacity,
                       *(int16_t *)&v329.IsInitialized,
@@ -7937,9 +7937,9 @@ namespace gamemd {
 int SuperClass::SetFieldX() {
   int result; // eax
 
-  result = (int)this->vtable1; /*0x6ce270*/
-  if ( this->vtable1 ) /*0x6ce270*/
-    return (*(int (__stdcall **)(int))(result->vtable2)(result); /*0x6ce279*/
+  result = (int)this->ptr_0; /*0x6ce270*/
+  if ( this->ptr_0 ) /*0x6ce270*/
+    return (*(int (__stdcall **)(int))(result->ptr_4)(result); /*0x6ce279*/
   return result; /*0x6ce27c*/
 }
 }
@@ -7950,20 +7950,20 @@ void SuperClass::AdvanceCountdown() {
   char *SuperClass_field_0x8; // eax
   int v3; // edx
 
-  SuperClass_field_0x0 = this->vtable1; /*0x6ce281*/
-  if ( this->vtable1 != (void *)-1 ) /*0x6ce286*/
+  SuperClass_field_0x0 = this->ptr_0; /*0x6ce281*/
+  if ( this->ptr_0 != (void *)-1 ) /*0x6ce286*/
   {
-    SuperClass_field_0x8 = (char *)this->vtable3; /*0x6ce288*/
+    SuperClass_field_0x8 = (char *)this->ptr_8; /*0x6ce288*/
     v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (unsigned int)SuperClass_field_0x0; /*0x6ce296*/
     if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - (int)SuperClass_field_0x0 >= (int)SuperClass_field_0x8 ) /*0x6ce29a*/
     {
-      this->vtable3 = 0; /*0x6ce2ab*/
-      this->vtable1 = (void *)-1; /*0x6ce2ae*/
+      this->ptr_8 = 0; /*0x6ce2ab*/
+      this->ptr_0 = (void *)-1; /*0x6ce2ae*/
     }
     else
     {
-      this->vtable1 = (void *)-1; /*0x6ce29e*/
-      this->vtable3 = &SuperClass_field_0x8[-v3]; /*0x6ce2a4*/
+      this->ptr_0 = (void *)-1; /*0x6ce29e*/
+      this->ptr_8 = &SuperClass_field_0x8[-v3]; /*0x6ce2a4*/
     }
   }
 }
@@ -7973,10 +7973,10 @@ namespace gamemd {
 void* SuperClass::SetCurrentFrame() {
   wchar_t *result; // eax
 
-  if ( this->vtable1 == (void *)-1 ) /*0x6ce2c3*/
+  if ( this->ptr_0 == (void *)-1 ) /*0x6ce2c3*/
   {
     result = *(wchar_t **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6ce2c5*/
-    this->vtable1 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6ce2ca*/
+    this->ptr_0 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x6ce2ca*/
   }
   return result; /*0x6ce2cc*/
 }

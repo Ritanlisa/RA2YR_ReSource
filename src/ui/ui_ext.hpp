@@ -223,8 +223,8 @@ public:
     static int32_t  s_KeyMap[256];  // 0x00
 
 
-    void * vtable3;  // 0xC [X55 W3 supply (render vocab)]
-    void * vtable2;  // 0x8 [X55 W3 supply (render vocab)]
+    void * ptr_8;  // 0xC [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x8 [X55 W3 supply (render vocab)]
 };
 
 // ============================================================================
@@ -405,8 +405,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
 
 
-    void * vtable2;  // 0x8 [X55 W3 supply (render vocab)]
-    void * vtable4;  // 0x10 [X55 W3 supply (render vocab)]
+    void * ptr_4;  // 0x8 [X55 W3 supply (render vocab)]
+    void * ptr_C;  // 0x10 [X55 W3 supply (render vocab)]
 };
 #endif  // GAMEMD_E4_CampaignScore
 // 2 methods in IDA
@@ -538,7 +538,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_1A8;  // X10 supply (member_types)
     unsigned int u32_30;  // X10 supply (member_lookup)
     unsigned int u32_B8;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class CheckSum
@@ -659,7 +659,7 @@ public:
 
     unsigned int u32_20;  // X10 supply (member_lookup)
     unsigned int u32_28;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 // CSP: CreditsPower matched via T1
@@ -784,7 +784,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_A8;  // X10 supply (member_lookup)
     unsigned int u32_B0;  // X10 supply (member_lookup)
     unsigned int u32_C0;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // 1 methods in IDA
@@ -1063,7 +1063,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_C8;  // X10 supply (member_lookup)
     unsigned int u32_CC;  // X10 supply (member_lookup)
     unsigned int u32_D0;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: ListNode matched via T1
@@ -1155,7 +1155,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_48;  // X10 supply (member_lookup)
     unsigned int u32_4C;  // X10 supply (member_lookup)
     unsigned int u32_50;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: TabCameoListClass matched via T1

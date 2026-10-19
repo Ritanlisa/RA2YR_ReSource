@@ -145,11 +145,11 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   while ( (int)v5 < (int)dword_817A78 ); /*0x415bab*/
   LOWORD(v22) = (unsigned __int16)dword_817A58[v19] << 13; /*0x415bc3*/
   int v13; // edx
-  v13 = (int)(this->vtable2); /*0x415bc8*/
+  v13 = (int)(this->ptr_4); /*0x415bc8*/
   unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
   v21[0] = (unsigned int)(this->focus); /*0x415bcb*/
   int v14; // eax
-  v14 = (int)(this->vtable3); /*0x415bd3*/
+  v14 = (int)(this->ptr_8); /*0x415bd3*/
   v21[1] = v13; /*0x415bd6*/
   v21[2] = v14; /*0x415bda*/
   if ( !(*(unsigned __int8 (**)(int *, unsigned int *, unsigned int))(*a2 + 216))( /*0x415bf3*/
@@ -231,7 +231,7 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
   int v7; // ebx
   Object *v8; // eax
   unsigned int *v9; // eax
-  int (**vtable0)(AircraftClass *, int **, unsigned int, int *); // eax
+  int (**ptr_0)(AircraftClass *, int **, unsigned int, int *); // eax
   int v11; // ebp
   int v12; // ecx
   int v13; // edx
@@ -273,9 +273,9 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
     v9 = (unsigned int *)(*(int (**)(int *, char *))(*v4 + 72))(v4, v18); /*0x417d89*/
     (*((unsigned short *)&(a3_2))) = *v9 / 256; /*0x417d9e*/
     (*(((unsigned short *)&(a3_2)) + 1)) = v9[1] / 256; /*0x417db7*/
-    vtable0 = (int (**)(AircraftClass *, int **, unsigned int, int *))aP1->ptr_0; /*0x417dc0*/
+    ptr_0 = (int (**)(AircraftClass *, int **, unsigned int, int *))aP1->ptr_0; /*0x417dc0*/
     a3_2 = a3_2; /*0x417dc4*/
-    v7 = vtable0[28](aP1, &a3_2, 0, v3); /*0x417dcb*/
+    v7 = ptr_0[28](aP1, &a3_2, 0, v3); /*0x417dcb*/
   }
   LABEL_18:
   if ( v7 == 4 ) /*0x417dd0*/
@@ -555,7 +555,7 @@ int AircraftClass::RevealSight(int a2, int a3)
   HouseClass *v8; // edx
   int result; // eax
   int v10; // ebx
-  int (**vtable0)(AircraftClass *); // edx
+  int (**ptr_0)(AircraftClass *); // edx
   int v12; // eax
   int v13; // ecx
   int v14; // edx
@@ -575,8 +575,8 @@ int AircraftClass::RevealSight(int a2, int a3)
     owner = this->focus; /*0x41ae44*/
     v19 = this->focus; /*0x41ae4e*/
     MapClass::RevealArea1((MapClass *)&DataGlobal_87F7E8, &v17, v4, owner, a2, a3, 0, 1, 0); /*0x41ae5e*/
-    v6 = this->vtable2; /*0x41ae65*/
-    v7 = this->vtable3; /*0x41ae68*/
+    v6 = this->ptr_4; /*0x41ae65*/
+    v7 = this->ptr_8; /*0x41ae68*/
     v17 = this->focus; /*0x41ae6d*/
     v18 = v6; /*0x41ae77*/
     v8 = this->focus; /*0x41ae7b*/
@@ -585,15 +585,15 @@ int AircraftClass::RevealSight(int a2, int a3)
   }
   if ( v4 ) /*0x41ae19*/
     goto LABEL_4; /*0x41ae19*/
-  result = (int)dword_A8B230[0].vtable0; /*0x41aeaa*/
-  if ( ((int)dword_A8B230[0].vtable0 & 0x1000) != 0 ) /*0x41aeaf*/
+  result = (int)dword_A8B230[0].ptr_0; /*0x41aeaa*/
+  if ( ((int)dword_A8B230[0].ptr_0 & 0x1000) != 0 ) /*0x41aeaf*/
   {
     v10 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 244); /*0x41aec5*/
     v17 = this->focus; /*0x41aecd*/
     v18 = this->focus; /*0x41aed6*/
-    vtable0 = (int (**)(AircraftClass *))this->FootClass; /*0x41aeda*/
+    ptr_0 = (int (**)(AircraftClass *))this->FootClass; /*0x41aeda*/
     v19 = this->focus; /*0x41aedf*/
-    v12 = vtable0[114](this); /*0x41aee3*/
+    v12 = ptr_0[114](this); /*0x41aee3*/
     MapClass::RevealArea1( /*0x41af1a*/
       (MapClass *)&DataGlobal_87F7E8,
       &v17,
@@ -604,8 +604,8 @@ int AircraftClass::RevealSight(int a2, int a3)
       1,
       v12 < *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1972) / 2,
       0);
-    v13 = this->vtable2; /*0x41af21*/
-    v14 = this->vtable3; /*0x41af24*/
+    v13 = this->ptr_4; /*0x41af21*/
+    v14 = this->ptr_8; /*0x41af24*/
     v17 = this->focus; /*0x41af27*/
     v15 = (int (**)(AircraftClass *))this->FootClass; /*0x41af2b*/
     v18 = v13; /*0x41af2d*/
@@ -641,7 +641,7 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
   int v10; // edi
   int v11; // ebp
   int v12; // edi
-  int vtable2; // eax
+  int ptr_4; // eax
 
   v2 = a0; /*0x41b432*/
   p_vtable1 = &a0->ptr_4; /*0x41b43a*/
@@ -691,12 +691,12 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
     }
     (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 8))(v10); /*0x41b52e*/
     v12 = (*((int (__stdcall **)(void **))*p_vtable1 + 4))(p_vtable1); /*0x41b53d*/
-    vtable2 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x41b53f*/
+    ptr_4 = (int)g_BuildingLoadQueue_Array.ptr_8; /*0x41b53f*/
     if ( (int)g_BuildingLoadQueue_Array.ptr_4 + 1 <= (int)g_BuildingLoadQueue_Array.ptr_8 ) /*0x41b548*/
       goto LABEL_18; /*0x41b548*/
     if ( !g_BuildingLoadQueue_Array.ptr_8 ) /*0x41b54c*/
-      vtable2 = 10; /*0x41b54e*/
-    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x41b559*/
+      ptr_4 = 10; /*0x41b54e*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, ptr_4) ) /*0x41b559*/
     {
       LABEL_18:
       *((unsigned int *)g_BuildingLoadQueue_Array.ptr_0 + 2 * (int)g_BuildingLoadQueue_Array.ptr_4) = v12; /*0x41b56d*/

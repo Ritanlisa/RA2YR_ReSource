@@ -21,12 +21,12 @@ unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
     if ( a3 ) /*0x7aecf6*/
     {
       this->Items = (void *)a3; /*0x7aecf8*/
-      return &this->vtable0; /*0x7aecfe*/
+      return &this->u32_0; /*0x7aecfe*/
     }
     this->Items = __2_YAPAXI_Z(4 * a2); /*0x7aed0d*/
     this->IsAllocated = 1; /*0x7aed10*/
   }
-  return &this->vtable0; /*0x7aecfd*/
+  return &this->u32_0; /*0x7aecfd*/
 
 }
 } // namespace gamemd

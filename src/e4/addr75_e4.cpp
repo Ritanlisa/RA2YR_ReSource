@@ -1962,23 +1962,23 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
 {
 
   int v3; // ebx
-  void *vtable2; // eax
-  void *vtable1; // edx
-  void *vtable3; // ecx
+  void *ptr_4; // eax
+  void *ptr_0; // edx
+  void *ptr_8; // ecx
   int v7; // edx
   unsigned int v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
   v3 = 0; /*0x758ae2*/
   if ( !(*(int (**)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  vtable2 = this->M8; /*0x758aed*/
-  vtable1 = this->M4; /*0x758af0*/
+  ptr_4 = this->M8; /*0x758aed*/
+  ptr_0 = this->M4; /*0x758af0*/
   v9[0] = this->AbstractClass; /*0x758af3*/
-  vtable3 = this->M12; /*0x758af7*/
-  v9[2] = vtable2; /*0x758afa*/
-  v9[1] = vtable1; /*0x758afe*/
+  ptr_8 = this->M12; /*0x758af7*/
+  v9[2] = ptr_4; /*0x758afa*/
+  v9[1] = ptr_0; /*0x758afe*/
   v7 = *a2; /*0x758b02*/
-  v9[3] = vtable3; /*0x758b08*/
+  v9[3] = ptr_8; /*0x758b08*/
   if ( (*(int (**)(int *, unsigned int *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
     || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->?, 768) != 768
     || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->?, (int)this->? << 8) != (int)this->? << 8 )
@@ -3082,7 +3082,7 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
     if ( *v14 < (double)*(float *)&dword_B2D5E0 ) /*0x75406e*/
       dword_B2D5E0 = *(unsigned int *)v14; /*0x754072*/
     if ( v14[1] < (double)*(float *)&dword_B2D5E4 ) /*0x754085*/
-      dword_B2D5E4 = v14->vtable2; /*0x75408a*/
+      dword_B2D5E4 = v14->ptr_4; /*0x75408a*/
     if ( *v14 > (double)*(float *)&stru_B2D93C.Buffer_field_0C ) /*0x75409d*/
       stru_B2D93C.Buffer_field_0C = *(int *)v14; /*0x7540a1*/
     if ( v14[1] > (double)*(float *)&stru_B2D93C.Buffer_field_10 ) /*0x7540b5*/

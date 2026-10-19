@@ -24,10 +24,10 @@ struct UnitTypeClass;  // fix_fwd_type_supply
 struct EBolt;  // fix_fwd_type_supply
 
 struct UnitClass {
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    void* ptr_0;  // 0x0
+    void* ptr_4;  // 0x4
+    void* ptr_8;  // 0x8
+    void* ptr_C;  // 0xC
     unsigned int uniqueId;  // 0x10
     void* abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18

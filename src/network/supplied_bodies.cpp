@@ -125,7 +125,7 @@ HRESULT __stdcall ConnectionClass::QueryInterface(const IID&, void**)
     (**PlayerIndex)(PlayerIndex, 1); /*0x48c670*/
   if ( (a2 & 1) != 0 ) /*0x48c677*/
     operator delete((this)); /*0x48c67a*/
-  return this->vtable1; /*0x48c684*/
+  return this->ptr_0; /*0x48c684*/
 }
 } // namespace gamemd
 
@@ -164,7 +164,7 @@ unsigned int * IPXConnClass::QueryInterface(char,int,int,int)
   ConnectionClass::dtor((ConnectionClass *)this); /*0x53f859*/
   if ( (a2 & 1) != 0 ) /*0x53f863*/
     operator delete((this)); /*0x53f866*/
-  return this->vtable1; /*0x53f870*/
+  return this->ptr_0; /*0x53f870*/
 }
 } // namespace gamemd
 
@@ -251,7 +251,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
     Debug::Log(); /*0x53febe*/
     dword_A8EA0C = dword_A8EA0C; /*0x53fec3*/
     (*((unsigned char *)&(dword_A8EA0C))) = this == (IPXGlobalConnClass *)dword_A8EA0C; /*0x53fed3*/
-    if ( (*(int (__thiscall **)(IPXGlobalConnClass *, int16_t *, int, int *, int, int, int))(*(unsigned int *)this->vtable1 /*0x53fee4*/
+    if ( (*(int (__thiscall **)(IPXGlobalConnClass *, int16_t *, int, int *, int, int, int))(*(unsigned int *)this->ptr_0 /*0x53fee4*/
                                                                                            + 36))(
            this,
            &IPXGlobalConnClass_field_0x24,
@@ -545,7 +545,7 @@ int32_t IPXManagerClass::getPlayerName(char a2)
   /* X11: vtable install elided (implicit via class virtuals 0x543109) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x54310f*/
     operator delete((this)); /*0x543112*/
-  return &this->vtable1; /*0x54311c*/
+  return &this->ptr_0; /*0x54311c*/
 }
 } // namespace gamemd
 
@@ -1737,7 +1737,7 @@ void ModemHost::InitDialog()
   wchar_t Format[1026]; // [esp+274h] [ebp-804h] BYREF
 
   v2 = (HWND *)this; /*0x5b82fa*/
-  *(unsigned int *)v59.vtable1 = this; /*0x5b8301*/
+  *(unsigned int *)v59.ptr_0 = this; /*0x5b8301*/
   Debug::Log(); /*0x5b8305*/
   if ( (unsigned char)(stru_82BA00.BuildingAnim[7]) == 1 ) /*0x5b8314*/
   {
@@ -1796,7 +1796,7 @@ void ModemHost::InitDialog()
     dword_A8B394 = dword_A8B3B4; /*0x5b854e*/
     SendMessageA(v10, 0x14Eu, dword_A8B3B4, 0); /*0x5b8553*/
     v5 = GetDlgItem; /*0x5b8555*/
-    v2 = *(HWND **)v59.vtable1; /*0x5b855b*/
+    v2 = *(HWND **)v59.ptr_0; /*0x5b855b*/
   }
   Debug::Log(); /*0x5b856b*/
   v21 = v5(*v2, 1639); /*0x5b857c*/
@@ -1815,7 +1815,7 @@ void ModemHost::InitDialog()
     }
     ListBoxItem = FindListBoxItem(v22, -1, dword_A8B3AC); /*0x5b85dc*/
     SendMessageA(v22, 0x14Eu, ListBoxItem, 0); /*0x5b85ea*/
-    v2 = *(HWND **)v59.vtable1; /*0x5b85ec*/
+    v2 = *(HWND **)v59.ptr_0; /*0x5b85ec*/
   }
   v27 = v5(*v2, 1641); /*0x5b85fb*/
   if ( v27 ) /*0x5b85ff*/
@@ -1851,7 +1851,7 @@ void ModemHost::InitDialog()
     | (*(uint16_t *)(*(unsigned int *)&g_RulesClass_Instance + 5256) << 16));
     SendMessageA(v30, 0x405u, 1u, v31); /*0x5b86e8*/
     SendMessageA(v30, 0x4ABu, 0, 250); /*0x5b86f7*/
-    v2 = *(HWND **)v59.vtable1; /*0x5b86f9*/
+    v2 = *(HWND **)v59.ptr_0; /*0x5b86f9*/
   }
   Debug::Log(); /*0x5b8708*/
   v32 = v5(*v2, 1362); /*0x5b8719*/
@@ -2308,7 +2308,7 @@ void ModemHost::StartGame()
   int v24; // esi
   int v25; // eax
   int v26; // ecx
-  void *vtable0; // edx
+  void *ptr_0; // edx
   wchar_t *v28; // [esp-10h] [ebp-224h]
   ObjectClass *v29; // [esp+0h] [ebp-214h]
   char v31[4]; // [esp+18h] [ebp-1FCh] BYREF
@@ -2470,9 +2470,9 @@ void ModemHost::StartGame()
       *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] = 0; /*0x5bb20c*/
       dword_A8B24C = 2; /*0x5bb212*/
       dword_A8E960[0] = v26; /*0x5bb21c*/
-      vtable0 = dword_A8B230[0].ptr_0; /*0x5bb222*/
-      (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].ptr_0 >> 8) & 0xFB; /*0x5bb229*/
-      dword_A8B230[0].ptr_0 = vtable0; /*0x5bb22c*/
+      ptr_0 = dword_A8B230[0].ptr_0; /*0x5bb222*/
+      (((unsigned char *)&(ptr_0))[1]) = ((uint16_t)dword_A8B230[0].ptr_0 >> 8) & 0xFB; /*0x5bb229*/
+      dword_A8B230[0].ptr_0 = ptr_0; /*0x5bb22c*/
       byte_A8B31C = 1; /*0x5bb22e*/
       nullsub_37(v29); /*0x5bb235*/
       Debug::Log(); /*0x5bb23f*/
@@ -2689,7 +2689,7 @@ namespace gamemd {
 void MultiplayerTeam::Constructor()
 {
   WideString::AssignFromPtr(this->__pad_004, a2); /*0x5d8c5b*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5d8c64*/
+  *(unsigned int *)this->ptr_0 = 0; /*0x5d8c64*/
   this->u32_8 = a3; /*0x5d8c6a*/
   return (wchar_t **)this; /*0x5d8c6f*/
 }
@@ -3213,7 +3213,7 @@ bool NullModemClass::initConnection()
   /* X11: vtable install elided (implicit via class virtuals 0x5ef12c) — binary-proven install, was 0 */
   this->u32_4C = -1; /*0x5ef135*/
   this->q050 = operator new(v6 + 11); /*0x5ef145*/
-  return this->vtable1; /*0x5ef14a*/
+  return this->ptr_0; /*0x5ef14a*/
 }
 } // namespace gamemd
 
@@ -4164,7 +4164,7 @@ LABEL_37:
         if ( v18[2] ) /*0x5f2601*/
         {
           Debug::Log(); /*0x5f2611*/
-          strcpy(&v45[2], *(const char **)&this->u32_34->vtable3); /*0x5f263e*/
+          strcpy(&v45[2], *(const char **)&this->u32_34->ptr_8); /*0x5f263e*/
           (*(void (**)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f2662*/
             g_ClipboardBuffer,
             v45,
@@ -4188,7 +4188,7 @@ LABEL_37:
       else if ( v18[3] ) /*0x5f26ea*/
       {
         Debug::Log(); /*0x5f26fa*/
-        strcpy(&v45[2], *(const char **)&this->u32_34->vtable4); /*0x5f2727*/
+        strcpy(&v45[2], *(const char **)&this->u32_34->ptr_C); /*0x5f2727*/
         (*(void (**)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f274b*/
           g_ClipboardBuffer,
           v45,

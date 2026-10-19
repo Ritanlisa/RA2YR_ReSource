@@ -533,7 +533,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     *&this->q334 = v23 + 1; /*0x5c161f*/
     *(unsigned int *)(v24 + 4 * v23) = (unsigned int)(v20); /*0x5c1622*/
   }
-  return &this->vtable1;
+  return &this->ptr_0;
 
   }
 }
@@ -883,7 +883,7 @@ int MPCooperative::InitSession()
   if ( dword_A8B8D8 <= 0 ) /*0x5c1d26*/
   {
 LABEL_10:
-    (*((void (**)(MPCooperative *))this->vtable1 + 4))(this); /*0x5c1d5d*/
+    (*((void (**)(MPCooperative *))this->ptr_0 + 4))(this); /*0x5c1d5d*/
   return -1; /*0x5c1d6f*/
   }
   while ( _strnicmp((const char *)(*(unsigned int *)(dword_A8B8CC + 4 * v2) + 88), String2, strlen(String2)) ) /*0x5c1d51*/
@@ -1638,7 +1638,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   House *v10; // ecx
   int j; // eax
   void *v12; // edx
-  int vtable2; // eax
+  int ptr_4; // eax
   char v15; // bl
   void *v16; // ecx
 
@@ -1666,21 +1666,21 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   }
   if ( v5 >= v8 ) /*0x5c2e37*/
   {
-    vtable2 = (int)dword_A8B230[127].ptr_8; /*0x5c2ea2*/
-    if ( *(unsigned char *)(vtable2 + a4) ) /*0x5c2ea8*/
+    ptr_4 = (int)dword_A8B230[127].ptr_8; /*0x5c2ea2*/
+    if ( *(unsigned char *)(ptr_4 + a4) ) /*0x5c2ea8*/
     {
       do /*0x5c2ebc*/
       {
-        if ( vtable2 >= v4->__pad_004 ) /*0x5c2eb3*/
+        if ( ptr_4 >= v4->__pad_004 ) /*0x5c2eb3*/
           break; /*0x5c2eb3*/
-        v15 = *(unsigned char *)(vtable2 + a4 + 1); /*0x5c2eb5*/
-        ++vtable2; /*0x5c2eb9*/
+        v15 = *(unsigned char *)(ptr_4 + a4 + 1); /*0x5c2eb5*/
+        ++ptr_4; /*0x5c2eb9*/
       }
       while ( v15 ); /*0x5c2ebc*/
     }
-    *(unsigned char *)(vtable2 + a4) = 1; /*0x5c2ec2*/
-    *(&dword_A8B230[124].uniqueId + vtable2) = a2; /*0x5c2ecc*/
-    v16 = *(void **)(v4->__pad_004 + 4 * vtable2); /*0x5c2ed8*/
+    *(unsigned char *)(ptr_4 + a4) = 1; /*0x5c2ec2*/
+    *(&dword_A8B230[124].uniqueId + ptr_4) = a2; /*0x5c2ecc*/
+    v16 = *(void **)(v4->__pad_004 + 4 * ptr_4); /*0x5c2ed8*/
     a1->MPCooperative_field_0x0 = v16; /*0x5c2ee0*/
     return &a1->MPCooperative_field_0x0; /*0x5c2edb*/
   }
@@ -1810,14 +1810,14 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   signed int v2; // ebp
   CampaignClass *MPCooperative_field_0x33C; // edx
   int *MPCooperative_field_0x40; // ecx
-  int vtable2; // edi
+  int ptr_4; // edi
   unsigned int *v7; // esi
   signed int v8; // eax
   int v9; // [esp+10h] [ebp-Ch] BYREF
   signed int v10; // [esp+14h] [ebp-8h]
   int v11; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = ReadPlayerCountMap(*(int *)&g_GameRulesOptions) - (unsigned int)dword_A8B230[127].vtable2; /*0x5c30db*/
+  v2 = ReadPlayerCountMap(*(int *)&g_GameRulesOptions) - (unsigned int)dword_A8B230[127].ptr_4; /*0x5c30db*/
   Debug::Log(); /*0x5c30e7*/
   if ( v2 <= 0 ) /*0x5c30f3*/
     return 0; /*0x5c30f8*/
@@ -1835,10 +1835,10 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
     v9 = 0; /*0x5c3159*/
   if ( v9 >= *(unsigned int *)(v11 + 56) ) /*0x5c3168*/
     return 0; /*0x5c316d*/
-  vtable2 = (int)dword_A8B230[127].vtable2; /*0x5c3179*/
-  if ( vtable2 < 8 ) /*0x5c3182*/
+  ptr_4 = (int)dword_A8B230[127].ptr_4; /*0x5c3179*/
+  if ( ptr_4 < 8 ) /*0x5c3182*/
   {
-    v7 = (unsigned int *)(4 * vtable2 + 11055740); /*0x5c3188*/
+    v7 = (unsigned int *)(4 * ptr_4 + 11055740); /*0x5c3188*/
     do /*0x5c320b*/
     {
       if ( v10 >= v2 ) /*0x5c3198*/
@@ -1865,7 +1865,7 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
         v10 = v8 + 1; /*0x5c31e7*/
       }
       ++v7; /*0x5c3201*/
-      ++vtable2; /*0x5c3204*/
+      ++ptr_4; /*0x5c3204*/
     }
     while ( (int)v7 < (int)&g_CampaignPlayerArray ); /*0x5c320b*/
   }
@@ -2328,7 +2328,7 @@ void MPCooperative::SetGameMode()
           break; /*0x5c409e*/
       }
       *(unsigned int *)&g_GameRulesOptions = i; /*0x5c40ab*/
-      dword_A8B230[130].vtable3 = (void *)i; /*0x5c40b3*/
+      dword_A8B230[130].ptr_8 = (void *)i; /*0x5c40b3*/
       LoadScenarioClassByIndex(i); /*0x5c40b9*/
     }
     GameUI = (HWND)Dialog::FindGameUI(); /*0x5c40be*/
@@ -2403,7 +2403,7 @@ AbstractClass * * MPCooperative::ProcessChat()
   {
     if ( dword_A8DA84 == 2 ) /*0x5c415e*/
       String::AssignWideToChar(v5, (char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c416c*/
-    (*((void (**)(MPCooperative *))this->vtable1 + 24))(this); /*0x5c4175*/
+    (*((void (**)(MPCooperative *))this->ptr_0 + 24))(this); /*0x5c4175*/
     LOBYTE(MPCooperative_field_0x40) = MPCooperative::ReadCoopSaveINI((char *)this->u32_40); /*0x5c417b*/
     if ( (unsigned char)MPCooperative_field_0x40 ) /*0x5c4182*/
     {
@@ -2805,7 +2805,7 @@ IPXInterfaceClass * * MPCooperative::InitializePlayers()
         v8->u32_77 = *(unsigned int *)(*((unsigned int *)this->u32_5C + v2) + 119); /*0x5c4dd6*/
         v8->u32_7B = *(unsigned int *)(*((unsigned int *)this->u32_5C + v2) + 123); /*0x5c4deb*/
         Network::GetAddress((Network *)(*((unsigned int *)this->u32_5C + v2) + 40), &v10, (int)v11, v9); /*0x5c4dfd*/
-        NetworkID::Assign(&v8->vtable6, &v10, (int)v11, v9[0]); /*0x5c4e14*/
+        NetworkID::Assign(&v8->ptr_6, &v10, (int)v11, v9[0]); /*0x5c4e14*/
         if ( dword_A8DA84 < dword_A8DA7C /*0x5c4e50*/
           || (byte_A8DA81 || !dword_A8DA7C)
           && dword_A8DA88 > 0
@@ -2893,7 +2893,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   this->MPCooperative_field_0x10 = a2->q010; /*0x5c4fa1*/
   this->MPCooperative_field_0x14 = a2->q014; /*0x5c4fa7*/
   /* X11: vtable install elided (X67 recv-slot, RHS vt_DynamicVectorClass) */  /*0x5c4faa*/
-  return &this->vtable1; /*0x5c4fb2*/
+  return &this->ptr_0; /*0x5c4fb2*/
 
 }
 }

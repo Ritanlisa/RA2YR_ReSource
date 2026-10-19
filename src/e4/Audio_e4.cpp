@@ -2243,7 +2243,7 @@ AbstractClass * * sub_6C6D00()
   char *v1; // ecx
   int v2; // ebx
   char *v3; // eax
-  char *vtable2; // esi
+  char *ptr_4; // esi
   void *v5; // ebp
   char v6; // dl
   unsigned int v7; // ecx
@@ -2265,17 +2265,17 @@ AbstractClass * * sub_6C6D00()
       if ( v2 < (int)g_SidebarButtonState.ptr_4 ) /*0x6c6d7a*/
       {
         v3 = (char *)__2_YAPAXI_Z(32776 * v2); /*0x6c6d88*/
-        vtable2 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6d8d*/
+        ptr_4 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6d8d*/
         v5 = v3; /*0x6c6d98*/
         if ( g_SidebarButtonState.ptr_8 ) /*0x6c6d9a*/
         {
           v6 = 8 * LOBYTE(g_SidebarButtonState.ptr_0); /*0x6c6dae*/
           v7 = (unsigned int)(32776 * (int)g_SidebarButtonState.ptr_0) >> 2; /*0x6c6db0*/
           qmemcpy(v3, g_SidebarButtonState.ptr_8, 4 * v7); /*0x6c6db3*/
-          qmemcpy(&v3[4 * v7], &vtable2[4 * v7], v6 & 3); /*0x6c6dba*/
-          vtable2 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6dbc*/
+          qmemcpy(&v3[4 * v7], &ptr_4[4 * v7], v6 & 3); /*0x6c6dba*/
+          ptr_4 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6dbc*/
         }
-        __3_YAXPAX_Z(vtable2); /*0x6c6dc4*/
+        __3_YAXPAX_Z(ptr_4); /*0x6c6dc4*/
         g_SidebarButtonState.ptr_8 = v5; /*0x6c6dcc*/
         g_SidebarButtonState.ptr_4 = (void *)v2; /*0x6c6dd2*/
       }
@@ -2288,14 +2288,14 @@ AbstractClass * * sub_6C6D00()
 namespace gamemd {
 AbstractClass * * sub_6C6DE0()
 {
-  int vtable0; // edx
-  char *vtable2; // ebx
+  int ptr_0; // edx
+  char *ptr_4; // ebx
   int v3; // ecx
   char *v4; // eax
   char *v5; // edi
   unsigned char v6[32776]; // [esp+14h] [ebp-8008h] BYREF
 
-  vtable0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6dea*/
+  ptr_0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6dea*/
   *(unsigned int *)v6 = 0; /*0x6c6df8*/
   *(unsigned int *)&v6[4] = 0; /*0x6c6dfc*/
   if ( g_SidebarButtonState.ptr_0 ) /*0x6c6e00*/
@@ -2303,30 +2303,30 @@ AbstractClass * * sub_6C6DE0()
     if ( (int)g_SidebarButtonState.ptr_0 > 0 ) /*0x6c6e06*/
     {
       Audio_Read_6C6B00((ObjectClass *)v6, (unsigned int *)g_SidebarButtonState.ptr_8); /*0x6c6e12*/
-      vtable0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6e17*/
+      ptr_0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6e17*/
     }
     LABEL_4:
-    vtable2 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6e1d*/
+    ptr_4 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6e1d*/
     while ( *(int *)&v6[4] < 1 || *(int *)v6 > 10 ) /*0x6c6e31*/
     {
       v3 = 0; /*0x6c6e37*/
-      if ( !vtable0 ) /*0x6c6e3b*/
+      if ( !ptr_0 ) /*0x6c6e3b*/
         return; /*0x6c6e3b*/
-      if ( vtable0 <= 0 ) /*0x6c6e41*/
-        v3 = vtable0 - 1; /*0x6c6e43*/
-      memcpy(&vtable2[32776 * v3], &vtable2[32776 * v3 + 32776], 32776 * vtable0 - 32776 * (v3 + 1)); /*0x6c6e6e*/
-      vtable0 = (int)g_SidebarButtonState.ptr_0 - 1; /*0x6c6e81*/
-      g_SidebarButtonState.ptr_0 = (void *)vtable0; /*0x6c6e82*/
-      if ( 3 * vtable0 <= (int)g_SidebarButtonState.ptr_4 ) /*0x6c6e8d*/
+      if ( ptr_0 <= 0 ) /*0x6c6e41*/
+        v3 = ptr_0 - 1; /*0x6c6e43*/
+      memcpy(&ptr_4[32776 * v3], &ptr_4[32776 * v3 + 32776], 32776 * ptr_0 - 32776 * (v3 + 1)); /*0x6c6e6e*/
+      ptr_0 = (int)g_SidebarButtonState.ptr_0 - 1; /*0x6c6e81*/
+      g_SidebarButtonState.ptr_0 = (void *)ptr_0; /*0x6c6e82*/
+      if ( 3 * ptr_0 <= (int)g_SidebarButtonState.ptr_4 ) /*0x6c6e8d*/
       {
         Audio_Read_6C8870(&g_SidebarButtonState); /*0x6c6e94*/
-        vtable0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6e99*/
+        ptr_0 = (int)g_SidebarButtonState.ptr_0; /*0x6c6e99*/
       }
-      if ( !vtable0 ) /*0x6c6ea1*/
+      if ( !ptr_0 ) /*0x6c6ea1*/
         return; /*0x6c6ea1*/
-      if ( vtable0 <= 0 ) /*0x6c6ea7*/
+      if ( ptr_0 <= 0 ) /*0x6c6ea7*/
         goto LABEL_4; /*0x6c6ea7*/
-      vtable2 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6ead*/
+      ptr_4 = (char *)g_SidebarButtonState.ptr_8; /*0x6c6ead*/
       *(unsigned int *)v6 = *(unsigned int *)g_SidebarButtonState.ptr_8; /*0x6c6eb5*/
       *(unsigned int *)&v6[4] = *((unsigned int *)g_SidebarButtonState.ptr_8 + 1); /*0x6c6ec2*/
       if ( *(int *)&v6[4] <= 0x8000 ) /*0x6c6ec6*/

@@ -190,17 +190,17 @@ void Vector::ReallocDynamic(int a2, void *a2_1)
 
   if ( a2 < 0 ) /*0x4d2e4c*/
     return 0; /*0x4d2e4c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->vtable3)); /*0x4d2e60*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + this->ptr_8)); /*0x4d2e60*/
   if ( !v3 ) /*0x4d2e67*/
     return 0; /*0x4d2ec0*/
-  for ( i = 0; i < this->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
+  for ( i = 0; i < this->ptr_4; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
   {
     v5 = 8 * i; /*0x4d2e79*/
     v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x4d2e82*/
     *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x4d2e9b*/
-  v7 = a2 + this->vtable3; /*0x4d2ea6*/
+  v7 = a2 + this->ptr_8; /*0x4d2ea6*/
   *(unsigned int *)this = v3; /*0x4d2ea8*/
   this->ptr_3 = v7; /*0x4d2eaa*/
   this->uniqueId = 0; /*0x4d2ead*/

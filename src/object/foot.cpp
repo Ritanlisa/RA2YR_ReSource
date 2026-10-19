@@ -161,7 +161,7 @@ bool FootClass::MovementAI()
   int v16; // eax
   int unknown538; // ebp
   FootClass *v18; // edi
-  int (__thiscall **vtable0)(FootClass *); // edx
+  int (__thiscall **ptr_0)(FootClass *); // edx
   int v20; // edi
   unsigned int v21; // eax
   int unknown540; // eax
@@ -395,10 +395,10 @@ bool FootClass::MovementAI()
       {
         AudioController::Stop((AudioController *)this->audioController7); /*0x4daa91*/
         v46 = this->location[0]; /*0x4daaa2*/
-        vtable0 = (int (__thiscall **)(FootClass *))this->ptr_0; /*0x4daaa6*/
+        ptr_0 = (int (__thiscall **)(FootClass *))this->ptr_0; /*0x4daaa6*/
         v47 = this->location[1]; /*0x4daaab*/
         v48 = this->location[2]; /*0x4daab2*/
-        v20 = vtable0[33](this) + 1268; /*0x4daac5*/
+        v20 = ptr_0[33](this) + 1268; /*0x4daac5*/
         v21 = Random::State(&Randomizer_Global); /*0x4daacb*/
         StartAudioControllerAt( /*0x4daae2*/
           *(unsigned int *)(*(unsigned int *)(v20 + 4) + 4 * (v21 % *(unsigned int *)(v20 + 16))),

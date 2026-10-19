@@ -202,7 +202,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_60;  // X10 supply (member_lookup)
     unsigned int u32_A;  // X10 supply (member_lookup)
     unsigned char u8_1D;  // X10 supply (member_lookup)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 };
 #endif  // G57w8 INIClass
 
@@ -263,7 +263,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (END) ===
 
     unsigned char __pad_041;  // X10 supply (csp_canon_members)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0;  // X10 supply (csp_canon_members)
 
 
     unsigned int __pad_0;  // 0x0 [X55 W3 supply (render vocab)]

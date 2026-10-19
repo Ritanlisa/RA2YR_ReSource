@@ -165,7 +165,7 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
              lpBuffer,
              aP2,
              &NumberOfBytesWritten,
-             (LPOVERLAPPED)this->vtable1 + 3));
+             (LPOVERLAPPED)this->ptr_0 + 3));
   if ( !result ) /*0x774c98*/
   {
     result = GetLastError(); /*0x774c9a*/
@@ -441,7 +441,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     }
     LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (**)(WinModemClass *, int, char *, int, int))(*(unsigned int *)this->vtable1 + 20))( /*0x7752e6*/
+    (*(void (**)(WinModemClass *, int, char *, int, int))(*(unsigned int *)this->ptr_0 + 20))( /*0x7752e6*/
       this,
       v11,
       Str,

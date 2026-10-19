@@ -73,10 +73,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int q00D; // 0xD  gB member supply
     unsigned int q05C; // 0x5C  gB member supply
     unsigned int q060; // 0x60  gB member supply
-    void* vtable2;  // 0x4 (ml truth)  gB vtable supply
+    void* ptr_4;  // 0x4 (ml truth)  gB vtable supply
     unsigned int q01A; // 0x1A (ml truth: q01A@0x1A)  gB member supply
-    void* vtable3;  // 0x8 (ml truth)  gB vtable supply
-    void* vtable4;  // 0xC (ml truth)  gB vtable supply
+    void* ptr_8;  // 0x8 (ml truth)  gB vtable supply
+    void* ptr_C;  // 0xC (ml truth)  gB vtable supply
 
     unsigned int abstractFlags;  // X10 supply (csp_canon_members)
     unsigned int nextArrayIndex;  // X10 supply (csp_canon_members)
@@ -87,7 +87,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_6828;  // X10 supply (member_lookup)
     char u8_3A28;  // X10 supply (member_lookup)
     void* uniqueId;  // X10 supply (csp_canon_members)
-    void* vtable1;  // X10 supply (csp_canon_members)
+    void* ptr_0_2;  // X10 supply (csp_canon_members)
 
 
     void * ptr_0;  // 0x0 [X55 W3 supply (render vocab)]

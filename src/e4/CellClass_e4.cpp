@@ -1394,7 +1394,7 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
   CellClass *v1; // ecx
   v1 = v1; /*0x57baa9*/
   unsigned int v4; // eax
-  v4 = *(int16_t *)aP0 + (aP0->vtable3 << 9); /*0x57bab5*/
+  v4 = *(int16_t *)aP0 + (aP0->ptr_8 << 9); /*0x57bab5*/
   int *v5; // eax
   if ( v4 >= 0x40000 || (v5 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v4)) == 0 ) /*0x57bacb*/
   {
@@ -1405,7 +1405,7 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
   result = v5[17]; /*0x57bad9*/
   if ( result >= 74 && result <= 82 || result >= 92 && result <= 95 || result == 100 ) /*0x57baf3*/
   {
-    int16_t v7 = aP0->vtable3; // dx /*0x57bafc*/
+    int16_t v7 = aP0->ptr_8; // dx /*0x57bafc*/
     (*((unsigned short *)&(aP0))) = *(unsigned short *)aP0; /*0x57bb00*/
     (*(((unsigned short *)&(aP0)) + 1)) = v7 - 1; /*0x57bb0b*/
     int v8; // eax
@@ -1444,7 +1444,7 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
   {
     int16_t v13; // dx
     v13 = *(unsigned short *)aP0 - 1; /*0x57bbfb*/
-    (*(((unsigned short *)&(aP0)) + 1)) = aP0->vtable3; /*0x57bbfd*/
+    (*(((unsigned short *)&(aP0)) + 1)) = aP0->ptr_8; /*0x57bbfd*/
     (*((unsigned short *)&(aP0))) = v13; /*0x57bc02*/
     int v14; // eax
     v14 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bc1e*/
@@ -1493,7 +1493,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
   CellClass *v1; // ecx
   v1 = v1; /*0x57ccf9*/
   unsigned int v4; // eax
-  v4 = *(int16_t *)aP0 + (aP0->vtable3 << 9); /*0x57cd05*/
+  v4 = *(int16_t *)aP0 + (aP0->ptr_8 << 9); /*0x57cd05*/
   int *v5; // eax
   if ( v4 >= 0x40000 || (v5 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v4)) == 0 ) /*0x57cd1b*/
   {
@@ -1504,7 +1504,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
   result = v5[17]; /*0x57cd29*/
   if ( result >= 205 && result <= 213 || result >= 223 && result <= 226 || result == 231 ) /*0x57cd4d*/
   {
-    int16_t v7 = aP0->vtable3; // dx /*0x57cd56*/
+    int16_t v7 = aP0->ptr_8; // dx /*0x57cd56*/
     (*((unsigned short *)&(aP0))) = *(unsigned short *)aP0; /*0x57cd5a*/
     (*(((unsigned short *)&(aP0)) + 1)) = v7 - 1; /*0x57cd65*/
     int v8; // eax
@@ -1543,7 +1543,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
   {
     int16_t v13; // dx
     v13 = *(unsigned short *)aP0 - 1; /*0x57ce67*/
-    (*(((unsigned short *)&(aP0)) + 1)) = aP0->vtable3; /*0x57ce69*/
+    (*(((unsigned short *)&(aP0)) + 1)) = aP0->ptr_8; /*0x57ce69*/
     (*((unsigned short *)&(aP0))) = v13; /*0x57ce6e*/
     int v14; // eax
     v14 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57ce8a*/

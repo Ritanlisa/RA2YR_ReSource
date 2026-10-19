@@ -290,97 +290,97 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   __asm { fld dword ptr [ebx+100h] } /*0x511ac3*/
   _EBX->SmartAI = v27; /*0x511ace*/
   __asm { fstp [esp+0F8h+var_F8]; double } /*0x511ad4*/
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aArmorinfantrym, v60); /*0x511add*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aArmorinfantrym, v60); /*0x511add*/
   __asm { fstp dword ptr [ebx+100h] } /*0x511ae2*/
   _EBX->armorInfantryMult_d = *(float *)&_RT1; /*0x511ae2*/
   __asm { fld dword ptr [ebx+104h] } /*0x511ae8*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aArmorunitsmult, v61); /*0x511afc*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aArmorunitsmult, v61); /*0x511afc*/
   __asm { fstp dword ptr [ebx+104h] } /*0x511b01*/
   _EBX->armorUnitsMult_d = *(float *)&_RT1; /*0x511b01*/
   __asm { fld dword ptr [ebx+108h] } /*0x511b07*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aArmoraircraftm, v62); /*0x511b1b*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aArmoraircraftm, v62); /*0x511b1b*/
   __asm { fstp dword ptr [ebx+108h] } /*0x511b20*/
   _EBX->armorAircraftMult_d = *(float *)&_RT1; /*0x511b20*/
   __asm { fld dword ptr [ebx+10Ch] } /*0x511b26*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aArmorbuildings, v63); /*0x511b3a*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aArmorbuildings, v63); /*0x511b3a*/
   __asm { fstp dword ptr [ebx+10Ch] } /*0x511b3f*/
   _EBX->armorBuildingsMult_d = *(float *)&_RT1; /*0x511b3f*/
   __asm { fld dword ptr [ebx+110h] } /*0x511b45*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aArmordefensesm, v64); /*0x511b59*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aArmordefensesm, v64); /*0x511b59*/
   __asm { fstp dword ptr [ebx+110h] } /*0x511b5e*/
   _EBX->armorDefensesMult_d = *(float *)&_RT1; /*0x511b5e*/
   __asm { fld dword ptr [ebx+114h] } /*0x511b64*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aCostinfantrymu, v65); /*0x511b78*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aCostinfantrymu, v65); /*0x511b78*/
   __asm { fstp dword ptr [ebx+114h] } /*0x511b7d*/
   _EBX->costInfantryMult_d = *(float *)&_RT1; /*0x511b7d*/
   __asm { fld dword ptr [ebx+118h] } /*0x511b83*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aCostunitsmult, v66); /*0x511b97*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aCostunitsmult, v66); /*0x511b97*/
   __asm { fstp dword ptr [ebx+118h] } /*0x511b9c*/
   _EBX->costUnitsMult_d = *(float *)&_RT1; /*0x511b9c*/
   __asm { fld dword ptr [ebx+11Ch] } /*0x511ba2*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aCostaircraftmu, v67); /*0x511bb6*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aCostaircraftmu, v67); /*0x511bb6*/
   __asm { fstp dword ptr [ebx+11Ch] } /*0x511bbb*/
   _EBX->costAircraftMult_d = *(float *)&_RT1; /*0x511bbb*/
   __asm { fld dword ptr [ebx+120h] } /*0x511bc1*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aCostbuildingsm, v68); /*0x511bd5*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aCostbuildingsm, v68); /*0x511bd5*/
   __asm { fstp dword ptr [ebx+120h] } /*0x511bda*/
   _EBX->costBuildingsMult_d = *(float *)&_RT1; /*0x511bda*/
   __asm { fld dword ptr [ebx+124h] } /*0x511be0*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aCostdefensesmu, v69); /*0x511bf4*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aCostdefensesmu, v69); /*0x511bf4*/
   __asm { fstp dword ptr [ebx+124h] } /*0x511bf9*/
   _EBX->costDefensesMult_d = *(float *)&_RT1; /*0x511bf9*/
   __asm { fld dword ptr [ebx+128h] } /*0x511bff*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aSpeedinfantrym, v70); /*0x511c13*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aSpeedinfantrym, v70); /*0x511c13*/
   __asm { fstp dword ptr [ebx+128h] } /*0x511c18*/
   _EBX->currentSpeed_infantry_mult_d = *(float *)&_RT1; /*0x511c18*/
   __asm { fld dword ptr [ebx+12Ch] } /*0x511c1e*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aSpeedunitsmult, v71); /*0x511c32*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aSpeedunitsmult, v71); /*0x511c32*/
   __asm { fstp dword ptr [ebx+12Ch] } /*0x511c37*/
   _EBX->currentSpeed_units_mult_d = *(float *)&_RT1; /*0x511c37*/
   __asm { fld dword ptr [ebx+130h] } /*0x511c3d*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aSpeedaircraftm, v72); /*0x511c51*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aSpeedaircraftm, v72); /*0x511c51*/
   __asm { fstp dword ptr [ebx+130h] } /*0x511c56*/
   _EBX->currentSpeed_aircraft_mult_d = *(float *)&_RT1; /*0x511c56*/
   __asm { fld dword ptr [ebx+134h] } /*0x511c5c*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aBuildtimeinfan, v73); /*0x511c70*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aBuildtimeinfan, v73); /*0x511c70*/
   __asm { fstp dword ptr [ebx+134h] } /*0x511c75*/
   _EBX->buildtimeInfantryMult_d = *(float *)&_RT1; /*0x511c75*/
   __asm { fld dword ptr [ebx+138h] } /*0x511c7b*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aBuildtimeunits, v74); /*0x511c8f*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aBuildtimeunits, v74); /*0x511c8f*/
   __asm { fstp dword ptr [ebx+138h] } /*0x511c94*/
   _EBX->buildtimeUnitsMult_d = *(float *)&_RT1; /*0x511c94*/
   __asm { fld dword ptr [ebx+13Ch] } /*0x511c9a*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aBuildtimeaircr, v75); /*0x511cae*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aBuildtimeaircr, v75); /*0x511cae*/
   __asm { fstp dword ptr [ebx+13Ch] } /*0x511cb3*/
   _EBX->buildtimeAircraftMult_d = *(float *)&_RT1; /*0x511cb3*/
   __asm { fld dword ptr [ebx+140h] } /*0x511cb9*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aBuildtimebuild, v76); /*0x511ccd*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aBuildtimebuild, v76); /*0x511ccd*/
   __asm { fstp dword ptr [ebx+140h] } /*0x511cd2*/
   _EBX->buildtimeBuildingsMult_d = *(float *)&_RT1; /*0x511cd2*/
   __asm { fld dword ptr [ebx+144h] } /*0x511cd8*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aBuildtimedefen, v77); /*0x511cec*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aBuildtimedefen, v77); /*0x511cec*/
   __asm { fstp dword ptr [ebx+144h] } /*0x511cf1*/
   _EBX->buildtimeDefensesMult_d = *(float *)&_RT1; /*0x511cf1*/
   __asm { fld dword ptr [ebx+148h] } /*0x511cf7*/
   __asm { fstp [esp+0F8h+var_F8]; double }
-  INIClass::ReadDouble_Overwrite(&v4->vtable1, (unsigned __int8 *)(_EBX + 36), aIncomemult, v78); /*0x511d0b*/
+  INIClass::ReadDouble_Overwrite(&v4->ptr_0, (unsigned __int8 *)(_EBX + 36), aIncomemult, v78); /*0x511d0b*/
   __asm { fstp dword ptr [ebx+148h] } /*0x511d10*/
   _EBX->incomeMult_d = *(float *)&_RT1; /*0x511d10*/
   if ( INIClass::GetString( /*0x511d2d*/
@@ -694,22 +694,22 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass_flat * a2)
     return &this->AbstractClass; /*0x51337a*/
   (*((void (**)(HouseTypeClass *))this->AbstractClass + 3))(this); /*0x51337e*/
   void *v3 = a2->u32_8; // eax /*0x513381*/
-  this->vtable3 = v3; /*0x513386*/
+  this->ptr_8 = v3; /*0x513386*/
   if ( !v3 ) /*0x513389*/
   {
-    this->vtable2 = 0; /*0x5133ca*/
+    this->ptr_4 = 0; /*0x5133ca*/
     (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5133d1*/
     return &this->AbstractClass; /*0x5133d5*/
   }
   void *v4; // eax
   v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513393*/
-  this->vtable2 = v4; /*0x51339b*/
+  this->ptr_4 = v4; /*0x51339b*/
   if ( !v4 ) /*0x5133a0*/
     return &this->AbstractClass; /*0x5133a0*/
-  void *vtable2 = this->vtable3; // ecx /*0x5133a2*/
+  void *ptr_4 = this->ptr_8; // ecx /*0x5133a2*/
   int v6 = 0; // eax /*0x5133a5*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x5133a9*/
-  if ( (int)vtable2 <= 0 ) /*0x5133ad*/
+  if ( (int)ptr_4 <= 0 ) /*0x5133ad*/
     return &this->AbstractClass; /*0x5133ad*/
   do /*0x5133c1*/
   {
@@ -1082,9 +1082,9 @@ namespace gamemd {
 unsigned int * HouseTypeClass::readStartUnit()
 {
 
-  this->vtable2 = 0; /*0x512964*/
-  this->vtable3 = 0; /*0x512967*/
-  LOBYTE(this->vtable4) = 1; /*0x51296a*/
+  this->ptr_4 = 0; /*0x512964*/
+  this->ptr_8 = 0; /*0x512967*/
+  LOBYTE(this->ptr_C) = 1; /*0x51296a*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x51296e*/
   this->abstractFlags = 10; /*0x512971*/
   this->uniqueId = 0; /*0x512978*/
@@ -1209,23 +1209,23 @@ unsigned int * HouseTypeClass::readStartInfantry(unsigned int * a2, void *a2_1)
   if ( this == (HouseTypeClass *)a2 ) /*0x512bda*/
     return &this->AbstractClass; /*0x512bda*/
   (*((void (**)(HouseTypeClass *))this->AbstractClass + 3))(this); /*0x512bde*/
-  void *v3 = a2->vtable3; // eax /*0x512be1*/
-  this->vtable3 = v3; /*0x512be6*/
+  void *v3 = a2->ptr_8; // eax /*0x512be1*/
+  this->ptr_8 = v3; /*0x512be6*/
   if ( !v3 ) /*0x512be9*/
   {
-    this->vtable2 = 0; /*0x512c2a*/
+    this->ptr_4 = 0; /*0x512c2a*/
     (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x512c31*/
     return &this->AbstractClass; /*0x512c35*/
   }
   void *v4; // eax
   v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x512bf3*/
-  this->vtable2 = v4; /*0x512bfb*/
+  this->ptr_4 = v4; /*0x512bfb*/
   if ( !v4 ) /*0x512c00*/
     return &this->AbstractClass; /*0x512c00*/
-  void *vtable2 = this->vtable3; // ecx /*0x512c02*/
+  void *ptr_4 = this->ptr_8; // ecx /*0x512c02*/
   int v6 = 0; // eax /*0x512c05*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x512c09*/
-  if ( (int)vtable2 <= 0 ) /*0x512c0d*/
+  if ( (int)ptr_4 <= 0 ) /*0x512c0d*/
     return &this->AbstractClass; /*0x512c0d*/
   do /*0x512c21*/
   {
@@ -1450,20 +1450,20 @@ namespace gamemd {
 unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
 {
 
-  this->vtable2 = 0; /*0x513569*/
-  this->vtable3 = (void *)a2; /*0x513570*/
-  LOBYTE(this->vtable4) = 1; /*0x513573*/
+  this->ptr_4 = 0; /*0x513569*/
+  this->ptr_8 = (void *)a2; /*0x513570*/
+  LOBYTE(this->ptr_C) = 1; /*0x513573*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513577*/
   /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x51357b*/
   if ( a2 ) /*0x513581*/
   {
     if ( a3 ) /*0x513589*/
     {
-      this->vtable2 = (void *)a3; /*0x51358b*/
+      this->ptr_4 = (void *)a3; /*0x51358b*/
     }
     else
     {
-      this->vtable2 = __2_YAPAXI_Z(4 * a2); /*0x51359c*/
+      this->ptr_4 = __2_YAPAXI_Z(4 * a2); /*0x51359c*/
       (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((1) & 0xFF) << 8); /*0x51359f*/
     }
   }
@@ -1528,17 +1528,17 @@ char HouseTypeClass::readPowerPlants(TypeList_flat * a2)
 {
 
 
-  void *vtable2 = this->vtable3; // ecx /*0x5136c3*/
-  if ( this->veteranUnits_d >= (int)vtable2 ) /*0x5136cb*/
+  void *ptr_4 = this->ptr_8; // ecx /*0x5136c3*/
+  if ( this->veteranUnits_d >= (int)ptr_4 ) /*0x5136cb*/
   {
-    if ( !BYTE1(this->veteranUnits_d) && vtable2 ) /*0x5136d6*/
+    if ( !BYTE1(this->veteranUnits_d) && ptr_4 ) /*0x5136d6*/
       return 0; /*0x5136d6*/
     int abstractFlags; // eax
     abstractFlags = this->abstractFlags; /*0x5136d8*/
     if ( abstractFlags <= 0 /*0x5136e8*/
       || !(*((unsigned __int8 (**)(HouseTypeClass *, int, unsigned int))this->AbstractClass + 2))(
             this,
-            (int)vtable2 + abstractFlags,
+            (int)ptr_4 + abstractFlags,
             0) )
     {
       return 0; /*0x5136ef*/
@@ -1546,9 +1546,9 @@ char HouseTypeClass::readPowerPlants(TypeList_flat * a2)
   }
   int uniqueId; // eax
   uniqueId = this->uniqueId; /*0x5136f5*/
-  unsigned int *vtable1 = this->vtable2; // edx /*0x5136f8*/
+  unsigned int *ptr_0 = this->ptr_4; // edx /*0x5136f8*/
   this->uniqueId = uniqueId + 1; /*0x5136fe*/
-  vtable1[uniqueId] = *a2; /*0x513708*/
+  ptr_0[uniqueId] = *a2; /*0x513708*/
   return 1; /*0x5136f1*/
 
 }
@@ -1578,40 +1578,40 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * a2)
 {
 
 
-  this->vtable2 = 0; /*0x5137dd*/
-  this->vtable3 = 0; /*0x5137e0*/
-  LOBYTE(this->vtable4) = 1; /*0x5137e3*/
+  this->ptr_4 = 0; /*0x5137dd*/
+  this->ptr_8 = 0; /*0x5137e0*/
+  LOBYTE(this->ptr_C) = 1; /*0x5137e3*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x5137e7*/
   /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x5137ea*/
   if ( this != (HouseTypeClass *)a2 ) /*0x5137f0*/
   {
     VectorClass::ClearAndFree4((int)this); /*0x5137f2*/
     void *v3 = a2->Capacity; // eax /*0x5137f8*/
-    this->vtable3 = v3; /*0x5137fd*/
+    this->ptr_8 = v3; /*0x5137fd*/
     if ( v3 ) /*0x513800*/
     {
       void *v4; // eax
       v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513806*/
-      this->vtable2 = v4; /*0x513810*/
+      this->ptr_4 = v4; /*0x513810*/
       if ( v4 ) /*0x513813*/
       {
-        void *vtable2 = this->vtable3; // ecx /*0x513815*/
+        void *ptr_4 = this->ptr_8; // ecx /*0x513815*/
         int v6 = 0; // eax /*0x513818*/
         BYTE1(this->u8_D) = 1; /*0x51381c*/
-        if ( (int)vtable2 > 0 ) /*0x513820*/
+        if ( (int)ptr_4 > 0 ) /*0x513820*/
         {
           do /*0x513834*/
           {
-            *((unsigned int *)this->vtable2 + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x51382b*/
+            *((unsigned int *)this->ptr_4 + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x51382b*/
             ++v6; /*0x513831*/
           }
-          while ( v6 < (int)this->vtable3 ); /*0x513834*/
+          while ( v6 < (int)this->ptr_8 ); /*0x513834*/
         }
       }
     }
     else
     {
-      this->vtable2 = 0; /*0x513838*/
+      this->ptr_4 = 0; /*0x513838*/
       BYTE1(this->u8_D) = 0; /*0x51383b*/
     }
   }
@@ -1629,40 +1629,40 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * a2)
 {
 
 
-  this->vtable2 = 0; /*0x51386d*/
-  this->vtable3 = 0; /*0x513870*/
-  LOBYTE(this->vtable4) = 1; /*0x513873*/
+  this->ptr_4 = 0; /*0x51386d*/
+  this->ptr_8 = 0; /*0x513870*/
+  LOBYTE(this->ptr_C) = 1; /*0x513873*/
   (this->u8_D) = ((this->u8_D) & ~(0xFF << 8)) | (((0) & 0xFF) << 8); /*0x513877*/
   /* X11: vtable install elided (base-interface slot, RHS vt_VectorClass) */  /*0x51387a*/
   if ( this != (HouseTypeClass *)a2 ) /*0x513880*/
   {
     Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)this); /*0x513882*/
     void *v3 = a2->Capacity; // eax /*0x513888*/
-    this->vtable3 = v3; /*0x51388d*/
+    this->ptr_8 = v3; /*0x51388d*/
     if ( v3 ) /*0x513890*/
     {
       void *v4; // eax
       v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x513896*/
-      this->vtable2 = v4; /*0x5138a0*/
+      this->ptr_4 = v4; /*0x5138a0*/
       if ( v4 ) /*0x5138a3*/
       {
-        void *vtable2 = this->vtable3; // ecx /*0x5138a5*/
+        void *ptr_4 = this->ptr_8; // ecx /*0x5138a5*/
         int v6 = 0; // eax /*0x5138a8*/
         BYTE1(this->u8_D) = 1; /*0x5138ac*/
-        if ( (int)vtable2 > 0 ) /*0x5138b0*/
+        if ( (int)ptr_4 > 0 ) /*0x5138b0*/
         {
           do /*0x5138c4*/
           {
-            *((unsigned int *)this->vtable2 + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x5138bb*/
+            *((unsigned int *)this->ptr_4 + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x5138bb*/
             ++v6; /*0x5138c1*/
           }
-          while ( v6 < (int)this->vtable3 ); /*0x5138c4*/
+          while ( v6 < (int)this->ptr_8 ); /*0x5138c4*/
         }
       }
     }
     else
     {
-      this->vtable2 = 0; /*0x5138c8*/
+      this->ptr_4 = 0; /*0x5138c8*/
       BYTE1(this->u8_D) = 0; /*0x5138cb*/
     }
   }

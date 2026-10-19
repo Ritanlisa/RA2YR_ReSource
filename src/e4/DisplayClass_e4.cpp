@@ -126,7 +126,7 @@ int DisplayClass::LoadTypeData(void *a1)
   v6[2] = Viewport[2]; /*0x4a8896*/
   int v3; // edx
   v3 = Viewport[3]; /*0x4a889e*/
-  DisplayClass_field_0x0 = (int (**)(DisplayClass *, unsigned int *))this->vtable1; /*0x4a88a1*/
+  DisplayClass_field_0x0 = (int (**)(DisplayClass *, unsigned int *))this->ptr_0; /*0x4a88a1*/
   v6[3] = v3; /*0x4a88a6*/
   return DisplayClass_field_0x0[42](this, v6); /*0x4a88b0*/
 
@@ -303,7 +303,7 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
         if ( v15 != -2 && (v14->u32_12C & 8) == 0 ) /*0x4a9ac6*/
         {
           LABEL_20:
-          (*((void (**)(DisplayClass *, __int16 *, int))this->vtable1 + 36))(this, v32, aP2); /*0x4a9a0d*/
+          (*((void (**)(DisplayClass *, __int16 *, int))this->ptr_0 + 36))(this, v32, aP2); /*0x4a9a0d*/
           goto LABEL_31; /*0x4a9a21*/
         }
         if ( v15 >= 0 && v15 != v14->q120 ) /*0x4a9aeb*/
@@ -349,7 +349,7 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
         if ( v22 != -2 && (v14->u32_140 & 2) == 0 ) /*0x4a9c03*/
         {
           LABEL_36:
-          (*((void (**)(DisplayClass *, __int16 *, int))this->vtable1 + 36))(this, v32, aP2); /*0x4a9b4a*/
+          (*((void (**)(DisplayClass *, __int16 *, int))this->ptr_0 + 36))(this, v32, aP2); /*0x4a9b4a*/
           continue; /*0x4a9b5e*/
         }
         if ( v22 >= 0 && v22 != v14->q121 ) /*0x4a9c28*/
@@ -362,7 +362,7 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
   }
   if ( v30 ) /*0x4a9c55*/
     CellClass::SpiralFindClosest((int)v5, aP2, v39); /*0x4a9c67*/
-  if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230[0].vtable0 & 0x1000) != 0 ) /*0x4a9c88*/
+  if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230[0].ptr_0 & 0x1000) != 0 ) /*0x4a9c88*/
     CellClass::UpdateZone(v5); /*0x4a9c8c*/
   return v30; /*0x4a9c91*/
 
@@ -463,7 +463,7 @@ char DisplayClass::ProcessCellReveal(int16_t *aP1, int aP2)
         if ( v13 != -2 && (v12->u32_140 & 2) == 0 ) /*0x4a9fac*/
         {
           LABEL_13:
-          (*((void (**)(DisplayClass *, __int16 *, int))this->vtable1 + 38))(this, v22, aP2); /*0x4a9ef2*/
+          (*((void (**)(DisplayClass *, __int16 *, int))this->ptr_0 + 38))(this, v22, aP2); /*0x4a9ef2*/
           continue; /*0x4a9f07*/
         }
         if ( v13 >= 0 && v13 != v12->q121 ) /*0x4a9fd2*/
@@ -476,7 +476,7 @@ char DisplayClass::ProcessCellReveal(int16_t *aP1, int aP2)
   }
   if ( v29 ) /*0x4a9fff*/
     CellClass::SpiralFindClosest((int)v5, aP2, v28); /*0x4aa011*/
-  if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230[0].vtable0 & 0x1000) != 0 ) /*0x4aa032*/
+  if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230[0].ptr_0 & 0x1000) != 0 ) /*0x4aa032*/
     CellClass::UpdateZone(v5); /*0x4aa036*/
   return v29; /*0x4aa03b*/
 
@@ -577,7 +577,7 @@ bool DisplayClass::RevealFogCell(int16_t *a1, int aP2)
         if ( v14 != -2 && (v13->u32_12C & 8) == 0 ) /*0x4aa218*/
         {
           LABEL_13:
-          (*((void (**)(DisplayClass *, __int16 *, int))this->vtable1 + 39))(this, v22, aP2); /*0x4aa162*/
+          (*((void (**)(DisplayClass *, __int16 *, int))this->ptr_0 + 39))(this, v22, aP2); /*0x4aa162*/
           continue; /*0x4aa177*/
         }
         if ( v14 >= 0 && v14 != v13->q120 ) /*0x4aa23e*/
@@ -635,7 +635,7 @@ void * DisplayClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void
 
   if ( a2 < 500 /*0x4ae513*/
     || a2 > 900
-    || (*((uint8_t (**)(DisplayClass *))this->vtable1 + 26))(this) )
+    || (*((uint8_t (**)(DisplayClass *))this->ptr_0 + 26))(this) )
   {
     return 0; /*0x4ae513*/
   }
@@ -714,7 +714,7 @@ int DisplayClass::ExitMode()
   this->q11CF = 0; /*0x4aeae2*/
   (this->q11D0) = ((this->q11D0) & ~0xFF) | ((0) & 0xFF); /*0x4aeae9*/
   DataGlobal_A8EB00[669] = 1; /*0x4aeaf0*/
-  return (*((int (**)(DisplayClass *, unsigned int, unsigned int))this->vtable1 + 18))(this, 0, 0); /*0x4aeb02*/
+  return (*((int (**)(DisplayClass *, unsigned int, unsigned int))this->ptr_0 + 18))(this, 0, 0); /*0x4aeb02*/
 
 }
 } // namespace gamemd
@@ -759,7 +759,7 @@ int DisplayClass::InsertPriorityText(int a2)
       return 0; /*0x551aa6*/
     v4 = *&this->CapacityIncrement; /*0x551aa8*/
     if ( v4 <= 0 /*0x551ab8*/
-      || !(*((unsigned __int8 (**)(DisplayClass *, int, unsigned int))this->vtable1 + 2))(
+      || !(*((unsigned __int8 (**)(DisplayClass *, int, unsigned int))this->ptr_0 + 2))(
             this,
             v3 + v4,
             0) )
@@ -793,7 +793,7 @@ int DisplayClass::checkScreenBounds(int a2)
 
   int v3; // edi
   v3 = (*(int (**)(int))(*(unsigned int *)a2 + 184))(a2); /*0x5f6234*/
-  return (*((int (**)(DisplayClass *))this->vtable1 + 46))(this) > v3; /*0x5f623e*/
+  return (*((int (**)(DisplayClass *))this->ptr_0 + 46))(this) > v3; /*0x5f623e*/
 
 }
 } // namespace gamemd
@@ -1088,6 +1088,6 @@ int * DisplayClass::processDisplayMode(char a2)
   Straw::Dtor(); /*0x4aec3d*/
   if ( (a2 & 1) != 0 ) /*0x4aec47*/
     operator delete((void *)(this)); /*0x4aec4a*/
-  return (int *)this->vtable1; /*0x4aec54*/
+  return (int *)this->ptr_0; /*0x4aec54*/
 }
 } // namespace gamemd

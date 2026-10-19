@@ -10,7 +10,7 @@ struct ILocomotion;  // fix_fwd_type_supply
 
 struct RocketLocomotionClass {
     void* LocomotionClass;  // 0x0
-    void* vtable2;  // 0x4
+    void* ptr_4;  // 0x4
     unsigned int __pad_008;  // 0x8
     unsigned int LinkedTo;  // 0xC
     unsigned char Powered;  // 0x10

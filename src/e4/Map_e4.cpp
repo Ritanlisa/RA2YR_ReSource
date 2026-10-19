@@ -1666,7 +1666,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x76a428*/
         {
-          v7 = &v6->vtable3; /*0x76a42a*/
+          v7 = &v6->ptr_8; /*0x76a42a*/
           v8 = a2; /*0x76a42d*/
           do /*0x76a43a*/
           {
@@ -2013,7 +2013,7 @@ namespace gamemd {
 int E4Recv_5FBF70::sub_5FBF70()
 {
 
-  return (int)this->vtable3; /*0x5fbf73*/
+  return (int)this->ptr_8; /*0x5fbf73*/
 
 }
 } // namespace gamemd
