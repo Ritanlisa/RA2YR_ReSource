@@ -1333,7 +1333,7 @@ bool InfantryClass::CanAttackTarget(HouseClass* other)
   HouseClass *other; // [esp+24h] [ebp+4h]
 
   result = 0; /*0x5228a0*/
-  if ( this->vt_slot_196(this) ) /*0x5227fa*/
+  if ( this->IsDisguised() ) /*0x5227fa*/
   {
     v2 = (unsigned int *)this->vt_slot_72(this, v8); /*0x522811*/
     LOWORD(v6) = *v2 / 256; /*0x522824*/

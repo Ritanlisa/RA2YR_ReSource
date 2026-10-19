@@ -6854,7 +6854,7 @@ int TechnoClass::GetThreatValue() const
   *(unsigned int *)v6 = v5; /*0x4dedb9*/
   v3 = (HouseClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v6); /*0x4dedc9*/
   if ( !(unsigned __int8)HouseClass::IsAlliedWith((HouseClass *)this->owner) /*0x4dedf4*/
-    && this->vt_slot_196(this)
+    && this->IsDisguised()
     && !(unsigned __int8)HouseClass::HasType(v3, *(unsigned int *)(*(int *)((char *)&stru_A83CD9.estimatedHealth + 3) + 48)) )
   {
     return *(unsigned int *)(this->vt_slot_204(this, 0) + 164); /*0x4dee09*/
@@ -20947,7 +20947,7 @@ int TechnoClass::IsGuardingTarget() const
   HouseClass *other; // [esp+24h] [ebp+4h]
 
   result = 0; /*0x746800*/
-  if ( this->vt_slot_196(this) ) /*0x74675a*/
+  if ( this->IsDisguised() ) /*0x74675a*/
   {
     v2 = (unsigned int *)this->vt_slot_72(this, v8); /*0x746771*/
     LOWORD(v6) = *v2 / 256; /*0x746784*/

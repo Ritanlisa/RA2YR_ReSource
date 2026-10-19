@@ -42641,7 +42641,7 @@ int WinModemClass::AddRef(const char *a2, DWORD a3, BYTE a4, BYTE a5, char a6)
     CommTimeouts.WriteTotalTimeoutConstant = 1000; /*0x7745f0*/
     if ( !SetCommTimeouts(FileA, &CommTimeouts) ) /*0x7745f4*/
       Debug::Log(); /*0x774604*/
-    this->vt_slot_16(1); /*0x774612*/
+    this->Init(1); /*0x774612*/
     if ( ClearCommError(this->u32_5C, &Errors, &Stat) ) /*0x774623*/
     {
       v9 = Errors; /*0x77462d*/

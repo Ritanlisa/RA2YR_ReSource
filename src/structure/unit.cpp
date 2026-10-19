@@ -1392,7 +1392,7 @@ int UnitClass::SimpleDeployerUndeploy()
     {
       this->Deployed[0] = 0; /*0x739e4f*/
     }
-    if ( this->vt_slot_196(this) ) /*0x739e5a*/
+    if ( this->IsDisguised() ) /*0x739e5a*/
       this->vt_slot_1136(this); /*0x739e68*/
     v2 = this->vt_slot_132(this); /*0x739e72*/
     if ( *(unsigned int *)(v2 + 1392) != -1 ) /*0x739e7f*/
