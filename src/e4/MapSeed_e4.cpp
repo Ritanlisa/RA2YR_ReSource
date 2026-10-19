@@ -67,12 +67,12 @@ int MapSeed::CheckName(void *a1)
   String v8; // [esp+4h] [ebp-Ch] BYREF
   char *v9; // [esp+Ch] [ebp-4h] BYREF
 
-  String::AssignFromPtr(&v8, (const char **)this); /*0x79c52b*/
+  (&v8)->AssignFromPtr((const char **)this); /*0x79c52b*/
   (&v8)->ToLower(); /*0x79c534*/
   if ( !((String *)this)->Length() /*0x79c5aa*/
-    || (v7 = String::ToLowerCopy((String *)&g_WebBrowser, &v9),
-        v2 = String::ToLowerCopy(&v8, (char **)&v8.m_3[1]),
-        v3 = String::Compare((String *)v2, (const char **)v7),
+    || (v7 = ((String *)&g_WebBrowser)->ToLowerCopy(&v9),
+        v2 = (&v8)->ToLowerCopy((char **)&v8.m_3[1]),
+        v3 = ((String *)v2)->Compare((const char **)v7),
         DeleteAndZero((ObjectClass *)&v8.m_3[1]),
         DeleteAndZero((ObjectClass *)&v9),
         v3)
@@ -96,9 +96,9 @@ int MapSeed::CheckName(void *a1)
       {
         unknown_libname_73(&v8.m_3[1]); /*0x79c5d2*/
         if ( v6 >= 0 && v6 < *(int *)g_WindowManager ) /*0x79c5e1*/
-          String::Reassign((String *)&v8.m_3[1], (const char **)(*(unsigned int *)g_WOL_LoginQueue + 4 * v6)); /*0x79c5f1*/
+          ((String *)&v8.m_3[1])->Reassign((const char **)(*(unsigned int *)g_WOL_LoginQueue + 4 * v6)); /*0x79c5f1*/
         ((String *)&v8.m_3[1])->ToLower(); /*0x79c5fa*/
-        if ( (unsigned __int8)String::Compare((String *)&v8.m_3[1], (const char **)&v8) ) /*0x79c608*/
+        if ( (unsigned __int8)((String *)&v8.m_3[1])->Compare((const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
         DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
         if ( ++v6 >= *(int *)g_WindowManager ) /*0x79c622*/
@@ -132,7 +132,7 @@ AbstractClass * * MapSeed::InsertName()
 
   if ( (unsigned __int8)MapSeed::CheckName(this) ) /*0x79c656*/
   {
-    String::AssignFromPtr((String *)&v11, (const char **)this); /*0x79c668*/
+    ((String *)&v11)->AssignFromPtr((const char **)this); /*0x79c668*/
     v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c66d*/
     v3 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c672*/
     if ( *(int *)g_WindowManager.__pad_0 >= dword_B73AAC ) /*0x79c67e*/
@@ -153,7 +153,7 @@ AbstractClass * * MapSeed::InsertName()
     v4 = (String *)((char *)dword_B73AB0 + 4 * v3); /*0x79c6d8*/
     if ( v4 ) /*0x79c6dd*/
     {
-      String::AssignFromPtr(v4, &v11); /*0x79c6e4*/
+      (v4)->AssignFromPtr(&v11); /*0x79c6e4*/
       v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6e9*/
     }
     *(unsigned int *)g_WindowManager.__pad_0 = v2 + 1; /*0x79c6ef*/
@@ -180,7 +180,7 @@ AbstractClass * * MapSeed::InsertName()
     v7 = (String *)(stru_B76970.StringVector_field_0x18 + 4 * v6); /*0x79c75f*/
     if ( v7 ) /*0x79c764*/
     {
-      String::AssignFromPtr(v7, &v11); /*0x79c76b*/
+      (v7)->AssignFromPtr(&v11); /*0x79c76b*/
       StringVector_field_0x10 = stru_B76970.StringVector_field_0x10; /*0x79c770*/
     }
     stru_B76970.StringVector_field_0x10 = StringVector_field_0x10 + 1; /*0x79c776*/
@@ -204,7 +204,7 @@ AbstractClass * * MapSeed::InsertName()
     v10 = (String *)&dword_B779B8[v9]; /*0x79c7e6*/
     if ( v10 ) /*0x79c7eb*/
     {
-      String::AssignFromPtr(v10, &v11); /*0x79c7f2*/
+      (v10)->AssignFromPtr(&v11); /*0x79c7f2*/
       v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7f7*/
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_0 = v8 + 1; /*0x79c802*/
@@ -222,7 +222,7 @@ LABEL_33:
     {
       if ( stru_B76970.StringVector_field_0x10 > 0 ) /*0x79c83e*/
       {
-        String::Reassign((String *)&unk_B73ACC, (const char **)stru_B76970.StringVector_field_0x18); /*0x79c84b*/
+        ((String *)&unk_B73ACC)->Reassign((const char **)stru_B76970.StringVector_field_0x18); /*0x79c84b*/
         DynamicArray::Remove((DynamicArray *)&stru_B76970.StringVector_field_0x10, 0); /*0x79c857*/
       }
       dword_B779D0 = time(0); /*0x79c864*/

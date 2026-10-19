@@ -228,7 +228,7 @@ int WOL_ResetSystem()
     {
       CChatEventSink *v23 = CChatEventSink_field_0x0C; // ecx /*0x7803ad*/
       CChatEventSink_field_0x0C = CChatEventSink_field_0x0C->q014.CChatEventSink_field_0x0C; /*0x7803af*/
-      CChatEventSink::DeleteAndZero(v23, 1); /*0x7803bb*/
+      (v23)->DeleteAndZero(1); /*0x7803bb*/
     }
     ++k; /*0x7803ca*/
     *(unsigned int *)(stru_B765EC.referenceCount + 4 * k - 4) = 0; /*0x7803cb*/

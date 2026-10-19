@@ -384,7 +384,7 @@ LABEL_63:
 LABEL_84:
   v40 = (RandomMap *)__2_YAPAXI_Z(0x50u); /*0x58cdf6*/
   if ( v40 ) /*0x58ce02*/
-    v41 = RandomMap::TerrainTileDataConstructor(v40, v50->RandomMap_field_0x24); /*0x58ce13*/
+    v41 = (v40)->TerrainTileDataConstructor(v50->RandomMap_field_0x24); /*0x58ce13*/
   else
     v41 = 0; /*0x58ce17*/
   v42 = v48; /*0x58ce1d*/
@@ -627,7 +627,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
       v16 = 0; /*0x58d4b0*/
       for ( i = 0; i < 8; ++i )
       {
-        v19 = *((unsigned int *)Cell::GetNeighbourContent((Cell *)v4, i) + 9); /*0x58d4c8*/
+        v19 = *((unsigned int *)((Cell *)v4)->GetNeighbourContent(i) + 9); /*0x58d4c8*/
         v8 = (short)(((v19) >> 16) & 0xFFFF) + (__int16)v19; /*0x58d4d4*/
         if ( v8 > g_MissionQueueFrame.localVariables[160] )
         {

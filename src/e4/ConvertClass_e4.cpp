@@ -158,7 +158,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
       (v11) = ((v11) & ~0xFF) | ((*(unsigned char *)(v11 + 2)) & 0xFF); /*0x48e993*/
       LOWORD(v29.Color_field_00) = v12; /*0x48e996*/
       BYTE2(v29.Color_field_00) = (unsigned __int8)v11 >> 1; /*0x48e9a5*/
-      v13 = (unsigned __int16 *)Color::ConvertToRGB(&v29, (int)&v28); /*0x48e9ae*/
+      v13 = (unsigned __int16 *)(&v29)->ConvertToRGB((int)&v28); /*0x48e9ae*/
       LOWORD(a4) = *v13; /*0x48e9b6*/
       BYTE2(a4) = v13->field_2; /*0x48e9c5*/
       ++v8; /*0x48e9d4*/
@@ -193,7 +193,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
             (v31) = ((v31) & ~0xFF) | ((v21) & 0xFF); /*0x48ea97*/
             BYTE2(v29.Color_field_00) = v21; /*0x48eaa4*/
             BYTE2(v29.Color_field_00) = 2 * v30 * v21 / (*&this->q16C - 1); /*0x48eac2*/
-            v22 = (unsigned __int16 *)Color::ConvertToRGB(&v29, (int)&v28); /*0x48eac6*/
+            v22 = (unsigned __int16 *)(&v29)->ConvertToRGB((int)&v28); /*0x48eac6*/
             LOWORD(a4) = *v22; /*0x48eace*/
             BYTE2(a4) = v22->u32_2; /*0x48eadf*/
             *v15++ = Palette::FindClosestColor((char *)a3, (Palette *)&a4); /*0x48eae8*/

@@ -684,7 +684,7 @@ int Game::MakeScreenshot(int a1)
         do /*0x537d6d*/
         {
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
-          v7 = CCFileClass::Construct(&v19, Buffer); /*0x537d27*/
+          v7 = (&v19)->Construct(Buffer); /*0x537d27*/
           v8 = v7->vt_slot_20(0); /*0x537d3b*/
           /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x537d3d*/
           v21 = 0; /*0x537d48*/
@@ -693,7 +693,7 @@ int Game::MakeScreenshot(int a1)
           BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x537d66*/
         }
         while ( v8 ); /*0x537d6d*/
-        CCFileClass::Construct(&v16, Buffer); /*0x537d7b*/
+        (&v16)->Construct(Buffer); /*0x537d7b*/
         CompressScreenshot((int *)v16.__tail_0, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
         /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x537d9b*/
         v18 = 0; /*0x537da3*/
@@ -886,7 +886,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   BYTE2(v11[34]) = g_RulesInitConfig; /*0x5ba842*/
   HIBYTE(v11[34]) = stru_A8B250.__pad_0[32]; /*0x5ba84e*/
   wcscpy((wchar_t *)&v11[9] + 1, *(const wchar_t **)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])); /*0x5ba85e*/
-  CCFileClass::Construct(&v13, (char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88)); /*0x5ba87f*/
+  (&v13)->Construct((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88)); /*0x5ba87f*/
   *(int *)((char *)&v11[39] + 2) = CCFileClass::GetSize(&v13); /*0x5ba896*/
   strncpy( /*0x5ba8b3*/
     (char *)&v11[40] + 3,

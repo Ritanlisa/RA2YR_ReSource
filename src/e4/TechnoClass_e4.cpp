@@ -285,7 +285,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->isCloakableFlag = 0; /*0x6f2f49*/
   this->isPrimaryFactory = 0; /*0x6f2f4f*/
   this->isALoaner = 0; /*0x6f2f55*/
-  this->isInPlayfield = 0; /*0x6f2f5b*/
+  this->isInPlayfield_d = 0; /*0x6f2f5b*/
   this->turretRecoil[0] = 2; /*0x6f2f61*/
   this->turretRecoil[1] = 1; /*0x6f2f67*/
   this->turretRecoil[2] = 1; /*0x6f2f6d*/

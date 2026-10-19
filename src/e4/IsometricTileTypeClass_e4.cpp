@@ -30,7 +30,7 @@ int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   unsigned __int8 *v5; // edx
   unsigned __int8 *v6; // eax
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x549b79*/
+  ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x549b79*/
   Power::TimerProcess(this->u32_294); /*0x549b87*/
   Power::TimerProcess(this->u32_298); /*0x549b95*/
   Power::TimerProcess(this->u32_29C); /*0x549ba3*/
@@ -79,7 +79,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
   {
     if ( a1 ) /*0x549cce*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)&a2); /*0x549cd8*/
+      ((ObjectTypeClass *)a1)->Construct((int)&a2); /*0x549cd8*/
       ((IsometricTileTypeClass *)((char *)a1 + 676))->Constructor_0(0, 0); /*0x549ce9*/
       *((unsigned int *)a1 + 169) = (unsigned int)(&g_ptr_7E3238); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/

@@ -1017,7 +1017,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
           else if ( (*(int (**)(BuildingClass *))(v2->ptr_0 + 44))(v2) == 6 /*0x501501*/
                  && (*(int (**)(BuildingClass *))(v2->ptr_0 + 1032))(v2) > 0 )
           {
-            BuildingClass::UnloadUnits(v2, 1, 0); /*0x501509*/
+            (v2)->UnloadUnits(1, 0); /*0x501509*/
           }
         }
       }

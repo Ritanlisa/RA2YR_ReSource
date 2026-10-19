@@ -53,7 +53,7 @@ int MoveFeedback::ProcessCommand()
     v4 = 0; /*0x732802*/
     if ( result ) /*0x732809*/
     {
-      result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
+      result = (int)((EventClass *)result)->resetEvent(0, 0); /*0x73280f*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x732814*/
       v3->CapacityIncrement = 10; /*0x73281a*/
       v3->Count = 0; /*0x732821*/
@@ -97,7 +97,7 @@ int MoveFeedback::ProcessCommand()
     v10 = 0; /*0x732896*/
     if ( v9 ) /*0x73289d*/
     {
-      EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
+      (v9)->resetEvent(0, 0); /*0x7328a3*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E17AC) */  /*0x7328a8*/
       v3->CapacityIncrement = 10; /*0x7328ae*/
       v3->Count = 0; /*0x7328b5*/

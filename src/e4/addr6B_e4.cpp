@@ -590,7 +590,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   v79 = 0x7FFF; /*0x6b2ff4*/
   v80 = 0; /*0x6b2ff9*/
   v81 = 0; /*0x6b2ffe*/
-  ObjectVector::Construct(&v101, 0, 0); /*0x6b3003*/
+  (&v101)->Construct(0, 0); /*0x6b3003*/
   v8 = (unsigned __int16 *)v5; /*0x6b3008*/
   v9 = v6; /*0x6b300b*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x6b3010*/

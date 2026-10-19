@@ -194,7 +194,7 @@ int MPCooperative::WriteCoopSaveINI()
   v2 = &this->u32_1C; /*0x49be58*/
   if ( !this->u32_1C ) /*0x49be55*/
     return 1; /*0x49c0c5*/
-  CCFileClass::Construct(&v19, g_Str_File_coopsave_ini); /*0x49be70*/
+  (&v19)->Construct(g_Str_File_coopsave_ini); /*0x49be70*/
   v15.headNode[0] = 0; /*0x49be79*/
   v15.headNode[1] = 0; /*0x49be7d*/
   INISectionList::Constructor((INISectionList *)&v15.headNode[2]); /*0x49be81*/
@@ -202,7 +202,7 @@ int MPCooperative::WriteCoopSaveINI()
   v15.INIClass_field_3C = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x49bea5*/
-  CCINIClass::Load(&v15, (int)&v19, 0, 0); /*0x49bead*/
+  (&v15)->Load((int)&v19, 0, 0); /*0x49bead*/
   CCFileClass::Reset(&v19); /*0x49beb9*/
   v3 = 0; /*0x49bec0*/
   if ( *v1 )

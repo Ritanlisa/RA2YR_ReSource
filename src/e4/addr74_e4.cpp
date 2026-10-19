@@ -734,7 +734,7 @@ void * globalHelper_04BB20(ObjectClass * Source, int a2)
     LABEL_6:
     v5 = (VoxelAnimTypeClass *)operator new(0x308u); /*0x74bb73*/
     if ( v5 ) /*0x74bb82*/
-      return VoxelAnimTypeClass::Constructor(v5, Source); /*0x74bb8f*/
+      return (v5)->Constructor(Source); /*0x74bb8f*/
     return 0; /*0x74bb82*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v4) + 36),(const char *)(Source)) ) /*0x74bb69*/
@@ -1198,7 +1198,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
 
   if ( (this->ambientSoundController[2] & 8) == 0 ) /*0x74faef*/
   {
-    RawFileClass::Construct(&v9, (int)g_Str_File_VERSION_TXT); /*0x74fafa*/
+    (&v9)->Construct((int)g_Str_File_VERSION_TXT); /*0x74fafa*/
     if ( (unsigned __int8)(&v9)->Open(0) ) /*0x74fb04*/
     {
       FileClass::Read(&v9, (char *)&this->owningHouseIndex + 2, 16); /*0x74fb17*/

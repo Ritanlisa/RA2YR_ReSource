@@ -384,8 +384,8 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
   int v10[3]; // [esp+70h] [ebp-14h] BYREF
   int v11; // [esp+7Ch] [ebp-8h]
 
-  CCFileClass::Construct(&v9, Source); /*0x641dc0*/
-  if ( !(unsigned __int8)CCFileClass::Open(&v9, 0) ) /*0x641dcb*/
+  (&v9)->Construct(Source); /*0x641dc0*/
+  if ( !(unsigned __int8)(&v9)->Open(0) ) /*0x641dcb*/
     goto LABEL_11; /*0x641dcb*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x641dd8*/
   {

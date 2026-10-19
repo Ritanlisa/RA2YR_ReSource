@@ -310,7 +310,7 @@ int Dialog_Close(HWND a1, int a2)
     }
     else
     {
-      Dialog::IdleProcess(v3, i); /*0x775831*/
+      (v3)->IdleProcess(i); /*0x775831*/
       if ( g_DialogTrackingList - 1 >= v5 ) /*0x77583e*/
       {
         v6 = (DialogQueue **)(8 * (g_DialogTrackingList - 1) + 12004648); /*0x775840*/

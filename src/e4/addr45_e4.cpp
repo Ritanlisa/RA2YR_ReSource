@@ -362,7 +362,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
     v36[2] = 0; /*0x456aa6*/
     LOWORD(v39.Color_field_00) = a7; /*0x456aab*/
     if ( a2 ) /*0x456ab0*/
-      Color::Lerp(&v39, 0x32u, v36); /*0x456abd*/
+      (&v39)->Lerp(0x32u, v36); /*0x456abd*/
     (*(void (**)(AudioStream *, int, int, int, int, int, int, int, int, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 /*0x456b57*/
                                                                                        + 32))(
       g_DSurface_Hidden_2,

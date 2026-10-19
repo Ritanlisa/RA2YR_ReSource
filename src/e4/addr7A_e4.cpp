@@ -181,7 +181,7 @@ int CollectWOLConnectionTokens(void *a1)
         v13 = (String *)(dword_B76AC4.abstractFlags + 4 * v6); /*0x7a0633*/
         if ( v13 ) /*0x7a0638*/
         {
-          String::AssignFromPtr(v13, (const char **)&v15); /*0x7a063f*/
+          (v13)->AssignFromPtr((const char **)&v15); /*0x7a063f*/
           ptr_8 = (int)dword_B76AC4.ptr_C; /*0x7a0644*/
         }
         dword_B76AC4.ptr_C = (void *)(ptr_8 + 1); /*0x7a064e*/
@@ -304,7 +304,7 @@ LABEL_17:
   unknown_libname_73(&v31[8]); /*0x7a088b*/
   if ( dword_A8B244 != 3 ) /*0x7a0897*/
     goto LABEL_35; /*0x7a0897*/
-  String::Assign_Alt((String *)&v31[32], aMatchwdt); /*0x7a08a6*/
+  ((String *)&v31[32])->Assign_Alt(aMatchwdt); /*0x7a08a6*/
   matched = RequestMatchWOL_Helper(); /*0x7a08b4*/
   ComPtr::Constructor((ComPtr *)&v31[16]); /*0x7a08b6*/
   *(unsigned int *)&v31[16] = &g_ptr_7F6F24; /*0x7a08c4*/
@@ -313,7 +313,7 @@ LABEL_17:
   {
     if ( *(unsigned int *)(*(unsigned int *)&v31[20] + 68) == 2 ) /*0x7a08f2*/
     {
-      String::Assign_Alt((String *)&v31[8], aWds0); /*0x7a097a*/
+      ((String *)&v31[8])->Assign_Alt(aWds0); /*0x7a097a*/
       if ( v9 <= 4 ) /*0x7a0982*/
         goto LABEL_34; /*0x7a0982*/
     }
@@ -333,44 +333,44 @@ LABEL_17:
         ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0946*/
         return 0; /*0x7a0957*/
       }
-      String::Assign_Alt((String *)&v31[8], aWds1); /*0x7a0961*/
+      ((String *)&v31[8])->Assign_Alt(aWds1); /*0x7a0961*/
       if ( (unsigned int)v9 > 4 ) /*0x7a0968*/
         goto LABEL_34; /*0x7a0968*/
     }
     v9 = -1; /*0x7a0984*/
     goto LABEL_34; /*0x7a0984*/
   }
-  String::Assign_Alt((String *)&v31[8], aWds0); /*0x7a08e2*/
+  ((String *)&v31[8])->Assign_Alt(aWds0); /*0x7a08e2*/
 LABEL_34:
-  String::Append((String *)&v31[8], aWdt); /*0x7a0987*/
+  ((String *)&v31[8])->Append(aWdt); /*0x7a0987*/
   v11 = FromStringInt((char **)&v31[4], *(int *)dword_A8B240); /*0x7a099f*/
-  String::Append2((String *)&v31[8], v11); /*0x7a09a9*/
+  ((String *)&v31[8])->Append2(v11); /*0x7a09a9*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a09b2*/
   *(unsigned int *)&v31[16] = &g_ptr_7F6F24; /*0x7a09bb*/
   ComPtr::Release((ComPtr *)&v31[16]); /*0x7a09bf*/
 LABEL_35:
   StringCSF = GetStringCSF(aWolRequestingm, 0, g_Str_File_wonline_cpp, 28395); /*0x7a09c9*/
   Dialog::ShowMessage(16744576, (size_t)StringCSF); /*0x7a09e6*/
-  String::AssignFromPtr((String *)v31, (const char **)&v31[32]); /*0x7a09f7*/
-  String::Append((String *)v31, aCou); /*0x7a0a05*/
+  ((String *)v31)->AssignFromPtr((const char **)&v31[32]); /*0x7a09f7*/
+  ((String *)v31)->Append(aCou); /*0x7a0a05*/
   v13 = FromStringInt((char **)&v31[4], v9); /*0x7a0a10*/
-  String::Append2((String *)v31, v13); /*0x7a0a1a*/
+  ((String *)v31)->Append2(v13); /*0x7a0a1a*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0a23*/
-  String::Append((String *)v31, aCol); /*0x7a0a31*/
+  ((String *)v31)->Append(aCol); /*0x7a0a31*/
   v14 = FromStringInt((char **)&v31[4], *(unsigned int *)(*(unsigned int *)&v31[28] + 32)); /*0x7a0a41*/
-  String::Append2((String *)v31, v14); /*0x7a0a4b*/
+  ((String *)v31)->Append2(v14); /*0x7a0a4b*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0a54*/
-  String::Append((String *)v31, aMbr); /*0x7a0a62*/
+  ((String *)v31)->Append(aMbr); /*0x7a0a62*/
   if ( *(unsigned char *)(*(unsigned int *)&v31[28] + 56) ) /*0x7a0a6b*/
-    String::Append((String *)v31, (const char *)a1); /*0x7a0a77*/
+    ((String *)v31)->Append((const char *)a1); /*0x7a0a77*/
   else
     String::Append((String *)v31, a0); /*0x7a0a82*/
-  String::AssignFromPtr((String *)&v31[12], (const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x7a0a90*/
+  ((String *)&v31[12])->AssignFromPtr((const char **)&stru_B73E10.CChatEventSink_field_0x30); /*0x7a0a90*/
   String::ToLower((String *)&v31[12]); /*0x7a0a99*/
   v15 = *(String **)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * (dword_B76548(&v31[12]) & ((1 << dword_B7653C) - 1))); /*0x7a0abd*/
   if ( v15 ) /*0x7a0ac2*/
   {
-    while ( !(unsigned __int8)String::Compare(v15, (const char **)&v31[12]) ) /*0x7a0ad6*/
+    while ( !(unsigned __int8)(v15)->Compare((const char **)&v31[12]) ) /*0x7a0ad6*/
     {
       v15 = *v15->ptr_4.__pad_0; /*0x7a0ad8*/
       if ( !v15 ) /*0x7a0add*/
@@ -383,7 +383,7 @@ LABEL_35:
                        + 4 * (dword_B76548(&v31[12]) & ((1 << dword_B7653C) - 1)));
       if ( v17 ) /*0x7a0b13*/
       {
-        while ( !(unsigned __int8)String::Compare(v17, (const char **)&v31[12]) ) /*0x7a0b23*/
+        while ( !(unsigned __int8)(v17)->Compare((const char **)&v31[12]) ) /*0x7a0b23*/
         {
           v17 = *v17->ptr_4.__pad_0; /*0x7a0b25*/
           if ( !v17 ) /*0x7a0b2a*/
@@ -394,36 +394,36 @@ LABEL_35:
       }
     }
 LABEL_49:
-    String::Append((String *)v31, aLoc); /*0x7a0b3b*/
+    ((String *)v31)->Append(aLoc); /*0x7a0b3b*/
     v18 = FromStringInt((char **)&v31[4], v16); /*0x7a0b4f*/
-    String::Append2((String *)v31, v18); /*0x7a0b59*/
+    ((String *)v31)->Append2(v18); /*0x7a0b59*/
     DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b62*/
   }
 LABEL_50:
-  String::Append((String *)v31, aRat); /*0x7a0b67*/
+  ((String *)v31)->Append(aRat); /*0x7a0b67*/
   v19 = Performance::Profile(v29); /*0x7a0b75*/
   v20 = FromStringInt((char **)&v31[4], v19); /*0x7a0b80*/
-  String::Append2((String *)v31, v20); /*0x7a0b8a*/
+  ((String *)v31)->Append2(v20); /*0x7a0b8a*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b93*/
-  String::Append((String *)v31, aRes); /*0x7a0ba1*/
+  ((String *)v31)->Append(aRes); /*0x7a0ba1*/
   v21 = FromStringInt((char **)&v31[4], *(int *)&stru_A8E960.random[16]); /*0x7a0bb0*/
-  String::Append2((String *)v31, v21); /*0x7a0bba*/
+  ((String *)v31)->Append2(v21); /*0x7a0bba*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0bc3*/
   Network::GetAddress((Network *)&stru_A8D804.__pad_3D[895], &v31[56], (int)&v31[48], &v31[46]); /*0x7a0bdc*/
   v22 = *(unsigned int *)&v31[48]; /*0x7a0be1*/
-  String::Append((String *)v31, aAdr); /*0x7a0bee*/
+  ((String *)v31)->Append(aAdr); /*0x7a0bee*/
   v23 = FromStringInt((char **)&v31[4], v22); /*0x7a0bf9*/
-  String::Append2((String *)v31, v23); /*0x7a0c03*/
+  ((String *)v31)->Append2(v23); /*0x7a0c03*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c0c*/
-  String::Append((String *)v31, aNat); /*0x7a0c1a*/
+  ((String *)v31)->Append(aNat); /*0x7a0c1a*/
   v24 = FromStringInt((char **)&v31[4], dword_ABFEC8); /*0x7a0c2f*/
-  String::Append2((String *)v31, v24); /*0x7a0c39*/
+  ((String *)v31)->Append2(v24); /*0x7a0c39*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c42*/
-  String::Append((String *)v31, aPrt); /*0x7a0c50*/
+  ((String *)v31)->Append(aPrt); /*0x7a0c50*/
   v25 = FromStringInt((char **)&v31[4], dword_A8E228); /*0x7a0c5f*/
-  String::Append2((String *)v31, v25); /*0x7a0c69*/
+  ((String *)v31)->Append2(v25); /*0x7a0c69*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c72*/
-  String::Append2((String *)v31, (char **)&v31[8]); /*0x7a0c80*/
+  ((String *)v31)->Append2((char **)&v31[8]); /*0x7a0c80*/
   v26 = *(unsigned int *)ppv; /*0x7a0c8e*/
   v27 = String::GetOrEmpty((String *)v31); /*0x7a0c90*/
   (*(void (**)(LPVOID, unsigned char *, char *))(v26 + 48))(ppv, &v31[60], v27); /*0x7a0ca2*/

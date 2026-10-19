@@ -229,7 +229,7 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
   int v23; // [esp+18h] [ebp-204h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x71deb3*/
-  if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)aP1, aP1) ) /*0x71debb*/
+  if ( ((ObjectTypeClass *)aP1)->LoadFromINI(aP1) ) /*0x71debb*/
   {
     if ( aP1->? == -1 ) /*0x71decf*/
       aP1->? = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4420); /*0x71dedc*/

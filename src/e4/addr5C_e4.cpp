@@ -160,7 +160,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
     Debug::Log(); /*0x5c085d*/
     v8 = (BinkMovie *)__2_YAPAXI_Z(0x34u); /*0x5c0864*/
     if ( v8 ) /*0x5c086e*/
-      v9 = BinkMovie::Open(v8, Str, (int)a2); /*0x5c087d*/
+      v9 = (v8)->Open(Str, (int)a2); /*0x5c087d*/
     else
       v9 = 0; /*0x5c0881*/
     result = (unsigned int *)__2_YAPAXI_Z(0x14u); /*0x5c0885*/

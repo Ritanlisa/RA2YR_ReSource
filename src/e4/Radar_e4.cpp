@@ -1261,7 +1261,7 @@ LABEL_72:
             v38 = *(unsigned int *)&v2->__pad_64[24 * i + 56]; /*0x5849a5*/
             *(unsigned int *)&v2->__pad_64[24 * i + 56] = v38 + 1; /*0x5849ae*/
             v39 = (Radar *)(*(unsigned int *)&v2->__pad_64[24 * i + 44] + 36 * v38); /*0x5849b8*/
-            Radar::CopyDataArray(v39, &v122.ptr_0); /*0x5849be*/
+            (v39)->CopyDataArray(&v122.ptr_0); /*0x5849be*/
             (v39->Radar_field_0x18) = ((v39->Radar_field_0x18) & ~0xFFFF) | ((v125) & 0xFFFF); /*0x5849cb*/
             v39->Radar_field_0x1C = v126; /*0x5849d6*/
             v39->Radar_field_0x20 = v127; /*0x5849e0*/

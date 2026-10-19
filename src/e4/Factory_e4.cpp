@@ -340,10 +340,10 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2
         if ( ((v44 & 0xFFFFu) << 16 | (v43 & 0xFFFFu)) != g_BuildingLoadQueue_Array.unknown_int_398 ) /*0x7190ee*/
         {
           v45 = *(unsigned int *)v7[3]; /*0x719106*/
-          v46 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&this); /*0x719114*/
+          v46 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&this); /*0x719114*/
           if ( (*(int (**)(unsigned int, void *, int, int, unsigned int, int))(v45 + 428))(v7[3], v46, -1, -1, 0, 1) ) /*0x71911d*/
           {
-            v47 = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, (__int16 *)&this, v42, v65); /*0x719137*/
+            v47 = ((MapClass *)&DataGlobal_87F7E8)->GetTileIndex((__int16 *)&this, v42, v65); /*0x719137*/
             v48 = v7[3]; /*0x71913e*/
             v68 = 0; /*0x719142*/
             v58 = v47; /*0x719163*/
@@ -371,7 +371,7 @@ void* Factory_CalculateExitCell(Factory *aP0, Factory *aP0, void * a1, void * a2
         if ( this != (Factory *)g_BuildingLoadQueue_Array.unknown_int_398 ) /*0x71919c*/
         {
           (*(void (**)(unsigned int, unsigned int *))(*(unsigned int *)v7[3] + 244))(v7[3], v7 + 10); /*0x7191b5*/
-          v50 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&this); /*0x7191c5*/
+          v50 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&this); /*0x7191c5*/
           v51 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v50 + 72))(v50, v81); /*0x7191d6*/
           v52 = (__int16)(v51[1] / 256) << 8; /*0x71920c*/
           *v8 = ((__int16)(*v51 / 256) << 8) + 128; /*0x71920f*/

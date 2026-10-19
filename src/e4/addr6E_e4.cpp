@@ -938,7 +938,7 @@ unsigned int * E4Recv_6E3F70::sub_6E3F70(unsigned int * a2)
 
   unsigned int *WorldCoords; // edx
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
-  WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v4, *&this->M144); /*0x6e3f8b*/
+  WorldCoords = ((Cell *)dword_A8B230)->GetWorldCoords(v4, *&this->M144); /*0x6e3f8b*/
   *a2 = *WorldCoords; /*0x6e3f95*/
   a2[1] = WorldCoords[1]; /*0x6e3f9a*/
   a2[2] = WorldCoords[2]; /*0x6e3fa1*/

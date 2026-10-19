@@ -305,7 +305,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
           if ( (*(int (**)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
             v17 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28); /*0x56c457*/
-            v18 = Coord::Subtract((Coord *)v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
+            v18 = ((Coord *)v29)->Subtract(*a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18->q004; /*0x56c485*/
             v26[2] = v18->q008; /*0x56c490*/
@@ -467,7 +467,7 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3, void *a4)  // G42.41k: d
     HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
     CellClass *v8; // eax
     v8 = (CellClass *)((CellCoord *)&dword_87F7E8)->To_CellObj((__int16 *)&aP1); /*0x5fc497*/
-    if ( !CellClass::FindInfantry(v8, 0) ) /*0x5fc4a0*/
+    if ( !(v8)->FindInfantry(0) ) /*0x5fc4a0*/
       ((ObjectClass *)this)->Deploy(); /*0x5fc4b1*/
     dword_8333BC = -1; /*0x5fc4b6*/
   }
@@ -755,7 +755,7 @@ LABEL_39:
                         + 1) >> 1)
         & 7;
     v13 = (Cell *)(*(int (**)(unsigned int))(**&this->ptr_28 + 444))(*&this->ptr_28); /*0x62ad43*/
-    NeighbourContent = (ObjectPlacement *)Cell::GetNeighbourContent(v13, v12); /*0x62ad50*/
+    NeighbourContent = (ObjectPlacement *)(v13)->GetNeighbourContent(v12); /*0x62ad50*/
     if ( !*(unsigned char *)((*(int (**)(unsigned int))(**&this->q024 + 132))(*&this->q024) /*0x62ad5a*/
                    + 3278) )
     {

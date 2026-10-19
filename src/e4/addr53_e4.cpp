@@ -212,12 +212,12 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   int v44; // [esp+A0h] [ebp-8h]
 
   v31 = v3; /*0x5312a7*/
-  CCFileClass::Construct(&v42, aGlsmdPal); /*0x5312b3*/
+  (&v42)->Construct(aGlsmdPal); /*0x5312b3*/
   v4 = 0; /*0x5312ba*/
   v5 = 0; /*0x5312c1*/
   Block = 0; /*0x5312c3*/
   v34 = 0; /*0x5312c7*/
-  if ( (unsigned __int8)CCFileClass::Open(&v42, 0) ) /*0x5312cb*/
+  if ( (unsigned __int8)(&v42)->Open(0) ) /*0x5312cb*/
   {
     v5 = (char *)CCFileClass::ReadEntireFile(&v42); /*0x5312e5*/
     CCFileClass::Reset(&v42); /*0x5312e7*/
@@ -235,7 +235,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
       v9 = (ConvertClass *)__2_YAPAXI_Z(0x188u); /*0x53133a*/
       if ( v9 ) /*0x531344*/
       {
-        v34 = (int)ConvertClass::Construct(v9, (int)v5, (int)&FileSystem_TEMPERAT_PAL, (int)g_DSurface_Primary, 1, 0); /*0x531363*/
+        v34 = (int)(v9)->Construct((int)v5, (int)&FileSystem_TEMPERAT_PAL, (int)g_DSurface_Primary, 1, 0); /*0x531363*/
         if ( v34 ) /*0x531367*/
         {
           v10 = aGlssmdShp; /*0x53136e*/
@@ -361,14 +361,14 @@ char BulkData_Initialize()
   nullsub_15(); /*0x53174e*/
   GenerateRangeRingTextures(v5); /*0x531753*/
   GenerateLightningStormGlow(v6); /*0x531758*/
-  CCFileClass::Construct(&v7, aDpodVxl); /*0x531766*/
+  (&v7)->Construct(aDpodVxl); /*0x531766*/
   v0 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x53176d*/
   if ( !v0 ) /*0x531777*/
   {
     *(unsigned int *)&stru_A8E960.random[356] = 0; /*0x5317cc*/
     goto LABEL_11; /*0x5317d2*/
   }
-  *(unsigned int *)&stru_A8E960.random[356] = File::LoadFileVXL(v0, (int)&v7, 0); /*0x531788*/
+  *(unsigned int *)&stru_A8E960.random[356] = (v0)->LoadFileVXL((int)&v7, 0); /*0x531788*/
   if ( !*(unsigned int *)&stru_A8E960.random[356] ) /*0x53178d*/
   {
 LABEL_11:
@@ -381,14 +381,14 @@ LABEL_12:
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x5317bd*/
     return 0; /*0x5317cb*/
   }
-  CCFileClass::Construct(&v10, aDpodHva); /*0x5317dd*/
+  (&v10)->Construct(aDpodHva); /*0x5317dd*/
   v2 = (File *)__2_YAPAXI_Z(0x10u); /*0x5317e4*/
   if ( !v2 ) /*0x5317ee*/
   {
     *(unsigned int *)&stru_A8E960.random[360] = 0; /*0x531843*/
     goto LABEL_16; /*0x531849*/
   }
-  *(unsigned int *)&stru_A8E960.random[360] = File::LoadFileHVA(v2, (int)&v10); /*0x5317fe*/
+  *(unsigned int *)&stru_A8E960.random[360] = (v2)->LoadFileHVA((int)&v10); /*0x5317fe*/
   if ( !*(unsigned int *)&stru_A8E960.random[360] ) /*0x531803*/
   {
 LABEL_16:

@@ -103,7 +103,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int *aP1, int a1)
       goto LABEL_25; /*0x655dd7*/
     if ( (!v42 || (unsigned __int8)House::IsHumanPlayer(*(House **)(v13 + 540))) /*0x655e10*/
       && (!*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v13 + 132))(v13) + 559)
-       || (unsigned __int8)Object::IsAlliedWithObjectHouse(*(Object **)((char *)&stru_A83CD9.estimatedHealth + 3), v13)) )
+       || (unsigned __int8)(*(Object **)((char *)&stru_A83CD9.estimatedHealth + 3))->IsAlliedWithObjectHouse(v13)) )
     {
       if ( !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v13 + 132))(v13) + 562) ) /*0x655e24*/
         break; /*0x655e24*/
@@ -450,7 +450,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     }
     if ( v4->Cell_field_0x13C <= 0 ) /*0x586536*/
       return 0; /*0x586536*/
-    NeighbourContent = (CellClass *)Cell::GetNeighbourContent(v4, 3u); /*0x586540*/
+    NeighbourContent = (CellClass *)(v4)->GetNeighbourContent(3u); /*0x586540*/
   }
   else
   {

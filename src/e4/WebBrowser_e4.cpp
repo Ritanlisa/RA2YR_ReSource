@@ -438,7 +438,7 @@ int WebBrowser::GoBack()
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x773ddf*/
   }
   String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&v4[0].Flag_field_0x08); /*0x773dee*/
-  String::Assign_Alt((String *)&g_WebBrowserConfig, v5); /*0x773dfd*/
+  ((String *)&g_WebBrowserConfig)->Assign_Alt(v5); /*0x773dfd*/
   *(unsigned int *)&v2.m_3[1] = &g_ptr_7F3F44; /*0x773e06*/
   ComPtr::Release((ComPtr *)&v2.m_3[1]); /*0x773e0e*/
   DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/

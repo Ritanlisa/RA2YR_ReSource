@@ -674,7 +674,7 @@ int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, voi
     Text::Layout((Text *)a4, a2, (int *)&a4, &a3, v12); /*0x6210da*/
     yTop += (v14 - (int)a3) / 2; /*0x6210f2*/
   }
-  Char::Swap(v15, 1); /*0x6210fa*/
+  (v15)->Swap(1); /*0x6210fa*/
   TextGroup::SetRect((TextGroup *)v15, v10); /*0x621102*/
   Property::Set((Property *)v15, v17); /*0x62110e*/
   Font::Print((int)v15, a1, a2, v18, yTop, v12, v14, a6, a9, a10); /*0x62113f*/

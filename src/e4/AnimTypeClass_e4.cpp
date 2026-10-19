@@ -548,7 +548,7 @@ int AnimTypeClass::GetDamage()
     {
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
     }
-    CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
+    (&v7)->Construct(Buffer); /*0x428d04*/
     v4 = (SHPStruct *)CCFileClass::ReadEntireFile(&v7); /*0x428d0d*/
     this->Image = v4; /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
@@ -558,7 +558,7 @@ int AnimTypeClass::GetDamage()
     else
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x428d2c*/
-      CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
+      (&v10)->Construct(Buffer); /*0x428d3d*/
       v5 = (SHPStruct *)CCFileClass::ReadEntireFile(&v10); /*0x428d46*/
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/

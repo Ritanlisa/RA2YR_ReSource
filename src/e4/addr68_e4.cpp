@@ -1090,7 +1090,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   /* X11: ptr_0 install elided (X67 recv-slot, RHS CCINIClass_Vtable) */  /*0x687d21*/
   if ( stru_A8E960.random[503] ) /*0x687d29*/
   {
-    v4 = CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d34*/
+    v4 = ((CCFileClass *)&v10.customSound_controller[3])->Construct(Source); /*0x687d34*/
     v5 = v4->vt_slot_20(0); /*0x687d3e*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x687d48*/
     v8 = v5; /*0x687d50*/
@@ -1100,8 +1100,8 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v10.customSound_controller[3]); /*0x687d6c*/
     if ( v8 ) /*0x687d75*/
     {
-      CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d7c*/
-      CCINIClass::Load((CCINIClass *)&v10.ptr_4, (int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
+      ((CCFileClass *)&v10.customSound_controller[3])->Construct(Source); /*0x687d7c*/
+      ((CCINIClass *)&v10.ptr_4)->Load((int)&v10.customSound_controller[3], 1, 0); /*0x687d8d*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x687d99*/
       v12 = 0; /*0x687da1*/
       Vector::Clear((int)v11); /*0x687da8*/

@@ -189,7 +189,7 @@ LABEL_19:
     v19 = *(unsigned int *)(*(unsigned int *)&stru_A8E960.random[440] + 4 * v18); /*0x47d5ab*/
     v54 = *(unsigned __int8 *)(&this->u32_11A); /*0x47d5ae*/
     *(unsigned int *)v55 = v19; /*0x47d5b1*/
-    MapFileData = House::LoadMapFileData((House *)v19, v54, 0); /*0x47d5b5*/
+    MapFileData = ((House *)v19)->LoadMapFileData(v54, 0); /*0x47d5b5*/
     if ( this->u32_11C ) /*0x47d5ba*/
     {
       if ( MapFileData ) /*0x47d5c6*/
@@ -297,7 +297,7 @@ LABEL_48:
         }
         goto LABEL_82; /*0x47dacf*/
       }
-      MapFileData = House::LoadMapFileData((House *)v19, *(unsigned __int8 *)(&this->u32_11A), 1); /*0x47d5d9*/
+      MapFileData = ((House *)v19)->LoadMapFileData(*(unsigned __int8 *)(&this->u32_11A), 1); /*0x47d5d9*/
     }
     if ( !MapFileData ) /*0x47d5e0*/
     {

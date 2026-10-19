@@ -416,7 +416,7 @@ LABEL_44:
             if ( v51 ) /*0x5695b5*/
             {
               *(unsigned int *)v71 = v44->smudgeTypeIndex; /*0x5695be*/
-              Object::SpawnAtCell(v51, *(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 100), v71, -1); /*0x5695d1*/
+              (v51)->SpawnAtCell(*(unsigned int *)(*(int *)((char *)&stru_A83CD9.lineTrailer + 3) + 100), v71, -1); /*0x5695d1*/
             }
           }
         }

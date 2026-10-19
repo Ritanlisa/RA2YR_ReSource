@@ -192,8 +192,8 @@ void GameConfig::Constructor(void *a1, void *a2, void *a3, void *a4)
     }
     *&v1->q038 = v3; /*0x5d6839*/
     CCFileClass::Construct2(&v6, &v1->ObjectClass_2C); /*0x5d683c*/
-    if ( (unsigned __int8)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
-      CCINIClass::Load(*&v1->q038, (int)&v6, 0, 0); /*0x5d685a*/
+    if ( (unsigned __int8)(&v6)->Open(0) ) /*0x5d6846*/
+      (*&v1->q038)->Load((int)&v6, 0, 0); /*0x5d685a*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/

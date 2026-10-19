@@ -42,7 +42,7 @@ int Mouse::SetBounds(const void *aP1, void *a2)
     int16_t v4 = this->u32_1176 + this->u32_117A; // cx /*0x4a8c16*/
     v9[0] = this->u32_1174 + this->u32_1178; /*0x4a8c1f*/
     v9[1] = v4; /*0x4a8c24*/
-    result = MapClass::SetCellFlagsAlongPath((MapClass *)this, v9, 0); /*0x4a8c38*/
+    result = ((MapClass *)this)->SetCellFlagsAlongPath(v9, 0); /*0x4a8c38*/
   }
   aP1 = aP1; /*0x4a8c3d*/
   bool v6; // zf

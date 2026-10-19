@@ -767,7 +767,7 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   (*((unsigned short *)&(a3))) = v27 + v28; /*0x57b168*/
   (*(((unsigned short *)&(a3)) + 1)) = (*(((unsigned short *)&(v27)) + 1)) + v29; /*0x57b16d*/
   v39[0] = a3; /*0x57b17e*/
-  Tactical::MouseMove((Tactical *)&DataGlobal_87F7E8, &v40, v39); /*0x57b189*/
+  ((Tactical *)&DataGlobal_87F7E8)->MouseMove(&v40, v39); /*0x57b189*/
   (*((unsigned char *)&(a3))) = 1; /*0x57b192*/
   if ( a4 == 1 ) /*0x57b19a*/
   {

@@ -352,7 +352,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
         if ( currentMission != 19 && currentMission != 18 ) /*0x471e9f*/
           (*(void (**)(BuildingClass *))(v5->ptr_0 + 976))(v5); /*0x471ea5*/
       }
-      CaptureManagerClass::DecideUnitFate((CaptureManagerClass *)a1, (int)v5); /*0x471eae*/
+      ((CaptureManagerClass *)a1)->DecideUnitFate((int)v5); /*0x471eae*/
       if ( (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6 ) /*0x471ec1*/
       {
         v21 = a3; /*0x471ecb*/
@@ -446,7 +446,7 @@ char CaptureManagerClass::FreeUnit(int a2, int a3, unsigned int *a1, int aP1, un
       a2 = 1; /*0x4720d5*/
       a3 = (int)v10[1]; /*0x4720d7*/
       (*(void (**)(CaptureManagerClass *))(this->ptr_0 + 980))(this); /*0x4720da*/
-      CaptureManagerClass::DecideUnitFate(v7, (int)this); /*0x4720e3*/
+      (v7)->DecideUnitFate((int)this); /*0x4720e3*/
       this->u32_2C0 = 0; /*0x4720e8*/
       controlNodeCount = v7->controlNodeCount; /*0x4720f2*/
       if ( *(unsigned int *)(controlNodeCount + 4 * i) ) /*0x4720f5*/

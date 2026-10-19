@@ -257,7 +257,7 @@ LABEL_14:
   v11 = StringTable::Find((StringTable *)pad_50, (const char **)v10[v9]); /*0x5ae037*/
   String::AssignFromPtr((String *)&v13.m_3[1], (const char **)(v11 + 4)); /*0x5ae041*/
   String::ToLower((String *)&v13.m_3[1]); /*0x5ae04a*/
-  String::AssignFromPtr(&v13, aP2); /*0x5ae058*/
+  (&v13)->AssignFromPtr(aP2); /*0x5ae058*/
   String::ToLower(&v13); /*0x5ae061*/
   if ( !v11 || !(unsigned __int8)String::Compare((String *)&v13.m_3[1], (const char **)&v13) ) /*0x5ae073*/
   {

@@ -797,8 +797,8 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   strncat(Destination, v5, 0x80u); /*0x59605a*/
   __3_YAXPAX_Z(v5); /*0x596060*/
   strncat(Destination, aMmp, 0x80u); /*0x596077*/
-  CCFileClass::Construct(&v18, Destination); /*0x59608b*/
-  if ( (unsigned __int8)CCFileClass::Open(&v18, 0) ) /*0x596097*/
+  (&v18)->Construct(Destination); /*0x59608b*/
+  if ( (unsigned __int8)(&v18)->Open(0) ) /*0x596097*/
   {
     v6 = dword_ABE154; /*0x5960a4*/
     if ( !dword_ABE154 ) /*0x5960ab*/

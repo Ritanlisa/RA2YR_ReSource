@@ -57,8 +57,8 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
   else
     sprintf(Buffer, "%sTUR", a2); /*0x5f7abe*/
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7afd*/
-  CCFileClass::Construct(&v17, Source); /*0x5f7b11*/
-  if ( (unsigned __int8)CCFileClass::Open(&v17, 0) ) /*0x5f7b1b*/
+  (&v17)->Construct(Source); /*0x5f7b11*/
+  if ( (unsigned __int8)(&v17)->Open(0) ) /*0x5f7b1b*/
   {
     v4 = (void *)*((unsigned int *)this + 2 * a3 + 50); /*0x5f7b46*/
     if ( v4 ) /*0x5f7b4f*/
@@ -70,7 +70,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     v16 = 0; /*0x5f7b6a*/
     v5 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f7b6e*/
     if ( v5 ) /*0x5f7b78*/
-      FileVXL = File::LoadFileVXL(v5, (int)&v17, 0); /*0x5f7b82*/
+      FileVXL = (v5)->LoadFileVXL((int)&v17, 0); /*0x5f7b82*/
     else
       FileVXL = 0; /*0x5f7b89*/
     *((unsigned int *)this + 2 * a3 + 50) = FileVXL; /*0x5f7b8d*/
@@ -81,7 +81,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     else
       sprintf(Buffer, "%sTUR", a2); /*0x5f7bb8*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7bf7*/
-    CCFileClass::Construct(&v20, Source); /*0x5f7c0e*/
+    (&v20)->Construct(Source); /*0x5f7c0e*/
     v7 = (void *)*((unsigned int *)this + 2 * a3 + 51); /*0x5f7c13*/
     if ( v7 ) /*0x5f7c1c*/
     {
@@ -91,7 +91,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     }
     v8 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f7c3b*/
     if ( v8 ) /*0x5f7c45*/
-      FileHVA = File::LoadFileHVA(v8, (int)&v20); /*0x5f7c51*/
+      FileHVA = (v8)->LoadFileHVA((int)&v20); /*0x5f7c51*/
     else
       FileHVA = 0; /*0x5f7c58*/
     *((unsigned int *)this + 2 * a3 + 51) = FileHVA; /*0x5f7c5c*/
@@ -99,8 +99,8 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
       v11 = 0; /*0x5f7c6d*/
     if ( v16 && v11 ) /*0x5f7c7d*/
     {
-      Info = VoxelSection::GetInfo(*((VoxelSection **)this + 2 * a3 + 50), 0, 0); /*0x5f7c8c*/
-      Matrix::Scale(*((Matrix **)this + 2 * a3 + 51), *(float *)(Info + 12)); /*0x5f7c9c*/
+      Info = (*((VoxelSection **)this + 2 * a3 + 50))->GetInfo(0, 0); /*0x5f7c8c*/
+      (*((Matrix **)this + 2 * a3 + 51))->Scale(*(float *)(Info + 12)); /*0x5f7c9c*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7cad*/
       v22 = 0; /*0x5f7cb4*/
       Vector::Clear((int)v21); /*0x5f7cbb*/
@@ -177,13 +177,13 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
   else
     sprintf(Buffer, "%sBARL", a2); /*0x5f7dde*/
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7e1d*/
-  CCFileClass::Construct(&v14, Source); /*0x5f7e31*/
-  if ( (unsigned __int8)CCFileClass::Open(&v14, 0) ) /*0x5f7e3b*/
+  (&v14)->Construct(Source); /*0x5f7e31*/
+  if ( (unsigned __int8)(&v14)->Open(0) ) /*0x5f7e3b*/
   {
     v13 = 0; /*0x5f7e7b*/
     v5 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f7e80*/
     if ( v5 ) /*0x5f7e8a*/
-      FileVXL = File::LoadFileVXL(v5, (int)&v14, 0); /*0x5f7e94*/
+      FileVXL = (v5)->LoadFileVXL((int)&v14, 0); /*0x5f7e94*/
     else
       FileVXL = 0; /*0x5f7e9b*/
     *((unsigned int *)this + 2 * a3 + 86) = FileVXL; /*0x5f7e9f*/
@@ -194,11 +194,11 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
     else
       sprintf(Buffer, "%sBARL", a2); /*0x5f7ec4*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7efc*/
-    CCFileClass::Construct(&v17, Source); /*0x5f7f13*/
+    (&v17)->Construct(Source); /*0x5f7f13*/
     v7 = 0; /*0x5f7f1a*/
     v8 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f7f1c*/
     if ( v8 ) /*0x5f7f26*/
-      FileHVA = File::LoadFileHVA(v8, (int)&v17); /*0x5f7f32*/
+      FileHVA = (v8)->LoadFileHVA((int)&v17); /*0x5f7f32*/
     else
       FileHVA = 0; /*0x5f7f39*/
     *((unsigned int *)this + 2 * a3 + 87) = FileHVA; /*0x5f7f3d*/
@@ -206,8 +206,8 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       v7 = 1; /*0x5f7f4b*/
     if ( v13 && v7 ) /*0x5f7f5b*/
     {
-      Info = VoxelSection::GetInfo(*((VoxelSection **)this + 2 * a3 + 86), 0, 0); /*0x5f7f6a*/
-      Matrix::Scale(*((Matrix **)this + 2 * a3 + 87), *(float *)(Info + 12)); /*0x5f7f7a*/
+      Info = (*((VoxelSection **)this + 2 * a3 + 86))->GetInfo(0, 0); /*0x5f7f6a*/
+      (*((Matrix **)this + 2 * a3 + 87))->Scale(*(float *)(Info + 12)); /*0x5f7f7a*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f7f8b*/
       v19 = 0; /*0x5f7f92*/
       Vector::Clear((int)v18); /*0x5f7f99*/
@@ -327,8 +327,8 @@ int VoxelAnimType::LoadAnim(void *a1)
   v2 = this + 504; /*0x5f811e*/
   v50 = 0; /*0x5f8134*/
   _makepath(Buffer, 0, 0, this + 504, g_Str_File__VXL); /*0x5f8138*/
-  CCFileClass::Construct(&v58, Buffer); /*0x5f814f*/
-  if ( (unsigned __int8)CCFileClass::Open(&v58, 0) ) /*0x5f815c*/
+  (&v58)->Construct(Buffer); /*0x5f814f*/
+  if ( (unsigned __int8)(&v58)->Open(0) ) /*0x5f815c*/
   {
     v3 = (void *)this->u32_B0; /*0x5f8169*/
     if ( v3 ) /*0x5f8171*/
@@ -338,14 +338,14 @@ int VoxelAnimType::LoadAnim(void *a1)
     }
     v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8185*/
     if ( v4 ) /*0x5f818f*/
-      FileVXL = File::LoadFileVXL(v4, (int)&v58, 0); /*0x5f819c*/
+      FileVXL = (v4)->LoadFileVXL((int)&v58, 0); /*0x5f819c*/
     else
       FileVXL = 0; /*0x5f81a3*/
     this->u32_B0 = FileVXL; /*0x5f81a7*/
     if ( !FileVXL || *(unsigned char *)FileVXL ) /*0x5f81af*/
       v50 = 1; /*0x5f81b3*/
     _makepath(Buffer, 0, 0, v2, g_Str_File__HVA); /*0x5f81c8*/
-    CCFileClass::Construct(&v51, Buffer); /*0x5f81dc*/
+    (&v51)->Construct(Buffer); /*0x5f81dc*/
     v6 = (void *)this->u32_B4; /*0x5f81e1*/
     if ( v6 ) /*0x5f81e9*/
     {
@@ -354,7 +354,7 @@ int VoxelAnimType::LoadAnim(void *a1)
     }
     v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f81fd*/
     if ( v7 ) /*0x5f8207*/
-      FileHVA = File::LoadFileHVA(v7, (int)&v51); /*0x5f8210*/
+      FileHVA = (v7)->LoadFileHVA((int)&v51); /*0x5f8210*/
     else
       FileHVA = 0; /*0x5f8217*/
     this->u32_B4 = FileHVA; /*0x5f821b*/
@@ -385,8 +385,8 @@ int VoxelAnimType::LoadAnim(void *a1)
     {
       sprintf(Filename, "%sTUR", v2); /*0x5f86a4*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f86c0*/
-      CCFileClass::Construct(&v51, Buffer); /*0x5f86d4*/
-      if ( (unsigned __int8)CCFileClass::Open(&v51, 0) ) /*0x5f86de*/
+      (&v51)->Construct(Buffer); /*0x5f86d4*/
+      if ( (unsigned __int8)(&v51)->Open(0) ) /*0x5f86de*/
       {
         v26 = (void *)this->u32_B8; /*0x5f86eb*/
         if ( v26 ) /*0x5f86f3*/
@@ -396,7 +396,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         v27 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8707*/
         if ( v27 ) /*0x5f8711*/
-          v28 = File::LoadFileVXL(v27, (int)&v51, 0); /*0x5f871b*/
+          v28 = (v27)->LoadFileVXL((int)&v51, 0); /*0x5f871b*/
         else
           v28 = 0; /*0x5f8722*/
         this->u32_B8 = v28; /*0x5f8726*/
@@ -404,7 +404,7 @@ int VoxelAnimType::LoadAnim(void *a1)
           v50 = 1; /*0x5f8732*/
         sprintf(Filename, "%sTUR", v2); /*0x5f8745*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f8761*/
-        CCFileClass::Construct(&v54, Buffer); /*0x5f8778*/
+        (&v54)->Construct(Buffer); /*0x5f8778*/
         v29 = (void *)this->u32_BC; /*0x5f877d*/
         if ( v29 ) /*0x5f8785*/
         {
@@ -413,7 +413,7 @@ int VoxelAnimType::LoadAnim(void *a1)
         }
         v30 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8799*/
         if ( v30 ) /*0x5f87a3*/
-          v31 = File::LoadFileHVA(v30, (int)&v54); /*0x5f87af*/
+          v31 = (v30)->LoadFileHVA((int)&v54); /*0x5f87af*/
         else
           v31 = 0; /*0x5f87b6*/
         this->u32_BC = v31; /*0x5f87ba*/
@@ -452,8 +452,8 @@ int VoxelAnimType::LoadAnim(void *a1)
     {
       sprintf(Filename, off_832AE0, this + 504); /*0x5f82e0*/
       _makepath(Buffer, 0, 0, Filename, g_Str_File__VXL); /*0x5f82fc*/
-      CCFileClass::Construct(&v51, Buffer); /*0x5f8310*/
-      if ( (unsigned __int8)CCFileClass::Open(&v51, 0) ) /*0x5f831a*/
+      (&v51)->Construct(Buffer); /*0x5f8310*/
+      if ( (unsigned __int8)(&v51)->Open(0) ) /*0x5f831a*/
       {
         v10 = (void *)this->u32_B8; /*0x5f8327*/
         if ( v10 ) /*0x5f832f*/

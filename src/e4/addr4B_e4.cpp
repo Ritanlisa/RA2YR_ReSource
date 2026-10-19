@@ -464,9 +464,9 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v41 = v8; /*0x4b992b*/
   unsigned int *v11; // eax
   int v42; // [esp+20h] [ebp-144h] BYREF
-  v11 = Coord2D::Add(&v44, &v42, &v40); /*0x4b992f*/
+  v11 = (&v44)->Add(&v42, &v40); /*0x4b992f*/
   unsigned int *v12; // eax
-  v12 = Rect::Construct(&v47, v11, 190, 80); /*0x4b9939*/
+  v12 = (&v47)->Construct(v11, 190, 80); /*0x4b9939*/
   unsigned int v46[4]; // [esp+40h] [ebp-124h] BYREF
   v46[0] = *v12; /*0x4b9942*/
   v46[1] = v12->Y; /*0x4b994b*/

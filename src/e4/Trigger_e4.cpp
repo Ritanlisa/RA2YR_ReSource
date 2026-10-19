@@ -124,7 +124,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
 
   inited = 0; /*0x76d4da*/
   v7 = Count::Get(&this->__pad_458); /*0x76d4e3*/
-  VectorCursor::Construct(&v25, v7 + 44, 0); /*0x76d4f0*/
+  (&v25)->Construct(v7 + 44, 0); /*0x76d4f0*/
   while ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))(&v25) ) /*0x76d4fd*/
   {
     v8 = (WDTObject *)FileClass::SetState((RawFileClass *)(*(unsigned int *)(v25.VectorCursor_field_0x04 + 4) /*0x76d512*/
@@ -135,16 +135,16 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     (*(void (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 8))(&v25); /*0x76d532*/
   }
   v24 = a2; /*0x76d545*/
-  Trigger::checkCondition((Trigger *)&v28.owningHouseIndex, 0, 0); /*0x76d54c*/
+  ((Trigger *)&v28.owningHouseIndex)->checkCondition(0, 0); /*0x76d54c*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EEC04) */  /*0x76d561*/
   v28.ambientSoundController[0] = 10; /*0x76d565*/
   v28.attachedBomb = 0; /*0x76d569*/
-  Trigger::checkCondition((Trigger *)&v28.uniqueId, 0, 0); /*0x76d56d*/
+  ((Trigger *)&v28.uniqueId)->checkCondition(0, 0); /*0x76d56d*/
   v10 = this->u32_45C; /*0x76d572*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EEC04) */  /*0x76d57c*/
   v28.occupant = 10; /*0x76d585*/
   v28.NeedsSaveOrLink = 0; /*0x76d589*/
-  VectorCursor::Construct((VectorCursor *)&v25.VectorCursor_field_0x0C, v10 + 44, 0); /*0x76d58d*/
+  ((VectorCursor *)&v25.VectorCursor_field_0x0C)->Construct(v10 + 44, 0); /*0x76d58d*/
   while ( (*(unsigned __int8 (**)(int *))(v25.VectorCursor_field_0x0C + 4))(&v25.VectorCursor_field_0x0C) )
   {
     v11 = *(void **)(*(unsigned int *)(*(unsigned int *)(v25.VectorCursor_field_0x10 + 4) + 8 * v25.VectorCursor_field_0x14 + 4) + 8); /*0x76d5bc*/
@@ -175,7 +175,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       if ( this->u32_470 ) /*0x76d68f*/
       {
         CCFileClass::Construct2((CCFileClass *)&v28.ambientSoundController[1], this->u32_470); /*0x76d6a9*/
-        if ( (unsigned __int8)CCFileClass::Open((CCFileClass *)&v28.ambientSoundController[1], 0) ) /*0x76d6b3*/
+        if ( (unsigned __int8)((CCFileClass *)&v28.ambientSoundController[1])->Open(0) ) /*0x76d6b3*/
         {
           v18 = (Trigger *)__2_YAPAXI_Z(0x48u); /*0x76d6be*/
           if ( v18 ) /*0x76d6c8*/
@@ -208,7 +208,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v28.ambientSoundController[1]); /*0x76d75d*/
       }
       CCFileClass::Construct2(&v29, this->u8_474); /*0x76d770*/
-      if ( (unsigned __int8)CCFileClass::Open(&v29, 0) )
+      if ( (unsigned __int8)(&v29)->Open(0) )
       {
         v20 = (MSShapeAnim *)__2_YAPAXI_Z(0x40u); /*0x76d78c*/
         v21 = v20
@@ -291,12 +291,12 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7F72C4) */  /*0x76d9cf*/
           }
           DeleteAndZero(&v28); /*0x76d9d7*/
-          PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
+          ((PriorityQueue *)this)->Add(*(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
           MSEngine::ProcessEvents((MSEngine *)this, *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27), 300000); /*0x76da08*/
         }
         (*(void (**)(int *))(v25.VectorCursor_field_0x18 + 8))(&v25.VectorCursor_field_0x18); /*0x76da15*/
       }
-      PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(*(unsigned int *)(v28.ptr_8 + 4) + 4 * v28.ptr_C)); /*0x76da29*/
+      ((PriorityQueue *)this)->Add(*(unsigned int *)(*(unsigned int *)(v28.ptr_8 + 4) + 4 * v28.ptr_C)); /*0x76da29*/
       (*(void (**)(int *))(v28.ptr_4 + 8))(&v28.ptr_4); /*0x76da36*/
     }
     while ( (*(unsigned __int8 (**)(int *))(v28.ptr_4 + 4))(&v28.ptr_4) ); /*0x76da41*/

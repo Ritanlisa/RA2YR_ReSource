@@ -407,7 +407,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   else
   {
     _makepath((char *)&Destination.Name[5], 0, 0, &v4->ImageFile, g_Str_File__VXL); /*0x74b584*/
-    CCFileClass::Construct((CCFileClass *)&Destination, (char *)&Destination.Name[5]); /*0x74b598*/
+    ((CCFileClass *)&Destination)->Construct((char *)&Destination.Name[5]); /*0x74b598*/
     void *v40 = v4->MainVoxel; // edi /*0x74b59d*/
     if ( v40 ) /*0x74b5a5*/
     {
@@ -418,7 +418,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     v41 = (File *)operator new(0x1Cu); /*0x74b5b9*/
     unsigned int *FileVXL; // eax
     if ( v41 ) /*0x74b5c3*/
-      FileVXL = File::LoadFileVXL(v41, (int)&Destination, 0); /*0x74b5ce*/
+      FileVXL = (v41)->LoadFileVXL((int)&Destination, 0); /*0x74b5ce*/
     else
       FileVXL = 0; /*0x74b5d5*/
     v4->MainVoxel = FileVXL; /*0x74b5db*/
@@ -438,7 +438,7 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
 
 
   int v3; // eax
-  v3 = AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x74b699*/
+  v3 = ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x74b699*/
   LOBYTE(v3) = this->Normalized; /*0x74b69e*/
   ((Power *)a2)->FlagProcess(v3); /*0x74b6a7*/
   int v4; // ecx
@@ -551,7 +551,7 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x74b82a*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x74b833*/
+      ((ObjectTypeClass *)aP0)->Construct((int)&aP1); /*0x74b833*/
       /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b838) */
       /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b83e) */
       /* X11: ptr_0 install elided (implicit via VoxelAnimTypeClass virtuals 0x74b845) */

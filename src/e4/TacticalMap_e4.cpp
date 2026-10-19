@@ -382,7 +382,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           int *v8; // eax
           v8 = (&v28)->Sub(v29, &v25); /*0x6d2c05*/
           int *v9; // eax
-          v9 = (int *)(Rect::Construct(&v35, v8, v22, v23)); /*0x6d2c0f*/
+          v9 = (int *)((&v35)->Construct(v8, v22, v23)); /*0x6d2c0f*/
           int v34[4]; // [esp+40h] [ebp-30h] BYREF
           v34[0] = *v9; /*0x6d2c18*/
           v34[1] = v9->Y; /*0x6d2c21*/
@@ -812,7 +812,7 @@ LABEL_25:
               v50 = v42[45]; /*0x6d9378*/
               v100[0] = v42[44]; /*0x6d9383*/
               v100[1] = v50; /*0x6d938a*/
-              Vector2::Subtract(&v94, v100); /*0x6d9391*/
+              (&v94)->Subtract(v100); /*0x6d9391*/
               if ( *(int *)&v94.__pad_000 >= -360 /*0x6d93ca*/
                 && *(int *)&v94.__pad_000 <= dword_B0CE30 + 360
                 && v94.Vector2_field_0x04 >= -180

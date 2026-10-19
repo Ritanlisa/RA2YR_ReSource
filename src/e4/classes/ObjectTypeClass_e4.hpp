@@ -26,7 +26,8 @@ struct ObjectTypeClass {
     SHPStruct* nextArrayIndex;  // 0x18
     char referenceCount[4];  // 0x1C
     char NeedsSaveOrLink[4];  // 0x20
-    char __pad_24[4];  // 0x24
+    char __pad_24[3];  // 0x24
+    char u8_27;  // 0x27
     char ChargerTurrets_0x12[4];  // 0x28
     char ChargerBarrels_0x12[4];  // 0x2C
     char __pad_30[1];  // 0x30

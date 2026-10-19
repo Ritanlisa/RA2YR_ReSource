@@ -372,7 +372,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   v4->EliteOccupyWeapon = v9; /*0x52417f*/
   INIClassIntList = &v44; /*0x524186*/
-  DynamicVectorClass::Copy(&v44, &v4->u32_E88); /*0x52418a*/
+  (&v44)->Copy(&v4->u32_E88); /*0x52418a*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E4DD8) */  /*0x524198*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->BarrelVoxel); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
@@ -410,7 +410,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         break; /*0x524236*/
       INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate(i); /*0x524241*/
       if ( INIClassIntList ) /*0x524245*/
-        DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
+        (&v48)->Add_Alt4(&INIClassIntList); /*0x524250*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x52427a*/
@@ -444,7 +444,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         break; /*0x524320*/
       INIClassIntList = (DynamicVectorClass *)AnimTypeClass::FindOrCreate(j); /*0x52432b*/
       if ( INIClassIntList ) /*0x52432f*/
-        DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x52433a*/
+        (&v48)->Add_Alt4(&INIClassIntList); /*0x52433a*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x52435b*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x524364*/

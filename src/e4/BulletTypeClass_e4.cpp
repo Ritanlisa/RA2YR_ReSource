@@ -547,7 +547,7 @@ int BulletTypeClass::ProcessPower(int * a2, void *a2_2)
   unsigned __int8 *v17; // edx
   unsigned __int8 *v18; // edx
 
-  v3 = (unsigned __int8 *)AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x46c569*/
+  v3 = (unsigned __int8 *)((AbstractTypeClass *)this)->ProcessPower(a2); /*0x46c569*/
   LOBYTE(v3) = this->airburst[0]; /*0x46c56e*/
   Power::FlagProcess((Power *)a2, (int)v3); /*0x46c577*/
   LOBYTE(v4) = this->shadow[0]; /*0x46c57c*/
@@ -674,7 +674,7 @@ int BulletTypeClass::ProcessImpact(int a1)
   {
     *((unsigned int *)v3 + 8) = v5; /*0x69fc3a*/
     *((unsigned int *)v3 + 7) = v4; /*0x69fc43*/
-    Timer::Start((Timer *)&v25, 3); /*0x69fc46*/
+    ((Timer *)&v25)->Start(3); /*0x69fc46*/
     *((unsigned int *)v3 + 9) = v25; /*0x69fc57*/
     *((unsigned int *)v3 + 10) = v26; /*0x69fc5d*/
     *((unsigned int *)v3 + 11) = v27; /*0x69fc64*/

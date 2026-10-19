@@ -85,7 +85,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     {
       BuildingAnimByName = (Color *)*((unsigned int *)dword_B054D4 + *((unsigned int *)other + 22549)); /*0x6583cf*/
     }
-    v5 = Color::ConvertToRGB(BuildingAnimByName + 194, (int)&hWnd); /*0x6583dd*/
+    v5 = (BuildingAnimByName + 194)->ConvertToRGB((int)&hWnd); /*0x6583dd*/
     v25 = *(unsigned short *)v5; /*0x6583e6*/
     v26 = *(unsigned char *)(v5 + 2); /*0x6583ee*/
     v6 = (unsigned __int8)v25 | (((((v25) >> 8) & 0xFF) | (v26 << 8)) << 8); /*0x65841f*/

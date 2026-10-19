@@ -251,7 +251,7 @@ void sub_600AF0()
         LinkedList::Remove((LinkedList *)(v3 + 4), k); /*0x600b3e*/
       v5 = *(DeleteAndZero **)(v3 + 64); /*0x600b4a*/
       if ( v5 ) /*0x600b4f*/
-        DeleteAndZero::OrFree(v5, 1); /*0x600b53*/
+        (v5)->OrFree(1); /*0x600b53*/
       __3_YAXPAX_Z((void *)v3); /*0x600b59*/
     }
     i = ++v1; /*0x600b70*/

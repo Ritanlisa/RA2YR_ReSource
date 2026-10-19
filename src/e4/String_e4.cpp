@@ -105,7 +105,7 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = String::Tokenize(aP1, 0, Delimiter, (void **)&v10); /*0x5d03ba*/
   if ( String::Length((String *)&v10) ) /*0x5d03bc*/
-    String::Reassign((String *)this, (const char **)&v10); /*0x5d03cc*/
+    ((String *)this)->Reassign((const char **)&v10); /*0x5d03cc*/
   v4 = String::Tokenize(aP1, v3, Delimiter, (void **)&v10); /*0x5d03e7*/
   if ( String::Length((String *)&v10) ) /*0x5d03e9*/
   {

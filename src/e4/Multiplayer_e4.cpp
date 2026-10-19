@@ -195,7 +195,7 @@ void * Multiplayer::FindStartPositions(void *a1)
   v2[13] = 0; /*0x688657*/
   v2[12] = (Multiplayer)1; /*0x68865f*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E8500) */  /*0x688663*/
-  Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
+  (v2)->CopyDataArray(&v25); /*0x688669*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3238) */  /*0x68866e*/
   /* X11: ptr_0 install elided (implicit via VectorClass virtuals 0x688674) */
   Items = v25.Items; /*0x68867c*/

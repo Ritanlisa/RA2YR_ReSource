@@ -721,7 +721,7 @@ LABEL_15:
     v16 = 0; /*0x5bb463*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E6200) */  /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v18.BufferOffset, 0, 0x2000); /*0x5bb46f*/
-    Pipe::SetDelegate((Pipe *)&v18.BufferOffset, (int)&v15); /*0x5bb47d*/
+    ((Pipe *)&v18.BufferOffset)->SetDelegate((int)&v15); /*0x5bb47d*/
     v7 = Compression::Read(&v18.BufferOffset, v5, Buffer); /*0x5bb499*/
     v8 = (*(int (**)(int *))(v18.BufferOffset + 4))(&v18.BufferOffset) + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/

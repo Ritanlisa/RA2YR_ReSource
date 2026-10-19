@@ -460,7 +460,7 @@ int E4Recv_5A1C70::sub_5A1C70()
       result = (int)&dword_ABED10[v13]; /*0x5a1dd0*/
       if ( *(unsigned int *)&dword_ABED10[v13 + 28] == -1 && (*(unsigned short *)result || result->u32_2) ) /*0x5a1de2*/
       {
-        v15 = (RandomMap *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &dword_ABED10[v13]); /*0x5a1def*/
+        v15 = (RandomMap *)((CellCoord *)&dword_87F7E8)->To_CellObj(&dword_ABED10[v13]); /*0x5a1def*/
         result = (int)RandomMap::GenerateTerrain(v15); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
           result->__pad_01A = 0; /*0x5a1dff*/
@@ -1233,7 +1233,7 @@ LABEL_10:
           if ( !(unsigned __int8)CellClass::InBounds(v21) && !(unsigned __int8)CellClass::InMapDataRange(v21) /*0x5a67da*/
             || v21->firstObject
             || v21->landType == 3
-            || !(unsigned __int8)Type::CheckAmbiguity((Type *)&dword_87F7E8, (int)v21, 1) )
+            || !(unsigned __int8)((Type *)&dword_87F7E8)->CheckAmbiguity((int)v21, 1) )
           {
             v26 = 0; /*0x5a67e3*/
           }

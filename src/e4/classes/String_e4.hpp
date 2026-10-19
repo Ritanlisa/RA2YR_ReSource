@@ -8,7 +8,9 @@
 namespace gamemd {
 struct ControlClass;  // fix_fwd_type_supply
 struct String {
-    char __pad_0[3];  // 0x0
+    char __pad_0[1];  // 0x0
+    unsigned char u8_1;  // 0x1
+    char __pad_2[1];  // 0x2
     char m_3[4];  // 0x3
     char __tail_7[1];  // 0x7
 // --- flat members (BEGIN) ---

@@ -523,7 +523,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
       }
       return 0; /*0x5deeff*/
     }
-    WideString::Assign_Alt((WideString *)(lParam + 8), 0); /*0x5def2d*/
+    ((WideString *)(lParam + 8))->Assign_Alt(0); /*0x5def2d*/
     if ( *(unsigned int *)lParam && *(unsigned int *)(lParam + 4) != -1 ) /*0x5def40*/
     {
       DlgCtrlID = (Dialog *)GetDlgCtrlID(*(HWND *)lParam); /*0x5def49*/
@@ -540,7 +540,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           ComboBoxSelectedRaw = (GameSetup *)GetComboBoxSelectedRaw(hDlg, (int)DlgCtrlID, *(unsigned int *)(lParam + 4)); /*0x5def77*/
           DifficultyString = GameSetup::GetColorTooltip(ComboBoxSelectedRaw); /*0x5def7e*/
 LABEL_132:
-          WideString::Assign_Alt((WideString *)(lParam + 8), DifficultyString); /*0x5defb4*/
+          ((WideString *)(lParam + 8))->Assign_Alt(DifficultyString); /*0x5defb4*/
         }
       }
       else
@@ -672,7 +672,7 @@ LABEL_48:
 LABEL_58:
         if ( !v11 || (v34 = 0, (*(unsigned __int8 (**)(ObjectClass *))(v11->ptr_0 + 188))(v11)) ) /*0x5de93b*/
           v34 = 1; /*0x5de94a*/
-        Dialog::IdleProcess((Dialog *)v31, (ObjectClass *)hDlg); /*0x5de951*/
+        ((Dialog *)v31)->IdleProcess((ObjectClass *)hDlg); /*0x5de951*/
         ShowWindow(hDlg, 0); /*0x5de95f*/
         byte_8316D4 = 0; /*0x5de967*/
         if ( SkirmishDialog::Show(g_hWnd, lParam, (int)v12) == 2 ) /*0x5de976*/

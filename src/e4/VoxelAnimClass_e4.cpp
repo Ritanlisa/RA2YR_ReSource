@@ -650,7 +650,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 }
               }
               v94 = &v43->ptr_24; /*0x74a482*/
-              CellClass::RegisterForRedraw(v44, &v43->u32_48); /*0x74a486*/
+              (v44)->RegisterForRedraw(&v43->u32_48); /*0x74a486*/
               v43[286] = 0; /*0x74a48f*/
               StartCoords = House::GetStartCoords((House *)v43, v100); /*0x74a49e*/
               v48 = *StartCoords; /*0x74a4a6*/
@@ -752,7 +752,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                   -1);
               }
             }
-            CellClass::RegisterForRedraw(v56, &v55->q11E); /*0x74a6d9*/
+            (v56)->RegisterForRedraw(&v55->q11E); /*0x74a6d9*/
             v55->powerup[0] = 0; /*0x74a6e2*/
             House::GetStartCoords((House *)v55, &v108); /*0x74a6ec*/
             BuildingClass::AddUpgrade(&dword_87F7E8.field_0, (int)&v55->smudgeTypeIndex); /*0x74a6f7*/

@@ -142,7 +142,7 @@ int INIClass::GetKeyCount(INIClass * aP1, void *a2)
   SortedArray_field_0x10 = (unsigned __int8 **)v2->SortedArray_field_0x10; /*0x5269b2*/
   if ( !SortedArray_field_0x10 || *SortedArray_field_0x10 != v3 ) /*0x5269bb*/
   {
-    v5 = SortedArray::BinarySearch(v2, (int *)&a2); /*0x5269c4*/
+    v5 = (v2)->BinarySearch((int *)&a2); /*0x5269c4*/
     if ( !v5 ) /*0x5269cb*/
       return 0; /*0x5269cb*/
     v2->SortedArray_field_0x10 = v5; /*0x5269cd*/
@@ -154,7 +154,7 @@ int INIClass::GetKeyCount(INIClass * aP1, void *a2)
     v7 = (unsigned __int8 **)v2->SortedArray_field_0x10; /*0x5269db*/
     if ( v7 && *v7 == v3 ) /*0x5269e4*/
       goto LABEL_12; /*0x5269e4*/
-    v8 = SortedArray::BinarySearch(v2, (int *)&a2); /*0x5269ed*/
+    v8 = (v2)->BinarySearch((int *)&a2); /*0x5269ed*/
     if ( v8 ) /*0x5269f4*/
     {
       v2->SortedArray_field_0x10 = v8; /*0x5269f6*/
@@ -425,13 +425,13 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
     return 0; /*0x526d10*/
   if ( !(unsigned __int8)SortedArray::CheckCache(v3, &aP2) ) /*0x526d19*/
   {
-    v5 = SortedArray::BinarySearch(v3, (int *)&aP2); /*0x526d29*/
+    v5 = (v3)->BinarySearch((int *)&aP2); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
     v3->SortedArray_field_0x10 = v5; /*0x526d32*/
   }
   aP2 = v4; /*0x526d3c*/
-  v6 = *(unsigned int **)SortedArray::FindValue(v3, (int *)&aP2); /*0x526d45*/
+  v6 = *(unsigned int **)(v3)->FindValue((int *)&aP2); /*0x526d45*/
   if ( v6 ) /*0x526d49*/
   {
     v7 = a3; /*0x526d4b*/

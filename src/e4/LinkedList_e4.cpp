@@ -72,7 +72,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
       v6 = MEMORY[0xA83D18]; /*0x479222*/
     v5->u32_4 = v6; /*0x479227*/
   }
-  Theme::Stop((Theme *)&MEMORY[0xA83D10], 0); /*0x479232*/
+  ((Theme *)&MEMORY[0xA83D10])->Stop(0); /*0x479232*/
   if ( g_MixFile_MOVIES ) /*0x47923e*/
   {
     Debug::Log(); /*0x479249*/
@@ -168,7 +168,7 @@ LABEL_61:
   MixFileClass_MULTI = (int)MixFileClass::FromFile(v14, aMultiMix, (int)dword_886980); /*0x4794f2*/
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
-  v15 = CCFileClass::Construct(&v24, g_Str_File_THEMEMD_MIX); /*0x479526*/
+  v15 = (&v24)->Construct(g_Str_File_THEMEMD_MIX); /*0x479526*/
   v16 = v15->vt_slot_20(0, a2); /*0x47953f*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x479541*/
   v28 = 0; /*0x479545*/
@@ -199,7 +199,7 @@ LABEL_61:
 LABEL_58:
   Audio::LoadWAVFiles((Audio *)&MEMORY[0xA83D10]); /*0x4795c8*/
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
-  v19 = CCFileClass::Construct((CCFileClass *)&v24.FilePointer, Source); /*0x4795f5*/
+  v19 = ((CCFileClass *)&v24.FilePointer)->Construct(Source); /*0x4795f5*/
   v20 = v19->vt_slot_20(0); /*0x479609*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x47960b*/
   v27 = 0; /*0x47960f*/

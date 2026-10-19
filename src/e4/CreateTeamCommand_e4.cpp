@@ -79,7 +79,7 @@ unsigned int * CreateTeamCommand::performAction_148()
   result = (unsigned int *)dword_880990; /*0x5373ab*/
   int v3; // [esp+0h] [ebp-10h] BYREF
   if ( dword_880990 ) /*0x5373b2*/
-    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5373c3*/
+    return ((Tactical *)&dword_87F7E8)->MouseMove(&v3, &word_A8F2F8); /*0x5373c3*/
   return result; /*0x5373c8*/
 }
 }
@@ -101,7 +101,7 @@ unsigned int * CreateTeamCommand::performAction_153()
   result = (unsigned int *)dword_880990; /*0x53749b*/
   int v3; // [esp+0h] [ebp-10h] BYREF
   if ( dword_880990 ) /*0x5374a2*/
-    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5374b3*/
+    return ((Tactical *)&dword_87F7E8)->MouseMove(&v3, &word_A8F2F8); /*0x5374b3*/
   return result; /*0x5374b8*/
 }
 }
@@ -123,7 +123,7 @@ unsigned int * CreateTeamCommand::performAction_158()
   result = (unsigned int *)dword_880990; /*0x53758b*/
   int v3; // [esp+0h] [ebp-10h] BYREF
   if ( dword_880990 ) /*0x537592*/
-    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5375a3*/
+    return ((Tactical *)&dword_87F7E8)->MouseMove(&v3, &word_A8F2F8); /*0x5375a3*/
   return result; /*0x5375a8*/
 }
 }

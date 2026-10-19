@@ -318,7 +318,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
     goto LABEL_39; /*0x4834ad*/
   if ( aP4 != -1 ) /*0x4834c2*/
   {
-    result = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, &this->q048, aP5, aP7); /*0x4834cf*/
+    result = ((MapClass *)&dword_87F7E8)->GetTileIndex(&this->q048, aP5, aP7); /*0x4834cf*/
     if ( aP4 != result ) /*0x4834d6*/
     {
       (result) = ((result) & ~0xFF) | ((0) & 0xFF); /*0x4834db*/

@@ -525,7 +525,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   {
     MessageLoop(); /*0x69452f*/
     Event::Dispatch(); /*0x694534*/
-    if ( ObjectTypeClass::CreateInstance((ObjectTypeClass *)&stru_A8E960.altNextScenario[12], (int)v6, (int)v32) <= 0 ) /*0x69454b*/
+    if ( ((ObjectTypeClass *)&stru_A8E960.altNextScenario[12])->CreateInstance((int)v6, (int)v32) <= 0 ) /*0x69454b*/
       goto LABEL_43; /*0x69454b*/
     if ( *(unsigned int *)v6 != 112 ) /*0x694555*/
       goto LABEL_43; /*0x694555*/
@@ -703,8 +703,8 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   Timer::GetTicks(); /*0x694776*/
   v47 = 0; /*0x69478b*/
   Debug::Log(); /*0x694790*/
-  CCFileClass::Construct(&v54, Source); /*0x69479d*/
-  if ( !(unsigned __int8)CCFileClass::Open(&v54, 0) ) /*0x6947a7*/
+  (&v54)->Construct(Source); /*0x69479d*/
+  if ( !(unsigned __int8)(&v54)->Open(0) ) /*0x6947a7*/
   {
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x6947b7*/
     v56 = 0; /*0x6947bf*/
@@ -869,7 +869,7 @@ LABEL_38:
     while ( 1 ) /*0x694bce*/
     {
       Event::Dispatch(); /*0x694bce*/
-      if ( ObjectTypeClass::CreateInstance((ObjectTypeClass *)&stru_A8E960.altNextScenario[12], (int)v64, (int)v53) > 0 /*0x694bf5*/
+      if ( ((ObjectTypeClass *)&stru_A8E960.altNextScenario[12])->CreateInstance((int)v64, (int)v53) > 0 /*0x694bf5*/
         && v64[0] == 113 )
       {
         break; /*0x694bf5*/

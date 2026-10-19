@@ -500,7 +500,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
         {
           BYTE2(v58.Color_field_00) = v12; /*0x550e98*/
           LOWORD(v58.Color_field_00) = v56; /*0x550ea0*/
-          Color::Lerp(&v58, v59[0], v72); /*0x550eab*/
+          (&v58)->Lerp(v59[0], v72); /*0x550eab*/
           v31 = (LOBYTE(v58.Color_field_00) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x550f09*/
               | (BYTE1(v58.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green)
               | (BYTE2(v58.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
@@ -574,7 +574,7 @@ LABEL_37:
       (unsigned __int16)(*(unsigned short *)v59 * (unsigned __int8)v61) >> 8,
       (unsigned __int16)(*(unsigned short *)v59 * (((v61) >> 8) & 0xFF)) >> 8,
       (unsigned __int16)(*(unsigned short *)v59 * v62) >> 8);
-    ColorStruct::SetRGB(&v79, v37, v36, v35); /*0x5510ac*/
+    (&v79)->SetRGB(v37, v36, v35); /*0x5510ac*/
     v38 = v74; /*0x5510b1*/
     __asm { fild [esp+148h+var_EC] } /*0x5510b7*/
     __asm
@@ -644,7 +644,7 @@ LABEL_37:
   {
     LOWORD(v58.Color_field_00) = v61; /*0x551216*/
     BYTE2(v58.Color_field_00) = v62; /*0x551223*/
-    Color::Lerp(&v58, v59[0], v72); /*0x55122d*/
+    (&v58)->Lerp(v59[0], v72); /*0x55122d*/
     return (*(int (**)(AudioStream *, CellStruct *, int *, int *, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 52))( /*0x5512a7*/
              g_DSurface_Hidden_2,
              &DSurface_ViewBounds,

@@ -200,7 +200,7 @@ LABEL_10:
       v14 = (TemporalClass *)this->u32_44; /*0x71a84e*/
       WarpPerStep = 0; /*0x71a851*/
       if ( v14 ) /*0x71a855*/
-        WarpPerStep = TemporalClass::GetWarpPerStep(v14, 1); /*0x71a85e*/
+        WarpPerStep = (v14)->GetWarpPerStep(1); /*0x71a85e*/
       v16 = this->creationFrame; /*0x71a860*/
       v17 = *(unsigned int *)v16; /*0x71a864*/
       v18 = (*(int (**)(int, unsigned int))(*(unsigned int *)v16 + 740))(v16, 0); /*0x71a866*/
@@ -361,7 +361,7 @@ int TemporalClass::GetWarpPerStep(int a2, void *a2_1)
   WarpPerStep = 0; /*0x71ab14*/
   v4 = (TemporalClass *)this->u32_44; /*0x71ab17*/
   if ( v4 && a2 <= 50 ) /*0x71ab25*/
-    WarpPerStep = TemporalClass::GetWarpPerStep(v4, a2 + 1); /*0x71ab2e*/
+    WarpPerStep = (v4)->GetWarpPerStep(a2 + 1); /*0x71ab2e*/
   creationFrame = this->creationFrame; /*0x71ab30*/
   v6 = *(unsigned int *)creationFrame; /*0x71ab35*/
   v7 = (*(int (**)(int, unsigned int))(*(unsigned int *)creationFrame + 740))(creationFrame, 0); /*0x71ab37*/

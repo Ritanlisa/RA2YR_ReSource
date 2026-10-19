@@ -237,7 +237,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
         (*(void (**)(ObjectClass *, unsigned int))(g_DSurface_Hidden->ptr_0 + 24))(g_DSurface_Hidden, 0); /*0x5bedd2*/
         Frame::Present((int)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
       }
-      BinkMovie::Close(&v23, Str); /*0x5bedec*/
+      (&v23)->Close(Str); /*0x5bedec*/
       if ( a8 == 1 ) /*0x5bedf9*/
         v23.MovieHandle = 1; /*0x5bedfb*/
       if ( !byte_ABF35C ) /*0x5bee06*/

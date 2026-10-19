@@ -307,7 +307,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
         break; /*0x721b92*/
       v23 = AnimTypeClass::FindOrCreate(i); /*0x721b9d*/
       if ( v23 ) /*0x721ba1*/
-        DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
+        (&v25)->Add_Alt4(&v23); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7EB6F4) */  /*0x721bd6*/

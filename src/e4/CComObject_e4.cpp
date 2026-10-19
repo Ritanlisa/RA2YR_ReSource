@@ -303,7 +303,7 @@ LABEL_39:
   v17 = *(String **)(*(unsigned int *)g_WOL_ListParser.__pad_0 + 4 * (dword_B768D8(v20) & ((1 << dword_B768CC) - 1))); /*0x7a51b2*/
   if ( v17 ) /*0x7a51b7*/
   {
-    while ( !(unsigned __int8)String::Compare(v17, (const char **)v20) ) /*0x7a51c7*/
+    while ( !(unsigned __int8)(v17)->Compare((const char **)v20) ) /*0x7a51c7*/
     {
       v17 = *v17->attachedBomb.__pad_0; /*0x7a51c9*/
       if ( !v17 ) /*0x7a51ce*/
@@ -576,7 +576,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
         }
         String::Assign(&v19, &v24[36]); /*0x7a7c2e*/
         String::ToLower(&v19); /*0x7a7c37*/
-        if ( (unsigned __int8)String::Compare((String *)&v19.m_3[1], (const char **)&v19) ) /*0x7a7c45*/
+        if ( (unsigned __int8)((String *)&v19.m_3[1])->Compare((const char **)&v19) ) /*0x7a7c45*/
           break; /*0x7a7c45*/
         DeleteAndZero((ObjectClass *)&v19); /*0x7a7c52*/
         ++v8; /*0x7a7c57*/

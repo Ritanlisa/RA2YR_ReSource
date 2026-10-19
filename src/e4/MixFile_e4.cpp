@@ -179,7 +179,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   sprintf(Buffer, "SIDEC%02dMD.MIX", v2 + 1); /*0x5350e1*/
   Debug::Log(); /*0x5350f0*/
   unsigned int *v6; // eax
-  v6 = CCFileClass::Construct(&v18, Buffer); /*0x535101*/
+  v6 = (&v18)->Construct(Buffer); /*0x535101*/
   char v7; // bl
   v7 = v6->vt_slot_20(0); /*0x535115*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x535117*/
@@ -202,7 +202,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   sprintf(Buffer, "SIDEC%02d.MIX", v5); /*0x535184*/
   Debug::Log(); /*0x535193*/
   unsigned int *v9; // eax
-  v9 = CCFileClass::Construct(&v18, Buffer); /*0x5351a4*/
+  v9 = (&v18)->Construct(Buffer); /*0x5351a4*/
   char v10; // bl
   v10 = v9->vt_slot_20(0); /*0x5351b8*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x5351ba*/
@@ -233,7 +233,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     sprintf(Buffer, "SIDENC%02d.MIX", v5); /*0x53525b*/
     Debug::Log(); /*0x53526a*/
     unsigned int *v13; // eax
-    v13 = CCFileClass::Construct(&v18, Buffer); /*0x53527b*/
+    v13 = (&v18)->Construct(Buffer); /*0x53527b*/
     char v14; // bl
     v14 = v13->vt_slot_20(0); /*0x535294*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E16B0) */  /*0x535296*/
@@ -252,7 +252,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     }
     House_Load(); /*0x5352e3*/
     (v16)->InitializeToolTipColor(); /*0x5352ec*/
-    CCFileClass::Construct(&v21, aUimdIni); /*0x5352fd*/
+    (&v21)->Construct(aUimdIni); /*0x5352fd*/
     if ( CCINIClass::Load(&dword_887208, (int)&v21, 0, 0) ) /*0x535311*/
     {
       ((SidebarClass *)dword_8871E0)->ReadButtonList(); /*0x53533d*/

@@ -644,7 +644,7 @@ int TechnoClass::ProcessDeployAction()
         v30 = v3; /*0x6afe25*/
         *(unsigned int *)v29 = v3; /*0x6afe29*/
         if ( v3 == dword_B0B5B8 /*0x6afe57*/
-          || (v3 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v32, v3),
+          || (v3 = *((BuildingClass *)this)->FindPlacementCells2(&v32, v3),
               *(unsigned int *)v29 = v3,
               v3 == dword_B0B5B8) )
         {
@@ -763,7 +763,7 @@ int TechnoClass::ProcessDeployAction()
                                         &v31,
                                         dword_8871E0->ExtraInfantryLight / 256,
                                         1);
-          v30 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v33, *(int *)v29); /*0x6b0100*/
+          v30 = *((BuildingClass *)this)->FindPlacementCells2(&v33, *(int *)v29); /*0x6b0100*/
           v16 = CellStruct::Sub((CellStruct *)&v30, &v34, v29); /*0x6b0104*/
           v17 = *((__int16 *)v16 + 1); /*0x6b0109*/
           v18 = *(__int16 *)v16; /*0x6b010d*/

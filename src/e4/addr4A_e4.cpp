@@ -615,7 +615,7 @@ void * LoadFileSHP(char * aP0, bool * aP1)
   result = SearchMIXFile(aP0, 0); /*0x4a38de*/
   if ( !result ) /*0x4a38e5*/
   {
-    CCFileClass::Construct(&v8, aP0); /*0x4a38ed*/
+    (&v8)->Construct(aP0); /*0x4a38ed*/
     v5 = 0; /*0x4a38f2*/
     if ( (*(unsigned __int8 (**)(CCFileClass *, unsigned int))(*(unsigned int *)v8.__tail_0 + 20))(&v8, 0) ) /*0x4a38fd*/
     {
@@ -1335,9 +1335,9 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   v26[1] = v16; /*0x4a5fa7*/
   v26[2] = v17; /*0x4a5fb1*/
   v26[3] = v16 + v18; /*0x4a5fb5*/
-  Char::Swap(v10, 1); /*0x4a5fb9*/
-  TextGroup::SetRect((TextGroup *)v10, v26); /*0x4a5fc5*/
-  Property::Set((Property *)v10, a6); /*0x4a5fd1*/
+  (v10)->Swap(1); /*0x4a5fb9*/
+  ((TextGroup *)v10)->SetRect(v26); /*0x4a5fc5*/
+  ((Property *)v10)->Set(a6); /*0x4a5fd1*/
   FontRenderer::DrawText(v10, a3, a2, v12, v11, 0, 0); /*0x4a5fed*/
   *a1 = v12; /*0x4a5ff7*/
   a1[1] = v11; /*0x4a5ff9*/

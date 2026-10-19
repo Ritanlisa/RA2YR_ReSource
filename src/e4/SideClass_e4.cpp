@@ -116,7 +116,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   do /*0x679cad*/
   {
     v20->ObjectClass = v19; /*0x679c9c*/
-    MissionClass::LoadFromINI(v20, aP0); /*0x679c9e*/
+    (v20)->LoadFromINI(aP0); /*0x679c9e*/
     v20 = &v20->NeedsSaveOrLink; /*0x679ca3*/
     ++v19; /*0x679ca6*/
   }

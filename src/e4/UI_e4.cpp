@@ -1037,7 +1037,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM, LPARAM)
   lParam[0] = LPARAM; /*0x603f1e*/
   lParam[1] = LPARAM; /*0x603f2b*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f2f*/
-  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v8); /*0x603f3c*/
+  ((WideString *)a1)->AssignFromPtr((const wchar_t **)&v8); /*0x603f3c*/
   DeleteAndZero::Alt((DeleteAndZero *)&v8); /*0x603f45*/
   return a1; /*0x603f4c*/
 
@@ -1354,7 +1354,7 @@ int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
       v6 = (Char *)g_FogOfWarState; /*0x6ac4a5*/
       v20 = *a2; /*0x6ac4b5*/
       BuildingAnimByName = (Color *)FindBuildingAnimByName(aDarkred, 1); /*0x6ac4b9*/
-      v8 = Color::ConvertToRGB(BuildingAnimByName + 194, (int)&v14); /*0x6ac4c9*/
+      v8 = (BuildingAnimByName + 194)->ConvertToRGB((int)&v14); /*0x6ac4c9*/
       v18 = *(unsigned short *)v8; /*0x6ac4d7*/
       v19 = *(unsigned char *)(v8 + 2); /*0x6ac4e1*/
       v9 = ((unsigned __int8)v18 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6ac52e*/
@@ -1367,9 +1367,9 @@ int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
       v21[1] = v11; /*0x6ac547*/
       v21[3] = v11 + v12; /*0x6ac54b*/
       v21[2] = v21[0] + v10; /*0x6ac551*/
-      Char::Swap(v6, 1); /*0x6ac555*/
-      TextGroup::SetRect((TextGroup *)v6, v21); /*0x6ac561*/
-      Property::Set((Property *)v6, v9); /*0x6ac569*/
+      (v6)->Swap(1); /*0x6ac555*/
+      ((TextGroup *)v6)->SetRect(v21); /*0x6ac561*/
+      ((Property *)v6)->Set(v9); /*0x6ac569*/
       v13 = v15; /*0x6ac57a*/
       Text::Layout((Text *)v6, v15, &v17, &v16, a4); /*0x6ac584*/
       return Font::Print((int)v6, (int)DSurface_Sidebar, v13, v20, *(unsigned int *)&v6[7] - v16 + v5, a4, 0, 0, 0, 0); /*0x6ac5b2*/

@@ -85,7 +85,7 @@ AbstractClass * File::LoadFont(char *Source)
   v4 = (CCFileClass *)__2_YAPAXI_Z(0x6Cu); /*0x43399f*/
   if ( v4 ) /*0x4339a9*/
   {
-    v5 = CCFileClass::Construct(v4, Source); /*0x4339b2*/
+    v5 = (v4)->Construct(Source); /*0x4339b2*/
     v6 = v5; /*0x4339b7*/
     if ( v5 ) /*0x4339bb*/
     {
@@ -457,9 +457,9 @@ AbstractClass * * File::ParseCSFString(char * Source)
   int v25; // [esp+8Ch] [ebp-20h]
   char Buffer[24]; // [esp+94h] [ebp-18h] BYREF
 
-  CCFileClass::Construct(&v23, Source); /*0x73499f*/
+  (&v23)->Construct(Source); /*0x73499f*/
   v19 = 0; /*0x7349ab*/
-  if ( (unsigned __int8)CCFileClass::Open(&v23, 0) /*0x7349e5*/
+  if ( (unsigned __int8)(&v23)->Open(0) /*0x7349e5*/
     && FileClass::Load(&v23, (const CHAR *)1)
     && CCFileClass::Read(&v23, Buffer, 24) == 24 )
   {

@@ -414,7 +414,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
     v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x529fca*/
     v23 = v19; /*0x529fcf*/
     if ( !(unsigned __int8)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x529ff0*/
-      || (v24 = v19, (pN = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
+      || (v24 = v19, (pN = *(unsigned int *)((SortedArray *)&this->owningHouseIndex)->FindValue(&v24)) == 0) )
     {
       this->ptr_4 = 0; /*0x52a006*/
       this->ptr_8 = 0; /*0x52a009*/
@@ -505,7 +505,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
     *(float *)&v16 = COERCE_FLOAT(Checksummer::Add_Buffer(&v21, a3, strlen((const char *)a3))); /*0x52a280*/
     a3 = v16; /*0x52a285*/
     if ( !(unsigned __int8)HashTable::BinarySearch(&this->owningHouseIndex, (int *)&a3) /*0x52a2a6*/
-      || (v20 = (int)v16, (pN = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v20)) == 0) )
+      || (v20 = (int)v16, (pN = *(unsigned int *)((SortedArray *)&this->owningHouseIndex)->FindValue(&v20)) == 0) )
     {
       this->ptr_4 = 0; /*0x52a2b9*/
       this->ptr_8 = 0; /*0x52a2bc*/
@@ -608,7 +608,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
     v19 = Checksummer::Add_Buffer(v18, (unsigned __int8 *)v7, v17 - 1); /*0x52a462*/
     v23 = v19; /*0x52a467*/
     if ( !(unsigned __int8)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x52a488*/
-      || (v24 = v19, (pN = *(unsigned int *)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
+      || (v24 = v19, (pN = *(unsigned int *)((SortedArray *)&this->owningHouseIndex)->FindValue(&v24)) == 0) )
     {
       this->ptr_4 = 0; /*0x52a49e*/
       this->ptr_8 = 0; /*0x52a4a1*/

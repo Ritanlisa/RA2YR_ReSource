@@ -225,11 +225,11 @@ void * SidebarClass::LoadAssets()
   v12 = 0; /*0x6a58d9*/
   FileSHP = LoadFileSHP(aSellShp, (bool *)&v12); /*0x6a58dd*/
   ShapeButton::SetShape(&stru_B07DF8, (int)FileSHP, 0, 0); /*0x6a58e8*/
-  ButtonClass::SetState((ButtonClass *)&stru_B07DF8, v12); /*0x6a58f7*/
+  ((ButtonClass *)&stru_B07DF8)->SetState(v12); /*0x6a58f7*/
   dword_B07E48 = *(unsigned int *)&g_SidebarConfig; /*0x6a590c*/
   v4 = LoadFileSHP(aRepairShp, (bool *)&v12); /*0x6a5911*/
   ShapeButton::SetShape(&stru_B0B3A0, (int)v4, 0, 0); /*0x6a591c*/
-  ButtonClass::SetState((ButtonClass *)&stru_B0B3A0, v12); /*0x6a592b*/
+  ((ButtonClass *)&stru_B0B3A0)->SetState(v12); /*0x6a592b*/
   v5 = 0; /*0x6a5936*/
   dword_B0B3F0 = *(unsigned int *)&g_SidebarConfig; /*0x6a5938*/
   v6 = &stru_B07C48; /*0x6a593e*/
@@ -238,7 +238,7 @@ void * SidebarClass::LoadAssets()
     sprintf(Buffer, "TAB%02d.SHP", v5); /*0x6a594e*/
     v7 = LoadFileSHP(Buffer, (bool *)&v12); /*0x6a5960*/
     ShapeButton::SetShape(v6, (int)v7, 0, 0); /*0x6a5968*/
-    ButtonClass::SetState((ButtonClass *)v6, v12); /*0x6a5974*/
+    ((ButtonClass *)v6)->SetState(v12); /*0x6a5974*/
     ++v5; /*0x6a597f*/
     v6[6].ShapeButtonClass_field_0x08 = *(unsigned int *)&g_SidebarConfig; /*0x6a5980*/
     v6 += 8; /*0x6a5983*/
@@ -246,11 +246,11 @@ void * SidebarClass::LoadAssets()
   while ( (int)v6 < (int)&dword_B07DC8 ); /*0x6a598c*/
   v8 = LoadFileSHP(aRDnShp, (bool *)&v12); /*0x6a5999*/
   ShapeButton::SetShape(&stru_B0B328, (int)v8, 0, 0); /*0x6a59a4*/
-  ButtonClass::SetState((ButtonClass *)&stru_B0B328, v12); /*0x6a59b3*/
+  ((ButtonClass *)&stru_B0B328)->SetState(v12); /*0x6a59b3*/
   dword_B0B378 = *(unsigned int *)&g_SidebarConfig; /*0x6a59bf*/
   v9 = LoadFileSHP(aRUpShp, (bool *)&v12); /*0x6a59cf*/
   ShapeButton::SetShape(&g_SidebarFlag, (int)v9, 0, 0); /*0x6a59da*/
-  ButtonClass::SetState((ButtonClass *)&g_SidebarFlag, v12); /*0x6a59e9*/
+  ((ButtonClass *)&g_SidebarFlag)->SetState(v12); /*0x6a59e9*/
   dword_B0B458 = *(unsigned int *)&g_SidebarConfig; /*0x6a59fd*/
   dword_B0B468 = LoadFileSHP(aSide1Shp, (bool *)&byte_B0B488); /*0x6a5a11*/
   dword_B0B46C = LoadFileSHP(aSide2Shp, (bool *)&byte_B0B489); /*0x6a5a25*/

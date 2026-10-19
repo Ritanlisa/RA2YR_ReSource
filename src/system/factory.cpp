@@ -48,7 +48,7 @@ bool * FactoryClass::AbandonProduction()
   Debug::Log(); /*0x4ca016*/
   v3 = (char *)(*(int (**)(unsigned int))(**&this->q058 + 136))(this->q058); /*0x4ca023*/
   v4 = (*(int (**)(char *, unsigned int))(*(unsigned int *)v3 + 132))(v3, *(unsigned int *)(this->q058 + 540)); /*0x4ca037*/
-  HouseClass::AddPower(*&this->owner, v4 - this->balance); /*0x4ca046*/
+  (*&this->owner)->AddPower(v4 - this->balance); /*0x4ca046*/
   v5 = this->specialItem; /*0x4ca04b*/
   this->balance = 0; /*0x4ca053*/
   if ( v5 ) /*0x4ca056*/

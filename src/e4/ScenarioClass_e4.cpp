@@ -423,14 +423,14 @@ LABEL_21:
   memset(&v19.needsSave_flag, 0, 13); /*0x683c32*/
   memset(&v19.unknown38, 0, 9); /*0x683c42*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x683c4e*/
-  CCFileClass::Construct(&v20, v4); /*0x683c56*/
-  if ( CCINIClass::Load(&v19, (int)&v20, 1, 0) ) /*0x683c67*/
+  (&v20)->Construct(v4); /*0x683c56*/
+  if ( (&v19)->Load((int)&v20, 1, 0) ) /*0x683c67*/
   {
     Bool = INIClass::GetBool((INIClass *)&v19, aBasic, (unsigned __int8 *)g_INI_Key_Intro, -1); /*0x683c85*/
     if ( Bool != -1 /*0x683ca5*/
       || (Bool = INIClass::GetBool((INIClass *)&v19, aBasic, (unsigned __int8 *)g_INI_Key_Brief, -1), Bool != -1) )
     {
-      Theme::Stop((Theme *)&stru_A83CD9.attachedTag + 3, 0); /*0x683cad*/
+      ((Theme *)&stru_A83CD9.attachedTag + 3)->Stop(0); /*0x683cad*/
       Movie::PlayWrapper(Bool, (int)v4, v9, 1, 1, 1); /*0x683cbd*/
     }
   }
@@ -442,7 +442,7 @@ LABEL_21:
   HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
   v11 = StringList::Find((StringList *)((char *)&stru_A83CD9.attachedTag + 3), aLoading); /*0x683d0f*/
-  ThemeClass::Play((ThemeClass *)((char *)&stru_A83CD9.attachedTag + 3), v11); /*0x683d1a*/
+  ((ThemeClass *)((char *)&stru_A83CD9.attachedTag + 3))->Play(v11); /*0x683d1a*/
   if ( !Scenario::LoadWithProgress(v4, a3) ) /*0x683d21*/
   {
     (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 16))(dword_887640); /*0x683d32*/
@@ -470,7 +470,7 @@ LABEL_21:
     *p_vfptr2 = Timer::GetTicks(); /*0x683e3f*/
   }
   if ( dword_A8B230[202].ptr_8 == -1 ) /*0x683e50*/
-    Theme::Stop((Theme *)&stru_A83CD9.attachedTag + 3, 1); /*0x683e66*/
+    ((Theme *)&stru_A83CD9.attachedTag + 3)->Stop(1); /*0x683e66*/
   else
     Theme::QueueSong((int)&stru_A83CD9.attachedTag + 3, dword_A8B230[202].ptr_8); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
@@ -595,9 +595,9 @@ int ScenarioClass_Construct(void * a2)
     v11.INIClass_field_3C = 0; /*0x68678d*/
     v11.ownsFile[0] = 0; /*0x686792*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x686797*/
-    CCFileClass::Construct(&v12, Source); /*0x68679f*/
+    (&v12)->Construct(Source); /*0x68679f*/
     Debug::Log(); /*0x6867aa*/
-    if ( CCINIClass::Load(&v11, (int)&v12, 1, 0) ) /*0x6867be*/
+    if ( (&v11)->Load((int)&v12, 1, 0) ) /*0x6867be*/
     {
       p_abstractFlags = &dword_A8B230[130].abstractFlags; /*0x68681f*/
       v6 = strlen(Source) + 1; /*0x686825*/

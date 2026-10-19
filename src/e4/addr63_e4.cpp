@@ -1105,7 +1105,7 @@ char ExecutePlanningQueue()
     do /*0x6373d0*/
     {
       v6 = *(Array **)(v4->ptr_8 + 4 * v5); /*0x6372cb*/
-      Value = Array::FindValue(v6, v4->ptr_0); /*0x6372d4*/
+      Value = (v6)->FindValue(v4->ptr_0); /*0x6372d4*/
       if ( Value == -1 ) /*0x6372dc*/
         v8 = 0; /*0x6372de*/
       else
@@ -1178,7 +1178,7 @@ LABEL_23:
         v17->u32_1C = 1; /*0x6373b8*/
         VectorClass::Append((DynamicVectorClass *)&stru_AC4B48.__pad_B8[152], &v33); /*0x6373c2*/
       }
-      TeamClass::Cleanup(v4, v5); /*0x6373ca*/
+      (v4)->Cleanup(v5); /*0x6373ca*/
 LABEL_34:
       --v5; /*0x6373cf*/
     }

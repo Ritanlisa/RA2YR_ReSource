@@ -559,7 +559,7 @@ int SelectAllOfType()
     v8 = v7; /*0x732a01*/
     if ( v7 ) /*0x732a08*/
     {
-      EventClass::resetEvent(v7, 0, 0); /*0x732a0e*/
+      (v7)->resetEvent(0, 0); /*0x732a0e*/
       /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_ptr_7E17AC) */  /*0x732a13*/
       *&v8->CapacityIncrement = 10; /*0x732a1a*/
       *(unsigned int *)v8->Count = 0; /*0x732a21*/
@@ -607,7 +607,7 @@ LABEL_25:
       (*(void (**)(EventClass *, int))v8->ptr_0)(v8, 1); /*0x732aca*/
     v14 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x732ace*/
     if ( v14 ) /*0x732ad8*/
-      v6 = (DynamicVector *)DynamicVector::Constructor_Techno(v14, 0, 0); /*0x732ae5*/
+      v6 = (DynamicVector *)(v14)->Constructor_Techno(0, 0); /*0x732ae5*/
     else
       v6 = 0; /*0x732ae9*/
     v15 = *(unsigned int *)&MEMORY[0xA8EB00].?[164]; /*0x732aeb*/
@@ -1012,7 +1012,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
     }
     v10 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x7334d2*/
     if ( v10 ) /*0x7334dc*/
-      v11 = (DynamicVector *)DynamicVector::Constructor_Techno(v10, 0, 0); /*0x7334e7*/
+      v11 = (DynamicVector *)(v10)->Constructor_Techno(0, 0); /*0x7334e7*/
     else
       v11 = 0; /*0x7334eb*/
     v12 = *(unsigned int *)&Instance; /*0x7334ed*/
@@ -1167,7 +1167,7 @@ int DrawUnitExperiencePopup(char a1)
     }
     v10 = (DynamicVector *)operator new(0x18u); /*0x733816*/
     if ( v10 ) /*0x733820*/
-      v11 = (DynamicVector *)DynamicVector::Constructor_Techno(v10, 0, 0); /*0x73382b*/
+      v11 = (DynamicVector *)(v10)->Constructor_Techno(0, 0); /*0x73382b*/
     else
       v11 = 0; /*0x73382f*/
     v12 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[228]; /*0x733831*/

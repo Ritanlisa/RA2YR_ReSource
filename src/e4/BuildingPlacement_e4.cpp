@@ -74,7 +74,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   Mouse::SetBounds((int)&DataGlobal_87F7E8, v7); /*0x4fb8df*/
   unsigned int *v8; // eax
   v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
-  Tactical::MouseMove((Tactical *)&DataGlobal_87F7E8, &a3, v8); /*0x4fb8fe*/
+  ((Tactical *)&DataGlobal_87F7E8)->MouseMove(&a3, v8); /*0x4fb8fe*/
   (*(void (**)(int, int))(*(unsigned int *)v4 + 292))(v4, 2); /*0x4fb909*/
   return (void *)(1); /*0x4fb90f*/
 
@@ -150,7 +150,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54c5d6*/
         v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
         v9 = *(unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
-        NeighbourContent = Cell::GetNeighbourContent(v8, v7); /*0x54c5ea*/
+        NeighbourContent = (v8)->GetNeighbourContent(v7); /*0x54c5ea*/
         (*(void (**)(int, void *, int))(v9 + 1152))(this->BuildingPlacement_field_0x0C, NeighbourContent, 1); /*0x54c5f3*/
         v11 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c5f9*/
         LOBYTE(v9) = v11[116]; /*0x54c600*/
@@ -333,7 +333,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             v37 = (CellClass *)(*(int (**)(int))(*(unsigned int *)v36 + 444))(v36); /*0x54c9c6*/
             CellClass::AttachObject(v37, 0); /*0x54c9ce*/
           }
-          GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
+          ((GadgetGrid *)&g_CellClassManager)->RemoveItem(this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
           v38 = this->BuildingPlacement_field_0x0C; /*0x54c9e1*/
           this->u32_50 = 0; /*0x54c9e4*/
           v44 = v38; /*0x54c9eb*/

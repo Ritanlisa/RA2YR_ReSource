@@ -361,7 +361,7 @@ unsigned int * Pathfinding::ExpandNode(CellStruct * a1, int a2)
   }
   else
   {
-    v55 = (int)&v54[-1].field_2C4 + 3; /*0x5a5859*/
+    v55 = (int)&v54[-1].u32_2C4 + 3; /*0x5a5859*/
     v56 = 0; /*0x5a585a*/
     if ( v55 >= 0 ) /*0x5a585e*/
     {

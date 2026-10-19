@@ -147,7 +147,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
   int result; // eax
 
   INIClass::ResetSection((INIClass *)aP1); /*0x6b56e3*/
-  if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x6b56eb*/
+  if ( ((ObjectTypeClass *)this)->LoadFromINI(aP1) ) /*0x6b56eb*/
   {
     char Bool_Overwrite; // al
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ArrayIndex, aCrater, this->Crater); /*0x6b570b*/
@@ -266,7 +266,7 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
 {
 
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6b57f9*/
+  ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
   int v3; // ecx
   (v3) = ((v3) & ~0xFF) | (((unsigned char)(this->Crater)) & 0xFF); /*0x6b580c*/
@@ -290,7 +290,7 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x6b5866*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
+      ((ObjectTypeClass *)aP0)->Construct((int)&aP1); /*0x6b586f*/
       /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b5874) */
       /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b587a) */
       /* X11: ptr_0 install elided (implicit via SmudgeTypeClass virtuals 0x6b5881) */

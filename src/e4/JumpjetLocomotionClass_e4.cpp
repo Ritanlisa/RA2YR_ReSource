@@ -324,13 +324,13 @@ LABEL_35:
   (v33) = ((v33) & ~0xFFFF) | ((Math::RoundToInt(*((float *)v28 + 7))) & 0xFFFF); /*0x439ef1*/
   v54 = v33; /*0x439ef9*/
   (v34) = ((v34) & ~0xFFFF) | ((Math::RoundToInt(*v4)) & 0xFFFF); /*0x439efa*/
-  Coord::Subtract((Coord *)&v83, v34, v54, (int)v59); /*0x439f04*/
+  ((Coord *)&v83)->Subtract(v34, v54, (int)v59); /*0x439f04*/
   LOWORD(v35) = Math::RoundToInt(v79); /*0x439f0d*/
   v60 = v35; /*0x439f16*/
   (v36) = ((v36) & ~0xFFFF) | ((Math::RoundToInt(v78)) & 0xFFFF); /*0x439f17*/
   v55 = v36; /*0x439f20*/
   (v37) = ((v37) & ~0xFFFF) | ((Math::RoundToInt(v77)) & 0xFFFF); /*0x439f21*/
-  Coord::Subtract((Coord *)&v84, v37, v55, (int)v60); /*0x439f2b*/
+  ((Coord *)&v84)->Subtract(v37, v55, (int)v60); /*0x439f2b*/
   v38 = Coord::To_Cell((Coord *)&dword_87F7E8, &v84)->level[0]; /*0x439f3f*/
   if ( Coord::To_Cell((Coord *)&dword_87F7E8, &v83)->level[0] - v38 >= 2 /*0x439fb1*/
     && (v82 < -0.0002 && v28->Climb > (double)v79 || v82 >= -0.0003 && v82 + v79 + 1.0 < v28->Climb) )

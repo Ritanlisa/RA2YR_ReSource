@@ -526,7 +526,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
   v2 = ((String *)((String *)this->q132 + 14)))->GetOrEmpty(); /*0x4f230c*/
   int v3; // eax
   v3 = StringList::Find((StringList *)&unk_A83D10, v2); /*0x4f2317*/
-  ThemeClass::Play((ThemeClass *)&unk_A83D10, v3); /*0x4f2322*/
+  ((ThemeClass *)&unk_A83D10)->Play(v3); /*0x4f2322*/
   (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x4f2331*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->ptr_0 + 6))(g_DSurface_Hidden, 0); /*0x4f233e*/
   (*((void (**)(DSurface *, ObjectClass *, unsigned int, int))g_DSurface_Primary + 1))( /*0x4f2354*/

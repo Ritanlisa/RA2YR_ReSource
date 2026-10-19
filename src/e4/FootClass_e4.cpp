@@ -196,7 +196,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
     *(unsigned int *)v28.m_Position = 0; /*0x71006b*/
     if ( v9 ) /*0x710073*/
     {
-      v11 = StreamClass::Set(&v28, v6 + 413); /*0x71007a*/
+      v11 = (&v28)->Set(v6 + 413); /*0x71007a*/
       if ( v11 < 0 && v11 != -2147467262 ) /*0x710088*/
         sub_7DC720(v11); /*0x71008b*/
     }
@@ -253,7 +253,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       v28.m_Data = 0; /*0x7101e2*/
       if ( !v12 ) /*0x7101e6*/
       {
-        v18 = StreamClass::Set((StreamClass *)&v28.m_Data, v6 + 413); /*0x7101ed*/
+        v18 = ((StreamClass *)&v28.m_Data)->Set(v6 + 413); /*0x7101ed*/
         if ( v18 < 0 && v18 != -2147467262 ) /*0x7101fb*/
           sub_7DC720(v18); /*0x7101fe*/
       }
@@ -267,7 +267,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       v28.m_Position = 0; /*0x71024a*/
       if ( ppv ) /*0x710250*/
       {
-        v20 = StreamClass::Set((StreamClass *)&v28.m_Position, &ppv); /*0x71025b*/
+        v20 = ((StreamClass *)&v28.m_Position)->Set(&ppv); /*0x71025b*/
         if ( v20 < 0 && v20 != -2147467262 ) /*0x710269*/
           sub_7DC720(v20); /*0x71026c*/
       }

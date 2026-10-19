@@ -514,7 +514,7 @@ ObjectClass * * MapClass::LoadFileData()
   int v13[3]; // [esp+64h] [ebp-14h] BYREF
   int v14; // [esp+70h] [ebp-8h]
 
-  CCFileClass::Construct(&v12, &this->q2F5); /*0x547033*/
+  (&v12)->Construct(&this->q2F5); /*0x547033*/
   Size = CCFileClass::GetSize(&v12); /*0x547041*/
   if ( *&this->u32_A4 ) /*0x547043*/
     __3_YAXPAX_Z(*&this->u32_A4); /*0x54704e*/

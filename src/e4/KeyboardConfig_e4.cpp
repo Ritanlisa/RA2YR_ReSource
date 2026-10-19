@@ -49,8 +49,8 @@ int KeyboardConfig::LoadINI()
   INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x533d3f*/
-  CCFileClass::Construct(&v10, aKeyboardmdIni); /*0x533d47*/
-  if ( CCINIClass::Load(&v9, (int)&v10, 0, 0) ) /*0x533d57*/
+  (&v10)->Construct(aKeyboardmdIni); /*0x533d47*/
+  if ( (&v9)->Load((int)&v10, 0, 0) ) /*0x533d57*/
   {
     __3_YAXPAX_Z(*(void **)&Base); /*0x533d6c*/
     v1 = 0; /*0x533d74*/

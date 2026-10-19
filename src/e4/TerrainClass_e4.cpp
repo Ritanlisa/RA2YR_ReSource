@@ -343,7 +343,7 @@ LABEL_158:
       return result; /*0x6de49d*/
     case 0x19:
       Speed = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].ptr_C); /*0x6de4ab*/
-      Timer::Start((Timer *)&v120.__pad_C[4], 15 * *(unsigned int *)(a1 + 144) + Speed); /*0x6de4c5*/
+      ((Timer *)&v120.__pad_C[4])->Start(15 * *(unsigned int *)(a1 + 144) + Speed); /*0x6de4c5*/
       v55 = &dword_A8B230[127].ptr_C; /*0x6de4d3*/
       dword_A8B230[127].ptr_C = *(unsigned int *)&v120.__pad_C[4]; /*0x6de4d8*/
       v55[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de4de*/
@@ -354,7 +354,7 @@ LABEL_158:
       if ( Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].ptr_C) > 15 * *(unsigned int *)(a1 + 144) ) /*0x6de520*/
       {
         v57 = Locomotor::GetSpeed((Locomotor *)&dword_A8B230[127].ptr_C); /*0x6de571*/
-        Timer::Start((Timer *)&v120, v57 - 15 * *(unsigned int *)(a1 + 144)); /*0x6de58b*/
+        ((Timer *)&v120)->Start(v57 - 15 * *(unsigned int *)(a1 + 144)); /*0x6de58b*/
         v58 = &dword_A8B230[127].ptr_C; /*0x6de59a*/
         dword_A8B230[127].ptr_C = *(unsigned int *)v120.__pad_0; /*0x6de5a0*/
         v58[1] = *(unsigned int *)&v120.Coord_field_0x2[2]; /*0x6de5a6*/
@@ -363,7 +363,7 @@ LABEL_158:
       }
       else
       {
-        Timer::Start((Timer *)&v120.__pad_C[4], 0); /*0x6de527*/
+        ((Timer *)&v120.__pad_C[4])->Start(0); /*0x6de527*/
         v56 = &dword_A8B230[127].ptr_C; /*0x6de536*/
         dword_A8B230[127].ptr_C = *(unsigned int *)&v120.__pad_C[4]; /*0x6de53c*/
         v56[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de542*/
@@ -372,7 +372,7 @@ LABEL_158:
       }
       return result; /*0x6de562*/
     case 0x1B:
-      Timer::Start((Timer *)&v120.__pad_C[4], 15 * *(unsigned int *)(a1 + 144)); /*0x6de5da*/
+      ((Timer *)&v120.__pad_C[4])->Start(15 * *(unsigned int *)(a1 + 144)); /*0x6de5da*/
       v59 = &dword_A8B230[127].ptr_C; /*0x6de5e9*/
       dword_A8B230[127].ptr_C = *(unsigned int *)&v120.__pad_C[4]; /*0x6de5ef*/
       v59[1] = *(unsigned int *)&v120.__pad_C[8]; /*0x6de5f5*/

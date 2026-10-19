@@ -74,11 +74,11 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 
   if ( *(unsigned int *)(this->Owner + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
-  ObjectVector::Construct(&v11, 0, 0); /*0x4cfea2*/
+  (&v11)->Construct(0, 0); /*0x4cfea2*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x4cfeb7*/
   v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
   v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
-  ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
+  (&v10)->Construct(0, 0); /*0x4cfec3*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4F64) */  /*0x4cfecd*/
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/

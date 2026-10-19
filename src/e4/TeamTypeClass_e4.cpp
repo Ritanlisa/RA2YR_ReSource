@@ -291,7 +291,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   unsigned int *TaskForce; // eax
 
   INIClass::ResetSection((INIClass *)a2); /*0x6f10a3*/
-  if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)aP1, a2) ) /*0x6f10b2*/
+  if ( !(unsigned __int8)((AbstractTypeClass *)aP1)->LoadFromINI(a2) ) /*0x6f10b2*/
     return 0; /*0x6f10b2*/
   int v3; // ecx
   v3 = *((unsigned int *)aP1 + 49); /*0x6f10b8*/
@@ -621,7 +621,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
 {
 
 
-  if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)aP1, aTaskforce) ) /*0x6f1559*/
+  if ( !((AbstractTypeClass *)aP1)->WriteINI(aTaskforce) ) /*0x6f1559*/
     return 0; /*0x6f185b*/
   int v3 = aP1->u32_C4; // eax /*0x6f1566*/
   int v4 = -1; // ebp /*0x6f156d*/

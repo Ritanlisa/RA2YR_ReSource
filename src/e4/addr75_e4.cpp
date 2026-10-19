@@ -796,7 +796,7 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
   int v19; // [esp+18h] [ebp-4h]
   float *v20; // [esp+20h] [ebp+4h]
 
-  Info = VoxelSection::GetInfo(a1, (int)a2, (int)aP2); /*0x754101*/
+  Info = (a1)->GetInfo((int)a2, (int)aP2); /*0x754101*/
   v18 = 1176256512; /*0x75411b*/
   v19 = 1176256512; /*0x754123*/
   v7 = (float *)(136 * dword_B2D820 + 11721048); /*0x75412b*/

@@ -190,7 +190,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v4 = this; /*0x51185e*/
   _EBX = v3; /*0x511861*/
   INIClass::ResetSection((INIClass *)this); /*0x511866*/
-  if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)_EBX, (unsigned __int8 ***)this) ) /*0x51186e*/
+  if ( !(unsigned __int8)((AbstractTypeClass *)_EBX)->LoadFromINI((unsigned __int8 ***)this) ) /*0x51186e*/
     return 0; /*0x51215c*/
   INIClass::GetString((INIClass *)this, (unsigned __int8 *)(_EBX + 36), aSuffix, &g_INI_DefaultBuffer, Source, 4); /*0x511892*/
   if ( strlen(Source) ) /*0x51189b*/

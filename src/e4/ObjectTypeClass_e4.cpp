@@ -59,7 +59,7 @@ BulletTypeClass * ObjectTypeClass::FindOrCreate(ObjectClass * Source)
     LABEL_6:
     v3 = (BulletTypeClass *)__2_YAPAXI_Z(0x2F8u); /*0x46c7e6*/
     if ( v3 ) /*0x46c7f5*/
-      return BulletTypeClass::Construct(v3, Source); /*0x46c801*/
+      return (v3)->Construct(Source); /*0x46c801*/
     return 0; /*0x46c7f5*/
   }
   while ( _strcmpi((char *)(*((unsigned int *)dword_A83C84 + v2) + 36), Source) ) /*0x46c7da*/

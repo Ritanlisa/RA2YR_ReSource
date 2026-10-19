@@ -163,7 +163,7 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
       }
       while ( v6 < 25 ); /*0x5bc219*/
       v5->u8_2734 = 1; /*0x5bc223*/
-      Text::DrawRepeated((Text *)v5, 0, 0, 80, 25); /*0x5bc22a*/
+      ((Text *)v5)->DrawRepeated(0, 0, 80, 25); /*0x5bc22a*/
       v3 = v19; /*0x5bc22f*/
     }
     else
@@ -201,7 +201,7 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
     }
     while ( v13 < 25 ); /*0x5bc293*/
     LOBYTE(v12[2509].Text_field_00) = 1; /*0x5bc29d*/
-    Text::DrawRepeated(v12, 0, 0, 80, 25); /*0x5bc2a4*/
+    (v12)->DrawRepeated(0, 0, 80, 25); /*0x5bc2a4*/
     ++v11; /*0x5bc2a9*/
   }
   while ( (int)v11 < (int)&dword_ABF188 ); /*0x5bc2b2*/

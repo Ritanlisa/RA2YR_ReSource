@@ -120,7 +120,9 @@ struct AnimClass {
     void * AnimClass_field_0x1A0;  // 0x1A0
     char __pad_1A4[16];  // 0x1A4
     void * AnimClass_field_0x1B4;  // 0x1B4
-    unsigned char __pad_1B8[77];  // 0x1B8
+    unsigned char __pad_1B8[60];  // 0x1B8
+    unsigned int u32_1F4;  // 0x1F4
+    char __pad_1F8[13];  // 0x1F8
     char __pad_205[13];  // 0x205
     unsigned char LightConvert;  // 0x212
     char __pad_213[3];  // 0x213
@@ -166,7 +168,7 @@ struct AnimClass {
     char __pad_414[4];  // 0x414
     int AnimClass_field_0x418;  // 0x418
     char __pad_41C[60];  // 0x41C
-    DynamicVectorClass * ptr_458;  // 0x458
+    DynamicVectorClass_flat * ptr_458;  // 0x458
     unsigned char __pad_45C;  // 0x45C
     char __pad_45D[439];  // 0x45D
     LightSourceClass * ptr_614;  // 0x614

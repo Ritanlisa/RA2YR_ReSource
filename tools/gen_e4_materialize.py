@@ -23,6 +23,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'tools' / 'csp_export'))
 from _vtelide import elide_vtable_install_lines  # noqa: E402  (X11)
+# X83: e4 bodies call members in qualified form `Class::Method(recv, ...)`,
+# which is not a legal call for a non-static member (C2664 arg1 family).
+# The post-pass rewrites it to `(recv)->Method(...)` using the e4 carriers.
+from x83_memberize_calls import memberize_text as _x83_memberize_text  # noqa: E402
 SRC = ROOT / "src"
 EXPORT = ROOT / "decompile-results" / "full_export"
 E4 = SRC / "e4"
@@ -1118,7 +1122,12 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
             tail = ("\n" if body else "") + "\n\n".join(
                 preserved_by_file[out_name]) + "\n"
             body = body + ("\n" if body and not body.endswith("\n") else "")
-        p.write_text("\n".join(header) + "\n" + body + tail, encoding="utf-8")
+        out_text = "\n".join(header) + "\n" + body + tail
+        # X83: qualified member calls -> member-call form (idempotent; only
+        # classes with a non-static e4 declaration are touched).
+        out_text, _x83_n = _x83_memberize_text(out_text)
+        stats["memberized_calls"] = stats.get("memberized_calls", 0) + _x83_n
+        p.write_text(out_text, encoding="utf-8")
     # ---- G6: E4Recv 合成接收者类落盘（member_lookup / vtable_offsets /
     # signals._member_by_name——与 verify / get_context / rename 消费端一致）
     if recv_ml or recv_vt:

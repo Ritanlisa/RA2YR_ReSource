@@ -306,7 +306,7 @@ int Scenario::ReadTeams()
                         v40 = v29->LightSource; /*0x44fc78*/
                         v29->StuffEnabled = 1; /*0x44fc80*/
                         if ( v40 ) /*0x44fc87*/
-                          Trigger::EnableOnce(v40, 0); /*0x44fc8b*/
+                          (v40)->EnableOnce(0); /*0x44fc8b*/
                         if ( *(unsigned char *)(v29->Type + 5822) ) /*0x44fc96*/
                           BuildingClass::RepairPlacement((BuildingClass *)v29, 0); /*0x44fca4*/
                         v41 = 0; /*0x44fca9*/

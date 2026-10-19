@@ -178,7 +178,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         {
           v21.DynamicVector_field_0x1C = BuildingTypeClass::FindIndexByName(i); /*0x477397*/
           if ( v21.DynamicVector_field_0x1C != -1 ) /*0x47739b*/
-            DynamicVector::Add_Alt(&v21, &v21.DynamicVector_field_0x1C); /*0x4773a6*/
+            (&v21)->Add_Alt(&v21.DynamicVector_field_0x1C); /*0x4773a6*/
         }
       }
       else if ( v21.Count < v21.DynamicVector_field_0x8 /*0x47736a*/

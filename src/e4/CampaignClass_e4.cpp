@@ -193,7 +193,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v27 = (char *)(dword_89F570 + 76 * v3); /*0x49c60d*/
   if ( *&this->u32_3028 == *&this->u32_2028 ) /*0x49c616*/
     return 1; /*0x49c61b*/
-  CCFileClass::Construct(&v33, g_Str_File_coopsave_ini); /*0x49c631*/
+  (&v33)->Construct(g_Str_File_coopsave_ini); /*0x49c631*/
   v28.headNode[0] = 0; /*0x49c63a*/
   v28.headNode[1] = 0; /*0x49c63e*/
   INISectionList::Constructor((INISectionList *)&v28.headNode[2]); /*0x49c642*/
@@ -201,7 +201,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v28.INIClass_field_3C = 0; /*0x49c65e*/
   v28.ownsFile[0] = 0; /*0x49c662*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS CCINIClass_Vtable) */  /*0x49c667*/
-  CCINIClass::Load(&v28, (int)&v33, 0, 0); /*0x49c66f*/
+  (&v28)->Load((int)&v33, 0, 0); /*0x49c66f*/
   CCFileClass::Reset(&v33); /*0x49c67b*/
   v5 = 0; /*0x49c683*/
   v6 = (char *)this; /*0x49c687*/

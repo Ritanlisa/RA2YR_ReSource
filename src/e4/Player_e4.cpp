@@ -48,7 +48,7 @@ void Player::BuildListString(wchar_t * Destination)
     }
     else
     {
-      WideString::Assign_Alt((WideString *)&v6, v3); /*0x5e8e1e*/
+      ((WideString *)&v6)->Assign_Alt(v3); /*0x5e8e1e*/
     }
     v5 = WideString::GetOrEmpty((WideString *)&v6); /*0x5e8e5d*/
     wcscat((wchar_t *)this, v5); /*0x5e8e64*/

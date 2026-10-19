@@ -189,7 +189,7 @@ LABEL_19:
     {
       v13 = (MouseClass *)__2_YAPAXI_Z(0x98u); /*0x56105e*/
       if ( v13 ) /*0x561068*/
-        dword_887640 = (MouseClass *)MouseClass::Construct(v13, (int)g_DSurface_Primary, (int)g_hWnd); /*0x56107f*/
+        dword_887640 = (MouseClass *)(v13)->Construct((int)g_DSurface_Primary, (int)g_hWnd); /*0x56107f*/
       else
         dword_887640 = 0; /*0x561086*/
       v14 = SearchMIXFile(g_Str_File_MOUSE_SHA, 0); /*0x561093*/
@@ -251,7 +251,7 @@ LABEL_19:
   Debug::Log(); /*0x560d3c*/
   v4 = (MouseClass *)__2_YAPAXI_Z(0x98u); /*0x560d46*/
   if ( v4 ) /*0x560d50*/
-    dword_887640 = (MouseClass *)MouseClass::Construct(v4, (int)g_DSurface_Primary, (int)g_hWnd); /*0x560d67*/
+    dword_887640 = (MouseClass *)(v4)->Construct((int)g_DSurface_Primary, (int)g_hWnd); /*0x560d67*/
   else
     dword_887640 = 0; /*0x560d6e*/
   v5 = SearchMIXFile(g_Str_File_MOUSE_SHA, 0); /*0x560d7b*/
@@ -508,8 +508,8 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
 
   v2 = this; /*0x56af45*/
   v3 = 0; /*0x56af47*/
-  LCWPipe::Constructor((LCWPipe *)&v17, 0, 0x2000); /*0x56af57*/
-  Pipe::SetDelegate(&v17, a2); /*0x56af65*/
+  ((LCWPipe *)&v17)->Constructor(0, 0x2000); /*0x56af57*/
+  (&v17)->SetDelegate(a2); /*0x56af65*/
   v4 = 0; /*0x56af70*/
   v18 = 0; /*0x56af74*/
   if ( v2[1].lastLayer > 0 ) /*0x56af78*/
@@ -588,7 +588,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
 
   v2 = this; /*0x56b255*/
   LZOPipe::Constructor((LZOPipe *)&v17, 0, 0x2000); /*0x56b266*/
-  Pipe::SetDelegate(&v17, a2); /*0x56b274*/
+  (&v17)->SetDelegate(a2); /*0x56b274*/
   v3 = 0; /*0x56b27f*/
   v4 = 0; /*0x56b281*/
   v18 = 0; /*0x56b285*/
@@ -884,7 +884,7 @@ int E4Recv_56AE40::sub_56AE40(int v9)
   Pipe v14[2]; // [esp+Ch] [ebp-28h] BYREF
 
   int v3 = 0; // edi /*0x56ae48*/
-  LCWPipe::Constructor((LCWPipe *)v14, 0, 0x2000); /*0x56ae54*/
+  ((LCWPipe *)v14)->Constructor(0, 0x2000); /*0x56ae54*/
   char *v9; // eax
   Pipe::SetDelegate(v14, v9); /*0x56ae62*/
   int i; // ebx

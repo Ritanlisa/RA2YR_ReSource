@@ -474,7 +474,7 @@ LABEL_33:
   if ( ((unsigned __int8)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v14) || v25) /*0x6f8ac7*/
     && !*(unsigned char *)((*(int (**)(TechnoClass *))(a1->ptr_0 + 132))(a1) + 1728)
     && !a1->isBerserk[0]
-    && (!v25 || !v17 || !(unsigned __int8)Object::IsAlliedWithObjectHouse(v17, v14)) )
+    && (!v25 || !v17 || !(unsigned __int8)(v17)->IsAlliedWithObjectHouse(v14)) )
   {
     if ( (*(int (**)(TechnoClass *))(a1->ptr_0 + 44))(a1) != 15 ) /*0x6f8ada*/
       goto LABEL_33; /*0x6f8ada*/

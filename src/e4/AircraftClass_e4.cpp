@@ -61,7 +61,7 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
   int v18; // [esp+8h] [ebp-4h] BYREF
 
   v3 = v2; /*0x413f83*/
-  result = TechnoClass::Update(v17, a2); /*0x413f85*/
+  result = (v17)->Update(a2); /*0x413f85*/
   v5 = v3->Type; /*0x413f8a*/
   if ( v5 ) /*0x413f92*/
   {
@@ -85,8 +85,8 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
       }
     }
 LABEL_9:
-    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 226), v3->Type->ROT); /*0x413fd2*/
-    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 232), v3->Type->ROT); /*0x414001*/
+    ((BuildingTypeClass *)(v3 + 226))->GetPowerOutput(v3->Type->ROT); /*0x413fd2*/
+    ((BuildingTypeClass *)(v3 + 232))->GetPowerOutput(v3->Type->ROT); /*0x414001*/
     Value = ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18); /*0x41400d*/
     FacingClass::Set_SyncLog(&v3->secondaryFacing, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
@@ -430,9 +430,9 @@ LABEL_53:
       v11 = v10; /*0x41ac53*/
       if ( !v10 ) /*0x41ac57*/
         goto LABEL_35; /*0x41ac57*/
-      if ( (unsigned __int8)Array::ContainsValue(v10, (int)this) ) /*0x41ac5c*/
+      if ( (unsigned __int8)(v10)->ContainsValue((int)this) ) /*0x41ac5c*/
       {
-        if ( (unsigned __int8)Array::Contains(v11, (int)this) ) /*0x41ac72*/
+        if ( (unsigned __int8)(v11)->Contains((int)this) ) /*0x41ac72*/
           goto LABEL_35; /*0x41ac72*/
         v6 = (*(int (**)(Class_7E22A4 *, int))(*&this->u32_9D0))(this, 14); /*0x41ac81*/
         if ( v6 == 1 ) /*0x41ac8a*/
@@ -447,7 +447,7 @@ LABEL_53:
     }
     else
     {
-      if ( !(unsigned __int8)Array::ContainsValue((Array *)a2, (int)this) ) /*0x41aaf8*/
+      if ( !(unsigned __int8)((Array *)a2)->ContainsValue((int)this) ) /*0x41aaf8*/
       {
         TechnoClass::SetFocus((TechnoClass *)this, a2); /*0x41ab09*/
         if ( *(unsigned char *)(*(unsigned int *)(a2 + 1312) + 5835) ) /*0x41ab1a*/

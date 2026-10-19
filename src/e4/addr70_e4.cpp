@@ -926,7 +926,7 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
     int *v5; // eax
     unsigned char v8[4]; // [esp+4h] [ebp-Ch] BYREF
     v5 = (int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a1 + 72))(a1, v8); /*0x70f180*/
-    return MapClass::RevealArea0((MapClass *)&dword_87F7E8, v5, 2, v7, 0, 0, 0, 1, 1); /*0x70f189*/
+    return ((MapClass *)&dword_87F7E8)->RevealArea0(v5, 2, v7, 0, 0, 0, 1, 1); /*0x70f189*/
   }
   else
   {

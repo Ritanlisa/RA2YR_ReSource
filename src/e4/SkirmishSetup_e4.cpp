@@ -199,7 +199,7 @@ LABEL_5:
           return 0; /*0x5e6b75*/
         case 0x583u: /*0x5e69cd*/
           v9 = (Session *)this; /*0x5e69fd*/
-          Dialog::IdleProcess(v45, (ObjectClass *)this); /*0x5e6a03*/
+          (v45)->IdleProcess((ObjectClass *)this); /*0x5e6a03*/
           ShowWindow((HWND)v9, 0); /*0x5e6a0b*/
           v10 = SkirmishSetup_Setup_5E8590(v46); /*0x5e6a16*/
           a5 = v10; /*0x5e6a1b*/
@@ -430,7 +430,7 @@ LABEL_28:
   v29 = a5; /*0x5e6e44*/
   v30 = &a5->ptr_8; /*0x5e6e51*/
   DlgCtrlID = GetDlgCtrlID(*(HWND *)a5); /*0x5e6e58*/
-  WideString::Assign_Alt(v30, 0); /*0x5e6e5a*/
+  (v30)->Assign_Alt(0); /*0x5e6e5a*/
   if ( DlgCtrlID == 1771 ) /*0x5e6e65*/
   {
     v32 = v29->ptr_4; /*0x5e6e67*/
@@ -440,7 +440,7 @@ LABEL_28:
       if ( v33 ) /*0x5e6e85*/
       {
         v34 = WideString::GetOrEmpty_Alt(v33 + 36); /*0x5e6e8a*/
-        WideString::Assign_Alt(v30, v34); /*0x5e6e92*/
+        (v30)->Assign_Alt(v34); /*0x5e6e92*/
       }
     }
   }

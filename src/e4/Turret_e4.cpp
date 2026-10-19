@@ -75,8 +75,8 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
       {
         sprintf(Buffer, "%sTUR", &this->AbstractClass_1F8); /*0x5f8d30*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8d4c*/
-        CCFileClass::Construct(&v26, Source); /*0x5f8d63*/
-        if ( (unsigned __int8)CCFileClass::Open(&v26, 0) ) /*0x5f8d70*/
+        (&v26)->Construct(Source); /*0x5f8d63*/
+        if ( (unsigned __int8)(&v26)->Open(0) ) /*0x5f8d70*/
         {
           v3 = (void *)this->qB8; /*0x5f8d7d*/
           if ( v3 ) /*0x5f8d85*/
@@ -86,7 +86,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           }
           v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8d99*/
           if ( v4 ) /*0x5f8da3*/
-            FileVXL = File::LoadFileVXL(v4, (int)&v26, 0); /*0x5f8db0*/
+            FileVXL = (v4)->LoadFileVXL((int)&v26, 0); /*0x5f8db0*/
           else
             FileVXL = 0; /*0x5f8db7*/
           this->qB8 = FileVXL; /*0x5f8dbb*/
@@ -94,7 +94,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           {
             sprintf(Buffer, "%sTUR", &this->AbstractClass_1F8); /*0x5f8ddd*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8df9*/
-            CCFileClass::Construct(&v20, Source); /*0x5f8e0d*/
+            (&v20)->Construct(Source); /*0x5f8e0d*/
             v6 = (void *)this->qBC; /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
             {
@@ -103,12 +103,12 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             }
             v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8e2e*/
             if ( v7 ) /*0x5f8e38*/
-              FileHVA = File::LoadFileHVA(v7, (int)&v20); /*0x5f8e41*/
+              FileHVA = (v7)->LoadFileHVA((int)&v20); /*0x5f8e41*/
             else
               FileHVA = 0; /*0x5f8e48*/
             v9 = (VoxelSection *)this->qB8; /*0x5f8e4a*/
             this->qBC = FileHVA; /*0x5f8e52*/
-            Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
+            Info = (v9)->GetInfo(0, 0); /*0x5f8e58*/
             Matrix::Scale(this->qBC, *(float *)(Info + 12)); /*0x5f8e67*/
             /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8e70*/
             v22 = 0; /*0x5f8e78*/
@@ -119,8 +119,8 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
         }
         sprintf(Buffer, "%sBARL", &this->AbstractClass_1F8); /*0x5f8ea0*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8ebc*/
-        CCFileClass::Construct(&v23, Source); /*0x5f8ed0*/
-        if ( (unsigned __int8)CCFileClass::Open(&v23, 0) ) /*0x5f8edd*/
+        (&v23)->Construct(Source); /*0x5f8ed0*/
+        if ( (unsigned __int8)(&v23)->Open(0) ) /*0x5f8edd*/
         {
           v11 = (void *)this->qC0; /*0x5f8eea*/
           if ( v11 ) /*0x5f8ef2*/
@@ -130,7 +130,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           }
           v12 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8f06*/
           if ( v12 ) /*0x5f8f10*/
-            v13 = File::LoadFileVXL(v12, (int)&v23, 0); /*0x5f8f1a*/
+            v13 = (v12)->LoadFileVXL((int)&v23, 0); /*0x5f8f1a*/
           else
             v13 = 0; /*0x5f8f21*/
           this->qC0 = v13; /*0x5f8f25*/
@@ -138,7 +138,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           {
             sprintf(Buffer, "%sBARL", &this->AbstractClass_1F8); /*0x5f8f47*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8f63*/
-            CCFileClass::Construct(&v20, Source); /*0x5f8f77*/
+            (&v20)->Construct(Source); /*0x5f8f77*/
             v14 = (void *)this->qC4; /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/
             {
@@ -147,12 +147,12 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             }
             v15 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8f98*/
             if ( v15 ) /*0x5f8fa2*/
-              v16 = File::LoadFileHVA(v15, (int)&v20); /*0x5f8fab*/
+              v16 = (v15)->LoadFileHVA((int)&v20); /*0x5f8fab*/
             else
               v16 = 0; /*0x5f8fb2*/
             v17 = (VoxelSection *)this->qC0; /*0x5f8fb4*/
             this->qC4 = v16; /*0x5f8fbc*/
-            v18 = (float *)VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
+            v18 = (float *)(v17)->GetInfo(0, 0); /*0x5f8fc2*/
             Matrix::Scale(this->qC4, v18[3]); /*0x5f8fd1*/
             /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/

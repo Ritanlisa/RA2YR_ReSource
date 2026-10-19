@@ -238,7 +238,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     pN = v6; /*0x4fba45*/
     v12 = (*(int (**)(unsigned int *, void ***, int))(v11 + 16))(v7 + 20, &pN, a2); /*0x4fba49*/
     if ( v12 != -1 ) /*0x4fba4f*/
-      Vector::RemoveAt((Vector *)v7 + 4, v12); /*0x4fba54*/
+      ((Vector *)v7 + 4)->RemoveAt(v12); /*0x4fba54*/
     v13 = v7->occupiables; /*0x4fba59*/
     a4 = v6; /*0x4fba6c*/
     v14 = (*(int (**)(unsigned int *, void ***))(v13 + 16))(v7 + 32, &a4); /*0x4fba70*/
@@ -256,7 +256,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     a4 = v6; /*0x4fbaa9*/
     v18 = (*(int (**)(unsigned int *, void ***))(v17 + 16))(v7 + 38, &a4); /*0x4fbab0*/
     if ( v18 != -1 ) /*0x4fbab6*/
-      Vector::RemoveAt((Vector *)(v7 + 38), v18); /*0x4fbabb*/
+      ((Vector *)(v7 + 38))->RemoveAt(v18); /*0x4fbabb*/
     v19 = v7->productionFactory_plants; /*0x4fbac0*/
     a4 = v6; /*0x4fbad3*/
     v20 = (*(int (**)(unsigned int *, void ***))(v19 + 16))(v7 + 44, &a4); /*0x4fbad7*/
@@ -274,7 +274,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     a4 = v6; /*0x4fbb10*/
     v24 = (*(int (**)(unsigned int *, void ***))(v23 + 16))(v7 + 50, &a4); /*0x4fbb17*/
     if ( v24 != -1 ) /*0x4fbb1d*/
-      Vector::RemoveAt((Vector *)v7 + 10, v24); /*0x4fbb22*/
+      ((Vector *)v7 + 10)->RemoveAt(v24); /*0x4fbb22*/
     v25 = v7->firepowerMultiplier; /*0x4fbb27*/
     a4 = v6; /*0x4fbb3a*/
     v26 = (*(int (**)(unsigned int *, void ***))(v25 + 16))(v7 + 56, &a4); /*0x4fbb3e*/
@@ -292,12 +292,12 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     a4 = v6; /*0x4fbb77*/
     v30 = (*(int (**)(unsigned int *, void ***))(v29 + 16))(v7 + 62, &a4); /*0x4fbb7e*/
     if ( v30 != -1 ) /*0x4fbb84*/
-      Vector::RemoveAt((Vector *)(v7 + 62), v30); /*0x4fbb89*/
+      ((Vector *)(v7 + 62))->RemoveAt(v30); /*0x4fbb89*/
     v31 = v7->buildTimeMultiplier; /*0x4fbb8e*/
     a4 = v6; /*0x4fbba1*/
     v32 = (*(int (**)(unsigned int *, void ***))(v31 + 16))(v7 + 68, &a4); /*0x4fbba5*/
     if ( v32 != -1 ) /*0x4fbbab*/
-      Vector::RemoveAt((Vector *)(v7 + 68), v32); /*0x4fbbb0*/
+      ((Vector *)(v7 + 68))->RemoveAt(v32); /*0x4fbbb0*/
     v33 = v7->iqLevel; /*0x4fbbb5*/
     a4 = v6; /*0x4fbbc8*/
     v34 = (*(int (**)(unsigned int *, void ***))(v33 + 16))(v7 + 74, &a4); /*0x4fbbcc*/
@@ -315,7 +315,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     a4 = v6; /*0x4fbc05*/
     v38 = (*(int (**)(unsigned int *, void ***))(v37 + 16))(v7 + 80, &a4); /*0x4fbc0c*/
     if ( v38 != -1 ) /*0x4fbc12*/
-      Vector::RemoveAt((Vector *)v7 + 16, v38); /*0x4fbc17*/
+      ((Vector *)v7 + 16)->RemoveAt(v38); /*0x4fbc17*/
     v39 = v7->absorbers; /*0x4fbc1c*/
     a4 = v6; /*0x4fbc29*/
     v40 = (*(int (**)(unsigned int *, void ***))(v39 + 16))(v7 + 26, &a4); /*0x4fbc2d*/

@@ -93,7 +93,7 @@ int ComStreamClass::Write(int a2, uint8_t *a3, const char *lParam, const char *l
     }
     if ( v21 ) /*0x7a3ed8*/
     {
-      String::Assign_Alt((String *)&MEMORY[0xB73E40], lParama); /*0x7a3eeb*/
+      ((String *)&MEMORY[0xB73E40])->Assign_Alt(lParama); /*0x7a3eeb*/
       String::Assign_Alt((String *)&g_WebBrowserConfig, v23); /*0x7a3efd*/
       v7 = GetDlgItem(v5, 1836); /*0x7a3f0f*/
       v8 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x7a3f11*/

@@ -756,7 +756,7 @@ AbstractClass * * GenerateRangeRingTextures()
           v7 = v6; /*0x5ff4f3*/
           if ( v6 > 255 ) /*0x5ff4f5*/
             v7 = 255; /*0x5ff4f7*/
-          Draw::Ellipse((Draw *)&v31, 128, 128, v5, 0, 0, 255, 255, v7); /*0x5ff520*/
+          ((Draw *)&v31)->Ellipse(128, 128, v5, 0, 0, 255, 255, v7); /*0x5ff520*/
           v5 -= 2; /*0x5ff525*/
           v6 += 4; /*0x5ff528*/
         }
@@ -819,7 +819,7 @@ AbstractClass * * GenerateRangeRingTextures()
       XSurface::Fill(&v31, 0); /*0x5ff652*/
       v21 = 60 * dword_8871E0->BuildWeapons; /*0x5ff684*/
       LOWORD(v14) = Math::RoundToInt((double)v21 * -0.002790178571428571); /*0x5ff692*/
-      Draw::Ellipse((Draw *)&v31, 128, 128, i - (unsigned int)v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
+      ((Draw *)&v31)->Ellipse(128, 128, i - (unsigned int)v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
       for ( k = 0; k < 128; ++k ) /*0x5ff6ae*/
       {
         v30 = 1; /*0x5ff6ba*/

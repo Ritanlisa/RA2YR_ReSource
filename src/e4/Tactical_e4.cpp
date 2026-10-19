@@ -572,14 +572,14 @@ LABEL_11:
           v23 = this->u32_1176 + this->u32_117A; /*0x4a93c7*/
           LOWORD(a3) = this->u32_1174 + this->u32_1178; /*0x4a93d0*/
           HIWORD(a3) = v23; /*0x4a93d5*/
-          MapClass::SetCellFlagsAlongPath((MapClass *)this, &a3, 0); /*0x4a93e9*/
+          ((MapClass *)this)->SetCellFlagsAlongPath(&a3, 0); /*0x4a93e9*/
         }
         if ( v3 != (unsigned int *)dword_8A03F8 ) /*0x4a93f5*/
         {
           v24 = this->u32_1178 + (unsigned short)v3; /*0x4a940a*/
           HIWORD(a3) = HIWORD(v3) + this->u32_117A; /*0x4a9414*/
           LOWORD(a3) = v24; /*0x4a941b*/
-          MapClass::SetCellFlagsAlongPath((MapClass *)this, &a3, (unsigned short *)1); /*0x4a942f*/
+          ((MapClass *)this)->SetCellFlagsAlongPath(&a3, (unsigned short *)1); /*0x4a942f*/
         }
       }
       this->u32_1174 = v3; /*0x4a9434*/

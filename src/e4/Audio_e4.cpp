@@ -662,7 +662,7 @@ int Audio::LoadWAVFiles(void *a1_1)
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
           _makepath(Buffer, 0, 0, (const char *)(*(unsigned int *)(*(unsigned int *)this->__pad_18 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
-          CCFileClass::Construct(&v10, Buffer); /*0x720869*/
+          (&v10)->Construct(Buffer); /*0x720869*/
           v4 = 4 * i + *(unsigned int *)this->__pad_18; /*0x720877*/
           *(unsigned char *)(*(unsigned int *)v4 + 650) = CCFileClass::Open(&v10, 0); /*0x720881*/
           if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)this->__pad_18 + 4 * i) + 650) ) /*0x72088d*/

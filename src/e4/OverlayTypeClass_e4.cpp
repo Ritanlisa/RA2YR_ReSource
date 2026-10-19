@@ -277,7 +277,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
   {
     if ( a1 ) /*0x5feb13*/
     {
-      ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x5feb1c*/
+      ((ObjectTypeClass *)a1)->Construct((int)v3); /*0x5feb1c*/
       /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EF5D4) */  /*0x5feb21*/
       /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb27*/
       /* X11: ptr_0 install elided (qmark slot, RHS g_ptr_7EF5D4) */  /*0x5feb2e*/
@@ -331,7 +331,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       _makepath(Buffer, 0, 0, this->ImageFile, Ext); /*0x5fee78*/
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
-    CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
+    (&v4)->Construct(Buffer); /*0x5fee9f*/
     v3 = (SHPStruct *)CCFileClass::ReadEntireFile(&v4); /*0x5feead*/
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/

@@ -233,7 +233,7 @@ AbstractClass * * DSurface::CreatePrimary(void *a1)
       {
         v9 = (DSurface *)__2_YAPAXI_Z(0x24u); /*0x4ba8df*/
         if ( v9 ) /*0x4ba8e9*/
-          BackBuffer = DSurface::CreateBackBuffer(v9, v29); /*0x4ba8f2*/
+          BackBuffer = (v9)->CreateBackBuffer(v29); /*0x4ba8f2*/
         else
           BackBuffer = 0; /*0x4ba8f9*/
         this->DSurface_field_0x0 = BackBuffer; /*0x4ba8ff*/

@@ -129,7 +129,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       p_vfptr1 = (WaypointPathClass *)&v2[1].ptr_4; /*0x763cd8*/
       if ( p_vfptr1 ) /*0x763cdd*/
       {
-        WaypointPathClass::computePath(p_vfptr1, 0, 0); /*0x763ce3*/
+        (p_vfptr1)->computePath(0, 0); /*0x763ce3*/
         /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7F6ED4) */  /*0x763ce8*/
         p_vfptr1->abstractFlags = 10; /*0x763cee*/
         p_vfptr1->uniqueId = 0; /*0x763cf5*/

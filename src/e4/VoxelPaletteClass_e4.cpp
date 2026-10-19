@@ -59,7 +59,7 @@ int VoxelPaletteClass::LoadFromFile()
 {
   VoxelPalette v4; // [esp+4h] [ebp-20h] BYREF
   
-  VoxelPalette::Init(&v4, (int)&unk_B2FB78, (int)g_VoxelColorPalette); /*0x753b84*/
+  (&v4)->Init((int)&unk_B2FB78, (int)g_VoxelColorPalette); /*0x753b84*/
   int v2; // esi
   v2 = ((VoxelPaletteClass *)&v4)->ConvertFromFile((int)this); /*0x753b93*/
   dword_B2FB74 = *(unsigned int *)v4.__pad_000; /*0x753ba1*/

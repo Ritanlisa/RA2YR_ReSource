@@ -99,7 +99,7 @@ FootClass * * Carryall::MissionStateMachine()
       (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 7); /*0x416ec3*/
       LABEL_18:
       Carryall_field_00 = (int)(this->Carryall_field_00); /*0x416ec9*/
-      NearbyCell = InfantryClass::FindNearbyCell((InfantryClass *)this, this->u32_5A4); /*0x416ed6*/
+      NearbyCell = ((InfantryClass *)this)->FindNearbyCell(this->u32_5A4); /*0x416ed6*/
       (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))(this, NearbyCell, 1); /*0x416ede*/
       v10 = this->u32_5D4; /*0x416ee4*/
       if ( v10 ) /*0x416eec*/

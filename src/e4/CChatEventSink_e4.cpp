@@ -177,7 +177,7 @@ LABEL_103:
             }
 LABEL_43:
             String::Assign_Bool((String *)v33, v6 + 52); /*0x7aab0c*/
-            CChatEventSink::EncodeString((CChatEventSink *)v33, 39); /*0x7aab1f*/
+            ((CChatEventSink *)v33)->EncodeString(39); /*0x7aab1f*/
             String::ToLower((String *)v33); /*0x7aab28*/
             if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x7aab41*/
             {
@@ -211,7 +211,7 @@ LABEL_51:
                 v19 = (String *)(stru_B777A0.DynamicArray_field_0x08 + 4 * v18); /*0x7aabfe*/
                 if ( v19 ) /*0x7aac03*/
                 {
-                  String::AssignFromPtr(v19, (const char **)v33); /*0x7aac0a*/
+                  (v19)->AssignFromPtr((const char **)v33); /*0x7aac0a*/
                   v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aac0f*/
                 }
                 *(unsigned int *)stru_B777A0.__pad_0 = v16 + 1; /*0x7aac15*/
@@ -221,8 +221,8 @@ LABEL_51:
                 while ( 1 ) /*0x7aab5b*/
                 {
                   if ( v17 >= 0 && v17 < v16 ) /*0x7aab61*/
-                    String::Reassign((String *)&v33[24], (const char **)(stru_B777A0.DynamicArray_field_0x08 + 4 * v17)); /*0x7aab71*/
-                  if ( (unsigned __int8)String::Compare((String *)&v33[24], (const char **)v33) ) /*0x7aab7f*/
+                    ((String *)&v33[24])->Reassign((const char **)(stru_B777A0.DynamicArray_field_0x08 + 4 * v17)); /*0x7aab71*/
+                  if ( (unsigned __int8)((String *)&v33[24])->Compare((const char **)v33) ) /*0x7aab7f*/
                     break; /*0x7aab7f*/
                   v16 = *(unsigned int *)stru_B777A0.__pad_0; /*0x7aab8c*/
                   if ( ++v17 >= *(int *)stru_B777A0.__pad_0 ) /*0x7aab94*/
@@ -235,7 +235,7 @@ LABEL_51:
                             + 4 * (dword_B76548(v33) & ((1 << dword_B7653C) - 1)));
             if ( v20 ) /*0x7aac47*/
             {
-              while ( !(unsigned __int8)String::Compare((String *)v20, (const char **)v33) ) /*0x7aac57*/
+              while ( !(unsigned __int8)((String *)v20)->Compare((const char **)v33) ) /*0x7aac57*/
               {
                 v20 = v20->ptr_8; /*0x7aac5d*/
                 if ( !v20 ) /*0x7aac62*/
@@ -275,7 +275,7 @@ LABEL_72:
                 v24 = (String *)(stru_B765F8.DynamicVector_field_0x8 + 4 * v23); /*0x7aad1b*/
                 if ( v24 ) /*0x7aad20*/
                 {
-                  String::AssignFromPtr(v24, (const char **)v33); /*0x7aad27*/
+                  (v24)->AssignFromPtr((const char **)v33); /*0x7aad27*/
                   v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aad2c*/
                 }
                 *(unsigned int *)stru_B765F8.__pad_0 = v21 + 1; /*0x7aad32*/
@@ -285,8 +285,8 @@ LABEL_72:
                 while ( 1 ) /*0x7aac78*/
                 {
                   if ( v22 >= 0 && v22 < v21 ) /*0x7aac7e*/
-                    String::Reassign((String *)&v33[28], (const char **)(stru_B765F8.DynamicVector_field_0x8 + 4 * v22)); /*0x7aac8e*/
-                  if ( (unsigned __int8)String::Compare((String *)&v33[28], (const char **)v33) ) /*0x7aac9c*/
+                    ((String *)&v33[28])->Reassign((const char **)(stru_B765F8.DynamicVector_field_0x8 + 4 * v22)); /*0x7aac8e*/
+                  if ( (unsigned __int8)((String *)&v33[28])->Compare((const char **)v33) ) /*0x7aac9c*/
                     break; /*0x7aac9c*/
                   v21 = *(unsigned int *)stru_B765F8.__pad_0; /*0x7aaca9*/
                   if ( ++v22 >= *(int *)stru_B765F8.__pad_0 ) /*0x7aacb1*/
@@ -302,7 +302,7 @@ LABEL_72:
                              & ((1 << v25->HashTable_field_0x0C) - 1)));
             if ( v26 ) /*0x7aad61*/
             {
-              while ( !(unsigned __int8)String::Compare((String *)v26, (const char **)v33) ) /*0x7aad71*/
+              while ( !(unsigned __int8)((String *)v26)->Compare((const char **)v33) ) /*0x7aad71*/
               {
                 v26 = v26->estimatedHealth; /*0x7aad73*/
                 if ( !v26 ) /*0x7aad78*/

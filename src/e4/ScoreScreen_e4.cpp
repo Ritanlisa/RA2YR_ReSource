@@ -51,7 +51,7 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
   if ( !v3 ) /*0x690a57*/
   {
-    CCFileClass::Construct(&v5, g_Str_File_FULLFNT3_SHP); /*0x690a62*/
+    (&v5)->Construct(g_Str_File_FULLFNT3_SHP); /*0x690a62*/
     this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690a74*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
@@ -92,7 +92,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
-    CCFileClass::Construct(&v5, aBigfontShp); /*0x690b32*/
+    (&v5)->Construct(aBigfontShp); /*0x690b32*/
     this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690b44*/
     LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/

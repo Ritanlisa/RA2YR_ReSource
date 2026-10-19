@@ -220,14 +220,14 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     v9 = this; /*0x6cb164*/
     v3 = (*(int (**)(DynamicVectorClass *, int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
-      DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v3); /*0x6cb176*/
+      ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v3); /*0x6cb176*/
   }
   if ( this->HouseClass_6C ) /*0x6cb17b*/
   {
     v9 = this; /*0x6cb192*/
     v4 = (*(int (**)(DynamicVectorClass *, int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
-      DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v4); /*0x6cb1a4*/
+      ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v4); /*0x6cb1a4*/
     this->HouseClass_6C = 0; /*0x6cb1a9*/
   }
   v9 = this; /*0x6cb1bd*/
@@ -402,7 +402,7 @@ AbstractClass * * SuperClass::StartTimer(int aP1, char aP2, char aP3)
         this->u32_78 = -1; /*0x6cb70f*/
         SuperClass::SetCurrentFrame(&this->q030); /*0x6cb718*/
         DefaultTimer = Super::GetDefaultTimer((Super *)this); /*0x6cb71f*/
-        Timer::Start((Timer *)&v21, DefaultTimer); /*0x6cb729*/
+        ((Timer *)&v21)->Start(DefaultTimer); /*0x6cb729*/
         v17 = v22; /*0x6cb732*/
         v18 = v23; /*0x6cb736*/
         this->q030 = v21; /*0x6cb73a*/
@@ -485,14 +485,14 @@ char SuperClass::StopPreclickAnim(int aP1)
     v8[0] = this; /*0x6cb859*/
     v4 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
-      DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v4); /*0x6cb86b*/
+      ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v4); /*0x6cb86b*/
   }
   if ( this->HouseClass_6C ) /*0x6cb870*/
   {
     v8[0] = this; /*0x6cb885*/
     v5 = (*(int (**)(DynamicVectorClass *, unsigned int *))(stru_B0F5B8.ptr_0 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
-      DynamicVector::RemoveItem((DynamicVector *)&stru_B0F5B8, v5); /*0x6cb897*/
+      ((DynamicVector *)&stru_B0F5B8)->RemoveItem(v5); /*0x6cb897*/
     this->HouseClass_6C = 0; /*0x6cb89c*/
   }
   if ( !this->Granted /*0x6cb8b1*/

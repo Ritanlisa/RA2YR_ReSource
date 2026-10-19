@@ -376,7 +376,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
     v4 = *(Array **)(this->Sidebar_field_0x8 + 4 * i); /*0x63632c*/
-    Value = Array::FindValue(v4, *(unsigned int *)this->__pad_0); /*0x636334*/
+    Value = (v4)->FindValue(*(unsigned int *)this->__pad_0); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
     else

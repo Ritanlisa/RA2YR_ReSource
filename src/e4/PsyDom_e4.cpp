@@ -71,7 +71,7 @@ void PsyDom::Fire()
   {
     v2 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &PsyDom_Coords); /*0x53b0a3*/
     v3 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v2 + 72))(v2, v34); /*0x53b0b1*/
-    v4 = ActionQueue::PushEntry(v1, *v3, v3[1], v3[2]); /*0x53b0cb*/
+    v4 = (v1)->PushEntry(*v3, v3[1], v3[2]); /*0x53b0cb*/
   }
   else
   {
@@ -100,7 +100,7 @@ void PsyDom::Fire()
   if ( v9 >= 10 ) /*0x53b17f*/
     v9 = 10; /*0x53b181*/
   v10 = dword_7ED3D0[v9]; /*0x53b186*/
-  EventClass::resetEvent((EventClass *)&v36, 0, 0); /*0x53b193*/
+  ((EventClass *)&v36)->resetEvent(0, 0); /*0x53b193*/
   v36 = &g_ptr_7E17AC; /*0x53b19a*/
   v41 = 10; /*0x53b1a2*/
   v40 = 0; /*0x53b1aa*/

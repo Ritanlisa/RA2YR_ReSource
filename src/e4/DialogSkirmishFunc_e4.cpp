@@ -165,7 +165,7 @@ LABEL_151:
           qmemcpy(&Destination[v60 >> 2], v62, v63); /*0x6ad920*/
           v64 = (ObjectClass *)&v62[v63]; /*0x6ad920*/
           wcscpy((wchar_t *)Destination, (const wchar_t *)&dword_A8B320 + 1); /*0x6ad927*/
-          Dialog::IdleProcess(v76, v64); /*0x6ad931*/
+          (v76)->IdleProcess(v64); /*0x6ad931*/
           ShowWindow((HWND)hWnd, 0); /*0x6ad93f*/
           if ( SkirmishDialog::Show(g_hWnd, v61, (int)hWnd) == 2 ) /*0x6ad94f*/
           {

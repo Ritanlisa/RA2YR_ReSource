@@ -285,7 +285,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   char Destination[128]; // [esp+64h] [ebp-80h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x644f65*/
-  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x644f6d*/
+  if ( !((ObjectTypeClass *)this)->LoadFromINI(aP1) ) /*0x644f6d*/
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor((ParticleTypeClass *)v44, 0, 0); /*0x644f85*/
   v44[0] = &g_ptr_7E4E58; /*0x644f8a*/

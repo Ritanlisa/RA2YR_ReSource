@@ -169,7 +169,7 @@ int Session::PrepareGame(HWND hWnd)
       Debug::Log(); /*0x5e7677*/
       if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
         goto LABEL_42; /*0x5e76a8*/
-      RawFileClass::Construct(&v18, (int)byte_A8B8E0); /*0x5e76c1*/
+      (&v18)->Construct((int)byte_A8B8E0); /*0x5e76c1*/
       if ( (uint8_t)((FileClass *)(&v18))->Open(0) ) /*0x5e76cc*/
         v7 = 1; /*0x5e76d5*/
       ((RawFileClass *)(&v18))->Dtor(); /*0x5e76db*/
@@ -197,7 +197,7 @@ int Session::PrepareGame(HWND hWnd)
       return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7733*/
     default:
       LABEL_44:
-      v13 = CCFileClass::Construct((CCFileClass *)Str, byte_A8B8E0); /*0x5e7845*/
+      v13 = ((CCFileClass *)Str)->Construct(byte_A8B8E0); /*0x5e7845*/
       v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
       /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E16B0) */  /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/

@@ -122,7 +122,7 @@ LABEL_5:
     if ( ++v3 >= this->customSound ) /*0x5d0200*/
       goto LABEL_6; /*0x5d0200*/
   }
-  String::AssignFromPtr((String *)&a2, *(const char ***)(this->customSound_controller[2] + 4 * v3)); /*0x5d01d1*/
+  ((String *)&a2)->AssignFromPtr(*(const char ***)(this->customSound_controller[2] + 4 * v3)); /*0x5d01d1*/
   String::ToLower((String *)&a2); /*0x5d01da*/
   if ( !(unsigned __int8)String::Compare((String *)&v6, &a2) ) /*0x5d01e8*/
   {
@@ -228,7 +228,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
   Audio *v4; // eax
   v4 = (Audio *)__2_YAPAXI_Z(0xCu); /*0x5d25e7*/
   char **v5; // edi
-  v5 = v4 ? Audio::SetSoundFileName(v4, Source, a3) : 0;
+  v5 = v4 ? (v4)->SetSoundFileName(Source, a3) : 0;
   BombClass *attachedBomb; // ecx
   attachedBomb = this->attachedBomb; /*0x5d2602*/
   if ( this->ambientSoundController[1] >= (int)attachedBomb ) /*0x5d260d*/

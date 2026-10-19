@@ -90,9 +90,9 @@ char FootClass::TeamClass_CheckCohesion(double a2)
   if ( v4 > 0 /*0x4d9f52*/
     && v4 <= 2
     && (unsigned __int8)Team::AllMembersValid((Team *)v3)
-    && (v5 = Array::Get((Array *)v3, 0), (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6)
-    && *(unsigned char *)(*(unsigned int *)(Array::Get((Array *)v3, 0) + 1312) + 5801)
-    && (v6 = Array::Get((Array *)v3, 0),
+    && (v5 = ((Array *)v3)->Get(0), (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6)
+    && *(unsigned char *)(*(unsigned int *)(((Array *)v3)->Get(0) + 1312) + 5801)
+    && (v6 = ((Array *)v3)->Get(0),
         v7 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v6 + 72))(v6, v12),
         v8 = (unsigned int *)(*(int (**)(ObjectClass *, unsigned char *))(v3->ptr_0 + 72))(v3, v13),
         v11 = v8[2] - v7[2],
@@ -357,7 +357,7 @@ LABEL_9:
     {
       v10 = *(unsigned int **)(this->buildingType + 4 * v9); /*0x634129*/
       v10[29] = -1; /*0x63412e*/
-      TeamClass::Reset(this, 0); /*0x634135*/
+      (this)->Reset(0); /*0x634135*/
       v11 = v10[28] - 1; /*0x63413d*/
       v10[28] = v11; /*0x63413e*/
       if ( !v11 ) /*0x634141*/
@@ -599,7 +599,7 @@ int TeamClass::GetMember(void *a1, void *a2)
       v14 = *(&dword_A8022C->ptr_0 + v13) + 22265; /*0x635d24*/
       LOWORD(v15.Color_field_00) = *(unsigned short *)v14; /*0x635d2d*/
       BYTE2(v15.Color_field_00) = *(unsigned char *)(v14 + 2); /*0x635d39*/
-      Color::Lerp(&v15, 0x64u, (unsigned __int8 *)&stru_A80220); /*0x635d3d*/
+      (&v15)->Lerp(0x64u, (unsigned __int8 *)&stru_A80220); /*0x635d3d*/
       v10 = (BYTE1(v15.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635d75*/
           | (BYTE2(v15.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
       Color_field_00 = v15.Color_field_00; /*0x635d77*/
@@ -676,7 +676,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       {
         v8 = *(unsigned int **)(*(unsigned int *)(v4 + 36) + 4 * v7); /*0x63618c*/
         v8[29] = -1; /*0x636191*/
-        TeamClass::Reset((TeamClass *)v4, 0); /*0x636198*/
+        ((TeamClass *)v4)->Reset(0); /*0x636198*/
         v9 = v8[28] - 1; /*0x6361a0*/
         v8[28] = v9; /*0x6361a1*/
         if ( !v9 ) /*0x6361a4*/

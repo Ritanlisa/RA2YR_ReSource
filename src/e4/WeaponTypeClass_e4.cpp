@@ -281,7 +281,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   unsigned __int8 *v21; // ecx
   unsigned __int8 *v22; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x772ae9*/
+  ((AbstractTypeClass *)this)->ProcessPower(a2); /*0x772ae9*/
   Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
   LOBYTE(v3) = this->IsSonic[0]; /*0x772afc*/
   Power::FlagProcess((Power *)a2, (int)v3); /*0x772b05*/
