@@ -25,7 +25,8 @@ struct AnimTypeClass {
     SHPStruct* nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     int NeedsSaveOrLink;  // 0x20
-    char __pad_24[24];  // 0x24
+    char __pad_24[20];  // 0x24
+    int SpawnsParticle;  // 0x38
     char zero_3C[1];  // 0x3C
     char UINameLabel[32];  // 0x3D
     char __pad_5D[3];  // 0x5D

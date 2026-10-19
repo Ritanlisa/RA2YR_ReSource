@@ -69,7 +69,8 @@ struct TiberiumClass {
     OverlayTypeClass* Image;  // 0xD8
     char NumFrames[4];  // 0xDC
     int Image_d;  // 0xE0
-    char __pad_E4[8];  // 0xE4
+    char __pad_E4[4];  // 0xE4
+    unsigned int q0E8;  // 0xE8
     int TiberiumClass_field_EC_d;  // 0xEC
     int TiberiumClass_field_F0;  // 0xF0
     int TiberiumClass_field_F4_d;  // 0xF4

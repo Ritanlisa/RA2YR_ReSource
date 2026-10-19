@@ -124,7 +124,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
   this->CrateGoodie_2 = 0; /*0x747109*/
   this->Harvester_2 = 0; /*0x74710f*/
   this->Weeder_2 = 0; /*0x747115*/
-  this->UnitTypeClass_field_E10 = 0; /*0x74711b*/
+  this->unknown_E10 = 0; /*0x74711b*/
   this->HasTurret_d = 0; /*0x747121*/
   this->DeployToFire_d = 0; /*0x747127*/
   this->IsSimpleDeployer_d = 0; /*0x74712d*/

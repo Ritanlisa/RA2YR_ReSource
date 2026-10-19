@@ -467,14 +467,14 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->LoopStart); /*0x428ace*/
   Power::TimerProcess(this->LoopEnd_d); /*0x428adc*/
   Power::TimerProcess(this->End_d); /*0x428aea*/
-  Power::TimerProcess(this->Report); /*0x428af8*/
-  Power::TimerProcess(this->StopSound); /*0x428b06*/
+  Power::TimerProcess(this->Report_d); /*0x428af8*/
+  Power::TimerProcess(this->StopSound_d); /*0x428b06*/
   Power::TimerProcess(this->NumParticles); /*0x428b14*/
-  Power::TimerProcess(this->DetailLevel); /*0x428b22*/
-  Power::TimerProcess(this->TranslucencyDetailLevel); /*0x428b30*/
+  Power::TimerProcess(this->DetailLevel_d); /*0x428b22*/
+  Power::TimerProcess(this->TranslucencyDetailLevel_d); /*0x428b30*/
   Power::TimerProcess(this->RandomLoopDelay[0]); /*0x428b3e*/
   Power::TimerProcess(this->RandomLoopDelay[1]); /*0x428b4c*/
-  Power::TimerProcess(this->Translucency); /*0x428b5a*/
+  Power::TimerProcess(this->Translucency_d); /*0x428b5a*/
   int v14; // ecx
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
   return ((Power *)a2)->FlagProcess(v14); /*0x428b6d*/
@@ -544,7 +544,7 @@ int AnimTypeClass::GetDamage()
         (const char *)this->LoopStart,
         (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId);
     }
-    else if ( this->NewTheater ) /*0x428cd6*/
+    else if ( this->NewTheater_d ) /*0x428cd6*/
     {
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
     }

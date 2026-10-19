@@ -23,7 +23,11 @@ struct Trigger {
     MSShapeAnim * q024;  // 0x24
     unsigned int u32_28;  // 0x28
     int Trigger_field_0x2C;  // 0x2C
-    char __pad_30[24];  // 0x30
+    char __pad_30[8];  // 0x30
+    unsigned int u32_38;  // 0x38
+    char __pad_3C[4];  // 0x3C
+    unsigned int q040;  // 0x40
+    unsigned int u32_44;  // 0x44
     int q048;  // 0x48
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

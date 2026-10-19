@@ -13,7 +13,9 @@ struct Object {
     char Object_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
     int Object_field_0x8;  // 0x8
-    char __pad_C[36];  // 0xC
+    char __pad_C[24];  // 0xC
+    unsigned int q024;  // 0x24
+    char __pad_28[8];  // 0x28
     int q030;  // 0x30
     int Object_field_0x34;  // 0x34
     char __pad_38[80];  // 0x38
@@ -24,7 +26,10 @@ struct Object {
     char __pad_B0[52];  // 0xB0
     int q0E4;  // 0xE4
     int q0E8;  // 0xE8
-    char __pad_EC[80];  // 0xEC
+    char __pad_EC[8];  // 0xEC
+    unsigned int u32_F4;  // 0xF4
+    unsigned int u32_F8;  // 0xF8
+    char __pad_FC[64];  // 0xFC
     unsigned int Object_field_0x13C;  // 0x13C
     char __pad_140[348];  // 0x140
     int Object_field_0x29C;  // 0x29C

@@ -74,7 +74,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->ImageLoaded = 0; /*0x5fe2a8*/
   this->ChainReaction = 0; /*0x5fe2ae*/
   this->Overrides = 0; /*0x5fe2b4*/
-  this->DrawFlat = 0; /*0x5fe2ba*/
+  this->DrawFlat_d = 0; /*0x5fe2ba*/
   this->IsRubble = 0; /*0x5fe2c0*/
   this->IsARock = 0; /*0x5fe2c6*/
   this->RadarColor[0] = 0; /*0x5fe2cc*/
@@ -319,7 +319,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
   result = this->Image; /*0x5fede9*/
-  if ( !result && this->DrawFlat ) /*0x5fedf7*/
+  if ( !result && this->DrawFlat_d ) /*0x5fedf7*/
   {
     Debug::Log(); /*0x5fee0e*/
     if ( this->Theater ) /*0x5fee13*/

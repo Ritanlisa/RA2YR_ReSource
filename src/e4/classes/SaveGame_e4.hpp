@@ -5,7 +5,15 @@
 
 namespace gamemd {
 struct SaveGame {
-    char __pad_0[180];  // 0x0
+    char __pad_0[4];  // 0x0
+    unsigned int q004;  // 0x4
+    char __pad_8[8];  // 0x8
+    unsigned int u32_10;  // 0x10
+    char __pad_14[8];  // 0x14
+    unsigned int u32_1C;  // 0x1C
+    char __pad_20[8];  // 0x20
+    unsigned int q028;  // 0x28
+    char __pad_2C[136];  // 0x2C
     void* q0B4;  // 0xB4
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

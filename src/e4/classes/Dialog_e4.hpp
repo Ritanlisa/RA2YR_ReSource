@@ -26,7 +26,8 @@ struct Dialog {
     unsigned int q004;  // 0x4
     unsigned int Dialog_field_0x8;  // 0x8
     unsigned int Dialog_field_0xC;  // 0xC
-    char __pad_10[24];  // 0x10
+    char __pad_10[20];  // 0x10
+    unsigned int q024;  // 0x24
     int q028;  // 0x28
     unsigned int __pad_2C;  // 0x2C
     unsigned int u32_30;  // 0x30

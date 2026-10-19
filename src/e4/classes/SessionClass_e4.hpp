@@ -41,7 +41,11 @@ struct SessionClass {
     unsigned int UniqueID;  // 0x34
     int Handle[5];  // 0x38
     int PlayerColor;  // 0x4C
-    char __pad_50[272];  // 0x50
+    char __pad_50[8];  // 0x50
+    char __pad_58[4];  // 0x58
+    unsigned int q05C;  // 0x5C
+    unsigned int q060;  // 0x60
+    char __pad_64[252];  // 0x64
     int unknown_160;  // 0x160
     unsigned int SessionClass_field_164;  // 0x164
     unsigned int SessionClass_field_168;  // 0x168

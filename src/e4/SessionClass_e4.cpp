@@ -83,8 +83,8 @@ int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
   if ( v6 ) /*0x540deb*/
     v7 = IPXConnClass::constructor( /*0x540e0e*/
            v6,
-           this->SessionClass_field_14,
-           this->SessionClass_field_14,
+           this->unknown_14,
+           this->unknown_14,
            this->SessionClass_field_10,
            this->SessionClass_field_08,
            a4,
@@ -99,7 +99,7 @@ int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
   if ( !v8 ) /*0x540e27*/
     return 0; /*0x540e29*/
   (*(void (**)(int))(*(unsigned int *)v8 + 4))(v8); /*0x540e31*/
-  *(unsigned int *)(*(unsigned int *)(&(unsigned int)(this->SessionClass_field_10)* this->ptr_44 + 40) + 40) = this->SessionClass_field_160; /*0x540e3e*/
+  *(unsigned int *)(*(unsigned int *)(&(unsigned int)(this->SessionClass_field_10)* this->ptr_44 + 40) + 40) = this->unknown_160; /*0x540e3e*/
   *(unsigned int *)(*(unsigned int *)(&(unsigned int)(this->SessionClass_field_10)* this->ptr_44 + 40) + 44) = this->SessionClass_field_170; /*0x540e4b*/
   *(unsigned int *)(*(unsigned int *)(&(unsigned int)(this->SessionClass_field_10)* (this->ptr_44)++ + 40) + 48) = this->Color2; /*0x540e58*/
   return 1; /*0x540dcc*/

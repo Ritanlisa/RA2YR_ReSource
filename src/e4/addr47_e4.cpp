@@ -92,7 +92,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E4DD8) */  /*0x47712a*/
-    for ( i = (BuildingTypeClass *)strtok(v21.__pad_20, Delimiter); i; i = (BuildingTypeClass *)strtok(0, Delimiter) ) /*0x477144*/
+    for ( i = (BuildingTypeClass *)strtok(v21.q020, Delimiter); i; i = (BuildingTypeClass *)strtok(0, Delimiter) ) /*0x477144*/
     {
       if ( !LOBYTE(i->ptr_0) ) /*0x47714a*/
         break; /*0x47714d*/

@@ -22,7 +22,11 @@ struct Terrain {
     int Terrain_field_0x38;  // 0x38
     char __pad_3C[4];  // 0x3C
     int q040;  // 0x40
-    char __pad_44[28];  // 0x44
+    char __pad_44[8];  // 0x44
+    unsigned int q04C;  // 0x4C
+    char __pad_50[4];  // 0x50
+    int q054;  // 0x54
+    char __pad_58[8];  // 0x58
     unsigned int Terrain_field_0x60;  // 0x60
     int Terrain_field_0x64;  // 0x64
     void* __pad_68;  // 0x68

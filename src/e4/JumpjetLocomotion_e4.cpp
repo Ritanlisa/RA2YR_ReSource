@@ -1055,7 +1055,7 @@ void* JumpjetLocomotion::UpdateFacing()
   v10 = this->JumpjetLocomotion_field_0x40 / 256; /*0x54d1da*/
   v11 = this->JumpjetLocomotion_field_0x44 / 256; /*0x54d1dd*/
   v12 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)&this->u32_C + 440))( /*0x54d1e0*/
-                   *(unsigned int *)this->__pad_C,
+                   *(unsigned int *)this->u32_C,
                    &v61);
   if ( *v12 != (unsigned short)v10 || (v56 = 1, v12[1] != (unsigned short)v11) ) /*0x54d1f4*/
     v56 = 0; /*0x54d1f6*/
@@ -1075,20 +1075,20 @@ void* JumpjetLocomotion::UpdateFacing()
   v17 = Math::RoundToInt(v14); /*0x54d259*/
   (v16) = ((v16) & ~0xFFFF) | (((((v17) >> 16) & 0xFFFF)) & 0xFFFF); /*0x54d259*/
   (v15) = ((v15) & ~0xFFFF) | ((v17) & 0xFFFF); /*0x54d259*/
-  v18 = *(unsigned int *)this->__pad_C; /*0x54d25e*/
+  v18 = *(unsigned int *)this->u32_C; /*0x54d25e*/
   LODWORD(v60) = v15; /*0x54d261*/
   v19 = (*(int (__fastcall **)(int, int))(*(unsigned int *)v18 + 464))(v18, v16); /*0x54d270*/
-  v20 = *(unsigned int *)this->__pad_C + 156; /*0x54d272*/
+  v20 = *(unsigned int *)this->u32_C + 156; /*0x54d272*/
   v59 = v19; /*0x54d278*/
   v62 = *(double *)v20; /*0x54d27e*/
   v63 = *(unsigned int *)(v20 + 8); /*0x54d291*/
   GroundHeight = Cell::GetGroundHeight(&v62); /*0x54d29f*/
-  v22 = *(unsigned int *)this->__pad_C + 156; /*0x54d2a4*/
+  v22 = *(unsigned int *)this->u32_C + 156; /*0x54d2a4*/
   v62 = *(double *)v22; /*0x54d2ab*/
   v63 = *(unsigned int *)(v22 + 8); /*0x54d2c3*/
   if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v62)->flags & 0x100) != 0 ) /*0x54d2d5*/
   {
-    v23 = *(unsigned int *)this->__pad_C + 156; /*0x54d2da*/
+    v23 = *(unsigned int *)this->u32_C + 156; /*0x54d2da*/
     v62 = *(double *)v23; /*0x54d2e2*/
     v24 = *(unsigned int *)(v23 + 8); /*0x54d2f5*/
     LODWORD(v61) = GroundHeight + 4 * dword_ABC5E8; /*0x54d2f8*/
@@ -1101,7 +1101,7 @@ void* JumpjetLocomotion::UpdateFacing()
   if ( v25 == 4 /*0x54d339*/
     || !v25
     || v56
-    && !*(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)this->__pad_C + 132))(*(unsigned int *)this->__pad_C) + 3434) )
+    && !*(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)this->u32_C + 132))(*(unsigned int *)this->u32_C) + 3434) )
   {
     v26 = v19 - GroundHeight; /*0x54d352*/
   }
@@ -1113,13 +1113,13 @@ void* JumpjetLocomotion::UpdateFacing()
   v57 = 0; /*0x54d35e*/
   if ( v26 < SLODWORD(v60) ) /*0x54d363*/
   {
-    v27 = (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_C + 456))(*(unsigned int *)this->__pad_C); /*0x54d377*/
-    v28 = *(unsigned int *)this->__pad_C + 156; /*0x54d379*/
+    v27 = (*(int (**)(unsigned int))(**(unsigned int **)this->u32_C + 456))(*(unsigned int *)this->u32_C); /*0x54d377*/
+    v28 = *(unsigned int *)this->u32_C + 156; /*0x54d379*/
     v62 = *(double *)v28; /*0x54d381*/
     v63 = *(unsigned int *)(v28 + 8); /*0x54d394*/
     if ( (Coord::To_Cell((Coord *)&dword_87F7E8, &v62)->flags & 0x100) != 0 ) /*0x54d3ab*/
     {
-      v29 = *(unsigned int *)this->__pad_C; /*0x54d3ad*/
+      v29 = *(unsigned int *)this->u32_C; /*0x54d3ad*/
       if ( !v29->q08C ) /*0x54d3b0*/
       {
         v30 = (int *)(v29 + 156); /*0x54d3ba*/
@@ -1134,11 +1134,11 @@ void* JumpjetLocomotion::UpdateFacing()
     }
     if ( !v27 ) /*0x54d405*/
     {
-      v32 = *(unsigned int **)this->__pad_C; /*0x54d407*/
+      v32 = *(unsigned int **)this->u32_C; /*0x54d407*/
       v62 = *(double *)(v32 + 39); /*0x54d416*/
       v63 = v32[41]; /*0x54d424*/
       v32->vt_slot_244(&v62); /*0x54d42f*/
-      *(unsigned char *)(*(unsigned int *)this->__pad_C + 140) = 0; /*0x54d438*/
+      *(unsigned char *)(*(unsigned int *)this->u32_C + 140) = 0; /*0x54d438*/
     }
     v14 = (double)SLODWORD(v61) + *&this->q024; /*0x54d443*/
     if ( (double)SLODWORD(v60) >= v14 ) /*0x54d451*/
@@ -1178,8 +1178,8 @@ LABEL_49:
 LABEL_50:
   v36 = this->JumpjetLocomotion_field_0x40 / 256; /*0x54d4c0*/
   v37 = this->JumpjetLocomotion_field_0x44 / 256; /*0x54d4e9*/
-  v38 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)this->__pad_C + 440))( /*0x54d4ec*/
-                   *(unsigned int *)this->__pad_C,
+  v38 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)this->u32_C + 440))( /*0x54d4ec*/
+                   *(unsigned int *)this->u32_C,
                    &v61);
   if ( *v38 != (unsigned short)v36 || v38[1] != (unsigned short)v37 ) /*0x54d4fb*/
   {
@@ -1197,11 +1197,11 @@ LABEL_50:
   }
   if ( v57 ) /*0x54d537*/
   {
-    ObjectClass::SetAnim(*(ObjectClass **)this->__pad_C, v59); /*0x54d541*/
+    ObjectClass::SetAnim(*(ObjectClass **)this->u32_C, v59); /*0x54d541*/
     if ( v55 ) /*0x54d54c*/
-      (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 0); /*0x54d554*/
+      (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)this->u32_C + 292))(*(unsigned int *)this->u32_C, 0); /*0x54d554*/
   }
-  v40 = (int *)(*(unsigned int *)this->__pad_C + 156); /*0x54d55d*/
+  v40 = (int *)(*(unsigned int *)this->u32_C + 156); /*0x54d55d*/
   v64 = *v40; /*0x54d567*/
   v65 = v40[1]; /*0x54d56e*/
   v41 = v40[2]; /*0x54d572*/
@@ -1218,22 +1218,22 @@ LABEL_50:
   LODWORD(v61) = v45; /*0x54d5d4*/
   Math::ArcTan2(COERCE_DOUBLE((((v43 & 0xFFFFFFFFull)) << 32 | (v44 & 0xFFFFFFFFull)))); /*0x54d5d8*/
   (v46) = ((v46) & ~0xFFFF) | ((Math::RoundToInt(v14 * v60 + (double)v64)) & 0xFFFF); /*0x54d5e8*/
-  v47 = *(unsigned int *)this->__pad_C; /*0x54d5f1*/
+  v47 = *(unsigned int *)this->u32_C; /*0x54d5f1*/
   v66[1] = LODWORD(v61); /*0x54d5f4*/
   v66[0] = v46; /*0x54d5f8*/
   v66[2] = v41; /*0x54d5fc*/
   (*(void (**)(int, unsigned int *))(*(unsigned int *)v47 + 436))(v47, v66); /*0x54d607*/
-  v48 = *(unsigned char **)this->__pad_C; /*0x54d60d*/
+  v48 = *(unsigned char **)this->u32_C; /*0x54d60d*/
   if ( !v48->u32_6AD )
   {
     if ( v48
       && (*(int (**)(unsigned char *))(*(unsigned int *)v48 + 44))(v48) == 15
-      && ((v49 = *(unsigned int *)this->__pad_C) != 0
-        ? (v50 = (*(int (**)(unsigned int))(*(unsigned int *)v49 + 44))(*(unsigned int *)this->__pad_C) == 15 ? v49 : 0)
+      && ((v49 = *(unsigned int *)this->u32_C) != 0
+        ? (v50 = (*(int (**)(unsigned int))(*(unsigned int *)v49 + 44))(*(unsigned int *)this->u32_C) == 15 ? v49 : 0)
         : (v50 = 0),
           *(unsigned char *)(*(unsigned int *)(v50 + 1728) + 3787)
        && *&this->q050 == 2
-       && (v51 = *(ObjectClass **)this->__pad_C, v51[4].ptr_4)) )
+       && (v51 = *(ObjectClass **)this->u32_C, v51[4].ptr_4)) )
     {
       v53 = ObjectClass::CalcTargetFacing(v51, (int *)&v61, v51[4].ptr_4); /*0x54d675*/
       FacingClass::Set_SyncLog(&this->q054, v53); /*0x54d679*/
@@ -1246,7 +1246,7 @@ LABEL_50:
   }
   if ( v55 ) /*0x54d69d*/
     return (*(int (**)(unsigned int, int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 1); /*0x54d6a6*/
-  result = *(unsigned int *)this->__pad_C; /*0x54d6b4*/
+  result = *(unsigned int *)this->u32_C; /*0x54d6b4*/
   *(unsigned char *)(result + 116) = v58; /*0x54d6bd*/
   return result; /*0x54d6ac*/
 

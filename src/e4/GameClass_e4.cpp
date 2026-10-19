@@ -308,7 +308,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         v9 = this->u32_140; /*0x632e6f*/
         if ( v9 >= aP2 ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
-        memcpy(&this->__pad_24[this->u32_13C - this->u32_140 + 24], Src, v9); /*0x632e97*/
+        memcpy(&this->__pad_24[this->m_13C - this->u32_140 + 24], Src, v9); /*0x632e97*/
         v3 = &Src[v9]; /*0x632eb0*/
         v10 = this->u32_140 == v9; /*0x632eb2*/
         aP2 -= v9; /*0x632eb4*/
@@ -318,9 +318,9 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         BigInt::RSAOperation( /*0x632ed6*/
           *&this->u32_38,
           (char *)&this->field_3C,
-          this->u32_13C,
+          this->m_13C,
           (char *)v12);
-        GameClass::processFrame(&this->ptr_14, (int)v12, 56); /*0x632ee5*/
+        GameClass::processFrame(&this->m_14, (int)v12, 56); /*0x632ee5*/
       }
       else
       {
@@ -406,7 +406,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
       v14 = BigInt::DecryptBlock((int)v12, Src, v13, &this->u32_3C); /*0x63324d*/
       this->m_140 = v14; /*0x633258*/
       this->m_13C = v14; /*0x63325e*/
-      GameClass::updateUI(&this->ptr_14, (int)Src, 56); /*0x633268*/
+      GameClass::updateUI(&this->m_14, (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
     (this->m_C) = ((this->m_C) & ~0xFF) | ((0) & 0xFF); /*0x633274*/

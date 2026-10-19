@@ -25,7 +25,8 @@ struct MapClass {
     int RadarHashVector_field_0x0C;  // 0xC
     int q010;  // 0x10
     unsigned int MapClass_field_0x14;  // 0x14
-    char __pad_18[16];  // 0x18
+    char __pad_18[12];  // 0x18
+    unsigned int outBuffer;  // 0x24
     int MapClass_field_0x28;  // 0x28
     unsigned int MapClass_field_0x2C;  // 0x2C
     char __pad_30[12];  // 0x30
@@ -36,9 +37,14 @@ struct MapClass {
     DynamicVector * ptr_50;  // 0x50
     unsigned int __pad_054;  // 0x54
     int q058;  // 0x58
-    char __pad_5C[48];  // 0x5C
+    char __pad_5C[20];  // 0x5C
+    char __pad_070[16];  // 0x70
+    unsigned int q080;  // 0x80
+    char __pad_84[8];  // 0x84
     unsigned int LevelAndPassabilityStruct2pointer_70;  // 0x8C
-    char __pad_90[40];  // 0x90
+    char __pad_90[24];  // 0x90
+    unsigned int q0A8;  // 0xA8
+    char __pad_AC[12];  // 0xAC
     int MapClass_field_0xB8;  // 0xB8
     unsigned char q0BC[24];  // 0xBC
     unsigned int u32_D4;  // 0xD4
@@ -57,19 +63,42 @@ struct MapClass {
     int q128;  // 0x128
     unsigned char u32_12C[4];  // 0x12C
     int q130;  // 0x130
-    unsigned char q134[8];  // 0x134
+    unsigned char q134[4];  // 0x134
+    unsigned int MaxLevel;  // 0x138
     int MapClass_field_0x13C;  // 0x13C
     int q140;  // 0x140
-    char __pad_144[83];  // 0x144
+    char __pad_144[4];  // 0x144
+    unsigned int Crates;  // 0x148
+    unsigned char __pad_14C[4];  // 0x14C
+    unsigned int q150;  // 0x150
+    unsigned int q154;  // 0x154
+    unsigned int q158;  // 0x158
+    char __pad_15C[59];  // 0x15C
     char MapClass_field_0x197[4];  // 0x197
-    char __pad_19B[166];  // 0x19B
+    char __pad_19B[149];  // 0x19B
+    unsigned int u32_230;  // 0x230
+    char __pad_234[13];  // 0x234
     char MapClass_field_0x241[4];  // 0x241
     char __pad_245[79];  // 0x245
     int MapClass_field_0x294;  // 0x294
-    char __pad_298[76];  // 0x298
+    char __pad_298[28];  // 0x298
+    unsigned int q2B4;  // 0x2B4
+    char __pad_2B8[12];  // 0x2B8
+    unsigned int u32_2C4;  // 0x2C4
+    char __pad_2C8[8];  // 0x2C8
+    unsigned int u32_2D0;  // 0x2D0
+    unsigned int u32_2D4;  // 0x2D4
+    char __pad_2D8[4];  // 0x2D8
+    unsigned int u32_2DC;  // 0x2DC
+    unsigned char u8_2E0;  // 0x2E0
+    unsigned char u8_2E1;  // 0x2E1
+    unsigned char u8_2E2;  // 0x2E2
+    unsigned char u8_2E3;  // 0x2E3
     unsigned int q2E4;  // 0x2E4
     unsigned int q2E8;  // 0x2E8
-    char __pad_2EC[24];  // 0x2EC
+    char __pad_2EC[8];  // 0x2EC
+    unsigned int u32_2F4;  // 0x2F4
+    char __pad_2F8[12];  // 0x2F8
     int q304;  // 0x304
     IUnknown* q0308;  // 0x308
     char __pad_30C[1020];  // 0x30C
@@ -81,16 +110,21 @@ struct MapClass {
     char __pad_807[1397];  // 0x807
     int MapClass_field_0xD7C;  // 0xD7C
     char __pad_D80[960];  // 0xD80
-    char __pad_1140[28];  // 0x1140
+    char __pad_1140[24];  // 0x1140
+    unsigned int q1158;  // 0x1158
     unsigned int u32_115C;  // 0x115C
     unsigned int u32_1160;  // 0x1160
     unsigned int u32_1164;  // 0x1164
     unsigned int __pad_1168;  // 0x1168
     unsigned int u32_116C;  // 0x116C
-    char __pad_1170[44];  // 0x1170
+    char __pad_1170[12];  // 0x1170
+    unsigned int q117C;  // 0x117C
+    char __pad_1180[28];  // 0x1180
     unsigned int u32_119C;  // 0x119C
     unsigned int u32_11A0;  // 0x11A0
-    char __pad_11A4[12];  // 0x11A4
+    char __pad_11A4[4];  // 0x11A4
+    unsigned int q11A8;  // 0x11A8
+    char __pad_11AC[4];  // 0x11AC
     unsigned int q11B0;  // 0x11B0
     unsigned int q11B4;  // 0x11B4
     char __pad_11B8[160];  // 0x11B8

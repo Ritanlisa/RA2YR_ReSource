@@ -66,7 +66,14 @@ struct BulletClass {
     char __pad_9F[13];  // 0x9F
     void* u32_AC;  // 0xAC
     int BulletClass_field_0xB0;  // 0xB0
-    char __pad_B4[88];  // 0xB4
+    char __pad_B4[4];  // 0xB4
+    unsigned int __pad_B8;  // 0xB8
+    char __pad_BC[36];  // 0xBC
+    unsigned int Bright;  // 0xE0
+    char __pad_E4[28];  // 0xE4
+    unsigned int q100;  // 0x100
+    unsigned int q104;  // 0x104
+    unsigned int q108;  // 0x108
     int BulletClass_field_0x10C;  // 0x10C
     char __pad_110[4];  // 0x110
     unsigned int InheritedColor;  // 0x114

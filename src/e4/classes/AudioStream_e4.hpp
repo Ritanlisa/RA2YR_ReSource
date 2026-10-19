@@ -39,7 +39,8 @@ struct AudioStream {
     int q090;  // 0x90
     char __pad_94[4];  // 0x94
     int q098;  // 0x98
-    unsigned char u32_9C[12];  // 0x9C
+    unsigned char u32_9C[8];  // 0x9C
+    unsigned int u32_A4;  // 0xA4
     unsigned int u32_A8;  // 0xA8
     unsigned int AudioStream_field_0xAC;  // 0xAC
     int AudioStream_field_0xB0;  // 0xB0

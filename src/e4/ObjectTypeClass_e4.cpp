@@ -155,7 +155,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_2D = 0; /*0x5f70df*/
   this->u32_2E = 0; /*0x5f70e5*/
   this->u32_2F = 0; /*0x5f70eb*/
-  this->NoSpawnAlt = 0; /*0x5f70f1*/
+  this->NoSpawnAlt_d = 0; /*0x5f70f1*/
   this->u32_31 = 0; /*0x5f70f7*/
   int v4 = 18; // ecx /*0x5f70fd*/
   do /*0x5f710b*/

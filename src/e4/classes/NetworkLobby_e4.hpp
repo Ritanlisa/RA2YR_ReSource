@@ -14,11 +14,22 @@ struct NetworkLobby {
     char __pad_18[1];  // 0x18
     unsigned char u8_19;  // 0x19
     unsigned char u8_1A;  // 0x1A
-    char __pad_1B[9];  // 0x1B
+    char __pad_1B[1];  // 0x1B
+    unsigned int u32_1C;  // 0x1C
+    unsigned int q020;  // 0x20
     unsigned int u32_24;  // 0x24
     char __pad_28[17];  // 0x28
     char NetworkLobby_field_0x39[4];  // 0x39
-    char __pad_3D[960];  // 0x3D
+    char __pad_3D[303];  // 0x3D
+    unsigned short u16_16C;  // 0x16C
+    char __pad_16E[322];  // 0x16E
+    unsigned int u32_2B0;  // 0x2B0
+    unsigned int u32_2B4;  // 0x2B4
+    unsigned short u16_2B8;  // 0x2B8
+    char __pad_2BA[10];  // 0x2BA
+    unsigned int u32_2C4;  // 0x2C4
+    unsigned int u32_2C8;  // 0x2C8
+    char __pad_2CC[305];  // 0x2CC
     unsigned int __pad_3FD;  // 0x3FD
     char __pad_401[683];  // 0x401
     int NetworkLobby_field_0x6AC;  // 0x6AC

@@ -10,7 +10,14 @@ struct Coord {
     char Coord_field_0x2[4];  // 0x2
     char __pad_6[2];  // 0x6
     int Coord_field_0x8;  // 0x8
-    char __pad_C[304];  // 0xC
+    char __pad_C[12];  // 0xC
+    unsigned int q018;  // 0x18
+    char __pad_1C[16];  // 0x1C
+    int u32_2C;  // 0x2C
+    char __pad_30[128];  // 0x30
+    unsigned int u32_B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
+    char __pad_B8[132];  // 0xB8
     int q13C;  // 0x13C
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---

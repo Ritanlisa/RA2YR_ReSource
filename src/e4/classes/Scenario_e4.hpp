@@ -24,7 +24,9 @@ struct Scenario {
     int Scenario_field_0x30;  // 0x30
     int q034;  // 0x34
     int q038;  // 0x38
-    unsigned char q03C[15];  // 0x3C
+    unsigned char q03C[4];  // 0x3C
+    unsigned int q040;  // 0x40
+    char __pad_44[7];  // 0x44
     char Scenario_field_0x4B[4];  // 0x4B
     char __pad_4F[17];  // 0x4F
     int q060;  // 0x60
@@ -34,7 +36,10 @@ struct Scenario {
     int q080;  // 0x80
     char __pad_84[20];  // 0x84
     int Scenario_field_0x98;  // 0x98
-    char __pad_9C[224];  // 0x9C
+    char __pad_9C[212];  // 0x9C
+    unsigned int u32_170;  // 0x170
+    unsigned int u32_174;  // 0x174
+    char __pad_178[4];  // 0x178
     unsigned int u32_17C;  // 0x17C
     char __pad_180[284];  // 0x180
     int Scenario_field_0x29C;  // 0x29C

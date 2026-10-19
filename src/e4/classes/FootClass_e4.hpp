@@ -311,12 +311,20 @@ struct FootClass {
     unsigned long long FootClass_field_578;  // 0x578
     char FootClass_field_580[8];  // 0x580
     int unknownAbstractArray588;  // 0x588
-    char __pad_58C[20];  // 0x58C
+    char __pad_58C[4];  // 0x58C
+    AbstractClass* q590;  // 0x590
+    char __pad_594[4];  // 0x594
+    unsigned int q598;  // 0x598
+    unsigned int q59C;  // 0x59C
     int FootClass_field_5A0;  // 0x5A0
     int FootClass_field_5A4;  // 0x5A4
     int FootClass_field_5A8;  // 0x5A8
     void* FootClass_DVC_5AC;  // 0x5AC
-    char __pad_5B0[20];  // 0x5B0
+    char __pad_5B0[4];  // 0x5B0
+    AbstractClass* q5B4;  // 0x5B4
+    char __pad_5B8[4];  // 0x5B8
+    AbstractClass* q5BC;  // 0x5BC
+    unsigned int q5C0;  // 0x5C0
     int FootClass_field_5C4;  // 0x5C4
     void* FootClass_field_5C8;  // 0x5C8
     int FootClass_field_5CC;  // 0x5CC

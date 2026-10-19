@@ -407,7 +407,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
   if ( v3 ) /*0x4db3d3*/
     (*(void (**)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(aP0 + 1652)); /*0x4db3d8*/
   v4 = pStm; /*0x4db3db*/
-  aP0->Locomotor = 0; /*0x4db3df*/
+  aP0->locomotor = 0; /*0x4db3df*/
   result = BuildingClass::AllocAndCtor(aP0, (int)v4); /*0x4db3e7*/
   if ( result >= 0 ) /*0x4db3ee*/
   {
@@ -445,9 +445,9 @@ LABEL_16:
           if ( (int)pStm <= 0 ) /*0x4db4e6*/
           {
 LABEL_28:
-            aP0->Locomotor = 0; /*0x4db550*/
-            ObjectClass::updateStateFlags(&aP0->Locomotor); /*0x4db55a*/
-            aP0->Locomotor = 0; /*0x4db566*/
+            aP0->locomotor = 0; /*0x4db550*/
+            ObjectClass::updateStateFlags(&aP0->locomotor); /*0x4db55a*/
+            aP0->locomotor = 0; /*0x4db566*/
             OleLoadFromStream(v4, &IID_ILocomotion, &aP0->Locomotor); /*0x4db568*/
             aP0->FootClass_field_5A0 = 0; /*0x4db574*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
@@ -458,7 +458,7 @@ LABEL_28:
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5CC); /*0x4db5d5*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_5DC); /*0x4db5e6*/
             ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_694); /*0x4db5f7*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_field_69C); /*0x4db608*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->parasiteImUsing); /*0x4db608*/
             AudioController::Init(&aP0->audioController7); /*0x4db613*/
             aP0->FootClass_field_53C = 0; /*0x4db618*/
             aP0->FootClass_field_540 = 0; /*0x4db61e*/

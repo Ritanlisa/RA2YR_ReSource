@@ -25,7 +25,8 @@ struct WWMouseClass {
     int WWMouseClass_field_0x30;  // 0x30
     int WWMouseClass_field_0x34;  // 0x34
     int WWMouseClass_field_0x38;  // 0x38
-    unsigned char q03C[8];  // 0x3C
+    unsigned char q03C[4];  // 0x3C
+    unsigned int XY2;  // 0x40
     unsigned int WWMouseClass_field_0x44;  // 0x44
     unsigned int q048;  // 0x48
     unsigned int q04C;  // 0x4C

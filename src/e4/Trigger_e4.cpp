@@ -68,7 +68,7 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x5cbd32*/
   this->q00C = 1; /*0x5cbd35*/
   this->q010 = (int)((void *)Timer::GetTicks()); /*0x5cbd48*/
-  *(unsigned int *)this->ptr_18 = 0; /*0x5cbd4f*/
+  *(unsigned int *)this->q018 = 0; /*0x5cbd4f*/
   *&this->q020 = a5; /*0x5cbd52*/
   *&this->u32_38 = a7; /*0x5cbd58*/
   *&this->q024 = (gamemd::MSShapeAnim *)(a6); /*0x5cbd5f*/
@@ -187,7 +187,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                        this->u32_46C,
                        3,
                        512,
-                       &this->ptr_18);
+                       &this->q018);
           if ( v28.attachedBomb < v28.nextObject /*0x76d71b*/
             || (BYTE1(v28.attachedTag) || !v28.nextObject)
             && v28.ambientSoundController[0] > 0

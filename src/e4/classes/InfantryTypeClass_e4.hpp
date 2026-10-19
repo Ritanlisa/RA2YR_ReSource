@@ -406,9 +406,18 @@ struct InfantryTypeClass {
     unsigned int u32_E44;  // 0xE44
     unsigned int u32_E48;  // 0xE48
     unsigned int u32_E4C;  // 0xE4C
-    unsigned char qE50[28];  // 0xE50
-    char u32_E6C[28];  // 0xE6C
-    char u32_E88[28];  // 0xE88
+    unsigned char qE50[16];  // 0xE50
+    unsigned int qE60;  // 0xE60
+    unsigned int u32_E64;  // 0xE64
+    char __pad_E68[4];  // 0xE68
+    char u32_E6C[16];  // 0xE6C
+    unsigned int u32_E7C;  // 0xE7C
+    unsigned int u32_E80;  // 0xE80
+    char __pad_E84[4];  // 0xE84
+    char u32_E88[16];  // 0xE88
+    unsigned int u32_E98;  // 0xE98
+    unsigned int u32_E9C;  // 0xE9C
+    char __pad_EA0[4];  // 0xEA0
     unsigned int u32_EA4;  // 0xEA4
     unsigned int u32_EA8;  // 0xEA8
     bool Cyborg_2;  // 0xEAC

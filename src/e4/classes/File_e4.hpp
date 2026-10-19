@@ -14,7 +14,10 @@ struct File {
     AbstractClass * ptr_10;  // 0x10
     char __pad_14[4];  // 0x14
     AbstractClass * ptr_18;  // 0x18
-    char __pad_1C[13];  // 0x1C
+    char __pad_1C[4];  // 0x1C
+    unsigned int q020;  // 0x20
+    AbstractClass * ptr_24;  // 0x24
+    char __pad_28[1];  // 0x28
     char File_field_0x29[4];  // 0x29
     char tail_2D[3];  // 0x2D
 // --- flat members (BEGIN) ---

@@ -23,7 +23,13 @@ struct Tactical {
     char __pad_6[2];  // 0x6
     void* ptr_8;  // 0x8
     void* ptr_C;  // 0xC
-    char __pad_10[32];  // 0x10
+    char __pad_10[8];  // 0x10
+    unsigned int nextArrayIndex;  // 0x18
+    int referenceCount;  // 0x1C
+    char __pad_20[4];  // 0x20
+    unsigned int u32_24;  // 0x24
+    unsigned int u32_28;  // 0x28
+    unsigned int u32_2C;  // 0x2C
     int Tactical_field_0x30;  // 0x30
     unsigned int q034;  // 0x34
     unsigned int u32_38;  // 0x38

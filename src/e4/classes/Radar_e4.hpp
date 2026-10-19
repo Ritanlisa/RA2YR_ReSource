@@ -22,7 +22,13 @@ struct Radar {
     unsigned int q054;  // 0x54
     char __pad_58[8];  // 0x58
     int Radar_field_0x60;  // 0x60
-    char __pad_64[144];  // 0x64
+    char __pad_64[4];  // 0x64
+    unsigned int q068;  // 0x68
+    unsigned int q06C;  // 0x6C
+    unsigned int q070;  // 0x70
+    char __pad_74[28];  // 0x74
+    unsigned int q090;  // 0x90
+    char __pad_94[96];  // 0x94
     unsigned int u32_F4;  // 0xF4
     unsigned int u32_F8;  // 0xF8
     char __pad_FC[272];  // 0xFC

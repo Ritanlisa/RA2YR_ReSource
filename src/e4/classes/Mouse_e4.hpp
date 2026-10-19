@@ -8,7 +8,9 @@ namespace gamemd {
 struct Mouse {
     char __pad_0[1];  // 0x0
     char m_1[4];  // 0x1
-    char __pad_5[13];  // 0x5
+    char __pad_5[3];  // 0x5
+    unsigned int u32_8;  // 0x8
+    char __pad_C[6];  // 0xC
     char m_12[4];  // 0x12
     char __tail_16[6];  // 0x16
     // dup-member: unsigned int GetKeyState;

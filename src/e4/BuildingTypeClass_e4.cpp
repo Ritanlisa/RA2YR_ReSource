@@ -304,7 +304,7 @@ LABEL_11:
     }
   }
   this->ArrayIndex = v6; /*0x45e35c*/
-  this->RubbleLoaded = 0; /*0x45e362*/
+  this->RubbleLoaded_d = 0; /*0x45e362*/
   this->u32_F08 = 1; /*0x45e368*/
   this->u32_F0C = 0; /*0x45e36e*/
   this->qF10 = 0; /*0x45e374*/

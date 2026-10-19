@@ -9,7 +9,11 @@ struct Timer {
 #pragma pack(push, 1)  // X60: binary-packed layout
     char __pad_0[2];  // 0x0
     unsigned int m_2;  // 0x2
-    char __pad_6[18];  // 0x6
+    char __pad_6[2];  // 0x6
+    AbstractClass * ptr_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
     int m_18;  // 0x18
     unsigned int __pad_1C;  // 0x1C
     unsigned int q020;  // 0x20

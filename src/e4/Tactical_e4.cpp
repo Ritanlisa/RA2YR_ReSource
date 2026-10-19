@@ -275,12 +275,12 @@ int Tactical::CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a
     HIDWORD(v15) = &a6; /*0x4840b2*/
     LODWORD(v15) = &a7; /*0x4840b7*/
     Tactical::CalculateTacticalLighting(this, v7, v11, v8, v12, v9, &v16, v15); /*0x4840c4*/
-    if ( *(unsigned int *)this->__pad_34 /*0x484125*/
+    if ( *(unsigned int *)this->q034 /*0x484125*/
       && (a3 = (unsigned int *)v16,
           a4 = (unsigned int *)a7,
           a5 = (int *)a6,
           QuantizeColorRGB((int *)&a3, (int *)&a4, (int *)&a5),
-          v13 = *(unsigned int ***)this->__pad_34,
+          v13 = *(unsigned int ***)this->q034,
           v13[102] == a3)
       && v13[103] == a4
       && (result = (int)v13[104], (int *)result == a5) )

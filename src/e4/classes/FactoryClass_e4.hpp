@@ -23,11 +23,14 @@ struct FactoryClass {
     TechnoClass* object;  // 0x3C
     bool onHold;  // 0x40
     bool isDifferent;  // 0x41
-    char __pad_42[6];  // 0x42
+    char __pad_42[2];  // 0x42
+    unsigned int q044;  // 0x44
     unsigned int u32_48;  // 0x48
     char __pad_4C[4];  // 0x4C
     int u32_50;  // 0x50
-    char __pad_54[10];  // 0x54
+    char __pad_54[4];  // 0x54
+    unsigned int q058;  // 0x58
+    char __pad_5C[2];  // 0x5C
     char m_align_5E[2];  // 0x5E
     int balance;  // 0x60
     int originalBalance;  // 0x64
