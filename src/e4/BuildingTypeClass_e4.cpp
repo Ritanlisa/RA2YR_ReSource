@@ -118,7 +118,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   this->DoorStages = 0; /*0x45def6*/
   this->BuildingAnimFrame_6 = 0; /*0x45defc*/
   this->BuildingAnim_0x15 = 0; /*0x45df02*/
-  this->Upgrades = 0; /*0x45df08*/
+  this->Upgrades_d = 0; /*0x45df08*/
   this->DeployingAnim_d = 0; /*0x45df13*/
   this->DeployingAnimLoaded = 2; /*0x45df19*/
   this->UnderDoorAnim = 2; /*0x45df1f*/

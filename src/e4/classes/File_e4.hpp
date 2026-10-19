@@ -8,7 +8,13 @@ namespace gamemd {
 struct File {
     char __pad_0[2];  // 0x0
     unsigned char File_field_0x2[4];  // 0x2
-    char __pad_6[35];  // 0x6
+    char __pad_6[2];  // 0x6
+    AbstractClass * ptr_8;  // 0x8
+    char __pad_C[4];  // 0xC
+    AbstractClass * ptr_10;  // 0x10
+    char __pad_14[4];  // 0x14
+    AbstractClass * ptr_18;  // 0x18
+    char __pad_1C[13];  // 0x1C
     char File_field_0x29[4];  // 0x29
     char tail_2D[3];  // 0x2D
 // --- flat members (BEGIN) ---

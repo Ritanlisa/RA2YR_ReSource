@@ -203,7 +203,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_01d193) */  /*0x6a47ee*/
       /* X11: ptr_0 install elided (legacy slot spelling slot, RHS g_var_01d193) */  /*0x6a47f5*/
     }
-    p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
+    p_houseTypes = &v2->houseTypes_d; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
     {
       p_houseTypes[1] = 0; /*0x6a4806*/

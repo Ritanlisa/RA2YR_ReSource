@@ -284,9 +284,9 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v13 = v5->Power_d; /*0x721b06*/
   v5->GrowthPercentage = v12; /*0x721b0c*/
   v14 = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(v5 + 36), aPower_0, v13); /*0x721b1b*/
-  v22 = v5->GrowthPercentage_d; /*0x721b28*/
+  v22 = v5->GrowthPercentage; /*0x721b28*/
   v5->Power_d = v14; /*0x721b2f*/
-  v5->GrowthPercentage_d = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
+  v5->GrowthPercentage = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
                             (BuildingTypeClass *)this,
                             (unsigned __int8 *)(v5 + 36),
                             (unsigned __int8 *)aColor,

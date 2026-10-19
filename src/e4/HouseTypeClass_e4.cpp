@@ -41,7 +41,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
 {
 
   ((int)this)->Init(a2); /*0x511658*/
-  this->veteranInfantry[0] = (gamemd::InfantryTypeClass*)(&g_var_131447); /*0x51165d*/
+  this->veteranInfantry_d[0] = (gamemd::InfantryTypeClass*)(&g_var_131447); /*0x51165d*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_131447) */  /*0x511667*/
   /* X11: ptr_0 install elided (X67 star-deref, RHS g_var_131447) */  /*0x511671*/
   /* X11: ptr_0 install elided (base-interface slot, RHS g_ptr_7EAB2C) */  /*0x51167b*/

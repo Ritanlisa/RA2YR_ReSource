@@ -30,7 +30,9 @@ struct Cell {
     unsigned int u32_24;  // 0x24
     char __pad_28[16];  // 0x28
     int Cell_field_0x38;  // 0x38
-    char __pad_3C[44];  // 0x3C
+    char __pad_3C[8];  // 0x3C
+    unsigned int u32_44;  // 0x44
+    char __pad_48[32];  // 0x48
     int Cell_field_0x68;  // 0x68
     unsigned int Cell_field_0x6C;  // 0x6C
     unsigned int q070;  // 0x70
@@ -42,7 +44,9 @@ struct Cell {
     unsigned int u32_C0;  // 0xC0
     char __pad_C4[32];  // 0xC4
     unsigned int Cell_field_0xE4;  // 0xE4
-    unsigned char q0E8[12];  // 0xE8
+    unsigned char q0E8[4];  // 0xE8
+    unsigned int u32_EC;  // 0xEC
+    char __pad_F0[4];  // 0xF0
     unsigned int Cell_field_0xF4;  // 0xF4
     unsigned int Cell_field_0xF8;  // 0xF8
     char __pad_FC[30];  // 0xFC

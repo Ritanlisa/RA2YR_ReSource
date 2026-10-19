@@ -102,26 +102,26 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4
   this->Rate = 1; /*0x42756e*/
   this->Start = 0; /*0x427578*/
   this->LoopStart = 0; /*0x42757e*/
-  this->LoopEnd = 0; /*0x427584*/
-  this->End = 0; /*0x42758a*/
+  this->LoopEnd_d = 0; /*0x427584*/
+  this->End_d = 0; /*0x42758a*/
   this->LoopCount = 0; /*0x427590*/
-  this->Next = 0; /*0x427596*/
+  this->Next_d = 0; /*0x427596*/
   this->SpawnsParticle = -1; /*0x42759c*/
   this->NumParticles = 0; /*0x4275a2*/
-  this->DetailLevel = 0; /*0x4275a8*/
-  this->TranslucencyDetailLevel = 0; /*0x4275ae*/
+  this->DetailLevel_d = 0; /*0x4275a8*/
+  this->TranslucencyDetailLevel_d = 0; /*0x4275ae*/
   this->RandomLoopDelay[0] = 0; /*0x4275b4*/
   this->RandomLoopDelay[1] = 0; /*0x4275ba*/
   this->RandomRate[0] = 0; /*0x4275c0*/
   this->RandomRate[1] = 0; /*0x4275c6*/
-  this->Translucency = 0; /*0x4275cc*/
-  this->Spawns = 0; /*0x4275d2*/
+  this->Translucency_d = 0; /*0x4275cc*/
+  this->Spawns_d = 0; /*0x4275d2*/
   this->SpawnCount = 0; /*0x4275d8*/
-  this->Report = -1; /*0x4275de*/
-  this->StopSound = -1; /*0x4275e4*/
-  this->BounceAnim = 0; /*0x4275ea*/
-  this->ExpireAnim = 0; /*0x4275f0*/
-  this->TrailerAnim = 0; /*0x4275f6*/
+  this->Report_d = -1; /*0x4275de*/
+  this->StopSound_d = -1; /*0x4275e4*/
+  this->BounceAnim_d = 0; /*0x4275ea*/
+  this->ExpireAnim_d = 0; /*0x4275f0*/
+  this->TrailerAnim_d = 0; /*0x4275f6*/
   this->TrailerSeperation = 0; /*0x4275fc*/
   this->Elasticity[0] = -1610612736; /*0x427602*/
   this->Elasticity[1] = 1072273817; /*0x42760c*/
@@ -270,7 +270,7 @@ void* AnimTypeClass::GetWarhead(int a2)
   if ( Image ) /*0x427c1a*/
   {
     int End; // eax
-    End = this->End; /*0x427c1c*/
+    End = this->End_d; /*0x427c1c*/
     this->AnimTypeClass_field_2A4 = 1; /*0x427c22*/
     if ( !End ) /*0x427c2b*/
     {
@@ -278,12 +278,12 @@ void* AnimTypeClass::GetWarhead(int a2)
       unused_high = SHIWORD(Image[1].unused); /*0x427c2d*/
       char Shadow; // dl
       Shadow = this->Shadow; /*0x427c31*/
-      this->End = unused_high; /*0x427c37*/
+      this->End_d = unused_high; /*0x427c37*/
       if ( Shadow ) /*0x427c3f*/
-        this->End = unused_high / 2; /*0x427c46*/
+        this->End_d = unused_high / 2; /*0x427c46*/
     }
-    if ( !this->LoopEnd ) /*0x427c4c*/
-      this->LoopEnd = this->End; /*0x427c5c*/
+    if ( !this->LoopEnd_d ) /*0x427c4c*/
+      this->LoopEnd_d = this->End_d; /*0x427c5c*/
     this->MiddleFrameWidth = SHIWORD(Image[1].unused) / 2; /*0x427c6b*/
     this->MiddleFrameHeight = -1; /*0x427c74*/
     *(unsigned int *)this->__pad_2A0 = -1; /*0x427c7a*/
@@ -465,8 +465,8 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->Rate); /*0x428ab2*/
   Power::TimerProcess(this->Start); /*0x428ac0*/
   Power::TimerProcess(this->LoopStart); /*0x428ace*/
-  Power::TimerProcess(this->LoopEnd); /*0x428adc*/
-  Power::TimerProcess(this->End); /*0x428aea*/
+  Power::TimerProcess(this->LoopEnd_d); /*0x428adc*/
+  Power::TimerProcess(this->End_d); /*0x428aea*/
   Power::TimerProcess(this->Report); /*0x428af8*/
   Power::TimerProcess(this->StopSound); /*0x428b06*/
   Power::TimerProcess(this->NumParticles); /*0x428b14*/

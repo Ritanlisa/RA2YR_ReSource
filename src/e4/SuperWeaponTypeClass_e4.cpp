@@ -237,10 +237,10 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   v3 = 0; /*0x5113ff*/
   LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
   this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
-  this->SidebarImage = (SHPStruct *)-1; /*0x511410*/
+  this->SidebarImage_d = (SHPStruct *)-1; /*0x511410*/
   this->ActionValue[0] = -1; /*0x511416*/
   this->SpecialSound = 0; /*0x51141c*/
-  this->AuxBuilding = 0; /*0x511427*/
+  this->AuxBuilding_d = 0; /*0x511427*/
   this->SidebarImageFile[0] = 1072693248; /*0x51142d*/
   this->SidebarImageFile[1] = 0; /*0x511433*/
   this->SidebarImageFile[2] = 1072693248; /*0x511439*/
@@ -250,7 +250,7 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
   *&this->zero_E4 = 1072693248; /*0x511451*/
   this->FlashSidebarTabFrames = 0; /*0x511457*/
   this->PreDependent = 0; /*0x51145d*/
-  this->Range = 0.0; /*0x511463*/
+  this->Range_d = 0.0; /*0x511463*/
   *&this->AIDefendAgainst = 1072693248; /*0x511469*/
   *&this->ShowTimer = 1072693248; /*0x51146f*/
   this->LineMultiplier = 1072693248; /*0x511475*/
@@ -325,7 +325,7 @@ int SuperWeaponTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, voi
         goto LABEL_11; /*0x511603*/
     }
   }
-  this->SidebarImage = (SHPStruct *)v6; /*0x511608*/
+  this->SidebarImage_d = (SHPStruct *)v6; /*0x511608*/
   if ( dword_A83CA8 <= 0 ) /*0x511615*/
   {
     LABEL_16:

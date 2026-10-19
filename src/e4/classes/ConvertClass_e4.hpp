@@ -10,7 +10,8 @@ struct CampaignClass;  // fix_fwd_type_supply
 struct ConvertClass {
     char __pad_0[2];  // 0x0
     unsigned char ConvertClass_field_0x2[4];  // 0x2
-    char __pad_6[362];  // 0x6
+    char __pad_6[358];  // 0x6
+    unsigned int q16C;  // 0x16C
     CampaignClass* ConvertClass_field_0x170;  // 0x170
     unsigned int __pad_174;  // 0x174
     CampaignClass* ConvertClass_field_0x178;  // 0x178

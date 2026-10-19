@@ -28,13 +28,17 @@ struct MapClass {
     char __pad_18[16];  // 0x18
     int MapClass_field_0x28;  // 0x28
     unsigned int MapClass_field_0x2C;  // 0x2C
-    char __pad_30[24];  // 0x30
+    char __pad_30[12];  // 0x30
+    unsigned int q03C;  // 0x3C
+    char __pad_40[8];  // 0x40
     int MapClass_field_0x48;  // 0x48
     unsigned int q04C;  // 0x4C
     DynamicVector * ptr_50;  // 0x50
     unsigned int __pad_054;  // 0x54
     int q058;  // 0x58
-    char __pad_5C[92];  // 0x5C
+    char __pad_5C[48];  // 0x5C
+    unsigned int LevelAndPassabilityStruct2pointer_70;  // 0x8C
+    char __pad_90[40];  // 0x90
     int MapClass_field_0xB8;  // 0xB8
     unsigned char q0BC[24];  // 0xBC
     unsigned int u32_D4;  // 0xD4
@@ -62,7 +66,10 @@ struct MapClass {
     char MapClass_field_0x241[4];  // 0x241
     char __pad_245[79];  // 0x245
     int MapClass_field_0x294;  // 0x294
-    char __pad_298[108];  // 0x298
+    char __pad_298[76];  // 0x298
+    unsigned int q2E4;  // 0x2E4
+    unsigned int q2E8;  // 0x2E8
+    char __pad_2EC[24];  // 0x2EC
     int q304;  // 0x304
     IUnknown* q0308;  // 0x308
     char __pad_30C[1020];  // 0x30C
@@ -83,7 +90,10 @@ struct MapClass {
     char __pad_1170[44];  // 0x1170
     unsigned int u32_119C;  // 0x119C
     unsigned int u32_11A0;  // 0x11A0
-    char __pad_11A4[180];  // 0x11A4
+    char __pad_11A4[12];  // 0x11A4
+    unsigned int q11B0;  // 0x11B0
+    unsigned int q11B4;  // 0x11B4
+    char __pad_11B8[160];  // 0x11B8
     int MapClass_field_0x1258;  // 0x1258
     char __pad_125C[960];  // 0x125C
     char __pad_161C[164];  // 0x161C

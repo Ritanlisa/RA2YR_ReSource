@@ -271,7 +271,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
 
   AbstractTypeClass::Init((int)this, a2); /*0x5f7328*/
   v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
-  this->Image = 0; /*0x5f7335*/
+  this->Image_d = 0; /*0x5f7335*/
   v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
   {

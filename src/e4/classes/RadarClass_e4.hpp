@@ -95,7 +95,9 @@ struct RadarClass {
     int RadarClass_field_0x1258;  // 0x1258
     int RadarClass_field_0x125C;  // 0x125C
     CampaignClass* RadarClass_field_0x1260;  // 0x1260
-    char __pad_1264[16];  // 0x1264
+    char __pad_1264[5];  // 0x1264
+    unsigned char u8_1269;  // 0x1269
+    char __pad_126A[10];  // 0x126A
     int RadarClass_field_0x1274;  // 0x1274
     int RadarClass_field_0x1278;  // 0x1278
     char __pad_127C[524];  // 0x127C
